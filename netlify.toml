@@ -1,0 +1,13 @@
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Netlify Blobs fuer Einladungs-Daten
+[functions."create-invite"]
+  included_files = []
+
+[functions."serve-invite"]
+  included_files = []

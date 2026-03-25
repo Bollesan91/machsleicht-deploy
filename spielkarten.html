@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spielkarten-Generator — Kindergeburtstag Spiele zum Ausdrucken | machsleicht</title>
+  <meta name="description" content="Kostenlose Spielkarten zum Ausdrucken: Wähle Motto und Alter, drucke 3 passende Spielkarten auf einer A4-Seite. Gebrandet, schön, sofort bereit.">
+  <meta property="og:title" content="Spielkarten-Generator — Spiele zum Ausdrucken">
+  <meta property="og:description" content="Kostenlose Spielkarten für den Kindergeburtstag: Motto wählen, Alter eingeben, 3 Spielkarten auf A4 ausdrucken.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://machsleicht.de/spielkarten">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#FFFAF5">
+  <link rel="canonical" href="https://machsleicht.de/spielkarten">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "machsleicht Spielkarten-Generator",
+    "description": "Kostenlose Spielkarten zum Ausdrucken für den Kindergeburtstag",
+    "url": "https://machsleicht.de/spielkarten",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&display=swap" rel="stylesheet">
+  <style>
+  :root{--a:#E8873D;--bg:#FFFAF5;--w:#FFF8F0;--d:#2D2319;--m:#6B5D52;--l:#EDE6DE;--f:'DM Sans',system-ui,sans-serif;--fd:'Fraunces',Georgia,serif}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--f);color:var(--d);background:var(--w);-webkit-font-smoothing:antialiased;line-height:1.7}
+  a{color:var(--a);text-decoration:none;font-weight:600}
+  a:hover{text-decoration:underline}
+  main{max-width:720px;margin:0 auto;padding:24px 16px 60px}
+  h1{font-family:var(--fd);font-size:clamp(26px,5vw,36px);font-weight:900;line-height:1.2;margin-bottom:16px}
+  h2{font-family:var(--fd);font-size:22px;font-weight:800;margin:32px 0 12px;color:var(--d)}
+  p{margin-bottom:12px;color:var(--m);font-size:15px}
+  .header{display:flex;align-items:center;padding:14px 0 24px;gap:12px}
+  .header a{text-decoration:none}
+  .logo{font-family:var(--fd);font-size:22px;font-weight:900;color:var(--d)}
+  .logo span{color:var(--a)}
+  .badge{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--a);text-transform:uppercase;margin-bottom:8px}
+  .cta{display:inline-block;background:var(--a);color:#fff;padding:14px 32px;border-radius:99px;font-weight:700;font-size:15px;text-decoration:none;margin:8px 0;border:none;cursor:pointer}
+  .cta:hover{background:#C46A1D;text-decoration:none}
+  .cta:disabled{background:#ccc;cursor:not-allowed}
+  .breadcrumb{font-size:12px;color:var(--m);margin-bottom:16px}
+  .breadcrumb a{font-size:12px;font-weight:500}
+  footer{text-align:center;margin-top:40px;padding:16px 0;border-top:1px solid var(--l);font-size:12px;color:var(--m)}
+  footer a{font-size:12px;color:var(--m);font-weight:400}
+
+  /* Generator UI */
+  .gen-section{background:var(--bg);border:1px solid var(--l);border-radius:14px;padding:24px;margin:16px 0}
+  .gen-label{font-weight:700;font-size:14px;color:var(--d);margin-bottom:8px;display:block}
+  .motto-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-bottom:16px}
+  .motto-btn{background:var(--w);border:2px solid var(--l);border-radius:10px;padding:10px 8px;text-align:center;cursor:pointer;transition:all .2s;font-family:var(--f);font-size:13px;font-weight:600;color:var(--d)}
+  .motto-btn:hover{border-color:var(--a);background:#FFF3E8}
+  .motto-btn.active{border-color:var(--a);background:#FFF3E8;box-shadow:0 0 0 2px rgba(232,135,61,.3)}
+  .motto-btn .emoji{font-size:22px;display:block;margin-bottom:4px}
+  .age-slider{width:100%;margin:8px 0 4px;accent-color:var(--a)}
+  .age-display{text-align:center;font-size:28px;font-weight:800;color:var(--a);font-family:var(--fd)}
+
+  /* Preview */
+  .preview{background:#fff;border:2px solid var(--l);border-radius:14px;padding:20px;margin:16px 0}
+  .card-preview{border:1px solid var(--l);border-radius:10px;padding:16px;margin-bottom:12px;background:var(--bg)}
+  .card-preview h3{font-size:16px;font-weight:800;color:var(--d);margin:0 0 6px;font-family:var(--fd)}
+  .card-preview p{font-size:13px;color:var(--m);margin:0;line-height:1.5}
+  .card-preview .card-num{display:inline-block;background:var(--a);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;margin-bottom:8px}
+
+  @media print{
+    body{background:#fff}
+    main{max-width:100%;padding:0}
+    .header,.breadcrumb,.badge,.gen-section,.cta,.no-print,footer,.preview-label{display:none!important}
+    .preview{border:none;padding:0;margin:0;page-break-inside:avoid}
+    .card-preview{break-inside:avoid;border:2px solid #ddd;padding:20px;margin-bottom:16px}
+    .print-header{display:block!important;text-align:center;margin-bottom:20px}
+    .print-footer{display:block!important;text-align:center;margin-top:16px;font-size:10px;color:#999}
+  }
+  @media screen{
+    .print-header,.print-footer{display:none}
+  }
+  @media(max-width:480px){main{padding:16px 12px 40px}.motto-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* === machsleicht v1.1 Shared Modules === */
+.cta-safety{display:inline-block;background:#FFFAF5;color:#2D2319;border:2px solid #EDE6DE;padding:12px 28px;border-radius:99px;font-weight:600;font-size:14px;text-decoration:none;margin:8px 0}
+.cta-safety:hover{border-color:#E8873D;color:#E8873D}
+.snippet{background:#FFFAF5;border:2px solid #E8873D;border-radius:12px;padding:20px 24px;margin:0 0 24px 0;font-size:15px;line-height:1.6}
+.snippet strong{color:#2D2319}.snippet ul{margin:8px 0 0 0;padding-left:20px}.snippet li{margin-bottom:4px}
+.decision-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin:16px 0}
+.decision-card{display:flex;flex-direction:column;align-items:center;padding:14px 8px;background:#FFFAF5;border:2px solid #EDE6DE;border-radius:12px;text-decoration:none;color:#2D2319;transition:border-color 0.2s}
+.decision-card:hover{border-color:#E8873D}
+.budget-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+.budget-table th{background:#FFFAF5;text-align:left;padding:10px 12px;border-bottom:2px solid #E8873D;font-weight:700}
+.budget-table td{padding:10px 12px;border-bottom:1px solid #EDE6DE}
+.copy-block{background:#FFFAF5;border:1px dashed #EDE6DE;border-radius:8px;padding:16px 20px;margin:12px 0;position:relative;font-size:14px;line-height:1.6;white-space:pre-wrap}
+.copy-btn{position:absolute;top:8px;right:8px;background:#E8873D;color:#fff;border:none;border-radius:6px;padding:4px 12px;font-size:12px;cursor:pointer;font-weight:600}
+.copy-btn:hover{background:#C46A1D}
+.kaufmoment{margin:20px 0;padding:20px;background:#FFFAF5;border-radius:12px;border:1px solid #EDE6DE}
+.tip{background:#FFFAF5;border:1px solid #EDE6DE;border-left:4px solid #E8873D;border-radius:8px;padding:16px 20px;margin:16px 0;font-size:14px}
+@media print{.no-print,.cta,.cta-safety,footer,[style*="position: fixed"],[style*="sticky"]{display:none!important}body{background:#fff!important;color:#000!important;font-size:12pt}a{color:#000!important;text-decoration:none!important}.snippet{border-color:#ccc!important}.print-only{display:block!important}}
+</style>
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-2v7iyzPVQbQ8l6ya79jtE.js"></script>
+<script>
+window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+plausible.init()
+</script>
+</head>
+<body>
+<main>
+
+  <header class="header">
+    <a href="/"><span class="logo">mach's<span>leicht</span></span></a>
+  </header>
+  <nav class="breadcrumb"><a href="/">Start</a> &rsaquo; Spielkarten</nav>
+
+  <p class="badge">Kostenlos</p>
+  <h1>Spielkarten-Generator</h1>
+  <p style="font-size:16px;color:var(--d)">W&auml;hle Motto und Alter &mdash; du bekommst 3 passende Spielkarten zum Ausdrucken. Jede Karte mit Spielname, Material und Anleitung. A4, 3 Karten pro Seite.</p>
+
+  <div class="gen-section">
+    <span class="gen-label">1. Motto w&auml;hlen</span>
+    <div class="motto-grid" id="mottoGrid"></div>
+
+    <span class="gen-label" style="margin-top:16px">2. Alter einstellen</span>
+    <div class="age-display" id="ageDisplay">6 Jahre</div>
+    <input type="range" min="3" max="12" value="6" class="age-slider" id="ageSlider">
+
+    <div style="text-align:center;margin-top:16px">
+      <button class="cta" id="generateBtn" disabled onclick="generateCards()">Spielkarten erstellen &rarr;</button>
+    </div>
+  </div>
+
+  <div id="previewArea" style="display:none">
+    <h2 class="preview-label no-print">Vorschau deiner Spielkarten</h2>
+    <div class="print-header" style="display:none">
+      <p style="font-family:'Fraunces',Georgia,serif;font-size:22px;font-weight:900;color:#2D2319">mach's<span style="color:#E8873D">leicht</span></p>
+      <p style="font-size:14px;color:#6B5D52" id="printTitle"></p>
+    </div>
+    <div class="preview" id="cardsContainer"></div>
+    <div class="print-footer" style="display:none">
+      <p>machsleicht.de &mdash; Kindergeburtstag einfach geplant</p>
+    </div>
+    <div class="no-print" style="text-align:center;margin:16px 0">
+      <button class="cta" onclick="window.print()">Spielkarten drucken</button>
+    </div>
+  </div>
+
+  <div class="no-print">
+    <h2>Kompletten Geburtstag planen?</h2>
+    <p style="color:var(--d)">Die Spielkarten sind nur der Anfang. machsleicht erstellt dir den <strong>kompletten Plan</strong>: Zeitplan, Spiele, Einkaufsliste, Kosten pro Kind. <a href="/">Jetzt planen &rarr;</a></p>
+  </div>
+
+  <footer class="no-print">
+    <p>&copy; 2026 machsleicht.de &middot; <a href="/impressum">Impressum</a> &middot; <a href="/datenschutz">Datenschutz</a> &middot; <a href="/schatzsuche">Schatzsuche</a></p>
+    <p style="margin-top:8px"><a href="/">&larr; Zur&uuml;ck zum Planer</a></p>
+  </footer>
+
+</main>
+
+<script>
+const GAMES = {
+  safari: {
+    name: "Safari-Abenteuer", emoji: "\u{1F981}",
+    3: [{n:"Tiermasken basteln",m:"Pappteller, Farben, Gummibänder",d:"Jedes Kind bekommt einen Pappteller und malt ein Safari-Tier darauf — Löwe, Zebra oder Giraffe. Löcher für die Augen schneiden, Gummiband dran. Fertig ist die Safari-Maske!"}],
+    4: [{n:"Tier-Memory",m:"20 Karten mit Safari-Tieren (doppelt)",d:"Große Karten mit Löwe, Elefant, Giraffe, Zebra etc. verdeckt auf dem Boden. Kinder decken reihum je 2 Karten auf. Wer ein Paar findet, darf es behalten."}],
+    5: [{n:"Löwen-Fangen",m:"Freie Fläche, evtl. Löwen-Maske",d:"Ein Kind ist der Löwe und versucht, die anderen Kinder zu fangen. Wer gefangen wird, wird auch zum Löwen. Das letzte freie Kind gewinnt!"}],
+    6: [{n:"Safari-Rallye",m:"4 Stationen-Schilder, Tierspuren-Bilder, Fernglas-Bastelmaterial, Quiz-Fragen, kleiner Schatz",d:"4 Stationen aufbauen: Tierspuren zuordnen, Fernglas basteln, Tierstimmen-Quiz, Schatz finden. Jede Station gibt einen Stempel. Wer alle hat, ist Safari-Experte!"}],
+    7: [{n:"Fotosafari",m:"Handys/Kameras, Liste mit Aufgaben",d:"Jedes Team bekommt eine Liste: Fotografiere etwas Rotes, ein Insekt, eine Blume, etwas das fliegt. Teams haben 15 Minuten. Kreativste Fotos gewinnen!"}],
+    8: [{n:"Safari-Schnitzeljagd",m:"Hinweiszettel, versteckter Schatz",d:"An 6 Stationen im Garten liegen Hinweise. Jeder Hinweis führt zum nächsten. Am Ende wartet die Schatztruhe mit Mitgebseln. Teamwork ist gefragt!"}],
+    9: [{n:"Safari-Escape-Room",m:"Rätselblätter, Zahlenschloss, Schachtel",d:"Die Tiere im Zoo wurden eingesperrt! 5 Rätsel müssen gelöst werden um den Code zu knacken. 30 Minuten Zeit. Teamwork, Logik und Safari-Wissen gefragt."}],
+    10:[{n:"Safari-Olympiade",m:"Markierungen, Timer, Zielscheibe, Quiz-Karten",d:"5 Disziplinen: Weitsprung (Känguru), Zielwerfen (Speerwurf), Hindernislauf (Dschungel), Schleich-Wettbewerb (Chamäleon), Quiz (Ranger-Prüfung). Punkte addieren!"}],
+    11:[{n:"Geo-Safari",m:"Handys mit Kompass/GPS, Koordinaten-Zettel, Schatz",d:"Teams bekommen GPS-Koordinaten (oder Kompass-Richtungen) und müssen 5 versteckte Stationen finden. An jeder Station eine Aufgabe. Schnellstes Team gewinnt."}],
+    12:[{n:"Safari-Strategie",m:"Spielplan (DIN A3), Karten, Spielfiguren",d:"Teams leiten einen Safari-Park: Budget verwalten, Tiere versorgen, Besucher locken, Wilderer stoppen. Würfelbasiertes Planspiel über 5 Runden. Bester Park gewinnt!"}],
+  },
+  piraten: {
+    name: "Piraten-Abenteuer", emoji: "\u{1F3F4}\u{200D}\u{2620}\u{FE0F}",
+    3: [{n:"Schatz im Sandkasten",m:"Sandkasten/Wanne, Goldmünzen, kleine Edelsteine",d:"Goldmünzen und bunte Edelsteine im Sand verstecken. Jedes Kind darf graben und sammeln. Wer die meisten Schätze findet, ist der Piratenkapitän!"}],
+    4: [{n:"Schatzinsel-Hüpfen",m:"Kissen oder Teppichfliesen, blaues Tuch",d:"Kissen als Inseln auf dem Boden verteilen. Der Boden ist Wasser! Bei Musik hüpfen die Kinder von Insel zu Insel. Musik stoppt — wer im Wasser steht, ist raus."}],
+    5: [{n:"Kanonenkugel-Werfen",m:"3 Eimer, Bälle, Punkte-Schilder",d:"3 Eimer in verschiedenen Entfernungen aufstellen (10, 20, 30 Punkte). Jedes Kind hat 5 Würfe. Punkte zusammenzählen. Bester Kanonenschütze gewinnt!"}],
+    6: [{n:"Piraten-Schatzsuche",m:"Schatzkarte, 5 Hinweiszettel, Schatztruhe mit Mitgebseln",d:"Eine echte Schatzkarte zeichnen! 5 Stationen mit Rätseln. An jeder Station gibt's ein Puzzle-Teil. Alle Teile zusammen ergeben die Koordinaten des Schatzes."}],
+    7: [{n:"Flaschenpost-Schnitzeljagd",m:"5 Glasflaschen, Zettel, Schatz",d:"In 5 Glasflaschen stecken Botschaften mit dem nächsten Hinweis. Kinder müssen die Rätsel lösen und die nächste Flasche finden. Der letzte Hinweis führt zum Schatz!"}],
+    8: [{n:"Piraten-Olympiade",m:"Planke (Bank), Pool-Nudeln, Ziel, Bälle, Seil",d:"4 Disziplinen: Planke-Laufen (Gleichgewicht auf Bank), Säbelfechten (Pool-Nudeln), Kanonenkugel-Zielwurf, Seemannsknoten (3 Knoten in Bestzeit). Punkte pro Disziplin!"}],
+    9: [{n:"Escape-Room: Piraten-Gefängnis",m:"Zahlenschloss, Rätselblätter, UV-Lampe, Geheimtinte",d:"Ihr wurdet vom Piratenkapitän eingesperrt! 5 Rätsel in 30 Minuten lösen: Geheimschrift, Zahlenrätsel, Kompass-Code, Flaschenpost-Puzzle, Schloss knacken!"}],
+    10:[{n:"Piraten-Detektive",m:"Hinweiskarten, Verdächtigen-Steckbriefe, Beweisstücke",d:"Wer hat den Schatz gestohlen? 5 Verdächtige, 8 Hinweise, 3 falsche Fährten. Teams sammeln Beweise an verschiedenen Stationen und müssen den richtigen Dieb finden."}],
+    11:[{n:"Code-Knacker-Mission",m:"Caesar-Rad, Morse-Tabelle, Rätselblätter",d:"Verschiedene Verschlüsselungen knacken: Caesar-Verschlüsselung, Morse-Code, Pigpen-Chiffre. Jeder Code enthält einen Buchstaben. Alle Buchstaben ergeben das Lösungswort!"}],
+    12:[{n:"Escape-Room Deluxe",m:"UV-Lampe, Zahlenschloss, Kryptex, Geheimfächer, Rätsel",d:"7 Rätsel auf Profi-Niveau: UV-Geheimbotschaften, mathematische Codes, Logikrätsel, versteckte Fächer, Spiegelschrift. 40 Minuten Zeit. Wer schafft es?"}],
+  },
+  weltraum: {
+    name: "Weltraum-Mission", emoji: "\u{1F680}",
+    3: [{n:"Sternensammeln",m:"Leucht-Sterne, Taschenlampe, Beutel",d:"Raum leicht abdunkeln, leuchtende Sterne überall verteilen. Jedes Kind bekommt eine Taschenlampe und einen Beutel. Wer die meisten Sterne findet, ist Astronaut!"}],
+    4: [{n:"Mondsteine suchen",m:"Steine in Alufolie, Garten/Raum",d:"Steine in Alufolie wickeln und im Garten verteilen. Die Kinder sind Astronauten auf Mond-Mission und müssen alle Mondsteine einsammeln. Silbrig glänzend — leicht zu finden!"}],
+    5: [{n:"Raketen basteln",m:"Klopapierrollen, Farben, Krepppapier, Kleber",d:"Jedes Kind bemalt eine Klopapierrolle als Rakete. Krepppapier-Streifen als Flammen unten ankleben. Fenster und Tür aufmalen. Fertige Rakete als Mitgebsel mit nach Hause!"}],
+    6: [{n:"Raketen-Wettstart",m:"Strohhalme, Papier, Klebeband",d:"Papiertüte um Strohhalm wickeln, Spitze falten und zukleben. Kräftig pusten — die Rakete fliegt! Wessen Rakete am weitesten fliegt, gewinnt. 3 Versuche pro Kind."}],
+    7: [{n:"Mond-Expedition",m:"Weltraum-Hinweiszettel, Mondkarte, Schatz",d:"Schatzsuche im Weltraum-Stil: Hinweise sind Sternenkoordinaten, Planetenrätsel und Alien-Botschaften. 5 Stationen führen zum Mondschatz (Mitgebsel-Tüten)."}],
+    8: [{n:"Raketenstart-Experiment",m:"Filmdosen, Brausetabletten, Wasser, Schutzbrille",d:"Filmdose halb mit Wasser füllen, Brausetablette rein, Deckel drauf, umdrehen, wegstellen — PENG! Die Rakete schießt in die Luft. Jedes Kind darf 2x starten. Draußen machen!"}],
+    9: [{n:"Mission Control",m:"Aufgabenkarten, Timer, Team-Rollen",d:"Teams à 3-4 Kinder. Rollen: Commander, Pilot, Ingenieur, Wissenschaftler. 5 Aufgaben in 25 Min: Reparatur (Puzzle), Navigation (Koordinaten), Kommunikation (Code), Andockmanöver (Geschicklichkeit), Landung (Quiz)."}],
+    10:[{n:"Mars-Mission Planspiel",m:"Spielplan, Ressourcen-Karten, Würfel, Ereigniskarten",d:"Teams planen eine Mars-Mission: Budget verteilen (Treibstoff, Essen, Ausrüstung), Route wählen, auf Ereignisse reagieren (Meteorit! Sauerstoff-Leck!). Wer sicher landet, gewinnt!"}],
+    11:[{n:"Space-Escape-Room",m:"Codes, UV-Lampe, Zahlenschloss, Taschenrechner",d:"Die Raumstation verliert Sauerstoff! 6 Rätsel lösen: Binärcode, Koordinaten berechnen, Sternbilder zuordnen, Geheimbotschaft entschlüsseln. 30 Minuten bis der Sauerstoff ausgeht!"}],
+    12:[{n:"Roboter programmieren",m:"Augenbinde, Aufgabenkarten, Hindernisse",d:"Ein Kind ist der Roboter (Augen verbunden), die anderen programmieren: 'Vor 3', 'Links 90', 'Vor 2', 'Rechts 90'. Der Roboter führt exakt die Befehle aus. Ziel: Hindernisparcours meistern!"}],
+  },
+  dino: {
+    name: "Dino-Abenteuer", emoji: "\u{1F995}",
+    3: [{n:"Dino-Eier suchen",m:"Plastik-Eier oder bemalte Bälle",d:"Bunte Dino-Eier im Garten oder Raum verstecken. Die kleinen Paläontologen suchen und sammeln. In jedem Ei steckt ein Mini-Dino. Wer die meisten findet, gewinnt!"}],
+    4: [{n:"Dino-Fußspuren folgen",m:"Papier-Fußabdrücke, Klebeband, Schatz",d:"Große Dino-Fußabdrücke aus Pappe ausschneiden und als Spur auf den Boden kleben. Die Kinder folgen den Spuren — am Ende wartet ein Dino-Schatz!"}],
+    5: [{n:"T-Rex-Fangen",m:"Freie Fläche",d:"Ein Kind ist der T-Rex — aber der T-Rex hat kurze Arme! Arme an den Körper gepresst, nur mit dem Oberkörper fangen. Wen der T-Rex berührt, wird auch zum Dino!"}],
+    6: [{n:"Dino-Ausgrabung",m:"Sandwanne oder Reis, kleine Dino-Figuren, Pinsel",d:"Kleine Dino-Figuren im Sand verstecken. Jedes Kind bekommt einen Pinsel und gräbt vorsichtig aus — wie echte Paläontologen! Gefundene Dinos dürfen behalten werden."}],
+    7: [{n:"Fossilien gießen",m:"Gips, Wasser, Dino-Figuren, Becher",d:"Gips anrühren, in Becher füllen, Dino-Figur halb eindrücken. Nach 30 Min hart — Dino rausnehmen. Fertig ist das Fossil! Jedes Kind macht sein eigenes Fossil zum Mitnehmen."}],
+    8: [{n:"Paläontologen-Rallye",m:"Knochen-Bilder, Steckbrief-Vorlage, Stifte",d:"An 5 Stationen liegen Dino-Knochen-Bilder. Kinder ordnen Knochen dem richtigen Dino zu und erstellen einen Steckbrief: Name, Größe, Ernährung, Epoche. Bester Steckbrief gewinnt!"}],
+    9: [{n:"Dino-Museum bauen",m:"Kartons, Farben, Dino-Figuren, Schilder",d:"Teams bauen aus Kartons ihr eigenes Dino-Museum: Dioramen gestalten, Schilder schreiben, Führung vorbereiten. Am Ende: Museumseröffnung mit Rundgang für die Eltern!"}],
+    10:[{n:"Jurassic Escape Room",m:"6 Rätsel, Zahlenschloss, Timer, Dino-Fakten",d:"Der Dino-Park hat einen Stromausfall! 6 Rätsel in 30 Min: Dino-Silhouetten zuordnen, Fossilien-Code, Vulkan-Countdown, DNA-Sequenz, Geheimgang finden, Tor öffnen!"}],
+    11:[{n:"Dino-Film drehen",m:"Dino-Figuren, Handy, Knete/Papier-Kulisse",d:"Stop-Motion Film mit Dino-Figuren! Kulisse aus Papier basteln, Dinos Millimeter für Millimeter bewegen, pro Bild ein Foto. Am Ende: Film ansehen und bester Film gewinnt."}],
+    12:[{n:"Dino-Debatte",m:"Fakten-Karten, Timer",d:"Jedes Team bekommt einen Dino und muss argumentieren, warum dieser der mächtigste war. T-Rex vs. Spinosaurus vs. Velociraptor. Fakten, Strategie, Überzeugungskraft. Jury (Eltern) entscheidet!"}],
+  },
+  einhorn: {
+    name: "Einhorn-Zauber", emoji: "\u{1F984}",
+    3: [{n:"Einhorn-Horn basteln",m:"Pappteller, Glitzer, Kleber, Gummiband",d:"Pappteller zum Kegel formen, mit Glitzer bekleben, Gummiband dran — fertig ist das Einhorn-Horn! Jedes Kind schmückt seins individuell. Perfektes Mitgebsel!"}],
+    4: [{n:"Regenbogen-Parcours",m:"Bunte Kissen oder Tücher in Regenbogenfarben",d:"Kissen in Regenbogenfarben auslegen. Die Kinder müssen in der richtigen Reihenfolge hüpfen: Rot, Orange, Gelb, Grün, Blau, Lila. Wer die Reihenfolge schafft, ist Einhorn-Meister!"}],
+    5: [{n:"Magische Reise",m:"5 bunte Stationen-Schilder, kleine Aufgaben",d:"5 Stationen in Regenbogenfarben: Rote Station (Hüpfen), Orange (Malen), Gelbe (Singen), Grüne (Tanzen), Blaue (Basteln). An jeder Station gibt's einen Regenbogen-Sticker!"}],
+    6: [{n:"Zaubertrank mixen",m:"Bunte Sirups, Sprudel, Brausepulver, Becher",d:"Verschiedene Sirups aufstellen — jede Farbe ein Zaubertrank-Zutat. Die Kinder mixen ihren eigenen Zaubertrank. Brausepulver dazu = magisches Blubbern! Kreativstes Getränk gewinnt."}],
+    7: [{n:"Magischer Parcours",m:"Zauberstäbe, Hütchen, Reifen, Balancier-Brett",d:"Zauberstab-Staffellauf: Ball auf dem Stab balancieren. Einhorn-Hindernislauf: Durch Regenbogen-Reifen, über glitzernde Brücke. Bester Zauberer bekommt die goldene Krone!"}],
+    8: [{n:"Einhorn-Rallye",m:"5 Stationen, Zaubertrank-Zutaten, Bastel-Material, Quiz",d:"5 Stationen: Zaubertrank mixen, Einhorn-Armband basteln, Regenbogen-Quiz, Glitzer-Parcours, Schatz finden. An jeder Station ein Stempel — alle 5 = Einhorn-Diplom!"}],
+    9: [{n:"Einhorn-Escape",m:"Rätselblätter, Schloss, Glitzer-Hinweise, Timer",d:"Das Einhorn wurde vom bösen Zauberer gefangen! 5 magische Rätsel in 25 Minuten lösen: Farbcode, Spiegel-Rätsel, Glitzer-Spur, Zauberwort, Schloss knacken. Rettet das Einhorn!"}],
+    10:[{n:"Magische Schnitzeljagd",m:"UV-Lampe, Geheimtinte (Zitronensaft), Hinweise",d:"Geheime Botschaften mit Zitronensaft geschrieben — nur mit UV-Lampe sichtbar! 6 versteckte Botschaften führen zum magischen Schatz. Besonders cool bei Dämmerung!"}],
+    11:[{n:"Fantasy-Escape-Room",m:"6 Rätsel, Schwarzlicht, Zahlenschloss, Glitzer",d:"6 magische Rätsel: Sternbild-Code, Kristall-Farben-Reihe, Einhorn-Labyrinth, Zauberspruch rückwärts, UV-Geheimbotschaft, finales Schloss. 35 Minuten — schafft ihr es?"}],
+    12:[{n:"Design-Wettbewerb",m:"Papier, Stifte, Stoffe, Glitzer, Sticker",d:"Teams entwerfen ein komplettes Einhorn-Universum: Landkarte zeichnen, Bewohner erfinden, Geschichte schreiben, Flagge gestalten. 30 Minuten — dann Präsentation vor der Jury!"}],
+  },
+  feuerwehr: {
+    name: "Feuerwehr-Einsatz", emoji: "\u{1F692}",
+    3: [{n:"Feuer löschen",m:"Wasserpistolen, rote Luftballons",d:"Rote Luftballons an einem Zaun oder Stuhl befestigen — das ist das Feuer! Kinder spritzen mit Wasserpistolen drauf. Wer die meisten Flammen löscht, ist Feuerwehr-Held! Draußen spielen!"}],
+    4: [{n:"Wassereimerrennen",m:"Kleine Eimer, Wasser, Ziel-Behälter",d:"Wasser in kleinen Eimern von A nach B transportieren — ohne zu verschütten! Wer am meisten Wasser im Ziel-Eimer hat, gewinnt. Einfach, lustig, etwas nass!"}],
+    5: [{n:"Rette das Kuscheltier",m:"Karton (brennendes Haus), Kuscheltiere, Timer",d:"Kuscheltiere im Karton-Haus verstecken. Kinder müssen in 60 Sekunden alle Tiere retten. Teamwork: Einer hält die Tür auf, die anderen retten. Alle gerettet = Heldenmedaille!"}],
+    6: [{n:"Feuerwehr-Rallye",m:"4 Stationen: Eimer, Seil, Pflaster, Quiz-Karten",d:"4 Stationen: Löschen (Eimer-Staffel), Retten (Kuscheltier-Rettung), Bergen (Seil-Parcours), Schützen (Erste-Hilfe-Quiz). Pro Station Punkte. Alle bestanden = Feuerwehr-Ausweis!"}],
+    7: [{n:"Feuerwehr-Olympiade",m:"Wasserzielspritzen, Hindernis, Seil, Eimer, Timer",d:"5 Disziplinen: Zielspritzen, Hindernislauf in 'voller Montur', Knotenbinden, Eimerkette, Rettungssprint. Stoppuhr läuft! Einzelwertung + Teamwertung."}],
+    8: [{n:"Einsatz-Simulation",m:"Feuerwehr-Utensilien, Timer, Einsatzkarten",d:"Alarm! Teams ziehen eine Einsatzkarte: Brand, Unfall oder Katze auf dem Baum. Dann: Ausrüstung anlegen (Helm, Handschuhe), zum Einsatzort rennen, Aufgabe lösen, Bericht schreiben!"}],
+    9: [{n:"Feuerwehr-Planspiel",m:"Einsatz-Karten, Stadtplan, Figuren",d:"Teams koordinieren Einsätze auf einem Stadtplan: Wer löscht? Wer rettet? Wer sichert ab? Begrenzte Ressourcen, neue Notrufe kommen rein. Bestes Team hat die wenigsten Schäden!"}],
+    10:[{n:"Großeinsatz",m:"Walkie-Talkies, 3 Einsatzorte, Timer",d:"3 Teams, 3 Einsatzorte gleichzeitig! Koordination über Walkie-Talkies. Zentrale gibt Befehle, Teams führen aus. Zeitkritisch — wer zu langsam ist, verliert Punkte."}],
+    11:[{n:"Feuerwehr-Escape-Room",m:"Rätsel, UV-Lampe, Zahlenschloss, Rauchmelder-Sound",d:"Rauchmelder piepst! 6 Rätsel: Hitze-Sensor (Wärmebild-Puzzle), Fluchtplan lesen, Code aus Hausnummern, Schlauch-Knotenrätsel, Funkspruch entschlüsseln, Tür-Code knacken!"}],
+    12:[{n:"Strategie-Planspiel",m:"Großer Spielplan, Ressourcen-Karten, Ereignisse",d:"Komplexes Planspiel: 3 gleichzeitige Einsätze, begrenztes Personal und Ausrüstung, Wetter ändert sich. Teams treffen Entscheidungen in Echtzeit. Feuerwehr-Chef des Tages gewinnt!"}],
+  },
+};
+
+// Add remaining mottos with representative games
+const EXTRA = {
+  'paw-patrol': {name:"Paw Patrol",emoji:"\u{1F415}",
+    3:[{n:"Pfoten-Abdruck stempeln",m:"Fingerfarben, großes Papier",d:"Hände in Farbe tauchen und auf Papier drücken — fertig ist der Pfoten-Abdruck! Jedes Kind macht seinen Abdruck in einer anderen Farbe. Das Bild darf mit nach Hause!"}],
+    4:[{n:"Welpen-Parcours",m:"Tunnel (Decke über Stühle), Kissen, Hütchen",d:"Durch den Tunnel kriechen, über Kissen springen, um Hütchen slalomen — wie die Paw Patrol Welpen beim Training! Stoppuhr läuft, 3 Versuche pro Kind."}],
+    5:[{n:"Rettungsmission",m:"Kuscheltiere, Karton-Haus, Timer",d:"Stofftiere stecken im brennenden Haus! Kinder bilden Teams wie bei Paw Patrol und retten alle Tiere in 90 Sekunden. Chase koordiniert, Marshall löscht, Rubble räumt auf!"}],
+    6:[{n:"Paw Patrol Rallye",m:"4 Stationen-Schilder, passende Aufgaben",d:"4 Stationen für 4 Welpen: Chase (Polizei-Quiz), Marshall (Feuer löschen mit Spritzpistole), Rubble (Turm bauen), Skye (Papierflieger-Weitflug). Jede Station = 1 Stempel!"}],
+    7:[{n:"Paw Patrol Schnitzeljagd",m:"5 Hinweiszettel, Schatz",d:"Jeder Hinweis kommt von einem anderen Welpen. Chase gibt Koordinaten, Marshall eine Bilderrätsel, Rubble ein Bau-Puzzle. Am Ende: Schatz mit Hundemarken als Mitgebsel!"}],
+  },
+  pokemon: {name:"Pokémon-Meister",emoji:"\u{26A1}",
+    3:[{n:"Pokéball-Suche",m:"Rot-weiße Bälle oder bemalte Tennisbälle",d:"Pokébälle (rot-weiße Bälle) im Raum verstecken. Jedes Kind fängt so viele Pokémon wie möglich! In jedem Ball steckt ein Pokémon-Sticker. Sammle alle!"}],
+    4:[{n:"Pokéball werfen",m:"Bälle, Pokémon-Bilder an der Wand",d:"Pokémon-Bilder an die Wand kleben. Kinder werfen mit Bällen darauf. Jedes getroffene Pokémon ist gefangen! Pikachu gibt Bonus-Punkte!"}],
+    5:[{n:"Pokéball basteln",m:"Styroporkugeln, rote+weiße Farbe, Pinsel",d:"Styroporkugeln halb rot und halb weiß anmalen. Schwarzen Streifen in der Mitte. Weißen Kreis als Button. Fertig ist der Pokéball — Mitgebsel zum Mitnehmen!"}],
+    6:[{n:"Pokémon-Rallye",m:"5 Arena-Schilder, Aufgaben pro Arena",d:"5 Arena-Stationen: Feuer (Hindernislauf), Wasser (Eimer-Staffel), Pflanze (Blätter-Zuordnung), Elektro (Reaktionsspiel), Psycho (Quiz). Pro Arena ein Orden!"}],
+    7:[{n:"Arena-Kampf",m:"Pokémon-Karten (vereinfacht), Spielfeld",d:"Vereinfachtes Karten-Battle: Jedes Kind zieht 3 Karten. Höherer Wert gewinnt. Typ-Vorteil gibt Bonus (Wasser > Feuer > Pflanze > Wasser). Turnierformat!"}],
+    8:[{n:"Arena-Leiter-Challenge",m:"4 Stationen mit verschiedenen Aufgaben",d:"4 Arena-Leiter (Eltern) warten an 4 Stationen. Jede Station: andere Aufgabe (Quiz, Geschicklichkeit, Schnelligkeit, Teamwork). Alle 4 Orden = Pokémon-Meister!"}],
+    9:[{n:"Pokémon-Escape",m:"Rätselblätter, Zahlenschloss, Pokémon-Hinweise",d:"Team Rocket hat Pikachu entführt! 5 Rätsel mit Pokémon-Thema: Typ-Code, Pokédex-Zahlenrätsel, Attacken-Puzzle, Orden-Kombination. 25 Minuten — rettet Pikachu!"}],
+    10:[{n:"Pokémon-Meisterschaft",m:"Karten-Decks, Turniertabelle",d:"Echtes Pokémon-Karten-Turnier mit vereinfachten Regeln. Jeder bekommt ein Starter-Deck. Swiss-System: Jeder spielt gegen jeden. Punkte addieren, Meister küren!"}],
+    11:[{n:"Pokémon-Design",m:"Papier, Stifte, Steckbrief-Vorlage",d:"Jedes Kind erfindet sein eigenes Pokémon: Zeichnung, Typ, 4 Attacken, Größe, Gewicht, Pokédex-Eintrag. Kreativstes Pokémon wird von allen gekürt!"}],
+    12:[{n:"Pokémon-Strategie-Turnier",m:"TCG-Decks, Timer, Regelwerk",d:"Echtes Turnier mit Original-Regeln. 6 Runden Swiss, 15 Minuten pro Runde. Tabelle führen, Punkte vergleichen, Top 4 spielen Halbfinale und Finale. Pokémon-Champion!"}],
+  },
+  minecraft: {name:"Minecraft-Welt",emoji:"\u{26CF}\u{FE0F}",
+    3:[{n:"Block-Stapeln",m:"Große bunte Schaumstoff-Würfel oder Kartons",d:"Bunte Würfel so hoch wie möglich stapeln — wie in Minecraft! Wessen Turm am höchsten wird ohne umzufallen, ist der beste Builder!"}],
+    4:[{n:"Creeper-Tanz",m:"Musik, Creeper-Bild",d:"Bei Musik tanzen alle Kinder. Bei TNT-Explosions-Sound: Einfrieren! Wer sich bewegt, fliegt raus. Letztes Kind ist der Überlebende der Creeper-Explosion!"}],
+    5:[{n:"Schwert basteln",m:"Grauer und brauner Karton, Kleber, Schere",d:"Minecraft-Schwert aus Pappe: graue Klinge (Pixel-Form), brauner Griff. Jedes Kind bastelt sein eigenes Diamant-Schwert! Vorlagen zum Nachmachen bereithalten."}],
+    6:[{n:"Minecraft-Rallye",m:"5 Stationen-Schilder, passende Aufgaben",d:"5 Stationen: Minen (Ausgrabung), Craften (Bastelaufgabe), Kämpfen (Zielwerfen), Bauen (Turm-Challenge), Boss (Quiz). Alle Stationen geschafft = Diamant-Schwert als Preis!"}],
+    7:[{n:"Craft-Challenge",m:"Verschiedenes Bastelmaterial, Rezeptkarten",d:"Teams bekommen Minecraft-Crafting-Rezepte auf Papier und müssen das Ergebnis aus echtem Bastelmaterial nachbauen. Wer erkennt was gecraftet wurde?"}],
+    8:[{n:"Minecraft-Olympiade",m:"Kissen, Bälle, Grabungsbox, Quiz-Karten",d:"Speed-Bridge: Kissen schnell auslegen und drüberlaufen. PvP: Kissenschlacht-Turnier. Mining: Schnellstes Ausgraben aus Sand. Survival: Quiz-Duell. Punkte pro Disziplin!"}],
+    9:[{n:"Minecraft-Escape",m:"Rätselblätter, Zahlenschloss, Enderman-Hinweise",d:"Der Enderman hat den Schlüssel gestohlen! 6 Rätsel: Crafting-Code, Redstone-Logik, Mob-Zuordnung, Koordinaten-Puzzle, Biom-Rätsel, finales Schloss. 30 Minuten!"}],
+    10:[{n:"Redstone-Challenge",m:"Batterie, LEDs, Kabel, Schalter (oder Papier-Version)",d:"Logische Schaltkreise bauen: UND-Gatter, ODER-Gatter. Wer schafft es, die Lampe zum Leuchten zu bringen? Papier-Version für Einsteiger, echte LEDs für Profis!"}],
+    11:[{n:"Command-Block-Rätsel",m:"Programmier-Karten, Logik-Puzzle",d:"Programmierlogik als Papier-Escape: If-Then-Befehle, Schleifen, Variablen. Jeder Command-Block enthält einen Buchstaben des Lösungsworts. 6 Blöcke = 6 Buchstaben!"}],
+    12:[{n:"Architektur-Challenge",m:"Viele kleine Kartons, Kleber, Lineale",d:"Teams bauen ein Gebäude maßstabsgetreu aus Karton-Blöcken: Schloss, Brücke oder Turm. Bewertung: Stabilität, Kreativität, Maßstab. 45 Minuten Bauzeit!"}],
+  },
+  frozen: {name:"Frozen-Eiskönigin",emoji:"\u{2744}\u{FE0F}",
+    3:[{n:"Schneeflocken basteln",m:"Weißes Papier, Schere (Kinderschere)",d:"Papier falten und kleine Dreiecke schneiden — auffalten und staunen! Jede Schneeflocke ist einzigartig, genau wie in echt. Aufhängen als Deko oder mitnehmen!"}],
+    4:[{n:"Eis-Parcours",m:"Blaue Kissen, weißes Tuch, Wattebällchen",d:"Blaue Kissen sind Eisschollen, weißes Tuch ist Schnee. Von Eisscholle zu Eisscholle hüpfen — wer ins kalte Wasser fällt, muss von vorne anfangen!"}],
+    5:[{n:"Elsa-Krone basteln",m:"Glitzer-Pappe, Kleber, Sticker, Gummiband",d:"Aus Glitzer-Pappe eine Krone ausschneiden. Mit Stickern und Glitzer dekorieren. Gummiband dran — fertig ist die Eiskönigin-Krone! Jedes Kind wird zu Elsa."}],
+    6:[{n:"Eis-Experimente",m:"Eiswürfel, Salz, Lebensmittelfarbe, Teller",d:"Salz auf Eiswürfel streuen — es entstehen Tunnel! Lebensmittelfarbe drauf = bunte Eis-Skulpturen. Kinder experimentieren frei. Wer macht die schönste Eis-Kunst?"}],
+    7:[{n:"Frozen-Rallye",m:"5 Stationen, passende Aufgaben",d:"5 Stationen: Elsas Eispalast (Eis-Experiment), Annas Abenteuer (Parcours), Olafs Sommer (Quiz), Kristoffs Berg (Klettern), Svens Rennen (Staffellauf). Stempel sammeln!"}],
+    8:[{n:"Frozen-Escape",m:"Rätselblätter, Eiswürfel mit Hinweisen, Schloss",d:"Elsa hat sich im Eispalast eingeschlossen! 5 Rätsel: Schneeflocken-Code, eingefrorene Hinweise (in Eiswürfeln!), Kristall-Farb-Reihe, Olafs Geheimnis, Tür-Code!"}],
+    9:[{n:"Eis-Skulpturen",m:"Gefrorene Eisblöcke (Milchkartons), Löffel, Werkzeug",d:"Große Eisblöcke aus dem Gefrierfach (Wasser in Milchkartons einfrieren). Mit Löffeln und warmem Wasser Skulpturen formen. Draußen machen! Kreativstes Werk gewinnt."}],
+    10:[{n:"Frozen-Escape-Room",m:"6 Rätsel, UV-Lampe, Eiskristall-Puzzle",d:"Der ewige Winter muss beendet werden! 6 eisige Rätsel in 30 Minuten: Schneeflocken-Logik, Kristall-Muster, UV-Botschaft, Eis-Code, Frozen-Quiz, Endschloss!"}],
+    11:[{n:"Eis-Experiment-Labor",m:"pH-Streifen, Thermometer, verschiedene Flüssigkeiten",d:"Wissenschaft trifft Frozen: Gefrierpunkt verschiedener Flüssigkeiten messen, Kristalle aus Salz und Zucker vergleichen, Schneeflocken unter der Lupe. Protokoll führen!"}],
+    12:[{n:"Frozen-Debatte",m:"Fakten-Karten, Timer",d:"Wer ist die bessere Königin — Elsa oder Anna? Teams sammeln Argumente, präsentieren vor der Jury. Dann: Welcher Film ist besser, 1 oder 2? Debate-Regeln gelten!"}],
+  },
+  'super-mario': {name:"Super Mario",emoji:"\u{1F344}",
+    3:[{n:"Pilz-Suche",m:"Rote Bälle oder Pilz-Bilder",d:"Rote Pilze (Bälle oder ausgedruckte Bilder) im Raum verstecken. Mario braucht Power-Ups! Jedes Kind sammelt so viele Pilze wie möglich. Goldener Stern = Bonus!"}],
+    4:[{n:"Münzen-Jagd",m:"Schoko-Goldmünzen, Garten",d:"Schoko-Goldmünzen im Garten verstecken — wie Münzen in Mario-Levels! Kinder sammeln Münzen. Spezial: Stern-Münze (eingewickelt in Gold) = doppelte Punkte!"}],
+    5:[{n:"Mario-Parcours",m:"Kissen, Hütchen, Bänke, Seil",d:"5 Mini-Levels: Über Blöcke hüpfen (Kissen), durch Röhren kriechen (Tunnel), über Abgründe balancieren (Bank), Münzen sammeln, Boss besiegen (Ball auf Ziel werfen)!"}],
+    6:[{n:"Mario-Olympiade",m:"Münzen, Hütchen, Bälle, Schildkröten-Kegel",d:"4 Disziplinen: Münzen-Wettrennen, Block-Hüpfen (Luftballons berühren), Schildkröten-Kegeln (grüne Dosen), Stern-Suche (goldener Ball finden). Punkte addieren!"}],
+    7:[{n:"Mario Kart Rennen",m:"Bobby-Cars oder Roller, Bälle als Items",d:"Rennen mit Bobby-Cars oder Rollern! Auf der Strecke liegen Items (Bälle): Wer einen aufhebt, darf auf Gegner werfen. 3 Runden, Bestzeit zählt. Start mit Countdown!"}],
+    8:[{n:"Super Mario Turnier",m:"5 Stationen, Mario-Deko",d:"5 Welten = 5 Stationen: Grassland (Hindernislauf), Wüste (Sandgraben), Eis (Schlitter-Rennen), Wolken (Ballon-Spiel), Bowsers Schloss (Boss-Kampf mit Bällen)!"}],
+    9:[{n:"Mario Maker Challenge",m:"Papier, Stifte, Bauklötze",d:"Teams entwerfen eigene Mario-Level auf Papier: Hindernisse, Power-Ups, Gegner, Geheimgänge. Dann: Anderes Team muss das Level als Parcours nachbauen und durchspielen!"}],
+    10:[{n:"Mario-Escape-Room",m:"6 Rätsel, Mario-Thema, Schloss",d:"Bowser hat Princess Peach entführt! 6 Level-Rätsel: Münzen zählen (Mathe), Röhren-Logik, Power-Up-Code, Karte lesen, Boss-Quiz, Schloss-Kombination. 30 Minuten!"}],
+    11:[{n:"Level-Design-Wettbewerb",m:"Kartons, Farben, Figuren",d:"Teams bauen ein echtes 3D Mario-Level aus Kartons: Röhren, Blöcke, Münzen, Gegner. 45 Minuten Bauzeit. Bewertung: Spielbarkeit, Kreativität, Detail-Treue!"}],
+    12:[{n:"Mario-Debatte",m:"Spieleliste, Fakten",d:"Welches Mario-Spiel ist das BESTE aller Zeiten? Teams argumentieren für ihr Spiel mit Fakten über Gameplay, Innovation, Einfluss. Jury (alle Kinder) stimmt ab!"}],
+  },
+  'spider-man': {name:"Spider-Man",emoji:"\u{1F577}\u{FE0F}",
+    3:[{n:"Spinnennetz-Krabbeln",m:"Kreppband, Türrahmen",d:"Kreppband kreuz und quer in einem Türrahmen spannen — das ist das Spinnennetz! Kinder klettern durch ohne die Fäden zu berühren. Wer durchkommt, ist Spider-Man!"}],
+    4:[{n:"Netz-Werfen",m:"Bälle, Zielscheibe an der Wand",d:"Spider-Mans Netz werfen! Bälle auf eine Zielscheibe an der Wand werfen. Mitte = 30 Punkte, außen = 10 Punkte. 5 Würfe pro Kind. Bester Web-Slinger gewinnt!"}],
+    5:[{n:"Spider-Man Maske basteln",m:"Rote Pappe, schwarzer Stift, Gummiband",d:"Aus roter Pappe eine Spider-Man Maske ausschneiden. Spinnennetz-Muster mit schwarzem Stift aufmalen. Augen-Löcher schneiden, Gummiband dran. Jeder wird zum Superhelden!"}],
+    6:[{n:"Superhelden-Training",m:"5 Stationen, verschiedene Aufgaben",d:"5 Stationen: Kraft (Liegestütze/Kniebeugen), Schnelligkeit (Sprint), Geschick (Zielwerfen), Reaktion (Fangen), Teamwork (gemeinsam Hindernis überwinden). Spider-Sense aktiviert!"}],
+    7:[{n:"Spider-Man Rallye",m:"4 Bösewicht-Stationen, Aufgaben",d:"4 Bösewichte warten an 4 Stationen: Green Goblin (Ausweich-Spiel), Doc Ock (Greifarme-Geschicklichkeit), Venom (Schnelligkeits-Test), Mysterio (Rätsel). Alle besiegt = Held!"}],
+    8:[{n:"Spider-Man Escape",m:"Rätselblätter, Bomben-Timer (Uhr), Schloss",d:"Green Goblin hat eine Bombe versteckt! 5 Rätsel: Spinnennetz-Code, Skyline-Karte lesen, Bösewicht-Steckbrief zuordnen, Netz-Logik, Bomben-Code knacken. 25 Minuten!"}],
+    9:[{n:"Superhelden-Escape-Room",m:"6 Rätsel, UV-Lampe, Spider-Gadgets",d:"New York ist in Gefahr! 6 Rätsel: UV-Nachricht auf dem Dach, Bösewicht-Datenbank, Spinnennetz-Mathe, Geheimgang im Labor, Code vom Daily Bugle, finaler Kampf!"}],
+    10:[{n:"Spider-Verse Challenge",m:"Kostüm-Material, Aufgaben-Karten",d:"Teams sind verschiedene Spider-Helden (Miles, Gwen, Peter, Noir). Jeder hat eine Spezialfähigkeit. 4 Missionen — nur zusammen lösbar! Koordination ist der Schlüssel."}],
+    11:[{n:"Comic zeichnen",m:"Comic-Vorlagen, Stifte, Lineal",d:"Jedes Team zeichnet eine eigene Spider-Man Story als Comic: 6 Panels, eigener Bösewicht, eigene Action-Szene. Coolster Comic wird prämiert!"}],
+    12:[{n:"Marvel-Debatte",m:"Helden-Karten, Fakten, Timer",d:"Wer ist der BESTE Superheld im MCU? Jedes Team vertritt einen Helden. Fakten über Stärke, Intelligenz, Einfluss. Strukturierte Debatte — Jury entscheidet!"}],
+  },
+  'harry-potter': {name:"Harry Potter",emoji:"\u{26A1}",
+    3:[{n:"Zauberstab basteln",m:"Stöcke, Heißkleber, Farbe, Glitzer",d:"Einen Stock mit Heißkleber am Griff verzieren (spiralförmig). Trocknen lassen, dann bemalen und mit Glitzer bestreuen. Fertig ist der Zauberstab! Perfektes Mitgebsel."}],
+    4:[{n:"Magische Blasen",m:"Seifenblasen-Sets",d:"Seifenblasen sind Zauber! Wer fängt die meisten Zauber (Blasen)? Große Blasen = mächtige Zauber. Kinder jagen Blasen und versuchen sie einzufangen ohne zu zerplatzen."}],
+    5:[{n:"Zaubertrank mixen",m:"Bunte Sirups, Sprudel, Brausepulver",d:"Verschiedene bunte Flüssigkeiten mischen: roter Sirup (Drachenfeuertrank), grüner (Vielsafttrank), blauer (Schlaftrank). Brausepulver = magisches Blubbern! Mutig probieren!"}],
+    6:[{n:"Haus-Zuteilung + Punkte",m:"Sprechender Hut (Hut mit Zetteln), 4 Haus-Banner",d:"Jedes Kind zieht aus dem Sprechenden Hut ein Haus (Gryffindor, Hufflepuff, Ravenclaw, Slytherin). Bei jedem folgenden Spiel sammeln die Häuser Punkte. Am Ende: Hauspokal!"}],
+    7:[{n:"Hogwarts-Rallye",m:"4 Stationen, Haus-Stempel",d:"4 Stationen für 4 Häuser-Tugenden: Mut (Hindernis), Fleiß (Ausdauer), Weisheit (Quiz), List (Strategie). Jede Station gibt Haus-Punkte. Bestes Haus gewinnt den Pokal!"}],
+    8:[{n:"Quidditch-Turnier",m:"Besen, Bälle, 3 Reifen (Hula-Hoops), Schnatz (goldener Ball)",d:"Teams spielen Boden-Quidditch: Ball durch die 3 Ringe werfen (= 10 Punkte). Goldener Schnatz (ein Kind rennt rum): Fangen = 50 Punkte + Spielende. 2 Halbzeiten!"}],
+    9:[{n:"Trimagisches Turnier",m:"3 Aufgaben-Stationen, Timer",d:"3 Aufgaben: Drachen bezwingen (Hindernis-Parcours mit Zeitdruck), Rätsel lösen (Unterwasser-Rätsel), Labyrinth (Irrgarten aus Stühlen + Tüchern). Schnellster gewinnt!"}],
+    10:[{n:"Hogwarts Escape Room",m:"7 Rätsel, Zahlenschloss, HP-Requisiten",d:"7 Stockwerke Hogwarts = 7 Rätsel: Zaubertrank-Rezept, Kräuterkunde-Zuordnung, Wahrsage-Code, Zauberspruch-Anagramm, Karte des Rumtreibers, Passwort, Dumbledores Safe!"}],
+    11:[{n:"Trank-Experiment",m:"Rotkohlsaft, Essig, Natron, verschiedene Flüssigkeiten",d:"Rotkohlsaft als pH-Indikator! Verschiedene Flüssigkeiten testen: Essig (rot!), Seife (grün!), Zitrone, Sprudel. Farben protokollieren. Echte Magie durch Wissenschaft!"}],
+    12:[{n:"Hogwarts-Debatte",m:"Haus-Karten, Argument-Vorlage, Timer",d:"Welches Haus ist das BESTE? Teams argumentieren für ihr Haus. Berühmte Mitglieder, Eigenschaften, Erfolge. Strukturierte Debatte mit Redezeit. Jury = alle Kinder!"}],
+  },
+  ninjago: {name:"Ninjago",emoji:"\u{1F977}",
+    3:[{n:"Ninja-Schleichen",m:"Start- und Zielmarkierung, Glöckchen",d:"Wer schleicht am leisesten vom Start zum Ziel? Glöckchen am Körper — wenn es klingelt, zurück zum Start! Leisester Ninja gewinnt. Konzentration und Körperkontrolle!"}],
+    4:[{n:"Ninja-Stern werfen",m:"Pappsterne, Zielscheibe",d:"Wurfsterne aus Pappe basteln und auf eine Zielscheibe werfen. Mitte = 30 Punkte, außen = 10 Punkte. 5 Würfe pro Kind. Bester Ninja-Schütze gewinnt!"}],
+    5:[{n:"Spinjitzu-Kreisel",m:"Kreisel oder selbstgebastelte Drehscheiben",d:"Wessen Kreisel dreht am längsten? Aus CDs oder Pappscheiben Kreisel basteln: Stift durch die Mitte, drehen! 3 Versuche, längste Zeit zählt. Spinjitzu-Meister!"}],
+    6:[{n:"Ninja-Training",m:"5 Stationen, Timer, Stempel",d:"5 Stationen: Kraft (Liegestütze), Geschick (Zielwerfen), Schleichen (leise laufen), Schnelligkeit (Sprint), Teamwork (gemeinsam Hindernis). Alle bestanden = Ninja-Gürtel!"}],
+    7:[{n:"Ninjago-Schnitzeljagd",m:"4 Ninja-Hinweise, Schatz",d:"4 Ninjas haben je einen Hinweis versteckt: Kai (Feuer-Rätsel), Jay (Blitz-Quiz), Cole (Erd-Puzzle), Zane (Eis-Code). Alle Hinweise zusammen = Schatz-Koordinaten!"}],
+    8:[{n:"Ninjago-Escape",m:"Rätsel, Zahlenschloss, Lord-Garmadon-Thema",d:"Lord Garmadon hat die goldenen Waffen versteckt! 5 Rätsel: Element-Code, Spinjitzu-Logik, Drachen-Zuordnung, Ninja-Zahlenfolge, Waffen-Schloss. 25 Minuten!"}],
+    9:[{n:"Element-Meister-Turnier",m:"4 Stationen in Element-Farben, Punkte-Tabelle",d:"4 Teams (Feuer/Eis/Erde/Blitz), 4 Disziplinen: Feuer (Speed), Eis (Präzision), Erde (Kraft), Blitz (Reaktion). Jedes Team bei jeder Disziplin. Punkte addieren!"}],
+    10:[{n:"Ninjago Strategie-Spiel",m:"Spielplan (Ninjago City), Figuren, Ereigniskarten",d:"Teams beschützen Ninjago City: Angriffe abwehren, Zivilisten retten, Goldene Waffen finden. Ereigniskarten bringen neue Herausforderungen. Bestes Team rettet die Stadt!"}],
+    11:[{n:"Ninjago Escape Deluxe",m:"Schwarzlicht, Zahlenschloss, technische Rätsel",d:"6 Rätsel: Schwarzlicht-Hinweise, Spinjitzu-Physik, Element-Kombination, Drachen-DNA, Ninja-Code, Lord-Garmadons-Safe. 35 Minuten. Wer schafft alle 6?"}],
+    12:[{n:"Ninja-Strategie",m:"Komplexer Spielplan, Ressourcen, Diplomatie-Karten",d:"Strategisches Planspiel: Ressourcen sammeln, Allianzen bilden, Feinde besiegen. 6 Runden mit Verhandlungen, Schlachten und Überraschungen. Bestes Team regiert Ninjago!"}],
+  },
+};
+
+// Merge EXTRA into GAMES
+Object.assign(GAMES, EXTRA);
+
+let selectedMotto = null;
+let selectedAge = 6;
+
+// Build motto grid
+const grid = document.getElementById('mottoGrid');
+const mottos = [
+  ['safari','🦁','Safari'],['piraten','🏴‍☠️','Piraten'],['weltraum','🚀','Weltraum'],
+  ['dino','🦕','Dino'],['einhorn','🦄','Einhorn'],['feuerwehr','🚒','Feuerwehr'],
+  ['paw-patrol','🐕','Paw Patrol'],['pokemon','⚡','Pokémon'],['minecraft','⛏️','Minecraft'],
+  ['frozen','❄️','Frozen'],['super-mario','🍄','Mario'],['spider-man','🕷️','Spider-Man'],
+  ['harry-potter','⚡','Harry Potter'],['ninjago','🥷','Ninjago']
+];
+
+mottos.forEach(([key, emoji, label]) => {
+  const btn = document.createElement('div');
+  btn.className = 'motto-btn';
+  btn.innerHTML = `<span class="emoji">${emoji}</span>${label}`;
+  btn.onclick = () => {
+    document.querySelectorAll('.motto-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedMotto = key;
+    checkReady();
+  };
+  grid.appendChild(btn);
+});
+
+// Age slider
+const slider = document.getElementById('ageSlider');
+const display = document.getElementById('ageDisplay');
+slider.oninput = () => {
+  selectedAge = parseInt(slider.value);
+  display.textContent = selectedAge + ' Jahre';
+  if (selectedMotto) generateCards();
+};
+
+function checkReady() {
+  document.getElementById('generateBtn').disabled = !selectedMotto;
+  if (selectedMotto) generateCards();
+}
+
+function generateCards() {
+  const motto = GAMES[selectedMotto];
+  if (!motto) return;
+
+  // Find games for selected age
+  let games = motto[selectedAge];
+  if (!games || games.length === 0) {
+    // Fallback to nearest age
+    for (let d = 1; d <= 3; d++) {
+      if (motto[selectedAge - d]) { games = motto[selectedAge - d]; break; }
+      if (motto[selectedAge + d]) { games = motto[selectedAge + d]; break; }
+    }
+  }
+  if (!games) return;
+
+  const container = document.getElementById('cardsContainer');
+  const area = document.getElementById('previewArea');
+  const title = document.getElementById('printTitle');
+
+  area.style.display = 'block';
+  title.textContent = `${motto.name} — ${selectedAge} Jahre — 3 Spielkarten`;
+
+  container.innerHTML = games.map((g, i) => `
+    <div class="card-preview">
+      <span class="card-num">Spiel ${i + 1}</span>
+      <h3>${motto.emoji} ${g.n}</h3>
+      <p><strong>Material:</strong> ${g.m}</p>
+      <p><strong>So geht's:</strong> ${g.d}</p>
+      <p style="font-size:11px;color:var(--a);margin-top:8px">machsleicht.de/${selectedMotto === 'paw-patrol' ? 'kindergeburtstag/paw-patrol' : 'kindergeburtstag/' + selectedMotto}</p>
+    </div>
+  `).join('');
+}
+</script>
+<!-- machsleicht Analytics (DSGVO-konform, keine Cookies) -->
+<script>
+(function(){
+  if(navigator.doNotTrack==='1')return;
+  var d={p:location.pathname,r:document.referrer,w:screen.width};
+  try{navigator.sendBeacon('/api/hit',JSON.stringify(d))}catch(e){}
+})();
+</script>
+<script>
+document.querySelectorAll('.copy-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var block=btn.closest('.copy-block');var text=(block.querySelector('.copy-text')||block).textContent.trim();
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){btn.textContent='✓ Kopiert';setTimeout(function(){btn.textContent='Kopieren'},2000)}).catch(function(){fallbackCopy(text,btn)});
+    }else{fallbackCopy(text,btn)}
+  });
+});
+function fallbackCopy(text,btn){var ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;opacity:0';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');btn.textContent='✓ Kopiert'}catch(e){btn.textContent='Fehler'}document.body.removeChild(ta);setTimeout(function(){btn.textContent='Kopieren'},2000)}
+</script>
+<script>
+(function(){
+  var p = window.plausible || function(){};
+  document.querySelectorAll('.cta, [data-cta="action"]').forEach(function(el){
+    el.addEventListener('click', function(){
+      p('cta-action', {props:{page:location.pathname, target:el.href||el.textContent.trim().substring(0,40)}});
+    });
+  });
+  document.querySelectorAll('.cta-safety, [data-cta="safety"]').forEach(function(el){
+    el.addEventListener('click', function(){
+      p('cta-safety', {props:{page:location.pathname, target:el.textContent.trim().substring(0,40)}});
+    });
+  });
+  document.querySelectorAll('a[rel*="sponsored"]').forEach(function(el){
+    el.addEventListener('click', function(){
+      p('affiliate-click', {props:{page:location.pathname, product:el.textContent.trim().substring(0,40)}});
+    });
+  });
+  document.querySelectorAll('.copy-btn, [data-action="copy"]').forEach(function(el){
+    el.addEventListener('click', function(){ p('copy-click', {props:{page:location.pathname}}); });
+  });
+  if(window.matchMedia){
+    window.matchMedia('print').addEventListener('change',function(e){
+      if(e.matches) p('print-click', {props:{page:location.pathname}});
+    });
+  }
+})();
+</script>
+<p style="font-size:12px;color:#6B5D52;margin-top:24px;padding-top:12px;border-top:1px solid #EDE6DE;text-align:center;max-width:660px;margin-left:auto;margin-right:auto" class="no-print">
+  * Affiliate-Link: Wenn du über diesen Link kaufst, erhalten wir eine kleine Provision. Für dich ändert sich der Preis nicht.
+</p>
+</body>
+</html>

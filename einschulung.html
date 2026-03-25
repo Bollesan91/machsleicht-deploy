@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Einschulung planen — machsleicht.de</title>
+  <meta name="description" content="Plane die perfekte Einschulungsfeier in 10 Minuten. Schultüte, Deko, Tagesablauf, Einkaufsliste — nur was du wirklich brauchst.">
+  <meta property="og:title" content="Einschulung planen — mach's leicht">
+  <meta property="og:description" content="Komplette Einschulungsfeier in 10 Minuten. Schultüte, Deko, Ablauf, Einkaufsliste — nur was du wirklich brauchst.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://machsleicht.de/einschulung">
+  <meta property="og:image" content="https://machsleicht.de/og-home.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#FFFAF5">
+  <link rel="canonical" href="https://machsleicht.de/einschulung">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "machsleicht — Einschulung planen",
+    "url": "https://machsleicht.de/einschulung",
+    "description": "Plane die perfekte Einschulungsfeier in 10 Minuten. Schultüte, Feier, Outfit, Gäste — alles fertig.",
+    "applicationCategory": "LifestyleApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "author": { "@type": "Person", "name": "Marie-Therese Bollweg" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was braucht man für die Einschulung?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Schultüte, Schulranzen, Outfit fürs Kind, Deko für die Feier, Kuchen/Snacks für die Gäste und eine Kamera für die Fotos. machsleicht erstellt eine komplette Checkliste in 10 Minuten." }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie viel kostet eine Einschulungsfeier?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Typischerweise 300–500€ inklusive Schultüte, Deko, Essen und Outfit. Im Minimal-Modus unter 200€ möglich." }
+      },
+      {
+        "@type": "Question",
+        "name": "Wann ist Einschulung 2026?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Je nach Bundesland zwischen Mitte August und Mitte September 2026. Die Termine variieren — machsleicht hilft bei der Planung unabhängig vom genauen Datum." }
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.9/babel.min.js"></script>
+  <style>
+    :root{--a:#e07a3a;--al:#fef3eb;--ad:#c46a30;--d:#1a1a1a;--m:#777;--l:#f0ede8;--bg:#fafaf8;--w:#fdfcf9;--g:#2E7D32;--am:#FF9900;--f:'DM Sans',system-ui,sans-serif;--fd:'Fraunces',Georgia,serif;--r:16px;--rs:12px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--f);color:var(--d);background:var(--w);min-height:100vh;-webkit-font-smoothing:antialiased}
+    ::selection{background:var(--al);color:var(--ad)}
+    :focus-visible{outline:2px solid var(--a);outline-offset:2px;border-radius:4px}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes scalePop{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
+    @keyframes checkPop{0%{transform:scale(0)}50%{transform:scale(1.3)}100%{transform:scale(1)}}
+    @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+    @keyframes softPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    .fu{animation:fadeUp .5s ease both}.sp{animation:scalePop .4s ease both}
+    input[type=range]{-webkit-appearance:none;width:100%;height:6px;background:var(--l);border-radius:99px;outline:none;cursor:pointer}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;background:var(--a);border-radius:50%;cursor:pointer;border:3px solid #FFF;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+    ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-thumb{background:#D4C8BC;border-radius:99px}
+    @media(max-width:480px){body{font-size:16px}input[type=range]::-webkit-slider-thumb{width:28px;height:28px}}
+  
+/* === machsleicht v1.1 Shared Modules === */
+.cta-safety{display:inline-block;background:#FFFAF5;color:#2D2319;border:2px solid #EDE6DE;padding:12px 28px;border-radius:99px;font-weight:600;font-size:14px;text-decoration:none;margin:8px 0}
+.cta-safety:hover{border-color:#E8873D;color:#E8873D}
+.snippet{background:#FFFAF5;border:2px solid #E8873D;border-radius:12px;padding:20px 24px;margin:0 0 24px 0;font-size:15px;line-height:1.6}
+.snippet strong{color:#2D2319}.snippet ul{margin:8px 0 0 0;padding-left:20px}.snippet li{margin-bottom:4px}
+.decision-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin:16px 0}
+.decision-card{display:flex;flex-direction:column;align-items:center;padding:14px 8px;background:#FFFAF5;border:2px solid #EDE6DE;border-radius:12px;text-decoration:none;color:#2D2319;transition:border-color 0.2s}
+.decision-card:hover{border-color:#E8873D}
+.budget-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+.budget-table th{background:#FFFAF5;text-align:left;padding:10px 12px;border-bottom:2px solid #E8873D;font-weight:700}
+.budget-table td{padding:10px 12px;border-bottom:1px solid #EDE6DE}
+.copy-block{background:#FFFAF5;border:1px dashed #EDE6DE;border-radius:8px;padding:16px 20px;margin:12px 0;position:relative;font-size:14px;line-height:1.6;white-space:pre-wrap}
+.copy-btn{position:absolute;top:8px;right:8px;background:#E8873D;color:#fff;border:none;border-radius:6px;padding:4px 12px;font-size:12px;cursor:pointer;font-weight:600}
+.copy-btn:hover{background:#C46A1D}
+.kaufmoment{margin:20px 0;padding:20px;background:#FFFAF5;border-radius:12px;border:1px solid #EDE6DE}
+.tip{background:#FFFAF5;border:1px solid #EDE6DE;border-left:4px solid #E8873D;border-radius:8px;padding:16px 20px;margin:16px 0;font-size:14px}
+@media print{.no-print,.cta,.cta-safety,footer,[style*="position: fixed"],[style*="sticky"]{display:none!important}body{background:#fff!important;color:#000!important;font-size:12pt}a{color:#000!important;text-decoration:none!important}.snippet{border-color:#ccc!important}.print-only{display:block!important}}
+</style>
+  <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-2v7iyzPVQbQ8l6ya79jtE.js"></script>
+<script>
+window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+plausible.init()
+</script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const{useState,useEffect,useRef,useCallback}=React;
+
+/* ─── Persistence ─── */
+const SK="ml_einschulung_";
+const loadState=(k,d)=>{try{const v=localStorage.getItem(SK+k);return v!==null?JSON.parse(v):d}catch{return d}};
+const saveState=(k,v)=>{try{localStorage.setItem(SK+k,JSON.stringify(v))}catch{}};
+
+/* ─── Analytics ─── */
+const hit=(p)=>{try{navigator.sendBeacon("/api/hit",JSON.stringify({p,r:document.referrer,w:window.innerWidth}))}catch{}};
+const trackEvent=(e,d={})=>{try{navigator.sendBeacon("/api/event",JSON.stringify({p:"/einschulung",e,...d}))}catch{}};
+
+/* ─── Lemon Squeezy ─── */
+const LS_STORE="machsleicht";
+const LS_VARIANTS={sicher_fertig_einschulung:""};
+const lsCheckout=(variantKey,customData={})=>{
+  const vid=LS_VARIANTS[variantKey];
+  if(!vid){alert("Zahlungsintegration wird gerade eingerichtet. Aktuell ist alles kostenlos — viel Spaß!");return}
+  const params=new URLSearchParams();
+  if(customData.thema)params.set("checkout[custom][thema]",customData.thema);
+  params.set("checkout[custom][source]","einschulung");
+  const url=`https://${LS_STORE}.lemonsqueezy.com/checkout/buy/${vid}?${params.toString()}`;
+  if(window.LemonSqueezy){window.LemonSqueezy.Url.Open(url)}else{window.open(url,"_blank")}
+};
+
+/* ─── Schultüten-Themen ─── */
+const THEMEN=[
+  {id:"dino",name:"Dino",emoji:"🦕",color:"#4CAF50",
+   tuete:[{name:"Schultüte Dino 85cm",price:18.99,url:"https://www.amazon.de/s?k=schult%C3%BCte+dino+85cm&tag=machsleicht21-21"}],
+   deko:[
+    {name:"Dino-Girlande",price:8.99,emoji:"🦖",bbl:"buy",url:"https://www.amazon.de/s?k=dino+girlande+einschulung&tag=machsleicht21-21"},
+    {name:"Dino-Servietten 20er",price:4.99,emoji:"🧻",bbl:"buy",url:"https://www.amazon.de/s?k=dino+servietten+kinder&tag=machsleicht21-21"},
+    {name:"Dino-Ballons 6er",price:6.99,emoji:"🎈",bbl:"buy",url:"https://www.amazon.de/s?k=dino+ballons+kinder&tag=machsleicht21-21"},
+    {name:"Tischdecke Grün",price:3.99,emoji:"🟩",bbl:"buy",url:"https://www.amazon.de/s?k=tischdecke+gr%C3%BCn+party&tag=machsleicht21-21"},
+   ],
+   dekoMin:[
+    {name:"Dino-Girlande",price:8.99,emoji:"🦖",bbl:"buy",url:"https://www.amazon.de/s?k=dino+girlande+einschulung&tag=machsleicht21-21"},
+    {name:"Dino-Ballons 6er",price:6.99,emoji:"🎈",bbl:"buy",url:"https://www.amazon.de/s?k=dino+ballons+kinder&tag=machsleicht21-21"},
+   ],
+   fuellung:[
+    {name:"Dino-Radiergummi Set",price:5.99,emoji:"✏️",url:"https://www.amazon.de/s?k=dino+radiergummi+set+kinder&tag=machsleicht21-21"},
+    {name:"Dino-Sticker",price:3.99,emoji:"🏷️",url:"https://www.amazon.de/s?k=dino+sticker+kinder&tag=machsleicht21-21"},
+    {name:"Trinkflasche Dino",price:12.99,emoji:"🥤",url:"https://www.amazon.de/s?k=trinkflasche+dino+kinder&tag=machsleicht21-21"},
+    {name:"Buntstifte 12er",price:6.99,emoji:"🖍️",url:"https://www.amazon.de/s?k=buntstifte+12+kinder&tag=machsleicht21-21"},
+    {name:"Süßigkeiten-Mix",price:4.99,emoji:"🍬",url:"https://www.amazon.de/s?k=s%C3%BC%C3%9Figkeiten+schultuete+kinder&tag=machsleicht21-21"},
+   ]},
+  {id:"einhorn",name:"Einhorn",emoji:"🦄",color:"#E91E63",
+   tuete:[{name:"Schultüte Einhorn 85cm",price:19.99,url:"https://www.amazon.de/s?k=schult%C3%BCte+einhorn+85cm&tag=machsleicht21-21"}],
+   deko:[
+    {name:"Einhorn-Girlande",price:9.99,emoji:"🦄",bbl:"buy",url:"https://www.amazon.de/s?k=einhorn+girlande+party&tag=machsleicht21-21"},
+    {name:"Rosa Servietten 20er",price:3.99,emoji:"🧻",bbl:"buy",url:"https://www.amazon.de/s?k=servietten+rosa+einhorn&tag=machsleicht21-21"},
+    {name:"Einhorn-Ballons 8er",price:7.99,emoji:"🎈",bbl:"buy",url:"https://www.amazon.de/s?k=einhorn+ballons+rosa&tag=machsleicht21-21"},
+    {name:"Tischdecke Rosa",price:3.99,emoji:"🌸",bbl:"buy",url:"https://www.amazon.de/s?k=tischdecke+rosa+party&tag=machsleicht21-21"},
+   ],
+   dekoMin:[
+    {name:"Einhorn-Girlande",price:9.99,emoji:"🦄",bbl:"buy",url:"https://www.amazon.de/s?k=einhorn+girlande+party&tag=machsleicht21-21"},
+    {name:"Einhorn-Ballons 8er",price:7.99,emoji:"🎈",bbl:"buy",url:"https://www.amazon.de/s?k=einhorn+ballons+rosa&tag=machsleicht21-21"},
+   ],
+   fuellung:[
+    {name:"Einhorn-Haarspangen Set",price:6.99,emoji:"💇",url:"https://www.amazon.de/s?k=einhorn+haarspangen+kinder&tag=machsleicht21-21"},
+    {name:"Glitzer-Sticker",price:3.99,emoji:"✨",url:"https://www.amazon.de/s?k=einhorn+glitzer+sticker&tag=machsleicht21-21"},
+    {name:"Trinkflasche Einhorn",price:12.99,emoji:"🥤",url:"https://www.amazon.de/s?k=trinkflasche+einhorn+kinder&tag=machsleicht21-21"},
+    {name:"Buntstifte 12er",price:6.99,emoji:"🖍️",url:"https://www.amazon.de/s?k=buntstifte+12+kinder&tag=machsleicht21-21"},
+    {name:"Süßigkeiten-Mix",price:4.99,emoji:"🍬",url:"https://www.amazon.de/s?k=s%C3%BC%C3%9Figkeiten+schultuete+kinder&tag=machsleicht21-21"},
+   ]},
+  {id:"fussball",name:"Fußball",emoji:"⚽",color:"#1B5E20",
+   tuete:[{name:"Schultüte Fußball 85cm",price:16.99,url:"https://www.amazon.de/s?k=schult%C3%BCte+fussball+85cm&tag=machsleicht21-21"}],
+   deko:[
+    {name:"Fußball-Girlande",price:7.99,emoji:"⚽",bbl:"buy",url:"https://www.amazon.de/s?k=fussball+girlande+party&tag=machsleicht21-21"},
+    {name:"Fußball-Teller 8er",price:4.99,emoji:"🍽️",bbl:"buy",url:"https://www.amazon.de/s?k=fussball+pappteller+kinder&tag=machsleicht21-21"},
+    {name:"Grüne Ballons 10er",price:5.99,emoji:"🎈",bbl:"buy",url:"https://www.amazon.de/s?k=ballons+gr%C3%BCn+party&tag=machsleicht21-21"},
+    {name:"Tischdecke Grün Rasen",price:4.99,emoji:"🟩",bbl:"buy",url:"https://www.amazon.de/s?k=tischdecke+rasen+fussball&tag=machsleicht21-21"},
+   ],
+   dekoMin:[
+    {name:"Fußball-Girlande",price:7.99,emoji:"⚽",bbl:"buy",url:"https://www.amazon.de/s?k=fussball+girlande+party&tag=machsleicht21-21"},
+    {name:"Grüne Ballons 10er",price:5.99,emoji:"🎈",bbl:"buy",url:"https://www.amazon.de/s?k=ballons+gr%C3%BCn+party&tag=machsleicht21-21"},
+   ],
+   fuellung:[
+    {name:"Mini-Fußball",price:5.99,emoji:"⚽",url:"https://www.amazon.de/s?k=mini+fussball+kinder&tag=machsleicht21-21"},
+    {name:"Fußball-Radiergummi",price:3.99,emoji:"✏️",url:"https://www.amazon.de/s?k=fussball+radiergummi&tag=machsleicht21-21"},
+    {name:"Trinkflasche Sport",price:11.99,emoji:"🥤",url:"https://www.amazon.de/s?k=trinkflasche+sport+kinder&tag=machsleicht21-21"},
+    {name:"Buntstifte 12er",price:6.99,emoji:"🖍️",url:"https://www.amazon.de/s?k=buntstifte+12+kinder&tag=machsleicht21-21"},
+    {name:"Süßigkeiten-Mix",price:4.99,emoji:"🍬",url:"https://www.amazon.de/s?k=s%C3%BC%C3%9Figkeiten+schultuete+kinder&tag=machsleicht21-21"},
+   ]},
+  {id:"weltraum",name:"Weltraum",emoji:"🚀",color:"#1A237E",
+   tuete:[{name:"Schultüte Rakete 85cm",price:17.99,url:"https://www.amazon.de/s?k=schult%C3%BCte+weltraum+rakete+85cm&tag=machsleicht21-21"}],
+   deko:[
+    {name:"Weltraum-Girlande",price:8.99,emoji:"🌟",bbl:"buy",url:"https://www.amazon.de/s?k=weltraum+girlande+party&tag=machsleicht21-21"},
+    {name:"Planeten-Ballons 6er",price:7.99,emoji:"🎈",bbl:"buy",url:"https://www.amazon.de/s?k=planeten+ballons+kinder&tag=machsleicht21-21"},
+    {name:"Sterne-Konfetti",price:4.99,emoji:"⭐",bbl:"buy",url:"https://www.amazon.de/s?k=sterne+konfetti+silber+gold&tag=machsleicht21-21"},
+    {name:"Tischdecke Dunkelblau",price:3.99,emoji:"🌌",bbl:"buy",url:"https://www.amazon.de/s?k=tischdecke+dunkelblau+party&tag=machsleicht21-21"},
+   ],
+   dekoMin:[
+    {name:"Weltraum-Girlande",price:8.99,emoji:"🌟",bbl:"buy",url:"https://www.amazon.de/s?k=weltraum+girlande+party&tag=machsleicht21-21"},
+    {name:"Planeten-Ballons 6er",price:7.99,emoji:"🎈",bbl:"buy",url:"https://www.amazon.de/s?k=planeten+ballons+kinder&tag=machsleicht21-21"},
+   ],
+   fuellung:[
+    {name:"Leucht-Sterne Set",price:5.99,emoji:"⭐",url:"https://www.amazon.de/s?k=leucht+sterne+kinderzimmer&tag=machsleicht21-21"},
+    {name:"Weltraum-Sticker",price:3.99,emoji:"🏷️",url:"https://www.amazon.de/s?k=weltraum+sticker+kinder&tag=machsleicht21-21"},
+    {name:"Trinkflasche Rakete",price:12.99,emoji:"🥤",url:"https://www.amazon.de/s?k=trinkflasche+weltraum+kinder&tag=machsleicht21-21"},
+    {name:"Buntstifte 12er",price:6.99,emoji:"🖍️",url:"https://www.amazon.de/s?k=buntstifte+12+kinder&tag=machsleicht21-21"},
+    {name:"Süßigkeiten-Mix",price:4.99,emoji:"🍬",url:"https://www.amazon.de/s?k=s%C3%BC%C3%9Figkeiten+schultuete+kinder&tag=machsleicht21-21"},
+   ]},
+  {id:"pferde",name:"Pferde",emoji:"🐴",color:"#795548",
+   tuete:[{name:"Schultüte Pferd 85cm",price:18.99,url:"https://www.amazon.de/s?k=schult%C3%BCte+pferd+85cm&tag=machsleicht21-21"}],
+   deko:[
+    {name:"Pferde-Girlande",price:8.99,emoji:"🐴",bbl:"buy",url:"https://www.amazon.de/s?k=pferde+girlande+party&tag=machsleicht21-21"},
+    {name:"Pferde-Servietten 20er",price:4.49,emoji:"🧻",bbl:"buy",url:"https://www.amazon.de/s?k=pferde+servietten+kinder&tag=machsleicht21-21"},
+    {name:"Braune Ballons 10er",price:5.99,emoji:"🎈",bbl:"buy",url:"https://www.amazon.de/s?k=ballons+braun+party&tag=machsleicht21-21"},
+   ],
+   dekoMin:[
+    {name:"Pferde-Girlande",price:8.99,emoji:"🐴",bbl:"buy",url:"https://www.amazon.de/s?k=pferde+girlande+party&tag=machsleicht21-21"},
+    {name:"Braune Ballons 10er",price:5.99,emoji:"🎈",bbl:"buy",url:"https://www.amazon.de/s?k=ballons+braun+party&tag=machsleicht21-21"},
+   ],
+   fuellung:[
+    {name:"Pferde-Sticker-Buch",price:5.99,emoji:"📖",url:"https://www.amazon.de/s?k=pferde+stickerbuch+kinder&tag=machsleicht21-21"},
+    {name:"Pferde-Radiergummi",price:3.99,emoji:"✏️",url:"https://www.amazon.de/s?k=pferde+radiergummi+set&tag=machsleicht21-21"},
+    {name:"Trinkflasche Pferd",price:12.99,emoji:"🥤",url:"https://www.amazon.de/s?k=trinkflasche+pferd+kinder&tag=machsleicht21-21"},
+    {name:"Buntstifte 12er",price:6.99,emoji:"🖍️",url:"https://www.amazon.de/s?k=buntstifte+12+kinder&tag=machsleicht21-21"},
+    {name:"Süßigkeiten-Mix",price:4.99,emoji:"🍬",url:"https://www.amazon.de/s?k=s%C3%BC%C3%9Figkeiten+schultuete+kinder&tag=machsleicht21-21"},
+   ]},
+];
+
+/* ─── Tagesablauf-Templates ─── */
+const ABLAUF_FEIER={
+  kirche:[
+    {zeit:"09:00",dauer:45,titel:"Einschulungsfeier / Gottesdienst",icon:"⛪",desc:"Offizielle Feier in der Schule oder Kirche"},
+    {zeit:"10:00",dauer:30,titel:"Klassenzimmer-Besuch",icon:"🏫",desc:"Erstes Kennenlernen der Lehrerin, Klassenfoto"},
+  ],
+  feier_drinnen:[
+    {zeit:"11:00",dauer:60,titel:"Mittagessen zu Hause",icon:"🍝",desc:"Einfach & kindgerecht: Nudeln, Pizza oder Würstchen"},
+    {zeit:"12:00",dauer:30,titel:"Schultüte auspacken!",icon:"🎉",desc:"DER große Moment — Kamera bereithalten!"},
+    {zeit:"12:30",dauer:60,titel:"Kaffee & Kuchen",icon:"☕",desc:"Einschulungstorte, Kaffee für die Erwachsenen"},
+    {zeit:"13:30",dauer:45,titel:"Freies Spielen / Geschenke",icon:"🎁",desc:"Kinder spielen, Erwachsene plaudern"},
+    {zeit:"14:15",dauer:15,titel:"Foto-Session",icon:"📸",desc:"Die 5 wichtigsten Einschulungs-Fotos machen"},
+    {zeit:"14:30",dauer:0,titel:"Gemütlicher Ausklang",icon:"🌇",desc:"Feier ausklingen lassen"},
+  ],
+  feier_garten:[
+    {zeit:"11:00",dauer:60,titel:"Grillen im Garten",icon:"🌭",desc:"Würstchen, Salate — entspannt und einfach"},
+    {zeit:"12:00",dauer:30,titel:"Schultüte auspacken!",icon:"🎉",desc:"DER große Moment — Kamera bereithalten!"},
+    {zeit:"12:30",dauer:60,titel:"Kaffee & Kuchen draußen",icon:"☕",desc:"Einschulungstorte unter freiem Himmel"},
+    {zeit:"13:30",dauer:60,titel:"Spielen im Garten",icon:"🏃",desc:"Federball, Seifenblasen, Hüpfburg"},
+    {zeit:"14:30",dauer:15,titel:"Foto-Session",icon:"📸",desc:"Die 5 wichtigsten Einschulungs-Fotos"},
+    {zeit:"14:45",dauer:0,titel:"Gemütlicher Ausklang",icon:"🌇",desc:"Feier ausklingen lassen"},
+  ],
+  feier_restaurant:[
+    {zeit:"11:30",dauer:90,titel:"Mittagessen im Restaurant",icon:"🍽️",desc:"Reservierung nicht vergessen! Kindermenü abklären"},
+    {zeit:"13:00",dauer:30,titel:"Schultüte auspacken!",icon:"🎉",desc:"DER große Moment — am besten draußen vor dem Restaurant"},
+    {zeit:"13:30",dauer:60,titel:"Kaffee & Kuchen",icon:"☕",desc:"Nachtisch oder eigene Torte mitbringen (vorher abklären!)"},
+    {zeit:"14:30",dauer:15,titel:"Foto-Session",icon:"📸",desc:"Die 5 wichtigsten Einschulungs-Fotos"},
+    {zeit:"14:45",dauer:0,titel:"Gemütlicher Ausklang",icon:"🌇",desc:"Feier ausklingen lassen"},
+  ],
+};
+
+const FOTO_CHECKLIST=[
+  "Kind mit Schultüte vor der Haustür",
+  "Erster Schritt ins Klassenzimmer",
+  "Schultüte auspacken — Gesichtsausdruck!",
+  "Familienfoto mit Schultüte",
+  "Kind zeigt stolz den Schulranzen",
+];
+
+/* ─── App ─── */
+function App(){
+  const[view,setView]=useState("config");
+  const[themaId,setThemaId]=useState(null);
+  const[guests,setGuests]=useState(()=>loadState("guests",12));
+  const[ort,setOrt]=useState("drinnen");
+  const[tueteChoice,setTueteChoice]=useState("kaufen"); // kaufen / basteln / fertig
+  const[shoppingMode,setShoppingMode]=useState("standard");
+  const[owned,setOwned]=useState({});
+  const[planLoc,setPlanLoc]=useState(null);
+  const[lastMinute,setLastMinute]=useState(false);
+  const[einladungSent,setEinladungSent]=useState(false);
+  const[tueteReady,setTueteReady]=useState(false);
+  const wizRef=useRef(null);
+
+  useEffect(()=>{hit("/einschulung")},[]);
+  useEffect(()=>saveState("guests",guests),[guests]);
+
+  const thema=THEMEN.find(t=>t.id===themaId);
+  const isMin=shoppingMode==="minimal";
+  const isWow=shoppingMode==="wow";
+  const effectiveLoc=planLoc||(ort==="restaurant"?"restaurant":ort);
+
+  const goLastMinute=()=>{
+    setLastMinute(true);setShoppingMode("minimal");
+    if(!themaId){const t=THEMEN[Math.floor(Math.random()*THEMEN.length)];setThemaId(t.id)}
+    setView("plan");window.scrollTo(0,0);
+    trackEvent("last_minute_start");
+  };
+
+  const reset=()=>{setView("config");setThemaId(null);setOwned({});setShoppingMode("standard");setPlanLoc(null);setLastMinute(false);setEinladungSent(false);setTueteReady(false)};
+
+  /* ─── Items ─── */
+  const getItems=()=>{
+    if(!thema)return{deko:[],fuellung:[],tuete:[],total:0};
+    const baseDeko=isMin?(thema.dekoMin||[]):thema.deko;
+    const wowExtras=isWow?[
+      {name:"Foto-Hintergrund "+thema.name,price:14.99,emoji:"📸",bbl:"buy",url:"https://www.amazon.de/s?k="+encodeURIComponent("foto hintergrund "+thema.name+" kinder einschulung")+"&tag=machsleicht21-21"},
+      {name:"LED-Lichterkette Deko",price:9.99,emoji:"✨",bbl:"buy",url:"https://www.amazon.de/s?k=led+lichterkette+deko+party&tag=machsleicht21-21"},
+    ]:[];
+    const deko=[...baseDeko,...wowExtras];
+    const fuellung=thema.fuellung||[];
+    const tuete=thema.tuete||[];
+    const all=[...deko,...fuellung,...tuete];
+    const total=all.reduce((s,i,idx)=>s+(owned[idx]?0:i.price),0);
+    return{deko,fuellung,tuete,total};
+  };
+
+  /* ─── Bereitschafts-Score ─── */
+  const getReadiness=()=>{
+    if(!thema)return null;
+    const{deko:dk,fuellung:fl,tuete:tu,total:t}=getItems();
+    const allItems=[...dk,...fl,...tu];
+    const ownedCount=Object.values(owned).filter(Boolean).length;
+    const ablauf=100;
+    const schultuete=tueteReady?100:(tueteChoice==="fertig"?40:tueteChoice==="kaufen"?50:30);
+    const material=allItems.length>0?Math.min(100,Math.round((ownedCount/allItems.length)*100)+30):80;
+    const wetter=effectiveLoc==="drinnen"||effectiveLoc==="restaurant"?100:65;
+    const budget=t<150?100:t<300?75:50;
+    const gaesteOrga=einladungSent?100:30;
+    const avg=Math.round((ablauf+schultuete+material+wetter+budget+gaesteOrga)/6);
+    const missing=[];
+    if(!tueteReady)missing.push("Schultüte besorgen");
+    if(!einladungSent)missing.push("Einladungen verschicken");
+    if(material<60)missing.push("Material einkaufen");
+    if(wetter<70)missing.push("Regen-Alternative planen");
+    return{avg,missing,dims:[
+      {label:"Ablauf",val:ablauf,icon:"📋"},
+      {label:"Schultüte",val:schultuete,icon:"🎒"},
+      {label:"Material",val:material,icon:"📦"},
+      {label:"Wetterfest",val:wetter,icon:"🌧️"},
+      {label:"Budget",val:budget,icon:"💰"},
+      {label:"Gäste-Orga",val:gaesteOrga,icon:"💌"},
+    ]};
+  };
+
+  /* ─── Ablauf ─── */
+  const getAblauf=()=>{
+    const loc=effectiveLoc;
+    const kirche=ABLAUF_FEIER.kirche;
+    const feier=loc==="garten"?ABLAUF_FEIER.feier_garten:loc==="restaurant"?ABLAUF_FEIER.feier_restaurant:ABLAUF_FEIER.feier_drinnen;
+    return[...kirche,...feier];
+  };
+
+  /* ─── Snack-Rechner ─── */
+  const snacks=useCallback(()=>{
+    const g=guests;
+    return[
+      {name:"Kuchenstücke",menge:Math.ceil(g*1.5),einheit:"Stück",tipp:"1 großer Kuchen reicht für ~12 Stücke"},
+      {name:"Würstchen / Hauptgang-Portionen",menge:Math.ceil(g*1.2),einheit:"Portionen",tipp:"Immer 20% mehr einplanen"},
+      {name:"Getränke",menge:Math.ceil(g*0.5),einheit:"Liter",tipp:"Apfelschorle + Wasser reicht meistens"},
+      {name:"Kaffee (Erwachsene)",menge:Math.ceil(g*0.3),einheit:"Liter",tipp:"~6 Tassen pro Liter"},
+      {name:"Süßigkeiten für Tisch",menge:Math.ceil(g*3),einheit:"Stück",tipp:"Gummibärchen, Schoko-Riegel, etc."},
+    ];
+  },[guests]);
+
+  /* ─── RENDER ─── */
+  const bx={background:"#fff",border:"2px solid var(--l)",borderRadius:"var(--r)",padding:"clamp(16px,4vw,28px)",marginBottom:16};
+  const btn=(bg,fg)=>({background:bg||"var(--a)",color:fg||"#fff",border:"none",borderRadius:"var(--r)",padding:"14px 28px",fontSize:16,fontWeight:700,fontFamily:"var(--f)",cursor:"pointer",width:"100%",transition:"all .2s"});
+
+  return React.createElement("div",{style:{maxWidth:520,margin:"0 auto",padding:"clamp(16px,4vw,24px)"}},
+
+    /* ─── Header ─── */
+    React.createElement("header",{style:{textAlign:"center",padding:"8px 0 16px"}},
+      React.createElement("a",{href:"/",style:{textDecoration:"none"}},
+        React.createElement("span",{style:{fontFamily:"var(--fd)",fontSize:22,fontWeight:800,color:"var(--d)"}},"mach's"),
+        React.createElement("span",{style:{fontFamily:"var(--fd)",fontSize:22,fontWeight:800,color:"var(--a)"}},"leicht"),
+      ),
+    ),
+
+    /* ═══════════ CONFIG VIEW ═══════════ */
+    view==="config" && React.createElement("div",{className:"fu"},
+
+      /* Hero */
+      React.createElement("div",{style:{textAlign:"center",padding:"32px 0 24px"}},
+        React.createElement("div",{style:{fontSize:56,marginBottom:12,animation:"float 3s ease-in-out infinite"}},"🎒"),
+        React.createElement("h1",{style:{fontFamily:"var(--fd)",fontSize:"clamp(28px,6vw,36px)",fontWeight:800,lineHeight:1.15,marginBottom:12}},
+          "Einschulung planen.",
+          React.createElement("br"),
+          React.createElement("span",{style:{color:"var(--a)"}},"In 10 Minuten fertig."),
+        ),
+        React.createElement("p",{style:{color:"var(--m)",fontSize:16,lineHeight:1.6,maxWidth:400,margin:"0 auto 24px"}},
+          "Schultüte, Feier, Deko, Ablauf — nur was du wirklich brauchst. Für 827.500 Erstklässler pro Jahr."
+        ),
+        React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:10,maxWidth:320,margin:"0 auto"}},
+          React.createElement("button",{onClick:()=>{wizRef.current?.scrollIntoView({behavior:"smooth"})},style:btn()},"🎒 Einschulung planen"),
+          React.createElement("button",{onClick:goLastMinute,style:{...btn("#C62828","#fff"),animation:"softPulse 2s ease-in-out infinite"}},"🚨 Morgen ist Einschulung!"),
+        ),
+      ),
+
+      /* Trust */
+      React.createElement("div",{style:{display:"flex",justifyContent:"center",gap:24,padding:"16px 0 24px",color:"var(--m)",fontSize:13}},
+        React.createElement("span",null,"✓ Kostenlos"),
+        React.createElement("span",null,"✓ Ohne Anmeldung"),
+        React.createElement("span",null,"✓ DSGVO-konform"),
+      ),
+
+      /* Wizard */
+      React.createElement("div",{ref:wizRef,style:{...bx,marginTop:8}},
+        React.createElement("h2",{style:{fontFamily:"var(--fd)",fontSize:22,fontWeight:700,marginBottom:16}},"Deine Einschulung"),
+
+        /* Thema */
+        React.createElement("div",{style:{marginBottom:20}},
+          React.createElement("label",{style:{fontWeight:700,fontSize:14,marginBottom:8,display:"block"}},"Schultüten-Thema"),
+          React.createElement("div",{style:{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(90px,1fr))",gap:8}},
+            THEMEN.map(t=>React.createElement("button",{key:t.id,onClick:()=>setThemaId(t.id),style:{
+              background:themaId===t.id?"var(--al)":"#fff",border:`2px solid ${themaId===t.id?"var(--a)":"var(--l)"}`,
+              borderRadius:"var(--rs)",padding:"12px 4px",cursor:"pointer",textAlign:"center",fontSize:13,fontFamily:"var(--f)",fontWeight:themaId===t.id?700:400,transition:"all .2s"
+            }},
+              React.createElement("div",{style:{fontSize:28,marginBottom:4}},t.emoji),
+              t.name,
+            ))
+          ),
+        ),
+
+        /* Gäste */
+        React.createElement("div",{style:{marginBottom:20}},
+          React.createElement("label",{style:{fontWeight:700,fontSize:14,marginBottom:8,display:"block"}},`Gäste: ${guests}`),
+          React.createElement("input",{type:"range",min:4,max:40,value:guests,onChange:e=>setGuests(+e.target.value)}),
+          React.createElement("div",{style:{display:"flex",justifyContent:"space-between",fontSize:12,color:"var(--m)"}},"4 Familie"," ","40+ Großfeier"),
+        ),
+
+        /* Ort */
+        React.createElement("div",{style:{marginBottom:20}},
+          React.createElement("label",{style:{fontWeight:700,fontSize:14,marginBottom:8,display:"block"}},"Feier-Ort"),
+          React.createElement("div",{style:{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:8}},
+            [{id:"drinnen",emoji:"🏠",label:"Drinnen"},{id:"garten",emoji:"🌳",label:"Garten"},{id:"restaurant",emoji:"🍽️",label:"Restaurant"}].map(o=>
+              React.createElement("button",{key:o.id,onClick:()=>setOrt(o.id),style:{
+                background:ort===o.id?"var(--al)":"#fff",border:`2px solid ${ort===o.id?"var(--a)":"var(--l)"}`,
+                borderRadius:"var(--rs)",padding:"10px 4px",cursor:"pointer",textAlign:"center",fontSize:13,fontFamily:"var(--f)",fontWeight:ort===o.id?700:400
+              }},React.createElement("div",{style:{fontSize:20}},o.emoji),o.label)
+            )
+          ),
+        ),
+
+        /* Schultüte */
+        React.createElement("div",{style:{marginBottom:20}},
+          React.createElement("label",{style:{fontWeight:700,fontSize:14,marginBottom:8,display:"block"}},"Schultüte"),
+          React.createElement("div",{style:{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:8}},
+            [{id:"kaufen",emoji:"🛒",label:"Kaufen"},{id:"basteln",emoji:"✂️",label:"Basteln"},{id:"fertig",emoji:"🎁",label:"Fertig befüllt"}].map(o=>
+              React.createElement("button",{key:o.id,onClick:()=>setTueteChoice(o.id),style:{
+                background:tueteChoice===o.id?"var(--al)":"#fff",border:`2px solid ${tueteChoice===o.id?"var(--a)":"var(--l)"}`,
+                borderRadius:"var(--rs)",padding:"10px 4px",cursor:"pointer",textAlign:"center",fontSize:13,fontFamily:"var(--f)",fontWeight:tueteChoice===o.id?700:400
+              }},React.createElement("div",{style:{fontSize:20}},o.emoji),o.label)
+            )
+          ),
+        ),
+
+        /* Start */
+        React.createElement("button",{
+          onClick:()=>{if(!themaId){alert("Bitte wähle ein Schultüten-Thema.");return}setView("plan");window.scrollTo(0,0);trackEvent("plan_created",{thema:themaId,guests,ort})},
+          style:{...btn(),marginTop:8,fontSize:18}
+        },"🎒 Plan erstellen"),
+      ),
+
+      /* Kindergeburtstag-Link */
+      React.createElement("div",{style:{textAlign:"center",padding:"24px 0"}},
+        React.createElement("a",{href:"/kindergeburtstag",style:{color:"var(--a)",fontSize:14,fontWeight:600}},"🎂 Kindergeburtstag planen →"),
+      ),
+    ),
+
+    /* ═══════════ PLAN VIEW ═══════════ */
+    view==="plan" && thema && React.createElement("div",{className:"fu"},
+
+      /* Back + Reset */
+      React.createElement("div",{style:{display:"flex",justifyContent:"space-between",marginBottom:16}},
+        React.createElement("button",{onClick:reset,style:{background:"none",border:"none",color:"var(--a)",cursor:"pointer",fontFamily:"var(--f)",fontWeight:600,fontSize:14}},"← Zurück"),
+        React.createElement("button",{onClick:reset,style:{background:"none",border:"none",color:"var(--m)",cursor:"pointer",fontFamily:"var(--f)",fontSize:13}},"Neu starten"),
+      ),
+
+      /* Last-Minute Banner */
+      lastMinute && React.createElement("div",{style:{background:"linear-gradient(135deg,#C62828,#E53935)",color:"#fff",borderRadius:"var(--r)",padding:16,marginBottom:16,textAlign:"center"}},
+        React.createElement("div",{style:{fontSize:20,fontWeight:800,marginBottom:4}},"🚨 Notfall-Modus aktiv"),
+        React.createElement("p",{style:{fontSize:13,opacity:.9}},"Minimal-Einkauf, einfacher Ablauf, kein Stress."),
+        React.createElement("button",{onClick:()=>setLastMinute(false),style:{background:"rgba(255,255,255,.2)",border:"1px solid rgba(255,255,255,.4)",color:"#fff",borderRadius:8,padding:"6px 14px",fontSize:12,cursor:"pointer",marginTop:8,fontFamily:"var(--f)"}},"Normalmodus"),
+      ),
+
+      /* Peak Moment */
+      React.createElement("div",{style:{textAlign:"center",padding:"24px 0",animation:"scalePop .5s ease both"}},
+        React.createElement("div",{style:{fontSize:64,marginBottom:8}},thema.emoji),
+        React.createElement("h2",{style:{fontFamily:"var(--fd)",fontSize:28,fontWeight:800,marginBottom:4}},thema.name+"-Einschulung"),
+        React.createElement("p",{style:{color:"var(--m)",fontSize:14}},`${guests} Gäste · ${ort==="restaurant"?"Restaurant":ort==="garten"?"Garten":"Drinnen"} · Schultüte ${tueteChoice}`),
+      ),
+
+      /* ─── Bereitschafts-Score ─── */
+      (()=>{
+        const r=getReadiness();if(!r)return null;
+        const pct=r.avg;const circ=2*Math.PI*45;const offset=circ-(circ*pct/100);
+        const col=pct>=80?"var(--g)":pct>=50?"var(--am)":"#C62828";
+        return React.createElement("div",{style:{...bx,textAlign:"center"}},
+          React.createElement("h3",{style:{fontFamily:"var(--fd)",fontSize:18,fontWeight:700,marginBottom:16}},"Bereitschafts-Score"),
+          React.createElement("svg",{width:120,height:120,style:{margin:"0 auto 12px",display:"block"}},
+            React.createElement("circle",{cx:60,cy:60,r:45,fill:"none",stroke:"var(--l)",strokeWidth:8}),
+            React.createElement("circle",{cx:60,cy:60,r:45,fill:"none",stroke:col,strokeWidth:8,strokeDasharray:circ,strokeDashoffset:offset,strokeLinecap:"round",transform:"rotate(-90 60 60)",style:{transition:"all .8s ease"}}),
+            React.createElement("text",{x:60,y:56,textAnchor:"middle",fontSize:28,fontWeight:800,fill:col},pct+"%"),
+            React.createElement("text",{x:60,y:72,textAnchor:"middle",fontSize:10,fill:"var(--m)"},pct>=80?"Bereit!":pct>=50?"Fast fertig":"Noch was zu tun"),
+          ),
+          React.createElement("div",{style:{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginTop:8}},
+            r.dims.map((d,i)=>React.createElement("div",{key:i,style:{textAlign:"left",padding:"6px 8px",background:"var(--bg)",borderRadius:8}},
+              React.createElement("div",{style:{fontSize:12,color:"var(--m)",marginBottom:2}},d.icon+" "+d.label),
+              React.createElement("div",{style:{background:"var(--l)",borderRadius:99,height:6,overflow:"hidden"}},
+                React.createElement("div",{style:{width:d.val+"%",height:"100%",background:d.val>=80?"var(--g)":d.val>=50?"var(--am)":"#C62828",borderRadius:99,transition:"width .5s ease"}}),
+              ),
+            ))
+          ),
+          r.missing.length>0 && React.createElement("div",{style:{marginTop:12,padding:10,background:"#FFF3E0",borderRadius:8,fontSize:13,textAlign:"left"}},
+            React.createElement("strong",null,"Fehlt noch: "),r.missing.join(" · "),
+          ),
+          /* Quick toggles */
+          React.createElement("div",{style:{display:"flex",gap:8,marginTop:12,justifyContent:"center",flexWrap:"wrap"}},
+            React.createElement("label",{style:{display:"flex",alignItems:"center",gap:6,fontSize:13,cursor:"pointer",background:einladungSent?"#E8F5E9":"var(--bg)",padding:"6px 12px",borderRadius:8,border:"1px solid var(--l)"}},
+              React.createElement("input",{type:"checkbox",checked:einladungSent,onChange:()=>setEinladungSent(!einladungSent)}),
+              "💌 Einladungen verschickt"
+            ),
+            React.createElement("label",{style:{display:"flex",alignItems:"center",gap:6,fontSize:13,cursor:"pointer",background:tueteReady?"#E8F5E9":"var(--bg)",padding:"6px 12px",borderRadius:8,border:"1px solid var(--l)"}},
+              React.createElement("input",{type:"checkbox",checked:tueteReady,onChange:()=>setTueteReady(!tueteReady)}),
+              "🎒 Schultüte fertig"
+            ),
+          ),
+        );
+      })(),
+
+      /* ─── Einkaufsmodi + Ort-Schalter ─── */
+      React.createElement("div",{style:{...bx}},
+        React.createElement("div",{style:{display:"flex",gap:4,marginBottom:12}},
+          [{id:"minimal",emoji:"🌿",label:"Minimal"},{id:"standard",emoji:"🎯",label:"Standard"},{id:"wow",emoji:"✨",label:"Wow"}].map(m=>
+            React.createElement("button",{key:m.id,onClick:()=>{setShoppingMode(m.id);setOwned({})},style:{
+              flex:1,background:shoppingMode===m.id?"var(--a)":"#fff",color:shoppingMode===m.id?"#fff":"var(--d)",
+              border:`2px solid ${shoppingMode===m.id?"var(--a)":"var(--l)"}`,borderRadius:8,padding:"8px 4px",
+              cursor:"pointer",fontSize:13,fontFamily:"var(--f)",fontWeight:shoppingMode===m.id?700:400
+            }},m.emoji+" "+m.label)
+          )
+        ),
+        React.createElement("div",{style:{display:"flex",gap:4}},
+          [{id:"drinnen",emoji:"🏠",label:"Drinnen"},{id:"garten",emoji:"🌳",label:"Garten"},{id:"restaurant",emoji:"🍽️",label:"Restaurant"}].map(l=>
+            React.createElement("button",{key:l.id,onClick:()=>setPlanLoc(l.id),style:{
+              flex:1,background:(planLoc||ort)===l.id?"var(--al)":"#fff",color:(planLoc||ort)===l.id?"var(--ad)":"var(--d)",
+              border:`2px solid ${(planLoc||ort)===l.id?"var(--a)":"var(--l)"}`,borderRadius:8,padding:"8px 4px",
+              cursor:"pointer",fontSize:13,fontFamily:"var(--f)",fontWeight:(planLoc||ort)===l.id?700:400
+            }},l.emoji+" "+l.label)
+          )
+        ),
+        planLoc && planLoc!==ort && React.createElement("div",{style:{marginTop:8,padding:8,background:"#E3F2FD",borderRadius:8,fontSize:12,display:"flex",justifyContent:"space-between",alignItems:"center"}},
+          React.createElement("span",null,"🔄 Ort geändert: "+({drinnen:"Drinnen",garten:"Garten",restaurant:"Restaurant"})[planLoc]),
+          React.createElement("button",{onClick:()=>setPlanLoc(null),style:{background:"none",border:"none",color:"var(--a)",cursor:"pointer",fontSize:12,fontFamily:"var(--f)"}},"Zurücksetzen"),
+        ),
+      ),
+
+      /* ─── Tagesablauf ─── */
+      React.createElement("div",{style:{...bx}},
+        React.createElement("h3",{style:{fontFamily:"var(--fd)",fontSize:18,fontWeight:700,marginBottom:16}},"📋 Tagesablauf"),
+        getAblauf().map((a,i)=>React.createElement("div",{key:i,style:{display:"flex",gap:12,marginBottom:12,paddingBottom:12,borderBottom:i<getAblauf().length-1?"1px solid var(--l)":"none"}},
+          React.createElement("div",{style:{minWidth:50,textAlign:"right",fontWeight:700,fontSize:14,color:"var(--a)"}},a.zeit),
+          React.createElement("div",{style:{fontSize:24}},a.icon),
+          React.createElement("div",null,
+            React.createElement("div",{style:{fontWeight:700,fontSize:14}},a.titel),
+            React.createElement("div",{style:{fontSize:13,color:"var(--m)",marginTop:2}},a.desc),
+            a.dauer>0 && React.createElement("div",{style:{fontSize:11,color:"var(--m)",marginTop:2}},a.dauer+" Min."),
+          ),
+        )),
+      ),
+
+      /* ─── Schultüten-Empfehlung ─── */
+      tueteChoice!=="fertig" && React.createElement("div",{style:{...bx}},
+        React.createElement("h3",{style:{fontFamily:"var(--fd)",fontSize:18,fontWeight:700,marginBottom:12}},"🎒 Schultüte: "+thema.name),
+        tueteChoice==="kaufen" && React.createElement("div",null,
+          thema.tuete.map((t,i)=>React.createElement("a",{key:i,href:t.url,target:"_blank",rel:"noopener",style:{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"10px 12px",background:"var(--bg)",borderRadius:8,marginBottom:8,textDecoration:"none",color:"var(--d)",border:"1px solid var(--l)"}},
+            React.createElement("span",{style:{fontWeight:600,fontSize:14}},t.name),
+            React.createElement("span",{style:{color:"var(--a)",fontWeight:700}},t.price.toFixed(2)+"€ →"),
+          )),
+          React.createElement("p",{style:{fontSize:13,color:"var(--m)",marginTop:4}},"Tipp: Bei Amazon nach '"+thema.name+" Schultüte 85cm' suchen für mehr Auswahl."),
+        ),
+        tueteChoice==="basteln" && React.createElement("div",{style:{padding:12,background:"var(--bg)",borderRadius:8}},
+          React.createElement("p",{style:{fontWeight:700,fontSize:14,marginBottom:8}},"DIY Schultüte — "+thema.name),
+          React.createElement("p",{style:{fontSize:13,color:"var(--m)",lineHeight:1.5}},"Du brauchst: Schultüten-Rohling (3–5€), "+thema.name+"-Motive zum Aufkleben, Krepppapier in passender Farbe, Kleber + Schere. Zeitaufwand: ca. 1–2 Stunden."),
+          React.createElement("a",{href:"https://www.amazon.de/s?k="+encodeURIComponent("schultüte rohling basteln 85cm")+"&tag=machsleicht21-21",target:"_blank",style:{display:"inline-block",marginTop:8,color:"var(--a)",fontWeight:600,fontSize:13}},"Rohling bei Amazon →"),
+        ),
+      ),
+
+      /* ─── Füllung ─── */
+      tueteChoice!=="fertig" && React.createElement("div",{style:{...bx}},
+        React.createElement("h3",{style:{fontFamily:"var(--fd)",fontSize:18,fontWeight:700,marginBottom:12}},"🎁 Schultüten-Füllung"),
+        (thema.fuellung||[]).map((f,i)=>{
+          const idx="f_"+i;
+          return React.createElement("div",{key:idx,style:{display:"flex",alignItems:"center",gap:10,padding:"8px 0",borderBottom:"1px solid var(--l)"}},
+            React.createElement("button",{onClick:()=>setOwned(p=>({...p,[idx]:!p[idx]})),style:{width:24,height:24,borderRadius:6,border:`2px solid ${owned[idx]?"var(--g)":"var(--l)"}`,background:owned[idx]?"var(--g)":"#fff",color:"#fff",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",fontSize:14,flexShrink:0}},owned[idx]?"✓":""),
+            React.createElement("span",{style:{fontSize:18}},f.emoji),
+            React.createElement("div",{style:{flex:1}},
+              React.createElement("div",{style:{fontSize:14,fontWeight:500,textDecoration:owned[idx]?"line-through":"none",color:owned[idx]?"var(--m)":"var(--d)"}},f.name),
+            ),
+            React.createElement("a",{href:f.url,target:"_blank",rel:"noopener",style:{fontSize:13,color:"var(--a)",fontWeight:600,flexShrink:0}},f.price.toFixed(2)+"€"),
+          );
+        }),
+      ),
+
+      /* ─── Deko-Einkaufsliste ─── */
+      React.createElement("div",{style:{...bx}},
+        React.createElement("h3",{style:{fontFamily:"var(--fd)",fontSize:18,fontWeight:700,marginBottom:12}},"🎈 Deko-Einkaufsliste"),
+        React.createElement("p",{style:{fontSize:13,color:"var(--m)",marginBottom:12}},
+          shoppingMode==="minimal"?"Nur das Nötigste — reicht völlig.":shoppingMode==="wow"?"Maximale Deko für den Wow-Effekt!":"Alles was ihr braucht, nichts was ihr nicht braucht."
+        ),
+        getItems().deko.map((item,i)=>{
+          const idx="d_"+i;
+          return React.createElement("div",{key:idx,style:{display:"flex",alignItems:"center",gap:10,padding:"8px 0",borderBottom:"1px solid var(--l)"}},
+            React.createElement("button",{onClick:()=>setOwned(p=>({...p,[idx]:!p[idx]})),style:{width:24,height:24,borderRadius:6,border:`2px solid ${owned[idx]?"var(--g)":"var(--l)"}`,background:owned[idx]?"var(--g)":"#fff",color:"#fff",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",fontSize:14,flexShrink:0}},owned[idx]?"✓":""),
+            React.createElement("span",{style:{fontSize:18}},item.emoji),
+            React.createElement("div",{style:{flex:1}},
+              React.createElement("div",{style:{fontSize:14,fontWeight:500,textDecoration:owned[idx]?"line-through":"none",color:owned[idx]?"var(--m)":"var(--d)"}},item.name),
+            ),
+            React.createElement("a",{href:item.url,target:"_blank",rel:"noopener",style:{fontSize:13,color:"var(--a)",fontWeight:600,flexShrink:0}},item.price.toFixed(2)+"€"),
+          );
+        }),
+        /* WhatsApp + Amazon buttons */
+        React.createElement("div",{style:{display:"flex",gap:8,marginTop:16}},
+          React.createElement("button",{onClick:()=>{
+            const items=[...getItems().deko,...getItems().fuellung,...getItems().tuete].filter((_,i)=>!owned["d_"+i]&&!owned["f_"+i]);
+            const text="🎒 Einkaufsliste Einschulung "+thema.name+":\n\n"+items.map(i=>i.emoji+" "+i.name+" ("+i.price.toFixed(2)+"€)").join("\n")+"\n\nErstellt mit machsleicht.de/einschulung";
+            window.open("https://wa.me/?text="+encodeURIComponent(text));
+            trackEvent("whatsapp_share_einschulung");
+          },style:{...btn("#25D366","#fff"),flex:1,fontSize:14,padding:"10px 12px"}},"📱 WhatsApp"),
+          React.createElement("button",{onClick:()=>{
+            const buyItems=[...getItems().deko,...getItems().fuellung].filter(i=>!i.bbl||i.bbl==="buy").slice(0,5);
+            const q=buyItems.map(i=>i.name).join(" ");
+            window.open("https://www.amazon.de/s?k="+encodeURIComponent(q)+"&tag=machsleicht21-21");
+            trackEvent("amazon_search_einschulung");
+          },style:{...btn("#FF9900","#fff"),flex:1,fontSize:14,padding:"10px 12px"}},"🛒 Amazon"),
+        ),
+      ),
+
+      /* ─── Snack-Rechner ─── */
+      React.createElement("div",{style:{...bx}},
+        React.createElement("h3",{style:{fontFamily:"var(--fd)",fontSize:18,fontWeight:700,marginBottom:12}},"🍰 Mengen-Rechner ({guests} Gäste)".replace("{guests}",guests)),
+        snacks().map((s,i)=>React.createElement("div",{key:i,style:{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"8px 0",borderBottom:"1px solid var(--l)"}},
+          React.createElement("div",null,
+            React.createElement("div",{style:{fontSize:14,fontWeight:500}},s.name),
+            React.createElement("div",{style:{fontSize:12,color:"var(--m)"}},s.tipp),
+          ),
+          React.createElement("div",{style:{fontWeight:700,color:"var(--a)",fontSize:16,minWidth:60,textAlign:"right"}},s.menge+" "+s.einheit),
+        )),
+      ),
+
+      /* ─── Foto-Checklist ─── */
+      React.createElement("div",{style:{...bx}},
+        React.createElement("h3",{style:{fontFamily:"var(--fd)",fontSize:18,fontWeight:700,marginBottom:12}},"📸 5 Fotos, die ihr nicht verpassen dürft"),
+        FOTO_CHECKLIST.map((f,i)=>React.createElement("div",{key:i,style:{display:"flex",gap:8,alignItems:"center",padding:"6px 0"}},
+          React.createElement("span",{style:{color:"var(--a)",fontWeight:700}},i+1+"."),
+          React.createElement("span",{style:{fontSize:14}},f),
+        )),
+      ),
+
+      /* ─── Einladungstext ─── */
+      React.createElement("div",{style:{...bx}},
+        React.createElement("h3",{style:{fontFamily:"var(--fd)",fontSize:18,fontWeight:700,marginBottom:12}},"💌 Einladungstext"),
+        React.createElement("div",{style:{background:"var(--bg)",borderRadius:8,padding:12,fontSize:14,lineHeight:1.6}},
+          `Liebe Familie / Liebe Freunde,\n\nwir feiern [Name]s Einschulung! 🎒\n\n📅 Datum: [Datum]\n🕐 Uhrzeit: nach der Schulfeier, ca. 11:00 Uhr\n📍 Ort: [Adresse]\n\nWir freuen uns auf euch!\n\nLiebe Grüße,\n[Eure Namen]`.split("\n").map((line,i)=>React.createElement("div",{key:i,style:{minHeight:line?undefined:8}},line)),
+        ),
+        React.createElement("button",{onClick:()=>{
+          const text=`Liebe Familie,\n\nwir feiern die Einschulung! 🎒\n\nNach der Schulfeier laden wir euch herzlich ein.\n\nWir freuen uns auf euch!\n\nErstellt mit machsleicht.de/einschulung`;
+          window.open("https://wa.me/?text="+encodeURIComponent(text));
+        },style:{...btn("#25D366","#fff"),marginTop:12,fontSize:14}},"📱 Per WhatsApp verschicken"),
+      ),
+
+      /* ─── Das reicht ─── */
+      React.createElement("div",{style:{background:"linear-gradient(135deg,#E8F5E9,#C8E6C9)",borderRadius:"var(--r)",padding:"clamp(24px,5vw,48px)",textAlign:"center",marginBottom:16}},
+        React.createElement("div",{style:{fontSize:56,marginBottom:12,animation:"float 3s ease-in-out infinite"}},"✅"),
+        React.createElement("h3",{style:{fontFamily:"var(--fd)",fontSize:24,fontWeight:800,color:"var(--g)",marginBottom:8}},"Das reicht."),
+        React.createElement("p",{style:{color:"#2E7D32",fontSize:15,lineHeight:1.6,maxWidth:360,margin:"0 auto 16px"}},"Dein Einschulungsplan steht. Schultüte, Feier, Deko, Ablauf — alles geplant."),
+        React.createElement("div",{style:{display:"flex",justifyContent:"center",gap:16,flexWrap:"wrap",fontSize:13}},
+          React.createElement("span",null,"📋 Ablauf fertig"),
+          React.createElement("span",null,"🛒 Einkauf klar"),
+          React.createElement("span",null,"📸 Foto-Checklist bereit"),
+        ),
+        React.createElement("div",{style:{marginTop:16,fontSize:18,fontWeight:700,color:"var(--g)"}},
+          "~"+getItems().total.toFixed(0)+"€ Gesamtkosten",
+        ),
+      ),
+
+      /* ─── Paid Moment ─── */
+      React.createElement("div",{style:{background:"linear-gradient(135deg,var(--al),#FFF8F0)",border:"2px solid var(--a)",borderRadius:"var(--r)",padding:"clamp(20px,4vw,32px)",textAlign:"center",marginBottom:16}},
+        React.createElement("div",{style:{fontSize:14,fontWeight:700,color:"var(--a)",textTransform:"uppercase",letterSpacing:1,marginBottom:8}},"Einschulungs-Paket"),
+        React.createElement("div",{style:{fontSize:13,color:"var(--d)",lineHeight:1.6,textAlign:"left",marginBottom:16}},
+          ["📄 Druckbarer Tagesablauf","📋 Exakte Einkaufsliste als PDF","✂️ Schultüten-Bastel-Anleitung","📸 Foto-Shot-Liste mit Tipps","🌧️ Regen-Backup-Plan","💌 Einladungs- & Dankes-Vorlagen"].map((t,i)=>React.createElement("div",{key:i,style:{padding:"3px 0"}},"✓ "+t.slice(2))),
+        ),
+        React.createElement("button",{onClick:()=>lsCheckout("sicher_fertig_einschulung",{thema:themaId}),style:{...btn(),fontSize:16,marginBottom:8}},"Einschulungs-Paket — €4,99"),
+        React.createElement("div",{style:{fontSize:12,color:"var(--m)"}},"Kein Abo. Einmal zahlen, für diese Einschulung."),
+        React.createElement("button",{onClick:()=>{},style:{background:"none",border:"none",color:"var(--m)",cursor:"pointer",fontSize:13,fontFamily:"var(--f)",marginTop:8}},"Gratisplan weiter nutzen →"),
+      ),
+
+      /* Footer */
+      React.createElement("footer",{style:{textAlign:"center",padding:"24px 0 40px",fontSize:12,color:"var(--m)"}},
+        React.createElement("a",{href:"/",style:{color:"var(--m)",textDecoration:"none"}},"machsleicht.de")," · ",
+        React.createElement("a",{href:"/kindergeburtstag",style:{color:"var(--a)",textDecoration:"none"}},"Kindergeburtstag")," · ",
+        React.createElement("a",{href:"/impressum",style:{color:"var(--m)",textDecoration:"none"}},"Impressum"),
+        React.createElement("p",{style:{marginTop:8}},"* Affiliate-Links: Wir erhalten eine kleine Provision — für dich ändert sich der Preis nicht."),
+      ),
+    ),
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App));
+</script>
+
+<!-- Analytics -->
+<script>
+(function(){
+  var p="/einschulung"+location.pathname.replace(/\/einschulung/,"");
+  if(p==="/einschulung/")p="/einschulung";
+  try{navigator.sendBeacon("/api/hit",JSON.stringify({p:p,r:document.referrer,w:window.innerWidth}))}catch(e){}
+  document.addEventListener("click",function(e){
+    var a=e.target.closest("a[href*='amazon.de']");
+    if(a)try{navigator.sendBeacon("/api/event",JSON.stringify({p:p,e:"affiliate_click",d:{url:a.href}}))}catch(x){}
+  });
+})();
+</script>
+<script>
+document.querySelectorAll('.copy-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var block=btn.closest('.copy-block');var text=(block.querySelector('.copy-text')||block).textContent.trim();
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){btn.textContent='✓ Kopiert';setTimeout(function(){btn.textContent='Kopieren'},2000)}).catch(function(){fallbackCopy(text,btn)});
+    }else{fallbackCopy(text,btn)}
+  });
+});
+function fallbackCopy(text,btn){var ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;opacity:0';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');btn.textContent='✓ Kopiert'}catch(e){btn.textContent='Fehler'}document.body.removeChild(ta);setTimeout(function(){btn.textContent='Kopieren'},2000)}
+</script>
+<script>
+(function(){
+  var p = window.plausible || function(){};
+  document.querySelectorAll('.cta, [data-cta="action"]').forEach(function(el){
+    el.addEventListener('click', function(){
+      p('cta-action', {props:{page:location.pathname, target:el.href||el.textContent.trim().substring(0,40)}});
+    });
+  });
+  document.querySelectorAll('.cta-safety, [data-cta="safety"]').forEach(function(el){
+    el.addEventListener('click', function(){
+      p('cta-safety', {props:{page:location.pathname, target:el.textContent.trim().substring(0,40)}});
+    });
+  });
+  document.querySelectorAll('a[rel*="sponsored"]').forEach(function(el){
+    el.addEventListener('click', function(){
+      p('affiliate-click', {props:{page:location.pathname, product:el.textContent.trim().substring(0,40)}});
+    });
+  });
+  document.querySelectorAll('.copy-btn, [data-action="copy"]').forEach(function(el){
+    el.addEventListener('click', function(){ p('copy-click', {props:{page:location.pathname}}); });
+  });
+  if(window.matchMedia){
+    window.matchMedia('print').addEventListener('change',function(e){
+      if(e.matches) p('print-click', {props:{page:location.pathname}});
+    });
+  }
+})();
+</script>
+<p style="font-size:12px;color:#6B5D52;margin-top:24px;padding-top:12px;border-top:1px solid #EDE6DE;text-align:center;max-width:660px;margin-left:auto;margin-right:auto" class="no-print">
+  * Affiliate-Link: Wenn du über diesen Link kaufst, erhalten wir eine kleine Provision. Für dich ändert sich der Preis nicht.
+</p>
+</body>
+</html>

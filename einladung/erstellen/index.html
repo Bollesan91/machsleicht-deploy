@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Piraten-Einladung erstellen | machsleicht.de</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #1a1a2e;
+    color: #fff;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card {
+    background: linear-gradient(145deg, #2a2a4a, #1e1e3a);
+    border-radius: 20px;
+    padding: 32px 28px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0,0,0,.4);
+    border: 1px solid rgba(255,255,255,.06);
+  }
+  .header { text-align: center; margin-bottom: 28px; }
+  .header .emoji { font-size: 48px; margin-bottom: 8px; }
+  .header h1 { font-size: 20px; font-weight: 800; color: #FFD700; }
+  .header p { font-size: 13px; color: rgba(255,255,255,.5); margin-top: 4px; }
+  .field { margin-bottom: 16px; }
+  .field label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,.5);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
+  .field input {
+    width: 100%;
+    padding: 12px 14px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    transition: border-color .2s;
+  }
+  .field input:focus {
+    border-color: #FFD700;
+    background: rgba(255,215,0,.05);
+  }
+  .field input::placeholder { color: rgba(255,255,255,.25); }
+  .row { display: flex; gap: 12px; }
+  .row .field { flex: 1; }
+  .btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #1a1a2e;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: transform .1s, box-shadow .2s;
+  }
+  .btn:active { transform: scale(.97); }
+  .btn:disabled { opacity: .5; cursor: not-allowed; }
+
+  /* Ergebnis */
+  .result { display: none; text-align: center; margin-top: 20px; }
+  .result.show { display: block; }
+  .result-link {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,215,0,.3);
+    border-radius: 10px;
+    padding: 14px;
+    margin: 12px 0;
+    word-break: break-all;
+    font-size: 14px;
+    color: #FFD700;
+    font-weight: 600;
+  }
+  .result-actions { display: flex; gap: 10px; margin-top: 12px; }
+  .result-actions button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .btn-copy { background: rgba(255,255,255,.1); color: #fff; }
+  .btn-wa { background: #25D366; color: #fff; }
+  .btn-preview { background: rgba(255,215,0,.15); color: #FFD700; margin-top: 8px; display: block; width: 100%; padding: 10px; border-radius: 10px; border: none; font-size: 13px; font-weight: 600; cursor: pointer; }
+
+  .footer { text-align: center; margin-top: 20px; }
+  .footer a { color: rgba(255,255,255,.2); font-size: 10px; text-decoration: none; }
+  .toast {
+    position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+    background: #25D366; color: #fff; padding: 10px 20px; border-radius: 99px;
+    font-size: 13px; font-weight: 600; opacity: 0; transition: opacity .3s;
+    pointer-events: none;
+  }
+  .toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="header">
+    <div class="emoji">🏴‍☠️</div>
+    <h1>Piraten-Einladung erstellen</h1>
+    <p>In 30 Sekunden fertig!</p>
+  </div>
+
+  <form id="form" onsubmit="return handleSubmit(event)">
+    <div class="field">
+      <label>Name des Kindes</label>
+      <input type="text" id="name" placeholder="z.B. Mattis" required>
+    </div>
+    <div class="row">
+      <div class="field">
+        <label>Datum</label>
+        <input type="text" id="date" placeholder="z.B. Samstag, 15. Mai" required>
+      </div>
+      <div class="field">
+        <label>Uhrzeit</label>
+        <input type="text" id="time" placeholder="z.B. 14:00 - 17:00" required>
+      </div>
+    </div>
+    <div class="field">
+      <label>Ort</label>
+      <input type="text" id="ort" placeholder="z.B. Volkspark Friedrichshain" required>
+    </div>
+    <div class="field">
+      <label>Deine WhatsApp-Nummer (f&uuml;r Zusagen)</label>
+      <input type="tel" id="tel" placeholder="z.B. 01701234567" required>
+    </div>
+    <button type="submit" class="btn" id="submitBtn">🏴‍☠️ Einladung erstellen</button>
+  </form>
+
+  <div class="result" id="result">
+    <p style="font-size:14px;color:rgba(255,255,255,.6)">Deine Einladung ist fertig!</p>
+    <div class="result-link" id="resultLink"></div>
+    <div class="result-actions">
+      <button class="btn-copy" onclick="copyLink()">📋 Link kopieren</button>
+      <button class="btn-wa" onclick="shareWA()">💬 Per WhatsApp teilen</button>
+    </div>
+    <button class="btn-preview" onclick="openPreview()">👀 Vorschau ansehen</button>
+  </div>
+
+  <div class="footer"><a href="https://machsleicht.de">machsleicht.de</a></div>
+</div>
+<div class="toast" id="toast">Link kopiert!</div>
+
+<script>
+let generatedUrl = '';
+
+async function handleSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Wird erstellt...';
+
+  const data = {
+    name: document.getElementById('name').value.trim(),
+    date: document.getElementById('date').value.trim(),
+    time: document.getElementById('time').value.trim(),
+    ort: document.getElementById('ort').value.trim(),
+    tel: document.getElementById('tel').value.trim().replace(/[^0-9+]/g, '')
+  };
+
+  // Telefonnummer normalisieren: 0170... -> 49170...
+  if (data.tel.startsWith('0')) data.tel = '49' + data.tel.slice(1);
+  if (data.tel.startsWith('+')) data.tel = data.tel.slice(1);
+
+  try {
+    const res = await fetch('/.netlify/functions/create-invite', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    const result = await res.json();
+    if (!res.ok) throw new Error(result.error || 'Fehler');
+
+    generatedUrl = window.location.origin + '/e/' + result.slug;
+    document.getElementById('resultLink').textContent = generatedUrl;
+    document.getElementById('result').classList.add('show');
+    document.getElementById('form').style.display = 'none';
+  } catch (err) {
+    alert('Fehler: ' + err.message);
+    btn.disabled = false;
+    btn.textContent = '🏴‍☠️ Einladung erstellen';
+  }
+}
+
+function copyLink() {
+  navigator.clipboard.writeText(generatedUrl).then(() => {
+    const t = document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2000);
+  });
+}
+
+function shareWA() {
+  const name = document.getElementById('name').value.trim();
+  const msg = encodeURIComponent(
+    'Ahoi! 🏴‍☠️ Du bist eingeladen zu ' + name + 's Piraten-Geburtstag!\n\n' +
+    '👉 Öffne deine Einladung hier:\n' + generatedUrl
+  );
+  window.open('https://wa.me/?text=' + msg, '_blank');
+}
+
+function openPreview() {
+  window.open(generatedUrl, '_blank');
+}
+</script>
+</body>
+</html>

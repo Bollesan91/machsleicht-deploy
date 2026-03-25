@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft erklärt für Eltern — Creeper, Crafting & Survival in 2 Minuten | machsleicht</title>
+  <meta name="description" content="Dein Kind redet von Creepern und Endermen? Hier ist Minecraft für Eltern erklärt — alles was du für den Geburtstag brauchst.">
+  <meta property="og:title" content="Minecraft erklärt für Eltern | machsleicht">
+  <meta property="og:description" content="Dein Kind redet von Creepern und Endermen? Hier ist Minecraft für Eltern erklärt — alles was du für den Geburtstag brauchst.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://machsleicht.de/minecraft-guide">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#FFFAF5">
+  <link rel="canonical" href="https://machsleicht.de/minecraft-guide">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&display=swap" rel="stylesheet">
+  <style>
+:root{--a:#E8873D;--bg:#FFFAF5;--w:#FFF8F0;--d:#2D2319;--m:#6B5D52;--l:#EDE6DE;--f:'DM Sans',system-ui,sans-serif;--fd:'Fraunces',Georgia,serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--f);color:var(--d);background:var(--w);-webkit-font-smoothing:antialiased;line-height:1.7}
+a{color:var(--a);text-decoration:none;font-weight:600}a:hover{text-decoration:underline}
+main{max-width:720px;margin:0 auto;padding:24px 16px 60px}
+h1{font-family:var(--fd);font-size:clamp(26px,5vw,36px);font-weight:900;line-height:1.2;margin-bottom:16px}
+h2{font-family:var(--fd);font-size:22px;font-weight:800;margin:32px 0 12px;color:var(--d)}
+h3{font-size:17px;font-weight:700;margin:20px 0 8px}
+p{margin-bottom:12px;color:var(--m);font-size:15px}
+ul{padding-left:20px;margin-bottom:16px}
+li{margin-bottom:6px;font-size:14px;color:var(--m)}
+.header{display:flex;align-items:center;padding:14px 0 24px;gap:12px}
+.header a{text-decoration:none}
+.logo{font-family:var(--fd);font-size:22px;font-weight:900;color:var(--d)}
+.logo span{color:var(--a)}
+.badge{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--a);text-transform:uppercase;margin-bottom:8px}
+.cta{display:inline-block;background:var(--a);color:#fff;padding:14px 32px;border-radius:99px;font-weight:700;font-size:15px;text-decoration:none;margin:8px 0}
+.cta:hover{background:#C46A1D;text-decoration:none}
+.card{background:var(--bg);border:1px solid var(--l);border-radius:14px;padding:20px;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-bottom:24px}
+.breadcrumb{font-size:12px;color:var(--m);margin-bottom:16px}
+.breadcrumb a{font-size:12px;font-weight:500}
+.charcard{display:flex;gap:12px;align-items:flex-start;padding:14px;background:var(--bg);border:1px solid var(--l);border-radius:12px;margin-bottom:8px}
+.charcard .emoji{font-size:28px;flex-shrink:0}
+.charcard .info{flex:1}
+.charcard .name{font-weight:700;font-size:14px;color:var(--d)}
+.charcard .desc{font-size:13px;color:var(--m);margin-top:2px}
+.tipbox{background:#FFF3E0;border:1px solid #FFE0B2;border-radius:12px;padding:16px;margin:16px 0}
+.tipbox strong{color:var(--a)}
+.related{background:var(--bg);border:1px solid var(--l);border-radius:14px;padding:16px;margin-top:24px}
+.related h3{margin-top:0}
+footer{text-align:center;margin-top:40px;padding:16px 0;border-top:1px solid var(--l);font-size:12px;color:var(--m)}
+footer a{font-size:12px;color:var(--m);font-weight:400}
+@media(max-width:480px){main{padding:16px 12px 40px}}
+
+/* === machsleicht v1.1 Shared Modules === */
+.cta-safety{display:inline-block;background:#FFFAF5;color:#2D2319;border:2px solid #EDE6DE;padding:12px 28px;border-radius:99px;font-weight:600;font-size:14px;text-decoration:none;margin:8px 0}
+.cta-safety:hover{border-color:#E8873D;color:#E8873D}
+.snippet{background:#FFFAF5;border:2px solid #E8873D;border-radius:12px;padding:20px 24px;margin:0 0 24px 0;font-size:15px;line-height:1.6}
+.snippet strong{color:#2D2319}.snippet ul{margin:8px 0 0 0;padding-left:20px}.snippet li{margin-bottom:4px}
+.decision-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin:16px 0}
+.decision-card{display:flex;flex-direction:column;align-items:center;padding:14px 8px;background:#FFFAF5;border:2px solid #EDE6DE;border-radius:12px;text-decoration:none;color:#2D2319;transition:border-color 0.2s}
+.decision-card:hover{border-color:#E8873D}
+.budget-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+.budget-table th{background:#FFFAF5;text-align:left;padding:10px 12px;border-bottom:2px solid #E8873D;font-weight:700}
+.budget-table td{padding:10px 12px;border-bottom:1px solid #EDE6DE}
+.copy-block{background:#FFFAF5;border:1px dashed #EDE6DE;border-radius:8px;padding:16px 20px;margin:12px 0;position:relative;font-size:14px;line-height:1.6;white-space:pre-wrap}
+.copy-btn{position:absolute;top:8px;right:8px;background:#E8873D;color:#fff;border:none;border-radius:6px;padding:4px 12px;font-size:12px;cursor:pointer;font-weight:600}
+.copy-btn:hover{background:#C46A1D}
+.kaufmoment{margin:20px 0;padding:20px;background:#FFFAF5;border-radius:12px;border:1px solid #EDE6DE}
+.tip{background:#FFFAF5;border:1px solid #EDE6DE;border-left:4px solid #E8873D;border-radius:8px;padding:16px 20px;margin:16px 0;font-size:14px}
+@media print{.no-print,.cta,.cta-safety,footer,[style*="position: fixed"],[style*="sticky"]{display:none!important}body{background:#fff!important;color:#000!important;font-size:12pt}a{color:#000!important;text-decoration:none!important}.snippet{border-color:#ccc!important}.print-only{display:block!important}}
+</style>
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-2v7iyzPVQbQ8l6ya79jtE.js"></script>
+<script>
+window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+plausible.init()
+</script>
+</head>
+<body>
+<main>
+  <header class="header">
+    <a href="/kindergeburtstag"><span class="logo">mach's<span>leicht</span></span></a>
+  </header>
+  <nav class="breadcrumb"><a href="/kindergeburtstag">Start</a> › <a href="/#mottos">Mottos</a> › Minecraft erklärt für Eltern</nav>
+
+  <p class="badge">Eltern-Guide</p>
+  <h1>⛏️ Minecraft erklärt für Eltern — Creeper, Crafting und der Enderdrache</h1>
+  <p style="font-size:16px;color:var(--d)">Dein Kind baut stundenlang Klötzchen auf dem Tablet und du verstehst nur Pixel? Hier ist Minecraft in 2 Minuten — genug für den perfekten Geburtstag.</p>
+
+  <a href="/kindergeburtstag" class="cta">⛏️ Geburtstag jetzt planen →</a>
+
+  
+<h2>Was ist Minecraft?</h2>
+<p style="color:var(--d)">Minecraft ist ein Videospiel in dem ALLES aus Würfeln (Blöcken) besteht — Bäume, Berge, Häuser, sogar Tiere. Spieler können Blöcke abbauen und neue Dinge daraus bauen. Es gibt keinen festen Story-Ablauf — die Kinder entscheiden selbst was sie tun: bauen, erkunden, Tiere züchten oder Monster bekämpfen.</p>
+<p style="color:var(--d)">Minecraft ist das meistverkaufte Spiel aller Zeiten (über 300 Millionen Mal). Dein Kind spielt es wahrscheinlich auf Tablet, PC oder Konsole. Es ist grundsätzlich gewaltfrei — die Monster" sind Klötze-Wesen und es gibt kein Blut.</p>
+
+<h2>Die Figuren die du kennen musst</h2>
+<div class="charcard"><div class="emoji">🟩</div><div class="info"><div class="name">Creeper — das grüne Ding das explodiert</div><div class="desc">DAS Minecraft-Symbol. Ein grünes, gesichtsloses Wesen das leise anschleicht und dann BUMM explodiert. Kinder lieben und fürchten ihn gleichzeitig. Perfekt für Dosenwerfen.</div></div></div>
+<div class="charcard"><div class="emoji">🧑</div><div class="info"><div class="name">Steve — der Spieler</div><div class="desc">Die Standard-Spielfigur. Blaues Shirt, dunkle Hose. Dein Kind IST Steve (oder Alex, die weibliche Version) wenn es spielt.</div></div></div>
+<div class="charcard"><div class="emoji">🟫</div><div class="info"><div class="name">Enderman — das große schwarze Wesen</div><div class="desc">Groß, schwarz, leuchtende Augen. Teleportiert sich. Greift nur an wenn man es anschaut. Gruselig, aber faszinierend für Kinder.</div></div></div>
+<div class="charcard"><div class="emoji">🐉</div><div class="info"><div class="name">Enderdrache — der Endboss</div><div class="desc">Ein großer schwarzer Drache. Das Endziel" des Spiels. Ihn zu besiegen ist ein Riesenereignis. Perfekt als Piñata oder finale Station.</div></div></div>
+<div class="charcard"><div class="emoji">🧟</div><div class="info"><div class="name">Zombies & Skelette — die Nacht-Monster</div><div class="desc">Nachts kommen sie raus. Zombies wanken, Skelette schießen Pfeile. Klassische Gegner. Gut für Fangspiele.</div></div></div>
+
+<div class="tipbox"><strong>💡 Eltern-Tipp:</strong> Die drei Zauberwörter: <strong>Crafting</strong> (Dinge herstellen aus Zutaten), <strong>Survival</strong> (Überleben gegen Monster) und <strong>Creative</strong> (freies Bauen ohne Grenzen). Frag dein Kind: Spielst du eher Survival oder Creative?" — das sagt dir welcher Geburtstags-Stil passt.</div>
+
+<h2>Was davon für den Geburtstag wichtig ist</h2>
+<ul>
+<li style="color:var(--d)"><strong>Blöcke = Pixel:</strong> Alles ist quadratisch. Deko aus Kartons bauen (angemalt als Gras-Block, Erz-Block, TNT) ist einfach und sieht sofort nach Minecraft aus.</li>
+<li style="color:var(--d)"><strong>Creeper-Gesicht:</strong> Grüner Hintergrund + schwarzes Gesicht (zwei Rechtecke als Augen, ein Mund). Das erkennt jedes Kind sofort. Auf Becher malen = Dosenwerfen.</li>
+<li style="color:var(--d)"><strong>Diamanten:</strong> Blaue Bonbons oder blaue Lego-Steine = Diamanten". Die wertvollste Ressource im Spiel. Perfekt als Schatz.</li>
+<li style="color:var(--d)"><strong>TNT:</strong> Rote Blöcke mit weißem TNT" drauf. Kinder lieben es. Kisten rot anmalen und TNT draufschreiben = Deko.</li>
+<li style="color:var(--d)"><strong>Bauen:</strong> LEGO-Bauwettbewerb passt perfekt zum Minecraft-Thema. Wer baut das coolste Haus in 10 Minuten?</li>
+</ul>
+
+<h2>Alterseinschätzung</h2>
+<p style="color:var(--d)"><strong>6 bis 12 Jahre</strong>. Unter 6 ist das Spiel zu komplex, aber das Thema (Klötze, Monster) funktioniert trotzdem. Ab 12 ist es ein Dauerbrenner — Minecraft wird nie uncool.</p>
+
+  <h2>⛏️ Minecraft-Geburtstag planen</h2>
+  <p style="color:var(--d)">Jetzt wo du die Basics kennst: machsleicht erstellt dir in 10 Minuten einen kompletten Geburtstags-Plan — Zeitplan, Spiele, Einkaufsliste, Kosten pro Kind. Kostenlos, ohne Anmeldung.</p>
+  <a href="/kindergeburtstag" class="cta">⛏️ Geburtstag planen →</a>
+
+  <div class="related">
+    <h3>Weiter lesen</h3>
+    <div class="grid">
+      
+    <a href="/kindergeburtstag/minecraft" style="text-decoration:none"><div class="card" style="text-align:center;padding:14px"><p style="font-weight:700;color:var(--d)">Minecraft Geburtstag planen</p><span style="font-size:12px;color:var(--m)">Spiele & Ablauf</span></div></a>
+
+    <a href="/kindergeburtstag/pokemon" style="text-decoration:none"><div class="card" style="text-align:center;padding:14px"><p style="font-weight:700;color:var(--d)">Pokémon Geburtstag</p><span style="font-size:12px;color:var(--m)">Für 5–10 Jahre</span></div></a>
+      <a href="/schatzsuche" style="text-decoration:none"><div class="card" style="text-align:center;padding:14px"><p style="font-weight:700;color:var(--d)">Schatzsuche erstellen</p><span style="font-size:12px;color:var(--m)">In 5 Minuten</span></div></a>
+    </div>
+  </div>
+
+  
+<div style="background:linear-gradient(135deg,var(--al),#fff8e8);border:1px solid var(--l);border-radius:var(--r);padding:20px;margin:24px 0;text-align:center">
+  <p style="font-size:15px;font-weight:700;color:var(--d);margin:0 0 8px">Noch mehr über Minecraft?</p>
+  <p style="font-size:13px;color:var(--m);margin:0 0 14px">Unser Eltern-Ratgeber erklärt alles, was du als Mama oder Papa wissen musst.</p>
+  <a href="/ratgeber/minecraft-fuer-eltern" class="cta" style="display:inline-block;padding:12px 24px;font-size:14px">👨‍👩‍👧 Minecraft Eltern-Ratgeber →</a>
+</div>
+
+<footer>
+    <p>© 2026 machsleicht.de · <a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a> · <a href="/schatzsuche">Schatzsuche</a></p>
+    <p style="margin-top:8px"><a href="/kindergeburtstag">← Zurück zum Planer</a></p>
+  </footer>
+</main>
+<script>
+document.querySelectorAll('.copy-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var block=btn.closest('.copy-block');var text=(block.querySelector('.copy-text')||block).textContent.trim();
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){btn.textContent='✓ Kopiert';setTimeout(function(){btn.textContent='Kopieren'},2000)}).catch(function(){fallbackCopy(text,btn)});
+    }else{fallbackCopy(text,btn)}
+  });
+});
+function fallbackCopy(text,btn){var ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;opacity:0';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');btn.textContent='✓ Kopiert'}catch(e){btn.textContent='Fehler'}document.body.removeChild(ta);setTimeout(function(){btn.textContent='Kopieren'},2000)}
+</script>
+<script>
+(function(){
+  var p = window.plausible || function(){};
+  document.querySelectorAll('.cta, [data-cta="action"]').forEach(function(el){
+    el.addEventListener('click', function(){
+      p('cta-action', {props:{page:location.pathname, target:el.href||el.textContent.trim().substring(0,40)}});
+    });
+  });
+  document.querySelectorAll('.cta-safety, [data-cta="safety"]').forEach(function(el){
+    el.addEventListener('click', function(){
+      p('cta-safety', {props:{page:location.pathname, target:el.textContent.trim().substring(0,40)}});
+    });
+  });
+  document.querySelectorAll('a[rel*="sponsored"]').forEach(function(el){
+    el.addEventListener('click', function(){
+      p('affiliate-click', {props:{page:location.pathname, product:el.textContent.trim().substring(0,40)}});
+    });
+  });
+  document.querySelectorAll('.copy-btn, [data-action="copy"]').forEach(function(el){
+    el.addEventListener('click', function(){ p('copy-click', {props:{page:location.pathname}}); });
+  });
+  if(window.matchMedia){
+    window.matchMedia('print').addEventListener('change',function(e){
+      if(e.matches) p('print-click', {props:{page:location.pathname}});
+    });
+  }
+})();
+</script>
+<p style="font-size:12px;color:#6B5D52;margin-top:24px;padding-top:12px;border-top:1px solid #EDE6DE;text-align:center;max-width:660px;margin-left:auto;margin-right:auto" class="no-print">
+  * Affiliate-Link: Wenn du über diesen Link kaufst, erhalten wir eine kleine Provision. Für dich ändert sich der Preis nicht.
+</p>
+<div id="sticky-cta" style="position:fixed;bottom:0;left:0;right:0;background:rgba(255,248,240,0.95);backdrop-filter:blur(8px);padding:10px 16px;text-align:center;border-top:1px solid #EDE6DE;z-index:100;display:none" class="no-print">
+  <a href="/kindergeburtstag" class="cta" style="padding:10px 24px;font-size:14px">🎂 Jetzt planen →</a>
+</div>
+<script>if(window.innerWidth<=640){var s=document.getElementById('sticky-cta');window.addEventListener('scroll',function(){s.style.display=window.scrollY>300?'block':'none'})}</script>
+</body>
+</html>
