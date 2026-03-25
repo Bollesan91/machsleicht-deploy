@@ -1,5 +1,3 @@
-import { getStore } from "@netlify/blobs";
-
 export default async (req) => {
   const url = new URL(req.url);
   const slug = url.pathname.replace(/^\/e\//, "").replace(/\/$/, "");
@@ -9,11 +7,17 @@ export default async (req) => {
   }
 
   try {
-    const store = getStore("einladungen");
-    const data = await store.get(slug, { type: "json" });
-
-    if (!data) {
+    // Slug format: name-base64payload
+    const dashIdx = slug.indexOf("-");
+    if (dashIdx === -1) {
       return new Response("Einladung nicht gefunden", { status: 404 });
+    }
+
+    const encoded = slug.substring(dashIdx + 1);
+    const data = JSON.parse(Buffer.from(encoded, "base64url").toString("utf-8"));
+
+    if (!data.name || !data.date || !data.time || !data.ort || !data.tel) {
+      return new Response("Ungueltige Einladung", { status: 400 });
     }
 
     // Redirect zur Einladung mit URL-Parametern
@@ -32,6 +36,6 @@ export default async (req) => {
       }
     });
   } catch (err) {
-    return new Response("Fehler: " + err.message, { status: 500 });
+    return new Response("Einladung nicht gefunden", { status: 404 });
   }
 };
