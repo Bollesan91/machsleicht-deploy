@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Piraten-Einladung erstellen | machsleicht.de</title>
+<title>Einladung erstellen | machsleicht.de</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -19,14 +19,14 @@
     background: linear-gradient(145deg, #2a2a4a, #1e1e3a);
     border-radius: 20px;
     padding: 32px 28px;
-    max-width: 400px;
+    max-width: 420px;
     width: 90%;
     box-shadow: 0 20px 60px rgba(0,0,0,.4);
     border: 1px solid rgba(255,255,255,.06);
   }
   .header { text-align: center; margin-bottom: 28px; }
-  .header .emoji { font-size: 48px; margin-bottom: 8px; }
-  .header h1 { font-size: 20px; font-weight: 800; color: #FFD700; }
+  .header .emoji { font-size: 48px; margin-bottom: 8px; transition: all .3s; }
+  .header h1 { font-size: 20px; font-weight: 800; color: #FFD700; transition: color .3s; }
   .header p { font-size: 13px; color: rgba(255,255,255,.5); margin-top: 4px; }
   .field { margin-bottom: 16px; }
   .field label {
@@ -38,7 +38,7 @@
     text-transform: uppercase;
     letter-spacing: .5px;
   }
-  .field input {
+  .field input, .field select {
     width: 100%;
     padding: 12px 14px;
     background: rgba(255,255,255,.07);
@@ -49,13 +49,42 @@
     outline: none;
     transition: border-color .2s;
   }
-  .field input:focus {
+  .field input:focus, .field select:focus {
     border-color: #FFD700;
     background: rgba(255,215,0,.05);
   }
   .field input::placeholder { color: rgba(255,255,255,.25); }
+  .field select option { background: #1e1e3a; color: #fff; }
   .row { display: flex; gap: 12px; }
   .row .field { flex: 1; }
+
+  /* Motto-Auswahl */
+  .motto-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .motto-btn {
+    background: rgba(255,255,255,.07);
+    border: 2px solid rgba(255,255,255,.1);
+    border-radius: 12px;
+    padding: 12px 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: all .2s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .motto-btn:hover { background: rgba(255,255,255,.12); }
+  .motto-btn.active {
+    border-color: #FFD700;
+    background: rgba(255,215,0,.1);
+    box-shadow: 0 0 12px rgba(255,215,0,.15);
+  }
+  .motto-btn .motto-emoji { font-size: 28px; margin-bottom: 4px; }
+  .motto-btn .motto-label { font-size: 11px; font-weight: 700; color: rgba(255,255,255,.7); }
+  .motto-btn.active .motto-label { color: #FFD700; }
+
   .btn {
     width: 100%;
     padding: 14px;
@@ -114,12 +143,41 @@
 <body>
 <div class="card">
   <div class="header">
-    <div class="emoji">🏴‍☠️</div>
-    <h1>Piraten-Einladung erstellen</h1>
+    <div class="emoji" id="headerEmoji">🎉</div>
+    <h1 id="headerTitle">Einladung erstellen</h1>
     <p>In 30 Sekunden fertig!</p>
   </div>
 
   <form id="form" onsubmit="return handleSubmit(event)">
+    <div class="field">
+      <label>Motto w&auml;hlen</label>
+      <div class="motto-grid" id="mottoGrid">
+        <div class="motto-btn active" data-motto="piraten" onclick="selectMotto(this)">
+          <div class="motto-emoji">🏴‍☠️</div>
+          <div class="motto-label">Piraten</div>
+        </div>
+        <div class="motto-btn" data-motto="safari" onclick="selectMotto(this)">
+          <div class="motto-emoji">🦁</div>
+          <div class="motto-label">Safari</div>
+        </div>
+        <div class="motto-btn" data-motto="weltraum" onclick="selectMotto(this)">
+          <div class="motto-emoji">🚀</div>
+          <div class="motto-label">Weltraum</div>
+        </div>
+        <div class="motto-btn" data-motto="dino" onclick="selectMotto(this)">
+          <div class="motto-emoji">🦕</div>
+          <div class="motto-label">Dino</div>
+        </div>
+        <div class="motto-btn" data-motto="einhorn" onclick="selectMotto(this)">
+          <div class="motto-emoji">🦄</div>
+          <div class="motto-label">Einhorn</div>
+        </div>
+        <div class="motto-btn" data-motto="feuerwehr" onclick="selectMotto(this)">
+          <div class="motto-emoji">🚒</div>
+          <div class="motto-label">Feuerwehr</div>
+        </div>
+      </div>
+    </div>
     <div class="field">
       <label>Name des Kindes</label>
       <input type="text" id="name" placeholder="z.B. Mattis" required>
@@ -142,7 +200,7 @@
       <label>Deine WhatsApp-Nummer (f&uuml;r Zusagen)</label>
       <input type="tel" id="tel" placeholder="z.B. 01701234567" required>
     </div>
-    <button type="submit" class="btn" id="submitBtn">🏴‍☠️ Einladung erstellen</button>
+    <button type="submit" class="btn" id="submitBtn">🎉 Einladung erstellen</button>
   </form>
 
   <div class="result" id="result">
@@ -161,6 +219,26 @@
 
 <script>
 let generatedUrl = '';
+let selectedMotto = 'piraten';
+
+const MOTTO_CONFIG = {
+  piraten:   { emoji: '🏴‍☠️', title: 'Piraten-Einladung erstellen', btn: '🏴‍☠️ Einladung erstellen', wa: 'Ahoi! 🏴‍☠️' },
+  safari:    { emoji: '🦁', title: 'Safari-Einladung erstellen', btn: '🦁 Einladung erstellen', wa: 'Jambo! 🦁' },
+  weltraum:  { emoji: '🚀', title: 'Weltraum-Einladung erstellen', btn: '🚀 Einladung erstellen', wa: 'Houston! 🚀' },
+  dino:      { emoji: '🦕', title: 'Dino-Einladung erstellen', btn: '🦕 Einladung erstellen', wa: 'Roar! 🦕' },
+  einhorn:   { emoji: '🦄', title: 'Einhorn-Einladung erstellen', btn: '🦄 Einladung erstellen', wa: 'Magisch! 🦄' },
+  feuerwehr: { emoji: '🚒', title: 'Feuerwehr-Einladung erstellen', btn: '🚒 Einladung erstellen', wa: 'Tatütataaa! 🚒' }
+};
+
+function selectMotto(el) {
+  document.querySelectorAll('.motto-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  selectedMotto = el.dataset.motto;
+  const cfg = MOTTO_CONFIG[selectedMotto];
+  document.getElementById('headerEmoji').textContent = cfg.emoji;
+  document.getElementById('headerTitle').textContent = cfg.title;
+  document.getElementById('submitBtn').textContent = cfg.btn;
+}
 
 async function handleSubmit(e) {
   e.preventDefault();
@@ -173,7 +251,8 @@ async function handleSubmit(e) {
     date: document.getElementById('date').value.trim(),
     time: document.getElementById('time').value.trim(),
     ort: document.getElementById('ort').value.trim(),
-    tel: document.getElementById('tel').value.trim().replace(/[^0-9+]/g, '')
+    tel: document.getElementById('tel').value.trim().replace(/[^0-9+]/g, ''),
+    motto: selectedMotto
   };
 
   // Telefonnummer normalisieren: 0170... -> 49170...
@@ -196,7 +275,8 @@ async function handleSubmit(e) {
   } catch (err) {
     alert('Fehler: ' + err.message);
     btn.disabled = false;
-    btn.textContent = '🏴‍☠️ Einladung erstellen';
+    const cfg = MOTTO_CONFIG[selectedMotto];
+    btn.textContent = cfg.btn;
   }
 }
 
@@ -210,8 +290,9 @@ function copyLink() {
 
 function shareWA() {
   const name = document.getElementById('name').value.trim();
+  const cfg = MOTTO_CONFIG[selectedMotto];
   const msg = encodeURIComponent(
-    'Ahoi! 🏴‍☠️ Du bist eingeladen zu ' + name + 's Piraten-Geburtstag!\n\n' +
+    cfg.wa + ' Du bist eingeladen zu ' + name + 's Geburtstag!\n\n' +
     '👉 Öffne deine Einladung hier:\n' + generatedUrl
   );
   window.open('https://wa.me/?text=' + msg, '_blank');
@@ -219,6 +300,13 @@ function shareWA() {
 
 function openPreview() {
   window.open(generatedUrl, '_blank');
+}
+
+// Pre-select motto from URL param
+const urlMotto = new URLSearchParams(window.location.search).get('motto');
+if (urlMotto && MOTTO_CONFIG[urlMotto]) {
+  const mottoEl = document.querySelector(`[data-motto="${urlMotto}"]`);
+  if (mottoEl) selectMotto(mottoEl);
 }
 </script>
 </body>

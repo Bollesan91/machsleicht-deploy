@@ -20,6 +20,13 @@ export default async (req) => {
       return new Response("Ungueltige Einladung", { status: 400 });
     }
 
+    // Motto bestimmen (Standard: piraten fuer alte Links ohne Motto)
+    const validMottos = ["piraten", "safari", "weltraum", "dino", "einhorn", "feuerwehr"];
+    const motto = validMottos.includes(data.motto) ? data.motto : "piraten";
+
+    // Pfad: /einladung/ fuer Piraten, /einladung/[motto]/ fuer andere
+    const basePath = motto === "piraten" ? "/einladung/" : `/einladung/${motto}/`;
+
     // Redirect zur Einladung mit URL-Parametern
     const params = new URLSearchParams({
       name: data.name,
@@ -32,7 +39,7 @@ export default async (req) => {
     return new Response(null, {
       status: 302,
       headers: {
-        Location: "/einladung/?" + params.toString()
+        Location: basePath + "?" + params.toString()
       }
     });
   } catch (err) {
