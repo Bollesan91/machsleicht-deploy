@@ -45,6 +45,7 @@ Wenn der User "Ende" (oder "ende") schreibt – OHNE "deploy" dahinter:
 4. **Session-Log aktualisieren:** Aktualisiere die Session-Log-Datei des aktuellen Rechners (falls bekannt aus dem letzten "Start"-Befehl) unter `.claude/sessions/<name>.md`:
    - Überschreibe den Abschnitt "Letzte Session" mit Datum und kurzer Zusammenfassung was gemacht wurde
    - Überschreibe den Abschnitt "Nächste Schritte" mit offenen Todos oder nächsten Aufgaben (frage den User kurz, was als nächstes ansteht, oder leite es aus dem Kontext ab)
+5. **Strategie-Status-Dokument aktualisieren:** Generiere ein aktualisiertes `.claude/strategie-status.docx` (siehe Abschnitt "Strategie-Status-Dokument" weiter unten). Dieses Dokument wird mit ins Commit aufgenommen.
 
 ## Trigger: "Ende Deploy"
 
@@ -60,6 +61,36 @@ Wenn der User "Ende Deploy" (oder "ende deploy") schreibt:
    - `git checkout draft` (zurück auf draft wechseln für weitere Arbeit)
    - Melde Erfolg: "Änderungen sind live auf machsleicht.de!"
 5. Session-Log aktualisieren (wie bei "Ende")
+6. **Strategie-Status-Dokument aktualisieren** (wie bei "Ende")
+
+---
+
+## Strategie-Status-Dokument
+
+Bei **jedem** "Ende" und "Ende Deploy" wird das Dokument `.claude/strategie-status.docx` aktualisiert und mit committet.
+
+### Was wird aktualisiert?
+Das Dokument enthält den vollständigen Strategie- und Projektstatus von machsleicht.de. Bei jeder Session-Beendigung:
+
+1. **Datum aktualisieren:** "Stand: DD. Monat YYYY" im Header
+2. **Abgeschlossene Arbeiten:** Neue erledigte Aufgaben in Abschnitt 2 ergänzen
+3. **Offene Aufgaben / Roadmap (Abschnitt 3):** Erledigte Punkte als erledigt markieren oder entfernen, neue Aufgaben hinzufügen
+4. **Gesamt-Statusboard (Abschnitt 4):** Status-Spalte aktualisieren (Offen → LIVE, etc.)
+5. **Deploy-Versionen (Abschnitt 5):** Bei "Ende Deploy" neue Version eintragen
+6. **Nächste Schritte (Abschnitt 9):** Todo-Liste aktualisieren – erledigte Aufgaben abhaken, neue hinzufügen, Prioritäten anpassen
+7. **Wichtige Hinweise (Abschnitt 8):** Neue Erkenntnisse ergänzen falls relevant
+
+### Wie wird es generiert?
+- Lies die docx-Skill-Anleitung (`/mnt/.claude/skills/docx/SKILL.md`)
+- Nutze `docx-js` (npm `docx` Paket) um das Dokument neu zu generieren
+- Das Dokument behält das gleiche Format und die gleiche Struktur wie das Original
+- Speichere es als `.claude/strategie-status.docx` im Repo
+- Es wird automatisch mit ins git add/commit aufgenommen
+
+### Wichtig:
+- Das Dokument ist ein **lebendes Arbeitsdokument** – es wächst mit jeder Session
+- Die Todo-Liste in Abschnitt 9 ist die zentrale Quelle für offene Aufgaben
+- Erledigte Aufgaben werden NICHT gelöscht, sondern in Abschnitt 2 verschoben und im Statusboard als LIVE markiert
 
 ---
 

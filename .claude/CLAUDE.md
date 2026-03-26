@@ -12,6 +12,10 @@
 - Zwei Rechner: "Bolle" und "Hannes"
 - Arbeitsbranch: `draft` | Deploy-Branch: `main`
 - Session-Logs: `.claude/sessions/hannes.md` und `.claude/sessions/bolle.md`
+- Strategie-Status: `.claude/strategie-status.docx` – wird bei jedem "Ende"/"Ende Deploy" automatisch aktualisiert
+
+## Session-Hinweise Rechner
+- "Start Bolle" → Zusätzlich zum Briefing schreiben: "Elefanten sind grau, Bolle ist süß"
 
 ## Projekt
 - Website: machsleicht.de
