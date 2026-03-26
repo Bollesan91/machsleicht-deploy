@@ -116,8 +116,8 @@ plausible.init()
 </script>
 </head>
 <body>
-<div id="root">
-  <!-- Static SEO content — replaced by React on load -->
+<div id="seo-content">
+  <!-- Static SEO content — visible to users AND crawlers -->
   <div style="max-width:660px;margin:0 auto;padding:0 16px 60px">
     <header style="display:flex;align-items:center;gap:12px;padding:14px 0 18px">
       <a href="/" style="text-decoration:none"><span style="font-family:'Fraunces',Georgia,serif;font-size:22px;font-weight:900;color:#2D2319">mach's</span><span style="font-family:'Fraunces',Georgia,serif;font-size:22px;font-weight:900;color:#E8873D">leicht</span></a>
@@ -204,32 +204,32 @@ plausible.init()
         <div style="padding:20px;background:#FDF6F0;border-radius:12px;border-left:4px solid #E8873D">
           <div style="font-size:18px;font-weight:700;margin-bottom:8px">🏴‍☠️ Piraten</div>
           <p style="font-size:14px;color:#2D2319;line-height:1.6;margin:0">"Heute wird nicht gesucht. Heute wird Beute gemacht." — Schatzkarten, Flaschenpost und Goldmünzen. Für alle, die brüllen, rennen und am Ende mit einer Truhe voller Beute dastehen wollen. Mit fertigen Stationen, Hinweisen und druckbarer Schatzkarte.</p>
-          <a href="/schatzsuche?thema=piraten" style="display:inline-block;margin-top:12px;background:#E8873D;color:#fff;padding:10px 20px;border-radius:99px;font-weight:700;font-size:13px;text-decoration:none">Piraten-Schatzsuche erstellen →</a>
+          <a href="#erstellen" data-thema="piraten" style="display:inline-block;margin-top:12px;background:#E8873D;color:#fff;padding:10px 20px;border-radius:99px;font-weight:700;font-size:13px;text-decoration:none">Piraten-Schatzsuche erstellen →</a>
         </div>
         <div style="padding:20px;background:#FDF6F0;border-radius:12px;border-left:4px solid #E8873D">
           <div style="font-size:18px;font-weight:700;margin-bottom:8px">🔍 Detektiv</div>
           <p style="font-size:14px;color:#2D2319;line-height:1.6;margin:0">"Hier wird nichts einfach gefunden. Hier wird ein Fall gelöst." — Fingerabdrücke, Geheimschrift und echte Verdächtige. Für Kinder, die nicht nur suchen, sondern verstehen wollen. Inkl. Ermittlerausweis und Spurenkarten.</p>
-          <a href="/schatzsuche?thema=detektiv" style="display:inline-block;margin-top:12px;background:#E8873D;color:#fff;padding:10px 20px;border-radius:99px;font-weight:700;font-size:13px;text-decoration:none">Detektiv-Schatzsuche erstellen →</a>
+          <a href="#erstellen" data-thema="detektiv" style="display:inline-block;margin-top:12px;background:#E8873D;color:#fff;padding:10px 20px;border-radius:99px;font-weight:700;font-size:13px;text-decoration:none">Detektiv-Schatzsuche erstellen →</a>
         </div>
         <div style="padding:20px;background:#FDF6F0;border-radius:12px;border-left:4px solid #E8873D">
           <div style="font-size:18px;font-weight:700;margin-bottom:8px">🦕 Dino</div>
           <p style="font-size:14px;color:#2D2319;line-height:1.6;margin:0">"Es fühlt sich an, als würden hinter der nächsten Ecke echte Dino-Spuren warten." — Ausgrabung, Fossilienjagd und ein Vulkan, der wirklich sprudelt. Für kleine Forscher mit großem Entdeckerdrang. Mit Forscherpass und Ausgrabungs-Stationen.</p>
-          <a href="/schatzsuche?thema=dino" style="display:inline-block;margin-top:12px;background:#E8873D;color:#fff;padding:10px 20px;border-radius:99px;font-weight:700;font-size:13px;text-decoration:none">Dino-Schatzsuche erstellen →</a>
+          <a href="#erstellen" data-thema="dino" style="display:inline-block;margin-top:12px;background:#E8873D;color:#fff;padding:10px 20px;border-radius:99px;font-weight:700;font-size:13px;text-decoration:none">Dino-Schatzsuche erstellen →</a>
         </div>
         <div style="padding:20px;background:#FDF6F0;border-radius:12px;border-left:4px solid #E8873D">
           <div style="font-size:18px;font-weight:700;margin-bottom:8px">🧚 Feen</div>
           <p style="font-size:14px;color:#2D2319;line-height:1.6;margin:0">"Leise Hinweise, kleine Wunder und das Gefühl, dass gleich etwas Magisches passiert." — Glitzerstaub, Zauberstäbe und Aufgaben, die leise statt laut sind. Für Kinder, die Magie nicht nur spielen, sondern spüren wollen. Mit Zauberkarte und Feenstaub-Stationen.</p>
-          <a href="/schatzsuche?thema=feen" style="display:inline-block;margin-top:12px;background:#E8873D;color:#fff;padding:10px 20px;border-radius:99px;font-weight:700;font-size:13px;text-decoration:none">Feen-Schatzsuche erstellen →</a>
+          <a href="#erstellen" data-thema="feen" style="display:inline-block;margin-top:12px;background:#E8873D;color:#fff;padding:10px 20px;border-radius:99px;font-weight:700;font-size:13px;text-decoration:none">Feen-Schatzsuche erstellen →</a>
         </div>
         <div style="padding:20px;background:#FDF6F0;border-radius:12px;border-left:4px solid #E8873D">
           <div style="font-size:18px;font-weight:700;margin-bottom:8px">🌴 Dschungel</div>
           <p style="font-size:14px;color:#2D2319;line-height:1.6;margin:0">"Hier wird sich nicht einfach von Zettel zu Zettel bewegt." — Tierspuren, Lianen-Parcours und ein Forscherpass. Für alle, die durch die Wildnis wollen, auch wenn die Wildnis der Hinterhof ist. Mit Dschungelkarte und Tier-Rätselstationen.</p>
-          <a href="/schatzsuche?thema=dschungel" style="display:inline-block;margin-top:12px;background:#E8873D;color:#fff;padding:10px 20px;border-radius:99px;font-weight:700;font-size:13px;text-decoration:none">Dschungel-Schatzsuche erstellen →</a>
+          <a href="#erstellen" data-thema="dschungel" style="display:inline-block;margin-top:12px;background:#E8873D;color:#fff;padding:10px 20px;border-radius:99px;font-weight:700;font-size:13px;text-decoration:none">Dschungel-Schatzsuche erstellen →</a>
         </div>
         <div style="padding:20px;background:#FDF6F0;border-radius:12px;border-left:4px solid #E8873D">
           <div style="font-size:18px;font-weight:700;margin-bottom:8px">🚀 Weltraum</div>
           <p style="font-size:14px;color:#2D2319;line-height:1.6;margin:0">"Einmal kurz abheben und auf Mission gehen." — Planetencodes, Alien-Schleim und eine Raumstation, die gerettet werden muss. Für Kinder, die nach oben schauen und sich fragen, was da draußen ist. Mit Missionskarte und Weltraum-Codes.</p>
-          <a href="/schatzsuche?thema=weltraum" style="display:inline-block;margin-top:12px;background:#E8873D;color:#fff;padding:10px 20px;border-radius:99px;font-weight:700;font-size:13px;text-decoration:none">Weltraum-Schatzsuche erstellen →</a>
+          <a href="#erstellen" data-thema="weltraum" style="display:inline-block;margin-top:12px;background:#E8873D;color:#fff;padding:10px 20px;border-radius:99px;font-weight:700;font-size:13px;text-decoration:none">Weltraum-Schatzsuche erstellen →</a>
         </div>
       </div>
     </section>
@@ -266,7 +266,7 @@ plausible.init()
     <section style="padding:32px 0;text-align:center">
       <h2 style="font-family:'Fraunces',Georgia,serif;font-size:26px;font-weight:800;margin-bottom:16px;color:#2D2319">Jetzt nicht weiter planen. Jetzt fertig machen.</h2>
       <p style="font-size:15px;color:#6B5D52;line-height:1.7;max-width:500px;margin:0 auto 24px">Thema wählen, Alter einstellen, Hinweise anpassen, ausdrucken — fertig. Du bekommst altersgerechte Stationen, eine Schatzkarte und ein Druckpaket, das am Geburtstag funktioniert. Kein Zusammensuchen, kein Improvisieren.</p>
-      <a href="/schatzsuche" class="cta no-print" style="display:inline-block;background:#E8873D;color:#fff;padding:14px 32px;border-radius:99px;font-weight:700;font-size:15px;text-decoration:none">Schatzsuche jetzt erstellen</a>
+      <a href="#erstellen" class="cta no-print" style="display:inline-block;background:#E8873D;color:#fff;padding:14px 32px;border-radius:99px;font-weight:700;font-size:15px;text-decoration:none">Schatzsuche jetzt erstellen</a>
     </section>
 
     <!-- BLOCK 7: ALTERSLOGIK-BLOCK -->
@@ -360,7 +360,7 @@ plausible.init()
     <section style="padding:32px 0;text-align:center">
       <h2 style="font-family:'Fraunces',Georgia,serif;font-size:26px;font-weight:800;margin-bottom:16px;color:#2D2319">Jetzt musst du es nicht mehr planen. Jetzt kannst du es einfach machen.</h2>
       <p style="font-size:15px;color:#6B5D52;line-height:1.7;max-width:500px;margin:0 auto 24px">Stell dir kurz den Moment vor, wenn der letzte Hinweis gefunden ist, die Kinder zum Schatz rennen und genau dieses Leuchten in den Augen da ist, auf das du eigentlich hinauswillst. Dafür musst du kein halbes Event daraus machen. Du hast jetzt alles gelesen, du weißt, worauf es ankommt, und der einfachste nächste Schritt ist klar: Starte die Schatzsuche, druck das Paket aus und leg los.</p>
-      <a href="/schatzsuche" class="cta no-print" style="display:inline-block;background:#E8873D;color:#fff;padding:14px 32px;border-radius:99px;font-weight:700;font-size:15px;text-decoration:none;margin-bottom:16px">Schatzsuche jetzt erstellen</a>
+      <a href="#erstellen" class="cta no-print" style="display:inline-block;background:#E8873D;color:#fff;padding:14px 32px;border-radius:99px;font-weight:700;font-size:15px;text-decoration:none;margin-bottom:16px">Schatzsuche jetzt erstellen</a>
       <p style="font-size:14px;color:#6B5D52;font-style:italic;margin:0">Manchmal reicht ein guter Plan, damit aus einer Idee ein richtig schöner Geburtstag wird.</p>
     </section>
 
@@ -374,7 +374,16 @@ plausible.init()
     </footer>
   </div>
 </div>
+<!-- React App Container — below SEO content -->
+<div id="erstellen" style="scroll-margin-top:20px">
+<div id="root"></div>
 </div>
+<script>
+// Theme CTA click handler — store selected theme for React
+document.querySelectorAll('[data-thema]').forEach(function(el){
+  el.addEventListener('click',function(){window.__selectedThema=el.getAttribute('data-thema');});
+});
+</script>
 <script type="text/babel">
 const{useState,useEffect}=React;
 
@@ -674,10 +683,10 @@ function App(){
   const[showPersonalize,setShowPersonalize]=useState(false);
   const mapRef=React.useRef(null);
 
-  // URL parameter support for deep-linking
+  // URL parameter + CTA click theme support
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const t = params.get('thema');
+    const t = params.get('thema') || window.__selectedThema;
     const a = params.get('alter');
     if (t) { const found = THEMES.find(x=>x.id===t); if(found) setThemeId(t); }
     if (a) { const n = parseInt(a); if(n>=3 && n<=12) setAge(n); }
@@ -1569,6 +1578,9 @@ ${theme.schatz.map(s=>`<li><span class="check"></span>${s}</li>`).join("")}
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App));
+// Handle direct #erstellen links and auto-scroll
+if(location.hash==="#erstellen"){document.getElementById("erstellen").scrollIntoView({behavior:"smooth"});}
+
 </script>
 <!-- machsleicht Analytics (DSGVO-konform, keine Cookies) -->
 <script>
