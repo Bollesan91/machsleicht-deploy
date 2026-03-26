@@ -1,0 +1,52 @@
+Ich möchte alle wichtigen Informationen aus unserem bisherigen Chat-Verlauf zum Projekt "machsleicht" (machsleicht.de / machsleicht-deploy) exportieren, damit ich sie in mein neues Cowork-Setup übertragen kann.
+
+Bitte erstelle mir eine vollständige, strukturierte Zusammenfassung in folgendem Format. Sei dabei so ausführlich und vollständig wie möglich – lieber zu viel als zu wenig. Alles was du hier auslässt, geht verloren.
+
+---
+
+## 1. PROJEKTSTATUS
+- Was ist machsleicht.de? (Kurzbeschreibung)
+- Aktueller Stand des Projekts
+- Was funktioniert bereits?
+- Was ist noch offen / in Arbeit?
+
+## 2. TECHNISCHE ARCHITEKTUR
+- Tech-Stack (HTML, JS, Hosting, etc.)
+- Wie ist das Projekt aufgebaut? (Ordnerstruktur, wichtige Dateien)
+- Hosting / Deployment (Netlify, GitHub, etc.)
+- Externe Services / APIs die verwendet werden
+
+## 3. DESIGN-ENTSCHEIDUNGEN
+- Welche wichtigen Design-Entscheidungen haben wir getroffen?
+- Farbschema, Fonts, UI-Prinzipien
+- Branding-Regeln
+
+## 4. CONTENT-STRATEGIE & SEO
+- SEO-Strategie und Keywords
+- Welche Seiten gibt es und warum?
+- Content-Regeln (Tonalität, Zielgruppe, Stil)
+- Interne Verlinkungsstrategie
+
+## 5. FEATURES & FUNKTIONEN
+- Welche Features haben wir gebaut?
+- Wie funktionieren sie im Detail?
+- Welche Features sind geplant?
+
+## 6. WICHTIGE ENTSCHEIDUNGEN & LEARNINGS
+- Entscheidungen die wir bewusst so getroffen haben (und warum)
+- Dinge die wir ausprobiert und wieder verworfen haben
+- Besondere Hinweise oder Einschränkungen
+
+## 7. OFFENE TODOS & NÄCHSTE SCHRITTE
+- Was steht als nächstes an?
+- Bekannte Bugs oder Probleme
+- Ideen die wir noch nicht umgesetzt haben
+
+## 8. SONSTIGES
+- Alles weitere was relevant sein könnte
+- Wiederkehrende Muster oder Konventionen
+- Dinge die ein neuer Assistent wissen sollte
+
+---
+
+Bitte gehe den gesamten Chat-Verlauf durch und extrahiere ALLES was relevant ist. Das Ergebnis wird in eine Projekt-Wissensdatenbank überführt, die mein neuer Cowork-Assistent nutzt. Je vollständiger, desto besser.
