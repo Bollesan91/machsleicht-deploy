@@ -4,18 +4,14 @@ export default async (req) => {
   }
 
   try {
-    const { name, date, time, ort, tel, motto } = await req.json();
+    const { name, date, time, ort, tel } = await req.json();
 
     if (!name || !date || !time || !ort || !tel) {
       return new Response(JSON.stringify({ error: "Alle Felder ausfuellen" }), { status: 400, headers: { "Content-Type": "application/json" } });
     }
 
-    // Motto validieren (Standard: piraten fuer Abwaertskompatibilitaet)
-    const validMottos = ["piraten", "safari", "weltraum", "dino", "einhorn", "feuerwehr"];
-    const selectedMotto = validMottos.includes(motto) ? motto : "piraten";
-
     // Daten als Base64 in die URL kodieren (kein Storage noetig)
-    const data = JSON.stringify({ name, date, time, ort, tel, motto: selectedMotto });
+    const data = JSON.stringify({ name, date, time, ort, tel });
     const encoded = Buffer.from(data).toString("base64url");
 
     // Slug: kurzer Name + encoded payload
