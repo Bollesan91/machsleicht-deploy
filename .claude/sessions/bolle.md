@@ -1,7 +1,11 @@
 # Session-Log: Bolle
 
 ## Letzte Session
-**Datum:** 2026-03-26
+**Datum:** 2026-03-27
+**Zusammenfassung:**
+- Setup auf neuem Rechner durchgeführt (Git-Token aktualisiert, Workflow getestet)
+
+## Session 2026-03-26
 **Zusammenfassung:**
 - Draft-Branch Workflow eingerichtet (draft = Arbeit, main = Deploy)
 - Session-Logs für Hannes und Bolle angelegt
