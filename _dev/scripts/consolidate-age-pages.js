@@ -156,13 +156,21 @@ function generateConsolidatedPage(motto, mottoConfig, ageGroup) {
   const url = `https://machsleicht.de/kindergeburtstag/${motto}-${id}-jahre`;
   const gameCount = allGames.length;
 
-  // Build game cards HTML
-  const gameCardsHtml = allGames.map(game => `
+  // Build game cards HTML — with enriched descriptions
+  const gameCardsHtml = allGames.map(game => {
+    // Capitalize first letter of description
+    let desc = game.desc || '';
+    if (desc.length > 0) desc = desc.charAt(0).toUpperCase() + desc.slice(1);
+    // Remove trailing period if missing
+    if (desc.length > 0 && !desc.endsWith('.') && !desc.endsWith('!') && !desc.endsWith('?')) desc += '.';
+
+    return `
       <div class="game-card" style="padding:16px;margin-bottom:12px;background:var(--bg);border:1px solid var(--l);border-radius:10px">
         <h3 style="font-size:15px;font-weight:700;margin:0 0 6px;color:var(--d)">${game.name}</h3>
-        <p style="font-size:14px;color:var(--m);margin:0 0 8px;line-height:1.6">${game.desc} — perfekt f&uuml;r ${ageRangeText}-J&auml;hrige.</p>
+        <p style="font-size:14px;color:var(--m);margin:0 0 8px;line-height:1.6">${desc}</p>
         <span class="tag">${game.fromAge} Jahre</span>
-      </div>`).join('\n');
+      </div>`;
+  }).join('\n');
 
   // Build deko HTML
   const dekoHtml = dekoIdeas.length > 1
