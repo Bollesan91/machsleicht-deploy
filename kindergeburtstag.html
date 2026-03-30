@@ -1678,6 +1678,8 @@ Viel Spaß beim ${motto.name}-Geburtstag!
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App));
+// Hide SEO fallback content once React has mounted
+var seo=document.getElementById("seo-content");if(seo)seo.style.display="none";
 // Handle direct #planer links and auto-scroll
 if(location.hash==="#planer"){document.getElementById("planer").scrollIntoView({behavior:"smooth"});}
 </script>

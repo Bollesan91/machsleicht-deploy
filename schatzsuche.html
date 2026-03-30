@@ -1594,6 +1594,8 @@ ${theme.schatz.map(s=>`<li><span class="check"></span>${s}</li>`).join("")}
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App));
+// Hide SEO fallback content once React has mounted
+var seo=document.getElementById("seo-content");if(seo)seo.style.display="none";
 // Handle direct #erstellen links and auto-scroll
 if(location.hash==="#erstellen"){document.getElementById("erstellen").scrollIntoView({behavior:"smooth"});}
 
