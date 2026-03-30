@@ -92,8 +92,10 @@ function gate3(htmlFiles) {
   // Prüfe ob öffentliche Seiten in Sitemap sind
   for (const file of htmlFiles) {
     const rel = path.relative(ROOT, file);
-    // Skip non-public files
+    // Skip non-public files and noindex pages
     if (rel.startsWith("_dev") || rel === "homepage.html") continue;
+    const fileContent = fs.readFileSync(file, "utf-8");
+    if (/meta\s+name=["']robots["'][^>]*content=["'][^"']*noindex/.test(fileContent)) continue;
 
     let urlPath;
     if (rel === "index.html") urlPath = "/";

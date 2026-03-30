@@ -75,6 +75,12 @@ function loadRedirects() {
   return map;
 }
 
+// Prüft ob eine HTML-Datei noindex gesetzt hat
+function isNoIndex(filePath) {
+  const content = fs.readFileSync(path.join(ROOT, filePath), 'utf-8');
+  return /meta\s+name=["']robots["'][^>]*content=["'][^"']*noindex/.test(content);
+}
+
 // HTML-Datei → URL konvertieren
 function fileToUrl(filePath, redirects) {
   // Prüfe ob ein Redirect existiert
@@ -107,6 +113,9 @@ function generateSitemap() {
   for (const file of htmlFiles) {
     const url = fileToUrl(file, redirects);
     if (!url) continue;
+
+    // noindex-Seiten nicht in die Sitemap aufnehmen
+    if (isNoIndex(file)) continue;
 
     const fullUrl = DOMAIN + url;
     if (!urls.has(fullUrl)) {
