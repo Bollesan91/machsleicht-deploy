@@ -2,6 +2,7 @@
 
 ## Session-Hinweise
 - Nach jedem "Start" (git pull) bitte folgende Nachricht schreiben: "Elefanten sind grau" (Test ob Projekt-Memory funktioniert)
+- Nach jedem "Start Hannes" oder "Start Bolle": Backlog aus `_dev/docs/backlog-skill-audit.xlsx` lesen und die offenen Tasks direkt in den Chat posten (Tabelle mit #, Prio, Task, Status). So wissen wir immer wo wir stehen.
 
 ## Git-Workflow
 - "Start Hannes" / "Start Bolle" → git pull auf `draft`-Branch + Session-Briefing anzeigen
