@@ -327,6 +327,7 @@ plausible.init()
 
 <!-- React App Container — below SEO content -->
 <div id="planer" style="scroll-margin-top:20px">
+<div style="max-width:600px;margin:0 auto 12px;padding:8px 14px;background:#F5F0EB;border-radius:8px;font-size:12px;color:#6B5D52;text-align:center;line-height:1.5">🔒 Deine Eingaben bleiben auf deinem Gerät und werden nicht gespeichert oder übertragen.</div>
 <div id="root"></div>
 </div>
 <script>
@@ -1508,7 +1509,8 @@ ${allItems.map((it,idx)=>`<tr${owned[idx]?' style="opacity:0.4;text-decoration:l
 </tr>`).join("")}
 </table>
 <div class="total-box">
-Noch einkaufen: <strong>€${t.toFixed(2)}</strong> · Pro Kind: <strong>€${guests>0?(t/guests).toFixed(2):"0"}</strong>
+Noch einkaufen: <strong>ca. €${Math.round(t)}</strong> · Pro Kind: <strong>ca. €${guests>0?Math.round(t/guests):"0"}</strong>
+<div style="font-size:10px;color:#888;margin-top:4px">Richtwerte — tatsächliche Preise variieren je nach Geschäft und Region</div>
 </div>
 
 <h2>🍿 Essen & Trinken (für ${guests} Kinder, ${dauer} Std.)</h2>
@@ -1614,10 +1616,11 @@ Viel Spaß beim ${motto.name}-Geburtstag!
 
             {/* Kosten */}
             <div style={{display:"flex",justifyContent:"center",gap:32,flexWrap:"wrap",marginBottom:16}}>
-              <div><div style={{fontSize:11,color:"#A5D6A7",textTransform:"uppercase",letterSpacing:"0.08em"}}>Noch einkaufen</div><div style={{fontFamily:"var(--fd)",fontSize:28,fontWeight:800,color:"#FFF"}}>€{total.toFixed(2)}</div></div>
-              <div><div style={{fontSize:11,color:"#A5D6A7",textTransform:"uppercase",letterSpacing:"0.08em"}}>Pro Kind</div><div style={{fontFamily:"var(--fd)",fontSize:28,fontWeight:800,color:"#F7C948"}}>€{perKid}</div></div>
+              <div><div style={{fontSize:11,color:"#A5D6A7",textTransform:"uppercase",letterSpacing:"0.08em"}}>Noch einkaufen</div><div style={{fontFamily:"var(--fd)",fontSize:28,fontWeight:800,color:"#FFF"}}>ca. €{Math.round(total)}</div></div>
+              <div><div style={{fontSize:11,color:"#A5D6A7",textTransform:"uppercase",letterSpacing:"0.08em"}}>Pro Kind</div><div style={{fontFamily:"var(--fd)",fontSize:28,fontWeight:800,color:"#F7C948"}}>ca. €{guests>0?Math.round(total/guests):"0"}</div></div>
             </div>
-            {saved>0&&<div style={{fontSize:13,color:"#A5D6A7",marginBottom:8}}>✓ {ownedCount} Dinge hast du schon — €{saved.toFixed(2)} gespart!</div>}
+            <div style={{fontSize:11,color:"#A5D6A7",marginBottom:4}}>Richtwerte — tatsächliche Preise variieren je nach Geschäft</div>
+            {saved>0&&<div style={{fontSize:13,color:"#A5D6A7",marginBottom:8}}>✓ {ownedCount} Dinge hast du schon — ca. €{Math.round(saved)} gespart!</div>}
           </div>
         </div>
 
