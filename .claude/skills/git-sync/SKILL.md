@@ -33,7 +33,8 @@ Wenn der User "Start", "Start Hannes" oder "Start Bolle" schreibt (Groß-/Kleins
 
 Wenn der User "Ende" (oder "ende") schreibt – OHNE "deploy" dahinter:
 
-1. Führe `git status` aus, um zu sehen welche Dateien geändert wurden
+1. **Sitemap automatisch regenerieren:** Führe `node _dev/scripts/generate-sitemap.js` aus, damit die sitemap.xml immer aktuell ist (egal ob HTML-Dateien hinzugekommen oder gelöscht wurden)
+2. Führe `git status` aus, um zu sehen welche Dateien geändert wurden
 2. Falls es Änderungen gibt:
    - Zeige dem User kurz welche Dateien geändert wurden
    - Stage alle geänderten Dateien mit `git add -A`
@@ -51,7 +52,8 @@ Wenn der User "Ende" (oder "ende") schreibt – OHNE "deploy" dahinter:
 
 Wenn der User "Ende Deploy" (oder "ende deploy") schreibt:
 
-1. Falls es noch uncommittete Änderungen gibt: Erst committen und auf `draft` pushen (wie bei "Ende")
+1. **Sitemap automatisch regenerieren:** Führe `node _dev/scripts/generate-sitemap.js` aus (falls nicht bereits bei "Ende" geschehen)
+2. Falls es noch uncommittete Änderungen gibt: Erst committen und auf `draft` pushen (wie bei "Ende")
 2. Zeige dem User eine Zusammenfassung aller Commits auf `draft`, die noch nicht in `main` sind: `git log main..draft --oneline`
 3. Frage den User kurz zur Bestätigung: "Soll ich diese Änderungen jetzt live deployen?"
 4. Nach Bestätigung:

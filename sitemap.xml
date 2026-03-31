@@ -2,1432 +2,884 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://machsleicht.de/</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://machsleicht.de/kindergeburtstag</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://machsleicht.de/schatzsuche</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/spielkarten</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/baby</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/safari</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/einschulung</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/piraten</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/weltraum</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/einschulung-checkliste</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://machsleicht.de/kindergeburtstag/dino</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://machsleicht.de/kindergeburtstag/einhorn</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://machsleicht.de/kindergeburtstag/feuerwehr</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/paw-patrol</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/kindergeburtstag/piraten</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pokemon</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/kindergeburtstag/safari</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/minecraft</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/kindergeburtstag/weltraum</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/frozen</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/schatzsuche/detektiv</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/super-mario</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/schatzsuche/dino</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/spider-man</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/schatzsuche/dschungel</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/harry-potter</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/schatzsuche/feen</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ninjago</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/schatzsuche/piraten</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/meerjungfrau</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/schatzsuche/weltraum</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pferde</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/detektiv</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/zirkus</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/baustelle</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ritter</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/3-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/adventskalender-fuellen</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/6-8-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/einladung</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/9-12-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/einladung/erstellen</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag-checkliste</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/frozen-guide</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag-zuhause</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/halloween-kinder-zuhause</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsleicht.de/harry-potter-guide</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsleicht.de/homepage</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsleicht.de/kindergeburtstag-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsleicht.de/kindergeburtstag-6-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsleicht.de/kindergeburtstag-7-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsleicht.de/kindergeburtstag-bei-regen</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsleicht.de/kindergeburtstag-draussen</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsleicht.de/kindergeburtstag-drinnen</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsleicht.de/kindergeburtstag-einladung-text</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsleicht.de/kindergeburtstag-essen</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsleicht.de/kindergeburtstag-kosten</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://machsleicht.de/kindergeburtstag-last-minute</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/schatzsuche/piraten</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/kindergeburtstag-mitgebsel</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/schatzsuche/dschungel</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/kindergeburtstag-spiele-draussen</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/schatzsuche/weltraum</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/kindergeburtstag-spiele-drinnen</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/schatzsuche/detektiv</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/kindergeburtstag-torte-einfach</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/schatzsuche/dino</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/kindergeburtstag-wenig-aufwand</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/schatzsuche/feen</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://machsleicht.de/kindergeburtstag-zeitplan</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsleicht.de/kindergeburtstag-zuhause</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsleicht.de/kliniktasche-packen</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsleicht.de/minecraft-guide</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsleicht.de/ninjago-guide</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsleicht.de/oster-eiersuche</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsleicht.de/paw-patrol-guide</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsleicht.de/pokemon-guide</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://machsleicht.de/ratgeber</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/ratgeber/pokemon</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/ratgeber/frozen-fuer-eltern</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/ratgeber/minecraft</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/ratgeber/paw-patrol</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/ratgeber/frozen</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/ratgeber/super-mario</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/ratgeber/spider-man</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/ratgeber/harry-potter</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/ratgeber/ninjago</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/safari-3-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/safari-4-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/safari-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/safari-6-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/safari-7-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/safari-8-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/safari-9-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/safari-10-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/safari-11-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/safari-12-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/piraten-3-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/piraten-4-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/piraten-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/piraten-6-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/piraten-7-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/piraten-8-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/piraten-9-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/piraten-10-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/piraten-11-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/piraten-12-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/weltraum-3-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/weltraum-4-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/weltraum-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/weltraum-6-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/weltraum-7-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/weltraum-8-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/weltraum-9-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/weltraum-10-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/weltraum-11-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/weltraum-12-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/dino-3-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/dino-4-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/dino-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/dino-6-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/dino-7-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/dino-8-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/dino-9-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/dino-10-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/dino-11-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/dino-12-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/einhorn-3-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/einhorn-4-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/einhorn-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/einhorn-6-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/einhorn-7-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/einhorn-8-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/einhorn-9-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/einhorn-10-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/einhorn-11-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/einhorn-12-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/feuerwehr-3-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/feuerwehr-4-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/feuerwehr-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/feuerwehr-6-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/feuerwehr-7-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/feuerwehr-8-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/feuerwehr-9-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/feuerwehr-10-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/feuerwehr-11-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/feuerwehr-12-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/paw-patrol-3-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/paw-patrol-4-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/paw-patrol-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/paw-patrol-6-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/paw-patrol-7-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pokemon-3-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pokemon-4-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pokemon-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pokemon-6-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pokemon-7-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pokemon-8-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pokemon-9-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pokemon-10-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pokemon-11-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pokemon-12-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/minecraft-3-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/minecraft-4-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/minecraft-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/minecraft-6-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/minecraft-7-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/minecraft-8-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/minecraft-9-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/minecraft-10-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/minecraft-11-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/minecraft-12-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/frozen-3-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/frozen-4-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/frozen-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/frozen-6-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/ratgeber/harry-potter-fuer-eltern</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://machsleicht.de/kindergeburtstag/frozen-7-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/frozen-8-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/ratgeber/minecraft-fuer-eltern</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/frozen-9-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/ratgeber/ninjago-fuer-eltern</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/frozen-10-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/ratgeber/paw-patrol-fuer-eltern</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/frozen-11-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/ratgeber/pokemon-fuer-eltern</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/frozen-12-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/ratgeber/spider-man-fuer-eltern</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/super-mario-3-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/ratgeber/super-mario-fuer-eltern</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/super-mario-4-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/schatzsuche-drinnen</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/super-mario-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/schatzsuche-kindergeburtstag</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/super-mario-6-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/schultuete-fuellen</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/super-mario-7-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/spider-man-guide</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/super-mario-8-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/spielkarten</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/super-mario-9-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/super-mario-guide</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/super-mario-10-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/transparenz</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/super-mario-11-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/wochenbett-was-braucht-man</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/super-mario-12-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/autofahrt-kinder-checkliste</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/spider-man-3-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/baby-erstausstattung-checkliste</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/spider-man-4-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/babyparty-checkliste</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/spider-man-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/familienreise-packliste</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/spider-man-6-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag-checkliste</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/spider-man-7-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/spider-man-8-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/spider-man-9-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/9-12-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/spider-man-10-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/baustelle</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/spider-man-11-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/baustelle-3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/spider-man-12-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/baustelle-6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/harry-potter-3-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/detektiv</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/harry-potter-4-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/detektiv-3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/harry-potter-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/detektiv-6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/harry-potter-6-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/detektiv-9-12-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/harry-potter-7-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/dino-3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/harry-potter-8-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/dino-6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/harry-potter-9-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/dino-9-12-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/harry-potter-10-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/einhorn-3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/harry-potter-11-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/einhorn-6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/harry-potter-12-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/einhorn-9-12-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ninjago-3-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/feuerwehr-3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ninjago-4-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/feuerwehr-6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ninjago-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/feuerwehr-9-12-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ninjago-6-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/frozen</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ninjago-7-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/frozen-3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ninjago-8-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/frozen-6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ninjago-9-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/frozen-9-12-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ninjago-10-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/harry-potter</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ninjago-11-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/harry-potter-3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ninjago-12-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/harry-potter-6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/meerjungfrau-3-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/harry-potter-9-12-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/meerjungfrau-4-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/meerjungfrau</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/meerjungfrau-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/meerjungfrau-3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/meerjungfrau-6-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/meerjungfrau-6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/meerjungfrau-7-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/meerjungfrau-9-12-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/meerjungfrau-8-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/minecraft</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/meerjungfrau-9-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/minecraft-3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/meerjungfrau-10-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/minecraft-6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/meerjungfrau-11-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/minecraft-9-12-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/meerjungfrau-12-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/ninjago</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pferde-3-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/ninjago-3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pferde-4-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/ninjago-6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pferde-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/ninjago-9-12-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pferde-6-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/paw-patrol</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pferde-7-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/paw-patrol-3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pferde-8-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/paw-patrol-6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pferde-9-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/pferde</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pferde-10-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/pferde-3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pferde-11-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/pferde-6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/pferde-12-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/pferde-9-12-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/detektiv-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/piraten-3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/detektiv-6-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/piraten-6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/detektiv-7-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/piraten-9-12-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/detektiv-8-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/pokemon</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/detektiv-9-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/pokemon-3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/detektiv-10-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/pokemon-6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/detektiv-11-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/pokemon-9-12-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/detektiv-12-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/ritter</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/zirkus-3-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/ritter-3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/zirkus-4-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/ritter-6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/zirkus-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/ritter-9-12-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/zirkus-6-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/safari-3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/zirkus-7-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/safari-6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/zirkus-8-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/safari-9-12-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/zirkus-9-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/spider-man</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/zirkus-10-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/spider-man-3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/baustelle-3-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/spider-man-6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/baustelle-4-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/spider-man-9-12-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/baustelle-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/super-mario</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/baustelle-6-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/super-mario-3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/baustelle-7-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/super-mario-6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/baustelle-8-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/super-mario-9-12-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ritter-4-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/weltraum-3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ritter-5-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/weltraum-6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ritter-6-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/weltraum-9-12-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ritter-7-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/zirkus</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ritter-8-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/zirkus-3-5-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ritter-9-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/zirkus-6-8-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ritter-10-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kindergeburtstag/zirkus-9-12-jahre</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ritter-11-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/kita-start-checkliste</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://machsleicht.de/kindergeburtstag/ritter-12-jahre</loc>
-    <lastmod>2026-03-21</lastmod>
+    <loc>https://machsleicht.de/umzug-mit-kind-checkliste</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-<url><loc>https://machsleicht.de/paw-patrol-guide</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://machsleicht.de/pokemon-guide</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://machsleicht.de/minecraft-guide</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://machsleicht.de/frozen-guide</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://machsleicht.de/super-mario-guide</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://machsleicht.de/spider-man-guide</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://machsleicht.de/harry-potter-guide</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://machsleicht.de/ninjago-guide</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <!-- Welle 1: Money Pages -->
-  <url><loc>https://machsleicht.de/kindergeburtstag-5-jahre</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://machsleicht.de/kindergeburtstag-6-jahre</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://machsleicht.de/kindergeburtstag-7-jahre</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://machsleicht.de/kindergeburtstag-drinnen</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://machsleicht.de/kindergeburtstag-bei-regen</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://machsleicht.de/kindergeburtstag-wenig-aufwand</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://machsleicht.de/schatzsuche-kindergeburtstag</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://machsleicht.de/schatzsuche-drinnen</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://machsleicht.de/kindergeburtstag-essen</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://machsleicht.de/kindergeburtstag-einladung-text</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <!-- Welle 2: Cluster Pages -->
-  <url><loc>https://machsleicht.de/kindergeburtstag-mitgebsel</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://machsleicht.de/kindergeburtstag-zeitplan</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://machsleicht.de/kindergeburtstag-kosten</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://machsleicht.de/einschulung-checkliste</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://machsleicht.de/schultuete-fuellen</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://machsleicht.de/halloween-kinder-zuhause</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://machsleicht.de/babyparty-checkliste</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://machsleicht.de/kindergeburtstag-spiele-drinnen</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://machsleicht.de/kindergeburtstag-spiele-draussen</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://machsleicht.de/kindergeburtstag-draussen</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://machsleicht.de/kindergeburtstag-torte-einfach</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://machsleicht.de/adventskalender-fuellen</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://machsleicht.de/oster-eiersuche</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <!-- Welle 3: Probe Pages -->
-  <url><loc>https://machsleicht.de/baby-erstausstattung-checkliste</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://machsleicht.de/kliniktasche-packen</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://machsleicht.de/wochenbett-was-braucht-man</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://machsleicht.de/familienreise-packliste</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://machsleicht.de/umzug-mit-kind-checkliste</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://machsleicht.de/autofahrt-kinder-checkliste</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://machsleicht.de/kita-start-checkliste</loc><lastmod>2026-03-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <!-- Einschulung + Baby App Pages -->
-  <url><loc>https://machsleicht.de/einschulung</loc><lastmod>2026-03-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://machsleicht.de/baby</loc><lastmod>2026-03-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>
