@@ -21,6 +21,10 @@
 - Schatzsuche-Bereich ausbauen (#42)
 - Nach Deploy: GSC nochmal Indexierung fuer Startseite beantragen (damit Google den neuen 426-Woerter-Content sieht)
 
+## Deploy
+- Deployed am 02.04.2026 auf Netlify (Ende Deploy)
+- Startseite-Rewrite (426 Woerter) ist jetzt LIVE
+
 ## Offene Fragen
-- Wann "Ende Deploy" machen? Startseite-Rewrite ist der groesste SEO-Hebel und sollte bald live gehen
-- Backlog-Excel (_dev/docs/backlog-skill-audit.xlsx) muss noch mit Sprint 6 Tasks aktualisiert werden
+- Backlog-Excel (_dev/docs/backlog-skill-audit.xlsx) muss noch mit Sprint 6 Tasks (#34-#44) aktualisiert werden
+- Nach Deploy: GSC Indexierung fuer Startseite erneut beantragen
