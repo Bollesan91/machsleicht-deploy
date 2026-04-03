@@ -29,10 +29,15 @@ export default async (req) => {
       tel: data.tel
     });
 
+    // Motto-basierter Redirect (piraten = /einladung/, rest = /einladung/{motto}/)
+    const VALID_MOTTOS = ["piraten", "dino", "safari", "weltraum"];
+    const motto = data.motto && VALID_MOTTOS.includes(data.motto) ? data.motto : "piraten";
+    const basePath = motto === "piraten" ? "/einladung/" : `/einladung/${motto}/`;
+
     return new Response(null, {
       status: 302,
       headers: {
-        Location: "/einladung/?" + params.toString()
+        Location: basePath + "?" + params.toString()
       }
     });
   } catch (err) {
