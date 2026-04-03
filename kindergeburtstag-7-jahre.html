@@ -106,6 +106,7 @@ footer a{color:var(--m);font-weight:400}
 window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
 plausible.init()
 </script>
+  <link rel="stylesheet" href="/css/utility.css">
 </head>
 <body>
 <main>
@@ -244,20 +245,20 @@ plausible.init()
 
   <h2>Mottos für 7-Jährige (und was dazu passt)</h2>
 
-  <p style="color:var(--d)"><strong>Mit 7 Jahren sind Mottos wichtig.</strong> Sie geben den Tag Struktur, die Kinder können sich verkleiden und fühlen sich erwachsener. Hier die Top-Mottos und was praktisch dazu passt:</p>
+  <p class="u-clr-d"><strong>Mit 7 Jahren sind Mottos wichtig.</strong> Sie geben den Tag Struktur, die Kinder können sich verkleiden und fühlen sich erwachsener. Hier die Top-Mottos und was praktisch dazu passt:</p>
 
   <div class="decision-cards">
     <div class="decision-card" onclick="this.classList.toggle('active')">
-      <strong>🎮 Minecraft</strong><br><span style="font-size:13px;color:var(--m)">Blocks, Pixel, Abenteuer</span>
+      <strong>🎮 Minecraft</strong><br><span class="u-fs13 u-clr-m">Blocks, Pixel, Abenteuer</span>
     </div>
     <div class="decision-card" onclick="this.classList.toggle('active')">
-      <strong>🕷️ Spider-Man</strong><br><span style="font-size:13px;color:var(--m)">Action, Superheld</span>
+      <strong>🕷️ Spider-Man</strong><br><span class="u-fs13 u-clr-m">Action, Superheld</span>
     </div>
     <div class="decision-card" onclick="this.classList.toggle('active')">
-      <strong>⚡ Harry Potter</strong><br><span style="font-size:13px;color:var(--m)">Zauberschule, Häuser</span>
+      <strong>⚡ Harry Potter</strong><br><span class="u-fs13 u-clr-m">Zauberschule, Häuser</span>
     </div>
     <div class="decision-card" onclick="this.classList.toggle('active')">
-      <strong>👾 Super Mario</strong><br><span style="font-size:13px;color:var(--m)">Retro, lustig, einfach</span>
+      <strong>👾 Super Mario</strong><br><span class="u-fs13 u-clr-m">Retro, lustig, einfach</span>
     </div>
   </div>
 
@@ -343,13 +344,13 @@ plausible.init()
   <div class="related">
     <h3>Weiter lesen</h3>
     <div class="grid">
-      <a href="/schatzsuche-kindergeburtstag" style="text-decoration:none"><div class="card" style="text-align:center;padding:14px"><p style="font-weight:700;color:var(--d)">Schatzsuche erstellen</p><span style="font-size:12px;color:var(--m)">Mit Rätseln + Codes</span></div></a>
-      <a href="/kindergeburtstag-draussen" style="text-decoration:none"><div class="card" style="text-align:center;padding:14px"><p style="font-weight:700;color:var(--d)">Geburtstag draußen</p><span style="font-size:12px;color:var(--m)">Für schönes Wetter</span></div></a>
-      <a href="/" style="text-decoration:none"><div class="card" style="text-align:center;padding:14px"><p style="font-weight:700;color:var(--d)">Zum Planer</p><span style="font-size:12px;color:var(--m)">Alle Altersgruppen</span></div></a>
+      <a href="/schatzsuche-kindergeburtstag" style="text-decoration:none"><div class="card" class="u-emoji-cell"><p style="font-weight:700;color:var(--d)">Schatzsuche erstellen</p><span class="u-fs12 u-clr-m">Mit Rätseln + Codes</span></div></a>
+      <a href="/kindergeburtstag-draussen" style="text-decoration:none"><div class="card" class="u-emoji-cell"><p style="font-weight:700;color:var(--d)">Geburtstag draußen</p><span class="u-fs12 u-clr-m">Für schönes Wetter</span></div></a>
+      <a href="/" style="text-decoration:none"><div class="card" class="u-emoji-cell"><p style="font-weight:700;color:var(--d)">Zum Planer</p><span class="u-fs12 u-clr-m">Alle Altersgruppen</span></div></a>
     </div>
   </div>
 
-  <a href="#" class="cta" style="margin-top:32px">📋 Zeitplan drucken →</a>
+  <a href="#" class="cta" class="u-mt32">📋 Zeitplan drucken →</a>
   <a href="/schatzsuche" class="cta" style="margin-left:12px">🗺️ Schatzsuche mit Codes erstellen →</a>
 
   <footer>
@@ -396,11 +397,11 @@ function fallbackCopy(text,btn){var ta=document.createElement('textarea');ta.val
   }
 })();
 </script>
-<p style="font-size:12px;color:#6B5D52;margin-top:24px;padding-top:12px;border-top:1px solid #EDE6DE;text-align:center;max-width:660px;margin-left:auto;margin-right:auto" class="no-print">
+<p class="u-page-footer" class="no-print">
   * Affiliate-Link: Wenn du über diesen Link kaufst, erhalten wir eine kleine Provision. Für dich ändert sich der Preis nicht.
 </p>
-<div id="sticky-cta" style="position:fixed;bottom:0;left:0;right:0;background:rgba(255,248,240,0.95);backdrop-filter:blur(8px);padding:10px 16px;text-align:center;border-top:1px solid #EDE6DE;z-index:100;display:none" class="no-print">
-  <a href="/kindergeburtstag" class="cta" style="padding:10px 24px;font-size:14px">🎂 Jetzt planen →</a>
+<div id="sticky-cta" class="u-sticky-cta" class="no-print">
+  <a href="/kindergeburtstag" class="cta" class="u-btn-filter">🎂 Jetzt planen →</a>
 </div>
 <script>if(window.innerWidth<=640){var s=document.getElementById('sticky-cta');window.addEventListener('scroll',function(){s.style.display=window.scrollY>300?'block':'none'})}</script>
 </body>

@@ -189,6 +189,7 @@
 window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
 plausible.init()
 </script>
+  <link rel="stylesheet" href="/css/utility.css">
 </head>
 <body>
 <div id="seo-content">
@@ -318,8 +319,8 @@ plausible.init()
   <!-- CTA -->
   <!-- ============================================ -->
   <div style="text-align:center;padding:24px 0;max-width:400px;margin:0 auto">
-    <p style="font-family:'Fraunces',Georgia,serif;font-size:22px;font-weight:800;margin-bottom:8px">Das reicht. Wirklich.</p>
-    <p style="font-size:14px;color:#6B5D52;line-height:1.6;margin-bottom:12px">Wähl ein Motto. Wähl 2 Spiele aus. Der Rest ergibt sich.</p>
+    <p class="u-page-title">Das reicht. Wirklich.</p>
+    <p class="u-empty-text">Wähl ein Motto. Wähl 2 Spiele aus. Der Rest ergibt sich.</p>
     <a href="#planer" class="cta" style="display:inline-block;background:#E8873D;color:#fff;padding:14px 32px;border-radius:99px;font-weight:700;font-size:15px;text-decoration:none">🎂 Geburtstag jetzt planen →</a>
     <p style="font-size:12px;color:#6B5D52;margin-top:8px">Kostenlos · Ohne Anmeldung</p>
   </div>
@@ -437,7 +438,7 @@ function fallbackCopy(text,btn){var ta=document.createElement('textarea');ta.val
 </script>
 
 <!-- Sticky CTA on Mobile -->
-<div id="sticky-cta" class="no-print" style="position:fixed;bottom:0;left:0;right:0;background:rgba(255,248,240,0.95);backdrop-filter:blur(8px);padding:10px 16px;text-align:center;border-top:1px solid #EDE6DE;z-index:100;display:none">
+<div id="sticky-cta" class="no-print" class="u-sticky-cta">
   <a href="#planer" class="cta" style="display:inline-block;background:#E8873D;color:#fff;padding:10px 24px;border-radius:99px;font-weight:700;font-size:14px;text-decoration:none">🎂 Jetzt planen →</a>
 </div>
 <script>if(window.innerWidth<=640){var s=document.getElementById('sticky-cta');window.addEventListener('scroll',function(){s.style.display=window.scrollY>300?'block':'none'})}</script>

@@ -106,6 +106,7 @@ footer a{color:var(--m);font-weight:400}
 window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
 plausible.init()
 </script>
+  <link rel="stylesheet" href="/css/utility.css">
 </head>
 <body>
 <main>
@@ -164,13 +165,13 @@ plausible.init()
 
   <div class="decision-cards">
     <div class="decision-card" onclick="this.classList.toggle('active')">
-      <strong>🔴 Laut</strong><br><span style="font-size:13px;color:var(--m)">Tobezone</span>
+      <strong>🔴 Laut</strong><br><span class="u-fs13 u-clr-m">Tobezone</span>
     </div>
     <div class="decision-card" onclick="this.classList.toggle('active')">
-      <strong>🟡 Ruhig</strong><br><span style="font-size:13px;color:var(--m)">Sitzt & Konzentriert</span>
+      <strong>🟡 Ruhig</strong><br><span class="u-fs13 u-clr-m">Sitzt & Konzentriert</span>
     </div>
     <div class="decision-card" onclick="this.classList.toggle('active')">
-      <strong>🟢 Kreativ</strong><br><span style="font-size:13px;color:var(--m)">Basteln & Machen</span>
+      <strong>🟢 Kreativ</strong><br><span class="u-fs13 u-clr-m">Basteln & Machen</span>
     </div>
   </div>
 
@@ -414,15 +415,15 @@ plausible.init()
   <div class="related">
     <h3>Weiter lesen</h3>
     <div class="grid">
-      <a href="/schatzsuche-drinnen" style="text-decoration:none"><div class="card" style="text-align:center;padding:14px"><p style="font-weight:700;color:var(--d)">Indoor-Schatzsuche</p><span style="font-size:12px;color:var(--m)">Mit Rätseln für drinnen</span></div></a>
-      <a href="/kindergeburtstag-bei-regen" style="text-decoration:none"><div class="card" style="text-align:center;padding:14px"><p style="font-weight:700;color:var(--d)">Geburtstag bei Regen</p><span style="font-size:12px;color:var(--m)">Andere Ideen</span></div></a>
-      <a href="/kindergeburtstag-wenig-aufwand" style="text-decoration:none"><div class="card" style="text-align:center;padding:14px"><p style="font-weight:700;color:var(--d)">Wenig Aufwand</p><span style="font-size:12px;color:var(--m)">Für Faule Eltern</span></div></a>
+      <a href="/schatzsuche-drinnen" style="text-decoration:none"><div class="card" class="u-emoji-cell"><p style="font-weight:700;color:var(--d)">Indoor-Schatzsuche</p><span class="u-fs12 u-clr-m">Mit Rätseln für drinnen</span></div></a>
+      <a href="/kindergeburtstag-bei-regen" style="text-decoration:none"><div class="card" class="u-emoji-cell"><p style="font-weight:700;color:var(--d)">Geburtstag bei Regen</p><span class="u-fs12 u-clr-m">Andere Ideen</span></div></a>
+      <a href="/kindergeburtstag-wenig-aufwand" style="text-decoration:none"><div class="card" class="u-emoji-cell"><p style="font-weight:700;color:var(--d)">Wenig Aufwand</p><span class="u-fs12 u-clr-m">Für Faule Eltern</span></div></a>
     </div>
   </div>
 
   <p style="text-align:center;margin:24px 0"><a href="/schatzsuche" style="display:inline-block;background:#E8873D;color:#fff;padding:10px 24px;border-radius:99px;font-weight:600;font-size:14px;text-decoration:none">🗺️ Schatzsuche erstellen →</a></p>
 
-  <a href="#" class="cta" style="margin-top:32px">🎂 Indoor-Geburtstag jetzt planen →</a>
+  <a href="#" class="cta" class="u-mt32">🎂 Indoor-Geburtstag jetzt planen →</a>
   <a href="#" class="cta" style="margin-left:12px">📋 Spieleliste drucken →</a>
 
   <footer>
@@ -469,11 +470,11 @@ function fallbackCopy(text,btn){var ta=document.createElement('textarea');ta.val
   }
 })();
 </script>
-<p style="font-size:12px;color:#6B5D52;margin-top:24px;padding-top:12px;border-top:1px solid #EDE6DE;text-align:center;max-width:660px;margin-left:auto;margin-right:auto" class="no-print">
+<p class="u-page-footer" class="no-print">
   * Affiliate-Link: Wenn du über diesen Link kaufst, erhalten wir eine kleine Provision. Für dich ändert sich der Preis nicht.
 </p>
-<div id="sticky-cta" style="position:fixed;bottom:0;left:0;right:0;background:rgba(255,248,240,0.95);backdrop-filter:blur(8px);padding:10px 16px;text-align:center;border-top:1px solid #EDE6DE;z-index:100;display:none" class="no-print">
-  <a href="/kindergeburtstag" class="cta" style="padding:10px 24px;font-size:14px">🎂 Jetzt planen →</a>
+<div id="sticky-cta" class="u-sticky-cta" class="no-print">
+  <a href="/kindergeburtstag" class="cta" class="u-btn-filter">🎂 Jetzt planen →</a>
 </div>
 <script>if(window.innerWidth<=640){var s=document.getElementById('sticky-cta');window.addEventListener('scroll',function(){s.style.display=window.scrollY>300?'block':'none'})}</script>
 </body>
