@@ -1,30 +1,25 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 02.04.2026
-**Rechner:** Bolle
+**Datum:** 04.04.2026
+**Person:** Bolle
 
 ## Was wurde gemacht
-- SEO-Keyword-Recherche komplett durchgefuehrt: 16 Suchanfragen, 12 Keyword-Cluster analysiert
-- Konkurrenz-Analyse: ausgefuxt.de (SI 1,359), schnitzeljagd-ideen.de (SI 0,982), kindergeburtstag-planen.de (SI 0,153) vs. machsleicht.de (SI 0,0000)
-- SISTRIX Sichtbarkeitsindex, Seobility Onpage-Score (77%), PageSpeed Insights (Mobil 84/85/100/100, Desktop 99/85/100/100) geprueft
-- SEO-Analyse-Dokument erstellt: _dev/docs/seo-keyword-analyse.xlsx (5 Tabs: Dashboard, Keyword-Cluster, Konkurrenz, Opportunities, Strategie)
-- Sprint 6 PBIs definiert: 11 Tasks (#34-#44), priorisiert nach SEO-Impact
-- P0 #34 erledigt: Startseite index.html SEO-Fallback von 72 auf 426 Woerter ausgebaut, H1 und Title keyword-optimiert, 30+ interne Links eingefuegt
-- P0 #35 erledigt: GSC Sitemap neu eingereicht (02.04.2026), Indexierung fuer Startseite beantragt
-- Einladungskarte-CTA in kindergeburtstag.js (aus vorheriger Session, noch uncommitted) liegt bereit
+- Einhorn-Einladungsspiel fertiggestellt (`/einladung/einhorn/index.html`) — 809 Zeilen, 184K, React+SVG+WebAudio
+- Meerjungfrau-Einladungsspiel fertiggestellt (`/einladung/meerjungfrau/index.html`) — 809 Zeilen, 180K
+- Versuch Detektiv/Feuerwehr/Prinzessin parallel per Agents zu bauen — Qualitaet ungenuegend, komplett rueckgaengig gemacht
+- Takeover-Strategie-Ideen Dokument erstellt (`_dev/docs/takeover-strategie-ideen.md`)
+- Motto-Konsistenz-Audit durchgefuehrt, Backlog geschrieben (`_dev/docs/motto-plan-backlog.md`)
+- Matti-Fangspiel Prototyp gesichert (`_dev/prototypen/fangspiel-matti-original.html`)
 
 ## Naechste Schritte
-- Sprint 6 P1-Tasks umsetzen: #36 Top-Level Altersseiten 3-12, #37 Einladung promoten, #38 Winter-Guide, #39 Wald-Guide
-- Backlink-Strategie starten (#40)
-- FAQ-Schema auf alle Ratgeber ausrollen (#41)
-- Schatzsuche-Bereich ausbauen (#42)
-- Nach Deploy: GSC nochmal Indexierung fuer Startseite beantragen (damit Google den neuen 426-Woerter-Content sieht)
-
-## Deploy
-- Deployed am 02.04.2026 auf Netlify (Ende Deploy)
-- Startseite-Rewrite (426 Woerter) ist jetzt LIVE
+- Detektiv-Einladungsspiel bauen (einzeln, sorgfaeltig, NICHT per Agent)
+- Feuerwehr-Einladungsspiel bauen (einzeln, sorgfaeltig)
+- Prinzessin-Einladungsspiel bauen (einzeln, sorgfaeltig)
+- Erstellen-Tool um neue Mottos erweitern (Einhorn, Meerjungfrau, + weitere wenn fertig)
+- Netlify Functions (create-invite.mjs, serve-invite.mjs) um neue Mottos erweitern
+- Schnitzeljagd SEO-Seite (Sprint-Prio 1 aus Backlog)
 
 ## Offene Fragen
-- Backlog-Excel (_dev/docs/backlog-skill-audit.xlsx) muss noch mit Sprint 6 Tasks (#34-#44) aktualisiert werden
-- Nach Deploy: GSC Indexierung fuer Startseite erneut beantragen
+- Sollen die 3 fehlenden Games (Detektiv, Feuerwehr, Prinzessin) in der naechsten Session einzeln gebaut werden?
+- Matti-Fangspiel (universelles Template) — wann angehen?
