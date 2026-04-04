@@ -1,6 +1,6 @@
 # Motto-Plan & Backlog
 
-*Stand: 03.04.2026 — Bolle-Session*
+*Stand: 04.04.2026 — Bolle-Session*
 
 ---
 
@@ -36,19 +36,19 @@ Paw Patrol, Pokemon, Minecraft, Frozen, Super Mario, Spider-Man, Harry Potter, N
 
 **Tasks:**
 - [ ] Naming überarbeiten: Oberbegriff "Schatzsuche & Schnitzeljagd" oder mottoabhängig (Piraten = "Schatzsuche", Detektiv = "Schnitzeljagd", Weltraum = "Mission" etc.)
-- [ ] Landingpage `/schnitzeljagd/` erstellen (analog zu `/schatzsuche/`)
+- [x] Landingpage `/schnitzeljagd/` erstellen (04.04.2026 — 403 Zeilen, FAQ-Schema, 6 Themen, vs-Box)
 - [ ] SEO-Seiten: "Schnitzeljagd Kindergeburtstag", "Schnitzeljagd Ideen", "Schnitzeljagd draußen", "Schnitzeljagd drinnen"
 - [ ] Meta/Title/H1 auf bestehenden Schatzsuche-Seiten um "Schnitzeljagd" ergänzen
-- [ ] Interne Verlinkung zwischen Schatzsuche ↔ Schnitzeljagd Seiten
+- [x] Interne Verlinkung zwischen Schatzsuche ↔ Schnitzeljagd Seiten (04.04.2026 — schatzsuche-kindergeburtstag + schatzsuche-drinnen + sitemap)
 
 ### Sprint-Prio 1b: Cross-Selling Schatzsuche → Einladung
 
 **Problem:** Wer eine Schatzsuche/Schnitzeljagd erstellt, will höchstwahrscheinlich auch eine passende Einladung verschicken. Aktuell gibt es keinen Link/Button von der Schatzsuche zur Einladung (und umgekehrt). Die beiden Produkte leben komplett isoliert.
 
 **Tasks:**
-- [ ] CTA-Button auf jeder Schatzsuche-Ergebnis-Seite: "Passende Einladung erstellen →" (verlinkt auf `/einladung/erstellen/?motto=X`)
-- [ ] CTA-Button auf Schatzsuche-Selector: Hinweis "Tipp: Erstelle auch gleich die passende Einladung!"
-- [ ] CTA auf Einladungs-Endscreen (Won-Phase): "Schatzsuche zum Motto erstellen →" (verlinkt auf `/schatzsuche/X`)
+- [x] CTA-Button auf jeder Schatzsuche-Ergebnis-Seite: "Passende Einladung erstellen →" (verlinkt auf `/einladung/erstellen/?motto=X`) — Won-Screen gebaut 04.04.2026
+- [x] CTA-Button auf Schatzsuche-Selector: Hinweis "Tipp: Erstelle auch gleich die passende Einladung!" — im Won-Screen integriert
+- [x] CTA auf Einladungs-Endscreen (Won-Phase): "Schatzsuche zum Motto erstellen →" (verlinkt auf `/schatzsuche/X`) — alle 10 Mottos, Plausible-Event
 - [ ] Einladungs-Erstellen-Tool um Motto-Auswahl erweitern (aktuell nur Piraten-Default)
 - [ ] Gemeinsame Übersichtsseite "Alles für deinen Kindergeburtstag" mit beiden Produkten pro Motto
 
