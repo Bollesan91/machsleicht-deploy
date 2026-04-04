@@ -2583,6 +2583,10 @@ function App() {
     [B, T] = useState(null),
     [ne, te] = useState(!1),
     [ae, $] = useState(!1);
+  // Planer-Umbau: neue States
+  const [activeStation, setActiveStation] = useState(0),
+    [inviteSent, setInviteSent] = useState(0),
+    [previewName, setPreviewName] = useState("");
   (useEffect(() => {
     const e = new URLSearchParams(window.location.search),
       n = e.get("motto") || window.__selectedMotto,
@@ -2605,6 +2609,10 @@ function App() {
     useEffect(() => saveState("dauer", S), [S]),
     useEffect(() => saveState("owned", k), [k]),
     useEffect(() => saveState("shoppingMode", z), [z]),
+    useEffect(() => {
+      const el = document.getElementById("sticky-cta");
+      if (el) el.style.display = r === "plan" ? "none" : "";
+    }, [r]),
     useEffect(() => {
       if (o) {
         $(!0);
@@ -2888,12 +2896,15 @@ function App() {
         i = f === "wohnung" ? 100 : f === "garten" ? 65 : 40,
         s = h < m * 5 ? 100 : h < m * 10 ? 75 : 50,
         b = H ? 95 : K ? 55 : 80,
-        he = Math.round((g + u + p + i + s + b) / 6),
+        // Score-Loop: Einladung + Schatzsuche Bonus
+        inviteBonus = inviteSent >= m ? 11 : inviteSent > 0 ? Math.round(inviteSent / m * 11) : 0,
+        he = Math.min(100, Math.round((g + u + p + i + s + b) / 6) + inviteBonus),
         A = [];
       return (
         i < 70 && A.push("Regen-Alternative"),
         p < 60 && A.push("Material einkaufen"),
         s < 60 && A.push("Budget pr\xFCfen"),
+        inviteSent === 0 && A.push("Einladungen verschicken"),
         {
           avg: he,
           missing: A,
@@ -2904,6 +2915,7 @@ function App() {
             { label: "Wetterfest", val: i, icon: "\u{1F327}\uFE0F" },
             { label: "Budget", val: s, icon: "\u{1F4B0}" },
             { label: "Motto-Erlebnis", val: b, icon: "\u{1F3AF}" },
+            { label: "Einladung", val: inviteSent >= m ? 100 : Math.round(inviteSent / m * 100), icon: "\uD83D\uDC8C" },
           ],
         }
       );
@@ -4478,133 +4490,85 @@ https://machsleicht.de`;
           " Produkte.",
         ),
     ),
-    // === EINLADUNG BLOCK (Teaser V2) ===
-    React.createElement(
-      "section",
-      { className: "fu", style: { marginBottom: 16 } },
-      React.createElement(
-        "a",
-        {
-          href: "/einladung/erstellen/?motto=" + (t?.id || ""),
-          style: { textDecoration: "none", display: "block" },
-          onClick: function () {
-            typeof mlTrack === "function" &&
-              mlTrack("cta_einladung_plan", { motto: t?.id });
-          },
-        },
+    // === EINLADUNG BLOCK (Teaser V2 — interaktiv) ===
+    (() => {
+      const displayName = previewName || "Emma";
+      return React.createElement(
+        "section",
+        { className: "fu", style: { marginBottom: 16 } },
         React.createElement(
           "div",
-          {
-            style: {
-              background: "var(--d)",
-              borderRadius: 16,
-              padding: "20px 18px",
-              color: "#fff",
-            },
-          },
-          React.createElement(
-            "p",
-            {
-              style: {
-                fontSize: 18,
-                fontWeight: 900,
-                margin: "0 0 4px",
-                lineHeight: 1.3,
-              },
-            },
+          { style: { background: "var(--d)", borderRadius: 16, padding: "20px 18px", color: "#fff" } },
+          React.createElement("p", { style: { fontSize: 18, fontWeight: 900, margin: "0 0 4px", lineHeight: 1.3 } },
             m + " Kinder einladen \u2014 in 30 Sekunden",
           ),
-          React.createElement(
-            "p",
-            { style: { fontSize: 13, opacity: 0.6, margin: "0 0 16px" } },
-            "Jedes Kind bekommt ein interaktives " +
-              t.name +
-              "-Minispiel als Vorgeschmack.",
+          React.createElement("p", { style: { fontSize: 13, opacity: 0.6, margin: "0 0 16px" } },
+            "Jedes Kind bekommt ein interaktives " + t.name + "-Minispiel als Vorgeschmack.",
           ),
+          // Name input
+          React.createElement("p", { style: { fontSize: 11, opacity: 0.4, margin: "0 0 6px" } }, "Probier's aus \u2014 tippe einen Namen:"),
+          React.createElement("input", {
+            type: "text",
+            value: previewName,
+            onChange: function (ev) { setPreviewName(ev.target.value); },
+            placeholder: "z.B. Emma, Max, Sophie\u2026",
+            style: {
+              width: "100%", padding: "10px 14px", borderRadius: 10, border: "none",
+              background: "rgba(255,255,255,0.12)", color: "#fff", fontSize: 14,
+              fontFamily: "var(--f)", outline: "none", marginBottom: 12, boxSizing: "border-box",
+            },
+          }),
+          // WhatsApp Preview
           React.createElement(
             "div",
-            {
-              style: {
-                background: "#DCF8C6",
-                borderRadius: "12px 12px 12px 0",
-                padding: "12px 14px",
-                marginBottom: 12,
-              },
-            },
-            React.createElement(
-              "p",
-              {
-                style: {
-                  fontSize: 13,
-                  color: "#111",
-                  margin: 0,
-                  lineHeight: 1.5,
-                },
-              },
-              React.createElement("strong", null, "Ahoi! "),
+            { style: { background: "#DCF8C6", borderRadius: "12px 12px 12px 0", padding: "12px 14px", marginBottom: 6 } },
+            React.createElement("p", { style: { fontSize: 13, color: "#111", margin: 0, lineHeight: 1.5 } },
+              React.createElement("strong", null, "Ahoi " + displayName + "! "),
               "Du bist eingeladen zum " + t.name + "-Geburtstag!",
             ),
-            React.createElement(
-              "p",
-              {
-                style: {
-                  fontSize: 11,
-                  color: "var(--a)",
-                  margin: "6px 0 0",
-                  fontWeight: 600,
-                },
-              },
-              "\uD83D\uDC46 Tippe hier f\xFCr dein " +
-                t.name +
-                "-Abenteuer...",
+            React.createElement("p", { style: { fontSize: 11, color: "var(--a)", margin: "6px 0 0", fontWeight: 600 } },
+              "\uD83D\uDC46 Tippe hier f\xFCr dein " + t.name + "-Abenteuer...",
             ),
           ),
+          React.createElement("p", { style: { fontSize: 10, opacity: 0.4, margin: "0 0 12px" } },
+            "So sieht es auf " + displayName + "s Handy aus",
+          ),
+          // Send button
           React.createElement(
-            "p",
+            "a",
             {
+              href: "/einladung/erstellen/?motto=" + (t?.id || ""),
+              onClick: function () {
+                setInviteSent(m);
+                typeof mlTrack === "function" && mlTrack("cta_einladung_plan", { motto: t?.id });
+              },
               style: {
-                fontSize: 10,
-                opacity: 0.4,
-                margin: "0 0 12px",
+                display: "block", width: "100%",
+                background: inviteSent >= m ? "var(--g)" : "var(--a)",
+                color: "#fff", padding: 14,
+                borderRadius: 99, fontWeight: 700, fontSize: 14, textAlign: "center", textDecoration: "none", boxSizing: "border-box",
+                transition: "background .3s",
               },
             },
-            "So sieht es auf dem Handy der Kinder aus",
+            inviteSent >= m
+              ? "\u2713 Einladung erstellt \u2014 bearbeiten \u2192"
+              : "\uD83D\uDC8C " + t.name + "-Einladung erstellen \u2192",
           ),
+          // Score hint
+          inviteSent >= m && React.createElement("p", { style: { fontSize: 11, opacity: 0.5, margin: "6px 0 0", textAlign: "center" } },
+            "\u2713 Score +11% \u2014 Bereitschafts-Check aktualisiert",
+          ),
+          // Trust line
           React.createElement(
             "div",
-            {
-              style: {
-                width: "100%",
-                background: "var(--a)",
-                color: "#fff",
-                padding: 14,
-                borderRadius: 99,
-                fontWeight: 700,
-                fontSize: 14,
-                textAlign: "center",
-              },
-            },
-            "\uD83D\uDC8C " + t.name + "-Einladung erstellen \u2192",
-          ),
-          React.createElement(
-            "div",
-            {
-              style: {
-                display: "flex",
-                justifyContent: "center",
-                gap: 16,
-                marginTop: 10,
-                fontSize: 11,
-                opacity: 0.3,
-              },
-            },
+            { style: { display: "flex", justifyContent: "center", gap: 16, marginTop: 10, fontSize: 11, opacity: 0.3 } },
             React.createElement("span", null, "Kostenlos"),
             React.createElement("span", null, "Kein Account"),
             React.createElement("span", null, "DSGVO-konform"),
           ),
         ),
-      ),
-    ),
+      );
+    })(),
     // === CONNECTOR: Einladung → Schatzsuche ===
     React.createElement(
       "div",
@@ -4643,152 +4607,161 @@ https://machsleicht.de`;
         },
       }),
     ),
-    // === SCHATZSUCHE TEASER ===
-    React.createElement(
-      "section",
-      { className: "fu", style: { marginBottom: 24 } },
-      React.createElement(
-        "a",
-        {
-          href: "/schatzsuche",
-          style: { textDecoration: "none", display: "block" },
-          onClick: function () {
-            typeof mlTrack === "function" &&
-              mlTrack("cta_schatzsuche_plan", { motto: t?.id });
-          },
-        },
+    // === SCHATZSUCHE TEASER mit Stationen-Explorer ===
+    (() => {
+      const stationSets = {
+        piraten: [
+          { n: 1, emoji: "\uD83C\uDF7E", title: "Flaschenpost", hint: "Eine Nachricht in der Flasche verr\xE4t den Startpunkt\u2026" },
+          { n: 2, emoji: "\uD83E\uDDED", title: "Kompass-R\xE4tsel", hint: "Norden? S\xFCden? Nur der richtige Kurs f\xFChrt weiter." },
+          { n: 3, emoji: "\uD83D\uDD10", title: "Geheimschrift", hint: "Entschl\xFCssle die Botschaft mit dem Piraten-Alphabet!" },
+          { n: 4, emoji: "\uD83D\uDC80", title: "Mutprobe", hint: "Traust du dich in die dunkle H\xF6hle?" },
+          { n: 5, emoji: "\uD83D\uDCB0", title: "Der Schatz!", hint: "X markiert die Stelle\u2026" },
+        ],
+        safari: [
+          { n: 1, emoji: "\uD83D\uDC3E", title: "Tierspuren", hint: "Welches Tier hat diese Spur hinterlassen?" },
+          { n: 2, emoji: "\uD83D\uDD2D", title: "Fernglas-Station", hint: "Finde die versteckten Tiere im Dickicht!" },
+          { n: 3, emoji: "\uD83E\uDDED", title: "Dschungel-Karte", hint: "Folge dem Pfad durch den Regenwald\u2026" },
+          { n: 4, emoji: "\uD83D\uDC0D", title: "Schlangen-Grube", hint: "Vorsicht! Welcher Weg f\xFChrt sicher vorbei?" },
+          { n: 5, emoji: "\uD83E\uDD81", title: "L\xF6wen-Schatz!", hint: "Der K\xF6nig der Tiere bewacht die Beute\u2026" },
+        ],
+        dino: [
+          { n: 1, emoji: "\uD83E\uDD9A", title: "Fossilien-Fund", hint: "Grabe den ersten Knochen aus!" },
+          { n: 2, emoji: "\uD83C\uDF0B", title: "Vulkan-R\xE4tsel", hint: "Der Vulkan brodelt \u2014 l\xF6se das R\xE4tsel bevor er ausbricht!" },
+          { n: 3, emoji: "\uD83E\uDD95", title: "Dino-Spuren", hint: "Welcher Dinosaurier war hier?" },
+          { n: 4, emoji: "\uD83E\uDDB4", title: "Skelett-Puzzle", hint: "Setze die Knochen richtig zusammen!" },
+          { n: 5, emoji: "\uD83D\uDC8E", title: "Bernstein-Schatz!", hint: "Ein urzeitlicher Sch\xE4tz wartet\u2026" },
+        ],
+        weltraum: [
+          { n: 1, emoji: "\uD83D\uDE80", title: "Raketenstart", hint: "Z\xE4hle den Countdown und starte die Mission!" },
+          { n: 2, emoji: "\u2B50", title: "Sternbild-Code", hint: "Verbinde die Sterne zum geheimen Zeichen." },
+          { n: 3, emoji: "\uD83E\uDE90", title: "Planeten-Quiz", hint: "Welcher Planet hat die meisten Monde?" },
+          { n: 4, emoji: "\uD83D\uDC7E", title: "Alien-Kontakt", hint: "Entschl\xFCssle die Botschaft der Au\xDFerirdischen!" },
+          { n: 5, emoji: "\uD83C\uDF1F", title: "Weltraum-Schatz!", hint: "Die Raumstation birgt das Geheimnis\u2026" },
+        ],
+        einhorn: [
+          { n: 1, emoji: "\uD83C\uDF08", title: "Regenbogen-Pfad", hint: "Folge den Farben zum n\xE4chsten Hinweis!" },
+          { n: 2, emoji: "\u2728", title: "Glitzer-R\xE4tsel", hint: "Nur magischer Staub macht die Schrift sichtbar\u2026" },
+          { n: 3, emoji: "\uD83E\uDDDA", title: "Feen-Botschaft", hint: "Die Fee fl\xFCstert dir den Weg zu\u2026" },
+          { n: 4, emoji: "\uD83D\uDD2E", title: "Kristallkugel", hint: "Schau hinein \u2014 was siehst du?" },
+          { n: 5, emoji: "\uD83E\uDD84", title: "Einhorn-Schatz!", hint: "Am Ende des Regenbogens wartet Magie\u2026" },
+        ],
+        feuerwehr: [
+          { n: 1, emoji: "\uD83D\uDEA8", title: "Alarm!", hint: "Der Notruf kommt rein \u2014 wohin m\xFCsst ihr?" },
+          { n: 2, emoji: "\uD83E\uDDEF", title: "Schlauch-Puzzle", hint: "Welcher Schlauch f\xFChrt zum Hydranten?" },
+          { n: 3, emoji: "\uD83D\uDD25", title: "Feuer-Quiz", hint: "Teste dein Feuerwehr-Wissen!" },
+          { n: 4, emoji: "\uD83E\uDE9C", title: "Leiter-Mission", hint: "Klettere hoch und rette die Katze!" },
+          { n: 5, emoji: "\uD83C\uDFC5", title: "Rettungs-Orden!", hint: "Mission erf\xFCllt \u2014 du bist ein Held!" },
+        ],
+      };
+      const defaultStations = [
+        { n: 1, emoji: "\uD83D\uDCDC", title: "Erster Hinweis", hint: "Die Suche beginnt \u2014 finde den Startpunkt!" },
+        { n: 2, emoji: "\uD83E\uDDE9", title: "R\xE4tsel-Station", hint: "Knacke das R\xE4tsel f\xFCr den n\xE4chsten Hinweis." },
+        { n: 3, emoji: "\uD83D\uDD10", title: "Geheimcode", hint: "Entschl\xFCssle den Code!" },
+        { n: 4, emoji: "\uD83C\uDFAF", title: "Challenge", hint: "Beweise deinen Mut und dein Geschick!" },
+        { n: 5, emoji: "\uD83D\uDCB0", title: "Der Schatz!", hint: "X markiert die Stelle\u2026" },
+      ];
+      const stations = (stationSets[t?.id] || defaultStations).map(function (st, i) {
+        return Object.assign({}, st, { unlocked: i < 2 });
+      });
+      const s = stations[activeStation];
+      return React.createElement(
+        "section",
+        { className: "fu", style: { marginBottom: 24 } },
         React.createElement(
           "div",
-          {
-            style: {
-              borderRadius: 16,
-              overflow: "hidden",
-              border: "1px solid var(--l)",
-            },
-          },
+          { style: { borderRadius: 16, overflow: "hidden", border: "1px solid var(--l)" } },
+          // Header
           React.createElement(
             "div",
-            {
-              style: {
-                background: "linear-gradient(135deg, #e8d5b7, #d4bc94)",
-                padding: "16px 18px",
-              },
-            },
-            React.createElement(
-              "p",
-              {
-                style: {
-                  fontSize: 18,
-                  fontWeight: 900,
-                  color: "var(--d)",
-                  margin: "0 0 2px",
-                },
-              },
-              "30 Minuten Abenteuer.",
-            ),
-            React.createElement(
-              "p",
-              {
-                style: {
-                  fontSize: 14,
-                  fontWeight: 700,
-                  color: "var(--d)",
-                  opacity: 0.6,
-                  margin: "0 0 2px",
-                },
-              },
-              "Du trinkst Kaffee. \u2615",
-            ),
-            React.createElement(
-              "p",
-              {
-                style: {
-                  fontSize: 12,
-                  color: "var(--d)",
-                  opacity: 0.5,
-                  margin: 0,
-                },
-              },
-              t.name +
-                "-Schatzsuche \xB7 " +
-                m +
-                " Kinder \xB7 " +
-                d +
-                " J. \xB7 " +
-                (F === "wohnung" ? "Drinnen" : F === "garten" ? "Garten" : "Park"),
+            { style: { background: "linear-gradient(135deg, #e8d5b7, #d4bc94)", padding: "16px 18px" } },
+            React.createElement("p", { style: { fontSize: 18, fontWeight: 900, color: "var(--d)", margin: "0 0 2px" } }, "30 Minuten Abenteuer."),
+            React.createElement("p", { style: { fontSize: 14, fontWeight: 700, color: "var(--d)", opacity: 0.6, margin: "0 0 2px" } }, "Du trinkst Kaffee. \u2615"),
+            React.createElement("p", { style: { fontSize: 12, color: "var(--d)", opacity: 0.5, margin: 0 } },
+              t.name + "-Schatzsuche \xB7 " + m + " Kinder \xB7 " + d + " J. \xB7 " + (F === "wohnung" ? "Drinnen" : F === "garten" ? "Garten" : "Park"),
             ),
           ),
+          // Stationen-Explorer
           React.createElement(
             "div",
-            {
-              style: {
-                padding: "14px 16px",
-                background: "var(--bg)",
-              },
-            },
+            { style: { padding: "14px 16px", background: "var(--bg)" } },
+            // Station dots
             React.createElement(
               "div",
-              {
-                style: {
-                  background: "var(--al)",
-                  borderRadius: 8,
-                  padding: "10px 12px",
-                  marginBottom: 12,
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 8,
-                },
-              },
-              React.createElement("span", { style: { fontSize: 14 } }, "\uD83D\uDCCB"),
-              React.createElement(
-                "p",
-                {
-                  style: {
-                    fontSize: 12,
-                    color: "var(--d)",
-                    margin: 0,
-                    lineHeight: 1.4,
+              { style: { display: "flex", gap: 0, marginBottom: 12, position: "relative" } },
+              React.createElement("div", { style: { position: "absolute", top: 20, left: 20, right: 20, height: 2, background: "var(--l)", zIndex: 0 } }),
+              stations.map(function (st, i) {
+                var isA = activeStation === i;
+                return React.createElement(
+                  "button",
+                  {
+                    key: st.n,
+                    onClick: function () { setActiveStation(i); },
+                    style: {
+                      flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 4,
+                      background: "transparent", border: "none", cursor: "pointer", position: "relative", zIndex: 1, padding: "0 2px",
+                    },
                   },
-                },
+                  React.createElement("div", {
+                    style: {
+                      width: 40, height: 40, borderRadius: "50%",
+                      background: isA ? "var(--a)" : st.unlocked ? "#fff" : "var(--bg)",
+                      color: isA ? "#fff" : "var(--d)",
+                      display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18,
+                      border: "2px solid " + (isA ? "var(--a)" : st.unlocked ? "var(--d)" : "var(--l)"),
+                      boxShadow: isA ? "0 2px 8px rgba(232,135,61,0.4)" : "none",
+                      transition: "all .2s",
+                    },
+                  }, st.emoji),
+                  React.createElement("span", { style: { fontSize: 9, fontWeight: 700, color: isA ? "var(--a)" : "var(--m)" } }, st.n),
+                );
+              }),
+            ),
+            // Active station card
+            React.createElement(
+              "div",
+              { style: { background: "#fff", borderRadius: 10, padding: 14, marginBottom: 12, borderLeft: "3px solid var(--a)" } },
+              React.createElement(
+                "div",
+                { style: { display: "flex", alignItems: "center", gap: 8, marginBottom: 6 } },
+                React.createElement("span", { style: { fontSize: 22 } }, s.emoji),
+                React.createElement("div", null,
+                  React.createElement("p", { style: { fontSize: 14, fontWeight: 800, color: "var(--d)", margin: 0 } }, "Station " + s.n + ": " + s.title),
+                  React.createElement("p", { style: { fontSize: 11, color: "var(--a)", fontWeight: 600, margin: 0 } }, "F\xFCr " + d + "-J\xE4hrige angepasst"),
+                ),
+              ),
+              React.createElement("p", { style: { fontSize: 12, color: "var(--m)", margin: 0, lineHeight: 1.5, fontStyle: "italic" } }, s.hint),
+              !s.unlocked && React.createElement("p", { style: { fontSize: 11, color: "var(--a)", margin: "6px 0 0", fontWeight: 600 } }, "\uD83D\uDD12 Erstelle die Schatzsuche um alle Stationen zu sehen"),
+            ),
+            // Zeitplan-Hinweis
+            React.createElement(
+              "div",
+              { style: { background: "var(--al)", borderRadius: 8, padding: "10px 12px", marginBottom: 12, display: "flex", alignItems: "center", gap: 8 } },
+              React.createElement("span", { style: { fontSize: 14 } }, "\uD83D\uDCCB"),
+              React.createElement("p", { style: { fontSize: 12, color: "var(--d)", margin: 0, lineHeight: 1.4 } },
                 React.createElement("strong", null, "Passt in deinen Zeitplan: "),
                 "Ersetzt einen Spieleslot \u2014 gleiche Dauer, fertige R\xE4tsel.",
               ),
             ),
+            // CTA
             React.createElement(
-              "div",
+              "a",
               {
+                href: "/schatzsuche",
+                onClick: function () { typeof mlTrack === "function" && mlTrack("cta_schatzsuche_plan", { motto: t?.id }); },
                 style: {
-                  width: "100%",
-                  background: "var(--a)",
-                  color: "#fff",
-                  padding: 14,
-                  borderRadius: 99,
-                  fontWeight: 700,
-                  fontSize: 14,
-                  textAlign: "center",
+                  display: "block", width: "100%", background: "var(--a)", color: "#fff", padding: 14,
+                  borderRadius: 99, fontWeight: 700, fontSize: 14, textAlign: "center", textDecoration: "none", boxSizing: "border-box",
                 },
               },
-              t.name +
-                "-Schatzsuche f\xFCr " +
-                m +
-                " Kinder \u2192",
+              t.name + "-Schatzsuche f\xFCr " + m + " Kinder \u2192",
             ),
-            React.createElement(
-              "p",
-              {
-                style: {
-                  fontSize: 11,
-                  color: "var(--m)",
-                  margin: "8px 0 0",
-                  textAlign: "center",
-                },
-              },
+            React.createElement("p", { style: { fontSize: 11, color: "var(--m)", margin: "8px 0 0", textAlign: "center" } },
               "Kostenlos \xB7 5 Stationen \xB7 Druckfertig in 5 Min.",
             ),
           ),
         ),
-      ),
-    ),
+      );
+    })(),
     (() => {
       return React.createElement(
         "section",
