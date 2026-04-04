@@ -29,11 +29,13 @@
 /kindergeburtstag/6-8-jahre  /kindergeburtstag/6-8-jahre.html  200
 /kindergeburtstag/9-12-jahre  /kindergeburtstag/9-12-jahre.html  200
 /schatzsuche/piraten  /schatzsuche/piraten.html  200
-/schatzsuche/dschungel  /schatzsuche/dschungel.html  200
+/schatzsuche/safari  /schatzsuche/safari.html  200
+/schatzsuche/dschungel  /schatzsuche/safari  301
 /schatzsuche/weltraum  /schatzsuche/weltraum.html  200
 /schatzsuche/detektiv  /schatzsuche/detektiv.html  200
 /schatzsuche/dino  /schatzsuche/dino.html  200
-/schatzsuche/feen  /schatzsuche/feen.html  200
+/schatzsuche/einhorn  /schatzsuche/einhorn.html  200
+/schatzsuche/feen  /schatzsuche/einhorn  301
 /ratgeber  /ratgeber/index.html  200
 /ratgeber/pokemon  /ratgeber/pokemon-fuer-eltern.html  200
 /ratgeber/pokemon-fuer-eltern  /ratgeber/pokemon-fuer-eltern.html  200
@@ -282,3 +284,19 @@
 
 # ══ PIRATEN-EINLADUNG: dynamische Kurzlinks via Netlify Function ══
 /e/*  /.netlify/functions/serve-invite  200
+/kindergeburtstag/paw-patrol-8-jahre  /kindergeburtstag/paw-patrol-8-jahre.html  200
+/kindergeburtstag/paw-patrol-9-jahre  /kindergeburtstag/paw-patrol-9-jahre.html  200
+/kindergeburtstag/paw-patrol-10-jahre  /kindergeburtstag/paw-patrol-10-jahre.html  200
+/kindergeburtstag/paw-patrol-11-jahre  /kindergeburtstag/paw-patrol-11-jahre.html  200
+/kindergeburtstag/paw-patrol-12-jahre  /kindergeburtstag/paw-patrol-12-jahre.html  200
+/kindergeburtstag/paw-patrol-9-12-jahre  /kindergeburtstag/paw-patrol-9-12-jahre.html  200
+/kindergeburtstag/baustelle-9-jahre  /kindergeburtstag/baustelle-9-jahre.html  200
+/kindergeburtstag/baustelle-10-jahre  /kindergeburtstag/baustelle-10-jahre.html  200
+/kindergeburtstag/baustelle-11-jahre  /kindergeburtstag/baustelle-11-jahre.html  200
+/kindergeburtstag/baustelle-12-jahre  /kindergeburtstag/baustelle-12-jahre.html  200
+/kindergeburtstag/baustelle-9-12-jahre  /kindergeburtstag/baustelle-9-12-jahre.html  200
+/kindergeburtstag/detektiv-4-jahre  /kindergeburtstag/detektiv-4-jahre.html  200
+/kindergeburtstag/detektiv-11-jahre  /kindergeburtstag/detektiv-11-jahre.html  200
+/kindergeburtstag/ritter-11-jahre  /kindergeburtstag/ritter-11-jahre.html  200
+/kindergeburtstag/zirkus-11-jahre  /kindergeburtstag/zirkus-11-jahre.html  200
+/kindergeburtstag/zirkus-12-jahre  /kindergeburtstag/zirkus-12-jahre.html  200
