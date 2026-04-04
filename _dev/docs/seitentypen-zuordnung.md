@@ -72,6 +72,7 @@
 | `/kindergeburtstag-7-jahre` | Alters-Ratgeber → Motto wählen |
 | `/schatzsuche-kindergeburtstag` | SEO-Ratgeber → Schatzsuche-Builder |
 | `/schatzsuche-drinnen` | Drinnen-Tipps → Builder |
+| `/schnitzeljagd` | Schnitzeljagd-SEO-Ratgeber → Schatzsuche-Builder |
 | `/baby-erstausstattung-checkliste` | Checkliste → Baby-Hub |
 | `/kliniktasche-packen` | Checkliste → Baby-Hub |
 | `/wochenbett-was-braucht-man` | Ratgeber → Baby-Hub |

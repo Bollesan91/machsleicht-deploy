@@ -4,26 +4,36 @@
 **Datum:** 04.04.2026
 
 ## Was wurde gemacht
-- Won-Screen für Schatzsuche-Live-Modus gebaut (Cross-Sell Schatzsuche → Einladung)
-  - Neuer View-State "won" in js/schatzsuche.js
-  - Thema-gematchtes Einladungs-CTA (6 Mottos → passende Einladung)
-  - Personalisierte Copy, 3-stufige CTA-Hierarchie
-  - Plausible Events: schatzsuche-won + won-einladung-cta
-- Gegenrichtung: Einladungs-Won-Screens → Schatzsuche-CTA (alle 10 Mottos)
-  - CTA von unsichtbar (30% opacity) → Glassmorphism-Card (70% opacity, Background, Border)
-  - Text: "Schatzsuche für deinen Kindergeburtstag →"
-  - Footer: "Kostenlos · Sofort startklar · machsleicht.de"
-  - Plausible Event: einladung-schatzsuche-cta mit Motto-Prop
-  - Piraten: zusätzlicher Schatzsuche-Link (hatte vorher nur Einladung-Link)
+- **Schnitzeljagd SEO-LP gebaut** (`/schnitzeljagd.html`, 403 Zeilen)
+  - Eigenständiger Content-Winkel: Schnitzeljagd vs. Schatzsuche, mottoabhängiges Naming, Aufgaben nach Alter (4–5/6–8/9–12)
+  - vs-Box Layout, 5-Stationen-Tabelle, Checkliste, 5 häufigste Fehler
+  - 4 CTAs → `/schatzsuche` Builder, Sticky-CTA Mobile
+  - FAQ-Schema (4 Fragen) für Rich Snippets
+  - Plausible-Tracking
+  - Ziel-Keywords: "Schnitzeljagd Kindergeburtstag", "Schnitzeljagd Ideen", "Schnitzeljagd Aufgaben"
+- **Elite Review durchgeführt** — 5 Fehler gefunden und gefixt:
+  1. "8 Themen" → "6 Themen" (Builder hat nur 6, war Bait-and-Switch)
+  2. Tabelle auf 6 Builder-Themen reduziert + "weitere in Vorbereitung"
+  3. Decision-Cards: Safari→`/schatzsuche/dschungel`, Feen→`/schatzsuche/feen` (korrekte URLs)
+  4. Alle 6 verlinkten Themen-Seiten verifiziert
+  5. Toter Copy-Button-Code entfernt
+- **Interne Verlinkung gesetzt:**
+  - `schatzsuche-kindergeburtstag.html` → Related-Link zu /schnitzeljagd
+  - `schatzsuche-drinnen.html` → Related-Link zu /schnitzeljagd
+  - `sitemap.xml` → Schnitzeljagd-Eintrag (Priority 0.8)
+  - `seitentypen-zuordnung.md` → Schnitzeljagd als Ratgeber-Typ eingetragen
 
 ## Nächste Schritte
-- Plausible-Daten beobachten: Conversion-Rate beider Cross-Sell-Richtungen
-- Sprint 7 QA-Gate-Checkliste, Seitentypen-Zuordnung, CTA-Hierarchie
-- Plausible-Daten prüfen: Schatzsuche-Traffic + Schnitzeljagd-Suchvolumen
-- Backlog Sprint 8 vorbereiten
+- **Phase 2: Schnitzeljagd Long-Tail-Seiten** — `/schnitzeljagd-aufgaben.html`, `/schnitzeljagd-draussen.html`
+- **Phase 3: Naming auf bestehenden Seiten** — mottoabhängig (Detektiv=Schnitzeljagd, Weltraum=Mission etc.) in H1/Title/Description
+- **Eigenes OG-Image** für /schnitzeljagd (aktuell nutzt og-schatzsuche.png)
+- **Differenzierung verbessern:** Mini-Quiz "Welche Schnitzeljagd passt?" als interaktives Element
+- Sprint-Prio 2: Motto-Konsistenz (6 fehlende Schatzsuchen, Dschungel→Safari Migration)
+- Sprint-Prio 3: Prinzessin komplett aufbauen
+- Plausible-Daten beobachten: Cross-Sell-Conversion + Schnitzeljagd-Traffic
 
 ## Offene Fragen
-- Braucht Feuerwehr/Meerjungfrau wirklich eine eigene Schatzsuche oder reicht das Einladungsspiel?
-- Schnitzeljagd-LP: Erst Traffic-Daten prüfen bevor gebaut wird
-- Guide vs Ratgeber Dopplung: Zusammenlegen oder klare Trennung?
-- Won-Screen A/B-Test: Lohnt sich ein Countdown/Timer-Element für Urgency?
+- Guide vs Ratgeber Dopplung klären
+- Schnitzeljagd-LP: Keyword-Dichte prüfen (25+ mal "Schnitzeljagd" — Stuffing-Risiko?)
+- Badge "Ratgeber + Tool" — passt das ins machsleicht-System oder ändern?
+- Eigenes OG-Image für Schnitzeljagd nötig oder reicht og-schatzsuche.png?
