@@ -37,26 +37,41 @@
 - Kein generisches „Akademie"-Pattern (3/5/7 Stationen)
 - Natürliche Sprache statt Find-Replace-Naming
 
+### Navigation Quick-Wins (ERLEDIGT)
+- **Sticky 3-Button Action Bar** auf allen ~340 Seiten: Einladung / Schatzsuche / Planer (CSS-only, kein JS-Flackern)
+- **Motto-Grid** auf /kindergeburtstag: 6 fehlende Mottos ergänzt (20/20 komplett)
+- **Homepage CTA-Button** prominent unter Hero
+- **"14 Mottos" → "20 Mottos"** global aktualisiert (~260 Dateien)
+- CSS-Bug gefixt: doppeltes class-Attribut auf Sticky-CTA
+
+### Planer-Redesign Konzept (Sparring + Wireframes)
+- **Site-Architektur** visualisiert (IST vs SOLL) — site-architektur.jsx Artifact
+- **Plan-Wireframe** erstellt: optimale Mobile-Reihenfolge 15→8 Screens — plan-wireframe.jsx Artifact
+- **Teaser-Konzepte** v2: personalisiert, interaktiv, mit Killer-Hooks — teaser-v2.jsx Artifact
+- 10-Punkte Sparring zur Produktdramaturgie durchgeführt
+- Kerninsight: Choreografie-Problem, nicht Content-Problem
+
 ## Nächste Schritte
+- **PRIORITÄT: Planer-Umbau (kindergeburtstag.html)**
+  - Teaser-Konzept liegt als Referenz vor (teaser-v2.jsx Artifact)
+  - Wireframe liegt vor (plan-wireframe.jsx Artifact)
+  - Planer-JS-Code analysieren und Render-Output umbauen
+  - Kernänderungen:
+    1. Control Hub direkt nach Hero (Einladung / Schatzsuche / PDF)
+    2. Einladung hochziehen: WhatsApp-Preview, personalisiert, interaktiv
+    3. Schatzsuche-Teaser: Stationen-Explorer, "30 Min Abenteuer, du trinkst Kaffee"
+    4. Zeitplan als Accordion statt Vollausklappung
+    5. Affiliates IN den Zeitplan einweben statt separater Block
+    6. Score-Completion-Loop: Aktionen erhöhen den Readiness-Score live
+    7. Abschluss-Block: PDF + An Helfer schicken + Nächstes Jahr
 - **Meerjungfrau finalisieren** (Zeitangaben, Spiel 5, Material-Check)
-- **Ritter** als #3 expandieren
-- **Pferde** als #4
-- **Baustelle** als #5
-- **Zirkus** als #6
-- Dann 8 Franchise-Seiten (frozen, paw-patrol, pokemon, minecraft, ninjago, harry-potter, spider-man, super-mario)
+- **Ritter** als #3 expandieren, dann Pferde, Baustelle, Zirkus
+- **Franchise-Seiten** (8 Stück) auf Elite-Level bringen
 
-## KRITISCH: Navigation-Bug auf /kindergeburtstag
-Die Hauptseite `/kindergeburtstag` verlinkt nur 14 von 20 Mottos. **6 Motto-Seiten sind nicht erreichbar:**
-- ❌ Detektiv
-- ❌ Meerjungfrau
-- ❌ Ritter
-- ❌ Pferde
-- ❌ Baustelle
-- ❌ Zirkus
-
-Diese Seiten existieren unter `/kindergeburtstag/detektiv` etc., tauchen aber weder im Motto-Grid noch in der Motto-Liste auf kindergeburtstag.html auf. Müssen in die Navigation eingepflegt werden.
+## ERLEDIGT: Navigation-Bug auf /kindergeburtstag
+~~Die Hauptseite verlinkte nur 14 von 20 Mottos.~~ **GEFIXT** — alle 20 Mottos im Grid und in der Liste.
 
 ## Offene Fragen
 - Meerjungfrau Spiel-Mix: Braucht das auch ein Bewegungsspiel als Ersatz? (Unterwasser-Parcours ist schon drin)
 - Franchise-Seiten: Gleiches Template oder eigene Struktur? (Lizenz-Themen haben andere Deko/Essen-Logik)
-- Navigation: Alle 20 Mottos auf /kindergeburtstag aufnehmen, oder bewusst nur bestimmte zeigen?
+- Planer-Umbau: JS-Code analysieren — wie komplex ist der Render-Output?
