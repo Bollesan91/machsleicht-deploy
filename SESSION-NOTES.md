@@ -5,21 +5,24 @@
 **Person:** Bolle
 
 ## Was wurde gemacht
-- Einhorn-Einladungsspiel fertiggestellt (`/einladung/einhorn/index.html`) — 809 Zeilen, 184K, React+SVG+WebAudio
-- Meerjungfrau-Einladungsspiel fertiggestellt (`/einladung/meerjungfrau/index.html`) — 809 Zeilen, 180K
-- Versuch Detektiv/Feuerwehr/Prinzessin parallel per Agents zu bauen — Qualitaet ungenuegend, komplett rueckgaengig gemacht
-- Takeover-Strategie-Ideen Dokument erstellt (`_dev/docs/takeover-strategie-ideen.md`)
-- Motto-Konsistenz-Audit durchgefuehrt, Backlog geschrieben (`_dev/docs/motto-plan-backlog.md`)
-- Matti-Fangspiel Prototyp gesichert (`_dev/prototypen/fangspiel-matti-original.html`)
+- Strategiedokument durchgearbeitet und kritisch bewertet
+- Vollständiges Backlog erstellt (55 Tasks, 6 Sprints) als Excel in lokalem Projektordner
+- Lokalen Projektordner aufgeräumt (35 Dateien → 5, alte Versionen/Tests/Temp gelöscht)
+- Draft auf main deployed (5 Einladungsspiele + Takeover-Strategie)
+- Sprint 7 Bugs gestartet — 5 Tasks abgearbeitet:
+  1. Einladungs-Erstellen-Tool: 10 Mottos statt 4 (MOTTO_CONFIG + Buttons + Grid)
+  2. Won-Screen CTAs: Alle 9 Spiele linken jetzt auf passende Schatzsuche statt Homepage
+  3. Homepage-Dopplung: /homepage → 301 Redirect auf /
+  4. Motto-Zahl: "14 Mottos" → "20 Mottos" auf Startseite (Schema, FAQ, SEO-Text)
+  5. Schatzsuche Cross-Sell-Banner: Dynamisch je nach gewähltem Thema statt hart "Piraten"
 
-## Naechste Schritte
-- Detektiv-Einladungsspiel bauen (einzeln, sorgfaeltig, NICHT per Agent)
-- Feuerwehr-Einladungsspiel bauen (einzeln, sorgfaeltig)
-- Prinzessin-Einladungsspiel bauen (einzeln, sorgfaeltig)
-- Erstellen-Tool um neue Mottos erweitern (Einhorn, Meerjungfrau, + weitere wenn fertig)
-- Netlify Functions (create-invite.mjs, serve-invite.mjs) um neue Mottos erweitern
-- Schnitzeljagd SEO-Seite (Sprint-Prio 1 aus Backlog)
+## Nächste Schritte
+- Sprint 7 weitermachen: QA-Gate-Checkliste, Seitentypen-Zuordnung, CTA-Hierarchie
+- Task 3 aus Backlog: 248 Kindergeburtstag-Detailseiten → CTA zu Einladung ergänzen
+- Plausible-Daten prüfen: Schatzsuche-Traffic + Schnitzeljagd-Suchvolumen
+- Backlog Sprint 8 vorbereiten
 
 ## Offene Fragen
-- Sollen die 3 fehlenden Games (Detektiv, Feuerwehr, Prinzessin) in der naechsten Session einzeln gebaut werden?
-- Matti-Fangspiel (universelles Template) — wann angehen?
+- Braucht Feuerwehr/Meerjungfrau wirklich eine eigene Schatzsuche oder reicht das Einladungsspiel?
+- Schnitzeljagd-LP: Erst Traffic-Daten prüfen bevor gebaut wird
+- Guide vs Ratgeber Dopplung: Zusammenlegen oder klare Trennung?

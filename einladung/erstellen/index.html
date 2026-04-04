@@ -10,7 +10,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://machsleicht.de/einladung/erstellen">
 <title>Einladung erstellen | machsleicht.de</title>
-<meta name="description" content="Erstelle eine individuelle Einladung f&uuml;r den Kindergeburtstag — Piraten, Dino, Safari oder Weltraum. Kostenlos, direkt im Browser.">
+<meta name="description" content="Erstelle eine individuelle Einladung f&uuml;r den Kindergeburtstag — 10 Mottos von Piraten bis Einhorn. Kostenlos, direkt im Browser, per WhatsApp verschicken.">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -80,7 +80,7 @@
   .btn:disabled { opacity: .5; cursor: not-allowed; }
 
   /* Motto-Picker */
-  .motto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 4px; }
+  .motto-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 4px; }
   .motto-btn {
     padding: 12px 8px;
     background: rgba(255,255,255,.07);
@@ -152,6 +152,12 @@
         <button type="button" class="motto-btn" data-motto="dino" onclick="selectMotto(this)"><span class="motto-emoji">🦕</span>Dino</button>
         <button type="button" class="motto-btn" data-motto="safari" onclick="selectMotto(this)"><span class="motto-emoji">🦁</span>Safari</button>
         <button type="button" class="motto-btn" data-motto="weltraum" onclick="selectMotto(this)"><span class="motto-emoji">🚀</span>Weltraum</button>
+        <button type="button" class="motto-btn" data-motto="detektiv" onclick="selectMotto(this)"><span class="motto-emoji">🔍</span>Detektiv</button>
+        <button type="button" class="motto-btn" data-motto="superheld" onclick="selectMotto(this)"><span class="motto-emoji">🦸</span>Superheld</button>
+        <button type="button" class="motto-btn" data-motto="prinzessin" onclick="selectMotto(this)"><span class="motto-emoji">👑</span>Prinzessin</button>
+        <button type="button" class="motto-btn" data-motto="einhorn" onclick="selectMotto(this)"><span class="motto-emoji">🦄</span>Einhorn</button>
+        <button type="button" class="motto-btn" data-motto="meerjungfrau" onclick="selectMotto(this)"><span class="motto-emoji">🧜‍♀️</span>Meerjungfrau</button>
+        <button type="button" class="motto-btn" data-motto="feuerwehr" onclick="selectMotto(this)"><span class="motto-emoji">🚒</span>Feuerwehr</button>
       </div>
     </div>
     <div class="field">
@@ -198,10 +204,16 @@ let generatedUrl = '';
 let selectedMotto = 'piraten';
 
 const MOTTO_CONFIG = {
-  piraten: { emoji: '\u{1F3F4}\u200D\u2620\uFE0F', label: 'Piraten', color: '#FFD700' },
-  dino: { emoji: '\u{1F995}', label: 'Dino', color: '#66BB6A' },
-  safari: { emoji: '\u{1F981}', label: 'Safari', color: '#FF9800' },
-  weltraum: { emoji: '\u{1F680}', label: 'Weltraum', color: '#CE93D8' }
+  piraten:      { emoji: '\u{1F3F4}\u200D\u2620\uFE0F', label: 'Piraten',      color: '#FFD700' },
+  dino:         { emoji: '\u{1F995}',                     label: 'Dino',         color: '#66BB6A' },
+  safari:       { emoji: '\u{1F981}',                     label: 'Safari',       color: '#FF9800' },
+  weltraum:     { emoji: '\u{1F680}',                     label: 'Weltraum',     color: '#CE93D8' },
+  detektiv:     { emoji: '\u{1F50D}',                     label: 'Detektiv',     color: '#78909C' },
+  superheld:    { emoji: '\u{1F9B8}',                     label: 'Superheld',    color: '#EF5350' },
+  prinzessin:   { emoji: '\u{1F451}',                     label: 'Prinzessin',   color: '#F48FB1' },
+  einhorn:      { emoji: '\u{1F984}',                     label: 'Einhorn',      color: '#E1BEE7' },
+  meerjungfrau: { emoji: '\u{1F9DC}\u200D\u2640\uFE0F',  label: 'Meerjungfrau', color: '#4DD0E1' },
+  feuerwehr:    { emoji: '\u{1F692}',                     label: 'Feuerwehr',    color: '#FF7043' }
 };
 
 function selectMotto(btn) {

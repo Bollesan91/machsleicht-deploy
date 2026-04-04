@@ -328,19 +328,53 @@ plausible.init()
       <p style="font-size:15px;color:#6B5D52;line-height:1.7;margin-top:24px">So wird aus einer netten Idee in 5 Minuten ein fertiges Erlebnis, das die Kinder begeistert und dich entspannt in den Geburtstag gehen lässt.</p>
     </section>
 
-    <!-- BLOCK 8.5: EINLADUNGS-CTA -->
+    <!-- BLOCK 8.5: EINLADUNGS-CTA (dynamisch je nach Thema) -->
     <section style="padding:40px 0">
-      <div style="background:linear-gradient(135deg,#1a1a2e 0%,#2a2a4a 100%);border-radius:20px;padding:32px 24px;text-align:center;position:relative;overflow:hidden">
-        <div style="position:absolute;top:-20px;right:-20px;font-size:80px;opacity:.1;transform:rotate(15deg)">🏴‍☠️</div>
+      <div id="einladung-cta" style="background:linear-gradient(135deg,#1a1a2e 0%,#2a2a4a 100%);border-radius:20px;padding:32px 24px;text-align:center;position:relative;overflow:hidden">
+        <div id="cta-bg-emoji" style="position:absolute;top:-20px;right:-20px;font-size:80px;opacity:.1;transform:rotate(15deg)">✉️</div>
         <div style="font-size:40px;margin-bottom:12px">✉️</div>
         <h2 style="font-family:'Fraunces',Georgia,serif;font-size:22px;font-weight:800;color:#FFD700;margin-bottom:8px">Schatzsuche fertig? Jetzt die G&auml;ste einladen!</h2>
-        <p style="font-size:15px;color:rgba(255,255,255,.7);line-height:1.6;max-width:440px;margin:0 auto 20px">Erstelle eine <strong style="color:#fff">interaktive Piraten-Einladung</strong> mit Mini-Schatzsuchen-Spiel. Jeder Gast bekommt einen pers&ouml;nlichen Link &mdash; per WhatsApp verschicken, fertig.</p>
+        <p id="cta-text" style="font-size:15px;color:rgba(255,255,255,.7);line-height:1.6;max-width:440px;margin:0 auto 20px">Erstelle eine <strong style="color:#fff">interaktive Einladung</strong> passend zu deinem Motto &mdash; mit Mini-Spiel! Jeder Gast bekommt einen pers&ouml;nlichen Link per WhatsApp.</p>
         <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
-          <a href="/einladung/erstellen/" style="display:inline-block;background:linear-gradient(135deg,#FFD700,#FFA500);color:#1a1a2e;padding:14px 32px;border-radius:99px;font-weight:800;font-size:15px;text-decoration:none;transition:transform .1s">🏴‍☠️ Piraten-Einladung erstellen &rarr;</a>
-          <span style="font-size:12px;color:rgba(255,255,255,.4)">Kostenlos &middot; Ohne Anmeldung &middot; In 30 Sekunden fertig</span>
+          <a id="cta-link" href="/einladung/erstellen/" style="display:inline-block;background:linear-gradient(135deg,#FFD700,#FFA500);color:#1a1a2e;padding:14px 32px;border-radius:99px;font-weight:800;font-size:15px;text-decoration:none;transition:transform .1s">✉️ Einladung erstellen &rarr;</a>
+          <span style="font-size:12px;color:rgba(255,255,255,.4)">10 Mottos &middot; Kostenlos &middot; In 30 Sekunden fertig</span>
         </div>
       </div>
     </section>
+    <script>
+    (function(){
+      var mottoMap = {
+        piraten:      {emoji:'🏴‍☠️', label:'Piraten'},
+        dino:         {emoji:'🦕',   label:'Dino'},
+        weltraum:     {emoji:'🚀',   label:'Weltraum'},
+        detektiv:     {emoji:'🔍',   label:'Detektiv'},
+        safari:       {emoji:'🦁',   label:'Safari'},
+        superheld:    {emoji:'🦸',   label:'Superheld'},
+        einhorn:      {emoji:'🦄',   label:'Einhorn'},
+        meerjungfrau: {emoji:'🧜‍♀️', label:'Meerjungfrau'},
+        feuerwehr:    {emoji:'🚒',   label:'Feuerwehr'},
+        prinzessin:   {emoji:'👑',   label:'Prinzessin'}
+      };
+      function updateCTA(motto) {
+        var m = mottoMap[motto];
+        if (!m) return;
+        var bg = document.getElementById('cta-bg-emoji');
+        var link = document.getElementById('cta-link');
+        var text = document.getElementById('cta-text');
+        if (bg) bg.textContent = m.emoji;
+        if (link) {
+          link.href = '/einladung/erstellen/?motto=' + motto;
+          link.textContent = m.emoji + ' ' + m.label + '-Einladung erstellen \u2192';
+        }
+        if (text) text.innerHTML = 'Erstelle eine <strong style="color:#fff">interaktive ' + m.label + '-Einladung</strong> mit Mini-Spiel! Jeder Gast bekommt einen pers\u00f6nlichen Link \u2014 per WhatsApp verschicken, fertig.';
+      }
+      // Listen for theme selection (the Schatzsuche selector uses data-thema attributes)
+      document.addEventListener('click', function(e) {
+        var btn = e.target.closest('[data-thema]');
+        if (btn) updateCTA(btn.getAttribute('data-thema'));
+      });
+    })();
+    </script>
 
     <!-- BLOCK 9: FAQ-BLOCK -->
     <section style="padding:32px 0">
