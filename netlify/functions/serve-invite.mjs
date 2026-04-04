@@ -30,7 +30,7 @@ export default async (req) => {
     });
 
     // Motto-basierter Redirect (piraten = /einladung/, rest = /einladung/{motto}/)
-    const VALID_MOTTOS = ["piraten", "dino", "safari", "weltraum"];
+    const VALID_MOTTOS = ["piraten", "dino", "safari", "weltraum", "detektiv", "superheld", "prinzessin", "einhorn", "meerjungfrau", "feuerwehr"];
     const motto = data.motto && VALID_MOTTOS.includes(data.motto) ? data.motto : "piraten";
     const basePath = motto === "piraten" ? "/einladung/" : `/einladung/${motto}/`;
 

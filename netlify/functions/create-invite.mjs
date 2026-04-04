@@ -11,7 +11,7 @@ export default async (req) => {
     }
 
     // Erlaubte Mottos (Default: piraten fuer Rueckwaertskompatibilitaet)
-    const VALID_MOTTOS = ["piraten", "dino", "safari", "weltraum"];
+    const VALID_MOTTOS = ["piraten", "dino", "safari", "weltraum", "detektiv", "superheld", "prinzessin", "einhorn", "meerjungfrau", "feuerwehr"];
     const safeMotto = VALID_MOTTOS.includes(motto) ? motto : "piraten";
 
     // Daten als Base64 in die URL kodieren (kein Storage noetig)
