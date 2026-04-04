@@ -5,46 +5,46 @@
 
 ## Was wurde gemacht
 
-### Sprint-Prio 1: Schnitzeljagd SEO — KOMPLETT ✅
-- **Phase 1:** `/schnitzeljagd.html` LP (403 Zeilen, FAQ-Schema, vs-Box, 6 Themen)
-- **Phase 2:** `/schnitzeljagd-aufgaben.html` (30 Aufgaben nach Alter), `/schnitzeljagd-draussen.html` (Strecke/Verstecke/Wetter), `/schnitzeljagd-drinnen` → 301
-- **Phase 3:** Naming-Update auf allen 8 Themen-Seiten: H1/OG konsistent "Schnitzeljagd & Schatzsuche"
-- Redirects, Sitemap, interne Verlinkung, Seitentypen-Zuordnung — alles aktualisiert
+### Template-Upgrade: Motto-Seiten auf Elite-Level
+- **Piraten** komplett überarbeitet:
+  - Title-Bug gefixt (4–5–12 → 4–12)
+  - „Piraten-Abenteuer" überall durch natürliches „Piraten" ersetzt
+  - Spiel 3 ersetzt: Flaschenpost-Rätsel → Piratenschiff bauen (echtes Teamwork/Bau-Spiel)
+  - ⏱ Zeitangaben auf allen 5 Spielen
+  - Material-Liste aktualisiert (Flaschenpost raus, Kartons + Schwämme rein)
+  - Doppelte class-Attribute im HTML gefixt
 
-### Copy-Upgrade Kernseiten
-- **Homepage:** H1 geschärft ("Familienfeste" raus), Subline actionsorientiert, Trust-Zeile, "Warum machsleicht" mit Anti-Pattern-Copy, Motto-Zahl 20→14 korrigiert (Schema, FAQ, Body, featureList)
-- **Kindergeburtstag:** Snippet mit Proof-Kacheln, "Was du nicht bekommst" Tip-Box, Schatzsuche-Cross-Sell emotional, CTA geschärft
-- **Schatzsuche:** Hero-Checkmarks Nutzen statt Features, "Kennst du das?" 4→1 Absatz, Einladungs-Cross-Sell + Planer-Rücklink
-- Encoding-Chaos behoben (UTF-8/ASCII-Mix in gemischten Absätzen)
+- **Detektiv** komplett überarbeitet (von Cookie-Cutter 297 → Elite 542 Zeilen):
+  - 5 unique Spiele: Tatort-Ermittlung, Fingerabdruck-Labor, Observation & Beschattung, Zeugenverhör, Detektiv-Ausbildung
+  - Spiel 3 (Geheimcode) ersetzt durch Observation & Beschattung (Bewegungsspiel als Kontrast)
+  - Spiel 5 Titel: generische „3 Prüfungen/5 Stationen/Akademie" → unique Namen
+  - Eltern-Tipp bei Zeugenverhör (braucht Erwachsene als Mitspieler)
+  - ⏱ Zeitangaben auf allen 5 Spielen
+  - FAQ-Schema, Deko-Checkliste, Material-Liste, 6 Affiliate-Links, Age-Filter JS
+  - Material-Liste aktualisiert (Glöckchen + Rollenkarten ergänzt, UV-Stifte als Spielmaterial entfernt)
+  - Intro-Text angepasst (Geheimcodes → Verdächtige beschatten)
+  - Meta description Entities bereinigt
 
-### Reviews
-- 5x Elite-Review durchgeführt, dabei gefunden und gefixt:
-  - "8 Themen" → 6 (Builder-Realität)
-  - Redirect-Chain aufgelöst
-  - einhorn/safari vergessene Updates
-  - Detektiv H1 unnatürlich
-  - Safari in Aufgaben-Zuordnung fehlend
-  - OG bare & Encoding
-  - Doppeltext Kindergeburtstag
-  - "Ohne Anmeldung" Dopplung
-  - H1/H2 Stotterer Homepage
-  - Hängender Wenn-Satz Schatzsuche
-  - Encoding-Mix in 5 Absätzen
-  - "draussen" Link-Text-Inkonsistenz
-  - "20 Mottos" → "14 Mottos" (5 Stellen in Schema/FAQ/Body)
+- **Meerjungfrau** auf Elite expandiert (298 → 540 Zeilen) — ABER noch nicht final gefixt:
+  - Zeitangaben fehlen noch
+  - Spiel 5 (Akademie) Titel noch generisch
+  - Material-Liste noch nicht gegen Spiele abgeglichen
+
+### Template-Qualitätsstandard definiert
+- 5 Spiele = 5 echte Aktivitätstypen (Puzzle, Bewegung, Bauen/Teamwork, Kreativ, Wettkampf/Sozial)
+- ⏱ Zeitangabe pro Spiel
+- Material-Liste muss zu den tatsächlichen Spielen passen
+- Kein generisches „Akademie"-Pattern (3/5/7 Stationen)
+- Natürliche Sprache statt Find-Replace-Naming
 
 ## Nächste Schritte
-- **Sprint-Prio 2: Motto-Konsistenz** — 6 fehlende Schatzsuchen, Dschungel→Safari Migration, Builder auf alle Mottos erweitern
-- **Sprint-Prio 3: Prinzessin aufbauen** (Top-3 Motto, fehlt komplett)
-- **Pre-existing Fixes (separater Sprint):**
-  - Homepage Title-Tag kürzen (85→~60 Zeichen)
-  - Brand-Name OG-Tags vereinheitlichen ("mach'sleicht" vs "mach's leicht")
-  - Homepage meta description bare & → &amp;
-  - Kindergeburtstag SEO-Fallback "Über 14 Mottos" ggf. exakt auf 14 anpassen
-- Plausible-Daten beobachten: Schnitzeljagd-Traffic + Cross-Sell-Conversion
-- Eigenes OG-Image für /schnitzeljagd
+- **Meerjungfrau finalisieren** (Zeitangaben, Spiel 5, Material-Check)
+- **Ritter** als #3 expandieren
+- **Pferde** als #4
+- **Baustelle** als #5
+- **Zirkus** als #6
+- Dann 8 Franchise-Seiten (frozen, paw-patrol, pokemon, minecraft, ninjago, harry-potter, spider-man, super-mario)
 
 ## Offene Fragen
-- Guide vs Ratgeber Dopplung (8 Franchises haben zwei Seiten)
-- Schnitzeljagd-LP Differenzierung: Mini-Quiz als interaktives Upgrade?
-- Einladungs-Erstellen-Tool um Motto-Auswahl erweitern
+- Meerjungfrau Spiel-Mix: Braucht das auch ein Bewegungsspiel als Ersatz? (Unterwasser-Parcours ist schon drin)
+- Franchise-Seiten: Gleiches Template oder eigene Struktur? (Lizenz-Themen haben andere Deko/Essen-Logik)
