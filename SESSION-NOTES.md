@@ -5,21 +5,22 @@
 
 ## Was wurde gemacht
 - Won-Screen für Schatzsuche-Live-Modus gebaut (Cross-Sell Schatzsuche → Einladung)
-- Neuer View-State "won" in js/schatzsuche.js eingefügt
-- "Geschafft!"-Button leitet jetzt auf Won-Screen statt direkt zurück zum Plan
-- Thema-gematchtes Einladungs-Mapping: piraten→/einladung, dschungel→safari, weltraum→weltraum, detektiv→detektiv, dino→dino, feen→einhorn
-- Personalisierte Copy (Name des Kindes wenn vorhanden)
-- Drei CTA-Stufen: Primary (passende Einladung), Secondary (anderes Motto), Tertiary (zurück zum Plan)
-- Trust-Zeile: "Kostenlos · Interaktives Spiel inklusive · Zum Verschicken per WhatsApp"
-- Plausible Events: schatzsuche-won (thema, alter, name) + won-einladung-cta (thema, ziel, typ)
+  - Neuer View-State "won" in js/schatzsuche.js
+  - Thema-gematchtes Einladungs-CTA (6 Mottos → passende Einladung)
+  - Personalisierte Copy, 3-stufige CTA-Hierarchie
+  - Plausible Events: schatzsuche-won + won-einladung-cta
+- Gegenrichtung: Einladungs-Won-Screens → Schatzsuche-CTA (alle 10 Mottos)
+  - CTA von unsichtbar (30% opacity) → Glassmorphism-Card (70% opacity, Background, Border)
+  - Text: "Schatzsuche für deinen Kindergeburtstag →"
+  - Footer: "Kostenlos · Sofort startklar · machsleicht.de"
+  - Plausible Event: einladung-schatzsuche-cta mit Motto-Prop
+  - Piraten: zusätzlicher Schatzsuche-Link (hatte vorher nur Einladung-Link)
 
 ## Nächste Schritte
-- Won-Screen live testen (Ende deploy wenn bereit)
-- Plausible-Daten beobachten: Conversion-Rate Won→Einladung tracken
+- Plausible-Daten beobachten: Conversion-Rate beider Cross-Sell-Richtungen
 - Sprint 7 QA-Gate-Checkliste, Seitentypen-Zuordnung, CTA-Hierarchie
 - Plausible-Daten prüfen: Schatzsuche-Traffic + Schnitzeljagd-Suchvolumen
 - Backlog Sprint 8 vorbereiten
-- Gegenrichtung prüfen: Einladung-Won-Screens → Schatzsuche-CTA
 
 ## Offene Fragen
 - Braucht Feuerwehr/Meerjungfrau wirklich eine eigene Schatzsuche oder reicht das Einladungsspiel?

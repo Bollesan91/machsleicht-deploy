@@ -1403,13 +1403,30 @@ function PiratenInsel({
         textDecoration: "none",
         fontWeight: 600
       }
-    }, "\uD83C\uDFF4\u200D\u2620\uFE0F Auch eine Einladung erstellen?"), /*#__PURE__*/React.createElement("p", {
+    }, "\uD83C\uDFF4\u200D\u2620\uFE0F Auch eine Einladung erstellen?"), /*#__PURE__*/React.createElement("a", {
+      href: "https://machsleicht.de/schatzsuche/piraten",
+      target: "_blank",
+      onClick: function(){ window.plausible && plausible("einladung-schatzsuche-cta", {props: {motto: "piraten"}}) },
       style: {
-        color: "rgba(255,255,255,.15)",
-        fontSize: 9,
-        marginTop: 6
+        display: "flex", alignItems: "center", justifyContent: "center", gap: 6,
+        width: "100%", maxWidth: 280, padding: "12px 16px",
+        marginTop: 8,
+        background: "rgba(255,255,255,.08)",
+        backdropFilter: "blur(8px)",
+        border: "1px solid rgba(255,255,255,.15)",
+        borderRadius: 12,
+        color: "rgba(255,255,255,.7)",
+        fontSize: 12, fontWeight: 700,
+        textDecoration: "none",
+        transition: "all .2s"
       }
-    }, "machsleicht.de"))));
+    }, "\uD83C\uDFF4\u200D\u2620\uFE0F Schatzsuche f\xFCr deinen Kindergeburtstag \u2192"), /*#__PURE__*/React.createElement("p", {
+      style: {
+        color: "rgba(255,255,255,.25)",
+        fontSize: 10,
+        marginTop: 8
+      }
+    }, "Kostenlos \xB7 Sofort startklar \xB7 machsleicht.de"))));
   }
 
   /* ═══════════════ PLAYING ═══════════════ */
