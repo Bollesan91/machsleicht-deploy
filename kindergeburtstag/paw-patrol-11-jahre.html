@@ -137,7 +137,7 @@ plausible.init()
   <p class="badge">Lizenz-Motto &middot; 11 Jahre</p>
   <h1>🐕 Paw Patrol Kindergeburtstag — 11 Jahre</h1>
 
-  <p class="u-intro-sub">14 Mottos · 3–12 Jahre · Kostenlos</p>
+  <p class="u-intro-sub">20 Mottos · 3–12 Jahre · Kostenlos</p>
   <p class="u-body">Dein Kind wird 11? Hier findest du die besten Paw Patrol-Ideen genau für 11-Jährige — altersgerechte Spiele, passende Deko und einen Kuchen, der begeistert.</p>
 
   <a href="/kindergeburtstag" class="cta">Paw Patrol-Geburtstag f&uuml;r 11-J&auml;hrige planen &rarr;</a>
@@ -250,7 +250,7 @@ plausible.init()
         </div>
       </a>
     </div>
-    <p class="u-tac"><a href="/kindergeburtstag">Alle 14 Mottos im Planer ansehen &rarr;</a></p>
+    <p class="u-tac"><a href="/kindergeburtstag">Alle 20 Mottos im Planer ansehen &rarr;</a></p>
   </div>
 
   
@@ -317,9 +317,13 @@ function fallbackCopy(text,btn){var ta=document.createElement('textarea');ta.val
 <p class="u-page-footer" class="no-print">
   * Affiliate-Link: Wenn du über diesen Link kaufst, erhalten wir eine kleine Provision. Für dich ändert sich der Preis nicht.
 </p>
-<div id="sticky-cta" class="u-sticky-cta" class="no-print">
-  <a href="/kindergeburtstag" class="cta" class="u-btn-filter">🎂 Jetzt planen →</a>
+<div id="sticky-cta" class="u-sticky-cta no-print">
+  <div class="u-sticky-bar">
+    <a href="/einladung/erstellen/" class="u-sticky-btn u-sticky-btn--primary">💌 Einladung</a>
+    <a href="/schatzsuche" class="u-sticky-btn u-sticky-btn--secondary">🗺️ Schatzsuche</a>
+    <a href="/kindergeburtstag" class="u-sticky-btn u-sticky-btn--secondary">🎂 Planer</a>
+  </div>
 </div>
-<script>if(window.innerWidth<=640){var s=document.getElementById('sticky-cta');window.addEventListener('scroll',function(){s.style.display=window.scrollY>300?'block':'none'})}</script>
+<script>(function(){if(window.innerWidth<=768){var s=document.getElementById('sticky-cta');if(s){s.style.display='none';window.addEventListener('scroll',function(){s.style.display=window.scrollY>400?'':'none'})}}})()</script>
 </body>
 </html>
