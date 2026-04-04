@@ -45,6 +45,18 @@
 - **Zirkus** als #6
 - Dann 8 Franchise-Seiten (frozen, paw-patrol, pokemon, minecraft, ninjago, harry-potter, spider-man, super-mario)
 
+## KRITISCH: Navigation-Bug auf /kindergeburtstag
+Die Hauptseite `/kindergeburtstag` verlinkt nur 14 von 20 Mottos. **6 Motto-Seiten sind nicht erreichbar:**
+- ❌ Detektiv
+- ❌ Meerjungfrau
+- ❌ Ritter
+- ❌ Pferde
+- ❌ Baustelle
+- ❌ Zirkus
+
+Diese Seiten existieren unter `/kindergeburtstag/detektiv` etc., tauchen aber weder im Motto-Grid noch in der Motto-Liste auf kindergeburtstag.html auf. Müssen in die Navigation eingepflegt werden.
+
 ## Offene Fragen
 - Meerjungfrau Spiel-Mix: Braucht das auch ein Bewegungsspiel als Ersatz? (Unterwasser-Parcours ist schon drin)
 - Franchise-Seiten: Gleiches Template oder eigene Struktur? (Lizenz-Themen haben andere Deko/Essen-Logik)
+- Navigation: Alle 20 Mottos auf /kindergeburtstag aufnehmen, oder bewusst nur bestimmte zeigen?
