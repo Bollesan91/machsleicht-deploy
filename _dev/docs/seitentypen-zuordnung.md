@@ -73,6 +73,8 @@
 | `/schatzsuche-kindergeburtstag` | SEO-Ratgeber → Schatzsuche-Builder |
 | `/schatzsuche-drinnen` | Drinnen-Tipps → Builder |
 | `/schnitzeljagd` | Schnitzeljagd-SEO-Ratgeber → Schatzsuche-Builder |
+| `/schnitzeljagd-aufgaben` | Aufgaben nach Alter → Schatzsuche-Builder |
+| `/schnitzeljagd-draussen` | Outdoor-Strecke/Verstecke → Schatzsuche-Builder |
 | `/baby-erstausstattung-checkliste` | Checkliste → Baby-Hub |
 | `/kliniktasche-packen` | Checkliste → Baby-Hub |
 | `/wochenbett-was-braucht-man` | Ratgeber → Baby-Hub |

@@ -361,6 +361,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://machsleicht.de/schnitzeljagd-aufgaben</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsleicht.de/schnitzeljagd-draussen</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://machsleicht.de/schultuete-fuellen</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>

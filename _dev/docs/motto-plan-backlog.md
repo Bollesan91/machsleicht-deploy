@@ -35,10 +35,10 @@ Paw Patrol, Pokemon, Minecraft, Frozen, Super Mario, Spider-Man, Harry Potter, N
 **Problem:** "Schatzsuche" passt nur für Piraten. Bei Detektiv, Weltraum etc. ist "Schnitzeljagd" oder "Mission" treffender. Außerdem ranken wir für "Schnitzeljagd Kindergeburtstag" aktuell NULL — kein einziger eigener Content dafür.
 
 **Tasks:**
-- [ ] Naming überarbeiten: Oberbegriff "Schatzsuche & Schnitzeljagd" oder mottoabhängig (Piraten = "Schatzsuche", Detektiv = "Schnitzeljagd", Weltraum = "Mission" etc.)
+- [x] Naming überarbeiten: mottoabhängig in H1/OG (Detektiv=Schnitzeljagd, Rest=Schnitzeljagd & Schatzsuche) — 04.04.2026
 - [x] Landingpage `/schnitzeljagd/` erstellen (04.04.2026 — 403 Zeilen, FAQ-Schema, 6 Themen, vs-Box)
-- [ ] SEO-Seiten: "Schnitzeljagd Kindergeburtstag", "Schnitzeljagd Ideen", "Schnitzeljagd draußen", "Schnitzeljagd drinnen"
-- [ ] Meta/Title/H1 auf bestehenden Schatzsuche-Seiten um "Schnitzeljagd" ergänzen
+- [x] SEO-Seiten: `/schnitzeljagd-aufgaben` (30 Aufgaben), `/schnitzeljagd-draussen` (Outdoor-Guide), `/schnitzeljagd-drinnen` → 301 auf schatzsuche-drinnen — 04.04.2026
+- [x] Meta/Title/H1 auf bestehenden Schatzsuche-Seiten um "Schnitzeljagd" ergänzt — 04.04.2026
 - [x] Interne Verlinkung zwischen Schatzsuche ↔ Schnitzeljagd Seiten (04.04.2026 — schatzsuche-kindergeburtstag + schatzsuche-drinnen + sitemap)
 
 ### Sprint-Prio 1b: Cross-Selling Schatzsuche → Einladung
