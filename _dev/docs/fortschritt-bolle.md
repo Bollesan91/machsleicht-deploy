@@ -1,26 +1,52 @@
 # Fortschritt Bolle
 
-## Letzte Session: 26.03.2026 (Abend)
+## Letzte Session: 04.04.2026
 
 ### Was gemacht wurde:
-- Kaufmoment-Boxen + Affiliate-Links auf allen 6 Motto-Seiten eingebaut
-- Draft-Branch Workflow eingerichtet (draft/main Trennung)
-- Einladungs-CTA auf /schatzsuche eingebaut (Block 8.5)
-- Piraten-Einladungsspiel getestet und CTA verlinkt
-- 5 Motto-Einladungsspiele erstellt (Safari, Weltraum, Dino, Einhorn, Feuerwehr) — wieder entfernt wegen Qualitätsmängeln
-- Erstellen-Formular mit Motto-Auswahl erweitert — zurückgesetzt auf Piraten-only
 
-### Erkenntnisse:
-- Automatisch generierte Motto-Spiele haben nicht die gleiche Qualität wie das handgemachte Piraten-Spiel
-- Jedes Motto-Spiel braucht individuelle Aufmerksamkeit (Story, Mechanik, Visuals)
-- Besser einzeln und gut als alle auf einmal und schlecht
+**Sprint 7 — Bugfixes:**
+- 5 unsichtbare Einladungsspiele in MOTTO_CONFIG freigeschaltet (4→10 Mottos)
+- Won-Screen CTA aller 9 Spiele auf passende Schatzsuche geändert
+- Homepage-Dopplung /homepage → 301 auf /
+- Motto-Zahl auf Startseite vereinheitlicht (20 überall)
+- Schatzsuche Cross-Sell-Banner dynamisch gemacht (war Piraten-only)
+
+**Sprint 7 — Systemführung:**
+- QA-Gates definiert + an 5 Seiten durchexerziert
+- Seitentypen-Zuordnung (alle URLs → 5 Typen)
+- CTA-Hierarchie-Standard dokumentiert
+- Interne Linklogik dokumentiert
+
+**Sprint 8 — SEO + Strukturarbeit:**
+- Schnitzeljagd in alle Schatzsuche-Meta-Tags ergänzt
+- Dschungel→Safari umbenannt + 301 + Sitemap
+- Feen→Einhorn umbenannt + 301 + Sitemap
+- 16 fehlende Altersseiten erstellt (Paw Patrol 6, Baustelle 5, Detektiv 2, Ritter 1, Zirkus 2)
+- Sitemap: 336→350 URLs, alle validiert
+- _redirects: 2 Duplikate entfernt, alle Regeln geprüft
+- Performance-Baseline erstellt (Lighthouse-Bericht)
+- Programmatic QA-Sweep: 290 Seiten, 0 Issues
+
+**Sprint 9 — Linkpfade + Ratgeber:**
+- Baby-Hub + Einschulung-Hub: Crosslink-Sektionen ergänzt
+- 7 Baby/Einschulung-Unterseiten: Breadcrumbs mit Hub-Rücklinks
+- 24 Lizenz-Motto Range-Seiten: Ratgeber + Guide Links ergänzt
+
+**QA-Fixes (vor Deploy):**
+- 16 neue Altersseiten: Body-Text Alter korrigiert (Template-Bug)
+- Baustelle 6-8 Range: Vorbestehenden "0 Spiele" Bug gefixt
+- 9 Seiten: Duplicate class-Attribute bereinigt
+
+**Backlog:** 22 von 55 Tasks erledigt.
 
 ### Nächste Schritte:
-- Motto-Einladungsspiele einzeln und sorgfältig erstellen (eins nach dem anderen, jeweils testen)
-- Hero Engine MVP: 10-Block-Architektur von /schatzsuche auf /kindergeburtstag übertragen
-- Kill List + Internal Linking Audit
-- Kaufmoment-Boxen auch auf Ratgeber-Seiten einbauen
-- PAT-Erinnerung einrichten (läuft 25.04.2026 ab)
+- Task 3: 248 Kindergeburtstag-Detailseiten CTA zu Einladung (zurückgestellt)
+- Task 11: Plausible prüfen — Schatzsuche-Traffic (Bolle manuell)
+- Task 16: SEO-LP "Kindergeburtstag Einladung digital"
+- Task 21-27: Neue Schatzsuchen + Verticals (Prinzessin, Superheld)
+- Task 36-37: Kaufmoment-Boxen
+- Homepage TTFB optimieren (2.5s → Ziel <1s)
 
 ### Offene Fragen:
-- Welches Motto als nächstes? (Safari wäre naheliegend wegen Beliebtheit)
+- Plausible Schatzsuche-Daten checken vor Schnitzeljagd-LP
+- Welches Motto als nächstes Vertical? (Prinzessin = höchste Prio)
