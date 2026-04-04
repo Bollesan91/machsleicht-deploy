@@ -5,73 +5,34 @@
 
 ## Was wurde gemacht
 
-### Template-Upgrade: Motto-Seiten auf Elite-Level
-- **Piraten** komplett überarbeitet:
-  - Title-Bug gefixt (4–5–12 → 4–12)
-  - „Piraten-Abenteuer" überall durch natürliches „Piraten" ersetzt
-  - Spiel 3 ersetzt: Flaschenpost-Rätsel → Piratenschiff bauen (echtes Teamwork/Bau-Spiel)
-  - ⏱ Zeitangaben auf allen 5 Spielen
-  - Material-Liste aktualisiert (Flaschenpost raus, Kartons + Schwämme rein)
-  - Doppelte class-Attribute im HTML gefixt
+### Planer-Umbau (kindergeburtstag.js + kindergeburtstag.html)
 
-- **Detektiv** komplett überarbeitet (von Cookie-Cutter 297 → Elite 542 Zeilen):
-  - 5 unique Spiele: Tatort-Ermittlung, Fingerabdruck-Labor, Observation & Beschattung, Zeugenverhör, Detektiv-Ausbildung
-  - Spiel 3 (Geheimcode) ersetzt durch Observation & Beschattung (Bewegungsspiel als Kontrast)
-  - Spiel 5 Titel: generische „3 Prüfungen/5 Stationen/Akademie" → unique Namen
-  - Eltern-Tipp bei Zeugenverhör (braucht Erwachsene als Mitspieler)
-  - ⏱ Zeitangaben auf allen 5 Spielen
-  - FAQ-Schema, Deko-Checkliste, Material-Liste, 6 Affiliate-Links, Age-Filter JS
-  - Material-Liste aktualisiert (Glöckchen + Rollenkarten ergänzt, UV-Stifte als Spielmaterial entfernt)
-  - Intro-Text angepasst (Geheimcodes → Verdächtige beschatten)
-  - Meta description Entities bereinigt
+- **JS prettifyed:** 70 minifizierte Zeilen → 6.788 lesbare Zeilen (npx prettier)
+- **Control Hub (Fixed Bottom Bar):** Einladung / Schatzsuche / PDF als permanente Aktions-Leiste am unteren Bildschirmrand (position:fixed, blur-backdrop, zIndex 100)
+- **Einladungs-Block:** Dark Card mit WhatsApp-Preview-Bubble direkt nach Motto Badge. Verlinkt auf /einladung/erstellen/?motto=X. Copy: "8 Kinder einladen — in 30 Sekunden"
+- **Visueller Connector:** "Die Einladung teast die Schatzsuche an" mit vertikalen Linien als narrativer Bogen
+- **Schatzsuche-Teaser:** "30 Minuten Abenteuer. Du trinkst Kaffee." Block mit personalisierten Daten (Motto, Kinder, Alter, Ort). "Passt in deinen Zeitplan" Hinweis
+- **Zeitplan auf Accordion umgebaut:** Jeder Schritt als details/summary mit kompakter Summary-Zeile (Zeit + Name + Dauer). Nur erster Schritt standardmäßig offen. Vertikale Timeline-Linie entfernt
+- **Redundante CTAs entfernt:** Alte "Einladungskarte erstellen" und "Noch eine Schatzsuche dazu?" Blöcke unten raus — jetzt oben prominent + im Control Hub
+- **CSS:** #root details > summary Marker ausgeblendet für sauberes Accordion-Design
+- **PDF Scroll-Target:** data-action="pdf" auf PDF-Sektion fuer Control Hub Button
 
-- **Meerjungfrau** auf Elite expandiert (298 → 540 Zeilen) — ABER noch nicht final gefixt:
-  - Zeitangaben fehlen noch
-  - Spiel 5 (Akademie) Titel noch generisch
-  - Material-Liste noch nicht gegen Spiele abgeglichen
+### Neue Plan-View Reihenfolge
+Motto Badge → Einladung (NEU) → Connector (NEU) → Schatzsuche-Teaser (NEU) → Bereitschafts-Check → Mode-Toggles → Zeitplan (Accordion) → Snacks → Deko → Mitgebsel → WhatsApp Share → Einkaufsliste → PDF → Erinnerung → "Das reicht" → Upsell → Control Hub (fixed, NEU)
 
-### Template-Qualitätsstandard definiert
-- 5 Spiele = 5 echte Aktivitätstypen (Puzzle, Bewegung, Bauen/Teamwork, Kreativ, Wettkampf/Sozial)
-- ⏱ Zeitangabe pro Spiel
-- Material-Liste muss zu den tatsächlichen Spielen passen
-- Kein generisches „Akademie"-Pattern (3/5/7 Stationen)
-- Natürliche Sprache statt Find-Replace-Naming
-
-### Navigation Quick-Wins (ERLEDIGT)
-- **Sticky 3-Button Action Bar** auf allen ~340 Seiten: Einladung / Schatzsuche / Planer (CSS-only, kein JS-Flackern)
-- **Motto-Grid** auf /kindergeburtstag: 6 fehlende Mottos ergänzt (20/20 komplett)
-- **Homepage CTA-Button** prominent unter Hero
-- **"14 Mottos" → "20 Mottos"** global aktualisiert (~260 Dateien)
-- CSS-Bug gefixt: doppeltes class-Attribut auf Sticky-CTA
-
-### Planer-Redesign Konzept (Sparring + Wireframes)
-- **Site-Architektur** visualisiert (IST vs SOLL) — site-architektur.jsx Artifact
-- **Plan-Wireframe** erstellt: optimale Mobile-Reihenfolge 15→8 Screens — plan-wireframe.jsx Artifact
-- **Teaser-Konzepte** v2: personalisiert, interaktiv, mit Killer-Hooks — teaser-v2.jsx Artifact
-- 10-Punkte Sparring zur Produktdramaturgie durchgeführt
-- Kerninsight: Choreografie-Problem, nicht Content-Problem
+### Design-Referenz
+Teaser-V2 Konzept (aus frueherer Session) als Vorlage verwendet. Kernprinzipien: Personalisierung, narrativer Bogen, Score-Motor, "Zeigen statt beschreiben"
 
 ## Nächste Schritte
-- **PRIORITÄT: Planer-Umbau (kindergeburtstag.html)**
-  - Teaser-Konzept liegt als Referenz vor (teaser-v2.jsx Artifact)
-  - Wireframe liegt vor (plan-wireframe.jsx Artifact)
-  - Planer-JS-Code analysieren und Render-Output umbauen
-  - Kernänderungen:
-    1. Control Hub direkt nach Hero (Einladung / Schatzsuche / PDF)
-    2. Einladung hochziehen: WhatsApp-Preview, personalisiert, interaktiv
-    3. Schatzsuche-Teaser: Stationen-Explorer, "30 Min Abenteuer, du trinkst Kaffee"
-    4. Zeitplan als Accordion statt Vollausklappung
-    5. Affiliates IN den Zeitplan einweben statt separater Block
-    6. Score-Completion-Loop: Aktionen erhöhen den Readiness-Score live
-    7. Abschluss-Block: PDF + An Helfer schicken + Nächstes Jahr
+- **Live testen:** Accordion-Verhalten auf Mobile prüfen, Control Hub Ueberlappung mit Sticky CTA checken (u-sticky-cta vs Control Hub — evtl. Sticky CTA im Plan-View ausblenden)
+- **Score-Loop verdrahten:** Einladung verschickt → Score +11%, Schatzsuche erstellt → Score +X%
+- **Einladungs-Block interaktiv machen:** Name-Buttons wie im Teaser-V2 (Kinder-Namen tippen → Live WhatsApp-Preview)
+- **Schatzsuche-Teaser: Stationen-Explorer** — 5 Stationen anteasern mit locked/unlocked State
+- **Affiliates in Zeitplan einweben** — Amazon-Links direkt bei Material-Listen
 - **Meerjungfrau finalisieren** (Zeitangaben, Spiel 5, Material-Check)
-- **Ritter** als #3 expandieren, dann Pferde, Baustelle, Zirkus
-- **Franchise-Seiten** (8 Stück) auf Elite-Level bringen
-
-## ERLEDIGT: Navigation-Bug auf /kindergeburtstag
-~~Die Hauptseite verlinkte nur 14 von 20 Mottos.~~ **GEFIXT** — alle 20 Mottos im Grid und in der Liste.
+- **Ritter** als naechstes Motto expandieren
 
 ## Offene Fragen
-- Meerjungfrau Spiel-Mix: Braucht das auch ein Bewegungsspiel als Ersatz? (Unterwasser-Parcours ist schon drin)
-- Franchise-Seiten: Gleiches Template oder eigene Struktur? (Lizenz-Themen haben andere Deko/Essen-Logik)
-- Planer-Umbau: JS-Code analysieren — wie komplex ist der Render-Output?
+- Control Hub vs. bestehende Sticky CTA Bar (u-sticky-cta): Doppelt? Sticky CTA nur auf Config-View zeigen, Control Hub nur auf Plan-View?
+- Accordion default-open: Nur erster Schritt oder alle offen auf Desktop?
+- Einladungs-Block: Soll der Verschickt-Counter persistent sein (localStorage) oder nur Session?
