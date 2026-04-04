@@ -4,19 +4,25 @@
 **Datum:** 04.04.2026
 
 ## Was wurde gemacht
-- Bug gefixt: VALID_MOTTOS in create-invite.mjs + serve-invite.mjs auf alle 10 Mottos erweitert (Detektiv, Superheld, Prinzessin, Einhorn, Meerjungfrau, Feuerwehr fehlten → fielen auf Piraten zurück)
-- Einladungs-CTA auf 278 Kindergeburtstag-Detailseiten eingefügt (alle außer 3 allgemeine Altersgruppen-Seiten)
-  - 10 Mottos mit Einladungs-Game: spezifischer CTA ("Interaktive X-Einladung")
-  - 12 Mottos ohne Game: generischer CTA ("Kindergeburtstag-Einladung")
-  - 3 Anker-Strategien je nach Seitentyp (Schatzsuche-Sektion / Altersgruppen-Sektion / nach-Alter-Sektion)
+- Won-Screen für Schatzsuche-Live-Modus gebaut (Cross-Sell Schatzsuche → Einladung)
+- Neuer View-State "won" in js/schatzsuche.js eingefügt
+- "Geschafft!"-Button leitet jetzt auf Won-Screen statt direkt zurück zum Plan
+- Thema-gematchtes Einladungs-Mapping: piraten→/einladung, dschungel→safari, weltraum→weltraum, detektiv→detektiv, dino→dino, feen→einhorn
+- Personalisierte Copy (Name des Kindes wenn vorhanden)
+- Drei CTA-Stufen: Primary (passende Einladung), Secondary (anderes Motto), Tertiary (zurück zum Plan)
+- Trust-Zeile: "Kostenlos · Interaktives Spiel inklusive · Zum Verschicken per WhatsApp"
+- Plausible Events: schatzsuche-won (thema, alter, name) + won-einladung-cta (thema, ziel, typ)
 
 ## Nächste Schritte
-- Sprint 7 weitermachen: QA-Gate-Checkliste, Seitentypen-Zuordnung, CTA-Hierarchie
+- Won-Screen live testen (Ende deploy wenn bereit)
+- Plausible-Daten beobachten: Conversion-Rate Won→Einladung tracken
+- Sprint 7 QA-Gate-Checkliste, Seitentypen-Zuordnung, CTA-Hierarchie
 - Plausible-Daten prüfen: Schatzsuche-Traffic + Schnitzeljagd-Suchvolumen
 - Backlog Sprint 8 vorbereiten
-- Cross-Selling Gegenrichtung: Schatzsuche-Won-Screens → Einladungs-CTA
+- Gegenrichtung prüfen: Einladung-Won-Screens → Schatzsuche-CTA
 
 ## Offene Fragen
 - Braucht Feuerwehr/Meerjungfrau wirklich eine eigene Schatzsuche oder reicht das Einladungsspiel?
 - Schnitzeljagd-LP: Erst Traffic-Daten prüfen bevor gebaut wird
 - Guide vs Ratgeber Dopplung: Zusammenlegen oder klare Trennung?
+- Won-Screen A/B-Test: Lohnt sich ein Countdown/Timer-Element für Urgency?
