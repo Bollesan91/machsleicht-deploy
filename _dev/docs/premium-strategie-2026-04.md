@@ -185,3 +185,128 @@ Konfigurator-Modell: Eltern klicken Features zusammen wie in einem Online-Shop. 
 6. **Gute-Nacht-Geschichte** — emotional, runder Abschluss
 7. **Sofort-Schatzsuche Abo** — recurring revenue, braucht Rätsel nach Maß als Basis
 8. **Rest** — KI-Spielmoderation, Danke-Nachrichten, Eltern-Copilot
+
+---
+
+## Wunschliste — Details
+
+### Kernfunktion (auf der Partyseite)
+- Einladendes Elternteil trägt Geschenk-Links ein (Amazon, Otto, myToys, Thalia, MediaMarkt, Smyths Toys...)
+- machsleicht erkennt die Domain automatisch und setzt den passenden Affiliate-Tag dazwischen
+- Gäste-Eltern sehen die Liste mit Bild, Titel, Preis (automatisch aus OpenGraph-Daten)
+- "Ich kaufe das" → Artikel als vergeben markiert → keine doppelten Geschenke
+- **"Beteiligen"-Funktion:** Mehrere Familien legen für ein teures Geschenk zusammen. Erhöht den durchschnittlichen Geschenkwert massiv.
+
+### Standalone /wunschliste (eigene Kategorie-Seite)
+- Auch für Eltern die den Geburtstag NICHT über machsleicht planen
+- Universell nutzbar: Geburtstag, Weihnachten, Einschulung, Taufe
+- SEO-Keywords: "Wunschliste Kind", "Geschenke-Wunschliste Kindergeburtstag", "Wunschzettel online"
+- Funnel in den Planer: "Du planst auch den Geburtstag? Zeitplan, Spiele und Schatzsuche — kostenlos."
+- Verdient an Geburtstagen die gar nicht über machsleicht gefeiert werden
+
+### Affiliate-Programme
+- Amazon PartnerNet (vorhanden, ~5%)
+- Otto via AWIN
+- myToys via AWIN
+- Thalia
+- MediaMarkt/Saturn
+- Smyths Toys
+
+---
+
+## Multiplayer-Schatzsuche (8-12 Jährige)
+
+- Kinder in dieser Altersgruppe haben oft eigene Handys
+- Jedes Kind bekommt einen eigenen **Rollen-Link**: Navigator (sieht die Karte), Codeknacker (löst Rätsel), Späher (bekommt Hinweise)
+- Kein Kind kann die Schatzsuche allein lösen — sie MÜSSEN zusammenarbeiten
+- **Live-Rangliste** während der Party auf jedem Handy sichtbar
+- **QR-Code Bonus-Stationen** versteckt im Garten — Extra-Aufgaben, digitale Abzeichen
+- **Abstimmung nach der Party:** "Mutigster Pirat", "Bestes Teamwork" — Urkunde wird generiert
+- **VK:** 4.99€
+- **Kosten:** Minimal (clientseitig, Websockets oder Polling, kein AI-Call nötig)
+- **Viral:** 8 Kinder haben machsleicht auf dem Handy = 8 neue Touchpoints
+
+---
+
+## Weitere Wachstums-Ideen
+
+| Idee | Beschreibung | Viral | Cash |
+|------|-------------|-------|------|
+| **Klassen-Geburtstagskalender** | Ein Kalender für die ganze Klasse, 25 Kinder, Wunschliste pro Kind. Ein Link in die Klassen-WhatsApp-Gruppe = 25 Familien sehen machsleicht | 9 | 1 |
+| **KI-Geschenkeberater** | "Junge, 7, mag Dinos" → 5 Geschenke mit Affiliate-Links. SEO: "Geschenk Junge 7 Jahre" | 6 | 7 |
+| **Einschulungs-Planer** | Gleicher Motor, anderer Anlass. Schultüte, Feier, Geschenke. Jedes Jahr August = Peak | 5 | 5 |
+| **Adventskalender-Builder** | 24 Türchen mit KI-Rätsel. November = enormes Suchvolumen | 4 | 5 |
+| **Mitgebsel-Generator** | "8 Kinder, 6 Jahre, Budget 3€/Kind" → KI-Liste mit Affiliate-Links | 3 | 6 |
+| **Countdown (7 Tage)** | Tägliche Nachricht vor der Party. Kind erzählt in der Kita davon | 8 | 1 |
+| **Wetter-Autopilot** | Automatischer Wetter-Check → Plan B Push-Benachrichtigung | 2 | 3 |
+| **Allergie-Manager** | Gäste tragen Allergien auf Partyseite ein → Einkaufsliste passt sich an | 3 | 0 |
+| **Nachbar-Nachricht** | Generierter Zettel mit machsleicht-Branding | 2 | 0 |
+| **Urkunden/Diplome** | Personalisierte Zertifikate nach der Party | 3 | 3 |
+
+---
+
+## Feature-Ranking: Viral × Cash (Top 14)
+
+| # | Feature | Viral | Cash | Kombi |
+|---|---------|-------|------|-------|
+| 1 | **Wunschliste + Beteiligen** | 8 | 10 | **18** |
+| 2 | **WhatsApp-Partyseite** | 10 | 7 | **17** |
+| 3 | **KI-Spielleiter-Anrufe** | 7 | 9 | **16** |
+| 4 | **Multiplayer-Schatzsuche** | 9 | 7 | **16** |
+| 5 | **Standalone /wunschliste** | 8 | 8 | **16** |
+| 6 | **Rätsel nach Maß** | 4 | 9 | **13** |
+| 7 | **KI-Geschenkeberater** | 6 | 7 | **13** |
+| 8 | **Sofort-Schatzsuche Abo** | 5 | 7 | **12** |
+| 9 | **Einladungs-Audio** | 7 | 4 | **11** |
+| 10 | **Gute-Nacht-Geschichte** | 4 | 6 | **10** |
+| 11 | **Klassen-Kalender** | 9 | 1 | **10** |
+| 12 | **KI-Spielmoderation** | 3 | 5 | **8** |
+| 13 | **Danke-Nachrichten** | 3 | 3 | **6** |
+| 14 | **Eltern-Copilot** | 2 | 4 | **6** |
+
+---
+
+## Revenue-Projektion (konservativ)
+
+**Annahmen:**
+- 20% der Besucher nutzen den Planer
+- 5% der Planer-Nutzer kaufen Premium (7% bei 20k wegen reifem Produkt)
+- 10% erstellen eine Wunschliste
+- Wunschliste generiert im Schnitt 4€ Affiliate (nicht jeder Gast klickt durch)
+- Standalone /wunschliste bringt zusätzlichen SEO-Traffic
+
+### Bei 5.000 Besuchern/Monat
+
+| Stream | Rechnung | Monat |
+|--------|----------|-------|
+| Premium-Features | 1.000 Planer × 5% × 7€ | ~350€ |
+| Wunschliste Affiliate | 500 Listen × 30% aktiv × 4€ | ~600€ |
+| Amazon-Affiliates (bestehend) | Deko/Mitgebsel-Klicks | ~100€ |
+| **Gesamt** | | **~1.050€** |
+
+### Bei 10.000 Besuchern/Monat
+
+| Stream | Rechnung | Monat |
+|--------|----------|-------|
+| Premium-Features | 2.000 × 5% × 7€ | ~700€ |
+| Wunschliste Affiliate | 1.000 × 30% × 4€ | ~1.200€ |
+| Standalone /wunschliste | +2.000 SEO-Besucher × 10% × 4€ | ~800€ |
+| Sofort-Abo | 30 Abonnenten × 2.99€ | ~90€ |
+| Amazon-Affiliates | | ~200€ |
+| **Gesamt** | | **~2.990€** |
+
+### Bei 20.000 Besuchern/Monat
+
+| Stream | Rechnung | Monat |
+|--------|----------|-------|
+| Premium-Features | 4.000 × 7% × 7€ | ~1.960€ |
+| Wunschliste Affiliate | 2.000 × 30% × 4€ | ~2.400€ |
+| Standalone /wunschliste | +5.000 SEO × 10% × 4€ | ~2.000€ |
+| Geschenkeberater | +3.000 SEO × Affiliate-Klicks | ~600€ |
+| Sofort-Abo | 80 Abonnenten × 2.99€ | ~240€ |
+| Amazon-Affiliates | | ~400€ |
+| **Gesamt** | | **~7.600€** |
+
+**Erkenntnis:** Die Wunschliste überholt Premium-Features ab 10k Besuchern. Bei 20k macht sie mehr als die Hälfte des Umsatzes — weil sie passiv skaliert ohne API-Kosten.
+
+**Jahresumsatz bei 20k Besuchern: ~91.000€** bei praktisch null laufenden Kosten (nur Netlify Hosting + gelegentliche API-Calls).
