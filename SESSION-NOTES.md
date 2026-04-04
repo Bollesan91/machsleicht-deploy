@@ -5,34 +5,40 @@
 
 ## Was wurde gemacht
 
-### Planer-Umbau (kindergeburtstag.js + kindergeburtstag.html)
+### Planer-Umbau Phase 1: Layout + Features (deployed)
+- **JS prettifyed:** 70 minifizierte → 6.800+ lesbare Zeilen
+- **Control Hub:** Fixed Bottom Bar (Einladung/Schatzsuche/PDF), position:fixed
+- **Sticky CTA** im Plan-View ausgeblendet (kein doppelter Bottom Bar)
+- **Einladungs-Block:** Dark Card mit Namenseingabe + Live-WhatsApp-Preview, motto-abhängige Greetings
+- **Narrativer Connector:** "Die Einladung teast die Schatzsuche an"
+- **Schatzsuche-Teaser:** "30 Min Abenteuer. Du trinkst Kaffee." + interaktiver Stationen-Explorer (5 antippbare Stationen, locked/unlocked)
+- **6 motto-spezifische Stationen-Sets** (Piraten, Safari, Dino, Weltraum, Einhorn, Feuerwehr) + Default-Fallback
+- **Zeitplan auf Accordion** umgebaut (details/summary, nur erster Schritt offen)
+- **Score-Loop verdrahtet:** Einladung erstellt → +11% Bereitschafts-Check, neue Dimension "Einladung" im Radar
+- **Redundante CTAs entfernt** (alte Einladung + Schatzsuche Blöcke unten)
+- **CTA State Change:** Button wird grün + Text ändert sich nach Klick
 
-- **JS prettifyed:** 70 minifizierte Zeilen → 6.788 lesbare Zeilen (npx prettier)
-- **Control Hub (Fixed Bottom Bar):** Einladung / Schatzsuche / PDF als permanente Aktions-Leiste am unteren Bildschirmrand (position:fixed, blur-backdrop, zIndex 100)
-- **Einladungs-Block:** Dark Card mit WhatsApp-Preview-Bubble direkt nach Motto Badge. Verlinkt auf /einladung/erstellen/?motto=X. Copy: "8 Kinder einladen — in 30 Sekunden"
-- **Visueller Connector:** "Die Einladung teast die Schatzsuche an" mit vertikalen Linien als narrativer Bogen
-- **Schatzsuche-Teaser:** "30 Minuten Abenteuer. Du trinkst Kaffee." Block mit personalisierten Daten (Motto, Kinder, Alter, Ort). "Passt in deinen Zeitplan" Hinweis
-- **Zeitplan auf Accordion umgebaut:** Jeder Schritt als details/summary mit kompakter Summary-Zeile (Zeit + Name + Dauer). Nur erster Schritt standardmäßig offen. Vertikale Timeline-Linie entfernt
-- **Redundante CTAs entfernt:** Alte "Einladungskarte erstellen" und "Noch eine Schatzsuche dazu?" Blöcke unten raus — jetzt oben prominent + im Control Hub
-- **CSS:** #root details > summary Marker ausgeblendet für sauberes Accordion-Design
-- **PDF Scroll-Target:** data-action="pdf" auf PDF-Sektion fuer Control Hub Button
+### Daten-Separation (vorbereitet, NICHT deployed)
+- **kindergeburtstag-data.js** erstellt (2.409 Zeilen): Alle Motto-Daten (GENERIC, LICENSE), BBL, ALL_MOTTOS, STATION_SETS, DEFAULT_STATIONS, MOTTO_GREETINGS, ageGroup/ageLabel
+- Syntax-Check bestanden
+- Wird in der nächsten Session als Grundlage für den JSX-Neuaufbau verwendet
 
-### Neue Plan-View Reihenfolge
-Motto Badge → Einladung (NEU) → Connector (NEU) → Schatzsuche-Teaser (NEU) → Bereitschafts-Check → Mode-Toggles → Zeitplan (Accordion) → Snacks → Deko → Mitgebsel → WhatsApp Share → Einkaufsliste → PDF → Erinnerung → "Das reicht" → Upsell → Control Hub (fixed, NEU)
-
-### Design-Referenz
-Teaser-V2 Konzept (aus frueherer Session) als Vorlage verwendet. Kernprinzipien: Personalisierung, narrativer Bogen, Score-Motor, "Zeigen statt beschreiben"
+### Entscheidung: JSX-Neuaufbau
+- Problem identifiziert: 6.800 Zeilen React.createElement-Ketten sind unwartbar
+- Plan: kindergeburtstag.js als JSX/Babel mit Komponenten-Architektur neu aufbauen
+- Stack bleibt gleich (React CDN + Babel standalone, kein Build-Step)
+- Daten und UI sauber getrennt (2 Script-Tags)
 
 ## Nächste Schritte
-- **Live testen:** Accordion-Verhalten auf Mobile prüfen, Control Hub Ueberlappung mit Sticky CTA checken (u-sticky-cta vs Control Hub — evtl. Sticky CTA im Plan-View ausblenden)
-- **Score-Loop verdrahten:** Einladung verschickt → Score +11%, Schatzsuche erstellt → Score +X%
-- **Einladungs-Block interaktiv machen:** Name-Buttons wie im Teaser-V2 (Kinder-Namen tippen → Live WhatsApp-Preview)
-- **Schatzsuche-Teaser: Stationen-Explorer** — 5 Stationen anteasern mit locked/unlocked State
-- **Affiliates in Zeitplan einweben** — Amazon-Links direkt bei Material-Listen
-- **Meerjungfrau finalisieren** (Zeitangaben, Spiel 5, Material-Check)
-- **Ritter** als naechstes Motto expandieren
+1. **JSX-Neuaufbau von kindergeburtstag.js** — Komponenten-Architektur:
+   - ControlHub, EinladungBlock, SchatzsucheTeaser, Zeitplan, ScoreCheck, DekoListe, Einkaufsliste
+   - kindergeburtstag.html anpassen: Babel standalone laden, data.js als separates Script
+   - Alle aktuellen Features 1:1 portieren
+   - Testen auf Mobile
+
+2. **Nach Neuaufbau:** Visueller Test auf Handy, dann iterativ Features verbessern
 
 ## Offene Fragen
-- Control Hub vs. bestehende Sticky CTA Bar (u-sticky-cta): Doppelt? Sticky CTA nur auf Config-View zeigen, Control Hub nur auf Plan-View?
-- Accordion default-open: Nur erster Schritt oder alle offen auf Desktop?
-- Einladungs-Block: Soll der Verschickt-Counter persistent sein (localStorage) oder nur Session?
+- Control Hub vs. Sticky CTA: Sticky CTA wird jetzt per useEffect ausgeblendet im Plan-View — reicht das oder braucht es sauberere Lösung?
+- Accordion: Safari/Chrome Rendering-Unterschiede bei position:absolute in details?
+- MOTTO_GREETINGS: Nur 14 Mottos abgedeckt — was wenn neue Mottos dazukommen?
