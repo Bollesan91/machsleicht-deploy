@@ -1,51 +1,39 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 05.04.2026
+**Datum:** 05.04.2026 (Nachmittag)
 
 ## Was wurde gemacht
 
-### Strategie-Dokument komplett ueberarbeitet
-- Premium-Strategie (_dev/docs/premium-strategie-2026-04.md) konsolidiert
-- Alle Premium-Features aus Chat-History in ein Dokument zusammengefuehrt
-- Vision mit Standalone-Prinzip und fuenf Saeulen (Planer, Partyseite, Wunschliste, Raetsel nach Mass, Kreuzwortraetsel)
-- Premium-Kandidaten in 3 Tiers (Raetsel, ElevenLabs, Text-only)
-- Partyseite als integriertes Fundament-Feature (RSVP, Allergien, Abholzeit, Wunschliste)
-- 3 User Flows zur Partyseite (aus Planer, direkt, aus Wunschliste)
-- URL: /party/{random-token} + PIN = Kindername
-- Affiliate-Link-Konvertierung mit Domain-Mapping-Tabelle
-- Wettbewerber-Analyse (Wunschbiber, Partiful, Whocan, Joy)
-- Beteiligen = nur Koordination, kein Geldfluss
-- Geburtstagssong -> Backlog, Multiplayer -> Langfrist-Vision
-- Revenue-Projektion als optimistisch-konservativ markiert
-- ElevenLabs-Klumpenrisiko dokumentiert
-- Backend: Cloudflare Workers + KV
+### Raetsel nach Mass — UI/Flow gebaut (Vorschau-Modus)
+- Artifact-Preview mit komplettem Flow (noch nicht als HTML im Repo)
+- Editor: Kindername, Garten/Wohnung, Alter-Slider, Landmark-Chips + Freitext
+- Ergebnis-View komplett ueberarbeitet nach Sparring:
+  - Route-Visualisierung (Start → Station 1 → 2 → ... → Schatz)
+  - Intro-Story ("Sophie braucht eure Hilfe!")
+  - Stationskarten mit Raetsel, Antwort-Reveal, Wegweiser zum naechsten Hinweis
+  - Finale-Karte mit Schatz-Tipp
+- Druckansicht: Kaertchen mit Strichelrand zum Ausschneiden
+  - "Auslegen bei: [vorherige Station]" auf jeder Karte
+- ~20 handgeschriebene Raetsel-Templates fuer gaengige Orte
+- Generische Fallback-Templates fuer unbekannte Orte
+- Mock-Modus klar gekennzeichnet ("Vorschau — mit KI werden sie individuell")
 
-### Kreuzwortraetsel-Generator gebaut (v1)
-- kreuzwortraetsel.html — komplett clientseitig, single-file React
-- Drei Modi: Leer drucken, Loesungsblatt, Digital spielen
-- Loesungswort eingeben, Fragen+Antworten pro Buchstabe
-- Live-Validierung, auto-Positionierung, responsive Grid
-- Digital: Input-Felder, Auto-Focus, gruene Felder, Konfetti
-- Loesungswort-Tracker unter dem Grid
-- Umlaute als Einzelzeichen (kein AE/OE/UE)
-- Responsive Felder (1fr mobil, 1fr 1fr desktop)
-- Redirect /kreuzwortraetsel eingetragen
-
-### Sparring-Runden
-- Kreuzwortraetsel als Raetsel-nach-Mass-Format eingeordnet
-- Partyseite Pro/Contra, Cloudflare Workers Kapazitaet
-- Wettbewerber-Research
-- Prio-Wechsel: Raetsel nach Mass VOR Partyseite
+### Vorherige Session (gleicher Tag, Vormittag)
+- Strategie-Dokument komplett konsolidiert
+- Kreuzwortraetsel-Generator v1 gebaut und committed
+- Siehe aeltere Commits fuer Details
 
 ## Naechste Schritte
-1. **Kreuzwortraetsel testen** — Handy + Desktop, Print, Digital-Spielmodus
-2. **Raetsel nach Mass** — Claude API, UI im Schnitzeljagd-Block, VK 2.99
-3. **Partyseite MVP** — Worker + KV, Formular, Gaeste-View, Admin-View
-4. **Sitemap aktualisieren** — kreuzwortraetsel.html aufnehmen
-5. **GitHub Token rotieren!** (laeuft 25.04. ab)
+1. **Raetsel nach Mass als HTML ins Repo** — Artifact in kreuzwortraetsel-artige HTML-Datei umwandeln
+2. **Claude API anbinden** — Mock-Raetsel durch echte KI-Raetsel ersetzen
+3. **Kreuzwortraetsel testen** — auf echtem Handy, Print, Digital-Spielmodus
+4. **Partyseite MVP** — Worker + KV, Formular, Gaeste-View, Admin-View
+5. **Sitemap aktualisieren** — kreuzwortraetsel.html + raetsel.html aufnehmen
+6. **GitHub Token rotieren!** (laeuft 25.04. ab)
 
 ## Offene Fragen
-- Kreuzwortraetsel: PDF-Export noetig oder reicht Browser-Print?
-- Raetsel nach Mass: Prompt-Engineering fuer altersgerechte Raetsel
-- Partyseite: KV-Namespace "PARTY" anlegen in Cloudflare Dashboard
+- Raetsel nach Mass: Standalone-Seite /raetsel ODER nur im Planer integriert?
+- Claude API Key: Bolle muss Key mitbringen
+- Payment: Lemon Squeezy Paywall wann davor schalten?
+- Drag & Drop fuer Stations-Reihenfolge?
