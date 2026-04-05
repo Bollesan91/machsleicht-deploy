@@ -2631,7 +2631,322 @@ function EinladungBlock({ motto, guests, previewName, setPreviewName, inviteSent
     done ? "\u2713 Einladung erstellt \u2014 bearbeiten \u2192" : `\u{1F48C} ${motto.name}-Einladung erstellen \u2192`
   ), done && /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, opacity: 0.5, margin: "6px 0 0", textAlign: "center" } }, "\u2713 Score +11% \u2014 Bereitschafts-Check aktualisiert"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "center", gap: 16, marginTop: 10, fontSize: 11, opacity: 0.3 } }, /* @__PURE__ */ React.createElement("span", null, "Kostenlos"), /* @__PURE__ */ React.createElement("span", null, "Kein Account"), /* @__PURE__ */ React.createElement("span", null, "DSGVO-konform"))));
 }
-function SchnitzeljagdBlock({ age, ag, szActive, setSzActive, szThemeId, setSzThemeId, szTheme, childName, setChildName, mapItems, setMapItems, activeEmoji, setActiveEmoji }) {
+const MAP_THEMES = {
+  piraten: { parchment: ["#F5E6C8", "#EDD9B3", "#D4B896"], accent: "#5D4037", pathColor: "rgba(139,69,19,0.45)", borderColor: "#8B6914", scatter: ["\u{1F30A}", "\u{1F30A}", "\u2693", "\u{1F99C}", "\u{1F419}", "\u{1F480}", "\u26F5", "\u{1F334}", "\u{1F334}", "\u{1F41A}", "\u{1F5E1}\uFE0F", "\u{1F3F4}\u200D\u2620\uFE0F", "\u{1F988}", "\u{1F30A}", "\u{1F41A}"], pathDeco: ["\u{1F41A}", "\u2693", "\u{1F99C}", "\u{1F480}"], treasureIcon: "\u{1F4B0}", startIcon: "\u26F5" },
+  dschungel: { parchment: ["#E0ECDA", "#D0E0C4", "#BCD4A8"], accent: "#D4A574", pathColor: "rgba(27,94,32,0.4)", borderColor: "#33691E", scatter: ["\u{1F334}", "\u{1F334}", "\u{1F33F}", "\u{1F33F}", "\u{1F412}", "\u{1F98E}", "\u{1F40D}", "\u{1F99C}", "\u{1F33A}", "\u{1F343}", "\u{1FABB}", "\u{1F438}", "\u{1F578}\uFE0F", "\u{1F43E}", "\u{1F343}"], pathDeco: ["\u{1F43E}", "\u{1F33F}", "\u{1F99C}", "\u{1F343}"], treasureIcon: "\u{1FAB6}", startIcon: "\u{1F9ED}" },
+  weltraum: { parchment: ["#1a1a3e", "#12123a", "#0a0a2e"], accent: "#283593", pathColor: "rgba(124,77,255,0.45)", borderColor: "#536DFE", scatter: ["\u2B50", "\u2B50", "\u2B50", "\u2728", "\u2728", "\u{1F319}", "\u{1FA90}", "\u2604\uFE0F", "\u{1F6F8}", "\u{1F30C}", "\u{1F6F0}\uFE0F", "\u{1F4AB}", "\u2B50", "\u2728", "\u{1F31F}"], pathDeco: ["\u2B50", "\u2728", "\u{1F4AB}", "\u2604\uFE0F"], treasureIcon: "\u{1F6F8}", startIcon: "\u{1F680}", darkMode: true },
+  detektiv: { parchment: ["#E8E4F0", "#DDD8EA", "#CCC6DC"], accent: "#455A64", pathColor: "rgba(26,35,126,0.35)", borderColor: "#3949AB", scatter: ["\u{1F50D}", "\u{1F463}", "\u{1F463}", "\u{1F463}", "\u{1F575}\uFE0F", "\u{1F4CB}", "\u{1F526}", "\u{1F58A}\uFE0F", "\u{1F510}", "\u{1F4CE}", "\u{1F9F2}", "\u{1F576}\uFE0F", "\u{1F4A1}", "\u{1F6A8}", "\u{1F463}"], pathDeco: ["\u{1F463}", "\u{1F50D}", "\u{1F4CE}", "\u{1F526}"], treasureIcon: "\u{1F4E6}", startIcon: "\u{1F694}" },
+  dino: { parchment: ["#E8F0E0", "#D8E8C8", "#C4D8B0"], accent: "#795548", pathColor: "rgba(46,125,50,0.35)", borderColor: "#558B2F", scatter: ["\u{1F9B4}", "\u{1F9B4}", "\u{1F9B6}", "\u{1F9B6}", "\u{1F33F}", "\u{1F33F}", "\u{1F30B}", "\u{1F95A}", "\u{1F98E}", "\u{1FAA8}", "\u{1F995}", "\u{1F996}", "\u{1F33F}", "\u2604\uFE0F", "\u{1FAB9}"], pathDeco: ["\u{1F9B4}", "\u{1F9B6}", "\u{1F33F}", "\u{1FAA8}"], treasureIcon: "\u{1F9B4}", startIcon: "\u26CF\uFE0F" },
+  feen: { parchment: ["#FFF0F5", "#FFE4EE", "#FFD6E8"], accent: "#AB47BC", pathColor: "rgba(173,20,87,0.3)", borderColor: "#E91E63", scatter: ["\u{1F98B}", "\u{1F98B}", "\u2728", "\u2728", "\u{1F338}", "\u{1F338}", "\u{1F344}", "\u{1F308}", "\u{1F48E}", "\u{1F9DA}", "\u{1FAB7}", "\u{1F33A}", "\u{1F4AB}", "\u{1FAE7}", "\u{1F337}"], pathDeco: ["\u{1F98B}", "\u2728", "\u{1F338}", "\u{1F48E}"], treasureIcon: "\u2728", startIcon: "\u{1F9DA}" }
+};
+function mapSeededRandom(seed) {
+  let s = seed;
+  return () => {
+    s = s * 16807 % 2147483647;
+    return (s - 1) / 2147483646;
+  };
+}
+function mapAutoLayout(stationNames, W, H) {
+  const pad = 45, n = stationNames.length, pts = [];
+  pts.push({ x: pad + 25, y: H - pad - 20, label: "Start", isStart: true });
+  for (let i = 0; i < n; i++) {
+    const t = (i + 0.5) / n;
+    const x = pad + 25 + (W - pad * 2 - 50) * t;
+    const phase = t * Math.PI * 2;
+    const amp = (H - pad * 2 - 70) * 0.3;
+    const y = H * 0.5 + Math.sin(phase - Math.PI / 2) * amp;
+    const seed = stationNames[i].charCodeAt(0) * 13 + i * 47;
+    pts.push({ x: Math.max(pad + 15, Math.min(W - pad - 15, x + (seed % 24 - 12))), y: Math.max(pad + 35, Math.min(H - pad - 15, y + (seed * 7 % 24 - 12))), label: stationNames[i], index: i + 1 });
+  }
+  pts.push({ x: W - pad - 25, y: pad + 30, label: "Schatz!", isTreasure: true });
+  return pts;
+}
+function drawTreasureMap(canvas, points, themeId, title) {
+  const t = MAP_THEMES[themeId] || MAP_THEMES.piraten;
+  const ctx = canvas.getContext("2d");
+  const W = canvas.width;
+  const H = canvas.height;
+  const isDark = t.darkMode;
+  const tc = isDark ? "rgba(200,200,255,0.85)" : "rgba(80,40,10,0.85)";
+  const tcl = isDark ? "rgba(160,160,200,0.4)" : "rgba(120,80,40,0.35)";
+  const rng = mapSeededRandom(42 + (themeId || "").length * 7);
+  const grad = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, W * 0.7);
+  grad.addColorStop(0, t.parchment[0]);
+  grad.addColorStop(0.6, t.parchment[1]);
+  grad.addColorStop(1, t.parchment[2]);
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, W, H);
+  for (let i = 0; i < 5e3; i++) {
+    ctx.fillStyle = isDark ? `rgba(100,100,200,${rng() * 0.12})` : `rgba(120,80,40,${rng() * 0.05})`;
+    ctx.fillRect(rng() * W, rng() * H, 1, 1);
+  }
+  for (let i = 0; i < 3; i++) {
+    const sx = rng() * W, sy = rng() * H, sr = 20 + rng() * 40;
+    const st = ctx.createRadialGradient(sx, sy, 0, sx, sy, sr);
+    st.addColorStop(0, isDark ? "rgba(60,60,120,0.08)" : "rgba(160,120,60,0.06)");
+    st.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.fillStyle = st;
+    ctx.beginPath();
+    ctx.arc(sx, sy, sr, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  ctx.strokeStyle = t.borderColor;
+  ctx.lineWidth = 2.5;
+  ctx.strokeRect(8, 8, W - 16, H - 16);
+  ctx.strokeStyle = t.borderColor + "44";
+  ctx.lineWidth = 1;
+  ctx.strokeRect(12, 12, W - 24, H - 24);
+  ctx.textAlign = "center";
+  ctx.fillStyle = tc;
+  ctx.font = `bold ${W > 400 ? 18 : 14}px Georgia,serif`;
+  ctx.fillText(title || "Schatzkarte", W / 2, 30);
+  ctx.globalAlpha = isDark ? 0.2 : 0.15;
+  t.scatter.forEach((em) => {
+    const ex = 25 + rng() * (W - 50), ey = 40 + rng() * (H - 70);
+    let skip = false;
+    points.forEach((p) => {
+      if (Math.hypot(p.x - ex, p.y - ey) < 40) skip = true;
+    });
+    if (skip) return;
+    ctx.font = `${11 + rng() * 8}px serif`;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.save();
+    ctx.translate(ex, ey);
+    ctx.rotate((rng() - 0.5) * 0.5);
+    ctx.fillText(em, 0, 0);
+    ctx.restore();
+  });
+  ctx.globalAlpha = 1;
+  if (points.length >= 2) {
+    ctx.setLineDash([6, 4]);
+    ctx.strokeStyle = t.pathColor;
+    ctx.lineWidth = 2.5;
+    ctx.lineCap = "round";
+    ctx.beginPath();
+    ctx.moveTo(points[0].x, points[0].y);
+    const mids = [];
+    for (let i = 1; i < points.length; i++) {
+      const p0 = points[Math.max(0, i - 2)], p1 = points[i - 1], p2 = points[i], p3 = points[Math.min(points.length - 1, i + 1)];
+      ctx.bezierCurveTo(p1.x + (p2.x - p0.x) / 6, p1.y + (p2.y - p0.y) / 6, p2.x - (p3.x - p1.x) / 6, p2.y - (p3.y - p1.y) / 6, p2.x, p2.y);
+      mids.push({ x: (p1.x + p2.x) / 2 + (rng() - 0.5) * 15, y: (p1.y + p2.y) / 2 + (rng() - 0.5) * 15 });
+    }
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.globalAlpha = 0.5;
+    mids.forEach((mp) => {
+      ctx.font = "11px serif";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(t.pathDeco[Math.floor(rng() * t.pathDeco.length)], mp.x, mp.y);
+    });
+    ctx.globalAlpha = 1;
+  }
+  const ccx = W - 38, ccy = H - 38;
+  ctx.save();
+  ctx.translate(ccx, ccy);
+  ctx.strokeStyle = tcl;
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.arc(0, 0, 18, 0, Math.PI * 2);
+  ctx.stroke();
+  [{ a: -Math.PI / 2, l: "N", len: 14, b: true }, { a: 0, l: "O", len: 10 }, { a: Math.PI / 2, l: "S", len: 10 }, { a: Math.PI, l: "W", len: 10 }].forEach((d) => {
+    ctx.strokeStyle = d.b ? tc : tcl;
+    ctx.lineWidth = d.b ? 2 : 1.5;
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(Math.cos(d.a) * d.len, Math.sin(d.a) * d.len);
+    ctx.stroke();
+    ctx.fillStyle = d.b ? tc : tcl;
+    ctx.font = d.b ? "bold 8px Georgia" : "7px Georgia";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(d.l, Math.cos(d.a) * (d.len + 7), Math.sin(d.a) * (d.len + 7));
+  });
+  ctx.restore();
+  const stColor = t.accent;
+  points.forEach((p) => {
+    if (p.isTreasure) {
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.strokeStyle = "#CC0000";
+      ctx.lineWidth = 3.5;
+      ctx.lineCap = "round";
+      ctx.beginPath();
+      ctx.moveTo(-12, -12);
+      ctx.lineTo(12, 12);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(12, -12);
+      ctx.lineTo(-12, 12);
+      ctx.stroke();
+      ctx.font = "18px serif";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(t.treasureIcon, 0, -18);
+      ctx.fillStyle = "#CC0000";
+      ctx.font = "bold italic 10px Georgia";
+      ctx.textBaseline = "alphabetic";
+      ctx.fillText("Schatz!", 0, 24);
+      ctx.restore();
+      return;
+    }
+    if (p.isStart) {
+      ctx.font = "18px serif";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(t.startIcon, p.x, p.y);
+      ctx.fillStyle = tc;
+      ctx.font = "bold 8px Georgia";
+      ctx.textBaseline = "top";
+      ctx.fillText("START", p.x, p.y + 12);
+      return;
+    }
+    ctx.fillStyle = "rgba(0,0,0,0.1)";
+    ctx.beginPath();
+    ctx.arc(p.x + 1.5, p.y + 1.5, 15, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = isDark ? "#2a2a5a" : t.parchment[0];
+    ctx.strokeStyle = stColor;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, 15, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = isDark ? "#fff" : stColor;
+    ctx.font = "bold 12px Georgia";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(p.index, p.x, p.y + 1);
+    ctx.fillStyle = tc;
+    ctx.font = "8px Georgia";
+    ctx.textBaseline = "top";
+    const lbl = p.label.length > 14 ? p.label.slice(0, 13) + "\u2026" : p.label;
+    ctx.fillText(lbl, p.x, p.y + 18, 68);
+  });
+  ctx.fillStyle = tcl;
+  ctx.font = "italic 7px Georgia";
+  ctx.textAlign = "left";
+  ctx.textBaseline = "bottom";
+  ctx.fillText("\u{1F4A1} Stationen verschieben: tippen & ziehen", 14, H - 10);
+}
+function TreasureMapCanvas({ szTheme, stations, childName, mapPositions, setMapPositions }) {
+  const canvasRef = React.useRef(null);
+  const dragRef = React.useRef({ dragging: false, idx: -1, offX: 0, offY: 0 });
+  const dimRef = React.useRef({ w: 0, h: 0 });
+  const posRef = React.useRef(null);
+  posRef.current = mapPositions;
+  const themeId = szTheme ? szTheme.id : "piraten";
+  const stationNames = stations.map((s, i) => i === stations.length - 1 ? "\u{1F381} " + s.name : s.name);
+  const nameGen = childName ? childName.endsWith("s") ? childName + "'" : childName + "s" : "";
+  const mapTitle = `${szTheme ? szTheme.emoji : ""} ${nameGen ? nameGen + " " : ""}${szTheme ? szTheme.name : "Schatzkarte"}`;
+  const getPoints = React.useCallback((w, h) => {
+    const auto = mapAutoLayout(stationNames, w, h);
+    if (mapPositions && mapPositions.length === auto.length) {
+      return mapPositions.map((p, i) => ({ ...auto[i], x: p.x, y: p.y }));
+    }
+    return auto;
+  }, [stationNames, mapPositions]);
+  const redraw = React.useCallback(() => {
+    const c = canvasRef.current;
+    if (!c || !stations.length) return;
+    const dpr = window.devicePixelRatio || 1;
+    const container = c.parentElement;
+    const dw = container ? container.clientWidth : 300;
+    const dh = Math.round(dw * 0.8);
+    c.width = dw * dpr;
+    c.height = dh * dpr;
+    c.style.width = dw + "px";
+    c.style.height = dh + "px";
+    dimRef.current = { w: dw, h: dh };
+    const ctx = c.getContext("2d");
+    ctx.scale(dpr, dpr);
+    drawTreasureMap(c, getPoints(dw, dh), themeId, mapTitle);
+  }, [stations, themeId, mapTitle, getPoints]);
+  React.useEffect(() => {
+    setMapPositions(null);
+  }, [stations.length, themeId]);
+  React.useEffect(() => {
+    redraw();
+  }, [redraw, mapPositions]);
+  React.useEffect(() => {
+    const h = () => {
+      setMapPositions(null);
+      setTimeout(redraw, 50);
+    };
+    window.addEventListener("resize", h);
+    return () => window.removeEventListener("resize", h);
+  }, [redraw]);
+  React.useEffect(() => {
+    const c = canvasRef.current;
+    if (!c) return;
+    const getXY = (e) => {
+      const rect = c.getBoundingClientRect();
+      const touch = e.touches ? e.touches[0] : e.changedTouches ? e.changedTouches[0] : e;
+      if (!touch) return null;
+      return { x: touch.clientX - rect.left, y: touch.clientY - rect.top };
+    };
+    const findIdx = (x, y) => {
+      const { w, h } = dimRef.current;
+      const pts = getPoints(w, h);
+      for (let i = pts.length - 1; i >= 0; i--) {
+        if (Math.hypot(pts[i].x - x, pts[i].y - y) < 25) return i;
+      }
+      return -1;
+    };
+    const down = (e) => {
+      const pos = getXY(e);
+      if (!pos) return;
+      const idx = findIdx(pos.x, pos.y);
+      if (idx < 0) return;
+      e.preventDefault();
+      const { w, h } = dimRef.current;
+      const pts = getPoints(w, h);
+      if (!posRef.current) {
+        const np = pts.map((p) => ({ x: p.x, y: p.y }));
+        posRef.current = np;
+        setMapPositions(np);
+      }
+      dragRef.current = { dragging: true, idx, offX: pts[idx].x - pos.x, offY: pts[idx].y - pos.y };
+    };
+    const move = (e) => {
+      if (!dragRef.current.dragging) return;
+      e.preventDefault();
+      const pos = getXY(e);
+      if (!pos) return;
+      const { idx, offX, offY } = dragRef.current;
+      const { w, h } = dimRef.current;
+      const nx = Math.max(15, Math.min(w - 15, pos.x + offX));
+      const ny = Math.max(15, Math.min(h - 15, pos.y + offY));
+      const np = [...posRef.current || []];
+      np[idx] = { x: nx, y: ny };
+      posRef.current = np;
+      setMapPositions(np);
+    };
+    const up = () => {
+      dragRef.current.dragging = false;
+    };
+    c.addEventListener("touchstart", down, { passive: false });
+    c.addEventListener("touchmove", move, { passive: false });
+    c.addEventListener("touchend", up);
+    c.addEventListener("mousedown", down);
+    c.addEventListener("mousemove", move);
+    c.addEventListener("mouseup", up);
+    c.addEventListener("mouseleave", up);
+    return () => {
+      c.removeEventListener("touchstart", down);
+      c.removeEventListener("touchmove", move);
+      c.removeEventListener("touchend", up);
+      c.removeEventListener("mousedown", down);
+      c.removeEventListener("mousemove", move);
+      c.removeEventListener("mouseup", up);
+      c.removeEventListener("mouseleave", up);
+    };
+  }, [getPoints, setMapPositions]);
+  TreasureMapCanvas._canvasRef = canvasRef;
+  return /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 16 } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, fontWeight: 700, color: "var(--m)", marginBottom: 6 } }, "\u{1F5FA}\uFE0F Schatzkarte"), /* @__PURE__ */ React.createElement("div", { style: { borderRadius: 12, overflow: "hidden", border: `2px solid ${szTheme ? szTheme.color + "40" : "var(--l)"}`, touchAction: "none" } }, /* @__PURE__ */ React.createElement("canvas", { ref: canvasRef, style: { display: "block", width: "100%", cursor: "grab", touchAction: "none" } })), mapPositions && /* @__PURE__ */ React.createElement("div", { className: "no-print", style: { textAlign: "center", marginTop: 6 } }, /* @__PURE__ */ React.createElement("button", { onClick: () => setMapPositions(null), style: { fontSize: 11, padding: "4px 12px", fontWeight: 600, border: "1px solid var(--l)", borderRadius: 8, background: "var(--bg)", color: "var(--m)", cursor: "pointer" } }, "\u21BA Positionen zur\xFCcksetzen")));
+}
+function SchnitzeljagdBlock({ age, ag, szActive, setSzActive, szThemeId, setSzThemeId, szTheme, childName, setChildName, mapPositions, setMapPositions }) {
   const stations = szTheme ? szTheme.stations[ag] || szTheme.stations.mittel : [];
   const materials = szTheme ? szTheme.material[ag] || szTheme.material.mittel : [];
   const totalDauer = stations.reduce((s, st) => s + st.dauer, 0);
@@ -2645,7 +2960,7 @@ function SchnitzeljagdBlock({ age, ag, szActive, setSzActive, szThemeId, setSzTh
     w.document.write(`<html><head><title>Komplettpaket ${szTheme.name}</title>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=DM+Sans:opsz,wght@9..40,400;9..40,700;9..40,800&display=swap" rel="stylesheet">
 <style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',system-ui,sans-serif;color:#2D2319;background:#FFF}.page{page-break-after:always;padding:32px;min-height:100vh}.page:last-child{page-break-after:auto}h1{font-size:22px;font-weight:900;margin-bottom:8px}h2{font-size:16px;font-weight:800;color:${szTheme.color};margin:20px 0 10px;border-bottom:2px solid ${szTheme.color}30;padding-bottom:4px}.station{margin-bottom:14px;padding:12px;background:#FAFAF5;border-radius:10px;border:1px solid #EDE6DE}.station-name{font-weight:800;font-size:14px;margin-bottom:4px}.station-desc{font-size:13px;line-height:1.5;color:#5D4037}.hint{font-size:12px;color:#795548;background:#FFF8E1;padding:6px 10px;border-radius:6px;margin-top:6px;border:1px solid #FFE082}.check{display:inline-block;width:14px;height:14px;border:2px solid #A89888;border-radius:3px;margin-right:8px;vertical-align:middle}.hinweis-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.hinweis-card{border:2px dashed ${szTheme.color}80;border-radius:12px;padding:14px;text-align:center;min-height:140px;display:flex;flex-direction:column;justify-content:center}.cert{text-align:center;padding:48px;border:4px double ${szTheme.color};border-radius:16px;position:relative;max-width:600px;margin:0 auto}.cert::before{content:'';position:absolute;inset:8px;border:1px solid ${szTheme.color}40;border-radius:10px}@media print{.page{padding:24px;min-height:auto}}</style></head><body>
-${mapItems.length > 0 ? `<div class="page" style="display:flex;flex-direction:column;align-items:center;justify-content:center"><div style="position:relative;width:100%;max-width:700px;aspect-ratio:4/3;background:linear-gradient(145deg,#F5E6C8 0%,#E8D5A8 30%,#DCCB96 60%,#F0E0B8 100%);border:2px solid ${szTheme.color}40;border-radius:16px;overflow:hidden"><div style="position:absolute;top:16px;left:0;right:0;text-align:center;z-index:2;font-family:'Caveat',cursive;font-size:26px;font-weight:700;color:#8B7750">${szTheme.emoji} ${nameGen ? nameGen + " " : ""}${szTheme.name}</div>${mapItems.map((item) => `<span style="position:absolute;left:${item.x}%;top:${item.y}%;font-size:28px;transform:translate(-50%,-50%);z-index:5">${item.emoji}</span>`).join("")}<div style="position:absolute;bottom:12px;right:16px;font-size:11px;color:#A0926C;font-weight:700">N \u2191</div><div style="position:absolute;bottom:10px;left:16px;font-size:9px;color:#A0926C">machsleicht.de</div></div></div>` : ""}
+${TreasureMapCanvas._canvasRef && TreasureMapCanvas._canvasRef.current ? `<div class="page" style="display:flex;flex-direction:column;align-items:center;justify-content:center"><img src="${TreasureMapCanvas._canvasRef.current.toDataURL("image/png")}" style="width:100%;max-width:700px;border-radius:16px;border:2px solid ${szTheme.color}40" /></div>` : ""}
 <div class="page"><h1>${szTheme.emoji} ${nameGen ? nameGen + " " : ""}${szTheme.name}</h1><p style="font-size:13px;color:#6B5D52;margin-bottom:12px">${stations.length} Stationen \xB7 ${ageLabel[ag]} \xB7 ca. ${totalDauer} Min.</p><p style="font-size:14px;color:#5D4037;line-height:1.6;font-style:italic;margin-bottom:16px;padding:12px;background:#FAFAF5;border-radius:8px">\u201E${introText}"</p>${stations.map((s, i) => `<div class="station"><div class="station-name">${i === stations.length - 1 ? "\u{1F381}" : i + 1 + "."} ${s.name}</div><div class="station-desc">${s.desc}</div><div class="hint">\u{1F4A1} ${s.hint}</div></div>`).join("")}</div>
 <div class="page"><h1>\u2702\uFE0F Hinweis-Zettel zum Ausschneiden</h1><p style="font-size:13px;color:#6B5D52;margin-bottom:16px">Ausschneiden und an den Stationen verstecken.</p><div class="hinweis-grid">${stations.map((s, i) => `<div class="hinweis-card"><div style="font-size:28px;margin-bottom:4px">${i === stations.length - 1 ? "\u{1F381}" : "Station " + (i + 1)}</div><div style="font-size:13px;font-weight:700;margin-bottom:6px">${s.name}</div><div style="font-size:16px;color:#5D4037;font-family:'Caveat',cursive">${i < stations.length - 1 ? "\u2192 Weiter zu: " + stations[i + 1].name : "\u{1F389} Geschafft! Hier ist der Schatz!"}</div></div>`).join("")}</div></div>
 <div class="page"><h1>\u{1F4CB} Material-Checkliste</h1><h2>Pro Station</h2><ul style="list-style:none;columns:2">${materials.map((m) => `<li style="font-size:13px;line-height:2"><span class="check"></span>${m}</li>`).join("")}</ul><h2>Schatz-Ideen</h2><ul style="list-style:none;columns:2">${szTheme.schatz.map((s) => `<li style="font-size:13px;line-height:2"><span class="check"></span>${s}</li>`).join("")}</ul></div>
@@ -2702,50 +3017,7 @@ ${mapItems.length > 0 ? `<div class="page" style="display:flex;flex-direction:co
   )), szTheme && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", { style: { background: `${szTheme.color}08`, borderRadius: 12, padding: "14px 16px", marginBottom: 16, borderLeft: `3px solid ${szTheme.color}` } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 13, color: "var(--d)", lineHeight: 1.6, margin: 0, fontStyle: "italic" } }, "\u201E", introText, '"'), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 10, color: "var(--m)", marginTop: 6, fontWeight: 600 } }, "\u{1F4A1} Vorlesen, bevor es losgeht")), /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 16 } }, stations.map((st, i) => {
     const isLast = i === stations.length - 1;
     return /* @__PURE__ */ React.createElement("details", { key: i, open: i === 0, style: { marginBottom: 6 } }, /* @__PURE__ */ React.createElement("summary", { style: { display: "flex", alignItems: "center", gap: 8, cursor: "pointer", padding: "6px 0", fontSize: 13 } }, /* @__PURE__ */ React.createElement("span", { style: { width: 22, height: 22, borderRadius: "50%", background: isLast ? "var(--a)" : szTheme.color, color: "#fff", fontSize: 9, fontWeight: 800, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 } }, isLast ? "\u{1F381}" : i + 1), /* @__PURE__ */ React.createElement("span", { style: { fontWeight: 700, flex: 1 } }, st.name), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 11, color: "var(--m)" } }, st.dauer, "\u2032")), /* @__PURE__ */ React.createElement("div", { style: { paddingLeft: 30, paddingBottom: 6 } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)", lineHeight: 1.5, margin: "4px 0 6px" } }, st.desc), st.hint && /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, color: "#795548", background: "#FFF8E1", padding: "6px 10px", borderRadius: 6, border: "1px solid #FFE082" } }, "\u{1F4A1} ", st.hint)));
-  })), /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 16 } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, fontWeight: 700, color: "var(--m)", marginBottom: 6 } }, "\u{1F5FA}\uFE0F Schatzkarte"), /* @__PURE__ */ React.createElement("div", { className: "no-print", style: { display: "flex", gap: 3, flexWrap: "wrap", marginBottom: 6 } }, (szTheme.emoji === "\u{1F3F4}\u200D\u2620\uFE0F" ? ["\u{1F3F4}\u200D\u2620\uFE0F", "\u{1F480}", "\u2693", "\u{1F5DD}\uFE0F", "\u{1F48E}", "\u{1F99C}", "\u{1F9ED}", "\u{1F4B0}", "\u{1F3DD}\uFE0F"] : szTheme.emoji === "\u{1F981}" ? ["\u{1F981}", "\u{1F412}", "\u{1F98E}", "\u{1F40A}", "\u{1F334}", "\u{1F33A}", "\u{1F98B}", "\u{1F40D}", "\u{1F33F}"] : szTheme.emoji === "\u{1F680}" ? ["\u{1F680}", "\u2B50", "\u{1F319}", "\u{1F6F8}", "\u{1F47D}", "\u2604\uFE0F", "\u{1F52D}", "\u{1F6F0}\uFE0F", "\u{1F30C}"] : szTheme.emoji === "\u{1F50D}" ? ["\u{1F50D}", "\u{1F575}\uFE0F", "\u{1F4CB}", "\u{1F5DD}\uFE0F", "\u{1F4A1}", "\u{1F526}", "\u{1F463}", "\u{1F4CD}", "\u{1F510}"] : szTheme.emoji === "\u{1F995}" ? ["\u{1F995}", "\u{1F996}", "\u{1F30B}", "\u{1F9B4}", "\u{1FAA8}", "\u{1F33F}", "\u{1F95A}", "\u{1F525}", "\u{1F48E}"] : ["\u{1F9DA}", "\u2728", "\u{1F338}", "\u{1F98B}", "\u{1F308}", "\u{1F344}", "\u{1F4AB}", "\u{1FA84}", "\u{1F451}"]).concat(["\u{1F4CD}", "\u{1F6A9}", "\u2460", "\u2461", "\u2462", "\u2463", "\u2464", "\u{1F381}"]).map((emoji, i) => /* @__PURE__ */ React.createElement("button", { key: i, onClick: () => setActiveEmoji(activeEmoji === emoji ? null : emoji), style: {
-    width: 32,
-    height: 32,
-    borderRadius: 6,
-    fontSize: 16,
-    cursor: "pointer",
-    border: activeEmoji === emoji ? "2px solid var(--a)" : "1px solid var(--l)",
-    background: activeEmoji === emoji ? "var(--al)" : "#fff",
-    transform: activeEmoji === emoji ? "scale(1.15)" : "scale(1)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    transition: "all 0.15s"
-  } }, emoji))), /* @__PURE__ */ React.createElement("div", { onClick: (e) => {
-    if (!activeEmoji) return;
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = parseFloat(((e.clientX - rect.left) / rect.width * 100).toFixed(1));
-    const y = parseFloat(((e.clientY - rect.top) / rect.height * 100).toFixed(1));
-    if (y < 12) return;
-    setMapItems((prev) => [...prev, { emoji: activeEmoji, x, y }]);
-  }, style: {
-    position: "relative",
-    width: "100%",
-    aspectRatio: "4/3",
-    borderRadius: 12,
-    overflow: "hidden",
-    background: "linear-gradient(145deg,#F5E6C8 0%,#E8D5A8 30%,#DCCB96 60%,#F0E0B8 100%)",
-    border: `1px solid ${szTheme.color}30`,
-    cursor: activeEmoji ? "crosshair" : "default",
-    boxShadow: activeEmoji ? `inset 0 0 0 2px ${szTheme.color}30` : "none"
-  } }, /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", top: 8, left: 0, right: 0, textAlign: "center", zIndex: 2, pointerEvents: "none" } }, /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "'Caveat',cursive", fontSize: 18, fontWeight: 700, color: "#8B7750" } }, szTheme.emoji, " ", nameGen ? nameGen + " " : "", szTheme.name)), mapItems.map((item, i) => /* @__PURE__ */ React.createElement("span", { key: i, onClick: (e) => {
-    e.stopPropagation();
-    setMapItems((prev) => prev.filter((_, j) => j !== i));
-  }, style: {
-    position: "absolute",
-    left: item.x + "%",
-    top: item.y + "%",
-    fontSize: 22,
-    cursor: "pointer",
-    transform: "translate(-50%,-50%)",
-    userSelect: "none",
-    zIndex: 5,
-    filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.3))"
-  } }, item.emoji)), /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", bottom: 6, right: 8, fontSize: 9, color: "#A0926C", fontWeight: 700, pointerEvents: "none" } }, "N \u2191"), /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", bottom: 4, left: 8, fontSize: 8, color: "#A0926C", pointerEvents: "none" } }, "machsleicht.de")), mapItems.length > 0 && /* @__PURE__ */ React.createElement("div", { className: "no-print", style: { display: "flex", gap: 6, marginTop: 6 } }, /* @__PURE__ */ React.createElement("button", { onClick: () => setMapItems((prev) => prev.slice(0, -1)), style: { flex: 1, padding: 6, fontSize: 11, fontWeight: 600, border: "1px solid var(--l)", borderRadius: 8, background: "var(--bg)", color: "var(--m)", cursor: "pointer" } }, "\u21A9\uFE0F R\xFCckg\xE4ngig"), /* @__PURE__ */ React.createElement("button", { onClick: () => setMapItems([]), style: { flex: 1, padding: 6, fontSize: 11, fontWeight: 600, border: "1px solid var(--l)", borderRadius: 8, background: "var(--bg)", color: "#C62828", cursor: "pointer" } }, "\u{1F5D1}\uFE0F L\xF6schen"))), /* @__PURE__ */ React.createElement("details", { style: { marginBottom: 16 } }, /* @__PURE__ */ React.createElement("summary", { style: { fontSize: 13, fontWeight: 700, color: "var(--a)", cursor: "pointer", padding: "6px 0" } }, "\u{1F4E6} Material-Checkliste (", materials.length, " Posten)"), /* @__PURE__ */ React.createElement("div", { style: { paddingTop: 8, display: "flex", flexDirection: "column", gap: 4 } }, materials.map((mat, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", alignItems: "center", gap: 8, padding: "6px 10px", background: "#fff", borderRadius: 8, border: "1px solid var(--l)", fontSize: 12 } }, /* @__PURE__ */ React.createElement("input", { type: "checkbox", style: { width: 14, height: 14, accentColor: "var(--g)" } }), /* @__PURE__ */ React.createElement("span", null, mat))), szTheme.schatz.map((s, i) => /* @__PURE__ */ React.createElement("div", { key: "s" + i, style: { display: "flex", alignItems: "center", gap: 8, padding: "6px 10px", background: "#fff", borderRadius: 8, border: "1px solid var(--l)", fontSize: 12 } }, /* @__PURE__ */ React.createElement("span", null, "\u{1F381}"), /* @__PURE__ */ React.createElement("span", { style: { flex: 1 } }, s), SZ_SCHATZ_LINKS[s] && /* @__PURE__ */ React.createElement("a", { href: SZ_SCHATZ_LINKS[s], target: "_blank", rel: "noopener", style: { fontSize: 10, fontWeight: 700, color: "#FF9900", textDecoration: "none", padding: "2px 6px", borderRadius: 4, background: "#FFF3E0" } }, "Amazon \u2197"))))), /* @__PURE__ */ React.createElement("button", { onClick: printKomplettpaket, className: "no-print", style: {
+  })), /* @__PURE__ */ React.createElement(TreasureMapCanvas, { szTheme, stations, childName, mapPositions, setMapPositions }), /* @__PURE__ */ React.createElement("details", { style: { marginBottom: 16 } }, /* @__PURE__ */ React.createElement("summary", { style: { fontSize: 13, fontWeight: 700, color: "var(--a)", cursor: "pointer", padding: "6px 0" } }, "\u{1F4E6} Material-Checkliste (", materials.length, " Posten)"), /* @__PURE__ */ React.createElement("div", { style: { paddingTop: 8, display: "flex", flexDirection: "column", gap: 4 } }, materials.map((mat, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", alignItems: "center", gap: 8, padding: "6px 10px", background: "#fff", borderRadius: 8, border: "1px solid var(--l)", fontSize: 12 } }, /* @__PURE__ */ React.createElement("input", { type: "checkbox", style: { width: 14, height: 14, accentColor: "var(--g)" } }), /* @__PURE__ */ React.createElement("span", null, mat))), szTheme.schatz.map((s, i) => /* @__PURE__ */ React.createElement("div", { key: "s" + i, style: { display: "flex", alignItems: "center", gap: 8, padding: "6px 10px", background: "#fff", borderRadius: 8, border: "1px solid var(--l)", fontSize: 12 } }, /* @__PURE__ */ React.createElement("span", null, "\u{1F381}"), /* @__PURE__ */ React.createElement("span", { style: { flex: 1 } }, s), SZ_SCHATZ_LINKS[s] && /* @__PURE__ */ React.createElement("a", { href: SZ_SCHATZ_LINKS[s], target: "_blank", rel: "noopener", style: { fontSize: 10, fontWeight: 700, color: "#FF9900", textDecoration: "none", padding: "2px 6px", borderRadius: 4, background: "#FFF3E0" } }, "Amazon \u2197"))))), /* @__PURE__ */ React.createElement("button", { onClick: printKomplettpaket, className: "no-print", style: {
     width: "100%",
     padding: "12px 20px",
     background: szTheme.color,
@@ -2842,8 +3114,7 @@ function App() {
   const [szActive, setSzActive] = useState(() => loadState("szActive", false));
   const [szThemeId, setSzThemeId] = useState(() => loadState("szThemeId", null));
   const [childName, setChildName] = useState(() => loadState("childName", ""));
-  const [mapItems, setMapItems] = useState(() => loadState("mapItems", []));
-  const [activeEmoji, setActiveEmoji] = useState(null);
+  const [mapPositions, setMapPositions] = useState(null);
   const motto = ALL_MOTTOS.find((m) => m.id === mottoId);
   const ag = ageGroup(age);
   const isMinimal = shoppingMode === "minimal" || effort === "minimal";
@@ -2862,7 +3133,6 @@ function App() {
   useEffect(() => saveState("szActive", szActive), [szActive]);
   useEffect(() => saveState("szThemeId", szThemeId), [szThemeId]);
   useEffect(() => saveState("childName", childName), [childName]);
-  useEffect(() => saveState("mapItems", mapItems), [mapItems]);
   useEffect(() => {
     const el = document.getElementById("sticky-cta");
     if (el) el.style.display = view === "plan" || view === "peak" ? "none" : "";
@@ -3015,8 +3285,7 @@ function App() {
     setSzActive(false);
     setSzThemeId(null);
     setChildName("");
-    setMapItems([]);
-    setActiveEmoji(null);
+    setMapPositions(null);
     setQuietMode(false);
     setOwned({});
     setShoppingMode("standard");
@@ -3075,7 +3344,7 @@ function App() {
     const shareText = `Hey! Unser Kind feiert ${motto.name}-Geburtstag. Hier ist der komplette Plan mit Spielen und Einkaufsliste:
 https://machsleicht.de`;
     const locLabel = effectiveLoc === "wohnung" ? "Drinnen" : effectiveLoc === "garten" ? "Garten" : "Park";
-    return /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 660, margin: "0 auto", padding: "0 16px 80px" } }, /* @__PURE__ */ React.createElement("header", { style: { display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 0 18px", position: "sticky", top: 0, background: "var(--w)", zIndex: 10, borderBottom: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("a", { href: "/", style: { textDecoration: "none" } }, /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--fd)", fontSize: 22, fontWeight: 900, color: "var(--d)" } }, "mach's"), /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--fd)", fontSize: 22, fontWeight: 900, color: "var(--a)" } }, "leicht")), /* @__PURE__ */ React.createElement("button", { onClick: reset, style: { background: "none", border: "1px solid var(--l)", borderRadius: "var(--rs)", padding: "6px 14px", fontSize: 12, color: "var(--m)", cursor: "pointer" } }, "\u2190 Neu")), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { textAlign: "center", padding: "20px 0 16px" } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 48, marginBottom: 8 } }, motto.emoji), /* @__PURE__ */ React.createElement("h1", { style: { fontFamily: "var(--fd)", fontSize: 26, fontWeight: 900, marginBottom: 4 } }, motto.name), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 14, color: "var(--m)" } }, guests, " Kinder \xB7 ", age, " Jahre \xB7 ", duration, " Std. \xB7 ", locLabel, isMinimal && /* @__PURE__ */ React.createElement("span", { style: { color: "var(--g)", fontWeight: 600 } }, " \xB7 \u{1F33F} Minimal"), isWow && /* @__PURE__ */ React.createElement("span", { style: { color: "#7B1FA2", fontWeight: 600 } }, " \xB7 \u2728 Wow"), emergencyMode && /* @__PURE__ */ React.createElement("span", { style: { color: "#C62828", fontWeight: 600 } }, " \xB7 \u{1F6A8} Morgen-Modus")), motto.cat === "license" && /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--a)", marginTop: 4 } }, "Spiele passen zum Thema \u2014 Deko & Mitgebsel sind original ", motto.name, " Produkte.")), /* @__PURE__ */ React.createElement(EinladungBlock, { motto, guests, previewName, setPreviewName, inviteSent, setInviteSent }), /* @__PURE__ */ React.createElement(SchnitzeljagdBlock, { age, ag, szActive, setSzActive, szThemeId, setSzThemeId, szTheme, childName, setChildName, mapItems, setMapItems, activeEmoji, setActiveEmoji }), /* @__PURE__ */ React.createElement(ScoreCheck, { score }), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 4, background: "var(--bg)", borderRadius: 12, padding: 4, border: "1px solid var(--l)" } }, [["minimal", "\u{1F33F}", "Minimal"], ["standard", "\u{1F3AF}", "Standard"], ["wow", "\u2728", "Wow"]].map(([val, ico, label]) => /* @__PURE__ */ React.createElement("button", { key: val, onClick: () => {
+    return /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 660, margin: "0 auto", padding: "0 16px 80px" } }, /* @__PURE__ */ React.createElement("header", { style: { display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 0 18px", position: "sticky", top: 0, background: "var(--w)", zIndex: 10, borderBottom: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("a", { href: "/", style: { textDecoration: "none" } }, /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--fd)", fontSize: 22, fontWeight: 900, color: "var(--d)" } }, "mach's"), /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--fd)", fontSize: 22, fontWeight: 900, color: "var(--a)" } }, "leicht")), /* @__PURE__ */ React.createElement("button", { onClick: reset, style: { background: "none", border: "1px solid var(--l)", borderRadius: "var(--rs)", padding: "6px 14px", fontSize: 12, color: "var(--m)", cursor: "pointer" } }, "\u2190 Neu")), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { textAlign: "center", padding: "20px 0 16px" } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 48, marginBottom: 8 } }, motto.emoji), /* @__PURE__ */ React.createElement("h1", { style: { fontFamily: "var(--fd)", fontSize: 26, fontWeight: 900, marginBottom: 4 } }, motto.name), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 14, color: "var(--m)" } }, guests, " Kinder \xB7 ", age, " Jahre \xB7 ", duration, " Std. \xB7 ", locLabel, isMinimal && /* @__PURE__ */ React.createElement("span", { style: { color: "var(--g)", fontWeight: 600 } }, " \xB7 \u{1F33F} Minimal"), isWow && /* @__PURE__ */ React.createElement("span", { style: { color: "#7B1FA2", fontWeight: 600 } }, " \xB7 \u2728 Wow"), emergencyMode && /* @__PURE__ */ React.createElement("span", { style: { color: "#C62828", fontWeight: 600 } }, " \xB7 \u{1F6A8} Morgen-Modus")), motto.cat === "license" && /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--a)", marginTop: 4 } }, "Spiele passen zum Thema \u2014 Deko & Mitgebsel sind original ", motto.name, " Produkte.")), /* @__PURE__ */ React.createElement(EinladungBlock, { motto, guests, previewName, setPreviewName, inviteSent, setInviteSent }), /* @__PURE__ */ React.createElement(SchnitzeljagdBlock, { age, ag, szActive, setSzActive, szThemeId, setSzThemeId, szTheme, childName, setChildName, mapPositions, setMapPositions }), /* @__PURE__ */ React.createElement(ScoreCheck, { score }), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 4, background: "var(--bg)", borderRadius: 12, padding: 4, border: "1px solid var(--l)" } }, [["minimal", "\u{1F33F}", "Minimal"], ["standard", "\u{1F3AF}", "Standard"], ["wow", "\u2728", "Wow"]].map(([val, ico, label]) => /* @__PURE__ */ React.createElement("button", { key: val, onClick: () => {
       setShoppingMode(val);
       setOwned({});
     }, style: {
