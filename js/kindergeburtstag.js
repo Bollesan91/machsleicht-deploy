@@ -3044,7 +3044,7 @@ function Connector() {
       color: "var(--a)",
       fontSize: 12
     }
-  }, "Die Einladung teast die Schatzsuche an"), /*#__PURE__*/React.createElement("div", {
+  }, "↓ Schatzsuche vorbereiten ↓"), /*#__PURE__*/React.createElement("div", {
     style: {
       width: 1,
       height: 20,
