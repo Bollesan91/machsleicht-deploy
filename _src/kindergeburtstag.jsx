@@ -444,7 +444,7 @@ function App() {
   // Hide sticky CTA in plan view
   useEffect(() => {
     const el = document.getElementById("sticky-cta");
-    if (el) el.style.display = view === "plan" ? "none" : "";
+    if (el) el.style.display = (view === "plan" || view === "peak") ? "none" : "";
   }, [view]);
 
   // URL params
@@ -468,7 +468,7 @@ function App() {
 
   // Track plan creation
   useEffect(() => {
-    if (view === "plan" && window.plausible) plausible("plan-created", { props: { motto: mottoId, alter: age, gaeste: guests } });
+    if (view === "plan" && window.plausible) plausible("plan-created", { props: { motto: mottoId, alter: age, gaeste: guests, modus: planMode, thema: szThemeId } });
   }, [mottoId, view]);
 
   // === COMPUTED: Quiet mode games ===
@@ -605,10 +605,12 @@ function App() {
     else if (mottoId) { setView("peak"); window.scrollTo(0, 0); setTimeout(() => { setView("plan"); window.scrollTo(0, 0); }, 2800); }
   }
   function emergencyStart() {
+    setPlanMode("geburtstag");
     if (!mottoId) setMottoId("safari");
     setEffort("minimal"); setDuration(2); setView("plan"); window.scrollTo(0, 0);
   }
   function emergencyFull() {
+    setPlanMode("geburtstag");
     setEmergencyMode(true); setShoppingMode("minimal"); setDuration(2);
     if (!mottoId) { const g = GENERIC; setMottoId(g[Math.floor(Math.random() * g.length)]?.id || "safari"); }
     setView("plan"); setLocOverride("wohnung"); window.scrollTo(0, 0);
@@ -641,7 +643,7 @@ function App() {
       <div className="sp" style={{ textAlign: "center", padding: "40px 20px" }}>
         <div style={{ fontSize: 72, marginBottom: 16, animation: "scalePop .6s ease both" }}>{szTheme.emoji}</div>
         <h1 style={{ fontFamily: "var(--fd)", fontSize: "clamp(24px,5vw,32px)", fontWeight: 900, marginBottom: 12, color: "var(--d)" }}>
-          {childName ? `${childName}s ` : ""}<span style={{ color: szTheme.color }}>{szTheme.name}</span>!
+          {childName ? `${childName.endsWith("s") ? childName + "'" : childName + "s"} ` : ""}<span style={{ color: szTheme.color }}>{szTheme.name}</span>!
         </h1>
         <p style={{ fontSize: 16, color: "var(--m)", lineHeight: 1.6, maxWidth: 400, margin: "0 auto 24px" }}>
           {(szTheme.intro[ag] || szTheme.intro.mittel).replace(/\{name\},?\s*/g, childName ? childName + ", " : "")}
@@ -689,7 +691,6 @@ function App() {
     const stations = szTheme.stations[ag] || szTheme.stations.mittel;
     const materials = szTheme.material[ag] || szTheme.material.mittel;
     const totalDauer = stations.reduce((s, st) => s + st.dauer, 0);
-    const nameDisplay = childName || "das Geburtstagskind";
     const nameGen = childName ? (childName.endsWith("s") ? childName + "'" : childName + "s") : "des Geburtstagskindes";
     const introText = (szTheme.intro[ag] || szTheme.intro.mittel).replace(/\{name\},?\s*/g, childName ? childName + ", " : "");
     const shopItems = SZ_SHOP_ITEMS[szThemeId] || [];
@@ -867,7 +868,7 @@ ${szTheme.schatz.map(s => `<li style="font-size:13px;line-height:2;break-inside:
         {/* Schatzkarten-Editor */}
         <section className="fu no-print" style={{ marginBottom: 24 }}>
           <h2 style={{ fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 6px" }}>🗺️ Schatzkarte gestalten</h2>
-          <p style={{ fontSize: 12, color: "var(--m)", marginBottom: 12 }}>Tippe auf ein Emoji, dann tippe auf die Karte um es zu platzieren. Wird mitgedruckt!</p>
+          <p style={{ fontSize: 12, color: "var(--m)", marginBottom: 12 }}>Tippe auf ein Emoji, dann tippe auf die Karte um es zu platzieren. Tippe auf ein platziertes Emoji zum Entfernen.</p>
 
           {/* Emoji Palette */}
           <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 8 }}>
@@ -924,7 +925,6 @@ ${szTheme.schatz.map(s => `<li style="font-size:13px;line-height:2;break-inside:
               machsleicht.de
             </div>
           </div>
-          <p style={{ fontSize: 10, color: "var(--m)", marginTop: 6, textAlign: "center" }}>Tippe ein Emoji oben, dann tippe auf die Karte · Tippe auf ein platziertes Emoji zum Entfernen</p>
         </section>
 
         {/* Material Checkliste */}
