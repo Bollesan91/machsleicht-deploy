@@ -88,7 +88,7 @@ function Confetti({ active }) {
 }
 
 // === CONTROL HUB (Fixed Bottom Bar) ===
-function ControlHub({ mottoId, onSwitchSZ }) {
+function ControlHub({ mottoId, szActive, setSzActive }) {
   return (
     <div className="no-print" style={{
       position: "fixed", bottom: 0, left: "50%", transform: "translateX(-50%)",
@@ -100,10 +100,11 @@ function ControlHub({ mottoId, onSwitchSZ }) {
         flex: 1, padding: 10, borderRadius: 10, background: "var(--a)", color: "#fff",
         fontWeight: 700, fontSize: 12, textAlign: "center", textDecoration: "none", fontFamily: "var(--f)",
       }}>💌 Einladung</a>
-      <button onClick={onSwitchSZ} style={{
-        flex: 1, padding: 10, borderRadius: 10, background: "var(--bg)", color: "var(--d)",
-        border: "1px solid var(--l)", fontWeight: 700, fontSize: 12, textAlign: "center", cursor: "pointer", fontFamily: "var(--f)",
-      }}>🗺️ Schatzsuche</button>
+      <button onClick={() => { setSzActive(!szActive); document.querySelector('[class*="SchnitzeljagdBlock"]')?.scrollIntoView({ behavior: "smooth" }); }} style={{
+        flex: 1, padding: 10, borderRadius: 10,
+        background: szActive ? "var(--al)" : "var(--bg)", color: szActive ? "var(--a)" : "var(--d)",
+        border: `1px solid ${szActive ? "var(--a)" : "var(--l)"}`, fontWeight: 700, fontSize: 12, textAlign: "center", cursor: "pointer", fontFamily: "var(--f)",
+      }}>{szActive ? "✅ Schnitzeljagd" : "🗺️ Schnitzeljagd"}</button>
       <button onClick={() => document.querySelector('[data-action="pdf"]')?.scrollIntoView({ behavior: "smooth" })} style={{
         flex: 1, padding: 10, borderRadius: 10, background: "var(--bg)", color: "var(--d)",
         border: "1px solid var(--l)", fontWeight: 700, fontSize: 12, textAlign: "center", cursor: "pointer", fontFamily: "var(--f)",
@@ -169,89 +170,207 @@ function EinladungBlock({ motto, guests, previewName, setPreviewName, inviteSent
   );
 }
 
-// === SCHATZSUCHE TEASER mit Stationen-Explorer ===
-function SchatzsucheTeaser({ motto, guests, age, location, activeStation, setActiveStation, onSwitchSZ }) {
-  const stations = (STATION_SETS[motto?.id] || DEFAULT_STATIONS).map((st, i) => ({ ...st, unlocked: i < 2 }));
-  const s = stations[activeStation];
-  const locLabel = location === "wohnung" ? "Drinnen" : location === "garten" ? "Garten" : "Park";
+// === SCHNITZELJAGD INLINE BLOCK (expandable within plan view) ===
+function SchnitzeljagdBlock({ age, ag, szActive, setSzActive, szThemeId, setSzThemeId, szTheme, childName, setChildName, mapItems, setMapItems, activeEmoji, setActiveEmoji }) {
+  const stations = szTheme ? (szTheme.stations[ag] || szTheme.stations.mittel) : [];
+  const materials = szTheme ? (szTheme.material[ag] || szTheme.material.mittel) : [];
+  const totalDauer = stations.reduce((s, st) => s + st.dauer, 0);
+  const nameGen = childName ? (childName.endsWith("s") ? childName + "'" : childName + "s") : "";
+  const introText = szTheme ? (szTheme.intro[ag] || szTheme.intro.mittel).replace(/\{name\},?\s*/g, childName ? childName + ", " : "") : "";
+  const shopItems = szThemeId ? (SZ_SHOP_ITEMS[szThemeId] || []) : [];
 
+  // === PRINT ===
+  function printKomplettpaket() {
+    if (!szTheme) return;
+    window.plausible && plausible("sz-komplettpaket-gedruckt", { props: { thema: szThemeId } });
+    const w = window.open("", "", "width=900,height=700");
+    w.document.write(`<html><head><title>Komplettpaket ${szTheme.name}</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=DM+Sans:opsz,wght@9..40,400;9..40,700;9..40,800&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',system-ui,sans-serif;color:#2D2319;background:#FFF}.page{page-break-after:always;padding:32px;min-height:100vh}.page:last-child{page-break-after:auto}h1{font-size:22px;font-weight:900;margin-bottom:8px}h2{font-size:16px;font-weight:800;color:${szTheme.color};margin:20px 0 10px;border-bottom:2px solid ${szTheme.color}30;padding-bottom:4px}.station{margin-bottom:14px;padding:12px;background:#FAFAF5;border-radius:10px;border:1px solid #EDE6DE}.station-name{font-weight:800;font-size:14px;margin-bottom:4px}.station-desc{font-size:13px;line-height:1.5;color:#5D4037}.hint{font-size:12px;color:#795548;background:#FFF8E1;padding:6px 10px;border-radius:6px;margin-top:6px;border:1px solid #FFE082}.check{display:inline-block;width:14px;height:14px;border:2px solid #A89888;border-radius:3px;margin-right:8px;vertical-align:middle}.hinweis-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.hinweis-card{border:2px dashed ${szTheme.color}80;border-radius:12px;padding:14px;text-align:center;min-height:140px;display:flex;flex-direction:column;justify-content:center}.cert{text-align:center;padding:48px;border:4px double ${szTheme.color};border-radius:16px;position:relative;max-width:600px;margin:0 auto}.cert::before{content:'';position:absolute;inset:8px;border:1px solid ${szTheme.color}40;border-radius:10px}@media print{.page{padding:24px;min-height:auto}}</style></head><body>
+${mapItems.length > 0 ? `<div class="page" style="display:flex;flex-direction:column;align-items:center;justify-content:center"><div style="position:relative;width:100%;max-width:700px;aspect-ratio:4/3;background:linear-gradient(145deg,#F5E6C8 0%,#E8D5A8 30%,#DCCB96 60%,#F0E0B8 100%);border:2px solid ${szTheme.color}40;border-radius:16px;overflow:hidden"><div style="position:absolute;top:16px;left:0;right:0;text-align:center;z-index:2;font-family:'Caveat',cursive;font-size:26px;font-weight:700;color:#8B7750">${szTheme.emoji} ${nameGen ? nameGen + " " : ""}${szTheme.name}</div>${mapItems.map(item => `<span style="position:absolute;left:${item.x}%;top:${item.y}%;font-size:28px;transform:translate(-50%,-50%);z-index:5">${item.emoji}</span>`).join("")}<div style="position:absolute;bottom:12px;right:16px;font-size:11px;color:#A0926C;font-weight:700">N ↑</div><div style="position:absolute;bottom:10px;left:16px;font-size:9px;color:#A0926C">machsleicht.de</div></div></div>` : ""}
+<div class="page"><h1>${szTheme.emoji} ${nameGen ? nameGen + " " : ""}${szTheme.name}</h1><p style="font-size:13px;color:#6B5D52;margin-bottom:12px">${stations.length} Stationen · ${ageLabel[ag]} · ca. ${totalDauer} Min.</p><p style="font-size:14px;color:#5D4037;line-height:1.6;font-style:italic;margin-bottom:16px;padding:12px;background:#FAFAF5;border-radius:8px">„${introText}"</p>${stations.map((s, i) => `<div class="station"><div class="station-name">${i === stations.length - 1 ? "🎁" : (i + 1) + "."} ${s.name}</div><div class="station-desc">${s.desc}</div><div class="hint">💡 ${s.hint}</div></div>`).join("")}</div>
+<div class="page"><h1>✂️ Hinweis-Zettel zum Ausschneiden</h1><p style="font-size:13px;color:#6B5D52;margin-bottom:16px">Ausschneiden und an den Stationen verstecken.</p><div class="hinweis-grid">${stations.map((s, i) => `<div class="hinweis-card"><div style="font-size:28px;margin-bottom:4px">${i === stations.length - 1 ? "🎁" : "Station " + (i + 1)}</div><div style="font-size:13px;font-weight:700;margin-bottom:6px">${s.name}</div><div style="font-size:16px;color:#5D4037;font-family:'Caveat',cursive">${i < stations.length - 1 ? "→ Weiter zu: " + stations[i + 1].name : "🎉 Geschafft! Hier ist der Schatz!"}</div></div>`).join("")}</div></div>
+<div class="page"><h1>📋 Material-Checkliste</h1><h2>Pro Station</h2><ul style="list-style:none;columns:2">${materials.map(m => `<li style="font-size:13px;line-height:2"><span class="check"></span>${m}</li>`).join("")}</ul><h2>Schatz-Ideen</h2><ul style="list-style:none;columns:2">${szTheme.schatz.map(s => `<li style="font-size:13px;line-height:2"><span class="check"></span>${s}</li>`).join("")}</ul></div>
+<div class="page" style="display:flex;justify-content:center;align-items:center"><div class="cert"><div style="font-size:56px;margin-bottom:12px">${szTheme.emoji}</div><div style="font-size:28px;font-weight:900;margin-bottom:6px">Urkunde</div><div style="font-size:18px;color:#6B5D52;margin-bottom:24px">${szTheme.name}</div><div style="font-size:32px;font-weight:900;color:${szTheme.color};padding:8px 0;border-bottom:2px solid ${szTheme.color}40;margin-bottom:16px">_______________</div><div style="font-size:15px;color:#6B5D52;line-height:1.6;margin:16px 0">hat die große ${szTheme.name} erfolgreich bestanden!<br>Alle ${stations.length} Stationen gemeistert.</div><div style="display:flex;justify-content:space-between;margin-top:32px;font-size:13px;color:#A89888"><div style="border-top:1px solid #CCC;padding-top:4px;min-width:140px;text-align:center">Datum</div><div style="border-top:1px solid #CCC;padding-top:4px;min-width:140px;text-align:center">Unterschrift</div></div><div style="font-size:10px;color:#A89888;margin-top:16px">machsleicht.de</div></div></div>
+</body></html>`);
+    w.document.close();
+    setTimeout(() => w.print(), 400);
+  }
+
+  // === TEASER (collapsed) ===
+  if (!szActive) return (
+    <section className="fu" style={{ marginBottom: 24 }}>
+      <button onClick={() => { setSzActive(true); window.plausible && plausible("sz-activated"); }} style={{
+        width: "100%", background: "linear-gradient(135deg,#fef8f0,#fff8e8)", borderRadius: 20, padding: "24px 20px",
+        border: "1px solid #f0ede8", display: "flex", alignItems: "center", gap: 16, cursor: "pointer", textAlign: "left",
+      }}>
+        <div style={{ fontSize: 40, flexShrink: 0 }}>🗺️</div>
+        <div style={{ flex: 1 }}>
+          <div style={{ fontFamily: "var(--fd)", fontWeight: 800, fontSize: 17, color: "var(--d)", marginBottom: 4 }}>+ Schnitzeljagd hinzufügen</div>
+          <div style={{ fontSize: 12, color: "var(--m)", lineHeight: 1.5 }}>Stationen, Rätsel, Schatzkarte, Hinweis-Zettel — druckfertig in 5 Min.</div>
+        </div>
+        <div style={{ fontSize: 20, color: "var(--a)", flexShrink: 0 }}>+</div>
+      </button>
+    </section>
+  );
+
+  // === EXPANDED (full inline block) ===
   return (
     <section className="fu" style={{ marginBottom: 24 }}>
-      <div style={{ borderRadius: 16, overflow: "hidden", border: "1px solid var(--l)" }}>
+      <div style={{ borderRadius: 20, border: `2px solid ${szTheme ? szTheme.color + "40" : "var(--a)"}`, overflow: "hidden" }}>
+
         {/* Header */}
-        <div style={{ background: "linear-gradient(135deg, #e8d5b7, #d4bc94)", padding: "16px 18px" }}>
-          <p style={{ fontSize: 18, fontWeight: 900, color: "var(--d)", margin: "0 0 2px" }}>30 Minuten Abenteuer.</p>
-          <p style={{ fontSize: 14, fontWeight: 700, color: "var(--d)", opacity: 0.6, margin: "0 0 2px" }}>Du trinkst Kaffee. ☕</p>
-          <p style={{ fontSize: 12, color: "var(--d)", opacity: 0.5, margin: 0 }}>
-            {motto.name}-Schatzsuche · {guests} Kinder · {age} J. · {locLabel}
-          </p>
+        <div style={{ background: "linear-gradient(135deg,#e8d5b7,#d4bc94)", padding: "16px 18px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <div>
+            <p style={{ fontSize: 17, fontWeight: 900, color: "var(--d)", margin: "0 0 2px" }}>🗺️ Schnitzeljagd {szTheme ? `· ${szTheme.name}` : ""}</p>
+            {szTheme && <p style={{ fontSize: 12, color: "var(--d)", opacity: 0.6, margin: 0 }}>{stations.length} Stationen · {ageLabel[ag]} · {totalDauer} Min.</p>}
+          </div>
+          <button onClick={() => setSzActive(false)} style={{ background: "rgba(255,255,255,0.5)", border: "none", borderRadius: 8, padding: "4px 10px", fontSize: 11, fontWeight: 700, cursor: "pointer", color: "var(--d)" }}>✕</button>
         </div>
 
-        <div style={{ padding: "14px 16px", background: "var(--bg)" }}>
-          {/* Station dots */}
-          <div style={{ display: "flex", gap: 0, marginBottom: 12, position: "relative" }}>
-            <div style={{ position: "absolute", top: 20, left: 20, right: 20, height: 2, background: "var(--l)", zIndex: 0 }} />
-            {stations.map((st, i) => {
-              const isA = activeStation === i;
-              return (
-                <button key={st.n} onClick={() => setActiveStation(i)} style={{
-                  flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 4,
-                  background: "transparent", border: "none", cursor: "pointer", position: "relative", zIndex: 1, padding: "0 2px",
+        <div style={{ padding: "16px 18px", background: "var(--bg)" }}>
+
+          {/* Theme Picker */}
+          <div style={{ marginBottom: 16 }}>
+            <p style={{ fontSize: 12, fontWeight: 700, color: "var(--m)", marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.06em" }}>Thema wählen</p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(90px, 1fr))", gap: 6 }}>
+              {SZ_THEMES.map((t) => (
+                <button key={t.id} onClick={() => setSzThemeId(t.id)} style={{
+                  display: "flex", flexDirection: "column", alignItems: "center", gap: 4,
+                  padding: "12px 6px 10px", background: szThemeId === t.id ? t.color + "12" : "#fff",
+                  border: `2px solid ${szThemeId === t.id ? t.color : "#eee"}`, borderRadius: 12, cursor: "pointer",
+                  transition: "all 0.2s",
                 }}>
-                  <div style={{
-                    width: 40, height: 40, borderRadius: "50%",
-                    background: isA ? "var(--a)" : st.unlocked ? "#fff" : "var(--bg)",
-                    color: isA ? "#fff" : "var(--d)",
-                    display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18,
-                    border: `2px solid ${isA ? "var(--a)" : st.unlocked ? "var(--d)" : "var(--l)"}`,
-                    boxShadow: isA ? "0 2px 8px rgba(232,135,61,0.4)" : "none", transition: "all .2s",
-                  }}>{st.emoji}</div>
-                  <span style={{ fontSize: 9, fontWeight: 700, color: isA ? "var(--a)" : "var(--m)" }}>{st.n}</span>
+                  <span style={{ fontSize: 24 }}>{t.emoji}</span>
+                  <span style={{ fontSize: 10, fontWeight: 600, color: szThemeId === t.id ? t.color : "#666" }}>{SZ_LABELS[t.id] || t.name}</span>
                 </button>
-              );
-            })}
-          </div>
-
-          {/* Active station card */}
-          <div style={{ background: "#fff", borderRadius: 10, padding: 14, marginBottom: 12, borderLeft: "3px solid var(--a)" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-              <span style={{ fontSize: 22 }}>{s.emoji}</span>
-              <div>
-                <p style={{ fontSize: 14, fontWeight: 800, color: "var(--d)", margin: 0 }}>Station {s.n}: {s.title}</p>
-                <p style={{ fontSize: 11, color: "var(--a)", fontWeight: 600, margin: 0 }}>Für {age}-Jährige angepasst</p>
-              </div>
+              ))}
             </div>
-            <p style={{ fontSize: 12, color: "var(--m)", margin: 0, lineHeight: 1.5, fontStyle: "italic" }}>{s.hint}</p>
-            {!s.unlocked && <p style={{ fontSize: 11, color: "var(--a)", margin: "6px 0 0", fontWeight: 600 }}>🔒 Erstelle die Schatzsuche um alle Stationen zu sehen</p>}
           </div>
 
-          {/* Zeitplan hint */}
-          <div style={{ background: "var(--al)", borderRadius: 8, padding: "10px 12px", marginBottom: 12, display: "flex", alignItems: "center", gap: 8 }}>
-            <span style={{ fontSize: 14 }}>📋</span>
-            <p style={{ fontSize: 12, color: "var(--d)", margin: 0, lineHeight: 1.4 }}>
-              <strong>Passt in deinen Zeitplan: </strong>Ersetzt einen Spieleslot — gleiche Dauer, fertige Rätsel.
-            </p>
+          {/* Child Name */}
+          <div style={{ marginBottom: 16 }}>
+            <input type="text" value={childName} onChange={(e) => setChildName(e.target.value)}
+              placeholder="Name des Kindes (optional)" style={{
+                width: "100%", padding: "10px 14px", borderRadius: 10, border: "1px solid var(--l)",
+                fontSize: 13, fontFamily: "var(--f)", outline: "none", background: "#fff", boxSizing: "border-box",
+              }} />
           </div>
 
-          <button onClick={() => { onSwitchSZ && onSwitchSZ(); typeof mlTrack === "function" && mlTrack("cta_schatzsuche_plan", { motto: motto?.id }); }} style={{
-            display: "block", width: "100%", background: "var(--a)", color: "#fff", padding: 14,
-            borderRadius: 99, fontWeight: 700, fontSize: 14, textAlign: "center", border: "none", cursor: "pointer", boxSizing: "border-box",
-          }}>{motto.name}-Schatzsuche für {guests} Kinder →</button>
-          <p style={{ fontSize: 11, color: "var(--m)", margin: "8px 0 0", textAlign: "center" }}>Kostenlos · 5 Stationen · Druckfertig in 5 Min.</p>
+          {szTheme && <>
+            {/* Intro */}
+            <div style={{ background: `${szTheme.color}08`, borderRadius: 12, padding: "14px 16px", marginBottom: 16, borderLeft: `3px solid ${szTheme.color}` }}>
+              <p style={{ fontSize: 13, color: "var(--d)", lineHeight: 1.6, margin: 0, fontStyle: "italic" }}>„{introText}"</p>
+              <p style={{ fontSize: 10, color: "var(--m)", marginTop: 6, fontWeight: 600 }}>💡 Vorlesen, bevor es losgeht</p>
+            </div>
+
+            {/* Stations */}
+            <div style={{ marginBottom: 16 }}>
+              {stations.map((st, i) => {
+                const isLast = i === stations.length - 1;
+                return (
+                  <details key={i} open={i === 0} style={{ marginBottom: 6 }}>
+                    <summary style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer", padding: "6px 0", fontSize: 13 }}>
+                      <span style={{ width: 22, height: 22, borderRadius: "50%", background: isLast ? "var(--a)" : szTheme.color, color: "#fff", fontSize: 9, fontWeight: 800, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{isLast ? "🎁" : i + 1}</span>
+                      <span style={{ fontWeight: 700, flex: 1 }}>{st.name}</span>
+                      <span style={{ fontSize: 11, color: "var(--m)" }}>{st.dauer}′</span>
+                    </summary>
+                    <div style={{ paddingLeft: 30, paddingBottom: 6 }}>
+                      <p style={{ fontSize: 12, color: "var(--m)", lineHeight: 1.5, margin: "4px 0 6px" }}>{st.desc}</p>
+                      {st.hint && <p style={{ fontSize: 11, color: "#795548", background: "#FFF8E1", padding: "6px 10px", borderRadius: 6, border: "1px solid #FFE082" }}>💡 {st.hint}</p>}
+                    </div>
+                  </details>
+                );
+              })}
+            </div>
+
+            {/* Map Editor */}
+            <div style={{ marginBottom: 16 }}>
+              <p style={{ fontSize: 12, fontWeight: 700, color: "var(--m)", marginBottom: 6 }}>🗺️ Schatzkarte</p>
+              <div className="no-print" style={{ display: "flex", gap: 3, flexWrap: "wrap", marginBottom: 6 }}>
+                {(szTheme.emoji === "🏴‍☠️" ? ["🏴‍☠️","💀","⚓","🗝️","💎","🦜","🧭","💰","🏝️"]
+                  : szTheme.emoji === "🦁" ? ["🦁","🐒","🦎","🐊","🌴","🌺","🦋","🐍","🌿"]
+                  : szTheme.emoji === "🚀" ? ["🚀","⭐","🌙","🛸","👽","☄️","🔭","🛰️","🌌"]
+                  : szTheme.emoji === "🔍" ? ["🔍","🕵️","📋","🗝️","💡","🔦","👣","📍","🔐"]
+                  : szTheme.emoji === "🦕" ? ["🦕","🦖","🌋","🦴","🪨","🌿","🥚","🔥","💎"]
+                  : ["🧚","✨","🌸","🦋","🌈","🍄","💫","🪄","👑"]
+                ).concat(["📍","🚩","①","②","③","④","⑤","🎁"]).map((emoji, i) => (
+                  <button key={i} onClick={() => setActiveEmoji(activeEmoji === emoji ? null : emoji)} style={{
+                    width: 32, height: 32, borderRadius: 6, fontSize: 16, cursor: "pointer",
+                    border: activeEmoji === emoji ? "2px solid var(--a)" : "1px solid var(--l)",
+                    background: activeEmoji === emoji ? "var(--al)" : "#fff",
+                    transform: activeEmoji === emoji ? "scale(1.15)" : "scale(1)",
+                    display: "flex", alignItems: "center", justifyContent: "center", transition: "all 0.15s",
+                  }}>{emoji}</button>
+                ))}
+              </div>
+              <div onClick={(e) => {
+                if (!activeEmoji) return;
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = parseFloat(((e.clientX - rect.left) / rect.width * 100).toFixed(1));
+                const y = parseFloat(((e.clientY - rect.top) / rect.height * 100).toFixed(1));
+                if (y < 12) return;
+                setMapItems((prev) => [...prev, { emoji: activeEmoji, x, y }]);
+              }} style={{
+                position: "relative", width: "100%", aspectRatio: "4/3", borderRadius: 12, overflow: "hidden",
+                background: "linear-gradient(145deg,#F5E6C8 0%,#E8D5A8 30%,#DCCB96 60%,#F0E0B8 100%)",
+                border: `1px solid ${szTheme.color}30`, cursor: activeEmoji ? "crosshair" : "default",
+                boxShadow: activeEmoji ? `inset 0 0 0 2px ${szTheme.color}30` : "none",
+              }}>
+                <div style={{ position: "absolute", top: 8, left: 0, right: 0, textAlign: "center", zIndex: 2, pointerEvents: "none" }}>
+                  <span style={{ fontFamily: "'Caveat',cursive", fontSize: 18, fontWeight: 700, color: "#8B7750" }}>{szTheme.emoji} {nameGen ? nameGen + " " : ""}{szTheme.name}</span>
+                </div>
+                {mapItems.map((item, i) => (
+                  <span key={i} onClick={(e) => { e.stopPropagation(); setMapItems((prev) => prev.filter((_, j) => j !== i)); }} style={{
+                    position: "absolute", left: item.x + "%", top: item.y + "%", fontSize: 22, cursor: "pointer",
+                    transform: "translate(-50%,-50%)", userSelect: "none", zIndex: 5,
+                    filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.3))",
+                  }}>{item.emoji}</span>
+                ))}
+                <div style={{ position: "absolute", bottom: 6, right: 8, fontSize: 9, color: "#A0926C", fontWeight: 700, pointerEvents: "none" }}>N ↑</div>
+                <div style={{ position: "absolute", bottom: 4, left: 8, fontSize: 8, color: "#A0926C", pointerEvents: "none" }}>machsleicht.de</div>
+              </div>
+              {mapItems.length > 0 && (
+                <div className="no-print" style={{ display: "flex", gap: 6, marginTop: 6 }}>
+                  <button onClick={() => setMapItems((prev) => prev.slice(0, -1))} style={{ flex: 1, padding: 6, fontSize: 11, fontWeight: 600, border: "1px solid var(--l)", borderRadius: 8, background: "var(--bg)", color: "var(--m)", cursor: "pointer" }}>↩️ Rückgängig</button>
+                  <button onClick={() => setMapItems([])} style={{ flex: 1, padding: 6, fontSize: 11, fontWeight: 600, border: "1px solid var(--l)", borderRadius: 8, background: "var(--bg)", color: "#C62828", cursor: "pointer" }}>🗑️ Löschen</button>
+                </div>
+              )}
+            </div>
+
+            {/* Material */}
+            <details style={{ marginBottom: 16 }}>
+              <summary style={{ fontSize: 13, fontWeight: 700, color: "var(--a)", cursor: "pointer", padding: "6px 0" }}>📦 Material-Checkliste ({materials.length} Posten)</summary>
+              <div style={{ paddingTop: 8, display: "flex", flexDirection: "column", gap: 4 }}>
+                {materials.map((mat, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, padding: "6px 10px", background: "#fff", borderRadius: 8, border: "1px solid var(--l)", fontSize: 12 }}>
+                    <input type="checkbox" style={{ width: 14, height: 14, accentColor: "var(--g)" }} />
+                    <span>{mat}</span>
+                  </div>
+                ))}
+                {szTheme.schatz.map((s, i) => (
+                  <div key={"s" + i} style={{ display: "flex", alignItems: "center", gap: 8, padding: "6px 10px", background: "#fff", borderRadius: 8, border: "1px solid var(--l)", fontSize: 12 }}>
+                    <span>🎁</span>
+                    <span style={{ flex: 1 }}>{s}</span>
+                    {SZ_SCHATZ_LINKS[s] && <a href={SZ_SCHATZ_LINKS[s]} target="_blank" rel="noopener" style={{ fontSize: 10, fontWeight: 700, color: "#FF9900", textDecoration: "none", padding: "2px 6px", borderRadius: 4, background: "#FFF3E0" }}>Amazon ↗</a>}
+                  </div>
+                ))}
+              </div>
+            </details>
+
+            {/* Print */}
+            <button onClick={printKomplettpaket} className="no-print" style={{
+              width: "100%", padding: "12px 20px", background: szTheme.color, color: "#fff",
+              border: "none", borderRadius: 12, fontSize: 14, fontWeight: 700, cursor: "pointer",
+              boxShadow: `0 2px 12px ${szTheme.color}30`,
+            }}>🖨️ Schnitzeljagd-Paket drucken</button>
+            <p className="no-print" style={{ fontSize: 10, color: "var(--m)", marginTop: 4, textAlign: "center" }}>Schatzkarte · Stationen · Hinweis-Zettel · Material · Urkunde</p>
+          </>}
+
+          {!szTheme && <p style={{ fontSize: 13, color: "var(--m)", textAlign: "center", padding: "8px 0" }}>Wähle oben ein Thema um loszulegen.</p>}
         </div>
       </div>
     </section>
-  );
-}
-
-// === CONNECTOR ===
-function Connector() {
-  return (
-    <div style={{ textAlign: "center", padding: "0 0 4px" }}>
-      <div style={{ width: 1, height: 20, background: "var(--l)", margin: "0 auto" }} />
-      <p style={{ margin: "4px 0", fontWeight: 600, color: "var(--a)", fontSize: 12 }}>↓ Schatzsuche vorbereiten ↓</p>
-      <div style={{ width: 1, height: 20, background: "var(--l)", margin: "0 auto" }} />
-    </div>
   );
 }
 
@@ -414,7 +533,7 @@ function App() {
   const [activeStation, setActiveStation] = useState(0);
   const [inviteSent, setInviteSent] = useState(0);
   const [previewName, setPreviewName] = useState("");
-  const [planMode, setPlanMode] = useState(() => loadState("planMode", "geburtstag")); // 'geburtstag' | 'schatzsuche'
+  const [szActive, setSzActive] = useState(() => loadState("szActive", false)); // schnitzeljagd add-on toggle
   const [szThemeId, setSzThemeId] = useState(() => loadState("szThemeId", null));
   const [childName, setChildName] = useState(() => loadState("childName", ""));
   const [mapItems, setMapItems] = useState(() => loadState("mapItems", [])); // [{emoji, x, y}]
@@ -428,7 +547,6 @@ function App() {
   const effectiveLoc = locOverride || loc;
   const filteredLicense = LICENSE.filter((m) => !m.ages || m.ages.includes(age));
   const szTheme = SZ_THEMES.find((t) => t.id === szThemeId);
-  const isSZ = planMode === "schatzsuche";
 
   // Persist state
   useEffect(() => saveState("age", age), [age]);
@@ -439,7 +557,7 @@ function App() {
   useEffect(() => saveState("dauer", duration), [duration]);
   useEffect(() => saveState("owned", owned), [owned]);
   useEffect(() => saveState("shoppingMode", shoppingMode), [shoppingMode]);
-  useEffect(() => saveState("planMode", planMode), [planMode]);
+  useEffect(() => saveState("szActive", szActive), [szActive]);
   useEffect(() => saveState("szThemeId", szThemeId), [szThemeId]);
   useEffect(() => saveState("childName", childName), [childName]);
   useEffect(() => saveState("mapItems", mapItems), [mapItems]);
@@ -459,19 +577,19 @@ function App() {
     const g = p.get("gaeste"); if (g) { const v = parseInt(g); if (v >= 1 && v <= 20) setGuests(v); }
     // Schatzsuche mode
     const modus = p.get("modus");
-    if (modus === "schatzsuche") setPlanMode("schatzsuche");
+    if (modus === "schatzsuche") setSzActive(true);
     const thema = p.get("thema");
     if (thema && SZ_THEMES.find((t) => t.id === thema)) setSzThemeId(thema);
   }, []);
 
-  // Confetti on motto/theme select
+  // Confetti on motto select
   useEffect(() => {
-    if (mottoId || szThemeId) { setShowConfetti(true); const t = setTimeout(() => setShowConfetti(false), 1200); return () => clearTimeout(t); }
-  }, [mottoId, szThemeId]);
+    if (mottoId) { setShowConfetti(true); const t = setTimeout(() => setShowConfetti(false), 1200); return () => clearTimeout(t); }
+  }, [mottoId]);
 
   // Track plan creation
   useEffect(() => {
-    if (view === "plan" && window.plausible) plausible("plan-created", { props: { motto: mottoId, alter: age, gaeste: guests, modus: planMode, thema: szThemeId } });
+    if (view === "plan" && window.plausible) plausible("plan-created", { props: { motto: mottoId, alter: age, gaeste: guests, szActive: szActive, thema: szThemeId } });
   }, [mottoId, view]);
 
   // === COMPUTED: Quiet mode games ===
@@ -601,19 +719,15 @@ function App() {
   }
 
   // === ACTIONS ===
-  function switchToSZ() { setPlanMode("schatzsuche"); setView("config"); window.scrollTo(0, 0); }
-  function reset() { setView("config"); setMottoId(null); setSzThemeId(null); setChildName(""); setMapItems([]); setActiveEmoji(null); setQuietMode(false); setOwned({}); setShoppingMode("standard"); setLocOverride(null); setEmergencyMode(false); }
+  function reset() { setView("config"); setMottoId(null); setSzActive(false); setSzThemeId(null); setChildName(""); setMapItems([]); setActiveEmoji(null); setQuietMode(false); setOwned({}); setShoppingMode("standard"); setLocOverride(null); setEmergencyMode(false); }
   function startPlan() {
-    if (isSZ && szThemeId) { setView("peak"); window.scrollTo(0, 0); setTimeout(() => { setView("plan"); window.scrollTo(0, 0); }, 2200); }
-    else if (mottoId) { setView("peak"); window.scrollTo(0, 0); setTimeout(() => { setView("plan"); window.scrollTo(0, 0); }, 2800); }
+    if (mottoId) { setView("peak"); window.scrollTo(0, 0); setTimeout(() => { setView("plan"); window.scrollTo(0, 0); }, 2800); }
   }
   function emergencyStart() {
-    setPlanMode("geburtstag");
     if (!mottoId) setMottoId("safari");
     setEffort("minimal"); setDuration(2); setView("plan"); window.scrollTo(0, 0);
   }
   function emergencyFull() {
-    setPlanMode("geburtstag");
     setEmergencyMode(true); setShoppingMode("minimal"); setDuration(2);
     if (!mottoId) { const g = GENERIC; setMottoId(g[Math.floor(Math.random() * g.length)]?.id || "safari"); }
     setView("plan"); setLocOverride("wohnung"); window.scrollTo(0, 0);
@@ -641,24 +755,6 @@ function App() {
   // =============================================
   // PEAK VIEW (transition animation)
   // =============================================
-  if (view === "peak" && isSZ && szTheme) return (
-    <div style={{ maxWidth: 660, margin: "0 auto", padding: "0 16px", display: "flex", alignItems: "center", justifyContent: "center", minHeight: "80vh" }}>
-      <div className="sp" style={{ textAlign: "center", padding: "40px 20px" }}>
-        <div style={{ fontSize: 72, marginBottom: 16, animation: "scalePop .6s ease both" }}>{szTheme.emoji}</div>
-        <h1 style={{ fontFamily: "var(--fd)", fontSize: "clamp(24px,5vw,32px)", fontWeight: 900, marginBottom: 12, color: "var(--d)" }}>
-          {childName ? `${childName.endsWith("s") ? childName + "'" : childName + "s"} ` : ""}<span style={{ color: szTheme.color }}>{szTheme.name}</span>!
-        </h1>
-        <p style={{ fontSize: 16, color: "var(--m)", lineHeight: 1.6, maxWidth: 400, margin: "0 auto 24px" }}>
-          {(szTheme.intro[ag] || szTheme.intro.mittel).replace(/\{name\},?\s*/g, childName ? childName + ", " : "")}
-        </p>
-        <div style={{ fontSize: 13, color: "var(--m)", animation: "pulse 1.5s ease infinite" }}>Schatzsuche wird vorbereitet...</div>
-        <button onClick={() => { setView("plan"); window.scrollTo(0, 0); }} style={{ marginTop: 16, background: "none", border: "none", fontSize: 12, color: "var(--m)", cursor: "pointer", textDecoration: "underline" }}>
-          Direkt zum Plan →
-        </button>
-      </div>
-    </div>
-  );
-
   if (view === "peak" && motto) return (
     <div style={{ maxWidth: 660, margin: "0 auto", padding: "0 16px", display: "flex", alignItems: "center", justifyContent: "center", minHeight: "80vh" }}>
       <div className="sp" style={{ textAlign: "center", padding: "40px 20px" }}>
@@ -686,376 +782,6 @@ function App() {
       </div>
     </div>
   );
-
-  // =============================================
-  // SCHATZSUCHE PLAN VIEW
-  // =============================================
-  if (view === "plan" && isSZ && szTheme) {
-    const stations = szTheme.stations[ag] || szTheme.stations.mittel;
-    const materials = szTheme.material[ag] || szTheme.material.mittel;
-    const totalDauer = stations.reduce((s, st) => s + st.dauer, 0);
-    const nameGen = childName ? (childName.endsWith("s") ? childName + "'" : childName + "s") : "des Geburtstagskindes";
-    const introText = (szTheme.intro[ag] || szTheme.intro.mittel).replace(/\{name\},?\s*/g, childName ? childName + ", " : "");
-    const shopItems = SZ_SHOP_ITEMS[szThemeId] || [];
-
-    // === PRINT KOMPLETTPAKET ===
-    function printKomplettpaket() {
-      window.plausible && plausible("sz-komplettpaket-gedruckt", { props: { thema: szThemeId } });
-      const w = window.open("", "", "width=900,height=700");
-      w.document.write(`<html><head><title>Komplettpaket ${szTheme.name} — machsleicht.de</title>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=DM+Sans:opsz,wght@9..40,400;9..40,700;9..40,800&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'DM Sans',system-ui,sans-serif;color:#2D2319;background:#FFF}
-.page{page-break-after:always;padding:32px;min-height:100vh}
-.page:last-child{page-break-after:auto}
-h1{font-size:22px;font-weight:900;margin-bottom:8px}
-h2{font-size:16px;font-weight:800;color:${szTheme.color};margin:20px 0 10px;border-bottom:2px solid ${szTheme.color}30;padding-bottom:4px}
-.station{margin-bottom:14px;padding:12px;background:#FAFAF5;border-radius:10px;border:1px solid #EDE6DE}
-.station-name{font-weight:800;font-size:14px;margin-bottom:4px}
-.station-desc{font-size:13px;line-height:1.5;color:#5D4037}
-.station-meta{font-size:11px;color:#A89888;margin-top:4px}
-.hint{font-size:12px;color:#795548;background:#FFF8E1;padding:6px 10px;border-radius:6px;margin-top:6px;border:1px solid #FFE082}
-.check{display:inline-block;width:14px;height:14px;border:2px solid #A89888;border-radius:3px;margin-right:8px;vertical-align:middle}
-.hinweis-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.hinweis-card{border:2px dashed ${szTheme.color}80;border-radius:12px;padding:14px;text-align:center;min-height:140px;display:flex;flex-direction:column;justify-content:center}
-.hinweis-card .num{font-size:28px;margin-bottom:4px}
-.hinweis-card .name{font-size:13px;font-weight:700;margin-bottom:6px}
-.hinweis-card .hint-text{font-size:16px;color:#5D4037;line-height:1.4;font-family:'Caveat',cursive}
-.cert{text-align:center;padding:48px;border:4px double ${szTheme.color};border-radius:16px;position:relative;max-width:600px;margin:0 auto}
-.cert::before{content:'';position:absolute;inset:8px;border:1px solid ${szTheme.color}40;border-radius:10px}
-.brand{font-size:10px;color:#A89888;text-align:center;margin-top:12px}
-@media print{.page{padding:24px;min-height:auto}}
-</style></head><body>
-
-<!-- Seite 1: Schatzkarte -->
-${mapItems.length > 0 ? `<div class="page" style="display:flex;flex-direction:column;align-items:center;justify-content:center">
-<div style="position:relative;width:100%;max-width:700px;aspect-ratio:4/3;background:linear-gradient(145deg,#F5E6C8 0%,#E8D5A8 30%,#DCCB96 60%,#F0E0B8 100%);border:2px solid ${szTheme.color}40;border-radius:16px;overflow:hidden">
-<div style="position:absolute;top:16px;left:0;right:0;text-align:center;z-index:2;font-family:'Caveat',cursive;font-size:26px;font-weight:700;color:#8B7750">
-${szTheme.emoji} ${childName ? nameGen + " " : ""}${szTheme.name}
-</div>
-${mapItems.map(item => `<span style="position:absolute;left:${item.x}%;top:${item.y}%;font-size:28px;transform:translate(-50%,-50%);z-index:5;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.3))">${item.emoji}</span>`).join("")}
-<div style="position:absolute;bottom:12px;right:16px;font-size:11px;color:#A0926C;font-weight:700">N ↑</div>
-<div style="position:absolute;bottom:10px;left:16px;font-size:9px;color:#A0926C">machsleicht.de</div>
-</div>
-</div>` : ""}
-
-<!-- Seite 2: Stationen-Übersicht -->
-<div class="page">
-<h1>${szTheme.emoji} ${childName ? nameGen + " " : ""}${szTheme.name}</h1>
-<p style="font-size:13px;color:#6B5D52;margin-bottom:12px">${stations.length} Stationen · ${ageLabel[ag]} · ca. ${totalDauer} Min.</p>
-<p style="font-size:14px;color:#5D4037;line-height:1.6;font-style:italic;margin-bottom:16px;padding:12px;background:#FAFAF5;border-radius:8px">„${introText}"</p>
-${stations.map((s, i) => `<div class="station">
-<div class="station-name">${i === stations.length - 1 ? "🎁" : (i + 1) + "."} ${s.name}</div>
-<div class="station-desc">${s.desc}</div>
-<div class="station-meta">${s.dauer} Min. · ${SZ_TYP_LABEL[s.typ] || s.typ}</div>
-<div class="hint">💡 ${s.hint}</div>
-</div>`).join("")}
-</div>
-
-<!-- Seite 3: Hinweis-Zettel -->
-<div class="page">
-<h1>✂️ Hinweis-Zettel zum Ausschneiden</h1>
-<p style="font-size:13px;color:#6B5D52;margin-bottom:16px">Ausschneiden und an den Stationen verstecken. Jeder Zettel führt zur nächsten Station.</p>
-<div class="hinweis-grid">
-${stations.map((s, i) => `<div class="hinweis-card">
-<div class="num">${i === stations.length - 1 ? "🎁" : "Station " + (i + 1)}</div>
-<div class="name">${s.name}</div>
-<div class="hint-text">${i < stations.length - 1 ? "→ Weiter zu: " + stations[i + 1].name : "🎉 Geschafft! Hier ist der Schatz!"}</div>
-</div>`).join("")}
-</div>
-</div>
-
-<!-- Seite 4: Material-Checkliste -->
-<div class="page">
-<h1>📋 Material-Checkliste</h1>
-<p style="font-size:13px;color:#6B5D52;margin-bottom:16px">${szTheme.name} · ${ageLabel[ag]}</p>
-<h2>Pro Station</h2>
-<ul style="list-style:none;columns:2;column-gap:24px">
-${materials.map(m => `<li style="font-size:13px;line-height:2;break-inside:avoid"><span class="check"></span>${m}</li>`).join("")}
-</ul>
-<h2>Schatz-Ideen</h2>
-<ul style="list-style:none;columns:2;column-gap:24px">
-${szTheme.schatz.map(s => `<li style="font-size:13px;line-height:2;break-inside:avoid"><span class="check"></span>${s}</li>`).join("")}
-</ul>
-<h2>Allgemein</h2>
-<ul style="list-style:none">
-<li style="font-size:13px;line-height:2"><span class="check"></span>Hinweis-Zettel (Seite 3) ausschneiden</li>
-<li style="font-size:13px;line-height:2"><span class="check"></span>Stationen vorbereiten & verstecken</li>
-<li style="font-size:13px;line-height:2"><span class="check"></span>Schatz/Mitgebsel bereitlegen</li>
-<li style="font-size:13px;line-height:2"><span class="check"></span>Handy für Fotos/Timer bereit</li>
-</ul>
-</div>
-
-<!-- Seite 5: Urkunde -->
-<div class="page" style="display:flex;justify-content:center;align-items:center">
-<div class="cert">
-<div style="font-size:56px;margin-bottom:12px">${szTheme.emoji}</div>
-<div style="font-size:28px;font-weight:900;margin-bottom:6px">Urkunde</div>
-<div style="font-size:18px;color:#6B5D52;margin-bottom:24px">${szTheme.name}</div>
-<div style="font-size:32px;font-weight:900;color:${szTheme.color};padding:8px 0;border-bottom:2px solid ${szTheme.color}40;margin-bottom:16px">_______________</div>
-<div style="font-size:15px;color:#6B5D52;line-height:1.6;margin:16px 0">hat die große ${szTheme.name}${childName ? " bei <strong>" + nameGen + "</strong> Geburtstag" : ""} erfolgreich bestanden!<br>Alle ${stations.length} Stationen gemeistert. ${totalDauer} Minuten Abenteuer überstanden.</div>
-<div style="display:flex;justify-content:space-between;margin-top:32px;font-size:13px;color:#A89888">
-<div style="border-top:1px solid #CCC;padding-top:4px;min-width:140px;text-align:center">Datum</div>
-<div style="border-top:1px solid #CCC;padding-top:4px;min-width:140px;text-align:center">Unterschrift</div>
-</div>
-<div class="brand">Erstellt mit machsleicht.de</div>
-</div>
-</div>
-
-</body></html>`);
-      w.document.close();
-      setTimeout(() => w.print(), 400);
-    }
-
-    return (
-      <div style={{ maxWidth: 660, margin: "0 auto", padding: "0 16px 80px" }}>
-        {/* Header */}
-        <header style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 0 18px", position: "sticky", top: 0, background: "var(--w)", zIndex: 10, borderBottom: "1px solid var(--l)" }}>
-          <a href="/" style={{ textDecoration: "none" }}>
-            <span style={{ fontFamily: "var(--fd)", fontSize: 22, fontWeight: 900, color: "var(--d)" }}>mach's</span>
-            <span style={{ fontFamily: "var(--fd)", fontSize: 22, fontWeight: 900, color: "var(--a)" }}>leicht</span>
-          </a>
-          <button onClick={reset} style={{ background: "none", border: "1px solid var(--l)", borderRadius: "var(--rs)", padding: "6px 14px", fontSize: 12, color: "var(--m)", cursor: "pointer" }}>← Neu</button>
-        </header>
-
-        {/* Hero */}
-        <section className="fu" style={{ textAlign: "center", padding: "20px 0 16px" }}>
-          <div style={{ fontSize: 48, marginBottom: 8 }}>{szTheme.emoji}</div>
-          <h1 style={{ fontFamily: "var(--fd)", fontSize: 26, fontWeight: 900, marginBottom: 4 }}>
-            {childName ? `${nameGen} ` : ""}{szTheme.name}
-          </h1>
-          <p style={{ fontSize: 14, color: "var(--m)" }}>
-            {stations.length} Stationen · {ageLabel[ag]} · ca. {totalDauer} Min.
-          </p>
-        </section>
-
-        {/* Intro Story */}
-        <section className="fu" style={{ marginBottom: 24 }}>
-          <div style={{ background: `linear-gradient(135deg, ${szTheme.color}12, ${szTheme.color}06)`, borderRadius: 16, padding: "20px 18px", border: `1px solid ${szTheme.color}25` }}>
-            <p style={{ fontSize: 14, color: "var(--d)", lineHeight: 1.7, margin: 0, fontStyle: "italic" }}>
-              „{introText}"
-            </p>
-            <p style={{ fontSize: 11, color: "var(--m)", marginTop: 8, fontWeight: 600 }}>💡 Lies das den Kindern vor, bevor es losgeht.</p>
-          </div>
-        </section>
-
-        {/* Stations Timeline */}
-        <section className="fu" style={{ marginBottom: 24 }}>
-          <h2 style={{ fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 14px" }}>
-            🗺️ Stationen <span style={{ fontSize: 13, fontWeight: 500, color: "var(--m)" }}>({stations.length} Stück · {totalDauer} Min.)</span>
-          </h2>
-
-          <div style={{ paddingLeft: 20, position: "relative" }}>
-            {stations.map((st, i) => {
-              const isLast = i === stations.length - 1;
-              const typEmoji = SZ_TYP_EMOJI[st.typ] || "📍";
-              const typLabel = SZ_TYP_LABEL[st.typ] || st.typ;
-              return (
-                <details key={i} open={i === 0} style={{ position: "relative", paddingLeft: 24, paddingBottom: 4, marginBottom: 8 }}>
-                  <summary style={{ display: "flex", alignItems: "center", gap: 10, cursor: "pointer", padding: "8px 0" }}>
-                    <div style={{
-                      position: "absolute", left: -3, top: 10, width: 16, height: 16, borderRadius: "50%",
-                      background: isLast ? "var(--a)" : szTheme.color, color: "#FFF",
-                      fontSize: 8, fontWeight: 800, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
-                    }}>{isLast ? "🎁" : i + 1}</div>
-                    <div style={{ flex: 1 }}>
-                      <span style={{ fontSize: 12, fontWeight: 700, color: szTheme.color }}>{typEmoji} {typLabel}</span>
-                      <span style={{ fontSize: 14, fontWeight: 700, marginLeft: 8, color: "var(--d)" }}>{st.name}</span>
-                    </div>
-                    <span style={{ fontSize: 11, color: "var(--m)", whiteSpace: "nowrap", flexShrink: 0 }}>{st.dauer} Min.</span>
-                  </summary>
-
-                  <div style={{ padding: "4px 0 8px", borderLeft: `2px solid ${szTheme.color}20`, marginLeft: 5, paddingLeft: 16 }}>
-                    <div style={{ fontSize: 13, color: "var(--m)", marginBottom: 8, lineHeight: 1.6 }}>{st.desc}</div>
-                    {st.hint && (
-                      <div style={{ fontSize: 12, color: "#795548", background: "#FFF8E1", padding: "8px 12px", borderRadius: 8, border: "1px solid #FFE082", lineHeight: 1.5 }}>
-                        💡 <strong>Eltern-Tipp:</strong> {st.hint}
-                      </div>
-                    )}
-                  </div>
-                </details>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* Schatzkarten-Editor */}
-        <section className="fu" style={{ marginBottom: 24 }}>
-          <h2 style={{ fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 6px" }}>🗺️ Schatzkarte gestalten</h2>
-          <p className="no-print" style={{ fontSize: 12, color: "var(--m)", marginBottom: 12 }}>
-            {activeEmoji
-              ? <span style={{ color: "var(--a)", fontWeight: 700 }}>✨ Tippe jetzt auf die Karte um {activeEmoji} zu platzieren — oder wähle ein anderes Emoji</span>
-              : "Wähle ein Emoji und tippe auf die Karte. Tippe auf ein platziertes Emoji zum Entfernen."}
-          </p>
-
-          {/* Emoji Palette */}
-          <div className="no-print" style={{ display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 8 }}>
-            {(szTheme.emoji === "🏴‍☠️" ? ["🏴‍☠️","💀","⚓","🗝️","💎","🦜","⛵","🧭","💰","🗡️","🏝️"]
-              : szTheme.emoji === "🦁" ? ["🦁","🐒","🦎","🦜","🐊","🌴","🌺","🦋","🐍","🌿"]
-              : szTheme.emoji === "🚀" ? ["🚀","⭐","🌙","🛸","👽","☄️","🌟","🔭","🛰️","🌌"]
-              : szTheme.emoji === "🔍" ? ["🔍","🔎","🕵️","📋","🗝️","💡","🔦","👣","📍","🔐"]
-              : szTheme.emoji === "🦕" ? ["🦕","🦖","🌋","🦴","🪨","🌿","🥚","🔥","🪹","💎"]
-              : ["🧚","✨","🌸","🦋","🌈","🍄","🪻","💫","🪄","👑"]
-            ).concat(["📍","🚩","❌","⭐","①","②","③","④","⑤","🎁"]).map((emoji, i) => (
-              <button key={i} onClick={() => setActiveEmoji(activeEmoji === emoji ? null : emoji)} style={{
-                width: 36, height: 36, borderRadius: 8,
-                border: activeEmoji === emoji ? `2px solid var(--a)` : "1px solid var(--l)",
-                background: activeEmoji === emoji ? "var(--al)" : "var(--bg)",
-                fontSize: 18, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
-                transform: activeEmoji === emoji ? "scale(1.15)" : "scale(1)",
-                boxShadow: activeEmoji === emoji ? "0 2px 8px rgba(232,135,61,0.3)" : "none",
-                transition: "all 0.15s",
-              }}>{emoji}</button>
-            ))}
-          </div>
-
-          {/* Map Canvas */}
-          <div id="sz-map" onClick={(e) => {
-            if (!activeEmoji) return;
-            const rect = e.currentTarget.getBoundingClientRect();
-            const x = parseFloat(((e.clientX - rect.left) / rect.width * 100).toFixed(1));
-            const y = parseFloat(((e.clientY - rect.top) / rect.height * 100).toFixed(1));
-            if (y < 10) return; // Don't place on title
-            setMapItems((prev) => [...prev, { emoji: activeEmoji, x, y }]);
-          }} style={{
-            position: "relative", width: "100%", aspectRatio: "4/3", borderRadius: 16, overflow: "hidden",
-            background: "linear-gradient(145deg,#F5E6C8 0%,#E8D5A8 30%,#DCCB96 60%,#F0E0B8 100%)",
-            border: `2px solid ${szTheme.color}40`,
-            cursor: activeEmoji ? "crosshair" : "default",
-            boxShadow: activeEmoji ? `inset 0 0 0 3px ${szTheme.color}30, 0 2px 12px rgba(0,0,0,0.06)` : "inset 0 2px 12px rgba(0,0,0,0.06)",
-            transition: "box-shadow 0.2s",
-          }}>
-            {/* Title */}
-            <div style={{ position: "absolute", top: 12, left: 0, right: 0, textAlign: "center", zIndex: 2, pointerEvents: "none" }}>
-              <span style={{ fontFamily: "'Caveat', cursive", fontSize: 22, fontWeight: 700, color: "#8B7750" }}>
-                {szTheme.emoji} {childName ? `${nameGen} ` : ""}{szTheme.name}
-              </span>
-            </div>
-            {/* Placed Items */}
-            {mapItems.map((item, i) => (
-              <span key={i} onClick={(e) => { e.stopPropagation(); setMapItems((prev) => prev.filter((_, j) => j !== i)); }} style={{
-                position: "absolute", left: item.x + "%", top: item.y + "%",
-                fontSize: 24, cursor: "pointer", transform: "translate(-50%,-50%)",
-                userSelect: "none", zIndex: 5,
-                filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.3))",
-                transition: "transform 0.1s",
-              }} className="no-print-hidden" title="Klick zum Entfernen">{item.emoji}</span>
-            ))}
-            {/* Compass */}
-            <div style={{ position: "absolute", bottom: 12, right: 12, fontSize: 11, color: "#A0926C", fontWeight: 700, zIndex: 2, pointerEvents: "none" }}>
-              N ↑
-            </div>
-            {/* Brand */}
-            <div style={{ position: "absolute", bottom: 8, left: 12, fontSize: 9, color: "#A0926C", zIndex: 2, pointerEvents: "none" }}>
-              machsleicht.de
-            </div>
-          </div>
-
-          {/* Controls */}
-          {mapItems.length > 0 && (
-            <div className="no-print" style={{ display: "flex", gap: 8, marginTop: 8 }}>
-              <button onClick={() => setMapItems((prev) => prev.slice(0, -1))} style={{
-                flex: 1, padding: "8px 12px", fontSize: 12, fontWeight: 600, border: "1px solid var(--l)",
-                borderRadius: 10, background: "var(--bg)", color: "var(--m)", cursor: "pointer",
-              }}>↩️ Rückgängig</button>
-              <button onClick={() => { if (confirm("Alle Emojis von der Karte entfernen?")) setMapItems([]); }} style={{
-                flex: 1, padding: "8px 12px", fontSize: 12, fontWeight: 600, border: "1px solid var(--l)",
-                borderRadius: 10, background: "var(--bg)", color: "#C62828", cursor: "pointer",
-              }}>🗑️ Alle entfernen</button>
-            </div>
-          )}
-          <p className="no-print" style={{ fontSize: 10, color: "var(--m)", marginTop: 6, textAlign: "center" }}>
-            {mapItems.length} Emojis platziert{mapItems.length > 0 ? " · Die Karte wird im Komplettpaket mitgedruckt" : ""}
-          </p>
-        </section>
-
-        {/* Material Checkliste */}
-        <section className="fu" style={{ marginBottom: 24 }}>
-          <h2 style={{ fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 14px" }}>📦 Material-Checkliste</h2>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-            <p style={{ fontSize: 12, fontWeight: 700, color: szTheme.color, textTransform: "uppercase", letterSpacing: "0.06em" }}>Pro Station</p>
-            {materials.map((mat, i) => (
-              <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "var(--bg)", borderRadius: 10, border: "1px solid var(--l)" }}>
-                <input type="checkbox" style={{ width: 16, height: 16, accentColor: "var(--g)", cursor: "pointer" }} />
-                <span style={{ fontSize: 13, flex: 1 }}>{mat}</span>
-              </div>
-            ))}
-
-            <p style={{ fontSize: 12, fontWeight: 700, color: szTheme.color, textTransform: "uppercase", letterSpacing: "0.06em", marginTop: 12 }}>Schatz-Ideen</p>
-            {szTheme.schatz.map((s, i) => (
-              <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "var(--bg)", borderRadius: 10, border: "1px solid var(--l)" }}>
-                <span style={{ fontSize: 16 }}>🎁</span>
-                <span style={{ fontSize: 13, flex: 1 }}>{s}</span>
-                {SZ_SCHATZ_LINKS[s] && <a href={SZ_SCHATZ_LINKS[s]} target="_blank" rel="noopener" style={{ fontSize: 11, fontWeight: 700, color: "#FF9900", textDecoration: "none", padding: "3px 8px", borderRadius: 6, background: "#FFF3E0", whiteSpace: "nowrap" }}>Amazon ↗</a>}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Amazon Shopping */}
-        {shopItems.length > 0 && (
-          <section className="fu" style={{ marginBottom: 24 }}>
-            <h2 style={{ fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 14px" }}>🛒 Einkaufsliste</h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              {shopItems.map((item, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "var(--bg)", borderRadius: 10, border: "1px solid var(--l)" }}>
-                  <span style={{
-                    fontSize: 10, fontWeight: 700, padding: "2px 8px", borderRadius: 6,
-                    background: item.cat === "pflicht" ? "#FFF3E0" : "#E8F5E9",
-                    color: item.cat === "pflicht" ? "#E65100" : "#2E7D32",
-                    textTransform: "uppercase", flexShrink: 0,
-                  }}>{item.cat === "pflicht" ? "Pflicht" : "Optional"}</span>
-                  <span style={{ fontSize: 13, flex: 1 }}>{item.name}</span>
-                  {item.url && <a href={item.url} target="_blank" rel="noopener" style={{ fontSize: 11, fontWeight: 700, color: "#FF9900", textDecoration: "none", padding: "3px 8px", borderRadius: 6, background: "#FFF3E0", whiteSpace: "nowrap" }}>Amazon ↗</a>}
-                </div>
-              ))}
-            </div>
-            <p style={{ fontSize: 10, color: "var(--m)", marginTop: 8, textAlign: "center" }}>* Affiliate-Link: Für dich ändert sich der Preis nicht.</p>
-          </section>
-        )}
-
-        {/* Print Komplettpaket */}
-        <section className="fu no-print" style={{ marginBottom: 24, textAlign: "center" }}>
-          <button onClick={printKomplettpaket} style={{
-            padding: "14px 28px", background: "linear-gradient(135deg,var(--a),#d35f1a)", color: "#fff",
-            border: "none", borderRadius: 14, fontSize: 15, fontWeight: 700, cursor: "pointer",
-            boxShadow: "0 4px 20px rgba(224,122,58,0.3)",
-          }}>🖨️ Komplettpaket drucken</button>
-          <p style={{ fontSize: 12, color: "var(--m)", marginTop: 8 }}>5 Seiten: Schatzkarte · Stationen · Hinweis-Zettel · Material · Urkunde</p>
-        </section>
-
-        {/* Footer */}
-        <footer style={{ textAlign: "center", padding: "16px 0", borderTop: "1px solid var(--l)" }}>
-          <p style={{ fontSize: 12, color: "var(--m)" }}>
-            © 2026 machsleicht.de · <a href="/kindergeburtstag" style={{ color: "var(--m)", textDecoration: "none" }}>Geburtstag planen</a> · <a href="/impressum" style={{ color: "var(--m)", textDecoration: "none" }}>Impressum</a> · <a href="/datenschutz" style={{ color: "var(--m)", textDecoration: "none" }}>Datenschutz</a> · <a href="/transparenz" style={{ color: "var(--m)", textDecoration: "none" }}>Transparenz</a>
-          </p>
-        </footer>
-
-        {/* Sticky Bottom Bar */}
-        <div className="no-print" style={{
-          position: "fixed", bottom: 0, left: "50%", transform: "translateX(-50%)",
-          width: "100%", maxWidth: 660, background: "rgba(253,252,249,0.97)",
-          backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
-          padding: "8px 12px", borderTop: "1px solid var(--l)", display: "flex", gap: 6, zIndex: 100,
-        }}>
-          <button onClick={printKomplettpaket} style={{
-            flex: 1, padding: 10, borderRadius: 10, background: "var(--a)", color: "#fff",
-            fontWeight: 700, fontSize: 12, textAlign: "center", border: "none", cursor: "pointer", fontFamily: "var(--f)",
-          }}>🖨️ Drucken</button>
-          <button onClick={reset} style={{
-            flex: 1, padding: 10, borderRadius: 10, background: "var(--bg)", color: "var(--d)",
-            border: "1px solid var(--l)", fontWeight: 700, fontSize: 12, textAlign: "center", cursor: "pointer", fontFamily: "var(--f)",
-          }}>🗺️ Anderes Thema</button>
-          <button onClick={() => { setPlanMode("geburtstag"); setView("config"); window.scrollTo(0,0); }} style={{
-            flex: 1, padding: 10, borderRadius: 10, background: "var(--bg)", color: "var(--d)",
-            border: "1px solid var(--l)", fontWeight: 700, fontSize: 12, textAlign: "center", cursor: "pointer", fontFamily: "var(--f)",
-          }}>🎂 Geburtstag</button>
-        </div>
-      </div>
-    );
-  }
 
   // =============================================
   // GEBURTSTAG PLAN VIEW
@@ -1097,8 +823,7 @@ ${szTheme.schatz.map(s => `<li style="font-size:13px;line-height:2;break-inside:
 
         {/* Einladung */}
         <EinladungBlock motto={motto} guests={guests} previewName={previewName} setPreviewName={setPreviewName} inviteSent={inviteSent} setInviteSent={setInviteSent} />
-        <Connector />
-        <SchatzsucheTeaser motto={motto} guests={guests} age={age} location={effectiveLoc} activeStation={activeStation} setActiveStation={setActiveStation} onSwitchSZ={switchToSZ} />
+        <SchnitzeljagdBlock age={age} ag={ag} szActive={szActive} setSzActive={setSzActive} szThemeId={szThemeId} setSzThemeId={setSzThemeId} szTheme={szTheme} childName={childName} setChildName={setChildName} mapItems={mapItems} setMapItems={setMapItems} activeEmoji={activeEmoji} setActiveEmoji={setActiveEmoji} />
 
         {/* Score */}
         <ScoreCheck score={score} />
@@ -1219,7 +944,7 @@ ${szTheme.schatz.map(s => `<li style="font-size:13px;line-height:2;break-inside:
           </p>
         </footer>
 
-        <ControlHub mottoId={mottoId} onSwitchSZ={switchToSZ} />
+        <ControlHub mottoId={mottoId} szActive={szActive} setSzActive={setSzActive} />
       </div>
     );
   }
@@ -1235,57 +960,24 @@ ${szTheme.schatz.map(s => `<li style="font-size:13px;line-height:2;break-inside:
           <span style={{ fontFamily: "var(--fd)", fontWeight: 800, fontSize: 20, color: "var(--a)" }}>mach's</span>
           <span style={{ fontFamily: "var(--fd)", fontWeight: 800, fontSize: 20, color: "var(--d)" }}>leicht</span>
         </a>
-        <button onClick={() => { setPlanMode("schatzsuche"); document.getElementById("wizard")?.scrollIntoView({ behavior: "smooth" }); }} style={{ fontSize: 13, fontWeight: 500, color: "var(--m)", textDecoration: "none", background: "none", border: "none", cursor: "pointer", fontFamily: "var(--f)" }}>🗺️ Schatzsuche</button>
+        <a href="/schatzsuche" style={{ fontSize: 13, fontWeight: 500, color: "var(--m)", textDecoration: "none" }}>🗺️ Schnitzeljagd</a>
       </nav>
 
       {/* Hero */}
       <section style={{ position: "relative", overflow: "hidden", padding: "48px 24px 32px", background: "linear-gradient(165deg, #fef8f0 0%, #fdfcf9 40%, #f0f4e8 100%)" }}>
         <div style={{ maxWidth: 660, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "#fff", border: "1px solid var(--l)", borderRadius: 100, padding: "6px 16px", fontSize: 12, fontWeight: 500, color: "#888", marginBottom: 20, animation: "fadeSlideUp 0.4s ease-out both" }}>
-            {isSZ ? "🗺️ Schatzsuche erstellen — kostenlos" : "🎉 Kindergeburtstag planen — kostenlos, ohne Anmeldung"}
-          </div>
-
-          {/* MODE SWITCH */}
-          <div style={{
-            display: "flex", justifyContent: "center", marginBottom: 20,
-            animation: "fadeSlideUp 0.4s 0.05s ease-out both",
-          }}>
-            <div style={{
-              display: "inline-flex", background: "#fff", borderRadius: 14, padding: 4,
-              border: "1px solid var(--l)", boxShadow: "0 2px 12px rgba(0,0,0,0.04)",
-            }}>
-              {[
-                ["geburtstag", "🎂", "Kompletter Geburtstag"],
-                ["schatzsuche", "🗺️", "Nur Schatzsuche"],
-              ].map(([val, ico, label]) => (
-                <button key={val} onClick={() => {
-                  setPlanMode(val);
-                  window.plausible && plausible("mode-switch", { props: { mode: val } });
-                }} style={{
-                  padding: "10px 20px", borderRadius: 11, border: "none", cursor: "pointer",
-                  background: planMode === val ? "var(--a)" : "transparent",
-                  color: planMode === val ? "#fff" : "var(--m)",
-                  fontSize: 13, fontWeight: 700, transition: "all 0.25s",
-                  boxShadow: planMode === val ? "0 2px 8px rgba(232,135,61,0.3)" : "none",
-                  fontFamily: "var(--f)",
-                }}>{ico} {label}</button>
-              ))}
-            </div>
+            🎉 Kindergeburtstag planen — kostenlos, ohne Anmeldung
           </div>
 
           <h1 style={{ fontFamily: "var(--fd)", fontSize: "clamp(28px,5.5vw,48px)", fontWeight: 800, lineHeight: 1.12, marginBottom: 14, color: "var(--d)", animation: "fadeSlideUp 0.5s 0.1s ease-out both" }}>
-            {isSZ ? <>Schatzsuche erstellen<br /><span style={{ color: "var(--a)" }}>in 5 Minuten.</span></> : <>Kindergeburtstag planen<br /><span style={{ color: "var(--a)" }}>in 10 Minuten.</span></>}
+            Kindergeburtstag planen<br /><span style={{ color: "var(--a)" }}>in 10 Minuten.</span>
           </h1>
           <p style={{ fontSize: "clamp(14px,2vw,17px)", color: "var(--m)", lineHeight: 1.6, maxWidth: 500, margin: "0 auto 24px", animation: "fadeSlideUp 0.5s 0.2s ease-out both" }}>
-            {isSZ
-              ? "Wähl ein Thema und das Alter — du bekommst sofort alle Stationen mit Rätseln, Material und Eltern-Tipps."
-              : "Wähl Alter, Motto und Gästezahl — du bekommst sofort einen kompletten Plan mit Spielen, Einkaufsliste und Kosten pro Kind."}
+            Wähl Alter, Motto und Gästezahl — du bekommst sofort einen kompletten Plan mit Spielen, Einkaufsliste und Kosten pro Kind.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 8, justifyContent: "center", animation: "fadeSlideUp 0.5s 0.3s ease-out both" }}>
-            {(isSZ
-              ? [["🗺️", "5 Stationen"], ["🧩", "Altersgerechte Rätsel"], ["📦", "Material-Checkliste"], ["🖨️", "Druckfertig"]]
-              : [["⏱️", "Zeitplan"], ["🎯", "Altersgerechte Spiele"], ["🛒", "Einkaufsliste"], ["🧮", "Kosten pro Kind"]]
-            ).map(([ico, label]) => (
+            {[["⏱️", "Zeitplan"], ["🎯", "Altersgerechte Spiele"], ["🛒", "Einkaufsliste"], ["🗺️", "+ Schatzsuche"]].map(([ico, label]) => (
               <span key={label} style={{ display: "inline-flex", alignItems: "center", gap: 5, padding: "6px 12px", background: "rgba(255,255,255,0.7)", backdropFilter: "blur(8px)", borderRadius: 100, fontSize: 12, fontWeight: 500, color: "#4a4a4a", border: "1px solid rgba(0,0,0,0.06)" }}>
                 <span style={{ fontSize: 14 }}>{ico}</span>{label}
               </span>
@@ -1339,148 +1031,81 @@ ${szTheme.schatz.map(s => `<li style="font-size:13px;line-height:2;break-inside:
             </p>
           </div>
 
-          {/* Step 2: Motto or Theme */}
-          {isSZ ? (
-            /* SCHATZSUCHE: Theme Selection */
-            <div style={{ marginBottom: 24 }}>
-              <div style={{ fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb", marginBottom: 10 }}>
-                <span style={{ color: "var(--a)", marginRight: 6 }}>②</span> Thema wählen
+          {/* Step 2: Motto */}
+          <div style={{ marginBottom: 24 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+              <div style={{ fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb" }}>
+                <span style={{ color: "var(--a)", marginRight: 6 }}>②</span> Motto wählen
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(90px, 1fr))", gap: 8 }}>
-                {SZ_THEMES.map((t) => (
-                  <button key={t.id} onClick={() => { setSzThemeId(t.id); window.plausible && plausible("sz-theme-selected", { props: { theme: t.id } }); }} style={{
-                    position: "relative", display: "flex", flexDirection: "column", alignItems: "center", gap: 6,
-                    padding: "18px 8px 14px", background: szThemeId === t.id ? t.color + "12" : "#fff",
-                    border: `2px solid ${szThemeId === t.id ? t.color : "#eee"}`, borderRadius: 16, cursor: "pointer",
-                    transition: "all 0.25s", transform: szThemeId === t.id ? "scale(1.05)" : "scale(1)",
-                    boxShadow: szThemeId === t.id ? `0 4px 20px ${t.color}30` : "0 1px 4px rgba(0,0,0,0.04)",
-                  }}>
-                    <span style={{ fontSize: 30 }}>{t.emoji}</span>
-                    <span style={{ fontSize: 11, fontWeight: 600, color: szThemeId === t.id ? t.color : "#333", textAlign: "center", lineHeight: 1.2 }}>{SZ_LABELS[t.id] || t.name}</span>
-                    {szThemeId === t.id && <span style={{ position: "absolute", top: -6, right: -6, width: 20, height: 20, borderRadius: "50%", background: t.color, color: "#fff", fontSize: 11, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 2px 8px ${t.color}50` }}>✓</span>}
-                  </button>
+              <div style={{ display: "flex", gap: 4 }}>
+                {[["generic", "🎨 Klassisch"], ["license", "⭐ Charaktere"]].map(([val, label]) => (
+                  <button key={val} onClick={() => { setMottoTab(val); setMottoId(null); }} style={{
+                    padding: "4px 10px", fontSize: 11, fontWeight: 600, border: "none", borderRadius: 100,
+                    background: mottoTab === val ? "var(--a)" : "#f0ede8", color: mottoTab === val ? "#fff" : "#999", cursor: "pointer",
+                  }}>{label}</button>
                 ))}
               </div>
+            </div>
+            <div style={{ display: "flex", gap: 8, overflowX: "auto", padding: "4px 2px 8px", scrollSnapType: "x mandatory" }}>
+              {(mottoTab === "generic" ? GENERIC : filteredLicense).map((m) => (
+                <button key={m.id} onClick={() => { setMottoId(m.id); window.plausible && plausible("motto-selected", { props: { motto: m.id } }); }} style={{
+                  position: "relative", flex: "0 0 auto", minWidth: 100, display: "flex", flexDirection: "column", alignItems: "center", gap: 6,
+                  padding: "18px 12px 14px", background: mottoId === m.id ? m.color + "12" : "#fff",
+                  border: `2px solid ${mottoId === m.id ? m.color : "#eee"}`, borderRadius: 16, cursor: "pointer",
+                  transition: "all 0.25s", transform: mottoId === m.id ? "scale(1.05)" : "scale(1)",
+                  boxShadow: mottoId === m.id ? `0 4px 20px ${m.color}30` : "0 1px 4px rgba(0,0,0,0.04)", scrollSnapAlign: "start",
+                }}>
+                  <span style={{ fontSize: 30 }}>{m.emoji}</span>
+                  <span style={{ fontSize: 12, fontWeight: 600, color: mottoId === m.id ? m.color : "#333" }}>{m.name}</span>
+                  {m.cat === "license" && <span style={{ fontSize: 10, color: mottoId === m.id ? m.color : "#999", background: mottoId === m.id ? m.color + "15" : "#f5f5f5", padding: "2px 8px", borderRadius: 100 }}>{m.ages[0]}–{m.ages[m.ages.length - 1]} J.</span>}
+                  {mottoId === m.id && <span style={{ position: "absolute", top: -6, right: -6, width: 20, height: 20, borderRadius: "50%", background: m.color, color: "#fff", fontSize: 11, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 2px 8px ${m.color}50` }}>✓</span>}
+                </button>
+              ))}
+              {mottoTab === "license" && filteredLicense.length === 0 && (
+                <div style={{ padding: 16, color: "var(--m)", fontSize: 13 }}>Für {age} Jahre keine Lizenz-Mottos verfügbar.</div>
+              )}
+            </div>
+          </div>
 
-              {/* Child Name (optional) */}
-              <div style={{ marginTop: 16 }}>
-                <div style={{ fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb", marginBottom: 8 }}>
-                  <span style={{ color: "var(--a)", marginRight: 6 }}>③</span> Name des Kindes <span style={{ fontWeight: 400, color: "#ccc" }}>(optional)</span>
-                </div>
-                <input type="text" value={childName} onChange={(e) => setChildName(e.target.value)}
-                  placeholder="z.B. Emma, Max, Sophie…" style={{
-                    width: "100%", padding: "12px 16px", borderRadius: 12, border: "2px solid #f0ede8",
-                    fontSize: 14, fontFamily: "var(--f)", outline: "none", background: "#fafaf8",
-                    boxSizing: "border-box", transition: "border-color 0.2s",
-                  }} />
-                <p style={{ fontSize: 11, color: "var(--m)", marginTop: 4 }}>Personalisiert die Intro-Geschichte und Stationen.</p>
-              </div>
+          {/* Step 3: Guests */}
+          <div style={{ marginBottom: 24 }}>
+            <div style={{ fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb", marginBottom: 10 }}>
+              <span style={{ color: "var(--a)", marginRight: 6 }}>③</span> Gästezahl
+              {guests && <span style={{ fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, color: "var(--a)", marginLeft: 8 }}>{guests} Kinder</span>}
             </div>
-          ) : (
-            /* GEBURTSTAG: Motto Selection */
-            <div style={{ marginBottom: 24 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-                <div style={{ fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb" }}>
-                  <span style={{ color: "var(--a)", marginRight: 6 }}>②</span> Motto wählen
-                </div>
-                <div style={{ display: "flex", gap: 4 }}>
-                  {[["generic", "🎨 Klassisch"], ["license", "⭐ Charaktere"]].map(([val, label]) => (
-                    <button key={val} onClick={() => { setMottoTab(val); setMottoId(null); }} style={{
-                      padding: "4px 10px", fontSize: 11, fontWeight: 600, border: "none", borderRadius: 100,
-                      background: mottoTab === val ? "var(--a)" : "#f0ede8", color: mottoTab === val ? "#fff" : "#999", cursor: "pointer",
-                    }}>{label}</button>
-                  ))}
-                </div>
-              </div>
-              <div style={{ display: "flex", gap: 8, overflowX: "auto", padding: "4px 2px 8px", scrollSnapType: "x mandatory" }}>
-                {(mottoTab === "generic" ? GENERIC : filteredLicense).map((m) => (
-                  <button key={m.id} onClick={() => { setMottoId(m.id); window.plausible && plausible("motto-selected", { props: { motto: m.id } }); }} style={{
-                    position: "relative", flex: "0 0 auto", minWidth: 100, display: "flex", flexDirection: "column", alignItems: "center", gap: 6,
-                    padding: "18px 12px 14px", background: mottoId === m.id ? m.color + "12" : "#fff",
-                    border: `2px solid ${mottoId === m.id ? m.color : "#eee"}`, borderRadius: 16, cursor: "pointer",
-                    transition: "all 0.25s", transform: mottoId === m.id ? "scale(1.05)" : "scale(1)",
-                    boxShadow: mottoId === m.id ? `0 4px 20px ${m.color}30` : "0 1px 4px rgba(0,0,0,0.04)", scrollSnapAlign: "start",
-                  }}>
-                    <span style={{ fontSize: 30 }}>{m.emoji}</span>
-                    <span style={{ fontSize: 12, fontWeight: 600, color: mottoId === m.id ? m.color : "#333" }}>{m.name}</span>
-                    {m.cat === "license" && <span style={{ fontSize: 10, color: mottoId === m.id ? m.color : "#999", background: mottoId === m.id ? m.color + "15" : "#f5f5f5", padding: "2px 8px", borderRadius: 100 }}>{m.ages[0]}–{m.ages[m.ages.length - 1]} J.</span>}
-                    {mottoId === m.id && <span style={{ position: "absolute", top: -6, right: -6, width: 20, height: 20, borderRadius: "50%", background: m.color, color: "#fff", fontSize: 11, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 2px 8px ${m.color}50` }}>✓</span>}
-                  </button>
-                ))}
-                {mottoTab === "license" && filteredLicense.length === 0 && (
-                  <div style={{ padding: 16, color: "var(--m)", fontSize: 13 }}>Für {age} Jahre keine Lizenz-Mottos verfügbar.</div>
-                )}
-              </div>
+            <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+              {[4, 5, 6, 7, 8, 10, 12, 15].map((n) => (
+                <button key={n} onClick={() => setGuests(n)} style={{
+                  width: 48, height: 48, border: `2px solid ${guests === n ? "var(--a)" : "#f0ede8"}`, borderRadius: 14,
+                  background: guests === n ? "var(--al)" : "#fafaf8", cursor: "pointer", fontWeight: 700, fontSize: 16,
+                  color: guests === n ? "var(--a)" : "#666", transition: "all 0.2s",
+                }}>{n}</button>
+              ))}
             </div>
-          )}
-
-          {/* Step 3: Guests (only for Geburtstag) */}
-          {!isSZ && (
-            <div style={{ marginBottom: 24 }}>
-              <div style={{ fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb", marginBottom: 10 }}>
-                <span style={{ color: "var(--a)", marginRight: 6 }}>③</span> Gästezahl
-                {guests && <span style={{ fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, color: "var(--a)", marginLeft: 8 }}>{guests} Kinder</span>}
-              </div>
-              <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-                {[4, 5, 6, 7, 8, 10, 12, 15].map((n) => (
-                  <button key={n} onClick={() => setGuests(n)} style={{
-                    width: 48, height: 48, border: `2px solid ${guests === n ? "var(--a)" : "#f0ede8"}`, borderRadius: 14,
-                    background: guests === n ? "var(--al)" : "#fafaf8", cursor: "pointer", fontWeight: 700, fontSize: 16,
-                    color: guests === n ? "var(--a)" : "#666", transition: "all 0.2s",
-                  }}>{n}</button>
-                ))}
-              </div>
-              {age <= 5 && guests > 8 && <p style={{ fontSize: 12, color: "var(--a)", marginTop: 6, fontWeight: 600 }}>💡 Für {age}-Jährige sind 5–8 Kinder ideal.</p>}
-            </div>
-          )}
+            {age <= 5 && guests > 8 && <p style={{ fontSize: 12, color: "var(--a)", marginTop: 6, fontWeight: 600 }}>💡 Für {age}-Jährige sind 5–8 Kinder ideal.</p>}
+          </div>
 
           {/* Start Button */}
           <div style={{ position: "relative" }}>
             <Confetti active={showConfetti} />
-            {isSZ ? (
-              <button onClick={startPlan} disabled={!szThemeId} style={{
-                width: "100%", padding: "16px 24px",
-                background: szThemeId ? "linear-gradient(135deg,var(--a),#d35f1a)" : "#e8e6e1",
-                color: szThemeId ? "#FFF" : "#bbb", border: "none", borderRadius: 16, fontSize: 16, fontWeight: 700,
-                cursor: szThemeId ? "pointer" : "default", boxShadow: szThemeId ? "0 4px 20px rgba(224,122,58,0.35)" : "none",
-                animation: szThemeId ? "softPulse 2s infinite" : "none", transition: "all 0.3s",
-              }}>
-                {szThemeId && szTheme ? `${szTheme.emoji} ${szTheme.name} erstellen — los geht's!` : "Wähl Alter & Thema"}
-              </button>
-            ) : (
-              <button onClick={startPlan} disabled={!mottoId} style={{
-                width: "100%", padding: "16px 24px",
-                background: mottoId ? "linear-gradient(135deg,var(--a),#d35f1a)" : "#e8e6e1",
-                color: mottoId ? "#FFF" : "#bbb", border: "none", borderRadius: 16, fontSize: 16, fontWeight: 700,
-                cursor: mottoId ? "pointer" : "default", boxShadow: mottoId ? "0 4px 20px rgba(224,122,58,0.35)" : "none",
-                animation: mottoId ? "softPulse 2s infinite" : "none", transition: "all 0.3s",
-              }}>
-                {mottoId ? `${motto.emoji} ${motto.name}-Geburtstag planen — los geht's!` : "Wähl Alter, Motto & Gästezahl"}
-              </button>
-            )}
-            {(mottoId || szThemeId) && <p style={{ textAlign: "center", fontSize: 12, color: "#bbb", marginTop: 8 }}>Kostenlos · Ohne Anmeldung · Sofort loslegen</p>}
+            <button onClick={startPlan} disabled={!mottoId} style={{
+              width: "100%", padding: "16px 24px",
+              background: mottoId ? "linear-gradient(135deg,var(--a),#d35f1a)" : "#e8e6e1",
+              color: mottoId ? "#FFF" : "#bbb", border: "none", borderRadius: 16, fontSize: 16, fontWeight: 700,
+              cursor: mottoId ? "pointer" : "default", boxShadow: mottoId ? "0 4px 20px rgba(224,122,58,0.35)" : "none",
+              animation: mottoId ? "softPulse 2s infinite" : "none", transition: "all 0.3s",
+            }}>
+              {mottoId ? `${motto.emoji} ${motto.name}-Geburtstag planen — los geht's!` : "Wähl Alter, Motto & Gästezahl"}
+            </button>
+            {mottoId && <p style={{ textAlign: "center", fontSize: 12, color: "#bbb", marginTop: 8 }}>Kostenlos · Ohne Anmeldung · Sofort loslegen</p>}
           </div>
 
-          {!isSZ && <button onClick={emergencyStart} style={{
+          <button onClick={emergencyStart} style={{
             width: "100%", marginTop: 12, padding: 10, background: "none", color: "#C62828",
             border: "1px solid #C6282840", borderRadius: 12, fontWeight: 600, fontSize: 13, cursor: "pointer",
-          }}>🚨 Notfallplan in 2 Minuten — Geburtstag in 48h?</button>}
+          }}>🚨 Notfallplan in 2 Minuten — Geburtstag in 48h?</button>
         </div>
       </div>
-
-      {/* Schatzsuche Cross-sell (only in Geburtstag mode) */}
-      {!isSZ && <div style={{ maxWidth: 700, margin: "24px auto", padding: "0 16px" }}>
-        <button onClick={() => { setPlanMode("schatzsuche"); document.getElementById("wizard")?.scrollIntoView({ behavior: "smooth" }); }} style={{ textDecoration: "none", display: "block", width: "100%", background: "none", border: "none", padding: 0, cursor: "pointer", textAlign: "left" }}>
-          <div style={{ background: "linear-gradient(135deg,#fef8f0,#fff8e8)", borderRadius: 20, padding: "24px 28px", border: "1px solid #f0ede8", display: "flex", alignItems: "center", gap: 20, cursor: "pointer" }}>
-            <div style={{ fontSize: 44, flexShrink: 0, animation: "float 3s ease-in-out infinite" }}>🗺️</div>
-            <div style={{ flex: 1 }}>
-              <div style={{ fontFamily: "var(--fd)", fontWeight: 800, fontSize: 18, color: "var(--d)", marginBottom: 4 }}>Schatzsuche erstellen</div>
-              <div style={{ fontSize: 13, color: "var(--m)", lineHeight: 1.5 }}>6 Themen, altersgerechte Stationen, Material-Checkliste — alles in einem Tool.</div>
-            </div>
-            <div style={{ fontSize: 22, color: "var(--a)", flexShrink: 0 }}>→</div>
-          </div>
-        </button>
-      </div>}
 
       {/* Features */}
       <section style={{ maxWidth: 700, margin: "40px auto 0", padding: "0 16px" }}>

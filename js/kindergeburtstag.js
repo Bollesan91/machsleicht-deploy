@@ -2524,7 +2524,7 @@ function Confetti({ active }) {
     opacity: 0
   } })));
 }
-function ControlHub({ mottoId, onSwitchSZ }) {
+function ControlHub({ mottoId, szActive, setSzActive }) {
   return /* @__PURE__ */ React.createElement("div", { className: "no-print", style: {
     position: "fixed",
     bottom: 0,
@@ -2551,19 +2551,22 @@ function ControlHub({ mottoId, onSwitchSZ }) {
     textAlign: "center",
     textDecoration: "none",
     fontFamily: "var(--f)"
-  } }, "\u{1F48C} Einladung"), /* @__PURE__ */ React.createElement("button", { onClick: onSwitchSZ, style: {
+  } }, "\u{1F48C} Einladung"), /* @__PURE__ */ React.createElement("button", { onClick: () => {
+    setSzActive(!szActive);
+    document.querySelector('[class*="SchnitzeljagdBlock"]')?.scrollIntoView({ behavior: "smooth" });
+  }, style: {
     flex: 1,
     padding: 10,
     borderRadius: 10,
-    background: "var(--bg)",
-    color: "var(--d)",
-    border: "1px solid var(--l)",
+    background: szActive ? "var(--al)" : "var(--bg)",
+    color: szActive ? "var(--a)" : "var(--d)",
+    border: `1px solid ${szActive ? "var(--a)" : "var(--l)"}`,
     fontWeight: 700,
     fontSize: 12,
     textAlign: "center",
     cursor: "pointer",
     fontFamily: "var(--f)"
-  } }, "\u{1F5FA}\uFE0F Schatzsuche"), /* @__PURE__ */ React.createElement("button", { onClick: () => document.querySelector('[data-action="pdf"]')?.scrollIntoView({ behavior: "smooth" }), style: {
+  } }, szActive ? "\u2705 Schnitzeljagd" : "\u{1F5FA}\uFE0F Schnitzeljagd"), /* @__PURE__ */ React.createElement("button", { onClick: () => document.querySelector('[data-action="pdf"]')?.scrollIntoView({ behavior: "smooth" }), style: {
     flex: 1,
     padding: 10,
     borderRadius: 10,
@@ -2628,58 +2631,132 @@ function EinladungBlock({ motto, guests, previewName, setPreviewName, inviteSent
     done ? "\u2713 Einladung erstellt \u2014 bearbeiten \u2192" : `\u{1F48C} ${motto.name}-Einladung erstellen \u2192`
   ), done && /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, opacity: 0.5, margin: "6px 0 0", textAlign: "center" } }, "\u2713 Score +11% \u2014 Bereitschafts-Check aktualisiert"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "center", gap: 16, marginTop: 10, fontSize: 11, opacity: 0.3 } }, /* @__PURE__ */ React.createElement("span", null, "Kostenlos"), /* @__PURE__ */ React.createElement("span", null, "Kein Account"), /* @__PURE__ */ React.createElement("span", null, "DSGVO-konform"))));
 }
-function SchatzsucheTeaser({ motto, guests, age, location: location2, activeStation, setActiveStation, onSwitchSZ }) {
-  const stations = (STATION_SETS[motto?.id] || DEFAULT_STATIONS).map((st, i) => ({ ...st, unlocked: i < 2 }));
-  const s = stations[activeStation];
-  const locLabel = location2 === "wohnung" ? "Drinnen" : location2 === "garten" ? "Garten" : "Park";
-  return /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { borderRadius: 16, overflow: "hidden", border: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("div", { style: { background: "linear-gradient(135deg, #e8d5b7, #d4bc94)", padding: "16px 18px" } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 18, fontWeight: 900, color: "var(--d)", margin: "0 0 2px" } }, "30 Minuten Abenteuer."), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 14, fontWeight: 700, color: "var(--d)", opacity: 0.6, margin: "0 0 2px" } }, "Du trinkst Kaffee. \u2615"), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--d)", opacity: 0.5, margin: 0 } }, motto.name, "-Schatzsuche \xB7 ", guests, " Kinder \xB7 ", age, " J. \xB7 ", locLabel)), /* @__PURE__ */ React.createElement("div", { style: { padding: "14px 16px", background: "var(--bg)" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 0, marginBottom: 12, position: "relative" } }, /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", top: 20, left: 20, right: 20, height: 2, background: "var(--l)", zIndex: 0 } }), stations.map((st, i) => {
-    const isA = activeStation === i;
-    return /* @__PURE__ */ React.createElement("button", { key: st.n, onClick: () => setActiveStation(i), style: {
-      flex: 1,
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      gap: 4,
-      background: "transparent",
-      border: "none",
-      cursor: "pointer",
-      position: "relative",
-      zIndex: 1,
-      padding: "0 2px"
-    } }, /* @__PURE__ */ React.createElement("div", { style: {
-      width: 40,
-      height: 40,
-      borderRadius: "50%",
-      background: isA ? "var(--a)" : st.unlocked ? "#fff" : "var(--bg)",
-      color: isA ? "#fff" : "var(--d)",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      fontSize: 18,
-      border: `2px solid ${isA ? "var(--a)" : st.unlocked ? "var(--d)" : "var(--l)"}`,
-      boxShadow: isA ? "0 2px 8px rgba(232,135,61,0.4)" : "none",
-      transition: "all .2s"
-    } }, st.emoji), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 9, fontWeight: 700, color: isA ? "var(--a)" : "var(--m)" } }, st.n));
-  })), /* @__PURE__ */ React.createElement("div", { style: { background: "#fff", borderRadius: 10, padding: 14, marginBottom: 12, borderLeft: "3px solid var(--a)" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 8, marginBottom: 6 } }, /* @__PURE__ */ React.createElement("span", { style: { fontSize: 22 } }, s.emoji), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 14, fontWeight: 800, color: "var(--d)", margin: 0 } }, "Station ", s.n, ": ", s.title), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, color: "var(--a)", fontWeight: 600, margin: 0 } }, "F\xFCr ", age, "-J\xE4hrige angepasst"))), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)", margin: 0, lineHeight: 1.5, fontStyle: "italic" } }, s.hint), !s.unlocked && /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, color: "var(--a)", margin: "6px 0 0", fontWeight: 600 } }, "\u{1F512} Erstelle die Schatzsuche um alle Stationen zu sehen")), /* @__PURE__ */ React.createElement("div", { style: { background: "var(--al)", borderRadius: 8, padding: "10px 12px", marginBottom: 12, display: "flex", alignItems: "center", gap: 8 } }, /* @__PURE__ */ React.createElement("span", { style: { fontSize: 14 } }, "\u{1F4CB}"), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--d)", margin: 0, lineHeight: 1.4 } }, /* @__PURE__ */ React.createElement("strong", null, "Passt in deinen Zeitplan: "), "Ersetzt einen Spieleslot \u2014 gleiche Dauer, fertige R\xE4tsel.")), /* @__PURE__ */ React.createElement("button", { onClick: () => {
-    onSwitchSZ && onSwitchSZ();
-    typeof mlTrack === "function" && mlTrack("cta_schatzsuche_plan", { motto: motto?.id });
+function SchnitzeljagdBlock({ age, ag, szActive, setSzActive, szThemeId, setSzThemeId, szTheme, childName, setChildName, mapItems, setMapItems, activeEmoji, setActiveEmoji }) {
+  const stations = szTheme ? szTheme.stations[ag] || szTheme.stations.mittel : [];
+  const materials = szTheme ? szTheme.material[ag] || szTheme.material.mittel : [];
+  const totalDauer = stations.reduce((s, st) => s + st.dauer, 0);
+  const nameGen = childName ? childName.endsWith("s") ? childName + "'" : childName + "s" : "";
+  const introText = szTheme ? (szTheme.intro[ag] || szTheme.intro.mittel).replace(/\{name\},?\s*/g, childName ? childName + ", " : "") : "";
+  const shopItems = szThemeId ? SZ_SHOP_ITEMS[szThemeId] || [] : [];
+  function printKomplettpaket() {
+    if (!szTheme) return;
+    window.plausible && plausible("sz-komplettpaket-gedruckt", { props: { thema: szThemeId } });
+    const w = window.open("", "", "width=900,height=700");
+    w.document.write(`<html><head><title>Komplettpaket ${szTheme.name}</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=DM+Sans:opsz,wght@9..40,400;9..40,700;9..40,800&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',system-ui,sans-serif;color:#2D2319;background:#FFF}.page{page-break-after:always;padding:32px;min-height:100vh}.page:last-child{page-break-after:auto}h1{font-size:22px;font-weight:900;margin-bottom:8px}h2{font-size:16px;font-weight:800;color:${szTheme.color};margin:20px 0 10px;border-bottom:2px solid ${szTheme.color}30;padding-bottom:4px}.station{margin-bottom:14px;padding:12px;background:#FAFAF5;border-radius:10px;border:1px solid #EDE6DE}.station-name{font-weight:800;font-size:14px;margin-bottom:4px}.station-desc{font-size:13px;line-height:1.5;color:#5D4037}.hint{font-size:12px;color:#795548;background:#FFF8E1;padding:6px 10px;border-radius:6px;margin-top:6px;border:1px solid #FFE082}.check{display:inline-block;width:14px;height:14px;border:2px solid #A89888;border-radius:3px;margin-right:8px;vertical-align:middle}.hinweis-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.hinweis-card{border:2px dashed ${szTheme.color}80;border-radius:12px;padding:14px;text-align:center;min-height:140px;display:flex;flex-direction:column;justify-content:center}.cert{text-align:center;padding:48px;border:4px double ${szTheme.color};border-radius:16px;position:relative;max-width:600px;margin:0 auto}.cert::before{content:'';position:absolute;inset:8px;border:1px solid ${szTheme.color}40;border-radius:10px}@media print{.page{padding:24px;min-height:auto}}</style></head><body>
+${mapItems.length > 0 ? `<div class="page" style="display:flex;flex-direction:column;align-items:center;justify-content:center"><div style="position:relative;width:100%;max-width:700px;aspect-ratio:4/3;background:linear-gradient(145deg,#F5E6C8 0%,#E8D5A8 30%,#DCCB96 60%,#F0E0B8 100%);border:2px solid ${szTheme.color}40;border-radius:16px;overflow:hidden"><div style="position:absolute;top:16px;left:0;right:0;text-align:center;z-index:2;font-family:'Caveat',cursive;font-size:26px;font-weight:700;color:#8B7750">${szTheme.emoji} ${nameGen ? nameGen + " " : ""}${szTheme.name}</div>${mapItems.map((item) => `<span style="position:absolute;left:${item.x}%;top:${item.y}%;font-size:28px;transform:translate(-50%,-50%);z-index:5">${item.emoji}</span>`).join("")}<div style="position:absolute;bottom:12px;right:16px;font-size:11px;color:#A0926C;font-weight:700">N \u2191</div><div style="position:absolute;bottom:10px;left:16px;font-size:9px;color:#A0926C">machsleicht.de</div></div></div>` : ""}
+<div class="page"><h1>${szTheme.emoji} ${nameGen ? nameGen + " " : ""}${szTheme.name}</h1><p style="font-size:13px;color:#6B5D52;margin-bottom:12px">${stations.length} Stationen \xB7 ${ageLabel[ag]} \xB7 ca. ${totalDauer} Min.</p><p style="font-size:14px;color:#5D4037;line-height:1.6;font-style:italic;margin-bottom:16px;padding:12px;background:#FAFAF5;border-radius:8px">\u201E${introText}"</p>${stations.map((s, i) => `<div class="station"><div class="station-name">${i === stations.length - 1 ? "\u{1F381}" : i + 1 + "."} ${s.name}</div><div class="station-desc">${s.desc}</div><div class="hint">\u{1F4A1} ${s.hint}</div></div>`).join("")}</div>
+<div class="page"><h1>\u2702\uFE0F Hinweis-Zettel zum Ausschneiden</h1><p style="font-size:13px;color:#6B5D52;margin-bottom:16px">Ausschneiden und an den Stationen verstecken.</p><div class="hinweis-grid">${stations.map((s, i) => `<div class="hinweis-card"><div style="font-size:28px;margin-bottom:4px">${i === stations.length - 1 ? "\u{1F381}" : "Station " + (i + 1)}</div><div style="font-size:13px;font-weight:700;margin-bottom:6px">${s.name}</div><div style="font-size:16px;color:#5D4037;font-family:'Caveat',cursive">${i < stations.length - 1 ? "\u2192 Weiter zu: " + stations[i + 1].name : "\u{1F389} Geschafft! Hier ist der Schatz!"}</div></div>`).join("")}</div></div>
+<div class="page"><h1>\u{1F4CB} Material-Checkliste</h1><h2>Pro Station</h2><ul style="list-style:none;columns:2">${materials.map((m) => `<li style="font-size:13px;line-height:2"><span class="check"></span>${m}</li>`).join("")}</ul><h2>Schatz-Ideen</h2><ul style="list-style:none;columns:2">${szTheme.schatz.map((s) => `<li style="font-size:13px;line-height:2"><span class="check"></span>${s}</li>`).join("")}</ul></div>
+<div class="page" style="display:flex;justify-content:center;align-items:center"><div class="cert"><div style="font-size:56px;margin-bottom:12px">${szTheme.emoji}</div><div style="font-size:28px;font-weight:900;margin-bottom:6px">Urkunde</div><div style="font-size:18px;color:#6B5D52;margin-bottom:24px">${szTheme.name}</div><div style="font-size:32px;font-weight:900;color:${szTheme.color};padding:8px 0;border-bottom:2px solid ${szTheme.color}40;margin-bottom:16px">_______________</div><div style="font-size:15px;color:#6B5D52;line-height:1.6;margin:16px 0">hat die gro\xDFe ${szTheme.name} erfolgreich bestanden!<br>Alle ${stations.length} Stationen gemeistert.</div><div style="display:flex;justify-content:space-between;margin-top:32px;font-size:13px;color:#A89888"><div style="border-top:1px solid #CCC;padding-top:4px;min-width:140px;text-align:center">Datum</div><div style="border-top:1px solid #CCC;padding-top:4px;min-width:140px;text-align:center">Unterschrift</div></div><div style="font-size:10px;color:#A89888;margin-top:16px">machsleicht.de</div></div></div>
+</body></html>`);
+    w.document.close();
+    setTimeout(() => w.print(), 400);
+  }
+  if (!szActive) return /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("button", { onClick: () => {
+    setSzActive(true);
+    window.plausible && plausible("sz-activated");
   }, style: {
-    display: "block",
     width: "100%",
-    background: "var(--a)",
-    color: "#fff",
-    padding: 14,
-    borderRadius: 99,
-    fontWeight: 700,
-    fontSize: 14,
-    textAlign: "center",
-    border: "none",
+    background: "linear-gradient(135deg,#fef8f0,#fff8e8)",
+    borderRadius: 20,
+    padding: "24px 20px",
+    border: "1px solid #f0ede8",
+    display: "flex",
+    alignItems: "center",
+    gap: 16,
     cursor: "pointer",
-    boxSizing: "border-box"
-  } }, motto.name, "-Schatzsuche f\xFCr ", guests, " Kinder \u2192"), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, color: "var(--m)", margin: "8px 0 0", textAlign: "center" } }, "Kostenlos \xB7 5 Stationen \xB7 Druckfertig in 5 Min."))));
-}
-function Connector() {
-  return /* @__PURE__ */ React.createElement("div", { style: { textAlign: "center", padding: "0 0 4px" } }, /* @__PURE__ */ React.createElement("div", { style: { width: 1, height: 20, background: "var(--l)", margin: "0 auto" } }), /* @__PURE__ */ React.createElement("p", { style: { margin: "4px 0", fontWeight: 600, color: "var(--a)", fontSize: 12 } }, "\u2193 Schatzsuche vorbereiten \u2193"), /* @__PURE__ */ React.createElement("div", { style: { width: 1, height: 20, background: "var(--l)", margin: "0 auto" } }));
+    textAlign: "left"
+  } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 40, flexShrink: 0 } }, "\u{1F5FA}\uFE0F"), /* @__PURE__ */ React.createElement("div", { style: { flex: 1 } }, /* @__PURE__ */ React.createElement("div", { style: { fontFamily: "var(--fd)", fontWeight: 800, fontSize: 17, color: "var(--d)", marginBottom: 4 } }, "+ Schnitzeljagd hinzuf\xFCgen"), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, color: "var(--m)", lineHeight: 1.5 } }, "Stationen, R\xE4tsel, Schatzkarte, Hinweis-Zettel \u2014 druckfertig in 5 Min.")), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 20, color: "var(--a)", flexShrink: 0 } }, "+")));
+  return /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { borderRadius: 20, border: `2px solid ${szTheme ? szTheme.color + "40" : "var(--a)"}`, overflow: "hidden" } }, /* @__PURE__ */ React.createElement("div", { style: { background: "linear-gradient(135deg,#e8d5b7,#d4bc94)", padding: "16px 18px", display: "flex", justifyContent: "space-between", alignItems: "center" } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 17, fontWeight: 900, color: "var(--d)", margin: "0 0 2px" } }, "\u{1F5FA}\uFE0F Schnitzeljagd ", szTheme ? `\xB7 ${szTheme.name}` : ""), szTheme && /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--d)", opacity: 0.6, margin: 0 } }, stations.length, " Stationen \xB7 ", ageLabel[ag], " \xB7 ", totalDauer, " Min.")), /* @__PURE__ */ React.createElement("button", { onClick: () => setSzActive(false), style: { background: "rgba(255,255,255,0.5)", border: "none", borderRadius: 8, padding: "4px 10px", fontSize: 11, fontWeight: 700, cursor: "pointer", color: "var(--d)" } }, "\u2715")), /* @__PURE__ */ React.createElement("div", { style: { padding: "16px 18px", background: "var(--bg)" } }, /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 16 } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, fontWeight: 700, color: "var(--m)", marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.06em" } }, "Thema w\xE4hlen"), /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(90px, 1fr))", gap: 6 } }, SZ_THEMES.map((t) => /* @__PURE__ */ React.createElement("button", { key: t.id, onClick: () => setSzThemeId(t.id), style: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: 4,
+    padding: "12px 6px 10px",
+    background: szThemeId === t.id ? t.color + "12" : "#fff",
+    border: `2px solid ${szThemeId === t.id ? t.color : "#eee"}`,
+    borderRadius: 12,
+    cursor: "pointer",
+    transition: "all 0.2s"
+  } }, /* @__PURE__ */ React.createElement("span", { style: { fontSize: 24 } }, t.emoji), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 10, fontWeight: 600, color: szThemeId === t.id ? t.color : "#666" } }, SZ_LABELS[t.id] || t.name))))), /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 16 } }, /* @__PURE__ */ React.createElement(
+    "input",
+    {
+      type: "text",
+      value: childName,
+      onChange: (e) => setChildName(e.target.value),
+      placeholder: "Name des Kindes (optional)",
+      style: {
+        width: "100%",
+        padding: "10px 14px",
+        borderRadius: 10,
+        border: "1px solid var(--l)",
+        fontSize: 13,
+        fontFamily: "var(--f)",
+        outline: "none",
+        background: "#fff",
+        boxSizing: "border-box"
+      }
+    }
+  )), szTheme && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", { style: { background: `${szTheme.color}08`, borderRadius: 12, padding: "14px 16px", marginBottom: 16, borderLeft: `3px solid ${szTheme.color}` } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 13, color: "var(--d)", lineHeight: 1.6, margin: 0, fontStyle: "italic" } }, "\u201E", introText, '"'), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 10, color: "var(--m)", marginTop: 6, fontWeight: 600 } }, "\u{1F4A1} Vorlesen, bevor es losgeht")), /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 16 } }, stations.map((st, i) => {
+    const isLast = i === stations.length - 1;
+    return /* @__PURE__ */ React.createElement("details", { key: i, open: i === 0, style: { marginBottom: 6 } }, /* @__PURE__ */ React.createElement("summary", { style: { display: "flex", alignItems: "center", gap: 8, cursor: "pointer", padding: "6px 0", fontSize: 13 } }, /* @__PURE__ */ React.createElement("span", { style: { width: 22, height: 22, borderRadius: "50%", background: isLast ? "var(--a)" : szTheme.color, color: "#fff", fontSize: 9, fontWeight: 800, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 } }, isLast ? "\u{1F381}" : i + 1), /* @__PURE__ */ React.createElement("span", { style: { fontWeight: 700, flex: 1 } }, st.name), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 11, color: "var(--m)" } }, st.dauer, "\u2032")), /* @__PURE__ */ React.createElement("div", { style: { paddingLeft: 30, paddingBottom: 6 } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)", lineHeight: 1.5, margin: "4px 0 6px" } }, st.desc), st.hint && /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, color: "#795548", background: "#FFF8E1", padding: "6px 10px", borderRadius: 6, border: "1px solid #FFE082" } }, "\u{1F4A1} ", st.hint)));
+  })), /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 16 } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, fontWeight: 700, color: "var(--m)", marginBottom: 6 } }, "\u{1F5FA}\uFE0F Schatzkarte"), /* @__PURE__ */ React.createElement("div", { className: "no-print", style: { display: "flex", gap: 3, flexWrap: "wrap", marginBottom: 6 } }, (szTheme.emoji === "\u{1F3F4}\u200D\u2620\uFE0F" ? ["\u{1F3F4}\u200D\u2620\uFE0F", "\u{1F480}", "\u2693", "\u{1F5DD}\uFE0F", "\u{1F48E}", "\u{1F99C}", "\u{1F9ED}", "\u{1F4B0}", "\u{1F3DD}\uFE0F"] : szTheme.emoji === "\u{1F981}" ? ["\u{1F981}", "\u{1F412}", "\u{1F98E}", "\u{1F40A}", "\u{1F334}", "\u{1F33A}", "\u{1F98B}", "\u{1F40D}", "\u{1F33F}"] : szTheme.emoji === "\u{1F680}" ? ["\u{1F680}", "\u2B50", "\u{1F319}", "\u{1F6F8}", "\u{1F47D}", "\u2604\uFE0F", "\u{1F52D}", "\u{1F6F0}\uFE0F", "\u{1F30C}"] : szTheme.emoji === "\u{1F50D}" ? ["\u{1F50D}", "\u{1F575}\uFE0F", "\u{1F4CB}", "\u{1F5DD}\uFE0F", "\u{1F4A1}", "\u{1F526}", "\u{1F463}", "\u{1F4CD}", "\u{1F510}"] : szTheme.emoji === "\u{1F995}" ? ["\u{1F995}", "\u{1F996}", "\u{1F30B}", "\u{1F9B4}", "\u{1FAA8}", "\u{1F33F}", "\u{1F95A}", "\u{1F525}", "\u{1F48E}"] : ["\u{1F9DA}", "\u2728", "\u{1F338}", "\u{1F98B}", "\u{1F308}", "\u{1F344}", "\u{1F4AB}", "\u{1FA84}", "\u{1F451}"]).concat(["\u{1F4CD}", "\u{1F6A9}", "\u2460", "\u2461", "\u2462", "\u2463", "\u2464", "\u{1F381}"]).map((emoji, i) => /* @__PURE__ */ React.createElement("button", { key: i, onClick: () => setActiveEmoji(activeEmoji === emoji ? null : emoji), style: {
+    width: 32,
+    height: 32,
+    borderRadius: 6,
+    fontSize: 16,
+    cursor: "pointer",
+    border: activeEmoji === emoji ? "2px solid var(--a)" : "1px solid var(--l)",
+    background: activeEmoji === emoji ? "var(--al)" : "#fff",
+    transform: activeEmoji === emoji ? "scale(1.15)" : "scale(1)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    transition: "all 0.15s"
+  } }, emoji))), /* @__PURE__ */ React.createElement("div", { onClick: (e) => {
+    if (!activeEmoji) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = parseFloat(((e.clientX - rect.left) / rect.width * 100).toFixed(1));
+    const y = parseFloat(((e.clientY - rect.top) / rect.height * 100).toFixed(1));
+    if (y < 12) return;
+    setMapItems((prev) => [...prev, { emoji: activeEmoji, x, y }]);
+  }, style: {
+    position: "relative",
+    width: "100%",
+    aspectRatio: "4/3",
+    borderRadius: 12,
+    overflow: "hidden",
+    background: "linear-gradient(145deg,#F5E6C8 0%,#E8D5A8 30%,#DCCB96 60%,#F0E0B8 100%)",
+    border: `1px solid ${szTheme.color}30`,
+    cursor: activeEmoji ? "crosshair" : "default",
+    boxShadow: activeEmoji ? `inset 0 0 0 2px ${szTheme.color}30` : "none"
+  } }, /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", top: 8, left: 0, right: 0, textAlign: "center", zIndex: 2, pointerEvents: "none" } }, /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "'Caveat',cursive", fontSize: 18, fontWeight: 700, color: "#8B7750" } }, szTheme.emoji, " ", nameGen ? nameGen + " " : "", szTheme.name)), mapItems.map((item, i) => /* @__PURE__ */ React.createElement("span", { key: i, onClick: (e) => {
+    e.stopPropagation();
+    setMapItems((prev) => prev.filter((_, j) => j !== i));
+  }, style: {
+    position: "absolute",
+    left: item.x + "%",
+    top: item.y + "%",
+    fontSize: 22,
+    cursor: "pointer",
+    transform: "translate(-50%,-50%)",
+    userSelect: "none",
+    zIndex: 5,
+    filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.3))"
+  } }, item.emoji)), /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", bottom: 6, right: 8, fontSize: 9, color: "#A0926C", fontWeight: 700, pointerEvents: "none" } }, "N \u2191"), /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", bottom: 4, left: 8, fontSize: 8, color: "#A0926C", pointerEvents: "none" } }, "machsleicht.de")), mapItems.length > 0 && /* @__PURE__ */ React.createElement("div", { className: "no-print", style: { display: "flex", gap: 6, marginTop: 6 } }, /* @__PURE__ */ React.createElement("button", { onClick: () => setMapItems((prev) => prev.slice(0, -1)), style: { flex: 1, padding: 6, fontSize: 11, fontWeight: 600, border: "1px solid var(--l)", borderRadius: 8, background: "var(--bg)", color: "var(--m)", cursor: "pointer" } }, "\u21A9\uFE0F R\xFCckg\xE4ngig"), /* @__PURE__ */ React.createElement("button", { onClick: () => setMapItems([]), style: { flex: 1, padding: 6, fontSize: 11, fontWeight: 600, border: "1px solid var(--l)", borderRadius: 8, background: "var(--bg)", color: "#C62828", cursor: "pointer" } }, "\u{1F5D1}\uFE0F L\xF6schen"))), /* @__PURE__ */ React.createElement("details", { style: { marginBottom: 16 } }, /* @__PURE__ */ React.createElement("summary", { style: { fontSize: 13, fontWeight: 700, color: "var(--a)", cursor: "pointer", padding: "6px 0" } }, "\u{1F4E6} Material-Checkliste (", materials.length, " Posten)"), /* @__PURE__ */ React.createElement("div", { style: { paddingTop: 8, display: "flex", flexDirection: "column", gap: 4 } }, materials.map((mat, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", alignItems: "center", gap: 8, padding: "6px 10px", background: "#fff", borderRadius: 8, border: "1px solid var(--l)", fontSize: 12 } }, /* @__PURE__ */ React.createElement("input", { type: "checkbox", style: { width: 14, height: 14, accentColor: "var(--g)" } }), /* @__PURE__ */ React.createElement("span", null, mat))), szTheme.schatz.map((s, i) => /* @__PURE__ */ React.createElement("div", { key: "s" + i, style: { display: "flex", alignItems: "center", gap: 8, padding: "6px 10px", background: "#fff", borderRadius: 8, border: "1px solid var(--l)", fontSize: 12 } }, /* @__PURE__ */ React.createElement("span", null, "\u{1F381}"), /* @__PURE__ */ React.createElement("span", { style: { flex: 1 } }, s), SZ_SCHATZ_LINKS[s] && /* @__PURE__ */ React.createElement("a", { href: SZ_SCHATZ_LINKS[s], target: "_blank", rel: "noopener", style: { fontSize: 10, fontWeight: 700, color: "#FF9900", textDecoration: "none", padding: "2px 6px", borderRadius: 4, background: "#FFF3E0" } }, "Amazon \u2197"))))), /* @__PURE__ */ React.createElement("button", { onClick: printKomplettpaket, className: "no-print", style: {
+    width: "100%",
+    padding: "12px 20px",
+    background: szTheme.color,
+    color: "#fff",
+    border: "none",
+    borderRadius: 12,
+    fontSize: 14,
+    fontWeight: 700,
+    cursor: "pointer",
+    boxShadow: `0 2px 12px ${szTheme.color}30`
+  } }, "\u{1F5A8}\uFE0F Schnitzeljagd-Paket drucken"), /* @__PURE__ */ React.createElement("p", { className: "no-print", style: { fontSize: 10, color: "var(--m)", marginTop: 4, textAlign: "center" } }, "Schatzkarte \xB7 Stationen \xB7 Hinweis-Zettel \xB7 Material \xB7 Urkunde")), !szTheme && /* @__PURE__ */ React.createElement("p", { style: { fontSize: 13, color: "var(--m)", textAlign: "center", padding: "8px 0" } }, "W\xE4hle oben ein Thema um loszulegen."))));
 }
 function Zeitplan({ timeline, mottoColor, quietMode, setQuietMode, ageGroupLabel }) {
   return /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14, flexWrap: "wrap", gap: 8 } }, /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: 0 } }, "\u{1F3AF} Zeitplan ", /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13, fontWeight: 500, color: "var(--m)" } }, "(", ageGroupLabel, ")")), /* @__PURE__ */ React.createElement("button", { onClick: () => setQuietMode(!quietMode), style: {
@@ -2763,7 +2840,7 @@ function App() {
   const [activeStation, setActiveStation] = useState(0);
   const [inviteSent, setInviteSent] = useState(0);
   const [previewName, setPreviewName] = useState("");
-  const [planMode, setPlanMode] = useState(() => loadState("planMode", "geburtstag"));
+  const [szActive, setSzActive] = useState(() => loadState("szActive", false));
   const [szThemeId, setSzThemeId] = useState(() => loadState("szThemeId", null));
   const [childName, setChildName] = useState(() => loadState("childName", ""));
   const [mapItems, setMapItems] = useState(() => loadState("mapItems", []));
@@ -2775,7 +2852,6 @@ function App() {
   const effectiveLoc = locOverride || loc;
   const filteredLicense = LICENSE.filter((m) => !m.ages || m.ages.includes(age));
   const szTheme = SZ_THEMES.find((t) => t.id === szThemeId);
-  const isSZ = planMode === "schatzsuche";
   useEffect(() => saveState("age", age), [age]);
   useEffect(() => saveState("mottoId", mottoId), [mottoId]);
   useEffect(() => saveState("guests", guests), [guests]);
@@ -2784,7 +2860,7 @@ function App() {
   useEffect(() => saveState("dauer", duration), [duration]);
   useEffect(() => saveState("owned", owned), [owned]);
   useEffect(() => saveState("shoppingMode", shoppingMode), [shoppingMode]);
-  useEffect(() => saveState("planMode", planMode), [planMode]);
+  useEffect(() => saveState("szActive", szActive), [szActive]);
   useEffect(() => saveState("szThemeId", szThemeId), [szThemeId]);
   useEffect(() => saveState("childName", childName), [childName]);
   useEffect(() => saveState("mapItems", mapItems), [mapItems]);
@@ -2807,19 +2883,19 @@ function App() {
       if (v >= 1 && v <= 20) setGuests(v);
     }
     const modus = p.get("modus");
-    if (modus === "schatzsuche") setPlanMode("schatzsuche");
+    if (modus === "schatzsuche") setSzActive(true);
     const thema = p.get("thema");
     if (thema && SZ_THEMES.find((t) => t.id === thema)) setSzThemeId(thema);
   }, []);
   useEffect(() => {
-    if (mottoId || szThemeId) {
+    if (mottoId) {
       setShowConfetti(true);
       const t = setTimeout(() => setShowConfetti(false), 1200);
       return () => clearTimeout(t);
     }
-  }, [mottoId, szThemeId]);
+  }, [mottoId]);
   useEffect(() => {
-    if (view === "plan" && window.plausible) plausible("plan-created", { props: { motto: mottoId, alter: age, gaeste: guests, modus: planMode, thema: szThemeId } });
+    if (view === "plan" && window.plausible) plausible("plan-created", { props: { motto: mottoId, alter: age, gaeste: guests, szActive, thema: szThemeId } });
   }, [mottoId, view]);
   const quietGames = {
     klein: [
@@ -2934,14 +3010,10 @@ function App() {
       ]
     };
   }
-  function switchToSZ() {
-    setPlanMode("schatzsuche");
-    setView("config");
-    window.scrollTo(0, 0);
-  }
   function reset() {
     setView("config");
     setMottoId(null);
+    setSzActive(false);
     setSzThemeId(null);
     setChildName("");
     setMapItems([]);
@@ -2953,14 +3025,7 @@ function App() {
     setEmergencyMode(false);
   }
   function startPlan() {
-    if (isSZ && szThemeId) {
-      setView("peak");
-      window.scrollTo(0, 0);
-      setTimeout(() => {
-        setView("plan");
-        window.scrollTo(0, 0);
-      }, 2200);
-    } else if (mottoId) {
+    if (mottoId) {
       setView("peak");
       window.scrollTo(0, 0);
       setTimeout(() => {
@@ -2970,7 +3035,6 @@ function App() {
     }
   }
   function emergencyStart() {
-    setPlanMode("geburtstag");
     if (!mottoId) setMottoId("safari");
     setEffort("minimal");
     setDuration(2);
@@ -2978,7 +3042,6 @@ function App() {
     window.scrollTo(0, 0);
   }
   function emergencyFull() {
-    setPlanMode("geburtstag");
     setEmergencyMode(true);
     setShoppingMode("minimal");
     setDuration(2);
@@ -3009,294 +3072,10 @@ function App() {
     "harry-potter": "Der Hogwarts-Brief ist da! Zauberst\xE4be, Zaubertr\xE4nke und magische Pr\xFCfungen warten.",
     ninjago: "Die Ninja-Ausbildung beginnt! Geschicklichkeit, Weisheit und Spinjitzu \u2014 wer wird Meister?"
   };
-  if (view === "peak" && isSZ && szTheme) return /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 660, margin: "0 auto", padding: "0 16px", display: "flex", alignItems: "center", justifyContent: "center", minHeight: "80vh" } }, /* @__PURE__ */ React.createElement("div", { className: "sp", style: { textAlign: "center", padding: "40px 20px" } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 72, marginBottom: 16, animation: "scalePop .6s ease both" } }, szTheme.emoji), /* @__PURE__ */ React.createElement("h1", { style: { fontFamily: "var(--fd)", fontSize: "clamp(24px,5vw,32px)", fontWeight: 900, marginBottom: 12, color: "var(--d)" } }, childName ? `${childName.endsWith("s") ? childName + "'" : childName + "s"} ` : "", /* @__PURE__ */ React.createElement("span", { style: { color: szTheme.color } }, szTheme.name), "!"), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 16, color: "var(--m)", lineHeight: 1.6, maxWidth: 400, margin: "0 auto 24px" } }, (szTheme.intro[ag] || szTheme.intro.mittel).replace(/\{name\},?\s*/g, childName ? childName + ", " : "")), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 13, color: "var(--m)", animation: "pulse 1.5s ease infinite" } }, "Schatzsuche wird vorbereitet..."), /* @__PURE__ */ React.createElement("button", { onClick: () => {
-    setView("plan");
-    window.scrollTo(0, 0);
-  }, style: { marginTop: 16, background: "none", border: "none", fontSize: 12, color: "var(--m)", cursor: "pointer", textDecoration: "underline" } }, "Direkt zum Plan \u2192")));
   if (view === "peak" && motto) return /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 660, margin: "0 auto", padding: "0 16px", display: "flex", alignItems: "center", justifyContent: "center", minHeight: "80vh" } }, /* @__PURE__ */ React.createElement("div", { className: "sp", style: { textAlign: "center", padding: "40px 20px" } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 72, marginBottom: 16, animation: "scalePop .6s ease both" } }, motto.emoji), /* @__PURE__ */ React.createElement("h1", { style: { fontFamily: "var(--fd)", fontSize: "clamp(24px,5vw,32px)", fontWeight: 900, marginBottom: 12, color: "var(--d)" } }, "Deine ", /* @__PURE__ */ React.createElement("span", { style: { color: motto.color } }, motto.name), "-Party!"), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 16, color: "var(--m)", lineHeight: 1.6, maxWidth: 400, margin: "0 auto 24px" } }, mottoDescs[mottoId] || "Das wird ein unvergesslicher Tag!"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "center", gap: 20, flexWrap: "wrap", marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { background: "var(--bg)", borderRadius: 12, padding: "12px 16px", border: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 11, color: "var(--m)" } }, guests, " Kinder"), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, color: "var(--a)" } }, duration, " Std. Spa\xDF")), /* @__PURE__ */ React.createElement("div", { style: { background: "var(--bg)", borderRadius: 12, padding: "12px 16px", border: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 11, color: "var(--m)" } }, "Altersgerechte Spiele"), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, color: "var(--a)" } }, ageLabel[ag]))), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 13, color: "var(--m)", animation: "pulse 1.5s ease infinite" } }, "Plan wird erstellt..."), /* @__PURE__ */ React.createElement("button", { onClick: () => {
     setView("plan");
     window.scrollTo(0, 0);
   }, style: { marginTop: 16, background: "none", border: "none", fontSize: 12, color: "var(--m)", cursor: "pointer", textDecoration: "underline" } }, "Direkt zum Plan \u2192")));
-  if (view === "plan" && isSZ && szTheme) {
-    let printKomplettpaket2 = function() {
-      window.plausible && plausible("sz-komplettpaket-gedruckt", { props: { thema: szThemeId } });
-      const w = window.open("", "", "width=900,height=700");
-      w.document.write(`<html><head><title>Komplettpaket ${szTheme.name} \u2014 machsleicht.de</title>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=DM+Sans:opsz,wght@9..40,400;9..40,700;9..40,800&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'DM Sans',system-ui,sans-serif;color:#2D2319;background:#FFF}
-.page{page-break-after:always;padding:32px;min-height:100vh}
-.page:last-child{page-break-after:auto}
-h1{font-size:22px;font-weight:900;margin-bottom:8px}
-h2{font-size:16px;font-weight:800;color:${szTheme.color};margin:20px 0 10px;border-bottom:2px solid ${szTheme.color}30;padding-bottom:4px}
-.station{margin-bottom:14px;padding:12px;background:#FAFAF5;border-radius:10px;border:1px solid #EDE6DE}
-.station-name{font-weight:800;font-size:14px;margin-bottom:4px}
-.station-desc{font-size:13px;line-height:1.5;color:#5D4037}
-.station-meta{font-size:11px;color:#A89888;margin-top:4px}
-.hint{font-size:12px;color:#795548;background:#FFF8E1;padding:6px 10px;border-radius:6px;margin-top:6px;border:1px solid #FFE082}
-.check{display:inline-block;width:14px;height:14px;border:2px solid #A89888;border-radius:3px;margin-right:8px;vertical-align:middle}
-.hinweis-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.hinweis-card{border:2px dashed ${szTheme.color}80;border-radius:12px;padding:14px;text-align:center;min-height:140px;display:flex;flex-direction:column;justify-content:center}
-.hinweis-card .num{font-size:28px;margin-bottom:4px}
-.hinweis-card .name{font-size:13px;font-weight:700;margin-bottom:6px}
-.hinweis-card .hint-text{font-size:16px;color:#5D4037;line-height:1.4;font-family:'Caveat',cursive}
-.cert{text-align:center;padding:48px;border:4px double ${szTheme.color};border-radius:16px;position:relative;max-width:600px;margin:0 auto}
-.cert::before{content:'';position:absolute;inset:8px;border:1px solid ${szTheme.color}40;border-radius:10px}
-.brand{font-size:10px;color:#A89888;text-align:center;margin-top:12px}
-@media print{.page{padding:24px;min-height:auto}}
-</style></head><body>
-
-<!-- Seite 1: Schatzkarte -->
-${mapItems.length > 0 ? `<div class="page" style="display:flex;flex-direction:column;align-items:center;justify-content:center">
-<div style="position:relative;width:100%;max-width:700px;aspect-ratio:4/3;background:linear-gradient(145deg,#F5E6C8 0%,#E8D5A8 30%,#DCCB96 60%,#F0E0B8 100%);border:2px solid ${szTheme.color}40;border-radius:16px;overflow:hidden">
-<div style="position:absolute;top:16px;left:0;right:0;text-align:center;z-index:2;font-family:'Caveat',cursive;font-size:26px;font-weight:700;color:#8B7750">
-${szTheme.emoji} ${childName ? nameGen + " " : ""}${szTheme.name}
-</div>
-${mapItems.map((item) => `<span style="position:absolute;left:${item.x}%;top:${item.y}%;font-size:28px;transform:translate(-50%,-50%);z-index:5;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.3))">${item.emoji}</span>`).join("")}
-<div style="position:absolute;bottom:12px;right:16px;font-size:11px;color:#A0926C;font-weight:700">N \u2191</div>
-<div style="position:absolute;bottom:10px;left:16px;font-size:9px;color:#A0926C">machsleicht.de</div>
-</div>
-</div>` : ""}
-
-<!-- Seite 2: Stationen-\xDCbersicht -->
-<div class="page">
-<h1>${szTheme.emoji} ${childName ? nameGen + " " : ""}${szTheme.name}</h1>
-<p style="font-size:13px;color:#6B5D52;margin-bottom:12px">${stations.length} Stationen \xB7 ${ageLabel[ag]} \xB7 ca. ${totalDauer} Min.</p>
-<p style="font-size:14px;color:#5D4037;line-height:1.6;font-style:italic;margin-bottom:16px;padding:12px;background:#FAFAF5;border-radius:8px">\u201E${introText}"</p>
-${stations.map((s, i) => `<div class="station">
-<div class="station-name">${i === stations.length - 1 ? "\u{1F381}" : i + 1 + "."} ${s.name}</div>
-<div class="station-desc">${s.desc}</div>
-<div class="station-meta">${s.dauer} Min. \xB7 ${SZ_TYP_LABEL[s.typ] || s.typ}</div>
-<div class="hint">\u{1F4A1} ${s.hint}</div>
-</div>`).join("")}
-</div>
-
-<!-- Seite 3: Hinweis-Zettel -->
-<div class="page">
-<h1>\u2702\uFE0F Hinweis-Zettel zum Ausschneiden</h1>
-<p style="font-size:13px;color:#6B5D52;margin-bottom:16px">Ausschneiden und an den Stationen verstecken. Jeder Zettel f\xFChrt zur n\xE4chsten Station.</p>
-<div class="hinweis-grid">
-${stations.map((s, i) => `<div class="hinweis-card">
-<div class="num">${i === stations.length - 1 ? "\u{1F381}" : "Station " + (i + 1)}</div>
-<div class="name">${s.name}</div>
-<div class="hint-text">${i < stations.length - 1 ? "\u2192 Weiter zu: " + stations[i + 1].name : "\u{1F389} Geschafft! Hier ist der Schatz!"}</div>
-</div>`).join("")}
-</div>
-</div>
-
-<!-- Seite 4: Material-Checkliste -->
-<div class="page">
-<h1>\u{1F4CB} Material-Checkliste</h1>
-<p style="font-size:13px;color:#6B5D52;margin-bottom:16px">${szTheme.name} \xB7 ${ageLabel[ag]}</p>
-<h2>Pro Station</h2>
-<ul style="list-style:none;columns:2;column-gap:24px">
-${materials.map((m) => `<li style="font-size:13px;line-height:2;break-inside:avoid"><span class="check"></span>${m}</li>`).join("")}
-</ul>
-<h2>Schatz-Ideen</h2>
-<ul style="list-style:none;columns:2;column-gap:24px">
-${szTheme.schatz.map((s) => `<li style="font-size:13px;line-height:2;break-inside:avoid"><span class="check"></span>${s}</li>`).join("")}
-</ul>
-<h2>Allgemein</h2>
-<ul style="list-style:none">
-<li style="font-size:13px;line-height:2"><span class="check"></span>Hinweis-Zettel (Seite 3) ausschneiden</li>
-<li style="font-size:13px;line-height:2"><span class="check"></span>Stationen vorbereiten & verstecken</li>
-<li style="font-size:13px;line-height:2"><span class="check"></span>Schatz/Mitgebsel bereitlegen</li>
-<li style="font-size:13px;line-height:2"><span class="check"></span>Handy f\xFCr Fotos/Timer bereit</li>
-</ul>
-</div>
-
-<!-- Seite 5: Urkunde -->
-<div class="page" style="display:flex;justify-content:center;align-items:center">
-<div class="cert">
-<div style="font-size:56px;margin-bottom:12px">${szTheme.emoji}</div>
-<div style="font-size:28px;font-weight:900;margin-bottom:6px">Urkunde</div>
-<div style="font-size:18px;color:#6B5D52;margin-bottom:24px">${szTheme.name}</div>
-<div style="font-size:32px;font-weight:900;color:${szTheme.color};padding:8px 0;border-bottom:2px solid ${szTheme.color}40;margin-bottom:16px">_______________</div>
-<div style="font-size:15px;color:#6B5D52;line-height:1.6;margin:16px 0">hat die gro\xDFe ${szTheme.name}${childName ? " bei <strong>" + nameGen + "</strong> Geburtstag" : ""} erfolgreich bestanden!<br>Alle ${stations.length} Stationen gemeistert. ${totalDauer} Minuten Abenteuer \xFCberstanden.</div>
-<div style="display:flex;justify-content:space-between;margin-top:32px;font-size:13px;color:#A89888">
-<div style="border-top:1px solid #CCC;padding-top:4px;min-width:140px;text-align:center">Datum</div>
-<div style="border-top:1px solid #CCC;padding-top:4px;min-width:140px;text-align:center">Unterschrift</div>
-</div>
-<div class="brand">Erstellt mit machsleicht.de</div>
-</div>
-</div>
-
-</body></html>`);
-      w.document.close();
-      setTimeout(() => w.print(), 400);
-    };
-    var printKomplettpaket = printKomplettpaket2;
-    const stations = szTheme.stations[ag] || szTheme.stations.mittel;
-    const materials = szTheme.material[ag] || szTheme.material.mittel;
-    const totalDauer = stations.reduce((s, st) => s + st.dauer, 0);
-    const nameGen = childName ? childName.endsWith("s") ? childName + "'" : childName + "s" : "des Geburtstagskindes";
-    const introText = (szTheme.intro[ag] || szTheme.intro.mittel).replace(/\{name\},?\s*/g, childName ? childName + ", " : "");
-    const shopItems = SZ_SHOP_ITEMS[szThemeId] || [];
-    return /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 660, margin: "0 auto", padding: "0 16px 80px" } }, /* @__PURE__ */ React.createElement("header", { style: { display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 0 18px", position: "sticky", top: 0, background: "var(--w)", zIndex: 10, borderBottom: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("a", { href: "/", style: { textDecoration: "none" } }, /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--fd)", fontSize: 22, fontWeight: 900, color: "var(--d)" } }, "mach's"), /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--fd)", fontSize: 22, fontWeight: 900, color: "var(--a)" } }, "leicht")), /* @__PURE__ */ React.createElement("button", { onClick: reset, style: { background: "none", border: "1px solid var(--l)", borderRadius: "var(--rs)", padding: "6px 14px", fontSize: 12, color: "var(--m)", cursor: "pointer" } }, "\u2190 Neu")), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { textAlign: "center", padding: "20px 0 16px" } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 48, marginBottom: 8 } }, szTheme.emoji), /* @__PURE__ */ React.createElement("h1", { style: { fontFamily: "var(--fd)", fontSize: 26, fontWeight: 900, marginBottom: 4 } }, childName ? `${nameGen} ` : "", szTheme.name), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 14, color: "var(--m)" } }, stations.length, " Stationen \xB7 ", ageLabel[ag], " \xB7 ca. ", totalDauer, " Min.")), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { background: `linear-gradient(135deg, ${szTheme.color}12, ${szTheme.color}06)`, borderRadius: 16, padding: "20px 18px", border: `1px solid ${szTheme.color}25` } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 14, color: "var(--d)", lineHeight: 1.7, margin: 0, fontStyle: "italic" } }, "\u201E", introText, '"'), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, color: "var(--m)", marginTop: 8, fontWeight: 600 } }, "\u{1F4A1} Lies das den Kindern vor, bevor es losgeht."))), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 14px" } }, "\u{1F5FA}\uFE0F Stationen ", /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13, fontWeight: 500, color: "var(--m)" } }, "(", stations.length, " St\xFCck \xB7 ", totalDauer, " Min.)")), /* @__PURE__ */ React.createElement("div", { style: { paddingLeft: 20, position: "relative" } }, stations.map((st, i) => {
-      const isLast = i === stations.length - 1;
-      const typEmoji = SZ_TYP_EMOJI[st.typ] || "\u{1F4CD}";
-      const typLabel = SZ_TYP_LABEL[st.typ] || st.typ;
-      return /* @__PURE__ */ React.createElement("details", { key: i, open: i === 0, style: { position: "relative", paddingLeft: 24, paddingBottom: 4, marginBottom: 8 } }, /* @__PURE__ */ React.createElement("summary", { style: { display: "flex", alignItems: "center", gap: 10, cursor: "pointer", padding: "8px 0" } }, /* @__PURE__ */ React.createElement("div", { style: {
-        position: "absolute",
-        left: -3,
-        top: 10,
-        width: 16,
-        height: 16,
-        borderRadius: "50%",
-        background: isLast ? "var(--a)" : szTheme.color,
-        color: "#FFF",
-        fontSize: 8,
-        fontWeight: 800,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flexShrink: 0
-      } }, isLast ? "\u{1F381}" : i + 1), /* @__PURE__ */ React.createElement("div", { style: { flex: 1 } }, /* @__PURE__ */ React.createElement("span", { style: { fontSize: 12, fontWeight: 700, color: szTheme.color } }, typEmoji, " ", typLabel), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 14, fontWeight: 700, marginLeft: 8, color: "var(--d)" } }, st.name)), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 11, color: "var(--m)", whiteSpace: "nowrap", flexShrink: 0 } }, st.dauer, " Min.")), /* @__PURE__ */ React.createElement("div", { style: { padding: "4px 0 8px", borderLeft: `2px solid ${szTheme.color}20`, marginLeft: 5, paddingLeft: 16 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 13, color: "var(--m)", marginBottom: 8, lineHeight: 1.6 } }, st.desc), st.hint && /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, color: "#795548", background: "#FFF8E1", padding: "8px 12px", borderRadius: 8, border: "1px solid #FFE082", lineHeight: 1.5 } }, "\u{1F4A1} ", /* @__PURE__ */ React.createElement("strong", null, "Eltern-Tipp:"), " ", st.hint)));
-    }))), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 6px" } }, "\u{1F5FA}\uFE0F Schatzkarte gestalten"), /* @__PURE__ */ React.createElement("p", { className: "no-print", style: { fontSize: 12, color: "var(--m)", marginBottom: 12 } }, activeEmoji ? /* @__PURE__ */ React.createElement("span", { style: { color: "var(--a)", fontWeight: 700 } }, "\u2728 Tippe jetzt auf die Karte um ", activeEmoji, " zu platzieren \u2014 oder w\xE4hle ein anderes Emoji") : "W\xE4hle ein Emoji und tippe auf die Karte. Tippe auf ein platziertes Emoji zum Entfernen."), /* @__PURE__ */ React.createElement("div", { className: "no-print", style: { display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 8 } }, (szTheme.emoji === "\u{1F3F4}\u200D\u2620\uFE0F" ? ["\u{1F3F4}\u200D\u2620\uFE0F", "\u{1F480}", "\u2693", "\u{1F5DD}\uFE0F", "\u{1F48E}", "\u{1F99C}", "\u26F5", "\u{1F9ED}", "\u{1F4B0}", "\u{1F5E1}\uFE0F", "\u{1F3DD}\uFE0F"] : szTheme.emoji === "\u{1F981}" ? ["\u{1F981}", "\u{1F412}", "\u{1F98E}", "\u{1F99C}", "\u{1F40A}", "\u{1F334}", "\u{1F33A}", "\u{1F98B}", "\u{1F40D}", "\u{1F33F}"] : szTheme.emoji === "\u{1F680}" ? ["\u{1F680}", "\u2B50", "\u{1F319}", "\u{1F6F8}", "\u{1F47D}", "\u2604\uFE0F", "\u{1F31F}", "\u{1F52D}", "\u{1F6F0}\uFE0F", "\u{1F30C}"] : szTheme.emoji === "\u{1F50D}" ? ["\u{1F50D}", "\u{1F50E}", "\u{1F575}\uFE0F", "\u{1F4CB}", "\u{1F5DD}\uFE0F", "\u{1F4A1}", "\u{1F526}", "\u{1F463}", "\u{1F4CD}", "\u{1F510}"] : szTheme.emoji === "\u{1F995}" ? ["\u{1F995}", "\u{1F996}", "\u{1F30B}", "\u{1F9B4}", "\u{1FAA8}", "\u{1F33F}", "\u{1F95A}", "\u{1F525}", "\u{1FAB9}", "\u{1F48E}"] : ["\u{1F9DA}", "\u2728", "\u{1F338}", "\u{1F98B}", "\u{1F308}", "\u{1F344}", "\u{1FABB}", "\u{1F4AB}", "\u{1FA84}", "\u{1F451}"]).concat(["\u{1F4CD}", "\u{1F6A9}", "\u274C", "\u2B50", "\u2460", "\u2461", "\u2462", "\u2463", "\u2464", "\u{1F381}"]).map((emoji, i) => /* @__PURE__ */ React.createElement("button", { key: i, onClick: () => setActiveEmoji(activeEmoji === emoji ? null : emoji), style: {
-      width: 36,
-      height: 36,
-      borderRadius: 8,
-      border: activeEmoji === emoji ? `2px solid var(--a)` : "1px solid var(--l)",
-      background: activeEmoji === emoji ? "var(--al)" : "var(--bg)",
-      fontSize: 18,
-      cursor: "pointer",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      transform: activeEmoji === emoji ? "scale(1.15)" : "scale(1)",
-      boxShadow: activeEmoji === emoji ? "0 2px 8px rgba(232,135,61,0.3)" : "none",
-      transition: "all 0.15s"
-    } }, emoji))), /* @__PURE__ */ React.createElement("div", { id: "sz-map", onClick: (e) => {
-      if (!activeEmoji) return;
-      const rect = e.currentTarget.getBoundingClientRect();
-      const x = parseFloat(((e.clientX - rect.left) / rect.width * 100).toFixed(1));
-      const y = parseFloat(((e.clientY - rect.top) / rect.height * 100).toFixed(1));
-      if (y < 10) return;
-      setMapItems((prev) => [...prev, { emoji: activeEmoji, x, y }]);
-    }, style: {
-      position: "relative",
-      width: "100%",
-      aspectRatio: "4/3",
-      borderRadius: 16,
-      overflow: "hidden",
-      background: "linear-gradient(145deg,#F5E6C8 0%,#E8D5A8 30%,#DCCB96 60%,#F0E0B8 100%)",
-      border: `2px solid ${szTheme.color}40`,
-      cursor: activeEmoji ? "crosshair" : "default",
-      boxShadow: activeEmoji ? `inset 0 0 0 3px ${szTheme.color}30, 0 2px 12px rgba(0,0,0,0.06)` : "inset 0 2px 12px rgba(0,0,0,0.06)",
-      transition: "box-shadow 0.2s"
-    } }, /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", top: 12, left: 0, right: 0, textAlign: "center", zIndex: 2, pointerEvents: "none" } }, /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "'Caveat', cursive", fontSize: 22, fontWeight: 700, color: "#8B7750" } }, szTheme.emoji, " ", childName ? `${nameGen} ` : "", szTheme.name)), mapItems.map((item, i) => /* @__PURE__ */ React.createElement("span", { key: i, onClick: (e) => {
-      e.stopPropagation();
-      setMapItems((prev) => prev.filter((_, j) => j !== i));
-    }, style: {
-      position: "absolute",
-      left: item.x + "%",
-      top: item.y + "%",
-      fontSize: 24,
-      cursor: "pointer",
-      transform: "translate(-50%,-50%)",
-      userSelect: "none",
-      zIndex: 5,
-      filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.3))",
-      transition: "transform 0.1s"
-    }, className: "no-print-hidden", title: "Klick zum Entfernen" }, item.emoji)), /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", bottom: 12, right: 12, fontSize: 11, color: "#A0926C", fontWeight: 700, zIndex: 2, pointerEvents: "none" } }, "N \u2191"), /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", bottom: 8, left: 12, fontSize: 9, color: "#A0926C", zIndex: 2, pointerEvents: "none" } }, "machsleicht.de")), mapItems.length > 0 && /* @__PURE__ */ React.createElement("div", { className: "no-print", style: { display: "flex", gap: 8, marginTop: 8 } }, /* @__PURE__ */ React.createElement("button", { onClick: () => setMapItems((prev) => prev.slice(0, -1)), style: {
-      flex: 1,
-      padding: "8px 12px",
-      fontSize: 12,
-      fontWeight: 600,
-      border: "1px solid var(--l)",
-      borderRadius: 10,
-      background: "var(--bg)",
-      color: "var(--m)",
-      cursor: "pointer"
-    } }, "\u21A9\uFE0F R\xFCckg\xE4ngig"), /* @__PURE__ */ React.createElement("button", { onClick: () => {
-      if (confirm("Alle Emojis von der Karte entfernen?")) setMapItems([]);
-    }, style: {
-      flex: 1,
-      padding: "8px 12px",
-      fontSize: 12,
-      fontWeight: 600,
-      border: "1px solid var(--l)",
-      borderRadius: 10,
-      background: "var(--bg)",
-      color: "#C62828",
-      cursor: "pointer"
-    } }, "\u{1F5D1}\uFE0F Alle entfernen")), /* @__PURE__ */ React.createElement("p", { className: "no-print", style: { fontSize: 10, color: "var(--m)", marginTop: 6, textAlign: "center" } }, mapItems.length, " Emojis platziert", mapItems.length > 0 ? " \xB7 Die Karte wird im Komplettpaket mitgedruckt" : "")), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 14px" } }, "\u{1F4E6} Material-Checkliste"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 6 } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, fontWeight: 700, color: szTheme.color, textTransform: "uppercase", letterSpacing: "0.06em" } }, "Pro Station"), materials.map((mat, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "var(--bg)", borderRadius: 10, border: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("input", { type: "checkbox", style: { width: 16, height: 16, accentColor: "var(--g)", cursor: "pointer" } }), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13, flex: 1 } }, mat))), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, fontWeight: 700, color: szTheme.color, textTransform: "uppercase", letterSpacing: "0.06em", marginTop: 12 } }, "Schatz-Ideen"), szTheme.schatz.map((s, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "var(--bg)", borderRadius: 10, border: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("span", { style: { fontSize: 16 } }, "\u{1F381}"), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13, flex: 1 } }, s), SZ_SCHATZ_LINKS[s] && /* @__PURE__ */ React.createElement("a", { href: SZ_SCHATZ_LINKS[s], target: "_blank", rel: "noopener", style: { fontSize: 11, fontWeight: 700, color: "#FF9900", textDecoration: "none", padding: "3px 8px", borderRadius: 6, background: "#FFF3E0", whiteSpace: "nowrap" } }, "Amazon \u2197"))))), shopItems.length > 0 && /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 14px" } }, "\u{1F6D2} Einkaufsliste"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 6 } }, shopItems.map((item, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "var(--bg)", borderRadius: 10, border: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("span", { style: {
-      fontSize: 10,
-      fontWeight: 700,
-      padding: "2px 8px",
-      borderRadius: 6,
-      background: item.cat === "pflicht" ? "#FFF3E0" : "#E8F5E9",
-      color: item.cat === "pflicht" ? "#E65100" : "#2E7D32",
-      textTransform: "uppercase",
-      flexShrink: 0
-    } }, item.cat === "pflicht" ? "Pflicht" : "Optional"), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13, flex: 1 } }, item.name), item.url && /* @__PURE__ */ React.createElement("a", { href: item.url, target: "_blank", rel: "noopener", style: { fontSize: 11, fontWeight: 700, color: "#FF9900", textDecoration: "none", padding: "3px 8px", borderRadius: 6, background: "#FFF3E0", whiteSpace: "nowrap" } }, "Amazon \u2197")))), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 10, color: "var(--m)", marginTop: 8, textAlign: "center" } }, "* Affiliate-Link: F\xFCr dich \xE4ndert sich der Preis nicht.")), /* @__PURE__ */ React.createElement("section", { className: "fu no-print", style: { marginBottom: 24, textAlign: "center" } }, /* @__PURE__ */ React.createElement("button", { onClick: printKomplettpaket2, style: {
-      padding: "14px 28px",
-      background: "linear-gradient(135deg,var(--a),#d35f1a)",
-      color: "#fff",
-      border: "none",
-      borderRadius: 14,
-      fontSize: 15,
-      fontWeight: 700,
-      cursor: "pointer",
-      boxShadow: "0 4px 20px rgba(224,122,58,0.3)"
-    } }, "\u{1F5A8}\uFE0F Komplettpaket drucken"), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)", marginTop: 8 } }, "5 Seiten: Schatzkarte \xB7 Stationen \xB7 Hinweis-Zettel \xB7 Material \xB7 Urkunde")), /* @__PURE__ */ React.createElement("footer", { style: { textAlign: "center", padding: "16px 0", borderTop: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)" } }, "\xA9 2026 machsleicht.de \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/kindergeburtstag", style: { color: "var(--m)", textDecoration: "none" } }, "Geburtstag planen"), " \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/impressum", style: { color: "var(--m)", textDecoration: "none" } }, "Impressum"), " \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/datenschutz", style: { color: "var(--m)", textDecoration: "none" } }, "Datenschutz"), " \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/transparenz", style: { color: "var(--m)", textDecoration: "none" } }, "Transparenz"))), /* @__PURE__ */ React.createElement("div", { className: "no-print", style: {
-      position: "fixed",
-      bottom: 0,
-      left: "50%",
-      transform: "translateX(-50%)",
-      width: "100%",
-      maxWidth: 660,
-      background: "rgba(253,252,249,0.97)",
-      backdropFilter: "blur(12px)",
-      WebkitBackdropFilter: "blur(12px)",
-      padding: "8px 12px",
-      borderTop: "1px solid var(--l)",
-      display: "flex",
-      gap: 6,
-      zIndex: 100
-    } }, /* @__PURE__ */ React.createElement("button", { onClick: printKomplettpaket2, style: {
-      flex: 1,
-      padding: 10,
-      borderRadius: 10,
-      background: "var(--a)",
-      color: "#fff",
-      fontWeight: 700,
-      fontSize: 12,
-      textAlign: "center",
-      border: "none",
-      cursor: "pointer",
-      fontFamily: "var(--f)"
-    } }, "\u{1F5A8}\uFE0F Drucken"), /* @__PURE__ */ React.createElement("button", { onClick: reset, style: {
-      flex: 1,
-      padding: 10,
-      borderRadius: 10,
-      background: "var(--bg)",
-      color: "var(--d)",
-      border: "1px solid var(--l)",
-      fontWeight: 700,
-      fontSize: 12,
-      textAlign: "center",
-      cursor: "pointer",
-      fontFamily: "var(--f)"
-    } }, "\u{1F5FA}\uFE0F Anderes Thema"), /* @__PURE__ */ React.createElement("button", { onClick: () => {
-      setPlanMode("geburtstag");
-      setView("config");
-      window.scrollTo(0, 0);
-    }, style: {
-      flex: 1,
-      padding: 10,
-      borderRadius: 10,
-      background: "var(--bg)",
-      color: "var(--d)",
-      border: "1px solid var(--l)",
-      fontWeight: 700,
-      fontSize: 12,
-      textAlign: "center",
-      cursor: "pointer",
-      fontFamily: "var(--f)"
-    } }, "\u{1F382} Geburtstag")));
-  }
   if (view === "plan" && motto) {
     const timeline = buildTimeline();
     const { deko, mitgebsel, total } = getDeko();
@@ -3306,7 +3085,7 @@ ${szTheme.schatz.map((s) => `<li style="font-size:13px;line-height:2;break-insid
     const shareText = `Hey! Unser Kind feiert ${motto.name}-Geburtstag. Hier ist der komplette Plan mit Spielen und Einkaufsliste:
 https://machsleicht.de`;
     const locLabel = effectiveLoc === "wohnung" ? "Drinnen" : effectiveLoc === "garten" ? "Garten" : "Park";
-    return /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 660, margin: "0 auto", padding: "0 16px 80px" } }, /* @__PURE__ */ React.createElement("header", { style: { display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 0 18px", position: "sticky", top: 0, background: "var(--w)", zIndex: 10, borderBottom: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("a", { href: "/", style: { textDecoration: "none" } }, /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--fd)", fontSize: 22, fontWeight: 900, color: "var(--d)" } }, "mach's"), /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--fd)", fontSize: 22, fontWeight: 900, color: "var(--a)" } }, "leicht")), /* @__PURE__ */ React.createElement("button", { onClick: reset, style: { background: "none", border: "1px solid var(--l)", borderRadius: "var(--rs)", padding: "6px 14px", fontSize: 12, color: "var(--m)", cursor: "pointer" } }, "\u2190 Neu")), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { textAlign: "center", padding: "20px 0 16px" } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 48, marginBottom: 8 } }, motto.emoji), /* @__PURE__ */ React.createElement("h1", { style: { fontFamily: "var(--fd)", fontSize: 26, fontWeight: 900, marginBottom: 4 } }, motto.name), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 14, color: "var(--m)" } }, guests, " Kinder \xB7 ", age, " Jahre \xB7 ", duration, " Std. \xB7 ", locLabel, isMinimal && /* @__PURE__ */ React.createElement("span", { style: { color: "var(--g)", fontWeight: 600 } }, " \xB7 \u{1F33F} Minimal"), isWow && /* @__PURE__ */ React.createElement("span", { style: { color: "#7B1FA2", fontWeight: 600 } }, " \xB7 \u2728 Wow"), emergencyMode && /* @__PURE__ */ React.createElement("span", { style: { color: "#C62828", fontWeight: 600 } }, " \xB7 \u{1F6A8} Morgen-Modus")), motto.cat === "license" && /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--a)", marginTop: 4 } }, "Spiele passen zum Thema \u2014 Deko & Mitgebsel sind original ", motto.name, " Produkte.")), /* @__PURE__ */ React.createElement(EinladungBlock, { motto, guests, previewName, setPreviewName, inviteSent, setInviteSent }), /* @__PURE__ */ React.createElement(Connector, null), /* @__PURE__ */ React.createElement(SchatzsucheTeaser, { motto, guests, age, location: effectiveLoc, activeStation, setActiveStation, onSwitchSZ: switchToSZ }), /* @__PURE__ */ React.createElement(ScoreCheck, { score }), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 4, background: "var(--bg)", borderRadius: 12, padding: 4, border: "1px solid var(--l)" } }, [["minimal", "\u{1F33F}", "Minimal"], ["standard", "\u{1F3AF}", "Standard"], ["wow", "\u2728", "Wow"]].map(([val, ico, label]) => /* @__PURE__ */ React.createElement("button", { key: val, onClick: () => {
+    return /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 660, margin: "0 auto", padding: "0 16px 80px" } }, /* @__PURE__ */ React.createElement("header", { style: { display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 0 18px", position: "sticky", top: 0, background: "var(--w)", zIndex: 10, borderBottom: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("a", { href: "/", style: { textDecoration: "none" } }, /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--fd)", fontSize: 22, fontWeight: 900, color: "var(--d)" } }, "mach's"), /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--fd)", fontSize: 22, fontWeight: 900, color: "var(--a)" } }, "leicht")), /* @__PURE__ */ React.createElement("button", { onClick: reset, style: { background: "none", border: "1px solid var(--l)", borderRadius: "var(--rs)", padding: "6px 14px", fontSize: 12, color: "var(--m)", cursor: "pointer" } }, "\u2190 Neu")), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { textAlign: "center", padding: "20px 0 16px" } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 48, marginBottom: 8 } }, motto.emoji), /* @__PURE__ */ React.createElement("h1", { style: { fontFamily: "var(--fd)", fontSize: 26, fontWeight: 900, marginBottom: 4 } }, motto.name), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 14, color: "var(--m)" } }, guests, " Kinder \xB7 ", age, " Jahre \xB7 ", duration, " Std. \xB7 ", locLabel, isMinimal && /* @__PURE__ */ React.createElement("span", { style: { color: "var(--g)", fontWeight: 600 } }, " \xB7 \u{1F33F} Minimal"), isWow && /* @__PURE__ */ React.createElement("span", { style: { color: "#7B1FA2", fontWeight: 600 } }, " \xB7 \u2728 Wow"), emergencyMode && /* @__PURE__ */ React.createElement("span", { style: { color: "#C62828", fontWeight: 600 } }, " \xB7 \u{1F6A8} Morgen-Modus")), motto.cat === "license" && /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--a)", marginTop: 4 } }, "Spiele passen zum Thema \u2014 Deko & Mitgebsel sind original ", motto.name, " Produkte.")), /* @__PURE__ */ React.createElement(EinladungBlock, { motto, guests, previewName, setPreviewName, inviteSent, setInviteSent }), /* @__PURE__ */ React.createElement(SchnitzeljagdBlock, { age, ag, szActive, setSzActive, szThemeId, setSzThemeId, szTheme, childName, setChildName, mapItems, setMapItems, activeEmoji, setActiveEmoji }), /* @__PURE__ */ React.createElement(ScoreCheck, { score }), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 4, background: "var(--bg)", borderRadius: 12, padding: 4, border: "1px solid var(--l)" } }, [["minimal", "\u{1F33F}", "Minimal"], ["standard", "\u{1F3AF}", "Standard"], ["wow", "\u2728", "Wow"]].map(([val, ico, label]) => /* @__PURE__ */ React.createElement("button", { key: val, onClick: () => {
       setShoppingMode(val);
       setOwned({});
     }, style: {
@@ -3357,42 +3136,9 @@ https://machsleicht.de`;
       fontWeight: 700,
       fontSize: 14,
       cursor: "pointer"
-    } }, "\u{1F4C4} PDF erstellen & drucken"))), /* @__PURE__ */ React.createElement("div", { className: "sp", style: { background: "linear-gradient(135deg,#1B5E20,#2E7D32,#388E3C)", borderRadius: 24, padding: "48px 24px 40px", textAlign: "center", position: "relative", overflow: "hidden" } }, /* @__PURE__ */ React.createElement("div", { style: { position: "relative", zIndex: 1 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 64, marginBottom: 12, animation: "checkPop .6s ease .3s both" } }, "\u2713"), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: "clamp(26px,5vw,34px)", fontWeight: 900, color: "#FFF", marginBottom: 8, lineHeight: 1.1 } }, "Das reicht. Wirklich."), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 16, color: "#C8E6C9", marginBottom: 24, lineHeight: 1.7, maxWidth: 420, margin: "0 auto 24px" } }, "Du musst jetzt nichts mehr optimieren. Dieser Plan funktioniert."), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "center", gap: 32, flexWrap: "wrap", marginBottom: 16 } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 11, color: "#A5D6A7", textTransform: "uppercase", letterSpacing: "0.08em" } }, "Noch einkaufen"), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: "var(--fd)", fontSize: 28, fontWeight: 800, color: "#FFF" } }, "ca. \u20AC", Math.round(total))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 11, color: "#A5D6A7", textTransform: "uppercase", letterSpacing: "0.08em" } }, "Pro Kind"), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: "var(--fd)", fontSize: 28, fontWeight: 800, color: "#F7C948" } }, "ca. \u20AC", guests > 0 ? Math.round(total / guests) : "0"))), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 11, color: "#A5D6A7" } }, "Richtwerte \u2014 tats\xE4chliche Preise variieren"))), /* @__PURE__ */ React.createElement("footer", { style: { textAlign: "center", marginTop: 32, padding: "16px 0", borderTop: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)" } }, "\xA9 2026 machsleicht.de \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/impressum", style: { color: "var(--m)", textDecoration: "none" } }, "Impressum"), " \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/datenschutz", style: { color: "var(--m)", textDecoration: "none" } }, "Datenschutz"), " \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/transparenz", style: { color: "var(--m)", textDecoration: "none" } }, "Transparenz"))), /* @__PURE__ */ React.createElement(ControlHub, { mottoId, onSwitchSZ: switchToSZ }));
+    } }, "\u{1F4C4} PDF erstellen & drucken"))), /* @__PURE__ */ React.createElement("div", { className: "sp", style: { background: "linear-gradient(135deg,#1B5E20,#2E7D32,#388E3C)", borderRadius: 24, padding: "48px 24px 40px", textAlign: "center", position: "relative", overflow: "hidden" } }, /* @__PURE__ */ React.createElement("div", { style: { position: "relative", zIndex: 1 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 64, marginBottom: 12, animation: "checkPop .6s ease .3s both" } }, "\u2713"), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: "clamp(26px,5vw,34px)", fontWeight: 900, color: "#FFF", marginBottom: 8, lineHeight: 1.1 } }, "Das reicht. Wirklich."), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 16, color: "#C8E6C9", marginBottom: 24, lineHeight: 1.7, maxWidth: 420, margin: "0 auto 24px" } }, "Du musst jetzt nichts mehr optimieren. Dieser Plan funktioniert."), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "center", gap: 32, flexWrap: "wrap", marginBottom: 16 } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 11, color: "#A5D6A7", textTransform: "uppercase", letterSpacing: "0.08em" } }, "Noch einkaufen"), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: "var(--fd)", fontSize: 28, fontWeight: 800, color: "#FFF" } }, "ca. \u20AC", Math.round(total))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 11, color: "#A5D6A7", textTransform: "uppercase", letterSpacing: "0.08em" } }, "Pro Kind"), /* @__PURE__ */ React.createElement("div", { style: { fontFamily: "var(--fd)", fontSize: 28, fontWeight: 800, color: "#F7C948" } }, "ca. \u20AC", guests > 0 ? Math.round(total / guests) : "0"))), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 11, color: "#A5D6A7" } }, "Richtwerte \u2014 tats\xE4chliche Preise variieren"))), /* @__PURE__ */ React.createElement("footer", { style: { textAlign: "center", marginTop: 32, padding: "16px 0", borderTop: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)" } }, "\xA9 2026 machsleicht.de \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/impressum", style: { color: "var(--m)", textDecoration: "none" } }, "Impressum"), " \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/datenschutz", style: { color: "var(--m)", textDecoration: "none" } }, "Datenschutz"), " \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/transparenz", style: { color: "var(--m)", textDecoration: "none" } }, "Transparenz"))), /* @__PURE__ */ React.createElement(ControlHub, { mottoId, szActive, setSzActive }));
   }
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("nav", { style: { position: "sticky", top: 0, zIndex: 100, background: "rgba(253,252,249,0.85)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", borderBottom: "1px solid rgba(0,0,0,0.05)", padding: "12px 24px", display: "flex", alignItems: "center", justifyContent: "space-between" } }, /* @__PURE__ */ React.createElement("a", { href: "/", style: { textDecoration: "none", display: "flex", alignItems: "baseline", gap: 4 } }, /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--fd)", fontWeight: 800, fontSize: 20, color: "var(--a)" } }, "mach's"), /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--fd)", fontWeight: 800, fontSize: 20, color: "var(--d)" } }, "leicht")), /* @__PURE__ */ React.createElement("button", { onClick: () => {
-    setPlanMode("schatzsuche");
-    document.getElementById("wizard")?.scrollIntoView({ behavior: "smooth" });
-  }, style: { fontSize: 13, fontWeight: 500, color: "var(--m)", textDecoration: "none", background: "none", border: "none", cursor: "pointer", fontFamily: "var(--f)" } }, "\u{1F5FA}\uFE0F Schatzsuche")), /* @__PURE__ */ React.createElement("section", { style: { position: "relative", overflow: "hidden", padding: "48px 24px 32px", background: "linear-gradient(165deg, #fef8f0 0%, #fdfcf9 40%, #f0f4e8 100%)" } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 660, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 } }, /* @__PURE__ */ React.createElement("div", { style: { display: "inline-flex", alignItems: "center", gap: 6, background: "#fff", border: "1px solid var(--l)", borderRadius: 100, padding: "6px 16px", fontSize: 12, fontWeight: 500, color: "#888", marginBottom: 20, animation: "fadeSlideUp 0.4s ease-out both" } }, isSZ ? "\u{1F5FA}\uFE0F Schatzsuche erstellen \u2014 kostenlos" : "\u{1F389} Kindergeburtstag planen \u2014 kostenlos, ohne Anmeldung"), /* @__PURE__ */ React.createElement("div", { style: {
-    display: "flex",
-    justifyContent: "center",
-    marginBottom: 20,
-    animation: "fadeSlideUp 0.4s 0.05s ease-out both"
-  } }, /* @__PURE__ */ React.createElement("div", { style: {
-    display: "inline-flex",
-    background: "#fff",
-    borderRadius: 14,
-    padding: 4,
-    border: "1px solid var(--l)",
-    boxShadow: "0 2px 12px rgba(0,0,0,0.04)"
-  } }, [
-    ["geburtstag", "\u{1F382}", "Kompletter Geburtstag"],
-    ["schatzsuche", "\u{1F5FA}\uFE0F", "Nur Schatzsuche"]
-  ].map(([val, ico, label]) => /* @__PURE__ */ React.createElement("button", { key: val, onClick: () => {
-    setPlanMode(val);
-    window.plausible && plausible("mode-switch", { props: { mode: val } });
-  }, style: {
-    padding: "10px 20px",
-    borderRadius: 11,
-    border: "none",
-    cursor: "pointer",
-    background: planMode === val ? "var(--a)" : "transparent",
-    color: planMode === val ? "#fff" : "var(--m)",
-    fontSize: 13,
-    fontWeight: 700,
-    transition: "all 0.25s",
-    boxShadow: planMode === val ? "0 2px 8px rgba(232,135,61,0.3)" : "none",
-    fontFamily: "var(--f)"
-  } }, ico, " ", label)))), /* @__PURE__ */ React.createElement("h1", { style: { fontFamily: "var(--fd)", fontSize: "clamp(28px,5.5vw,48px)", fontWeight: 800, lineHeight: 1.12, marginBottom: 14, color: "var(--d)", animation: "fadeSlideUp 0.5s 0.1s ease-out both" } }, isSZ ? /* @__PURE__ */ React.createElement(React.Fragment, null, "Schatzsuche erstellen", /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("span", { style: { color: "var(--a)" } }, "in 5 Minuten.")) : /* @__PURE__ */ React.createElement(React.Fragment, null, "Kindergeburtstag planen", /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("span", { style: { color: "var(--a)" } }, "in 10 Minuten."))), /* @__PURE__ */ React.createElement("p", { style: { fontSize: "clamp(14px,2vw,17px)", color: "var(--m)", lineHeight: 1.6, maxWidth: 500, margin: "0 auto 24px", animation: "fadeSlideUp 0.5s 0.2s ease-out both" } }, isSZ ? "W\xE4hl ein Thema und das Alter \u2014 du bekommst sofort alle Stationen mit R\xE4tseln, Material und Eltern-Tipps." : "W\xE4hl Alter, Motto und G\xE4stezahl \u2014 du bekommst sofort einen kompletten Plan mit Spielen, Einkaufsliste und Kosten pro Kind."), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexWrap: "wrap", gap: 8, justifyContent: "center", animation: "fadeSlideUp 0.5s 0.3s ease-out both" } }, (isSZ ? [["\u{1F5FA}\uFE0F", "5 Stationen"], ["\u{1F9E9}", "Altersgerechte R\xE4tsel"], ["\u{1F4E6}", "Material-Checkliste"], ["\u{1F5A8}\uFE0F", "Druckfertig"]] : [["\u23F1\uFE0F", "Zeitplan"], ["\u{1F3AF}", "Altersgerechte Spiele"], ["\u{1F6D2}", "Einkaufsliste"], ["\u{1F9EE}", "Kosten pro Kind"]]).map(([ico, label]) => /* @__PURE__ */ React.createElement("span", { key: label, style: { display: "inline-flex", alignItems: "center", gap: 5, padding: "6px 12px", background: "rgba(255,255,255,0.7)", backdropFilter: "blur(8px)", borderRadius: 100, fontSize: 12, fontWeight: 500, color: "#4a4a4a", border: "1px solid rgba(0,0,0,0.06)" } }, /* @__PURE__ */ React.createElement("span", { style: { fontSize: 14 } }, ico), label))), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap", marginTop: 24, animation: "fadeSlideUp 0.5s 0.4s ease-out both" } }, /* @__PURE__ */ React.createElement("a", { href: "#wizard", onClick: (e) => {
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("nav", { style: { position: "sticky", top: 0, zIndex: 100, background: "rgba(253,252,249,0.85)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", borderBottom: "1px solid rgba(0,0,0,0.05)", padding: "12px 24px", display: "flex", alignItems: "center", justifyContent: "space-between" } }, /* @__PURE__ */ React.createElement("a", { href: "/", style: { textDecoration: "none", display: "flex", alignItems: "baseline", gap: 4 } }, /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--fd)", fontWeight: 800, fontSize: 20, color: "var(--a)" } }, "mach's"), /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--fd)", fontWeight: 800, fontSize: 20, color: "var(--d)" } }, "leicht")), /* @__PURE__ */ React.createElement("a", { href: "/schatzsuche", style: { fontSize: 13, fontWeight: 500, color: "var(--m)", textDecoration: "none" } }, "\u{1F5FA}\uFE0F Schnitzeljagd")), /* @__PURE__ */ React.createElement("section", { style: { position: "relative", overflow: "hidden", padding: "48px 24px 32px", background: "linear-gradient(165deg, #fef8f0 0%, #fdfcf9 40%, #f0f4e8 100%)" } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 660, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 } }, /* @__PURE__ */ React.createElement("div", { style: { display: "inline-flex", alignItems: "center", gap: 6, background: "#fff", border: "1px solid var(--l)", borderRadius: 100, padding: "6px 16px", fontSize: 12, fontWeight: 500, color: "#888", marginBottom: 20, animation: "fadeSlideUp 0.4s ease-out both" } }, "\u{1F389} Kindergeburtstag planen \u2014 kostenlos, ohne Anmeldung"), /* @__PURE__ */ React.createElement("h1", { style: { fontFamily: "var(--fd)", fontSize: "clamp(28px,5.5vw,48px)", fontWeight: 800, lineHeight: 1.12, marginBottom: 14, color: "var(--d)", animation: "fadeSlideUp 0.5s 0.1s ease-out both" } }, "Kindergeburtstag planen", /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("span", { style: { color: "var(--a)" } }, "in 10 Minuten.")), /* @__PURE__ */ React.createElement("p", { style: { fontSize: "clamp(14px,2vw,17px)", color: "var(--m)", lineHeight: 1.6, maxWidth: 500, margin: "0 auto 24px", animation: "fadeSlideUp 0.5s 0.2s ease-out both" } }, "W\xE4hl Alter, Motto und G\xE4stezahl \u2014 du bekommst sofort einen kompletten Plan mit Spielen, Einkaufsliste und Kosten pro Kind."), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexWrap: "wrap", gap: 8, justifyContent: "center", animation: "fadeSlideUp 0.5s 0.3s ease-out both" } }, [["\u23F1\uFE0F", "Zeitplan"], ["\u{1F3AF}", "Altersgerechte Spiele"], ["\u{1F6D2}", "Einkaufsliste"], ["\u{1F5FA}\uFE0F", "+ Schatzsuche"]].map(([ico, label]) => /* @__PURE__ */ React.createElement("span", { key: label, style: { display: "inline-flex", alignItems: "center", gap: 5, padding: "6px 12px", background: "rgba(255,255,255,0.7)", backdropFilter: "blur(8px)", borderRadius: 100, fontSize: 12, fontWeight: 500, color: "#4a4a4a", border: "1px solid rgba(0,0,0,0.06)" } }, /* @__PURE__ */ React.createElement("span", { style: { fontSize: 14 } }, ico), label))), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap", marginTop: 24, animation: "fadeSlideUp 0.5s 0.4s ease-out both" } }, /* @__PURE__ */ React.createElement("a", { href: "#wizard", onClick: (e) => {
     e.preventDefault();
     document.getElementById("wizard")?.scrollIntoView({ behavior: "smooth" });
   }, style: {
@@ -3424,82 +3170,39 @@ https://machsleicht.de`;
   } }, "\u{1F6A8} Morgen ist Geburtstag!")))), emergencyMode && /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 700, margin: "16px auto", padding: "0 16px" } }, /* @__PURE__ */ React.createElement("div", { style: { background: "linear-gradient(135deg,#FFEBEE,#FFF3E0)", borderRadius: 20, padding: 24, border: "2px solid #EF5350", textAlign: "center" } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 36, marginBottom: 8 } }, "\u{1F6A8}"), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 22, fontWeight: 900, color: "#C62828", marginBottom: 8 } }, "Morgen-Modus aktiv"), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 14, color: "var(--m)", lineHeight: 1.6, marginBottom: 16 } }, "Schnellster Plan der funktioniert. Drinnen, minimal, 2 Stunden."), /* @__PURE__ */ React.createElement("button", { onClick: () => setEmergencyMode(false), style: { background: "none", border: "none", fontSize: 12, color: "var(--m)", cursor: "pointer", textDecoration: "underline" } }, "Morgen-Modus deaktivieren"))), /* @__PURE__ */ React.createElement("div", { id: "wizard", style: { maxWidth: 700, margin: "-16px auto 0", padding: "0 16px", position: "relative", zIndex: 10 } }, /* @__PURE__ */ React.createElement("div", { style: { background: "#fff", borderRadius: 24, padding: "32px 28px 28px", boxShadow: "0 8px 40px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04)", border: "1px solid rgba(0,0,0,0.04)" } }, /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb", marginBottom: 10 } }, /* @__PURE__ */ React.createElement("span", { style: { color: "var(--a)", marginRight: 6 } }, "\u2460"), " Wie alt wird dein Kind?", /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, color: "var(--a)", marginLeft: 8 } }, age, " Jahre"), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 11, color: "var(--m)", fontWeight: 500, marginLeft: 6 } }, "(", ageLabel[ag], ")")), /* @__PURE__ */ React.createElement("input", { type: "range", min: 3, max: 12, value: age, onChange: (e) => {
     setAge(+e.target.value);
     setMottoId(null);
-  } }), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)", marginTop: 6 } }, age <= 5 ? "Einfache Suchspiele, Stopptanz, kurze Stationen" : age <= 8 ? "Schatzsuchen, Rallyes, Quiz, Basteln" : "Escape-Rooms, Codes knacken, Team-Olympiaden")), isSZ ? (
-    /* SCHATZSUCHE: Theme Selection */
-    /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb", marginBottom: 10 } }, /* @__PURE__ */ React.createElement("span", { style: { color: "var(--a)", marginRight: 6 } }, "\u2461"), " Thema w\xE4hlen"), /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(90px, 1fr))", gap: 8 } }, SZ_THEMES.map((t) => /* @__PURE__ */ React.createElement("button", { key: t.id, onClick: () => {
-      setSzThemeId(t.id);
-      window.plausible && plausible("sz-theme-selected", { props: { theme: t.id } });
-    }, style: {
-      position: "relative",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      gap: 6,
-      padding: "18px 8px 14px",
-      background: szThemeId === t.id ? t.color + "12" : "#fff",
-      border: `2px solid ${szThemeId === t.id ? t.color : "#eee"}`,
-      borderRadius: 16,
-      cursor: "pointer",
-      transition: "all 0.25s",
-      transform: szThemeId === t.id ? "scale(1.05)" : "scale(1)",
-      boxShadow: szThemeId === t.id ? `0 4px 20px ${t.color}30` : "0 1px 4px rgba(0,0,0,0.04)"
-    } }, /* @__PURE__ */ React.createElement("span", { style: { fontSize: 30 } }, t.emoji), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 11, fontWeight: 600, color: szThemeId === t.id ? t.color : "#333", textAlign: "center", lineHeight: 1.2 } }, SZ_LABELS[t.id] || t.name), szThemeId === t.id && /* @__PURE__ */ React.createElement("span", { style: { position: "absolute", top: -6, right: -6, width: 20, height: 20, borderRadius: "50%", background: t.color, color: "#fff", fontSize: 11, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 2px 8px ${t.color}50` } }, "\u2713")))), /* @__PURE__ */ React.createElement("div", { style: { marginTop: 16 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb", marginBottom: 8 } }, /* @__PURE__ */ React.createElement("span", { style: { color: "var(--a)", marginRight: 6 } }, "\u2462"), " Name des Kindes ", /* @__PURE__ */ React.createElement("span", { style: { fontWeight: 400, color: "#ccc" } }, "(optional)")), /* @__PURE__ */ React.createElement(
-      "input",
-      {
-        type: "text",
-        value: childName,
-        onChange: (e) => setChildName(e.target.value),
-        placeholder: "z.B. Emma, Max, Sophie\u2026",
-        style: {
-          width: "100%",
-          padding: "12px 16px",
-          borderRadius: 12,
-          border: "2px solid #f0ede8",
-          fontSize: 14,
-          fontFamily: "var(--f)",
-          outline: "none",
-          background: "#fafaf8",
-          boxSizing: "border-box",
-          transition: "border-color 0.2s"
-        }
-      }
-    ), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, color: "var(--m)", marginTop: 4 } }, "Personalisiert die Intro-Geschichte und Stationen.")))
-  ) : (
-    /* GEBURTSTAG: Motto Selection */
-    /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb" } }, /* @__PURE__ */ React.createElement("span", { style: { color: "var(--a)", marginRight: 6 } }, "\u2461"), " Motto w\xE4hlen"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 4 } }, [["generic", "\u{1F3A8} Klassisch"], ["license", "\u2B50 Charaktere"]].map(([val, label]) => /* @__PURE__ */ React.createElement("button", { key: val, onClick: () => {
-      setMottoTab(val);
-      setMottoId(null);
-    }, style: {
-      padding: "4px 10px",
-      fontSize: 11,
-      fontWeight: 600,
-      border: "none",
-      borderRadius: 100,
-      background: mottoTab === val ? "var(--a)" : "#f0ede8",
-      color: mottoTab === val ? "#fff" : "#999",
-      cursor: "pointer"
-    } }, label)))), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, overflowX: "auto", padding: "4px 2px 8px", scrollSnapType: "x mandatory" } }, (mottoTab === "generic" ? GENERIC : filteredLicense).map((m) => /* @__PURE__ */ React.createElement("button", { key: m.id, onClick: () => {
-      setMottoId(m.id);
-      window.plausible && plausible("motto-selected", { props: { motto: m.id } });
-    }, style: {
-      position: "relative",
-      flex: "0 0 auto",
-      minWidth: 100,
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      gap: 6,
-      padding: "18px 12px 14px",
-      background: mottoId === m.id ? m.color + "12" : "#fff",
-      border: `2px solid ${mottoId === m.id ? m.color : "#eee"}`,
-      borderRadius: 16,
-      cursor: "pointer",
-      transition: "all 0.25s",
-      transform: mottoId === m.id ? "scale(1.05)" : "scale(1)",
-      boxShadow: mottoId === m.id ? `0 4px 20px ${m.color}30` : "0 1px 4px rgba(0,0,0,0.04)",
-      scrollSnapAlign: "start"
-    } }, /* @__PURE__ */ React.createElement("span", { style: { fontSize: 30 } }, m.emoji), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 12, fontWeight: 600, color: mottoId === m.id ? m.color : "#333" } }, m.name), m.cat === "license" && /* @__PURE__ */ React.createElement("span", { style: { fontSize: 10, color: mottoId === m.id ? m.color : "#999", background: mottoId === m.id ? m.color + "15" : "#f5f5f5", padding: "2px 8px", borderRadius: 100 } }, m.ages[0], "\u2013", m.ages[m.ages.length - 1], " J."), mottoId === m.id && /* @__PURE__ */ React.createElement("span", { style: { position: "absolute", top: -6, right: -6, width: 20, height: 20, borderRadius: "50%", background: m.color, color: "#fff", fontSize: 11, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 2px 8px ${m.color}50` } }, "\u2713"))), mottoTab === "license" && filteredLicense.length === 0 && /* @__PURE__ */ React.createElement("div", { style: { padding: 16, color: "var(--m)", fontSize: 13 } }, "F\xFCr ", age, " Jahre keine Lizenz-Mottos verf\xFCgbar.")))
-  ), !isSZ && /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb", marginBottom: 10 } }, /* @__PURE__ */ React.createElement("span", { style: { color: "var(--a)", marginRight: 6 } }, "\u2462"), " G\xE4stezahl", guests && /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, color: "var(--a)", marginLeft: 8 } }, guests, " Kinder")), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 6, flexWrap: "wrap" } }, [4, 5, 6, 7, 8, 10, 12, 15].map((n) => /* @__PURE__ */ React.createElement("button", { key: n, onClick: () => setGuests(n), style: {
+  } }), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)", marginTop: 6 } }, age <= 5 ? "Einfache Suchspiele, Stopptanz, kurze Stationen" : age <= 8 ? "Schatzsuchen, Rallyes, Quiz, Basteln" : "Escape-Rooms, Codes knacken, Team-Olympiaden")), /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb" } }, /* @__PURE__ */ React.createElement("span", { style: { color: "var(--a)", marginRight: 6 } }, "\u2461"), " Motto w\xE4hlen"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 4 } }, [["generic", "\u{1F3A8} Klassisch"], ["license", "\u2B50 Charaktere"]].map(([val, label]) => /* @__PURE__ */ React.createElement("button", { key: val, onClick: () => {
+    setMottoTab(val);
+    setMottoId(null);
+  }, style: {
+    padding: "4px 10px",
+    fontSize: 11,
+    fontWeight: 600,
+    border: "none",
+    borderRadius: 100,
+    background: mottoTab === val ? "var(--a)" : "#f0ede8",
+    color: mottoTab === val ? "#fff" : "#999",
+    cursor: "pointer"
+  } }, label)))), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, overflowX: "auto", padding: "4px 2px 8px", scrollSnapType: "x mandatory" } }, (mottoTab === "generic" ? GENERIC : filteredLicense).map((m) => /* @__PURE__ */ React.createElement("button", { key: m.id, onClick: () => {
+    setMottoId(m.id);
+    window.plausible && plausible("motto-selected", { props: { motto: m.id } });
+  }, style: {
+    position: "relative",
+    flex: "0 0 auto",
+    minWidth: 100,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: 6,
+    padding: "18px 12px 14px",
+    background: mottoId === m.id ? m.color + "12" : "#fff",
+    border: `2px solid ${mottoId === m.id ? m.color : "#eee"}`,
+    borderRadius: 16,
+    cursor: "pointer",
+    transition: "all 0.25s",
+    transform: mottoId === m.id ? "scale(1.05)" : "scale(1)",
+    boxShadow: mottoId === m.id ? `0 4px 20px ${m.color}30` : "0 1px 4px rgba(0,0,0,0.04)",
+    scrollSnapAlign: "start"
+  } }, /* @__PURE__ */ React.createElement("span", { style: { fontSize: 30 } }, m.emoji), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 12, fontWeight: 600, color: mottoId === m.id ? m.color : "#333" } }, m.name), m.cat === "license" && /* @__PURE__ */ React.createElement("span", { style: { fontSize: 10, color: mottoId === m.id ? m.color : "#999", background: mottoId === m.id ? m.color + "15" : "#f5f5f5", padding: "2px 8px", borderRadius: 100 } }, m.ages[0], "\u2013", m.ages[m.ages.length - 1], " J."), mottoId === m.id && /* @__PURE__ */ React.createElement("span", { style: { position: "absolute", top: -6, right: -6, width: 20, height: 20, borderRadius: "50%", background: m.color, color: "#fff", fontSize: 11, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 2px 8px ${m.color}50` } }, "\u2713"))), mottoTab === "license" && filteredLicense.length === 0 && /* @__PURE__ */ React.createElement("div", { style: { padding: 16, color: "var(--m)", fontSize: 13 } }, "F\xFCr ", age, " Jahre keine Lizenz-Mottos verf\xFCgbar."))), /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb", marginBottom: 10 } }, /* @__PURE__ */ React.createElement("span", { style: { color: "var(--a)", marginRight: 6 } }, "\u2462"), " G\xE4stezahl", guests && /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, color: "var(--a)", marginLeft: 8 } }, guests, " Kinder")), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 6, flexWrap: "wrap" } }, [4, 5, 6, 7, 8, 10, 12, 15].map((n) => /* @__PURE__ */ React.createElement("button", { key: n, onClick: () => setGuests(n), style: {
     width: 48,
     height: 48,
     border: `2px solid ${guests === n ? "var(--a)" : "#f0ede8"}`,
@@ -3510,20 +3213,7 @@ https://machsleicht.de`;
     fontSize: 16,
     color: guests === n ? "var(--a)" : "#666",
     transition: "all 0.2s"
-  } }, n))), age <= 5 && guests > 8 && /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--a)", marginTop: 6, fontWeight: 600 } }, "\u{1F4A1} F\xFCr ", age, "-J\xE4hrige sind 5\u20138 Kinder ideal.")), /* @__PURE__ */ React.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ React.createElement(Confetti, { active: showConfetti }), isSZ ? /* @__PURE__ */ React.createElement("button", { onClick: startPlan, disabled: !szThemeId, style: {
-    width: "100%",
-    padding: "16px 24px",
-    background: szThemeId ? "linear-gradient(135deg,var(--a),#d35f1a)" : "#e8e6e1",
-    color: szThemeId ? "#FFF" : "#bbb",
-    border: "none",
-    borderRadius: 16,
-    fontSize: 16,
-    fontWeight: 700,
-    cursor: szThemeId ? "pointer" : "default",
-    boxShadow: szThemeId ? "0 4px 20px rgba(224,122,58,0.35)" : "none",
-    animation: szThemeId ? "softPulse 2s infinite" : "none",
-    transition: "all 0.3s"
-  } }, szThemeId && szTheme ? `${szTheme.emoji} ${szTheme.name} erstellen \u2014 los geht's!` : "W\xE4hl Alter & Thema") : /* @__PURE__ */ React.createElement("button", { onClick: startPlan, disabled: !mottoId, style: {
+  } }, n))), age <= 5 && guests > 8 && /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--a)", marginTop: 6, fontWeight: 600 } }, "\u{1F4A1} F\xFCr ", age, "-J\xE4hrige sind 5\u20138 Kinder ideal.")), /* @__PURE__ */ React.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ React.createElement(Confetti, { active: showConfetti }), /* @__PURE__ */ React.createElement("button", { onClick: startPlan, disabled: !mottoId, style: {
     width: "100%",
     padding: "16px 24px",
     background: mottoId ? "linear-gradient(135deg,var(--a),#d35f1a)" : "#e8e6e1",
@@ -3536,7 +3226,7 @@ https://machsleicht.de`;
     boxShadow: mottoId ? "0 4px 20px rgba(224,122,58,0.35)" : "none",
     animation: mottoId ? "softPulse 2s infinite" : "none",
     transition: "all 0.3s"
-  } }, mottoId ? `${motto.emoji} ${motto.name}-Geburtstag planen \u2014 los geht's!` : "W\xE4hl Alter, Motto & G\xE4stezahl"), (mottoId || szThemeId) && /* @__PURE__ */ React.createElement("p", { style: { textAlign: "center", fontSize: 12, color: "#bbb", marginTop: 8 } }, "Kostenlos \xB7 Ohne Anmeldung \xB7 Sofort loslegen")), !isSZ && /* @__PURE__ */ React.createElement("button", { onClick: emergencyStart, style: {
+  } }, mottoId ? `${motto.emoji} ${motto.name}-Geburtstag planen \u2014 los geht's!` : "W\xE4hl Alter, Motto & G\xE4stezahl"), mottoId && /* @__PURE__ */ React.createElement("p", { style: { textAlign: "center", fontSize: 12, color: "#bbb", marginTop: 8 } }, "Kostenlos \xB7 Ohne Anmeldung \xB7 Sofort loslegen")), /* @__PURE__ */ React.createElement("button", { onClick: emergencyStart, style: {
     width: "100%",
     marginTop: 12,
     padding: 10,
@@ -3547,10 +3237,7 @@ https://machsleicht.de`;
     fontWeight: 600,
     fontSize: 13,
     cursor: "pointer"
-  } }, "\u{1F6A8} Notfallplan in 2 Minuten \u2014 Geburtstag in 48h?"))), !isSZ && /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 700, margin: "24px auto", padding: "0 16px" } }, /* @__PURE__ */ React.createElement("button", { onClick: () => {
-    setPlanMode("schatzsuche");
-    document.getElementById("wizard")?.scrollIntoView({ behavior: "smooth" });
-  }, style: { textDecoration: "none", display: "block", width: "100%", background: "none", border: "none", padding: 0, cursor: "pointer", textAlign: "left" } }, /* @__PURE__ */ React.createElement("div", { style: { background: "linear-gradient(135deg,#fef8f0,#fff8e8)", borderRadius: 20, padding: "24px 28px", border: "1px solid #f0ede8", display: "flex", alignItems: "center", gap: 20, cursor: "pointer" } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 44, flexShrink: 0, animation: "float 3s ease-in-out infinite" } }, "\u{1F5FA}\uFE0F"), /* @__PURE__ */ React.createElement("div", { style: { flex: 1 } }, /* @__PURE__ */ React.createElement("div", { style: { fontFamily: "var(--fd)", fontWeight: 800, fontSize: 18, color: "var(--d)", marginBottom: 4 } }, "Schatzsuche erstellen"), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 13, color: "var(--m)", lineHeight: 1.5 } }, "6 Themen, altersgerechte Stationen, Material-Checkliste \u2014 alles in einem Tool.")), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 22, color: "var(--a)", flexShrink: 0 } }, "\u2192")))), /* @__PURE__ */ React.createElement("section", { style: { maxWidth: 700, margin: "40px auto 0", padding: "0 16px" } }, /* @__PURE__ */ React.createElement("div", { style: { textAlign: "center", marginBottom: 24 } }, /* @__PURE__ */ React.createElement("span", { style: { display: "inline-block", fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--a)", background: "var(--al)", padding: "4px 14px", borderRadius: 100, marginBottom: 12 } }, "Alles drin"), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 24, fontWeight: 800, margin: "0 0 8px" } }, "Was du bekommst"), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 14, color: "var(--m)" } }, "Ein Plan, der reicht. Wirklich.")), /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(190px,1fr))", gap: 12 } }, [
+  } }, "\u{1F6A8} Notfallplan in 2 Minuten \u2014 Geburtstag in 48h?"))), /* @__PURE__ */ React.createElement("section", { style: { maxWidth: 700, margin: "40px auto 0", padding: "0 16px" } }, /* @__PURE__ */ React.createElement("div", { style: { textAlign: "center", marginBottom: 24 } }, /* @__PURE__ */ React.createElement("span", { style: { display: "inline-block", fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--a)", background: "var(--al)", padding: "4px 14px", borderRadius: 100, marginBottom: 12 } }, "Alles drin"), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 24, fontWeight: 800, margin: "0 0 8px" } }, "Was du bekommst"), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 14, color: "var(--m)" } }, "Ein Plan, der reicht. Wirklich.")), /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(190px,1fr))", gap: 12 } }, [
     ["\u{1F4CB}", "Kompletter Zeitplan", "Von Ankommen bis Tsch\xFCss \u2014 mit Uhrzeiten und Puffer."],
     ["\u{1F3AE}", "2\u20133 Spiele mit Anleitung", "Altersgerecht, material-arm, in 5 S\xE4tzen erkl\xE4rt."],
     ["\u{1F6D2}", "Einkaufsliste + Preise", "Kaufen, leihen oder selbst machen. Mit Hab-ich-schon Checkbox."],
