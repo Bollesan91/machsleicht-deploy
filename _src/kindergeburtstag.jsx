@@ -216,7 +216,7 @@ function mapAutoLayout(stationNames,W,H){
   pts.push({x:W-pad-25,y:pad+30,label:'Schatz!',isTreasure:true});
   return pts;
 }
-function drawTreasureMap(canvas,points,themeId,title,dekoItems,selectedDekoIdx){
+function drawTreasureMap(canvas,points,themeId,title,dekoItems,selectedDekoIdx,stationEmojis){
   const t=MAP_THEMES[themeId]||MAP_THEMES.piraten;const ctx=canvas.getContext('2d');
   const dpr=window.devicePixelRatio||1;const W=canvas.width/dpr;const H=canvas.height/dpr;
   const isDark=t.darkMode;const tc=isDark?'rgba(200,200,255,0.85)':'rgba(80,40,10,0.85)';const tcl=isDark?'rgba(160,160,200,0.4)':'rgba(120,80,40,0.35)';
@@ -238,7 +238,8 @@ function drawTreasureMap(canvas,points,themeId,title,dekoItems,selectedDekoIdx){
     ctx.fillStyle='rgba(0,0,0,0.1)';ctx.beginPath();ctx.arc(p.x+1.5,p.y+1.5,15,0,Math.PI*2);ctx.fill();
     ctx.fillStyle=isDark?'#2a2a5a':t.parchment[0];ctx.strokeStyle=stColor;ctx.lineWidth=2;ctx.beginPath();ctx.arc(p.x,p.y,15,0,Math.PI*2);ctx.fill();ctx.stroke();
     ctx.fillStyle=isDark?'#fff':stColor;ctx.font='bold 12px Georgia';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(p.index,p.x,p.y+1);
-    ctx.fillStyle=tc;ctx.font='8px Georgia';ctx.textBaseline='top';const lbl=p.label.length>20?p.label.slice(0,19)+'…':p.label;ctx.fillText(lbl,p.x,p.y+18,90);
+    const sEmoji=stationEmojis&&stationEmojis[p.index-1];if(sEmoji){ctx.font='14px serif';ctx.textBaseline='bottom';ctx.fillText(sEmoji,p.x,p.y-17);}
+    ctx.fillStyle=tc;ctx.font='8px Georgia';ctx.textBaseline='top';const lbl=p.label.length>24?p.label.slice(0,23)+'…':p.label;ctx.fillText(lbl,p.x,p.y+18,120);
   });
   ctx.fillStyle=tcl;ctx.font='italic 7px Georgia';ctx.textAlign='left';ctx.textBaseline='bottom';ctx.fillText('💡 Elemente verschieben: tippen & ziehen',14,H-10);
 }
@@ -262,8 +263,12 @@ function TreasureMapCanvas({ szTheme, stations, childName, mapPositions, setMapP
   const themeId = szTheme ? szTheme.id : 'piraten';
   const stationNames = stations.map((s,i) => {
     const loc = stationLocations && stationLocations[i];
-    if (loc) { const em = matchLocationEmoji(loc); return i === stations.length - 1 ? '🎁 ' + loc : em + ' ' + loc; }
+    if (loc) return i === stations.length - 1 ? '🎁 ' + loc : loc;
     return i === stations.length - 1 ? '🎁 ' + s.name : s.name;
+  });
+  const stationEmojis = stations.map((s,i) => {
+    const loc = stationLocations && stationLocations[i];
+    return loc ? matchLocationEmoji(loc) : null;
   });
   const nameGen = childName ? (childName.endsWith("s") ? childName + "'" : childName + "s") : "";
   const mapTitle = `${szTheme ? szTheme.emoji : ''} ${nameGen ? nameGen + ' ' : ''}${szTheme ? szTheme.name : 'Schatzkarte'}`;
@@ -295,7 +300,7 @@ function TreasureMapCanvas({ szTheme, stations, childName, mapPositions, setMapP
     c.style.width = dw + 'px'; c.style.height = dh + 'px';
     dimRef.current = {w:dw, h:dh};
     const ctx = c.getContext('2d'); ctx.scale(dpr, dpr);
-    drawTreasureMap(c, getPoints(dw, dh), themeId, mapTitle, dekoRef.current, selDekoRef.current);
+    drawTreasureMap(c, getPoints(dw, dh), themeId, mapTitle, dekoRef.current, selDekoRef.current, stationEmojis);
   }, [stations, themeId, mapTitle, getPoints, dekoEmojis, selectedDekoIdx]);
 
   React.useEffect(() => { setMapPositions(null); setActiveDekoEmoji(null); setSelectedDekoIdx(null); }, [stations.length, themeId]);
@@ -354,7 +359,7 @@ function TreasureMapCanvas({ szTheme, stations, childName, mapPositions, setMapP
     const dw = dimRef.current.w || 300; const dh = dimRef.current.h || 240;
     c.width = dw * dpr; c.height = dh * dpr; c.style.width = dw + 'px'; c.style.height = dh + 'px';
     const ctx = c.getContext('2d'); ctx.scale(dpr, dpr);
-    drawTreasureMap(c, getPoints(dw, dh), themeId, mapTitle, dekoRef.current, null);
+    drawTreasureMap(c, getPoints(dw, dh), themeId, mapTitle, dekoRef.current, null, stationEmojis);
   };
 
   return (
@@ -499,26 +504,28 @@ ${TreasureMapCanvas._canvasRef && TreasureMapCanvas._canvasRef.current ? `<div c
                 const locText = stationLocations[i] || '';
                 const locEmoji = locText ? matchLocationEmoji(locText) : '';
                 return (
-                  <details key={i} open={i === 0} style={{ marginBottom: 6 }}>
-                    <summary style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer", padding: "6px 0", fontSize: 13 }}>
-                      <span style={{ width: 22, height: 22, borderRadius: "50%", background: isLast ? "var(--a)" : szTheme.color, color: "#fff", fontSize: 9, fontWeight: 800, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{isLast ? "🎁" : i + 1}</span>
-                      <span style={{ fontWeight: 700, flex: 1 }}>{st.name}{locText ? <span style={{ fontWeight: 400, fontSize: 11, color: "var(--m)", marginLeft: 6 }}>{locEmoji} {locText}</span> : null}</span>
-                      <span style={{ fontSize: 11, color: "var(--m)" }}>{st.dauer}′</span>
-                    </summary>
-                    <div style={{ paddingLeft: 30, paddingBottom: 6 }}>
-                      <p style={{ fontSize: 12, color: "var(--m)", lineHeight: 1.5, margin: "4px 0 6px" }}>{st.desc}</p>
-                      {st.hint && <p style={{ fontSize: 11, color: "#795548", background: "#FFF8E1", padding: "6px 10px", borderRadius: 6, border: "1px solid #FFE082" }}>💡 {st.hint}</p>}
-                      {!isLast && <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 8 }}>
-                        {locEmoji && <span style={{ fontSize: 16 }}>{locEmoji}</span>}
-                        <input type="text" value={locText} onChange={e => { const v = e.target.value; setStationLocations(prev => { const n = {...prev}; if (v) n[i] = v; else delete n[i]; return n; }); }}
-                          placeholder="Wo versteckst du diesen Hinweis?" style={{
-                            flex: 1, padding: "7px 10px", borderRadius: 8, border: `1px solid ${locText ? szTheme.color + '60' : 'var(--l)'}`,
-                            fontSize: 12, fontFamily: "var(--f)", outline: "none", background: locText ? szTheme.color + '06' : "#fff", boxSizing: "border-box",
-                            transition: "border-color 0.2s, background 0.2s",
-                          }} />
-                      </div>}
-                    </div>
-                  </details>
+                  <div key={i} style={{ marginBottom: 8 }}>
+                    <details open={i === 0} style={{ marginBottom: 0 }}>
+                      <summary style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer", padding: "6px 0", fontSize: 13 }}>
+                        <span style={{ width: 22, height: 22, borderRadius: "50%", background: isLast ? "var(--a)" : szTheme.color, color: "#fff", fontSize: 9, fontWeight: 800, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{isLast ? "🎁" : i + 1}</span>
+                        <span style={{ fontWeight: 700, flex: 1 }}>{st.name}</span>
+                        <span style={{ fontSize: 11, color: "var(--m)" }}>{st.dauer}′</span>
+                      </summary>
+                      <div style={{ paddingLeft: 30, paddingBottom: 6 }}>
+                        <p style={{ fontSize: 12, color: "var(--m)", lineHeight: 1.5, margin: "4px 0 6px" }}>{st.desc}</p>
+                        {st.hint && <p style={{ fontSize: 11, color: "#795548", background: "#FFF8E1", padding: "6px 10px", borderRadius: 6, border: "1px solid #FFE082" }}>💡 {st.hint}</p>}
+                      </div>
+                    </details>
+                    {!isLast && <div style={{ display: "flex", alignItems: "center", gap: 6, marginLeft: 30, marginTop: 2 }}>
+                      {locEmoji && <span style={{ fontSize: 14, flexShrink: 0 }}>{locEmoji}</span>}
+                      <input type="text" value={locText} onChange={e => { const v = e.target.value; setStationLocations(prev => { const n = {...prev}; if (v) n[i] = v; else delete n[i]; return n; }); }}
+                        placeholder="📍 Wo versteckst du diesen Hinweis?" style={{
+                          flex: 1, padding: "6px 10px", borderRadius: 8, border: `1px solid ${locText ? szTheme.color + '60' : 'var(--l)'}`,
+                          fontSize: 12, fontFamily: "var(--f)", outline: "none", background: locText ? szTheme.color + '06' : "#FAFAF5", boxSizing: "border-box",
+                          transition: "border-color 0.2s, background 0.2s",
+                        }} />
+                    </div>}
+                  </div>
                 );
               })}
             </div>

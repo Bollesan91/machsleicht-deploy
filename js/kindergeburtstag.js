@@ -2728,7 +2728,7 @@ function mapAutoLayout(stationNames, W, H) {
   pts.push({ x: W - pad - 25, y: pad + 30, label: "Schatz!", isTreasure: true });
   return pts;
 }
-function drawTreasureMap(canvas, points, themeId, title, dekoItems, selectedDekoIdx) {
+function drawTreasureMap(canvas, points, themeId, title, dekoItems, selectedDekoIdx, stationEmojis) {
   const t = MAP_THEMES[themeId] || MAP_THEMES.piraten;
   const ctx = canvas.getContext("2d");
   const dpr = window.devicePixelRatio || 1;
@@ -2906,11 +2906,17 @@ function drawTreasureMap(canvas, points, themeId, title, dekoItems, selectedDeko
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText(p.index, p.x, p.y + 1);
+    const sEmoji = stationEmojis && stationEmojis[p.index - 1];
+    if (sEmoji) {
+      ctx.font = "14px serif";
+      ctx.textBaseline = "bottom";
+      ctx.fillText(sEmoji, p.x, p.y - 17);
+    }
     ctx.fillStyle = tc;
     ctx.font = "8px Georgia";
     ctx.textBaseline = "top";
-    const lbl = p.label.length > 20 ? p.label.slice(0, 19) + "\u2026" : p.label;
-    ctx.fillText(lbl, p.x, p.y + 18, 90);
+    const lbl = p.label.length > 24 ? p.label.slice(0, 23) + "\u2026" : p.label;
+    ctx.fillText(lbl, p.x, p.y + 18, 120);
   });
   ctx.fillStyle = tcl;
   ctx.font = "italic 7px Georgia";
@@ -2938,11 +2944,12 @@ function TreasureMapCanvas({ szTheme, stations, childName, mapPositions, setMapP
   const themeId = szTheme ? szTheme.id : "piraten";
   const stationNames = stations.map((s, i) => {
     const loc = stationLocations && stationLocations[i];
-    if (loc) {
-      const em = matchLocationEmoji(loc);
-      return i === stations.length - 1 ? "\u{1F381} " + loc : em + " " + loc;
-    }
+    if (loc) return i === stations.length - 1 ? "\u{1F381} " + loc : loc;
     return i === stations.length - 1 ? "\u{1F381} " + s.name : s.name;
+  });
+  const stationEmojis = stations.map((s, i) => {
+    const loc = stationLocations && stationLocations[i];
+    return loc ? matchLocationEmoji(loc) : null;
   });
   const nameGen = childName ? childName.endsWith("s") ? childName + "'" : childName + "s" : "";
   const mapTitle = `${szTheme ? szTheme.emoji : ""} ${nameGen ? nameGen + " " : ""}${szTheme ? szTheme.name : "Schatzkarte"}`;
@@ -2973,7 +2980,7 @@ function TreasureMapCanvas({ szTheme, stations, childName, mapPositions, setMapP
     dimRef.current = { w: dw, h: dh };
     const ctx = c.getContext("2d");
     ctx.scale(dpr, dpr);
-    drawTreasureMap(c, getPoints(dw, dh), themeId, mapTitle, dekoRef.current, selDekoRef.current);
+    drawTreasureMap(c, getPoints(dw, dh), themeId, mapTitle, dekoRef.current, selDekoRef.current, stationEmojis);
   }, [stations, themeId, mapTitle, getPoints, dekoEmojis, selectedDekoIdx]);
   React.useEffect(() => {
     setMapPositions(null);
@@ -3123,7 +3130,7 @@ function TreasureMapCanvas({ szTheme, stations, childName, mapPositions, setMapP
     c.style.height = dh + "px";
     const ctx = c.getContext("2d");
     ctx.scale(dpr, dpr);
-    drawTreasureMap(c, getPoints(dw, dh), themeId, mapTitle, dekoRef.current, null);
+    drawTreasureMap(c, getPoints(dw, dh), themeId, mapTitle, dekoRef.current, null, stationEmojis);
   };
   return /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 16 } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, fontWeight: 700, color: "var(--m)", marginBottom: 6 } }, "\u{1F5FA}\uFE0F Schatzkarte"), /* @__PURE__ */ React.createElement("div", { style: { borderRadius: 12, overflow: "hidden", border: `2px solid ${szTheme ? szTheme.color + "40" : "var(--l)"}`, touchAction: "none" } }, /* @__PURE__ */ React.createElement("canvas", { ref: canvasRef, style: { display: "block", width: "100%", cursor: activeDekoEmoji ? "crosshair" : "grab", touchAction: "none" } })), /* @__PURE__ */ React.createElement("div", { className: "no-print", style: { marginTop: 8 } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, color: "var(--m)", marginBottom: 4 } }, selectedDekoIdx !== null ? `${dekoEmojis[selectedDekoIdx]?.emoji} ausgew\xE4hlt \u2014 verschieben oder l\xF6schen` : activeDekoEmoji ? `${activeDekoEmoji} Tippe auf die Karte zum Platzieren` : `Deko-Emoji w\xE4hlen (${dekoEmojis.length}/15):`), selectedDekoIdx !== null && /* @__PURE__ */ React.createElement(
     "button",
@@ -3252,7 +3259,7 @@ ${TreasureMapCanvas._canvasRef && TreasureMapCanvas._canvasRef.current ? `<div c
     const isLast = i === stations.length - 1;
     const locText = stationLocations[i] || "";
     const locEmoji = locText ? matchLocationEmoji(locText) : "";
-    return /* @__PURE__ */ React.createElement("details", { key: i, open: i === 0, style: { marginBottom: 6 } }, /* @__PURE__ */ React.createElement("summary", { style: { display: "flex", alignItems: "center", gap: 8, cursor: "pointer", padding: "6px 0", fontSize: 13 } }, /* @__PURE__ */ React.createElement("span", { style: { width: 22, height: 22, borderRadius: "50%", background: isLast ? "var(--a)" : szTheme.color, color: "#fff", fontSize: 9, fontWeight: 800, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 } }, isLast ? "\u{1F381}" : i + 1), /* @__PURE__ */ React.createElement("span", { style: { fontWeight: 700, flex: 1 } }, st.name, locText ? /* @__PURE__ */ React.createElement("span", { style: { fontWeight: 400, fontSize: 11, color: "var(--m)", marginLeft: 6 } }, locEmoji, " ", locText) : null), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 11, color: "var(--m)" } }, st.dauer, "\u2032")), /* @__PURE__ */ React.createElement("div", { style: { paddingLeft: 30, paddingBottom: 6 } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)", lineHeight: 1.5, margin: "4px 0 6px" } }, st.desc), st.hint && /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, color: "#795548", background: "#FFF8E1", padding: "6px 10px", borderRadius: 6, border: "1px solid #FFE082" } }, "\u{1F4A1} ", st.hint), !isLast && /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 6, marginTop: 8 } }, locEmoji && /* @__PURE__ */ React.createElement("span", { style: { fontSize: 16 } }, locEmoji), /* @__PURE__ */ React.createElement(
+    return /* @__PURE__ */ React.createElement("div", { key: i, style: { marginBottom: 8 } }, /* @__PURE__ */ React.createElement("details", { open: i === 0, style: { marginBottom: 0 } }, /* @__PURE__ */ React.createElement("summary", { style: { display: "flex", alignItems: "center", gap: 8, cursor: "pointer", padding: "6px 0", fontSize: 13 } }, /* @__PURE__ */ React.createElement("span", { style: { width: 22, height: 22, borderRadius: "50%", background: isLast ? "var(--a)" : szTheme.color, color: "#fff", fontSize: 9, fontWeight: 800, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 } }, isLast ? "\u{1F381}" : i + 1), /* @__PURE__ */ React.createElement("span", { style: { fontWeight: 700, flex: 1 } }, st.name), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 11, color: "var(--m)" } }, st.dauer, "\u2032")), /* @__PURE__ */ React.createElement("div", { style: { paddingLeft: 30, paddingBottom: 6 } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)", lineHeight: 1.5, margin: "4px 0 6px" } }, st.desc), st.hint && /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, color: "#795548", background: "#FFF8E1", padding: "6px 10px", borderRadius: 6, border: "1px solid #FFE082" } }, "\u{1F4A1} ", st.hint))), !isLast && /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 6, marginLeft: 30, marginTop: 2 } }, locEmoji && /* @__PURE__ */ React.createElement("span", { style: { fontSize: 14, flexShrink: 0 } }, locEmoji), /* @__PURE__ */ React.createElement(
       "input",
       {
         type: "text",
@@ -3266,21 +3273,21 @@ ${TreasureMapCanvas._canvasRef && TreasureMapCanvas._canvasRef.current ? `<div c
             return n;
           });
         },
-        placeholder: "Wo versteckst du diesen Hinweis?",
+        placeholder: "\u{1F4CD} Wo versteckst du diesen Hinweis?",
         style: {
           flex: 1,
-          padding: "7px 10px",
+          padding: "6px 10px",
           borderRadius: 8,
           border: `1px solid ${locText ? szTheme.color + "60" : "var(--l)"}`,
           fontSize: 12,
           fontFamily: "var(--f)",
           outline: "none",
-          background: locText ? szTheme.color + "06" : "#fff",
+          background: locText ? szTheme.color + "06" : "#FAFAF5",
           boxSizing: "border-box",
           transition: "border-color 0.2s, background 0.2s"
         }
       }
-    ))));
+    )));
   })), /* @__PURE__ */ React.createElement(TreasureMapCanvas, { szTheme, stations, childName, mapPositions, setMapPositions, stationLocations, dekoEmojis, setDekoEmojis }), /* @__PURE__ */ React.createElement("details", { style: { marginBottom: 16 } }, /* @__PURE__ */ React.createElement("summary", { style: { fontSize: 13, fontWeight: 700, color: "var(--a)", cursor: "pointer", padding: "6px 0" } }, "\u{1F4E6} Material-Checkliste (", materials.length, " Posten)"), /* @__PURE__ */ React.createElement("div", { style: { paddingTop: 8, display: "flex", flexDirection: "column", gap: 4 } }, materials.map((mat, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", alignItems: "center", gap: 8, padding: "6px 10px", background: "#fff", borderRadius: 8, border: "1px solid var(--l)", fontSize: 12 } }, /* @__PURE__ */ React.createElement("input", { type: "checkbox", style: { width: 14, height: 14, accentColor: "var(--g)" } }), /* @__PURE__ */ React.createElement("span", null, mat))), szTheme.schatz.map((s, i) => /* @__PURE__ */ React.createElement("div", { key: "s" + i, style: { display: "flex", alignItems: "center", gap: 8, padding: "6px 10px", background: "#fff", borderRadius: 8, border: "1px solid var(--l)", fontSize: 12 } }, /* @__PURE__ */ React.createElement("span", null, "\u{1F381}"), /* @__PURE__ */ React.createElement("span", { style: { flex: 1 } }, s), SZ_SCHATZ_LINKS[s] && /* @__PURE__ */ React.createElement("a", { href: SZ_SCHATZ_LINKS[s], target: "_blank", rel: "noopener", style: { fontSize: 10, fontWeight: 700, color: "#FF9900", textDecoration: "none", padding: "2px 6px", borderRadius: 4, background: "#FFF3E0" } }, "Amazon \u2197"))))), /* @__PURE__ */ React.createElement("button", { onClick: printKomplettpaket, className: "no-print", style: {
     width: "100%",
     padding: "12px 20px",
