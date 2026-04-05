@@ -2882,14 +2882,7 @@ function App() {
       if (v >= 1 && v <= 20) setGuests(v);
     }
     const modus = p.get("modus");
-    if (modus === "schatzsuche") {
-      setSzActive(true);
-      if (!m && !mottoId) setMottoId("safari");
-      setTimeout(() => {
-        setView("plan");
-        window.scrollTo(0, 0);
-      }, 100);
-    }
+    if (modus === "schatzsuche") setSzActive(true);
     const thema = p.get("thema");
     if (thema && SZ_THEMES.find((t) => t.id === thema)) setSzThemeId(thema);
   }, []);

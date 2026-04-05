@@ -574,13 +574,9 @@ function App() {
     if (m && ALL_MOTTOS.find((x) => x.id === m)) setMottoId(m);
     const a = p.get("alter"); if (a) { const v = parseInt(a); if (v >= 3 && v <= 12) setAge(v); }
     const g = p.get("gaeste"); if (g) { const v = parseInt(g); if (v >= 1 && v <= 20) setGuests(v); }
-    // Schatzsuche mode — auto-open plan with schnitzeljagd active
+    // Schnitzeljagd voraktivieren (Toggle wird im Plan automatisch offen sein)
     const modus = p.get("modus");
-    if (modus === "schatzsuche") {
-      setSzActive(true);
-      if (!m && !mottoId) setMottoId("safari"); // default motto if none set
-      setTimeout(() => { setView("plan"); window.scrollTo(0, 0); }, 100);
-    }
+    if (modus === "schatzsuche") setSzActive(true);
     const thema = p.get("thema");
     if (thema && SZ_THEMES.find((t) => t.id === thema)) setSzThemeId(thema);
   }, []);
