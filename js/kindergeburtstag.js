@@ -4046,6 +4046,9 @@ function App() {
   useEffect(() => saveState("owned", owned), [owned]);
   useEffect(() => saveState("shoppingMode", shoppingMode), [shoppingMode]);
   useEffect(() => saveState("szActive", szActive), [szActive]);
+  useEffect(() => {
+    if (szActive && !szThemeId && mottoId && SZ_THEMES.find((t) => t.id === mottoId)) setSzThemeId(mottoId);
+  }, [szActive, mottoId]);
   useEffect(() => saveState("szThemeId", szThemeId), [szThemeId]);
   useEffect(() => saveState("childName", childName), [childName]);
   useEffect(() => saveState("stationLocations", stationLocations), [stationLocations]);
