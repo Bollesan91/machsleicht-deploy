@@ -237,12 +237,35 @@ Die Partyseite vereint WhatsApp-Partyseite + Wunschliste als EIN integriertes Pr
 
 ### Wunschliste mit Affiliate (auf der Partyseite)
 - Einladendes Elternteil trägt Geschenk-Links ein (Amazon, Otto, myToys, Thalia...)
-- machsleicht erkennt Domain → setzt Affiliate-Tag dazwischen
-- Gäste-Eltern sehen Liste mit Bild, Titel, Preis (OpenGraph-Daten)
-- "Ich kaufe das" → Artikel als vergeben markiert → keine doppelten Geschenke
+- **"Ich kaufe das"** → Artikel als vergeben markiert → keine doppelten Geschenke
 - **"Beteiligen":** Mehrere Familien legen für ein teures Geschenk zusammen
 - **Revenue:** ~6-12€ Affiliate pro Geburtstag (8 Gäste × 15-30€ × 5% Provision)
-- **Affiliate-Programme:** Amazon (vorhanden), Otto/AWIN, myToys/AWIN, Thalia, MediaMarkt, Smyths Toys
+
+#### Affiliate-Link-Konvertierung (KRITISCH für Revenue)
+
+Jeder Link den ein Elternteil einträgt MUSS vor der Anzeige an Gäste-Eltern in einen Affiliate-Link umgewandelt werden. Der Original-Link wird gespeichert, der Gäste-Klick geht durch den Affiliate-Link.
+
+**Technischer Flow:**
+1. Elternteil fügt Produktlink ein (z.B. `amazon.de/dp/B08XYZ...`)
+2. Backend/Frontend parst die Domain aus der URL
+3. Domain-Mapping prüft ob Affiliate-Programm vorhanden:
+
+| Domain | Affiliate-Netzwerk | Tag/Parameter | Status |
+|--------|-------------------|---------------|--------|
+| `amazon.de` | Amazon PartnerNet | `?tag=machsleicht-21` | ✅ Live |
+| `otto.de` | AWIN | AWIN-Deeplink mit Publisher-ID | TODO |
+| `mytoys.de` | AWIN | AWIN-Deeplink mit Publisher-ID | TODO |
+| `thalia.de` | AWIN / Thalia Partner | Deeplink mit Partner-ID | TODO |
+| `mediamarkt.de` | AWIN | AWIN-Deeplink | TODO |
+| `saturn.de` | AWIN | AWIN-Deeplink | TODO |
+| `smythstoys.com` | eigenes Programm / AWIN | Deeplink | TODO |
+| Unbekannte Domain | Kein Affiliate | Original-Link durchreichen | — |
+
+4. Gäste-Eltern sehen den Artikel (Bild, Titel, Preis via OpenGraph)
+5. Klick auf "Kaufen" → leitet über Affiliate-Link zum Shop weiter
+6. **Original-Link wird NICHT an Gäste angezeigt** — nur der Affiliate-Link
+
+**Implementierung:** URL-Parser im Worker (~30 Zeilen). Domain extrahieren, Mapping nachschlagen, Affiliate-Parameter anhängen oder AWIN-Deeplink bauen. Unbekannte Domains unverändert durchlassen.
 
 ### Standalone /wunschliste (eigene Kategorie-Seite)
 - Auch für Eltern die den Geburtstag NICHT über machsleicht planen
