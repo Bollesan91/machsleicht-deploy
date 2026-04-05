@@ -7,6 +7,9 @@ var SZ_SCHATZ_LINKS = {Goldm\u00FCnzen:"https://www.amazon.de/s?k=goldm%C3%BCnze
 var SZ_TYP_EMOJI = {suchen:"\u{1F50D}",r\u00E4tseln:"\u{1F9E9}",action:"\u{1F3C3}",basteln:"\u2702\uFE0F",geschick:"\u{1F3AF}",teamwork:"\u{1F91D}",finale:"\u{1F381}"};
 
 var SZ_TYP_LABEL = {suchen:"Suchen",r\u00E4tseln:"R\xE4tseln",action:"Action",basteln:"Basteln",geschick:"Geschick",teamwork:"Teamwork",finale:"Finale"};
+
+var SZ_LABELS = { piraten: "Piraten", dschungel: "Dschungel", weltraum: "Weltraum", detektiv: "Detektiv", dino: "Dino", feen: "Feen" };
+
 // kindergeburtstag-data.js — Motto-Daten + Stationen + Greetings
 
 var ageGroup = function(a) { return a <= 5 ? 'klein' : a <= 8 ? 'mittel' : 'gross'; };
@@ -3008,6 +3011,103 @@ function App() {
     window.scrollTo(0, 0);
   }, style: { marginTop: 16, background: "none", border: "none", fontSize: 12, color: "var(--m)", cursor: "pointer", textDecoration: "underline" } }, "Direkt zum Plan \u2192")));
   if (view === "plan" && isSZ && szTheme) {
+    let printKomplettpaket2 = function() {
+      window.plausible && plausible("sz-komplettpaket-gedruckt", { props: { thema: szThemeId } });
+      const w = window.open("", "", "width=900,height=700");
+      w.document.write(`<html><head><title>Komplettpaket ${szTheme.name} \u2014 machsleicht.de</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=DM+Sans:opsz,wght@9..40,400;9..40,700;9..40,800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',system-ui,sans-serif;color:#2D2319;background:#FFF}
+.page{page-break-after:always;padding:32px;min-height:100vh}
+.page:last-child{page-break-after:auto}
+h1{font-size:22px;font-weight:900;margin-bottom:8px}
+h2{font-size:16px;font-weight:800;color:${szTheme.color};margin:20px 0 10px;border-bottom:2px solid ${szTheme.color}30;padding-bottom:4px}
+.station{margin-bottom:14px;padding:12px;background:#FAFAF5;border-radius:10px;border:1px solid #EDE6DE}
+.station-name{font-weight:800;font-size:14px;margin-bottom:4px}
+.station-desc{font-size:13px;line-height:1.5;color:#5D4037}
+.station-meta{font-size:11px;color:#A89888;margin-top:4px}
+.hint{font-size:12px;color:#795548;background:#FFF8E1;padding:6px 10px;border-radius:6px;margin-top:6px;border:1px solid #FFE082}
+.check{display:inline-block;width:14px;height:14px;border:2px solid #A89888;border-radius:3px;margin-right:8px;vertical-align:middle}
+.hinweis-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hinweis-card{border:2px dashed ${szTheme.color}80;border-radius:12px;padding:14px;text-align:center;min-height:140px;display:flex;flex-direction:column;justify-content:center}
+.hinweis-card .num{font-size:28px;margin-bottom:4px}
+.hinweis-card .name{font-size:13px;font-weight:700;margin-bottom:6px}
+.hinweis-card .hint-text{font-size:16px;color:#5D4037;line-height:1.4;font-family:'Caveat',cursive}
+.cert{text-align:center;padding:48px;border:4px double ${szTheme.color};border-radius:16px;position:relative;max-width:600px;margin:0 auto}
+.cert::before{content:'';position:absolute;inset:8px;border:1px solid ${szTheme.color}40;border-radius:10px}
+.brand{font-size:10px;color:#A89888;text-align:center;margin-top:12px}
+@media print{.page{padding:24px;min-height:auto}}
+</style></head><body>
+
+<!-- Seite 1: Stationen-\xDCbersicht -->
+<div class="page">
+<h1>${szTheme.emoji} ${childName ? nameGen + " " : ""}${szTheme.name}</h1>
+<p style="font-size:13px;color:#6B5D52;margin-bottom:12px">${stations.length} Stationen \xB7 ${ageLabel[ag]} \xB7 ca. ${totalDauer} Min.</p>
+<p style="font-size:14px;color:#5D4037;line-height:1.6;font-style:italic;margin-bottom:16px;padding:12px;background:#FAFAF5;border-radius:8px">\u201E${introText}"</p>
+${stations.map((s, i) => `<div class="station">
+<div class="station-name">${i === stations.length - 1 ? "\u{1F381}" : i + 1 + "."} ${s.name}</div>
+<div class="station-desc">${s.desc}</div>
+<div class="station-meta">${s.dauer} Min. \xB7 ${SZ_TYP_LABEL[s.typ] || s.typ}</div>
+<div class="hint">\u{1F4A1} ${s.hint}</div>
+</div>`).join("")}
+</div>
+
+<!-- Seite 2: Hinweis-Zettel -->
+<div class="page">
+<h1>\u2702\uFE0F Hinweis-Zettel zum Ausschneiden</h1>
+<p style="font-size:13px;color:#6B5D52;margin-bottom:16px">Ausschneiden und an den Stationen verstecken. Jeder Zettel f\xFChrt zur n\xE4chsten Station.</p>
+<div class="hinweis-grid">
+${stations.map((s, i) => `<div class="hinweis-card">
+<div class="num">${i === stations.length - 1 ? "\u{1F381}" : "Station " + (i + 1)}</div>
+<div class="name">${s.name}</div>
+<div class="hint-text">${i < stations.length - 1 ? "\u2192 Weiter zu: " + stations[i + 1].name : "\u{1F389} Geschafft! Hier ist der Schatz!"}</div>
+</div>`).join("")}
+</div>
+</div>
+
+<!-- Seite 3: Material-Checkliste -->
+<div class="page">
+<h1>\u{1F4CB} Material-Checkliste</h1>
+<p style="font-size:13px;color:#6B5D52;margin-bottom:16px">${szTheme.name} \xB7 ${ageLabel[ag]}</p>
+<h2>Pro Station</h2>
+<ul style="list-style:none;columns:2;column-gap:24px">
+${materials.map((m) => `<li style="font-size:13px;line-height:2;break-inside:avoid"><span class="check"></span>${m}</li>`).join("")}
+</ul>
+<h2>Schatz-Ideen</h2>
+<ul style="list-style:none;columns:2;column-gap:24px">
+${szTheme.schatz.map((s) => `<li style="font-size:13px;line-height:2;break-inside:avoid"><span class="check"></span>${s}</li>`).join("")}
+</ul>
+<h2>Allgemein</h2>
+<ul style="list-style:none">
+<li style="font-size:13px;line-height:2"><span class="check"></span>Hinweis-Zettel (Seite 2) ausschneiden</li>
+<li style="font-size:13px;line-height:2"><span class="check"></span>Stationen vorbereiten & verstecken</li>
+<li style="font-size:13px;line-height:2"><span class="check"></span>Schatz/Mitgebsel bereitlegen</li>
+<li style="font-size:13px;line-height:2"><span class="check"></span>Handy f\xFCr Fotos/Timer bereit</li>
+</ul>
+</div>
+
+<!-- Seite 4: Urkunde -->
+<div class="page" style="display:flex;justify-content:center;align-items:center">
+<div class="cert">
+<div style="font-size:56px;margin-bottom:12px">${szTheme.emoji}</div>
+<div style="font-size:28px;font-weight:900;margin-bottom:6px">Urkunde</div>
+<div style="font-size:18px;color:#6B5D52;margin-bottom:24px">${szTheme.name}</div>
+<div style="font-size:32px;font-weight:900;color:${szTheme.color};padding:8px 0;border-bottom:2px solid ${szTheme.color}40;margin-bottom:16px">_______________</div>
+<div style="font-size:15px;color:#6B5D52;line-height:1.6;margin:16px 0">hat die gro\xDFe ${szTheme.name}${childName ? " bei <strong>" + nameGen + "</strong> Geburtstag" : ""} erfolgreich bestanden!<br>Alle ${stations.length} Stationen gemeistert. ${totalDauer} Minuten Abenteuer \xFCberstanden.</div>
+<div style="display:flex;justify-content:space-between;margin-top:32px;font-size:13px;color:#A89888">
+<div style="border-top:1px solid #CCC;padding-top:4px;min-width:140px;text-align:center">Datum</div>
+<div style="border-top:1px solid #CCC;padding-top:4px;min-width:140px;text-align:center">Unterschrift</div>
+</div>
+<div class="brand">Erstellt mit machsleicht.de</div>
+</div>
+</div>
+
+</body></html>`);
+      w.document.close();
+      setTimeout(() => w.print(), 400);
+    };
+    var printKomplettpaket = printKomplettpaket2;
     const stations = szTheme.stations[ag] || szTheme.stations.mittel;
     const materials = szTheme.material[ag] || szTheme.material.mittel;
     const totalDauer = stations.reduce((s, st) => s + st.dauer, 0);
@@ -3035,7 +3135,48 @@ function App() {
         justifyContent: "center",
         flexShrink: 0
       } }, isLast ? "\u{1F381}" : i + 1), /* @__PURE__ */ React.createElement("div", { style: { flex: 1 } }, /* @__PURE__ */ React.createElement("span", { style: { fontSize: 12, fontWeight: 700, color: szTheme.color } }, typEmoji, " ", typLabel), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 14, fontWeight: 700, marginLeft: 8, color: "var(--d)" } }, st.name)), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 11, color: "var(--m)", whiteSpace: "nowrap", flexShrink: 0 } }, st.dauer, " Min.")), /* @__PURE__ */ React.createElement("div", { style: { padding: "4px 0 8px", borderLeft: `2px solid ${szTheme.color}20`, marginLeft: 5, paddingLeft: 16 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 13, color: "var(--m)", marginBottom: 8, lineHeight: 1.6 } }, st.desc), st.hint && /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, color: "#795548", background: "#FFF8E1", padding: "8px 12px", borderRadius: 8, border: "1px solid #FFE082", lineHeight: 1.5 } }, "\u{1F4A1} ", /* @__PURE__ */ React.createElement("strong", null, "Eltern-Tipp:"), " ", st.hint)));
-    }))), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 14px" } }, "\u{1F4E6} Material-Checkliste"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 6 } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, fontWeight: 700, color: szTheme.color, textTransform: "uppercase", letterSpacing: "0.06em" } }, "Pro Station"), materials.map((mat, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "var(--bg)", borderRadius: 10, border: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("input", { type: "checkbox", style: { width: 16, height: 16, accentColor: "var(--g)", cursor: "pointer" } }), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13, flex: 1 } }, mat))), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, fontWeight: 700, color: szTheme.color, textTransform: "uppercase", letterSpacing: "0.06em", marginTop: 12 } }, "Schatz-Ideen"), szTheme.schatz.map((s, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "var(--bg)", borderRadius: 10, border: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("span", { style: { fontSize: 16 } }, "\u{1F381}"), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13, flex: 1 } }, s), SZ_SCHATZ_LINKS[s] && /* @__PURE__ */ React.createElement("a", { href: SZ_SCHATZ_LINKS[s], target: "_blank", rel: "noopener", style: { fontSize: 11, fontWeight: 700, color: "#FF9900", textDecoration: "none", padding: "3px 8px", borderRadius: 6, background: "#FFF3E0", whiteSpace: "nowrap" } }, "Amazon \u2197"))))), shopItems.length > 0 && /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 14px" } }, "\u{1F6D2} Einkaufsliste"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 6 } }, shopItems.map((item, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "var(--bg)", borderRadius: 10, border: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("span", { style: {
+    }))), /* @__PURE__ */ React.createElement("section", { className: "fu no-print", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 6px" } }, "\u{1F5FA}\uFE0F Schatzkarte gestalten"), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)", marginBottom: 12 } }, "Tippe auf ein Emoji, dann tippe auf die Karte um es zu platzieren. Wird mitgedruckt!"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 8 } }, (szTheme.emoji === "\u{1F3F4}\u200D\u2620\uFE0F" ? ["\u{1F3F4}\u200D\u2620\uFE0F", "\u{1F480}", "\u2693", "\u{1F5DD}\uFE0F", "\u{1F48E}", "\u{1F99C}", "\u26F5", "\u{1F9ED}", "\u{1F4B0}", "\u{1F5E1}\uFE0F", "\u{1F3DD}\uFE0F"] : szTheme.emoji === "\u{1F981}" ? ["\u{1F981}", "\u{1F412}", "\u{1F98E}", "\u{1F99C}", "\u{1F40A}", "\u{1F334}", "\u{1F33A}", "\u{1F98B}", "\u{1F40D}", "\u{1F33F}"] : szTheme.emoji === "\u{1F680}" ? ["\u{1F680}", "\u2B50", "\u{1F319}", "\u{1F6F8}", "\u{1F47D}", "\u2604\uFE0F", "\u{1F31F}", "\u{1F52D}", "\u{1F6F0}\uFE0F", "\u{1F30C}"] : szTheme.emoji === "\u{1F50D}" ? ["\u{1F50D}", "\u{1F50E}", "\u{1F575}\uFE0F", "\u{1F4CB}", "\u{1F5DD}\uFE0F", "\u{1F4A1}", "\u{1F526}", "\u{1F463}", "\u{1F4CD}", "\u{1F510}"] : szTheme.emoji === "\u{1F995}" ? ["\u{1F995}", "\u{1F996}", "\u{1F30B}", "\u{1F9B4}", "\u{1FAA8}", "\u{1F33F}", "\u{1F95A}", "\u{1F525}", "\u{1FAB9}", "\u{1F48E}"] : ["\u{1F9DA}", "\u2728", "\u{1F338}", "\u{1F98B}", "\u{1F308}", "\u{1F344}", "\u{1FABB}", "\u{1F4AB}", "\u{1FA84}", "\u{1F451}"]).concat(["\u{1F4CD}", "\u{1F6A9}", "\u274C", "\u2B50", "\u2460", "\u2461", "\u2462", "\u2463", "\u2464", "\u{1F381}"]).map((emoji, i) => /* @__PURE__ */ React.createElement("button", { key: i, onClick: () => {
+      const map = document.getElementById("sz-map");
+      if (!map) return;
+      const handler = (ev) => {
+        const rect = map.getBoundingClientRect();
+        const x = ((ev.clientX - rect.left) / rect.width * 100).toFixed(1);
+        const y = ((ev.clientY - rect.top) / rect.height * 100).toFixed(1);
+        const el = document.createElement("span");
+        el.textContent = emoji;
+        el.style.cssText = `position:absolute;left:${x}%;top:${y}%;font-size:24px;cursor:grab;transform:translate(-50%,-50%);user-select:none;z-index:5;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.3))`;
+        el.onclick = (e) => {
+          e.stopPropagation();
+          if (confirm("Entfernen?")) el.remove();
+        };
+        map.appendChild(el);
+        map.removeEventListener("click", handler);
+        map.style.cursor = "default";
+      };
+      map.addEventListener("click", handler, { once: true });
+      map.style.cursor = "crosshair";
+    }, style: {
+      width: 36,
+      height: 36,
+      border: "1px solid var(--l)",
+      borderRadius: 8,
+      background: "var(--bg)",
+      fontSize: 18,
+      cursor: "pointer",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    } }, emoji))), /* @__PURE__ */ React.createElement("div", { id: "sz-map", style: {
+      position: "relative",
+      width: "100%",
+      aspectRatio: "4/3",
+      borderRadius: 16,
+      overflow: "hidden",
+      background: "linear-gradient(145deg,#F5E6C8 0%,#E8D5A8 30%,#DCCB96 60%,#F0E0B8 100%)",
+      border: `2px solid ${szTheme.color}40`,
+      cursor: "default",
+      boxShadow: "inset 0 2px 12px rgba(0,0,0,0.06)"
+    } }, /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", top: 12, left: 0, right: 0, textAlign: "center", zIndex: 2, pointerEvents: "none" } }, /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "'Caveat', cursive", fontSize: 22, fontWeight: 700, color: "#8B7750" } }, szTheme.emoji, " ", childName ? `${nameGen} ` : "", szTheme.name)), /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", bottom: 12, right: 12, fontSize: 11, color: "#A0926C", fontWeight: 700, zIndex: 2, pointerEvents: "none" } }, "N \u2191"), /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", bottom: 8, left: 12, fontSize: 9, color: "#A0926C", zIndex: 2, pointerEvents: "none" } }, "machsleicht.de")), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 10, color: "var(--m)", marginTop: 6, textAlign: "center" } }, "Tippe ein Emoji oben, dann tippe auf die Karte \xB7 Tippe auf ein platziertes Emoji zum Entfernen")), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 14px" } }, "\u{1F4E6} Material-Checkliste"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 6 } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, fontWeight: 700, color: szTheme.color, textTransform: "uppercase", letterSpacing: "0.06em" } }, "Pro Station"), materials.map((mat, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "var(--bg)", borderRadius: 10, border: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("input", { type: "checkbox", style: { width: 16, height: 16, accentColor: "var(--g)", cursor: "pointer" } }), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13, flex: 1 } }, mat))), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, fontWeight: 700, color: szTheme.color, textTransform: "uppercase", letterSpacing: "0.06em", marginTop: 12 } }, "Schatz-Ideen"), szTheme.schatz.map((s, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "var(--bg)", borderRadius: 10, border: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("span", { style: { fontSize: 16 } }, "\u{1F381}"), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13, flex: 1 } }, s), SZ_SCHATZ_LINKS[s] && /* @__PURE__ */ React.createElement("a", { href: SZ_SCHATZ_LINKS[s], target: "_blank", rel: "noopener", style: { fontSize: 11, fontWeight: 700, color: "#FF9900", textDecoration: "none", padding: "3px 8px", borderRadius: 6, background: "#FFF3E0", whiteSpace: "nowrap" } }, "Amazon \u2197"))))), shopItems.length > 0 && /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 14px" } }, "\u{1F6D2} Einkaufsliste"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 6 } }, shopItems.map((item, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "var(--bg)", borderRadius: 10, border: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("span", { style: {
       fontSize: 10,
       fontWeight: 700,
       padding: "2px 8px",
@@ -3044,7 +3185,7 @@ function App() {
       color: item.cat === "pflicht" ? "#E65100" : "#2E7D32",
       textTransform: "uppercase",
       flexShrink: 0
-    } }, item.cat === "pflicht" ? "Pflicht" : "Optional"), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13, flex: 1 } }, item.name), item.url && /* @__PURE__ */ React.createElement("a", { href: item.url, target: "_blank", rel: "noopener", style: { fontSize: 11, fontWeight: 700, color: "#FF9900", textDecoration: "none", padding: "3px 8px", borderRadius: 6, background: "#FFF3E0", whiteSpace: "nowrap" } }, "Amazon \u2197")))), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 10, color: "var(--m)", marginTop: 8, textAlign: "center" } }, "* Affiliate-Link: F\xFCr dich \xE4ndert sich der Preis nicht.")), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24, textAlign: "center" } }, /* @__PURE__ */ React.createElement("button", { onClick: () => window.print(), style: {
+    } }, item.cat === "pflicht" ? "Pflicht" : "Optional"), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13, flex: 1 } }, item.name), item.url && /* @__PURE__ */ React.createElement("a", { href: item.url, target: "_blank", rel: "noopener", style: { fontSize: 11, fontWeight: 700, color: "#FF9900", textDecoration: "none", padding: "3px 8px", borderRadius: 6, background: "#FFF3E0", whiteSpace: "nowrap" } }, "Amazon \u2197")))), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 10, color: "var(--m)", marginTop: 8, textAlign: "center" } }, "* Affiliate-Link: F\xFCr dich \xE4ndert sich der Preis nicht.")), /* @__PURE__ */ React.createElement("section", { className: "fu no-print", style: { marginBottom: 24, textAlign: "center" } }, /* @__PURE__ */ React.createElement("button", { onClick: printKomplettpaket2, style: {
       padding: "14px 28px",
       background: "linear-gradient(135deg,var(--a),#d35f1a)",
       color: "#fff",
@@ -3054,7 +3195,7 @@ function App() {
       fontWeight: 700,
       cursor: "pointer",
       boxShadow: "0 4px 20px rgba(224,122,58,0.3)"
-    } }, "\u{1F5A8}\uFE0F Komplettpaket drucken"), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)", marginTop: 8 } }, "Stationen + Material-Checkliste + Hinweise")), /* @__PURE__ */ React.createElement("footer", { style: { textAlign: "center", padding: "16px 0", borderTop: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)" } }, "\xA9 2026 machsleicht.de \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/kindergeburtstag", style: { color: "var(--m)", textDecoration: "none" } }, "Geburtstag planen"), " \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/impressum", style: { color: "var(--m)", textDecoration: "none" } }, "Impressum"), " \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/datenschutz", style: { color: "var(--m)", textDecoration: "none" } }, "Datenschutz"), " \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/transparenz", style: { color: "var(--m)", textDecoration: "none" } }, "Transparenz"))), /* @__PURE__ */ React.createElement("div", { className: "no-print", style: {
+    } }, "\u{1F5A8}\uFE0F Komplettpaket drucken"), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)", marginTop: 8 } }, "4 Seiten: Stationen \xB7 Hinweis-Zettel \xB7 Material \xB7 Urkunde")), /* @__PURE__ */ React.createElement("footer", { style: { textAlign: "center", padding: "16px 0", borderTop: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)" } }, "\xA9 2026 machsleicht.de \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/kindergeburtstag", style: { color: "var(--m)", textDecoration: "none" } }, "Geburtstag planen"), " \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/impressum", style: { color: "var(--m)", textDecoration: "none" } }, "Impressum"), " \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/datenschutz", style: { color: "var(--m)", textDecoration: "none" } }, "Datenschutz"), " \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/transparenz", style: { color: "var(--m)", textDecoration: "none" } }, "Transparenz"))), /* @__PURE__ */ React.createElement("div", { className: "no-print", style: {
       position: "fixed",
       bottom: 0,
       left: "50%",
@@ -3069,7 +3210,7 @@ function App() {
       display: "flex",
       gap: 6,
       zIndex: 100
-    } }, /* @__PURE__ */ React.createElement("button", { onClick: () => window.print(), style: {
+    } }, /* @__PURE__ */ React.createElement("button", { onClick: printKomplettpaket2, style: {
       flex: 1,
       padding: 10,
       borderRadius: 10,
@@ -3093,7 +3234,11 @@ function App() {
       textAlign: "center",
       cursor: "pointer",
       fontFamily: "var(--f)"
-    } }, "\u{1F5FA}\uFE0F Anderes Thema"), /* @__PURE__ */ React.createElement("a", { href: "/kindergeburtstag", style: {
+    } }, "\u{1F5FA}\uFE0F Anderes Thema"), /* @__PURE__ */ React.createElement("button", { onClick: () => {
+      setPlanMode("geburtstag");
+      setView("config");
+      window.scrollTo(0, 0);
+    }, style: {
       flex: 1,
       padding: 10,
       borderRadius: 10,
@@ -3103,7 +3248,7 @@ function App() {
       fontWeight: 700,
       fontSize: 12,
       textAlign: "center",
-      textDecoration: "none",
+      cursor: "pointer",
       fontFamily: "var(--f)"
     } }, "\u{1F382} Geburtstag")));
   }
@@ -3236,7 +3381,7 @@ https://machsleicht.de`;
     setMottoId(null);
   } }), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)", marginTop: 6 } }, age <= 5 ? "Einfache Suchspiele, Stopptanz, kurze Stationen" : age <= 8 ? "Schatzsuchen, Rallyes, Quiz, Basteln" : "Escape-Rooms, Codes knacken, Team-Olympiaden")), isSZ ? (
     /* SCHATZSUCHE: Theme Selection */
-    /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb", marginBottom: 10 } }, /* @__PURE__ */ React.createElement("span", { style: { color: "var(--a)", marginRight: 6 } }, "\u2461"), " Thema w\xE4hlen"), /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8 } }, SZ_THEMES.map((t) => /* @__PURE__ */ React.createElement("button", { key: t.id, onClick: () => {
+    /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb", marginBottom: 10 } }, /* @__PURE__ */ React.createElement("span", { style: { color: "var(--a)", marginRight: 6 } }, "\u2461"), " Thema w\xE4hlen"), /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(90px, 1fr))", gap: 8 } }, SZ_THEMES.map((t) => /* @__PURE__ */ React.createElement("button", { key: t.id, onClick: () => {
       setSzThemeId(t.id);
       window.plausible && plausible("sz-theme-selected", { props: { theme: t.id } });
     }, style: {
@@ -3253,7 +3398,7 @@ https://machsleicht.de`;
       transition: "all 0.25s",
       transform: szThemeId === t.id ? "scale(1.05)" : "scale(1)",
       boxShadow: szThemeId === t.id ? `0 4px 20px ${t.color}30` : "0 1px 4px rgba(0,0,0,0.04)"
-    } }, /* @__PURE__ */ React.createElement("span", { style: { fontSize: 30 } }, t.emoji), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 11, fontWeight: 600, color: szThemeId === t.id ? t.color : "#333", textAlign: "center", lineHeight: 1.2 } }, t.name.replace("-Schatzsuche", "").replace("-Expedition", "").replace("-Mission", "").replace("-Fall", "").replace("-Zeitreise", "").replace("zauber im Wald", "")), szThemeId === t.id && /* @__PURE__ */ React.createElement("span", { style: { position: "absolute", top: -6, right: -6, width: 20, height: 20, borderRadius: "50%", background: t.color, color: "#fff", fontSize: 11, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 2px 8px ${t.color}50` } }, "\u2713")))), /* @__PURE__ */ React.createElement("div", { style: { marginTop: 16 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb", marginBottom: 8 } }, /* @__PURE__ */ React.createElement("span", { style: { color: "var(--a)", marginRight: 6 } }, "\u2462"), " Name des Kindes ", /* @__PURE__ */ React.createElement("span", { style: { fontWeight: 400, color: "#ccc" } }, "(optional)")), /* @__PURE__ */ React.createElement(
+    } }, /* @__PURE__ */ React.createElement("span", { style: { fontSize: 30 } }, t.emoji), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 11, fontWeight: 600, color: szThemeId === t.id ? t.color : "#333", textAlign: "center", lineHeight: 1.2 } }, SZ_LABELS[t.id] || t.name), szThemeId === t.id && /* @__PURE__ */ React.createElement("span", { style: { position: "absolute", top: -6, right: -6, width: 20, height: 20, borderRadius: "50%", background: t.color, color: "#fff", fontSize: 11, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 2px 8px ${t.color}50` } }, "\u2713")))), /* @__PURE__ */ React.createElement("div", { style: { marginTop: 16 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb", marginBottom: 8 } }, /* @__PURE__ */ React.createElement("span", { style: { color: "var(--a)", marginRight: 6 } }, "\u2462"), " Name des Kindes ", /* @__PURE__ */ React.createElement("span", { style: { fontWeight: 400, color: "#ccc" } }, "(optional)")), /* @__PURE__ */ React.createElement(
       "input",
       {
         type: "text",

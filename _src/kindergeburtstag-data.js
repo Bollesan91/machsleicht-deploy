@@ -7,6 +7,9 @@ var SZ_SCHATZ_LINKS = {Goldm\u00FCnzen:"https://www.amazon.de/s?k=goldm%C3%BCnze
 var SZ_TYP_EMOJI = {suchen:"\u{1F50D}",r\u00E4tseln:"\u{1F9E9}",action:"\u{1F3C3}",basteln:"\u2702\uFE0F",geschick:"\u{1F3AF}",teamwork:"\u{1F91D}",finale:"\u{1F381}"};
 
 var SZ_TYP_LABEL = {suchen:"Suchen",r\u00E4tseln:"R\xE4tseln",action:"Action",basteln:"Basteln",geschick:"Geschick",teamwork:"Teamwork",finale:"Finale"};
+
+var SZ_LABELS = { piraten: "Piraten", dschungel: "Dschungel", weltraum: "Weltraum", detektiv: "Detektiv", dino: "Dino", feen: "Feen" };
+
 // kindergeburtstag-data.js — Motto-Daten + Stationen + Greetings
 
 var ageGroup = function(a) { return a <= 5 ? 'klein' : a <= 8 ? 'mittel' : 'gross'; };
