@@ -178,6 +178,9 @@ const MAP_THEMES = {
   detektiv:{parchment:['#E8E4F0','#DDD8EA','#CCC6DC'],accent:'#455A64',pathColor:'rgba(26,35,126,0.35)',borderColor:'#3949AB',scatter:['🔍','👣','👣','👣','🕵️','📋','🔦','🖊️','🔐','📎','🧲','🕶️','💡','🚨','👣'],pathDeco:['👣','🔍','📎','🔦'],treasureIcon:'📦',startIcon:'🚔'},
   dino:{parchment:['#E8F0E0','#D8E8C8','#C4D8B0'],accent:'#795548',pathColor:'rgba(46,125,50,0.35)',borderColor:'#558B2F',scatter:['🦴','🦴','🦶','🦶','🌿','🌿','🌋','🥚','🦎','🪨','🦕','🦖','🌿','☄️','🪹'],pathDeco:['🦴','🦶','🌿','🪨'],treasureIcon:'🦴',startIcon:'⛏️'},
   feen:{parchment:['#FFF0F5','#FFE4EE','#FFD6E8'],accent:'#AB47BC',pathColor:'rgba(173,20,87,0.3)',borderColor:'#E91E63',scatter:['🦋','🦋','✨','✨','🌸','🌸','🍄','🌈','💎','🧚','🪷','🌺','💫','🫧','🌷'],pathDeco:['🦋','✨','🌸','💎'],treasureIcon:'✨',startIcon:'🧚'},
+  safari:{parchment:['#F5ECD0','#EDE0B8','#D4C898'],accent:'#8D6E27',pathColor:'rgba(139,110,39,0.4)',borderColor:'#A68B3C',scatter:['🦁','🦁','🐘','🦒','🦓','🌴','🌴','🌾','🌾','🐆','🦏','🐊','🌅','🐾','🦩'],pathDeco:['🐾','🌾','🦁','🐘'],treasureIcon:'🏆',startIcon:'🧭'},
+  einhorn:{parchment:['#F8F0FF','#F0E4FF','#E4D4FF'],accent:'#7B1FA2',pathColor:'rgba(123,31,162,0.3)',borderColor:'#9C27B0',scatter:['🦄','🦄','🌈','🌈','⭐','✨','✨','💖','💜','🌸','🎀','💎','🫧','🌟','💫'],pathDeco:['✨','🌈','💖','⭐'],treasureIcon:'💎',startIcon:'🦄'},
+  feuerwehr:{parchment:['#FFF0E6','#FFE4D0','#FFD4B8'],accent:'#C62828',pathColor:'rgba(198,40,40,0.35)',borderColor:'#D32F2F',scatter:['🔥','🔥','🚒','🚒','🧯','🪜','👨‍🚒','🏢','💧','💧','🚨','📟','🔔','🪣','🔥'],pathDeco:['🔥','💧','🚨','🧯'],treasureIcon:'🏅',startIcon:'🚒'},
 };
 // Smart Emoji Matching for hiding locations
 const LOCATION_EMOJI_MAP = [
