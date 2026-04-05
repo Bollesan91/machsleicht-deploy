@@ -506,10 +506,11 @@ ${TreasureMapCanvas._canvasRef && TreasureMapCanvas._canvasRef.current ? `<div c
                 return (
                   <div key={i} style={{ marginBottom: 8 }}>
                     <details open={i === 0} style={{ marginBottom: 0 }}>
-                      <summary style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer", padding: "6px 0", fontSize: 13 }}>
+                      <summary style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer", padding: "6px 0", fontSize: 13, listStyle: "none" }}>
                         <span style={{ width: 22, height: 22, borderRadius: "50%", background: isLast ? "var(--a)" : szTheme.color, color: "#fff", fontSize: 9, fontWeight: 800, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{isLast ? "🎁" : i + 1}</span>
                         <span style={{ fontWeight: 700, flex: 1 }}>{st.name}</span>
                         <span style={{ fontSize: 11, color: "var(--m)" }}>{st.dauer}′</span>
+                        <span style={{ fontSize: 10, color: "var(--l)", flexShrink: 0, transition: "transform 0.2s" }}>▼</span>
                       </summary>
                       <div style={{ paddingLeft: 30, paddingBottom: 6 }}>
                         <p style={{ fontSize: 12, color: "var(--m)", lineHeight: 1.5, margin: "4px 0 6px" }}>{st.desc}</p>
