@@ -1,0 +1,217 @@
+<!-- machsleicht.de — Kreuzwortraetsel-Generator mit Loesungswort -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kreuzworträtsel erstellen — machsleicht.de</title>
+  <meta name="description" content="Erstelle ein personalisiertes Kreuzworträtsel mit Lösungswort für den Kindergeburtstag. Kostenlos, ohne Anmeldung, sofort druckbar oder digital spielbar.">
+  <meta property="og:title" content="Kreuzworträtsel erstellen — mach's leicht">
+  <meta property="og:description" content="Personalisiertes Kreuzworträtsel mit Lösungswort. Kostenlos, sofort druckbar oder digital spielbar.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://machsleicht.de/kreuzwortraetsel">
+  <meta property="og:image" content="https://machsleicht.de/og-home.png">
+  <meta name="theme-color" content="#FFFAF5">
+  <link rel="canonical" href="https://machsleicht.de/kreuzwortraetsel">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Kreuzworträtsel-Generator","url":"https://machsleicht.de/kreuzwortraetsel","applicationCategory":"EducationalApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Marie-Therese Bollweg"}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--a:#e07a3a;--al:#fef3eb;--ad:#c46a30;--d:#1a1a1a;--m:#777;--l:#f0ede8;--bg:#fafaf8;--w:#fdfcf9;--f:'DM Sans',system-ui,sans-serif;--fd:'Fraunces',Georgia,serif;--r:16px;--rs:12px;--g:#2E7D32}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--f);color:var(--d);background:var(--w);min-height:100vh;-webkit-font-smoothing:antialiased}
+    ::selection{background:var(--al);color:var(--ad)}
+    @media print{body{background:#fff!important}.no-print{display:none!important}.gcS{background:#eee!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+    @keyframes cF{0%{transform:translateY(-10px) rotate(0);opacity:1}100%{transform:translateY(60vh) rotate(720deg);opacity:0}}
+    @keyframes popIn{0%{transform:scale(0);opacity:0}50%{transform:scale(1.2)}100%{transform:scale(1);opacity:1}}
+    @keyframes shake{0%,100%{transform:translateX(0)}25%,75%{transform:translateX(-4px)}50%{transform:translateX(4px)}}
+    .cp{position:fixed;top:-10px;border-radius:2px;animation:cF 2.5s ease-out forwards;pointer-events:none;z-index:9999}
+  </style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+const{useState,useMemo,useCallback,useRef,useEffect}=React;
+const U=s=>s.toUpperCase();
+function bestPos(a,l){const n=U(a),t=U(l),p=[];for(let i=0;i<n.length;i++)if(n[i]===t)p.push(i);if(!p.length)return-1;const m=n.length/2;p.sort((a,b)=>Math.abs(a-m)-Math.abs(b-m));return p[0]}
+function mkGrid(rows,vr){const ps=vr.map(v=>v.pos),sc=Math.max(...ps);const gr=rows.map((r,i)=>{const n=U(r.answer);return{L:n.split(''),s:sc-ps[i],len:n.length}});return{R:gr,sc,tc:Math.max(...gr.map(g=>g.s+g.len))}}
+const EX={solution:'PIRAT',rows:[{question:'Buntes Tier das sprechen kann',answer:'Papagei'},{question:'Damit segeln Piraten übers Meer',answer:'Schiff'},{question:'Damit sieht man weit entfernte Schiffe',answer:'Fernglas'},{question:'Das tragen Piraten über einem Auge',answer:'Augenklappe'},{question:'Das suchen alle Piraten',answer:'Schatz'}]};
+function boom(){const c=['#e07a3a','#c46a30','#2E7D32','#FFD700','#FF6B6B','#4ECDC4'];for(let i=0;i<60;i++){const e=document.createElement('div');e.className='cp';Object.assign(e.style,{left:Math.random()*100+'vw',background:c[~~(Math.random()*c.length)],animationDelay:Math.random()*1.5+'s',animationDuration:(2+Math.random()*2)+'s',width:(6+Math.random()*8)+'px',height:(6+Math.random()*8)+'px'});document.body.appendChild(e);setTimeout(()=>e.remove(),4500)}}
+
+const bP={padding:'12px 24px',borderRadius:'var(--rs)',fontWeight:700,fontSize:14,cursor:'pointer',border:'none',background:'var(--a)',color:'#fff',fontFamily:'var(--f)',display:'inline-flex',alignItems:'center',gap:6};
+const bS={...bP,background:'var(--bg)',color:'var(--d)',border:'2px solid var(--l)'};
+const bD={...bP,opacity:.4,cursor:'not-allowed',background:'#ccc'};
+
+function SGrid({gd,show,sz}){
+  return <div style={{overflowX:'auto',display:'flex',justifyContent:'center',padding:'8px 0'}}>
+    <table style={{borderCollapse:'collapse'}}><tbody>
+      {gd.R.map((g,ri)=><tr key={ri}>{Array.from({length:gd.tc},(_,ci)=>{
+        const li=ci-g.s,ok=li>=0&&li<g.len,sol=ci===gd.sc;
+        if(!ok)return<td key={ci} style={{width:sz,height:sz,minWidth:sz,border:'none'}}/>;
+        return<td key={ci} className={sol?'gcS':''} style={{width:sz,height:sz,minWidth:sz,textAlign:'center',fontWeight:700,fontSize:sz>30?15:12,fontFamily:'var(--fd)',textTransform:'uppercase',border:'2px solid '+(sol?'var(--ad)':'var(--d)'),background:sol?'var(--al)':'#fff',color:sol?'var(--ad)':'var(--d)',position:'relative'}}>
+          {li===0&&<span style={{position:'absolute',top:1,left:2,fontSize:8,fontWeight:600,color:'#999',fontFamily:'var(--f)'}}>{ri+1}</span>}
+          {show?g.L[li]:''}
+        </td>
+      })}</tr>)}
+    </tbody></table>
+  </div>
+}
+
+function PGrid({gd,sol,rows,sz}){
+  const[inp,setInp]=useState(()=>gd.R.map(g=>Array(g.len).fill('')));
+  const[done,setDone]=useState(false);
+  const[wrong,setWrong]=useState(new Set());
+  const[activeR,setActiveR]=useState(null);
+  const refs=useRef({});
+  const sr=(ri,li,el)=>{refs.current[ri+'-'+li]=el};
+  const fn=(ri,li)=>{if(li+1<gd.R[ri].len)refs.current[ri+'-'+(li+1)]?.focus();else if(ri+1<gd.R.length)refs.current[(ri+1)+'-0']?.focus()};
+  const fp=(ri,li)=>{if(li-1>=0)refs.current[ri+'-'+(li-1)]?.focus();else if(ri-1>=0)refs.current[(ri-1)+'-'+(gd.R[ri-1].len-1)]?.focus()};
+  const hi=(ri,li,v)=>{const ch=v.slice(-1).toUpperCase();if(ch&&!/^[A-ZÄÖÜ]$/i.test(ch))return;setInp(p=>{const n=p.map(r=>[...r]);n[ri][li]=ch;return n});setWrong(p=>{const n=new Set(p);n.delete(ri+'-'+li);return n});if(ch)fn(ri,li)};
+  const hk=(e,ri,li)=>{if(e.key==='Backspace'&&!inp[ri][li]){e.preventDefault();fp(ri,li)}if(e.key==='ArrowRight')fn(ri,li);if(e.key==='ArrowLeft')fp(ri,li)};
+  useEffect(()=>{
+    if(inp.some((r,ri)=>r.some(c=>!c)))return;
+    let ok=true;const w=new Set();
+    inp.forEach((r,ri)=>r.forEach((c,li)=>{if(U(c)!==gd.R[ri].L[li]){ok=false;w.add(ri+'-'+li)}}));
+    if(ok&&!done){setDone(true);boom()}else if(!ok)setWrong(w);
+  },[inp]);
+  return<div>
+    <div style={{overflowX:'auto',display:'flex',justifyContent:'center',padding:'8px 0'}}>
+      <table style={{borderCollapse:'collapse'}}><tbody>
+        {gd.R.map((g,ri)=><tr key={ri}>{Array.from({length:gd.tc},(_,ci)=>{
+          const li=ci-g.s,ok=li>=0&&li<g.len,iS=ci===gd.sc;
+          if(!ok)return<td key={ci} style={{width:sz,height:sz,minWidth:sz,border:'none'}}/>;
+          const isW=wrong.has(ri+'-'+li),isC=inp[ri][li]&&U(inp[ri][li])===g.L[li];
+          return<td key={ci} style={{padding:0,position:'relative'}}>
+            {li===0&&<span style={{position:'absolute',top:2,left:3,fontSize:8,fontWeight:600,color:'#999',fontFamily:'var(--f)',zIndex:2,pointerEvents:'none'}}>{ri+1}</span>}
+            <input ref={el=>sr(ri,li,el)} value={inp[ri][li]} onChange={e=>hi(ri,li,e.target.value)} onKeyDown={e=>hk(e,ri,li)} onFocus={()=>setActiveR(ri)} maxLength={2} disabled={done}
+              style={{width:sz,height:sz,minWidth:sz,textAlign:'center',fontWeight:700,fontSize:sz>30?16:13,fontFamily:'var(--fd)',textTransform:'uppercase',border:'2px solid '+(isW?'#e74c3c':iS?'var(--ad)':'var(--d)'),background:done&&isC?'#d4edda':isW?'#fff5f5':iS?'var(--al)':'#fff',color:isW?'#e74c3c':iS?'var(--ad)':'var(--d)',outline:'none',padding:0,borderRadius:0,boxSizing:'border-box',caretColor:'var(--a)',animation:isW?'shake .4s ease':'none'}}/>
+          </td>
+        })}</tr>)}
+      </tbody></table>
+    </div>
+    {activeR!==null&&!done&&<div style={{textAlign:'center',marginTop:12,padding:'10px 16px',background:'var(--al)',borderRadius:'var(--rs)',fontSize:14}}><strong style={{color:'var(--a)'}}>{activeR+1}.</strong> {rows[activeR].question}</div>}
+    <div style={{display:'flex',justifyContent:'center',gap:4,marginTop:16}}>
+      {sol.split('').map((l,i)=>{const li=gd.sc-gd.R[i].s,f=inp[i]?.[li]||'',c=U(f)===U(l);return<div key={i} style={{width:32,height:32,display:'flex',alignItems:'center',justifyContent:'center',borderRadius:6,fontWeight:800,fontSize:16,fontFamily:'var(--fd)',border:'2px solid '+(c?'var(--g)':'var(--ad)'),background:c?'#d4edda':'var(--al)',color:c?'var(--g)':'var(--ad)',textTransform:'uppercase',transition:'all .2s',animation:c?'popIn .3s ease':'none'}}>{f||'?'}</div>})}
+    </div>
+    <div style={{textAlign:'center',fontSize:12,color:'var(--m)',marginTop:4}}>Lösungswort</div>
+    {done&&<div style={{textAlign:'center',marginTop:20,padding:20,background:'#d4edda',borderRadius:'var(--r)',animation:'popIn .5s ease'}}><div style={{fontSize:32,marginBottom:8}}>🎉</div><div style={{fontFamily:'var(--fd)',fontSize:20,fontWeight:800,color:'var(--g)'}}>Geschafft!</div><div style={{fontSize:14,color:'var(--g)',marginTop:4}}>Das Lösungswort ist <strong>{sol}</strong>!</div></div>}
+    <div style={{marginTop:20,background:'var(--bg)',borderRadius:'var(--r)',padding:16,border:'1px solid var(--l)'}}><div style={{fontFamily:'var(--fd)',fontSize:15,fontWeight:700,marginBottom:10,color:'var(--a)'}}>Alle Fragen</div>{rows.map((r,i)=><div key={i} style={{fontSize:14,marginBottom:6,lineHeight:1.5,opacity:activeR===i?1:.7,fontWeight:activeR===i?600:400,transition:'all .15s'}}><strong style={{color:'var(--a)'}}>{i+1}.</strong> {r.question}</div>)}</div>
+  </div>
+}
+
+function QL({rows,sa}){return<div style={{marginTop:20,background:'var(--bg)',borderRadius:'var(--r)',padding:16,border:'1px solid var(--l)'}}><div style={{fontFamily:'var(--fd)',fontSize:15,fontWeight:700,marginBottom:10,color:'var(--a)'}}>Fragen</div>{rows.map((r,i)=><div key={i} style={{fontSize:14,marginBottom:6,lineHeight:1.5}}><strong style={{color:'var(--a)'}}>{i+1}.</strong> {r.question}{sa&&<span style={{color:'var(--g)',fontWeight:600}}>{' → '+U(r.answer)}</span>}</div>)}</div>}
+
+function App(){
+  const[sol,setSol]=useState('');
+  const[rows,setRows]=useState([]);
+  const[showG,setShowG]=useState(false);
+  const[view,setView]=useState('ed');
+  const hSC=useCallback(v=>{const c=v.replace(/[^a-zA-ZäöüÄÖÜß]/g,'').toUpperCase();setSol(c);setShowG(false);setView('ed');setRows(p=>c.split('').map((l,i)=>({letter:l,question:p[i]?.letter===l?p[i].question:'',answer:p[i]?.letter===l?p[i].answer:''})))},[]);
+  const uR=useCallback((i,f,v)=>{setRows(p=>p.map((r,j)=>j===i?{...r,[f]:v}:r));setShowG(false)},[]);
+  const lE=useCallback(()=>{setSol(EX.solution);setRows(EX.solution.split('').map((l,i)=>({letter:l,question:EX.rows[i].question,answer:EX.rows[i].answer})));setShowG(true)},[]);
+  const vr=useMemo(()=>rows.map(r=>{if(!r.answer.trim())return{valid:false,error:null,pos:-1};const p=bestPos(r.answer,r.letter);if(p===-1)return{valid:false,error:'Antwort muss „'+r.letter+'" enthalten',pos:-1};return{valid:true,error:null,pos:p}}),[rows]);
+  const aV=rows.length>0&&vr.every(v=>v.valid);
+  const gd=useMemo(()=>aV?mkGrid(rows,vr):null,[aV,rows,vr]);
+  const cs=gd&&gd.tc>12?26:gd&&gd.tc>9?30:36;
+
+  if((view==='em'||view==='sl')&&gd){
+    const em=view==='em';
+    return<div style={{maxWidth:560,margin:'0 auto',padding:'32px 16px',background:'#fff'}}>
+      <div style={{textAlign:'center',marginBottom:20}}>
+        <div style={{fontFamily:'var(--fd)',fontSize:24,fontWeight:800,marginBottom:4}}>{em?'Kreuzworträtsel':'🔑 Lösungsblatt'}</div>
+        <div style={{fontSize:14,color:'var(--m)'}}>{em?'Finde das Lösungswort! Lies die markierten Felder von oben nach unten.':<span>Lösungswort: <strong style={{color:'var(--ad)'}}>{sol}</strong></span>}</div>
+      </div>
+      <SGrid gd={gd} show={!em} sz={cs}/>
+      {em&&<div style={{textAlign:'center',marginTop:10,fontSize:14,color:'var(--m)',letterSpacing:4}}>Lösungswort: {sol.split('').map(()=>'▢').join(' ')} <span style={{letterSpacing:0,fontSize:12}}>({sol.length} Buchstaben)</span></div>}
+      <QL rows={rows} sa={!em}/>
+      <div style={{textAlign:'center',marginTop:12,fontSize:10,color:'#ccc'}}>machsleicht.de</div>
+      <div className="no-print" style={{display:'flex',gap:8,justifyContent:'center',marginTop:20,flexWrap:'wrap'}}>
+        <button onClick={()=>setView('prev')} style={bS}>← Zurück</button>
+        <button onClick={()=>window.print()} style={bP}>🖨 Drucken / PDF</button>
+        <button onClick={()=>setView(em?'sl':'em')} style={bS}>{em?'🔑 Lösung':'📄 Leer'}</button>
+      </div>
+    </div>
+  }
+
+  if(view==='play'&&gd){
+    return<div style={{maxWidth:560,margin:'0 auto',padding:'24px 16px 80px'}}>
+      <div style={{textAlign:'center',marginBottom:16}}><a href="/" style={{fontFamily:'var(--fd)',fontSize:18,color:'var(--d)',textDecoration:'none'}}>machs<span style={{color:'var(--a)'}}>leicht</span></a></div>
+      <h2 style={{fontFamily:'var(--fd)',fontSize:22,fontWeight:800,textAlign:'center',marginBottom:4}}>Kreuzworträtsel</h2>
+      <p style={{textAlign:'center',fontSize:14,color:'var(--m)',marginBottom:20}}>Tippe die Antworten in die Kästchen!</p>
+      <PGrid gd={gd} sol={sol} rows={rows} sz={cs}/>
+      <div style={{display:'flex',gap:8,justifyContent:'center',marginTop:24}}><button onClick={()=>setView('prev')} style={bS}>← Zurück</button></div>
+      <div style={{textAlign:'center',marginTop:32,padding:16,background:'var(--al)',borderRadius:'var(--r)'}}>
+        <div style={{fontFamily:'var(--fd)',fontSize:14,fontWeight:700,marginBottom:4}}>Noch mehr für den Geburtstag?</div>
+        <div style={{fontSize:13,color:'var(--m)'}}>Schatzsuche, Spiele, Zeitplan — kostenlos.</div>
+        <a href="/kindergeburtstag" style={{...bP,fontSize:12,padding:'8px 16px',marginTop:8,textDecoration:'none'}}>Kindergeburtstag planen</a>
+      </div>
+    </div>
+  }
+
+  return<div style={{maxWidth:720,margin:'0 auto',padding:'24px 16px 80px'}}>
+    <div className="no-print" style={{textAlign:'center',marginBottom:24}}><a href="/" style={{fontFamily:'var(--fd)',fontSize:18,color:'var(--d)',textDecoration:'none'}}>machs<span style={{color:'var(--a)'}}>leicht</span></a></div>
+    <h1 className="no-print" style={{fontFamily:'var(--fd)',fontSize:'clamp(24px,5vw,32px)',fontWeight:800,textAlign:'center',marginBottom:8,lineHeight:1.2}}>Kreuzworträtsel erstellen</h1>
+    <p className="no-print" style={{textAlign:'center',color:'var(--m)',fontSize:15,marginBottom:32,lineHeight:1.5}}>Personalisiertes Kreuzworträtsel mit Lösungswort.<br/>Perfekt für Schatzsuchen, Geburtstage oder den Unterricht.</p>
+    <div className="no-print" style={{marginBottom:24}}>
+      <label style={{fontSize:13,fontWeight:600,color:'var(--a)',marginBottom:6,display:'block'}}>Lösungswort</label>
+      <input style={{width:'100%',padding:'12px 14px',border:'2px solid var(--l)',borderRadius:'var(--rs)',fontFamily:'var(--fd)',fontSize:22,fontWeight:700,textAlign:'center',letterSpacing:6,textTransform:'uppercase',background:'var(--bg)',color:'var(--d)',outline:'none',transition:'border-color .2s'}} type="text" placeholder="z.B. PIRAT" value={sol} onChange={e=>hSC(e.target.value)} maxLength={14} onFocus={e=>e.target.style.borderColor='var(--a)'} onBlur={e=>e.target.style.borderColor='var(--l)'}/>
+      <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginTop:4}}>
+        <span style={{fontSize:12,color:'var(--m)'}}>{sol.length>0?sol.length+' Buchstaben':'Das Wort das die Kinder herausfinden'}</span>
+        <button onClick={lE} style={{fontSize:13,color:'var(--a)',cursor:'pointer',background:'none',border:'none',fontWeight:600,textDecoration:'underline',fontFamily:'var(--f)'}}>Beispiel laden</button>
+      </div>
+    </div>
+    {rows.map((r,i)=>{const v=vr[i],bc=v.error?'#e74c3c':v.valid?'var(--g)':'var(--l)';return<div key={i} className="no-print" style={{marginBottom:12,background:'var(--bg)',border:'1px solid '+bc,borderRadius:'var(--r)',padding:14}}>
+      <div style={{display:'flex',alignItems:'center',marginBottom:10,gap:6,flexWrap:'wrap'}}>
+        <span style={{display:'inline-flex',alignItems:'center',justifyContent:'center',width:26,height:26,borderRadius:8,background:'var(--a)',color:'#fff',fontWeight:700,fontSize:13,flexShrink:0}}>{i+1}</span>
+        <span style={{fontSize:13,color:'var(--m)'}}>Antwort muss</span>
+        <span style={{fontFamily:'var(--fd)',fontWeight:800,fontSize:18,color:'var(--a)'}}>{r.letter}</span>
+        <span style={{fontSize:13,color:'var(--m)'}}>enthalten</span>
+      </div>
+      <div style={{display:'grid',gridTemplateColumns:'1fr',gap:8}}>
+        <input style={{width:'100%',padding:'10px 12px',border:'2px solid var(--l)',borderRadius:10,fontSize:14,background:'#fff',outline:'none',fontFamily:'var(--f)',transition:'border-color .2s'}} placeholder={'Frage '+(i+1)} value={r.question} onChange={e=>uR(i,'question',e.target.value)} onFocus={e=>e.target.style.borderColor='var(--a)'} onBlur={e=>e.target.style.borderColor='var(--l)'}/>
+        <input style={{width:'100%',padding:'10px 12px',border:'2px solid '+(v.valid?'var(--g)':v.error?'#e74c3c':'var(--l)'),borderRadius:10,fontSize:14,background:'#fff',outline:'none',fontFamily:'var(--f)'}} placeholder={'Antwort mit „'+r.letter+'"'} value={r.answer} onChange={e=>uR(i,'answer',e.target.value)}/>
+      </div>
+      {v.error&&<div style={{fontSize:12,color:'#e74c3c',marginTop:5,fontWeight:500}}>{v.error}</div>}
+      {v.valid&&r.answer&&<div style={{fontSize:12,color:'var(--g)',marginTop:5,fontWeight:500}}>{'✓ „'+r.letter+'" in „'+U(r.answer)+'"'}</div>}
+    </div>})}
+    {rows.length>0&&!showG&&<div className="no-print" style={{display:'flex',gap:10,justifyContent:'center',marginTop:24,flexWrap:'wrap'}}>
+      <button onClick={()=>setShowG(true)} disabled={!aV} style={aV?bP:bD}>Rätsel erstellen</button>
+      <button onClick={()=>{setSol('');setRows([]);setShowG(false)}} style={bS}>Zurücksetzen</button>
+    </div>}
+    {showG&&gd&&<div style={{marginTop:40}}>
+      <h2 style={{fontFamily:'var(--fd)',fontSize:20,fontWeight:700,textAlign:'center',marginBottom:4}}>Vorschau</h2>
+      <p style={{textAlign:'center',fontSize:13,color:'var(--m)',marginBottom:16}}>Lösungswort: <strong style={{color:'var(--ad)'}}>{sol}</strong></p>
+      <SGrid gd={gd} show={true} sz={cs}/>
+      <QL rows={rows} sa={false}/>
+      <div className="no-print" style={{display:'flex',gap:10,justifyContent:'center',marginTop:24,flexWrap:'wrap'}}>
+        <button onClick={()=>setView('play')} style={{...bP,background:'var(--g)'}}>🎮 Digital spielen</button>
+        <button onClick={()=>setView('em')} style={bP}>📄 Drucken (leer)</button>
+        <button onClick={()=>setView('sl')} style={bS}>🔑 Lösungsblatt</button>
+      </div>
+      <p className="no-print" style={{textAlign:'center',fontSize:12,color:'var(--m)',marginTop:8,lineHeight:1.5}}>🎮 Kinder lösen am Handy · 📄 Leeres Rätsel drucken · 🔑 Kontrollblatt für Eltern</p>
+      <div className="no-print" style={{textAlign:'center',marginTop:16}}><button onClick={()=>{setShowG(false);setView('ed')}} style={{...bS,fontSize:13,padding:'8px 16px'}}>✏️ Bearbeiten</button></div>
+      <div className="no-print" style={{textAlign:'center',marginTop:32,padding:20,background:'var(--al)',borderRadius:'var(--r)'}}>
+        <div style={{fontFamily:'var(--fd)',fontSize:16,fontWeight:700,marginBottom:6}}>Noch mehr für den Geburtstag?</div>
+        <div style={{fontSize:14,color:'var(--m)',marginBottom:12}}>Schatzsuche, Zeitplan, Spiele und Einkaufsliste — kostenlos.</div>
+        <a href="/kindergeburtstag" style={{...bP,fontSize:13,padding:'10px 20px',textDecoration:'none'}}>Kindergeburtstag planen</a>
+      </div>
+    </div>}
+    <div className="no-print" style={{marginTop:48,fontSize:14,color:'var(--m)',lineHeight:1.7}}>
+      <h2 style={{fontFamily:'var(--fd)',fontSize:18,color:'var(--d)',marginBottom:12}}>Kreuzworträtsel für Kinder erstellen</h2>
+      <p style={{marginBottom:12}}>Mit diesem Generator erstellst du in wenigen Minuten ein personalisiertes Kreuzworträtsel mit einem Lösungswort deiner Wahl. Perfekt als Station bei einer Schatzsuche, als Beschäftigung auf dem Kindergeburtstag oder als Rätsel im Unterricht.</p>
+      <p style={{marginBottom:12}}>So funktioniert es: Du gibst ein Lösungswort ein — zum Beispiel den Namen des Geburtstagskindes oder ein Motto-Wort. Für jeden Buchstaben schreibst du eine Frage und eine Antwort. Der Generator baut daraus automatisch ein druckfertiges Kreuzworträtsel — oder die Kinder lösen es direkt am Handy.</p>
+      <p>Das Lösungswort ergibt sich aus den markierten Feldern, von oben nach unten gelesen.</p>
+    </div>
+    <div className="no-print" style={{textAlign:'center',marginTop:48,paddingTop:16,borderTop:'1px solid var(--l)',fontSize:12,color:'var(--m)'}}>
+      <a href="/" style={{color:'var(--a)',textDecoration:'none'}}>machsleicht.de</a>{' · '}<a href="/kindergeburtstag" style={{color:'var(--a)',textDecoration:'none'}}>Kindergeburtstag</a>{' · '}<a href="/datenschutz" style={{color:'var(--a)',textDecoration:'none'}}>Datenschutz</a>{' · '}<a href="/impressum" style={{color:'var(--a)',textDecoration:'none'}}>Impressum</a>
+    </div>
+  </div>
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>
