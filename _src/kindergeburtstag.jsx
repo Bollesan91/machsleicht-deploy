@@ -194,6 +194,7 @@ const LOCATION_EMOJI_MAP = [
   [/waschmaschine|trockner|w[äa]sche/i,'🧺'],[/kamin|ofen/i,'🔥'],
   [/vorhang|gardine/i,'🪟'],[/teppich/i,'🧶'],[/spielzimmer|kinderzimmer/i,'🧸'],
   [/flur|gang|diele/i,'🚶'],[/wohnzimmer/i,'🏡'],[/schlafzimmer/i,'😴'],
+  [/trampolin/i,'🤸'],[/schublade/i,'🗄️'],[/korb|w[äa]schekorb/i,'🧺'],[/gew[äa]chshaus/i,'🌱'],[/baumhaus/i,'🏡'],
 ];
 function matchLocationEmoji(text) {
   if (!text) return '';
@@ -215,7 +216,7 @@ function mapAutoLayout(stationNames,W,H){
   pts.push({x:W-pad-25,y:pad+30,label:'Schatz!',isTreasure:true});
   return pts;
 }
-function drawTreasureMap(canvas,points,themeId,title){
+function drawTreasureMap(canvas,points,themeId,title,dekoItems,selectedDekoIdx){
   const t=MAP_THEMES[themeId]||MAP_THEMES.piraten;const ctx=canvas.getContext('2d');
   const dpr=window.devicePixelRatio||1;const W=canvas.width/dpr;const H=canvas.height/dpr;
   const isDark=t.darkMode;const tc=isDark?'rgba(200,200,255,0.85)':'rgba(80,40,10,0.85)';const tcl=isDark?'rgba(160,160,200,0.4)':'rgba(120,80,40,0.35)';
@@ -228,7 +229,10 @@ function drawTreasureMap(canvas,points,themeId,title){
   ctx.globalAlpha=isDark?0.2:0.15;t.scatter.forEach(em=>{const ex=25+rng()*(W-50),ey=40+rng()*(H-70);let skip=false;points.forEach(p=>{if(Math.hypot(p.x-ex,p.y-ey)<40)skip=true;});if(skip)return;ctx.font=`${11+rng()*8}px serif`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.save();ctx.translate(ex,ey);ctx.rotate((rng()-0.5)*0.5);ctx.fillText(em,0,0);ctx.restore();});ctx.globalAlpha=1;
   if(points.length>=2){ctx.setLineDash([6,4]);ctx.strokeStyle=t.pathColor;ctx.lineWidth=2.5;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(points[0].x,points[0].y);const mids=[];for(let i=1;i<points.length;i++){const p0=points[Math.max(0,i-2)],p1=points[i-1],p2=points[i],p3=points[Math.min(points.length-1,i+1)];ctx.bezierCurveTo(p1.x+(p2.x-p0.x)/6,p1.y+(p2.y-p0.y)/6,p2.x-(p3.x-p1.x)/6,p2.y-(p3.y-p1.y)/6,p2.x,p2.y);mids.push({x:(p1.x+p2.x)/2+(rng()-0.5)*15,y:(p1.y+p2.y)/2+(rng()-0.5)*15});}ctx.stroke();ctx.setLineDash([]);ctx.globalAlpha=0.5;mids.forEach(mp=>{ctx.font='11px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(t.pathDeco[Math.floor(rng()*t.pathDeco.length)],mp.x,mp.y);});ctx.globalAlpha=1;}
   const ccx=W-38,ccy=H-38;ctx.save();ctx.translate(ccx,ccy);ctx.strokeStyle=tcl;ctx.lineWidth=1;ctx.beginPath();ctx.arc(0,0,18,0,Math.PI*2);ctx.stroke();[{a:-Math.PI/2,l:'N',len:14,b:true},{a:0,l:'O',len:10},{a:Math.PI/2,l:'S',len:10},{a:Math.PI,l:'W',len:10}].forEach(d=>{ctx.strokeStyle=d.b?tc:tcl;ctx.lineWidth=d.b?2:1.5;ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(Math.cos(d.a)*d.len,Math.sin(d.a)*d.len);ctx.stroke();ctx.fillStyle=d.b?tc:tcl;ctx.font=d.b?'bold 8px Georgia':'7px Georgia';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(d.l,Math.cos(d.a)*(d.len+7),Math.sin(d.a)*(d.len+7));});ctx.restore();
-  const stColor=t.accent;points.forEach(p=>{
+  const stColor=t.accent;
+  // Draw deko emojis (user-placed decorations)
+  if (dekoItems && dekoItems.length) { dekoItems.forEach((d, di) => { const dx = d.fx * W, dy = d.fy * H; if (di === selectedDekoIdx) { ctx.strokeStyle='#E53935'; ctx.lineWidth=2; ctx.setLineDash([3,3]); ctx.beginPath(); ctx.arc(dx, dy, 14, 0, Math.PI*2); ctx.stroke(); ctx.setLineDash([]); } ctx.font='20px serif'; ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.globalAlpha=0.85; ctx.fillText(d.emoji, dx, dy); ctx.globalAlpha=1; }); }
+  points.forEach(p=>{
     if(p.isTreasure){ctx.save();ctx.translate(p.x,p.y);ctx.strokeStyle='#CC0000';ctx.lineWidth=3.5;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(-12,-12);ctx.lineTo(12,12);ctx.stroke();ctx.beginPath();ctx.moveTo(12,-12);ctx.lineTo(-12,12);ctx.stroke();ctx.font='18px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(t.treasureIcon,0,-18);ctx.fillStyle='#CC0000';ctx.font='bold italic 10px Georgia';ctx.textBaseline='alphabetic';ctx.fillText('Schatz!',0,24);ctx.restore();return;}
     if(p.isStart){ctx.font='18px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(t.startIcon,p.x,p.y);ctx.fillStyle=tc;ctx.font='bold 8px Georgia';ctx.textBaseline='top';ctx.fillText('START',p.x,p.y+12);return;}
     ctx.fillStyle='rgba(0,0,0,0.1)';ctx.beginPath();ctx.arc(p.x+1.5,p.y+1.5,15,0,Math.PI*2);ctx.fill();
@@ -236,15 +240,24 @@ function drawTreasureMap(canvas,points,themeId,title){
     ctx.fillStyle=isDark?'#fff':stColor;ctx.font='bold 12px Georgia';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(p.index,p.x,p.y+1);
     ctx.fillStyle=tc;ctx.font='8px Georgia';ctx.textBaseline='top';const lbl=p.label.length>20?p.label.slice(0,19)+'…':p.label;ctx.fillText(lbl,p.x,p.y+18,90);
   });
-  ctx.fillStyle=tcl;ctx.font='italic 7px Georgia';ctx.textAlign='left';ctx.textBaseline='bottom';ctx.fillText('💡 Stationen verschieben: tippen & ziehen',14,H-10);
+  ctx.fillStyle=tcl;ctx.font='italic 7px Georgia';ctx.textAlign='left';ctx.textBaseline='bottom';ctx.fillText('💡 Elemente verschieben: tippen & ziehen',14,H-10);
 }
 
-function TreasureMapCanvas({ szTheme, stations, childName, mapPositions, setMapPositions, stationLocations }) {
+function TreasureMapCanvas({ szTheme, stations, childName, mapPositions, setMapPositions, stationLocations, dekoEmojis, setDekoEmojis }) {
   const canvasRef = React.useRef(null);
-  const dragRef = React.useRef({dragging:false,idx:-1,offX:0,offY:0});
+  const dragRef = React.useRef({dragging:false,type:null,idx:-1,offX:0,offY:0});
   const dimRef = React.useRef({w:0,h:0});
   const posRef = React.useRef(null);
+  const dekoRef = React.useRef(dekoEmojis);
   posRef.current = mapPositions;
+  dekoRef.current = dekoEmojis;
+  const [activeDekoEmoji, setActiveDekoEmoji] = React.useState(null);
+  const activeDekoRef = React.useRef(null);
+  activeDekoRef.current = activeDekoEmoji;
+  const [selectedDekoIdx, setSelectedDekoIdx] = React.useState(null);
+  const selDekoRef = React.useRef(null);
+  selDekoRef.current = selectedDekoIdx;
+  React.useEffect(() => { if (selectedDekoIdx !== null && (!dekoEmojis.length || selectedDekoIdx >= dekoEmojis.length)) setSelectedDekoIdx(null); }, [dekoEmojis, selectedDekoIdx]);
 
   const themeId = szTheme ? szTheme.id : 'piraten';
   const stationNames = stations.map((s,i) => {
@@ -254,6 +267,14 @@ function TreasureMapCanvas({ szTheme, stations, childName, mapPositions, setMapP
   });
   const nameGen = childName ? (childName.endsWith("s") ? childName + "'" : childName + "s") : "";
   const mapTitle = `${szTheme ? szTheme.emoji : ''} ${nameGen ? nameGen + ' ' : ''}${szTheme ? szTheme.name : 'Schatzkarte'}`;
+
+  // Theme-specific palette emojis (deduplicated from scatter + pathDeco)
+  const themeConfig = MAP_THEMES[themeId] || MAP_THEMES.piraten;
+  const paletteEmojis = React.useMemo(() => {
+    const theme = [...(themeConfig.scatter || []), ...(themeConfig.pathDeco || []), themeConfig.treasureIcon, themeConfig.startIcon];
+    const universal = ['🎈','🎉','⭐','❤️','🎀','🎵','🏠','🌈'];
+    return [...new Set([...theme, ...universal])];
+  }, [themeId]);
 
   const getPoints = React.useCallback((w,h) => {
     const auto = mapAutoLayout(stationNames, w, h);
@@ -274,38 +295,101 @@ function TreasureMapCanvas({ szTheme, stations, childName, mapPositions, setMapP
     c.style.width = dw + 'px'; c.style.height = dh + 'px';
     dimRef.current = {w:dw, h:dh};
     const ctx = c.getContext('2d'); ctx.scale(dpr, dpr);
-    drawTreasureMap(c, getPoints(dw, dh), themeId, mapTitle);
-  }, [stations, themeId, mapTitle, getPoints]);
+    drawTreasureMap(c, getPoints(dw, dh), themeId, mapTitle, dekoRef.current, selDekoRef.current);
+  }, [stations, themeId, mapTitle, getPoints, dekoEmojis, selectedDekoIdx]);
 
-  React.useEffect(() => { setMapPositions(null); }, [stations.length, themeId]);
-  React.useEffect(() => { redraw(); }, [redraw, mapPositions]);
+  React.useEffect(() => { setMapPositions(null); setActiveDekoEmoji(null); setSelectedDekoIdx(null); }, [stations.length, themeId]);
+  React.useEffect(() => { redraw(); }, [redraw, mapPositions, dekoEmojis, selectedDekoIdx]);
   React.useEffect(() => { const h = () => { setMapPositions(null); setTimeout(redraw, 50); }; window.addEventListener('resize', h); return () => window.removeEventListener('resize', h); }, [redraw]);
 
-  // Native touch/mouse handlers for drag
+  // Native touch/mouse handlers for drag + place + select
   React.useEffect(() => {
     const c = canvasRef.current; if (!c) return;
+    const MAX_DEKO = 15;
     const getXY = (e) => { const rect = c.getBoundingClientRect(); const touch = e.touches ? e.touches[0] : (e.changedTouches ? e.changedTouches[0] : e); if (!touch) return null; return {x: touch.clientX - rect.left, y: touch.clientY - rect.top}; };
-    const findIdx = (x, y) => { const {w, h} = dimRef.current; const pts = getPoints(w, h); for (let i = pts.length - 1; i >= 0; i--) { if (Math.hypot(pts[i].x - x, pts[i].y - y) < 25) return i; } return -1; };
-    const down = (e) => { const pos = getXY(e); if (!pos) return; const idx = findIdx(pos.x, pos.y); if (idx < 0) return; e.preventDefault(); const {w, h} = dimRef.current; const pts = getPoints(w, h); if (!posRef.current) { const np = pts.map(p => ({x: p.x, y: p.y})); posRef.current = np; setMapPositions(np); } dragRef.current = {dragging: true, idx, offX: pts[idx].x - pos.x, offY: pts[idx].y - pos.y}; };
-    const move = (e) => { if (!dragRef.current.dragging) return; e.preventDefault(); const pos = getXY(e); if (!pos) return; const {idx, offX, offY} = dragRef.current; const {w, h} = dimRef.current; const nx = Math.max(15, Math.min(w - 15, pos.x + offX)); const ny = Math.max(15, Math.min(h - 15, pos.y + offY)); const np = [...(posRef.current || [])]; np[idx] = {x: nx, y: ny}; posRef.current = np; setMapPositions(np); };
-    const up = () => { dragRef.current.dragging = false; };
+    const findStationIdx = (x, y) => { const {w, h} = dimRef.current; const pts = getPoints(w, h); for (let i = pts.length - 1; i >= 0; i--) { if (Math.hypot(pts[i].x - x, pts[i].y - y) < 25) return i; } return -1; };
+    const findDekoIdx = (x, y) => { const {w, h} = dimRef.current; const deks = dekoRef.current || []; for (let i = deks.length - 1; i >= 0; i--) { if (Math.hypot(deks[i].fx * w - x, deks[i].fy * h - y) < 18) return i; } return -1; };
+
+    const down = (e) => {
+      const pos = getXY(e); if (!pos) return;
+      // 1. Check stations
+      const sIdx = findStationIdx(pos.x, pos.y);
+      if (sIdx >= 0) { e.preventDefault(); setSelectedDekoIdx(null); const {w, h} = dimRef.current; const pts = getPoints(w, h); if (!posRef.current) { const np = pts.map(p => ({x: p.x, y: p.y})); posRef.current = np; setMapPositions(np); } dragRef.current = {dragging: true, type:'station', idx: sIdx, offX: pts[sIdx].x - pos.x, offY: pts[sIdx].y - pos.y, moved: false, startX: pos.x, startY: pos.y}; return; }
+      // 2. Check deko emojis
+      const dIdx = findDekoIdx(pos.x, pos.y);
+      if (dIdx >= 0) { e.preventDefault(); const {w, h} = dimRef.current; const deks = dekoRef.current || []; dragRef.current = {dragging: true, type:'deko', idx: dIdx, offX: deks[dIdx].fx * w - pos.x, offY: deks[dIdx].fy * h - pos.y, moved: false, startX: pos.x, startY: pos.y}; return; }
+      // 3. Place new deko emoji if one is active (with limit)
+      const ae = activeDekoRef.current;
+      if (ae) { e.preventDefault(); setSelectedDekoIdx(null); const cur = dekoRef.current || []; if (cur.length >= MAX_DEKO) return; const {w, h} = dimRef.current; const fx = Math.max(0.03, Math.min(0.97, pos.x / w)); const fy = Math.max(0.05, Math.min(0.95, pos.y / h)); const nd = [...cur, {emoji: ae, fx, fy}]; dekoRef.current = nd; setDekoEmojis(nd); setActiveDekoEmoji(null); return; }
+      // 4. Tapped empty space → deselect
+      setSelectedDekoIdx(null);
+    };
+    const move = (e) => {
+      if (!dragRef.current.dragging) return; e.preventDefault(); const pos = getXY(e); if (!pos) return;
+      const dr = dragRef.current;
+      if (!dr.moved && Math.hypot(pos.x - dr.startX, pos.y - dr.startY) > 5) dr.moved = true;
+      if (!dr.moved) return;
+      const {type, idx, offX, offY} = dr; const {w, h} = dimRef.current;
+      if (type === 'station') { const nx = Math.max(15, Math.min(w - 15, pos.x + offX)); const ny = Math.max(15, Math.min(h - 15, pos.y + offY)); const np = [...(posRef.current || [])]; np[idx] = {x: nx, y: ny}; posRef.current = np; setMapPositions(np); }
+      if (type === 'deko') { const fx = Math.max(0.03, Math.min(0.97, (pos.x + offX) / w)); const fy = Math.max(0.05, Math.min(0.95, (pos.y + offY) / h)); const nd = [...(dekoRef.current || [])]; nd[idx] = {...nd[idx], fx, fy}; dekoRef.current = nd; setDekoEmojis(nd); }
+    };
+    const up = () => {
+      const dr = dragRef.current;
+      // Tap on deko (no drag) → toggle selection
+      if (dr.dragging && dr.type === 'deko' && !dr.moved) {
+        setSelectedDekoIdx(selDekoRef.current === dr.idx ? null : dr.idx);
+      }
+      dragRef.current = {dragging: false, type: null, idx: -1, offX: 0, offY: 0, moved: false, startX: 0, startY: 0};
+    };
     c.addEventListener('touchstart', down, {passive: false}); c.addEventListener('touchmove', move, {passive: false}); c.addEventListener('touchend', up);
     c.addEventListener('mousedown', down); c.addEventListener('mousemove', move); c.addEventListener('mouseup', up); c.addEventListener('mouseleave', up);
     return () => { c.removeEventListener('touchstart', down); c.removeEventListener('touchmove', move); c.removeEventListener('touchend', up); c.removeEventListener('mousedown', down); c.removeEventListener('mousemove', move); c.removeEventListener('mouseup', up); c.removeEventListener('mouseleave', up); };
-  }, [getPoints, setMapPositions]);
+  }, [getPoints, setMapPositions, setDekoEmojis]);
 
-  // Expose canvas ref for print export
+  // Expose canvas ref + clean redraw for print export
   TreasureMapCanvas._canvasRef = canvasRef;
+  TreasureMapCanvas._redrawClean = () => {
+    const c = canvasRef.current; if (!c || !stations.length) return;
+    const dpr = window.devicePixelRatio || 1;
+    const dw = dimRef.current.w || 300; const dh = dimRef.current.h || 240;
+    c.width = dw * dpr; c.height = dh * dpr; c.style.width = dw + 'px'; c.style.height = dh + 'px';
+    const ctx = c.getContext('2d'); ctx.scale(dpr, dpr);
+    drawTreasureMap(c, getPoints(dw, dh), themeId, mapTitle, dekoRef.current, null);
+  };
 
   return (
     <div style={{ marginBottom: 16 }}>
       <p style={{ fontSize: 12, fontWeight: 700, color: "var(--m)", marginBottom: 6 }}>🗺️ Schatzkarte</p>
       <div style={{ borderRadius: 12, overflow: "hidden", border: `2px solid ${szTheme ? szTheme.color + "40" : "var(--l)"}`, touchAction: "none" }}>
-        <canvas ref={canvasRef} style={{ display: "block", width: "100%", cursor: "grab", touchAction: "none" }} />
+        <canvas ref={canvasRef} style={{ display: "block", width: "100%", cursor: activeDekoEmoji ? "crosshair" : "grab", touchAction: "none" }} />
       </div>
-      {mapPositions && (
-        <div className="no-print" style={{ textAlign: "center", marginTop: 6 }}>
-          <button onClick={() => setMapPositions(null)} style={{ fontSize: 11, padding: "4px 12px", fontWeight: 600, border: "1px solid var(--l)", borderRadius: 8, background: "var(--bg)", color: "var(--m)", cursor: "pointer" }}>↺ Positionen zurücksetzen</button>
+      {/* Emoji Palette */}
+      <div className="no-print" style={{ marginTop: 8 }}>
+        <p style={{ fontSize: 11, color: "var(--m)", marginBottom: 4 }}>
+          {selectedDekoIdx !== null ? `${dekoEmojis[selectedDekoIdx]?.emoji} ausgewählt — verschieben oder löschen` : activeDekoEmoji ? `${activeDekoEmoji} Tippe auf die Karte zum Platzieren` : `Deko-Emoji wählen (${dekoEmojis.length}/15):`}
+        </p>
+        {selectedDekoIdx !== null && (
+          <button onClick={() => { const nd = dekoEmojis.filter((_, i) => i !== selectedDekoIdx); setDekoEmojis(nd); setSelectedDekoIdx(null); }}
+            style={{ fontSize: 12, padding: "5px 14px", fontWeight: 600, border: "none", borderRadius: 8, background: "#FFEBEE", color: "#C62828", cursor: "pointer", marginBottom: 6, display: "block" }}>🗑️ Entfernen</button>
+        )}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
+          {paletteEmojis.map((em, i) => (
+            <button key={i} onClick={() => { setSelectedDekoIdx(null); setActiveDekoEmoji(activeDekoEmoji === em ? null : em); }}
+              style={{
+                fontSize: 18, padding: "4px 6px", borderRadius: 8, cursor: "pointer", border: "none", lineHeight: 1,
+                background: activeDekoEmoji === em ? szTheme.color + "20" : "var(--bg)",
+                boxShadow: activeDekoEmoji === em ? `0 0 0 2px ${szTheme.color}` : "0 0 0 1px var(--l)",
+                transform: activeDekoEmoji === em ? "scale(1.2)" : "none", transition: "all 0.15s",
+                opacity: dekoEmojis.length >= 15 && !activeDekoEmoji ? 0.4 : 1,
+              }}>{em}</button>
+          ))}
+        </div>
+      </div>
+      {/* Reset buttons */}
+      {(mapPositions || dekoEmojis.length > 0) && (
+        <div className="no-print" style={{ display: "flex", justifyContent: "center", gap: 8, marginTop: 6 }}>
+          {mapPositions && <button onClick={() => setMapPositions(null)} style={{ fontSize: 11, padding: "4px 12px", fontWeight: 600, border: "1px solid var(--l)", borderRadius: 8, background: "var(--bg)", color: "var(--m)", cursor: "pointer" }}>↺ Positionen</button>}
+          {dekoEmojis.length > 0 && <button onClick={() => { setDekoEmojis([]); setActiveDekoEmoji(null); setSelectedDekoIdx(null); }} style={{ fontSize: 11, padding: "4px 12px", fontWeight: 600, border: "1px solid var(--l)", borderRadius: 8, background: "var(--bg)", color: "var(--m)", cursor: "pointer" }}>✕ Alle Deko ({dekoEmojis.length})</button>}
         </div>
       )}
     </div>
@@ -313,11 +397,11 @@ function TreasureMapCanvas({ szTheme, stations, childName, mapPositions, setMapP
 }
 
 // === SCHNITZELJAGD INLINE BLOCK (expandable within plan view) ===
-function SchnitzeljagdBlock({ age, ag, szActive, setSzActive, szThemeId, setSzThemeId, szTheme, childName, setChildName, mapPositions, setMapPositions, stationLocations, setStationLocations }) {
+function SchnitzeljagdBlock({ age, ag, szActive, setSzActive, szThemeId, setSzThemeId, szTheme, childName, setChildName, mapPositions, setMapPositions, stationLocations, setStationLocations, dekoEmojis, setDekoEmojis }) {
   const stations = szTheme ? (szTheme.stations[ag] || szTheme.stations.mittel) : [];
   const materials = szTheme ? (szTheme.material[ag] || szTheme.material.mittel) : [];
   const totalDauer = stations.reduce((s, st) => s + st.dauer, 0);
-  React.useEffect(() => { setStationLocations({}); }, [szThemeId, ag]);
+  React.useEffect(() => { setStationLocations({}); setDekoEmojis([]); }, [szThemeId, ag]);
   const nameGen = childName ? (childName.endsWith("s") ? childName + "'" : childName + "s") : "";
   const introText = szTheme ? (szTheme.intro[ag] || szTheme.intro.mittel).replace(/\{name\},?\s*/g, childName ? childName + ", " : "") : "";
   const shopItems = szThemeId ? (SZ_SHOP_ITEMS[szThemeId] || []) : [];
@@ -326,6 +410,7 @@ function SchnitzeljagdBlock({ age, ag, szActive, setSzActive, szThemeId, setSzTh
   function printKomplettpaket() {
     if (!szTheme) return;
     window.plausible && plausible("sz-komplettpaket-gedruckt", { props: { thema: szThemeId } });
+    TreasureMapCanvas._redrawClean && TreasureMapCanvas._redrawClean();
     const w = window.open("", "", "width=900,height=700");
     w.document.write(`<html><head><title>Komplettpaket ${szTheme.name}</title>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=DM+Sans:opsz,wght@9..40,400;9..40,700;9..40,800&display=swap" rel="stylesheet">
@@ -439,7 +524,7 @@ ${TreasureMapCanvas._canvasRef && TreasureMapCanvas._canvasRef.current ? `<div c
             </div>
 
             {/* Map - Canvas-based Treasure Map */}
-            <TreasureMapCanvas szTheme={szTheme} stations={stations} childName={childName} mapPositions={mapPositions} setMapPositions={setMapPositions} stationLocations={stationLocations} />
+            <TreasureMapCanvas szTheme={szTheme} stations={stations} childName={childName} mapPositions={mapPositions} setMapPositions={setMapPositions} stationLocations={stationLocations} dekoEmojis={dekoEmojis} setDekoEmojis={setDekoEmojis} />
 
             {/* Material */}
             <details style={{ marginBottom: 16 }}>
@@ -640,6 +725,7 @@ function App() {
   const [childName, setChildName] = useState(() => loadState("childName", ""));
   const [mapPositions, setMapPositions] = useState(null); // [{x, y}] for canvas map stations
   const [stationLocations, setStationLocations] = useState(() => loadState("stationLocations", {})); // {index: "Ort-Text"}
+  const [dekoEmojis, setDekoEmojis] = useState(() => loadState("dekoEmojis", [])); // [{emoji, fx, fy}] fractional coords
 
   // Derived values
   const motto = ALL_MOTTOS.find((m) => m.id === mottoId);
@@ -663,6 +749,7 @@ function App() {
   useEffect(() => saveState("szThemeId", szThemeId), [szThemeId]);
   useEffect(() => saveState("childName", childName), [childName]);
   useEffect(() => saveState("stationLocations", stationLocations), [stationLocations]);
+  useEffect(() => saveState("dekoEmojis", dekoEmojis), [dekoEmojis]);
 
   // Hide sticky CTA in plan view
   useEffect(() => {
@@ -922,7 +1009,7 @@ function App() {
 
         {/* Einladung */}
         <EinladungBlock motto={motto} guests={guests} previewName={previewName} setPreviewName={setPreviewName} inviteSent={inviteSent} setInviteSent={setInviteSent} />
-        <SchnitzeljagdBlock age={age} ag={ag} szActive={szActive} setSzActive={setSzActive} szThemeId={szThemeId} setSzThemeId={setSzThemeId} szTheme={szTheme} childName={childName} setChildName={setChildName} mapPositions={mapPositions} setMapPositions={setMapPositions} stationLocations={stationLocations} setStationLocations={setStationLocations} />
+        <SchnitzeljagdBlock age={age} ag={ag} szActive={szActive} setSzActive={setSzActive} szThemeId={szThemeId} setSzThemeId={setSzThemeId} szTheme={szTheme} childName={childName} setChildName={setChildName} mapPositions={mapPositions} setMapPositions={setMapPositions} stationLocations={stationLocations} setStationLocations={setStationLocations} dekoEmojis={dekoEmojis} setDekoEmojis={setDekoEmojis} />
 
         {/* Score */}
         <ScoreCheck score={score} />
