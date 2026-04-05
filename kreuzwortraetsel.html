@@ -26,6 +26,8 @@
     @media print{body{background:#fff!important}.no-print{display:none!important}.grid-sol{background:#f0f0f0!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
     @keyframes popIn{0%{transform:scale(0);opacity:0}60%{transform:scale(1.2)}100%{transform:scale(1);opacity:1}}
     @keyframes confetti{0%{opacity:1;transform:translate(0,0) rotate(0)}100%{opacity:0;transform:translate(var(--tx),var(--ty)) rotate(var(--rot))}}
+    .row-fields{display:grid;grid-template-columns:1fr;gap:8px}
+    @media(min-width:500px){.row-fields{grid-template-columns:1fr 1fr}}
   </style>
 </head>
 <body>
@@ -315,7 +317,7 @@ function App(){
             <span style={{fontFamily:'var(--fd)',fontWeight:800,fontSize:18,color:'var(--a)'}}>{r.letter}</span>
             <span style={{fontSize:13,color:'var(--m)'}}>enthalten</span>
           </div>
-          <div style={{display:'grid',gridTemplateColumns:'1fr',gap:8}}>
+          <div className="row-fields">
             <input style={{width:'100%',padding:'10px 12px',border:'2px solid var(--l)',borderRadius:10,fontSize:14,background:'#fff',outline:'none',fontFamily:'var(--f)',transition:'border-color .2s'}}
               placeholder={`Frage ${i+1}`} value={r.question} onChange={e=>updateRow(i,'question',e.target.value)}
               onFocus={e=>e.target.style.borderColor='var(--a)'} onBlur={e=>e.target.style.borderColor='var(--l)'}/>

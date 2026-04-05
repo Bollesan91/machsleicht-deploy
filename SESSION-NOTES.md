@@ -5,60 +5,47 @@
 
 ## Was wurde gemacht
 
-### JSX-Workflow aufgesetzt
-- Original-JSX aus Git-History extrahiert (commit d4cd5b8^)
-- `_src/kindergeburtstag.jsx` als Single Source of Truth (~1090 Zeilen)
-- `_src/kindergeburtstag-data.js` — alle Daten (Mottos + SZ_THEMES + SZ_LABELS)
-- `_src/build.sh` — esbuild Build in 10ms
+### Strategie-Dokument komplett ueberarbeitet
+- Premium-Strategie (_dev/docs/premium-strategie-2026-04.md) konsolidiert
+- Alle Premium-Features aus Chat-History in ein Dokument zusammengefuehrt
+- Vision mit Standalone-Prinzip und fuenf Saeulen (Planer, Partyseite, Wunschliste, Raetsel nach Mass, Kreuzwortraetsel)
+- Premium-Kandidaten in 3 Tiers (Raetsel, ElevenLabs, Text-only)
+- Partyseite als integriertes Fundament-Feature (RSVP, Allergien, Abholzeit, Wunschliste)
+- 3 User Flows zur Partyseite (aus Planer, direkt, aus Wunschliste)
+- URL: /party/{random-token} + PIN = Kindername
+- Affiliate-Link-Konvertierung mit Domain-Mapping-Tabelle
+- Wettbewerber-Analyse (Wunschbiber, Partiful, Whocan, Joy)
+- Beteiligen = nur Koordination, kein Geldfluss
+- Geburtstagssong -> Backlog, Multiplayer -> Langfrist-Vision
+- Revenue-Projektion als optimistisch-konservativ markiert
+- ElevenLabs-Klumpenrisiko dokumentiert
+- Backend: Cloudflare Workers + KV
 
-### Architektur-Umbau: Ein Planer, eine Seite
-- Zwei getrennte Planer (Geburtstag + Schatzsuche) zu einem einzigen Tool zusammengefuehrt
-- Schnitzeljagd ist ein **Inline-Add-on Toggle** im Geburtstag-Plan (szActive State)
-- SchnitzeljagdBlock: collapsed = "+ Schnitzeljagd hinzufuegen", expanded = voller Block
-- Kein separater Modus, kein Mode-Switch, kein separater Wizard/Peak/Plan-View
-- Naming: "Schnitzeljagd" (generisch), Theme-Name erscheint nach Auswahl
+### Kreuzwortraetsel-Generator gebaut (v1)
+- kreuzwortraetsel.html — komplett clientseitig, single-file React
+- Drei Modi: Leer drucken, Loesungsblatt, Digital spielen
+- Loesungswort eingeben, Fragen+Antworten pro Buchstabe
+- Live-Validierung, auto-Positionierung, responsive Grid
+- Digital: Input-Felder, Auto-Focus, gruene Felder, Konfetti
+- Loesungswort-Tracker unter dem Grid
+- Umlaute als Einzelzeichen (kein AE/OE/UE)
+- Responsive Felder (1fr mobil, 1fr 1fr desktop)
+- Redirect /kreuzwortraetsel eingetragen
 
-### SchnitzeljagdBlock (expandierbar im Plan)
-- Theme-Picker (6 Themes: Piraten, Dschungel, Weltraum, Detektiv, Dino, Feen)
-- Kindername (optional, personalisiert Intro + Stationen)
-- Intro-Story, Stations-Accordion, Schatzkarten-Editor (React-State), Material-Checkliste
-- Print-Komplettpaket (5 Seiten: Karte + Stationen + Hinweis-Zettel + Material + Urkunde)
-
-### Schatzkarten-Editor
-- React-State (mapItems) statt DOM-Manipulation
-- Emojis persistieren in localStorage, ueberleben Re-Renders
-- Schatzkarte wird im Komplettpaket-Print mitgedruckt
-- Theme-spezifische Emoji-Palette + universelle Marker
-- Undo + Clear-All
-
-### Redirects + Cleanup
-- /schatzsuche + /schnitzeljagd → 301 auf /kindergeburtstag?modus=schatzsuche#planer
-- 12 Unterseiten-CTAs auf Planer mit Theme-Parameter umgebogen
-- js/schatzsuche.js geloescht, schatzsuche.html = Redirect-Fallback
-- ?modus=schatzsuche voraktiviert Toggle (kein Auto-Plan, kein Auto-Motto)
-
-### UX-Fixes
-- Hero-CTAs entfernt (redundant, Wizard ist direkt darunter)
-- emergencyFull in emergencyStart gemergt
-- Feature-Chip: "+ Schnitzeljagd"
-- Possessiv-Fix (Max' statt Maxs)
-- Sticky-CTA in Peak-View versteckt
-- Dead code entfernt (activeStation, nameDisplay, Connector, planMode, isSZ)
-
-## Technischer Stand
-- `_src/kindergeburtstag.jsx` — ~1090 Zeilen JSX
-- `_src/kindergeburtstag-data.js` — ~2420 Zeilen Daten
-- `_src/build.sh` — esbuild (10ms)
-- `js/kindergeburtstag.js` — 3222 Zeilen, 233KB compiled
-- Alles laeuft von /kindergeburtstag, ein Flow
+### Sparring-Runden
+- Kreuzwortraetsel als Raetsel-nach-Mass-Format eingeordnet
+- Partyseite Pro/Contra, Cloudflare Workers Kapazitaet
+- Wettbewerber-Research
+- Prio-Wechsel: Raetsel nach Mass VOR Partyseite
 
 ## Naechste Schritte
-1. **Mobile-Testing** — Schnitzeljagd-Toggle, Theme-Grid, Map-Editor, Print auf echtem Handy
-2. **Raetsel nach Mass** — Erstes Premium-Feature
-3. **WhatsApp-Partyseite** — viraler Kanal
-4. **Wunschliste mit Affiliate**
-5. **GitHub Token rotieren!**
+1. **Kreuzwortraetsel testen** — Handy + Desktop, Print, Digital-Spielmodus
+2. **Raetsel nach Mass** — Claude API, UI im Schnitzeljagd-Block, VK 2.99
+3. **Partyseite MVP** — Worker + KV, Formular, Gaeste-View, Admin-View
+4. **Sitemap aktualisieren** — kreuzwortraetsel.html aufnehmen
+5. **GitHub Token rotieren!** (laeuft 25.04. ab)
 
 ## Offene Fragen
-- Unterseiten-Canonicals noch auf /schatzsuche/* — umbiegen?
-- kindergeburtstag-data.js (alt, im js/ Ordner) aus Repo entfernen?
+- Kreuzwortraetsel: PDF-Export noetig oder reicht Browser-Print?
+- Raetsel nach Mass: Prompt-Engineering fuer altersgerechte Raetsel
+- Partyseite: KV-Namespace "PARTY" anlegen in Cloudflare Dashboard
