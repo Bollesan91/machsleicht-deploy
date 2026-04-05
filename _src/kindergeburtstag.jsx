@@ -530,7 +530,6 @@ function App() {
   const [locOverride, setLocOverride] = useState(null);
   const [emailSaved, setEmailSaved] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
-  const [activeStation, setActiveStation] = useState(0);
   const [inviteSent, setInviteSent] = useState(0);
   const [previewName, setPreviewName] = useState("");
   const [szActive, setSzActive] = useState(() => loadState("szActive", false)); // schnitzeljagd add-on toggle
@@ -575,9 +574,13 @@ function App() {
     if (m && ALL_MOTTOS.find((x) => x.id === m)) setMottoId(m);
     const a = p.get("alter"); if (a) { const v = parseInt(a); if (v >= 3 && v <= 12) setAge(v); }
     const g = p.get("gaeste"); if (g) { const v = parseInt(g); if (v >= 1 && v <= 20) setGuests(v); }
-    // Schatzsuche mode
+    // Schatzsuche mode — auto-open plan with schnitzeljagd active
     const modus = p.get("modus");
-    if (modus === "schatzsuche") setSzActive(true);
+    if (modus === "schatzsuche") {
+      setSzActive(true);
+      if (!m && !mottoId) setMottoId("safari"); // default motto if none set
+      setTimeout(() => { setView("plan"); window.scrollTo(0, 0); }, 100);
+    }
     const thema = p.get("thema");
     if (thema && SZ_THEMES.find((t) => t.id === thema)) setSzThemeId(thema);
   }, []);

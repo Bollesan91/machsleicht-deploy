@@ -2837,7 +2837,6 @@ function App() {
   const [locOverride, setLocOverride] = useState(null);
   const [emailSaved, setEmailSaved] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
-  const [activeStation, setActiveStation] = useState(0);
   const [inviteSent, setInviteSent] = useState(0);
   const [previewName, setPreviewName] = useState("");
   const [szActive, setSzActive] = useState(() => loadState("szActive", false));
@@ -2883,7 +2882,14 @@ function App() {
       if (v >= 1 && v <= 20) setGuests(v);
     }
     const modus = p.get("modus");
-    if (modus === "schatzsuche") setSzActive(true);
+    if (modus === "schatzsuche") {
+      setSzActive(true);
+      if (!m && !mottoId) setMottoId("safari");
+      setTimeout(() => {
+        setView("plan");
+        window.scrollTo(0, 0);
+      }, 100);
+    }
     const thema = p.get("thema");
     if (thema && SZ_THEMES.find((t) => t.id === thema)) setSzThemeId(thema);
   }, []);
