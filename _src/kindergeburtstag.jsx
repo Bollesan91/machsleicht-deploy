@@ -88,7 +88,7 @@ function Confetti({ active }) {
 }
 
 // === CONTROL HUB (Fixed Bottom Bar) ===
-function ControlHub({ mottoId }) {
+function ControlHub({ mottoId, onSwitchSZ }) {
   return (
     <div className="no-print" style={{
       position: "fixed", bottom: 0, left: "50%", transform: "translateX(-50%)",
@@ -100,10 +100,10 @@ function ControlHub({ mottoId }) {
         flex: 1, padding: 10, borderRadius: 10, background: "var(--a)", color: "#fff",
         fontWeight: 700, fontSize: 12, textAlign: "center", textDecoration: "none", fontFamily: "var(--f)",
       }}>💌 Einladung</a>
-      <a href="/schatzsuche" style={{
+      <button onClick={onSwitchSZ} style={{
         flex: 1, padding: 10, borderRadius: 10, background: "var(--bg)", color: "var(--d)",
-        border: "1px solid var(--l)", fontWeight: 700, fontSize: 12, textAlign: "center", textDecoration: "none", fontFamily: "var(--f)",
-      }}>🗺️ Schatzsuche</a>
+        border: "1px solid var(--l)", fontWeight: 700, fontSize: 12, textAlign: "center", cursor: "pointer", fontFamily: "var(--f)",
+      }}>🗺️ Schatzsuche</button>
       <button onClick={() => document.querySelector('[data-action="pdf"]')?.scrollIntoView({ behavior: "smooth" })} style={{
         flex: 1, padding: 10, borderRadius: 10, background: "var(--bg)", color: "var(--d)",
         border: "1px solid var(--l)", fontWeight: 700, fontSize: 12, textAlign: "center", cursor: "pointer", fontFamily: "var(--f)",
@@ -170,7 +170,7 @@ function EinladungBlock({ motto, guests, previewName, setPreviewName, inviteSent
 }
 
 // === SCHATZSUCHE TEASER mit Stationen-Explorer ===
-function SchatzsucheTeaser({ motto, guests, age, location, activeStation, setActiveStation }) {
+function SchatzsucheTeaser({ motto, guests, age, location, activeStation, setActiveStation, onSwitchSZ }) {
   const stations = (STATION_SETS[motto?.id] || DEFAULT_STATIONS).map((st, i) => ({ ...st, unlocked: i < 2 }));
   const s = stations[activeStation];
   const locLabel = location === "wohnung" ? "Drinnen" : location === "garten" ? "Garten" : "Park";
@@ -233,10 +233,10 @@ function SchatzsucheTeaser({ motto, guests, age, location, activeStation, setAct
             </p>
           </div>
 
-          <a href="/schatzsuche" onClick={() => typeof mlTrack === "function" && mlTrack("cta_schatzsuche_plan", { motto: motto?.id })} style={{
+          <button onClick={() => { onSwitchSZ && onSwitchSZ(); typeof mlTrack === "function" && mlTrack("cta_schatzsuche_plan", { motto: motto?.id }); }} style={{
             display: "block", width: "100%", background: "var(--a)", color: "#fff", padding: 14,
-            borderRadius: 99, fontWeight: 700, fontSize: 14, textAlign: "center", textDecoration: "none", boxSizing: "border-box",
-          }}>{motto.name}-Schatzsuche für {guests} Kinder →</a>
+            borderRadius: 99, fontWeight: 700, fontSize: 14, textAlign: "center", border: "none", cursor: "pointer", boxSizing: "border-box",
+          }}>{motto.name}-Schatzsuche für {guests} Kinder →</button>
           <p style={{ fontSize: 11, color: "var(--m)", margin: "8px 0 0", textAlign: "center" }}>Kostenlos · 5 Stationen · Druckfertig in 5 Min.</p>
         </div>
       </div>
@@ -598,6 +598,7 @@ function App() {
   }
 
   // === ACTIONS ===
+  function switchToSZ() { setPlanMode("schatzsuche"); setView("config"); window.scrollTo(0, 0); }
   function reset() { setView("config"); setMottoId(null); setSzThemeId(null); setChildName(""); setQuietMode(false); setOwned({}); setShoppingMode("standard"); setLocOverride(null); setEmergencyMode(false); }
   function startPlan() {
     if (isSZ && szThemeId) { setView("peak"); window.scrollTo(0, 0); setTimeout(() => { setView("plan"); window.scrollTo(0, 0); }, 2200); }
@@ -893,7 +894,7 @@ function App() {
         {/* Einladung */}
         <EinladungBlock motto={motto} guests={guests} previewName={previewName} setPreviewName={setPreviewName} inviteSent={inviteSent} setInviteSent={setInviteSent} />
         <Connector />
-        <SchatzsucheTeaser motto={motto} guests={guests} age={age} location={effectiveLoc} activeStation={activeStation} setActiveStation={setActiveStation} />
+        <SchatzsucheTeaser motto={motto} guests={guests} age={age} location={effectiveLoc} activeStation={activeStation} setActiveStation={setActiveStation} onSwitchSZ={switchToSZ} />
 
         {/* Score */}
         <ScoreCheck score={score} />
@@ -1014,7 +1015,7 @@ function App() {
           </p>
         </footer>
 
-        <ControlHub mottoId={mottoId} />
+        <ControlHub mottoId={mottoId} onSwitchSZ={switchToSZ} />
       </div>
     );
   }
@@ -1030,7 +1031,7 @@ function App() {
           <span style={{ fontFamily: "var(--fd)", fontWeight: 800, fontSize: 20, color: "var(--a)" }}>mach's</span>
           <span style={{ fontFamily: "var(--fd)", fontWeight: 800, fontSize: 20, color: "var(--d)" }}>leicht</span>
         </a>
-        <a href="/schatzsuche" style={{ fontSize: 13, fontWeight: 500, color: "var(--m)", textDecoration: "none" }}>🗺️ Schatzsuche</a>
+        <button onClick={() => { setPlanMode("schatzsuche"); document.getElementById("wizard")?.scrollIntoView({ behavior: "smooth" }); }} style={{ fontSize: 13, fontWeight: 500, color: "var(--m)", textDecoration: "none", background: "none", border: "none", cursor: "pointer", fontFamily: "var(--f)" }}>🗺️ Schatzsuche</button>
       </nav>
 
       {/* Hero */}
@@ -1265,16 +1266,16 @@ function App() {
 
       {/* Schatzsuche Cross-sell (only in Geburtstag mode) */}
       {!isSZ && <div style={{ maxWidth: 700, margin: "24px auto", padding: "0 16px" }}>
-        <a href="/schatzsuche" style={{ textDecoration: "none", display: "block" }}>
+        <button onClick={() => { setPlanMode("schatzsuche"); document.getElementById("wizard")?.scrollIntoView({ behavior: "smooth" }); }} style={{ textDecoration: "none", display: "block", width: "100%", background: "none", border: "none", padding: 0, cursor: "pointer", textAlign: "left" }}>
           <div style={{ background: "linear-gradient(135deg,#fef8f0,#fff8e8)", borderRadius: 20, padding: "24px 28px", border: "1px solid #f0ede8", display: "flex", alignItems: "center", gap: 20, cursor: "pointer" }}>
             <div style={{ fontSize: 44, flexShrink: 0, animation: "float 3s ease-in-out infinite" }}>🗺️</div>
             <div style={{ flex: 1 }}>
               <div style={{ fontFamily: "var(--fd)", fontWeight: 800, fontSize: 18, color: "var(--d)", marginBottom: 4 }}>Schatzsuche erstellen</div>
-              <div style={{ fontSize: 13, color: "var(--m)", lineHeight: 1.5 }}>6 Themen, interaktive Schatzkarte, Live-Modus für den Partytag.</div>
+              <div style={{ fontSize: 13, color: "var(--m)", lineHeight: 1.5 }}>6 Themen, altersgerechte Stationen, Material-Checkliste — alles in einem Tool.</div>
             </div>
             <div style={{ fontSize: 22, color: "var(--a)", flexShrink: 0 }}>→</div>
           </div>
-        </a>
+        </button>
       </div>}
 
       {/* Features */}
