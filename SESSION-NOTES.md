@@ -5,51 +5,56 @@
 
 ## Was wurde gemacht
 
-### Architektur-Umbau: Ein Planer, eine Seite
-- Mode-Switch "Geburtstag vs Schatzsuche" komplett entfernt
-- Separater SZ-Wizard, SZ-Peak-View, SZ-Plan-View entfernt (~370 Zeilen)
-- Schnitzeljagd ist jetzt ein **Add-on Toggle** im Geburtstag-Plan (szActive State)
-- SchnitzeljagdBlock-Komponente: collapsed = "Schnitzeljagd hinzufuegen" Button, expanded = voller Inline-Block
+### JSX-Workflow aufgesetzt
+- Original-JSX aus Git-History extrahiert (commit d4cd5b8^)
+- `_src/kindergeburtstag.jsx` als Single Source of Truth
+- `_src/kindergeburtstag-data.js` — alle Daten (Mottos + SZ_THEMES + SZ_LABELS)
+- `_src/build.sh` — esbuild Build in 10ms
 
-### SchnitzeljagdBlock (expandierbarer Inline-Block im Plan)
-- Theme-Picker (6 Themes im Grid)
-- Kindername-Feld (optional)
-- Intro-Story (vorlesbar)
-- Stations-Accordion (kompakt, mit Typ-Badges + Eltern-Tipps)
-- Schatzkarten-Editor (React-State, click-to-place, Emoji-Palette, Undo/Clear)
-- Material-Checkliste (als Details/Summary, mit Checkboxen + Amazon-Affiliate)
-- Print-Komplettpaket (5 Seiten: Karte + Stationen + Hinweis-Zettel + Material + Urkunde)
-- ControlHub zeigt "Schnitzeljagd" Toggle-Status (aktiv/inaktiv)
+### Schnitzeljagd als Inline-Add-on im Geburtstags-Plan
+- **Kein separater Modus** mehr — ein Planer, eine Seite, ein Flow
+- SchnitzeljagdBlock: expandierbarer Toggle im Plan-View
+  - Collapsed: "+ Schnitzeljagd hinzufuegen" Button
+  - Expanded: Theme-Picker (6 Themes), Kindername, Intro-Story, Stations-Accordion, Schatzkarten-Editor (React-State), Material-Checkliste, Print-Komplettpaket (5 Seiten)
+- ControlHub zeigt Schnitzeljagd Toggle-Status (aktiv/inaktiv)
+- Naming: "Schnitzeljagd" (generisch), Theme-Name erscheint nach Auswahl
 
-### Naming: "Schnitzeljagd" statt "Schatzsuche"
-- Generischer Name fuer die Mechanik (Stationen + Raetsel + Finale)
-- "Schatzsuche" ist nur der Piraten-Name
-- UI sagt "Schnitzeljagd hinzufuegen", Theme-Name erscheint nach Auswahl
+### Schatzkarten-Editor
+- React-State (mapItems: [{emoji, x, y}]) statt DOM-Manipulation
+- Emojis ueberleben Re-Renders, persistieren in localStorage
+- Schatzkarte wird im Komplettpaket-Print mitgedruckt
+- Theme-spezifische Emoji-Palette + universelle Marker
+- Undo + Clear-All Buttons
 
-### Cleanup
-- planMode/isSZ/switchToSZ komplett entfernt
-- Connector-Komponente entfernt
-- Cross-sell Card entfernt
-- Mode-Switch Hero entfernt
-- Feature-Chips zeigen jetzt "+ Schatzsuche" statt "Kosten pro Kind"
-- ~21KB Code eingespart (234KB statt 255KB)
+### Redirects + Cleanup
+- /schatzsuche → 301 auf /kindergeburtstag?modus=schatzsuche#planer
+- /schnitzeljagd → 301 auf /kindergeburtstag?modus=schatzsuche#planer
+- 12 Unterseiten-CTAs auf Planer mit Theme-Parameter umgebogen
+- js/schatzsuche.js geloescht
+- ?modus=schatzsuche oeffnet Plan direkt mit szActive + Default-Motto
+- Entfernt: Mode-Switch, SZ-Wizard, SZ-Peak, SZ-Plan, Connector, Cross-sell, planMode/isSZ/switchToSZ, activeStation
+
+### Bugfixes
+- Possessiv Peak-View (Max' statt Maxs)
+- Emergency-Buttons setzen planMode auf geburtstag
+- Sticky-CTA auch in Peak-View versteckt
+- Plausible tracking mit szActive + thema
+- Dead code entfernt (nameDisplay, activeStation)
 
 ## Technischer Stand
-- `_src/kindergeburtstag.jsx` — JSX Source (~1100 Zeilen)
-- `_src/kindergeburtstag-data.js` — Daten (~2420 Zeilen)
-- `_src/build.sh` — esbuild Build (10ms)
-- `js/kindergeburtstag.js` — Compiled (3261 Zeilen, 234KB)
-- Redirects: /schatzsuche + /schnitzeljagd → 301 auf /kindergeburtstag?modus=schatzsuche#planer
-- szActive State in localStorage persistiert
+- `_src/kindergeburtstag.jsx` — JSX Source (~1090 Zeilen)
+- `_src/kindergeburtstag-data.js` — Daten (~2420 Zeilen, inkl. SZ_THEMES, SZ_LABELS)
+- `_src/build.sh` — Build-Script (esbuild, 10ms)
+- `js/kindergeburtstag.js` — Compiled Output (3267 Zeilen, 234KB)
+- Alles laeuft von /kindergeburtstag aus, ein Flow
 
 ## Naechste Schritte
-1. **Mobile-Testing** — Schnitzeljagd-Toggle, Theme-Grid, Map-Editor, Print
-2. **Raetsel nach Mass** — Erstes Premium-Feature
-3. **WhatsApp-Partyseite** als viraler Kanal
+1. **Mobile-Testing** — Schnitzeljagd-Toggle, Theme-Grid, Map-Editor, Print auf echtem Handy
+2. **Raetsel nach Mass** — Erstes Premium-Feature (KI-generierte Raetsel passend zum Ort der Eltern)
+3. **WhatsApp-Partyseite** — Grundlage fuer Wunschliste + viraler Kanal
 4. **Wunschliste mit Affiliate**
 5. **GitHub Token rotieren** (wurde im Chat geteilt!)
 
 ## Offene Fragen
-- URL ?modus=schatzsuche setzt szActive=true — soll das den Plan direkt oeffnen oder nur den Toggle voraktivieren?
-- Unterseiten-Canonicals noch auf /schatzsuche/* — umbiegen?
-- activeStation State wird nicht mehr benutzt — entfernen?
+- Unterseiten-Canonicals noch auf /schatzsuche/* — umbiegen auf /kindergeburtstag?
+- kindergeburtstag-data.js (alt, im js/ Ordner) aus Repo entfernen?
