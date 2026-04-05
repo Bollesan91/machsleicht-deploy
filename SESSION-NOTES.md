@@ -1,42 +1,42 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 05.04.2026 (Abend, Teil 2)
+**Datum:** 05.04.2026
 
 ## Was wurde gemacht
 
-### Canvas-Schatzkarte in Planer integriert
-- Alte Emoji-Placer-Karte komplett ersetzt durch Canvas-basierte Schatzkarte
-- TreasureMapCanvas Komponente (~100 Zeilen) in kindergeburtstag.jsx eingefuegt
-- 6 Theme-Konfigurationen (piraten, dschungel, weltraum, detektiv, dino, feen)
-- Jedes Theme: eigene Farbpalette, Pergament-Stil, Scatter-Emojis, Pfad-Deko
-- Stationen werden automatisch aus szTheme.stations platziert (S-Kurve)
-- Catmull-Rom Splines fuer glatte Kurvenverbindungen
-- Drag & Drop fuer alle Stationen inkl. Start + Schatz (native Touch, passive:false)
-- Kompassrose, Eckverzierungen, Titel mit Kindername
-- Print: Canvas wird als PNG-Image ins Komplettpaket exportiert
-- State: mapItems + activeEmoji → mapPositions (null = auto-layout)
-- Build: 3491 Zeilen, 242KB kompiliert
-- Kreuzwortraetsel.html Redirect eingetragen
-- Sitemap aktualisiert (361 URLs)
+### Ort-Eingabe pro Station + Smart-Emoji-Matching
+- LOCATION_EMOJI_MAP mit 50+ Keywords (Rutsche→🛝, Baum→🌳, Küche→🍳, Sofa→🛋️, Pool→🏊 etc.), Fallback 📍
+- matchLocationEmoji() Funktion für Keyword→Emoji Zuordnung
+- stationLocations State (persistiert via loadState/saveState), Objekt {index: "Ort-Text"}
+- Eingabefeld "Wo versteckst du diesen Hinweis?" unter jeder Station (außer Schatz/letzte)
+- Live-Emoji-Feedback links vom Input, farblicher Border wenn befüllt
+- Summary-Zeile zeigt Emoji + Ort neben Stationsname wenn befüllt
+- Reset bei Theme- oder Altersgruppen-Wechsel (useEffect auf szThemeId, ag)
 
-### Schatzkarte Standalone (Artifact, nicht im Repo)
-- v5: Smart Emoji-Matching (~50 Keywords), Emoji-Picker, PNG-Export
-- Touch-Drag in alle Richtungen gefixt (touch-action:none auf Canvas)
+### Karte zeigt echte Orte
+- TreasureMapCanvas erhält stationLocations prop
+- Wenn Ort gesetzt: Emoji + Ortsname als Label statt Aktivitätsname
+- Label-Breite erhöht: 20 Zeichen / 90px maxWidth (vorher 14/68px)
 
-### Raetsel nach Mass (Artifact, nicht im Repo)
-- v4: 6 Mottos, Gegenspieler, Mini-Aufgaben, Spontan/Geplant Modi
-- Draussen + Drinnen kombinierbar, Buchstaben-Code
+### Print/Komplettpaket mit Orten
+- Stationsliste: "📍 Versteck: [Ort]" unter Stationsname
+- Hinweis-Zettel: "→ Weiter zu:" zeigt Ort statt Aktivitätsname wenn vorhanden
+- Hinweis-Zettel: "📍 Verstecke hier: [Ort]" als Eltern-Hilfe pro Karte
 
-## Naechste Schritte
-1. **Deploy testen** — Planer mit neuer Karte auf echtem Handy testen
-2. **Raetsel nach Mass als HTML** — Artifact ins Repo konvertieren
-3. **Schatzkarte + Raetsel = ein Flow** — zusammenfuehren
-4. **Claude API anbinden** — Mock → echte KI-Raetsel
-5. **Kreuzwortraetsel testen** — Print + Digital-Spielmodus
-6. **GitHub Token rotieren!** (laeuft 25.04. ab)
+### Build
+- 3606 Zeilen, 247KB kompiliert (vorher 3491 Zeilen, 242KB)
+
+## Nächste Schritte
+1. **Deploy + Handy-Test** — Ort-Eingabe auf echtem Handy testen (Touch, Keyboard)
+2. **Emoji-Palette (Feature A)** — Deko-Emojis auf Canvas-Karte platzieren (zusätzlich zu Stationen)
+3. **Rätsel nach Maß als HTML** — Artifact ins Repo konvertieren
+4. **Schatzkarte + Rätsel = ein Flow** — zusammenführen
+5. **Claude API anbinden** — Mock → echte KI-Rätsel
+6. **GitHub Token rotieren!** (läuft 25.04. ab)
 
 ## Offene Fragen
-- Canvas-Karte: Print-Qualitaet pruefen (DPR-Handling)
-- Raetsel nach Mass: standalone /raetsel ODER nur im Planer?
-- Emoji-Picker + Smart-Matching auch in den Planer bringen?
+- Canvas-Karte: Print-Qualität prüfen (DPR-Handling)
+- Rätsel nach Maß: standalone /raetsel ODER nur im Planer?
+- Emoji-Picker aus Standalone-Artifact auch in den Planer bringen?
+- Soll die letzte Station (Schatz) auch ein Ort-Feld bekommen?

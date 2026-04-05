@@ -179,6 +179,28 @@ const MAP_THEMES = {
   dino:{parchment:['#E8F0E0','#D8E8C8','#C4D8B0'],accent:'#795548',pathColor:'rgba(46,125,50,0.35)',borderColor:'#558B2F',scatter:['🦴','🦴','🦶','🦶','🌿','🌿','🌋','🥚','🦎','🪨','🦕','🦖','🌿','☄️','🪹'],pathDeco:['🦴','🦶','🌿','🪨'],treasureIcon:'🦴',startIcon:'⛏️'},
   feen:{parchment:['#FFF0F5','#FFE4EE','#FFD6E8'],accent:'#AB47BC',pathColor:'rgba(173,20,87,0.3)',borderColor:'#E91E63',scatter:['🦋','🦋','✨','✨','🌸','🌸','🍄','🌈','💎','🧚','🪷','🌺','💫','🫧','🌷'],pathDeco:['🦋','✨','🌸','💎'],treasureIcon:'✨',startIcon:'🧚'},
 };
+// Smart Emoji Matching for hiding locations
+const LOCATION_EMOJI_MAP = [
+  [/rutsche/i,'🛝'],[/schaukel/i,'🎠'],[/wippe/i,'🎠'],[/kletterger[üu]/i,'🧗'],[/sandkasten|sandkiste/i,'🏖️'],
+  [/baum|birke|eiche|linde/i,'🌳'],[/busch|hecke|str[äa]uch/i,'🌿'],[/blume|beet|rose/i,'🌸'],[/pflanze|topf|blumentopf/i,'🪴'],
+  [/garten|rasen|wiese/i,'🌻'],[/terrasse|veranda/i,'☀️'],[/balkon/i,'🌅'],[/zaun|tor(?!te)/i,'🏗️'],
+  [/brunnen/i,'⛲'],[/teich|see|wasser/i,'🐸'],[/pool|planschbecken/i,'🏊'],[/grill/i,'🔥'],
+  [/garage/i,'🏠'],[/schuppen|gartenhaus/i,'🏚️'],[/hundeh[üu]tte/i,'🐕'],[/auto|wagen/i,'🚗'],[/fahrrad|rad/i,'🚲'],
+  [/briefkasten/i,'📮'],[/m[üu]ll/i,'🗑️'],[/stein|fels/i,'🪨'],[/bank/i,'🪑'],[/spielplatz/i,'🎪'],
+  [/t[üu]r|eingang/i,'🚪'],[/treppe|stufe/i,'🪜'],[/fenster/i,'🪟'],[/keller/i,'🔦'],[/dachboden|dach/i,'🏚️'],
+  [/k[üu]che|herd/i,'🍳'],[/k[üu]hlschrank/i,'🧊'],[/bad(?!ewanne)|waschbecken/i,'🛁'],[/dusche/i,'🚿'],[/toilette|klo/i,'🚽'],[/badewanne|wanne/i,'🛁'],
+  [/sofa|couch/i,'🛋️'],[/bett|matratze/i,'🛏️'],[/kissen/i,'🛋️'],[/schrank|kommode/i,'🗄️'],
+  [/tisch|esstisch/i,'🍽️'],[/stuhl|hocker/i,'💺'],[/regal|b[üu]cherregal/i,'📚'],
+  [/waschmaschine|trockner|w[äa]sche/i,'🧺'],[/kamin|ofen/i,'🔥'],
+  [/vorhang|gardine/i,'🪟'],[/teppich/i,'🧶'],[/spielzimmer|kinderzimmer/i,'🧸'],
+  [/flur|gang|diele/i,'🚶'],[/wohnzimmer/i,'🏡'],[/schlafzimmer/i,'😴'],
+];
+function matchLocationEmoji(text) {
+  if (!text) return '';
+  for (const [re, em] of LOCATION_EMOJI_MAP) { if (re.test(text)) return em; }
+  return '📍';
+}
+
 function mapSeededRandom(seed){let s=seed;return()=>{s=(s*16807)%2147483647;return(s-1)/2147483646;};}
 function mapAutoLayout(stationNames,W,H){
   const pad=45,n=stationNames.length,pts=[];
@@ -212,12 +234,12 @@ function drawTreasureMap(canvas,points,themeId,title){
     ctx.fillStyle='rgba(0,0,0,0.1)';ctx.beginPath();ctx.arc(p.x+1.5,p.y+1.5,15,0,Math.PI*2);ctx.fill();
     ctx.fillStyle=isDark?'#2a2a5a':t.parchment[0];ctx.strokeStyle=stColor;ctx.lineWidth=2;ctx.beginPath();ctx.arc(p.x,p.y,15,0,Math.PI*2);ctx.fill();ctx.stroke();
     ctx.fillStyle=isDark?'#fff':stColor;ctx.font='bold 12px Georgia';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(p.index,p.x,p.y+1);
-    ctx.fillStyle=tc;ctx.font='8px Georgia';ctx.textBaseline='top';const lbl=p.label.length>14?p.label.slice(0,13)+'…':p.label;ctx.fillText(lbl,p.x,p.y+18,68);
+    ctx.fillStyle=tc;ctx.font='8px Georgia';ctx.textBaseline='top';const lbl=p.label.length>20?p.label.slice(0,19)+'…':p.label;ctx.fillText(lbl,p.x,p.y+18,90);
   });
   ctx.fillStyle=tcl;ctx.font='italic 7px Georgia';ctx.textAlign='left';ctx.textBaseline='bottom';ctx.fillText('💡 Stationen verschieben: tippen & ziehen',14,H-10);
 }
 
-function TreasureMapCanvas({ szTheme, stations, childName, mapPositions, setMapPositions }) {
+function TreasureMapCanvas({ szTheme, stations, childName, mapPositions, setMapPositions, stationLocations }) {
   const canvasRef = React.useRef(null);
   const dragRef = React.useRef({dragging:false,idx:-1,offX:0,offY:0});
   const dimRef = React.useRef({w:0,h:0});
@@ -225,7 +247,11 @@ function TreasureMapCanvas({ szTheme, stations, childName, mapPositions, setMapP
   posRef.current = mapPositions;
 
   const themeId = szTheme ? szTheme.id : 'piraten';
-  const stationNames = stations.map((s,i) => i === stations.length - 1 ? '🎁 ' + s.name : s.name);
+  const stationNames = stations.map((s,i) => {
+    const loc = stationLocations && stationLocations[i];
+    if (loc) { const em = matchLocationEmoji(loc); return i === stations.length - 1 ? '🎁 ' + loc : em + ' ' + loc; }
+    return i === stations.length - 1 ? '🎁 ' + s.name : s.name;
+  });
   const nameGen = childName ? (childName.endsWith("s") ? childName + "'" : childName + "s") : "";
   const mapTitle = `${szTheme ? szTheme.emoji : ''} ${nameGen ? nameGen + ' ' : ''}${szTheme ? szTheme.name : 'Schatzkarte'}`;
 
@@ -287,10 +313,11 @@ function TreasureMapCanvas({ szTheme, stations, childName, mapPositions, setMapP
 }
 
 // === SCHNITZELJAGD INLINE BLOCK (expandable within plan view) ===
-function SchnitzeljagdBlock({ age, ag, szActive, setSzActive, szThemeId, setSzThemeId, szTheme, childName, setChildName, mapPositions, setMapPositions }) {
+function SchnitzeljagdBlock({ age, ag, szActive, setSzActive, szThemeId, setSzThemeId, szTheme, childName, setChildName, mapPositions, setMapPositions, stationLocations, setStationLocations }) {
   const stations = szTheme ? (szTheme.stations[ag] || szTheme.stations.mittel) : [];
   const materials = szTheme ? (szTheme.material[ag] || szTheme.material.mittel) : [];
   const totalDauer = stations.reduce((s, st) => s + st.dauer, 0);
+  React.useEffect(() => { setStationLocations({}); }, [szThemeId, ag]);
   const nameGen = childName ? (childName.endsWith("s") ? childName + "'" : childName + "s") : "";
   const introText = szTheme ? (szTheme.intro[ag] || szTheme.intro.mittel).replace(/\{name\},?\s*/g, childName ? childName + ", " : "") : "";
   const shopItems = szThemeId ? (SZ_SHOP_ITEMS[szThemeId] || []) : [];
@@ -304,8 +331,8 @@ function SchnitzeljagdBlock({ age, ag, szActive, setSzActive, szThemeId, setSzTh
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=DM+Sans:opsz,wght@9..40,400;9..40,700;9..40,800&display=swap" rel="stylesheet">
 <style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',system-ui,sans-serif;color:#2D2319;background:#FFF}.page{page-break-after:always;padding:32px;min-height:100vh}.page:last-child{page-break-after:auto}h1{font-size:22px;font-weight:900;margin-bottom:8px}h2{font-size:16px;font-weight:800;color:${szTheme.color};margin:20px 0 10px;border-bottom:2px solid ${szTheme.color}30;padding-bottom:4px}.station{margin-bottom:14px;padding:12px;background:#FAFAF5;border-radius:10px;border:1px solid #EDE6DE}.station-name{font-weight:800;font-size:14px;margin-bottom:4px}.station-desc{font-size:13px;line-height:1.5;color:#5D4037}.hint{font-size:12px;color:#795548;background:#FFF8E1;padding:6px 10px;border-radius:6px;margin-top:6px;border:1px solid #FFE082}.check{display:inline-block;width:14px;height:14px;border:2px solid #A89888;border-radius:3px;margin-right:8px;vertical-align:middle}.hinweis-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.hinweis-card{border:2px dashed ${szTheme.color}80;border-radius:12px;padding:14px;text-align:center;min-height:140px;display:flex;flex-direction:column;justify-content:center}.cert{text-align:center;padding:48px;border:4px double ${szTheme.color};border-radius:16px;position:relative;max-width:600px;margin:0 auto}.cert::before{content:'';position:absolute;inset:8px;border:1px solid ${szTheme.color}40;border-radius:10px}@media print{.page{padding:24px;min-height:auto}}</style></head><body>
 ${TreasureMapCanvas._canvasRef && TreasureMapCanvas._canvasRef.current ? `<div class="page" style="display:flex;flex-direction:column;align-items:center;justify-content:center"><img src="${TreasureMapCanvas._canvasRef.current.toDataURL('image/png')}" style="width:100%;max-width:700px;border-radius:16px;border:2px solid ${szTheme.color}40" /></div>` : ""}
-<div class="page"><h1>${szTheme.emoji} ${nameGen ? nameGen + " " : ""}${szTheme.name}</h1><p style="font-size:13px;color:#6B5D52;margin-bottom:12px">${stations.length} Stationen · ${ageLabel[ag]} · ca. ${totalDauer} Min.</p><p style="font-size:14px;color:#5D4037;line-height:1.6;font-style:italic;margin-bottom:16px;padding:12px;background:#FAFAF5;border-radius:8px">„${introText}"</p>${stations.map((s, i) => `<div class="station"><div class="station-name">${i === stations.length - 1 ? "🎁" : (i + 1) + "."} ${s.name}</div><div class="station-desc">${s.desc}</div><div class="hint">💡 ${s.hint}</div></div>`).join("")}</div>
-<div class="page"><h1>✂️ Hinweis-Zettel zum Ausschneiden</h1><p style="font-size:13px;color:#6B5D52;margin-bottom:16px">Ausschneiden und an den Stationen verstecken.</p><div class="hinweis-grid">${stations.map((s, i) => `<div class="hinweis-card"><div style="font-size:28px;margin-bottom:4px">${i === stations.length - 1 ? "🎁" : "Station " + (i + 1)}</div><div style="font-size:13px;font-weight:700;margin-bottom:6px">${s.name}</div><div style="font-size:16px;color:#5D4037;font-family:'Caveat',cursive">${i < stations.length - 1 ? "→ Weiter zu: " + stations[i + 1].name : "🎉 Geschafft! Hier ist der Schatz!"}</div></div>`).join("")}</div></div>
+<div class="page"><h1>${szTheme.emoji} ${nameGen ? nameGen + " " : ""}${szTheme.name}</h1><p style="font-size:13px;color:#6B5D52;margin-bottom:12px">${stations.length} Stationen · ${ageLabel[ag]} · ca. ${totalDauer} Min.</p><p style="font-size:14px;color:#5D4037;line-height:1.6;font-style:italic;margin-bottom:16px;padding:12px;background:#FAFAF5;border-radius:8px">„${introText}"</p>${stations.map((s, i) => { const loc = stationLocations[i]; const locLine = loc ? `<div style="font-size:12px;color:#5D4037;margin-top:4px;font-style:italic">📍 Versteck: ${loc}</div>` : ''; return `<div class="station"><div class="station-name">${i === stations.length - 1 ? "🎁" : (i + 1) + "."} ${s.name}</div>${locLine}<div class="station-desc">${s.desc}</div><div class="hint">💡 ${s.hint}</div></div>`; }).join("")}</div>
+<div class="page"><h1>✂️ Hinweis-Zettel zum Ausschneiden</h1><p style="font-size:13px;color:#6B5D52;margin-bottom:16px">Ausschneiden und an den Stationen verstecken.</p><div class="hinweis-grid">${stations.map((s, i) => { const nextLoc = stationLocations[i + 1]; const thisLoc = stationLocations[i]; const nextLabel = i < stations.length - 1 ? (nextLoc ? nextLoc : stations[i + 1].name) : null; const hideHint = thisLoc ? `<div style="font-size:10px;color:#795548;margin-top:8px;border-top:1px dashed ${szTheme.color}40;padding-top:6px">📍 Verstecke hier: ${thisLoc}</div>` : ''; return `<div class="hinweis-card"><div style="font-size:28px;margin-bottom:4px">${i === stations.length - 1 ? "🎁" : "Station " + (i + 1)}</div><div style="font-size:13px;font-weight:700;margin-bottom:6px">${s.name}</div><div style="font-size:16px;color:#5D4037;font-family:'Caveat',cursive">${nextLabel ? "→ Weiter zu: " + nextLabel : "🎉 Geschafft! Hier ist der Schatz!"}</div>${hideHint}</div>`; }).join("")}</div></div>
 <div class="page"><h1>📋 Material-Checkliste</h1><h2>Pro Station</h2><ul style="list-style:none;columns:2">${materials.map(m => `<li style="font-size:13px;line-height:2"><span class="check"></span>${m}</li>`).join("")}</ul><h2>Schatz-Ideen</h2><ul style="list-style:none;columns:2">${szTheme.schatz.map(s => `<li style="font-size:13px;line-height:2"><span class="check"></span>${s}</li>`).join("")}</ul></div>
 <div class="page" style="display:flex;justify-content:center;align-items:center"><div class="cert"><div style="font-size:56px;margin-bottom:12px">${szTheme.emoji}</div><div style="font-size:28px;font-weight:900;margin-bottom:6px">Urkunde</div><div style="font-size:18px;color:#6B5D52;margin-bottom:24px">${szTheme.name}</div><div style="font-size:32px;font-weight:900;color:${szTheme.color};padding:8px 0;border-bottom:2px solid ${szTheme.color}40;margin-bottom:16px">_______________</div><div style="font-size:15px;color:#6B5D52;line-height:1.6;margin:16px 0">hat die große ${szTheme.name} erfolgreich bestanden!<br>Alle ${stations.length} Stationen gemeistert.</div><div style="display:flex;justify-content:space-between;margin-top:32px;font-size:13px;color:#A89888"><div style="border-top:1px solid #CCC;padding-top:4px;min-width:140px;text-align:center">Datum</div><div style="border-top:1px solid #CCC;padding-top:4px;min-width:140px;text-align:center">Unterschrift</div></div><div style="font-size:10px;color:#A89888;margin-top:16px">machsleicht.de</div></div></div>
 </body></html>`);
@@ -384,16 +411,27 @@ ${TreasureMapCanvas._canvasRef && TreasureMapCanvas._canvasRef.current ? `<div c
             <div style={{ marginBottom: 16 }}>
               {stations.map((st, i) => {
                 const isLast = i === stations.length - 1;
+                const locText = stationLocations[i] || '';
+                const locEmoji = locText ? matchLocationEmoji(locText) : '';
                 return (
                   <details key={i} open={i === 0} style={{ marginBottom: 6 }}>
                     <summary style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer", padding: "6px 0", fontSize: 13 }}>
                       <span style={{ width: 22, height: 22, borderRadius: "50%", background: isLast ? "var(--a)" : szTheme.color, color: "#fff", fontSize: 9, fontWeight: 800, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{isLast ? "🎁" : i + 1}</span>
-                      <span style={{ fontWeight: 700, flex: 1 }}>{st.name}</span>
+                      <span style={{ fontWeight: 700, flex: 1 }}>{st.name}{locText ? <span style={{ fontWeight: 400, fontSize: 11, color: "var(--m)", marginLeft: 6 }}>{locEmoji} {locText}</span> : null}</span>
                       <span style={{ fontSize: 11, color: "var(--m)" }}>{st.dauer}′</span>
                     </summary>
                     <div style={{ paddingLeft: 30, paddingBottom: 6 }}>
                       <p style={{ fontSize: 12, color: "var(--m)", lineHeight: 1.5, margin: "4px 0 6px" }}>{st.desc}</p>
                       {st.hint && <p style={{ fontSize: 11, color: "#795548", background: "#FFF8E1", padding: "6px 10px", borderRadius: 6, border: "1px solid #FFE082" }}>💡 {st.hint}</p>}
+                      {!isLast && <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 8 }}>
+                        {locEmoji && <span style={{ fontSize: 16 }}>{locEmoji}</span>}
+                        <input type="text" value={locText} onChange={e => { const v = e.target.value; setStationLocations(prev => { const n = {...prev}; if (v) n[i] = v; else delete n[i]; return n; }); }}
+                          placeholder="Wo versteckst du diesen Hinweis?" style={{
+                            flex: 1, padding: "7px 10px", borderRadius: 8, border: `1px solid ${locText ? szTheme.color + '60' : 'var(--l)'}`,
+                            fontSize: 12, fontFamily: "var(--f)", outline: "none", background: locText ? szTheme.color + '06' : "#fff", boxSizing: "border-box",
+                            transition: "border-color 0.2s, background 0.2s",
+                          }} />
+                      </div>}
                     </div>
                   </details>
                 );
@@ -401,7 +439,7 @@ ${TreasureMapCanvas._canvasRef && TreasureMapCanvas._canvasRef.current ? `<div c
             </div>
 
             {/* Map - Canvas-based Treasure Map */}
-            <TreasureMapCanvas szTheme={szTheme} stations={stations} childName={childName} mapPositions={mapPositions} setMapPositions={setMapPositions} />
+            <TreasureMapCanvas szTheme={szTheme} stations={stations} childName={childName} mapPositions={mapPositions} setMapPositions={setMapPositions} stationLocations={stationLocations} />
 
             {/* Material */}
             <details style={{ marginBottom: 16 }}>
@@ -601,6 +639,7 @@ function App() {
   const [szThemeId, setSzThemeId] = useState(() => loadState("szThemeId", null));
   const [childName, setChildName] = useState(() => loadState("childName", ""));
   const [mapPositions, setMapPositions] = useState(null); // [{x, y}] for canvas map stations
+  const [stationLocations, setStationLocations] = useState(() => loadState("stationLocations", {})); // {index: "Ort-Text"}
 
   // Derived values
   const motto = ALL_MOTTOS.find((m) => m.id === mottoId);
@@ -623,6 +662,7 @@ function App() {
   useEffect(() => saveState("szActive", szActive), [szActive]);
   useEffect(() => saveState("szThemeId", szThemeId), [szThemeId]);
   useEffect(() => saveState("childName", childName), [childName]);
+  useEffect(() => saveState("stationLocations", stationLocations), [stationLocations]);
 
   // Hide sticky CTA in plan view
   useEffect(() => {
@@ -882,7 +922,7 @@ function App() {
 
         {/* Einladung */}
         <EinladungBlock motto={motto} guests={guests} previewName={previewName} setPreviewName={setPreviewName} inviteSent={inviteSent} setInviteSent={setInviteSent} />
-        <SchnitzeljagdBlock age={age} ag={ag} szActive={szActive} setSzActive={setSzActive} szThemeId={szThemeId} setSzThemeId={setSzThemeId} szTheme={szTheme} childName={childName} setChildName={setChildName} mapPositions={mapPositions} setMapPositions={setMapPositions} />
+        <SchnitzeljagdBlock age={age} ag={ag} szActive={szActive} setSzActive={setSzActive} szThemeId={szThemeId} setSzThemeId={setSzThemeId} szTheme={szTheme} childName={childName} setChildName={setChildName} mapPositions={mapPositions} setMapPositions={setMapPositions} stationLocations={stationLocations} setStationLocations={setStationLocations} />
 
         {/* Score */}
         <ScoreCheck score={score} />
