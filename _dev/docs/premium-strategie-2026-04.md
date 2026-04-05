@@ -7,24 +7,124 @@
 
 ## Vision
 
-machsleicht wird zur KI-gestützten Geburtstags-Plattform. Kostenlose Tools bringen Traffic, Premium-Features mit ElevenLabs und Claude API machen Umsatz. Jeder Geburtstag ist ein viraler Akquise-Kanal.
+**In einem Satz:** machsleicht wird die Plattform auf der deutsche Eltern Kindergeburtstage organisieren — von der ersten Idee bis zum letzten Danke.
+
+**Kernprinzip:** Jedes Tool ist ein eigenständiger Einstieg mit eigenem SEO-Kanal. Jedes Tool funktioniert standalone, ohne Anmeldung, ohne die anderen Tools zu kennen. Aber sobald du eines benutzt, entdeckst du die anderen. Und alles kann in einer Partyseite zusammenfließen — muss aber nicht.
 
 Der komplette Bogen: **Einladung → Party-Vorbereitung → Partytag → Nachbereitung**
 
+Skalierung über Kindergeburtstag hinaus: Erwachsenengeburtstage, Einschulung, Taufe, Weihnachten, Advent — die Plattform ist anlassunabhängig.
+
 ---
 
-## Revenue-Modell
+## Die fünf Säulen (alle standalone)
 
-| Stream | Beschreibung | Marge |
-|--------|-------------|-------|
-| **Premium (Pay-per-Feature)** | Eltern stellen sich ein Paket zusammen | ~80% |
+| Säule | URL | Status | Standalone? |
+|-------|-----|--------|-------------|
+| **Planer** | `/kindergeburtstag` | LIVE | ✅ Ja |
+| **Partyseite** | `/party/{token}` | MVP geplant | ✅ Ja — auch ohne Planer erstellbar |
+| **Wunschliste** | `/wunschliste` | Phase 2 | ✅ Ja — auch ohne Partyseite, auch für Weihnachten/Einschulung |
+| **Rätsel nach Maß** | `/raetsel` | Phase 3 | ✅ Ja — auch für Lehrer, Erzieher, ohne Schatzsuche |
+| **Kreuzworträtsel** | `/kreuzwortraetsel` | Phase 3 | ✅ Ja — Freebie ohne KI, Premium mit KI-Inhalten |
+
+**Die Magie passiert in der Verbindung:** Wer den Planer benutzt → "Partyseite erstellen?" (Daten vorausgefüllt) → "Wunschliste hinzufügen?" → "Rätsel nach Maß?" in der Schnitzeljagd. Aber jeder Einstieg funktioniert solo.
+
+---
+
+## Premium-Features: Die Top-Kandidaten
+
+### Tier 1 — Höchste Prio (bauen wir als erstes)
+
+| Feature | Tech | Kosten | VK | Warum zuerst |
+|---------|------|--------|-----|-------------|
+| **Rätsel nach Maß** | Claude API (1 Call) | ~5ct | 2.99€ | Niedrigster Aufwand, höchster Differentiator |
+| **Kreuzworträtsel** | Clientseitig (Grid-Algo) | 0ct | Freebie / 2.99€ mit KI | SEO-Kanal + Lead-Magnet + Rätsel-nach-Maß-Upgrade |
+
+### Tier 2 — ElevenLabs-Features (brauchen API-Test)
+
+Alle Audio-Features laufen über **ElevenLabs** (https://elevenlabs.io):
+
+| Feature | Tech | Kosten | VK | Wow-Faktor |
+|---------|------|--------|-----|-----------|
+| **KI-Spielleiter-Anrufe** | ElevenLabs Conversational AI | ~1.00€ (9×60s) | 4.99€ | Extrem — kein Konkurrent hat das |
+| **Einladungs-Audio** | ElevenLabs TTS | ~2-3ct | Im Bundle | Viral — Kind erzählt eine Woche in der Kita davon |
+| **KI-Spielmoderation** | ElevenLabs TTS | ~wenige ct | Im Bundle | Eltern drücken Play statt selbst zu moderieren |
+| **Gute-Nacht-Geschichte** | Claude API + ElevenLabs TTS | ~30ct | 2.99€ | Emotionalster Moment — das Kind hört SEIN Abenteuer |
+| **Geburtstagssong** | Musik-AI (Suno/Udio) | ~5-10ct | 1.99€ | Re-evaluieren wenn Musik-AI besser wird |
+
+ElevenLabs liefert motto-spezifische Stimmen (Pirat, Astronaut, Fee). Deutsche Stimmenqualität muss getestet werden. Bolle testet selbst.
+
+### Tier 3 — Text-only (kein Audio nötig)
+
+| Feature | Tech | Kosten | VK |
+|---------|------|--------|-----|
+| **Danke-Nachrichten** | Claude API (nur Text) | ~0ct | 1.99€ / Bundle |
+| **Eltern-Copilot** | Claude API (Chat) | ~50ct/Session | 3.99€ |
+
+### Bundle-Pricing
+
+| Paket | Inhalt | VK |
+|-------|--------|-----|
+| Einzeln | Jedes Feature separat wählbar | 1.99-4.99€ |
+| **Sorglos-Paket** | Alle Features | ~9.99€ |
+| Gesamtkosten pro Bundle | API-Kosten | ~2.00€ |
+| **Marge** | | **~80%** |
+
+Konfigurator-Modell: Eltern klicken Features zusammen wie in einem Online-Shop.
+
+### GESTRICHEN
+
+| Feature | Grund |
+|---------|-------|
+| Foto-Erzähler | Kinderfotos an KI-API = DSGVO-Problem |
+| Geburtstagssong | Deutsche KI-Songs klingen aktuell nicht gut genug. Später re-evaluieren. |
+
+---
+
+## MVP-Phasen
+
+### Phase 1: Partyseite (das Fundament)
+
+Eine HTML-Seite (`party.html`) + Cloudflare Worker + KV:
+
+**Erstellen:** Name des Kindes (= PIN), Datum, Uhrzeit, Adresse, Motto, Freitext-Hinweis → URL zurück
+**Gäste-View:** PIN eingeben → Einladung sehen, Zu/Absage mit Kindername, Allergien-Freitext, Abholzeit
+**Admin-View:** Übersicht aller Zusagen, Allergien, Abholzeiten. Bearbeitbar.
+**Share:** WhatsApp-Share-Button mit vorgefertigtem Text + Link
+**Branding:** Dezenter machsleicht-Footer mit CTA zum Planer
+
+Backend: 4 Routen (`POST/GET/PUT/DELETE /api/party`)
+
+### Phase 2: Wunschliste
+
+**Auf der Partyseite:** Geschenk-Links eintragen, Domain-Erkennung + Affiliate-Tag, "Ich kaufe das", "Beteiligen"
+**Standalone /wunschliste:** Eigene Erstellungsseite, eigener SEO-Content, gleiche Technik
+**Affiliate-Programme:** Amazon (vorhanden), Otto/AWIN, myToys/AWIN, Thalia, MediaMarkt, Smyths Toys
+
+### Phase 3: Premium-Integration
+
+**Planer → Partyseite:** "Partyseite erstellen" am Ende des Planers, Daten vorausgefüllt
+**Schnitzeljagd → Rätsel nach Maß:** Premium-Add-on in der Schatzsuche
+**Kreuzworträtsel:** Standalone-Freebie + KI-Upgrade
+**ElevenLabs-Features:** Nach erfolgreichem Stimmen-Test
+
+### Was das MVP bewusst NICHT hat
+
+- Kein User-Account, kein Login
+- Keine OpenGraph-Previews für Geschenk-Links (kommt Phase 2)
+- Kein Payment (Premium kommt Phase 3)
+- Kein Echtzeit-Update (Page Reload reicht)
+- Keine Push-Notifications
 | **Wunschliste-Affiliate** | Passives Revenue pro Geschenk-Klick | ~100% |
 | **Subscription** | Sofort-Schatzsuche Abo, monatlich | ~90% |
 | **SEO/Affiliate (bestehend)** | Amazon-Links in Deko/Mitgebsel | ~100% |
 
 ---
 
-## Premium-Features (Pay-per-Feature)
+## Premium-Features — Detailspezifikation
+
+> Übersicht und Pricing: siehe "Premium-Features: Die Top-Kandidaten" weiter oben.
+> Hier folgen die ausführlichen Specs pro Feature.
 
 ### 1. KI-Spielleiter-Anrufe (via ElevenLabs Conversational AI)
 - **Was:** Pro Schatzsuche-Station ruft eine KI-Stimme an und gibt den Hinweis im Charakter (Pirat, Astronaut, Fee...)
@@ -105,14 +205,7 @@ Die KI liefert den Inhalt, verschiedene Darstellungsformate machen das Feature w
 
 ## Bundle-Pricing
 
-| Paket | Inhalt | VK |
-|-------|--------|-----|
-| Einzeln | Jedes Feature separat wählbar | 1.99-4.99€ |
-| **Sorglos-Paket** | Alle 7 Features | ~9.99€ |
-| Gesamtkosten pro Bundle | API-Kosten | ~2.00€ |
-| **Marge** | | **~80%** |
-
-Konfigurator-Modell: Eltern klicken Features zusammen wie in einem Online-Shop. Jeder Klick erhöht den Warenkorb.
+→ Siehe "Premium-Features: Die Top-Kandidaten" → Bundle-Pricing weiter oben.
 
 ---
 
@@ -217,12 +310,14 @@ Die Partyseite ist das FUNDAMENT für fast alle weiteren Features:
 
 | Komponente | Technologie | Status |
 |-----------|-------------|--------|
-| Stimmen/Anrufe | ElevenLabs (Conversational AI + TTS) | Bolle testet selbst |
-| Text-Generierung | Claude API (Anthropic) | Verfügbar |
-| Affiliate-Links | Amazon (vorhanden), AWIN (Otto, myToys) | Amazon live, Rest TODO |
-| Payment | Lemon Squeezy (vorhanden) | Live |
-| Hosting | Netlify (vorhanden) | Live |
-| Frontend | React CDN + Babel (vorhanden) | Live, JSX-Neuaufbau geplant |
+| **Backend (Partyseite)** | Cloudflare Workers + KV | Geplant (wie TeamPulse) |
+| **Stimmen/Anrufe** | ElevenLabs — https://elevenlabs.io (Conversational AI + TTS) | Bolle testet deutsche Stimmen |
+| **Text-Generierung** | Claude API (Anthropic) — Rätsel, Geschichten, Copilot | Verfügbar |
+| **Musik-AI** | Suno / Udio — für Geburtstagssong (re-evaluieren) | Nicht getestet |
+| **Affiliate-Links** | Amazon PartnerNet (vorhanden), AWIN (Otto, myToys) | Amazon live, Rest TODO |
+| **Payment** | Lemon Squeezy (vorhanden) | Live |
+| **Hosting** | Netlify + Cloudflare CDN/DNS | Live |
+| **Frontend** | React 18 CDN + Babel Standalone | Live, JSX-Neuaufbau aktiv |
 
 ---
 
@@ -233,6 +328,31 @@ Die Partyseite ist das FUNDAMENT für fast alle weiteren Features:
 - **Anrufe:** Immer an Eltern-Handy, nie direkt an Kinder
 - **Audio-Nachrichten:** Eltern steuern Wiedergabe, kein kalter Kontakt
 - **Partyseite:** Daten (RSVP, Allergien) nur auf der Seite, kein Export an Dritte
+
+---
+
+## Wettbewerber-Analyse (Stand 05.04.2026)
+
+### Wunschlisten-Tools (Deutschland)
+| Tool | Stärke | Schwäche vs. machsleicht |
+|------|--------|--------------------------|
+| **Wunschbiber** | 200k+ reservierte Wünsche, 80+ Shops, Preisvergleich | Kein RSVP, kein Affiliate-Revenue für uns, keine Party-Integration |
+| **EzWL** | Einfach, kostenlos, mehrere Anlass-Designs | Kein RSVP, kein Affiliate |
+| **MyWishlists** | Multi-Anlass (Geburt, Hochzeit, Weihnachten) | Kein RSVP, kein Affiliate |
+| **Wishbob / Wisheezy** | Einfach, ohne Anmeldung | Feature-arm, kein Affiliate |
+
+### RSVP/Event-Tools
+| Tool | Stärke | Schwäche vs. machsleicht |
+|------|--------|--------------------------|
+| **Partiful** | Google Best App 2024, extrem einfach, viral | US-fokussiert, keine Wunschliste, kein Affiliate, nicht für Kindergeburtstage |
+| **Whocan.org** | Deutsche Geburtstags-Einladungen mit RSVP | Keine Wunschliste, kein Affiliate, keine Schatzsuche |
+| **Joy** | Hochzeitswebsites mit RSVP + Wunschliste | Nur Hochzeit/Baby, kein Kindergeburtstag |
+| **Jotform RSVP** | Flexibel, Formulare | Generisch, kein Kindergeburtstags-Kontext |
+
+### Die Lücke
+**Keiner kombiniert:** RSVP + Allergien + Wunschliste mit Affiliate + Kindergeburtstags-Planer + Schatzsuche + KI-Premium-Features in einer Plattform. Die Wunschlisten-Tools haben kein RSVP. Die RSVP-Tools haben keine Wunschliste. Keiner verdient an den Geschenken der Gäste. Keiner hat KI-Features.
+
+machsleicht macht alles einzeln "gut genug" (nicht besser als Wunschbiber bei Wunschlisten), gewinnt aber durch die Integration und das Affiliate-Modell.
 
 ---
 
