@@ -50,9 +50,10 @@ Alle Audio-Features laufen über **ElevenLabs** (https://elevenlabs.io):
 | **Einladungs-Audio** | ElevenLabs TTS | ~2-3ct | Im Bundle | Viral — Kind erzählt eine Woche in der Kita davon |
 | **KI-Spielmoderation** | ElevenLabs TTS | ~wenige ct | Im Bundle | Eltern drücken Play statt selbst zu moderieren |
 | **Gute-Nacht-Geschichte** | Claude API + ElevenLabs TTS | ~30ct | 2.99€ | Emotionalster Moment — das Kind hört SEIN Abenteuer |
-| **Geburtstagssong** | Musik-AI (Suno/Udio) | ~5-10ct | 1.99€ | Re-evaluieren wenn Musik-AI besser wird |
 
 ElevenLabs liefert motto-spezifische Stimmen (Pirat, Astronaut, Fee). Deutsche Stimmenqualität muss getestet werden. Bolle testet selbst.
+
+**Klumpenrisiko:** 4 von 7 Premium-Features hängen an ElevenLabs. Wenn deren deutsche Stimmen nicht überzeugen oder Pricing sich ändert, ist die Hälfte des Premium-Lineups betroffen. Kein Blocker, aber bewusst halten.
 
 ### Tier 3 — Text-only (kein Audio nötig)
 
@@ -72,22 +73,33 @@ ElevenLabs liefert motto-spezifische Stimmen (Pirat, Astronaut, Fee). Deutsche S
 
 Konfigurator-Modell: Eltern klicken Features zusammen wie in einem Online-Shop.
 
-### GESTRICHEN
+### GESTRICHEN / BACKLOG
 
-| Feature | Grund |
-|---------|-------|
-| Foto-Erzähler | Kinderfotos an KI-API = DSGVO-Problem |
-| Geburtstagssong | Deutsche KI-Songs klingen aktuell nicht gut genug. Später re-evaluieren. |
+| Feature | Status | Grund |
+|---------|--------|-------|
+| Foto-Erzähler | ❌ Gestrichen | Kinderfotos an KI-API = DSGVO-Problem. Endgültig raus. |
+| Geburtstagssong | 🔜 Backlog | Deutsche Musik-AI (Suno/Udio) klingt aktuell nicht gut genug. Komplett geparkt, re-evaluieren wenn Qualität stimmt. |
 
 ---
 
 ## MVP-Phasen
 
-### Phase 1: Partyseite (das Fundament)
+### Phase 1: Rätsel nach Maß + Kreuzworträtsel (schneller Win)
+
+**Rätsel nach Maß:** UI im Schnitzeljagd-Block: Eltern beschreiben Ort → Button "Rätsel generieren" → Claude API Call → 5 personalisierte Rätsel. VK 2.99€ via Lemon Squeezy.
+**Kreuzworträtsel-Generator:** Standalone-Seite `/kreuzwortraetsel`. Freebie: eigene Fragen+Antworten+Lösungswort eingeben. Premium: KI füllt automatisch.
+**Lerneffekt:** Claude-API-Integration die für Gute-Nacht-Geschichte und Copilot wiederverwendet wird.
+**Sofort Revenue:** Ab Tag 1.
+
+### Phase 2: Partyseite (das Fundament)
 
 Eine HTML-Seite (`party.html`) + Cloudflare Worker + KV:
 
-**Erstellen:** Name des Kindes (= PIN), Datum, Uhrzeit, Adresse, Motto, Freitext-Hinweis → URL zurück
+**Erstellen:** Drei Wege rein:
+- Aus dem Planer (Won-Screen → "Partyseite erstellen" → Daten vorausgefüllt)
+- Direkt via `/party/erstellen` (standalone Formular)
+- Aus der Wunschliste ("Auch Zu/Absagen sammeln?")
+
 **Gäste-View:** PIN eingeben → Einladung sehen, Zu/Absage mit Kindername, Allergien-Freitext, Abholzeit
 **Admin-View:** Übersicht aller Zusagen, Allergien, Abholzeiten. Bearbeitbar.
 **Share:** WhatsApp-Share-Button mit vorgefertigtem Text + Link
@@ -95,17 +107,16 @@ Eine HTML-Seite (`party.html`) + Cloudflare Worker + KV:
 
 Backend: 4 Routen (`POST/GET/PUT/DELETE /api/party`)
 
-### Phase 2: Wunschliste
+### Phase 3: Wunschliste
 
-**Auf der Partyseite:** Geschenk-Links eintragen, Domain-Erkennung + Affiliate-Tag, "Ich kaufe das", "Beteiligen"
+**Auf der Partyseite:** Geschenk-Links eintragen, Domain-Erkennung + Affiliate-Tag, "Ich kaufe das", "Beteiligen" (reine Koordination)
 **Standalone /wunschliste:** Eigene Erstellungsseite, eigener SEO-Content, gleiche Technik
 **Affiliate-Programme:** Amazon (vorhanden), Otto/AWIN, myToys/AWIN, Thalia, MediaMarkt, Smyths Toys
 
-### Phase 3: Premium-Integration
+### Phase 4: Premium-Integration
 
-**Planer → Partyseite:** "Partyseite erstellen" am Ende des Planers, Daten vorausgefüllt
-**Schnitzeljagd → Rätsel nach Maß:** Premium-Add-on in der Schatzsuche
-**Kreuzworträtsel:** Standalone-Freebie + KI-Upgrade
+**Planer → Partyseite:** Daten-Übergabe vorausgefüllt
+**Schnitzeljagd → Rätsel nach Maß:** Premium-Add-on
 **ElevenLabs-Features:** Nach erfolgreichem Stimmen-Test
 
 ### Was das MVP bewusst NICHT hat
@@ -228,6 +239,19 @@ Die Partyseite vereint WhatsApp-Partyseite + Wunschliste als EIN integriertes Pr
 - Einladungstext bearbeiten
 - Link teilen (WhatsApp-Share-Button)
 
+### Wie kommt man zur Partyseite? (User Flow)
+
+**Weg 1 — Aus dem Planer (innen):**
+Planer fertig → Won-Screen: "Dein Plan steht! Jetzt teilen?" → Button "Partyseite erstellen" → Daten (Datum, Motto, Alter) sind vorausgefüllt → Eltern ergänzen Adresse, Uhrzeit, Hinweise → Link generiert → WhatsApp-Share
+
+**Weg 2 — Direkteinstieg (außen):**
+`/party/erstellen` als eigenständige Seite. Eltern die nur eine Partyseite wollen ohne den ganzen Planer. Simples Formular: Kindername, Datum, Uhrzeit, Adresse, optionaler Freitext. SEO: "Kindergeburtstag Einladung online", "Party Zusage Absage organisieren".
+
+**Weg 3 — Aus der Wunschliste:**
+Wer auf `/wunschliste` eine Liste erstellt bekommt die Option: "Willst du auch Zu/Absagen und Allergien sammeln? → Partyseite erstellen" (Wunschliste wird automatisch verknüpft).
+
+Alle drei Wege landen auf derselben Partyseite. Der Unterschied ist nur, wieviel schon vorausgefüllt ist.
+
 ### URL + Zugang
 - **URL:** `machsleicht.de/party/{random-token}` — z.B. `/party/a7x9k2`
 - **PIN:** Vorname des Geburtstagskindes (case-insensitive)
@@ -238,7 +262,7 @@ Die Partyseite vereint WhatsApp-Partyseite + Wunschliste als EIN integriertes Pr
 ### Wunschliste mit Affiliate (auf der Partyseite)
 - Einladendes Elternteil trägt Geschenk-Links ein (Amazon, Otto, myToys, Thalia...)
 - **"Ich kaufe das"** → Artikel als vergeben markiert → keine doppelten Geschenke
-- **"Beteiligen":** Mehrere Familien legen für ein teures Geschenk zusammen
+- **"Beteiligen":** Mehrere Familien signalisieren dass sie sich an einem teuren Geschenk beteiligen wollen. **NUR Koordination, KEIN Geldfluss über machsleicht.** Gäste sehen "3 von 4 Familien beteiligen sich", Geld regeln die Eltern untereinander (Überweisung, Bar, PayPal). Grund: Geldfluss über machsleicht = Zahlungsdienstleister-Regulierung, BaFin, Treuhandkonto. Nicht machbar als Solo-Dev.
 - **Revenue:** ~6-12€ Affiliate pro Geburtstag (8 Gäste × 15-30€ × 5% Provision)
 
 #### Affiliate-Link-Konvertierung (KRITISCH für Revenue)
@@ -381,14 +405,15 @@ machsleicht macht alles einzeln "gut genug" (nicht besser als Wunschbiber bei Wu
 
 ## Priorisierung (Empfehlung)
 
-1. **Partyseite (Backend + Frontend)** — das Fundament für alles Weitere. Enthält RSVP, Allergien, Abholzeit, Wunschliste mit Affiliate. Viraler Akquise-Kanal.
-2. **Rätsel nach Maß** — niedrigster Aufwand, höchster Differentiator, ein API-Call. Inkl. Kreuzworträtsel-Format.
-3. **KI-Spielleiter-Anrufe** — das Wow-Feature, braucht ElevenLabs-Test
-4. **Einladungs-Audio** — günstig, viral, einfach. Lebt auf der Partyseite.
-5. **Gute-Nacht-Geschichte** — emotional, runder Abschluss
-6. **Sofort-Schatzsuche Abo** — recurring revenue, braucht Rätsel nach Maß als Basis
-7. **Standalone /wunschliste** — eigene SEO-Kategorie, Funnel in den Planer
-8. **Rest** — KI-Spielmoderation, Danke-Nachrichten, Eltern-Copilot
+1. **Rätsel nach Maß + Kreuzworträtsel** — schnellster Win, sofort Revenue (2.99€), ein Nachmittag Arbeit. Claude-API-Integration lernen die du für alles Weitere brauchst.
+2. **Partyseite (Backend + Frontend)** — das Fundament für Wunschliste, virale Features, Premium. RSVP, Allergien, Abholzeit.
+3. **Wunschliste auf Partyseite** — Affiliate-Revenue ab Tag 1 nach Launch.
+4. **KI-Spielleiter-Anrufe** — das Wow-Feature, braucht ElevenLabs-Test
+5. **Einladungs-Audio** — günstig, viral, einfach. Lebt auf der Partyseite.
+6. **Gute-Nacht-Geschichte** — emotional, runder Abschluss
+7. **Sofort-Schatzsuche Abo** — recurring revenue, braucht Rätsel nach Maß als Basis
+8. **Standalone /wunschliste** — eigene SEO-Kategorie, Funnel in den Planer
+9. **Rest** — KI-Spielmoderation, Danke-Nachrichten, Eltern-Copilot
 
 ---
 
@@ -399,7 +424,9 @@ Kernfunktion, Standalone /wunschliste, Beteiligen-Funktion und Affiliate-Program
 
 ---
 
-## Multiplayer-Schatzsuche (8-12 Jährige)
+## Multiplayer-Schatzsuche (8-12 Jährige) — LANGFRIST-VISION
+
+> Eigenständiges Produkt, nicht ein normales Feature. WebSockets, Rollen-Management, Echtzeit-Sync, Mobile-first — mehrere Monate Arbeit. Frühestens nach stabilem Revenue aus den Basis-Features.
 
 - Kinder in dieser Altersgruppe haben oft eigene Handys
 - Jedes Kind bekommt einen eigenen **Rollen-Link**: Navigator (sieht die Karte), Codeknacker (löst Rätsel), Späher (bekommt Hinweise)
@@ -451,7 +478,9 @@ Kernfunktion, Standalone /wunschliste, Beteiligen-Funktion und Affiliate-Program
 
 ---
 
-## Revenue-Projektion (konservativ)
+## Revenue-Projektion (optimistisch-konservativ)
+
+> **Ehrlichkeits-Check:** 5% Premium-Conversion ist am oberen Ende (Industrie: 2-4%). 30% aktive Wunschlisten ist großzügig. Bei echten konservativen Zahlen eher 60-70% der Projektion. Trotzdem als Orientierung nützlich.
 
 **Annahmen:**
 - 20% der Besucher nutzen den Planer
