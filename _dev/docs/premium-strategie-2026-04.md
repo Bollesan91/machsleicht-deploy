@@ -116,24 +116,76 @@ Konfigurator-Modell: Eltern klicken Features zusammen wie in einem Online-Shop. 
 
 ---
 
-## Wachstums-Features (kostenlos, viraler Effekt)
+## Partyseite — Das Fundament (Feature-Spec)
 
-### WhatsApp-Partyseite
-- Jeder Geburtstag bekommt eine eigene Mini-Landingpage
-- Inhalt: RSVP-Button, Adresse, Allergien-Formular, Abholzeit
-- Eltern teilen einen Link statt 5 separate WhatsApp-Nachrichten
-- **Viraler Effekt:** 8 Familien öffnen die Seite → 8 sehen machsleicht → 8 neue Leads
-- **Kosten:** Null
-- **Jeder Geburtstag = Akquise-Kanal**
+Die Partyseite vereint WhatsApp-Partyseite + Wunschliste als EIN integriertes Produkt. Jeder Geburtstag bekommt eine eigene Seite, auf der ALLES zusammenläuft.
+
+### Was die Gäste-Eltern sehen
+1. **PIN-Eingabe** — Vorname des Geburtstagskindes (case-insensitive, Umlaute normalisiert)
+2. **Einladung** — Motto, Datum, Uhrzeit, Adresse, ggf. Hinweise ("Gummistiefel mitbringen")
+3. **Zusage/Absage** — RSVP pro Kind mit Name
+4. **Allergien/Unverträglichkeiten** — Freitext-Feld pro Kind
+5. **Abholzeit** — Wann wird das Kind abgeholt?
+6. **Wunschliste** — Geschenk-Links mit "Ich kaufe das" + "Beteiligen"-Funktion
+7. **machsleicht-Branding** — Dezenter Footer: "Auch einen Geburtstag planen? → machsleicht.de"
+
+### Was das einladende Elternteil sieht (Admin-View)
+- Übersicht: Wer hat zu/abgesagt, welche Allergien, Abholzeiten
+- Wunschliste befüllen: Links eintragen (Amazon/Otto/myToys/Thalia etc.)
+- Einladungstext bearbeiten
+- Link teilen (WhatsApp-Share-Button)
+
+### URL + Zugang
+- **URL:** `machsleicht.de/party/{random-token}` — z.B. `/party/a7x9k2`
+- **PIN:** Vorname des Geburtstagskindes (case-insensitive)
+- **URL enthält NIEMALS den Kindernamen** — sonst ist der PIN geleakt
+- **Token:** 6-8 Zeichen alphanumerisch, zufällig generiert
+- **Bedrohungsmodell:** Schutz gegen zufälliges Finden, nicht gegen gezielten Angriff
 
 ### Wunschliste mit Affiliate (auf der Partyseite)
 - Einladendes Elternteil trägt Geschenk-Links ein (Amazon, Otto, myToys, Thalia...)
 - machsleicht erkennt Domain → setzt Affiliate-Tag dazwischen
-- Gäste-Eltern sehen Liste → klicken "Ich kaufe das" → Artikel wird als vergeben markiert
-- Keine doppelten Geschenke — alle happy
-- **Revenue:** ~6-12€ Affiliate pro Geburtstag (8 Gäste × 15-30€ Geschenk × 5% Provision)
-- **Kosten:** Null
+- Gäste-Eltern sehen Liste mit Bild, Titel, Preis (OpenGraph-Daten)
+- "Ich kaufe das" → Artikel als vergeben markiert → keine doppelten Geschenke
+- **"Beteiligen":** Mehrere Familien legen für ein teures Geschenk zusammen
+- **Revenue:** ~6-12€ Affiliate pro Geburtstag (8 Gäste × 15-30€ × 5% Provision)
 - **Affiliate-Programme:** Amazon (vorhanden), Otto/AWIN, myToys/AWIN, Thalia, MediaMarkt, Smyths Toys
+
+### Standalone /wunschliste (eigene Kategorie-Seite)
+- Auch für Eltern die den Geburtstag NICHT über machsleicht planen
+- Universell nutzbar: Geburtstag, Weihnachten, Einschulung, Taufe
+- SEO-Keywords: "Wunschliste Kind", "Geschenke-Wunschliste", "Wunschzettel online"
+- Funnel in den Planer: "Du planst auch den Geburtstag? → machsleicht.de/kindergeburtstag"
+- Verdient an Geburtstagen die gar nicht über machsleicht gefeiert werden
+
+### Backend-Architektur
+- **Stack:** Cloudflare Workers + KV (bereits vorhanden für TeamPulse)
+- **Ein Worker, ein KV-Namespace**
+- **Key:** `party:{token}` → JSON-Blob mit allem (Gastliste, RSVPs, Allergien, Wunschliste, Abholzeiten)
+- **Frontend:** Statische HTML auf Netlify, Worker-API für Reads/Writes
+- **Flow:** Planer generiert Party-ID + PIN → schreibt via Worker in KV → Partyseite rendert State
+- **Free Tier:** 100k Reads/Tag, 1k Writes/Tag — reicht für tausende Partys/Tag
+- **Skalierung:** Upgrade auf D1 (Cloudflare SQLite) wenn Queries nötig werden
+- **Null neue Infrastruktur — alles im bestehenden Stack**
+
+### Datenschutz
+- Nur Vornamen — kein personenbezogenes Datum im DSGVO-Sinne
+- Allergien + Vorname in geschlossener 8-Personen-Gruppe = identisch mit WhatsApp-Status-quo
+- **Automatische Löschung nach 30 Tagen** nach dem Party-Datum
+- Kurze Datenschutzinfo auf der Seite
+- Kein Tracking, keine Cookies, kein Login
+
+### Viraler Effekt
+- 1 Geburtstag = 1 Link → 8 Familien öffnen die Seite → 8 sehen machsleicht → 8 potenzielle Neukunden
+- Kosten: Null
+- **Jeder Geburtstag ist ein Akquise-Kanal**
+
+### Strategische Bedeutung
+Die Partyseite ist das FUNDAMENT für fast alle weiteren Features:
+- Premium-Features (Einladungs-Audio, Danke-Nachrichten) leben auf der Partyseite
+- Wunschliste braucht die Partyseite als Zuhause
+- Multiplayer-Schatzsuche verlinkt von der Partyseite
+- Ohne Partyseite sind alle Wachstums-Features isolierte Inseln
 
 ---
 
@@ -186,40 +238,21 @@ Konfigurator-Modell: Eltern klicken Features zusammen wie in einem Online-Shop. 
 
 ## Priorisierung (Empfehlung)
 
-1. **Rätsel nach Maß** — niedrigster Aufwand, höchster Differentiator, ein API-Call
-2. **WhatsApp-Partyseite** — kostenlos, viral, Grundlage für Wunschliste
-3. **Wunschliste mit Affiliate** — passives Revenue auf der Partyseite
-4. **KI-Spielleiter-Anrufe** — das Wow-Feature, braucht ElevenLabs-Test
-5. **Einladungs-Audio** — günstig, viral, einfach
-6. **Gute-Nacht-Geschichte** — emotional, runder Abschluss
-7. **Sofort-Schatzsuche Abo** — recurring revenue, braucht Rätsel nach Maß als Basis
+1. **Partyseite (Backend + Frontend)** — das Fundament für alles Weitere. Enthält RSVP, Allergien, Abholzeit, Wunschliste mit Affiliate. Viraler Akquise-Kanal.
+2. **Rätsel nach Maß** — niedrigster Aufwand, höchster Differentiator, ein API-Call. Inkl. Kreuzworträtsel-Format.
+3. **KI-Spielleiter-Anrufe** — das Wow-Feature, braucht ElevenLabs-Test
+4. **Einladungs-Audio** — günstig, viral, einfach. Lebt auf der Partyseite.
+5. **Gute-Nacht-Geschichte** — emotional, runder Abschluss
+6. **Sofort-Schatzsuche Abo** — recurring revenue, braucht Rätsel nach Maß als Basis
+7. **Standalone /wunschliste** — eigene SEO-Kategorie, Funnel in den Planer
 8. **Rest** — KI-Spielmoderation, Danke-Nachrichten, Eltern-Copilot
 
 ---
 
 ## Wunschliste — Details
 
-### Kernfunktion (auf der Partyseite)
-- Einladendes Elternteil trägt Geschenk-Links ein (Amazon, Otto, myToys, Thalia, MediaMarkt, Smyths Toys...)
-- machsleicht erkennt die Domain automatisch und setzt den passenden Affiliate-Tag dazwischen
-- Gäste-Eltern sehen die Liste mit Bild, Titel, Preis (automatisch aus OpenGraph-Daten)
-- "Ich kaufe das" → Artikel als vergeben markiert → keine doppelten Geschenke
-- **"Beteiligen"-Funktion:** Mehrere Familien legen für ein teures Geschenk zusammen. Erhöht den durchschnittlichen Geschenkwert massiv.
-
-### Standalone /wunschliste (eigene Kategorie-Seite)
-- Auch für Eltern die den Geburtstag NICHT über machsleicht planen
-- Universell nutzbar: Geburtstag, Weihnachten, Einschulung, Taufe
-- SEO-Keywords: "Wunschliste Kind", "Geschenke-Wunschliste Kindergeburtstag", "Wunschzettel online"
-- Funnel in den Planer: "Du planst auch den Geburtstag? Zeitplan, Spiele und Schatzsuche — kostenlos."
-- Verdient an Geburtstagen die gar nicht über machsleicht gefeiert werden
-
-### Affiliate-Programme
-- Amazon PartnerNet (vorhanden, ~5%)
-- Otto via AWIN
-- myToys via AWIN
-- Thalia
-- MediaMarkt/Saturn
-- Smyths Toys
+→ Vollständig dokumentiert unter "Partyseite — Das Fundament (Feature-Spec)" weiter oben.
+Kernfunktion, Standalone /wunschliste, Beteiligen-Funktion und Affiliate-Programme sind dort beschrieben.
 
 ---
 
