@@ -727,13 +727,10 @@ function App() {
     if (mottoId) { setView("peak"); window.scrollTo(0, 0); setTimeout(() => { setView("plan"); window.scrollTo(0, 0); }, 2800); }
   }
   function emergencyStart() {
+    setEmergencyMode(true);
     if (!mottoId) setMottoId("safari");
-    setEffort("minimal"); setDuration(2); setView("plan"); window.scrollTo(0, 0);
-  }
-  function emergencyFull() {
-    setEmergencyMode(true); setShoppingMode("minimal"); setDuration(2);
-    if (!mottoId) { const g = GENERIC; setMottoId(g[Math.floor(Math.random() * g.length)]?.id || "safari"); }
-    setView("plan"); setLocOverride("wohnung"); window.scrollTo(0, 0);
+    setEffort("minimal"); setShoppingMode("minimal"); setDuration(2); setLocOverride("wohnung");
+    setView("plan"); window.scrollTo(0, 0);
   }
   function toggleOwned(idx) { setOwned((prev) => ({ ...prev, [idx]: !prev[idx] })); }
 
@@ -980,23 +977,11 @@ function App() {
             Wähl Alter, Motto und Gästezahl — du bekommst sofort einen kompletten Plan mit Spielen, Einkaufsliste und Kosten pro Kind.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 8, justifyContent: "center", animation: "fadeSlideUp 0.5s 0.3s ease-out both" }}>
-            {[["⏱️", "Zeitplan"], ["🎯", "Altersgerechte Spiele"], ["🛒", "Einkaufsliste"], ["🗺️", "+ Schatzsuche"]].map(([ico, label]) => (
+            {[["⏱️", "Zeitplan"], ["🎯", "Altersgerechte Spiele"], ["🛒", "Einkaufsliste"], ["🗺️", "+ Schnitzeljagd"]].map(([ico, label]) => (
               <span key={label} style={{ display: "inline-flex", alignItems: "center", gap: 5, padding: "6px 12px", background: "rgba(255,255,255,0.7)", backdropFilter: "blur(8px)", borderRadius: 100, fontSize: 12, fontWeight: 500, color: "#4a4a4a", border: "1px solid rgba(0,0,0,0.06)" }}>
                 <span style={{ fontSize: 14 }}>{ico}</span>{label}
               </span>
             ))}
-          </div>
-          <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap", marginTop: 24, animation: "fadeSlideUp 0.5s 0.4s ease-out both" }}>
-            <a href="#wizard" onClick={(e) => { e.preventDefault(); document.getElementById("wizard")?.scrollIntoView({ behavior: "smooth" }); }} style={{
-              display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 28px",
-              background: "linear-gradient(135deg,var(--a),#d35f1a)", color: "#fff", borderRadius: 14, fontSize: 15, fontWeight: 700,
-              textDecoration: "none", boxShadow: "0 4px 20px rgba(224,122,58,0.3)",
-            }}>🎂 Geburtstag planen</a>
-            <button onClick={emergencyFull} style={{
-              display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 28px",
-              background: "linear-gradient(135deg,#C62828,#E53935)", color: "#fff", borderRadius: 14, fontSize: 15, fontWeight: 700,
-              border: "none", cursor: "pointer", boxShadow: "0 4px 20px rgba(198,40,40,0.3)", animation: "softPulse 2s infinite",
-            }}>🚨 Morgen ist Geburtstag!</button>
           </div>
         </div>
       </section>
