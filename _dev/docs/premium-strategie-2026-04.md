@@ -1,6 +1,6 @@
 # machsleicht.de — Premium-Strategie & Feature-Roadmap
 
-**Stand:** 04.04.2026
+**Stand:** 05.04.2026
 **Autor:** Bolle + Claude (Sparring-Session)
 
 ---
@@ -46,6 +46,15 @@ Der komplette Bogen: **Einladung → Party-Vorbereitung → Partytag → Nachber
 - **VK:** 2.99€
 - **Prio:** HÖCHSTE — das macht die Schatzsuche von Template zu echtem personalisierten Erlebnis
 - **Aufwand:** Gering. Prompt-Engineering + UI für Ort-Beschreibung
+
+#### Output-Formate für Rätsel nach Maß
+Die KI liefert den Inhalt, verschiedene Darstellungsformate machen das Feature wertvoller:
+
+1. **Text-Rätsel** (Standard) — Klassische Rätsel als druckbare Stationskarten
+2. **Kreuzworträtsel mit Lösungswort** — Eltern geben Lösungswort vor (z.B. Kindername oder Motto-Wort). KI generiert passende Fragen + Antworten rund ums Kind/Ort/Motto. Generator baut daraus ein druckfertiges Schwedenrätsel, bei dem die markierte Spalte das Lösungswort ergibt. Grid-Algorithmus komplett clientseitig, KI liefert nur den Inhalt.
+3. **Weitere Formate denkbar:** Rebus, Bilderrätsel, Zahlencode
+
+**Kreuzworträtsel-Generator auch standalone als Freebie/Lead-Magnet:** Eltern geben eigene Fragen + Antworten + Lösungswort ein (ohne KI). Premium-Upgrade = KI generiert die Inhalte automatisch passend zum Geburtstag. Guter SEO-Kanal ("Kreuzworträtsel für Kinder erstellen").
 
 ### 3. Gute-Nacht-Geschichte (nach der Party)
 - **Was:** Abends generiert die KI eine personalisierte Geschichte: Sophie und ihre 7 Freunde erleben die Piraten-Schatzsuche nochmal — als Märchen
@@ -310,3 +319,73 @@ Konfigurator-Modell: Eltern klicken Features zusammen wie in einem Online-Shop. 
 **Erkenntnis:** Die Wunschliste überholt Premium-Features ab 10k Besuchern. Bei 20k macht sie mehr als die Hälfte des Umsatzes — weil sie passiv skaliert ohne API-Kosten.
 
 **Jahresumsatz bei 20k Besuchern: ~91.000€** bei praktisch null laufenden Kosten (nur Netlify Hosting + gelegentliche API-Calls).
+
+---
+
+## Landingpage-Wireframes (Sparring-Session 04.04.2026)
+
+Wireframe-Entwürfe für die drei Kernseiten wurden in einer Sparring-Session erarbeitet. Claude hat die Wireframes anschließend kritisch bewertet.
+
+### Homepage (index.html) — Wireframe
+
+1. **Hero:** "machsleicht — Weniger Grübeln. Mehr machen." / Sub: "Digitale Tools für Eltern, die keine Lust auf Chaos haben." / CTAs: Kindergeburtstag planen, Schatzsuche erstellen / Microproof: Kostenlos. Ohne Anmeldung. Direkt nutzbar.
+2. **Proof-Kacheln:** "Nicht mehr Input. Mehr Klarheit." / "In Minuten startklar" / "Ohne Anmeldung, direkt los"
+3. **Hauptentscheidung:** Zwei große Karten — Kindergeburtstag-Planer + Schatzsuche
+4. **So funktioniert's:** 3 Steps (Was → Ergebnis → Nutzung)
+5. **Vertrauens-Elemente:** Sofort-Ergebnisse, Kostenlos, Kein Login
+6. **Zwei stärkste Produkte:** Planer + Schatzsuche als Feature-Blöcke
+7. **Weitere Tools:** Einschulung, Baby, Halloween, Ostern, Fasching (Karten)
+8. **Philosophie:** "Wir bauen nur Dinge, die Stress senken, Rückfragen vermeiden oder Entscheidungen vereinfachen."
+9. **FAQ**
+10. **Final CTA:** "Womit willst du jetzt starten?"
+
+### /kindergeburtstag — Wireframe
+
+1. **Hero:** "Kindergeburtstag planen, ohne Chaos im Kopf" / Sub: Plan mit Motto, Zeitablauf, Spielen, Einkaufsliste, Snacks, Budget.
+2. **Proof-Kacheln:** Weniger Grübeln / Weniger Vergessen / Weniger Übertreibung
+3. **So funktioniert's:** 3 Steps
+4. **Motto-Auswahl:** Piraten, Dino, Feen, Weltraum, Detektiv, Dschungel
+5. **Alterslogik:** 4-5 / 6-7 / 8-10 Blöcke
+6. **Schatzsuche als Add-on:** CTA zum Ergänzen
+7. **Was du bekommst:** Ablauf, Spiele, Einkaufsliste, Snacks, Budget
+8. **Was du nicht bekommst:** Kein Basteltheater, keine Pinterest-Perfektion, keine 80 Optionen
+9. **FAQ**
+10. **Final CTA**
+
+### /schatzsuche — Wireframe
+
+1. **Hero:** "Schatzsuche für Kinder in 5 Minuten fertig"
+2. **Themenwahl-Preview:** 6 Theme-Karten
+3. **So funktioniert's:** 3 Steps
+4. **Output-Preview:** Karte + Stationen + Hinweise
+5. **Alters-Anpassung**
+6. **Was du bekommst**
+7. **Was du nicht bekommst**
+8. **Einladung als Cross-Sell**
+9. **FAQ**
+10. **Planer-Rücklink**
+11. **Final CTA**
+
+---
+
+### Claude's Kritik an den Wireframes
+
+**Problem 1: Tool-Seiten werden wie Marketing-Seiten behandelt.** /kindergeburtstag und /schatzsuche SIND React-Apps. Der Nutzer landet dort und ist sofort im Tool. Die Wireframes schieben 8-10 Scroll-Sektionen VOR das Tool. Das ist Friktion, kein Value. Für SEO-Ratgeber perfekt, für Tool-Landingpages Gift.
+
+**Problem 2: SEO-Keyword-Verwässerung.** Emotionale H1s ("ohne Chaos im Kopf") sind bessere Copy aber schlechteres SEO. Bei den wichtigsten Seiten nicht experimentieren.
+
+**Problem 3: "Familienfeste" overpromised.** Die Site ist 90%+ Kindergeburtstag. "Familienfeste planen" suggeriert Hochzeiten, Taufen, Jubiläen.
+
+**Problem 4: Stärkste Differenziatoren fehlen.** Live-Modus, Schatzkarten-Builder, mottoabhängige Stationen, Rollen-System werden nicht erwähnt. Stattdessen generische Aussagen.
+
+**Problem 5: Repetition auf Homepage.** Kindergeburtstag + Schatzsuche wird in 4 Sektionen gepitcht.
+
+### Was übernommen werden sollte (Goldstücke)
+
+1. **"Was du nicht bekommst"** — Positionierungs-Gold. Als kompaktes Element neben dem Tool, nicht als eigene Sektion.
+2. **Trust-Kacheln** ("Nicht mehr Input. Mehr Klarheit." / "In Minuten startklar" / "Ohne Anmeldung") — 3er-Zeile unter dem Hero.
+3. **Philosophie-Satz** — "Wir bauen nur Dinge, die Stress senken, Rückfragen vermeiden oder Entscheidungen vereinfachen."
+
+### Entscheidung
+
+Die Tool-Seiten (/kindergeburtstag, /schatzsuche) bleiben Tool-first. SEO-Content sitzt UNTER dem Tool in eigenem Container (bereits umgesetzt mit Container-Separation). Die Wireframe-Copy wird als Inspiration für Microcopy und Trust-Elemente innerhalb des bestehenden Layouts verwendet, nicht als kompletter Seitenumbau.
