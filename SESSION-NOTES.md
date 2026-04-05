@@ -1,44 +1,47 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 04.04.2026
+**Datum:** 05.04.2026
 
 ## Was wurde gemacht
 
-### Planer-Umbau Phase 1 (deployed)
-- JS prettifyed (70 → 6800+ Zeilen)
-- Control Hub (Fixed Bottom Bar: Einladung/Schatzsuche/PDF)
-- Einladungs-Block mit Namenseingabe + Live-WhatsApp-Preview
-- Schatzsuche-Teaser mit interaktivem Stationen-Explorer (6 Motto-Sets)
-- Zeitplan auf Accordion umgebaut
-- Score-Loop verdrahtet (+11% fuer Einladung)
-- Redundante CTAs entfernt, Sticky CTA im Plan-View ausgeblendet
+### Planer-Fix: JSX pre-compiled, Seite laeuft wieder
+- Problem: Seite war weiss — JSX-Version (von Hannes' Session) wurde deployed ohne Pre-Compilation
+- Loesung: JSX mit Babel pre-compiled zu React.createElement (2832 Zeilen)
+- Babel standalone entfernt (~700KB Pageload gespart)
+- Daten inline in kindergeburtstag.js (5242 Zeilen gesamt) — kein separater Datei-Load
+- Dummy-Text "Die Einladung teast die Schatzsuche an" im Connector ersetzt
+- Runtime-Tests bestanden, Seite laeuft auf Mobile
 
-### Daten-Separation (committed, nicht deployed)
-- kindergeburtstag-data.js erstellt (2.409 Zeilen)
-- Vorbereitung fuer JSX-Neuaufbau
+### CTA-Deep-Links auf 281 Motto/Alters-Seiten
+- Alle "Planer"-CTAs und Sticky-Buttons verlinken jetzt mit Parametern
+- Motto-Seiten: /kindergeburtstag?motto=safari#planer
+- Motto+Alter: /kindergeburtstag?motto=safari&alter=5#planer
+- Reine Alters-Seiten: /kindergeburtstag?alter=4#planer
+- Mottos ohne React-ID (meerjungfrau, pferde etc.): /kindergeburtstag#planer
+- Breadcrumbs, Logo, Footer unveraendert
 
-### Premium-Strategie entwickelt (Sparring-Session)
-- Komplettes Strategiedokument: _dev/docs/premium-strategie-2026-04.md
-- 7 Premium-Features definiert mit Kosten/VK/Marge
-- Wunschliste mit Affiliate + Beteiligen-Funktion als Top-Revenue-Feature
-- WhatsApp-Partyseite als viraler Akquise-Kanal
-- Standalone /wunschliste als eigene Kategorie
-- Multiplayer-Schatzsuche fuer 8-12 Jaehrige
-- Sofort-Schatzsuche Abo (2.99/Monat)
-- 6 weitere Wachstums-Ideen (Klassen-Kalender, Geschenkeberater, Einschulung, Advent, Mitgebsel, Countdown)
-- Feature-Ranking nach Viral x Cash
-- Revenue-Projektion: ~1k bei 5k Besuchern, ~3k bei 10k, ~7.6k bei 20k/Monat
+### Premium-Strategie (aus vorheriger Session, jetzt im Repo)
+- Feature-Ranking nach Viral x Cash (Top 14)
+- Revenue-Projektion bei 5k/10k/20k Besuchern
+- Wunschliste-Details, Multiplayer, Wachstums-Ideen
+- Alles in _dev/docs/premium-strategie-2026-04.md
+
+## Technischer Stand
+- kindergeburtstag.js: Pre-compiled JSX + Daten inline (5242 Zeilen)
+- kindergeburtstag-data.js: existiert noch im Repo, wird aber nicht mehr geladen
+- kindergeburtstag.html: React 18 + ein Script-Tag, kein Babel
+- [skip netlify] funktioniert NICHT bei Netlify — alle Pushes deployen
 
 ## Naechste Schritte
-1. **Live testen:** Planer-Umbau auf Mobile pruefen
-2. **ElevenLabs testen:** Bolle testet deutsche Piratenstimme selbst
-3. **JSX-Neuaufbau:** kindergeburtstag.js mit Komponenten-Architektur
-4. **Raetsel nach Mass:** Erstes Premium-Feature bauen (ein Claude API-Call)
-5. **WhatsApp-Partyseite:** Grundlage fuer Wunschliste
-6. **Wunschliste:** Affiliate-Integration, Beteiligen-Funktion
+1. **Raetsel nach Mass** als erstes Premium-Feature bauen (ein Claude API-Call, VK 2.99)
+2. **WhatsApp-Partyseite** als Grundlage fuer Wunschliste
+3. **Wunschliste mit Affiliate** — Top-Revenue-Feature
+4. **ElevenLabs testen** — deutsche Piratenstimme
+5. **JSX-Workflow verbessern** — JSX als Source behalten, Pre-Compile als Build-Step
+6. **GitHub Token rotieren** (war in Chat sichtbar)
 
 ## Offene Fragen
-- ElevenLabs deutsche Stimmen: gut genug fuer Piraten-Charakter?
-- Wunschliste: eigene DB noetig oder reicht localStorage + Share-Link?
-- Multiplayer: Websockets vs Polling vs Firebase Realtime?
+- Mottos ohne React-ID (meerjungfrau, pferde, detektiv, zirkus, baustelle, ritter): zu ALL_MOTTOS hinzufuegen?
+- kindergeburtstag-data.js: aus Repo entfernen oder als Backup behalten?
+- [skip netlify] → [skip ci] umstellen fuer zukuenftige Docs-only Commits?
