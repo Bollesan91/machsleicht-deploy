@@ -194,7 +194,8 @@ function mapAutoLayout(stationNames,W,H){
   return pts;
 }
 function drawTreasureMap(canvas,points,themeId,title){
-  const t=MAP_THEMES[themeId]||MAP_THEMES.piraten;const ctx=canvas.getContext('2d');const W=canvas.width;const H=canvas.height;
+  const t=MAP_THEMES[themeId]||MAP_THEMES.piraten;const ctx=canvas.getContext('2d');
+  const dpr=window.devicePixelRatio||1;const W=canvas.width/dpr;const H=canvas.height/dpr;
   const isDark=t.darkMode;const tc=isDark?'rgba(200,200,255,0.85)':'rgba(80,40,10,0.85)';const tcl=isDark?'rgba(160,160,200,0.4)':'rgba(120,80,40,0.35)';
   const rng=mapSeededRandom(42+(themeId||'').length*7);
   const grad=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,W*0.7);grad.addColorStop(0,t.parchment[0]);grad.addColorStop(0.6,t.parchment[1]);grad.addColorStop(1,t.parchment[2]);ctx.fillStyle=grad;ctx.fillRect(0,0,W,H);

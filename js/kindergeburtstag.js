@@ -2664,8 +2664,9 @@ function mapAutoLayout(stationNames, W, H) {
 function drawTreasureMap(canvas, points, themeId, title) {
   const t = MAP_THEMES[themeId] || MAP_THEMES.piraten;
   const ctx = canvas.getContext("2d");
-  const W = canvas.width;
-  const H = canvas.height;
+  const dpr = window.devicePixelRatio || 1;
+  const W = canvas.width / dpr;
+  const H = canvas.height / dpr;
   const isDark = t.darkMode;
   const tc = isDark ? "rgba(200,200,255,0.85)" : "rgba(80,40,10,0.85)";
   const tcl = isDark ? "rgba(160,160,200,0.4)" : "rgba(120,80,40,0.35)";
