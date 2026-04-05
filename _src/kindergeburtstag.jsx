@@ -417,6 +417,8 @@ function App() {
   const [planMode, setPlanMode] = useState(() => loadState("planMode", "geburtstag")); // 'geburtstag' | 'schatzsuche'
   const [szThemeId, setSzThemeId] = useState(() => loadState("szThemeId", null));
   const [childName, setChildName] = useState(() => loadState("childName", ""));
+  const [mapItems, setMapItems] = useState(() => loadState("mapItems", [])); // [{emoji, x, y}]
+  const [activeEmoji, setActiveEmoji] = useState(null); // emoji waiting to be placed
 
   // Derived values
   const motto = ALL_MOTTOS.find((m) => m.id === mottoId);
@@ -440,6 +442,7 @@ function App() {
   useEffect(() => saveState("planMode", planMode), [planMode]);
   useEffect(() => saveState("szThemeId", szThemeId), [szThemeId]);
   useEffect(() => saveState("childName", childName), [childName]);
+  useEffect(() => saveState("mapItems", mapItems), [mapItems]);
 
   // Hide sticky CTA in plan view
   useEffect(() => {
@@ -599,7 +602,7 @@ function App() {
 
   // === ACTIONS ===
   function switchToSZ() { setPlanMode("schatzsuche"); setView("config"); window.scrollTo(0, 0); }
-  function reset() { setView("config"); setMottoId(null); setSzThemeId(null); setChildName(""); setQuietMode(false); setOwned({}); setShoppingMode("standard"); setLocOverride(null); setEmergencyMode(false); }
+  function reset() { setView("config"); setMottoId(null); setSzThemeId(null); setChildName(""); setMapItems([]); setActiveEmoji(null); setQuietMode(false); setOwned({}); setShoppingMode("standard"); setLocOverride(null); setEmergencyMode(false); }
   function startPlan() {
     if (isSZ && szThemeId) { setView("peak"); window.scrollTo(0, 0); setTimeout(() => { setView("plan"); window.scrollTo(0, 0); }, 2200); }
     else if (mottoId) { setView("peak"); window.scrollTo(0, 0); setTimeout(() => { setView("plan"); window.scrollTo(0, 0); }, 2800); }
@@ -725,7 +728,19 @@ h2{font-size:16px;font-weight:800;color:${szTheme.color};margin:20px 0 10px;bord
 @media print{.page{padding:24px;min-height:auto}}
 </style></head><body>
 
-<!-- Seite 1: Stationen-Übersicht -->
+<!-- Seite 1: Schatzkarte -->
+${mapItems.length > 0 ? `<div class="page" style="display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div style="position:relative;width:100%;max-width:700px;aspect-ratio:4/3;background:linear-gradient(145deg,#F5E6C8 0%,#E8D5A8 30%,#DCCB96 60%,#F0E0B8 100%);border:2px solid ${szTheme.color}40;border-radius:16px;overflow:hidden">
+<div style="position:absolute;top:16px;left:0;right:0;text-align:center;z-index:2;font-family:'Caveat',cursive;font-size:26px;font-weight:700;color:#8B7750">
+${szTheme.emoji} ${childName ? nameGen + " " : ""}${szTheme.name}
+</div>
+${mapItems.map(item => `<span style="position:absolute;left:${item.x}%;top:${item.y}%;font-size:28px;transform:translate(-50%,-50%);z-index:5;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.3))">${item.emoji}</span>`).join("")}
+<div style="position:absolute;bottom:12px;right:16px;font-size:11px;color:#A0926C;font-weight:700">N ↑</div>
+<div style="position:absolute;bottom:10px;left:16px;font-size:9px;color:#A0926C">machsleicht.de</div>
+</div>
+</div>` : ""}
+
+<!-- Seite 2: Stationen-Übersicht -->
 <div class="page">
 <h1>${szTheme.emoji} ${childName ? nameGen + " " : ""}${szTheme.name}</h1>
 <p style="font-size:13px;color:#6B5D52;margin-bottom:12px">${stations.length} Stationen · ${ageLabel[ag]} · ca. ${totalDauer} Min.</p>
@@ -738,7 +753,7 @@ ${stations.map((s, i) => `<div class="station">
 </div>`).join("")}
 </div>
 
-<!-- Seite 2: Hinweis-Zettel -->
+<!-- Seite 3: Hinweis-Zettel -->
 <div class="page">
 <h1>✂️ Hinweis-Zettel zum Ausschneiden</h1>
 <p style="font-size:13px;color:#6B5D52;margin-bottom:16px">Ausschneiden und an den Stationen verstecken. Jeder Zettel führt zur nächsten Station.</p>
@@ -751,7 +766,7 @@ ${stations.map((s, i) => `<div class="hinweis-card">
 </div>
 </div>
 
-<!-- Seite 3: Material-Checkliste -->
+<!-- Seite 4: Material-Checkliste -->
 <div class="page">
 <h1>📋 Material-Checkliste</h1>
 <p style="font-size:13px;color:#6B5D52;margin-bottom:16px">${szTheme.name} · ${ageLabel[ag]}</p>
@@ -765,14 +780,14 @@ ${szTheme.schatz.map(s => `<li style="font-size:13px;line-height:2;break-inside:
 </ul>
 <h2>Allgemein</h2>
 <ul style="list-style:none">
-<li style="font-size:13px;line-height:2"><span class="check"></span>Hinweis-Zettel (Seite 2) ausschneiden</li>
+<li style="font-size:13px;line-height:2"><span class="check"></span>Hinweis-Zettel (Seite 3) ausschneiden</li>
 <li style="font-size:13px;line-height:2"><span class="check"></span>Stationen vorbereiten & verstecken</li>
 <li style="font-size:13px;line-height:2"><span class="check"></span>Schatz/Mitgebsel bereitlegen</li>
 <li style="font-size:13px;line-height:2"><span class="check"></span>Handy für Fotos/Timer bereit</li>
 </ul>
 </div>
 
-<!-- Seite 4: Urkunde -->
+<!-- Seite 5: Urkunde -->
 <div class="page" style="display:flex;justify-content:center;align-items:center">
 <div class="cert">
 <div style="font-size:56px;margin-bottom:12px">${szTheme.emoji}</div>
@@ -866,12 +881,16 @@ ${szTheme.schatz.map(s => `<li style="font-size:13px;line-height:2;break-inside:
         </section>
 
         {/* Schatzkarten-Editor */}
-        <section className="fu no-print" style={{ marginBottom: 24 }}>
+        <section className="fu" style={{ marginBottom: 24 }}>
           <h2 style={{ fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 6px" }}>🗺️ Schatzkarte gestalten</h2>
-          <p style={{ fontSize: 12, color: "var(--m)", marginBottom: 12 }}>Tippe auf ein Emoji, dann tippe auf die Karte um es zu platzieren. Tippe auf ein platziertes Emoji zum Entfernen.</p>
+          <p className="no-print" style={{ fontSize: 12, color: "var(--m)", marginBottom: 12 }}>
+            {activeEmoji
+              ? <span style={{ color: "var(--a)", fontWeight: 700 }}>✨ Tippe jetzt auf die Karte um {activeEmoji} zu platzieren — oder wähle ein anderes Emoji</span>
+              : "Wähle ein Emoji und tippe auf die Karte. Tippe auf ein platziertes Emoji zum Entfernen."}
+          </p>
 
           {/* Emoji Palette */}
-          <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 8 }}>
+          <div className="no-print" style={{ display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 8 }}>
             {(szTheme.emoji === "🏴‍☠️" ? ["🏴‍☠️","💀","⚓","🗝️","💎","🦜","⛵","🧭","💰","🗡️","🏝️"]
               : szTheme.emoji === "🦁" ? ["🦁","🐒","🦎","🦜","🐊","🌴","🌺","🦋","🐍","🌿"]
               : szTheme.emoji === "🚀" ? ["🚀","⭐","🌙","🛸","👽","☄️","🌟","🔭","🛰️","🌌"]
@@ -879,36 +898,33 @@ ${szTheme.schatz.map(s => `<li style="font-size:13px;line-height:2;break-inside:
               : szTheme.emoji === "🦕" ? ["🦕","🦖","🌋","🦴","🪨","🌿","🥚","🔥","🪹","💎"]
               : ["🧚","✨","🌸","🦋","🌈","🍄","🪻","💫","🪄","👑"]
             ).concat(["📍","🚩","❌","⭐","①","②","③","④","⑤","🎁"]).map((emoji, i) => (
-              <button key={i} onClick={() => {
-                const map = document.getElementById("sz-map");
-                if (!map) return;
-                const handler = (ev) => {
-                  const rect = map.getBoundingClientRect();
-                  const x = ((ev.clientX - rect.left) / rect.width * 100).toFixed(1);
-                  const y = ((ev.clientY - rect.top) / rect.height * 100).toFixed(1);
-                  const el = document.createElement("span");
-                  el.textContent = emoji;
-                  el.style.cssText = `position:absolute;left:${x}%;top:${y}%;font-size:24px;cursor:grab;transform:translate(-50%,-50%);user-select:none;z-index:5;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.3))`;
-                  el.onclick = (e) => { e.stopPropagation(); if (confirm("Entfernen?")) el.remove(); };
-                  map.appendChild(el);
-                  map.removeEventListener("click", handler);
-                  map.style.cursor = "default";
-                };
-                map.addEventListener("click", handler, { once: true });
-                map.style.cursor = "crosshair";
-              }} style={{
-                width: 36, height: 36, border: "1px solid var(--l)", borderRadius: 8, background: "var(--bg)",
+              <button key={i} onClick={() => setActiveEmoji(activeEmoji === emoji ? null : emoji)} style={{
+                width: 36, height: 36, borderRadius: 8,
+                border: activeEmoji === emoji ? `2px solid var(--a)` : "1px solid var(--l)",
+                background: activeEmoji === emoji ? "var(--al)" : "var(--bg)",
                 fontSize: 18, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
+                transform: activeEmoji === emoji ? "scale(1.15)" : "scale(1)",
+                boxShadow: activeEmoji === emoji ? "0 2px 8px rgba(232,135,61,0.3)" : "none",
+                transition: "all 0.15s",
               }}>{emoji}</button>
             ))}
           </div>
 
           {/* Map Canvas */}
-          <div id="sz-map" style={{
+          <div id="sz-map" onClick={(e) => {
+            if (!activeEmoji) return;
+            const rect = e.currentTarget.getBoundingClientRect();
+            const x = parseFloat(((e.clientX - rect.left) / rect.width * 100).toFixed(1));
+            const y = parseFloat(((e.clientY - rect.top) / rect.height * 100).toFixed(1));
+            if (y < 10) return; // Don't place on title
+            setMapItems((prev) => [...prev, { emoji: activeEmoji, x, y }]);
+          }} style={{
             position: "relative", width: "100%", aspectRatio: "4/3", borderRadius: 16, overflow: "hidden",
             background: "linear-gradient(145deg,#F5E6C8 0%,#E8D5A8 30%,#DCCB96 60%,#F0E0B8 100%)",
-            border: `2px solid ${szTheme.color}40`, cursor: "default",
-            boxShadow: "inset 0 2px 12px rgba(0,0,0,0.06)",
+            border: `2px solid ${szTheme.color}40`,
+            cursor: activeEmoji ? "crosshair" : "default",
+            boxShadow: activeEmoji ? `inset 0 0 0 3px ${szTheme.color}30, 0 2px 12px rgba(0,0,0,0.06)` : "inset 0 2px 12px rgba(0,0,0,0.06)",
+            transition: "box-shadow 0.2s",
           }}>
             {/* Title */}
             <div style={{ position: "absolute", top: 12, left: 0, right: 0, textAlign: "center", zIndex: 2, pointerEvents: "none" }}>
@@ -916,6 +932,16 @@ ${szTheme.schatz.map(s => `<li style="font-size:13px;line-height:2;break-inside:
                 {szTheme.emoji} {childName ? `${nameGen} ` : ""}{szTheme.name}
               </span>
             </div>
+            {/* Placed Items */}
+            {mapItems.map((item, i) => (
+              <span key={i} onClick={(e) => { e.stopPropagation(); setMapItems((prev) => prev.filter((_, j) => j !== i)); }} style={{
+                position: "absolute", left: item.x + "%", top: item.y + "%",
+                fontSize: 24, cursor: "pointer", transform: "translate(-50%,-50%)",
+                userSelect: "none", zIndex: 5,
+                filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.3))",
+                transition: "transform 0.1s",
+              }} className="no-print-hidden" title="Klick zum Entfernen">{item.emoji}</span>
+            ))}
             {/* Compass */}
             <div style={{ position: "absolute", bottom: 12, right: 12, fontSize: 11, color: "#A0926C", fontWeight: 700, zIndex: 2, pointerEvents: "none" }}>
               N ↑
@@ -925,6 +951,23 @@ ${szTheme.schatz.map(s => `<li style="font-size:13px;line-height:2;break-inside:
               machsleicht.de
             </div>
           </div>
+
+          {/* Controls */}
+          {mapItems.length > 0 && (
+            <div className="no-print" style={{ display: "flex", gap: 8, marginTop: 8 }}>
+              <button onClick={() => setMapItems((prev) => prev.slice(0, -1))} style={{
+                flex: 1, padding: "8px 12px", fontSize: 12, fontWeight: 600, border: "1px solid var(--l)",
+                borderRadius: 10, background: "var(--bg)", color: "var(--m)", cursor: "pointer",
+              }}>↩️ Rückgängig</button>
+              <button onClick={() => { if (confirm("Alle Emojis von der Karte entfernen?")) setMapItems([]); }} style={{
+                flex: 1, padding: "8px 12px", fontSize: 12, fontWeight: 600, border: "1px solid var(--l)",
+                borderRadius: 10, background: "var(--bg)", color: "#C62828", cursor: "pointer",
+              }}>🗑️ Alle entfernen</button>
+            </div>
+          )}
+          <p className="no-print" style={{ fontSize: 10, color: "var(--m)", marginTop: 6, textAlign: "center" }}>
+            {mapItems.length} Emojis platziert{mapItems.length > 0 ? " · Die Karte wird im Komplettpaket mitgedruckt" : ""}
+          </p>
         </section>
 
         {/* Material Checkliste */}
@@ -980,7 +1023,7 @@ ${szTheme.schatz.map(s => `<li style="font-size:13px;line-height:2;break-inside:
             border: "none", borderRadius: 14, fontSize: 15, fontWeight: 700, cursor: "pointer",
             boxShadow: "0 4px 20px rgba(224,122,58,0.3)",
           }}>🖨️ Komplettpaket drucken</button>
-          <p style={{ fontSize: 12, color: "var(--m)", marginTop: 8 }}>4 Seiten: Stationen · Hinweis-Zettel · Material · Urkunde</p>
+          <p style={{ fontSize: 12, color: "var(--m)", marginTop: 8 }}>5 Seiten: Schatzkarte · Stationen · Hinweis-Zettel · Material · Urkunde</p>
         </section>
 
         {/* Footer */}

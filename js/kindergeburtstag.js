@@ -2766,6 +2766,8 @@ function App() {
   const [planMode, setPlanMode] = useState(() => loadState("planMode", "geburtstag"));
   const [szThemeId, setSzThemeId] = useState(() => loadState("szThemeId", null));
   const [childName, setChildName] = useState(() => loadState("childName", ""));
+  const [mapItems, setMapItems] = useState(() => loadState("mapItems", []));
+  const [activeEmoji, setActiveEmoji] = useState(null);
   const motto = ALL_MOTTOS.find((m) => m.id === mottoId);
   const ag = ageGroup(age);
   const isMinimal = shoppingMode === "minimal" || effort === "minimal";
@@ -2785,6 +2787,7 @@ function App() {
   useEffect(() => saveState("planMode", planMode), [planMode]);
   useEffect(() => saveState("szThemeId", szThemeId), [szThemeId]);
   useEffect(() => saveState("childName", childName), [childName]);
+  useEffect(() => saveState("mapItems", mapItems), [mapItems]);
   useEffect(() => {
     const el = document.getElementById("sticky-cta");
     if (el) el.style.display = view === "plan" || view === "peak" ? "none" : "";
@@ -2941,6 +2944,8 @@ function App() {
     setMottoId(null);
     setSzThemeId(null);
     setChildName("");
+    setMapItems([]);
+    setActiveEmoji(null);
     setQuietMode(false);
     setOwned({});
     setShoppingMode("standard");
@@ -3042,7 +3047,19 @@ h2{font-size:16px;font-weight:800;color:${szTheme.color};margin:20px 0 10px;bord
 @media print{.page{padding:24px;min-height:auto}}
 </style></head><body>
 
-<!-- Seite 1: Stationen-\xDCbersicht -->
+<!-- Seite 1: Schatzkarte -->
+${mapItems.length > 0 ? `<div class="page" style="display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div style="position:relative;width:100%;max-width:700px;aspect-ratio:4/3;background:linear-gradient(145deg,#F5E6C8 0%,#E8D5A8 30%,#DCCB96 60%,#F0E0B8 100%);border:2px solid ${szTheme.color}40;border-radius:16px;overflow:hidden">
+<div style="position:absolute;top:16px;left:0;right:0;text-align:center;z-index:2;font-family:'Caveat',cursive;font-size:26px;font-weight:700;color:#8B7750">
+${szTheme.emoji} ${childName ? nameGen + " " : ""}${szTheme.name}
+</div>
+${mapItems.map((item) => `<span style="position:absolute;left:${item.x}%;top:${item.y}%;font-size:28px;transform:translate(-50%,-50%);z-index:5;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.3))">${item.emoji}</span>`).join("")}
+<div style="position:absolute;bottom:12px;right:16px;font-size:11px;color:#A0926C;font-weight:700">N \u2191</div>
+<div style="position:absolute;bottom:10px;left:16px;font-size:9px;color:#A0926C">machsleicht.de</div>
+</div>
+</div>` : ""}
+
+<!-- Seite 2: Stationen-\xDCbersicht -->
 <div class="page">
 <h1>${szTheme.emoji} ${childName ? nameGen + " " : ""}${szTheme.name}</h1>
 <p style="font-size:13px;color:#6B5D52;margin-bottom:12px">${stations.length} Stationen \xB7 ${ageLabel[ag]} \xB7 ca. ${totalDauer} Min.</p>
@@ -3055,7 +3072,7 @@ ${stations.map((s, i) => `<div class="station">
 </div>`).join("")}
 </div>
 
-<!-- Seite 2: Hinweis-Zettel -->
+<!-- Seite 3: Hinweis-Zettel -->
 <div class="page">
 <h1>\u2702\uFE0F Hinweis-Zettel zum Ausschneiden</h1>
 <p style="font-size:13px;color:#6B5D52;margin-bottom:16px">Ausschneiden und an den Stationen verstecken. Jeder Zettel f\xFChrt zur n\xE4chsten Station.</p>
@@ -3068,7 +3085,7 @@ ${stations.map((s, i) => `<div class="hinweis-card">
 </div>
 </div>
 
-<!-- Seite 3: Material-Checkliste -->
+<!-- Seite 4: Material-Checkliste -->
 <div class="page">
 <h1>\u{1F4CB} Material-Checkliste</h1>
 <p style="font-size:13px;color:#6B5D52;margin-bottom:16px">${szTheme.name} \xB7 ${ageLabel[ag]}</p>
@@ -3082,14 +3099,14 @@ ${szTheme.schatz.map((s) => `<li style="font-size:13px;line-height:2;break-insid
 </ul>
 <h2>Allgemein</h2>
 <ul style="list-style:none">
-<li style="font-size:13px;line-height:2"><span class="check"></span>Hinweis-Zettel (Seite 2) ausschneiden</li>
+<li style="font-size:13px;line-height:2"><span class="check"></span>Hinweis-Zettel (Seite 3) ausschneiden</li>
 <li style="font-size:13px;line-height:2"><span class="check"></span>Stationen vorbereiten & verstecken</li>
 <li style="font-size:13px;line-height:2"><span class="check"></span>Schatz/Mitgebsel bereitlegen</li>
 <li style="font-size:13px;line-height:2"><span class="check"></span>Handy f\xFCr Fotos/Timer bereit</li>
 </ul>
 </div>
 
-<!-- Seite 4: Urkunde -->
+<!-- Seite 5: Urkunde -->
 <div class="page" style="display:flex;justify-content:center;align-items:center">
 <div class="cert">
 <div style="font-size:56px;margin-bottom:12px">${szTheme.emoji}</div>
@@ -3136,38 +3153,28 @@ ${szTheme.schatz.map((s) => `<li style="font-size:13px;line-height:2;break-insid
         justifyContent: "center",
         flexShrink: 0
       } }, isLast ? "\u{1F381}" : i + 1), /* @__PURE__ */ React.createElement("div", { style: { flex: 1 } }, /* @__PURE__ */ React.createElement("span", { style: { fontSize: 12, fontWeight: 700, color: szTheme.color } }, typEmoji, " ", typLabel), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 14, fontWeight: 700, marginLeft: 8, color: "var(--d)" } }, st.name)), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 11, color: "var(--m)", whiteSpace: "nowrap", flexShrink: 0 } }, st.dauer, " Min.")), /* @__PURE__ */ React.createElement("div", { style: { padding: "4px 0 8px", borderLeft: `2px solid ${szTheme.color}20`, marginLeft: 5, paddingLeft: 16 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 13, color: "var(--m)", marginBottom: 8, lineHeight: 1.6 } }, st.desc), st.hint && /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, color: "#795548", background: "#FFF8E1", padding: "8px 12px", borderRadius: 8, border: "1px solid #FFE082", lineHeight: 1.5 } }, "\u{1F4A1} ", /* @__PURE__ */ React.createElement("strong", null, "Eltern-Tipp:"), " ", st.hint)));
-    }))), /* @__PURE__ */ React.createElement("section", { className: "fu no-print", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 6px" } }, "\u{1F5FA}\uFE0F Schatzkarte gestalten"), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)", marginBottom: 12 } }, "Tippe auf ein Emoji, dann tippe auf die Karte um es zu platzieren. Tippe auf ein platziertes Emoji zum Entfernen."), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 8 } }, (szTheme.emoji === "\u{1F3F4}\u200D\u2620\uFE0F" ? ["\u{1F3F4}\u200D\u2620\uFE0F", "\u{1F480}", "\u2693", "\u{1F5DD}\uFE0F", "\u{1F48E}", "\u{1F99C}", "\u26F5", "\u{1F9ED}", "\u{1F4B0}", "\u{1F5E1}\uFE0F", "\u{1F3DD}\uFE0F"] : szTheme.emoji === "\u{1F981}" ? ["\u{1F981}", "\u{1F412}", "\u{1F98E}", "\u{1F99C}", "\u{1F40A}", "\u{1F334}", "\u{1F33A}", "\u{1F98B}", "\u{1F40D}", "\u{1F33F}"] : szTheme.emoji === "\u{1F680}" ? ["\u{1F680}", "\u2B50", "\u{1F319}", "\u{1F6F8}", "\u{1F47D}", "\u2604\uFE0F", "\u{1F31F}", "\u{1F52D}", "\u{1F6F0}\uFE0F", "\u{1F30C}"] : szTheme.emoji === "\u{1F50D}" ? ["\u{1F50D}", "\u{1F50E}", "\u{1F575}\uFE0F", "\u{1F4CB}", "\u{1F5DD}\uFE0F", "\u{1F4A1}", "\u{1F526}", "\u{1F463}", "\u{1F4CD}", "\u{1F510}"] : szTheme.emoji === "\u{1F995}" ? ["\u{1F995}", "\u{1F996}", "\u{1F30B}", "\u{1F9B4}", "\u{1FAA8}", "\u{1F33F}", "\u{1F95A}", "\u{1F525}", "\u{1FAB9}", "\u{1F48E}"] : ["\u{1F9DA}", "\u2728", "\u{1F338}", "\u{1F98B}", "\u{1F308}", "\u{1F344}", "\u{1FABB}", "\u{1F4AB}", "\u{1FA84}", "\u{1F451}"]).concat(["\u{1F4CD}", "\u{1F6A9}", "\u274C", "\u2B50", "\u2460", "\u2461", "\u2462", "\u2463", "\u2464", "\u{1F381}"]).map((emoji, i) => /* @__PURE__ */ React.createElement("button", { key: i, onClick: () => {
-      const map = document.getElementById("sz-map");
-      if (!map) return;
-      const handler = (ev) => {
-        const rect = map.getBoundingClientRect();
-        const x = ((ev.clientX - rect.left) / rect.width * 100).toFixed(1);
-        const y = ((ev.clientY - rect.top) / rect.height * 100).toFixed(1);
-        const el = document.createElement("span");
-        el.textContent = emoji;
-        el.style.cssText = `position:absolute;left:${x}%;top:${y}%;font-size:24px;cursor:grab;transform:translate(-50%,-50%);user-select:none;z-index:5;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.3))`;
-        el.onclick = (e) => {
-          e.stopPropagation();
-          if (confirm("Entfernen?")) el.remove();
-        };
-        map.appendChild(el);
-        map.removeEventListener("click", handler);
-        map.style.cursor = "default";
-      };
-      map.addEventListener("click", handler, { once: true });
-      map.style.cursor = "crosshair";
-    }, style: {
+    }))), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 6px" } }, "\u{1F5FA}\uFE0F Schatzkarte gestalten"), /* @__PURE__ */ React.createElement("p", { className: "no-print", style: { fontSize: 12, color: "var(--m)", marginBottom: 12 } }, activeEmoji ? /* @__PURE__ */ React.createElement("span", { style: { color: "var(--a)", fontWeight: 700 } }, "\u2728 Tippe jetzt auf die Karte um ", activeEmoji, " zu platzieren \u2014 oder w\xE4hle ein anderes Emoji") : "W\xE4hle ein Emoji und tippe auf die Karte. Tippe auf ein platziertes Emoji zum Entfernen."), /* @__PURE__ */ React.createElement("div", { className: "no-print", style: { display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 8 } }, (szTheme.emoji === "\u{1F3F4}\u200D\u2620\uFE0F" ? ["\u{1F3F4}\u200D\u2620\uFE0F", "\u{1F480}", "\u2693", "\u{1F5DD}\uFE0F", "\u{1F48E}", "\u{1F99C}", "\u26F5", "\u{1F9ED}", "\u{1F4B0}", "\u{1F5E1}\uFE0F", "\u{1F3DD}\uFE0F"] : szTheme.emoji === "\u{1F981}" ? ["\u{1F981}", "\u{1F412}", "\u{1F98E}", "\u{1F99C}", "\u{1F40A}", "\u{1F334}", "\u{1F33A}", "\u{1F98B}", "\u{1F40D}", "\u{1F33F}"] : szTheme.emoji === "\u{1F680}" ? ["\u{1F680}", "\u2B50", "\u{1F319}", "\u{1F6F8}", "\u{1F47D}", "\u2604\uFE0F", "\u{1F31F}", "\u{1F52D}", "\u{1F6F0}\uFE0F", "\u{1F30C}"] : szTheme.emoji === "\u{1F50D}" ? ["\u{1F50D}", "\u{1F50E}", "\u{1F575}\uFE0F", "\u{1F4CB}", "\u{1F5DD}\uFE0F", "\u{1F4A1}", "\u{1F526}", "\u{1F463}", "\u{1F4CD}", "\u{1F510}"] : szTheme.emoji === "\u{1F995}" ? ["\u{1F995}", "\u{1F996}", "\u{1F30B}", "\u{1F9B4}", "\u{1FAA8}", "\u{1F33F}", "\u{1F95A}", "\u{1F525}", "\u{1FAB9}", "\u{1F48E}"] : ["\u{1F9DA}", "\u2728", "\u{1F338}", "\u{1F98B}", "\u{1F308}", "\u{1F344}", "\u{1FABB}", "\u{1F4AB}", "\u{1FA84}", "\u{1F451}"]).concat(["\u{1F4CD}", "\u{1F6A9}", "\u274C", "\u2B50", "\u2460", "\u2461", "\u2462", "\u2463", "\u2464", "\u{1F381}"]).map((emoji, i) => /* @__PURE__ */ React.createElement("button", { key: i, onClick: () => setActiveEmoji(activeEmoji === emoji ? null : emoji), style: {
       width: 36,
       height: 36,
-      border: "1px solid var(--l)",
       borderRadius: 8,
-      background: "var(--bg)",
+      border: activeEmoji === emoji ? `2px solid var(--a)` : "1px solid var(--l)",
+      background: activeEmoji === emoji ? "var(--al)" : "var(--bg)",
       fontSize: 18,
       cursor: "pointer",
       display: "flex",
       alignItems: "center",
-      justifyContent: "center"
-    } }, emoji))), /* @__PURE__ */ React.createElement("div", { id: "sz-map", style: {
+      justifyContent: "center",
+      transform: activeEmoji === emoji ? "scale(1.15)" : "scale(1)",
+      boxShadow: activeEmoji === emoji ? "0 2px 8px rgba(232,135,61,0.3)" : "none",
+      transition: "all 0.15s"
+    } }, emoji))), /* @__PURE__ */ React.createElement("div", { id: "sz-map", onClick: (e) => {
+      if (!activeEmoji) return;
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = parseFloat(((e.clientX - rect.left) / rect.width * 100).toFixed(1));
+      const y = parseFloat(((e.clientY - rect.top) / rect.height * 100).toFixed(1));
+      if (y < 10) return;
+      setMapItems((prev) => [...prev, { emoji: activeEmoji, x, y }]);
+    }, style: {
       position: "relative",
       width: "100%",
       aspectRatio: "4/3",
@@ -3175,9 +3182,46 @@ ${szTheme.schatz.map((s) => `<li style="font-size:13px;line-height:2;break-insid
       overflow: "hidden",
       background: "linear-gradient(145deg,#F5E6C8 0%,#E8D5A8 30%,#DCCB96 60%,#F0E0B8 100%)",
       border: `2px solid ${szTheme.color}40`,
-      cursor: "default",
-      boxShadow: "inset 0 2px 12px rgba(0,0,0,0.06)"
-    } }, /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", top: 12, left: 0, right: 0, textAlign: "center", zIndex: 2, pointerEvents: "none" } }, /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "'Caveat', cursive", fontSize: 22, fontWeight: 700, color: "#8B7750" } }, szTheme.emoji, " ", childName ? `${nameGen} ` : "", szTheme.name)), /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", bottom: 12, right: 12, fontSize: 11, color: "#A0926C", fontWeight: 700, zIndex: 2, pointerEvents: "none" } }, "N \u2191"), /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", bottom: 8, left: 12, fontSize: 9, color: "#A0926C", zIndex: 2, pointerEvents: "none" } }, "machsleicht.de"))), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 14px" } }, "\u{1F4E6} Material-Checkliste"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 6 } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, fontWeight: 700, color: szTheme.color, textTransform: "uppercase", letterSpacing: "0.06em" } }, "Pro Station"), materials.map((mat, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "var(--bg)", borderRadius: 10, border: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("input", { type: "checkbox", style: { width: 16, height: 16, accentColor: "var(--g)", cursor: "pointer" } }), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13, flex: 1 } }, mat))), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, fontWeight: 700, color: szTheme.color, textTransform: "uppercase", letterSpacing: "0.06em", marginTop: 12 } }, "Schatz-Ideen"), szTheme.schatz.map((s, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "var(--bg)", borderRadius: 10, border: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("span", { style: { fontSize: 16 } }, "\u{1F381}"), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13, flex: 1 } }, s), SZ_SCHATZ_LINKS[s] && /* @__PURE__ */ React.createElement("a", { href: SZ_SCHATZ_LINKS[s], target: "_blank", rel: "noopener", style: { fontSize: 11, fontWeight: 700, color: "#FF9900", textDecoration: "none", padding: "3px 8px", borderRadius: 6, background: "#FFF3E0", whiteSpace: "nowrap" } }, "Amazon \u2197"))))), shopItems.length > 0 && /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 14px" } }, "\u{1F6D2} Einkaufsliste"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 6 } }, shopItems.map((item, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "var(--bg)", borderRadius: 10, border: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("span", { style: {
+      cursor: activeEmoji ? "crosshair" : "default",
+      boxShadow: activeEmoji ? `inset 0 0 0 3px ${szTheme.color}30, 0 2px 12px rgba(0,0,0,0.06)` : "inset 0 2px 12px rgba(0,0,0,0.06)",
+      transition: "box-shadow 0.2s"
+    } }, /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", top: 12, left: 0, right: 0, textAlign: "center", zIndex: 2, pointerEvents: "none" } }, /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "'Caveat', cursive", fontSize: 22, fontWeight: 700, color: "#8B7750" } }, szTheme.emoji, " ", childName ? `${nameGen} ` : "", szTheme.name)), mapItems.map((item, i) => /* @__PURE__ */ React.createElement("span", { key: i, onClick: (e) => {
+      e.stopPropagation();
+      setMapItems((prev) => prev.filter((_, j) => j !== i));
+    }, style: {
+      position: "absolute",
+      left: item.x + "%",
+      top: item.y + "%",
+      fontSize: 24,
+      cursor: "pointer",
+      transform: "translate(-50%,-50%)",
+      userSelect: "none",
+      zIndex: 5,
+      filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.3))",
+      transition: "transform 0.1s"
+    }, className: "no-print-hidden", title: "Klick zum Entfernen" }, item.emoji)), /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", bottom: 12, right: 12, fontSize: 11, color: "#A0926C", fontWeight: 700, zIndex: 2, pointerEvents: "none" } }, "N \u2191"), /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", bottom: 8, left: 12, fontSize: 9, color: "#A0926C", zIndex: 2, pointerEvents: "none" } }, "machsleicht.de")), mapItems.length > 0 && /* @__PURE__ */ React.createElement("div", { className: "no-print", style: { display: "flex", gap: 8, marginTop: 8 } }, /* @__PURE__ */ React.createElement("button", { onClick: () => setMapItems((prev) => prev.slice(0, -1)), style: {
+      flex: 1,
+      padding: "8px 12px",
+      fontSize: 12,
+      fontWeight: 600,
+      border: "1px solid var(--l)",
+      borderRadius: 10,
+      background: "var(--bg)",
+      color: "var(--m)",
+      cursor: "pointer"
+    } }, "\u21A9\uFE0F R\xFCckg\xE4ngig"), /* @__PURE__ */ React.createElement("button", { onClick: () => {
+      if (confirm("Alle Emojis von der Karte entfernen?")) setMapItems([]);
+    }, style: {
+      flex: 1,
+      padding: "8px 12px",
+      fontSize: 12,
+      fontWeight: 600,
+      border: "1px solid var(--l)",
+      borderRadius: 10,
+      background: "var(--bg)",
+      color: "#C62828",
+      cursor: "pointer"
+    } }, "\u{1F5D1}\uFE0F Alle entfernen")), /* @__PURE__ */ React.createElement("p", { className: "no-print", style: { fontSize: 10, color: "var(--m)", marginTop: 6, textAlign: "center" } }, mapItems.length, " Emojis platziert", mapItems.length > 0 ? " \xB7 Die Karte wird im Komplettpaket mitgedruckt" : "")), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 14px" } }, "\u{1F4E6} Material-Checkliste"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 6 } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, fontWeight: 700, color: szTheme.color, textTransform: "uppercase", letterSpacing: "0.06em" } }, "Pro Station"), materials.map((mat, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "var(--bg)", borderRadius: 10, border: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("input", { type: "checkbox", style: { width: 16, height: 16, accentColor: "var(--g)", cursor: "pointer" } }), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13, flex: 1 } }, mat))), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, fontWeight: 700, color: szTheme.color, textTransform: "uppercase", letterSpacing: "0.06em", marginTop: 12 } }, "Schatz-Ideen"), szTheme.schatz.map((s, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "var(--bg)", borderRadius: 10, border: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("span", { style: { fontSize: 16 } }, "\u{1F381}"), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13, flex: 1 } }, s), SZ_SCHATZ_LINKS[s] && /* @__PURE__ */ React.createElement("a", { href: SZ_SCHATZ_LINKS[s], target: "_blank", rel: "noopener", style: { fontSize: 11, fontWeight: 700, color: "#FF9900", textDecoration: "none", padding: "3px 8px", borderRadius: 6, background: "#FFF3E0", whiteSpace: "nowrap" } }, "Amazon \u2197"))))), shopItems.length > 0 && /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, margin: "0 0 14px" } }, "\u{1F6D2} Einkaufsliste"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 6 } }, shopItems.map((item, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "var(--bg)", borderRadius: 10, border: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("span", { style: {
       fontSize: 10,
       fontWeight: 700,
       padding: "2px 8px",
@@ -3196,7 +3240,7 @@ ${szTheme.schatz.map((s) => `<li style="font-size:13px;line-height:2;break-insid
       fontWeight: 700,
       cursor: "pointer",
       boxShadow: "0 4px 20px rgba(224,122,58,0.3)"
-    } }, "\u{1F5A8}\uFE0F Komplettpaket drucken"), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)", marginTop: 8 } }, "4 Seiten: Stationen \xB7 Hinweis-Zettel \xB7 Material \xB7 Urkunde")), /* @__PURE__ */ React.createElement("footer", { style: { textAlign: "center", padding: "16px 0", borderTop: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)" } }, "\xA9 2026 machsleicht.de \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/kindergeburtstag", style: { color: "var(--m)", textDecoration: "none" } }, "Geburtstag planen"), " \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/impressum", style: { color: "var(--m)", textDecoration: "none" } }, "Impressum"), " \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/datenschutz", style: { color: "var(--m)", textDecoration: "none" } }, "Datenschutz"), " \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/transparenz", style: { color: "var(--m)", textDecoration: "none" } }, "Transparenz"))), /* @__PURE__ */ React.createElement("div", { className: "no-print", style: {
+    } }, "\u{1F5A8}\uFE0F Komplettpaket drucken"), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)", marginTop: 8 } }, "5 Seiten: Schatzkarte \xB7 Stationen \xB7 Hinweis-Zettel \xB7 Material \xB7 Urkunde")), /* @__PURE__ */ React.createElement("footer", { style: { textAlign: "center", padding: "16px 0", borderTop: "1px solid var(--l)" } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "var(--m)" } }, "\xA9 2026 machsleicht.de \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/kindergeburtstag", style: { color: "var(--m)", textDecoration: "none" } }, "Geburtstag planen"), " \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/impressum", style: { color: "var(--m)", textDecoration: "none" } }, "Impressum"), " \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/datenschutz", style: { color: "var(--m)", textDecoration: "none" } }, "Datenschutz"), " \xB7 ", /* @__PURE__ */ React.createElement("a", { href: "/transparenz", style: { color: "var(--m)", textDecoration: "none" } }, "Transparenz"))), /* @__PURE__ */ React.createElement("div", { className: "no-print", style: {
       position: "fixed",
       bottom: 0,
       left: "50%",
