@@ -4340,27 +4340,22 @@ https://machsleicht.de`;
     background: mottoTab === val ? "var(--a)" : "#f0ede8",
     color: mottoTab === val ? "#fff" : "#999",
     cursor: "pointer"
-  } }, label)))), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, overflowX: "auto", padding: "4px 2px 8px", scrollSnapType: "x mandatory" } }, (mottoTab === "generic" ? GENERIC : filteredLicense).map((m) => /* @__PURE__ */ React.createElement("button", { key: m.id, onClick: () => {
+  } }, label)))), /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(90px, 1fr))", gap: 6 } }, (mottoTab === "generic" ? GENERIC : filteredLicense).map((m) => /* @__PURE__ */ React.createElement("button", { key: m.id, onClick: () => {
     setMottoId(m.id);
     window.plausible && plausible("motto-selected", { props: { motto: m.id } });
   }, style: {
     position: "relative",
-    flex: "0 0 auto",
-    minWidth: 100,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    gap: 6,
-    padding: "18px 12px 14px",
+    gap: 4,
+    padding: "12px 6px 10px",
     background: mottoId === m.id ? m.color + "12" : "#fff",
     border: `2px solid ${mottoId === m.id ? m.color : "#eee"}`,
-    borderRadius: 16,
+    borderRadius: 12,
     cursor: "pointer",
-    transition: "all 0.25s",
-    transform: mottoId === m.id ? "scale(1.05)" : "scale(1)",
-    boxShadow: mottoId === m.id ? `0 4px 20px ${m.color}30` : "0 1px 4px rgba(0,0,0,0.04)",
-    scrollSnapAlign: "start"
-  } }, /* @__PURE__ */ React.createElement("span", { style: { fontSize: 30 } }, m.emoji), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 12, fontWeight: 600, color: mottoId === m.id ? m.color : "#333" } }, m.name), m.cat === "license" && /* @__PURE__ */ React.createElement("span", { style: { fontSize: 10, color: mottoId === m.id ? m.color : "#999", background: mottoId === m.id ? m.color + "15" : "#f5f5f5", padding: "2px 8px", borderRadius: 100 } }, m.ages[0], "\u2013", m.ages[m.ages.length - 1], " J."), mottoId === m.id && /* @__PURE__ */ React.createElement("span", { style: { position: "absolute", top: -6, right: -6, width: 20, height: 20, borderRadius: "50%", background: m.color, color: "#fff", fontSize: 11, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 2px 8px ${m.color}50` } }, "\u2713"))), mottoTab === "license" && filteredLicense.length === 0 && /* @__PURE__ */ React.createElement("div", { style: { padding: 16, color: "var(--m)", fontSize: 13 } }, "F\xFCr ", age, " Jahre keine Lizenz-Mottos verf\xFCgbar."))), /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb", marginBottom: 10 } }, /* @__PURE__ */ React.createElement("span", { style: { color: "var(--a)", marginRight: 6 } }, "\u2462"), " G\xE4stezahl", guests && /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, color: "var(--a)", marginLeft: 8 } }, guests, " Kinder")), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 6, flexWrap: "wrap" } }, [4, 5, 6, 7, 8, 10, 12, 15].map((n) => /* @__PURE__ */ React.createElement("button", { key: n, onClick: () => setGuests(n), style: {
+    transition: "all 0.2s"
+  } }, /* @__PURE__ */ React.createElement("span", { style: { fontSize: 24 } }, m.emoji), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 10, fontWeight: 600, color: mottoId === m.id ? m.color : "#666" } }, m.name), m.cat === "license" && /* @__PURE__ */ React.createElement("span", { style: { fontSize: 9, color: mottoId === m.id ? m.color : "#999", background: mottoId === m.id ? m.color + "15" : "#f5f5f5", padding: "1px 6px", borderRadius: 100 } }, m.ages[0], "\u2013", m.ages[m.ages.length - 1], " J."), mottoId === m.id && /* @__PURE__ */ React.createElement("span", { style: { position: "absolute", top: -5, right: -5, width: 18, height: 18, borderRadius: "50%", background: m.color, color: "#fff", fontSize: 10, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 2px 8px ${m.color}50` } }, "\u2713"))), mottoTab === "license" && filteredLicense.length === 0 && /* @__PURE__ */ React.createElement("div", { style: { padding: 16, color: "var(--m)", fontSize: 13 } }, "F\xFCr ", age, " Jahre keine Lizenz-Mottos verf\xFCgbar."))), /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb", marginBottom: 10 } }, /* @__PURE__ */ React.createElement("span", { style: { color: "var(--a)", marginRight: 6 } }, "\u2462"), " G\xE4stezahl", guests && /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, color: "var(--a)", marginLeft: 8 } }, guests, " Kinder")), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 6, flexWrap: "wrap" } }, [4, 5, 6, 7, 8, 10, 12, 15].map((n) => /* @__PURE__ */ React.createElement("button", { key: n, onClick: () => setGuests(n), style: {
     width: 48,
     height: 48,
     border: `2px solid ${guests === n ? "var(--a)" : "#f0ede8"}`,
