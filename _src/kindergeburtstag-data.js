@@ -1760,7 +1760,7 @@ var GENERIC = [
         },
       },
     },
-    {
+];
 
 var LICENSE = [
     {
