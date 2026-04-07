@@ -88,7 +88,7 @@ function Confetti({ active }) {
 }
 
 // === CONTROL HUB (Fixed Bottom Bar) ===
-function ControlHub({ mottoId, szActive, setSzActive }) {
+function ControlHub({ mottoId, szActive, setSzActive, setSzThemeId }) {
   return (
     <div className="no-print" style={{
       position: "fixed", bottom: 0, left: "50%", transform: "translateX(-50%)",
@@ -100,7 +100,7 @@ function ControlHub({ mottoId, szActive, setSzActive }) {
         flex: 1, padding: 10, borderRadius: 10, background: "var(--a)", color: "#fff",
         fontWeight: 700, fontSize: 12, textAlign: "center", textDecoration: "none", fontFamily: "var(--f)",
       }}>💌 Einladung</a>
-      <button onClick={() => { setSzActive(!szActive); document.querySelector('[class*="SchnitzeljagdBlock"]')?.scrollIntoView({ behavior: "smooth" }); }} style={{
+      <button onClick={() => { if (!szActive && mottoId && SZ_THEMES.find(t => t.id === mottoId)) setSzThemeId(mottoId); setSzActive(!szActive); document.querySelector('[class*="SchnitzeljagdBlock"]')?.scrollIntoView({ behavior: "smooth" }); }} style={{
         flex: 1, padding: 10, borderRadius: 10,
         background: szActive ? "var(--al)" : "var(--bg)", color: szActive ? "var(--a)" : "var(--d)",
         border: `1px solid ${szActive ? "var(--a)" : "var(--l)"}`, fontWeight: 700, fontSize: 12, textAlign: "center", cursor: "pointer", fontFamily: "var(--f)",
@@ -405,7 +405,7 @@ function TreasureMapCanvas({ szTheme, stations, childName, mapPositions, setMapP
 }
 
 // === SCHNITZELJAGD INLINE BLOCK (expandable within plan view) ===
-function SchnitzeljagdBlock({ age, ag, szActive, setSzActive, szThemeId, setSzThemeId, szTheme, childName, setChildName, mapPositions, setMapPositions, stationLocations, setStationLocations, dekoEmojis, setDekoEmojis }) {
+function SchnitzeljagdBlock({ age, ag, mottoId, szActive, setSzActive, szThemeId, setSzThemeId, szTheme, childName, setChildName, mapPositions, setMapPositions, stationLocations, setStationLocations, dekoEmojis, setDekoEmojis }) {
   const stations = szTheme ? (szTheme.stations[ag] || szTheme.stations.mittel) : [];
   const materials = szTheme ? (szTheme.material[ag] || szTheme.material.mittel) : [];
   const totalDauer = stations.reduce((s, st) => s + st.dauer, 0);
@@ -436,7 +436,7 @@ ${TreasureMapCanvas._canvasRef && TreasureMapCanvas._canvasRef.current ? `<div c
   // === TEASER (collapsed) ===
   if (!szActive) return (
     <section className="fu" style={{ marginBottom: 24 }}>
-      <button onClick={() => { setSzActive(true); window.plausible && plausible("sz-activated"); }} style={{
+      <button onClick={() => { if (mottoId && SZ_THEMES.find(t => t.id === mottoId)) setSzThemeId(mottoId); setSzActive(true); window.plausible && plausible("sz-activated"); }} style={{
         width: "100%", background: "linear-gradient(135deg,#fef8f0,#fff8e8)", borderRadius: 20, padding: "24px 20px",
         border: "1px solid #f0ede8", display: "flex", alignItems: "center", gap: 16, cursor: "pointer", textAlign: "left",
       }}>
@@ -757,8 +757,8 @@ function App() {
   useEffect(() => saveState("owned", owned), [owned]);
   useEffect(() => saveState("shoppingMode", shoppingMode), [shoppingMode]);
   useEffect(() => saveState("szActive", szActive), [szActive]);
-  useEffect(() => { if (szActive && !szThemeId && mottoId && SZ_THEMES.find(t => t.id === mottoId)) setSzThemeId(mottoId); }, [szActive, mottoId]);
   useEffect(() => saveState("szThemeId", szThemeId), [szThemeId]);
+  useEffect(() => { if (szActive && mottoId && SZ_THEMES.find(t => t.id === mottoId)) setSzThemeId(mottoId); }, [mottoId]);
   useEffect(() => saveState("childName", childName), [childName]);
   useEffect(() => saveState("stationLocations", stationLocations), [stationLocations]);
   useEffect(() => saveState("dekoEmojis", dekoEmojis), [dekoEmojis]);
@@ -778,8 +778,11 @@ function App() {
     const g = p.get("gaeste"); if (g) { const v = parseInt(g); if (v >= 1 && v <= 20) setGuests(v); }
     // Schnitzeljagd voraktivieren (Toggle wird im Plan automatisch offen sein)
     const modus = p.get("modus");
-    if (modus === "schatzsuche") setSzActive(true);
     const thema = p.get("thema");
+    if (modus === "schatzsuche") {
+      setSzActive(true);
+      if (!thema) { const mid = p.get("motto") || loadState("mottoId", null); if (mid && SZ_THEMES.find(t => t.id === mid)) setSzThemeId(mid); }
+    }
     if (thema && SZ_THEMES.find((t) => t.id === thema)) setSzThemeId(thema);
   }, []);
 
@@ -1021,7 +1024,7 @@ function App() {
 
         {/* Einladung */}
         <EinladungBlock motto={motto} guests={guests} previewName={previewName} setPreviewName={setPreviewName} inviteSent={inviteSent} setInviteSent={setInviteSent} />
-        <SchnitzeljagdBlock age={age} ag={ag} szActive={szActive} setSzActive={setSzActive} szThemeId={szThemeId} setSzThemeId={setSzThemeId} szTheme={szTheme} childName={childName} setChildName={setChildName} mapPositions={mapPositions} setMapPositions={setMapPositions} stationLocations={stationLocations} setStationLocations={setStationLocations} dekoEmojis={dekoEmojis} setDekoEmojis={setDekoEmojis} />
+        <SchnitzeljagdBlock age={age} ag={ag} mottoId={mottoId} szActive={szActive} setSzActive={setSzActive} szThemeId={szThemeId} setSzThemeId={setSzThemeId} szTheme={szTheme} childName={childName} setChildName={setChildName} mapPositions={mapPositions} setMapPositions={setMapPositions} stationLocations={stationLocations} setStationLocations={setStationLocations} dekoEmojis={dekoEmojis} setDekoEmojis={setDekoEmojis} />
 
         {/* Score */}
         <ScoreCheck score={score} />
@@ -1142,7 +1145,7 @@ function App() {
           </p>
         </footer>
 
-        <ControlHub mottoId={mottoId} szActive={szActive} setSzActive={setSzActive} />
+        <ControlHub mottoId={mottoId} szActive={szActive} setSzActive={setSzActive} setSzThemeId={setSzThemeId} />
       </div>
     );
   }
