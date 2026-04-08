@@ -1,6 +1,6 @@
 # machsleicht.de — Premium-Strategie & Feature-Roadmap
 
-**Stand:** 05.04.2026
+**Stand:** 08.04.2026
 **Autor:** Bolle + Claude (Sparring-Session)
 
 ---
@@ -22,8 +22,8 @@ Skalierung über Kindergeburtstag hinaus: Erwachsenengeburtstage, Einschulung, T
 | Säule | URL | Status | Standalone? |
 |-------|-----|--------|-------------|
 | **Planer** | `/kindergeburtstag` | LIVE | ✅ Ja |
-| **Partyseite** | `/party/{token}` | MVP geplant | ✅ Ja — auch ohne Planer erstellbar |
-| **Wunschliste** | `/wunschliste` | Phase 2 | ✅ Ja — auch ohne Partyseite, auch für Weihnachten/Einschulung |
+| **Partyseite** | `party.machsleicht.de/{id}` | ✅ MVP gebaut (party-worker.js v2, 811 Zeilen), Deploy auf Cloudflare pending | ✅ Ja — auch ohne Planer erstellbar |
+| **Wunschliste** | In Partyseite integriert | ✅ MVP gebaut (Claim, Beteiligen, PayPal, Affiliate 8 Shops), standalone /wunschliste Phase 2 | ✅ Ja — auch ohne Partyseite, auch für Weihnachten/Einschulung |
 | **Rätsel nach Maß** | `/raetsel` | Phase 3 | ✅ Ja — auch für Lehrer, Erzieher, ohne Schatzsuche |
 | **Kreuzworträtsel** | `/kreuzwortraetsel` | Phase 3 | ✅ Ja — Freebie ohne KI, Premium mit KI-Inhalten |
 
@@ -91,21 +91,43 @@ Konfigurator-Modell: Eltern klicken Features zusammen wie in einem Online-Shop.
 **Lerneffekt:** Claude-API-Integration die für Gute-Nacht-Geschichte und Copilot wiederverwendet wird.
 **Sofort Revenue:** Ab Tag 1.
 
-### Phase 2: Partyseite (das Fundament)
+### Phase 2: Partyseite (das Fundament) — ✅ MVP GEBAUT (08.04.2026)
 
-Eine HTML-Seite (`party.html`) + Cloudflare Worker + KV:
+`party-worker.js` (811 Zeilen) — Cloudflare Worker, All-in-One (Frontend + API + OG-Tags):
 
-**Erstellen:** Drei Wege rein:
-- Aus dem Planer (Won-Screen → "Partyseite erstellen" → Daten vorausgefüllt)
-- Direkt via `/party/erstellen` (standalone Formular)
-- Aus der Wunschliste ("Auch Zu/Absagen sammeln?")
+**Was gebaut ist:**
+- 3-Step Ersteller-Flow (Kind → Wann/Wo → Wunschliste + PayPal.me)
+- Code-Gate für Gäste (Vorname des Geburtstagskinds)
+- Foto-Upload (clientseitig komprimiert auf 800px, JPEG 0.7, max 500KB, Base64 in KV)
+- Wunschliste: Claim/Unclaim, "Gemeinsam schenken" mit auto-berechneten Anteilen
+- PayPal.me-Integration: Gäste sehen "Dein Anteil: ~X€" + PayPal-Button mit vorausgefülltem Betrag
+- Affiliate-Redirect (/go/{partyId}/{wishId}) für 8 Shops: Amazon, myToys, Thalia, Otto, Jako-o, tausendkind, Smyths Toys, LEGO
+- Shop-Labels ("bei Amazon" statt generisch "Ansehen")
+- Dynamische OG Meta Tags pro Party (WhatsApp-Preview: "Emma wird 6! 🦄")
+- XSS-Escaping überall (esc() + escJson())
+- localStorage RSVP-Check ("Du hast bereits für Lina geantwortet")
+- .ics Kalender-Download nach RSVP
+- mailto-Link für Edit-Link-Backup (Edit-Link verlieren = Party verloren)
+- Editor: Inline-Bearbeitung aller Party-Daten, Wünsche löschen
+- Auto-Motto-Farbe (22 Mottos → automatische Akzentfarbe)
+- Zeitvalidierung (Ende nach Start)
+- Affiliate-Hinweis + DSGVO-Hinweis + Impressum/Datenschutz-Links
+- Max 30 Gäste, Max 20 Wünsche, 404-Seite
+- Überspringen-Button für Wunschliste
+- Spam-Schutz: Max-Gäste-Limit
+- Pre-Fill aus Planer via URL-Params
 
-**Gäste-View:** PIN eingeben → Einladung sehen, Zu/Absage mit Kindername, Allergien-Freitext, Abholzeit
-**Admin-View:** Übersicht aller Zusagen, Allergien, Abholzeiten. Bearbeitbar.
-**Share:** WhatsApp-Share-Button mit vorgefertigtem Text + Link
-**Branding:** Dezenter machsleicht-Footer mit CTA zum Planer
+**Was zum Deploy fehlt:**
+1. Cloudflare: Worker anlegen + party-worker.js deployen
+2. KV Namespace "PARTY" erstellen + binden
+3. DNS: party.machsleicht.de → Worker
+4. Environment Variables: AMAZON_TAG, AWIN_PUBLISHER_ID (optional)
 
-Backend: 4 Routen (`POST/GET/PUT/DELETE /api/party`)
+**Was noch NICHT gebaut ist (Phase 2+):**
+- Standalone /wunschliste als eigene SEO-Seite
+- OpenGraph-Previews für Geschenk-Links (Bild + Titel + Preis)
+- Push-Notifications bei neuer Zusage
+- Multi-Party-Dashboard (Ersteller sieht alle seine Partys)
 
 ### Phase 3: Wunschliste
 
@@ -121,11 +143,12 @@ Backend: 4 Routen (`POST/GET/PUT/DELETE /api/party`)
 
 ### Was das MVP bewusst NICHT hat
 
-- Kein User-Account, kein Login
-- Keine OpenGraph-Previews für Geschenk-Links (kommt Phase 2)
-- Kein Payment (Premium kommt Phase 3)
+- Kein User-Account, kein Login (Token-basiert)
+- Keine OpenGraph-Previews für Geschenk-Links (Bild + Titel + Preis) — kommt Phase 2+
+- Kein Payment für Premium-Features (kommt mit Lemon Squeezy)
 - Kein Echtzeit-Update (Page Reload reicht)
-- Keine Push-Notifications
+- Keine Push-Notifications bei neuer Zusage
+- Kein Multi-Party-Dashboard
 | **Wunschliste-Affiliate** | Passives Revenue pro Geschenk-Klick | ~100% |
 | **Subscription** | Sofort-Schatzsuche Abo, monatlich | ~90% |
 | **SEO/Affiliate (bestehend)** | Amazon-Links in Deko/Mitgebsel | ~100% |
@@ -262,7 +285,7 @@ Alle drei Wege landen auf derselben Partyseite. Der Unterschied ist nur, wieviel
 ### Wunschliste mit Affiliate (auf der Partyseite)
 - Einladendes Elternteil trägt Geschenk-Links ein (Amazon, Otto, myToys, Thalia...)
 - **"Ich kaufe das"** → Artikel als vergeben markiert → keine doppelten Geschenke
-- **"Beteiligen":** Mehrere Familien signalisieren dass sie sich an einem teuren Geschenk beteiligen wollen. **NUR Koordination, KEIN Geldfluss über machsleicht.** Gäste sehen "3 von 4 Familien beteiligen sich", Geld regeln die Eltern untereinander (Überweisung, Bar, PayPal). Grund: Geldfluss über machsleicht = Zahlungsdienstleister-Regulierung, BaFin, Treuhandkonto. Nicht machbar als Solo-Dev.
+- **"Beteiligen":** Mehrere Familien beteiligen sich an einem teuren Geschenk. Der Ersteller gibt seine PayPal.me-URL an. Gäste sehen "Dein Anteil: ~X€" (auto-berechnet: Preis ÷ Beteiligte) und einen PayPal-Button mit vorausgefülltem Betrag. Der Ersteller kauft das Geschenk, Gäste zahlen ihren Anteil per PayPal. **Kein Geldfluss über machsleicht** — PayPal.me macht die Arbeit.
 - **Revenue:** ~6-12€ Affiliate pro Geburtstag (8 Gäste × 15-30€ × 5% Provision)
 
 #### Affiliate-Link-Konvertierung (KRITISCH für Revenue)
@@ -276,13 +299,16 @@ Jeder Link den ein Elternteil einträgt MUSS vor der Anzeige an Gäste-Eltern in
 
 | Domain | Affiliate-Netzwerk | Tag/Parameter | Status |
 |--------|-------------------|---------------|--------|
-| `amazon.de` | Amazon PartnerNet | `?tag=machsleicht-21` | ✅ Live |
-| `otto.de` | AWIN | AWIN-Deeplink mit Publisher-ID | TODO |
-| `mytoys.de` | AWIN | AWIN-Deeplink mit Publisher-ID | TODO |
-| `thalia.de` | AWIN / Thalia Partner | Deeplink mit Partner-ID | TODO |
+| `amazon.de` | Amazon PartnerNet | `?tag=machsleicht-21` | ✅ Angemeldet, Tag pending |
+| `otto.de` | AWIN | AWIN-Deeplink mit Publisher-ID | TODO (Awin anmelden) |
+| `mytoys.de` | AWIN | AWIN-Deeplink mit Publisher-ID | TODO (Awin anmelden) |
+| `thalia.de` | AWIN / Thalia Partner | Deeplink mit Partner-ID | TODO (Awin anmelden) |
 | `mediamarkt.de` | AWIN | AWIN-Deeplink | TODO |
 | `saturn.de` | AWIN | AWIN-Deeplink | TODO |
-| `smythstoys.com` | eigenes Programm / AWIN | Deeplink | TODO |
+| `smythstoys.com` | eigenes Programm / AWIN | Deeplink | ✅ Im Worker vorbereitet |
+| `jako-o.de` | AWIN | AWIN-Deeplink | ✅ Im Worker vorbereitet |
+| `tausendkind.de` | AWIN | AWIN-Deeplink | ✅ Im Worker vorbereitet |
+| `lego.com` | AWIN | AWIN-Deeplink | ✅ Im Worker vorbereitet |
 | Unbekannte Domain | Kein Affiliate | Original-Link durchreichen | — |
 
 4. Gäste-Eltern sehen den Artikel (Bild, Titel, Preis via OpenGraph)
@@ -311,7 +337,7 @@ Jeder Link den ein Elternteil einträgt MUSS vor der Anzeige an Gäste-Eltern in
 ### Datenschutz
 - Nur Vornamen — kein personenbezogenes Datum im DSGVO-Sinne
 - Allergien + Vorname in geschlossener 8-Personen-Gruppe = identisch mit WhatsApp-Status-quo
-- **Automatische Löschung nach 30 Tagen** nach dem Party-Datum
+- **Automatische Löschung nach 90 Tagen** nach dem Party-Datum (KV expirationTtl)
 - Kurze Datenschutzinfo auf der Seite
 - Kein Tracking, keine Cookies, kein Login
 
@@ -357,11 +383,11 @@ Die Partyseite ist das FUNDAMENT für fast alle weiteren Features:
 
 | Komponente | Technologie | Status |
 |-----------|-------------|--------|
-| **Backend (Partyseite)** | Cloudflare Workers + KV | Geplant (wie TeamPulse) |
+| **Backend (Partyseite)** | Cloudflare Workers + KV | ✅ Gebaut (party-worker.js v2), Deploy pending |
 | **Stimmen/Anrufe** | ElevenLabs — https://elevenlabs.io (Conversational AI + TTS) | Bolle testet deutsche Stimmen |
 | **Text-Generierung** | Claude API (Anthropic) — Rätsel, Geschichten, Copilot | Verfügbar |
 | **Musik-AI** | Suno / Udio — für Geburtstagssong (re-evaluieren) | Nicht getestet |
-| **Affiliate-Links** | Amazon PartnerNet (vorhanden), AWIN (Otto, myToys) | Amazon live, Rest TODO |
+| **Affiliate-Links** | Amazon PartnerNet (angemeldet), AWIN (geplant) | Amazon angemeldet, Awin TODO, 8 Shops im Worker vorbereitet |
 | **Payment** | Lemon Squeezy (vorhanden) | Live |
 | **Hosting** | Netlify + Cloudflare CDN/DNS | Live |
 | **Frontend** | React 18 CDN + Babel Standalone | Live, JSX-Neuaufbau aktiv |
@@ -406,14 +432,19 @@ machsleicht macht alles einzeln "gut genug" (nicht besser als Wunschbiber bei Wu
 ## Priorisierung (Empfehlung)
 
 1. **Rätsel nach Maß + Kreuzworträtsel** — schnellster Win, sofort Revenue (2.99€), ein Nachmittag Arbeit. Claude-API-Integration lernen die du für alles Weitere brauchst.
-2. **Partyseite (Backend + Frontend)** — das Fundament für Wunschliste, virale Features, Premium. RSVP, Allergien, Abholzeit.
-3. **Wunschliste auf Partyseite** — Affiliate-Revenue ab Tag 1 nach Launch.
-4. **KI-Spielleiter-Anrufe** — das Wow-Feature, braucht ElevenLabs-Test
-5. **Einladungs-Audio** — günstig, viral, einfach. Lebt auf der Partyseite.
-6. **Gute-Nacht-Geschichte** — emotional, runder Abschluss
-7. **Sofort-Schatzsuche Abo** — recurring revenue, braucht Rätsel nach Maß als Basis
-8. **Standalone /wunschliste** — eigene SEO-Kategorie, Funnel in den Planer
-9. **Rest** — KI-Spielmoderation, Danke-Nachrichten, Eltern-Copilot
+2. ~~**Partyseite (Backend + Frontend)**~~ — ✅ DONE (08.04.2026). party-worker.js v2 gebaut. Deploy auf Cloudflare pending.
+3. ~~**Wunschliste auf Partyseite**~~ — ✅ DONE (08.04.2026). In Partyseite integriert: Claim, Beteiligen, PayPal, Affiliate für 8 Shops.
+4. **Cloudflare Worker deployen** — NÄCHSTER SCHRITT: KV "PARTY" anlegen, DNS party.machsleicht.de, AMAZON_TAG setzen
+5. **Google Search Console einrichten** — Traffic-Quellen verstehen (83 Unique Visitors/Tag, Herkunft unbekannt)
+6. **Awin anmelden** — für myToys, Thalia, Otto, Jako-o, tausendkind Affiliate
+7. **KI-Spielleiter-Anrufe** — das Wow-Feature, braucht ElevenLabs-Test
+8. **Einladungs-Audio** — günstig, viral, einfach. Lebt auf der Partyseite.
+9. **Gute-Nacht-Geschichte** — emotional, runder Abschluss
+10. **Sofort-Schatzsuche Abo** — recurring revenue, braucht Rätsel nach Maß als Basis
+11. **Standalone /wunschliste** — eigene SEO-Kategorie, Funnel in den Planer
+12. **GitHub Token rotieren** — 25.04.2026, MUSS vorher passieren
+13. **Homepage.js aufräumen** — toter Partyseite-Code drin
+14. **Rest** — KI-Spielmoderation, Danke-Nachrichten, Eltern-Copilot
 
 ---
 
