@@ -1,6 +1,33 @@
 # Fortschritt Bolle
 
-## Letzte Session: 04.04.2026
+## Letzte Session: 08.04.2026
+
+### Was gemacht wurde:
+
+**Sprint 12 — Party-Worker v2 komplett gebaut (811 Zeilen):**
+- 3-Step Ersteller-Flow (Kind → Wann/Wo → Wunschliste + PayPal.me)
+- Code-Gate für Gäste (Vorname), Foto-Upload, OG-Tags, XSS-Schutz
+- Wunschliste: Claim/Unclaim, Gemeinsam schenken, Anteil-Berechnung, PayPal-Button
+- Affiliate-Redirect für 8 Shops (Amazon, myToys, Thalia, Otto, Jako-o, tausendkind, Smyths, LEGO)
+- Editor: Inline-Edit aller Party-Daten, Wünsche löschen, Allergien-Übersicht
+- Auto-Motto-Farbe (22 Mottos), Zeitvalidierung, Shop-Labels, Affiliate-Hinweis
+- localStorage RSVP-Check, .ics Download, mailto Edit-Link-Backup, DSGVO
+- Max 30 Gäste, Max 20 Wünsche, Überspringen-Button, 404-Seite
+- Amazon PartnerNet angemeldet (Tag pending)
+- Premium-Strategie-Dokument aktualisiert
+- Deployed auf Netlify (party-worker.js liegt im Repo, Cloudflare Worker Deploy noch pending)
+
+### Nächste Schritte:
+1. Cloudflare: Worker deployen, KV "PARTY", DNS party.machsleicht.de, AMAZON_TAG setzen
+2. Rätsel nach Maß (höchste Prio Revenue-Feature)
+3. GitHub Token rotieren (25.04.)
+4. Google Search Console einrichten
+5. Awin anmelden (myToys, Thalia, Otto)
+6. homepage.js aufräumen (toter Partyseite-Code)
+
+---
+
+## Session: 04.04.2026
 
 ### Was gemacht wurde:
 

@@ -299,7 +299,7 @@ Jeder Link den ein Elternteil einträgt MUSS vor der Anzeige an Gäste-Eltern in
 
 | Domain | Affiliate-Netzwerk | Tag/Parameter | Status |
 |--------|-------------------|---------------|--------|
-| `amazon.de` | Amazon PartnerNet | `?tag=machsleicht-21` | ✅ Angemeldet, Tag pending |
+| `amazon.de` | Amazon PartnerNet | `?tag=machsleicht-21` | ✅ Angemeldet, Tag pending → als ENV var AMAZON_TAG setzen |
 | `otto.de` | AWIN | AWIN-Deeplink mit Publisher-ID | TODO (Awin anmelden) |
 | `mytoys.de` | AWIN | AWIN-Deeplink mit Publisher-ID | TODO (Awin anmelden) |
 | `thalia.de` | AWIN / Thalia Partner | Deeplink mit Partner-ID | TODO (Awin anmelden) |
