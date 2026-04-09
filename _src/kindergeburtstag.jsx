@@ -1025,18 +1025,12 @@ function App() {
         {/* Einladung */}
         <EinladungBlock motto={motto} guests={guests} previewName={previewName} setPreviewName={setPreviewName} inviteSent={inviteSent} setInviteSent={setInviteSent} />
 
-        {/* WhatsApp-Partyseite CTA */}
-        <section className="fu" style={{ marginBottom: 24, borderRadius: 20, border: "2px solid var(--a)20", background: "var(--al)", padding: "18px 16px", textAlign: "center" }}>
+        {/* WhatsApp-Partyseite CTA — aktivieren wenn Worker deployed */}
+        <section className="fu" style={{ marginBottom: 24, borderRadius: 20, border: "2px dashed var(--l)", background: "var(--bg)", padding: "18px 16px", textAlign: "center" }}>
           <div style={{ fontSize: 28, marginBottom: 4 }}>📱</div>
-          <h3 style={{ fontFamily: "var(--fd)", fontSize: 16, marginBottom: 4, color: "var(--d)" }}>WhatsApp-Partyseite</h3>
-          <p style={{ fontSize: 13, color: "var(--m)", marginBottom: 12, lineHeight: 1.4 }}>Alle Infos auf einer Seite — Zusagen, Adresse, Abholzeit. Link verschicken, fertig.</p>
-          <a href={`https://party.machsleicht.de/?childName=${encodeURIComponent(childName || "")}&age=${age || ""}&motto=${encodeURIComponent(motto?.name || "")}&mottoEmoji=${encodeURIComponent(motto?.emoji || "🎉")}&mottoColor=${encodeURIComponent(motto?.color || "#D4812A")}`}
-            onClick={() => { typeof mlTrack === "function" && mlTrack("cta_partyseite", { motto: mottoId }); }}
-            target="_blank" rel="noopener" style={{
-              display: "inline-flex", alignItems: "center", gap: 6, padding: "12px 24px",
-              background: "var(--a)", color: "#fff", borderRadius: 16, fontSize: 14, fontWeight: 600,
-              textDecoration: "none", fontFamily: "var(--f)",
-            }}>📱 Partyseite erstellen →</a>
+          <h3 style={{ fontFamily: "var(--fd)", fontSize: 16, marginBottom: 4, color: "var(--m)" }}>WhatsApp-Partyseite</h3>
+          <p style={{ fontSize: 13, color: "var(--m)", marginBottom: 8, lineHeight: 1.4 }}>Alle Infos auf einer Seite — Zusagen, Adresse, Abholzeit. Link verschicken, fertig.</p>
+          <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "10px 20px", background: "var(--l)", color: "var(--m)", borderRadius: 16, fontSize: 13, fontWeight: 600, fontFamily: "var(--f)" }}>Bald verfügbar</span>
         </section>
 
         <SchnitzeljagdBlock age={age} ag={ag} mottoId={mottoId} szActive={szActive} setSzActive={setSzActive} szThemeId={szThemeId} setSzThemeId={setSzThemeId} szTheme={szTheme} childName={childName} setChildName={setChildName} mapPositions={mapPositions} setMapPositions={setMapPositions} stationLocations={stationLocations} setStationLocations={setStationLocations} dekoEmojis={dekoEmojis} setDekoEmojis={setDekoEmojis} />
