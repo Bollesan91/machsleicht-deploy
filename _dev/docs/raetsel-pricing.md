@@ -9,11 +9,10 @@
 
 | Produkt | Preis | Credits | Use Case |
 |---------|-------|---------|----------|
-| Geburtstags-Schatzsuche | 2,99€ einmalig | 1 | Motto-Stil, 5-8 Stationen, für den Partytag |
-| Sofort-Schatzsuche (einzeln) | 0,99€ | 1 | Impuls, Rainy Sunday, spontan |
-| Sofort 5er-Pack | 3,99€ | 5 | Rabatt, kein Abo, kein Ablaufdatum |
+| Schatzsuche (einzeln) | 0,99€ | 1 | Geburtstag oder spontan, egal |
+| 5er-Pack | 3,99€ | 5 | Rabatt, kein Abo, kein Ablaufdatum |
 
-**API-Kosten:** ~5ct pro Generierung → Marge 94-98%
+**Einheitspreis.** Kein Unterschied zwischen Geburtstag und Sofort. Gleicher API-Call, gleicher Preis. In der aktuellen Phase (null zahlende Nutzer) ist die Frage "zahlt überhaupt jemand?" wichtiger als Revenue-Optimierung. Preis kann später hochgesetzt werden.
 
 ---
 
@@ -38,7 +37,7 @@
 Key: license:{key}
 Value: {
   "key": "rnm_a7x9k2m4",
-  "type": "single" | "birthday" | "pack5",
+  "type": "single" | "pack5",
   "creditsTotal": 1 | 5,
   "creditsUsed": 0,
   "created": "2026-04-09T...",
@@ -73,7 +72,7 @@ POST /webhook
 {
   "event": "order_completed",
   "data": {
-    "product_id": "raetsel-single" | "raetsel-birthday" | "raetsel-pack5",
+    "product_id": "raetsel-single" | "raetsel-pack5",
     "order_id": "...",
     "customer_email": "..." (optional)
   }
