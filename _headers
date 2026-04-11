@@ -1,0 +1,8 @@
+/_dev/*
+  X-Robots-Tag: noindex, nofollow
+
+/_build/*
+  X-Robots-Tag: noindex, nofollow
+
+/_src/*
+  X-Robots-Tag: noindex, nofollow
