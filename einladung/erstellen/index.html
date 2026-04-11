@@ -139,7 +139,7 @@
 <body>
 <div class="card">
   <div class="header">
-    <div class="emoji" id="headerEmoji">🏴‍☠️</div>
+    <div class="emoji" id="headerEmoji">🎉</div>
     <h1 id="headerTitle">Einladung erstellen</h1>
     <p>In 30 Sekunden fertig!</p>
   </div>
@@ -148,7 +148,7 @@
     <div class="field">
       <label>Motto w&auml;hlen</label>
       <div class="motto-grid">
-        <button type="button" class="motto-btn active" data-motto="piraten" onclick="selectMotto(this)"><span class="motto-emoji">🏴‍☠️</span>Piraten</button>
+        <button type="button" class="motto-btn" data-motto="piraten" onclick="selectMotto(this)"><span class="motto-emoji">🏴‍☠️</span>Piraten</button>
         <button type="button" class="motto-btn" data-motto="dino" onclick="selectMotto(this)"><span class="motto-emoji">🦕</span>Dino</button>
         <button type="button" class="motto-btn" data-motto="safari" onclick="selectMotto(this)"><span class="motto-emoji">🦁</span>Safari</button>
         <button type="button" class="motto-btn" data-motto="weltraum" onclick="selectMotto(this)"><span class="motto-emoji">🚀</span>Weltraum</button>
@@ -201,7 +201,7 @@
 
 <script>
 let generatedUrl = '';
-let selectedMotto = 'piraten';
+let selectedMotto = null;
 
 const MOTTO_CONFIG = {
   piraten:      { emoji: '\u{1F3F4}\u200D\u2620\uFE0F', label: 'Piraten',      color: '#FFD700' },
@@ -216,6 +216,16 @@ const MOTTO_CONFIG = {
   feuerwehr:    { emoji: '\u{1F692}',                     label: 'Feuerwehr',    color: '#FF7043' }
 };
 
+// URL-Parameter auslesen: ?motto=dino → Dino vorauswählen
+(function initMotto() {
+  const params = new URLSearchParams(window.location.search);
+  const m = params.get('motto');
+  if (m && MOTTO_CONFIG[m]) {
+    const btn = document.querySelector('[data-motto="' + m + '"]');
+    if (btn) selectMotto(btn);
+  }
+})();
+
 function selectMotto(btn) {
   document.querySelectorAll('.motto-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
@@ -227,6 +237,13 @@ function selectMotto(btn) {
 
 async function handleSubmit(e) {
   e.preventDefault();
+  if (!selectedMotto) {
+    document.querySelector('.motto-grid').style.outline = '2px solid #EF5350';
+    document.querySelector('.motto-grid').style.outlineOffset = '4px';
+    document.querySelector('.motto-grid').style.borderRadius = '14px';
+    setTimeout(() => document.querySelector('.motto-grid').style.outline = 'none', 2000);
+    return;
+  }
   const btn = document.getElementById('submitBtn');
   btn.disabled = true;
   btn.textContent = 'Wird erstellt...';
