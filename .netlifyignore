@@ -1,0 +1,11 @@
+_dev/
+_build/
+_src/
+sparring-engine.jsx
+party-worker.js
+Setup-Anleitung-machsleicht.docx
+prompt-fuer-claude-chat.txt
+validate.js
+validate-all.sh
+BACKLOG-AUDIT.md
+SESSION-NOTES.md
