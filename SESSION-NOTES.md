@@ -4,24 +4,30 @@
 **Datum:** 12.04.2026
 
 ## Was wurde gemacht
-- Vollständiges Website-Audit mit Backlog (P0-P4)
-- P0: Title-Bugs, Duplicate Titles, robots.txt/_headers, Encoding — alles gefixt
-- P1: Einladung Canonicals + Default-Motto neutralisiert
-- P2: Ergebnis-Vorschauen, Homepage-Hero-Umbau, manifest.json, .netlifyignore
-- P2-2: 198 Einzelalter-Seiten → Canonical auf Altersgruppen-Seiten (281 → ~83 indexierbar)
-- **Dino 6-8 Jahre Elite-Seite live**: 2.900 Wörter, 3 Varianten (Minimal/Standard/Wow), Spielanleitungen mit Material+Regeln, Einkaufslisten mit 14 Affiliate-Links, FAQ mit Schema
-- **Dino-Forscherpass**: Faltbares A5-Büchlein (Cover, Steckbrief, 3/4/5 Prüfungen, Urkunde), Varianten-Selector
-- **Dino-Quiz**: 15 Fragen Multiple Choice + Antwortblatt
-- Content-Schema für alle 60 Seiten dokumentiert
-- Affiliate-Strategie: Kostüme als Top-Affiliate pro Motto identifiziert (~1,20€ vs ~0,10€ bei Figuren)
+- Vollständiges Website-Audit (technisch + strategisch, zwei Quellen konsolidiert)
+- BACKLOG-AUDIT.md erstellt mit P0–P4 Tickets
+- P0: 16 Title-Bugs, 5 Duplicate Titles, robots.txt/_headers, Encoding (300 Dateien)
+- P1: 9 Einladung-Canonicals, Default-Motto neutralisiert + ?motto=X Support
+- P2: Ergebnis-Vorschauen, Homepage-Hero (Warum-Block oben, Tag-Clouds), manifest.json, .netlifyignore
+- P2-2: 198 Einzelalter-Seiten Canonical → Altersgruppen (281 → ~83 indexierbar)
+- **Dino 6-8 Elite-Seite live** (3.040 Wörter, Master-Template):
+  - 3 Varianten (Minimal/Standard/Wow) mit Tabs
+  - Spielanleitungen: Material, Regeln, Alters-Diff, Indoor/Outdoor, Laut/Ruhig, Aufwand
+  - 3 Einkaufslisten mit 14 Affiliate-Links (inkl. Kostüm ~40€ als Top-Affiliate)
+  - Forscherpass (faltbar, 3 Varianten) + Quiz (15 Fragen)
+  - FAQ mit FAQPage-Schema, OG/Twitter, Plausible, Print CSS, Sticky CTA-Bar
+  - Motto-spezifische Alters-Begründung, Easy-Cake-Alternative, kuratierte Related-Mottos
+- Content-Schema + Affiliate-Strategie für alle 60 Seiten dokumentiert
+- Druckvorlagen-Schema pro Motto dokumentiert (Pass + Quiz, Masken = Affiliate)
 
 ## Nächste Schritte
-1. GitHub Token rotieren (Deadline 25.04.)
-2. Dino 3-5 Jahre + Dino 9-12 Jahre nach gleichem Schema bauen
-3. Nächstes Motto anpacken (Piraten? Einhorn?)
-4. Rätsel nach Maß + PDF-Partybuch Launch vorbereiten
-5. Druckvorlagen pro Motto (Forscherpass, Quiz, etc.)
+1. P1-5: GitHub Token rotieren (Deadline 25.04.!)
+2. Dino 3-5 Jahre + Dino 9-12 Jahre nach Master-Template
+3. Nächstes Motto (Piraten oder Einhorn)
+4. Rätsel nach Maß + PDF-Partybuch Launch (Lemon Squeezy)
+5. Druckvorlagen pro Motto erstellen
 
 ## Offene Fragen
-- Skalierung: 60 Seiten manuell oder Content-Generator?
+- Skalierung: 60 Seiten manuell oder Content-Generator mit Claude API?
 - Welche 5 Mottos als erstes nach Dino?
+- Amazon PartnerNet-Konto aktiv? Tag machsleicht21-21 verifizieren
