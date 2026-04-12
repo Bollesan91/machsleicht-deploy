@@ -477,3 +477,46 @@ Zusätzlich: Der Hub-Title zeigt "Piraten-Einladung erstellen" statt einen neutr
 Beim nächsten Umbau des Einladungs-Hubs die Motto-Karten mit Links auf `/einladung/erstellen?motto=X` versehen. Hub-Title neutralisieren.
 
 **Aufwand:** 30–60 Min (React-Code im Hub)
+
+---
+
+### P4-1: PDF-Partybücher pro Motto (nach Rätsel nach Maß Launch)
+
+**Idee:**
+Pro Motto ein "Forscher-Partybuch" / "Abenteuer-Partybuch" als PDF-Download: Ausmalseiten + Rätsel + Quiz + Steckbrief + Urkunde + Blanko-Felder ("Paläontologe: ___"). 20–30 Seiten. Nicht nur Malbuch, sondern Party-Activity-Book. Eltern kaufen 6–8 Exemplare, drucken selbst.
+
+**Monetarisierung:** 2,99€ über Lemon Squeezy (selber Stack wie Rätsel nach Maß). ~95% Marge.
+**Alternativ:** Amazon KDP als physisches Buch (5,99€, ~25% Marge) oder Print-on-Demand (Gelato/Peecho, ~40-50%).
+
+**Integration auf machsleicht.de:**
+- Auf jeder Motto×Altersgruppe-Seite unter "Mitgebsel" und "Basteln" verlinken
+- Im Planer-Output als "Partybuch dazubuchen" einbauen
+
+**Voraussetzung:** Erst Traffic aufbauen (Content-Seiten), dann zusammen mit Rätsel nach Maß launchen.
+**Start mit:** Top-5-Mottos (Dino, Piraten, Einhorn, Feuerwehr, Detektiv).
+**Aufwand:** 1 Tag pro Motto (Illustrationen + Layout).
+
+---
+
+### P4-2: Rätsel nach Maß + PDF-Partybuch gemeinsamer Launch
+
+**Idee:** Beide Produkte teilen denselben Lemon Squeezy + KV Credit-Tracking Stack. Ein Setup, zwei Produkte. Rätsel nach Maß (0,99€/2,99€) + Partybuch-PDF (2,99€). Gemeinsamer Launch spart Implementierungsaufwand.
+
+---
+
+### P3-4: Druckvorlagen pro Motto (Ausweise, Urkunden, Masken)
+
+**Idee:**
+Jedes Motto braucht druckbare Vorlagen für die Wow-Variante. Beispiele:
+- Dino: Forscherausweis + Paläontologen-Urkunde
+- Piraten: Kapitänspatent + Schatzkarte-Blanko
+- Detektiv: Detektivausweis + Geheimdienstakte
+- Einhorn: Zauberdiplom + Regenbogen-Pass
+- Feuerwehr: Dienstausweis + Einsatzbericht
+
+Format: HTML-Seite mit Drucken-Button, 4 Stück pro A4. Blanko-Felder zum Ausfüllen.
+Wird in der Wow-Variante der jeweiligen Motto×Altersgruppe-Seite verlinkt.
+
+**Aufwand:** ~30 Min. pro Motto
+**Voraussetzung:** Content-Seiten fertig, dann die Vorlagen als Ergänzung.
+**Start mit:** Top-5-Mottos (Dino, Piraten, Einhorn, Feuerwehr, Detektiv)
