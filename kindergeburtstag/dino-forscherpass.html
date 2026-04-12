@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dino-Forscherpass — Druckvorlage | machsleicht.de</title>
+<style>
+@page { size: A4 landscape; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f5f5f5; }
+
+.print-info { max-width: 620px; margin: 40px auto 20px; padding: 20px; text-align: center; background: #fff; border-radius: 12px; border: 1px solid #ddd; }
+.print-info h1 { font-size: 22px; margin-bottom: 8px; }
+.print-info p { font-size: 14px; color: #666; margin-bottom: 8px; }
+.print-btn { background: #E8873D; color: #fff; border: none; padding: 12px 32px; border-radius: 99px; font-size: 15px; font-weight: 700; cursor: pointer; }
+.print-tip { font-size: 12px; color: #888; margin-top: 10px; }
+.print-tip strong { color: #E8873D; }
+.variant-select { display: flex; gap: 0; justify-content: center; margin: 14px 0 6px; border-bottom: 2px solid #eee; }
+.variant-btn { padding: 10px 20px; font-size: 14px; font-weight: 700; cursor: pointer; border: none; background: none; color: #999; border-bottom: 3px solid transparent; margin-bottom: -2px; transition: all .2s; flex: 1; text-align: center; }
+.variant-btn.active { color: #E8873D; border-bottom-color: #E8873D; }
+.variant-btn:hover { color: #333; }
+.affiliate-hint { background: #FFFAF5; border: 1px solid #EDE6DE; border-radius: 10px; padding: 12px 16px; margin: 12px auto; max-width: 500px; font-size: 13px; color: #666; }
+.affiliate-hint a { color: #E8873D; font-weight: 600; text-decoration: none; }
+
+.pass-sheet { width: 297mm; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; height: 210mm; background: #fff; position: relative; }
+.pass-sheet::after { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; border-left: 2px dashed #ccc; }
+.pass-page { padding: 20mm; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative; }
+
+/* Cover */
+.page-cover { background: linear-gradient(160deg, #1B5E20, #2E7D32, #388E3C); color: #fff; text-align: center; }
+.cover-badge { font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+.cover-dino { font-size: 80px; margin: 16px 0; }
+.cover-title { font-size: 28px; font-weight: 900; line-height: 1.2; }
+.cover-subtitle { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 8px; }
+.cover-footer { font-size: 9px; color: rgba(255,255,255,0.3); }
+
+/* Urkunde */
+.page-back { background: linear-gradient(145deg, #E8F5E9, #FFFDE7); }
+.page-back .watermark { position: absolute; right: 10px; bottom: 10px; font-size: 70px; opacity: 0.06; }
+.cert-top { font-size: 10px; font-weight: 700; color: #4CAF50; text-transform: uppercase; letter-spacing: 3px; text-align: center; }
+.cert-title { font-size: 22px; font-weight: 900; color: #1B5E20; text-align: center; margin: 8px 0; }
+.cert-text { font-size: 14px; color: #333; text-align: center; line-height: 1.8; }
+.cert-name-label { font-size: 9px; color: #888; text-transform: uppercase; letter-spacing: 1px; text-align: center; margin-top: 12px; }
+.cert-name-line { border-bottom: 2px solid #333; max-width: 220px; margin: 0 auto; min-height: 28px; }
+.cert-checks { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 10px 0; }
+.cert-check { font-size: 11px; color: #2E7D32; font-weight: 600; }
+.cert-bottom { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 14px; }
+.cert-date-line { border-bottom: 1px solid #999; width: 80px; min-height: 16px; }
+.cert-date-label { font-size: 8px; color: #888; text-transform: uppercase; }
+.cert-stamp-box { width: 56px; height: 56px; border: 2px dashed #2E7D32; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 8px; color: #2E7D32; font-weight: 600; line-height: 1.2; }
+.cert-signed-line { border-bottom: 1px solid #999; width: 80px; min-height: 16px; margin-left: auto; }
+.cert-signed-label { font-size: 8px; color: #888; text-align: right; }
+
+/* Inner pages */
+.pass-sheet-inner { width: 297mm; margin: 10px auto; display: grid; grid-template-columns: 1fr 1fr; height: 210mm; background: #fff; position: relative; page-break-before: always; }
+.pass-sheet-inner::after { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; border-left: 2px dashed #ccc; }
+
+.page-inner-left { background: linear-gradient(135deg, #FFFDE7, #FFF8E1); padding: 18mm; }
+.section-title { font-size: 16px; font-weight: 900; color: #1B5E20; margin-bottom: 14px; }
+.field { margin-bottom: 14px; }
+.field-label { font-size: 9px; font-weight: 700; color: #2E7D32; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; }
+.field-line { border-bottom: 1.5px solid #444; min-height: 24px; }
+.photo-area { width: 70px; height: 85px; border: 2px solid #2E7D32; border-radius: 8px; float: right; margin-left: 14px; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #999; text-align: center; background: #fff; line-height: 1.3; }
+.fun-fact { background: #fff; border: 1px solid #C8E6C9; border-radius: 8px; padding: 10px 12px; margin-top: 14px; font-size: 11px; color: #555; line-height: 1.5; }
+.fun-fact strong { color: #1B5E20; }
+
+.page-inner-right { background: linear-gradient(135deg, #FFFDE7, #FFF8E1); padding: 18mm; }
+.pruefung { display: flex; align-items: flex-start; gap: 10px; padding: 12px 0; border-bottom: 1px dashed #C8E6C9; }
+.pruefung:last-child { border-bottom: none; }
+.pruefung-check { width: 28px; height: 28px; border: 2px solid #2E7D32; border-radius: 6px; flex-shrink: 0; }
+.pruefung-emoji { font-size: 18px; }
+.pruefung-name { font-size: 14px; font-weight: 700; color: #333; }
+.pruefung-desc { font-size: 11px; color: #777; margin-top: 2px; }
+.pass-note { margin-top: 16px; font-size: 10px; color: #888; text-align: center; font-style: italic; }
+
+.variant-content { display: none; }
+.variant-content.active { display: contents; }
+.footer-link { text-align: center; padding: 20px; font-size: 11px; color: #999; }
+.footer-link a { color: #E8873D; text-decoration: none; }
+
+@media print { .print-info, .footer-link, .affiliate-hint { display: none !important; } body { background: #fff; } }
+@media screen and (max-width: 800px) {
+  .pass-sheet, .pass-sheet-inner { width: 100%; height: auto; grid-template-columns: 1fr; gap: 16px; padding: 16px; }
+  .pass-page { min-height: 320px; border-radius: 12px; }
+  .pass-sheet::after, .pass-sheet-inner::after { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="print-info">
+  <h1>🦕 Dino-Forscherpass</h1>
+  <p>Wähl deine Party-Variante — die Prüfungen passen sich an:</p>
+  <div class="variant-select">
+    <button class="variant-btn" onclick="setVariant('minimal')">🌿 Minimal (3)</button>
+    <button class="variant-btn active" onclick="setVariant('standard')">🎯 Standard (4)</button>
+    <button class="variant-btn" onclick="setVariant('wow')">✨ Wow (5)</button>
+  </div>
+  <button class="print-btn" onclick="window.print()">🖨️ Jetzt drucken (Querformat!)</button>
+  <p class="print-tip"><strong>Wichtig:</strong> Querformat. Dickes Papier (160g+, DM ~3€/50 Blatt). Doppelseitig wenn möglich.</p>
+</div>
+
+<div class="affiliate-hint">
+  💡 <strong>Tipp:</strong> Statt Unterschrift einen <a href="https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht21-21" target="_blank" rel="noopener sponsored">Dino-Stempel*</a> benutzen — sieht offizieller aus und die Kinder lieben es. (~3–5 €)
+</div>
+
+<!-- ================================ -->
+<!-- BLATT 1: Cover + Urkunde -->
+<!-- ================================ -->
+<div class="pass-sheet">
+
+  <!-- Urkunde (links = Rückseite nach Faltung) -->
+  <div class="pass-page page-back">
+    <div>
+      <div class="cert-top">Offizielle Urkunde</div>
+      <div class="cert-title">🦕 Paläontologen-Diplom</div>
+    </div>
+    <div>
+      <div class="cert-text">Hiermit wird</div>
+      <div class="cert-name-label">Name</div>
+      <div class="cert-name-line"></div>
+      <div class="cert-text" style="margin-top:10px">zum <strong>offiziellen Paläontologen</strong> ernannt.</div>
+      <div class="cert-text" style="font-size:12px;color:#666">Alle Prüfungen erfolgreich bestanden:</div>
+      <!-- Checks change per variant -->
+      <div class="cert-checks" id="cert-checks-minimal" style="display:none">
+        <span class="cert-check">✅ Ausmalen</span>
+        <span class="cert-check">✅ Ausgrabung</span>
+        <span class="cert-check">✅ Eierlauf</span>
+      </div>
+      <div class="cert-checks" id="cert-checks-standard">
+        <span class="cert-check">✅ Vulkan</span>
+        <span class="cert-check">✅ Ausgrabung</span>
+        <span class="cert-check">✅ Parcours</span>
+        <span class="cert-check">✅ Fossil</span>
+      </div>
+      <div class="cert-checks" id="cert-checks-wow" style="display:none">
+        <span class="cert-check">✅ Vulkan</span>
+        <span class="cert-check">✅ Ausgrabung</span>
+        <span class="cert-check">✅ Schatzsuche</span>
+        <span class="cert-check">✅ Quiz</span>
+        <span class="cert-check">✅ Fossil</span>
+      </div>
+    </div>
+    <div class="cert-bottom">
+      <div><div class="cert-date-line"></div><div class="cert-date-label">Datum</div></div>
+      <div><div class="cert-stamp-box">Stempel<br>hier</div></div>
+      <div><div class="cert-signed-line"></div><div class="cert-signed-label">Forschungsleiter/in</div></div>
+    </div>
+    <div class="watermark">🦕</div>
+  </div>
+
+  <!-- Cover (rechts = Vorderseite nach Faltung) -->
+  <div class="pass-page page-cover">
+    <div class="cover-badge">Offizielle Dino-Forschungsstation</div>
+    <div>
+      <div class="cover-dino">🦕</div>
+      <div class="cover-title">Dino-<br>Forscherpass</div>
+      <div class="cover-subtitle">Paläontologen-Ausbildung</div>
+    </div>
+    <div class="cover-footer">machsleicht.de</div>
+  </div>
+
+</div>
+
+<!-- ================================ -->
+<!-- BLATT 2: Steckbrief + Prüfungen -->
+<!-- ================================ -->
+<div class="pass-sheet-inner">
+
+  <!-- Steckbrief (links = linke Innenseite) -->
+  <div class="pass-page page-inner-left">
+    <div>
+      <div class="section-title">📋 Mein Forscherprofil</div>
+      <div class="photo-area">Foto<br>hier<br>einkleben</div>
+      <div class="field"><div class="field-label">Paläontologe/in</div><div class="field-line"></div></div>
+      <div class="field"><div class="field-label">Alter</div><div class="field-line"></div></div>
+      <div class="field"><div class="field-label">Lieblingsdino</div><div class="field-line"></div></div>
+      <div class="field"><div class="field-label">Forschungsgebiet</div><div class="field-line"></div></div>
+      <div class="field"><div class="field-label">Datum der Ausbildung</div><div class="field-line"></div></div>
+    </div>
+    <div class="fun-fact">
+      <strong>🧠 Wusstest du?</strong> Hühner sind entfernte Verwandte des T-Rex! Wissenschaftler haben herausgefunden, dass Vögel von kleinen Dinosauriern abstammen.
+    </div>
+  </div>
+
+  <!-- Prüfungen (rechts = rechte Innenseite) -->
+  <div class="pass-page page-inner-right">
+    <div class="section-title">🎯 Meine Prüfungen</div>
+
+    <!-- MINIMAL: 3 Prüfungen -->
+    <div id="pruef-minimal" style="display:none">
+      <div class="pruefung">
+        <div class="pruefung-check"></div>
+        <div><div class="pruefung-emoji">🖍️</div><div class="pruefung-name">Dino-Ausmalbilder</div><div class="pruefung-desc">Kreativ-Test bestanden</div></div>
+      </div>
+      <div class="pruefung">
+        <div class="pruefung-check"></div>
+        <div><div class="pruefung-emoji">🦴</div><div class="pruefung-name">Dino-Ausgrabung</div><div class="pruefung-desc">Fossilien freigelegt</div></div>
+      </div>
+      <div class="pruefung">
+        <div class="pruefung-check"></div>
+        <div><div class="pruefung-emoji">🥚</div><div class="pruefung-name">Dino-Eierlauf</div><div class="pruefung-desc">Ei sicher transportiert</div></div>
+      </div>
+      <div class="pass-note">Nach jeder bestandenen Prüfung ein ✓ in die Box!</div>
+    </div>
+
+    <!-- STANDARD: 4 Prüfungen -->
+    <div id="pruef-standard">
+      <div class="pruefung">
+        <div class="pruefung-check"></div>
+        <div><div class="pruefung-emoji">🌋</div><div class="pruefung-name">Vulkan-Experiment</div><div class="pruefung-desc">Vulkanausbruch überlebt</div></div>
+      </div>
+      <div class="pruefung">
+        <div class="pruefung-check"></div>
+        <div><div class="pruefung-emoji">🦴</div><div class="pruefung-name">Dino-Ausgrabung</div><div class="pruefung-desc">Fossilien freigelegt</div></div>
+      </div>
+      <div class="pruefung">
+        <div class="pruefung-check"></div>
+        <div><div class="pruefung-emoji">🏃</div><div class="pruefung-name">Dino-Parcours</div><div class="pruefung-desc">Alle Hindernisse überwunden</div></div>
+      </div>
+      <div class="pruefung">
+        <div class="pruefung-check"></div>
+        <div><div class="pruefung-emoji">🪨</div><div class="pruefung-name">Fossil gießen</div><div class="pruefung-desc">Eigenes Fossil hergestellt</div></div>
+      </div>
+      <div class="pass-note">Nach jeder bestandenen Prüfung ein ✓ in die Box!</div>
+    </div>
+
+    <!-- WOW: 5 Prüfungen -->
+    <div id="pruef-wow" style="display:none">
+      <div class="pruefung">
+        <div class="pruefung-check"></div>
+        <div><div class="pruefung-emoji">🌋</div><div class="pruefung-name">Vulkan-Experiment</div><div class="pruefung-desc">Vulkanausbruch überlebt</div></div>
+      </div>
+      <div class="pruefung">
+        <div class="pruefung-check"></div>
+        <div><div class="pruefung-emoji">🦴</div><div class="pruefung-name">Dino-Ausgrabung</div><div class="pruefung-desc">Fossilien freigelegt</div></div>
+      </div>
+      <div class="pruefung">
+        <div class="pruefung-check"></div>
+        <div><div class="pruefung-emoji">🗺️</div><div class="pruefung-name">Schatzsuche</div><div class="pruefung-desc">Den Dino-Schatz gefunden</div></div>
+      </div>
+      <div class="pruefung">
+        <div class="pruefung-check"></div>
+        <div><div class="pruefung-emoji">🧠</div><div class="pruefung-name">Wissens-Quiz</div><div class="pruefung-desc">Dino-Fakten gemeistert</div></div>
+      </div>
+      <div class="pruefung">
+        <div class="pruefung-check"></div>
+        <div><div class="pruefung-emoji">🪨</div><div class="pruefung-name">Fossil gießen</div><div class="pruefung-desc">Eigenes Fossil hergestellt</div></div>
+      </div>
+      <div class="pass-note">Nach jeder bestandenen Prüfung ein ✓ in die Box!</div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="footer-link">
+  Kostenlos von <a href="https://machsleicht.de/kindergeburtstag/dino-6-8-jahre">machsleicht.de</a> · <a href="https://machsleicht.de/kindergeburtstag?motto=dino&alter=7#planer">Kompletten Dino-Geburtstag planen →</a>
+  <br><br><span style="font-size:10px;color:#bbb">* Affiliate-Link</span>
+</div>
+
+<script>
+function setVariant(v) {
+  ['minimal','standard','wow'].forEach(function(id) {
+    document.getElementById('pruef-' + id).style.display = 'none';
+    document.getElementById('cert-checks-' + id).style.display = 'none';
+  });
+  document.getElementById('pruef-' + v).style.display = 'block';
+  document.getElementById('cert-checks-' + v).style.display = 'flex';
+  document.querySelectorAll('.variant-btn').forEach(function(b) { b.classList.remove('active'); });
+  event.target.classList.add('active');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dino-Wissens-Quiz — 15 Fragen zum Ausdrucken | machsleicht.de</title>
+<style>
+@page { size: A4; margin: 12mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f5f5f5; color: #2D2319; }
+.print-info { max-width: 600px; margin: 40px auto 20px; padding: 20px; text-align: center; background: #fff; border-radius: 12px; border: 1px solid #ddd; }
+.print-info h1 { font-size: 22px; margin-bottom: 8px; }
+.print-info p { font-size: 14px; color: #666; margin-bottom: 12px; }
+.print-btn { background: #E8873D; color: #fff; border: none; padding: 12px 32px; border-radius: 99px; font-size: 15px; font-weight: 700; cursor: pointer; }
+.page { max-width: 210mm; margin: 0 auto; background: #fff; padding: 16mm; }
+.page-title { text-align: center; margin-bottom: 16px; }
+.page-title h2 { font-size: 22px; font-weight: 900; }
+.page-title p { font-size: 12px; color: #888; margin-top: 4px; }
+.question { padding: 10px 0; border-bottom: 1px solid #eee; display: flex; gap: 10px; }
+.question:last-child { border-bottom: none; }
+.q-num { min-width: 28px; height: 28px; background: #E8873D; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+.q-text { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+.q-options { font-size: 13px; color: #666; }
+.q-options span { margin-right: 12px; }
+.answer-sheet { page-break-before: always; }
+.answer { padding: 6px 0; border-bottom: 1px solid #eee; font-size: 13px; display: flex; gap: 10px; }
+.answer .a-num { min-width: 22px; font-weight: 700; color: #E8873D; }
+.answer .a-text { color: #2D2319; }
+.answer .a-fun { color: #888; font-style: italic; }
+.instructions { background: #FFFAF5; border: 1px solid #EDE6DE; border-radius: 10px; padding: 14px; margin-bottom: 16px; font-size: 13px; color: #666; }
+.footer-link { text-align: center; padding: 20px; font-size: 11px; color: #999; }
+.footer-link a { color: #E8873D; text-decoration: none; }
+@media print { .print-info, .footer-link { display: none !important; } body { background: #fff; } }
+</style>
+</head>
+<body>
+
+<div class="print-info">
+  <h1>🧠 Dino-Wissens-Quiz</h1>
+  <p>15 Fragen für 6–8-Jährige. Seite 1: Fragen (für die Kinder). Seite 2: Antworten (für dich).</p>
+  <button class="print-btn" onclick="window.print()">🖨️ Jetzt drucken</button>
+</div>
+
+<!-- SEITE 1: FRAGEN -->
+<div class="page">
+  <div class="page-title">
+    <h2>🦕 Dino-Wissens-Quiz</h2>
+    <p>Wer weiß am meisten über Dinosaurier? 2 Teams, 15 Fragen — los geht's!</p>
+  </div>
+
+  <div class="instructions">
+    <strong>Spielregeln:</strong> Frage vorlesen. Wer zuerst buzzert (Klingel/Topfdeckel) darf antworten. Richtig = 1 Punkt. Falsch = anderes Team darf. Bei Multiple Choice: 3 Antworten vorlesen, Kinder wählen. Verlierer-Team bekommt "Trost-Forschungsstipendium" (Gummibärchen).
+  </div>
+
+  <div class="question"><div class="q-num">1</div><div><div class="q-text">Was bedeutet "T-Rex" auf Deutsch?</div><div class="q-options"><span>A) Riesen-Echse</span><span>B) Tyrannen-Echse</span><span>C) Turbo-Echse</span></div></div></div>
+
+  <div class="question"><div class="q-num">2</div><div><div class="q-text">Wie viele Hörner hatte ein Triceratops?</div><div class="q-options"><span>A) 2</span><span>B) 3</span><span>C) 5</span></div></div></div>
+
+  <div class="question"><div class="q-num">3</div><div><div class="q-text">Konnten Dinosaurier fliegen?</div><div class="q-options"><span>A) Ja, alle</span><span>B) Nur manche</span><span>C) Nein — Flugsaurier waren keine Dinos!</span></div></div></div>
+
+  <div class="question"><div class="q-num">4</div><div><div class="q-text">Was fraßen Brachiosaurier?</div><div class="q-options"><span>A) Fleisch</span><span>B) Pflanzen</span><span>C) Fische</span></div></div></div>
+
+  <div class="question"><div class="q-num">5</div><div><div class="q-text">Wie lang war ein T-Rex ungefähr?</div><div class="q-options"><span>A) 5 Meter</span><span>B) 13 Meter</span><span>C) 30 Meter</span></div></div></div>
+
+  <div class="question"><div class="q-num">6</div><div><div class="q-text">Welcher Dino hatte Platten auf dem Rücken?</div><div class="q-options"><span>A) Stegosaurus</span><span>B) Velociraptor</span><span>C) Diplodocus</span></div></div></div>
+
+  <div class="question"><div class="q-num">7</div><div><div class="q-text">Lebten Dinos und Menschen gleichzeitig?</div><div class="q-options"><span>A) Ja</span><span>B) Nein, 65 Millionen Jahre dazwischen</span></div></div></div>
+
+  <div class="question"><div class="q-num">8</div><div><div class="q-text">Welcher Dino hatte besonders lange Arme?</div><div class="q-options"><span>A) T-Rex (kurze Arme!)</span><span>B) Therizinosaurus</span><span>C) Ankylosaurus</span></div></div></div>
+
+  <div class="question"><div class="q-num">9</div><div><div class="q-text">Was passierte vor 66 Millionen Jahren mit den Dinos?</div><div class="q-options"><span>A) Sie sind umgezogen</span><span>B) Ein Asteroid hat sie ausgelöscht</span><span>C) Sie leben im Meer weiter</span></div></div></div>
+
+  <div class="question"><div class="q-num">10</div><div><div class="q-text">Welcher Dino war so groß wie ein Huhn?</div><div class="q-options"><span>A) Compsognathus</span><span>B) Brachiosaurus</span><span>C) Spinosaurus</span></div></div></div>
+
+  <div class="question"><div class="q-num">11</div><div><div class="q-text">Aus was bestehen Fossilien?</div><div class="q-options"><span>A) Plastik</span><span>B) Stein (versteinerter Knochen)</span><span>C) Holz</span></div></div></div>
+
+  <div class="question"><div class="q-num">12</div><div><div class="q-text">Welches Tier heute ist mit Dinos verwandt?</div><div class="q-options"><span>A) Hunde</span><span>B) Vögel</span><span>C) Fische</span></div></div></div>
+
+  <div class="question"><div class="q-num">13</div><div><div class="q-text">Wie nennt man Wissenschaftler, die Dinos erforschen?</div><div class="q-options"><span>A) Astronauten</span><span>B) Paläontologen</span><span>C) Biologen</span></div></div></div>
+
+  <div class="question"><div class="q-num">14</div><div><div class="q-text">Welcher Dino hatte eine Keule am Schwanz?</div><div class="q-options"><span>A) Ankylosaurus</span><span>B) Parasaurolophus</span><span>C) Pteranodon</span></div></div></div>
+
+  <div class="question"><div class="q-num">15</div><div><div class="q-text">Wie schwer war ein T-Rex ungefähr?</div><div class="q-options"><span>A) So schwer wie ein Auto</span><span>B) So schwer wie ein Elefant (6–8 Tonnen)</span><span>C) So schwer wie ein Haus</span></div></div></div>
+</div>
+
+<!-- SEITE 2: ANTWORTEN -->
+<div class="page answer-sheet">
+  <div class="page-title">
+    <h2>🦕 Antworten — nur für den Quizmaster!</h2>
+    <p>Diese Seite nicht den Kindern zeigen.</p>
+  </div>
+
+  <div class="answer"><div class="a-num">1</div><div><span class="a-text"><strong>B) Tyrannen-Echse</strong></span> <span class="a-fun">— "König der Tyrannen-Echsen", klingt cool!</span></div></div>
+  <div class="answer"><div class="a-num">2</div><div><span class="a-text"><strong>B) 3</strong></span> <span class="a-fun">— "Tri" = drei, "ceratops" = Horngesicht</span></div></div>
+  <div class="answer"><div class="a-num">3</div><div><span class="a-text"><strong>C) Nein!</strong></span> <span class="a-fun">— Flugsaurier (Pterodactylus etc.) waren KEINE Dinosaurier. Trickfrage!</span></div></div>
+  <div class="answer"><div class="a-num">4</div><div><span class="a-text"><strong>B) Pflanzen</strong></span> <span class="a-fun">— Mit dem langen Hals kamen sie an die höchsten Baumkronen</span></div></div>
+  <div class="answer"><div class="a-num">5</div><div><span class="a-text"><strong>B) 13 Meter</strong></span> <span class="a-fun">— So lang wie ein Linienbus!</span></div></div>
+  <div class="answer"><div class="a-num">6</div><div><span class="a-text"><strong>A) Stegosaurus</strong></span> <span class="a-fun">— Die Platten dienten vermutlich zur Temperaturregelung</span></div></div>
+  <div class="answer"><div class="a-num">7</div><div><span class="a-text"><strong>B) Nein, 65 Mio. Jahre Abstand</strong></span> <span class="a-fun">— In Filmen schon, in echt leider nicht</span></div></div>
+  <div class="answer"><div class="a-num">8</div><div><span class="a-text"><strong>B) Therizinosaurus</strong></span> <span class="a-fun">— T-Rex hatte lächerlich kurze Arme, das wissen die meisten Kinder!</span></div></div>
+  <div class="answer"><div class="a-num">9</div><div><span class="a-text"><strong>B) Asteroid</strong></span> <span class="a-fun">— Einschlag in Mexiko, 12 km großer Brocken</span></div></div>
+  <div class="answer"><div class="a-num">10</div><div><span class="a-text"><strong>A) Compsognathus</strong></span> <span class="a-fun">— Klein aber schnell — bis zu 40 km/h!</span></div></div>
+  <div class="answer"><div class="a-num">11</div><div><span class="a-text"><strong>B) Stein</strong></span> <span class="a-fun">— Knochen werden über Millionen Jahre zu Stein</span></div></div>
+  <div class="answer"><div class="a-num">12</div><div><span class="a-text"><strong>B) Vögel</strong></span> <span class="a-fun">— Hühner sind entfernte Verwandte des T-Rex!</span></div></div>
+  <div class="answer"><div class="a-num">13</div><div><span class="a-text"><strong>B) Paläontologen</strong></span> <span class="a-fun">— Genau wie ihr heute!</span></div></div>
+  <div class="answer"><div class="a-num">14</div><div><span class="a-text"><strong>A) Ankylosaurus</strong></span> <span class="a-fun">— Die Keule wog bis zu 30 kg — damit wollte niemand Streit</span></div></div>
+  <div class="answer"><div class="a-num">15</div><div><span class="a-text"><strong>B) So schwer wie ein Elefant</strong></span> <span class="a-fun">— 6–8 Tonnen, aber trotzdem konnte er rennen!</span></div></div>
+</div>
+
+<div class="footer-link">
+  Kostenlos von <a href="https://machsleicht.de/kindergeburtstag/dino-6-8-jahre">machsleicht.de</a> · <a href="https://machsleicht.de/kindergeburtstag?motto=dino&alter=7#planer">Kompletten Dino-Geburtstag planen →</a>
+</div>
+
+</body>
+</html>

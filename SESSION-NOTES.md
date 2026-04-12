@@ -1,26 +1,27 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 11.04.2026
+**Datum:** 12.04.2026
 
 ## Was wurde gemacht
-- P0-2: "0 Spiele"-Bug in 16 Title-Tags gefixt
-- P0-3: Duplicate Titles bei 5 Motto-Hauptseiten gefixt
-- P0-4: robots.txt + _headers für Dev-Verzeichnisse
-- P1-3: Canonical-Tags für 9 Einladungs-Themenseiten
-- P1-4: Einladungs-Tool Default-Motto neutralisiert + URL-Parameter-Support
-- P2-3: Ergebnis-Vorschauen auf Homepage (Planer + Einladung Mockups)
-- P2-5: manifest.json erstellt, in Homepage + Planer eingebunden
-- P2-6: Encoding-Normalisierung (&mdash;/&ndash; → UTF-8) in 300 Dateien
-- P3-1: .netlifyignore erstellt (Dev-Artefakte aus Deploy ausgeschlossen)
-- P3-2: Amazon Tag war bereits gesetzt (machsleicht21-21, 140 Links)
+- Vollständiges Website-Audit mit Backlog (P0-P4)
+- P0: Title-Bugs, Duplicate Titles, robots.txt/_headers, Encoding — alles gefixt
+- P1: Einladung Canonicals + Default-Motto neutralisiert
+- P2: Ergebnis-Vorschauen, Homepage-Hero-Umbau, manifest.json, .netlifyignore
+- P2-2: 198 Einzelalter-Seiten → Canonical auf Altersgruppen-Seiten (281 → ~83 indexierbar)
+- **Dino 6-8 Jahre Elite-Seite live**: 2.900 Wörter, 3 Varianten (Minimal/Standard/Wow), Spielanleitungen mit Material+Regeln, Einkaufslisten mit 14 Affiliate-Links, FAQ mit Schema
+- **Dino-Forscherpass**: Faltbares A5-Büchlein (Cover, Steckbrief, 3/4/5 Prüfungen, Urkunde), Varianten-Selector
+- **Dino-Quiz**: 15 Fragen Multiple Choice + Antwortblatt
+- Content-Schema für alle 60 Seiten dokumentiert
+- Affiliate-Strategie: Kostüme als Top-Affiliate pro Motto identifiziert (~1,20€ vs ~0,10€ bei Figuren)
 
 ## Nächste Schritte
-1. P1-5: GitHub Token rotieren (Deadline 25.04.)
-2. P2-1: Homepage-Hero auf Kindergeburtstag-Cluster fokussieren
-3. P2-2: Thin Content bei Motto×Altersgruppen-Seiten nachschärfen
-4. Rätsel nach Maß in den Planer integrieren
-5. Rätsel-Worker bauen (Credit-System, Lemon Squeezy Webhook)
+1. GitHub Token rotieren (Deadline 25.04.)
+2. Dino 3-5 Jahre + Dino 9-12 Jahre nach gleichem Schema bauen
+3. Nächstes Motto anpacken (Piraten? Einhorn?)
+4. Rätsel nach Maß + PDF-Partybuch Launch vorbereiten
+5. Druckvorlagen pro Motto (Forscherpass, Quiz, etc.)
 
 ## Offene Fragen
-- Thin Content Strategie: Option A (Einzelalter noindex) oder Option B (datengetrieben nach GSC)?
+- Skalierung: 60 Seiten manuell oder Content-Generator?
+- Welche 5 Mottos als erstes nach Dino?

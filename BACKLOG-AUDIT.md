@@ -520,3 +520,80 @@ Wird in der Wow-Variante der jeweiligen Motto×Altersgruppe-Seite verlinkt.
 **Aufwand:** ~30 Min. pro Motto
 **Voraussetzung:** Content-Seiten fertig, dann die Vorlagen als Ergänzung.
 **Start mit:** Top-5-Mottos (Dino, Piraten, Einhorn, Feuerwehr, Detektiv)
+
+---
+
+## Content-Schema pro Motto × Altersgruppe
+
+Jede der 60 Seiten (20 Mottos × 3 Altersgruppen) braucht:
+
+### Content auf der Seite selbst
+1. **Altersgruppen-Intro** — Was Kinder in diesem Alter ausmacht (3 Versionen, nicht motto-spezifisch, wiederverwendbar)
+2. **3 Party-Varianten** (Minimal / Standard / Wow) — je mit:
+   - Zeitplan mit Uhrzeiten und Begründung pro Slot
+   - Spielanleitungen mit Material, Regeln, Alters-Differenzierung, Indoor/Outdoor-Tag
+   - Essen mit konkreten Mengen (Faktor intern: 3-5=1.0, 6-8=1.3, 9-12=1.8)
+   - Deko mit Preisen
+   - Mitgebsel mit Kosten pro Kind
+   - Gesamtkosten
+3. **Kuchen-Rezept** pro Motto
+4. **Eltern-Tipps** (4 Stück, teilweise wiederverwendbar: Allergien, Plan B, Partyseite, Helfer-Regel)
+5. **FAQ** (4 Fragen mit FAQPage-Schema, teilweise motto-spezifisch)
+6. **CTAs** (nach jeder Variante + nach Kuchen + Footer, mit Einladung/Partyseite-Links)
+7. **WhatsApp-Share** Button
+8. **Altersgruppen-Navigation** (Links zu den anderen 2 Gruppen + Motto-Übersicht)
+
+### Druckvorlagen pro Motto (separate HTML-Seiten)
+| Vorlage | Format | Beschreibung |
+|---|---|---|
+| **Ausweis** | 4 pro A4 | Blanko-Felder: Name, Datum, Lieblingsfigur, Foto, Prüfungs-Checks |
+| **Urkunde** | 2 pro A4 | "Hiermit wird ___ zum offiziellen [Rolle] ernannt" |
+| **Quiz** | 2 Seiten | Seite 1: Fragen (Multiple Choice). Seite 2: Antworten (nur Quizmaster) |
+| **Masken** | 4 pro Datei | SVG-Outlines zum Ausmalen + Ausschneiden, Loch-Markierungen |
+
+### Motto-spezifische Varianten der Vorlagen
+| Motto | Ausweis | Urkunde | Rolle |
+|---|---|---|---|
+| Dino | Forscherausweis | Paläontologen-Diplom | Paläontologe |
+| Piraten | Kapitänspatent | Seeräuber-Urkunde | Piratenkapitän |
+| Detektiv | Detektivausweis | Ermittler-Lizenz | Chefermittler |
+| Einhorn | Regenbogen-Pass | Zauberdiplom | Einhorn-Hüter |
+| Feuerwehr | Dienstausweis | Feuerwehr-Urkunde | Löschmeister |
+| Safari | Ranger-Ausweis | Expeditions-Urkunde | Safari-Ranger |
+| Weltraum | Astronauten-ID | Missions-Zertifikat | Astronaut |
+| Ritter | Ritterschlag-Brief | Schwert-Urkunde | Ritter |
+| Meerjungfrau | Meeres-Pass | Unterwasser-Diplom | Meeres-Hüter |
+| Zirkus | Artisten-Ausweis | Zirkus-Diplom | Zirkusdirektor |
+
+### Wiederverwendbare Bausteine (nicht motto-spezifisch)
+- Altersgruppen-Intro (3 Texte: 3-5, 6-8, 9-12)
+- Eltern-Tipps (Allergien, Plan B, Partyseite-Verweis, Helfer-Regel)
+- Essen-Grundmengen (skaliert nach Altersgruppe)
+- CTA-Blöcke (Planer, Einladung, Partyseite)
+
+### Affiliate-Produkte pro Motto (Schema)
+
+Jedes Motto hat wiederkehrende Affiliate-Kategorien:
+
+| Produkt | Variante | Beispiel Dino | Preis | Provision (~3%) |
+|---|---|---|---|---|
+| Figuren-Set | Alle | Mini-Dinos 12 Stk. | ~3 € | ~0,09 € |
+| Masken/Verkleidung | Standard+Wow | Dino-Maskenbuch | ~6 € | ~0,18 € |
+| Teller & Becher Set | Standard+Wow | Dino-Partygeschirr | ~8 € | ~0,24 € |
+| Stempel | Wow | Dino-Stempel | ~4 € | ~0,12 € |
+| Lupen/Werkzeug | Wow | Lupen-Set 6 Stk. | ~4 € | ~0,12 € |
+| **Kostüm (Erwachsene)** | **Wow-Bonus** | **Aufblasbarer T-Rex** | **~40 €** | **~1,20 €** |
+
+Kostüm ist mit Abstand das margenträchtigste Affiliate-Produkt (~1,20€ pro Klick vs. ~0,10€ bei Figuren). Pro Motto ein passendes Kostüm recherchieren:
+
+| Motto | Kostüm-Idee |
+|---|---|
+| Dino | Aufblasbarer T-Rex |
+| Piraten | Piratenkapitän-Set (Hut+Mantel+Augenklappe) |
+| Feuerwehr | Feuerwehr-Kostüm mit Helm |
+| Detektiv | Trenchcoat + Lupe + Schnurrbart |
+| Einhorn | Einhorn-Onesie |
+| Weltraum | Astronauten-Anzug aufblasbar |
+| Safari | Safari-Weste + Tropenhelm |
+| Ritter | Ritter-Rüstung aufblasbar |
+| Superheld | Superman/Spider-Man Kostüm |
