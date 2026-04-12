@@ -463,3 +463,17 @@ Der Affiliate-Disclaimer steht im Footer jeder Seite, aber es gibt keinen aktive
 | P3-1 | Repo aufräumen | 10–30 Min | Build-Hygiene |
 | P3-2 | Amazon Tag setzen | 30 Min | Erste Einnahmen |
 | P3-3 | Social Proof | variabel | Langfristig Conversion |
+
+---
+
+### P2-7: Einladungs-Hub mit ?motto=X-Links ausstatten
+
+**Problem im Detail:**
+Der URL-Parameter `?motto=X` auf `/einladung/erstellen` funktioniert (wählt Motto automatisch vor), wird aber nirgends verlinkt. Die Einladungs-Themenseiten (`/einladung/dino`, etc.) sind Fullscreen-React-Apps mit `overflow:hidden` — ein Floating-CTA überlappt dort immer Content. Der Einladungs-Hub (`/einladung/index.html`) ist ebenfalls eine React-App und verlinkt aktuell nicht auf `/einladung/erstellen`.
+
+Zusätzlich: Der Hub-Title zeigt "Piraten-Einladung erstellen" statt einen neutralen Titel.
+
+**Lösung:**
+Beim nächsten Umbau des Einladungs-Hubs die Motto-Karten mit Links auf `/einladung/erstellen?motto=X` versehen. Hub-Title neutralisieren.
+
+**Aufwand:** 30–60 Min (React-Code im Hub)
