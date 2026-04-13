@@ -1025,12 +1025,13 @@ function App() {
         {/* Einladung */}
         <EinladungBlock motto={motto} guests={guests} previewName={previewName} setPreviewName={setPreviewName} inviteSent={inviteSent} setInviteSent={setInviteSent} />
 
-        {/* WhatsApp-Partyseite CTA — aktivieren wenn Worker deployed */}
-        <section className="fu" style={{ marginBottom: 24, borderRadius: 20, border: "2px dashed var(--l)", background: "var(--bg)", padding: "18px 16px", textAlign: "center" }}>
+        {/* WhatsApp-Partyseite CTA */}
+        <section className="fu" style={{ marginBottom: 24, borderRadius: 20, border: "2px solid #25D36630", background: "linear-gradient(135deg, #f0fdf4 0%, #fff 100%)", padding: "18px 16px", textAlign: "center" }}>
           <div style={{ fontSize: 28, marginBottom: 4 }}>📱</div>
           <h3 style={{ fontFamily: "var(--fd)", fontSize: 16, marginBottom: 4, color: "var(--m)" }}>WhatsApp-Partyseite</h3>
-          <p style={{ fontSize: 13, color: "var(--m)", marginBottom: 8, lineHeight: 1.4 }}>Alle Infos auf einer Seite — Zusagen, Adresse, Abholzeit. Link verschicken, fertig.</p>
-          <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "10px 20px", background: "var(--l)", color: "var(--m)", borderRadius: 16, fontSize: 13, fontWeight: 600, fontFamily: "var(--f)" }}>Bald verfügbar</span>
+          <p style={{ fontSize: 13, color: "var(--m)", marginBottom: 10, lineHeight: 1.4 }}>Alle Infos auf einer Seite — Zusagen, Wunschliste, Abholzeit. Link verschicken, fertig.</p>
+          <a href={`https://party.machsleicht.de?${new URLSearchParams({...(childName?{childName}:{}), ...(age?{age}:{}), ...(motto?.name?{motto:motto.name}:{}), ...(motto?.emoji?{mottoEmoji:motto.emoji}:{})}).toString()}`} target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "12px 24px", background: "#25D366", color: "#fff", borderRadius: 16, fontSize: 14, fontWeight: 700, fontFamily: "var(--f)", textDecoration: "none", boxShadow: "0 2px 8px #25D36640" }}>📱 Jetzt Partyseite erstellen →</a>
+          <p style={{ fontSize: 11, color: "var(--m)", marginTop: 8, opacity: 0.7 }}>Kostenlos · Daten werden vorausgefüllt</p>
         </section>
 
         <SchnitzeljagdBlock age={age} ag={ag} mottoId={mottoId} szActive={szActive} setSzActive={setSzActive} szThemeId={szThemeId} setSzThemeId={setSzThemeId} szTheme={szTheme} childName={childName} setChildName={setChildName} mapPositions={mapPositions} setMapPositions={setMapPositions} stationLocations={stationLocations} setStationLocations={setStationLocations} dekoEmojis={dekoEmojis} setDekoEmojis={setDekoEmojis} />

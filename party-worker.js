@@ -365,8 +365,8 @@ function creatorPage() {
   </div>
 
   <div class="card fade-up hidden" id="step3">
-    <h2 style="font-size:16px;margin-bottom:4px">3. Wunschliste (optional)</h2>
-    <p style="font-size:13px;color:var(--m);margin-bottom:14px">G\u00E4ste sehen die Liste und k\u00F6nnen Geschenke reservieren.</p>
+    <h2 style="font-size:16px;margin-bottom:4px">3. Wunschliste</h2>
+    <p style="font-size:13px;color:var(--m);margin-bottom:14px">Verhindert Doppelgeschenke \u2014 G\u00E4ste reservieren direkt.</p>
     <div id="wishList"></div>
     <div style="display:flex;gap:8px;margin-bottom:14px">
       <button class="btn btn-outline btn-sm" onclick="addWish()" style="flex:1">+ Wunsch hinzuf\u00FCgen</button>
@@ -476,7 +476,7 @@ async function createParty(){
     window.scrollTo({top:0,behavior:"smooth"});
   }catch(e){alert("Fehler: "+e.message);btn.textContent="\u{1F389} Erstellen";btn.disabled=false;}
 }
-function shareGuest(){const d=window._pd;const t=(d.motto?d.childName+"s "+d.motto:d.childName+"s Geburtstag")+"! \u{1F389}\\n\\nAlle Infos & Zusage hier:\\n"+d.url;window.open("https://wa.me/?text="+encodeURIComponent(t));}
+function shareGuest(){const d=window._pd;const hasW=wishes.some(w=>w.title.trim());const t=(d.motto?d.childName+"s "+d.motto:d.childName+"s Geburtstag")+"! \u{1F389}\\n\\n"+(hasW?"Hier sind alle Infos inkl. Wunschliste, damit wir Doppelgeschenke vermeiden:":"Alle Infos & Zusage hier:")+"\\n"+d.url;window.open("https://wa.me/?text="+encodeURIComponent(t));}
 function copyEdit(){navigator.clipboard.writeText(window._pd.editUrl).then(()=>{const b=event.target;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Kopieren",2000);});}
 const MC={"piraten":"#8B4513","einhorn":"#E040A0","dino":"#4CAF50","feuerwehr":"#D32F2F","weltraum":"#1565C0","meerjungfrau":"#00ACC1","prinzessin":"#E91E63","safari":"#F57F17","detektiv":"#37474F","superheld":"#D32F2F","zirkus":"#FF6F00","baustelle":"#F57F17","frozen":"#4FC3F7","minecraft":"#4CAF50","ninjago":"#D32F2F","paw patrol":"#1976D2","pokemon":"#FFC107","spider-man":"#D32F2F","super mario":"#D32F2F","halloween":"#E65100"};
 function autoColor(m){if(!m)return"#D4812A";m=m.toLowerCase();for(const[k,c]of Object.entries(MC)){if(m.includes(k))return c;}return"#D4812A";}
@@ -533,6 +533,7 @@ function guestView(party, color, dateStr, name, age, motto, emoji) {
       <div style="font-size:56px;margin-bottom:8px">${emoji}</div>
       <h1 style="font-size:26px;color:${color};margin-bottom:2px">${name?name+" wird "+age+"!":"Kindergeburtstag!"}</h1>
       ${motto?`<p style="font-size:16px;color:var(--m);font-weight:500">${motto}</p>`:""}
+      <p style="font-size:13px;color:var(--m);margin-top:8px;opacity:0.8">Alle Infos auf einen Blick \u2014 ${hasWishes?"zusagen, Geschenk reservieren, fertig.":"zusagen, fertig."}</p>
     </div>
 
     <div class="card fade-up">
