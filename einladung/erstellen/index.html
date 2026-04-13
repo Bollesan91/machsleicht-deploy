@@ -206,6 +206,10 @@
           <input type="range" id="zoomSlider" min="100" max="500" value="100" oninput="_setZoom(this.value)" style="flex:1;-webkit-appearance:none;height:3px;background:rgba(255,255,255,.15);border-radius:2px;outline:none">
           <span style="font-size:12px;opacity:.4">+</span>
         </div>
+        <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:8px">
+          <canvas id="exportPreview" width="80" height="80" style="width:40px;height:40px;border-radius:50%;border:2px solid rgba(255,215,0,.3)"></canvas>
+          <span style="font-size:10px;color:rgba(255,255,255,.25)">← So sieht's im Spiel aus</span>
+        </div>
         <div style="display:flex;gap:8px;justify-content:center">
           <button type="button" onclick="document.getElementById('fotoInput').click()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);font-size:12px;padding:6px 12px;border-radius:8px;cursor:pointer">📷 Ändern</button>
           <button type="button" onclick="removeFoto()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);font-size:12px;padding:6px 12px;border-radius:8px;cursor:pointer">✕ Entfernen</button>
@@ -311,14 +315,21 @@ function _setZoom(val) {
 
 function _exportCrop() {
   if (!_srcCanvas) { fotoBase64 = null; return; }
-  const c = document.createElement('canvas');
-  c.width = 64; c.height = 64;
-  const ctx = c.getContext('2d');
-  const sx = -_cropX / _cropScale;
-  const sy = -_cropY / _cropScale;
-  const sw = CROP_SZ / _cropScale;
-  ctx.drawImage(_srcCanvas, sx, sy, sw, sw, 0, 0, 64, 64);
-  fotoBase64 = c.toDataURL('image/jpeg', 0.3).split(',')[1];
+  var OUT = 80;
+  var c = document.createElement('canvas');
+  c.width = OUT; c.height = OUT;
+  var ctx = c.getContext('2d');
+  var sx = -_cropX / _cropScale;
+  var sy = -_cropY / _cropScale;
+  var sw = CROP_SZ / _cropScale;
+  ctx.drawImage(_srcCanvas, sx, sy, sw, sw, 0, 0, OUT, OUT);
+  fotoBase64 = c.toDataURL('image/jpeg', 0.4).split(',')[1];
+
+  // Live-Preview aktualisieren
+  var pv = document.getElementById('exportPreview');
+  var pvCtx = pv.getContext('2d');
+  pvCtx.clearRect(0, 0, OUT, OUT);
+  pvCtx.drawImage(c, 0, 0);
 }
 
 function removeFoto() {
@@ -342,9 +353,9 @@ function removeFoto() {
     _cropX += e.clientX - _lastPX;
     _cropY += e.clientY - _lastPY;
     _lastPX = e.clientX; _lastPY = e.clientY;
-    _clampCrop(); _updateCrop();
+    _clampCrop(); _updateCrop(); _exportCrop();
   });
-  el.addEventListener('pointerup', function() { _dragging = false; _exportCrop(); });
+  el.addEventListener('pointerup', function() { _dragging = false; });
   el.addEventListener('pointercancel', function() { _dragging = false; _exportCrop(); });
 })();
 
