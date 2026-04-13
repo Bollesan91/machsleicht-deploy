@@ -15,11 +15,8 @@ export default async (req) => {
     const safeMotto = VALID_MOTTOS.includes(motto) ? motto : "piraten";
 
     // Daten als Base64 in die URL kodieren (kein Storage noetig)
+    // Foto wird NICHT im Slug gespeichert (zu lang fuer Netlify-Routing)
     const payload = { name, date, time, ort, tel, motto: safeMotto };
-    // Foto-Thumbnail (base64 JPEG, max ~1KB) optional mitgeben
-    if (foto && typeof foto === "string" && foto.length < 4000) {
-      payload.foto = foto;
-    }
     const data = JSON.stringify(payload);
     const encoded = Buffer.from(data).toString("base64url");
 
@@ -29,7 +26,13 @@ export default async (req) => {
       .replace(/[^a-z0-9]/g, "");
     const slug = clean + "-" + encoded;
 
-    return new Response(JSON.stringify({ slug, url: "/e/" + slug }), {
+    // Foto als separaten Wert zurueckgeben (Client haengt es als ?foto= an)
+    const result = { slug, url: "/e/" + slug };
+    if (foto && typeof foto === "string" && foto.length < 4000) {
+      result.fotoParam = foto;
+    }
+
+    return new Response(JSON.stringify(result), {
       status: 200,
       headers: { "Content-Type": "application/json" }
     });

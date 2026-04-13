@@ -135,25 +135,6 @@
   .foto-zone .fz-icon { font-size: 28px; margin-bottom: 4px; }
   .foto-zone p { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.5); margin: 0; }
   .foto-zone small { font-size: 11px; color: rgba(255,255,255,.25); }
-  .foto-preview {
-    display: none; align-items: center; gap: 12px;
-    margin-bottom: 16px; padding: 10px 14px;
-    background: rgba(255,255,255,.05); border-radius: 12px;
-    border: 1px solid rgba(255,255,255,.08);
-  }
-  .foto-preview.show { display: flex; }
-  .foto-preview img {
-    width: 52px; height: 52px; border-radius: 50%;
-    object-fit: cover; border: 2px solid rgba(255,215,0,.4);
-  }
-  .foto-preview .fp-info { flex: 1; }
-  .foto-preview .fp-info span { font-size: 13px; color: rgba(255,255,255,.6); font-weight: 600; }
-  .foto-preview .fp-info small { display: block; font-size: 11px; color: rgba(255,255,255,.3); }
-  .foto-preview button {
-    background: rgba(255,255,255,.1); border: none; color: rgba(255,255,255,.5);
-    font-size: 11px; padding: 5px 10px; border-radius: 8px; cursor: pointer;
-  }
-
   .footer { text-align: center; margin-top: 20px; }
   .footer a { color: rgba(255,255,255,.2); font-size: 10px; text-decoration: none; }
   .toast {
@@ -215,13 +196,15 @@
         <small>Wird im Spiel als Überraschung enthüllt!</small>
       </div>
       <input type="file" id="fotoInput" accept="image/*" style="display:none" onchange="handleFoto(this)">
-      <div class="foto-preview" id="fotoPreview">
-        <img id="fotoThumb" src="">
-        <div class="fp-info">
-          <span>Foto ausgewählt ✓</span>
-          <small>Wird im Spiel als Überraschung gezeigt</small>
+      <div id="cropUI" style="display:none;text-align:center">
+        <div id="cropCircle" style="position:relative;width:120px;height:120px;border-radius:50%;overflow:hidden;margin:0 auto;border:3px solid rgba(255,215,0,.5);background:#111;touch-action:none;cursor:grab;box-shadow:0 4px 20px rgba(0,0,0,.5)">
+          <img id="cropImg" style="position:absolute;transform-origin:0 0;pointer-events:none;user-select:none;-webkit-user-drag:none" draggable="false">
         </div>
-        <button type="button" onclick="removeFoto()">✕</button>
+        <p style="font-size:11px;color:rgba(255,255,255,.3);margin:6px 0 4px">Verschieben zum Ausrichten</p>
+        <div style="display:flex;gap:8px;justify-content:center">
+          <button type="button" onclick="document.getElementById('fotoInput').click()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);font-size:12px;padding:6px 12px;border-radius:8px;cursor:pointer">📷 Ändern</button>
+          <button type="button" onclick="removeFoto()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);font-size:12px;padding:6px 12px;border-radius:8px;cursor:pointer">✕ Entfernen</button>
+        </div>
       </div>
     </div>
     <div class="field">
@@ -249,6 +232,10 @@
 let generatedUrl = '';
 let selectedMotto = null;
 let fotoBase64 = null;
+let _fotoImg = null;
+let _cropX = 0, _cropY = 0, _cropScale = 1;
+let _dragging = false, _lastPX = 0, _lastPY = 0;
+const CROP_SZ = 120;
 
 // === FOTO HANDLING ===
 function handleFoto(input) {
@@ -258,34 +245,76 @@ function handleFoto(input) {
   reader.onload = function(e) {
     const img = new Image();
     img.onload = function() {
-      // Center-crop to square, resize to 64x64, compress
-      const size = Math.min(img.width, img.height);
-      const sx = (img.width - size) / 2;
-      const sy = (img.height - size) / 2;
-      const c = document.createElement('canvas');
-      c.width = 64; c.height = 64;
-      const ctx = c.getContext('2d');
-      ctx.drawImage(img, sx, sy, size, size, 0, 0, 64, 64);
-      // Get base64 JPEG (no data:... prefix)
-      const dataUrl = c.toDataURL('image/jpeg', 0.25);
-      fotoBase64 = dataUrl.split(',')[1];
+      _fotoImg = img;
+      _cropScale = Math.max(CROP_SZ / img.width, CROP_SZ / img.height);
+      _cropX = (CROP_SZ - img.width * _cropScale) / 2;
+      _cropY = (CROP_SZ - img.height * _cropScale) / 2;
 
-      // Show preview
-      document.getElementById('fotoThumb').src = dataUrl;
+      const ci = document.getElementById('cropImg');
+      ci.src = e.target.result;
+      ci.style.width = img.width + 'px';
+      ci.style.height = img.height + 'px';
+      _updateCrop();
+
       document.getElementById('fotoZone').style.display = 'none';
-      document.getElementById('fotoPreview').classList.add('show');
+      document.getElementById('cropUI').style.display = '';
+      _exportCrop();
     };
     img.src = e.target.result;
   };
   reader.readAsDataURL(file);
 }
 
+function _updateCrop() {
+  document.getElementById('cropImg').style.transform =
+    'translate(' + _cropX + 'px,' + _cropY + 'px) scale(' + _cropScale + ')';
+}
+
+function _clampCrop() {
+  if (!_fotoImg) return;
+  const w = _fotoImg.width * _cropScale, h = _fotoImg.height * _cropScale;
+  _cropX = Math.min(0, Math.max(CROP_SZ - w, _cropX));
+  _cropY = Math.min(0, Math.max(CROP_SZ - h, _cropY));
+}
+
+function _exportCrop() {
+  if (!_fotoImg) { fotoBase64 = null; return; }
+  const c = document.createElement('canvas');
+  c.width = 64; c.height = 64;
+  const ctx = c.getContext('2d');
+  const sx = -_cropX / _cropScale;
+  const sy = -_cropY / _cropScale;
+  const sw = CROP_SZ / _cropScale;
+  ctx.drawImage(_fotoImg, sx, sy, sw, sw, 0, 0, 64, 64);
+  fotoBase64 = c.toDataURL('image/jpeg', 0.3).split(',')[1];
+}
+
 function removeFoto() {
   fotoBase64 = null;
+  _fotoImg = null;
   document.getElementById('fotoInput').value = '';
   document.getElementById('fotoZone').style.display = '';
-  document.getElementById('fotoPreview').classList.remove('show');
+  document.getElementById('cropUI').style.display = 'none';
 }
+
+// Drag
+(function() {
+  const el = document.getElementById('cropCircle');
+  el.addEventListener('pointerdown', function(e) {
+    if (!_fotoImg) return;
+    _dragging = true; _lastPX = e.clientX; _lastPY = e.clientY;
+    el.setPointerCapture(e.pointerId);
+  });
+  el.addEventListener('pointermove', function(e) {
+    if (!_dragging) return;
+    _cropX += e.clientX - _lastPX;
+    _cropY += e.clientY - _lastPY;
+    _lastPX = e.clientX; _lastPY = e.clientY;
+    _clampCrop(); _updateCrop();
+  });
+  el.addEventListener('pointerup', function() { _dragging = false; _exportCrop(); });
+  el.addEventListener('pointercancel', function() { _dragging = false; _exportCrop(); });
+})();
 
 const MOTTO_CONFIG = {
   piraten:      { emoji: '\u{1F3F4}\u200D\u2620\uFE0F', label: 'Piraten',      color: '#FFD700' },
@@ -359,6 +388,10 @@ async function handleSubmit(e) {
     if (!res.ok) throw new Error(result.error || 'Fehler');
 
     generatedUrl = window.location.origin + '/e/' + result.slug;
+    // Foto als separaten Query-Param anhängen (nicht im Slug)
+    if (result.fotoParam) {
+      generatedUrl += '?foto=' + encodeURIComponent(result.fotoParam);
+    }
     document.getElementById('resultLink').textContent = generatedUrl;
     document.getElementById('result').classList.add('show');
     document.getElementById('form').style.display = 'none';

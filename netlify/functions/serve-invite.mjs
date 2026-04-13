@@ -29,9 +29,10 @@ export default async (req) => {
       tel: data.tel
     });
 
-    // Foto-Thumbnail durchreichen (base64 JPEG)
-    if (data.foto) {
-      params.set("foto", data.foto);
+    // Foto-Thumbnail kommt als Query-Param, nicht im Slug
+    const fotoParam = url.searchParams.get("foto");
+    if (fotoParam) {
+      params.set("foto", fotoParam);
     }
 
     // Motto-basierter Redirect (piraten = /einladung/, rest = /einladung/{motto}/)
