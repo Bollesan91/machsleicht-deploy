@@ -15,6 +15,7 @@
 - Alle 3 Dino-Seiten auf identischem Template-Level (Parität-Check bestanden)
 
 ## Nächste Schritte
+0. **Einladung Foto-Feature:** Crop-Komponente bauen + pro Motto integrieren (Dino: Ei-Schlüpf, Piraten: Bullauge, Einhorn: Regenbogen etc.)
 1. **Piraten 3-5 + Piraten 9-12** nach Template bauen
 2. **Party Worker in Cloudflare re-deployen** (5 Fixes warten!)
 3. **GitHub Token rotieren** (Deadline 25.04.! — 12 Tage!)
