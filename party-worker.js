@@ -340,6 +340,7 @@ function creatorPage() {
     <div class="field"><label>Foto (optional, max 500KB)</label>
       <input type="file" id="photoInput" accept="image/*" style="font-size:13px">
       <img id="photoPreview" class="hidden" style="width:100%;max-height:200px;object-fit:cover;border-radius:12px;margin-top:8px">
+      <button id="photoRemove" class="hidden" onclick="photoData=null;document.getElementById('photoInput').value='';document.getElementById('photoPreview').classList.add('hidden');this.classList.add('hidden')" style="background:none;border:1px solid var(--l);border-radius:8px;padding:6px 12px;font-size:12px;color:var(--m);cursor:pointer;margin-top:6px">\u00D7 Foto entfernen</button>
     </div>
     <button class="btn" onclick="goStep(2)">Weiter \u2192</button>
   </div>
@@ -412,8 +413,8 @@ function creatorPage() {
 const API=location.origin+"/api";
 let photoData=null,wishes=[];
 function goStep(n){
-  if(n===3){const t=document.getElementById("time").value,et=document.getElementById("endTime").value;if(t&&et&&et<=t){alert("Ende-Uhrzeit muss nach der Startzeit liegen");return;}}
-  [1,2,3].forEach(i=>document.getElementById("step"+i).classList.toggle("hidden",i!==n));window.scrollTo({top:0,behavior:"smooth"});
+  if(n===3){var t=document.getElementById("time").value,et=document.getElementById("endTime").value;if(t&&et&&et<=t){alert("Ende-Uhrzeit muss nach der Startzeit liegen");return;}}
+  var steps=[1,2,3];steps.forEach(function(i){document.getElementById("step"+i).classList.toggle("hidden",i!==n);});window.scrollTo({top:0,behavior:"smooth"});
 }
 document.getElementById("photoInput").addEventListener("change",function(e){
   const file=e.target.files[0];if(!file)return;
@@ -425,6 +426,7 @@ document.getElementById("photoInput").addEventListener("change",function(e){
       canvas.width=w;canvas.height=h;canvas.getContext("2d").drawImage(img,0,0,w,h);
       photoData=canvas.toDataURL("image/jpeg",0.7);
       const prev=document.getElementById("photoPreview");prev.src=photoData;prev.classList.remove("hidden");
+      document.getElementById("photoRemove").classList.remove("hidden");
     };img.src=ev.target.result;
   };reader.readAsDataURL(file);
 });
