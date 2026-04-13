@@ -235,6 +235,7 @@
 
 <script>
 let generatedUrl = '';
+let generatedFotoUrl = '';
 let selectedMotto = null;
 let fotoBase64 = null;
 let _srcCanvas = null;
@@ -417,6 +418,10 @@ async function handleSubmit(e) {
     if (!res.ok) throw new Error(result.error || 'Fehler');
 
     generatedUrl = window.location.origin + '/e/' + result.slug;
+    // Foto-Link separat (zu lang für WhatsApp-Share)
+    if (result.foto) {
+      generatedFotoUrl = generatedUrl + '?f=' + encodeURIComponent(result.foto);
+    }
     document.getElementById('resultLink').textContent = generatedUrl;
     document.getElementById('result').classList.add('show');
     document.getElementById('form').style.display = 'none';
@@ -446,7 +451,7 @@ function shareWA() {
 }
 
 function openPreview() {
-  window.open(generatedUrl, '_blank');
+  window.open(generatedFotoUrl || generatedUrl, '_blank');
 }
 </script>
 </body>

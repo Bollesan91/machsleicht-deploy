@@ -1,5 +1,3 @@
-import { getStore } from "@netlify/blobs";
-
 export default async (req) => {
   if (req.method !== "POST") {
     return new Response(JSON.stringify({ error: "POST only" }), { status: 405, headers: { "Content-Type": "application/json" } });
@@ -15,26 +13,23 @@ export default async (req) => {
     const VALID_MOTTOS = ["piraten", "dino", "safari", "weltraum", "detektiv", "superheld", "prinzessin", "einhorn", "meerjungfrau", "feuerwehr"];
     const safeMotto = VALID_MOTTOS.includes(motto) ? motto : "piraten";
 
-    // Kurze ID generieren (8 Zeichen)
-    const id = Array.from(crypto.getRandomValues(new Uint8Array(6)))
-      .map(b => b.toString(36).padStart(2, '0').slice(-1))
-      .join('') + Math.random().toString(36).slice(2, 4);
+    // Kompakte Keys fuer kurze URLs
+    const payload = { n: name, d: date, t: time, o: ort, p: tel, m: safeMotto };
+    const data = JSON.stringify(payload);
+    const encoded = Buffer.from(data).toString("base64url");
 
-    // Name fuer lesbaren Slug
     const clean = name.toLowerCase()
       .replace(/[äÄ]/g, "ae").replace(/[öÖ]/g, "oe").replace(/[üÜ]/g, "ue").replace(/[ß]/g, "ss")
       .replace(/[^a-z0-9]/g, "");
-    const slug = clean + "-" + id;
+    const slug = clean + "-" + encoded;
 
-    // Daten in Netlify Blobs speichern
-    const store = getStore("invites");
-    const payload = { name, date, time, ort, tel, motto: safeMotto };
+    // Foto separat zurueckgeben (Client haengt es als ?f= an)
+    const result = { slug, url: "/e/" + slug };
     if (foto && typeof foto === "string" && foto.length < 6000) {
-      payload.foto = foto;
+      result.foto = foto;
     }
-    await store.set(slug, JSON.stringify(payload));
 
-    return new Response(JSON.stringify({ slug, url: "/e/" + slug }), {
+    return new Response(JSON.stringify(result), {
       status: 200,
       headers: { "Content-Type": "application/json" }
     });
