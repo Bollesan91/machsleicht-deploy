@@ -206,10 +206,6 @@
           <input type="range" id="zoomSlider" min="100" max="500" value="100" oninput="_setZoom(this.value)" style="flex:1;-webkit-appearance:none;height:3px;background:rgba(255,255,255,.15);border-radius:2px;outline:none">
           <span style="font-size:12px;opacity:.4">+</span>
         </div>
-        <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:8px">
-          <canvas id="exportPreview" width="80" height="80" style="width:40px;height:40px;border-radius:50%;border:2px solid rgba(255,215,0,.3)"></canvas>
-          <span style="font-size:10px;color:rgba(255,255,255,.25)">← So sieht's im Spiel aus</span>
-        </div>
         <div style="display:flex;gap:8px;justify-content:center">
           <button type="button" onclick="document.getElementById('fotoInput').click()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);font-size:12px;padding:6px 12px;border-radius:8px;cursor:pointer">📷 Ändern</button>
           <button type="button" onclick="removeFoto()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);font-size:12px;padding:6px 12px;border-radius:8px;cursor:pointer">✕ Entfernen</button>
@@ -303,10 +299,6 @@ function _redraw() {
   out.width = OUT; out.height = OUT;
   out.getContext('2d').drawImage(cc, 0, 0, CROP_SZ, CROP_SZ, 0, 0, OUT, OUT);
   fotoBase64 = out.toDataURL('image/jpeg', 0.4).split(',')[1];
-
-  // Preview
-  var pv = document.getElementById('exportPreview');
-  pv.getContext('2d').drawImage(out, 0, 0);
 }
 
 function _clampCrop() {
