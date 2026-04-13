@@ -417,10 +417,6 @@ async function handleSubmit(e) {
     if (!res.ok) throw new Error(result.error || 'Fehler');
 
     generatedUrl = window.location.origin + '/e/' + result.slug;
-    // Foto als separaten Query-Param anhängen (nicht im Slug)
-    if (result.fotoParam) {
-      generatedUrl += '?foto=' + encodeURIComponent(result.fotoParam);
-    }
     document.getElementById('resultLink').textContent = generatedUrl;
     document.getElementById('result').classList.add('show');
     document.getElementById('form').style.display = 'none';

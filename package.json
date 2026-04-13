@@ -2,5 +2,8 @@
   "devDependencies": {
     "esbuild": "^0.28.0",
     "prettier": "^3.8.1"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^10.7.4"
   }
 }
