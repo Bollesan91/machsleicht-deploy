@@ -315,21 +315,26 @@ function _setZoom(val) {
 
 function _exportCrop() {
   if (!_srcCanvas) { fotoBase64 = null; return; }
-  var OUT = 80;
-  var c = document.createElement('canvas');
-  c.width = OUT; c.height = OUT;
-  var ctx = c.getContext('2d');
-  var sx = -_cropX / _cropScale;
-  var sy = -_cropY / _cropScale;
-  var sw = CROP_SZ / _cropScale;
-  ctx.drawImage(_srcCanvas, sx, sy, sw, sw, 0, 0, OUT, OUT);
-  fotoBase64 = c.toDataURL('image/jpeg', 0.4).split(',')[1];
+  // 1:1 nachbauen was CSS zeigt: translate + scale
+  var tmp = document.createElement('canvas');
+  tmp.width = CROP_SZ; tmp.height = CROP_SZ;
+  var ctx = tmp.getContext('2d');
+  ctx.save();
+  ctx.translate(_cropX, _cropY);
+  ctx.scale(_cropScale, _cropScale);
+  ctx.drawImage(_srcCanvas, 0, 0);
+  ctx.restore();
 
-  // Live-Preview aktualisieren
+  // Auf 80x80 runterskalieren
+  var OUT = 80;
+  var out = document.createElement('canvas');
+  out.width = OUT; out.height = OUT;
+  out.getContext('2d').drawImage(tmp, 0, 0, CROP_SZ, CROP_SZ, 0, 0, OUT, OUT);
+  fotoBase64 = out.toDataURL('image/jpeg', 0.4).split(',')[1];
+
+  // Live-Preview
   var pv = document.getElementById('exportPreview');
-  var pvCtx = pv.getContext('2d');
-  pvCtx.clearRect(0, 0, OUT, OUT);
-  pvCtx.drawImage(c, 0, 0);
+  pv.getContext('2d').drawImage(out, 0, 0);
 }
 
 function removeFoto() {
