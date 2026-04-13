@@ -88,7 +88,7 @@ function Confetti({ active }) {
 }
 
 // === CONTROL HUB (Fixed Bottom Bar) ===
-function ControlHub({ mottoId, szActive, setSzActive, setSzThemeId }) {
+function ControlHub({ mottoId, szActive, setSzActive, setSzThemeId, childName, age, motto }) {
   return (
     <div className="no-print" style={{
       position: "fixed", bottom: 0, left: "50%", transform: "translateX(-50%)",
@@ -105,10 +105,10 @@ function ControlHub({ mottoId, szActive, setSzActive, setSzThemeId }) {
         background: szActive ? "var(--al)" : "var(--bg)", color: szActive ? "var(--a)" : "var(--d)",
         border: `1px solid ${szActive ? "var(--a)" : "var(--l)"}`, fontWeight: 700, fontSize: 12, textAlign: "center", cursor: "pointer", fontFamily: "var(--f)",
       }}>{szActive ? "✅ Schnitzeljagd" : "🗺️ Schnitzeljagd"}</button>
-      <button onClick={() => document.querySelector('[data-action="pdf"]')?.scrollIntoView({ behavior: "smooth" })} style={{
-        flex: 1, padding: 10, borderRadius: 10, background: "var(--bg)", color: "var(--d)",
-        border: "1px solid var(--l)", fontWeight: 700, fontSize: 12, textAlign: "center", cursor: "pointer", fontFamily: "var(--f)",
-      }}>📄 PDF</button>
+      <a href={`https://party.machsleicht.de?${new URLSearchParams({...(childName?{childName}:{}), ...(age?{age}:{}), ...(motto?.name?{motto:motto.name}:{}), ...(motto?.emoji?{mottoEmoji:motto.emoji}:{})}).toString()}`} target="_blank" rel="noopener" style={{
+        flex: 1, padding: 10, borderRadius: 10, background: "#25D366", color: "#fff",
+        border: "none", fontWeight: 700, fontSize: 12, textAlign: "center", textDecoration: "none", fontFamily: "var(--f)",
+      }}>📱 Partyseite</a>
     </div>
   );
 }
@@ -1161,7 +1161,7 @@ function App() {
           </p>
         </footer>
 
-        <ControlHub mottoId={mottoId} szActive={szActive} setSzActive={setSzActive} setSzThemeId={setSzThemeId} />
+        <ControlHub mottoId={mottoId} szActive={szActive} setSzActive={setSzActive} setSzThemeId={setSzThemeId} childName={childName} age={age} motto={motto} />
       </div>
     );
   }
