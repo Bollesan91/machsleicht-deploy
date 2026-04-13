@@ -200,7 +200,12 @@
         <div id="cropCircle" style="position:relative;width:120px;height:120px;border-radius:50%;overflow:hidden;margin:0 auto;border:3px solid rgba(255,215,0,.5);background:#111;touch-action:none;cursor:grab;box-shadow:0 4px 20px rgba(0,0,0,.5)">
           <img id="cropImg" style="position:absolute;transform-origin:0 0;pointer-events:none;user-select:none;-webkit-user-drag:none" draggable="false">
         </div>
-        <p style="font-size:11px;color:rgba(255,255,255,.3);margin:6px 0 4px">Verschieben zum Ausrichten</p>
+        <p style="font-size:11px;color:rgba(255,255,255,.3);margin:6px 0 4px">Verschieben & zoomen</p>
+        <div style="display:flex;align-items:center;gap:6px;padding:0 10px;margin-bottom:6px">
+          <span style="font-size:12px;opacity:.4">−</span>
+          <input type="range" id="zoomSlider" min="100" max="300" value="100" oninput="_setZoom(this.value)" style="flex:1;-webkit-appearance:none;height:3px;background:rgba(255,255,255,.15);border-radius:2px;outline:none">
+          <span style="font-size:12px;opacity:.4">+</span>
+        </div>
         <div style="display:flex;gap:8px;justify-content:center">
           <button type="button" onclick="document.getElementById('fotoInput').click()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);font-size:12px;padding:6px 12px;border-radius:8px;cursor:pointer">📷 Ändern</button>
           <button type="button" onclick="removeFoto()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);font-size:12px;padding:6px 12px;border-radius:8px;cursor:pointer">✕ Entfernen</button>
@@ -232,8 +237,8 @@
 let generatedUrl = '';
 let selectedMotto = null;
 let fotoBase64 = null;
-let _fotoImg = null;
-let _cropX = 0, _cropY = 0, _cropScale = 1;
+let _srcCanvas = null;
+let _cropX = 0, _cropY = 0, _cropScale = 1, _minScale = 1;
 let _dragging = false, _lastPX = 0, _lastPY = 0;
 const CROP_SZ = 120;
 
@@ -245,16 +250,33 @@ function handleFoto(input) {
   reader.onload = function(e) {
     const img = new Image();
     img.onload = function() {
-      _fotoImg = img;
-      _cropScale = Math.max(CROP_SZ / img.width, CROP_SZ / img.height);
-      _cropX = (CROP_SZ - img.width * _cropScale) / 2;
-      _cropY = (CROP_SZ - img.height * _cropScale) / 2;
+      // Vorskalieren auf max 500px (Handy-Fotos sind 4000px+)
+      const MAX = 500;
+      let sw = img.width, sh = img.height;
+      if (sw > MAX || sh > MAX) {
+        const r = Math.min(MAX / sw, MAX / sh);
+        sw = Math.round(sw * r); sh = Math.round(sh * r);
+      }
+      const pre = document.createElement('canvas');
+      pre.width = sw; pre.height = sh;
+      pre.getContext('2d').drawImage(img, 0, 0, sw, sh);
+      _srcCanvas = pre;
+
+      _minScale = Math.max(CROP_SZ / sw, CROP_SZ / sh);
+      _cropScale = _minScale;
+      _cropX = (CROP_SZ - sw * _cropScale) / 2;
+      _cropY = (CROP_SZ - sh * _cropScale) / 2;
 
       const ci = document.getElementById('cropImg');
-      ci.src = e.target.result;
-      ci.style.width = img.width + 'px';
-      ci.style.height = img.height + 'px';
+      ci.src = pre.toDataURL('image/jpeg', 0.8);
+      ci.style.width = sw + 'px';
+      ci.style.height = sh + 'px';
       _updateCrop();
+
+      const slider = document.getElementById('zoomSlider');
+      slider.min = Math.round(_minScale * 100);
+      slider.max = Math.round(_minScale * 300);
+      slider.value = Math.round(_minScale * 100);
 
       document.getElementById('fotoZone').style.display = 'none';
       document.getElementById('cropUI').style.display = '';
@@ -271,27 +293,37 @@ function _updateCrop() {
 }
 
 function _clampCrop() {
-  if (!_fotoImg) return;
-  const w = _fotoImg.width * _cropScale, h = _fotoImg.height * _cropScale;
+  if (!_srcCanvas) return;
+  const w = _srcCanvas.width * _cropScale, h = _srcCanvas.height * _cropScale;
   _cropX = Math.min(0, Math.max(CROP_SZ - w, _cropX));
   _cropY = Math.min(0, Math.max(CROP_SZ - h, _cropY));
 }
 
+function _setZoom(val) {
+  const ns = val / 100;
+  const cx = CROP_SZ / 2, cy = CROP_SZ / 2;
+  const ratio = ns / _cropScale;
+  _cropX = cx - (cx - _cropX) * ratio;
+  _cropY = cy - (cy - _cropY) * ratio;
+  _cropScale = ns;
+  _clampCrop(); _updateCrop(); _exportCrop();
+}
+
 function _exportCrop() {
-  if (!_fotoImg) { fotoBase64 = null; return; }
+  if (!_srcCanvas) { fotoBase64 = null; return; }
   const c = document.createElement('canvas');
   c.width = 64; c.height = 64;
   const ctx = c.getContext('2d');
   const sx = -_cropX / _cropScale;
   const sy = -_cropY / _cropScale;
   const sw = CROP_SZ / _cropScale;
-  ctx.drawImage(_fotoImg, sx, sy, sw, sw, 0, 0, 64, 64);
+  ctx.drawImage(_srcCanvas, sx, sy, sw, sw, 0, 0, 64, 64);
   fotoBase64 = c.toDataURL('image/jpeg', 0.3).split(',')[1];
 }
 
 function removeFoto() {
   fotoBase64 = null;
-  _fotoImg = null;
+  _srcCanvas = null;
   document.getElementById('fotoInput').value = '';
   document.getElementById('fotoZone').style.display = '';
   document.getElementById('cropUI').style.display = 'none';
@@ -301,7 +333,7 @@ function removeFoto() {
 (function() {
   const el = document.getElementById('cropCircle');
   el.addEventListener('pointerdown', function(e) {
-    if (!_fotoImg) return;
+    if (!_srcCanvas) return;
     _dragging = true; _lastPX = e.clientX; _lastPY = e.clientY;
     el.setPointerCapture(e.pointerId);
   });
