@@ -203,7 +203,7 @@
         <p style="font-size:11px;color:rgba(255,255,255,.3);margin:6px 0 4px">Verschieben & zoomen</p>
         <div style="display:flex;align-items:center;gap:6px;padding:0 10px;margin-bottom:6px">
           <span style="font-size:12px;opacity:.4">−</span>
-          <input type="range" id="zoomSlider" min="100" max="300" value="100" oninput="_setZoom(this.value)" style="flex:1;-webkit-appearance:none;height:3px;background:rgba(255,255,255,.15);border-radius:2px;outline:none">
+          <input type="range" id="zoomSlider" min="100" max="500" value="100" oninput="_setZoom(this.value)" style="flex:1;-webkit-appearance:none;height:3px;background:rgba(255,255,255,.15);border-radius:2px;outline:none">
           <span style="font-size:12px;opacity:.4">+</span>
         </div>
         <div style="display:flex;gap:8px;justify-content:center">
@@ -275,7 +275,7 @@ function handleFoto(input) {
 
       const slider = document.getElementById('zoomSlider');
       slider.min = Math.round(_minScale * 100);
-      slider.max = Math.round(_minScale * 300);
+      slider.max = Math.round(_minScale * 500);
       slider.value = Math.round(_minScale * 100);
 
       document.getElementById('fotoZone').style.display = 'none';

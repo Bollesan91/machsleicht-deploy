@@ -957,7 +957,7 @@ function DinoEier({
     position: "absolute",
     left: `${runner.x}%`,
     top: `${runner.y}%`,
-    transform: `translate(-50%,-50%) scaleX(${runner.dir && runner.dir < 0 ? -1 : 1})`,
+    transform: `translate(-50%,-50%)${fotoUrl ? '' : ` scaleX(${runner.dir && runner.dir < 0 ? -1 : 1})`}`,
     zIndex: 100,
     cursor: "pointer",
     WebkitTapHighlightColor: "transparent"
@@ -968,7 +968,7 @@ function DinoEier({
     border: "3px solid #66BB6A",
     objectFit: "cover",
     filter: "drop-shadow(0 4px 12px rgba(0,0,0,.6))",
-    animation: "eggWaddle .4s ease-in-out infinite",
+    animation: "bob .5s ease-in-out infinite",
     pointerEvents: "none",
     boxShadow: "0 0 16px rgba(76,175,80,.5)"
   } : {
