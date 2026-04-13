@@ -188,7 +188,7 @@
       <label>Ort</label>
       <input type="text" id="ort" placeholder="z.B. Volkspark Friedrichshain" required>
     </div>
-    <div class="field" id="fotoField" style="display:none">
+    <div class="field" id="fotoField">
       <label>Foto vom Geburtstagskind (optional)</label>
       <div class="foto-zone" id="fotoZone" onclick="document.getElementById('fotoInput').click()">
         <div class="fz-icon">📸</div>
@@ -376,8 +376,8 @@ function selectMotto(btn) {
   document.getElementById('headerEmoji').textContent = cfg.emoji;
   document.getElementById('headerTitle').textContent = cfg.label + '-Einladung erstellen';
   // Foto-Upload nur bei Dino (interaktives Spiel mit Runner)
-  document.getElementById('fotoField').style.display = selectedMotto === 'dino' ? '' : 'none';
-  if (selectedMotto !== 'dino') removeFoto();
+  document.getElementById('fotoField').style.display = '';
+  // Foto bei Motto-Wechsel behalten (nicht mehr nur Dino)
 }
 
 async function handleSubmit(e) {

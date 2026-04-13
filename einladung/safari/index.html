@@ -351,7 +351,8 @@ function SafariFoto({
   partyDate = "Samstag, 15. Mai 2026",
   partyTime = "14:00 \u2013 17:00 Uhr",
   partyPlace = "Stadtpark",
-  rsvpPhone = "491701234567"
+  rsvpPhone = "491701234567",
+  fotoUrl = null
 }) {
   const [bushTaps, setBushTaps] = useState({});
   const [searched, setSearched] = useState(/* @__PURE__ */ new Set());
@@ -739,7 +740,7 @@ function SafariFoto({
       padding: "6px 14px",
       marginBottom: 12,
       border: "1px solid rgba(255,152,0,.15)"
-    } }, /* @__PURE__ */ React.createElement("span", { style: { color: "rgba(255,255,255,.7)", fontSize: 11, fontWeight: 500 } }, "\u{1F4C5}", " ", partyDate, " ", "\xB7", " ", "\u{1F551}", " ", partyTime)), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 56, marginBottom: 8, animation: "bob 2.5s ease-in-out infinite" } }, "\u{1F4F7}"), /* @__PURE__ */ React.createElement("h2", { style: { color: "#FFB74D", fontSize: 15, fontWeight: 800, margin: "0 0 4px", textShadow: "0 2px 10px rgba(0,0,0,.5)" } }, "Drei wilde Tiere verstecken sich!"), /* @__PURE__ */ React.createElement("p", { style: { color: "#f5e6c8", fontSize: 13, margin: "0 0 4px", lineHeight: 1.6, maxWidth: 280, textShadow: "0 1px 6px rgba(0,0,0,.4)" } }, "Hilf ", /* @__PURE__ */ React.createElement("strong", { style: { color: "#FFB74D" } }, childName), ", sie zu finden und f", "\xFC", "rs Safari-Album zu fotografieren!"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 14, margin: "12px 0 16px" } }, [{ e: "\u{1F981}", l: "L\xF6we" }, { e: "\u{1F418}", l: "Elefant" }, { e: "\u{1F435}", l: "Geheimnis!" }].map((t, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", flexDirection: "column", alignItems: "center", gap: 3 } }, /* @__PURE__ */ React.createElement("div", { style: {
+    } }, /* @__PURE__ */ React.createElement("span", { style: { color: "rgba(255,255,255,.7)", fontSize: 11, fontWeight: 500 } }, "\u{1F4C5}", " ", partyDate, " ", "\xB7", " ", "\u{1F551}", " ", partyTime)), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 56, marginBottom: 8, animation: "bob 2.5s ease-in-out infinite" } }, fotoUrl ? /* @__PURE__ */ React.createElement("img", { src: fotoUrl, style: { width: 70, height: 70, borderRadius: "50%", border: "3px solid #66BB6A", objectFit: "cover", boxShadow: "0 0 20px rgba(76,175,80,.5)" } }) : "\u{1F4F7}"), /* @__PURE__ */ React.createElement("h2", { style: { color: "#FFB74D", fontSize: 15, fontWeight: 800, margin: "0 0 4px", textShadow: "0 2px 10px rgba(0,0,0,.5)" } }, "Drei wilde Tiere verstecken sich!"), /* @__PURE__ */ React.createElement("p", { style: { color: "#f5e6c8", fontSize: 13, margin: "0 0 4px", lineHeight: 1.6, maxWidth: 280, textShadow: "0 1px 6px rgba(0,0,0,.4)" } }, fotoUrl ? "Fang " + childName + " ein!" : "Hilf ", /* @__PURE__ */ React.createElement("strong", { style: { color: "#FFB74D" } }, childName), ", sie zu finden und f", "\xFC", "rs Safari-Album zu fotografieren!"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 14, margin: "12px 0 16px" } }, [{ e: "\u{1F981}", l: "L\xF6we" }, { e: "\u{1F418}", l: "Elefant" }, { e: "\u{1F435}", l: "Geheimnis!" }].map((t, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { display: "flex", flexDirection: "column", alignItems: "center", gap: 3 } }, /* @__PURE__ */ React.createElement("div", { style: {
       width: 44,
       height: 44,
       borderRadius: "50%",
@@ -790,7 +791,7 @@ function SafariFoto({
       justifyContent: "center",
       padding: 24,
       textAlign: "center"
-    } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 60, marginBottom: 6, animation: "bounceIn .6s cubic-bezier(.34,1.56,.64,1)" } }, "\u{1F4F8}"), /* @__PURE__ */ React.createElement("h1", { style: { color: "#FFB74D", fontSize: 22, fontWeight: 900, margin: "0 0 4px", textShadow: "0 2px 10px rgba(0,0,0,.5)", lineHeight: 1.3 } }, "Safari-Album komplett!"), /* @__PURE__ */ React.createElement("p", { style: { color: "#f5e6c8", fontSize: 14, fontWeight: 600, margin: "0 0 2px", textShadow: "0 1px 4px rgba(0,0,0,.4)", lineHeight: 1.5, maxWidth: 280 } }, "Alle Tiere fotografiert ", "\u{1F3C6}", " Du bist jetzt offiziell zur ", /* @__PURE__ */ React.createElement("strong", { style: { color: "#FFB74D" } }, "Safari-Party von ", childName), " eingeladen!"), /* @__PURE__ */ React.createElement("p", { style: { color: "rgba(255,255,255,.5)", fontSize: 11, margin: "2px 0 16px", textShadow: "0 1px 4px rgba(0,0,0,.3)" } }, "Pack dein Fernglas ein ", "\u2014", " wir brauchen dich auf der Expedition!"), /* @__PURE__ */ React.createElement("div", { style: {
+    } }, fotoUrl ? /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 6, animation: "bounceIn .6s cubic-bezier(.34,1.56,.64,1)" } }, /* @__PURE__ */ React.createElement("img", { src: fotoUrl, style: { width: 80, height: 80, borderRadius: "50%", border: "4px solid #FFB74D", objectFit: "cover", boxShadow: "0 4px 20px rgba(255,152,0,.5), 0 0 30px rgba(255,152,0,.25)", display: "block" } })) : /* @__PURE__ */ React.createElement("div", { style: { fontSize: 60, marginBottom: 6, animation: "bounceIn .6s cubic-bezier(.34,1.56,.64,1)" } }, "\u{1F4F8}"), /* @__PURE__ */ React.createElement("h1", { style: { color: "#FFB74D", fontSize: 22, fontWeight: 900, margin: "0 0 4px", textShadow: "0 2px 10px rgba(0,0,0,.5)", lineHeight: 1.3 } }, "Safari-Album komplett!"), /* @__PURE__ */ React.createElement("p", { style: { color: "#f5e6c8", fontSize: 14, fontWeight: 600, margin: "0 0 2px", textShadow: "0 1px 4px rgba(0,0,0,.4)", lineHeight: 1.5, maxWidth: 280 } }, "Alle Tiere fotografiert ", "\u{1F3C6}", " Du bist jetzt offiziell zur ", /* @__PURE__ */ React.createElement("strong", { style: { color: "#FFB74D" } }, "Safari-Party von ", childName), " eingeladen!"), /* @__PURE__ */ React.createElement("p", { style: { color: "rgba(255,255,255,.5)", fontSize: 11, margin: "2px 0 16px", textShadow: "0 1px 4px rgba(0,0,0,.3)" } }, "Pack dein Fernglas ein ", "\u2014", " wir brauchen dich auf der Expedition!"), /* @__PURE__ */ React.createElement("div", { style: {
       background: "rgba(0,0,0,.35)",
       backdropFilter: "blur(16px)",
       borderRadius: 16,
@@ -876,7 +877,7 @@ function SafariFoto({
     padding: "12px 16px",
     background: "linear-gradient(0deg,rgba(0,0,0,.4) 0%,transparent 100%)",
     textAlign: "center"
-  } }, /* @__PURE__ */ React.createElement("p", { style: { color: "rgba(255,255,255,.75)", fontSize: 13, margin: 0, fontWeight: 500, textShadow: "0 1px 4px rgba(0,0,0,.5)" } }, chasePhase === "chase" ? "\u{1F3C3} Schnell, der Affe haut ab mit der Kamera!" : found.length === 0 ? "\u{1F446} Durchsuche die B\xFCsche \u2014 3x tippen!" : found.length === 1 ? "\u{1F981} L\xF6we fotografiert! Noch 2 Tiere!" : found.length === 2 ? "\u{1F525} Noch eins! Du bist ein echter Safari-Profi!" : "\u{1F389} Safari-Album komplett!")), chasePhase === "cinematic" && /* @__PURE__ */ React.createElement("div", { style: {
+  } }, /* @__PURE__ */ React.createElement("p", { style: { color: "rgba(255,255,255,.75)", fontSize: 13, margin: 0, fontWeight: 500, textShadow: "0 1px 4px rgba(0,0,0,.5)" } }, chasePhase === "chase" ? fotoUrl ? "\u{1F3C3} Schnell, " + childName + " fl\xFCchtet!" : "\u{1F3C3} Schnell, der Affe haut ab mit der Kamera!" : found.length === 0 ? "\u{1F446} Durchsuche die B\xFCsche \u2014 3x tippen!" : found.length === 1 ? "\u{1F981} L\xF6we fotografiert! Noch 2 Tiere!" : found.length === 2 ? "\u{1F525} Noch eins! Du bist ein echter Safari-Profi!" : "\u{1F389} Safari-Album komplett!")), chasePhase === "cinematic" && /* @__PURE__ */ React.createElement("div", { style: {
     position: "absolute",
     inset: 0,
     zIndex: 300,
@@ -903,7 +904,7 @@ function SafariFoto({
     textShadow: "0 2px 10px rgba(0,0,0,.5)",
     maxWidth: 280,
     lineHeight: 1.3
-  } }, "Ein frecher Affe klaut die Kamera!"), /* @__PURE__ */ React.createElement("p", { style: {
+  } }, fotoUrl ? childName + " hat die Kamera geklaut!" : "Ein frecher Affe klaut die Kamera!"), /* @__PURE__ */ React.createElement("p", { style: {
     color: "#f5e6c8",
     fontSize: 14,
     margin: "0 0 14px",
@@ -929,15 +930,25 @@ function SafariFoto({
     textAlign: "center",
     boxShadow: "0 4px 16px rgba(0,0,0,.4)",
     border: "2px solid rgba(255,255,255,.3)"
-  } }, /* @__PURE__ */ React.createElement("span", { style: { color: "#fff", fontSize: 13, fontWeight: 800, textShadow: "0 1px 4px rgba(0,0,0,.5)" } }, "\u{1F3C3}", " Fang den frechen Affen!")), chasePhase === "chase" && runner && !runner.caught && /* @__PURE__ */ React.createElement("div", { onPointerUp: catchRunner, style: {
+  } }, /* @__PURE__ */ React.createElement("span", { style: { color: "#fff", fontSize: 13, fontWeight: 800, textShadow: "0 1px 4px rgba(0,0,0,.5)" } }, "\u{1F3C3}", fotoUrl ? " Schnapp dir " + childName + "!" : " Fang den frechen Affen!")), chasePhase === "chase" && runner && !runner.caught && /* @__PURE__ */ React.createElement("div", { onPointerUp: catchRunner, style: {
     position: "absolute",
     left: `${runner.x}%`,
     top: `${runner.y}%`,
-    transform: `translate(-50%,-50%) scaleX(${runner.dir && runner.dir < 0 ? -1 : 1})`,
+    transform: `translate(-50%,-50%)${fotoUrl ? '' : ` scaleX(${runner.dir && runner.dir < 0 ? -1 : 1})`}`,
     zIndex: 100,
     cursor: "pointer",
     WebkitTapHighlightColor: "transparent"
-  } }, /* @__PURE__ */ React.createElement("img", { src: RUNNER_IMG, style: {
+  } }, /* @__PURE__ */ React.createElement("img", { src: fotoUrl || RUNNER_IMG, style: fotoUrl ? {
+    width: 64,
+    height: 64,
+    borderRadius: "50%",
+    border: "3px solid #66BB6A",
+    objectFit: "cover",
+    filter: "drop-shadow(0 4px 12px rgba(0,0,0,.6))",
+    animation: "bob .5s ease-in-out infinite",
+    pointerEvents: "none",
+    boxShadow: "0 0 16px rgba(76,175,80,.5)"
+  } : {
     width: 70,
     height: "auto",
     filter: "drop-shadow(0 4px 12px rgba(0,0,0,.6))",
@@ -1067,6 +1078,7 @@ const _props = {
   partyPlace: _p.get("ort") || "Stadtpark",
   rsvpPhone: _p.get("tel") || "491701234567"
 };
+if (_p.get("foto")) _props.fotoUrl = "data:image/jpeg;base64," + _p.get("foto");
 ReactDOM.render(
   React.createElement(SafariFoto, _props),
   document.getElementById("root")
