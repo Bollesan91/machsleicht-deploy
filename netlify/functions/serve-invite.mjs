@@ -29,6 +29,11 @@ export default async (req) => {
       tel: data.tel
     });
 
+    // Foto-Thumbnail durchreichen (base64 JPEG)
+    if (data.foto) {
+      params.set("foto", data.foto);
+    }
+
     // Motto-basierter Redirect (piraten = /einladung/, rest = /einladung/{motto}/)
     const VALID_MOTTOS = ["piraten", "dino", "safari", "weltraum", "detektiv", "superheld", "prinzessin", "einhorn", "meerjungfrau", "feuerwehr"];
     const motto = data.motto && VALID_MOTTOS.includes(data.motto) ? data.motto : "piraten";

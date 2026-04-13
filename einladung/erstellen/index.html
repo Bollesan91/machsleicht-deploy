@@ -125,6 +125,35 @@
   .btn-wa { background: #25D366; color: #fff; }
   .btn-preview { background: rgba(255,215,0,.15); color: #FFD700; margin-top: 8px; display: block; width: 100%; padding: 10px; border-radius: 10px; border: none; font-size: 13px; font-weight: 600; cursor: pointer; }
 
+  /* Foto-Upload */
+  .foto-zone {
+    border: 2px dashed rgba(255,215,0,.25); border-radius: 14px;
+    padding: 16px; text-align: center; cursor: pointer;
+    transition: border-color .2s; margin-bottom: 16px;
+  }
+  .foto-zone:active { border-color: rgba(255,215,0,.5); }
+  .foto-zone .fz-icon { font-size: 28px; margin-bottom: 4px; }
+  .foto-zone p { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.5); margin: 0; }
+  .foto-zone small { font-size: 11px; color: rgba(255,255,255,.25); }
+  .foto-preview {
+    display: none; align-items: center; gap: 12px;
+    margin-bottom: 16px; padding: 10px 14px;
+    background: rgba(255,255,255,.05); border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.08);
+  }
+  .foto-preview.show { display: flex; }
+  .foto-preview img {
+    width: 52px; height: 52px; border-radius: 50%;
+    object-fit: cover; border: 2px solid rgba(255,215,0,.4);
+  }
+  .foto-preview .fp-info { flex: 1; }
+  .foto-preview .fp-info span { font-size: 13px; color: rgba(255,255,255,.6); font-weight: 600; }
+  .foto-preview .fp-info small { display: block; font-size: 11px; color: rgba(255,255,255,.3); }
+  .foto-preview button {
+    background: rgba(255,255,255,.1); border: none; color: rgba(255,255,255,.5);
+    font-size: 11px; padding: 5px 10px; border-radius: 8px; cursor: pointer;
+  }
+
   .footer { text-align: center; margin-top: 20px; }
   .footer a { color: rgba(255,255,255,.2); font-size: 10px; text-decoration: none; }
   .toast {
@@ -178,6 +207,23 @@
       <label>Ort</label>
       <input type="text" id="ort" placeholder="z.B. Volkspark Friedrichshain" required>
     </div>
+    <div class="field" id="fotoField" style="display:none">
+      <label>Foto vom Geburtstagskind (optional)</label>
+      <div class="foto-zone" id="fotoZone" onclick="document.getElementById('fotoInput').click()">
+        <div class="fz-icon">📸</div>
+        <p>Foto hochladen</p>
+        <small>Wird im Spiel als Überraschung enthüllt!</small>
+      </div>
+      <input type="file" id="fotoInput" accept="image/*" style="display:none" onchange="handleFoto(this)">
+      <div class="foto-preview" id="fotoPreview">
+        <img id="fotoThumb" src="">
+        <div class="fp-info">
+          <span>Foto ausgewählt ✓</span>
+          <small>Wird im Spiel als Überraschung gezeigt</small>
+        </div>
+        <button type="button" onclick="removeFoto()">✕</button>
+      </div>
+    </div>
     <div class="field">
       <label>Deine WhatsApp-Nummer (f&uuml;r Zusagen)</label>
       <input type="tel" id="tel" placeholder="z.B. 01701234567" required>
@@ -202,6 +248,44 @@
 <script>
 let generatedUrl = '';
 let selectedMotto = null;
+let fotoBase64 = null;
+
+// === FOTO HANDLING ===
+function handleFoto(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const img = new Image();
+    img.onload = function() {
+      // Center-crop to square, resize to 64x64, compress
+      const size = Math.min(img.width, img.height);
+      const sx = (img.width - size) / 2;
+      const sy = (img.height - size) / 2;
+      const c = document.createElement('canvas');
+      c.width = 64; c.height = 64;
+      const ctx = c.getContext('2d');
+      ctx.drawImage(img, sx, sy, size, size, 0, 0, 64, 64);
+      // Get base64 JPEG (no data:... prefix)
+      const dataUrl = c.toDataURL('image/jpeg', 0.25);
+      fotoBase64 = dataUrl.split(',')[1];
+
+      // Show preview
+      document.getElementById('fotoThumb').src = dataUrl;
+      document.getElementById('fotoZone').style.display = 'none';
+      document.getElementById('fotoPreview').classList.add('show');
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function removeFoto() {
+  fotoBase64 = null;
+  document.getElementById('fotoInput').value = '';
+  document.getElementById('fotoZone').style.display = '';
+  document.getElementById('fotoPreview').classList.remove('show');
+}
 
 const MOTTO_CONFIG = {
   piraten:      { emoji: '\u{1F3F4}\u200D\u2620\uFE0F', label: 'Piraten',      color: '#FFD700' },
@@ -233,6 +317,9 @@ function selectMotto(btn) {
   const cfg = MOTTO_CONFIG[selectedMotto];
   document.getElementById('headerEmoji').textContent = cfg.emoji;
   document.getElementById('headerTitle').textContent = cfg.label + '-Einladung erstellen';
+  // Foto-Upload nur bei Dino (interaktives Spiel mit Runner)
+  document.getElementById('fotoField').style.display = selectedMotto === 'dino' ? '' : 'none';
+  if (selectedMotto !== 'dino') removeFoto();
 }
 
 async function handleSubmit(e) {
@@ -256,6 +343,7 @@ async function handleSubmit(e) {
     tel: document.getElementById('tel').value.trim().replace(/[^0-9+]/g, ''),
     motto: selectedMotto
   };
+  if (fotoBase64) data.foto = fotoBase64;
 
   // Telefonnummer normalisieren: 0170... -> 49170...
   if (data.tel.startsWith('0')) data.tel = '49' + data.tel.slice(1);

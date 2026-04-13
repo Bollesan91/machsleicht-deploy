@@ -357,7 +357,8 @@ function DinoEier({
   partyDate = "Samstag, 15. Mai 2026",
   partyTime = "14:00 \u2013 17:00 Uhr",
   partyPlace = "Stadtpark",
-  rsvpPhone = "491701234567"
+  rsvpPhone = "491701234567",
+  fotoUrl = null
 }) {
   const [eggTaps, setEggTaps] = useState({});
   const [cracked, setCracked] = useState(/* @__PURE__ */ new Set());
@@ -634,8 +635,9 @@ function DinoEier({
       fontSize: done ? 18 : 13,
       transition: "all .4s cubic-bezier(.34,1.56,.64,1)",
       transform: done ? "scale(1.2)" : "scale(1)",
-      boxShadow: done ? "0 0 14px rgba(76,175,80,.5)" : "none"
-    } }, done ? i === 2 ? "\u{1F996}" : i === 1 ? "\u{1F996}" : "\u{1F995}" : /* @__PURE__ */ React.createElement("span", { style: { color: "rgba(255,255,255,.3)" } }, "?"));
+      boxShadow: done ? "0 0 14px rgba(76,175,80,.5)" : "none",
+      overflow: "hidden"
+    } }, done ? (i === 2 && fotoUrl ? /* @__PURE__ */ React.createElement("img", { src: fotoUrl, style: { width: 28, height: 28, borderRadius: "50%", objectFit: "cover" } }) : i === 0 ? "\u{1F995}" : i === 1 ? "\u{1F996}" : "\u{1F95A}") : /* @__PURE__ */ React.createElement("span", { style: { color: "rgba(255,255,255,.3)" } }, "?"));
   });
   const css = `
     @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
@@ -812,7 +814,7 @@ function DinoEier({
       justifyContent: "center",
       padding: 24,
       textAlign: "center"
-    } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 60, marginBottom: 6, animation: "bounceIn .6s cubic-bezier(.34,1.56,.64,1)" } }, "\u{1F996}"), /* @__PURE__ */ React.createElement("h1", { style: { color: "#66BB6A", fontSize: 22, fontWeight: 900, margin: "0 0 4px", textShadow: "0 2px 10px rgba(0,0,0,.5)", lineHeight: 1.3 } }, "Roaaar! Alle Dinos geschl", "\xFC", "pft!"), /* @__PURE__ */ React.createElement("p", { style: { color: "#f5e6c8", fontSize: 14, fontWeight: 600, margin: "0 0 2px", textShadow: "0 1px 4px rgba(0,0,0,.4)", lineHeight: 1.5, maxWidth: 280 } }, "Du hast es geschafft ", "\u{1F3C6}", " Daf", "\xFC", "r bist du jetzt offiziell zur ", /* @__PURE__ */ React.createElement("strong", { style: { color: "#66BB6A" } }, "Dino-Party von ", childName), " eingeladen!"), /* @__PURE__ */ React.createElement("p", { style: { color: "rgba(255,255,255,.5)", fontSize: 11, margin: "2px 0 16px", textShadow: "0 1px 4px rgba(0,0,0,.3)" } }, "Wir brauchen dich bei der Party ", "\u2014", " komm vorbei!"), /* @__PURE__ */ React.createElement("div", { style: {
+    } }, fotoUrl ? /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 6, animation: "bounceIn .6s cubic-bezier(.34,1.56,.64,1)" } }, /* @__PURE__ */ React.createElement("img", { src: fotoUrl, style: { width: 80, height: 80, borderRadius: "50%", border: "4px solid #66BB6A", objectFit: "cover", boxShadow: "0 4px 20px rgba(76,175,80,.5), 0 0 30px rgba(76,175,80,.25)", display: "block" } })) : /* @__PURE__ */ React.createElement("div", { style: { fontSize: 60, marginBottom: 6, animation: "bounceIn .6s cubic-bezier(.34,1.56,.64,1)" } }, "\u{1F996}"), /* @__PURE__ */ React.createElement("h1", { style: { color: "#66BB6A", fontSize: 22, fontWeight: 900, margin: "0 0 4px", textShadow: "0 2px 10px rgba(0,0,0,.5)", lineHeight: 1.3 } }, "Roaaar! Alle Dinos geschl", "\xFC", "pft!"), /* @__PURE__ */ React.createElement("p", { style: { color: "#f5e6c8", fontSize: 14, fontWeight: 600, margin: "0 0 2px", textShadow: "0 1px 4px rgba(0,0,0,.4)", lineHeight: 1.5, maxWidth: 280 } }, "Du hast es geschafft ", "\u{1F3C6}", " Daf", "\xFC", "r bist du jetzt offiziell zur ", /* @__PURE__ */ React.createElement("strong", { style: { color: "#66BB6A" } }, "Dino-Party von ", childName), " eingeladen!"), /* @__PURE__ */ React.createElement("p", { style: { color: "rgba(255,255,255,.5)", fontSize: 11, margin: "2px 0 16px", textShadow: "0 1px 4px rgba(0,0,0,.3)" } }, "Wir brauchen dich bei der Party ", "\u2014", " komm vorbei!"), /* @__PURE__ */ React.createElement("div", { style: {
       background: "rgba(0,0,0,.35)",
       backdropFilter: "blur(16px)",
       borderRadius: 16,
@@ -898,7 +900,7 @@ function DinoEier({
     padding: "12px 16px",
     background: "linear-gradient(0deg,rgba(0,0,0,.4) 0%,transparent 100%)",
     textAlign: "center"
-  } }, /* @__PURE__ */ React.createElement("p", { style: { color: "rgba(255,255,255,.75)", fontSize: 13, margin: 0, fontWeight: 500, textShadow: "0 1px 4px rgba(0,0,0,.5)" } }, chasePhase === "chase" ? "\u{1F3C3} Schnell, das Ei fl\xFCchtet!" : found.length === 0 ? "\u{1F446} Klopfe 3x auf ein Ei \u2014 hilf den Dinos!" : found.length === 1 ? "\u{1F995} Erster Dino geschl\xFCpft! Noch 2!" : found.length === 2 ? "\u{1F525} Noch einer! Du schaffst das!" : "\u{1F389} Mission geschafft!")), chasePhase === "cinematic" && /* @__PURE__ */ React.createElement("div", { style: {
+  } }, /* @__PURE__ */ React.createElement("p", { style: { color: "rgba(255,255,255,.75)", fontSize: 13, margin: 0, fontWeight: 500, textShadow: "0 1px 4px rgba(0,0,0,.5)" } }, chasePhase === "chase" ? fotoUrl ? "\u{1F3C3} Schnell, " + childName + " fl\xFCchtet!" : "\u{1F3C3} Schnell, das Ei fl\xFCchtet!" : found.length === 0 ? "\u{1F446} Klopfe 3x auf ein Ei \u2014 hilf den Dinos!" : found.length === 1 ? "\u{1F995} Erster Dino geschl\xFCpft! Noch 2!" : found.length === 2 ? "\u{1F525} Noch einer! Du schaffst das!" : "\u{1F389} Mission geschafft!")), chasePhase === "cinematic" && /* @__PURE__ */ React.createElement("div", { style: {
     position: "absolute",
     inset: 0,
     zIndex: 300,
@@ -909,7 +911,7 @@ function DinoEier({
     justifyContent: "flex-end",
     padding: "0 24px 36px",
     textAlign: "center"
-  } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 56, marginBottom: 10, animation: "bob 2.5s ease-in-out infinite" } }, "\u{1F95A}"), /* @__PURE__ */ React.createElement("p", { style: {
+  } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 56, marginBottom: 10, animation: "bob 2.5s ease-in-out infinite" } }, fotoUrl ? /* @__PURE__ */ React.createElement("img", { src: fotoUrl, style: { width: 70, height: 70, borderRadius: "50%", border: "3px solid #66BB6A", objectFit: "cover", boxShadow: "0 0 20px rgba(76,175,80,.5)" } }) : "\u{1F95A}"), /* @__PURE__ */ React.createElement("p", { style: {
     color: "#FF7043",
     fontSize: 12,
     fontWeight: 600,
@@ -925,14 +927,14 @@ function DinoEier({
     textShadow: "0 2px 10px rgba(0,0,0,.5)",
     maxWidth: 280,
     lineHeight: 1.3
-  } }, "Das Ei bekommt Beine und will abhauen!"), /* @__PURE__ */ React.createElement("p", { style: {
+  } }, fotoUrl ? childName + " hat das Ei geklaut!" : "Das Ei bekommt Beine und will abhauen!"), /* @__PURE__ */ React.createElement("p", { style: {
     color: "#f5e6c8",
     fontSize: 14,
     margin: "0 0 14px",
     lineHeight: 1.6,
     maxWidth: 280,
     textShadow: "0 1px 6px rgba(0,0,0,.4)"
-  } }, "Nur echte Dino-Forscher fangen es ein!"), /* @__PURE__ */ React.createElement("div", { key: countdown, style: {
+  } }, fotoUrl ? "Fang " + childName + " ein!" : "Nur echte Dino-Forscher fangen es ein!"), /* @__PURE__ */ React.createElement("div", { key: countdown, style: {
     fontSize: countdown > 0 ? 48 : 28,
     fontWeight: 900,
     color: countdown > 0 ? "#fff" : "#66BB6A",
@@ -951,7 +953,7 @@ function DinoEier({
     textAlign: "center",
     boxShadow: "0 4px 16px rgba(0,0,0,.4)",
     border: "2px solid rgba(255,255,255,.3)"
-  } }, /* @__PURE__ */ React.createElement("span", { style: { color: "#fff", fontSize: 13, fontWeight: 800, textShadow: "0 1px 4px rgba(0,0,0,.5)" } }, "\u{1F3C3}", " Schnapp dir das kleine Ausrei", "\xDF", "er-Ei!")), chasePhase === "chase" && runner && !runner.caught && /* @__PURE__ */ React.createElement("div", { onPointerUp: catchRunner, style: {
+  } }, /* @__PURE__ */ React.createElement("span", { style: { color: "#fff", fontSize: 13, fontWeight: 800, textShadow: "0 1px 4px rgba(0,0,0,.5)" } }, "\u{1F3C3}", fotoUrl ? " Schnapp dir " + childName + "!" : " Schnapp dir das kleine Ausrei\xDFer-Ei!")), chasePhase === "chase" && runner && !runner.caught && /* @__PURE__ */ React.createElement("div", { onPointerUp: catchRunner, style: {
     position: "absolute",
     left: `${runner.x}%`,
     top: `${runner.y}%`,
@@ -959,7 +961,17 @@ function DinoEier({
     zIndex: 100,
     cursor: "pointer",
     WebkitTapHighlightColor: "transparent"
-  } }, /* @__PURE__ */ React.createElement("img", { src: RUNNER_IMG, style: {
+  } }, /* @__PURE__ */ React.createElement("img", { src: fotoUrl || RUNNER_IMG, style: fotoUrl ? {
+    width: 64,
+    height: 64,
+    borderRadius: "50%",
+    border: "3px solid #66BB6A",
+    objectFit: "cover",
+    filter: "drop-shadow(0 4px 12px rgba(0,0,0,.6))",
+    animation: "eggWaddle .4s ease-in-out infinite",
+    pointerEvents: "none",
+    boxShadow: "0 0 16px rgba(76,175,80,.5)"
+  } : {
     width: 70,
     height: "auto",
     filter: "drop-shadow(0 4px 12px rgba(0,0,0,.6))",
@@ -1145,6 +1157,7 @@ if (_p.get("date")) _props.partyDate = _p.get("date");
 if (_p.get("time")) _props.partyTime = _p.get("time");
 if (_p.get("ort")) _props.partyPlace = _p.get("ort");
 if (_p.get("tel")) _props.rsvpPhone = _p.get("tel");
+if (_p.get("foto")) _props.fotoUrl = "data:image/jpeg;base64," + _p.get("foto");
 ReactDOM.createRoot(document.getElementById("root")).render(/* @__PURE__ */ React.createElement(DinoEier, _props));
 </script>
 </body>

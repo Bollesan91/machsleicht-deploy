@@ -4,26 +4,22 @@
 **Datum:** 13.04.2026
 
 ## Was wurde gemacht
-- **Planer Flow umgebaut:** Plan first, Actions second, Score entfernt
-- **Sticky CTA-Bar:** PDF → Partyseite mit Prefill
-- **Partyseite:** Wunschliste-Text, Share-Text konditional, goStep Fix, Foto-Entfernen
-- **Dino 3-5 Elite-Seite** (633 Zeilen, 13 Game-Cards, 15 Affiliate-Links)
-- **Dino 9-12 Elite-Seite** (655 Zeilen, 11 Game-Cards, 12 Affiliate-Links, Escape-Room)
-- **Dino 6-8 nachgerüstet** (Header, Breadcrumb, Footer, HowTo Schema, utility.css, Sticky: Partyseite)
-- **Piraten 6-8 Elite-Seite** (537 Zeilen, 11 Game-Cards, 22 Affiliate-Links)
-- **ELITE-SEITEN-TEMPLATE.md** erstellt + erweitert (220 Zeilen, 30-Punkt Audit)
-- Alle 3 Dino-Seiten auf identischem Template-Level (Parität-Check bestanden)
+- **Foto-Feature für Dino-Einladung gebaut:** Komplette Kette über 4 Dateien
+- **Ersteller:** Foto-Upload mit Canvas-Compress (64×64 JPEG, quality 0.25), nur bei Dino sichtbar
+- **create-invite / serve-invite:** foto-Parameter durchreichen (base64 in URL)
+- **Dino-Spiel:** Runner (Ei 8) zeigt Foto statt SVG-Ei, personalisierte Texte ("Mattis hat das Ei geklaut!", "Fang Mattis ein!", "Schnapp dir Mattis!"), Won-Screen mit Foto, Dots mit Foto
+- Altes "Foto bei Ei 5" entfernt → Ei 5 ist wieder normaler Dino2
+- Foto-Upload-Feld nur bei Motto=Dino sichtbar
+- Backup-Dateien aufgeräumt, serve-invite Duplikat entfernt
 
 ## Nächste Schritte
-0. **Einladung Foto-Feature:** Crop-Komponente bauen + pro Motto integrieren (Dino: Ei-Schlüpf, Piraten: Bullauge, Einhorn: Regenbogen etc.)
-1. **Piraten 3-5 + Piraten 9-12** nach Template bauen
-2. **Party Worker in Cloudflare re-deployen** (5 Fixes warten!)
-3. **GitHub Token rotieren** (Deadline 25.04.! — 12 Tage!)
-4. **Ende deploy** für alle neuen Seiten (alles noch [skip ci])
+1. **Foto-Feature auf alle anderen Mottos anwenden** (Safari, Piraten, Weltraum, Detektiv, Superheld, Prinzessin, Einhorn, Meerjungfrau, Feuerwehr)
+2. **Piraten 3-5 + Piraten 9-12** Elite-Seiten nach Template bauen
+3. **Party Worker in Cloudflare re-deployen** (5 Fixes warten!)
+4. **GitHub Token rotieren** (Deadline 25.04! — 12 Tage!)
 5. SEO-Grundlagen: robots.txt, Sitemap, interne Verlinkung
-6. Nächstes Motto (Einhorn, Safari oder Detektiv)
 
 ## Offene Fragen
+- Foto-Qualität: 64×64 JPEG q0.25 ausreichend für alle Mottos? Evtl. auf 80×80 q0.35 hochgehen?
 - Skalierung: 60+ Seiten manuell oder Content-Generator mit Claude API?
 - Amazon PartnerNet-Tag machsleicht21-21 verifizieren
-- SEO-Strategie: Long-Tail-Keywords zuerst (Alter-Segmentierung als Vorteil)
