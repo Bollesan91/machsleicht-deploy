@@ -837,9 +837,8 @@ const _props = {
   partyTime: _p.get("time") || "14:00 \u2013 17:00 Uhr",
   partyPlace: _p.get("ort") || "Stadtpark",
   rsvpPhone: _p.get("tel") || "491701234567"
-
-if (_p.get("foto")) _props.fotoUrl = "data:image/jpeg;base64," + _p.get("foto");
 };
+if (_p.get("foto")) _props.fotoUrl = "data:image/jpeg;base64," + _p.get("foto");
 ReactDOM.render(
   React.createElement(DetektivMission, _props),
   document.getElementById("root")
