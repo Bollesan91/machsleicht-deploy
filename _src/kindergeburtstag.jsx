@@ -1022,24 +1022,9 @@ function App() {
           )}
         </section>
 
-        {/* Einladung */}
-        <EinladungBlock motto={motto} guests={guests} previewName={previewName} setPreviewName={setPreviewName} inviteSent={inviteSent} setInviteSent={setInviteSent} />
+        {/* ══════ PLAN ══════ */}
 
-        {/* WhatsApp-Partyseite CTA */}
-        <section className="fu" style={{ marginBottom: 24, borderRadius: 20, border: "2px solid #25D36630", background: "linear-gradient(135deg, #f0fdf4 0%, #fff 100%)", padding: "18px 16px", textAlign: "center" }}>
-          <div style={{ fontSize: 28, marginBottom: 4 }}>📱</div>
-          <h3 style={{ fontFamily: "var(--fd)", fontSize: 16, marginBottom: 4, color: "var(--m)" }}>WhatsApp-Partyseite</h3>
-          <p style={{ fontSize: 13, color: "var(--m)", marginBottom: 10, lineHeight: 1.4 }}>Alle Infos auf einer Seite — Zusagen, Wunschliste, Abholzeit. Link verschicken, fertig.</p>
-          <a href={`https://party.machsleicht.de?${new URLSearchParams({...(childName?{childName}:{}), ...(age?{age}:{}), ...(motto?.name?{motto:motto.name}:{}), ...(motto?.emoji?{mottoEmoji:motto.emoji}:{})}).toString()}`} target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "12px 24px", background: "#25D366", color: "#fff", borderRadius: 16, fontSize: 14, fontWeight: 700, fontFamily: "var(--f)", textDecoration: "none", boxShadow: "0 2px 8px #25D36640" }}>📱 Jetzt Partyseite erstellen →</a>
-          <p style={{ fontSize: 11, color: "var(--m)", marginTop: 8, opacity: 0.7 }}>Kostenlos · Daten werden vorausgefüllt</p>
-        </section>
-
-        <SchnitzeljagdBlock age={age} ag={ag} mottoId={mottoId} szActive={szActive} setSzActive={setSzActive} szThemeId={szThemeId} setSzThemeId={setSzThemeId} szTheme={szTheme} childName={childName} setChildName={setChildName} mapPositions={mapPositions} setMapPositions={setMapPositions} stationLocations={stationLocations} setStationLocations={setStationLocations} dekoEmojis={dekoEmojis} setDekoEmojis={setDekoEmojis} />
-
-        {/* Score */}
-        <ScoreCheck score={score} />
-
-        {/* Mode Toggles */}
+        {/* Mode Toggles — oben, weil sie alles darunter ändern */}
         <section className="fu" style={{ marginBottom: 24 }}>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }}>
             <div style={{ display: "flex", gap: 4, background: "var(--bg)", borderRadius: 12, padding: 4, border: "1px solid var(--l)" }}>
@@ -1065,8 +1050,11 @@ function App() {
           </div>
         </section>
 
-        {/* Zeitplan */}
+        {/* Zeitplan — DAS Kernversprechen, sofort sichtbar */}
         <Zeitplan timeline={timeline} mottoColor={motto.color} quietMode={quietMode} setQuietMode={setQuietMode} ageGroupLabel={ageLabel[ag]} />
+
+        {/* Schatzsuche — optionaler Add-on direkt neben dem Zeitplan */}
+        <SchnitzeljagdBlock age={age} ag={ag} mottoId={mottoId} szActive={szActive} setSzActive={setSzActive} szThemeId={szThemeId} setSzThemeId={setSzThemeId} szTheme={szTheme} childName={childName} setChildName={setChildName} mapPositions={mapPositions} setMapPositions={setMapPositions} stationLocations={stationLocations} setStationLocations={setStationLocations} dekoEmojis={dekoEmojis} setDekoEmojis={setDekoEmojis} />
 
         {/* Snacks */}
         <section className="fu" style={{ marginBottom: 24 }}>
@@ -1104,7 +1092,47 @@ function App() {
           </div>
         </section>
 
-        {/* WhatsApp Share */}
+        {/* Das reicht + Kosten */}
+        <div className="sp" style={{ background: "linear-gradient(135deg,#1B5E20,#2E7D32,#388E3C)", borderRadius: 24, padding: "48px 24px 40px", textAlign: "center", position: "relative", overflow: "hidden", marginBottom: 24 }}>
+          <div style={{ position: "relative", zIndex: 1 }}>
+            <div style={{ fontSize: 64, marginBottom: 12, animation: "checkPop .6s ease .3s both" }}>✓</div>
+            <h2 style={{ fontFamily: "var(--fd)", fontSize: "clamp(26px,5vw,34px)", fontWeight: 900, color: "#FFF", marginBottom: 8, lineHeight: 1.1 }}>Das reicht. Wirklich.</h2>
+            <p style={{ fontSize: 16, color: "#C8E6C9", marginBottom: 24, lineHeight: 1.7, maxWidth: 420, margin: "0 auto 24px" }}>
+              Du musst jetzt nichts mehr optimieren. Dieser Plan funktioniert.
+            </p>
+            <div style={{ display: "flex", justifyContent: "center", gap: 32, flexWrap: "wrap", marginBottom: 16 }}>
+              <div>
+                <div style={{ fontSize: 11, color: "#A5D6A7", textTransform: "uppercase", letterSpacing: "0.08em" }}>Noch einkaufen</div>
+                <div style={{ fontFamily: "var(--fd)", fontSize: 28, fontWeight: 800, color: "#FFF" }}>ca. €{Math.round(total)}</div>
+              </div>
+              <div>
+                <div style={{ fontSize: 11, color: "#A5D6A7", textTransform: "uppercase", letterSpacing: "0.08em" }}>Pro Kind</div>
+                <div style={{ fontFamily: "var(--fd)", fontSize: 28, fontWeight: 800, color: "#F7C948" }}>ca. €{guests > 0 ? Math.round(total / guests) : "0"}</div>
+              </div>
+            </div>
+            <div style={{ fontSize: 11, color: "#A5D6A7" }}>Richtwerte — tatsächliche Preise variieren</div>
+          </div>
+        </div>
+
+        {/* ══════ EINLADEN & TEILEN ══════ */}
+
+        <section className="fu" style={{ marginBottom: 16, textAlign: "center", padding: "4px 0" }}>
+          <p style={{ fontSize: 15, fontFamily: "var(--fd)", fontWeight: 800, color: "var(--d)" }}>Plan steht — jetzt einladen & teilen</p>
+        </section>
+
+        {/* Einladung */}
+        <EinladungBlock motto={motto} guests={guests} previewName={previewName} setPreviewName={setPreviewName} inviteSent={inviteSent} setInviteSent={setInviteSent} />
+
+        {/* WhatsApp-Partyseite CTA */}
+        <section className="fu" style={{ marginBottom: 24, borderRadius: 20, border: "2px solid #25D36630", background: "linear-gradient(135deg, #f0fdf4 0%, #fff 100%)", padding: "18px 16px", textAlign: "center" }}>
+          <div style={{ fontSize: 28, marginBottom: 4 }}>📱</div>
+          <h3 style={{ fontFamily: "var(--fd)", fontSize: 16, marginBottom: 4, color: "var(--m)" }}>WhatsApp-Partyseite</h3>
+          <p style={{ fontSize: 13, color: "var(--m)", marginBottom: 10, lineHeight: 1.4 }}>Zusagen, Wunschliste, Abholzeit — alles auf einer Seite. Link in die Familiengruppe, fertig.</p>
+          <a href={`https://party.machsleicht.de?${new URLSearchParams({...(childName?{childName}:{}), ...(age?{age}:{}), ...(motto?.name?{motto:motto.name}:{}), ...(motto?.emoji?{mottoEmoji:motto.emoji}:{})}).toString()}`} target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "12px 24px", background: "#25D366", color: "#fff", borderRadius: 16, fontSize: 14, fontWeight: 700, fontFamily: "var(--f)", textDecoration: "none", boxShadow: "0 2px 8px #25D36640" }}>📱 Partyseite erstellen →</a>
+          <p style={{ fontSize: 11, color: "var(--m)", marginTop: 8, opacity: 0.7 }}>Kostenlos · Daten werden vorausgefüllt</p>
+        </section>
+
+        {/* Plan speichern & teilen */}
         <button onClick={() => {
           navigator.share ? navigator.share({ title: `${motto.name} Geburtstag`, text: shareText, url: "https://machsleicht.de" })
             : (navigator.clipboard?.writeText(shareText), alert("Kopiert! Einfach in WhatsApp einfügen."));
@@ -1125,28 +1153,6 @@ function App() {
             }}>📄 PDF erstellen & drucken</button>
           </div>
         </section>
-
-        {/* Das reicht */}
-        <div className="sp" style={{ background: "linear-gradient(135deg,#1B5E20,#2E7D32,#388E3C)", borderRadius: 24, padding: "48px 24px 40px", textAlign: "center", position: "relative", overflow: "hidden" }}>
-          <div style={{ position: "relative", zIndex: 1 }}>
-            <div style={{ fontSize: 64, marginBottom: 12, animation: "checkPop .6s ease .3s both" }}>✓</div>
-            <h2 style={{ fontFamily: "var(--fd)", fontSize: "clamp(26px,5vw,34px)", fontWeight: 900, color: "#FFF", marginBottom: 8, lineHeight: 1.1 }}>Das reicht. Wirklich.</h2>
-            <p style={{ fontSize: 16, color: "#C8E6C9", marginBottom: 24, lineHeight: 1.7, maxWidth: 420, margin: "0 auto 24px" }}>
-              Du musst jetzt nichts mehr optimieren. Dieser Plan funktioniert.
-            </p>
-            <div style={{ display: "flex", justifyContent: "center", gap: 32, flexWrap: "wrap", marginBottom: 16 }}>
-              <div>
-                <div style={{ fontSize: 11, color: "#A5D6A7", textTransform: "uppercase", letterSpacing: "0.08em" }}>Noch einkaufen</div>
-                <div style={{ fontFamily: "var(--fd)", fontSize: 28, fontWeight: 800, color: "#FFF" }}>ca. €{Math.round(total)}</div>
-              </div>
-              <div>
-                <div style={{ fontSize: 11, color: "#A5D6A7", textTransform: "uppercase", letterSpacing: "0.08em" }}>Pro Kind</div>
-                <div style={{ fontFamily: "var(--fd)", fontSize: 28, fontWeight: 800, color: "#F7C948" }}>ca. €{guests > 0 ? Math.round(total / guests) : "0"}</div>
-              </div>
-            </div>
-            <div style={{ fontSize: 11, color: "#A5D6A7" }}>Richtwerte — tatsächliche Preise variieren</div>
-          </div>
-        </div>
 
         {/* Footer */}
         <footer style={{ textAlign: "center", marginTop: 32, padding: "16px 0", borderTop: "1px solid var(--l)" }}>
