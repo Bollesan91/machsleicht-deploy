@@ -4,37 +4,25 @@
 **Datum:** 13.04.2026
 
 ## Was wurde gemacht
-- **Planer Flow komplett umgebaut** — Plan first, Actions second:
-  - Mode Toggles → oben, Zeitplan sofort sichtbar
-  - "Das reicht" + Kosten als Plan-Abschluss
-  - Danach: "Plan steht — jetzt einladen & teilen" → Einladung → Partyseite → Share → PDF
-  - Score entfernt (Vanity-UX)
+- **Planer Flow komplett umgebaut** — Plan first, Actions second, Score entfernt
 - **Sticky CTA-Bar:** PDF → Partyseite (mit Prefill-Params)
-- **Partyseite-Optimierungen:**
-  - Planer CTA aktiviert mit Prefill (childName, age, motto, mottoEmoji)
-  - Wunschliste "(optional)" → "Verhindert Doppelgeschenke"
-  - Share-Text + Gäste-Hero konditional (mit/ohne Wunschliste)
-  - goStep Bug-Fix (ASI-sicher, iOS-kompatibler)
-  - Foto-Entfernen-Button
-- **Dino 3-5 Jahre Elite-Seite gebaut** (633 Zeilen):
-  - 3 Varianten (Minimal 1,5h / Standard 2h / Wow 2h)
-  - 13 Game-Detail-Cards mit altersgerechten Anleitungen
-  - 15 Affiliate-Links, 4 FAQ mit FAQPage-Schema
-  - Vulkan-Kuchen Rezept, Eltern-Tipps (Meltdown-Plan, Plan B Regen)
-  - Header, Breadcrumb, Footer, Sticky Bar, utility.css, Plausible
-  - 31-Punkt Strukturcheck gegen 6-8 bestanden
-- **ELITE-SEITEN-TEMPLATE.md erstellt** (220 Zeilen):
-  - 30-Punkt Deep-Audit gegen 6-8 Seite bestanden
-  - CSS-Klassen-Referenz, HowTo Schema, Wow Highlight-Produkt
-  - Quality Gate: Technisch, Inhaltlich, Struktur, UX
+- **Partyseite-Optimierungen:** Wunschliste-Text, Share-Text konditional, goStep Bug-Fix, Foto-Entfernen-Button
+- **Dino 3-5 Jahre Elite-Seite** (633 Zeilen, 13 Game-Cards, 15 Affiliate-Links)
+- **Dino 9-12 Jahre Elite-Seite** (655 Zeilen, 11 Game-Cards, 12 Affiliate-Links)
+  - Escape-Room-Konzept mit Zahlenschloss + Caesar-Verschlüsselung
+  - Alle Template-Elemente von Anfang an: HowTo Schema, game-tag, game-needs, game-rules, recipe-step, deko-grid
+- **ELITE-SEITEN-TEMPLATE.md** (220 Zeilen, 30-Punkt Audit bestanden)
+- 3-Stufen-Validierung für alle Seiten bestanden
 
 ## Nächste Schritte
-1. **Dino 9-12 Jahre** nach ELITE-SEITEN-TEMPLATE.md bauen
-2. **Party Worker in Cloudflare re-deployen** (goStep Fix, Foto-Entfernen, Wunschliste-Text)
-3. GitHub Token rotieren (Deadline 25.04.!)
+1. **Party Worker in Cloudflare re-deployen** (goStep Fix, Foto-Entfernen, Wunschliste-Text, Share-Text)
+2. **GitHub Token rotieren** (Deadline 25.04.!)
+3. **Ende deploy** für Dino-Seiten (aktuell nur gepusht, nicht deployed)
 4. Nächstes Motto (Piraten oder Einhorn) — Template nutzen
-5. Dino 3-5: CSS-Klassen an 6-8 angleichen (game-tag, deko-grid, recipe-step)
+5. Dino 3-5: CSS-Klassen an 6-8/9-12 angleichen (game-tag, deko-grid, recipe-step)
+6. Dino 6-8: Header/Breadcrumb/Footer nachrüsten (fehlt dort auch!)
 
 ## Offene Fragen
 - 6-8 Seite hat kein Header/Breadcrumb/Footer — nachrüsten?
 - Skalierung: Template + Claude API für automatische Generierung?
+- Amazon PartnerNet-Tag machsleicht21-21 verifizieren
