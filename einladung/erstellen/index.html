@@ -198,7 +198,7 @@
       <input type="file" id="fotoInput" accept="image/*" style="display:none" onchange="handleFoto(this)">
       <div id="cropUI" style="display:none;text-align:center">
         <div id="cropCircle" style="position:relative;width:120px;height:120px;border-radius:50%;overflow:hidden;margin:0 auto;outline:3px solid rgba(255,215,0,.5);background:#111;touch-action:none;cursor:grab;box-shadow:0 4px 20px rgba(0,0,0,.5)">
-          <img id="cropImg" style="position:absolute;transform-origin:0 0;pointer-events:none;user-select:none;-webkit-user-drag:none" draggable="false">
+          <canvas id="cropCanvas" width="120" height="120" style="width:120px;height:120px;display:block"></canvas>
         </div>
         <p style="font-size:11px;color:rgba(255,255,255,.3);margin:6px 0 4px">Verschieben & zoomen</p>
         <div style="display:flex;align-items:center;gap:6px;padding:0 10px;margin-bottom:6px">
@@ -248,20 +248,19 @@ const CROP_SZ = 120;
 
 // === FOTO HANDLING ===
 function handleFoto(input) {
-  const file = input.files[0];
+  var file = input.files[0];
   if (!file) return;
-  const reader = new FileReader();
+  var reader = new FileReader();
   reader.onload = function(e) {
-    const img = new Image();
+    var img = new Image();
     img.onload = function() {
-      // Vorskalieren auf max 500px (Handy-Fotos sind 4000px+)
-      const MAX = 500;
-      let sw = img.width, sh = img.height;
+      var MAX = 500;
+      var sw = img.width, sh = img.height;
       if (sw > MAX || sh > MAX) {
-        const r = Math.min(MAX / sw, MAX / sh);
+        var r = Math.min(MAX / sw, MAX / sh);
         sw = Math.round(sw * r); sh = Math.round(sh * r);
       }
-      const pre = document.createElement('canvas');
+      var pre = document.createElement('canvas');
       pre.width = sw; pre.height = sh;
       pre.getContext('2d').drawImage(img, 0, 0, sw, sh);
       _srcCanvas = pre;
@@ -271,70 +270,60 @@ function handleFoto(input) {
       _cropX = (CROP_SZ - sw * _cropScale) / 2;
       _cropY = (CROP_SZ - sh * _cropScale) / 2;
 
-      const ci = document.getElementById('cropImg');
-      ci.src = pre.toDataURL('image/jpeg', 0.8);
-      ci.style.width = sw + 'px';
-      ci.style.height = sh + 'px';
-      _updateCrop();
-
-      const slider = document.getElementById('zoomSlider');
+      var slider = document.getElementById('zoomSlider');
       slider.min = Math.round(_minScale * 100);
       slider.max = Math.round(_minScale * 500);
       slider.value = Math.round(_minScale * 100);
 
       document.getElementById('fotoZone').style.display = 'none';
       document.getElementById('cropUI').style.display = '';
-      _exportCrop();
+      _redraw();
     };
     img.src = e.target.result;
   };
   reader.readAsDataURL(file);
 }
 
-function _updateCrop() {
-  document.getElementById('cropImg').style.transform =
-    'translate(' + _cropX + 'px,' + _cropY + 'px) scale(' + _cropScale + ')';
-}
-
-function _clampCrop() {
+// Einzige Zeichenfunktion: cropCanvas + Export + Preview
+function _redraw() {
   if (!_srcCanvas) return;
-  const w = _srcCanvas.width * _cropScale, h = _srcCanvas.height * _cropScale;
-  _cropX = Math.min(0, Math.max(CROP_SZ - w, _cropX));
-  _cropY = Math.min(0, Math.max(CROP_SZ - h, _cropY));
-}
-
-function _setZoom(val) {
-  const ns = val / 100;
-  const cx = CROP_SZ / 2, cy = CROP_SZ / 2;
-  const ratio = ns / _cropScale;
-  _cropX = cx - (cx - _cropX) * ratio;
-  _cropY = cy - (cy - _cropY) * ratio;
-  _cropScale = ns;
-  _clampCrop(); _updateCrop(); _exportCrop();
-}
-
-function _exportCrop() {
-  if (!_srcCanvas) { fotoBase64 = null; return; }
-  // 1:1 nachbauen was CSS zeigt: translate + scale
-  var tmp = document.createElement('canvas');
-  tmp.width = CROP_SZ; tmp.height = CROP_SZ;
-  var ctx = tmp.getContext('2d');
+  // Crop-Canvas (was der User sieht)
+  var cc = document.getElementById('cropCanvas');
+  var ctx = cc.getContext('2d');
+  ctx.clearRect(0, 0, CROP_SZ, CROP_SZ);
   ctx.save();
   ctx.translate(_cropX, _cropY);
   ctx.scale(_cropScale, _cropScale);
   ctx.drawImage(_srcCanvas, 0, 0);
   ctx.restore();
 
-  // Auf 80x80 runterskalieren
+  // Export: direkt vom cropCanvas → 80x80
   var OUT = 80;
   var out = document.createElement('canvas');
   out.width = OUT; out.height = OUT;
-  out.getContext('2d').drawImage(tmp, 0, 0, CROP_SZ, CROP_SZ, 0, 0, OUT, OUT);
+  out.getContext('2d').drawImage(cc, 0, 0, CROP_SZ, CROP_SZ, 0, 0, OUT, OUT);
   fotoBase64 = out.toDataURL('image/jpeg', 0.4).split(',')[1];
 
-  // Live-Preview
+  // Preview
   var pv = document.getElementById('exportPreview');
   pv.getContext('2d').drawImage(out, 0, 0);
+}
+
+function _clampCrop() {
+  if (!_srcCanvas) return;
+  var w = _srcCanvas.width * _cropScale, h = _srcCanvas.height * _cropScale;
+  _cropX = Math.min(0, Math.max(CROP_SZ - w, _cropX));
+  _cropY = Math.min(0, Math.max(CROP_SZ - h, _cropY));
+}
+
+function _setZoom(val) {
+  var ns = val / 100;
+  var cx = CROP_SZ / 2, cy = CROP_SZ / 2;
+  var ratio = ns / _cropScale;
+  _cropX = cx - (cx - _cropX) * ratio;
+  _cropY = cy - (cy - _cropY) * ratio;
+  _cropScale = ns;
+  _clampCrop(); _redraw();
 }
 
 function removeFoto() {
@@ -347,7 +336,7 @@ function removeFoto() {
 
 // Drag
 (function() {
-  const el = document.getElementById('cropCircle');
+  var el = document.getElementById('cropCircle');
   el.addEventListener('pointerdown', function(e) {
     if (!_srcCanvas) return;
     _dragging = true; _lastPX = e.clientX; _lastPY = e.clientY;
@@ -358,10 +347,10 @@ function removeFoto() {
     _cropX += e.clientX - _lastPX;
     _cropY += e.clientY - _lastPY;
     _lastPX = e.clientX; _lastPY = e.clientY;
-    _clampCrop(); _updateCrop(); _exportCrop();
+    _clampCrop(); _redraw();
   });
   el.addEventListener('pointerup', function() { _dragging = false; });
-  el.addEventListener('pointercancel', function() { _dragging = false; _exportCrop(); });
+  el.addEventListener('pointercancel', function() { _dragging = false; });
 })();
 
 const MOTTO_CONFIG = {
