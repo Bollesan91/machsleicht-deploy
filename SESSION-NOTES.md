@@ -1,24 +1,31 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 13.04.2026
+**Datum:** 14.04.2026
 
 ## Was wurde gemacht
-- **Foto-Feature komplett gebaut und auf alle 9 Mottos ausgerollt**
-- **Ersteller:** Canvas-basierter Crop-Circle (WYSIWYG), Zoom-Slider (5x), Touch-Drag, 80×80 JPEG Export
-- **Kette:** Ersteller → create-invite (fotoParam) → URL ?foto= → serve-invite (durchreichen) → Spiel (Runner)
-- **Alle 9 Spiele:** Dino, Safari, Weltraum, Detektiv, Superheld, Prinzessin, Einhorn, Meerjungfrau, Feuerwehr
-- **Pro Spiel 8 Stellen gepatcht:** fotoUrl Prop, URL-Param, Runner-Bild (Foto statt SVG), keine Spiegelung, Cinematic h2 ("Mattis hat X geklaut!"), Cinematic Emoji→Foto, Chase-Bar ("Schnapp dir Mattis!"), Status-Bar ("Schnell, Mattis flüchtet!"), Won-Screen mit Foto
-- **Bugfixes:** Slug-Länge (Foto als Query-Param statt im Slug), border→outline (6px Offset), CSS→Canvas Mismatch (Single-Canvas WYSIWYG), Spiegelung, Waddle→Bob Animation, Bild-Vorskalierung (max 500px)
+- **Foto-Runner Feature komplett:** Alle 9 Mottos (Dino, Safari, Weltraum, Detektiv, Superheld, Prinzessin, Einhorn, Meerjungfrau, Feuerwehr)
+- **Crop-UI:** Canvas-basiert (WYSIWYG), Zoom 5x, Touch-Drag, 120px Export
+- **Runner:** 80px Foto, keine Spiegelung, bob-Animation, personalisierte Texte
+- **Won-Screen:** "Du hast [Name] gefangen! 🎉"
+- **Kurze URLs:** Kompakte JSON-Keys (187 Zeichen statt 1500+)
+- **CTA:** Partyseite-Banner nach Einladungs-Erstellung
+- **Party Worker v3:** Embedded Game-Iframe, postMessage("gameComplete") in allen 9 Spielen, Auto-Scroll zu RSVP nach Game, Confetti bei RSVP "Dabei!", Urgency-Badge ("Noch X frei!") auf Wunschliste
+- **Bugfixes:** Netlify Blobs (Load failed → revert), }; Position in 7 Spielen, border→outline Crop-Offset, CSS→Canvas Mismatch
 
 ## Nächste Schritte
-1. **Einladungs-Engine bauen** — JSON-Config pro Motto + Generator-Script → beliebig neue Mottos in 10 Min
-2. **Piraten 3-5 + Piraten 9-12** Elite-Seiten nach Template
-3. **Party Worker in Cloudflare re-deployen** (5 Fixes warten!)
-4. **GitHub Token rotieren** (Deadline 25.04! — 12 Tage!)
-5. SEO-Grundlagen: robots.txt, Sitemap, interne Verlinkung
+0. **Cloudflare Worker deployen** (LAPTOP-SESSION nötig!)
+   - KV Namespace "PARTY" erstellen in Cloudflare Dashboard
+   - Worker binden (`party-worker.js` → `party.machsleicht.de`)
+   - Custom Domain `party.machsleicht.de` aktivieren
+   - Testen: Creator-Flow → Gast-View → RSVP → Wunschliste
+1. **Einladungs-Engine bauen** — JSON-Config pro Motto + Generator-Script
+2. **Piraten 3-5 + 9-12** Elite-Seiten
+3. **GitHub Token rotieren** (Deadline 25.04! — 11 Tage!)
+4. SEO-Grundlagen: robots.txt, Sitemap, interne Verlinkung
 
 ## Offene Fragen
+- Game-Iframe Höhe: min(70vh, 560px) — reicht das auf allen Geräten?
+- Foto in Party-Daten: Woher kommt es? Braucht Upload im Creator-Flow
+- Piraten-Einladung fehlt (kein interaktives Spiel)
 - Engine-Architektur: shared React-Bundle extrahieren oder weiter self-contained?
-- Neue Mottos priorisieren: Ritter, Bauernhof, Unterwasser, Ninja?
-- Piraten-Einladung fehlt noch (kein interaktives Spiel)

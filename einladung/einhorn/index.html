@@ -462,7 +462,7 @@ function EinhornZauber({
     setTimeout(() => {
       setRunner(null);
       setChasePhase("idle");
-      setPhase("won");
+      setPhase("won");try{window.parent.postMessage("gameComplete","*")}catch(e){};
     }, 1200);
   }, [runner]);
   useEffect(() => {

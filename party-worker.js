@@ -307,7 +307,9 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 .footer{text-align:center;padding:20px 0;font-size:11px;color:var(--m)}
 .footer a{color:var(--m);text-decoration:none}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes cFall{0%{opacity:1;transform:translateY(0) rotate(0deg)}100%{opacity:0;transform:translateY(100vh) rotate(720deg)}}
 .fade-up{animation:fadeUp .4s ease both}
+#gameFrame{height:min(70vh,560px)}
 .hidden{display:none!important}
 </style>
 </head>`;
@@ -518,6 +520,13 @@ function guestView(party, color, dateStr, name, age, motto, emoji) {
   const id = party.id;
   const nameLC = escJson(party.childName.toLowerCase().trim());
   const hasWishes = party.wishes && party.wishes.length > 0;
+  const freeWishes = hasWishes ? party.wishes.filter(w => !w.isFull || w.sharedGift).length : 0;
+
+  // Embedded game: map motto to game URL
+  const GAME_MOTTOS = ["piraten","dino","safari","weltraum","detektiv","superheld","prinzessin","einhorn","meerjungfrau","feuerwehr"];
+  const mottoLC = (party.motto||"").toLowerCase();
+  const gameMottoId = GAME_MOTTOS.find(m => mottoLC.includes(m));
+  const gameUrl = gameMottoId ? `/einladung/${gameMottoId}/?name=${encodeURIComponent(party.childName)}&date=${encodeURIComponent(party.date||"")}&time=${encodeURIComponent(party.time||"")}&ort=${encodeURIComponent(party.address||"")}&tel=${encodeURIComponent("")}${party.foto?"&foto="+encodeURIComponent(party.foto):""}` : "";
 
   return `
   <div class="card fade-up" id="codeGate" style="text-align:center;padding:28px 20px">
@@ -535,9 +544,24 @@ function guestView(party, color, dateStr, name, age, motto, emoji) {
       <div style="font-size:56px;margin-bottom:8px">${emoji}</div>
       <h1 style="font-size:26px;color:${color};margin-bottom:2px">${name?name+" wird "+age+"!":"Kindergeburtstag!"}</h1>
       ${motto?`<p style="font-size:16px;color:var(--m);font-weight:500">${motto}</p>`:""}
-      <p style="font-size:13px;color:var(--m);margin-top:8px;opacity:0.8">Alle Infos auf einen Blick \u2014 ${hasWishes?"zusagen, Geschenk reservieren, fertig.":"zusagen, fertig."}</p>
+      <p style="font-size:13px;color:var(--m);margin-top:8px;opacity:0.8">Spiel spielen, zusagen${hasWishes?", Geschenk reservieren":""} \u2014 alles hier.</p>
     </div>
 
+    ${gameUrl?`<div class="card fade-up" id="gameSection" style="padding:0;overflow:hidden;border:2px solid ${color}20">
+      <div style="background:${color}12;padding:10px 16px;display:flex;align-items:center;gap:8px">
+        <span style="font-size:18px">\u{1F3AE}</span>
+        <div style="flex:1"><div style="font-size:13px;font-weight:800">${esc(party.childName)}s ${motto||"Party"}-Einladung</div>
+        <div style="font-size:11px;color:var(--m);opacity:.6">Spiel das Einladungsspiel!</div></div>
+      </div>
+      <iframe id="gameFrame" src="${gameUrl}" style="width:100%;height:min(70vh,560px);border:none;display:block" allow="autoplay"></iframe>
+    </div>
+    <div class="card fade-up hidden" id="gameComplete" style="text-align:center;padding:20px;border:2px solid ${color}30;background:${color}06">
+      <div style="font-size:44px;margin-bottom:6px">${emoji}</div>
+      <h2 style="font-size:16px;color:${color};font-weight:800;margin-bottom:4px">Geschafft! \u{1F389}</h2>
+      <p style="font-size:13px;color:var(--m);opacity:.7">Jetzt noch zusagen und ein Geschenk reservieren \u2193</p>
+    </div>`:""}
+
+    <div id="rsvpAnchor"></div>
     <div class="card fade-up">
       <h2 style="font-size:15px;color:${color};margin-bottom:12px">\u{1F4CB} Party-Details</h2>
       ${party.date?`<div class="info-row"><span class="icon">\u{1F4C5}</span><div><div style="font-weight:700;font-size:14px">${esc(dateStr)}</div>${party.time?`<div style="color:var(--m);font-size:13px">${esc(party.time)} Uhr${party.endTime?" \u2014 "+esc(party.endTime)+" Uhr":""}</div>`:""}</div></div>`:""}
@@ -572,7 +596,10 @@ function guestView(party, color, dateStr, name, age, motto, emoji) {
     </div>
 
     ${hasWishes?`<div class="card fade-up">
-      <h2 style="font-size:15px;color:${color};margin-bottom:12px">\u{1F381} Wunschliste</h2>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <h2 style="font-size:15px;color:${color};margin-bottom:0">\u{1F381} Wunschliste</h2>
+        ${freeWishes>0&&freeWishes<(party.wishes||[]).length?`<span style="padding:3px 10px;background:#FF704320;border:1px solid #FF704340;border-radius:99px;font-size:11px;font-weight:700;color:#FF7043">Noch ${freeWishes} frei!</span>`:""}
+      </div>
       <p style="font-size:12px;color:var(--m);margin-bottom:12px">Reserviere ein Geschenk \u2014 andere G\u00E4ste sehen nur, dass es vergeben ist.</p>
       <div id="wishListGuest"></div>
     </div>`:""}
@@ -581,6 +608,21 @@ function guestView(party, color, dateStr, name, age, motto, emoji) {
   <script>
   const PID="${id}",CNL="${nameLC}";
   let selectedStatus=null,guestName="";
+  // Game complete listener
+  window.addEventListener("message",function(e){
+    if(e.data==="gameComplete"){
+      var gs=document.getElementById("gameSection");if(gs)gs.style.display="none";
+      var gc=document.getElementById("gameComplete");if(gc)gc.classList.remove("hidden");
+      setTimeout(function(){var a=document.getElementById("rsvpAnchor");if(a)a.scrollIntoView({behavior:"smooth",block:"start"});},800);
+    }
+  });
+  // Confetti
+  function fireConfetti(){
+    var c=document.createElement("div");c.style.cssText="position:fixed;inset:0;pointer-events:none;z-index:9999;overflow:hidden";
+    for(var i=0;i<35;i++){var p=document.createElement("div");var colors=["#66BB6A","#FFD700","#FF7043","#42A5F5","#E040FB","#FF5252","#4DD0E1"];
+    p.style.cssText="position:absolute;top:-10px;left:"+Math.random()*100+"%;width:"+(5+Math.random()*6)+"px;height:"+(5+Math.random()*6)+"px;background:"+colors[i%7]+";border-radius:"+(Math.random()>.5?"50%":"2px")+";animation:cFall "+(1.8+Math.random()*1.2)+"s ease-in "+Math.random()*0.5+"s forwards";
+    c.appendChild(p);}document.body.appendChild(c);setTimeout(function(){c.remove()},4000);
+  }
   function checkCode(){
     const v=document.getElementById("codeInput").value.trim().toLowerCase();
     if(v===CNL){document.getElementById("codeGate").classList.add("hidden");document.getElementById("partyContent").classList.remove("hidden");loadPhoto();loadWishes();checkPrev();}
@@ -611,6 +653,7 @@ function guestView(party, color, dateStr, name, age, motto, emoji) {
       document.getElementById("rsvpDoneEmoji").textContent=m[0];
       document.getElementById("rsvpMsg").textContent=m[1];
       document.getElementById("rsvpSub").textContent=m[2];
+      if(selectedStatus==="ja")fireConfetti();
       loadWishes();
     }catch(e){alert("Fehler: "+e.message);btn.textContent="\u{1F4E8} Absenden";btn.disabled=false;}
   }
