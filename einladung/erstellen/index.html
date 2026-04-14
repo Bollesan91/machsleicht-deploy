@@ -295,7 +295,7 @@ function _redraw() {
   ctx.restore();
 
   // Export: direkt vom cropCanvas → 80x80
-  var OUT = 80;
+  var OUT = 120;
   var out = document.createElement('canvas');
   out.width = OUT; out.height = OUT;
   out.getContext('2d').drawImage(cc, 0, 0, CROP_SZ, CROP_SZ, 0, 0, OUT, OUT);
