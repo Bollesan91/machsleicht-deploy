@@ -1,8 +1,18 @@
 #!/usr/bin/env node
 /**
- * machsleicht.de — Validate Script
+ * machsleicht.de — Deep SEO/Quality Validator (tiefergehend als validate-all.sh)
+ *
+ * VERWENDUNG: node validate.js
+ *
+ * UNTERSCHIED zu validate-all.sh:
+ * - validate-all.sh = Standard-Quality-Gate nach jedem Build (JS-Syntax + Source-of-Truth)
+ * - validate.js = Deep Audit über ALLE HTML-Dateien (6 Gates: HTML-Basics, SEO, Sitemap,
+ *   interne Links, Trust/Disclaimer, Content-Qualität)
+ *
+ * WANN AUSFÜHREN: Vor größeren Releases oder monatlich als Sanity-Check.
+ * Ergebnis typisch: viele Warnings auf Lizenz-Mottos (Content-Thin) — bekannt, kein Blocker.
+ *
  * Prüft alle HTML-Dateien vor dem Deploy auf Qualität.
- * Aufruf: node validate.js
  */
 
 const fs = require("fs");
