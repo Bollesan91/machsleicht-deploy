@@ -74,9 +74,12 @@ Der komplette Bogen: **Einladung → Party-Vorbereitung → Partytag → Nachber
 
 ## 3. Monetarisierung — Priorisierte Hebel
 
-### Aktueller Stand (16.04.2026)
+### Aktueller Stand (16.04.2026, Abend-Session)
 - Traffic: ~80 Besucher/Tag (~2.400/Monat)
-- Revenue: praktisch null (Amazon-Affiliate-Tag war falsch bis heute 16.04. — jetzt gefixt)
+- Revenue: noch praktisch null. Blocker war falsch gesetzter Amazon-Tag.
+- **Heute gefixt (live):** Amazon-Affiliate-Tag `machsleicht-21` auf 796 Vorkommen einheitlich — 566 falsche Tags korrigiert. Damit laufen alle bestehenden Affiliate-Links jetzt erstmals korrekt getaggt. Erste Klicks werden ab jetzt trackbar.
+- **Heute gefixt (live):** 8 Ratgeber-Seiten mit FAQPage/HowTo-Schema + 2 schwächste Ratgeber-Seiten (torte-einfach, spiele-drinnen) auf 85%+ gehoben inkl. Affiliate-Boxen und Planer-CTAs.
+- **Heute pending:** Cloudflare-Worker-Deploy (Rätsel nach Maß + Partyseite) steht an — nächste Laptop-Session.
 - **Monetarisierungs-Tuning bei 80 Visitors/Tag ist Mikrooptimierung. Der echte Hebel heißt Traffic.**
 
 ### Prio 1 — Rätsel nach Maß deployen (BEREITS GEBAUT)

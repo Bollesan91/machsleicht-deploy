@@ -1,814 +1,309 @@
-# machsleicht.de — Konsolidiertes Audit-Backlog
+# machsleicht.de — Backlog
 
-**Erstellt:** 11.04.2026
-**Quellen:** Technisches Audit (Claude-Session) + Strategisches Audit (externes Dokument)
-**Bewertung Ist-Stand:** 7,2/10 — starker Produktkern, Systemdisziplin fehlt
-
----
-
-## P0 — SOFORT (vor dem nächsten Deploy)
-
-### P0-1: Google Search Console einrichten + Sitemap einreichen
-
-**Problem im Detail:**
-machsleicht.de taucht bei keiner Google-Suche auf — nicht einmal bei einer direkten Suche nach "machsleicht.de kindergeburtstag". Die Seite existiert für Google praktisch nicht. Ihr habt 361 URLs in der Sitemap, 364 HTML-Seiten gebaut, aber ohne GSC-Verifizierung und manuelle Sitemap-Einreichung kann es Monate dauern, bis Google die Seite überhaupt entdeckt. Jeder Tag ohne GSC ist ein Tag, an dem eure 364 Seiten unsichtbar bleiben.
-
-**Lösung — Schritt für Schritt:**
-1. Google Search Console öffnen: https://search.google.com/search-console
-2. Property hinzufügen → "URL-Präfix" → `https://machsleicht.de`
-3. Verifizierung: DNS-TXT-Record bei eurem Domain-Registrar setzen (oder HTML-Datei hochladen)
-4. Nach Verifizierung: Sitemaps → `https://machsleicht.de/sitemap.xml` einreichen
-5. URL-Prüfung → Startseite manuell zur Indexierung anmelden
-6. Die 5–10 wichtigsten Seiten einzeln zur Indexierung einreichen:
-   - `/kindergeburtstag`
-   - `/kindergeburtstag-checkliste`
-   - `/kindergeburtstag-drinnen`
-   - `/kindergeburtstag-draussen`
-   - `/schatzsuche-kindergeburtstag`
-   - `/einladung`
-   - `/schnitzeljagd-aufgaben`
-   - `/kindergeburtstag/detektiv`
-   - `/kindergeburtstag/dino`
-   - `/kindergeburtstag/piraten`
-
-**Aufwand:** 20 Minuten
-**Wirkung:** Ohne diesen Schritt sind alle anderen SEO-Maßnahmen wirkungslos.
+**Letzte Aktualisierung:** 16.04.2026
+**Status-Check:** Repository-weit durchgeführt, gegen Live-Stand abgeglichen.
+**Zweck:** Einzige Quelle für alle offenen und erledigten PBIs. Strategie-Kontext steht in `STRATEGIE.md`.
 
 ---
 
-### P0-2: "0 Spiele"-Bug in 16 Title-Tags fixen
+## Prio-Tabelle (Schnellübersicht)
 
-**Problem im Detail:**
-16 Altersgruppen-Seiten haben einen Bug in der Title-Generierung. Der Title enthält "0 Spiele" statt einer echten Zahl. Beispiel:
-
-```
-Zirkus-Show Kindergeburtstag 9–12 Jahre — 0 Spiele & Ideen | machsleicht
-```
-
-Google zeigt den Title als Snippet in den Suchergebnissen. "0 Spiele" signalisiert: leere Seite, kein Inhalt, nicht klickenswert. Das ist ein CTR-Killer und ein Qualitätssignal an Google, dass die Seite minderwertig ist.
-
-**Betroffene Dateien (alle 16):**
-```
-kindergeburtstag/zirkus-6-8-jahre.html
-kindergeburtstag/zirkus-3-5-jahre.html
-kindergeburtstag/zirkus-9-12-jahre.html
-kindergeburtstag/meerjungfrau-9-12-jahre.html
-kindergeburtstag/meerjungfrau-6-8-jahre.html
-kindergeburtstag/meerjungfrau-3-5-jahre.html
-kindergeburtstag/pferde-6-8-jahre.html
-kindergeburtstag/pferde-9-12-jahre.html
-kindergeburtstag/pferde-3-5-jahre.html
-kindergeburtstag/ritter-3-5-jahre.html
-kindergeburtstag/ritter-6-8-jahre.html
-kindergeburtstag/ritter-9-12-jahre.html
-kindergeburtstag/detektiv-9-12-jahre.html
-kindergeburtstag/detektiv-3-5-jahre.html
-kindergeburtstag/detektiv-6-8-jahre.html
-kindergeburtstag/baustelle-3-5-jahre.html
-```
-
-**Lösung:**
-Der Bug steckt vermutlich in der Generierungslogik in `_src/kindergeburtstag-data.js` oder im Build-Skript. Es wird die Spiele-Anzahl für die Altersgruppen-Seiten gezählt, aber bei bestimmten Motto×Altersgruppen-Kombinationen gibt die Zählung 0 zurück — vermutlich weil die Spiele-Daten für diese Kombination fehlen oder falsch gemappt sind.
-
-**Kurzfristiger Fix (sofort):** In jeder der 16 Dateien den Title manuell korrigieren — "0 Spiele &amp; Ideen" ersetzen durch den Motto-Namen + Altersgruppe ohne Spiele-Zahl:
-```html
-<!-- VORHER -->
-<title>Zirkus-Show Kindergeburtstag 9–12 Jahre — 0 Spiele &amp; Ideen | machsleicht</title>
-<!-- NACHHER -->
-<title>Zirkus-Show Kindergeburtstag 9–12 Jahre — Spiele &amp; Ideen | machsleicht</title>
-```
-
-**Langfristiger Fix:** Root Cause in `_src/kindergeburtstag-data.js` finden und beheben, damit der Build die korrekte Anzahl erzeugt. Dann alle 16 Seiten neu generieren.
-
-**Aufwand:** Kurzfristig 15 Min (Suchen+Ersetzen), langfristig 30–60 Min (Data-Bug finden)
+| Status | Prio | Ticket | Kurzbeschreibung |
+|--------|------|--------|------------------|
+| ⏳ | P0 | P0-1 | Google Search Console einrichten + Sitemap einreichen |
+| ⏳ | P0 | P1-5 | **GitHub Token rotieren** — Deadline 25.04. (9 Tage!) |
+| ⏳ | P1 | P1-4 | Einladungs-Tool: Default-Motto neutralisieren |
+| ⏳ | P1 | P1-7 | Social Proof auf Homepage und Planer-Seite |
+| ⏳ | P1 | P1-8 | Motto-Hauptseiten auf Elite-Niveau (Piraten als nächstes) |
+| ⏳ | P1 | P1-9 | /einladung als SEO-Hub aufbauen |
+| ⏳ | P1 | P1-10 | **Cloudflare Worker deployen** — Rätsel nach Maß + Partyseite live bringen (Revenue!) |
+| ⏳ | P1 | P1-11 | **Ratgeber-Seiten auf 85% hochziehen** (11 verbleibende Seiten) |
+| ⏳ | P2 | P2-1 | Homepage-Hero gemäß FUNNEL-AXIOM umbauen (Entscheidung steht) |
+| ⏳ | P2 | P2-2 | Thin Content bei Motto×Altersgruppen-Seiten nachschärfen |
+| ⏳ | P2 | P2-3 | Ergebnis-Vorschauen auf Produktseiten |
+| ⏳ | P2 | P2-5 | Performance-Verbesserung (JS-Bundle, lazy loading) |
+| ⏳ | P2 | P2-8 | /kreuzwortraetsel pre-rendern |
+| ⏳ | P2 | P2-10 | Einladungstool: 7 fehlende Lizenz-Mottos (Voraussetzung für P1-9) |
+| ⏳ | P2 | P2-13 | **Gumroad: 2 Digital-Produkte launchen** (Piraten + Dino Bundle) |
+| ⏳ | P2 | P2-14 | **Affiliate-Sweep auf 16 Ratgeber-Seiten** |
+| ⏳ | P2 | P2-15 | **Awin-Anmeldung** (Otto, myToys, Thalia) |
+| ⏳ | P3 | P3-1 | Repo aufräumen (Dev-Artefakte) |
+| ⏳ | P3 | P3-3 | Social Proof erweitern (echte Nutzerzahlen aus Plausible) |
+| ⏳ | P3 | P3-4 | Druckvorlagen pro Motto (Top 5) |
+| ⏳ | P3 | P3-5 | E-Mail-Liste aufsetzen (MailerLite + Lead-Magnet) |
+| ⏳ | P3 | P3-6 | **machsruhig.de launchen** (eigener Sprint, separates Master-Doc) |
+| ⏳ | P4 | P4-1 | PDF-Partybücher pro Motto |
+| ⏳ | P4 | P4-2 | Premium-Features (KI-Spielleiter, Einladungs-Audio, Gute-Nacht-Geschichte) |
+| ❌ | — | P1-1 | ~~/schatzsuche als eigene Seite~~ — **GESTRICHEN** (Memory #17: bleibt Redirect) |
+| ❌ | — | P1-2 | ~~/schnitzeljagd als eigene Seite~~ — **GESTRICHEN** (gleicher Grund) |
+| ✅ | — | P0-2 | "0 Spiele"-Bug in Titles |
+| ✅ | — | P0-3 | Duplicate Titles auf Motto-Hauptseiten |
+| ✅ | — | P0-4 | /_dev/ aus öffentlichem Zugriff sperren |
+| ✅ | — | P1-3 | 9 Einladungs-Themenseiten — Canonical-Tags |
+| ✅ | — | P1-6 | Schema.org Markup (Breadcrumbs 18/18, FAQPages 13/18, HowTo 6/18) |
+| ✅ | — | P2-6 | Encoding-Inkonsistenz in Title-Tags (Elite-Seiten normalisiert) |
+| ✅ | — | P2-11 | Interne Links broken/zirkulär auf Ratgeber-Seiten |
+| ✅ | — | P3-2 | Amazon Affiliate Tag setzen (**heute! machsleicht-21 konsolidiert, 796 Vorkommen sauber**) |
 
 ---
 
-### P0-3: Duplicate Titles bei 5 Motto-Hauptseiten fixen
+## ✅ ERLEDIGT (Evidenz im Repo geprüft)
 
-**Problem im Detail:**
-Bei 5 Mottos ist der Title der Hauptseite (z.B. `dino.html`) quasi identisch mit dem Title der Altersgruppen-Seite (z.B. `dino-3-5-jahre.html`), weil beide denselben Altersbereich im Title tragen. Zusätzlich mischen einige Titles HTML-Entities (`&ndash;`) mit echten UTF-8-Zeichen (`–`) im selben String — das ist zwar kein SEO-Killer, aber unsauber.
+### P0-2: "0 Spiele"-Bug in Title-Tags — FIXED
+- **Check:** `grep -l '0 Spiele' kindergeburtstag/*.html` → 0 Treffer
+- 16 Motto×Altersgruppen-Seiten hatten "0 Spiele" im Title — alle korrigiert.
 
-**Betroffene Paare:**
+### P0-3: Duplicate Titles (3–5–12 Jahre) — FIXED
+- **Check:** 0 Treffer in dino/einhorn/weltraum/safari/feuerwehr.html
+- Titles haben jetzt sauberen Alters-Range.
 
-| Hauptseite | Title-Problem |
-|---|---|
-| `dino.html` | `(3–5–12 Jahre)` — doppelter Bindestrich, unklar |
-| `einhorn.html` | `(3–5–12 Jahre)` — gleich |
-| `weltraum.html` | `(5–6–12 Jahre)` — gleich |
-| `safari.html` | `(3–5–12 Jahre)` — gleich |
-| `feuerwehr.html` | `(3–5–12 Jahre)` — gleich |
+### P0-4: /_dev/ gesperrt — FIXED
+- `robots.txt` enthält `Disallow: /_dev/`, `/_build/`, `/_src/`
+- `/_headers` vorhanden (X-Robots-Tag noindex für Dev-Ordner)
+- `.netlifyignore` vorhanden
 
-Das `–5–12` sieht aus, als wären zwei Alters-Ranges (3–5 und 6–12) ohne Trennzeichen zusammengefügt worden.
+### P1-3: Einladungs-Canonicals — FIXED
+- Alle 9 Einladungs-Themenseiten haben `rel="canonical"` (dino, einhorn, safari, feuerwehr, detektiv, prinzessin, weltraum, meerjungfrau, superheld).
 
-**Lösung:**
-Hauptseiten-Titles müssen den vollen Altersbereich klar zeigen:
-```html
-<!-- VORHER -->
-<title>Dino-Abenteuer Kindergeburtstag &mdash; Spiele, Deko &amp; Ablauf (3–5&ndash;12 Jahre) | machsleicht</title>
-<!-- NACHHER -->
-<title>Dino-Abenteuer Kindergeburtstag — Spiele, Deko &amp; Ablauf (3–12 Jahre) | machsleicht</title>
-```
+### P1-6: Schema.org Markup — GRÖSSTENTEILS FIXED
+- **BreadcrumbList:** auf **95 Seiten** verteilt (19 Motto-Hauptseiten, 18 Ratgeber, 8 Schatzsuche-Themen, 13 Checklisten, 8 Guides, 9 Einladungs-Themen + Hub, 5 Planer-Hauptseiten, 9 Ratgeber-Unterseiten, 4 Schatzsuche-Varianten)
+- **FAQPage:** 13 von 18 Ratgeber-Seiten haben FAQ-Schemas
+- **HowTo:** 6 von 18 Ratgeber-Seiten haben HowTo-Schemas
+- Offen: 5 Ratgeber-Seiten ohne FAQ, 12 ohne HowTo (siehe P1-11)
 
-Zusätzlich: Entity-Nutzung vereinheitlichen. Entweder überall `&ndash;` oder überall `–` (UTF-8). Empfehlung: UTF-8 direkt, da die Seiten eh UTF-8-encoded sind.
+### P2-6: Encoding-Normalisierung — FIXED auf Elite-Seiten
+- 193 HTML-Entities (&mdash;, &ndash;) auf 4 Elite-Seiten (Dino 3-5/6-8/9-12, Piraten 6-8) zu UTF-8 normalisiert.
+- Neue Elite-Seiten übernehmen UTF-8 automatisch.
 
-**Aufwand:** 15 Min
+### P2-11: Interne Links auf Ratgebern — FIXED
+- 26 CTA-Links auf 12 Ratgeber-Seiten von `href="/"` zu `/kindergeburtstag#planer` umgestellt.
+- 14 Ratgeber-Seiten linken jetzt auf `#planer`.
 
----
+### P3-2: Amazon Affiliate Tag — FIXED (16.04.2026)
+- **Vorher:** 566× falscher Tag `machsleicht21-21` + 230× richtiger `machsleicht-21`
+- **Nachher:** 796× einheitlich `machsleicht-21` verteilt auf 16 Dateien
+- Source-Files (_src/kindergeburtstag.jsx + data.js) auch gefixt, damit künftige Builds nicht regressieren.
 
-### P0-4: /_dev/ aus öffentlichem Zugriff sperren
-
-**Problem im Detail:**
-Der Ordner `_dev/` enthält 13 MB Dev-Artefakte, darunter eine 8,6 MB alte Deploy-Version (`deploy-v12-schatzsuche.html`), alte Skripte, Prototypen und Konfigurationen. Er ist nicht in der Sitemap und nicht intern verlinkt, ABER er ist über Netlify öffentlich aufrufbar (z.B. `machsleicht.de/_dev/deploy-v12-schatzsuche.html`). Es gibt keinen Schutz in robots.txt, keine noindex-Direktive und keinen Netlify-Header.
-
-**Risiko:** Gering solange keine GSC aktiv ist. Mittel sobald Google anfängt zu crawlen — besonders die 8,6 MB HTML-Datei könnte indexiert werden und mit dem echten Planer konkurrieren. Das andere Audit bewertet das als "brandgefährlich" — ich sage: gefährlich, aber nicht die Nr. 1, weil Google die Seite aktuell eh nicht kennt.
-
-**Lösung — 3 Schichten:**
-
-1. **robots.txt erweitern:**
-```
-User-agent: *
-Allow: /
-Disallow: /_dev/
-Disallow: /_build/
-Disallow: /_src/
-Sitemap: https://machsleicht.de/sitemap.xml
-```
-
-2. **Netlify _headers Datei erstellen** (im Repo-Root):
-```
-/_dev/*
-  X-Robots-Tag: noindex, nofollow
-/_build/*
-  X-Robots-Tag: noindex, nofollow
-/_src/*
-  X-Robots-Tag: noindex, nofollow
-```
-
-3. **Langfristig:** `_dev/`, `_build/`, `_src/` in `netlify.toml` als Redirect auf 404 oder per Netlify-Plugin komplett aus dem Deploy ausschließen. Am saubersten: `.netlifyignore`-Datei:
-```
-_dev/
-_build/
-_src/
-sparring-engine.jsx
-party-worker.js
-```
-
-**Aufwand:** 10 Min (robots + headers), 5 Min (.netlifyignore)
+### Deep SEO Ratgeber-Seiten (nicht-numerierter Sprint) — FIXED
+- **8 Ratgeber-Seiten** mit FAQPage/HowTo Schema versehen: zeitplan, essen, kosten, mitgebsel, drinnen, draussen, last-minute, zuhause
+- **2 schwächste Seiten** auf ~85% gehoben: torte-einfach (Recipe-Schema + Affiliate + CTA), spiele-drinnen (ItemList 15 Spiele + Affiliate + CTA)
+- Details in SESSION-NOTES.md
 
 ---
 
-## P1 — DIESE WOCHE
+## ❌ GESTRICHEN
 
-### P1-1: /schatzsuche als eigenständige Produktseite bauen
+### P1-1: ~~/schatzsuche als eigenständige Seite~~
+**Grund:** Architektur-Entscheidung in Memory #17 — `/schatzsuche` und `/schnitzeljagd` bleiben **bewusst** Redirects auf `/kindergeburtstag?modus=schatzsuche#planer`. Die Schatzsuche ist ein Modus im Planer, nicht ein eigenständiges Tool. SEO-Content liegt auf den Themen-Landingpages (`/schatzsuche-kindergeburtstag`, `/schatzsuche-drinnen`, `/schatzsuche-draussen` sowie den 8 Themen-Seiten `/schatzsuche/detektiv` etc.), die den Funnel füttern.
 
-**Problem im Detail:**
-`/schatzsuche` ist aktuell eine Meta-Refresh-Weiterleitung auf `/kindergeburtstag?modus=schatzsuche#planer`. Das Canonical zeigt auf `/kindergeburtstag`. Für Google sind `/schatzsuche` und `/kindergeburtstag` damit dieselbe Seite.
-
-Gleichzeitig existieren 8 eigenständige Schatzsuche-Themenseiten (`/schatzsuche/detektiv`, `/schatzsuche/dino`, etc.) plus `/schatzsuche-kindergeburtstag` und `/schatzsuche-drinnen` — alle in der Sitemap. Diese Seiten verlinken auf ein Produkt, das keine eigene Landingpage hat.
-
-Das ist das Architekturproblem, das beide Audits identifiziert haben: Die Schatzsuche wird nach außen als eigenständiges Produkt kommuniziert (eigene CTA auf Homepage, eigene Themenseiten, eigener Sitemap-Cluster), aber technisch existiert sie nicht als eigene Seite.
-
-**Warum das kritisch ist:**
-- "Schatzsuche Kindergeburtstag" ist ein High-Intent-Keyword mit eigenem Suchvolumen
-- Google kann keine Seite ranken, die nur eine Weiterleitung ist
-- Die 8 Themenseiten haben keinen Hub, auf den sie verlinken können
-- Nutzer, die von einer Themenseite auf "Schatzsuche" klicken, landen im Kindergeburtstags-Planer — das ist verwirrend
-
-**Lösung:**
-`schatzsuche.html` muss eine vollwertige Landingpage werden:
-
-- **Eigener Title:** `Schatzsuche Kindergeburtstag — 9 Themen, fertig in 5 Minuten | machsleicht`
-- **Eigener H1:** `Schatzsuche für den Kindergeburtstag erstellen`
-- **Eigene Meta Description**
-- **Eigenes Canonical:** `https://machsleicht.de/schatzsuche`
-- **Intro-Text:** Was die Schatzsuche kann, für wen sie ist, wie es funktioniert
-- **Themen-Übersicht:** Links zu allen 8 Themenseiten mit Kurzvorschau
-- **Direkt-Einstieg:** CTA zum Schatzsuche-Modus des Planers
-- **FAQ-Block:** eigenes Schema
-- **Ergebnis-Vorschau:** Beispiel-Schatzkarte, Beispiel-Stationen (Screenshot oder Live-Demo)
-
-Die Weiterleitung (`meta http-equiv="refresh"`) muss raus. Die `_redirects`-Regel `/schatzsuche → /kindergeburtstag?modus=schatzsuche#planer 301` muss auf eine 200-Rewrite geändert werden: `/schatzsuche /schatzsuche.html 200`
-
-**Aufwand:** 2–3 Stunden Content + Markup
+### P1-2: ~~/schnitzeljagd als eigenständige Seite~~
+**Grund:** Gleicher wie P1-1. Bleibt Redirect.
 
 ---
 
-### P1-2: /schnitzeljagd ebenfalls als eigenständige Seite bauen
+## ⏳ OFFEN
 
-**Problem im Detail:**
-Identisches Problem wie /schatzsuche — ist auch nur eine Meta-Refresh-Weiterleitung. "Schnitzeljagd" und "Schatzsuche" sind unterschiedliche Keywords mit unterschiedlicher Suchintention. Aktuell werden beide auf dieselbe Seite geleitet.
+### P0 — SOFORT
 
-**Lösung:**
-`schnitzeljagd.html` als eigene Landingpage mit Fokus auf "Schnitzeljagd" als Keyword. Kann inhaltlich stark auf `/schatzsuche` verweisen, braucht aber eigenen Title, H1, Meta Description und Canonical.
+#### P0-1: Google Search Console einrichten
+- GSC-Property `https://machsleicht.de` anlegen, via DNS-TXT verifizieren, Sitemap einreichen.
+- Die 10 wichtigsten Seiten einzeln zur Indexierung anmelden.
+- **Aufwand:** 20 Minuten
+- **Wirkung:** Ohne GSC sind alle SEO-Maßnahmen wirkungslos.
+- **Nicht im Repo prüfbar — Status nur vom User bestätigbar.**
 
-Bereits existierende Seiten `/schnitzeljagd-aufgaben` und `/schnitzeljagd-draussen` können dann sauber auf diese Hub-Seite interlinken.
+#### P1-5: GitHub PAT rotieren
+- Token `ghp_V12E...` läuft am **25.04.2026** ab — noch **9 Tage!**
+- Neu generieren (Scope `repo`, 90 Tage), in git-sync Skill eintragen, alten widerrufen.
+- **Aufwand:** 5 Min.
 
-**Aufwand:** 1–2 Stunden
+### P1 — DIESE WOCHE
 
----
+#### P1-4: Einladungs-Tool Default-Motto neutralisieren
+- Bei `/einladung/erstellen` ohne `?motto=` soll kein Motto vorausgewählt sein.
+- **Aufwand:** 30–60 Min.
 
-### P1-3: 9 Einladungs-Themenseiten — Canonical-Tags ergänzen
+#### P1-7: Social Proof auf Homepage und Planer-Seite
+- "Über 4.700 Geburtstage geplant" steht nur auf Piraten-Seite.
+- Plausible-Daten auswerten für echten Counter (brauche Zugriff).
+- **Aufwand:** 1 Stunde.
 
-**Problem im Detail:**
-Alle 9 Einladungs-Themenseiten (dino, einhorn, safari, feuerwehr, detektiv, prinzessin, weltraum, meerjungfrau, superheld) haben kein Canonical-Tag. Sie sind aber in der Sitemap.
+#### P1-8: Motto-Hauptseiten auf Elite-Niveau
+- **Ist-Stand Dino:** ✅ 6-8, 3-5, 9-12 Elite; Nachpflege pending (Dino 6-8 Header/Breadcrumb/Footer, Dino 3-5 CSS, Dino-Hauptseite Social Proof).
+- **Nächstes Motto:** Piraten (6-8 → 3-5 → 9-12)
+- **Danach:** Einhorn, Detektiv, Paw Patrol, Meerjungfrau (sortiert nach Suchvolumen).
+- **Elite-Checkliste:** Siehe `_dev/docs/ELITE-SEITEN-TEMPLATE.md` (14 Punkte).
+- **Aufwand:** ~1–2 Stunden pro Seite.
 
-Ohne Canonical kann Google frei entscheiden, welche Version einer Seite die "kanonische" ist. Im schlimmsten Fall werden Seiten gegeneinander ausgespielt oder als Duplicate markiert.
+#### P1-9: /einladung als SEO-Hub
+- Aktuell nur Tool-Hub ohne SEO-Content.
+- Neue Landingpage mit Title/H1/Meta/Canonical/FAQ/17-Mottos-Grid/Ergebnis-Vorschau.
+- **Abhängigkeit:** Braucht P2-10 (7 fehlende Mottos im Einladungstool) als Voraussetzung.
+- **Aufwand:** 3–4 Stunden.
 
-**Betroffene Dateien:**
-```
-einladung/dino/index.html
-einladung/einhorn/index.html
-einladung/safari/index.html
-einladung/feuerwehr/index.html
-einladung/detektiv/index.html
-einladung/prinzessin/index.html
-einladung/weltraum/index.html
-einladung/meerjungfrau/index.html
-einladung/superheld/index.html
-```
+#### P1-10: Cloudflare Worker deployen (Partyseite + Rätsel nach Maß)
+- **KRITISCH für Revenue.** party-worker.js v2 und Rätsel-nach-Maß-Worker sind technisch fertig, aber nicht deployed.
+- Schritte:
+  1. Cloudflare Worker anlegen, `party-worker.js` deployen
+  2. KV Namespace "PARTY" erstellen und binden
+  3. DNS: `party.machsleicht.de` → Worker
+  4. Environment-Variables: `AMAZON_TAG=machsleicht-21`, `AWIN_PUBLISHER_ID` (optional)
+  5. Rätsel-nach-Maß-Endpoint freischalten
+- **Aufwand:** 1 Laptop-Session, max 2h.
+- **Revenue-Effekt:** +100–200€/Monat sofort.
 
-**Lösung:**
-In jeder Datei im `<head>` ergänzen:
-```html
-<link rel="canonical" href="https://machsleicht.de/einladung/[motto]">
-```
+#### P1-11: Ratgeber-Seiten auf 85%+ hochziehen (11 verbleibende)
+Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 
-**Aufwand:** 10 Min
+| Seite | Aktuell | Fehlt |
+|-------|---------|-------|
+| spiele-draussen | 61% | FAQ, ItemList, Affiliate, Planer-CTA |
+| 7-jahre | 61% | FAQs ausbauen, Affiliate |
+| bei-regen | 61% | Content verdoppeln (790 W.), FAQ, HowTo |
+| wenig-aufwand | 62% | FAQ, HowTo |
+| zuhause | 64% | Content verdoppeln (532 W.!), HowTo |
+| einladung-text | 67% | FAQ, HowTo |
+| mitgebsel | 70% | HowTo, Affiliate |
+| last-minute | 71% | Content verdoppeln (355 W.!) |
+| 5-jahre | 73% | FAQs ausbauen (nur 1!), HowTo |
+| 6-jahre | 73% | FAQs ausbauen (nur 1!), HowTo, Affiliate |
+| kosten | 76% | Affiliate |
 
----
+**Befehl für Audit-Ranking:** `python3 _build/audit-all-ratgeber.py`
+**Aufwand:** ~30-60 Min pro Seite.
 
-### P1-4: Einladungs-Tool — Default-Motto neutralisieren
+### P2 — NÄCHSTE 2 WOCHEN
 
-**Problem im Detail:**
-Wenn ein Nutzer generisch auf `/einladung/erstellen` geht (z.B. von der Homepage), startet das Tool mit einem vorausgewählten Piraten-Motto. Das ist verwirrend, weil der Nutzer kein Motto gewählt hat. Es wirkt, als wäre das Tool ein Piraten-Tool statt ein universelles Einladungs-Tool.
+#### P2-1: Homepage-Hero FUNNEL-AXIOM umbauen
+**Entscheidung steht (Memory #19), Umsetzung offen.**
+- Hero: 1 Primary CTA "🎂 Kindergeburtstag planen →"
+- Sekundär darunter: Schatzsuche | Einladung | Partyseite als Textlinks
+- Planer-Output: "Jetzt Gäste einladen & Wunschliste teilen" → Partyseite
+- **Aufwand:** 2–3 Stunden.
 
-**Lösung:**
-- Generischer Einstieg (`/einladung/erstellen` ohne Parameter): kein Motto vorausgewählt, Nutzer wählt selbst
-- Motto-spezifischer Einstieg (z.B. von `/einladung/dino`): Dino vorausgewählt
-- Technisch: URL-Parameter `?motto=piraten` setzen, wenn von Themenseite kommend. Ohne Parameter → neutraler Zustand.
+#### P2-2: Thin Content bei Motto×Altersgruppen-Seiten
+- 281 Seiten im /kindergeburtstag/-Ordner (17 Mottos × 14 Altersvarianten).
+- Altersgruppen-Seiten (3-5, 6-8, 9-12) mit 16 KB dünner als Einzelalter (18–23 KB).
+- **Option A:** Einzel-Alter-Seiten auf noindex / Canonical zu Gruppe → 281 auf ~70.
+- **Option B:** Mit GSC-Daten nach 4–6 Wochen Top-20 identifizieren.
+- **Empfehlung:** A jetzt, B später.
+- **Aufwand:** 2–4 Stunden.
 
-**Aufwand:** 30–60 Min (JS-Logik im Einladungs-Tool)
+#### P2-3: Ergebnis-Vorschauen auf Produktseiten
+- Screenshots von fertigen Plänen, Schatzkarten, Einladungen auf Homepage/kindergeburtstag/schatzsuche/einladung einbinden.
+- **Aufwand:** 2 Stunden.
 
----
+#### P2-5: JS-Performance
+- Kurzfristig: `loading="lazy"` auf alle Bilder (5 Min.) + manifest.json (10 Min.)
+- Mittelfristig: React von unpkg selbst hosten.
+- Langfristig: Code-Splitting für 307 KB kindergeburtstag.js.
+- **Aufwand:** Kurzfristig 15 Min, langfristig 2–4 Std.
 
-### P1-5: GitHub PAT rotieren (Deadline 25.04.)
+#### P2-8: /kreuzwortraetsel pre-rendern
+- Statischer HTML-Wrapper um die React-App.
+- **Aufwand:** 1–2 Std.
 
-**Problem im Detail:**
-Der aktuelle Personal Access Token `ghp_V12E...` läuft am 25.04.2026 ab. Danach scheitern alle git push/pull-Operationen aus Claude-Sessions.
+#### P2-10: Einladungstool: 7 fehlende Lizenz-Mottos
+- Harry Potter, Minecraft, Pokémon, Paw Patrol, Spider-Man, Super Mario, Frozen.
+- **Voraussetzung für P1-9.**
+- **Aufwand:** 2–3 Stunden.
 
-**Lösung:**
-1. GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)
-2. Neuen Token generieren: Scope `repo` (Full control), Laufzeit 90 Tage
-3. Token in der git-sync Skill-Konfiguration aktualisieren
-4. Alten Token widerrufen
+#### P2-13: Gumroad — 2 Digital-Produkte launchen
+- Piraten-Komplett-PDF (VK 4,99€) + Dino-Komplett-PDF (VK 4,99€).
+- Design-Material vorhanden (Elite-Seiten, Forscherpass).
+- Gumroad führt USt ab → Kleinunternehmer-Status bleibt.
+- **Revenue-Effekt:** +100€/Monat bei aktuellem Traffic.
+- **Aufwand:** 2–4h pro Produkt einmalig.
 
-**Aufwand:** 5 Min
-**Deadline:** Spätestens 24.04.
+#### P2-14: Affiliate-Sweep auf 16 Ratgeber-Seiten
+- Aktuell nur 2/18 Ratgeber mit Amazon-Links.
+- Einmalkauf-Produkte (Springform, Bluetooth-Box, Bastelset, Zahlenkerzen).
+- Vergleichs-Tabellen statt Einzel-Links (konvertiert 3–5× besser).
+- **Revenue-Effekt:** +50–150€/Monat.
+- **Aufwand:** 4–6 Stunden Batch-Sprint.
 
----
+#### P2-15: Awin anmelden
+- Otto (8–10% Marge), myToys (6–8%), Thalia (5%), Jako-o, tausendkind, LEGO.
+- Prüfung dauert 1–3 Tage — früh starten.
+- **Aufwand:** 30 Min. Anmeldung + nach Freischaltung Integration in party-worker.js (1–2h).
 
-## P2 — NÄCHSTE 2 WOCHEN
+### P3 — NÄCHSTER MONAT
 
-### P2-1: Homepage-Hero gemäß FUNNEL-AXIOM umbauen ✅ ENTSCHIEDEN
+#### P3-1: Repo aufräumen
+- `.netlifyignore` bereits vorhanden (P0-4). Ggf. präzisieren.
+- Langfristig: `_dev/` in separates Repo auslagern (33 MB → 18 MB).
+- **Aufwand:** 10–30 Min.
 
-**FUNNEL-AXIOM (Final, 15.04.2026 — nie wieder diskutieren):**
-Hero = EIN Primary CTA: **"Kindergeburtstag planen →"**. Schatzsuche, Einladung und Partyseite werden sekundär darunter als Textlinks positioniert, nicht als gleichwertige Buttons. Die Partyseite ist kein Einstiegsprodukt, sondern Post-Planer-Upsell.
+#### P3-3: Social Proof aus Plausible
+- Echte Planer-Erstellungen-Zahl als Counter auf Homepage.
+- **Aufwand:** variabel.
 
-**Funnel:** Google → Planer → Plan fertig → "Gäste einladen?" → Partyseite → Wunschliste → Affiliate
+#### P3-4: Druckvorlagen pro Motto (Top 5)
+- Ausweise, Urkunden, Masken pro Motto (HTML mit Drucken-Button).
+- Start mit Dino ✅, dann Piraten, Einhorn, Feuerwehr, Detektiv.
+- **Aufwand:** ~30 Min pro Motto.
 
-Alle UX/CTA-Entscheidungen leiten sich aus diesem Funnel ab. Homepage bleibt lang (Hub/Schaufenster).
+#### P3-5: E-Mail-Liste aufsetzen
+- MailerLite (gratis bis 1.000), DSGVO-konform, Double-Opt-In.
+- Lead-Magnet: "Piraten-Einladung kostenlos" oder "Komplette Einkaufsliste".
+- Monatlicher Newsletter.
+- **Aufwand:** 1 Tag Setup, danach 30 Min/Monat.
+- **Revenue-Effekt:** langfristig 1.000–3.000€/Jahr ab 1.000 Kontakten.
 
-**Umsetzung:**
-- Hero: Ein einziger Primary Button "🎂 Kindergeburtstag planen →"
-- Darunter sekundär als Textlinks: Schatzsuche | Einladung | Partyseite
-- Im Planer-Output nach Fertigstellung: fetter CTA "Jetzt Gäste einladen & Wunschliste teilen" → Partyseite
-- Homepage-Länge bleibt — Rest ist Hub-Content für SEO
+#### P3-6: machsruhig.de launchen
+- Eigener Sprint, Master-Doc existiert: `SKILL_MACHSRUHIG_MASTER.md` (2.698 Zeilen, 28 Phasen).
+- 10 Kernseiten für SEO-Traffic ("Bestatter Kosten", "Vorsorge", "Trauerrede").
+- **Revenue-Effekt:** 150–300€ pro Bestatter-Lead. Eine rankende Seite = 1.000€+/Monat.
+- **Aufwand:** 2–3 Wochen Content-Sprint.
 
-**Aufwand:** 2–3 Stunden
+### P4 — ZUKUNFT
 
----
+#### P4-1: PDF-Partybücher pro Motto
+- Forscher-/Abenteuer-Partybuch als PDF-Download (20–30 Seiten).
+- VK 2,99€ via Lemon Squeezy. ~95% Marge.
+- Voraussetzung: Traffic muss da sein.
 
-### P2-2: Thin Content bei Motto×Altersgruppen-Seiten nachschärfen
-
-**Problem im Detail:**
-Die 281 Seiten im `/kindergeburtstag/`-Ordner sind aus Kombinationen von 17 Mottos × (10 Einzel-Alter + 3 Altersgruppen + 1 Hauptseite) generiert. Die Altersgruppen-Seiten (3-5, 6-8, 9-12 Jahre) sind mit 16 KB deutlich dünner als die Einzelalter-Seiten (18–23 KB) und die Hauptseiten (20–36 KB).
-
-Das Problem ist nicht die Datenmenge, sondern ob die Inhalte zwischen z.B. "Baustelle 6 Jahre" und "Baustelle 7 Jahre" wirklich inhaltlich differenziert sind. Wenn Google 10+ Seiten findet, die sich nur in der Altersangabe unterscheiden aber denselben Content haben, wertet es das als Thin/Duplicate Content — und das schadet der gesamten Domain.
-
-**Lösung — Zwei Optionen:**
-
-**Option A (konservativ):** Die Altersgruppen-Seiten (3-5, 6-8, 9-12) behalten, Einzel-Alter-Seiten (3, 4, 5, 6, 7, 8, 9, 10, 11, 12 Jahre) auf noindex setzen oder per Canonical auf die Gruppeseite verweisen. Das reduziert die indexierbaren Seiten von 281 auf ~70.
-
-**Option B (selektiv):** Die Top-20-Seiten mit echtem Suchvolumen identifizieren (via GSC-Daten nach einigen Wochen) und nur diese auf Premium-Niveau heben. Rest auf noindex oder Canonical.
-
-**Empfehlung:** Option A sofort, dann Option B mit echten Daten in 4–6 Wochen.
-
-**Aufwand:** 2–4 Stunden (je nach Umsetzungsvariante)
-
----
-
-### P2-3: Ergebnis-Vorschauen auf Produktseiten einbauen
-
-**Problem im Detail:**
-Die Seiten beschreiben, was die Tools erzeugen, zeigen aber kein konkretes Ergebnis. "Berechnet automatisch altersgerechte Spiele, Snack-Mengen pro Kind und die geschätzten Kosten" ist ein Versprechen. Ein Screenshot eines fertigen Plans mit Zeitablauf, Spielen und Einkaufsliste wäre ein Beweis.
-
-Eltern, die gestresst sind und schnell entscheiden müssen, brauchen keinen Text, der erklärt was passiert — sie brauchen ein Bild, das zeigt "so sieht dein Ergebnis aus".
-
-**Wo Vorschauen fehlen:**
-- Homepage: Kein Beispiel-Output sichtbar
-- `/kindergeburtstag`: Kein Beispiel-Zeitplan
-- `/schatzsuche` (sobald umgebaut): Keine Beispiel-Schatzkarte
-- `/einladung`: Keine Beispiel-Einladung
-- Partyseite: Keine Beispiel-Partyseite
-
-**Lösung:**
-Für jedes der 4 Kernprodukte einen "So sieht dein Ergebnis aus"-Screenshot erstellen:
-1. Einmal das Tool mit realistischen Daten durchlaufen lassen
-2. Screenshot des Ergebnisses machen
-3. Als Bild auf der jeweiligen Landingpage einbinden — oberhalb des CTAs
-4. `loading="lazy"` und aussagekräftigen `alt`-Text setzen
-
-**Aufwand:** 2 Stunden (Screenshots + Einbindung)
-
----
-
-### P2-4: robots.txt und _headers für Build-Ordner
-
-Siehe P0-4 — dort beschrieben. Die eigentliche Implementierung kann in P2 fallen, solange der robots.txt-Teil sofort gemacht wird.
-
----
-
-### P2-5: Performance — JS-Bundle und externe Abhängigkeiten
-
-**Problem im Detail:**
-- `kindergeburtstag.js` (307 KB) + `kindergeburtstag-data.js` (116 KB) = 423 KB JavaScript
-- React 18 wird von unpkg.com geladen — externe CDN-Abhängigkeit, kein Fallback
-- Kein Web App Manifest — kein "Add to Homescreen" auf Mobile
-- Kein `loading="lazy"` auf Bildern der Homepage
-- Netlify komprimiert automatisch per Brotli, daher ist die Transfer-Größe kleiner als 423 KB. Aber das Parsing bleibt.
-
-**Lösung (schrittweise):**
-1. **Kurzfristig:** `loading="lazy"` auf alle `<img>`-Tags setzen (5 Min)
-2. **Kurzfristig:** `manifest.json` erstellen mit Icon-Referenzen (10 Min)
-3. **Mittelfristig:** React von unpkg.com selbst hosten — Datei ins `/js/`-Verzeichnis kopieren
-4. **Langfristig:** Code-Splitting evaluieren — die 307 KB werden nur auf `/kindergeburtstag` gebraucht, aber auf allen anderen Seiten nicht geladen. Prüfen ob der Data-Layer (116 KB) lazy nachgeladen werden kann.
-
-**Aufwand:** Kurzfristig 15 Min, langfristig 2–4 Stunden
-
----
-
-### P2-6: Encoding-Inkonsistenz in Title-Tags bereinigen
-
-**Problem im Detail:**
-Einige Title-Tags mischen HTML-Entities (`&mdash;`, `&ndash;`) mit echten UTF-8-Zeichen (`–`) im selben String:
-```html
-<title>Safari-Expedition Kindergeburtstag &mdash; Spiele, Deko &amp; Ablauf (3–5&ndash;12 Jahre)</title>
-```
-Hier steht `3–5` (UTF-8 Dash) direkt neben `&ndash;` (Entity Dash). Das erzeugt in manchen Kontexten (Suchergebnisse, Social Shares) unterschiedliche Darstellungen.
-
-**Lösung:**
-Alle Title-Tags auf einheitliches UTF-8 normalisieren. Da die Seiten `<meta charset="UTF-8">` haben, können die Entities durch echte Zeichen ersetzt werden:
-```bash
-# In allen HTML-Dateien:
-&mdash; → —
-&ndash; → –
-&amp; → bleibt (muss als Entity bleiben in Attributen)
-```
-
-**Aufwand:** 15 Min (Skript über alle Dateien)
+#### P4-2: Premium-Features
+- **KI-Spielleiter-Anrufe** via ElevenLabs (~1€ Cost, VK 4,99€). Stimmtest pending.
+- **Einladungs-Audio** (~3ct, VK im Bundle).
+- **Gute-Nacht-Geschichte** (Claude + ElevenLabs, ~30ct, VK 2,99€).
+- **Eltern-Copilot** (Claude, ~50ct/Session, VK 3,99€).
+- **Danke-Nachrichten** (Claude, ~0ct, VK 1,99€).
+- **Bundle:** 9,99€ für alle Features.
+- **Gestrichen:** Foto-Erzähler (DSGVO), Geburtstagssong (DE-Musik-AI zu schwach).
 
 ---
 
-## P3 — NÄCHSTER MONAT
+## Offene Fragen
 
-### P3-1: Repo aufräumen — Dev-Artefakte entfernen
-
-**Problem im Detail:**
-Das Repo enthält Dateien, die nicht zum produktiven Deploy gehören:
-- `_dev/` (13 MB) — alte Prototypen, Configs, eine 8,6 MB Deploy-Version
-- `sparring-engine.jsx` (167 KB) — im Root, Dev-Artefakt
-- `party-worker.js` (56 KB) — Cloudflare Worker Code, gehört nicht ins Netlify-Deploy
-- `Setup-Anleitung-machsleicht.docx` (14 KB) — Dokumentation, nicht für Production
-- `prompt-fuer-claude-chat.txt` — internes Dokument
-
-Diese Dateien machen den git clone langsamer, das Repo unübersichtlicher und werden unnötig von Netlify deployed.
-
-**Lösung:**
-1. `.netlifyignore` erstellen (verhindert Deploy, bleibt aber im Repo):
-```
-_dev/
-_build/
-_src/
-sparring-engine.jsx
-party-worker.js
-Setup-Anleitung-machsleicht.docx
-prompt-fuer-claude-chat.txt
-validate.js
-validate-all.sh
-```
-
-2. Langfristig: `_dev/` in ein separates Repo oder Branch auslagern, um die Repo-Größe von 33 MB auf ~18 MB zu reduzieren.
-
-**Aufwand:** 10 Min (.netlifyignore), 30 Min (Repo-Cleanup)
+- Reihenfolge nach Piraten-Elite: Einhorn oder Paw Patrol (Lizenz-Motto mit höchstem Suchvolumen)?
+- Skalierung Motto-Seiten: manuell oder Content-Generator mit Claude API?
+- Free vs. Premium-Mix: welche Features bleiben kostenlos als Lead-Magnet?
+- Cloudflare Worker Deploy: manuell im Dashboard oder wrangler CLI?
 
 ---
 
-### P3-2: Monetarisierung starten — Amazon Affiliate Tag setzen
+## Content-Referenz: Elite-Motto×Altersgruppe-Template
 
-**Problem im Detail:**
-Der Affiliate-Disclaimer steht im Footer jeder Seite, aber es gibt keinen aktiven Affiliate-Tag. Die Kaufmoment-Blöcke (`.kaufmoment` CSS-Klasse) existieren im CSS, aber ohne funktionierenden Tag generiert kein Klick Einnahmen.
+Jede der Ziel-60-Seiten (20 Mottos × 3 Altersgruppen) braucht laut ELITE-SEITEN-TEMPLATE.md:
 
-**Lösung:**
-1. Amazon PartnerNet-Konto erstellen/aktivieren
-2. Tag als Umgebungsvariable in Netlify setzen: `AMAZON_TAG=machsleicht-21` (o.ä.)
-3. Im Build-Prozess den Tag in alle Affiliate-Links injizieren
-4. Awin-Anmeldung für weitere Affiliate-Netzwerke starten
+1. **Altersgruppen-Intro** — 3 Versionen (3-5, 6-8, 9-12), wiederverwendbar
+2. **3 Party-Varianten** (Minimal / Standard / Wow) — Zeitplan mit Uhrzeiten, 5 Spiele pro Gruppe, Essen mit Mengen, Deko mit Preisen, Mitgebsel, Gesamtkosten
+3. **Kuchen-Rezept**
+4. **Eltern-Tipps** (Allergien, Plan B, Partyseite, Helfer-Regel)
+5. **FAQ** (4 Fragen, FAQPage-Schema)
+6. **CTAs** nach jeder Sektion
+7. **WhatsApp-Share**
+8. **Altersgruppen-Navigation**
 
-**Aufwand:** 30 Min (Amazon Tag), 1–2 Stunden (Awin-Bewerbung + Integration)
+Druckvorlagen pro Motto (P3-4): Ausweis, Urkunde, Quiz, Masken.
 
----
-
-### P3-3: Sichtbare Ergebnis-Beweisführung ausbauen
-
-**Problem im Detail (Erweiterung von P2-3):**
-Über Screenshots hinaus fehlt auf den Seiten jede Form von Social Proof: keine Nutzerzahlen, keine Testimonials, keine "X Pläne erstellt"-Counter. Für ein Tool, das Vertrauen braucht ("Soll ich meinen Kindergeburtstag wirklich einem Online-Tool anvertrauen?"), ist das ein Conversion-Hemmnis.
-
-**Lösung:**
-- Plausible-Analytics auswerten: wie viele Pläne wurden erstellt? Diesen Counter auf die Seite bringen
-- Nach den ersten Nutzern aktiv Feedback einholen und als Zitat auf die Seite setzen
-- "Von Eltern für Eltern" stärker mit echten Beispielen unterlegen
-
-**Aufwand:** Variabel, abhängig von verfügbaren Daten
+Affiliate-Kategorien pro Motto: Figuren-Set, Masken/Verkleidung, Partygeschirr, Stempel, Werkzeug. **Kostüm ist das margenträchtigste Affiliate-Produkt** (~1,20€ pro Klick vs. ~0,10€ bei Figuren).
 
 ---
 
-### P1-9: /einladung als eigenständige SEO-Landingpage aufbauen
-
-**Problem im Detail:**
-Aktuell gibt es `/einladung/erstellen` (Fullscreen-Tool, kein SEO-Content) und `/einladung/index.html` (Themen-Hub als React-App, auch kein crawlbarer SEO-Content). Beides sind Tools, keine Landingpages. Das Keyword "Einladung Kindergeburtstag" hat hohes Suchvolumen — wird aber aktuell nur schwach bedient.
-
-**Konkurrenz-Analyse:**
-"Einladung Kindergeburtstag" wird dominiert von DIY-Bastelblogs und Druckereien. Tool-first-Ansatz mit WhatsApp-Versand und Motto-Vorschau ist differenzierend — hier gibt es echte Chancen, im Gegensatz zum übersättigten "Kindergeburtstag planen"-Keyword.
-
-**Warum nicht auch `/planer` oder `/partyseite` als SEO-Hubs:**
-- "Kindergeburtstag planen" → Exact-Match-Domain-Konkurrenz (kindergeburtstag-planen.de) + etablierte Brands. 12–24 Monate Aufbau, nicht die Mühe wert als zusätzliche Seite. `/kindergeburtstag` deckt das ab.
-- "WhatsApp Partyseite" → kaum Suchvolumen, Begriff noch nicht etabliert. Partyseiten-Traffic muss aus dem Funnel kommen, nicht aus Google.
-
-**Lösung — neue Seite `/einladung` bauen:**
-
-Eigene SEO-Landingpage (nicht das Tool!) mit:
-
-- **Title:** `Einladung Kindergeburtstag erstellen — kostenlos per WhatsApp | machsleicht`
-- **H1:** `Einladung für den Kindergeburtstag erstellen`
-- **Meta Description:** Mit "kostenlos", "WhatsApp", "30 Sekunden", "17 Mottos"
-- **Canonical:** `https://machsleicht.de/einladung`
-- **Hero-Bereich:** Kurz erklären, was das Tool macht (WhatsApp, kein Druck, 30 Sekunden)
-- **Motto-Grid:** Alle 17 Mottos mit Vorschau-Bild und Link auf `/einladung/erstellen?motto=X`
-- **Ergebnis-Vorschau:** Screenshot/Demo einer fertigen Einladung
-- **Sektion "So funktioniert's":** 3 Schritte (Motto wählen → Daten eingeben → WhatsApp teilen)
-- **FAQ mit FAQPage-Schema:** "Muss man die Einladung ausdrucken?", "Kann ich ein Foto hinzufügen?", "Kostet das etwas?", etc.
-- **BreadcrumbList-Schema:** Start › Einladung
-- **Ratgeber-Verlinkung:** `/kindergeburtstag-einladung-text` und Motto-Seiten
-- **Post-Tool-Upsell:** Nach Einladung → "Jetzt Partyseite erstellen" (Funnel-Anschluss)
-
-**Technisch:**
-- Aktuelle `/einladung/erstellen` bleibt als Tool erhalten
-- Aktuelle `/einladung/index.html` (React-Hub) wird ersetzt oder bekommt SEO-Content davor
-- Redirect-Matrix: `/einladung` → neue SEO-Seite (nicht mehr zum Tool-Hub)
-
-**Impact auf das Funnel-System:**
-
-Mit dieser Seite entstehen 4 saubere Einstiegspunkte aus Google:
-```
-Google → /kindergeburtstag   (Planer-Keywords)
-Google → /schatzsuche        (Schatzsuche-Keywords, siehe P1-1)
-Google → /einladung          (Einladungs-Keywords, DIESE SEITE)
-Google → Homepage            (Brand-Suche "machsleicht")
-```
-
-Jede Landingpage hat einen Tool-Einstieg und füttert den Funnel weiter. Konform zum FUNNEL-AXIOM.
-
-**Abhängigkeit:** Sollte nach P1-1 (`/schatzsuche` umbauen) erfolgen, weil dort das Pattern für SEO-Landingpage-vor-Tool etabliert wird.
-
-**Aufwand:** 3–4 Stunden (Content + Markup + Motto-Grid + Schema)
-
----
-
-### P2-12: Motto-Lücke im Einladungstool schließen (Ergänzung zu P2-10)
-
-**Kontext:**
-P2-10 (7 fehlende Mottos im Einladungstool) wird durch P1-9 noch wichtiger: Wenn die neue `/einladung`-Landingpage alle 17 Mottos mit Vorschau zeigt, dürfen im Tool nicht nur 10 funktionieren. Nutzer klicken auf "Minecraft-Einladung" auf der SEO-Seite und landen dann im Tool, das Minecraft nicht kennt = Funnel-Bruch.
-
-**Lösung:**
-P2-10 wird harte Voraussetzung für P1-9. Beide Tickets zusammen launchen.
-
-**Aufwand:** siehe P2-10 (2–3 Stunden)
-
----
-
-## Alte Zusammenfassung (ersetzt durch aktualisierte Version unten, siehe "Audit-Findings 15.04.2026")
-
----
-
-### P2-7: Einladungs-Hub mit ?motto=X-Links ausstatten
-
-**Problem im Detail:**
-Der URL-Parameter `?motto=X` auf `/einladung/erstellen` funktioniert (wählt Motto automatisch vor), wird aber nirgends verlinkt. Die Einladungs-Themenseiten (`/einladung/dino`, etc.) sind Fullscreen-React-Apps mit `overflow:hidden` — ein Floating-CTA überlappt dort immer Content. Der Einladungs-Hub (`/einladung/index.html`) ist ebenfalls eine React-App und verlinkt aktuell nicht auf `/einladung/erstellen`.
-
-Zusätzlich: Der Hub-Title zeigt "Piraten-Einladung erstellen" statt einen neutralen Titel.
-
-**Lösung:**
-Beim nächsten Umbau des Einladungs-Hubs die Motto-Karten mit Links auf `/einladung/erstellen?motto=X` versehen. Hub-Title neutralisieren.
-
-**Aufwand:** 30–60 Min (React-Code im Hub)
-
----
-
-### P4-1: PDF-Partybücher pro Motto (nach Rätsel nach Maß Launch)
-
-**Idee:**
-Pro Motto ein "Forscher-Partybuch" / "Abenteuer-Partybuch" als PDF-Download: Ausmalseiten + Rätsel + Quiz + Steckbrief + Urkunde + Blanko-Felder ("Paläontologe: ___"). 20–30 Seiten. Nicht nur Malbuch, sondern Party-Activity-Book. Eltern kaufen 6–8 Exemplare, drucken selbst.
-
-**Monetarisierung:** 2,99€ über Lemon Squeezy (selber Stack wie Rätsel nach Maß). ~95% Marge.
-**Alternativ:** Amazon KDP als physisches Buch (5,99€, ~25% Marge) oder Print-on-Demand (Gelato/Peecho, ~40-50%).
-
-**Integration auf machsleicht.de:**
-- Auf jeder Motto×Altersgruppe-Seite unter "Mitgebsel" und "Basteln" verlinken
-- Im Planer-Output als "Partybuch dazubuchen" einbauen
-
-**Voraussetzung:** Erst Traffic aufbauen (Content-Seiten), dann zusammen mit Rätsel nach Maß launchen.
-**Start mit:** Top-5-Mottos (Dino, Piraten, Einhorn, Feuerwehr, Detektiv).
-**Aufwand:** 1 Tag pro Motto (Illustrationen + Layout).
-
----
-
-### P4-2: Rätsel nach Maß + PDF-Partybuch gemeinsamer Launch
-
-**Idee:** Beide Produkte teilen denselben Lemon Squeezy + KV Credit-Tracking Stack. Ein Setup, zwei Produkte. Rätsel nach Maß (0,99€/2,99€) + Partybuch-PDF (2,99€). Gemeinsamer Launch spart Implementierungsaufwand.
-
----
-
-### P3-4: Druckvorlagen pro Motto (Ausweise, Urkunden, Masken)
-
-**Idee:**
-Jedes Motto braucht druckbare Vorlagen für die Wow-Variante. Beispiele:
-- Dino: Forscherausweis + Paläontologen-Urkunde
-- Piraten: Kapitänspatent + Schatzkarte-Blanko
-- Detektiv: Detektivausweis + Geheimdienstakte
-- Einhorn: Zauberdiplom + Regenbogen-Pass
-- Feuerwehr: Dienstausweis + Einsatzbericht
-
-Format: HTML-Seite mit Drucken-Button, 4 Stück pro A4. Blanko-Felder zum Ausfüllen.
-Wird in der Wow-Variante der jeweiligen Motto×Altersgruppe-Seite verlinkt.
-
-**Aufwand:** ~30 Min. pro Motto
-**Voraussetzung:** Content-Seiten fertig, dann die Vorlagen als Ergänzung.
-**Start mit:** Top-5-Mottos (Dino, Piraten, Einhorn, Feuerwehr, Detektiv)
-
----
-
-## Content-Schema pro Motto × Altersgruppe
-
-Jede der 60 Seiten (20 Mottos × 3 Altersgruppen) braucht:
-
-### Content auf der Seite selbst
-1. **Altersgruppen-Intro** — Was Kinder in diesem Alter ausmacht (3 Versionen, nicht motto-spezifisch, wiederverwendbar)
-2. **3 Party-Varianten** (Minimal / Standard / Wow) — je mit:
-   - Zeitplan mit Uhrzeiten und Begründung pro Slot
-   - Spielanleitungen mit Material, Regeln, Alters-Differenzierung, Indoor/Outdoor-Tag
-   - Essen mit konkreten Mengen (Faktor intern: 3-5=1.0, 6-8=1.3, 9-12=1.8)
-   - Deko mit Preisen
-   - Mitgebsel mit Kosten pro Kind
-   - Gesamtkosten
-3. **Kuchen-Rezept** pro Motto
-4. **Eltern-Tipps** (4 Stück, teilweise wiederverwendbar: Allergien, Plan B, Partyseite, Helfer-Regel)
-5. **FAQ** (4 Fragen mit FAQPage-Schema, teilweise motto-spezifisch)
-6. **CTAs** (nach jeder Variante + nach Kuchen + Footer, mit Einladung/Partyseite-Links)
-7. **WhatsApp-Share** Button
-8. **Altersgruppen-Navigation** (Links zu den anderen 2 Gruppen + Motto-Übersicht)
-
-### Druckvorlagen pro Motto (separate HTML-Seiten)
-| Vorlage | Format | Beschreibung |
-|---|---|---|
-| **Ausweis** | 4 pro A4 | Blanko-Felder: Name, Datum, Lieblingsfigur, Foto, Prüfungs-Checks |
-| **Urkunde** | 2 pro A4 | "Hiermit wird ___ zum offiziellen [Rolle] ernannt" |
-| **Quiz** | 2 Seiten | Seite 1: Fragen (Multiple Choice). Seite 2: Antworten (nur Quizmaster) |
-| **Masken** | 4 pro Datei | SVG-Outlines zum Ausmalen + Ausschneiden, Loch-Markierungen |
-
-### Motto-spezifische Varianten der Vorlagen
-| Motto | Ausweis | Urkunde | Rolle |
-|---|---|---|---|
-| Dino | Forscherausweis | Paläontologen-Diplom | Paläontologe |
-| Piraten | Kapitänspatent | Seeräuber-Urkunde | Piratenkapitän |
-| Detektiv | Detektivausweis | Ermittler-Lizenz | Chefermittler |
-| Einhorn | Regenbogen-Pass | Zauberdiplom | Einhorn-Hüter |
-| Feuerwehr | Dienstausweis | Feuerwehr-Urkunde | Löschmeister |
-| Safari | Ranger-Ausweis | Expeditions-Urkunde | Safari-Ranger |
-| Weltraum | Astronauten-ID | Missions-Zertifikat | Astronaut |
-| Ritter | Ritterschlag-Brief | Schwert-Urkunde | Ritter |
-| Meerjungfrau | Meeres-Pass | Unterwasser-Diplom | Meeres-Hüter |
-| Zirkus | Artisten-Ausweis | Zirkus-Diplom | Zirkusdirektor |
-
-### Wiederverwendbare Bausteine (nicht motto-spezifisch)
-- Altersgruppen-Intro (3 Texte: 3-5, 6-8, 9-12)
-- Eltern-Tipps (Allergien, Plan B, Partyseite-Verweis, Helfer-Regel)
-- Essen-Grundmengen (skaliert nach Altersgruppe)
-- CTA-Blöcke (Planer, Einladung, Partyseite)
-
-### Affiliate-Produkte pro Motto (Schema)
-
-Jedes Motto hat wiederkehrende Affiliate-Kategorien:
-
-| Produkt | Variante | Beispiel Dino | Preis | Provision (~3%) |
-|---|---|---|---|---|
-| Figuren-Set | Alle | Mini-Dinos 12 Stk. | ~3 € | ~0,09 € |
-| Masken/Verkleidung | Standard+Wow | Dino-Maskenbuch | ~6 € | ~0,18 € |
-| Teller & Becher Set | Standard+Wow | Dino-Partygeschirr | ~8 € | ~0,24 € |
-| Stempel | Wow | Dino-Stempel | ~4 € | ~0,12 € |
-| Lupen/Werkzeug | Wow | Lupen-Set 6 Stk. | ~4 € | ~0,12 € |
-| **Kostüm (Erwachsene)** | **Wow-Bonus** | **Aufblasbarer T-Rex** | **~40 €** | **~1,20 €** |
-
-Kostüm ist mit Abstand das margenträchtigste Affiliate-Produkt (~1,20€ pro Klick vs. ~0,10€ bei Figuren). Pro Motto ein passendes Kostüm recherchieren:
-
-| Motto | Kostüm-Idee |
-|---|---|
-| Dino | Aufblasbarer T-Rex |
-| Piraten | Piratenkapitän-Set (Hut+Mantel+Augenklappe) |
-| Feuerwehr | Feuerwehr-Kostüm mit Helm |
-| Detektiv | Trenchcoat + Lupe + Schnurrbart |
-| Einhorn | Einhorn-Onesie |
-| Weltraum | Astronauten-Anzug aufblasbar |
-| Safari | Safari-Weste + Tropenhelm |
-| Ritter | Ritter-Rüstung aufblasbar |
-| Superheld | Superman/Spider-Man Kostüm |
-
----
-
-## Audit-Findings 15.04.2026
-
-Folgende Punkte aus dem Website-Audit vom 15.04.2026, die noch nicht im Backlog standen:
-
----
-
-### P1-6: Schema.org Markup auf allen Seiten (Low-Hanging-Fruit)
-
-**Problem:**
-Kein einziges Schema.org Markup auf der gesamten Site. Keine FAQPage-Schemas, keine HowTo-Schemas, keine BreadcrumbList. Die Piraten-Seite hat schöne visuelle Breadcrumbs ("Start › Mottos › Piraten"), aber ohne JSON-LD bekommt Google die nicht.
-
-**Wirkung:** Rich Snippets in den SERPs — FAQ-Dropdowns, Breadcrumb-Pfade, HowTo-Steps. Kostet wenig, bringt mehr Klickfläche.
-
-**Lösung:**
-1. **BreadcrumbList** auf allen Motto-Seiten und Ratgeber-Seiten (JSON-LD im `<head>`)
-2. **FAQPage** auf allen Seiten die bereits FAQ-Abschnitte haben
-3. **HowTo** auf Checklisten-Seiten und Schatzsuche-Themenseiten
-4. Template-Snippet erstellen, das per Build in alle Seiten injiziert wird
-
-**Aufwand:** 2–3 Stunden (Template + Injection in alle Seiten)
-
----
-
-### P1-7: Social Proof auf Homepage und Planer-Seite
-
-**Problem:**
-"Über 4.700 Geburtstage geplant" steht nur auf der Piraten-Seite. Auf der Homepage und der Planer-Hauptseite fehlt jeder Social Proof — keine Zahl, kein Testimonial. Für ein Tool, dem Eltern ihren Kindergeburtstag anvertrauen sollen, ist das ein Conversion-Killer.
-
-**Lösung:**
-- Counter prominent im Hero-Bereich oder direkt unter dem CTA
-- Plausible-Daten auswerten für echte Zahlen
-- Auf allen Motto-Hauptseiten einheitlich einbauen
-
-**Aufwand:** 1 Stunde
-
----
-
-### P2-8: Kreuzworträtsel-Seite pre-rendern / statischen Content-Wrapper
-
-**Problem:**
-`/kreuzwortraetsel` liefert beim Fetch quasi keinen Content — nur den Title. Die Seite ist eine reine JS-App ohne SSR oder Pre-Render. Für Google unsichtbar. Das gilt potenziell auch für andere Tool-Seiten.
-
-**Lösung:**
-Statischen HTML-Wrapper mit Intro-Text, Beschreibung und FAQ um die React-App legen. Gleiche Strategie wie bei `/kindergeburtstag.html` — dort funktioniert es bereits.
-
-**Aufwand:** 1–2 Stunden
-
----
-
-### P2-9: Schatzsuche-Seite Inkonsistenz: "6 Themen" vs. tatsächliche Anzahl
-
-**Problem:**
-Die `/schatzsuche`-Landingpage listet "6 Schatzsuche-Themen" auf, obwohl der Planer 9 Schatzsuche-Themen und insgesamt 17 Mottos unterstützt. Das untergräbt Vertrauen und verschenkt Keyword-Potential.
-
-**Lösung:**
-Beim Umbau von `/schatzsuche` (P1-1) alle verfügbaren Themen listen und die Zahl aktualisieren.
-
-**Aufwand:** Teil von P1-1
-
----
-
-### P2-10: Einladungstool hat nur 10 Mottos, Planer 17
-
-**Problem:**
-Wer einen Harry-Potter-, Minecraft-, Pokémon-, Paw-Patrol-, Spider-Man-, Super-Mario- oder Frozen-Geburtstag plant, bekommt keine passende Einladung. Das ist ein Bruch im Funnel: Planer → Einladung → "Wo ist mein Motto?" → Enttäuschung.
-
-**Lösung:**
-Fehlende 7 Lizenz-Mottos im Einladungstool ergänzen. Technisch: Emoji-Set + Farbpalette pro Motto in der Einladungs-Config.
-
-**Aufwand:** 2–3 Stunden (7 Mottos × ~20 Min)
-
----
-
-### P2-11: Interne Links broken/zirkulär auf Ratgeber-Seiten
-
-**Problem:**
-Die Checkliste-Seite verlinkt "14 Motto-Ideen bei machsleicht" auf die Homepage (`/`) statt auf den Planer oder eine Motto-Übersicht. "Automatische Checkliste erstellen" geht ebenfalls zur Homepage statt zum Planer mit Deeplink. Gleich Muster auf anderen Ratgeber-Seiten.
-
-**Lösung:**
-Alle internen Links auf Ratgeber-Seiten auf korrekte Deeplinks umstellen:
-- "Motto wählen" → `/kindergeburtstag#planer`
-- "Checkliste erstellen" → `/kindergeburtstag#planer`
-- "Schatzsuche erstellen" → `/kindergeburtstag?modus=schatzsuche#planer`
-
-**Aufwand:** 1 Stunde (grep + replace über alle Ratgeber-HTMLs)
-
----
-
-## NÄCHSTES PBI: SEO-Seiten auf Elite-Niveau heben
-
-### P1-8: Motto-Hauptseiten auf Elite-Content-Niveau bringen
-
-**Ziel:** Die 17 Motto-Hauptseiten (z.B. `/kindergeburtstag/piraten`, `/kindergeburtstag/dino`) sind die SEO-Schlachtfelder. Hier wird gegen kindergeburtstag-planen.de, kindsgut.de, Rotbäckchen, Ballorig etc. gekämpft. Diese Seiten müssen besser sein als alles, was es gibt.
-
-**Was "Elite" bedeutet — Checkliste pro Motto-Hauptseite:**
-
-1. **Structured Data:** FAQPage + BreadcrumbList JSON-LD
-2. **H1 mit Keyword:** `[Motto] Kindergeburtstag — Spiele, Deko & Ablauf ([Alter] Jahre)`
-3. **Altersgruppen-Tabs:** Interaktive Tabs (3-5 / 6-8 / 9-12) statt Endlos-Scroll
-4. **5 Spiele pro Altersgruppe** mit konkreter Anleitung (Material, Dauer, Indoor/Outdoor)
-5. **Zeitplan-Beispiel** mit Uhrzeiten für dieses Motto
-6. **Deko-Empfehlung** mit Affiliate-Links (Minimal / Standard / Wow)
-7. **Kuchen-Idee** mit Bild-Beschreibung
-8. **Mitgebsel** mit Kosten pro Kind
-9. **Budget-Übersicht** (Gesamtkosten Minimal/Standard/Wow)
-10. **CTA nach jeder Sektion** → Planer mit Motto vorausgewählt
-11. **Social Proof:** "X Geburtstage mit diesem Motto geplant"
-12. **WhatsApp-Share-Button**
-13. **Interne Verlinkung:** Links zu Altersgruppen-Seiten, Schatzsuche-Thema, Einladung, verwandten Mottos
-14. **Meta Description:** Einzigartig, mit Motto + Alter + "kostenlos" + "ohne Anmeldung"
-
-**Ist-Stand:**
-- **Dino 6-8:** ✅ Elite-Referenzseite (3.040 Wörter, 14 Affiliates, FAQ-Schema, 3 Varianten)
-- **Dino 3-5:** ✅ Elite (633 Zeilen, 13 Game-Cards, 15 Affiliates)
-- **Dino 9-12:** ✅ Elite (655 Zeilen, Escape-Room-Konzept, 12 Affiliates)
-- **Dino Hauptseite:** Bereits stark (36 KB), Schema + Social Proof fehlen noch
-- **Piraten, Einhorn, Feuerwehr, Safari, Weltraum Hauptseiten:** Erweitert (~34 KB), aber Altersgruppen-Seiten noch Cookie-Cutter
-- **14 weitere Mottos:** Noch Cookie-Cutter (~280-323 Zeilen, 20 KB)
-
-**Priorität für Elite-Upgrade (Altersgruppen-Seiten nach Dino-Template):**
-1. ~~Dino~~ ✅ FERTIG (Referenz-Motto)
-2. Piraten (6-8 → 3-5 → 9-12)
-3. Einhorn
-4. Detektiv
-5. Paw Patrol (Lizenz-Motto mit höchstem Suchvolumen)
-6. Meerjungfrau
-7. Restliche nach Suchvolumen
-
-**Offene Nacharbeiten Dino (vor nächstem Motto):**
-- Dino 6-8: Header/Breadcrumb/Footer nachrüsten (fehlt!)
-- Dino 3-5: CSS-Klassen an 6-8/9-12 angleichen (game-tag, deko-grid, recipe-step)
-- Dino Hauptseite: FAQPage + BreadcrumbList Schema ergänzen, Social Proof Counter
-
-**Aufwand:** ~1–2 Stunden pro Motto-Seite für Elite-Upgrade
-
----
-
-### Aktualisierte Zusammenfassung — Reihenfolge
-
-| Prio | Ticket | Aufwand | Wirkung |
-|------|--------|---------|---------|
-| P0-1 | Google Search Console | 20 Min | Ohne das existiert die Seite nicht |
-| P0-2 | "0 Spiele"-Bug fixen | 15 Min | 16 kaputte Titles reparieren |
-| P0-3 | Duplicate Titles fixen | 15 Min | 5 Motto-Seiten sauber machen |
-| P0-4 | /_dev/ sperren | 10 Min | Dev-Inhalte vor Index schützen |
-| **P1-6** | **Schema.org Markup** | **2–3 Std** | **Rich Snippets in SERPs** |
-| **P1-7** | **Social Proof** | **1 Std** | **Conversion-Hebel** |
-| P1-1 | /schatzsuche als eigene Seite | 2–3 Std | Keyword-Cluster |
-| P1-2 | /schnitzeljagd als eigene Seite | 1–2 Std | Keyword-Cluster |
-| **P1-9** | **/einladung als SEO-Hub** | **3–4 Std** | **3. SEO-Einstiegspunkt** |
-| **P1-8** | **Motto-Seiten Elite-Upgrade** | **1–2 Std/Seite** | **SEO-Schlachtfeld gewinnen** |
-| P1-3 | Einladung Canonicals | 10 Min | Index-Sauberkeit |
-| P1-4 | Einladung Default neutralisieren | 30–60 Min | UX-Fix |
-| P1-5 | GitHub PAT rotieren | 5 Min | Deployment absichern |
-| P2-1 | Homepage-Hero FUNNEL-AXIOM | 2–3 Std | Conversion + Klarheit |
-| **P2-8** | **Kreuzworträtsel pre-rendern** | **1–2 Std** | **Google-Sichtbarkeit** |
-| **P2-9** | **Schatzsuche Themen-Inkonsistenz** | **Teil v. P1-1** | **Vertrauen** |
-| **P2-10** | **Einladung: 7 fehlende Mottos** | **2–3 Std** | **Funnel-Bruch fixen (Voraussetzung P1-9)** |
-| **P2-12** | **Motto-Lücke-Abhängigkeit P1-9** | **Teil v. P2-10** | **Einladungs-Hub konsistent** |
-| **P2-11** | **Interne Links fixen** | **1 Std** | **Link-Equity + UX** |
-| P2-2 | Thin Content nachschärfen | 2–4 Std | Domain-Qualität |
-| P2-3 | Ergebnis-Vorschauen | 2 Std | Conversion |
-| P2-5 | JS-Performance | 15 Min–4 Std | Ladezeit |
-| P2-6 | Encoding-Normalisierung | 15 Min | Sauberkeit |
-| P3-1 | Repo aufräumen | 10–30 Min | Build-Hygiene |
-| P3-2 | Amazon Tag setzen | 30 Min | Erste Einnahmen |
-| P3-3 | Social Proof erweitern | variabel | Langfristig Conversion |
+## Versionshistorie
+
+- **16.04.2026:** Backlog komplett neu strukturiert. Status-Matrix aus Repo-Check gegen Live-Stand abgeleitet. P1-1 und P1-2 gestrichen (Architektur-Memory #17). Neue PBIs aus Monetarisierungs-Strategie aufgenommen (P1-10, P1-11, P2-13 bis P2-15, P3-5, P3-6).
+- **15.04.2026:** FUNNEL-AXIOM als P2-1 fixiert. Audit-Findings aufgenommen (P1-6, P1-7, P2-8, P2-9, P2-10, P2-11).
+- **11.04.2026:** Ursprünglich erstellt aus technischem + strategischem Audit.
