@@ -118,7 +118,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F981}",
-          url: "https://www.amazon.de/s?k=safari+kindergeburtstag+teller+becher&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=safari+kindergeburtstag+teller+becher&tag=machsleicht-21",
         },
         {
           name: "Dschungel-Luftballons 15 Stk.",
@@ -126,7 +126,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=dschungel+luftballons+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=dschungel+luftballons+kindergeburtstag&tag=machsleicht-21",
         },
         {
           name: "Tiermasken zum Basteln 12 Stk.",
@@ -134,7 +134,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F3AD}",
-          url: "https://www.amazon.de/s?k=tiermasken+basteln+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=tiermasken+basteln+kinder&tag=machsleicht-21",
         },
       ],
       dekoMin: [
@@ -144,7 +144,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F33F}",
-          url: "https://www.amazon.de/s?k=gr%C3%BCne+tischdecke+party&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=gr%C3%BCne+tischdecke+party&tag=machsleicht-21",
         },
         {
           name: "Gr\xFCne Luftballons 10 Stk.",
@@ -152,7 +152,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=gr%C3%BCne+luftballons&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=gr%C3%BCne+luftballons&tag=machsleicht-21",
         },
       ],
       mitgebsel: [
@@ -162,7 +162,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F992}",
-          url: "https://www.amazon.de/s?k=mini+tierfiguren+set+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=mini+tierfiguren+set+kinder&tag=machsleicht-21",
         },
         {
           name: "Tier-Tattoos 50 Stk.",
@@ -170,7 +170,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F43E}",
-          url: "https://www.amazon.de/s?k=tier+tattoos+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=tier+tattoos+kinder&tag=machsleicht-21",
         },
         {
           name: "Papiert\xFCten Safari 12 Stk.",
@@ -178,7 +178,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F6CD}\uFE0F",
-          url: "https://www.amazon.de/s?k=papiert%C3%BCten+safari+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=papiert%C3%BCten+safari+kinder&tag=machsleicht-21",
         },
       ],
       kuchen: {
@@ -187,21 +187,21 @@ var GENERIC = [
           desc: "Runder Kuchen mit Smarties-Tiergesicht",
           rezept:
             "R\xFChrteig backen (200g Butter, 200g Zucker, 4 Eier, 300g Mehl, 1 Pck. Backpulver \u2014 35 Min. bei 175\xB0C, Springform). Abk\xFChlen. Helle Glasur drauf. Mit Smarties ein Tiergesicht legen (L\xF6we: orange Smarties als M\xE4hne im Kreis, braune als Augen und Nase).",
-          url: "https://www.amazon.de/s?k=tierform+backform+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=tierform+backform+kinder&tag=machsleicht-21",
         },
         mittel: {
           name: "Zebra-Kuchen",
           desc: "Marmorkuchen mit Wow-Effekt beim Anschneiden",
           rezept:
             "Hellen R\xFChrteig anr\xFChren (250g Butter, 250g Zucker, 4 Eier, 350g Mehl, 200ml Milch). H\xE4lfte in zweite Sch\xFCssel, 3 EL Kakao unterr\xFChren. Abwechselnd je 2 EL hellen und dunklen Teig in die Mitte der Springform geben (nicht r\xFChren!). 45 Min. bei 170\xB0C. Ergibt perfekte Zebra-Streifen.",
-          url: "https://www.amazon.de/s?k=springform+backform+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=springform+backform+kinder&tag=machsleicht-21",
         },
         gross: {
           name: "Dschungel-Torte",
           desc: "Schoko-Kuchen mit Gummitier-Deko",
           rezept:
             "Schokoladen-R\xFChrteig backen (s. Grundrezept + 50g Kakao). 2 B\xF6den \xFCbereinander mit Schoko-Buttercreme. Au\xDFen mit Schoko-Glasur bestreichen. Gr\xFCne Gummib\xE4rchen und Mini-Tierfiguren als Deko platzieren. Brezelstangen als B\xE4ume reinstecken.",
-          url: "https://www.amazon.de/s?k=safari+tortendeko+kinder+geburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=safari+tortendeko+kinder+geburtstag&tag=machsleicht-21",
         },
       },
     },
@@ -307,7 +307,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F3F4}\u200D\u2620\uFE0F",
-          url: "https://www.amazon.de/s?k=piraten+kindergeburtstag+teller+becher&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=piraten+kindergeburtstag+teller+becher&tag=machsleicht-21",
         },
         {
           name: "Totenkopf-Luftballons 15 Stk.",
@@ -315,7 +315,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u2620\uFE0F",
-          url: "https://www.amazon.de/s?k=piraten+luftballons+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=piraten+luftballons+kindergeburtstag&tag=machsleicht-21",
         },
         {
           name: "Piraten-Girlande 2m",
@@ -323,7 +323,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F3F4}",
-          url: "https://www.amazon.de/s?k=piraten+girlande+geburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=piraten+girlande+geburtstag&tag=machsleicht-21",
         },
       ],
       dekoMin: [
@@ -333,7 +333,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=rote+schwarze+luftballons&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=rote+schwarze+luftballons&tag=machsleicht-21",
         },
       ],
       mitgebsel: [
@@ -343,7 +343,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1FA99}",
-          url: "https://www.amazon.de/s?k=goldm%C3%BCnzen+piraten+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=goldm%C3%BCnzen+piraten+kinder&tag=machsleicht-21",
         },
         {
           name: "Piraten-Sticker 100 Stk.",
@@ -351,7 +351,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F3F7}\uFE0F",
-          url: "https://www.amazon.de/s?k=piraten+sticker+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=piraten+sticker+kinder&tag=machsleicht-21",
         },
         {
           name: "Papiert\xFCten Piraten 12 Stk.",
@@ -359,7 +359,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F6CD}\uFE0F",
-          url: "https://www.amazon.de/s?k=papiert%C3%BCten+piraten+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=papiert%C3%BCten+piraten+kinder&tag=machsleicht-21",
         },
       ],
       kuchen: {
@@ -368,21 +368,21 @@ var GENERIC = [
           desc: "Schoko-Muffins mit Mini-Piratenflaggen",
           rezept:
             "Schoko-Muffins backen (Fertigmischung oder: 200g Mehl, 150g Zucker, 50g Kakao, 100ml \xD6l, 200ml Milch, 2 Eier, 1 TL Backpulver \u2014 20 Min. bei 180\xB0C). Schoko-Glasur drauf. Piratenflaggen-Picker reinstecken (kaufen oder aus Zahnstochern + Papier basteln).",
-          url: "https://www.amazon.de/s?k=piraten+muffin+deko+picker+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=piraten+muffin+deko+picker+kindergeburtstag&tag=machsleicht-21",
         },
         mittel: {
           name: "Piratenschiff-Kuchen",
           desc: "Kastenkuchen als Schiff mit Papier-Segeln",
           rezept:
             "Kastenkuchen backen (250g Butter, 250g Zucker, 4 Eier, 350g Mehl, 1 Pck. Backpulver \u2014 Kastenform, 50 Min. bei 170\xB0C). Schoko-Glasur als Schiffsrumpf. 2\u20133 Schaschlikspie\xDFe als Masten reinstecken. Segel aus wei\xDFem Papier drankleben. Totenkopf-F\xE4hnchen oben drauf. Goldm\xFCnzen drumherum.",
-          url: "https://www.amazon.de/s?k=piraten+tortendeko+kinder+geburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=piraten+tortendeko+kinder+geburtstag&tag=machsleicht-21",
         },
         gross: {
           name: "Schatzkisten-Kuchen",
           desc: "Eckiger Kuchen als Schatzkiste mit Goldm\xFCnzen",
           rezept:
             "Kastenform-Kuchen backen und quer halbieren (= Boden + Deckel). Unteren Teil aush\xF6hlen, mit Schoko-Goldm\xFCnzen f\xFCllen. Oberen Teil schr\xE4g als offenen Deckel anlehnen. Alles mit brauner Schoko-Glasur bestreichen. Goldm\xFCnzen rausquellen lassen.",
-          url: "https://www.amazon.de/s?k=goldm%C3%BCnzen+schokolade+piraten+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=goldm%C3%BCnzen+schokolade+piraten+kinder&tag=machsleicht-21",
         },
       },
     },
@@ -487,7 +487,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F680}",
-          url: "https://www.amazon.de/s?k=weltraum+kindergeburtstag+teller+becher&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=weltraum+kindergeburtstag+teller+becher&tag=machsleicht-21",
         },
         {
           name: "Planeten-Luftballons 12 Stk.",
@@ -495,7 +495,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1FA90}",
-          url: "https://www.amazon.de/s?k=planeten+luftballons+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=planeten+luftballons+kindergeburtstag&tag=machsleicht-21",
         },
         {
           name: "Sternenhimmel-Lichterkette",
@@ -512,7 +512,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=dunkelblaue+silberne+luftballons&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=dunkelblaue+silberne+luftballons&tag=machsleicht-21",
         },
         {
           name: "Sterne aus Alufolie (DIY)",
@@ -529,7 +529,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u2B50",
-          url: "https://www.amazon.de/s?k=leucht+sterne+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=leucht+sterne+kinder&tag=machsleicht-21",
         },
         {
           name: "Weltraum-Tattoos 40 Stk.",
@@ -537,7 +537,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1FA90}",
-          url: "https://www.amazon.de/s?k=weltraum+tattoos+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=weltraum+tattoos+kinder&tag=machsleicht-21",
         },
         {
           name: "T\xFCten Weltraum 12 Stk.",
@@ -545,7 +545,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F6CD}\uFE0F",
-          url: "https://www.amazon.de/s?k=weltraum+t%C3%BCten+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=weltraum+t%C3%BCten+kindergeburtstag&tag=machsleicht-21",
         },
       ],
       kuchen: {
@@ -554,21 +554,21 @@ var GENERIC = [
           desc: "Muffins mit Eiswaffel-Spitze als Rakete",
           rezept:
             "Muffins backen (Grundrezept oder Fertigmischung). Blaue oder silberne Glasur drauf (Puderzucker + Lebensmittelfarbe). Spitze Eiswaffel (z.B. H\xF6rnchen) umgedreht obendrauf = Raketenspitze. Bunte Streusel als Sterne. Optional: Smarties am Fu\xDF als Flammen.",
-          url: "https://www.amazon.de/s?k=muffin+set+weltraum+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=muffin+set+weltraum+kindergeburtstag&tag=machsleicht-21",
         },
         mittel: {
           name: "Raketen-Kuchen",
           desc: "Kastenform-Kuchen als Rakete mit Smarties-Flammen",
           rezept:
             "Kastenkuchen backen (Grundrezept). Oben spitz zuschneiden (Reste naschen!). Mit silberner/wei\xDFer Glasur \xFCberziehen. Rote, orange und gelbe Smarties am unteren Ende als Flammen. Runde Fenster aus blauen Smarties. Tipp: Alufolie um das untere Ende als D\xFCsen.",
-          url: "https://www.amazon.de/s?k=weltraum+tortendeko+kinder+geburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=weltraum+tortendeko+kinder+geburtstag&tag=machsleicht-21",
         },
         gross: {
           name: "Galaxie-Kuchen",
           desc: "Dunkler Kuchen mit bunten Galaxie-Wirbeln",
           rezept:
             "Schokoladen-Kuchen backen (Springform). Dunkle Schoko-Glasur drauf. Solange die Glasur noch feucht ist: blaue, lila und wei\xDFe Lebensmittelfarbe in Tropfen aufbringen und mit Zahnstocher zu Spiralen ziehen. Essbare Silber-Sternchen dr\xFCberstreuen. Sieht aus wie eine echte Galaxie!",
-          url: "https://www.amazon.de/s?k=lebensmittelfarbe+set+galaxie+kuchen&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=lebensmittelfarbe+set+galaxie+kuchen&tag=machsleicht-21",
         },
       },
     },
@@ -673,7 +673,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F995}",
-          url: "https://www.amazon.de/s?k=dino+kindergeburtstag+teller+becher&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=dino+kindergeburtstag+teller+becher&tag=machsleicht-21",
         },
         {
           name: "Dino-Luftballons 12 Stk.",
@@ -681,7 +681,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=dino+luftballons+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=dino+luftballons+kindergeburtstag&tag=machsleicht-21",
         },
         {
           name: "Dino-Girlande",
@@ -689,7 +689,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F996}",
-          url: "https://www.amazon.de/s?k=dino+girlande+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=dino+girlande+kindergeburtstag&tag=machsleicht-21",
         },
       ],
       dekoMin: [
@@ -699,7 +699,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=gr%C3%BCne+luftballons&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=gr%C3%BCne+luftballons&tag=machsleicht-21",
         },
         {
           name: "Dino-Figuren als Tischdeko (leihen)",
@@ -716,7 +716,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F995}",
-          url: "https://www.amazon.de/s?k=mini+dino+figuren+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=mini+dino+figuren+kinder&tag=machsleicht-21",
         },
         {
           name: "Dino-Stempel Set",
@@ -724,7 +724,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F43E}",
-          url: "https://www.amazon.de/s?k=dino+stempel+set+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=dino+stempel+set+kinder&tag=machsleicht-21",
         },
         {
           name: "Papiert\xFCten Dino 12 Stk.",
@@ -732,7 +732,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F6CD}\uFE0F",
-          url: "https://www.amazon.de/s?k=papiert%C3%BCten+dino+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=papiert%C3%BCten+dino+kinder&tag=machsleicht-21",
         },
       ],
       kuchen: {
@@ -741,21 +741,21 @@ var GENERIC = [
           desc: "Schoko-Muffins mit Mini-Dino obendrauf",
           rezept:
             "Schoko-Muffins backen (Grundrezept). Gr\xFCne Glasur drauf (Puderzucker + gr\xFCne Lebensmittelfarbe). Kleine Plastik-Dinos obendrauf setzen (vorher kaufen). Alternative: Dino-Kekse ausstechen und auf die Muffins stecken.",
-          url: "https://www.amazon.de/s?k=mini+dino+figuren+tortendeko+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=mini+dino+figuren+tortendeko+kinder&tag=machsleicht-21",
         },
         mittel: {
           name: "Vulkan-Kuchen",
           desc: "Gugelhupf mit Smarties-Lava und Dino-Figur",
           rezept:
             "Marmor-Gugelhupf backen (Grundrezept). Abk\xFChlen lassen. Mit Schoko-Glasur den oberen Rand bestreichen. Rote, orange und gelbe Smarties als Lava von oben herunterlaufen lassen. Gr\xFCne Gummib\xE4rchen drumherum als B\xE4ume. Dino-Figur obendrauf.",
-          url: "https://www.amazon.de/s?k=dino+tortendeko+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=dino+tortendeko+kindergeburtstag&tag=machsleicht-21",
         },
         gross: {
           name: "Fossilien-Kuchen",
           desc: "Schoko-Kuchen mit wei\xDFen Schoko-Knochen",
           rezept:
             "Schokoladen-Kuchen backen (Springform). Dunkle Schoko-Glasur drauf. Knochen aus wei\xDFer Schokolade: wei\xDFe Schoko schmelzen, in Knochenform auf Backpapier spritzen (oder Knochenform-Silikonform nutzen). Aush\xE4rten lassen. Auf den Kuchen legen. Puderzucker als Sand dar\xFCber st\xE4uben.",
-          url: "https://www.amazon.de/s?k=knochen+silikonform+schokolade+backen&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=knochen+silikonform+schokolade+backen&tag=machsleicht-21",
         },
       },
     },
@@ -861,7 +861,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F984}",
-          url: "https://www.amazon.de/s?k=einhorn+kindergeburtstag+teller+becher&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=einhorn+kindergeburtstag+teller+becher&tag=machsleicht-21",
         },
         {
           name: "Regenbogen-Luftballons 15 Stk.",
@@ -869,7 +869,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F308}",
-          url: "https://www.amazon.de/s?k=regenbogen+luftballons+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=regenbogen+luftballons+kindergeburtstag&tag=machsleicht-21",
         },
         {
           name: "Glitzer-Tischdecke",
@@ -877,7 +877,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u2728",
-          url: "https://www.amazon.de/s?k=glitzer+tischdecke+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=glitzer+tischdecke+kindergeburtstag&tag=machsleicht-21",
         },
       ],
       dekoMin: [
@@ -887,7 +887,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=rosa+lila+luftballons&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=rosa+lila+luftballons&tag=machsleicht-21",
         },
       ],
       mitgebsel: [
@@ -897,7 +897,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F3F7}\uFE0F",
-          url: "https://www.amazon.de/s?k=einhorn+sticker+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=einhorn+sticker+kinder&tag=machsleicht-21",
         },
         {
           name: "Glitzer-Haargummis 24 Stk.",
@@ -905,7 +905,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F4AB}",
-          url: "https://www.amazon.de/s?k=glitzer+haargummis+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=glitzer+haargummis+kinder&tag=machsleicht-21",
         },
         {
           name: "Papiert\xFCten Einhorn 12 Stk.",
@@ -913,7 +913,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F6CD}\uFE0F",
-          url: "https://www.amazon.de/s?k=papiert%C3%BCten+einhorn+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=papiert%C3%BCten+einhorn+kinder&tag=machsleicht-21",
         },
       ],
       kuchen: {
@@ -922,21 +922,21 @@ var GENERIC = [
           desc: "Muffins mit bunten Streuseln und Einhorn-Topper",
           rezept:
             "Vanilla-Muffins backen (Grundrezept). Wei\xDFe Glasur drauf. Mit Regenbogen-Streuseln bestreuen. Einhorn-Papier-Topper reinstecken (kaufen oder aus Pappe basteln). Super einfach, riesen Effekt!",
-          url: "https://www.amazon.de/s?k=einhorn+muffin+topper+regenbogen+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=einhorn+muffin+topper+regenbogen+kinder&tag=machsleicht-21",
         },
         mittel: {
           name: "Regenbogen-Kuchen",
           desc: "4 bunte Farbschichten \u2014 Wow-Effekt beim Anschneiden!",
           rezept:
             "Hellen R\xFChrteig anr\xFChren (4-fache Menge Grundrezept). In 4 Teile aufteilen: rot, gelb, gr\xFCn, blau einf\xE4rben. Nacheinander in Springform schichten: blau unten, gr\xFCn, gelb, rot oben. 40 Min. bei 170\xB0C. Wei\xDFe Glasur drauf. Beim Anschneiden sieht man alle 4 Farben \u2014 alle sagen Wow!",
-          url: "https://www.amazon.de/s?k=lebensmittelfarbe+set+gel+regenbogen+kuchen&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=lebensmittelfarbe+set+gel+regenbogen+kuchen&tag=machsleicht-21",
         },
         gross: {
           name: "Einhorn-Torte",
           desc: "Fondant-Horn, Ohren und essbare Glitzer-Deko",
           rezept:
             "2 runde B\xF6den backen, mit Buttercreme f\xFCllen und au\xDFen einstreichen. Fondant-Horn: gelben Fondant zu einer Spirale drehen und an Schaschlikspie\xDF befestigen. Ohren aus Fondant ausschneiden. Oben reinstecken. Essbare Glitzer-Sterne und Bl\xFCten platzieren. Rosa Buttercreme-M\xE4hne mit Spritzt\xFClle.",
-          url: "https://www.amazon.de/s?k=einhorn+fondant+set+tortendeko+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=einhorn+fondant+set+tortendeko+kinder&tag=machsleicht-21",
         },
       },
     },
@@ -1042,7 +1042,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F692}",
-          url: "https://www.amazon.de/s?k=feuerwehr+kindergeburtstag+teller+becher&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=feuerwehr+kindergeburtstag+teller+becher&tag=machsleicht-21",
         },
         {
           name: "Rote Luftballons 15 Stk.",
@@ -1050,7 +1050,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=rote+luftballons+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=rote+luftballons+kindergeburtstag&tag=machsleicht-21",
         },
         {
           name: "Absperrband 10m",
@@ -1058,7 +1058,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F6A7}",
-          url: "https://www.amazon.de/s?k=absperrband+kindergeburtstag+feuerwehr&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=absperrband+kindergeburtstag+feuerwehr&tag=machsleicht-21",
         },
       ],
       dekoMin: [
@@ -1068,7 +1068,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=rote+luftballons&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=rote+luftballons&tag=machsleicht-21",
         },
       ],
       mitgebsel: [
@@ -1078,7 +1078,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F692}",
-          url: "https://www.amazon.de/s?k=mini+feuerwehrautos+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=mini+feuerwehrautos+kinder&tag=machsleicht-21",
         },
         {
           name: "Feuerwehr-Sticker 80 Stk.",
@@ -1086,7 +1086,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F3F7}\uFE0F",
-          url: "https://www.amazon.de/s?k=feuerwehr+sticker+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=feuerwehr+sticker+kinder&tag=machsleicht-21",
         },
         {
           name: "Papiert\xFCten rot 12 Stk.",
@@ -1094,7 +1094,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F6CD}\uFE0F",
-          url: "https://www.amazon.de/s?k=papiert%C3%BCten+rot+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=papiert%C3%BCten+rot+kindergeburtstag&tag=machsleicht-21",
         },
       ],
       kuchen: {
@@ -1103,21 +1103,21 @@ var GENERIC = [
           desc: "Rote Glasur mit Mini-Feuerwehr obendrauf",
           rezept:
             "Vanilla-Muffins backen. Rote Glasur drauf (Puderzucker + rote Lebensmittelfarbe). Mini-Feuerwehrauto-Figur oder Feuerwehr-Picker obendrauf. Gelbe Streusel als Funken. Fertig in 30 Minuten!",
-          url: "https://www.amazon.de/s?k=feuerwehr+muffin+deko+picker+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=feuerwehr+muffin+deko+picker+kindergeburtstag&tag=machsleicht-21",
         },
         mittel: {
           name: "Feuerwehr-Kuchen",
           desc: "Kastenform mit roter Glasur und Gummib\xE4rchen-Leiter",
           rezept:
             "Kastenkuchen backen. Rote Glasur drauf (= Feuerwehrauto). Aus Mikado-Stangen oder Brezelstangen eine Leiter legen. Fenster aus wei\xDFem Fondant oder Oblaten. R\xE4der aus Oreo-Keksen. Blaulicht aus blauem Gummib\xE4rchen obendrauf.",
-          url: "https://www.amazon.de/s?k=feuerwehr+tortendeko+kinder+geburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=feuerwehr+tortendeko+kinder+geburtstag&tag=machsleicht-21",
         },
         gross: {
           name: "Feuerwache-Torte",
           desc: "Eckiger Kuchen mit Fondant-Toren und Spielzeug-Fahrzeug",
           rezept:
             "Eckigen Kuchen backen (Blechkuchen, quadratisch zuschneiden). Rote Fondant-Verkleidung. Tore aus grauem Fondant ausschneiden und anlegen. Echtes Spielzeug-Feuerwehrauto vor die Tore stellen. 112 aus Fondant-Zahlen obendrauf. Flammen aus Zuckerguss am Rand.",
-          url: "https://www.amazon.de/s?k=fondant+set+rot+tortendeko+geburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=fondant+set+rot+tortendeko+geburtstag&tag=machsleicht-21",
         },
       },
     },
@@ -1223,7 +1223,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F50D}",
-          url: "https://www.amazon.de/s?k=detektiv+kindergeburtstag+teller+becher&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=detektiv+kindergeburtstag+teller+becher&tag=machsleicht-21",
         },
         {
           name: "Absperrband 10m",
@@ -1231,7 +1231,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F6A7}",
-          url: "https://www.amazon.de/s?k=absperrband+party+deko&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=absperrband+party+deko&tag=machsleicht-21",
         },
         {
           name: "Detektiv-Girlande",
@@ -1239,7 +1239,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F389}",
-          url: "https://www.amazon.de/s?k=detektiv+girlande+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=detektiv+girlande+kindergeburtstag&tag=machsleicht-21",
         },
       ],
       dekoMin: [
@@ -1249,7 +1249,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=schwarze+wei%C3%9Fe+luftballons&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=schwarze+wei%C3%9Fe+luftballons&tag=machsleicht-21",
         },
         {
           name: "Fußspuren aus Tonpapier (DIY)",
@@ -1265,7 +1265,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F50E}",
-          url: "https://www.amazon.de/s?k=lupen+kinder+set+detektiv&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=lupen+kinder+set+detektiv&tag=machsleicht-21",
         },
         {
           name: "Detektiv-Sticker 100 Stk.",
@@ -1273,7 +1273,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{2B50}",
-          url: "https://www.amazon.de/s?k=detektiv+sticker+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=detektiv+sticker+kinder&tag=machsleicht-21",
         },
         {
           name: "Geheim-Stifte UV 8 Stk.",
@@ -1281,7 +1281,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F58A}",
-          url: "https://www.amazon.de/s?k=geheimstift+uv+kinder+set&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=geheimstift+uv+kinder+set&tag=machsleicht-21",
         },
       ],
       mitgebsel: [
@@ -1291,7 +1291,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F50D}",
-          url: "https://www.amazon.de/s?k=mini+lupen+kinder+set&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=mini+lupen+kinder+set&tag=machsleicht-21",
         },
         {
           name: "Detektiv-Ausweise (DIY)",
@@ -1307,7 +1307,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F381}",
-          url: "https://www.amazon.de/s?k=papiert%C3%BCten+schwarz+mitgebsel&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=papiert%C3%BCten+schwarz+mitgebsel&tag=machsleicht-21",
         },
       ],
       kuchen: {
@@ -1316,21 +1316,21 @@ var GENERIC = [
           desc: "Schoko-Muffins mit Lupen-Deko aus Brezelstange + rundem Fruchtgummi",
           rezept:
             "Schoko-Muffins backen (200g Mehl, 30g Kakao, 150g Zucker, 100ml Öl, 2 Eier, 150ml Milch, 1 TL Backpulver — 20 Min. bei 180°C). Schoko-Glasur drauf. Pro Muffin: Brezelstange als Griff + runder Fruchtgummi-Ring oben drauf = Lupe.",
-          url: "https://www.amazon.de/s?k=muffin+backform+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=muffin+backform+kinder&tag=machsleicht-21",
         },
         mittel: {
           name: "Tatort-Kuchen",
           desc: "Schoko-Kuchen mit Kreideumriss-Deko aus weißer Glasur",
           rezept:
             "Schoko-Rührkuchen backen (Springform, 40 Min. bei 170°C). Dunkle Schoko-Glasur drüber. Mit weißer Zuckerschrift einen 'Kreideumriss' (Männchen-Silhouette) draufmalen. Fußspuren aus weißem Fondant daneben. Gelbes Absperrband aus Fruchtleder um den Rand.",
-          url: "https://www.amazon.de/s?k=fondant+set+kinder+kuchen&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=fondant+set+kinder+kuchen&tag=machsleicht-21",
         },
         gross: {
           name: "Escape-Kuchen mit Geheimfach",
           desc: "Zweistöckiger Kuchen mit versteckter Süßigkeit in der Mitte",
           rezept:
             "2 Rührteig-Böden backen (je 25 Min.). Aus dem unteren Boden ein Loch schneiden (Glas als Ausstecher). Mit Smarties/Gummibärchen füllen. Oberen Boden drauf = Deckel. Schoko-Glasur über alles. 'TOP SECRET' mit Zuckerschrift drauf. Beim Anschneiden fallen die Süßigkeiten raus — Überraschung!",
-          url: "https://www.amazon.de/s?k=zuckerschrift+set+kuchen+deko&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=zuckerschrift+set+kuchen+deko&tag=machsleicht-21",
         },
       },
     },
@@ -1436,7 +1436,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F412}",
-          url: "https://www.amazon.de/s?k=dschungel+kindergeburtstag+teller+becher&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=dschungel+kindergeburtstag+teller+becher&tag=machsleicht-21",
         },
         {
           name: "Tropische Blätter-Girlande",
@@ -1444,7 +1444,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F33F}",
-          url: "https://www.amazon.de/s?k=tropische+bl%C3%A4tter+girlande+deko&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=tropische+bl%C3%A4tter+girlande+deko&tag=machsleicht-21",
         },
         {
           name: "Dschungel-Luftballons 15 Stk.",
@@ -1452,7 +1452,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=dschungel+luftballons+kinder+party&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=dschungel+luftballons+kinder+party&tag=machsleicht-21",
         },
       ],
       dekoMin: [
@@ -1462,7 +1462,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F33F}",
-          url: "https://www.amazon.de/s?k=gr%C3%BCne+tischdecke+party&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=gr%C3%BCne+tischdecke+party&tag=machsleicht-21",
         },
         {
           name: "Grüne+braune Luftballons 10 Stk.",
@@ -1470,7 +1470,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=gr%C3%BCne+braune+luftballons&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=gr%C3%BCne+braune+luftballons&tag=machsleicht-21",
         },
         {
           name: "Lianen aus Krepppapier (DIY)",
@@ -1478,7 +1478,7 @@ var GENERIC = [
           eco: !0,
           bbl: "diy",
           emoji: "\u{1F331}",
-          url: "https://www.amazon.de/s?k=krepppapier+gr%C3%BCn&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=krepppapier+gr%C3%BCn&tag=machsleicht-21",
         },
         {
           name: "Affen-Sticker 80 Stk.",
@@ -1486,7 +1486,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F412}",
-          url: "https://www.amazon.de/s?k=affen+sticker+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=affen+sticker+kinder&tag=machsleicht-21",
         },
         {
           name: "Tierfiguren Dschungel 12 Stk.",
@@ -1494,7 +1494,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F981}",
-          url: "https://www.amazon.de/s?k=dschungel+tierfiguren+set+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=dschungel+tierfiguren+set+kinder&tag=machsleicht-21",
         },
       ],
       mitgebsel: [
@@ -1504,7 +1504,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F52D}",
-          url: "https://www.amazon.de/s?k=mini+fernglas+kinder+set&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=mini+fernglas+kinder+set&tag=machsleicht-21",
         },
         {
           name: "Dschungel-Tattoos 50 Stk.",
@@ -1512,7 +1512,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F43E}",
-          url: "https://www.amazon.de/s?k=dschungel+tattoos+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=dschungel+tattoos+kinder&tag=machsleicht-21",
         },
         {
           name: "Papiertüten grün 12 Stk.",
@@ -1520,7 +1520,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F381}",
-          url: "https://www.amazon.de/s?k=papiert%C3%BCten+gr%C3%BCn+mitgebsel&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=papiert%C3%BCten+gr%C3%BCn+mitgebsel&tag=machsleicht-21",
         },
       ],
       kuchen: {
@@ -1529,21 +1529,21 @@ var GENERIC = [
           desc: "Schoko-Muffins mit Bananengesicht aus gelber Glasur + Schoko-Augen",
           rezept:
             "Schoko-Muffins backen (Grundrezept). Gelbe Zuckerglasur (Puderzucker + Zitronensaft + gelbe Lebensmittelfarbe) als Gesicht aufspritzen. Schoko-Drops als Augen, halbes Smartie als Nase. Halbe Waffelröllchen seitlich als Ohren reinstecken.",
-          url: "https://www.amazon.de/s?k=muffin+backform+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=muffin+backform+kinder&tag=machsleicht-21",
         },
         mittel: {
           name: "Schlangen-Kuchen",
           desc: "Langer Kuchen in S-Form — eine bunte Dschungel-Schlange!",
           rezept:
             "Rührkuchen in Kastenform backen. Abkühlen, schräg halbieren und S-förmig zusammensetzen (mit Buttercreme kleben). Grüne Glasur (Puderzucker + Lebensmittelfarbe) drüber. Smarties als Schuppen. Zunge aus rotem Fruchtleder. Augen aus weißem Fondant + Schoko-Drops.",
-          url: "https://www.amazon.de/s?k=lebensmittelfarbe+gr%C3%BCn+backen&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=lebensmittelfarbe+gr%C3%BCn+backen&tag=machsleicht-21",
         },
         gross: {
           name: "Wasserfall-Kuchen",
           desc: "Schoko-Kuchen mit blauer Glasur als Wasserfall + grüne Deko",
           rezept:
             "Hohen Rührkuchen backen (Kastenform, 45 Min.). Aufrecht hinstellen. Weiße Glasur als Basis. Blaue Zuckerglasur von oben langsam runterlaufen lassen = Wasserfall-Effekt. Grüne Gummibärchen und Brezeln als Dschungel-Pflanzen um den Fuß. Optional: kleinen Teich aus blauem Wackelpudding vor den Kuchen.",
-          url: "https://www.amazon.de/s?k=lebensmittelfarbe+blau+backen&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=lebensmittelfarbe+blau+backen&tag=machsleicht-21",
         },
       },
     },
@@ -1649,7 +1649,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F9DA}",
-          url: "https://www.amazon.de/s?k=feen+kindergeburtstag+teller+becher&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=feen+kindergeburtstag+teller+becher&tag=machsleicht-21",
         },
         {
           name: "Schmetterlings-Girlande",
@@ -1657,7 +1657,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F98B}",
-          url: "https://www.amazon.de/s?k=schmetterling+girlande+deko+party&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=schmetterling+girlande+deko+party&tag=machsleicht-21",
         },
         {
           name: "Blumen-Luftballons 15 Stk.",
@@ -1665,7 +1665,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=blumen+luftballons+kinder+party&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=blumen+luftballons+kinder+party&tag=machsleicht-21",
         },
       ],
       dekoMin: [
@@ -1675,7 +1675,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=rosa+lila+luftballons&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=rosa+lila+luftballons&tag=machsleicht-21",
         },
         {
           name: "Tüll-Tischdecke rosa",
@@ -1683,7 +1683,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{2728}",
-          url: "https://www.amazon.de/s?k=t%C3%BCll+tischdecke+rosa+party&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=t%C3%BCll+tischdecke+rosa+party&tag=machsleicht-21",
         },
         {
           name: "Papierblumen basteln (DIY)",
@@ -1699,7 +1699,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F98B}",
-          url: "https://www.amazon.de/s?k=schmetterling+sticker+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=schmetterling+sticker+kinder&tag=machsleicht-21",
         },
         {
           name: "LED-Lichterkette warmweiß 3m",
@@ -1707,7 +1707,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{2728}",
-          url: "https://www.amazon.de/s?k=lichterkette+warmwei%C3%9F+batterie+3m&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=lichterkette+warmwei%C3%9F+batterie+3m&tag=machsleicht-21",
         },
       ],
       mitgebsel: [
@@ -1717,7 +1717,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{2728}",
-          url: "https://www.amazon.de/s?k=feenstab+kinder+set&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=feenstab+kinder+set&tag=machsleicht-21",
         },
         {
           name: "Schmetterlings-Tattoos 50 Stk.",
@@ -1725,7 +1725,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F98B}",
-          url: "https://www.amazon.de/s?k=schmetterling+tattoos+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=schmetterling+tattoos+kinder&tag=machsleicht-21",
         },
         {
           name: "Organza-Beutel lila 12 Stk.",
@@ -1733,7 +1733,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F381}",
-          url: "https://www.amazon.de/s?k=organza+beutel+lila+klein&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=organza+beutel+lila+klein&tag=machsleicht-21",
         },
       ],
       kuchen: {
@@ -1742,21 +1742,21 @@ var GENERIC = [
           desc: "Muffins mit grüner Glasur und Blumen aus Gummibärchen + Smarties",
           rezept:
             "Vanille-Muffins backen (Grundrezept). Grüne Zuckerglasur drauf (= Wiese). Pro Muffin: Gummibärchen-Blüte (5 bunte Bärchen im Kreis, gelbes Smartie in die Mitte). Grüne Esspapier-Streifen als Grashalme.",
-          url: "https://www.amazon.de/s?k=muffin+backform+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=muffin+backform+kinder&tag=machsleicht-21",
         },
         mittel: {
           name: "Pilz-Kuchen",
           desc: "Runder Kuchen = Pilzhut, bedeckt mit roten Smarties und weißen Tupfen",
           rezept:
             "Rührkuchen in einer Schüssel backen (= Halbkugel/Pilzhut). Auf einen kleinen zylindrischen Kuchen setzen (= Stiel, aus Kastenform geschnitten). Rote Glasur auf den Hut, weiße Fondant-Punkte drauf = Fliegenpilz! Grünes Esspapier als Gras um den Stiel.",
-          url: "https://www.amazon.de/s?k=fondant+wei%C3%9F+kuchen+deko&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=fondant+wei%C3%9F+kuchen+deko&tag=machsleicht-21",
         },
         gross: {
           name: "Feenwald-Torte",
           desc: "Zweistöckige grüne Torte mit Pilzen aus Marshmallows + echten Blüten",
           rezept:
             "2 Rührkuchen-Böden backen. Übereinander mit Vanille-Buttercreme. Außen grüne Glasur = Moos. Pilze: Marshmallow auf Brezelstange, Spitze in rote Glasur tauchen + weiße Schoko-Tropfen = Fliegenpilze. Essbare Blüten oder Fondant-Blumen auf die Torte setzen. Puderzucker als Feenstaub drübersieben.",
-          url: "https://www.amazon.de/s?k=essbare+bl%C3%BCten+torte+deko&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=essbare+bl%C3%BCten+torte+deko&tag=machsleicht-21",
         },
       },
     },
@@ -1830,7 +1830,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F415}",
-          url: "https://www.amazon.de/s?k=paw+patrol+kindergeburtstag+teller+becher&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=paw+patrol+kindergeburtstag+teller+becher&tag=machsleicht-21",
         },
         {
           name: "Paw Patrol Luftballons 10 Stk.",
@@ -1838,7 +1838,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=paw+patrol+luftballons+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=paw+patrol+luftballons+kindergeburtstag&tag=machsleicht-21",
         },
         {
           name: "Paw Patrol Girlande",
@@ -1846,7 +1846,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F3F7}\uFE0F",
-          url: "https://www.amazon.de/s?k=paw+patrol+girlande+geburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=paw+patrol+girlande+geburtstag&tag=machsleicht-21",
         },
         {
           name: "Paw Patrol Tischdecke",
@@ -1854,7 +1854,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F3A8}",
-          url: "https://www.amazon.de/s?k=paw+patrol+tischdecke+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=paw+patrol+tischdecke+kindergeburtstag&tag=machsleicht-21",
         },
       ],
       dekoMin: [
@@ -1864,7 +1864,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=blaue+rote+luftballons&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=blaue+rote+luftballons&tag=machsleicht-21",
         },
         {
           name: "Pfotenspuren aus Tonpapier (DIY)",
@@ -1881,7 +1881,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F415}",
-          url: "https://www.amazon.de/s?k=paw+patrol+mini+figuren&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=paw+patrol+mini+figuren&tag=machsleicht-21",
         },
         {
           name: "Paw Patrol Sticker 100 Stk.",
@@ -1889,7 +1889,7 @@ var LICENSE = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F3F7}\uFE0F",
-          url: "https://www.amazon.de/s?k=paw+patrol+sticker+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=paw+patrol+sticker+kinder&tag=machsleicht-21",
         },
         {
           name: "Paw Patrol T\xFCten 8 Stk.",
@@ -1897,7 +1897,7 @@ var LICENSE = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F6CD}\uFE0F",
-          url: "https://www.amazon.de/s?k=paw+patrol+t%C3%BCten+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=paw+patrol+t%C3%BCten+kindergeburtstag&tag=machsleicht-21",
         },
       ],
       kuchen: {
@@ -1906,21 +1906,21 @@ var LICENSE = [
           desc: "Schoko-Muffins mit Pfoten aus Smarties",
           rezept:
             "Schoko-Muffins backen. Schoko-Glasur drauf. Pro Muffin: 1 gro\xDFer brauner Smartie als Ballen + 4 kleine Smarties als Zehen = Pfote! Super einfach und sieht toll aus.",
-          url: "https://www.amazon.de/s?k=paw+patrol+muffin+deko+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=paw+patrol+muffin+deko+kindergeburtstag&tag=machsleicht-21",
         },
         mittel: {
           name: "Lookout-Tower-Kuchen",
           desc: "Runder Kuchen mit Waffelrolle als Turm",
           rezept:
             "Runden Kuchen backen. Blaue Glasur drauf. Eiswaffelrolle in die Mitte stellen (= Lookout Tower). Paw Patrol Figur obendrauf setzen. Bunte Smarties als Pfoten-Abdr\xFCcke auf dem Kuchen verteilen. '112' aus Zuckerperlen.",
-          url: "https://www.amazon.de/s?k=paw+patrol+tortenfigur+deko+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=paw+patrol+tortenfigur+deko+kindergeburtstag&tag=machsleicht-21",
         },
         gross: {
           name: "Adventure Bay Kuchen",
           desc: "Flacher Kuchen als Landschaft mit Figuren",
           rezept:
             "Flachen Blechkuchen backen. Gr\xFCne Glasur (= Wiese). Fondant-Stra\xDFen in Grau. Paw Patrol Figuren aufstellen. H\xE4user aus Waffelkeksen. B\xE4ume aus Brokkoli (ja wirklich \u2014 sieht super aus!). Lookout Tower aus Waffelrollen.",
-          url: "https://www.amazon.de/s?k=paw+patrol+tortenfiguren+set+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=paw+patrol+tortenfiguren+set+kinder&tag=machsleicht-21",
         },
       },
     },
@@ -1991,7 +1991,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u26A1",
-          url: "https://www.amazon.de/s?k=pok%C3%A9mon+kindergeburtstag+teller+becher&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=pok%C3%A9mon+kindergeburtstag+teller+becher&tag=machsleicht-21",
         },
         {
           name: "Pok\xE9mon Luftballons 12 Stk.",
@@ -1999,7 +1999,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=pok%C3%A9mon+luftballons+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=pok%C3%A9mon+luftballons+kindergeburtstag&tag=machsleicht-21",
         },
         {
           name: "Pikachu-Girlande",
@@ -2007,7 +2007,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u26A1",
-          url: "https://www.amazon.de/s?k=pikachu+girlande+geburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=pikachu+girlande+geburtstag&tag=machsleicht-21",
         },
       ],
       dekoMin: [
@@ -2017,7 +2017,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=gelbe+rote+luftballons&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=gelbe+rote+luftballons&tag=machsleicht-21",
         },
         {
           name: "Pok\xE9ball aus Pappteller (DIY)",
@@ -2034,7 +2034,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F0CF}",
-          url: "https://www.amazon.de/s?k=pok%C3%A9mon+sammelkarten+booster&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=pok%C3%A9mon+sammelkarten+booster&tag=machsleicht-21",
         },
         {
           name: "Pok\xE9mon Sticker 80 Stk.",
@@ -2042,7 +2042,7 @@ var LICENSE = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F3F7}\uFE0F",
-          url: "https://www.amazon.de/s?k=pok%C3%A9mon+sticker+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=pok%C3%A9mon+sticker+kinder&tag=machsleicht-21",
         },
         {
           name: "Pok\xE9mon T\xFCten 8 Stk.",
@@ -2050,7 +2050,7 @@ var LICENSE = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F6CD}\uFE0F",
-          url: "https://www.amazon.de/s?k=pok%C3%A9mon+t%C3%BCten+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=pok%C3%A9mon+t%C3%BCten+kindergeburtstag&tag=machsleicht-21",
         },
       ],
       kuchen: {
@@ -2059,21 +2059,21 @@ var LICENSE = [
           desc: "Halb rot, halb wei\xDF glasiert \u2014 super einfach!",
           rezept:
             "Muffins backen. Obere H\xE4lfte: rote Glasur (Puderzucker + rote Lebensmittelfarbe). Untere H\xE4lfte: wei\xDFe Glasur. Schwarzen Fondant-Streifen in der Mitte. Wei\xDFen Kreis als Button. Sieht aus wie ein echter Pok\xE9ball!",
-          url: "https://www.amazon.de/s?k=pokemon+muffin+deko+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=pokemon+muffin+deko+kindergeburtstag&tag=machsleicht-21",
         },
         mittel: {
           name: "Pikachu-Kuchen",
           desc: "Runder Kuchen mit gelber Glasur + Pikachu-Gesicht",
           rezept:
             "Runden Kuchen backen. Gelbe Glasur drauf. Ohren: 2 spitze Dreiecke aus Pappe mit Alufolie umwickeln, oben reinstecken. Augen: gro\xDFe runde Schoko-Pl\xE4ttchen. Backen: rote Smarties. Mund: Schoko-Schrift. Nase: kleiner Schoko-Punkt. Ganz einfach, mega Effekt!",
-          url: "https://www.amazon.de/s?k=pokemon+tortendeko+pikachu+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=pokemon+tortendeko+pikachu+kinder&tag=machsleicht-21",
         },
         gross: {
           name: "Pok\xE9ball-Torte",
           desc: "Runde Torte im Pok\xE9ball-Design",
           rezept:
             "2 runde B\xF6den backen. Buttercreme dazwischen und au\xDFen. Obere H\xE4lfte: roter Fondant. Untere H\xE4lfte: wei\xDFer Fondant. Schwarzer Fondant-Streifen in der Mitte. Wei\xDFer Fondant-Kreis als Button. Sauber und professionell \u2014 perfekt f\xFCr Pok\xE9mon-Fans!",
-          url: "https://www.amazon.de/s?k=fondant+set+rot+weiss+schwarz+torte&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=fondant+set+rot+weiss+schwarz+torte&tag=machsleicht-21",
         },
       },
     },
@@ -2144,7 +2144,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u26CF\uFE0F",
-          url: "https://www.amazon.de/s?k=minecraft+kindergeburtstag+teller+becher&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=minecraft+kindergeburtstag+teller+becher&tag=machsleicht-21",
         },
         {
           name: "Minecraft Luftballons 12 Stk.",
@@ -2152,7 +2152,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=minecraft+luftballons+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=minecraft+luftballons+kindergeburtstag&tag=machsleicht-21",
         },
         {
           name: "Creeper-Girlande",
@@ -2160,7 +2160,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F49A}",
-          url: "https://www.amazon.de/s?k=minecraft+creeper+girlande+geburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=minecraft+creeper+girlande+geburtstag&tag=machsleicht-21",
         },
       ],
       dekoMin: [
@@ -2170,7 +2170,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=gr%C3%BCne+braune+luftballons&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=gr%C3%BCne+braune+luftballons&tag=machsleicht-21",
         },
         {
           name: "Fenster mit Washi-Tape 'pixeln' (DIY)",
@@ -2187,7 +2187,7 @@ var LICENSE = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F3F7}\uFE0F",
-          url: "https://www.amazon.de/s?k=minecraft+sticker+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=minecraft+sticker+kinder&tag=machsleicht-21",
         },
         {
           name: "Pixel-Armb\xE4nder 12 Stk.",
@@ -2195,7 +2195,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u231A",
-          url: "https://www.amazon.de/s?k=pixel+armb%C3%A4nder+kinder+minecraft&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=pixel+armb%C3%A4nder+kinder+minecraft&tag=machsleicht-21",
         },
         {
           name: "Minecraft T\xFCten 8 Stk.",
@@ -2203,7 +2203,7 @@ var LICENSE = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F6CD}\uFE0F",
-          url: "https://www.amazon.de/s?k=minecraft+t%C3%BCten+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=minecraft+t%C3%BCten+kindergeburtstag&tag=machsleicht-21",
         },
       ],
       kuchen: {
@@ -2212,21 +2212,21 @@ var LICENSE = [
           desc: "Gr\xFCne Glasur mit Pixel-Gesicht aus Schokost\xFCckchen",
           rezept:
             "Muffins backen. Gr\xFCne Glasur drauf (Puderzucker + gr\xFCne Lebensmittelfarbe). Creeper-Gesicht: kleine Schoko-St\xFCckchen als Pixel-Augen und Mund legen. Geht super schnell und jedes Kind erkennt den Creeper!",
-          url: "https://www.amazon.de/s?k=minecraft+muffin+deko+creeper+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=minecraft+muffin+deko+creeper+kindergeburtstag&tag=machsleicht-21",
         },
         mittel: {
           name: "Grasblock-Kuchen",
           desc: "Eckiger Kuchen mit gr\xFCnem Fondant oben, braun an den Seiten",
           rezept:
             "Eckigen Kuchen backen (Blechkuchen quadratisch zuschneiden oder Kastenform). Seiten: brauner Fondant oder Schoko-Glasur (= Erde). Oben: gr\xFCner Fondant (= Gras). Mit braunem Fondant Pixel-Muster auf die Seiten. Sieht aus wie ein echter Minecraft-Block!",
-          url: "https://www.amazon.de/s?k=minecraft+tortendeko+kinder+geburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=minecraft+tortendeko+kinder+geburtstag&tag=machsleicht-21",
         },
         gross: {
           name: "Enderportal-Torte",
           desc: "Schwarzer Schoko-Kuchen mit gr\xFCnen Endsteinen",
           rezept:
             "Dunklen Schoko-Kuchen backen. Schwarze Glasur (Schoko + etwas schwarze Lebensmittelfarbe). Gr\xFCne Fondant-Quadrate als Endsteine auf den Rand legen. Enderman-Figur in die Mitte. Lila Fondant-Streifen als Portal-Effekt. Essbare Glitzer-Sterne dar\xFCber.",
-          url: "https://www.amazon.de/s?k=minecraft+tortenfigur+enderman+deko&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=minecraft+tortenfigur+enderman+deko&tag=machsleicht-21",
         },
       },
     },
@@ -2297,7 +2297,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u2744\uFE0F",
-          url: "https://www.amazon.de/s?k=frozen+eisk%C3%B6nigin+kindergeburtstag+teller+becher&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=frozen+eisk%C3%B6nigin+kindergeburtstag+teller+becher&tag=machsleicht-21",
         },
         {
           name: "Schneeflocken-Luftballons 12 Stk.",
@@ -2305,7 +2305,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=schneeflocken+luftballons+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=schneeflocken+luftballons+kindergeburtstag&tag=machsleicht-21",
         },
         {
           name: "Frozen Girlande",
@@ -2313,7 +2313,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F478}",
-          url: "https://www.amazon.de/s?k=frozen+girlande+geburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=frozen+girlande+geburtstag&tag=machsleicht-21",
         },
       ],
       dekoMin: [
@@ -2323,7 +2323,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=hellblaue+wei%C3%9Fe+luftballons&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=hellblaue+wei%C3%9Fe+luftballons&tag=machsleicht-21",
         },
         {
           name: "Schneeflocken aus Papier falten (DIY)",
@@ -2340,7 +2340,7 @@ var LICENSE = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F3F7}\uFE0F",
-          url: "https://www.amazon.de/s?k=frozen+sticker+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=frozen+sticker+kinder&tag=machsleicht-21",
         },
         {
           name: "Schneeflocken-Haarspangen 12 Stk.",
@@ -2348,7 +2348,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u2744\uFE0F",
-          url: "https://www.amazon.de/s?k=schneeflocken+haarspangen+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=schneeflocken+haarspangen+kinder&tag=machsleicht-21",
         },
         {
           name: "Frozen T\xFCten 8 Stk.",
@@ -2356,7 +2356,7 @@ var LICENSE = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F6CD}\uFE0F",
-          url: "https://www.amazon.de/s?k=frozen+t%C3%BCten+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=frozen+t%C3%BCten+kindergeburtstag&tag=machsleicht-21",
         },
       ],
       kuchen: {
@@ -2365,21 +2365,21 @@ var LICENSE = [
           desc: "Wei\xDFe Glasur mit Marshmallow-Nase und Schoko-Augen",
           rezept:
             "Vanilla-Muffins backen. Wei\xDFe Glasur drauf. Mini-Marshmallow als Nase (= Karotte). 2 Schoko-Chips als Augen. Aus Fondant einen kleinen Mund formen. Optional: Kokosraspel als Schnee dar\xFCberstreuen.",
-          url: "https://www.amazon.de/s?k=frozen+muffin+deko+olaf+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=frozen+muffin+deko+olaf+kindergeburtstag&tag=machsleicht-21",
         },
         mittel: {
           name: "Frozen-Kuchen",
           desc: "Hellblauer Zuckerguss mit Schneeflocken und Elsa-Figur",
           rezept:
             "Runden Kuchen backen. Hellblaue Glasur (Puderzucker + blaue Lebensmittelfarbe). Wei\xDFe Schneeflocken aus Fondant oder essbare Schneeflocken-Deko kaufen. Elsa-Figur obendrauf stellen. Essbaren Glitzer dar\xFCberstreuen.",
-          url: "https://www.amazon.de/s?k=frozen+tortenfigur+elsa+deko+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=frozen+tortenfigur+elsa+deko+kindergeburtstag&tag=machsleicht-21",
         },
         gross: {
           name: "Eispalast-Torte",
           desc: "Zweist\xF6ckig mit Eiszapfen aus Zuckerglasur",
           rezept:
             "2 verschieden gro\xDFe runde B\xF6den backen. Buttercreme dazwischen und au\xDFen. Hellblau + wei\xDF einf\xE4rben. Eiszapfen: Zuckerglasur an den R\xE4ndern herunterlaufen lassen. Schneeflocken-Deko. Essbare Perlen. Elsa + Anna Figuren obendrauf.",
-          url: "https://www.amazon.de/s?k=frozen+tortendeko+set+elsa+anna+eiszapfen&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=frozen+tortendeko+set+elsa+anna+eiszapfen&tag=machsleicht-21",
         },
       },
     },
@@ -2450,7 +2450,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F344}",
-          url: "https://www.amazon.de/s?k=super+mario+kindergeburtstag+teller+becher&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=super+mario+kindergeburtstag+teller+becher&tag=machsleicht-21",
         },
         {
           name: "Mario Luftballons 12 Stk.",
@@ -2458,7 +2458,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=super+mario+luftballons+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=super+mario+luftballons+kindergeburtstag&tag=machsleicht-21",
         },
         {
           name: "Mario Girlande + Sterne",
@@ -2466,7 +2466,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u2B50",
-          url: "https://www.amazon.de/s?k=super+mario+girlande+geburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=super+mario+girlande+geburtstag&tag=machsleicht-21",
         },
       ],
       dekoMin: [
@@ -2476,7 +2476,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=rote+gr%C3%BCne+luftballons&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=rote+gr%C3%BCne+luftballons&tag=machsleicht-21",
         },
         {
           name: "Fragezeichen-Bl\xF6cke aus Karton (DIY)",
@@ -2493,7 +2493,7 @@ var LICENSE = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F3F7}\uFE0F",
-          url: "https://www.amazon.de/s?k=super+mario+sticker+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=super+mario+sticker+kinder&tag=machsleicht-21",
         },
         {
           name: "Gold-Schoko-M\xFCnzen 50 Stk.",
@@ -2501,7 +2501,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1FA99}",
-          url: "https://www.amazon.de/s?k=gold+schoko+m%C3%BCnzen+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=gold+schoko+m%C3%BCnzen+kinder&tag=machsleicht-21",
         },
         {
           name: "Mario T\xFCten 8 Stk.",
@@ -2509,7 +2509,7 @@ var LICENSE = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F6CD}\uFE0F",
-          url: "https://www.amazon.de/s?k=super+mario+t%C3%BCten+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=super+mario+t%C3%BCten+kindergeburtstag&tag=machsleicht-21",
         },
       ],
       kuchen: {
@@ -2518,21 +2518,21 @@ var LICENSE = [
           desc: "Rote Glasur mit wei\xDFen Schoko-Punkten = Super-Pilz!",
           rezept:
             "Muffins backen. Rote Glasur drauf. Wei\xDFe Schoko-Drops oder Fondant-Punkte als Pilz-Tupfen aufsetzen. Sieht aus wie der Super-Pilz aus Mario! Geht in 5 Minuten.",
-          url: "https://www.amazon.de/s?k=super+mario+muffin+deko+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=super+mario+muffin+deko+kindergeburtstag&tag=machsleicht-21",
         },
         mittel: {
           name: "Fragezeichen-Block-Kuchen",
           desc: "Gelber eckiger Kuchen mit ? aus Schokolade",
           rezept:
             "Kastenform-Kuchen backen. Gelbe Glasur oder gelber Fondant. Gro\xDFes Fragezeichen aus dunkler Schokolade auf die Oberseite legen (auf Backpapier vorzeichnen, Schoko dr\xFCberspritzen, aush\xE4rten). Braune Fondant-Streifen als Block-R\xE4nder.",
-          url: "https://www.amazon.de/s?k=super+mario+tortendeko+kinder+geburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=super+mario+tortendeko+kinder+geburtstag&tag=machsleicht-21",
         },
         gross: {
           name: "Mario-Welten-Torte",
           desc: "Gr\xFCne Wiese mit R\xF6hren und Figuren",
           rezept:
             "Flachen Blechkuchen backen. Gr\xFCne Glasur (= Wiese). R\xF6hren aus gr\xFCnem Fondant (Rollen formen). Rote + gelbe Smarties als M\xFCnzen und Pilze. Mario + Luigi Figuren aufstellen. Wolken aus wei\xDFem Fondant. Fragezeichen-Bl\xF6cke aus gelben Fondant-W\xFCrfeln.",
-          url: "https://www.amazon.de/s?k=super+mario+tortenfiguren+set+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=super+mario+tortenfiguren+set+kinder&tag=machsleicht-21",
         },
       },
     },
@@ -2603,7 +2603,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F577}\uFE0F",
-          url: "https://www.amazon.de/s?k=spider+man+kindergeburtstag+teller+becher&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=spider+man+kindergeburtstag+teller+becher&tag=machsleicht-21",
         },
         {
           name: "Spider-Man Luftballons 10 Stk.",
@@ -2611,7 +2611,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=spider+man+luftballons+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=spider+man+luftballons+kindergeburtstag&tag=machsleicht-21",
         },
         {
           name: "Spinnennetz-Deko",
@@ -2619,7 +2619,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F578}\uFE0F",
-          url: "https://www.amazon.de/s?k=spinnennetz+deko+halloween+party&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=spinnennetz+deko+halloween+party&tag=machsleicht-21",
         },
       ],
       dekoMin: [
@@ -2629,7 +2629,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=rote+blaue+luftballons&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=rote+blaue+luftballons&tag=machsleicht-21",
         },
         {
           name: "Watte-Spinnennetze (DIY)",
@@ -2646,7 +2646,7 @@ var LICENSE = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F3F7}\uFE0F",
-          url: "https://www.amazon.de/s?k=spider+man+sticker+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=spider+man+sticker+kinder&tag=machsleicht-21",
         },
         {
           name: "Gummi-Spinnen 24 Stk.",
@@ -2654,7 +2654,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F577}\uFE0F",
-          url: "https://www.amazon.de/s?k=gummi+spinnen+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=gummi+spinnen+kinder&tag=machsleicht-21",
         },
         {
           name: "Spider-Man T\xFCten 8 Stk.",
@@ -2662,7 +2662,7 @@ var LICENSE = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F6CD}\uFE0F",
-          url: "https://www.amazon.de/s?k=spider+man+t%C3%BCten+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=spider+man+t%C3%BCten+kindergeburtstag&tag=machsleicht-21",
         },
       ],
       kuchen: {
@@ -2671,21 +2671,21 @@ var LICENSE = [
           desc: "Schoko-Muffins mit Lakritze-Beinen = Spinne!",
           rezept:
             "Schoko-Muffins backen. Rote Glasur drauf. Aus Lakritzschnecken 8 Beine pro Muffin schneiden und seitlich reinstecken. 2 Zuckeraugen als Augen aufkleben. Fertig ist die Spinne!",
-          url: "https://www.amazon.de/s?k=spider+man+muffin+deko+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=spider+man+muffin+deko+kindergeburtstag&tag=machsleicht-21",
         },
         mittel: {
           name: "Spider-Man-Kuchen",
           desc: "Roter Fondant mit schwarzem Spinnennetz",
           rezept:
             "Runden Kuchen backen. Roter Fondant drauf. Mit dunkler Schoko-Glasur oder schwarzem Fondant ein Spinnennetz aufzeichnen (von der Mitte aus Linien nach au\xDFen, dann B\xF6gen verbinden). Geht mit Spritzbeutel oder Zahnstocher. Fertige Spider-Man Figur obendrauf.",
-          url: "https://www.amazon.de/s?k=spider+man+tortendeko+figur+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=spider+man+tortendeko+figur+kinder&tag=machsleicht-21",
         },
         gross: {
           name: "Spider-Verse-Torte",
           desc: "Mehrst\xF6ckig, rot-blau mit Spinnennetzen",
           rezept:
             "2 runde B\xF6den: rot (Lebensmittelfarbe) + blau. \xDCbereinander mit Buttercreme. Au\xDFen: halbe Seite roter Fondant, halbe Seite blauer Fondant. Schwarze Fondant-Spinnennetze. Spider-Man Figur obendrauf. Essbare Spinnennetze am Rand.",
-          url: "https://www.amazon.de/s?k=spider+man+tortendeko+set+spinnennetz&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=spider+man+tortendeko+set+spinnennetz&tag=machsleicht-21",
         },
       },
     },
@@ -2756,7 +2756,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F9D9}",
-          url: "https://www.amazon.de/s?k=harry+potter+kindergeburtstag+teller+becher&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=harry+potter+kindergeburtstag+teller+becher&tag=machsleicht-21",
         },
         {
           name: "Hogwarts-Luftballons 10 Stk.",
@@ -2764,7 +2764,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=harry+potter+luftballons+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=harry+potter+luftballons+kindergeburtstag&tag=machsleicht-21",
         },
         {
           name: "Schwimmende Kerzen (LED) 12 Stk.",
@@ -2781,7 +2781,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=braune+goldene+luftballons&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=braune+goldene+luftballons&tag=machsleicht-21",
         },
         {
           name: "Briefe mit Siegelwachs (DIY)",
@@ -2798,7 +2798,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u2728",
-          url: "https://www.amazon.de/s?k=zauberst%C3%A4be+holz+kinder+harry+potter&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=zauberst%C3%A4be+holz+kinder+harry+potter&tag=machsleicht-21",
         },
         {
           name: "Harry Potter Sticker 60 Stk.",
@@ -2806,7 +2806,7 @@ var LICENSE = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F3F7}\uFE0F",
-          url: "https://www.amazon.de/s?k=harry+potter+sticker+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=harry+potter+sticker+kinder&tag=machsleicht-21",
         },
         {
           name: "Pergament-T\xFCten 12 Stk.",
@@ -2814,7 +2814,7 @@ var LICENSE = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F6CD}\uFE0F",
-          url: "https://www.amazon.de/s?k=pergament+t%C3%BCten+harry+potter&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=pergament+t%C3%BCten+harry+potter&tag=machsleicht-21",
         },
       ],
       kuchen: {
@@ -2823,21 +2823,21 @@ var LICENSE = [
           desc: "Schoko-Muffins mit Eiswaffel-Zauberhut",
           rezept:
             "Schoko-Muffins backen. Schoko-Glasur drauf. Umgedrehte Eiswaffel (H\xF6rnchen) als Zauberhut obendrauf setzen. Fondant-Streifen und Sternchen drankleben. Goldene Streusel als Zauberstaub.",
-          url: "https://www.amazon.de/s?k=harry+potter+muffin+deko+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=harry+potter+muffin+deko+kindergeburtstag&tag=machsleicht-21",
         },
         mittel: {
           name: "Hogwarts-Kuchen",
           desc: "Schokoladen-Kuchen mit Hogwarts-Wappen",
           rezept:
             "Schokoladen-Kuchen backen. Schoko-Glasur drauf. Hogwarts-Wappen: aus Fondant in 4 Farben (rot, gr\xFCn, blau, gelb) ein Wappen gestalten oder fertigen Aufleger kaufen. Goldene Sterne und Schoko-Zauberstab als Deko.",
-          url: "https://www.amazon.de/s?k=harry+potter+tortendeko+kinder+geburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=harry+potter+tortendeko+kinder+geburtstag&tag=machsleicht-21",
         },
         gross: {
           name: "Grimoire-Torte",
           desc: "Buch-f\xF6rmiger Kuchen als Zauberbuch",
           rezept:
             "Kastenform-Kuchen backen. L\xE4ngs halbieren als offenes Buch. Seiten mit hellem Fondant (= Buchseiten). Deckel mit braunem Fondant (= Leder-Einband). Mit Schoko-Schrift 'Zaubertr\xE4nke' auf die Seite schreiben. Goldener Fondant-Verschluss.",
-          url: "https://www.amazon.de/s?k=harry+potter+tortendeko+buch+fondant&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=harry+potter+tortendeko+buch+fondant&tag=machsleicht-21",
         },
       },
     },
@@ -2908,7 +2908,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u2694\uFE0F",
-          url: "https://www.amazon.de/s?k=ninjago+kindergeburtstag+teller+becher&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=ninjago+kindergeburtstag+teller+becher&tag=machsleicht-21",
         },
         {
           name: "Ninjago Luftballons 10 Stk.",
@@ -2916,7 +2916,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=ninjago+luftballons+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=ninjago+luftballons+kindergeburtstag&tag=machsleicht-21",
         },
         {
           name: "Ninjago Girlande",
@@ -2924,7 +2924,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F3F7}\uFE0F",
-          url: "https://www.amazon.de/s?k=ninjago+girlande+geburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=ninjago+girlande+geburtstag&tag=machsleicht-21",
         },
       ],
       dekoMin: [
@@ -2934,7 +2934,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=gr%C3%BCne+schwarze+luftballons&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=gr%C3%BCne+schwarze+luftballons&tag=machsleicht-21",
         },
       ],
       mitgebsel: [
@@ -2944,7 +2944,7 @@ var LICENSE = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F3F7}\uFE0F",
-          url: "https://www.amazon.de/s?k=ninjago+sticker+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=ninjago+sticker+kinder&tag=machsleicht-21",
         },
         {
           name: "Mini-Ninja-Figuren 8 Stk.",
@@ -2952,7 +2952,7 @@ var LICENSE = [
           eco: !1,
           bbl: "buy",
           emoji: "\u2694\uFE0F",
-          url: "https://www.amazon.de/s?k=mini+ninja+figuren+kinder+ninjago&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=mini+ninja+figuren+kinder+ninjago&tag=machsleicht-21",
         },
         {
           name: "Ninjago T\xFCten 8 Stk.",
@@ -2960,7 +2960,7 @@ var LICENSE = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F6CD}\uFE0F",
-          url: "https://www.amazon.de/s?k=ninjago+t%C3%BCten+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=ninjago+t%C3%BCten+kindergeburtstag&tag=machsleicht-21",
         },
       ],
       kuchen: {
@@ -2969,21 +2969,21 @@ var LICENSE = [
           desc: "Muffins mit Fondant-Ninja-Masken",
           rezept:
             "Muffins backen. Wei\xDFe Glasur drauf. Farbigen Fondant-Streifen als Ninja-Maske um den oberen Teil des Muffins legen (rot, blau, gr\xFCn oder schwarz). Zuckeraugen als Ninja-Augen zwischen die Maske. Fertig!",
-          url: "https://www.amazon.de/s?k=ninjago+muffin+deko+kindergeburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=ninjago+muffin+deko+kindergeburtstag&tag=machsleicht-21",
         },
         mittel: {
           name: "Ninja-Dojo-Kuchen",
           desc: "Runder Kuchen mit Ninjago-Spinner-Deko",
           rezept:
             "Runden Kuchen backen. Schwarze Glasur (Schoko + schwarze Lebensmittelfarbe). Wei\xDFen Fondant-Kreis in die Mitte (= Spinner). Farbige Fondant-Streifen als Energie-Wirbel. Ninjago-Figur obendrauf. Goldener Fondant als Shuriken.",
-          url: "https://www.amazon.de/s?k=ninjago+tortendeko+kinder+geburtstag&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=ninjago+tortendeko+kinder+geburtstag&tag=machsleicht-21",
         },
         gross: {
           name: "Tempel-Torte",
           desc: "Mehrst\xF6ckig mit Ninjago-Symbolen",
           rezept:
             "2 verschieden gro\xDFe runde B\xF6den. Rote oder gr\xFCne Fondant-Verkleidung. Goldene Fondant-Drachen an den Seiten. Ninjago-Figuren obendrauf. Fondant-Waffen als Deko. Chinesische Schriftzeichen aus schwarzem Fondant.",
-          url: "https://www.amazon.de/s?k=ninjago+tortenfiguren+set+kinder&tag=machsleicht21-21",
+          url: "https://www.amazon.de/s?k=ninjago+tortenfiguren+set+kinder&tag=machsleicht-21",
         },
       },
     },

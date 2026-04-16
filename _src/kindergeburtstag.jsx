@@ -868,8 +868,8 @@ function App() {
     const deko = isMinimal ? (motto.dekoMin || []) : motto.deko;
     const mitgebsel = motto.mitgebsel || [];
     const wowExtras = isWow ? [
-      { name: "Foto-Hintergrund " + motto.name, price: 14.99, eco: false, bbl: "buy", emoji: "📸", url: "https://www.amazon.de/s?k=" + encodeURIComponent(motto.name + " foto hintergrund party kinder") + "&tag=machsleicht21-21" },
-      { name: "LED-Lichterkette Deko", price: 9.99, eco: false, bbl: "buy", emoji: "✨", url: "https://www.amazon.de/s?k=led+lichterkette+party+deko+kinder&tag=machsleicht21-21" },
+      { name: "Foto-Hintergrund " + motto.name, price: 14.99, eco: false, bbl: "buy", emoji: "📸", url: "https://www.amazon.de/s?k=" + encodeURIComponent(motto.name + " foto hintergrund party kinder") + "&tag=machsleicht-21" },
+      { name: "LED-Lichterkette Deko", price: 9.99, eco: false, bbl: "buy", emoji: "✨", url: "https://www.amazon.de/s?k=led+lichterkette+party+deko+kinder&tag=machsleicht-21" },
     ] : [];
     const allDeko = [...deko, ...wowExtras];
     const total = [...allDeko, ...mitgebsel].reduce((sum, item, i) => sum + (owned[i] ? 0 : item.price), 0);

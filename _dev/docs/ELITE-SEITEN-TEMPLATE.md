@@ -86,7 +86,7 @@ Jede Variante hat ALLE folgenden Abschnitte:
 - [ ] **Highlight-Produkt** — Ein besonderer Affiliate-Artikel als Wow-Faktor (z.B. aufblasbares Kostüm ~35-50€). In eigener Tip-Box mit Beschreibung und Alters-Warnung
 
 ### Regeln:
-- Affiliate-Tag: `machsleicht21-21`
+- Affiliate-Tag: `machsleicht-21`
 - Affiliate-Links als `rel="noopener sponsored"` + `target="_blank"`
 - Affiliate-Hinweis: `* Affiliate-Links. Für dich ändert sich der Preis nicht.`
 - Preise als Richtwerte mit `~`
@@ -200,7 +200,7 @@ Alle Seiten sollten konsistente CSS-Klassen verwenden. Referenz: `dino-6-8-jahre
 - [ ] Alle 3 Varianten haben ALLE 10 Abschnitte (Zeitplan bis Kosten-Box)
 - [ ] Jedes Spiel im Zeitplan hat eine Game-Detail-Card
 - [ ] Kosten-Angaben sind realistisch und konsistent (Einkaufsliste = Kosten-Box)
-- [ ] Affiliate-Links haben korrekten Tag (`machsleicht21-21`)
+- [ ] Affiliate-Links haben korrekten Tag (`machsleicht-21`)
 - [ ] Alters-Tipps sind spezifisch, nicht generisch
 - [ ] Keine Copy-Paste-Artefakte von anderen Altersgruppen
 - [ ] Plan B Regen tip vorhanden

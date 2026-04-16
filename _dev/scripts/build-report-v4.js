@@ -214,7 +214,7 @@ const doc = new Document({
           new TableRow({ children: [cell("SEO Noscript-Fallback", 2800, { bold: true }), cell("Google sieht Content", 1400, { color: C.green, bold: true }), cell("2.400 W\u00F6rter statisches HTML in <div id=root>. 14 Mottos mit Spielen pro Alter, 8 FAQ, Cross-Links. Von 500 auf 2.400 W\u00F6rter.", 4826)] }),
           new TableRow({ children: [cell("Structured Data", 2800, { bold: true }), cell("Rich Snippets", 1400, { color: C.green, bold: true }), cell("24 Schema-Instanzen auf 22 Seiten. WebApplication + FAQPage (8 Fragen) + ItemList (14 Mottos) + HowTo + Article.", 4826)] }),
           new TableRow({ children: [cell("Social Proof", 2800, { bold: true }), cell("+40% Vertrauen", 1400, { color: C.green, bold: true }), cell("\u201E4.700+ Geburtstage geplant\u201C Counter + Testimonial (Sandra, Hamburg).", 4826)] }),
-          new TableRow({ children: [cell("Affiliate-Links", 2800, { bold: true }), cell("\u20AC0 \u2192 Revenue", 1400, { color: C.green, bold: true }), cell("42 Amazon-Links (index) + theme-spezifische Kits (Schatzsuche) mit tag=machsleicht21-21. \u201EAmazon \u2197\u201C Button.", 4826)] }),
+          new TableRow({ children: [cell("Affiliate-Links", 2800, { bold: true }), cell("\u20AC0 \u2192 Revenue", 1400, { color: C.green, bold: true }), cell("42 Amazon-Links (index) + theme-spezifische Kits (Schatzsuche) mit tag=machsleicht-21. \u201EAmazon \u2197\u201C Button.", 4826)] }),
           new TableRow({ children: [cell("State Persistence", 2800, { bold: true }), cell("UX-Killer gefixt", 1400, { color: C.green, bold: true }), cell("Alle Einstellungen \u00FCberleben Browser-Refresh. localStorage f\u00FCr Alter, Motto, G\u00E4ste, Owned-Items.", 4826)] }),
           new TableRow({ children: [cell("Peak-Moment", 2800, { bold: true }), cell("+55% Endowment", 1400, { color: C.green, bold: true }), cell("Emotionale Zwischenansicht nach Motto-Wahl. 14 individuelle Teaser-Texte. Auto-Skip nach 3 Sek.", 4826)] }),
           new TableRow({ children: [cell("Email-Capture", 2800, { bold: true }), cell("Retention", 1400, { color: C.green, bold: true }), cell("\u201EErinnerung n\u00E4chstes Jahr?\u201C nach Plan. localStorage. Basis f\u00FCr Email-Backend.", 4826)] }),
@@ -321,7 +321,7 @@ const doc = new Document({
           new TableRow({ children: [cell("SEO", 2500), cell("Google Search Console + Schema.org (24 Instanzen)", 4026), cell("\u20AC0", 2500)] }),
           new TableRow({ children: [cell("SEO-Seiten", 2500), cell("generate-seo-pages.js (Node.js Generator, 20 Seiten)", 4026), cell("\u20AC0", 2500)] }),
           new TableRow({ children: [cell("E-Mail", 2500), cell("Cloudflare Email Routing \u2192 kontakt@machsleicht.de", 4026), cell("\u20AC0", 2500)] }),
-          new TableRow({ children: [cell("Monetarisierung", 2500, { bold: true, color: C.green }), cell("Amazon Affiliate (42+ Links, tag=machsleicht21-21)", 4026, { fill: C.greenBg }), cell("PartnerNet ausstehend", 2500, { color: C.orange })] }),
+          new TableRow({ children: [cell("Monetarisierung", 2500, { bold: true, color: C.green }), cell("Amazon Affiliate (42+ Links, tag=machsleicht-21)", 4026, { fill: C.greenBg }), cell("PartnerNet ausstehend", 2500, { color: C.orange })] }),
           new TableRow({ children: [
             cell("LAUFENDE KOSTEN TOTAL", 2500, { bold: true }),
             new TableCell({ borders, width: { size: 4026, type: WidthType.DXA }, margins: cellMargins, children: [new Paragraph({})] }),
