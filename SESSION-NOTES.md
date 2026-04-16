@@ -1,100 +1,98 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 16.04.2026
+**Datum:** 16.04.2026 (Mobile-Session, Opus 4.6)
 
 ## Was wurde gemacht
 
-### Strategische Entscheidungen
-- **FUNNEL-AXIOM festgelegt und in Memory (#19) verankert:**
-  - Hero = EIN Primary CTA "Kindergeburtstag planen →"
-  - Schatzsuche/Einladung/Partyseite sekundär
-  - Partyseite = Post-Planer-Upsell, kein Einstieg
-  - Funnel: Google → Planer → Plan fertig → Partyseite → Wunschliste → Affiliate
-  - Homepage bleibt lang (Hub)
-- **4-Einstiegspunkte-SEO-Strategie** festgelegt:
-  - /kindergeburtstag (Planer-Keywords)
-  - /schatzsuche (Schatzsuche-Keywords, siehe P1-1)
-  - /einladung (Einladungs-Keywords, siehe P1-9)
-  - Homepage (Brand "machsleicht")
+### Strategie-Fortschritt
+- FUNNEL-AXIOM bleibt final (Memory #19).
+- 6-12-Monats-Roadmap in STRATEGIE.md ergänzt (Q2 2026 bis Q1 2027).
+- 10 neue PBIs im Backlog dokumentiert (P1-12 bis P3-10).
+- Doku-Struktur konsolidiert: nur STRATEGIE.md + BACKLOG-AUDIT.md + ARCHITECTURE.md + SESSION-NOTES.md im Root.
 
-### Bereits deployed (frühere Commits heute)
-- **P1-6 Teil 1:** BreadcrumbList JSON-LD auf 95 Seiten verteilt
-- **P2-6:** Encoding normalisiert auf 4 Elite-Seiten (193 HTML-Entities)
-- **P2-11:** 26 interne CTA-Links auf 12 Ratgeber-Seiten korrigiert
+### Heute deployed (5 Commits)
 
-### Jetzt in diesem Commit
+**Commit `99d2233` — Deep SEO + Affiliate-Tag-Fix + 2 Seiten**
+- 566× falscher Tag `machsleicht21-21` → 796× korrekter Tag `machsleicht-21`
+- FAQ/HowTo-Schemas auf 8 Ratgeber-Seiten
+- torte-einfach (55%→85%), spiele-drinnen (57%→85%)
 
-**Affiliate-Tag-Konsolidierung (KRITISCHER BUGFIX):**
-- Vorher: 566× `machsleicht21-21` (falsch) + 230× `machsleicht-21` (richtig)
-- Nachher: 796× einheitlich `machsleicht-21` in allen 16 relevanten Dateien
-- Korrekter Tag verifiziert vom User: `machsleicht-21`
-- Gefixt: 5 Elite-HTML-Seiten, 4 JS-Dateien, 2 Source-Dateien, 3 Dev-Scripts, 1 _dev-old, Elite-Template-Doku
+**Commit `939630c` — Strategie-Roadmap + 10 neue PBIs** `[skip netlify]`
+- STRATEGIE.md Sektion 8a/8b/8c (6-12-Monats-Roadmap, Kalender-Matrix, Revenue-Projektion)
+- 10 neue PBIs ausführlich beschrieben
 
-**Deep SEO Ratgeber-Seiten (8 Seiten):**
-- zeitplan, essen, kosten, mitgebsel, drinnen, draussen, last-minute, zuhause
-- FAQPage (je 5-6 Fragen aus echtem Content, "Grinch-Ton" mit Zahlen)
-- HowTo-Schemas auf ablauf-basierten Seiten (6 der 8)
+**Commit `0c816fb` — Repo-Cleanup** `[skip netlify]`
+- 27 Dateien entfernt (Deploy-Helper, Prototypen, obsolete Docs, Motto-Dev-HTMLs)
+- Repo 24 MB → 12 MB, `_dev/` 13 MB → 347 KB
+- `validate.js` mit erweitertem Header behalten
+- .docx-Dateien behalten (Cowork-Workflow)
 
-**2 schwächste Seiten auf ~85% gehoben:**
-- torte-einfach (55% → 85%): Recipe-Schema (5 HowToSteps), NutritionInformation, FAQ (6), 3 Affiliate-Links, CTA-Block
-- spiele-drinnen (57% → 85%): FAQ (6), ItemList (15 Spiele), 4 Affiliate-Links, Planer-CTA + Schatzsuche-CTA
+**Commit `ee5740c` — P1-4 + P2-14 + P2-18 Affiliate-Sweep**
+- 14 Ratgeber-Seiten bekommen Affiliate-Content (11 Vergleichstabellen, 3 Bulletlisten)
+- CSS-Komponente `u-compare-*` in utility.css (17 neue Zeilen)
+- Konsistenz: 18× redundanter Disclaimer weg, 58× doppelte class=Attribute bereinigt, 8 Umlaut-URLs encoded
+- Kaputte Affiliate-Links auf 7-jahre gefixt (hatten nur Text-Tag)
+- HTML-Bug in kindergeburtstag-draussen.html Zeile 308 gefixt
+- Von 0/14 Seiten auf 58 Links über 18/18 Seiten
+- Neuer PBI P2-19: doppelte class= auf 300 weiteren Dateien
 
-### 3-Stufen-Validierung
-- ✅ Stufe 1: `validate-all.sh` PASSED
-- ✅ Stufe 2: Alle Schemas valide, Counts korrekt
-- ✅ Stufe 3: Alle JSON-LD-Blöcke JSON-valide, Tag einheitlich
+**Commit `4dbfe89` — P1-11 Part 1: 3 Ratgeber**
+- bei-regen: 61% → 87% (FAQ 6, HowTo 6, Ruhige-Aktivitäten-Sektion)
+- 7-jahre: 66% → 88% (FAQ 6, HowTo 6)
+- spiele-draussen: 66% → 82% (FAQ 6, ItemList 15 Spiele, Planer-CTA-Box)
 
-### Build-Skripte (neu)
-- `_build/audit-all-ratgeber.py` — bewertet alle 18 Ratgeber-Seiten auf 10 Dimensionen
-- `_build/deep-seo-{drinnen,draussen,lastminute,zuhause,torte,spiele-drinnen}.py`
+**Commit `[diese Session letzter]` — P1-11 Part 2: 5 weitere Ratgeber**
+- wenig-aufwand: 67% → 89% (FAQ 6, HowTo 5)
+- einladung-text: 71% → 93% (FAQ 6, HowTo 5)
+- zuhause: 69% → 83% (HowTo 6, "5 Panic-Momente"-Sektion, 589 → 854 Wörter)
+- last-minute: 79% → 84% (Content 420 → 908 Wörter, 3 Szenarien, 5 Fehler)
+- 5-jahre: 76% → 87% (FAQ 1 → 6, HowTo 7) — **aber FAQ strukturell nested in Article**
 
-## Nächste Schritte (nächste Session)
+### Qualität aller 18 Ratgeber-Seiten (Ende Session)
+- HTML-Balance: 18/18 ✅
+- JSON-LD valide: 18/18 ✅
+- Keine doppelten class= auf Ratgebern: 18/18 ✅
+- Affiliate-Links: 58 über 18 Seiten, alle korrekt getaggt
+- **Gesamt-Zufriedenheit: ~92%** (von 89.9% gehoben durch Part 2)
 
-### Kritisch / Zeitlich bindend
-1. **GitHub Token rotieren** (Deadline 25.04.2026 — noch 9 Tage!)
-2. Google Search Console einrichten + Sitemap einreichen
+**Noch unter 85%:**
+- last-minute (84%) — nah dran
+- zuhause (83%) — solide Basis
+- 6-jahre (78%) — **NICHT BEARBEITET**, braucht Upgrade wie 5-jahre
 
-### Ratgeber-Seiten weiter auf 85%+ hochziehen
-Audit-Ergebnis (Schlechteste zuerst):
+## Was noch zu tun ist
 
-| Seite | Aktuell | Was fehlt |
-|-------|---------|-----------|
-| spiele-draussen | 61% | FAQ, ItemList, Affiliate, Planer-CTA |
-| 7-jahre | 61% | FAQs ausbauen, Affiliate |
-| bei-regen | 61% | Content verdoppeln (790 W.), FAQ, HowTo |
-| wenig-aufwand | 62% | FAQ, HowTo |
-| zuhause | 64% | Content verdoppeln (532 W.!), HowTo |
-| einladung-text | 67% | FAQ, HowTo |
-| mitgebsel | 70% | HowTo, Affiliate |
-| last-minute | 71% | Content verdoppeln (355 W.!) |
-| 5-jahre | 73% | FAQs ausbauen (nur 1!), HowTo |
-| 6-jahre | 73% | FAQs ausbauen (nur 1!), HowTo, Affiliate |
-| kosten | 76% | Affiliate |
+### Kritisch zeitlich
+- **GitHub-Token rotieren** — Deadline 25.04.2026 (noch ~8 Tage). User muss im GitHub einloggen und den aktuellen PAT (siehe User-Memories) durch neuen ersetzen.
+- **Google Search Console einrichten** (P0-1)
+- **Cloudflare Worker deployen** (P1-10) — Laptop-Session für Partyseite + Rätsel nach Maß
 
-Befehl: `python3 _build/audit-all-ratgeber.py` zeigt Ranking.
+### Für nächste Session (P1-11 abschließen)
+1. **6-jahre upgrade** (FAQ 1 → 6, HowTo)
+2. **5-jahre FAQ-Struktur refactoren** (FAQPage aus Article-mainEntity rausziehen, eigenes Schema)
+3. **3 Seiten ohne Planer-CTA-Box ergänzen**: draussen, drinnen, 7-jahre
 
-### Systemische Probleme (fast alle Ratgeber)
-- **Keine Seite hat Custom-OG-Bild** — alle nutzen og-home.png
-- **Affiliate-Nutzung:** 16 von 18 Seiten haben 0 Amazon-Links
+### Nächste Tickets aus "Los"-Plan
+- Ticket 4: P2-2 Thin Content Konsolidierung
+- Ticket 5: P2-8 /kreuzwortraetsel pre-rendern
+- Ticket 6: P1-8 Piraten Elite-Upgrade
+- Ticket 7: P3-9 Foto-Spots A2-PDFs
+- Ticket 8: P3-10 Urkunden
 
-### P1-8 Piraten Elite-Upgrade (nächstes Motto)
-Nach Dino-Template (6-8 → 3-5 → 9-12).
-Vorher Dino-Nacharbeiten:
-- Dino 6-8: Header/Breadcrumb/Footer nachrüsten
-- Dino 3-5: CSS-Klassen angleichen
-- Dino Hauptseite: Social Proof Counter
+### Backlog-Stand
+- 32 offene PBIs
+- Erledigt heute: P1-4, P2-6 (teilweise), P2-11, P2-14, P2-18, P3-2 Affiliate-Tag, **P1-11 zu ~80%**
+- Neuer PBI P2-19: doppelte class= auf 300 weiteren Dateien
 
-### Weitere P1-Tickets
-- P1-1: /schatzsuche als eigene Seite
-- P1-2: /schnitzeljagd als eigene Seite
-- P1-9: /einladung als SEO-Hub (abhängig von P2-10)
-- P1-7: Social Proof auf Homepage
+## Skripte (in `_build/`)
+- `audit-all-ratgeber.py` — Quality-Ranking aller 18 Ratgeber
+- `affiliate-sweep.py` + `affiliate-5-jahre.py`
+- `upgrade-bei-regen.py`, `upgrade-7-jahre.py`, `upgrade-spiele-draussen.py`
+- `upgrade-wenig-aufwand.py`, `upgrade-einladung-text.py`, `upgrade-zuhause.py`
+- `upgrade-last-minute.py`, `upgrade-5-jahre.py`
 
-### Cloudflare Worker
-- KV Namespace "PARTY" + Custom Domain (LAPTOP-SESSION nötig)
-
-## Offene Fragen
-- ~~Amazon PartnerNet-Tag verifizieren~~ ✅ GEKLÄRT: `machsleicht-21`
-- Reihenfolge nach Piraten: Einhorn oder Paw Patrol?
-- Skalierung: 60 Elite-Seiten manuell oder Content-Generator mit Claude API?
+## Validierung
+- `bash validate-all.sh` — Standard-Gate (PASSED nach allen Commits)
+- `node validate.js` — Deep-Audit (bekannte Warnings auf Lizenz-Motto-Seiten)
+- `python3 _build/audit-all-ratgeber.py` — Ratgeber-Ranking
