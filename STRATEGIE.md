@@ -1,0 +1,422 @@
+# MASTER-STRATEGIE — machsleicht & machsruhig
+
+**Letzte Aktualisierung:** 16.04.2026
+**Status:** Lebendes Dokument. Alle vorherigen Strategie-Dokumente wurden hier konsolidiert.
+**Ort:** Root-Verzeichnis (neben ARCHITECTURE.md und BACKLOG-AUDIT.md) — immer auffindbar.
+
+---
+
+## 0. Die wichtigsten Leitprinzipien (FESTSTEHEND, nicht mehr verhandelbar)
+
+### 0.1 FUNNEL-AXIOM (Memory #19, finalisiert 16.04.2026)
+- **Hero = EIN Primary CTA:** "Kindergeburtstag planen →"
+- Schatzsuche, Einladung, Partyseite sind **sekundär**
+- **Partyseite ist Post-Planer-Upsell, NICHT Einstieg**
+- Funnel: Google → Planer → Plan fertig → Partyseite → Wunschliste → Affiliate
+- Homepage bleibt lang (Hub/Schaufenster)
+- Alle UX-/CTA-Entscheidungen leiten sich vom Funnel ab
+
+### 0.2 4-SEO-Einstiegspunkte-Strategie
+1. `/kindergeburtstag` (Planer-Keywords)
+2. `/schatzsuche` (Schatzsuche-Keywords)
+3. `/einladung` (Einladungs-Keywords, als SEO-Hub geplant)
+4. Homepage (Brand)
+
+**Nicht sinnvoll:** `/planer` oder `/partyseite` als separate Landingpages (Konkurrenz zu groß bzw. kein Suchvolumen).
+
+### 0.3 Monetarisierungs-Grenzen
+- **Kleinunternehmer-Status schützen:** Nur Payment-Anbieter wählen, die USt selbst abführen (Gumroad, Lemon Squeezy, elopage). Keine direkte Stripe/PayPal-Integration solange nicht nötig.
+- **Keine Produkte, die Haftung erzeugen:** Keine physischen Kinderprodukte, keine verbindliche Beratung auf machsruhig.
+- **Passivitäts-Prinzip:** Kein Monetarisierungs-Hebel der laufend mehr als 4h/Monat Aufwand erzeugt.
+- **Tracking-Pflicht:** Jeder neue Revenue-Strom bekommt ein Plausible-Event. Ohne Tracking keine Optimierung.
+
+### 0.4 DSGVO-Leitplanken (technische Produkte)
+- **Kinderfotos niemals an KI-APIs senden** → Foto-Erzähler dauerhaft gestrichen
+- **Kindernamen:** Nur Vornamen in Prompts, kein PII
+- **Anrufe:** Immer ans Eltern-Handy, nie direkt ans Kind
+- **Audio-Nachrichten:** Eltern steuern Wiedergabe, kein kalter Kontakt
+- **Partyseite-Daten:** Nur auf der Seite, kein Export, automatische Löschung nach 90 Tagen
+
+---
+
+## 1. Vision
+
+**In einem Satz:** machsleicht wird die Plattform, auf der deutsche Eltern Kindergeburtstage organisieren — von der ersten Idee bis zum letzten Danke.
+
+**Kernprinzip:** Jedes Tool ist ein eigenständiger Einstieg mit eigenem SEO-Kanal. Jedes Tool funktioniert standalone, ohne Anmeldung, ohne die anderen Tools zu kennen. Aber sobald du eines benutzt, entdeckst du die anderen. Und alles kann in einer Partyseite zusammenfließen — muss aber nicht.
+
+Der komplette Bogen: **Einladung → Party-Vorbereitung → Partytag → Nachbereitung**
+
+**Skalierung über Kindergeburtstag hinaus:** Einschulung, Halloween, Ostern, Weihnachten, Advent — die Plattform ist anlassunabhängig. Expansion auf Erwachsenengeburtstage, Taufe möglich, aber nicht primär.
+
+**Meta-Prinzip:**
+> machsleicht ist nicht eine Website, die du besuchst.
+> Es ist ein System, das sich in das Leben von Eltern einbettet —
+> vom Moment der Einladung bis zum Tag nach der Party.
+> Ausgefuxt verkauft ein PDF.
+> machsleicht baut ein Ökosystem.
+
+---
+
+## 2. Die fünf Säulen des Produkts
+
+| Säule | URL | Status | Standalone? |
+|-------|-----|--------|-------------|
+| **Planer** | `/kindergeburtstag` | ✅ LIVE | ✅ Ja |
+| **Partyseite** | `party.machsleicht.de/{token}` | ✅ MVP gebaut (party-worker.js v2, 811 Zeilen), Cloudflare-Deploy pending | ✅ Ja — auch ohne Planer erstellbar |
+| **Wunschliste** | In Partyseite integriert | ✅ MVP (Claim, Beteiligen, PayPal, Affiliate 8 Shops), Standalone `/wunschliste` Phase 2 | ✅ Ja — auch ohne Partyseite, auch für Weihnachten/Einschulung |
+| **Rätsel nach Maß** | `/raetsel` | ✅ v5 technisch fertig, Deploy pending | ✅ Ja — auch für Lehrer, Erzieher, ohne Schatzsuche |
+| **Kreuzworträtsel** | `/kreuzwortraetsel` | Phase 3 | ✅ Ja — Freebie ohne KI, Premium mit KI-Inhalten |
+
+**Die Magie liegt in der Verbindung:** Planer-Nutzer → "Partyseite erstellen?" (Daten vorausgefüllt) → "Wunschliste hinzufügen?" → "Rätsel nach Maß?" in der Schnitzeljagd. Jeder Einstieg funktioniert solo, alle zusammen ergeben das Ökosystem.
+
+---
+
+## 3. Monetarisierung — Priorisierte Hebel
+
+### Aktueller Stand (16.04.2026)
+- Traffic: ~80 Besucher/Tag (~2.400/Monat)
+- Revenue: praktisch null (Amazon-Affiliate-Tag war falsch bis heute 16.04. — jetzt gefixt)
+- **Monetarisierungs-Tuning bei 80 Visitors/Tag ist Mikrooptimierung. Der echte Hebel heißt Traffic.**
+
+### Prio 1 — Rätsel nach Maß deployen (BEREITS GEBAUT)
+- **Status:** v5 technisch fertig. Dual-Mode, Claude-API, Foto-Stationen, Schwierigkeits-Slider, Lösungswort-Feature, Credit-System via Cloudflare Worker + KV + Lemon Squeezy
+- **VK:** 0,99€ Single / 3,99€ Fünfer-Pack
+- **Kosten pro Verkauf:** ~5ct Claude-API + 5% Lemon Squeezy = **Netto-Marge 85–90%**
+- **Erwartet bei aktuellem Traffic:** 100–200€/Monat
+- **Aufwand:** Eine Laptop-Session, max 2h (Cloudflare Worker-Deploy + KV-Namespace + Custom Domain)
+- **Warum Prio 1:** Jeder Tag ohne Deploy = verlorenes Geld. Nichts neu bauen.
+
+### Prio 2 — Digitale PDF-Produkte (höchste Marge-pro-Stunde)
+- **Konzept:** Einmal erstellen, unendlich verkaufen. Keine Versand-Logistik, keine Rückgaben, keine CE-Kennzeichnung.
+- **Vertrieb:** Gumroad (führt USt für dich ab → Kleinunternehmer-Status bleibt erhalten).
+
+**Konkrete Produkte aus vorhandenem Material:**
+
+| Produkt | VK | Basis-Material |
+|---------|-----|----------------|
+| Piraten-Komplett-PDF (Einladung + Urkunde + Rätsel + Deko) | 4,99€ | Piraten-Seite + Schatzsuche-Templates |
+| Dino-Komplett-PDF | 4,99€ | Dino-Elite-Seiten + Forscherpass |
+| Schatzsuche-Bundle (5 Themen × 10 Rätsel) | 9,99€ | Schatzsuche-Generator |
+| Forscherpass-Set (3 Altersgruppen) | 3,99€ | Dino-Forscherpass |
+| "Komplette Geburtstagsbox" (30+ Vorlagen) | 14,99€ | Alles zusammenpackbar |
+
+- **Rechnung:** 2% Conversion auf ~500 kaufintent-Besucher × 5€ × 10 Verkäufe = ~50€/Monat pro Produkt → **4 Produkte = 200€/Monat bei aktuellem Traffic**, 400€/Monat bei Traffic-Verdopplung
+- **Aufwand:** 2–4h pro Produkt einmalig (Canva/Figma → PDF)
+- **Passivität:** 9/10
+
+### Prio 3 — machsruhig.de launchen (höchste Marge pro Besucher)
+
+| Metrik | machsleicht | machsruhig |
+|--------|-------------|------------|
+| Marge/Lead | ~0,50€ (Amazon-Affiliate) | **150–300€ (Bestatter-Lead)** |
+| Conversion-Intent | niedrig | **hoch (akuter Bedarf)** |
+| Emotionaler Context | locker | ernst, hohe Zahlungsbereitschaft |
+
+**Monetarisierung:**
+- **Bestatter-Leads:** 150–300€/Lead (direkte Vermittlung)
+- **Sterbegeldversicherung-Affiliate:** 40–80€/Abschluss (Financeads, Awin)
+- **Vorsorge-PDF-Bundle:** 19,99€ (Testament-Check, Notfallordner, Patientenverfügung)
+- **Vorsorge-Beratung-Leads:** 30–60€/Lead an Notare/Kanzleien
+
+**Rechnung:** Eine rankende Seite "Bestatter Kosten" mit 500 Besuchern/Monat × 1% Lead × 200€ = **1.000€/Monat aus einer Seite.** 10× Hebel vs. machsleicht.
+
+- **Status:** Domain gesichert, SKILL_MACHSRUHIG_MASTER.md existiert (2.698 Zeilen, 28 Phasen). Noch nichts live.
+- **Aufwand:** 2–3 Wochen Content-Sprint für 10–15 Kernseiten mit SEO-Fokus
+
+### Prio 4 — Premium-Features (Freemium-Upsells auf machsleicht)
+Der Planer bleibt kostenlos (Haupt-Funnel). Einzelne Features als Micro-Payments via Lemon Squeezy.
+
+| Feature | Tech | Cost | VK | Priorität |
+|---------|------|------|-----|-----------|
+| **Rätsel nach Maß** | Claude API | ~5ct | 2,99€ | Tier 1 — live-ready |
+| **Kreuzworträtsel mit KI** | Claude + Grid-Algo | ~5ct | 2,99€ | Tier 1 |
+| **KI-Spielleiter-Anrufe** | ElevenLabs Conv. AI | ~1€ (9×60s) | 4,99€ | Tier 2 (Stimmtest nötig) |
+| **Einladungs-Audio** | ElevenLabs TTS | ~3ct | im Bundle | Tier 2 |
+| **Gute-Nacht-Geschichte** | Claude + ElevenLabs | ~30ct | 2,99€ | Tier 2 |
+| **Eltern-Copilot** | Claude API | ~50ct | 3,99€ | Tier 3 |
+| **Danke-Nachrichten** | Claude API | ~0ct | 1,99€ | Tier 3 |
+
+**Sorglos-Bundle:** Alle Features zusammen 9,99€ statt einzeln ~20€. Psychologischer Anker.
+
+**Klumpenrisiko:** 4 von 7 Features hängen an ElevenLabs. Wenn deutsche Stimmen nicht überzeugen, betrifft das die Hälfte des Premium-Lineups. Bolle testet selbst.
+
+**Gestrichen:**
+- Foto-Erzähler (DSGVO)
+- Geburtstagssong (deutsche Musik-AI aktuell zu schwach)
+
+### Prio 5 — Affiliate smarter machen (akute Schwäche)
+**Status heute:** Nur 2 von 18 Ratgeber-Seiten haben Amazon-Links. **Verlorenes Revenue.**
+
+**Sofort-Hebel:**
+1. Alle 16 Ratgeber-Seiten mit Affiliate-Box ausstatten (Einmalkauf-Produkte: Springform, Zahlenkerzen, Bluetooth-Box, Bastelset — nicht Verbrauchsmaterial)
+2. **Awin anmelden** für Otto (8–10% Marge!), myToys (6–8%), Thalia (5%). Deutsche Kinder-Shops, höhere Warenkörbe als Amazon (3%)
+3. **Vergleichs-Tabellen** (3 Produkte mit Preis/Bewertung) statt Einzellinks — konvertiert 3–5× besser
+4. Affiliate-Box direkt bei der Einkaufsliste, nicht am Seitenende
+
+**Erwarteter Lift:** Aktuell ~0€ → **50–200€/Monat** ohne neue Seiten. Aufwand: 4–6h Batch-Sprint.
+
+**Affiliate-Link-Status:**
+- Amazon PartnerNet: ✅ live, Tag **`machsleicht-21`** (verifiziert 16.04.2026)
+- Awin (Otto, myToys, Thalia, Jako-o, tausendkind, LEGO): ⏳ Anmeldung steht aus
+- Smyths Toys: im Worker vorbereitet
+
+### Prio 6 — E-Mail-Liste (Compound-Effekt)
+- **Konzept:** Lead-Magnet (kostenloses PDF "Piraten-Einladung zum Drucken") gegen E-Mail. Monatlicher Newsletter mit Angeboten.
+- **Rechnung:** 2–5% Signup-Rate → ~30 neue Kontakte/Monat → 360 in 12 Monaten. Jeder Kontakt ist 1–3€/Jahr wert. Bei 1.000 Kontakten: **1.000–3.000€/Jahr Zusatzrevenue.**
+- **Tool:** MailerLite (gratis bis 1.000), DSGVO-konform, Double-Opt-In
+- **Aufwand:** 1 Tag Setup, danach 1× Monat Mail schreiben (30 Min)
+
+### Subscription-Modell (langfristig): Sofort-Schatzsuche-Abo
+- **VK:** 2,99€/Monat für unbegrenzte spontane Schatzsuchen
+- **Use Case:** Sonntag, 14 Uhr, Regen, Kind langweilt sich → 1 Klick → 15-Min-Wohnungsschatzsuche generiert
+- **Strategischer Wert:** Wandelt machsleicht von "1× im Jahr" (Geburtstag) zu "jeden Monat" (Sonntagsrettung)
+- **Basis:** Rätsel nach Maß muss zuerst live
+
+---
+
+## 4. Explizit NICHT machen (mit Begründung)
+
+### Dropshipping (China-Ware)
+- Händler nach BGB → Impressum, AGB, Widerruf (14 Tage), Gewährleistung (2 Jahre), LUCID, volle Produkthaftung
+- **Kinderspielzeug = CE/EN71-Pflicht** — als Händler persönlich haftbar für gefälschte CE-Stempel
+- Abmahn-Risiko bei Kinderprodukten extrem hoch
+- Realistische Marge wird durch Support, Rücksendungen, Zahlungsgebühren zerfressen
+- Bei 80 Besuchern/Tag nicht skalierbar
+
+### Display-Ads (AdSense/Ezoic)
+- Ezoic-Threshold: 10.000 Besucher/Monat (du: 2.400)
+- Mediavine-Threshold: 50.000 Sessions/Monat (weit weg)
+- AdSense ohne Schwelle: bei deinem Traffic 5–20€/Monat, UX-Killer
+- Ads kannibalisieren andere Monetarisierung
+- Erst wenn alle anderen Methoden saturiert UND 5-stelliger Monats-Traffic
+
+### Sponsored Content von Marken
+- Marken kaufen Platzierung ab ~10.000 Unique Visitors/Monat
+- Du bist 4× darunter
+- Aktive Akquise nicht passiv, Einzeldeals nicht skalierbar
+- Erst ab 5.000+ Besuchern/Tag relevant
+
+### Eigene physische Marke (Forscher-Kits, Geburtstagsboxen)
+- Startkapital 5.000–20.000€
+- Lagerlogistik, Versand, Retouren
+- Komplett anderes Geschäft
+- Sinnvoll ab 10.000+ Besuchern/Monat mit klarem Category-Fit
+
+---
+
+## 5. Ideen-Backlog (priorisiert nach Viral × Cash)
+
+### Top-Ideen aus Takeover-Strategie-Speicher
+
+| # | Feature | Viral | Cash | Kombi |
+|---|---------|-------|------|-------|
+| 1 | **Wunschliste + Beteiligen** | 8 | 10 | **18** |
+| 2 | **WhatsApp-Partyseite** | 10 | 7 | **17** |
+| 3 | **KI-Spielleiter-Anrufe** | 7 | 9 | **16** |
+| 4 | **Multiplayer-Schatzsuche (8–12J)** | 9 | 7 | **16** |
+| 5 | **Standalone /wunschliste** | 8 | 8 | **16** |
+| 6 | **Rätsel nach Maß** | 4 | 9 | **13** |
+| 7 | **KI-Geschenkeberater** | 6 | 7 | **13** |
+| 8 | **Sofort-Schatzsuche Abo** | 5 | 7 | **12** |
+| 9 | **Einladungs-Audio** | 7 | 4 | **11** |
+| 10 | **Gute-Nacht-Geschichte** | 4 | 6 | **10** |
+
+### Weitere Ideen aus dem Speicher
+
+- **Klassen-Geburtstagskalender** — Kalender für ganze Klasse (25 Kinder), Wunschliste pro Kind, Link in Klassen-WhatsApp = 25 Familien auf machsleicht
+- **Einschulungs-Planer** — gleicher Motor, August-Peak
+- **Adventskalender-Builder** — 24 Türchen mit KI-Rätsel, November-Peak
+- **Mitgebsel-Generator** — "8 Kinder, 6J, 3€ Budget" → KI-Liste mit Affiliate
+- **Countdown (7 Tage)** — tägliche Push an Kind, viral in Kita
+- **Wetter-Autopilot** — automatischer Check → Plan-B-Push
+- **Allergie-Manager** — Gäste tragen Allergien ein, Einkaufsliste passt sich an
+- **Nachbar-Nachricht** — Generierter Zettel mit machsleicht-Branding, virales Branding
+- **Urkunden/Diplome** — Personalisierte Zertifikate nach der Party
+- **Geschwister-Rolle** — Spezialrolle fürs Geschwisterkind (Pirat-Leutnant etc.)
+- **Stressfrei-Score** — "73/100 — dir fehlen X" — Gamification + teilbar
+- **Foto-Spots / Photobooth-Backdrops** — A2-Druck mit dezentem @machsleicht → Instagram-Werbung
+- **Party-Recap** — generierter Post-Party-Report aus Fotos im Motto-Design
+- **Party-Vorlagen UGC** — Nach jedem Geburtstag Plan als Template veröffentlichen
+- **Geburtstags-Zwilling-Effekt** — Eltern gleichen Monats verbinden, Netzwerkeffekt als Moat
+- **B2B Kitas/Grundschulen** — "Geburtstagsspiele Kita" als unbesetzte Keyword-Cluster
+
+### Langfrist-Vision: Multiplayer-Schatzsuche (8–12 Jährige)
+**Eigenständiges Produkt, nicht Feature.** WebSockets, Rollen-System (Navigator/Codeknacker/Späher), Echtzeit-Sync, Mobile-first, Live-Rangliste, QR-Code-Bonus-Stationen. **VK 4,99€, Kosten minimal.** Viral: 8 Kinder haben machsleicht auf dem Handy.
+
+Frühestens nach stabilem Revenue aus Basis-Features.
+
+---
+
+## 6. Revenue-Projektion (Sparring-Annahmen, konservativ)
+
+**Annahmen:**
+- 20% der Besucher nutzen den Planer
+- 5% der Planer-Nutzer kaufen Premium (7% bei reifer Produkt-Base)
+- 10% erstellen eine Wunschliste
+- Wunschliste generiert ~4€ Affiliate (nicht jeder Gast klickt durch)
+
+### Aktuell (2.400 Besucher/Monat)
+| Stream | Monat |
+|--------|-------|
+| Rätsel nach Maß (wenn deployed) | 100–200€ |
+| Digital-Produkte (4 PDFs auf Gumroad) | 200€ |
+| Affiliate-Sweep (Ratgeber-Seiten) | 50–150€ |
+| **Gesamt Woche 4** | **~400€** |
+
+### Bei 10.000 Besuchern/Monat
+| Stream | Monat |
+|--------|-------|
+| Premium-Features | 700€ |
+| Wunschliste Affiliate | 1.200€ |
+| Standalone /wunschliste | 800€ |
+| Sofort-Abo (30 Abonnenten) | 90€ |
+| Amazon-Affiliate allg. | 200€ |
+| **Gesamt** | **~3.000€** |
+
+### Bei 20.000 Besuchern/Monat
+| Stream | Monat |
+|--------|-------|
+| Premium-Features | 1.960€ |
+| Wunschliste Affiliate | 2.400€ |
+| Standalone /wunschliste | 2.000€ |
+| Geschenkeberater | 600€ |
+| Sofort-Abo | 240€ |
+| Amazon-Affiliate | 400€ |
+| **Gesamt** | **~7.600€** |
+
+**Erkenntnis:** Die Wunschliste überholt Premium-Features ab 10k Besuchern. Bei 20k macht sie mehr als die Hälfte des Umsatzes — weil sie passiv skaliert ohne API-Kosten.
+
+**Jahresumsatz bei 20k Besuchern:** ~91.000€ bei praktisch null laufenden Kosten.
+
+> **Ehrlichkeits-Check:** 5% Premium-Conversion ist am oberen Rand (Industrie: 2–4%). 30% aktive Wunschlisten ist großzügig. Bei echt konservativen Zahlen eher 60–70% der Projektion.
+
+---
+
+## 7. Motto-Strategie
+
+### 10 eigene IPs (Vollausbau-Ziel)
+
+| # | Motto | Schatzsuche | Einladung | KG-SEO |
+|---|-------|-------------|-----------|--------|
+| 1 | Piraten 🏴‍☠️ | ✅ | ✅ | ✅ |
+| 2 | Dino 🦕 | ✅ | ✅ | ✅ |
+| 3 | Weltraum 🚀 | ✅ | ✅ | ✅ |
+| 4 | Safari 🦁 | ❌ (Dschungel ersetzen) | ✅ | ✅ |
+| 5 | Superheld 🦸 | ❌ | ✅ | ❌ |
+| 6 | Detektiv 🔍 | ✅ | ❌ | ✅ |
+| 7 | Prinzessin 👑 | ❌ | ❌ | ❌ (komplett offen) |
+| 8 | Einhorn 🦄 | ❌ | ❌ | ✅ |
+| 9 | Meerjungfrau 🧜‍♀️ | ❌ | ❌ | ✅ (nur SEO) |
+| 10 | Feuerwehr 🚒 | ❌ | ❌ | ✅ |
+
+### Lizenz-Mottos (nur SEO, keine eigenen Tools)
+Paw Patrol, Pokemon, Minecraft, Frozen, Super Mario, Spider-Man, Harry Potter, Ninjago — als SEO-Seiten, **KEINE** Schatzsuchen/Einladungs-Games (Lizenzrisiko).
+
+### Zusammenlegungen
+- **Dschungel** → wird durch **Safari** ersetzt (konkreter, bessere Mechanik)
+- **Feen/Feenzauber** → geht in **Einhorn/Regenbogen** auf (zu ähnlich)
+
+### Motto-Ausbau-Reihenfolge
+1. ✅ Dino (fertig, als Referenz-Template)
+2. 🔜 Piraten 6-8 (nächstes nach P1-8)
+3. Einhorn oder Prinzessin (Top-3 Mädchen-Suchvolumen)
+4. Rest nach SEO-Suchvolumen + Konkurrenz-Lücke
+
+---
+
+## 8. Sprint-Plan (Bolle-Version)
+
+| Woche | Aktion | Erwarteter Revenue-Lift |
+|-------|--------|-------------------------|
+| 1 | **Rätsel nach Maß live deployen** (nur Cloudflare-Setup) | +100–200€/Monat |
+| 1 | **GitHub Token rotieren** (Deadline 25.04.) | kein Revenue, aber Blocker |
+| 2 | 2 Digital-Produkte auf Gumroad (Piraten + Dino) | +100€/Monat |
+| 3 | Affiliate-Sweep auf 16 Ratgeber-Seiten + Awin-Anmeldung | +50–150€/Monat |
+| 4 | 2 weitere Digital-Produkte (Schatzsuche + Komplettbox) | +150€/Monat |
+| 5–6 | machsruhig 10 Kernseiten live | +500–1.500€/Monat (wenn rankend) |
+| 7 | E-Mail-Liste aufsetzen (MailerLite + Lead-Magnet) | Compound-Effekt |
+| 8+ | Premium-Features (KI-Spielleiter, Einladungs-Audio) | +60€/Monat pro Feature |
+
+**Kumulierter Revenue:**
+- Nach 3 Monaten: 400–700€/Monat
+- Nach 6 Monaten (machsruhig rankt): 1.000–2.500€/Monat
+- Nach 12 Monaten (E-Mail-Liste + Traffic-Wachstum): 2.000–5.000€/Monat
+
+---
+
+## 9. Wettbewerbs-Analyse
+
+### Wunschlisten-Tools (DE)
+| Tool | Stärke | Schwäche vs. machsleicht |
+|------|--------|--------------------------|
+| Wunschbiber | 200k+ Wünsche, 80+ Shops | Kein RSVP, kein Affiliate für uns, keine Party-Integration |
+| EzWL | Einfach, kostenlos | Kein RSVP, kein Affiliate |
+| MyWishlists | Multi-Anlass | Kein RSVP, kein Affiliate |
+| Wishbob / Wisheezy | Ohne Anmeldung | Feature-arm |
+
+### RSVP/Event-Tools
+| Tool | Stärke | Schwäche |
+|------|--------|----------|
+| Partiful | Google Best App 2024, viral | US-fokussiert, keine Wunschliste, kein Affiliate |
+| Whocan.org | Deutsche Geburtstags-Einladungen | Keine Wunschliste, kein Affiliate |
+| Joy | Hochzeits-Websites | Nur Hochzeit/Baby, kein KG |
+
+### Die Lücke
+**Keiner kombiniert:** RSVP + Allergien + Wunschliste mit Affiliate + KG-Planer + Schatzsuche + KI-Features in einer Plattform. Wunschlisten-Tools haben kein RSVP. RSVP-Tools keine Wunschliste. Keiner verdient an den Geschenken der Gäste. Keiner hat KI-Features.
+
+**machsleicht macht alles einzeln "gut genug"**, nicht besser als Wunschbiber bei Wunschlisten, gewinnt aber durch **Integration + Affiliate-Modell**.
+
+---
+
+## 10. Technologie-Stack
+
+| Komponente | Technologie | Status |
+|-----------|-------------|--------|
+| Backend Partyseite | Cloudflare Workers + KV | ✅ gebaut (v2, 811 Zeilen), Deploy pending |
+| Stimmen/Anrufe | ElevenLabs (Conversational AI + TTS) | Bolle testet DE-Stimmen |
+| Text-Generierung | Claude API (Anthropic) | Live |
+| Musik-AI | Suno/Udio | nicht getestet (re-evaluieren) |
+| Affiliate | Amazon PartnerNet (live), AWIN (geplant) | Amazon ✅, Awin TODO |
+| Payment | Lemon Squeezy | Live |
+| Hosting | Netlify + Cloudflare CDN/DNS | Live |
+| Frontend | React 18 CDN + Babel (dev) / esbuild (build) | Live |
+| Analytics | Plausible | Live |
+
+---
+
+## 11. Offene kritische Punkte
+
+### Technisch
+- **Cloudflare-Worker-Deploy** für Partyseite + Rätsel nach Maß (LAPTOP-SESSION nötig)
+  - KV Namespace "PARTY" anlegen
+  - DNS `party.machsleicht.de` → Worker
+  - Environment-Variables: `AMAZON_TAG=machsleicht-21`
+- **GitHub Token rotieren** (Deadline 25.04.2026)
+- Homepage.js aufräumen (toter Partyseite-Code drin)
+
+### Business
+- Awin-Anmeldung (Prüfung dauert 1–3 Tage, also früh starten)
+- Google Search Console einrichten + Sitemap einreichen
+- ElevenLabs-Stimmen DE testen (Klumpenrisiko für 4 Premium-Features)
+- machsruhig-Sprint konkret planen (Master-Doc `SKILL_MACHSRUHIG_MASTER.md` existiert)
+
+### Strategisch offen
+- Reihenfolge nach Piraten-Elite: Einhorn oder Paw Patrol?
+- Skalierung Motto-Seiten: manuell oder Claude-API-Generator?
+- Mix Free vs. Premium: welche Features kostenlos als Lead-Magnet?
+
+---
+
+## 12. Versionshistorie dieses Dokuments
+
+- **16.04.2026:** Erstellt durch Konsolidierung von 7 Einzel-Dokumenten:
+  - `_dev/docs/monetarisierung-strategie.md` (Prio 1–6, NICHT-Liste, Sprint-Plan)
+  - `_dev/docs/premium-strategie-2026-04.md` (5 Säulen, Premium-Features, Revenue-Projektion, Wettbewerb)
+  - `_dev/docs/takeover-strategie-ideen.md` (22 Ideen-Tiers, Meta-Prinzip)
+  - `_dev/docs/motto-plan-backlog.md` (10-Motto-Liste, Lizenz-Abgrenzung)
+  - `_dev/docs/content-plan-ratgeber.md` (Ratgeber-Plan, weitestgehend umgesetzt)
+  - `_dev/docs/copy-upgrade-plan.md` (Homepage/Kindergeburtstag-Copy, umgesetzt)
+  - `_dev/docs/STRATEGIE-FORMAT.md` (Meta-Format für Sparring-Engine)
+
+Die Einzel-Dokumente bleiben als Archiv in `_dev/docs/`. **Dieses Master-Dokument ist die einzige Quelle der Wahrheit für Strategie-Fragen.**

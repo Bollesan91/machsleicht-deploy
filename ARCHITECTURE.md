@@ -2,6 +2,11 @@
 
 Stand: April 2026
 
+> **Verwandte Root-Dokumente:**
+> - [STRATEGIE.md](./STRATEGIE.md) — Master-Strategie (Monetarisierung, Vision, Motto-Plan, Sprint-Plan)
+> - [BACKLOG-AUDIT.md](./BACKLOG-AUDIT.md) — Priorisiertes Backlog mit PBIs
+> - [SESSION-NOTES.md](./SESSION-NOTES.md) — Fortschritt der letzten Session
+
 ---
 
 ## Plattform-Kern
