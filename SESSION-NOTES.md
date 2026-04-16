@@ -1,98 +1,94 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 16.04.2026 (Mobile-Session, Opus 4.6)
+**Datum:** 16.04.2026 (Mobile-Session, Opus 4.6) — Bestandsaufnahme + Motto-Guide Fix
 
 ## Was wurde gemacht
 
-### Strategie-Fortschritt
-- FUNNEL-AXIOM bleibt final (Memory #19).
-- 6-12-Monats-Roadmap in STRATEGIE.md ergänzt (Q2 2026 bis Q1 2027).
-- 10 neue PBIs im Backlog dokumentiert (P1-12 bis P3-10).
-- Doku-Struktur konsolidiert: nur STRATEGIE.md + BACKLOG-AUDIT.md + ARCHITECTURE.md + SESSION-NOTES.md im Root.
+### Stufe 1 — Deploy-Blocker gefixt ✅
+`validate.js` meldete 4 echte Fehler (DEPLOY BLOCKED). Alle gefixt:
+- `kindergeburtstag/dino-forscherpass.html`: Meta-Description + `noindex` (Druckvorlage, gehört nicht in Google-Index)
+- `kindergeburtstag/dino-quiz.html`: Meta-Description + `noindex`
+- `schatzsuche.html`: Meta-Description (Redirect bleibt in Sitemap indexierbar)
+- `schnitzeljagd.html`: Meta-Description (dito)
 
-### Heute deployed (5 Commits)
+**Status:** `validate.js` → 0 Fehler. `validate-all.sh` → PASSED.
 
-**Commit `99d2233` — Deep SEO + Affiliate-Tag-Fix + 2 Seiten**
-- 566× falscher Tag `machsleicht21-21` → 796× korrekter Tag `machsleicht-21`
-- FAQ/HowTo-Schemas auf 8 Ratgeber-Seiten
-- torte-einfach (55%→85%), spiele-drinnen (57%→85%)
+### Stufe 2 — Ehrliches Audit über alle 366 Seiten ✅
+Neues Skript `_build/audit-all-pages.py`:
+- Kategorisiert seitentyp-bewusst: ratgeber, motto-guide, schatzsuche-motto, motto-matrix, motto-hub, guide-hub, schnitzeljagd, schatzsuche-hub, nachbarnische, tool, redirect, druckvorlage, legal, 404
+- Canonical-Varianten-Erkennung: Einzel-Alter-Seiten (z.B. `piraten-5-jahre`) haben `canonical` auf Gruppen-Version (`piraten-3-5-jahre`). Diese werden NUR technisch gescored, nicht auf Content.
+- Pro Kategorie eigenes Scoring-Profil.
+- Aggregat + Top-20-Worst + Meta-Probleme.
 
-**Commit `939630c` — Strategie-Roadmap + 10 neue PBIs** `[skip netlify]`
-- STRATEGIE.md Sektion 8a/8b/8c (6-12-Monats-Roadmap, Kalender-Matrix, Revenue-Projektion)
-- 10 neue PBIs ausführlich beschrieben
+**Ehrlicher Gesamtschnitt: 70,8 %** (vorher Session-Notes 92 %, galt nur für 18 Ratgeber).
 
-**Commit `0c816fb` — Repo-Cleanup** `[skip netlify]`
-- 27 Dateien entfernt (Deploy-Helper, Prototypen, obsolete Docs, Motto-Dev-HTMLs)
-- Repo 24 MB → 12 MB, `_dev/` 13 MB → 347 KB
-- `validate.js` mit erweitertem Header behalten
-- .docx-Dateien behalten (Cowork-Workflow)
+### Stufe 3 — Fix 1: Motto-Guide Template (8 Seiten) ✅
+Neues Skript `_build/upgrade-motto-guides.py`:
+- FAQ-Schema mit 5 motto-spezifischen Fragen pro Guide
+- HowTo-Schema "Motto-Party in 5 Schritten"
+- Sichtbare FAQ-Sektion (5 Cards)
+- Sichtbare HowTo-Sektion (5-Schritt-Liste)
+- Motto-spezifischer Content für: frozen, harry-potter, minecraft, ninjago, paw-patrol, pokemon, spider-man, super-mario
 
-**Commit `ee5740c` — P1-4 + P2-14 + P2-18 Affiliate-Sweep**
-- 14 Ratgeber-Seiten bekommen Affiliate-Content (11 Vergleichstabellen, 3 Bulletlisten)
-- CSS-Komponente `u-compare-*` in utility.css (17 neue Zeilen)
-- Konsistenz: 18× redundanter Disclaimer weg, 58× doppelte class=Attribute bereinigt, 8 Umlaut-URLs encoded
-- Kaputte Affiliate-Links auf 7-jahre gefixt (hatten nur Text-Tag)
-- HTML-Bug in kindergeburtstag-draussen.html Zeile 308 gefixt
-- Von 0/14 Seiten auf 58 Links über 18/18 Seiten
-- Neuer PBI P2-19: doppelte class= auf 300 weiteren Dateien
+**Ergebnis:** 47 % → 72 % (+25 Punkte), Content ~450 W → ~770 W über 8 Seiten.
 
-**Commit `4dbfe89` — P1-11 Part 1: 3 Ratgeber**
-- bei-regen: 61% → 87% (FAQ 6, HowTo 6, Ruhige-Aktivitäten-Sektion)
-- 7-jahre: 66% → 88% (FAQ 6, HowTo 6)
-- spiele-draussen: 66% → 82% (FAQ 6, ItemList 15 Spiele, Planer-CTA-Box)
+## Audit-Stand nach dieser Session
 
-**Commit `[diese Session letzter]` — P1-11 Part 2: 5 weitere Ratgeber**
-- wenig-aufwand: 67% → 89% (FAQ 6, HowTo 5)
-- einladung-text: 71% → 93% (FAQ 6, HowTo 5)
-- zuhause: 69% → 83% (HowTo 6, "5 Panic-Momente"-Sektion, 589 → 854 Wörter)
-- last-minute: 79% → 84% (Content 420 → 908 Wörter, 3 Szenarien, 5 Fehler)
-- 5-jahre: 76% → 87% (FAQ 1 → 6, HowTo 7) — **aber FAQ strukturell nested in Article**
+| Kategorie | Seiten | Score | Kommentar |
+|---|---:|---:|---|
+| Ratgeber (Haupt) | 18 | 82 % | Bereits gepflegt |
+| Motto-Hub | 23 | 77 % | Anständig |
+| Schnitzeljagd | 2 | 76 % | OK |
+| Schatzsuche-Motto | 8 | 75 % | Template-Fix offen |
+| Schatzsuche-Hub | 2 | 74 % | OK |
+| Motto-Matrix | 258 | 72 % | Canonical-Varianten sauber |
+| Motto-Guide | 8 | **72 %** | diese Session: +25 Punkte |
+| Guide-Hub | 8 | 60 % | Thin-Content-Dublette mit Motto-Guide (P2-2) |
+| Tool/Planer | 16 | 54 % | 10 Einladungs-Tool-Seiten haben 3 W |
+| Nachbarnische | 15 | 51 % | einschulung 31 %, baby 32 % — kritisch |
 
-### Qualität aller 18 Ratgeber-Seiten (Ende Session)
-- HTML-Balance: 18/18 ✅
-- JSON-LD valide: 18/18 ✅
-- Keine doppelten class= auf Ratgebern: 18/18 ✅
-- Affiliate-Links: 58 über 18 Seiten, alle korrekt getaggt
-- **Gesamt-Zufriedenheit: ~92%** (von 89.9% gehoben durch Part 2)
-
-**Noch unter 85%:**
-- last-minute (84%) — nah dran
-- zuhause (83%) — solide Basis
-- 6-jahre (78%) — **NICHT BEARBEITET**, braucht Upgrade wie 5-jahre
+**Gesamtdurchschnitt: ~72 %** nach Motto-Guide-Fix.
 
 ## Was noch zu tun ist
 
 ### Kritisch zeitlich
-- **GitHub-Token rotieren** — Deadline 25.04.2026 (noch ~8 Tage). User muss im GitHub einloggen und den aktuellen PAT (siehe User-Memories) durch neuen ersetzen.
+- **GitHub-Token rotieren** — Deadline 25.04.2026 (noch ~9 Tage)
 - **Google Search Console einrichten** (P0-1)
-- **Cloudflare Worker deployen** (P1-10) — Laptop-Session für Partyseite + Rätsel nach Maß
+- **Cloudflare Worker deployen** (P1-10) — Laptop-Session
 
-### Für nächste Session (P1-11 abschließen)
-1. **6-jahre upgrade** (FAQ 1 → 6, HowTo)
-2. **5-jahre FAQ-Struktur refactoren** (FAQPage aus Article-mainEntity rausziehen, eigenes Schema)
-3. **3 Seiten ohne Planer-CTA-Box ergänzen**: draussen, drinnen, 7-jahre
+### Template-Fixes (nach Hebel sortiert)
+1. **Einladungs-Tool-Seiten (10 Stück, 37 %)** — 3 Wörter Content, Meta + H1 fehlen. Template-Fix nötig.
+2. **Nachbarnische-Flaggschiffe:**
+   - `einschulung.html` (31 %, 77 W) — zentraler Hub, praktisch unsichtbar
+   - `baby.html` (32 %, 89 W) — dito
+3. **Schatzsuche-Motto (8 Seiten, 75 %)** — alle ~250 W, gleiche Struktur. FAQ+HowTo-Treatment wie Motto-Guides würde ~+10 Punkte bringen.
+4. **Guide-Hub (8 Seiten, 60 %)** — Thin-Content-Dublette mit Motto-Guide. Besser strategisch konsolidieren (P2-2) als separat pflegen.
 
-### Nächste Tickets aus "Los"-Plan
-- Ticket 4: P2-2 Thin Content Konsolidierung
-- Ticket 5: P2-8 /kreuzwortraetsel pre-rendern
-- Ticket 6: P1-8 Piraten Elite-Upgrade
-- Ticket 7: P3-9 Foto-Spots A2-PDFs
-- Ticket 8: P3-10 Urkunden
+### Site-weite Baustellen
+- **334 Titles > 65 Zeichen** — Google schneidet ab.
+- **43 Meta-Descriptions > 160 Zeichen** — unsauber.
+- **7 echte Broken Internal Links**: `/partyseite/`, `/kindergeburtstag/3`, `/kindergeburtstag/6`, `/kindergeburtstag/9`, `/schatzsuche/meerjungfrau`, `/kindergeburtstag/feen-3-5-jahre`, `/kindergeburtstag/dschungel-3-5-jahre`
+- **~2100 False Positives in validate.js**: Favicons, utility.css, manifest.json werden als "ins Leere" gemeldet obwohl vorhanden. Validator-Bug.
 
-### Backlog-Stand
-- 32 offene PBIs
-- Erledigt heute: P1-4, P2-6 (teilweise), P2-11, P2-14, P2-18, P3-2 Affiliate-Tag, **P1-11 zu ~80%**
-- Neuer PBI P2-19: doppelte class= auf 300 weiteren Dateien
+### Motto-Guide Rest-Potential (72 % → 85 %)
+Um auf 85 % zu kommen fehlen noch:
+- Affiliate-Links (keiner auf den Motto-Guides) → +4 Punkte
+- Content-Volume auf 1500+ W → +4 Punkte
+- Partyseite-CTA (sobald live) → +3 Punkte
 
 ## Skripte (in `_build/`)
-- `audit-all-ratgeber.py` — Quality-Ranking aller 18 Ratgeber
+- **`audit-all-pages.py`** (neu) — Site-weites Audit, kategoriebewusst, Canonical-Variante-aware
+- **`upgrade-motto-guides.py`** (neu) — Template-Fix für 8 Motto-Guides
+- `audit-all-ratgeber.py` — Alt, nur 18 Haupt-Ratgeber
 - `affiliate-sweep.py` + `affiliate-5-jahre.py`
-- `upgrade-bei-regen.py`, `upgrade-7-jahre.py`, `upgrade-spiele-draussen.py`
-- `upgrade-wenig-aufwand.py`, `upgrade-einladung-text.py`, `upgrade-zuhause.py`
-- `upgrade-last-minute.py`, `upgrade-5-jahre.py`
+- `upgrade-*.py` (8 Stück) — einzelne Ratgeber
 
 ## Validierung
-- `bash validate-all.sh` — Standard-Gate (PASSED nach allen Commits)
-- `node validate.js` — Deep-Audit (bekannte Warnings auf Lizenz-Motto-Seiten)
-- `python3 _build/audit-all-ratgeber.py` — Ratgeber-Ranking
+- `bash validate-all.sh` — Basis-Gate (PASSED)
+- `node validate.js` — Deep-Audit (0 Fehler nach Fix, ~400 echte Warnungen, ~2100 False Positives)
+- `python3 _build/audit-all-pages.py` — **Site-weites Audit (NEU — empfohlen)**
+- `python3 _build/audit-all-ratgeber.py` — Ratgeber-spezifisch (alt)
+
+## Nächste Session Start-Empfehlung
+Mit Einladungs-Tool-Seiten oder Nachbarnische-Flaggschiffen starten — beide haben extremen Hebel (37 % bzw. 31–32 %).
