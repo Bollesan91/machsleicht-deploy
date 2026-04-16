@@ -328,7 +328,7 @@ Paw Patrol, Pokemon, Minecraft, Frozen, Super Mario, Spider-Man, Harry Potter, N
 
 ---
 
-## 8. Sprint-Plan (Bolle-Version)
+## 8. Sprint-Plan (Bolle-Version, 8-Wochen-Horizont)
 
 | Woche | Aktion | Erwarteter Revenue-Lift |
 |-------|--------|-------------------------|
@@ -341,10 +341,97 @@ Paw Patrol, Pokemon, Minecraft, Frozen, Super Mario, Spider-Man, Harry Potter, N
 | 7 | E-Mail-Liste aufsetzen (MailerLite + Lead-Magnet) | Compound-Effekt |
 | 8+ | Premium-Features (KI-Spielleiter, Einladungs-Audio) | +60€/Monat pro Feature |
 
-**Kumulierter Revenue:**
-- Nach 3 Monaten: 400–700€/Monat
-- Nach 6 Monaten (machsruhig rankt): 1.000–2.500€/Monat
-- Nach 12 Monaten (E-Mail-Liste + Traffic-Wachstum): 2.000–5.000€/Monat
+---
+
+## 8a. 6–12-Monats-Roadmap (Kalender-getrieben)
+
+**Leitprinzip:** Saisonale Produkte 4–6 Monate **vor** dem Peak bauen, damit SEO Zeit zu ranken hat. Google braucht mindestens 3 Monate für neue Seiten, um relevanten Traffic zu ziehen.
+
+### Q2 2026 (April–Juni) — Foundation & Einschulung vorbereiten
+
+| Monat | Fokus | Konkrete Actions |
+|-------|-------|------------------|
+| **April (Rest)** | Revenue-Grundlagen | Rätsel nach Maß deployen, 2 Gumroad-Produkte, Affiliate-Sweep |
+| **Mai** | Einschulung-Launch (SEO-Vorlauf) | Einschulungs-Planer bauen (PBI P1-12), 5 SEO-Seiten "Einschulung Geschenke/Tüte/Feier" |
+| **Juni** | Sommer-Ratgeber | Letzte 5 Ratgeber-Seiten auf 85%, Standalone /wunschliste live |
+
+**Warum Einschulung im Mai bauen:** Einschulungen finden Ende August/Anfang September statt. Eltern googeln ab Ende Mai (Tüte, Geschenke, Feier). Google indexiert neue Seiten 6–8 Wochen, also **spätestens Mai live** für Juli-August-Traffic.
+
+**Erwarteter Revenue Ende Q2:** 400–800€/Monat
+
+### Q3 2026 (Juli–September) — Einschulungs-Peak + Advent-Vorlauf
+
+| Monat | Fokus | Konkrete Actions |
+|-------|-------|------------------|
+| **Juli** | Einschulung-Peak monitoren + Adventskalender-Builder bauen | Adventskalender-Feature mit 24 KI-Türchen (PBI P1-13) |
+| **August** | Einschulung-Abschluss + machsruhig starten | Einschulungs-Traffic ernten, machsruhig-Content-Sprint 10 Seiten (P3-6) |
+| **September** | Advent-SEO-Seiten bauen | "Adventskalender selber machen", "24 Türchen mit KI", "Adventsrätsel für Kinder" — 8–10 Landingpages |
+
+**Warum Adventskalender im Juli-September:** November-Peak. SEO-Lead-Time 3–4 Monate. **Spätestens August live.** Gute Keywords: "Adventskalender selber machen Kind" = 8.100 Suchen/Monat (saisonal).
+
+**Erwarteter Revenue Ende Q3:** 1.000–2.000€/Monat
+
+### Q4 2026 (Oktober–Dezember) — Advent/Weihnachts-Peak + Revenue-Spitze
+
+| Monat | Fokus | Konkrete Actions |
+|-------|-------|------------------|
+| **Oktober** | KI-Geschenkeberater live | Pre-Christmas-Peak für Geschenk-Keywords (PBI P1-14) |
+| **November** | Adventskalender-Peak monitoren | Adventskalender-Tool geht ab 15.11. durch die Decke, Gumroad-Produkte verkaufen aktiv |
+| **Dezember** | Weihnachts-Peak + Nachbearbeitung | Geschenkeberater + Adventskalender laufen parallel, Dezember-Revenue-Peak |
+
+**Erwarteter Revenue Dezember 2026:** 2.500–5.000€ im Monat (Peak)
+
+### Q1 2027 (Januar–März) — Premium & Skalierung
+
+| Monat | Fokus | Konkrete Actions |
+|-------|-------|------------------|
+| **Januar** | Premium-Features starten | KI-Spielleiter (ElevenLabs) nach Stimmtest, Einladungs-Audio |
+| **Februar** | Multiplayer-Schatzsuche MVP | Langfristige Vision angehen, wenn Basis-Revenue stabil |
+| **März** | Ostern-Peak vorbereiten | "Ostereiersuche planen", "Osterrätsel Kinder" Landingpages |
+
+**Erwarteter Revenue Q1 2027:** 3.000–5.000€/Monat konsolidiert
+
+---
+
+## 8b. Kalender-Matrix: Was wann SEO-relevant ist
+
+| Thema | Keyword-Peak | Seiten-Launch bis | Trafik-Fenster |
+|-------|--------------|-------------------|----------------|
+| Kindergeburtstag (Evergreen) | — | laufend | ganzjährig |
+| Einschulung | Juli–August | **Mai 2026** | Juni–September |
+| Adventskalender | Oktober–Dezember | **August 2026** | Oktober–Dezember |
+| Weihnachtsgeschenke Kind | November–Dezember | **September 2026** | November–Dezember |
+| Ostern (Ostereiersuche) | März–April | **Januar 2027** | März–April |
+| Halloween | Oktober | **Juli 2027** (wenn relevant) | Oktober |
+| Silvester Kinder | Dezember | bleibt klein | niedriges Volumen |
+
+**Wichtig:** Jede saisonale Seite muss am laufen bleiben. Einmal gebaut = jedes Jahr Traffic. Das ist der Compound-Effekt.
+
+---
+
+## 8c. Revenue-Projektion (realistisch, konservativ)
+
+**Kumulierter Revenue-Pfad (Median-Schätzung):**
+- Ende Q2 2026 (Juni): ~600€/Monat
+- Ende Q3 2026 (September): ~1.500€/Monat
+- Dezember 2026 (Peak): ~3.500€/Monat
+- März 2027: ~3.000€/Monat (nach Dezember-Peak normalisiert)
+- Juni 2027: ~4.500€/Monat (Einschulung-Welle Jahr 2)
+
+**Jahresumsatz 2026:** ~18.000–25.000€
+**Jahresumsatz 2027 (projiziert):** ~45.000–65.000€
+
+**Ehrlichkeits-Check:**
+- SEO-Traffic kann 2× langsamer ranken als erwartet → Revenue 40–60% der Projektion
+- Einschulung/Advent konkurrenzstark → erste Saison oft 30–50% unter Plan
+- machsruhig-Launch unsicher (komplett neues Vertical)
+- Bei Verzug Deploy Rätsel nach Maß: Basis-Revenue 2–3 Monate später
+
+**Was die Projektion robust macht:**
+- Mehrere Revenue-Streams (keine Einzelabhängigkeit)
+- Saisonale Streuung (Einschulung + Advent + Evergreen)
+- Affiliate + Digital-Produkte + Premium = 3 unabhängige Hebel
+- machsruhig als Multiplikator für hohen Revenue-pro-Besucher
 
 ---
 
