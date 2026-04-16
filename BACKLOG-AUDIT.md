@@ -12,7 +12,6 @@
 |--------|------|--------|------------------|
 | ⏳ | P0 | P0-1 | Google Search Console einrichten + Sitemap einreichen |
 | ⏳ | P0 | P1-5 | **GitHub Token rotieren** — Deadline 25.04. (9 Tage!) |
-| ⏳ | P1 | P1-4 | Einladungs-Tool: Default-Motto neutralisieren |
 | ⏳ | P1 | P1-7 | Social Proof auf Homepage und Planer-Seite |
 | ⏳ | P1 | P1-8 | Motto-Hauptseiten auf Elite-Niveau (Piraten als nächstes) |
 | ⏳ | P1 | P1-9 | /einladung als SEO-Hub aufbauen |
@@ -28,11 +27,10 @@
 | ⏳ | P2 | P2-8 | /kreuzwortraetsel pre-rendern |
 | ⏳ | P2 | P2-10 | Einladungstool: 7 fehlende Lizenz-Mottos (Voraussetzung für P1-9) |
 | ⏳ | P2 | P2-13 | **Gumroad: 2 Digital-Produkte launchen** (Piraten + Dino Bundle) |
-| ⏳ | P2 | P2-14 | **Affiliate-Sweep auf 16 Ratgeber-Seiten** |
 | ⏳ | P2 | P2-15 | **Awin-Anmeldung** (Otto, myToys, Thalia) |
 | ⏳ | P2 | P2-16 | **Mitgebsel-Generator** (KI: Alter+Budget → Liste+Affiliate) |
 | ⏳ | P2 | P2-17 | **Standalone /wunschliste** (auch ohne Partyseite, ganzjährig nutzbar) |
-| ⏳ | P2 | P2-18 | **Vergleichs-Tabellen statt Einzel-Affiliate-Links** (konvertiert 3–5× besser) |
+| ⏳ | P2 | P2-19 | **HTML-Bug: Doppelte class-Attribute** auf 300 Dateien fixen (`class="X" class="Y"` → `class="X Y"`) |
 | ⏳ | P3 | P3-1 | Repo aufräumen (Dev-Artefakte) |
 | ⏳ | P3 | P3-3 | Social Proof erweitern (echte Nutzerzahlen aus Plausible) |
 | ⏳ | P3 | P3-4 | Druckvorlagen pro Motto (Top 5) |
@@ -50,6 +48,9 @@
 | ✅ | — | P0-3 | Duplicate Titles auf Motto-Hauptseiten |
 | ✅ | — | P0-4 | /_dev/ aus öffentlichem Zugriff sperren |
 | ✅ | — | P1-3 | 9 Einladungs-Themenseiten — Canonical-Tags |
+| ✅ | — | P1-4 | Einladungs-Tool: Default-Motto neutralisieren |
+| ✅ | — | P2-14 | Affiliate-Sweep auf 16 Ratgeber-Seiten |
+| ✅ | — | P2-18 | Vergleichs-Tabellen statt Einzel-Affiliate-Links |
 | ✅ | — | P1-6 | Schema.org Markup (Breadcrumbs 18/18, FAQPages 13/18, HowTo 6/18) |
 | ✅ | — | P2-6 | Encoding-Inkonsistenz in Title-Tags (Elite-Seiten normalisiert) |
 | ✅ | — | P2-11 | Interne Links broken/zirkulär auf Ratgeber-Seiten |
@@ -128,10 +129,6 @@
 - **Aufwand:** 5 Min.
 
 ### P1 — DIESE WOCHE
-
-#### P1-4: Einladungs-Tool Default-Motto neutralisieren
-- Bei `/einladung/erstellen` ohne `?motto=` soll kein Motto vorausgewählt sein.
-- **Aufwand:** 30–60 Min.
 
 #### P1-7: Social Proof auf Homepage und Planer-Seite
 - "Über 4.700 Geburtstage geplant" steht nur auf Piraten-Seite.
