@@ -1,94 +1,71 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 16.04.2026 (Mobile-Session, Opus 4.6) — Bestandsaufnahme + Motto-Guide Fix
+**Datum:** 19.04.2026 (Mobile-Session, Opus 4.7) — Audit-Durcharbeitung + Backlog-Neu-Sortierung
 
 ## Was wurde gemacht
 
-### Stufe 1 — Deploy-Blocker gefixt ✅
-`validate.js` meldete 4 echte Fehler (DEPLOY BLOCKED). Alle gefixt:
-- `kindergeburtstag/dino-forscherpass.html`: Meta-Description + `noindex` (Druckvorlage, gehört nicht in Google-Index)
-- `kindergeburtstag/dino-quiz.html`: Meta-Description + `noindex`
-- `schatzsuche.html`: Meta-Description (Redirect bleibt in Sitemap indexierbar)
-- `schnitzeljagd.html`: Meta-Description (dito)
+### Teil 1 — 2 externe Audits durchgearbeitet
 
-**Status:** `validate.js` → 0 Fehler. `validate-all.sh` → PASSED.
+Zwei externe Audits (Grinch-Mode SEO-Audit + Elite-Produktaudit) gegen bestehenden Backlog- und Strategie-Stand abgeglichen.
 
-### Stufe 2 — Ehrliches Audit über alle 366 Seiten ✅
-Neues Skript `_build/audit-all-pages.py`:
-- Kategorisiert seitentyp-bewusst: ratgeber, motto-guide, schatzsuche-motto, motto-matrix, motto-hub, guide-hub, schnitzeljagd, schatzsuche-hub, nachbarnische, tool, redirect, druckvorlage, legal, 404
-- Canonical-Varianten-Erkennung: Einzel-Alter-Seiten (z.B. `piraten-5-jahre`) haben `canonical` auf Gruppen-Version (`piraten-3-5-jahre`). Diese werden NUR technisch gescored, nicht auf Content.
-- Pro Kategorie eigenes Scoring-Profil.
-- Aggregat + Top-20-Worst + Meta-Probleme.
+**Widerlegt / nicht mehr aktuell (keine Aktion):**
+- „Sitemap fehlt" — existiert (2169 Zeilen), robots.txt verweist drauf
+- „OG-Bilder fehlen" — 338 von 356 Seiten haben og:image
+- „14 vs 17 Mottos Inkonsistenz" — im Repo aktuell keine veralteten Zahlen
+- „SPA ohne SSR" — Motto-Seiten rendern korrekt im initialen HTML
 
-**Ehrlicher Gesamtschnitt: 70,8 %** (vorher Session-Notes 92 %, galt nur für 18 Ratgeber).
+**4 neue PBIs aufgenommen:**
+- **P1-15** — Email-Capture am Planer-Output (1–2 Tage, größter Retention-Hebel, nach P1-10)
+- **P2-20** — Datenübergabe Planer → Einladung/Schatzsuche/Partyseite (4–6 Std.)
+- **P2-21** — Seiten-Rollen-Matrix (1 Tag, nach P1-11)
+- **P3-11** — Pinterest-Präsenz (geparkt, Trigger bei 5.000+ Besuchern/Monat)
 
-### Stufe 3 — Fix 1: Motto-Guide Template (8 Seiten) ✅
-Neues Skript `_build/upgrade-motto-guides.py`:
-- FAQ-Schema mit 5 motto-spezifischen Fragen pro Guide
-- HowTo-Schema "Motto-Party in 5 Schritten"
-- Sichtbare FAQ-Sektion (5 Cards)
-- Sichtbare HowTo-Sektion (5-Schritt-Liste)
-- Motto-spezifischer Content für: frozen, harry-potter, minecraft, ninjago, paw-patrol, pokemon, spider-man, super-mario
+**2 bestehende PBIs erweitert:**
+- **P2-3** um klickbaren Beispiel-Plan (nicht nur Screenshots) — Audit-Kernkritik „Demo vor Copy"
+- **P3-5** um Verweis auf P1-15 als konkreten Opt-In-Trigger
 
-**Ergebnis:** 47 % → 72 % (+25 Punkte), Content ~450 W → ~770 W über 8 Seiten.
+**2 neue Strategie-Notizen in STRATEGIE.md:**
+- **0.5** Brand-Kollisions-Risiko (machsleicht vs. machdichleicht.de/machsleiser.de) — keine Umbenennung, aber immer „machsleicht.de" als Brand-Einheit kommunizieren
+- **0.6** Pinterest-Frage als offene Entscheidung (Trigger bei 5k+ Besuchern)
 
-## Audit-Stand nach dieser Session
+### Teil 2 — Prio-Tabelle komplett neu sortiert
 
-| Kategorie | Seiten | Score | Kommentar |
-|---|---:|---:|---|
-| Ratgeber (Haupt) | 18 | 82 % | Bereits gepflegt |
-| Motto-Hub | 23 | 77 % | Anständig |
-| Schnitzeljagd | 2 | 76 % | OK |
-| Schatzsuche-Motto | 8 | 75 % | Template-Fix offen |
-| Schatzsuche-Hub | 2 | 74 % | OK |
-| Motto-Matrix | 258 | 72 % | Canonical-Varianten sauber |
-| Motto-Guide | 8 | **72 %** | diese Session: +25 Punkte |
-| Guide-Hub | 8 | 60 % | Thin-Content-Dublette mit Motto-Guide (P2-2) |
-| Tool/Planer | 16 | 54 % | 10 Einladungs-Tool-Seiten haben 3 W |
-| Nachbarnische | 15 | 51 % | einschulung 31 %, baby 32 % — kritisch |
+Alte Tabelle war nach Ticket-Nummer sortiert, neue Tabelle ist echte **Ausführungs-Roadmap** mit Sequenz 1–36 und 5 Clustern:
+1. **Jetzt (1–2 Wochen):** Top-7 inklusive Token-Rotation, GSC, Cloudflare-Deploy, Hero-Umbau
+2. **Unmittelbar danach (2–4 Wochen):** Email-Capture, Datenübergabe, Gumroad, Awin, Motto-Elite, Einschulung
+3. **Mittelfristig (Mai–Juli):** Wunschliste, Lizenz-Mottos, /einladung-Hub, Ratgeber-Pflege, Mitgebsel, Rollen-Matrix
+4. **Vor dem Herbst-Peak (Juli–September):** Adventskalender, Geschenkeberater, machsruhig-Launch
+5. **Später (Q4 + Q1 2027):** Newsletter-Verwertung, virale Tools, Pinterest-Trigger, Premium-Features
 
-**Gesamtdurchschnitt: ~72 %** nach Motto-Guide-Fix.
+**Prio-Hochstufungen:**
+- P1-5 → **P0-5** (Token-Deadline, inkonsistente Nummerierung korrigiert)
+- P2-1 → **P1** (Hero-Funnel, finalisierte Entscheidung)
+- P2-19 → **P1** (HTML-Bug auf 300 Dateien, 30-Min-Fix)
+- P2-3 → **P1** (Ergebnis-Vorschauen, Audit-Kernbefund)
 
-## Was noch zu tun ist
+**Prio-Runterstufungen:**
+- P1-9 → **P2** (hat harte Dependency auf P2-10)
+- P1-11 → **P2** (Ratgeber-Pflege, evergreen ohne Deadline)
 
-### Kritisch zeitlich
-- **GitHub-Token rotieren** — Deadline 25.04.2026 (noch ~9 Tage)
-- **Google Search Console einrichten** (P0-1)
-- **Cloudflare Worker deployen** (P1-10) — Laptop-Session
+## Nächste Schritte
 
-### Template-Fixes (nach Hebel sortiert)
-1. **Einladungs-Tool-Seiten (10 Stück, 37 %)** — 3 Wörter Content, Meta + H1 fehlen. Template-Fix nötig.
-2. **Nachbarnische-Flaggschiffe:**
-   - `einschulung.html` (31 %, 77 W) — zentraler Hub, praktisch unsichtbar
-   - `baby.html` (32 %, 89 W) — dito
-3. **Schatzsuche-Motto (8 Seiten, 75 %)** — alle ~250 W, gleiche Struktur. FAQ+HowTo-Treatment wie Motto-Guides würde ~+10 Punkte bringen.
-4. **Guide-Hub (8 Seiten, 60 %)** — Thin-Content-Dublette mit Motto-Guide. Besser strategisch konsolidieren (P2-2) als separat pflegen.
+**Top-Prio für nächste Session (Reihenfolge bindend):**
+1. **P0-5 GitHub Token rotieren** — Deadline 25.04., noch 6 Tage
+2. **P0-1 Google Search Console** — 20 Min, Basis für alles weitere
+3. **P1-10 Cloudflare Worker deployen** — Laptop-Session nötig, entsperrt 4 weitere PBIs + Revenue
+4. Danach: P2-1 (Hero), P1-7 (Social Proof), P2-19 (HTML-Bug), P2-3 (Ergebnis-Vorschauen)
 
-### Site-weite Baustellen
-- **334 Titles > 65 Zeichen** — Google schneidet ab.
-- **43 Meta-Descriptions > 160 Zeichen** — unsauber.
-- **7 echte Broken Internal Links**: `/partyseite/`, `/kindergeburtstag/3`, `/kindergeburtstag/6`, `/kindergeburtstag/9`, `/schatzsuche/meerjungfrau`, `/kindergeburtstag/feen-3-5-jahre`, `/kindergeburtstag/dschungel-3-5-jahre`
-- **~2100 False Positives in validate.js**: Favicons, utility.css, manifest.json werden als "ins Leere" gemeldet obwohl vorhanden. Validator-Bug.
+**Entscheidung offen:** Ob/wann Pinterest-Strategie aktiviert wird (Trigger dokumentiert in STRATEGIE.md 0.6).
 
-### Motto-Guide Rest-Potential (72 % → 85 %)
-Um auf 85 % zu kommen fehlen noch:
-- Affiliate-Links (keiner auf den Motto-Guides) → +4 Punkte
-- Content-Volume auf 1500+ W → +4 Punkte
-- Partyseite-CTA (sobald live) → +3 Punkte
+## Offene Fragen
 
-## Skripte (in `_build/`)
-- **`audit-all-pages.py`** (neu) — Site-weites Audit, kategoriebewusst, Canonical-Variante-aware
-- **`upgrade-motto-guides.py`** (neu) — Template-Fix für 8 Motto-Guides
-- `audit-all-ratgeber.py` — Alt, nur 18 Haupt-Ratgeber
-- `affiliate-sweep.py` + `affiliate-5-jahre.py`
-- `upgrade-*.py` (8 Stück) — einzelne Ratgeber
+- Reihenfolge nach Piraten-Elite: Einhorn oder Paw Patrol (höchstes Suchvolumen bei Lizenz-Mottos)?
+- Cloudflare Worker Deploy: manuell im Dashboard oder wrangler CLI?
+- Email-Capture-Text: „Plan als PDF per Mail" aggressiv oder dezent platzieren?
 
-## Validierung
-- `bash validate-all.sh` — Basis-Gate (PASSED)
-- `node validate.js` — Deep-Audit (0 Fehler nach Fix, ~400 echte Warnungen, ~2100 False Positives)
-- `python3 _build/audit-all-pages.py` — **Site-weites Audit (NEU — empfohlen)**
-- `python3 _build/audit-all-ratgeber.py` — Ratgeber-spezifisch (alt)
+## Status der Site nach dieser Session
 
-## Nächste Session Start-Empfehlung
-Mit Einladungs-Tool-Seiten oder Nachbarnische-Flaggschiffen starten — beide haben extremen Hebel (37 % bzw. 31–32 %).
+- Gesamtdurchschnitt Audit-Score: ~72 % (unverändert seit 16.04., keine Content-Arbeit heute)
+- Doku-Zustand: STRATEGIE.md + BACKLOG-AUDIT.md beide auf 19.04.2026 aktualisiert
+- `validate-all.sh`: Kein Lauf nötig — reine Doku-Änderungen

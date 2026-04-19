@@ -1,60 +1,109 @@
 # machsleicht.de — Backlog
 
-**Letzte Aktualisierung:** 16.04.2026
+**Letzte Aktualisierung:** 19.04.2026
 **Status-Check:** Repository-weit durchgeführt, gegen Live-Stand abgeglichen.
 **Zweck:** Einzige Quelle für alle offenen und erledigten PBIs. Strategie-Kontext steht in `STRATEGIE.md`.
 
 ---
 
-## Prio-Tabelle (Schnellübersicht)
+## Prio-Tabelle (Ausführungs-Reihenfolge, neu sortiert 19.04.2026)
 
-| Status | Prio | Ticket | Kurzbeschreibung |
-|--------|------|--------|------------------|
-| ⏳ | P0 | P0-1 | Google Search Console einrichten + Sitemap einreichen |
-| ⏳ | P0 | P1-5 | **GitHub Token rotieren** — Deadline 25.04. (9 Tage!) |
-| ⏳ | P1 | P1-7 | Social Proof auf Homepage und Planer-Seite |
-| ⏳ | P1 | P1-8 | Motto-Hauptseiten auf Elite-Niveau (Piraten als nächstes) |
-| ⏳ | P1 | P1-9 | /einladung als SEO-Hub aufbauen |
-| ⏳ | P1 | P1-10 | **Cloudflare Worker deployen** — Rätsel nach Maß + Partyseite live bringen (Revenue!) |
-| ⏳ | P1 | P1-11 | **Ratgeber-Seiten auf 85% hochziehen** (11 verbleibende Seiten) |
-| ⏳ | P1 | P1-12 | **Einschulungs-Planer bauen** (SEO-Peak Juli–August, Launch Mai!) |
-| ⏳ | P1 | P1-13 | **Adventskalender-Builder** (24 KI-Türchen, SEO-Peak Okt-Dez, Launch Aug!) |
-| ⏳ | P1 | P1-14 | **KI-Geschenkeberater** (Geschenke-Keywords, Pre-Christmas-Peak) |
-| ⏳ | P2 | P2-1 | Homepage-Hero gemäß FUNNEL-AXIOM umbauen (Entscheidung steht) |
-| ⏳ | P2 | P2-2 | Thin Content bei Motto×Altersgruppen-Seiten nachschärfen |
-| ⏳ | P2 | P2-3 | Ergebnis-Vorschauen auf Produktseiten |
-| ⏳ | P2 | P2-5 | Performance-Verbesserung (JS-Bundle, lazy loading) |
-| ⏳ | P2 | P2-8 | /kreuzwortraetsel pre-rendern |
-| ⏳ | P2 | P2-10 | Einladungstool: 7 fehlende Lizenz-Mottos (Voraussetzung für P1-9) |
-| ⏳ | P2 | P2-13 | **Gumroad: 2 Digital-Produkte launchen** (Piraten + Dino Bundle) |
-| ⏳ | P2 | P2-15 | **Awin-Anmeldung** (Otto, myToys, Thalia) |
-| ⏳ | P2 | P2-16 | **Mitgebsel-Generator** (KI: Alter+Budget → Liste+Affiliate) |
-| ⏳ | P2 | P2-17 | **Standalone /wunschliste** (auch ohne Partyseite, ganzjährig nutzbar) |
-| ⏳ | P2 | P2-19 | **HTML-Bug: Doppelte class-Attribute** auf 300 Dateien fixen (`class="X" class="Y"` → `class="X Y"`) |
-| ⏳ | P3 | P3-1 | Repo aufräumen (Dev-Artefakte) |
-| ⏳ | P3 | P3-3 | Social Proof erweitern (echte Nutzerzahlen aus Plausible) |
-| ⏳ | P3 | P3-4 | Druckvorlagen pro Motto (Top 5) |
-| ⏳ | P3 | P3-5 | E-Mail-Liste aufsetzen (MailerLite + Lead-Magnet) |
-| ⏳ | P3 | P3-6 | **machsruhig.de launchen** (eigener Sprint, separates Master-Doc) |
-| ⏳ | P3 | P3-7 | **Klassen-Geburtstagskalender** (viraler Multiplikator: 1 Link → 25 Familien) |
-| ⏳ | P3 | P3-8 | **Nachbar-Nachricht-Generator** (viral via Aushänge im Treppenhaus) |
-| ⏳ | P3 | P3-9 | **Foto-Spots/Photobooth-Backdrops** (A2-PDF mit dezentem Branding) |
-| ⏳ | P3 | P3-10 | **Urkunden/Diplome** (personalisierte Zertifikate nach Party) |
-| ⏳ | P4 | P4-1 | PDF-Partybücher pro Motto |
-| ⏳ | P4 | P4-2 | Premium-Features (KI-Spielleiter, Einladungs-Audio, Gute-Nacht-Geschichte) |
-| ❌ | — | P1-1 | ~~/schatzsuche als eigene Seite~~ — **GESTRICHEN** (Memory #17: bleibt Redirect) |
-| ❌ | — | P1-2 | ~~/schnitzeljagd als eigene Seite~~ — **GESTRICHEN** (gleicher Grund) |
-| ✅ | — | P0-2 | "0 Spiele"-Bug in Titles |
-| ✅ | — | P0-3 | Duplicate Titles auf Motto-Hauptseiten |
-| ✅ | — | P0-4 | /_dev/ aus öffentlichem Zugriff sperren |
-| ✅ | — | P1-3 | 9 Einladungs-Themenseiten — Canonical-Tags |
-| ✅ | — | P1-4 | Einladungs-Tool: Default-Motto neutralisieren |
-| ✅ | — | P2-14 | Affiliate-Sweep auf 16 Ratgeber-Seiten |
-| ✅ | — | P2-18 | Vergleichs-Tabellen statt Einzel-Affiliate-Links |
-| ✅ | — | P1-6 | Schema.org Markup (Breadcrumbs 18/18, FAQPages 13/18, HowTo 6/18) |
-| ✅ | — | P2-6 | Encoding-Inkonsistenz in Title-Tags (Elite-Seiten normalisiert) |
-| ✅ | — | P2-11 | Interne Links broken/zirkulär auf Ratgeber-Seiten |
-| ✅ | — | P3-2 | Amazon Affiliate Tag setzen (**heute! machsleicht-21 konsolidiert, 796 Vorkommen sauber**) |
+**Logik:** Nicht nach Ticket-Nummer, sondern nach tatsächlicher Ausführungs-Reihenfolge. Ticket-Nummern bleiben stabil. Die Tabelle ist jetzt eine Roadmap: von oben nach unten abarbeiten.
+
+### Jetzt (nächste 1–2 Wochen)
+
+| # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Warum jetzt |
+|---|--------|------|--------|------------------|---------|-------------|
+| 1 | ⏳ | **P0** | P0-5 (ex P1-5) | **GitHub Token rotieren** | 5 Min | **Deadline 25.04.** (6 Tage) |
+| 2 | ⏳ | **P0** | P0-1 | Google Search Console einrichten + Sitemap einreichen | 20 Min | Ohne GSC ist alles andere SEO-blind |
+| 3 | ⏳ | **P1** | P1-10 | **Cloudflare Worker deployen** (Rätsel nach Maß + Partyseite) | 2 Std (Laptop) | Entsperrt 4 andere PBIs + sofort Revenue |
+| 4 | ⏳ | **P1** | P2-1 | Homepage-Hero FUNNEL-AXIOM umbauen | 2–3 Std | Entscheidung finalisiert, großer Funnel-Hebel |
+| 5 | ⏳ | **P1** | P1-7 | Social Proof auf Homepage + Planer | 1 Std | Trust-Boost, minimaler Aufwand |
+| 6 | ⏳ | **P1** | P2-19 | **HTML-Bug: Doppelte class-Attribute** (300 Dateien) | 30 Min | Echter Bug, 30-Min-Regex-Fix |
+| 7 | ⏳ | **P1** | P2-3 | Ergebnis-Vorschauen + klickbarer Beispiel-Plan | 4–5 Std | Audit-Kernkritik: „Demo vor Copy" |
+
+### Unmittelbar danach (2–4 Wochen)
+
+| # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
+|---|--------|------|--------|------------------|---------|---------|
+| 8 | ⏳ | **P1** | P1-15 | **Email-Capture am Planer-Output** | 1–2 Tage | Braucht P1-10. Größter Retention-Hebel |
+| 9 | ⏳ | **P1** | P2-20 | **Datenübergabe Planer → Tools** | 4–6 Std | Ökosystem-Prinzip umsetzen, nach P1-10 |
+| 10 | ⏳ | **P1** | P2-13 | Gumroad: 2 Digital-Produkte (Piraten+Dino) | 4h/Produkt | +100€/Monat bei aktuellem Traffic |
+| 11 | ⏳ | **P1** | P2-15 | Awin-Anmeldung (Otto, myToys, Thalia) | 30 Min + Warten | Prüfung dauert 1–3 Tage, früh starten |
+| 12 | ⏳ | **P1** | P1-8 | Motto-Hauptseiten auf Elite-Niveau (Piraten) | 1–2 Std/Seite | Parallel laufend |
+| 13 | ⏳ | **P1** | P1-12 | **Einschulungs-Planer bauen** | 2–3 Tage | **Launch bis 31.05.** (SEO-Vorlauf!) |
+
+### Mittelfristig (Mai–Juli)
+
+| # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
+|---|--------|------|--------|------------------|---------|---------|
+| 14 | ⏳ | **P2** | P2-17 | **Standalone /wunschliste** | 2–3 Tage | Launch bis 30.06. für Weihnachts-Peak |
+| 15 | ⏳ | **P2** | P2-10 | Einladungstool: 7 fehlende Lizenz-Mottos | 2–3 Std | Voraussetzung für P1-9 |
+| 16 | ⏳ | **P2** | P1-9 (→P2) | /einladung als SEO-Hub | 3–4 Std | Braucht P2-10 zuerst |
+| 17 | ⏳ | **P2** | P1-11 (→P2) | Ratgeber-Seiten auf 85% (11 verbleibend) | 30–60 Min/Seite | Evergreen, kontinuierlich |
+| 18 | ⏳ | **P2** | P2-2 | Thin Content Motto×Altersgruppen (noindex Einzelalter) | 2–4 Std | SEO-Aufräumung |
+| 19 | ⏳ | **P2** | P2-16 | Mitgebsel-Generator (KI) | 1 Tag | Braucht P1-10 |
+| 20 | ⏳ | **P2** | P2-5 | Performance (JS-Bundle, lazy loading) | 15 Min kurzfristig, 2–4h langfristig | Laufend |
+| 21 | ⏳ | **P2** | P2-8 | /kreuzwortraetsel pre-rendern | 1–2 Std | SEO-Nachzügler |
+| 22 | ⏳ | **P2** | P2-21 | Seiten-Rollen-Matrix | 1 Tag | Nach P1-11 sinnvoll |
+
+### Vor dem Herbst-Peak (Juli–September)
+
+| # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Deadline |
+|---|--------|------|--------|------------------|---------|---------|
+| 23 | ⏳ | **P1** | P1-13 | **Adventskalender-Builder** (24 KI-Türchen) | 3–4 Tage | **Launch bis 31.08.** |
+| 24 | ⏳ | **P1** | P1-14 | **KI-Geschenkeberater** | 2–3 Tage | **Launch bis 30.09.** |
+| 25 | ⏳ | **P3** | P3-6 | **machsruhig.de launchen** | 2–3 Wochen Sprint | Eigener Sprint, separates Doc |
+
+### Später (Q4 2026 und Q1 2027)
+
+| # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
+|---|--------|------|--------|------------------|---------|---------|
+| 26 | ⏳ | **P3** | P3-5 | E-Mail-Liste aufsetzen (MailerLite + Nurture) | 1 Tag | Verwertung von P1-15-Opt-Ins |
+| 27 | ⏳ | **P3** | P3-3 | Social Proof aus Plausible (echter Counter) | variabel | Nach 3 Monaten GSC-Daten |
+| 28 | ⏳ | **P3** | P3-4 | Druckvorlagen pro Motto (Top 5) | 30 Min/Motto | Parallel zu P1-8 |
+| 29 | ⏳ | **P3** | P3-7 | Klassen-Geburtstagskalender | 3 Tage | Braucht P2-17 |
+| 30 | ⏳ | **P3** | P3-8 | Nachbar-Nachricht-Generator | 4 Std | Quick-Win |
+| 31 | ⏳ | **P3** | P3-9 | Foto-Spots/Photobooth-Backdrops | 6 Std | Parallel zu P1-8 |
+| 32 | ⏳ | **P3** | P3-10 | Urkunden/Diplome | 6 Std | Nach P3-5 |
+| 33 | ⏳ | **P3** | P3-1 | Repo aufräumen | 10–30 Min | Quick-Win jederzeit |
+| 34 | ⏳ | **P3** | P3-11 | **Pinterest-Präsenz** | 4h Setup + 1–2h/Woche | **Geparkt**: Trigger bei 5.000+ Besuchern/Monat |
+| 35 | ⏳ | **P4** | P4-1 | PDF-Partybücher pro Motto | 1 Tag/Motto | Wenn Traffic da ist |
+| 36 | ⏳ | **P4** | P4-2 | Premium-Features (KI-Spielleiter, Audio, etc.) | mehrere Wochen | Wenn Traffic da ist |
+
+### Gestrichen / Erledigt
+
+| Status | Ticket | Kurzbeschreibung |
+|--------|--------|------------------|
+| ❌ | P1-1 | ~~/schatzsuche als eigene Seite~~ — **GESTRICHEN** (Memory #17: bleibt Redirect) |
+| ❌ | P1-2 | ~~/schnitzeljagd als eigene Seite~~ — **GESTRICHEN** (gleicher Grund) |
+| ✅ | P0-2 | "0 Spiele"-Bug in Titles |
+| ✅ | P0-3 | Duplicate Titles auf Motto-Hauptseiten |
+| ✅ | P0-4 | /_dev/ aus öffentlichem Zugriff sperren |
+| ✅ | P1-3 | 9 Einladungs-Themenseiten — Canonical-Tags |
+| ✅ | P1-4 | Einladungs-Tool: Default-Motto neutralisieren |
+| ✅ | P1-6 | Schema.org Markup (Breadcrumbs 18/18, FAQPages 13/18, HowTo 6/18) |
+| ✅ | P2-6 | Encoding-Inkonsistenz in Title-Tags (Elite-Seiten normalisiert) |
+| ✅ | P2-11 | Interne Links broken/zirkulär auf Ratgeber-Seiten |
+| ✅ | P2-14 | Affiliate-Sweep auf 16 Ratgeber-Seiten |
+| ✅ | P2-18 | Vergleichs-Tabellen statt Einzel-Affiliate-Links |
+| ✅ | P3-2 | Amazon Affiliate Tag setzen (**machsleicht-21 konsolidiert, 796 Vorkommen sauber**) |
+
+---
+
+### Änderungen gegenüber 16.04.2026-Tabelle
+
+**Prio-Hochstufungen:**
+- P1-5 → **P0-5** (Token-Deadline, war inkonsistent als P0 markiert aber P1-nummeriert)
+- P2-1 → **P1** (Hero-Funnel, finalisierte Entscheidung, großer Hebel)
+- P2-19 → **P1** (HTML-Bug, echter Bug auf 300 Dateien, 30-Min-Fix)
+- P2-3 → **P1** (Ergebnis-Vorschauen, Audit-Kernbefund „Demo vor Copy")
+
+**Prio-Runterstufungen:**
+- P1-9 → **P2** (hat harte Dependency auf P2-10, nicht zeitkritisch)
+- P1-11 → **P2** (Ratgeber auf 85 %, evergreen ohne Deadline, kontinuierliche Arbeit)
+
+**Begründung:** P1 ist reserviert für Dinge mit harten Deadlines, Dependency-Freischaltern oder sofortigem Revenue-Impact. Alles andere wandert auf P2 — ohne Bedeutungsverlust, nur klarere Priorisierung.
 
 ---
 
@@ -123,8 +172,8 @@
 - **Wirkung:** Ohne GSC sind alle SEO-Maßnahmen wirkungslos.
 - **Nicht im Repo prüfbar — Status nur vom User bestätigbar.**
 
-#### P1-5: GitHub PAT rotieren
-- Token `ghp_V12E...` läuft am **25.04.2026** ab — noch **9 Tage!**
+#### P0-5 (ex P1-5): GitHub PAT rotieren
+- Token `ghp_V12E...` läuft am **25.04.2026** ab — noch **6 Tage!**
 - Neu generieren (Scope `repo`, 90 Tage), in git-sync Skill eintragen, alten widerrufen.
 - **Aufwand:** 5 Min.
 
@@ -349,6 +398,64 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 
 ---
 
+#### P1-15: Email-Capture am Planer-Output (Retention-Hebel)
+
+**Motivation:** Externes Audit (19.04.2026) identifiziert **fehlenden Email-Capture als größte strukturelle Schwäche der Seite**. Nutzer plant, schließt Tab, ist weg — bis der nächste Kindergeburtstag in 12 Monaten sie zurück zu Google schickt. Das sind aktuell **0 % Retention**. Eine simple "Plan als PDF per Mail"-Mechanik am Ende des Wizards fängt laut Branchen-Benchmarks **15–30 % der Abschließer** ein. Bei ~80 Besuchern/Tag, 20 % Wizard-Start, 40 % Abschluss → ~6 Abschlüsse/Tag → bei 20 % Opt-In ~40 neue Kontakte/Monat aus Nullbasis.
+
+**Warum P1, nicht P3:** Hebel ist so groß, dass jeder Tag ohne Capture verlorene Eltern-Kontakte sind. Und: Eltern haben 1–3 Geburtstage/Jahr + oft mehrere Kinder → eine eingefangene Adresse = 5–15 Jahre Retention-Potential.
+
+**Was gebaut wird:**
+- Am Ende des Planer-Wizards (direkt nach Plan-Output): Sektion **"Plan als PDF speichern — per Mail zugeschickt"**
+- Form: nur E-Mail-Feld + DSGVO-Checkbox + Button "PDF zuschicken"
+- Backend: MailerLite-API-Call (Double-Opt-In-Mail mit PDF-Link)
+- PDF-Generation: clientseitig via jsPDF aus dem aktuellen Planer-State
+- Sekundärer Lead-Magnet-Versprechen im Mail-Text: "Bekommst Einkaufsliste 7 Tage vorher automatisch zugeschickt" (Nurture-Flow)
+- **Klare Alternative sichtbar:** "Ohne Mail weiter → Plan direkt als PDF runterladen" — keine Erpressung, Download bleibt möglich ohne Mail
+
+**Tech-Checkliste:**
+- [ ] Abschnitt `<email-capture>` in Planer-Output-React-Component
+- [ ] MailerLite Account + Double-Opt-In-Template (P3-5 ggf. vorziehen)
+- [ ] MailerLite API-Key in Cloudflare-Worker-Secret
+- [ ] Neuer Worker-Endpoint `/api/plan-per-mail` (KV-Token erzeugt, PDF-Link, Mail-Trigger)
+- [ ] DSGVO-Text + Checkbox (Pflicht)
+- [ ] Plausible-Event `plan-email-submit` + `plan-pdf-direct` (Vergleichs-Messung)
+
+**Monetarisierung:**
+- Kein direkter Revenue, aber **Retention-Basis** für alle nachgelagerten Revenue-Streams
+- Nurture-Flow Beispiel: 7 Tage vor Geburtstag → "Einkaufsliste + Affiliate-Links zu Amazon"
+- 1 Tag vor Geburtstag → "Last-Minute-Checkliste + Gumroad-PDF 4,99€"
+- Nächster Geburtstag (12 Monate später) → "Hast du deinen Planer noch? Neue Features warten"
+
+**Revenue-Projektion:**
+- Direkt: 0€
+- Indirekt Jahr 1: bei 1.000 Kontakten und konservativen 1–3€ Revenue/Kontakt/Jahr → **1.000–3.000€/Jahr ab Monat 4**
+- Skaliert linear mit Traffic
+
+**Aufwand:** 1–2 Tage (8–12 Stunden)
+- 2h: MailerLite-Setup + Double-Opt-In-Flow testen
+- 3h: Worker-Endpoint + KV-Token für PDF-Link
+- 3h: React-Component + jsPDF-Integration + Design
+- 2h: Nurture-Flow-Mails schreiben (Welcome, 7-Tage-vorher, 1-Tag-vorher)
+- 2h: Testing, DSGVO-Text final, Plausible-Events
+
+**Zeitplan:** **Direkt nach P1-10 (Cloudflare-Worker-Deploy)**. Kein sinnvoller Start davor, weil Worker die Basis ist.
+
+**Abhängigkeiten:**
+- P1-10 (Cloudflare Worker muss live sein)
+- P3-5 kann teilweise parallel: MailerLite-Setup ist gemeinsamer Schritt
+
+**Erfolgs-Kriterien:**
+- Opt-In-Rate ≥15 % der Planer-Abschließer
+- Double-Opt-In-Confirm-Rate ≥65 %
+- Nach 3 Monaten: 100+ Kontakte in MailerLite
+- Nurture-Flow öffnet Reaktivierungen messbar (Plausible-Referral von Mail)
+
+**Risiko:**
+- DSGVO: Muss sauber Double-Opt-In sein, sonst Abmahngefahr
+- Opt-In-Rate kann unter 10 % fallen wenn Platzierung zu aggressiv → deshalb "Ohne Mail weiter"-Alternative zwingend
+
+---
+
 ### P2 — NÄCHSTE 2 WOCHEN
 
 #### P2-1: Homepage-Hero FUNNEL-AXIOM umbauen
@@ -368,7 +475,8 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 
 #### P2-3: Ergebnis-Vorschauen auf Produktseiten
 - Screenshots von fertigen Plänen, Schatzkarten, Einladungen auf Homepage/kindergeburtstag/schatzsuche/einladung einbinden.
-- **Aufwand:** 2 Stunden.
+- **Ergänzung (19.04.2026, ext. Audit):** Nicht nur statische Screenshots. Ein **klickbarer Beispiel-Plan** (voll ausgefüllt, Motto Piraten 6 Jahre, 8 Gäste) als Tab/Modal auf `/kindergeburtstag`. Nutzer sieht in 5 Sekunden exakt, was hinten rauskommt. Kernkritik aus Audit 2: „Ihr argumentiert gut, ihr demonstriert nicht."
+- **Aufwand:** 2 Stunden Screenshots + 2–3 Stunden klickbarer Beispiel-Plan.
 
 #### P2-5: JS-Performance
 - Kurzfristig: `loading="lazy"` auf alle Bilder (5 Min.) + manifest.json (10 Min.)
@@ -545,6 +653,101 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 
 ---
 
+#### P2-20: Datenübergabe Planer → Einladung/Schatzsuche/Partyseite
+
+**Motivation:** Externes Audit (19.04.2026) zentraler Befund: *„Wer den Planer durchläuft und dann Einladung oder Schatzsuche öffnet, tippt Name, Datum und Ort erneut. Das ist kein UX-Detail, das ist der Unterschied zwischen einer Plattform und einer Tool-Sammlung."* Die Tools existieren als Silos, obwohl STRATEGIE.md Abschnitt 1 explizit das Ökosystem-Argument als Kernprinzip führt. Ohne Datenübergabe ist „machsleicht = System" nur Marketing-Claim, nicht Produktrealität.
+
+**Was gebaut wird:**
+- Planer-State (Kindername, Alter, Datum, Ort, Motto, Gästezahl) wird am Wizard-Ende in **localStorage** persistiert unter Key `machsleicht:partykontext`
+- Einladung-Tool, Schatzsuche-Tool und Partyseite-Creator lesen diesen State beim Mount und **füllen die Formulare vor**
+- Banner oben: „Daten aus deinem Planer übernommen — ändern?" mit Reset-Button
+- Nach 7 Tagen automatisch verworfen (DSGVO-freundlich, minimal-invasiv)
+
+**Tech-Checkliste:**
+- [ ] Neues Util-Modul `js/partykontext.js`: `save()`, `load()`, `clear()`, Timestamp-Check
+- [ ] Planer-Wizard: Am Abschluss-Screen `partykontext.save(state)`
+- [ ] Einladungstool (`einladung/erstellen`): beim Mount `partykontext.load()` → pre-fill
+- [ ] Schatzsuche-Modus im Planer: gleicher Mechanismus
+- [ ] Partyseite-Creator (im Worker-Frontend): gleicher Mechanismus
+- [ ] „Übernommen aus Planer"-Banner mit dezenter Farbgebung
+- [ ] Plausible-Event `partykontext-uebernommen` + `partykontext-geaendert`
+
+**Monetarisierung:**
+- Kein direkter Revenue, aber **Conversion-Boost** am Partyseite-Upsell-Schritt (Funnel-Axiom: Planer → Partyseite → Wunschliste → Affiliate). Audit erwartet messbare Drop-off-Reduktion zwischen Planer und Partyseite.
+
+**Revenue-Projektion:**
+- Indirekt: Partyseite-Erstellungsrate erwartet +20–40 % bei vorgefüllten Daten (konservative Schätzung, keine Benchmark-Grundlage)
+- Skaliert mit Partyseite-Revenue (Wunschliste-Affiliate)
+
+**Aufwand:** 4–6 Stunden
+- 1h: `partykontext.js` Util + Timestamp-Handling + Tests
+- 2h: Integration in 3 Tools (Einladung, Schatzsuche-Modus, Partyseite-Creator)
+- 1h: Banner-UI + Reset-Flow
+- 1h: Plausible-Events + Testing mit verschiedenen Flows
+
+**Zeitplan:** **Parallel zu P1-10 (Partyseite-Deploy)** sinnvoll — dann geht Partyseite gleich mit Datenübergabe live.
+
+**Abhängigkeiten:**
+- P1-10 (Partyseite muss live sein, damit alle 3 Zielpunkte testbar sind)
+
+**Erfolgs-Kriterien:**
+- 3 Tools nutzen den `partykontext` beim Mount
+- Banner zeigt korrekt an, wenn Daten übernommen wurden
+- Plausible: mind. 30 % der Planer-Abschließer öffnen danach Einladung oder Partyseite mit übernommenem Kontext
+- DSGVO: Daten nach 7 Tagen automatisch gelöscht (nur localStorage, kein Server)
+
+**Risiko:**
+- localStorage geht beim Wechsel Mobile → Desktop verloren (akzeptiert, würde Account-System brauchen — nicht im Scope)
+
+---
+
+#### P2-21: Seiten-Rollen-Matrix dokumentieren & durchsetzen
+
+**Motivation:** Externes Audit (19.04.2026): *„`/kindergeburtstag` mischt Produktpitch, Motto-Hub, Alterslogik, FAQ und Ratgeber-Elemente recht dicht. Für maximale SEO-Klarheit wäre noch stärker zu trennen zwischen Money-Page, Hub-Page, Supporting Content und transaktionalem Helfer."* Seitenrollen sind heute implizit, nicht dokumentiert. Das führt dazu, dass neue Inhalte auf die nächstbeste passende Seite draufgeklatscht werden, statt nach IA-Logik platziert. Google bestraft diesen Mischmasch mittelfristig mit Ranking-Verlust auf allen betroffenen URLs.
+
+**Was gebaut wird:**
+- Neues Dokument `_dev/docs/SEITEN-ROLLEN-MATRIX.md` mit Tabelle:
+  - Jede zentrale URL (ca. 30 wichtigste) → eindeutige Rolle zugewiesen:
+    - **Money-Page:** konvertiert zum Planer/Tool (z.B. `/kindergeburtstag`)
+    - **Hub-Page:** verlinkt thematisch verwandte Inhalte (z.B. `/schatzsuche-kindergeburtstag`)
+    - **Supporting-Content:** beantwortet eine Longtail-Frage (z.B. `/kindergeburtstag-kosten`)
+    - **Transaktionaler-Helfer:** löst eine Mikro-Aufgabe (z.B. `/einladung/dino`)
+    - **Redirect:** leitet bewusst um (z.B. `/schatzsuche`)
+- Für jede URL: Primäres Keyword, Ziel-Intent, erlaubte/verbotene Content-Elemente
+- Verbote-Beispiele: *„Money-Page darf keine Longtail-FAQ-Listen enthalten"*, *„Supporting-Content darf nicht auf andere Supporting-Content direkt verlinken ohne Hub als Vermittler"*
+- Anschließend: **Audit der 30 URLs gegen die Matrix**, Liste der Verstöße, 3–5 konkrete Umbau-Tasks als Follow-Ups
+
+**Tech-Checkliste:**
+- [ ] Matrix-Doku schreiben (keine Code-Änderungen, reine IA-Arbeit)
+- [ ] Kategorisierungs-Skript `_build/audit-seitenrollen.py`: extrahiert H1, Title, Canonical, interne Link-Anzahl, FAQ-Blöcke → vergleicht mit erwarteter Rolle
+- [ ] Audit-Report: welche Seite verletzt welche Regel
+- [ ] Top-5-Verstöße als neue PBIs erfassen (separate Tickets, nicht hier)
+
+**Monetarisierung:**
+- Indirekt über SEO: Saubere Seitenrollen helfen Google, den richtigen Long-Tail-Traffic zu verteilen
+- Keine Revenue-Projektion sinnvoll (zu stark abhängig von Gesamt-Traffic)
+
+**Aufwand:** 1 Tag (6–8 Stunden)
+- 3h: Matrix schreiben für 30 URLs (Kategorisierung, Regeln, Verbote)
+- 2h: Audit-Skript bauen
+- 2h: Audit laufen lassen + Top-Verstöße als Follow-Up-PBIs formulieren
+- 1h: Dokumentation in STRATEGIE.md referenzieren
+
+**Zeitplan:** **Nach P1-11 (Ratgeber-Seiten auf 85 %)** — sonst Doppelarbeit auf noch-nicht-final-gepflegten Seiten.
+
+**Abhängigkeiten:** Keine harten. Nützlich aber erst, wenn die wichtigsten Seiten inhaltlich stabil sind.
+
+**Erfolgs-Kriterien:**
+- Matrix-Dokument existiert mit allen 30 URLs
+- Audit-Skript liefert klassifizierbaren Report
+- 3–5 Follow-Up-PBIs erfasst für konkrete IA-Umbauten
+- Entscheidung dokumentiert: welche Seiten behalten Mischung bewusst (Money-Pages oft OK), welche müssen getrennt werden
+
+**Risiko:**
+- Gefahr der Over-Engineering: Matrix ist nur sinnvoll, wenn sie auch durchgesetzt wird. Wenn nach der Doku keine Folge-Umbauten kommen, war es Papierarbeit. Deshalb: Die Follow-Up-PBIs sind der eigentliche Output.
+
+---
+
 ### P3 — NÄCHSTER MONAT
 
 #### P3-1: Repo aufräumen
@@ -567,6 +770,7 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 - Monatlicher Newsletter.
 - **Aufwand:** 1 Tag Setup, danach 30 Min/Monat.
 - **Revenue-Effekt:** langfristig 1.000–3.000€/Jahr ab 1.000 Kontakten.
+- **Hinweis (19.04.2026):** Der **konkrete Trigger-Punkt** für Opt-In ist P1-15 (Planer-Output als PDF-Lead-Magnet). P3-5 ist das Nachgelagerte (Newsletter-Versand, Nurture-Flow). P1-15 ist der Hebel, P3-5 die Verwertung.
 
 #### P3-6: machsruhig.de launchen
 - Eigener Sprint, Master-Doc existiert: `SKILL_MACHSRUHIG_MASTER.md` (2.698 Zeilen, 28 Phasen).
@@ -774,6 +978,51 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 
 ---
 
+#### P3-11: Pinterest-Präsenz (Top-of-Funnel-Discovery)
+
+**Motivation:** Externes Audit (19.04.2026): Pinterest rankt bei „kindergeburtstag 6 jahre" und „kindergeburtstag ideen" auf **Google Position 1**. Ohne Pinterest-Präsenz verliert machsleicht einen signifikanten Teil der Top-of-Funnel-Discovery — Eltern klicken auf Pinterest-Pins statt auf organische Google-Ergebnisse, die auf machsleicht verlinken würden. Pinterest selbst ist der zweitwichtigste Distributionskanal in der Nische nach Google.
+
+**Warum nur P3, nicht höher:** Pinterest widerspricht dem **Passivitäts-Prinzip 0.3** aus STRATEGIE.md — laufender Aufwand von mind. 2–3 h/Woche für regelmäßiges Pinning. Solo-Betrieb kann sich das nicht ewig leisten. Deshalb: **Entscheidungs-Trigger in STRATEGIE.md 0.6** — erst bei 5.000+ Besuchern/Monat re-evaluieren, bis dahin in der Schwebe halten.
+
+**Was gebaut wird (wenn aktiviert):**
+- Business-Account `@machsleichtde` anlegen (gratis)
+- 5–8 thematische Boards: „Piraten-Geburtstag", „Detektiv-Party", „Dino-Ideen", „Einhorn-Magie", „Schatzsuche 6-8 Jahre", „Einladungen Kindergeburtstag", „Einkaufslisten & Mengen", „Motto-Deko unter 30€"
+- 3–5 Pins/Woche: jeder Pin verlinkt auf eine konkrete Motto-Seite oder Ratgeber-Seite
+- Pin-Design: portrait 1000×1500 px, Titel + machsleicht.de-Watermark (Canva-Template einmal erstellen)
+- **Idle-Automation:** Tailwind oder Buffer für Scheduled-Pinning, 1 h/Woche batched
+
+**Tech-Checkliste:**
+- [ ] Pinterest-Business-Account + DNS-Verifikation `machsleicht.de`
+- [ ] Canva-Template für Pin-Design (1 Std. einmalig)
+- [ ] 20 initiale Pins als Starter-Batch (ca. 4 Std.)
+- [ ] Plausible-UTM-Tags für alle Pin-Links (`utm_source=pinterest&utm_medium=social`)
+- [ ] Monitoring: monatlich Pinterest-Analytics + Plausible-Referral-Report
+
+**Monetarisierung:**
+- Reiner Traffic-Hebel, keine direkte Monetarisierung
+- Pinterest-Traffic konvertiert laut Benchmarks bei Lifestyle-Nischen **niedriger als Google** (längerer Discovery-Modus), aber skaliert mit kumulativen Pins (ein 6-Monate-alter Pin kann stabil Traffic bringen)
+
+**Revenue-Projektion:**
+- Nicht direkt revenue-attribuierbar, nur als Traffic-Multiplikator
+- Bei 50 Pins nach 6 Monaten und typischer Konversion: +200–500 Besucher/Monat konstant
+
+**Aufwand:** 4 Std. Setup einmalig + **laufend 1–2 h/Woche** (Blocker für das Passivitäts-Prinzip)
+
+**Zeitplan:** **NICHT starten, bis STRATEGIE 0.6 Trigger erreicht ist** (5.000+ Besucher/Monat). Stattdessen Energie auf P1-12 bis P1-15 (skalierbare Produkt-Hebel).
+
+**Abhängigkeiten:** Keine technischen. Entscheidungs-Abhängigkeit: GSC-Daten (P0-1) aus 3–6 Monaten nötig, um zu messen, ob Google-SEO allein ausreicht oder Pinterest wirklich nötig ist.
+
+**Erfolgs-Kriterien (wenn aktiviert):**
+- 50+ Pins nach 3 Monaten
+- 200+ monatliche Besucher via Pinterest nach 6 Monaten (Plausible)
+- Klickrate auf Pins ≥2 %
+
+**Risiko:**
+- **Hauptsächliches Risiko: Zeit-Senke.** Wenn nach 3 Monaten unter 100 Besucher/Monat aus Pinterest kommen → einstellen. Kein Sunk-Cost-Fallback.
+- Pinterest-Algorithmus bevorzugt regelmäßiges Pinning; einmaliger Batch bringt wenig.
+
+---
+
 ### P4 — ZUKUNFT
 
 #### P4-1: PDF-Partybücher pro Motto
@@ -822,6 +1071,8 @@ Affiliate-Kategorien pro Motto: Figuren-Set, Masken/Verkleidung, Partygeschirr, 
 
 ## Versionshistorie
 
+- **19.04.2026 (Teil 2):** Prio-Tabelle komplett neu sortiert als Ausführungs-Roadmap mit Sequenz-Nummern 1–36. Prio-Hochstufungen: P1-5→P0-5 (Token-Deadline), P2-1→P1 (Hero-Funnel), P2-19→P1 (HTML-Bug), P2-3→P1 (Ergebnis-Vorschauen). Prio-Runterstufungen: P1-9→P2 (Dependency auf P2-10), P1-11→P2 (evergreen ohne Deadline). Neue Ausführungs-Cluster: „Jetzt (1–2 Wochen)", „Unmittelbar danach", „Mittelfristig (Mai–Juli)", „Vor dem Herbst-Peak", „Später (Q4 + Q1 2027)".
+- **19.04.2026:** 2 externe Audits durchgearbeitet (Grinch-Mode SEO-Audit + Elite-Produktaudit). **4 neue PBIs** aufgenommen: P1-15 (Email-Capture am Planer-Output), P2-20 (Datenübergabe Planer→Tools), P2-21 (Seiten-Rollen-Matrix), P3-11 (Pinterest, geparkt). **P2-3 und P3-5 erweitert** um Audit-Erkenntnisse. Strategie-Notizen in STRATEGIE.md 0.5 (Brand-Kollisions-Risiko machsleicht vs. machdichleicht) und 0.6 (Pinterest-Entscheidungs-Trigger) dokumentiert. Audit-Befunde zu OG-Tags (338/356 vorhanden), Sitemap (existiert) und Motto-Zahlen-Inkonsistenz (14 vs 17) als **widerlegt** oder nicht mehr aktuell markiert — keine Aktion nötig.
 - **16.04.2026 (Abend, Zusatz):** 10 neue PBIs aus STRATEGIE.md Ideenbibliothek aufgenommen (P1-12, P1-13, P1-14, P2-16, P2-17, P2-18, P3-7, P3-8, P3-9, P3-10). Alle mit ausführlichen Beschreibungen, Content-Clustern, Revenue-Projektionen und Checklisten. STRATEGIE.md um 6-12-Monats-Roadmap (Abschnitt 8a, 8b, 8c) erweitert.
 - **16.04.2026:** Backlog komplett neu strukturiert. Status-Matrix aus Repo-Check gegen Live-Stand abgeleitet. P1-1 und P1-2 gestrichen (Architektur-Memory #17). Neue PBIs aus Monetarisierungs-Strategie aufgenommen (P1-10, P1-11, P2-13 bis P2-15, P3-5, P3-6).
 - **15.04.2026:** FUNNEL-AXIOM als P2-1 fixiert. Audit-Findings aufgenommen (P1-6, P1-7, P2-8, P2-9, P2-10, P2-11).

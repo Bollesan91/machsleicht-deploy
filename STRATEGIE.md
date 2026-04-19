@@ -1,6 +1,6 @@
 # MASTER-STRATEGIE — machsleicht & machsruhig
 
-**Letzte Aktualisierung:** 16.04.2026
+**Letzte Aktualisierung:** 19.04.2026
 **Status:** Lebendes Dokument. Alle vorherigen Strategie-Dokumente wurden hier konsolidiert.
 **Ort:** Root-Verzeichnis (neben ARCHITECTURE.md und BACKLOG-AUDIT.md) — immer auffindbar.
 
@@ -36,6 +36,17 @@
 - **Anrufe:** Immer ans Eltern-Handy, nie direkt ans Kind
 - **Audio-Nachrichten:** Eltern steuern Wiedergabe, kein kalter Kontakt
 - **Partyseite-Daten:** Nur auf der Seite, kein Export, automatische Löschung nach 90 Tagen
+
+### 0.5 Brand-Kollisions-Risiko (dokumentiert 19.04.2026, keine Aktion)
+- „machsleicht" kollidiert bei Google-Suchen mit **machdichleicht.de** (Ursula Karven, hohe Autorität) und **machsleiser.de** (Leipziger Aktion). Wer „machsleicht" ohne Domain googelt, landet nicht zuverlässig bei uns.
+- **Keine Umbenennung.** Investierte Arbeit in Domain, Branding und Seiten-Assets ist zu groß.
+- **Umgangsweise:** In allen externen Texten und Backlinks immer **„machsleicht.de"** statt nur „machsleicht" verwenden. Brand-Kontext: „machsleicht.de — Kindergeburtstag in 10 Minuten planen". Verfestigt die Domain als Brand-Einheit.
+- **Monitoring:** Bei 1.000+ Brand-Suchen/Monat (via GSC) nochmal evaluieren, ob Brand-Boost nötig ist.
+
+### 0.6 Pinterest-Frage (offen, keine Entscheidung 19.04.2026)
+- Pinterest rankt bei „kindergeburtstag 6 jahre" und „kindergeburtstag ideen" auf Google Position 1. Ohne Pinterest verliert machsleicht messbar Top-of-Funnel.
+- **Problem:** Pinterest ist laufender Aufwand (min. 2–3h/Woche für regelmäßiges Pinning), widerspricht dem Passivitäts-Prinzip 0.3.
+- **Entscheidungs-Trigger:** Bei 5.000+ Besuchern/Monat ohne Pinterest nochmal prüfen. Davor: nicht starten.
 
 ---
 
