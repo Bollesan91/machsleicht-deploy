@@ -1,7 +1,7 @@
 # machsleicht.de — Backlog
 
-**Letzte Aktualisierung:** 19.04.2026 (Session #2)
-**Status-Check:** Repository-weit durchgeführt, gegen Live-Stand abgeglichen. 6 PBIs in Session #2 auf ✅ gesetzt.
+**Letzte Aktualisierung:** 19.04.2026 (Session #3)
+**Status-Check:** Repository-weit durchgeführt, gegen Live-Stand abgeglichen. 8 PBIs auf ✅ gesetzt.
 **Zweck:** Einzige Quelle für alle offenen und erledigten PBIs. Strategie-Kontext steht in `STRATEGIE.md`.
 
 ---
@@ -18,9 +18,9 @@
 | 2 | ✅ | **P0** | P0-1 | Google Search Console einrichten + Sitemap einreichen | 20 Min | Erledigt 19.04.2026 |
 | 3 | ✅ | **P1** | P1-10 | **Cloudflare Worker deployen** (Rätsel nach Maß + Partyseite) | 2 Std (Laptop) | Erledigt 19.04.2026 |
 | 4 | ✅ | **P1** | P2-1 | Homepage-Hero FUNNEL-AXIOM umbauen | 2–3 Std | Erledigt 19.04.2026 |
-| 5 | ⏳ | **P1** | P1-7 | Social Proof auf Homepage + Planer | 1 Std | Trust-Boost, minimaler Aufwand |
+| 5 | ✅ | **P1** | P1-7 | Social Proof auf Homepage + Planer | 1 Std | Erledigt 19.04.2026 |
 | 6 | ✅ | **P1** | P2-19 | **HTML-Bug: Doppelte class-Attribute** (300 Dateien) | 30 Min | Erledigt 19.04.2026 |
-| 7 | ⏳ | **P1** | P2-3 | Ergebnis-Vorschauen + klickbarer Beispiel-Plan | 4–5 Std | Audit-Kernkritik: „Demo vor Copy" |
+| 7 | ✅ | **P1** | P2-3 | Ergebnis-Vorschauen + klickbarer Beispiel-Plan | 4–5 Std | Erledigt 19.04.2026 |
 
 ### Unmittelbar danach (2–4 Wochen)
 
@@ -94,6 +94,8 @@
 | ✅ | P2-1 | Homepage-Hero: 1 Primary CTA + 2 Textlinks (Funnel-Axiom) |
 | ✅ | P2-19 | Doppelte class-Attribute: 5 Patterns, ~1600 Stellen in 317+256 Dateien |
 | ✅ | P2-2 | Thin Content: 138 Single-Age-Seiten per 301 auf Gruppen-Seiten |
+| ✅ | P1-7 | Social Proof: Trust-Zeile im Hero (Von Eltern entwickelt · 17 Mottos · Ohne Anmeldung) |
+| ✅ | P2-3 | Ergebnis-Vorschauen: 4 Demo-Cards auf Homepage (Plan, Schatzkarte, Einladung, Partyseite) + Partyseite auf LIVE gesetzt |
 
 ---
 

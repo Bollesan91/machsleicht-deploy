@@ -1,55 +1,58 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 19.04.2026 (Laptop-Session #2, Opus 4.6) — Piraten-Fix, P2-19, GSC-Sitemap, Hero-Umbau
+**Datum:** 19.04.2026 (Session #3, Opus 4.6) — Social Proof, Demo-Vorschauen, Partyseite LIVE, Auswirkungs-Check
 
 ## Was wurde gemacht
 
-### 1. Piraten-Einladungsspiel gefixt
-- Sound: 31 schnelle Noten → 16 Standard-Tempo-Noten (wie alle anderen Themes)
-- Foto-Support: fotoUrl durch gesamte Piraten-Einladung hinzugefügt (URL-Parsing, Cinematic, Chase)
-- Deployed auf main → live
+### 1. P1-7 Social Proof auf Homepage
+- Trust-Zeile im Hero: "🟢 Von Eltern entwickelt · **17 Mottos** · Ohne Anmeldung"
+- In SEO-Fallback (index.html) und React (js/index.js) konsistent
+- Bewusst keine Fake-Nutzerzahlen — ehrliche Aussagen die auch bei Monetarisierung stimmen
 
-### 2. Bereinigte Sitemap in GSC eingereicht
-- Über Chrome die Sitemap (223 URLs) in Google Search Console neu submitted
-- GSC: 262 indexierte Seiten, 75 nicht indexierte
+### 2. P2-3 Ergebnis-Vorschauen (Demo-Cards)
+- Neue "So sieht's aus"-Sektion auf der Homepage (React) mit 4 Demo-Cards:
+  - 📋 Kindergeburtstags-Plan (Piraten, Zeitplan + Kosten)
+  - 🗺️ Schatzkarte (Piraten, 4 Stationen)
+  - 💌 Einladungskarte (Dino, mit "interaktivem Fang-Spiel" Hinweis)
+  - 📱 WhatsApp-Partyseite (Zu-/Absagen-Liste)
+- SEO-Fallback: Schatzkarten- und Partyseite-Vorschau ergänzt (Plan + Einladung gab's schon)
+- Jede Card mit CTA zum echten Tool
 
-### 3. P2-19 HTML-Bug: Doppelte class-Attribute (ERLEDIGT)
-- Pass 1: 2 Patterns in 317 Dateien gefixt (card/u-emoji-cell, u-page-footer/no-print)
-- Pass 2 (nach 3-stufiger Prüfung): 3 weitere Patterns in 256 Dateien gefixt (game-card/u-card-sm, cta/u-btn-filter, cta/u-mt8)
-- Insgesamt: 5 Patterns, ~1600 Vorkommen bereinigt
-- validate-all.sh: alle Checks bestanden
+### 3. Partyseite von "BALD" auf "LIVE" gesetzt
+- products-Array: status:"soon" → status:"live"
+- Sub-Text: "bald verfügbar" → "per WhatsApp teilen"
+- validate-all.sh: Partyseite-Live-Check ergänzt
 
-### 4. P2-1 Hero-Umbau (Funnel-Axiom)
-- 4 gleichwertige CTA-Buttons → 1 Primary CTA "Kindergeburtstag planen →" + 2 Textlinks
-- Partyseite aus dem Hero entfernt (ist Post-Planer-Upsell, nicht Einstieg)
-- Trust-Zeile ergänzt: "Kostenlos · Ohne Anmeldung · In 10 Minuten fertig"
-- Umgesetzt in SEO-Fallback (index.html) UND React-Version (js/index.js)
-- validate-all.sh an neues Hero-Format angepasst
-- 3-Fach-Check bestanden: STRATEGIE.md-konform, Validator grün, SEO↔React konsistent
+### 4. PBI-Auswirkungs-Check eingerichtet
+- 8-Punkte-Checkliste in CLAUDE.md: Status-Badges, Texte, Demos, Feature-Zahlen, Validator, Links, Sitemap, SEO↔React
+- Wird bei jedem erledigten PBI durchlaufen
 
 ## Nächste Schritte
 
 **Top-Prio für nächste Session:**
-1. **P1-7 Social Proof** — Testimonials/Nutzerzahlen auf der Startseite
-2. **P2-3 Ergebnis-Vorschauen** — klickbarer Beispiel-Plan
-3. **Einhorn oder Paw Patrol** — nächstes Motto nach Piraten-Elite (Suchvolumen prüfen)
+1. **P1-15 Email-Capture am Planer-Output** — Braucht P1-10 (erledigt), größter Retention-Hebel
+2. **P2-20 Datenübergabe Planer → Tools** — Ökosystem-Prinzip
+3. **P2-13 Gumroad: 2 Digital-Produkte** — Piraten+Dino, +100€/Monat
+4. **P1-8 Motto-Hauptseiten auf Elite-Niveau** — nächstes Motto: Einhorn oder Paw Patrol
+5. **Demo-Einladung mit Beispiel-Foto** — URL mit vorausgefüllten Daten (offen von P2-3)
 
 **Cloudflare Security:**
-- "Always Use HTTPS" + HSTS für party.machsleicht.de aktivieren (Cloudflare Dashboard → SSL/TLS)
+- "Always Use HTTPS" + HSTS für party.machsleicht.de aktivieren
 
 ## Offene Fragen
 
-- Reihenfolge nach Piraten-Elite: Einhorn oder Paw Patrol (höchstes Suchvolumen)?
-- Email-Capture-Text: „Plan als PDF per Mail" aggressiv oder dezent platzieren?
+- Einhorn oder Paw Patrol als nächstes Elite-Motto?
+- Email-Capture: „Plan als PDF per Mail" aggressiv oder dezent?
 - Awin-Freischaltung: Wann kommt die Publisher-ID?
+- Demo-Einladung: Welches Stock-Foto als Beispiel-Kind?
 
 ## Status der Site nach dieser Session
 
-- Sitemap: 223 URLs, in GSC eingereicht
-- Hero: 1 Primary CTA + 2 Textlinks (Funnel-Axiom umgesetzt)
-- P2-19: alle doppelten class-Attribute bereinigt (5 Patterns, ~1600 Stellen)
-- Piraten-Einladung: Sound + Foto wie alle anderen Themes
+- Homepage: Hero mit Social-Proof-Zeile + 4 Demo-Cards (Plan, Schatzkarte, Einladung, Partyseite)
+- Partyseite: Status LIVE (products-Array + Sub-Text)
+- Produkte: 8 live, 0 bald, 0 geplant
+- Sitemap: 223 URLs
 - 301-Redirects: 144 aktiv
-- party.machsleicht.de: Worker live
-- GSC: verifiziert, 262 indexierte Seiten
+- GSC: verifiziert, Sitemap eingereicht
+- PBI-Auswirkungs-Check: 8-Punkte-System in CLAUDE.md

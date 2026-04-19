@@ -146,6 +146,9 @@ if [ -f "$INDEX_JS" ]; then
   HERO_PRIMARY=$(grep -cP 'Kindergeburtstag planen' "$INDEX_JS")
   HERO_SECONDARY=$(grep -oP 'Schatzsuche erstellen|Einladung gestalten' "$INDEX_JS" | sort -u | wc -l)
   if [ "$HERO_PRIMARY" -ge 1 ] && [ "$HERO_SECONDARY" -ge 2 ]; then green "Hero: 1 Primary CTA + $HERO_SECONDARY Textlinks"; elif [ "$HERO_PRIMARY" -ge 1 ]; then yellow "Hero: Primary CTA da, aber nur $HERO_SECONDARY/2 Textlinks"; else warn "Hero: Primary CTA fehlt!"; fi
+
+  # Check: Partyseite ist live (Worker deployed)
+  if grep -q 'id:"partyseite".*status:"live"' "$INDEX_JS" 2>/dev/null; then green "Partyseite: status live"; else yellow "Partyseite: status ist NICHT live (Worker ist deployed!)"; fi
 fi
 echo ""
 
