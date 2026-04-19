@@ -1,7 +1,7 @@
 # machsleicht.de — Backlog
 
-**Letzte Aktualisierung:** 19.04.2026
-**Status-Check:** Repository-weit durchgeführt, gegen Live-Stand abgeglichen.
+**Letzte Aktualisierung:** 19.04.2026 (Session #2)
+**Status-Check:** Repository-weit durchgeführt, gegen Live-Stand abgeglichen. 6 PBIs in Session #2 auf ✅ gesetzt.
 **Zweck:** Einzige Quelle für alle offenen und erledigten PBIs. Strategie-Kontext steht in `STRATEGIE.md`.
 
 ---
@@ -14,12 +14,12 @@
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Warum jetzt |
 |---|--------|------|--------|------------------|---------|-------------|
-| 1 | ⏳ | **P0** | P0-5 (ex P1-5) | **GitHub Token rotieren** | 5 Min | **Deadline 25.04.** (6 Tage) |
-| 2 | ⏳ | **P0** | P0-1 | Google Search Console einrichten + Sitemap einreichen | 20 Min | Ohne GSC ist alles andere SEO-blind |
-| 3 | ⏳ | **P1** | P1-10 | **Cloudflare Worker deployen** (Rätsel nach Maß + Partyseite) | 2 Std (Laptop) | Entsperrt 4 andere PBIs + sofort Revenue |
-| 4 | ⏳ | **P1** | P2-1 | Homepage-Hero FUNNEL-AXIOM umbauen | 2–3 Std | Entscheidung finalisiert, großer Funnel-Hebel |
+| 1 | ✅ | **P0** | P0-5 (ex P1-5) | **GitHub Token rotieren** | 5 Min | Erledigt 19.04.2026 |
+| 2 | ✅ | **P0** | P0-1 | Google Search Console einrichten + Sitemap einreichen | 20 Min | Erledigt 19.04.2026 |
+| 3 | ✅ | **P1** | P1-10 | **Cloudflare Worker deployen** (Rätsel nach Maß + Partyseite) | 2 Std (Laptop) | Erledigt 19.04.2026 |
+| 4 | ✅ | **P1** | P2-1 | Homepage-Hero FUNNEL-AXIOM umbauen | 2–3 Std | Erledigt 19.04.2026 |
 | 5 | ⏳ | **P1** | P1-7 | Social Proof auf Homepage + Planer | 1 Std | Trust-Boost, minimaler Aufwand |
-| 6 | ⏳ | **P1** | P2-19 | **HTML-Bug: Doppelte class-Attribute** (300 Dateien) | 30 Min | Echter Bug, 30-Min-Regex-Fix |
+| 6 | ✅ | **P1** | P2-19 | **HTML-Bug: Doppelte class-Attribute** (300 Dateien) | 30 Min | Erledigt 19.04.2026 |
 | 7 | ⏳ | **P1** | P2-3 | Ergebnis-Vorschauen + klickbarer Beispiel-Plan | 4–5 Std | Audit-Kernkritik: „Demo vor Copy" |
 
 ### Unmittelbar danach (2–4 Wochen)
@@ -41,7 +41,7 @@
 | 15 | ⏳ | **P2** | P2-10 | Einladungstool: 7 fehlende Lizenz-Mottos | 2–3 Std | Voraussetzung für P1-9 |
 | 16 | ⏳ | **P2** | P1-9 (→P2) | /einladung als SEO-Hub | 3–4 Std | Braucht P2-10 zuerst |
 | 17 | ⏳ | **P2** | P1-11 (→P2) | Ratgeber-Seiten auf 85% (11 verbleibend) | 30–60 Min/Seite | Evergreen, kontinuierlich |
-| 18 | ⏳ | **P2** | P2-2 | Thin Content Motto×Altersgruppen (noindex Einzelalter) | 2–4 Std | SEO-Aufräumung |
+| 18 | ✅ | **P2** | P2-2 | Thin Content Motto×Altersgruppen (138 Seiten → 301-Redirects) | 2–4 Std | Erledigt 19.04.2026 |
 | 19 | ⏳ | **P2** | P2-16 | Mitgebsel-Generator (KI) | 1 Tag | Braucht P1-10 |
 | 20 | ⏳ | **P2** | P2-5 | Performance (JS-Bundle, lazy loading) | 15 Min kurzfristig, 2–4h langfristig | Laufend |
 | 21 | ⏳ | **P2** | P2-8 | /kreuzwortraetsel pre-rendern | 1–2 Std | SEO-Nachzügler |
@@ -88,6 +88,12 @@
 | ✅ | P2-14 | Affiliate-Sweep auf 16 Ratgeber-Seiten |
 | ✅ | P2-18 | Vergleichs-Tabellen statt Einzel-Affiliate-Links |
 | ✅ | P3-2 | Amazon Affiliate Tag setzen (**machsleicht-21 konsolidiert, 796 Vorkommen sauber**) |
+| ✅ | P0-5 | GitHub Token rotieren (neuer PAT ohne Ablaufdatum) |
+| ✅ | P0-1 | GSC eingerichtet + bereinigte Sitemap (223 URLs) eingereicht |
+| ✅ | P1-10 | Cloudflare Worker deployed (party.machsleicht.de live) |
+| ✅ | P2-1 | Homepage-Hero: 1 Primary CTA + 2 Textlinks (Funnel-Axiom) |
+| ✅ | P2-19 | Doppelte class-Attribute: 5 Patterns, ~1600 Stellen in 317+256 Dateien |
+| ✅ | P2-2 | Thin Content: 138 Single-Age-Seiten per 301 auf Gruppen-Seiten |
 
 ---
 
