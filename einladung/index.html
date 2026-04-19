@@ -467,7 +467,8 @@ function PiratenInsel({
   partyDate = "Samstag, 15. Mai 2026",
   partyTime = "14:00 – 17:00 Uhr",
   partyPlace = "Volkspark Friedrichshain",
-  rsvpPhone = "491701234567"
+  rsvpPhone = "491701234567",
+  fotoUrl = null
 }) {
   const [revealed, setRevealed] = useState(new Set());
   const [found, setFound] = useState([]);
@@ -652,8 +653,8 @@ function PiratenInsel({
   const tempoRef = useRef(1); // 1 = normal, 0.55 = Piraten-Chase
   const playLoopRef = useRef(null); // Referenz auf playLoop für Restart
 
-  const NOTES = [392, 392, 440, 494, 494, 440, 392, 330, 294, 294, 330, 392, 392, 349, 349, 294, 294, 330, 392, 349, 330, 294, 262, 392, 392, 440, 494, 494, 440, 392, 330];
-  const BASE_DUR = [.3, .3, .3, .6, .3, .3, .3, .6, .3, .3, .3, .45, .15, .6, .6, .3, .3, .3, .45, .15, .3, .3, .6, .3, .3, .3, .6, .3, .3, .3, .6];
+  const NOTES = [294, 349, 392, 349, 294, 262, 294, 349, 392, 440, 392, 349, 294, 349, 392, 294];
+  const BASE_DUR = [0.6, 0.6, 0.8, 0.4, 0.6, 0.8, 0.4, 0.6, 0.6, 0.8, 0.4, 0.6, 0.8, 0.6, 0.6, 0.8];
   const startMusic = useCallback(() => {
     if (musicStartedRef.current) return;
     musicStartedRef.current = true;
@@ -672,9 +673,9 @@ function PiratenInsel({
       NOTES.forEach((freq, i) => {
         const osc = ctx.createOscillator();
         const noteGain = ctx.createGain();
-        osc.type = chase ? "sawtooth" : "triangle";
-        osc.frequency.value = freq * (chase ? 1.12 : 1);
-        noteGain.gain.setValueAtTime(chase ? 0.08 : 0.12, t);
+        osc.type = chase ? "sawtooth" : "sine";
+        osc.frequency.value = freq * (chase ? 1.15 : 1);
+        noteGain.gain.setValueAtTime(chase ? 0.06 : 0.05, t);
         noteGain.gain.exponentialRampToValueAtTime(0.01, t + durations[i] * 0.9);
         osc.connect(noteGain);
         noteGain.connect(gain);
@@ -685,8 +686,8 @@ function PiratenInsel({
       const bass = ctx.createOscillator();
       const bassGain = ctx.createGain();
       bass.type = "sine";
-      bass.frequency.value = chase ? 165 : 130.81;
-      bassGain.gain.value = chase ? 0.08 : 0.06;
+      bass.frequency.value = chase ? 150 : 110;
+      bassGain.gain.value = chase ? 0.05 : 0.03;
       bass.connect(bassGain);
       bassGain.connect(gain);
       const loopDur = durations.reduce((a, b) => a + b, 0);
@@ -1521,7 +1522,7 @@ function PiratenInsel({
   },
     /*#__PURE__*/React.createElement("div", {
       style: { fontSize: 56, marginBottom: 10, animation: "bob 2.5s ease-in-out infinite" }
-    }, "\uD83C\uDFF4\u200D\u2620\uFE0F"),
+    }, fotoUrl ? /*#__PURE__*/React.createElement("img", { src: fotoUrl, style: { width: 70, height: 70, borderRadius: "50%", border: "3px solid #FFD700", objectFit: "cover", boxShadow: "0 0 20px rgba(255,215,0,.5)" } }) : "\uD83C\uDFF4\u200D\u2620\uFE0F"),
     /*#__PURE__*/React.createElement("p", {
       style: {
         color: "#FF4444", fontSize: 12, fontWeight: 600, letterSpacing: 1,
@@ -1534,14 +1535,14 @@ function PiratenInsel({
         color: "#FFD700", fontSize: 22, fontWeight: 900, margin: "0 0 6px",
         textShadow: "0 2px 10px rgba(0,0,0,.5)", maxWidth: 280
       }
-    }, "Ein Pirat klaut den Schatz!"),
+    }, fotoUrl ? childName + " klaut den Schatz!" : "Ein Pirat klaut den Schatz!"),
     /*#__PURE__*/React.createElement("p", {
       style: {
         color: "#f5e6c8", fontSize: 14, margin: "0 0 14px",
         lineHeight: 1.6, maxWidth: 280,
         textShadow: "0 1px 6px rgba(0,0,0,.4)"
       }
-    }, "Schnapp ihn dir!"),
+    }, fotoUrl ? "Fang " + childName + " ein!" : "Schnapp ihn dir!"),
     /*#__PURE__*/React.createElement("div", {
       key: countdown,
       style: {
@@ -1570,7 +1571,7 @@ function PiratenInsel({
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {color: "#FFD700", fontSize: 13, fontWeight: 800, textShadow: "0 1px 4px rgba(0,0,0,.5)"}
-  }, "\u2694\uFE0F Schnapp dir den Piraten!")),
+  }, "\u2694\uFE0F", fotoUrl ? " Schnapp dir " + childName + "!" : " Schnapp dir den Piraten!")),
 
   /* ═══ CHASE: Pirat-Figur ═══ */
   chasePhase === "chase" && thief && !thief.caught && /*#__PURE__*/React.createElement("div", {
@@ -1579,15 +1580,21 @@ function PiratenInsel({
       position: "absolute",
       left: `${thief.x}%`,
       top: `${thief.y}%`,
-      transform: `translate(-50%,-50%) scaleX(${thief.dir && thief.dir < 0 ? -1 : 1})`,
+      transform: `translate(-50%,-50%)${fotoUrl ? '' : ` scaleX(${thief.dir && thief.dir < 0 ? -1 : 1})`}`,
       zIndex: 100,
       cursor: "pointer",
       /* no transition — rAF handles smooth 60fps movement */
       WebkitTapHighlightColor: "transparent"
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: PIRATE_IMG,
-    style: {
+    src: fotoUrl || PIRATE_IMG,
+    style: fotoUrl ? {
+      width: 60, height: 60, borderRadius: "50%", objectFit: "cover",
+      border: "3px solid #FFD700",
+      boxShadow: "0 0 20px rgba(255,215,0,.5)",
+      animation: "bob .2s ease-in-out infinite",
+      pointerEvents: "none"
+    } : {
       width: 70,
       height: "auto",
       filter: "drop-shadow(0 4px 12px rgba(0,0,0,.6))",
@@ -1808,6 +1815,7 @@ if (_p.get("date")) _props.partyDate = _p.get("date");
 if (_p.get("time")) _props.partyTime = _p.get("time");
 if (_p.get("ort"))  _props.partyPlace = _p.get("ort");
 if (_p.get("tel"))  _props.rsvpPhone = _p.get("tel");
+if (_p.get("foto")) _props.fotoUrl = "data:image/jpeg;base64," + _p.get("foto");
 ReactDOM.createRoot(document.getElementById('root')).render(/*#__PURE__*/React.createElement(PiratenInsel, _props));</script>
 </body>
 </html>
