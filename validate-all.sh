@@ -142,9 +142,10 @@ if [ -f "$INDEX_JS" ]; then
     fi
   done
   
-  # Check hero CTAs
-  HERO_CTAS=$(grep -oP 'Kindergeburtstag planen|Schatzsuche erstellen|Einladung erstellen' "$INDEX_JS" | sort -u | wc -l)
-  if [ "$HERO_CTAS" -ge 3 ]; then green "Hero CTAs: $HERO_CTAS gefunden"; else yellow "Hero CTAs: nur $HERO_CTAS (erwartet 3)"; fi
+  # Check hero CTAs (Funnel-Axiom: 1 Primary CTA + 2 sekundäre Textlinks)
+  HERO_PRIMARY=$(grep -cP 'Kindergeburtstag planen' "$INDEX_JS")
+  HERO_SECONDARY=$(grep -oP 'Schatzsuche erstellen|Einladung gestalten' "$INDEX_JS" | sort -u | wc -l)
+  if [ "$HERO_PRIMARY" -ge 1 ] && [ "$HERO_SECONDARY" -ge 2 ]; then green "Hero: 1 Primary CTA + $HERO_SECONDARY Textlinks"; elif [ "$HERO_PRIMARY" -ge 1 ]; then yellow "Hero: Primary CTA da, aber nur $HERO_SECONDARY/2 Textlinks"; else warn "Hero: Primary CTA fehlt!"; fi
 fi
 echo ""
 

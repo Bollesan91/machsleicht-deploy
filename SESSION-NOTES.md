@@ -1,45 +1,39 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 19.04.2026 (Laptop-Session, Opus 4.6) — Worker-Bugfix, Thin-Content-Cleanup, Token-Rotation
+**Datum:** 19.04.2026 (Laptop-Session #2, Opus 4.6) — Piraten-Fix, P2-19, GSC-Sitemap, Hero-Umbau
 
 ## Was wurde gemacht
 
-### 1. Draft mit Main synchronisiert
-- Draft war ~100 Commits hinter Main (durch Chat-Sessions direkt auf Main)
-- Fast-Forward-Merge durchgeführt, Branches wieder auf gleichem Stand
+### 1. Piraten-Einladungsspiel gefixt
+- Sound: 31 schnelle Noten → 16 Standard-Tempo-Noten (wie alle anderen Themes)
+- Foto-Support: fotoUrl durch gesamte Piraten-Einladung hinzugefügt (URL-Parsing, Cinematic, Chase)
+- Deployed auf main → live
 
-### 2. Cloudflare Worker deployed (P1-10)
-- party-worker.js auf party.machsleicht.de live
-- **Bugfix:** renderWishes() hatte verschachtelte Template-Literals (Backtick in Backtick) → SyntaxError → "Weiter"-Button tot
-- Lösung: renderWishes() komplett auf String-Concatenation umgeschrieben
-- AMAZON_TAG als Environment-Variable im Worker gesetzt (machsleicht-21)
-- AWIN_PUBLISHER_ID noch offen (wartet auf Awin-Freischaltung)
+### 2. Bereinigte Sitemap in GSC eingereicht
+- Über Chrome die Sitemap (223 URLs) in Google Search Console neu submitted
+- GSC: 262 indexierte Seiten, 75 nicht indexierte
 
-### 3. Thin-Content-Cleanup (138 Single-Age-Seiten)
-- 138 Einzelalter-Seiten (z.B. piraten-3-jahre) per 301 auf Gruppen-Seiten redirected (z.B. piraten-3-5-jahre)
-- _redirects: 138 Einträge von 200-Rewrite auf 301-Redirect umgestellt
-- sitemap.xml: von 361 auf 223 URLs bereinigt
-- Deployed auf main → live auf machsleicht.de
+### 3. P2-19 HTML-Bug: Doppelte class-Attribute (ERLEDIGT)
+- Pass 1: 2 Patterns in 317 Dateien gefixt (card/u-emoji-cell, u-page-footer/no-print)
+- Pass 2 (nach 3-stufiger Prüfung): 3 weitere Patterns in 256 Dateien gefixt (game-card/u-card-sm, cta/u-btn-filter, cta/u-mt8)
+- Insgesamt: 5 Patterns, ~1600 Vorkommen bereinigt
+- validate-all.sh: alle Checks bestanden
 
-### 4. GitHub Token rotiert (P0-5)
-- Alter Token lief am 25.04.2026 ab
-- Neuer Fine-grained PAT erstellt (kein Ablaufdatum)
-- Remote-URL und CLAUDE.md aktualisiert
-
-### 5. Google Search Console (P0-1)
-- GSC ist bereits eingerichtet und verifiziert
-- Aktueller Stand: 262 indexierte Seiten, 75 nicht indexierte
-- Nächster Schritt: bereinigte Sitemap in GSC einreichen (nach Deploy bereits möglich)
+### 4. P2-1 Hero-Umbau (Funnel-Axiom)
+- 4 gleichwertige CTA-Buttons → 1 Primary CTA "Kindergeburtstag planen →" + 2 Textlinks
+- Partyseite aus dem Hero entfernt (ist Post-Planer-Upsell, nicht Einstieg)
+- Trust-Zeile ergänzt: "Kostenlos · Ohne Anmeldung · In 10 Minuten fertig"
+- Umgesetzt in SEO-Fallback (index.html) UND React-Version (js/index.js)
+- validate-all.sh an neues Hero-Format angepasst
+- 3-Fach-Check bestanden: STRATEGIE.md-konform, Validator grün, SEO↔React konsistent
 
 ## Nächste Schritte
 
 **Top-Prio für nächste Session:**
-1. **Sitemap in GSC einreichen** — bereinigte Sitemap ist live, muss in GSC neu submitted werden
-2. **P2-1 Hero-Umbau** — Hero-Funnel auf der Startseite
-3. **P1-7 Social Proof** — Testimonials/Nutzerzahlen
-4. **P2-19 HTML-Bug** — Bug auf 300 Dateien, 30-Min-Fix
-5. **P2-3 Ergebnis-Vorschauen** — klickbarer Beispiel-Plan
+1. **P1-7 Social Proof** — Testimonials/Nutzerzahlen auf der Startseite
+2. **P2-3 Ergebnis-Vorschauen** — klickbarer Beispiel-Plan
+3. **Einhorn oder Paw Patrol** — nächstes Motto nach Piraten-Elite (Suchvolumen prüfen)
 
 **Cloudflare Security:**
 - "Always Use HTTPS" + HSTS für party.machsleicht.de aktivieren (Cloudflare Dashboard → SSL/TLS)
@@ -52,8 +46,10 @@
 
 ## Status der Site nach dieser Session
 
-- Sitemap: 223 URLs (138 Thin-Content-Seiten entfernt)
-- 301-Redirects: 144 aktiv (138 neue + 6 bestehende)
-- party.machsleicht.de: Worker live, Weiter-Button funktioniert
-- GitHub Token: neuer PAT ohne Ablaufdatum
+- Sitemap: 223 URLs, in GSC eingereicht
+- Hero: 1 Primary CTA + 2 Textlinks (Funnel-Axiom umgesetzt)
+- P2-19: alle doppelten class-Attribute bereinigt (5 Patterns, ~1600 Stellen)
+- Piraten-Einladung: Sound + Foto wie alle anderen Themes
+- 301-Redirects: 144 aktiv
+- party.machsleicht.de: Worker live
 - GSC: verifiziert, 262 indexierte Seiten
