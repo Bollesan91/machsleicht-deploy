@@ -1,6 +1,6 @@
 # machsleicht.de — Backlog
 
-**Letzte Aktualisierung:** 19.04.2026 (Session #3)
+**Letzte Aktualisierung:** 20.04.2026 (Mobile-Session)
 **Status-Check:** Repository-weit durchgeführt, gegen Live-Stand abgeglichen. 8 PBIs auf ✅ gesetzt.
 **Zweck:** Einzige Quelle für alle offenen und erledigten PBIs. Strategie-Kontext steht in `STRATEGIE.md`.
 
@@ -26,50 +26,51 @@
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
 |---|--------|------|--------|------------------|---------|---------|
-| 8 | ⏳ | **P1** | P1-15 | **Email-Capture am Planer-Output** | 1–2 Tage | Braucht P1-10. Größter Retention-Hebel |
-| 9 | ⏳ | **P1** | P2-20 | **Datenübergabe Planer → Tools** | 4–6 Std | Ökosystem-Prinzip umsetzen, nach P1-10 |
-| 10 | ⏳ | **P1** | P2-13 | Gumroad: 2 Digital-Produkte (Piraten+Dino) | 4h/Produkt | +100€/Monat bei aktuellem Traffic |
-| 11 | ⏳ | **P1** | P2-15 | Awin-Anmeldung (Otto, myToys, Thalia) | 30 Min + Warten | Prüfung dauert 1–3 Tage, früh starten |
-| 12 | ⏳ | **P1** | P1-8 | Motto-Hauptseiten auf Elite-Niveau (Piraten) | 1–2 Std/Seite | Parallel laufend |
-| 13 | ⏳ | **P1** | P1-12 | **Einschulungs-Planer bauen** | 2–3 Tage | **Launch bis 31.05.** (SEO-Vorlauf!) |
+| 8 | ⏳ | **P1** | P1-16 | **Partyseite Follow-Ups** (Cloudflare-Deploy Bugfix + Email-Test + Foto-Crop + Reply-To) | 1–2 Std | **Laptop-Session!** Bugfix-Commit `a694178` wartet auf Cloudflare-Deploy |
+| 9 | ⏳ | **P1** | P1-15 | **Email-Capture am Planer-Output** | 1–2 Tage | Braucht P1-10. Größter Retention-Hebel |
+| 10 | ⏳ | **P1** | P2-20 | **Datenübergabe Planer → Tools** | 4–6 Std | Ökosystem-Prinzip umsetzen, nach P1-10 |
+| 11 | ⏳ | **P1** | P2-13 | Gumroad: 2 Digital-Produkte (Piraten+Dino) | 4h/Produkt | +100€/Monat bei aktuellem Traffic |
+| 12 | ⏳ | **P1** | P2-15 | Awin-Anmeldung (Otto, myToys, Thalia) | 30 Min + Warten | Prüfung dauert 1–3 Tage, früh starten |
+| 13 | ⏳ | **P1** | P1-8 | Motto-Hauptseiten auf Elite-Niveau (Piraten) | 1–2 Std/Seite | Parallel laufend |
+| 14 | ⏳ | **P1** | P1-12 | **Einschulungs-Planer bauen** | 2–3 Tage | **Launch bis 31.05.** (SEO-Vorlauf!) |
 
 ### Mittelfristig (Mai–Juli)
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
 |---|--------|------|--------|------------------|---------|---------|
-| 14 | ⏳ | **P2** | P2-17 | **Standalone /wunschliste** | 2–3 Tage | Launch bis 30.06. für Weihnachts-Peak |
-| 15 | ⏳ | **P2** | P2-10 | Einladungstool: 7 fehlende Lizenz-Mottos | 2–3 Std | Voraussetzung für P1-9 |
-| 16 | ⏳ | **P2** | P1-9 (→P2) | /einladung als SEO-Hub | 3–4 Std | Braucht P2-10 zuerst |
-| 17 | ⏳ | **P2** | P1-11 (→P2) | Ratgeber-Seiten auf 85% (11 verbleibend) | 30–60 Min/Seite | Evergreen, kontinuierlich |
-| 18 | ✅ | **P2** | P2-2 | Thin Content Motto×Altersgruppen (138 Seiten → 301-Redirects) | 2–4 Std | Erledigt 19.04.2026 |
-| 19 | ⏳ | **P2** | P2-16 | Mitgebsel-Generator (KI) | 1 Tag | Braucht P1-10 |
-| 20 | ⏳ | **P2** | P2-5 | Performance (JS-Bundle, lazy loading) | 15 Min kurzfristig, 2–4h langfristig | Laufend |
-| 21 | ⏳ | **P2** | P2-8 | /kreuzwortraetsel pre-rendern | 1–2 Std | SEO-Nachzügler |
-| 22 | ⏳ | **P2** | P2-21 | Seiten-Rollen-Matrix | 1 Tag | Nach P1-11 sinnvoll |
+| 15 | ⏳ | **P2** | P2-17 | **Standalone /wunschliste** | 2–3 Tage | Launch bis 30.06. für Weihnachts-Peak |
+| 16 | ⏳ | **P2** | P2-10 | Einladungstool: 7 fehlende Lizenz-Mottos | 2–3 Std | Voraussetzung für P1-9 |
+| 17 | ⏳ | **P2** | P1-9 (→P2) | /einladung als SEO-Hub | 3–4 Std | Braucht P2-10 zuerst |
+| 18 | ⏳ | **P2** | P1-11 (→P2) | Ratgeber-Seiten auf 85% (11 verbleibend) | 30–60 Min/Seite | Evergreen, kontinuierlich |
+| 19 | ✅ | **P2** | P2-2 | Thin Content Motto×Altersgruppen (138 Seiten → 301-Redirects) | 2–4 Std | Erledigt 19.04.2026 |
+| 20 | ⏳ | **P2** | P2-16 | Mitgebsel-Generator (KI) | 1 Tag | Braucht P1-10 |
+| 21 | ⏳ | **P2** | P2-5 | Performance (JS-Bundle, lazy loading) | 15 Min kurzfristig, 2–4h langfristig | Laufend |
+| 22 | ⏳ | **P2** | P2-8 | /kreuzwortraetsel pre-rendern | 1–2 Std | SEO-Nachzügler |
+| 23 | ⏳ | **P2** | P2-21 | Seiten-Rollen-Matrix | 1 Tag | Nach P1-11 sinnvoll |
 
 ### Vor dem Herbst-Peak (Juli–September)
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Deadline |
 |---|--------|------|--------|------------------|---------|---------|
-| 23 | ⏳ | **P1** | P1-13 | **Adventskalender-Builder** (24 KI-Türchen) | 3–4 Tage | **Launch bis 31.08.** |
-| 24 | ⏳ | **P1** | P1-14 | **KI-Geschenkeberater** | 2–3 Tage | **Launch bis 30.09.** |
-| 25 | ⏳ | **P3** | P3-6 | **machsruhig.de launchen** | 2–3 Wochen Sprint | Eigener Sprint, separates Doc |
+| 24 | ⏳ | **P1** | P1-13 | **Adventskalender-Builder** (24 KI-Türchen) | 3–4 Tage | **Launch bis 31.08.** |
+| 25 | ⏳ | **P1** | P1-14 | **KI-Geschenkeberater** | 2–3 Tage | **Launch bis 30.09.** |
+| 26 | ⏳ | **P3** | P3-6 | **machsruhig.de launchen** | 2–3 Wochen Sprint | Eigener Sprint, separates Doc |
 
 ### Später (Q4 2026 und Q1 2027)
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
 |---|--------|------|--------|------------------|---------|---------|
-| 26 | ⏳ | **P3** | P3-5 | E-Mail-Liste aufsetzen (MailerLite + Nurture) | 1 Tag | Verwertung von P1-15-Opt-Ins |
-| 27 | ⏳ | **P3** | P3-3 | Social Proof aus Plausible (echter Counter) | variabel | Nach 3 Monaten GSC-Daten |
-| 28 | ⏳ | **P3** | P3-4 | Druckvorlagen pro Motto (Top 5) | 30 Min/Motto | Parallel zu P1-8 |
-| 29 | ⏳ | **P3** | P3-7 | Klassen-Geburtstagskalender | 3 Tage | Braucht P2-17 |
-| 30 | ⏳ | **P3** | P3-8 | Nachbar-Nachricht-Generator | 4 Std | Quick-Win |
-| 31 | ⏳ | **P3** | P3-9 | Foto-Spots/Photobooth-Backdrops | 6 Std | Parallel zu P1-8 |
-| 32 | ⏳ | **P3** | P3-10 | Urkunden/Diplome | 6 Std | Nach P3-5 |
-| 33 | ⏳ | **P3** | P3-1 | Repo aufräumen | 10–30 Min | Quick-Win jederzeit |
-| 34 | ⏳ | **P3** | P3-11 | **Pinterest-Präsenz** | 4h Setup + 1–2h/Woche | **Geparkt**: Trigger bei 5.000+ Besuchern/Monat |
-| 35 | ⏳ | **P4** | P4-1 | PDF-Partybücher pro Motto | 1 Tag/Motto | Wenn Traffic da ist |
-| 36 | ⏳ | **P4** | P4-2 | Premium-Features (KI-Spielleiter, Audio, etc.) | mehrere Wochen | Wenn Traffic da ist |
+| 27 | ⏳ | **P3** | P3-5 | E-Mail-Liste aufsetzen (MailerLite + Nurture) | 1 Tag | Verwertung von P1-15-Opt-Ins |
+| 28 | ⏳ | **P3** | P3-3 | Social Proof aus Plausible (echter Counter) | variabel | Nach 3 Monaten GSC-Daten |
+| 29 | ⏳ | **P3** | P3-4 | Druckvorlagen pro Motto (Top 5) | 30 Min/Motto | Parallel zu P1-8 |
+| 30 | ⏳ | **P3** | P3-7 | Klassen-Geburtstagskalender | 3 Tage | Braucht P2-17 |
+| 31 | ⏳ | **P3** | P3-8 | Nachbar-Nachricht-Generator | 4 Std | Quick-Win |
+| 32 | ⏳ | **P3** | P3-9 | Foto-Spots/Photobooth-Backdrops | 6 Std | Parallel zu P1-8 |
+| 33 | ⏳ | **P3** | P3-10 | Urkunden/Diplome | 6 Std | Nach P3-5 |
+| 34 | ⏳ | **P3** | P3-1 | Repo aufräumen | 10–30 Min | Quick-Win jederzeit |
+| 35 | ⏳ | **P3** | P3-11 | **Pinterest-Präsenz** | 4h Setup + 1–2h/Woche | **Geparkt**: Trigger bei 5.000+ Besuchern/Monat |
+| 36 | ⏳ | **P4** | P4-1 | PDF-Partybücher pro Motto | 1 Tag/Motto | Wenn Traffic da ist |
+| 37 | ⏳ | **P4** | P4-2 | Premium-Features (KI-Spielleiter, Audio, etc.) | mehrere Wochen | Wenn Traffic da ist |
 
 ### Gestrichen / Erledigt
 
@@ -403,6 +404,50 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 - Tool generiert in ≤10 Sekunden relevante Vorschläge
 - Affiliate-Click-Rate ≥15% (Plausible-Event `affiliate-click`)
 - Ab November 2026 messbarer Affiliate-Revenue-Anstieg
+
+---
+
+#### P1-16: Partyseite Follow-Ups (Laptop-Session)
+
+**Motivation:** Partyseite ist seit 20.04. live, aber mehrere Follow-Ups sind aus der gestrigen Mobile-Session + dem Test heute (20.04., 17:23) aufgelaufen. Alles erfordert **Cloudflare-Deploy** und ist damit eine Laptop-Session.
+
+**Sub-Tasks:**
+
+1. **Cloudflare-Deploy des Bugfix-Commits** — Commit `a694178` (Partyseite Bugfix: mailtoLink-Crash + iOS Uhrzeit-Layout) ist gepusht, aber der Worker läuft auf Cloudflare, nicht auf Netlify. Quick-Editor öffnen, `party-worker.js` (1570 Zeilen) reinkopieren, „Save and deploy".
+   - Fix #1: Zeile ~703 entfernt (`document.getElementById("mailtoLink")` griff auf entfernte ID zu → Erstellen-Flow crashte mit `null is not an object`)
+   - Fix #2: `min-width:0` + `box-sizing:border-box` auf Datum/Uhrzeit-Flex-Wrapper (iOS Safari kollabierte Uhrzeit-Feld)
+
+2. **Email-Flow end-to-end testen** (aus gestrigen Session-Notes): Party erstellen → Email eingeben → landet die Resend-Mail mit Edit-Link wirklich?
+
+3. **Reply-To handling** — noreply + reply-to Header, oder Cloudflare Email Routing für `party@machsleicht.de`
+
+4. **Alte `guestView()` entfernen** — wenn neues Design stabil läuft
+
+5. **Live testen** mit verschiedenen Mottos (Piraten, Dino, Einhorn etc.) — Theme-System prüfen
+
+6. **Foto-Crop verbessern** (neu aus Mobile-Test 20.04.):
+   - Aktuell: Plus-Button zum Vergrößern
+   - Soll: **Range-Slider für Zoom** + **draggable Image** für Position
+   - Nicht zwingend mit dem Rest — könnte auch eigenes kleines Ticket sein, aber logisch zu den Partyseite-Follow-Ups
+
+7. **Beteiligen custom amount** (aus gestrigen Session-Notes)
+
+8. **Kill List + Internal Linking Audit** (aus gestrigen Session-Notes)
+
+**Aufwand:**
+- Cloudflare-Deploy: 5 Min
+- Email-Test + Reply-To: 20 Min
+- Foto-Crop-Umbau: 45–60 Min
+- Kleinkram (Mottos-Test, guestView-Cleanup, Beteiligen): ~1 Std gesamt
+- **Total: 2–3 Std Laptop-Session**
+
+**Zeitplan:** Nächste Laptop-Session. Priorität 1 ist Cloudflare-Deploy, weil ohne den bleibt der Erstellen-Flow für Nutzer kaputt.
+
+**Erfolgs-Kriterien:**
+- Party-Erstellung auf `party.machsleicht.de` funktioniert ohne Fehler (Mobile-Test)
+- Uhrzeit-Feld steht bündig mit Datum-Feld
+- Email-Versand via Resend getestet und funktioniert
+- Foto-Crop mit Slider + Drag
 
 ---
 
@@ -1079,6 +1124,7 @@ Affiliate-Kategorien pro Motto: Figuren-Set, Masken/Verkleidung, Partygeschirr, 
 
 ## Versionshistorie
 
+- **20.04.2026 (Mobile):** Mobile-Test der Partyseite deckt 2 Bugs auf (JS-Crash bei Erstellen via Legacy-`mailtoLink`-Zugriff, iOS-Safari-Uhrzeitfeld kollabiert). Hotfix-Commit `a694178` gepusht, **wartet auf Cloudflare-Deploy**. Neues PBI **P1-16** (Partyseite Follow-Ups) als #8 in Roadmap aufgenommen — inkl. Foto-Crop-Verbesserung (Slider statt Plus-Button, draggable Image), Email-End-to-End-Test, Reply-To-Handling, alte `guestView()`-Cleanup, Beteiligen-Custom-Amount, Kill-List + Internal-Linking-Audit (letztere 3 aus Session-Notes 20.04.). Alle Folge-Nummerierungen verschoben (Sequenz 1–37).
 - **19.04.2026 (Teil 2):** Prio-Tabelle komplett neu sortiert als Ausführungs-Roadmap mit Sequenz-Nummern 1–36. Prio-Hochstufungen: P1-5→P0-5 (Token-Deadline), P2-1→P1 (Hero-Funnel), P2-19→P1 (HTML-Bug), P2-3→P1 (Ergebnis-Vorschauen). Prio-Runterstufungen: P1-9→P2 (Dependency auf P2-10), P1-11→P2 (evergreen ohne Deadline). Neue Ausführungs-Cluster: „Jetzt (1–2 Wochen)", „Unmittelbar danach", „Mittelfristig (Mai–Juli)", „Vor dem Herbst-Peak", „Später (Q4 + Q1 2027)".
 - **19.04.2026:** 2 externe Audits durchgearbeitet (Grinch-Mode SEO-Audit + Elite-Produktaudit). **4 neue PBIs** aufgenommen: P1-15 (Email-Capture am Planer-Output), P2-20 (Datenübergabe Planer→Tools), P2-21 (Seiten-Rollen-Matrix), P3-11 (Pinterest, geparkt). **P2-3 und P3-5 erweitert** um Audit-Erkenntnisse. Strategie-Notizen in STRATEGIE.md 0.5 (Brand-Kollisions-Risiko machsleicht vs. machdichleicht) und 0.6 (Pinterest-Entscheidungs-Trigger) dokumentiert. Audit-Befunde zu OG-Tags (338/356 vorhanden), Sitemap (existiert) und Motto-Zahlen-Inkonsistenz (14 vs 17) als **widerlegt** oder nicht mehr aktuell markiert — keine Aktion nötig.
 - **16.04.2026 (Abend, Zusatz):** 10 neue PBIs aus STRATEGIE.md Ideenbibliothek aufgenommen (P1-12, P1-13, P1-14, P2-16, P2-17, P2-18, P3-7, P3-8, P3-9, P3-10). Alle mit ausführlichen Beschreibungen, Content-Clustern, Revenue-Projektionen und Checklisten. STRATEGIE.md um 6-12-Monats-Roadmap (Abschnitt 8a, 8b, 8c) erweitert.
