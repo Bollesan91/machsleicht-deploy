@@ -506,8 +506,8 @@ function creatorPage() {
   <div class="card fade-up hidden" id="step2">
     <h2 style="font-size:16px;margin-bottom:14px">2. Wann & Wo</h2>
     <div style="display:flex;gap:8px" class="field">
-      <div style="flex:1"><label>Datum</label><input type="date" id="date"></div>
-      <div style="flex:1"><label>Uhrzeit</label><input type="time" id="time"></div>
+      <div style="flex:1;min-width:0"><label>Datum</label><input type="date" id="date" style="box-sizing:border-box"></div>
+      <div style="flex:1;min-width:0"><label>Uhrzeit</label><input type="time" id="time" style="box-sizing:border-box"></div>
     </div>
     <div class="field"><label>Ende ca.</label><input type="time" id="endTime"></div>
     <div class="field"><label>Adresse</label><textarea id="address" rows="2" placeholder="Stra\u00DFe, PLZ Ort" maxlength="200"></textarea></div>
@@ -700,7 +700,6 @@ async function createParty(){
     document.getElementById("previewBtn").href=data.url;
     document.getElementById("editBtn").href=data.editUrl;
     document.getElementById("codeHint").textContent=childName;
-    document.getElementById("mailtoLink").href="mailto:?subject="+encodeURIComponent("Edit-Link: "+childName+"s Partyseite")+"&body="+encodeURIComponent("Dein Edit-Link:\\n"+data.editUrl+"\\n\\nG\u00E4ste-Link:\\n"+data.url);
     [1,2,3].forEach(i=>document.getElementById("step"+i).classList.add("hidden"));
     document.getElementById("result").classList.remove("hidden");
     window._pd={...data,childName,motto:document.getElementById("motto").value};
