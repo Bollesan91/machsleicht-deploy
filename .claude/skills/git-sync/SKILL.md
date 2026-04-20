@@ -118,7 +118,7 @@ Die Dateien unter `.claude/sessions/hannes.md` und `.claude/sessions/bolle.md` h
 
 - Repository: `C:\Users\Hannes\machsleicht-deploy` (VM-Pfad variiert je nach Session)
 - User: Bollesan91 / cbollweg@gmx.de
-- Remote-URL enthält PAT (läuft am 25.04.2026 ab)
+- Remote-URL enthält PAT (kein Ablaufdatum)
 - **Arbeitsbranch:** `draft` (hier wird entwickelt)
 - **Deploy-Branch:** `main` (Netlify deployt nur diesen Branch)
 
