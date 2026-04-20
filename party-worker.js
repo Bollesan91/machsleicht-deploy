@@ -176,7 +176,7 @@ export default {
       const party = JSON.parse(raw);
       const edit = url.searchParams.get("edit");
       if (edit === party.editToken) return json(party);
-      const {editToken,...safe} = party;
+      const {editToken,email,...safe} = party;
       safe.wishes = (safe.wishes||[]).map(w=>({...w,claimedBy:undefined,claimedCount:(w.claimedBy||[]).length,isFull:!w.sharedGift&&(w.claimedBy||[]).length>0}));
       safe.guestCount = safe.guests.filter(g=>g.status==="ja").length;
       safe.guests = undefined;
@@ -191,7 +191,7 @@ export default {
       const party = JSON.parse(raw);
       const body = await request.json();
       if (body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403);
-      ["childName","age","motto","mottoEmoji","mottoColor","date","time","endTime","address","notes","askAllergies","askPickup","paypalMe"].forEach(f=>{if(body[f]!==undefined)party[f]=body[f];});
+      ["childName","age","motto","mottoEmoji","mottoColor","date","time","endTime","address","notes","askAllergies","askPickup","paypalMe","email"].forEach(f=>{if(body[f]!==undefined)party[f]=body[f];});
       if (Array.isArray(body.wishes)) {
         party.wishes = body.wishes.slice(0,MAX_WISHES).map(w=>({
           id:w.id||generateId(6),title:(w.title||"").slice(0,100),url:(w.url||"").slice(0,500),
@@ -263,6 +263,58 @@ export default {
       const photo = await env.PARTY.get(`photoRound:${id}`);
       if (!photo) return json({error:"Kein Foto"},404);
       return json({photo});
+    }
+
+    // POST /api/party/:id/send-edit-link
+    if (path.match(/^\/api\/party\/[a-z0-9]+\/send-edit-link$/) && request.method === "POST") {
+      const id = path.split("/")[3];
+      const raw = await env.PARTY.get(`party:${id}`);
+      if (!raw) return json({error:"Party nicht gefunden"},404);
+      const party = JSON.parse(raw);
+      const body = await request.json();
+      if (body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403);
+      const email = (body.email||"").trim().slice(0,200);
+      if (!email || !email.includes("@")) return json({error:"Ung\u00FCltige E-Mail"},400);
+
+      // Save email to party
+      party.email = email;
+      await env.PARTY.put(`party:${id}`, JSON.stringify(party), {expirationTtl: calcTTL(party.date)});
+
+      // Send email via Resend
+      if (!env.RESEND_API_KEY) return json({error:"E-Mail-Versand nicht konfiguriert"},500);
+      const childName = party.childName || "Kind";
+      const editUrl = `https://party.machsleicht.de/${id}?edit=${party.editToken}`;
+      const guestUrl = `https://party.machsleicht.de/${id}`;
+      const emailHtml = `<div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:24px">
+        <p style="color:#8B7D6B;font-size:14px"><strong style="color:#D4812A">mach's</strong> leicht</p>
+        <h1 style="font-size:20px;color:#2D2319;margin:16px 0 8px">Dein Edit-Link f\u00FCr ${esc(childName)}s Partyseite</h1>
+        <p style="color:#555;font-size:14px;line-height:1.6">Mit diesem Link kannst du Zusagen einsehen, die Seite bearbeiten und die Wunschliste verwalten. <strong>Speichere diese E-Mail!</strong></p>
+        <a href="${editUrl}" style="display:block;background:#D4812A;color:#fff;text-align:center;padding:14px 24px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;margin:20px 0">\u{1F511} Partyseite bearbeiten</a>
+        <p style="color:#888;font-size:13px;margin-top:20px"><strong>G\u00E4ste-Link zum Teilen:</strong><br><a href="${guestUrl}" style="color:#D4812A">${guestUrl}</a></p>
+        <hr style="border:none;border-top:1px solid #eee;margin:24px 0">
+        <p style="color:#aaa;font-size:11px">Diese E-Mail wurde von <a href="https://machsleicht.de" style="color:#aaa">machsleicht.de</a> gesendet, weil du eine Partyseite erstellt hast.</p>
+      </div>`;
+
+      try {
+        const res = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {"Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json"},
+          body: JSON.stringify({
+            from: env.RESEND_FROM || "mach's leicht <party@machsleicht.de>",
+            to: [email],
+            subject: `Dein Edit-Link: ${childName}s Partyseite`,
+            html: emailHtml
+          })
+        });
+        if (!res.ok) {
+          const err = await res.text();
+          return json({error:"E-Mail konnte nicht gesendet werden"},500);
+        }
+      } catch(e) {
+        return json({error:"E-Mail-Versand fehlgeschlagen"},500);
+      }
+
+      return json({ok:true});
     }
 
     // Affiliate Redirect /go/:partyId/:wishId
@@ -497,20 +549,23 @@ function creatorPage() {
       <h2 style="font-size:20px">Partyseite ist fertig!</h2>
       <p style="color:var(--m);font-size:13px;margin-top:4px">G\u00E4ste geben den Vornamen \u201E<span id="codeHint" style="font-weight:700;color:var(--a)"></span>\u201C ein, um die Seite zu sehen.</p>
     </div>
+    <div style="display:flex;gap:8px;margin-bottom:12px">
+      <a class="btn" id="previewBtn" href="#" target="_blank" style="flex:1;background:var(--a)">\u{1F440} Vorschau ansehen</a>
+      <a class="btn btn-outline" id="editBtn" href="#" target="_blank" style="flex:1">\u270F\uFE0F Bearbeiten</a>
+    </div>
     <div class="share-box" style="margin-bottom:12px">
       <p style="font-size:12px;color:var(--a);font-weight:600;margin-bottom:6px">G\u00C4STE-LINK</p>
       <p style="font-size:14px;font-weight:700;word-break:break-all" id="guestUrl"></p>
       <button class="btn" style="margin-top:10px" onclick="shareGuest()">\u{1F4F2} Per WhatsApp teilen</button>
     </div>
-    <div style="margin-bottom:12px">
-      <p style="font-size:12px;color:var(--m);font-weight:600;margin-bottom:6px">DEIN EDIT-LINK (nur f\u00FCr dich!)</p>
-      <p style="font-size:13px;color:var(--m);word-break:break-all" id="editUrl"></p>
-      <div style="display:flex;gap:8px;margin-top:8px">
-        <button class="btn btn-outline btn-sm" onclick="copyEdit()" style="flex:1">\u{1F4CB} Kopieren</button>
-        <a class="btn btn-outline btn-sm" id="mailtoLink" href="#" style="flex:1">\u{1F4E7} Per E-Mail</a>
-      </div>
+    <div style="background:#FFF3E0;border:2px solid #FFE0B2;border-radius:var(--r);padding:16px;margin-bottom:12px">
+      <p style="font-size:14px;font-weight:700;color:#E65100;margin-bottom:4px">\u26A0\uFE0F Wichtig: Edit-Link sichern!</p>
+      <p style="font-size:13px;color:#BF360C;margin-bottom:12px;line-height:1.5">Ohne diesen Link kannst du <strong>keine Zusagen sehen</strong> und <strong>nichts mehr \u00E4ndern</strong>. Wir empfehlen, ihn dir jetzt per E-Mail zu schicken.</p>
+      <div class="field" style="margin-bottom:8px"><input type="email" id="editEmail" placeholder="deine@email.de" style="font-size:15px"></div>
+      <button class="btn" onclick="sendEditEmail()" id="sendEditBtn" style="background:#E65100">\u{1F4E7} Edit-Link jetzt per E-Mail sichern</button>
+      <p id="editUrl" style="display:none"></p>
+      <p id="editEmailSent" class="hidden" style="font-size:12px;color:#2E7D32;text-align:center;margin-top:8px;font-weight:600">\u2705 E-Mail-App ge\u00F6ffnet!</p>
     </div>
-    <p style="font-size:12px;color:var(--m);text-align:center;margin-top:12px">\u26A0\uFE0F Speichere den Edit-Link! Nur damit kannst du Zusagen sehen.</p>
   </div>
 
   <div class="footer"><a href="https://machsleicht.de">machsleicht.de</a> \u00B7 <a href="https://machsleicht.de/impressum">Impressum</a> \u00B7 <a href="https://machsleicht.de/datenschutz">Datenschutz</a></div>
@@ -642,6 +697,8 @@ async function createParty(){
     const data=await res.json();if(!res.ok)throw new Error(data.error||"Fehler");
     document.getElementById("guestUrl").textContent=data.url;
     document.getElementById("editUrl").textContent=data.editUrl;
+    document.getElementById("previewBtn").href=data.url;
+    document.getElementById("editBtn").href=data.editUrl;
     document.getElementById("codeHint").textContent=childName;
     document.getElementById("mailtoLink").href="mailto:?subject="+encodeURIComponent("Edit-Link: "+childName+"s Partyseite")+"&body="+encodeURIComponent("Dein Edit-Link:\\n"+data.editUrl+"\\n\\nG\u00E4ste-Link:\\n"+data.url);
     [1,2,3].forEach(i=>document.getElementById("step"+i).classList.add("hidden"));
@@ -652,6 +709,19 @@ async function createParty(){
 }
 function shareGuest(){const d=window._pd;const hasW=wishes.some(w=>w.title.trim());const t=(d.motto?d.childName+"s "+d.motto:d.childName+"s Geburtstag")+"! \u{1F389}\\n\\n"+(hasW?"Hier sind alle Infos inkl. Wunschliste, damit wir Doppelgeschenke vermeiden:":"Alle Infos & Zusage hier:")+"\\n"+d.url;window.open("https://wa.me/?text="+encodeURIComponent(t));}
 function copyEdit(){navigator.clipboard.writeText(window._pd.editUrl).then(()=>{const b=event.target;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Kopieren",2000);});}
+async function sendEditEmail(){
+  var email=document.getElementById("editEmail").value.trim();
+  if(!email||email.indexOf("@")<1){alert("Bitte g\\x27ltige E-Mail eingeben");return;}
+  var d=window._pd;
+  var btn=document.getElementById("sendEditBtn");
+  btn.textContent="\\u23F3 Wird gesendet...";btn.disabled=true;
+  try{
+    var r=await fetch(API+"/party/"+d.id+"/send-edit-link",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({editToken:d.editToken,email:email})});
+    if(!r.ok){var err=await r.json();throw new Error(err.error||"Fehler");}
+    btn.textContent="\\u2705 Gesendet!";
+    document.getElementById("editEmailSent").classList.remove("hidden");
+  }catch(e){alert("Fehler: "+e.message);btn.textContent="\\u{1F4E7} Edit-Link jetzt per E-Mail sichern";btn.disabled=false;}
+}
 const MC={"piraten":"#8B4513","einhorn":"#E040A0","dino":"#4CAF50","feuerwehr":"#D32F2F","weltraum":"#1565C0","meerjungfrau":"#00ACC1","prinzessin":"#E91E63","safari":"#F57F17","detektiv":"#37474F","superheld":"#D32F2F","zirkus":"#FF6F00","baustelle":"#F57F17","frozen":"#4FC3F7","minecraft":"#4CAF50","ninjago":"#D32F2F","paw patrol":"#1976D2","pokemon":"#FFC107","spider-man":"#D32F2F","super mario":"#D32F2F","halloween":"#E65100"};
 function autoColor(m){if(!m)return"#D4812A";m=m.toLowerCase();for(const[k,c]of Object.entries(MC)){if(m.includes(k))return c;}return"#D4812A";}
 function pickMotto(btn,name,emoji){

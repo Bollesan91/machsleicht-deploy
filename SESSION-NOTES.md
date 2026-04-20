@@ -1,57 +1,55 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 20.04.2026 (Session #5, Opus 4.6) — Partyseite Komplett-Redesign Gästeansicht
+**Datum:** 20.04.2026 (Session #6, Opus 4.6) — Vorschau/Edit-Buttons + Resend Email-Integration
 
 ## Was wurde gemacht
 
-### 1. Game-iframe Fix
-- URLs von relativ auf absolut geändert (party.machsleicht.de → machsleicht.de)
-- Piratenspiel war live, nur die URL war falsch aufgelöst
+### 1. Result-Page: Vorschau & Edit-Buttons
+- Neue Buttons "👀 Vorschau ansehen" + "✏️ Bearbeiten" auf der Erfolgsseite nach Party-Erstellung
+- Links werden dynamisch mit Party-URL bzw. Edit-URL befüllt
+- Öffnen in neuem Tab (`target="_blank"`)
 
-### 2. Dual-Crop Foto-Upload
-- Zwei Crop-Bereiche: Hero-Foto (4:3, 800×600) + runder Spiel-Avatar (120×120)
-- Drag-to-reposition mit Pointer Events + Zoom-Slider
-- Erklärungstexte für beide Bereiche
-- Hero von Banner (3:1) auf klassisches Fotoformat (4:3) umgestellt
-- Server-seitige photoRound-Injection in Game-iframe URL (statt client-side)
+### 2. Email-Capture mit Resend-Integration
+- Alten mailto-Link ersetzt durch echten Email-Versand via Resend API
+- Neuer API-Endpoint: `POST /api/party/:id/send-edit-link`
+  - Validiert editToken, speichert Email am Party-Objekt
+  - Sendet HTML-Email mit Edit-Link-Button + Gäste-Link via Resend
+- Orange Warning-Box statt subtiler Edit-URL-Anzeige
+  - "⚠️ Wichtig: Edit-Link sichern!" + Erklärungstext
+  - Email-Input + "📧 Edit-Link jetzt per E-Mail sichern" Button
+  - Erfolgs-Feedback nach Versand
+- Email-Feld wird auch über PUT-API akzeptiert und gespeichert
+- Email wird aus der öffentlichen GET-API herausgefiltert (Datenschutz)
 
-### 3. Partyseite Gästeansicht — Komplett-Redesign (guestView → guestPageFull)
-- **Theme-System:** THEMES-Objekt mit 17 Motto-Paletten (a, d, m, l, bg, h1-h3 Gradient-Stops)
-  - Piraten, Dino, Safari, Weltraum, Detektiv, Superheld, Prinzessin, Einhorn, Meerjungfrau, Feuerwehr, Ritter, Zirkus, Baustelle, Frozen, Minecraft, Halloween + Default
-- **Neuer Hero:** Motto-Gradient, Emoji-Wasserzeichen (220px, opacity 0.07), Shimmer-Animation, Text-Gradient auf Kindername
-- **SVG-Wellen-Divider** Hero → Content (farblich passend zum Motto)
-- **Countdown-Badge:** "Noch X Tage!" als Glasmorphism-Pill
-- **Live-Gäste-Counter:** "Schon X Kinder dabei!" mit Initialen-Dots
-- **Canvas-Konfetti-Engine:** 150 Partikel, 3 Shapes (rect/circle/strip), Motto-Farben
-- **Scroll-Reveal:** IntersectionObserver statt sofortige Animation
-- **RSVP-Buttons:** Bounce-Animation + Konfetti bei "Dabei!"
-- **RSVP-Erfolgsstate:** Formular faded smooth aus, Erfolg + Konfetti + Termin-Button
-- **Wunschlisten-Fortschrittsbalken:** "X von Y reserviert"
-- **Card-Hover-Lift** auf Desktop
-- **Themed Code-Gate:** Vollbild mit Motto-Gradient statt Card in Container
-- **iframe-Höhe:** min(85vh, 700px)
-
-### 4. Frontend-Mockup
-- partyseite-entwurf.html als Referenz/Vorarbeit erstellt (outputs/)
+### 3. Resend Email-Service eingerichtet
+- Resend-Account erstellt (GitHub-Login)
+- Domain machsleicht.de verifiziert (DKIM, SPF, DMARC DNS-Records in Cloudflare)
+- API-Key erstellt (all domains)
+- Cloudflare Worker Environment Variables gesetzt:
+  - `RESEND_API_KEY` — API-Key von Resend
+  - `RESEND_FROM` — `mach's leicht <party@machsleicht.de>`
 
 ## Nächste Schritte
 
-1. **Worker in Cloudflare deployen** (Quick Editor, party-worker.js einfügen)
-2. **Live testen** mit verschiedenen Mottos (Piraten, Dino, Einhorn etc.)
-3. **Alte guestView() entfernen** wenn alles stabil läuft
-4. **Datenübergabe Einladung → Partyseite** (P2-20)
-5. **Beteiligen custom amount**
-6. **Kill List + Internal Linking Audit**
+1. **Email-Flow end-to-end testen** (Party erstellen → Email eingeben → Email erhalten?)
+2. **Reply-To handling** — noreply + reply-to Header, oder Cloudflare Email Routing für party@machsleicht.de
+3. **Alte guestView() entfernen** wenn neues Design stabil läuft
+4. **Live testen** mit verschiedenen Mottos (Piraten, Dino, Einhorn etc.)
+5. **Datenübergabe Einladung → Partyseite** (P2-20)
+6. **Beteiligen custom amount**
+7. **Kill List + Internal Linking Audit**
 
 ## Erkenntnisse
 - NIEMALS `\/`, `\'`, `\d`, `\.` in Template-Literalen → immer `\\x27`, `[.]`, `[^0-9]`, `endsWith()`
 - Party-Worker Deploy über Cloudflare Quick Editor
 - CSS-Variablen-Ansatz erlaubt ein HTML-Template für alle Mottos
-- getTheme(motto) matched Motto-String gegen THEMES-Keys
+- Resend Free Tier: 3.000 Emails/Monat, 100/Tag — reicht für den Start
+- Email-Capture über Edit-Link-Sicherung bietet echten Mehrwert + sammelt Marketing-Emails
 
 ## Status der Site nach dieser Session
 - Homepage: Hero mit Social-Proof-Zeile + 4 Demo-Cards
-- Partyseite: Redesign BEREIT (noch nicht deployed)
+- Partyseite: Komplett-Redesign LIVE (Theme-System, Konfetti, Scroll-Reveal)
+- Result-Page: Vorschau + Edit-Buttons + Email-Capture
+- Email-Versand: Resend live konfiguriert (machsleicht.de verifiziert)
 - Produkte: 8 live
-- PBI #65: Email-Capture (Backlog)
