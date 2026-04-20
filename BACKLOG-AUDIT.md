@@ -26,7 +26,7 @@
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
 |---|--------|------|--------|------------------|---------|---------|
-| 8 | ⏳ | **P1** | P1-15 | **Email-Capture am Planer-Output** | 1–2 Tage | Braucht P1-10. Größter Retention-Hebel |
+| 8 | 🚧 | **P1** | P1-15 | **Email-Capture (Pilot: Einladung)** | 3–4 Std | **Blockiert: MailerLite-Account** (Bolle macht am Desktop). Dann Pilot auf Einladung, später Partyseite + Schatzsuche |
 | 9 | ⏳ | **P1** | P2-20 | **Datenübergabe Planer → Tools** | 4–6 Std | Ökosystem-Prinzip umsetzen, nach P1-10 |
 | 10 | ⏳ | **P1** | P2-13 | Gumroad: 2 Digital-Produkte (Piraten+Dino) | 4h/Produkt | +100€/Monat bei aktuellem Traffic |
 | 11 | ⏳ | **P1** | P2-15 | Awin-Anmeldung (Otto, myToys, Thalia) | 30 Min + Warten | Prüfung dauert 1–3 Tage, früh starten |
@@ -411,6 +411,15 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 **Motivation:** Externes Audit (19.04.2026) identifiziert **fehlenden Email-Capture als größte strukturelle Schwäche der Seite**. Nutzer plant, schließt Tab, ist weg — bis der nächste Kindergeburtstag in 12 Monaten sie zurück zu Google schickt. Das sind aktuell **0 % Retention**. Eine simple "Plan als PDF per Mail"-Mechanik am Ende des Wizards fängt laut Branchen-Benchmarks **15–30 % der Abschließer** ein. Bei ~80 Besuchern/Tag, 20 % Wizard-Start, 40 % Abschluss → ~6 Abschlüsse/Tag → bei 20 % Opt-In ~40 neue Kontakte/Monat aus Nullbasis.
 
 **Warum P1, nicht P3:** Hebel ist so groß, dass jeder Tag ohne Capture verlorene Eltern-Kontakte sind. Und: Eltern haben 1–3 Geburtstage/Jahr + oft mehrere Kinder → eine eingefangene Adresse = 5–15 Jahre Retention-Potential.
+
+**⚠️ Scope-Revision (20.04.2026):**
+- **Neue Hebel-Logik:** Nicht "PDF per Mail" (schwacher Köder — Plan ist eh sichtbar), sondern **"Link zum fertigen Asset per Mail"** für zeitversetzt genutzte Outputs (Einladung, Partyseite, Schatzsuche)
+- **Pilot auf Einladung** statt Planer: Höchster Nutzen (Einladung wird erst später verschickt, Link im Postfach löst echtes Problem), simpler Scope, Template-Pattern für Partyseite + Schatzsuche wiederverwendbar
+- **Mini-MVP statt Voll-Spec:** Kein jsPDF, kein PDF-Attachment — nur Link + später Erinnerungs-Mail
+- **Rollout-Plan:** Einladung zuerst → Daten sammeln (2 Wochen) → bei Opt-In ≥15% auf Partyseite + Schatzsuche ausrollen (je 1–2h wegen Template-Wiederverwendung)
+- **Planer bekommt separaten Hebel:** Nicht Link-per-Mail, sondern Erinnerungs-Mail 7 Tage vor Geburtstag (= Nurture-Flow, spätere Session)
+
+**Blockiert durch:** MailerLite-Account (Bolle setzt am Desktop auf, inkl. EU-Rechenzentrum, Domain-Verifizierung, AV-Vertrag, API-Key). Dann ~3–4h Code: Einladungstool-Frontend + Worker-Endpoint + MailerLite-Template + Datenschutzerklärung-Update.
 
 **Was gebaut wird:**
 - Am Ende des Planer-Wizards (direkt nach Plan-Output): Sektion **"Plan als PDF speichern — per Mail zugeschickt"**
