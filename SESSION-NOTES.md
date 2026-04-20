@@ -1,58 +1,54 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 19.04.2026 (Session #3, Opus 4.6) — Social Proof, Demo-Vorschauen, Partyseite LIVE, Auswirkungs-Check
+**Datum:** 20.04.2026 (Session #4, Opus 4.6) — Partyseite Bugfixes, Email-Capture PBI, Cloudflare Deploy
 
 ## Was wurde gemacht
 
-### 1. P1-7 Social Proof auf Homepage
-- Trust-Zeile im Hero: "🟢 Von Eltern entwickelt · **17 Mottos** · Ohne Anmeldung"
-- In SEO-Fallback (index.html) und React (js/index.js) konsistent
-- Bewusst keine Fake-Nutzerzahlen — ehrliche Aussagen die auch bei Monetarisierung stimmen
+### 1. Cloudflare Worker Deploy (party-machsleicht)
+- Worker erfolgreich via Cloudflare API deployed
+- Custom Domain party.machsleicht.de konfiguriert
 
-### 2. P2-3 Ergebnis-Vorschauen (Demo-Cards)
-- Neue "So sieht's aus"-Sektion auf der Homepage (React) mit 4 Demo-Cards:
-  - 📋 Kindergeburtstags-Plan (Piraten, Zeitplan + Kosten)
-  - 🗺️ Schatzkarte (Piraten, 4 Stationen)
-  - 💌 Einladungskarte (Dino, mit "interaktivem Fang-Spiel" Hinweis)
-  - 📱 WhatsApp-Partyseite (Zu-/Absagen-Liste)
-- SEO-Fallback: Schatzkarten- und Partyseite-Vorschau ergänzt (Plan + Einladung gab's schon)
-- Jede Card mit CTA zum echten Tool
+### 2. Email-Capture Strategie entworfen + als PBI eingetragen
+- 5 Touchpoints definiert (Planer-Output, Partyseite-Creator, Gast-Viral, Einladung, Schatzsuche)
+- PBI #65 im Backlog: "Email-Capture: 5 Touchpoints + MailerLite + DSGVO"
+- Bewusst nach hinten priorisiert
 
-### 3. Partyseite von "BALD" auf "LIVE" gesetzt
-- products-Array: status:"soon" → status:"live"
-- Sub-Text: "bald verfügbar" → "per WhatsApp teilen"
-- validate-all.sh: Partyseite-Live-Check ergänzt
+### 3. Partyseite Gästeansicht — 4 Bugfixes
+- **Tab-Titel Leak:** Gäste sahen "ess wird 5!" als Tab-Titel → Code-Gate nutzlos. Fix: Separate `ogTitleGuest = "Du bist eingeladen!"` für Gästeansicht
+- **Script-Crash (Regex):** Template-Literal schluckt Backslash in `/\/$/` → `//` wird JS-Kommentar → gesamtes Script tot. Fix: `ppRaw.endsWith("/")` statt Regex
+- **Script-Crash (claimWish):** Template-Literal schluckt `\'` → String kaputt → SyntaxError. Fix: `\\x27` statt `\'`
+- **Regex-Escapes:** `\d` und `\.` im Template werden geschluckt. Fix: `[^0-9.,]` und `[.]`
+- **Root Cause:** Backslash-Escapes in Template-Literalen (Backticks) werden vom Template verschluckt
 
-### 4. PBI-Auswirkungs-Check eingerichtet
-- 8-Punkte-Checkliste in CLAUDE.md: Status-Badges, Texte, Demos, Feature-Zahlen, Validator, Links, Sitemap, SEO↔React
-- Wird bei jedem erledigten PBI durchlaufen
+### 4. Git-Sync
+- Sandbox und User-PC auf origin/main synchronisiert
 
 ## Nächste Schritte
 
 **Top-Prio für nächste Session:**
-1. **P1-15 Email-Capture am Planer-Output** — Braucht P1-10 (erledigt), größter Retention-Hebel
-2. **P2-20 Datenübergabe Planer → Tools** — Ökosystem-Prinzip
-3. **P2-13 Gumroad: 2 Digital-Produkte** — Piraten+Dino, +100€/Monat
-4. **P1-8 Motto-Hauptseiten auf Elite-Niveau** — nächstes Motto: Einhorn oder Paw Patrol
-5. **Demo-Einladung mit Beispiel-Foto** — URL mit vorausgefüllten Daten (offen von P2-3)
+1. **Motto-Chips im Party-Creator** — Freitext → klickbare Motto-Auswahl (10 Spiel-Mottos + "Eigenes"), damit Game-Embedding zuverlässig funktioniert
+2. **Datenübergabe Einladung → Partyseite** (P2-20) — CTA im Einladungs-Ergebnis, Daten per URL-Params vorausfüllen
+3. **Partyseite aufhübschen** — Gästeansicht "trist", mehr Farbe/Motto-Theming gewünscht
+4. **P1-15 Email-Capture** — als PBI #65 dokumentiert
+5. **Beteiligen-Betrag** — User will evtl. eigenen Betrag statt Auto-Berechnung
 
-**Cloudflare Security:**
-- "Always Use HTTPS" + HSTS für party.machsleicht.de aktivieren
+**Erkenntnisse:**
+- NIEMALS `\/`, `\'`, `\d`, `\.` in Template-Literalen → immer `\\x27`, `[.]`, `[^0-9]`, `endsWith()`
+- Party-Worker Deploy über Cloudflare Quick Editor
 
 ## Offene Fragen
 
-- Einhorn oder Paw Patrol als nächstes Elite-Motto?
-- Email-Capture: „Plan als PDF per Mail" aggressiv oder dezent?
-- Awin-Freischaltung: Wann kommt die Publisher-ID?
-- Demo-Einladung: Welches Stock-Foto als Beispiel-Kind?
+- Motto-Chips: Welche Mottos anbieten?
+- Partyseite Design: Vorbild für "weniger trist"?
+- Einladung → Partyseite: Foto automatisch übernehmen?
+- Beteiligen: Eigener Betrag oder Auto-Berechnung?
 
 ## Status der Site nach dieser Session
 
-- Homepage: Hero mit Social-Proof-Zeile + 4 Demo-Cards (Plan, Schatzkarte, Einladung, Partyseite)
-- Partyseite: Status LIVE (products-Array + Sub-Text)
+- Homepage: Hero mit Social-Proof-Zeile + 4 Demo-Cards
+- Partyseite: LIVE, 4 Bugfixes deployed
 - Produkte: 8 live, 0 bald, 0 geplant
 - Sitemap: 223 URLs
 - 301-Redirects: 144 aktiv
-- GSC: verifiziert, Sitemap eingereicht
-- PBI-Auswirkungs-Check: 8-Punkte-System in CLAUDE.md
+- PBI #65: Email-Capture (Backlog)

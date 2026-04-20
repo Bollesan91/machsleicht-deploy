@@ -499,7 +499,9 @@ function partyPage(party, isEditor) {
   const motto = esc(party.motto);
   const emoji = esc(party.mottoEmoji || "\u{1F389}");
   const dateStr = party.date ? new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long",year:"numeric"}) : "";
-  const ogTitle = name ? `${name} wird ${age}! ${emoji}` : "Kindergeburtstag! \u{1F389}";
+  const ogTitleCreator = name ? `${name} wird ${age}! ${emoji}` : "Kindergeburtstag! \u{1F389}";
+  const ogTitleGuest = "Du bist eingeladen! \u{1F389}";
+  const ogTitle = isEditor ? ogTitleCreator : ogTitleGuest;
   const ogDesc = motto ? `${motto} \u2014 Zu-/Absage, Infos & Wunschliste` : "Alle Party-Infos auf einer Seite";
   const ogUrl = `https://party.machsleicht.de/${party.id}`;
 
@@ -678,10 +680,10 @@ function guestView(party, color, dateStr, name, age, motto, emoji) {
       const pp=data.paypalMe||"";
       el.innerHTML=data.wishes.map(w=>{
         const taken=w.isFull,shared=w.sharedGift,hasLink=w.url&&w.url.startsWith("http");
-        const priceNum=parseFloat((w.price||"").replace(/[^\d.,]/g,"").replace(",","."));
+        const priceNum=parseFloat((w.price||"").replace(/[^0-9.,]/g,"").replace(",","."));
         const share=shared&&w.claimedCount&&priceNum?Math.ceil(priceNum/(w.claimedCount+1)):0;
         const ppRaw=pp.startsWith("http")?pp:"https://"+pp;
-        const ppUrl=pp&&share?ppRaw.replace(/\/$/,"")+"/"+(share<1?"":share):"";
+        const ppUrl=pp&&share?(ppRaw.endsWith("/")?ppRaw.slice(0,-1):ppRaw)+"/"+(share<1?"":share):"";
         return '<div class="wish-item" style="flex-wrap:wrap"><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:14px">'+escC(w.title)+'</div><div style="font-size:12px;color:var(--m)">'
           +(w.price?escC(w.price)+' \u00B7 ':'')
           +(shared?'Gemeinsam schenken'+(w.claimedCount?' ('+w.claimedCount+' dabei)':''):'')
@@ -690,7 +692,7 @@ function guestView(party, color, dateStr, name, age, motto, emoji) {
           +(shared&&share?'<div style="font-size:12px;color:var(--a);font-weight:600">\u{1F4B8} Dein Anteil: ~'+share+'\u20AC</div>':'')
           +(hasLink?'<a href="'+location.origin+'/go/'+PID+'/'+w.id+'" target="_blank" rel="noopener" style="font-size:12px;color:var(--a);font-weight:600">\u2192 '+shopLbl(w.url)+'</a>':'')
           +'</div>'
-          +(taken&&!shared?'<span class="wish-claim taken">Vergeben</span>':'<button class="wish-claim" onclick="claimWish(\''+w.id+'\',this)">'+(shared?'Beteiligen':'Schenke ich!')+'</button>')
+          +(taken&&!shared?'<span class="wish-claim taken">Vergeben</span>':'<button class="wish-claim" onclick="claimWish(\\x27'+w.id+'\\x27,this)">'+(shared?'Beteiligen':'Schenke ich!')+'</button>')
           +(shared&&ppUrl&&w.claimedCount?'<div style="width:100%;margin-top:6px"><a href="'+ppUrl+'" target="_blank" rel="noopener" class="btn btn-sm" style="background:#0070BA;font-size:12px;width:100%">\u{1F4B8} '+share+'\u20AC per PayPal senden</a></div>':'')
           +'</div>';
       }).join("");
@@ -708,7 +710,7 @@ function guestView(party, color, dateStr, name, age, motto, emoji) {
     }catch{btn.textContent="Schenke ich!";btn.disabled=false;}
   }
   function escC(s){const d=document.createElement("div");d.textContent=s;return d.innerHTML;}
-  function shopLbl(u){if(!u)return"ansehen";if(/amazon\.de/i.test(u))return"bei Amazon";if(/mytoys\.de/i.test(u))return"bei myToys";if(/thalia\.de/i.test(u))return"bei Thalia";if(/otto\.de/i.test(u))return"bei Otto";if(/jako-o\.de/i.test(u))return"bei Jako-o";if(/tausendkind\.de/i.test(u))return"bei tausendkind";if(/smythstoys/i.test(u))return"bei Smyths Toys";if(/lego\.com/i.test(u))return"bei LEGO";return"ansehen";}
+  function shopLbl(u){if(!u)return"ansehen";if(/amazon[.]de/i.test(u))return"bei Amazon";if(/mytoys[.]de/i.test(u))return"bei myToys";if(/thalia[.]de/i.test(u))return"bei Thalia";if(/otto[.]de/i.test(u))return"bei Otto";if(/jako-o[.]de/i.test(u))return"bei Jako-o";if(/tausendkind[.]de/i.test(u))return"bei tausendkind";if(/smythstoys/i.test(u))return"bei Smyths Toys";if(/lego[.]com/i.test(u))return"bei LEGO";return"ansehen";}
   </script>`;
 }
 
