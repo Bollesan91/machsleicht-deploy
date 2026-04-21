@@ -1,5 +1,52 @@
 # Session-Notizen
 
+## Cowork-Session (21.04.2026, Opus 4.7, Teil 5) — Einhorn 6–8 Jahre Elite-Niveau
+
+### Was gemacht
+
+**einhorn-6-8-jahre.html auf Elite-Niveau gebracht** — von vorher 19 KB / 303 Zeilen auf jetzt **68 KB / 807 Zeilen**, Audit-Score 85% / 3500 Wörter (Dino: 63 KB, Piraten: 85% / 2262W). Einhorn liegt damit in Wort-Tiefe über Piraten.
+
+**Narrativ:** „Regenbogen-Wächter-Ausbildung" als Pendant zur Dino-Paläontologen-Ausbildung. Die Kinder werden ausgebildet, absolvieren Prüfungen, bekommen eine Wächter-Urkunde. Bewusst geschlechtsneutral gehalten — nicht rosa-Prinzessin, sondern Prüfungen und Experimente.
+
+**Signature-Elemente:**
+- Sternenstaub-Schatzsuche (Reis + essbarer Glitzer — wiederverwendbar)
+- Regenbogen-Milch-Experiment (echte Physik: Spülmittel zerstört Oberflächenspannung — Wow-Moment wie Vulkan bei Dino)
+- Regenbogen-Parcours (Tücher in Regenbogen-Reihenfolge)
+- Einhorn-Seife gießen (Glycerin + Silikon-Förmchen — Mitgebsel-Factory)
+- Wolkenwald-Rätselrallye in Wow (5 Stationen mit Hufspuren-Fakt-Rätsel, kein Regenbogen-Redundanz)
+- „Einhorn-Tränen" statt „Dino-Pipi" (rosa Limo)
+- Regenbogen-Wolkenkuchen mit 2 Fondant-Fallback-Varianten
+- Wow-Produkt: aufblasbares Einhorn-Kostüm (Pendant zum T-Rex)
+
+**Review-Prozess (2 Runden Selbstkritik):**
+- Runde 1: 18/18 technische Elite-Checks — wirkte aber „zu gut für einen ersten Run"
+- Runde 2 auf Nachfrage: 4 echte Must-Fixes gefunden:
+  1. Gender-Inkonsistenz (Wächter·innen vs Wächter) — auf komplett neutral umgestellt (19× „Wächter")
+  2. Rätsel-Redundanz (2 Stationen Regenbogen-Farben) — Station 2 auf Hufspuren-Rätsel umgebaut
+  3. Sternenstaub-Standard fehlende Game-Tags (3/5) — ergänzt auf 5/5
+  4. FAQ „auch für Jungs" defensiver Ton — zu „gemischte Gruppen" umformuliert
+- Runde 3 nach Fixes: 1 Nice-to-have (Fondant-Fallback-Box) — eingebaut
+
+**Bekannte Schwächen (nicht gefixt in Teil 5, für späteren Refactor):**
+- Luna-Mondsilber-Namenskonzept ohne mitgelieferte Namensliste (vages Versprechen ohne Einlösung)
+- Keine eigenständige Einhorn-Signature-Mechanik, die Dino nicht hat (Glitzer-Tattoos / Mähne-flechten wäre Potenzial)
+- `einhorn-quiz.html` und `einhorn-waechterpass.html` als Druckvorlagen fehlen (Dino hat beide) → neues PBI offen
+
+### Offen für nächste Laptop-Session
+- Einhorn 3-5 Jahre auf Elite-Niveau (Narrativ wiederverwenden, altersgerecht anpassen — keine Prüfungen, mehr Staunen)
+- Einhorn 9-12 Jahre auf Elite-Niveau (Narrativ ausbauen, Wissens-Quiz prominenter, ältere Bezüge)
+- Einhorn-Quiz + Einhorn-Wächterpass als Druckvorlagen (~2 Std je)
+- Story-Framing-Doc als Pattern für nächste Mottos (Safari, Weltraum, Feuerwehr)
+- DSGVO A (Worker-Hinweis) + C (Cron) weiterhin offen
+
+### Status-Snapshot nach Teil 5
+- Einhorn 6-8: Elite ✅ (85% Audit-Score, 3500W, Dino-Parität)
+- Einhorn 3-5 + 9-12: Standard (noch ~19 KB)
+- Nächstes Elite-Ziel: Safari 6-8 ODER Einhorn 3-5 (je nachdem was du bevorzugst)
+- Repo: 40 PBIs, P1-8 in Teil-Fortschritt
+
+---
+
 ## Cowork-Session (21.04.2026, Opus 4.7, Teil 4) — DSGVO-Hygiene + Motto-Roadmap + Content-Inseln
 
 ### Was gemacht
