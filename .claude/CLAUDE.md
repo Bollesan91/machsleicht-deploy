@@ -41,9 +41,9 @@ Cowork-Sandbox kann den Windows-Git-Index NICHT direkt benutzen (Linux-Git 2.34.
   git clone -q https://Bollesan91:${PAT}@github.com/Bollesan91/machsleicht-deploy.git "$WORK"
   cd "$WORK" && git checkout -q draft
   # Geaenderte Dateien aus Mount in Clone kopieren (rsync oder cp je nach Umfang)
-  # commit + push:
+  # NUL-Padding-Check je kopierter Datei (Windows-Mount-Bug), dann commit + push:
   git add -A
-  git commit -q -m "<Beschreibung>
+  git -c user.name="Bollesan91" -c user.email="cbollweg@gmx.de" commit -q -m "<Beschreibung>
 
   Co-Authored-By: Claude <noreply@anthropic.com>"
   git push -q origin draft
@@ -54,10 +54,19 @@ Cowork-Sandbox kann den Windows-Git-Index NICHT direkt benutzen (Linux-Git 2.34.
   cd /tmp/ml-push
   git checkout -q main
   git pull -q origin main
-  git merge -q --no-ff draft -m "Merge draft: <Kurzbeschreibung> (<Datum>)"
+  git -c user.name="Bollesan91" -c user.email="cbollweg@gmx.de" merge --no-ff draft -m "Merge draft: <Kurzbeschreibung> (<Datum>)"
+  # NACH dem merge: Exit-Code pruefen oder Log gegenchecken — nicht nur auf "push OK" verlassen\!
   git push -q origin main
   git checkout -q draft
+  # Abschluss-Verifikation:
+  git log --oneline -3 main  # Merge-Commit muss oben stehen
   ```
+
+**Kritisch — zwei wiederkehrende Fehlerquellen:**
+
+1. **`-c user.name/email` ist PFLICHT bei commit UND merge.** Die Cowork-Sandbox hat kein konfiguriertes Git-Identity. Ohne die `-c`-Flags failt `git commit`/`git merge` mit `fatal: unable to auto-detect email address`, aber ein nachfolgender `git push` meldet trotzdem "OK" (weil nichts zu pushen ist). Fehler wird stillschweigend verschluckt. Deshalb: immer mit `git -c user.name="Bollesan91" -c user.email="cbollweg@gmx.de" commit/merge ...` arbeiten, UND nach dem Push per `git log --oneline -3 main` gegenchecken, dass der Merge-Commit wirklich oben steht.
+
+2. **NUL-Padding via Windows-Mount.** Das `Write`-Tool hinterlaesst Dateien auf dem Mount gelegentlich mit NUL-Bytes am Ende (Dateigroesse = alte Groesse, echter Content davor). Nach jedem Write-Tool-Einsatz auf den Mount verifizieren: `python3 -c "import sys; d=open(sys.argv[1],'rb').read(); print(len(d.rstrip(b'\x00')), len(d))" <file>` — wenn Werte differieren, via `head -c <real-size>` truncaten. Bei laengeren/komplexeren Dateien lieber gleich via bash-heredoc direkt auf Mount schreiben und den Write-Tool-Umweg sparen.
 
 **Wichtig:** Claude listet nach dem Push die Commit-Hashes (draft + ggf. main-merge) und bestaetigt dem User, dass durchgelaufen ist. Kein Terminal-Block fuer den User mehr noetig.
 
