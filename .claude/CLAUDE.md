@@ -25,38 +25,52 @@ Arbeitsbranch: `draft` | Deploy-Branch: `main`
 
 **Cowork (Desktop-App, Agent-Mode):**
 
-Cowork hat zwei harte Limitierungen, die Git-Operationen vollständig blockieren:
-1. Mount erlaubt keine Dateilöschung ("Operation not permitted")
-2. Linux-Git 2.34.1 im Sandbox kann den Windows-Git-Index nicht parsen ("unknown index entry format")
+Cowork-Sandbox kann den Windows-Git-Index NICHT direkt benutzen (Linux-Git 2.34.1 vs. Windows-Index-Format → "unknown index entry format"), und der Mount erlaubt keine Datei-Loeschung. Trotzdem kann Claude Git-Operationen durchfuehren — ueber den **PAT-Workaround**: frischer Clone in `/tmp` via HTTPS+PAT, geaenderte Dateien aus dem Mount in den Clone kopieren, von dort committen und pushen. So bleibt der gemountete Windows-Repo unberuehrt.
 
-Konsequenz: **Claude führt in Cowork KEINE `git`-Befehle aus.** Nicht einmal `git status`. Alle Git-Operationen macht der User im Terminal.
+**PAT-Quelle:** Liegt in `.git/config` der Mount-Repo unter `[remote "origin"] url = https://Bollesan91:<PAT>@github.com/...`. Claude liest ihn vor jedem Push aus, nie hardcoden.
 
-- **"Start leicht"** → Claude liest SESSION-NOTES.md und gibt Briefing. Claude fragt NICHT nach Git-Status und macht KEIN pull. Der User soll vor der Cowork-Session im Terminal `git checkout draft && git pull` gemacht haben.
-- **"Ende"** → Claude schreibt die aktualisierte SESSION-NOTES.md direkt (Datei-Write funktioniert im Mount) und gibt dem User einen kopierfertigen Commit-Block fürs Terminal:
-  ```powershell
-  cd C:\Users\Bolle\machsleicht-deploy
+**Standard-Workflow je Trigger (Cowork):**
+
+- **"Start leicht"** → Claude liest SESSION-NOTES.md aus dem Mount und gibt Briefing. KEIN `git pull` notwendig (User soll vor der Session im Terminal `git checkout draft && git pull` gemacht haben — Mount spiegelt aktuellen Stand).
+
+- **"Ende"** → Claude schreibt die aktualisierte SESSION-NOTES.md in den Mount, dann fuehrt automatisch aus:
+  ```bash
+  PAT=$(grep -oP 'Bollesan91:\Kghp_[A-Za-z0-9]+' /sessions/<sess>/mnt/machsleicht-deploy/.git/config)
+  WORK=/tmp/ml-push
+  rm -rf "$WORK"
+  git clone -q https://Bollesan91:${PAT}@github.com/Bollesan91/machsleicht-deploy.git "$WORK"
+  cd "$WORK" && git checkout -q draft
+  # Geaenderte Dateien aus Mount in Clone kopieren (rsync oder cp je nach Umfang)
+  # commit + push:
   git add -A
-  git commit -m "<Beschreibung>
+  git commit -q -m "<Beschreibung>
 
   Co-Authored-By: Claude <noreply@anthropic.com>"
-  git push
+  git push -q origin draft
   ```
-- **"Ende deploy"** → Wie "Ende", plus zusätzlicher Terminal-Block:
-  ```powershell
-  git checkout main
-  git merge draft
-  git push
+
+- **"Ende deploy"** → Wie "Ende", plus anschliessend:
+  ```bash
+  cd /tmp/ml-push
+  git checkout -q main
+  git pull -q origin main
+  git merge -q --no-ff draft -m "Merge draft: <Kurzbeschreibung> (<Datum>)"
+  git push -q origin main
+  git checkout -q draft
   ```
+
+**Wichtig:** Claude listet nach dem Push die Commit-Hashes (draft + ggf. main-merge) und bestaetigt dem User, dass durchgelaufen ist. Kein Terminal-Block fuer den User mehr noetig.
 
 ### Fehlerbehandlung (Cowork)
 
-Falls eine frühere Session in kaputtem Zustand zurückgelassen wurde (z.B. `.git/index.lock` oder renamed `.git/index.broken-cowork`), repariert der User im Terminal:
+Falls eine fruehere Session den Mount-Index lokal kaputtgemacht hat (`.git/index.lock`, `.git/index.broken-cowork`), repariert der User im Terminal:
 ```powershell
 del .git\index.lock
 del .git\index.broken-cowork  # falls vorhanden
 del .git\index
 git reset --hard origin/draft
 ```
+Das passiert nur wenn frueher mal direkt auf dem Mount-Repo Git-Operationen versucht wurden — mit dem PAT-Workaround in `/tmp` kann es nicht mehr auftreten.
 
 ### Gemeinsam (alle Umgebungen)
 - Git-User: Bollesan91 / cbollweg@gmx.de
