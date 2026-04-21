@@ -339,12 +339,13 @@ export default {
       if (!raw) return new Response(notFoundPage(),{status:404,headers:{"Content-Type":"text/html;charset=utf-8"}});
       const party = JSON.parse(raw);
       const isEditor = url.searchParams.get("edit")===party.editToken;
+      const isPreview = isEditor && url.searchParams.get("preview")==="1";
       let photoRoundB64 = "";
-      if (!isEditor) {
+      if (!isEditor || isPreview) {
         const pr = await env.PARTY.get(`photoRound:${id}`);
         if (pr) { photoRoundB64 = pr.indexOf("data:")===0 ? pr.split(",")[1] : pr; }
       }
-      return new Response(partyPage(party,isEditor,photoRoundB64),{headers:{"Content-Type":"text/html;charset=utf-8"}});
+      return new Response(partyPage(party,isEditor,photoRoundB64,isPreview),{headers:{"Content-Type":"text/html;charset=utf-8"}});
     }
 
     return new Response("Not found",{status:404});
@@ -388,6 +389,21 @@ h1,h2,h3{font-family:var(--fd)}
 .card{background:var(--card);border-radius:20px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,.04);border:1px solid var(--l);margin-top:12px}
 input,textarea{width:100%;padding:10px 14px;border:2px solid var(--l);border-radius:12px;font:400 15px var(--f);color:var(--d);background:#FAFAF5;outline:none;transition:border .2s}
 input:focus,textarea:focus{border-color:var(--a)}
+input[type=date],input[type=time]{-webkit-appearance:none;appearance:none;min-width:0;max-width:100%;display:block;min-height:44px;line-height:1.3}
+.req{color:#E53935;margin-left:3px;text-transform:none}
+.has-error input,.has-error textarea{border-color:#E53935 !important;background:#FFEBEE}
+.err-msg{color:#E53935;font-size:11px;margin-top:4px;font-weight:600;text-transform:none;letter-spacing:0}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.78);z-index:9999;display:none;padding:16px;animation:fadeIn .2s ease-out}
+.modal-overlay.show{display:flex;align-items:stretch;justify-content:center}
+.modal-panel{background:#fff;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;flex:1;max-width:520px;width:100%;box-shadow:0 20px 50px rgba(0,0,0,0.35)}
+.modal-bar{background:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;flex-shrink:0}
+.modal-bar-title{font:600 14px var(--f);color:var(--d)}
+.modal-close{background:none;border:none;font-size:26px;color:var(--m);cursor:pointer;line-height:1;padding:2px 10px;border-radius:8px}
+.modal-close:hover{background:#f5f5f5;color:var(--d)}
+.modal-iframe-wrap{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;background:#fff;min-height:0}
+.modal-iframe{width:100%;height:100%;border:none;background:#fff;display:block}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+body.modal-open{overflow:hidden}
 label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:4px}
 .field{margin-bottom:14px}
 .logo{font-family:var(--fd);font-size:20px;color:var(--d);text-align:center;padding:12px 0}
@@ -434,8 +450,8 @@ function creatorPage() {
 
   <div class="card fade-up" id="step1">
     <h2 style="font-size:16px;margin-bottom:14px">1. Das Geburtstagskind</h2>
-    <div class="field"><label>Vorname</label><input type="text" id="childName" placeholder="z.B. Emma" maxlength="50"></div>
-    <div class="field"><label>Wird wie alt?</label><input type="number" id="age" min="1" max="18" placeholder="z.B. 6"></div>
+    <div class="field"><label>Vorname<span class="req">*</span></label><input type="text" id="childName" placeholder="z.B. Emma" maxlength="50"></div>
+    <div class="field"><label>Wird wie alt?<span class="req">*</span></label><input type="number" id="age" min="1" max="18" placeholder="z.B. 6"></div>
     <div class="field"><label>Motto (optional)</label>
       <div id="mottoChips" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px">
         <button type="button" class="motto-chip" onclick="pickMotto(this,'Piraten','\u{1F3F4}\u{200D}\u{2620}\u{FE0F}')">\u{1F3F4}\u{200D}\u{2620}\u{FE0F} Piraten</button>
@@ -505,12 +521,12 @@ function creatorPage() {
 
   <div class="card fade-up hidden" id="step2">
     <h2 style="font-size:16px;margin-bottom:14px">2. Wann & Wo</h2>
+    <div class="field"><label>Datum<span class="req">*</span></label><input type="date" id="date"></div>
     <div style="display:flex;gap:8px" class="field">
-      <div style="flex:1;min-width:0"><label>Datum</label><input type="date" id="date" style="box-sizing:border-box"></div>
-      <div style="flex:1;min-width:0"><label>Uhrzeit</label><input type="time" id="time" style="box-sizing:border-box"></div>
+      <div style="flex:1;min-width:0"><label>Start<span class="req">*</span></label><input type="time" id="time"></div>
+      <div style="flex:1;min-width:0"><label>Ende ca.</label><input type="time" id="endTime"></div>
     </div>
-    <div class="field"><label>Ende ca.</label><input type="time" id="endTime"></div>
-    <div class="field"><label>Adresse</label><textarea id="address" rows="2" placeholder="Stra\u00DFe, PLZ Ort" maxlength="200"></textarea></div>
+    <div class="field"><label>Adresse<span class="req">*</span></label><textarea id="address" rows="2" placeholder="Stra\u00DFe, PLZ Ort" maxlength="200"></textarea></div>
     <div class="field"><label>Hinweise f\u00FCr Eltern (optional)</label><textarea id="notes" rows="3" placeholder="z.B. Bitte Matschsachen mitbringen!" maxlength="500"></textarea></div>
     <div style="margin-bottom:14px">
       <label style="margin-bottom:8px">Was sollen G\u00E4ste angeben?</label>
@@ -549,26 +565,35 @@ function creatorPage() {
       <h2 style="font-size:20px">Partyseite ist fertig!</h2>
       <p style="color:var(--m);font-size:13px;margin-top:4px">G\u00E4ste geben den Vornamen \u201E<span id="codeHint" style="font-weight:700;color:var(--a)"></span>\u201C ein, um die Seite zu sehen.</p>
     </div>
-    <div style="display:flex;gap:8px;margin-bottom:12px">
-      <a class="btn" id="previewBtn" href="#" target="_blank" style="flex:1;background:var(--a)">\u{1F440} Vorschau ansehen</a>
-      <a class="btn btn-outline" id="editBtn" href="#" target="_blank" style="flex:1">\u270F\uFE0F Bearbeiten</a>
+    <div style="background:#FFF3E0;border:2px solid #FFE0B2;border-radius:var(--r);padding:16px;margin-bottom:12px">
+      <p style="font-size:14px;font-weight:700;color:#E65100;margin-bottom:4px">\u26A0\uFE0F Edit-Link sichern (Pflicht)</p>
+      <p style="font-size:13px;color:#BF360C;margin-bottom:12px;line-height:1.5">Ohne diesen Link kannst du <strong>keine Zusagen sehen</strong> und <strong>nichts mehr \u00E4ndern</strong>. Deshalb schicken wir ihn dir jetzt per E-Mail \u2014 erst danach gibt es Bearbeiten & den G\u00E4ste-Link zum Teilen.</p>
+      <div class="field" style="margin-bottom:8px"><label>Deine E-Mail<span class="req">*</span></label><input type="email" id="editEmail" placeholder="deine@email.de" style="font-size:15px"></div>
+      <button class="btn" onclick="sendEditEmail()" id="sendEditBtn" style="background:#E65100">\u{1F4E7} Edit-Link per E-Mail erhalten</button>
+      <p id="editUrl" style="display:none"></p>
+      <p id="editEmailSent" class="hidden" style="font-size:12px;color:#2E7D32;text-align:center;margin-top:8px;font-weight:600">\u2705 Gesendet \u2014 pr\u00FCfe dein Postfach!</p>
     </div>
+    <button class="btn" id="previewBtn" onclick="openPreview()" style="background:var(--a);margin-bottom:12px">\u{1F440} Vorschau ansehen</button>
+    <div id="resultGated" class="hidden">
+    <button class="btn btn-outline" id="editBtn" onclick="openEdit()" style="margin-bottom:12px">\u270F\uFE0F Bearbeiten</button>
     <div class="share-box" style="margin-bottom:12px">
       <p style="font-size:12px;color:var(--a);font-weight:600;margin-bottom:6px">G\u00C4STE-LINK</p>
       <p style="font-size:14px;font-weight:700;word-break:break-all" id="guestUrl"></p>
       <button class="btn" style="margin-top:10px" onclick="shareGuest()">\u{1F4F2} Per WhatsApp teilen</button>
     </div>
-    <div style="background:#FFF3E0;border:2px solid #FFE0B2;border-radius:var(--r);padding:16px;margin-bottom:12px">
-      <p style="font-size:14px;font-weight:700;color:#E65100;margin-bottom:4px">\u26A0\uFE0F Wichtig: Edit-Link sichern!</p>
-      <p style="font-size:13px;color:#BF360C;margin-bottom:12px;line-height:1.5">Ohne diesen Link kannst du <strong>keine Zusagen sehen</strong> und <strong>nichts mehr \u00E4ndern</strong>. Wir empfehlen, ihn dir jetzt per E-Mail zu schicken.</p>
-      <div class="field" style="margin-bottom:8px"><input type="email" id="editEmail" placeholder="deine@email.de" style="font-size:15px"></div>
-      <button class="btn" onclick="sendEditEmail()" id="sendEditBtn" style="background:#E65100">\u{1F4E7} Edit-Link jetzt per E-Mail sichern</button>
-      <p id="editUrl" style="display:none"></p>
-      <p id="editEmailSent" class="hidden" style="font-size:12px;color:#2E7D32;text-align:center;margin-top:8px;font-weight:600">\u2705 E-Mail-App ge\u00F6ffnet!</p>
     </div>
   </div>
 
   <div class="footer"><a href="https://machsleicht.de">machsleicht.de</a> \u00B7 <a href="https://machsleicht.de/impressum">Impressum</a> \u00B7 <a href="https://machsleicht.de/datenschutz">Datenschutz</a></div>
+</div>
+<div id="modalOverlay" class="modal-overlay" onclick="closeModalBackdrop(event)">
+  <div class="modal-panel">
+    <div class="modal-bar">
+      <span class="modal-bar-title" id="modalTitle">Vorschau</span>
+      <button class="modal-close" onclick="closeModal()" aria-label="Schlie\u00DFen">\u00D7</button>
+    </div>
+    <div class="modal-iframe-wrap"><iframe id="modalFrame" class="modal-iframe" src="about:blank"></iframe></div>
+  </div>
 </div>
 <script>
 const API=location.origin+"/api";
@@ -576,8 +601,26 @@ let photoData=null,photoRoundData=null,wishes=[];
 let _srcCanvas=null;
 let _heroX=0,_heroY=0,_heroScale=1,_heroDragging=false,_heroMinScale=0.05,_heroMaxScale=2;
 let _circX=0,_circY=0,_circScale=1,_circDragging=false,_circMinScale=0.05,_circMaxScale=2;
+function _clearErrors(){document.querySelectorAll(".field.has-error, .has-error").forEach(function(f){f.classList.remove("has-error");var m=f.querySelector(".err-msg");if(m)m.remove();});}
+function _showErr(id,msg){
+  var el=document.getElementById(id);if(!el)return;
+  var field=el.closest(".field")||el.parentElement;
+  field.classList.add("has-error");
+  if(!field.querySelector(".err-msg")){var p=document.createElement("p");p.className="err-msg";p.textContent=msg;field.appendChild(p);}
+  var clear=function(){field.classList.remove("has-error");var m=field.querySelector(".err-msg");if(m)m.remove();el.removeEventListener("input",clear);el.removeEventListener("change",clear);};
+  el.addEventListener("input",clear);el.addEventListener("change",clear);
+}
+function _validate(fields){
+  _clearErrors();
+  var firstId=null;
+  fields.forEach(function(f){var el=document.getElementById(f.id);var v=el?(el.value||"").trim():"";if(!v){_showErr(f.id,f.msg);if(!firstId)firstId=f.id;}});
+  if(firstId){setTimeout(function(){var el=document.getElementById(firstId);if(el&&el.scrollIntoView)el.scrollIntoView({behavior:"smooth",block:"center"});},50);return false;}
+  return true;
+}
 function goStep(n){
-  if(n===3){var t=document.getElementById("time").value,et=document.getElementById("endTime").value;if(t&&et&&et<=t){alert("Ende-Uhrzeit muss nach der Startzeit liegen");return;}}
+  var cur=[1,2,3].find(function(i){return !document.getElementById("step"+i).classList.contains("hidden");});
+  if(cur===1&&n>=2){if(!_validate([{id:"childName",msg:"Bitte Vornamen eintragen"},{id:"age",msg:"Bitte Alter eintragen"}]))return;}
+  if(cur===2&&n>=3){if(!_validate([{id:"date",msg:"Bitte Datum w\u00E4hlen"},{id:"time",msg:"Bitte Start-Uhrzeit eintragen"},{id:"address",msg:"Bitte Adresse eintragen"}]))return;var t=document.getElementById("time").value,et=document.getElementById("endTime").value;if(t&&et&&et<=t){_showErr("endTime","Ende muss nach dem Start liegen");return;}}
   var steps=[1,2,3];steps.forEach(function(i){document.getElementById("step"+i).classList.toggle("hidden",i!==n);});window.scrollTo({top:0,behavior:"smooth"});
 }
 function changeFoto(){document.getElementById("photoInput").click();}
@@ -680,8 +723,11 @@ function togglePaypal(){
   if(el)el.style.display=hasShared?"block":"none";
 }
 async function createParty(){
+  _clearErrors();
+  var missing=[];
+  [{id:"childName",step:1,msg:"Bitte Vornamen eintragen"},{id:"age",step:1,msg:"Bitte Alter eintragen"},{id:"date",step:2,msg:"Bitte Datum w\u00E4hlen"},{id:"time",step:2,msg:"Bitte Start-Uhrzeit eintragen"},{id:"address",step:2,msg:"Bitte Adresse eintragen"}].forEach(function(f){var el=document.getElementById(f.id);if(!el||!(el.value||"").trim())missing.push(f);});
+  if(missing.length){missing.forEach(function(m){_showErr(m.id,m.msg);});var s=Math.min.apply(null,missing.map(function(m){return m.step;}));[1,2,3].forEach(function(i){document.getElementById("step"+i).classList.toggle("hidden",i!==s);});setTimeout(function(){var f=document.getElementById(missing[0].id);if(f&&f.scrollIntoView)f.scrollIntoView({behavior:"smooth",block:"center"});},50);return;}
   const childName=document.getElementById("childName").value.trim();
-  if(!childName){alert("Bitte Vornamen eingeben");goStep(1);return;}
   const btn=document.getElementById("createBtn");btn.textContent="\u23F3 Wird erstellt...";btn.disabled=true;
   try{
     photoData=_exportHero();photoRoundData=_exportCircle();
@@ -697,8 +743,7 @@ async function createParty(){
     const data=await res.json();if(!res.ok)throw new Error(data.error||"Fehler");
     document.getElementById("guestUrl").textContent=data.url;
     document.getElementById("editUrl").textContent=data.editUrl;
-    document.getElementById("previewBtn").href=data.url;
-    document.getElementById("editBtn").href=data.editUrl;
+    // previewBtn/editBtn are now <button> elements - URLs used via openPreview()/openEdit() via window._pd
     document.getElementById("codeHint").textContent=childName;
     [1,2,3].forEach(i=>document.getElementById("step"+i).classList.add("hidden"));
     document.getElementById("result").classList.remove("hidden");
@@ -709,18 +754,25 @@ async function createParty(){
 function shareGuest(){const d=window._pd;const hasW=wishes.some(w=>w.title.trim());const t=(d.motto?d.childName+"s "+d.motto:d.childName+"s Geburtstag")+"! \u{1F389}\\n\\n"+(hasW?"Hier sind alle Infos inkl. Wunschliste, damit wir Doppelgeschenke vermeiden:":"Alle Infos & Zusage hier:")+"\\n"+d.url;window.open("https://wa.me/?text="+encodeURIComponent(t));}
 function copyEdit(){navigator.clipboard.writeText(window._pd.editUrl).then(()=>{const b=event.target;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Kopieren",2000);});}
 async function sendEditEmail(){
+  _clearErrors();
   var email=document.getElementById("editEmail").value.trim();
-  if(!email||email.indexOf("@")<1){alert("Bitte g\\x27ltige E-Mail eingeben");return;}
+  if(!email||email.indexOf("@")<1){_showErr("editEmail","Bitte g\u00FCltige E-Mail eingeben");return;}
   var d=window._pd;
   var btn=document.getElementById("sendEditBtn");
-  btn.textContent="\\u23F3 Wird gesendet...";btn.disabled=true;
+  btn.textContent="\u23F3 Wird gesendet...";btn.disabled=true;
   try{
     var r=await fetch(API+"/party/"+d.id+"/send-edit-link",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({editToken:d.editToken,email:email})});
     if(!r.ok){var err=await r.json();throw new Error(err.error||"Fehler");}
-    btn.textContent="\\u2705 Gesendet!";
+    btn.textContent="\u2705 Gesendet!";btn.disabled=true;
     document.getElementById("editEmailSent").classList.remove("hidden");
-  }catch(e){alert("Fehler: "+e.message);btn.textContent="\\u{1F4E7} Edit-Link jetzt per E-Mail sichern";btn.disabled=false;}
+    var gated=document.getElementById("resultGated");if(gated)gated.classList.remove("hidden");
+  }catch(e){_showErr("editEmail","Fehler: "+e.message);btn.textContent="\u{1F4E7} Edit-Link per E-Mail erhalten";btn.disabled=false;}
 }
+function openPreview(){var d=window._pd;if(!d)return;var f=document.getElementById("modalFrame");f.src=d.url+"?preview=1&edit="+encodeURIComponent(d.editToken);document.getElementById("modalTitle").textContent="Vorschau \u2014 so sehen es deine G\u00E4ste";document.getElementById("modalOverlay").classList.add("show");document.body.classList.add("modal-open");}
+function openEdit(){var d=window._pd;if(!d)return;var f=document.getElementById("modalFrame");f.src=d.editUrl;document.getElementById("modalTitle").textContent="Bearbeiten";document.getElementById("modalOverlay").classList.add("show");document.body.classList.add("modal-open");}
+function closeModal(){document.getElementById("modalOverlay").classList.remove("show");document.body.classList.remove("modal-open");setTimeout(function(){document.getElementById("modalFrame").src="about:blank";},200);}
+function closeModalBackdrop(e){if(e.target&&e.target.id==="modalOverlay")closeModal();}
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&document.getElementById("modalOverlay").classList.contains("show"))closeModal();});
 const MC={"piraten":"#8B4513","einhorn":"#E040A0","dino":"#4CAF50","feuerwehr":"#D32F2F","weltraum":"#1565C0","meerjungfrau":"#00ACC1","prinzessin":"#E91E63","safari":"#F57F17","detektiv":"#37474F","superheld":"#D32F2F","zirkus":"#FF6F00","baustelle":"#F57F17","frozen":"#4FC3F7","minecraft":"#4CAF50","ninjago":"#D32F2F","paw patrol":"#1976D2","pokemon":"#FFC107","spider-man":"#D32F2F","super mario":"#D32F2F","halloween":"#E65100"};
 function autoColor(m){if(!m)return"#D4812A";m=m.toLowerCase();for(const[k,c]of Object.entries(MC)){if(m.includes(k))return c;}return"#D4812A";}
 function pickMotto(btn,name,emoji){
@@ -775,7 +827,7 @@ function clearChipSelection(){
 // ═══════════════════════════════════════════════════════════════
 // PARTY PAGE (delegates to guest or editor)
 // ═══════════════════════════════════════════════════════════════
-function partyPage(party, isEditor, photoRoundB64) {
+function partyPage(party, isEditor, photoRoundB64, isPreview) {
   const color = party.mottoColor || "#D4812A";
   const name = esc(party.childName);
   const age = party.age || "";
@@ -784,6 +836,10 @@ function partyPage(party, isEditor, photoRoundB64) {
   const dateStr = party.date ? new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long",year:"numeric"}) : "";
   const ogUrl = `https://party.machsleicht.de/${party.id}`;
 
+  // Preview mode: editor sees guest view without name-gate
+  if (isPreview) {
+    return guestPageFull(party, photoRoundB64, true);
+  }
   // Guest view gets the full themed page
   if (!isEditor) {
     return guestPageFull(party, photoRoundB64);
@@ -805,7 +861,7 @@ function partyPage(party, isEditor, photoRoundB64) {
 // ═══════════════════════════════════════════════════════════════
 // GUEST PAGE — FULL THEMED (new design)
 // ═══════════════════════════════════════════════════════════════
-function guestPageFull(party, photoRoundB64) {
+function guestPageFull(party, photoRoundB64, isPreview) {
   const t = getTheme(party.motto);
   const name = esc(party.childName);
   const age = party.age || "";
@@ -955,7 +1011,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 <body>
 
 <!-- CODE GATE -->
-<div id="codeGate" style="min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:16px;background:linear-gradient(180deg,${t.h1},${t.h2})">
+<div id="codeGate" style="min-height:100dvh;${isPreview?'display:none':'display:flex'};align-items:center;justify-content:center;padding:16px;background:linear-gradient(180deg,${t.h1},${t.h2})">
   <div class="gate-card">
     <div style="font-size:56px;margin-bottom:12px">${emoji}</div>
     <h1 style="font-family:var(--fd);font-size:22px;color:var(--d);margin-bottom:4px">Du bist eingeladen!</h1>
@@ -967,7 +1023,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 </div>
 
 <!-- PARTY CONTENT (hidden until code entered) -->
-<div id="partyContent" style="display:none">
+<div id="partyContent" style="display:${isPreview?'block':'none'}">
 
 <div class="hero">
 <div class="hero-inner">
