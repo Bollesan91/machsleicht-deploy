@@ -1,6 +1,6 @@
 # machsleicht.de — Backlog
 
-**Letzte Aktualisierung:** 20.04.2026 (Mobile-Session)
+**Letzte Aktualisierung:** 21.04.2026 (Mobile-Session Teil 4 — DSGVO-Hygiene als P1-17 aufgenommen, Sub-Task B erledigt)
 **Status-Check:** Repository-weit durchgeführt, gegen Live-Stand abgeglichen. 8 PBIs auf ✅ gesetzt.
 **Zweck:** Einzige Quelle für alle offenen und erledigten PBIs. Strategie-Kontext steht in `STRATEGIE.md`.
 
@@ -28,50 +28,52 @@
 |---|--------|------|--------|------------------|---------|---------|
 | 8 | ⏳ | **P1** | P1-16 | **Partyseite Follow-Ups** (Cloudflare-Deploy Bugfix + Email-Test + Foto-Crop + Reply-To) | 1–2 Std | **Laptop-Session!** Bugfix-Commit `a694178` wartet auf Cloudflare-Deploy |
 | 9 | ⏳ | **P1** | P1-15 | **Email-Capture (Pilot: Einladung)** | 4–5 Std | **Über Resend** (Audiences + Broadcasts) — Transactional läuft schon. Muss: DOI-Flow selbst bauen, dann Pilot Einladung, später Partyseite + Schatzsuche |
-| 10 | ⏳ | **P1** | P2-20 | **Datenübergabe Planer → Tools** | 4–6 Std | Ökosystem-Prinzip umsetzen, nach P1-10 |
-| 11 | ⏳ | **P1** | P2-13 | Gumroad: 2 Digital-Produkte (Piraten+Dino) | 4h/Produkt | +100€/Monat bei aktuellem Traffic |
-| 12 | ⏳ | **P1** | P2-15 | Awin-Anmeldung (Otto, myToys, Thalia) | 30 Min + Warten | Prüfung dauert 1–3 Tage, früh starten |
-| 13 | ⏳ | **P1** | P1-8 | Motto-Hauptseiten auf Elite-Niveau (Piraten) | 1–2 Std/Seite | Parallel laufend |
-| 14 | ⏳ | **P1** | P1-12 | **Einschulungs-Planer bauen** | 2–3 Tage | **Launch bis 31.05.** (SEO-Vorlauf!) |
+| 10 | 🔄 | **P1** | P1-17 | **DSGVO-Hygiene Partyseite** (A: Worker-Hinweis, B: Datenschutz ✅, C: Auto-Delete-Cron) | 1,5 Std (Laptop) | **B erledigt am 21.04.** Blockt kein weiteres Feature technisch, aber rechtliches Risiko solange A+C offen. Bundeln mit P1-16 Laptop-Session |
+| 11 | ⏳ | **P1** | P2-20 | **Datenübergabe Planer → Tools** | 4–6 Std | Ökosystem-Prinzip umsetzen, nach P1-10 |
+| 12 | ⏳ | **P1** | P2-13 | Gumroad: 2 Digital-Produkte (Piraten+Dino) | 4h/Produkt | +100€/Monat bei aktuellem Traffic |
+| 13 | ⏳ | **P1** | P2-15 | Awin-Anmeldung (Otto, myToys, Thalia) | 30 Min + Warten | Prüfung dauert 1–3 Tage, früh starten |
+| 14 | ⏳ | **P1** | P1-8 | Motto-Hauptseiten auf Elite-Niveau (**Einhorn** → Safari → Weltraum → Feuerwehr → Detektiv → Meerjungfrau → Prinzessin/Superheld; nur Tool-integrierte Mottos) | 4,5–5 Std/Motto | Parallel laufend. Content-Inseln (Pferde, Ritter, Zirkus, Baustelle) in P1-8b separat. Marken-Mottos zurückgestellt |
+| 15 | ⏳ | **P1** | P1-12 | **Einschulungs-Planer bauen** | 2–3 Tage | **Launch bis 31.05.** (SEO-Vorlauf!) |
 
 ### Mittelfristig (Mai–Juli)
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
 |---|--------|------|--------|------------------|---------|---------|
-| 15 | ⏳ | **P2** | P2-17 | **Standalone /wunschliste** | 2–3 Tage | Launch bis 30.06. für Weihnachts-Peak |
-| 16 | ⏳ | **P2** | P2-10 | Einladungstool: 7 fehlende Lizenz-Mottos | 2–3 Std | Voraussetzung für P1-9 |
-| 17 | ⏳ | **P2** | P1-9 (→P2) | /einladung als SEO-Hub | 3–4 Std | Braucht P2-10 zuerst |
-| 18 | ⏳ | **P2** | P1-11 (→P2) | Ratgeber-Seiten auf 85% (11 verbleibend) | 30–60 Min/Seite | Evergreen, kontinuierlich |
-| 19 | ✅ | **P2** | P2-2 | Thin Content Motto×Altersgruppen (138 Seiten → 301-Redirects) | 2–4 Std | Erledigt 19.04.2026 |
-| 20 | ⏳ | **P2** | P2-16 | Mitgebsel-Generator (KI) | 1 Tag | Braucht P1-10 |
-| 21 | ⏳ | **P2** | P2-5 | Performance (JS-Bundle, lazy loading) | 15 Min kurzfristig, 2–4h langfristig | Laufend |
-| 22 | ⏳ | **P2** | P2-8 | /kreuzwortraetsel pre-rendern | 1–2 Std | SEO-Nachzügler |
-| 23 | ⏳ | **P2** | P2-21 | Seiten-Rollen-Matrix | 1 Tag | Nach P1-11 sinnvoll |
-| 24 | ⏳ | **P2** | P2-22 | **Site-Wide In-App-Frame** (Modal-Pattern seitenweit) | 1–2 Tage | Retention: kein Tab-Verlust bei Vorschauen & Affiliates |
+| 16 | ⏳ | **P2** | P2-17 | **Standalone /wunschliste** | 2–3 Tage | Launch bis 30.06. für Weihnachts-Peak |
+| 17 | ⏳ | **P2** | P2-10 | Einladungstool: 7 fehlende Lizenz-Mottos | 2–3 Std | Voraussetzung für P1-9 |
+| 18 | ⏳ | **P2** | P1-9 (→P2) | /einladung als SEO-Hub | 3–4 Std | Braucht P2-10 zuerst |
+| 19 | ⏳ | **P2** | P1-11 (→P2) | Ratgeber-Seiten auf 85% (11 verbleibend) | 30–60 Min/Seite | Evergreen, kontinuierlich |
+| 20 | ✅ | **P2** | P2-2 | Thin Content Motto×Altersgruppen (138 Seiten → 301-Redirects) | 2–4 Std | Erledigt 19.04.2026 |
+| 21 | ⏳ | **P2** | P2-16 | Mitgebsel-Generator (KI) | 1 Tag | Braucht P1-10 |
+| 22 | ⏳ | **P2** | P2-5 | Performance (JS-Bundle, lazy loading) | 15 Min kurzfristig, 2–4h langfristig | Laufend |
+| 23 | ⏳ | **P2** | P2-8 | /kreuzwortraetsel pre-rendern | 1–2 Std | SEO-Nachzügler |
+| 24 | ⏳ | **P2** | P2-21 | Seiten-Rollen-Matrix | 1 Tag | Nach P1-11 sinnvoll |
+| 25 | ⏳ | **P2** | P2-22 | **Site-Wide In-App-Frame** (Modal-Pattern seitenweit) | 1–2 Tage | Retention: kein Tab-Verlust bei Vorschauen & Affiliates |
+| 26 | ⏳ | **P2** | P1-8b | **Content-Inseln-Strategie** (Pferde, Ritter, Zirkus, Baustelle — entweder integrieren oder streichen) | 15 Min Daten-Check + 1–16 Std Umsetzung | GSC-Daten abwarten, vor weiterem Content-Ausbau entscheiden |
 
 ### Vor dem Herbst-Peak (Juli–September)
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Deadline |
 |---|--------|------|--------|------------------|---------|---------|
-| 25 | ⏳ | **P1** | P1-13 | **Adventskalender-Builder** (24 KI-Türchen) | 3–4 Tage | **Launch bis 31.08.** |
-| 26 | ⏳ | **P1** | P1-14 | **KI-Geschenkeberater** | 2–3 Tage | **Launch bis 30.09.** |
-| 27 | ⏳ | **P3** | P3-6 | **machsruhig.de launchen** | 2–3 Wochen Sprint | Eigener Sprint, separates Doc |
+| 27 | ⏳ | **P1** | P1-13 | **Adventskalender-Builder** (24 KI-Türchen) | 3–4 Tage | **Launch bis 31.08.** |
+| 28 | ⏳ | **P1** | P1-14 | **KI-Geschenkeberater** | 2–3 Tage | **Launch bis 30.09.** |
+| 29 | ⏳ | **P3** | P3-6 | **machsruhig.de launchen** | 2–3 Wochen Sprint | Eigener Sprint, separates Doc |
 
 ### Später (Q4 2026 und Q1 2027)
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
 |---|--------|------|--------|------------------|---------|---------|
-| 28 | ⏳ | **P3** | P3-5 | E-Mail-Liste aufsetzen (Resend Audience + Nurture) | 1 Tag | Verwertung von P1-15-Opt-Ins |
-| 29 | ⏳ | **P3** | P3-3 | Social Proof aus Plausible (echter Counter) | variabel | Nach 3 Monaten GSC-Daten |
-| 30 | ⏳ | **P3** | P3-4 | Druckvorlagen pro Motto (Top 5) | 30 Min/Motto | Parallel zu P1-8 |
-| 31 | ⏳ | **P3** | P3-7 | Klassen-Geburtstagskalender | 3 Tage | Braucht P2-17 |
-| 32 | ⏳ | **P3** | P3-8 | Nachbar-Nachricht-Generator | 4 Std | Quick-Win |
-| 33 | ⏳ | **P3** | P3-9 | Foto-Spots/Photobooth-Backdrops | 6 Std | Parallel zu P1-8 |
-| 34 | ⏳ | **P3** | P3-10 | Urkunden/Diplome | 6 Std | Nach P3-5 |
-| 35 | ⏳ | **P3** | P3-1 | Repo aufräumen | 10–30 Min | Quick-Win jederzeit |
-| 36 | ⏳ | **P3** | P3-11 | **Pinterest-Präsenz** | 4h Setup + 1–2h/Woche | **Geparkt**: Trigger bei 5.000+ Besuchern/Monat |
-| 37 | ⏳ | **P4** | P4-1 | PDF-Partybücher pro Motto | 1 Tag/Motto | Wenn Traffic da ist |
-| 38 | ⏳ | **P4** | P4-2 | Premium-Features (KI-Spielleiter, Audio, etc.) | mehrere Wochen | Wenn Traffic da ist |
+| 30 | ⏳ | **P3** | P3-5 | E-Mail-Liste aufsetzen (Resend Audience + Nurture) | 1 Tag | Verwertung von P1-15-Opt-Ins |
+| 31 | ⏳ | **P3** | P3-3 | Social Proof aus Plausible (echter Counter) | variabel | Nach 3 Monaten GSC-Daten |
+| 32 | ⏳ | **P3** | P3-4 | Druckvorlagen pro Motto (Top 5) | 30 Min/Motto | Parallel zu P1-8 |
+| 33 | ⏳ | **P3** | P3-7 | Klassen-Geburtstagskalender | 3 Tage | Braucht P2-17 |
+| 34 | ⏳ | **P3** | P3-8 | Nachbar-Nachricht-Generator | 4 Std | Quick-Win |
+| 35 | ⏳ | **P3** | P3-9 | Foto-Spots/Photobooth-Backdrops | 6 Std | Parallel zu P1-8 |
+| 36 | ⏳ | **P3** | P3-10 | Urkunden/Diplome | 6 Std | Nach P3-5 |
+| 37 | ⏳ | **P3** | P3-1 | Repo aufräumen | 10–30 Min | Quick-Win jederzeit |
+| 38 | ⏳ | **P3** | P3-11 | **Pinterest-Präsenz** | 4h Setup + 1–2h/Woche | **Geparkt**: Trigger bei 5.000+ Besuchern/Monat |
+| 39 | ⏳ | **P4** | P4-1 | PDF-Partybücher pro Motto | 1 Tag/Motto | Wenn Traffic da ist |
+| 40 | ⏳ | **P4** | P4-2 | Premium-Features (KI-Spielleiter, Audio, etc.) | mehrere Wochen | Wenn Traffic da ist |
 
 ### Gestrichen / Erledigt
 
@@ -195,11 +197,78 @@
 - **Aufwand:** 1 Stunde.
 
 #### P1-8: Motto-Hauptseiten auf Elite-Niveau
-- **Ist-Stand Dino:** ✅ 6-8, 3-5, 9-12 Elite; Nachpflege pending (Dino 6-8 Header/Breadcrumb/Footer, Dino 3-5 CSS, Dino-Hauptseite Social Proof).
-- **Nächstes Motto:** Piraten (6-8 → 3-5 → 9-12)
-- **Danach:** Einhorn, Detektiv, Paw Patrol, Meerjungfrau (sortiert nach Suchvolumen).
-- **Elite-Checkliste:** Siehe `_dev/docs/ELITE-SEITEN-TEMPLATE.md` (14 Punkte).
-- **Aufwand:** ~1–2 Stunden pro Seite.
+
+**Motivation:** Pro Motto existieren 3 Altersgruppen-Landingpages (`-3-5-jahre`, `-6-8-jahre`, `-9-12-jahre`). Dino und Piraten sind bereits Elite-ausgebaut (jeweils ~60 KB pro Seite), alle anderen Mottos liegen noch bei ~16–19 KB. Ziel ist, die markenfreien Mottos Schritt für Schritt auf Elite-Niveau zu heben — **aber nur jene, die auch im Tool-Ökosystem (Einladung + Schatzsuche) vertreten sind**. Content-Inseln ohne Tool-Anschluss bringen keinen Conversion-Wert, werden in P1-8 bewusst ausgeklammert und separat behandelt (siehe P1-8b unten).
+
+**Ökosystem-Matrix (21.04.2026):**
+
+| Motto | IP-Status | Main | Altersgr. | Einladung | Schatzsuche | Ausbau-Stufe |
+|-------|-----------|------|-----------|-----------|-------------|--------------|
+| Dino | markenfrei | ✅ | ✅ | ✅ | ✅ | ✅ Elite (Template, ~63 KB) |
+| Piraten | markenfrei | ✅ | ✅ | ✅ | ✅ | ✅ Elite (~56 KB) |
+| Einhorn | markenfrei | ✅ | ✅ | ✅ | ✅ | Standard (~19 KB) — **nächstes Ziel** |
+| Safari | markenfrei | ✅ | ✅ | ✅ | ✅ | Standard (~19 KB) |
+| Feuerwehr | markenfrei | ✅ | ✅ | ✅ | — | Standard (~19 KB) |
+| Weltraum | markenfrei | ✅ | ✅ | ✅ | ✅ | Standard (~19 KB) |
+| Detektiv | markenfrei | ✅ | ✅ | ✅ | ✅ | Dünn (~16 KB) |
+| Meerjungfrau | markenfrei | ✅ | ✅ | ✅ | — | Dünn (~16 KB) |
+| Prinzessin | markenfrei | ✅ | ⚠️ fehlt | ✅ | — | Altersgruppen-Lücke |
+| Superheld | markenfrei | ✅ | ⚠️ fehlt | ✅ | — | Altersgruppen-Lücke |
+| **Baustelle** | markenfrei | ✅ | ✅ | — | — | **Content-Insel → P1-8b** |
+| **Pferde** | markenfrei | ✅ | ✅ | — | — | **Content-Insel → P1-8b** |
+| **Ritter** | markenfrei | ✅ | ✅ | — | — | **Content-Insel → P1-8b** |
+| **Zirkus** | markenfrei | ✅ | ✅ | — | — | **Content-Insel → P1-8b** |
+| Paw Patrol | Spin Master IP | ✅ | ✅ | — | — | Zurückgestellt (IP + Insel) |
+| Frozen | Disney IP | ✅ | ✅ | — | — | Zurückgestellt |
+| Pokemon | Nintendo IP | ✅ | ✅ | — | — | Zurückgestellt |
+| Minecraft | Microsoft IP | ✅ | ✅ | — | — | Zurückgestellt |
+| Ninjago | Lego IP | ✅ | ✅ | — | — | Zurückgestellt |
+
+**Zusätzliche Schatzsuche-Mottos ohne /kindergeburtstag/-Pendant:** Dschungel, Feen (eigene Schatzsuche-Seiten, aber keine Altersgruppen-Seiten unter `/kindergeburtstag/`). Für spätere Einordnung geparkt.
+
+**Entscheidung 21.04.2026 (Teil 4):**
+→ **Einhorn** als nächstes Elite-Motto. Paw Patrol zurückgestellt (IP-Risiko, Zielgruppe eng, Content-Insel).
+→ **Content-Inseln (Pferde, Ritter, Zirkus, Baustelle) aus P1-8 ausgeklammert.** Sinnloser Elite-Ausbau solange der User nirgendwo weiterklicken kann. Separates Mini-PBI P1-8b (siehe unten).
+
+**Reihenfolge P1-8 (nur Tool-integrierte markenfreie Mottos):**
+
+1. **Einhorn** (Standard → Elite) — als nächstes. Story-Framing vorher definieren (z.B. „Einhorn-Abenteuer im Wolkenwald") statt nur Dino-Template-Copy.
+2. **Safari** (Standard → Elite)
+3. **Weltraum** (Standard → Elite) — altersübergreifend
+4. **Feuerwehr** (Standard → Elite) — *Hinweis:* hat keine Schatzsuche, aber Einladung vorhanden → lohnt trotzdem
+5. **Detektiv** (Dünn → Elite)
+6. **Meerjungfrau** (Dünn → Elite) — *Hinweis:* wie Feuerwehr, keine Schatzsuche
+7. **Prinzessin + Superheld** — Altersgruppen-Seiten komplett neu anlegen (eigenständiges Sub-Task, ~6 Std pro Motto inkl. 3 neue Seiten)
+
+**Vorgehen pro Motto:**
+1. Story-Framing (Leitnarrativ für alle 3 Altersgruppen) — 30 Min
+2. **6-8-Jahre zuerst** (Anker, wie bei Dino) — 1,5 Std
+3. 3-5-Jahre — 1,5 Std
+4. 9-12-Jahre — 1,5 Std
+5. Main-Seite ggf. nachziehen, wenn noch dünn — 30 Min
+- **Total pro Motto: ~4,5–5 Std Laptop-Session**
+
+**Elite-Checkliste:** `_dev/docs/ELITE-SEITEN-TEMPLATE.md` (14 Punkte).
+
+**Nachpflege aus früheren Sessions (Dino):** Dino 6-8 Header/Breadcrumb/Footer, Dino 3-5 CSS, Dino-Hauptseite Social Proof.
+
+---
+
+#### P1-8b: Content-Inseln-Strategie (Pferde, Ritter, Zirkus, Baustelle)
+
+**Befund 21.04.2026:** Vier markenfreie Mottos existieren als `/kindergeburtstag/<motto>.html` + 3 Altersgruppen-Seiten + OG-Bild, sind aber **weder in `/einladung/` noch in `/schatzsuche/`** vertreten. Der User landet per SEO auf diesen Seiten und hat keinen Conversion-Pfad in die Tools.
+
+**Optionen:**
+
+- **A) Ökosystem-Integration:** Pro Motto eine Einladungs-Landing (2–3 Std) + optional Schatzsuche (+1 Std). Danach qualifiziert sich das Motto für P1-8 Elite-Ausbau. Gesamt pro Motto ~3–4 Std Integration + später 4,5 Std Elite = 7,5–8,5 Std.
+- **B) Streichen (301 auf `/kindergeburtstag`):** Wenn Traffic laut GSC minimal ist, weg damit. Reduziert Index-Rauschen. Aufwand: 10 Min pro Motto (Redirects).
+- **C) Status Quo belassen:** Wenn Traffic okay ist, aber Integration zu teuer. Risiko: User dropped off, Keyword-Cannibalization mit Planer-Hauptseite.
+
+**Entscheidungs-Input nötig:** Google Search Console für diese 4 Mottos — Impressions/Klicks der letzten 90 Tage. Ohne diese Daten ist A/B/C nicht rational entscheidbar.
+
+**Prio:** P2 — nicht dringend, aber vor jedem weiteren Content-Ausbau auf diesen Seiten klären (sonst verschwendete Elite-Arbeit).
+
+**Aufwand:** Daten-Check 15 Min, Entscheidung + Umsetzung je nach Option 1–16 Std.
 
 #### P1-9: /einladung als SEO-Hub
 - Aktuell nur Tool-Hub ohne SEO-Content.
@@ -1001,3 +1070,47 @@ Bolle hat nach einer Lösung gefragt, die Amazon & Co. trotz X-Frame-Options wir
 **Was gebaut wird:**
 - `/nachbar-nachricht` — Formular: Datum, Uhrzeit, Name (optional), "Viele Kinder, etwas Lärm" Toggle, Emoji-Auswahl (🎂🎈🎉)
 - Output: druckbarer A5-Zett
+
+---
+
+#### P1-17: DSGVO-Hygiene Partyseite
+
+**Motivation:** Die Partyseite (party.machsleicht.de) speichert personenbezogene Daten (Kinderfoto, Vornamen, Treffpunkt, Datum) in Cloudflare Workers KV und versendet transaktionale E-Mails über Resend. Drei DSGVO-Pflichten sind offen, entdeckt bei der Konsolidierung am 21.04.2026 (Teil 1). Ohne diese drei Sub-Tasks ist der Betrieb rechtlich heikel — nicht blockierend für neue Features, aber abmahnanfällig bei Wettbewerbern oder Beschwerde.
+
+**Sub-Tasks:**
+
+**A) Datenschutz-Hinweis über Send-Button im Email-Box-Bereich der Partyseite** — offen
+- Pflicht-Hinweis bei jeder E-Mail-Eingabe: „Mit dem Absenden stimmst du der Verarbeitung deiner E-Mail-Adresse für den Versand des Bearbeitungs-Links zu. Details unter [/datenschutz](https://machsleicht.de/datenschutz#11)."
+- **Ort:** `party-worker.js`, Email-Box-Bereich des Erstellen-Flows (FIX11-Ebene)
+- **Aufwand:** 10 Min Code + Cloudflare-Deploy
+- **Blocker:** Cloudflare-Deploy (Laptop-Session)
+
+**B) Datenschutzerklärung auf /datenschutz erweitern** — ✅ erledigt 21.04.2026
+- Neuer §10 Partyseite (Cloudflare KV, 90-Tage-Retention weich, manuelle Löschung per Mail)
+- Neuer §11 E-Mail-Versand (Resend als AV, EU-US DPF, kein Werbe-Mail ohne DOI)
+- Nachfolgende §§ um +2 umnummeriert, Stand auf April 2026
+- Validator 7/7 grün
+
+**C) Worker-Cron für Auto-Delete der Party-Daten 90 Tage nach Partydatum** — offen
+- Cloudflare Cron Trigger: täglich 03:00 UTC
+- Scan KV-Namespace `PARTY_KV`, lösche Einträge wo `partyDate + 90d < today`
+- Nach Deployment: §10 Datenschutzerklärung von „spätestens 90 Tage" zu „automatisiert 90 Tage" präzisieren
+- **Ort:** `party-worker.js` + wrangler.toml (Cron-Trigger)
+- **Aufwand:** 1 Std Code + Test + Cloudflare-Deploy
+
+**Aufwand total (nur A+C, da B erledigt):**
+- A: 10 Min Code + Deploy
+- C: 1 Std Code + Deploy + Datenschutz-Präzisierung (5 Min)
+- **Total: ~1,5 Std Laptop-Session** — idealerweise gebündelt mit P1-16
+
+**Blocker:** Beide offenen Sub-Tasks brauchen Cloudflare-Deploy → **nicht mobil machbar**. Bundeln mit P1-16.
+
+**Erfolgs-Kriterien:**
+- A: Datenschutz-Hinweis sichtbar im Email-Box-Bereich, mit Link zu `/datenschutz#11`
+- C: Cron läuft täglich, Test-Eintrag mit Partydatum in Vergangenheit wird innerhalb 24h gelöscht
+- Datenschutzerklärung-§10 auf „automatisiert" aktualisiert nach C-Deploy
+
+**Referenz:**
+- SESSION-NOTES.md 21.04.2026 Teil 1 (DSGVO-Decision)
+- Commit vom 21.04.2026 Teil 4 (datenschutz.html-Erweiterung, Sub-Task B)
+

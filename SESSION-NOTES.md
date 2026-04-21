@@ -1,5 +1,51 @@
 # Session-Notizen
 
+## Cowork-Session (21.04.2026, Opus 4.7, Teil 4) — DSGVO-Hygiene + Motto-Roadmap + Content-Inseln
+
+### Was gemacht
+
+**1. Datenschutzerklärung erweitert (`datenschutz.html`):**
+- Neuer **§10 Partyseite**: Cloudflare Workers KV als Auftragsverarbeiter, 90-Tage-Retention bewusst weich formuliert („spätestens 90 Tage") weil Auto-Delete-Cron (DSGVO C) noch nicht live ist. Manuelle Löschung per Mail als Fallback. Schützt rechtlich, bis Cron deployed ist.
+- Neuer **§11 E-Mail-Versand (Resend)**: AV-Vertrag, EU-US DPF, expliziter Hinweis „keine Werbe-Mails ohne DOI-Einwilligung" (adressiert DSGVO-Teil-1-Decision).
+- Alle folgenden §§ um +2 umnummeriert (Plausible §12, Rechte §13, Beschwerderecht §14, Änderungen §15). Stand auf April 2026.
+- Validator 7/7 grün.
+
+**2. Backlog-Pflege — neues Ticket P1-17 „DSGVO-Hygiene Partyseite":**
+- Prio-Tabelle Zeile 10 (zwischen P1-15 und P2-20), Status 🔄 in Arbeit.
+- Detail-Block mit Sub-Tasks A (Worker-Hinweis, offen), B (Datenschutz, ✅ heute), C (Auto-Delete-Cron, offen).
+- Aufwand A+C gebündelt: 1,5 Std Laptop-Session, zusammen mit P1-16.
+- Nachfolgende Prio-Nummern korrekt um +1 hochnummeriert (1–40 lückenlos).
+
+**3. Einhorn vs. Paw Patrol entschieden → Einhorn:**
+- IP-Risiko Paw Patrol (Spin Master aktiv bei Markenschutz), Zielgruppe eng (3–5 Jahre), Content-Insel.
+- Einhorn hat Ökosystem-Anschluss (Einladung ✅, Schatzsuche ✅).
+
+**4. Content-Inseln entdeckt (unerwarteter Befund beim Motto-Audit):**
+- Pferde, Ritter, Zirkus, Baustelle haben `/kindergeburtstag/`-Seiten + 3 Altersgruppen + OG-Bild, sind aber nicht in `/einladung/` oder `/schatzsuche/` → kein Conversion-Pfad.
+- Aus P1-8 ausgeklammert, neues Ticket **P1-8b** angelegt (Prio-Tabelle Zeile 26): Optionen A Integration / B Streichen (301) / C Status Quo. Braucht GSC-Daten für Entscheidung.
+- Spiegel-Befund: Schatzsuche-Mottos „Dschungel" und „Feen" haben keine `/kindergeburtstag/`-Pendants — später einordnen.
+
+**5. P1-8 neu gefasst mit Ökosystem-Matrix:**
+- Detail-Block enthält jetzt vollständige Tabelle aller 19 Mottos mit IP-Status + Main/Altersgruppen/Einladung/Schatzsuche-Status.
+- Reihenfolge (nur Tool-integrierte markenfreie Mottos): Einhorn → Safari → Weltraum → Feuerwehr → Detektiv → Meerjungfrau → Prinzessin/Superheld.
+- Aufwand realistisch: ~4,5–5 Std pro Motto (nicht 1–2, weil 3 Altersgruppen-Seiten pro Motto).
+- Prinzessin und Superheld als Sonderfall: keine Altersgruppen-Seiten vorhanden → ~6 Std (3 neue Seiten).
+
+### Offen für nächste Laptop-Session
+- DSGVO A: Datenschutz-Hinweis im Partyseite-Email-Box-Bereich (Worker-Code, 10 Min + Deploy)
+- DSGVO C: Auto-Delete-Cron (1 Std + Deploy, danach §10 schärfen auf „automatisiert")
+- P1-16 Restarbeiten (Foto-Crop, Reply-To, Cleanup, Kill List)
+- P1-8 Einhorn-Ausbau: Story-Framing definieren vor Code (z.B. „Einhorn-Abenteuer im Wolkenwald")
+
+### Status-Snapshot nach Teil 4
+- Partyseite: LIVE (FIX11)
+- Einladung: 10 Mottos mit Landing + Hub
+- Datenschutz: §§10+11 ergänzt (Partyseite + Resend)
+- Backlog: 40 PBIs sortiert, 8 ✅, 1 🔄 (P1-17 DSGVO-Hygiene)
+- Motto-Roadmap: Einhorn als nächstes, Content-Inseln separat
+
+---
+
 ## Cowork-Session (21.04.2026, Opus 4.7, Teil 3) — PBI-Impact-Check Follow-Up + Workflow-Haertung
 
 ### Was gemacht
@@ -124,10 +170,15 @@ Heute zwei Sessions parallel: Desktop morgens (#4), Mobile abends (#2). Reihenfo
 **2. P1-15 strategisch neu gefasst:** Link zum fertigen Asset (Einladung) statt PDF-Köder, Mini-MVP statt jsPDF, Pilot auf Einladung, Status ⏳.
 
 ## Offene Fragen
-- Einhorn oder Paw Patrol als nächstes Elite-Motto (P1-8)?
 - Awin-Freischaltung: Wann kommt die Publisher-ID?
 - Demo-Einladung: Welches Stock-Foto als Beispiel-Kind?
 - Reply-To: `party@machsleicht.de` über Cloudflare Email Routing oder Resend?
+
+## Entschieden am 21.04.2026 (Teil 4)
+- **Einhorn als nächstes Elite-Motto** (P1-8) — nicht Paw Patrol. Begründung: IP-Risiko bei Paw Patrol (Spin Master), Zielgruppe eng, Content-Insel. Neue Reihenfolge (nur Tool-integrierte markenfreie Mottos): Einhorn → Safari → Weltraum → Feuerwehr → Detektiv → Meerjungfrau → Prinzessin/Superheld (letztere brauchen komplett neue Altersgruppen-Seiten). Marken-Mottos (Paw Patrol, Frozen, Pokemon, Minecraft, Ninjago) zurückgestellt.
+- **Content-Inseln identifiziert:** Pferde, Ritter, Zirkus, Baustelle haben zwar `/kindergeburtstag/`-Seiten + Altersgruppen + OG-Bild, sind aber weder in `/einladung/` noch in `/schatzsuche/` vertreten → kein Conversion-Pfad. Aus P1-8 ausgeklammert, neues Ticket **P1-8b Content-Inseln-Strategie** angelegt (Integration vs. Streichen, GSC-Daten abwarten).
+- **Zusätzlich geparkt:** Schatzsuche-Mottos „Dschungel" und „Feen" existieren als Schatzsuche-Seiten, haben aber keine `/kindergeburtstag/`-Pendants. Spiegelbildlicher Fall, später einordnen.
+- **Backlog P1-17 „DSGVO-Hygiene Partyseite"** als Zeile 10 der Prio-Tabelle aufgenommen. Sub-Task B (Datenschutzerklärung §§10–11) erledigt, A+C offen (beide Laptop-Session mit Cloudflare-Deploy).
 
 ## Status der Site
 - Partyseite-Erstellung: **LIVE** (FIX11 deployed am 21.04.2026).
