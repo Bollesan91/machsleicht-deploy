@@ -1,6 +1,6 @@
 # MASTER-STRATEGIE — machsleicht & machsruhig
 
-**Letzte Aktualisierung:** 19.04.2026
+**Letzte Aktualisierung:** 20.04.2026
 **Status:** Lebendes Dokument. Alle vorherigen Strategie-Dokumente wurden hier konsolidiert.
 **Ort:** Root-Verzeichnis (neben ARCHITECTURE.md und BACKLOG-AUDIT.md) — immer auffindbar.
 
@@ -47,6 +47,51 @@
 - Pinterest rankt bei „kindergeburtstag 6 jahre" und „kindergeburtstag ideen" auf Google Position 1. Ohne Pinterest verliert machsleicht messbar Top-of-Funnel.
 - **Problem:** Pinterest ist laufender Aufwand (min. 2–3h/Woche für regelmäßiges Pinning), widerspricht dem Passivitäts-Prinzip 0.3.
 - **Entscheidungs-Trigger:** Bei 5.000+ Besuchern/Monat ohne Pinterest nochmal prüfen. Davor: nicht starten.
+
+### 0.7 Monetarisierungs-Validierungs-Reihenfolge (dokumentiert 20.04.2026)
+
+Nach Durcharbeiten der Produkt-Matrix am 20.04. steht fest: Monetarisierungs-Entscheidungen werden **sequenziell validiert**, nicht parallel gestartet. Jede Stufe beantwortet eine konkrete Frage, bevor die nächste angegangen wird.
+
+**Stufe 1 — Zahlungsbereitschaft jenseits Affiliate** (jetzt läuft)
+- **Test-Vehikel:** Rätsel nach Maß (0,99€/3,99€) + Gumroad-Digital-Produkte (P2-13)
+- **Frage:** Zahlen Eltern überhaupt kleine Beträge für digitale Produkte auf machsleicht?
+- **Erfolg:** ≥5 Käufe/Monat bei aktuellem Traffic innerhalb 90 Tagen
+- **Falls Fail:** Traffic-Problem (nicht Monetarisierungs-Problem) → Fokus zurück auf SEO/Content, kein weiterer Paid-Layer
+
+**Stufe 2 — Mittlerer Preispunkt** (nur wenn Stufe 1 bestanden)
+- **Test-Vehikel:** Partyseite-Pro als 2,99€-Upsell auf bestehender Partyseite
+- **Frage:** Zahlen Eltern 2–5€ für Feature-Upgrades auf bestehendem Gratis-Produkt?
+- **Erfolg:** ≥5 % der Partyseite-Ersteller nehmen Pro an
+
+**Stufe 3 — Retention messen** (parallel zu Stufe 1+2)
+- **Test-Vehikel:** Standalone-Wunschliste (P2-17) + Kind-Nickname in localStorage
+- **Frage:** Kommen Familien mehrfach pro Jahr zurück (Geburtstag + Weihnachten + Einschulung)?
+- **Erfolg:** ≥30 % 6-Monats-Retention per Plausible-Event
+
+**Stufe 4 — Abo-Evaluierung** (frühestens Q4 2026, nur wenn Stufe 1+3 bestanden)
+- **Trigger:** 12-Monats-Retention ≥30 % UND mindestens 3 bezahlte Interaktionen/Kunde/Jahr
+- **Falls erfüllt:** Familien-Anlass-Abo-Konzept prüfen (Matrix-Idee vom 20.04.)
+- **Falls nicht:** Affiliate-Skalierung bleibt Haupt-Hebel, kein Abo-Experiment
+
+**Leitprinzip:** Keine Abo-Produkte vor Stufe 4. Keine Stufe überspringen. Jede Stufe mit Plausible-Event tracken.
+
+### 0.8 Was wir bewusst NICHT bauen (dokumentiert 20.04.2026)
+
+Diese Ideen wurden explizit geprüft und verworfen. Damit sie nicht jedes Quartal wieder hochkochen, hier namentlich festgehalten — inkl. Begründung und möglichem Re-Evaluation-Trigger.
+
+| Idee | Warum nicht | Re-Evaluation wenn |
+|------|-------------|-------------------|
+| **Zwangs-Kopplung aller Tools** (Planer verpflichtend für Einladung/Partyseite) | Bricht Standalone-Prinzip (Abschnitt 1) und 4-SEO-Einstiegspunkte-Strategie (0.2). Kurzfristig mehr Kontrolle, langfristig Traffic-Killer. Bounce-Rate auf `/einladung` explodiert, Google-Einstiegspunkte sterben. | Nie. Kopplung erfolgt über **Bequemlichkeit** (P2-20 Datenübergabe), nicht über Zwang. |
+| **Familien-Anlass-Abo** | Kein Retention-Datenbeleg vorhanden. Abo vor Retention = verbrennt Goodwill bei 80 Besuchern/Tag. | Stufe 4 der Validierungs-Reihenfolge 0.7 erfüllt. |
+| **WhatsApp Business API / Familien-OS für WhatsApp** | Ohne offizielle Meta-Partnerschaft nicht seriös umsetzbar. Ersatz-Implementierungen (Share-Links) sind kein OS, nur Kosmetik — und die Partyseite macht das bereits. | Meta öffnet Business-API für Kleinstunternehmer mit DSGVO-tauglichen Konditionen. |
+| **B2B White Label für lokale Anbieter** | Widerspricht Passivitäts-Prinzip 0.3 (Sales-Gespräche, Custom-Arbeit, SLAs, Rechnungen). Solo-Betrieb kann das nicht leisten. | Ab dauerhaftem 5.000€+/Monat Consumer-Revenue und 20+ Std/Woche freie Zeit. |
+| **Kind-Profil als eigenständiges Produkt** | Wird durch Wunschliste-Ganzjahres + Danke-Modul organisch als Nebenprodukt entstehen. Als eigenes Produkt ohne Datenbasis zu leer. | Retention ≥30 % + erste konkrete Nutzer-Anfragen nach „Profil-Feature". |
+| **Marketplace für Micro-Packs von Drittanbietern** | Verwandelt machsleicht in Bauchladen, verwässert Marke als Tool-System. | Nie unter Solo-Betrieb. Würde ein Kuratoren-Team brauchen. |
+| **Regenplan / Audio-Einladung / Danke-Nachrichten / Elternwissen als Standalone** | Schwache Einzel-Ideen, die als Mikro-Features in bestehenden Tools deutlich besser wirken (Regenplan → Mikro-Feature auf `/kindergeburtstag-bei-regen`). | Nicht als Standalone. Integration in bestehende Seiten ist erlaubt und teils im Backlog (z.B. Danke-Modul als P3-Kandidat für Partyseite). |
+| **Notfall-Modus 48h als eigenes Produkt** | Guter Conversion-Hebel, aber kein Lock-in. Funktioniert besser als Landing-Page-Variante des Planers als als neues Produkt. | Nie als eigenständiges Produkt. Ggf. später als A/B-Test auf `/kindergeburtstag`. |
+| **Concierge Light (bezahlte Planungs-Hilfe durch Person)** | Nicht skalierbar, nicht passiv. | Nie unter Solo-Betrieb. |
+
+**Leitprinzip:** Jede verworfene Idee bleibt verworfen, bis der Re-Evaluation-Trigger explizit erreicht ist. Nicht weil die Ideen schlecht wären — sondern weil das größte Risiko ist, **zehn gute Ideen parallel zu starten** statt eine gute Idee zu Ende zu bauen.
 
 ---
 

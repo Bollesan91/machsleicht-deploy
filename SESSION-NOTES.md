@@ -1,71 +1,83 @@
 # Session-Notizen
 
-## Letzte Session
-**Datum:** 20.04.2026 (Session #4, Opus 4.7) — Workflow-Aufräumen, PBI-Impact-Check in CLAUDE.md verankert, P1-15 strategisch neu geschnitten
+## Letzte Sessions (20.04.2026)
+
+Heute zwei Sessions parallel: Desktop morgens (#4), Mobile abends (#2). Reihenfolge in der Repo-Historie war Mobile zuerst (auf main), dann Desktop (auf draft). Beim „ende" zusammengeführt mit `merge main into draft`.
 
 ## Was wurde gemacht
 
-### 1. Resultate der letzten Session geprüft (Code-Check)
-- ✅ Social Proof im Hero (React + SEO-Fallback konsistent): "Von Eltern entwickelt · 17 Mottos · Ohne Anmeldung"
-- ✅ 4 Demo-Cards auf Homepage (Plan mit ~47€, Schatzkarte mit 4 Stationen, Dino-Einladung, Partyseite mit RSVP-Liste)
-- ✅ Partyseite `status:"live"` in js/index.js
-- ✅ `validate-all.sh` grün (alle 6 Stufen bestanden)
-- 🚩 **Lücke gefunden:** 8-Punkte PBI-Impact-Check war NICHT in CLAUDE.md, nur als Stichwort in SESSION-NOTES.md — jetzt behoben
+### Mobile-Session #2 (abends, Opus 4.7) — Bugfix + Strategie
 
-### 2. CLAUDE.md komplett neu geschrieben
-- Alter draft/main-Workflow war auskommentiert → zurückgeschrieben (Bolle arbeitet wieder vom Desktop)
-- Git-Workflow explizit als "ÜBERSTEUERT den generischen git-sync Skill" markiert
-  - "Start leicht" → pull auf `draft`
-  - "Ende" → commit + push auf `draft` (kein Deploy)
-  - "Ende deploy" → draft in main mergen + push (Deploy)
-- **PBI-Impact-Check als harte Regel dokumentiert:** Nach jedem PBI wird geprüft, ob andere Stellen im Repo veraltet sind. Nicht Selbst-Check, sondern Downstream-Check. Die 8 Orte: Status-Badges, Texte, Demo-Vorschauen, Feature-Zahlen, Validator, interne Links, Sitemap+Redirects, SEO↔React-Konsistenz
-- Deploy-Regel (Credits kosten Geld) explizit
-- Alte Cowork-Artefakte (Elefanten-Memory-Test, strategie-status.docx) entfernt
+**1. Partyseite-Bugfix (Commit `a694178`)** — Mobile-Live-Test deckte 2 Bugs auf:
+- `null is not an object ('mailtoLink')` beim Erstellen → Legacy-Zeile aus dem Resend-Redesign entfernt
+- iOS Uhrzeit-Feld kollabiert in Flex-Container → `min-width:0` + `box-sizing:border-box` gefixt
+- **Status: Bug ist im Repo, NICHT auf Cloudflare deployed** — wartet auf P1-16 Laptop-Session
 
-### 3. P1-15 Email-Capture strategisch neu gedacht
-**Ausgangsfrage:** Bolle hat PDF-per-Mail-Köder als zu schwach eingeschätzt. Stattdessen: "Eleganter Hebel pro CTA".
+**2. Backlog-Update (Commit `75bdb2c`)** — P1-16 „Partyseite Follow-Ups" als Sequenz #8 aufgenommen:
+- Cloudflare-Deploy des Bugfix
+- Email-End-to-End-Test mit Resend
+- Reply-To-Handling
+- Alte `guestView()` Cleanup
+- Live-Test mit verschiedenen Mottos
+- Foto-Crop-Verbesserung (Slider + Drag, aus Mobile-Test)
+- Beteiligen custom amount
+- Kill List + Internal Linking Audit
 
-**Ergebnis der Diskussion:**
-- PDF als Köder ist schwach → Plan ist eh sichtbar, kein Postfach-Wert
-- **Link zum fertigen Asset** funktioniert gut für zeitversetzt genutzte Outputs (Einladung, Partyseite, Schatzsuche) — weil das Asset später gebraucht wird und "nicht verlieren" ein echtes Problem löst
-- Planer selbst braucht anderen Hebel: **Erinnerungs-Mail 7 Tage vorher** (= Nurture-Flow, spätere Session)
+**3. Strategie 0.7 + 0.8 (Commit `41e7e17`)** — Nach Durcharbeiten der Produkt-Matrix:
+- **0.7 Monetarisierungs-Validierungs-Reihenfolge** (4 Stufen): Zahlungsbereitschaft → Mittlerer Preispunkt → Retention → Abo (Q4 2026 frühestens)
+- **0.8 Was wir bewusst NICHT bauen** (9 Ideen explizit verworfen mit Re-Evaluation-Trigger): Zwangs-Kopplung, Familien-Anlass-Abo, WhatsApp-Business-API, B2B-White-Label, Kind-Profil-Standalone, Marketplace, Standalone-Mikro-Tools, Notfall-Modus, Concierge
 
-**Scope-Revision festgehalten in BACKLOG-AUDIT.md:**
-- Pilot auf **Einladung** (nicht Planer): höchster wahrscheinlicher Nutzen, simpler, Template wiederverwendbar für Partyseite + Schatzsuche
-- Mini-MVP: Kein jsPDF, kein PDF-Attachment — nur Link + Datenbank-Token
-- 3–4h Code statt 1–2 Tage
-- Rollout: Einladung → 2 Wochen Daten sammeln → wenn Opt-In ≥15% auf Partyseite + Schatzsuche (je 1–2h wegen Template-Wiederverwendung)
-- **Blockiert durch MailerLite-Account** (Bolle setzt am Desktop auf)
+**4. Token rotiert** — Neuer GitHub PAT in lokaler Remote-URL eingebaut.
 
-### 4. P1-15 Status & Prio
-- Prio bleibt **P1** (unverändert)
-- Status in Backlog-Tabelle auf 🚧 "blockiert durch Account-Setup"
-- Detail-Spec in BACKLOG-AUDIT.md um Scope-Revision erweitert — damit nächste Session nicht bei Null diskutiert wird
+### Desktop-Session #4 (morgens, Opus 4.7) — Workflow + P1-15-Schliff (Commit `6740467`)
 
-## Nächste Schritte
+**1. Resultate der vorherigen Session geprüft (Code-Check):**
+- ✅ Social Proof im Hero, 4 Demo-Cards auf Homepage, Partyseite `status:"live"`
+- ✅ `validate-all.sh` grün
+- 🚩 **Lücke gefunden:** 8-Punkte PBI-Impact-Check war nicht in CLAUDE.md — jetzt behoben
 
-**Sobald Bolle MailerLite-Account hat (macht er am Desktop):**
-1. Account-Setup: EU-Rechenzentrum wählen, Domain machsleicht.de verifizieren, AV-Vertrag akzeptieren, API-Key generieren, Group "Einladungs-Interessenten" anlegen
-2. API-Key als Cloudflare-Worker-Secret hinterlegen (Name: `MAILERLITE_API_KEY`)
-3. Bolle sagt nur Bescheid dass der Key liegt — dann P1-15 Pilot bauen (Einladung)
+**2. CLAUDE.md neu geschrieben:**
+- draft/main-Workflow als „ÜBERSTEUERT generischen git-sync Skill" markiert
+- PBI-Impact-Check als harte Regel: nach jedem PBI 8 Downstream-Orte prüfen (Status-Badges, Texte, Demo-Vorschauen, Feature-Zahlen, Validator, interne Links, Sitemap+Redirects, SEO↔React-Konsistenz)
+- Deploy-Regel explizit (Credits kosten Geld)
 
-**Alternative Prio-Kandidaten (nicht blockiert):**
-1. **P2-20 Datenübergabe Planer → Tools** (4–6h, reines Frontend) — Top-5 in Prio, aber größer für Mobile-Session
-2. **P1-8 Elite-Motto** (1–2h) — Einhorn oder Paw Patrol? Content-Arbeit, mobil gut machbar
-3. **Cloudflare HTTPS+HSTS** für party.machsleicht.de — 5 Min Anleitung + Bolle klickt am Desktop
+**3. P1-15 strategisch neu gefasst:**
+- PDF als Köder ist schwach → ersetzt durch **Link zum fertigen Asset** für zeitversetzt genutzte Outputs (Einladung, Partyseite, Schatzsuche)
+- Pilot auf Einladung (nicht Planer): höchster wahrscheinlicher Nutzen, simpler, Template wiederverwendbar
+- Mini-MVP: kein jsPDF, nur Link + Token (3–4h statt 1–2 Tage)
+- Status auf 🚧 (blockiert durch MailerLite-Account, Bolle setzt am Desktop auf)
+
+## Nächste Schritte (Laptop-Session bevorzugt)
+
+**Priorität 1 (kritisch — Erstellen-Flow auf Production aktuell kaputt):**
+1. Cloudflare Quick Editor öffnen → `party-worker` Worker
+2. `party-worker.js` (1570 Zeilen) aus Repo rein kopieren → „Save and deploy"
+3. Test auf `party.machsleicht.de`: Erstellen-Flow läuft ohne Crash, Uhrzeit bündig mit Datum auf iOS
+
+**Direkt danach (P1-16 Follow-Ups, siehe Backlog Sequenz #8):**
+- Email-End-to-End-Test mit Resend
+- Foto-Crop-Umbau (Slider + Drag, ~45–60 Min)
+- Reply-To, alte `guestView()` Cleanup, Mottos-Test
+
+**Parallel/nebenher:**
+- MailerLite-Account-Setup (entblockt P1-15 Sequenz #9)
+- API-Key als Cloudflare-Worker-Secret `MAILERLITE_API_KEY` hinterlegen
+- Sobald Key liegt: P1-15 Pilot auf Einladung bauen
+
+**Roadmap-Folge nach P1-16/P1-15:**
+- #10 P2-20 Datenübergabe Planer → Tools (4–6 Std, reines Frontend)
+- #11 P2-13 Gumroad-Produkte (Piraten + Dino, 4h pro Produkt)
+- #14 P1-12 Einschulungs-Planer (**Launch bis 31.05.!** SEO-Vorlauf)
 
 ## Offene Fragen
+- Einhorn oder Paw Patrol als nächstes Elite-Motto (P1-8)?
+- Awin-Freischaltung: Wann kommt die Publisher-ID?
+- Demo-Einladung: Welches Stock-Foto als Beispiel-Kind?
+- Reply-To: `party@machsleicht.de` über Cloudflare Email Routing oder Resend?
 
-- Einhorn oder Paw Patrol als nächstes Elite-Motto? (aus Vorsession offen)
-- MailerLite vs. Brevo vs. Resend — Empfehlung war MailerLite (EU-Rechenzentrum, im PBI genannt, Nurture-Flows nativ)
-- Awin-Freischaltung: Wann kommt die Publisher-ID? (aus Vorsession offen)
-- Demo-Einladung: Welches Stock-Foto als Beispiel-Kind? (aus Vorsession offen)
-
-## Status der Site nach dieser Session
-
-Keine inhaltlichen Änderungen an der Site — nur Doku:
-- CLAUDE.md von 24 auf 45 Zeilen (Workflow-Stand + PBI-Impact-Check)
-- BACKLOG-AUDIT.md: P1-15 Status + Scope-Revision dokumentiert
-- Produkte weiterhin: 8 live, 0 bald, 0 geplant
+## Status der Site nach diesen beiden Sessions
+- **Partyseite-Erstellung in Production: BROKEN** bis Cloudflare-Deploy erfolgt (Fix ist im Repo, nicht live)
+- Alles andere: unverändert zum Stand 19.04. abends
+- Repo: 37 PBIs in Roadmap, 8 davon erledigt, 1 in Arbeit (P1-15 🚧)
+- STRATEGIE.md hat jetzt 8 Leitplanken-Abschnitte (0.1 bis 0.8)
 - Sitemap: 223 URLs (unverändert)
-- Validator: grün (unverändert)
