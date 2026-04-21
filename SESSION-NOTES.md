@@ -1,5 +1,40 @@
 # Session-Notizen
 
+## Cowork-Session (21.04.2026, Opus 4.7, Teil 3) — PBI-Impact-Check Follow-Up + Workflow-Haertung
+
+### Was gemacht
+
+Nach der Piraten-Migration (Teil 2) den PBI-Impact-Check formal durchgegangen. Zwei Stellen waren noch nicht mitgezogen:
+
+- **`sitemap.xml`** — `/einladung/piraten` fehlte. Eintrag alphabetisch zwischen meerjungfrau und prinzessin eingefuegt (priority 0.8 wie andere Flagship-Mottos, lastmod 2026-04-21).
+- **`index.html` Zeile 302 (SEO-Fallback)** — die Motto-Link-Aufzaehlung nannte nur 6 von 10 Mottos (Dino/Einhorn/Weltraum/Safari/Detektiv/Feuerwehr). Piraten fehlte komplett (historisch, weil Piraten frueher unter `/einladung` direkt lag). Jetzt alle 10 Mottos namentlich verlinkt, Piraten zuerst (Flagship), danach die 9 weiteren.
+
+**Commits:**
+- `e67f908` (draft) / `2dfec4e` (main merge) — PBI-Impact-Check Follow-Up
+
+**Zusaetzlich: CLAUDE.md-Haertung** — die beiden wiederkehrenden Fehler aus dieser Session im Cowork-PAT-Workflow dokumentiert, damit sie nicht nochmal passieren:
+
+1. **`-c user.name/email` ist PFLICHT bei commit UND merge.** Die Cowork-Sandbox hat kein konfiguriertes Git-Identity. Ohne die Flags failt `git commit`/`git merge` mit `fatal: unable to auto-detect email address`, aber der nachfolgende `git push` meldet trotzdem "OK" (weil nichts zu pushen ist). Fehler verschluckt. Workflow jetzt: `-c`-Flags in allen Code-Beispielen + Pflicht-Gegencheck via `git log --oneline -3 main` nach dem Push.
+2. **NUL-Padding via Windows-Mount.** Das `Write`-Tool hinterlaesst Dateien auf dem Mount gelegentlich mit NUL-Bytes am Ende. Workflow: nach jedem Write auf Mount via Python rstrip-Check verifizieren, ggf. `head -c <size>` truncaten. Fuer laengere Inhalte lieber direkt via bash-heredoc auf Mount schreiben.
+
+**Commit:** `13350d6` (draft, kein Deploy — CLAUDE.md ist nicht live-relevant).
+
+### Alle Commits dieser Session-Tranche (21.04.2026 ab Mittag)
+
+| Hash | Branch | Inhalt | Deploy |
+|------|--------|--------|--------|
+| `4af3456` | draft | Piraten-Einladung Migration: Hub-Seite + einheitliches URL-Schema | — |
+| `80075af` | main | Merge draft: Piraten-Einladung Migration + Hub | ✓ |
+| `e67f908` | draft | PBI-Impact-Check Follow-Up: Sitemap + SEO-Fallback | — |
+| `2dfec4e` | main | Merge draft: PBI-Impact-Check Follow-Up | ✓ |
+| `13350d6` | draft | CLAUDE.md: Cowork-Git-Workflow robuster | — |
+
+### Zustand zum Ende
+
+Validator: `PASSED`. Stufe 7 (neue Einladungs-Motto-Regel) greift. Sitemap hat alle 10 Motto-URLs + den Hub. SEO-Fallback-Text in index.html listet alle 10 Mottos namentlich. Keine toten internen Links gefunden.
+
+---
+
 ## Cowork-Session (21.04.2026, Opus 4.7, Teil 2) — Piraten-Einladung Migration + Hub-Seite
 
 ### Was gemacht (strukturelle Aufräum-Action „ein für alle mal")
