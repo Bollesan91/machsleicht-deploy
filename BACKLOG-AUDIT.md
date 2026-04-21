@@ -27,7 +27,7 @@
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
 |---|--------|------|--------|------------------|---------|---------|
 | 8 | ⏳ | **P1** | P1-16 | **Partyseite Follow-Ups** (Cloudflare-Deploy Bugfix + Email-Test + Foto-Crop + Reply-To) | 1–2 Std | **Laptop-Session!** Bugfix-Commit `a694178` wartet auf Cloudflare-Deploy |
-| 9 | 🚧 | **P1** | P1-15 | **Email-Capture (Pilot: Einladung)** | 3–4 Std | **Blockiert: MailerLite-Account** (Bolle macht am Desktop). Dann Pilot auf Einladung, später Partyseite + Schatzsuche |
+| 9 | ⏳ | **P1** | P1-15 | **Email-Capture (Pilot: Einladung)** | 4–5 Std | **Über Resend** (Audiences + Broadcasts) — Transactional läuft schon. Muss: DOI-Flow selbst bauen, dann Pilot Einladung, später Partyseite + Schatzsuche |
 | 10 | ⏳ | **P1** | P2-20 | **Datenübergabe Planer → Tools** | 4–6 Std | Ökosystem-Prinzip umsetzen, nach P1-10 |
 | 11 | ⏳ | **P1** | P2-13 | Gumroad: 2 Digital-Produkte (Piraten+Dino) | 4h/Produkt | +100€/Monat bei aktuellem Traffic |
 | 12 | ⏳ | **P1** | P2-15 | Awin-Anmeldung (Otto, myToys, Thalia) | 30 Min + Warten | Prüfung dauert 1–3 Tage, früh starten |
@@ -47,30 +47,31 @@
 | 21 | ⏳ | **P2** | P2-5 | Performance (JS-Bundle, lazy loading) | 15 Min kurzfristig, 2–4h langfristig | Laufend |
 | 22 | ⏳ | **P2** | P2-8 | /kreuzwortraetsel pre-rendern | 1–2 Std | SEO-Nachzügler |
 | 23 | ⏳ | **P2** | P2-21 | Seiten-Rollen-Matrix | 1 Tag | Nach P1-11 sinnvoll |
+| 24 | ⏳ | **P2** | P2-22 | **Site-Wide In-App-Frame** (Modal-Pattern seitenweit) | 1–2 Tage | Retention: kein Tab-Verlust bei Vorschauen & Affiliates |
 
 ### Vor dem Herbst-Peak (Juli–September)
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Deadline |
 |---|--------|------|--------|------------------|---------|---------|
-| 24 | ⏳ | **P1** | P1-13 | **Adventskalender-Builder** (24 KI-Türchen) | 3–4 Tage | **Launch bis 31.08.** |
-| 25 | ⏳ | **P1** | P1-14 | **KI-Geschenkeberater** | 2–3 Tage | **Launch bis 30.09.** |
-| 26 | ⏳ | **P3** | P3-6 | **machsruhig.de launchen** | 2–3 Wochen Sprint | Eigener Sprint, separates Doc |
+| 25 | ⏳ | **P1** | P1-13 | **Adventskalender-Builder** (24 KI-Türchen) | 3–4 Tage | **Launch bis 31.08.** |
+| 26 | ⏳ | **P1** | P1-14 | **KI-Geschenkeberater** | 2–3 Tage | **Launch bis 30.09.** |
+| 27 | ⏳ | **P3** | P3-6 | **machsruhig.de launchen** | 2–3 Wochen Sprint | Eigener Sprint, separates Doc |
 
 ### Später (Q4 2026 und Q1 2027)
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
 |---|--------|------|--------|------------------|---------|---------|
-| 27 | ⏳ | **P3** | P3-5 | E-Mail-Liste aufsetzen (MailerLite + Nurture) | 1 Tag | Verwertung von P1-15-Opt-Ins |
-| 28 | ⏳ | **P3** | P3-3 | Social Proof aus Plausible (echter Counter) | variabel | Nach 3 Monaten GSC-Daten |
-| 29 | ⏳ | **P3** | P3-4 | Druckvorlagen pro Motto (Top 5) | 30 Min/Motto | Parallel zu P1-8 |
-| 30 | ⏳ | **P3** | P3-7 | Klassen-Geburtstagskalender | 3 Tage | Braucht P2-17 |
-| 31 | ⏳ | **P3** | P3-8 | Nachbar-Nachricht-Generator | 4 Std | Quick-Win |
-| 32 | ⏳ | **P3** | P3-9 | Foto-Spots/Photobooth-Backdrops | 6 Std | Parallel zu P1-8 |
-| 33 | ⏳ | **P3** | P3-10 | Urkunden/Diplome | 6 Std | Nach P3-5 |
-| 34 | ⏳ | **P3** | P3-1 | Repo aufräumen | 10–30 Min | Quick-Win jederzeit |
-| 35 | ⏳ | **P3** | P3-11 | **Pinterest-Präsenz** | 4h Setup + 1–2h/Woche | **Geparkt**: Trigger bei 5.000+ Besuchern/Monat |
-| 36 | ⏳ | **P4** | P4-1 | PDF-Partybücher pro Motto | 1 Tag/Motto | Wenn Traffic da ist |
-| 37 | ⏳ | **P4** | P4-2 | Premium-Features (KI-Spielleiter, Audio, etc.) | mehrere Wochen | Wenn Traffic da ist |
+| 28 | ⏳ | **P3** | P3-5 | E-Mail-Liste aufsetzen (Resend Audience + Nurture) | 1 Tag | Verwertung von P1-15-Opt-Ins |
+| 29 | ⏳ | **P3** | P3-3 | Social Proof aus Plausible (echter Counter) | variabel | Nach 3 Monaten GSC-Daten |
+| 30 | ⏳ | **P3** | P3-4 | Druckvorlagen pro Motto (Top 5) | 30 Min/Motto | Parallel zu P1-8 |
+| 31 | ⏳ | **P3** | P3-7 | Klassen-Geburtstagskalender | 3 Tage | Braucht P2-17 |
+| 32 | ⏳ | **P3** | P3-8 | Nachbar-Nachricht-Generator | 4 Std | Quick-Win |
+| 33 | ⏳ | **P3** | P3-9 | Foto-Spots/Photobooth-Backdrops | 6 Std | Parallel zu P1-8 |
+| 34 | ⏳ | **P3** | P3-10 | Urkunden/Diplome | 6 Std | Nach P3-5 |
+| 35 | ⏳ | **P3** | P3-1 | Repo aufräumen | 10–30 Min | Quick-Win jederzeit |
+| 36 | ⏳ | **P3** | P3-11 | **Pinterest-Präsenz** | 4h Setup + 1–2h/Woche | **Geparkt**: Trigger bei 5.000+ Besuchern/Monat |
+| 37 | ⏳ | **P4** | P4-1 | PDF-Partybücher pro Motto | 1 Tag/Motto | Wenn Traffic da ist |
+| 38 | ⏳ | **P4** | P4-2 | Premium-Features (KI-Spielleiter, Audio, etc.) | mehrere Wochen | Wenn Traffic da ist |
 
 ### Gestrichen / Erledigt
 
@@ -464,20 +465,27 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 - **Rollout-Plan:** Einladung zuerst → Daten sammeln (2 Wochen) → bei Opt-In ≥15% auf Partyseite + Schatzsuche ausrollen (je 1–2h wegen Template-Wiederverwendung)
 - **Planer bekommt separaten Hebel:** Nicht Link-per-Mail, sondern Erinnerungs-Mail 7 Tage vor Geburtstag (= Nurture-Flow, spätere Session)
 
-**Blockiert durch:** MailerLite-Account (Bolle setzt am Desktop auf, inkl. EU-Rechenzentrum, Domain-Verifizierung, AV-Vertrag, API-Key). Dann ~3–4h Code: Einladungstool-Frontend + Worker-Endpoint + MailerLite-Template + Datenschutzerklärung-Update.
+**Voraussetzungen (keine harten Blocker mehr — Resend läuft schon):**
+- Resend-Audience für „machsleicht-newsletter" im Resend-Dashboard anlegen (5 Min)
+- Double-Opt-In-Flow **selbst bauen** (Resend hat kein built-in DOI) — Worker erzeugt Confirmation-Token, schickt Bestätigungs-Mail, Klick auf Link → Contact in Audience als `subscribed` speichern
+- Datenschutzerklärung auf machsleicht.de/datenschutz erweitern: Resend als Auftragsverarbeiter, DOI-Prozess beschrieben, Widerruf-Link
+- AV-Vertrag mit Resend prüfen / abschließen (Resend hat Standard-DPA)
+
+**Code-Umfang (~4–5h):** Einladungstool-Frontend + Worker-Endpoint `/api/subscribe` + DOI-Flow + Resend-Broadcast-Template + Datenschutz-Text.
 
 **Was gebaut wird:**
 - Am Ende des Planer-Wizards (direkt nach Plan-Output): Sektion **"Plan als PDF speichern — per Mail zugeschickt"**
-- Form: nur E-Mail-Feld + DSGVO-Checkbox + Button "PDF zuschicken"
-- Backend: MailerLite-API-Call (Double-Opt-In-Mail mit PDF-Link)
+- Form: nur E-Mail-Feld + DSGVO-Checkbox (Pflicht) + optionaler Newsletter-Opt-In-Haken (separat) + Button "PDF zuschicken"
+- Backend: Worker erzeugt Confirmation-Token → sendet via Resend Confirmation-Mail → bei Klick Contact in Resend-Audience + PDF-Link ausliefern (DOI selbst gebaut)
 - PDF-Generation: clientseitig via jsPDF aus dem aktuellen Planer-State
 - Sekundärer Lead-Magnet-Versprechen im Mail-Text: "Bekommst Einkaufsliste 7 Tage vorher automatisch zugeschickt" (Nurture-Flow)
 - **Klare Alternative sichtbar:** "Ohne Mail weiter → Plan direkt als PDF runterladen" — keine Erpressung, Download bleibt möglich ohne Mail
 
 **Tech-Checkliste:**
 - [ ] Abschnitt `<email-capture>` in Planer-Output-React-Component
-- [ ] MailerLite Account + Double-Opt-In-Template (P3-5 ggf. vorziehen)
-- [ ] MailerLite API-Key in Cloudflare-Worker-Secret
+- [ ] Resend-Audience „machsleicht-newsletter" anlegen
+- [ ] DOI-Flow im Worker: Token in KV, Confirmation-Mail-Template in Resend, `/api/confirm?token=` Endpoint, Contact-Add via Resend-API
+- [ ] RESEND_API_KEY ist bereits im Worker (für Transactional) — keine neue Secret-Einrichtung
 - [ ] Neuer Worker-Endpoint `/api/plan-per-mail` (KV-Token erzeugt, PDF-Link, Mail-Trigger)
 - [ ] DSGVO-Text + Checkbox (Pflicht)
 - [ ] Plausible-Event `plan-email-submit` + `plan-pdf-direct` (Vergleichs-Messung)
@@ -494,7 +502,7 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 - Skaliert linear mit Traffic
 
 **Aufwand:** 1–2 Tage (8–12 Stunden)
-- 2h: MailerLite-Setup + Double-Opt-In-Flow testen
+- 2h: Resend-Audience + Self-Built-DOI-Flow (Token-Gen, KV-Store, Confirmation-Mail-Template, `/api/confirm`-Endpoint, Contact-Create)
 - 3h: Worker-Endpoint + KV-Token für PDF-Link
 - 3h: React-Component + jsPDF-Integration + Design
 - 2h: Nurture-Flow-Mails schreiben (Welcome, 7-Tage-vorher, 1-Tag-vorher)
@@ -504,12 +512,12 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 
 **Abhängigkeiten:**
 - P1-10 (Cloudflare Worker muss live sein)
-- P3-5 kann teilweise parallel: MailerLite-Setup ist gemeinsamer Schritt
+- P3-5 kann teilweise parallel: Resend-Audience-Setup ist gemeinsamer Schritt
 
 **Erfolgs-Kriterien:**
 - Opt-In-Rate ≥15 % der Planer-Abschließer
 - Double-Opt-In-Confirm-Rate ≥65 %
-- Nach 3 Monaten: 100+ Kontakte in MailerLite
+- Nach 3 Monaten: 100+ Kontakte in der Resend-Audience
 - Nurture-Flow öffnet Reaktivierungen messbar (Plausible-Referral von Mail)
 
 **Risiko:**
@@ -810,6 +818,95 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 
 ---
 
+#### P2-22: Site-Wide In-App-Frame (Modal-Pattern seitenweit)
+
+**Motivation:** Im P1-16-Sprint am 21.04.2026 wurde auf der Partyseite ein Modal-Overlay mit iframe für die „Vorschau" und „Bearbeiten"-Buttons eingeführt — statt die Ziele in einem neuen Tab zu öffnen, erscheint ein zentriertes Panel (520 px max-width, 16 px Padding, abgerundete Ecken, Shadow) über der Seite, das den Context behält. Ergebnis laut User-Test („flüßig. proportionen passen"): Deutlich bessere Retention, kein Tab-Verlust, keine Verwirrung. Das Pattern soll seitenweit ausgerollt werden.
+
+**Warum P2, nicht P1:** Kein akuter Bug, sondern ein systemweiter UX-Hebel. Schmerzpunkt ist die Retention-Lücke bei jedem `target="_blank"` — aber der aktuelle Zustand funktioniert. P2 reicht.
+
+**Zwei Einsatz-Szenarien — unterschiedliche technische Ansätze:**
+
+**A) Interne Vorschauen (same-origin) — unproblematisch**
+- Alles unter `machsleicht.de`, `party.machsleicht.de`, `raetsel.machsleicht.de`: direkt via iframe einbettbar
+- Use-Cases: Partyseite-Vorschau (bereits live), Einladungs-Vorschau, Schatzkarten-Vorschau, Planer-Demo-Cards auf Homepage („So sieht's aus"), Rätsel-Vorschau
+- Einheitliche Modal-Komponente extrahieren (`/js/modal.js` oder inline in jeder Page), konsistente Styles (CSS-Variablen aus FIX11-Version der Partyseite)
+
+**B) Externe Affiliate-Links (Amazon, Otto, myToys, Thalia, ...) — nicht iframe-bar**
+- Amazon, Otto etc. setzen `X-Frame-Options: DENY` / `frame-ancestors 'none'` → **Browser blockiert iframe hart, kein Workaround im Client**
+- Server-side Proxy („Reader-Mode") wäre technisch machbar, aber: bricht Affiliate-Tracking-Cookies, verletzt Amazon-Partner-ToS, IP-Blocking-Risiko, rechtliche Grauzone
+- **Echte Lösung: OG-Preview-Card-Pattern** statt iframe:
+  - Server fetcht Ziel-URL einmal, extrahiert `og:image`, `og:title`, `og:price`, `og:description` → speichert in KV (TTL 24 h)
+  - Modal zeigt **native Preview-Card** (Bild + Titel + Preis + „Verfügbar bei Amazon/Otto")
+  - CTA: „🛒 Zum Shop" → öffnet **neuen Tab** (normales Verhalten, Affiliate-Link intakt)
+  - Return-Loop: Wenn User zurückkehrt, zeigt die Seite „Willkommen zurück — als besorgt markieren?" (lokaler State via `sessionStorage`)
+- Ergebnis: Fühlt sich an wie „In-App", aber ohne iframe-Blockaden und ohne ToS-Risiko. Conversion-Hebel bleibt (Preview → reduzierte Abbrüche), Tracking bleibt.
+
+**Was gebaut wird:**
+- **Phase 1 (Interne Vorschauen, ~4 Std.):**
+  - Gemeinsame Modal-Komponente extrahieren (CSS + JS aus party-worker.js FIX11)
+  - Einbau auf Homepage-Demo-Cards („So sieht's aus" öffnet jetzt Modal statt neuen Tab)
+  - Einbau auf `/einladung` (Vorschau-Buttons)
+  - Einbau auf Planer-Output (Schatzkarten-Vorschau, Partyseiten-Vorschau)
+- **Phase 2 (OG-Preview für Externe, ~6–8 Std.):**
+  - Cloudflare Worker `og-preview.machsleicht.de/fetch?url=<amazon-url>` → fetcht HTML, parsed OG-Meta, cached in KV
+  - Amazon-spezifisch: `og:title` + `og:image` + Preis aus `.a-price-whole`-DOM via HTMLRewriter
+  - Generic Fallback: nur `og:title` + `og:image` + Domain-Name
+  - Client-seitig: alle Affiliate-Links (`a[data-affiliate]`) fangen `click` ab → Modal mit Preview-Card
+  - Analytics: Plausible-Event `preview_opened` + `preview_to_click` (Conversion-Rate mess- und tunbar)
+- **Phase 3 (Return-Loop, ~2 Std.):**
+  - `sessionStorage.setItem('pendingAffiliate', JSON.stringify({url, title, at}))` beim Klick auf „Zum Shop"
+  - `visibilitychange`-Listener auf Rückkehr: Toast zeigen „Hast du [Titel] besorgt? ✅ Ja / ❌ Noch nicht"
+  - Bei „Ja": Item in clientseitiger „Mitgebsel-Liste" als erledigt markiert
+
+**Tech-Checkliste:**
+- [ ] `modal.js` als gemeinsame Komponente, von allen Seiten importierbar
+- [ ] CSS-Variablen in `_src/styles/modal.css` (oder inline-minified)
+- [ ] OG-Preview-Worker auf neuer Subdomain oder als Route auf existierendem Worker
+- [ ] KV-Cache mit TTL 24h für OG-Daten
+- [ ] HTMLRewriter-Transformer für Amazon-Preis-Extraktion (fragile — User-Agent und Region-abhängig)
+- [ ] Click-Interceptor auf `a[data-affiliate]` global einbauen (Homepage, Ratgeber, Motto-Seiten, Planer-Output)
+- [ ] Analytics-Events in Plausible konfigurieren
+- [ ] Return-Loop-Toast mit Dismissal + „Noch nicht"-Reminder
+- [ ] Fallback: wenn OG-Fetch fehlschlägt → Modal zeigt einfache „Zum Shop"-CTA ohne Preview
+
+**Monetarisierung:**
+- Primär: **Retention statt Tab-Verlust** → mehr Seitentiefe pro Besuch
+- Sekundär: Affiliate-Konversion steigt, weil Preview-Card Preis + Bild zeigt (niedrige Klick-Hürde, hohes Commitment nach Klick)
+- Tertiär: Return-Loop-„Als besorgt markiert" baut einen impliziten Mitgebsel-Tracker → Überleitung zu P2-16 Mitgebsel-Generator
+
+**Revenue-Projektion:**
+- Konservativ: +10–15 % Affiliate-Conversion (Preview reduziert „nur mal schauen"-Abbrüche)
+- Bei aktuellem Baseline ~30€/Monat Affiliate: +3–5€/Monat
+- Echter Hebel: wenn P2-13 Gumroad live ist und P1-15 Email-Capture läuft, wird der In-App-Frame zum Funnel-Backbone → 20–30 % mehr Seitentiefe = proportional mehr Mid-Funnel-Capture
+
+**Aufwand:** 1–2 Tage gestaffelt
+- Phase 1 (interne Vorschauen): 4 Std. — sofort umsetzbar, kein Risiko
+- Phase 2 (OG-Preview): 6–8 Std. — braucht Cloudflare-KV-Setup, Amazon-Parsing ist fragil
+- Phase 3 (Return-Loop): 2 Std. — opportunistisch, kann später
+
+**Zeitplan:** Phase 1 kann parallel zu P1-16 erledigt werden (kleiner Nachzügler-Commit). Phase 2+3 warten auf P2-15 (Awin-Anmeldung live, damit Otto/myToys/Thalia-Links überhaupt existieren und sich lohnen zu präviewen).
+
+**Abhängigkeiten:**
+- Phase 1: keine
+- Phase 2: P2-15 (Awin) für externe Links mit Varianz, P1-10 (Worker läuft, Infrastruktur da)
+- Phase 3: keine harte
+
+**Erfolgs-Kriterien:**
+- Modal-Komponente auf mind. 5 zentralen Seiten aktiv (Homepage, Planer-Output, /einladung, Motto-Seiten, Ratgeber)
+- OG-Preview funktioniert für Amazon + mind. 2 Awin-Partner
+- Plausible-Event `preview_to_click` > 60 % (User, die Preview öffnen, klicken auch zum Shop)
+- Bounce-Rate auf betroffenen Seiten sinkt messbar (Baseline via Plausible vor Rollout festhalten)
+
+**Risiko:**
+- **Amazon-OG-Parsing ist fragil** — HTML-Struktur ändert sich ohne Warnung, Region-abhängig (DE vs. COM), User-Agent-Sniffing. Robust bauen: bei Fehler → Fallback auf Domain-Card ohne Preis.
+- **Modal-Overlay auf mobilen Safari-Versionen** — iOS-Safari hat bekannte iframe-Scroll-Quirks (in FIX11 bereits via `-webkit-overflow-scrolling:touch` + `min-height:0` entschärft). Beim Rollout testen.
+- **ToS-Risiko bei Server-Proxy** — Entscheidung dokumentieren: **kein Proxy, nur OG-Fetch** (OG-Meta ist explizit zum Teilen gedacht, kein ToS-Verstoß).
+
+**Offene Frage — User-Anforderung „Hacker / UX-Gamechanger":**
+Bolle hat nach einer Lösung gefragt, die Amazon & Co. trotz X-Frame-Options wirklich framed. **Kurze Antwort: geht nicht sauber.** Lange Antwort siehe oben — Server-Proxy bricht Tracking + ToS, und die eigentliche Magie liegt nicht im iframe, sondern im **Gefühl, die Seite nicht zu verlassen**. Das leistet die OG-Preview-Card genauso gut wie ein iframe, nur ohne die rechtlichen und technischen Tretminen. Der eigentliche „Gamechanger" ist der **Return-Loop** (Phase 3) — das Item als besorgt markieren, wenn User zurückkommt. Das kann kein Amazon-iframe.
+
+---
+
 ### P3 — NÄCHSTER MONAT
 
 #### P3-1: Repo aufräumen
@@ -827,10 +924,11 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 - **Aufwand:** ~30 Min pro Motto.
 
 #### P3-5: E-Mail-Liste aufsetzen
-- MailerLite (gratis bis 1.000), DSGVO-konform, Double-Opt-In.
+- **Tool: Resend** (läuft bereits für Transactional). Audiences + Broadcasts-Feature aktivieren.
+- DSGVO-konform via selbst gebautem Double-Opt-In-Flow im Worker (Token + Confirmation-Mail + Contact-Create).
 - Lead-Magnet: "Piraten-Einladung kostenlos" oder "Komplette Einkaufsliste".
-- Monatlicher Newsletter.
-- **Aufwand:** 1 Tag Setup, danach 30 Min/Monat.
+- Monatlicher Newsletter via Resend Broadcast.
+- **Aufwand:** 1 Tag Setup (DOI-Flow + erster Broadcast), danach 30 Min/Monat.
 - **Revenue-Effekt:** langfristig 1.000–3.000€/Jahr ab 1.000 Kontakten.
 - **Hinweis (19.04.2026):** Der **konkrete Trigger-Punkt** für Opt-In ist P1-15 (Planer-Output als PDF-Lead-Magnet). P3-5 ist das Nachgelagerte (Newsletter-Versand, Nurture-Flow). P1-15 ist der Hebel, P3-5 die Verwertung.
 
@@ -902,241 +1000,4 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 
 **Was gebaut wird:**
 - `/nachbar-nachricht` — Formular: Datum, Uhrzeit, Name (optional), "Viele Kinder, etwas Lärm" Toggle, Emoji-Auswahl (🎂🎈🎉)
-- Output: druckbarer A5-Zettel mit freundlichem Text + dezentes machsleicht-Logo unten rechts
-- Zufalls-Phrasen für Variation ("Ich hoffe, es stört nicht zu sehr — Kuchen gibt's danach!")
-
-**Tech-Checkliste:**
-- [ ] Simple HTML-Seite mit JS-Template-System (kein React nötig)
-- [ ] CSS für Print-Layout (A5)
-- [ ] 3 Design-Varianten (Dino, Pirat, Unicorn Theme)
-- [ ] Print-Button + PDF-Export-Button (via browser print)
-- [ ] FAQPage-Schema + 3–4 FAQ
-
-**SEO-Content:**
-- Nische aber ranked gut: "Nachbarn informieren Kindergeburtstag" = 140/Monat, "Zettel Treppenhaus Geburtstag" = 90/Monat
-- Long-Tail-Traffic, konvertiert gut zu Planer-Besuchern
-
-**Monetarisierung:**
-- Null direkt. **Indirekt viral** durch Aushänge
-- CTA auf Zettel (dezent): "machsleicht.de — Geburtstag in 10 Minuten planen"
-
-**Revenue-Projektion:**
-- Direkt: 0€
-- Indirekt: ~5% der Tool-Nutzer werden später Planer-Nutzer
-- Pro 100 generierte Zettel: ~5 neue Planer-Besucher durch Aushang gesehen + direkte Tool-Nutzer
-
-**Aufwand:** 4 Stunden
-- 1h: HTML + Form
-- 1h: Print-Layout (A5, CSS Print-Media)
-- 1h: 3 Theme-Varianten
-- 1h: Testing + Content (FAQ + Phrasen)
-
-**Zeitplan:** **Sofort machbar**, gerne als Quick-Win zwischen größeren PBIs
-
-**Abhängigkeiten:** Keine.
-
-**Erfolgs-Kriterien:**
-- Tool live, funktional auf Mobile und Desktop
-- Print-Output sauber auf A5
-- Plausible-Event `nachbar-zettel-erstellt` trackt Nutzung
-
----
-
-#### P3-9: Foto-Spots / Photobooth-Backdrops (A2-PDF)
-
-**Motivation:** "Fotowand Kindergeburtstag" = 880/Monat, "Photobooth Kinder selber machen" = 320/Monat. Eltern wollen Foto-Spots für Instagram-Momente. **Kostenloses A2-PDF zum Drucken im Copyshop** mit motto-passendem Hintergrund + dezentes machsleicht-Branding (unten rechts klein). Jeder Druck = virales Instagram-Posting mit machsleicht-Tag im Hintergrund.
-
-**Was gebaut wird:**
-- `/fotowand` — Hub mit 8 verfügbaren Motto-Backdrops (Pirat, Dino, Einhorn, Weltraum, Safari, Detektiv, Feuerwehr, Prinzessin)
-- Jedes Motto: hochauflösender A2-PDF-Download (3–5 MB)
-- Druckanleitung: "Für 5–8€ im Copyshop drucken lassen, mit Kreppband hinter Kind halten"
-
-**Tech-Checkliste:**
-- [ ] 8 A2-PDFs erstellen (3508 × 4960 px bei 300 DPI)
-- [ ] Design: motto-passender Hintergrund + Requisiten-Silhouetten (Tierschatten, Segel, Sterne) + dezent "@machsleicht.de" unten rechts (10pt)
-- [ ] `/fotowand.html` Hub-Seite mit 8 Vorschauen + Download-Buttons
-- [ ] Affiliate-Box: "Fotobooth-Requisiten dazu? Amazon-Sets"
-- [ ] Print-Anleitung auf der Seite
-
-**SEO-Content:**
-| Seite | Keyword | Volumen |
-|-------|---------|---------|
-| `/fotowand` | "Fotowand Kindergeburtstag" | 880/Monat |
-| `/fotowand/piraten` | "Piraten Fotowand" | 140/Monat |
-| `/fotowand/dino` | "Dino Fotowand" | 110/Monat |
-
-**Monetarisierung:**
-- Kostenlos (Lead-Magnet)
-- Affiliate auf Requisiten-Sets (Foto-Booth-Props, Kreppband, etc.)
-- **Viraler Werbe-Effekt:** jeder Instagram-Post mit Backdrop = organisches Branding
-
-**Revenue-Projektion:**
-- Direkt: ~20€/Monat Affiliate-Requisiten
-- Indirekt: Brand-Awareness-Boost, schwer messbar, aber kostenlos
-
-**Aufwand:** 6 Stunden
-- 4h: Design 8 Backdrops (Figma/Canva, 1 Std pro Motto)
-- 1h: Hub-Seite + Print-Anleitung
-- 1h: PDF-Export + Upload
-
-**Zeitplan:** **Parallel zu P1-8 Motto-Elite-Upgrades**, gleiche Assets verwenden
-
-**Abhängigkeiten:** Keine (kann komplett isoliert gebaut werden)
-
-**Erfolgs-Kriterien:**
-- 8 Backdrops zum Download verfügbar
-- Downloads tracken via Plausible-Event
-- Mindestens 100 Downloads/Monat nach 3 Monaten
-
----
-
-#### P3-10: Urkunden/Diplome nach der Party
-
-**Motivation:** Kinder lieben Urkunden. "Junior-Detektiv-Urkunde", "Piraten-Diplom", "Dino-Forscher-Zertifikat". Wir haben bereits Design-Assets aus den Elite-Motto-Seiten. **Einfaches Tool: Name eingeben + Motto wählen + Datum → personalisierte PDF-Urkunde.** Dient als Mitgebsel oder Nachparty-Geste. Kostenlos als Lead-Magnet.
-
-**Was gebaut wird:**
-- `/urkunde` — Hub mit 8 Motto-Urkunden-Vorlagen
-- `/urkunde/erstellen` — Formular: Name, Datum, Motto, optional zusätzlicher Text
-- Output: personalisierte PDF mit hochwertigem Design + dezentes Branding
-
-**Tech-Checkliste:**
-- [ ] 8 Urkunden-Templates (jsPDF oder als HTML-to-PDF)
-- [ ] Formular-Flow
-- [ ] PDF-Generation mit Namen-Einsetzung
-- [ ] Hub-Seite mit Vorschau aller 8 Mottos
-- [ ] FAQPage-Schema
-
-**SEO-Content:**
-| Seite | Keyword | Volumen |
-|-------|---------|---------|
-| `/urkunde` | "Urkunde für Kinder" | 480/Monat |
-| `/urkunde/detektiv` | "Detektiv-Urkunde" | 90/Monat |
-| `/urkunde/pirat` | "Piraten-Urkunde" | 210/Monat |
-
-**Monetarisierung:**
-- Kostenlos
-- **Indirekter Wert:** Lead-Magnet für E-Mail-Liste (Nutzer muss E-Mail angeben für PDF-Download) — zählt zu P3-5
-- Premium-Upsell (später): 2,99€ für 5 verschiedene Motto-Urkunden eines Kindes als Sammel-Pack
-
-**Revenue-Projektion:**
-- Direkt: 0€
-- Indirekt via E-Mail-Liste: wenn 20% der Nutzer Mail hinterlassen → ~30 neue Kontakte/Monat
-- Nach E-Mail-Liste-Aufbau: 1–3€/Kontakt/Jahr
-
-**Aufwand:** 6 Stunden
-- 3h: 8 Urkunden-Templates (Design)
-- 2h: Formular + PDF-Generation
-- 1h: Hub + Testing
-
-**Zeitplan:** **Nach P3-5 (E-Mail-Liste)** für maximalen Hebel
-
-**Abhängigkeiten:**
-- P3-5 (MailerLite) für Lead-Magnet-Funktion (optional)
-
-**Erfolgs-Kriterien:**
-- 8 Urkunden generierbar
-- PDF druckt sauber auf A4
-- Ab E-Mail-Integration: 20%+ Opt-In-Rate
-
----
-
-#### P3-11: Pinterest-Präsenz (Top-of-Funnel-Discovery)
-
-**Motivation:** Externes Audit (19.04.2026): Pinterest rankt bei „kindergeburtstag 6 jahre" und „kindergeburtstag ideen" auf **Google Position 1**. Ohne Pinterest-Präsenz verliert machsleicht einen signifikanten Teil der Top-of-Funnel-Discovery — Eltern klicken auf Pinterest-Pins statt auf organische Google-Ergebnisse, die auf machsleicht verlinken würden. Pinterest selbst ist der zweitwichtigste Distributionskanal in der Nische nach Google.
-
-**Warum nur P3, nicht höher:** Pinterest widerspricht dem **Passivitäts-Prinzip 0.3** aus STRATEGIE.md — laufender Aufwand von mind. 2–3 h/Woche für regelmäßiges Pinning. Solo-Betrieb kann sich das nicht ewig leisten. Deshalb: **Entscheidungs-Trigger in STRATEGIE.md 0.6** — erst bei 5.000+ Besuchern/Monat re-evaluieren, bis dahin in der Schwebe halten.
-
-**Was gebaut wird (wenn aktiviert):**
-- Business-Account `@machsleichtde` anlegen (gratis)
-- 5–8 thematische Boards: „Piraten-Geburtstag", „Detektiv-Party", „Dino-Ideen", „Einhorn-Magie", „Schatzsuche 6-8 Jahre", „Einladungen Kindergeburtstag", „Einkaufslisten & Mengen", „Motto-Deko unter 30€"
-- 3–5 Pins/Woche: jeder Pin verlinkt auf eine konkrete Motto-Seite oder Ratgeber-Seite
-- Pin-Design: portrait 1000×1500 px, Titel + machsleicht.de-Watermark (Canva-Template einmal erstellen)
-- **Idle-Automation:** Tailwind oder Buffer für Scheduled-Pinning, 1 h/Woche batched
-
-**Tech-Checkliste:**
-- [ ] Pinterest-Business-Account + DNS-Verifikation `machsleicht.de`
-- [ ] Canva-Template für Pin-Design (1 Std. einmalig)
-- [ ] 20 initiale Pins als Starter-Batch (ca. 4 Std.)
-- [ ] Plausible-UTM-Tags für alle Pin-Links (`utm_source=pinterest&utm_medium=social`)
-- [ ] Monitoring: monatlich Pinterest-Analytics + Plausible-Referral-Report
-
-**Monetarisierung:**
-- Reiner Traffic-Hebel, keine direkte Monetarisierung
-- Pinterest-Traffic konvertiert laut Benchmarks bei Lifestyle-Nischen **niedriger als Google** (längerer Discovery-Modus), aber skaliert mit kumulativen Pins (ein 6-Monate-alter Pin kann stabil Traffic bringen)
-
-**Revenue-Projektion:**
-- Nicht direkt revenue-attribuierbar, nur als Traffic-Multiplikator
-- Bei 50 Pins nach 6 Monaten und typischer Konversion: +200–500 Besucher/Monat konstant
-
-**Aufwand:** 4 Std. Setup einmalig + **laufend 1–2 h/Woche** (Blocker für das Passivitäts-Prinzip)
-
-**Zeitplan:** **NICHT starten, bis STRATEGIE 0.6 Trigger erreicht ist** (5.000+ Besucher/Monat). Stattdessen Energie auf P1-12 bis P1-15 (skalierbare Produkt-Hebel).
-
-**Abhängigkeiten:** Keine technischen. Entscheidungs-Abhängigkeit: GSC-Daten (P0-1) aus 3–6 Monaten nötig, um zu messen, ob Google-SEO allein ausreicht oder Pinterest wirklich nötig ist.
-
-**Erfolgs-Kriterien (wenn aktiviert):**
-- 50+ Pins nach 3 Monaten
-- 200+ monatliche Besucher via Pinterest nach 6 Monaten (Plausible)
-- Klickrate auf Pins ≥2 %
-
-**Risiko:**
-- **Hauptsächliches Risiko: Zeit-Senke.** Wenn nach 3 Monaten unter 100 Besucher/Monat aus Pinterest kommen → einstellen. Kein Sunk-Cost-Fallback.
-- Pinterest-Algorithmus bevorzugt regelmäßiges Pinning; einmaliger Batch bringt wenig.
-
----
-
-### P4 — ZUKUNFT
-
-#### P4-1: PDF-Partybücher pro Motto
-- Forscher-/Abenteuer-Partybuch als PDF-Download (20–30 Seiten).
-- VK 2,99€ via Lemon Squeezy. ~95% Marge.
-- Voraussetzung: Traffic muss da sein.
-
-#### P4-2: Premium-Features
-- **KI-Spielleiter-Anrufe** via ElevenLabs (~1€ Cost, VK 4,99€). Stimmtest pending.
-- **Einladungs-Audio** (~3ct, VK im Bundle).
-- **Gute-Nacht-Geschichte** (Claude + ElevenLabs, ~30ct, VK 2,99€).
-- **Eltern-Copilot** (Claude, ~50ct/Session, VK 3,99€).
-- **Danke-Nachrichten** (Claude, ~0ct, VK 1,99€).
-- **Bundle:** 9,99€ für alle Features.
-- **Gestrichen:** Foto-Erzähler (DSGVO), Geburtstagssong (DE-Musik-AI zu schwach).
-
----
-
-## Offene Fragen
-
-- Reihenfolge nach Piraten-Elite: Einhorn oder Paw Patrol (Lizenz-Motto mit höchstem Suchvolumen)?
-- Skalierung Motto-Seiten: manuell oder Content-Generator mit Claude API?
-- Free vs. Premium-Mix: welche Features bleiben kostenlos als Lead-Magnet?
-- Cloudflare Worker Deploy: manuell im Dashboard oder wrangler CLI?
-
----
-
-## Content-Referenz: Elite-Motto×Altersgruppe-Template
-
-Jede der Ziel-60-Seiten (20 Mottos × 3 Altersgruppen) braucht laut ELITE-SEITEN-TEMPLATE.md:
-
-1. **Altersgruppen-Intro** — 3 Versionen (3-5, 6-8, 9-12), wiederverwendbar
-2. **3 Party-Varianten** (Minimal / Standard / Wow) — Zeitplan mit Uhrzeiten, 5 Spiele pro Gruppe, Essen mit Mengen, Deko mit Preisen, Mitgebsel, Gesamtkosten
-3. **Kuchen-Rezept**
-4. **Eltern-Tipps** (Allergien, Plan B, Partyseite, Helfer-Regel)
-5. **FAQ** (4 Fragen, FAQPage-Schema)
-6. **CTAs** nach jeder Sektion
-7. **WhatsApp-Share**
-8. **Altersgruppen-Navigation**
-
-Druckvorlagen pro Motto (P3-4): Ausweis, Urkunde, Quiz, Masken.
-
-Affiliate-Kategorien pro Motto: Figuren-Set, Masken/Verkleidung, Partygeschirr, Stempel, Werkzeug. **Kostüm ist das margenträchtigste Affiliate-Produkt** (~1,20€ pro Klick vs. ~0,10€ bei Figuren).
-
----
-
-## Versionshistorie
-
-- **20.04.2026 (Mobile):** Mobile-Test der Partyseite deckt 2 Bugs auf (JS-Crash bei Erstellen via Legacy-`mailtoLink`-Zugriff, iOS-Safari-Uhrzeitfeld kollabiert). Hotfix-Commit `a694178` gepusht, **wartet auf Cloudflare-Deploy**. Neues PBI **P1-16** (Partyseite Follow-Ups) als #8 in Roadmap aufgenommen — inkl. Foto-Crop-Verbesserung (Slider statt Plus-Button, draggable Image), Email-End-to-End-Test, Reply-To-Handling, alte `guestView()`-Cleanup, Beteiligen-Custom-Amount, Kill-List + Internal-Linking-Audit (letztere 3 aus Session-Notes 20.04.). Alle Folge-Nummerierungen verschoben (Sequenz 1–37).
-- **19.04.2026 (Teil 2):** Prio-Tabelle komplett neu sortiert als Ausführungs-Roadmap mit Sequenz-Nummern 1–36. Prio-Hochstufungen: P1-5→P0-5 (Token-Deadline), P2-1→P1 (Hero-Funnel), P2-19→P1 (HTML-Bug), P2-3→P1 (Ergebnis-Vorschauen). Prio-Runterstufungen: P1-9→P2 (Dependency auf P2-10), P1-11→P2 (evergreen ohne Deadline). Neue Ausführungs-Cluster: „Jetzt (1–2 Wochen)", „Unmittelbar danach", „Mittelfristig (Mai–Juli)", „Vor dem Herbst-Peak", „Später (Q4 + Q1 2027)".
-- **19.04.2026:** 2 externe Audits durchgearbeitet (Grinch-Mode SEO-Audit + Elite-Produktaudit). **4 neue PBIs** aufgenommen: P1-15 (Email-Capture am Planer-Output), P2-20 (Datenübergabe Planer→Tools), P2-21 (Seiten-Rollen-Matrix), P3-11 (Pinterest, geparkt). **P2-3 und P3-5 erweitert** um Audit-Erkenntnisse. Strategie-Notizen in STRATEGIE.md 0.5 (Brand-Kollisions-Risiko machsleicht vs. machdichleicht) und 0.6 (Pinterest-Entscheidungs-Trigger) dokumentiert. Audit-Befunde zu OG-Tags (338/356 vorhanden), Sitemap (existiert) und Motto-Zahlen-Inkonsistenz (14 vs 17) als **widerlegt** oder nicht mehr aktuell markiert — keine Aktion nötig.
-- **16.04.2026 (Abend, Zusatz):** 10 neue PBIs aus STRATEGIE.md Ideenbibliothek aufgenommen (P1-12, P1-13, P1-14, P2-16, P2-17, P2-18, P3-7, P3-8, P3-9, P3-10). Alle mit ausführlichen Beschreibungen, Content-Clustern, Revenue-Projektionen und Checklisten. STRATEGIE.md um 6-12-Monats-Roadmap (Abschnitt 8a, 8b, 8c) erweitert.
-- **16.04.2026:** Backlog komplett neu strukturiert. Status-Matrix aus Repo-Check gegen Live-Stand abgeleitet. P1-1 und P1-2 gestrichen (Architektur-Memory #17). Neue PBIs aus Monetarisierungs-Strategie aufgenommen (P1-10, P1-11, P2-13 bis P2-15, P3-5, P3-6).
-- **15.04.2026:** FUNNEL-AXIOM als P2-1 fixiert. Audit-Findings aufgenommen (P1-6, P1-7, P2-8, P2-9, P2-10, P2-11).
-- **11.04.2026:** Ursprünglich erstellt aus technischem + strategischem Audit.
+- Output: druckbarer A5-Zett

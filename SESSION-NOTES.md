@@ -1,83 +1,25 @@
 # Session-Notizen
 
-## Letzte Sessions (20.04.2026)
+## Cowork-Session (21.04.2026, Opus 4.7) — P1-16 Follow-Ups + DSGVO-Decision + Resend-Konsolidierung
 
-Heute zwei Sessions parallel: Desktop morgens (#4), Mobile abends (#2). Reihenfolge in der Repo-Historie war Mobile zuerst (auf main), dann Desktop (auf draft). Beim „ende" zusammengeführt mit `merge main into draft`.
+### Was gemacht
 
-## Was wurde gemacht
+**1. party-worker.js erweitert (FIX11, lokal im Repo, NICHT deployed):**
+- **Pflichtfeld-Validierung im Erstellen-Flow:** rote Sterne `*` an Childname, Alter, Datum, Uhrzeit, Adresse. Inline-Errors („Bitte ausfüllen") + Auto-Scroll zum ersten fehlenden Feld + Cleared-on-Input. `goStep()` validiert nur Vorwärts-Sprünge, `createParty()` validiert komplettes Formular am Ende.
+- **Email-Gate umgebaut:** Vorschau ist sofort sichtbar (Vertrauen schaffen), nur **Bearbeiten + Gäste-Link** sind hinter dem Email-Send gated (psychologisches Commitment + harter Gate am Share-Moment).
+- **Modal-Pattern statt `target="_blank"`:** Vorschau und Bearbeiten öffnen jetzt einen In-Tab Modal-Overlay mit iframe (`?preview=1&edit=<token>` Param fürs Preview-Bypass des Code-Gates). Same-Origin iframe von party.machsleicht.de auf sich selbst.
+- **Modal als Panel** (nicht Full-Screen): 16px Padding, max-width 520px, abgerundete Ecken, Shadow → User behält visuell die „darunter liegende Seite" und fühlt sich nicht „lost".
+- Stand: party-worker.js lokal bei ~1627 Zeilen, deployment-ready.
 
-### Mobile-Session #2 (abends, Opus 4.7) — Bugfix + Strategie
+**2. Backlog erweitert um P2-22 „Site-Wide In-App-Frame":**
+- Detail-PBI mit 3-Phasen-Plan: Phase 1 (interne Vorschauen seitenweit), Phase 2 (OG-Preview-Cards für externe Affiliate-Links statt iframe — weil Amazon X-Frame-Options blockt), Phase 3 (Return-Loop „Hast du das besorgt? ✓ Ja"-Toast nach Tab-Rückkehr).
+- Wichtige Architektur-Entscheidung dokumentiert: **kein Server-Proxy für Amazon-iframe** (bricht Affiliate-Tracking, ToS-Risiko). Stattdessen OG-Preview als „In-App-Gefühl ohne iframe-Tretminen".
+- Eingeordnet als Sequenz #24 in Mittelfristig (Mai–Juli), Folgenummerierung um +1 verschoben.
 
-**1. Partyseite-Bugfix (Commit `a694178`)** — Mobile-Live-Test deckte 2 Bugs auf:
-- `null is not an object ('mailtoLink')` beim Erstellen → Legacy-Zeile aus dem Resend-Redesign entfernt
-- iOS Uhrzeit-Feld kollabiert in Flex-Container → `min-width:0` + `box-sizing:border-box` gefixt
-- **Status: Bug ist im Repo, NICHT auf Cloudflare deployed** — wartet auf P1-16 Laptop-Session
+**3. DSGVO-Decision (in Diskussion getroffen, noch nicht implementiert):**
+- Transactional Email (Edit-Link): kein Checkbox-Zwang, aber **Datenschutz-Hinweis über dem Send-Button** wird Pflicht
+- Marketing/Newsletter (für P1-15): **separater Opt-In-Haken**, nicht vorangekreuzt, mit Zweck/Frequenz/Abbestell-Klausel, Double-Opt-In zwingend
+- Drei Mini-Sub-Tasks identifiziert: A) Datenschutz-Hinweis bei Email-Box (10 Min), B) Datenschutzerklärung um Partyseite-Abschnitt erweitern (30 Min), C) Auto-Delete via Worker-Cron 90 Tage nach Party-Datum (1 Std). **Noch keine PBI-Eintragung — beim nächsten Touchpoint nachholen.**
 
-**2. Backlog-Update (Commit `75bdb2c`)** — P1-16 „Partyseite Follow-Ups" als Sequenz #8 aufgenommen:
-- Cloudflare-Deploy des Bugfix
-- Email-End-to-End-Test mit Resend
-- Reply-To-Handling
-- Alte `guestView()` Cleanup
-- Live-Test mit verschiedenen Mottos
-- Foto-Crop-Verbesserung (Slider + Drag, aus Mobile-Test)
-- Beteiligen custom amount
-- Kill List + Internal Linking Audit
-
-**3. Strategie 0.7 + 0.8 (Commit `41e7e17`)** — Nach Durcharbeiten der Produkt-Matrix:
-- **0.7 Monetarisierungs-Validierungs-Reihenfolge** (4 Stufen): Zahlungsbereitschaft → Mittlerer Preispunkt → Retention → Abo (Q4 2026 frühestens)
-- **0.8 Was wir bewusst NICHT bauen** (9 Ideen explizit verworfen mit Re-Evaluation-Trigger): Zwangs-Kopplung, Familien-Anlass-Abo, WhatsApp-Business-API, B2B-White-Label, Kind-Profil-Standalone, Marketplace, Standalone-Mikro-Tools, Notfall-Modus, Concierge
-
-**4. Token rotiert** — Neuer GitHub PAT in lokaler Remote-URL eingebaut.
-
-### Desktop-Session #4 (morgens, Opus 4.7) — Workflow + P1-15-Schliff (Commit `6740467`)
-
-**1. Resultate der vorherigen Session geprüft (Code-Check):**
-- ✅ Social Proof im Hero, 4 Demo-Cards auf Homepage, Partyseite `status:"live"`
-- ✅ `validate-all.sh` grün
-- 🚩 **Lücke gefunden:** 8-Punkte PBI-Impact-Check war nicht in CLAUDE.md — jetzt behoben
-
-**2. CLAUDE.md neu geschrieben:**
-- draft/main-Workflow als „ÜBERSTEUERT generischen git-sync Skill" markiert
-- PBI-Impact-Check als harte Regel: nach jedem PBI 8 Downstream-Orte prüfen (Status-Badges, Texte, Demo-Vorschauen, Feature-Zahlen, Validator, interne Links, Sitemap+Redirects, SEO↔React-Konsistenz)
-- Deploy-Regel explizit (Credits kosten Geld)
-
-**3. P1-15 strategisch neu gefasst:**
-- PDF als Köder ist schwach → ersetzt durch **Link zum fertigen Asset** für zeitversetzt genutzte Outputs (Einladung, Partyseite, Schatzsuche)
-- Pilot auf Einladung (nicht Planer): höchster wahrscheinlicher Nutzen, simpler, Template wiederverwendbar
-- Mini-MVP: kein jsPDF, nur Link + Token (3–4h statt 1–2 Tage)
-- Status auf 🚧 (blockiert durch MailerLite-Account, Bolle setzt am Desktop auf)
-
-## Nächste Schritte (Laptop-Session bevorzugt)
-
-**Priorität 1 (kritisch — Erstellen-Flow auf Production aktuell kaputt):**
-1. Cloudflare Quick Editor öffnen → `party-worker` Worker
-2. `party-worker.js` (1570 Zeilen) aus Repo rein kopieren → „Save and deploy"
-3. Test auf `party.machsleicht.de`: Erstellen-Flow läuft ohne Crash, Uhrzeit bündig mit Datum auf iOS
-
-**Direkt danach (P1-16 Follow-Ups, siehe Backlog Sequenz #8):**
-- Email-End-to-End-Test mit Resend
-- Foto-Crop-Umbau (Slider + Drag, ~45–60 Min)
-- Reply-To, alte `guestView()` Cleanup, Mottos-Test
-
-**Parallel/nebenher:**
-- MailerLite-Account-Setup (entblockt P1-15 Sequenz #9)
-- API-Key als Cloudflare-Worker-Secret `MAILERLITE_API_KEY` hinterlegen
-- Sobald Key liegt: P1-15 Pilot auf Einladung bauen
-
-**Roadmap-Folge nach P1-16/P1-15:**
-- #10 P2-20 Datenübergabe Planer → Tools (4–6 Std, reines Frontend)
-- #11 P2-13 Gumroad-Produkte (Piraten + Dino, 4h pro Produkt)
-- #14 P1-12 Einschulungs-Planer (**Launch bis 31.05.!** SEO-Vorlauf)
-
-## Offene Fragen
-- Einhorn oder Paw Patrol als nächstes Elite-Motto (P1-8)?
-- Awin-Freischaltung: Wann kommt die Publisher-ID?
-- Demo-Einladung: Welches Stock-Foto als Beispiel-Kind?
-- Reply-To: `party@machsleicht.de` über Cloudflare Email Routing oder Resend?
-
-## Status der Site nach diesen beiden Sessions
-- **Partyseite-Erstellung in Production: BROKEN** bis Cloudflare-Deploy erfolgt (Fix ist im Repo, nicht live)
-- Alles andere: unverändert zum Stand 19.04. abends
-- Repo: 37 PBIs in Roadmap, 8 davon erledigt, 1 in Arbeit (P1-15 🚧)
-- STRATEGIE.md hat jetzt 8 Leitplanken-Abschnitte (0.1 bis 0.8)
-- Sitemap: 223 URLs (unverändert)
+**4. Resend-Konsolidierung (kritischer Fix):**
+- Bol
