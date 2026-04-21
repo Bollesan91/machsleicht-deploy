@@ -171,6 +171,35 @@ if [ -f "$INDEX_HTML" ]; then
 fi
 echo ""
 
+# ── STUFE 7: EINLADUNGS-MOTTOS (Regression-Schutz Piraten-404) ──
+echo "── STUFE 7: Einladungs-Mottos (jedes Motto braucht eigene Landing) ──"
+EINLADUNG_MOTTOS=(piraten dino safari weltraum detektiv superheld prinzessin einhorn meerjungfrau feuerwehr)
+for m in "${EINLADUNG_MOTTOS[@]}"; do
+  if [ -f "$REPO/einladung/$m/index.html" ]; then
+    green "/einladung/$m/index.html"
+  else
+    red "Fehlendes Einladungs-Motto: /einladung/$m/index.html (Partyseiten-Vorschau liefert 404!)"
+  fi
+done
+# Hub muss vorhanden sein und darf KEIN Canonical auf /einladung/piraten haben (sonst wär's die alte Piraten-Seite)
+if [ -f "$REPO/einladung/index.html" ]; then
+  HUB_CAN=$(grep -aoP 'rel="canonical" href="\K[^"]+' "$REPO/einladung/index.html" 2>/dev/null | head -1)
+  if [ "$HUB_CAN" = "https://machsleicht.de/einladung" ]; then
+    green "/einladung/index.html (Hub mit korrektem Canonical)"
+  else
+    red "/einladung/index.html Canonical falsch: '$HUB_CAN' (erwartet: https://machsleicht.de/einladung)"
+  fi
+fi
+# serve-invite.mjs darf keine Piraten-Sonderregel mehr enthalten
+if [ -f "$REPO/netlify/functions/serve-invite.mjs" ]; then
+  if grep -q 'motto === "piraten" ? "/einladung/"' "$REPO/netlify/functions/serve-invite.mjs"; then
+    red "serve-invite.mjs enthält noch Piraten-Sonderregel (basePath-Sonderfall)"
+  else
+    green "serve-invite.mjs: einheitliches URL-Schema /einladung/<motto>/"
+  fi
+fi
+echo ""
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
