@@ -1,6 +1,6 @@
 # machsleicht.de — Backlog
 
-**Letzte Aktualisierung:** 21.04.2026 (Mobile-Session Teil 4 — DSGVO-Hygiene als P1-17 aufgenommen, Sub-Task B erledigt)
+**Letzte Aktualisierung:** 22.04.2026 (Einhorn alle 3 Altersgruppen auf Elite — P1-8 Fortschritt)
 **Status-Check:** Repository-weit durchgeführt, gegen Live-Stand abgeglichen. 8 PBIs auf ✅ gesetzt.
 **Zweck:** Einzige Quelle für alle offenen und erledigten PBIs. Strategie-Kontext steht in `STRATEGIE.md`.
 
@@ -32,7 +32,7 @@
 | 11 | ⏳ | **P1** | P2-20 | **Datenübergabe Planer → Tools** | 4–6 Std | Ökosystem-Prinzip umsetzen, nach P1-10 |
 | 12 | ⏳ | **P1** | P2-13 | Gumroad: 2 Digital-Produkte (Piraten+Dino) | 4h/Produkt | +100€/Monat bei aktuellem Traffic |
 | 13 | ⏳ | **P1** | P2-15 | Awin-Anmeldung (Otto, myToys, Thalia) | 30 Min + Warten | Prüfung dauert 1–3 Tage, früh starten |
-| 14 | ⏳ | **P1** | P1-8 | Motto-Hauptseiten auf Elite-Niveau (**Einhorn** → Safari → Weltraum → Feuerwehr → Detektiv → Meerjungfrau → Prinzessin/Superheld; nur Tool-integrierte Mottos) | 4,5–5 Std/Motto | Parallel laufend. Content-Inseln (Pferde, Ritter, Zirkus, Baustelle) in P1-8b separat. Marken-Mottos zurückgestellt |
+| 14 | 🔄 | **P1** | P1-8 | Motto-Hauptseiten auf Elite-Niveau (**Einhorn ✅** → Safari → Weltraum → Feuerwehr → Detektiv → Meerjungfrau → Prinzessin/Superheld; nur Tool-integrierte Mottos) | 4,5–5 Std/Motto | **Einhorn komplett (3-5, 6-8, 9-12 alle Elite, 22.04.2026).** Nächstes: Safari. Content-Inseln (Pferde, Ritter, Zirkus, Baustelle) in P1-8b separat. Marken-Mottos zurückgestellt |
 | 15 | ⏳ | **P1** | P1-12 | **Einschulungs-Planer bauen** | 2–3 Tage | **Launch bis 31.05.** (SEO-Vorlauf!) |
 
 ### Mittelfristig (Mai–Juli)
