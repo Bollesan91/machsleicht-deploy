@@ -1,6 +1,6 @@
 # machsleicht.de — Backlog
 
-**Letzte Aktualisierung:** 22.04.2026 (Einhorn alle 3 Altersgruppen auf Elite — P1-8 Fortschritt)
+**Letzte Aktualisierung:** 22.04.2026 (Einhorn alle 3 Altersgruppen Elite-Template-Level, deployed)
 **Status-Check:** Repository-weit durchgeführt, gegen Live-Stand abgeglichen. 8 PBIs auf ✅ gesetzt.
 **Zweck:** Einzige Quelle für alle offenen und erledigten PBIs. Strategie-Kontext steht in `STRATEGIE.md`.
 

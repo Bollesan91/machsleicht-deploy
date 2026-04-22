@@ -3,10 +3,12 @@
 ## Letzte Session: 22.04.2026
 
 ### Was gemacht
-- Einhorn 3-5 Jahre: Komplett-Rewrite auf Elite-Niveau (303 → 897 Zeilen, 88%)
-- Einhorn 9-12 Jahre: Komplett-Rewrite auf Elite-Niveau (322 → 916 Zeilen, 86-88%)
-- Damit: **Einhorn alle 3 Altersgruppen auf Elite** (3-5, 6-8, 9-12)
-- Verbesserungsrunden bei beiden Seiten (Spielezahl-Fix, Narrative, Bewegungsspiel, copy-paste-fertige Rätsel)
+- **Alle 3 Einhorn-Seiten auf Elite-Template-Level glattgezogen:**
+  - Einhorn 6-8: Minimal Deko-Grid, Tip-Boxes, Game-Card, Affiliate-Disclaimer, Wow Tip-Box → 897 Zeilen, 8/8
+  - Einhorn 3-5: og:locale/site_name, Meta-Description 158Z, Age-Intro 7 Punkte, Warum-Motto Tip-Box, Minimal Deko-Grid → 930 Zeilen, 8/8
+  - Einhorn 9-12: og:locale/site_name, Meta-Description 155Z, Age-Intro 7 Punkte, Warum-Motto Tip-Box → 926 Zeilen, 8/8
+- validate-all.sh passed, alle Varianten 8/8 Pflicht-Abschnitte
+- **Deploy auf main** ausgelöst
 
 ### Nächste Schritte
 - **Safari 6-8** als nächstes Elite-Motto starten (P1-8)
