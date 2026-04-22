@@ -1,8 +1,10 @@
 # machsleicht.de — Backlog
 
-**Letzte Aktualisierung:** 22.04.2026 (Einhorn alle 3 Altersgruppen Elite-Template-Level, deployed)
+**Letzte Aktualisierung:** 22.04.2026 (Portfolio-Labels eingeführt, React-Homepage an SEO-Fallback angeglichen, P1-12 umformuliert)
 **Status-Check:** Repository-weit durchgeführt, gegen Live-Stand abgeglichen. 8 PBIs auf ✅ gesetzt.
 **Zweck:** Einzige Quelle für alle offenen und erledigten PBIs. Strategie-Kontext steht in `STRATEGIE.md`.
+
+**Portfolio-Label (siehe STRATEGIE.md Abschnitt 0.9):** Jeder PBI gehört zu einer Spalte: `[KERN]` (Kindergeburtstag-System) · `[TEST]` (Einschulung SEO-Cluster) · `[ZUKUNFT]` (eingefroren bis Monetarisierungs-Stufe-1 bestanden) · `[LEGACY]` (Long-Tail-SEO, keine aktive Entwicklung). Aktive PBIs der Prio-Tabelle sind etikettiert. Bestehende Detail-Tickets werden bei der nächsten Pflege nachetikettiert. Neue PBIs ab 22.04.2026: Label ist Pflicht, sonst nicht freigegeben.
 
 ---
 
@@ -26,38 +28,38 @@
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
 |---|--------|------|--------|------------------|---------|---------|
-| 8 | ⏳ | **P1** | P1-16 | **Partyseite Follow-Ups** (Cloudflare-Deploy Bugfix + Email-Test + Foto-Crop + Reply-To) | 1–2 Std | **Laptop-Session!** Bugfix-Commit `a694178` wartet auf Cloudflare-Deploy |
-| 9 | ⏳ | **P1** | P1-15 | **Email-Capture (Pilot: Einladung)** | 4–5 Std | **Über Resend** (Audiences + Broadcasts) — Transactional läuft schon. Muss: DOI-Flow selbst bauen, dann Pilot Einladung, später Partyseite + Schatzsuche |
-| 10 | 🔄 | **P1** | P1-17 | **DSGVO-Hygiene Partyseite** (A: Worker-Hinweis, B: Datenschutz ✅, C: Auto-Delete-Cron) | 1,5 Std (Laptop) | **B erledigt am 21.04.** Blockt kein weiteres Feature technisch, aber rechtliches Risiko solange A+C offen. Bundeln mit P1-16 Laptop-Session |
-| 11 | ⏳ | **P1** | P2-20 | **Datenübergabe Planer → Tools** | 4–6 Std | Ökosystem-Prinzip umsetzen, nach P1-10 |
-| 12 | ⏳ | **P1** | P2-13 | Gumroad: 2 Digital-Produkte (Piraten+Dino) | 4h/Produkt | +100€/Monat bei aktuellem Traffic |
-| 13 | ⏳ | **P1** | P2-15 | Awin-Anmeldung (Otto, myToys, Thalia) | 30 Min + Warten | Prüfung dauert 1–3 Tage, früh starten |
-| 14 | 🔄 | **P1** | P1-8 | Motto-Hauptseiten auf Elite-Niveau (**Einhorn ✅** → Safari → Weltraum → Feuerwehr → Detektiv → Meerjungfrau → Prinzessin/Superheld; nur Tool-integrierte Mottos) | 4,5–5 Std/Motto | **Einhorn komplett (3-5, 6-8, 9-12 alle Elite, 22.04.2026).** Nächstes: Safari. Content-Inseln (Pferde, Ritter, Zirkus, Baustelle) in P1-8b separat. Marken-Mottos zurückgestellt |
-| 15 | ⏳ | **P1** | P1-12 | **Einschulungs-Planer bauen** | 2–3 Tage | **Launch bis 31.05.** (SEO-Vorlauf!) |
+| 8 | ⏳ | **P1** | P1-16 | `[KERN]` **Partyseite Follow-Ups** (Cloudflare-Deploy Bugfix + Email-Test + Foto-Crop + Reply-To) | 1–2 Std | **Laptop-Session!** Bugfix-Commit `a694178` wartet auf Cloudflare-Deploy |
+| 9 | ⏳ | **P1** | P1-15 | `[KERN]` **Email-Capture (Pilot: Einladung)** | 4–5 Std | **Über Resend** (Audiences + Broadcasts) — Transactional läuft schon. Muss: DOI-Flow selbst bauen, dann Pilot Einladung, später Partyseite + Schatzsuche |
+| 10 | 🔄 | **P1** | P1-17 | `[KERN]` **DSGVO-Hygiene Partyseite** (A: Worker-Hinweis, B: Datenschutz ✅, C: Auto-Delete-Cron) | 1,5 Std (Laptop) | **B erledigt am 21.04.** Blockt kein weiteres Feature technisch, aber rechtliches Risiko solange A+C offen. Bundeln mit P1-16 Laptop-Session |
+| 11 | ⏳ | **P1** | P2-20 | `[KERN]` **Datenübergabe Planer → Tools** | 4–6 Std | Ökosystem-Prinzip umsetzen, nach P1-10 |
+| 12 | ⏳ | **P1** | P2-13 | `[KERN]` Gumroad: 2 Digital-Produkte (Piraten+Dino) | 4h/Produkt | +100€/Monat bei aktuellem Traffic |
+| 13 | ⏳ | **P1** | P2-15 | `[KERN]` Awin-Anmeldung (Otto, myToys, Thalia) | 30 Min + Warten | Prüfung dauert 1–3 Tage, früh starten |
+| 14 | 🔄 | **P1** | P1-8 | `[KERN]` Motto-Hauptseiten auf Elite-Niveau (**Einhorn ✅** → Safari → Weltraum → Feuerwehr → Detektiv → Meerjungfrau → Prinzessin/Superheld; nur Tool-integrierte Mottos) | 4,5–5 Std/Motto | **Einhorn komplett (3-5, 6-8, 9-12 alle Elite, 22.04.2026).** Nächstes: Safari. Content-Inseln (Pferde, Ritter, Zirkus, Baustelle) in P1-8b separat. Marken-Mottos zurückgestellt |
+| 15 | ⏳ | **P1** | P1-12 | `[TEST]` **Einschulung SEO-Cluster** (5–8 Landingpages, **kein Planer**) | 1,5–2 Tage | **Launch bis 31.05.** Planer-Upgrade nur wenn ≥100 Visits/Woche im Juli |
 
 ### Mittelfristig (Mai–Juli)
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
 |---|--------|------|--------|------------------|---------|---------|
-| 16 | ⏳ | **P2** | P2-17 | **Standalone /wunschliste** | 2–3 Tage | Launch bis 30.06. für Weihnachts-Peak |
-| 17 | ⏳ | **P2** | P2-10 | Einladungstool: 7 fehlende Lizenz-Mottos | 2–3 Std | Voraussetzung für P1-9 |
-| 18 | ⏳ | **P2** | P1-9 (→P2) | /einladung als SEO-Hub | 3–4 Std | Braucht P2-10 zuerst |
-| 19 | ⏳ | **P2** | P1-11 (→P2) | Ratgeber-Seiten auf 85% (11 verbleibend) | 30–60 Min/Seite | Evergreen, kontinuierlich |
-| 20 | ✅ | **P2** | P2-2 | Thin Content Motto×Altersgruppen (138 Seiten → 301-Redirects) | 2–4 Std | Erledigt 19.04.2026 |
-| 21 | ⏳ | **P2** | P2-16 | Mitgebsel-Generator (KI) | 1 Tag | Braucht P1-10 |
-| 22 | ⏳ | **P2** | P2-5 | Performance (JS-Bundle, lazy loading) | 15 Min kurzfristig, 2–4h langfristig | Laufend |
-| 23 | ⏳ | **P2** | P2-8 | /kreuzwortraetsel pre-rendern | 1–2 Std | SEO-Nachzügler |
-| 24 | ⏳ | **P2** | P2-21 | Seiten-Rollen-Matrix | 1 Tag | Nach P1-11 sinnvoll |
-| 25 | ⏳ | **P2** | P2-22 | **Site-Wide In-App-Frame** (Modal-Pattern seitenweit) | 1–2 Tage | Retention: kein Tab-Verlust bei Vorschauen & Affiliates |
-| 26 | ⏳ | **P2** | P1-8b | **Content-Inseln-Strategie** (Pferde, Ritter, Zirkus, Baustelle — entweder integrieren oder streichen) | 15 Min Daten-Check + 1–16 Std Umsetzung | GSC-Daten abwarten, vor weiterem Content-Ausbau entscheiden |
+| 16 | ⏳ | **P2** | P2-17 | `[KERN]` **Standalone /wunschliste** | 2–3 Tage | Launch bis 30.06. für Weihnachts-Peak |
+| 17 | ⏳ | **P2** | P2-10 | `[KERN]` Einladungstool: 7 fehlende Lizenz-Mottos | 2–3 Std | Voraussetzung für P1-9 |
+| 18 | ⏳ | **P2** | P1-9 (→P2) | `[KERN]` /einladung als SEO-Hub | 3–4 Std | Braucht P2-10 zuerst |
+| 19 | ⏳ | **P2** | P1-11 (→P2) | `[KERN]` Ratgeber-Seiten auf 85% (11 verbleibend) | 30–60 Min/Seite | Evergreen, kontinuierlich |
+| 20 | ✅ | **P2** | P2-2 | `[KERN]` Thin Content Motto×Altersgruppen (138 Seiten → 301-Redirects) | 2–4 Std | Erledigt 19.04.2026 |
+| 21 | ⏳ | **P2** | P2-16 | `[KERN]` Mitgebsel-Generator (KI) | 1 Tag | Braucht P1-10 |
+| 22 | ⏳ | **P2** | P2-5 | `[KERN]` Performance (JS-Bundle, lazy loading) | 15 Min kurzfristig, 2–4h langfristig | Laufend |
+| 23 | ⏳ | **P2** | P2-8 | `[LEGACY]` /kreuzwortraetsel pre-rendern | 1–2 Std | SEO-Nachzügler |
+| 24 | ⏳ | **P2** | P2-21 | `[KERN]` Seiten-Rollen-Matrix | 1 Tag | Nach P1-11 sinnvoll |
+| 25 | ⏳ | **P2** | P2-22 | `[KERN]` **Site-Wide In-App-Frame** (Modal-Pattern seitenweit) | 1–2 Tage | Retention: kein Tab-Verlust bei Vorschauen & Affiliates |
+| 26 | ⏳ | **P2** | P1-8b | `[LEGACY]` **Content-Inseln-Strategie** (Pferde, Ritter, Zirkus, Baustelle — entweder integrieren oder streichen) | 15 Min Daten-Check + 1–16 Std Umsetzung | GSC-Daten abwarten, vor weiterem Content-Ausbau entscheiden |
 
 ### Vor dem Herbst-Peak (Juli–September)
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Deadline |
 |---|--------|------|--------|------------------|---------|---------|
-| 27 | ⏳ | **P1** | P1-13 | **Adventskalender-Builder** (24 KI-Türchen) | 3–4 Tage | **Launch bis 31.08.** |
-| 28 | ⏳ | **P1** | P1-14 | **KI-Geschenkeberater** | 2–3 Tage | **Launch bis 30.09.** |
-| 29 | ⏳ | **P3** | P3-6 | **machsruhig.de launchen** | 2–3 Wochen Sprint | Eigener Sprint, separates Doc |
+| 27 | ⏳ | **P1** | P1-13 | `[ZUKUNFT]` **Adventskalender-Builder** (24 KI-Türchen) | 3–4 Tage | **Launch bis 31.08.** |
+| 28 | ⏳ | **P1** | P1-14 | `[ZUKUNFT]` **KI-Geschenkeberater** | 2–3 Tage | **Launch bis 30.09.** |
+| 29 | ⏳ | **P3** | P3-6 | `[ZUKUNFT]` **machsruhig.de launchen** | 2–3 Wochen Sprint | Eigener Sprint, separates Doc |
 
 ### Später (Q4 2026 und Q1 2027)
 
@@ -307,24 +309,29 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 **Befehl für Audit-Ranking:** `python3 _build/audit-all-ratgeber.py`
 **Aufwand:** ~30-60 Min pro Seite.
 
-#### P1-12: Einschulungs-Planer bauen
+#### P1-12: Einschulung SEO-Cluster  `[TEST]`
 
-**Motivation:** Einschulungen in Deutschland finden Ende August / Anfang September statt. Eltern suchen ab Ende Mai nach "Einschulung Feier planen", "Schultüte Inhalt", "Einschulungs-Geschenke". Keyword-Volumen laut Strategie-Doc: saisonal hoch, in Peak-Monaten auf Niveau "Kindergeburtstag". **SEO-Seiten müssen spätestens Anfang Juni live**, damit Google sie bis Juli-August ranken kann.
+**Umformuliert 22.04.2026:** Ursprünglich als interaktiver Einschulungs-Planer geplant. Nach Portfolio-Matrix-Diskussion (STRATEGIE.md 0.9) umformuliert zu reinem SEO-Content-Cluster. Grund: Nachfrage noch nicht validiert, Planer-Bau (~12-18h) vor Validierung ist Produktrisiko. Upgrade zum Planer nur nach Traffic-Trigger.
 
-**Was gebaut wird:**
-- `/einschulung` als SEO-Hub (analog zu `/kindergeburtstag`)
-- `/einschulung/planer` — Planer-Tool (gleicher Motor, anderer Anlass)
-- 4 Themen-Landingpages: `/einschulung-schultuete-inhalt`, `/einschulung-feier-planen`, `/einschulung-geschenke`, `/einschulung-ablauf`
-- 1 Checklisten-Seite `/einschulung-checkliste`
-- `js/einschulung.js` existiert bereits (im Affiliate-Sweep verwendet) — Basis ist vorhanden
+**Motivation:** Einschulungen in Deutschland finden Ende August / Anfang September statt. Eltern suchen ab Ende Mai nach "Einschulung Feier planen", "Schultüte Inhalt", "Einschulungs-Geschenke". Keyword-Volumen saisonal hoch (bis 4.400/Monat auf Top-Keyword). **SEO-Seiten müssen spätestens Anfang Juni live**, damit Google sie bis Juli-August ranken kann.
 
-**Tech-Checkliste:**
-- [ ] `/einschulung.html` als Hub mit H1, Meta, Canonical, OG, FAQ, BreadcrumbList JSON-LD
-- [ ] Planer-Tool: JSX analog zu `kindergeburtstag.jsx` bauen (altersgerechte Spiele 6-jährige, Schultüten-Content, Geschenke-Liste)
-- [ ] 4 Themen-Seiten mit FAQPage + HowTo Schema + Affiliate-Box
-- [ ] Checkliste als HowTo-Schema mit 10–14 Steps
-- [ ] Sitemap-Entries + interne Verlinkung von Homepage (dezent: "Auch: Einschulung planen")
-- [ ] Interne Links von `/kindergeburtstag` zu `/einschulung` für 6-Jährige-Besucher
+**Was gebaut wird (Cluster-Version):**
+- `/einschulung` als SEO-Hub mit H1, Meta, Canonical, OG, FAQ, BreadcrumbList JSON-LD (bereits teilweise vorhanden via `js/einschulung.js`, muss auf SEO-Hub-Niveau gebracht werden)
+- 4 Themen-Landingpages mit FAQPage + HowTo Schema + Affiliate-Box:
+  - `/einschulung-schultuete-inhalt`
+  - `/einschulung-feier-planen`
+  - `/einschulung-geschenke`
+  - `/einschulung-ablauf`
+- 1 Checklisten-Seite `/einschulung-checkliste` (HowTo-Schema mit 10–14 Steps) — existiert bereits, auf Elite-Niveau bringen
+- Sitemap-Entries + interne Verlinkung
+- CTA je Seite zurück zu: Kindergeburtstag-Planer, Wunschliste, Affiliate-Boxen
+
+**Ausdrücklich NICHT gebaut in P1-12:**
+- ❌ Kein interaktiver Einschulungs-Planer
+- ❌ Keine eigene Planer-JSX
+- ❌ Keine Homepage-Hauptbühne (bleibt Pill-Cloud „Weitere Planer & Tools")
+
+**Upgrade-Trigger (für späteren Planer-Bau):** Wenn Einschulungs-Cluster im Juli 2026 ≥100 organische Visits/Woche auf Summe aller 6 Seiten erreicht, wird P1-12b „Einschulungs-Planer-Tool" aktiviert. Darunter bleibt Planer-Bau eingefroren (Legacy). Messung via Plausible + GSC.
 
 **Content-Cluster (SEO-Keywords):**
 | Seite | Keyword | Such-Volumen (geschätzt) |
@@ -341,23 +348,25 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 - Geschenke-Seite: Durchschnitts-Geschenk 30–60€ (0,90–1,80€ Provision)
 
 **Revenue-Projektion:**
-- Jahr 1 (wenn ab Mai live): ~200–400€ in Juli-September (primärer Peak)
-- Jahr 2+: 500–1.000€/Jahr aus Einschulungs-Saison (Compound-Effekt)
+- Jahr 1 (wenn ab Mai live, nur Cluster ohne Planer): ~150–300€ in Juli-September (primärer Peak)
+- Jahr 2+: 400–800€/Jahr aus Einschulungs-Saison (Compound-Effekt)
+- Plus eventuell Planer-Upgrade Revenue bei Trigger-Erfüllung
 
-**Aufwand:** 2–3 Tage (ca. 12–18 Stunden)
-- 4h: Hub-Seite + Themen-Seiten (Content schreiben, Ton abgleichen)
-- 6h: Einschulungs-Planer-Tool (JSX basierend auf Kindergeburtstag-Planer)
-- 4h: Checklisten-Seite + interne Verlinkung + Schemas + Affiliate
-- 2h: Testing, Validation, Sitemap-Updates
+**Aufwand:** 1,5–2 Tage (ca. 10–14 Stunden) — **reduziert von ursprünglich 12–18h weil Planer-Tool entfällt**
+- 3h: Hub-Seite /einschulung auf Elite-Niveau (aufbauend auf js/einschulung.js)
+- 6h: 4 Themen-Seiten (Content schreiben, FAQ, HowTo, Affiliate-Boxen)
+- 2h: Checklisten-Seite auf 85%+ Audit-Score
+- 2h: Interne Verlinkung, Sitemap, Schemas, Validation, Tests
 
 **Zeitplan:** **Launch spätestens 31.05.2026** (gibt Google 6–8 Wochen bis Peak)
 
-**Abhängigkeiten:** Keine. Kann unabhängig von allen anderen PBIs gebaut werden.
+**Abhängigkeiten:** Keine.
 
 **Erfolgs-Kriterien:**
 - Alle 6 Seiten haben Canonical, Schemas, Affiliate-Links
 - `validate-all.sh` PASSED
 - Mindestens 3 Seiten auf 85%+ im Audit-Score
+- **Trigger-Messung einrichten:** Plausible-Goal "Einschulungs-Cluster Visits" aggregiert über alle 6 Seiten
 - Mindestens 50 organische Besucher/Tag auf /einschulung-* im August 2026
 
 ---

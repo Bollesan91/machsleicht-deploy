@@ -1,6 +1,6 @@
 # MASTER-STRATEGIE — machsleicht & machsruhig
 
-**Letzte Aktualisierung:** 20.04.2026
+**Letzte Aktualisierung:** 22.04.2026 (Portfolio-Matrix 0.9 ergänzt)
 **Status:** Lebendes Dokument. Alle vorherigen Strategie-Dokumente wurden hier konsolidiert.
 **Ort:** Root-Verzeichnis (neben ARCHITECTURE.md und BACKLOG-AUDIT.md) — immer auffindbar.
 
@@ -92,6 +92,25 @@ Diese Ideen wurden explizit geprüft und verworfen. Damit sie nicht jedes Quarta
 | **Concierge Light (bezahlte Planungs-Hilfe durch Person)** | Nicht skalierbar, nicht passiv. | Nie unter Solo-Betrieb. |
 
 **Leitprinzip:** Jede verworfene Idee bleibt verworfen, bis der Re-Evaluation-Trigger explizit erreicht ist. Nicht weil die Ideen schlecht wären — sondern weil das größte Risiko ist, **zehn gute Ideen parallel zu starten** statt eine gute Idee zu Ende zu bauen.
+
+---
+
+### 0.9 Portfolio-Matrix (dokumentiert 22.04.2026)
+
+Jedes Produkt, jede Seite, jeder neue Impuls wird einer der vier Spalten zugeordnet. Keine Grauzone. Was sich nicht zuordnen lässt, wandert in 0.8 („NICHT bauen").
+
+| Spalte | Was gehört rein | Budget | Homepage-Präsenz |
+|---|---|---|---|
+| **Kernwette** | Kindergeburtstag-System: Planer, Schatzsuche, Einladung, Partyseite, Mottos (Piraten/Dino/Weltraum/Safari/Einhorn/Detektiv/Superheld/Prinzessin/Feuerwehr/Meerjungfrau), Schatzkarten-Tool, Kindergeburtstag-Ratgeber | ≥70% der aktiven Entwicklungszeit | Hauptbühne, Hero-CTA, 4-Module-Grid |
+| **Testwette** | Einschulung (als SEO-Content-Cluster, **nicht** Planer). Upgrade-Trigger zum interaktiven Planer: ≥100 organische Visits/Woche auf Cluster-Seiten im Juli 2026. | ≤20% — bewusst klein halten, skaliert erst nach Bewährung | Dezent verlinkt (Pill-Cloud „Weitere Planer & Tools"), nicht Hauptbühne |
+| **Zukunftswette (eingefroren)** | Adventskalender-Builder (P1-13), KI-Geschenkeberater (P1-14), Multiplayer-Schatzsuche, Sofort-Schatzsuche-Abo. *Hinweis: Premium-Features mit ElevenLabs (Section 3, Prio 4) folgen ihrer eigenen Tier-Sequenzierung — nicht hier doppelt eingefroren.* | 0% aktive Entwicklung bis Trigger erfüllt. Trigger: Stufe 1 der Monetarisierungs-Validierung 0.7 bestanden (≥5 Käufe/Monat über 90 Tage). | Unsichtbar bis Reaktivierung |
+| **Optional / Legacy-SEO** | Baby & Wochenbett, Kreuzworträtsel, Spielkarten, Halloween, Ostern, Schnitzeljagd-Aufgaben, Einladungsspiel | 0% aktive Entwicklung. Bleibt live für Long-Tail-Traffic. Pflege nur bei akuten Fehlern. | Pill-Cloud „Weitere Planer & Tools" |
+
+**Ticket-Disziplin:** Jeder neue PBI in BACKLOG-AUDIT.md trägt im Ticket eine der Label-Zuordnungen: `[KERN]`, `[TEST]`, `[ZUKUNFT]`, `[LEGACY]`. Fehlt die Zuordnung, ist das Ticket nicht freigegeben.
+
+**Homepage-Spiegelung (Regel):** Kernwette → Hauptbühne. Testwette → dezent. Zukunftswette → keine Präsenz. Optional/Legacy → Pill-Cloud oder tief verlinkt. Die Homepage folgt dieser Matrix. Nicht andersrum.
+
+**Verhältnis zum FUNNEL-AXIOM 0.1 und zu 4-SEO-Einstiegspunkten 0.2:** Die Matrix betrifft Aufmerksamkeits- und Entwicklungsbudget. Sie ersetzt nicht die SEO-Architektur — Schatzsuche und Einladung bleiben eigenständige SEO-Einstiege (dürfen standalone ranken), sind aber im Kernwetten-Cluster verortet.
 
 ---
 
