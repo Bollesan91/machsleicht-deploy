@@ -52,4 +52,10 @@ export default async (req) => {
     return new Response(null, {
       status: 302,
       headers: {
-        Location: basePath + "?" + par
+        Location: basePath + "?" + params.toString()
+      }
+    });
+  } catch (err) {
+    return new Response("Einladung nicht gefunden", { status: 404 });
+  }
+};
