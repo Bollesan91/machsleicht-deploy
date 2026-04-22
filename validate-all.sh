@@ -29,6 +29,30 @@ for f in js/index.js js/homepage.js js/kindergeburtstag.js js/baby.js js/einschu
 done
 echo ""
 
+# ── STUFE 1b: NETLIFY FUNCTIONS SYNTAX ──
+# Wichtig: fehlgeschlagene Netlify-Builds bei truncated Functions (z.B. serve-invite.mjs)
+# blockieren alle Deploys. Hier proaktiv prüfen.
+echo "── STUFE 1b: Netlify Functions Syntax ──"
+if [ -d "$REPO/netlify/functions" ]; then
+  found_any=0
+  for f in "$REPO"/netlify/functions/*.mjs "$REPO"/netlify/functions/*.js; do
+    [ -f "$f" ] || continue
+    found_any=1
+    name="netlify/functions/$(basename "$f")"
+    if err=$(node --check "$f" 2>&1); then
+      green "$name"
+    else
+      # Nur die letzte relevante Zeile aus dem Fehler zeigen
+      msg=$(echo "$err" | grep -E "SyntaxError|Unexpected" | head -1)
+      red "$name — ${msg:-Syntax-Fehler}"
+    fi
+  done
+  [ $found_any -eq 0 ] && yellow "Keine Functions in netlify/functions/ gefunden"
+else
+  yellow "Kein netlify/functions/ Verzeichnis"
+fi
+echo ""
+
 # ── STUFE 2: SOURCE OF TRUTH ──
 echo "── STUFE 2: Zahlen aus Source of Truth ──"
 DATA="$REPO/_src/kindergeburtstag-data.js"
