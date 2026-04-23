@@ -1330,6 +1330,8 @@ async function claimWish(wid,btn){
 }
 function escC(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML;}
 function shopLbl(u){if(!u)return"ansehen";if(/amazon[.]de/i.test(u))return"bei Amazon";if(/mytoys[.]de/i.test(u))return"bei myToys";if(/thalia[.]de/i.test(u))return"bei Thalia";if(/otto[.]de/i.test(u))return"bei Otto";if(/jako-o[.]de/i.test(u))return"bei Jako-o";if(/tausendkind[.]de/i.test(u))return"bei tausendkind";if(/smythstoys/i.test(u))return"bei Smyths Toys";if(/lego[.]com/i.test(u))return"bei LEGO";return"ansehen";}
+// Preview-Modus (partyContent direkt sichtbar): load dynamische Inhalte sofort
+${isPreview ? "loadPhoto();loadWishes();loadGuestCount();" : ""}
 </script>
 </body></html>`;
 }
