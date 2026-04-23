@@ -177,7 +177,11 @@ export default {
       const edit = url.searchParams.get("edit");
       if (edit === party.editToken) return json(party);
       const {editToken,email,...safe} = party;
-      safe.wishes = (safe.wishes||[]).map(w=>({...w,claimedBy:undefined,claimedCount:(w.claimedBy||[]).length,isFull:!w.sharedGift&&(w.claimedBy||[]).length>0}));
+      safe.wishes = (safe.wishes||[]).map(w=>{
+        const cb = w.claimedBy||[];
+        const claimedAmountTotal = cb.reduce((s,e)=>s+(typeof e==="object" && e && typeof e.amount==="number" ? e.amount : 0),0);
+        return {...w, claimedBy:undefined, claimedCount:cb.length, claimedAmountTotal, isFull:!w.sharedGift && cb.length>0};
+      });
       safe.guestCount = safe.guests.filter(g=>g.status==="ja").length;
       safe.guests = undefined;
       return json(safe);
@@ -239,12 +243,26 @@ export default {
       const body = await request.json();
       const guestName = (body.name||"").trim();
       if (!guestName) return json({error:"Name fehlt"},400);
+      // amount nur bei sharedGift relevant; 0 < amount < 9999
+      let amount = null;
+      if (body.amount !== undefined && body.amount !== null && body.amount !== "") {
+        const a = parseFloat(String(body.amount).replace(",","."));
+        if (!isNaN(a) && a > 0 && a < 9999) amount = Math.round(a*100)/100;
+      }
       const wish = (party.wishes||[]).find(w=>w.id===wishId);
       if (!wish) return json({error:"Wunsch nicht gefunden"},404);
-      if (!wish.sharedGift && wish.claimedBy.length>0 && !wish.claimedBy.find(n=>n.toLowerCase()===guestName.toLowerCase()))
+      // Helfer: aus gemischtem Array (Strings + Objects) nur Namen extrahieren
+      const getName = (entry) => typeof entry === "string" ? entry : (entry && entry.name) || "";
+      if (!wish.sharedGift && wish.claimedBy.length>0 && !wish.claimedBy.find(n=>getName(n).toLowerCase()===guestName.toLowerCase()))
         return json({error:"Bereits vergeben"},400);
-      const idx = wish.claimedBy.findIndex(n=>n.toLowerCase()===guestName.toLowerCase());
-      if (idx>=0) wish.claimedBy.splice(idx,1); else wish.claimedBy.push(guestName);
+      const idx = wish.claimedBy.findIndex(n=>getName(n).toLowerCase()===guestName.toLowerCase());
+      if (idx>=0) {
+        wish.claimedBy.splice(idx,1);
+      } else {
+        // sharedGift + amount → Object, sonst String wie bisher
+        if (wish.sharedGift && amount !== null) wish.claimedBy.push({name:guestName, amount});
+        else wish.claimedBy.push(guestName);
+      }
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
       return json({ok:true,claimedBy:wish.claimedBy,claimedCount:wish.claimedBy.length});
     }
@@ -301,6 +319,7 @@ export default {
           headers: {"Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json"},
           body: JSON.stringify({
             from: env.RESEND_FROM || "mach's leicht <party@machsleicht.de>",
+            reply_to: env.RESEND_REPLY_TO || "party@machsleicht.de",
             to: [email],
             subject: `Dein Edit-Link: ${childName}s Partyseite`,
             html: emailHtml
@@ -485,11 +504,11 @@ function creatorPage() {
         <div style="background:var(--card);border:1px solid var(--l);border-radius:12px;padding:14px;margin-bottom:12px">
           <div style="font-weight:600;font-size:13px;color:var(--m);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px">Banner-Ausschnitt</div>
           <div style="font-size:11px;color:var(--m);margin-bottom:8px">So sieht das Foto oben auf deiner Partyseite aus.</div>
-          <canvas id="heroCanvas" style="width:100%;max-height:225px;border:1px solid var(--l);border-radius:8px;background:#f5f5f5;cursor:grab;display:block"></canvas>
+          <canvas id="heroCanvas" style="width:100%;max-height:225px;border:1px solid var(--l);border-radius:8px;background:#f5f5f5;cursor:grab;display:block;touch-action:none"></canvas>
           <div style="font-size:11px;color:var(--m);margin-top:6px">Verschieben & zoomen</div>
           <div style="display:flex;align-items:center;gap:8px;margin-top:8px">
             <button id="heroZoomOut" type="button" style="background:none;border:1px solid var(--l);border-radius:6px;width:28px;height:28px;cursor:pointer;font-size:14px">\u2212</button>
-            <div id="heroZoomSlider" style="flex:1;height:4px;background:var(--l);border-radius:2px;cursor:pointer;position:relative">
+            <div id="heroZoomSlider" style="flex:1;height:4px;background:var(--l);border-radius:2px;cursor:pointer;position:relative;touch-action:none">
               <div id="heroZoomTrack" style="height:100%;background:var(--a);border-radius:2px;position:absolute"></div>
             </div>
             <button id="heroZoomIn" type="button" style="background:none;border:1px solid var(--l);border-radius:6px;width:28px;height:28px;cursor:pointer;font-size:14px">+</button>
@@ -499,12 +518,12 @@ function creatorPage() {
           <div style="font-weight:600;font-size:13px;color:var(--m);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px">Spiel-Ausschnitt</div>
           <div style="font-size:11px;color:var(--m);margin-bottom:8px">Dieses Bild erscheint rund im Einladungsspiel f\u00FCr die G\u00E4ste.</div>
           <div style="text-align:center;padding:12px 0">
-            <canvas id="circleCanvas" style="width:120px;height:120px;border:1px solid var(--l);border-radius:50%;background:#f5f5f5;cursor:grab;display:inline-block"></canvas>
+            <canvas id="circleCanvas" style="width:120px;height:120px;border:1px solid var(--l);border-radius:50%;background:#f5f5f5;cursor:grab;display:inline-block;touch-action:none"></canvas>
           </div>
           <div style="font-size:11px;color:var(--m);text-align:center;margin-top:6px">Verschieben & zoomen</div>
           <div style="display:flex;align-items:center;gap:8px;margin-top:8px">
             <button id="circZoomOut" type="button" style="background:none;border:1px solid var(--l);border-radius:6px;width:28px;height:28px;cursor:pointer;font-size:14px">\u2212</button>
-            <div id="circZoomSlider" style="flex:1;height:4px;background:var(--l);border-radius:2px;cursor:pointer;position:relative">
+            <div id="circZoomSlider" style="flex:1;height:4px;background:var(--l);border-radius:2px;cursor:pointer;position:relative;touch-action:none">
               <div id="circZoomTrack" style="height:100%;background:var(--a);border-radius:2px;position:absolute"></div>
             </div>
             <button id="circZoomIn" type="button" style="background:none;border:1px solid var(--l);border-radius:6px;width:28px;height:28px;cursor:pointer;font-size:14px">+</button>
@@ -644,7 +663,7 @@ document.getElementById("photoInput").addEventListener("change",function(e){
       var circSmall=Math.min(circFillW,circFillH);
       _circScale=circInit;_circX=0;_circY=0;
       _circMinScale=circSmall*0.8;_circMaxScale=circInit*3;
-      _redrawHero();_redrawCircle();
+      _redrawHero();_redrawCircle();_updateHeroTrack();_updateCircTrack();
       document.getElementById("uploadZone").classList.add("hidden");
       document.getElementById("cropUI").classList.remove("hidden");
     };img.src=ev.target.result;
@@ -689,16 +708,23 @@ document.getElementById("heroCanvas").addEventListener("pointerup",function(){_h
 document.getElementById("circleCanvas").addEventListener("pointerdown",function(e){_circDragging=true;this.setPointerCapture(e.pointerId);});
 document.getElementById("circleCanvas").addEventListener("pointermove",function(e){if(!_circDragging||!_srcCanvas)return;_circX+=e.movementX;_circY+=e.movementY;_redrawCircle();});
 document.getElementById("circleCanvas").addEventListener("pointerup",function(){_circDragging=false;});
-function _heroZoomSliderUpdate(){const slider=document.getElementById("heroZoomSlider");const track=document.getElementById("heroZoomTrack");const rect=slider.getBoundingClientRect();const pct=Math.max(0,Math.min(1,(event.clientX-rect.left)/rect.width));_heroScale=_heroMinScale+(pct*(_heroMaxScale-_heroMinScale));_redrawHero();track.style.width=(pct*100)+"%";}
-function _circZoomSliderUpdate(){const slider=document.getElementById("circZoomSlider");const track=document.getElementById("circZoomTrack");const rect=slider.getBoundingClientRect();const pct=Math.max(0,Math.min(1,(event.clientX-rect.left)/rect.width));_circScale=_circMinScale+(pct*(_circMaxScale-_circMinScale));_redrawCircle();track.style.width=(pct*100)+"%";}
-document.getElementById("heroZoomSlider").addEventListener("click",_heroZoomSliderUpdate);
-document.getElementById("heroZoomSlider").addEventListener("mousemove",function(e){if(e.buttons===0)return;_heroZoomSliderUpdate.call(this,e);});
-document.getElementById("circZoomSlider").addEventListener("click",_circZoomSliderUpdate);
-document.getElementById("circZoomSlider").addEventListener("mousemove",function(e){if(e.buttons===0)return;_circZoomSliderUpdate.call(this,e);});
-document.getElementById("heroZoomOut").addEventListener("click",function(){var step=(_heroMaxScale-_heroMinScale)/15;_heroScale=Math.max(_heroMinScale,_heroScale-step);_redrawHero();});
-document.getElementById("heroZoomIn").addEventListener("click",function(){var step=(_heroMaxScale-_heroMinScale)/15;_heroScale=Math.min(_heroMaxScale,_heroScale+step);_redrawHero();});
-document.getElementById("circZoomOut").addEventListener("click",function(){var step=(_circMaxScale-_circMinScale)/15;_circScale=Math.max(_circMinScale,_circScale-step);_redrawCircle();});
-document.getElementById("circZoomIn").addEventListener("click",function(){var step=(_circMaxScale-_circMinScale)/15;_circScale=Math.min(_circMaxScale,_circScale+step);_redrawCircle();});
+function _updateHeroTrack(){var pct=(_heroScale-_heroMinScale)/(_heroMaxScale-_heroMinScale);document.getElementById("heroZoomTrack").style.width=(Math.max(0,Math.min(1,pct))*100)+"%";}
+function _updateCircTrack(){var pct=(_circScale-_circMinScale)/(_circMaxScale-_circMinScale);document.getElementById("circZoomTrack").style.width=(Math.max(0,Math.min(1,pct))*100)+"%";}
+var _heroSliderDragging=false,_circSliderDragging=false;
+function _heroZoomSliderUpdate(e){if(!_srcCanvas)return;var slider=document.getElementById("heroZoomSlider");var rect=slider.getBoundingClientRect();var pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));_heroScale=_heroMinScale+(pct*(_heroMaxScale-_heroMinScale));_redrawHero();_updateHeroTrack();}
+function _circZoomSliderUpdate(e){if(!_srcCanvas)return;var slider=document.getElementById("circZoomSlider");var rect=slider.getBoundingClientRect();var pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));_circScale=_circMinScale+(pct*(_circMaxScale-_circMinScale));_redrawCircle();_updateCircTrack();}
+document.getElementById("heroZoomSlider").addEventListener("pointerdown",function(e){_heroSliderDragging=true;this.setPointerCapture(e.pointerId);_heroZoomSliderUpdate(e);});
+document.getElementById("heroZoomSlider").addEventListener("pointermove",function(e){if(!_heroSliderDragging)return;_heroZoomSliderUpdate(e);});
+document.getElementById("heroZoomSlider").addEventListener("pointerup",function(){_heroSliderDragging=false;});
+document.getElementById("heroZoomSlider").addEventListener("pointercancel",function(){_heroSliderDragging=false;});
+document.getElementById("circZoomSlider").addEventListener("pointerdown",function(e){_circSliderDragging=true;this.setPointerCapture(e.pointerId);_circZoomSliderUpdate(e);});
+document.getElementById("circZoomSlider").addEventListener("pointermove",function(e){if(!_circSliderDragging)return;_circZoomSliderUpdate(e);});
+document.getElementById("circZoomSlider").addEventListener("pointerup",function(){_circSliderDragging=false;});
+document.getElementById("circZoomSlider").addEventListener("pointercancel",function(){_circSliderDragging=false;});
+document.getElementById("heroZoomOut").addEventListener("click",function(){var step=(_heroMaxScale-_heroMinScale)/15;_heroScale=Math.max(_heroMinScale,_heroScale-step);_redrawHero();_updateHeroTrack();});
+document.getElementById("heroZoomIn").addEventListener("click",function(){var step=(_heroMaxScale-_heroMinScale)/15;_heroScale=Math.min(_heroMaxScale,_heroScale+step);_redrawHero();_updateHeroTrack();});
+document.getElementById("circZoomOut").addEventListener("click",function(){var step=(_circMaxScale-_circMinScale)/15;_circScale=Math.max(_circMinScale,_circScale-step);_redrawCircle();_updateCircTrack();});
+document.getElementById("circZoomIn").addEventListener("click",function(){var step=(_circMaxScale-_circMinScale)/15;_circScale=Math.min(_circMaxScale,_circScale+step);_redrawCircle();_updateCircTrack();});
 function addWish(){
   if(wishes.length>=20){alert("Max. 20 W\u00FCnsche");return;}
   wishes.push({id:"w"+Date.now().toString(36),title:"",url:"",price:"",sharedGift:false});renderWishes();
@@ -1250,18 +1276,30 @@ async function loadWishes(){
     el.innerHTML=data.wishes.map(function(w){
       var taken=w.isFull,shared=w.sharedGift,hasLink=w.url&&w.url.indexOf("http")===0;
       var priceNum=parseFloat((w.price||"").replace(/[^0-9.,]/g,"").replace(",","."));
-      var share=shared&&w.claimedCount&&priceNum?Math.ceil(priceNum/(w.claimedCount+1)):0;
+      var collected=w.claimedAmountTotal||0;
+      var remaining=priceNum?Math.max(0,priceNum-collected):0;
+      // Auto-Vorschlag: wenn schon Geld da → Rest / (count+1), sonst Preis / (count+1)
+      var base=collected>0?remaining:priceNum;
+      var share=shared&&w.claimedCount&&base?Math.ceil(base/(w.claimedCount+1)):0;
+      if(shared&&!w.claimedCount&&priceNum)share=Math.ceil(priceNum/2); // noch niemand dabei → halbe Zielsumme als Start
       var ppRaw=pp.indexOf("http")===0?pp:"https://"+pp;
       var ppUrl=pp&&share?(ppRaw.charAt(ppRaw.length-1)==="/"?ppRaw.slice(0,-1):ppRaw)+"/"+(share<1?"":share):"";
+      var sharedMeta='';
+      if(shared){
+        sharedMeta='Gemeinsam schenken';
+        if(w.claimedCount)sharedMeta+=' ('+w.claimedCount+' dabei';
+        if(collected>0)sharedMeta+=(w.claimedCount?', ':' (')+collected+'\\u20AC gesammelt';
+        if(w.claimedCount||collected>0)sharedMeta+=')';
+      }
       return '<div class="wish-item"><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:14px">'+escC(w.title)+'</div><div style="font-size:12px;color:var(--m)">'
         +(w.price?escC(w.price)+' \\u00B7 ':'')
-        +(shared?'Gemeinsam schenken'+(w.claimedCount?' ('+w.claimedCount+' dabei)':''):'')
+        +sharedMeta
         +(!shared&&taken?'\\u2705 Vergeben':'')
         +'</div>'
-        +(shared&&share?'<div style="font-size:12px;color:var(--a);font-weight:600">\\u{1F4B8} Dein Anteil: ~'+share+'\\u20AC</div>':'')
+        +(shared&&share?'<div style="font-size:12px;color:var(--a);font-weight:600">\\u{1F4B8} '+(collected>0?'Noch offen: '+remaining+'\\u20AC \\u00B7 Vorschlag: ':'Dein Anteil: ~')+share+'\\u20AC</div>':'')
         +(hasLink?'<a href="'+location.origin+'/go/'+PID+'/'+w.id+'" target="_blank" rel="noopener" style="font-size:12px;color:var(--a);font-weight:600;text-decoration:none">\\u2192 '+shopLbl(w.url)+'</a>':'')
         +'</div>'
-        +(taken&&!shared?'<span class="wish-btn taken">Vergeben</span>':'<button class="wish-btn" onclick="claimWish(\\x27'+w.id+'\\x27,this)">'+(shared?'Beteiligen':'Schenke ich!')+'</button>')
+        +(taken&&!shared?'<span class="wish-btn taken">Vergeben</span>':'<button class="wish-btn" data-suggested="'+(share||'')+'" data-shared="'+(shared?'1':'')+'" onclick="claimWish(\\x27'+w.id+'\\x27,this)">'+(shared?'Beteiligen':'Schenke ich!')+'</button>')
         +(shared&&ppUrl&&w.claimedCount?'<div style="width:100%;margin-top:6px"><a href="'+ppUrl+'" target="_blank" rel="noopener" class="btn btn-sm" style="background:#0070BA;font-size:12px;width:100%">\\u{1F4B8} '+share+'\\u20AC per PayPal senden</a></div>':'')
         +'</div>';
     }).join("");
@@ -1270,218 +1308,31 @@ async function loadWishes(){
 async function claimWish(wid,btn){
   var nm=guestName||document.getElementById("rsvpName").value.trim();
   if(!nm){alert("Bitte zuerst oben deinen Namen eingeben");return;}
+  var body={name:nm};
+  var isShared=btn.getAttribute("data-shared")==="1";
+  if(isShared){
+    var suggested=btn.getAttribute("data-suggested")||"";
+    var input=prompt("Mit wie viel Euro beteiligst du dich?\\n(Leer lassen ist ok \\u2013 dann nur Name)", suggested);
+    if(input===null)return; // Abbruch
+    var amt=input.trim();
+    if(amt){
+      var parsed=parseFloat(amt.replace(",","."));
+      if(isNaN(parsed)||parsed<=0||parsed>=9999){alert("Bitte einen g\\u00FCltigen Betrag eingeben");return;}
+      body.amount=parsed;
+    }
+  }
   btn.textContent="\\u23F3...";btn.disabled=true;
   try{
-    var r=await fetch(location.origin+"/api/party/"+PID+"/wish/"+wid+"/claim",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:nm})});
-    if(!r.ok){var d=await r.json();alert(d.error);btn.textContent="Schenke ich!";btn.disabled=false;return;}
+    var r=await fetch(location.origin+"/api/party/"+PID+"/wish/"+wid+"/claim",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+    if(!r.ok){var d=await r.json();alert(d.error);btn.textContent=isShared?"Beteiligen":"Schenke ich!";btn.disabled=false;return;}
     loadWishes();
-  }catch(e){btn.textContent="Schenke ich!";btn.disabled=false;}
+  }catch(e){btn.textContent=isShared?"Beteiligen":"Schenke ich!";btn.disabled=false;}
 }
 function escC(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML;}
 function shopLbl(u){if(!u)return"ansehen";if(/amazon[.]de/i.test(u))return"bei Amazon";if(/mytoys[.]de/i.test(u))return"bei myToys";if(/thalia[.]de/i.test(u))return"bei Thalia";if(/otto[.]de/i.test(u))return"bei Otto";if(/jako-o[.]de/i.test(u))return"bei Jako-o";if(/tausendkind[.]de/i.test(u))return"bei tausendkind";if(/smythstoys/i.test(u))return"bei Smyths Toys";if(/lego[.]com/i.test(u))return"bei LEGO";return"ansehen";}
 </script>
 </body></html>`;
 }
-
-// ═══════════════════════════════════════════════════════════════
-// GUEST VIEW — OLD (kept for reference, no longer called)
-// ═══════════════════════════════════════════════════════════════
-function guestView(party, color, dateStr, name, age, motto, emoji, photoRoundB64) {
-  const id = party.id;
-  const nameLC = escJson(party.childName.toLowerCase().trim());
-  const hasWishes = party.wishes && party.wishes.length > 0;
-  const freeWishes = hasWishes ? party.wishes.filter(w => !w.isFull || w.sharedGift).length : 0;
-
-  // Embedded game: map motto to game URL
-  const GAME_MOTTOS = ["piraten","dino","safari","weltraum","detektiv","superheld","prinzessin","einhorn","meerjungfrau","feuerwehr"];
-  const mottoLC = (party.motto||"").toLowerCase();
-  const gameMottoId = GAME_MOTTOS.find(m => mottoLC.includes(m));
-  const gameUrl = gameMottoId ? `https://machsleicht.de/einladung/${gameMottoId}/?name=${encodeURIComponent(party.childName)}&date=${encodeURIComponent(party.date||"")}&time=${encodeURIComponent(party.time||"")}&ort=${encodeURIComponent(party.address||"")}&tel=${encodeURIComponent("")}${photoRoundB64?"&foto="+encodeURIComponent(photoRoundB64):""}` : "";
-
-  return `
-  <div class="card fade-up" id="codeGate" style="text-align:center;padding:28px 20px">
-    <div style="font-size:48px;margin-bottom:12px">${emoji}</div>
-    <h1 style="font-size:20px;margin-bottom:4px">Du bist eingeladen!</h1>
-    <p style="color:var(--m);font-size:14px;margin-bottom:20px">Wie hei\u00DFt das Geburtstagskind?</p>
-    <div class="field"><input type="text" id="codeInput" placeholder="Vorname eingeben" autocomplete="off" style="text-align:center;font-size:18px"></div>
-    <button class="btn" style="background:${color}" onclick="checkCode()">\u{1F513} \u00D6ffnen</button>
-    <p id="codeError" class="hidden" style="color:#C62828;font-size:13px;margin-top:10px">Hmm, das stimmt nicht. Frag nochmal die Eltern! \u{1F60A}</p>
-  </div>
-
-  <div id="partyContent" class="hidden">
-    <div class="card fade-up" style="text-align:center;padding:28px 20px;border:2px solid ${color}30;background:${color}06;overflow:hidden">
-      <div id="heroPhoto"></div>
-      <div style="font-size:56px;margin-bottom:8px">${emoji}</div>
-      <h1 style="font-size:26px;color:${color};margin-bottom:2px">${name?name+" wird "+age+"!":"Kindergeburtstag!"}</h1>
-      ${motto?`<p style="font-size:16px;color:var(--m);font-weight:500">${motto}</p>`:""}
-      <p style="font-size:13px;color:var(--m);margin-top:8px;opacity:0.8">Spiel spielen, zusagen${hasWishes?", Geschenk reservieren":""} \u2014 alles hier.</p>
-    </div>
-
-    ${gameUrl?`<div class="card fade-up" id="gameSection" style="padding:0;overflow:hidden;border:2px solid ${color}20">
-      <div style="background:${color}12;padding:10px 16px;display:flex;align-items:center;gap:8px">
-        <span style="font-size:18px">\u{1F3AE}</span>
-        <div style="flex:1"><div style="font-size:13px;font-weight:800">${esc(party.childName)}s ${motto||"Party"}-Einladung</div>
-        <div style="font-size:11px;color:var(--m);opacity:.6">Spiel das Einladungsspiel!</div></div>
-      </div>
-      <iframe id="gameFrame" src="${gameUrl}" style="width:100%;height:min(85vh,700px);border:none;display:block" allow="autoplay"></iframe>
-    </div>
-    <div class="card fade-up hidden" id="gameComplete" style="text-align:center;padding:20px;border:2px solid ${color}30;background:${color}06">
-      <div style="font-size:44px;margin-bottom:6px">${emoji}</div>
-      <h2 style="font-size:16px;color:${color};font-weight:800;margin-bottom:4px">Geschafft! \u{1F389}</h2>
-      <p style="font-size:13px;color:var(--m);opacity:.7">Jetzt noch zusagen und ein Geschenk reservieren \u2193</p>
-    </div>`:""}
-
-    <div id="rsvpAnchor"></div>
-    <div class="card fade-up">
-      <h2 style="font-size:15px;color:${color};margin-bottom:12px">\u{1F4CB} Party-Details</h2>
-      ${party.date?`<div class="info-row"><span class="icon">\u{1F4C5}</span><div><div style="font-weight:700;font-size:14px">${esc(dateStr)}</div>${party.time?`<div style="color:var(--m);font-size:13px">${esc(party.time)} Uhr${party.endTime?" \u2014 "+esc(party.endTime)+" Uhr":""}</div>`:""}</div></div>`:""}
-      ${party.address?`<div class="info-row"><span class="icon">\u{1F4CD}</span><div><div style="color:var(--m);font-size:13px;white-space:pre-line">${esc(party.address)}</div><a href="https://maps.google.com/?q=${encodeURIComponent(party.address)}" target="_blank" rel="noopener" style="font-size:12px;color:${color};font-weight:600;text-decoration:none">\u2192 Google Maps</a></div></div>`:""}
-      ${party.notes?`<div class="info-row"><span class="icon">\u{1F4AC}</span><div style="color:var(--m);font-size:13px;white-space:pre-line">${esc(party.notes)}</div></div>`:""}
-    </div>
-
-    <div class="card fade-up" id="rsvpForm">
-      <h2 style="font-size:15px;color:${color};margin-bottom:12px">\u{1F389} Zu- oder Absage</h2>
-      <div id="alreadyRsvp" class="hidden" style="text-align:center;padding:8px 0 12px">
-        <p style="font-size:14px;color:var(--m)">Du hast bereits f\u00FCr <strong id="prevName"></strong> geantwortet.</p>
-        <button class="btn btn-outline btn-sm" onclick="document.getElementById('alreadyRsvp').classList.add('hidden');document.getElementById('rsvpFields').classList.remove('hidden')" style="margin-top:8px">Antwort \u00E4ndern</button>
-      </div>
-      <div id="rsvpFields">
-        <div class="field"><label>Name deines Kindes</label><input type="text" id="rsvpName" placeholder="z.B. Lina" maxlength="50"></div>
-        <div style="display:flex;gap:8px;margin-bottom:14px">
-          <button class="rsvp-btn" style="flex:1" onclick="pickStatus('ja',this)">\u2705 Dabei!</button>
-          <button class="rsvp-btn" style="flex:1" onclick="pickStatus('vielleicht',this)">\u{1F914} Vielleicht</button>
-          <button class="rsvp-btn" style="flex:1" onclick="pickStatus('nein',this)">\u274C Nein</button>
-        </div>
-        ${party.askAllergies?`<div class="field"><label>Allergien / Unvertr\u00E4glichkeiten</label><input type="text" id="rsvpAllergies" placeholder="z.B. Nussallergie" maxlength="200"></div>`:""}
-        ${party.askPickup?`<div class="field"><label>Wer holt ab & wann?</label><div style="display:flex;gap:8px"><input type="text" id="rsvpPickupPerson" placeholder="z.B. Papa" style="flex:1" maxlength="50"><input type="time" id="rsvpPickupTime" style="width:110px"></div></div>`:""}
-        <button class="btn" onclick="sendRsvp()" id="rsvpBtn" style="background:${color}">\u{1F4E8} Absenden</button>
-        <p style="font-size:11px;color:var(--m);text-align:center;margin-top:8px;line-height:1.5">Deine Angaben werden nur f\u00FCr diese Party gespeichert und nach 90 Tagen automatisch gel\u00F6scht.</p>
-      </div>
-    </div>
-    <div class="card fade-up hidden" id="rsvpDone" style="text-align:center;padding:24px">
-      <div style="font-size:48px;margin-bottom:8px" id="rsvpDoneEmoji">\u{1F389}</div>
-      <h2 style="font-size:18px" id="rsvpMsg">Danke!</h2>
-      <p style="color:var(--m);font-size:13px;margin-top:4px" id="rsvpSub"></p>
-      ${party.date?`<button class="btn btn-outline btn-sm" style="margin-top:16px" onclick="downloadIcs()">\u{1F4C5} Termin speichern</button>`:""}
-    </div>
-
-    ${hasWishes?`<div class="card fade-up">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-        <h2 style="font-size:15px;color:${color};margin-bottom:0">\u{1F381} Wunschliste</h2>
-        ${freeWishes>0&&freeWishes<(party.wishes||[]).length?`<span style="padding:3px 10px;background:#FF704320;border:1px solid #FF704340;border-radius:99px;font-size:11px;font-weight:700;color:#FF7043">Noch ${freeWishes} frei!</span>`:""}
-      </div>
-      <p style="font-size:12px;color:var(--m);margin-bottom:12px">Reserviere ein Geschenk \u2014 andere G\u00E4ste sehen nur, dass es vergeben ist.</p>
-      <div id="wishListGuest"></div>
-    </div>`:""}
-  </div>
-
-  <script>
-  const PID="${id}",CNL="${nameLC}";
-  let selectedStatus=null,guestName="";
-  // Game complete listener
-  window.addEventListener("message",function(e){
-    if(e.data==="gameComplete"){
-      var gs=document.getElementById("gameSection");if(gs)gs.style.display="none";
-      var gc=document.getElementById("gameComplete");if(gc)gc.classList.remove("hidden");
-      setTimeout(function(){var a=document.getElementById("rsvpAnchor");if(a)a.scrollIntoView({behavior:"smooth",block:"start"});},800);
-    }
-  });
-  // Confetti
-  function fireConfetti(){
-    var c=document.createElement("div");c.style.cssText="position:fixed;inset:0;pointer-events:none;z-index:9999;overflow:hidden";
-    for(var i=0;i<35;i++){var p=document.createElement("div");var colors=["#66BB6A","#FFD700","#FF7043","#42A5F5","#E040FB","#FF5252","#4DD0E1"];
-    p.style.cssText="position:absolute;top:-10px;left:"+Math.random()*100+"%;width:"+(5+Math.random()*6)+"px;height:"+(5+Math.random()*6)+"px;background:"+colors[i%7]+";border-radius:"+(Math.random()>.5?"50%":"2px")+";animation:cFall "+(1.8+Math.random()*1.2)+"s ease-in "+Math.random()*0.5+"s forwards";
-    c.appendChild(p);}document.body.appendChild(c);setTimeout(function(){c.remove()},4000);
-  }
-  function checkCode(){
-    const v=document.getElementById("codeInput").value.trim().toLowerCase();
-    if(v===CNL){document.getElementById("codeGate").classList.add("hidden");document.getElementById("partyContent").classList.remove("hidden");loadPhoto();loadWishes();checkPrev();}
-    else{document.getElementById("codeError").classList.remove("hidden");document.getElementById("codeInput").style.borderColor="#C62828";}
-  }
-  document.getElementById("codeInput").addEventListener("keydown",e=>{if(e.key==="Enter")checkCode();});
-  async function loadPhoto(){try{const r=await fetch(location.origin+"/api/photo/"+PID);if(!r.ok)return;const d=await r.json();if(d.photo)document.getElementById("heroPhoto").innerHTML='<img src="'+d.photo+'" class="hero-photo">';}catch{}}
-  function checkPrev(){try{const p=localStorage.getItem("rsvp_"+PID);if(p){const d=JSON.parse(p);document.getElementById("prevName").textContent=d.name;document.getElementById("alreadyRsvp").classList.remove("hidden");document.getElementById("rsvpFields").classList.add("hidden");document.getElementById("rsvpName").value=d.name;guestName=d.name;}}catch{}}
-  function pickStatus(s,el){selectedStatus=s;document.querySelectorAll(".rsvp-btn").forEach(b=>b.classList.remove("active"));el.classList.add("active");}
-  async function sendRsvp(){
-    const name=document.getElementById("rsvpName").value.trim();
-    if(!name){alert("Bitte Namen eingeben");return;}
-    if(!selectedStatus){alert("Bitte Zu- oder Absage w\u00E4hlen");return;}
-    const btn=document.getElementById("rsvpBtn");btn.textContent="\u23F3...";btn.disabled=true;
-    const body={name,status:selectedStatus};
-    const al=document.getElementById("rsvpAllergies");if(al)body.allergies=al.value;
-    const pp=document.getElementById("rsvpPickupPerson");if(pp)body.pickupPerson=pp.value;
-    const pt=document.getElementById("rsvpPickupTime");if(pt)body.pickupTime=pt.value;
-    try{
-      const r=await fetch(location.origin+"/api/party/"+PID+"/rsvp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
-      if(!r.ok){const d=await r.json();throw new Error(d.error);}
-      localStorage.setItem("rsvp_"+PID,JSON.stringify({name,status:selectedStatus}));
-      guestName=name;
-      document.getElementById("rsvpForm").classList.add("hidden");
-      document.getElementById("rsvpDone").classList.remove("hidden");
-      const msgs={ja:["\u{1F389}","Super, "+name+" ist dabei!","Wir freuen uns!"],vielleicht:["\u{1F914}","Alles klar!","Wir hoffen ihr k\u00F6nnt kommen!"],nein:["\u{1F622}","Schade!","Vielleicht beim n\u00E4chsten Mal."]};
-      const m=msgs[selectedStatus];
-      document.getElementById("rsvpDoneEmoji").textContent=m[0];
-      document.getElementById("rsvpMsg").textContent=m[1];
-      document.getElementById("rsvpSub").textContent=m[2];
-      if(selectedStatus==="ja")fireConfetti();
-      loadWishes();
-    }catch(e){alert("Fehler: "+e.message);btn.textContent="\u{1F4E8} Absenden";btn.disabled=false;}
-  }
-  function downloadIcs(){
-    const date="${escJson(party.date)}",time="${escJson(party.time||"12:00")}",endTime="${escJson(party.endTime||"")}";
-    const d=date.replace(/-/g,""),t=time.replace(/:/g,"")+"00";
-    const et=endTime?endTime.replace(/:/g,"")+"00":(parseInt(time)+3+"").padStart(2,"0")+"0000";
-    const ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//machsleicht//party//DE","BEGIN:VEVENT",
-      "DTSTART:"+d+"T"+t,"DTEND:"+d+"T"+et,
-      "SUMMARY:${escJson(party.childName?party.childName+"s Geburtstag":"Kindergeburtstag")}",
-      "LOCATION:${escJson(party.address||"")}",
-      "DESCRIPTION:${escJson(party.motto||"Kindergeburtstag")}",
-      "END:VEVENT","END:VCALENDAR"].join("\\r\\n");
-    const blob=new Blob([ics],{type:"text/calendar"});
-    const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="party.ics";a.click();
-  }
-  async function loadWishes(){
-    const el=document.getElementById("wishListGuest");if(!el)return;
-    try{
-      const r=await fetch(location.origin+"/api/party/"+PID);if(!r.ok)return;
-      const data=await r.json();if(!data.wishes||!data.wishes.length)return;
-      const pp=data.paypalMe||"";
-      el.innerHTML=data.wishes.map(w=>{
-        const taken=w.isFull,shared=w.sharedGift,hasLink=w.url&&w.url.startsWith("http");
-        const priceNum=parseFloat((w.price||"").replace(/[^0-9.,]/g,"").replace(",","."));
-        const share=shared&&w.claimedCount&&priceNum?Math.ceil(priceNum/(w.claimedCount+1)):0;
-        const ppRaw=pp.startsWith("http")?pp:"https://"+pp;
-        const ppUrl=pp&&share?(ppRaw.endsWith("/")?ppRaw.slice(0,-1):ppRaw)+"/"+(share<1?"":share):"";
-        return '<div class="wish-item" style="flex-wrap:wrap"><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:14px">'+escC(w.title)+'</div><div style="font-size:12px;color:var(--m)">'
-          +(w.price?escC(w.price)+' \u00B7 ':'')
-          +(shared?'Gemeinsam schenken'+(w.claimedCount?' ('+w.claimedCount+' dabei)':''):'')
-          +(!shared&&taken?'\u2705 Vergeben':'')
-          +'</div>'
-          +(shared&&share?'<div style="font-size:12px;color:var(--a);font-weight:600">\u{1F4B8} Dein Anteil: ~'+share+'\u20AC</div>':'')
-          +(hasLink?'<a href="'+location.origin+'/go/'+PID+'/'+w.id+'" target="_blank" rel="noopener" style="font-size:12px;color:var(--a);font-weight:600">\u2192 '+shopLbl(w.url)+'</a>':'')
-          +'</div>'
-          +(taken&&!shared?'<span class="wish-claim taken">Vergeben</span>':'<button class="wish-claim" onclick="claimWish(\\x27'+w.id+'\\x27,this)">'+(shared?'Beteiligen':'Schenke ich!')+'</button>')
-          +(shared&&ppUrl&&w.claimedCount?'<div style="width:100%;margin-top:6px"><a href="'+ppUrl+'" target="_blank" rel="noopener" class="btn btn-sm" style="background:#0070BA;font-size:12px;width:100%">\u{1F4B8} '+share+'\u20AC per PayPal senden</a></div>':'')
-          +'</div>';
-      }).join("");
-      el.innerHTML+=\`<p style="font-size:10px;color:var(--m);margin-top:10px;text-align:center">Links enthalten ggf. Affiliate-Links. F\u00FCr dich \u00E4ndert sich nichts am Preis.</p>\`;
-    }catch{}
-  }
-  async function claimWish(wid,btn){
-    const name=guestName||document.getElementById("rsvpName").value.trim();
-    if(!name){alert("Bitte zuerst oben deinen Namen eingeben");return;}
-    btn.textContent="\u23F3...";btn.disabled=true;
-    try{
-      const r=await fetch(location.origin+"/api/party/"+PID+"/wish/"+wid+"/claim",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name})});
-      if(!r.ok){const d=await r.json();alert(d.error);btn.textContent="Schenke ich!";btn.disabled=false;return;}
-      loadWishes();
-    }catch{btn.textContent="Schenke ich!";btn.disabled=false;}
-  }
-  function escC(s){const d=document.createElement("div");d.textContent=s;return d.innerHTML;}
-  function shopLbl(u){if(!u)return"ansehen";if(/amazon[.]de/i.test(u))return"bei Amazon";if(/mytoys[.]de/i.test(u))return"bei myToys";if(/thalia[.]de/i.test(u))return"bei Thalia";if(/otto[.]de/i.test(u))return"bei Otto";if(/jako-o[.]de/i.test(u))return"bei Jako-o";if(/tausendkind[.]de/i.test(u))return"bei tausendkind";if(/smythstoys/i.test(u))return"bei Smyths Toys";if(/lego[.]com/i.test(u))return"bei LEGO";return"ansehen";}
-  </script>`;
-}
-
 // ═══════════════════════════════════════════════════════════════
 // EDITOR VIEW
 // ═══════════════════════════════════════════════════════════════
@@ -1557,7 +1408,12 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
         <div style="flex:1">
           <div style="font-weight:600;font-size:14px">${esc(w.title)}</div>
           <div style="font-size:12px;color:var(--m)">${w.price?esc(w.price):""}${w.sharedGift?" \u00B7 Gemeinsam":""}</div>
-          ${w.claimedBy&&w.claimedBy.length?`<div style="font-size:12px;color:#2E7D32;font-weight:600">\u{1F381} ${w.claimedBy.map(n=>esc(n)).join(", ")}</div>`:`<div style="font-size:12px;color:var(--m);font-style:italic">Noch offen</div>`}
+          ${w.claimedBy&&w.claimedBy.length?(()=>{
+            const entries=w.claimedBy.map(e=>typeof e==="string"?{name:e,amount:null}:e);
+            const total=entries.reduce((s,e)=>s+(typeof e.amount==="number"?e.amount:0),0);
+            const label=entries.map(e=>esc(e.name)+(typeof e.amount==="number"?" ("+e.amount+"\u20AC)":"")).join(", ");
+            return `<div style="font-size:12px;color:#2E7D32;font-weight:600">\u{1F381} ${label}${total>0?` \u00B7 Gesamt: ${total}\u20AC`:""}</div>`;
+          })():`<div style="font-size:12px;color:var(--m);font-style:italic">Noch offen</div>`}
         </div>
         <button onclick="deleteWish('${w.id}')" style="background:none;border:none;font-size:16px;cursor:pointer;color:var(--m);padding:4px 8px" title="L\u00F6schen">\u{1F5D1}</button>
       </div>`).join("")}

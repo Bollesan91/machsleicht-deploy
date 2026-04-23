@@ -1,35 +1,88 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 22.04.2026
+**Datum:** 23.04.2026 (Chat-Session, Opus 4.7) — P1-16 Partyseite Follow-Ups abgearbeitet
 
 ## Was wurde gemacht
-- **Strategisches Sparring** mit Bolle zum „Freund-Memo" (Verzettelungs-Kritik). Ergebnis: Strategie ist scharf, aber React-Homepage hatte ein Implementierungs-Gap zum SEO-Fallback.
-- **React-Homepage (`js/index.js`) an SEO-Fallback angeglichen:**
-  - Hero H1: „Familienstress? Mach's leicht." → „Kindergeburtstag planen — kostenlos in 10 Minuten"
-  - Hero-Subtitle auf Fallback-Wortlaut
-  - Products-Array von 8 → 4 Kernmodule reduziert (Einschulung/Baby/Kreuzworträtsel/Spielkarten raus aus Hauptgrid)
-  - Neue Pill-Cloud-Sektion „Weitere Planer & Tools" mit 8 Sekundär-Items (Einschulung, Baby, Kreuzworträtsel, Spielkarten, Schnitzeljagd-Aufgaben, Halloween, Oster-Eiersuche, Adventskalender)
-  - „Ein Tool pro Familienanlass." → „Planer, Schatzsuche, Einladung, Partyseite."
-  - Eyebrow „Unsere Tools" → „Alles für den Kindergeburtstag" (bewusst nicht „System" — Inside-Sprache vermieden)
-  - Footer-Tagline + Idee-Card-Text auf Kindergeburtstag-Fokus umformuliert
-- **`index.html` Meta-Tags aktualisiert:** description, og:description, twitter:description — alle Erwähnungen von „Einschulung, Baby & Wochenbett" durch Kindergeburtstag-Fokus ersetzt
-- **Portfolio-Matrix als Abschnitt 0.9 in STRATEGIE.md verankert:** 4 Spalten (Kernwette / Testwette / Zukunftswette eingefroren / Optional-Legacy) mit Budget, Trigger-Kriterien und Homepage-Präsenz-Regel. ElevenLabs-Hinweis verweist auf Section 3 Tier-Sequenzierung (kein Konflikt).
-- **P1-12 komplett umformuliert:** vom interaktiven Einschulungs-Planer (12-18h) zum reinen SEO-Content-Cluster (10-14h). Upgrade-Trigger zum Planer: ≥100 organische Visits/Woche im Juli auf Cluster-Seiten. Label `[TEST]`.
-- **18 PBIs in der BACKLOG-AUDIT.md Prio-Tabelle etikettiert:** 14× `[KERN]`, 1× `[TEST]`, 3× `[ZUKUNFT]`, 2× `[LEGACY]`. Ticket-Disziplin um Grace-Clause für Bestands-Tickets ergänzt.
-- **Flow-Audit-Template** unter `_dev/docs/flow-audit-template.md` — 15 Reibungs-Checkpoints für Bolle zum Selbst-Durchgehen.
-- **15-Punkte-Verifikation** aller Änderungen vor dem Push: validate-all.sh PASSED, JS Syntax valid, alle Cross-References sauber, Pill-URLs existieren.
+
+### 1. P1-16 Sub-Task #4: Alte `guestView()` entfernt
+- 200 Zeilen toter Code aus `party-worker.js` (Zeilen 1285-1484) raus
+- Vorher geprüft: keine Aufrufe mehr im Repo, nur noch Funktionsdefinition
+- Syntax-Check bestanden
+
+### 2. P1-16 Sub-Task #3: Reply-To Handling (Code-Seite)
+- `reply_to: env.RESEND_REPLY_TO || "party@machsleicht.de"` im Resend-Call in `party-worker.js`
+- Env-variable-fähig, damit Adress-Änderung ohne Code-Push möglich ist
+- **Extern ausstehend:** Migadu Mini einrichten (siehe unten „Offene externe Tasks")
+
+### 3. P1-16 Sub-Task #6: Foto-Crop Mobile-Fixes
+Bei Durchsicht stellte sich heraus: Slider + Drag sind bereits implementiert, aber drei Mobile-Bugs:
+- **Bug 1:** Slider reagierte nur auf `mousemove`, kein Touch/Pointer-Event → auf Mobile nicht draggable
+- **Bug 2:** `_updateHeroTrack()` / `_updateCircTrack()` fehlten → Track-Visual zeigte 0% nach Upload, obwohl Scale auf Init-Wert stand
+- **Bug 3:** `touch-action:none` fehlte auf Canvas + Slider → Seite scrollte beim Draggen mit
+
+Alle drei gefixt. +/- Buttons aktualisieren jetzt auch den Track-Visual.
+
+### 4. P1-16 Sub-Task #7: Beteiligen custom amount
+Komplett neues Feature implementiert:
+- **Backend (`/claim`-Endpoint):** Optionales `amount`-Feld, 0<x<9999, Komma-Normalisierung. Bei `sharedGift && amount` → Object `{name, amount}`, sonst String (rückwärtskompatibel zu alten Partys)
+- **API-GET:** `claimedAmountTotal` pro Wunsch wird berechnet und ausgeliefert
+- **Frontend `claimWish()`:** Prompt bei sharedGift mit Auto-Vorschlag. `data-suggested`-Attribut am Button = gleicher Wert wie Anzeige-Zeile zeigt (Konsistenz)
+- **Anzeige:** „3 dabei, 45€ gesammelt · Noch offen: 15€ · Vorschlag: 8€"
+- **Editor-View:** „🎁 Anna (20€), Tom (15€) · Gesamt: 35€"
+
+### 5. P1-16 Sub-Task #8: Kill List + Internal Linking Audit (durchgeführt, ausgegliedert)
+Audit-Ergebnis:
+- **Echte Orphans: 0** — P2-2 hat sauber aufgeräumt, 138 Single-Year-Seiten alle via echtem 301 weitergeleitet
+- **Kill-Kandidaten (strategisch):** 112 Seiten von 8 Marken-Mottos (IP-Risiko, nicht tool-integriert) + 56 Seiten von 4 Content-Inseln
+- **Internal-Linking-Bug gefunden:** Superheld hat **0 eingehende Links**, Prinzessin **2** — beide tool-integriert, praktisch unsichtbar. Zum Vergleich: Piraten 142, Dino 116, Safari 118. Marken-Mottos (strategisch zurückgestellt) sind teilweise stärker verlinkt als Tool-Mottos (Ninjago 108, Harry Potter 98)
+
+Ausgegliedert in:
+- **P1-20** Internal-Linking-Fix (Quick-Win, 1–2 Std) — Prinzessin + Superheld auf Meerjungfrau-Niveau bringen
+- **P1-21** Kill-List-Entscheidung (3–6 Std, wartet auf GSC-Daten bis Mai) — absorbiert P1-8b
+
+### 6. Backlog gepflegt
+- P1-16 auf ✅ GRÖSSTENTEILS ERLEDIGT mit vollem Sub-Task-Status
+- P1-20 + P1-21 neu angelegt mit vollen Motivations-, Scope-, Aufwands-, Erfolgs-Sektionen
+- Prio-Tabelle umsortiert
+- Changelog-Eintrag 23.04.2026
+
+### 7. Strategische Entscheidung: Mail-Infrastruktur
+Nach Diskussion: **Migadu Mini (~€83/Jahr)** statt Cloudflare Email Routing oder Zoho Free.
+- Unlimited Domains → machsleicht.de + machsruhig.de auf einem Account
+- 1000 in / 100 out pro Tag, IMAP/SMTP → in GMX einbindbar
+- Advergy NICHT auf Migadu (separate Welt)
+- CF Email Routing wird NICHT verwendet (MX-Kollision)
+
+**Architektur-Entscheidung für machsruhig Cold-Outreach:** Niemals über primären MX senden — Domain-Reputation-Risiko. Separate Subdomain (z.B. `get.machsruhig.de`) mit eigenen MX/SPF/DKIM-Records + dediziertes Outreach-Tool (Instantly/Smartlead/Lemlist). Separates PBI bei machsruhig Phase-F-Aktivierung.
+
+## Commits dieser Session
+Ein Commit — `party-worker.js` (netto -142 Zeilen) + `BACKLOG-AUDIT.md` + `SESSION-NOTES.md`.
 
 ## Nächste Schritte
-- **Bolle: Flow-Audit selbst durchgehen** (`_dev/docs/flow-audit-template.md`) → 3 dickste Reibungen als neue `[KERN]`-PBIs anlegen
-- **OneDrive-Repo lokal reparieren** (alter Ordner gelöscht, dann `git pull` oder neu klonen außerhalb von OneDrive)
-- **P1-16 Partyseite Follow-Ups** in nächster Laptop-Session (Cloudflare-Deploy + Email-Test + Foto-Crop + Reply-To)
-- **P2-13 Gumroad-Digitalprodukte starten** (Piraten + Dino, je 4h)
-- **P2-15 Awin-Anmeldung** (30 Min + 1-3 Tage Warten)
-- **P1-8 Safari als nächstes Elite-Motto** (3 Altersgruppen)
-- **P1-12 Einschulung-SEO-Cluster bauen** — Launch bis 31.05.
+
+### Extern (Bolle macht alleine, ohne Claude)
+1. **Cloudflare Worker Quick-Editor öffnen** → `party-worker.js` (neue Fassung, ~1484 Zeilen) reinkopieren → Save and deploy. Ohne diesen Schritt sind die Foto-Crop-Mobile-Fixes + Beteiligen-amount NICHT live.
+2. **Browser-Test** der Partyseite: Party erstellen → Foto-Crop mit Slider + Drag auf Mobile → Beteiligen mit Betrag eintragen → Anzeige prüfen
+3. **Migadu Mini einrichten:**
+   - Account anlegen, Mini-Plan (~€83/Jahr)
+   - Domains: machsleicht.de + machsruhig.de
+   - Mailboxen: mindestens `party@machsleicht.de`
+   - In Cloudflare DNS für beide Domains: MX auf Migadu, SPF merged (`v=spf1 include:_spf.resend.com include:spf.migadu.com ~all`), DKIM-Records von Migadu dazu
+   - In GMX als externes IMAP-Konto einbinden
+   - Test: Mail an `party@machsleicht.de` → landet in GMX
+
+### Nächste Laptop-Session (Reihenfolge aus Prio-Tabelle)
+- **#9 P1-20** Internal-Linking-Fix (1–2 Std, Quick-Win)
+- **#10 P1-15** Email-Capture Pilot Einladung (4–5 Std)
+- **#11 P1-17** DSGVO-Hygiene Partyseite A+C
+- **#16 P1-12** Einschulung SEO-Cluster — Launch bis 31.05.!
 
 ## Offene Fragen
-- Reihenfolge Safari-Altersgruppen: auch mit 6-8 starten wie bei Einhorn?
-- Awin-Publisher-ID Status?
-- Visual-Check der React-Homepage im Browser steht aus (manuelle Verifikation durch Bolle nach Deploy)
+- Nach Browser-Test durch Bolle: Sind Prompts für „Beteiligen-Betrag" auf Mobile-Safari brauchbar, oder braucht's doch ein custom Modal?
+- Ab wann genug GSC-Daten für Kill-List-Entscheidung (P1-21)? Geplant Mai, aber evtl. schon Mitte Mai erste Signale.
+
+## Status der Site nach dieser Session
+- **Live auf machsleicht.de:** unverändert
+- **Live auf party.machsleicht.de (Cloudflare Worker):** unverändert — Änderungen sind im Repo, aber nicht deployed. Erfordert manuellen Cloudflare-Deploy durch Bolle.
+- **Repo:** 40 PBIs in Roadmap, P1-16 teilweise erledigt (Code-Seite ✅, externe Tasks 🛠)
