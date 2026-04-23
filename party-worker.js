@@ -508,8 +508,10 @@ function creatorPage() {
           <div style="font-size:11px;color:var(--m);margin-top:6px">Verschieben & zoomen</div>
           <div style="display:flex;align-items:center;gap:8px;margin-top:8px">
             <button id="heroZoomOut" type="button" style="background:none;border:1px solid var(--l);border-radius:6px;width:28px;height:28px;cursor:pointer;font-size:14px">\u2212</button>
-            <div id="heroZoomSlider" style="flex:1;height:4px;background:var(--l);border-radius:2px;cursor:pointer;position:relative;touch-action:none">
-              <div id="heroZoomTrack" style="height:100%;background:var(--a);border-radius:2px;position:absolute"></div>
+            <div id="heroZoomSlider" style="flex:1;height:28px;cursor:pointer;position:relative;touch-action:none;display:flex;align-items:center">
+              <div style="position:absolute;left:0;right:0;height:4px;background:var(--l);border-radius:2px"></div>
+              <div id="heroZoomTrack" style="position:absolute;left:0;height:4px;background:var(--a);border-radius:2px"></div>
+              <div id="heroZoomThumb" style="position:absolute;width:18px;height:18px;background:#fff;border:2px solid var(--a);border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,.2);transform:translateX(-9px);pointer-events:none"></div>
             </div>
             <button id="heroZoomIn" type="button" style="background:none;border:1px solid var(--l);border-radius:6px;width:28px;height:28px;cursor:pointer;font-size:14px">+</button>
           </div>
@@ -523,8 +525,10 @@ function creatorPage() {
           <div style="font-size:11px;color:var(--m);text-align:center;margin-top:6px">Verschieben & zoomen</div>
           <div style="display:flex;align-items:center;gap:8px;margin-top:8px">
             <button id="circZoomOut" type="button" style="background:none;border:1px solid var(--l);border-radius:6px;width:28px;height:28px;cursor:pointer;font-size:14px">\u2212</button>
-            <div id="circZoomSlider" style="flex:1;height:4px;background:var(--l);border-radius:2px;cursor:pointer;position:relative;touch-action:none">
-              <div id="circZoomTrack" style="height:100%;background:var(--a);border-radius:2px;position:absolute"></div>
+            <div id="circZoomSlider" style="flex:1;height:28px;cursor:pointer;position:relative;touch-action:none;display:flex;align-items:center">
+              <div style="position:absolute;left:0;right:0;height:4px;background:var(--l);border-radius:2px"></div>
+              <div id="circZoomTrack" style="position:absolute;left:0;height:4px;background:var(--a);border-radius:2px"></div>
+              <div id="circZoomThumb" style="position:absolute;width:18px;height:18px;background:#fff;border:2px solid var(--a);border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,.2);transform:translateX(-9px);pointer-events:none"></div>
             </div>
             <button id="circZoomIn" type="button" style="background:none;border:1px solid var(--l);border-radius:6px;width:28px;height:28px;cursor:pointer;font-size:14px">+</button>
           </div>
@@ -708,8 +712,8 @@ document.getElementById("heroCanvas").addEventListener("pointerup",function(){_h
 document.getElementById("circleCanvas").addEventListener("pointerdown",function(e){_circDragging=true;this.setPointerCapture(e.pointerId);});
 document.getElementById("circleCanvas").addEventListener("pointermove",function(e){if(!_circDragging||!_srcCanvas)return;_circX+=e.movementX;_circY+=e.movementY;_redrawCircle();});
 document.getElementById("circleCanvas").addEventListener("pointerup",function(){_circDragging=false;});
-function _updateHeroTrack(){var pct=(_heroScale-_heroMinScale)/(_heroMaxScale-_heroMinScale);document.getElementById("heroZoomTrack").style.width=(Math.max(0,Math.min(1,pct))*100)+"%";}
-function _updateCircTrack(){var pct=(_circScale-_circMinScale)/(_circMaxScale-_circMinScale);document.getElementById("circZoomTrack").style.width=(Math.max(0,Math.min(1,pct))*100)+"%";}
+function _updateHeroTrack(){var pct=Math.max(0,Math.min(1,(_heroScale-_heroMinScale)/(_heroMaxScale-_heroMinScale)));document.getElementById("heroZoomTrack").style.width=(pct*100)+"%";document.getElementById("heroZoomThumb").style.left=(pct*100)+"%";}
+function _updateCircTrack(){var pct=Math.max(0,Math.min(1,(_circScale-_circMinScale)/(_circMaxScale-_circMinScale)));document.getElementById("circZoomTrack").style.width=(pct*100)+"%";document.getElementById("circZoomThumb").style.left=(pct*100)+"%";}
 var _heroSliderDragging=false,_circSliderDragging=false;
 function _heroZoomSliderUpdate(e){if(!_srcCanvas)return;var slider=document.getElementById("heroZoomSlider");var rect=slider.getBoundingClientRect();var pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));_heroScale=_heroMinScale+(pct*(_heroMaxScale-_heroMinScale));_redrawHero();_updateHeroTrack();}
 function _circZoomSliderUpdate(e){if(!_srcCanvas)return;var slider=document.getElementById("circZoomSlider");var rect=slider.getBoundingClientRect();var pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));_circScale=_circMinScale+(pct*(_circMaxScale-_circMinScale));_redrawCircle();_updateCircTrack();}
