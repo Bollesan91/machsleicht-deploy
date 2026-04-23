@@ -57,7 +57,11 @@ Nach Diskussion: **Migadu Mini (~€83/Jahr)** statt Cloudflare Email Routing od
 **Architektur-Entscheidung für machsruhig Cold-Outreach:** Niemals über primären MX senden — Domain-Reputation-Risiko. Separate Subdomain (z.B. `get.machsruhig.de`) mit eigenen MX/SPF/DKIM-Records + dediziertes Outreach-Tool (Instantly/Smartlead/Lemlist). Separates PBI bei machsruhig Phase-F-Aktivierung.
 
 ## Commits dieser Session
-Ein Commit — `party-worker.js` (netto -142 Zeilen) + `BACKLOG-AUDIT.md` + `SESSION-NOTES.md`.
+1. **5142851** P1-16 Follow-Ups (guestView cleanup + reply_to + Foto-Crop Mobile-Fix Initial + Beteiligen amount)
+2. **cdce24a** Vorschau-Fix: `loadPhoto()` / `loadWishes()` / `loadGuestCount()` werden im Preview-Modus auto-getriggert (vorher nur nach Code-Eingabe aufgerufen)
+3. **29cd39c** Slider UX-Fix: 28px Touch-Target + sichtbarer Thumb. Alte 4px-Line war auf Mobile praktisch nicht draggable.
+
+**Cloudflare Worker Stand:** `29cd39c` deployed von Bolle am 23.04.2026 — Vorschau + Slider beide live getestet, beide ok.
 
 ## Nächste Schritte
 
