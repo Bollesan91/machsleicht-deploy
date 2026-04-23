@@ -1,92 +1,95 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 23.04.2026 (Chat-Session, Opus 4.7) — P1-16 Partyseite Follow-Ups abgearbeitet
+**Datum:** 23.04.2026 (Chat-Session, Opus 4.7) — P1-20 Internal-Linking-Fix komplett umgesetzt
 
 ## Was wurde gemacht
 
-### 1. P1-16 Sub-Task #4: Alte `guestView()` entfernt
-- 200 Zeilen toter Code aus `party-worker.js` (Zeilen 1285-1484) raus
-- Vorher geprüft: keine Aufrufe mehr im Repo, nur noch Funktionsdefinition
-- Syntax-Check bestanden
+### P1-20: Internal-Linking-Fix (Prinzessin + Superheld)
 
-### 2. P1-16 Sub-Task #3: Reply-To Handling (Code-Seite)
-- `reply_to: env.RESEND_REPLY_TO || "party@machsleicht.de"` im Resend-Call in `party-worker.js`
-- Env-variable-fähig, damit Adress-Änderung ohne Code-Push möglich ist
-- **Extern ausstehend:** Migadu Mini einrichten (siehe unten „Offene externe Tasks")
+**Ausgangs-Problem:** Prinzessin hatte 5, Superheld 3 eingehende interne Links. Beides Tool-Mottos, aber de facto unsichtbar im Internal-Linking-Netz.
 
-### 3. P1-16 Sub-Task #6: Foto-Crop Mobile-Fixes
-Bei Durchsicht stellte sich heraus: Slider + Drag sind bereits implementiert, aber drei Mobile-Bugs:
-- **Bug 1:** Slider reagierte nur auf `mousemove`, kein Touch/Pointer-Event → auf Mobile nicht draggable
-- **Bug 2:** `_updateHeroTrack()` / `_updateCircTrack()` fehlten → Track-Visual zeigte 0% nach Upload, obwohl Scale auf Init-Wert stand
-- **Bug 3:** `touch-action:none` fehlte auf Canvas + Slider → Seite scrollte beim Draggen mit
+**Root-Cause-Erkenntnis:** Nicht nur fehlende Cross-Links, sondern fehlender Content — beide Mottos hatten null Seiten unter `/kindergeburtstag/`. Andere 8 Tool-Mottos haben je 13 Seiten (Hub + 12 Alters-Varianten), die sich gegenseitig verlinken. Zwischendiskussion mit Dry-Run-Abbruch: Bolle drängte auf echten Content statt Redirect-Krücke.
 
-Alle drei gefixt. +/- Buttons aktualisieren jetzt auch den Track-Visual.
+**Umgesetzt:**
 
-### 4. P1-16 Sub-Task #7: Beteiligen custom amount
-Komplett neues Feature implementiert:
-- **Backend (`/claim`-Endpoint):** Optionales `amount`-Feld, 0<x<9999, Komma-Normalisierung. Bei `sharedGift && amount` → Object `{name, amount}`, sonst String (rückwärtskompatibel zu alten Partys)
-- **API-GET:** `claimedAmountTotal` pro Wunsch wird berechnet und ausgeliefert
-- **Frontend `claimWish()`:** Prompt bei sharedGift mit Auto-Vorschlag. `data-suggested`-Attribut am Button = gleicher Wert wie Anzeige-Zeile zeigt (Konsistenz)
-- **Anzeige:** „3 dabei, 45€ gesammelt · Noch offen: 15€ · Vorschlag: 8€"
-- **Editor-View:** „🎁 Anna (20€), Tom (15€) · Gesamt: 35€"
+1. **2 Hub-Pages handgepflegt erstellt:**
+   - `kindergeburtstag/prinzessin.html` (~580 Zeilen): Kronen-Werkstatt, Schatz-Suche im Königreich, Prinzessinnen-Akademie — je 3 Altersvarianten + Deko + Essen + Mitgebsel + 4 FAQs + HowTo/FAQ/BreadcrumbList-Schema. Gender-sensitiv formuliert (auch Jungen/gemischt).
+   - `kindergeburtstag/superheld.html` (~580 Zeilen): Helden-Ausrüstung, Kräfte-Training, Rettungsmission. Markenfrei (kein Spider-Man/Batman-Bezug) — Kinder erfinden eigene Heldenfigur. Gender-offen.
 
-### 5. P1-16 Sub-Task #8: Kill List + Internal Linking Audit (durchgeführt, ausgegliedert)
-Audit-Ergebnis:
-- **Echte Orphans: 0** — P2-2 hat sauber aufgeräumt, 138 Single-Year-Seiten alle via echtem 301 weitergeleitet
-- **Kill-Kandidaten (strategisch):** 112 Seiten von 8 Marken-Mottos (IP-Risiko, nicht tool-integriert) + 56 Seiten von 4 Content-Inseln
-- **Internal-Linking-Bug gefunden:** Superheld hat **0 eingehende Links**, Prinzessin **2** — beide tool-integriert, praktisch unsichtbar. Zum Vergleich: Piraten 142, Dino 116, Safari 118. Marken-Mottos (strategisch zurückgestellt) sind teilweise stärker verlinkt als Tool-Mottos (Ninjago 108, Harry Potter 98)
+2. **Homepage + Planer-Hub Links umgestellt:**
+   - `index.html`: Motto-Prosa von Einladungs-URL auf neue Hub-URLs umgestellt (uncommittete Vor-Arbeit aus früherer Session entdeckt und korrigiert: Query-Param-Platzhalter durch Direkt-Links ersetzt)
+   - `kindergeburtstag.html`: 4 Query-Param-Links (`?motto=prinzessin#planer`) auf Direkt-Links (`/kindergeburtstag/prinzessin`) umgestellt
 
-Ausgegliedert in:
-- **P1-20** Internal-Linking-Fix (Quick-Win, 1–2 Std) — Prinzessin + Superheld auf Meerjungfrau-Niveau bringen
-- **P1-21** Kill-List-Entscheidung (3–6 Std, wartet auf GSC-Daten bis Mai) — absorbiert P1-8b
+3. **`_redirects`:** 2 neue 200-Rewrites für die Hub-URLs
 
-### 6. Backlog gepflegt
-- P1-16 auf ✅ GRÖSSTENTEILS ERLEDIGT mit vollem Sub-Task-Status
-- P1-20 + P1-21 neu angelegt mit vollen Motivations-, Scope-, Aufwands-, Erfolgs-Sektionen
-- Prio-Tabelle umsortiert
-- Changelog-Eintrag 23.04.2026
+4. **`sitemap.xml`:** 2 neue URLs mit `lastmod=2026-04-23, priority=0.8`
 
-### 7. Strategische Entscheidung: Mail-Infrastruktur
-Nach Diskussion: **Migadu Mini (~€83/Jahr)** statt Cloudflare Email Routing oder Zoho Free.
-- Unlimited Domains → machsleicht.de + machsruhig.de auf einem Account
-- 1000 in / 100 out pro Tag, IMAP/SMTP → in GMX einbindbar
-- Advergy NICHT auf Migadu (separate Welt)
-- CF Email Routing wird NICHT verwendet (MX-Kollision)
+5. **Card-Swap-Script (`_build/p1-20-swap-cards.py`):**
+   - Thematisch kuratierter Cross-Motto-Grid-Austausch
+   - **Prinzessin-Cluster** (einhorn, meerjungfrau, frozen, harry-potter, pferde, zirkus): 77 Seiten, schwächste Tool-Card getauscht gegen Prinzessin. Prio: feuerwehr > piraten > dino > weltraum > safari > detektiv
+   - **Superheld-Cluster** (feuerwehr, ninjago, spider-man, paw-patrol, detektiv, piraten): 62 Seiten. Prio: einhorn > meerjungfrau > safari > weltraum > dino > feuerwehr
+   - **Wichtig — P1-21 nicht vorgegriffen:** Marken-Motto-Cards (harry-potter, minecraft, pokemon, spider-man, super-mario, paw-patrol, frozen, ninjago) nicht angetastet
 
-**Architektur-Entscheidung für machsruhig Cold-Outreach:** Niemals über primären MX senden — Domain-Reputation-Risiko. Separate Subdomain (z.B. `get.machsruhig.de`) mit eigenen MX/SPF/DKIM-Records + dediziertes Outreach-Tool (Instantly/Smartlead/Lemlist). Separates PBI bei machsruhig Phase-F-Aktivierung.
+6. **Build-Script `_build/count-motto-links.py`** für wiederholbare Link-Audits angelegt.
 
-## Commits dieser Session
-1. **5142851** P1-16 Follow-Ups (guestView cleanup + reply_to + Foto-Crop Mobile-Fix Initial + Beteiligen amount)
-2. **cdce24a** Vorschau-Fix: `loadPhoto()` / `loadWishes()` / `loadGuestCount()` werden im Preview-Modus auto-getriggert (vorher nur nach Code-Eingabe aufgerufen)
-3. **29cd39c** Slider UX-Fix: 28px Touch-Target + sichtbarer Thumb. Alte 4px-Line war auf Mobile praktisch nicht draggable.
+7. **BACKLOG-AUDIT.md** umfangreich aktualisiert: P1-20 auf ✅, Detail-Sektion mit vollem Ergebnis, Limits, Folgetickets.
 
-**Cloudflare Worker Stand:** `29cd39c` deployed von Bolle am 23.04.2026 — Vorschau + Slider beide live getestet, beide ok.
+### Ergebnis-Matrix (Re-Audit)
 
-## Nächste Schritte
+```
+Motto         Vorher   Nachher   Delta
+Prinzessin         5        85     +80   ✓ Ziel (40+) klar übertroffen
+Superheld          3        68     +65   ✓ Ziel (40+) klar übertroffen
+Piraten          143       128     -15
+Dino             115        98     -17
+Safari           112        77     -35
+Weltraum         101        81     -20
+Feuerwehr         90        54     -36
+Einhorn           86        76     -10
+Meerjungfrau      45        39      -6   (knapp am Schwellwert)
+Detektiv          42        42       0
+(Marken-Mottos alle unverändert — P1-21 intakt)
+```
 
-### Extern (Bolle macht alleine, ohne Claude)
-1. **Cloudflare Worker Quick-Editor öffnen** → `party-worker.js` (neue Fassung, ~1484 Zeilen) reinkopieren → Save and deploy. Ohne diesen Schritt sind die Foto-Crop-Mobile-Fixes + Beteiligen-amount NICHT live.
-2. **Browser-Test** der Partyseite: Party erstellen → Foto-Crop mit Slider + Drag auf Mobile → Beteiligen mit Betrag eintragen → Anzeige prüfen
-3. **Migadu Mini einrichten:**
-   - Account anlegen, Mini-Plan (~€83/Jahr)
-   - Domains: machsleicht.de + machsruhig.de
-   - Mailboxen: mindestens `party@machsleicht.de`
-   - In Cloudflare DNS für beide Domains: MX auf Migadu, SPF merged (`v=spf1 include:_spf.resend.com include:spf.migadu.com ~all`), DKIM-Records von Migadu dazu
-   - In GMX als externes IMAP-Konto einbinden
-   - Test: Mail an `party@machsleicht.de` → landet in GMX
+### Validation
 
-### Nächste Laptop-Session (Reihenfolge aus Prio-Tabelle)
-- **#9 P1-20** Internal-Linking-Fix (1–2 Std, Quick-Win)
-- **#10 P1-15** Email-Capture Pilot Einladung (4–5 Std)
-- **#11 P1-17** DSGVO-Hygiene Partyseite A+C
+`bash validate-all.sh` → **PASSED**. Alle 7 Stufen grün.
+
+## Process-Erkenntnis dieser Session
+
+Bolle hat zweimal gezielt gebremst:
+1. Initialer Plan "Scope C mechanisch" → Ehrliche Einschätzung gefordert
+2. 301-Redirect-Plan → "war das wirklich sauber?" → Selbst-Dekonstruktion, besserer Plan
+
+Ergebnis: Echter Content statt Redirect-Krücke. Bei hoher Eigenmotivation zum Liefern Qualitäts-Checks nicht überspringen.
+
+Am Schluss "mach jetzt die logischsten entscheidungen selbst und frag nur wenns brennt" → sauber durchgezogen ohne weitere Unterbrechungen.
+
+## Nächste Schritte (aus Prio-Tabelle)
+
+- **#10 P1-15** Email-Capture Pilot Einladung (4–5 Std) — jetzt Top-Prio
+- **#11 P1-17** DSGVO-Hygiene Partyseite A+C (1,5 Std Laptop)
 - **#16 P1-12** Einschulung SEO-Cluster — Launch bis 31.05.!
 
-## Offene Fragen
-- Nach Browser-Test durch Bolle: Sind Prompts für „Beteiligen-Betrag" auf Mobile-Safari brauchbar, oder braucht's doch ein custom Modal?
-- Ab wann genug GSC-Daten für Kill-List-Entscheidung (P1-21)? Geplant Mai, aber evtl. schon Mitte Mai erste Signale.
+### Extern (Bolle allein, aus letzter Session offen)
 
-## Status der Site nach dieser Session
-- **Live auf machsleicht.de:** unverändert
-- **Live auf party.machsleicht.de (Cloudflare Worker):** unverändert — Änderungen sind im Repo, aber nicht deployed. Erfordert manuellen Cloudflare-Deploy durch Bolle.
-- **Repo:** 40 PBIs in Roadmap, P1-16 teilweise erledigt (Code-Seite ✅, externe Tasks 🛠)
+1. **Cloudflare Worker** `party-worker.js` deployen (P1-16 Foto-Crop + Beteiligen-amount im Repo, nicht live)
+2. **Migadu Mini** einrichten (machsleicht.de + machsruhig.de Email-Host)
+3. Browser-Test Partyseite auf Mobile
+
+## Offene Fragen
+
+- Nach GSC-Review Mai: Brauchen Prinzessin/Superheld Alters-Unterseiten (analog Meerjungfrau)?
+- Meerjungfrau bei 39 Links knapp am unteren Schwellwert — bei Problemen in GSC einen Card-Swap-Reverse auf 1-2 Seiten machen
+- Reagiert Google auf die neuen Hub-Pages positiv? → Impressions und Clicks ab ~2-4 Wochen im GSC beobachten
+
+## Status der Site nach diesem Deploy
+
+- **Live auf machsleicht.de:**
+  - 2 neue Motto-Hub-Pages (`/kindergeburtstag/prinzessin`, `/kindergeburtstag/superheld`)
+  - 139 Motto-Alters-Seiten mit angepassten Cross-Motto-Grids
+  - index.html + kindergeburtstag.html mit aktualisierten Prinzessin/Superheld-Links
+  - sitemap.xml aktualisiert
+- **Live auf party.machsleicht.de (Cloudflare Worker):** unverändert — P1-16-Änderungen warten weiterhin auf Bolles manuellen Cloudflare-Deploy
+- **Repo:** 40 PBIs in Roadmap, P1-20 ✅ erledigt

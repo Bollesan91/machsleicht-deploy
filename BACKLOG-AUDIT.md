@@ -29,7 +29,7 @@
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
 |---|--------|------|--------|------------------|---------|---------|
 | 8 | ✅ | **P1** | P1-16 | `[KERN]` **Partyseite Follow-Ups** — guestView cleanup, reply_to, Foto-Crop Mobile-Fix, Beteiligen custom amount, Audit | 2 Std | **Erledigt 23.04.2026** (Chat-Session). Offen: Browser-Test + Migadu-Setup extern |
-| 9 | ⏳ | **P1** | P1-20 | `[KERN]` **Internal-Linking-Fix** (Superheld 0 Links, Prinzessin 2 Links) | 1–2 Std | Audit 23.04.2026: Tool-Mottos ungleich verlinkt. Aus P1-16 #8 ausgegliedert |
+| 9 | ✅ | **P1** | P1-20 | `[KERN]` **Internal-Linking-Fix** (Superheld 0 Links, Prinzessin 2 Links) | 3 Std | **Erledigt 23.04.2026**: Hub-Pages + Card-Swap. Prinzessin 5→85, Superheld 3→68 Links |
 | 10 | ⏳ | **P1** | P1-15 | `[KERN]` **Email-Capture (Pilot: Einladung)** | 4–5 Std | **Über Resend** (Audiences + Broadcasts) — Transactional läuft schon. Muss: DOI-Flow selbst bauen, dann Pilot Einladung, später Partyseite + Schatzsuche |
 | 11 | 🔄 | **P1** | P1-17 | `[KERN]` **DSGVO-Hygiene Partyseite** (A: Worker-Hinweis, B: Datenschutz ✅, C: Auto-Delete-Cron) | 1,5 Std (Laptop) | **B erledigt am 21.04.** Blockt kein weiteres Feature technisch, aber rechtliches Risiko solange A+C offen |
 | 12 | ⏳ | **P1** | P2-20 | `[KERN]` **Datenübergabe Planer → Tools** | 4–6 Std | Ökosystem-Prinzip umsetzen, nach P1-10 |
@@ -533,7 +533,7 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 
 ---
 
-#### P1-20: Internal-Linking-Fix für unterverlinkte Tool-Mottos `[KERN]`
+#### P1-20: Internal-Linking-Fix für unterverlinkte Tool-Mottos `[KERN]` ✅ **ERLEDIGT 23.04.2026**
 
 **Motivation:** Audit am 23.04.2026 zeigt einen harten Funnel-Leak. Von den 10 tool-integrierten Mottos sind **Superheld mit 0 und Prinzessin mit 2 eingehenden Links** de facto unsichtbar — obwohl das Tool für sie funktioniert. Gleichzeitig werden Marken-Mottos (die strategisch zurückgestellt sind) 60–108× verlinkt. Das ist das Gegenteil der strategischen Priorität.
 
@@ -543,16 +543,49 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 - Marken: Ninjago 108, Harry Potter 98, Minecraft 80, Super Mario 72, Pokemon 69, Spider-Man 65, Paw Patrol 62, Frozen 62
 - Inseln: Ritter 34, Zirkus 32, Pferde 27, Baustelle 20
 
-**Scope:**
-- Alle Hub-/Listen-Seiten identifizieren, wo Mottos aufgezählt werden (Homepage, /kindergeburtstag, /einladung-Hub, Altersgruppen-Seiten)
-- Sicherstellen, dass Prinzessin + Superheld in jeder dieser Listen gleichwertig zu den anderen 8 Tool-Mottos erscheinen
-- Sekundär: Marken-Mottos in Listen degradieren oder aus primären Navigations-Pfaden rausnehmen (wenn Kill-Entscheidung in P1-21 noch aussteht → Marker „Fan-Thema" setzen)
+**Root-Cause-Erkenntnis (während Implementierung):** Das Problem ist nicht nur fehlende Cross-Links, sondern fehlender Content. Während alle 8 anderen Tool-Mottos eine Hub-Page + 12 Alters-Seiten haben (sich gegenseitig verlinken = ~20 Self-Loop-Links, plus Cross-Links aus Grids anderer Seiten), existierten für Prinzessin + Superheld **null Seiten** unter `/kindergeburtstag/`. Links darauf wären 404 gelaufen.
 
-**Aufwand:** 1–2 Std.
+**Umgesetzt:**
+1. **Zwei Hub-Pages handgepflegt erstellt:**
+   - `/kindergeburtstag/prinzessin.html` (~580 Zeilen, motto-spezifisch: Kronen-Werkstatt, Schatz-Suche im Königreich, Prinzessinnen-Akademie — je 3 Altersvarianten + Deko + Essen + Mitgebsel + FAQ + HowTo/FAQ/BreadcrumbList-Schema)
+   - `/kindergeburtstag/superheld.html` (~580 Zeilen, motto-spezifisch: Helden-Ausrüstung basteln, Kräfte-Training, Rettungsmission — selbe Struktur. Gender-neutral + markenfrei umgesetzt)
+2. **Homepage-Prosa (`index.html`) + Planer-Hub (`kindergeburtstag.html`):** Query-Param-Platzhalter (`?motto=prinzessin#planer`) durch echte Direkt-Links (`/kindergeburtstag/prinzessin`) ersetzt — diese Vor-Arbeit war bereits uncommitted im Working Tree angelegt.
+3. **`_redirects`:** 2 neue 200-Rewrites `/kindergeburtstag/prinzessin` → `.html` + `/kindergeburtstag/superheld` → `.html`
+4. **`sitemap.xml`:** 2 neue URLs mit `lastmod=2026-04-23, priority=0.8`
+5. **Card-Swap-Script (`_build/p1-20-swap-cards.py`):** Thematisch kuratierte Cross-Motto-Grid-Anpassung.
+   - **Prinzessin-Cluster (einhorn, meerjungfrau, frozen, harry-potter, pferde, zirkus):** Auf 77 Seiten wurde die thematisch schwächste Tool-Motto-Card gegen eine Prinzessinnen-Card getauscht. Tausch-Prio: feuerwehr > piraten > dino > weltraum > safari > detektiv.
+   - **Superheld-Cluster (feuerwehr, ninjago, spider-man, paw-patrol, detektiv, piraten):** Auf 62 Seiten analog. Tausch-Prio: einhorn > meerjungfrau > safari > weltraum > dino > feuerwehr.
+   - **Wichtig — P1-21 nicht vorgegriffen:** Marken-Motto-Cards (harry-potter, minecraft, pokemon, spider-man, super-mario, paw-patrol, frozen, ninjago) **nicht angetastet**. Deren Link-Profile bleiben unverändert für die GSC-basierte Kill-Entscheidung im Mai.
+6. **BACKLOG + SESSION-NOTES aktualisiert.**
 
-**Erfolgs-Kriterien:**
-- Prinzessin und Superheld: mindestens 40 eingehende Links jeweils (Niveau von Meerjungfrau/Detektiv)
-- Nach-Audit-Zahl in die STRATEGIE.md oder als Nachweis im Commit
+**Ergebnis (Re-Audit `_build/count-motto-links.py` nach Änderungen):**
+```
+Motto         Vorher   Nachher   Delta
+Prinzessin         5        85     +80
+Superheld          3        68     +65
+Piraten          143       128     -15
+Dino             115        98     -17
+Safari           112        77     -35
+Weltraum         101        81     -20
+Feuerwehr         90        54     -36
+Einhorn           86        76     -10
+Meerjungfrau      45        39      -6
+Detektiv          42        42       0
+(Marken-Mottos unverändert)
+```
+
+**Ticket-Erfolgskriterium erreicht:** Prinzessin 85 Links, Superheld 68 Links — beide deutlich über dem 40er-Ziel. Verlierer bleiben alle ≥39 Links (Meerjungfrau knapp am unteren Schwellwert, aber noch akzeptabel). Alle SEO-Verlierer sind Tool-Mottos mit bestehenden 13-Seiten-Suites, die genug Masse haben.
+
+**Validation:** `validate-all.sh` PASSED nach allen Änderungen.
+
+**Limits / bekannte Kompromisse:**
+- Neue Hub-Pages sind schlank (3 Spielideen × 3 Altersgruppen statt 5 × 3 wie bei Meerjungfrau). Bewusste Entscheidung: Content-Substanz pro Spielidee höher, HCU-Risiko geringer. Erweiterung möglich, wenn GSC-Daten Traffic zeigen.
+- Keine Alters-Unterseiten angelegt (analog zu Meerjungfrau-Pattern 12 Alters-Seiten je Motto). Warum nicht: Ohne GSC-Daten-Validierung wäre das 15–20h Content-Arbeit ohne Nutzen-Nachweis. Entscheidung: nach Mai-GSC-Review.
+- Ninjago + Spider-Man-Seiten haben in den Cross-Motto-Grids keine tauschbaren Fallback-Mottos (nur Marken-Mottos + Tool-Mottos, die nicht zu Superheld-Cluster passen) → 21 Seiten aus Superheld-Cluster nicht angetastet. Akzeptabel: Zielzahl 40 ist auch ohne diese erreicht.
+
+**Folgetickets:**
+- P1-21 (Kill-List Mai): Wenn Marken-Mottos (harry-potter 100, ninjago 109, etc.) gekillt werden, fallen weitere ~100+ Links auf Tool-Mottos frei, die dann in Cross-Motto-Grids auftauchen könnten. Prinzessin/Superheld sind bereits gut positioniert, damit sie von dieser Kill-Welle profitieren.
+- P1-8 Elite-Motto-Seiten: Nach GSC-Review kann entschieden werden, ob Prinzessin/Superheld Alters-Unterseiten brauchen (analog zu Safari/Weltraum-Elite-Ausbau).
 
 ---
 
