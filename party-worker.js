@@ -570,6 +570,8 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 #gameFrame{height:min(85vh,700px)}
 .hidden{display:none!important}
 </style>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
+<script>window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};window.plausible.init=function(){};window.plausible.q=[];</script>
 </head>`;
 }
 
@@ -1166,6 +1168,8 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 /* code gate */
 .gate-card{background:var(--card);border-radius:24px;padding:32px 24px;box-shadow:0 4px 24px rgba(0,0,0,.08);border:2px solid var(--l);text-align:center;max-width:400px;margin:0 auto}
 </style>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
+<script>window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};window.plausible.init=function(){};window.plausible.q=[];</script>
 </head>
 <body>
 

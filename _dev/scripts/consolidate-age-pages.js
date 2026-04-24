@@ -240,11 +240,12 @@ function generateConsolidatedPage(motto, mottoConfig, ageGroup) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&display=swap" rel="stylesheet">
   <style>${css}</style>
-  <!-- Privacy-friendly analytics by Plausible -->
-  <script async src="https://plausible.io/js/pa-2v7iyzPVQbQ8l6ya79jtE.js"></script>
+  <!-- Privacy-friendly analytics by Umami -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
   <script>
-  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-  plausible.init()
+  // Shim: plausible()-Aufrufe zu umami.track() weiterleiten — Legacy-Code bleibt funktional
+  window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};
+  window.plausible.init=function(){};window.plausible.q=[];
   </script>
 </head>
 <body>

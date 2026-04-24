@@ -109,11 +109,12 @@
 .tip{background:#FFFAF5;border:1px solid #EDE6DE;border-left:4px solid #E8873D;border-radius:8px;padding:16px 20px;margin:16px 0;font-size:14px}
 @media print{.no-print,.cta,.cta-safety,footer,[style*="position: fixed"],[style*="sticky"]{display:none!important}body{background:#fff!important;color:#000!important;font-size:12pt}a{color:#000!important;text-decoration:none!important}.snippet{border-color:#ccc!important}.print-only{display:block!important}}
 </style>
-<!-- Privacy-friendly analytics by Plausible -->
-<script async src="https://plausible.io/js/pa-2v7iyzPVQbQ8l6ya79jtE.js"></script>
+<!-- Privacy-friendly analytics by Umami -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
 <script>
-window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-plausible.init()
+// Shim: plausible()-Aufrufe zu umami.track() weiterleiten — Legacy-Code bleibt funktional
+window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};
+window.plausible.init=function(){};window.plausible.q=[];
 </script>
   <link rel="stylesheet" href="/css/utility.css">
 </head>
