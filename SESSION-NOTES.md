@@ -1,81 +1,72 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 24.04.2026 (Opus 4.7) — P1-15 Email-Capture fertig gebaut, Variante A (Partyseite-Creator)
+**Datum:** 24.04.2026 (Opus 4.7) — Plausible → Umami-Migration + P1-15 Extern-Tasks 1–3 abgearbeitet
 
 ## Was wurde gemacht
 
-### P1-15 Email-Capture — Variante A umgesetzt
+### P1-15 Extern-Tasks abgeschlossen (live in Production)
 
-**Strategische Revision während Session:** Ursprünglich war Capture am Einladungstool-Output geplant (Link-per-Mail + Newsletter-DOI). Kritische Prüfung ergab: falscher Ort, schwacher Köder, DSGVO-Fallen. Link-Pflichtfeld brächte nur Transactional-Mails, keine echten Newsletter-Abos. **Neue Architektur:** Capture sitzt am Partyseite-Creator (Pflicht-Edit-Link + optionale Newsletter-Checkbox mit DOI). Einladungstool bekommt aktivierten Partyseite-CTA mit Query-Param-Handover als Funnel-Bridge.
+1. **Resend-Audience angelegt** — Name: `General` (Default-Audience des Accounts), ID: `b02151b7-8b4a-47e2-9f91-31160c56f8f5`
+2. **Cloudflare-Worker Env-Vars gesetzt:**
+   - `RESEND_AUDIENCE_ID` = `b02151b7-8b4a-47e2-9f91-31160c56f8f5` (Secret)
+   - `RESEND_API_KEY` = vorhandener Key (Plaintext — bei Gelegenheit auf Secret umstellen)
+   - `RESEND_FROM` = `mach's leicht <party@machsleicht.de>` (Plaintext)
+   - `AMAZON_TAG` = `machsleicht-21` (Plaintext)
+   - Resend-API-Key wurde in dieser Session von "Sending only" auf "Full access" upgraded (notwendig für Audience-Schreibzugriff)
+3. **Worker deployed** — `party-worker.js` ins Cloudflare-Dashboard kopiert, live unter `party.machsleicht.de`. Smoke-Test `/api/newsletter-confirm?token=test` zeigt korrekt die "Ungültiger Bestätigungslink"-Fehlerseite.
 
-**Neuer Funnel:**
-```
-Einladungstool → (Daten-Handover) → Partyseite-Creator → Partyseite live
-                                         ↓
-                      Edit-Link-Mail (PFLICHT) + Newsletter (OPTIONAL, DOI)
-```
+### Plausible → Umami-Migration (vollständig abgeschlossen)
 
-### Code-Änderungen
+**Grund:** Plausible-Trial abgelaufen, €14/Monat Paid-Tier lohnt sich nicht in aktueller Phase. Umami Cloud Free-Tier (1M Events/Monat) ist für machsleicht.de mehr als ausreichend.
 
-**`party-worker.js`:**
-- `/api/invite-email` **entfernt** (Fehlversuch aus früherer Iteration)
-- `/api/party/:id/send-edit-link` **erweitert** um optionalen `newsletterOptIn`-Param: triggert zusätzliche DOI-Mail
-- Origin-Check (CORS-Hardening): nur `machsleicht.de`/`party.machsleicht.de` dürfen den Endpoint nutzen
-- `/api/newsletter-confirm?token=<token>` **neu**: validiert DOI-Token, fügt Contact in Resend-Audience (`env.RESEND_AUDIENCE_ID`), zeigt Erfolgsseite, schreibt dauerhaften Consent-Audit-Trail (`consent:<sha256(email)>`)
-- `doiPage()`-Helper am Dateiende
-- Creator-Prefill akzeptiert nun `childName`, `age`, `motto`, `mottoEmoji`, `mottoColor` als Query-Params
-- Newsletter-Checkbox im Creator-HTML unter dem E-Mail-Feld
-- `sendEditEmail()` mit Plausible-Events (`edit-link-email-submit`, `newsletter-opt-in`) und angepasster Success-Message
+**Umami-Setup:**
+- Account auf cloud.umami.is erstellt
+- Website `machsleicht.de` angelegt
+- Website-ID: `72b5eb12-dfde-4333-9bc7-0c2880864df2`
 
-**`einladung/erstellen/index.html`:**
-- Partyseite-CTA aktiviert (war auskommentiert für P1-10-Zeitraum)
-- Query-Param-Handover beim Klick: `childName`, `motto`, `mottoEmoji` → Partyseite-Creator hat alles vorausgefüllt
-- Plausible-Event `invite-to-party-cta`
-- Kein separater Email-Capture-Block — sauberer Hand-off, keine Konkurrenz-CTAs
+**Migrationsstrategie:** Kompatibilitäts-Shim statt Massen-Replace aller Event-Calls
+- Alle 351 HTML-Dateien bekamen Umami-Script-Tag + JS-Shim, der `window.plausible()`-Aufrufe auf `umami.track()` umleitet
+- Bestehende Event-Calls (`plausible('einladung-schatzsuche-cta', {props: {motto: 'dino'}})` etc.) laufen ohne Änderung weiter
+- Null Event-Logic-Anpassungen nötig
 
-**`datenschutz.html`:**
-- §11 auf Partyseite-Kontext umformuliert
-- Rechtsgrundlagen: Art. 6 Abs. 1 lit. b (Vertragserfüllung — Edit-Link ohne Mail nicht möglich) + lit. a (Einwilligung für Newsletter)
-- Newsletter-DOI-Flow explizit dokumentiert
-- Consent-Audit-Trail dokumentiert (Zeitpunkt, IP, User-Agent, Aufbewahrung bis zu 3 Jahre gem. Art. 7 Abs. 1 DSGVO)
-- Widerrufs-Mechanismus (Abmelde-Link + Mail an kontakt@)
-- Changelog-Header aktualisiert
+**Geänderte Dateien (353 total):**
+- **351 HTML-Dateien:** Plausible-Script-Block → Umami-Script + Shim
+- **party-worker.js:** Umami-Script in beiden HTML-Templates (Creator-Seite + Partyseite); Worker-Syntax-Check bestanden. **Wichtig:** Diese Änderung erfordert manuellen Worker-Deploy zusätzlich zum Netlify-Build.
+- **datenschutz.html §12:** Plausible Insights OÜ → Umami Software Inc. (EU-Server), Text entsprechend angepasst
+- **index.html:** FAQ-Schema Text (Plausible → Umami) für Google-Snippets
+- **_dev/scripts/consolidate-age-pages.js:** HTML-Template auf Umami umgestellt für zukünftige Dev-Skript-Läufe
 
-**`BACKLOG-AUDIT.md`:**
-- P1-15 Status `⏳` → `🔄` (Code fertig, extern offen)
-- Beschreibung auf Variante A umformuliert
+**Validation:** `validate-all.sh` komplett grün.
 
-### Quality-Gate
-- `validate-all.sh`: PASSED (alle Checks grün)
-- `node --check party-worker.js`: OK
-- Einladungstool-JS: OK
-- Zero Leftovers (kein Code aus altem Ansatz übrig)
+## Extern-Tasks für Bolle nach diesem Deploy
 
-## Extern-Tasks für Bolle (VOR echtem Go-Live des Features)
+### 🔴 Zwingend zeitnah:
 
-1. **Resend-Audience anlegen:** Dashboard → Audiences → New Audience → Name `machsleicht-newsletter` → **Audience-ID kopieren**
-2. **Cloudflare-Worker Env-Var setzen:** `RESEND_AUDIENCE_ID=<ID aus Schritt 1>`
-3. **Worker deployen** (manuell, wie bisher)
-4. **Plausible-Events im Dashboard einrichten:** `edit-link-email-submit`, `newsletter-opt-in`, `invite-to-party-cta`
-5. **Smoke-Test Ende-zu-Ende:**
-   - Einladung im Einladungstool erstellen
-   - Partyseite-CTA klicken → Creator öffnet mit vorbefüllten Feldern
-   - Partyseite fertigstellen
-   - Newsletter-Checkbox aktivieren + E-Mail eingeben + "Edit-Link per E-Mail erhalten"
-   - Zwei Mails checken (Edit-Link + DOI-Bestätigung)
-   - DOI-Bestätigungslink klicken → Erfolgsseite, Contact in Resend-Audience sichtbar
+1. **Worker neu deployen** — Wichtig! Git-Push + Netlify-Build macht NICHT automatisch den Worker-Deploy. Die `party-worker.js` muss manuell ins Cloudflare-Worker-Dashboard kopiert werden:
+   - `dash.cloudflare.com` → Workers & Pages → Partyseite-Worker → Edit code → Alles ersetzen → Save & Deploy
+   - Ohne diesen Schritt tracken Creator-Seite und Partyseite weiterhin nichts (bisher sowieso schon der Fall, ist also kein Regression)
+2. **Smoke-Test Umami:**
+   - `machsleicht.de` im Browser öffnen
+   - In Umami Dashboard unter "Realtime" den Pageview sofort sehen
+   - Wenn Pageview nicht erscheint: Browser-Console prüfen, ob `cloud.umami.is/script.js` geladen wurde
+
+### 🟡 Niedrige Priorität:
+
+3. **`RESEND_API_KEY` von Plaintext auf Secret umstellen** in Cloudflare Worker Variables
+4. **Ursprünglicher Plausible-Account** — bei Plausible das Abo formal kündigen, falls noch nicht automatisch beendet
+5. **P1-15 Smoke-Test Ende-zu-Ende:** Einladungstool → Partyseite-CTA → Creator öffnet mit vorbefüllten Feldern → Partyseite fertigstellen → Newsletter-Checkbox + E-Mail → zwei Mails checken (Edit-Link + DOI) → DOI klicken → Contact in Resend-Audience sichtbar
 
 ## Nächste Schritte
 
-### Kurzfristig (nach Go-Live Smoke-Test)
+### Kurzfristig (nach Umami-Smoke-Test und P1-15-Smoke-Test)
 - **2 Wochen messen:** Opt-In-Rate der Newsletter-Checkbox bei Partyseite-Erstellern + Click-Rate des Partyseite-CTAs im Einladungstool. Bei <10% Opt-In: UX-Überarbeitung Checkbox-Text oder Platzierung.
-- **DOI-Confirm-Rate tracken:** Plausible-Pageview auf `/api/newsletter-confirm` zählen vs. `newsletter-opt-in`-Events
+- **DOI-Confirm-Rate tracken:** Umami-Event auf `/api/newsletter-confirm` zählen vs. `newsletter-opt-in`-Events
 
 ### P1-15 Follow-ups (nach Datenpunkten)
 - **Schatzsuche-Capture:** gleiche Mechanik auf Schatzsuche-Output übertragen (1–2h Template-Reuse)
 - **Nurture-Flow schreiben (P3-5):** Welcome-Mail, 7-Tage-vorher-Reminder, 1-Tag-vorher-Checkliste. Erinnerungs-Cron als Worker scheduled event.
-- **Planer-Output-Capture:** separater Hebel laut Scope — Erinnerungs-Mail 7 Tage vor Geburtstag (kommt von Resend-Nurture-Flow)
+- **Planer-Output-Capture:** separater Hebel laut Scope — Erinnerungs-Mail 7 Tage vor Geburtstag
 
 ### Aus vorheriger Session weiter offen
 - **🗓️ 08.05.2026:** Migadu-Trial-Ende — Mini ($90/J) vs. Micro ($19/J) entscheiden
@@ -85,13 +76,15 @@ Einladungstool → (Daten-Handover) → Partyseite-Creator → Partyseite live
 
 ## Offene Fragen
 
+- **Umami Free-Tier-Stabilität:** 1M Events/Monat kostenlos, darüber $0.00002/Event. Realistisch für machsleicht.de weit unter 1M. Wenn Umami irgendwann Free-Tier beschneidet → Fallback ist Self-Host (MIT-Lizenz).
 - **Opt-In-Konversion unklar:** Realistische Annahme 15–30% der Partyseite-Ersteller klicken Newsletter-Checkbox. Erste 2 Wochen zeigen ob UX reicht oder angepasst werden muss.
 - **Einladung → Partyseite Funnel-Rate:** Noch keine Baseline. Bei <5% Conversion wäre die ganze Variante-A-Architektur unterdimensioniert → dann direkt Capture am Einladungstool nötig.
 - **DMARC-Einstellung machsleicht.de:** Aktuell `p=none`, nach 2 Wochen stabiler Warmup-Phase auf `p=quarantine` ziehen.
 
 ## Status der Site nach diesem Deploy
 
-- **Code-Änderungen deployed:** einladung/erstellen/index.html (Partyseite-CTA aktiviert), datenschutz.html (§11 Newsletter-DOI)
-- **Worker-Änderungen im Repo, aber NICHT live:** party-worker.js wartet auf manuellen Cloudflare-Deploy + neue Env-Var `RESEND_AUDIENCE_ID`
-- **Feature erst komplett nutzbar nach Worker-Deploy:** Ohne Worker-Deploy landen Newsletter-Checkbox-Klicks im "alten" send-edit-link-Endpoint, der den Parameter ignoriert → User bekommt Edit-Link, aber keine DOI-Mail. Kein Fehler, nur kein Newsletter-Opt-In-Effekt.
-- **Repo:** 40 PBIs in Roadmap, P1-15 Code fertig (Variante A), wartet auf Extern-Tasks von Bolle
+- **Plausible ist vollständig weg aus dem Code** — keine plausible.io-Referenzen mehr in HTML/JS
+- **Umami-Tracking live** auf allen statischen Seiten nach Netlify-Build
+- **Worker-Tracking (Creator + Partyseite)** live nach manuellem Worker-Deploy
+- **P1-15 Feature produktionsreif** — Newsletter-DOI-Flow funktional, bereit für realen Smoke-Test
+- **Repo:** 40 PBIs in Roadmap, P1-15 Code + Deploy komplett (Variante A), wartet nur noch auf Bolle-Smoke-Tests
