@@ -310,16 +310,47 @@ export default {
       const childName = party.childName || "Kind";
       const editUrl = `https://party.machsleicht.de/${id}?edit=${party.editToken}`;
       const guestUrl = `https://party.machsleicht.de/${id}`;
+
+      // ── DOI-Token für Newsletter (falls Opt-In): Token vor Mailrendering erzeugen,
+      //    damit der Bestätigungs-Button direkt in der Edit-Link-Mail landet.
+      let confirmUrl = "";
+      if (newsletterOptIn) {
+        const doiToken = generateToken();
+        const ip = request.headers.get("cf-connecting-ip") || "";
+        const ua = (request.headers.get("user-agent") || "").slice(0,200);
+        const doiEntry = {
+          email,
+          created: new Date().toISOString(),
+          ip,
+          ua,
+          origin,
+          source: "partyseite-creator"
+        };
+        await env.PARTY.put(`doi:${doiToken}`, JSON.stringify(doiEntry), {expirationTtl: 7*24*60*60});
+        confirmUrl = `https://party.machsleicht.de/api/newsletter-confirm?token=${doiToken}`;
+      }
+
+      // Newsletter-Block nur wenn Opt-In: outlined-Button als sekundäre CTA-Hierarchie.
+      const newsletterBlock = newsletterOptIn ? `
+        <hr style="border:none;border-top:1px solid #eee;margin:28px 0 20px">
+        <h2 style="font-size:17px;color:#2D2319;margin:0 0 8px">\u{1F4EC} Newsletter best\u00E4tigen</h2>
+        <p style="color:#555;font-size:14px;line-height:1.6;margin:0 0 4px">Du hast angekreuzt, dass du Tipps f\u00FCr den Kindergeburtstag und eine Erinnerung 7 Tage vor der Party bekommen m\u00F6chtest. Damit wir dir schreiben d\u00FCrfen, best\u00E4tige bitte kurz:</p>
+        <a href="${confirmUrl}" style="display:block;background:#fff;color:#D4812A;text-align:center;padding:13px 24px;border:2px solid #D4812A;border-radius:12px;text-decoration:none;font-weight:700;font-size:14px;margin:14px 0 8px;box-sizing:border-box">\u2713 E-Mail-Adresse best\u00E4tigen</a>
+        <p style="color:#aaa;font-size:11px;line-height:1.5;margin:10px 0 0">Der Link ist 7 Tage g\u00FCltig. Kein Klick = keine Speicherung, kein Newsletter.</p>
+      ` : "";
+
       const emailHtml = `<div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:24px">
         <p style="color:#8B7D6B;font-size:14px"><strong style="color:#D4812A">mach's</strong> leicht</p>
         <h1 style="font-size:20px;color:#2D2319;margin:16px 0 8px">Dein Edit-Link f\u00FCr ${esc(childName)}s Partyseite</h1>
         <p style="color:#555;font-size:14px;line-height:1.6">Mit diesem Link kannst du Zusagen einsehen, die Seite bearbeiten und die Wunschliste verwalten. <strong>Speichere diese E-Mail!</strong></p>
         <a href="${editUrl}" style="display:block;background:#D4812A;color:#fff;text-align:center;padding:14px 24px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;margin:20px 0">\u{1F511} Partyseite bearbeiten</a>
         <p style="color:#888;font-size:13px;margin-top:20px"><strong>G\u00E4ste-Link zum Teilen:</strong><br><a href="${guestUrl}" style="color:#D4812A">${guestUrl}</a></p>
+        ${newsletterBlock}
         <hr style="border:none;border-top:1px solid #eee;margin:24px 0">
-        <p style="color:#aaa;font-size:11px">Diese E-Mail wurde von <a href="https://machsleicht.de" style="color:#aaa">machsleicht.de</a> gesendet, weil du eine Partyseite erstellt hast.${newsletterOptIn ? " Zu deinem Newsletter-Abo erh\u00E4ltst du separat eine Best\u00E4tigungs-E-Mail." : ""}</p>
+        <p style="color:#aaa;font-size:11px">Diese E-Mail wurde von <a href="https://machsleicht.de" style="color:#aaa">machsleicht.de</a> gesendet, weil du eine Partyseite erstellt hast.</p>
       </div>`;
 
+      let doiSent = false;
       try {
         const res = await fetch("https://api.resend.com/emails", {
           method: "POST",
@@ -336,53 +367,10 @@ export default {
           const err = await res.text();
           return json({error:"E-Mail konnte nicht gesendet werden"},500);
         }
+        // Mail erfolgreich raus — Newsletter-Bestätigungs-Button ist drin, falls Opt-In.
+        if (newsletterOptIn) doiSent = true;
       } catch(e) {
         return json({error:"E-Mail-Versand fehlgeschlagen"},500);
-      }
-
-      // ── Optional: Newsletter-DOI-Mail (P1-15)
-      let doiSent = false;
-      if (newsletterOptIn) {
-        const doiToken = generateToken();
-        const ip = request.headers.get("cf-connecting-ip") || "";
-        const ua = (request.headers.get("user-agent") || "").slice(0,200);
-        const doiEntry = {
-          email,
-          created: new Date().toISOString(),
-          ip,
-          ua,
-          origin,
-          source: "partyseite-creator"
-        };
-        await env.PARTY.put(`doi:${doiToken}`, JSON.stringify(doiEntry), {expirationTtl: 7*24*60*60});
-
-        const confirmUrl = `https://party.machsleicht.de/api/newsletter-confirm?token=${doiToken}`;
-        const doiHtml = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:520px;margin:0 auto;padding:24px;color:#2D2319">
-          <p style="color:#8B7D6B;font-size:14px;margin:0"><strong style="color:#D4812A">mach's</strong> leicht</p>
-          <h1 style="font-size:22px;color:#2D2319;margin:16px 0 12px">Newsletter best\u00E4tigen 📬</h1>
-          <p style="color:#555;font-size:15px;line-height:1.6;margin:0 0 12px">Danke f\u00FCr dein Interesse! Damit wir dir Tipps f\u00FCr den Kindergeburtstag und eine Erinnerung 7 Tage vor der Party schicken d\u00FCrfen, best\u00E4tige bitte kurz deine E-Mail-Adresse:</p>
-          <a href="${confirmUrl}" style="display:block;background:#D4812A;color:#fff;text-align:center;padding:14px 24px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;margin:20px 0">\u2713 E-Mail-Adresse best\u00E4tigen</a>
-          <p style="color:#888;font-size:13px;margin:16px 0 0;line-height:1.5">Falls der Button nicht klickbar ist:<br><a href="${confirmUrl}" style="color:#D4812A;word-break:break-all">${confirmUrl}</a></p>
-          <hr style="border:none;border-top:1px solid #eee;margin:28px 0 20px">
-          <p style="color:#aaa;font-size:12px;line-height:1.5">Der Link ist 7 Tage g\u00FCltig. Wenn du den Newsletter nicht angefordert hast, kannst du diese E-Mail einfach ignorieren \u2014 wir speichern dich dann nicht.</p>
-        </div>`;
-
-        try {
-          const res2 = await fetch("https://api.resend.com/emails", {
-            method: "POST",
-            headers: {"Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json"},
-            body: JSON.stringify({
-              from: env.RESEND_FROM || "mach's leicht <party@machsleicht.de>",
-              to: [email],
-              subject: "Bitte Newsletter best\u00E4tigen \u2014 mach's leicht",
-              html: doiHtml
-            })
-          });
-          if (res2.ok) doiSent = true;
-          else console.log("Resend DOI-mail error:", await res2.text());
-        } catch(e) {
-          console.log("Resend DOI-mail exception:", e.message);
-        }
       }
 
       return json({ok:true, doiMailSent:doiSent});
@@ -924,7 +912,7 @@ async function sendEditEmail(){
     var resp=await r.json();
     btn.textContent="\u2705 Gesendet!";btn.disabled=true;
     var sentEl=document.getElementById("editEmailSent");
-    if(newsletter&&resp.doiMailSent){sentEl.textContent="\u2705 Edit-Link gesendet. Best\u00E4tigungs-Mail f\u00FCr Newsletter ebenfalls unterwegs \u2014 pr\u00FCfe dein Postfach!";}
+    if(newsletter&&resp.doiMailSent){sentEl.textContent="\u2705 Edit-Link gesendet. In derselben Mail findest du den Best\u00E4tigungs-Link f\u00FCr den Newsletter.";}
     sentEl.classList.remove("hidden");
     var gated=document.getElementById("resultGated");if(gated)gated.classList.remove("hidden");
   }catch(e){_showErr("editEmail","Fehler: "+e.message);btn.textContent="\u{1F4E7} Edit-Link per E-Mail erhalten";btn.disabled=false;}
