@@ -285,6 +285,12 @@ export default {
 
     // POST /api/party/:id/send-edit-link
     if (path.match(/^\/api\/party\/[a-z0-9]+\/send-edit-link$/) && request.method === "POST") {
+      // Origin-Check (CORS-Hardening): nur von machsleicht.de/party.machsleicht.de
+      const origin = request.headers.get("Origin") || "";
+      if (origin && !/^https:\/\/(www\.|party\.)?machsleicht\.de$/.test(origin)) {
+        return json({error:"Nicht autorisiert"},403);
+      }
+
       const id = path.split("/")[3];
       const raw = await env.PARTY.get(`party:${id}`);
       if (!raw) return json({error:"Party nicht gefunden"},404);
@@ -292,7 +298,8 @@ export default {
       const body = await request.json();
       if (body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403);
       const email = (body.email||"").trim().slice(0,200);
-      if (!email || !email.includes("@")) return json({error:"Ung\u00FCltige E-Mail"},400);
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({error:"Ung\u00FCltige E-Mail"},400);
+      const newsletterOptIn = body.newsletterOptIn === true;
 
       // Save email to party
       party.email = email;
@@ -310,7 +317,7 @@ export default {
         <a href="${editUrl}" style="display:block;background:#D4812A;color:#fff;text-align:center;padding:14px 24px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;margin:20px 0">\u{1F511} Partyseite bearbeiten</a>
         <p style="color:#888;font-size:13px;margin-top:20px"><strong>G\u00E4ste-Link zum Teilen:</strong><br><a href="${guestUrl}" style="color:#D4812A">${guestUrl}</a></p>
         <hr style="border:none;border-top:1px solid #eee;margin:24px 0">
-        <p style="color:#aaa;font-size:11px">Diese E-Mail wurde von <a href="https://machsleicht.de" style="color:#aaa">machsleicht.de</a> gesendet, weil du eine Partyseite erstellt hast.</p>
+        <p style="color:#aaa;font-size:11px">Diese E-Mail wurde von <a href="https://machsleicht.de" style="color:#aaa">machsleicht.de</a> gesendet, weil du eine Partyseite erstellt hast.${newsletterOptIn ? " Zu deinem Newsletter-Abo erh\u00E4ltst du separat eine Best\u00E4tigungs-E-Mail." : ""}</p>
       </div>`;
 
       try {
@@ -333,7 +340,52 @@ export default {
         return json({error:"E-Mail-Versand fehlgeschlagen"},500);
       }
 
-      return json({ok:true});
+      // ── Optional: Newsletter-DOI-Mail (P1-15)
+      let doiSent = false;
+      if (newsletterOptIn) {
+        const doiToken = generateToken();
+        const ip = request.headers.get("cf-connecting-ip") || "";
+        const ua = (request.headers.get("user-agent") || "").slice(0,200);
+        const doiEntry = {
+          email,
+          created: new Date().toISOString(),
+          ip,
+          ua,
+          origin,
+          source: "partyseite-creator"
+        };
+        await env.PARTY.put(`doi:${doiToken}`, JSON.stringify(doiEntry), {expirationTtl: 7*24*60*60});
+
+        const confirmUrl = `https://party.machsleicht.de/api/newsletter-confirm?token=${doiToken}`;
+        const doiHtml = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:520px;margin:0 auto;padding:24px;color:#2D2319">
+          <p style="color:#8B7D6B;font-size:14px;margin:0"><strong style="color:#D4812A">mach's</strong> leicht</p>
+          <h1 style="font-size:22px;color:#2D2319;margin:16px 0 12px">Newsletter best\u00E4tigen 📬</h1>
+          <p style="color:#555;font-size:15px;line-height:1.6;margin:0 0 12px">Danke f\u00FCr dein Interesse! Damit wir dir Tipps f\u00FCr den Kindergeburtstag und eine Erinnerung 7 Tage vor der Party schicken d\u00FCrfen, best\u00E4tige bitte kurz deine E-Mail-Adresse:</p>
+          <a href="${confirmUrl}" style="display:block;background:#D4812A;color:#fff;text-align:center;padding:14px 24px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;margin:20px 0">\u2713 E-Mail-Adresse best\u00E4tigen</a>
+          <p style="color:#888;font-size:13px;margin:16px 0 0;line-height:1.5">Falls der Button nicht klickbar ist:<br><a href="${confirmUrl}" style="color:#D4812A;word-break:break-all">${confirmUrl}</a></p>
+          <hr style="border:none;border-top:1px solid #eee;margin:28px 0 20px">
+          <p style="color:#aaa;font-size:12px;line-height:1.5">Der Link ist 7 Tage g\u00FCltig. Wenn du den Newsletter nicht angefordert hast, kannst du diese E-Mail einfach ignorieren \u2014 wir speichern dich dann nicht.</p>
+        </div>`;
+
+        try {
+          const res2 = await fetch("https://api.resend.com/emails", {
+            method: "POST",
+            headers: {"Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json"},
+            body: JSON.stringify({
+              from: env.RESEND_FROM || "mach's leicht <party@machsleicht.de>",
+              to: [email],
+              subject: "Bitte Newsletter best\u00E4tigen \u2014 mach's leicht",
+              html: doiHtml
+            })
+          });
+          if (res2.ok) doiSent = true;
+          else console.log("Resend DOI-mail error:", await res2.text());
+        } catch(e) {
+          console.log("Resend DOI-mail exception:", e.message);
+        }
+      }
+
+      return json({ok:true, doiMailSent:doiSent});
     }
 
     // Affiliate Redirect /go/:partyId/:wishId
@@ -346,6 +398,74 @@ export default {
       const wish = (party.wishes||[]).find(w=>w.id===wishId);
       if (!wish||!wish.url) return Response.redirect("https://machsleicht.de",302);
       return Response.redirect(affiliateUrl(wish.url,env),302);
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // P1-15 Email-Capture: Newsletter-DOI-Confirm
+    // (Opt-In selbst erfolgt am Partyseite-Creator über /api/party/:id/send-edit-link
+    //  mit newsletterOptIn=true, welcher diese DOI-Mail auslöst.)
+    // ═══════════════════════════════════════════════════════════════
+
+    // GET /api/newsletter-confirm?token=<token>
+    // Validiert DOI-Token, fügt Email in Resend-Audience ein, zeigt Erfolgsseite.
+    if (path === "/api/newsletter-confirm" && request.method === "GET") {
+      const token = url.searchParams.get("token") || "";
+      if (!/^[a-f0-9]{48}$/.test(token)) {
+        return new Response(doiPage("error","Ungültiger Bestätigungslink."), {status:400, headers:{"Content-Type":"text/html;charset=utf-8"}});
+      }
+      const raw = await env.PARTY.get(`doi:${token}`);
+      if (!raw) {
+        return new Response(doiPage("error","Dieser Bestätigungslink ist abgelaufen oder wurde bereits verwendet."), {status:410, headers:{"Content-Type":"text/html;charset=utf-8"}});
+      }
+      let entry;
+      try { entry = JSON.parse(raw); } catch { entry = null; }
+      if (!entry || !entry.email) {
+        await env.PARTY.delete(`doi:${token}`);
+        return new Response(doiPage("error","Bestätigung fehlgeschlagen."), {status:500, headers:{"Content-Type":"text/html;charset=utf-8"}});
+      }
+
+      // Add Contact zu Resend-Audience (falls konfiguriert)
+      if (env.RESEND_AUDIENCE_ID && env.RESEND_API_KEY) {
+        try {
+          const resp = await fetch(`https://api.resend.com/audiences/${env.RESEND_AUDIENCE_ID}/contacts`, {
+            method: "POST",
+            headers: {"Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json"},
+            body: JSON.stringify({email: entry.email, unsubscribed: false})
+          });
+          // 200/201 = ok, 409 = schon vorhanden → auch ok
+          if (!resp.ok && resp.status !== 409) {
+            console.log("Resend audience add error:", await resp.text());
+          }
+        } catch(e) {
+          console.log("Resend audience add exception:", e.message);
+        }
+      }
+
+      // ── Audit-Trail: dauerhafter Consent-Nachweis für DSGVO-Beweispflicht.
+      // Key: consent:<sha256(email)>. Enthält: Opt-In-Kontext + Confirm-Kontext.
+      // Kein TTL (muss 3 Jahre nachweisbar sein — Resend-Audience speichert Email selbst).
+      try {
+        const emailHashBuf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(entry.email.toLowerCase()));
+        const emailHash = Array.from(new Uint8Array(emailHashBuf)).map(b=>b.toString(16).padStart(2,"0")).join("");
+        const consentRecord = {
+          email: entry.email,
+          optInAt: entry.created,        // Timestamp Checkbox-Klick
+          optInIp: entry.ip || "",       // IP beim Opt-In
+          optInUa: entry.ua || "",
+          optInOrigin: entry.origin || "",
+          optInSource: entry.source || "",
+          confirmedAt: new Date().toISOString(),
+          confirmedIp: request.headers.get("cf-connecting-ip") || "",
+          confirmedUa: (request.headers.get("user-agent") || "").slice(0,200)
+        };
+        await env.PARTY.put(`consent:${emailHash}`, JSON.stringify(consentRecord));
+      } catch(e) {
+        console.log("Consent audit-trail write error:", e.message);
+      }
+
+      // Token verbrauchen (Replay-Schutz)
+      await env.PARTY.delete(`doi:${token}`);
+      return new Response(doiPage("success","Deine E-Mail-Adresse ist bestätigt. Du bekommst nichts Uninteressantes — nur Tipps zum Kindergeburtstag und eine Erinnerung 7 Tage vorher. Abbestellen jederzeit per Link in jeder Mail."), {headers:{"Content-Type":"text/html;charset=utf-8"}});
     }
 
     // Frontend: Home
@@ -592,6 +712,10 @@ function creatorPage() {
       <p style="font-size:14px;font-weight:700;color:#E65100;margin-bottom:4px">\u26A0\uFE0F Edit-Link sichern (Pflicht)</p>
       <p style="font-size:13px;color:#BF360C;margin-bottom:12px;line-height:1.5">Ohne diesen Link kannst du <strong>keine Zusagen sehen</strong> und <strong>nichts mehr \u00E4ndern</strong>. Deshalb schicken wir ihn dir jetzt per E-Mail \u2014 erst danach gibt es Bearbeiten & den G\u00E4ste-Link zum Teilen.</p>
       <div class="field" style="margin-bottom:8px"><label>Deine E-Mail<span class="req">*</span></label><input type="email" id="editEmail" placeholder="deine@email.de" style="font-size:15px"></div>
+      <label id="newsletterOptInRow" style="display:flex;align-items:flex-start;gap:8px;margin:0 0 12px;cursor:pointer;user-select:none;padding:8px 2px">
+        <input type="checkbox" id="newsletterOptIn" style="flex-shrink:0;width:16px;height:16px;margin-top:2px;accent-color:#E65100;cursor:pointer">
+        <span style="font-size:12px;color:#5D4037;line-height:1.45">Au\u00DFerdem: Erinnerung 7 Tage vor der Party + kostenlose Tipps per Mail. Jederzeit abbestellbar. <a href="https://machsleicht.de/datenschutz.html" target="_blank" style="color:#E65100;text-decoration:underline">Datenschutz</a></span>
+      </label>
       <button class="btn" onclick="sendEditEmail()" id="sendEditBtn" style="background:#E65100">\u{1F4E7} Edit-Link per E-Mail erhalten</button>
       <p id="editUrl" style="display:none"></p>
       <p id="editEmailSent" class="hidden" style="font-size:12px;color:#2E7D32;text-align:center;margin-top:8px;font-weight:600">\u2705 Gesendet \u2014 pr\u00FCfe dein Postfach!</p>
@@ -788,13 +912,18 @@ async function sendEditEmail(){
   var email=document.getElementById("editEmail").value.trim();
   if(!email||email.indexOf("@")<1){_showErr("editEmail","Bitte g\u00FCltige E-Mail eingeben");return;}
   var d=window._pd;
+  var newsletter=document.getElementById("newsletterOptIn")&&document.getElementById("newsletterOptIn").checked;
   var btn=document.getElementById("sendEditBtn");
   btn.textContent="\u23F3 Wird gesendet...";btn.disabled=true;
+  if(window.plausible){try{window.plausible("edit-link-email-submit");}catch(e){}if(newsletter){try{window.plausible("newsletter-opt-in");}catch(e){}}}
   try{
-    var r=await fetch(API+"/party/"+d.id+"/send-edit-link",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({editToken:d.editToken,email:email})});
+    var r=await fetch(API+"/party/"+d.id+"/send-edit-link",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({editToken:d.editToken,email:email,newsletterOptIn:newsletter})});
     if(!r.ok){var err=await r.json();throw new Error(err.error||"Fehler");}
+    var resp=await r.json();
     btn.textContent="\u2705 Gesendet!";btn.disabled=true;
-    document.getElementById("editEmailSent").classList.remove("hidden");
+    var sentEl=document.getElementById("editEmailSent");
+    if(newsletter&&resp.doiMailSent){sentEl.textContent="\u2705 Edit-Link gesendet. Best\u00E4tigungs-Mail f\u00FCr Newsletter ebenfalls unterwegs \u2014 pr\u00FCfe dein Postfach!";}
+    sentEl.classList.remove("hidden");
     var gated=document.getElementById("resultGated");if(gated)gated.classList.remove("hidden");
   }catch(e){_showErr("editEmail","Fehler: "+e.message);btn.textContent="\u{1F4E7} Edit-Link per E-Mail erhalten";btn.disabled=false;}
 }
@@ -835,7 +964,7 @@ function clearChipSelection(){
 }
 (function(){
   const p=new URLSearchParams(location.search);
-  ["childName","age","motto","mottoEmoji"].forEach(k=>{const v=p.get(k);if(v&&document.getElementById(k))document.getElementById(k).value=v;});
+  ["childName","age","motto","mottoEmoji","mottoColor"].forEach(k=>{const v=p.get(k);if(v&&document.getElementById(k))document.getElementById(k).value=v;});
   // Highlight matching chip if motto was prefilled
   const prefilled=document.getElementById("motto").value;
   if(prefilled){
@@ -1483,6 +1612,24 @@ function notFoundPage() {
   <p style="color:var(--m);font-size:14px;margin-bottom:24px">Der Link ist ung\u00FCltig oder die Party ist abgelaufen.</p>
   <a href="https://machsleicht.de" class="btn" style="display:inline-flex">\u2192 machsleicht.de</a>
   <div class="footer" style="margin-top:24px"><a href="https://machsleicht.de/impressum">Impressum</a> \u00B7 <a href="https://machsleicht.de/datenschutz">Datenschutz</a></div>
+</div>
+</body></html>`;
+}
+
+function doiPage(kind, msg) {
+  const isSuccess = kind === "success";
+  const emoji = isSuccess ? "\u2705" : "\u26A0\uFE0F";
+  const title = isSuccess ? "Bestätigt \u2014 mach\u2019s leicht" : "Bestätigung fehlgeschlagen \u2014 mach\u2019s leicht";
+  const heading = isSuccess ? "Alles klar!" : "Hmm, das hat nicht geklappt";
+  return `${baseHead(title, msg)}
+<body>
+<div class="container" style="text-align:center;padding:60px 16px;max-width:520px;margin:0 auto">
+  <div class="logo"><a href="https://machsleicht.de"><b>mach's</b> leicht</a></div>
+  <div style="font-size:56px;margin:24px 0 12px">${emoji}</div>
+  <h1 style="font-size:22px;margin-bottom:12px">${heading}</h1>
+  <p style="color:var(--m);font-size:15px;line-height:1.6;margin-bottom:28px">${esc(msg)}</p>
+  <a href="https://machsleicht.de" class="btn" style="display:inline-flex">\u2192 Zur\u00FCck zu machsleicht.de</a>
+  <div class="footer" style="margin-top:32px"><a href="https://machsleicht.de/impressum">Impressum</a> \u00B7 <a href="https://machsleicht.de/datenschutz">Datenschutz</a></div>
 </div>
 </body></html>`;
 }

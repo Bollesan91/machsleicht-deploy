@@ -1,6 +1,7 @@
 <!-- Changelog:
   2026-03-30 Bolle: Lemon Squeezy Datenschutz-Abschnitt ergänzt (§9)
   2026-04-21 Bolle: Partyseite (§10) + Resend E-Mail-Versand (§11) ergänzt; nachfolgende §§ um +2 verschoben
+  2026-04-24 Bolle: §11 erweitert um Newsletter-Double-Opt-In (P1-15, Partyseite-Creator) + Consent-Audit-Trail
 -->
 <!DOCTYPE html>
 <html lang="de">
@@ -124,8 +125,10 @@ plausible.init()
 
     <h2>11. E-Mail-Versand (Resend)</h2>
     <p>Zum Versand transaktionaler E-Mails (z.B. Bearbeitungs-Link für deine Partyseite aus §10) nutzen wir <strong>Resend</strong> (Resend, Inc., San Francisco, USA). An Resend wird deine E-Mail-Adresse und der Inhalt der Nachricht übermittelt. Resend verarbeitet die Daten als Auftragsverarbeiter im Sinne von Art. 28 DSGVO. Ein entsprechender DPA liegt vor. Resend hat sich dem EU-US Data Privacy Framework verpflichtet.</p>
-    <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am zuverlässigen E-Mail-Versand).</p>
-    <p><strong>Keine Werbe-Mails ohne Einwilligung:</strong> Wir nutzen deine E-Mail-Adresse ausschließlich für den konkreten Zweck, zu dem du sie angegeben hast. Für Newsletter oder Werbe-Mails holen wir in jedem Fall eine separate, ausdrückliche Einwilligung per Double-Opt-In ein.</p>
+    <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung — ohne Edit-Link keine Nutzung der Partyseite) bzw. Art. 6 Abs. 1 lit. a DSGVO (Einwilligung, sofern ausdrücklich erteilt).</p>
+    <p><strong>Newsletter (Double-Opt-In):</strong> Für Tipps und Erinnerungen 7 Tage vor der Party holen wir eine separate, ausdrückliche Einwilligung per Double-Opt-In ein: Nach Ankreuzen der entsprechenden Checkbox beim Erstellen einer Partyseite erhältst du — zusätzlich zum Edit-Link — eine Bestätigungs-Mail mit einem einmaligen Bestätigungslink. Erst nach Klick auf diesen Link wird deine E-Mail-Adresse in unsere Newsletter-Liste aufgenommen (ebenfalls bei Resend gehostet). Der Bestätigungslink ist 7 Tage gültig. Bestätigst du nicht, löschen wir deine Daten automatisch. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).</p>
+    <p><strong>Nachweis der Einwilligung:</strong> Zum Nachweis der erteilten Einwilligung (Art. 7 Abs. 1 DSGVO) protokollieren wir bei Opt-In und Bestätigung jeweils Zeitpunkt, IP-Adresse und User-Agent deines Browsers. Diese Daten werden zusammen mit deiner E-Mail-Adresse gespeichert, solange du im Newsletter eingetragen bist, sowie anschließend zur Erfüllung rechtlicher Nachweispflichten für bis zu drei Jahre.</p>
+    <p><strong>Widerruf:</strong> Du kannst deine Einwilligung in den Newsletter-Empfang jederzeit widerrufen — entweder über den Abmelde-Link in jeder Newsletter-Mail oder per Nachricht an kontakt@machsleicht.de. Der Widerruf berührt nicht die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung.</p>
     <p>Mehr Informationen: <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener">Resend Datenschutzerklärung</a></p>
 
     <h2>12. Webanalyse (Plausible Analytics)</h2>

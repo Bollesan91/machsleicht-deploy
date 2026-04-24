@@ -1,95 +1,97 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 23.04.2026 (Chat-Session, Opus 4.7) — P1-20 Internal-Linking-Fix komplett umgesetzt
+**Datum:** 24.04.2026 (Opus 4.7) — P1-15 Email-Capture fertig gebaut, Variante A (Partyseite-Creator)
 
 ## Was wurde gemacht
 
-### P1-20: Internal-Linking-Fix (Prinzessin + Superheld)
+### P1-15 Email-Capture — Variante A umgesetzt
 
-**Ausgangs-Problem:** Prinzessin hatte 5, Superheld 3 eingehende interne Links. Beides Tool-Mottos, aber de facto unsichtbar im Internal-Linking-Netz.
+**Strategische Revision während Session:** Ursprünglich war Capture am Einladungstool-Output geplant (Link-per-Mail + Newsletter-DOI). Kritische Prüfung ergab: falscher Ort, schwacher Köder, DSGVO-Fallen. Link-Pflichtfeld brächte nur Transactional-Mails, keine echten Newsletter-Abos. **Neue Architektur:** Capture sitzt am Partyseite-Creator (Pflicht-Edit-Link + optionale Newsletter-Checkbox mit DOI). Einladungstool bekommt aktivierten Partyseite-CTA mit Query-Param-Handover als Funnel-Bridge.
 
-**Root-Cause-Erkenntnis:** Nicht nur fehlende Cross-Links, sondern fehlender Content — beide Mottos hatten null Seiten unter `/kindergeburtstag/`. Andere 8 Tool-Mottos haben je 13 Seiten (Hub + 12 Alters-Varianten), die sich gegenseitig verlinken. Zwischendiskussion mit Dry-Run-Abbruch: Bolle drängte auf echten Content statt Redirect-Krücke.
-
-**Umgesetzt:**
-
-1. **2 Hub-Pages handgepflegt erstellt:**
-   - `kindergeburtstag/prinzessin.html` (~580 Zeilen): Kronen-Werkstatt, Schatz-Suche im Königreich, Prinzessinnen-Akademie — je 3 Altersvarianten + Deko + Essen + Mitgebsel + 4 FAQs + HowTo/FAQ/BreadcrumbList-Schema. Gender-sensitiv formuliert (auch Jungen/gemischt).
-   - `kindergeburtstag/superheld.html` (~580 Zeilen): Helden-Ausrüstung, Kräfte-Training, Rettungsmission. Markenfrei (kein Spider-Man/Batman-Bezug) — Kinder erfinden eigene Heldenfigur. Gender-offen.
-
-2. **Homepage + Planer-Hub Links umgestellt:**
-   - `index.html`: Motto-Prosa von Einladungs-URL auf neue Hub-URLs umgestellt (uncommittete Vor-Arbeit aus früherer Session entdeckt und korrigiert: Query-Param-Platzhalter durch Direkt-Links ersetzt)
-   - `kindergeburtstag.html`: 4 Query-Param-Links (`?motto=prinzessin#planer`) auf Direkt-Links (`/kindergeburtstag/prinzessin`) umgestellt
-
-3. **`_redirects`:** 2 neue 200-Rewrites für die Hub-URLs
-
-4. **`sitemap.xml`:** 2 neue URLs mit `lastmod=2026-04-23, priority=0.8`
-
-5. **Card-Swap-Script (`_build/p1-20-swap-cards.py`):**
-   - Thematisch kuratierter Cross-Motto-Grid-Austausch
-   - **Prinzessin-Cluster** (einhorn, meerjungfrau, frozen, harry-potter, pferde, zirkus): 77 Seiten, schwächste Tool-Card getauscht gegen Prinzessin. Prio: feuerwehr > piraten > dino > weltraum > safari > detektiv
-   - **Superheld-Cluster** (feuerwehr, ninjago, spider-man, paw-patrol, detektiv, piraten): 62 Seiten. Prio: einhorn > meerjungfrau > safari > weltraum > dino > feuerwehr
-   - **Wichtig — P1-21 nicht vorgegriffen:** Marken-Motto-Cards (harry-potter, minecraft, pokemon, spider-man, super-mario, paw-patrol, frozen, ninjago) nicht angetastet
-
-6. **Build-Script `_build/count-motto-links.py`** für wiederholbare Link-Audits angelegt.
-
-7. **BACKLOG-AUDIT.md** umfangreich aktualisiert: P1-20 auf ✅, Detail-Sektion mit vollem Ergebnis, Limits, Folgetickets.
-
-### Ergebnis-Matrix (Re-Audit)
-
+**Neuer Funnel:**
 ```
-Motto         Vorher   Nachher   Delta
-Prinzessin         5        85     +80   ✓ Ziel (40+) klar übertroffen
-Superheld          3        68     +65   ✓ Ziel (40+) klar übertroffen
-Piraten          143       128     -15
-Dino             115        98     -17
-Safari           112        77     -35
-Weltraum         101        81     -20
-Feuerwehr         90        54     -36
-Einhorn           86        76     -10
-Meerjungfrau      45        39      -6   (knapp am Schwellwert)
-Detektiv          42        42       0
-(Marken-Mottos alle unverändert — P1-21 intakt)
+Einladungstool → (Daten-Handover) → Partyseite-Creator → Partyseite live
+                                         ↓
+                      Edit-Link-Mail (PFLICHT) + Newsletter (OPTIONAL, DOI)
 ```
 
-### Validation
+### Code-Änderungen
 
-`bash validate-all.sh` → **PASSED**. Alle 7 Stufen grün.
+**`party-worker.js`:**
+- `/api/invite-email` **entfernt** (Fehlversuch aus früherer Iteration)
+- `/api/party/:id/send-edit-link` **erweitert** um optionalen `newsletterOptIn`-Param: triggert zusätzliche DOI-Mail
+- Origin-Check (CORS-Hardening): nur `machsleicht.de`/`party.machsleicht.de` dürfen den Endpoint nutzen
+- `/api/newsletter-confirm?token=<token>` **neu**: validiert DOI-Token, fügt Contact in Resend-Audience (`env.RESEND_AUDIENCE_ID`), zeigt Erfolgsseite, schreibt dauerhaften Consent-Audit-Trail (`consent:<sha256(email)>`)
+- `doiPage()`-Helper am Dateiende
+- Creator-Prefill akzeptiert nun `childName`, `age`, `motto`, `mottoEmoji`, `mottoColor` als Query-Params
+- Newsletter-Checkbox im Creator-HTML unter dem E-Mail-Feld
+- `sendEditEmail()` mit Plausible-Events (`edit-link-email-submit`, `newsletter-opt-in`) und angepasster Success-Message
 
-## Process-Erkenntnis dieser Session
+**`einladung/erstellen/index.html`:**
+- Partyseite-CTA aktiviert (war auskommentiert für P1-10-Zeitraum)
+- Query-Param-Handover beim Klick: `childName`, `motto`, `mottoEmoji` → Partyseite-Creator hat alles vorausgefüllt
+- Plausible-Event `invite-to-party-cta`
+- Kein separater Email-Capture-Block — sauberer Hand-off, keine Konkurrenz-CTAs
 
-Bolle hat zweimal gezielt gebremst:
-1. Initialer Plan "Scope C mechanisch" → Ehrliche Einschätzung gefordert
-2. 301-Redirect-Plan → "war das wirklich sauber?" → Selbst-Dekonstruktion, besserer Plan
+**`datenschutz.html`:**
+- §11 auf Partyseite-Kontext umformuliert
+- Rechtsgrundlagen: Art. 6 Abs. 1 lit. b (Vertragserfüllung — Edit-Link ohne Mail nicht möglich) + lit. a (Einwilligung für Newsletter)
+- Newsletter-DOI-Flow explizit dokumentiert
+- Consent-Audit-Trail dokumentiert (Zeitpunkt, IP, User-Agent, Aufbewahrung bis zu 3 Jahre gem. Art. 7 Abs. 1 DSGVO)
+- Widerrufs-Mechanismus (Abmelde-Link + Mail an kontakt@)
+- Changelog-Header aktualisiert
 
-Ergebnis: Echter Content statt Redirect-Krücke. Bei hoher Eigenmotivation zum Liefern Qualitäts-Checks nicht überspringen.
+**`BACKLOG-AUDIT.md`:**
+- P1-15 Status `⏳` → `🔄` (Code fertig, extern offen)
+- Beschreibung auf Variante A umformuliert
 
-Am Schluss "mach jetzt die logischsten entscheidungen selbst und frag nur wenns brennt" → sauber durchgezogen ohne weitere Unterbrechungen.
+### Quality-Gate
+- `validate-all.sh`: PASSED (alle Checks grün)
+- `node --check party-worker.js`: OK
+- Einladungstool-JS: OK
+- Zero Leftovers (kein Code aus altem Ansatz übrig)
 
-## Nächste Schritte (aus Prio-Tabelle)
+## Extern-Tasks für Bolle (VOR echtem Go-Live des Features)
 
-- **#10 P1-15** Email-Capture Pilot Einladung (4–5 Std) — jetzt Top-Prio
-- **#11 P1-17** DSGVO-Hygiene Partyseite A+C (1,5 Std Laptop)
-- **#16 P1-12** Einschulung SEO-Cluster — Launch bis 31.05.!
+1. **Resend-Audience anlegen:** Dashboard → Audiences → New Audience → Name `machsleicht-newsletter` → **Audience-ID kopieren**
+2. **Cloudflare-Worker Env-Var setzen:** `RESEND_AUDIENCE_ID=<ID aus Schritt 1>`
+3. **Worker deployen** (manuell, wie bisher)
+4. **Plausible-Events im Dashboard einrichten:** `edit-link-email-submit`, `newsletter-opt-in`, `invite-to-party-cta`
+5. **Smoke-Test Ende-zu-Ende:**
+   - Einladung im Einladungstool erstellen
+   - Partyseite-CTA klicken → Creator öffnet mit vorbefüllten Feldern
+   - Partyseite fertigstellen
+   - Newsletter-Checkbox aktivieren + E-Mail eingeben + "Edit-Link per E-Mail erhalten"
+   - Zwei Mails checken (Edit-Link + DOI-Bestätigung)
+   - DOI-Bestätigungslink klicken → Erfolgsseite, Contact in Resend-Audience sichtbar
 
-### Extern (Bolle allein, aus letzter Session offen)
+## Nächste Schritte
 
-1. **Cloudflare Worker** `party-worker.js` deployen (P1-16 Foto-Crop + Beteiligen-amount im Repo, nicht live)
-2. **Migadu Mini** einrichten (machsleicht.de + machsruhig.de Email-Host)
-3. Browser-Test Partyseite auf Mobile
+### Kurzfristig (nach Go-Live Smoke-Test)
+- **2 Wochen messen:** Opt-In-Rate der Newsletter-Checkbox bei Partyseite-Erstellern + Click-Rate des Partyseite-CTAs im Einladungstool. Bei <10% Opt-In: UX-Überarbeitung Checkbox-Text oder Platzierung.
+- **DOI-Confirm-Rate tracken:** Plausible-Pageview auf `/api/newsletter-confirm` zählen vs. `newsletter-opt-in`-Events
+
+### P1-15 Follow-ups (nach Datenpunkten)
+- **Schatzsuche-Capture:** gleiche Mechanik auf Schatzsuche-Output übertragen (1–2h Template-Reuse)
+- **Nurture-Flow schreiben (P3-5):** Welcome-Mail, 7-Tage-vorher-Reminder, 1-Tag-vorher-Checkliste. Erinnerungs-Cron als Worker scheduled event.
+- **Planer-Output-Capture:** separater Hebel laut Scope — Erinnerungs-Mail 7 Tage vor Geburtstag (kommt von Resend-Nurture-Flow)
+
+### Aus vorheriger Session weiter offen
+- **🗓️ 08.05.2026:** Migadu-Trial-Ende — Mini ($90/J) vs. Micro ($19/J) entscheiden
+- **GMX-IMAP-Einbindung** für beide Business-Mailboxen (~15 Min)
+- **#11 P1-17** DSGVO-Hygiene Partyseite A+C (1,5h)
+- **#16 P1-12** Einschulung SEO-Cluster — Launch bis 31.05.
 
 ## Offene Fragen
 
-- Nach GSC-Review Mai: Brauchen Prinzessin/Superheld Alters-Unterseiten (analog Meerjungfrau)?
-- Meerjungfrau bei 39 Links knapp am unteren Schwellwert — bei Problemen in GSC einen Card-Swap-Reverse auf 1-2 Seiten machen
-- Reagiert Google auf die neuen Hub-Pages positiv? → Impressions und Clicks ab ~2-4 Wochen im GSC beobachten
+- **Opt-In-Konversion unklar:** Realistische Annahme 15–30% der Partyseite-Ersteller klicken Newsletter-Checkbox. Erste 2 Wochen zeigen ob UX reicht oder angepasst werden muss.
+- **Einladung → Partyseite Funnel-Rate:** Noch keine Baseline. Bei <5% Conversion wäre die ganze Variante-A-Architektur unterdimensioniert → dann direkt Capture am Einladungstool nötig.
+- **DMARC-Einstellung machsleicht.de:** Aktuell `p=none`, nach 2 Wochen stabiler Warmup-Phase auf `p=quarantine` ziehen.
 
 ## Status der Site nach diesem Deploy
 
-- **Live auf machsleicht.de:**
-  - 2 neue Motto-Hub-Pages (`/kindergeburtstag/prinzessin`, `/kindergeburtstag/superheld`)
-  - 139 Motto-Alters-Seiten mit angepassten Cross-Motto-Grids
-  - index.html + kindergeburtstag.html mit aktualisierten Prinzessin/Superheld-Links
-  - sitemap.xml aktualisiert
-- **Live auf party.machsleicht.de (Cloudflare Worker):** unverändert — P1-16-Änderungen warten weiterhin auf Bolles manuellen Cloudflare-Deploy
-- **Repo:** 40 PBIs in Roadmap, P1-20 ✅ erledigt
+- **Code-Änderungen deployed:** einladung/erstellen/index.html (Partyseite-CTA aktiviert), datenschutz.html (§11 Newsletter-DOI)
+- **Worker-Änderungen im Repo, aber NICHT live:** party-worker.js wartet auf manuellen Cloudflare-Deploy + neue Env-Var `RESEND_AUDIENCE_ID`
+- **Feature erst komplett nutzbar nach Worker-Deploy:** Ohne Worker-Deploy landen Newsletter-Checkbox-Klicks im "alten" send-edit-link-Endpoint, der den Parameter ignoriert → User bekommt Edit-Link, aber keine DOI-Mail. Kein Fehler, nur kein Newsletter-Opt-In-Effekt.
+- **Repo:** 40 PBIs in Roadmap, P1-15 Code fertig (Variante A), wartet auf Extern-Tasks von Bolle

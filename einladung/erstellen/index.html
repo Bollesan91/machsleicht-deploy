@@ -254,13 +254,10 @@
     </div>
     <button class="btn-preview" onclick="openPreview()">👀 Vorschau ansehen</button>
 
-    <div style="margin-top:16px;padding:14px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,215,0,.15);border-radius:14px;text-align:left">
-      <!-- Partyseite-CTA: ausgeblendet bis party.machsleicht.de live (P1-10) -->
-      <!--
-      <p style="font-size:13px;font-weight:700;color:#FFD700;margin:0 0 4px">💡 Tipp: Partyseite erstellen</p>
-      <p style="font-size:12px;color:rgba(255,255,255,.5);margin:0 0 10px;line-height:1.5">Zusagen sammeln, Wunschliste teilen, Fotos & Kalender-Download — alles auf einer Seite für deine Gäste.</p>
-      <a id="partyLink" href="/partyseite/" target="_blank" style="display:block;padding:10px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.25);border-radius:10px;color:#FFD700;font-size:13px;font-weight:700;text-decoration:none;text-align:center">🎉 Kostenlose Partyseite erstellen →</a>
-      -->
+    <div style="margin-top:16px;padding:14px 16px;background:linear-gradient(135deg,rgba(255,215,0,.08),rgba(255,165,0,.04));border:1px solid rgba(255,215,0,.3);border-radius:14px;text-align:left">
+      <p style="font-size:13px;font-weight:700;color:#FFD700;margin:0 0 4px">💡 Noch einen Schritt weiter?</p>
+      <p style="font-size:12px;color:rgba(255,255,255,.6);margin:0 0 10px;line-height:1.5">Mach aus dieser Einladung eine <strong>Partyseite</strong> — Zusagen sammeln, Wunschliste teilen, Fotos &amp; Kalender-Download. Deine Daten übernehmen wir.</p>
+      <a id="partyLink" href="https://party.machsleicht.de/" target="_blank" style="display:block;padding:10px;background:rgba(255,215,0,.15);border:1px solid rgba(255,215,0,.4);border-radius:10px;color:#FFD700;font-size:13px;font-weight:700;text-decoration:none;text-align:center">🎉 Kostenlose Partyseite erstellen →</a>
     </div>
   </div>
 
@@ -458,6 +455,24 @@ async function handleSubmit(e) {
       generatedFotoUrl = generatedUrl + '?f=' + encodeURIComponent(result.foto);
     }
     document.getElementById('resultLink').textContent = generatedUrl;
+
+    // Partyseite-CTA: Einladungsdaten als Query-Params ans Partyseite-Tool übergeben
+    // (mottoColor nicht setzen — Partyseite wählt passende Farbe automatisch aus motto)
+    try {
+      const cfg = MOTTO_CONFIG[selectedMotto] || {};
+      const partyParams = new URLSearchParams();
+      if (data.name) partyParams.set('childName', data.name);
+      if (cfg.label) partyParams.set('motto', cfg.label);
+      if (cfg.emoji) partyParams.set('mottoEmoji', cfg.emoji);
+      const partyLinkEl = document.getElementById('partyLink');
+      if (partyLinkEl) {
+        partyLinkEl.href = 'https://party.machsleicht.de/?' + partyParams.toString();
+        partyLinkEl.addEventListener('click', function() {
+          if (window.plausible) { try { window.plausible('invite-to-party-cta'); } catch(e) {} }
+        }, { once: true });
+      }
+    } catch(e) { /* Partyseite-CTA optional, bei Fehler kein Block */ }
+
     document.getElementById('result').classList.add('show');
     document.getElementById('form').style.display = 'none';
   } catch (err) {
