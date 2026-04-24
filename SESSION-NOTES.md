@@ -1,94 +1,97 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 24.04.2026 (Chat-Session, Opus 4.7) — Mail-Infrastruktur komplett live für machsleicht.de + machsruhig.de
+**Datum:** 24.04.2026 (Opus 4.7) — P1-15 Email-Capture fertig gebaut, Variante A (Partyseite-Creator)
 
 ## Was wurde gemacht
 
-### Mail-Infrastruktur komplett aufgesetzt (kein Code-Commit — reine Infra-Session)
+### P1-15 Email-Capture — Variante A umgesetzt
 
-**Kontext-Korrektur zum Start:** Bolle hatte sich versehentlich bei Mailjet registriert (Transactional-Service, nicht Inbox-Hosting). Korrekt: Migadu für Business-Inbox. Mailjet-Free-Account ignoriert, kein Risiko.
+**Strategische Revision während Session:** Ursprünglich war Capture am Einladungstool-Output geplant (Link-per-Mail + Newsletter-DOI). Kritische Prüfung ergab: falscher Ort, schwacher Köder, DSGVO-Fallen. Link-Pflichtfeld brächte nur Transactional-Mails, keine echten Newsletter-Abos. **Neue Architektur:** Capture sitzt am Partyseite-Creator (Pflicht-Edit-Link + optionale Newsletter-Checkbox mit DOI). Einladungstool bekommt aktivierten Partyseite-CTA mit Query-Param-Handover als Funnel-Bridge.
 
-**machsleicht.de:**
-- Migadu-Domain hinzugefügt, 7 DNS-Records in Cloudflare angelegt:
-  - 1× Verification TXT (`hosted-email-verify=mabu9bj7`)
-  - 2× MX (`aspmx1.migadu.com` Prio 10, `aspmx2.migadu.com` Prio 20)
-  - 3× DKIM CNAME (`key1/2/3._domainkey`, Target ohne Underscore wegen Cloudflare-Restriktion)
-  - 1× SPF TXT (`v=spf1 include:spf.migadu.com -all` auf `@`)
-- DMARC bereits vorhanden (`p=none`), unverändert gelassen
-- Domain aktiv seit 2026-04-24T06:36:43Z
-- **Mailbox `kontakt@machsleicht.de`** angelegt (Display Name "Machsleicht Kontakt")
-- Send + Receive getestet, beide Richtungen OK
-- **Impressum-Konformität wiederhergestellt** — kontakt@ ist die gelistete Adresse
+**Neuer Funnel:**
+```
+Einladungstool → (Daten-Handover) → Partyseite-Creator → Partyseite live
+                                         ↓
+                      Edit-Link-Mail (PFLICHT) + Newsletter (OPTIONAL, DOI)
+```
 
-**machsruhig.de:**
-- Domain lag bei INWX (Nameservers ns.inwx.de, ns2.inwx.de, ns3.inwx.eu)
-- **Komplett auf Cloudflare migriert:**
-  - Cloudflare-Site angelegt (Free-Plan)
-  - AI-Crawler: "Do not block (allow)" — Entscheidung für max. AI-Referral-Traffic bei Lead-gen-Geschäftsmodell
-  - DNS-Scan importierte 2 bestehende Records: A `machsruhig.de → 75.2.60.5` (Netlify) + CNAME `www → machsruhig.netlify...`
-  - 8 Migadu-Records hinzugefügt (analog machsleicht, zusätzlich DMARC):
-    - 1× Verification TXT (`hosted-email-verify=eoc7sc2t`)
-    - 2× MX (Prio 10/20)
-    - 3× DKIM CNAME
-    - 1× SPF TXT
-    - 1× DMARC TXT (`v=DMARC1; p=quarantine;` — strenger als machsleicht, Migadu-Default akzeptiert)
-  - Nameserver-Switch bei INWX auf `luciane.ns.cloudflare.com` + `vick.ns.cloudflare.com`
-  - DNSSEC-Check via viewdns.info: war nicht aktiv, keine Reparatur nötig
-  - Propagation < 10 Min (sehr schnell für .de)
-- Migadu-Domain validiert, aktiv
-- **Mailbox `kontakt@machsruhig.de`** angelegt
-- Empfang getestet, OK
+### Code-Änderungen
 
-**Weiterleitung beide Mailboxen:**
-- `kontakt@machsleicht.de` → `christian.bollweg@advergy.de` (Modus A: Keep a copy)
-- `kontakt@machsruhig.de` → `christian.bollweg@advergy.de` (Modus A: Keep a copy)
-- **Grund:** Übergangslösung bis GMX-IMAP-Einbindung läuft. So sieht Bolle eingehende Mails in seiner Advergy-Inbox, die er täglich checkt. Originale bleiben in Migadu erhalten für spätere IMAP-Einbindung und korrekte Antwort-Absenderadresse.
-- Forwarding-Tests beidseitig erfolgreich
+**`party-worker.js`:**
+- `/api/invite-email` **entfernt** (Fehlversuch aus früherer Iteration)
+- `/api/party/:id/send-edit-link` **erweitert** um optionalen `newsletterOptIn`-Param: triggert zusätzliche DOI-Mail
+- Origin-Check (CORS-Hardening): nur `machsleicht.de`/`party.machsleicht.de` dürfen den Endpoint nutzen
+- `/api/newsletter-confirm?token=<token>` **neu**: validiert DOI-Token, fügt Contact in Resend-Audience (`env.RESEND_AUDIENCE_ID`), zeigt Erfolgsseite, schreibt dauerhaften Consent-Audit-Trail (`consent:<sha256(email)>`)
+- `doiPage()`-Helper am Dateiende
+- Creator-Prefill akzeptiert nun `childName`, `age`, `motto`, `mottoEmoji`, `mottoColor` als Query-Params
+- Newsletter-Checkbox im Creator-HTML unter dem E-Mail-Feld
+- `sendEditEmail()` mit Plausible-Events (`edit-link-email-submit`, `newsletter-opt-in`) und angepasster Success-Message
 
-### Resend-Kollisions-Analyse
+**`einladung/erstellen/index.html`:**
+- Partyseite-CTA aktiviert (war auskommentiert für P1-10-Zeitraum)
+- Query-Param-Handover beim Klick: `childName`, `motto`, `mottoEmoji` → Partyseite-Creator hat alles vorausgefüllt
+- Plausible-Event `invite-to-party-cta`
+- Kein separater Email-Capture-Block — sauberer Hand-off, keine Konkurrenz-CTAs
 
-Resend läuft auf Subdomain `send.machsleicht.de` (MX + SPF dort isoliert, DKIM via `resend._domainkey`). Migadu läuft auf Hauptdomain `@`. **Zero Overlap** — kein Record-Update bei Resend nötig, System funktioniert unverändert.
+**`datenschutz.html`:**
+- §11 auf Partyseite-Kontext umformuliert
+- Rechtsgrundlagen: Art. 6 Abs. 1 lit. b (Vertragserfüllung — Edit-Link ohne Mail nicht möglich) + lit. a (Einwilligung für Newsletter)
+- Newsletter-DOI-Flow explizit dokumentiert
+- Consent-Audit-Trail dokumentiert (Zeitpunkt, IP, User-Agent, Aufbewahrung bis zu 3 Jahre gem. Art. 7 Abs. 1 DSGVO)
+- Widerrufs-Mechanismus (Abmelde-Link + Mail an kontakt@)
+- Changelog-Header aktualisiert
 
-## Aktueller Stand der Mail-Infrastruktur
+**`BACKLOG-AUDIT.md`:**
+- P1-15 Status `⏳` → `🔄` (Code fertig, extern offen)
+- Beschreibung auf Variante A umformuliert
 
-| Domain | Business-Inbox | Transactional | Status |
-|---|---|---|---|
-| machsleicht.de | `kontakt@` via Migadu | Resend auf `.send` | ✅ live, Forward an Advergy |
-| machsruhig.de | `kontakt@` via Migadu | — (noch nicht nötig) | ✅ live, Forward an Advergy |
-| advergy.de | bestehende Infra | — | unverändert |
+### Quality-Gate
+- `validate-all.sh`: PASSED (alle Checks grün)
+- `node --check party-worker.js`: OK
+- Einladungstool-JS: OK
+- Zero Leftovers (kein Code aus altem Ansatz übrig)
+
+## Extern-Tasks für Bolle (VOR echtem Go-Live des Features)
+
+1. **Resend-Audience anlegen:** Dashboard → Audiences → New Audience → Name `machsleicht-newsletter` → **Audience-ID kopieren**
+2. **Cloudflare-Worker Env-Var setzen:** `RESEND_AUDIENCE_ID=<ID aus Schritt 1>`
+3. **Worker deployen** (manuell, wie bisher)
+4. **Plausible-Events im Dashboard einrichten:** `edit-link-email-submit`, `newsletter-opt-in`, `invite-to-party-cta`
+5. **Smoke-Test Ende-zu-Ende:**
+   - Einladung im Einladungstool erstellen
+   - Partyseite-CTA klicken → Creator öffnet mit vorbefüllten Feldern
+   - Partyseite fertigstellen
+   - Newsletter-Checkbox aktivieren + E-Mail eingeben + "Edit-Link per E-Mail erhalten"
+   - Zwei Mails checken (Edit-Link + DOI-Bestätigung)
+   - DOI-Bestätigungslink klicken → Erfolgsseite, Contact in Resend-Audience sichtbar
 
 ## Nächste Schritte
 
-### Kurzfristig (Mail-bezogen)
+### Kurzfristig (nach Go-Live Smoke-Test)
+- **2 Wochen messen:** Opt-In-Rate der Newsletter-Checkbox bei Partyseite-Erstellern + Click-Rate des Partyseite-CTAs im Einladungstool. Bei <10% Opt-In: UX-Überarbeitung Checkbox-Text oder Platzierung.
+- **DOI-Confirm-Rate tracken:** Plausible-Pageview auf `/api/newsletter-confirm` zählen vs. `newsletter-opt-in`-Events
 
-- **🗓️ 08.05.2026:** Migadu-Trial-Ende. Entscheidung **Mini ($90/Jahr) vs. Micro ($19/Jahr)** fällig. Micro reicht vermutlich (Business-Solo-Usage), aber "some features unavailable" — im Trial Features testen, dann entscheiden.
-- **GMX-IMAP-Einbindung** für beide Mailboxen (~15 Min Session) — damit Mails direkt in GMX-Interface statt Advergy-Forwarding
-- **Mailjet-Account:** Option A (ignorieren) bleibt — kostenloses Free-Tier, kein Risiko
-- **Spam-Check in Advergy-Inbox:** Erste Mails kurz beobachten, falls SPF-Alignment-Issue
+### P1-15 Follow-ups (nach Datenpunkten)
+- **Schatzsuche-Capture:** gleiche Mechanik auf Schatzsuche-Output übertragen (1–2h Template-Reuse)
+- **Nurture-Flow schreiben (P3-5):** Welcome-Mail, 7-Tage-vorher-Reminder, 1-Tag-vorher-Checkliste. Erinnerungs-Cron als Worker scheduled event.
+- **Planer-Output-Capture:** separater Hebel laut Scope — Erinnerungs-Mail 7 Tage vor Geburtstag (kommt von Resend-Nurture-Flow)
 
-### machsleicht-Entwicklung (aus letzter Session)
-
-- **#10 P1-15** Email-Capture Pilot Einladung (4–5 Std) — jetzt Top-Prio
-- **#11 P1-17** DSGVO-Hygiene Partyseite A+C (1,5 Std Laptop)
-- **#16 P1-12** Einschulung SEO-Cluster — Launch bis 31.05.!
-
-### Extern (Bolle allein, aus letzter Session offen)
-
-1. **Cloudflare Worker** `party-worker.js` deployen (P1-16 Foto-Crop + Beteiligen-amount im Repo, nicht live)
-2. ~~**Migadu Mini** einrichten~~ ✅ erledigt (Trial läuft bis 08.05.)
-3. Browser-Test Partyseite auf Mobile
+### Aus vorheriger Session weiter offen
+- **🗓️ 08.05.2026:** Migadu-Trial-Ende — Mini ($90/J) vs. Micro ($19/J) entscheiden
+- **GMX-IMAP-Einbindung** für beide Business-Mailboxen (~15 Min)
+- **#11 P1-17** DSGVO-Hygiene Partyseite A+C (1,5h)
+- **#16 P1-12** Einschulung SEO-Cluster — Launch bis 31.05.
 
 ## Offene Fragen
 
-- **Feature-Gap Micro vs. Mini:** Im Trial konkret testen, was bei Micro fehlt (Migadu-Default gibt nur "some features unavailable" an, keine Liste)
-- **DMARC auf machsleicht.de:** Aktuell `p=none`, langfristig auf `p=quarantine` ziehen sobald Warmup durch ist?
-- **Spam-Filter Advergy:** Werden Forwards von Migadu über Wochen hinweg stabil eingeliefert, oder Reputation-Probleme? → In 2 Wochen evaluieren.
+- **Opt-In-Konversion unklar:** Realistische Annahme 15–30% der Partyseite-Ersteller klicken Newsletter-Checkbox. Erste 2 Wochen zeigen ob UX reicht oder angepasst werden muss.
+- **Einladung → Partyseite Funnel-Rate:** Noch keine Baseline. Bei <5% Conversion wäre die ganze Variante-A-Architektur unterdimensioniert → dann direkt Capture am Einladungstool nötig.
+- **DMARC-Einstellung machsleicht.de:** Aktuell `p=none`, nach 2 Wochen stabiler Warmup-Phase auf `p=quarantine` ziehen.
 
 ## Status der Site nach diesem Deploy
 
-- **Keine Code-Änderungen** — reine Infrastruktur-Session
-- **Live auf machsleicht.de:** unverändert seit P1-20 Deploy vom 23.04.
-- **Live auf party.machsleicht.de (Cloudflare Worker):** weiterhin unverändert — P1-16-Änderungen warten auf Bolles manuellen Cloudflare-Deploy
-- **Live auf machsruhig.de:** unverändert (Netlify-Deploy), nur DNS jetzt via Cloudflare
-- **Repo:** 40 PBIs in Roadmap, P1-20 zuletzt erledigt, nächstes aktives Ticket P1-15
+- **Code-Änderungen deployed:** einladung/erstellen/index.html (Partyseite-CTA aktiviert), datenschutz.html (§11 Newsletter-DOI)
+- **Worker-Änderungen im Repo, aber NICHT live:** party-worker.js wartet auf manuellen Cloudflare-Deploy + neue Env-Var `RESEND_AUDIENCE_ID`
+- **Feature erst komplett nutzbar nach Worker-Deploy:** Ohne Worker-Deploy landen Newsletter-Checkbox-Klicks im "alten" send-edit-link-Endpoint, der den Parameter ignoriert → User bekommt Edit-Link, aber keine DOI-Mail. Kein Fehler, nur kein Newsletter-Opt-In-Effekt.
+- **Repo:** 40 PBIs in Roadmap, P1-15 Code fertig (Variante A), wartet auf Extern-Tasks von Bolle

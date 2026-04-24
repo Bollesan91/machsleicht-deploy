@@ -29,7 +29,7 @@
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
 |---|--------|------|--------|------------------|---------|---------|
 | 8 | ⏳ | **P1** | P1-16 | `[KERN]` **Partyseite Follow-Ups** (Cloudflare-Deploy Bugfix + Email-Test + Foto-Crop + Reply-To) | 1–2 Std | **Laptop-Session!** Bugfix-Commit `a694178` wartet auf Cloudflare-Deploy |
-| 9 | ⏳ | **P1** | P1-15 | `[KERN]` **Email-Capture (Pilot: Einladung)** | 4–5 Std | **Über Resend** (Audiences + Broadcasts) — Transactional läuft schon. Muss: DOI-Flow selbst bauen, dann Pilot Einladung, später Partyseite + Schatzsuche |
+| 9 | 🔄 | **P1** | P1-15 | `[KERN]` **Email-Capture (Pilot: Partyseite + Einladung→Partyseite-Funnel)** | 4–5 Std | **Code fertig 24.04.2026 — Variante A.** Strategie-Revision in Session: Capture sitzt am Partyseite-Creator (Pflicht-Edit-Link + optionale Newsletter-Checkbox mit DOI), nicht am Einladungstool. Einladungstool bekommt aktivierten Partyseite-CTA mit Query-Param-Handover (`childName`, `motto`, `mottoEmoji`) als Funnel-Bridge. **Extern-Tasks offen:** Resend-Audience anlegen, `RESEND_AUDIENCE_ID` als Env-Var setzen, Worker deployen. Newsletter-Capture so auch auf Schatzsuche übertragbar (je 1–2h Template-Reuse) |
 | 10 | 🔄 | **P1** | P1-17 | `[KERN]` **DSGVO-Hygiene Partyseite** (A: Worker-Hinweis, B: Datenschutz ✅, C: Auto-Delete-Cron) | 1,5 Std (Laptop) | **B erledigt am 21.04.** Blockt kein weiteres Feature technisch, aber rechtliches Risiko solange A+C offen. Bundeln mit P1-16 Laptop-Session |
 | 11 | ⏳ | **P1** | P2-20 | `[KERN]` **Datenübergabe Planer → Tools** | 4–6 Std | Ökosystem-Prinzip umsetzen, nach P1-10 |
 | 12 | ⏳ | **P1** | P2-13 | `[KERN]` Gumroad: 2 Digital-Produkte (Piraten+Dino) | 4h/Produkt | +100€/Monat bei aktuellem Traffic |
