@@ -1,61 +1,94 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 22.04.2026
+**Datum:** 24.04.2026 (Chat-Session, Opus 4.7) — Mail-Infrastruktur komplett live für machsleicht.de + machsruhig.de
 
 ## Was wurde gemacht
 
-### Strategie-Block (Vormittag/Mittag)
-- **Sparring zum Freund-Memo** (Verzettelungs-Kritik): Strategie ist scharf, React-Homepage hatte Implementierungs-Gap zum SEO-Fallback.
-- **Portfolio-Matrix als Abschnitt 0.9 in STRATEGIE.md** verankert: 4 Spalten (Kernwette / Testwette / Zukunftswette eingefroren / Optional-Legacy) mit Budget, Trigger-Kriterien und Homepage-Präsenz-Regel.
-- **P1-12 komplett umformuliert:** vom interaktiven Einschulungs-Planer (12–18h) zum reinen SEO-Content-Cluster (10–14h). Upgrade-Trigger zum Planer: ≥100 organische Visits/Woche im Juli.
-- **18 PBIs in der BACKLOG-AUDIT.md Prio-Tabelle etikettiert:** 14× `[KERN]`, 1× `[TEST]`, 3× `[ZUKUNFT]`, 2× `[LEGACY]`. Grace-Clause für Bestands-Tickets.
-- **Flow-Audit-Template** unter `_dev/docs/flow-audit-template.md` — 15 Reibungs-Checkpoints für Selbst-Durchgang.
+### Mail-Infrastruktur komplett aufgesetzt (kein Code-Commit — reine Infra-Session)
 
-### Homepage-Refokus + Deploy-Bug (Nachmittag)
-- **React-Homepage (`js/index.js`) an SEO-Fallback angeglichen:**
-  - Hero „Familienstress? Mach's leicht." → „Kindergeburtstag planen — kostenlos in 10 Minuten"
-  - Products-Array von 8 → 4 Kernmodule (Einschulung/Baby/Kreuzworträtsel/Spielkarten raus aus Hauptgrid)
-  - Pill-Cloud „Weitere Planer & Tools" mit 8 Sekundär-Items eingefügt
-  - „Ein Tool pro Familienanlass." → „Planer, Schatzsuche, Einladung, Partyseite."
-  - Eyebrow „Unsere Tools" → „Alles für den Kindergeburtstag"
-  - Footer-Tagline + Idee-Card auf Kindergeburtstag-Fokus
-- **`index.html` Meta-Tags** (description, og, twitter) auf Kindergeburtstag-Fokus — keine „Einschulung, Baby & Wochenbett"-Reste mehr.
-- **Deploy-Katastrophe aufgedeckt:** Nach „Ende deploy" zeigte Live-Site weiterhin alten Code. Diagnose: 8 Netlify-Builds seit gestern Mittag fehlgeschlagen mit `Build script returned non-zero exit code: 2`. Ursache: `netlify/functions/serve-invite.mjs` war seit Commit 4af3456 bei Zeile 54 mitten im Statement abgeschnitten (fehlende 6 Zeilen). Live-Site lief auf altem Cache-Build, alle Zwischencommits (inkl. Einhorn-Komplettierung gestern Abend) waren nie live.
-- **Hotfix:** `serve-invite.mjs` repariert, Netlify-Build grün, alle ausstehenden Commits live.
-- **validate-all.sh um STUFE 1b erweitert:** `node --check` auf alle `netlify/functions/*.{js,mjs}` — fängt Truncation-Bugs wie diesen sofort ab. Negativ-Test erfolgreich.
+**Kontext-Korrektur zum Start:** Bolle hatte sich versehentlich bei Mailjet registriert (Transactional-Service, nicht Inbox-Hosting). Korrekt: Migadu für Business-Inbox. Mailjet-Free-Account ignoriert, kein Risiko.
 
-### Live-Bugfixes (Abend, nach Sichtkontrolle)
-- **„Drei Tools" Subheader** → „Vier Tools, ein Ziel" (hatte sich versteckt seit Partyseite als 4. Vorschau dazukam)
-- **Vorschau-Grid 3+1 → 2×2:** `minmax(280px, 1fr)` → `minmax(320px, 1fr)`, Desktop zeigt jetzt sauber 2 Reihen × 2 Karten
-- **Plan-Vorschau-Karte getönt:** reines `#fff` → `linear-gradient(145deg, #fef8f0, #fde8d0)`, passend zur Orange-Brand-Familie (verschmolz vorher mit Page-Background)
-- **Einladungskarten-Vorschau lesbarer:** Navy in drei Iterationen aufgehellt (finaler Stand `#4a4a6e → #3a3a5a`), Text-Opacities angehoben (Eyebrow 0.4→0.55, Datum/Ort 0.6→0.78, Inner-Box bg 0.08→0.15 + text 0.5→0.78)
-- **CTAs aller 4 Vorschau-Karten bottom-aligned:** Karten jetzt `display:flex, flexDirection:column` + CTAs `marginTop:auto` → Buttons bündig am Kartenfuß, unabhängig von Content-Höhe
-- **Mobile-Kontrolle:** Bolle hat alles gesichtet, bestätigt „PASST ALLES"
+**machsleicht.de:**
+- Migadu-Domain hinzugefügt, 7 DNS-Records in Cloudflare angelegt:
+  - 1× Verification TXT (`hosted-email-verify=mabu9bj7`)
+  - 2× MX (`aspmx1.migadu.com` Prio 10, `aspmx2.migadu.com` Prio 20)
+  - 3× DKIM CNAME (`key1/2/3._domainkey`, Target ohne Underscore wegen Cloudflare-Restriktion)
+  - 1× SPF TXT (`v=spf1 include:spf.migadu.com -all` auf `@`)
+- DMARC bereits vorhanden (`p=none`), unverändert gelassen
+- Domain aktiv seit 2026-04-24T06:36:43Z
+- **Mailbox `kontakt@machsleicht.de`** angelegt (Display Name "Machsleicht Kontakt")
+- Send + Receive getestet, beide Richtungen OK
+- **Impressum-Konformität wiederhergestellt** — kontakt@ ist die gelistete Adresse
 
-### Deploy-Chronologie
-1. `4c92ff7` Strategie-Refokus (Homepage + Meta + Portfolio-Matrix + P1-12)
-2. `859747b` Merge auf main — fehlgeschlagen
-3. `ce414f2` Trigger-Commit — auch fehlgeschlagen (gleiche Ursache)
-4. `1577c8f` Hotfix serve-invite.mjs Truncation
-5. `b2b2200` Hotfix-Merge auf main — **ab hier baut Netlify wieder**
-6. `4128014` validate-all.sh STUFE 1b (draft only, skip netlify)
-7. `334c85b` / `4f1617e` „Vier Tools" + 2x2 Grid
-8. `2369613` / `43ab0f3` Plan-Karten-Tint
-9. `80eb404` / `3a31761` Einladung-Lesbarkeit
-10. `52f5add` / `738de80` CTAs bottom-aligned + Einladung dritte Navy-Stufe
+**machsruhig.de:**
+- Domain lag bei INWX (Nameservers ns.inwx.de, ns2.inwx.de, ns3.inwx.eu)
+- **Komplett auf Cloudflare migriert:**
+  - Cloudflare-Site angelegt (Free-Plan)
+  - AI-Crawler: "Do not block (allow)" — Entscheidung für max. AI-Referral-Traffic bei Lead-gen-Geschäftsmodell
+  - DNS-Scan importierte 2 bestehende Records: A `machsruhig.de → 75.2.60.5` (Netlify) + CNAME `www → machsruhig.netlify...`
+  - 8 Migadu-Records hinzugefügt (analog machsleicht, zusätzlich DMARC):
+    - 1× Verification TXT (`hosted-email-verify=eoc7sc2t`)
+    - 2× MX (Prio 10/20)
+    - 3× DKIM CNAME
+    - 1× SPF TXT
+    - 1× DMARC TXT (`v=DMARC1; p=quarantine;` — strenger als machsleicht, Migadu-Default akzeptiert)
+  - Nameserver-Switch bei INWX auf `luciane.ns.cloudflare.com` + `vick.ns.cloudflare.com`
+  - DNSSEC-Check via viewdns.info: war nicht aktiv, keine Reparatur nötig
+  - Propagation < 10 Min (sehr schnell für .de)
+- Migadu-Domain validiert, aktiv
+- **Mailbox `kontakt@machsruhig.de`** angelegt
+- Empfang getestet, OK
+
+**Weiterleitung beide Mailboxen:**
+- `kontakt@machsleicht.de` → `christian.bollweg@advergy.de` (Modus A: Keep a copy)
+- `kontakt@machsruhig.de` → `christian.bollweg@advergy.de` (Modus A: Keep a copy)
+- **Grund:** Übergangslösung bis GMX-IMAP-Einbindung läuft. So sieht Bolle eingehende Mails in seiner Advergy-Inbox, die er täglich checkt. Originale bleiben in Migadu erhalten für spätere IMAP-Einbindung und korrekte Antwort-Absenderadresse.
+- Forwarding-Tests beidseitig erfolgreich
+
+### Resend-Kollisions-Analyse
+
+Resend läuft auf Subdomain `send.machsleicht.de` (MX + SPF dort isoliert, DKIM via `resend._domainkey`). Migadu läuft auf Hauptdomain `@`. **Zero Overlap** — kein Record-Update bei Resend nötig, System funktioniert unverändert.
+
+## Aktueller Stand der Mail-Infrastruktur
+
+| Domain | Business-Inbox | Transactional | Status |
+|---|---|---|---|
+| machsleicht.de | `kontakt@` via Migadu | Resend auf `.send` | ✅ live, Forward an Advergy |
+| machsruhig.de | `kontakt@` via Migadu | — (noch nicht nötig) | ✅ live, Forward an Advergy |
+| advergy.de | bestehende Infra | — | unverändert |
 
 ## Nächste Schritte
-- **Bolle: Flow-Audit selbst durchgehen** (`_dev/docs/flow-audit-template.md`) → 3 dickste Reibungen als neue `[KERN]`-PBIs
-- **OneDrive-Repo lokal reparieren** (alle heutigen Session-Edits liefen aus /tmp, OneDrive-Ordner war kaputt). Alter Ordner löschen, neu klonen — idealerweise außerhalb von OneDrive.
-- **Netlify-Notify-Hook einrichten** (Settings → Notifications → Deploy failed → Email an cbollweg@gmx.de). Nie wieder einen Tag lang unbemerkt gebrochene Builds.
-- **P1-16 Partyseite Follow-Ups** in nächster Laptop-Session (Cloudflare-Deploy + Email-Test + Foto-Crop + Reply-To)
-- **P2-13 Gumroad-Digitalprodukte starten** (Piraten + Dino, je 4h)
-- **P2-15 Awin-Anmeldung** (30 Min + 1–3 Tage Warten)
-- **P1-8 Safari als nächstes Elite-Motto** (3 Altersgruppen)
-- **P1-12 Einschulung-SEO-Cluster** — Launch bis 31.05.
+
+### Kurzfristig (Mail-bezogen)
+
+- **🗓️ 08.05.2026:** Migadu-Trial-Ende. Entscheidung **Mini ($90/Jahr) vs. Micro ($19/Jahr)** fällig. Micro reicht vermutlich (Business-Solo-Usage), aber "some features unavailable" — im Trial Features testen, dann entscheiden.
+- **GMX-IMAP-Einbindung** für beide Mailboxen (~15 Min Session) — damit Mails direkt in GMX-Interface statt Advergy-Forwarding
+- **Mailjet-Account:** Option A (ignorieren) bleibt — kostenloses Free-Tier, kein Risiko
+- **Spam-Check in Advergy-Inbox:** Erste Mails kurz beobachten, falls SPF-Alignment-Issue
+
+### machsleicht-Entwicklung (aus letzter Session)
+
+- **#10 P1-15** Email-Capture Pilot Einladung (4–5 Std) — jetzt Top-Prio
+- **#11 P1-17** DSGVO-Hygiene Partyseite A+C (1,5 Std Laptop)
+- **#16 P1-12** Einschulung SEO-Cluster — Launch bis 31.05.!
+
+### Extern (Bolle allein, aus letzter Session offen)
+
+1. **Cloudflare Worker** `party-worker.js` deployen (P1-16 Foto-Crop + Beteiligen-amount im Repo, nicht live)
+2. ~~**Migadu Mini** einrichten~~ ✅ erledigt (Trial läuft bis 08.05.)
+3. Browser-Test Partyseite auf Mobile
 
 ## Offene Fragen
-- Reihenfolge Safari-Altersgruppen: auch mit 6-8 starten wie bei Einhorn?
-- Awin-Publisher-ID Status?
-- Welcher Plausible-Goal-Name für „Einschulung-Cluster Visits" (für P1-12 Trigger-Messung)?
+
+- **Feature-Gap Micro vs. Mini:** Im Trial konkret testen, was bei Micro fehlt (Migadu-Default gibt nur "some features unavailable" an, keine Liste)
+- **DMARC auf machsleicht.de:** Aktuell `p=none`, langfristig auf `p=quarantine` ziehen sobald Warmup durch ist?
+- **Spam-Filter Advergy:** Werden Forwards von Migadu über Wochen hinweg stabil eingeliefert, oder Reputation-Probleme? → In 2 Wochen evaluieren.
+
+## Status der Site nach diesem Deploy
+
+- **Keine Code-Änderungen** — reine Infrastruktur-Session
+- **Live auf machsleicht.de:** unverändert seit P1-20 Deploy vom 23.04.
+- **Live auf party.machsleicht.de (Cloudflare Worker):** weiterhin unverändert — P1-16-Änderungen warten auf Bolles manuellen Cloudflare-Deploy
+- **Live auf machsruhig.de:** unverändert (Netlify-Deploy), nur DNS jetzt via Cloudflare
+- **Repo:** 40 PBIs in Roadmap, P1-20 zuletzt erledigt, nächstes aktives Ticket P1-15
