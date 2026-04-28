@@ -1,158 +1,85 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 28.04.2026 (Opus 4.7) — P1-8 Safari-6-8-Jahre **Elite-Seite live**, zwei neue PBIs ins Backlog
+**Datum:** 28.04.2026 (Opus 4.7) — P1-8 Feuerwehr **alle 3 Altersgruppen Elite live** (parallel zu Safari-Session)
 
 ## Was wurde gemacht
 
-### Safari 6-8 Jahre — Elite-Motto-Seite (P1-8, erste der drei Altersgruppen)
+### Feuerwehr 3-5 / 6-8 / 9-12 Jahre — drei Elite-Motto-Seiten (P1-8, alle Altersgruppen in einer Parallel-Session)
 
-**Ergebnis:** `kindergeburtstag/safari-6-8-jahre.html` — 89 KB, valide, alle 7 validate-all.sh-Stufen grün.
+**Ergebnis:**
+- `kindergeburtstag/feuerwehr-3-5-jahre.html` — 82 KB, valide, alle 7 validate-all.sh-Stufen grün
+- `kindergeburtstag/feuerwehr-6-8-jahre.html` — 101 KB, valide, alle 7 Stufen grün
+- `kindergeburtstag/feuerwehr-9-12-jahre.html` — 97 KB, valide, alle 7 Stufen grün
+- `_dev/docs/feuerwehr-story.md` — Story-Framing-Doc (~8 KB) als Konsistenz-Anker
 
-**Story-Framing festgelegt** (in `_dev/docs/safari-story.md` als Konsistenz-Anker für 3-5 und 9-12):
-- Leitnarrativ: "Junior-Ranger-Ausbildung im Tierreservat"
-- Kinder als Anwärter → durchlaufen Stationen → Ranger-Lizenz + Klett-Abzeichen
-- Tier-Sprache durchgehend: "Reservat", "Pirsch", "Wasserloch", "Herde", "Anwärter"
-- Variation pro Altersgruppe: 3-5 "Tier-Helfer", 6-8 "Junior-Ranger-Anwärter", 9-12 "Reservat-Expedition"
+**Story-Framing festgelegt** (Konsistenz-Anker für alle 3 Altersgruppen):
+- Leitnarrativ: „Echte Crew werden — Mini-Feuerwache mit Schichtdienst" (nicht „so tun als ob")
+- Signature-Ritual durch alle Altersgruppen: **Schicht-Appell** mit Helm + Aufkleber/Tattoo + Foto + gemeinsamer Schichtbeginn-Spruch („Wir helfen, wo Hilfe gebraucht wird. Los geht\'s!")
+- 12 Dienstausweise mit Vorname + Funktion (Max·Wachleiter, Lina·Funkerin, etc.) — bei 3-5 auf 5 vereinfacht
+- Bewusst NICHT: Verniedlichung, Gewalt-Romantik, Männlichkeits-Klischees, Lizenz-Maskottchen
 
-**Drei Varianten gebaut:**
-- **Minimal** (24 €, 6 Kinder, 2 h): zwei Spiele (Tierspuren-Pirsch + Tierstimmen-Quiz) + Eid + Mini-Lizenz
-- **Standard** (80 €, 8 Kinder, 3 h): Stations-Rotation mit 4 pädagogisch begründeten Stationen (Tarnung, Tierspuren-Memory, Tierstimmen, Pirsch) + Großspiel "Rette das Löwen-Junge" + Lizenz-Zeremonie. Nach 4 Polish-Fixes auf 9,5/10.
-- **Wow** (120 €+, 10 Kinder, 4 h): Standard plus 5. Beobachtungs-Station (Klassifikations-Mechanik mit gefährlich/gefährdet/ungefährlich) + Schatzsuche-Quest "Verborgener Tempel" mit funktionierendem Lösungswort T-F-S-U → FUSS + Filz-Buschhüte als Highlight. Nach 5 Polish-Fixes auf 9-9,5/10.
+**Drei Altersgruppen-Konzepte:**
 
-**Hygiene durchgeführt:**
-- ausgefuxt-Wettbewerber-Link entfernt (war in Minimal-Variante als Tierspuren-Quelle), durch Eigen-Anleitung "Pfotenabdrücke aus Tonpapier ausschneiden" ersetzt
-- Mowoli + kinder-malvorlagen.com als Drittlinks geprüft (reine Ausmalbilder-Sites, keine Wettbewerber)
-- Affiliate-Link-Dichte 20 → 13 reduziert (Drogerie-Items wie Filzstifte/Stempel/Memory-Karten entlinkt)
+- **3-5-Jahre** (52 €/78 €/111 €, 5 Kinder, 1,5/2/2,5 h): 5 vereinfachte Crew-Funktionen, Aufkleber statt Tattoo, kein Wettbewerb, Eltern-bleiben-Pflicht (8× betont mit Aufgabenverteilung), Schaum-Löschen + Mini-Einsatz „Tiere retten" + (Wow:) eigener bemalbarer Pappkarton-Helm + Bilderbuch-Vorlesemoment + Tier-Rettungs-Parcours. Atemschutz, Brandermittlung, Nebelmaschine bewusst gestrichen — zu komplex/riskant. Bildungswert: „Vertrauen statt Angst, Sirene = jemand hilft, Fundament für später" (ehrlich, statt zu behaupten Kinder lernen 112 in dem Alter). Eigene Tip-Box „Tränen-Plan" (in dem Alter weint mindestens ein Kind in 90 Min.). 18 Affiliate-Links, alle compliant.
 
-**Pflichtelemente alle erfüllt:** HowTo-Schema, FAQPage-Schema (5 Q&As), OG/Twitter, Canonical ohne .html, Breadcrumb, Sticky-Bar, Final-CTA, WhatsApp-Share.
+- **6-8-Jahre** (53 €/99 €/159 €, 6 Kinder, 2,5/3/3,5 h): Alle 12 Crew-Funktionen, Trupp-gegen-Trupp-Wettbewerb erlaubt, 4er-Stationen-Rotation (Zielspritzen, Knoten, Atemschutz-Parcours, Schlauch-Slalom), Einsatz-Alarm, Brandermittlung mit 4 Verdächtigen (Lösung: Köchin mit Fett-Pfanne, knüpft narrativ an Theorie-Briefing über Brandklassen an), (Wow:) Theorie-Briefing mit 5 W beim Notruf + Brandklassen + Rauchgefahr, Nebelmaschine, Polaroid-Ehrentafel, Crew-Pins. 22 Affiliate-Links. Erste Variante mit prominenter „Was die Kinder wirklich mitnehmen"-Bildungswert-Box, mit Verweis auf Deutsche Brandschutzerziehung.
 
-### Strategiediskussion + zwei neue PBIs ins Backlog
+- **9-12-Jahre** (106 €/136 €/196 €, 7-8 Kinder, 2,5/3/4 h): Eigenständigste Stimme der drei Seiten. Halb-erwachsene Tonalität, alle 12 Crew-Funktionen, Wettbewerb mit Stoppuhr, Eltern weg. **Brandermittlung als HAUPT-Mechanik** (60-90 Min., nicht Nebenrolle wie bei 6-8): Standard mit 4 Verdächtigen + Vernehmungs-Phase (Eltern als Schauspieler), Wow mit 6 Verdächtigen + 6 Beweisen + 8-Phasen-Struktur + UV-Taschenlampe für versteckten Hinweis + Plot-Twist (Wagner hat Akten vernichtet, ist aber NICHT Brandstifterin — Multi-Verbrechen-Logik). Wow-Bonus: Notruf-Simulation am Smartphone im Flugmodus, 5 W praktisch geprüft. Eigene Tip-Boxen: Smartphone-Regel (Aus/Foto-only/Sammelbox), Vorbereitungs-Realismus („4 Std vor dem Tag"). 24 Affiliate-Links.
 
-Bolle eröffnete Pivot-Frage zu Tease+Leckerli-CTAs vs. Vollpaket. Nach längerer Diskussion (siehe Phase-1/Phase-2-Logik): Entscheidung bleibt **Elite-Content jetzt, Funnel-Optimierung später wenn Traffic da ist**. Begründung deckt sich mit STRATEGIE.md Z.158 ("Monetarisierungs-Tuning bei 80 Visitors/Tag ist Mikrooptimierung").
+**Methodik (alle 3 Seiten):**
+- Iterativer Block-Aufbau: Hero+Age-Intro → Minimal → Standard → Wow → Block 5 (Kuchen, Eltern-Tipps, FAQ, etc.)
+- HTML-Parse-Validation nach jedem Block (Python HTMLParser)
+- Story-Doc-Konsistenz-Checks: Schicht-Appell-Box, Crew-Funktionen-Verankerung, Schichtbeginn-Spruch, Affiliate-Compliance, Schatzsuche-NICHT-in-Sticky-Bar (Feuerwehr hat keine eigene Schatzsuche)
+- Drei Bolle-Reviews mit echten Korrekturen verarbeitet:
+  - Crew-Namen vereinfacht (Vorname+sprechender Nachname → nur Vorname + Funktion)
+  - Atemschutzträgerin ausgeschrieben (war zu kurz „Atemschutz" )
+  - „Schicht beginnt!"-Spruch zu militärisch → ersetzt durch „Los geht\'s!"
+- Vor 9-12-Start: 4 Logik-Fixes auf 3-5 (Bilderbuch-Halluzination raus, Helm-aus-Box-Logikbruch raus, Mitgebsel-Kosten korrigiert weil Helm im Standard nicht eingerechnet war, Wow-Helm-Bemalen-Dauer 25→20 Min für Timeline-Konsistenz)
 
-**Zwei neue PBIs in BACKLOG-AUDIT.md eingetragen:**
-- **P2-23** `[KERN]` Planer-Output auf Elite-Niveau heben (1-2 Tage) — Voraussetzung für eingewebte CTAs
-- **P2-24** `[KERN]` P3 Eingewebte Leckerli-CTAs auf Motto-Seiten (30 Min/Motto) — Phase 2 nach P2-23, Hypothese 3-5× Conversion-Lift
+**Affiliate-Compliance perfekt:** Alle 64 Affiliate-Links über die 3 Seiten haben `tag=machsleicht-21` und `rel="noopener sponsored"`. Keine Schatzsuche-Links in den Sticky-Bars (Story-Doc-Versprechen).
 
-### Wettbewerber-Verweis-Hygiene als Lerneffekt
+**Pflichtelemente alle erfüllt:** HowTo-Schema, FAQPage-Schema (4-5 Q&As pro Seite), OG/Twitter, Canonical ohne .html, Breadcrumb, Sticky-Bar, Final-CTA, WhatsApp-Share.
 
-Während der Session wurde ausgefuxt.de fälschlich als Tierspuren-Quelle verlinkt — ist Wettbewerber laut STRATEGIE.md. Hygiene-Regel jetzt im Sprint-Workflow: bei jedem neuen Drittlink prüfen, ob Wettbewerber.
+### Git-Workflow zwischen Parallel-Sessions
+
+Bolle hat während meiner Session sein Safari-6-8-Update gepusht (`1d1694a`, parallele Session). Ich habe sauber synchronisiert:
+1. Sicherheitskopien meiner 3 Files + Story-Doc nach `/home/claude/feuerwehr-backup/`
+2. `git fetch + git reset --hard origin/draft` auf Safari-Stand
+3. Backups zurückkopiert
+4. Diff-Check: 0 Überlapp zwischen Feuerwehr- und Bolles Safari-Dateien
+
+Pattern für künftige Parallel-Sessions: **Backup-vor-Reset → Reset → Restore → Diff-Verifikation**.
 
 ## Was bleibt als Nächstes
 
 ### Sofort offen (P1-8 fortsetzen)
-- **safari-3-5-jahre.html** (~1,5 h) — gleicher Aufbau, "Tier-Helfer"-Variante der Story (Parallel-Session bereits in Arbeit, Ende April)
-- **safari-9-12-jahre.html** (~1,5 h) — gleicher Aufbau, "Reservat-Expedition"-Variante der Story
+- **safari-3-5-jahre.html** + **safari-9-12-jahre.html** (~3 h gesamt) — Bolles Parallel-Session
 - **safari.html Mainseite** ggf. nachziehen (~30 Min)
+- **Weltraum** (3 Altersgruppen) — als nächstes Motto nach Safari, ~4,5–5 h
+- **Feuerwehr-Mainseite** `kindergeburtstag/feuerwehr.html` ggf. nachziehen, falls noch dünn (~30 Min)
 
 ### Mittelfristig im Backlog
-- P3-4 Druckvorlagen pro Motto — Safari-Lizenz, Tierspuren-Memory, Stationskarten priorisieren
-- P2-23 Planer-Output Elite-Niveau (Voraussetzung für P2-24)
-- P2-24 Leckerli-CTAs auf Motto-Seiten (Phase 2 wenn Traffic vorhanden)
-
-### Strukturelle Beobachtung
-Inkonsistenz zwischen Dino/Einhorn (Vollpaket-Stil) und der Phase-2-Vision (Tease+CTA-Stil) bleibt. Wenn P2-24 später ausgerollt wird, müssen Dino + Einhorn nachgezogen werden.
-
----
-
-## Vorletzte Session
-**Datum:** 24.04.2026 (Opus 4.7) — Plausible → Umami-Migration + P1-15 Extern-Tasks 1–3 **komplett abgeschlossen und live**
-
-## Was wurde gemacht
-
-### P1-15 Extern-Tasks abgeschlossen (live in Production)
-
-1. **Resend-Audience angelegt** — Name: `General` (Default-Audience des Accounts), ID: `b02151b7-8b4a-47e2-9f91-31160c56f8f5`
-2. **Cloudflare-Worker Env-Vars gesetzt:**
-   - `RESEND_AUDIENCE_ID` = `b02151b7-8b4a-47e2-9f91-31160c56f8f5` (Secret)
-   - `RESEND_API_KEY` = vorhandener Key, upgraded von "Sending only" auf "Full access" (Plaintext — bei Gelegenheit auf Secret umstellen)
-   - `RESEND_FROM` = `mach's leicht <party@machsleicht.de>` (Plaintext)
-   - `AMAZON_TAG` = `machsleicht-21` (Plaintext)
-3. **Worker deployed** — `party-worker.js` (mit Umami-Integration) ins Cloudflare-Dashboard kopiert, live unter `party.machsleicht.de`. Smoke-Test `/api/newsletter-confirm?token=test` zeigt korrekt die "Ungültiger Bestätigungslink"-Fehlerseite.
-
-### Plausible → Umami-Migration (vollständig abgeschlossen und verifiziert)
-
-**Grund:** Plausible-Trial abgelaufen, €14/Monat Paid-Tier lohnt sich nicht in aktueller Phase. Umami Cloud Free-Tier (1M Events/Monat) ist für machsleicht.de mehr als ausreichend.
-
-**Umami-Setup:**
-- Account auf cloud.umami.is erstellt
-- Website `machsleicht.de` angelegt
-- Website-ID: `72b5eb12-dfde-4333-9bc7-0c2880864df2`
-
-**Migrationsstrategie:** Kompatibilitäts-Shim statt Massen-Replace aller Event-Calls
-- Alle 351 HTML-Dateien bekamen Umami-Script-Tag + JS-Shim, der `window.plausible()`-Aufrufe auf `umami.track()` umleitet
-- Bestehende Event-Calls (`plausible('einladung-schatzsuche-cta', {props: {motto: 'dino'}})` etc.) laufen ohne Änderung weiter
-- Null Event-Logic-Anpassungen nötig
-
-**Geänderte Dateien (353 total):**
-- **351 HTML-Dateien:** Plausible-Script-Block → Umami-Script + Shim
-- **party-worker.js:** Umami-Script in beiden HTML-Templates (Creator-Seite + Partyseite); Worker-Syntax-Check bestanden. Manuell ins Cloudflare-Dashboard deployed.
-- **datenschutz.html §12:** Plausible Insights OÜ → Umami Software Inc. (EU-Server), Text entsprechend angepasst
-- **index.html:** FAQ-Schema Text (Plausible → Umami) für Google-Snippets
-- **_dev/scripts/consolidate-age-pages.js:** HTML-Template auf Umami umgestellt für zukünftige Dev-Skript-Läufe
-
-**Validation:**
-- `validate-all.sh` komplett grün
-- Umami Dashboard "Realtime" zeigt Live-Pageviews → Tracking bestätigt funktional
-- Merge-Commit `87fe9b7` auf main, Netlify-Build durchgelaufen
-
-### Git-Workflow-Erkenntnis (für spätere Skill-Updates)
-
-- **Lesson learned:** Am Sessionstart wurde `.claude/CLAUDE.md` nicht gelesen → generischer git-sync-Skill kennt `draft`→`main`-Merge bei "Ende deploy" nicht. Merge musste manuell nachgeholt werden.
-- **Offenes TODO für nächste Session:** Den git-sync Skill in der Claude-App so anpassen, dass er vor jedem Trigger erst `.claude/CLAUDE.md` im Repo-Root liest und dortige Overrides respektiert. Konkreter Text-Vorschlag in Chat-History der 24.04.2026-Session dokumentiert.
-
-## Extern-Tasks für Bolle (alle erledigt oder niedrige Priorität)
-
-### ✅ Erledigt in dieser Session
-- Resend-Audience angelegt
-- Worker Env-Vars gesetzt
-- Worker deployed
-- Umami live und trackt Pageviews
-
-### 🟡 Niedrige Priorität (kein Blocker)
-
-1. **`RESEND_API_KEY` von Plaintext auf Secret umstellen** in Cloudflare Worker Variables — derzeit liegt der Key im Klartext sichtbar; Umstellung auf Secret ist Security-Hygiene.
-2. **Plausible-Abo kündigen** — bei plausible.io prüfen, ob noch ein laufendes Abo existiert, ansonsten formal canceln.
-3. **P1-15 End-to-End-Smoke-Test** — der eigentliche Feature-Test noch offen. Bolle soll einmal den Flow durchgehen:
-   - `machsleicht.de/einladung/erstellen` → Einladung erstellen
-   - Partyseite-CTA klicken → Creator mit Vorfüllung
-   - Partyseite fertigstellen mit Test-Email
-   - Newsletter-Checkbox aktivieren + "Edit-Link erhalten"
-   - Zwei Mails checken (Edit-Link + DOI-Bestätigung)
-   - DOI-Link klicken → Erfolgsseite
-   - In Resend-Dashboard → Audience → Contact sichtbar
-   - In Umami Dashboard → Events `invite-to-party-cta`, `edit-link-email-submit`, `newsletter-opt-in` registriert
-
-## Nächste Schritte
-
-### Kurzfristig (nach P1-15-Smoke-Test durch Bolle)
-- **2 Wochen messen:** Opt-In-Rate der Newsletter-Checkbox bei Partyseite-Erstellern + Click-Rate des Partyseite-CTAs im Einladungstool. Bei <10% Opt-In: UX-Überarbeitung Checkbox-Text oder Platzierung.
-- **DOI-Confirm-Rate tracken:** Umami-Event auf `/api/newsletter-confirm` zählen vs. `newsletter-opt-in`-Events
-- **Git-Sync Skill-Update** in der Claude-App (siehe "Git-Workflow-Erkenntnis" oben)
-
-### P1-15 Follow-ups (nach Datenpunkten)
-- **Schatzsuche-Capture:** gleiche Mechanik auf Schatzsuche-Output übertragen (1–2h Template-Reuse)
-- **Nurture-Flow schreiben (P3-5):** Welcome-Mail, 7-Tage-vorher-Reminder, 1-Tag-vorher-Checkliste. Erinnerungs-Cron als Worker scheduled event.
-- **Planer-Output-Capture:** separater Hebel laut Scope — Erinnerungs-Mail 7 Tage vor Geburtstag
+- P1-8 nächstes Motto-Cluster: Detektiv → Meerjungfrau → Prinzessin/Superheld
+- P3-4 Druckvorlagen pro Motto — Feuerwehr braucht: Crew-Diplom-Vorlage, 12 Dienstausweise zum Ausdrucken, Verdächtigen-Karten + Fall-Akte für 9-12 Brandermittlung, Theorie-Briefing-Plakate (5 W, Brandklassen, Rauch-am-Boden)
+- P2-23 Planer-Output auf Elite-Niveau heben (Voraussetzung für P3 eingewebte CTAs)
 
 ### Aus vorheriger Session weiter offen
 - **🗓️ 08.05.2026:** Migadu-Trial-Ende — Mini ($90/J) vs. Micro ($19/J) entscheiden
 - **GMX-IMAP-Einbindung** für beide Business-Mailboxen (~15 Min)
 - **#11 P1-17** DSGVO-Hygiene Partyseite A+C (1,5h)
 - **#16 P1-12** Einschulung SEO-Cluster — Launch bis 31.05.
+- **P1-15 Smoke-Test** (Newsletter-DOI-Flow) durch Bolle ausstehend
 
 ## Offene Fragen
 
-- **Umami Free-Tier-Stabilität:** 1M Events/Monat kostenlos, darüber $0.00002/Event. Realistisch für machsleicht.de weit unter 1M. Wenn Umami irgendwann Free-Tier beschneidet → Fallback ist Self-Host (MIT-Lizenz).
-- **Opt-In-Konversion unklar:** Realistische Annahme 15–30% der Partyseite-Ersteller klicken Newsletter-Checkbox. Erste 2 Wochen zeigen ob UX reicht oder angepasst werden muss.
-- **Einladung → Partyseite Funnel-Rate:** Noch keine Baseline. Bei <5% Conversion wäre die ganze Variante-A-Architektur unterdimensioniert → dann direkt Capture am Einladungstool nötig.
-- **DMARC-Einstellung machsleicht.de:** Aktuell `p=none`, nach 2 Wochen stabiler Warmup-Phase auf `p=quarantine` ziehen.
+- **Feuerwehr-Mainseite-Status:** Ich habe nur die 3 Altersgruppen-Seiten gebaut. Ob `kindergeburtstag/feuerwehr.html` als Übersichts-Mainseite noch dünn ist und nachgezogen werden muss, ist nicht geprüft. Quick-Check beim nächsten Mal.
+- **OG-Bilder fehlen:** `og-feuerwehr-3.png`, `og-feuerwehr-6.png`, `og-feuerwehr-9.png` werden referenziert, müssen aber noch erstellt werden (analog zu Einhorn/Safari).
+- **Sub-Tipp im 9-12-Wow zur UV-Taschenlampe:** Tonic-Wasser oder UV-Stifte zum Schreiben versteckter Hinweise — funktioniert in der Praxis. Eltern, die das machen, bestätigen das. Hat aber keine Quellen-Referenz, ist Erfahrungs-Hinweis.
 
 ## Status der Site nach diesem Deploy
 
-- **Plausible vollständig weg aus dem Code** — keine plausible.io-Referenzen mehr in HTML/JS
-- **Umami-Tracking live und verifiziert** auf allen statischen Seiten (Netlify-Build durchgelaufen, Pageviews kommen im Dashboard an)
-- **Worker-Tracking (Creator + Partyseite) deployed** — ab dem nächsten Besuch wird getrackt
-- **P1-15 Feature produktionsreif und deployed** — Newsletter-DOI-Flow funktional, bereit für realen Smoke-Test durch Bolle
-- **Repo:** 40 PBIs in Roadmap, P1-15 Code + Deploy komplett (Variante A), wartet nur noch auf End-to-End-Test
+- **Feuerwehr-Cluster komplett:** alle 3 Altersgruppen Elite-Niveau, kohärentes Story-Framing, Schicht-Appell als Signature-Ritual über alle Altersstufen, Bildungswert mit Bezug zu Deutscher Brandschutzerziehung
+- **Brandschutz-Erziehung als USP:** Diese Seiten unterscheiden sich von Konkurrenten dadurch, dass sie echten Lehrwert haben (5 W beim Notruf, Brandklassen-Theorie, Rauch-am-Boden) — verpackt in Krimi-Mechanik, nicht als Schulstunde
+- **Multi-Verdächtigen-Krimi für 9-12:** Plot-Twist mit „Wagner-Akten-Vernichtung" hebt die Brandermittlung über reine Detektiv-Standard hinaus — Eigenleistung, nicht aus Vorlage übernommen
+- **Repo:** P1-8 Fortschritt: Einhorn ✅, Feuerwehr ✅, Safari (in Arbeit, 6-8 ✅), Weltraum/Detektiv/Meerjungfrau/Prinzessin/Superheld offen

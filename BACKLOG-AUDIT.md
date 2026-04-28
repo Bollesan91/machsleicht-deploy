@@ -34,7 +34,7 @@
 | 11 | ⏳ | **P1** | P2-20 | `[KERN]` **Datenübergabe Planer → Tools** | 4–6 Std | Ökosystem-Prinzip umsetzen, nach P1-10 |
 | 12 | ⏳ | **P1** | P2-13 | `[KERN]` Gumroad: 2 Digital-Produkte (Piraten+Dino) | 4h/Produkt | +100€/Monat bei aktuellem Traffic |
 | 13 | ⏳ | **P1** | P2-15 | `[KERN]` Awin-Anmeldung (Otto, myToys, Thalia) | 30 Min + Warten | Prüfung dauert 1–3 Tage, früh starten |
-| 14 | 🔄 | **P1** | P1-8 | `[KERN]` Motto-Hauptseiten auf Elite-Niveau (**Einhorn ✅** → Safari → Weltraum → Feuerwehr → Detektiv → Meerjungfrau → Prinzessin/Superheld; nur Tool-integrierte Mottos) | 4,5–5 Std/Motto | **Einhorn komplett (3-5, 6-8, 9-12 alle Elite, 22.04.2026).** Nächstes: Safari. Content-Inseln (Pferde, Ritter, Zirkus, Baustelle) in P1-8b separat. Marken-Mottos zurückgestellt |
+| 14 | 🔄 | **P1** | P1-8 | `[KERN]` Motto-Hauptseiten auf Elite-Niveau (**Einhorn ✅** → **Safari** (6-8 ✅) → **Feuerwehr** (3-5 ✅, 6-8 ✅, 9-12 ✅) → Weltraum → Detektiv → Meerjungfrau → Prinzessin/Superheld; nur Tool-integrierte Mottos) | 4,5–5 Std/Motto | **Einhorn komplett, Feuerwehr komplett (alle 3 Altersgruppen, 28.04.2026, parallel zu Safari-3-5/9-12).** Nächstes: Safari fertigstellen (3-5, 9-12), dann Weltraum. Content-Inseln (Pferde, Ritter, Zirkus, Baustelle) in P1-8b separat. Marken-Mottos zurückgestellt |
 | 15 | ⏳ | **P1** | P1-12 | `[TEST]` **Einschulung SEO-Cluster** (5–8 Landingpages, **kein Planer**) | 1,5–2 Tage | **Launch bis 31.05.** Planer-Upgrade nur wenn ≥100 Visits/Woche im Juli |
 
 ### Mittelfristig (Mai–Juli)
@@ -236,12 +236,12 @@
 
 **Reihenfolge P1-8 (nur Tool-integrierte markenfreie Mottos):**
 
-1. **Einhorn** (Standard → Elite) — als nächstes. Story-Framing vorher definieren (z.B. „Einhorn-Abenteuer im Wolkenwald") statt nur Dino-Template-Copy.
-2. **Safari** (Standard → Elite)
-3. **Weltraum** (Standard → Elite) — altersübergreifend
-4. **Feuerwehr** (Standard → Elite) — *Hinweis:* hat keine Schatzsuche, aber Einladung vorhanden → lohnt trotzdem
+1. **Einhorn** ✅ erledigt
+2. **Safari** — 6-8 ✅ erledigt, 3-5 + 9-12 in Arbeit (parallele Sessions)
+3. **Feuerwehr** ✅ **erledigt 28.04.2026 (alle 3 Altersgruppen Elite, parallel zu Safari)** — Story-Doc `_dev/docs/feuerwehr-story.md`. Brandermittlung als Multi-Verdächtigen-Krimi mit Plot-Twist (Wow 9-12), Helm-Bemalen als Wow-Anker (3-5), 12 Dienstausweise konsequent in Anleitungen verankert (6-8). Gesamtgrößen: 82/101/97 KB. *Hinweis:* Feuerwehr hat keine Schatzsuche, aber Einladung vorhanden — Sticky-Bar entsprechend ohne Schatzsuche-Link
+4. **Weltraum** (Standard → Elite) — altersübergreifend, nächstes
 5. **Detektiv** (Dünn → Elite)
-6. **Meerjungfrau** (Dünn → Elite) — *Hinweis:* wie Feuerwehr, keine Schatzsuche
+6. **Meerjungfrau** (Dünn → Elite) — *Hinweis:* keine Schatzsuche
 7. **Prinzessin + Superheld** — Altersgruppen-Seiten komplett neu anlegen (eigenständiges Sub-Task, ~6 Std pro Motto inkl. 3 neue Seiten)
 
 **Vorgehen pro Motto:**
