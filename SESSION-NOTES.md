@@ -1,6 +1,62 @@
 # Session-Notizen
 
 ## Letzte Session
+**Datum:** 28.04.2026 (Opus 4.7) — P1-8 Safari-6-8-Jahre **Elite-Seite live**, zwei neue PBIs ins Backlog
+
+## Was wurde gemacht
+
+### Safari 6-8 Jahre — Elite-Motto-Seite (P1-8, erste der drei Altersgruppen)
+
+**Ergebnis:** `kindergeburtstag/safari-6-8-jahre.html` — 89 KB, valide, alle 7 validate-all.sh-Stufen grün.
+
+**Story-Framing festgelegt** (in `_dev/docs/safari-story.md` als Konsistenz-Anker für 3-5 und 9-12):
+- Leitnarrativ: "Junior-Ranger-Ausbildung im Tierreservat"
+- Kinder als Anwärter → durchlaufen Stationen → Ranger-Lizenz + Klett-Abzeichen
+- Tier-Sprache durchgehend: "Reservat", "Pirsch", "Wasserloch", "Herde", "Anwärter"
+- Variation pro Altersgruppe: 3-5 "Tier-Helfer", 6-8 "Junior-Ranger-Anwärter", 9-12 "Reservat-Expedition"
+
+**Drei Varianten gebaut:**
+- **Minimal** (24 €, 6 Kinder, 2 h): zwei Spiele (Tierspuren-Pirsch + Tierstimmen-Quiz) + Eid + Mini-Lizenz
+- **Standard** (80 €, 8 Kinder, 3 h): Stations-Rotation mit 4 pädagogisch begründeten Stationen (Tarnung, Tierspuren-Memory, Tierstimmen, Pirsch) + Großspiel "Rette das Löwen-Junge" + Lizenz-Zeremonie. Nach 4 Polish-Fixes auf 9,5/10.
+- **Wow** (120 €+, 10 Kinder, 4 h): Standard plus 5. Beobachtungs-Station (Klassifikations-Mechanik mit gefährlich/gefährdet/ungefährlich) + Schatzsuche-Quest "Verborgener Tempel" mit funktionierendem Lösungswort T-F-S-U → FUSS + Filz-Buschhüte als Highlight. Nach 5 Polish-Fixes auf 9-9,5/10.
+
+**Hygiene durchgeführt:**
+- ausgefuxt-Wettbewerber-Link entfernt (war in Minimal-Variante als Tierspuren-Quelle), durch Eigen-Anleitung "Pfotenabdrücke aus Tonpapier ausschneiden" ersetzt
+- Mowoli + kinder-malvorlagen.com als Drittlinks geprüft (reine Ausmalbilder-Sites, keine Wettbewerber)
+- Affiliate-Link-Dichte 20 → 13 reduziert (Drogerie-Items wie Filzstifte/Stempel/Memory-Karten entlinkt)
+
+**Pflichtelemente alle erfüllt:** HowTo-Schema, FAQPage-Schema (5 Q&As), OG/Twitter, Canonical ohne .html, Breadcrumb, Sticky-Bar, Final-CTA, WhatsApp-Share.
+
+### Strategiediskussion + zwei neue PBIs ins Backlog
+
+Bolle eröffnete Pivot-Frage zu Tease+Leckerli-CTAs vs. Vollpaket. Nach längerer Diskussion (siehe Phase-1/Phase-2-Logik): Entscheidung bleibt **Elite-Content jetzt, Funnel-Optimierung später wenn Traffic da ist**. Begründung deckt sich mit STRATEGIE.md Z.158 ("Monetarisierungs-Tuning bei 80 Visitors/Tag ist Mikrooptimierung").
+
+**Zwei neue PBIs in BACKLOG-AUDIT.md eingetragen:**
+- **P2-23** `[KERN]` Planer-Output auf Elite-Niveau heben (1-2 Tage) — Voraussetzung für eingewebte CTAs
+- **P2-24** `[KERN]` P3 Eingewebte Leckerli-CTAs auf Motto-Seiten (30 Min/Motto) — Phase 2 nach P2-23, Hypothese 3-5× Conversion-Lift
+
+### Wettbewerber-Verweis-Hygiene als Lerneffekt
+
+Während der Session wurde ausgefuxt.de fälschlich als Tierspuren-Quelle verlinkt — ist Wettbewerber laut STRATEGIE.md. Hygiene-Regel jetzt im Sprint-Workflow: bei jedem neuen Drittlink prüfen, ob Wettbewerber.
+
+## Was bleibt als Nächstes
+
+### Sofort offen (P1-8 fortsetzen)
+- **safari-3-5-jahre.html** (~1,5 h) — gleicher Aufbau, "Tier-Helfer"-Variante der Story (Parallel-Session bereits in Arbeit, Ende April)
+- **safari-9-12-jahre.html** (~1,5 h) — gleicher Aufbau, "Reservat-Expedition"-Variante der Story
+- **safari.html Mainseite** ggf. nachziehen (~30 Min)
+
+### Mittelfristig im Backlog
+- P3-4 Druckvorlagen pro Motto — Safari-Lizenz, Tierspuren-Memory, Stationskarten priorisieren
+- P2-23 Planer-Output Elite-Niveau (Voraussetzung für P2-24)
+- P2-24 Leckerli-CTAs auf Motto-Seiten (Phase 2 wenn Traffic vorhanden)
+
+### Strukturelle Beobachtung
+Inkonsistenz zwischen Dino/Einhorn (Vollpaket-Stil) und der Phase-2-Vision (Tease+CTA-Stil) bleibt. Wenn P2-24 später ausgerollt wird, müssen Dino + Einhorn nachgezogen werden.
+
+---
+
+## Vorletzte Session
 **Datum:** 24.04.2026 (Opus 4.7) — Plausible → Umami-Migration + P1-15 Extern-Tasks 1–3 **komplett abgeschlossen und live**
 
 ## Was wurde gemacht

@@ -52,6 +52,8 @@
 | 24 | ⏳ | **P2** | P2-21 | `[KERN]` Seiten-Rollen-Matrix | 1 Tag | Nach P1-11 sinnvoll |
 | 25 | ⏳ | **P2** | P2-22 | `[KERN]` **Site-Wide In-App-Frame** (Modal-Pattern seitenweit) | 1–2 Tage | Retention: kein Tab-Verlust bei Vorschauen & Affiliates |
 | 26 | ⏳ | **P2** | P1-8b | `[LEGACY]` **Content-Inseln-Strategie** (Pferde, Ritter, Zirkus, Baustelle — entweder integrieren oder streichen) | 15 Min Daten-Check + 1–16 Std Umsetzung | GSC-Daten abwarten, vor weiterem Content-Ausbau entscheiden |
+| 26b | ⏳ | **P2** | P2-23 | `[KERN]` **Planer-Output auf Elite-Niveau heben** (muss inhaltlich der Tiefe der Motto-Seiten standhalten — Druckvorlagen, kuratierte Spielanleitungen, Zeitplan mit Story-Anker) | 1–2 Tage | **Voraussetzung für eingewebte Planer-CTAs auf Motto-Seiten (Phase 2).** Aktuell: Motto-Seiten überholen den Planer inhaltlich → Funnel-Versprechen wackelt. Trigger-Reihenfolge: erst Asset-Seiten fertig (P1-8), dann Planer hochziehen, dann CTAs einweben |
+| 26c | ⏳ | **P3** | P2-24 | `[KERN]` **Eingewebte Leckerli-CTAs auf Motto-Seiten** (kontextuelle Mini-CTAs an Story-Anchorpunkten statt nur End-CTA) | 30 Min/Motto | **Phase 2 nach P2-23.** Trigger: wenn Planer-Output Elite-Niveau hat. Test-Hypothese: Mini-CTAs in Story-Flow konvertieren 3–5× besser als End-CTAs (Forschungsstand 2025). Erste Test-Runde auf 3 Mottos, dann auf alle ausrollen falls Conversion-Lift messbar |
 
 ### Vor dem Herbst-Peak (Juli–September)
 
