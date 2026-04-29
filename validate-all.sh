@@ -60,8 +60,8 @@ if [ -f "$DATA" ]; then
   # Count mottos
   GENERIC_COUNT=$(grep -c 'id: "' "$DATA" 2>/dev/null | head -1)
   # More precise: count in GENERIC + LICENSE sections
-  GENERIC_N=$(sed -n '/^var GENERIC/,/^var LICENSE/p' "$DATA" | grep -c 'id: "')
-  LICENSE_N=$(sed -n '/^var LICENSE/,/^var ALL_MOTTOS/p' "$DATA" | grep -c 'id: "')
+  GENERIC_N=$(sed -n '/^var GENERIC/,/^var LICENSE/p' "$DATA" | grep -c 'id: "' 2>/dev/null) || GENERIC_N=0
+  LICENSE_N=$(sed -n '/^var LICENSE/,/^var ALL_MOTTOS/p' "$DATA" | grep -c 'id: "' 2>/dev/null) || LICENSE_N=0
   TOTAL_MOTTOS=$((GENERIC_N + LICENSE_N))
   
   # Count SZ themes

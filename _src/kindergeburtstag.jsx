@@ -943,14 +943,9 @@ function App() {
     dino: "Achtung, Dinos! Ausgraben, forschen und am Ende jubeln — dein Kind wird zum echten Paläontologen.",
     einhorn: "Glitzer, Regenbogen und pure Magie — dein Kind und seine Freunde tauchen ein in eine zauberhafte Welt.",
     feuerwehr: "Tatütata! Die kleine Feuerwehr-Crew meistert jeden Einsatz. Teamwork, Action und strahlende Kinderaugen.",
-    "paw-patrol": "Ryder ruft an! Die Welpen brauchen Hilfe — und dein Kind und seine Freunde retten den Tag!",
-    pokemon: "Die Pokémon-Trainer-Prüfung beginnt! Fangen, kämpfen, Orden sammeln — wer wird Pokémon-Meister?",
-    minecraft: "Creeper besiegen, Erze abbauen, den Enderdrachen bezwingen — Survival-Modus: aktiviert!",
-    frozen: "Elsa braucht Hilfe! Schneezauber, Eispalast und magische Momente warten auf die kleine Crew.",
-    mario: "Münzen sammeln, Bowser besiegen, Prinzessin retten — es wird ein Super-Mario-Tag!",
-    spiderman: "Spinnennetze spannen, Bösewichte fangen, die Stadt retten — dein Kind wird zum Superhelden!",
-    "harry-potter": "Der Hogwarts-Brief ist da! Zauberstäbe, Zaubertränke und magische Prüfungen warten.",
-    ninjago: "Die Ninja-Ausbildung beginnt! Geschicklichkeit, Weisheit und Spinjitzu — wer wird Meister?",
+    detektiv: "Lupe raus, Fingerabdrücke nehmen, Verdächtige verhören — die kleinen Detektive lösen jeden Fall!",
+    dschungel: "Tarzan-Schwung, Tierspuren-Lesen, Brückenbau — eine Expedition durch den wilden Dschungel.",
+    feen: "Feenstaub, Zaubertrank, Regenbogen-Magie — die kleinen Feen erleben ein zauberhaftes Abenteuer.",
   };
 
   // =============================================
@@ -1337,37 +1332,6 @@ function App() {
       </section>
 
       {/* Ratgeber */}
-      <section style={{ maxWidth: 700, margin: "48px auto 0", padding: "0 16px" }}>
-        <div style={{ textAlign: "center", marginBottom: 20 }}>
-          <p style={{ fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--a)", marginBottom: 6 }}>Für Eltern</p>
-          <h2 style={{ fontFamily: "var(--fd)", fontWeight: 900, fontSize: "clamp(20px,4vw,26px)", color: "var(--d)", margin: 0 }}>Motto-Ratgeber</h2>
-          <p style={{ fontSize: 14, color: "var(--m)", marginTop: 8 }}>Du kennst Pokémon oder Ninjago nicht? Unsere Guides erklären alles.</p>
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(150px,1fr))", gap: 10 }}>
-          {[
-            { emoji: "🐾", name: "PAW Patrol", href: "/paw-patrol-guide" },
-            { emoji: "⚡", name: "Pokémon", href: "/pokemon-guide" },
-            { emoji: "⛏️", name: "Minecraft", href: "/minecraft-guide" },
-            { emoji: "❄️", name: "Frozen", href: "/frozen-guide" },
-            { emoji: "🍄", name: "Super Mario", href: "/super-mario-guide" },
-            { emoji: "🕷️", name: "Spider-Man", href: "/spider-man-guide" },
-            { emoji: "⚡", name: "Harry Potter", href: "/harry-potter-guide" },
-            { emoji: "🥷", name: "Ninjago", href: "/ninjago-guide" },
-          ].map((g, i) => (
-            <a key={i} href={g.href} style={{ textDecoration: "none" }}>
-              <div style={{ background: "var(--bg)", border: "1px solid var(--l)", borderRadius: 12, padding: "16px 12px", textAlign: "center", transition: "all 0.2s", cursor: "pointer" }}>
-                <div style={{ fontSize: 28, marginBottom: 6 }}>{g.emoji}</div>
-                <div style={{ fontSize: 13, fontWeight: 700, color: "var(--d)" }}>{g.name}</div>
-                <div style={{ fontSize: 11, color: "var(--a)", marginTop: 4 }}>Guide lesen →</div>
-              </div>
-            </a>
-          ))}
-        </div>
-        <div style={{ textAlign: "center", marginTop: 16 }}>
-          <a href="/ratgeber" style={{ fontSize: 13, color: "var(--a)", fontWeight: 600, textDecoration: "none" }}>Alle Ratgeber ansehen →</a>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer style={{ maxWidth: 700, margin: "40px auto 0", padding: "16px 16px", textAlign: "center", borderTop: "1px solid var(--l)" }}>
         <p style={{ fontSize: 12, color: "var(--m)" }}>
