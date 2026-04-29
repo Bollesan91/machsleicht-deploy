@@ -203,9 +203,6 @@
 .kaufmoment{margin:20px 0;padding:20px;background:#FFFAF5;border-radius:12px;border:1px solid #EDE6DE}
 .tip{background:#FFFAF5;border:1px solid #EDE6DE;border-left:4px solid #E8873D;border-radius:8px;padding:16px 20px;margin:16px 0;font-size:14px}
 @media print{.no-print,.cta,.cta-safety,footer,[style*="position: fixed"],[style*="sticky"]{display:none!important}body{background:#fff!important;color:#000!important;font-size:12pt}a{color:#000!important;text-decoration:none!important}.snippet{border-color:#ccc!important}.print-only{display:block!important}}
-/* SEO-Fallback verstecken bis React fertig ist (verhindert FOUC mit Motto-Cards) */
-.seo-fallback{visibility:hidden}
-body.react-ready .seo-fallback{visibility:hidden} /* bleibt versteckt — React rendert eigenes Grid */
   </style>
   <!-- Lemon Squeezy Checkout Overlay -->
   <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
@@ -242,7 +239,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   <!-- MOTTO CARDS GRID — SEO-FALLBACK (vor React-Mount) -->
   <!-- ============================================ -->
   <h2 style="font-family:'Fraunces',Georgia,serif;font-size:22px;font-weight:800;margin:24px 0 12px">Wähle ein Motto</h2>
-  <div class="decision-cards seo-fallback" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:12px;margin:16px 0 32px">
+  <div class="decision-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:12px;margin:16px 0 32px">
     <a href="/kindergeburtstag/safari" data-motto="safari" class="decision-card" style="text-decoration:none;padding:16px;border-radius:8px;background:#FFFAF5;border:1px solid #EDE6DE;text-align:center;color:#2D2319;transition:all .2s"><span style="font-size:28px;display:block;margin-bottom:4px">🦁</span><span style="font-size:13px;font-weight:600">Safari</span></a>
     <a href="/kindergeburtstag/piraten" data-motto="piraten" class="decision-card" style="text-decoration:none;padding:16px;border-radius:8px;background:#FFFAF5;border:1px solid #EDE6DE;text-align:center;color:#2D2319;transition:all .2s"><span style="font-size:28px;display:block;margin-bottom:4px">🏴‍☠️</span><span style="font-size:13px;font-weight:600">Piraten</span></a>
     <a href="/kindergeburtstag/weltraum" data-motto="weltraum" class="decision-card" style="text-decoration:none;padding:16px;border-radius:8px;background:#FFFAF5;border:1px solid #EDE6DE;text-align:center;color:#2D2319;transition:all .2s"><span style="font-size:28px;display:block;margin-bottom:4px">🚀</span><span style="font-size:13px;font-weight:600">Weltraum</span></a>
@@ -257,7 +254,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   <!-- ============================================ -->
   <h2 style="font-size:22px;font-weight:800;margin:32px 0 16px">Alle Mottos im Überblick</h2>
 
-  <div class="seo-fallback" style="display:grid;grid-template-columns:1fr;gap:12px;margin:0 0 32px">
+  <div style="display:grid;grid-template-columns:1fr;gap:12px;margin:0 0 32px">
     <a href="/kindergeburtstag/safari" id="safari" style="display:block;text-decoration:none;color:#2D2319;padding:16px 20px;background:#FFFAF5;border:1px solid #EDE6DE;border-radius:12px;transition:border-color .2s"><span style="font-size:18px;font-weight:700">🦁 Safari</span> <span style="font-size:14px;color:#6B5D52">— Dschungel-Expedition, Tier-Rallye, Tiermasken basteln. Für alle Altersgruppen.</span></a>
     <a href="/kindergeburtstag/piraten" id="piraten" style="display:block;text-decoration:none;color:#2D2319;padding:16px 20px;background:#FFFAF5;border:1px solid #EDE6DE;border-radius:12px;transition:border-color .2s"><span style="font-size:18px;font-weight:700">🏴‍☠️ Piraten</span> <span style="font-size:14px;color:#6B5D52">— Schatzsuche, Piratenschiff bauen, Seeschlacht. Der Klassiker für jedes Alter.</span></a>
     <a href="/kindergeburtstag/weltraum" id="weltraum" style="display:block;text-decoration:none;color:#2D2319;padding:16px 20px;background:#FFFAF5;border:1px solid #EDE6DE;border-radius:12px;transition:border-color .2s"><span style="font-size:18px;font-weight:700">🚀 Weltraum</span> <span style="font-size:14px;color:#6B5D52">— Sterne sammeln, Planeten-Rallye, Binärcode knacken. Vom Kleinkind bis zur Rakete.</span></a>
