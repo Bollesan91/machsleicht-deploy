@@ -224,6 +224,33 @@ if [ -f "$REPO/netlify/functions/serve-invite.mjs" ]; then
 fi
 echo ""
 
+echo ""
+echo "── STUFE 8: Veraltete Motto-Zahlen (Cut 30.04.2026) ──"
+# Nach Lizenz-Cut: keine Refs auf "17 Mottos", "153 Spiele", "Alle 17 Mottos" mehr
+# Auch keine Lizenz-Motto-Pages oder -Verlinkungen
+STALE_NUMBERS=$(grep -rlE "17 Mottos|153 Spiele|Alle 17 Mottos" --include="*.html" --include="*.js" "$REPO" 2>/dev/null | grep -v "_dev/" | wc -l)
+if [ "$STALE_NUMBERS" -eq 0 ]; then
+  green "Keine veralteten Zahlen (17 Mottos / 153 Spiele) gefunden"
+else
+  red "Veraltete Motto-Zahlen in $STALE_NUMBERS Pages — bitte 9 Mottos / 81 Spiele setzen"
+fi
+
+# Lizenz-Mottos dürfen keine eigene Page-File mehr haben
+LICENSE_FILES=$(find "$REPO/kindergeburtstag" -maxdepth 1 -type f \( -name "frozen*.html" -o -name "harry-potter*.html" -o -name "minecraft*.html" -o -name "ninjago*.html" -o -name "paw-patrol*.html" -o -name "pokemon*.html" -o -name "spider-man*.html" -o -name "super-mario*.html" \) 2>/dev/null | wc -l)
+if [ "$LICENSE_FILES" -eq 0 ]; then
+  green "Keine Lizenz-Motto-Pages mehr im Repo"
+else
+  red "$LICENSE_FILES Lizenz-Motto-Files noch da — sollten gelöscht sein"
+fi
+
+# Verlinkungen auf Lizenz-Mottos sollten nicht mehr existieren (außer in _redirects, _dev, .git)
+LICENSE_LINKS=$(grep -rlE "/kindergeburtstag/(frozen|harry-potter|minecraft|ninjago|paw-patrol|pokemon|spider-man|super-mario)" --include="*.html" --include="*.js" "$REPO" 2>/dev/null | grep -v "_dev/" | wc -l)
+if [ "$LICENSE_LINKS" -eq 0 ]; then
+  green "Keine Lizenz-Motto-Verlinkungen mehr in Pages"
+else
+  yellow "$LICENSE_LINKS Pages verlinken noch auf Lizenz-Mottos (werden via 301 abgefangen, aber sollten gefixt werden)"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
