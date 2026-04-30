@@ -244,11 +244,21 @@ else
 fi
 
 # Verlinkungen auf Lizenz-Mottos sollten nicht mehr existieren (außer in _redirects, _dev, .git)
-LICENSE_LINKS=$(grep -rlE "/kindergeburtstag/(frozen|harry-potter|minecraft|ninjago|paw-patrol|pokemon|spider-man|super-mario)" --include="*.html" --include="*.js" "$REPO" 2>/dev/null | grep -v "_dev/" | wc -l)
+# Pattern deckt ab: /kindergeburtstag/<motto>, /<motto>-guide, /ratgeber/<motto>-fuer-eltern
+LICENSE_LINKS=$(grep -rlE "/kindergeburtstag/(frozen|harry-potter|minecraft|ninjago|paw-patrol|pokemon|spider-man|super-mario)|/(frozen|harry-potter|minecraft|ninjago|paw-patrol|pokemon|spider-man|super-mario)-guide|/ratgeber/(frozen|harry-potter|minecraft|ninjago|paw-patrol|pokemon|spider-man|super-mario)-fuer-eltern" --include="*.html" --include="*.js" "$REPO" 2>/dev/null | grep -v "_dev/" | wc -l)
 if [ "$LICENSE_LINKS" -eq 0 ]; then
   green "Keine Lizenz-Motto-Verlinkungen mehr in Pages"
 else
   yellow "$LICENSE_LINKS Pages verlinken noch auf Lizenz-Mottos (werden via 301 abgefangen, aber sollten gefixt werden)"
+fi
+
+# Body-Text: Lizenz-Marken nicht mehr erwähnen (auch nicht als Vergleich)
+# Nominative Markennutzung wäre rechtlich ok, aber strategisch konsistent: ganz raus
+LICENSE_BRANDS=$(grep -rliP "\b(pok[eé]mon|minecraft|frozen|harry potter|spider-man|super mario|paw patrol|ninjago|eiskönigin|olaf)\b" --include="*.html" --include="*.js" "$REPO" 2>/dev/null | grep -v "_dev/" | wc -l)
+if [ "$LICENSE_BRANDS" -eq 0 ]; then
+  green "Keine Lizenz-Markennamen im Body-Text mehr"
+else
+  yellow "$LICENSE_BRANDS Pages erwähnen noch Lizenz-Markennamen im Body-Text"
 fi
 
 # ── ERGEBNIS ──

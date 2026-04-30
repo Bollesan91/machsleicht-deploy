@@ -1763,8 +1763,7 @@ var GENERIC = [
 ];
 
 var LICENSE = [
-    // LICENSE-Mottos (Frozen, Harry Potter, Minecraft, Ninjago, Paw Patrol, Pokemon,
-    // Spider-Man, Super Mario) wurden am 29.04.2026 entfernt — Markenrechts-Risiko.
+    // Lizenz-Mottos wurden am 29.04.2026 aus dem Tool entfernt — Markenrechts-Risiko.
     // Aufgehoben in /tmp/license-mottos-backup.js falls Reskin-Strategie geplant wird.
 ];
 

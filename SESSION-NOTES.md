@@ -21,6 +21,24 @@ Der Cut vom 29.04. (17→9 Mottos) war strategisch richtig, aber halbfertig: Liz
 - **STRATEGIE.md Sektion 0.7** — Lizenz-Mottos-Cut als feststehendes Leitprinzip dokumentiert mit 4 Begründungen. Damit ist die Frage „war das richtig?" nicht mehr offen.
 - **Validator** komplett grün, alle Stufen PASSED.
 
+## Round 2 (Re-Check): weitere Inkonsistenzen gefixt
+
+Beim manuellen Check fielen Stellen auf, die der erste Cut nicht abgedeckt hatte. Genau das Halb-fertig-Muster vom 29.04., das Bolle verunsichert hatte. Diesmal sauber zu Ende:
+
+- **`ratgeber/index.html` killed**: Page verlinkte 8 Lizenz-Mottos in 2 Sektionen (Card-Grid + Quick-Guides). Da nach Lizenz-Cut leer wäre → Page gelöscht, Ordner gelöscht, 301 in `_redirects` zu `/kindergeburtstag`, Sitemap-Eintrag entfernt.
+- **`spielkarten.html` EXTRA-Block**: 95-Zeilen-JS-Objekt mit Spielmechaniken für alle 8 Lizenz-Mottos (Pokéball-Werfen, Block-Stapeln, Pokemon-Escape etc.) → komplett entfernt. Motto-Grid-Selector reduziert auf 6 Voll-Mottos.
+- **`kindergeburtstag-6-jahre.html`**: Decision-Cards Pokémon/Minecraft/Frozen → Detektiv/Feuerwehr/Einhorn. 4 Body-Text-Stellen neutralisiert (Pokemon-Tischdecke, Minecraft-Block-Bauen, Sammelkarten-Station, Pokemon-Quiz-Beispiele).
+- **`kindergeburtstag-7-jahre.html`**: Komplette Sektion „Mottos für 7-Jährige" mit 4 Decision-Cards (Minecraft, Spider-Man, Harry Potter, Super Mario) + 4 Detail-Absätzen ersetzt durch Detektiv/Feuerwehr/Weltraum/Safari mit echten Spielmechaniken statt Lizenz-Inhalten. Quiz-Beispiel-Fragen, Deko-Hack neutralisiert.
+- **`kindergeburtstag-5-jahre.html`**: Paw-Patrol-Decision-Card → Safari, Tischdecken-Beispiel neutralisiert.
+- **`kindergeburtstag.html` FAQ-Schema**: 3 Stellen (Schema.org JSON-LD + sichtbare FAQ-Details) erwähnten alle 7 Lizenz-Mottos als „beliebteste Mottos 2026" — das wäre direkt von Google indexiert worden. Ersetzt durch die 7 Voll-Mottos mit Altersangaben.
+- **`js/index.js` (compiled React Homepage)**: Ratgeber-Block (1.050 Zeichen mit „Pokémon, Minecraft, Ninjago — was ist das eigentlich?") komplett entfernt + Footer-Ratgeber-Link weg + Trust-Badge „Von Piraten bis Frozen" → „Von Piraten bis Detektiv".
+- **`js/kindergeburtstag-data.js` (tote Datei) gelöscht**: 2.409 Zeilen, wurde nirgends importiert. Build-Output `js/kindergeburtstag.js` ist die einzige genutzte Datei. Build neu ausgeführt nach Source-Änderung.
+- **`party-worker.js`**: Zwei Lizenz-Farb-Mappings (MOTTO_COLORS und embedded MC) enthielten alle Lizenz-Mottos + 5 Zombie-Mottos (Meerjungfrau, Ritter, Zirkus, Baustelle) → reduziert auf 9 Voll-Mottos + Halloween. THEMES analog.
+- **`einhorn-9-12-jahre.html`**: 2 redaktionelle Lizenz-Vergleiche entfernt („Fantasy-Welten wie Harry Potter, Percy Jackson", „spielen Minecraft und Roblox"). Rechtlich nominative Markennutzung wäre zulässig, aber strategisch konsistent: ganz raus.
+- **Validator Stufe 8 erweitert**: Vierter Sub-Check „Keine Lizenz-Markennamen im Body-Text mehr". Verhindert, dass Texte mit Lizenz-Marken künftig wieder reinrutschen.
+
+**Final-Status:** Alle 4 Sub-Checks in Stufe 8 grün. Validator PASSED ohne Warnungen. **Diff Round 1+2 zusammen:** ~242 Files, ca. -45.500 Zeilen netto.
+
 ## Was als nächstes ansteht
 
 **Nicht jetzt strategisch nachdenken.** STRATEGIE.md ist aktualisiert, Cut ist abgeschlossen, alle Inkonsistenzen weg. Nächste Sessions:
