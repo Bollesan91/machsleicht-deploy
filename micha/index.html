@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>🎉 Michas Gewinn-Gala 🎉</title>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Bungee&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold: #ffd700;
+    --hot-pink: #ff1493;
+    --neon-cyan: #00ffff;
+    --deep-red: #b8002e;
+  }
+
+  html, body {
+    min-height: 100%;
+    overflow-x: hidden;
+    font-family: 'Bungee', sans-serif;
+    background: radial-gradient(ellipse at top, #4a0e6e 0%, #1a0033 60%, #000 100%);
+    color: white;
+  }
+
+  /* ============================================
+     INTRO — vereinfacht: nur Fade, kein Vorhang
+     ============================================ */
+  #intro {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: radial-gradient(circle, #2a0845 0%, #000 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1s ease-out, visibility 1s;
+  }
+  #intro.gone {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  /* Vorhang als Hintergrund-Akzent links/rechts (öffnet sich) */
+  .intro-curtain {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50vw;
+    background: repeating-linear-gradient(90deg,
+      #6b0000 0px, #8b0000 12px, #5a0000 24px, #8b0000 36px, #a00000 48px);
+    box-shadow: inset 0 0 80px rgba(0,0,0,0.6);
+    transition: transform 2s cubic-bezier(0.65, 0.05, 0.35, 1);
+  }
+  .intro-curtain.left {
+    left: 0;
+    border-right: 4px solid var(--gold);
+  }
+  .intro-curtain.right {
+    right: 0;
+    border-left: 4px solid var(--gold);
+  }
+  #intro.starting .intro-curtain.left { transform: translateX(-100%); }
+  #intro.starting .intro-curtain.right { transform: translateX(100%); }
+
+  .intro-content {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    max-width: 90vw;
+  }
+
+  .intro-pretitle {
+    font-family: 'Permanent Marker', cursive;
+    color: var(--neon-cyan);
+    font-size: clamp(1rem, 4vw, 1.6rem);
+    text-shadow: 0 0 15px var(--neon-cyan);
+    margin-bottom: 10px;
+  }
+
+  .intro-name {
+    font-family: 'Bungee Shade', cursive;
+    font-size: clamp(3rem, 14vw, 8rem);
+    color: var(--gold);
+    text-shadow: 0 0 30px var(--gold), 0 0 60px #ff8c00, 6px 6px 0 var(--deep-red);
+    line-height: 1;
+    letter-spacing: 0.05em;
+  }
+
+  .intro-photo {
+    width: clamp(140px, 35vw, 200px);
+    height: clamp(140px, 35vw, 200px);
+    border-radius: 50%;
+    border: 8px solid var(--gold);
+    box-shadow: 0 0 40px var(--gold), 0 0 80px var(--hot-pink);
+    margin: 25px auto;
+    background: linear-gradient(135deg, var(--hot-pink), var(--deep-red));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bungee Shade', cursive;
+    font-size: clamp(3rem, 12vw, 5rem);
+    color: white;
+    text-shadow: 4px 4px 0 #000;
+    overflow: hidden;
+  }
+  .intro-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+  .intro-subtitle {
+    font-family: 'Permanent Marker', cursive;
+    color: white;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    margin-top: 15px;
+    text-shadow: 3px 3px 0 var(--deep-red);
+  }
+
+  .start-btn {
+    margin-top: 35px;
+    padding: 20px 40px;
+    font-family: 'Bungee', sans-serif;
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+    background: linear-gradient(135deg, var(--gold), #ff8c00);
+    color: #1a0033;
+    border: 4px solid white;
+    border-radius: 50px;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    box-shadow: 0 0 40px var(--gold), 6px 6px 0 #000;
+    text-shadow: 2px 2px 0 rgba(255,255,255,0.5);
+    transition: transform 0.2s;
+    animation: pulse 1s ease-in-out infinite alternate;
+  }
+  .start-btn:hover { transform: scale(1.08); }
+  .start-btn:active { transform: scale(0.95); }
+  @keyframes pulse {
+    from { filter: brightness(1); }
+    to { filter: brightness(1.3); }
+  }
+
+  /* ============================================
+     STAGE
+     ============================================ */
+  .curtain-side {
+    position: fixed;
+    top: 0;
+    width: 18px;
+    height: 100vh;
+    background: repeating-linear-gradient(90deg,
+      #6b0000 0px, #8b0000 8px, #5a0000 16px, #8b0000 24px, #a00000 32px);
+    box-shadow: 0 0 40px rgba(0,0,0,0.8);
+    z-index: 50;
+    pointer-events: none;
+  }
+  .curtain-side.left { left: 0; border-right: 3px solid var(--gold); }
+  .curtain-side.right { right: 0; border-left: 3px solid var(--gold); }
+  @media (min-width: 700px) {
+    .curtain-side { width: 60px; }
+    .curtain-side.left { border-right-width: 4px; }
+    .curtain-side.right { border-left-width: 4px; }
+  }
+
+  .stage {
+    position: relative;
+    min-height: 100vh;
+    padding: 12px 8px 20px;
+    overflow: hidden;
+  }
+
+  .spotlight {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,248,176,0.25) 0%, transparent 60%);
+    pointer-events: none;
+    animation: sway 4s ease-in-out infinite alternate;
+  }
+  .spotlight.left { top: -100px; left: -200px; }
+  .spotlight.right { top: -100px; right: -200px; animation-direction: alternate-reverse; }
+  @keyframes sway {
+    from { transform: translateX(-50px) rotate(-10deg); }
+    to { transform: translateX(50px) rotate(10deg); }
+  }
+
+  .marquee { text-align: center; margin: 4px auto 10px; position: relative; z-index: 2; }
+
+  .super-title {
+    font-family: 'Bungee Shade', cursive;
+    font-size: clamp(1.3rem, 5.5vw, 3.5rem);
+    color: var(--gold);
+    text-shadow: 0 0 20px var(--gold), 3px 3px 0 var(--deep-red);
+    letter-spacing: 0.05em;
+    line-height: 1;
+    animation: titlePulse 1.2s ease-in-out infinite alternate;
+  }
+  @keyframes titlePulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.03); }
+  }
+
+  .subtitle {
+    font-family: 'Permanent Marker', cursive;
+    font-size: clamp(0.75rem, 2.6vw, 1.3rem);
+    color: var(--neon-cyan);
+    margin-top: 4px;
+    text-shadow: 0 0 12px var(--neon-cyan);
+    transform: rotate(-2deg);
+  }
+
+  .speech-bubble {
+    background: linear-gradient(135deg, #ffeb3b 0%, #ffc107 100%);
+    color: #1a0033;
+    padding: 10px 14px;
+    border-radius: 14px;
+    border: 3px solid #1a0033;
+    max-width: 600px;
+    margin: 0 auto 12px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: clamp(0.8rem, 2.8vw, 1.2rem);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    box-shadow: 4px 4px 0 var(--deep-red), 8px 8px 0 var(--gold);
+    transform: rotate(-1deg);
+    animation: wobble 3s ease-in-out infinite;
+    line-height: 1.25;
+  }
+  @media (min-width: 700px) {
+    .speech-bubble { padding: 16px 20px; border-radius: 18px; border-width: 4px; box-shadow: 5px 5px 0 var(--deep-red), 10px 10px 0 var(--gold); }
+  }
+  @keyframes wobble {
+    0%, 100% { transform: rotate(-1deg); }
+    50% { transform: rotate(1deg); }
+  }
+
+  .countdown { text-align: center; margin: 0 auto 8px; position: relative; z-index: 2; height: 50px; }
+  .countdown-circle {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 3px solid var(--gold);
+    background: rgba(0,0,0,0.7);
+    line-height: 38px;
+    text-align: center;
+    font-family: 'Bungee', sans-serif;
+    font-size: 1.4rem;
+    color: var(--gold);
+    box-shadow: 0 0 20px var(--gold);
+    animation: tick 1s ease-in-out infinite;
+  }
+  @media (min-width: 700px) {
+    .countdown { height: 70px; }
+    .countdown-circle { width: 60px; height: 60px; line-height: 52px; font-size: 1.8rem; border-width: 4px; }
+  }
+  .countdown-circle.urgent {
+    border-color: #ff3030;
+    color: #ff3030;
+    box-shadow: 0 0 30px #ff3030;
+    animation: tickFast 0.5s ease-in-out infinite;
+  }
+  @keyframes tick {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+  @keyframes tickFast {
+    0%, 100% { transform: scale(1) rotate(-3deg); }
+    50% { transform: scale(1.15) rotate(3deg); }
+  }
+
+  .doors {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 12px;
+    position: relative;
+    z-index: 2;
+  }
+  @media (min-width: 700px) {
+    .doors { gap: 25px; padding: 0 20px; }
+  }
+
+  .door-wrapper {
+    aspect-ratio: 2/3;
+    position: relative;
+  }
+  @media (min-width: 700px) {
+    .door-wrapper { aspect-ratio: 3/5; max-height: 460px; }
+  }
+
+  /* Inhalt liegt unter der Tür */
+  .door-content {
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    background: radial-gradient(circle at center, #1a0033 0%, #000 100%);
+    border: 4px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 0.4s ease-out 0.4s, transform 0.5s cubic-bezier(0.5, 1.7, 0.5, 1) 0.4s;
+  }
+  @media (min-width: 700px) {
+    .door-content { border-width: 6px; padding: 12px; }
+  }
+  .door.open + .door-content,
+  .door-wrapper .door.open ~ .door-content {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .door {
+    position: absolute;
+    inset: 0;
+    transition: transform 0.8s cubic-bezier(0.7, 0, 0.3, 1), opacity 0.6s ease-out 0.3s;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .door.open {
+    transform: translateX(-110%) rotate(-12deg);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .door-face {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background:
+      linear-gradient(180deg, rgba(255,215,0,0.15), transparent 30%),
+      repeating-linear-gradient(0deg, #c9302c 0px, #e74c3c 4px, #b02a2a 8px),
+      linear-gradient(135deg, #d63031 0%, #8b0000 100%);
+    border: 4px solid var(--gold);
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.5), 0 0 20px rgba(255,215,0,0.4), 0 8px 30px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    position: relative;
+  }
+  @media (min-width: 700px) {
+    .door-face { border-width: 6px; padding: 15px; }
+  }
+
+  .door-number {
+    font-family: 'Bungee Shade', cursive;
+    font-size: clamp(2.8rem, 11vw, 7rem);
+    color: var(--gold);
+    text-shadow: 0 0 15px var(--gold), 3px 3px 0 #000;
+    line-height: 1;
+  }
+
+  .door-label {
+    font-family: 'Bungee', sans-serif;
+    font-size: clamp(0.55rem, 2vw, 1.05rem);
+    color: white;
+    margin-top: 6px;
+    letter-spacing: 0.05em;
+    text-shadow: 1px 1px 0 #000;
+    white-space: nowrap;
+  }
+
+  .star {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--gold);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: twinkle 1.5s ease-in-out infinite alternate;
+  }
+  @media (min-width: 700px) {
+    .star { width: 18px; height: 18px; }
+  }
+  .star:nth-child(1) { top: 6px; left: 6px; }
+  .star:nth-child(2) { top: 8px; right: 6px; animation-delay: 0.3s; }
+  .star:nth-child(3) { bottom: 10px; left: 6px; animation-delay: 0.6s; }
+  .star:nth-child(4) { bottom: 12px; right: 6px; animation-delay: 0.9s; }
+  @keyframes twinkle {
+    from { opacity: 0.3; transform: scale(0.8) rotate(0deg); }
+    to { opacity: 1; transform: scale(1.2) rotate(180deg); }
+  }
+
+  .door:hover:not(.open) .door-face {
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.5), 0 0 50px var(--gold), 0 15px 50px rgba(255,215,0,0.5);
+    transform: scale(1.02);
+    transition: all 0.3s;
+  }
+
+  .reveal {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+  }
+  .reveal-emoji {
+    font-size: clamp(2.5rem, 11vw, 6rem);
+    line-height: 1;
+    animation: bounceIn 0.8s cubic-bezier(0.5, 1.7, 0.5, 1);
+  }
+  .reveal-text {
+    font-family: 'Permanent Marker', cursive;
+    color: white;
+    margin-top: 8px;
+    font-size: clamp(0.65rem, 2.2vw, 1.15rem);
+    text-shadow: 2px 2px 0 #000;
+    line-height: 1.15;
+  }
+  .reveal.zonk .reveal-text { color: #ff6b6b; }
+  @keyframes bounceIn {
+    0% { transform: scale(0); opacity: 0; }
+    60% { transform: scale(1.3); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+
+  .action-zone {
+    margin: 25px auto 0;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    min-height: 100px;
+    padding: 0 20px;
+  }
+  .action-btn {
+    font-family: 'Bungee', sans-serif;
+    font-size: clamp(0.95rem, 3.5vw, 1.3rem);
+    padding: 16px 28px;
+    border: 4px solid #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    text-shadow: 2px 2px 0 #000;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+    margin: 8px;
+    color: white;
+  }
+  .action-btn.trade {
+    background: linear-gradient(135deg, var(--hot-pink), #ff6b35);
+    box-shadow: 0 0 30px var(--hot-pink), 6px 6px 0 #000;
+    animation: pulse 1s ease-in-out infinite alternate;
+  }
+  .action-btn.cash {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    box-shadow: 0 0 30px #2ecc71, 6px 6px 0 #000;
+  }
+  .action-btn.risk {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    box-shadow: 0 0 30px #e74c3c, 6px 6px 0 #000;
+    animation: pulse 0.7s ease-in-out infinite alternate;
+  }
+  .action-btn:hover { transform: translateY(-3px) scale(1.05); }
+  .action-btn:active { transform: translateY(2px); }
+
+  .cliffhanger {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 90;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .cliffhanger.show { display: flex; animation: fadeIn 0.5s ease-out; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .cliff-content {
+    max-width: 500px;
+    text-align: center;
+    background: linear-gradient(135deg, #2a0845, #1a0033);
+    padding: 30px 25px;
+    border-radius: 20px;
+    border: 4px solid var(--gold);
+    box-shadow: 0 0 60px var(--gold);
+  }
+  .cliff-title {
+    font-family: 'Bungee Shade', cursive;
+    color: var(--gold);
+    font-size: clamp(1.8rem, 7vw, 3rem);
+    text-shadow: 0 0 20px var(--gold), 4px 4px 0 var(--deep-red);
+    line-height: 1;
+  }
+  .cliff-text {
+    font-family: 'Permanent Marker', cursive;
+    color: white;
+    font-size: clamp(1rem, 3.8vw, 1.4rem);
+    margin: 20px 0;
+    line-height: 1.3;
+    text-shadow: 2px 2px 0 #000;
+  }
+  .cliff-btns { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+
+  .fake-postcard {
+    background: linear-gradient(135deg, #87ceeb 0%, #f0e68c 100%);
+    color: #333;
+    padding: 8px;
+    border: 3px dashed #c0392b;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .postcard-emoji { font-size: clamp(1.8rem, 7vw, 3rem); }
+  .postcard-stamp {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: white;
+    color: #c0392b;
+    padding: 2px 5px;
+    font-family: 'Bungee', sans-serif;
+    font-size: clamp(0.5rem, 1.8vw, 0.75rem);
+    border: 2px solid #c0392b;
+    transform: rotate(8deg);
+  }
+  .postcard-title {
+    font-family: 'Permanent Marker', cursive;
+    color: #c0392b;
+    font-size: clamp(0.7rem, 2.5vw, 1.3rem);
+    margin-top: 6px;
+    text-align: center;
+    line-height: 1.1;
+  }
+  .postcard-price {
+    font-family: 'Bungee', sans-serif;
+    background: white;
+    color: #1a0033;
+    padding: 3px 8px;
+    border-radius: 12px;
+    margin-top: 6px;
+    font-size: clamp(0.55rem, 1.8vw, 0.9rem);
+    box-shadow: 2px 2px 0 #c0392b;
+  }
+  @keyframes rip {
+    0% { transform: scale(1) rotate(0deg); opacity: 1; }
+    50% { transform: scale(1.3) rotate(15deg); opacity: 0.5; }
+    100% { transform: scale(2.5) rotate(45deg); opacity: 0; }
+  }
+
+  .finale {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255,215,0,0.4) 0%, rgba(0,0,0,0.95) 70%);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.6s ease-out;
+  }
+  .finale.show { display: flex; }
+  .finale-content { text-align: center; max-width: 600px; position: relative; z-index: 2; }
+  .finale-title {
+    font-family: 'Bungee Shade', cursive;
+    font-size: clamp(2.2rem, 10vw, 5rem);
+    color: var(--gold);
+    text-shadow: 0 0 30px var(--gold), 0 0 60px #ff8c00, 4px 4px 0 var(--deep-red);
+    line-height: 1;
+    animation: finaleBounce 0.8s cubic-bezier(0.5, 1.7, 0.5, 1);
+  }
+  .finale-emoji {
+    font-size: clamp(5rem, 20vw, 9rem);
+    margin: 15px 0;
+    animation: spinZoom 1.5s ease-out;
+    display: inline-block;
+  }
+  .finale-msg {
+    font-family: 'Permanent Marker', cursive;
+    font-size: clamp(1.3rem, 5vw, 2.2rem);
+    color: white;
+    line-height: 1.3;
+    text-shadow: 3px 3px 0 var(--deep-red), 0 0 20px var(--hot-pink);
+    margin-top: 10px;
+  }
+  .finale-year {
+    font-family: 'Bungee Shade', cursive;
+    color: var(--neon-cyan);
+    font-size: clamp(2rem, 9vw, 4rem);
+    margin-top: 10px;
+    text-shadow: 0 0 25px var(--neon-cyan), 4px 4px 0 var(--deep-red);
+  }
+  .finale-sub {
+    font-family: 'Bungee', sans-serif;
+    font-size: clamp(0.95rem, 3.3vw, 1.3rem);
+    color: white;
+    margin-top: 20px;
+    letter-spacing: 0.05em;
+  }
+  @keyframes finaleBounce {
+    0% { transform: scale(0) rotate(-180deg); }
+    60% { transform: scale(1.1) rotate(10deg); }
+    100% { transform: scale(1) rotate(0deg); }
+  }
+  @keyframes spinZoom {
+    0% { transform: scale(0) rotate(0deg); }
+    100% { transform: scale(1) rotate(720deg); }
+  }
+
+  .confetti {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    pointer-events: none;
+    animation: confettiFall linear forwards;
+  }
+  @keyframes confettiFall {
+    to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+  }
+
+  .glitter {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: var(--gold);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: glitterTwinkle 2s ease-in-out infinite alternate;
+    z-index: 1;
+  }
+  @keyframes glitterTwinkle {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1.5); }
+  }
+
+  .restart {
+    margin-top: 25px;
+    background: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: 'Bungee', sans-serif;
+    cursor: pointer;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    transition: all 0.2s;
+  }
+  .restart:hover { background: var(--gold); color: #1a0033; }
+
+  .sound-toggle {
+    position: fixed;
+    top: 12px;
+    right: 75px;
+    z-index: 200;
+    background: rgba(0,0,0,0.7);
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== INTRO ===== -->
+<div id="intro">
+  <div class="intro-curtain left"></div>
+  <div class="intro-curtain right"></div>
+  <div class="intro-content">
+    <p class="intro-pretitle">★ Begrüßen Sie mit mir den Kandidaten ★</p>
+    <h1 class="intro-name">MICHA!</h1>
+    <div class="intro-photo">
+      <!-- FOTO HIER: <img src="micha.jpg" alt="Micha"> -->
+      M
+    </div>
+    <p class="intro-subtitle">DIE GROSSE GEBURTSTAGSSHOW</p>
+    <button class="start-btn" onclick="startShow()">🎬 SHOW STARTEN</button>
+  </div>
+</div>
+
+<button class="sound-toggle" id="soundToggle" onclick="toggleSound()">🔊</button>
+
+<div class="curtain-side left"></div>
+<div class="curtain-side right"></div>
+
+<div class="stage">
+  <div class="spotlight left"></div>
+  <div class="spotlight right"></div>
+
+  <header class="marquee">
+    <h1 class="super-title">MICHAS<br>GEWINN-GALA</h1>
+    <p class="subtitle">★ Drei Tore. Ein Hauptgewinn. ★</p>
+  </header>
+
+  <div class="speech-bubble" id="speech">
+    🎤 Liebe Zuschauer, lieber Micha! Hinter einem dieser Tore wartet der HAUPTGEWINN! Wähle dein Glückstor!
+  </div>
+
+  <div class="countdown" id="countdown"></div>
+
+  <div class="doors">
+    <div class="door-wrapper">
+      <div class="door" data-door="1" onclick="openDoor(1)">
+        <div class="door-face">
+          <div class="star"></div><div class="star"></div>
+          <div class="star"></div><div class="star"></div>
+          <div class="door-number">1</div>
+          <div class="door-label">TOR 1</div>
+        </div>
+      </div>
+      <div class="door-content" id="back1"></div>
+    </div>
+    <div class="door-wrapper">
+      <div class="door" data-door="2" onclick="openDoor(2)">
+        <div class="door-face">
+          <div class="star"></div><div class="star"></div>
+          <div class="star"></div><div class="star"></div>
+          <div class="door-number">2</div>
+          <div class="door-label">TOR 2</div>
+        </div>
+      </div>
+      <div class="door-content" id="back2"></div>
+    </div>
+    <div class="door-wrapper">
+      <div class="door" data-door="3" onclick="openDoor(3)">
+        <div class="door-face">
+          <div class="star"></div><div class="star"></div>
+          <div class="star"></div><div class="star"></div>
+          <div class="door-number">3</div>
+          <div class="door-label">TOR 3</div>
+        </div>
+      </div>
+      <div class="door-content" id="back3"></div>
+    </div>
+  </div>
+
+  <div class="action-zone" id="actionZone"></div>
+</div>
+
+<div class="cliffhanger" id="cliffhanger">
+  <div class="cliff-content">
+    <h2 class="cliff-title">STOPP!</h2>
+    <p class="cliff-text">
+      🎤 Micha, halt! Bevor du das letzte Tor öffnest...<br><br>
+      <strong>Ich biete dir 50€ in BAR!</strong><br>
+      Sicher ist sicher!<br><br>
+      Was machst du?
+    </p>
+    <div class="cliff-btns">
+      <button class="action-btn cash" onclick="cliffChoice('cash')">💰 ICH NEHM DAS GELD</button>
+      <button class="action-btn risk" onclick="cliffChoice('risk')">🎰 ICH RISKIER'S!</button>
+    </div>
+  </div>
+</div>
+
+<div class="finale" id="finale">
+  <div class="finale-content">
+    <h2 class="finale-title">JACKPOT!</h2>
+    <div class="finale-emoji">🏝️✈️🍹</div>
+    <p class="finale-msg">DU FLIEGST<br>NACH MALLORCA!</p>
+    <p class="finale-year">★ 2026 ★</p>
+    <p class="finale-sub">Reise komplett bezahlt 💸<br><br>HERZLICHEN GLÜCKWUNSCH,<br>MICHA! 🎂🎉</p>
+    <button class="restart" onclick="location.reload()">↺ NOCHMAL SPIELEN</button>
+  </div>
+</div>
+
+<script>
+  // ===== AUDIO =====
+  // HTML5 Audio mit Pixabay/Mixkit Sources - stabiler auf iOS als Web Audio
+  const sounds = {
+    laugh: null,
+    cheer: null,
+    aww: null,
+    buzzer: null,
+    fanfare: null,
+    drumroll: null
+  };
+
+  let soundOn = true;
+  let bgMusic = null;
+
+  // Sound-URLs (stabil über CDN)
+  const SOUND_URLS = {
+    laugh: 'https://cdn.pixabay.com/audio/2022/03/15/audio_1d7f0b5e2f.mp3', // Sitcom laugh - Fallback wenn nicht geladen
+    cheer: 'https://cdn.pixabay.com/audio/2022/03/24/audio_d0c0a90a5b.mp3',
+    aww: 'https://cdn.pixabay.com/audio/2022/01/18/audio_8db1f1b5a5.mp3',
+    buzzer: 'https://cdn.pixabay.com/audio/2021/08/04/audio_dc39bde808.mp3',
+    fanfare: 'https://cdn.pixabay.com/audio/2022/03/10/audio_270ba62b5f.mp3'
+  };
+
+  // Web Audio Fallback (synthetisch)
+  let audioCtx = null;
+  function getCtx() {
+    if (!audioCtx) {
+      try {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      } catch(e) { return null; }
+    }
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    return audioCtx;
+  }
+
+  function toggleSound() {
+    soundOn = !soundOn;
+    document.getElementById('soundToggle').textContent = soundOn ? '🔊' : '🔇';
+    if (!soundOn) {
+      stopBgMusic();
+      // Alle laufenden Sounds stoppen
+      Object.values(sounds).forEach(a => { if (a) { a.pause(); a.currentTime = 0; } });
+    } else if (bgMusic === null) {
+      startBgMusic();
+    }
+  }
+
+  // Synthetische Sounds als Fallback - laufen IMMER, auch ohne Internet
+  function synthTusch() {
+    const ctx = getCtx();
+    if (!ctx || !soundOn) return;
+    const notes = [[523.25, 0], [659.25, 0.12], [783.99, 0.24], [1046.50, 0.36], [1046.50, 0.55]];
+    notes.forEach(([freq, delay], i) => {
+      const o = ctx.createOscillator();
+      const g = ctx.createGain();
+      o.type = 'square';
+      o.frequency.value = freq;
+      const t0 = ctx.currentTime + delay;
+      const dur = i === notes.length - 1 ? 0.6 : 0.15;
+      g.gain.setValueAtTime(0, t0);
+      g.gain.linearRampToValueAtTime(0.2, t0 + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
+      o.connect(g).connect(ctx.destination);
+      o.start(t0);
+      o.stop(t0 + dur);
+    });
+  }
+
+  function synthBuzzer() {
+    const ctx = getCtx();
+    if (!ctx || !soundOn) return;
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    o.type = 'sawtooth';
+    o.frequency.setValueAtTime(180, ctx.currentTime);
+    o.frequency.exponentialRampToValueAtTime(60, ctx.currentTime + 0.8);
+    g.gain.setValueAtTime(0.25, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.8);
+    o.connect(g).connect(ctx.destination);
+    o.start();
+    o.stop(ctx.currentTime + 0.8);
+  }
+
+  // Synthetisches Gelächter - mehrere "Ha-Ha"-Pulse mit zufälligen Frequenzen
+  function synthLaugh() {
+    const ctx = getCtx();
+    if (!ctx || !soundOn) return;
+    const numPeople = 12; // 12 Personen lachen
+    for (let p = 0; p < numPeople; p++) {
+      const baseFreq = 160 + Math.random() * 280; // verschiedene Stimmlagen
+      const numHas = 5 + Math.floor(Math.random() * 4);
+      const personDelay = Math.random() * 0.4;
+      for (let h = 0; h < numHas; h++) {
+        const o = ctx.createOscillator();
+        const g = ctx.createGain();
+        o.type = Math.random() > 0.5 ? 'sawtooth' : 'square';
+        const haFreq = baseFreq + (Math.random() * 80 - 40);
+        const t0 = ctx.currentTime + personDelay + h * (0.15 + Math.random() * 0.08);
+        o.frequency.setValueAtTime(haFreq, t0);
+        o.frequency.exponentialRampToValueAtTime(haFreq * 0.5, t0 + 0.12);
+        g.gain.setValueAtTime(0, t0);
+        g.gain.linearRampToValueAtTime(0.12, t0 + 0.02); // 3x lauter als vorher
+        g.gain.exponentialRampToValueAtTime(0.001, t0 + 0.14);
+        const filter = ctx.createBiquadFilter();
+        filter.type = 'bandpass';
+        filter.frequency.value = haFreq * 1.8;
+        filter.Q.value = 1.5;
+        o.connect(filter).connect(g).connect(ctx.destination);
+        o.start(t0);
+        o.stop(t0 + 0.16);
+      }
+    }
+  }
+
+  function synthCheer(duration = 3) {
+    const ctx = getCtx();
+    if (!ctx || !soundOn) return;
+    const bufferSize = ctx.sampleRate * duration;
+    const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+      const envelope = Math.sin(i / ctx.sampleRate * Math.PI / duration);
+      data[i] = (Math.random() * 2 - 1) * envelope * 0.4;
+    }
+    const noise = ctx.createBufferSource();
+    noise.buffer = buffer;
+    const filter = ctx.createBiquadFilter();
+    filter.type = 'bandpass';
+    filter.frequency.value = 2000;
+    filter.Q.value = 0.5;
+    const g = ctx.createGain();
+    g.gain.value = 0.5;
+    noise.connect(filter).connect(g).connect(ctx.destination);
+    noise.start();
+    // Gelächter dazumischen
+    synthLaugh();
+  }
+
+  function synthAww() {
+    const ctx = getCtx();
+    if (!ctx || !soundOn) return;
+    const dur = 1.5;
+    const o = ctx.createOscillator();
+    const o2 = ctx.createOscillator();
+    const g = ctx.createGain();
+    o.type = 'sine';
+    o2.type = 'sawtooth';
+    o.frequency.setValueAtTime(220, ctx.currentTime);
+    o.frequency.linearRampToValueAtTime(140, ctx.currentTime + dur);
+    o2.frequency.setValueAtTime(110, ctx.currentTime);
+    o2.frequency.linearRampToValueAtTime(70, ctx.currentTime + dur);
+    g.gain.setValueAtTime(0, ctx.currentTime);
+    g.gain.linearRampToValueAtTime(0.08, ctx.currentTime + 0.3);
+    g.gain.linearRampToValueAtTime(0.06, ctx.currentTime + dur - 0.3);
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + dur);
+    o.connect(g);
+    o2.connect(g);
+    g.connect(ctx.destination);
+    o.start();
+    o2.start();
+    o.stop(ctx.currentTime + dur);
+    o2.stop(ctx.currentTime + dur);
+  }
+
+  function synthDoorOpen() {
+    const ctx = getCtx();
+    if (!ctx || !soundOn) return;
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    o.type = 'sine';
+    o.frequency.setValueAtTime(100, ctx.currentTime);
+    o.frequency.exponentialRampToValueAtTime(800, ctx.currentTime + 0.5);
+    g.gain.setValueAtTime(0.15, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.5);
+    o.connect(g).connect(ctx.destination);
+    o.start();
+    o.stop(ctx.currentTime + 0.5);
+  }
+
+  function synthTick() {
+    const ctx = getCtx();
+    if (!ctx || !soundOn) return;
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    o.type = 'square';
+    o.frequency.value = 800;
+    g.gain.setValueAtTime(0.1, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.05);
+    o.connect(g).connect(ctx.destination);
+    o.start();
+    o.stop(ctx.currentTime + 0.05);
+  }
+
+  // Hintergrund-Showmusik - generiert pro Loop neu, robust
+  function startBgMusic() {
+    if (!soundOn) return;
+    stopBgMusic();
+    const pattern = [130.81, 130.81, 164.81, 196.00, 130.81, 130.81, 174.61, 220.00];
+    const noteDur = 0.3;
+    const totalLoop = pattern.length * noteDur;
+
+    function playLoop() {
+      const ctx = getCtx();
+      if (!ctx || !soundOn) return;
+      pattern.forEach((freq, i) => {
+        const o = ctx.createOscillator();
+        const g = ctx.createGain();
+        o.type = 'triangle';
+        o.frequency.value = freq;
+        const t0 = ctx.currentTime + i * noteDur;
+        g.gain.setValueAtTime(0, t0);
+        g.gain.linearRampToValueAtTime(0.04, t0 + 0.02);
+        g.gain.exponentialRampToValueAtTime(0.001, t0 + noteDur * 0.8);
+        o.connect(g).connect(ctx.destination);
+        o.start(t0);
+        o.stop(t0 + noteDur);
+      });
+    }
+    playLoop();
+    bgMusic = setInterval(playLoop, totalLoop * 1000);
+  }
+
+  function stopBgMusic() {
+    if (bgMusic) { clearInterval(bgMusic); bgMusic = null; }
+  }
+
+  // Public API - aliases für ältere Aufrufe
+  function playTusch() { synthTusch(); }
+  function playZonk() {
+    synthBuzzer();
+    setTimeout(synthLaugh, 600); // Publikum lacht laut über den Zonk
+    setTimeout(synthLaugh, 1400); // Zweite Lach-Welle
+  }
+  function playCrowdCheer(d) { synthCheer(d); }
+  function playCrowdLaugh() { synthLaugh(); }
+  function playDoorOpen() { synthDoorOpen(); }
+  function playTick() { synthTick(); }
+
+  // ===== INTRO START =====
+  function startShow() {
+    getCtx(); // Audio Context aktivieren bei User-Interaction
+    playTusch();
+    setTimeout(() => playCrowdCheer(2.5), 400);
+
+    const intro = document.getElementById('intro');
+    intro.classList.add('starting');
+    setTimeout(() => {
+      intro.classList.add('gone');
+      startBgMusic();
+      startCountdown();
+    }, 2000);
+  }
+
+  // ===== GAME LOGIC =====
+  const zonks = [
+    { emoji: '🥾', text: 'ALTER<br>STIEFEL!<br>ZONK 🤡',
+      bubble: '😱 OH NEIN, MICHA! Ein alter Stiefel! Aber halt — du darfst tauschen! Wähle ein anderes Tor!' },
+    { emoji: '🐔', text: 'GUMMI-<br>HUHN!<br>ZONK 🤡',
+      bubble: '😬 Nicht zu fassen! Ein Gummihuhn! Spannung pur! Ein Tor bleibt noch...' }
+  ];
+
+  let openCount = 0;
+  let opened = new Set();
+  let cliffhangerTriggered = false;
+  let countdownTimer = null;
+
+  function startCountdown(seconds = 15) {
+    stopCountdown();
+    const el = document.getElementById('countdown');
+    let t = seconds;
+    el.innerHTML = `<div class="countdown-circle">${t}</div>`;
+    countdownTimer = setInterval(() => {
+      t--;
+      if (t <= 0) {
+        stopCountdown();
+        el.innerHTML = `<div class="countdown-circle urgent">⏰</div>`;
+        document.getElementById('speech').innerHTML = '🎤 Tick tack, Micha! Nicht trödeln — ich entscheide für dich!';
+        setTimeout(autoPick, 1200);
+        return;
+      }
+      const urgent = t <= 5;
+      el.innerHTML = `<div class="countdown-circle${urgent ? ' urgent' : ''}">${t}</div>`;
+      if (urgent) playTick();
+    }, 1000);
+  }
+
+  function stopCountdown() {
+    if (countdownTimer) { clearInterval(countdownTimer); countdownTimer = null; }
+    document.getElementById('countdown').innerHTML = '';
+  }
+
+  function autoPick() {
+    for (let i = 1; i <= 3; i++) {
+      if (!opened.has(i)) { openDoor(i); return; }
+    }
+  }
+
+  function setReveal(backId, html) {
+    document.getElementById(backId).innerHTML = html;
+  }
+
+  function openDoor(num) {
+    if (opened.has(num) || cliffhangerTriggered) return;
+    const doorEl = document.querySelector(`.door[data-door="${num}"]`);
+    stopCountdown();
+    const isLast = openCount === 2;
+
+    if (!isLast) {
+      const zonk = zonks[openCount];
+      setReveal(`back${num}`, `<div class="reveal zonk"><div class="reveal-emoji">${zonk.emoji}</div><div class="reveal-text">${zonk.text}</div></div>`);
+    } else {
+      setReveal(`back${num}`, `
+        <div class="fake-postcard">
+          <div class="postcard-stamp">2,99€</div>
+          <div class="postcard-emoji">📮</div>
+          <div class="postcard-title">Gruß vom<br>Ballermann</div>
+          <div class="postcard-price">POSTKARTE</div>
+        </div>`);
+    }
+
+    doorEl.classList.add('open');
+    opened.add(num);
+    openCount++;
+    playDoorOpen();
+    if (navigator.vibrate) navigator.vibrate(80);
+
+    setTimeout(() => {
+      if (isLast) {
+        synthBuzzer();
+        playCrowdLaugh();
+        document.getElementById('speech').innerHTML = '🎤 …Eine Postkarte?! Für 2,99€?! Micha, das kann doch nicht…';
+        setTimeout(() => {
+          document.getElementById('speech').innerHTML = '🎤 😳 Das tut mir wirklich leid… so war das nicht geplant…';
+          playCrowdLaugh();
+        }, 2200);
+        setTimeout(() => {
+          document.getElementById('speech').innerHTML = '🎤 ⚡ MOMENT MAL! Da kommt ja noch was rein…';
+          synthTusch();
+        }, 4400);
+        setTimeout(showFinale, 6500);
+      } else {
+        playZonk();
+        document.getElementById('speech').innerHTML = '🎤 ' + zonks[openCount - 1].bubble;
+        if (openCount === 2) {
+          setTimeout(showCliffhanger, 1500);
+        } else {
+          showTradeButton();
+        }
+      }
+    }, 900);
+  }
+
+  function showTradeButton() {
+    document.getElementById('actionZone').innerHTML = `<button class="action-btn trade" onclick="enableTrade()">🔄 TAUSCHEN! Anderes Tor öffnen</button>`;
+  }
+
+  function enableTrade() {
+    document.getElementById('actionZone').innerHTML = '';
+    document.getElementById('speech').innerHTML = '🎤 Mutige Entscheidung, Micha! Welches Tor jetzt?';
+    document.querySelectorAll('.door').forEach(d => {
+      const num = parseInt(d.dataset.door);
+      if (!opened.has(num)) {
+        const face = d.querySelector('.door-face');
+        if (face) face.style.animation = 'pulse 0.7s ease-in-out infinite alternate';
+      }
+    });
+    startCountdown(12);
+  }
+
+  function showCliffhanger() {
+    cliffhangerTriggered = true;
+    document.getElementById('cliffhanger').classList.add('show');
+    playTusch();
+  }
+
+  function cliffChoice(choice) {
+    document.getElementById('cliffhanger').classList.remove('show');
+    cliffhangerTriggered = false;
+    if (choice === 'cash') {
+      document.getElementById('speech').innerHTML = '🎤 😂 NEIN MICHA! Du hast doch nicht ernsthaft… Quatsch, das war ein Test! Das letzte Tor MUSST du öffnen!';
+      // Publikum lacht ihn aus!
+      playCrowdLaugh();
+      setTimeout(playCrowdLaugh, 800);
+    } else {
+      document.getElementById('speech').innerHTML = '🎤 🔥 WAS FÜR EIN MUT! Das ganze Studio applaudiert! Öffne das letzte Tor!';
+      playCrowdCheer(2);
+    }
+    document.querySelectorAll('.door').forEach(d => {
+      const num = parseInt(d.dataset.door);
+      if (!opened.has(num)) {
+        const face = d.querySelector('.door-face');
+        if (face) face.style.animation = 'pulse 0.7s ease-in-out infinite alternate';
+      }
+    });
+    startCountdown(10);
+  }
+
+  function showFinale() {
+    stopBgMusic();
+    document.getElementById('speech').innerHTML = '🎤🎉 UNFASSBAR! DER ABSOLUTE HAUPTGEWINN!';
+    document.getElementById('actionZone').innerHTML = '';
+    document.getElementById('finale').classList.add('show');
+    playTusch();
+    setTimeout(() => playCrowdCheer(5), 300);
+    setTimeout(playTusch, 1000);
+    fireConfetti();
+    if (navigator.vibrate) navigator.vibrate([200, 100, 200, 100, 400]);
+  }
+
+  function fireConfetti() {
+    const colors = ['#ffd700', '#ff1493', '#00ffff', '#ff6b35', '#fff', '#7cfc00'];
+    const finale = document.getElementById('finale');
+    for (let i = 0; i < 120; i++) {
+      const c = document.createElement('div');
+      c.className = 'confetti';
+      c.style.left = Math.random() * 100 + 'vw';
+      c.style.top = '-20px';
+      c.style.background = colors[Math.floor(Math.random() * colors.length)];
+      c.style.animationDuration = (2 + Math.random() * 2.5) + 's';
+      c.style.animationDelay = Math.random() * 0.8 + 's';
+      c.style.transform = `rotate(${Math.random() * 360}deg)`;
+      if (Math.random() > 0.5) c.style.borderRadius = '50%';
+      finale.appendChild(c);
+      setTimeout(() => c.remove(), 5000);
+    }
+    setTimeout(fireConfetti, 2500);
+  }
+
+  // Glitter
+  (function makeGlitter() {
+    const colors = ['#ffd700', '#ff1493', '#00ffff', '#fff'];
+    for (let i = 0; i < 40; i++) {
+      const g = document.createElement('div');
+      g.className = 'glitter';
+      g.style.left = Math.random() * 100 + 'vw';
+      g.style.top = Math.random() * 100 + 'vh';
+      g.style.background = colors[Math.floor(Math.random() * colors.length)];
+      g.style.animationDelay = Math.random() * 2 + 's';
+      g.style.animationDuration = (1.5 + Math.random() * 2) + 's';
+      document.body.appendChild(g);
+    }
+  })();
+</script>
+
+</body>
+</html>
