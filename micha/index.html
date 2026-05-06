@@ -502,11 +502,10 @@
   }
   .cliff-btns { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
 
-  .fake-postcard {
-    background: linear-gradient(135deg, #87ceeb 0%, #f0e68c 100%);
-    color: #333;
+  .empty-reveal {
+    background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
+    color: #555;
     padding: 8px;
-    border: 3px dashed #c0392b;
     width: 100%;
     height: 100%;
     display: flex;
@@ -514,38 +513,38 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow: hidden;
   }
-  .postcard-emoji { font-size: clamp(1.8rem, 7vw, 3rem); }
-  .postcard-stamp {
-    position: absolute;
-    top: 4px;
-    right: 4px;
-    background: white;
-    color: #c0392b;
-    padding: 2px 5px;
-    font-family: 'Bungee', sans-serif;
-    font-size: clamp(0.5rem, 1.8vw, 0.75rem);
-    border: 2px solid #c0392b;
-    transform: rotate(8deg);
+  .empty-emoji {
+    font-size: clamp(2.5rem, 10vw, 4.5rem);
+    opacity: 0.7;
+    animation: ghostly 3s ease-in-out infinite alternate;
   }
-  .postcard-title {
+  @keyframes ghostly {
+    from { opacity: 0.5; transform: scale(1); }
+    to { opacity: 0.85; transform: scale(1.05); }
+  }
+  .empty-text {
     font-family: 'Permanent Marker', cursive;
-    color: #c0392b;
-    font-size: clamp(0.7rem, 2.5vw, 1.3rem);
-    margin-top: 6px;
+    color: #888;
+    font-size: clamp(0.75rem, 2.6vw, 1.1rem);
+    margin-top: 8px;
     text-align: center;
-    line-height: 1.1;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
   }
-  .postcard-price {
-    font-family: 'Bungee', sans-serif;
-    background: white;
-    color: #1a0033;
-    padding: 3px 8px;
-    border-radius: 12px;
-    margin-top: 6px;
-    font-size: clamp(0.55rem, 1.8vw, 0.9rem);
-    box-shadow: 2px 2px 0 #c0392b;
+  /* Spinnweben in den Ecken */
+  .web {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    opacity: 0.4;
+    pointer-events: none;
   }
+  .web.tl { top: 0; left: 0; }
+  .web.tr { top: 0; right: 0; transform: scaleX(-1); }
+  .web.bl { bottom: 0; left: 0; transform: scaleY(-1); }
+  .web.br { bottom: 0; right: 0; transform: scale(-1, -1); }
   @keyframes rip {
     0% { transform: scale(1) rotate(0deg); opacity: 1; }
     50% { transform: scale(1.3) rotate(15deg); opacity: 0.5; }
@@ -1089,12 +1088,33 @@
       const zonk = zonks[openCount];
       setReveal(`back${num}`, `<div class="reveal zonk"><div class="reveal-emoji">${zonk.emoji}</div><div class="reveal-text">${zonk.text}</div></div>`);
     } else {
+      // DOPPELBODEN: Leeres Tor mit Spinnweben
       setReveal(`back${num}`, `
-        <div class="fake-postcard">
-          <div class="postcard-stamp">2,99€</div>
-          <div class="postcard-emoji">📮</div>
-          <div class="postcard-title">Gruß vom<br>Ballermann</div>
-          <div class="postcard-price">POSTKARTE</div>
+        <div class="empty-reveal">
+          <svg class="web tl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#aaa" stroke-width="0.6" fill="none" opacity="0.7">
+              <line x1="0" y1="0" x2="100" y2="100"/>
+              <line x1="0" y1="0" x2="100" y2="50"/>
+              <line x1="0" y1="0" x2="50" y2="100"/>
+              <line x1="0" y1="0" x2="100" y2="20"/>
+              <line x1="0" y1="0" x2="20" y2="100"/>
+              <path d="M 0,0 Q 25,5 50,25 T 100,50" />
+              <path d="M 0,0 Q 5,25 25,50 T 50,100" />
+              <path d="M 0,0 Q 35,15 70,40" />
+              <path d="M 0,0 Q 15,35 40,70" />
+            </g>
+          </svg>
+          <svg class="web tr" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#aaa" stroke-width="0.6" fill="none" opacity="0.7">
+              <line x1="0" y1="0" x2="100" y2="100"/>
+              <line x1="0" y1="0" x2="100" y2="50"/>
+              <line x1="0" y1="0" x2="50" y2="100"/>
+              <path d="M 0,0 Q 25,5 50,25 T 100,50" />
+              <path d="M 0,0 Q 5,25 25,50 T 50,100" />
+            </g>
+          </svg>
+          <div class="empty-emoji">🕸️</div>
+          <div class="empty-text">…NICHTS?</div>
         </div>`);
     }
 
@@ -1108,16 +1128,16 @@
       if (isLast) {
         synthBuzzer();
         playCrowdLaugh();
-        document.getElementById('speech').innerHTML = '🎤 …Eine Postkarte?! Für 2,99€?! Micha, das kann doch nicht…';
+        document.getElementById('speech').innerHTML = '🎤 …Nichts?! Da ist gar nichts drin?!';
         setTimeout(() => {
-          document.getElementById('speech').innerHTML = '🎤 😳 Das tut mir wirklich leid… so war das nicht geplant…';
+          document.getElementById('speech').innerHTML = '🎤 😬 Micha… die 50€ wären jetzt ganz nett gewesen, oder?';
           playCrowdLaugh();
-        }, 3500);
+        }, 2800);
         setTimeout(() => {
-          document.getElementById('speech').innerHTML = '🎤 ⚡ MOMENT MAL! Da kommt ja noch was rein…';
+          document.getElementById('speech').innerHTML = '🎤 ⚡ MOMENT MAL! Da bewegt sich was im Schatten…';
           synthTusch();
-        }, 7000);
-        setTimeout(showFinale, 9500);
+        }, 5200);
+        setTimeout(showFinale, 7000);
       } else {
         playZonk();
         document.getElementById('speech').innerHTML = '🎤 ' + zonks[openCount - 1].bubble;
