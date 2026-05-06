@@ -1042,6 +1042,28 @@
   let opened = new Set();
   let cliffhangerTriggered = false;
   let countdownTimer = null;
+  let doorsArmed = true; // Erste Wahl ist erlaubt, danach nur nach "Tauschen"-Klick
+
+  // Tore klickbar machen (mit visuellem Pulse)
+  function armUnopenedDoors() {
+    doorsArmed = true;
+    document.querySelectorAll('.door').forEach(d => {
+      const num = parseInt(d.dataset.door);
+      if (!opened.has(num)) {
+        const face = d.querySelector('.door-face');
+        if (face) face.style.animation = 'pulse 0.7s ease-in-out infinite alternate';
+      }
+    });
+  }
+
+  // Tore "entwaffnen" (Pulse weg, nicht klickbar)
+  function disarmDoors() {
+    doorsArmed = false;
+    document.querySelectorAll('.door').forEach(d => {
+      const face = d.querySelector('.door-face');
+      if (face) face.style.animation = '';
+    });
+  }
 
   function startCountdown(seconds = 25) {
     stopCountdown();
@@ -1080,8 +1102,10 @@
 
   function openDoor(num) {
     if (opened.has(num) || cliffhangerTriggered) return;
+    if (!doorsArmed) return; // Tore sind gesperrt - er muss erst auf "Tauschen" klicken
     const doorEl = document.querySelector(`.door[data-door="${num}"]`);
     stopCountdown();
+    disarmDoors(); // sofort sperren damit kein Doppelklick mehr geht
     const isLast = openCount === 2;
 
     if (!isLast) {
@@ -1142,12 +1166,34 @@
         playZonk();
         document.getElementById('speech').innerHTML = '🎤 ' + zonks[openCount - 1].bubble;
         if (openCount === 2) {
+          // Nach Zonk #2: Cliffhanger mit 50€-Angebot
           setTimeout(showCliffhanger, 3000);
         } else {
-          setTimeout(showTradeButton, 1200);
+          // Nach Zonk #1: Behalten oder Tauschen?
+          setTimeout(showKeepOrTrade, 1500);
         }
       }
     }, 1200);
+  }
+
+  function showKeepOrTrade() {
+    document.getElementById('speech').innerHTML = '🎤 Was machst du, Micha? Behalten oder Tauschen?';
+    document.getElementById('actionZone').innerHTML = `
+      <button class="action-btn cash" onclick="keepZonk()">😅 BEHALTEN</button>
+      <button class="action-btn trade" onclick="enableTrade()">🔄 TAUSCHEN</button>
+    `;
+  }
+
+  function keepZonk() {
+    document.getElementById('actionZone').innerHTML = '';
+    document.getElementById('speech').innerHTML = '🎤 😂 Den ALTEN STIEFEL behalten?! Bist du verrückt?! Komm, wir machen weiter!';
+    playCrowdLaugh();
+    // Trotzdem zwingen wir ihn zum Tauschen — die Show muss ja weitergehen
+    setTimeout(() => {
+      document.getElementById('speech').innerHTML = '🎤 Nein nein nein, das geht so nicht. Wähle ein anderes Tor!';
+      armUnopenedDoors();
+      startCountdown(20);
+    }, 2500);
   }
 
   function showTradeButton() {
@@ -1157,13 +1203,7 @@
   function enableTrade() {
     document.getElementById('actionZone').innerHTML = '';
     document.getElementById('speech').innerHTML = '🎤 Mutige Entscheidung, Micha! Welches Tor jetzt?';
-    document.querySelectorAll('.door').forEach(d => {
-      const num = parseInt(d.dataset.door);
-      if (!opened.has(num)) {
-        const face = d.querySelector('.door-face');
-        if (face) face.style.animation = 'pulse 0.7s ease-in-out infinite alternate';
-      }
-    });
+    armUnopenedDoors();
     startCountdown(20);
   }
 
@@ -1177,21 +1217,14 @@
     document.getElementById('cliffhanger').classList.remove('show');
     cliffhangerTriggered = false;
     if (choice === 'cash') {
-      document.getElementById('speech').innerHTML = '🎤 😂 NEIN MICHA! Du hast doch nicht ernsthaft… Quatsch, das war ein Test! Das letzte Tor MUSST du öffnen!';
-      // Publikum lacht ihn aus!
+      document.getElementById('speech').innerHTML = '🎤 😏 Micha! Ich dachte du bist ein Zocker! Mach das Tor auf — es lohnt sich, glaub mir!';
       playCrowdLaugh();
-      setTimeout(playCrowdLaugh, 800);
     } else {
       document.getElementById('speech').innerHTML = '🎤 🔥 WAS FÜR EIN MUT! Das ganze Studio applaudiert! Öffne das letzte Tor!';
       playCrowdCheer(2);
     }
-    document.querySelectorAll('.door').forEach(d => {
-      const num = parseInt(d.dataset.door);
-      if (!opened.has(num)) {
-        const face = d.querySelector('.door-face');
-        if (face) face.style.animation = 'pulse 0.7s ease-in-out infinite alternate';
-      }
-    });
+    // Tor wird klickbar gemacht (kein Tausch-Schritt nötig — er hat ja gerade aktiv entschieden)
+    armUnopenedDoors();
     startCountdown(20);
   }
 
