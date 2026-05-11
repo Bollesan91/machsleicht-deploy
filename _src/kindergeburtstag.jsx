@@ -791,9 +791,25 @@ function App() {
     if (mottoId) { setShowConfetti(true); const t = setTimeout(() => setShowConfetti(false), 1200); return () => clearTimeout(t); }
   }, [mottoId]);
 
-  // Track plan creation
+  // Track plan creation + birthdayProject update + Cockpit tracking
   useEffect(() => {
-    if (view === "plan" && window.plausible) plausible("plan-created", { props: { motto: mottoId, alter: age, gaeste: guests, szActive: szActive, thema: szThemeId } });
+    if (view === "plan" && motto && window.plausible) plausible("plan-created", { props: { motto: mottoId, alter: age, gaeste: guests, szActive: szActive, thema: szThemeId } });
+    // P1-21/P1-22: birthdayProject lokal speichern + Cockpit-View tracken
+    if (view === "plan" && motto && window.BirthdayProject) {
+      try {
+        window.BirthdayProject.update({
+          source: "planner",
+          theme: { slug: mottoId, label: motto.name, emoji: motto.emoji, color: motto.color },
+          child: { firstName: childName || "", age: age },
+          party: { guestCount: guests, locationType: effectiveLoc },
+          preferences: { durationMinutes: duration * 60 },
+          modules: { planner: { status: "done" }, treasure: { status: szActive ? "done" : "open" }, invitation: { status: "open" }, partyPage: { status: "open" }, shopping: { status: "ready" } }
+        });
+      } catch (e) {}
+    }
+    if (view === "plan" && motto && window.umami) {
+      try { window.umami.track("cockpit_viewed", { motto: mottoId, alter: age }); } catch (e) {}
+    }
   }, [mottoId, view]);
 
   // === COMPUTED: Quiet mode games ===
@@ -1017,6 +1033,65 @@ function App() {
           )}
         </section>
 
+        {/* ══════ COCKPIT — P1-22: Next Steps nach Plan-Generierung ══════ */}
+        <section className="fu" style={{ marginBottom: 24, background: "linear-gradient(135deg, #FFF3E8 0%, #FFFAF5 100%)", border: "1px solid var(--l)", borderRadius: 14, padding: "16px 18px" }}>
+          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: 1.5, color: motto.color || "var(--a)", textTransform: "uppercase", marginBottom: 6 }}>✓ Dein Plan steht</p>
+          <h2 style={{ fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, marginBottom: 10, color: "var(--d)" }}>
+            Als Nächstes sinnvoll
+          </h2>
+          <p style={{ fontSize: 13, color: "var(--m)", marginBottom: 12, lineHeight: 1.5 }}>
+            Du musst nichts davon machen — alles funktioniert einzeln. Aber wenn du magst, machen wir dir die nächsten Schritte einfach.
+          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            <button
+              onClick={() => {
+                if (!szActive) setSzActive(true);
+                if (!szThemeId && SZ_THEMES.find(t => t.id === mottoId)) setSzThemeId(mottoId);
+                if (window.umami) { try { window.umami.track("cockpit_cta_clicked", { target: "treasure", motto: mottoId }); } catch (e) {} }
+                setTimeout(() => { const el = document.querySelector('[data-section="schatzsuche"]'); if (el) el.scrollIntoView({ behavior: "smooth", block: "start" }); }, 50);
+              }}
+              style={{ padding: "12px 16px", background: "var(--bg)", border: "1px solid var(--l)", borderRadius: 10, textAlign: "left", cursor: "pointer", display: "flex", alignItems: "center", gap: 10, fontFamily: "inherit" }}
+            >
+              <span style={{ fontSize: 22 }}>🗺️</span>
+              <span style={{ flex: 1 }}>
+                <strong style={{ fontSize: 14, color: "var(--d)", display: "block" }}>{motto.name}-Schatzsuche erstellen</strong>
+                <span style={{ fontSize: 12, color: "var(--m)" }}>Stationen, Karte und Hinweise — passend zum Alter</span>
+              </span>
+              <span style={{ fontSize: 18, color: "var(--a)" }}>→</span>
+            </button>
+            <a
+              href={`/einladung/erstellen?motto=${encodeURIComponent(mottoId || "")}${childName ? `&name=${encodeURIComponent(childName)}` : ""}`}
+              onClick={() => { if (window.umami) { try { window.umami.track("cockpit_cta_clicked", { target: "invitation", motto: mottoId }); } catch (e) {} } }}
+              style={{ padding: "12px 16px", background: "var(--bg)", border: "1px solid var(--l)", borderRadius: 10, textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }}
+            >
+              <span style={{ fontSize: 22 }}>📨</span>
+              <span style={{ flex: 1 }}>
+                <strong style={{ fontSize: 14, color: "var(--d)", display: "block" }}>Einladung erstellen</strong>
+                <span style={{ fontSize: 12, color: "var(--m)" }}>WhatsApp-Einladung mit Mini-Spiel zum Motto</span>
+              </span>
+              <span style={{ fontSize: 18, color: "var(--a)" }}>→</span>
+            </a>
+            <a
+              href={`https://party.machsleicht.de/?${[
+                childName ? `childName=${encodeURIComponent(childName)}` : "",
+                motto.name ? `motto=${encodeURIComponent(motto.name)}` : "",
+                motto.emoji ? `mottoEmoji=${encodeURIComponent(motto.emoji)}` : ""
+              ].filter(Boolean).join("&")}`}
+              target="_blank"
+              rel="noopener"
+              onClick={() => { if (window.umami) { try { window.umami.track("cockpit_cta_clicked", { target: "party", motto: mottoId }); } catch (e) {} } }}
+              style={{ padding: "12px 16px", background: "var(--bg)", border: "1px solid var(--l)", borderRadius: 10, textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }}
+            >
+              <span style={{ fontSize: 22 }}>🎉</span>
+              <span style={{ flex: 1 }}>
+                <strong style={{ fontSize: 14, color: "var(--d)", display: "block" }}>Partyseite für Zusagen anlegen</strong>
+                <span style={{ fontSize: 12, color: "var(--m)" }}>RSVP, Wunschliste, Allergien — alles auf einer Seite</span>
+              </span>
+              <span style={{ fontSize: 18, color: "var(--a)" }}>→</span>
+            </a>
+          </div>
+        </section>
+
         {/* ══════ PLAN ══════ */}
 
         {/* Mode Toggles — oben, weil sie alles darunter ändern */}
@@ -1049,7 +1124,9 @@ function App() {
         <Zeitplan timeline={timeline} mottoColor={motto.color} quietMode={quietMode} setQuietMode={setQuietMode} ageGroupLabel={ageLabel[ag]} />
 
         {/* Schatzsuche — optionaler Add-on direkt neben dem Zeitplan */}
-        <SchnitzeljagdBlock age={age} ag={ag} mottoId={mottoId} szActive={szActive} setSzActive={setSzActive} szThemeId={szThemeId} setSzThemeId={setSzThemeId} szTheme={szTheme} childName={childName} setChildName={setChildName} mapPositions={mapPositions} setMapPositions={setMapPositions} stationLocations={stationLocations} setStationLocations={setStationLocations} dekoEmojis={dekoEmojis} setDekoEmojis={setDekoEmojis} />
+        <div data-section="schatzsuche">
+          <SchnitzeljagdBlock age={age} ag={ag} mottoId={mottoId} szActive={szActive} setSzActive={setSzActive} szThemeId={szThemeId} setSzThemeId={setSzThemeId} szTheme={szTheme} childName={childName} setChildName={setChildName} mapPositions={mapPositions} setMapPositions={setMapPositions} stationLocations={stationLocations} setStationLocations={setStationLocations} dekoEmojis={dekoEmojis} setDekoEmojis={setDekoEmojis} />
+        </div>
 
         {/* Snacks */}
         <section className="fu" style={{ marginBottom: 24 }}>
