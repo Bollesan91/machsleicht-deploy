@@ -667,27 +667,28 @@ function creatorPage() {
       <h2 style="font-size:20px">Partyseite ist fertig!</h2>
       <p style="color:var(--m);font-size:13px;margin-top:4px">G\u00E4ste geben den Vornamen \u201E<span id="codeHint" style="font-weight:700;color:var(--a)"></span>\u201C ein, um die Seite zu sehen.</p>
     </div>
-    <div style="background:#FFF3E0;border:2px solid #FFE0B2;border-radius:var(--r);padding:16px;margin-bottom:12px">
-      <p style="font-size:14px;font-weight:700;color:#E65100;margin-bottom:4px">\u26A0\uFE0F Edit-Link sichern (Pflicht)</p>
-      <p style="font-size:13px;color:#BF360C;margin-bottom:12px;line-height:1.5">Ohne diesen Link kannst du <strong>keine Zusagen sehen</strong> und <strong>nichts mehr \u00E4ndern</strong>. Deshalb schicken wir ihn dir jetzt per E-Mail \u2014 erst danach gibt es Bearbeiten & den G\u00E4ste-Link zum Teilen.</p>
-      <div class="field" style="margin-bottom:8px"><label>Deine E-Mail<span class="req">*</span></label><input type="email" id="editEmail" placeholder="deine@email.de" style="font-size:15px"></div>
-      <label id="newsletterOptInRow" style="display:flex;align-items:flex-start;gap:8px;margin:0 0 12px;cursor:pointer;user-select:none;padding:8px 2px">
-        <input type="checkbox" id="newsletterOptIn" style="flex-shrink:0;width:16px;height:16px;margin-top:2px;accent-color:#E65100;cursor:pointer">
-        <span style="font-size:12px;color:#5D4037;line-height:1.45">Au\u00DFerdem: Erinnerung 7 Tage vor der Party + kostenlose Tipps per Mail. Jederzeit abbestellbar. <a href="https://machsleicht.de/datenschutz.html" target="_blank" style="color:#E65100;text-decoration:underline">Datenschutz</a></span>
-      </label>
-      <button class="btn" onclick="sendEditEmail()" id="sendEditBtn" style="background:#E65100">\u{1F4E7} Edit-Link per E-Mail erhalten</button>
-      <p id="editUrl" style="display:none"></p>
-      <p id="editEmailSent" class="hidden" style="font-size:12px;color:#2E7D32;text-align:center;margin-top:8px;font-weight:600">\u2705 Gesendet \u2014 pr\u00FCfe dein Postfach!</p>
-    </div>
-    <button class="btn" id="previewBtn" onclick="openPreview()" style="background:var(--a);margin-bottom:12px">\u{1F440} Vorschau ansehen</button>
-    <div id="resultGated" class="hidden">
-    <button class="btn btn-outline" id="editBtn" onclick="openEdit()" style="margin-bottom:12px">\u270F\uFE0F Bearbeiten</button>
+    <!-- P1-26: Gaeste-Link sofort sichtbar, NICHT mehr gated hinter E-Mail -->
     <div class="share-box" style="margin-bottom:12px">
       <p style="font-size:12px;color:var(--a);font-weight:600;margin-bottom:6px">G\u00C4STE-LINK</p>
       <p style="font-size:14px;font-weight:700;word-break:break-all" id="guestUrl"></p>
       <button class="btn" style="margin-top:10px" onclick="shareGuest()">\u{1F4F2} Per WhatsApp teilen</button>
     </div>
+    <button class="btn" id="previewBtn" onclick="openPreview()" style="background:var(--a);margin-bottom:12px">\u{1F440} Vorschau ansehen</button>
+    <button class="btn btn-outline" id="editBtn" onclick="openEdit()" style="margin-bottom:14px">\u270F\uFE0F Bearbeiten</button>
+    <!-- Bearbeitungslink-Sicherung: empfohlen, aber nicht Pflicht -->
+    <div style="background:#F5F0EB;border:1px solid #EDE6DE;border-radius:var(--r);padding:14px;margin-bottom:12px">
+      <p style="font-size:13px;font-weight:700;color:#2D2319;margin-bottom:4px">\u{1F4CC} Bearbeitungslink sichern</p>
+      <p style="font-size:12px;color:#6B5D52;margin-bottom:10px;line-height:1.5">Mit diesem Link kannst du Zusagen ansehen und die Partyseite \u00E4ndern. Kein Konto, kein Newsletter \u2014 wir schicken ihn dir per E-Mail als Sicherung.</p>
+      <div class="field" style="margin-bottom:8px"><label>Deine E-Mail (optional)</label><input type="email" id="editEmail" placeholder="deine@email.de" style="font-size:15px"></div>
+      <label id="newsletterOptInRow" style="display:flex;align-items:flex-start;gap:8px;margin:0 0 10px;cursor:pointer;user-select:none;padding:6px 2px">
+        <input type="checkbox" id="newsletterOptIn" style="flex-shrink:0;width:16px;height:16px;margin-top:2px;accent-color:var(--a);cursor:pointer">
+        <span style="font-size:12px;color:#5D4037;line-height:1.45">Au\u00DFerdem: Erinnerung 7 Tage vor der Party + kostenlose Tipps per Mail. Freiwillig, jederzeit abbestellbar. <a href="https://machsleicht.de/datenschutz.html" target="_blank" style="color:var(--a);text-decoration:underline">Datenschutz</a></span>
+      </label>
+      <button class="btn btn-outline" onclick="sendEditEmail()" id="sendEditBtn">\u{1F4E7} Edit-Link per E-Mail erhalten</button>
+      <p id="editUrl" style="display:none"></p>
+      <p id="editEmailSent" class="hidden" style="font-size:12px;color:#2E7D32;text-align:center;margin-top:8px;font-weight:600">\u2705 Gesendet \u2014 pr\u00FCfe dein Postfach!</p>
     </div>
+    <p style="font-size:11px;color:var(--m);text-align:center;line-height:1.4;margin-top:8px">\u{1F512} Privat geteilt. Nicht bei Google. Daten werden automatisch gel\u00F6scht.</p>
   </div>
 
   <div class="footer"><a href="https://machsleicht.de">machsleicht.de</a> \u00B7 <a href="https://machsleicht.de/impressum">Impressum</a> \u00B7 <a href="https://machsleicht.de/datenschutz">Datenschutz</a></div>
@@ -876,7 +877,7 @@ async function sendEditEmail(){
     var sentEl=document.getElementById("editEmailSent");
     if(newsletter&&resp.doiMailSent){sentEl.textContent="\u2705 Edit-Link gesendet. In derselben Mail findest du den Best\u00E4tigungs-Link f\u00FCr den Newsletter.";}
     sentEl.classList.remove("hidden");
-    var gated=document.getElementById("resultGated");if(gated)gated.classList.remove("hidden");
+    // P1-26: Gaeste-Link ist jetzt schon sofort sichtbar (kein Gating mehr).
   }catch(e){_showErr("editEmail","Fehler: "+e.message);btn.textContent="\u{1F4E7} Edit-Link per E-Mail erhalten";btn.disabled=false;}
 }
 function openPreview(){var d=window._pd;if(!d)return;var f=document.getElementById("modalFrame");f.src=d.url+"?preview=1&edit="+encodeURIComponent(d.editToken);document.getElementById("modalTitle").textContent="Vorschau \u2014 so sehen es deine G\u00E4ste";document.getElementById("modalOverlay").classList.add("show");document.body.classList.add("modal-open");}
