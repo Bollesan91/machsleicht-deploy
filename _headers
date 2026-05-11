@@ -6,3 +6,36 @@
 
 /_src/*
   X-Robots-Tag: noindex, nofollow
+
+# P1-32: API + Functions never indexable
+/api/*
+  X-Robots-Tag: noindex, nofollow
+
+/.netlify/functions/*
+  X-Robots-Tag: noindex, nofollow
+
+# Dynamic / private URLs (V5.1 URL-Matrix)
+/plan
+  X-Robots-Tag: noindex, follow
+
+/cockpit
+  X-Robots-Tag: noindex, follow
+
+/e/*
+  X-Robots-Tag: noindex, nofollow
+
+# Internal docs / audit (markdown not in sitemap, but defensive)
+/AUDIT.md
+  X-Robots-Tag: noindex, nofollow
+
+/SESSION-NOTES.md
+  X-Robots-Tag: noindex, nofollow
+
+/STRATEGIE.md
+  X-Robots-Tag: noindex, nofollow
+
+/BACKLOG-AUDIT.md
+  X-Robots-Tag: noindex, nofollow
+
+/ARCHITECTURE.md
+  X-Robots-Tag: noindex, nofollow
