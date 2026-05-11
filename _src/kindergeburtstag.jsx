@@ -737,6 +737,10 @@ function App() {
   const [mapPositions, setMapPositions] = useState(null); // [{x, y}] for canvas map stations
   const [stationLocations, setStationLocations] = useState(() => loadState("stationLocations", {})); // {index: "Ort-Text"}
   const [dekoEmojis, setDekoEmojis] = useState(() => loadState("dekoEmojis", [])); // [{emoji, fx, fy}] fractional coords
+  // P1-25: Partyseite-Erstellung via Worker
+  const [partyCreateStatus, setPartyCreateStatus] = useState("idle"); // idle | creating | success | error
+  const [partyCreateResult, setPartyCreateResult] = useState(null); // {url, editUrl}
+  const [partyCreateError, setPartyCreateError] = useState("");
 
   // Derived values
   const motto = ALL_MOTTOS.find((m) => m.id === mottoId);
@@ -811,6 +815,62 @@ function App() {
       try { window.umami.track("cockpit_viewed", { motto: mottoId, alter: age }); } catch (e) {}
     }
   }, [mottoId, view]);
+
+  // === P1-25: Partyseite via Worker erstellen ===
+  async function createPartyPage() {
+    if (!motto) return;
+    setPartyCreateStatus("creating");
+    setPartyCreateError("");
+    if (window.umami) { try { window.umami.track("party_create_started", { motto: mottoId }); } catch (e) {} }
+    let payload;
+    if (window.BirthdayProject && typeof window.BirthdayProject.toPartyPayload === "function") {
+      payload = window.BirthdayProject.toPartyPayload();
+    }
+    if (!payload || !payload.motto) {
+      payload = {
+        childName: childName || "",
+        age: age,
+        motto: motto.name,
+        mottoEmoji: motto.emoji,
+        mottoColor: motto.color || "#D4812A",
+        date: "", time: "", endTime: "", address: "",
+        notes: motto.name + "-Geburtstag",
+        askAllergies: true, askPickup: true, wishes: []
+      };
+    }
+    try {
+      const res = await fetch("https://party.machsleicht.de/api/create", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json();
+      if (!data.url || !data.editUrl) throw new Error("Unvollstaendige Antwort vom Worker");
+      setPartyCreateResult({ url: data.url, editUrl: data.editUrl, id: data.id });
+      setPartyCreateStatus("success");
+      if (window.BirthdayProject) { try { window.BirthdayProject.update({ modules: { partyPage: { status: "done" } } }); } catch (e) {} }
+      if (window.umami) { try { window.umami.track("party_created", { motto: mottoId }); } catch (e) {} }
+    } catch (err) {
+      setPartyCreateError(err.message || "Verbindung zur Partyseite fehlgeschlagen");
+      setPartyCreateStatus("error");
+    }
+  }
+
+  function copyToClipboard(text) {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(function() {
+        if (window.umami) { try { window.umami.track("party_share_clicked", { channel: "copy" }); } catch (e) {} }
+      });
+    }
+  }
+
+  function shareParty(url) {
+    if (!motto) return;
+    const msg = encodeURIComponent("🎉 " + motto.emoji + " Du bist eingeladen zum " + motto.name + "-Geburtstag" + (childName ? " von " + childName : "") + "! Hier sind alle Infos & Zusagen:\n" + url);
+    window.open("https://wa.me/?text=" + msg, "_blank");
+    if (window.umami) { try { window.umami.track("party_share_clicked", { channel: "whatsapp" }); } catch (e) {} }
+  }
 
   // === COMPUTED: Quiet mode games ===
   const quietGames = {
@@ -1074,25 +1134,46 @@ function App() {
               </span>
               <span style={{ fontSize: 18, color: "var(--a)" }}>→</span>
             </a>
-            <a
-              href={`https://party.machsleicht.de/?${[
-                childName ? `childName=${encodeURIComponent(childName)}` : "",
-                motto.name ? `motto=${encodeURIComponent(motto.name)}` : "",
-                motto.emoji ? `mottoEmoji=${encodeURIComponent(motto.emoji)}` : ""
-              ].filter(Boolean).join("&")}`}
-              target="_blank"
-              rel="noopener"
-              onClick={() => { if (window.umami) { try { window.umami.track("cockpit_cta_clicked", { target: "party", motto: mottoId }); } catch (e) {} } }}
-              style={{ padding: "12px 16px", background: "var(--bg)", border: "1px solid var(--l)", borderRadius: 10, textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }}
+            <button
+              onClick={() => { if (window.umami) { try { window.umami.track("cockpit_cta_clicked", { target: "party", motto: mottoId }); } catch (e) {} } createPartyPage(); }}
+              disabled={partyCreateStatus === "creating" || partyCreateStatus === "success"}
+              style={{ padding: "12px 16px", background: "var(--bg)", border: "1px solid var(--l)", borderRadius: 10, textAlign: "left", cursor: partyCreateStatus === "creating" || partyCreateStatus === "success" ? "default" : "pointer", display: "flex", alignItems: "center", gap: 10, fontFamily: "inherit", opacity: partyCreateStatus === "success" ? 0.6 : 1 }}
             >
-              <span style={{ fontSize: 22 }}>🎉</span>
+              <span style={{ fontSize: 22 }}>{partyCreateStatus === "creating" ? "⏳" : partyCreateStatus === "success" ? "✓" : "🎉"}</span>
               <span style={{ flex: 1 }}>
-                <strong style={{ fontSize: 14, color: "var(--d)", display: "block" }}>Partyseite für Zusagen anlegen</strong>
+                <strong style={{ fontSize: 14, color: "var(--d)", display: "block" }}>
+                  {partyCreateStatus === "creating" ? "Partyseite wird erstellt..." : partyCreateStatus === "success" ? "Partyseite erstellt ✓" : "Partyseite für Zusagen anlegen"}
+                </strong>
                 <span style={{ fontSize: 12, color: "var(--m)" }}>RSVP, Wunschliste, Allergien — alles auf einer Seite</span>
               </span>
-              <span style={{ fontSize: 18, color: "var(--a)" }}>→</span>
-            </a>
+              {partyCreateStatus !== "creating" && partyCreateStatus !== "success" && <span style={{ fontSize: 18, color: "var(--a)" }}>→</span>}
+            </button>
           </div>
+          {/* P1-25: Result-Pane nach erfolgreicher Erstellung */}
+          {partyCreateStatus === "success" && partyCreateResult && (
+            <div style={{ marginTop: 12, padding: 14, background: "#E8F5E9", border: "1px solid #66BB6A", borderRadius: 10 }}>
+              <p style={{ fontSize: 13, fontWeight: 700, color: "#1B5E20", margin: "0 0 8px" }}>✓ Deine {motto.name}-Partyseite ist fertig</p>
+              <p style={{ fontSize: 11, color: "#33691E", margin: "0 0 10px", lineHeight: 1.4 }}>Privat geteilt. Nicht bei Google. Kein Konto. Daten werden automatisch geloescht.</p>
+              <div style={{ background: "#fff", border: "1px solid #C8E6C9", borderRadius: 8, padding: "8px 10px", fontSize: 12, fontFamily: "monospace", wordBreak: "break-all", marginBottom: 10 }}>{partyCreateResult.url}</div>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                <button onClick={() => copyToClipboard(partyCreateResult.url)} style={{ flex: 1, minWidth: 110, padding: "10px 12px", background: "#fff", border: "1px solid #66BB6A", color: "#1B5E20", borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>📋 Gaeste-Link kopieren</button>
+                <button onClick={() => shareParty(partyCreateResult.url)} style={{ flex: 1, minWidth: 110, padding: "10px 12px", background: "#25D366", border: "none", color: "#fff", borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>💬 Per WhatsApp teilen</button>
+              </div>
+              <details style={{ marginTop: 10 }}>
+                <summary style={{ fontSize: 12, color: "#33691E", cursor: "pointer", fontWeight: 600 }}>Bearbeitungslink sichern</summary>
+                <p style={{ fontSize: 11, color: "#33691E", margin: "8px 0 6px", lineHeight: 1.4 }}>Mit diesem Link kannst du Zusagen ansehen, Datum/Ort aendern und die Partyseite verwalten. Kein Konto, kein Newsletter.</p>
+                <div style={{ background: "#fff", border: "1px solid #C8E6C9", borderRadius: 8, padding: "6px 8px", fontSize: 11, fontFamily: "monospace", wordBreak: "break-all", marginBottom: 6 }}>{partyCreateResult.editUrl}</div>
+                <button onClick={() => copyToClipboard(partyCreateResult.editUrl)} style={{ padding: "6px 10px", background: "#fff", border: "1px solid #66BB6A", color: "#1B5E20", borderRadius: 6, fontSize: 11, fontWeight: 600, cursor: "pointer" }}>📋 Edit-Link kopieren</button>
+              </details>
+            </div>
+          )}
+          {partyCreateStatus === "error" && (
+            <div style={{ marginTop: 12, padding: 12, background: "#FFEBEE", border: "1px solid #EF5350", borderRadius: 10 }}>
+              <p style={{ fontSize: 13, fontWeight: 700, color: "#B71C1C", margin: "0 0 4px" }}>Partyseite konnte gerade nicht erstellt werden</p>
+              <p style={{ fontSize: 12, color: "#C62828", margin: "0 0 8px", lineHeight: 1.4 }}>{partyCreateError || "Verbindung fehlgeschlagen"}. Dein Plan bleibt erhalten.</p>
+              <button onClick={createPartyPage} style={{ padding: "8px 14px", background: "#fff", border: "1px solid #EF5350", color: "#B71C1C", borderRadius: 8, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>↻ Erneut versuchen</button>
+            </div>
+          )}
         </section>
 
         {/* ══════ PLAN ══════ */}

@@ -2808,6 +2808,9 @@ function App() {
   const [mapPositions, setMapPositions] = useState(null);
   const [stationLocations, setStationLocations] = useState(() => loadState("stationLocations", {}));
   const [dekoEmojis, setDekoEmojis] = useState(() => loadState("dekoEmojis", []));
+  const [partyCreateStatus, setPartyCreateStatus] = useState("idle");
+  const [partyCreateResult, setPartyCreateResult] = useState(null);
+  const [partyCreateError, setPartyCreateError] = useState("");
   const motto = ALL_MOTTOS.find((m) => m.id === mottoId);
   const ag = ageGroup(age);
   const isMinimal = shoppingMode === "minimal" || effort === "minimal";
@@ -2889,6 +2892,88 @@ function App() {
       }
     }
   }, [mottoId, view]);
+  async function createPartyPage() {
+    if (!motto) return;
+    setPartyCreateStatus("creating");
+    setPartyCreateError("");
+    if (window.umami) {
+      try {
+        window.umami.track("party_create_started", { motto: mottoId });
+      } catch (e) {
+      }
+    }
+    let payload;
+    if (window.BirthdayProject && typeof window.BirthdayProject.toPartyPayload === "function") {
+      payload = window.BirthdayProject.toPartyPayload();
+    }
+    if (!payload || !payload.motto) {
+      payload = {
+        childName: childName || "",
+        age,
+        motto: motto.name,
+        mottoEmoji: motto.emoji,
+        mottoColor: motto.color || "#D4812A",
+        date: "",
+        time: "",
+        endTime: "",
+        address: "",
+        notes: motto.name + "-Geburtstag",
+        askAllergies: true,
+        askPickup: true,
+        wishes: []
+      };
+    }
+    try {
+      const res = await fetch("https://party.machsleicht.de/api/create", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json();
+      if (!data.url || !data.editUrl) throw new Error("Unvollstaendige Antwort vom Worker");
+      setPartyCreateResult({ url: data.url, editUrl: data.editUrl, id: data.id });
+      setPartyCreateStatus("success");
+      if (window.BirthdayProject) {
+        try {
+          window.BirthdayProject.update({ modules: { partyPage: { status: "done" } } });
+        } catch (e) {
+        }
+      }
+      if (window.umami) {
+        try {
+          window.umami.track("party_created", { motto: mottoId });
+        } catch (e) {
+        }
+      }
+    } catch (err) {
+      setPartyCreateError(err.message || "Verbindung zur Partyseite fehlgeschlagen");
+      setPartyCreateStatus("error");
+    }
+  }
+  function copyToClipboard(text) {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(function() {
+        if (window.umami) {
+          try {
+            window.umami.track("party_share_clicked", { channel: "copy" });
+          } catch (e) {
+          }
+        }
+      });
+    }
+  }
+  function shareParty(url) {
+    if (!motto) return;
+    const msg = encodeURIComponent("\u{1F389} " + motto.emoji + " Du bist eingeladen zum " + motto.name + "-Geburtstag" + (childName ? " von " + childName : "") + "! Hier sind alle Infos & Zusagen:\n" + url);
+    window.open("https://wa.me/?text=" + msg, "_blank");
+    if (window.umami) {
+      try {
+        window.umami.track("party_share_clicked", { channel: "whatsapp" });
+      } catch (e) {
+      }
+    }
+  }
   const quietGames = {
     klein: [
       { name: "Ausmalen & Stickern", desc: "Gro\xDFe Ausmalbilder zum Thema + Sticker-B\xF6gen.", dauer: 15 },
@@ -3105,15 +3190,8 @@ https://machsleicht.de`;
       /* @__PURE__ */ React.createElement("span", { style: { flex: 1 } }, /* @__PURE__ */ React.createElement("strong", { style: { fontSize: 14, color: "var(--d)", display: "block" } }, "Einladung erstellen"), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 12, color: "var(--m)" } }, "WhatsApp-Einladung mit Mini-Spiel zum Motto")),
       /* @__PURE__ */ React.createElement("span", { style: { fontSize: 18, color: "var(--a)" } }, "\u2192")
     ), /* @__PURE__ */ React.createElement(
-      "a",
+      "button",
       {
-        href: `https://party.machsleicht.de/?${[
-          childName ? `childName=${encodeURIComponent(childName)}` : "",
-          motto.name ? `motto=${encodeURIComponent(motto.name)}` : "",
-          motto.emoji ? `mottoEmoji=${encodeURIComponent(motto.emoji)}` : ""
-        ].filter(Boolean).join("&")}`,
-        target: "_blank",
-        rel: "noopener",
         onClick: () => {
           if (window.umami) {
             try {
@@ -3121,13 +3199,15 @@ https://machsleicht.de`;
             } catch (e) {
             }
           }
+          createPartyPage();
         },
-        style: { padding: "12px 16px", background: "var(--bg)", border: "1px solid var(--l)", borderRadius: 10, textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }
+        disabled: partyCreateStatus === "creating" || partyCreateStatus === "success",
+        style: { padding: "12px 16px", background: "var(--bg)", border: "1px solid var(--l)", borderRadius: 10, textAlign: "left", cursor: partyCreateStatus === "creating" || partyCreateStatus === "success" ? "default" : "pointer", display: "flex", alignItems: "center", gap: 10, fontFamily: "inherit", opacity: partyCreateStatus === "success" ? 0.6 : 1 }
       },
-      /* @__PURE__ */ React.createElement("span", { style: { fontSize: 22 } }, "\u{1F389}"),
-      /* @__PURE__ */ React.createElement("span", { style: { flex: 1 } }, /* @__PURE__ */ React.createElement("strong", { style: { fontSize: 14, color: "var(--d)", display: "block" } }, "Partyseite f\xFCr Zusagen anlegen"), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 12, color: "var(--m)" } }, "RSVP, Wunschliste, Allergien \u2014 alles auf einer Seite")),
-      /* @__PURE__ */ React.createElement("span", { style: { fontSize: 18, color: "var(--a)" } }, "\u2192")
-    ))), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 4, background: "var(--bg)", borderRadius: 12, padding: 4, border: "1px solid var(--l)" } }, [["minimal", "\u{1F33F}", "Minimal"], ["standard", "\u{1F3AF}", "Standard"], ["wow", "\u2728", "Wow"]].map(([val, ico, label]) => /* @__PURE__ */ React.createElement("button", { key: val, onClick: () => {
+      /* @__PURE__ */ React.createElement("span", { style: { fontSize: 22 } }, partyCreateStatus === "creating" ? "\u23F3" : partyCreateStatus === "success" ? "\u2713" : "\u{1F389}"),
+      /* @__PURE__ */ React.createElement("span", { style: { flex: 1 } }, /* @__PURE__ */ React.createElement("strong", { style: { fontSize: 14, color: "var(--d)", display: "block" } }, partyCreateStatus === "creating" ? "Partyseite wird erstellt..." : partyCreateStatus === "success" ? "Partyseite erstellt \u2713" : "Partyseite f\xFCr Zusagen anlegen"), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 12, color: "var(--m)" } }, "RSVP, Wunschliste, Allergien \u2014 alles auf einer Seite")),
+      partyCreateStatus !== "creating" && partyCreateStatus !== "success" && /* @__PURE__ */ React.createElement("span", { style: { fontSize: 18, color: "var(--a)" } }, "\u2192")
+    )), partyCreateStatus === "success" && partyCreateResult && /* @__PURE__ */ React.createElement("div", { style: { marginTop: 12, padding: 14, background: "#E8F5E9", border: "1px solid #66BB6A", borderRadius: 10 } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 13, fontWeight: 700, color: "#1B5E20", margin: "0 0 8px" } }, "\u2713 Deine ", motto.name, "-Partyseite ist fertig"), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, color: "#33691E", margin: "0 0 10px", lineHeight: 1.4 } }, "Privat geteilt. Nicht bei Google. Kein Konto. Daten werden automatisch geloescht."), /* @__PURE__ */ React.createElement("div", { style: { background: "#fff", border: "1px solid #C8E6C9", borderRadius: 8, padding: "8px 10px", fontSize: 12, fontFamily: "monospace", wordBreak: "break-all", marginBottom: 10 } }, partyCreateResult.url), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, flexWrap: "wrap" } }, /* @__PURE__ */ React.createElement("button", { onClick: () => copyToClipboard(partyCreateResult.url), style: { flex: 1, minWidth: 110, padding: "10px 12px", background: "#fff", border: "1px solid #66BB6A", color: "#1B5E20", borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: "pointer" } }, "\u{1F4CB} Gaeste-Link kopieren"), /* @__PURE__ */ React.createElement("button", { onClick: () => shareParty(partyCreateResult.url), style: { flex: 1, minWidth: 110, padding: "10px 12px", background: "#25D366", border: "none", color: "#fff", borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: "pointer" } }, "\u{1F4AC} Per WhatsApp teilen")), /* @__PURE__ */ React.createElement("details", { style: { marginTop: 10 } }, /* @__PURE__ */ React.createElement("summary", { style: { fontSize: 12, color: "#33691E", cursor: "pointer", fontWeight: 600 } }, "Bearbeitungslink sichern"), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, color: "#33691E", margin: "8px 0 6px", lineHeight: 1.4 } }, "Mit diesem Link kannst du Zusagen ansehen, Datum/Ort aendern und die Partyseite verwalten. Kein Konto, kein Newsletter."), /* @__PURE__ */ React.createElement("div", { style: { background: "#fff", border: "1px solid #C8E6C9", borderRadius: 8, padding: "6px 8px", fontSize: 11, fontFamily: "monospace", wordBreak: "break-all", marginBottom: 6 } }, partyCreateResult.editUrl), /* @__PURE__ */ React.createElement("button", { onClick: () => copyToClipboard(partyCreateResult.editUrl), style: { padding: "6px 10px", background: "#fff", border: "1px solid #66BB6A", color: "#1B5E20", borderRadius: 6, fontSize: 11, fontWeight: 600, cursor: "pointer" } }, "\u{1F4CB} Edit-Link kopieren"))), partyCreateStatus === "error" && /* @__PURE__ */ React.createElement("div", { style: { marginTop: 12, padding: 12, background: "#FFEBEE", border: "1px solid #EF5350", borderRadius: 10 } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 13, fontWeight: 700, color: "#B71C1C", margin: "0 0 4px" } }, "Partyseite konnte gerade nicht erstellt werden"), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 12, color: "#C62828", margin: "0 0 8px", lineHeight: 1.4 } }, partyCreateError || "Verbindung fehlgeschlagen", ". Dein Plan bleibt erhalten."), /* @__PURE__ */ React.createElement("button", { onClick: createPartyPage, style: { padding: "8px 14px", background: "#fff", border: "1px solid #EF5350", color: "#B71C1C", borderRadius: 8, fontSize: 12, fontWeight: 700, cursor: "pointer" } }, "\u21BB Erneut versuchen"))), /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 4, background: "var(--bg)", borderRadius: 12, padding: 4, border: "1px solid var(--l)" } }, [["minimal", "\u{1F33F}", "Minimal"], ["standard", "\u{1F3AF}", "Standard"], ["wow", "\u2728", "Wow"]].map(([val, ico, label]) => /* @__PURE__ */ React.createElement("button", { key: val, onClick: () => {
       setShoppingMode(val);
       setOwned({});
     }, style: {
