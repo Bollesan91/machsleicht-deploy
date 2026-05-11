@@ -1183,8 +1183,8 @@ function App() {
         <section className="fu" style={{ marginBottom: 24 }}>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }}>
             <div style={{ display: "flex", gap: 4, background: "var(--bg)", borderRadius: 12, padding: 4, border: "1px solid var(--l)" }}>
-              {[["minimal", "🌿", "Minimal"], ["standard", "🎯", "Standard"], ["wow", "✨", "Wow"]].map(([val, ico, label]) => (
-                <button key={val} onClick={() => { setShoppingMode(val); setOwned({}); }} style={{
+              {[["minimal", "🌿", "Sparfuchs"], ["standard", "🎯", "Mittelweg"], ["wow", "✨", "Komfort"]].map(([val, ico, label]) => (
+                <button key={val} onClick={() => { setShoppingMode(val); setOwned({}); if (window.umami) { try { window.umami.track("shopping_package_selected", { theme: mottoId, package: val }); } catch (e) {} } }} style={{
                   padding: "8px 14px", borderRadius: 10, border: "none",
                   background: shoppingMode === val ? (val === "minimal" ? "#E8F5E9" : val === "wow" ? "#EDE7F6" : "var(--al)") : "transparent",
                   color: shoppingMode === val ? (val === "minimal" ? "var(--g)" : val === "wow" ? "#7B1FA2" : "var(--a)") : "var(--m)",
