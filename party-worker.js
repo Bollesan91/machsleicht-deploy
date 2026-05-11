@@ -90,6 +90,44 @@ function autoMottoColor(motto) {
   return "#D4812A";
 }
 
+// ── Abuse-Schutz (P1-29) ────────────────────────────────
+const ALLOWED_ORIGINS = ["https://machsleicht.de", "https://www.machsleicht.de", "https://party.machsleicht.de"];
+const MAX_PAYLOAD_CREATE = 700000;  // 700KB (Foto-Uploads Base64)
+const MAX_PAYLOAD_SMALL  = 5000;    // 5KB fuer RSVP, claims, send-edit-link
+const MAX_PAYLOAD_EDIT   = 50000;   // 50KB fuer PUT (wishes etc.)
+
+function checkOrigin(request) {
+  const origin = request.headers.get("Origin");
+  if (!origin) return true; // Server-to-Server / curl ist OK
+  return ALLOWED_ORIGINS.indexOf(origin) >= 0;
+}
+
+async function hashIp(request) {
+  const ip = request.headers.get("CF-Connecting-IP") || request.headers.get("X-Forwarded-For") || "unknown";
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(ip + "|machsleicht|salt"));
+  return Array.from(new Uint8Array(buf)).slice(0,8).map(b=>b.toString(16).padStart(2,"0")).join("");
+}
+
+async function rateLimit(env, key, maxPerHour) {
+  try {
+    const raw = await env.PARTY.get(key);
+    const data = raw ? JSON.parse(raw) : { count: 0, resetAt: Date.now() + 3600*1000 };
+    if (Date.now() > data.resetAt) { data.count = 0; data.resetAt = Date.now() + 3600*1000; }
+    data.count++;
+    const ttl = Math.max(Math.ceil((data.resetAt - Date.now())/1000), 60);
+    await env.PARTY.put(key, JSON.stringify(data), { expirationTtl: ttl });
+    return data.count <= maxPerHour;
+  } catch (e) {
+    return true; // Bei KV-Fehler nicht blocken — Service-Verfuegbarkeit > Rate-Limit
+  }
+}
+
+async function readJsonSafe(request, maxBytes) {
+  const text = await request.text();
+  if (text.length > maxBytes) return null;
+  try { return JSON.parse(text); } catch { return null; }
+}
+
 // ── Helpers ─────────────────────────────────────────────
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), { status, headers: { ...CORS, "Content-Type": "application/json" } });
@@ -126,7 +164,11 @@ export default {
 
     // POST /api/create
     if (path === "/api/create" && request.method === "POST") {
-      const body = await request.json();
+      if (!checkOrigin(request)) return json({error:"Origin nicht erlaubt"}, 403);
+      const ipH = await hashIp(request);
+      if (!await rateLimit(env, `rl:create:${ipH}`, 5)) return json({error:"Zu viele Partys von dieser IP. Bitte später erneut versuchen."}, 429);
+      const body = await readJsonSafe(request, MAX_PAYLOAD_CREATE);
+      if (!body) return json({error:"Ungueltiges oder zu grosses Payload"}, 400);
       const id = generateId();
       const editToken = generateToken();
       const party = {
@@ -181,7 +223,8 @@ export default {
       const raw = await env.PARTY.get(`party:${id}`);
       if (!raw) return json({error:"Party nicht gefunden"},404);
       const party = JSON.parse(raw);
-      const body = await request.json();
+      const body = await readJsonSafe(request, MAX_PAYLOAD_EDIT);
+      if (!body) return json({error:"Ungueltiges oder zu grosses Payload"}, 400);
       if (body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403);
       ["childName","age","motto","mottoEmoji","mottoColor","date","time","endTime","address","notes","askAllergies","askPickup","paypalMe","email"].forEach(f=>{if(body[f]!==undefined)party[f]=body[f];});
       if (Array.isArray(body.wishes)) {
@@ -205,7 +248,12 @@ export default {
       const raw = await env.PARTY.get(`party:${id}`);
       if (!raw) return json({error:"Party nicht gefunden"},404);
       const party = JSON.parse(raw);
-      const body = await request.json();
+      const body = await readJsonSafe(request, MAX_PAYLOAD_SMALL);
+      if (!body) return json({error:"Ungueltiges Payload"}, 400);
+      // Honeypot: Spam-Bots fuellen versteckte Felder. Echte User nicht.
+      if (body.website || body.url || body.email) { return json({ok: true}); }
+      const ipH = await hashIp(request);
+      if (!await rateLimit(env, `rl:rsvp:${id}:${ipH}`, 10)) return json({error:"Zu viele Versuche. Bitte spaeter noch einmal."}, 429);
       const name = (body.name||"").trim().slice(0,50);
       if (!name) return json({error:"Name fehlt"},400);
       if (party.guests.length>=MAX_GUESTS && !party.guests.find(g=>g.name.toLowerCase()===name.toLowerCase()))
@@ -228,7 +276,10 @@ export default {
       const raw = await env.PARTY.get(`party:${id}`);
       if (!raw) return json({error:"Party nicht gefunden"},404);
       const party = JSON.parse(raw);
-      const body = await request.json();
+      const body = await readJsonSafe(request, MAX_PAYLOAD_SMALL);
+      if (!body) return json({error:"Ungueltiges Payload"}, 400);
+      const ipH = await hashIp(request);
+      if (!await rateLimit(env, `rl:claim:${id}:${ipH}`, 20)) return json({error:"Zu viele Versuche."}, 429);
       const guestName = (body.name||"").trim();
       if (!guestName) return json({error:"Name fehlt"},400);
       const wish = (party.wishes||[]).find(w=>w.id===wishId);
@@ -269,7 +320,10 @@ export default {
       const raw = await env.PARTY.get(`party:${id}`);
       if (!raw) return json({error:"Party nicht gefunden"},404);
       const party = JSON.parse(raw);
-      const body = await request.json();
+      const body = await readJsonSafe(request, MAX_PAYLOAD_SMALL);
+      if (!body) return json({error:"Ungueltiges Payload"}, 400);
+      const ipH = await hashIp(request);
+      if (!await rateLimit(env, `rl:editlink:${ipH}`, 5)) return json({error:"Zu viele Versuche. Bitte spaeter erneut."}, 429);
       if (body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403);
       const email = (body.email||"").trim().slice(0,200);
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({error:"Ung\u00FCltige E-Mail"},400);
@@ -1196,6 +1250,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
         <button class="rsvp-btn" data-rsvp="vielleicht" onclick="pickStatus('vielleicht',this)"><span class="rsvp-emoji">\u{1F914}</span>Vielleicht</button>
         <button class="rsvp-btn" data-rsvp="nein" onclick="pickStatus('nein',this)"><span class="rsvp-emoji">\u274C</span>Nein</button>
       </div>
+      <input type="text" name="website" id="hp_rsvp" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;width:1px;height:1px" aria-hidden="true">
       ${party.askAllergies?`<div class="field"><label>Allergien oder Hinweise <span style="font-size:11px;color:var(--m);font-weight:400">(freiwillig, nur die Gastgeber sehen das)</span></label><input type="text" id="rsvpAllergies" placeholder="z.B. Nussallergie" maxlength="200"></div>`:""}
       ${party.askPickup?`<div class="field"><label>Wer holt ab & wann?</label><div style="display:flex;gap:8px"><input type="text" id="rsvpPickupPerson" placeholder="z.B. Papa" style="flex:1" maxlength="50"><input type="time" id="rsvpPickupTime" style="width:110px"></div></div>`:""}
       <button class="btn" onclick="sendRsvp()" id="rsvpBtn">\u{1F4E8} Absenden</button>
@@ -1466,7 +1521,8 @@ function guestView(party, color, dateStr, name, age, motto, emoji, photoRoundB64
           <button class="rsvp-btn" style="flex:1" onclick="pickStatus('vielleicht',this)">\u{1F914} Vielleicht</button>
           <button class="rsvp-btn" style="flex:1" onclick="pickStatus('nein',this)">\u274C Nein</button>
         </div>
-        ${party.askAllergies?`<div class="field"><label>Allergien oder Hinweise <span style="font-size:11px;color:var(--m);font-weight:400">(freiwillig, nur die Gastgeber sehen das)</span></label><input type="text" id="rsvpAllergies" placeholder="z.B. Nussallergie" maxlength="200"></div>`:""}
+        <input type="text" name="website" id="hp_rsvp" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;width:1px;height:1px" aria-hidden="true">
+      ${party.askAllergies?`<div class="field"><label>Allergien oder Hinweise <span style="font-size:11px;color:var(--m);font-weight:400">(freiwillig, nur die Gastgeber sehen das)</span></label><input type="text" id="rsvpAllergies" placeholder="z.B. Nussallergie" maxlength="200"></div>`:""}
         ${party.askPickup?`<div class="field"><label>Wer holt ab & wann?</label><div style="display:flex;gap:8px"><input type="text" id="rsvpPickupPerson" placeholder="z.B. Papa" style="flex:1" maxlength="50"><input type="time" id="rsvpPickupTime" style="width:110px"></div></div>`:""}
         <button class="btn" onclick="sendRsvp()" id="rsvpBtn" style="background:${color}">\u{1F4E8} Absenden</button>
         <p style="font-size:11px;color:var(--m);text-align:center;margin-top:8px;line-height:1.5">Deine Angaben werden nur f\u00FCr diese Party gespeichert und nach 90 Tagen automatisch gel\u00F6scht.</p>
