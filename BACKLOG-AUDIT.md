@@ -37,6 +37,26 @@
 | 14 | 🔄 | **P1** | P1-8 | `[KERN]` Motto-Hauptseiten auf Elite-Niveau (**Einhorn ✅** → **Safari** (6-8 ✅) → **Feuerwehr** (3-5 ✅, 6-8 ✅, 9-12 ✅) → Weltraum → Detektiv → Meerjungfrau → Prinzessin/Superheld; nur Tool-integrierte Mottos) | 4,5–5 Std/Motto | **Einhorn komplett, Feuerwehr komplett (alle 3 Altersgruppen, 28.04.2026, parallel zu Safari-3-5/9-12).** Nächstes: Safari fertigstellen (3-5, 9-12), dann Weltraum. Content-Inseln (Pferde, Ritter, Zirkus, Baustelle) in P1-8b separat. Marken-Mottos zurückgestellt |
 | 15 | ⏳ | **P1** | P1-12 | `[TEST]` **Einschulung SEO-Cluster** (5–8 Landingpages, **kein Planer**) | 1,5–2 Tage | **Launch bis 31.05.** Planer-Upgrade nur wenn ≥100 Visits/Woche im Juli |
 
+### 🪮 Planer-Frisur-Sprint (geplant 11.05.2026, parallel zu obigen P1-Items)
+
+Strategischer Sprint: Planer vom Generator zum intelligenten Produkt umbauen. Realisierung von P2-23. Details in eigenem Abschnitt „PLANER-FRISUR-SPRINT" weiter unten.
+
+| # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
+|---|--------|------|--------|------------------|---------|---------|
+| S0 | ⏳ | **P1** | P3-12 | `[KERN]` **Planer-Tier-0 Sofort-Fixes** (Lizenz-Tab raus, 7→9 Mottos, Perf messen) | 2 Std | Sprint-Start |
+| S1 | ⏳ | **P1** | P3-13 | `[KERN]` **Cockpit-Header im Plan-View** (Stand-Anzeige + Next-Actions) | 1 Tag | Mentaler Reframe, Voraussetzung für Diff-Anzeigen |
+| S2 | ⏳ | **P1** | P3-14 | `[KERN]` **Machbarkeits-Box + Constraint-Solver-Fundament** | 1 Tag | Zentrale Schicht für RSVP-Bridge später |
+| S3 | ⏳ | **P1** | P3-15 | `[KERN]` **Datum + Erwachsene als Inputs** | ½ Tag | Voraussetzung für Vorbereitungskarte |
+| S4 | ⏳ | **P1** | P3-16 | `[KERN]` **Vorbereitungskarte (Wochenplan vor Geburtstag)** | 1 Tag | Strukturell wichtigster neuer Block, einzigartig im Markt |
+| S5 | ⏳ | **P1** | P3-17 | `[KERN]` **3-Gruppen-Einkaufsliste + „Hab ich zuhause"-Inventar** | 1–2 Tage | Markenkern als Mechanik |
+| S6 | ⏳ | **P1** | P3-18 | `[KERN]` **SOS-Button im Plan-View** (Live-Hilfe während Party) | 1–2 Tage | Einzigartig, Premium-fähig |
+| S7 | ⏳ | **P1** | P3-19 | `[KERN]` **KI-Rätsel-Gedichte für Schatzsuche** (einzige API-Ausnahme, gecacht) | 1 Tag | Wow-Anker, Screenshot-fähig |
+| S8 | ⏳ | **P2** | P3-20 | `[KERN]` **RSVP-Bridge** (Partyseite-Zusagen verändern Plan) | 2–3 Tage MVP / 5–7 Tage Vollausbau | Tier 2 nach S0–S7. Voraussetzung: P3-14 |
+| S9 | ⏳ | **P2** | P3-21 | `[KERN]` **Live-Party-Navigator** (Tool führt am Tag durch Party) | 5–7 Tage | Größter Wurf. Voraussetzung: alles davor |
+
+**Sprint-Aufwand S0–S7:** ~7–9 Arbeitstage = 6–8 Wochen bei 6–8h/Woche. Tier 2 (S8+S9) zusätzlich 7–14 Tage.
+
+
 ### Mittelfristig (Mai–Juli)
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
@@ -52,7 +72,7 @@
 | 24 | ⏳ | **P2** | P2-21 | `[KERN]` Seiten-Rollen-Matrix | 1 Tag | Nach P1-11 sinnvoll |
 | 25 | ⏳ | **P2** | P2-22 | `[KERN]` **Site-Wide In-App-Frame** (Modal-Pattern seitenweit) | 1–2 Tage | Retention: kein Tab-Verlust bei Vorschauen & Affiliates |
 | 26 | ⏳ | **P2** | P1-8b | `[LEGACY]` **Content-Inseln-Strategie** (Pferde, Ritter, Zirkus, Baustelle — entweder integrieren oder streichen) | 15 Min Daten-Check + 1–16 Std Umsetzung | GSC-Daten abwarten, vor weiterem Content-Ausbau entscheiden |
-| 26b | ⏳ | **P2** | P2-23 | `[KERN]` **Planer-Output auf Elite-Niveau heben** (muss inhaltlich der Tiefe der Motto-Seiten standhalten — Druckvorlagen, kuratierte Spielanleitungen, Zeitplan mit Story-Anker) | 1–2 Tage | **Voraussetzung für eingewebte Planer-CTAs auf Motto-Seiten (Phase 2).** Aktuell: Motto-Seiten überholen den Planer inhaltlich → Funnel-Versprechen wackelt. Trigger-Reihenfolge: erst Asset-Seiten fertig (P1-8), dann Planer hochziehen, dann CTAs einweben |
+| 26b | 🔄 | **P2** | P2-23 | `[KERN]` **Planer-Output auf Elite-Niveau heben** (muss inhaltlich der Tiefe der Motto-Seiten standhalten — Druckvorlagen, kuratierte Spielanleitungen, Zeitplan mit Story-Anker) | siehe Sprint | **Realisierung über Planer-Frisur-Sprint (S0–S7).** Sprint geplant 11.05.2026, ~7–9 Arbeitstage. P2-23 gilt als erfüllt nach Abschluss von P3-13 bis P3-19. |
 | 26c | ⏳ | **P3** | P2-24 | `[KERN]` **Eingewebte Leckerli-CTAs auf Motto-Seiten** (kontextuelle Mini-CTAs an Story-Anchorpunkten statt nur End-CTA) | 30 Min/Motto | **Phase 2 nach P2-23.** Trigger: wenn Planer-Output Elite-Niveau hat. Test-Hypothese: Mini-CTAs in Story-Flow konvertieren 3–5× besser als End-CTAs (Forschungsstand 2025). Erste Test-Runde auf 3 Mottos, dann auf alle ausrollen falls Conversion-Lift messbar |
 
 ### Vor dem Herbst-Peak (Juli–September)
@@ -1124,4 +1144,381 @@ Bolle hat nach einer Lösung gefragt, die Amazon & Co. trotz X-Frame-Options wir
 **Referenz:**
 - SESSION-NOTES.md 21.04.2026 Teil 1 (DSGVO-Decision)
 - Commit vom 21.04.2026 Teil 4 (datenschutz.html-Erweiterung, Sub-Task B)
+
+
+---
+
+## 🪮 PLANER-FRISUR-SPRINT (P3-12 bis P3-21, neu 11.05.2026)
+
+**Strategischer Rahmen:** Sprint, der den Planer vom Generator zum **intelligenten Produkt** umbaut. Ziel: bestes Kindergeburtstags-Tool am deutschen Markt. Konkurrenz-Recherche 11.05.2026 ergeben: **es gibt aktuell keinen interaktiven Planer in den Top-10 Google-Ergebnissen** — alles Blogs, Ratgeber, Affiliate-Listen. Die einzige Tool-Konkurrenz (Eysoldt-Partyplaner-App, Actionbound) ist generisch oder Schatzsuche-only. machsleicht spielt bereits jenseits dieser Liga, hat aber Lücken im sichtbaren Mitdenken und in der Begleit-Dimension.
+
+**Architektur-Prinzip „intelligent ohne API":** Das Tool soll wie KI wirken, aber bleibt regelbasiert. Konkret in vier Schichten:
+1. **Reaktive Outputs mit Diff-Anzeige** — sichtbar machen, was sich durch Eingaben geändert hat
+2. **Constraint-Solver** — 15–20 Regeln über alle Eingaben gleichzeitig, erkennt und löst Konflikte (Alter × Gäste × Ort × Erwachsene × Dauer)
+3. **Kuratierte Inhalts-Bibliothek** — pro Motto × Alter × Setting Spielanleitungen, Story-Anker, SOS-Mini-Programme, Plan-B-Varianten, Eltern-Briefings handgeschrieben (kein LLM-Halluzinations-Risiko, kein Wettbewerber kann das nachbauen ohne identischen Redaktions-Aufwand)
+4. **Templated Generators** — Slot-Filling mit Varianten-Bibliothek (5 Slots × 3 Optionen = 243 Variationen pro Motto, deterministisch, ohne API)
+
+**Einzige API-Ausnahme:** P3-19 (KI-Rätsel-Gedichte für Schatzsuche-Stationen) — Haiku-Call mit Cache auf Input-Hash, geschätzt ~6–9€/Monat bei 1000 Plänen, Premium-Vehikel-fähig.
+
+**Reihenfolge:** Tier 0 (P3-12, Bugs) → Cockpit + Constraint-Solver-Fundament (P3-13, P3-14) → strukturelle Hebel (P3-15, P3-16, P3-17) → Wow-Anker (P3-18, P3-19) → große Würfe danach (P3-20 RSVP-Bridge, P3-21 Live-Navigator).
+
+**Aufwand total: ~7–9 Arbeitstage = 6–8 Wochen bei 6–8h/Woche.** RSVP-Bridge + Live-Navigator zusätzlich 7–12 Tage in Tier 2.
+
+**Beziehung zu P2-23:** P2-23 („Planer-Output auf Elite-Niveau") ist der **strategische Anker**, P3-13 bis P3-19 sind die **operative Umsetzung**. Wenn dieser Sprint durch ist, ist P2-23 erfüllt und P2-24 (eingewebte CTAs) freigeschaltet.
+
+---
+
+### P3-12: Planer-Tier-0 — Sofort-Fixes
+
+**Drei kleine Bugs/Inkonsistenzen, die heute Vertrauen kosten. < 2h gesamt.**
+
+- **Lizenz-Tab im Wizard entfernen.** `_src/kindergeburtstag.jsx` Z. 1241–1265: Tab-Schalter „🎨 Klassisch / ⭐ Charaktere" zeigt bei Klick auf Charaktere leere Liste mit Fehlermeldung („Für X Jahre keine Lizenz-Mottos verfügbar"). LICENSE-Array ist seit 30.04. leer (`_src/kindergeburtstag-data.js` Z. 1765–1768), aber UI-Tab + Filter-Logik nicht zurückgebaut. Restprodukt aus dem Cut. → Tab-Schalter raus, `mottoTab`-State raus, Filter-Logik raus, nur `GENERIC` direkt rendern.
+- **„Sieben Mottos" → „Neun Mottos" im SEO-Body.** `kindergeburtstag.html` Z. 231: „Sieben Mottos für Kinder von 3 bis 12 Jahren". Widerspricht ItemList-Schema (9 Items) und 7-Motto-Grid im SEO-Body. War Teil des Round-2-Cuts vom 30.04., wurde aber übersehen. → Korrigieren auf 9 Mottos (7 Voll + 2 Schatzsuche).
+- **Performance-Baseline messen.** `js/kindergeburtstag.js` ist 260 KB unminified + React-UMD extern. Vor SEO-Push Lighthouse + CWV messen, dokumentieren. Wenn LCP > 2,5s mobile → P2-5 hochstufen. Wenn ok → notieren, nicht handeln.
+
+**Aufwand:** 2 Std.
+**Trigger:** sofort, Session-Start des Sprints.
+**Wirkung:** entfernt Glaubwürdigkeits-Lecks vor allen weiteren Builds.
+
+---
+
+### P3-13: Cockpit-Header im Plan-View
+
+**Mentaler Reframe: aus „hier ist dein Plan" wird „hier ist dein Stand".**
+
+Nach Plan-Generierung erscheint oben im Plan-View eine kompakte Cockpit-Box statt dem aktuellen Motto-Badge:
+
+```
+🚒 Dein Feuerwehr-Geburtstag steht
+Für: 5 Jahre · Kinder: 8 · Ort: Zuhause · Dauer: 2,5 Std · Aufwand: mittel
+
+Fertig:
+✓ Ablauf  ✓ 3 Spiele  ✓ Einkaufsliste  ✓ Kosten pro Kind
+
+Nächste Schritte:
+[Einladung erstellen]  [Schatzsuche hinzufügen]  [Partyseite anlegen]
+```
+
+**State-Anzeige + Action-Buttons in einem Block.** Die Sticky-Buttons unten bleiben für Mobile-Scroll, der Header oben gibt Orientierung.
+
+**Datenmodell:**
+```js
+function getPlanState(plan) {
+  return {
+    completed: ['ablauf', 'spiele', 'einkauf', 'kosten'],
+    optional: { schatzsuche: szActive, einladung: inviteSent > 0, partyseite: false },
+    nextActions: computeNextActions(plan) // priorisiert nach Funnel-Position
+  };
+}
+```
+
+**Aufwand:** 1 Tag (8 Std). Komponente, State-Funktion, Plan-View Integration ab `motto.cat === "license"` Block (Z. 1015).
+**Wirkung:** Vereinheitlicht alle anderen Features in einem mentalen Rahmen. Voraussetzung für sichtbare Diff-Anzeigen späterer PBIs.
+
+---
+
+### P3-14: Machbarkeits-Box mit Klartext + Constraint-Solver-Fundament
+
+**Aus deskriptivem `calcScore()` wird handlungsleitende `analyzeFeasibility()`.**
+
+Heute existiert ein Mini-Solver: `calcScore()` (Z. 891–923) berechnet 7 Dimensionen + missing-Items. Beschreibend, ändert den Plan nicht. **Refactoring** zu einer Klartext-Ausgabe, die der User versteht, plus echte handlungsleitende Logik.
+
+**Neue Schwellenwerte (Auswahl, ehrlich):**
+| Bedingung | Stufe | Klartext |
+|---|---|---|
+| 3–5 J + >8 Kinder | anspruchsvoll | „Das wird etwas lebendig. Kürze Spielblöcke auf 10 Min." |
+| Wohnung + >10 Kinder | kritisch | „Eng. Wir streichen parallele Stationen." |
+| 1 Erwachsener + >8 Kinder | kritisch | „Allein mit 9 Kindern ist nicht ideal — können wir helfen, einen Helfer zu finden?" |
+| Dauer >3 Std + <6 Jahre | zu lang | „Für Kinder unter 6 ist 3+ Std zu viel. Schlage 2,5 Std vor." |
+| wild + Wohnung | anspruchsvoll | „Frühe Bewegung, dann Pause." |
+| wenig Vorbereitung + Wow-Modus | runter | „Wir reduzieren auf Standard." |
+
+**Box im Plan-View:**
+```
+Machbarkeit: anspruchsvoll
+9 Kinder, 5 Jahre, Wohnung mit nur 1 Erwachsenem wird laut.
+Wir haben angepasst:
+✓ keine Wasserstation
+✓ keine parallelen Gruppen
+✓ 2 Spiele ohne Material
+✓ ruhige Phase nach 45 Minuten
+```
+
+**Architektur-Ziel:** `analyzeFeasibility()` ist die zentrale Schicht, durch die später **alle** Eingaben gehen (Wizard heute, RSVP später in P3-20, Live-Navigator in P3-21). Datenstruktur muss eingaben-quellen-agnostisch sein.
+
+**Aufwand:** 1 Tag (8 Std). 15–20 Regeln schreiben, Klartext-Texte formulieren, Diff-Anzeige bauen.
+**Wirkung:** Erste sichtbare „Intelligenz". Strukturelles Fundament für RSVP-Bridge.
+
+---
+
+### P3-15: Erwachsenen-Zahl + Geburtstags-Datum als neue Eingaben
+
+**Zwei kleine Eingaben mit großem Hebel — beide speisen den Constraint-Solver aus P3-14.**
+
+**Datum:**
+- Nach Schritt 3 (Gästezahl) ein neuer Schritt 4: „Wann ist der Geburtstag?" (Datepicker)
+- Verwendung: Countdown im Cockpit-Header („noch 12 Tage"), automatisches Hochsetzen in Emergency-Mode bei <48h, Voraussetzung für Vorbereitungskarte (P3-16) und für Save-the-Date-Reminder.
+- localStorage-Persistenz wie alle anderen Felder.
+
+**Erwachsene:**
+- Chip-Auswahl im Wizard: `[1] [2] [3+]`
+- Verwendung: Constraint-Regel (1 Erw + viele Kinder = kritisch), und später Trigger für „Rollenplan für Helfer" (P3-Backlog, nicht im Sprint).
+
+**Aufwand:** ½ Tag (4 Std). Datepicker + Chips + State-Felder + Constraint-Integration.
+**Wirkung:** Datum ist Voraussetzung für Vorbereitungskarte. Erwachsene schärfen Machbarkeits-Box.
+
+---
+
+### P3-16: Vorbereitungskarte (datums-getriebene Wochenplan-Ansicht)
+
+**Strukturell der wichtigste neue Ergebnis-Block. Macht aus Snapshot → Begleiter.**
+
+Sobald Datum eingegeben (P3-15), erscheint im Plan-View ein neuer Abschnitt unter dem Zeitplan:
+
+```
+📋 Was bis zum 24. Mai zu tun ist
+
+7 Tage vorher (Sa 17.5.)
+□ Einladungen verschicken
+□ Gästezahl grob klar
+
+2 Tage vorher (Do 22.5.)
+□ Einkauf erledigen
+□ Feuerwehr-Ausweise drucken
+□ Schatzsuche-Hinweise vorbereiten
+
+Am Partytag morgens
+□ Spielmaterial bereitlegen
+□ Kuchen vorbereiten
+□ Stationen kurz testen
+
+30 Minuten vorher
+□ Erste Aktivität sichtbar bereitlegen
+□ Getränke rausstellen
+□ Handy weglegen, Plan öffnen
+```
+
+**Kuratiert pro Motto:** motto-spezifische Items („Feuerwehr-Ausweise" statt generisch „Bastel-Material"). Pro Motto ein zusätzliches Datenset im Daten-File (`_src/kindergeburtstag-data.js`).
+
+**Checkbox-State** in localStorage. Wenn ein Item abgehakt, im Folge-Reload sichtbar — das ist der **Retention-Hebel**: Eltern kommen mehrfach zurück, jedes Mal sind weniger Items übrig.
+
+**Spätere Erweiterung (nicht im Sprint, P3-Backlog):** Email-Reminder am jeweiligen Tag, „heute steht aus deiner Vorbereitung an…". Voraussetzung: Email-Capture aus P1-15.
+
+**Aufwand:** 1 Tag (8 Std). Komponente + Datumslogik + Pro-Motto-Inhalts-Stubs (Feuerwehr ausgebaut, andere Mottos generisch zunächst, ausbau parallel zu P1-8).
+**Wirkung:** Tool wird mehrtägiges Werkzeug. **Kein Konkurrent hat das.**
+
+---
+
+### P3-17: Drei-Gruppen-Einkaufsliste + „Was hab ich zuhause"-Inventar
+
+**Einkaufsliste neu strukturieren — von einer Liste zu drei Gruppen plus Inventar-Check.**
+
+**Heute:** Eine Liste mit „Hab ich schon"-Checkbox, kaufen/leihen/diy-Tags.
+
+**Neu:** Vier Sektionen, in dieser Reihenfolge:
+
+```
+🛒 Einkaufsliste — Feuerwehr 5 Jahre
+
+Muss kaufen
+□ Kuchen oder Muffins
+□ Getränke
+□ kleiner Preis / Schatz
+
+Gut, wenn ihr habt
+□ Eimer
+□ Softbälle  
+□ rote Luftballons
+
+Kannst du weglassen
+✕ Komplette Kostüme für alle (Helm-Bemalen reicht!)
+✕ teure Deko-Sets
+
+────────
+
+Schon zuhause?
+[Papier] [Stifte] [Becher] [Eimer] [Klebeband] [Softbälle] [Decke]
+→ klick was du hast, wandert in „bereits da" und verschwindet aus „kaufen"
+```
+
+**Markenkern-Mechanik:** „Wir bauen deinen Feuerwehr-Geburtstag aus dem, was du schon hast." Das ist machsleicht pur — Branding als Mechanik, nicht als Slogan.
+
+**Datenmodell:** Pro Item neue Felder `category: "must" | "nice" | "skip"`, `commonlyAtHome: bool`. Bestehende `owned`-Logik wandert in den Inventar-Check oben.
+
+**Aufwand:** 1–2 Tage. Daten-Migration pro Motto (~30 Min/Motto) + UI-Aufteilung. Feuerwehr und Piraten Vollausbau, andere Mottos initial flach kategorisieren.
+**Wirkung:** Stress-Reduzierer, Anti-Pinterest-Haltung sichtbar. Erhöht Share-Rate weil Liste **kürzer wirkt** als sie ist.
+
+---
+
+### P3-18: SOS-Button im Plan-View
+
+**Sichtbarer, jederzeit erreichbarer Notfall-Knopf während der Party.**
+
+Heute existiert nur `emergencyMode` als Vorab-Wizard-Knopf für 48h-Geburtstage. Was fehlt: **SOS während der Party**.
+
+**UI:** Ein roter Sticky-Knopf (vielleicht im Cockpit-Header, vielleicht eigenständig sticky-bottom), öffnet ein Modal:
+
+```
+🆘 SOS während der Party
+
+Was ist los?
+○ Kinder werden zu wild
+○ Spiel ist zu schnell vorbei
+○ Wir liegen hinter der Zeit
+○ Regen setzt ein
+○ Ich brauche 15 Min Pause
+```
+
+**Inhalte (kuratiert, pro Motto):** Pro Szenario ein 6–10-Zeilen-Mini-Programm. Beispiel Feuerwehr / „Kinder zu wild":
+
+```
+Feuerwehr-Zentrale (6 Minuten, kein Material)
+Alle Kinder setzen sich in den Kreis. Du bist Einsatzleitung.
+Jedes Kind bekommt einen Funknamen ("Hydrant 1", "Schlauch 2"...).
+Du gibst 4 ruhige Funk-Kommandos:
+1. "Alarmcheck: alle einmal Sirene"
+2. "Wasser-Marsch: alle klatschen"  
+3. "Hydrant-Standby: einfrieren"
+4. "Rettungseinsatz: zeigt auf ein Kuscheltier"
+Dauer: 6 Min. Danach: direkt zur Kuchenpause.
+```
+
+**Datenmodell:** `_src/kindergeburtstag-data.js` bekommt pro Motto ein `sos`-Objekt mit 4–5 Szenarien.
+
+**Aufwand:** 1 Tag UI + 0,5–1 Tag Inhalte schreiben (Feuerwehr ausgebaut, andere Mottos generisch). Inhalts-Ausbau pro Motto parallel zu P1-8.
+**Wirkung:** **Einziges Feature, das während der Party hilft.** Kein Konkurrent hat das. Premium-Validierungs-Vehikel (Basis kostenlos, „Profi-SOS" mit 4 weiteren Szenarien für 2.99€ via Lemon Squeezy).
+
+---
+
+### P3-19: KI-Rätsel-Gedichte für Schatzsuche-Stationen
+
+**Einzige API-Ausnahme im Sprint. Veredelt das stärkste existierende Feature.**
+
+Heute: Schatzsuche-Stationen haben handgeschriebene Versteck-Texte ("auf dem Tisch"). Funktional, aber nicht Wow.
+
+Neu: Bei aktiver Schatzsuche **gereimte Rätsel** für jede Station, individuell für Motto + Versteck. Beispiel:
+
+```
+Station 3 — Versteck: Küche
+"Wo schon mal die Stulle wartete,
+suche dort wo die Pizza startete.
+Im Kasten kühl und hell und weiß,
+liegt der Hinweis auf das nächste Reis."
+```
+
+**Mechanik:**
+- Haiku-Call mit Prompt: `"Schreibe ein 4-zeiliges gereimtes Versteck-Rätsel für Kinder ${age} Jahre, Motto ${motto}, Versteck-Ort ${location}. Spielerisch, leicht zu lösen."`
+- **Cache auf MD5-Hash der Inputs** (Motto + Alter + Versteck). Reim wird einmal generiert, dann ewig wiederverwendet.
+- Cache-Hit-Rate erwartet >70%, weil Eltern oft gleiche Verstecke wählen (Sofa, Bett, Küche, Schrank).
+- Effektive Kosten: 6–9€/Monat bei 1000 Plänen/Monat. Bei 10k Plänen ~70€.
+
+**API-Key:** Anthropic API. Aufruf vom Worker (nicht Browser, sonst Key sichtbar). Worker hat `ANTHROPIC_API_KEY` als Secret.
+
+**Aufwand:** 1 Tag. Worker-Endpoint + Cache + UI-Integration in Schatzsuche-Block.
+**Wirkung:** Screenshot-fähiges Wow. Kinder erzählen davon. Eltern teilen die Reime. Plus: Premium-Vehikel — Basis-Reime kostenlos (max. 5/Plan), „Pro-Reim-Pack" für alle Stationen + Alternativen 2.99€.
+
+---
+
+### P3-20: RSVP-Bridge — Partyseite-Zusagen verändern den Plan
+
+**Großer Wurf in Tier 2, nach P3-12 bis P3-19. Voraussetzung: Constraint-Solver aus P3-14 existiert.**
+
+**Heute:** Partyseite erfasst RSVP (Name, Status `ja`/`nein`/`vielleicht`, Allergien, Abholzeit, Abholperson) → Datenmodell sauber, KV-Storage pro Party-ID. Planer kennt diese Daten **nicht**. Wenn morgen 3 Kinder absagen, ändert sich nichts.
+
+**Ziel:** Plan reagiert sichtbar und sinnvoll auf RSVP-Änderungen.
+
+**Drei Architektur-Bausteine:**
+
+**1. Plan↔Partyseite-Verknüpfung.** Wenn aus Planer eine Partyseite erstellt wird (CTA gibt's), wird die Partyseiten-ID im Planer-State gespeichert (`localStorage.partyId`). Optional: „Plan per Mail speichern" für dauerhafte Verknüpfung über Browser-Wechsel hinweg.
+
+**2. Reload-Mechanismus.** Beim Öffnen des Planers mit verknüpfter Partyseite → ein Worker-Call holt aktuelle RSVP-Daten. Wenn Änderungen seit letzter Anzeige → **Banner oben**, nicht autoritäre Plan-Änderung:
+
+```
+📩 Update von der Partyseite
+
+Seit gestern: 1 Kind hat abgesagt (Tom), 1 Allergie (Mia — Nüsse)
+Aktueller Stand: 7 Zusagen, 1 Vielleicht
+
+[Plan anpassen]  [Wir haben's gesehen, ignorieren]
+```
+
+**3. Anpassungs-Logik (delta-fähig).** Wenn „Plan anpassen" geklickt:
+- **Snackmengen** neu berechnen (trivial, pure Funktion der Zahl)
+- **Mitgebsel** auf Anzahl + 1–2 Reserve setzen
+- **Kosten/Kind** recalc
+- **Allergie-Warnungen** in Snack-Liste persistent einblenden, ggf. Alternative vorschlagen
+- **Spiele** mit Mindest-Teilnehmer-Zahlen prüfen (z.B. Team-Spiel <4 Kinder = ersetzen)
+- **Abholzeit-Logik**: wenn Zeiten streuen → letzte Plan-Phase wird „Wer abgeholt wird, geht. Wer wartet, macht X."
+
+**Diff-Anzeige sichtbar:** „Snacks reduziert: 11 Muffins → 10. Mitgebsel: 7 + 1 Reserve. Nussfreie Snack-Warnung ergänzt. Schatzsuche bleibt bei 5 Stationen."
+
+**Wichtig — UX-Prinzip:** Plan-Änderung ist **vorschlagend**, nicht autoritär. Eltern haben evtl. schon eingekauft. Buttons „Übernehmen" / „Verwerfen" pro Anpassungs-Block.
+
+**Aufwand:**
+- MVP (Snacks/Mitgebsel/Kosten only + Allergie-Hinweis + Banner): **2–3 Tage**
+- Vollausbau (Spiel-Anpassungen + Abholzeit-Logik + delta-fähige Diff-Engine): **5–7 Tage**
+
+**Wirkung:** Macht aus Planer + Partyseite ein **Paar, das mehr ist als die Summe**. Strukturelles Verkaufsargument („andere haben RSVP, niemand passt den Plan an").
+**Voraussetzung:** P3-14 (Constraint-Solver) muss stehen. Sonst Doppelarbeit.
+
+---
+
+### P3-21: Live-Party-Navigator (Tier 2, großer Wurf)
+
+**Der Modus, in dem das Tool die Party am Tag selbst durch den Tag begleitet. Größter potenzieller Wow-Hebel, größter Aufwand.**
+
+Statt nur vorher zu planen — am Partytag öffnet der Gastgeber den Plan und tippt **„Party starten"**. Tool wechselt in einen Live-Modus:
+
+```
+Jetzt: 15:35 Einsatztraining
+Nächster Schritt in 25 Min: Kuchenpause
+
+[ Spiel starten ]  [ Überspringen ]  [ Dauert länger ]
+[ 🆘 Kinder werden wild ]  [ ⏸ Pause ]
+```
+
+Pro Phase Buttons, die den Plan dynamisch anpassen:
+- **Spiel starten** → Timer läuft, Anleitung wird groß angezeigt
+- **Überspringen** → nächste Phase, Restzeit umverteilen
+- **Dauert länger** → +10 Min, nachfolgende Phasen kürzen
+- **Kinder werden wild** → SOS-Programm aus P3-18 startet, Plan pausiert
+- **Pause** → Plan eingefroren, Timer aus
+
+**Zeitpuffer-Autopilot:** Plan hat versteckt 10–15 Min Puffer eingebaut. Bei Verzögerung wird Puffer angezapft, Eltern sehen „du liegst 8 Min hinter Plan — kein Stress, Puffer hilft". Bei Überschuss: „du bist 12 Min vor Plan — soll ich ein Funkspiel einschieben?"
+
+**Architektur:** State-Maschine. Phase, Zeitstempel, modifizierte Restzeit. Im localStorage gespeichert (Sicherheit gegen Browser-Crash am Geburtstag — kritisch).
+
+**Aufwand:** **5–7 Tage.** Größter Einzelposten im Backlog. State-Maschine, Live-UI, Timer-Logik, SOS-Integration, Recovery bei Browser-Crash.
+
+**Wirkung:** **Kategorienwechsel.** Aus „Planer" wird „Begleiter durch den Tag". Niemand auf dem deutschen Markt macht das. Premium-fähig (Live-Modus als 2.99€-Upgrade plausibel). WhatsApp-Story-Material am Tag des Geburtstags.
+
+**Voraussetzungen:** P3-13 (Cockpit), P3-14 (Constraint), P3-18 (SOS-Inhalte), P3-16 (Zeitplan-Strukturen). Alles aus dem Sprint vorher.
+
+**Risiko:** Wenn das am Geburtstag nicht funktioniert, ist es ein Drama. Muss extrem robust + offline-fähig sein. Nach Browser-Crash muss Plan-State recovern.
+
+---
+
+## 📦 Nicht-aufgenommene Vorschläge aus 11.05.2026 (mit Re-Evaluation-Trigger)
+
+Aus drei Sparring-Dokumenten (Claude-Lückenanalyse + zwei externe Ideen-Dokumente) kamen ~30 Vorschläge. Folgende bewusst **nicht** im Sprint, mit Begründung:
+
+| Vorschlag | Warum nicht jetzt | Re-Evaluation wenn |
+|---|---|---|
+| Stress-Chips als Wizard-Step | Bricht Funnel-Axiom 0.1 (Hero = einfach). Würde im Wizard zu viel Last erzeugen. | Als Plan-View-Layer („möchtest du anpassen?") in Tier 3 möglich. |
+| Audio-Geschichte mit Vorname (ElevenLabs) | Premium-Vehikel, gehört in Strategie-Stufe 4 (Audio nach Validierung 1+3). | Nach P3-19-Daten (zahlen Eltern für Mikro-Upsells?). |
+| Eltern-Stats („Was haben andere gemacht") | Braucht Traffic-Daten erst. Bei 0 Plänen pro Woche = leere Stats. | Bei ≥500 Plänen/Monat scharfe Stats möglich. |
+| Charakter-Brief am Vortag | Liebenswert, aber kleinerer Hebel als Sprint-Top-Features. | Q3 2026 als Mikro-Premium-Produkt. |
+| Eltern-Briefing für Helfer | Gut, aber kein Wow-Hebel. Folge-PBI nach P3-15 (Anzahl Erwachsene) sinnvoll. | Sprint Tier 3, parallel zu RSVP-Bridge. |
+| Streit-Vermeidungsmodus | Gehört in Stress-Chips als Sub-Option, nicht eigener Modus. | Mit Stress-Chips-Layer zusammen. |
+| Gruppendynamik-Chips | 6 weitere Chips zusätzlich zu Constraint-Chips = UI-Last. Konsolidieren. | Wenn Stress-Chips-Layer existiert, ggf. Sub-Option. |
+| Plan-B-Generator (3 Parallel-Pläne) | Architektur-Bruch (heute: ein Plan mit Switches). Refactor zu mehreren Karten 2–3 Tage. | Sprint Tier 3 möglich, wenn Live-Navigator zeigt dass Eltern Variation wollen. |
+| Material-Minimierer | Algorithmus-Polish, kein eigenständiges Feature. In bestehende Spiel-Auswahl integrierbar. | Mit P1-8 ausgebauten Spiel-Bibliotheken. |
+| Anti-Pinterest-Modus | **Existiert.** `shoppingMode="minimal"` + `effort="minimal"` + `quietMode`. Was fehlt: bessere Beschriftung. | 5-Min-Text-Änderung in Tier 0 möglich. |
+| Stress-Zuerst-Wizard | Bricht Funnel-Axiom hart. | Als A/B-Test denkbar wenn Traffic vorhanden, frühestens Q4. |
+| Fotoalbum, Danke-Generator, Wunschliste-Integration | Strategie 0.8 hat das adressiert. Wunschliste in P2-17, Rest gestrichen oder Q2/Q3. | Gemäß Strategie 0.8. |
+| Erzieher:innen-Modus | Strategie 0.8 hat „B2B" gestrichen. Aber B2C-Erzieher ist eigene Kategorie. | Nach 5.000€+/Monat Consumer-Revenue. |
+
+**Aufnahme-Logik:** Vorschlag muss entweder neues Mitdenken (sichtbar) liefern, neue Begleit-Dimension öffnen, oder echten Daten-Moat aufbauen. Reiner Feature-Klau wird nicht aufgenommen.
+
+---
 

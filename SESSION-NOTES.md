@@ -1,61 +1,87 @@
-# Session-Notiz — 30.04.2026
+# Session-Notiz — 11.05.2026
 
 ## Kontext der Session
 
-Der Cut vom 29.04. (17→9 Mottos) war strategisch richtig, aber halbfertig: Lizenz-Mottos waren nur noindex-gestellt (Schrödinger-Status), 207 Pages enthielten noch „17 Mottos / 153 Spiele", Cross-Links zeigten auf nicht mehr existente Lizenz-Pages. Bolle war verunsichert, ob der Cut überhaupt richtig war, und hatte parallel einen 4-Tool-Verkettungs-Plan und ein externes Strategiedokument („machsleicht V3") im Kopf.
+Reine **Strategie- und Planungs-Session** zum Planer. Kein Code-Change am Tool selbst. Bolle hat den Planer zur Marktreife & „Spitze des Marktes" durchgesprochen — was fehlt, was wäre Gesprächsthema-Feature, wie wird aus Generator ein intelligentes Produkt ohne API-Kosten. Ergebnis: ein konkreter Frisur-Sprint mit 8 Hauptfeatures plus 2 große Wetten danach. Alle 10 PBIs sind in `BACKLOG-AUDIT.md` als **P3-12 bis P3-21** angelegt und in der Prio-Tabelle oben als „Planer-Frisur-Sprint" sichtbar.
 
-**Strategische Klärung in dieser Session:**
-1. Cut vom 29.04. war richtig in der Richtung, falsch in der Begründung (als „Aufräumen" statt als „Funnel-Entscheid" verkauft).
-2. Externes V3-Strategiedokument: 70% richtig in der Diagnose (Distribution+Fokus, North Star Partyseiten/Monat, Viral Loop), 50% richtig in der Therapie (1-Motto-Reduktion zu radikal, 14-Tage-Sprints unrealistisch, Feature-Bloat-Inkonsistenz).
-3. **Funnel-Prototyp wird Feuerwehr** (nicht Piraten): bestes frisches Asset, Brandschutz-USP rankt niemand, Konkurrenz schwächer als bei Piraten.
-4. **4-Tool-Verkettung wird später** (Q3 2026), erst Feuerwehr-Funnel als isolierte Strecke testen, dann Schatzsuche/Einladung als zusätzliche Eingänge in die Partyseite.
+## Was heute analysiert wurde
 
-## Was heute gemacht wurde — Cut sauber abgeschlossen
+**Quellen:**
+1. **Source-Read** komplett: `_src/kindergeburtstag.jsx` (1352 Z., Wizard + Plan-View + Schatzsuche-Block + alle Sub-Komponenten), `_src/kindergeburtstag-data.js` (LICENSE-Array seit 30.04. leer, aber UI noch nicht zurückgebaut)
+2. **STRATEGIE.md** + **BACKLOG-AUDIT.md** als Leitplanken (Funnel-Axiom 0.1, Validierungs-Reihenfolge 0.7, Capacity-Update 30.04., P2-23 als Anker)
+3. **Externe Konkurrenz-Recherche** (web_search 11.05.): Top-10 Google für „kindergeburtstag planen" = ausschließlich Blogs/Affiliate-Listen, kein interaktiver Planer. Eysoldt-Partyplaner-App (iOS) ist generischer Erwachsenen-Planer. Actionbound = Schatzsuche-only. **Strukturell keine Tool-Konkurrenz auf machsleicht-Niveau.**
+4. **Drei Sparring-Dokumente** vom User eingebracht: eine eigene Lückenanalyse (15 Ideen) + zwei externe Inputs (10+20 Ideen). Ehrlich gegeneinander gestellt, konsolidiert.
 
-- **121 Lizenz-Files gelöscht**: 8 Mottoseiten + 8×13 Altersseiten + 8 Guide-Seiten + 8 Ratgeber-für-Eltern-Pages
-- **24 Wildcard-301-Redirects** in `_redirects` für alle Lizenz-URL-Patterns + 113 alte 200-Rewrites entfernt
-- **Globaler Replace** `17 Mottos` → `9 Mottos`, `153 Spiele` → `81 Spiele`, `Alle 17 Mottos` → `Alle Mottos` über 95 Pages
-- **Cross-Link-Sanierung** in 69 Pages: alle „Weitere Motto-Ideen"-Cards mit Lizenz-Mottos rausgepatcht (Python-Script). Drei Sonderfälle manuell gefixt: detektiv.html (Harry Potter, Ninjago), einhorn-9-12-jahre.html (Pokémon, Meerjungfrau-Zombie), kindergeburtstag.html (JSON-LD ItemList).
-- **JSON-LD Hero ItemList** in kindergeburtstag.html: numberOfItems 14→9, alle 8 Lizenz-Mottos raus, Detektiv ergänzt, Schatzsuche/Dschungel + Schatzsuche/Feen ergänzt.
-- **Validator Stufe 8 ergänzt**: Guard gegen veraltete Zahlen + Lizenz-Motto-Pages + Lizenz-Verlinkungen. Wenn das jemals wieder failt = Regression.
-- **STRATEGIE.md Sektion 0.7** — Lizenz-Mottos-Cut als feststehendes Leitprinzip dokumentiert mit 4 Begründungen. Damit ist die Frage „war das richtig?" nicht mehr offen.
-- **Validator** komplett grün, alle Stufen PASSED.
+## Architektur-Erkenntnis: „intelligent ohne API"
 
-## Round 2 (Re-Check): weitere Inkonsistenzen gefixt
+Bolle wollte kategorisch keine API-Kosten. Konsequenz: vier-schichtige Architektur entworfen, alle deterministisch:
 
-Beim manuellen Check fielen Stellen auf, die der erste Cut nicht abgedeckt hatte. Genau das Halb-fertig-Muster vom 29.04., das Bolle verunsichert hatte. Diesmal sauber zu Ende:
+1. **Reaktive Outputs mit Diff-Anzeige** — sichtbar machen, was sich durch Eingaben geändert hat (heute fehlt das — Logik ist da, Sichtbarkeit nicht)
+2. **Constraint-Solver** — 15–20 Regeln über alle Eingaben (Alter × Gäste × Ort × Erwachsene × Dauer)
+3. **Kuratierte Inhalts-Bibliothek** — pro Motto × Alter handgeschrieben, kein Halluzinations-Risiko, **kein Wettbewerber kann das ohne identischen Redaktions-Aufwand klauen**
+4. **Templated Generators** — Slot-Filling mit Varianten-Bibliotheken (5 Slots × 3 Optionen = 243 Variationen, deterministisch)
 
-- **`ratgeber/index.html` killed**: Page verlinkte 8 Lizenz-Mottos in 2 Sektionen (Card-Grid + Quick-Guides). Da nach Lizenz-Cut leer wäre → Page gelöscht, Ordner gelöscht, 301 in `_redirects` zu `/kindergeburtstag`, Sitemap-Eintrag entfernt.
-- **`spielkarten.html` EXTRA-Block**: 95-Zeilen-JS-Objekt mit Spielmechaniken für alle 8 Lizenz-Mottos (Pokéball-Werfen, Block-Stapeln, Pokemon-Escape etc.) → komplett entfernt. Motto-Grid-Selector reduziert auf 6 Voll-Mottos.
-- **`kindergeburtstag-6-jahre.html`**: Decision-Cards Pokémon/Minecraft/Frozen → Detektiv/Feuerwehr/Einhorn. 4 Body-Text-Stellen neutralisiert (Pokemon-Tischdecke, Minecraft-Block-Bauen, Sammelkarten-Station, Pokemon-Quiz-Beispiele).
-- **`kindergeburtstag-7-jahre.html`**: Komplette Sektion „Mottos für 7-Jährige" mit 4 Decision-Cards (Minecraft, Spider-Man, Harry Potter, Super Mario) + 4 Detail-Absätzen ersetzt durch Detektiv/Feuerwehr/Weltraum/Safari mit echten Spielmechaniken statt Lizenz-Inhalten. Quiz-Beispiel-Fragen, Deko-Hack neutralisiert.
-- **`kindergeburtstag-5-jahre.html`**: Paw-Patrol-Decision-Card → Safari, Tischdecken-Beispiel neutralisiert.
-- **`kindergeburtstag.html` FAQ-Schema**: 3 Stellen (Schema.org JSON-LD + sichtbare FAQ-Details) erwähnten alle 7 Lizenz-Mottos als „beliebteste Mottos 2026" — das wäre direkt von Google indexiert worden. Ersetzt durch die 7 Voll-Mottos mit Altersangaben.
-- **`js/index.js` (compiled React Homepage)**: Ratgeber-Block (1.050 Zeichen mit „Pokémon, Minecraft, Ninjago — was ist das eigentlich?") komplett entfernt + Footer-Ratgeber-Link weg + Trust-Badge „Von Piraten bis Frozen" → „Von Piraten bis Detektiv".
-- **`js/kindergeburtstag-data.js` (tote Datei) gelöscht**: 2.409 Zeilen, wurde nirgends importiert. Build-Output `js/kindergeburtstag.js` ist die einzige genutzte Datei. Build neu ausgeführt nach Source-Änderung.
-- **`party-worker.js`**: Zwei Lizenz-Farb-Mappings (MOTTO_COLORS und embedded MC) enthielten alle Lizenz-Mottos + 5 Zombie-Mottos (Meerjungfrau, Ritter, Zirkus, Baustelle) → reduziert auf 9 Voll-Mottos + Halloween. THEMES analog.
-- **`einhorn-9-12-jahre.html`**: 2 redaktionelle Lizenz-Vergleiche entfernt („Fantasy-Welten wie Harry Potter, Percy Jackson", „spielen Minecraft und Roblox"). Rechtlich nominative Markennutzung wäre zulässig, aber strategisch konsistent: ganz raus.
-- **Validator Stufe 8 erweitert**: Vierter Sub-Check „Keine Lizenz-Markennamen im Body-Text mehr". Verhindert, dass Texte mit Lizenz-Marken künftig wieder reinrutschen.
+**Einzige API-Ausnahme im Sprint:** Schatzsuche-Rätsel-Gedichte (P3-19), gecacht auf Input-Hash. Geschätzte Kosten 6–9€/Monat bei 1000 Plänen — Premium-Vehikel-fähig, ein expliziter Wow-Anker.
 
-**Final-Status:** Alle 4 Sub-Checks in Stufe 8 grün. Validator PASSED ohne Warnungen. **Diff Round 1+2 zusammen:** ~242 Files, ca. -45.500 Zeilen netto.
+**Bestehende Code-Erkenntnis:** `calcScore()` (Z. 891–923) ist bereits ein primitiver Constraint-Solver, nur deskriptiv (gibt Zahlen aus), nicht handlungsleitend. Refactor zu `analyzeFeasibility()` mit Klartext-Output ist die zentrale Architektur-Investition in P3-14.
+
+## Der Sprint (10 PBIs, P3-12 bis P3-21)
+
+**Tier 0 (sofort, 2 Std):**
+- **P3-12** — Sofort-Fixes: Lizenz-Tab raus, „Sieben Mottos" → „Neun Mottos" im SEO-Body, Performance-Baseline messen
+
+**Tier 1 (Sprint-Hauptteil, ~7–9 Arbeitstage = 6–8 Wochen bei 6–8h/Woche):**
+- **P3-13** — Cockpit-Header im Plan-View (Stand-Anzeige + Next-Actions, 1 Tag)
+- **P3-14** — Machbarkeits-Box + Constraint-Solver-Fundament (1 Tag, zentrale Architektur-Schicht)
+- **P3-15** — Datum + Erwachsene als neue Wizard-Inputs (½ Tag, Voraussetzung für P3-16)
+- **P3-16** — Vorbereitungskarte (datums-getriebener Wochenplan, 1 Tag, **strukturell einzigartig im Markt**)
+- **P3-17** — Drei-Gruppen-Einkaufsliste + „hab ich zuhause"-Inventar (1–2 Tage, Markenkern als Mechanik)
+- **P3-18** — SOS-Button im Plan-View (1–2 Tage, einziges Live-Hilfe-Feature im Markt, Premium-fähig)
+- **P3-19** — KI-Rätsel-Gedichte für Schatzsuche (1 Tag, einzige API-Ausnahme, Wow-Anker)
+
+**Tier 2 (große Würfe danach, 7–14 Tage):**
+- **P3-20** — RSVP-Bridge: Partyseite-Zusagen verändern den Plan (2–3 Tage MVP / 5–7 Tage Vollausbau). Voraussetzung: P3-14 muss stehen.
+- **P3-21** — Live-Party-Navigator: Tool führt am Tag durch die Party (5–7 Tage). Größter Wurf, größter Aufwand. Setzt P3-13/14/16/18 voraus.
+
+## Was bewusst nicht im Sprint ist
+
+In `BACKLOG-AUDIT.md` Sprint-Sektion eine Tabelle „Nicht-aufgenommene Vorschläge" mit ~13 Items aus den Sparring-Dokumenten + Begründung + Re-Evaluation-Trigger. Wichtigste Ausschlüsse: Stress-Chips als Wizard-Step (bricht Funnel-Axiom 0.1), Audio-Geschichte (Premium-Stufe 4), Eltern-Stats (braucht Traffic), Plan-B-Generator (Architektur-Bruch). Nicht „nie" — mit klaren Re-Eval-Triggern.
+
+## P2-23 ist mit dem Sprint erfüllt
+
+Bolle hatte in P2-23 bereits dokumentiert: „Motto-Seiten überholen den Planer inhaltlich → Funnel-Versprechen wackelt." Sprint P3-13 bis P3-19 ist die **operative Umsetzung** von P2-23. P2-23-Tabellen-Status auf 🔄 gesetzt, Verweis auf Sprint im Kommentar.
+
+Nach Sprint-Abschluss freigeschaltet: **P2-24** (eingewebte Leckerli-CTAs auf Motto-Seiten) — Trigger laut Backlog war „wenn Planer-Output Elite-Niveau hat".
+
+## Eine Mini-Inkonsistenz beim Schreiben
+
+Sprint-PBIs als `### P3-XX` geschrieben, nicht `#### P3-XX` wie alle anderen PBIs im Doc. Innerhalb der Sprint-Sektion konsistent, doc-weit nicht. Bewusst so gelassen — Fix wäre Frickelei ohne Mehrwert.
 
 ## Was als nächstes ansteht
 
-**Nicht jetzt strategisch nachdenken.** STRATEGIE.md ist aktualisiert, Cut ist abgeschlossen, alle Inkonsistenzen weg. Nächste Sessions:
+**Bolle hat klar gesagt: „Als Nächstes frisieren wir tagelang den Planer."** Heißt: Sprint-Start mit **P3-12 (Tier 0 Sofort-Fixes)** und dann P3-13/14 in dieser Reihenfolge, weil P3-14 das Constraint-Solver-Fundament ist, auf dem alle nachfolgenden PBIs aufsitzen.
 
-1. **Funnel-Prototyp Feuerwehr** (4 Wochen): Page → Planer → Partyseite → RSVP als isolierte Strecke. Tracking („Partyseite erstellt") muss zuerst live.
-2. **Safari-Cluster** ergänzen (3-5, 9-12 fehlen) — kann parallel laufen, braucht aber niedrigere Prio als Feuerwehr-Funnel.
-3. **Migadu-Entscheidung 08.05.**: Mini $90/J vs. Micro $19/J.
-4. **Vier-Tool-Verkettung** als Architektur-Entscheidung steht, aber Umsetzung erst nach Feuerwehr-Funnel-Validierung. Partyseite als Knotenpunkt designen.
+Empfohlene Reihenfolge erste 3 Sessions:
+1. **Session 1 (2 Std):** P3-12 komplett — Tier 0 ist erledigt, sauberer Stand
+2. **Session 2 (8 Std):** P3-13 Cockpit-Header
+3. **Session 3 (8 Std):** P3-14 Constraint-Solver mit Klartext-Box — **wichtigste Architektur-Entscheidung im ganzen Sprint**, alle nachfolgenden Features brauchen das saubere Fundament
 
-## Capacity-Update
-
-Bolle investiert deutlich mehr als 10h/Woche in machsleicht. machsruhig bleibt Hauptprojekt, machsleicht aber kein Nebenprojekt mehr — beide priorisiert. Strategie-Beratung soll nicht mehr mit „nur 6-8h" rechnen.
+**Parallel weiterlaufend (nicht im Sprint, aber auf Bolle-Liste):**
+- P1-8 Safari (3-5, 9-12) und Weltraum
+- P1-12 Einschulung SEO-Cluster bis 31.05. — **deadline ist überfällig** (heute 11.05., bleibt 20 Tage)
+- P1-15 Email-Capture Extern-Tasks (Resend-Audience, Worker-Deploy) — Laptop-Session
+- P1-17 DSGVO-Hygiene A+C — Laptop-Session
+- Migadu-Entscheidung (Trial endete 08.05., heute 11.05.) — **3 Tage überfällig**
 
 ## Offene Fragen / Risiken
 
-- **Cross-Link-Hygiene auf 2 Mottos:** Die meisten Pages haben jetzt nur noch 2 statt 4 Cross-Links unten („Weitere Motto-Ideen"). UX-Defekt, sollte irgendwann durch ein Auto-Generation-Script ersetzt werden, das aus den 9 verbleibenden Mottos auswählt. **Nicht jetzt** — funktional ok.
-- **OG-Bilder Feuerwehr fehlen** (`og-feuerwehr-3/6/9.png`) — bleibt offen.
-- **P1-15 Newsletter-DOI Smoke-Test** durch Bolle — bleibt offen.
-- **P1-17 DSGVO-Partyseite A+C, P1-12 Einschulung-SEO 31.05.** — bleibt offen.
-- **Backdoor Tracker** (~07.04 angefangen) — Status weiter unklar, niemand hat ihn wiedergefunden.
+- **Capacity-Konflikt machsruhig.** Bolle hat dezidiert „beide Projekte primär" gesagt. 6–8 Wochen Sprint am Planer parallel zu machsruhig bei 6–8h/Woche Capacity ist eng. Wenn der Sprint priorisiert wird, muss machsruhig in der Zeit auf Sparflamme.
+- **Inhalts-Aufwand P3-16/17/18 unterschätzbar.** Pro Motto sind das echte Schreib-Aufgaben (Vorbereitungs-Items, Kategorisierung der Einkaufsliste, SOS-Szenarien). Stub-Lösung möglich (Feuerwehr ausgebaut, Rest generisch), echter Vollausbau parallel zu P1-8.
+- **P3-19 API-Kosten verifizieren.** 6–9€/Monat ist Schätzung. Vor produktivem Einsatz: 1–2 Tage Cache-Hit-Rate echt messen.
+- **P3-20 RSVP-Bridge braucht Plan↔Partyseite-Verknüpfung.** Heute keine durchgehende ID-Brücke. Wenn das nicht erst sauber gelegt wird, ist die Bridge fragil.
+- **OG-Bilder Feuerwehr** (`og-feuerwehr-3/6/9.png`) — bleibt offen aus 30.04.
+- **Backdoor Tracker** (~07.04 angefangen) — Status weiter unklar.
+
+## Strategie-Updates
+
+Keine Änderungen an `STRATEGIE.md` heute. Sprint-Anker für „Planer als intelligentes Produkt" hängt sich an Strategie 0.7 (Monetarisierungs-Validierungs-Reihenfolge): P3-18 (SOS) und P3-19 (KI-Reime) sind beide Stufe-1-Validierungs-Vehikel (zahlen Eltern für digitale Mikro-Upsells?). Aufschreiben in STRATEGIE.md fällig, sobald erster Mikro-Upsell live geht.
