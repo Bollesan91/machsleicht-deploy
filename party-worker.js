@@ -632,7 +632,7 @@ function creatorPage() {
     <div class="field"><label>Hinweise f\u00FCr Eltern (optional)</label><textarea id="notes" rows="3" placeholder="z.B. Bitte Matschsachen mitbringen!" maxlength="500"></textarea></div>
     <div style="margin-bottom:14px">
       <label style="margin-bottom:8px">Was sollen G\u00E4ste angeben?</label>
-      <div class="toggle"><input type="checkbox" id="askAllergies" checked><span style="font-size:14px">Allergien / Unvertr\u00E4glichkeiten</span></div>
+      <div class="toggle"><input type="checkbox" id="askAllergies" checked><span style="font-size:14px">Allergien oder Hinweise (freiwillig fragen)</span></div>
       <div class="toggle"><input type="checkbox" id="askPickup" checked><span style="font-size:14px">Abholzeit & Abholer</span></div>
     </div>
     <div style="display:flex;gap:8px">
@@ -1196,7 +1196,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
         <button class="rsvp-btn" data-rsvp="vielleicht" onclick="pickStatus('vielleicht',this)"><span class="rsvp-emoji">\u{1F914}</span>Vielleicht</button>
         <button class="rsvp-btn" data-rsvp="nein" onclick="pickStatus('nein',this)"><span class="rsvp-emoji">\u274C</span>Nein</button>
       </div>
-      ${party.askAllergies?`<div class="field"><label>Allergien / Unvertr\u00E4glichkeiten</label><input type="text" id="rsvpAllergies" placeholder="z.B. Nussallergie" maxlength="200"></div>`:""}
+      ${party.askAllergies?`<div class="field"><label>Allergien oder Hinweise <span style="font-size:11px;color:var(--m);font-weight:400">(freiwillig, nur die Gastgeber sehen das)</span></label><input type="text" id="rsvpAllergies" placeholder="z.B. Nussallergie" maxlength="200"></div>`:""}
       ${party.askPickup?`<div class="field"><label>Wer holt ab & wann?</label><div style="display:flex;gap:8px"><input type="text" id="rsvpPickupPerson" placeholder="z.B. Papa" style="flex:1" maxlength="50"><input type="time" id="rsvpPickupTime" style="width:110px"></div></div>`:""}
       <button class="btn" onclick="sendRsvp()" id="rsvpBtn">\u{1F4E8} Absenden</button>
       <p class="dsgvo">Deine Angaben werden nur f\u00FCr diese Party gespeichert und nach 90 Tagen automatisch gel\u00F6scht.</p>
@@ -1466,7 +1466,7 @@ function guestView(party, color, dateStr, name, age, motto, emoji, photoRoundB64
           <button class="rsvp-btn" style="flex:1" onclick="pickStatus('vielleicht',this)">\u{1F914} Vielleicht</button>
           <button class="rsvp-btn" style="flex:1" onclick="pickStatus('nein',this)">\u274C Nein</button>
         </div>
-        ${party.askAllergies?`<div class="field"><label>Allergien / Unvertr\u00E4glichkeiten</label><input type="text" id="rsvpAllergies" placeholder="z.B. Nussallergie" maxlength="200"></div>`:""}
+        ${party.askAllergies?`<div class="field"><label>Allergien oder Hinweise <span style="font-size:11px;color:var(--m);font-weight:400">(freiwillig, nur die Gastgeber sehen das)</span></label><input type="text" id="rsvpAllergies" placeholder="z.B. Nussallergie" maxlength="200"></div>`:""}
         ${party.askPickup?`<div class="field"><label>Wer holt ab & wann?</label><div style="display:flex;gap:8px"><input type="text" id="rsvpPickupPerson" placeholder="z.B. Papa" style="flex:1" maxlength="50"><input type="time" id="rsvpPickupTime" style="width:110px"></div></div>`:""}
         <button class="btn" onclick="sendRsvp()" id="rsvpBtn" style="background:${color}">\u{1F4E8} Absenden</button>
         <p style="font-size:11px;color:var(--m);text-align:center;margin-top:8px;line-height:1.5">Deine Angaben werden nur f\u00FCr diese Party gespeichert und nach 90 Tagen automatisch gel\u00F6scht.</p>
