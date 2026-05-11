@@ -3174,7 +3174,8 @@ https://machsleicht.de`;
       {
         href: `/einladung/erstellen?${[
           `motto=${encodeURIComponent(mottoId || "")}`,
-          childName ? `name=${encodeURIComponent(childName)}` : ""
+          childName ? `name=${encodeURIComponent(childName)}` : "",
+          "source=cockpit"
         ].filter(Boolean).join("&")}`,
         onClick: () => {
           if (window.umami) {

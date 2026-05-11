@@ -1122,7 +1122,8 @@ function App() {
             <a
               href={`/einladung/erstellen?${[
                 `motto=${encodeURIComponent(mottoId || "")}`,
-                childName ? `name=${encodeURIComponent(childName)}` : ""
+                childName ? `name=${encodeURIComponent(childName)}` : "",
+                "source=cockpit"
               ].filter(Boolean).join("&")}`}
               onClick={() => { if (window.umami) { try { window.umami.track("cockpit_cta_clicked", { target: "invitation", motto: mottoId }); } catch (e) {} } }}
               style={{ padding: "12px 16px", background: "var(--bg)", border: "1px solid var(--l)", borderRadius: 10, textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }}
