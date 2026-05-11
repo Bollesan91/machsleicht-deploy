@@ -1060,7 +1060,10 @@ function App() {
               <span style={{ fontSize: 18, color: "var(--a)" }}>→</span>
             </button>
             <a
-              href={`/einladung/erstellen?motto=${encodeURIComponent(mottoId || "")}${childName ? `&name=${encodeURIComponent(childName)}` : ""}`}
+              href={`/einladung/erstellen?${[
+                `motto=${encodeURIComponent(mottoId || "")}`,
+                childName ? `name=${encodeURIComponent(childName)}` : ""
+              ].filter(Boolean).join("&")}`}
               onClick={() => { if (window.umami) { try { window.umami.track("cockpit_cta_clicked", { target: "invitation", motto: mottoId }); } catch (e) {} } }}
               style={{ padding: "12px 16px", background: "var(--bg)", border: "1px solid var(--l)", borderRadius: 10, textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }}
             >

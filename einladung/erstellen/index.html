@@ -392,12 +392,39 @@ const MOTTO_CONFIG = {
 };
 
 // URL-Parameter auslesen: ?motto=dino → Dino vorauswählen
-(function initMotto() {
+// P1-23: zusaetzlich ?name=, ?datum=, ?uhrzeit=, ?ort= fuer Pre-Fill aus Cockpit
+(function initFromParams() {
   const params = new URLSearchParams(window.location.search);
   const m = params.get('motto');
   if (m && MOTTO_CONFIG[m]) {
     const btn = document.querySelector('[data-motto="' + m + '"]');
     if (btn) selectMotto(btn);
+  }
+  // Pre-Fill der Formularfelder, wenn URL-Params vorhanden
+  const nameParam = params.get('name');
+  if (nameParam) { const el = document.getElementById('name'); if (el) el.value = nameParam; }
+  const dateParam = params.get('datum');
+  if (dateParam) { const el = document.getElementById('date'); if (el) el.value = dateParam; }
+  const timeParam = params.get('uhrzeit');
+  if (timeParam) { const el = document.getElementById('time'); if (el) el.value = timeParam; }
+  const ortParam = params.get('ort');
+  if (ortParam) { const el = document.getElementById('ort'); if (el) el.value = ortParam; }
+  // Fallback: birthdayProject aus localStorage (gleiche Origin machsleicht.de)
+  if (!nameParam && !m) {
+    try {
+      const raw = localStorage.getItem('machsleicht.birthdayProject.v1');
+      if (raw) {
+        const bp = JSON.parse(raw);
+        if (bp && bp.theme && bp.theme.slug && MOTTO_CONFIG[bp.theme.slug]) {
+          const btn = document.querySelector('[data-motto="' + bp.theme.slug + '"]');
+          if (btn && !selectedMotto) selectMotto(btn);
+        }
+        if (bp && bp.child && bp.child.firstName) {
+          const el = document.getElementById('name');
+          if (el && !el.value) el.value = bp.child.firstName;
+        }
+      }
+    } catch(e) {}
   }
 })();
 

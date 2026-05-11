@@ -3087,7 +3087,10 @@ https://machsleicht.de`;
     ), /* @__PURE__ */ React.createElement(
       "a",
       {
-        href: `/einladung/erstellen?motto=${encodeURIComponent(mottoId || "")}${childName ? `&name=${encodeURIComponent(childName)}` : ""}`,
+        href: `/einladung/erstellen?${[
+          `motto=${encodeURIComponent(mottoId || "")}`,
+          childName ? `name=${encodeURIComponent(childName)}` : ""
+        ].filter(Boolean).join("&")}`,
         onClick: () => {
           if (window.umami) {
             try {
