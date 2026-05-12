@@ -1,3 +1,161 @@
+# Session-Notiz — 12.05.2026 (Sprint 1 V5.2 + AUDIT-Iteration + Knowledge-Transfer-Setup)
+
+## Kontext der Session
+
+Bolle hatte zwei extern eingespielte Strategie-Docs (V2 vom 11.05 + V5.1 Execution-Ready-Ticket-Pack) und wollte sie challengen lassen. Daraus entstand:
+1. V5.2-Korrektur des Ticket-Packs (8 sachliche Fixes gegen V5.1)
+2. Schlachtplan als 16 PBIs **P1-18 bis P1-33**, in 5 Streams
+3. Sprint 1 in einem `/loop 4m`-Cron komplett durchgezogen
+4. Self-Audit-Phase: P1-18 AUDIT.md durchlief 3 Iterationen (v1 → v2 → v3)
+5. Knowledge-Transfer-Mechanismus via Git etabliert (statt nur Memory)
+
+**WICHTIG — Überschneidung mit Bolles 11.05-Planer-Frisur-Sprint entdeckt:**
+Mein Sprint 1 wurde gestartet, ohne dass ich Bolles 11.05-SESSION-NOTES gelesen hatte (Mount war stale, ich hatte auf 30.04-Stand zurückgesetzt). Beim „Ende"-Push heute (12.05) kollidierte mein Push mit Bolles 11.05-Commit (`6b2047f` — Planer-Frisur-Sprint P3-12 bis P3-21). Beim Rebase wurde klar: **P1-22 (mein Minimal-Cockpit) ist faktisch eine vereinfachte Form von P3-13 (Bolles Cockpit-Header).**
+
+Konkret was P1-22 schon liefert (was P3-13 erwartet):
+- Cockpit-Box im Plan-View nach Generierung ✓
+- Status-Anzeige „Dein Plan steht — Als Nächstes sinnvoll" ✓
+- 3 Next-Action-CTAs (Schatzsuche, Einladung, Partyseite) ✓
+- Tracking-Events `cockpit_viewed`, `cockpit_cta_clicked` ✓
+
+**Was P1-22 NICHT liefert (P3-13 erwartet zusätzlich):**
+- „Stand-Anzeige" der Plan-Konfiguration (Motto/Alter/Gäste/Ort/Dauer) als zentraler Cockpit-Bereich — heute nur in Motto-Badge-Header
+- Tieferer Constraint-Solver-Bezug — kommt in P3-14
+- Live-Aktualisierung wenn Inputs geändert werden — heute statisch
+
+→ **Empfehlung:** P3-13 kann als „erweitern, nicht neu bauen" durchgeführt werden, baut auf P1-22 auf. Sparen ggü. originaler 1-Tag-Schätzung möglich (~½ Tag, weil Struktur steht).
+
+## Was wurde gemacht — Sprint 1 (V5.2) komplett auf draft
+
+16 Commits ab `c6e08f5`:
+
+| PBI | Commit | Was |
+|---|---|---|
+| P1-18 v1 | `c6e08f5` | AUDIT.md initial (3 sachliche Fehler) |
+| P1-19 | `033d5c7` | Schatzsuche MVP — Redirect raus, eigenständige Landingpage |
+| P1-20 | `fca6ee3` | themeRegistry V1 in `js/theme-registry.js` (10 Mottos) |
+| P1-21 | `3d217d0` | birthdayProject lokaler State (`js/birthday-project.js`) |
+| P1-22 | `c1a304f` | **Minimal-Cockpit im Planer-Ergebnis (≈ P3-13 vorweggenommen)** |
+| P1-23 | `0378ca5` | Pre-Fill in Einladung-Tool aus URL-Params + birthdayProject |
+| P1-24 | `5a597c7` | Worker-Vertrag gegen V5.1 statisch verifiziert (BESTÄTIGT) |
+| P1-25 | `1761b55` | Cockpit → Partyseite direct POST /api/create + Inline-Result |
+| P1-26 | `2af00d2` | Worker Share-Moment — Gäste-Link nicht mehr gated **(braucht Worker-Deploy)** |
+| P1-27 | `d6360a2` | Allergien Sonderregel — Privacy verifiziert + Copy-Refresh |
+| P1-28 | `98fd307` | Einladung-Tool an Cockpit angeschlossen (`?source=cockpit`-Banner) |
+| P1-29 | `91904ed` | Worker Abuse-Schutz (Honeypot + Rate-Limits + Origin-Check) |
+| P1-30 | `2ce9ef0` | Schatzsuche V2 — Varianten + Drinnen/Außen + Materialarm |
+| P1-31 | `87b7fdd` | Einkaufsliste Paketlogik — Sparfuchs/Mittelweg/Komfort-Labels |
+| P1-32 | `6e6dac8` | URL-Matrix-Enforcement via `_headers` |
+| P1-33 | `d6db666` | `_dev/docs/RELEASE-GATE.md` mit Hard/Soft-Gates |
+
+**Architektur-Pivot in V5.2:** vom „Tool-Set" zum **„Geburtstags-Cockpit"** — lokaler birthdayProject-State, Planer-Output mit Next-Step-CTAs, direkte Partyseite-Übergabe via POST.
+
+## AUDIT-Iteration (P1-18 v1 → v2 → v3)
+
+Self-Audit-Methodik etabliert (challenge → verify → fix → re-bewerten):
+
+| Version | Commit | Was war neu | Self-Score |
+|---|---|---|---|
+| v1 | `c6e08f5` | Initial-Audit mit 3 sachlichen Fehlern | 6/10 |
+| v2 | `494f7d7` | Fehler gefixt, 19 Fix-PBIs F-01..F-19, neue Sektionen | 7.5/10 |
+| **v3** | **`6cbb197`** | F-PBIs umbenannt P1-34..P1-59 (Bolles Konvention), Effort mit Worst-Case-Spalte, Severity-Split (User-Sev / Dev-Block), neue §8 Infrastruktur, neue §9 Test-Strategie | **8.5/10** |
+
+**Drei sachliche Fehler in v1**, gefixt in v2/v3:
+1. Schatzsuche-Themen-Zahl war 6 → korrekt 9 (im Generator SZ_THEMES)
+2. Worker-Motto-Liste „9+Halloween" → korrekt 10 mit Halloween↔Meerjungfrau-Swap
+3. P1-20 Commit-Message versprach Validator-Stufe 9 → nie umgesetzt
+
+## Knowledge-Transfer-Mechanismus (commit `34c8064`)
+
+Etabliert: Wissen fließt zwischen Chats via **Git**, nicht via Memory. Drei Kanäle:
+
+1. **AUDIT.md** = Living-Wahrheit. Beim „Start leicht" lesen: §1, §4, §5.2, §13, §15
+2. **`_dev/handoff/*.md`** = Session-spezifische Übergaben. Format `YYYY-MM-DD-topic-slug.md` mit TEMPLATE-Struktur. Max 14 Tage Lebensdauer.
+3. **BACKLOG-AUDIT.md** = Sprint-Backlog Top-10
+
+**Anti-Patterns dokumentiert:** keine Skill-Edits, keine Parallel-Wahrheiten, keine Memory-als-Primärspeicher.
+
+`.claude/CLAUDE.md` um Sektion „Knowledge-Transfer zwischen Sessions" + „Self-Audit-Methodik" erweitert.
+
+Memory für machsleicht angelegt (war leer, anders als machsruhig):
+- `knowledge_transfer_mechanism.md` (reference)
+- `self_audit_methodology.md` (feedback)
+- `branch_trick_for_machsleicht.md` (reference, Adaption von machsruhig)
+- `feedback_no_skill_edits.md` (feedback)
+- `active_project_machsleicht.md` (project)
+
+Handoff-Files angelegt:
+- `_dev/handoff/TEMPLATE.md` (Vorlage)
+- `_dev/handoff/2026-05-12-sprint-1-abschluss.md` (erstes konkretes Beispiel)
+
+## Was nicht passiert ist — ehrliche Status-Bewertung Sprint 1
+
+Der Sprint-1-Code ist **drin**, aber nicht **wirksam aktiv**. Realistischer Status: ~40% wirklich live-fertig, ~30% code-complete & ungetestet, ~20% braucht Worker-Deploy, ~10% Stub.
+
+**Roter Status pro PBI-Gruppe:**
+- Worker-Patches (P1-26/27/29) sind in git, **nicht auf Cloudflare deployed** → Live-Wirkung 0
+- Browser-Smoke-Tests (Cockpit-Flow, Mobile-E2E) **nicht durchgeführt** → keine Validierung dass die JSX-Änderungen wirklich funktionieren
+- Worker-Live-curl-Tests **nicht gegen Production gemacht** → P1-24 nur statische Code-Verifikation
+- P1-30 Schatzsuche V2 ist **scope-reduziert** (kein echter Standalone-Builder, nur Content-Erweiterung)
+- P1-31 Einkaufsliste ist **scope-reduziert** (nur Label-Refresh, keine separate `/einkaufsliste/<motto>`-Page)
+- P1-20 themeRegistry ist **toter Code** (wird nirgends konsumiert)
+
+## Was als nächstes ansteht — Pflicht-Reihenfolge
+
+### Vor Worker-Deploy (4 PBIs, 3.5-9.5h)
+- **P1-34** Browser-Smoke-Test Cockpit→Party-Flow (BLOCKER)
+- **P1-38** Worker-Live-curl-Tests (CORS, /api/create, Honeypot, Rate-Limit)
+- **P1-42** Mobile Chrome End-to-End
+- **P1-43** Halloween↔Meerjungfrau-Swap entscheiden + fixen
+
+### Vor Netlify-Deploy auf main (3 PBIs, 0.7-2.4h)
+- **P1-35** sitemap.xml `<lastmod>` für `/schatzsuche` auf 2026-05-12
+- **P1-36** `?stationen=N` in JSX implementieren ODER aus Variants-CTAs raus
+- **P1-41** „Feuerwehr-Schatzsuche kommt"-Copy entfernen (Feuerwehr ist in SZ_THEMES)
+
+### Pre-V5.3 (4 PBIs, 2-3.5h)
+P1-37 (`?source` → `?quelle`), P1-40 (Registry um dschungel/feen), P1-44 (BACKLOG-Update), P1-45 (ARCHITECTURE.md auf 9-Mottos)
+
+### Backlog V5.3+ (15 PBIs, 47-124h)
+Highlights: P1-39 Worker-Farben-Harmonisierung (L), P1-48 KV-Backup (M, **kritisch**), P1-58 themeRegistry konsumieren, P1-52 CI.
+
+→ **Total Sprint 2+ Effort:** 53-139h ≈ 5-13 Wochen bei 10-15h/Woche.
+
+## Konflikt mit Planer-Frisur-Sprint (Bolle-Entscheidung nötig)
+
+Die beiden Sprints überlappen partiell:
+- **P1-22 ≈ P3-13** (Cockpit) — Code-Überschneidung, P1-22 baut Basis, P3-13 kann erweitern
+- **P1-25 ≈ P3-20** (Partyseite-Übergabe) — Cockpit-Party-Brücke teilweise da, P3-20 erwartet Plan-RSVP-Loop zusätzlich
+- **P1-17 Einkaufsliste** und **P3-17 Drei-Gruppen-Einkaufsliste** sind völlig andere Stoßrichtungen (Labels vs. Inventar-Mechanik)
+- Restlich keine Überschneidung
+
+→ **Bolle-Entscheidung:** Sprint-Reihenfolge — erst V5.2-Funnel-Validierung (P1-34/38/42/43 fertig + Deploy → 4 Wochen messen) ODER direkt Planer-Frisur-Sprint (P3-12 bis P3-19) → Conflict-Detail im `_dev/handoff/2026-05-12-sprint-1-abschluss.md`.
+
+## Open Strategy Questions (warten auf Bolle-Entscheidung)
+
+1. **Sprint-Reihenfolge** — V5.2-Funnel-Test fertig vor Planer-Frisur, oder parallel? (siehe oben)
+2. **Halloween-Motto** — drin (in Registry + Einladung ergänzen) oder raus (aus Worker streichen)?
+3. **Schatzsuche-Themen Dschungel + Feen** — eigene SEO-Pages bauen oder 301-Redirects behalten?
+4. **wrangler.toml + Worker-Deploy-Automation (P1-53)** — jetzt aufbauen oder warten bis Sprint 2 mehr Worker-Patches bringt?
+
+Details + Optionen siehe `_dev/handoff/2026-05-12-sprint-1-abschluss.md`.
+
+## Status der Site nach Sprint 1 (nach Deploy)
+
+- **Cockpit-Architektur** im Planer-Ergebnis: 3 Next-Step-CTAs (Schatzsuche, Einladung, Partyseite)
+- **Direct API-Übergabe**: Cockpit-CTA „Partyseite anlegen" macht POST /api/create + Inline-Result
+- **Schatzsuche** als echte Landing-Page (war 301), 6 Themen-Tiles + Feuerwehr-Beispiel + Varianten + Drinnen/Außen + Materialarm + FAQ
+- **birthdayProject** lokal in localStorage als shared Context
+- **themeRegistry** (10 Mottos canonical) — verfügbar, aber noch nicht konsumiert
+- **noindex/canonical** durch `_headers` für /api, /e/*, /plan, /cockpit
+- **Sparfuchs/Mittelweg/Komfort**-Labels statt Minimal/Standard/Wow + Tracking
+
+## Capacity-Update (unverändert)
+
+Bolle investiert >10h/Woche in machsleicht. machsruhig bleibt Hauptprojekt, beide priorisiert.
+
+---
+
 # Session-Notiz — 11.05.2026
 
 ## Kontext der Session
