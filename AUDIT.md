@@ -1,176 +1,448 @@
-# Repo + Routing Inventur (P1-18)
+# Repo + Routing Inventur (P1-18 v2)
 
-Stand: 2026-05-11. Output von Ticket 0 vor jedem V5.2-Patch. Verbindlich.
+Stand: 2026-05-12. **Korrigierte Version** mit Fixes aus dem Self-Audit. Verbindlich vor jedem V5.2-Patch.
 
-## 1. Repo-Standort und Branches
-
-- **Produktives Working-Repo:** `C:/Users/Bolle/machsleicht-deploy/` (lokal, NICHT OneDrive — OneDrive-`.git` ist korrumpiert)
-- **Remote:** `https://github.com/Bollesan91/machsleicht-deploy.git`
-- **Branches:** `draft` (Arbeitsbranch) | `main` (Deploy via Netlify)
-- **Commit-Konvention:**
-  - Auf `draft` mit `[skip netlify]` außer bei live-relevanten Änderungen
-  - „Ende deploy" merged `draft → main`, dann `git push origin main`
-  - Co-Author: `Co-Authored-By: Claude <noreply@anthropic.com>`
-  - Git-Identity in dieser Umgebung bereits gesetzt (Bollesan91 / cbollweg@gmx.de)
-
-## 2. Routing-Map: Route → Datei → Build
-
-| Route | Produktive Datei | Build / Deploy | Index |
-|---|---|---|---|
-| `/` | `index.html` | direkt (statisch) | index |
-| `/kindergeburtstag` | `kindergeburtstag.html` + React-App `js/kindergeburtstag.js` | siehe §3 (esbuild) | index |
-| `/kindergeburtstag/<motto>` | `kindergeburtstag/<motto>.html` via `_redirects` 200 | direkt | index |
-| `/kindergeburtstag/<motto>-X-jahre` | `kindergeburtstag/<motto>-X-jahre.html` | direkt | index |
-| `/schatzsuche` | `schatzsuche.html` → **`_redirects` Z.1 301 + meta-refresh** doppelt zu `/kindergeburtstag?modus=schatzsuche#planer` | direkt | ⚠️ canonical zeigt auf /kindergeburtstag (Z.7) |
-| `/schatzsuche/<motto>` | `schatzsuche/<motto>.html` via `_redirects` 200 | direkt | index |
-| `/einladung` | `einladung/index.html` (Hub-Page, 10 Motto-Karten) | direkt | index |
-| `/einladung/<motto>` | `einladung/<motto>/index.html` (React-App: Gästeansicht mit Mini-Game) | direkt (React bundled inline) | index, aber dynamische URL-Params noindex relevant |
-| `/einladung/erstellen` | `einladung/erstellen/index.html` (Host-Tool, vanilla JS) | direkt | index |
-| `party.machsleicht.de/*` | `party-worker.js` (Cloudflare Worker mit KV) | Cloudflare Workers Dashboard (manuell? — TBD) | noindex (private Partyseiten) |
-| `/api/hit`, `/api/event` | `netlify/functions/hit.js`, `event.js` | Netlify Functions (esbuild) | noindex |
-| `/.netlify/functions/create-invite`, `serve-invite` | `netlify/functions/create-invite.mjs`, `serve-invite.mjs` | Netlify Functions | noindex |
-| `/e/<slug>` | Vermutlich via `serve-invite.mjs` redirect zu `/einladung/<motto>/?…` | Netlify Function | noindex |
-
-## 3. Build-Pipeline
-
-**JSX-Compile:** `bash _src/build.sh`
-- Input: `_src/kindergeburtstag.jsx` (1351 Z.) + `_src/kindergeburtstag-data.js` (1836 Z.)
-- Tool: `npx esbuild --bundle=false --jsx=transform --jsx-factory=React.createElement --target=es2020`
-- Output: `js/kindergeburtstag.js`
-- **NICHT** `python _dev/scripts/compile-jsx.py` wie in V5.2 erwähnt — der existiert nicht als tracked file (war im Cut entfernt). `_build/compile-jsx.py` ist nur lokales Geister-File.
-
-**Netlify-Build:**
-- `[build] publish = "."` — gesamtes Repo wird direkt deployed
-- `[functions] directory = "netlify/functions"` mit `node_bundler = "esbuild"`
-- Trigger: Push auf `main`. `[skip netlify]` in Commit-Message blockt den Build.
-
-**Cloudflare-Worker:**
-- `party-worker.js` (1757 Z.) — Worker-Code. Deploy-Mechanismus aktuell unklar (vermutlich Cloudflare Dashboard manuell oder Wrangler). **Zu klären vor Ticket P1-24/P1-26.**
-
-## 4. URL-Param-Konvention (ENTSCHEIDUNG)
-
-**Externe URL-Params: deutsch.** Interne JS-Property-Namen: englisch.
-
-| Extern (URL) | Intern (JS) |
-|---|---|
-| `?motto=feuerwehr` | `birthdayProject.theme.slug` |
-| `?alter=5` | `birthdayProject.child.age` |
-| `?modus=schatzsuche` | `mode = "treasure"` |
-| `?name=...` | `birthdayProject.child.firstName` |
-
-**Bestätigt durch:** `einladung/erstellen/index.html` Z.397 nutzt `?motto=`, `kindergeburtstag.html` Z.354 hört auf `data-motto`-Klicks. Bestehende Konvention.
-
-## 5. Motto-Wahrheit (verifiziert per Grep)
-
-| Modul | Aktive Mottos | Quelle |
-|---|---|---|
-| **Planer-Hub** (`kindergeburtstag.html`) | **7**: detektiv, dino, einhorn, feuerwehr, piraten, safari, weltraum | `data-motto="…"` Attribute |
-| **Einladungs-Tool** (`einladung/erstellen/index.html`) | **10**: die 7 Planer + superheld, prinzessin, meerjungfrau | `MOTTO_CONFIG` Z.381-392 |
-| **Schatzsuche** (Files) | **6**: piraten, safari, weltraum, detektiv, dino, einhorn (Feuerwehr fehlt!) | `_redirects` + `schatzsuche/*.html` |
-| **Worker** (`party-worker.js`) | TBD (laut SESSION-NOTES 9 Voll-Mottos + Halloween) | `MOTTO_COLORS` + `THEMES` |
-
-**Konsequenz für Ticket P1-20 (themeRegistry):**
-- Master-Liste: alle 10 Mottos aus Einladungs-Tool (das ist die Maximum-Liste)
-- Pro Motto `modules: [...]` mit echter Verfügbarkeit:
-  - `feuerwehr`: planner, invitation, party (KEINE Schatzsuche bisher → Pre-Req für Funnel-Vollausbau!)
-  - `piraten/safari/weltraum/detektiv/dino/einhorn`: planner, treasure, invitation, party
-  - `superheld/prinzessin/meerjungfrau`: invitation only
-- **Schatzsuche-Feuerwehr fehlt** — eigenes Ticket-Item (vermutlich P1-30 Schatzsuche-V2)
-
-## 6. Worker-Vertrag (V5.1-Kompatibilität)
-
-**`POST /api/create` ist bereits V5.1-konform.** Verifiziert per `party-worker.js` Z.128-160:
-
-- Akzeptiert: `childName, age, motto, mottoEmoji, mottoColor, date, time, endTime, address, notes, askAllergies, askPickup, wishes[], paypalMe`, plus `photo, photoRound` (Base64)
-- Validation: Längen-Limits, `mottoColor` Hex-Regex + Fallback `#D4812A`, `age` 0-18-Clamp
-- Response: `{id, editToken, url, editUrl}` exakt wie V5.1
-- TTL: `calcTTL(party.date)` — KV expiration nach Party-Datum
-- **CORS:** `Access-Control-Allow-Origin: *` (Z.9) — Cross-Domain-POST von machsleicht.de funktioniert. OPTIONS-Handler vorhanden (Z.125).
-
-**Ticket P1-24 schrumpft auf 30-Min-Verifikation** (Live-curl-Test gegen Worker). Worker-Patch nicht nötig.
-
-**Offene Worker-Verbesserungen für später (P1-29):**
-- Origin-Prüfung einengen (`*` → `https://machsleicht.de`)
-- Honeypot bei `/api/party/:id/rsvp`
-- Rate-Limit-KV (`rl:create:{ipHash}`, `rl:rsvp:{partyId}:{ipHash}`)
-
-## 7. Tracking-Infrastructure (bereits live)
-
-In `kindergeburtstag.html` Z.360-407:
-- `window.mlTrack(event, data)` → `navigator.sendBeacon('/api/event', payload)`
-- `navigator.sendBeacon('/api/hit', d)` für Pageviews
-- Bestehende Events: `motto_selected`, `alter_set`, `whatsapp_share`, `cta_schatzsuche`, `cta_ratgeber`, `affiliate_click`, `scroll_depth` (25/50/75/100%)
-- DNT-Respekt: `if(navigator.doNotTrack==='1')return`
-
-**Fehlende Events für Funnel-Messung** (P1-22, P1-25, P1-28, P1-31 müssen ergänzen):
-- `cockpit_viewed`, `cockpit_cta_clicked{target}`
-- `treasure_page_viewed`, `treasure_builder_started`, `treasure_generated`
-- `party_create_started`, `party_created`, `party_share_clicked`
-- `invitation_created`, `invitation_shared{channel}`
-- `shopping_list_opened`, `shopping_package_selected`
-
-## 8. Geister-Files im Working Tree (Cleanup-Backlog)
-
-Untracked Files vom 29.04-Cut, lokal noch vorhanden (~190):
-- Lizenz-Mottos: `frozen-*`, `harry-potter-*`, `minecraft-*`, `ninjago-*`, `paw-patrol-*`, `pokemon-*`, `spider-man-*`, `super-mario-*` + Altersvarianten
-- Tote Mottos: `baustelle-*`, `meerjungfrau-*` (in /kindergeburtstag/!), `pferde-*`, `ritter-*`, `zirkus-*`
-- `ratgeber/`-Folder
-- 10× `party-worker-FIX2..FIX11-2026-04-21.js` (Backup-Snapshots)
-- `js/kindergeburtstag-data.js` (laut SESSION-NOTES 30.04 als tot identifiziert — 2.409 Z., war im Build veraltet)
-- `.claude/cowork-test.txt`, `.claude/test-write.txt`, `_dev/docs/.~lock.backlog-skill-audit.xlsx#`
-
-Eigenes Cleanup-Ticket-Vorschlag: **P1-34 (S, 15 Min)** — `git clean -fd` mit Whitelist (SESSION-NOTES.md, AUDIT.md behalten).
-
-## 9. Annahmen-Verifikations-Tabelle (V5.2 gegen Realität)
-
-| V5.2-Annahme | Realität | Status |
-|---|---|---|
-| Build-Step `python _dev/scripts/compile-jsx.py` | `bash _src/build.sh` (esbuild) | **korrigiert** |
-| `POST /api/create` existiert mit V5.1-Schema | Existiert, voll kompatibel | **bestätigt** |
-| CORS für Cross-Domain-POST | `Allow-Origin: *` + OPTIONS-Handler vorhanden | **bestätigt** |
-| 7 aktive Mottos (Registry-Skelett) | 7 Planer-Mottos + 3 weitere nur in Einladung = 10 total | **erweitert** |
-| Schatzsuche per Meta-Refresh redirect | DOPPELT: `_redirects` Z.1 301 + Meta-Refresh in `schatzsuche.html` | **schwerwiegender** |
-| Schatzsuche-Feuerwehr existiert | Fehlt (`schatzsuche/feuerwehr.html` ist nicht da) | **Gap entdeckt** |
-| Cron-Auto-Delete für Allergien nötig | KV-TTL via `calcTTL(party.date)` existiert schon (P1-27 nur Copy/Display-Regel) | **bestätigt** |
-| `editToken`-basierter Zugriff | Z.170, 185-186: existiert | **bestätigt** |
-| Worker-Deploy-Mechanismus klar | **Unklar** — kein Wrangler-Config sichtbar, vermutlich manuell via Dashboard | **offen, vor P1-26 klären** |
-
-## 10. Patch-Map (alle 16 PBIs)
-
-| PBI | Geänderte Dateien | Build-Step nach Änderung |
-|---|---|---|
-| P1-18 | `AUDIT.md` (neu) | — |
-| P1-19 Schatzsuche MVP | `schatzsuche.html`, `_redirects` Z.1 entfernen | Keiner (statisch) |
-| P1-20 themeRegistry | `js/theme-registry.js` (neu), Migration in `kindergeburtstag.html`, `_src/kindergeburtstag.jsx`, `einladung/erstellen/index.html`, `party-worker.js` MOTTO-Listen, `validate-all.sh` Stufe 8 | `bash _src/build.sh` nach JSX-Änderung |
-| P1-21 birthdayProject | `js/birthday-project.js` (neu) | — |
-| P1-22 Cockpit | `_src/kindergeburtstag.jsx` App()-Component | **`bash _src/build.sh`** |
-| P1-23 Pre-Fill | `_src/kindergeburtstag.jsx`, `einladung/erstellen/index.html` | `bash _src/build.sh` für Planer-Teil |
-| P1-24 Worker-Verifikation | — (nur curl-Test) | — |
-| P1-25 Cockpit→Party | `_src/kindergeburtstag.jsx` (CTA-Logic), evtl. neue Function `netlify/functions/proxy-create-party.js` | `bash _src/build.sh` |
-| P1-26 Share-Moment | `party-worker.js` (Partyseiten-HTML innerhalb des Workers) | Worker-Deploy (TBD) |
-| P1-27 Allergien | `party-worker.js` (Display-Logic im Edit-Bereich vs Gast-View) | Worker-Deploy |
-| P1-28 Einladung-Anschluss | `einladung/erstellen/index.html`, `einladung/<motto>/index.html` (alle 10) — Post-Game-CTA | — |
-| P1-29 Abuse-Schutz | `party-worker.js` (Rate-Limit-KV, Honeypot, Origin-Einschränkung) | Worker-Deploy |
-| P1-30 Schatzsuche V2 | `schatzsuche.html` (Komplett-Neubau) + ggf. `js/schatzsuche.js` neu | — |
-| P1-31 Einkaufsliste | Neue Route `/einkaufsliste/feuerwehr-geburtstag` → `einkaufsliste/feuerwehr-geburtstag.html`, evtl. Cockpit-Sektion | — |
-| P1-32 noindex/canonical | Headers in `party-worker.js`, evtl. `_headers`-File | Worker-Deploy |
-| P1-33 QA + Release-Gate | `_dev/docs/RELEASE-GATE.md` (neu) | — |
-
-## 11. Pre-Flight-Checks vor jedem Patch
-
-1. Auf `draft` arbeiten: `git checkout draft && git pull -q origin draft`
-2. Nach Code-Patch: relevante Build-Steps ausführen
-3. Vor Commit: `bash validate-all.sh` (Validator-Stufe 8 muss grün bleiben)
-4. Commit-Message Deutsch mit `[skip netlify]` außer bei live-relevanten Änderungen
-5. Co-Author-Header anhängen
-6. Nach Push: `git log --oneline -3` gegenchecken
-
-## 12. Klärungspunkte für später
-
-1. **Worker-Deploy-Mechanismus** — Wrangler-Config? Manuell? Vor P1-26 + P1-29 klären.
-2. **Resend-Email-Versand im Worker** — wie genau läuft das? Worker-Code Z.260 (`/api/party/:id/send-edit-link`) prüfen, bevor DSGVO-Hinweis (P1-26) implementiert wird.
-3. **`/e/<slug>`-Flow vs. direkte `/einladung/<motto>/`-Links** — wie verlinken Edit-Tool und Worker zueinander?
+> **Versions-Notiz:** v1 vom 2026-05-11 hatte drei sachliche Fehler (Schatzsuche-Themen-Zahl, Worker-Motto-Swap, falscher Validator-Claim). v2 fixt diese und ergänzt fehlende Bereiche.
 
 ---
 
-**Status:** P1-18 abgeschlossen. Nächste Aktionen: P1-19 (Schatzsuche MVP) + P1-20 (themeRegistry) parallel.
+## 1. Repo-Standort, Branches, Identität
+
+| Aspekt | Wert |
+|---|---|
+| Produktives Working-Repo | `C:/Users/Bolle/machsleicht-deploy/` |
+| Korrupter Repo (NICHT nutzen) | `Projects/machsleicht/machsleicht-deploy/` (OneDrive-`.git` defekt) |
+| Remote | `https://github.com/Bollesan91/machsleicht-deploy.git` |
+| Arbeits-Branch | `draft` (Netlify deployt NICHT von draft) |
+| Deploy-Branch | `main` (Netlify deployt auf Push) |
+| Worker-Branch-Logik | KEINE — Worker wird manuell deployed (siehe §3) |
+| Git-Identity | `Bollesan91` / `cbollweg@gmx.de` (in `.git/config` gesetzt) |
+| Commit-Sprache | Deutsch |
+| Co-Author-Header | `Co-Authored-By: Claude <noreply@anthropic.com>` |
+| Skip-Netlify-Tag | `[skip netlify]` in Commit-Subject bei nicht-live-relevanten Änderungen (Docs, _dev/) |
+
+---
+
+## 2. Routing-Map (vollständig)
+
+### 2.1 Statische Routen (Netlify serves `*.html`)
+
+| URL-Pfad | Datei | Indexierung | Notiz |
+|---|---|---|---|
+| `/` | `index.html` | index, follow | Homepage React-App in #root |
+| `/kindergeburtstag` | `kindergeburtstag.html` + React-Bundle `js/kindergeburtstag.js` | index, follow | Haupttool, Cockpit-Ergebnis (P1-22) |
+| `/kindergeburtstag/<motto>` | `kindergeburtstag/<motto>.html` via `_redirects` 200-Rewrite | index, follow | 7 Motti (siehe §5) |
+| `/kindergeburtstag/<motto>-<X>-jahre` | `kindergeburtstag/<motto>-<X>-jahre.html` | index, follow | Longtail-Cluster |
+| `/kindergeburtstag/3-5-jahre`, `/6-8-jahre`, `/9-12-jahre` | `kindergeburtstag/<X>-jahre.html` | index, follow | Altersgruppen-Cluster |
+| `/schatzsuche` | `schatzsuche.html` (P1-19+P1-30 neu) | index, follow | War 301 zu Planer, jetzt eigenständig |
+| `/schatzsuche/<motto>` | `schatzsuche/<motto>.html` | index, follow | 6 Motti als statische Seiten (siehe §5) |
+| `/einladung` | `einladung/index.html` | index, follow | Hub mit 10 Motto-Karten |
+| `/einladung/<motto>` | `einladung/<motto>/index.html` | index, follow | Gästeansicht React-App, 10 Motti |
+| `/einladung/erstellen` | `einladung/erstellen/index.html` | index, follow | Host-Tool, vanilla JS |
+| `/micha/*` | `micha/*` | (extern, Geburtstagsshow) | Privat |
+| Diverse Themen-Seiten | `*.html` | index, follow | adventskalender-fuellen, autofahrt-kinder-checkliste, baby-erstausstattung-checkliste etc. |
+
+### 2.2 Dynamische / private Routen
+
+| URL-Pfad | Handler | Indexierung |
+|---|---|---|
+| `/e/<slug>` | `_redirects` → `/.netlify/functions/serve-invite` (200-Rewrite) | noindex (via `_headers` /e/* nach P1-32) |
+| `/api/hit`, `/api/event` | `netlify/functions/hit.js`, `event.js` (Tracking-Beacons) | noindex |
+| `/.netlify/functions/create-invite` | erstellt /e/<slug>-Encoded-URLs aus Form-Daten | noindex |
+| `party.machsleicht.de/*` | Cloudflare Worker `party-worker.js` | Worker setzt `<meta robots="noindex,nofollow">` |
+| `party.machsleicht.de/api/*` | Worker-Endpoints (siehe §6) | noindex |
+| `/plan`, `/cockpit` | nicht implementiert, aber in V5.1-URL-Matrix für später | noindex, follow (über `_headers`) |
+
+### 2.3 `/e/<slug>`-Flow (konkret traced)
+
+1. User klickt WhatsApp-Einladungs-Link `https://machsleicht.de/e/anna-eyJuIjoi...`
+2. Netlify `_redirects` Z.X: `/e/* /.netlify/functions/serve-invite 200`
+3. `serve-invite.mjs`:
+   - Slug splittet auf erstem `-` → `name` + `base64url-encoded payload`
+   - Payload-Keys: `n=name, d=date, t=time, o=ort, p=tel, m=motto` (kompakt)
+   - Liefert HTML der entsprechenden `einladung/<motto>/index.html` Page **mit Query-Params** für die React-App
+4. React-App in `einladung/<motto>/index.html` liest die Params und rendert die Gästeansicht
+5. Gast spielt Mini-Spiel → klickt RSVP → WhatsApp-Reply zum Host
+
+**Erstellung des Slugs:** `netlify/functions/create-invite.mjs`
+- POST von `einladung/erstellen/index.html`
+- Validiert Motto gegen Hardcoded-Liste (siehe §5)
+- Encodet `{n,d,t,o,p,m}` als base64url, prepended mit `<name-clean>-`
+- Response: Slug für /e/<slug>-URL
+
+**Implikation für P1-23 Pre-Fill:** Wer den Cockpit-CTA „Einladung erstellen" mit `?motto=feuerwehr&name=Toni&source=cockpit` aufruft, geht durch das Host-Tool, das dann `create-invite.mjs` ruft. Der Cockpit-Pre-Fill funktioniert **nur** für `einladung/erstellen`, nicht für `/e/<slug>` (das ist der Gast-Endpunkt, kein Erstellungs-Endpunkt).
+
+---
+
+## 3. Build-Pipeline
+
+### 3.1 React-App (kindergeburtstag.js)
+
+| Komponente | Wert |
+|---|---|
+| Source-JSX | `_src/kindergeburtstag.jsx` (~1350 Z.) |
+| Source-Data | `_src/kindergeburtstag-data.js` (~1840 Z.) |
+| Build-Script | `bash _src/build.sh` |
+| Build-Tool | `npx esbuild` (kein global install) |
+| Output | `js/kindergeburtstag.js` (~260KB / 3340 Z.) |
+| Git-tracked? | **JA** — Netlify deployt das fertige JS-Bundle as-is |
+| **Wichtig** | Netlify führt **KEINEN** Build aus. Wer `_src/*` ändert MUSS lokal `bash _src/build.sh` laufen lassen + `js/kindergeburtstag.js` mit committen. |
+
+### 3.2 React-Apps in einladung/<motto>/ (10×)
+
+- Sind **inline-React-Bundles** in den jeweiligen `index.html`-Files (~800-1800 Z.)
+- Kein separater Build-Step — die HTML-Files sind selbst die Sources
+- Pro Motto eigenständig, Code-Duplikation hoch
+
+### 3.3 Netlify-Functions
+
+| Function | Build-Tool | Wann triggern? |
+|---|---|---|
+| `create-invite.mjs`, `serve-invite.mjs`, `hit.js`, `event.js`, `dashboard.js`, `ls-webhook.js` | esbuild via Netlify (automatisch) | Bei jedem Netlify-Build |
+
+### 3.4 Cloudflare-Worker
+
+| Aspekt | Wert |
+|---|---|
+| Datei | `party-worker.js` (~1820 Z. nach P1-29) |
+| Deploy-Mechanismus | **MANUELL** via Cloudflare Dashboard (kein wrangler.toml im Repo) |
+| Konsequenz | P1-26 (Share-Moment), P1-27 (Allergien-Copy), P1-29 (Abuse-Schutz) sind **bis zum manuellen Deploy unwirksam** |
+| TODO | wrangler.toml + `_dev/scripts/deploy-worker.sh` für `npx wrangler deploy`-Automatisierung (M-Ticket) |
+
+---
+
+## 4. URL-Param-Konvention
+
+**Regel:** Externe URL-Params auf deutsch, interne JS-Property-Namen auf englisch.
+
+### 4.1 Etablierte Params (alle deutsch)
+
+| Param | Verwendung | Reader-Code |
+|---|---|---|
+| `?motto=<slug>` | Motto pre-select | `kindergeburtstag.jsx` Z.775, `einladung/erstellen` Z.~397 |
+| `?alter=<3..12>` | Alter pre-select | `kindergeburtstag.jsx` Z.777 |
+| `?gaeste=<1..20>` | Gäste-Anzahl pre-select | `kindergeburtstag.jsx` Z.778 |
+| `?modus=schatzsuche` | Schnitzeljagd-Add-on aktivieren | `kindergeburtstag.jsx` Z.781 |
+| `?thema=<sz-slug>` | Schatzsuche-Theme pre-select | `kindergeburtstag.jsx` Z.786 |
+| `?name=<childName>` | childName pre-select | `einladung/erstellen` (P1-23) |
+| `?datum=`, `?uhrzeit=`, `?ort=` | Einladungs-Felder | `einladung/erstellen` (P1-23) |
+
+### 4.2 Bekannte Brüche der Konvention
+
+| Param | Problem | Wo eingeführt |
+|---|---|---|
+| `?source=cockpit` | **englisch statt deutsch** — sollte `?quelle=cockpit` sein | P1-28 — meine eigene Einführung |
+| `?stationen=<3\|5\|7>` | **toter Param** — kein Reader im JSX | P1-30 Schatzsuche-V2-Varianten |
+| `?theme=<slug>` | gemischt mit `?motto=` benutzt | Worker `party-worker.js` URL-Params |
+
+**Fix-Sequenz für Konsistenz:**
+- (S) `?source=cockpit` → `?quelle=cockpit` umbenennen in JSX + Reader in einladung/erstellen
+- (S) Entweder `?stationen=` in `kindergeburtstag.jsx` lesen (setStationen-State) ODER aus schatzsuche.html Variants-CTAs rausnehmen
+- (L) Worker-`?theme=`-Migration ist eigenes Ticket
+
+### 4.3 Interne JS-Property-Namen (alle englisch)
+
+| Schema | Beispiel |
+|---|---|
+| `birthdayProject.theme.slug` | `"feuerwehr"` |
+| `birthdayProject.child.firstName` | `"Toni"` |
+| `birthdayProject.party.startTime` | `"15:00"` |
+| `partyPayload.childName, age, motto, mottoEmoji, mottoColor` | für POST /api/create |
+
+---
+
+## 5. Motto-Datenwahrheit (5 Quellen, verifiziert)
+
+### 5.1 Übersicht aller Motto-Quellen im Repo
+
+| # | Quelle | Anzahl | Slugs |
+|---|---|---|---|
+| 1 | `_src/kindergeburtstag-data.js` GENERIC (`ALL_MOTTOS`) | **9** | detektiv, dino, **dschungel**, einhorn, **feen**, feuerwehr, piraten, safari, weltraum |
+| 2 | `_src/kindergeburtstag-data.js` SZ_THEMES | **9** | detektiv, dino, dschungel, einhorn, feen, feuerwehr, piraten, safari, weltraum |
+| 3 | `kindergeburtstag.html` data-motto-Buttons (SEO-fallback) | **7** | detektiv, dino, einhorn, feuerwehr, piraten, safari, weltraum (KEIN dschungel/feen) |
+| 4 | `einladung/erstellen/index.html` MOTTO_CONFIG | **10** | (3) + superheld, prinzessin, **meerjungfrau** |
+| 5 | `party-worker.js` MOTTO_COLORS | **10** | (3) + superheld, prinzessin, **halloween** (KEIN meerjungfrau!) |
+| 6 | `create-invite.mjs` VALID_MOTTOS | **10** | (4) — identisch mit einladung-Tool |
+| 7 | `js/theme-registry.js` (P1-20) | **10** | (4) — identisch mit einladung-Tool |
+
+**LICENSE-Array in _src ist leer** (post-Cut 29.04, Markenrisiko).
+
+### 5.2 Identifizierte Datenwahrheits-Brüche
+
+#### Bruch A — Halloween vs Meerjungfrau Swap (Worker ↔ Registry/Einladung)
+
+- Worker: piraten/dino/safari/weltraum/detektiv/einhorn/feuerwehr/superheld/prinzessin/**halloween**
+- Registry/Einladung: dito + **meerjungfrau** statt halloween
+
+**User-Wirkung:** Wer Meerjungfrau-Einladung erstellt → Worker liefert auf der Partyseite `mottoColor: #D4812A` (Default-Fallback statt Türkis `#4DD0E1`). Halloween-Geburtstag existiert nirgendwo außer im Worker-Color-Mapping.
+
+**Fix-Optionen:**
+1. Worker um `meerjungfrau` ergänzen (Color + THEME) — empfohlen, weil Einladung schon 10 Motti hat
+2. Halloween zurück in Einladung-Tool + Registry — wenn Halloween-Geburtstag strategisch gewollt ist
+3. Beide ergänzen (11 Mottos total)
+
+**Effort:** S (30 Min)
+
+#### Bruch B — Dschungel + Feen sind „Schatzsuche-only"
+
+- ALL_MOTTOS hat 9 (inkl. dschungel, feen)
+- Hub-SEO-Fallback hat nur 7 (ohne dschungel, feen)
+- Einladung-Tool + Worker haben sie auch nicht
+
+→ **Bewusste Entscheidung**, nicht Bug: Dschungel + Feen sind Schatzsuche-Themen, kein vollständiger Planer-Plan. Sollte aber in der Konvention dokumentiert sein (z.B. ALL_MOTTOS["dschungel"].modules: ["treasure"]).
+
+**Fix:** themeRegistry erweitern um dschungel + feen mit `modules: ["treasure"]` (S, 15 Min). Dann hat Registry 12 statt 10 Einträge.
+
+#### Bruch C — Worker MOTTO_COLORS abweichend von Registry
+
+| Motto | Registry | Worker | Sichtbar wo |
+|---|---|---|---|
+| piraten | `#FFD700` | `#8B4513` | Partyseite-Header |
+| einhorn | `#E1BEE7` | `#E040A0` | Partyseite-Header |
+| dino | `#66BB6A` | `#4CAF50` | Partyseite-Header |
+| feuerwehr | `#FF7043` | `#D32F2F` | Partyseite-Header |
+| safari | `#FF9800` | `#F57F17` | konsistent? Prüfen. |
+| weltraum | `#CE93D8` | `#1565C0` | **massiv abweichend** |
+| detektiv | `#78909C` | `#37474F` | Partyseite-Header |
+| prinzessin | `#F48FB1` | `#E91E63` | Partyseite-Header |
+| superheld | `#EF5350` | `#D32F2F` | Partyseite-Header |
+
+→ Worker-Farben sind **dunkler/saturierter**, gedacht für dunkle Partyseite-Themes. Registry-Farben sind **heller/pastelliger**, gedacht für helle UI auf machsleicht.de.
+
+**Sinnvoller Fix:** Registry um `partyColor` ergänzen (dunkel) zusätzlich zu `color` (hell). Worker liest `partyColor`, machsleicht.de-UI liest `color`. Eine Quelle, zwei Farben.
+
+**Effort:** M (2-4h, weil Migration in JSX + einladung + theme-registry + worker)
+
+#### Bruch D — Validator-Stufe 8/9 prüft NICHT die Registry
+
+P1-20-Commit-Message behauptete: „Validator-Stufe 8 erweitern → prüft Registry = ItemList = sichtbarer Text". **Faktisch:** `validate-all.sh` enthält 0 Referenzen auf theme-registry. Versprechen nicht eingehalten.
+
+**Fix:** Stufe 9 ergänzen, die per Node Registry lädt und gegen sichtbare Motto-Zahlen + ItemList-Schema in `index.html`/`kindergeburtstag.html` prüft (M, 3-4h).
+
+---
+
+## 6. Worker-Vertrag (`party-worker.js`)
+
+### 6.1 Endpoints
+
+| Methode | Path | Zweck | Z. | Abuse-Schutz (P1-29) |
+|---|---|---|---|---|
+| POST | `/api/create` | Partyseite erstellen | 166 | Origin-Check, 5/h, 700KB |
+| GET | `/api/party/:id` | Party-Daten (mit/ohne edit-Token) | 206 | — (read-only) |
+| PUT | `/api/party/:id` | Party-Daten ändern | 221 | editToken, 50KB |
+| POST | `/api/party/:id/rsvp` | RSVP von Gast | 246 | Honeypot, 10/h, 5KB |
+| POST | `/api/party/:id/wish/:wid/claim` | Geschenk reservieren | 273 | 20/h, 5KB |
+| GET | `/api/photo/:id` | Foto laden | 296 | — |
+| GET | `/api/photoRound/:id` | Round-Foto laden | 304 | — |
+| POST | `/api/party/:id/send-edit-link` | Edit-Link per Email (Resend) | 312 | 5/h, 5KB |
+| GET | `/go/:partyId/:wishId` | Affiliate-Redirect | 407 | nur existierende Wünsche |
+| GET | `/api/newsletter-confirm` | Newsletter-DOI-Confirm | 426 | — |
+| GET | `/` | Partyseite-Creator-UI (Form) | 487 | — |
+| GET | `/<id>` (6-12 chars) | Partyseite | 490 | — |
+
+### 6.2 CORS
+
+`Access-Control-Allow-Origin: *` (`party-worker.js` Z.9). OPTIONS-Handler Z.165.
+
+**Verbesserung in P1-29:** `checkOrigin()` Helper, hardcoded Whitelist `https://machsleicht.de`, `www.`, `party.machsleicht.de`. Aktuell **nur** bei POST `/api/create` und `/send-edit-link` genutzt (V5.1 lasche Origin-Policy). Andere Endpoints offen — Worker bleibt für externe API-Konsumenten (z.B. zukünftige iOS-App) zugänglich.
+
+### 6.3 KV-Storage
+
+- Namespace-Binding: `PARTY`
+- Keys: `party:<id>`, `photo:<id>`, `photoRound:<id>`, `rl:create:<ipHash>`, `rl:rsvp:<id>:<ipHash>`, `rl:claim:<id>:<ipHash>`, `rl:editlink:<ipHash>`
+- TTL für Partys: `calcTTL(party.date)` = 90 Tage nach Party-Datum, mind. 24h
+- TTL für Rate-Limits: 1h-Window
+
+### 6.4 Environment Variables (zu setzen im Cloudflare Dashboard)
+
+- `AMAZON_TAG` (z.B. `machsleicht-21`)
+- `AWIN_PUBLISHER_ID` (z.B. `123456`)
+- `RESEND_API_KEY` (Secret)
+
+---
+
+## 7. Tracking-Infrastructure
+
+### 7.1 Doppel-Setup
+
+- **Eigenes:** `window.mlTrack(event, data)` → `navigator.sendBeacon('/api/event', payload)` in `kindergeburtstag.html` Z.367
+- **Umami:** `window.umami.track(name, props)` via `cloud.umami.is/script.js` (data-website-id `72b5eb12-...`)
+- **Plausible-Shim:** `window.plausible(name, opts)` leitet zu `umami.track()` weiter (Legacy-Code-Kompatibilität)
+
+### 7.2 Bestehende Events (vor V5.2)
+
+`motto_selected, alter_set, whatsapp_share, cta_schatzsuche, cta_ratgeber, affiliate_click, scroll_depth{25,50,75,100}, edit-link-email-submit, newsletter-opt-in, einladung-schatzsuche-cta, invite-to-party-cta, plan-created`
+
+### 7.3 Neue Events durch V5.2 (Sprint 1)
+
+- **P1-22:** `cockpit_viewed{motto, alter}`, `cockpit_cta_clicked{target: treasure|invitation|party, motto}`
+- **P1-19:** `treasure_mvp_cta_start`, `treasure_mvp_cta_feuerwehr`, `treasure_mvp_cta_bottom`, `treasure_mvp_cta_invitation`, `treasure_mvp_motto{motto}`
+- **P1-25:** `party_create_started{motto}`, `party_created{motto}`, `party_share_clicked{channel: copy|whatsapp}`
+- **P1-28:** `invitation_from_cockpit{motto}`
+- **P1-30:** `treasure_variant{schnell|standard|gross}`
+- **P1-31:** `shopping_package_selected{theme, package}`
+
+### 7.4 Tracking-Backlog
+
+- `planner_started` (erste Planer-Interaktion) — fehlt
+- `treasure_generated` (echte Erzeugung im Schnitzeljagd-Block) — fehlt
+- `invitation_created` (nach Submit auf einladung/erstellen) — fehlt
+- `print_clicked` — fehlt
+
+---
+
+## 8. Sitemap-Update-Regeln
+
+Nach jedem Inhalts-/Strukturwechsel einer Page MUSS die zugehörige `<lastmod>` in `sitemap.xml` aktualisiert werden, sonst signalisiert Netlify dem Google-Crawler keine Änderung.
+
+| PBI | Page | sitemap.xml-Update nötig? | Status |
+|---|---|---|---|
+| P1-19 | `/schatzsuche` | JA (war 2026-04-05) | **NICHT GEMACHT** — Fix-PBI |
+| P1-22 | `/kindergeburtstag` | NEIN (React-Bundle, kein HTML-Wechsel im Markup) | OK |
+| P1-30 | `/schatzsuche` | JA (Page erweitert) | **NICHT GEMACHT** — Fix-PBI |
+| P1-31 | `/kindergeburtstag` | NEIN (nur JSX-Label-Wechsel) | OK |
+
+**Fix-Sequenz:** sitemap.xml für `/schatzsuche` lastmod auf `2026-05-12` setzen.
+
+---
+
+## 9. Geister-Files (Working Tree, nicht committed)
+
+Aus dem 29.04-Cut sind ~190 Lizenz-Motto-Files weiter lokal vorhanden:
+- `frozen-*.html`, `harry-potter-*.html`, `minecraft-*.html`, `ninjago-*.html`, `paw-patrol-*.html`, `pokemon-*.html`, `spider-man-*.html`, `super-mario-*.html` (Hub + Altersvarianten)
+- `baustelle-*`, `meerjungfrau-*`, `pferde-*`, `ritter-*`, `zirkus-*` (in `kindergeburtstag/` — laut Cut entfernt)
+- `ratgeber/`-Folder
+- `*-guide.html` (frozen-guide, harry-potter-guide, …)
+
+Plus:
+- 10× `party-worker-FIX2..FIX11-2026-04-21.js` (Backup-Snapshots)
+- `js/kindergeburtstag-data.js` (laut SESSION-NOTES 30.04 als tot identifiziert)
+- `.claude/cowork-test.txt`, `.claude/test-write.txt`, `_dev/docs/.~lock.backlog-skill-audit.xlsx#`
+
+**Live-Wirkung:** Keine (sind nicht im git, werden nicht von Netlify deployed). Nur lokales Aufräum-Thema.
+
+**Cleanup-PBI (S, 15 Min):**
+```bash
+cd C:/Users/Bolle/machsleicht-deploy
+# Whitelist über grep schützen, alles andere löschen:
+git clean -fd -e SESSION-NOTES.md -e AUDIT.md -e STRATEGIE.md -e BACKLOG-AUDIT.md \
+  -e ARCHITECTURE.md -e Setup-Anleitung-machsleicht.docx
+```
+
+---
+
+## 10. Out-of-date Dokumentation (Doku-Konflikte)
+
+| Datei | Stand laut Inhalt | Konflikt mit Realität |
+|---|---|---|
+| `ARCHITECTURE.md` (218 Z.) | „17 Mottos, 9 Themen" — Stand April 2026 | **POST-CUT 9 Mottos, 9 Themen** → veraltet |
+| `STRATEGIE.md` | wurde in SESSION-NOTES 30.04 als „aktualisiert" angesagt | NICHT verifiziert |
+| `BACKLOG-AUDIT.md` | P1-15 bis P1-16 erwähnt | NEUE PBIs P1-18 bis P1-33 + Fix-PBIs ergänzt? — NICHT verifiziert |
+| `SESSION-NOTES.md` | Stand 30.04 | Sprint 1 (V5.2) NICHT eingearbeitet |
+
+**Fix-PBIs:**
+- (S) ARCHITECTURE.md auf 9-Mottos-Stand bringen + V5.2-Architektur (Cockpit, birthdayProject) einfügen
+- (S) BACKLOG-AUDIT.md um Fix-Tickets aus diesem Audit ergänzen
+- Bolle entscheidet selbst über SESSION-NOTES.md-Update bei nächstem „Ende"
+
+---
+
+## 11. Patch-Map (alle 16 V5.2-PBIs + identifizierte Fix-PBIs)
+
+### 11.1 V5.2 Sprint 1 (alle commited auf draft)
+
+| PBI | Geänderte Dateien | Build-Step | Worker-Deploy nötig? |
+|---|---|---|---|
+| P1-18 v1+v2 | `AUDIT.md` | — | nein |
+| P1-19 | `schatzsuche.html`, `_redirects` Z.1 | — | nein |
+| P1-20 | `js/theme-registry.js` | — | nein |
+| P1-21 | `js/birthday-project.js` | — | nein |
+| P1-22 | `_src/kindergeburtstag.jsx`, `kindergeburtstag.html`, `js/kindergeburtstag.js` | `bash _src/build.sh` | nein |
+| P1-23 | `_src/kindergeburtstag.jsx`, `js/kindergeburtstag.js`, `einladung/erstellen/index.html` | `bash _src/build.sh` | nein |
+| P1-24 | `_dev/docs/WORKER-CONTRACT.md` | — | nein |
+| P1-25 | `_src/kindergeburtstag.jsx`, `js/kindergeburtstag.js` | `bash _src/build.sh` | nein |
+| P1-26 | `party-worker.js` | — | **JA** |
+| P1-27 | `party-worker.js` | — | **JA** |
+| P1-28 | `_src/kindergeburtstag.jsx`, `js/kindergeburtstag.js`, `einladung/erstellen/index.html` | `bash _src/build.sh` | nein |
+| P1-29 | `party-worker.js` | — | **JA** |
+| P1-30 | `schatzsuche.html` | — | nein |
+| P1-31 | `_src/kindergeburtstag.jsx`, `js/kindergeburtstag.js` | `bash _src/build.sh` | nein |
+| P1-32 | `_headers` | — | nein |
+| P1-33 | `_dev/docs/RELEASE-GATE.md` | — | nein |
+
+### 11.2 Identifizierte Fix-PBIs (aus diesem Audit)
+
+Diese Probleme wurden im Sprint 1 nicht gefixt, müssen aber vor „Ende deploy" eines echten Funnel-Tests entschieden werden:
+
+| Fix-PBI | Was | Effort | Severity | Welcher Sprint-1-PBI hat ihn introduced |
+|---|---|---|---|---|
+| **F-01** | Halloween↔Meerjungfrau-Swap in Worker beheben | S (30 Min) | **HOCH** (Meerjungfrau-Partyseiten kriegen falsche Farbe) | Pre-existing, nicht durch Sprint 1, aber P1-20 hat den Bruch nicht behoben |
+| **F-02** | Worker-MOTTO_COLORS vs Registry harmonisieren (alle 9 Farben) | M (3h) | MITTEL (Partyseite-UI farblich anders als Hauptseite) | Pre-existing |
+| **F-03** | `?stationen=N` URL-Param in JSX implementieren (oder aus Variants-CTAs raus) | S (30 Min) | MITTEL (tote V2-CTAs) | P1-30 |
+| **F-04** | `?source=cockpit` → `?quelle=cockpit` (deutsch wie Konvention) | S (15 Min) | NIEDRIG | P1-28 |
+| **F-05** | „Feuerwehr-Schatzsuche kommt als nächstes"-Aussage in schatzsuche.html ändern (Feuerwehr ist in SZ_THEMES) | S (5 Min) | MITTEL (irreführend für User) | P1-19 (Cascade aus P1-18-v1-Fehler) |
+| **F-06** | sitemap.xml lastmod für `/schatzsuche` auf 2026-05-12 | S (5 Min) | MITTEL | P1-19 + P1-30 |
+| **F-07** | themeRegistry um dschungel + feen ergänzen (`modules: ["treasure"]`) | S (15 Min) | NIEDRIG (Vollständigkeits-Sache) | P1-20 |
+| **F-08** | themeRegistry irgendwo KONSUMIEREN (Stub auflösen) — z.B. schatzsuche.html-Motto-Tiles dynamisch aus Registry | M (2-4h) | MITTEL (Registry ist sonst totes Code) | P1-20 |
+| **F-09** | Validator-Stufe 9 erweitern für Registry-Konsistenz | M (3-4h) | MITTEL (kein Regression-Guard) | P1-20 (false claim im Commit) |
+| **F-10** | Schatzsuche V2 Quick-Builder bauen (echtes Form-Element) | XL (10-18h) | NIEDRIG (V2-Spec, MVP-Funktion da) | P1-30 (scope-reduziert) |
+| **F-11** | Standalone `/einkaufsliste/<motto>` Pages | L (1-2 Tage) | NIEDRIG (V5.1-Spec, Planer hat Logik schon) | P1-31 (scope-reduziert) |
+| **F-12** | ARCHITECTURE.md auf 9-Mottos-Stand + Cockpit-Architektur | S (45 Min) | MITTEL (Onboarding-Quelle veraltet) | Pre-existing |
+| **F-13** | wrangler.toml + Worker-Deploy-Skript | M (2-3h) | HOCH (Worker-Patches sonst manuell) | Pre-existing |
+| **F-14** | OG-Bilder für Feuerwehr-3/6/9 erstellen | M (Asset-Erstellung) | NIEDRIG (Social-Share) | Pre-existing |
+| **F-15** | Geister-Files Cleanup via `git clean` | S (15 Min) | NIEDRIG | Pre-existing |
+| **F-16** | Print-Styles für schatzsuche.html | S (30 Min) | NIEDRIG (Strg+P liefert Tracking-Script) | P1-19 |
+| **F-17** | Browser-Smoke-Test gesamter Cockpit-Flow | M (1-2h) | **HOCH** (kein einziger Test gelaufen) | Sprint 1 ungeprüft |
+| **F-18** | Worker-Live-curl-Tests (CORS-Preflight, /api/create, Honeypot, Rate-Limit) | M (1-2h) | **HOCH** (kein Live-Test gegen produktiven Worker) | P1-24 nur statisch |
+| **F-19** | Mobile Chrome End-to-End-Test | M (1h) | **HOCH** (Ziel-Device, nie getestet) | Sprint 1 |
+
+**Total Fix-Effort:** ~30-50h. Realistisch über 4-6 Wochen.
+
+### 11.3 Empfohlene Reihenfolge
+
+**Vor Worker-Deploy (Pflicht):**
+- F-17, F-18, F-19 (Live-Tests)
+- F-01 (Halloween/Meerjungfrau, weil sichtbar nach Deploy)
+
+**Vor Netlify-Deploy auf main (Pflicht):**
+- F-05 (Schatzsuche-Aussage)
+- F-06 (sitemap lastmod)
+- F-03 (stationen-Param oder rausnehmen)
+
+**Bevor V5.3 startet (Empfehlung):**
+- F-04, F-07, F-08, F-12
+
+**Backlog (V5.3+):**
+- F-09, F-10, F-11, F-13, F-14, F-15, F-16, F-02
+
+---
+
+## 12. Pre-Flight-Checks (vor jedem Patch verbindlich)
+
+1. **Auf draft sein:** `git checkout draft && git pull -q origin draft`
+2. **Working Tree clean (oder bekannte Geister):** `git status` — alles untracked = Geister-Files (siehe §9)
+3. **Vor JSX-Änderung:** lesen welche `App()`-Funktion im JSX du anfasst (Z.715+ im aktuellen Stand)
+4. **Nach JSX-Änderung:** `bash _src/build.sh` lokal, dann **beide** Files (jsx + kompiliertes js) committen
+5. **Nach Worker-Patch:** `node --check party-worker.js` + im Commit explizit notieren „braucht Worker-Deploy"
+6. **Vor Commit:** `bash validate-all.sh` (akzeptiert STUFE-1-Path-Bug auf Windows als bekannt)
+7. **Commit-Message Deutsch:** `[skip netlify]` außer bei live-relevanten Änderungen
+8. **Nach Commit:** `git log --oneline -3` Cross-Check
+
+---
+
+## 13. Verbleibende offene Klärungen
+
+1. **Cloudflare-Deploy-Mechanismus:** Bestätigt manuell, kein wrangler.toml im Repo. Soll F-13 dieses Sprint-2 angehen oder weiterhin manuell?
+2. **Resend-Email-Versand-Details:** `party-worker.js` Z.312+ nutzt Resend für Edit-Link-Mail + Newsletter-DOI. **Vor F-01/F-02-Worker-Deploy** unbeschadeter Resend-Flow verifizieren.
+3. **Halloween — strategisch gewollt oder Altlast?** Wenn gewollt: in Einladung + Registry ergänzen. Wenn nicht: aus Worker rausnehmen.
+4. **Schatzsuche-Themen-Strategie:** dschungel + feen sind im Generator, haben aber keine SEO-Pages (`schatzsuche/dschungel` → 301 zu safari, `schatzsuche/feen` → 301 zu einhorn laut _redirects). Soll das so bleiben oder eigene Pages dafür?
+5. **Plan-`/cockpit`-URLs (V5.1-Matrix):** noindex via `_headers` ist drin, aber Routes existieren nicht. Sollen die jemals eigene Pages sein (z.B. Bookmark-bare Cockpit-State) oder ist das Konzept aufgegeben?
+
+---
+
+## 14. Versions-Historie dieser Datei
+
+| Version | Datum | Was |
+|---|---|---|
+| v1 | 2026-05-11 | Initial-Audit aus P1-18 (mit 3 sachlichen Fehlern + 2 Auslassungen) |
+| v2 | 2026-05-12 | Korrekturen + 5 fehlende Bereiche + Fix-PBI-Liste F-01 bis F-19 |
