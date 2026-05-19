@@ -837,6 +837,296 @@ function SOSButton({ sosScenarios, mottoColor }) {
   );
 }
 
+function EliteShoppingList({ variants, shoppingMode, mottoColor }) {
+  // P3-17: shoppingList[].category in 3 Gruppen (pflicht / sinnvoll / habIchVielleicht) gerendert
+  if (!variants || variants.length === 0) return null;
+  const targetVariantId = shoppingMode === "minimal" ? "minimal" : shoppingMode === "wow" ? "wow" : "standard";
+  const variant = variants.find((v) => v.id === targetVariantId) || variants.find((v) => v.id === "standard") || variants[0];
+  if (!variant || !variant.shoppingList) return null;
+
+  const groups = { pflicht: [], sinnvoll: [], habIchVielleicht: [] };
+  for (const item of variant.shoppingList) {
+    const cat = item.category || "sinnvoll";
+    if (groups[cat]) groups[cat].push(item);
+  }
+
+  const GROUP_META = {
+    pflicht: { emoji: "✅", label: "Pflicht — ohne läuft die Party nicht", color: "#C62828" },
+    sinnvoll: { emoji: "💡", label: "Sinnvoll — macht's deutlich besser", color: "#1976D2" },
+    habIchVielleicht: { emoji: "🏠", label: "Hab ich vielleicht schon — DIY oder im Haushalt", color: "#558B2F" },
+  };
+
+  const total = variant.shoppingList.reduce((acc, it) => acc + (typeof it.priceEur === "number" ? it.priceEur : 0), 0);
+
+  return (
+    <section className="fu" style={{ marginBottom: 24, background: "#fff", border: "1px solid var(--l)", borderRadius: 14, padding: "18px 18px 14px" }}>
+      <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: 1.5, color: mottoColor || "var(--a)", textTransform: "uppercase", marginBottom: 6 }}>🛒 Einkaufsliste</p>
+      <h2 style={{ fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, marginBottom: 6, color: "var(--d)" }}>
+        {variant.label || `${variant.id} — ca. ${variant.estimatedCostEur || total}€`}
+      </h2>
+      <p style={{ fontSize: 13, color: "var(--m)", marginBottom: 14, lineHeight: 1.5 }}>
+        Drei Gruppen statt einer langen Liste. Fang oben an, hör unten auf — alles unter „Hab ich vielleicht schon" kannst du wahrscheinlich überspringen.
+      </p>
+      {["pflicht", "sinnvoll", "habIchVielleicht"].map((catKey) => {
+        const items = groups[catKey];
+        if (!items.length) return null;
+        const meta = GROUP_META[catKey];
+        const sum = items.reduce((acc, it) => acc + (typeof it.priceEur === "number" ? it.priceEur : 0), 0);
+        return (
+          <div key={catKey} style={{ marginBottom: 16 }}>
+            <h3 style={{ fontSize: 14, fontWeight: 700, color: meta.color, marginBottom: 8, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <span><span style={{ marginRight: 6 }}>{meta.emoji}</span>{meta.label}</span>
+              <span style={{ fontSize: 12, color: "var(--m)", fontWeight: 600 }}>{items.length} · ca. {sum}€</span>
+            </h3>
+            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+              {items.map((item, i) => (
+                <EliteShoppingItem key={`${catKey}-${i}`} item={item} categoryColor={meta.color} />
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </section>
+  );
+}
+
+function EliteShoppingItem({ item, categoryColor }) {
+  const [expanded, setExpanded] = useState(false);
+  const priceLabel = item.priceEur === 0 ? "0 €" : `${item.priceEur} €`;
+  return (
+    <div style={{ border: "1px solid var(--l)", borderRadius: 8, padding: "10px 12px", background: "#fff" }}>
+      <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+        <span style={{ fontSize: 20 }}>{item.emoji || "•"}</span>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          {item.url ? (
+            <a href={item.url} target="_blank" rel="noopener" style={{ fontSize: 13, fontWeight: 600, color: "var(--d)", textDecoration: "none", borderBottom: `1px dashed ${categoryColor}` }}>{item.label}</a>
+          ) : (
+            <span style={{ fontSize: 13, fontWeight: 600, color: "var(--d)" }}>{item.label}</span>
+          )}
+        </div>
+        <span style={{ fontSize: 13, fontWeight: 800, color: categoryColor, flexShrink: 0 }}>{priceLabel}</span>
+      </div>
+      {item.categoryReasoning && (
+        <>
+          <button onClick={() => setExpanded(!expanded)} style={{ marginTop: 6, background: "none", border: "none", padding: 0, fontSize: 11, color: "var(--m)", cursor: "pointer", textDecoration: "underline" }}>
+            {expanded ? "Warum-Begründung ausblenden" : "Warum diese Kategorie?"}
+          </button>
+          {expanded && <p style={{ fontSize: 11, color: "var(--m)", marginTop: 4, lineHeight: 1.5, fontStyle: "italic" }}>{item.categoryReasoning}</p>}
+        </>
+      )}
+    </div>
+  );
+}
+
+function EliteCockpitHeader({ eliteData, mottoColor, mottoName }) {
+  // P3-13: ageInsight (Was Alter ausmacht) + signatureRitual (Highlight-Moment) als Erweiterung im Cockpit
+  const [showRitual, setShowRitual] = useState(false);
+  if (!eliteData) return null;
+  const ai = eliteData.ageInsight;
+  const sr = eliteData.signatureRitual;
+
+  return (
+    <section className="fu" style={{ marginBottom: 16, background: "#fff", border: `1px dashed ${mottoColor || "var(--a)"}`, borderRadius: 12, padding: "14px 16px" }}>
+      {ai && (
+        <details style={{ marginBottom: sr && sr.name ? 10 : 0 }}>
+          <summary style={{ fontSize: 13, fontWeight: 700, color: "var(--d)", cursor: "pointer", padding: "2px 0", listStyle: "none" }}>
+            <span style={{ color: mottoColor || "var(--a)" }}>🧠</span> {ai.headline || "Was du über die Altersgruppe wissen musst"} ▾
+          </summary>
+          <div style={{ marginTop: 10, paddingLeft: 6 }}>
+            {ai.traits && ai.traits.length > 0 && (
+              <ul style={{ paddingLeft: 18, marginBottom: 10 }}>
+                {ai.traits.slice(0, 7).map((t, i) => (
+                  <li key={i} style={{ fontSize: 12, color: "var(--m)", marginBottom: 4, lineHeight: 1.5 }}>
+                    <strong style={{ color: "var(--d)" }}>{t.topic}:</strong> {t.detail}
+                  </li>
+                ))}
+              </ul>
+            )}
+            {ai.whyMottoFits && (
+              <p style={{ fontSize: 12, color: "var(--d)", lineHeight: 1.5, marginTop: 8, padding: 10, background: "var(--bg)", borderRadius: 8 }}>
+                <strong>{ai.whyMottoFitsHeadline || "Warum passt das Motto:"}</strong> {ai.whyMottoFits}
+              </p>
+            )}
+          </div>
+        </details>
+      )}
+      {sr && sr.name && (
+        <details onToggle={(e) => setShowRitual(e.target.open)}>
+          <summary style={{ fontSize: 13, fontWeight: 700, color: "var(--d)", cursor: "pointer", padding: "2px 0", listStyle: "none" }}>
+            <span style={{ color: mottoColor || "var(--a)" }}>✨</span> Signature-Ritual: {sr.name} ▾
+          </summary>
+          {showRitual && (
+            <div style={{ marginTop: 10, paddingLeft: 6 }}>
+              {sr.introText && (
+                <p style={{ fontSize: 12, color: "var(--m)", lineHeight: 1.5, marginBottom: 10 }}>{sr.introText}</p>
+              )}
+              {sr.setupSteps && sr.setupSteps.length > 0 && (
+                <div style={{ marginBottom: 10 }}>
+                  <p style={{ fontSize: 11, fontWeight: 700, color: "var(--d)", marginBottom: 4, textTransform: "uppercase", letterSpacing: 1 }}>So geht's:</p>
+                  <ol style={{ paddingLeft: 18, margin: 0 }}>
+                    {sr.setupSteps.map((s, i) => (
+                      <li key={i} style={{ fontSize: 12, color: "var(--d)", marginBottom: 4, lineHeight: 1.5 }}>
+                        <strong>{s.title}</strong>{s.content ? ` — ${s.content}` : ""}
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              )}
+              {sr.rolesList && sr.rolesList.length > 0 && (
+                <div style={{ marginBottom: 10 }}>
+                  <p style={{ fontSize: 11, fontWeight: 700, color: "var(--d)", marginBottom: 4, textTransform: "uppercase", letterSpacing: 1 }}>
+                    {sr.rolesList.length} Namen / Rollen zum Ziehen:
+                  </p>
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))", gap: 4 }}>
+                    {sr.rolesList.map((r, i) => (
+                      <div key={i} style={{ fontSize: 11, color: "var(--d)", padding: "4px 6px", background: "var(--bg)", borderRadius: 6 }}>
+                        <span>{r.emoji || "✨"}</span> {r.name}{r.function ? ` · ${r.function}` : ""}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {sr.optOutNote && (
+                <p style={{ fontSize: 11, color: "var(--m)", marginTop: 8, padding: 8, background: "var(--bg)", borderRadius: 6, fontStyle: "italic", lineHeight: 1.4 }}>
+                  <strong>Wenn ein Kind nicht will:</strong> {sr.optOutNote}
+                </p>
+              )}
+            </div>
+          )}
+        </details>
+      )}
+    </section>
+  );
+}
+
+function EliteGamesFilter({ variants, shoppingMode, effectiveLoc, quietMode, mottoColor }) {
+  // P3-14 Constraint-Solver: Filter games by indoor/outdoor/loudness/effort
+  const [showAll, setShowAll] = useState(false);
+  const [filterEffort, setFilterEffort] = useState("alle"); // alle | leicht | mittel | hoch
+  const [filterLoud, setFilterLoud] = useState("alle"); // alle | ruhig | mittel | laut
+
+  if (!variants || variants.length === 0) return null;
+  const targetVariantId = shoppingMode === "minimal" ? "minimal" : shoppingMode === "wow" ? "wow" : "standard";
+  const variant = variants.find((v) => v.id === targetVariantId) || variants[0];
+  if (!variant || !variant.games || variant.games.length === 0) return null;
+
+  const locationConstraint = effectiveLoc === "wohnung" ? "indoor" : "outdoor"; // garten/park = outdoor
+  const filtered = variant.games.filter((g) => {
+    // Location: zeige nur Spiele die im aktuellen Setup passen
+    if (locationConstraint === "indoor" && !g.indoor) return false;
+    if (locationConstraint === "outdoor" && !g.outdoor && !g.indoor) return false; // outdoor-only games stay if indoor also OK as fallback
+    // Effort
+    if (filterEffort !== "alle" && g.effort !== filterEffort) return false;
+    // Loudness — quietMode = harte Ruhig-Beschränkung
+    if (quietMode && g.loudness !== "ruhig") return false;
+    if (filterLoud !== "alle" && g.loudness !== filterLoud) return false;
+    return true;
+  });
+
+  const totalDur = filtered.reduce((acc, g) => acc + (g.duration || 0), 0);
+
+  return (
+    <section className="fu" style={{ marginBottom: 24, background: "#fff", border: "1px solid var(--l)", borderRadius: 14, padding: "16px 18px" }}>
+      <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: 1.5, color: mottoColor || "var(--a)", textTransform: "uppercase", marginBottom: 4 }}>🎮 Spiele · Constraint-Solver</p>
+      <h2 style={{ fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, marginBottom: 4, color: "var(--d)" }}>
+        Spiele passend zu deinem Setup
+      </h2>
+      <p style={{ fontSize: 12, color: "var(--m)", marginBottom: 12 }}>
+        Gefiltert nach: <strong>{effectiveLoc === "wohnung" ? "Drinnen" : "Outdoor-tauglich"}</strong>
+        {quietMode && <span style={{ color: "#558B2F" }}> · Ruhig-Modus aktiv</span>}
+        {" · "}{filtered.length} von {variant.games.length} Spielen · gesamt ~{totalDur} Min.
+      </p>
+
+      <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 12 }}>
+        <select value={filterEffort} onChange={(e) => setFilterEffort(e.target.value)} style={{ fontSize: 11, padding: "4px 8px", border: "1px solid var(--l)", borderRadius: 6, background: "#fff", color: "var(--d)" }}>
+          <option value="alle">Aufwand: alle</option>
+          <option value="leicht">leicht</option>
+          <option value="mittel">mittel</option>
+          <option value="hoch">hoch</option>
+        </select>
+        <select value={filterLoud} onChange={(e) => setFilterLoud(e.target.value)} style={{ fontSize: 11, padding: "4px 8px", border: "1px solid var(--l)", borderRadius: 6, background: "#fff", color: "var(--d)" }} disabled={quietMode}>
+          <option value="alle">Lautstärke: alle</option>
+          <option value="ruhig">ruhig</option>
+          <option value="mittel">mittel</option>
+          <option value="laut">laut</option>
+        </select>
+      </div>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        {filtered.length === 0 ? (
+          <p style={{ fontSize: 12, color: "var(--m)", padding: 12, background: "var(--bg)", borderRadius: 8, textAlign: "center" }}>
+            Keine Spiele entsprechen den Filtern. Lock'rer machen — Aufwand oder Lautstärke auf "alle".
+          </p>
+        ) : (
+          (showAll ? filtered : filtered.slice(0, 4)).map((g, i) => (
+            <EliteGameCard key={i} game={g} mottoColor={mottoColor} />
+          ))
+        )}
+        {filtered.length > 4 && (
+          <button onClick={() => setShowAll(!showAll)} style={{ background: "none", border: `1px dashed ${mottoColor || "var(--a)"}`, padding: "8px 12px", borderRadius: 8, color: "var(--m)", fontSize: 12, cursor: "pointer", fontFamily: "inherit" }}>
+            {showAll ? "Weniger anzeigen" : `Alle ${filtered.length} anzeigen`}
+          </button>
+        )}
+      </div>
+    </section>
+  );
+}
+
+function EliteGameCard({ game, mottoColor }) {
+  const [expanded, setExpanded] = useState(false);
+  const badges = [];
+  if (game.duration) badges.push(`${game.duration} Min.`);
+  if (game.effort) badges.push(`Aufwand: ${game.effort}`);
+  if (game.loudness) badges.push(`${game.loudness === "ruhig" ? "🔈" : game.loudness === "mittel" ? "🔉" : "🔊"} ${game.loudness}`);
+  if (game.indoor && game.outdoor) badges.push("🏠/🌳 in/out");
+  else if (game.indoor) badges.push("🏠 drinnen");
+  else if (game.outdoor) badges.push("🌳 draußen");
+
+  return (
+    <div style={{ border: "1px solid var(--l)", borderRadius: 10, padding: "12px 14px", background: "#fff" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8 }}>
+        <h3 style={{ fontSize: 14, fontWeight: 700, color: "var(--d)", margin: 0, flex: 1 }}>{game.name}</h3>
+        <button onClick={() => setExpanded(!expanded)} style={{ background: "none", border: "none", padding: 0, fontSize: 11, color: mottoColor || "var(--a)", cursor: "pointer", flexShrink: 0 }}>
+          {expanded ? "▴" : "▾"}
+        </button>
+      </div>
+      <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 4 }}>
+        {badges.map((b, i) => (
+          <span key={i} style={{ fontSize: 10, padding: "2px 6px", background: "var(--bg)", color: "var(--m)", borderRadius: 4, fontWeight: 600 }}>{b}</span>
+        ))}
+      </div>
+      {expanded && (
+        <div style={{ marginTop: 10, fontSize: 12, color: "var(--d)", lineHeight: 1.5 }}>
+          {game.material && (
+            <p style={{ marginBottom: 6 }}><strong>Material:</strong> {game.material}</p>
+          )}
+          {game.prepText && (
+            <p style={{ marginBottom: 6 }}><strong>Vorbereitung:</strong> {game.prepText}</p>
+          )}
+          {game.steps && game.steps.length > 0 && (
+            <div style={{ marginBottom: 6 }}>
+              <strong>Ablauf:</strong>
+              <ol style={{ paddingLeft: 18, margin: "4px 0 0" }}>
+                {game.steps.map((s, i) => (
+                  <li key={i} style={{ marginBottom: 3 }}><strong>{s.name}:</strong> {s.content}</li>
+                ))}
+              </ol>
+            </div>
+          )}
+          {game.safetyRule && (
+            <p style={{ marginBottom: 6, padding: 6, background: "#FFF3E0", borderRadius: 4 }}><strong>⚠️ Sicherheit:</strong> {game.safetyRule}</p>
+          )}
+          {game.whyItWorks && (
+            <p style={{ marginBottom: 6, padding: 6, background: "var(--bg)", borderRadius: 4, fontSize: 11, fontStyle: "italic" }}>
+              <strong>{game.whyItWorksTitle || "Warum funktioniert das"}:</strong> {game.whyItWorks}
+            </p>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // === MAIN APP ===
 function App() {
   // State
@@ -1221,6 +1511,9 @@ function App() {
           )}
         </section>
 
+        {/* P3-13: Elite-Cockpit-Header — ageInsight + signatureRitual */}
+        {eliteData && <EliteCockpitHeader eliteData={eliteData} mottoColor={motto.color} mottoName={motto.name} />}
+
         {/* ══════ COCKPIT — P1-22: Next Steps nach Plan-Generierung ══════ */}
         <section className="fu" style={{ marginBottom: 24, background: "linear-gradient(135deg, #FFF3E8 0%, #FFFAF5 100%)", border: "1px solid var(--l)", borderRadius: 14, padding: "16px 18px" }}>
           <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: 1.5, color: motto.color || "var(--a)", textTransform: "uppercase", marginBottom: 6 }}>✓ Dein Plan steht</p>
@@ -1341,6 +1634,17 @@ function App() {
         {/* Zeitplan — DAS Kernversprechen, sofort sichtbar */}
         <Zeitplan timeline={timeline} mottoColor={motto.color} quietMode={quietMode} setQuietMode={setQuietMode} ageGroupLabel={ageLabel[ag]} />
 
+        {/* P3-14: Elite-Games-Filter (Constraint-Solver) — nur wenn eliteData */}
+        {eliteData && eliteData.variants && (
+          <EliteGamesFilter
+            variants={eliteData.variants}
+            shoppingMode={shoppingMode}
+            effectiveLoc={effectiveLoc}
+            quietMode={quietMode}
+            mottoColor={motto.color}
+          />
+        )}
+
         {/* Schatzsuche — optionaler Add-on direkt neben dem Zeitplan */}
         <div data-section="schatzsuche">
           <SchnitzeljagdBlock age={age} ag={ag} mottoId={mottoId} szActive={szActive} setSzActive={setSzActive} szThemeId={szThemeId} setSzThemeId={setSzThemeId} szTheme={szTheme} childName={childName} setChildName={setChildName} mapPositions={mapPositions} setMapPositions={setMapPositions} stationLocations={stationLocations} setStationLocations={setStationLocations} dekoEmojis={dekoEmojis} setDekoEmojis={setDekoEmojis} />
@@ -1362,25 +1666,33 @@ function App() {
           </div>
         </section>
 
-        {/* Deko */}
-        <section className="fu" style={{ marginBottom: 24 }}>
-          <h2 style={{ fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, marginBottom: 4 }}>
-            🎨 Deko, die man wirklich sieht {motto.cat === "license" && `(${motto.name})`}
-          </h2>
-          {isMinimal && <p style={{ fontSize: 13, color: "var(--g)", marginBottom: 10, fontWeight: 600 }}>🌿 Minimal-Modus: Das reicht völlig.</p>}
-          <p style={{ fontSize: 11, color: "var(--m)", marginBottom: 8 }}>✓ Checkbox = "Hab ich schon" — wird aus Kosten rausgerechnet</p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            {deko.map((item, i) => <ItemRow key={i} item={item} isOwned={owned[i]} onToggle={() => toggleOwned(i)} />)}
-          </div>
-        </section>
+        {/* P3-17: Elite-Einkaufsliste (3 Gruppen) — wenn eliteData vorhanden */}
+        {eliteData && eliteData.variants && (
+          <EliteShoppingList variants={eliteData.variants} shoppingMode={shoppingMode} mottoColor={motto.color} />
+        )}
 
-        {/* Mitgebsel */}
-        <section className="fu" style={{ marginBottom: 24 }}>
-          <h2 style={{ fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, marginBottom: 12 }}>🎁 Kleine Mitgebsel, kein unnötiger Kram</h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            {mitgebsel.map((item, i) => <ItemRow key={"m" + i} item={item} isOwned={owned[deko.length + i]} onToggle={() => toggleOwned(deko.length + i)} />)}
-          </div>
-        </section>
+        {/* Legacy Deko + Mitgebsel — nur wenn keine eliteData (non-elite Mottos: piraten, dschungel, etc) */}
+        {!eliteData && (
+          <>
+            <section className="fu" style={{ marginBottom: 24 }}>
+              <h2 style={{ fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, marginBottom: 4 }}>
+                🎨 Deko, die man wirklich sieht {motto.cat === "license" && `(${motto.name})`}
+              </h2>
+              {isMinimal && <p style={{ fontSize: 13, color: "var(--g)", marginBottom: 10, fontWeight: 600 }}>🌿 Minimal-Modus: Das reicht völlig.</p>}
+              <p style={{ fontSize: 11, color: "var(--m)", marginBottom: 8 }}>✓ Checkbox = "Hab ich schon" — wird aus Kosten rausgerechnet</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                {deko.map((item, i) => <ItemRow key={i} item={item} isOwned={owned[i]} onToggle={() => toggleOwned(i)} />)}
+              </div>
+            </section>
+
+            <section className="fu" style={{ marginBottom: 24 }}>
+              <h2 style={{ fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, marginBottom: 12 }}>🎁 Kleine Mitgebsel, kein unnötiger Kram</h2>
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                {mitgebsel.map((item, i) => <ItemRow key={"m" + i} item={item} isOwned={owned[deko.length + i]} onToggle={() => toggleOwned(deko.length + i)} />)}
+              </div>
+            </section>
+          </>
+        )}
 
         {/* Das reicht + Kosten */}
         <div className="sp" style={{ background: "linear-gradient(135deg,#1B5E20,#2E7D32,#388E3C)", borderRadius: 24, padding: "48px 24px 40px", textAlign: "center", position: "relative", overflow: "hidden", marginBottom: 24 }}>
