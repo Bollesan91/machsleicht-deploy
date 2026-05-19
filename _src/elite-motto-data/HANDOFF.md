@@ -1,30 +1,28 @@
-# HANDOFF — Planer-Frisur-Sprint, Phase A abgeschlossen
+# HANDOFF — Planer-Frisur-Sprint, Phase A + B abgeschlossen
 
-**Erstellt:** 2026-05-19
-**Vorherige Session:** Claude.ai (Bolle + Claude)
-**Ziel der nächsten Session:** Phase B starten + ggf. Skalierung auf andere Mottos
+**Erstellt:** 2026-05-19 (Phase A)
+**Update:** 2026-05-19 (Phase B done)
+**Ziel der nächsten Session:** Phase C (einhorn-mittel) ODER Sprint-Frontend (P3-13/14/15/16/17/18/19)
 
 ---
 
 ## TL;DR
 
-Wir wollen den **Planer-Frisur-Sprint** (P3-12 bis P3-19 im BACKLOG-AUDIT) angehen. Der Planer-Output soll inhaltlich der Tiefe der Elite-Motto-Seiten standhalten.
+**Phase A + B fertig.** `feuerwehr-mittel.json` ist jetzt komplett (0 TODO_PHASE_B markers). Sprint-Blocker auf Daten-Ebene sind weg. Planer-Frontend kann jetzt gebaut werden (P3-13 bis P3-19).
 
-**Strategie-Entscheidung getroffen:** Vor dem eigentlichen Sprint extrahieren wir die strukturierten Daten aus den 6 Elite-Motto-HTML-Seiten in JSON-Form, die der Planer dann konsumiert. Die anderen 3 Sprint-PBIs werden parallel zu der Datenextraktion entstehen.
+**Phase B Pipeline-Ergebnisse (19.05.2026):**
+- `preparationWeeks` — 6 datums-Sektionen (minus4Weeks bis dayOf), 30 Items — Score v3 ~88
+- `sosScenarios` — 8 Panik-Szenarien mit 6-Feld-Schema — Score v3 ~92
+- `shoppingList[].category` — 40 Items klassifiziert, Pflicht-Anteile Min 60% / Std 54% / Wow 53% — Score v3 ~89
 
-**Was bereits getan ist (Phase A — Extraktion + Cleanup):**
-- Neues Verzeichnis `_src/elite-motto-data/` angelegt mit:
-  - `feuerwehr-mittel.json` (63 KB) — Golden Template für Feuerwehr 6-8 Jahre
-  - `_extract.py` — HTML→JSON Extraktor (motto-spezifisch, als Template adaptierbar)
-  - `_cleanup.py` — Strukturierungs-Schritt v1.0 (schedule split, roles list, cake parse, Müll raus)
-  - `README.md` — Schema-Dokumentation und Sprint-PBI-Mapping
-- **Aktuelle Qualität: ~75 %** — inhaltlich tief, strukturell sauber für 13 von 16 Top-Level-Feldern
-- 3 von 7 Sprint-PBIs sind aktuell auf Daten-Ebene blockiert — siehe "Was noch fehlt" unten
+Realisiert via **3-Chat-Content-Loop** (Branch-Trick analog machsruhig). 3 parallele Streams Writer+Reviewer. Adversarial-Phase skipped weil v3 ≥85 + Schemas clean + Writer haben Pushback geliefert. Audit-Trail unter `_dev/content-loop/runs/04-elite-motto-data-phase-b/` auf `content-loop-pipeline`-Branch.
 
-**Was als Nächstes:**
-- **Phase B:** preparationWeeks + sosScenarios + shoppingList.category für Feuerwehr 6-8 (= ~2h Arbeit, schreibend)
-- **Schema-Validation:** Phase B + Bolle's Review zeigen ob das Schema trägt → erst dann skalieren
-- **Phase C (später):** Skalierung auf 5 weitere Elite-Slots (Feuerwehr klein/gross, Einhorn × 3, Safari 6-8)
+**Sprint-Entblockungen:** P3-16 (Vorbereitungskarte) ✓, P3-17 (3-Gruppen-Einkaufsliste) ✓, P3-18 (SOS-Button) ✓ — alle haben jetzt die Daten, die sie brauchen.
+
+**Was als Nächstes (zur Entscheidung):**
+- **Phase C** — Skalierung auf weitere Elite-Slots (einhorn-mittel → feuerwehr-klein → ...). Strukturanalyse zeigt: einhorn-6-8 HTML hat identische Marker-Struktur, `_extract.py` braucht Motto-Parametrisierung (~30-60 Min) + Phase B equivalent pro Slot.
+- **Sprint-Frontend** — P3-13 bis P3-19 in `_src/kindergeburtstag.jsx` umsetzen, baut auf jetzt komplettem `feuerwehr-mittel.json` auf. Andere Mottos fallen für den Planer auf "kein Elite-Output" zurück bis Phase C läuft.
+- **Polish-Nice-to-Haves** — #4 food/decoration strukturieren, #5 whyItWorks, #6 safetyRule, #7 invitationTemplate entfernen. Non-blocking.
 
 ---
 
