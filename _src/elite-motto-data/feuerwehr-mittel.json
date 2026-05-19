@@ -3,7 +3,9 @@
     "source_file": "kindergeburtstag/feuerwehr-6-8-jahre.html",
     "extracted": "2026-05-19",
     "schema_version": "1.0",
-    "purpose": "Golden Template — Feuerwehr 6-8 für Planer-Frisur-Sprint (P3-13 to P3-19)"
+    "purpose": "Golden Template — Feuerwehr 6-8 für Planer-Frisur-Sprint (P3-13 to P3-19)",
+    "phase_b_complete": "2026-05-19",
+    "phase_b_streams": "3-Chat content-loop (writer/reviewer pipeline). preparationWeeks v3=88, sosScenarios v3=92, shoppingList.category v3=89. Adversarial-Phase skipped (alle Scores >=85 + Schema clean)."
   },
   "motto": "feuerwehr",
   "ageGroup": "mittel",
@@ -223,70 +225,90 @@
           "label": "Wasserspritzpistolen (6er-Set)",
           "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+set&tag=machsleicht-21",
           "priceEur": 10,
-          "hasAffiliate": true
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Zentrales Spielmaterial für Zielspritzen — ohne fällt eines von zwei Minimal-Spielen aus."
         },
         {
           "emoji": "💫",
           "label": "Feuerwehr-Tattoo-Set (30+ Motive)",
           "url": "https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht-21",
           "priceEur": 5,
-          "hasAffiliate": true
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Ohne Helme in Minimal der einzige Verkleidungs-Anker — 6 Kinder bleiben sonst optisch normale Gäste."
         },
         {
           "emoji": "🚒",
           "label": "Mini-Feuerwehrautos (12er-Set)",
           "url": "https://www.amazon.de/s?k=mini+feuerwehrauto+kinder+set&tag=machsleicht-21",
           "priceEur": 8,
-          "hasAffiliate": true
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Schönes Mitgebsel, aber kein Spiel hängt daran — Tüten gehen auch mit Tattoos + Süßigkeiten."
         },
         {
           "emoji": "🚧",
           "label": "Absperrband rot/weiß (50 m)",
           "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht-21",
           "priceEur": 6,
-          "hasAffiliate": true
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Deko-Effekt gut, aber Party läuft auch ohne sichtbare Einsatzstellen-Inszenierung."
         },
         {
           "emoji": "🫧",
           "label": "Rasierschaum (2 Dosen Drogerie-Eigenmarke)",
           "url": null,
           "priceEur": 3,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Material für Schaum-Löscheinsatz — zweites von zwei Minimal-Spielen, ohne kein Schaum-Spiel."
         },
         {
           "emoji": "🥤",
           "label": "Apfelschorle + rote Becher",
           "url": null,
           "priceEur": 5,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "6 spielende Kinder ohne Trinken kollabieren in 30 min — kein Ersatz aus Haushalt für rote Themen-Becher zumutbar."
         },
         {
           "emoji": "🍿",
           "label": "Popcorn-Mais + Snacks",
           "url": null,
           "priceEur": 5,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Salzige Beilage rundet ab, aber Party trägt mit Kuchen + Süßigkeiten-Mitgebsel — 2h-Slot läuft mit Kuchen allein durch."
         },
         {
           "emoji": "🎂",
           "label": "Backmischung Kastenform + roter Zuckerguss",
           "url": null,
           "priceEur": 6,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Geburtstagskuchen ist sozialer Pflichtteil jeder Kinderparty, nicht verhandelbar."
         },
         {
           "emoji": "📄",
           "label": "Ausmalbilder + Dienstausweis-Vorlage + Diplom",
           "url": null,
           "priceEur": 0,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Kostet 0€ und trägt Schicht-Appell + Diplom-Zeremonie — strukturelle Klammer der Party."
         },
         {
           "emoji": "🛍️",
           "label": "Papiertüten + Pappkarton-Helm (Bastelladen/DM)",
           "url": null,
           "priceEur": 5,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Mitgebsel kann auch in alten Tüten verschwinden, Pappkarton-Helm ist Bastel-Bonus."
         }
       ],
       "estimatedCostEur": 53,
@@ -462,91 +484,117 @@
           "label": "Wasserspritzpistolen (6er-Set)",
           "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+set&tag=machsleicht-21",
           "priceEur": 10,
-          "hasAffiliate": true
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Wie Minimal — zentrales Spiel-Material für Zielspritzen-Station."
         },
         {
           "emoji": "⛑️",
           "label": "Feuerwehr-Helme Plastik (6 Stk.)",
           "url": "https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht-21",
           "priceEur": 25,
-          "hasAffiliate": true
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "In Standard das Variant-Defining Upgrade vs. Minimal — ohne Helme keine echte Standard-Optik."
         },
         {
           "emoji": "🚒",
           "label": "Mini-Feuerwehrautos (12er-Set)",
           "url": "https://www.amazon.de/s?k=mini+feuerwehrauto+kinder+set&tag=machsleicht-21",
           "priceEur": 8,
-          "hasAffiliate": true
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Mitgebsel-Beilage, keine Spielmechanik dahinter — kann durch Tattoos+Süßes ersetzt werden."
         },
         {
           "emoji": "💫",
           "label": "Feuerwehr-Tattoo-Set (30+ Motive)",
           "url": "https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht-21",
           "priceEur": 5,
-          "hasAffiliate": true
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Helme tragen Verkleidung bereits — Tattoos sind Bonus-Layer, kein Pflichtanker mehr sobald Helme da sind."
         },
         {
           "emoji": "🚧",
           "label": "Absperrband rot/weiß (50 m)",
           "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht-21",
           "priceEur": 6,
-          "hasAffiliate": true
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Stationen werden visuell klarer abgegrenzt, aber funktional läuft alles auch ohne."
         },
         {
           "emoji": "🩹",
           "label": "Erste-Hilfe-Spielset für Station 4",
           "url": "https://www.amazon.de/s?k=erste+hilfe+set+kinder+spielzeug&tag=machsleicht-21",
           "priceEur": 10,
-          "hasAffiliate": true
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Station 4 ist Variant-Defining für Standard — ohne Material fällt eine Ausbildungs-Station weg."
         },
         {
           "emoji": "🪢",
           "label": "Seilstücke + Knoten-Karte",
           "url": null,
           "priceEur": 3,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Ergänzt Ausbildungs-Konzept, fällt aber zur Not weg ohne dass Standard kollabiert — Erste-Hilfe trägt das Variant-Defining allein."
         },
         {
           "emoji": "🫧",
           "label": "Rasierschaum (2 Dosen)",
           "url": null,
           "priceEur": 3,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Schaum-Löscheinsatz bleibt auch in Standard ein Kern-Spiel."
         },
         {
           "emoji": "🥤",
           "label": "Apfelschorle + rote Becher + Würstchen + Mini-Pizzen",
           "url": null,
           "priceEur": 14,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Standard-Slot zieht sich auf 3h — Würstchen+Mini-Pizzen statt billiger Brötchen, weil warmes Essen die Mittags-Lücke trägt."
         },
         {
           "emoji": "🎂",
           "label": "Backmischung Kastenform + roter Zuckerguss + Mini-Leiter aus Salzteig",
           "url": null,
           "priceEur": 8,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Geburtstagskuchen Pflichtteil — Salzteig-Leiter ist Sub-Position des Pflicht-Items, kein eigener Kosten-Anker."
         },
         {
           "emoji": "🎈",
           "label": "Rote Luftballons + Plakat (Wachen-Tafel)",
           "url": null,
           "priceEur": 4,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Wachen-Tafel-Plakat hebt Atmosphäre, aber Stationen funktionieren auch ohne."
         },
         {
           "emoji": "📄",
           "label": "Diplom-Vorlage + Dienstausweise + Knoten-Karte",
           "url": null,
           "priceEur": 0,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "0€-Print trägt Schicht-Appell, Stationen und Abschluss-Zeremonie — strukturell tragend."
         },
         {
           "emoji": "🛍️",
           "label": "Mitgebsel-Tüten + Bändchen für Diplom-Rollen",
           "url": null,
           "priceEur": 3,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Diplom kann auch flach mitgegeben werden, Bändchen ist nettes Detail aber nicht zwingend."
         }
       ],
       "estimatedCostEur": 99,
@@ -796,119 +844,153 @@
           "label": "Nebelmaschine + Wasserfluid",
           "url": "https://www.amazon.de/s?k=nebelmaschine+klein+party&tag=machsleicht-21",
           "priceEur": 30,
-          "hasAffiliate": true
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Variant-Defining Effekt für Wow — aber Atmosphäre-Bonus, kein Spiel hängt mechanisch dran."
         },
         {
           "emoji": "⛑️",
           "label": "Feuerwehr-Helme Plastik (6 Stk.)",
           "url": "https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht-21",
           "priceEur": 25,
-          "hasAffiliate": true
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Wie Standard — Helme tragen Verkleidungs-Effekt für alle 6 Kinder."
         },
         {
           "emoji": "💧",
           "label": "Wasserspritzpistolen (6er-Set)",
           "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+set&tag=machsleicht-21",
           "priceEur": 10,
-          "hasAffiliate": true
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Zielspritzen bleibt auch in Wow ein Kern-Spiel."
         },
         {
           "emoji": "📌",
           "label": "Crew-Pins (6 Stk.)",
           "url": "https://www.amazon.de/s?k=feuerwehr+anstecker+pin+kinder&tag=machsleicht-21",
           "priceEur": 10,
-          "hasAffiliate": true
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Hebt Schicht-Appell auf Premium-Level, aber Tattoos leisten ähnliches für 5€."
         },
         {
           "emoji": "🚒",
           "label": "Mini-Feuerwehrautos (12er-Set)",
           "url": "https://www.amazon.de/s?k=mini+feuerwehrauto+kinder+set&tag=machsleicht-21",
           "priceEur": 8,
-          "hasAffiliate": true
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Konsistent zu Standard/Minimal — Mitgebsel-Beilage ohne Spielmechanik."
         },
         {
           "emoji": "🚧",
           "label": "Absperrband rot/weiß (50 m)",
           "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht-21",
           "priceEur": 6,
-          "hasAffiliate": true
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Konsistent — Deko-Effekt, kein funktionaler Pflichtanker."
         },
         {
           "emoji": "💫",
           "label": "Feuerwehr-Tattoo-Set (30+ Motive)",
           "url": "https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht-21",
           "priceEur": 5,
-          "hasAffiliate": true
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "In Wow durch Crew-Pins + Helme bereits doppelt abgedeckt — hier nur noch Beilage."
         },
         {
           "emoji": "🩹",
           "label": "Erste-Hilfe-Spielset für Station 4",
           "url": "https://www.amazon.de/s?k=erste+hilfe+set+kinder+spielzeug&tag=machsleicht-21",
           "priceEur": 10,
-          "hasAffiliate": true
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Ausbildungs-Station bleibt auch in Wow Bestandteil der Kern-Choreografie."
         },
         {
           "emoji": "🔍",
           "label": "Lupe für Brandermittlung",
           "url": "https://www.amazon.de/s?k=lupe+kinder+detektiv&tag=machsleicht-21",
           "priceEur": 3,
-          "hasAffiliate": true
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Brandermittlung ist das Variant-Defining Wow-Spiel — ohne Lupe kollabiert das Konzept."
         },
         {
           "emoji": "🪢",
           "label": "Seile + Augenbinden (für Knoten + Atemschutz-Station)",
           "url": null,
           "priceEur": 6,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Trägt zwei Wow-Stationen (Knoten + Atemschutz) — 6€ für hohen Spiel-Output."
         },
         {
           "emoji": "🫧",
           "label": "Rasierschaum (2 Dosen)",
           "url": null,
           "priceEur": 3,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Schaum-Löscheinsatz bleibt Kern-Spiel über alle Varianten hinweg."
         },
         {
           "emoji": "📸",
           "label": "Polaroid-Film oder Sofortdruck (Rossmann/dm)",
           "url": null,
           "priceEur": 5,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Verstärkt Brandermittlung-Inszenierung, aber Fall-Akte funktioniert auch ohne Bilder."
         },
         {
           "emoji": "🥤",
           "label": "Apfelschorle + Becher + Würstchen + Mini-Pizzen + Brezeln",
           "url": null,
           "priceEur": 16,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Wow-Slot 3-4h mit Eltern-Übergabe-Buffet — Brezeln decken Eltern-Anteil ab, billiger Ersatz wäre peinlich bei Wow-Inszenierung."
         },
         {
           "emoji": "🎂",
           "label": "Backmischung + Zuckerguss + Wunderkerze",
           "url": null,
           "priceEur": 9,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Geburtstagskuchen Pflichtteil — Wunderkerze ist Wow-Sub-Position des Pflicht-Items."
         },
         {
           "emoji": "🎈",
           "label": "Luftballons + Plakate (Wachen-Tafel + Ehrentafel)",
           "url": null,
           "priceEur": 5,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Konsistent zu Standard — Atmosphäre-Heber, kein Stations-Pflicht-Material."
         },
         {
           "emoji": "📄",
           "label": "Diplom + Dienstausweise + Verdächtigen-Karten + Fall-Akte",
           "url": null,
           "priceEur": 0,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "0€-Print trägt jetzt zusätzlich Brandermittlung (Verdächtigen-Karten + Fall-Akte) — Strukturanker."
         },
         {
           "emoji": "🛍️",
           "label": "Mitgebsel-Tüten + Bändchen",
           "url": null,
           "priceEur": 3,
-          "hasAffiliate": false
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Konsistent zu Standard — nettes Detail, kein Pflicht-Anker."
         }
       ],
       "estimatedCostEur": 159,
@@ -1016,11 +1098,293 @@
     }
   ],
   "preparationWeeks": {
-    "_status": "TODO_PHASE_B",
-    "_note": "Datums-getriebener Wochenplan ist im Quell-HTML nicht vorhanden. Muss in Phase B geschrieben werden."
+    "minus4Weeks": {
+      "headline": "4 Wochen vorher — Grundgerüst stellen",
+      "items": [
+        {
+          "icon": "📅",
+          "title": "Datum, Uhrzeit, Treffpunkt fixieren",
+          "detail": "Samstag oder Sonntag 14–17 Uhr funktioniert für Feuerwehr am besten — Mittagsschlaf der Kleinen ist durch, abends sind alle platt. Treffpunkt ins Hirn: Haustür, Hof, Park? Drinnen-Plan-B-Adresse schon im Kopf haben."
+        },
+        {
+          "icon": "👥",
+          "title": "Gästeliste festzurren — max 6 Kinder",
+          "detail": "Über 6 wird's bei Feuerwehr unübersichtlich (4 Stationen parallel, Sirene, Schaum). Wer in Mietwohnung wohnt: lieber 5 als 7 — die Nachbarn danken's dir später."
+        },
+        {
+          "icon": "💶",
+          "title": "Variante wählen — Budget ehrlich rechnen",
+          "detail": "Minimal 53€ (DIY-Helme, Klorollen, Rasierschaum). Standard 99€ (Plastik-Helme + Erste-Hilfe-Set). Wow 159€ (Nebelmaschine 45€ + Polaroid/Instax geliehen oder Selphy-Drucker + Brandermittlung-Bastelkram). Wow ohne geliehene Kamera sprengt das Budget — Polaroid neu kostet 110€+."
+        },
+        {
+          "icon": "✉️",
+          "title": "Einladungen rausschicken",
+          "detail": "Pflicht im Text: ‚Hat dein Kind Allergien oder Unverträglichkeiten?' Bei Wow zusätzlich: ‚Asthma? Wir nutzen eine Nebelmaschine (Wasserbasis).' RSVP-Link auf party.machsleicht.de spart dir den WhatsApp-Chat-Krieg."
+        },
+        {
+          "icon": "🏠",
+          "title": "Bei Mietwohnung: Nachbarn-Status checken",
+          "detail": "Wer wohnt drüber, drunter, nebenan? Wer ist sonntags zuhause? Mental notieren, wem du in Woche -1 Bescheid sagst. Sirene + 6 spritzende Kinder ist objektiv laut."
+        }
+      ]
+    },
+    "minus2Weeks": {
+      "headline": "2 Wochen vorher — Logistik festziehen",
+      "items": [
+        {
+          "icon": "📋",
+          "title": "RSVPs einsammeln und Liste schließen",
+          "detail": "Wer hat geantwortet, wer nicht? Nachzügler einmal anstupsen, dann ist gut. party.machsleicht.de zeigt dir den Stand auf einen Blick — sonst Excel oder Zettel am Kühlschrank."
+        },
+        {
+          "icon": "🥜",
+          "title": "Allergien zusammenschreiben",
+          "detail": "Eine Liste, ein Zettel: Kind X = Laktose, Kind Y = Nüsse, Kind Z = Gluten. Bei 6 Kindern hat statistisch eins was. Liste am Backtag und am Party-Tag griffbereit — nicht im Hinterkopf, auf Papier."
+        },
+        {
+          "icon": "🙋",
+          "title": "Bei 6+ Kindern: Helfer organisieren",
+          "detail": "Oma, Partner, andere Mutter, Teenager-Nachbarin (10€ für 3h ist fair). Eine zweite Person bedient bei Einsatz-Alarm die Nebelmaschine, während du die Crew durchs Treppenhaus führst. Ohne Helfer = Stationen-Chaos."
+        },
+        {
+          "icon": "📦",
+          "title": "Bestellliste finalisieren",
+          "detail": "Was kaufst du wo? Helme + Wasserspritzen + Tattoo-Set bei Amazon, Rasierschaum + Apfelschorle im Supermarkt, Backmischung bei Rewe. Liste machen, sonst kaufst du in Woche -1 dreimal ein."
+        }
+      ]
+    },
+    "minus1Week": {
+      "headline": "1 Woche vorher — bestellen, basteln, vorwarnen",
+      "items": [
+        {
+          "icon": "🛒",
+          "title": "Amazon-Bestellung JETZT raus",
+          "detail": "Lieferzeit 2–5 Tage. Tattoo-Stempelkissen-Set (~10€), Wasserspritzpistolen (6er-Pack ~12€), bei Standard Plastik-Helme (~25€), bei Wow Nebelmaschine (~45€, Stairville/Eurolite-Klasse) + Fluid. Später bestellen = Panik."
+        },
+        {
+          "icon": "📬",
+          "title": "Pakete bei Ankunft sofort öffnen + checken",
+          "detail": "Helm-Größen passen? Alle Spritzen funktionieren? Nebelmaschine läuft an (kurzer 1-Minuten-Test am offenen Fenster, sonst Disco-Geruch)? Reklamation muss VOR Backtag durch sein — Amazon-Rückgabe braucht 2–3 Tage."
+        },
+        {
+          "icon": "🪖",
+          "title": "Bei Minimal: DIY-Helme bauen — Trockenzeit beachten",
+          "detail": "Pappkartons zuschneiden (Amazon-Lieferkartons reichen), rot anmalen, schwarzen Edding-Streifen. 6 Helme = 2h Arbeit + 24h Trockenzeit. Jetzt machen, nicht in Woche der Party — feuchte Farbe färbt Kinderhaare."
+        },
+        {
+          "icon": "🖨️",
+          "title": "Dienstausweise + Diplome drucken",
+          "detail": "Vorlagen gibt's kostenlos bei kribbelbunt.de oder ähnlich. DIN A4, 6x ausdrucken, Namen handschriftlich eintragen — sieht offizieller aus als perfekt am PC. Diplome rollen + Schleife dran."
+        },
+        {
+          "icon": "🔔",
+          "title": "Mietwohnung: Nachbarn vorwarnen",
+          "detail": "Kurz klingeln, kurz lächeln: ‚Sonntag 14–17 Uhr wird's bei uns lauter, mein Sohn wird 7.' Fertig. Nachbarn, die's vorher wissen, beschweren sich nicht — die, die's nicht wissen, schon."
+        },
+        {
+          "icon": "🎵",
+          "title": "Sirenen-Sound + Plan B Regen vorbereiten",
+          "detail": "YouTube ‚Feuerwehr Sirene 30 Sekunden' runterladen, Bluetooth-Box laden. Räume innen freihalten: Wohnzimmer + Flur + Bad sind die Plan-B-Locations. Nicht vollstopfen diese Woche."
+        }
+      ]
+    },
+    "minus2Days": {
+      "headline": "2 Tage vorher — produzieren: backen, basteln, packen",
+      "items": [
+        {
+          "icon": "🎂",
+          "title": "Kuchen backen — oder Plan B aktivieren",
+          "detail": "Wenn Zeit/Nerven da: Backmischung durchziehen. Wenn nicht: Schoko-Kasten beim Bäcker holen (4–6€), morgen kommt Glasur drauf. Kein Drama. Schmeckt den Kindern genauso gut."
+        },
+        {
+          "icon": "🪧",
+          "title": "Wachen-Tafel-Plakat malen",
+          "detail": "DIN A3 oder Tapetenrest. ‚FEUERWACHE [Geburtstagskind]' oben, darunter Platz für Stempel/Tattoos der Kinder beim Eintreffen. Mit dickem Edding, nicht filigran — die Kinder sollen's lesen, nicht die Jury. Aufhängen kommt morgen."
+        },
+        {
+          "icon": "🎁",
+          "title": "Goodie-Bags packen",
+          "detail": "Pro Kind: Diplom-Rolle, Mini-Feuerwehrauto (1€-Shop, 6er-Pack), 3 Tattoos aus dem Set, evtl. Lolli. In Papiertüte mit Namen drauf. 15 Minuten Arbeit, spart dir am Party-Tag Stress."
+        },
+        {
+          "icon": "🗣️",
+          "title": "Helfer briefen — 5 Minuten reichen",
+          "detail": "Zettel mit 4 Stationen, wer macht was: ‚Du Schaum-Löscheinsatz, ich Zielspritzen, du Knoten, ich Erste Hilfe.' Bei Einsatz-Alarm: Wer Nebelmaschine, wer Crew. Klare Rollen = kein Chaos."
+        },
+        {
+          "icon": "🚒",
+          "title": "Wow-Setup: Brandermittlung-Kram basteln",
+          "detail": "Verdächtigen-Karten (4–5 Stück) ausdrucken, Spuren-Beweise basteln: angekokeltes Papier, ‚Streichholzschachtel' mit Notiz, Fußabdruck-Schablone. Plot kurz aufschreiben, sonst stockst du beim Erklären."
+        }
+      ]
+    },
+    "minus1Day": {
+      "headline": "1 Tag vorher — aufstellen, verstecken, testen",
+      "items": [
+        {
+          "icon": "🍫",
+          "title": "Kuchen verzieren",
+          "detail": "Rote Glasur drüber (Tube aus Supermarkt reicht), 4 Oreos halbieren = 8 Reifen für ‚Feuerwehrauto', weißer Zuckerstift für ‚112'. 10 Minuten. Über Nacht fest werden lassen."
+        },
+        {
+          "icon": "🧸",
+          "title": "Kuscheltiere fürs Einsatz-Alarm-Spiel verstecken",
+          "detail": "6–8 Plüschtiere in Wohnung/Garten verstecken (unter Sofa, hinter Vorhang, im Karton). Bei Wow: zusätzlich Brandermittlung-Beweise platzieren — Streichholzschachtel auf Fensterbank, ‚Fußspur' im Flur."
+        },
+        {
+          "icon": "🚧",
+          "title": "Wachen-Tafel aufhängen + Tisch dekorieren",
+          "detail": "Wachen-Tafel an die Wand (Tesa oder Malerkrepp, keine Nägel im Mietwohnungs-Putz). Rot-weißes Absperrband (~2€) um den Tisch, Helm-Box am Eingang (Pappkarton + ‚HELME' drauf), Tattoo-Stempelkissen offen platziert."
+        },
+        {
+          "icon": "🔊",
+          "title": "Sirenen-Sound + Bluetooth-Box testen",
+          "detail": "Box laden, Sound abspielen, Lautstärke einstellen. Funktioniert die Verbindung? Reicht der Akku 3 Stunden? Lieber jetzt rausfinden als morgen vor 6 wartenden Kindern."
+        },
+        {
+          "icon": "🫧",
+          "title": "Schaum-Löscheinsatz-Zone vorbereiten",
+          "detail": "2 Dosen Rasierschaum bereitstellen (günstige Marke, je 1€), große Wanne oder Plastikplane lokalisieren — fürs Spritzen-ohne-Sauerei. Handtuchstapel daneben."
+        }
+      ]
+    },
+    "dayOf": {
+      "headline": "Tag X — durchziehen, atmen, feiern",
+      "items": [
+        {
+          "icon": "⏰",
+          "title": "30 Min vor Ankunft: Stationen aufbauen",
+          "detail": "4 Stationen platzieren (Zielspritzen, Schaum, Knoten, Erste Hilfe), Apfelschorle in Kühlschrank, Würstchen ins warme Wasser. Helfer ist da oder kommt jetzt. Kuchen aus dem Kühlschrank — Zimmertemperatur schmeckt besser."
+        },
+        {
+          "icon": "👕",
+          "title": "Wechselklamotten-Tüte an die Tür",
+          "detail": "Leere Tüte an die Wohnungstür hängen mit Zettel ‚Wechselklamotten rein — wir spritzen mit Schaum'. Sonst stehen 6 Eltern beim Bringen ratlos da, oder du kriegst die nassen Kinder am Ende nicht trocken nach Hause."
+        },
+        {
+          "icon": "🎯",
+          "title": "15 Min vor Ankunft: Endkontrolle + Sirenen-Probe",
+          "detail": "Bluetooth-Box an, Sirenen-Sound 5 Sekunden testen (Nachbarn registrieren: ‚aha, jetzt geht's los' — kein Schock später). Tattoo-Stempelkissen offen, Helme an Helm-Box, Wachen-Tafel hängt."
+        },
+        {
+          "icon": "💨",
+          "title": "Wow-Variante: Nebelmaschine 10 Min vorher anschalten",
+          "detail": "Nebelmaschinen brauchen 8–10 Minuten zum Aufheizen, sonst kommt beim ersten Knopfdruck nix. Anschalten wenn die ersten Kinder klingeln — bis zum Einsatz-Alarm (meist nach 45 Min) ist sie warm."
+        },
+        {
+          "icon": "📸",
+          "title": "Nach 20 Min: Crew-Foto vor Wachen-Tafel",
+          "detail": "Alle haben Helme auf, Tattoos drauf, Dienstausweise in der Hand. Eins, fertig, weiter. Bei Wow: Polaroid/Instax für jedes Kind einzeln — kommt später in die Goodie-Bag als ‚Crew-Ausweis'."
+        }
+      ]
+    }
   },
   "sosScenarios": {
-    "_status": "TODO_PHASE_B",
-    "_note": "SOS-Pannen-Antworten sind im Quell-HTML nicht vorhanden. Müssen in Phase B geschrieben werden."
+    "regen": {
+      "icon": "🌧️",
+      "label": "Regen — alles draußen geplant",
+      "headline": "Wache verlegen — Bad wird Einsatz-Zentrale, Wohnzimmer wird Stationsbereich.",
+      "steps": [
+        "Zielspritzen ins Bad: Wanne als Auffangbecken, Becherpyramiden auf den Wannenrand.",
+        "Stationen-Rotation ins Wohnzimmer + Flur: 4 Ecken = 4 Stationen, Möbel an die Wand.",
+        "Einsatz-Alarm durch alle Zimmer: Kuscheltiere in Schlaf-, Kinder- und Küchenversteck.",
+        "Handtuch-Stapel an die Badtür, Crew rein, Schicht beginnt."
+      ],
+      "fallback": "Keine Badewanne? Dusche reicht. Spritze nach unten, Becher auf den Duschboden — Kinder lieben's genauso.",
+      "tone": "praktisch"
+    },
+    "weniger_kinder_als_erwartet": {
+      "icon": "👥",
+      "label": "Weniger Kinder als erwartet (2–3 fehlen)",
+      "headline": "Weniger Crew, gleicher Einsatz — straffer, nicht ärmer.",
+      "steps": [
+        "Kuscheltiere für Einsatz-Alarm auf 5–6 reduzieren, Verstecke näher legen.",
+        "Stationen auf 3 kürzen: Zielspritzen + Schlauch-Rollen + Sani-Verband.",
+        "Doppelrollen vergeben: Max·Wachleiter und Lina·Funkerin können kombiniert werden.",
+        "Pufferzeit füllen mit zweiter Runde Zielspritzen oder Wachen-Pult-Freispiel."
+      ],
+      "fallback": "Wenn Stimmung kippt: Stationen ganz streichen, alle ans Wachen-Pult, Tattoo-Vergabe-Zeremonie als Hauptprogramm — 20 Min Ritual statt Hektik.",
+      "tone": "ruhig"
+    },
+    "mehr_kinder_als_erwartet": {
+      "icon": "🚨",
+      "label": "Mehr Kinder als erwartet (Geschwister-Boom)",
+      "headline": "Zweiten Trupp bilden — Wache hat ab jetzt zwei Schichten parallel.",
+      "steps": [
+        "Crew in 2 Trupps splitten: Trupp Rot + Trupp Blau, je ein älteres Kind als Trupp-Führer.",
+        "Einsatz-Alarm verdoppeln: 2 parallele Routen, je 4–5 Kuscheltiere pro Trupp.",
+        "Verstärkung anrufen: Oma/Nachbarin, 10 € für 2 Std Stationsaufsicht.",
+        "Tattoos, Helme, halbierte Kuchen-Stücke — Geschwister NICHT leer ausgehen lassen."
+      ],
+      "fallback": "Kein Helfer erreichbar? Stationen-Rotation auf eine große Gruppen-Aktion umstellen: Alle zusammen Einsatz-Alarm, du als einzige Aufsicht.",
+      "tone": "praktisch"
+    },
+    "kind_will_nicht_mitmachen": {
+      "icon": "🤷",
+      "label": "Ein Kind will nicht mitmachen",
+      "headline": "Kein Zwang. Off-Action-Rolle anbieten — am Wachen-Pult ist auch ein Platz.",
+      "steps": [
+        "Rolle anbieten: „Du bist heute Hannah·Disponentin — du sagst, wer wo hinmuss.\"",
+        "Alternative: Lea·Wachen-Tafel-Schreiberin oder Noah·Foto-Reporter mit deinem Handy.",
+        "Tattoo nicht auf die Hand? Aufs Dienstausweis-Kärtchen kleben, am Band um den Hals.",
+        "Sitzplatz am Wachen-Pult mit eigener Apfelschorle — Beobachter-Posten, kein Außenseiter-Posten."
+      ],
+      "fallback": "Will gar nichts? Okay. Buch + Decke in die ruhige Ecke, alle 10 Min kurz reinschauen. Manche Kinder steigen nach 20 Min von selbst ein.",
+      "tone": "ruhig"
+    },
+    "kuchen_misslungen": {
+      "icon": "🎂",
+      "label": "Kuchen ist misslungen",
+      "headline": "Bäcker-Hack: Schoko-Kasten + rote Glasur + Oreos = Notfall-Kuchen in 15 Min.",
+      "steps": [
+        "Schoko-Kastenkuchen beim nächsten Bäcker holen (oder Edeka/Rewe-Kuchenecke).",
+        "Rote Tortenguss-Glasur drüber (Tube, 1,50 €) — Feuerwehr-Rot, Volltreffer.",
+        "4 Oreos seitlich ankleben als Reifen, weiße Zuckerstift-„112\" auf die Oberseite.",
+        "Sirenen-Sound vom Handy bereitlegen für die Anzünden-Szene — sieht aus wie gewollt."
+      ],
+      "fallback": "Bäcker zu? Muffins aus dem Vorrat, je ein Mini-Marshmallow + Zahnstocher mit roter Papierfahne reinstecken — Mini-Feuerwehr-Hütchen.",
+      "tone": "motivierend"
+    },
+    "spielzeug_kaputt_oder_fehlt": {
+      "icon": "🔧",
+      "label": "Spielzeug kaputt oder vergessen",
+      "headline": "Improvisieren mit Haushalts-Material — Crew merkt nichts.",
+      "steps": [
+        "Spritze leak? Fensterputz-Sprühflasche (durchspülen!) oder Plastikflasche mit Loch im Deckel.",
+        "Tattoo-Set vergessen? Filzstift-Strich + Krone mit Sternchen = „Probe-Tattoo, hält nur heute\".",
+        "Sirenen-Sound geht nicht? YouTube „Feuerwehrsirene 1 Stunde\" am Handy, Lautsprecher voll auf.",
+        "Helme zu wenig? Pappkartons aus dem Keller, rot anmalen oder rotes Geschenkpapier drumkleben."
+      ],
+      "fallback": "Total katastrophal? Stationen-Rotation streichen, dafür Einsatz-Alarm zweimal — Kuscheltiere reichen immer.",
+      "tone": "praktisch"
+    },
+    "ein_kind_weint": {
+      "icon": "😢",
+      "label": "Ein Kind weint",
+      "headline": "Raus aus dem Trubel — 5 Min Pause am Wachen-Pult, dann sehen wir weiter.",
+      "steps": [
+        "Kind kurz aus der Gruppe nehmen — Küche oder Flur, weg vom Lärm.",
+        "Apfelschorle im roten Becher + Tattoo auf den Handrücken als Beruhigungs-Ritual.",
+        "Rolle anbieten: „Magst du die Wachen-Tafel führen? Du schreibst, wer dran ist.\"",
+        "Bei Heimweh: Wahl anbieten — Foto von Mama am Handy zeigen oder anrufen. Anruf nur auf Wunsch.",
+        "Nach 5 Min an die Hand nehmen, zur nächsten Station mitnehmen — nicht fragen."
+      ],
+      "fallback": "Geht gar nicht mehr? Eltern anrufen, abholen lassen — kein Drama, lieber 30 Min früher als ein Trauma.",
+      "tone": "ruhig"
+    },
+    "eltern_kommen_frueh": {
+      "icon": "🚪",
+      "label": "Eltern stehen 30 Min zu früh vor der Tür",
+      "headline": "Übergang einleiten — „Schichtende in 10 Minuten\", offiziell und ruhig.",
+      "steps": [
+        "Eltern in den Flur bitten, Wasser anbieten — nicht ins Wohnzimmer, sonst kippt die Stimmung.",
+        "Crew durchsagen: „Achtung Schichtende in 10 Minuten — Wachen-Pult-Foto jetzt!\"",
+        "Gruppenfoto am Wachen-Pult mit allen Helmen + Tattoo-Hand in die Kamera.",
+        "Wachen-Tafel zeigen, Crew-Pins als Abschiedsgeschenk verteilen, Mitgebsel-Tüte raus.",
+        "Eltern + Kinder zur Tür — kurz, herzlich, nicht in lange Tür-Gespräche verheddern."
+      ],
+      "fallback": "Wenn's wirklich chaotisch wird: Mitgebsel-Tüten in den Flur stellen, jedes Kind nimmt im Rausgehen eine — Abschied auf der Treppe statt im Wohnzimmer.",
+      "tone": "praktisch"
+    }
   }
 }
