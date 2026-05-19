@@ -711,6 +711,132 @@ function ScoreCheck({ score }) {
   );
 }
 
+// === ELITE-MOTTO-DATA Komponenten (P3-16, P3-18) ===
+// Konsumiert ELITE_MOTTO_DATA / getEliteData() aus _src/elite-motto-data/_bundle.js
+
+function VorbereitungsKarte({ preparationWeeks, mottoColor }) {
+  // P3-16: 6 datums-getriebene Sektionen (-4W bis Tag X) mit Items
+  if (!preparationWeeks) return null;
+  const ORDER = ["minus4Weeks", "minus2Weeks", "minus1Week", "minus2Days", "minus1Day", "dayOf"];
+  return (
+    <section className="fu" style={{ marginBottom: 24, background: "#fff", border: "1px solid var(--l)", borderRadius: 14, padding: "18px 18px 14px" }}>
+      <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: 1.5, color: mottoColor || "var(--a)", textTransform: "uppercase", marginBottom: 6 }}>📅 Vorbereitung</p>
+      <h2 style={{ fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, marginBottom: 10, color: "var(--d)" }}>Vorbereitungs-Wochen</h2>
+      <p style={{ fontSize: 13, color: "var(--m)", marginBottom: 14, lineHeight: 1.5 }}>
+        Wann was zu tun ist — vom Datum-Fixieren bis zum Tag X. Klick eine Sektion zum Aufklappen.
+      </p>
+      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        {ORDER.map((key) => {
+          const sec = preparationWeeks[key];
+          if (!sec) return null;
+          return <PrepSection key={key} sectionKey={key} section={sec} mottoColor={mottoColor} />;
+        })}
+      </div>
+    </section>
+  );
+}
+
+function PrepSection({ sectionKey, section, mottoColor }) {
+  const [open, setOpen] = useState(sectionKey === "minus4Weeks"); // erstes Element default offen
+  return (
+    <div style={{ border: "1px solid var(--l)", borderRadius: 10, overflow: "hidden" }}>
+      <button
+        onClick={() => setOpen(!open)}
+        style={{ width: "100%", padding: "12px 14px", background: open ? "var(--bg)" : "#fff", border: "none", display: "flex", alignItems: "center", justifyContent: "space-between", cursor: "pointer", fontFamily: "inherit", textAlign: "left" }}
+      >
+        <span style={{ fontSize: 14, fontWeight: 700, color: "var(--d)" }}>{section.headline}</span>
+        <span style={{ fontSize: 14, color: mottoColor || "var(--a)" }}>{open ? "▾" : "▸"}</span>
+      </button>
+      {open && (
+        <div style={{ padding: "4px 14px 14px", background: "#fff" }}>
+          {section.items.map((item, i) => (
+            <div key={i} style={{ display: "flex", gap: 10, padding: "8px 0", borderBottom: i < section.items.length - 1 ? "1px solid var(--l)" : "none" }}>
+              <span style={{ fontSize: 20, flexShrink: 0 }}>{item.icon}</span>
+              <div style={{ flex: 1 }}>
+                <strong style={{ fontSize: 13, color: "var(--d)", display: "block", marginBottom: 2 }}>{item.title}</strong>
+                <span style={{ fontSize: 12, color: "var(--m)", lineHeight: 1.5 }}>{item.detail}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function SOSButton({ sosScenarios, mottoColor }) {
+  // P3-18: Floating Action Button bottom-right, öffnet Modal mit 8 Szenarien
+  const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState(null);
+  if (!sosScenarios) return null;
+  const scenarios = Object.entries(sosScenarios);
+
+  return (
+    <>
+      <button
+        onClick={() => setOpen(true)}
+        aria-label="SOS — Hilfe bei Party-Pannen"
+        style={{ position: "fixed", bottom: 16, right: 16, zIndex: 50, width: 60, height: 60, borderRadius: "50%", background: "#C62828", color: "#fff", border: "none", fontSize: 14, fontWeight: 800, fontFamily: "inherit", cursor: "pointer", boxShadow: "0 4px 12px rgba(198, 40, 40, 0.35)" }}
+      >
+        🚨<br />SOS
+      </button>
+      {open && (
+        <div
+          onClick={() => setOpen(false)}
+          style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)", zIndex: 100, display: "flex", alignItems: "flex-end", justifyContent: "center" }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{ background: "#fff", borderRadius: "14px 14px 0 0", maxWidth: 660, width: "100%", maxHeight: "85vh", overflowY: "auto", padding: 20 }}
+          >
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
+              <h2 style={{ fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, color: "var(--d)", margin: 0 }}>
+                {selected ? selected.label : "🚨 SOS — Was ist los?"}
+              </h2>
+              <button
+                onClick={() => selected ? setSelected(null) : setOpen(false)}
+                style={{ background: "none", border: "1px solid var(--l)", borderRadius: 8, padding: "6px 12px", fontSize: 12, color: "var(--m)", cursor: "pointer" }}
+              >
+                {selected ? "← Zurück" : "Schließen"}
+              </button>
+            </div>
+            {!selected ? (
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                {scenarios.map(([key, sc]) => (
+                  <button
+                    key={key}
+                    onClick={() => setSelected({ ...sc, key })}
+                    style={{ display: "flex", gap: 12, padding: "12px 14px", background: "var(--bg)", border: "1px solid var(--l)", borderRadius: 10, textAlign: "left", cursor: "pointer", fontFamily: "inherit", alignItems: "center" }}
+                  >
+                    <span style={{ fontSize: 24 }}>{sc.icon}</span>
+                    <span style={{ flex: 1, fontSize: 14, fontWeight: 600, color: "var(--d)" }}>{sc.label}</span>
+                    <span style={{ fontSize: 16, color: mottoColor || "var(--a)" }}>→</span>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <div>
+                <p style={{ fontSize: 15, fontWeight: 700, color: "var(--d)", marginBottom: 14, lineHeight: 1.4 }}>{selected.headline}</p>
+                <ol style={{ paddingLeft: 22, marginBottom: 14 }}>
+                  {selected.steps.map((step, i) => (
+                    <li key={i} style={{ fontSize: 13, color: "var(--d)", marginBottom: 8, lineHeight: 1.5 }}>{step}</li>
+                  ))}
+                </ol>
+                {selected.fallback && (
+                  <div style={{ marginTop: 12, padding: 12, background: "var(--bg)", borderLeft: `3px solid ${mottoColor || "var(--a)"}`, borderRadius: 4 }}>
+                    <p style={{ fontSize: 11, fontWeight: 700, color: "var(--m)", margin: "0 0 4px", textTransform: "uppercase", letterSpacing: 1 }}>Plan C</p>
+                    <p style={{ fontSize: 12, color: "var(--d)", margin: 0, lineHeight: 1.5 }}>{selected.fallback}</p>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
 // === MAIN APP ===
 function App() {
   // State
@@ -750,6 +876,8 @@ function App() {
   const effectiveLoc = locOverride || loc;
   const filteredLicense = LICENSE.filter((m) => !m.ages || m.ages.includes(age));
   const szTheme = SZ_THEMES.find((t) => t.id === szThemeId);
+  // Elite-Motto-Data (P3-13/14/15/16/17/18 Foundation) — null wenn kein Elite-Slot vorhanden
+  const eliteData = (typeof getEliteData === "function") ? getEliteData(mottoId, ag) : null;
 
   // Persist state
   useEffect(() => saveState("age", age), [age]);
@@ -1177,6 +1305,11 @@ function App() {
           )}
         </section>
 
+        {/* P3-16: Vorbereitungs-Wochen — nur wenn eliteData verfügbar */}
+        {eliteData && eliteData.preparationWeeks && (
+          <VorbereitungsKarte preparationWeeks={eliteData.preparationWeeks} mottoColor={motto.color} />
+        )}
+
         {/* ══════ PLAN ══════ */}
 
         {/* Mode Toggles — oben, weil sie alles darunter ändern */}
@@ -1319,6 +1452,9 @@ function App() {
         </footer>
 
         <ControlHub mottoId={mottoId} szActive={szActive} setSzActive={setSzActive} setSzThemeId={setSzThemeId} childName={childName} age={age} motto={motto} />
+
+        {/* P3-18: SOS-Button (Floating, falls eliteData verfügbar) */}
+        {eliteData && eliteData.sosScenarios && <SOSButton sosScenarios={eliteData.sosScenarios} mottoColor={motto.color} />}
       </div>
     );
   }
