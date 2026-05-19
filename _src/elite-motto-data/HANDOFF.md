@@ -1,28 +1,44 @@
-# HANDOFF — Planer-Frisur-Sprint, Phase A + B abgeschlossen
+# HANDOFF — Planer-Frisur-Sprint, Phase A + B + C komplett
 
 **Erstellt:** 2026-05-19 (Phase A)
-**Update:** 2026-05-19 (Phase B done)
-**Ziel der nächsten Session:** Phase C (einhorn-mittel) ODER Sprint-Frontend (P3-13/14/15/16/17/18/19)
+**Updates:** 2026-05-19 (Phase B), 2026-05-19 (Phase C komplett — 7 Slots)
+**Ziel der nächsten Session:** Sprint-Frontend (P3-13 bis P3-19) — Daten-Layer ist komplett
 
 ---
 
 ## TL;DR
 
-**Phase A + B fertig.** `feuerwehr-mittel.json` ist jetzt komplett (0 TODO_PHASE_B markers). Sprint-Blocker auf Daten-Ebene sind weg. Planer-Frontend kann jetzt gebaut werden (P3-13 bis P3-19).
+**Phase A + B + C alle fertig.** 7 Elite-Slots im Planer-Daten-Layer, 0 TODO_PHASE_B markers irgendwo. Planer-Frontend kann jetzt gebaut werden.
 
-**Phase B Pipeline-Ergebnisse (19.05.2026):**
-- `preparationWeeks` — 6 datums-Sektionen (minus4Weeks bis dayOf), 30 Items — Score v3 ~88
-- `sosScenarios` — 8 Panik-Szenarien mit 6-Feld-Schema — Score v3 ~92
-- `shoppingList[].category` — 40 Items klassifiziert, Pflicht-Anteile Min 60% / Std 54% / Wow 53% — Score v3 ~89
+**Phase C Elite-Slots (alle auf draft):**
+| # | Slot | Methode | Pflicht-Anteile (M/S/W) | Self-Score |
+|---|---|---|---|---|
+| 1 | `feuerwehr-mittel.json` (Phase A+B-Pipeline) | 3-Chat-Pipeline mit Writer+Reviewer | 60/54/53% | ~89 |
+| 2 | `einhorn-mittel.json` (Phase C #1) | Direct-Draft | 44/54/35% | ~88 |
+| 3 | `feuerwehr-klein.json` (Phase C #2) | Direct-Draft | 60/58/53% | ~87 |
+| 4 | `feuerwehr-gross.json` (Phase C #3) | Direct-Draft | 66/66/66% | ~86 |
+| 5 | `einhorn-klein.json` (Phase C #4, H2-Ritual) | Direct-Draft | 50/44/33% | ~87 |
+| 6 | `einhorn-gross.json` (Phase C #5, Code-Names) | Direct-Draft | 57/60/61% | ~85 |
+| 7 | `safari-mittel.json` (Phase C #6, kein Ritual) | Direct-Draft | 62/50/42% | ~87 |
 
-Realisiert via **3-Chat-Content-Loop** (Branch-Trick analog machsruhig). 3 parallele Streams Writer+Reviewer. Adversarial-Phase skipped weil v3 ≥85 + Schemas clean + Writer haben Pushback geliefert. Audit-Trail unter `_dev/content-loop/runs/04-elite-motto-data-phase-b/` auf `content-loop-pipeline`-Branch.
+Alle Slots: schema-strikt (preparationWeeks 6 Sektionen, sosScenarios 8 Szenarien mit 6 Feldern, shoppingList[].category mit reasoning), steps ≤120 Zeichen, Pflicht-Anteile <70%, motto-Anker durchgehend.
 
-**Sprint-Entblockungen:** P3-16 (Vorbereitungskarte) ✓, P3-17 (3-Gruppen-Einkaufsliste) ✓, P3-18 (SOS-Button) ✓ — alle haben jetzt die Daten, die sie brauchen.
+**Methode-Evolution:** Stream 04 (feuerwehr-mittel) lief volle Writer+Reviewer-Pipeline via Chrome-MCP. Streams 05-10 (Phase C) als Direct-Draft mit Heuristiken aus Stream 04 — saved ~3h pro Slot.
 
-**Was als Nächstes (zur Entscheidung):**
-- **Phase C** — Skalierung auf weitere Elite-Slots (einhorn-mittel → feuerwehr-klein → ...). Strukturanalyse zeigt: einhorn-6-8 HTML hat identische Marker-Struktur, `_extract.py` braucht Motto-Parametrisierung (~30-60 Min) + Phase B equivalent pro Slot.
-- **Sprint-Frontend** — P3-13 bis P3-19 in `_src/kindergeburtstag.jsx` umsetzen, baut auf jetzt komplettem `feuerwehr-mittel.json` auf. Andere Mottos fallen für den Planer auf "kein Elite-Output" zurück bis Phase C läuft.
-- **Polish-Nice-to-Haves** — #4 food/decoration strukturieren, #5 whyItWorks, #6 safetyRule, #7 invitationTemplate entfernen. Non-blocking.
+**Audit-Trail:** `_dev/content-loop/runs/04-09-*` auf `content-loop-pipeline`-Branch. Streams 06-10 sind Direct-Draft JSON + Validation-Script.
+
+**Sprint-Entblockungen alle aktiv für 7 Mottos+Altersgruppen-Slots:**
+- P3-13 Cockpit (Motto/Variante-Header) ✓
+- P3-14 Constraint-Solver (game-Filter nach Drinnen/Draußen/Lautstärke) ✓
+- P3-15 Inputs (Datum/Erwachsene als Vorschläge) ✓
+- P3-16 Vorbereitungskarte (preparationWeeks datums-getrieben) ✓
+- P3-17 3-Gruppen-Einkaufsliste (shoppingList[].category) ✓
+- P3-18 SOS-Button (sosScenarios) ✓
+- P3-19 KI-Rätsel (Schatzsuche, andere Datenquelle) — N/A
+
+**Was als Nächstes:**
+- **Sprint-Frontend** — Planer-Komponente `_src/kindergeburtstag.jsx` auf die neuen Daten umstellen. 7 Slots werden direkt konsumiert; Mottos ohne Slot fallen auf altes Verhalten zurück (Piraten, Dschungel, Dino, Detektiv, Weltraum, Feen, Meerjungfrau).
+- **Polish-Nice-to-Haves (non-blocking):** #4 food/decoration strukturieren, #5 whyItWorks, #6 safetyRule, #7 invitationTemplate entfernen.
 
 ---
 
