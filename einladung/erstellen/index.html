@@ -254,10 +254,11 @@
     </div>
     <button class="btn-preview" onclick="openPreview()">👀 Vorschau ansehen</button>
 
-    <div style="margin-top:16px;padding:14px 16px;background:linear-gradient(135deg,rgba(255,215,0,.08),rgba(255,165,0,.04));border:1px solid rgba(255,215,0,.3);border-radius:14px;text-align:left">
-      <p style="font-size:13px;font-weight:700;color:#FFD700;margin:0 0 4px">💡 Noch einen Schritt weiter?</p>
-      <p style="font-size:12px;color:rgba(255,255,255,.6);margin:0 0 10px;line-height:1.5">Mach aus dieser Einladung eine <strong>Partyseite</strong> — Zusagen sammeln, Wunschliste teilen, Fotos &amp; Kalender-Download. Deine Daten übernehmen wir.</p>
-      <a id="partyLink" href="https://party.machsleicht.de/" target="_blank" style="display:block;padding:10px;background:rgba(255,215,0,.15);border:1px solid rgba(255,215,0,.4);border-radius:10px;color:#FFD700;font-size:13px;font-weight:700;text-decoration:none;text-align:center">🎉 Kostenlose Partyseite erstellen →</a>
+    <div style="margin-top:16px;padding:14px 16px;background:linear-gradient(135deg,rgba(255,215,0,.12),rgba(255,165,0,.06));border:1px solid rgba(255,215,0,.4);border-radius:14px;text-align:left">
+      <p style="font-size:11px;font-weight:700;color:#FFD700;letterspacing:1.5;margin:0 0 4px;text-transform:uppercase">Schritt 2 von 2 (optional)</p>
+      <p style="font-size:14px;font-weight:800;color:#fff;margin:0 0 6px">Partyseite für Zusagen anlegen</p>
+      <p style="font-size:12px;color:rgba(255,255,255,.7);margin:0 0 10px;line-height:1.5">Zusagen sammeln, Wunschliste teilen, Allergien einsammeln &amp; Kalender-Download. Daten aus deiner Einladung übernehmen wir. Privat geteilt. Nicht bei Google. Kein Konto.</p>
+      <a id="partyLink" href="https://party.machsleicht.de/" target="_blank" style="display:block;padding:12px;background:linear-gradient(135deg,#FFD700,#FFA500);border:none;border-radius:10px;color:#1a1a2e;font-size:14px;font-weight:800;text-decoration:none;text-align:center">🎉 Kostenlose Partyseite erstellen →</a>
     </div>
   </div>
 
@@ -392,12 +393,49 @@ const MOTTO_CONFIG = {
 };
 
 // URL-Parameter auslesen: ?motto=dino → Dino vorauswählen
-(function initMotto() {
+// P1-23: zusaetzlich ?name=, ?datum=, ?uhrzeit=, ?ort= fuer Pre-Fill aus Cockpit
+// P1-28: ?source=cockpit zeigt "Aus deinem Plan"-Banner
+(function initFromParams() {
   const params = new URLSearchParams(window.location.search);
   const m = params.get('motto');
+  const source = params.get('source');
+  if (source === 'cockpit') {
+    const banner = document.createElement('div');
+    banner.style.cssText = 'background:linear-gradient(135deg,#FFD700,#FFA500);color:#1a1a2e;padding:10px 14px;border-radius:10px;font-size:12px;font-weight:700;margin-bottom:16px;text-align:center';
+    banner.innerHTML = '✨ Aus deinem Geburtstags-Plan — wir haben Motto' + (params.get('name') ? ' und Name' : '') + ' vorausgefüllt';
+    const card = document.querySelector('.card');
+    if (card && card.parentElement) card.parentElement.insertBefore(banner, card);
+    if (window.umami) { try { umami.track('invitation_from_cockpit', {motto: m || ''}); } catch(e) {} }
+  }
   if (m && MOTTO_CONFIG[m]) {
     const btn = document.querySelector('[data-motto="' + m + '"]');
     if (btn) selectMotto(btn);
+  }
+  // Pre-Fill der Formularfelder, wenn URL-Params vorhanden
+  const nameParam = params.get('name');
+  if (nameParam) { const el = document.getElementById('name'); if (el) el.value = nameParam; }
+  const dateParam = params.get('datum');
+  if (dateParam) { const el = document.getElementById('date'); if (el) el.value = dateParam; }
+  const timeParam = params.get('uhrzeit');
+  if (timeParam) { const el = document.getElementById('time'); if (el) el.value = timeParam; }
+  const ortParam = params.get('ort');
+  if (ortParam) { const el = document.getElementById('ort'); if (el) el.value = ortParam; }
+  // Fallback: birthdayProject aus localStorage (gleiche Origin machsleicht.de)
+  if (!nameParam && !m) {
+    try {
+      const raw = localStorage.getItem('machsleicht.birthdayProject.v1');
+      if (raw) {
+        const bp = JSON.parse(raw);
+        if (bp && bp.theme && bp.theme.slug && MOTTO_CONFIG[bp.theme.slug]) {
+          const btn = document.querySelector('[data-motto="' + bp.theme.slug + '"]');
+          if (btn && !selectedMotto) selectMotto(btn);
+        }
+        if (bp && bp.child && bp.child.firstName) {
+          const el = document.getElementById('name');
+          if (el && !el.value) el.value = bp.child.firstName;
+        }
+      }
+    } catch(e) {}
   }
 })();
 

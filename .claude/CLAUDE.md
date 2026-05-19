@@ -107,11 +107,61 @@ Die 8 Orte, die potenziell betroffen sind:
 Ablauf: Nach dem PBI-Abschluss jeden der 8 Punkte laut durchgehen, betroffene Dateien benennen, korrigieren, dann `bash validate-all.sh` laufen lassen. Erst wenn der Check sauber ist, gilt der PBI als wirklich abgeschlossen.
 
 ## Zentrale Dokumente
-Nur zwei Docs im Repo-Root:
-- **STRATEGIE.md** — Master-Strategie
-- **BACKLOG-AUDIT.md** — Backlog / PBIs
+Im Repo-Root als Living-Wahrheiten:
+- **STRATEGIE.md** — Master-Strategie (Monetarisierung, Vision, Cut-Begründungen)
+- **BACKLOG-AUDIT.md** — Priorisierte PBI-Liste
+- **AUDIT.md** — Repo-/Routing-/Datenwahrheit-Grundwahrheit (Live-Dokument)
+- **SESSION-NOTES.md** — Letzter Session-Stand
+- **ARCHITECTURE.md** — Architektur-Übersicht (**aktuell veraltet**, Fix P1-45)
 
-Keine parallelen Strategie-Docs in `_dev/docs/` oder sonstwo.
+Keine parallelen Strategie-Docs in `_dev/docs/` (außer WORKER-CONTRACT.md, RELEASE-GATE.md, ENV-VARS.md als technische Referenz).
 
 ## Deploy-Regel (kritisch)
 Netlify-Deploys kosten Credits. Außerhalb von "Ende deploy" wird niemals eigenständig auf `main` gemerged oder gepusht. Im Zweifel nachfragen.
+
+## Knowledge-Transfer zwischen Sessions
+
+Wissen fließt über **Git** zwischen Chats, nicht über Claude-Memory (das ist Backup, nicht primäre Quelle). Drei Transfer-Kanäle:
+
+### Kanal 1: AUDIT.md (Living-Dokument, persistent)
+Erste Anlaufstelle für jeden neuen Chat. Sollte beim „Start leicht" zusätzlich zu SESSION-NOTES + CLAUDE.md gelesen werden — **mindestens die kuratierten Sektionen**:
+- §1 Repo + Branches
+- §4 URL-Param-Konvention
+- §5.2 Motto-Datenwahrheit-Brüche (aktive Issues)
+- §13 Fix-PBI-Liste (P1-NN)
+- §15 Offene Strategie-Entscheidungen
+
+Lange Sektionen (Worker-Vertrag, Tracking-Events) bei Bedarf on-demand.
+
+### Kanal 2: `_dev/handoff/*.md` (Session-spezifische Übergaben)
+
+Für aktive Diskussionen die **noch nicht** in AUDIT/SESSION-NOTES kondensiert sind. Beispiele:
+- „Diskussion zu Halloween-Strategie in Schwebe — Vor-/Nachteile gesammelt"
+- „Stratege-Doc V5.4 in Arbeit, nächster Schritt: Adversarial-Review"
+- „Funnel-Messung gestartet 2026-05-15, erste Daten am 2026-06-15 erwartet"
+
+**Format:** Datum-Topic-Slug (`2026-05-12-sprint-1-abschluss.md`)
+**Inhalt:** TEMPLATE siehe `_dev/handoff/TEMPLATE.md`
+**Lebensdauer:** Wenn ein Handoff-Thema in AUDIT.md oder SESSION-NOTES.md kondensiert ist, **handoff-File löschen**. Nicht akkumulieren — sonst wird es Archive-Spam.
+
+### Kanal 3: BACKLOG-AUDIT.md (Sprint-Backlog)
+
+Was sind die aktiv offenen P1-NN-Tickets? Beim „Start leicht" mindestens die Top-10 lesen, damit der neue Chat weiß was als nächstes ansteht.
+
+### Anti-Patterns
+
+- **Skill-Files editieren** (`AppData/Roaming/Claude/...`) — diese sind generisch für beide Projekte (machsleicht + machsruhig). Projektspezifisches gehört in `.claude/CLAUDE.md` im Repo.
+- **Alle Docs auto-laden** — Token-Explosion. Kuratierte Sektionen + on-demand reicht.
+- **Parallel-Wahrheiten** — wenn etwas in AUDIT/SESSION-NOTES steht, gehört es NICHT zusätzlich in Handoff oder Memory.
+- **Memory als primärer Speicher** — Memory ist Claude-Profile-Wissen (Bolles Workflow, Patterns), nicht Projekt-Wissen. Projekt-Wissen lebt in Git.
+
+## Self-Audit-Methodik (eingeführt 2026-05-12)
+
+Nach jedem nicht-trivialen Output (z.B. AUDIT.md, größere Code-Diffs, Strategie-Docs):
+
+1. **Challenge** — Behauptungen identifizieren, nicht abnicken
+2. **Verify** — gegen echten Code/State per Grep/Read prüfen
+3. **Fix** — gefundene Fehler in eine v2 schreiben
+4. **Re-bewerten** — neue Version selbst challengen, bis Self-Assessment ≥ 8/10
+
+Nicht inflationär — nur wenn der Output „Living-Wahrheit" werden soll (Audit, Architektur, Master-Strategie). Code-Diffs reichen normalerweise mit einem Self-Pass.

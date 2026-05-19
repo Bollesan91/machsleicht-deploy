@@ -711,6 +711,422 @@ function ScoreCheck({ score }) {
   );
 }
 
+// === ELITE-MOTTO-DATA Komponenten (P3-16, P3-18) ===
+// Konsumiert ELITE_MOTTO_DATA / getEliteData() aus _src/elite-motto-data/_bundle.js
+
+function VorbereitungsKarte({ preparationWeeks, mottoColor }) {
+  // P3-16: 6 datums-getriebene Sektionen (-4W bis Tag X) mit Items
+  if (!preparationWeeks) return null;
+  const ORDER = ["minus4Weeks", "minus2Weeks", "minus1Week", "minus2Days", "minus1Day", "dayOf"];
+  return (
+    <section className="fu" style={{ marginBottom: 24, background: "#fff", border: "1px solid var(--l)", borderRadius: 14, padding: "18px 18px 14px" }}>
+      <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: 1.5, color: mottoColor || "var(--a)", textTransform: "uppercase", marginBottom: 6 }}>📅 Vorbereitung</p>
+      <h2 style={{ fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, marginBottom: 10, color: "var(--d)" }}>Vorbereitungs-Wochen</h2>
+      <p style={{ fontSize: 13, color: "var(--m)", marginBottom: 14, lineHeight: 1.5 }}>
+        Wann was zu tun ist — vom Datum-Fixieren bis zum Tag X. Klick eine Sektion zum Aufklappen.
+      </p>
+      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        {ORDER.map((key) => {
+          const sec = preparationWeeks[key];
+          if (!sec) return null;
+          return <PrepSection key={key} sectionKey={key} section={sec} mottoColor={mottoColor} />;
+        })}
+      </div>
+    </section>
+  );
+}
+
+function PrepSection({ sectionKey, section, mottoColor }) {
+  const [open, setOpen] = useState(sectionKey === "minus4Weeks"); // erstes Element default offen
+  return (
+    <div style={{ border: "1px solid var(--l)", borderRadius: 10, overflow: "hidden" }}>
+      <button
+        onClick={() => setOpen(!open)}
+        style={{ width: "100%", padding: "12px 14px", background: open ? "var(--bg)" : "#fff", border: "none", display: "flex", alignItems: "center", justifyContent: "space-between", cursor: "pointer", fontFamily: "inherit", textAlign: "left" }}
+      >
+        <span style={{ fontSize: 14, fontWeight: 700, color: "var(--d)" }}>{section.headline}</span>
+        <span style={{ fontSize: 14, color: mottoColor || "var(--a)" }}>{open ? "▾" : "▸"}</span>
+      </button>
+      {open && (
+        <div style={{ padding: "4px 14px 14px", background: "#fff" }}>
+          {section.items.map((item, i) => (
+            <div key={i} style={{ display: "flex", gap: 10, padding: "8px 0", borderBottom: i < section.items.length - 1 ? "1px solid var(--l)" : "none" }}>
+              <span style={{ fontSize: 20, flexShrink: 0 }}>{item.icon}</span>
+              <div style={{ flex: 1 }}>
+                <strong style={{ fontSize: 13, color: "var(--d)", display: "block", marginBottom: 2 }}>{item.title}</strong>
+                <span style={{ fontSize: 12, color: "var(--m)", lineHeight: 1.5 }}>{item.detail}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function SOSButton({ sosScenarios, mottoColor }) {
+  // P3-18: Floating Action Button bottom-right, öffnet Modal mit 8 Szenarien
+  const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState(null);
+  if (!sosScenarios) return null;
+  const scenarios = Object.entries(sosScenarios);
+
+  return (
+    <>
+      <button
+        onClick={() => setOpen(true)}
+        aria-label="SOS — Hilfe bei Party-Pannen"
+        style={{ position: "fixed", bottom: 16, right: 16, zIndex: 50, width: 60, height: 60, borderRadius: "50%", background: "#C62828", color: "#fff", border: "none", fontSize: 14, fontWeight: 800, fontFamily: "inherit", cursor: "pointer", boxShadow: "0 4px 12px rgba(198, 40, 40, 0.35)" }}
+      >
+        🚨<br />SOS
+      </button>
+      {open && (
+        <div
+          onClick={() => setOpen(false)}
+          style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)", zIndex: 100, display: "flex", alignItems: "flex-end", justifyContent: "center" }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{ background: "#fff", borderRadius: "14px 14px 0 0", maxWidth: 660, width: "100%", maxHeight: "85vh", overflowY: "auto", padding: 20 }}
+          >
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
+              <h2 style={{ fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, color: "var(--d)", margin: 0 }}>
+                {selected ? selected.label : "🚨 SOS — Was ist los?"}
+              </h2>
+              <button
+                onClick={() => selected ? setSelected(null) : setOpen(false)}
+                style={{ background: "none", border: "1px solid var(--l)", borderRadius: 8, padding: "6px 12px", fontSize: 12, color: "var(--m)", cursor: "pointer" }}
+              >
+                {selected ? "← Zurück" : "Schließen"}
+              </button>
+            </div>
+            {!selected ? (
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                {scenarios.map(([key, sc]) => (
+                  <button
+                    key={key}
+                    onClick={() => setSelected({ ...sc, key })}
+                    style={{ display: "flex", gap: 12, padding: "12px 14px", background: "var(--bg)", border: "1px solid var(--l)", borderRadius: 10, textAlign: "left", cursor: "pointer", fontFamily: "inherit", alignItems: "center" }}
+                  >
+                    <span style={{ fontSize: 24 }}>{sc.icon}</span>
+                    <span style={{ flex: 1, fontSize: 14, fontWeight: 600, color: "var(--d)" }}>{sc.label}</span>
+                    <span style={{ fontSize: 16, color: mottoColor || "var(--a)" }}>→</span>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <div>
+                <p style={{ fontSize: 15, fontWeight: 700, color: "var(--d)", marginBottom: 14, lineHeight: 1.4 }}>{selected.headline}</p>
+                <ol style={{ paddingLeft: 22, marginBottom: 14 }}>
+                  {selected.steps.map((step, i) => (
+                    <li key={i} style={{ fontSize: 13, color: "var(--d)", marginBottom: 8, lineHeight: 1.5 }}>{step}</li>
+                  ))}
+                </ol>
+                {selected.fallback && (
+                  <div style={{ marginTop: 12, padding: 12, background: "var(--bg)", borderLeft: `3px solid ${mottoColor || "var(--a)"}`, borderRadius: 4 }}>
+                    <p style={{ fontSize: 11, fontWeight: 700, color: "var(--m)", margin: "0 0 4px", textTransform: "uppercase", letterSpacing: 1 }}>Plan C</p>
+                    <p style={{ fontSize: 12, color: "var(--d)", margin: 0, lineHeight: 1.5 }}>{selected.fallback}</p>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
+function EliteShoppingList({ variants, shoppingMode, mottoColor }) {
+  // P3-17: shoppingList[].category in 3 Gruppen (pflicht / sinnvoll / habIchVielleicht) gerendert
+  if (!variants || variants.length === 0) return null;
+  const targetVariantId = shoppingMode === "minimal" ? "minimal" : shoppingMode === "wow" ? "wow" : "standard";
+  const variant = variants.find((v) => v.id === targetVariantId) || variants.find((v) => v.id === "standard") || variants[0];
+  if (!variant || !variant.shoppingList) return null;
+
+  const groups = { pflicht: [], sinnvoll: [], habIchVielleicht: [] };
+  for (const item of variant.shoppingList) {
+    const cat = item.category || "sinnvoll";
+    if (groups[cat]) groups[cat].push(item);
+  }
+
+  const GROUP_META = {
+    pflicht: { emoji: "✅", label: "Pflicht — ohne läuft die Party nicht", color: "#C62828" },
+    sinnvoll: { emoji: "💡", label: "Sinnvoll — macht's deutlich besser", color: "#1976D2" },
+    habIchVielleicht: { emoji: "🏠", label: "Hab ich vielleicht schon — DIY oder im Haushalt", color: "#558B2F" },
+  };
+
+  const total = variant.shoppingList.reduce((acc, it) => acc + (typeof it.priceEur === "number" ? it.priceEur : 0), 0);
+
+  return (
+    <section className="fu" style={{ marginBottom: 24, background: "#fff", border: "1px solid var(--l)", borderRadius: 14, padding: "18px 18px 14px" }}>
+      <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: 1.5, color: mottoColor || "var(--a)", textTransform: "uppercase", marginBottom: 6 }}>🛒 Einkaufsliste</p>
+      <h2 style={{ fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, marginBottom: 6, color: "var(--d)" }}>
+        {variant.label || `${variant.id} — ca. ${variant.estimatedCostEur || total}€`}
+      </h2>
+      <p style={{ fontSize: 13, color: "var(--m)", marginBottom: 14, lineHeight: 1.5 }}>
+        Drei Gruppen statt einer langen Liste. Fang oben an, hör unten auf — alles unter „Hab ich vielleicht schon" kannst du wahrscheinlich überspringen.
+      </p>
+      {["pflicht", "sinnvoll", "habIchVielleicht"].map((catKey) => {
+        const items = groups[catKey];
+        if (!items.length) return null;
+        const meta = GROUP_META[catKey];
+        const sum = items.reduce((acc, it) => acc + (typeof it.priceEur === "number" ? it.priceEur : 0), 0);
+        return (
+          <div key={catKey} style={{ marginBottom: 16 }}>
+            <h3 style={{ fontSize: 14, fontWeight: 700, color: meta.color, marginBottom: 8, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <span><span style={{ marginRight: 6 }}>{meta.emoji}</span>{meta.label}</span>
+              <span style={{ fontSize: 12, color: "var(--m)", fontWeight: 600 }}>{items.length} · ca. {sum}€</span>
+            </h3>
+            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+              {items.map((item, i) => (
+                <EliteShoppingItem key={`${catKey}-${i}`} item={item} categoryColor={meta.color} />
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </section>
+  );
+}
+
+function EliteShoppingItem({ item, categoryColor }) {
+  const [expanded, setExpanded] = useState(false);
+  const priceLabel = item.priceEur === 0 ? "0 €" : `${item.priceEur} €`;
+  return (
+    <div style={{ border: "1px solid var(--l)", borderRadius: 8, padding: "10px 12px", background: "#fff" }}>
+      <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+        <span style={{ fontSize: 20 }}>{item.emoji || "•"}</span>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          {item.url ? (
+            <a href={item.url} target="_blank" rel="noopener" style={{ fontSize: 13, fontWeight: 600, color: "var(--d)", textDecoration: "none", borderBottom: `1px dashed ${categoryColor}` }}>{item.label}</a>
+          ) : (
+            <span style={{ fontSize: 13, fontWeight: 600, color: "var(--d)" }}>{item.label}</span>
+          )}
+        </div>
+        <span style={{ fontSize: 13, fontWeight: 800, color: categoryColor, flexShrink: 0 }}>{priceLabel}</span>
+      </div>
+      {item.categoryReasoning && (
+        <>
+          <button onClick={() => setExpanded(!expanded)} style={{ marginTop: 6, background: "none", border: "none", padding: 0, fontSize: 11, color: "var(--m)", cursor: "pointer", textDecoration: "underline" }}>
+            {expanded ? "Warum-Begründung ausblenden" : "Warum diese Kategorie?"}
+          </button>
+          {expanded && <p style={{ fontSize: 11, color: "var(--m)", marginTop: 4, lineHeight: 1.5, fontStyle: "italic" }}>{item.categoryReasoning}</p>}
+        </>
+      )}
+    </div>
+  );
+}
+
+function EliteCockpitHeader({ eliteData, mottoColor, mottoName }) {
+  // P3-13: ageInsight (Was Alter ausmacht) + signatureRitual (Highlight-Moment) als Erweiterung im Cockpit
+  const [showRitual, setShowRitual] = useState(false);
+  if (!eliteData) return null;
+  const ai = eliteData.ageInsight;
+  const sr = eliteData.signatureRitual;
+
+  return (
+    <section className="fu" style={{ marginBottom: 16, background: "#fff", border: `1px dashed ${mottoColor || "var(--a)"}`, borderRadius: 12, padding: "14px 16px" }}>
+      {ai && (
+        <details style={{ marginBottom: sr && sr.name ? 10 : 0 }}>
+          <summary style={{ fontSize: 13, fontWeight: 700, color: "var(--d)", cursor: "pointer", padding: "2px 0", listStyle: "none" }}>
+            <span style={{ color: mottoColor || "var(--a)" }}>🧠</span> {ai.headline || "Was du über die Altersgruppe wissen musst"} ▾
+          </summary>
+          <div style={{ marginTop: 10, paddingLeft: 6 }}>
+            {ai.traits && ai.traits.length > 0 && (
+              <ul style={{ paddingLeft: 18, marginBottom: 10 }}>
+                {ai.traits.slice(0, 7).map((t, i) => (
+                  <li key={i} style={{ fontSize: 12, color: "var(--m)", marginBottom: 4, lineHeight: 1.5 }}>
+                    <strong style={{ color: "var(--d)" }}>{t.topic}:</strong> {t.detail}
+                  </li>
+                ))}
+              </ul>
+            )}
+            {ai.whyMottoFits && (
+              <p style={{ fontSize: 12, color: "var(--d)", lineHeight: 1.5, marginTop: 8, padding: 10, background: "var(--bg)", borderRadius: 8 }}>
+                <strong>{ai.whyMottoFitsHeadline || "Warum passt das Motto:"}</strong> {ai.whyMottoFits}
+              </p>
+            )}
+          </div>
+        </details>
+      )}
+      {sr && sr.name && (
+        <details onToggle={(e) => setShowRitual(e.target.open)}>
+          <summary style={{ fontSize: 13, fontWeight: 700, color: "var(--d)", cursor: "pointer", padding: "2px 0", listStyle: "none" }}>
+            <span style={{ color: mottoColor || "var(--a)" }}>✨</span> Signature-Ritual: {sr.name} ▾
+          </summary>
+          {showRitual && (
+            <div style={{ marginTop: 10, paddingLeft: 6 }}>
+              {sr.introText && (
+                <p style={{ fontSize: 12, color: "var(--m)", lineHeight: 1.5, marginBottom: 10 }}>{sr.introText}</p>
+              )}
+              {sr.setupSteps && sr.setupSteps.length > 0 && (
+                <div style={{ marginBottom: 10 }}>
+                  <p style={{ fontSize: 11, fontWeight: 700, color: "var(--d)", marginBottom: 4, textTransform: "uppercase", letterSpacing: 1 }}>So geht's:</p>
+                  <ol style={{ paddingLeft: 18, margin: 0 }}>
+                    {sr.setupSteps.map((s, i) => (
+                      <li key={i} style={{ fontSize: 12, color: "var(--d)", marginBottom: 4, lineHeight: 1.5 }}>
+                        <strong>{s.title}</strong>{s.content ? ` — ${s.content}` : ""}
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              )}
+              {sr.rolesList && sr.rolesList.length > 0 && (
+                <div style={{ marginBottom: 10 }}>
+                  <p style={{ fontSize: 11, fontWeight: 700, color: "var(--d)", marginBottom: 4, textTransform: "uppercase", letterSpacing: 1 }}>
+                    {sr.rolesList.length} Namen / Rollen zum Ziehen:
+                  </p>
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))", gap: 4 }}>
+                    {sr.rolesList.map((r, i) => (
+                      <div key={i} style={{ fontSize: 11, color: "var(--d)", padding: "4px 6px", background: "var(--bg)", borderRadius: 6 }}>
+                        <span>{r.emoji || "✨"}</span> {r.name}{r.function ? ` · ${r.function}` : ""}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {sr.optOutNote && (
+                <p style={{ fontSize: 11, color: "var(--m)", marginTop: 8, padding: 8, background: "var(--bg)", borderRadius: 6, fontStyle: "italic", lineHeight: 1.4 }}>
+                  <strong>Wenn ein Kind nicht will:</strong> {sr.optOutNote}
+                </p>
+              )}
+            </div>
+          )}
+        </details>
+      )}
+    </section>
+  );
+}
+
+function EliteGamesFilter({ variants, shoppingMode, effectiveLoc, quietMode, mottoColor }) {
+  // P3-14 Constraint-Solver: Filter games by indoor/outdoor/loudness/effort
+  const [showAll, setShowAll] = useState(false);
+  const [filterEffort, setFilterEffort] = useState("alle"); // alle | leicht | mittel | hoch
+  const [filterLoud, setFilterLoud] = useState("alle"); // alle | ruhig | mittel | laut
+
+  if (!variants || variants.length === 0) return null;
+  const targetVariantId = shoppingMode === "minimal" ? "minimal" : shoppingMode === "wow" ? "wow" : "standard";
+  const variant = variants.find((v) => v.id === targetVariantId) || variants[0];
+  if (!variant || !variant.games || variant.games.length === 0) return null;
+
+  const locationConstraint = effectiveLoc === "wohnung" ? "indoor" : "outdoor"; // garten/park = outdoor
+  const filtered = variant.games.filter((g) => {
+    // Location: zeige nur Spiele die im aktuellen Setup passen
+    if (locationConstraint === "indoor" && !g.indoor) return false;
+    if (locationConstraint === "outdoor" && !g.outdoor && !g.indoor) return false; // outdoor-only games stay if indoor also OK as fallback
+    // Effort
+    if (filterEffort !== "alle" && g.effort !== filterEffort) return false;
+    // Loudness — quietMode = harte Ruhig-Beschränkung
+    if (quietMode && g.loudness !== "ruhig") return false;
+    if (filterLoud !== "alle" && g.loudness !== filterLoud) return false;
+    return true;
+  });
+
+  const totalDur = filtered.reduce((acc, g) => acc + (g.duration || 0), 0);
+
+  return (
+    <section className="fu" style={{ marginBottom: 24, background: "#fff", border: "1px solid var(--l)", borderRadius: 14, padding: "16px 18px" }}>
+      <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: 1.5, color: mottoColor || "var(--a)", textTransform: "uppercase", marginBottom: 4 }}>🎮 Spiele · Constraint-Solver</p>
+      <h2 style={{ fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, marginBottom: 4, color: "var(--d)" }}>
+        Spiele passend zu deinem Setup
+      </h2>
+      <p style={{ fontSize: 12, color: "var(--m)", marginBottom: 12 }}>
+        Gefiltert nach: <strong>{effectiveLoc === "wohnung" ? "Drinnen" : "Outdoor-tauglich"}</strong>
+        {quietMode && <span style={{ color: "#558B2F" }}> · Ruhig-Modus aktiv</span>}
+        {" · "}{filtered.length} von {variant.games.length} Spielen · gesamt ~{totalDur} Min.
+      </p>
+
+      <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 12 }}>
+        <select value={filterEffort} onChange={(e) => setFilterEffort(e.target.value)} style={{ fontSize: 11, padding: "4px 8px", border: "1px solid var(--l)", borderRadius: 6, background: "#fff", color: "var(--d)" }}>
+          <option value="alle">Aufwand: alle</option>
+          <option value="leicht">leicht</option>
+          <option value="mittel">mittel</option>
+          <option value="hoch">hoch</option>
+        </select>
+        <select value={filterLoud} onChange={(e) => setFilterLoud(e.target.value)} style={{ fontSize: 11, padding: "4px 8px", border: "1px solid var(--l)", borderRadius: 6, background: "#fff", color: "var(--d)" }} disabled={quietMode}>
+          <option value="alle">Lautstärke: alle</option>
+          <option value="ruhig">ruhig</option>
+          <option value="mittel">mittel</option>
+          <option value="laut">laut</option>
+        </select>
+      </div>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        {filtered.length === 0 ? (
+          <p style={{ fontSize: 12, color: "var(--m)", padding: 12, background: "var(--bg)", borderRadius: 8, textAlign: "center" }}>
+            Keine Spiele entsprechen den Filtern. Lock'rer machen — Aufwand oder Lautstärke auf "alle".
+          </p>
+        ) : (
+          (showAll ? filtered : filtered.slice(0, 4)).map((g, i) => (
+            <EliteGameCard key={i} game={g} mottoColor={mottoColor} />
+          ))
+        )}
+        {filtered.length > 4 && (
+          <button onClick={() => setShowAll(!showAll)} style={{ background: "none", border: `1px dashed ${mottoColor || "var(--a)"}`, padding: "8px 12px", borderRadius: 8, color: "var(--m)", fontSize: 12, cursor: "pointer", fontFamily: "inherit" }}>
+            {showAll ? "Weniger anzeigen" : `Alle ${filtered.length} anzeigen`}
+          </button>
+        )}
+      </div>
+    </section>
+  );
+}
+
+function EliteGameCard({ game, mottoColor }) {
+  const [expanded, setExpanded] = useState(false);
+  const badges = [];
+  if (game.duration) badges.push(`${game.duration} Min.`);
+  if (game.effort) badges.push(`Aufwand: ${game.effort}`);
+  if (game.loudness) badges.push(`${game.loudness === "ruhig" ? "🔈" : game.loudness === "mittel" ? "🔉" : "🔊"} ${game.loudness}`);
+  if (game.indoor && game.outdoor) badges.push("🏠/🌳 in/out");
+  else if (game.indoor) badges.push("🏠 drinnen");
+  else if (game.outdoor) badges.push("🌳 draußen");
+
+  return (
+    <div style={{ border: "1px solid var(--l)", borderRadius: 10, padding: "12px 14px", background: "#fff" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8 }}>
+        <h3 style={{ fontSize: 14, fontWeight: 700, color: "var(--d)", margin: 0, flex: 1 }}>{game.name}</h3>
+        <button onClick={() => setExpanded(!expanded)} style={{ background: "none", border: "none", padding: 0, fontSize: 11, color: mottoColor || "var(--a)", cursor: "pointer", flexShrink: 0 }}>
+          {expanded ? "▴" : "▾"}
+        </button>
+      </div>
+      <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 4 }}>
+        {badges.map((b, i) => (
+          <span key={i} style={{ fontSize: 10, padding: "2px 6px", background: "var(--bg)", color: "var(--m)", borderRadius: 4, fontWeight: 600 }}>{b}</span>
+        ))}
+      </div>
+      {expanded && (
+        <div style={{ marginTop: 10, fontSize: 12, color: "var(--d)", lineHeight: 1.5 }}>
+          {game.material && (
+            <p style={{ marginBottom: 6 }}><strong>Material:</strong> {game.material}</p>
+          )}
+          {game.prepText && (
+            <p style={{ marginBottom: 6 }}><strong>Vorbereitung:</strong> {game.prepText}</p>
+          )}
+          {game.steps && game.steps.length > 0 && (
+            <div style={{ marginBottom: 6 }}>
+              <strong>Ablauf:</strong>
+              <ol style={{ paddingLeft: 18, margin: "4px 0 0" }}>
+                {game.steps.map((s, i) => (
+                  <li key={i} style={{ marginBottom: 3 }}><strong>{s.name}:</strong> {s.content}</li>
+                ))}
+              </ol>
+            </div>
+          )}
+          {game.safetyRule && (
+            <p style={{ marginBottom: 6, padding: 6, background: "#FFF3E0", borderRadius: 4 }}><strong>⚠️ Sicherheit:</strong> {game.safetyRule}</p>
+          )}
+          {game.whyItWorks && (
+            <p style={{ marginBottom: 6, padding: 6, background: "var(--bg)", borderRadius: 4, fontSize: 11, fontStyle: "italic" }}>
+              <strong>{game.whyItWorksTitle || "Warum funktioniert das"}:</strong> {game.whyItWorks}
+            </p>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // === MAIN APP ===
 function App() {
   // State
@@ -737,6 +1153,10 @@ function App() {
   const [mapPositions, setMapPositions] = useState(null); // [{x, y}] for canvas map stations
   const [stationLocations, setStationLocations] = useState(() => loadState("stationLocations", {})); // {index: "Ort-Text"}
   const [dekoEmojis, setDekoEmojis] = useState(() => loadState("dekoEmojis", [])); // [{emoji, fx, fy}] fractional coords
+  // P1-25: Partyseite-Erstellung via Worker
+  const [partyCreateStatus, setPartyCreateStatus] = useState("idle"); // idle | creating | success | error
+  const [partyCreateResult, setPartyCreateResult] = useState(null); // {url, editUrl}
+  const [partyCreateError, setPartyCreateError] = useState("");
 
   // Derived values
   const motto = ALL_MOTTOS.find((m) => m.id === mottoId);
@@ -746,6 +1166,8 @@ function App() {
   const effectiveLoc = locOverride || loc;
   const filteredLicense = LICENSE.filter((m) => !m.ages || m.ages.includes(age));
   const szTheme = SZ_THEMES.find((t) => t.id === szThemeId);
+  // Elite-Motto-Data (P3-13/14/15/16/17/18 Foundation) — null wenn kein Elite-Slot vorhanden
+  const eliteData = (typeof getEliteData === "function") ? getEliteData(mottoId, ag) : null;
 
   // Persist state
   useEffect(() => saveState("age", age), [age]);
@@ -791,10 +1213,82 @@ function App() {
     if (mottoId) { setShowConfetti(true); const t = setTimeout(() => setShowConfetti(false), 1200); return () => clearTimeout(t); }
   }, [mottoId]);
 
-  // Track plan creation
+  // Track plan creation + birthdayProject update + Cockpit tracking
   useEffect(() => {
-    if (view === "plan" && window.plausible) plausible("plan-created", { props: { motto: mottoId, alter: age, gaeste: guests, szActive: szActive, thema: szThemeId } });
+    if (view === "plan" && motto && window.plausible) plausible("plan-created", { props: { motto: mottoId, alter: age, gaeste: guests, szActive: szActive, thema: szThemeId } });
+    // P1-21/P1-22: birthdayProject lokal speichern + Cockpit-View tracken
+    if (view === "plan" && motto && window.BirthdayProject) {
+      try {
+        window.BirthdayProject.update({
+          source: "planner",
+          theme: { slug: mottoId, label: motto.name, emoji: motto.emoji, color: motto.color },
+          child: { firstName: childName || "", age: age },
+          party: { guestCount: guests, locationType: effectiveLoc },
+          preferences: { durationMinutes: duration * 60 },
+          modules: { planner: { status: "done" }, treasure: { status: szActive ? "done" : "open" }, invitation: { status: "open" }, partyPage: { status: "open" }, shopping: { status: "ready" } }
+        });
+      } catch (e) {}
+    }
+    if (view === "plan" && motto && window.umami) {
+      try { window.umami.track("cockpit_viewed", { motto: mottoId, alter: age }); } catch (e) {}
+    }
   }, [mottoId, view]);
+
+  // === P1-25: Partyseite via Worker erstellen ===
+  async function createPartyPage() {
+    if (!motto) return;
+    setPartyCreateStatus("creating");
+    setPartyCreateError("");
+    if (window.umami) { try { window.umami.track("party_create_started", { motto: mottoId }); } catch (e) {} }
+    let payload;
+    if (window.BirthdayProject && typeof window.BirthdayProject.toPartyPayload === "function") {
+      payload = window.BirthdayProject.toPartyPayload();
+    }
+    if (!payload || !payload.motto) {
+      payload = {
+        childName: childName || "",
+        age: age,
+        motto: motto.name,
+        mottoEmoji: motto.emoji,
+        mottoColor: motto.color || "#D4812A",
+        date: "", time: "", endTime: "", address: "",
+        notes: motto.name + "-Geburtstag",
+        askAllergies: true, askPickup: true, wishes: []
+      };
+    }
+    try {
+      const res = await fetch("https://party.machsleicht.de/api/create", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json();
+      if (!data.url || !data.editUrl) throw new Error("Unvollstaendige Antwort vom Worker");
+      setPartyCreateResult({ url: data.url, editUrl: data.editUrl, id: data.id });
+      setPartyCreateStatus("success");
+      if (window.BirthdayProject) { try { window.BirthdayProject.update({ modules: { partyPage: { status: "done" } } }); } catch (e) {} }
+      if (window.umami) { try { window.umami.track("party_created", { motto: mottoId }); } catch (e) {} }
+    } catch (err) {
+      setPartyCreateError(err.message || "Verbindung zur Partyseite fehlgeschlagen");
+      setPartyCreateStatus("error");
+    }
+  }
+
+  function copyToClipboard(text) {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(function() {
+        if (window.umami) { try { window.umami.track("party_share_clicked", { channel: "copy" }); } catch (e) {} }
+      });
+    }
+  }
+
+  function shareParty(url) {
+    if (!motto) return;
+    const msg = encodeURIComponent("🎉 " + motto.emoji + " Du bist eingeladen zum " + motto.name + "-Geburtstag" + (childName ? " von " + childName : "") + "! Hier sind alle Infos & Zusagen:\n" + url);
+    window.open("https://wa.me/?text=" + msg, "_blank");
+    if (window.umami) { try { window.umami.track("party_share_clicked", { channel: "whatsapp" }); } catch (e) {} }
+  }
 
   // === COMPUTED: Quiet mode games ===
   const quietGames = {
@@ -943,14 +1437,9 @@ function App() {
     dino: "Achtung, Dinos! Ausgraben, forschen und am Ende jubeln — dein Kind wird zum echten Paläontologen.",
     einhorn: "Glitzer, Regenbogen und pure Magie — dein Kind und seine Freunde tauchen ein in eine zauberhafte Welt.",
     feuerwehr: "Tatütata! Die kleine Feuerwehr-Crew meistert jeden Einsatz. Teamwork, Action und strahlende Kinderaugen.",
-    "paw-patrol": "Ryder ruft an! Die Welpen brauchen Hilfe — und dein Kind und seine Freunde retten den Tag!",
-    pokemon: "Die Pokémon-Trainer-Prüfung beginnt! Fangen, kämpfen, Orden sammeln — wer wird Pokémon-Meister?",
-    minecraft: "Creeper besiegen, Erze abbauen, den Enderdrachen bezwingen — Survival-Modus: aktiviert!",
-    frozen: "Elsa braucht Hilfe! Schneezauber, Eispalast und magische Momente warten auf die kleine Crew.",
-    mario: "Münzen sammeln, Bowser besiegen, Prinzessin retten — es wird ein Super-Mario-Tag!",
-    spiderman: "Spinnennetze spannen, Bösewichte fangen, die Stadt retten — dein Kind wird zum Superhelden!",
-    "harry-potter": "Der Hogwarts-Brief ist da! Zauberstäbe, Zaubertränke und magische Prüfungen warten.",
-    ninjago: "Die Ninja-Ausbildung beginnt! Geschicklichkeit, Weisheit und Spinjitzu — wer wird Meister?",
+    detektiv: "Lupe raus, Fingerabdrücke nehmen, Verdächtige verhören — die kleinen Detektive lösen jeden Fall!",
+    dschungel: "Tarzan-Schwung, Tierspuren-Lesen, Brückenbau — eine Expedition durch den wilden Dschungel.",
+    feen: "Feenstaub, Zaubertrank, Regenbogen-Magie — die kleinen Feen erleben ein zauberhaftes Abenteuer.",
   };
 
   // =============================================
@@ -1022,14 +1511,106 @@ function App() {
           )}
         </section>
 
+        {/* P3-13: Elite-Cockpit-Header — ageInsight + signatureRitual */}
+        {eliteData && <EliteCockpitHeader eliteData={eliteData} mottoColor={motto.color} mottoName={motto.name} />}
+
+        {/* ══════ COCKPIT — P1-22: Next Steps nach Plan-Generierung ══════ */}
+        <section className="fu" style={{ marginBottom: 24, background: "linear-gradient(135deg, #FFF3E8 0%, #FFFAF5 100%)", border: "1px solid var(--l)", borderRadius: 14, padding: "16px 18px" }}>
+          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: 1.5, color: motto.color || "var(--a)", textTransform: "uppercase", marginBottom: 6 }}>✓ Dein Plan steht</p>
+          <h2 style={{ fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, marginBottom: 10, color: "var(--d)" }}>
+            Als Nächstes sinnvoll
+          </h2>
+          <p style={{ fontSize: 13, color: "var(--m)", marginBottom: 12, lineHeight: 1.5 }}>
+            Du musst nichts davon machen — alles funktioniert einzeln. Aber wenn du magst, machen wir dir die nächsten Schritte einfach.
+          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            <button
+              onClick={() => {
+                if (!szActive) setSzActive(true);
+                if (!szThemeId && SZ_THEMES.find(t => t.id === mottoId)) setSzThemeId(mottoId);
+                if (window.umami) { try { window.umami.track("cockpit_cta_clicked", { target: "treasure", motto: mottoId }); } catch (e) {} }
+                setTimeout(() => { const el = document.querySelector('[data-section="schatzsuche"]'); if (el) el.scrollIntoView({ behavior: "smooth", block: "start" }); }, 50);
+              }}
+              style={{ padding: "12px 16px", background: "var(--bg)", border: "1px solid var(--l)", borderRadius: 10, textAlign: "left", cursor: "pointer", display: "flex", alignItems: "center", gap: 10, fontFamily: "inherit" }}
+            >
+              <span style={{ fontSize: 22 }}>🗺️</span>
+              <span style={{ flex: 1 }}>
+                <strong style={{ fontSize: 14, color: "var(--d)", display: "block" }}>{motto.name}-Schatzsuche erstellen</strong>
+                <span style={{ fontSize: 12, color: "var(--m)" }}>Stationen, Karte und Hinweise — passend zum Alter</span>
+              </span>
+              <span style={{ fontSize: 18, color: "var(--a)" }}>→</span>
+            </button>
+            <a
+              href={`/einladung/erstellen?${[
+                `motto=${encodeURIComponent(mottoId || "")}`,
+                childName ? `name=${encodeURIComponent(childName)}` : "",
+                "source=cockpit"
+              ].filter(Boolean).join("&")}`}
+              onClick={() => { if (window.umami) { try { window.umami.track("cockpit_cta_clicked", { target: "invitation", motto: mottoId }); } catch (e) {} } }}
+              style={{ padding: "12px 16px", background: "var(--bg)", border: "1px solid var(--l)", borderRadius: 10, textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }}
+            >
+              <span style={{ fontSize: 22 }}>📨</span>
+              <span style={{ flex: 1 }}>
+                <strong style={{ fontSize: 14, color: "var(--d)", display: "block" }}>Einladung erstellen</strong>
+                <span style={{ fontSize: 12, color: "var(--m)" }}>WhatsApp-Einladung mit Mini-Spiel zum Motto</span>
+              </span>
+              <span style={{ fontSize: 18, color: "var(--a)" }}>→</span>
+            </a>
+            <button
+              onClick={() => { if (window.umami) { try { window.umami.track("cockpit_cta_clicked", { target: "party", motto: mottoId }); } catch (e) {} } createPartyPage(); }}
+              disabled={partyCreateStatus === "creating" || partyCreateStatus === "success"}
+              style={{ padding: "12px 16px", background: "var(--bg)", border: "1px solid var(--l)", borderRadius: 10, textAlign: "left", cursor: partyCreateStatus === "creating" || partyCreateStatus === "success" ? "default" : "pointer", display: "flex", alignItems: "center", gap: 10, fontFamily: "inherit", opacity: partyCreateStatus === "success" ? 0.6 : 1 }}
+            >
+              <span style={{ fontSize: 22 }}>{partyCreateStatus === "creating" ? "⏳" : partyCreateStatus === "success" ? "✓" : "🎉"}</span>
+              <span style={{ flex: 1 }}>
+                <strong style={{ fontSize: 14, color: "var(--d)", display: "block" }}>
+                  {partyCreateStatus === "creating" ? "Partyseite wird erstellt..." : partyCreateStatus === "success" ? "Partyseite erstellt ✓" : "Partyseite für Zusagen anlegen"}
+                </strong>
+                <span style={{ fontSize: 12, color: "var(--m)" }}>RSVP, Wunschliste, Allergien — alles auf einer Seite</span>
+              </span>
+              {partyCreateStatus !== "creating" && partyCreateStatus !== "success" && <span style={{ fontSize: 18, color: "var(--a)" }}>→</span>}
+            </button>
+          </div>
+          {/* P1-25: Result-Pane nach erfolgreicher Erstellung */}
+          {partyCreateStatus === "success" && partyCreateResult && (
+            <div style={{ marginTop: 12, padding: 14, background: "#E8F5E9", border: "1px solid #66BB6A", borderRadius: 10 }}>
+              <p style={{ fontSize: 13, fontWeight: 700, color: "#1B5E20", margin: "0 0 8px" }}>✓ Deine {motto.name}-Partyseite ist fertig</p>
+              <p style={{ fontSize: 11, color: "#33691E", margin: "0 0 10px", lineHeight: 1.4 }}>Privat geteilt. Nicht bei Google. Kein Konto. Daten werden automatisch geloescht.</p>
+              <div style={{ background: "#fff", border: "1px solid #C8E6C9", borderRadius: 8, padding: "8px 10px", fontSize: 12, fontFamily: "monospace", wordBreak: "break-all", marginBottom: 10 }}>{partyCreateResult.url}</div>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                <button onClick={() => copyToClipboard(partyCreateResult.url)} style={{ flex: 1, minWidth: 110, padding: "10px 12px", background: "#fff", border: "1px solid #66BB6A", color: "#1B5E20", borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>📋 Gaeste-Link kopieren</button>
+                <button onClick={() => shareParty(partyCreateResult.url)} style={{ flex: 1, minWidth: 110, padding: "10px 12px", background: "#25D366", border: "none", color: "#fff", borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>💬 Per WhatsApp teilen</button>
+              </div>
+              <details style={{ marginTop: 10 }}>
+                <summary style={{ fontSize: 12, color: "#33691E", cursor: "pointer", fontWeight: 600 }}>Bearbeitungslink sichern</summary>
+                <p style={{ fontSize: 11, color: "#33691E", margin: "8px 0 6px", lineHeight: 1.4 }}>Mit diesem Link kannst du Zusagen ansehen, Datum/Ort aendern und die Partyseite verwalten. Kein Konto, kein Newsletter.</p>
+                <div style={{ background: "#fff", border: "1px solid #C8E6C9", borderRadius: 8, padding: "6px 8px", fontSize: 11, fontFamily: "monospace", wordBreak: "break-all", marginBottom: 6 }}>{partyCreateResult.editUrl}</div>
+                <button onClick={() => copyToClipboard(partyCreateResult.editUrl)} style={{ padding: "6px 10px", background: "#fff", border: "1px solid #66BB6A", color: "#1B5E20", borderRadius: 6, fontSize: 11, fontWeight: 600, cursor: "pointer" }}>📋 Edit-Link kopieren</button>
+              </details>
+            </div>
+          )}
+          {partyCreateStatus === "error" && (
+            <div style={{ marginTop: 12, padding: 12, background: "#FFEBEE", border: "1px solid #EF5350", borderRadius: 10 }}>
+              <p style={{ fontSize: 13, fontWeight: 700, color: "#B71C1C", margin: "0 0 4px" }}>Partyseite konnte gerade nicht erstellt werden</p>
+              <p style={{ fontSize: 12, color: "#C62828", margin: "0 0 8px", lineHeight: 1.4 }}>{partyCreateError || "Verbindung fehlgeschlagen"}. Dein Plan bleibt erhalten.</p>
+              <button onClick={createPartyPage} style={{ padding: "8px 14px", background: "#fff", border: "1px solid #EF5350", color: "#B71C1C", borderRadius: 8, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>↻ Erneut versuchen</button>
+            </div>
+          )}
+        </section>
+
+        {/* P3-16: Vorbereitungs-Wochen — nur wenn eliteData verfügbar */}
+        {eliteData && eliteData.preparationWeeks && (
+          <VorbereitungsKarte preparationWeeks={eliteData.preparationWeeks} mottoColor={motto.color} />
+        )}
+
         {/* ══════ PLAN ══════ */}
 
         {/* Mode Toggles — oben, weil sie alles darunter ändern */}
         <section className="fu" style={{ marginBottom: 24 }}>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }}>
             <div style={{ display: "flex", gap: 4, background: "var(--bg)", borderRadius: 12, padding: 4, border: "1px solid var(--l)" }}>
-              {[["minimal", "🌿", "Minimal"], ["standard", "🎯", "Standard"], ["wow", "✨", "Wow"]].map(([val, ico, label]) => (
-                <button key={val} onClick={() => { setShoppingMode(val); setOwned({}); }} style={{
+              {[["minimal", "🌿", "Sparfuchs"], ["standard", "🎯", "Mittelweg"], ["wow", "✨", "Komfort"]].map(([val, ico, label]) => (
+                <button key={val} onClick={() => { setShoppingMode(val); setOwned({}); if (window.umami) { try { window.umami.track("shopping_package_selected", { theme: mottoId, package: val }); } catch (e) {} } }} style={{
                   padding: "8px 14px", borderRadius: 10, border: "none",
                   background: shoppingMode === val ? (val === "minimal" ? "#E8F5E9" : val === "wow" ? "#EDE7F6" : "var(--al)") : "transparent",
                   color: shoppingMode === val ? (val === "minimal" ? "var(--g)" : val === "wow" ? "#7B1FA2" : "var(--a)") : "var(--m)",
@@ -1053,8 +1634,21 @@ function App() {
         {/* Zeitplan — DAS Kernversprechen, sofort sichtbar */}
         <Zeitplan timeline={timeline} mottoColor={motto.color} quietMode={quietMode} setQuietMode={setQuietMode} ageGroupLabel={ageLabel[ag]} />
 
+        {/* P3-14: Elite-Games-Filter (Constraint-Solver) — nur wenn eliteData */}
+        {eliteData && eliteData.variants && (
+          <EliteGamesFilter
+            variants={eliteData.variants}
+            shoppingMode={shoppingMode}
+            effectiveLoc={effectiveLoc}
+            quietMode={quietMode}
+            mottoColor={motto.color}
+          />
+        )}
+
         {/* Schatzsuche — optionaler Add-on direkt neben dem Zeitplan */}
-        <SchnitzeljagdBlock age={age} ag={ag} mottoId={mottoId} szActive={szActive} setSzActive={setSzActive} szThemeId={szThemeId} setSzThemeId={setSzThemeId} szTheme={szTheme} childName={childName} setChildName={setChildName} mapPositions={mapPositions} setMapPositions={setMapPositions} stationLocations={stationLocations} setStationLocations={setStationLocations} dekoEmojis={dekoEmojis} setDekoEmojis={setDekoEmojis} />
+        <div data-section="schatzsuche">
+          <SchnitzeljagdBlock age={age} ag={ag} mottoId={mottoId} szActive={szActive} setSzActive={setSzActive} szThemeId={szThemeId} setSzThemeId={setSzThemeId} szTheme={szTheme} childName={childName} setChildName={setChildName} mapPositions={mapPositions} setMapPositions={setMapPositions} stationLocations={stationLocations} setStationLocations={setStationLocations} dekoEmojis={dekoEmojis} setDekoEmojis={setDekoEmojis} />
+        </div>
 
         {/* Snacks */}
         <section className="fu" style={{ marginBottom: 24 }}>
@@ -1072,25 +1666,33 @@ function App() {
           </div>
         </section>
 
-        {/* Deko */}
-        <section className="fu" style={{ marginBottom: 24 }}>
-          <h2 style={{ fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, marginBottom: 4 }}>
-            🎨 Deko, die man wirklich sieht {motto.cat === "license" && `(${motto.name})`}
-          </h2>
-          {isMinimal && <p style={{ fontSize: 13, color: "var(--g)", marginBottom: 10, fontWeight: 600 }}>🌿 Minimal-Modus: Das reicht völlig.</p>}
-          <p style={{ fontSize: 11, color: "var(--m)", marginBottom: 8 }}>✓ Checkbox = "Hab ich schon" — wird aus Kosten rausgerechnet</p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            {deko.map((item, i) => <ItemRow key={i} item={item} isOwned={owned[i]} onToggle={() => toggleOwned(i)} />)}
-          </div>
-        </section>
+        {/* P3-17: Elite-Einkaufsliste (3 Gruppen) — wenn eliteData vorhanden */}
+        {eliteData && eliteData.variants && (
+          <EliteShoppingList variants={eliteData.variants} shoppingMode={shoppingMode} mottoColor={motto.color} />
+        )}
 
-        {/* Mitgebsel */}
-        <section className="fu" style={{ marginBottom: 24 }}>
-          <h2 style={{ fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, marginBottom: 12 }}>🎁 Kleine Mitgebsel, kein unnötiger Kram</h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            {mitgebsel.map((item, i) => <ItemRow key={"m" + i} item={item} isOwned={owned[deko.length + i]} onToggle={() => toggleOwned(deko.length + i)} />)}
-          </div>
-        </section>
+        {/* Legacy Deko + Mitgebsel — nur wenn keine eliteData (non-elite Mottos: piraten, dschungel, etc) */}
+        {!eliteData && (
+          <>
+            <section className="fu" style={{ marginBottom: 24 }}>
+              <h2 style={{ fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, marginBottom: 4 }}>
+                🎨 Deko, die man wirklich sieht {motto.cat === "license" && `(${motto.name})`}
+              </h2>
+              {isMinimal && <p style={{ fontSize: 13, color: "var(--g)", marginBottom: 10, fontWeight: 600 }}>🌿 Minimal-Modus: Das reicht völlig.</p>}
+              <p style={{ fontSize: 11, color: "var(--m)", marginBottom: 8 }}>✓ Checkbox = "Hab ich schon" — wird aus Kosten rausgerechnet</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                {deko.map((item, i) => <ItemRow key={i} item={item} isOwned={owned[i]} onToggle={() => toggleOwned(i)} />)}
+              </div>
+            </section>
+
+            <section className="fu" style={{ marginBottom: 24 }}>
+              <h2 style={{ fontFamily: "var(--fd)", fontSize: 20, fontWeight: 800, marginBottom: 12 }}>🎁 Kleine Mitgebsel, kein unnötiger Kram</h2>
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                {mitgebsel.map((item, i) => <ItemRow key={"m" + i} item={item} isOwned={owned[deko.length + i]} onToggle={() => toggleOwned(deko.length + i)} />)}
+              </div>
+            </section>
+          </>
+        )}
 
         {/* Das reicht + Kosten */}
         <div className="sp" style={{ background: "linear-gradient(135deg,#1B5E20,#2E7D32,#388E3C)", borderRadius: 24, padding: "48px 24px 40px", textAlign: "center", position: "relative", overflow: "hidden", marginBottom: 24 }}>
@@ -1162,6 +1764,9 @@ function App() {
         </footer>
 
         <ControlHub mottoId={mottoId} szActive={szActive} setSzActive={setSzActive} setSzThemeId={setSzThemeId} childName={childName} age={age} motto={motto} />
+
+        {/* P3-18: SOS-Button (Floating, falls eliteData verfügbar) */}
+        {eliteData && eliteData.sosScenarios && <SOSButton sosScenarios={eliteData.sosScenarios} mottoColor={motto.color} />}
       </div>
     );
   }
@@ -1337,37 +1942,6 @@ function App() {
       </section>
 
       {/* Ratgeber */}
-      <section style={{ maxWidth: 700, margin: "48px auto 0", padding: "0 16px" }}>
-        <div style={{ textAlign: "center", marginBottom: 20 }}>
-          <p style={{ fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--a)", marginBottom: 6 }}>Für Eltern</p>
-          <h2 style={{ fontFamily: "var(--fd)", fontWeight: 900, fontSize: "clamp(20px,4vw,26px)", color: "var(--d)", margin: 0 }}>Motto-Ratgeber</h2>
-          <p style={{ fontSize: 14, color: "var(--m)", marginTop: 8 }}>Du kennst Pokémon oder Ninjago nicht? Unsere Guides erklären alles.</p>
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(150px,1fr))", gap: 10 }}>
-          {[
-            { emoji: "🐾", name: "PAW Patrol", href: "/paw-patrol-guide" },
-            { emoji: "⚡", name: "Pokémon", href: "/pokemon-guide" },
-            { emoji: "⛏️", name: "Minecraft", href: "/minecraft-guide" },
-            { emoji: "❄️", name: "Frozen", href: "/frozen-guide" },
-            { emoji: "🍄", name: "Super Mario", href: "/super-mario-guide" },
-            { emoji: "🕷️", name: "Spider-Man", href: "/spider-man-guide" },
-            { emoji: "⚡", name: "Harry Potter", href: "/harry-potter-guide" },
-            { emoji: "🥷", name: "Ninjago", href: "/ninjago-guide" },
-          ].map((g, i) => (
-            <a key={i} href={g.href} style={{ textDecoration: "none" }}>
-              <div style={{ background: "var(--bg)", border: "1px solid var(--l)", borderRadius: 12, padding: "16px 12px", textAlign: "center", transition: "all 0.2s", cursor: "pointer" }}>
-                <div style={{ fontSize: 28, marginBottom: 6 }}>{g.emoji}</div>
-                <div style={{ fontSize: 13, fontWeight: 700, color: "var(--d)" }}>{g.name}</div>
-                <div style={{ fontSize: 11, color: "var(--a)", marginTop: 4 }}>Guide lesen →</div>
-              </div>
-            </a>
-          ))}
-        </div>
-        <div style={{ textAlign: "center", marginTop: 16 }}>
-          <a href="/ratgeber" style={{ fontSize: 13, color: "var(--a)", fontWeight: 600, textDecoration: "none" }}>Alle Ratgeber ansehen →</a>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer style={{ maxWidth: 700, margin: "40px auto 0", padding: "16px 16px", textAlign: "center", borderTop: "1px solid var(--l)" }}>
         <p style={{ fontSize: 12, color: "var(--m)" }}>

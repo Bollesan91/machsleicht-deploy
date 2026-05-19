@@ -60,8 +60,8 @@ if [ -f "$DATA" ]; then
   # Count mottos
   GENERIC_COUNT=$(grep -c 'id: "' "$DATA" 2>/dev/null | head -1)
   # More precise: count in GENERIC + LICENSE sections
-  GENERIC_N=$(sed -n '/^var GENERIC/,/^var LICENSE/p' "$DATA" | grep -c 'id: "')
-  LICENSE_N=$(sed -n '/^var LICENSE/,/^var ALL_MOTTOS/p' "$DATA" | grep -c 'id: "')
+  GENERIC_N=$(sed -n '/^var GENERIC/,/^var LICENSE/p' "$DATA" | grep -c 'id: "' 2>/dev/null) || GENERIC_N=0
+  LICENSE_N=$(sed -n '/^var LICENSE/,/^var ALL_MOTTOS/p' "$DATA" | grep -c 'id: "' 2>/dev/null) || LICENSE_N=0
   TOTAL_MOTTOS=$((GENERIC_N + LICENSE_N))
   
   # Count SZ themes
@@ -223,6 +223,43 @@ if [ -f "$REPO/netlify/functions/serve-invite.mjs" ]; then
   fi
 fi
 echo ""
+
+echo ""
+echo "── STUFE 8: Veraltete Motto-Zahlen (Cut 30.04.2026) ──"
+# Nach Lizenz-Cut: keine Refs auf "17 Mottos", "153 Spiele", "Alle 17 Mottos" mehr
+# Auch keine Lizenz-Motto-Pages oder -Verlinkungen
+STALE_NUMBERS=$(grep -rlE "17 Mottos|153 Spiele|Alle 17 Mottos" --include="*.html" --include="*.js" "$REPO" 2>/dev/null | grep -v "_dev/" | wc -l)
+if [ "$STALE_NUMBERS" -eq 0 ]; then
+  green "Keine veralteten Zahlen (17 Mottos / 153 Spiele) gefunden"
+else
+  red "Veraltete Motto-Zahlen in $STALE_NUMBERS Pages — bitte 9 Mottos / 81 Spiele setzen"
+fi
+
+# Lizenz-Mottos dürfen keine eigene Page-File mehr haben
+LICENSE_FILES=$(find "$REPO/kindergeburtstag" -maxdepth 1 -type f \( -name "frozen*.html" -o -name "harry-potter*.html" -o -name "minecraft*.html" -o -name "ninjago*.html" -o -name "paw-patrol*.html" -o -name "pokemon*.html" -o -name "spider-man*.html" -o -name "super-mario*.html" \) 2>/dev/null | wc -l)
+if [ "$LICENSE_FILES" -eq 0 ]; then
+  green "Keine Lizenz-Motto-Pages mehr im Repo"
+else
+  red "$LICENSE_FILES Lizenz-Motto-Files noch da — sollten gelöscht sein"
+fi
+
+# Verlinkungen auf Lizenz-Mottos sollten nicht mehr existieren (außer in _redirects, _dev, .git)
+# Pattern deckt ab: /kindergeburtstag/<motto>, /<motto>-guide, /ratgeber/<motto>-fuer-eltern
+LICENSE_LINKS=$(grep -rlE "/kindergeburtstag/(frozen|harry-potter|minecraft|ninjago|paw-patrol|pokemon|spider-man|super-mario)|/(frozen|harry-potter|minecraft|ninjago|paw-patrol|pokemon|spider-man|super-mario)-guide|/ratgeber/(frozen|harry-potter|minecraft|ninjago|paw-patrol|pokemon|spider-man|super-mario)-fuer-eltern" --include="*.html" --include="*.js" "$REPO" 2>/dev/null | grep -v "_dev/" | wc -l)
+if [ "$LICENSE_LINKS" -eq 0 ]; then
+  green "Keine Lizenz-Motto-Verlinkungen mehr in Pages"
+else
+  yellow "$LICENSE_LINKS Pages verlinken noch auf Lizenz-Mottos (werden via 301 abgefangen, aber sollten gefixt werden)"
+fi
+
+# Body-Text: Lizenz-Marken nicht mehr erwähnen (auch nicht als Vergleich)
+# Nominative Markennutzung wäre rechtlich ok, aber strategisch konsistent: ganz raus
+LICENSE_BRANDS=$(grep -rliP "\b(pok[eé]mon|minecraft|frozen|harry potter|spider-man|super mario|paw patrol|ninjago|eiskönigin|olaf)\b" --include="*.html" --include="*.js" "$REPO" 2>/dev/null | grep -v "_dev/" | wc -l)
+if [ "$LICENSE_BRANDS" -eq 0 ]; then
+  green "Keine Lizenz-Markennamen im Body-Text mehr"
+else
+  yellow "$LICENSE_BRANDS Pages erwähnen noch Lizenz-Markennamen im Body-Text"
+fi
 
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"

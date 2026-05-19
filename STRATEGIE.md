@@ -1,6 +1,6 @@
 # MASTER-STRATEGIE — machsleicht & machsruhig
 
-**Letzte Aktualisierung:** 22.04.2026 (Portfolio-Matrix 0.9 ergänzt)
+**Letzte Aktualisierung:** 30.04.2026 (Lizenz-Mottos-Cut + Funnel-Prototyp-Setup)
 **Status:** Lebendes Dokument. Alle vorherigen Strategie-Dokumente wurden hier konsolidiert.
 **Ort:** Root-Verzeichnis (neben ARCHITECTURE.md und BACKLOG-AUDIT.md) — immer auffindbar.
 
@@ -47,6 +47,29 @@
 - Pinterest rankt bei „kindergeburtstag 6 jahre" und „kindergeburtstag ideen" auf Google Position 1. Ohne Pinterest verliert machsleicht messbar Top-of-Funnel.
 - **Problem:** Pinterest ist laufender Aufwand (min. 2–3h/Woche für regelmäßiges Pinning), widerspricht dem Passivitäts-Prinzip 0.3.
 - **Entscheidungs-Trigger:** Bei 5.000+ Besuchern/Monat ohne Pinterest nochmal prüfen. Davor: nicht starten.
+
+### 0.7 Lizenz-Mottos-Cut (FINAL, dokumentiert 30.04.2026)
+
+**Entscheidung:** machsleicht führt **9 Mottos**, alle ohne Lizenzbindung:
+- **7 Voll-Mottos** (Tool + SEO-Pages): Detektiv, Dino, Einhorn, Feuerwehr, Piraten, Safari, Weltraum
+- **2 Schatzsuche-only Mottos**: Dschungel, Feen
+
+**Aus dem Tool entfernt** (30.04.2026):
+- 8 Lizenz-Mottos: Frozen, Harry Potter, Minecraft, Ninjago, Paw Patrol, Pokémon, Spider-Man, Super Mario → 121 Files gelöscht, 24 Wildcard-301-Redirects auf `/kindergeburtstag` in `_redirects`
+- 5 Zombie-Mottos (waren halbfertig oder ungeprüft): Baustelle, Pferde, Ritter, Zirkus, Meerjungfrau → physisch gelöscht
+
+**Begründungen (in Reihenfolge der Härte):**
+
+1. **Lizenzrisiko.** Disney (Frozen, Spider-Man), Nintendo (Pokémon, Super Mario, Minecraft via Microsoft), Warner Bros. (Harry Potter), Lego (Ninjago), Spin Master (Paw Patrol) verfolgen unlizenzierte Markennutzung aktiv. Auch noindex-gestellte Seiten waren angreifbar. Nach Cut: kein Lizenzrisiko mehr.
+2. **Tool-Disziplin (Funnel-Axiom 0.1).** Wenn `/kindergeburtstag/frozen` existiert aber `?motto=frozen` im Planer nicht, ist der Funnel gebrochen. Lieber 9 Mottos die durchgehend funktionieren als 17 die halb-funktionieren.
+3. **Wartungsaufwand.** Jedes Motto = Hauptseite + 13 Altersseiten + Schatzsuche + Einladung + Spielmechanik. 9 statt 17 Mottos = 47% weniger Wartungslast.
+4. **SEO-Realität.** Lizenz-Mottos rankten alle gegen offizielle Brand-Pages (frozen.disney.de, pokemon.com/de, paw-patrol.com). Realistische Top-10-Chance < 5%. Generische Mottos (Detektiv, Feuerwehr) ranken gegen schwächere Konkurrenz.
+
+**Was NICHT zur Diskussion steht:**
+- Re-Aktivierung einzelner Lizenz-Mottos. Die Entscheidung ist final — Wiedereinführung würde alle vier Begründungen wieder aktivieren.
+- Meerjungfrau-Wiedereinführung als Voll-Motto. Zwar im Backlog gesehen, aber: **gestrichen.** Konkurrenz im SEO zu hart (Disney Arielle), Tool-Aufbau ohne klaren Mehrwert gegenüber Einhorn (gleiches Mädchen-Spektrum 4–8). Wenn ein 8. Voll-Motto kommen soll, dann **Prinzessin** (geschlechtsneutraler Suchbegriff, weniger Disney-Lock-in) oder **Superheld** (siehe `/einladung/superheld/` als Vorarbeit).
+
+**Validator-Guard:** `validate-all.sh` Stufe 8 prüft seit 30.04.2026 dass keine veralteten Zahlen („17 Mottos", „153 Spiele") und keine Lizenz-Motto-Pages/-Verlinkungen mehr im Repo existieren. Wenn das jemals wieder failt, ist es eine Regression.
 
 ### 0.7 Monetarisierungs-Validierungs-Reihenfolge (dokumentiert 20.04.2026)
 

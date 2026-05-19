@@ -9,7 +9,16 @@ OUT="$REPO/js"
 
 echo "=== Build: kindergeburtstag.js ==="
 
-# 1. Compile JSX → JS with esbuild
+# 1. Regenerate elite-motto-data bundle (concatenates 7 JSON files into JS module).
+#    Skip if python3 nicht verfügbar (z.B. Netlify-Build) — committed _bundle.js wird verwendet.
+if command -v python3 >/dev/null 2>&1; then
+  echo "  Regenerating elite-motto-data/_bundle.js..."
+  python3 "$SRC/elite-motto-data/_generate_bundle.py" > /dev/null
+else
+  echo "  Skipping bundle regen (python3 nicht verfügbar) — verwende committed _bundle.js"
+fi
+
+# 2. Compile JSX → JS with esbuild
 echo "  Compiling JSX..."
 npx esbuild "$SRC/kindergeburtstag.jsx" \
   --bundle=false \
@@ -19,11 +28,11 @@ npx esbuild "$SRC/kindergeburtstag.jsx" \
   --target=es2020 \
   --outfile="$SRC/_compiled.js"
 
-# 2. Concatenate: data + compiled components
+# 3. Concatenate: data + elite-bundle + compiled components
 echo "  Concatenating..."
-cat "$SRC/kindergeburtstag-data.js" "$SRC/_compiled.js" > "$OUT/kindergeburtstag.js"
+cat "$SRC/kindergeburtstag-data.js" "$SRC/elite-motto-data/_bundle.js" "$SRC/_compiled.js" > "$OUT/kindergeburtstag.js"
 
-# 3. Cleanup
+# 4. Cleanup
 rm -f "$SRC/_compiled.js"
 
 # 4. Stats
