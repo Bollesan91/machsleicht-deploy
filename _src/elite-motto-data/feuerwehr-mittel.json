@@ -1,0 +1,1026 @@
+{
+  "_meta": {
+    "source_file": "kindergeburtstag/feuerwehr-6-8-jahre.html",
+    "extracted": "2026-05-19",
+    "schema_version": "1.0",
+    "purpose": "Golden Template — Feuerwehr 6-8 für Planer-Frisur-Sprint (P3-13 to P3-19)"
+  },
+  "motto": "feuerwehr",
+  "ageGroup": "mittel",
+  "ageRange": [
+    6,
+    8
+  ],
+  "title": "🚒 Feuerwehr-Kindergeburtstag — 6–8 Jahre",
+  "metaDescription": "Feuerwehr-Kindergeburtstag für 6-8-Jährige: 3 fertige Party-Konzepte (Minimal/Standard/Wow) mit Spielanleitungen, Zeitplan, Einkaufsliste und Kosten.",
+  "introParagraph": "Dein Kind wird 6, 7 oder 8 und will Feuerwehr machen — nicht nur drüber reden, sondern wirklich. Hier bekommst du drei fertige Party-Konzepte, in denen die Kinder eine echte Crew werden: Schicht-Appell, Ausbildungs-Stationen, Einsatz-Alarm, Urkunde. Kein „so tun als ob\", sondern Struktur. Jede Variante mit Zeitplan, Spielanleitungen, Einkaufsliste und Kosten.\n\n[Feuerwehr-Geburtstag planen →](/kindergeburtstag?motto=feuerwehr&alter=7#planer)",
+  "ageInsight": {
+    "headline": "Was 6–8-Jährige ausmacht — und was das für die Feuerwehr-Party heißt",
+    "traits": [
+      {
+        "topic": "Aufmerksamkeit",
+        "detail": "20–30 Min. pro Aktivität realistisch. Heißt: Eine Ausbildungs-Station darf nicht länger sein. Lieber drei kürzere Stationen als eine lange Übung."
+      },
+      {
+        "topic": "Regeln",
+        "detail": "Können einfache Spielregeln verstehen — und wollen sie sogar. Bei diesem Motto Gold wert: „Strahlrohr nur zur Seite, nie ins Gesicht\" lernt jedes Kind beim ersten Versuch."
+      },
+      {
+        "topic": "Wettbewerb",
+        "detail": "Erster Ehrgeiz ist da. Teams funktionieren („Trupp 1 gegen Trupp 2\"). Verlierer-Trupp braucht keinen Trostpreis, aber gemeinsame Anerkennung am Ende: alle bekommen das Feuerwehr-Diplom."
+      },
+      {
+        "topic": "Motorik",
+        "detail": "Zielen, Zielspritzen, Knoten knoten — geht. Schreiben in den Dienstausweis: geht. Dose Cola in 50 cm Entfernung mit Wasserspritze umlegen: geht (das ist der Spiel-Sweet-Spot)."
+      },
+      {
+        "topic": "Dauer",
+        "detail": "2,5–3 Stunden ideal. Eine Schicht in der echten Feuerwehr dauert auch mal kurz — nutz das im Narrativ („nach drei Stunden ist Schichtende, der nächste Trupp übernimmt\")."
+      },
+      {
+        "topic": "Essen",
+        "detail": "Mehr als bei Kleinkindern, ca. 1,3× der Portionen für 3–5-Jährige. „Brand-Brötchen\" (würzige Mini-Pizzen) und „Lösch-Wasser\" (Apfelschorle) treffen den Ton, ohne kindisch zu wirken."
+      },
+      {
+        "topic": "Eltern",
+        "detail": "Können kurz abgesetzt werden — telefonisch erreichbar bleiben. Schreib in die Einladung: „Abholung 17:00 Uhr, sonst geht der nächste Trupp ohne dich nach Hause.\" Klingt locker, kommt aber an."
+      }
+    ],
+    "whyMottoFits": "In diesem Alter zerfällt der „Spielen\"-Modus langsam — die Kinder wollen WIRKLICH etwas tun, nicht nur so tun als ob. Feuerwehr liefert das wie kaum ein anderes Motto: jede Aktivität hat einen Zweck (löschen, retten, ermitteln), jede Rolle ist echt (Funkerin, Schlauchführer, Sanitäterin), und am Ende gibt es eine Urkunde, die wirklich nach was aussieht. Dazu kommt: Brandschutz lernt sich beiläufig. „112 wählen, ohne zu zögern\" — das nehmen die Kinder als Skill mit nach Hause, nicht als Lehre.",
+    "whyMottoFitsHeadline": "🚒 Warum Feuerwehr für 6–8-Jährige besonders gut funktioniert"
+  },
+  "signatureRitual": {
+    "name": "Der Schicht-Appell",
+    "subtitle": "Für alle 3 Varianten",
+    "introText": "Der stärkste Moment der Party passiert in den ersten 5 Minuten nach Ankunft. Daraus werden aus „acht Kindern, die sich vielleicht nicht alle kennen\" acht Crew-Mitglieder mit Funktion und Dienstausweis — und das ganze Narrativ trägt den Rest der Party. Kein Streit darum, wer „der Chef\" ist: jedes Kind hat eine echte Aufgabe.",
+    "setupSteps": [
+      {
+        "title": "Helm-Box vorbereiten",
+        "content": "alter Schuhkarton oder Pappkarton-Helm aus dem Bastelladen (~3 €), darin 12 Zettel mit Name + Funktion (Liste unten zum Ausdrucken)."
+      },
+      {
+        "title": "Kind kommt an",
+        "content": "zieht einen Zettel aus dem Helm, liest Name und Funktion laut vor. „Ich bin Tom, Schlauchführer.\" Wird damit Teil der Crew."
+      },
+      {
+        "title": "Feuerwehr-Tattoo auf Handrücken",
+        "content": "Abziehbild mit feuchtem Tuch auftragen (20 Sek. pro Tattoo). Das ist das Dienstabzeichen. Wer kein Tattoo will: aufs Dienstausweis-Kärtchen kleben."
+      },
+      {
+        "title": "In die Wachen-Tafel eintragen",
+        "content": "Plakat oder Whiteboard mit Spalten „Name / Funktion / im Dienst seit\". Jedes Kind trägt sich (oder lässt eintragen) selbst ein."
+      },
+      {
+        "title": "Schichtbeginn-Spruch (alle gemeinsam, 1×)",
+        "content": "„Wir helfen, wo Hilfe gebraucht wird. Los geht's!\""
+      }
+    ],
+    "rolesList": [
+      {
+        "emoji": "🚒",
+        "name": "Max",
+        "function": "Wachleiter"
+      },
+      {
+        "emoji": "📻",
+        "name": "Lina",
+        "function": "Funkerin"
+      },
+      {
+        "emoji": "💧",
+        "name": "Tom",
+        "function": "Schlauchführer"
+      },
+      {
+        "emoji": "😷",
+        "name": "Mia",
+        "function": "Atemschutzträgerin"
+      },
+      {
+        "emoji": "🪜",
+        "name": "Ben",
+        "function": "Maschinist"
+      },
+      {
+        "emoji": "🩹",
+        "name": "Emma",
+        "function": "Sanitäterin"
+      },
+      {
+        "emoji": "🔍",
+        "name": "Jonas",
+        "function": "Brandermittler"
+      },
+      {
+        "emoji": "🎯",
+        "name": "Hanna",
+        "function": "Strahlrohrführerin"
+      },
+      {
+        "emoji": "🪢",
+        "name": "Felix",
+        "function": "Geräteführer"
+      },
+      {
+        "emoji": "📞",
+        "name": "Clara",
+        "function": "Disponentin (112)"
+      },
+      {
+        "emoji": "⛑️",
+        "name": "Leo",
+        "function": "Truppführer"
+      },
+      {
+        "emoji": "🛟",
+        "name": "Nina",
+        "function": "Wasserretterin"
+      }
+    ],
+    "optOutNote": "Kein Zwang. Eigener Name behalten — passt. Tattoo verweigern (Hautempfindlichkeit, Abneigung): aufs Dienstausweis-Kärtchen kleben statt auf die Hand. Niemand wird ausgeschlossen, niemand wird gedrängt.",
+    "materialNote": "[Feuerwehr-Tattoo-Set](https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht-21)* (~5 € für 30+ Motive), Schuhkarton oder [Pappkarton-Helm](https://www.amazon.de/s?k=feuerwehr+helm+kinder+pappe&tag=machsleicht-21)* (~3 €), die Namensliste oben einfach ausdrucken und zerschneiden."
+  },
+  "variants": [
+    {
+      "id": "minimal",
+      "label": "Minimal — 2 Stunden, minimaler Aufwand",
+      "headline": "🌿 Minimal — 2 Stunden, minimaler Aufwand",
+      "intro": "Funktioniert auch wenn du Donnerstag erst angefangen hast zu planen. Schicht-Appell, zwei echte Spiele, Kuchen, Mitgebsel — fertig. Die Kinder bekommen ihre Funktion, ihren Einsatz und ihre Urkunde. Mehr braucht niemand für eine gute Party.",
+      "timeWindow": "14:00–16:00, 6 Kinder",
+      "schedule": [
+        {
+          "time": "14:00",
+          "title": "🚒 Schicht-Appell & Feuerwehr-Ausmalbilder",
+          "description": "Jedes Kind zieht beim Reinkommen einen Dienstausweis aus dem Helm (Ritual-Block oben), bekommt ein Feuerwehr-Tattoo auf den Handrücken und trägt sich in die Wachen-Tafel ein. Sobald alle da sind: gemeinsamer Schichtbeginn-Spruch („Wir helfen, wo Hilfe gebraucht wird. Los geht's!\"). Wer früh da ist, malt am Tisch Feuerwehr-Bilder aus — kostenlose Vorlagen z.B. auf [kribbelbunt.de](https://www.kribbelbunt.de/artikel/news/ausmalbilder-feuerwehr/) oder [malvorlagen-seite.de](https://malvorlagen-seite.de/malvorlagen-feuerwehr/)."
+        },
+        {
+          "time": "14:25",
+          "title": "🎯 Zielspritzen — Brände löschen",
+          "description": "Hauptspiel, 25 Min. — Anleitung unten. Lautes Spiel zum Energie-Rauslassen. Im Sommer draußen, bei Regen im Bad oder auf dem Balkon."
+        },
+        {
+          "time": "14:55",
+          "title": "🎂 Kuchen & Lösch-Wasser",
+          "description": "Feuerwehrauto-Kuchen aus der Kastenform + „Lösch-Wasser\" (Apfelschorle in roten Bechern, kleines Eis dazu). 25 Min. Ruhe, alle setzen sich, Happy Birthday singen."
+        },
+        {
+          "time": "15:25",
+          "title": "🫧 Schaum-Löscheinsatz",
+          "description": "Ruhigeres taktiles Spiel nach dem Kuchen. 20 Min. Rasierschaum-Schicht mit Spielzeug-Tieren — die Crew „löscht\" und befreit. Funktioniert IMMER, ist witzig, schmiert nicht auf Wänden."
+        },
+        {
+          "time": "15:50",
+          "title": "🏆 Schichtende & Feuerwehr-Diplom",
+          "description": "Jedes Kind bekommt sein Feuerwehr-Diplom mit Funktion und Datum (Vorlage zum Ausdrucken — siehe Eltern-Tipps unten). Mitgebsel-Tüten mit Mini-Feuerwehrauto, Tattoo-Bogen, Gummibärchen.\n\n💡 Warum nur 2 Spiele reichen:\n6–8-Jährige wollen nicht durchanimiert werden. Zwischen Zielspritzen und Schaum-Löschen kommen Kuchen und der Schicht-Appell-Moment — das ist genug Struktur. Weniger Programm = weniger Stress für dich, weniger Reizüberflutung für die Kinder. Das laute Spiel zuerst (Energie raus), dann Kuchen, dann ruhiges Spiel. Diese Reihenfolge ist nicht zufällig."
+        }
+      ],
+      "games": [
+        {
+          "name": "🎯 Zielspritzen — Brände löschen",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 5,
+          "loudness": "laut",
+          "effort": "leicht",
+          "material": "6 Wasserspritzpistolen (~10 € für 6er-Set auf Amazon), 8–12 leere Plastikbecher oder leere Klorollen mit aufgemaltem Flammen-Symbol, 1 Wasserkanne zum Nachfüllen, 1 Eimer Wasser, alte Handtücher",
+          "prepText": "Plastikbecher umgekehrt auf eine Mauer, Tisch oder Bank stellen — jeder mit aufgemaltem Flammen-Symbol. Das sind die „Brände\". Crew-Mitglieder stehen 1,5–2 m entfernt mit Wasserspritzpistolen. Wer zuerst seinen Becher umlegt, hat den Brand gelöscht.",
+          "steps": [],
+          "safetyRule": "„Strahlrohr nur zur Seite, nie ins Gesicht.\" Eine Kind-zu-Kind-Spritze führt zur kurzen „Disziplinarmaßnahme\" — Strahlrohr für 1 Runde abgegeben. Funktioniert.",
+          "ageAdjust6": "Becher näher (1 m), kleinere Spritzpistolen, mehr Becher als Kinder (kein Last-Place). Strahlrohrführerin Hanna ist Ehrentitel — die nennt das Kommando „Wasser Marsch!\".",
+          "ageAdjust8": "Weiter weg (2,5 m), Zeit stoppen, Trupps von 2 — einer spritzt, einer füllt nach. Wettbewerb: welcher Trupp hat zuerst alle „Brände\" aus?",
+          "indoorTip": "Im Bad funktioniert es auch — Becher in die Wanne stellen, Wände sind nass-tolerant. Oder im Garten unter dem Balkon. Auf dem Wohnzimmer-Teppich nicht.",
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
+          "name": "🫧 Schaum-Löscheinsatz",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 20,
+          "minAge": 5,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "2 Dosen Rasierschaum (Drogerie, ~3 € pro Dose), 1 große Plastikwanne oder Backblech, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren aus dem Bestand), 1 alte Tischdecke unterlegen, Lappen zum Abwischen, Bürsten/Pinsel pro Kind",
+          "prepText": "Tiere in die leere Wanne legen, dann mit Rasierschaum großzügig bedecken — sieht aus wie weißer Lösch-Schaum. Story: „Im Wald hat es gebrannt. Die Tiere sind unter dem Schaum gefangen. Atemschutz Mia, Sanitäterin Emma, Wasserretterin Nina — Einsatz!\" Jedes Kind hat seinen Pinsel und befreit Tiere — vorsichtig, ohne sie zu beschädigen.",
+          "steps": [],
+          "safetyRule": null,
+          "ageAdjust6": "Tiere nur leicht bedecken, kleinere Wanne, Pinsel zum Wegstreichen.",
+          "ageAdjust8": "Tiefer im Schaum, mit verbundenen Augen ertasten („Welches Tier ist das? Hund, Pferd, Bär?\"). Wer rät, behält.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": "Warum Rasierschaum",
+          "whyItWorks": "Reagiert sich gut, schmiert nicht, lässt sich mit feuchtem Lappen wegwischen, ist parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne nehmen — kippt, klebt, riecht streng nach 30 Min."
+        }
+      ],
+      "food": "🎂Feuerwehrauto-Kuchen1 Kastenform\n🥤„Lösch-Wasser\"2 l Apfelschorle\n🍓Obst (rot)250 g Erdbeeren / Tomaten\n🍿Popcorn200 g\n\n💡 „Lösch-Wasser\" einfach erklärt:\nApfelschorle in rote Plastikbecher, kleines Eiswürfel-Stück oben drauf — fertig ist das „Lösch-Wasser\". Auf den Becher mit wasserfestem Stift „112\" schreiben. Sorgt garantiert für Lacher („das war's, was man auf den Brand kippt!\"). Kostet null extra, macht den Unterschied zwischen „Apfelschorle\" und „Geburtstags-Geschichte\".",
+      "decoration": "🎈 Rote Luftballons8 Stk. ~2 €Reichen für die Grundstimmung\n🚧 Absperrband rot/weiß~6 €Treppe oder Türrahmen → Wache\n🖍️ Ausmalbilder auf dem TischKostenloskribbelbunt.de\n📋 Wachen-Tafel (DIN A2 Plakat)~1 €Plakat + dicker Filzstift\n\n💡 Minimal-Deko-Regel:\n4 Dinge reichen: Ballons, Absperrband am Eingang, Ausmalbilder auf dem Tisch, Wachen-Tafel. Der Helm mit den Dienstausweisen, die Tattoos und die Spritzpistolen SIND die Deko — die Kinder interessieren sich für das Erlebnis, nicht für die Raumdeko. Pinterest-Marathon nicht nötig.",
+      "giveaways": "🚒 1 Mini-Feuerwehrauto (haben sie selbst „gerettet\" beim Schaum-Einsatz — emotionaler Wert)\n💫 1 Bogen Feuerwehr-Tattoos zum Mitnehmen (vom selben Set wie der Schicht-Appell)\n🍭 1 kleine Tüte Gummibärchen oder Lolli (rot-weiß)\n🏆 Feuerwehr-Diplom mit Funktion und Datum\n\nIn rot-weiße Papiertüte (10 Stk. ~1–2 € bei DM/Action) mit „Crew-Geschenk für ___\" beschriften. Kosten: ~2,20 € pro Kind.",
+      "shoppingList": [
+        {
+          "emoji": "💧",
+          "label": "Wasserspritzpistolen (6er-Set)",
+          "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+set&tag=machsleicht-21",
+          "priceEur": 10,
+          "hasAffiliate": true
+        },
+        {
+          "emoji": "💫",
+          "label": "Feuerwehr-Tattoo-Set (30+ Motive)",
+          "url": "https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true
+        },
+        {
+          "emoji": "🚒",
+          "label": "Mini-Feuerwehrautos (12er-Set)",
+          "url": "https://www.amazon.de/s?k=mini+feuerwehrauto+kinder+set&tag=machsleicht-21",
+          "priceEur": 8,
+          "hasAffiliate": true
+        },
+        {
+          "emoji": "🚧",
+          "label": "Absperrband rot/weiß (50 m)",
+          "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": true
+        },
+        {
+          "emoji": "🫧",
+          "label": "Rasierschaum (2 Dosen Drogerie-Eigenmarke)",
+          "url": null,
+          "priceEur": 3,
+          "hasAffiliate": false
+        },
+        {
+          "emoji": "🥤",
+          "label": "Apfelschorle + rote Becher",
+          "url": null,
+          "priceEur": 5,
+          "hasAffiliate": false
+        },
+        {
+          "emoji": "🍿",
+          "label": "Popcorn-Mais + Snacks",
+          "url": null,
+          "priceEur": 5,
+          "hasAffiliate": false
+        },
+        {
+          "emoji": "🎂",
+          "label": "Backmischung Kastenform + roter Zuckerguss",
+          "url": null,
+          "priceEur": 6,
+          "hasAffiliate": false
+        },
+        {
+          "emoji": "📄",
+          "label": "Ausmalbilder + Dienstausweis-Vorlage + Diplom",
+          "url": null,
+          "priceEur": 0,
+          "hasAffiliate": false
+        },
+        {
+          "emoji": "🛍️",
+          "label": "Papiertüten + Pappkarton-Helm (Bastelladen/DM)",
+          "url": null,
+          "priceEur": 5,
+          "hasAffiliate": false
+        }
+      ],
+      "estimatedCostEur": 53,
+      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
+      "savingsTip": {
+        "title": "💡 Warum kostet „Minimal\" 53 €?",
+        "body": "Feuerwehr ist materiell-anspruchsvoller als andere Mottos. Spritzpistolen, Mini-Feuerwehrautos und Absperrband (~29 € zusammen) sind der Kern, ohne den das Motto nicht funktioniert. Spar-Trick: Spritzpistolen und Absperrband behalten und beim nächsten Kindergeburtstag wiederverwenden — dann liegt die echte Mottopartie bei ~37 €. „Minimal\" ist hier minimaler Aufwand für dich, nicht minimaler Materialeinsatz."
+      }
+    },
+    {
+      "id": "standard",
+      "label": "Standard — 3 Stunden, vollständige Schicht",
+      "headline": "🎯 Standard — 3 Stunden, klassische Party",
+      "intro": "Der Sweet Spot: genug Programm ohne Stress. Schicht-Appell, vier Ausbildungs-Stationen, ein echter Einsatz-Alarm in der Mitte, Kuchen, Urkundenzeremonie. Die Party, von der die Kinder am Montag in der Schule erzählen.",
+      "timeWindow": "14:00–17:00, 6 Kinder",
+      "schedule": [
+        {
+          "time": "14:00",
+          "title": "🚒 Schicht-Appell & Ankunft",
+          "description": "Beim Reinkommen zieht jedes Kind seinen Dienstausweis aus dem Helm + bekommt ein Feuerwehr-Tattoo (siehe Ritual-Block oben). Trägt sich in die Wachen-Tafel ein. Wer früh da ist, malt am Tisch ein Feuerwehr-Bild aus oder probiert den Pappkarton-Helm an. Sobald alle da sind: gemeinsamer Schichtbeginn-Spruch („Wir helfen, wo Hilfe gebraucht wird. Los geht's!\")."
+        },
+        {
+          "time": "14:25",
+          "title": "🎓 Ausbildungs-Stationen (4er-Rotation)",
+          "description": "Crew teilt sich in 2 Trupps zu je 3 Kindern. Vier Stationen, je 8 Min., dann Wechsel: Zielspritzen, Knoten lernen, Schlauch-Parcours, Erste-Hilfe an Kuscheltieren. Insgesamt 35 Min. (4×8 + Wechselzeiten). Anleitung aller Stationen unten."
+        },
+        {
+          "time": "15:00",
+          "title": "🚨 EINSATZ-ALARM",
+          "description": "DER Höhepunkt. 25 Min. — Sirene ertönt, „Notruf eingegangen\", Crew rückt aus, rettet Kuscheltiere aus dem „Wald\" (Garten oder Kinderzimmer). Anleitung unten. Wenn ein Kind das nicht vergisst, dann diesen Moment."
+        },
+        {
+          "time": "15:25",
+          "title": "🎂 Kuchen & Lösch-Wasser",
+          "description": "Feuerwehrauto-Kuchen + „Lösch-Wasser\" (Apfelschorle in roten Bechern mit „112\" beschriftet). Happy Birthday singen. 25 Min. Pause für alle."
+        },
+        {
+          "time": "15:50",
+          "title": "🫧 Schaum-Löscheinsatz",
+          "description": "Ruhigeres taktiles Spiel nach Kuchen + Aufregung. 20 Min. Rasierschaum-Wanne mit gefangenen Spielzeug-Tieren — Crew befreit sie. Anleitung unten."
+        },
+        {
+          "time": "16:15",
+          "title": "🏆 Urkunden-Zeremonie",
+          "description": "Schicht-Ende. Jedes Kind wird einzeln aufgerufen mit Funktion und einem Satz, was es heute geleistet hat („Hanna, Strahlrohrführerin — du hast bei Station 1 alle drei Brände gelöscht\"). Bekommt sein Feuerwehr-Diplom mit Funktion und Datum. 20 Min., das ist der emotionale Kern."
+        },
+        {
+          "time": "16:35",
+          "title": "🎁 Mitgebsel & Abholung",
+          "description": "Tüten verteilen: Mini-Feuerwehrauto, Tattoo-Bogen, Süßes, Diplom in der Tüte oder gerollt mit Bändchen. 25 Min. Puffer für Eltern-Trudeleien.\n\n💡 Rhythmus-Regel:\nImmer abwechseln: laut → leise → laut → leise. Stationen (gemischt) → Einsatz-Alarm (sehr laut) → Kuchen (Pause) → Schaum-Löschen (sehr ruhig) → Urkunden (feierlich-ruhig). So kippt die Stimmung nie. Der Einsatz-Alarm ist bewusst VOR dem Kuchen gelegt, damit die Aufregung sich beim Essen senkt — nicht danach, das wäre unfair für deine Nerven."
+        }
+      ],
+      "games": [
+        {
+          "name": "🎓 Ausbildungs-Stationen (4er-Rotation)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 35,
+          "minAge": 6,
+          "loudness": "mittel",
+          "effort": "mittel",
+          "material": "Material gesamt: Wasserspritzpistolen + Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 4–6 Kuscheltiere + Verbandszeug-Spielset oder Toilettenpapier-Rolle (Station 4)",
+          "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau) zu je 3 Kindern. Vier Stationen sind im Raum/Garten verteilt — je 8 Min., dann auf Pfiff Wechsel. Funktioniert auch wenn 1–2 Stationen mal hängen.",
+          "steps": [],
+          "safetyRule": null,
+          "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
+          "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
+          "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
+          "name": "🚨 EINSATZ-ALARM — Kuscheltiere aus dem Wald retten",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 6,
+          "loudness": "sehr_laut",
+          "effort": "mittel",
+          "material": "Sirenen-Sound vom Handy (YouTube „Feuerwehr Sirene 30 Sekunden\"), 8–10 Kuscheltiere, 1 Pappkarton oder Decke als „Krankenhaus\", 1 Notruf-Nachricht ausgedruckt, Stoppuhr, ggf. Wasserspritzpistolen mit (für die Story-Echtheit)",
+          "prepText": "Vorher heimlich vorbereitet: 8–10 Kuscheltiere im Garten/Kinderzimmer „verteilt\" (gefangen unter Tüchern, hinter Möbeln, unter dem Tisch). Während der Kuchen-Vorbereitung kannst du das machen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Sirene",
+              "content": "30 Sekunden vom Handy laut abspielen. Alle erschrecken kurz, das ist Teil der Show."
+            },
+            {
+              "n": 2,
+              "name": "Notruf vorlesen",
+              "content": "(Disponentin Clara liest, falls die das übernehmen will, sonst du): „Hier Leitstelle, an alle Crews — Brand im Stadtwald, Tiere sind gefangen, sofort ausrücken! 8 Tiere bestätigt vermisst.\""
+            },
+            {
+              "n": 3,
+              "name": "Helme auf, Schlauch (Wasserschlauch oder Springseil) als Crew-Verbindung greifen",
+              "content": "alle hängen sich an den Schlauch, hintereinander wie eine echte Truppe."
+            },
+            {
+              "n": 4,
+              "name": "Anrücken",
+              "content": "die Crew geht hintereinander in den „Brand-Bereich\" (Garten/Kinderzimmer), Schlauch in der Hand."
+            },
+            {
+              "n": 5,
+              "name": "Tiere finden und retten",
+              "content": "jedes gefundene Tier wird ins „Krankenhaus\" (Pappkarton mit Decke) gebracht. Sanitäterin Emma versorgt sie. Wasserretterin Nina meldet jeden Fund."
+            },
+            {
+              "n": 6,
+              "name": "Stopp bei 8 Tieren.",
+              "content": "Alle gerettet. Stoppuhr stoppen. „Crew zurück zur Wache, Bericht erstatten.\""
+            },
+            {
+              "n": 7,
+              "name": "Bericht",
+              "content": "Wer hat welches Tier gerettet? Wachleiter Max trägt's in die Wachen-Tafel ein. Crew-Foto."
+            }
+          ],
+          "safetyRule": null,
+          "ageAdjust6": "6 Tiere, gut sichtbar versteckt, kürzere Strecken. Sirene leiser.",
+          "ageAdjust8": "10 Tiere, anspruchsvollere Verstecke (im Schrank, hinter Vorhang). Bonus: Manche Tiere sind „bewusstlos\" — müssen vor dem Wegtragen erst „aufgeweckt\" werden (Tier auf den Boden, sanft schütteln, „Hörst du mich?\" rufen).",
+          "indoorTip": "Funktioniert in jeder Wohnung. Schlafzimmer + Wohnzimmer + Flur = drei „Einsatzgebiete\".",
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
+          "name": "🫧 Schaum-Löscheinsatz",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 20,
+          "minAge": 5,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "2 Dosen Rasierschaum, 1 große Plastikwanne oder Backblech, 6–8 kleine Spielzeug-Tiere, alte Tischdecke, Bürsten/Pinsel pro Kind, Lappen zum Abwischen",
+          "prepText": "Tiere in die Wanne, Rasierschaum großzügig drüber. Story: „Nach dem Großeinsatz im Wald sind noch Tiere im Schaum-Bereich gefangen. Atemschutzträgerin Mia, Sanitäterin Emma, Wasserretterin Nina — Einsatz!\" Jedes Kind hat seinen Pinsel und befreit Tiere vorsichtig.",
+          "steps": [],
+          "safetyRule": null,
+          "ageAdjust6": "Tiere nur leicht bedecken, kleinere Wanne.",
+          "ageAdjust8": "Mit verbundenen Augen ertasten („Welches Tier? Hund? Pferd? Bär?\"). Wer rät, behält.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": "Warum Rasierschaum",
+          "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten. Niemals Sahne — kippt nach 30 Min."
+        },
+        {
+          "name": "🏆 Urkunden-Zeremonie (Schichtende)",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 20,
+          "minAge": 6,
+          "loudness": null,
+          "effort": "leicht",
+          "material": "Pro Kind 1 Feuerwehr-Diplom (DIN A4 ausgedruckt, kostenlose Vorlagen z.B. auf [kribbelbunt.de](https://www.kribbelbunt.de) oder selber gestaltet — Logo, „Feuerwehr-Diplom\", Name, Funktion, Datum, Unterschrift), 1 schwarzer Stift, optional Schleife/Bändchen zum Aufrollen",
+          "prepText": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, nicht steif. Rufst jedes Kind einzeln auf mit Funktion und einem konkreten Satz, was es heute geleistet hat. Beispiele:\n\n„Hanna, Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\"\n\n„Tom, Schlauchführer — du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom.\"\n\n„Emma, Sanitäterin — du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom.\"\n\nWichtig:",
+          "steps": [],
+          "safetyRule": null,
+          "ageAdjust6": "Sätze kürzer, Funktionen einfacher zuordenbar.",
+          "ageAdjust8": "Funktion + zwei Sätze sind drin. Jedes Kind darf nach der Zeremonie eine kurze „Crew-Botschaft\" sagen, was ihm am besten gefallen hat.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        }
+      ],
+      "food": "🎂Feuerwehrauto-Kuchen1 Kastenform\n🥤„Lösch-Wasser\"3 l Apfelschorle\n🌭„Brand-Brötchen\"12 Mini-Pizzen / heiße Würstchen\n🍓Rotes Obst300 g Erdbeeren / Tomaten\n🍿Popcorn300 g\n🍭Rote Gummibärchen1 Tüte (200 g)",
+      "decoration": "🚒 Feuerwehr-Teller & BecherSet ~8 €Rot/weiß, Amazon oder DM\n🚧 Absperrband (50 m)~6 €Treppe, Türrahmen, Garten — sofortige Wache-Atmosphäre\n🎈 Rote Luftballons10 Stk. ~3 €\n📋 Wachen-Tafel (DIN A2)~1 €Plakat + Filzstift, mit Spalten Name/Funktion/Eingetreten\n⛑️ Pappkarton-Helme oder Plastik-Helme~3–8 € / Stk.1 pro Kind als Aktivitätsbasis + Deko\n📺 Sirene-Loop auf HandyKostenlosYouTube „Feuerwehr Sirene 30s\" zum Einsatz-Alarm\n\n💡 Wache-Atmosphäre in 10 Minuten:\nAbsperrband am Eingang spannen + Wachen-Tafel sichtbar an die Wand + 1 Pappkarton-Helm pro Kind auf den Tisch — fertig. Eltern, die die Kinder bringen, denken sofort „die meinen das ernst\", die Kinder spüren das. Mehr Deko macht die Party nicht besser.",
+      "giveaways": "🚒 1 Mini-Feuerwehrauto (selbst „gerettet\" beim Schaum-Löschen — emotionaler Wert)\n⛑️ 1 Pappkarton-Helm (haben sie den ganzen Tag getragen — gehört dazu)\n💫 1 Bogen Feuerwehr-Tattoos zum Mitnehmen\n🍭 1 Tüte rote Gummibärchen oder Lolli\n🏆 Feuerwehr-Diplom mit Funktion und Datum (gerollt mit Bändchen)\n\nAlles in rot-weiße Papiertüte (10 Stk. ~1–2 € bei DM/Action), beschriftet mit „Crew-Geschenk für ___\". Kosten: ~6 € pro Kind.",
+      "shoppingList": [
+        {
+          "emoji": "💧",
+          "label": "Wasserspritzpistolen (6er-Set)",
+          "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+set&tag=machsleicht-21",
+          "priceEur": 10,
+          "hasAffiliate": true
+        },
+        {
+          "emoji": "⛑️",
+          "label": "Feuerwehr-Helme Plastik (6 Stk.)",
+          "url": "https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht-21",
+          "priceEur": 25,
+          "hasAffiliate": true
+        },
+        {
+          "emoji": "🚒",
+          "label": "Mini-Feuerwehrautos (12er-Set)",
+          "url": "https://www.amazon.de/s?k=mini+feuerwehrauto+kinder+set&tag=machsleicht-21",
+          "priceEur": 8,
+          "hasAffiliate": true
+        },
+        {
+          "emoji": "💫",
+          "label": "Feuerwehr-Tattoo-Set (30+ Motive)",
+          "url": "https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true
+        },
+        {
+          "emoji": "🚧",
+          "label": "Absperrband rot/weiß (50 m)",
+          "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": true
+        },
+        {
+          "emoji": "🩹",
+          "label": "Erste-Hilfe-Spielset für Station 4",
+          "url": "https://www.amazon.de/s?k=erste+hilfe+set+kinder+spielzeug&tag=machsleicht-21",
+          "priceEur": 10,
+          "hasAffiliate": true
+        },
+        {
+          "emoji": "🪢",
+          "label": "Seilstücke + Knoten-Karte",
+          "url": null,
+          "priceEur": 3,
+          "hasAffiliate": false
+        },
+        {
+          "emoji": "🫧",
+          "label": "Rasierschaum (2 Dosen)",
+          "url": null,
+          "priceEur": 3,
+          "hasAffiliate": false
+        },
+        {
+          "emoji": "🥤",
+          "label": "Apfelschorle + rote Becher + Würstchen + Mini-Pizzen",
+          "url": null,
+          "priceEur": 14,
+          "hasAffiliate": false
+        },
+        {
+          "emoji": "🎂",
+          "label": "Backmischung Kastenform + roter Zuckerguss + Mini-Leiter aus Salzteig",
+          "url": null,
+          "priceEur": 8,
+          "hasAffiliate": false
+        },
+        {
+          "emoji": "🎈",
+          "label": "Rote Luftballons + Plakat (Wachen-Tafel)",
+          "url": null,
+          "priceEur": 4,
+          "hasAffiliate": false
+        },
+        {
+          "emoji": "📄",
+          "label": "Diplom-Vorlage + Dienstausweise + Knoten-Karte",
+          "url": null,
+          "priceEur": 0,
+          "hasAffiliate": false
+        },
+        {
+          "emoji": "🛍️",
+          "label": "Mitgebsel-Tüten + Bändchen für Diplom-Rollen",
+          "url": null,
+          "priceEur": 3,
+          "hasAffiliate": false
+        }
+      ],
+      "estimatedCostEur": 99,
+      "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
+      "savingsTip": {
+        "title": "💡 Spar-Trick — Plastik-Helme oder Pappkarton?",
+        "body": "Plastik-Helme (~25 €) sehen wertig aus, halten lang, gehen als Mitgebsel mit. Pappkarton-Helme (~3 €/Stück → 18 € für 6) reichen aber völlig — die Kinder spielen 3 Stunden damit, dann landen sie eh im Müll. Wenn du die Plastik-Variante wählst: Helme behalten und beim nächsten Geburtstag wiederverwenden, oder in der Familie weitergeben. Mit Pappkarton-Helmen liegst du bei ~92 € statt 99 €."
+      }
+    },
+    {
+      "id": "wow",
+      "label": "Wow — 3,5 Stunden, die volle Schicht",
+      "headline": "✨ Wow — 3,5 Stunden, die volle Schicht",
+      "intro": "Auf der Standard-Variante aufbauend. Theorie-Briefing wie an einer echten Wache, ein Atemschutz-Parcours mit verbundenen Augen, ein Einsatz-Alarm mit echtem Nebel, eine zweite Phase „Brandermittlung\" wie ein Feuerwehr-Krimi, und am Ende eine Foto-Ehrentafel zum Mitnehmen. Aufwand hoch, Erinnerung fürs Leben — die Party, von der die Kinder noch in 5 Jahren erzählen.",
+      "timeWindow": "13:30–17:00, 6 Kinder",
+      "schedule": [
+        {
+          "time": "13:30",
+          "title": "🚒 Schicht-Appell & Ankunft",
+          "description": "Kinder ziehen Dienstausweise, bekommen Tattoos, tragen sich in die Wachen-Tafel ein (Ritual-Block oben). Polaroid-Kamera oder Handy bereit: jedes Kind bekommt ein Crew-Foto mit Helm + Funktion gemacht. Foto kommt später an die Ehrentafel und mit nach Hause. Schichtbeginn-Spruch: „Wir helfen, wo Hilfe gebraucht wird. Los geht's!\""
+        },
+        {
+          "time": "14:00",
+          "title": "📚 Theorie-Briefing an der Wache",
+          "description": "10 Min. „Wachen-Unterweisung\" — kurz, ernsthaft, kein Schul-Vortrag. Drei Sachen: Was ist die 112 (und wann darf man sie wirklich anrufen)? Was sind Brandklassen — warum löscht man Fett-Brand NIE mit Wasser? Warum ist Rauch gefährlicher als das Feuer selbst? Anleitung unten. Klingt theoretisch, ist aber der Wow-Moment für 8-Jährige — die hören wirklich zu."
+        },
+        {
+          "time": "14:10",
+          "title": "🎓 Ausbildungs-Stationen (5er-Rotation)",
+          "description": "Zu den 4 Standard-Stationen kommt eine 5. dazu: Atemschutz-Parcours mit verbundenen Augen — durch den „verqualmten Raum\" tasten, ohne anzustoßen. Je 8 Min., dann Wechsel. Insgesamt 45 Min. Crew lernt jetzt richtig was."
+        },
+        {
+          "time": "14:55",
+          "title": "🚨 EINSATZ-ALARM mit echtem Nebel",
+          "description": "Die Sirene heult, Notruf kommt — und diesmal raucht es wirklich (Nebelmaschine im Garten oder Kinderzimmer). Crew rückt aus, rettet 8 Tiere durch den Nebel. 25 Min. — der Moment, von dem die Kinder am meisten erzählen werden. Anleitung mit Sicherheits-Hinweisen unten."
+        },
+        {
+          "time": "15:20",
+          "title": "🔍 Brandermittlung — Wer war's?",
+          "description": "2. Akt nach der Rettung. Brandermittler Jonas führt die Spurensuche an: Hinweise im „Brand-Bereich\" finden, einen Verdächtigen aus 4 Möglichkeiten überführen, Fall lösen. 25 Min. Detektiv-Modus. Anleitung unten."
+        },
+        {
+          "time": "15:45",
+          "title": "🎂 Kuchen & Lösch-Wasser",
+          "description": "Feuerwehrauto-Kuchen + „Lösch-Wasser\" + Brand-Brötchen. Happy Birthday, 25 Min. Pause, alle setzen sich. Polaroid-Fotos vom Schicht-Appell werden jetzt an die Ehrentafel gepinnt — die Kinder sehen sich selbst dort hängen."
+        },
+        {
+          "time": "16:10",
+          "title": "🫧 Schaum-Löscheinsatz",
+          "description": "Ruhiges Spiel nach Kuchen + Aufregung. 20 Min. Rasierschaum-Wanne, Tiere befreien. Wie in Standard."
+        },
+        {
+          "time": "16:30",
+          "title": "🏆 Große Urkunden-Zeremonie",
+          "description": "Schichtende. Jedes Kind wird einzeln aufgerufen: Funktion + ein Satz aus der Stationen-Phase + ein Satz aus dem Einsatz-Alarm. Bekommt Diplom + Polaroid mit Funktion auf der Rückseite + ein „Crew-Pin\" (Anstecker). 25 Min., das ist der emotionale Höhepunkt."
+        },
+        {
+          "time": "16:55",
+          "title": "🎁 Mitgebsel & Abholung",
+          "description": "Tüten + Diplom-Rolle + Polaroid + Pin. Ehrentafel als Abschiedsfoto fotografieren — Eltern können es bekommen.\n\n✨ Wow-Highlight: Der Nebel-Moment\nEine kleine Nebelmaschine (~30 €, Amazon) verwandelt deinen Garten oder das Kinderzimmer in 30 Sekunden in einen „Brandbereich\". Die Kinder sehen das, hören die Sirene, und schalten in einen anderen Modus — das ist nicht mehr „so tun als ob\", das ist ein echtes Sinneserlebnis. Sicherheits-Hinweis: Nebelfluid auf Wasserbasis (Standard), nicht ölbasiert. Maschine erst direkt vorm Einsatz starten, vorher mit Eltern absprechen falls Asthma in der Crew. Funktioniert auch indoor, aber gut lüften."
+        }
+      ],
+      "games": [
+        {
+          "name": "📚 Theorie-Briefing an der Wache",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 10,
+          "minAge": 7,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "3 vorbereitete Bilder/Karten (1× Notruf-Telefon, 1× verschiedene Feuer-Symbole für Brandklassen, 1× Rauch vor Feuer). Ein Stuhl als „Wachen-Pult\". Optional: ein Wachen-Plakat im Hintergrund (siehe Deko).",
+          "prepText": "Kinder sitzen halbkreisförmig. Du stehst vorn — wie eine Lehrerin auf einer echten Wachen-Schulung. 10 Minuten reichen, länger wird langweilig.",
+          "steps": [],
+          "safetyRule": null,
+          "ageAdjust6": "Nur Punkt 1 (Notruf 112). Brandklassen und Rauch zu komplex.",
+          "ageAdjust8": "Alle 3 Punkte. Sie können sich das merken und sind stolz drauf.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": "Warum ihr das machen solltet",
+          "whyItWorks": "Das ist die Stelle, an der die Party Bildungswert bekommt. Eltern, die ihr Kind abholen und hören „Mama, weißt du eigentlich was eine Brandklasse ist?\" — die werden euch das Geburtstag-Konzept weiterempfehlen."
+        },
+        {
+          "name": "🎓 Ausbildungs-Stationen (5er-Rotation, Wow-Erweiterung)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 45,
+          "minAge": 6,
+          "loudness": "mittel",
+          "effort": "mittel",
+          "material": "Zusätzliches Material zur Standard-Variante: 6 Augenbinden (oder Schlafmasken), 3–4 weiche Hindernisse (Kissen, Plüschtiere) für Station 5",
+          "prepText": "Stationen 1–4 wie in Standard (Zielspritzen, Knoten, Schlauch-Parcours, Erste Hilfe). Plus Station 5:",
+          "steps": [],
+          "safetyRule": "Augenbinde nur auf flachem Boden, keine scharfen Kanten in Reichweite, ein Erwachsener daneben. Hindernisse weich. Das Spiel funktioniert leise — Konzentration ist Teil des Reizes.",
+          "ageAdjust6": "Diese Station kann übersprungen werden — Augenbinden + Bewegung sind in dem Alter noch riskant. Wenn ihr es trotzdem macht: Erwachsener hält die Hand des Kindes durchgehend, sehr kurze Strecke, nur 1 weiches Hindernis.",
+          "ageAdjust8": "Volle Strecke, dazu eine „Aufgabe finden\" — z.B. ein Plüschtier als „Vermissten\" identifizieren und mitbringen.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
+          "name": "🚨 EINSATZ-ALARM mit Nebelmaschine",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 6,
+          "loudness": "sehr_laut",
+          "effort": "hoch",
+          "material": "1 Nebelmaschine (~30 € auf Amazon, Wasserbasis-Fluid dabei oder ~5 € extra), Sirenen-Sound, 8 Kuscheltiere, Pappkarton als „Krankenhaus\", Notruf-Nachricht ausgedruckt, Stoppuhr, Wasserspritzpistolen optional",
+          "prepText": "Vorbereitung 5 Min. vor dem Einsatz: Nebelmaschine im Einsatzbereich aufstellen (Garten oder Kinderzimmer mit offenem Fenster). Tiere im Bereich „verteilt\", aber gut findbar — bei Nebel sieht man eh weniger. Maschine vorgewärmt (Anleitung lesen, dauert 3–5 Min. bis betriebsbereit).",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Nebel an",
+              "content": "(10 Sek. vor Sirene). Bereich verqualmt sichtbar."
+            },
+            {
+              "n": 2,
+              "name": "Sirene",
+              "content": "30 Sek. laut."
+            },
+            {
+              "n": 3,
+              "name": "Notruf vorlesen",
+              "content": "„Hier Leitstelle — dichter Rauch im Stadtwald, 8 Tiere vermisst, Sicht stark eingeschränkt, sofort ausrücken!\""
+            },
+            {
+              "n": 4,
+              "name": "Helme auf, am Schlauch entlang",
+              "content": "(Wasserschlauch oder Springseil) — wie in Standard, aber jetzt mit echter Sichteinschränkung. Crew geht hintereinander."
+            },
+            {
+              "n": 5,
+              "name": "Tiere finden und retten",
+              "content": "Sanitäterin Emma versorgt im Krankenhaus, Wasserretterin Nina meldet jeden Fund. Die Kinder spüren, dass es schwerer ist als ohne Nebel."
+            },
+            {
+              "n": 6,
+              "name": "Stopp bei 8 Tieren.",
+              "content": "„Crew zurück zur Wache!\" Nebel ausschalten, lüften."
+            },
+            {
+              "n": 7,
+              "name": "Bericht + Fotodokumentation",
+              "content": "Wer hat welches Tier gerettet? Polaroid mit dem geretteten Tier in der Hand — kommt an die Ehrentafel."
+            }
+          ],
+          "safetyRule": null,
+          "ageAdjust6": "Wenig Nebel (kurz an, lange aus), Bereich klein, du bist sichtbar dabei.",
+          "ageAdjust8": "Volle Inszenierung. Sie genießen das Drama.",
+          "indoorTip": null,
+          "outdoorTip": "Im Garten kann der Nebel verfliegen, das ist okay — er ist 5 Min. da, das reicht. Die Erinnerung trägt.",
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
+          "name": "🔍 Brandermittlung — Wer war's?",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 25,
+          "minAge": 7,
+          "loudness": "ruhig",
+          "effort": "hoch",
+          "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
+          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler Jonas, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Briefing",
+              "content": "4 Verdächtigen-Karten zeigen, kurz vorlesen."
+            },
+            {
+              "n": 2,
+              "name": "Beweise sammeln",
+              "content": "Crew durchsucht den Brand-Bereich mit Lupe. Wer findet was? In die Fall-Akte eintragen."
+            },
+            {
+              "n": 3,
+              "name": "Diskussion",
+              "content": "alle Beweise auf den Tisch. Was bedeutet das angesengte Tuch? Wer hatte einen Handschuh? Crew diskutiert (5 Min., du moderierst)."
+            },
+            {
+              "n": 4,
+              "name": "Verdacht festlegen",
+              "content": "in der Fall-Akte ankreuzen, wer's war."
+            },
+            {
+              "n": 5,
+              "name": "Auflösung",
+              "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, weil das mit dem Theorie-Briefing über Brandklassen zusammenhängt)."
+            }
+          ],
+          "safetyRule": null,
+          "ageAdjust6": null,
+          "ageAdjust8": "Mehr Raum für eigene Hypothesen, du gibst weniger vor.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": "Tieferer Sinn",
+          "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+        },
+        {
+          "name": "🫧 Schaum-Löscheinsatz",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 20,
+          "minAge": 5,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "Wie in Standard. Rasierschaum + Spielzeug-Tiere + Wanne + Pinsel.",
+          "prepText": "Wie in Standard-Variante (siehe oben). Funktioniert nach der Brandermittlung als ruhiger Abschluss perfekt — die Kinder kommen runter, dürfen taktil arbeiten, und retten nochmal etwas. Ankerpunkt für die Stimmung vor der Urkunden-Zeremonie.",
+          "steps": [],
+          "safetyRule": null,
+          "ageAdjust6": null,
+          "ageAdjust8": null,
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
+          "name": "🏆 Große Urkunden-Zeremonie + Ehrentafel",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 25,
+          "minAge": 6,
+          "loudness": null,
+          "effort": "leicht",
+          "material": "Diplome wie in Standard + 1 Polaroid pro Kind (vom Schicht-Appell und vom Einsatz mit Tier in der Hand), 1 Crew-Pin (Anstecker, Sicherheitsnadel mit kleinem Feuerwehr-Logo, ~1,50 €/Stk. auf Amazon), 1 Plakat „Ehrentafel — Crew-Schicht vom DD.MM.YYYY\", Pinnwand-Nadeln",
+          "prepText": "Wie Standard-Zeremonie, aber mit 3 Erweiterungen:",
+          "steps": [],
+          "safetyRule": null,
+          "ageAdjust6": null,
+          "ageAdjust8": null,
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        }
+      ],
+      "food": "🎂Feuerwehrauto-Kuchen1 Kastenform + Wunderkerze\n🥤„Lösch-Wasser\"3 l Apfelschorle\n🌭„Brand-Brötchen\"14 Mini-Pizzen / Würstchen\n🍓Rotes Obst400 g Erdbeeren / Tomaten\n🍿Popcorn300 g\n🍭Rote Gummibärchen1 Tüte (200 g)\n🥨Brezeln (Crew-Snack)1 Tüte",
+      "decoration": "🚒 Feuerwehr-Teller & BecherSet ~8 €\n🚧 Absperrband (50 m)~6 €\n🎈 Rote Luftballons12 Stk. ~4 €\n📋 Wachen-Tafel + Ehrentafel-Plakat~3 €2 Plakate DIN A2\n⛑️ Plastik-Helme (gehen mit als Mitgebsel)~25 €\n📺 Sirene-Loop auf HandyKostenlos\n🌫️ Nebelmaschine~30 €Highlight-Produkt — siehe oben\n📸 Polaroid-Kamera oder Handy + Sofortdruckje nachPolaroid: ~70 € + Film. Sofortdruck: 5 €/8 Bilder bei Rossmann\n\n💡 Wow-Atmosphäre — 4 Sachen, die's machen\nWachen-Tafel + Ehrentafel + Nebelmaschine + Polaroids. Diese vier Elemente trennen „Standard plus mehr Spiele\" von „echte Wow-Erinnerung\". Du kannst die Stationen identisch zur Standard-Variante lassen — wenn diese vier laufen, bleibt die Party im Kopf. Wenn du nur eines wegnimmst: weglassen Polaroids zuerst (kann auch nachgereicht werden), dann Nebel.",
+      "giveaways": "⛑️ 1 Plastik-Feuerwehrhelm (ganzen Tag getragen — gehört dazu)\n🚒 1 Mini-Feuerwehrauto (selbst „gerettet\" beim Schaum-Einsatz)\n📌 1 Crew-Pin als Anstecker (verdient durch Schicht)\n📸 1 Polaroid mit Funktion auf der Rückseite (von der Ehrentafel)\n💫 1 Bogen Feuerwehr-Tattoos zum Mitnehmen\n🍭 1 Tüte rote Gummibärchen + Lolli\n🏆 Feuerwehr-Diplom mit Funktion und Datum (mit Bändchen gerollt)\n\nAlles in rot-weiße Papiertüte (10 Stk. ~1–2 € bei DM/Action), beschriftet mit „Crew-Geschenk für ___\". Kosten: ~12 € pro Kind (Helm-bedingt).",
+      "shoppingList": [
+        {
+          "emoji": "🌫️",
+          "label": "Nebelmaschine + Wasserfluid",
+          "url": "https://www.amazon.de/s?k=nebelmaschine+klein+party&tag=machsleicht-21",
+          "priceEur": 30,
+          "hasAffiliate": true
+        },
+        {
+          "emoji": "⛑️",
+          "label": "Feuerwehr-Helme Plastik (6 Stk.)",
+          "url": "https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht-21",
+          "priceEur": 25,
+          "hasAffiliate": true
+        },
+        {
+          "emoji": "💧",
+          "label": "Wasserspritzpistolen (6er-Set)",
+          "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+set&tag=machsleicht-21",
+          "priceEur": 10,
+          "hasAffiliate": true
+        },
+        {
+          "emoji": "📌",
+          "label": "Crew-Pins (6 Stk.)",
+          "url": "https://www.amazon.de/s?k=feuerwehr+anstecker+pin+kinder&tag=machsleicht-21",
+          "priceEur": 10,
+          "hasAffiliate": true
+        },
+        {
+          "emoji": "🚒",
+          "label": "Mini-Feuerwehrautos (12er-Set)",
+          "url": "https://www.amazon.de/s?k=mini+feuerwehrauto+kinder+set&tag=machsleicht-21",
+          "priceEur": 8,
+          "hasAffiliate": true
+        },
+        {
+          "emoji": "🚧",
+          "label": "Absperrband rot/weiß (50 m)",
+          "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": true
+        },
+        {
+          "emoji": "💫",
+          "label": "Feuerwehr-Tattoo-Set (30+ Motive)",
+          "url": "https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true
+        },
+        {
+          "emoji": "🩹",
+          "label": "Erste-Hilfe-Spielset für Station 4",
+          "url": "https://www.amazon.de/s?k=erste+hilfe+set+kinder+spielzeug&tag=machsleicht-21",
+          "priceEur": 10,
+          "hasAffiliate": true
+        },
+        {
+          "emoji": "🔍",
+          "label": "Lupe für Brandermittlung",
+          "url": "https://www.amazon.de/s?k=lupe+kinder+detektiv&tag=machsleicht-21",
+          "priceEur": 3,
+          "hasAffiliate": true
+        },
+        {
+          "emoji": "🪢",
+          "label": "Seile + Augenbinden (für Knoten + Atemschutz-Station)",
+          "url": null,
+          "priceEur": 6,
+          "hasAffiliate": false
+        },
+        {
+          "emoji": "🫧",
+          "label": "Rasierschaum (2 Dosen)",
+          "url": null,
+          "priceEur": 3,
+          "hasAffiliate": false
+        },
+        {
+          "emoji": "📸",
+          "label": "Polaroid-Film oder Sofortdruck (Rossmann/dm)",
+          "url": null,
+          "priceEur": 5,
+          "hasAffiliate": false
+        },
+        {
+          "emoji": "🥤",
+          "label": "Apfelschorle + Becher + Würstchen + Mini-Pizzen + Brezeln",
+          "url": null,
+          "priceEur": 16,
+          "hasAffiliate": false
+        },
+        {
+          "emoji": "🎂",
+          "label": "Backmischung + Zuckerguss + Wunderkerze",
+          "url": null,
+          "priceEur": 9,
+          "hasAffiliate": false
+        },
+        {
+          "emoji": "🎈",
+          "label": "Luftballons + Plakate (Wachen-Tafel + Ehrentafel)",
+          "url": null,
+          "priceEur": 5,
+          "hasAffiliate": false
+        },
+        {
+          "emoji": "📄",
+          "label": "Diplom + Dienstausweise + Verdächtigen-Karten + Fall-Akte",
+          "url": null,
+          "priceEur": 0,
+          "hasAffiliate": false
+        },
+        {
+          "emoji": "🛍️",
+          "label": "Mitgebsel-Tüten + Bändchen",
+          "url": null,
+          "priceEur": 3,
+          "hasAffiliate": false
+        }
+      ],
+      "estimatedCostEur": 159,
+      "costContext": "Geschätzte Kosten (Wow, 6 Kinder, mit Polaroid-Sofortdruck)",
+      "savingsTip": {
+        "title": "💡 Spar-Trick — wenn 159 € zu viel ist",
+        "body": "Pappkarton-Helme statt Plastik (~−18 €), keine Polaroids sondern Handy-Fotos später nachreichen (~−10 €), keine Crew-Pins (~−10 €). Damit liegst du bei ~121 € — ohne dass die Wow-Mechanik (Theorie + Nebel + Brandermittlung + Ehrentafel) verloren geht. Der Nebel und das Theorie-Briefing sind die Wow-Anker, nicht die Pins."
+      }
+    }
+  ],
+  "cakeRecipe": {
+    "intro": "Geht mit jeder Kastenform. Das Besondere ist die Form — nicht das Backen.",
+    "steps": [
+      {
+        "n": 1,
+        "content": "Rührteig in der Kastenform backen — Fertigmischung Schoko oder Vanille reicht völlig (Dr. Oetker, Kathi, whatever). Kein Mensch schmeckt den Unterschied."
+      },
+      {
+        "n": 2,
+        "content": "Komplett abkühlen lassen, dann eine kleine Scheibe oben abschneiden, damit der Kuchen plan steht. Die abgeschnittene Scheibe wird der „Fahrer-Häuschen\"-Aufsatz hinten oben."
+      },
+      {
+        "n": 3,
+        "content": "Den ganzen Kasten mit roter Glasur überziehen (Puderzucker + 3 EL Wasser + rote Lebensmittelfarbe, dick rühren). Wenn dir das zu wackelig ist: rote Marzipan-Decke aus dem Bastelladen drüber, sauber zuschneiden."
+      },
+      {
+        "n": 4,
+        "content": "Reifen aus Oreo-Keksen oder schwarzem Fondant — 4 Stück seitlich anpressen (zwei vorne, zwei hinten)."
+      },
+      {
+        "n": 5,
+        "content": "Drehleiter aus zwei Strohhalmen (oben drauf liegend, mit kleinen Querstreben aus weißen Smarties) ODER eine Mini-Leiter aus Salzteig (vorm Backen formen, separat 10 Min. mitbacken, oben aufkleben mit Glasur). Zwei Versionen, beide funktionieren."
+      },
+      {
+        "n": 6,
+        "content": "„112\" mit weißer Glasur oder weißem Zuckerstift auf die Seite schreiben. Optional: blaues Blaulicht aus Smartie oder Blaubeere oben drauf."
+      },
+      {
+        "n": 7,
+        "content": "Wow-Variante: Wunderkerze in den Kuchen stecken, beim „Happy Birthday\" anzünden. Funktioniert wie ein Drehleiter-Highlight."
+      }
+    ],
+    "meta": {
+      "aufwand": "60 Min. inkl. Backen und Deko",
+      "kosten": "~7 €",
+      "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. Lebensmittelfarben sind in der Regel okay, aber bei Lebensmittelfarben-Allergien Marzipan-Variante nehmen"
+    },
+    "tips": [
+      {
+        "title": "🎂 Keine Lust zu backen?",
+        "body": "Fertigen Schoko-Kasten beim Bäcker kaufen, rote Glasur drüber, Oreo-Reifen ankleben, „112\" mit weißem Zuckerstift draufschreiben. Sieht aus wie gewollt, dauert 10 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.\""
+      },
+      {
+        "title": "🚒 Pinterest-Inspiration ohne Pinterest-Aufwand",
+        "body": "Wenn du im Netz nach „Feuerwehr-Kuchen\" suchst, stößt du auf 4-stündige Fondant-Projekte mit fünf Schichten und beweglichen Schiebern. Ignoriere das. Kinder wollen einen roten Kasten mit Reifen und „112\" drauf — fertig. Das Gefühl „der Kuchen sieht aus wie ein Feuerwehrauto\" entsteht durch Form + Farbe + Symbol, nicht durch Detail-Treue. Spar dir die 4 Stunden für Spielvorbereitung."
+      }
+    ]
+  },
+  "parentTips": {
+    "structured": [
+      {
+        "topic": "🧠 Was die Kinder wirklich mitnehmen — der Bildungswert dieser Party",
+        "detail": "Kinder, die hier waren, gehen mit drei konkreten Brandschutz-Skills nach Hause: 1. Sie wissen, dass die 112 die richtige Notrufnummer ist, und sie kennen die 5 W (Wer / Wo / Was / Wie viele / Warten). 2. Sie wissen, dass Wasser nicht alles löscht — Fett-Brand wird mit Deckel erstickt, nicht mit Wasser bespritzt. 3. Sie wissen, dass im Brandfall Rauch das Hauptproblem ist und dass tief am Boden die sauberste Luft ist. Das sind keine Marketing-Versprechen — das passiert beiläufig in den Spielen und im Theorie-Briefing der Wow-Variante. Die Deutsche Brandschutzerziehung empfiehlt diese Inhalte ab 5 Jahren. Wir packen sie hier in eine Geburtstagsparty, ohne dass es nach Schulstunde aussieht."
+      },
+      {
+        "topic": "🚨 Allergien vorher abfragen",
+        "detail": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten). In die Einladung schreiben: „Hat dein Kind Allergien oder Unverträglichkeiten?\" Apfelschorle, Popcorn und Brezeln sind fast immer safe. Bei der Wow-Variante zusätzlich Asthma abfragen — die Nebelmaschine ist für Kinder ohne Asthma unproblematisch (Wasserbasis-Fluid), aber bei Asthma kann sie triggern."
+      },
+      {
+        "topic": "📋 Plan B bei Regen",
+        "detail": "Alle Spiele in dieser Vorlage funktionieren auch drinnen. Zielspritzen ins Bad (Wanne!), Ausbildungs-Stationen ins Wohnzimmer + Flur, Einsatz-Alarm durch alle Zimmer der Wohnung. Wenn du draußen planst: Räume innen schon vorab freihalten, falls's umkippt. Nie ohne Plan B."
+      },
+      {
+        "topic": "📱 Partyseite statt WhatsApp-Chaos",
+        "detail": "Kein Eltern-Gruppen-Chaos mehr. Erstelle eine [Partyseite auf party.machsleicht.de](https://party.machsleicht.de) mit Datum, Uhrzeit, Treffpunkt und Wunschliste — verschicke nur einen Link. Eltern können sich eintragen, Geschenke abstimmen, Rückfragen stellen. Kostet nichts."
+      },
+      {
+        "topic": "👥 Ab 6 Kindern: 1 Helfer dazu",
+        "detail": "Bis 5 Kinder schaffst du eine Standard-Party allein. Bei 6+ brauchst du Unterstützung — besonders für die Stationen-Rotation (4 Stationen parallel = 4 Augenpaare hilfreich) und beim Einsatz-Alarm (jemand bedient die Nebelmaschine, jemand begleitet die Crew). Oma, andere Elternteile, oder eine Teenager-Nachbarin (10 € für 3 Stunden) retten dir den Tag.\n\n⏰ Abholzeit vorher klären\nIn diesem Alter können Eltern kurz abgesetzt werden — müssen aber telefonisch erreichbar sein. Schreib in die Einladung: „Abholung 17:00 Uhr — der nächste Trupp übernimmt.\" Kommt locker an, vermeidet aber das Problem, dass um 17:30 noch drei Kinder da sind und du schon alles abgebaut hast."
+      },
+      {
+        "topic": "🔇 Nachbarn & Lautstärke",
+        "detail": "Ehrlich: Sirene + 6 spritzende Kinder + Einsatz-Alarm ist laut. Wenn du in einer Mietwohnung bist, kurz vorab beim Nachbarn klingeln und sagen: „Sonntag von 14 bis 17 wird's lauter, mein Sohn wird 7.\" Das kostet 30 Sekunden, kostet vielleicht eine Tafel Schokolade in der Nachbarwohnung, und erspart dir Stress mitten in der Sirene-Phase. Sirene draußen besser am späten Nachmittag, nicht abends nach 19:00."
+      }
+    ],
+    "educationalValue": "Kinder, die hier waren, gehen mit drei konkreten Brandschutz-Skills nach Hause: 1. Sie wissen, dass die 112 die richtige Notrufnummer ist, und sie kennen die 5 W (Wer / Wo / Was / Wie viele / Warten). 2. Sie wissen, dass Wasser nicht alles löscht — Fett-Brand wird mit Deckel erstickt, nicht mit Wasser bespritzt. 3. Sie wissen, dass im Brandfall Rauch das Hauptproblem ist und dass tief am Boden die sauberste Luft ist. Das sind keine Marketing-Versprechen — das passiert beiläufig in den Spielen und im Theorie-Briefing der Wow-Variante. Die Deutsche Brandschutzerziehung empfiehlt diese Inhalte ab 5 Jahren. Wir packen sie hier in eine Geburtstagsparty, ohne dass es nach Schulstunde aussieht."
+  },
+  "invitationTemplate": "Eine persönliche Feuerwehr-Einladung macht schon vor der Party Lust auf den Tag. Auf machsleicht kannst du deine Einladung kostenlos in 3 Minuten erstellen — mit „Notruf eingegangen\"-Optik, Datum, Treffpunkt, Crew-Funktionen und Allergien-Abfrage. PDF oder digitaler Link zum Verschicken.\n[🚒 Feuerwehr-Einladung erstellen →](/einladung/feuerwehr/)\n\n[📱 Per WhatsApp teilen](https://wa.me/?text=%F0%9F%9A%92%20Feuerwehr-Kindergeburtstag%20f%C3%BCr%206%E2%80%938-J%C3%A4hrige%20planen%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Schicht-Appell%2C%20Stationen%2C%20Einsatz-Alarm%20und%20Urkunde%3A%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Ffeuerwehr-6-8-jahre)",
+  "faq": [
+    {
+      "q": "Wie lange sollte ein Feuerwehr-Geburtstag für 6–8-Jährige dauern?",
+      "a": "2,5 bis 3 Stunden sind ideal. Kürzer ist besser als länger — nach 3 Stunden kippt die Stimmung bei den meisten Kindern. Die Minimal-Variante (2 Stunden) funktioniert auch perfekt, besonders wenn du wenig Vorbereitungszeit hast. Die Wow-Variante mit Theorie-Briefing, Nebel-Einsatz und Brandermittlung braucht 3,5 Stunden, weil die Zeremonie und der Einsatz-Alarm Zeit verdienen."
+    },
+    {
+      "q": "Wie viele Kinder sollte man zum Feuerwehr-Geburtstag einladen?",
+      "a": "Faustregel: Alter des Kindes + 1. Also 7–9 Kinder bei einem 7-Jährigen. Ab 8 Kindern brauchst du definitiv einen zweiten Erwachsenen als Helfer — besonders bei der Stationen-Rotation und beim Einsatz-Alarm. Alle Mengenangaben auf dieser Seite sind für 6 Kinder berechnet. Die 12 Crew-Funktionen reichen für bis zu 10 Kinder + Reserve."
+    },
+    {
+      "q": "Was kostet ein Feuerwehr-Geburtstag?",
+      "a": "Zwischen 53 € (Minimal) und 159 € (Wow inkl. Polaroid-Sofortdruck) für 6 Kinder — je nachdem, wie viel Aufwand du betreiben willst. Die Standard-Variante liegt bei ca. 99 € und bietet das beste Verhältnis aus Aufwand und Ergebnis. Feuerwehr ist materiell-anspruchsvoller als andere Mottos (Spritzpistolen, Helme, Absperrband), aber vieles ist wiederverwendbar oder als Mitgebsel im Preis enthalten. Spar-Trick: Pappkarton-Helme statt Plastik (~−18 €) und keine Polaroids drücken die Wow-Variante auf ~121 €."
+    },
+    {
+      "q": "Funktioniert das Feuerwehr-Motto in gemischten Gruppen — auch für Mädchen?",
+      "a": "Ja, und zwar besser als die meisten denken. Die 12 Crew-Funktionen sind bewusst gemischt-geschlechtlich besetzt: Funkerin, Sanitäterin, Disponentin, Strahlrohrführerin, Atemschutzträgerin, Wasserretterin sind weibliche Rollen, die zur echten Feuerwehr-Realität gehören. Mädchen, die zum Schicht-Appell kommen, ziehen ihren Dienstausweis und werden Crew-Mitglied — kein Klischee, keine Sonderrolle. Funktioniert in jeder Konstellation: reine Jungen-Crews, reine Mädchen-Crews, gemischte Crews. Was nicht funktioniert: das Motto „Mädchen-tauglich\" zu machen durch rosa Glitzer-Helme. Lass es so wie es ist — die Kinder spüren Authentizität."
+    }
+  ],
+  "preparationWeeks": {
+    "_status": "TODO_PHASE_B",
+    "_note": "Datums-getriebener Wochenplan ist im Quell-HTML nicht vorhanden. Muss in Phase B geschrieben werden."
+  },
+  "sosScenarios": {
+    "_status": "TODO_PHASE_B",
+    "_note": "SOS-Pannen-Antworten sind im Quell-HTML nicht vorhanden. Müssen in Phase B geschrieben werden."
+  }
+}
