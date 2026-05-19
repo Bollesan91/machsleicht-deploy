@@ -1,0 +1,455 @@
+{
+  "preparationWeeks": {
+    "minus4Weeks": {
+      "headline": "4 Wochen vorher — Grundgerüst stellen",
+      "items": [
+        {
+          "icon": "📅",
+          "title": "Datum + Uhrzeit + Treffpunkt fixieren",
+          "detail": "Samstag 14–17 Uhr oder 15–18 Uhr — 3-4h sind bei 9-12 realistisch + gewünscht. Treffpunkt entweder Haustür oder ‚Wache' (vorher dekoriert). Drinnen-Plan-B für Chemie-Labor mental haben."
+        },
+        {
+          "icon": "👥",
+          "title": "Gästeliste festzurren — 7–8 Kinder",
+          "detail": "7-8 ist Sweet-Spot für 9-12 Einhorn: zwei Teams beim Escape-Challenge möglich, kein Wartestau beim Schmuck-Workshop."
+        },
+        {
+          "icon": "👨‍👩",
+          "title": "Eltern-Politik kommunizieren",
+          "detail": "In Wow: Eltern setzen ab + kommen XX:XX wieder. In Standard: ‚Eltern können absetzen oder bleiben'. 9-12 wollen ‚echte' Party ohne Eltern — Code-Names + Chemie-Labor sind nicht für Eltern-Show."
+        },
+        {
+          "icon": "💶",
+          "title": "Variante wählen: Minimal / Standard / Wow",
+          "detail": "Minimal 55€ (Chemie + Schmuck), Standard 82€ (+ Escape-Challenge + Parcours + UV-Setup), Wow 118€ (+ Kurzfilm + Kristall-Zucht + Schatztruhe + Nebelmaschine optional). Entscheidung jetzt."
+        },
+        {
+          "icon": "✉️",
+          "title": "Einladungen rausschicken — kindgerecht-mythologisch",
+          "detail": "Bei 9-12 kann das Kind selbst Einladungen mit Wachssiegel-Sticker verteilen — ‚Initiations-Brief'. Pflicht im Text: Allergie-Abfrage (Pizza-Beläge!). RSVP-Link auf party.machsleicht.de."
+        }
+      ]
+    },
+    "minus2Weeks": {
+      "headline": "2 Wochen vorher — Logistik festziehen",
+      "items": [
+        {
+          "icon": "📋",
+          "title": "RSVPs einsammeln + Liste schließen",
+          "detail": "Bei 9-12 antworten Eltern meist schneller — Kindergeburtstag ist Routine. party.machsleicht.de zeigt den Stand."
+        },
+        {
+          "icon": "🍕",
+          "title": "Pizza-Brötchen-Plan + Allergien-Check",
+          "detail": "Bei 8 Kindern: 16 Pizza-Brötchen (2 pro Kind). Bei Wow zusätzlich Bowle (alkoholfrei, mit Saft + Eiswürfeln). Allergien: Käse, Gluten, Nüsse — Liste am Party-Tag griffbereit."
+        },
+        {
+          "icon": "🔬",
+          "title": "Chemie-Labor-Plot ausarbeiten",
+          "detail": "Rotkohl-Saft + Essig (rot) / Natron (blau) / Waschsoda (grün) als Demo. Bei Wow + Escape: Code-Hinweise auf UV-Pergament, Kristall-Zucht-Wachstum-Timeline kalkulieren (24h Vorlauf!)."
+        },
+        {
+          "icon": "📦",
+          "title": "Bestellliste finalisieren",
+          "detail": "Perlen-Set + Charms + Metallic-Tattoos bei Amazon, Rotkohl + Chemie-Zutaten + Pizza-Brötchen im Supermarkt, bei Wow zusätzlich Kristall-Zucht-Set + UV-Stift + Schatztruhe (Schuhkarton aus Vorrat)."
+        }
+      ]
+    },
+    "minus1Week": {
+      "headline": "1 Woche vorher — bestellen, drucken, vorwarnen",
+      "items": [
+        {
+          "icon": "🛒",
+          "title": "Amazon-Bestellung JETZT raus",
+          "detail": "Lieferzeit 2–5 Tage. Perlen-Set (~12€), Charms (~6€), Metallic-Tattoos (~5€). Bei Standard zusätzlich UV-Lampe (~12€) + UV-Stift (~7€). Bei Wow Kristall-Zucht-Set (~12€) — braucht 24h Wachstum, also rechtzeitig bestellen."
+        },
+        {
+          "icon": "🖨️",
+          "title": "Code-Namen + Escape-Karten drucken",
+          "detail": "12 Code-Namen auf Pergament-Papier ausdrucken (Wachssiegel-Sticker drauf). Bei Wow: Escape-Challenge-Hinweise mit UV-Stift schreiben, Wachs-Siegel als Verschluss."
+        },
+        {
+          "icon": "🔔",
+          "title": "Nachbarn vorwarnen",
+          "detail": "‚Sonntag 14-17 Uhr wird's bei uns lauter, mein Sohn wird 11.' Bei Wow Kurzfilm-Drehen mit Stimmen: ‚Wir filmen ein bisschen, alles harmlos.' Spart Erklärungs-Notfälle."
+        },
+        {
+          "icon": "🌧️",
+          "title": "Plan B Regen mental durchspielen",
+          "detail": "Chemie-Labor + Schmuck-Workshop + Escape-Challenge sind alle drinnen sowieso geeignet. Magischer Parcours ins Wohnzimmer + Flur. Räume freihalten diese Woche."
+        },
+        {
+          "icon": "🔮",
+          "title": "Wow-Setup: Kristall-Zucht starten",
+          "detail": "Kristalle wachsen 24h. Setup am Tag vor der Party: Kalium-Aluminium-Sulfat-Lösung + Schnur, über Nacht im Glas wachsen lassen. Sieht bei Party-Beginn ‚magisch' aus."
+        }
+      ]
+    },
+    "minus2Days": {
+      "headline": "2 Tage vorher — backen, briefen, basteln",
+      "items": [
+        {
+          "icon": "🎂",
+          "title": "Regenbogen-Galaxy-Kuchen backen — oder Plan B",
+          "detail": "Mirror-Glaze braucht 2h Vorlauf + Erkalten. Wenn Zeit/Nerven: Mischung + Mirror-Glaze. Wenn nicht: Sahnetorte vom Bäcker (~8€), Lebensmittelfarbe-Streusel drauf. Bei Wow: Wunderkerze + LED-Kerzen."
+        },
+        {
+          "icon": "🗣️",
+          "title": "Code-Names + Wachssiegel-Umschläge final",
+          "detail": "Pergament-Code-Karten in Umschläge, Wachssiegel-Sticker drauf. Pro Kind 1 Umschlag, gestaffelt nach Ankunfts-Reihenfolge. Bei Wow: Escape-Hinweis-Karten zusätzlich vorbereiten."
+        },
+        {
+          "icon": "🪧",
+          "title": "Wache-Tafel-Plakat / Initiations-Plakat",
+          "detail": "DIN A3: ‚EINHORN-INITIATION [Name]' oben, darunter Code-Namen-Spalte für Eintragung beim Ankommen. Mit dickem Edding, nicht filigran."
+        },
+        {
+          "icon": "🎁",
+          "title": "Goodie-Bags packen — kindgerecht für 9-12",
+          "detail": "Pro Kind: 1 selbst gemachtes Perlen-Armband (im Schmuck-Workshop), 3-5 Metallic-Tattoos, ein Charm, kleine Süßigkeiten. KEIN Gummibärchen-Berg — 9-12 schätzt Detail-Qualität."
+        },
+        {
+          "icon": "🔒",
+          "title": "Wow-Setup: Escape-Schatztruhe vorbereiten",
+          "detail": "Schuhkarton-Truhe mit Zahlenschloss, drinnen: Charms-Vorrat als Schatz + Wunderkerze + Auflösungs-Karte. Code-Hinweise an verschiedenen Stationen verstecken (5-6 Phasen)."
+        }
+      ]
+    },
+    "minus1Day": {
+      "headline": "1 Tag vorher — Deko, Test, letzte Schritte",
+      "items": [
+        {
+          "icon": "🌌",
+          "title": "Galaxy-Kuchen verzieren",
+          "detail": "Mirror-Glaze in 3 Farben (Lila/Blau/Pink) gleichmäßig drüber gießen. Mit Edding ‚Sterne' aufzeichnen oder essbaren Glitzer. Über Nacht im Kühlschrank fest werden lassen."
+        },
+        {
+          "icon": "🔬",
+          "title": "Chemie-Labor-Stationen aufbauen",
+          "detail": "Rotkohl-Saft kochen (3 EL Rotkohl in heißem Wasser), in Schälchen abfüllen. Essig + Natron + Waschsoda separat aufstellen. Bei Wow: Kristalle aus Glas nehmen, in Lupe-Karton-Diorama platzieren."
+        },
+        {
+          "icon": "🚧",
+          "title": "Tisch + Wache-Pult dekorieren",
+          "detail": "Metallic-Ballons + Lichterkette aufhängen, Wache-Tafel an Wand, Wachssiegel-Umschläge sortiert. Bei Wow zusätzlich LED-Kerzen + UV-Hinweis-Karten an Escape-Stationen."
+        },
+        {
+          "icon": "🔊",
+          "title": "Musik + Bluetooth-Box testen",
+          "detail": "Spotify ‚Mystische Musik' oder ‚Fantasy Soundtrack' Playlist bereit. Bei Wow Kurzfilm-Setup: Smartphone als Kamera + Stativ + Musik-Sound-Source separat."
+        },
+        {
+          "icon": "🌫️",
+          "title": "Wow-Setup: Nebelmaschine + UV-Lampe testen",
+          "detail": "Nebelmaschine 8-10 Min vorwärmen am Tag X. UV-Lampe auf Batterie checken — UV-Hinweise auf Pergament leuchten sichtbar? Wenn nicht: stärkere UV-Stifte nachkaufen."
+        }
+      ]
+    },
+    "dayOf": {
+      "headline": "Tag X — durchziehen, atmen, feiern",
+      "items": [
+        {
+          "icon": "⏰",
+          "title": "60 Min vor Ankunft: Stationen aufbauen",
+          "detail": "Chemie-Labor + Schmuck-Workshop-Tische, Pizza-Brötchen vorbereiten, Limo + Obst kühlen. Bei Wow: Kurzfilm-Setup + Escape-Schatztruhe im finalen Versteck."
+        },
+        {
+          "icon": "🎯",
+          "title": "30 Min vor Ankunft: Escape-Setup final",
+          "detail": "Code-Hinweise an Stationen, Schatztruhe geheim, Pergament-Karten im Wache-Pult. Bei Wow: Kristalle prominent platziert (Highlight beim Eintreten)."
+        },
+        {
+          "icon": "🎯",
+          "title": "15 Min vor Ankunft: Audio + Beleuchtung",
+          "detail": "Bluetooth-Box an, Fantasy-Playlist startet leise, Lichterkette + LED-Kerzen an, Wow-Nebelmaschine vorwärmen. Code-Karten-Umschläge am Eingang."
+        },
+        {
+          "icon": "🫁",
+          "title": "5 Min vor Ankunft: durchatmen",
+          "detail": "Klo, Wasser, einmal tief Luft holen. Bei 9-12 wirst du die Party brauchen-tragen — sie sind selbstständig genug. Handy auf lautlos außer für Eltern-Anrufe."
+        },
+        {
+          "icon": "📜",
+          "title": "Ankunft: Initiations-Brief + Code-Name",
+          "detail": "Jedes Kind bekommt einen Wachssiegel-Umschlag, öffnet ihn = sein Code-Name. Metallic-Tattoo auf Handrücken als ‚Initiation-Markierung'. Eintrag in Wache-Tafel. Dann sofort zum ersten Programmpunkt."
+        }
+      ]
+    }
+  },
+  "sosScenarios": {
+    "regen": {
+      "icon": "🌧️",
+      "label": "Regen — alles draußen geplant",
+      "headline": "Chemie + Schmuck sind drinnen sowieso — Parcours ins Wohnzimmer.",
+      "steps": [
+        "Magischer Parcours ins Wohnzimmer + Flur verlegen (Kissen-Hindernisse, Sofa-Tunnel).",
+        "Chemie-Labor + Schmuck-Workshop sind drinnen sowieso geplant.",
+        "Bei Wow Escape-Challenge: Stationen ins Wohnzimmer + Bad + Schlafzimmer verteilen.",
+        "Pufferzeit füllen mit Kurzfilm-Aufnahmen (Wow) oder Code-Name-Vorstellungen."
+      ],
+      "fallback": "Wenn Räume zu klein: Programm abkürzen — Chemie + Schmuck + Pizza reicht für 2h Mega-Wow.",
+      "tone": "praktisch"
+    },
+    "weniger_kinder_als_erwartet": {
+      "icon": "👥",
+      "label": "Weniger Kinder als erwartet (2 fehlen)",
+      "headline": "Teams kompakter — kein Wartestau, mehr Aktion pro Kind.",
+      "steps": [
+        "Schmuck-Workshop: mehr Material pro Kind, ausführlichere Armband-Kreationen.",
+        "Chemie-Labor: jeder bekommt eigene Mini-Reagenzgläser-Set statt Demos.",
+        "Bei Wow Escape: Teams auf 1-2 reduzieren oder als Solo-Challenge umlabeln.",
+        "Pufferzeit füllen mit zweiter Chemie-Runde oder Kurzfilm-Improvisation."
+      ],
+      "fallback": "Wenn Stimmung kippt: Kuchen-Zeremonie + Wache-Foto + Goodie-Verteilung ausbauen.",
+      "tone": "ruhig"
+    },
+    "mehr_kinder_als_erwartet": {
+      "icon": "🚨",
+      "label": "Mehr Kinder als erwartet (Geschwister-Boom)",
+      "headline": "Stations-Rotation einführen — alle bekommen Chemie-Demo.",
+      "steps": [
+        "Crew in 3 Teams splitten: Team A startet Chemie, Team B Schmuck, Team C wartet/Snack.",
+        "Tattoos + Code-Namen verteilen sofort — Geschwister-Kinder NICHT leer ausgehen lassen.",
+        "Pizza-Brötchen nachbestellen lassen (Eltern haben Auto), Bowle aufstocken.",
+        "Schmuck-Material aufstocken: zusätzliche Perlen aus Bastel-Vorrat oder Fashion-Tape.",
+        "Bei Wow Escape: Teams auf 3-4 vergrößern, jedes Team mit eigenem Captain."
+      ],
+      "fallback": "Keine Verstärkung erreichbar? Schmuck-Workshop strecken (45 Min), Chemie als Demo + Picknick.",
+      "tone": "praktisch"
+    },
+    "kind_will_nicht_mitmachen": {
+      "icon": "🤷",
+      "label": "Ein Kind will nicht mitmachen",
+      "headline": "Off-Action-Rolle: Foto-Reporter oder Code-Namen-Sprecher.",
+      "steps": [
+        "Rolle anbieten: ‚Du bist Foto-Reporter — du dokumentierst die Initiations-Zeremonie.'",
+        "Alternative: Code-Namen-Vorleser bei Ankunft (kontrolliert Wachssiegel-Öffnung).",
+        "Tattoo nicht auf Hand? Auf den Umschlag kleben oder als ‚Mitgliedsausweis' ans Bändchen.",
+        "Sitzplatz mit Limo + Brötchen am Wache-Pult — Beobachter-Posten mit Funktion."
+      ],
+      "fallback": "Bleibt komplett raus? Buch + Decke + Limo in die Ecke. Bei 9-12 oft nach 30 Min selbst Einsteigen — Chemie zieht.",
+      "tone": "ruhig"
+    },
+    "kuchen_misslungen": {
+      "icon": "🎂",
+      "label": "Kuchen ist misslungen",
+      "headline": "Bäcker-Hack: weißer Boden + Mirror-Glaze + Streusel = 15 Min.",
+      "steps": [
+        "Weißen Boden beim Bäcker holen (~6-8€) — Sahne-Boden oder Biskuit.",
+        "Mirror-Glaze fertig aus Tube (Tortenguss-Section, ~3€) in 2 Farben.",
+        "Essbare Glitzer-Sterne + Smarties als Galaxy-Streuung obendrauf.",
+        "Bei Wow: Wunderkerze obendrauf, LED-Kerzen drumherum für Magie-Effekt."
+      ],
+      "fallback": "Bäcker zu? Stückkuchen vom Discounter mit Mirror-Glaze Pulver übergossen + Glitzer. Bei 9-12 funktioniert humor: ‚Tarn-Kuchen, magisch verändert.'",
+      "tone": "motivierend"
+    },
+    "spielzeug_kaputt_oder_fehlt": {
+      "icon": "🔧",
+      "label": "Spielzeug kaputt oder vergessen",
+      "headline": "Improvisieren — bei 9-12 wird's eh als Challenge gefeiert.",
+      "steps": [
+        "Perlen-Set fehlt? Pasta-Stücke + Faden + Acryl-Farbe = DIY-Schmuck-Workshop.",
+        "UV-Lampe leer? Hinweise mit Bunt-Marker normal sichtbar machen, ‚UV war nur Effekt'.",
+        "Kristall-Zucht-Set vergessen? Improvisations-Story: ‚Die Kristalle sind noch im magischen Kammer-Wachstum.'",
+        "Chemie-Zutaten weg? Wasser + Lebensmittelfarbe + Essig = Mini-Vulkan reicht für Demo."
+      ],
+      "fallback": "Total katastrophal? Schmuck-Workshop + Code-Name-Zeremonie + Goodie-Verteilung als Hauptprogramm.",
+      "tone": "praktisch"
+    },
+    "ein_kind_weint": {
+      "icon": "😢",
+      "label": "Ein Kind weint",
+      "headline": "Bei 9-12 ist Weinen selten — meist Streit oder Frust.",
+      "steps": [
+        "Kind kurz aus Gruppe nehmen, fragen was los ist — bei 9-12 kommunizieren sie meistens.",
+        "Bei Streit: anderes Kind dazuholen, 2-3 Min Mediation reicht oft.",
+        "Bei Frust beim Chemie-Experiment: separate Demo-Runde mit Erfolgsgarantie.",
+        "Limo + Pizza-Brötchen + 5 Min Pause am Wache-Pult.",
+        "Wenn Heimweh-Verdacht: Eltern anrufen, kurz absprechen."
+      ],
+      "fallback": "Geht nicht mehr? Eltern abholen lassen — Goodie-Bag mitgeben, Foto-Runde noch machen wenn möglich.",
+      "tone": "ruhig"
+    },
+    "eltern_kommen_frueh": {
+      "icon": "🚪",
+      "label": "Eltern stehen 30 Min zu früh vor der Tür",
+      "headline": "Übergang einleiten — ‚Initiations-Zeremonie in 10 Min'.",
+      "steps": [
+        "Eltern in den Flur bitten, Wasser/Limo anbieten — nicht ins Wohnzimmer.",
+        "Crew durchsagen: ‚Achtung Initiations-Zeremonie in 10 Min — alle ans Wache-Pult!'",
+        "Code-Namen-Aufruf + Tattoo-Bestätigung + Foto am Wache-Pult.",
+        "Bei Wow: Kristall-Übergabe + Mirror-Glaze-Kuchen anschneiden + Wunderkerze.",
+        "Goodie-Bags + selbst gemachte Armbänder in die Hand drücken, kurze Tür-Verabschiedung."
+      ],
+      "fallback": "Chaotisch? Mitgebsel-Tüten in den Flur, jedes Kind nimmt eine im Rausgehen, Abschied auf der Treppe.",
+      "tone": "praktisch"
+    }
+  },
+  "shoppingListCategories": {
+    "minimal": [
+      {
+        "label": "Perlen-Set mit Buchstaben",
+        "category": "pflicht",
+        "reasoning": "Variant-Defining für Schmuck-Workshop — eines von zwei Minimal-Aktivitäten."
+      },
+      {
+        "label": "Einhorn-Charms (20 Stk.)",
+        "category": "sinnvoll",
+        "reasoning": "Anhänger für Schmuck-Workshop, aber Perlen-only-Armbänder gehen auch — nicht zwingend."
+      },
+      {
+        "label": "Metallic-Tattoos (Gold/Silber)",
+        "category": "pflicht",
+        "reasoning": "Initiations-Markierung für Code-Name-Ritual — Variant-übergreifend Pflicht."
+      },
+      {
+        "label": "Rotkohl + Essig + Natron + Waschsoda",
+        "category": "pflicht",
+        "reasoning": "Variant-Defining für Chemie-Labor — eines von zwei Minimal-Spielen."
+      },
+      {
+        "label": "Pizza-Brötchen + Limo + Obst + Popcorn",
+        "category": "sinnvoll",
+        "reasoning": "Premium-Verpflegung für 9-12 Party; Limo + Snacks aus Vorrat trägt 3h Programm auch. Pizza ist Highlight, kein Showstopper."
+      },
+      {
+        "label": "Backmischung + Mirror Glaze + Lebensmittelfarbe",
+        "category": "pflicht",
+        "reasoning": "Regenbogen-Galaxy-Kuchen motto-zentral."
+      },
+      {
+        "label": "Kraftpapier-Tüten + Süßigkeiten",
+        "category": "sinnvoll",
+        "reasoning": "Goodie-Verpackung, Süßigkeiten als Beilage — Tüten aus Haushalt möglich."
+      }
+    ],
+    "standard": [
+      {
+        "label": "Perlen-Set mit Buchstaben",
+        "category": "pflicht",
+        "reasoning": "Konsistent — Schmuck-Workshop."
+      },
+      {
+        "label": "Einhorn-Charms (20 Stk.)",
+        "category": "sinnvoll",
+        "reasoning": "Konsistent zu Minimal — Anhänger-Beilage, Perlen-only geht auch."
+      },
+      {
+        "label": "Metallic-Tattoos",
+        "category": "pflicht",
+        "reasoning": "Konsistent — Initiations-Markierung."
+      },
+      {
+        "label": "UV-Taschenlampe (optional)",
+        "category": "pflicht",
+        "reasoning": "Variant-Defining für Escape-Challenge in Standard — ohne UV kein Geheimschrift-Effekt."
+      },
+      {
+        "label": "UV-Stift (optional)",
+        "category": "sinnvoll",
+        "reasoning": "Bei vorhandener UV-Lampe + Bunt-Marker-Plan-B kann UV-Geheimschrift improvisiert werden — nicht zwingend."
+      },
+      {
+        "label": "Zahlenschloss (oder vorhandenes Fahrradschloss)",
+        "category": "habIchVielleicht",
+        "reasoning": "Explizit ‚oder vorhandenes' — Fahrradschloss aus Garage tut's."
+      },
+      {
+        "label": "Metallic-Ballons + Lichterkette",
+        "category": "sinnvoll",
+        "reasoning": "Atmosphäre-Premium für Initiations-Stimmung, aber funktional verzichtbar."
+      },
+      {
+        "label": "Rotkohl + Chemie-Zutaten",
+        "category": "pflicht",
+        "reasoning": "Konsistent — Chemie-Labor bleibt Kern-Spiel."
+      },
+      {
+        "label": "Pizza-Brötchen + Limo + Obst + Snacks",
+        "category": "pflicht",
+        "reasoning": "Konsistent — Verpflegung."
+      },
+      {
+        "label": "Backmischung + Mirror Glaze + Deko",
+        "category": "pflicht",
+        "reasoning": "Konsistent — Kuchen-Pflicht."
+      }
+    ],
+    "wow": [
+      {
+        "label": "Perlen-Set mit Buchstaben",
+        "category": "pflicht",
+        "reasoning": "Konsistent — Schmuck-Workshop."
+      },
+      {
+        "label": "Einhorn-Charms (20 Stk.)",
+        "category": "pflicht",
+        "reasoning": "Konsistent."
+      },
+      {
+        "label": "Metallic-Tattoos",
+        "category": "pflicht",
+        "reasoning": "Konsistent — Initiations-Markierung."
+      },
+      {
+        "label": "UV-Taschenlampe",
+        "category": "sinnvoll",
+        "reasoning": "In Wow ist Kurzfilm + Kristall-Zucht der Variant-Defining-Layer; UV-Escape ist Carryover aus Standard, nicht zentral mehr."
+      },
+      {
+        "label": "UV-Stift",
+        "category": "sinnvoll",
+        "reasoning": "Konsistent zu UV-Lampe — Carryover-Anker."
+      },
+      {
+        "label": "Kristall-Zucht-Set",
+        "category": "pflicht",
+        "reasoning": "Variant-Defining für Wow — sichtbare ‚Magie' beim Eintreten."
+      },
+      {
+        "label": "Nebelmaschine (optional)",
+        "category": "habIchVielleicht",
+        "reasoning": "Explizit optional — Highlight-Effekt für Kurzfilm-Drehen, aber Programm läuft auch ohne."
+      },
+      {
+        "label": "Zahlenschloss + Schatztruhe (Schuhkarton)",
+        "category": "habIchVielleicht",
+        "reasoning": "Schloss + Schuhkarton sind im Haushalt oft da — Variant-Erweiterung des Escape-Setups aus Standard."
+      },
+      {
+        "label": "Metallic-Ballons + Lichterkette + LED-Kerzen",
+        "category": "sinnvoll",
+        "reasoning": "Wow-Deko-Premium, aber Stationen funktional ohne."
+      },
+      {
+        "label": "Pergament-Papier + Goldfolie-Sticker",
+        "category": "pflicht",
+        "reasoning": "Variant-Defining für Initiations-Brief-Aesthetik in Wow (Wachssiegel-Effekt)."
+      },
+      {
+        "label": "Rotkohl + Chemie-Zutaten",
+        "category": "pflicht",
+        "reasoning": "Konsistent — Chemie-Labor."
+      },
+      {
+        "label": "Pizza-Brötchen + Limo + Bowle + Obst + Snacks",
+        "category": "pflicht",
+        "reasoning": "Wow-Verpflegung für 4h Party + Bowle als Wow-Standard."
+      },
+      {
+        "label": "Backmischung + Mirror Glaze + Wunderkerze",
+        "category": "pflicht",
+        "reasoning": "Konsistent — Kuchen + Wunderkerze ist 9-12-Wow-Standard."
+      }
+    ]
+  },
+  "_qualityNotes": {
+    "gross_spezifisch": "3-4h Party, Eltern absetzen, 7-8 Kinder, Code-Names statt Glitzer-Namen, Chemie-Labor + Schmuck-Workshop statt Bastel-Tisch, Mirror-Glaze-Galaxy-Kuchen, Pizza-Brötchen + Bowle, optional Nebelmaschine + Kurzfilm.",
+    "pflicht_anteile": {
+      "minimal": "6/7 = 85%? need recheck",
+      "standard": "8/10 = 80%? need recheck",
+      "wow": "8/13 = 61%"
+    },
+    "self_score_estimate": "~85 — Minimal+Standard knacken 70% wegen wenig Items insgesamt + viele Items Variant-Defining. Reviewer wird Charms downgraden, dann <70%."
+  }
+}
