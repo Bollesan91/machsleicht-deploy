@@ -1184,6 +1184,8 @@ Bolle hat nach einer Lösung gefragt, die Amazon & Co. trotz X-Frame-Options wir
 
 ### P3-13: Cockpit-Header im Plan-View
 
+> **Status: ✅ DONE (2026-05-19)** — Cockpit-Header (EliteCockpitHeader: ageInsight + signatureRitual). Commit `10fa964` / draft. Browser-Smoke-Test offen.
+
 **Mentaler Reframe: aus „hier ist dein Plan" wird „hier ist dein Stand".**
 
 Nach Plan-Generierung erscheint oben im Plan-View eine kompakte Cockpit-Box statt dem aktuellen Motto-Badge:
@@ -1218,6 +1220,8 @@ function getPlanState(plan) {
 ---
 
 ### P3-14: Machbarkeits-Box mit Klartext + Constraint-Solver-Fundament
+
+> **Status: ✅ DONE (2026-05-19)** — Constraint-Solver (EliteGamesFilter: Aufwand/Lautstärke + auto indoor/outdoor). Commit `10fa964` / draft. Browser-Smoke-Test offen.
 
 **Aus deskriptivem `calcScore()` wird handlungsleitende `analyzeFeasibility()`.**
 
@@ -1271,6 +1275,8 @@ Wir haben angepasst:
 
 ### P3-16: Vorbereitungskarte (datums-getriebene Wochenplan-Ansicht)
 
+> **Status: ✅ DONE (2026-05-19)** — Vorbereitungskarte (VorbereitungsKarte: 6 collapsible Sektionen). Commit `10fa964` / draft. Browser-Smoke-Test offen.
+
 **Strukturell der wichtigste neue Ergebnis-Block. Macht aus Snapshot → Begleiter.**
 
 Sobald Datum eingegeben (P3-15), erscheint im Plan-View ein neuer Abschnitt unter dem Zeitplan:
@@ -1310,6 +1316,8 @@ Am Partytag morgens
 ---
 
 ### P3-17: Drei-Gruppen-Einkaufsliste + „Was hab ich zuhause"-Inventar
+
+> **Status: ✅ DONE (2026-05-19)** — Drei-Gruppen-Einkaufsliste (EliteShoppingList: pflicht/sinnvoll/habIchVielleicht). Commit `10fa964` / draft. Browser-Smoke-Test offen.
 
 **Einkaufsliste neu strukturieren — von einer Liste zu drei Gruppen plus Inventar-Check.**
 
@@ -1351,6 +1359,8 @@ Schon zuhause?
 ---
 
 ### P3-18: SOS-Button im Plan-View
+
+> **Status: ✅ DONE (2026-05-19)** — SOS-Button (SOSButton: Floating FAB + Bottom-Sheet mit 8 Szenarien). Commit `10fa964` / draft. Browser-Smoke-Test offen.
 
 **Sichtbarer, jederzeit erreichbarer Notfall-Knopf während der Party.**
 

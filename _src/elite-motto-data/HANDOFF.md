@@ -1,8 +1,8 @@
-# HANDOFF — Planer-Frisur-Sprint, Phase A + B + C komplett
+# HANDOFF — Planer-Frisur-Sprint, Phase A + B + C + Frontend-Sprint komplett
 
 **Erstellt:** 2026-05-19 (Phase A)
-**Updates:** 2026-05-19 (Phase B), 2026-05-19 (Phase C komplett — 7 Slots)
-**Ziel der nächsten Session:** Sprint-Frontend (P3-13 bis P3-19) — Daten-Layer ist komplett
+**Updates:** 2026-05-19 (Phase B), 2026-05-19 (Phase C komplett — 7 Slots), 2026-05-19 (Frontend-Sprint P3-13/14/16/17/18 integriert)
+**Ziel der nächsten Session:** Browser-Smoke-Test der 5 Komponenten + Score-Justierung + Polish-Nice-to-Haves
 
 ---
 
@@ -36,9 +36,27 @@ Alle Slots: schema-strikt (preparationWeeks 6 Sektionen, sosScenarios 8 Szenarie
 - P3-18 SOS-Button (sosScenarios) ✓
 - P3-19 KI-Rätsel (Schatzsuche, andere Datenquelle) — N/A
 
+**Was passiert ist (Frontend-Sprint 2026-05-19):**
+
+Alle 5 Frontend-PBIs (P3-13/14/16/17/18) integriert in `_src/kindergeburtstag.jsx`. Status pro PBI:
+
+| PBI | Komponente | Position im Plan-View | Conditional |
+|---|---|---|---|
+| P3-13 | EliteCockpitHeader | Vor dem bestehenden Cockpit | `eliteData` vorhanden |
+| P3-14 | EliteGamesFilter | Nach Zeitplan | `eliteData.variants` |
+| P3-16 | VorbereitungsKarte | Nach Cockpit | `eliteData.preparationWeeks` |
+| P3-17 | EliteShoppingList | Ersetzt Deko + Mitgebsel Sections | `eliteData.variants[].shoppingList` |
+| P3-18 | SOSButton | Floating FAB bottom-right | `eliteData.sosScenarios` |
+
+**Foundation Module:** `_src/elite-motto-data/_bundle.js` + `getEliteData(motto, ageGroup)` Helper, eingebunden via `_src/build.sh` (python3-Generator-Step + Concat-Order).
+
+**Build-Stats:** `js/kindergeburtstag.js` = 788KB (vs ~280KB Pre-Phase-C — +491KB Elite-Daten + ~17KB JSX-Komponenten).
+
 **Was als Nächstes:**
-- **Sprint-Frontend** — Planer-Komponente `_src/kindergeburtstag.jsx` auf die neuen Daten umstellen. 7 Slots werden direkt konsumiert; Mottos ohne Slot fallen auf altes Verhalten zurück (Piraten, Dschungel, Dino, Detektiv, Weltraum, Feen, Meerjungfrau).
-- **Polish-Nice-to-Haves (non-blocking):** #4 food/decoration strukturieren, #5 whyItWorks, #6 safetyRule, #7 invitationTemplate entfernen.
+- **Browser-Smoke-Test** — feuerwehr/einhorn/safari × klein/mittel/gross durchklicken: Vorbereitungs-Wochen aufklappen, SOS-Modal öffnen, Filter aktivieren, Pflicht/Sinnvoll/habIchVielleicht-Sections in Einkaufsliste sehen
+- **P3-15** Erwachsenen-Zahl + Datum als neue Inputs (separat von Elite-Daten — kann jederzeit gemacht werden)
+- **P3-19** KI-Rätsel-Gedichte (andere Daten-Source, nicht aus eliteData)
+- **Polish-Nice-to-Haves (non-blocking):** #4 food/decoration strukturieren, #5 whyItWorks (siehe extract-Bug), #6 safetyRule, #7 invitationTemplate entfernen.
 
 ---
 
