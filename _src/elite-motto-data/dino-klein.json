@@ -1,0 +1,902 @@
+{
+  "_meta": {
+    "source_file": "kindergeburtstag/dino-3-5-jahre.html",
+    "extracted": "2026-05-19",
+    "schema_version": "1.0",
+    "purpose": "Dino 3-5 — Phase C #6 Elite-Slot (no ritual)",
+    "phase_b_complete": "2026-05-20",
+    "phase_b_method": "Direct draft analog Phase C — dino-klein-spezifika applied"
+  },
+  "motto": "dino",
+  "ageGroup": "klein",
+  "ageRange": [
+    3,
+    5
+  ],
+  "title": "🦕 Dino-Abenteuer Kindergeburtstag — 3–5 Jahre",
+  "metaDescription": "Dino-Kindergeburtstag für 3-5-Jährige: 3 fertige Party-Konzepte (Minimal/Standard/Wow) mit altersgerechten Spielen, Zeitplan, Einkaufsliste und Kosten.",
+  "introParagraph": "Dein Kind wird 3, 4 oder 5 und liebt Dinosaurier? Hier bekommst du drei fertige Party-Konzepte — von „in einer Stunde vorbereitet“ bis zum vollen Dino-Erlebnis. Jedes Konzept mit Zeitplan, altersgerechten Spielen, Einkaufsliste und Kosten.\n\n[Dino-Geburtstag planen →](/kindergeburtstag?motto=dino&alter=4#planer)",
+  "variants": [
+    {
+      "id": "minimal",
+      "label": "Minimal — 2 Stunden, minimaler Aufwand",
+      "headline": "Material: 15–20 bunte Plastik-Eier oder bunt bemalte Steine, 5 kleine Schüsseln/Eimer, Mini-Dinos oder Gummibärchen zum Reinlegen",
+      "intro": "So geht’s: Eier im Raum/Garten verteilen — bei 3-Jährigen halb sichtbar, bei 5-Jährigen besser versteckt. Jedes Kind bekommt eine Schüssel. Alle suchen gleichzeitig. Wer eins findet, darf es öffnen und den Inhalt behalten.",
+      "timeWindow": "15:00–16:30, 5 Kinder",
+      "schedule": [
+        {
+          "time": "15:00",
+          "title": "Ankommen & Dino-Ausmalbilder",
+          "description": "Leg 3–4 verschiedene Dino-Ausmalbilder pro Kind auf den Tisch + dicke Buntstifte (Wachsmaler). Hält die Ersten beschäftigt bis alle da sind. Kostenlose Vorlagen: [kribbelbunt.de](https://www.kribbelbunt.de/artikel/news/ausmalbilder-dinosaurier/) — einfach ausdrucken."
+        },
+        {
+          "time": "15:15",
+          "title": "🦕 Dino-Eier suchen",
+          "description": "Verstecke 15–20 bunte Plastik-Eier (oder bemalte Steine) im Raum/Garten. Jedes Kind bekommt einen Eimer oder eine Schüssel und sucht Dino-Eier. Kein Wettbewerb — alle sammeln zusammen. In jedem Ei ein kleiner Dino oder ein Gummibärchen. 10 Min."
+        },
+        {
+          "time": "15:25",
+          "title": "🎂 Kuchen & Happy Birthday",
+          "description": "Vulkan-Kuchen (Gugelhupf mit Smarties). Kerzen auspusten, Happy Birthday singen. 20 Min. Dazu Apfelschorle — nenn es „Dino-Pipi“ und die Kinder lachen sich kaputt."
+        },
+        {
+          "time": "15:45",
+          "title": "🦖 Dino-Stampfen (Stopptanz)",
+          "description": "Musik an = alle stampfen wie ein T-Rex durch den Raum! Musik aus = einfrieren wie ein Fossil. Wichtig: niemand scheidet aus, alle machen immer mit. 10 Min. — lässt sich gut dehnen oder kürzen."
+        },
+        {
+          "time": "15:55",
+          "title": "🎈 Freispiel & Abholphase",
+          "description": "Plastik-Dinos auf den Boden, Kinder spielen frei. Eltern kommen. Mitgebsel-Tüte in die Hand drücken. Fertig.\n\n💡 Weniger ist mehr\n3–5-Jährige brauchen kein Animationsprogramm. Eier suchen + Stopptanz + Kuchen ist ein perfekter Geburtstag. Die Kinder erinnern sich an Kuchen und an „wir haben Dino-Eier gefunden!“ — nicht an die Anzahl der Spiele."
+        }
+      ],
+      "games": [
+        {
+          "name": "🦕 Dino-Eier suchen — Spielanleitung",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 10,
+          "minAge": null,
+          "loudness": null,
+          "effort": null,
+          "material": null,
+          "prepText": "",
+          "steps": [],
+          "safetyRule": null,
+          "ageAdjust6": null,
+          "ageAdjust8": null,
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
+          "name": "🦖 Dino-Stampfen (Stopptanz) — Spielanleitung",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 10,
+          "minAge": 3,
+          "loudness": null,
+          "effort": null,
+          "material": null,
+          "prepText": "",
+          "steps": [],
+          "safetyRule": null,
+          "ageAdjust6": null,
+          "ageAdjust8": null,
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        }
+      ],
+      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃Apfelschorle2 Liter\n🍇Trauben/Beeren500g\n🥨Salzstangen1 Packung",
+      "decoration": "🦕 Dino-Figuren auf den Tisch stellenIm Dino-Set\n🎈 3–4 grüne Luftballons~1 €\n\nDas reicht. Kleine Kinder brauchen keine Pinterest-Deko — sie schauen auf den Kuchen und die Dinos, nicht auf die Girlanden.",
+      "giveaways": "In braune Papiertüte (10 Stk. ~1 € bei DM/Action). Kosten: ~1 € pro Kind.\n\n🦕 Mini-Dino-Figur\n🍬 Gummibärchen-Tüte\n🖍️ Ausmalbild zum Mitnehmen",
+      "shoppingList": [
+        {
+          "emoji": "🦕",
+          "label": "Mini-Dinos Set (12–24 Stück)",
+          "url": "https://www.amazon.de/s?k=mini+dino+figuren+set+kinder&tag=machsleicht-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Variant-Defining für Begrüßung + Eier-Befüllung — ohne Dinos kein motto-zentrales Element."
+        },
+        {
+          "emoji": "🥚",
+          "label": "Plastik-Eier bunt (20 Stk.)",
+          "url": "https://www.amazon.de/s?k=plastik+eier+bunt+kinder&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Variant-Defining für Eier-Suche — eine von zwei Minimal-Aktivitäten."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Kuchen-Zutaten",
+          "url": null,
+          "priceEur": 6,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Vulkan-Kuchen ist motto-zentrales Symbol + sozialer Pflichtteil."
+        },
+        {
+          "emoji": "🧃",
+          "label": "Getränke + Snacks",
+          "url": null,
+          "priceEur": 5,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Capri-Sun + Brezeln aus Vorrat trägt 1,5h auch."
+        },
+        {
+          "emoji": "🎁",
+          "label": "Mitgebsel (Dinos + Süßes)",
+          "url": null,
+          "priceEur": 5,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Mini-Dino + Plastik-Ei aus Eier-Suche reicht funktional."
+        }
+      ],
+      "costContext": "Geschätzte Kosten (Minimal, 5 Kinder)"
+    },
+    {
+      "id": "standard",
+      "label": "Standard — 3 Stunden, vollständige Schicht",
+      "headline": "Material: 20 bunte Plastik-Eier, Mini-Dinos oder Gummibärchen zum Reinlegen, 5 Schüsseln",
+      "intro": "So geht’s: Eier verteilen (bei 3-Jährigen halb sichtbar, bei 5-Jährigen versteckter). Alle suchen gleichzeitig, kein Wettbewerb. „Wer eins findet, darf es öffnen!“ Ersatz-Eier in der Tasche für Kinder die leer ausgehen.",
+      "timeWindow": "15:00–17:00, 5 Kinder",
+      "schedule": [
+        {
+          "time": "15:00",
+          "title": "Ankommen & Dino-Stempel-Station",
+          "description": "Jedes Kind bekommt ein weißes Blatt und [Dino-Stempel*](https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht-21) + Stempelkissen. Frei drauflos stempeln, mit Stiften ergänzen. Hält die Ersten 10–15 Min. beschäftigt und produziert gleichzeitig ein „Kunstwerk“ zum Mitnehmen."
+        },
+        {
+          "time": "15:15",
+          "title": "🦕 Dino-Eier suchen",
+          "description": "20 Plastik-Eier im Garten/Raum verstecken. In jedem Ei: ein Mini-Dino oder Gummibärchen. Alle suchen zusammen, kein Wettbewerb. Wer fertig ist, hilft den Anderen. 10 Min."
+        },
+        {
+          "time": "15:25",
+          "title": "🌋 Vulkan-Experiment",
+          "description": "DER Moment. Flasche in einen Sandhügel stellen. Essig + Natron + Spülmittel + rote Lebensmittelfarbe rein — BOOM, Lava! Kinder zählen gemeinsam „3, 2, 1, AUSBRUCH!“ runter. Auffangschale drunter oder draußen machen. 10 Min. inkl. Staunen und nochmal machen."
+        },
+        {
+          "time": "15:35",
+          "title": "🎂 Kuchen & Dino-Pipi",
+          "description": "Vulkan-Kuchen (Gugelhupf + Smarties-Lava). Happy Birthday singen. Dazu „Dino-Pipi“ (Apfelschorle). 20 Min. Ruhe für alle."
+        },
+        {
+          "time": "15:55",
+          "title": "🦖 Dino-Stampfen (Stopptanz)",
+          "description": "Musik an = stampfen! Musik aus = Fossil! Alle zusammen, niemand fliegt raus. Variante: verschiedene Dinos nachahmen — T-Rex (laut stampfen), Flugsaurier (Arme flattern), Langhals (auf Zehenspitzen). 10 Min."
+        },
+        {
+          "time": "16:05",
+          "title": "🏗️ Dino-Ausgrabung",
+          "description": "Große Wanne mit Sand oder Reis. Darin versteckt: [Dino-Figuren*](https://www.amazon.de/s?k=dinosaurier+figuren+set+kinder&tag=machsleicht-21) + Muscheln + bunte Steine. Kinder graben mit Löffeln und Pinseln. Wer einen Dino findet, darf ihn behalten. 15 Min. — das ist das ruhige Spiel nach dem Toben."
+        },
+        {
+          "time": "16:20",
+          "title": "🎈 Freispiel & Abholphase",
+          "description": "Plastik-Dinos, Bücher, Freispiel. Mitgebsel-Tüten verteilen wenn Eltern kommen.\n\n💡 Immer abwechseln: laut → leise\nEier suchen (mittel) → Vulkan (laut) → Kuchen (Pause) → Stampfen (laut) → Ausgrabung (leise). So kippt die Stimmung nie. Nach jedem lauten Spiel kommt ein ruhiges."
+        }
+      ],
+      "games": [
+        {
+          "name": "🦕 Dino-Eier suchen — Spielanleitung",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 10,
+          "minAge": null,
+          "loudness": null,
+          "effort": null,
+          "material": null,
+          "prepText": "",
+          "steps": [],
+          "safetyRule": null,
+          "ageAdjust6": null,
+          "ageAdjust8": null,
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
+          "name": "🦖 Dino-Stampfen (Stopptanz) — Spielanleitung",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 10,
+          "minAge": 3,
+          "loudness": null,
+          "effort": null,
+          "material": null,
+          "prepText": "",
+          "steps": [],
+          "safetyRule": null,
+          "ageAdjust6": null,
+          "ageAdjust8": null,
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
+          "name": "🌋 Vulkan-Experiment — Spielanleitung",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 10,
+          "minAge": 3,
+          "loudness": null,
+          "effort": null,
+          "material": null,
+          "prepText": "",
+          "steps": [],
+          "safetyRule": null,
+          "ageAdjust6": null,
+          "ageAdjust8": null,
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
+          "name": "🏗️ Dino-Ausgrabung — Spielanleitung",
+          "indoor": false,
+          "outdoor": false,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": null,
+          "effort": null,
+          "material": null,
+          "prepText": "",
+          "steps": [],
+          "safetyRule": null,
+          "ageAdjust6": null,
+          "ageAdjust8": null,
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        }
+      ],
+      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃Apfelschorle3 Liter\n🍇Obst-TellerTrauben + Beeren\n🥒Gemüse-SticksGurke + Paprika\n🍿Popcorn1 Schüssel",
+      "decoration": "🎈 Grüne Luftballons (10 Stk.)~2 €\n🦶 Fußspuren aus Papier am BodenKostenlos\n🦕 Dino-Figuren als TischdekoIm Dino-Set",
+      "giveaways": "In braune Papiertüte, beschriftet mit „Dino-Schatz von ___“. Kosten: ~2 € pro Kind.\n\n🦕 Mini-Dino\n🖍️ Dino-Stempel\n🍬 Gummibärchen\n🎨 Stempelbild",
+      "shoppingList": [
+        {
+          "emoji": "🦕",
+          "label": "Dino-Figuren Set (12+ Stück)",
+          "url": "https://www.amazon.de/s?k=dinosaurier+figuren+set+kinder&tag=machsleicht-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Standard/Wow: Variant-Defining, konsistent zu Minimal."
+        },
+        {
+          "emoji": "🥚",
+          "label": "Plastik-Eier (20 Stk.)",
+          "url": "https://www.amazon.de/s?k=plastik+eier+bunt+kinder&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Variant-Defining für Eier-Suche — eine von zwei Minimal-Aktivitäten."
+        },
+        {
+          "emoji": "🏗️",
+          "label": "Sand/Reis für Ausgrabung",
+          "url": "https://www.amazon.de/s?k=spielsand+kinder+wanne&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Sand aus Spielzeug-Vorrat oder Reis aus Vorrat geht auch."
+        },
+        {
+          "emoji": "✏️",
+          "label": "Dino-Stempel Set",
+          "url": "https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Atmosphäre-Heber, aber Filzstifte tun es."
+        },
+        {
+          "emoji": "🌋",
+          "label": "Vulkan-Material (Essig, Natron, Spüli, Farbe)",
+          "url": null,
+          "priceEur": 3,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Standard+: Vulkan-Demo ist Highlight-Aktion, Material aus Supermarkt = günstig + zwingend."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Kuchen + Getränke + Snacks",
+          "url": null,
+          "priceEur": 10,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Verpflegung nicht optional — 5 Kinder + Eltern brauchen Verpflegung."
+        },
+        {
+          "emoji": "🎁",
+          "label": "Mitgebsel",
+          "url": null,
+          "priceEur": 10,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Goodie-Verpackung mit Süßigkeiten + zusätzlicher Mini-Dino, aber Kuchen + Eier-Inhalt reichen funktional."
+        }
+      ],
+      "costContext": "Geschätzte Kosten (Standard, 5 Kinder)"
+    },
+    {
+      "id": "wow",
+      "label": "Wow — 3,5 Stunden, die volle Schicht",
+      "headline": "Wow-Variante: 25 Eier, etwas schwieriger versteckt. Ein besonderes goldenes Ei enthält den „Schatz“ — Schoko-Goldmünzen für alle. Wer das goldene Ei findet, darf sie verteilen.",
+      "intro": "So geht’s: Dinos 2–3 cm tief vergraben (bei 3-Jährigen zur Hälfte sichtbar lassen). Kinder graben mit Pinseln wie echte Paläontologen. Jeder darf seinen Fund behalten. Wanne auf Handtuch stellen.",
+      "timeWindow": "15:00–17:00, 5 Kinder",
+      "schedule": [
+        {
+          "time": "15:00",
+          "title": "Ankommen & Dino-Tattoos",
+          "description": "Jedes Kind bekommt ein [Dino-Tattoo*](https://www.amazon.de/s?k=dino+tattoos+kinder&tag=machsleicht-21) auf den Arm. Dazu Dino-Stempel-Station und Ausmalbilder. Die Verwandlung zum Dino-Forscher beginnt. 15 Min."
+        },
+        {
+          "time": "15:15",
+          "title": "🦕 Dino-Eier suchen",
+          "description": "25 Eier, etwas schwieriger versteckt als bei Standard. In manchen Eiern: Mini-Dinos. In einem besonderen goldenen Ei: der „Schatz“ (Schoko-Goldmünzen für alle). 10 Min."
+        },
+        {
+          "time": "15:25",
+          "title": "🏗️ Dino-Ausgrabung",
+          "description": "Große Wanne mit Sand. Dinos + echte Muscheln + bunte Steine vergraben. Kinder graben mit Pinseln wie echte Paläontologen. Jedes Kind darf seinen Fund behalten. 15 Min."
+        },
+        {
+          "time": "15:40",
+          "title": "🌋 Vulkan-Experiment",
+          "description": "Der Höhepunkt. Flasche im Sandhügel, rote Farbe + Natron + Spüli, Countdown: „3, 2, 1, AUSBRUCH!“ Essig dazu — LAVA! 3–4 Durchgänge, die Kinder wollen es immer wieder sehen. 10 Min."
+        },
+        {
+          "time": "15:50",
+          "title": "🎂 Kuchen & Dino-Pipi",
+          "description": "Vulkan-Kuchen mit Smarties-Lava und einer Dino-Figur obendrauf. Kerzen, Happy Birthday, 20 Min. Ruhe."
+        },
+        {
+          "time": "16:10",
+          "title": "🦖 Dino-Parcours",
+          "description": "„Dschungel-Parcours“: unter Seilen durchkriechen (Lianen!), über Kissen springen (Vulkan-Steine!), durch einen Tunnel krabbeln (Dino-Höhle = Decke über 2 Stühle). Alle laufen zusammen, kein Wettrennen. 10 Min."
+        },
+        {
+          "time": "16:20",
+          "title": "🦖 Dino-Stampfen mit Varianten",
+          "description": "Stopptanz PLUS Tier-Varianten: „Stampft wie ein T-Rex!“ (laut), „Schleicht wie ein Raptor!“ (leise), „Fliegt wie ein Flugsaurier!“ (Arme flattern). Du rufst das Tier, Kinder machen nach. 10 Min."
+        },
+        {
+          "time": "16:30",
+          "title": "🎈 Freispiel & Abholphase",
+          "description": "Freispiel mit allen Dino-Figuren. Mitgebsel-Tüten mit „Dino-Schatz von ___“ verteilen."
+        }
+      ],
+      "games": [
+        {
+          "name": "🦕 Dino-Eier suchen — Spielanleitung",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 10,
+          "minAge": null,
+          "loudness": null,
+          "effort": null,
+          "material": null,
+          "prepText": "",
+          "steps": [],
+          "safetyRule": null,
+          "ageAdjust6": null,
+          "ageAdjust8": null,
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
+          "name": "🏗️ Dino-Ausgrabung — Spielanleitung",
+          "indoor": false,
+          "outdoor": false,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": null,
+          "effort": null,
+          "material": null,
+          "prepText": "",
+          "steps": [],
+          "safetyRule": null,
+          "ageAdjust6": null,
+          "ageAdjust8": null,
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
+          "name": "🌋 Vulkan-Experiment — Spielanleitung",
+          "indoor": false,
+          "outdoor": true,
+          "duration": 10,
+          "minAge": 3,
+          "loudness": null,
+          "effort": null,
+          "material": null,
+          "prepText": "",
+          "steps": [],
+          "safetyRule": null,
+          "ageAdjust6": null,
+          "ageAdjust8": null,
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
+          "name": "🦖 Dino-Stampfen mit Varianten — Spielanleitung",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 10,
+          "minAge": 3,
+          "loudness": null,
+          "effort": null,
+          "material": null,
+          "prepText": "",
+          "steps": [],
+          "safetyRule": null,
+          "ageAdjust6": null,
+          "ageAdjust8": null,
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
+          "name": "🦖 Dino-Parcours — Spielanleitung",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 10,
+          "minAge": 3,
+          "loudness": null,
+          "effort": null,
+          "material": null,
+          "prepText": "",
+          "steps": [],
+          "safetyRule": null,
+          "ageAdjust6": null,
+          "ageAdjust8": null,
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        }
+      ],
+      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃„Dino-Pipi“3 Liter\n🍇Obst-Dino-Spieße2 pro Kind\n🥒Gemüse-SticksGurke + Paprika\n🍿Popcorn1 Schüssel\n🧁Dino-Muffins1 pro Kind",
+      "decoration": "🎈 Grüne Luftballons (10 Stk.)~2 €\n🦶 Fußspuren-Pfad am BodenKostenlos, 15 Min.\n🦕 Dino-Figuren auf dem ganzen TischIm Set\n🪧 „Jurassic Park“-Schild am EingangKostenlos\n🔊 Dschungel-Sounds leise im HintergrundKostenlos (YouTube)",
+      "giveaways": "In braune Papiertüte mit „Dino-Schatz von ___“. Kosten: ~3 € pro Kind.\n\n🦕 Dino-Figur (aus Ausgrabung)\n🖍️ Dino-Tattoo\n🎨 Stempelbild\n🍬 Gummibärchen\n🥚 Dino-Ei",
+      "shoppingList": [
+        {
+          "emoji": "🦕",
+          "label": "Dino-Figuren Set (12+ Stück)",
+          "url": "https://www.amazon.de/s?k=dinosaurier+figuren+set+kinder&tag=machsleicht-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Standard/Wow: Variant-Defining, konsistent zu Minimal."
+        },
+        {
+          "emoji": "🥚",
+          "label": "Plastik-Eier (20–25 Stk.)",
+          "url": "https://www.amazon.de/s?k=plastik+eier+bunt+kinder&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Variant-Defining für Eier-Suche — eine von zwei Minimal-Aktivitäten."
+        },
+        {
+          "emoji": "🏗️",
+          "label": "Sand/Reis für Ausgrabung",
+          "url": "https://www.amazon.de/s?k=spielsand+kinder+wanne&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Standard+ Variant-Defining für Ausgrabungs-Aktivität."
+        },
+        {
+          "emoji": "✏️",
+          "label": "Dino-Stempel Set",
+          "url": "https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Atmosphäre-Heber für Ausmalbilder, aber Filzstifte tun's auch."
+        },
+        {
+          "emoji": "🖼️",
+          "label": "Dino-Tattoos",
+          "url": "https://www.amazon.de/s?k=dino+tattoos+kinder&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Wow-Highlight, aber Aufkleber + Mini-Dinos reichen funktional als Verkleidungs-Element."
+        },
+        {
+          "emoji": "🌋",
+          "label": "Vulkan-Material",
+          "url": null,
+          "priceEur": 3,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Standard+: Vulkan-Demo ist Highlight-Aktion, Material aus Supermarkt = günstig + zwingend."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Kuchen + Getränke + Snacks",
+          "url": null,
+          "priceEur": 12,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Verpflegung nicht optional — 5 Kinder + Eltern brauchen Verpflegung."
+        },
+        {
+          "emoji": "🎈",
+          "label": "Deko (Ballons, Papier)",
+          "url": null,
+          "priceEur": 3,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Wow-Atmosphäre, aber Stationen funktionieren auch ohne."
+        },
+        {
+          "emoji": "🎁",
+          "label": "Mitgebsel",
+          "url": null,
+          "priceEur": 15,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Goodie-Verpackung mit Süßigkeiten + zusätzlicher Mini-Dino, aber Kuchen + Eier-Inhalt reichen funktional."
+        }
+      ],
+      "costContext": "Geschätzte Kosten (Wow, 5 Kinder, ohne Kostüm)"
+    }
+  ],
+  "cakeRecipe": {
+    "intro": "Der einfachste Wow-Kuchen: Gugelhupf + Smarties",
+    "steps": [],
+    "meta": {
+      "aufwand": "45 Min. inkl. Backen",
+      "kosten": "~6 &euro;",
+      "allergiker": "Fertigmischungen sind oft allergen&auml;rmer — Packung checken"
+    },
+    "tips": null
+  },
+  "parentTips": {
+    "structured": [
+      {
+        "topic": "😢 Meltdown-Plan",
+        "detail": "Bei 3–5-Jährigen ist mindestens ein Zusammenbruch wahrscheinlich (Überreizung, müde, Streit ums Spielzeug). Hab einen ruhigen Rückzugsort parat — ein Zimmer mit einem Buch und einem Erwachsenen. Nicht dramatisieren. 5 Minuten Ruhe und das Kind ist meistens wieder dabei."
+      },
+      {
+        "topic": "🚨 Allergien vorher abfragen",
+        "detail": "Bei 5 Kindern hat statistisch mindestens eins eine Unverträglichkeit. In die Einladung schreiben: „Hat dein Kind Allergien oder Unverträglichkeiten?“ Apfelschorle und Popcorn sind fast immer safe."
+      },
+      {
+        "topic": "👨‍👩‍👧 Eltern bleiben = Helfer",
+        "detail": "Bei 3–4-Jährigen bleiben die Eltern sowieso. Nutze das: „Kannst du kurz die Ausgrabung beaufsichtigen?“ Die meisten helfen gerne. Kaffee und ein paar Kekse für die Eltern bereitstellen."
+      },
+      {
+        "topic": "📋 Plan B bei Regen",
+        "detail": "Alle Spiele in dieser Vorlage funktionieren auch drinnen. Vulkan-Experiment: in der Badewanne oder auf dem Balkon. Parcours: im Flur aufbauen. Eier suchen: Wohnung statt Garten. Nie ohne Plan B."
+      },
+      {
+        "topic": "📱 Partyseite statt WhatsApp-Chaos",
+        "detail": "Statt einzelne Nachrichten: erstelle eine [WhatsApp-Partyseite](https://party.machsleicht.de). Adresse, Uhrzeit, Motto, Abholzeit — alles auf einer Seite. Eltern antworten mit einem Klick. Kostenlos, in 2 Minuten fertig."
+      }
+    ],
+    "educationalValue": null
+  },
+  "invitationTemplate": "🦕 Interaktive Dino-Einladung per WhatsApp verschicken\n\nErstelle in 30 Sekunden eine fertige Einladung mit Name, Datum und Ort — die Gäste bekommen ein kleines Dino-Abenteuer als Vorgeschmack auf die Party.\n[🦕 Dino-Einladung erstellen →](/einladung/erstellen?motto=dino)\n\n[💬 Idee per WhatsApp teilen](https://wa.me/?text=Schau%20mal%3A%20Dino-Abenteuer%20Kindergeburtstag%20f%C3%BCr%203%E2%80%935%20Jahre%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Spielanleitungen%20und%20Einkaufsliste!%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Fdino-3-5-jahre)",
+  "preparationWeeks": {
+    "minus4Weeks": {
+      "headline": "4 Wochen vorher — Grundgerüst stellen",
+      "items": [
+        {
+          "icon": "📅",
+          "title": "Datum + Uhrzeit + Treffpunkt fixieren",
+          "detail": "Sa/So 15–16:30 Uhr ist Sweet-Spot für 3-5er. Max 1,5h Party. Drinnen-Plan-B für Vulkan-Demo mental haben (Küche mit Fliesenboden, nicht Wohnzimmer)."
+        },
+        {
+          "icon": "👥",
+          "title": "Gästeliste festzurren — max 5 Kinder",
+          "detail": "5 ist richtig für 3-5 Dino: jeder findet Eier, niemand wartet. Über 5 wird Ausgrabung chaotisch."
+        },
+        {
+          "icon": "👨‍👩‍👧",
+          "title": "Eltern-Pflicht in die Einladung",
+          "detail": "Pflicht-Text: ‚Ein Elternteil bleibt bitte dabei.' Bei 3-5 sind Eltern Co-Aufsicht (Vulkan-Eruption + Ausgrabung brauchen 2 Augenpaare)."
+        },
+        {
+          "icon": "💶",
+          "title": "Variante wählen: Minimal / Standard / Wow",
+          "detail": "Minimal (Mini-Dinos + Eier-Suche), Standard (+ Ausgrabung + Vulkan-Demo + Stempel), Wow (+ Tattoos + Deko + größere Mitgebsel). Entscheidung jetzt — danach Bestelllisten."
+        },
+        {
+          "icon": "🏠",
+          "title": "Mietwohnung: Vulkan-Risiko-Check",
+          "detail": "Vulkan-Eruption mit Essig+Natron+Lebensmittelfarbe = ROT-FARBE auf Boden möglich. Folie/Backblech unterlegen, Wachs-Tücher griffbereit. Beim Sand/Reis-Ausgrabung Tisch dick abkleben."
+        }
+      ]
+    },
+    "minus2Weeks": {
+      "headline": "2 Wochen vorher — Logistik festziehen",
+      "items": [
+        {
+          "icon": "📋",
+          "title": "RSVPs einsammeln + Liste schließen",
+          "detail": "Bei 3-5 sind Eltern oft Last-Minute. Nachzügler einmal anstupsen. party.machsleicht.de zeigt Stand auf einen Blick."
+        },
+        {
+          "icon": "🥜",
+          "title": "Allergien + Windel-Status",
+          "detail": "Bei 3-Jährigen ist Windel noch Thema. Allergien: Lebensmittelfarbe (Vulkan), Gummibärchen-Inhalte. Liste am Backtag + Party-Tag griffbereit."
+        },
+        {
+          "icon": "📦",
+          "title": "Bestellliste finalisieren",
+          "detail": "Mini-Dinos + Plastik-Eier bei Amazon (Lieferung 2-5 Tage), Essig + Natron + Lebensmittelfarbe + Backmischung im Supermarkt, Papiertüten bei DM."
+        },
+        {
+          "icon": "🥚",
+          "title": "Plastik-Eier-Verstecke mental planen",
+          "detail": "Wo verstecken im Wohnzimmer / Garten? Bei 3-5 sollten Eier OFFENSICHTLICH sein — keine ‚schwierige' Suche. Unter Sofa-Kissen, hinter Pflanzen, in Schuhen."
+        }
+      ]
+    },
+    "minus1Week": {
+      "headline": "1 Woche vorher — bestellen, drucken, vorwarnen",
+      "items": [
+        {
+          "icon": "🛒",
+          "title": "Amazon-Bestellung JETZT raus",
+          "detail": "Lieferzeit 2–5 Tage. Mini-Dinos 12-24er (~8€), Plastik-Eier 20er (~5€). Bei Standard/Wow zusätzlich Dino-Stempel (~5€) + Tattoos (~4€)."
+        },
+        {
+          "icon": "🖨️",
+          "title": "Ausmalbilder drucken",
+          "detail": "Dino-Ausmalbilder (kostenlos bei kribbelbunt.de oder ähnlich), 5x ausdrucken. Bei 3-5 Namen vorher mit dickem Edding eintragen — Kinder können noch nicht schreiben."
+        },
+        {
+          "icon": "🔔",
+          "title": "Nachbarn-Vorab-Signal (5 Min)",
+          "detail": "‚Sonntag 15-16:30 wird's bei uns lauter, mein Sohn wird 4.' 3-5er Dino-Party ist objektiv leiser als Feuerwehr — Nachbarn dankbar dass du Bescheid gibst."
+        },
+        {
+          "icon": "🌧️",
+          "title": "Plan B Regen mental durchspielen",
+          "detail": "Eier-Suche durch alle Zimmer der Wohnung, Vulkan-Demo in Küche/Bad, Ausgrabung in der Wanne (falls Wow). Räume freihalten diese Woche."
+        },
+        {
+          "icon": "🌋",
+          "title": "Vulkan-Demo vortesten",
+          "detail": "Pappbecher + 2 EL Natron + Tropfen Lebensmittelfarbe + Spüli. Bei Bedarf Essig drauf. Funktioniert ~5 Sekunden. Bei 3-5 reicht das, sie wollen's mehrmals sehen."
+        }
+      ]
+    },
+    "minus2Days": {
+      "headline": "2 Tage vorher — backen, briefen, basteln",
+      "items": [
+        {
+          "icon": "🎂",
+          "title": "Vulkan-Kuchen backen — oder Plan B",
+          "detail": "Wenn Zeit/Nerven: Gugelhupf + Schokoglasur + rote/orange Smarties. Wenn nicht: Schoko-Boden vom Bäcker (~6€), morgen Smarties drauf. Bei 3-5 KEINE Wunderkerze (Brand-Panik-Eltern)."
+        },
+        {
+          "icon": "🗣️",
+          "title": "Eltern als Helfer briefen",
+          "detail": "WhatsApp mit Programm: ‚15:00 Begrüßung, 15:10 Eier-Suche, 15:30 Snack, 15:45 Vulkan-Demo, 16:15 Kuchen.' Eltern wissen dann was kommt und können einspringen."
+        },
+        {
+          "icon": "📃",
+          "title": "Mitgebsel-Tüten packen — kindgerecht",
+          "detail": "Pro Kind: Mini-Dino, 2-3 Plastik-Eier mit Süßigkeit drin, Ausmalbild. NICHT zu viel — bei 3-5 verlieren sie sonst die Übersicht. Papiertüte mit Namen drauf."
+        },
+        {
+          "icon": "🥚",
+          "title": "Plastik-Eier mit Mini-Dinos befüllen",
+          "detail": "In jedes Ei 1 Mini-Dino + Gummibärchen. 5 Eier pro Kind = 25 Eier total. Pro Kind sortieren (alle bekommen gleich viele), Namens-Aufkleber drauf für Verlust-Sicherung."
+        },
+        {
+          "icon": "🌋",
+          "title": "Standard/Wow: Vulkan-Konstrukt vorbereiten",
+          "detail": "Hoher Pappbecher in Schüssel stellen, mit Knete/Pappmaché zum ‚Berg' formen. Bei Wow: Modellbau-Vulkan aus Salzteig (über Nacht trocknen). Innen Hohlraum für Natron + Farbe."
+        }
+      ]
+    },
+    "minus1Day": {
+      "headline": "1 Tag vorher — Deko, Test, letzte Schritte",
+      "items": [
+        {
+          "icon": "🍫",
+          "title": "Kuchen verzieren — Vulkan-Look",
+          "detail": "Schokoglasur über Gugelhupf (Loch in Mitte = Krater), rote + orange Smarties als ‚Lava-Strom' von oben nach unten, grüne Smarties unten als ‚Bäume'. 10 Min. Über Nacht fest werden lassen."
+        },
+        {
+          "icon": "🥚",
+          "title": "Plastik-Eier verstecken",
+          "detail": "Im Wohnzimmer/Garten 5 pro Kind = 25 Eier verstecken. Bei 3-5 SICHTBAR (kein ‚schwer'). Unter Kissen, hinter Vorhang, im Schuh, auf Stuhl. Karte mit Versteck-Liste machen, falls nicht alle gefunden werden."
+        },
+        {
+          "icon": "🚧",
+          "title": "Tisch + Eingangs-Dekoration",
+          "detail": "Grüne Papier-Lianen aufhängen (Krepppapier), Mini-Dinos auf dem Tisch als Deko, Backblech für Vulkan-Demo aufstellen. Schmier-Schutz-Tüte für jedes Kind raussuchen."
+        },
+        {
+          "icon": "🌋",
+          "title": "Vulkan-Material griffbereit",
+          "detail": "Essig in eine Flasche, Natron in Schüssel, Lebensmittelfarbe + Spüli daneben. Bei Wow Vulkan-Konstrukt prüfen (trocken? stabil?). Bestätigt funktionierende Reaktion (vortesten)."
+        },
+        {
+          "icon": "🎈",
+          "title": "Luftballons aufpusten (oder morgen früh)",
+          "detail": "Grüne + orange Luftballons. Bei 3-5 sind Ballons das Highlight schlechthin. 10-15 Stück minimum."
+        }
+      ]
+    },
+    "dayOf": {
+      "headline": "Tag X — durchziehen, atmen, feiern",
+      "items": [
+        {
+          "icon": "⏰",
+          "title": "30 Min vor Ankunft: Stationen aufbauen",
+          "detail": "Eier-Suche-Plan im Kopf, Vulkan-Tisch fertig, Kuchen aus Kühlschrank, Capri-Sun kühlen. Eltern-Sitzecke einrichten."
+        },
+        {
+          "icon": "🎯",
+          "title": "15 Min vor Ankunft: Endkontrolle",
+          "detail": "Eier alle versteckt, Mini-Dinos sortiert, Vulkan-Material griffbereit, Ausmalbilder + Filzstifte am Tisch. Klamotten-Wechsel-Tüte an Tür hängen."
+        },
+        {
+          "icon": "🫁",
+          "title": "5 Min vor Ankunft: durchatmen",
+          "detail": "Klo, Wasser, einmal tief Luft holen. Bei 3-5 sind Eltern dein Sicherheitsnetz — sie helfen wenn was kippt."
+        },
+        {
+          "icon": "🦕",
+          "title": "Ankunft: Dino-Begrüßung",
+          "detail": "Jedes Kind bekommt 1 Mini-Dino + 1 Plastik-Ei zur Begrüßung (= eigener Schatz). Bei Wow: Dino-Tattoo aufs Handrücken kleben. Kein formelles Ritual — 3-5er verstehen das nicht."
+        },
+        {
+          "icon": "🌟",
+          "title": "Mitten in der Party: Snack-Pause",
+          "detail": "Nach ~30 Min Pause einplanen — Apfelschorle + Brezeln + Gummibärchen. Sitzen, runter vom Adrenalin, dann Vulkan-Demo als zweite Highlight-Aktion."
+        }
+      ]
+    }
+  },
+  "sosScenarios": {
+    "regen": {
+      "icon": "🌧️",
+      "label": "Regen — alles draußen geplant",
+      "headline": "Eier-Suche durch alle Zimmer, Vulkan ins Bad.",
+      "steps": [
+        "Plastik-Eier in Wohnzimmer + Flur + Kinderzimmer verteilen (unter Sofa, hinter Vorhang, im Schuh).",
+        "Vulkan-Demo in der Küche oder Bad (auf Backblech mit Folie).",
+        "Ausgrabung in der Wanne (falls Wow) oder am Tisch mit dicker Folie.",
+        "Eltern als zusätzliche Aufsicht bei Indoor-Trubel aktiv einbinden."
+      ],
+      "fallback": "Wenn Bad zu klein: Eier-Suche + Mitgebsel-Verteilung + Ausmalbilder + Kuchen reicht für 1h Programm.",
+      "tone": "praktisch"
+    },
+    "weniger_kinder_als_erwartet": {
+      "icon": "👥",
+      "label": "Weniger Kinder als erwartet (1–2 fehlen)",
+      "headline": "Kleinere Crew = engerer Kontakt — straffer, nicht ärmer.",
+      "steps": [
+        "Weniger Eier verstecken: 5 pro Kind bleibt, weniger Total-Eier.",
+        "Vulkan-Demo: mehr Wiederholungen pro Kind (sie lieben es 3-4x zu sehen).",
+        "Mehr Zeit pro Ausmalbild — Kinder finden mehr Ruhe.",
+        "Eltern entspannter einbinden, sie haben dann weniger Aufsicht-Druck."
+      ],
+      "fallback": "Wenn Stimmung kippt: Vulkan-Demo nochmal + Foto-Runde + Mitgebsel-Verteilung als Hauptprogramm.",
+      "tone": "ruhig"
+    },
+    "mehr_kinder_als_erwartet": {
+      "icon": "🚨",
+      "label": "Mehr Kinder als erwartet (Geschwister-Boom)",
+      "headline": "Eltern als Co-Aufsicht — die sind eh dabei.",
+      "steps": [
+        "Eltern kurz briefen: ‚Du übernimmst Eier-Suche-Aufsicht, ich Vulkan.'",
+        "Mehr Eier verstecken (aus dem Vorrat) — jedes Kind findet 4-5 statt 5.",
+        "Mini-Dinos aufstocken: leere Pappkarton-Boxen mit Punkten bemalen als Notreserve.",
+        "Capri-Sun nachbestellen lassen (Eltern haben Auto, Tankstelle/Edeka nah).",
+        "Kuchen-Stücke kleiner schneiden, evtl. Brezeln + Gummibärchen aus Vorrat."
+      ],
+      "fallback": "Chaotisch? Programm kürzen — Eier-Suche + Snack + Mitgebsel-Verteilung. 60 Min reicht für 3-5er.",
+      "tone": "praktisch"
+    },
+    "kind_will_nicht_mitmachen": {
+      "icon": "🤷",
+      "label": "Ein Kind will nicht mitmachen",
+      "headline": "Eltern-Schoß ist immer Plan B.",
+      "steps": [
+        "Eltern kommunizieren: ‚Setz dich kurz, schauen wir was passiert.'",
+        "Eigenes Mini-Dino + Ausmalbild + Plastik-Ei bekommen — kein Druck.",
+        "Tattoo muss nicht auf Hand — Aufkleber auf T-Shirt geht auch.",
+        "Nach 15 Min kurz checken — oft schwenkt das Kind um wenn Vulkan startet."
+      ],
+      "fallback": "Bleibt komplett raus? Kein Drama. Mitgebsel-Tüte bekommt es trotzdem.",
+      "tone": "ruhig"
+    },
+    "kuchen_misslungen": {
+      "icon": "🎂",
+      "label": "Kuchen ist misslungen",
+      "headline": "Bäcker-Hack: Schoko-Gugelhupf + Smarties = 10 Min Notfall.",
+      "steps": [
+        "Schoko-Gugelhupf beim Bäcker holen (~6€) oder Schoko-Kasten + Krater rein-bohren.",
+        "Schokoglasur drüber, von oben nach unten laufen lassen = ‚Lava'.",
+        "Rote + orange Smarties als Lava-Strom seitlich ankleben.",
+        "Grüne Gummibärchen unten als ‚Bäume' platzieren."
+      ],
+      "fallback": "Bäcker zu? Muffins aus Vorrat, je Muffin ein Gummibärchen + roter Edding-Strich = Mini-Vulkan-Muffins.",
+      "tone": "motivierend"
+    },
+    "spielzeug_kaputt_oder_fehlt": {
+      "icon": "🔧",
+      "label": "Spielzeug kaputt oder vergessen",
+      "headline": "Improvisieren mit Haushalts-Material.",
+      "steps": [
+        "Mini-Dinos zu wenig? Pappkarton-Dinos aus dem Müll basteln (kindgerecht für 3-5).",
+        "Plastik-Eier weg? Toilettenpapier-Rollen zerschneiden + Süßigkeiten rein = Ersatz.",
+        "Lebensmittelfarbe vergessen? Beerensaft als Rot-Ersatz für Vulkan.",
+        "Essig leer? Zitronensäure aus Backregal + Wasser funktioniert auch."
+      ],
+      "fallback": "Katastrophe? Eier-Suche mit echten Bonbons + Mini-Dinos aus Mitgebsel-Vorrat + Kuchen reicht für 1h.",
+      "tone": "praktisch"
+    },
+    "ein_kind_weint": {
+      "icon": "😢",
+      "label": "Ein Kind weint",
+      "headline": "Eltern kennen ihr Kind — Übergabe ist okay.",
+      "steps": [
+        "Eltern-Übergabe: ‚Magst du kurz mit ihr raus?' — bei 3-5 sind Eltern dabei.",
+        "Capri-Sun + Brezel + roter Becher als Beruhigungs-Ritual.",
+        "Eigenes Plastik-Ei mit Süßigkeit zum Selbst-Auspacken.",
+        "Wenn Heimweh: nicht überreden — Mama-Foto am Handy zeigen.",
+        "Nach 5 Min reinschauen — meist ist's vorbei wenn die anderen den Vulkan sehen."
+      ],
+      "fallback": "Geht nicht mehr? Eltern können früher abholen — Goodie-Bag trotzdem.",
+      "tone": "ruhig"
+    },
+    "eltern_kommen_frueh": {
+      "icon": "🚪",
+      "label": "Eltern (die NICHT dabei waren) kommen früh",
+      "headline": "Übergang einleiten — Foto-Runde + Mitgebsel jetzt.",
+      "steps": [
+        "Abholende Eltern in den Flur bitten, Wasser anbieten.",
+        "Crew durchsagen: ‚Foto-Runde — alle mit Dino zum Vulkan!'",
+        "Gruppenfoto mit Mini-Dinos + Ausmalbildern.",
+        "Mitgebsel-Tüte in die Hand drücken, Vulkan-Foto kurz zeigen.",
+        "Eltern + Kinder zur Tür — kurz, herzlich, keine Tür-Gespräche."
+      ],
+      "fallback": "Chaotisch? Goodie-Bags in den Flur, jedes Kind nimmt eine, Abschied auf der Treppe.",
+      "tone": "praktisch"
+    }
+  },
+  "signatureRitual": {
+    "name": null,
+    "subtitle": null,
+    "introText": null,
+    "setupSteps": [],
+    "rolesList": [],
+    "optOutNote": null,
+    "materialNote": null,
+    "_note": "Dino-Mottoseiten haben keine eigene Ritual-Sektion im Quell-HTML. Dino-Spurensuche oder Vulkan-Ausbruch sind die motto-zentralen Aktivitäten."
+  }
+}
