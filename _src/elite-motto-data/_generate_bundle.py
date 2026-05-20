@@ -23,6 +23,9 @@ SLOTS = [
     ('einhorn', 'mittel'),
     ('einhorn', 'gross'),
     ('safari', 'mittel'),
+    ('dino', 'klein'),
+    ('dino', 'mittel'),
+    ('dino', 'gross'),
 ]
 
 data_map = {}
