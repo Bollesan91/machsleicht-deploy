@@ -404,7 +404,7 @@ const MOTTO_CONFIG = {
     banner.style.cssText = 'background:linear-gradient(135deg,#FFD700,#FFA500);color:#1a1a2e;padding:10px 14px;border-radius:10px;font-size:12px;font-weight:700;margin-bottom:16px;text-align:center';
     banner.innerHTML = '✨ Aus deinem Geburtstags-Plan — wir haben Motto' + (params.get('name') ? ' und Name' : '') + ' vorausgefüllt';
     const card = document.querySelector('.card');
-    if (card && card.parentElement) card.parentElement.insertBefore(banner, card);
+    if (card) card.insertBefore(banner, card.firstChild);
     if (window.umami) { try { umami.track('invitation_from_cockpit', {motto: m || ''}); } catch(e) {} }
   }
   if (m && MOTTO_CONFIG[m]) {
