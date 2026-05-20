@@ -1159,6 +1159,7 @@ function App() {
   const [partyCreateError, setPartyCreateError] = useState("");
   const [partyFormChildName, setPartyFormChildName] = useState("");
   const [partyFormEmail, setPartyFormEmail] = useState("");
+  const [partyFormNewsletterOptIn, setPartyFormNewsletterOptIn] = useState(false);
   const [partyEmailSent, setPartyEmailSent] = useState(false);
 
   // Derived values
@@ -1243,6 +1244,7 @@ function App() {
     if (!motto) return;
     setPartyFormChildName(childName || "");
     setPartyFormEmail("");
+    setPartyFormNewsletterOptIn(false);
     setPartyCreateError("");
     setPartyEmailSent(false);
     setPartyCreateStatus("form");
@@ -1261,6 +1263,10 @@ function App() {
     const wantsEmail = email.length > 0;
     if (wantsEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setPartyCreateError("Bitte gültige E-Mail eintragen oder Feld leer lassen");
+      return;
+    }
+    if (partyFormNewsletterOptIn && !wantsEmail) {
+      setPartyCreateError("Für den Newsletter brauchen wir deine E-Mail-Adresse");
       return;
     }
     setPartyCreateStatus("creating");
@@ -1296,17 +1302,17 @@ function App() {
       setPartyCreateResult({ url: data.url, editUrl: data.editUrl, id: data.id });
       if (window.BirthdayProject) { try { window.BirthdayProject.update({ modules: { partyPage: { status: "done" } } }); } catch (e) {} }
       if (window.umami) { try { window.umami.track("party_created", { motto: mottoId }); } catch (e) {} }
-      // Optional: Edit-Link per Mail senden
+      // Optional: Edit-Link per Mail senden (+ DOI-Block falls Newsletter-Opt-In)
       if (wantsEmail) {
         try {
           const mailRes = await fetch(`https://party.machsleicht.de/api/party/${data.id}/send-edit-link`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ editToken: data.editToken, email: email, newsletterOptIn: false })
+            body: JSON.stringify({ editToken: data.editToken, email: email, newsletterOptIn: partyFormNewsletterOptIn })
           });
           if (mailRes.ok) {
             setPartyEmailSent(true);
-            if (window.umami) { try { window.umami.track("party_edit_link_mailed", { motto: mottoId }); } catch (e) {} }
+            if (window.umami) { try { window.umami.track("party_edit_link_mailed", { motto: mottoId, newsletter: partyFormNewsletterOptIn }); } catch (e) {} }
           }
         } catch (mailErr) { /* Mail-Fehler ist nicht fatal — Edit-Link bleibt im Result-Pane sichtbar */ }
       }
@@ -1636,7 +1642,19 @@ function App() {
                 placeholder="deine@email.de" maxLength={200} autoFocus={!!partyFormChildName && !partyFormEmail}
                 style={{ width: "100%", padding: "10px 12px", background: "#fff", border: "1px solid #FFD54F", borderRadius: 8, fontSize: 14, color: "#3E2723", marginBottom: 4, fontFamily: "inherit", boxSizing: "border-box" }}
               />
-              <p style={{ fontSize: 10, color: "#8D6E63", margin: "0 0 12px", lineHeight: 1.3 }}>Bearbeitungslink kommt per Mail — sonst ist die Seite weg, wenn du den Tab schließt.</p>
+              <p style={{ fontSize: 10, color: "#8D6E63", margin: "0 0 10px", lineHeight: 1.3 }}>Bearbeitungslink kommt per Mail — sonst ist die Seite weg, wenn du den Tab schließt.</p>
+              <label style={{ display: "flex", gap: 8, alignItems: "flex-start", margin: "0 0 10px", cursor: "pointer" }}>
+                <input
+                  type="checkbox" checked={partyFormNewsletterOptIn} onChange={(e) => setPartyFormNewsletterOptIn(e.target.checked)}
+                  style={{ marginTop: 3, flex: "0 0 auto", cursor: "pointer", accentColor: "#D4812A" }}
+                />
+                <span style={{ fontSize: 11, color: "#5D4037", lineHeight: 1.4 }}>
+                  📬 Schick mir Tipps für den Kindergeburtstag und eine Erinnerung 7 Tage vor der Party. <span style={{ color: "#8D6E63" }}>Optional, jederzeit per Link in jeder Mail abbestellbar. Bestätigung per Mail (Double-Opt-In).</span>
+                </span>
+              </label>
+              <p style={{ fontSize: 10, color: "#8D6E63", margin: "0 0 12px", lineHeight: 1.3 }}>
+                Mit dem Klick verarbeiten wir deine E-Mail, um den Bearbeitungslink zu senden. Details in der <a href="/datenschutz.html" target="_blank" rel="noopener" style={{ color: "#5D4037", textDecoration: "underline" }}>Datenschutzerklärung</a>.
+              </p>
               {partyCreateError && (
                 <p style={{ fontSize: 11, fontWeight: 700, color: "#B71C1C", margin: "0 0 10px" }}>{partyCreateError}</p>
               )}

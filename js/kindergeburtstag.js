@@ -11217,6 +11217,7 @@ function App() {
   const [partyCreateError, setPartyCreateError] = useState("");
   const [partyFormChildName, setPartyFormChildName] = useState("");
   const [partyFormEmail, setPartyFormEmail] = useState("");
+  const [partyFormNewsletterOptIn, setPartyFormNewsletterOptIn] = useState(false);
   const [partyEmailSent, setPartyEmailSent] = useState(false);
   const motto = ALL_MOTTOS.find((m) => m.id === mottoId);
   const ag = ageGroup(age);
@@ -11304,6 +11305,7 @@ function App() {
     if (!motto) return;
     setPartyFormChildName(childName || "");
     setPartyFormEmail("");
+    setPartyFormNewsletterOptIn(false);
     setPartyCreateError("");
     setPartyEmailSent(false);
     setPartyCreateStatus("form");
@@ -11325,6 +11327,10 @@ function App() {
     const wantsEmail = email.length > 0;
     if (wantsEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setPartyCreateError("Bitte g\xFCltige E-Mail eintragen oder Feld leer lassen");
+      return;
+    }
+    if (partyFormNewsletterOptIn && !wantsEmail) {
+      setPartyCreateError("F\xFCr den Newsletter brauchen wir deine E-Mail-Adresse");
       return;
     }
     setPartyCreateStatus("creating");
@@ -11384,13 +11390,13 @@ function App() {
           const mailRes = await fetch(`https://party.machsleicht.de/api/party/${data.id}/send-edit-link`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ editToken: data.editToken, email, newsletterOptIn: false })
+            body: JSON.stringify({ editToken: data.editToken, email, newsletterOptIn: partyFormNewsletterOptIn })
           });
           if (mailRes.ok) {
             setPartyEmailSent(true);
             if (window.umami) {
               try {
-                window.umami.track("party_edit_link_mailed", { motto: mottoId });
+                window.umami.track("party_edit_link_mailed", { motto: mottoId, newsletter: partyFormNewsletterOptIn });
               } catch (e) {
               }
             }
@@ -11687,7 +11693,15 @@ https://machsleicht.de`;
         autoFocus: !!partyFormChildName && !partyFormEmail,
         style: { width: "100%", padding: "10px 12px", background: "#fff", border: "1px solid #FFD54F", borderRadius: 8, fontSize: 14, color: "#3E2723", marginBottom: 4, fontFamily: "inherit", boxSizing: "border-box" }
       }
-    ), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 10, color: "#8D6E63", margin: "0 0 12px", lineHeight: 1.3 } }, "Bearbeitungslink kommt per Mail \u2014 sonst ist die Seite weg, wenn du den Tab schlie\xDFt."), partyCreateError && /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, fontWeight: 700, color: "#B71C1C", margin: "0 0 10px" } }, partyCreateError), /* @__PURE__ */ React.createElement(
+    ), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 10, color: "#8D6E63", margin: "0 0 10px", lineHeight: 1.3 } }, "Bearbeitungslink kommt per Mail \u2014 sonst ist die Seite weg, wenn du den Tab schlie\xDFt."), /* @__PURE__ */ React.createElement("label", { style: { display: "flex", gap: 8, alignItems: "flex-start", margin: "0 0 10px", cursor: "pointer" } }, /* @__PURE__ */ React.createElement(
+      "input",
+      {
+        type: "checkbox",
+        checked: partyFormNewsletterOptIn,
+        onChange: (e) => setPartyFormNewsletterOptIn(e.target.checked),
+        style: { marginTop: 3, flex: "0 0 auto", cursor: "pointer", accentColor: "#D4812A" }
+      }
+    ), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 11, color: "#5D4037", lineHeight: 1.4 } }, "\u{1F4EC} Schick mir Tipps f\xFCr den Kindergeburtstag und eine Erinnerung 7 Tage vor der Party. ", /* @__PURE__ */ React.createElement("span", { style: { color: "#8D6E63" } }, "Optional, jederzeit per Link in jeder Mail abbestellbar. Best\xE4tigung per Mail (Double-Opt-In)."))), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 10, color: "#8D6E63", margin: "0 0 12px", lineHeight: 1.3 } }, "Mit dem Klick verarbeiten wir deine E-Mail, um den Bearbeitungslink zu senden. Details in der ", /* @__PURE__ */ React.createElement("a", { href: "/datenschutz.html", target: "_blank", rel: "noopener", style: { color: "#5D4037", textDecoration: "underline" } }, "Datenschutzerkl\xE4rung"), "."), partyCreateError && /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, fontWeight: 700, color: "#B71C1C", margin: "0 0 10px" } }, partyCreateError), /* @__PURE__ */ React.createElement(
       "button",
       {
         onClick: submitPartyForm,
