@@ -1153,10 +1153,14 @@ function App() {
   const [mapPositions, setMapPositions] = useState(null); // [{x, y}] for canvas map stations
   const [stationLocations, setStationLocations] = useState(() => loadState("stationLocations", {})); // {index: "Ort-Text"}
   const [dekoEmojis, setDekoEmojis] = useState(() => loadState("dekoEmojis", [])); // [{emoji, fx, fy}] fractional coords
-  // P1-25: Partyseite-Erstellung via Worker
-  const [partyCreateStatus, setPartyCreateStatus] = useState("idle"); // idle | creating | success | error
+  // P1-25: Partyseite-Erstellung via Worker (D-soft: Pre-Flight-Form mit Email-Capture)
+  const [partyCreateStatus, setPartyCreateStatus] = useState("idle"); // idle | form | creating | success | error
   const [partyCreateResult, setPartyCreateResult] = useState(null); // {url, editUrl}
   const [partyCreateError, setPartyCreateError] = useState("");
+  const [partyFormChildName, setPartyFormChildName] = useState("");
+  const [partyFormEmail, setPartyFormEmail] = useState("");
+  const [partyFormNewsletterOptIn, setPartyFormNewsletterOptIn] = useState(false);
+  const [partyEmailSent, setPartyEmailSent] = useState(false);
 
   // Derived values
   const motto = ALL_MOTTOS.find((m) => m.id === mottoId);
@@ -1234,19 +1238,48 @@ function App() {
     }
   }, [mottoId, view]);
 
-  // === P1-25: Partyseite via Worker erstellen ===
-  async function createPartyPage() {
+  // === P1-25: Partyseite via Worker erstellen (D-soft) ===
+  // Schritt 1: Klick auf den Button öffnet die Inline-Form mit Pflicht-Vorname + optionaler Email
+  function openPartyForm() {
     if (!motto) return;
+    setPartyFormChildName(childName || "");
+    setPartyFormEmail("");
+    setPartyFormNewsletterOptIn(false);
+    setPartyCreateError("");
+    setPartyEmailSent(false);
+    setPartyCreateStatus("form");
+    if (window.umami) { try { window.umami.track("party_form_opened", { motto: mottoId }); } catch (e) {} }
+  }
+
+  // Schritt 2: Submit der Form -> POST /api/create, optional /send-edit-link
+  async function submitPartyForm() {
+    if (!motto) return;
+    const formName = (partyFormChildName || "").trim();
+    if (!formName) {
+      setPartyCreateError("Bitte Vorname des Geburtstagskinds eintragen");
+      return;
+    }
+    const email = (partyFormEmail || "").trim();
+    const wantsEmail = email.length > 0;
+    if (wantsEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setPartyCreateError("Bitte gültige E-Mail eintragen oder Feld leer lassen");
+      return;
+    }
+    if (partyFormNewsletterOptIn && !wantsEmail) {
+      setPartyCreateError("Für den Newsletter brauchen wir deine E-Mail-Adresse");
+      return;
+    }
     setPartyCreateStatus("creating");
     setPartyCreateError("");
-    if (window.umami) { try { window.umami.track("party_create_started", { motto: mottoId }); } catch (e) {} }
+    if (window.umami) { try { window.umami.track("party_create_started", { motto: mottoId, withEmail: wantsEmail }); } catch (e) {} }
+    // childName ins Cockpit-State spiegeln (User pflegt's nur einmal)
+    if (formName !== childName) setChildName(formName);
     let payload;
     if (window.BirthdayProject && typeof window.BirthdayProject.toPartyPayload === "function") {
       payload = window.BirthdayProject.toPartyPayload();
     }
     if (!payload || !payload.motto) {
       payload = {
-        childName: childName || "",
         age: age,
         motto: motto.name,
         mottoEmoji: motto.emoji,
@@ -1256,6 +1289,7 @@ function App() {
         askAllergies: true, askPickup: true, wishes: []
       };
     }
+    payload.childName = formName;
     try {
       const res = await fetch("https://party.machsleicht.de/api/create", {
         method: "POST",
@@ -1264,15 +1298,34 @@ function App() {
       });
       if (!res.ok) throw new Error("HTTP " + res.status);
       const data = await res.json();
-      if (!data.url || !data.editUrl) throw new Error("Unvollstaendige Antwort vom Worker");
+      if (!data.url || !data.editUrl || !data.editToken) throw new Error("Unvollstaendige Antwort vom Worker");
       setPartyCreateResult({ url: data.url, editUrl: data.editUrl, id: data.id });
-      setPartyCreateStatus("success");
       if (window.BirthdayProject) { try { window.BirthdayProject.update({ modules: { partyPage: { status: "done" } } }); } catch (e) {} }
       if (window.umami) { try { window.umami.track("party_created", { motto: mottoId }); } catch (e) {} }
+      // Optional: Edit-Link per Mail senden (+ DOI-Block falls Newsletter-Opt-In)
+      if (wantsEmail) {
+        try {
+          const mailRes = await fetch(`https://party.machsleicht.de/api/party/${data.id}/send-edit-link`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ editToken: data.editToken, email: email, newsletterOptIn: partyFormNewsletterOptIn })
+          });
+          if (mailRes.ok) {
+            setPartyEmailSent(true);
+            if (window.umami) { try { window.umami.track("party_edit_link_mailed", { motto: mottoId, newsletter: partyFormNewsletterOptIn }); } catch (e) {} }
+          }
+        } catch (mailErr) { /* Mail-Fehler ist nicht fatal — Edit-Link bleibt im Result-Pane sichtbar */ }
+      }
+      setPartyCreateStatus("success");
     } catch (err) {
       setPartyCreateError(err.message || "Verbindung zur Partyseite fehlgeschlagen");
       setPartyCreateStatus("error");
     }
+  }
+
+  function cancelPartyForm() {
+    setPartyCreateStatus("idle");
+    setPartyCreateError("");
   }
 
   function copyToClipboard(text) {
@@ -1557,9 +1610,9 @@ function App() {
               <span style={{ fontSize: 18, color: "var(--a)" }}>→</span>
             </a>
             <button
-              onClick={() => { if (window.umami) { try { window.umami.track("cockpit_cta_clicked", { target: "party", motto: mottoId }); } catch (e) {} } createPartyPage(); }}
-              disabled={partyCreateStatus === "creating" || partyCreateStatus === "success"}
-              style={{ padding: "12px 16px", background: "var(--bg)", border: "1px solid var(--l)", borderRadius: 10, textAlign: "left", cursor: partyCreateStatus === "creating" || partyCreateStatus === "success" ? "default" : "pointer", display: "flex", alignItems: "center", gap: 10, fontFamily: "inherit", opacity: partyCreateStatus === "success" ? 0.6 : 1 }}
+              onClick={() => { if (window.umami) { try { window.umami.track("cockpit_cta_clicked", { target: "party", motto: mottoId }); } catch (e) {} } openPartyForm(); }}
+              disabled={partyCreateStatus === "creating" || partyCreateStatus === "success" || partyCreateStatus === "form"}
+              style={{ padding: "12px 16px", background: "var(--bg)", border: "1px solid var(--l)", borderRadius: 10, textAlign: "left", cursor: partyCreateStatus === "idle" || partyCreateStatus === "error" ? "pointer" : "default", display: "flex", alignItems: "center", gap: 10, fontFamily: "inherit", opacity: partyCreateStatus === "success" ? 0.6 : 1 }}
             >
               <span style={{ fontSize: 22 }}>{partyCreateStatus === "creating" ? "⏳" : partyCreateStatus === "success" ? "✓" : "🎉"}</span>
               <span style={{ flex: 1 }}>
@@ -1568,32 +1621,83 @@ function App() {
                 </strong>
                 <span style={{ fontSize: 12, color: "var(--m)" }}>RSVP, Wunschliste, Allergien — alles auf einer Seite</span>
               </span>
-              {partyCreateStatus !== "creating" && partyCreateStatus !== "success" && <span style={{ fontSize: 18, color: "var(--a)" }}>→</span>}
+              {(partyCreateStatus === "idle" || partyCreateStatus === "error") && <span style={{ fontSize: 18, color: "var(--a)" }}>→</span>}
             </button>
           </div>
-          {/* P1-25: Result-Pane nach erfolgreicher Erstellung */}
+          {/* P1-25 D-soft: Pre-Flight-Form mit Pflicht-Vorname + optionaler Mail */}
+          {partyCreateStatus === "form" && (
+            <div style={{ marginTop: 12, padding: 16, background: "#FFF8E1", border: "1px solid #FFD54F", borderRadius: 10 }}>
+              <p style={{ fontSize: 13, fontWeight: 700, color: "#5D4037", margin: "0 0 4px" }}>Kurz vor dem Anlegen</p>
+              <p style={{ fontSize: 11, color: "#6D4C41", margin: "0 0 12px", lineHeight: 1.4 }}>Damit Gäste sich einloggen können und du den Bearbeitungslink nicht verlierst.</p>
+              <label style={{ display: "block", fontSize: 11, fontWeight: 600, color: "#5D4037", marginBottom: 4 }}>Vorname des Geburtstagskinds *</label>
+              <input
+                type="text" value={partyFormChildName} onChange={(e) => setPartyFormChildName(e.target.value)}
+                placeholder="z.B. Mattis" maxLength={50} autoFocus={!partyFormChildName}
+                style={{ width: "100%", padding: "10px 12px", background: "#fff", border: "1px solid #FFD54F", borderRadius: 8, fontSize: 14, color: "#3E2723", marginBottom: 4, fontFamily: "inherit", boxSizing: "border-box" }}
+              />
+              <p style={{ fontSize: 10, color: "#8D6E63", margin: "0 0 12px", lineHeight: 1.3 }}>Gäste tippen diesen Namen ein, um die Seite zu öffnen.</p>
+              <label style={{ display: "block", fontSize: 11, fontWeight: 600, color: "#5D4037", marginBottom: 4 }}>Deine E-Mail (empfohlen)</label>
+              <input
+                type="email" value={partyFormEmail} onChange={(e) => setPartyFormEmail(e.target.value)}
+                placeholder="deine@email.de" maxLength={200} autoFocus={!!partyFormChildName && !partyFormEmail}
+                style={{ width: "100%", padding: "10px 12px", background: "#fff", border: "1px solid #FFD54F", borderRadius: 8, fontSize: 14, color: "#3E2723", marginBottom: 4, fontFamily: "inherit", boxSizing: "border-box" }}
+              />
+              <p style={{ fontSize: 10, color: "#8D6E63", margin: "0 0 10px", lineHeight: 1.3 }}>Bearbeitungslink kommt per Mail — sonst ist die Seite weg, wenn du den Tab schließt.</p>
+              <label style={{ display: "flex", gap: 8, alignItems: "flex-start", margin: "0 0 10px", cursor: "pointer" }}>
+                <input
+                  type="checkbox" checked={partyFormNewsletterOptIn} onChange={(e) => setPartyFormNewsletterOptIn(e.target.checked)}
+                  style={{ marginTop: 3, flex: "0 0 auto", cursor: "pointer", accentColor: "#D4812A" }}
+                />
+                <span style={{ fontSize: 11, color: "#5D4037", lineHeight: 1.4 }}>
+                  📬 Schick mir Tipps für den Kindergeburtstag und eine Erinnerung 7 Tage vor der Party. <span style={{ color: "#8D6E63" }}>Optional, jederzeit per Link in jeder Mail abbestellbar. Bestätigung per Mail (Double-Opt-In).</span>
+                </span>
+              </label>
+              <p style={{ fontSize: 10, color: "#8D6E63", margin: "0 0 12px", lineHeight: 1.3 }}>
+                Mit dem Klick verarbeiten wir deine E-Mail, um den Bearbeitungslink zu senden. Details in der <a href="/datenschutz.html" target="_blank" rel="noopener" style={{ color: "#5D4037", textDecoration: "underline" }}>Datenschutzerklärung</a>.
+              </p>
+              {partyCreateError && (
+                <p style={{ fontSize: 11, fontWeight: 700, color: "#B71C1C", margin: "0 0 10px" }}>{partyCreateError}</p>
+              )}
+              <button
+                onClick={submitPartyForm}
+                style={{ width: "100%", padding: "12px", background: "#25D366", border: "none", color: "#fff", borderRadius: 10, fontSize: 14, fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}
+              >🎉 Anlegen {partyFormEmail.trim() ? "und Link per Mail senden" : ""}</button>
+              <div style={{ display: "flex", justifyContent: "space-between", marginTop: 10 }}>
+                <button onClick={cancelPartyForm} style={{ padding: "4px 8px", background: "transparent", border: "none", color: "#8D6E63", fontSize: 11, cursor: "pointer", fontFamily: "inherit" }}>Abbrechen</button>
+                <button onClick={() => { setPartyFormEmail(""); submitPartyForm(); }} style={{ padding: "4px 8px", background: "transparent", border: "none", color: "#8D6E63", fontSize: 10, cursor: "pointer", textDecoration: "underline", fontFamily: "inherit" }}>Ohne Mail anlegen — ich sicher den Link selbst</button>
+              </div>
+            </div>
+          )}
+          {/* P1-25 D-soft: Result-Pane — Edit-Link nur prominent, wenn keine Mail gesendet wurde */}
           {partyCreateStatus === "success" && partyCreateResult && (
             <div style={{ marginTop: 12, padding: 14, background: "#E8F5E9", border: "1px solid #66BB6A", borderRadius: 10 }}>
-              <p style={{ fontSize: 13, fontWeight: 700, color: "#1B5E20", margin: "0 0 8px" }}>✓ Deine {motto.name}-Partyseite ist fertig</p>
-              <p style={{ fontSize: 11, color: "#33691E", margin: "0 0 10px", lineHeight: 1.4 }}>Privat geteilt. Nicht bei Google. Kein Konto. Daten werden automatisch geloescht.</p>
+              <p style={{ fontSize: 13, fontWeight: 700, color: "#1B5E20", margin: "0 0 6px" }}>✓ Deine {motto.name}-Partyseite ist fertig</p>
+              {partyEmailSent ? (
+                <p style={{ fontSize: 11, color: "#33691E", margin: "0 0 10px", lineHeight: 1.4 }}>📧 Bearbeitungslink wurde an <strong>{partyFormEmail}</strong> gesendet. Schau auch im Spam-Ordner.</p>
+              ) : (
+                <p style={{ fontSize: 11, color: "#33691E", margin: "0 0 10px", lineHeight: 1.4 }}>Privat geteilt. Nicht bei Google. Kein Konto. Daten werden automatisch gelöscht.</p>
+              )}
+              <p style={{ fontSize: 11, fontWeight: 600, color: "#1B5E20", margin: "0 0 4px" }}>Gäste-Link zum Teilen:</p>
               <div style={{ background: "#fff", border: "1px solid #C8E6C9", borderRadius: 8, padding: "8px 10px", fontSize: 12, fontFamily: "monospace", wordBreak: "break-all", marginBottom: 10 }}>{partyCreateResult.url}</div>
               <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                <button onClick={() => copyToClipboard(partyCreateResult.url)} style={{ flex: 1, minWidth: 110, padding: "10px 12px", background: "#fff", border: "1px solid #66BB6A", color: "#1B5E20", borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>📋 Gaeste-Link kopieren</button>
+                <button onClick={() => copyToClipboard(partyCreateResult.url)} style={{ flex: 1, minWidth: 110, padding: "10px 12px", background: "#fff", border: "1px solid #66BB6A", color: "#1B5E20", borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>📋 Gäste-Link kopieren</button>
                 <button onClick={() => shareParty(partyCreateResult.url)} style={{ flex: 1, minWidth: 110, padding: "10px 12px", background: "#25D366", border: "none", color: "#fff", borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>💬 Per WhatsApp teilen</button>
               </div>
-              <details style={{ marginTop: 10 }}>
-                <summary style={{ fontSize: 12, color: "#33691E", cursor: "pointer", fontWeight: 600 }}>Bearbeitungslink sichern</summary>
-                <p style={{ fontSize: 11, color: "#33691E", margin: "8px 0 6px", lineHeight: 1.4 }}>Mit diesem Link kannst du Zusagen ansehen, Datum/Ort aendern und die Partyseite verwalten. Kein Konto, kein Newsletter.</p>
-                <div style={{ background: "#fff", border: "1px solid #C8E6C9", borderRadius: 8, padding: "6px 8px", fontSize: 11, fontFamily: "monospace", wordBreak: "break-all", marginBottom: 6 }}>{partyCreateResult.editUrl}</div>
-                <button onClick={() => copyToClipboard(partyCreateResult.editUrl)} style={{ padding: "6px 10px", background: "#fff", border: "1px solid #66BB6A", color: "#1B5E20", borderRadius: 6, fontSize: 11, fontWeight: 600, cursor: "pointer" }}>📋 Edit-Link kopieren</button>
-              </details>
+              {!partyEmailSent && (
+                <div style={{ marginTop: 12, padding: 10, background: "#FFF3E0", border: "1px solid #FFB74D", borderRadius: 8 }}>
+                  <p style={{ fontSize: 11, fontWeight: 700, color: "#E65100", margin: "0 0 4px" }}>⚠ Bearbeitungslink — bitte sofort sichern</p>
+                  <p style={{ fontSize: 10, color: "#BF360C", margin: "0 0 6px", lineHeight: 1.4 }}>Ohne diesen Link kannst du Zusagen nicht sehen und nichts mehr ändern.</p>
+                  <div style={{ background: "#fff", border: "1px solid #FFB74D", borderRadius: 6, padding: "6px 8px", fontSize: 11, fontFamily: "monospace", wordBreak: "break-all", marginBottom: 6 }}>{partyCreateResult.editUrl}</div>
+                  <button onClick={() => copyToClipboard(partyCreateResult.editUrl)} style={{ padding: "8px 12px", background: "#fff", border: "1px solid #FFB74D", color: "#BF360C", borderRadius: 6, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>📋 Bearbeitungslink kopieren</button>
+                </div>
+              )}
             </div>
           )}
           {partyCreateStatus === "error" && (
             <div style={{ marginTop: 12, padding: 12, background: "#FFEBEE", border: "1px solid #EF5350", borderRadius: 10 }}>
               <p style={{ fontSize: 13, fontWeight: 700, color: "#B71C1C", margin: "0 0 4px" }}>Partyseite konnte gerade nicht erstellt werden</p>
               <p style={{ fontSize: 12, color: "#C62828", margin: "0 0 8px", lineHeight: 1.4 }}>{partyCreateError || "Verbindung fehlgeschlagen"}. Dein Plan bleibt erhalten.</p>
-              <button onClick={createPartyPage} style={{ padding: "8px 14px", background: "#fff", border: "1px solid #EF5350", color: "#B71C1C", borderRadius: 8, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>↻ Erneut versuchen</button>
+              <button onClick={openPartyForm} style={{ padding: "8px 14px", background: "#fff", border: "1px solid #EF5350", color: "#B71C1C", borderRadius: 8, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>↻ Erneut versuchen</button>
             </div>
           )}
         </section>

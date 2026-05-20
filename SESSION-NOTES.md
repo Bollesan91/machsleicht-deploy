@@ -1,118 +1,77 @@
-# Session-Notiz — 19.05.2026 (Planer-Frisur-Sprint komplett durchgezogen, deployed)
+# Session-Notiz — 20.05.2026 (Partyseite-Funnel: 4 Bugs gefixt, Newsletter-Checkbox + Datenschutz-Hinweis, P1-60 Reminder ins Backlog)
 
 ## Kontext der Session
 
-Bolle übergab via `_src/elite-motto-data/HANDOFF.md` den Phase-A-Stand. Ziel: **Planer-Frisur-Sprint** (P3-13/14/16/17/18) komplett umsetzen — von Daten-Layer-Lücken in feuerwehr-mittel.json bis fertige UI-Komponenten.
+"Start leicht" 20.05.2026. Bolle meldete via Mobile-Screenshot, dass im Einladungs-Erstell-Tool der gelbe Cockpit-Banner die Card nach rechts schob (Body-Flex-Bug). Beim Drüberreden zum Partyseite-Funnel kam dann der größere Schmerz raus: Klick auf "Partyseite anlegen" im Cockpit erzeugte eine leere Seite ohne childName/date/address, Gäste konnten sich wegen leerem Code-Gate nicht einloggen, Edit-Link versteckt im `<details>`, kein Mail-Versand-Trigger vom Cockpit aus.
 
-Wir sind durchgezogen: Phase B → Phase C (6 weitere Slots) → Frontend-Sprint (5 PBIs) → Deploy.
+## Was wurde gemacht
 
-## Was wurde gemacht — Marathon-Session
+### 1. Einladungs-Tool: Cockpit-Banner Layout-Fix (Commit `9f065b2`)
 
-### Phase B (Stream 04 via 3-Chat-Content-Loop-Pipeline)
+Banner wurde per `card.parentElement.insertBefore(banner, card)` als Sibling vor `.card` in `<body>` (`display:flex`) eingefügt → Banner und Card wurden zu zwei Flex-Items nebeneinander statt gestapelt.
 
-`feuerwehr-mittel.json` von 75% auf 95% gebracht:
-- `preparationWeeks` — 6 datums-Sektionen, 30 Items, Score v3 ~88
-- `sosScenarios` — 8 Panik-Szenarien, alle steps ≤120 chars, Score v3 ~92
-- `shoppingList[].category` — 40 Items, Pflicht 60/54/53%, Score v3 ~89
+Fix: `card.insertBefore(banner, card.firstChild)` — Banner sitzt jetzt im Card-Container und übernimmt automatisch dessen Breite.
 
-Methode: 3 parallele Writer+Reviewer-Pipelines via Chrome-MCP. Adversarial skipped (alle Scores ≥85, Writer-Pushback funktionierte). Audit-Trail auf `content-loop-pipeline`-Branch.
+Cross-Check ergab: Pattern existiert nur an dieser Stelle. Andere `insertBefore`-Treffer im Repo sind React-Reconciler-Internals oder `fallbackCopy`-Funktionen (position:fixed, harmlos).
 
-### Phase C (Streams 05-10: 6 weitere Elite-Slots)
+### 2. Cockpit-Partyseite: D-soft Pre-Flight-Form (Commit `1f415d1`)
 
-Direct-Draft-Methode (statt 3-Chat-Pipeline) für Effizienz:
+4 Bugs gleichzeitig adressiert:
+- **Worker akzeptierte leeren Payload** → jetzt childName Pflicht im Cockpit-Form
+- **Code-Gate brach ohne childName** (`CNL=""` → Gäste tippen vermuteten Namen, Login schlägt fehl) → fixt sich automatisch durch Pflicht-Vorname
+- **Edit-Link versteckt im `<details>`** → bei Email-Versand komplett aus dem Result-Pane, ohne Email als orangener Warn-Block prominent
+- **Kein Mail-Versand vom Cockpit** → existierender `/api/party/{id}/send-edit-link` Worker-Endpoint wird jetzt aus dem Cockpit-Flow getriggert
 
-| Slot | Methode | Besonderheit | Pflicht-% (M/S/W) |
-|---|---|---|---|
-| einhorn-mittel | Direct-Draft | Sternenstaub-Beutel-Ritual (H3) | 44/54/35 |
-| feuerwehr-klein | Direct-Draft | Eltern-Pflicht, keine Sirene | 60/58/53 |
-| feuerwehr-gross | Direct-Draft | Escape-Brandermittlung + Pizza | 66/66/66 |
-| einhorn-klein | Direct-Draft + manual roles | H2-Ritual + inline names | 50/44/33 |
-| einhorn-gross | Direct-Draft + manual roles | Code-Names + Chemie-Labor | 57/60/61 |
-| safari-mittel | Direct-Draft | KEIN Ritual-Block — Stirnband-Verleihung | 62/50/42 |
+UX-Variante D-soft: Pre-Flight-Form mit Vorname + E-Mail (empfohlen, nicht Pflicht), Skip-Link "ohne Mail anlegen" klein aber sichtbar.
 
-Alle: schema-strikt, 0 TODO_PHASE_B markers, motto-Anker durchgehend.
+Diskussions-Verlauf der Lösung: 3 Varianten erwogen (A: Cut + Redirect zum Creator, B: Pflichtfelder + Post-Capture, C: Pre-Capture-Form mit Skip), gewinnt D-soft = Pre-Capture mit optionalem Skip wegen Symmetrie zwischen "Mail-Vergessen-Risiko" (Hauptproblem von Bolle) und User-Friction.
 
-### Frontend-Sprint (5 PBIs in kindergeburtstag.jsx)
+### 3. Newsletter-Checkbox + Datenschutz-Hinweis (Commit `accbbe1`)
 
-**Foundation:** `_src/elite-motto-data/_bundle.js` (478KB JSON-Bundle, 7 Slots) + `getEliteData(motto, ageGroup)` Helper. Integriert in `_src/build.sh` (python3-Generator-Step).
+Im D-soft-Form ergänzt:
+- Opt-In-Checkbox für Tipps + Pre-Party-Reminder (nicht voreingestellt, DOI im Worker)
+- Datenschutz-Hinweis unter dem E-Mail-Feld mit Link zur Datenschutzerklärung
+- Validierung: Checkbox an ohne E-Mail → "Für den Newsletter brauchen wir deine E-Mail-Adresse"
+- `newsletterOptIn`-Flag wird an `/send-edit-link` durchgereicht — Worker packt DOI-Bestätigungs-Block direkt in die Edit-Link-Mail (keine zweite Mail nötig). DOI-Confirm-Endpoint existiert schon (Resend-Audience-Insert + Consent-Audit-Trail in KV).
 
-**5 neue Komponenten:**
+### 4. P1-60 Reminder-System ins Backlog (Commit `c28603b`)
 
-| PBI | Komponente | Position | Conditional |
-|---|---|---|---|
-| P3-13 | EliteCockpitHeader | Vor Cockpit | `eliteData` |
-| P3-14 | EliteGamesFilter (+EliteGameCard) | Nach Zeitplan | `eliteData.variants` |
-| P3-16 | VorbereitungsKarte (+PrepSection) | Nach Cockpit | `eliteData.preparationWeeks` |
-| P3-17 | EliteShoppingList (+EliteShoppingItem) | Ersetzt Deko+Mitgebsel | `eliteData.variants[].shoppingList` |
-| P3-18 | SOSButton | Floating FAB | `eliteData.sosScenarios` |
+DOI-Erfolgsseite verspricht "Tipps und Erinnerung 7 Tage vor der Party" — Cron-Job dafür existiert noch nicht. Bolle wählt Variante C: beides bauen (Pre-Party-Reminder + Year-Later-Reminder + Unsubscribe-Endpoint).
 
-`js/kindergeburtstag.js` jetzt 788KB (vs ~280KB Pre-Phase-C). Syntax-OK, alle Symbols präsent. Non-elite Mottos (piraten/dschungel/dino/etc) fallen graceful auf legacy UI zurück.
+PBI-Detail-Entry inkl. Sub-Tasks A/B/C, Datenproblem (`calcTTL` löscht Daten nach Party, für Year-Later braucht's separaten Long-Lived-Key mit 2-Jahres-TTL und Datenminimierung), Datenschutz-Implikationen. Prio-Tabellen-Zeile 11b nach P1-17, Bündel-Hinweis (gleicher Cron-Mechanismus wie P1-17/C).
 
-## Commits-Chronologie (12+ Commits auf draft heute)
+Aufwand 5–7h, Laptop-Session, nicht jetzt im Sprint.
+
+## Commits (4 auf draft)
 
 | Commit | Inhalt |
 |---|---|
-| `885920a` | Phase B feuerwehr-mittel.json |
-| `517b786` | SESSION-NOTES + HANDOFF Phase B done |
-| `ec9ff7b` | einhorn-mittel.json (Phase C #1) |
-| `2e08c1d` | feuerwehr-klein.json |
-| `a873d26` | feuerwehr-gross.json |
-| `de37844` | einhorn-klein + einhorn-gross.json |
-| `59a2450` | safari-mittel.json |
-| `2c0adc5` | HANDOFF-Update Phase C komplett |
-| `e387302` | Bundle-Integration (_bundle.js + getEliteData + build.sh) |
-| `1f53833` | P3-16 + P3-18 |
-| `10fa964` | P3-13 + P3-14 + P3-17 |
-| `7c67a64` | BACKLOG-AUDIT Done-Marker |
-
-Plus auf `content-loop-pipeline`-Branch: 10 Audit-Trail-Commits (Streams 04-10).
-
-## Tech-Notes — Lessons Learned
-
-- **PAT-Scoping:** Erster gefundener PAT war machsruhig-only-gescoped → 403 auf machsleicht-push. Frischer PAT mit machsleicht-Scope von Bolle eingespeist.
-- **javascript_tool text-arg-Limit:** ~10-11KB hart. Base64-Chunking-Versuche instabil. Pragmatischer Fix: Reviewer-Prompts auf ≤8KB getrimmt (nur JSON aus v1 + knappe Rubrik) → plain text JSON-encoded, ein Call.
-- **HTML-Template-Varianz:** feuerwehr/einhorn-mittel haben Ritual in H3, einhorn-klein/gross in H2 mit unterschiedlichen Namen (Sternenstaub-Ritual vs Initiations-Ritual), safari hat KEIN Ritual-Block. _cleanup-Scripts brauchen pro Slot teils manuelle Patches für rolesList-Parsing.
-- **Pflicht-Inflation-Pattern:** Bei Slots mit wenigen Items (gross-Varianten) ist 70%-Schwelle leicht überschritten. Klemmbretter + Lupen sind kandidaten für Downgrade auf sinnvoll.
-- **Direct-Draft vs Pipeline:** Pipeline (Phase B) brauchte ~3h pro Slot mit Chrome-MCP-Overhead. Direct-Draft (Phase C 1-6) ~30 Min pro Slot. Pipeline lohnt sich für Validierung neuer Patterns; Direct-Draft für Skalierung wenn Patterns clean sind.
-
-## Sprint-Status: Planer-Frisur
-
-| PBI | Status |
-|---|---|
-| P3-13 Cockpit-Header | ✅ DONE (EliteCockpitHeader) |
-| P3-14 Constraint-Solver | ✅ DONE (EliteGamesFilter) |
-| P3-15 Erwachsene + Datum als Inputs | ⏸️ OFFEN (non-eliteData) |
-| P3-16 Vorbereitungskarte | ✅ DONE (VorbereitungsKarte) |
-| P3-17 3-Gruppen-Einkaufsliste | ✅ DONE (EliteShoppingList) |
-| P3-18 SOS-Button | ✅ DONE (SOSButton) |
-| P3-19 KI-Rätsel-Gedichte | ⏸️ OFFEN (andere Daten-Source) |
-
-5 von 7 Sprint-PBIs durch.
+| `9f065b2` | fix(einladung): Cockpit-Banner sass im Body-Flex und schob Card nach rechts |
+| `1f415d1` | fix(cockpit): Partyseite-Erstellung mit Pflicht-Vorname + Edit-Link per Mail (D-soft) |
+| `accbbe1` | feat(cockpit): Newsletter-Checkbox + Datenschutz-Hinweis in Partyseite-Form |
+| `c28603b` | docs(backlog): P1-60 Reminder-System (Pre-Party + Year-Later) als neues PBI |
 
 ## Was als Nächstes ansteht
 
-### Sofort (nach diesem Deploy)
-- **Live-Test im Browser** — machsleicht.de mit verschiedenen Motto-Alter-Kombinationen durchklicken:
-  - feuerwehr/einhorn/safari × klein/mittel/gross (wo Slot existiert)
-  - Vorbereitungs-Wochen aufklappen/zuklappen
-  - SOS-Modal öffnen, Szenario auswählen, Details + Plan-C-Fallback
-  - Filter aktivieren: quietMode + wohnung/garten/park-Switch + Aufwand/Lautstärke
-  - Einkaufsliste 3-Gruppen + categoryReasoning ausklappen
-  - Non-Elite-Motto (piraten) → Legacy UI sichtbar
-- **Visual-Polish** falls UX-Issues sichtbar werden (z.B. Modal-Z-Index, Mobile-Layout)
+### Sofort nach diesem Deploy
+- **Live-Test** auf machsleicht.de:
+  - Cockpit → "Partyseite anlegen" → Pre-Flight-Form sollte erscheinen
+  - Vorname Pflicht-Check
+  - E-Mail leer lassen → Skip-Pfad mit prominentem Edit-Link-Block
+  - E-Mail eintragen ohne Newsletter → nur Edit-Link-Mail
+  - E-Mail eintragen mit Newsletter-Checkbox → Edit-Link-Mail mit DOI-Bestätigungs-Block, dann `/api/newsletter-confirm`-Klick → Resend-Audience-Insert
+  - Datenschutz-Link öffnet in neuem Tab
+- **Einladungs-Tool mit `?source=cockpit`-Banner** durchklicken, prüfen dass Card jetzt zentriert ist
 
 ### Mittelfristig
-- **P3-15** Erwachsenen-Anzahl + Geburtstags-Datum als zusätzliche Eingaben
-- **P3-19** KI-Rätsel-Gedichte für Schatzsuche-Stationen
-- **Polish-Nice-to-Haves (HANDOFF #4-7):**
-  - #4 food/decoration/giveaways aus Roh-Strings strukturieren (parser-Arbeit)
-  - #5 whyItWorks für die 12 Spiele systematisch nachfüllen (content-loop-tauglich)
-  - #6 safetyRule für die Spiele systematisch nachfüllen
-  - #7 invitationTemplate entfernen oder durch echte Vorlage ersetzen
+- **P1-60 Reminder-System** (5–7h Laptop, bündeln mit P1-17/C)
+- **P1-17 DSGVO-Hygiene** Sub-Tasks A+C (Worker-Hinweis + Auto-Delete-Cron) — neben dem Cockpit-Hinweis bleibt der Hinweis im Worker-Creator-Flow noch offen
+- **P3-15** + **P3-19** vom Planer-Frisur-Sprint
+- **Validator-Cleanup** der 2 pre-existing Errors aus dem 30.04-Cut (Motto-Zahlen 18 Pages)
 
 ## Self-Audit der Session
 
-- **Substanz:** 9/10 — 12+ Commits, 5 UI-Komponenten, 6 Phase-C-Slots, alle schema-validiert + syntax-getestet.
-- **Effizienz:** 8/10 — Direct-Draft-Pivot bei Phase C war richtige Entscheidung (5x schneller). javascript_tool-Limit-Workarounds haben Zeit gekostet (memory dazu gespeichert).
-- **Knowledge-Transfer:** 9/10 — Audit-Trail komplett auf content-loop-pipeline, HANDOFF + BACKLOG aktualisiert. Nächste Session kann nahtlos in Browser-Tests einsteigen.
-- **Bolle-Feedback verarbeitet:** Memories aktualisiert (no-skill-edits, close-tabs, no-path-decision-questions).
+- **Substanz:** 8/10 — 4 Commits, 4 echte Bugs gefixt, 1 PBI sauber dokumentiert. Kein Browser-Live-Test (Cloud-Env, kein lokaler Dev-Server).
+- **UX-Diskussion:** 9/10 — A/B/C/D-soft mit Trade-Offs durchgesprochen, Bolle hat begründet entschieden. Vermutung war richtig (D-soft passt zu "einfach bleiben, aber funktionieren").
+- **DSGVO-Gewissenhaftigkeit:** 8/10 — Newsletter-Checkbox + Datenschutz-Hinweis nicht vergessen (nach Bolle-Reminder); DOI-Versprechen aus Worker-Text → P1-60 PBI angelegt, damit Versprechen technisch eingelöst wird.
+- **Knowledge-Transfer:** 9/10 — SESSION-NOTES + BACKLOG-AUDIT aktualisiert, P1-60 mit allen Sub-Tasks dokumentiert, nächste Session kann nahtlos in Live-Test einsteigen.

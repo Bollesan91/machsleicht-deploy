@@ -32,6 +32,7 @@
 | 9 | ✅ | **P1** | P1-20 | `[KERN]` **Internal-Linking-Fix** (Superheld 0 Links, Prinzessin 2 Links) | 3 Std | **Erledigt 23.04.2026**: Hub-Pages + Card-Swap. Prinzessin 5→85, Superheld 3→68 Links |
 | 10 | 🔄 | **P1** | P1-15 | `[KERN]` **Email-Capture (Pilot: Partyseite + Einladung→Partyseite-Funnel)** | 4–5 Std | **Code fertig 24.04.2026 — Variante A.** Strategie-Revision in Session: Capture sitzt am Partyseite-Creator (Pflicht-Edit-Link + optionale Newsletter-Checkbox mit DOI), nicht am Einladungstool. Einladungstool bekommt aktivierten Partyseite-CTA mit Query-Param-Handover (`childName`, `motto`, `mottoEmoji`) als Funnel-Bridge. **Extern-Tasks offen:** Resend-Audience anlegen, `RESEND_AUDIENCE_ID` als Env-Var setzen, Worker deployen. Newsletter-Capture so auch auf Schatzsuche übertragbar (je 1–2h Template-Reuse) |
 | 11 | 🔄 | **P1** | P1-17 | `[KERN]` **DSGVO-Hygiene Partyseite** (A: Worker-Hinweis, B: Datenschutz ✅, C: Auto-Delete-Cron) | 1,5 Std (Laptop) | **B erledigt am 21.04.** Blockt kein weiteres Feature technisch, aber rechtliches Risiko solange A+C offen |
+| 11b | ⏳ | **P1** | P1-60 | `[KERN]` **Reminder-System Partyseite** (A: 7-Tage-vor-Party, B: 11-Monate-Year-Later, C: Unsubscribe-Endpoint) | 5–7 Std (Laptop) | **Neu 20.05.2026.** Newsletter-DOI-Confirm-Text verspricht "Erinnerung 7 Tage vorher" — aktuell noch nicht implementiert. Bündeln mit P1-17/C (gleicher Cron-Mechanismus) |
 | 12 | ⏳ | **P1** | P2-20 | `[KERN]` **Datenübergabe Planer → Tools** | 4–6 Std | Ökosystem-Prinzip umsetzen, nach P1-10 |
 | 13 | ⏳ | **P1** | P2-13 | `[KERN]` Gumroad: 2 Digital-Produkte (Piraten+Dino) | 4h/Produkt | +100€/Monat bei aktuellem Traffic |
 | 14 | ⏳ | **P1** | P2-15 | `[KERN]` Awin-Anmeldung (Otto, myToys, Thalia) | 30 Min + Warten | Prüfung dauert 1–3 Tage, früh starten |
@@ -1233,6 +1234,59 @@ Bolle hat nach einer Lösung gefragt, die Amazon & Co. trotz X-Frame-Options wir
 **Referenz:**
 - SESSION-NOTES.md 21.04.2026 Teil 1 (DSGVO-Decision)
 - Commit vom 21.04.2026 Teil 4 (datenschutz.html-Erweiterung, Sub-Task B)
+
+
+---
+
+#### P1-60: Reminder-System Partyseite (Pre-Party + Year-Later)  `[KERN]`
+
+**Motivation:** Mit der Newsletter-Opt-In-Checkbox vom 20.05.2026 (Cockpit + Worker-DOI) versprechen wir auf der DOI-Erfolgsseite zwei Reminder, die noch nicht gebaut sind:
+1. **Pre-Party-Reminder:** "7 Tage vor der Party" — Tipps + Countdown. Versprechen aus DOI-Confirm-Text.
+2. **Year-Later-Reminder:** "Mattis wird bald 7 — Zeit für die nächste Planung" — Retention-Loop 11 Monate nach Party-Datum.
+
+Versprechen einlösen + Retention-Hebel aktivieren.
+
+**Sub-Tasks:**
+
+**A) Pre-Party-Reminder (2–3h)**
+- Cloudflare Cron Trigger in `wrangler.toml`: täglich 04:00 UTC
+- Worker scant `party:*`-Keys, filtert nach `party.email && party.date - 7d == today`
+- Resend-Mail mit Motto-Emoji, Countdown ("noch 7 Tage!"), 2–3 Last-Minute-Tipps, Edit-Link für letzte Anpassungen
+- Idempotenz: KV-Marker `reminded:pre:<id>` schreiben, damit nicht doppelt
+- Opt-Out-Link in jeder Mail (delete `party.email` → keine weiteren Reminder)
+
+**B) Year-Later-Reminder (3–5h)**
+- **Datenproblem:** `calcTTL(party.date)` löscht aktuell die Partydaten ~30 Tage nach Party-Tag (siehe P1-17/C). Für 11-Monats-Reminder brauchen wir Long-Lived-Daten.
+- **Lösung:** Separater Long-Lived-Key `recurring:<emailHash>` mit Minimal-Inhalt (E-Mail, childName, party.date, motto). Wird beim Create geschrieben, wenn `newsletterOptIn === true`. TTL 2 Jahre. Kein Foto, keine Adresse, keine Gäste — Datenminimierung.
+- Cron-Trigger (gleicher wie A) scant zusätzlich `recurring:*`-Keys, filtert nach `party.date + 11 Monate == today`
+- Mail-Template: "Mattis wird bald 7 — willst du dieses Jahr wieder mit machsleicht planen?" + CTA zum Planer mit `?motto=…&alter=…` Pre-Fill
+- Idempotenz: `reminded:year:<emailHash>` Marker
+- Opt-Out: delete `recurring:<emailHash>`
+- Datenschutzerklärung §10/§11 ergänzen: Long-Lived-Reminder-Daten 24 Monate, Löschung auf Anfrage
+
+**Sub-Task C) Unsubscribe-Endpoint (gemeinsam für A+B, ~30 Min)**
+- `GET /api/unsubscribe?token=…` — Token = HMAC(email + secret)
+- Löscht `recurring:*`, setzt `party.email = ""`, löscht Resend-Audience-Kontakt
+- Confirmation-Page
+
+**Aufwand total:** 5–7h. Eigener kleiner Sprint, am besten gebündelt mit P1-17/C (gleicher Cron-Mechanismus).
+
+**Blocker:**
+- Cloudflare-Deploy nötig (Laptop-Session)
+- `RESEND_API_KEY` muss reminder-fähig sein (sollte schon sein)
+
+**Erfolgs-Kriterien:**
+- A: Test-Party mit Datum +8d → Mail kommt am +1d-Lauf, `reminded:pre:` Marker da
+- B: Test-Party mit Datum -334d → Mail kommt, CTA-Link führt zum Planer mit Pre-Fill
+- Opt-Out aus Mail → kein Reminder mehr, `recurring:*` Key weg
+
+**Risiko:**
+- Spam-Empfinden bei Year-Later (11 Monate später, User hat machsleicht vergessen) — wording wichtig, klarer Opt-Out
+- Datenschutz: Long-Lived-Daten brauchen sauberen §10-Eintrag und 24-Monats-Hardlimit
+
+**Referenz:**
+- Commit `accbbe1` (20.05.2026): Newsletter-Checkbox im Cockpit-Form, DOI-Versprechen ausgelöst
+- party-worker.js Zeile 397+ (existierender DOI-Confirm-Endpoint)
 
 
 ---
