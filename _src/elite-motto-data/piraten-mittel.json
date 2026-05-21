@@ -5,7 +5,9 @@
     "schema_version": "1.0",
     "purpose": "Dino 6-8 — Phase C #6 Elite-Slot (no ritual)",
     "phase_b_complete": "2026-05-20",
-    "phase_b_method": "Direct draft analog Phase C — Piraten-spezifika: Schatzsuche + Augenklappen + Schatztruhe + Goldmünzen."
+    "phase_b_method": "Direct draft analog Phase C — Piraten-spezifika: Schatzsuche + Augenklappen + Schatztruhe + Goldmünzen.",
+    "phase_b_structural_refresh": "2026-05-21",
+    "refresh_note": "Stream C: steps/whyItWorks/tips gefüllt, educationalValue + signatureRitual (Brücke klein<->gross) ergänzt."
   },
   "motto": "piraten",
   "ageGroup": "mittel",
@@ -61,14 +63,40 @@
           "effort": null,
           "material": "5 Zettel mit Hinweisen, Schatztruhe (Schuhkarton oder Holztruhe), Goldmünzen + Süßigkeiten",
           "prepText": "",
-          "steps": [],
+          "steps": [
+            {
+              "n": 1,
+              "name": "Stationen legen",
+              "content": "5 Verstecke festlegen, an jedem ein Hinweis-Zettel zum nächsten Ort. Letzter führt zur Schatztruhe."
+            },
+            {
+              "n": 2,
+              "name": "Crew einschwören",
+              "content": "Du sagst: 'Käpt'n Rotbart hat seinen Schatz versteckt. Folgt der Karte — als eine Crew, keiner rennt vor.'"
+            },
+            {
+              "n": 3,
+              "name": "Ersten Hinweis geben",
+              "content": "Du liest den Start-Hinweis vor, z.B. 'Geht dorthin, wo das Wasser kalt ist' (Kühlschrank)."
+            },
+            {
+              "n": 4,
+              "name": "Stationen abklappern",
+              "content": "Bei jedem Fund liest ein anderes Kind vor — so kommt jeder dran. Tempo bewusst langsam halten."
+            },
+            {
+              "n": 5,
+              "name": "Schatz teilen",
+              "content": "An der Truhe öffnen alle gemeinsam. Goldmünzen und Süßes werden fair aufgeteilt — niemand 'gewinnt'."
+            }
+          ],
           "safetyRule": null,
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "indoorTip": "Hinweise auf 3-4 Räume verteilen, Türen zu lassen — wirkt nach mehr Welt, als die Wohnung hat.",
+          "outdoorTip": "Schatzkarte aus tee-gefärbtem Papier (Ränder ansengen — nur du) und Verstecke im Garten: Busch, Baumstamm, unter Stein. Sofort echtes Insel-Gefühl.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Die Schatzsuche ist mit 6-8 der Höhepunkt: ein echtes, greifbares Ziel statt abstraktem Punktestand. Das gemeinsame Finden und faire Teilen hält den Wettbewerb raus, der in dem Alter sonst schnell Tränen macht."
         },
         {
           "name": "🐙 Seeungeheuer besiegen — Spielanleitung",
@@ -80,14 +108,35 @@
           "effort": null,
           "material": "6–10 Becher oder leere Dosen, 3 Sockenbälle (Socken zusammenknoten)",
           "prepText": "",
-          "steps": [],
+          "steps": [
+            {
+              "n": 1,
+              "name": "Ungeheuer bauen",
+              "content": "6-10 Becher oder Dosen zur Pyramide stapeln — das ist das 'Seeungeheuer'."
+            },
+            {
+              "n": 2,
+              "name": "Wurflinie markieren",
+              "content": "Ca. 2 m Abstand mit Klebeband oder Seil markieren. Sockenbälle bereitlegen (Socken zusammenknoten)."
+            },
+            {
+              "n": 3,
+              "name": "Reihum werfen",
+              "content": "Jedes Kind hat 3 Würfe. Wer nicht trifft, darf einen Schritt näher ran — so erwischt jeder das Ungeheuer."
+            },
+            {
+              "n": 4,
+              "name": "Ungeheuer besiegen",
+              "content": "Sind alle Becher gefallen, ist das Seeungeheuer besiegt. Gemeinsam neu aufstellen für die nächste Runde."
+            }
+          ],
           "safetyRule": null,
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "indoorTip": "Pyramide auf einen Teppich stellen, damit umfallende Dosen nicht scheppern und nichts wegrollt.",
+          "outdoorTip": "Höher stapeln (10+ Becher) und Abstand auf 3 m vergrößern — draußen ist mehr Wumms erlaubt.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Sockenbälle statt harter Bälle nehmen jede Verletzungsgefahr raus, und das Näher-ran-Dürfen sorgt für ein Erfolgserlebnis bei jedem Kind. Schnell aufgebaut, sofort laut-fröhlich — der perfekte Energie-Ablass zwischen ruhigeren Stationen."
         }
       ],
       "food": "🎂Piratenschiff-Kuchen1 Kastenkuchen\n🧃„Piraten-Grog“3 Liter\n🍿Popcorn1 Schüssel\n🍎Obst-Spieße1 pro Kind",
@@ -201,14 +250,35 @@
           "effort": null,
           "material": "Leere Glasflasche oder PET-Flasche, Zettel mit Nachricht, optional Sand/Muscheln als Deko",
           "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "steps": [
+            {
+              "n": 1,
+              "name": "Flaschenpost vorbereiten",
+              "content": "Zettel mit Start-Botschaft ('Käpt'n Rotbart hat seinen Schatz vergraben — folgt den Hinweisen!') in die Flasche rollen."
+            },
+            {
+              "n": 2,
+              "name": "Flasche verstecken",
+              "content": "Vor Ankunft verstecken: drinnen hinter ein Kissen, draußen in einen Busch. Gut sichtbar genug für 6-8."
+            },
+            {
+              "n": 3,
+              "name": "Gemeinsam suchen",
+              "content": "Du sagst: 'Das Meer hat uns etwas angespült!' Alle suchen zusammen los — wer sie findet, ruft die Crew."
+            },
+            {
+              "n": 4,
+              "name": "Botschaft vorlesen",
+              "content": "Das Finder-Kind darf die Nachricht vorlesen. Sie startet direkt die große Schatzsuche."
+            }
+          ],
+          "safetyRule": "PET-Flasche statt Glas verwenden — fällt sie um oder wird sie geworfen, passiert nichts.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "outdoorTip": "Mit etwas Sand und ein, zwei Muscheln um die Flasche herum — sieht aus wie frisch angespült.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Die Flaschenpost ist der dramaturgische Auftakt: aus einem zufälligen Fund wird der Auftrag für die ganze Party. Das Vorlesen gibt einem Kind einen kleinen Bühnen-Moment, ohne dass jemand etwas leisten muss."
         },
         {
           "name": "🗺️ Schatzsuche mit Rätseln — Spielanleitung",
@@ -220,14 +290,45 @@
           "effort": null,
           "material": "7 Zettel mit Rätseln, Schatztruhe, [Zahlenschloss 3-stellig*](https://www.amazon.de/s?k=zahlenschloss+3+stellig&tag=machsleicht-21) (~3 €), Goldmünzen + Süßigkeiten",
           "prepText": "",
-          "steps": [],
+          "steps": [
+            {
+              "n": 1,
+              "name": "7 Stationen bauen",
+              "content": "Sieben Verstecke mit je einem Rätsel-Zettel. Jede Station gibt eine Ziffer für den 3-stelligen Zahlencode."
+            },
+            {
+              "n": 2,
+              "name": "Code-Truhe vorbereiten",
+              "content": "Schatztruhe mit Zahlenschloss abschließen. Notiere dir selbst den Code — sonst bleibt der Schatz drin."
+            },
+            {
+              "n": 3,
+              "name": "Crew losschicken",
+              "content": "Start-Rätsel vorlesen, z.B. 'Ich bin kalt und voll mit Essen' (Kühlschrank). Die Crew rätselt gemeinsam."
+            },
+            {
+              "n": 4,
+              "name": "Ziffern sammeln",
+              "content": "An jeder Station notiert das Schreiber-Kind die Ziffer. Reihum vorlesen lassen, damit keiner überrannt wird."
+            },
+            {
+              "n": 5,
+              "name": "Code knacken",
+              "content": "Am Ende alle Ziffern in der richtigen Reihenfolge = Schloss-Code. Gemeinsam eintippen und Truhe öffnen."
+            },
+            {
+              "n": 6,
+              "name": "Schatz teilen",
+              "content": "Goldmünzen und Süßes fair aufteilen. Der Code-Knack-Moment ist der Stolz-Höhepunkt der Party."
+            }
+          ],
           "safetyRule": null,
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "indoorTip": "Bei kleiner Wohnung 5 statt 7 Stationen — lieber knackig als gestreckt. Der Code wird dann 2-stellig.",
+          "outdoorTip": "Stationen über den ganzen Garten verteilen und eine tee-gefärbte Schatzkarte dazulegen — die Suche fühlt sich nach echter Expedition an.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Mit 6-8 können Kinder schon echt kombinieren: Das Zahlenschloss verwandelt Rätselraten in ein gemeinsames Ziel mit klarem Klick-Moment. Reihum-Vorlesen verteilt die Erfolgserlebnisse, statt das schnellste Kind alles abräumen zu lassen."
         },
         {
           "name": "🨢 Knotenkunde — Spielanleitung",
@@ -239,14 +340,40 @@
           "effort": null,
           "material": "1 Seil pro Kind (~50 cm), Knoten-Anleitung ausdrucken",
           "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "steps": [
+            {
+              "n": 1,
+              "name": "Seile verteilen",
+              "content": "Jedes Kind bekommt ein ca. 50 cm langes Seil. Die ausgedruckte Knoten-Anleitung gut sichtbar auslegen."
+            },
+            {
+              "n": 2,
+              "name": "Knoten vormachen",
+              "content": "Du zeigst langsam den ersten Knoten (einfacher Knoten). Erst zugucken, dann gemeinsam nachmachen."
+            },
+            {
+              "n": 3,
+              "name": "Schritt für Schritt",
+              "content": "Nacheinander Schleife und Achterknoten zeigen. Immer warten, bis alle den vorigen Knoten haben."
+            },
+            {
+              "n": 4,
+              "name": "Üben lassen",
+              "content": "Kinder üben in eigenem Tempo. Du gehst rum und hilfst — niemand muss es zuerst können."
+            },
+            {
+              "n": 5,
+              "name": "Seemann ernennen",
+              "content": "Wer alle drei Knoten schafft, ist 'Piraten-Seemann'. Auch ein gelungener Knoten reicht für ein Lob."
+            }
+          ],
+          "safetyRule": "Kurze Seile (ca. 50 cm) verwenden und am Tisch sitzen lassen — keine Schlingen um Hälse oder Handgelenke.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
           "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Knoten sind echte Feinmotorik-Arbeit — mit 6-8 die ideale ruhige Konzentrations-Insel zwischen den lauten Spielen. Der Seemann-Titel belohnt Üben statt Tempo und gibt auch dem geduldigen Kind seinen Moment."
         },
         {
           "name": "🐙 Seeungeheuer besiegen — Spielanleitung",
@@ -258,14 +385,35 @@
           "effort": null,
           "material": "6–10 Becher, 3 Sockenbälle",
           "prepText": "",
-          "steps": [],
+          "steps": [
+            {
+              "n": 1,
+              "name": "Ungeheuer bauen",
+              "content": "6-10 Becher zur Pyramide stapeln. Optional vorher Seeungeheuer-Gesichter aufmalen — großer Effekt."
+            },
+            {
+              "n": 2,
+              "name": "Teams bilden",
+              "content": "Zwei kleine Crews einteilen. Wurflinie bei ca. 2 m markieren, 3 Sockenbälle bereitlegen."
+            },
+            {
+              "n": 3,
+              "name": "Abwechselnd werfen",
+              "content": "Die Teams werfen abwechselnd. Mitzählen, wie viele Würfe jedes Team bis zum Umwerfen braucht."
+            },
+            {
+              "n": 4,
+              "name": "Sieger küren",
+              "content": "Welches Team braucht weniger Würfe? Beide Crews bekommen am Ende ein 'Gut gekämpft, Piraten!'."
+            }
+          ],
           "safetyRule": null,
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "indoorTip": "Auf Teppich oder Decke stellen, damit umfallende Becher nicht über harten Boden scheppern.",
+          "outdoorTip": "Pyramide höher und Abstand größer — und ein Helfer baut sofort wieder auf, dann läuft das Spiel ohne Pause.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Die Team-Variante führt 6-8 sanft an Wettkampf heran: Man gewinnt als Crew, nicht allein, und der Frust verteilt sich. Bemalte Becher machen aus Dosenwerfen eine kleine Seeschlacht."
         },
         {
           "name": "🏃 Piraten-Parcours — Spielanleitung",
@@ -277,14 +425,40 @@
           "effort": null,
           "material": "2 Seile, Kissen, 2 Bälle, 2 Löffel, Stoppuhr",
           "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "steps": [
+            {
+              "n": 1,
+              "name": "Parcours aufbauen",
+              "content": "Drei Stationen: Seile als 'Lianen' zum Durchkriechen, Kissen als 'Krokodile' zum Drüberspringen, Ball auf Löffel."
+            },
+            {
+              "n": 2,
+              "name": "Stationen erklären",
+              "content": "Jede Station kurz vormachen: drunter durch, drüber springen, Kanonenkugel (Ball) balancieren — nicht fallen lassen."
+            },
+            {
+              "n": 3,
+              "name": "Teams aufstellen",
+              "content": "Zwei Crews bilden, Staffel-Form. Stoppuhr bereit. Jedes Kind läuft eine Runde, dann ist das nächste dran."
+            },
+            {
+              "n": 4,
+              "name": "Staffel laufen",
+              "content": "3 Runden pro Team. Bei Ball-Verlust kurz aufheben und weiter — kein Ausschluss, alle kommen ans Ziel."
+            },
+            {
+              "n": 5,
+              "name": "Zeiten feiern",
+              "content": "Zeiten ansagen für die Spannung, aber beide Crews bejubeln. Der Spaß an der Bewegung zählt, nicht die Sekunde."
+            }
+          ],
+          "safetyRule": "Genug Platz um die Sprung-Station, weiche Landung (Teppich/Rasen). Keine Stationen an Kanten oder Treppen aufbauen.",
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "indoorTip": "Im Flur aufbauen — die Enge macht den Parcours sogar spannender. Bälle durch zusammengeknülltes Zeitungspapier ersetzen.",
+          "outdoorTip": "Im Garten echte Sträucher als 'Lianen' und einen Baumstamm als Hindernis nutzen — wirkt sofort wie ein Dschungel-Pfad.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Der Parcours kanalisiert den Bewegungsdrang von 6-8 in geordnete Bahnen — Kriechen, Springen, Balancieren trainieren Koordination ganz nebenbei. Staffel statt Einzelrennen heißt: das langsamere Kind blockiert nicht, sondern gehört zur Crew."
         }
       ],
       "food": "🎂Piratenschiff-Kuchen1 Kastenkuchen\n🧃„Piraten-Grog“4 Liter\n🍖„Kanonenkugeln“Fleischbällchen\n🍿Popcorn2 Schüsseln\n🍎Obst-Spieße„Schwertspieße“",
@@ -425,14 +599,40 @@
           "effort": null,
           "material": "Weißes Papier (vorher in Tee einlegen und trocknen lassen!), Wachsmalstifte, optional Feuerzeug für Ränder (nur Erwachsene!)",
           "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "steps": [
+            {
+              "n": 1,
+              "name": "Pergament vorbereiten",
+              "content": "Am Vorabend weißes Papier in schwarzen Tee einlegen und trocknen lassen — sieht aus wie altes Pergament."
+            },
+            {
+              "n": 2,
+              "name": "Material auslegen",
+              "content": "Pro Kind ein Pergament-Blatt und Wachsmalstifte. Eine Beispiel-Karte zum Anschauen in die Mitte legen."
+            },
+            {
+              "n": 3,
+              "name": "Insel zeichnen",
+              "content": "Kinder malen ihre eigene Schatzinsel: Strand, Palmen, Wege. Du gibst Ideen, malst aber nicht für sie."
+            },
+            {
+              "n": 4,
+              "name": "Schatz markieren",
+              "content": "Jeder setzt ein großes 'X' an die Stelle, wo der Schatz liegt. Wege mit gestrichelten Linien einzeichnen."
+            },
+            {
+              "n": 5,
+              "name": "Karte mitnehmen",
+              "content": "Optional die Ränder vorsichtig ansengen (NUR du, nie die Kinder). Die fertige Karte ist das Mitgebsel."
+            }
+          ],
+          "safetyRule": "Das Ansengen der Ränder macht ausschließlich der Erwachsene, fern von den Kindern und brennbarem Material.",
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": null,
+          "indoorTip": "Tischdecke oder altes Zeitungspapier unterlegen — Wachsmalstifte und Tee-Papier krümeln und färben.",
           "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Basteln ist die ruhige Gegen-Insel zu den Action-Spielen und gibt jedem Kind ein eigenes Werk, das es stolz heimträgt. Die Tee-Optik liefert den Wow-Effekt, und es gibt kein Richtig oder Falsch — jede Insel ist die eigene."
         },
         {
           "name": "⛵ Schiff beladen — Spielanleitung",
@@ -444,14 +644,35 @@
           "effort": null,
           "material": "1 Eimer („Schiff“), 15 Bälle oder zusammengeknülltes Zeitungspapier",
           "prepText": "",
-          "steps": [],
+          "steps": [
+            {
+              "n": 1,
+              "name": "Schiff aufstellen",
+              "content": "Einen Eimer ('Schiff') in ca. 2 m Entfernung platzieren. 15 Bälle oder zusammengeknülltes Zeitungspapier bereit."
+            },
+            {
+              "n": 2,
+              "name": "Aufgabe erklären",
+              "content": "Du sagst: 'Wir müssen das Schiff mit Vorräten beladen, bevor wir auslaufen!' Geworfen wird mit einer Hand."
+            },
+            {
+              "n": 3,
+              "name": "Vorräte werfen",
+              "content": "Reihum oder gleichzeitig in den Eimer werfen. Wer zuerst 5 Treffer landet, ist 'Lade-Meister'."
+            },
+            {
+              "n": 4,
+              "name": "Blind-Variante",
+              "content": "Für extra Spaß: ein Kind mit verbundenen Augen wirft, die Crew ruft 'Links! Höher! Wurf!' — Teamwork pur."
+            }
+          ],
           "safetyRule": null,
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "indoorTip": "Zeitungspapier-Bälle statt fester Bälle nehmen — sie fliegen langsamer und werfen drinnen nichts um.",
+          "outdoorTip": "Abstand auf 3 m vergrößern und einen zweiten Eimer aufstellen — zwei Crews beladen ihre Schiffe im Wettlauf.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Werfen ins Ziel trainiert Auge-Hand-Koordination, und die Blind-Variante dreht es in echte Zusammenarbeit: Die Crew muss klar kommunizieren, damit der Wurf sitzt. Knülliges Papier macht Fehlwürfe folgenlos und das Aufräumen schnell."
         }
       ],
       "food": "🎂Piratenschiff-Kuchen1 Kastenkuchen\n🧃„Piraten-Grog“5 Liter\n🍖„Kanonenkugeln“Fleischbällchen\n🍿Popcorn2 Schüsseln\n🍎„Schwertspieße“Obst am Spieß\n🧀Cracker + Käse„Schiffszwieback“",
@@ -597,7 +818,7 @@
         "detail": "Ab 6 Kindern brauchst du mindestens 1 zweiten Erwachsenen. Alleine 6–8 aufgedrehte Piraten zu managen ist kein Spaß."
       }
     ],
-    "educationalValue": null
+    "educationalValue": "Hinter den Spielen steckt mehr als Toben: Die Schatzsuche fordert echtes Kombinieren im Team, und weil der Schatz gemeinsam gefunden und fair geteilt wird, üben die Kinder Verantwortung füreinander statt reines Gewinnen — mit 6-8 die schwerste Lektion. Knotenkunde und Schatzkarte trainieren Geduld und Feinmotorik, der Parcours die Koordination. Die Pirate-Story trägt das: Wer zur Mannschaft gehört, hält zusammen und lässt keinen zurück. Crew-Geist, Durchhalten und Teilen — als Schatzjagd, nicht als Schulstunde."
   },
   "invitationTemplate": "🏴‍☠️ Interaktive Piraten-Einladung per WhatsApp\n\nIn 30 Sekunden fertig — mit Name, Datum und einem Piraten-Abenteuer als Vorgeschmack.\n[🏴‍☠️ Piraten-Einladung erstellen →](/einladung/erstellen?motto=piraten)\n\n[💬 Idee per WhatsApp teilen](https://wa.me/?text=Schau%20mal%3A%20Piraten-Abenteuer%20Kindergeburtstag%20f%C3%BCr%206%E2%80%938%20Jahre%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Schatzsuche%20und%20Einkaufsliste!%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Fpiraten-6-8-jahre)",
   "preparationWeeks": {
@@ -887,13 +1108,74 @@
     }
   },
   "signatureRitual": {
-    "name": null,
-    "subtitle": null,
-    "introText": null,
-    "setupSteps": [],
-    "rolesList": [],
-    "optOutNote": null,
-    "materialNote": null,
-    "_note": "Piraten-6-8 hat keine eigene Ritual-Sektion im HTML — Schatzsuche + Augenklappen-Verteilung sind die motto-zentralen Aktivitäten."
+    "name": "Die Piraten-Aufnahme & Schatzkisten-Übergabe",
+    "subtitle": "Anfang und Ende — für alle 3 Varianten",
+    "introText": "Piraten 6-8 hat zwei Anker-Momente statt eines durchgehenden Rituals: Die Crew-Aufnahme am Anfang macht aus einzelnen Kindern eine Mannschaft mit Kapitän, die Schatzkisten-Übergabe am Ende krönt die Suche. Die Rollen werden spielerisch zugewiesen — Kapitän, Steuermann, Ausguck — ohne das harte Spezialisierungs-System der Großen. So liegt 6-8 genau zwischen dem schlichten Piraten-Versprechen der Kleinen und der Crew-mit-Spezialisierung der 9-12-Jährigen. Beide Momente dauern zusammen keine 10 Minuten, geben der Party aber Anfang und Höhepunkt.",
+    "setupSteps": [
+      {
+        "title": "Augenklappen & Tücher bereitlegen",
+        "content": "Pro Kind eine Augenklappe (und optional ein Kopftuch). Wird bei Ankunft verteilt — sofort ist jedes Kind Teil der Crew."
+      },
+      {
+        "title": "Captain-Versprechen auf eine Karte",
+        "content": "Drei kurze Sätze, groß gedruckt ('Wir halten zusammen, wir teilen den Schatz, keiner bleibt zurück'). Alle sprechen gemeinsam nach."
+      },
+      {
+        "title": "Rollen-Kärtchen mischen",
+        "content": "Pro Rolle ein Kärtchen mit Emoji und Name. Werden gezogen oder zugeteilt — spielerisch, kein Wettbewerb darum."
+      },
+      {
+        "title": "Schatztruhe füllen & verstecken",
+        "content": "Goldmünzen und kleine Mitgebsel in die Truhe, abschließen oder zubinden. Erst am Ende der Schatzsuche wird sie geöffnet."
+      },
+      {
+        "title": "Foto-Moment einplanen",
+        "content": "Vor der Übergabe ein Crew-Foto mit Augenklappen und Truhe — der Erinnerungs-Slot für die Eltern."
+      }
+    ],
+    "rolesList": [
+      {
+        "emoji": "🏴‍☠️",
+        "name": "Kapitän",
+        "function": "Spricht das Versprechen vor, alle ziehen nach. Gibt bei der Schatzsuche das Start-Kommando."
+      },
+      {
+        "emoji": "🧭",
+        "name": "Steuermann",
+        "function": "Hält die Schatzkarte und zeigt der Crew die Richtung zur nächsten Station."
+      },
+      {
+        "emoji": "🔭",
+        "name": "Ausguck",
+        "function": "Sucht mit dem Fernrohr die Verstecke ab und ruft 'Land in Sicht!', wenn ein Hinweis gefunden ist."
+      },
+      {
+        "emoji": "🪙",
+        "name": "Quartiermeister",
+        "function": "Wacht über die gefundenen Goldmünzen und teilt am Ende den Schatz gerecht auf."
+      },
+      {
+        "emoji": "🧹",
+        "name": "Schiffsjunge",
+        "function": "Sammelt die Hinweis-Zettel wieder ein und hält die Crew zusammen — niemand bleibt zurück."
+      },
+      {
+        "emoji": "🪢",
+        "name": "Bootsmann",
+        "function": "Kennt die Knoten und hilft bei der Knotenkunde-Station den anderen Piraten."
+      },
+      {
+        "emoji": "📜",
+        "name": "Schreiber",
+        "function": "Liest die Rätsel-Hinweise vor und notiert bei der Code-Truhe die gefundenen Ziffern."
+      },
+      {
+        "emoji": "🥁",
+        "name": "Trommler",
+        "function": "Gibt beim Parcours und beim Seeungeheuer-Spiel den Takt vor und feuert die Crew an."
+      }
+    ],
+    "optOutNote": "Kein Kind muss eine Rolle nehmen. Wer einfach nur mitlaufen will, ist normaler Pirat — Augenklappe und Schatzanteil bekommt es trotzdem. Die Rollen sind ein Angebot, kein Zwang.",
+    "materialNote": "Augenklappen, Kopftücher und eine kleine Holz-Schatztruhe gibt es als Set; siehe shoppingList der jeweiligen Variante. Versprechen-Karte und Rollen-Kärtchen druckst du selbst aus — Vorlagen liegen im Einladungs- und Druck-Bereich."
   }
 }
