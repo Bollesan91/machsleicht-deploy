@@ -5,7 +5,9 @@
     "schema_version": "1.0",
     "purpose": "Safari 6-8 — Phase C #6 Elite-Slot (no ritual)",
     "phase_b_complete": "2026-05-19",
-    "phase_b_method": "Direct draft — einhorn-gross-spezifika (3-4h, Eltern absetzen, Code-Names, Chemie-Labor, Schmuck-Workshop, Mirror-Glaze-Galaxy-Kuchen) durchgehend angewandt."
+    "phase_b_method": "Direct draft auf Basis safari-6-8-jahre.html (Junior-Ranger-Ausbildung, Ranger-Eid, Lizenz-Übergabe, Tierspuren-Pirsch, Wasserloch-Pause).",
+    "stream_c_refresh": "2026-05-21",
+    "stream_c_note": "Konsistenz-Pass Phase B: Polish raus, Spezialisierungs-Brücke zu klein/gross, signatureRitual gefüllt. safari-klein/gross (Stream A/B) noch nicht eingecheckt — Brücke konzeptionell."
   },
   "motto": "safari",
   "ageGroup": "mittel",
@@ -48,7 +50,7 @@
         "detail": "Können abgesetzt werden, müssen aber telefonisch erreichbar sein. Abholzeit unbedingt vorher abstimmen."
       }
     ],
-    "whyMottoFits": "Kinder in diesem Alter wollen jemand sein, nicht nur etwas tun. Mit Stirnband, Namen und Rolle (\"Ranger Mia, Ranger Jonas\") werden aus Gästen Anwärter mit Auftrag. Die Stations-Logik kanalisiert ihre Wettbewerbslust ohne Verlierer — am Ende bestehen alle den Ranger-Test und bekommen ihre Lizenz. Das funktioniert geschlechtsneutral und ist sofort verständlich, weil Kinder Tiere kennen, lange bevor sie über sie nachdenken.",
+    "whyMottoFits": "Kinder in diesem Alter wollen jemand sein, nicht nur etwas tun. Mit Stirnband, Namen und Rolle (\"Ranger Mia, Ranger Jonas\") werden aus Gästen Anwärter mit Auftrag. Die Stations-Logik kanalisiert ihre Wettbewerbslust ohne Verlierer — am Ende bestehen alle den Ranger-Test und bekommen ihre Lizenz. Das funktioniert geschlechtsneutral und ist sofort verständlich, weil Kinder Tiere kennen, lange bevor sie über sie nachdenken. Bei den Jüngeren (3–5) ist noch jeder schlicht Ranger-Helfer; bei den Großen (9–12) wählt jedes Kind eine Spezialisierung (Spurenleser, Fährtenfunk, Tierarzt). 6–8 liegt dazwischen: alle machen dieselbe Ausbildung, aber wer will, übernimmt schon eine kleine Sonderaufgabe — Eid-Vorsprecher, Stempel-Wart am Wasserloch.",
     "whyMottoFitsHeadline": "🦁 Warum die Junior-Ranger-Ausbildung für 6–8-Jährige besonders gut funktioniert"
   },
   "variants": [
@@ -213,7 +215,7 @@
       "id": "standard",
       "label": "Standard — 3 Stunden, vollständige Schicht",
       "headline": "🎯 Standard — 3 Stunden, klassische Junior-Ranger-Ausbildung",
-      "intro": "Der Sweet Spot für 6–8-Jährige: vier Stationen als echte Ausbildungs-Rotation, ein großes Team-Spiel als Höhepunkt, Lizenz-Zeremonie zum Abschluss. Funktioniert, weil Stations-Rotation genau das löst, was diese Altersgruppe braucht: alle 15 Minuten ein Wechsel (Aufmerksamkeitsspanne), parallel zu zweit (Wettbewerbsdruck rausgenommen), jede Station mit einem klaren Stempel als Erfolgsmoment (sichtbarer Fortschritt). Das ist die Party, von der die Kinder am Montag in der Schule erzählen — und der Ranger-Ausweis hängt monatelang am Kühlschrank.",
+      "intro": "Genau richtig für 6–8-Jährige: vier Stationen als echte Ausbildungs-Rotation, ein großes Team-Spiel als Höhepunkt, Lizenz-Zeremonie zum Abschluss. Funktioniert, weil Stations-Rotation genau das löst, was diese Altersgruppe braucht: alle 15 Minuten ein Wechsel (Aufmerksamkeitsspanne), parallel zu zweit (Wettbewerbsdruck rausgenommen), jede Station mit einem klaren Stempel als Erfolgsmoment (sichtbarer Fortschritt). Das ist die Party, von der die Kinder am Montag in der Schule erzählen — und der Ranger-Ausweis hängt monatelang am Kühlschrank.",
       "timeWindow": "14:00–17:00, 8 Kinder",
       "schedule": [
         {
@@ -351,7 +353,7 @@
       ],
       "food": "🎂Savannen-Kuchen1 Blechkuchen\n🥤\"Wasserloch\"3 L Apfelschorle\n🍕Mini-Pizzen12 Stück\n🌯Wraps \"Anaconda\"8 Stück\n🍌Affen-Bananen8 Stk.\n🥕Karotten-Sticks\"Giraffen-Snack\"\n🧀Käse-Würfel200 g\n🍿Pop-Mais der Savanne300 g\n\n💡 Snacks im Story-Frame\nDie \"Anaconda\" sind ganz normale Wraps mit Frischkäse/Schinken/Salat — aber zusammengerollt sehen sie aus wie eine Schlange. Foto vom Snack-Tisch und die Story trägt sich selbst. Karotten-Sticks heißen \"Giraffen-Snack\", Bananen \"Affen-Bananen\". Kostet null extra, macht den Tisch zum Erlebnis.",
       "decoration": "🦁 Safari-Teller & BecherSet ~8 €\n🎈 Luftballons grün/braun/ocker15 Stk. ~4 €\n🪧 Safari-Girlande1 Stk. ~4 €\n🌿 Grünpflanzen aus dem WohnzimmerKostenlosIn den Partyraum stellen — wirken sofort wie Dschungel\n🦶 Tierspuren am BodenKostenlosPfotenabdrücke aus Tonpapier ausschneiden, vom Eingang zum Partyraum kleben — 15 Min.\n🎵 Savannen-Geräusche im HintergrundKostenlosYouTube \"Safari Sounds 2 Stunden\" leise im Hintergrund laufen lassen\n\n💡 Tierspuren-Trick\nSchneide 10–12 Pfotenabdrücke aus braunem Tonpapier aus und klebe sie vom Eingang bis zum Partyraum auf den Boden. Die Kinder folgen der \"Spur\" sobald sie reinkommen — und sind sofort im Story-Modus, bevor sie überhaupt reden müssen.",
-      "giveaways": "🏅 1 Junior-Ranger-Lizenz (Urkunde mit Namen + Foto-Slot)\n🪪 1 Ranger-Ausweis im Scheckkartenformat (selbst ausgedruckt + laminiert)\n⭐ 1 Klett-Abzeichen am Stirnband\n🎽 1 selbst gestaltetes Tarn-Tuch (von der Tarnungs-Station)\n🦁 1 Mini-Tierfigur aus dem Reservat\n🍬 1 Tüte Gummibärchen (\"Wegzehrung für die Heimreise\")\n\nAlles in braune Papiertüte, beschriftet mit \"Ausrüstung für Ranger ___\". Kosten: ~5 € pro Kind. Die Lizenz und der Ausweis sind die emotional wertvollsten Stücke — Eltern lieben sie genauso wie Kinder.",
+      "giveaways": "🏅 1 Junior-Ranger-Lizenz (Urkunde mit Namen + Foto-Slot)\n🪪 1 Ranger-Ausweis im Scheckkartenformat (selbst ausgedruckt + laminiert)\n⭐ 1 Klett-Abzeichen am Stirnband\n🎽 1 selbst gestaltetes Tarn-Tuch (von der Tarnungs-Station)\n🦁 1 Mini-Tierfigur aus dem Reservat\n🍬 1 Tüte Gummibärchen (\"Wegzehrung für die Heimreise\")\n\nAlles in braune Papiertüte, beschriftet mit \"Ausrüstung für Ranger ___\". Kosten: ~5 € pro Kind. Die Lizenz und der Ausweis nehmen die Kinder mit nach Hause — Eltern fotografieren sie, Kinder zeigen sie wochenlang.",
       "shoppingList": [
         {
           "emoji": "📜",
@@ -487,7 +489,7 @@
       "id": "wow",
       "label": "Wow — 3,5 Stunden, die volle Schicht",
       "headline": "✨ Wow — 4 Stunden, der Geburtstag des Jahres",
-      "intro": "Für den Geburtstag, über den noch Wochen später in der Schule geredet wird. Wow baut auf Standard auf: gleiche Junior-Ranger-Ausbildung, gleiche 4 Stationen, gleiche Lizenz-Zeremonie. Erweitert wird es um eine 5. Station, die Schatzsuche-Quest \"Verborgener Tempel\" als zweiten dramatischen Bogen, echte Filz-Buschhüte als Mitgebsel-Highlight und optional Walkie-Talkie-Sets. Funktioniert besonders, wenn dein Kind auf größere Bühne reagiert, ihr ein Geschwister-Geburtstag plant oder du den 7. Geburtstag als Meilenstein gestalten willst.",
+      "intro": "Für den Geburtstag, über den noch Wochen später in der Schule geredet wird. Wow baut auf Standard auf: gleiche Junior-Ranger-Ausbildung, gleiche 4 Stationen, gleiche Lizenz-Zeremonie. Erweitert wird es um eine 5. Station, die Schatzsuche-Quest \"Verborgener Tempel\" als zweiten dramatischen Bogen, echte Filz-Buschhüte als Mitgebsel-Highlight und optional Walkie-Talkie-Sets. Funktioniert besonders, wenn dein Kind auf größere Bühne reagiert, ihr ein Geschwister-Geburtstag plant oder du den 7. Geburtstag als Meilenstein gestalten willst. Wer mag, kann einzelnen Kindern hier schon eine kleine Sonderrolle geben (Spuren-Chef, Funker mit Walkie-Talkie) — die ausgewachsene Spezialisierungs-Mechanik kommt erst in der 9–12-Variante.",
       "timeWindow": "14:00–18:00, 10 Kinder",
       "schedule": [
         {
@@ -573,7 +575,7 @@
       ],
       "food": "🎂Savannen-Kuchen1 Blechkuchen + 1 kleiner\n🥤\"Wasserloch\"4 L Apfelschorle\n🍕Mini-Pizzen15 Stück\n🌯Wraps \"Anaconda\"10 Stück\n🍌Affen-Bananen10 Stk.\n🥕Karotten + Käse-Würfel\"Giraffen-Snack\"\n🍿Pop-Mais (Savannen-Kino)400 g\n🍫Schoko-GoldmünzenSchatzkisten-Inhalt",
       "decoration": "🦁 Safari-Teller & BecherSet ~10 €\n🎈 Luftballons grün/braun/ocker20 Stk. ~5 €\n🪧 Safari-Girlande~4 €\n🌿 Krepppapier-Lianen~3 € KrepppapierVon der Decke hängen = Dschungel-Look\n🌿 Grünpflanzen aus dem WohnzimmerKostenlosIn den Partyraum stellen — Reservat-Atmosphäre sofort da\n🪧 \"Ranger-Station Reservat\"-SchildKostenlosPappe + Edding, am Eingang aufstellen\n🦶 Tierspuren-PfadKostenlosPfotenabdrücke aus Tonpapier, vom Eingang bis zum Partyraum\n🔊 Savannen-SoundsKostenlosYouTube \"Safari Sounds 2 Stunden\" leise im Hintergrund\n📦 Tempel-Schatzkiste~5 €Schuhkarton + Goldfolie + Vorhängeschloss-Aufkleber\n\n🦖 Optional: Aufblasbares Kostüm als Überraschungs-Auftritt\nEine Variante für die Eröffnung: ein [aufblasbares Tier-Kostüm*](https://www.amazon.de/s?k=aufblasbares+kostüm+kinder+tier&tag=machsleicht-21) (~30 €) für das Geburtstagskind oder ein Elternteil. Geburtstagskind eröffnet die Tür im Kostüm, oder Mama/Papa taucht als Überraschungsgast beim Mission-Briefing auf. Funktioniert besonders, wenn du eh ein lustiges Foto für den Familien-Status willst — der Auftritt wird zum Eis-Brecher der Party. Nicht nötig, aber wirkungsvoll. Separat kalkuliert weil optional.",
-      "giveaways": "🎩 Filz-Buschhut (Wow-Highlight, geht direkt vom Kopf nach Hause)\n🏅 Junior-Ranger-Lizenz (Urkunde mit Foto-Slot)\n🪪 Ranger-Ausweis im Scheckkartenformat (laminiert)\n📓 Ranger-Buch (DIY-Notizbuch mit Foto-Slot vorne, Tier-Aufklebern innen)\n⭐ Klett-Abzeichen am Stirnband\n🎽 Selbst gestaltetes Tarn-Tuch (von der Tarnungs-Station)\n🦁 Mini-Tierfigur aus dem Reservat\n🍫 Schoko-Goldmünzen aus der Schatzkiste\n🍬 Tüte Gummibärchen (\"Wegzehrung\")\n\nAlles in braune Papiertüte, beschriftet mit \"Ausrüstung für Ranger ___\". Kosten: ~10 € pro Kind (inklusive Filz-Buschhut). Lizenz, Ausweis und Buschhut sind die emotional wertvollsten Stücke — Eltern lieben sie genauso wie Kinder, Buschhut wird wochenlang getragen.",
+      "giveaways": "🎩 Filz-Buschhut (Wow-Highlight, geht direkt vom Kopf nach Hause)\n🏅 Junior-Ranger-Lizenz (Urkunde mit Foto-Slot)\n🪪 Ranger-Ausweis im Scheckkartenformat (laminiert)\n📓 Ranger-Buch (DIY-Notizbuch mit Foto-Slot vorne, Tier-Aufklebern innen)\n⭐ Klett-Abzeichen am Stirnband\n🎽 Selbst gestaltetes Tarn-Tuch (von der Tarnungs-Station)\n🦁 Mini-Tierfigur aus dem Reservat\n🍫 Schoko-Goldmünzen aus der Schatzkiste\n🍬 Tüte Gummibärchen (\"Wegzehrung\")\n\nAlles in braune Papiertüte, beschriftet mit \"Ausrüstung für Ranger ___\". Kosten: ~10 € pro Kind (inklusive Filz-Buschhut). Lizenz, Ausweis und Buschhut nehmen die Kinder mit nach Hause — Eltern fotografieren sie, Kinder zeigen sie wochenlang, Buschhut wird wochenlang getragen.",
       "shoppingList": [
         {
           "emoji": "📜",
@@ -821,7 +823,7 @@
       },
       {
         "topic": "🧑‍🤝‍🧑 Wie viele Helfer? Realistisch geplant",
-        "detail": "Bei der Stations-Rotation der Standard-Variante mit 4 parallel betriebenen Stationen ist 1 Helfer der Sweet Spot — du machst zwei Stationen, der Helfer die anderen zwei, gemeinsame Pause am Wasserloch deckt Übergänge. Ab 8 Kindern wird's solo-mit-1-Helfer eng aber machbar. Wow-Variante mit 10 Kindern und Schatzsuche-Quest braucht mindestens 2 Helfer, weil die Quest viel Geräuschkulisse und Bewegung erzeugt. Frag Partner, Großeltern, befreundete Eltern. Viele bleiben gerne — eine Junior-Ranger-Ausbildung ist auch für Erwachsene unterhaltsam zu beobachten."
+        "detail": "Bei der Stations-Rotation der Standard-Variante mit 4 parallel betriebenen Stationen reicht 1 Helfer — du machst zwei Stationen, der Helfer die anderen zwei, gemeinsame Pause am Wasserloch deckt Übergänge. Ab 8 Kindern wird's solo-mit-1-Helfer eng aber machbar. Wow-Variante mit 10 Kindern und Schatzsuche-Quest braucht mindestens 2 Helfer, weil die Quest viel Geräuschkulisse und Bewegung erzeugt. Frag Partner, Großeltern, befreundete Eltern. Viele bleiben gerne — eine Junior-Ranger-Ausbildung ist auch für Erwachsene unterhaltsam zu beobachten."
       },
       {
         "topic": "📱 Partyseite statt WhatsApp-Chaos",
@@ -1144,13 +1146,64 @@
     }
   },
   "signatureRitual": {
-    "name": null,
-    "subtitle": null,
-    "introText": null,
-    "setupSteps": [],
-    "rolesList": [],
-    "optOutNote": null,
-    "materialNote": null,
-    "_note": "Safari-6-8 hat keine eigene Ritual-Sektion im Quell-HTML. Stirnband-Verleihung + Lizenz-Übergabe ist die Ankunfts-Aktivität (siehe schedule.minus4Weeks und parentTips für Details)."
+    "name": "Der Ranger-Eid & die Lizenz-Übergabe",
+    "subtitle": "Anfang und Ende — für alle 3 Varianten",
+    "introText": "Safari 6–8 hat zwei Anker-Momente statt eines durchgehenden Rituals: der kurze Ranger-Eid am Anfang macht aus Anwärtern eine Mannschaft, die Lizenz-Übergabe am Ende macht aus ihnen lizenzierte Ranger. Dazwischen liegt die Ausbildung. Beide Momente dauern zusammen keine 10 Minuten, tragen aber die ganze Party.",
+    "setupSteps": [
+      {
+        "title": "Stirnbänder vorbereiten",
+        "content": "Pro Kind ein Filz-Stirnband mit Klett-Punkt. Namen drauf, fertig. Wird bei Ankunft verteilt — sofort ist jedes Kind Ranger."
+      },
+      {
+        "title": "Eid-Text auf eine Karte",
+        "content": "3 kurze Sätze, groß gedruckt. Alle sprechen gleichzeitig nach. Schafft 30 Sekunden Atmosphäre ohne Vorlese-Stress."
+      },
+      {
+        "title": "Lizenzen vorab ausfüllen lassen",
+        "content": "Jedes Kind trägt seinen Namen selbst in die Junior-Ranger-Lizenz ein. Das ist der Stolz-Moment — Foto-Slot freilassen."
+      },
+      {
+        "title": "Klett-Abzeichen bereitlegen",
+        "content": "Ein Abzeichen pro Kind. Wird bei der Übergabe aufs Stirnband geklettet — die Verwandlung Anwärter → Ranger wird sichtbar."
+      },
+      {
+        "title": "Ausweise im Scheckkartenformat",
+        "content": "Optional, aber stark: ein Ranger-Ausweis pro Kind. Geht in die Hosentasche und wird wochenlang herumgetragen."
+      }
+    ],
+    "rolesList": [
+      {
+        "emoji": "🦓",
+        "name": "Eid-Vorsprecher",
+        "function": "Spricht den Eid eine Sekunde vor, alle anderen ziehen nach."
+      },
+      {
+        "emoji": "💧",
+        "name": "Stempel-Wart",
+        "function": "Verteilt am Wasserloch die Trink-Stopps und hält die Pause zusammen."
+      },
+      {
+        "emoji": "🐾",
+        "name": "Spuren-Chef",
+        "function": "Geht bei der Tierspuren-Pirsch voran, zeigt die nächste Fährte."
+      },
+      {
+        "emoji": "🎒",
+        "name": "Ausrüstungs-Wart",
+        "function": "Achtet darauf, dass jeder sein Fernglas und seine Lizenz dabei hat."
+      },
+      {
+        "emoji": "📸",
+        "name": "Foto-Ranger",
+        "function": "Sammelt die Gruppe für das Mannschaftsfoto vor der Übergabe."
+      },
+      {
+        "emoji": "🔔",
+        "name": "Zeit-Ranger",
+        "function": "Sagt Bescheid, wenn eine Station fertig ist — entlastet die Eltern."
+      }
+    ],
+    "optOutNote": "Kein Kind muss eine Rolle nehmen. Wer nur mitlaufen will, ist normaler Ranger — Lizenz und Abzeichen bekommt es trotzdem. Die Sonderrollen sind Angebot, kein Zwang.",
+    "materialNote": "Stirnbänder, Klett-Abzeichen und blanko Lizenz-Karten gibt es als Set; siehe shoppingList der jeweiligen Variante. Eid-Karte und Ausweise druckst du selbst aus — Vorlagen liegen im Einladungs- und Druck-Bereich."
   }
 }
