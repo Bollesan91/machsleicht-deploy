@@ -1444,5 +1444,111 @@
         }
       ]
     }
+  },
+  "sosScenarios": {
+    "regen": {
+      "icon": "🌧️",
+      "label": "Regen — Spurensuche war draußen geplant",
+      "headline": "Der Tatort zieht in die Wohnung — alle Stationen funktionieren drinnen.",
+      "steps": [
+        "Codeknacker und Fingerabdruck-Analyse an den Esstisch verlegen — das Herzstück braucht ohnehin keinen Garten.",
+        "Spuren-Parcours aus Tonpapier-Fußabdrücken durch Flur und Wohnzimmer kleben, statt durch den Garten.",
+        "„Verhör-Ecke“ aufs Sofa: Profiler werten Verdächtigen-Aussagen aus, die du auf Karten vorbereitet hast.",
+        "Asservaten-Pizza-Pause als fester Block einplanen, damit zwischen den Indoor-Stationen Bewegung reinkommt."
+      ],
+      "fallback": "Wenn der Platz wirklich knapp ist: Codeknacker + Fingerabdruck-Analyse + ein finaler Verdächtigen-Vergleich tragen 2 Stunden voll.",
+      "tone": "praktisch"
+    },
+    "weniger_kinder_als_erwartet": {
+      "icon": "👤",
+      "label": "Weniger Kinder als erwartet",
+      "headline": "Spezialisierungen zusammenlegen — der Fall trägt auch mit kleinem Team.",
+      "steps": [
+        "Jedes Kind übernimmt zwei Spezialisierungen statt einer — Spurensicherer + Code-Knacker in einer Person ist mit 9-12 gut machbar.",
+        "Stationen nacheinander statt parallel lösen: ein Team arbeitet den Fall als Kette ab, ohne Wettlauf gegen andere.",
+        "Die Verdächtigen-Liste auf 3 statt 5 kürzen — weniger Aussagen zum Abgleichen, gleiche Logik-Tiefe.",
+        "Sorgfalt-Spezialist-Stempel bleibt — bei kleiner Runde fällt genaues Arbeiten umso mehr auf."
+      ],
+      "fallback": "Schon 3 Kinder lösen den Fall gemeinsam — der Kern ist das Knobeln, nicht die Crew-Größe.",
+      "tone": "beruhigend"
+    },
+    "mehr_kinder_als_erwartet": {
+      "icon": "👥",
+      "label": "Mehr Kinder als erwartet",
+      "headline": "Zwei Ermittler-Crews bilden — die Stationen parallel doppelt laufen lassen.",
+      "steps": [
+        "Zwei getrennte Teams mit je eigenem Fall-Set bilden — beide jagen denselben Fall, aber an eigenen Tischen.",
+        "Codeknacker und Asservaten doppelt vorbereiten (kostet nur Kopien, kein extra Aufwand am Tag selbst).",
+        "Eine Erwachsenen-Aufsicht pro Crew, damit niemand bei den Verhör-Karten stecken bleibt.",
+        "Finale zusammenführen: Beide Crews präsentieren ihre Lösung bei der Lizenz-Übergabe gemeinsam."
+      ],
+      "fallback": "Wenn nur eine Aufsicht da ist: Crews nicht gleichzeitig, sondern versetzt an dieselbe Stationskette setzen.",
+      "tone": "praktisch"
+    },
+    "kind_will_nicht_mitmachen": {
+      "icon": "🙅",
+      "label": "Kind will nicht mitmachen",
+      "headline": "Beobachter-Rolle ohne Druck — „Chef-Ermittler im Logbuch“ statt mittendrin.",
+      "steps": [
+        "Die Rolle des „Fall-Protokollanten“ anbieten: notiert Fortschritt im Ermittler-Logbuch, ohne selbst zu rätseln.",
+        "Keine Aufforderung, keine Blicke — das Kind sitzt dabei und steigt ein, wenn es so weit ist.",
+        "Eine ruhige Mini-Aufgabe bereithalten: Asservaten sortieren oder Ausweise verteilen, falls es etwas tun möchte.",
+        "Bei der Lizenz-Übergabe bekommt es die volle Lizenz wie alle anderen — Beobachten zählt als Mitmachen."
+      ],
+      "fallback": "Manche Kinder brauchen 20 Minuten Anlauf — der Druck wegzunehmen ist meist die schnellste Lösung.",
+      "tone": "einfühlsam"
+    },
+    "kuchen_misslungen": {
+      "icon": "🎂",
+      "label": "Kuchen misslungen",
+      "headline": "Gekaufter Boden + Absperrband-Optik — niemand merkt den Unterschied.",
+      "steps": [
+        "Fertigen Blechkuchen oder Rührkuchen aus dem Supermarkt holen — Geschmack vor Eigenproduktion.",
+        "Mit roter Lebensmittelfarbe oder Zucker-Streifen die „Tatort-Absperrband“-Optik aufmalen — fertig in 5 Minuten.",
+        "Eine Lupe oder ein Papp-„Beweisstück-Schild“ obendrauf stecken — das macht den Detektiv-Look, nicht der Teig.",
+        "Falls gar nichts geht: Muffins als „Asservaten-Beutel“ in braune Tütchen — sieht absichtlich aus."
+      ],
+      "fallback": "Die Kinder erinnern sich an den gelösten Fall, nicht an die Kruste — der Kuchen ist Nebensache.",
+      "tone": "beruhigend"
+    },
+    "spielzeug_kaputt": {
+      "icon": "🔧",
+      "label": "Material kaputt oder verschwunden",
+      "headline": "Ermittler-Ausrüstung ersetzt sich aus dem Haushalt — der Fall braucht keine Spezialteile.",
+      "steps": [
+        "Lupe weg? Eine umgedrehte Wassergläser-Unterseite oder ein Handy-Zoom tut es für die Spurensuche.",
+        "Fingerabdruck-Set leer? Bleistift fein über Papier reiben, mit Tesafilm abnehmen — der Klassiker funktioniert immer.",
+        "UV-Lampe defekt? Geheimschrift mit Zitronensaft schreiben und über einer Glühbirne (Aufsicht!) sichtbar machen.",
+        "Ausweis-Vordruck verloren? Karteikarte falten, Foto-Slot mit Kuli-Rahmen aufzeichnen — selbstgemacht zählt mehr."
+      ],
+      "fallback": "Der Codeknacker braucht nur Stift und Papier — solange der läuft, kann nichts den Fall stoppen.",
+      "tone": "praktisch"
+    },
+    "ein_kind_weint": {
+      "icon": "😢",
+      "label": "Ein Kind weint oder ist überfordert",
+      "headline": "Kurze Auszeit + ruhige Rolle — raus aus dem Tempo, rein in eine sichere Aufgabe.",
+      "steps": [
+        "Ruhig zur Seite nehmen, weg vom Trubel — Wasser, kurze Pause, kein Publikum.",
+        "Bei Frust über einen kniffligen Code: zusammen einen Schritt lösen, damit das Erfolgsgefühl zurückkommt.",
+        "Danach eine ruhigere Spezialisierung anbieten — Profiler-Aussagen sortieren statt Wettlauf am Codeknacker.",
+        "Den Sorgfalt-Spezialist-Stempel bewusst hier einsetzen: genaues, langsames Arbeiten wird belohnt, nicht Schnelligkeit."
+      ],
+      "fallback": "Oft reicht es, das Tempo aus der Situation zu nehmen — der Druck, „schnell“ sein zu müssen, ist meist der Auslöser.",
+      "tone": "einfühlsam"
+    },
+    "eltern_kommen_frueh": {
+      "icon": "🕐",
+      "label": "Eltern kommen früh",
+      "headline": "Fall-Auflösung vorziehen — die Lizenz-Übergabe ist der natürliche Abschluss.",
+      "steps": [
+        "Wenn der Fall fast gelöst ist: direkt zur großen Auflösung springen, kleinere Zwischenstationen weglassen.",
+        "Crew-Foto mit Ausweisen und gelöstem Fall machen — der sichtbare Abschluss für die abholenden Eltern.",
+        "Die Ermittler-Lizenzen vor allen übergeben, damit jedes Kind mit einem klaren Ergebnis nach Hause geht.",
+        "Asservaten-Tüten als Mitgebsel bereitstellen — so ist der Übergang zum Abholen fließend statt abrupt."
+      ],
+      "fallback": "Die Lizenz-Übergabe dauert 5 Minuten und rundet jeden Fall ab — sie lässt sich jederzeit vorziehen.",
+      "tone": "diplomatisch"
+    }
   }
 }
