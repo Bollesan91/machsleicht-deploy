@@ -1,77 +1,94 @@
-# Session-Notiz — 20.05.2026 (Partyseite-Funnel: 4 Bugs gefixt, Newsletter-Checkbox + Datenschutz-Hinweis, P1-60 Reminder ins Backlog)
+# Session-Notiz — 21.05.2026 (Safari 3-5 + 9-12 Elite-Build via 2 parallele Streams, Schwächen-Fixes, Helfer-v3 Review-Setup)
 
 ## Kontext der Session
 
-"Start leicht" 20.05.2026. Bolle meldete via Mobile-Screenshot, dass im Einladungs-Erstell-Tool der gelbe Cockpit-Banner die Card nach rechts schob (Body-Flex-Bug). Beim Drüberreden zum Partyseite-Funnel kam dann der größere Schmerz raus: Klick auf "Partyseite anlegen" im Cockpit erzeugte eine leere Seite ohne childName/date/address, Gäste konnten sich wegen leerem Code-Gate nicht einloggen, Edit-Link versteckt im `<details>`, kein Mail-Versand-Trigger vom Cockpit aus.
+"Start leicht" 21.05.2026 (Cloud-Web-Session). Beim Sync-Check kam raus: ein ungelivter Commit auf draft (`d5ef702` Piraten-mittel von Bolle 20.05. vormittags) plus stale Branches. Sync auf draft-Stand, dann Weiter-Arbeit am Planertool (P1-8 Elite-Ausbau, Reihenfolge: Safari).
 
 ## Was wurde gemacht
 
-### 1. Einladungs-Tool: Cockpit-Banner Layout-Fix (Commit `9f065b2`)
+### 1. Piraten-mittel auf draft synchronisiert (von gestern Vormittag)
+Commit `d5ef702` (Bolle lokal 20.05. 09:58) hing auf draft, war nicht im 20.05.-abend-Merge mit drin. Heute mit deployed (11. Elite-Slot im Bundle).
 
-Banner wurde per `card.parentElement.insertBefore(banner, card)` als Sibling vor `.card` in `<body>` (`display:flex`) eingefügt → Banner und Card wurden zu zwei Flex-Items nebeneinander statt gestapelt.
+### 2. Safari-HTML-Sprint: 2 parallele Streams (Pattern: "Helfer v3 mit Worktree-Isolation")
+Aus `_dev/docs/safari-story.md` (Junior-Ranger-Story) + `_dev/docs/ELITE-SEITEN-TEMPLATE.md` (14-Punkte-Checkliste) + safari-6-8 als Golden-Template, zwei Subagents parallel gespawnt mit isolation=worktree:
 
-Fix: `card.insertBefore(banner, card.firstChild)` — Banner sitzt jetzt im Card-Container und übernimmt automatisch dessen Breite.
+**Stream A — Safari 3-5 (Commit `a2455f7`):**
+- Self-Score 91/100
+- 291 → 893 Zeilen, 19 → 88 KB
+- Story-Anker: "Helfer" 56× / "Pirsch" 24× / "Reservat" 16×
+- Eltern-bleiben-Hinweis + Meltdown-Plan + Wow-Bastel-Highlight (Tarn-Tuch)
 
-Cross-Check ergab: Pattern existiert nur an dieser Stelle. Andere `insertBefore`-Treffer im Repo sind React-Reconciler-Internals oder `fallbackCopy`-Funktionen (position:fixed, harmlos).
+**Stream B — Safari 9-12 (Commit `b7aa161`):**
+- Self-Score 96/100
+- 309 → 1.049 Zeilen, 19,5 → 114 KB
+- Spezialisierungs-Logik (Späher/Tierfotograf/Spurenleser mit `.spec-grid` CSS)
+- Codeknacker-Station mit 3 spezialisierungs-spezifischen Rätseln
+- Wow-Schlafparty mit Nacht-Safari (Stirnlampen + Eltern-Opt-In)
 
-### 2. Cockpit-Partyseite: D-soft Pre-Flight-Form (Commit `1f415d1`)
+### 3. Schwächen-Fixes nach User-Review
 
-4 Bugs gleichzeitig adressiert:
-- **Worker akzeptierte leeren Payload** → jetzt childName Pflicht im Cockpit-Form
-- **Code-Gate brach ohne childName** (`CNL=""` → Gäste tippen vermuteten Namen, Login schlägt fehl) → fixt sich automatisch durch Pflicht-Vorname
-- **Edit-Link versteckt im `<details>`** → bei Email-Versand komplett aus dem Result-Pane, ohne Email als orangener Warn-Block prominent
-- **Kein Mail-Versand vom Cockpit** → existierender `/api/party/{id}/send-edit-link` Worker-Endpoint wird jetzt aus dem Cockpit-Flow getriggert
+**Safari 9-12 — Schatzsuche-URL-Convention (Commit `0753170`):**
+4 Generator-Links umgestellt von `/schatzsuche/safari` (Themenseite) auf `/kindergeburtstag?modus=schatzsuche&motto=safari` (interaktiver Generator). Cross-Sell-Pille im Final-CTA bleibt auf Themenseite.
 
-UX-Variante D-soft: Pre-Flight-Form mit Vorname + E-Mail (empfohlen, nicht Pflicht), Skip-Link "ohne Mail anlegen" klein aber sichtbar.
+**Safari 3-5 — 3 Designer-Schwächen (Commit `5513e3c`):**
+- Wow-Highlight: Plüsch-Set (30 €) → Aufblasbares Safari-Tier-Kostüm (~35-50 €) — konsistent mit 6-8 Filz-Buschhut
+- Tier-Doktor-Station komplett ersetzt durch 🎧 Tier-Lauscher (Geräusche raten per Smartphone) — Trigger-Risiko Mullbinden weg, Material 0 €
+- Foto-Opt-In bewusst nur textlich (Designer-Entscheidung)
+- Folgeanpassungen: Mullbinden + Mini-Verband raus, ersetzt durch Tier-Geräusche-Karten-Set zum Selber-Drucken. Wow-Summe: 83 → 76 € (überall konsistent: Cost-Box + FAQ + FAQPage-Schema)
 
-Diskussions-Verlauf der Lösung: 3 Varianten erwogen (A: Cut + Redirect zum Creator, B: Pflichtfelder + Post-Capture, C: Pre-Capture-Form mit Skip), gewinnt D-soft = Pre-Capture mit optionalem Skip wegen Symmetrie zwischen "Mail-Vergessen-Risiko" (Hauptproblem von Bolle) und User-Friction.
+### 4. Content-Loop-Pipeline Setup für Helfer-v3-Review (Commit `51bcbfc` auf content-loop-pipeline)
 
-### 3. Newsletter-Checkbox + Datenschutz-Hinweis (Commit `accbbe1`)
+Bolle wechselt zurück zum klassischen Branch-Trick für Review beider Safari-Seiten:
+- `_dev/content-loop/runs/11-safari-3-5-review/quellen-pack.md`
+- `_dev/content-loop/runs/12-safari-9-12-review/quellen-pack.md`
 
-Im D-soft-Form ergänzt:
-- Opt-In-Checkbox für Tipps + Pre-Party-Reminder (nicht voreingestellt, DOI im Worker)
-- Datenschutz-Hinweis unter dem E-Mail-Feld mit Link zur Datenschutzerklärung
-- Validierung: Checkbox an ohne E-Mail → "Für den Newsletter brauchen wir deine E-Mail-Adresse"
-- `newsletterOptIn`-Flag wird an `/send-edit-link` durchgereicht — Worker packt DOI-Bestätigungs-Block direkt in die Edit-Link-Mail (keine zweite Mail nötig). DOI-Confirm-Endpoint existiert schon (Resend-Audience-Insert + Consent-Audit-Trail in KV).
+Beide als REVIEW-Mode-Packs (nicht Neu-Schreiben). Input via Raw-URL auf `claude/start-leicht-v8dqS`. Score-Rubrik etabliert (Mehrwert 25 / Lesefluss 20 / Konkurrenz-Diff 20 / Schema 15 / Mobile 10 / Links 5 / CTA 5 = 100). Akzeptanz ≥85. Bei Stream 12 explizit Sycophancy-Warnung gegen den 96-Self-Score.
 
-### 4. P1-60 Reminder-System ins Backlog (Commit `c28603b`)
+Loop läuft danach lokal über Bolle's Chrome-Extension — Cloud-Pilot kann nur Vor-Pilot sein, hat keinen Browser-Zugriff.
 
-DOI-Erfolgsseite verspricht "Tipps und Erinnerung 7 Tage vor der Party" — Cron-Job dafür existiert noch nicht. Bolle wählt Variante C: beides bauen (Pre-Party-Reminder + Year-Later-Reminder + Unsubscribe-Endpoint).
+### 5. Sonstiges
+- `.claude/worktrees/` in `.gitignore` aufgenommen (Subagent-Worktrees)
+- Stale Remote-Branch `claude/start-leicht-50vMS` Delete-Versuch schlug fehl (HTTP 403, Cloud-Sandbox erlaubt keine Branch-Deletes) — muss Bolle manuell machen
 
-PBI-Detail-Entry inkl. Sub-Tasks A/B/C, Datenproblem (`calcTTL` löscht Daten nach Party, für Year-Later braucht's separaten Long-Lived-Key mit 2-Jahres-TTL und Datenminimierung), Datenschutz-Implikationen. Prio-Tabellen-Zeile 11b nach P1-17, Bündel-Hinweis (gleicher Cron-Mechanismus wie P1-17/C).
-
-Aufwand 5–7h, Laptop-Session, nicht jetzt im Sprint.
-
-## Commits (4 auf draft)
+## Commits (Reihenfolge auf claude/start-leicht-v8dqS, dann nach draft + main gemerged)
 
 | Commit | Inhalt |
 |---|---|
-| `9f065b2` | fix(einladung): Cockpit-Banner sass im Body-Flex und schob Card nach rechts |
-| `1f415d1` | fix(cockpit): Partyseite-Erstellung mit Pflicht-Vorname + Edit-Link per Mail (D-soft) |
-| `accbbe1` | feat(cockpit): Newsletter-Checkbox + Datenschutz-Hinweis in Partyseite-Form |
-| `c28603b` | docs(backlog): P1-60 Reminder-System (Pre-Party + Year-Later) als neues PBI |
+| `f77b835` | chore(gitignore): .claude/worktrees/ ignorieren |
+| `a2455f7` | Safari 3-5: Tier-Helfer-Konzept (893 Zeilen, 88 KB) |
+| `6e0c3fb` | Merge Stream A: Safari 3-5 Elite-HTML (Score 91) |
+| `b7aa161` | Safari 9-12: Reservat-Expedition mit Spezialisierung |
+| `9c15c32` | Merge Stream B: Safari 9-12 Elite-HTML (Score 96) |
+| `0753170` | fix(safari-9-12): Schatzsuche-Links auf Generator-Convention |
+| `5513e3c` | fix(safari-3-5): 3 Designer-Schwächen (Aufblas-Kostüm, Tier-Lauscher) |
+
+Plus auf `content-loop-pipeline`:
+
+| Commit | Inhalt |
+|---|---|
+| `51bcbfc` | Stream 11+12 Setup: Review-Quellen-Packs für Safari 3-5 + 9-12 |
 
 ## Was als Nächstes ansteht
 
-### Sofort nach diesem Deploy
-- **Live-Test** auf machsleicht.de:
-  - Cockpit → "Partyseite anlegen" → Pre-Flight-Form sollte erscheinen
-  - Vorname Pflicht-Check
-  - E-Mail leer lassen → Skip-Pfad mit prominentem Edit-Link-Block
-  - E-Mail eintragen ohne Newsletter → nur Edit-Link-Mail
-  - E-Mail eintragen mit Newsletter-Checkbox → Edit-Link-Mail mit DOI-Bestätigungs-Block, dann `/api/newsletter-confirm`-Klick → Resend-Audience-Insert
-  - Datenschutz-Link öffnet in neuem Tab
-- **Einladungs-Tool mit `?source=cockpit`-Banner** durchklicken, prüfen dass Card jetzt zentriert ist
+### Helfer-v3 Review-Loop (lokal an Bolle's Rechner)
+- Chrome-Extension öffnet 3 claude.ai-Tabs (Writer/Reviewer/Adversarial) je Stream
+- Stream 11 + 12 Quellen-Pack-Raw-URLs sind ready:
+  - `https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/content-loop-pipeline/_dev/content-loop/runs/11-safari-3-5-review/quellen-pack.md`
+  - `https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/content-loop-pipeline/_dev/content-loop/runs/12-safari-9-12-review/quellen-pack.md`
+- v1-Review → v2-Challenger → v3-Adversarial. Score-Ziel ≥85
+- Wenn Reviews durchgelaufen: ggf. v4-Edit-Auftrag für Subagent oder Inline-Edits
 
-### Mittelfristig
+### Mittelfristig (aus BACKLOG-AUDIT, weiter unverändert)
+- **P1-15 Email-Capture** Extern-Tasks (Resend-Audience anlegen + RESEND_AUDIENCE_ID setzen + Worker deployen)
+- **P1-17 DSGVO-Hygiene Partyseite** Sub-Tasks A+C (1,5h Laptop)
 - **P1-60 Reminder-System** (5–7h Laptop, bündeln mit P1-17/C)
-- **P1-17 DSGVO-Hygiene** Sub-Tasks A+C (Worker-Hinweis + Auto-Delete-Cron) — neben dem Cockpit-Hinweis bleibt der Hinweis im Worker-Creator-Flow noch offen
-- **P3-15** + **P3-19** vom Planer-Frisur-Sprint
-- **Validator-Cleanup** der 2 pre-existing Errors aus dem 30.04-Cut (Motto-Zahlen 18 Pages)
+- **P3-15 Datum + Erwachsene als Planer-Inputs** (½ Tag)
+- **P3-19 KI-Rätsel-Gedichte Schatzsuche** (1 Tag)
+- **P1-8 Motto-Elite**: weitere Mottos analog Safari-Pattern (Piraten klein/gross direkt eligible, Weltraum/Detektiv/Meerjungfrau brauchen HTML-Elite-Ausbau zuerst)
 
 ## Self-Audit der Session
 
-- **Substanz:** 8/10 — 4 Commits, 4 echte Bugs gefixt, 1 PBI sauber dokumentiert. Kein Browser-Live-Test (Cloud-Env, kein lokaler Dev-Server).
-- **UX-Diskussion:** 9/10 — A/B/C/D-soft mit Trade-Offs durchgesprochen, Bolle hat begründet entschieden. Vermutung war richtig (D-soft passt zu "einfach bleiben, aber funktionieren").
-- **DSGVO-Gewissenhaftigkeit:** 8/10 — Newsletter-Checkbox + Datenschutz-Hinweis nicht vergessen (nach Bolle-Reminder); DOI-Versprechen aus Worker-Text → P1-60 PBI angelegt, damit Versprechen technisch eingelöst wird.
-- **Knowledge-Transfer:** 9/10 — SESSION-NOTES + BACKLOG-AUDIT aktualisiert, P1-60 mit allen Sub-Tasks dokumentiert, nächste Session kann nahtlos in Live-Test einsteigen.
+- **Substanz:** 9/10 — 2 komplette Elite-Seiten gebaut (Score 91 + 96), Schwächen sauber identifiziert + adressiert, Review-Workflow-Setup für lokale Helfer-v3-Pipeline.
+- **Workflow-Methodik:** 8/10 — Pattern "2 parallele Streams mit Worktree-Isolation" funktioniert sauber. Branch-Trick (worktrees) gut, Subagent-Self-Reviews mit konkreten Rubrik-Scores. Selbstgewählter Hand-Off zur lokalen Pipeline für die Review-Phase.
+- **Risiko-Management:** 7/10 — Stop-Hook-Warnungen während laufendem Subagent korrekt adressiert. Cloud-vs-Lokal-Grenzen klar kommuniziert (Chrome-Extension geht nicht aus Cloud-Web-Session).
+- **Knowledge-Transfer:** 8/10 — SESSION-NOTES inkl. aller Raw-URLs für lokalen Loop-Start, Self-Scores als Sycophancy-Verdacht-Anker, Pattern für künftige Elite-Sprints dokumentiert.

@@ -12902,6 +12902,905 @@ var ELITE_MOTTO_DATA = {
       "materialNote": null,
       "_note": "Dino-Mottoseiten haben keine eigene Ritual-Sektion im Quell-HTML. Dino-Spurensuche oder Vulkan-Ausbruch sind die motto-zentralen Aktivitäten."
     }
+  },
+  "piraten-mittel": {
+    "_meta": {
+      "source_file": "kindergeburtstag/piraten-6-8-jahre.html",
+      "extracted": "2026-05-19",
+      "schema_version": "1.0",
+      "purpose": "Dino 6-8 — Phase C #6 Elite-Slot (no ritual)",
+      "phase_b_complete": "2026-05-20",
+      "phase_b_method": "Direct draft analog Phase C — Piraten-spezifika: Schatzsuche + Augenklappen + Schatztruhe + Goldmünzen."
+    },
+    "motto": "piraten",
+    "ageGroup": "mittel",
+    "ageRange": [
+      6,
+      8
+    ],
+    "title": "🏴‍☠️ Piraten-Abenteuer Kindergeburtstag — 6–8 Jahre",
+    "metaDescription": "Piraten-Kindergeburtstag für 6-8-Jährige: 3 fertige Party-Konzepte (Minimal/Standard/Wow) mit Schatzsuche, Zeitplan, Einkaufsliste und Kosten.",
+    "introParagraph": "Dein Kind wird 6, 7 oder 8 und träumt von Schatzsuche und Piratenschiff? Hier bekommst du drei fertige Party-Konzepte — von der schnellen Schatzsuche bis zur kompletten Piraten-Ausbildung mit Schatzkarte, Knotenkunde und Zahlenschloss-Truhe.\n\n[Piraten-Geburtstag planen →](/kindergeburtstag?motto=piraten&alter=7#planer)",
+    "variants": [
+      {
+        "id": "minimal",
+        "label": "Minimal — 2 Stunden, minimaler Aufwand",
+        "headline": "Tipp: Für draußen: Schatzkarte aus Tee-gefärbtem Papier basteln (Ränder ansengen, Tee darüber — sieht alt aus). 10 Min. extra Vorbereitung, riesiger Wow-Effekt.",
+        "intro": null,
+        "timeWindow": "14:00–16:00, 6 Kinder",
+        "schedule": [
+          {
+            "time": "14:00",
+            "title": "Ankommen & Piraten-Verkleidung",
+            "description": "Jedes Kind bekommt eine [Augenklappe*](https://www.amazon.de/s?k=piraten+augenklappen+kinder&tag=machsleicht-21) und ein Piraten-Bandana. 2 Minuten Aufwand, riesiger Effekt — ab jetzt sind alle Piraten. 15 Min. Ankommen."
+          },
+          {
+            "time": "14:15",
+            "title": "🗺️ Schatzsuche",
+            "description": "5 Stationen im Garten/Wohnung. An jeder Station ein Zettel mit einem Hinweis zum nächsten Ort. Am Ende: die [Schatztruhe*](https://www.amazon.de/s?k=schatztruhe+holz+kinder&tag=machsleicht-21) mit [Goldmünzen*](https://www.amazon.de/s?k=goldm%C3%BCnzen+piraten+kinder&tag=machsleicht-21) + Süßigkeiten. 25 Min."
+          },
+          {
+            "time": "14:40",
+            "title": "🎂 Piratenkuchen & Piratenmahl",
+            "description": "Piratenschiff-Kuchen (Kastenkuchen + Zahnstocher-Segel). Dazu „Piraten-Grog“ (Apfelsaft). 25 Min."
+          },
+          {
+            "time": "15:05",
+            "title": "🏴‍☠️ Seeungeheuer besiegen (Dosenwerfen)",
+            "description": "6 Becher/Dosen übereinander = Seeungeheuer. Jeder Pirat hat 3 Würfe mit Sockenbällen. Alle umwerfen = Seeungeheuer besiegt! 15 Min."
+          },
+          {
+            "time": "15:20",
+            "title": "🎁 Freispiel & Abholung",
+            "description": "Freispiel mit Schatz. Mitgebsel-Tüte („Piratenbeute“) beim Gehen. Ab 15:45 Abholung.\n\n💡 Die Schatzsuche macht die Party\nSelbst mit nur einer einzigen Aktivität — einer guten Schatzsuche — ist ein Piraten-Geburtstag komplett. Die Kinder erinnern sich an „Wir haben einen echten Schatz gefunden!“"
+          }
+        ],
+        "games": [
+          {
+            "name": "🗺️ Piraten-Schatzsuche — Spielanleitung",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 25,
+            "minAge": 5,
+            "loudness": null,
+            "effort": null,
+            "material": "5 Zettel mit Hinweisen, Schatztruhe (Schuhkarton oder Holztruhe), Goldmünzen + Süßigkeiten",
+            "prepText": "",
+            "steps": [],
+            "safetyRule": null,
+            "ageAdjust6": null,
+            "ageAdjust8": null,
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          },
+          {
+            "name": "🐙 Seeungeheuer besiegen — Spielanleitung",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 15,
+            "minAge": 5,
+            "loudness": null,
+            "effort": null,
+            "material": "6–10 Becher oder leere Dosen, 3 Sockenbälle (Socken zusammenknoten)",
+            "prepText": "",
+            "steps": [],
+            "safetyRule": null,
+            "ageAdjust6": null,
+            "ageAdjust8": null,
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          }
+        ],
+        "food": "🎂Piratenschiff-Kuchen1 Kastenkuchen\n🧃„Piraten-Grog“3 Liter\n🍿Popcorn1 Schüssel\n🍎Obst-Spieße1 pro Kind",
+        "decoration": "🏴‍☠️ Piratenflagge (Pappe + Edding)Kostenlos\n🪙 Goldmünzen auf dem Tisch verteiltIm Set",
+        "giveaways": "In braune Papiertüte („Piratenbeute von ___“). Kosten: ~2 € pro Kind.\n\n🪙 Goldmünzen (Schoko)\n🧑‍🎤 Augenklappe\n🍬 Süßigkeiten",
+        "shoppingList": [
+          {
+            "emoji": "🪙",
+            "label": "Goldmünzen 100 Stk.",
+            "url": "https://www.amazon.de/s?k=goldm%C3%BCnzen+piraten+kinder&amp;tag=machsleicht-21",
+            "priceEur": 5,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Begrüßung + Schatzsuche + Schatztruhe-Inhalt — motto-zentrales Symbol."
+          },
+          {
+            "emoji": "🧑‍🎤",
+            "label": "Augenklappen 12 Stk.",
+            "url": "https://www.amazon.de/s?k=piraten+augenklappen+kinder&amp;tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining: Augenklappe ist DAS Pirate-Identifikations-Element pro Kind."
+          },
+          {
+            "emoji": "📦",
+            "label": "Schatztruhe (Holz, klein)",
+            "url": "https://www.amazon.de/s?k=schatztruhe+holz+kinder&amp;tag=machsleicht-21",
+            "priceEur": 8,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Variant-Defining: Schatztruhe-Öffnung ist Climax-Moment der Schatzsuche."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Kuchen + Getränke + Snacks",
+            "url": null,
+            "priceEur": 10,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Verpflegung bei 3h Party + 6-8 Kindern nicht optional."
+          },
+          {
+            "emoji": "🎁",
+            "label": "Mitgebsel",
+            "url": null,
+            "priceEur": 8,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Schatztruhen-Inhalt für Verteilung am Ende, aber 5 Goldmünzen + Augenklappe reichen funktional auch ohne extra Mitgebsel."
+          }
+        ],
+        "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
+      },
+      {
+        "id": "standard",
+        "label": "Standard — 3 Stunden, vollständige Schicht",
+        "headline": "Tipp: Erstelle mit dem machsleicht-Planer eine [fertige Piraten-Schnitzeljagd](/kindergeburtstag?motto=piraten&alter=7&modus=schatzsuche) mit 5 Stationen, Schatzkarte und Hinweis-Zetteln — druckfertig.",
+        "intro": null,
+        "timeWindow": "14:00–17:00, 6 Kinder",
+        "schedule": [
+          {
+            "time": "14:00",
+            "title": "Ankommen & Piraten-Verkleidung",
+            "description": "Augenklappe, Bandana, Piraten-Tattoo. Freispiel mit Piraten-Ausmalbildern. 15 Min."
+          },
+          {
+            "time": "14:15",
+            "title": "📜 Flaschenpost finden",
+            "description": "Eine echte Flasche mit einer Nachricht liegt versteckt. Darin: die erste Anweisung für die Schatzsuche. „Käpt’n Rotbarts Schatz ist vergraben! Folgt den Hinweisen!“ 10 Min."
+          },
+          {
+            "time": "14:25",
+            "title": "🗺️ Schatzsuche (7 Stationen)",
+            "description": "7 Stationen mit Rätseln: Spiegelschrift lesen, Wörter entschlüsseln, Zählrätsel. Jede Station verrät den nächsten Ort. Am Ende: Schatztruhe mit Zahlenschloss. 30 Min."
+          },
+          {
+            "time": "14:55",
+            "title": "🎂 Piratenkuchen & Piratenmahl",
+            "description": "Piratenschiff-Kuchen. „Piraten-Grog“ (Apfelsaft). Kanonenkugeln (Fleischbällchen). 25 Min."
+          },
+          {
+            "time": "15:20",
+            "title": "🐙 Seeungeheuer besiegen",
+            "description": "Dosenwerfen: 2 Teams treten gegeneinander an. 3 Runden. Verlierer-Team bekommt Trostpreis. 15 Min."
+          },
+          {
+            "time": "15:35",
+            "title": "🨢 Knotenkunde",
+            "description": "3 Knoten lernen: einfacher Knoten, Schleife, Achterknoten. Wer alle schafft, bekommt einen „Seemanns-Stempel“. 15 Min."
+          },
+          {
+            "time": "15:50",
+            "title": "🏃 Piraten-Parcours",
+            "description": "Hindernisse: unter Seilen durch (Lianen), über Kissen springen (Krokodile!), Ball auf Löffel („Kanonenkugel“). 2 Teams im Staffel-Wettlauf. 15 Min."
+          },
+          {
+            "time": "16:05",
+            "title": "🎁 Piratenbeute & Abholung",
+            "description": "Freispiel. Mitgebsel-Tüten verteilen. Abholung ab 16:30.\n\n💡 Abwechselnd laut → leise\nFlaschenpost (ruhig) → Schatzsuche (aktiv) → Kuchen (Pause) → Dosenwerfen (laut) → Knotenkunde (ruhig) → Parcours (laut). So kippt die Stimmung nie."
+          }
+        ],
+        "games": [
+          {
+            "name": "📜 Flaschenpost — Spielanleitung",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 10,
+            "minAge": 5,
+            "loudness": null,
+            "effort": null,
+            "material": "Leere Glasflasche oder PET-Flasche, Zettel mit Nachricht, optional Sand/Muscheln als Deko",
+            "prepText": "",
+            "steps": [],
+            "safetyRule": null,
+            "ageAdjust6": null,
+            "ageAdjust8": null,
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          },
+          {
+            "name": "🗺️ Schatzsuche mit Rätseln — Spielanleitung",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 30,
+            "minAge": 6,
+            "loudness": null,
+            "effort": null,
+            "material": "7 Zettel mit Rätseln, Schatztruhe, [Zahlenschloss 3-stellig*](https://www.amazon.de/s?k=zahlenschloss+3+stellig&tag=machsleicht-21) (~3 €), Goldmünzen + Süßigkeiten",
+            "prepText": "",
+            "steps": [],
+            "safetyRule": null,
+            "ageAdjust6": null,
+            "ageAdjust8": null,
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          },
+          {
+            "name": "🨢 Knotenkunde — Spielanleitung",
+            "indoor": true,
+            "outdoor": false,
+            "duration": 15,
+            "minAge": 6,
+            "loudness": null,
+            "effort": null,
+            "material": "1 Seil pro Kind (~50 cm), Knoten-Anleitung ausdrucken",
+            "prepText": "",
+            "steps": [],
+            "safetyRule": null,
+            "ageAdjust6": null,
+            "ageAdjust8": null,
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          },
+          {
+            "name": "🐙 Seeungeheuer besiegen — Spielanleitung",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 15,
+            "minAge": 5,
+            "loudness": null,
+            "effort": null,
+            "material": "6–10 Becher, 3 Sockenbälle",
+            "prepText": "",
+            "steps": [],
+            "safetyRule": null,
+            "ageAdjust6": null,
+            "ageAdjust8": null,
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          },
+          {
+            "name": "🏃 Piraten-Parcours — Spielanleitung",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 15,
+            "minAge": 6,
+            "loudness": null,
+            "effort": null,
+            "material": "2 Seile, Kissen, 2 Bälle, 2 Löffel, Stoppuhr",
+            "prepText": "",
+            "steps": [],
+            "safetyRule": null,
+            "ageAdjust6": null,
+            "ageAdjust8": null,
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          }
+        ],
+        "food": "🎂Piratenschiff-Kuchen1 Kastenkuchen\n🧃„Piraten-Grog“4 Liter\n🍖„Kanonenkugeln“Fleischbällchen\n🍿Popcorn2 Schüsseln\n🍎Obst-Spieße„Schwertspieße“",
+        "decoration": "🏴‍☠️ PiratenflaggeKostenlosPappe + Edding, 10 Min.\n🪙 Goldmünzen auf dem TischIm Set\n🗺️ Schatzkarte an der WandKostenlosPapier + Tee färben\n🎈 Schwarze Luftballons~2 €",
+        "giveaways": "In braune Papiertüte („Piratenbeute von ___“). Kosten: ~2,50 € pro Kind.\n\n🪙 Goldmünzen\n🧑‍🎤 Augenklappe\n🔭 Mini-Fernrohr\n🍬 Süßigkeiten",
+        "shoppingList": [
+          {
+            "emoji": "🪙",
+            "label": "Goldmünzen 100 Stk.",
+            "url": "https://www.amazon.de/s?k=goldm%C3%BCnzen+piraten+kinder&amp;tag=machsleicht-21",
+            "priceEur": 5,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Begrüßung + Schatzsuche + Schatztruhe-Inhalt — motto-zentrales Symbol."
+          },
+          {
+            "emoji": "🧑‍🎤",
+            "label": "Augenklappen 12 Stk.",
+            "url": "https://www.amazon.de/s?k=piraten+augenklappen+kinder&amp;tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining: Augenklappe ist DAS Pirate-Identifikations-Element pro Kind."
+          },
+          {
+            "emoji": "📦",
+            "label": "Schatztruhe",
+            "url": "https://www.amazon.de/s?k=schatztruhe+holz+kinder&amp;tag=machsleicht-21",
+            "priceEur": 8,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining: Schatztruhe-Öffnung ist Climax-Moment der Schatzsuche."
+          },
+          {
+            "emoji": "🔒",
+            "label": "Zahlenschloss 3-stellig",
+            "url": "https://www.amazon.de/s?k=zahlenschloss+3+stellig&amp;tag=machsleicht-21",
+            "priceEur": 3,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Standard: Variant-Defining für Schatztruhen-Code-Knacken als Höhepunkt."
+          },
+          {
+            "emoji": "🔭",
+            "label": "Fernrohre 6 Stk.",
+            "url": "https://www.amazon.de/s?k=fernrohr+kinder+piraten&amp;tag=machsleicht-21",
+            "priceEur": 6,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Atmosphäre-Heber für Wache-Position, aber Stationen funktionieren auch ohne Fernrohre."
+          },
+          {
+            "emoji": "🨢",
+            "label": "Seile (Knotenkunde)",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Seile (Knotenbinden) im Haushalt oft als Spring- oder Sicherungs-Seil vorhanden."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Kuchen + Essen + Getränke",
+            "url": null,
+            "priceEur": 15,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Verpflegung bei 3h Party + 6-8 Kindern nicht optional."
+          },
+          {
+            "emoji": "🎁",
+            "label": "Mitgebsel",
+            "url": null,
+            "priceEur": 15,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Schatztruhen-Inhalt für Verteilung am Ende, aber 5 Goldmünzen + Augenklappe reichen funktional auch ohne extra Mitgebsel."
+          }
+        ],
+        "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
+      },
+      {
+        "id": "wow",
+        "label": "Wow — 3,5 Stunden, die volle Schicht",
+        "headline": "In braune Papiertüte („Piratenbeute von ___“). Kosten: ~4 € pro Kind.",
+        "intro": "In 30 Sekunden fertig — mit Name, Datum und einem Piraten-Abenteuer als Vorgeschmack.",
+        "timeWindow": "14:00–17:30, 6 Kinder",
+        "schedule": [
+          {
+            "time": "14:00",
+            "title": "Ankommen & Piraten-Verkleidung",
+            "description": "Augenklappe, Bandana, [Piraten-Tattoos*](https://www.amazon.de/s?k=piraten+tattoos+kinder&tag=machsleicht-21). Jedes Kind bekommt ein [Fernrohr*](https://www.amazon.de/s?k=fernrohr+kinder+piraten&tag=machsleicht-21). Ab jetzt sind alle Piraten der Crew „Schwarzer Hai“. 15 Min."
+          },
+          {
+            "time": "14:15",
+            "title": "🗺️ Schatzkarte basteln",
+            "description": "Jedes Kind bastelt seine eigene Schatzkarte: Papier mit Tee färben (vorbereitet), Ränder einreißen, mit Wachsstiften „X“ markieren und Routen zeichnen. 15 Min."
+          },
+          {
+            "time": "14:30",
+            "title": "📜 Flaschenpost + große Schatzsuche",
+            "description": "Flaschenpost finden, dann 7 Stationen mit echten Rätseln. An jeder Station: eine Ziffer für den Truhen-Code. Spiegelschrift, Buchstaben-Code, Zählrätsel. 35 Min."
+          },
+          {
+            "time": "15:05",
+            "title": "🎂 Piratenmahl",
+            "description": "Piratenschiff-Kuchen mit Wunderkerze als Kanone. „Piraten-Grog“. „Kanonenkugeln“ (Fleischbällchen). 25 Min."
+          },
+          {
+            "time": "15:30",
+            "title": "🐙 Seeungeheuer + Knotenkunde",
+            "description": "Dosenwerfen als Teams, dann Knotenkunde mit 3 Knoten. 20 Min."
+          },
+          {
+            "time": "15:50",
+            "title": "🏃 Piraten-Parcours + Schiff beladen",
+            "description": "Staffel-Parcours. Zusätzlich: „Schiff beladen“ — Bälle mit einer Hand in einen Eimer werfen. 20 Min."
+          },
+          {
+            "time": "16:10",
+            "title": "🔒 Schatztruhe öffnen!",
+            "description": "Alle Ziffern zusammen = Code fürs Zahlenschloss. Truhe enthält: Goldmünzen + Fernrohre + Süßigkeiten. Feierliche Ernennung zum „Piraten-Kapitän“. 15 Min."
+          },
+          {
+            "time": "16:25",
+            "title": "🎁 Freispiel & Abholung",
+            "description": "Dino-Doku — nein, natürlich Piratenfilm (Fluch der Karibik? Nee, lieber Pippi Langstrumpf). Abholung ab 17:00.\n\n🎯 Der geheime Wow-Faktor\nEin [Piratenkostüm*](https://www.amazon.de/s?k=piraten+kost%C3%BCm+erwachsene&tag=machsleicht-21) für dich (~20–35 €). Du begrüßt die Kinder als „Käpt’n“ — mit Hut, Augenklappe und rauem Piraten-Akzent. Die Kinder finden das GENIAL und der ganze Tag hat einen Erzähler. Alternativ günstiger: Nur [Piratenhut*](https://www.amazon.de/s?k=piraten+hut+erwachsene&tag=machsleicht-21) + Augenklappe + Akzent reicht völlig."
+          }
+        ],
+        "games": [
+          {
+            "name": "🗺️ Schatzkarte basteln — Spielanleitung",
+            "indoor": true,
+            "outdoor": false,
+            "duration": 15,
+            "minAge": 6,
+            "loudness": null,
+            "effort": null,
+            "material": "Weißes Papier (vorher in Tee einlegen und trocknen lassen!), Wachsmalstifte, optional Feuerzeug für Ränder (nur Erwachsene!)",
+            "prepText": "",
+            "steps": [],
+            "safetyRule": null,
+            "ageAdjust6": null,
+            "ageAdjust8": null,
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          },
+          {
+            "name": "⛵ Schiff beladen — Spielanleitung",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 10,
+            "minAge": 5,
+            "loudness": null,
+            "effort": null,
+            "material": "1 Eimer („Schiff“), 15 Bälle oder zusammengeknülltes Zeitungspapier",
+            "prepText": "",
+            "steps": [],
+            "safetyRule": null,
+            "ageAdjust6": null,
+            "ageAdjust8": null,
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          }
+        ],
+        "food": "🎂Piratenschiff-Kuchen1 Kastenkuchen\n🧃„Piraten-Grog“5 Liter\n🍖„Kanonenkugeln“Fleischbällchen\n🍿Popcorn2 Schüsseln\n🍎„Schwertspieße“Obst am Spieß\n🧀Cracker + Käse„Schiffszwieback“",
+        "decoration": "🏴‍☠️ PiratenflaggeKostenlosPappe + Edding\n🪙 Goldmünzen überallIm Set\n🗺️ Schatzkarte an der WandKostenlos, 15 Min.\n🎈 Schwarze Luftballons~2 €\n🏴 „Betreten auf eigene Gefahr“-SchildKostenlos\n🔊 Meeresrauschen (YouTube)Kostenlos",
+        "giveaways": "In braune Papiertüte („Piratenbeute von ___“). Kosten: ~4 € pro Kind.\n\n🪙 Goldmünzen\n🔭 Fernrohr\n🧑‍🎤 Augenklappe\n🗺️ Selbstgebastelte Schatzkarte\n🍬 Süßigkeiten aus der Truhe",
+        "shoppingList": [
+          {
+            "emoji": "🪙",
+            "label": "Goldmünzen 100 Stk.",
+            "url": "https://www.amazon.de/s?k=goldm%C3%BCnzen+piraten+kinder&amp;tag=machsleicht-21",
+            "priceEur": 5,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Begrüßung + Schatzsuche + Schatztruhe-Inhalt — motto-zentrales Symbol."
+          },
+          {
+            "emoji": "🧑‍🎤",
+            "label": "Augenklappen 12 Stk.",
+            "url": "https://www.amazon.de/s?k=piraten+augenklappen+kinder&amp;tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining: Augenklappe ist DAS Pirate-Identifikations-Element pro Kind."
+          },
+          {
+            "emoji": "📦",
+            "label": "Schatztruhe",
+            "url": "https://www.amazon.de/s?k=schatztruhe+holz+kinder&amp;tag=machsleicht-21",
+            "priceEur": 8,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining: Schatztruhe-Öffnung ist Climax-Moment der Schatzsuche."
+          },
+          {
+            "emoji": "🔒",
+            "label": "Zahlenschloss",
+            "url": "https://www.amazon.de/s?k=zahlenschloss+3+stellig&amp;tag=machsleicht-21",
+            "priceEur": 3,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Standard: Variant-Defining für Schatztruhen-Code-Knacken als Höhepunkt."
+          },
+          {
+            "emoji": "🔭",
+            "label": "Fernrohre 6 Stk.",
+            "url": "https://www.amazon.de/s?k=fernrohr+kinder+piraten&amp;tag=machsleicht-21",
+            "priceEur": 6,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Atmosphäre-Heber für Wache-Position, aber Stationen funktionieren auch ohne Fernrohre."
+          },
+          {
+            "emoji": "🏴‍☠️",
+            "label": "Piraten-Tattoos",
+            "url": "https://www.amazon.de/s?k=piraten+tattoos+kinder&amp;tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Wow-Atmosphäre, aber Augenklappen + Goldmünzen tragen Verkleidungs-Element funktional."
+          },
+          {
+            "emoji": "🨢",
+            "label": "Seile für Knotenkunde",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Seile (Knotenbinden) im Haushalt oft als Spring- oder Sicherungs-Seil vorhanden."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Kuchen + Essen + Getränke",
+            "url": null,
+            "priceEur": 18,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Verpflegung bei 3h Party + 6-8 Kindern nicht optional."
+          },
+          {
+            "emoji": "🎁",
+            "label": "Mitgebsel",
+            "url": null,
+            "priceEur": 24,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Schatztruhen-Inhalt für Verteilung am Ende, aber 5 Goldmünzen + Augenklappe reichen funktional auch ohne extra Mitgebsel."
+          }
+        ],
+        "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm)",
+        "savingsTip": {
+          "title": "🚨 Allergien vorher abfragen",
+          "body": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit. In die Einladung schreiben: „Hat dein Kind Allergien?“"
+        }
+      }
+    ],
+    "cakeRecipe": {
+      "intro": "Der einfachste Piraten-Kuchen: Kastenkuchen + Segel",
+      "steps": [
+        {
+          "n": 1,
+          "content": "Marmorkuchen oder Schoko-Kastenkuchen backen (Fertigmischung völlig okay)"
+        },
+        {
+          "n": 2,
+          "content": "Kürzen: ein Ende schräg abschneiden = Bug des Schiffes"
+        },
+        {
+          "n": 3,
+          "content": "Schoko-Glasur über den ganzen Kuchen = Schiffsrumpf"
+        },
+        {
+          "n": 4,
+          "content": "Segel: 2 Zahnstocher + weißes Papier (Dreieck ausschneiden, aufspießen)"
+        },
+        {
+          "n": 5,
+          "content": "Piratenflagge oben: schwarzes Papier, Totenkopf drauf malen"
+        }
+      ],
+      "meta": {
+        "aufwand": "45 Min",
+        "kosten": "~7 &euro;",
+        "allergiker": "Packung checken"
+      },
+      "tips": null
+    },
+    "parentTips": {
+      "structured": [
+        {
+          "topic": "🚨 Allergien vorher abfragen",
+          "detail": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit. In die Einladung schreiben: „Hat dein Kind Allergien?“"
+        },
+        {
+          "topic": "📋 Plan B bei Regen",
+          "detail": "Alle Spiele funktionieren auch drinnen. Schatzsuche: Wohnung statt Garten. Parcours: Flur. Nie ohne Plan B."
+        },
+        {
+          "topic": "📱 Partyseite statt WhatsApp-Chaos",
+          "detail": "Erstelle eine [WhatsApp-Partyseite](https://party.machsleicht.de). Adresse, Uhrzeit, Abholzeit — alles auf einer Seite. Kostenlos."
+        },
+        {
+          "topic": "🎯 Die „1 Helfer“-Regel",
+          "detail": "Ab 6 Kindern brauchst du mindestens 1 zweiten Erwachsenen. Alleine 6–8 aufgedrehte Piraten zu managen ist kein Spaß."
+        }
+      ],
+      "educationalValue": null
+    },
+    "invitationTemplate": "🏴‍☠️ Interaktive Piraten-Einladung per WhatsApp\n\nIn 30 Sekunden fertig — mit Name, Datum und einem Piraten-Abenteuer als Vorgeschmack.\n[🏴‍☠️ Piraten-Einladung erstellen →](/einladung/erstellen?motto=piraten)\n\n[💬 Idee per WhatsApp teilen](https://wa.me/?text=Schau%20mal%3A%20Piraten-Abenteuer%20Kindergeburtstag%20f%C3%BCr%206%E2%80%938%20Jahre%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Schatzsuche%20und%20Einkaufsliste!%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Fpiraten-6-8-jahre)",
+    "preparationWeeks": {
+      "minus4Weeks": {
+        "headline": "4 Wochen vorher — Schatz-Karte zeichnen",
+        "items": [
+          {
+            "icon": "📅",
+            "title": "Datum + Uhrzeit + Treffpunkt fixieren",
+            "detail": "Sa/So 14–17 Uhr ist Sweet-Spot — 3h Schatzsuche braucht Zeit. Treffpunkt mental: Garten (besser für Schatzsuche), Park (Schatz verstecken), Wohnung (Indoor-Plan-B). Drinnen-Plan-B-Räume schon im Kopf."
+          },
+          {
+            "icon": "👥",
+            "title": "Gästeliste festzurren — 6-8 Kinder",
+            "detail": "6-8 ist Sweet-Spot: zwei Crews möglich für Schatzsuche-Wettbewerb. Über 8 wird's beim Knotenbinden + Goldmünzen-Verteilung chaotisch."
+          },
+          {
+            "icon": "💶",
+            "title": "Variante wählen: Minimal / Standard / Wow",
+            "detail": "Minimal (Goldmünzen + Schatztruhe + 2 Spiele), Standard (+ Zahlenschloss + Fernrohre + 5 Stationen), Wow (+ Tattoos + Schatzkarte basteln + Mehr-Mitgebsel). Entscheidung jetzt — danach Bestelllisten."
+          },
+          {
+            "icon": "✉️",
+            "title": "Einladungen rausschicken — Pirate-Style",
+            "detail": "Bei 6-8 ist Schiffs-Brief mit ‚Geheimcode' das Highlight. Pflicht im Text: Allergie-Abfrage + ‚Komm in Piraten-Kostüm wenn du magst (Stirnband + alter Pulli reicht).' RSVP-Link auf party.machsleicht.de."
+          },
+          {
+            "icon": "🏠",
+            "title": "Mietwohnung: Schatzsuche-Indoor-Check",
+            "detail": "Schatzsuche im Garten ist Standard. Wenn Wohnung: 6-8 Verstecke quer durch alle Zimmer + Flur planen. Goldmünzen-Funde sind leise, kein Lärm-Risiko für Nachbarn."
+          }
+        ]
+      },
+      "minus2Weeks": {
+        "headline": "2 Wochen vorher — Schatzsuche-Plot ausarbeiten",
+        "items": [
+          {
+            "icon": "📋",
+            "title": "RSVPs einsammeln + Liste schließen",
+            "detail": "Nachzügler einmal anstupsen, dann ist gut. party.machsleicht.de zeigt den Stand auf einen Blick."
+          },
+          {
+            "icon": "🥜",
+            "title": "Allergien zusammenschreiben",
+            "detail": "Eine Liste, ein Zettel. Bei Schoko-Goldmünzen + Kuchen: meist Standard-Allergien (Nüsse, Laktose, Gluten). Liste am Party-Tag griffbereit."
+          },
+          {
+            "icon": "🗺️",
+            "title": "Schatzsuche-Plot ausarbeiten",
+            "detail": "5-6 Stationen mit Hinweisen die auf nächste Station deuten. Bei Standard: Knotenbinden + Flaschenpost als Stationen. Bei Wow: Schatzkarte mit Tee-gefärbtem Papier + Verbrenn-Rand für Authentizität."
+          },
+          {
+            "icon": "📦",
+            "title": "Bestellliste finalisieren",
+            "detail": "Goldmünzen + Augenklappen + Schatztruhe bei Amazon (Lieferzeit 2-5 Tage), Tee + Backmischung im Supermarkt, bei Standard zusätzlich Zahlenschloss + Fernrohre. Bei Wow: Piraten-Tattoos."
+          }
+        ]
+      },
+      "minus1Week": {
+        "headline": "1 Woche vorher — bestellen, drucken, vorwarnen",
+        "items": [
+          {
+            "icon": "🛒",
+            "title": "Amazon-Bestellung JETZT raus",
+            "detail": "Lieferzeit 2–5 Tage. Goldmünzen 100er-Set (~5€), Augenklappen 12er (~4€), Schatztruhe Holz klein (~8€). Bei Standard: Zahlenschloss (~3€) + Fernrohre 6er (~6€) + Seile-Set. Bei Wow Piraten-Tattoos (~4€)."
+          },
+          {
+            "icon": "🖨️",
+            "title": "Schatzkarte + Einladungs-Briefe drucken",
+            "detail": "Schatzkarte mit Wegen + 5-6 X-Markierungen. Bei Wow: Tee-gefärbt + Verbrenn-Rand mit Feuerzeug (Achtung: Erwachsenen-Aufsicht). Geheimcode für letzte Station als Bonus."
+          },
+          {
+            "icon": "🔔",
+            "title": "Nachbarn vorwarnen (falls Garten-Schatzsuche)",
+            "detail": "‚Sonntag 14-17 Uhr Piraten-Party im Garten, mein Sohn wird 7. Vielleicht hört ihr ‚Aaarrr'-Rufe.' Spart Erklärungs-Fragen."
+          },
+          {
+            "icon": "🌧️",
+            "title": "Plan B Regen mental durchspielen",
+            "detail": "Schatzsuche durch alle Zimmer der Wohnung (6-8 Verstecke): unter Sofa, hinter Vorhang, in Schuhe, im Schrank. Plus Knotenbinden + Flaschenpost am Wohnzimmertisch. Räume freihalten diese Woche."
+          },
+          {
+            "icon": "🍵",
+            "title": "Schatzkarten-Tee-Färbung vortesten (Wow)",
+            "detail": "Schwarzer Tee 5 Min ziehen, Papier in flache Schale, Tee drüber 30 Sek, trocknen lassen. Verbrenn-Rand am letzten Tag (Erwachsenen-Aufsicht). Bei 6-8 = Highlight-Effekt."
+          }
+        ]
+      },
+      "minus2Days": {
+        "headline": "2 Tage vorher — backen, briefen, basteln",
+        "items": [
+          {
+            "icon": "🎂",
+            "title": "Schatzinsel-Kuchen backen — oder Plan B",
+            "detail": "Wenn Zeit/Nerven: Gugelhupf + Schokoglasur + Goldmünzen-Smarties als ‚Schatz'. Wenn nicht: Sandkuchen vom Bäcker (~6€), morgen Goldmünzen-Streusel drauf. Bei 6-8 keine Wunderkerze ist OK (Piraten haben kein Feuerwerk-Klischee)."
+          },
+          {
+            "icon": "🗣️",
+            "title": "Helfer briefen — 5 Minuten reichen",
+            "detail": "Zettel mit Stationen: ‚Du Knotenbinden-Tisch, ich Schatzsuche.' Bei Wow Schatzkarte-Auflösung: Wer hält Karte, wer dirigiert Crew. Klare Rollen = kein Chaos."
+          },
+          {
+            "icon": "🪧",
+            "title": "Schatzsuche-Hinweise final schreiben",
+            "detail": "Pro Station ein Hinweis: Bild + Text. Bei 6-8: Reime funktionieren (‚Wo der Wind den Sand bewegt — da ist mein nächstes X versteckt'). Hinweise auf Tee-Papier (Wow) oder normales Papier."
+          },
+          {
+            "icon": "🎁",
+            "title": "Goodie-Bags packen — kindgerecht für 6-8",
+            "detail": "Pro Kind: Augenklappe, 5 Goldmünzen, 1-2 Tattoos (Wow), kleines Notiz-Buch mit Karte, Süßigkeiten. NICHT zu viel — bei 6-8 schätzt sie Detail über Menge."
+          },
+          {
+            "icon": "📦",
+            "title": "Schatztruhe füllen + Schatz-Versteck mental fixieren",
+            "detail": "In die Truhe: 1 Mitgebsel pro Kind + Bonus-Süßigkeiten + Geheim-Brief vom ‚Käpt'n Krummbein'. Versteck-Spot finalisieren: Garten-Boden, Schuppen, Schrank — was am sichersten ist."
+          }
+        ]
+      },
+      "minus1Day": {
+        "headline": "1 Tag vorher — Deko, Schatzkarte verbrennen, Test",
+        "items": [
+          {
+            "icon": "🌟",
+            "title": "Kuchen verzieren",
+            "detail": "Schokoglasur drüber, Goldmünzen-Smarties als ‚Schatz' obendrauf, grüne Marzipan-Bäume (DIY oder Smarties). Bei Wow: ‚X' aus weißem Zuckerstift = Markierung. Über Nacht fest werden lassen."
+          },
+          {
+            "icon": "🔥",
+            "title": "Wow: Schatzkarte verbrennen",
+            "detail": "Erwachsenen-Aufsicht: Schatzkarte-Ränder mit Feuerzeug ankokeln (2-3 Stellen). Über trockenem Geschirrhandtuch. Nach 5 Min Brandgeruch verflogen. Authentizität-Highlight."
+          },
+          {
+            "icon": "🚧",
+            "title": "Stationen + Eingangs-Tisch dekorieren",
+            "detail": "Schwarz-weiße Piraten-Flagge (DIY oder Amazon-Notreserve), Schatzkarten-Vorlage am Eingang, Augenklappen + Goldmünzen sortiert, Schatztruhe in finalem Versteck (noch nicht sichtbar)."
+          },
+          {
+            "icon": "🎵",
+            "title": "Audio + Bluetooth-Box testen",
+            "detail": "Spotify ‚Piraten der Karibik Soundtrack' Playlist. Bei Wow: Wellen-Sound für Stations-Übergang. Soundkulisse macht 6-8 Kindern viel mehr Spaß als nur Reden."
+          },
+          {
+            "icon": "🗺️",
+            "title": "Stationen-Hinweise verstecken",
+            "detail": "Pro Station ein Hinweis am genauen Versteck-Ort + Goldmünze als Beweis (‚du hast die Station gefunden!'). 5-6 Stationen, Reihenfolge mental fixieren."
+          }
+        ]
+      },
+      "dayOf": {
+        "headline": "Tag X — durchziehen, atmen, feiern",
+        "items": [
+          {
+            "icon": "⏰",
+            "title": "30 Min vor Ankunft: Schatzsuche-Setup",
+            "detail": "Stationen-Hinweise platziert, Schatztruhe im finalen Versteck, Goldmünzen + Augenklappen sortiert. Kuchen aus dem Kühlschrank — Zimmertemperatur schmeckt besser."
+          },
+          {
+            "icon": "🎯",
+            "title": "15 Min vor Ankunft: Eingangs-Tisch + Crew-Setup",
+            "detail": "Augenklappen-Stack, Goldmünzen-Begrüßung pro Kind, Piraten-Flagge an Tür, Schatzkarte sichtbar am Wache-Tisch (= Käpt'n-Pult). Spotify-Playlist startet leise."
+          },
+          {
+            "icon": "🫁",
+            "title": "5 Min vor Ankunft: durchatmen",
+            "detail": "Klo, Wasser, einmal tief Luft holen. Bei 6-8 ist Schatzsuche selbstständig genug — du dirigierst nur. Handy auf lautlos außer für Eltern-Anrufe."
+          },
+          {
+            "icon": "🏴‍☠️",
+            "title": "Ankunft: Piraten-Begrüßung",
+            "detail": "Jedes Kind bekommt Augenklappe + 3 Goldmünzen als Begrüßung. Bei Wow: Piraten-Tattoo aufs Handrücken (10 Sek Wasser-Tuch). ‚Aye-Aye Käpt'n!' Spruch alle gemeinsam."
+          },
+          {
+            "icon": "🗺️",
+            "title": "Schatzsuche-Start: Karten-Übergabe",
+            "detail": "Käpt'n-Schiffsbrief verlesen (3 Sätze: ‚Ihr seid berufen, Käpt'n Krummbein's verschollenen Schatz zu finden...'). Karte zeigen, erste Station auf Karte markieren. Crew los."
+          }
+        ]
+      }
+    },
+    "sosScenarios": {
+      "regen": {
+        "icon": "🌧️",
+        "label": "Regen — Schatzsuche-Outdoor geplant",
+        "headline": "Schatzsuche-Verstecke in die Wohnung verlegen.",
+        "steps": [
+          "Hinweise + Goldmünzen in alle Zimmer verteilen: Schlafzimmer, Kinderzimmer, Bad, Flur, Küche, Wohnzimmer.",
+          "Schatztruhe im Schrank oder unter einem Bett verstecken — magisch wirkt's drinnen sogar mehr.",
+          "Knotenbinden + Flaschenpost am Wohnzimmertisch.",
+          "Eltern als zusätzliche Aufsicht bei Indoor-Trubel aktiv einbinden."
+        ],
+        "fallback": "Wenn Wohnung zu klein: Schatztruhe direkt am Käpt'n-Tisch öffnen + Kuchen + Mitgebsel-Verteilung als Hauptprogramm.",
+        "tone": "praktisch"
+      },
+      "weniger_kinder_als_erwartet": {
+        "icon": "👥",
+        "label": "Weniger Kinder als erwartet (1-2 fehlen)",
+        "headline": "Kompakte Crew = enger Zusammenhalt — straffer Plot.",
+        "steps": [
+          "Schatzsuche-Stationen auf 4 statt 5-6 reduzieren, schneller zur Truhe.",
+          "Mehr Goldmünzen pro Kind beim Finden — sie fühlen sich reicher.",
+          "Knotenbinden ausführlicher: jedes Kind lernt 2-3 Knoten statt 1.",
+          "Pufferzeit füllen mit zweiter Goldmünzen-Suche oder Schatz-Foto-Session."
+        ],
+        "fallback": "Wenn Stimmung kippt: Crew-Foto + Schatztruhe-Verteilung + Piraten-Diplom-Zeremonie als Hauptprogramm.",
+        "tone": "ruhig"
+      },
+      "mehr_kinder_als_erwartet": {
+        "icon": "🚨",
+        "label": "Mehr Kinder als erwartet (Geschwister-Boom)",
+        "headline": "Zwei Crews bilden — Wettbewerb wird interessanter.",
+        "steps": [
+          "Crew in 2 Teams splitten: Team Schwarzbart + Team Krummbein, je ein älteres Kind als Käpt'n.",
+          "Schatzsuche doppelt: 2 parallele Routen mit eigenen Hinweisen, Truhe als gemeinsames Ziel.",
+          "Sofort Verstärkung anrufen: Eltern, Oma — 10€ für 2 Std Stationsaufsicht.",
+          "Augenklappen + Goldmünzen aufstocken: Augenklappen aus schwarzem Stoff improvisieren (Stoff + Gummiband).",
+          "Kuchen-Stücke kleiner schneiden, evtl. extra Snacks nachbestellen."
+        ],
+        "fallback": "Keine Verstärkung erreichbar? Schatzsuche als Hauptaktion (45 Min), dann Truhe + Kuchen + Mitgebsel.",
+        "tone": "praktisch"
+      },
+      "kind_will_nicht_mitmachen": {
+        "icon": "🤷",
+        "label": "Ein Kind will nicht mitmachen",
+        "headline": "Off-Action-Rolle: Schatzkarten-Wärter oder Foto-Reporter.",
+        "steps": [
+          "Rolle anbieten: ‚Du bist Käpt'ns Schatzkarten-Wärter — du passt auf die Karte auf.'",
+          "Alternative: Foto-Reporter mit deinem Handy, dokumentiert die Schatzsuche.",
+          "Augenklappe nicht? Auf den Schiffsbrief kleben oder als ‚Pirate-Abzeichen' am Pulli befestigen.",
+          "Sitzplatz mit Goldmünzen + Apfelschorle am Käpt'ns-Tisch — VIP-Position."
+        ],
+        "fallback": "Bleibt komplett raus? Buch + Decke + Schoko-Goldmünzen in die Ecke. Bei 6-8 oft nach 15 Min selbst eingestiegen — Schatz zieht.",
+        "tone": "ruhig"
+      },
+      "kuchen_misslungen": {
+        "icon": "🎂",
+        "label": "Kuchen ist misslungen",
+        "headline": "Bäcker-Hack: Sandkuchen + Schokoglasur + Goldmünzen = 10 Min.",
+        "steps": [
+          "Sandkuchen oder Schoko-Boden beim Bäcker holen (4-6€).",
+          "Schokoglasur drüber, ‚X' mit weißem Zuckerstift drauf = Schatz-Markierung.",
+          "Schoko-Goldmünzen rundum verteilen + grüne Smarties als ‚Insel-Bäume'.",
+          "Optional: Piraten-Flagge aus Papier + Zahnstocher als Topping."
+        ],
+        "fallback": "Bäcker zu? Muffins aus dem Vorrat, je Muffin eine Schoko-Goldmünze + roter Edding-X = Mini-Schatz-Inseln.",
+        "tone": "motivierend"
+      },
+      "spielzeug_kaputt_oder_fehlt": {
+        "icon": "🔧",
+        "label": "Spielzeug kaputt oder vergessen",
+        "headline": "Improvisieren mit Haushalts-Material.",
+        "steps": [
+          "Augenklappen vergessen? Schwarzes Papier + Gummiband + Schere = DIY in 5 Min pro Stück.",
+          "Goldmünzen weg? 1€-Münzen mit Goldfolie-Pralinen-Verpackung + Sicherheit (zu kleine Münzen wegen Verschluckungsgefahr nur ab 4+).",
+          "Zahlenschloss kaputt? Schlüssel-Schloss mit verstecktem Schlüssel als Variante.",
+          "Schatzkarte verloren? Hand-malen auf Pergament-Papier in 15 Min — Kinder finden's authentisch."
+        ],
+        "fallback": "Totales Chaos? Goldmünzen-Verteilung + Mitgebsel + Kuchen reicht für 1h Programm.",
+        "tone": "praktisch"
+      },
+      "ein_kind_weint": {
+        "icon": "😢",
+        "label": "Ein Kind weint",
+        "headline": "Raus aus dem Trubel — 5 Min am Käpt'ns-Tisch.",
+        "steps": [
+          "Kind kurz aus der Crew nehmen — Küche oder Garten-Ecke, weg vom Lärm.",
+          "Apfelschorle + Schoko-Goldmünze als Beruhigungs-Ritual.",
+          "Rolle anbieten: ‚Du suchst die nächsten Hinweise mit mir — Spezial-Auftrag des Käpt'ns.'",
+          "Bei Heimweh: Mama-Foto am Handy zeigen, nicht überreden.",
+          "Nach 5 Min sanft zur nächsten Schatzsuche-Station — an die Hand nehmen."
+        ],
+        "fallback": "Geht nicht mehr? Eltern anrufen, abholen lassen — Goodie-Bag trotzdem mitgeben.",
+        "tone": "ruhig"
+      },
+      "eltern_kommen_frueh": {
+        "icon": "🚪",
+        "label": "Eltern stehen 30 Min zu früh vor der Tür",
+        "headline": "Schatztruhe öffnen + Foto-Runde + Mitgebsel jetzt.",
+        "steps": [
+          "Eltern in den Flur bitten, Wasser anbieten — nicht ins Wohnzimmer.",
+          "Crew durchsagen: ‚Achtung Crew — Schatztruhe-Öffnung in 5 Min!'",
+          "Schatztruhe gemeinsam öffnen, jedes Kind nimmt seinen Anteil (1 Mitgebsel + Goldmünzen).",
+          "Gruppenfoto mit Augenklappen + Schatz in der Hand.",
+          "Eltern + Kinder zur Tür — kurz, herzlich, keine Tür-Gespräche verheddern."
+        ],
+        "fallback": "Chaotisch? Mitgebsel-Tüten in den Flur stellen, jedes Kind nimmt eine, Abschied auf der Treppe.",
+        "tone": "praktisch"
+      }
+    },
+    "signatureRitual": {
+      "name": null,
+      "subtitle": null,
+      "introText": null,
+      "setupSteps": [],
+      "rolesList": [],
+      "optOutNote": null,
+      "materialNote": null,
+      "_note": "Piraten-6-8 hat keine eigene Ritual-Sektion im HTML — Schatzsuche + Augenklappen-Verteilung sind die motto-zentralen Aktivitäten."
+    }
   }
 };
 
