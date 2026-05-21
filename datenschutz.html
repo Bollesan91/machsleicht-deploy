@@ -1,5 +1,7 @@
 <!-- Changelog:
   2026-03-30 Bolle: Lemon Squeezy Datenschutz-Abschnitt ergänzt (§9)
+  2026-04-21 Bolle: Partyseite (§10) + Resend E-Mail-Versand (§11) ergänzt; nachfolgende §§ um +2 verschoben
+  2026-04-24 Bolle: §11 erweitert um Newsletter-Double-Opt-In (P1-15, Partyseite-Creator) + Consent-Audit-Trail
 -->
 <!DOCTYPE html>
 <html lang="de">
@@ -45,11 +47,12 @@
 .tip{background:#FFFAF5;border:1px solid #EDE6DE;border-left:4px solid #E8873D;border-radius:8px;padding:16px 20px;margin:16px 0;font-size:14px}
 @media print{.no-print,.cta,.cta-safety,footer,[style*="position: fixed"],[style*="sticky"]{display:none!important}body{background:#fff!important;color:#000!important;font-size:12pt}a{color:#000!important;text-decoration:none!important}.snippet{border-color:#ccc!important}.print-only{display:block!important}}
 </style>
-<!-- Privacy-friendly analytics by Plausible -->
-<script async src="https://plausible.io/js/pa-2v7iyzPVQbQ8l6ya79jtE.js"></script>
+<!-- Privacy-friendly analytics by Umami -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
 <script>
-window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-plausible.init()
+// Shim: plausible()-Aufrufe zu umami.track() weiterleiten — Legacy-Code bleibt funktional
+window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};
+window.plausible.init=function(){};window.plausible.q=[];
 </script>
   <link rel="stylesheet" href="/css/utility.css">
 </head>
@@ -106,11 +109,34 @@ plausible.init()
     <p>Einige unserer Tools bieten optionale kostenpflichtige Funktionen an. Die Zahlungsabwicklung erfolgt über Lemon Squeezy (Lemon Squeezy LLC, USA). Wenn du einen Kauf tätigst, wirst du zum Checkout von Lemon Squeezy weitergeleitet. Dabei werden die für die Zahlungsabwicklung notwendigen Daten (z.B. Name, E-Mail, Zahlungsinformationen) von Lemon Squeezy verarbeitet.</p>
     <p>Wir übermitteln an Lemon Squeezy lediglich technische Referenzdaten (z.B. gewähltes Produkt, Herkunftsseite), jedoch keine personenbezogenen Eingaben aus unseren Tools. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung). Mehr Informationen: <a href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noopener">Lemon Squeezy Datenschutzerklärung</a></p>
 
-    <h2>10. Webanalyse (Plausible Analytics)</h2>
-    <p>Wir nutzen Plausible Analytics (Plausible Insights OÜ, Estland) zur Auswertung der Website-Nutzung. Plausible ist datenschutzfreundlich: Es werden keine Cookies gesetzt, keine personenbezogenen Daten erhoben und keine Daten an Dritte weitergegeben. Plausible erfasst ausschließlich aggregierte, anonyme Nutzungsdaten wie Seitenaufrufe, Verweisquelle und Gerätetyp. Es findet kein Cross-Site-Tracking und kein Fingerprinting statt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der anonymen Reichweitenmessung). Ein Cookie-Banner ist nicht erforderlich, da keine personenbezogenen Daten verarbeitet werden.</p>
+    <h2>10. Partyseite (party.machsleicht.de)</h2>
+    <p>Auf dem Subdomain <strong>party.machsleicht.de</strong> bieten wir ein optionales Tool an, mit dem Eltern eine persönliche Mini-Webseite zum Kindergeburtstag erstellen können (Datum, Uhrzeit, Treffpunkt, Foto, Wunschliste). Die Nutzung ist kostenlos und erfordert keine Registrierung.</p>
+    <h3>Welche Daten werden verarbeitet?</h3>
+    <ul>
+      <li>Vom Ersteller eingegebene Partydaten: Vorname des Kindes, Alter, Datum, Uhrzeit, Treffpunkt, optionales Foto, optionale Wunschliste-Einträge</li>
+      <li>E-Mail-Adresse des Erstellers zum Versand des Bearbeitungs-Links (siehe §11)</li>
+      <li>Keine Daten eingeladener Gäste — Gäste rufen die Seite anonym über einen Link auf und können sich lediglich für Geschenke „eintragen" (Vorname ihrer Wahl, keine E-Mail)</li>
+    </ul>
+    <h3>Speicherort und Auftragsverarbeitung</h3>
+    <p>Die Daten werden in <strong>Cloudflare Workers KV</strong> gespeichert (Cloudflare, Inc., San Francisco, USA). Cloudflare verarbeitet die Daten als Auftragsverarbeiter im Sinne von Art. 28 DSGVO. Ein entsprechender Auftragsverarbeitungsvertrag (DPA) liegt vor. Cloudflare hat sich dem EU-US Data Privacy Framework verpflichtet.</p>
+    <h3>Speicherdauer</h3>
+    <p>Die Partyseiten werden gelöscht, sobald sie nicht mehr benötigt werden, <strong>spätestens 90 Tage nach dem Partydatum</strong>. Auf ausdrücklichen Wunsch löschen wir eine Partyseite jederzeit vorher — schreibe dazu eine E-Mail mit dem Bearbeitungs-Link an kontakt@machsleicht.de.</p>
+    <h3>Rechtsgrundlage</h3>
+    <p>Art. 6 Abs. 1 lit. b DSGVO (Erfüllung des Nutzungsvertrags über das Tool).</p>
+
+    <h2>11. E-Mail-Versand (Resend)</h2>
+    <p>Zum Versand transaktionaler E-Mails (z.B. Bearbeitungs-Link für deine Partyseite aus §10) nutzen wir <strong>Resend</strong> (Resend, Inc., San Francisco, USA). An Resend wird deine E-Mail-Adresse und der Inhalt der Nachricht übermittelt. Resend verarbeitet die Daten als Auftragsverarbeiter im Sinne von Art. 28 DSGVO. Ein entsprechender DPA liegt vor. Resend hat sich dem EU-US Data Privacy Framework verpflichtet.</p>
+    <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung — ohne Edit-Link keine Nutzung der Partyseite) bzw. Art. 6 Abs. 1 lit. a DSGVO (Einwilligung, sofern ausdrücklich erteilt).</p>
+    <p><strong>Newsletter (Double-Opt-In):</strong> Für Tipps und Erinnerungen 7 Tage vor der Party holen wir eine separate, ausdrückliche Einwilligung per Double-Opt-In ein: Nach Ankreuzen der entsprechenden Checkbox beim Erstellen einer Partyseite enthält die Edit-Link-E-Mail zusätzlich einen einmaligen Bestätigungslink für den Newsletter. Erst nach Klick auf diesen Link wird deine E-Mail-Adresse in unsere Newsletter-Liste aufgenommen (ebenfalls bei Resend gehostet). Der Bestätigungslink ist 7 Tage gültig. Bestätigst du nicht, löschen wir deine Daten automatisch. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).</p>
+    <p><strong>Nachweis der Einwilligung:</strong> Zum Nachweis der erteilten Einwilligung (Art. 7 Abs. 1 DSGVO) protokollieren wir bei Opt-In und Bestätigung jeweils Zeitpunkt, IP-Adresse und User-Agent deines Browsers. Diese Daten werden zusammen mit deiner E-Mail-Adresse gespeichert, solange du im Newsletter eingetragen bist, sowie anschließend zur Erfüllung rechtlicher Nachweispflichten für bis zu drei Jahre.</p>
+    <p><strong>Widerruf:</strong> Du kannst deine Einwilligung in den Newsletter-Empfang jederzeit widerrufen — entweder über den Abmelde-Link in jeder Newsletter-Mail oder per Nachricht an kontakt@machsleicht.de. Der Widerruf berührt nicht die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung.</p>
+    <p>Mehr Informationen: <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener">Resend Datenschutzerklärung</a></p>
+
+    <h2>12. Webanalyse (Umami Analytics)</h2>
+    <p>Wir nutzen Umami Analytics (Umami Software Inc., betrieben über die Umami Cloud, Server-Standort innerhalb der EU) zur Auswertung der Website-Nutzung. Umami ist datenschutzfreundlich: Es werden keine Cookies gesetzt, keine personenbezogenen Daten erhoben und keine Daten an Dritte weitergegeben. Umami erfasst ausschließlich aggregierte, anonyme Nutzungsdaten wie Seitenaufrufe, Verweisquelle und Gerätetyp. Es findet kein Cross-Site-Tracking und kein Fingerprinting statt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der anonymen Reichweitenmessung). Ein Cookie-Banner ist nicht erforderlich, da keine personenbezogenen Daten verarbeitet werden.</p>
     <p>Wir setzen kein Google Analytics, kein Facebook Pixel und keine Werbecookies ein.</p>
 
-    <h2>11. Deine Rechte</h2>
+    <h2>13. Deine Rechte</h2>
     <p>Du hast folgende Rechte bezüglich deiner personenbezogenen Daten:</p>
     <ul>
       <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
@@ -122,7 +148,7 @@ plausible.init()
     </ul>
     <p>Zur Ausübung deiner Rechte kontaktiere uns unter: kontakt@machsleicht.de</p>
 
-    <h2>12. Beschwerderecht</h2>
+    <h2>14. Beschwerderecht</h2>
     <p>Du hast das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Die für uns zuständige Aufsichtsbehörde ist:</p>
     <p>
       Der Hamburgische Beauftragte für Datenschutz und Informationsfreiheit<br>
@@ -131,8 +157,8 @@ plausible.init()
       <a href="https://datenschutz-hamburg.de" target="_blank" rel="noopener">datenschutz-hamburg.de</a>
     </p>
 
-    <h2>13. Änderungen</h2>
-    <p>Wir behalten uns vor, diese Datenschutzerklärung zu aktualisieren, um sie an geänderte Rechtslagen oder Änderungen unserer Website anzupassen. Stand: März 2026.</p>
+    <h2>15. Änderungen</h2>
+    <p>Wir behalten uns vor, diese Datenschutzerklärung zu aktualisieren, um sie an geänderte Rechtslagen oder Änderungen unserer Website anzupassen. Stand: April 2026.</p>
 
     <footer style="text-align:center;margin-top:40px;padding:16px 0;border-top:1px solid var(--l)">
       <p class="u-fs12 u-clr-m">© 2026 machsleicht.de · <a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a> · <a href="/transparenz">Transparenz</a></p>

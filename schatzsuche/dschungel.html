@@ -123,11 +123,12 @@
 .tip{background:#FFFAF5;border:1px solid #EDE6DE;border-left:4px solid #E8873D;border-radius:8px;padding:16px 20px;margin:16px 0;font-size:14px}
 @media print{.no-print,.cta,.cta-safety,footer,[style*="position: fixed"],[style*="sticky"]{display:none!important}body{background:#fff!important;color:#000!important;font-size:12pt}a{color:#000!important;text-decoration:none!important}.snippet{border-color:#ccc!important}.print-only{display:block!important}}
 </style>
-<!-- Privacy-friendly analytics by Plausible -->
-<script async src="https://plausible.io/js/pa-2v7iyzPVQbQ8l6ya79jtE.js"></script>
+<!-- Privacy-friendly analytics by Umami -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
 <script>
-window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-plausible.init()
+// Shim: plausible()-Aufrufe zu umami.track() weiterleiten — Legacy-Code bleibt funktional
+window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};
+window.plausible.init=function(){};window.plausible.q=[];
 </script>
   <link rel="stylesheet" href="/css/utility.css">
 </head>
@@ -142,7 +143,7 @@ plausible.init()
   <p class="badge">Schatzsuche-Thema</p>
   <h1>🌴 Dschungel-Expedition — Schnitzeljagd &amp; Schatzsuche</h1>
 
-  <p class="u-intro-sub">17 Mottos · 3–12 Jahre · Kostenlos</p>
+  <p class="u-intro-sub">9 Mottos · 3–12 Jahre · Kostenlos</p>
   <p class="u-body">Durch den Dschungel zum verborgenen Tempel — mit Tierspuren, Lianenschwingen und Brückenbau. Ideal für den Garten.</p>
 
   <a href="/kindergeburtstag?modus=schatzsuche&thema=dschungel#planer" class="cta">Dschungel-Expedition jetzt erstellen &rarr;</a>
@@ -172,7 +173,7 @@ plausible.init()
   <a href="https://wa.me/?text=Schau%20mal:%20Dschungel-Expedition%20für%20den%20Kindergeburtstag%20-%205%20fertige%20Stationen!%20https://machsleicht.de/schatzsuche/dschungel" target="_blank" rel="noopener" class="share-btn">&#x1F4AC; Schatzsuche-Idee teilen</a>
 
   <h2>Auch einen Geburtstag planen?</h2>
-  <p>machsleicht hat neben der Schatzsuche auch einen kompletten <a href="/?motto=safari">Kindergeburtstag-Planer</a>: 17 Mottos, altersgerechte Spiele, Einkaufsliste und Zeitplan.</p>
+  <p>machsleicht hat neben der Schatzsuche auch einen kompletten <a href="/?motto=safari">Kindergeburtstag-Planer</a>: 9 Mottos, altersgerechte Spiele, Einkaufsliste und Zeitplan.</p>
   <p style="text-align:center;margin-top:12px"><a href="/?motto=safari" class="cta" style="font-size:14px;padding:10px 24px">🎂 Safari-Geburtstag planen →</a></p>
 
   <div class="related">

@@ -29,6 +29,30 @@ for f in js/index.js js/homepage.js js/kindergeburtstag.js js/baby.js js/einschu
 done
 echo ""
 
+# ── STUFE 1b: NETLIFY FUNCTIONS SYNTAX ──
+# Wichtig: fehlgeschlagene Netlify-Builds bei truncated Functions (z.B. serve-invite.mjs)
+# blockieren alle Deploys. Hier proaktiv prüfen.
+echo "── STUFE 1b: Netlify Functions Syntax ──"
+if [ -d "$REPO/netlify/functions" ]; then
+  found_any=0
+  for f in "$REPO"/netlify/functions/*.mjs "$REPO"/netlify/functions/*.js; do
+    [ -f "$f" ] || continue
+    found_any=1
+    name="netlify/functions/$(basename "$f")"
+    if err=$(node --check "$f" 2>&1); then
+      green "$name"
+    else
+      # Nur die letzte relevante Zeile aus dem Fehler zeigen
+      msg=$(echo "$err" | grep -E "SyntaxError|Unexpected" | head -1)
+      red "$name — ${msg:-Syntax-Fehler}"
+    fi
+  done
+  [ $found_any -eq 0 ] && yellow "Keine Functions in netlify/functions/ gefunden"
+else
+  yellow "Kein netlify/functions/ Verzeichnis"
+fi
+echo ""
+
 # ── STUFE 2: SOURCE OF TRUTH ──
 echo "── STUFE 2: Zahlen aus Source of Truth ──"
 DATA="$REPO/_src/kindergeburtstag-data.js"
@@ -36,8 +60,8 @@ if [ -f "$DATA" ]; then
   # Count mottos
   GENERIC_COUNT=$(grep -c 'id: "' "$DATA" 2>/dev/null | head -1)
   # More precise: count in GENERIC + LICENSE sections
-  GENERIC_N=$(sed -n '/^var GENERIC/,/^var LICENSE/p' "$DATA" | grep -c 'id: "')
-  LICENSE_N=$(sed -n '/^var LICENSE/,/^var ALL_MOTTOS/p' "$DATA" | grep -c 'id: "')
+  GENERIC_N=$(sed -n '/^var GENERIC/,/^var LICENSE/p' "$DATA" | grep -c 'id: "' 2>/dev/null) || GENERIC_N=0
+  LICENSE_N=$(sed -n '/^var LICENSE/,/^var ALL_MOTTOS/p' "$DATA" | grep -c 'id: "' 2>/dev/null) || LICENSE_N=0
   TOTAL_MOTTOS=$((GENERIC_N + LICENSE_N))
   
   # Count SZ themes
@@ -170,6 +194,72 @@ if [ -f "$INDEX_HTML" ]; then
   green "Schema.org: $SCHEMA_COUNT WebApplication-Schemas"
 fi
 echo ""
+
+# ── STUFE 7: EINLADUNGS-MOTTOS (Regression-Schutz Piraten-404) ──
+echo "── STUFE 7: Einladungs-Mottos (jedes Motto braucht eigene Landing) ──"
+EINLADUNG_MOTTOS=(piraten dino safari weltraum detektiv superheld prinzessin einhorn meerjungfrau feuerwehr)
+for m in "${EINLADUNG_MOTTOS[@]}"; do
+  if [ -f "$REPO/einladung/$m/index.html" ]; then
+    green "/einladung/$m/index.html"
+  else
+    red "Fehlendes Einladungs-Motto: /einladung/$m/index.html (Partyseiten-Vorschau liefert 404!)"
+  fi
+done
+# Hub muss vorhanden sein und darf KEIN Canonical auf /einladung/piraten haben (sonst wär's die alte Piraten-Seite)
+if [ -f "$REPO/einladung/index.html" ]; then
+  HUB_CAN=$(grep -aoP 'rel="canonical" href="\K[^"]+' "$REPO/einladung/index.html" 2>/dev/null | head -1)
+  if [ "$HUB_CAN" = "https://machsleicht.de/einladung" ]; then
+    green "/einladung/index.html (Hub mit korrektem Canonical)"
+  else
+    red "/einladung/index.html Canonical falsch: '$HUB_CAN' (erwartet: https://machsleicht.de/einladung)"
+  fi
+fi
+# serve-invite.mjs darf keine Piraten-Sonderregel mehr enthalten
+if [ -f "$REPO/netlify/functions/serve-invite.mjs" ]; then
+  if grep -q 'motto === "piraten" ? "/einladung/"' "$REPO/netlify/functions/serve-invite.mjs"; then
+    red "serve-invite.mjs enthält noch Piraten-Sonderregel (basePath-Sonderfall)"
+  else
+    green "serve-invite.mjs: einheitliches URL-Schema /einladung/<motto>/"
+  fi
+fi
+echo ""
+
+echo ""
+echo "── STUFE 8: Veraltete Motto-Zahlen (Cut 30.04.2026) ──"
+# Nach Lizenz-Cut: keine Refs auf "17 Mottos", "153 Spiele", "Alle 17 Mottos" mehr
+# Auch keine Lizenz-Motto-Pages oder -Verlinkungen
+STALE_NUMBERS=$(grep -rlE "17 Mottos|153 Spiele|Alle 17 Mottos" --include="*.html" --include="*.js" "$REPO" 2>/dev/null | grep -v "_dev/" | wc -l)
+if [ "$STALE_NUMBERS" -eq 0 ]; then
+  green "Keine veralteten Zahlen (17 Mottos / 153 Spiele) gefunden"
+else
+  red "Veraltete Motto-Zahlen in $STALE_NUMBERS Pages — bitte 9 Mottos / 81 Spiele setzen"
+fi
+
+# Lizenz-Mottos dürfen keine eigene Page-File mehr haben
+LICENSE_FILES=$(find "$REPO/kindergeburtstag" -maxdepth 1 -type f \( -name "frozen*.html" -o -name "harry-potter*.html" -o -name "minecraft*.html" -o -name "ninjago*.html" -o -name "paw-patrol*.html" -o -name "pokemon*.html" -o -name "spider-man*.html" -o -name "super-mario*.html" \) 2>/dev/null | wc -l)
+if [ "$LICENSE_FILES" -eq 0 ]; then
+  green "Keine Lizenz-Motto-Pages mehr im Repo"
+else
+  red "$LICENSE_FILES Lizenz-Motto-Files noch da — sollten gelöscht sein"
+fi
+
+# Verlinkungen auf Lizenz-Mottos sollten nicht mehr existieren (außer in _redirects, _dev, .git)
+# Pattern deckt ab: /kindergeburtstag/<motto>, /<motto>-guide, /ratgeber/<motto>-fuer-eltern
+LICENSE_LINKS=$(grep -rlE "/kindergeburtstag/(frozen|harry-potter|minecraft|ninjago|paw-patrol|pokemon|spider-man|super-mario)|/(frozen|harry-potter|minecraft|ninjago|paw-patrol|pokemon|spider-man|super-mario)-guide|/ratgeber/(frozen|harry-potter|minecraft|ninjago|paw-patrol|pokemon|spider-man|super-mario)-fuer-eltern" --include="*.html" --include="*.js" "$REPO" 2>/dev/null | grep -v "_dev/" | wc -l)
+if [ "$LICENSE_LINKS" -eq 0 ]; then
+  green "Keine Lizenz-Motto-Verlinkungen mehr in Pages"
+else
+  yellow "$LICENSE_LINKS Pages verlinken noch auf Lizenz-Mottos (werden via 301 abgefangen, aber sollten gefixt werden)"
+fi
+
+# Body-Text: Lizenz-Marken nicht mehr erwähnen (auch nicht als Vergleich)
+# Nominative Markennutzung wäre rechtlich ok, aber strategisch konsistent: ganz raus
+LICENSE_BRANDS=$(grep -rliP "\b(pok[eé]mon|minecraft|frozen|harry potter|spider-man|super mario|paw patrol|ninjago|eiskönigin|olaf)\b" --include="*.html" --include="*.js" "$REPO" 2>/dev/null | grep -v "_dev/" | wc -l)
+if [ "$LICENSE_BRANDS" -eq 0 ]; then
+  green "Keine Lizenz-Markennamen im Body-Text mehr"
+else
+  yellow "$LICENSE_BRANDS Pages erwähnen noch Lizenz-Markennamen im Body-Text"
+fi
 
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"

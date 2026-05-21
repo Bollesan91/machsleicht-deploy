@@ -26,10 +26,18 @@
     ul{padding-left:20px;margin:8px 0}
     .highlight{background:var(--bg);border:1px solid var(--l);border-left:4px solid var(--a);border-radius:8px;padding:16px 20px;margin:16px 0;font-size:14px;line-height:1.7}
   </style>
-  <script async src="https://plausible.io/js/pa-2v7iyzPVQbQ8l6ya79jtE.js"></script>
+  <!-- Privacy-friendly analytics by Umami -->
+
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
+
   <script>
-  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-  plausible.init()
+
+  // Shim: plausible()-Aufrufe zu umami.track() weiterleiten — Legacy-Code bleibt funktional
+
+  window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};
+
+  window.plausible.init=function(){};window.plausible.q=[];
+
   </script>
   <link rel="stylesheet" href="/css/utility.css">
 </head>

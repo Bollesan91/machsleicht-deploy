@@ -1,6 +1,6 @@
 # MASTER-STRATEGIE — machsleicht & machsruhig
 
-**Letzte Aktualisierung:** 19.04.2026
+**Letzte Aktualisierung:** 30.04.2026 (Lizenz-Mottos-Cut + Funnel-Prototyp-Setup)
 **Status:** Lebendes Dokument. Alle vorherigen Strategie-Dokumente wurden hier konsolidiert.
 **Ort:** Root-Verzeichnis (neben ARCHITECTURE.md und BACKLOG-AUDIT.md) — immer auffindbar.
 
@@ -47,6 +47,93 @@
 - Pinterest rankt bei „kindergeburtstag 6 jahre" und „kindergeburtstag ideen" auf Google Position 1. Ohne Pinterest verliert machsleicht messbar Top-of-Funnel.
 - **Problem:** Pinterest ist laufender Aufwand (min. 2–3h/Woche für regelmäßiges Pinning), widerspricht dem Passivitäts-Prinzip 0.3.
 - **Entscheidungs-Trigger:** Bei 5.000+ Besuchern/Monat ohne Pinterest nochmal prüfen. Davor: nicht starten.
+
+### 0.7 Lizenz-Mottos-Cut (FINAL, dokumentiert 30.04.2026)
+
+**Entscheidung:** machsleicht führt **9 Mottos**, alle ohne Lizenzbindung:
+- **7 Voll-Mottos** (Tool + SEO-Pages): Detektiv, Dino, Einhorn, Feuerwehr, Piraten, Safari, Weltraum
+- **2 Schatzsuche-only Mottos**: Dschungel, Feen
+
+**Aus dem Tool entfernt** (30.04.2026):
+- 8 Lizenz-Mottos: Frozen, Harry Potter, Minecraft, Ninjago, Paw Patrol, Pokémon, Spider-Man, Super Mario → 121 Files gelöscht, 24 Wildcard-301-Redirects auf `/kindergeburtstag` in `_redirects`
+- 5 Zombie-Mottos (waren halbfertig oder ungeprüft): Baustelle, Pferde, Ritter, Zirkus, Meerjungfrau → physisch gelöscht
+
+**Begründungen (in Reihenfolge der Härte):**
+
+1. **Lizenzrisiko.** Disney (Frozen, Spider-Man), Nintendo (Pokémon, Super Mario, Minecraft via Microsoft), Warner Bros. (Harry Potter), Lego (Ninjago), Spin Master (Paw Patrol) verfolgen unlizenzierte Markennutzung aktiv. Auch noindex-gestellte Seiten waren angreifbar. Nach Cut: kein Lizenzrisiko mehr.
+2. **Tool-Disziplin (Funnel-Axiom 0.1).** Wenn `/kindergeburtstag/frozen` existiert aber `?motto=frozen` im Planer nicht, ist der Funnel gebrochen. Lieber 9 Mottos die durchgehend funktionieren als 17 die halb-funktionieren.
+3. **Wartungsaufwand.** Jedes Motto = Hauptseite + 13 Altersseiten + Schatzsuche + Einladung + Spielmechanik. 9 statt 17 Mottos = 47% weniger Wartungslast.
+4. **SEO-Realität.** Lizenz-Mottos rankten alle gegen offizielle Brand-Pages (frozen.disney.de, pokemon.com/de, paw-patrol.com). Realistische Top-10-Chance < 5%. Generische Mottos (Detektiv, Feuerwehr) ranken gegen schwächere Konkurrenz.
+
+**Was NICHT zur Diskussion steht:**
+- Re-Aktivierung einzelner Lizenz-Mottos. Die Entscheidung ist final — Wiedereinführung würde alle vier Begründungen wieder aktivieren.
+- Meerjungfrau-Wiedereinführung als Voll-Motto. Zwar im Backlog gesehen, aber: **gestrichen.** Konkurrenz im SEO zu hart (Disney Arielle), Tool-Aufbau ohne klaren Mehrwert gegenüber Einhorn (gleiches Mädchen-Spektrum 4–8). Wenn ein 8. Voll-Motto kommen soll, dann **Prinzessin** (geschlechtsneutraler Suchbegriff, weniger Disney-Lock-in) oder **Superheld** (siehe `/einladung/superheld/` als Vorarbeit).
+
+**Validator-Guard:** `validate-all.sh` Stufe 8 prüft seit 30.04.2026 dass keine veralteten Zahlen („17 Mottos", „153 Spiele") und keine Lizenz-Motto-Pages/-Verlinkungen mehr im Repo existieren. Wenn das jemals wieder failt, ist es eine Regression.
+
+### 0.7 Monetarisierungs-Validierungs-Reihenfolge (dokumentiert 20.04.2026)
+
+Nach Durcharbeiten der Produkt-Matrix am 20.04. steht fest: Monetarisierungs-Entscheidungen werden **sequenziell validiert**, nicht parallel gestartet. Jede Stufe beantwortet eine konkrete Frage, bevor die nächste angegangen wird.
+
+**Stufe 1 — Zahlungsbereitschaft jenseits Affiliate** (jetzt läuft)
+- **Test-Vehikel:** Rätsel nach Maß (0,99€/3,99€) + Gumroad-Digital-Produkte (P2-13)
+- **Frage:** Zahlen Eltern überhaupt kleine Beträge für digitale Produkte auf machsleicht?
+- **Erfolg:** ≥5 Käufe/Monat bei aktuellem Traffic innerhalb 90 Tagen
+- **Falls Fail:** Traffic-Problem (nicht Monetarisierungs-Problem) → Fokus zurück auf SEO/Content, kein weiterer Paid-Layer
+
+**Stufe 2 — Mittlerer Preispunkt** (nur wenn Stufe 1 bestanden)
+- **Test-Vehikel:** Partyseite-Pro als 2,99€-Upsell auf bestehender Partyseite
+- **Frage:** Zahlen Eltern 2–5€ für Feature-Upgrades auf bestehendem Gratis-Produkt?
+- **Erfolg:** ≥5 % der Partyseite-Ersteller nehmen Pro an
+
+**Stufe 3 — Retention messen** (parallel zu Stufe 1+2)
+- **Test-Vehikel:** Standalone-Wunschliste (P2-17) + Kind-Nickname in localStorage
+- **Frage:** Kommen Familien mehrfach pro Jahr zurück (Geburtstag + Weihnachten + Einschulung)?
+- **Erfolg:** ≥30 % 6-Monats-Retention per Plausible-Event
+
+**Stufe 4 — Abo-Evaluierung** (frühestens Q4 2026, nur wenn Stufe 1+3 bestanden)
+- **Trigger:** 12-Monats-Retention ≥30 % UND mindestens 3 bezahlte Interaktionen/Kunde/Jahr
+- **Falls erfüllt:** Familien-Anlass-Abo-Konzept prüfen (Matrix-Idee vom 20.04.)
+- **Falls nicht:** Affiliate-Skalierung bleibt Haupt-Hebel, kein Abo-Experiment
+
+**Leitprinzip:** Keine Abo-Produkte vor Stufe 4. Keine Stufe überspringen. Jede Stufe mit Plausible-Event tracken.
+
+### 0.8 Was wir bewusst NICHT bauen (dokumentiert 20.04.2026)
+
+Diese Ideen wurden explizit geprüft und verworfen. Damit sie nicht jedes Quartal wieder hochkochen, hier namentlich festgehalten — inkl. Begründung und möglichem Re-Evaluation-Trigger.
+
+| Idee | Warum nicht | Re-Evaluation wenn |
+|------|-------------|-------------------|
+| **Zwangs-Kopplung aller Tools** (Planer verpflichtend für Einladung/Partyseite) | Bricht Standalone-Prinzip (Abschnitt 1) und 4-SEO-Einstiegspunkte-Strategie (0.2). Kurzfristig mehr Kontrolle, langfristig Traffic-Killer. Bounce-Rate auf `/einladung` explodiert, Google-Einstiegspunkte sterben. | Nie. Kopplung erfolgt über **Bequemlichkeit** (P2-20 Datenübergabe), nicht über Zwang. |
+| **Familien-Anlass-Abo** | Kein Retention-Datenbeleg vorhanden. Abo vor Retention = verbrennt Goodwill bei 80 Besuchern/Tag. | Stufe 4 der Validierungs-Reihenfolge 0.7 erfüllt. |
+| **WhatsApp Business API / Familien-OS für WhatsApp** | Ohne offizielle Meta-Partnerschaft nicht seriös umsetzbar. Ersatz-Implementierungen (Share-Links) sind kein OS, nur Kosmetik — und die Partyseite macht das bereits. | Meta öffnet Business-API für Kleinstunternehmer mit DSGVO-tauglichen Konditionen. |
+| **B2B White Label für lokale Anbieter** | Widerspricht Passivitäts-Prinzip 0.3 (Sales-Gespräche, Custom-Arbeit, SLAs, Rechnungen). Solo-Betrieb kann das nicht leisten. | Ab dauerhaftem 5.000€+/Monat Consumer-Revenue und 20+ Std/Woche freie Zeit. |
+| **Kind-Profil als eigenständiges Produkt** | Wird durch Wunschliste-Ganzjahres + Danke-Modul organisch als Nebenprodukt entstehen. Als eigenes Produkt ohne Datenbasis zu leer. | Retention ≥30 % + erste konkrete Nutzer-Anfragen nach „Profil-Feature". |
+| **Marketplace für Micro-Packs von Drittanbietern** | Verwandelt machsleicht in Bauchladen, verwässert Marke als Tool-System. | Nie unter Solo-Betrieb. Würde ein Kuratoren-Team brauchen. |
+| **Regenplan / Audio-Einladung / Danke-Nachrichten / Elternwissen als Standalone** | Schwache Einzel-Ideen, die als Mikro-Features in bestehenden Tools deutlich besser wirken (Regenplan → Mikro-Feature auf `/kindergeburtstag-bei-regen`). | Nicht als Standalone. Integration in bestehende Seiten ist erlaubt und teils im Backlog (z.B. Danke-Modul als P3-Kandidat für Partyseite). |
+| **Notfall-Modus 48h als eigenes Produkt** | Guter Conversion-Hebel, aber kein Lock-in. Funktioniert besser als Landing-Page-Variante des Planers als als neues Produkt. | Nie als eigenständiges Produkt. Ggf. später als A/B-Test auf `/kindergeburtstag`. |
+| **Concierge Light (bezahlte Planungs-Hilfe durch Person)** | Nicht skalierbar, nicht passiv. | Nie unter Solo-Betrieb. |
+
+**Leitprinzip:** Jede verworfene Idee bleibt verworfen, bis der Re-Evaluation-Trigger explizit erreicht ist. Nicht weil die Ideen schlecht wären — sondern weil das größte Risiko ist, **zehn gute Ideen parallel zu starten** statt eine gute Idee zu Ende zu bauen.
+
+---
+
+### 0.9 Portfolio-Matrix (dokumentiert 22.04.2026)
+
+Jedes Produkt, jede Seite, jeder neue Impuls wird einer der vier Spalten zugeordnet. Keine Grauzone. Was sich nicht zuordnen lässt, wandert in 0.8 („NICHT bauen").
+
+| Spalte | Was gehört rein | Budget | Homepage-Präsenz |
+|---|---|---|---|
+| **Kernwette** | Kindergeburtstag-System: Planer, Schatzsuche, Einladung, Partyseite, Mottos (Piraten/Dino/Weltraum/Safari/Einhorn/Detektiv/Superheld/Prinzessin/Feuerwehr/Meerjungfrau), Schatzkarten-Tool, Kindergeburtstag-Ratgeber | ≥70% der aktiven Entwicklungszeit | Hauptbühne, Hero-CTA, 4-Module-Grid |
+| **Testwette** | Einschulung (als SEO-Content-Cluster, **nicht** Planer). Upgrade-Trigger zum interaktiven Planer: ≥100 organische Visits/Woche auf Cluster-Seiten im Juli 2026. | ≤20% — bewusst klein halten, skaliert erst nach Bewährung | Dezent verlinkt (Pill-Cloud „Weitere Planer & Tools"), nicht Hauptbühne |
+| **Zukunftswette (eingefroren)** | Adventskalender-Builder (P1-13), KI-Geschenkeberater (P1-14), Multiplayer-Schatzsuche, Sofort-Schatzsuche-Abo. *Hinweis: Premium-Features mit ElevenLabs (Section 3, Prio 4) folgen ihrer eigenen Tier-Sequenzierung — nicht hier doppelt eingefroren.* | 0% aktive Entwicklung bis Trigger erfüllt. Trigger: Stufe 1 der Monetarisierungs-Validierung 0.7 bestanden (≥5 Käufe/Monat über 90 Tage). | Unsichtbar bis Reaktivierung |
+| **Optional / Legacy-SEO** | Baby & Wochenbett, Kreuzworträtsel, Spielkarten, Halloween, Ostern, Schnitzeljagd-Aufgaben, Einladungsspiel | 0% aktive Entwicklung. Bleibt live für Long-Tail-Traffic. Pflege nur bei akuten Fehlern. | Pill-Cloud „Weitere Planer & Tools" |
+
+**Ticket-Disziplin:** Jeder neue PBI in BACKLOG-AUDIT.md trägt im Ticket eine der Label-Zuordnungen: `[KERN]`, `[TEST]`, `[ZUKUNFT]`, `[LEGACY]`. Fehlt die Zuordnung, ist das Ticket nicht freigegeben.
+
+**Homepage-Spiegelung (Regel):** Kernwette → Hauptbühne. Testwette → dezent. Zukunftswette → keine Präsenz. Optional/Legacy → Pill-Cloud oder tief verlinkt. Die Homepage folgt dieser Matrix. Nicht andersrum.
+
+**Verhältnis zum FUNNEL-AXIOM 0.1 und zu 4-SEO-Einstiegspunkten 0.2:** Die Matrix betrifft Aufmerksamkeits- und Entwicklungsbudget. Sie ersetzt nicht die SEO-Architektur — Schatzsuche und Einladung bleiben eigenständige SEO-Einstiege (dürfen standalone ranken), sind aber im Kernwetten-Cluster verortet.
 
 ---
 
@@ -178,7 +265,7 @@ Der Planer bleibt kostenlos (Haupt-Funnel). Einzelne Features als Micro-Payments
 ### Prio 6 — E-Mail-Liste (Compound-Effekt)
 - **Konzept:** Lead-Magnet (kostenloses PDF "Piraten-Einladung zum Drucken") gegen E-Mail. Monatlicher Newsletter mit Angeboten.
 - **Rechnung:** 2–5% Signup-Rate → ~30 neue Kontakte/Monat → 360 in 12 Monaten. Jeder Kontakt ist 1–3€/Jahr wert. Bei 1.000 Kontakten: **1.000–3.000€/Jahr Zusatzrevenue.**
-- **Tool:** MailerLite (gratis bis 1.000), DSGVO-konform, Double-Opt-In
+- **Tool:** Resend (läuft bereits für Transactional Edit-Link-Mails). Audiences + Broadcasts für Newsletter. DSGVO-konform via selbst gebautem Double-Opt-In-Flow im Cloudflare Worker. Vorteil: ein Tool-Silo, gemeinsame Sender-Reputation, kein zweiter API-Key
 - **Aufwand:** 1 Tag Setup, danach 1× Monat Mail schreiben (30 Min)
 
 ### Subscription-Modell (langfristig): Sofort-Schatzsuche-Abo
@@ -411,113 +498,4 @@ Paw Patrol, Pokemon, Minecraft, Frozen, Super Mario, Spider-Man, Harry Potter, N
 | Kindergeburtstag (Evergreen) | — | laufend | ganzjährig |
 | Einschulung | Juli–August | **Mai 2026** | Juni–September |
 | Adventskalender | Oktober–Dezember | **August 2026** | Oktober–Dezember |
-| Weihnachtsgeschenke Kind | November–Dezember | **September 2026** | November–Dezember |
-| Ostern (Ostereiersuche) | März–April | **Januar 2027** | März–April |
-| Halloween | Oktober | **Juli 2027** (wenn relevant) | Oktober |
-| Silvester Kinder | Dezember | bleibt klein | niedriges Volumen |
-
-**Wichtig:** Jede saisonale Seite muss am laufen bleiben. Einmal gebaut = jedes Jahr Traffic. Das ist der Compound-Effekt.
-
----
-
-## 8c. Revenue-Projektion (realistisch, konservativ)
-
-**Kumulierter Revenue-Pfad (Median-Schätzung):**
-- Ende Q2 2026 (Juni): ~600€/Monat
-- Ende Q3 2026 (September): ~1.500€/Monat
-- Dezember 2026 (Peak): ~3.500€/Monat
-- März 2027: ~3.000€/Monat (nach Dezember-Peak normalisiert)
-- Juni 2027: ~4.500€/Monat (Einschulung-Welle Jahr 2)
-
-**Jahresumsatz 2026:** ~18.000–25.000€
-**Jahresumsatz 2027 (projiziert):** ~45.000–65.000€
-
-**Ehrlichkeits-Check:**
-- SEO-Traffic kann 2× langsamer ranken als erwartet → Revenue 40–60% der Projektion
-- Einschulung/Advent konkurrenzstark → erste Saison oft 30–50% unter Plan
-- machsruhig-Launch unsicher (komplett neues Vertical)
-- Bei Verzug Deploy Rätsel nach Maß: Basis-Revenue 2–3 Monate später
-
-**Was die Projektion robust macht:**
-- Mehrere Revenue-Streams (keine Einzelabhängigkeit)
-- Saisonale Streuung (Einschulung + Advent + Evergreen)
-- Affiliate + Digital-Produkte + Premium = 3 unabhängige Hebel
-- machsruhig als Multiplikator für hohen Revenue-pro-Besucher
-
----
-
-## 9. Wettbewerbs-Analyse
-
-### Wunschlisten-Tools (DE)
-| Tool | Stärke | Schwäche vs. machsleicht |
-|------|--------|--------------------------|
-| Wunschbiber | 200k+ Wünsche, 80+ Shops | Kein RSVP, kein Affiliate für uns, keine Party-Integration |
-| EzWL | Einfach, kostenlos | Kein RSVP, kein Affiliate |
-| MyWishlists | Multi-Anlass | Kein RSVP, kein Affiliate |
-| Wishbob / Wisheezy | Ohne Anmeldung | Feature-arm |
-
-### RSVP/Event-Tools
-| Tool | Stärke | Schwäche |
-|------|--------|----------|
-| Partiful | Google Best App 2024, viral | US-fokussiert, keine Wunschliste, kein Affiliate |
-| Whocan.org | Deutsche Geburtstags-Einladungen | Keine Wunschliste, kein Affiliate |
-| Joy | Hochzeits-Websites | Nur Hochzeit/Baby, kein KG |
-
-### Die Lücke
-**Keiner kombiniert:** RSVP + Allergien + Wunschliste mit Affiliate + KG-Planer + Schatzsuche + KI-Features in einer Plattform. Wunschlisten-Tools haben kein RSVP. RSVP-Tools keine Wunschliste. Keiner verdient an den Geschenken der Gäste. Keiner hat KI-Features.
-
-**machsleicht macht alles einzeln "gut genug"**, nicht besser als Wunschbiber bei Wunschlisten, gewinnt aber durch **Integration + Affiliate-Modell**.
-
----
-
-## 10. Technologie-Stack
-
-| Komponente | Technologie | Status |
-|-----------|-------------|--------|
-| Backend Partyseite | Cloudflare Workers + KV | ✅ gebaut (v2, 811 Zeilen), Deploy pending |
-| Stimmen/Anrufe | ElevenLabs (Conversational AI + TTS) | Bolle testet DE-Stimmen |
-| Text-Generierung | Claude API (Anthropic) | Live |
-| Musik-AI | Suno/Udio | nicht getestet (re-evaluieren) |
-| Affiliate | Amazon PartnerNet (live), AWIN (geplant) | Amazon ✅, Awin TODO |
-| Payment | Lemon Squeezy | Live |
-| Hosting | Netlify + Cloudflare CDN/DNS | Live |
-| Frontend | React 18 CDN + Babel (dev) / esbuild (build) | Live |
-| Analytics | Plausible | Live |
-
----
-
-## 11. Offene kritische Punkte
-
-### Technisch
-- **Cloudflare-Worker-Deploy** für Partyseite + Rätsel nach Maß (LAPTOP-SESSION nötig)
-  - KV Namespace "PARTY" anlegen
-  - DNS `party.machsleicht.de` → Worker
-  - Environment-Variables: `AMAZON_TAG=machsleicht-21`
-- **GitHub Token rotieren** (Deadline 25.04.2026)
-- Homepage.js aufräumen (toter Partyseite-Code drin)
-
-### Business
-- Awin-Anmeldung (Prüfung dauert 1–3 Tage, also früh starten)
-- Google Search Console einrichten + Sitemap einreichen
-- ElevenLabs-Stimmen DE testen (Klumpenrisiko für 4 Premium-Features)
-- machsruhig-Sprint konkret planen (Master-Doc `SKILL_MACHSRUHIG_MASTER.md` existiert)
-
-### Strategisch offen
-- Reihenfolge nach Piraten-Elite: Einhorn oder Paw Patrol?
-- Skalierung Motto-Seiten: manuell oder Claude-API-Generator?
-- Mix Free vs. Premium: welche Features kostenlos als Lead-Magnet?
-
----
-
-## 12. Versionshistorie dieses Dokuments
-
-- **16.04.2026:** Erstellt durch Konsolidierung von 7 Einzel-Dokumenten:
-  - `_dev/docs/monetarisierung-strategie.md` (Prio 1–6, NICHT-Liste, Sprint-Plan)
-  - `_dev/docs/premium-strategie-2026-04.md` (5 Säulen, Premium-Features, Revenue-Projektion, Wettbewerb)
-  - `_dev/docs/takeover-strategie-ideen.md` (22 Ideen-Tiers, Meta-Prinzip)
-  - `_dev/docs/motto-plan-backlog.md` (10-Motto-Liste, Lizenz-Abgrenzung)
-  - `_dev/docs/content-plan-ratgeber.md` (Ratgeber-Plan, weitestgehend umgesetzt)
-  - `_dev/docs/copy-upgrade-plan.md` (Homepage/Kindergeburtstag-Copy, umgesetzt)
-  - `_dev/docs/STRATEGIE-FORMAT.md` (Meta-Format für Sparring-Engine)
-
-Die Einzel-Dokumente bleiben als Archiv in `_dev/docs/`. **Dieses Master-Dokument ist die einzige Quelle der Wahrheit für Strategie-Fragen.**
+| Weihnachtsgeschenke Kind | November–Dezember | **Septemb

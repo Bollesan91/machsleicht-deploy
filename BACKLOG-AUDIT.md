@@ -1,8 +1,10 @@
 # machsleicht.de — Backlog
 
-**Letzte Aktualisierung:** 19.04.2026 (Session #3)
+**Letzte Aktualisierung:** 22.04.2026 (Portfolio-Labels eingeführt, React-Homepage an SEO-Fallback angeglichen, P1-12 umformuliert)
 **Status-Check:** Repository-weit durchgeführt, gegen Live-Stand abgeglichen. 8 PBIs auf ✅ gesetzt.
 **Zweck:** Einzige Quelle für alle offenen und erledigten PBIs. Strategie-Kontext steht in `STRATEGIE.md`.
+
+**Portfolio-Label (siehe STRATEGIE.md Abschnitt 0.9):** Jeder PBI gehört zu einer Spalte: `[KERN]` (Kindergeburtstag-System) · `[TEST]` (Einschulung SEO-Cluster) · `[ZUKUNFT]` (eingefroren bis Monetarisierungs-Stufe-1 bestanden) · `[LEGACY]` (Long-Tail-SEO, keine aktive Entwicklung). Aktive PBIs der Prio-Tabelle sind etikettiert. Bestehende Detail-Tickets werden bei der nächsten Pflege nachetikettiert. Neue PBIs ab 22.04.2026: Label ist Pflicht, sonst nicht freigegeben.
 
 ---
 
@@ -26,50 +28,79 @@
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
 |---|--------|------|--------|------------------|---------|---------|
-| 8 | ⏳ | **P1** | P1-15 | **Email-Capture am Planer-Output** | 1–2 Tage | Braucht P1-10. Größter Retention-Hebel |
-| 9 | ⏳ | **P1** | P2-20 | **Datenübergabe Planer → Tools** | 4–6 Std | Ökosystem-Prinzip umsetzen, nach P1-10 |
-| 10 | ⏳ | **P1** | P2-13 | Gumroad: 2 Digital-Produkte (Piraten+Dino) | 4h/Produkt | +100€/Monat bei aktuellem Traffic |
-| 11 | ⏳ | **P1** | P2-15 | Awin-Anmeldung (Otto, myToys, Thalia) | 30 Min + Warten | Prüfung dauert 1–3 Tage, früh starten |
-| 12 | ⏳ | **P1** | P1-8 | Motto-Hauptseiten auf Elite-Niveau (Piraten) | 1–2 Std/Seite | Parallel laufend |
-| 13 | ⏳ | **P1** | P1-12 | **Einschulungs-Planer bauen** | 2–3 Tage | **Launch bis 31.05.** (SEO-Vorlauf!) |
+| 8 | ✅ | **P1** | P1-16 | `[KERN]` **Partyseite Follow-Ups** — guestView cleanup, reply_to, Foto-Crop Mobile-Fix, Beteiligen custom amount, Audit | 2 Std | **Erledigt 23.04.2026** (Chat-Session). Offen: Browser-Test + Migadu-Setup extern |
+| 9 | ✅ | **P1** | P1-20 | `[KERN]` **Internal-Linking-Fix** (Superheld 0 Links, Prinzessin 2 Links) | 3 Std | **Erledigt 23.04.2026**: Hub-Pages + Card-Swap. Prinzessin 5→85, Superheld 3→68 Links |
+| 10 | 🔄 | **P1** | P1-15 | `[KERN]` **Email-Capture (Pilot: Partyseite + Einladung→Partyseite-Funnel)** | 4–5 Std | **Code fertig 24.04.2026 — Variante A.** Strategie-Revision in Session: Capture sitzt am Partyseite-Creator (Pflicht-Edit-Link + optionale Newsletter-Checkbox mit DOI), nicht am Einladungstool. Einladungstool bekommt aktivierten Partyseite-CTA mit Query-Param-Handover (`childName`, `motto`, `mottoEmoji`) als Funnel-Bridge. **Extern-Tasks offen:** Resend-Audience anlegen, `RESEND_AUDIENCE_ID` als Env-Var setzen, Worker deployen. Newsletter-Capture so auch auf Schatzsuche übertragbar (je 1–2h Template-Reuse) |
+| 11 | 🔄 | **P1** | P1-17 | `[KERN]` **DSGVO-Hygiene Partyseite** (A: Worker-Hinweis, B: Datenschutz ✅, C: Auto-Delete-Cron) | 1,5 Std (Laptop) | **B erledigt am 21.04.** Blockt kein weiteres Feature technisch, aber rechtliches Risiko solange A+C offen |
+| 11b | ⏳ | **P1** | P1-60 | `[KERN]` **Reminder-System Partyseite** (A: 7-Tage-vor-Party, B: 11-Monate-Year-Later, C: Unsubscribe-Endpoint) | 5–7 Std (Laptop) | **Neu 20.05.2026.** Newsletter-DOI-Confirm-Text verspricht "Erinnerung 7 Tage vorher" — aktuell noch nicht implementiert. Bündeln mit P1-17/C (gleicher Cron-Mechanismus) |
+| 12 | ⏳ | **P1** | P2-20 | `[KERN]` **Datenübergabe Planer → Tools** | 4–6 Std | Ökosystem-Prinzip umsetzen, nach P1-10 |
+| 13 | ⏳ | **P1** | P2-13 | `[KERN]` Gumroad: 2 Digital-Produkte (Piraten+Dino) | 4h/Produkt | +100€/Monat bei aktuellem Traffic |
+| 14 | ⏳ | **P1** | P2-15 | `[KERN]` Awin-Anmeldung (Otto, myToys, Thalia) | 30 Min + Warten | Prüfung dauert 1–3 Tage, früh starten |
+| 15 | 🔄 | **P1** | P1-8 | `[KERN]` Motto-Hauptseiten auf Elite-Niveau (**Einhorn ✅** → **Safari** (6-8 ✅) → **Feuerwehr** (3-5 ✅, 6-8 ✅, 9-12 ✅) → Weltraum → Detektiv → Prinzessin/Superheld; nur Tool-integrierte Mottos) | 4,5–5 Std/Motto | **Einhorn komplett, Feuerwehr komplett (alle 3 Altersgruppen, 28.04.2026), Safari 6-8 ✅ (19.05.2026 mit Phase B Elite-Daten).** Nächstes: Safari 3-5/9-12 fertigstellen, dann Weltraum. Content-Inseln (Pferde, Ritter, Zirkus, Baustelle) in P1-8b separat. Marken-Mottos zurückgestellt |
+| 16 | ⏳ | **P1** | P1-12 | `[TEST]` **Einschulung SEO-Cluster** (5–8 Landingpages, **kein Planer**) | 1,5–2 Tage | **Launch bis 31.05.** Planer-Upgrade nur wenn ≥100 Visits/Woche im Juli |
+| 17 | ⏳ | **P1** | P1-21 | `[TEST]` **Kill-List-Entscheidung** Marken-Mottos + Content-Inseln | 3–6 Std | **Wartet auf GSC-Daten (Zielmonat Mai)**. Ersetzt P1-8b in Funktion. Aus P1-16 #8 ausgegliedert |
+
+### 🪮 Planer-Frisur-Sprint (geplant 11.05.2026, parallel zu obigen P1-Items)
+
+Strategischer Sprint: Planer vom Generator zum intelligenten Produkt umbauen. Realisierung von P2-23. Details in eigenem Abschnitt „PLANER-FRISUR-SPRINT" weiter unten.
+
+| # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
+|---|--------|------|--------|------------------|---------|---------|
+| S0 | ⏳ | **P1** | P3-12 | `[KERN]` **Planer-Tier-0 Sofort-Fixes** (Lizenz-Tab raus, 7→9 Mottos, Perf messen) | 2 Std | Sprint-Start |
+| S1 | ⏳ | **P1** | P3-13 | `[KERN]` **Cockpit-Header im Plan-View** (Stand-Anzeige + Next-Actions) | 1 Tag | Mentaler Reframe, Voraussetzung für Diff-Anzeigen |
+| S2 | ⏳ | **P1** | P3-14 | `[KERN]` **Machbarkeits-Box + Constraint-Solver-Fundament** | 1 Tag | Zentrale Schicht für RSVP-Bridge später |
+| S3 | ⏳ | **P1** | P3-15 | `[KERN]` **Datum + Erwachsene als Inputs** | ½ Tag | Voraussetzung für Vorbereitungskarte |
+| S4 | ⏳ | **P1** | P3-16 | `[KERN]` **Vorbereitungskarte (Wochenplan vor Geburtstag)** | 1 Tag | Strukturell wichtigster neuer Block, einzigartig im Markt |
+| S5 | ⏳ | **P1** | P3-17 | `[KERN]` **3-Gruppen-Einkaufsliste + „Hab ich zuhause"-Inventar** | 1–2 Tage | Markenkern als Mechanik |
+| S6 | ⏳ | **P1** | P3-18 | `[KERN]` **SOS-Button im Plan-View** (Live-Hilfe während Party) | 1–2 Tage | Einzigartig, Premium-fähig |
+| S7 | ⏳ | **P1** | P3-19 | `[KERN]` **KI-Rätsel-Gedichte für Schatzsuche** (einzige API-Ausnahme, gecacht) | 1 Tag | Wow-Anker, Screenshot-fähig |
+| S8 | ⏳ | **P2** | P3-20 | `[KERN]` **RSVP-Bridge** (Partyseite-Zusagen verändern Plan) | 2–3 Tage MVP / 5–7 Tage Vollausbau | Tier 2 nach S0–S7. Voraussetzung: P3-14 |
+| S9 | ⏳ | **P2** | P3-21 | `[KERN]` **Live-Party-Navigator** (Tool führt am Tag durch Party) | 5–7 Tage | Größter Wurf. Voraussetzung: alles davor |
+
+**Sprint-Aufwand S0–S7:** ~7–9 Arbeitstage = 6–8 Wochen bei 6–8h/Woche. Tier 2 (S8+S9) zusätzlich 7–14 Tage.
+
 
 ### Mittelfristig (Mai–Juli)
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
 |---|--------|------|--------|------------------|---------|---------|
-| 14 | ⏳ | **P2** | P2-17 | **Standalone /wunschliste** | 2–3 Tage | Launch bis 30.06. für Weihnachts-Peak |
-| 15 | ⏳ | **P2** | P2-10 | Einladungstool: 7 fehlende Lizenz-Mottos | 2–3 Std | Voraussetzung für P1-9 |
-| 16 | ⏳ | **P2** | P1-9 (→P2) | /einladung als SEO-Hub | 3–4 Std | Braucht P2-10 zuerst |
-| 17 | ⏳ | **P2** | P1-11 (→P2) | Ratgeber-Seiten auf 85% (11 verbleibend) | 30–60 Min/Seite | Evergreen, kontinuierlich |
-| 18 | ✅ | **P2** | P2-2 | Thin Content Motto×Altersgruppen (138 Seiten → 301-Redirects) | 2–4 Std | Erledigt 19.04.2026 |
-| 19 | ⏳ | **P2** | P2-16 | Mitgebsel-Generator (KI) | 1 Tag | Braucht P1-10 |
-| 20 | ⏳ | **P2** | P2-5 | Performance (JS-Bundle, lazy loading) | 15 Min kurzfristig, 2–4h langfristig | Laufend |
-| 21 | ⏳ | **P2** | P2-8 | /kreuzwortraetsel pre-rendern | 1–2 Std | SEO-Nachzügler |
-| 22 | ⏳ | **P2** | P2-21 | Seiten-Rollen-Matrix | 1 Tag | Nach P1-11 sinnvoll |
+| 16 | ⏳ | **P2** | P2-17 | `[KERN]` **Standalone /wunschliste** | 2–3 Tage | Launch bis 30.06. für Weihnachts-Peak |
+| 17 | ⏳ | **P2** | P2-10 | `[KERN]` Einladungstool: 7 fehlende Lizenz-Mottos | 2–3 Std | Voraussetzung für P1-9 |
+| 18 | ⏳ | **P2** | P1-9 (→P2) | `[KERN]` /einladung als SEO-Hub | 3–4 Std | Braucht P2-10 zuerst |
+| 19 | ⏳ | **P2** | P1-11 (→P2) | `[KERN]` Ratgeber-Seiten auf 85% (11 verbleibend) | 30–60 Min/Seite | Evergreen, kontinuierlich |
+| 20 | ✅ | **P2** | P2-2 | `[KERN]` Thin Content Motto×Altersgruppen (138 Seiten → 301-Redirects) | 2–4 Std | Erledigt 19.04.2026 |
+| 21 | ⏳ | **P2** | P2-16 | `[KERN]` Mitgebsel-Generator (KI) | 1 Tag | Braucht P1-10 |
+| 22 | ⏳ | **P2** | P2-5 | `[KERN]` Performance (JS-Bundle, lazy loading) | 15 Min kurzfristig, 2–4h langfristig | Laufend |
+| 23 | ⏳ | **P2** | P2-8 | `[LEGACY]` /kreuzwortraetsel pre-rendern | 1–2 Std | SEO-Nachzügler |
+| 24 | ⏳ | **P2** | P2-21 | `[KERN]` Seiten-Rollen-Matrix | 1 Tag | Nach P1-11 sinnvoll |
+| 25 | ⏳ | **P2** | P2-22 | `[KERN]` **Site-Wide In-App-Frame** (Modal-Pattern seitenweit) | 1–2 Tage | Retention: kein Tab-Verlust bei Vorschauen & Affiliates |
+| 26 | ⏳ | **P2** | P1-8b | `[LEGACY]` **Content-Inseln-Strategie** (Pferde, Ritter, Zirkus, Baustelle — entweder integrieren oder streichen) | 15 Min Daten-Check + 1–16 Std Umsetzung | GSC-Daten abwarten, vor weiterem Content-Ausbau entscheiden |
+| 26b | 🔄 | **P2** | P2-23 | `[KERN]` **Planer-Output auf Elite-Niveau heben** (muss inhaltlich der Tiefe der Motto-Seiten standhalten — Druckvorlagen, kuratierte Spielanleitungen, Zeitplan mit Story-Anker) | siehe Sprint | **Realisierung über Planer-Frisur-Sprint (S0–S7).** Sprint geplant 11.05.2026, ~7–9 Arbeitstage. P2-23 gilt als erfüllt nach Abschluss von P3-13 bis P3-19. |
+| 26c | ⏳ | **P3** | P2-24 | `[KERN]` **Eingewebte Leckerli-CTAs auf Motto-Seiten** (kontextuelle Mini-CTAs an Story-Anchorpunkten statt nur End-CTA) | 30 Min/Motto | **Phase 2 nach P2-23.** Trigger: wenn Planer-Output Elite-Niveau hat. Test-Hypothese: Mini-CTAs in Story-Flow konvertieren 3–5× besser als End-CTAs (Forschungsstand 2025). Erste Test-Runde auf 3 Mottos, dann auf alle ausrollen falls Conversion-Lift messbar |
 
 ### Vor dem Herbst-Peak (Juli–September)
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Deadline |
 |---|--------|------|--------|------------------|---------|---------|
-| 23 | ⏳ | **P1** | P1-13 | **Adventskalender-Builder** (24 KI-Türchen) | 3–4 Tage | **Launch bis 31.08.** |
-| 24 | ⏳ | **P1** | P1-14 | **KI-Geschenkeberater** | 2–3 Tage | **Launch bis 30.09.** |
-| 25 | ⏳ | **P3** | P3-6 | **machsruhig.de launchen** | 2–3 Wochen Sprint | Eigener Sprint, separates Doc |
+| 27 | ⏳ | **P1** | P1-13 | `[ZUKUNFT]` **Adventskalender-Builder** (24 KI-Türchen) | 3–4 Tage | **Launch bis 31.08.** |
+| 28 | ⏳ | **P1** | P1-14 | `[ZUKUNFT]` **KI-Geschenkeberater** | 2–3 Tage | **Launch bis 30.09.** |
+| 29 | ⏳ | **P3** | P3-6 | `[ZUKUNFT]` **machsruhig.de launchen** | 2–3 Wochen Sprint | Eigener Sprint, separates Doc |
 
 ### Später (Q4 2026 und Q1 2027)
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
 |---|--------|------|--------|------------------|---------|---------|
-| 26 | ⏳ | **P3** | P3-5 | E-Mail-Liste aufsetzen (MailerLite + Nurture) | 1 Tag | Verwertung von P1-15-Opt-Ins |
-| 27 | ⏳ | **P3** | P3-3 | Social Proof aus Plausible (echter Counter) | variabel | Nach 3 Monaten GSC-Daten |
-| 28 | ⏳ | **P3** | P3-4 | Druckvorlagen pro Motto (Top 5) | 30 Min/Motto | Parallel zu P1-8 |
-| 29 | ⏳ | **P3** | P3-7 | Klassen-Geburtstagskalender | 3 Tage | Braucht P2-17 |
-| 30 | ⏳ | **P3** | P3-8 | Nachbar-Nachricht-Generator | 4 Std | Quick-Win |
-| 31 | ⏳ | **P3** | P3-9 | Foto-Spots/Photobooth-Backdrops | 6 Std | Parallel zu P1-8 |
-| 32 | ⏳ | **P3** | P3-10 | Urkunden/Diplome | 6 Std | Nach P3-5 |
-| 33 | ⏳ | **P3** | P3-1 | Repo aufräumen | 10–30 Min | Quick-Win jederzeit |
-| 34 | ⏳ | **P3** | P3-11 | **Pinterest-Präsenz** | 4h Setup + 1–2h/Woche | **Geparkt**: Trigger bei 5.000+ Besuchern/Monat |
-| 35 | ⏳ | **P4** | P4-1 | PDF-Partybücher pro Motto | 1 Tag/Motto | Wenn Traffic da ist |
-| 36 | ⏳ | **P4** | P4-2 | Premium-Features (KI-Spielleiter, Audio, etc.) | mehrere Wochen | Wenn Traffic da ist |
+| 30 | ⏳ | **P3** | P3-5 | E-Mail-Liste aufsetzen (Resend Audience + Nurture) | 1 Tag | Verwertung von P1-15-Opt-Ins |
+| 31 | ⏳ | **P3** | P3-3 | Social Proof aus Plausible (echter Counter) | variabel | Nach 3 Monaten GSC-Daten |
+| 32 | ⏳ | **P3** | P3-4 | Druckvorlagen pro Motto (Top 5) | 30 Min/Motto | Parallel zu P1-8 |
+| 33 | ⏳ | **P3** | P3-7 | Klassen-Geburtstagskalender | 3 Tage | Braucht P2-17 |
+| 34 | ⏳ | **P3** | P3-8 | Nachbar-Nachricht-Generator | 4 Std | Quick-Win |
+| 35 | ⏳ | **P3** | P3-9 | Foto-Spots/Photobooth-Backdrops | 6 Std | Parallel zu P1-8 |
+| 36 | ⏳ | **P3** | P3-10 | Urkunden/Diplome | 6 Std | Nach P3-5 |
+| 37 | ⏳ | **P3** | P3-1 | Repo aufräumen | 10–30 Min | Quick-Win jederzeit |
+| 38 | ⏳ | **P3** | P3-11 | **Pinterest-Präsenz** | 4h Setup + 1–2h/Woche | **Geparkt**: Trigger bei 5.000+ Besuchern/Monat |
+| 39 | ⏳ | **P4** | P4-1 | PDF-Partybücher pro Motto | 1 Tag/Motto | Wenn Traffic da ist |
+| 40 | ⏳ | **P4** | P4-2 | Premium-Features (KI-Spielleiter, Audio, etc.) | mehrere Wochen | Wenn Traffic da ist |
 
 ### Gestrichen / Erledigt
 
@@ -112,6 +143,12 @@
 - P1-11 → **P2** (Ratgeber auf 85 %, evergreen ohne Deadline, kontinuierliche Arbeit)
 
 **Begründung:** P1 ist reserviert für Dinge mit harten Deadlines, Dependency-Freischaltern oder sofortigem Revenue-Impact. Alles andere wandert auf P2 — ohne Bedeutungsverlust, nur klarere Priorisierung.
+
+### Änderungen 23.04.2026
+
+- **P1-16 auf ✅ GRÖSSTENTEILS ERLEDIGT** — guestView cleanup, reply_to-Code, Foto-Crop Mobile-Fix (3 Bugs), Beteiligen-custom-amount inkl. Editor-Display in Chat-Session gebaut. Cloudflare-Deploy und Browser-Tests + Migadu-Setup noch extern.
+- **P1-20 neu** (Internal-Linking-Fix) — ausgegliedert aus P1-16 Sub-Task 8. Quick-Win: Superheld hat 0 eingehende Links, Prinzessin 2 — Tool-Mottos werden im Netz nicht eingefangen.
+- **P1-21 neu** (Kill-List-Entscheidung) — ausgegliedert aus P1-16 Sub-Task 8. Absorbiert P1-8b + zusätzlich 8 Marken-Mottos. Wartet auf GSC-Daten.
 
 ---
 
@@ -193,11 +230,78 @@
 - **Aufwand:** 1 Stunde.
 
 #### P1-8: Motto-Hauptseiten auf Elite-Niveau
-- **Ist-Stand Dino:** ✅ 6-8, 3-5, 9-12 Elite; Nachpflege pending (Dino 6-8 Header/Breadcrumb/Footer, Dino 3-5 CSS, Dino-Hauptseite Social Proof).
-- **Nächstes Motto:** Piraten (6-8 → 3-5 → 9-12)
-- **Danach:** Einhorn, Detektiv, Paw Patrol, Meerjungfrau (sortiert nach Suchvolumen).
-- **Elite-Checkliste:** Siehe `_dev/docs/ELITE-SEITEN-TEMPLATE.md` (14 Punkte).
-- **Aufwand:** ~1–2 Stunden pro Seite.
+
+**Motivation:** Pro Motto existieren 3 Altersgruppen-Landingpages (`-3-5-jahre`, `-6-8-jahre`, `-9-12-jahre`). Dino und Piraten sind bereits Elite-ausgebaut (jeweils ~60 KB pro Seite), alle anderen Mottos liegen noch bei ~16–19 KB. Ziel ist, die markenfreien Mottos Schritt für Schritt auf Elite-Niveau zu heben — **aber nur jene, die auch im Tool-Ökosystem (Einladung + Schatzsuche) vertreten sind**. Content-Inseln ohne Tool-Anschluss bringen keinen Conversion-Wert, werden in P1-8 bewusst ausgeklammert und separat behandelt (siehe P1-8b unten).
+
+**Ökosystem-Matrix (21.04.2026):**
+
+| Motto | IP-Status | Main | Altersgr. | Einladung | Schatzsuche | Ausbau-Stufe |
+|-------|-----------|------|-----------|-----------|-------------|--------------|
+| Dino | markenfrei | ✅ | ✅ | ✅ | ✅ | ✅ Elite (Template, ~63 KB) |
+| Piraten | markenfrei | ✅ | ✅ | ✅ | ✅ | ✅ Elite (~56 KB) |
+| Einhorn | markenfrei | ✅ | ✅ | ✅ | ✅ | Standard (~19 KB) — **nächstes Ziel** |
+| Safari | markenfrei | ✅ | ✅ | ✅ | ✅ | Standard (~19 KB) |
+| Feuerwehr | markenfrei | ✅ | ✅ | ✅ | — | Standard (~19 KB) |
+| Weltraum | markenfrei | ✅ | ✅ | ✅ | ✅ | Standard (~19 KB) |
+| Detektiv | markenfrei | ✅ | ✅ | ✅ | ✅ | Dünn (~16 KB) |
+| Meerjungfrau | markenfrei | ✅ | ✅ | ✅ | — | Dünn (~16 KB) |
+| Prinzessin | markenfrei | ✅ | ⚠️ fehlt | ✅ | — | Altersgruppen-Lücke |
+| Superheld | markenfrei | ✅ | ⚠️ fehlt | ✅ | — | Altersgruppen-Lücke |
+| **Baustelle** | markenfrei | ✅ | ✅ | — | — | **Content-Insel → P1-8b** |
+| **Pferde** | markenfrei | ✅ | ✅ | — | — | **Content-Insel → P1-8b** |
+| **Ritter** | markenfrei | ✅ | ✅ | — | — | **Content-Insel → P1-8b** |
+| **Zirkus** | markenfrei | ✅ | ✅ | — | — | **Content-Insel → P1-8b** |
+| Paw Patrol | Spin Master IP | ✅ | ✅ | — | — | Zurückgestellt (IP + Insel) |
+| Frozen | Disney IP | ✅ | ✅ | — | — | Zurückgestellt |
+| Pokemon | Nintendo IP | ✅ | ✅ | — | — | Zurückgestellt |
+| Minecraft | Microsoft IP | ✅ | ✅ | — | — | Zurückgestellt |
+| Ninjago | Lego IP | ✅ | ✅ | — | — | Zurückgestellt |
+
+**Zusätzliche Schatzsuche-Mottos ohne /kindergeburtstag/-Pendant:** Dschungel, Feen (eigene Schatzsuche-Seiten, aber keine Altersgruppen-Seiten unter `/kindergeburtstag/`). Für spätere Einordnung geparkt.
+
+**Entscheidung 21.04.2026 (Teil 4):**
+→ **Einhorn** als nächstes Elite-Motto. Paw Patrol zurückgestellt (IP-Risiko, Zielgruppe eng, Content-Insel).
+→ **Content-Inseln (Pferde, Ritter, Zirkus, Baustelle) aus P1-8 ausgeklammert.** Sinnloser Elite-Ausbau solange der User nirgendwo weiterklicken kann. Separates Mini-PBI P1-8b (siehe unten).
+
+**Reihenfolge P1-8 (nur Tool-integrierte markenfreie Mottos):**
+
+1. **Einhorn** ✅ erledigt
+2. **Safari** — 6-8 ✅ erledigt, 3-5 + 9-12 in Arbeit (parallele Sessions)
+3. **Feuerwehr** ✅ **erledigt 28.04.2026 (alle 3 Altersgruppen Elite, parallel zu Safari)** — Story-Doc `_dev/docs/feuerwehr-story.md`. Brandermittlung als Multi-Verdächtigen-Krimi mit Plot-Twist (Wow 9-12), Helm-Bemalen als Wow-Anker (3-5), 12 Dienstausweise konsequent in Anleitungen verankert (6-8). Gesamtgrößen: 82/101/97 KB. *Hinweis:* Feuerwehr hat keine Schatzsuche, aber Einladung vorhanden — Sticky-Bar entsprechend ohne Schatzsuche-Link
+4. **Weltraum** (Standard → Elite) — altersübergreifend, nächstes
+5. **Detektiv** (Dünn → Elite)
+6. **Meerjungfrau** (Dünn → Elite) — *Hinweis:* keine Schatzsuche
+7. **Prinzessin + Superheld** — Altersgruppen-Seiten komplett neu anlegen (eigenständiges Sub-Task, ~6 Std pro Motto inkl. 3 neue Seiten)
+
+**Vorgehen pro Motto:**
+1. Story-Framing (Leitnarrativ für alle 3 Altersgruppen) — 30 Min
+2. **6-8-Jahre zuerst** (Anker, wie bei Dino) — 1,5 Std
+3. 3-5-Jahre — 1,5 Std
+4. 9-12-Jahre — 1,5 Std
+5. Main-Seite ggf. nachziehen, wenn noch dünn — 30 Min
+- **Total pro Motto: ~4,5–5 Std Laptop-Session**
+
+**Elite-Checkliste:** `_dev/docs/ELITE-SEITEN-TEMPLATE.md` (14 Punkte).
+
+**Nachpflege aus früheren Sessions (Dino):** Dino 6-8 Header/Breadcrumb/Footer, Dino 3-5 CSS, Dino-Hauptseite Social Proof.
+
+---
+
+#### P1-8b: Content-Inseln-Strategie (Pferde, Ritter, Zirkus, Baustelle)
+
+**Befund 21.04.2026:** Vier markenfreie Mottos existieren als `/kindergeburtstag/<motto>.html` + 3 Altersgruppen-Seiten + OG-Bild, sind aber **weder in `/einladung/` noch in `/schatzsuche/`** vertreten. Der User landet per SEO auf diesen Seiten und hat keinen Conversion-Pfad in die Tools.
+
+**Optionen:**
+
+- **A) Ökosystem-Integration:** Pro Motto eine Einladungs-Landing (2–3 Std) + optional Schatzsuche (+1 Std). Danach qualifiziert sich das Motto für P1-8 Elite-Ausbau. Gesamt pro Motto ~3–4 Std Integration + später 4,5 Std Elite = 7,5–8,5 Std.
+- **B) Streichen (301 auf `/kindergeburtstag`):** Wenn Traffic laut GSC minimal ist, weg damit. Reduziert Index-Rauschen. Aufwand: 10 Min pro Motto (Redirects).
+- **C) Status Quo belassen:** Wenn Traffic okay ist, aber Integration zu teuer. Risiko: User dropped off, Keyword-Cannibalization mit Planer-Hauptseite.
+
+**Entscheidungs-Input nötig:** Google Search Console für diese 4 Mottos — Impressions/Klicks der letzten 90 Tage. Ohne diese Daten ist A/B/C nicht rational entscheidbar.
+
+**Prio:** P2 — nicht dringend, aber vor jedem weiteren Content-Ausbau auf diesen Seiten klären (sonst verschwendete Elite-Arbeit).
+
+**Aufwand:** Daten-Check 15 Min, Entscheidung + Umsetzung je nach Option 1–16 Std.
 
 #### P1-9: /einladung als SEO-Hub
 - Aktuell nur Tool-Hub ohne SEO-Content.
@@ -236,24 +340,29 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 **Befehl für Audit-Ranking:** `python3 _build/audit-all-ratgeber.py`
 **Aufwand:** ~30-60 Min pro Seite.
 
-#### P1-12: Einschulungs-Planer bauen
+#### P1-12: Einschulung SEO-Cluster  `[TEST]`
 
-**Motivation:** Einschulungen in Deutschland finden Ende August / Anfang September statt. Eltern suchen ab Ende Mai nach "Einschulung Feier planen", "Schultüte Inhalt", "Einschulungs-Geschenke". Keyword-Volumen laut Strategie-Doc: saisonal hoch, in Peak-Monaten auf Niveau "Kindergeburtstag". **SEO-Seiten müssen spätestens Anfang Juni live**, damit Google sie bis Juli-August ranken kann.
+**Umformuliert 22.04.2026:** Ursprünglich als interaktiver Einschulungs-Planer geplant. Nach Portfolio-Matrix-Diskussion (STRATEGIE.md 0.9) umformuliert zu reinem SEO-Content-Cluster. Grund: Nachfrage noch nicht validiert, Planer-Bau (~12-18h) vor Validierung ist Produktrisiko. Upgrade zum Planer nur nach Traffic-Trigger.
 
-**Was gebaut wird:**
-- `/einschulung` als SEO-Hub (analog zu `/kindergeburtstag`)
-- `/einschulung/planer` — Planer-Tool (gleicher Motor, anderer Anlass)
-- 4 Themen-Landingpages: `/einschulung-schultuete-inhalt`, `/einschulung-feier-planen`, `/einschulung-geschenke`, `/einschulung-ablauf`
-- 1 Checklisten-Seite `/einschulung-checkliste`
-- `js/einschulung.js` existiert bereits (im Affiliate-Sweep verwendet) — Basis ist vorhanden
+**Motivation:** Einschulungen in Deutschland finden Ende August / Anfang September statt. Eltern suchen ab Ende Mai nach "Einschulung Feier planen", "Schultüte Inhalt", "Einschulungs-Geschenke". Keyword-Volumen saisonal hoch (bis 4.400/Monat auf Top-Keyword). **SEO-Seiten müssen spätestens Anfang Juni live**, damit Google sie bis Juli-August ranken kann.
 
-**Tech-Checkliste:**
-- [ ] `/einschulung.html` als Hub mit H1, Meta, Canonical, OG, FAQ, BreadcrumbList JSON-LD
-- [ ] Planer-Tool: JSX analog zu `kindergeburtstag.jsx` bauen (altersgerechte Spiele 6-jährige, Schultüten-Content, Geschenke-Liste)
-- [ ] 4 Themen-Seiten mit FAQPage + HowTo Schema + Affiliate-Box
-- [ ] Checkliste als HowTo-Schema mit 10–14 Steps
-- [ ] Sitemap-Entries + interne Verlinkung von Homepage (dezent: "Auch: Einschulung planen")
-- [ ] Interne Links von `/kindergeburtstag` zu `/einschulung` für 6-Jährige-Besucher
+**Was gebaut wird (Cluster-Version):**
+- `/einschulung` als SEO-Hub mit H1, Meta, Canonical, OG, FAQ, BreadcrumbList JSON-LD (bereits teilweise vorhanden via `js/einschulung.js`, muss auf SEO-Hub-Niveau gebracht werden)
+- 4 Themen-Landingpages mit FAQPage + HowTo Schema + Affiliate-Box:
+  - `/einschulung-schultuete-inhalt`
+  - `/einschulung-feier-planen`
+  - `/einschulung-geschenke`
+  - `/einschulung-ablauf`
+- 1 Checklisten-Seite `/einschulung-checkliste` (HowTo-Schema mit 10–14 Steps) — existiert bereits, auf Elite-Niveau bringen
+- Sitemap-Entries + interne Verlinkung
+- CTA je Seite zurück zu: Kindergeburtstag-Planer, Wunschliste, Affiliate-Boxen
+
+**Ausdrücklich NICHT gebaut in P1-12:**
+- ❌ Kein interaktiver Einschulungs-Planer
+- ❌ Keine eigene Planer-JSX
+- ❌ Keine Homepage-Hauptbühne (bleibt Pill-Cloud „Weitere Planer & Tools")
+
+**Upgrade-Trigger (für späteren Planer-Bau):** Wenn Einschulungs-Cluster im Juli 2026 ≥100 organische Visits/Woche auf Summe aller 6 Seiten erreicht, wird P1-12b „Einschulungs-Planer-Tool" aktiviert. Darunter bleibt Planer-Bau eingefroren (Legacy). Messung via Plausible + GSC.
 
 **Content-Cluster (SEO-Keywords):**
 | Seite | Keyword | Such-Volumen (geschätzt) |
@@ -270,23 +379,25 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 - Geschenke-Seite: Durchschnitts-Geschenk 30–60€ (0,90–1,80€ Provision)
 
 **Revenue-Projektion:**
-- Jahr 1 (wenn ab Mai live): ~200–400€ in Juli-September (primärer Peak)
-- Jahr 2+: 500–1.000€/Jahr aus Einschulungs-Saison (Compound-Effekt)
+- Jahr 1 (wenn ab Mai live, nur Cluster ohne Planer): ~150–300€ in Juli-September (primärer Peak)
+- Jahr 2+: 400–800€/Jahr aus Einschulungs-Saison (Compound-Effekt)
+- Plus eventuell Planer-Upgrade Revenue bei Trigger-Erfüllung
 
-**Aufwand:** 2–3 Tage (ca. 12–18 Stunden)
-- 4h: Hub-Seite + Themen-Seiten (Content schreiben, Ton abgleichen)
-- 6h: Einschulungs-Planer-Tool (JSX basierend auf Kindergeburtstag-Planer)
-- 4h: Checklisten-Seite + interne Verlinkung + Schemas + Affiliate
-- 2h: Testing, Validation, Sitemap-Updates
+**Aufwand:** 1,5–2 Tage (ca. 10–14 Stunden) — **reduziert von ursprünglich 12–18h weil Planer-Tool entfällt**
+- 3h: Hub-Seite /einschulung auf Elite-Niveau (aufbauend auf js/einschulung.js)
+- 6h: 4 Themen-Seiten (Content schreiben, FAQ, HowTo, Affiliate-Boxen)
+- 2h: Checklisten-Seite auf 85%+ Audit-Score
+- 2h: Interne Verlinkung, Sitemap, Schemas, Validation, Tests
 
 **Zeitplan:** **Launch spätestens 31.05.2026** (gibt Google 6–8 Wochen bis Peak)
 
-**Abhängigkeiten:** Keine. Kann unabhängig von allen anderen PBIs gebaut werden.
+**Abhängigkeiten:** Keine.
 
 **Erfolgs-Kriterien:**
 - Alle 6 Seiten haben Canonical, Schemas, Affiliate-Links
 - `validate-all.sh` PASSED
 - Mindestens 3 Seiten auf 85%+ im Audit-Score
+- **Trigger-Messung einrichten:** Plausible-Goal "Einschulungs-Cluster Visits" aggregiert über alle 6 Seiten
 - Mindestens 50 organische Besucher/Tag auf /einschulung-* im August 2026
 
 ---
@@ -406,24 +517,165 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 
 ---
 
+#### P1-16: Partyseite Follow-Ups (Laptop-Session) ✅ GRÖSSTENTEILS ERLEDIGT (23.04.2026)
+
+**Motivation:** Partyseite ist seit 20.04. live, aber mehrere Follow-Ups sind aus der gestrigen Mobile-Session + dem Test heute (20.04., 17:23) aufgelaufen. Alles erfordert **Cloudflare-Deploy** und ist damit eine Laptop-Session.
+
+**Sub-Tasks / Status (23.04.2026):**
+
+1. ✅ **Cloudflare-Deploy des Bugfix-Commits** — Erledigt vor dieser Session (Commit `5613b9a` vom 21.04.: „FIX11, bereits auf Cloudflare deployed").
+
+2. 🛠 **Email-Flow end-to-end testen** — Code ist drin, aber manueller Browser-Test durch Bolle ausstehend (braucht aktive Party + Migadu-Setup für Reply-To).
+
+3. ✅ **Reply-To Handling** — Code in party-worker.js: `reply_to: env.RESEND_REPLY_TO || "party@machsleicht.de"` ergänzt. **Follow-Up extern:** Migadu Mini einrichten ($90/Jahr, unlimited Domains für machsleicht.de + machsruhig.de). Cloudflare Email Routing wird NICHT verwendet (MX-Kollision). Architektur-Entscheidung: Cold-Outreach für machsruhig ab Phase F über separate Subdomain, nie über primären MX.
+
+4. ✅ **Alte `guestView()` entfernen** — 200 Zeilen toter Code raus (Zeilen 1285-1484, nur noch Funktionsdefinition ohne Aufrufer).
+
+5. 🛠 **Live testen mit verschiedenen Mottos** — Manueller Browser-Test durch Bolle ausstehend.
+
+6. ✅ **Foto-Crop verbessern** — Stellte sich heraus: Slider + Drag war bereits implementiert, aber 3 Mobile-Bugs: (a) Slider nur mit `mousemove`, kein Touch/Pointer; (b) Initial-Track-Width nicht gesetzt nach Upload; (c) kein `touch-action:none` auf Canvas/Slider. Alle drei gefixt.
+
+7. ✅ **Beteiligen custom amount** — Komplett implementiert:
+   - Backend: `/claim`-Endpoint nimmt optionalen `amount` (0<x<9999), speichert bei `sharedGift` als Object `{name, amount}`, sonst String (rückwärtskompatibel)
+   - API-GET: `claimedAmountTotal` pro Wunsch wird berechnet und ausgeliefert
+   - Frontend: Prompt bei Beteiligen mit Auto-Vorschlag (halbe Restsumme), Komma-Parse, leer lassen erlaubt
+   - Anzeige: „3 dabei, 45€ gesammelt · Noch offen: 15€ · Vorschlag: 8€"
+   - Editor-View: „🎁 Anna (20€), Tom (15€) · Gesamt: 35€"
+
+8. ✅ **Kill List + Internal Linking Audit** — Ergebnisse ausgegliedert als separate PBIs (siehe P1-20 und P1-21 unten):
+   - Echte Orphans: **0** (P2-2 war sauber). 138 Single-Year-Seiten alle via echtem 301 weitergeleitet.
+   - Kill-Kandidaten: 112 Seiten von 8 Marken-Mottos (IP-Risiko, nicht tool-integriert) + 56 Seiten von 4 Content-Inseln (Pferde/Ritter/Zirkus/Baustelle)
+   - Internal-Linking-Bug: **Superheld 0 eingehende Links, Prinzessin 2** — trotz Tool-Integration praktisch unsichtbar. Zum Vergleich: Piraten 142, Dino 116.
+
+**Aufwand tatsächlich:** ~2 Std Chat-Session (ohne Cloudflare-Deploy, da schon erledigt).
+
+**Erfolgs-Kriterien:**
+- ✅ Code-Änderungen gepusht, validate-all.sh PASSED
+- 🛠 Browser-Test (Email-Versand + Mottos) durch Bolle
+- 🛠 Migadu-Einrichtung (separat, s. Session-Notes)
+
+---
+
+#### P1-20: Internal-Linking-Fix für unterverlinkte Tool-Mottos `[KERN]` ✅ **ERLEDIGT 23.04.2026**
+
+**Motivation:** Audit am 23.04.2026 zeigt einen harten Funnel-Leak. Von den 10 tool-integrierten Mottos sind **Superheld mit 0 und Prinzessin mit 2 eingehenden Links** de facto unsichtbar — obwohl das Tool für sie funktioniert. Gleichzeitig werden Marken-Mottos (die strategisch zurückgestellt sind) 60–108× verlinkt. Das ist das Gegenteil der strategischen Priorität.
+
+**Zahlen aus dem Audit (eingehende interne Links):**
+- Piraten 142, Safari 118, Dino 116, Weltraum 99, Feuerwehr 95, Einhorn 91, Meerjungfrau 50, Detektiv 39
+- **Prinzessin 2, Superheld 0** ← Bug
+- Marken: Ninjago 108, Harry Potter 98, Minecraft 80, Super Mario 72, Pokemon 69, Spider-Man 65, Paw Patrol 62, Frozen 62
+- Inseln: Ritter 34, Zirkus 32, Pferde 27, Baustelle 20
+
+**Root-Cause-Erkenntnis (während Implementierung):** Das Problem ist nicht nur fehlende Cross-Links, sondern fehlender Content. Während alle 8 anderen Tool-Mottos eine Hub-Page + 12 Alters-Seiten haben (sich gegenseitig verlinken = ~20 Self-Loop-Links, plus Cross-Links aus Grids anderer Seiten), existierten für Prinzessin + Superheld **null Seiten** unter `/kindergeburtstag/`. Links darauf wären 404 gelaufen.
+
+**Umgesetzt:**
+1. **Zwei Hub-Pages handgepflegt erstellt:**
+   - `/kindergeburtstag/prinzessin.html` (~580 Zeilen, motto-spezifisch: Kronen-Werkstatt, Schatz-Suche im Königreich, Prinzessinnen-Akademie — je 3 Altersvarianten + Deko + Essen + Mitgebsel + FAQ + HowTo/FAQ/BreadcrumbList-Schema)
+   - `/kindergeburtstag/superheld.html` (~580 Zeilen, motto-spezifisch: Helden-Ausrüstung basteln, Kräfte-Training, Rettungsmission — selbe Struktur. Gender-neutral + markenfrei umgesetzt)
+2. **Homepage-Prosa (`index.html`) + Planer-Hub (`kindergeburtstag.html`):** Query-Param-Platzhalter (`?motto=prinzessin#planer`) durch echte Direkt-Links (`/kindergeburtstag/prinzessin`) ersetzt — diese Vor-Arbeit war bereits uncommitted im Working Tree angelegt.
+3. **`_redirects`:** 2 neue 200-Rewrites `/kindergeburtstag/prinzessin` → `.html` + `/kindergeburtstag/superheld` → `.html`
+4. **`sitemap.xml`:** 2 neue URLs mit `lastmod=2026-04-23, priority=0.8`
+5. **Card-Swap-Script (`_build/p1-20-swap-cards.py`):** Thematisch kuratierte Cross-Motto-Grid-Anpassung.
+   - **Prinzessin-Cluster (einhorn, meerjungfrau, frozen, harry-potter, pferde, zirkus):** Auf 77 Seiten wurde die thematisch schwächste Tool-Motto-Card gegen eine Prinzessinnen-Card getauscht. Tausch-Prio: feuerwehr > piraten > dino > weltraum > safari > detektiv.
+   - **Superheld-Cluster (feuerwehr, ninjago, spider-man, paw-patrol, detektiv, piraten):** Auf 62 Seiten analog. Tausch-Prio: einhorn > meerjungfrau > safari > weltraum > dino > feuerwehr.
+   - **Wichtig — P1-21 nicht vorgegriffen:** Marken-Motto-Cards (harry-potter, minecraft, pokemon, spider-man, super-mario, paw-patrol, frozen, ninjago) **nicht angetastet**. Deren Link-Profile bleiben unverändert für die GSC-basierte Kill-Entscheidung im Mai.
+6. **BACKLOG + SESSION-NOTES aktualisiert.**
+
+**Ergebnis (Re-Audit `_build/count-motto-links.py` nach Änderungen):**
+```
+Motto         Vorher   Nachher   Delta
+Prinzessin         5        85     +80
+Superheld          3        68     +65
+Piraten          143       128     -15
+Dino             115        98     -17
+Safari           112        77     -35
+Weltraum         101        81     -20
+Feuerwehr         90        54     -36
+Einhorn           86        76     -10
+Meerjungfrau      45        39      -6
+Detektiv          42        42       0
+(Marken-Mottos unverändert)
+```
+
+**Ticket-Erfolgskriterium erreicht:** Prinzessin 85 Links, Superheld 68 Links — beide deutlich über dem 40er-Ziel. Verlierer bleiben alle ≥39 Links (Meerjungfrau knapp am unteren Schwellwert, aber noch akzeptabel). Alle SEO-Verlierer sind Tool-Mottos mit bestehenden 13-Seiten-Suites, die genug Masse haben.
+
+**Validation:** `validate-all.sh` PASSED nach allen Änderungen.
+
+**Limits / bekannte Kompromisse:**
+- Neue Hub-Pages sind schlank (3 Spielideen × 3 Altersgruppen statt 5 × 3 wie bei Meerjungfrau). Bewusste Entscheidung: Content-Substanz pro Spielidee höher, HCU-Risiko geringer. Erweiterung möglich, wenn GSC-Daten Traffic zeigen.
+- Keine Alters-Unterseiten angelegt (analog zu Meerjungfrau-Pattern 12 Alters-Seiten je Motto). Warum nicht: Ohne GSC-Daten-Validierung wäre das 15–20h Content-Arbeit ohne Nutzen-Nachweis. Entscheidung: nach Mai-GSC-Review.
+- Ninjago + Spider-Man-Seiten haben in den Cross-Motto-Grids keine tauschbaren Fallback-Mottos (nur Marken-Mottos + Tool-Mottos, die nicht zu Superheld-Cluster passen) → 21 Seiten aus Superheld-Cluster nicht angetastet. Akzeptabel: Zielzahl 40 ist auch ohne diese erreicht.
+
+**Folgetickets:**
+- P1-21 (Kill-List Mai): Wenn Marken-Mottos (harry-potter 100, ninjago 109, etc.) gekillt werden, fallen weitere ~100+ Links auf Tool-Mottos frei, die dann in Cross-Motto-Grids auftauchen könnten. Prinzessin/Superheld sind bereits gut positioniert, damit sie von dieser Kill-Welle profitieren.
+- P1-8 Elite-Motto-Seiten: Nach GSC-Review kann entschieden werden, ob Prinzessin/Superheld Alters-Unterseiten brauchen (analog zu Safari/Weltraum-Elite-Ausbau).
+
+---
+
+#### P1-21: Kill-List-Entscheidung Marken-Mottos + Content-Inseln `[TEST]`
+
+**Motivation:** Audit am 23.04.2026 zeigt 168 strategisch fragwürdige Seiten: 8 Marken-Mottos mit IP-Risiko (Paw Patrol, Pokemon, Minecraft, Frozen, Super Mario, Spider-Man, Harry Potter, Ninjago = 112 Seiten) und 4 Content-Inseln ohne Tool-Integration (Pferde, Ritter, Zirkus, Baustelle = 56 Seiten). Keine davon ist tool-integriert. Aber: einige Marken-Mottos sind stark verlinkt (Ninjago 108, Harry Potter 98) — Kill würde Link-Beben auslösen.
+
+**Nicht-Ziel:** Nicht jetzt killen. Ohne GSC-Traffic-Daten ist das Blind-Flug.
+
+**Scope:**
+1. **GSC-Daten abwarten (4 Wochen ab Search Console-Setup, P0-1 war 19.04. → Zielmonat Mai):**
+   - Pro Motto: Impressions, Clicks, Durchschnitts-Position
+   - Cutoff-Schwelle definieren (z.B. <50 Clicks/Monat = Kill-Kandidat)
+2. **Pro Kandidat 3-Wege-Entscheidung:**
+   - (a) **Kill**: 301 auf nächstgelegenes Tool-Motto (z.B. Paw Patrol → Feuerwehr, Frozen → Einhorn) + interne Links entfernen
+   - (b) **Integrieren**: Tool-Unterstützung bauen, aufwerten — nur wenn Traffic signifikant
+   - (c) **Behalten als „Fan-Seite"**: Sitemap-Eintrag, aber aus Navigations-Pfaden raus, klar als Content gekennzeichnet (kein Tool-Pfad)
+3. **Ausführung:** Pro Entscheidung Implementierung inkl. Canonical-Checks und _redirects-Update.
+
+**IP-Risiko-Caveat:** Marken-Mottos sind rechtlich heikel. Bei Kill gewinnt man Rechtssicherheit. Bei Behalten → Disclaimer-Text verschärfen und prüfen, ob Content wirklich rein informationell ist (keine Markenname-Verwendung im Title als kommerzielles Angebot).
+
+**Aufwand:**
+- Daten-Review: 1 Std
+- Pro Kandidat Entscheidung: 5 Min × 12 = 1 Std
+- Kill-Implementierung: 30 Min pro gekilltem Motto
+- **Total: 3–6 Std** je nach Entscheidungen
+
+**Erfolgs-Kriterien:**
+- Dokumentierte Kill/Integrate/Behalten-Entscheidung pro Motto in STRATEGIE.md
+- Bei Kills: saubere 301-Ketten, kein Orphan, kein toter interner Link
+
+---
+
 #### P1-15: Email-Capture am Planer-Output (Retention-Hebel)
 
 **Motivation:** Externes Audit (19.04.2026) identifiziert **fehlenden Email-Capture als größte strukturelle Schwäche der Seite**. Nutzer plant, schließt Tab, ist weg — bis der nächste Kindergeburtstag in 12 Monaten sie zurück zu Google schickt. Das sind aktuell **0 % Retention**. Eine simple "Plan als PDF per Mail"-Mechanik am Ende des Wizards fängt laut Branchen-Benchmarks **15–30 % der Abschließer** ein. Bei ~80 Besuchern/Tag, 20 % Wizard-Start, 40 % Abschluss → ~6 Abschlüsse/Tag → bei 20 % Opt-In ~40 neue Kontakte/Monat aus Nullbasis.
 
 **Warum P1, nicht P3:** Hebel ist so groß, dass jeder Tag ohne Capture verlorene Eltern-Kontakte sind. Und: Eltern haben 1–3 Geburtstage/Jahr + oft mehrere Kinder → eine eingefangene Adresse = 5–15 Jahre Retention-Potential.
 
+**⚠️ Scope-Revision (20.04.2026):**
+- **Neue Hebel-Logik:** Nicht "PDF per Mail" (schwacher Köder — Plan ist eh sichtbar), sondern **"Link zum fertigen Asset per Mail"** für zeitversetzt genutzte Outputs (Einladung, Partyseite, Schatzsuche)
+- **Pilot auf Einladung** statt Planer: Höchster Nutzen (Einladung wird erst später verschickt, Link im Postfach löst echtes Problem), simpler Scope, Template-Pattern für Partyseite + Schatzsuche wiederverwendbar
+- **Mini-MVP statt Voll-Spec:** Kein jsPDF, kein PDF-Attachment — nur Link + später Erinnerungs-Mail
+- **Rollout-Plan:** Einladung zuerst → Daten sammeln (2 Wochen) → bei Opt-In ≥15% auf Partyseite + Schatzsuche ausrollen (je 1–2h wegen Template-Wiederverwendung)
+- **Planer bekommt separaten Hebel:** Nicht Link-per-Mail, sondern Erinnerungs-Mail 7 Tage vor Geburtstag (= Nurture-Flow, spätere Session)
+
+**Voraussetzungen (keine harten Blocker mehr — Resend läuft schon):**
+- Resend-Audience für „machsleicht-newsletter" im Resend-Dashboard anlegen (5 Min)
+- Double-Opt-In-Flow **selbst bauen** (Resend hat kein built-in DOI) — Worker erzeugt Confirmation-Token, schickt Bestätigungs-Mail, Klick auf Link → Contact in Audience als `subscribed` speichern
+- Datenschutzerklärung auf machsleicht.de/datenschutz erweitern: Resend als Auftragsverarbeiter, DOI-Prozess beschrieben, Widerruf-Link
+- AV-Vertrag mit Resend prüfen / abschließen (Resend hat Standard-DPA)
+
+**Code-Umfang (~4–5h):** Einladungstool-Frontend + Worker-Endpoint `/api/subscribe` + DOI-Flow + Resend-Broadcast-Template + Datenschutz-Text.
+
 **Was gebaut wird:**
 - Am Ende des Planer-Wizards (direkt nach Plan-Output): Sektion **"Plan als PDF speichern — per Mail zugeschickt"**
-- Form: nur E-Mail-Feld + DSGVO-Checkbox + Button "PDF zuschicken"
-- Backend: MailerLite-API-Call (Double-Opt-In-Mail mit PDF-Link)
+- Form: nur E-Mail-Feld + DSGVO-Checkbox (Pflicht) + optionaler Newsletter-Opt-In-Haken (separat) + Button "PDF zuschicken"
+- Backend: Worker erzeugt Confirmation-Token → sendet via Resend Confirmation-Mail → bei Klick Contact in Resend-Audience + PDF-Link ausliefern (DOI selbst gebaut)
 - PDF-Generation: clientseitig via jsPDF aus dem aktuellen Planer-State
 - Sekundärer Lead-Magnet-Versprechen im Mail-Text: "Bekommst Einkaufsliste 7 Tage vorher automatisch zugeschickt" (Nurture-Flow)
 - **Klare Alternative sichtbar:** "Ohne Mail weiter → Plan direkt als PDF runterladen" — keine Erpressung, Download bleibt möglich ohne Mail
 
 **Tech-Checkliste:**
 - [ ] Abschnitt `<email-capture>` in Planer-Output-React-Component
-- [ ] MailerLite Account + Double-Opt-In-Template (P3-5 ggf. vorziehen)
-- [ ] MailerLite API-Key in Cloudflare-Worker-Secret
+- [ ] Resend-Audience „machsleicht-newsletter" anlegen
+- [ ] DOI-Flow im Worker: Token in KV, Confirmation-Mail-Template in Resend, `/api/confirm?token=` Endpoint, Contact-Add via Resend-API
+- [ ] RESEND_API_KEY ist bereits im Worker (für Transactional) — keine neue Secret-Einrichtung
 - [ ] Neuer Worker-Endpoint `/api/plan-per-mail` (KV-Token erzeugt, PDF-Link, Mail-Trigger)
 - [ ] DSGVO-Text + Checkbox (Pflicht)
 - [ ] Plausible-Event `plan-email-submit` + `plan-pdf-direct` (Vergleichs-Messung)
@@ -440,7 +692,7 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 - Skaliert linear mit Traffic
 
 **Aufwand:** 1–2 Tage (8–12 Stunden)
-- 2h: MailerLite-Setup + Double-Opt-In-Flow testen
+- 2h: Resend-Audience + Self-Built-DOI-Flow (Token-Gen, KV-Store, Confirmation-Mail-Template, `/api/confirm`-Endpoint, Contact-Create)
 - 3h: Worker-Endpoint + KV-Token für PDF-Link
 - 3h: React-Component + jsPDF-Integration + Design
 - 2h: Nurture-Flow-Mails schreiben (Welcome, 7-Tage-vorher, 1-Tag-vorher)
@@ -450,12 +702,12 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 
 **Abhängigkeiten:**
 - P1-10 (Cloudflare Worker muss live sein)
-- P3-5 kann teilweise parallel: MailerLite-Setup ist gemeinsamer Schritt
+- P3-5 kann teilweise parallel: Resend-Audience-Setup ist gemeinsamer Schritt
 
 **Erfolgs-Kriterien:**
 - Opt-In-Rate ≥15 % der Planer-Abschließer
 - Double-Opt-In-Confirm-Rate ≥65 %
-- Nach 3 Monaten: 100+ Kontakte in MailerLite
+- Nach 3 Monaten: 100+ Kontakte in der Resend-Audience
 - Nurture-Flow öffnet Reaktivierungen messbar (Plausible-Referral von Mail)
 
 **Risiko:**
@@ -756,6 +1008,95 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 
 ---
 
+#### P2-22: Site-Wide In-App-Frame (Modal-Pattern seitenweit)
+
+**Motivation:** Im P1-16-Sprint am 21.04.2026 wurde auf der Partyseite ein Modal-Overlay mit iframe für die „Vorschau" und „Bearbeiten"-Buttons eingeführt — statt die Ziele in einem neuen Tab zu öffnen, erscheint ein zentriertes Panel (520 px max-width, 16 px Padding, abgerundete Ecken, Shadow) über der Seite, das den Context behält. Ergebnis laut User-Test („flüßig. proportionen passen"): Deutlich bessere Retention, kein Tab-Verlust, keine Verwirrung. Das Pattern soll seitenweit ausgerollt werden.
+
+**Warum P2, nicht P1:** Kein akuter Bug, sondern ein systemweiter UX-Hebel. Schmerzpunkt ist die Retention-Lücke bei jedem `target="_blank"` — aber der aktuelle Zustand funktioniert. P2 reicht.
+
+**Zwei Einsatz-Szenarien — unterschiedliche technische Ansätze:**
+
+**A) Interne Vorschauen (same-origin) — unproblematisch**
+- Alles unter `machsleicht.de`, `party.machsleicht.de`, `raetsel.machsleicht.de`: direkt via iframe einbettbar
+- Use-Cases: Partyseite-Vorschau (bereits live), Einladungs-Vorschau, Schatzkarten-Vorschau, Planer-Demo-Cards auf Homepage („So sieht's aus"), Rätsel-Vorschau
+- Einheitliche Modal-Komponente extrahieren (`/js/modal.js` oder inline in jeder Page), konsistente Styles (CSS-Variablen aus FIX11-Version der Partyseite)
+
+**B) Externe Affiliate-Links (Amazon, Otto, myToys, Thalia, ...) — nicht iframe-bar**
+- Amazon, Otto etc. setzen `X-Frame-Options: DENY` / `frame-ancestors 'none'` → **Browser blockiert iframe hart, kein Workaround im Client**
+- Server-side Proxy („Reader-Mode") wäre technisch machbar, aber: bricht Affiliate-Tracking-Cookies, verletzt Amazon-Partner-ToS, IP-Blocking-Risiko, rechtliche Grauzone
+- **Echte Lösung: OG-Preview-Card-Pattern** statt iframe:
+  - Server fetcht Ziel-URL einmal, extrahiert `og:image`, `og:title`, `og:price`, `og:description` → speichert in KV (TTL 24 h)
+  - Modal zeigt **native Preview-Card** (Bild + Titel + Preis + „Verfügbar bei Amazon/Otto")
+  - CTA: „🛒 Zum Shop" → öffnet **neuen Tab** (normales Verhalten, Affiliate-Link intakt)
+  - Return-Loop: Wenn User zurückkehrt, zeigt die Seite „Willkommen zurück — als besorgt markieren?" (lokaler State via `sessionStorage`)
+- Ergebnis: Fühlt sich an wie „In-App", aber ohne iframe-Blockaden und ohne ToS-Risiko. Conversion-Hebel bleibt (Preview → reduzierte Abbrüche), Tracking bleibt.
+
+**Was gebaut wird:**
+- **Phase 1 (Interne Vorschauen, ~4 Std.):**
+  - Gemeinsame Modal-Komponente extrahieren (CSS + JS aus party-worker.js FIX11)
+  - Einbau auf Homepage-Demo-Cards („So sieht's aus" öffnet jetzt Modal statt neuen Tab)
+  - Einbau auf `/einladung` (Vorschau-Buttons)
+  - Einbau auf Planer-Output (Schatzkarten-Vorschau, Partyseiten-Vorschau)
+- **Phase 2 (OG-Preview für Externe, ~6–8 Std.):**
+  - Cloudflare Worker `og-preview.machsleicht.de/fetch?url=<amazon-url>` → fetcht HTML, parsed OG-Meta, cached in KV
+  - Amazon-spezifisch: `og:title` + `og:image` + Preis aus `.a-price-whole`-DOM via HTMLRewriter
+  - Generic Fallback: nur `og:title` + `og:image` + Domain-Name
+  - Client-seitig: alle Affiliate-Links (`a[data-affiliate]`) fangen `click` ab → Modal mit Preview-Card
+  - Analytics: Plausible-Event `preview_opened` + `preview_to_click` (Conversion-Rate mess- und tunbar)
+- **Phase 3 (Return-Loop, ~2 Std.):**
+  - `sessionStorage.setItem('pendingAffiliate', JSON.stringify({url, title, at}))` beim Klick auf „Zum Shop"
+  - `visibilitychange`-Listener auf Rückkehr: Toast zeigen „Hast du [Titel] besorgt? ✅ Ja / ❌ Noch nicht"
+  - Bei „Ja": Item in clientseitiger „Mitgebsel-Liste" als erledigt markiert
+
+**Tech-Checkliste:**
+- [ ] `modal.js` als gemeinsame Komponente, von allen Seiten importierbar
+- [ ] CSS-Variablen in `_src/styles/modal.css` (oder inline-minified)
+- [ ] OG-Preview-Worker auf neuer Subdomain oder als Route auf existierendem Worker
+- [ ] KV-Cache mit TTL 24h für OG-Daten
+- [ ] HTMLRewriter-Transformer für Amazon-Preis-Extraktion (fragile — User-Agent und Region-abhängig)
+- [ ] Click-Interceptor auf `a[data-affiliate]` global einbauen (Homepage, Ratgeber, Motto-Seiten, Planer-Output)
+- [ ] Analytics-Events in Plausible konfigurieren
+- [ ] Return-Loop-Toast mit Dismissal + „Noch nicht"-Reminder
+- [ ] Fallback: wenn OG-Fetch fehlschlägt → Modal zeigt einfache „Zum Shop"-CTA ohne Preview
+
+**Monetarisierung:**
+- Primär: **Retention statt Tab-Verlust** → mehr Seitentiefe pro Besuch
+- Sekundär: Affiliate-Konversion steigt, weil Preview-Card Preis + Bild zeigt (niedrige Klick-Hürde, hohes Commitment nach Klick)
+- Tertiär: Return-Loop-„Als besorgt markiert" baut einen impliziten Mitgebsel-Tracker → Überleitung zu P2-16 Mitgebsel-Generator
+
+**Revenue-Projektion:**
+- Konservativ: +10–15 % Affiliate-Conversion (Preview reduziert „nur mal schauen"-Abbrüche)
+- Bei aktuellem Baseline ~30€/Monat Affiliate: +3–5€/Monat
+- Echter Hebel: wenn P2-13 Gumroad live ist und P1-15 Email-Capture läuft, wird der In-App-Frame zum Funnel-Backbone → 20–30 % mehr Seitentiefe = proportional mehr Mid-Funnel-Capture
+
+**Aufwand:** 1–2 Tage gestaffelt
+- Phase 1 (interne Vorschauen): 4 Std. — sofort umsetzbar, kein Risiko
+- Phase 2 (OG-Preview): 6–8 Std. — braucht Cloudflare-KV-Setup, Amazon-Parsing ist fragil
+- Phase 3 (Return-Loop): 2 Std. — opportunistisch, kann später
+
+**Zeitplan:** Phase 1 kann parallel zu P1-16 erledigt werden (kleiner Nachzügler-Commit). Phase 2+3 warten auf P2-15 (Awin-Anmeldung live, damit Otto/myToys/Thalia-Links überhaupt existieren und sich lohnen zu präviewen).
+
+**Abhängigkeiten:**
+- Phase 1: keine
+- Phase 2: P2-15 (Awin) für externe Links mit Varianz, P1-10 (Worker läuft, Infrastruktur da)
+- Phase 3: keine harte
+
+**Erfolgs-Kriterien:**
+- Modal-Komponente auf mind. 5 zentralen Seiten aktiv (Homepage, Planer-Output, /einladung, Motto-Seiten, Ratgeber)
+- OG-Preview funktioniert für Amazon + mind. 2 Awin-Partner
+- Plausible-Event `preview_to_click` > 60 % (User, die Preview öffnen, klicken auch zum Shop)
+- Bounce-Rate auf betroffenen Seiten sinkt messbar (Baseline via Plausible vor Rollout festhalten)
+
+**Risiko:**
+- **Amazon-OG-Parsing ist fragil** — HTML-Struktur ändert sich ohne Warnung, Region-abhängig (DE vs. COM), User-Agent-Sniffing. Robust bauen: bei Fehler → Fallback auf Domain-Card ohne Preis.
+- **Modal-Overlay auf mobilen Safari-Versionen** — iOS-Safari hat bekannte iframe-Scroll-Quirks (in FIX11 bereits via `-webkit-overflow-scrolling:touch` + `min-height:0` entschärft). Beim Rollout testen.
+- **ToS-Risiko bei Server-Proxy** — Entscheidung dokumentieren: **kein Proxy, nur OG-Fetch** (OG-Meta ist explizit zum Teilen gedacht, kein ToS-Verstoß).
+
+**Offene Frage — User-Anforderung „Hacker / UX-Gamechanger":**
+Bolle hat nach einer Lösung gefragt, die Amazon & Co. trotz X-Frame-Options wirklich framed. **Kurze Antwort: geht nicht sauber.** Lange Antwort siehe oben — Server-Proxy bricht Tracking + ToS, und die eigentliche Magie liegt nicht im iframe, sondern im **Gefühl, die Seite nicht zu verlassen**. Das leistet die OG-Preview-Card genauso gut wie ein iframe, nur ohne die rechtlichen und technischen Tretminen. Der eigentliche „Gamechanger" ist der **Return-Loop** (Phase 3) — das Item als besorgt markieren, wenn User zurückkommt. Das kann kein Amazon-iframe.
+
+---
+
 ### P3 — NÄCHSTER MONAT
 
 #### P3-1: Repo aufräumen
@@ -773,10 +1114,11 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 - **Aufwand:** ~30 Min pro Motto.
 
 #### P3-5: E-Mail-Liste aufsetzen
-- MailerLite (gratis bis 1.000), DSGVO-konform, Double-Opt-In.
+- **Tool: Resend** (läuft bereits für Transactional). Audiences + Broadcasts-Feature aktivieren.
+- DSGVO-konform via selbst gebautem Double-Opt-In-Flow im Worker (Token + Confirmation-Mail + Contact-Create).
 - Lead-Magnet: "Piraten-Einladung kostenlos" oder "Komplette Einkaufsliste".
-- Monatlicher Newsletter.
-- **Aufwand:** 1 Tag Setup, danach 30 Min/Monat.
+- Monatlicher Newsletter via Resend Broadcast.
+- **Aufwand:** 1 Tag Setup (DOI-Flow + erster Broadcast), danach 30 Min/Monat.
 - **Revenue-Effekt:** langfristig 1.000–3.000€/Jahr ab 1.000 Kontakten.
 - **Hinweis (19.04.2026):** Der **konkrete Trigger-Punkt** für Opt-In ist P1-15 (Planer-Output als PDF-Lead-Magnet). P3-5 ist das Nachgelagerte (Newsletter-Versand, Nurture-Flow). P1-15 ist der Hebel, P3-5 die Verwertung.
 
@@ -848,240 +1190,488 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 
 **Was gebaut wird:**
 - `/nachbar-nachricht` — Formular: Datum, Uhrzeit, Name (optional), "Viele Kinder, etwas Lärm" Toggle, Emoji-Auswahl (🎂🎈🎉)
-- Output: druckbarer A5-Zettel mit freundlichem Text + dezentes machsleicht-Logo unten rechts
-- Zufalls-Phrasen für Variation ("Ich hoffe, es stört nicht zu sehr — Kuchen gibt's danach!")
-
-**Tech-Checkliste:**
-- [ ] Simple HTML-Seite mit JS-Template-System (kein React nötig)
-- [ ] CSS für Print-Layout (A5)
-- [ ] 3 Design-Varianten (Dino, Pirat, Unicorn Theme)
-- [ ] Print-Button + PDF-Export-Button (via browser print)
-- [ ] FAQPage-Schema + 3–4 FAQ
-
-**SEO-Content:**
-- Nische aber ranked gut: "Nachbarn informieren Kindergeburtstag" = 140/Monat, "Zettel Treppenhaus Geburtstag" = 90/Monat
-- Long-Tail-Traffic, konvertiert gut zu Planer-Besuchern
-
-**Monetarisierung:**
-- Null direkt. **Indirekt viral** durch Aushänge
-- CTA auf Zettel (dezent): "machsleicht.de — Geburtstag in 10 Minuten planen"
-
-**Revenue-Projektion:**
-- Direkt: 0€
-- Indirekt: ~5% der Tool-Nutzer werden später Planer-Nutzer
-- Pro 100 generierte Zettel: ~5 neue Planer-Besucher durch Aushang gesehen + direkte Tool-Nutzer
-
-**Aufwand:** 4 Stunden
-- 1h: HTML + Form
-- 1h: Print-Layout (A5, CSS Print-Media)
-- 1h: 3 Theme-Varianten
-- 1h: Testing + Content (FAQ + Phrasen)
-
-**Zeitplan:** **Sofort machbar**, gerne als Quick-Win zwischen größeren PBIs
-
-**Abhängigkeiten:** Keine.
-
-**Erfolgs-Kriterien:**
-- Tool live, funktional auf Mobile und Desktop
-- Print-Output sauber auf A5
-- Plausible-Event `nachbar-zettel-erstellt` trackt Nutzung
+- Output: druckbarer A5-Zett
 
 ---
 
-#### P3-9: Foto-Spots / Photobooth-Backdrops (A2-PDF)
+#### P1-17: DSGVO-Hygiene Partyseite
 
-**Motivation:** "Fotowand Kindergeburtstag" = 880/Monat, "Photobooth Kinder selber machen" = 320/Monat. Eltern wollen Foto-Spots für Instagram-Momente. **Kostenloses A2-PDF zum Drucken im Copyshop** mit motto-passendem Hintergrund + dezentes machsleicht-Branding (unten rechts klein). Jeder Druck = virales Instagram-Posting mit machsleicht-Tag im Hintergrund.
+**Motivation:** Die Partyseite (party.machsleicht.de) speichert personenbezogene Daten (Kinderfoto, Vornamen, Treffpunkt, Datum) in Cloudflare Workers KV und versendet transaktionale E-Mails über Resend. Drei DSGVO-Pflichten sind offen, entdeckt bei der Konsolidierung am 21.04.2026 (Teil 1). Ohne diese drei Sub-Tasks ist der Betrieb rechtlich heikel — nicht blockierend für neue Features, aber abmahnanfällig bei Wettbewerbern oder Beschwerde.
 
-**Was gebaut wird:**
-- `/fotowand` — Hub mit 8 verfügbaren Motto-Backdrops (Pirat, Dino, Einhorn, Weltraum, Safari, Detektiv, Feuerwehr, Prinzessin)
-- Jedes Motto: hochauflösender A2-PDF-Download (3–5 MB)
-- Druckanleitung: "Für 5–8€ im Copyshop drucken lassen, mit Kreppband hinter Kind halten"
+**Sub-Tasks:**
 
-**Tech-Checkliste:**
-- [ ] 8 A2-PDFs erstellen (3508 × 4960 px bei 300 DPI)
-- [ ] Design: motto-passender Hintergrund + Requisiten-Silhouetten (Tierschatten, Segel, Sterne) + dezent "@machsleicht.de" unten rechts (10pt)
-- [ ] `/fotowand.html` Hub-Seite mit 8 Vorschauen + Download-Buttons
-- [ ] Affiliate-Box: "Fotobooth-Requisiten dazu? Amazon-Sets"
-- [ ] Print-Anleitung auf der Seite
+**A) Datenschutz-Hinweis über Send-Button im Email-Box-Bereich der Partyseite** — offen
+- Pflicht-Hinweis bei jeder E-Mail-Eingabe: „Mit dem Absenden stimmst du der Verarbeitung deiner E-Mail-Adresse für den Versand des Bearbeitungs-Links zu. Details unter [/datenschutz](https://machsleicht.de/datenschutz#11)."
+- **Ort:** `party-worker.js`, Email-Box-Bereich des Erstellen-Flows (FIX11-Ebene)
+- **Aufwand:** 10 Min Code + Cloudflare-Deploy
+- **Blocker:** Cloudflare-Deploy (Laptop-Session)
 
-**SEO-Content:**
-| Seite | Keyword | Volumen |
-|-------|---------|---------|
-| `/fotowand` | "Fotowand Kindergeburtstag" | 880/Monat |
-| `/fotowand/piraten` | "Piraten Fotowand" | 140/Monat |
-| `/fotowand/dino` | "Dino Fotowand" | 110/Monat |
+**B) Datenschutzerklärung auf /datenschutz erweitern** — ✅ erledigt 21.04.2026
+- Neuer §10 Partyseite (Cloudflare KV, 90-Tage-Retention weich, manuelle Löschung per Mail)
+- Neuer §11 E-Mail-Versand (Resend als AV, EU-US DPF, kein Werbe-Mail ohne DOI)
+- Nachfolgende §§ um +2 umnummeriert, Stand auf April 2026
+- Validator 7/7 grün
 
-**Monetarisierung:**
-- Kostenlos (Lead-Magnet)
-- Affiliate auf Requisiten-Sets (Foto-Booth-Props, Kreppband, etc.)
-- **Viraler Werbe-Effekt:** jeder Instagram-Post mit Backdrop = organisches Branding
+**C) Worker-Cron für Auto-Delete der Party-Daten 90 Tage nach Partydatum** — offen
+- Cloudflare Cron Trigger: täglich 03:00 UTC
+- Scan KV-Namespace `PARTY_KV`, lösche Einträge wo `partyDate + 90d < today`
+- Nach Deployment: §10 Datenschutzerklärung von „spätestens 90 Tage" zu „automatisiert 90 Tage" präzisieren
+- **Ort:** `party-worker.js` + wrangler.toml (Cron-Trigger)
+- **Aufwand:** 1 Std Code + Test + Cloudflare-Deploy
 
-**Revenue-Projektion:**
-- Direkt: ~20€/Monat Affiliate-Requisiten
-- Indirekt: Brand-Awareness-Boost, schwer messbar, aber kostenlos
+**Aufwand total (nur A+C, da B erledigt):**
+- A: 10 Min Code + Deploy
+- C: 1 Std Code + Deploy + Datenschutz-Präzisierung (5 Min)
+- **Total: ~1,5 Std Laptop-Session** — idealerweise gebündelt mit P1-16
 
-**Aufwand:** 6 Stunden
-- 4h: Design 8 Backdrops (Figma/Canva, 1 Std pro Motto)
-- 1h: Hub-Seite + Print-Anleitung
-- 1h: PDF-Export + Upload
-
-**Zeitplan:** **Parallel zu P1-8 Motto-Elite-Upgrades**, gleiche Assets verwenden
-
-**Abhängigkeiten:** Keine (kann komplett isoliert gebaut werden)
+**Blocker:** Beide offenen Sub-Tasks brauchen Cloudflare-Deploy → **nicht mobil machbar**. Bundeln mit P1-16.
 
 **Erfolgs-Kriterien:**
-- 8 Backdrops zum Download verfügbar
-- Downloads tracken via Plausible-Event
-- Mindestens 100 Downloads/Monat nach 3 Monaten
+- A: Datenschutz-Hinweis sichtbar im Email-Box-Bereich, mit Link zu `/datenschutz#11`
+- C: Cron läuft täglich, Test-Eintrag mit Partydatum in Vergangenheit wird innerhalb 24h gelöscht
+- Datenschutzerklärung-§10 auf „automatisiert" aktualisiert nach C-Deploy
+
+**Referenz:**
+- SESSION-NOTES.md 21.04.2026 Teil 1 (DSGVO-Decision)
+- Commit vom 21.04.2026 Teil 4 (datenschutz.html-Erweiterung, Sub-Task B)
+
 
 ---
 
-#### P3-10: Urkunden/Diplome nach der Party
+#### P1-60: Reminder-System Partyseite (Pre-Party + Year-Later)  `[KERN]`
 
-**Motivation:** Kinder lieben Urkunden. "Junior-Detektiv-Urkunde", "Piraten-Diplom", "Dino-Forscher-Zertifikat". Wir haben bereits Design-Assets aus den Elite-Motto-Seiten. **Einfaches Tool: Name eingeben + Motto wählen + Datum → personalisierte PDF-Urkunde.** Dient als Mitgebsel oder Nachparty-Geste. Kostenlos als Lead-Magnet.
+**Motivation:** Mit der Newsletter-Opt-In-Checkbox vom 20.05.2026 (Cockpit + Worker-DOI) versprechen wir auf der DOI-Erfolgsseite zwei Reminder, die noch nicht gebaut sind:
+1. **Pre-Party-Reminder:** "7 Tage vor der Party" — Tipps + Countdown. Versprechen aus DOI-Confirm-Text.
+2. **Year-Later-Reminder:** "Mattis wird bald 7 — Zeit für die nächste Planung" — Retention-Loop 11 Monate nach Party-Datum.
 
-**Was gebaut wird:**
-- `/urkunde` — Hub mit 8 Motto-Urkunden-Vorlagen
-- `/urkunde/erstellen` — Formular: Name, Datum, Motto, optional zusätzlicher Text
-- Output: personalisierte PDF mit hochwertigem Design + dezentes Branding
+Versprechen einlösen + Retention-Hebel aktivieren.
 
-**Tech-Checkliste:**
-- [ ] 8 Urkunden-Templates (jsPDF oder als HTML-to-PDF)
-- [ ] Formular-Flow
-- [ ] PDF-Generation mit Namen-Einsetzung
-- [ ] Hub-Seite mit Vorschau aller 8 Mottos
-- [ ] FAQPage-Schema
+**Sub-Tasks:**
 
-**SEO-Content:**
-| Seite | Keyword | Volumen |
-|-------|---------|---------|
-| `/urkunde` | "Urkunde für Kinder" | 480/Monat |
-| `/urkunde/detektiv` | "Detektiv-Urkunde" | 90/Monat |
-| `/urkunde/pirat` | "Piraten-Urkunde" | 210/Monat |
+**A) Pre-Party-Reminder (2–3h)**
+- Cloudflare Cron Trigger in `wrangler.toml`: täglich 04:00 UTC
+- Worker scant `party:*`-Keys, filtert nach `party.email && party.date - 7d == today`
+- Resend-Mail mit Motto-Emoji, Countdown ("noch 7 Tage!"), 2–3 Last-Minute-Tipps, Edit-Link für letzte Anpassungen
+- Idempotenz: KV-Marker `reminded:pre:<id>` schreiben, damit nicht doppelt
+- Opt-Out-Link in jeder Mail (delete `party.email` → keine weiteren Reminder)
 
-**Monetarisierung:**
-- Kostenlos
-- **Indirekter Wert:** Lead-Magnet für E-Mail-Liste (Nutzer muss E-Mail angeben für PDF-Download) — zählt zu P3-5
-- Premium-Upsell (später): 2,99€ für 5 verschiedene Motto-Urkunden eines Kindes als Sammel-Pack
+**B) Year-Later-Reminder (3–5h)**
+- **Datenproblem:** `calcTTL(party.date)` löscht aktuell die Partydaten ~30 Tage nach Party-Tag (siehe P1-17/C). Für 11-Monats-Reminder brauchen wir Long-Lived-Daten.
+- **Lösung:** Separater Long-Lived-Key `recurring:<emailHash>` mit Minimal-Inhalt (E-Mail, childName, party.date, motto). Wird beim Create geschrieben, wenn `newsletterOptIn === true`. TTL 2 Jahre. Kein Foto, keine Adresse, keine Gäste — Datenminimierung.
+- Cron-Trigger (gleicher wie A) scant zusätzlich `recurring:*`-Keys, filtert nach `party.date + 11 Monate == today`
+- Mail-Template: "Mattis wird bald 7 — willst du dieses Jahr wieder mit machsleicht planen?" + CTA zum Planer mit `?motto=…&alter=…` Pre-Fill
+- Idempotenz: `reminded:year:<emailHash>` Marker
+- Opt-Out: delete `recurring:<emailHash>`
+- Datenschutzerklärung §10/§11 ergänzen: Long-Lived-Reminder-Daten 24 Monate, Löschung auf Anfrage
 
-**Revenue-Projektion:**
-- Direkt: 0€
-- Indirekt via E-Mail-Liste: wenn 20% der Nutzer Mail hinterlassen → ~30 neue Kontakte/Monat
-- Nach E-Mail-Liste-Aufbau: 1–3€/Kontakt/Jahr
+**Sub-Task C) Unsubscribe-Endpoint (gemeinsam für A+B, ~30 Min)**
+- `GET /api/unsubscribe?token=…` — Token = HMAC(email + secret)
+- Löscht `recurring:*`, setzt `party.email = ""`, löscht Resend-Audience-Kontakt
+- Confirmation-Page
 
-**Aufwand:** 6 Stunden
-- 3h: 8 Urkunden-Templates (Design)
-- 2h: Formular + PDF-Generation
-- 1h: Hub + Testing
+**Aufwand total:** 5–7h. Eigener kleiner Sprint, am besten gebündelt mit P1-17/C (gleicher Cron-Mechanismus).
 
-**Zeitplan:** **Nach P3-5 (E-Mail-Liste)** für maximalen Hebel
-
-**Abhängigkeiten:**
-- P3-5 (MailerLite) für Lead-Magnet-Funktion (optional)
+**Blocker:**
+- Cloudflare-Deploy nötig (Laptop-Session)
+- `RESEND_API_KEY` muss reminder-fähig sein (sollte schon sein)
 
 **Erfolgs-Kriterien:**
-- 8 Urkunden generierbar
-- PDF druckt sauber auf A4
-- Ab E-Mail-Integration: 20%+ Opt-In-Rate
-
----
-
-#### P3-11: Pinterest-Präsenz (Top-of-Funnel-Discovery)
-
-**Motivation:** Externes Audit (19.04.2026): Pinterest rankt bei „kindergeburtstag 6 jahre" und „kindergeburtstag ideen" auf **Google Position 1**. Ohne Pinterest-Präsenz verliert machsleicht einen signifikanten Teil der Top-of-Funnel-Discovery — Eltern klicken auf Pinterest-Pins statt auf organische Google-Ergebnisse, die auf machsleicht verlinken würden. Pinterest selbst ist der zweitwichtigste Distributionskanal in der Nische nach Google.
-
-**Warum nur P3, nicht höher:** Pinterest widerspricht dem **Passivitäts-Prinzip 0.3** aus STRATEGIE.md — laufender Aufwand von mind. 2–3 h/Woche für regelmäßiges Pinning. Solo-Betrieb kann sich das nicht ewig leisten. Deshalb: **Entscheidungs-Trigger in STRATEGIE.md 0.6** — erst bei 5.000+ Besuchern/Monat re-evaluieren, bis dahin in der Schwebe halten.
-
-**Was gebaut wird (wenn aktiviert):**
-- Business-Account `@machsleichtde` anlegen (gratis)
-- 5–8 thematische Boards: „Piraten-Geburtstag", „Detektiv-Party", „Dino-Ideen", „Einhorn-Magie", „Schatzsuche 6-8 Jahre", „Einladungen Kindergeburtstag", „Einkaufslisten & Mengen", „Motto-Deko unter 30€"
-- 3–5 Pins/Woche: jeder Pin verlinkt auf eine konkrete Motto-Seite oder Ratgeber-Seite
-- Pin-Design: portrait 1000×1500 px, Titel + machsleicht.de-Watermark (Canva-Template einmal erstellen)
-- **Idle-Automation:** Tailwind oder Buffer für Scheduled-Pinning, 1 h/Woche batched
-
-**Tech-Checkliste:**
-- [ ] Pinterest-Business-Account + DNS-Verifikation `machsleicht.de`
-- [ ] Canva-Template für Pin-Design (1 Std. einmalig)
-- [ ] 20 initiale Pins als Starter-Batch (ca. 4 Std.)
-- [ ] Plausible-UTM-Tags für alle Pin-Links (`utm_source=pinterest&utm_medium=social`)
-- [ ] Monitoring: monatlich Pinterest-Analytics + Plausible-Referral-Report
-
-**Monetarisierung:**
-- Reiner Traffic-Hebel, keine direkte Monetarisierung
-- Pinterest-Traffic konvertiert laut Benchmarks bei Lifestyle-Nischen **niedriger als Google** (längerer Discovery-Modus), aber skaliert mit kumulativen Pins (ein 6-Monate-alter Pin kann stabil Traffic bringen)
-
-**Revenue-Projektion:**
-- Nicht direkt revenue-attribuierbar, nur als Traffic-Multiplikator
-- Bei 50 Pins nach 6 Monaten und typischer Konversion: +200–500 Besucher/Monat konstant
-
-**Aufwand:** 4 Std. Setup einmalig + **laufend 1–2 h/Woche** (Blocker für das Passivitäts-Prinzip)
-
-**Zeitplan:** **NICHT starten, bis STRATEGIE 0.6 Trigger erreicht ist** (5.000+ Besucher/Monat). Stattdessen Energie auf P1-12 bis P1-15 (skalierbare Produkt-Hebel).
-
-**Abhängigkeiten:** Keine technischen. Entscheidungs-Abhängigkeit: GSC-Daten (P0-1) aus 3–6 Monaten nötig, um zu messen, ob Google-SEO allein ausreicht oder Pinterest wirklich nötig ist.
-
-**Erfolgs-Kriterien (wenn aktiviert):**
-- 50+ Pins nach 3 Monaten
-- 200+ monatliche Besucher via Pinterest nach 6 Monaten (Plausible)
-- Klickrate auf Pins ≥2 %
+- A: Test-Party mit Datum +8d → Mail kommt am +1d-Lauf, `reminded:pre:` Marker da
+- B: Test-Party mit Datum -334d → Mail kommt, CTA-Link führt zum Planer mit Pre-Fill
+- Opt-Out aus Mail → kein Reminder mehr, `recurring:*` Key weg
 
 **Risiko:**
-- **Hauptsächliches Risiko: Zeit-Senke.** Wenn nach 3 Monaten unter 100 Besucher/Monat aus Pinterest kommen → einstellen. Kein Sunk-Cost-Fallback.
-- Pinterest-Algorithmus bevorzugt regelmäßiges Pinning; einmaliger Batch bringt wenig.
+- Spam-Empfinden bei Year-Later (11 Monate später, User hat machsleicht vergessen) — wording wichtig, klarer Opt-Out
+- Datenschutz: Long-Lived-Daten brauchen sauberen §10-Eintrag und 24-Monats-Hardlimit
+
+**Referenz:**
+- Commit `accbbe1` (20.05.2026): Newsletter-Checkbox im Cockpit-Form, DOI-Versprechen ausgelöst
+- party-worker.js Zeile 397+ (existierender DOI-Confirm-Endpoint)
+
 
 ---
 
-### P4 — ZUKUNFT
+## 🪮 PLANER-FRISUR-SPRINT (P3-12 bis P3-21, neu 11.05.2026)
 
-#### P4-1: PDF-Partybücher pro Motto
-- Forscher-/Abenteuer-Partybuch als PDF-Download (20–30 Seiten).
-- VK 2,99€ via Lemon Squeezy. ~95% Marge.
-- Voraussetzung: Traffic muss da sein.
+**Strategischer Rahmen:** Sprint, der den Planer vom Generator zum **intelligenten Produkt** umbaut. Ziel: bestes Kindergeburtstags-Tool am deutschen Markt. Konkurrenz-Recherche 11.05.2026 ergeben: **es gibt aktuell keinen interaktiven Planer in den Top-10 Google-Ergebnissen** — alles Blogs, Ratgeber, Affiliate-Listen. Die einzige Tool-Konkurrenz (Eysoldt-Partyplaner-App, Actionbound) ist generisch oder Schatzsuche-only. machsleicht spielt bereits jenseits dieser Liga, hat aber Lücken im sichtbaren Mitdenken und in der Begleit-Dimension.
 
-#### P4-2: Premium-Features
-- **KI-Spielleiter-Anrufe** via ElevenLabs (~1€ Cost, VK 4,99€). Stimmtest pending.
-- **Einladungs-Audio** (~3ct, VK im Bundle).
-- **Gute-Nacht-Geschichte** (Claude + ElevenLabs, ~30ct, VK 2,99€).
-- **Eltern-Copilot** (Claude, ~50ct/Session, VK 3,99€).
-- **Danke-Nachrichten** (Claude, ~0ct, VK 1,99€).
-- **Bundle:** 9,99€ für alle Features.
-- **Gestrichen:** Foto-Erzähler (DSGVO), Geburtstagssong (DE-Musik-AI zu schwach).
+**Architektur-Prinzip „intelligent ohne API":** Das Tool soll wie KI wirken, aber bleibt regelbasiert. Konkret in vier Schichten:
+1. **Reaktive Outputs mit Diff-Anzeige** — sichtbar machen, was sich durch Eingaben geändert hat
+2. **Constraint-Solver** — 15–20 Regeln über alle Eingaben gleichzeitig, erkennt und löst Konflikte (Alter × Gäste × Ort × Erwachsene × Dauer)
+3. **Kuratierte Inhalts-Bibliothek** — pro Motto × Alter × Setting Spielanleitungen, Story-Anker, SOS-Mini-Programme, Plan-B-Varianten, Eltern-Briefings handgeschrieben (kein LLM-Halluzinations-Risiko, kein Wettbewerber kann das nachbauen ohne identischen Redaktions-Aufwand)
+4. **Templated Generators** — Slot-Filling mit Varianten-Bibliothek (5 Slots × 3 Optionen = 243 Variationen pro Motto, deterministisch, ohne API)
 
----
+**Einzige API-Ausnahme:** P3-19 (KI-Rätsel-Gedichte für Schatzsuche-Stationen) — Haiku-Call mit Cache auf Input-Hash, geschätzt ~6–9€/Monat bei 1000 Plänen, Premium-Vehikel-fähig.
 
-## Offene Fragen
+**Reihenfolge:** Tier 0 (P3-12, Bugs) → Cockpit + Constraint-Solver-Fundament (P3-13, P3-14) → strukturelle Hebel (P3-15, P3-16, P3-17) → Wow-Anker (P3-18, P3-19) → große Würfe danach (P3-20 RSVP-Bridge, P3-21 Live-Navigator).
 
-- Reihenfolge nach Piraten-Elite: Einhorn oder Paw Patrol (Lizenz-Motto mit höchstem Suchvolumen)?
-- Skalierung Motto-Seiten: manuell oder Content-Generator mit Claude API?
-- Free vs. Premium-Mix: welche Features bleiben kostenlos als Lead-Magnet?
-- Cloudflare Worker Deploy: manuell im Dashboard oder wrangler CLI?
+**Aufwand total: ~7–9 Arbeitstage = 6–8 Wochen bei 6–8h/Woche.** RSVP-Bridge + Live-Navigator zusätzlich 7–12 Tage in Tier 2.
+
+**Beziehung zu P2-23:** P2-23 („Planer-Output auf Elite-Niveau") ist der **strategische Anker**, P3-13 bis P3-19 sind die **operative Umsetzung**. Wenn dieser Sprint durch ist, ist P2-23 erfüllt und P2-24 (eingewebte CTAs) freigeschaltet.
 
 ---
 
-## Content-Referenz: Elite-Motto×Altersgruppe-Template
+### P3-12: Planer-Tier-0 — Sofort-Fixes
 
-Jede der Ziel-60-Seiten (20 Mottos × 3 Altersgruppen) braucht laut ELITE-SEITEN-TEMPLATE.md:
+**Drei kleine Bugs/Inkonsistenzen, die heute Vertrauen kosten. < 2h gesamt.**
 
-1. **Altersgruppen-Intro** — 3 Versionen (3-5, 6-8, 9-12), wiederverwendbar
-2. **3 Party-Varianten** (Minimal / Standard / Wow) — Zeitplan mit Uhrzeiten, 5 Spiele pro Gruppe, Essen mit Mengen, Deko mit Preisen, Mitgebsel, Gesamtkosten
-3. **Kuchen-Rezept**
-4. **Eltern-Tipps** (Allergien, Plan B, Partyseite, Helfer-Regel)
-5. **FAQ** (4 Fragen, FAQPage-Schema)
-6. **CTAs** nach jeder Sektion
-7. **WhatsApp-Share**
-8. **Altersgruppen-Navigation**
+- **Lizenz-Tab im Wizard entfernen.** `_src/kindergeburtstag.jsx` Z. 1241–1265: Tab-Schalter „🎨 Klassisch / ⭐ Charaktere" zeigt bei Klick auf Charaktere leere Liste mit Fehlermeldung („Für X Jahre keine Lizenz-Mottos verfügbar"). LICENSE-Array ist seit 30.04. leer (`_src/kindergeburtstag-data.js` Z. 1765–1768), aber UI-Tab + Filter-Logik nicht zurückgebaut. Restprodukt aus dem Cut. → Tab-Schalter raus, `mottoTab`-State raus, Filter-Logik raus, nur `GENERIC` direkt rendern.
+- **„Sieben Mottos" → „Neun Mottos" im SEO-Body.** `kindergeburtstag.html` Z. 231: „Sieben Mottos für Kinder von 3 bis 12 Jahren". Widerspricht ItemList-Schema (9 Items) und 7-Motto-Grid im SEO-Body. War Teil des Round-2-Cuts vom 30.04., wurde aber übersehen. → Korrigieren auf 9 Mottos (7 Voll + 2 Schatzsuche).
+- **Performance-Baseline messen.** `js/kindergeburtstag.js` ist 260 KB unminified + React-UMD extern. Vor SEO-Push Lighthouse + CWV messen, dokumentieren. Wenn LCP > 2,5s mobile → P2-5 hochstufen. Wenn ok → notieren, nicht handeln.
 
-Druckvorlagen pro Motto (P3-4): Ausweis, Urkunde, Quiz, Masken.
-
-Affiliate-Kategorien pro Motto: Figuren-Set, Masken/Verkleidung, Partygeschirr, Stempel, Werkzeug. **Kostüm ist das margenträchtigste Affiliate-Produkt** (~1,20€ pro Klick vs. ~0,10€ bei Figuren).
+**Aufwand:** 2 Std.
+**Trigger:** sofort, Session-Start des Sprints.
+**Wirkung:** entfernt Glaubwürdigkeits-Lecks vor allen weiteren Builds.
 
 ---
 
-## Versionshistorie
+### P3-13: Cockpit-Header im Plan-View
 
-- **19.04.2026 (Teil 2):** Prio-Tabelle komplett neu sortiert als Ausführungs-Roadmap mit Sequenz-Nummern 1–36. Prio-Hochstufungen: P1-5→P0-5 (Token-Deadline), P2-1→P1 (Hero-Funnel), P2-19→P1 (HTML-Bug), P2-3→P1 (Ergebnis-Vorschauen). Prio-Runterstufungen: P1-9→P2 (Dependency auf P2-10), P1-11→P2 (evergreen ohne Deadline). Neue Ausführungs-Cluster: „Jetzt (1–2 Wochen)", „Unmittelbar danach", „Mittelfristig (Mai–Juli)", „Vor dem Herbst-Peak", „Später (Q4 + Q1 2027)".
-- **19.04.2026:** 2 externe Audits durchgearbeitet (Grinch-Mode SEO-Audit + Elite-Produktaudit). **4 neue PBIs** aufgenommen: P1-15 (Email-Capture am Planer-Output), P2-20 (Datenübergabe Planer→Tools), P2-21 (Seiten-Rollen-Matrix), P3-11 (Pinterest, geparkt). **P2-3 und P3-5 erweitert** um Audit-Erkenntnisse. Strategie-Notizen in STRATEGIE.md 0.5 (Brand-Kollisions-Risiko machsleicht vs. machdichleicht) und 0.6 (Pinterest-Entscheidungs-Trigger) dokumentiert. Audit-Befunde zu OG-Tags (338/356 vorhanden), Sitemap (existiert) und Motto-Zahlen-Inkonsistenz (14 vs 17) als **widerlegt** oder nicht mehr aktuell markiert — keine Aktion nötig.
-- **16.04.2026 (Abend, Zusatz):** 10 neue PBIs aus STRATEGIE.md Ideenbibliothek aufgenommen (P1-12, P1-13, P1-14, P2-16, P2-17, P2-18, P3-7, P3-8, P3-9, P3-10). Alle mit ausführlichen Beschreibungen, Content-Clustern, Revenue-Projektionen und Checklisten. STRATEGIE.md um 6-12-Monats-Roadmap (Abschnitt 8a, 8b, 8c) erweitert.
-- **16.04.2026:** Backlog komplett neu strukturiert. Status-Matrix aus Repo-Check gegen Live-Stand abgeleitet. P1-1 und P1-2 gestrichen (Architektur-Memory #17). Neue PBIs aus Monetarisierungs-Strategie aufgenommen (P1-10, P1-11, P2-13 bis P2-15, P3-5, P3-6).
-- **15.04.2026:** FUNNEL-AXIOM als P2-1 fixiert. Audit-Findings aufgenommen (P1-6, P1-7, P2-8, P2-9, P2-10, P2-11).
-- **11.04.2026:** Ursprünglich erstellt aus technischem + strategischem Audit.
+> **Status: ✅ DONE (2026-05-19)** — Cockpit-Header (EliteCockpitHeader: ageInsight + signatureRitual). Commit `10fa964` / draft. Browser-Smoke-Test offen.
+
+**Mentaler Reframe: aus „hier ist dein Plan" wird „hier ist dein Stand".**
+
+Nach Plan-Generierung erscheint oben im Plan-View eine kompakte Cockpit-Box statt dem aktuellen Motto-Badge:
+
+```
+🚒 Dein Feuerwehr-Geburtstag steht
+Für: 5 Jahre · Kinder: 8 · Ort: Zuhause · Dauer: 2,5 Std · Aufwand: mittel
+
+Fertig:
+✓ Ablauf  ✓ 3 Spiele  ✓ Einkaufsliste  ✓ Kosten pro Kind
+
+Nächste Schritte:
+[Einladung erstellen]  [Schatzsuche hinzufügen]  [Partyseite anlegen]
+```
+
+**State-Anzeige + Action-Buttons in einem Block.** Die Sticky-Buttons unten bleiben für Mobile-Scroll, der Header oben gibt Orientierung.
+
+**Datenmodell:**
+```js
+function getPlanState(plan) {
+  return {
+    completed: ['ablauf', 'spiele', 'einkauf', 'kosten'],
+    optional: { schatzsuche: szActive, einladung: inviteSent > 0, partyseite: false },
+    nextActions: computeNextActions(plan) // priorisiert nach Funnel-Position
+  };
+}
+```
+
+**Aufwand:** 1 Tag (8 Std). Komponente, State-Funktion, Plan-View Integration ab `motto.cat === "license"` Block (Z. 1015).
+**Wirkung:** Vereinheitlicht alle anderen Features in einem mentalen Rahmen. Voraussetzung für sichtbare Diff-Anzeigen späterer PBIs.
+
+---
+
+### P3-14: Machbarkeits-Box mit Klartext + Constraint-Solver-Fundament
+
+> **Status: ✅ DONE (2026-05-19)** — Constraint-Solver (EliteGamesFilter: Aufwand/Lautstärke + auto indoor/outdoor). Commit `10fa964` / draft. Browser-Smoke-Test offen.
+
+**Aus deskriptivem `calcScore()` wird handlungsleitende `analyzeFeasibility()`.**
+
+Heute existiert ein Mini-Solver: `calcScore()` (Z. 891–923) berechnet 7 Dimensionen + missing-Items. Beschreibend, ändert den Plan nicht. **Refactoring** zu einer Klartext-Ausgabe, die der User versteht, plus echte handlungsleitende Logik.
+
+**Neue Schwellenwerte (Auswahl, ehrlich):**
+| Bedingung | Stufe | Klartext |
+|---|---|---|
+| 3–5 J + >8 Kinder | anspruchsvoll | „Das wird etwas lebendig. Kürze Spielblöcke auf 10 Min." |
+| Wohnung + >10 Kinder | kritisch | „Eng. Wir streichen parallele Stationen." |
+| 1 Erwachsener + >8 Kinder | kritisch | „Allein mit 9 Kindern ist nicht ideal — können wir helfen, einen Helfer zu finden?" |
+| Dauer >3 Std + <6 Jahre | zu lang | „Für Kinder unter 6 ist 3+ Std zu viel. Schlage 2,5 Std vor." |
+| wild + Wohnung | anspruchsvoll | „Frühe Bewegung, dann Pause." |
+| wenig Vorbereitung + Wow-Modus | runter | „Wir reduzieren auf Standard." |
+
+**Box im Plan-View:**
+```
+Machbarkeit: anspruchsvoll
+9 Kinder, 5 Jahre, Wohnung mit nur 1 Erwachsenem wird laut.
+Wir haben angepasst:
+✓ keine Wasserstation
+✓ keine parallelen Gruppen
+✓ 2 Spiele ohne Material
+✓ ruhige Phase nach 45 Minuten
+```
+
+**Architektur-Ziel:** `analyzeFeasibility()` ist die zentrale Schicht, durch die später **alle** Eingaben gehen (Wizard heute, RSVP später in P3-20, Live-Navigator in P3-21). Datenstruktur muss eingaben-quellen-agnostisch sein.
+
+**Aufwand:** 1 Tag (8 Std). 15–20 Regeln schreiben, Klartext-Texte formulieren, Diff-Anzeige bauen.
+**Wirkung:** Erste sichtbare „Intelligenz". Strukturelles Fundament für RSVP-Bridge.
+
+---
+
+### P3-15: Erwachsenen-Zahl + Geburtstags-Datum als neue Eingaben
+
+**Zwei kleine Eingaben mit großem Hebel — beide speisen den Constraint-Solver aus P3-14.**
+
+**Datum:**
+- Nach Schritt 3 (Gästezahl) ein neuer Schritt 4: „Wann ist der Geburtstag?" (Datepicker)
+- Verwendung: Countdown im Cockpit-Header („noch 12 Tage"), automatisches Hochsetzen in Emergency-Mode bei <48h, Voraussetzung für Vorbereitungskarte (P3-16) und für Save-the-Date-Reminder.
+- localStorage-Persistenz wie alle anderen Felder.
+
+**Erwachsene:**
+- Chip-Auswahl im Wizard: `[1] [2] [3+]`
+- Verwendung: Constraint-Regel (1 Erw + viele Kinder = kritisch), und später Trigger für „Rollenplan für Helfer" (P3-Backlog, nicht im Sprint).
+
+**Aufwand:** ½ Tag (4 Std). Datepicker + Chips + State-Felder + Constraint-Integration.
+**Wirkung:** Datum ist Voraussetzung für Vorbereitungskarte. Erwachsene schärfen Machbarkeits-Box.
+
+---
+
+### P3-16: Vorbereitungskarte (datums-getriebene Wochenplan-Ansicht)
+
+> **Status: ✅ DONE (2026-05-19)** — Vorbereitungskarte (VorbereitungsKarte: 6 collapsible Sektionen). Commit `10fa964` / draft. Browser-Smoke-Test offen.
+
+**Strukturell der wichtigste neue Ergebnis-Block. Macht aus Snapshot → Begleiter.**
+
+Sobald Datum eingegeben (P3-15), erscheint im Plan-View ein neuer Abschnitt unter dem Zeitplan:
+
+```
+📋 Was bis zum 24. Mai zu tun ist
+
+7 Tage vorher (Sa 17.5.)
+□ Einladungen verschicken
+□ Gästezahl grob klar
+
+2 Tage vorher (Do 22.5.)
+□ Einkauf erledigen
+□ Feuerwehr-Ausweise drucken
+□ Schatzsuche-Hinweise vorbereiten
+
+Am Partytag morgens
+□ Spielmaterial bereitlegen
+□ Kuchen vorbereiten
+□ Stationen kurz testen
+
+30 Minuten vorher
+□ Erste Aktivität sichtbar bereitlegen
+□ Getränke rausstellen
+□ Handy weglegen, Plan öffnen
+```
+
+**Kuratiert pro Motto:** motto-spezifische Items („Feuerwehr-Ausweise" statt generisch „Bastel-Material"). Pro Motto ein zusätzliches Datenset im Daten-File (`_src/kindergeburtstag-data.js`).
+
+**Checkbox-State** in localStorage. Wenn ein Item abgehakt, im Folge-Reload sichtbar — das ist der **Retention-Hebel**: Eltern kommen mehrfach zurück, jedes Mal sind weniger Items übrig.
+
+**Spätere Erweiterung (nicht im Sprint, P3-Backlog):** Email-Reminder am jeweiligen Tag, „heute steht aus deiner Vorbereitung an…". Voraussetzung: Email-Capture aus P1-15.
+
+**Aufwand:** 1 Tag (8 Std). Komponente + Datumslogik + Pro-Motto-Inhalts-Stubs (Feuerwehr ausgebaut, andere Mottos generisch zunächst, ausbau parallel zu P1-8).
+**Wirkung:** Tool wird mehrtägiges Werkzeug. **Kein Konkurrent hat das.**
+
+---
+
+### P3-17: Drei-Gruppen-Einkaufsliste + „Was hab ich zuhause"-Inventar
+
+> **Status: ✅ DONE (2026-05-19)** — Drei-Gruppen-Einkaufsliste (EliteShoppingList: pflicht/sinnvoll/habIchVielleicht). Commit `10fa964` / draft. Browser-Smoke-Test offen.
+
+**Einkaufsliste neu strukturieren — von einer Liste zu drei Gruppen plus Inventar-Check.**
+
+**Heute:** Eine Liste mit „Hab ich schon"-Checkbox, kaufen/leihen/diy-Tags.
+
+**Neu:** Vier Sektionen, in dieser Reihenfolge:
+
+```
+🛒 Einkaufsliste — Feuerwehr 5 Jahre
+
+Muss kaufen
+□ Kuchen oder Muffins
+□ Getränke
+□ kleiner Preis / Schatz
+
+Gut, wenn ihr habt
+□ Eimer
+□ Softbälle  
+□ rote Luftballons
+
+Kannst du weglassen
+✕ Komplette Kostüme für alle (Helm-Bemalen reicht!)
+✕ teure Deko-Sets
+
+────────
+
+Schon zuhause?
+[Papier] [Stifte] [Becher] [Eimer] [Klebeband] [Softbälle] [Decke]
+→ klick was du hast, wandert in „bereits da" und verschwindet aus „kaufen"
+```
+
+**Markenkern-Mechanik:** „Wir bauen deinen Feuerwehr-Geburtstag aus dem, was du schon hast." Das ist machsleicht pur — Branding als Mechanik, nicht als Slogan.
+
+**Datenmodell:** Pro Item neue Felder `category: "must" | "nice" | "skip"`, `commonlyAtHome: bool`. Bestehende `owned`-Logik wandert in den Inventar-Check oben.
+
+**Aufwand:** 1–2 Tage. Daten-Migration pro Motto (~30 Min/Motto) + UI-Aufteilung. Feuerwehr und Piraten Vollausbau, andere Mottos initial flach kategorisieren.
+**Wirkung:** Stress-Reduzierer, Anti-Pinterest-Haltung sichtbar. Erhöht Share-Rate weil Liste **kürzer wirkt** als sie ist.
+
+---
+
+### P3-18: SOS-Button im Plan-View
+
+> **Status: ✅ DONE (2026-05-19)** — SOS-Button (SOSButton: Floating FAB + Bottom-Sheet mit 8 Szenarien). Commit `10fa964` / draft. Browser-Smoke-Test offen.
+
+**Sichtbarer, jederzeit erreichbarer Notfall-Knopf während der Party.**
+
+Heute existiert nur `emergencyMode` als Vorab-Wizard-Knopf für 48h-Geburtstage. Was fehlt: **SOS während der Party**.
+
+**UI:** Ein roter Sticky-Knopf (vielleicht im Cockpit-Header, vielleicht eigenständig sticky-bottom), öffnet ein Modal:
+
+```
+🆘 SOS während der Party
+
+Was ist los?
+○ Kinder werden zu wild
+○ Spiel ist zu schnell vorbei
+○ Wir liegen hinter der Zeit
+○ Regen setzt ein
+○ Ich brauche 15 Min Pause
+```
+
+**Inhalte (kuratiert, pro Motto):** Pro Szenario ein 6–10-Zeilen-Mini-Programm. Beispiel Feuerwehr / „Kinder zu wild":
+
+```
+Feuerwehr-Zentrale (6 Minuten, kein Material)
+Alle Kinder setzen sich in den Kreis. Du bist Einsatzleitung.
+Jedes Kind bekommt einen Funknamen ("Hydrant 1", "Schlauch 2"...).
+Du gibst 4 ruhige Funk-Kommandos:
+1. "Alarmcheck: alle einmal Sirene"
+2. "Wasser-Marsch: alle klatschen"  
+3. "Hydrant-Standby: einfrieren"
+4. "Rettungseinsatz: zeigt auf ein Kuscheltier"
+Dauer: 6 Min. Danach: direkt zur Kuchenpause.
+```
+
+**Datenmodell:** `_src/kindergeburtstag-data.js` bekommt pro Motto ein `sos`-Objekt mit 4–5 Szenarien.
+
+**Aufwand:** 1 Tag UI + 0,5–1 Tag Inhalte schreiben (Feuerwehr ausgebaut, andere Mottos generisch). Inhalts-Ausbau pro Motto parallel zu P1-8.
+**Wirkung:** **Einziges Feature, das während der Party hilft.** Kein Konkurrent hat das. Premium-Validierungs-Vehikel (Basis kostenlos, „Profi-SOS" mit 4 weiteren Szenarien für 2.99€ via Lemon Squeezy).
+
+---
+
+### P3-19: KI-Rätsel-Gedichte für Schatzsuche-Stationen
+
+**Einzige API-Ausnahme im Sprint. Veredelt das stärkste existierende Feature.**
+
+Heute: Schatzsuche-Stationen haben handgeschriebene Versteck-Texte ("auf dem Tisch"). Funktional, aber nicht Wow.
+
+Neu: Bei aktiver Schatzsuche **gereimte Rätsel** für jede Station, individuell für Motto + Versteck. Beispiel:
+
+```
+Station 3 — Versteck: Küche
+"Wo schon mal die Stulle wartete,
+suche dort wo die Pizza startete.
+Im Kasten kühl und hell und weiß,
+liegt der Hinweis auf das nächste Reis."
+```
+
+**Mechanik:**
+- Haiku-Call mit Prompt: `"Schreibe ein 4-zeiliges gereimtes Versteck-Rätsel für Kinder ${age} Jahre, Motto ${motto}, Versteck-Ort ${location}. Spielerisch, leicht zu lösen."`
+- **Cache auf MD5-Hash der Inputs** (Motto + Alter + Versteck). Reim wird einmal generiert, dann ewig wiederverwendet.
+- Cache-Hit-Rate erwartet >70%, weil Eltern oft gleiche Verstecke wählen (Sofa, Bett, Küche, Schrank).
+- Effektive Kosten: 6–9€/Monat bei 1000 Plänen/Monat. Bei 10k Plänen ~70€.
+
+**API-Key:** Anthropic API. Aufruf vom Worker (nicht Browser, sonst Key sichtbar). Worker hat `ANTHROPIC_API_KEY` als Secret.
+
+**Aufwand:** 1 Tag. Worker-Endpoint + Cache + UI-Integration in Schatzsuche-Block.
+**Wirkung:** Screenshot-fähiges Wow. Kinder erzählen davon. Eltern teilen die Reime. Plus: Premium-Vehikel — Basis-Reime kostenlos (max. 5/Plan), „Pro-Reim-Pack" für alle Stationen + Alternativen 2.99€.
+
+---
+
+### P3-20: RSVP-Bridge — Partyseite-Zusagen verändern den Plan
+
+**Großer Wurf in Tier 2, nach P3-12 bis P3-19. Voraussetzung: Constraint-Solver aus P3-14 existiert.**
+
+**Heute:** Partyseite erfasst RSVP (Name, Status `ja`/`nein`/`vielleicht`, Allergien, Abholzeit, Abholperson) → Datenmodell sauber, KV-Storage pro Party-ID. Planer kennt diese Daten **nicht**. Wenn morgen 3 Kinder absagen, ändert sich nichts.
+
+**Ziel:** Plan reagiert sichtbar und sinnvoll auf RSVP-Änderungen.
+
+**Drei Architektur-Bausteine:**
+
+**1. Plan↔Partyseite-Verknüpfung.** Wenn aus Planer eine Partyseite erstellt wird (CTA gibt's), wird die Partyseiten-ID im Planer-State gespeichert (`localStorage.partyId`). Optional: „Plan per Mail speichern" für dauerhafte Verknüpfung über Browser-Wechsel hinweg.
+
+**2. Reload-Mechanismus.** Beim Öffnen des Planers mit verknüpfter Partyseite → ein Worker-Call holt aktuelle RSVP-Daten. Wenn Änderungen seit letzter Anzeige → **Banner oben**, nicht autoritäre Plan-Änderung:
+
+```
+📩 Update von der Partyseite
+
+Seit gestern: 1 Kind hat abgesagt (Tom), 1 Allergie (Mia — Nüsse)
+Aktueller Stand: 7 Zusagen, 1 Vielleicht
+
+[Plan anpassen]  [Wir haben's gesehen, ignorieren]
+```
+
+**3. Anpassungs-Logik (delta-fähig).** Wenn „Plan anpassen" geklickt:
+- **Snackmengen** neu berechnen (trivial, pure Funktion der Zahl)
+- **Mitgebsel** auf Anzahl + 1–2 Reserve setzen
+- **Kosten/Kind** recalc
+- **Allergie-Warnungen** in Snack-Liste persistent einblenden, ggf. Alternative vorschlagen
+- **Spiele** mit Mindest-Teilnehmer-Zahlen prüfen (z.B. Team-Spiel <4 Kinder = ersetzen)
+- **Abholzeit-Logik**: wenn Zeiten streuen → letzte Plan-Phase wird „Wer abgeholt wird, geht. Wer wartet, macht X."
+
+**Diff-Anzeige sichtbar:** „Snacks reduziert: 11 Muffins → 10. Mitgebsel: 7 + 1 Reserve. Nussfreie Snack-Warnung ergänzt. Schatzsuche bleibt bei 5 Stationen."
+
+**Wichtig — UX-Prinzip:** Plan-Änderung ist **vorschlagend**, nicht autoritär. Eltern haben evtl. schon eingekauft. Buttons „Übernehmen" / „Verwerfen" pro Anpassungs-Block.
+
+**Aufwand:**
+- MVP (Snacks/Mitgebsel/Kosten only + Allergie-Hinweis + Banner): **2–3 Tage**
+- Vollausbau (Spiel-Anpassungen + Abholzeit-Logik + delta-fähige Diff-Engine): **5–7 Tage**
+
+**Wirkung:** Macht aus Planer + Partyseite ein **Paar, das mehr ist als die Summe**. Strukturelles Verkaufsargument („andere haben RSVP, niemand passt den Plan an").
+**Voraussetzung:** P3-14 (Constraint-Solver) muss stehen. Sonst Doppelarbeit.
+
+---
+
+### P3-21: Live-Party-Navigator (Tier 2, großer Wurf)
+
+**Der Modus, in dem das Tool die Party am Tag selbst durch den Tag begleitet. Größter potenzieller Wow-Hebel, größter Aufwand.**
+
+Statt nur vorher zu planen — am Partytag öffnet der Gastgeber den Plan und tippt **„Party starten"**. Tool wechselt in einen Live-Modus:
+
+```
+Jetzt: 15:35 Einsatztraining
+Nächster Schritt in 25 Min: Kuchenpause
+
+[ Spiel starten ]  [ Überspringen ]  [ Dauert länger ]
+[ 🆘 Kinder werden wild ]  [ ⏸ Pause ]
+```
+
+Pro Phase Buttons, die den Plan dynamisch anpassen:
+- **Spiel starten** → Timer läuft, Anleitung wird groß angezeigt
+- **Überspringen** → nächste Phase, Restzeit umverteilen
+- **Dauert länger** → +10 Min, nachfolgende Phasen kürzen
+- **Kinder werden wild** → SOS-Programm aus P3-18 startet, Plan pausiert
+- **Pause** → Plan eingefroren, Timer aus
+
+**Zeitpuffer-Autopilot:** Plan hat versteckt 10–15 Min Puffer eingebaut. Bei Verzögerung wird Puffer angezapft, Eltern sehen „du liegst 8 Min hinter Plan — kein Stress, Puffer hilft". Bei Überschuss: „du bist 12 Min vor Plan — soll ich ein Funkspiel einschieben?"
+
+**Architektur:** State-Maschine. Phase, Zeitstempel, modifizierte Restzeit. Im localStorage gespeichert (Sicherheit gegen Browser-Crash am Geburtstag — kritisch).
+
+**Aufwand:** **5–7 Tage.** Größter Einzelposten im Backlog. State-Maschine, Live-UI, Timer-Logik, SOS-Integration, Recovery bei Browser-Crash.
+
+**Wirkung:** **Kategorienwechsel.** Aus „Planer" wird „Begleiter durch den Tag". Niemand auf dem deutschen Markt macht das. Premium-fähig (Live-Modus als 2.99€-Upgrade plausibel). WhatsApp-Story-Material am Tag des Geburtstags.
+
+**Voraussetzungen:** P3-13 (Cockpit), P3-14 (Constraint), P3-18 (SOS-Inhalte), P3-16 (Zeitplan-Strukturen). Alles aus dem Sprint vorher.
+
+**Risiko:** Wenn das am Geburtstag nicht funktioniert, ist es ein Drama. Muss extrem robust + offline-fähig sein. Nach Browser-Crash muss Plan-State recovern.
+
+---
+
+## 📦 Nicht-aufgenommene Vorschläge aus 11.05.2026 (mit Re-Evaluation-Trigger)
+
+Aus drei Sparring-Dokumenten (Claude-Lückenanalyse + zwei externe Ideen-Dokumente) kamen ~30 Vorschläge. Folgende bewusst **nicht** im Sprint, mit Begründung:
+
+| Vorschlag | Warum nicht jetzt | Re-Evaluation wenn |
+|---|---|---|
+| Stress-Chips als Wizard-Step | Bricht Funnel-Axiom 0.1 (Hero = einfach). Würde im Wizard zu viel Last erzeugen. | Als Plan-View-Layer („möchtest du anpassen?") in Tier 3 möglich. |
+| Audio-Geschichte mit Vorname (ElevenLabs) | Premium-Vehikel, gehört in Strategie-Stufe 4 (Audio nach Validierung 1+3). | Nach P3-19-Daten (zahlen Eltern für Mikro-Upsells?). |
+| Eltern-Stats („Was haben andere gemacht") | Braucht Traffic-Daten erst. Bei 0 Plänen pro Woche = leere Stats. | Bei ≥500 Plänen/Monat scharfe Stats möglich. |
+| Charakter-Brief am Vortag | Liebenswert, aber kleinerer Hebel als Sprint-Top-Features. | Q3 2026 als Mikro-Premium-Produkt. |
+| Eltern-Briefing für Helfer | Gut, aber kein Wow-Hebel. Folge-PBI nach P3-15 (Anzahl Erwachsene) sinnvoll. | Sprint Tier 3, parallel zu RSVP-Bridge. |
+| Streit-Vermeidungsmodus | Gehört in Stress-Chips als Sub-Option, nicht eigener Modus. | Mit Stress-Chips-Layer zusammen. |
+| Gruppendynamik-Chips | 6 weitere Chips zusätzlich zu Constraint-Chips = UI-Last. Konsolidieren. | Wenn Stress-Chips-Layer existiert, ggf. Sub-Option. |
+| Plan-B-Generator (3 Parallel-Pläne) | Architektur-Bruch (heute: ein Plan mit Switches). Refactor zu mehreren Karten 2–3 Tage. | Sprint Tier 3 möglich, wenn Live-Navigator zeigt dass Eltern Variation wollen. |
+| Material-Minimierer | Algorithmus-Polish, kein eigenständiges Feature. In bestehende Spiel-Auswahl integrierbar. | Mit P1-8 ausgebauten Spiel-Bibliotheken. |
+| Anti-Pinterest-Modus | **Existiert.** `shoppingMode="minimal"` + `effort="minimal"` + `quietMode`. Was fehlt: bessere Beschriftung. | 5-Min-Text-Änderung in Tier 0 möglich. |
+| Stress-Zuerst-Wizard | Bricht Funnel-Axiom hart. | Als A/B-Test denkbar wenn Traffic vorhanden, frühestens Q4. |
+| Fotoalbum, Danke-Generator, Wunschliste-Integration | Strategie 0.8 hat das adressiert. Wunschliste in P2-17, Rest gestrichen oder Q2/Q3. | Gemäß Strategie 0.8. |
+| Erzieher:innen-Modus | Strategie 0.8 hat „B2B" gestrichen. Aber B2C-Erzieher ist eigene Kategorie. | Nach 5.000€+/Monat Consumer-Revenue. |
+
+**Aufnahme-Logik:** Vorschlag muss entweder neues Mitdenken (sichtbar) liefern, neue Begleit-Dimension öffnen, oder echten Daten-Moat aufbauen. Reiner Feature-Klau wird nicht aufgenommen.
+
+---
+

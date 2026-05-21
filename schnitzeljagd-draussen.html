@@ -64,8 +64,19 @@ footer a:hover{text-decoration:underline}
 @media print{.cta,footer,.no-print,[style*="position: fixed"],[style*="sticky"]{display:none!important}body{background:#fff!important;color:#000!important;font-size:12pt}}
 @media(max-width:480px){main{padding:16px 12px 40px}}
   </style>
-  <script async src="https://plausible.io/js/pa-2v7iyzPVQbQ8l6ya79jtE.js"></script>
-  <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
+  <!-- Privacy-friendly analytics by Umami -->
+
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
+
+  <script>
+
+  // Shim: plausible()-Aufrufe zu umami.track() weiterleiten — Legacy-Code bleibt funktional
+
+  window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};
+
+  window.plausible.init=function(){};window.plausible.q=[];
+
+  </script>
   <link rel="stylesheet" href="/css/utility.css">
   <script type="application/ld+json">
 {

@@ -118,11 +118,12 @@
 .tip{background:#FFFAF5;border:1px solid #EDE6DE;border-left:4px solid #E8873D;border-radius:8px;padding:16px 20px;margin:16px 0;font-size:14px}
 @media print{.no-print,.cta,.cta-safety,footer,[style*="position: fixed"],[style*="sticky"]{display:none!important}body{background:#fff!important;color:#000!important;font-size:12pt}a{color:#000!important;text-decoration:none!important}.snippet{border-color:#ccc!important}.print-only{display:block!important}}
 </style>
-<!-- Privacy-friendly analytics by Plausible -->
-<script async src="https://plausible.io/js/pa-2v7iyzPVQbQ8l6ya79jtE.js"></script>
+<!-- Privacy-friendly analytics by Umami -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
 <script>
-window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-plausible.init()
+// Shim: plausible()-Aufrufe zu umami.track() weiterleiten — Legacy-Code bleibt funktional
+window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};
+window.plausible.init=function(){};window.plausible.q=[];
 </script>
   <link rel="stylesheet" href="/css/utility.css">
 </head>
@@ -137,7 +138,7 @@ plausible.init()
   <p class="badge">Klassisches Motto &middot; 6 Jahre</p>
   <h1>🚒 Feuerwehr-Einsatz Kindergeburtstag — 6 Jahre</h1>
 
-  <p class="u-intro-sub">17 Mottos · 3–12 Jahre · Kostenlos</p>
+  <p class="u-intro-sub">9 Mottos · 3–12 Jahre · Kostenlos</p>
   <p class="u-body">Dein Kind wird 6? Hier findest du die besten Feuerwehr-Einsatz-Ideen genau für 6-Jährige — altersgerechte Spiele, passende Deko und einen Kuchen, der begeistert.</p>
 
   <a href="/kindergeburtstag?motto=feuerwehr&alter=6#planer" class="cta">Feuerwehr-Einsatz-Geburtstag f&uuml;r 6-J&auml;hrige planen &rarr;</a>
@@ -215,34 +216,21 @@ plausible.init()
 
   <div class="related">
     <h3>Weitere Motto-Ideen</h3>
-    <div class="grid">
-      <a href="/kindergeburtstag/paw-patrol" class="u-link">
-        <div class="card u-emoji-cell">
-          <span class="u-fs28">🐕</span>
-          <p class="u-emoji-label">Paw Patrol</p>
-          <span class="u-fs12 u-clr-m">3–7 Jahre</span>
-        </div>
-      </a>      <a href="/kindergeburtstag/ninjago" class="u-link">
-        <div class="card u-emoji-cell">
-          <span class="u-fs28">🥷</span>
-          <p class="u-emoji-label">Ninjago</p>
-          <span class="u-fs12 u-clr-m">3–12 Jahre</span>
-        </div>
-      </a>      <a href="/kindergeburtstag/piraten" class="u-link">
+    <div class="grid">      <a href="/kindergeburtstag/piraten" class="u-link">
         <div class="card u-emoji-cell">
           <span class="u-fs28">🏴‍☠️</span>
           <p class="u-emoji-label">Piraten-Abenteuer</p>
           <span class="u-fs12 u-clr-m">3–12 Jahre</span>
         </div>
-      </a>      <a href="/kindergeburtstag/safari" class="u-link">
+      </a>      <a href="/kindergeburtstag/superheld" class="u-link">
         <div class="card u-emoji-cell">
-          <span class="u-fs28">🦁</span>
-          <p class="u-emoji-label">Safari-Abenteuer</p>
+          <span class="u-fs28">🦸</span>
+          <p class="u-emoji-label">Superhelden-Mission</p>
           <span class="u-fs12 u-clr-m">3–12 Jahre</span>
         </div>
       </a>
     </div>
-    <p class="u-tac"><a href="/kindergeburtstag">Alle 17 Mottos im Planer ansehen &rarr;</a></p>
+    <p class="u-tac"><a href="/kindergeburtstag">Alle Mottos im Planer ansehen &rarr;</a></p>
   </div>
 
   

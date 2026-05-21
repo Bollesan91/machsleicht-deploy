@@ -45,7 +45,9 @@ export default async (req) => {
 
     const VALID_MOTTOS = ["piraten", "dino", "safari", "weltraum", "detektiv", "superheld", "prinzessin", "einhorn", "meerjungfrau", "feuerwehr"];
     const motto = data.motto && VALID_MOTTOS.includes(data.motto) ? data.motto : "piraten";
-    const basePath = motto === "piraten" ? "/einladung/" : `/einladung/${motto}/`;
+    // Einheitliches URL-Schema: /einladung/<motto>/ fuer alle Mottos (inkl. Piraten).
+    // Piraten-Sonderfall entfaellt seit Migration nach /einladung/piraten/.
+    const basePath = `/einladung/${motto}/`;
 
     return new Response(null, {
       status: 302,
