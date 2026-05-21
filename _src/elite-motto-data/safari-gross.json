@@ -52,14 +52,80 @@
     "whyMottoFits": "Kinder in diesem Alter werden nicht mehr durch „ein bisschen Tiere und Verkleidung“ geködert. Was sie packt, ist Spezialisierung — die Möglichkeit, eine eigene Rolle mit eigener Kompetenz zu wählen. Späher beobachten und identifizieren, Tierfotografen komponieren Bilder, Spurenleser entschlüsseln Fährten und Codes. Keine Spezialisierung funktioniert allein: erst zusammen vermessen sie die Karte und finden den verborgenen Tempel. Der Story-Frame bleibt sparsam und ernst — einmal kurz bei der Begrüßung gesetzt, dann tragen die Aufgaben selbst. Genau das unterscheidet eine 9-12-Party von einer Kleinkind-Party."
   },
   "signatureRitual": {
-    "name": null,
-    "subtitle": null,
-    "introText": null,
-    "setupSteps": [],
-    "rolesList": [],
-    "optOutNote": null,
-    "materialNote": null,
-    "_note": "Safari 9-12 hat kein eigenes Anlauf-Ritual. Der Anker ist die Spezialisierungs-Wahl bei der Begrüßung: drei beschriftete Schalen (Späher/Tierfotograf/Spurenleser) mit farbigen Klett-Patches, jedes Kind klettet seine Farbe ans Stirnband. Verteilt sich eine Gruppe unfair, regelt die Reservat-Leitung das per „Bedarf“-Argument. Details in schedule[0] und whyMottoFits. Es gibt kein Vorstufen-Konzept — alle bekommen am Ende die volle Spezialisten-Lizenz, ohne Abstufung."
+    "name": "Die Spezialisten-Aufnahme & Lizenz-Übergabe",
+    "subtitle": "Eröffnet die Mission und schließt sie ab — für alle 3 Varianten",
+    "introText": "Für 9-12 trägt nicht ein durchgehendes Ritual, sondern zwei ernst gemeinte Klammern: Am Anfang wählt jedes Kind selbst seine Spezialisierung (Späher, Tierfotograf, Spurenleser) und hört den Brief der Reservat-Leitung — eine echte Mission, kein Verkindischungs-Sprech. Am Ende bekommt jedes Kind die volle Spezialisten-Lizenz, ohne Abstufung. Was diese Altersgruppe packt, ist die eigene Wahl der Rolle und echte Verantwortung statt Bespaßung. Wer eine knifflige Detail-Beobachtung beigesteuert oder besonders genau gearbeitet hat, kriegt zusätzlich einen \"Sorgfalt-Spezialist\"-Stempel auf die Lizenz — Anerkennung dafür, hingeschaut zu haben, nicht dafür, schnell gewesen zu sein. Eltern sind hier Beobachter beim Abschluss-Foto, keine Co-Spieler.",
+    "setupSteps": [
+      {
+        "title": "Drei Spezialisierungs-Schalen vorbereiten",
+        "content": "Drei beschriftete Schalen auf den Tisch — Späher (grün), Tierfotograf (blau), Spurenleser (braun) — mit farbigen Klett-Patches darin. Jedes Kind wählt bei Ankunft seine Spezialisierung selbst und klettet die Farbe ans Stirnband oder direkt an die Jacke. Verteilt sich eine Gruppe unfair, regelt die Story es: \"Wer wechselt zu Spurenleser? Ohne euch findet keiner den Weg.\""
+      },
+      {
+        "title": "Brief der Reservat-Leitung ausdrucken",
+        "content": "Eine knappe, ernsthafte Mission auf eine Karte: unkartierte Bereiche, drohende Wilderer, Auftrag zur Vermessung. Du liest ihn einmal vor — das ersetzt jede Begrüßungs-Ansprache und gibt den Kindern sofort einen echten Grund, loszuziehen. Kein Vorlese-Stress, ein Vorlesen reicht."
+      },
+      {
+        "title": "Expeditions-Karten mit offenen Feldern",
+        "content": "Pro Kind eine Karte mit 5 leeren Stations-Feldern und freier Reihenfolge. 9-12-Jährige wollen Kontrolle über Route und Tempo — du gibst die Struktur, sie planen den Weg. Wird beim Vorlesen des Briefs verteilt."
+      },
+      {
+        "title": "Lizenzen selbst ausfüllen lassen",
+        "content": "Jedes Kind trägt seinen Namen und seine Spezialisierung selbst in die Lizenz ein. Am Ende vollständig ausgefüllt — alle bekommen die volle Spezialisten-Lizenz, niemand eine Vorstufe. Foto-Slot freilassen."
+      },
+      {
+        "title": "\"Sorgfalt-Spezialist\"-Stempel bereitlegen",
+        "content": "Ein Stempel oder Aufkleber, der bei der Übergabe für besonders genaue Beobachtungen oder gründliche Arbeit vergeben wird. Keine Wettbewerbs-Logik, kein \"Erster\" — es geht um Sorgfalt, passend zur Botschaft, dass im Reservat zählt, wer hinschaut. Mehrere Kinder können ihn bekommen."
+      }
+    ],
+    "rolesList": [
+      {
+        "emoji": "🦅",
+        "name": "Adler-Beobachter",
+        "function": "Späher-Spezialisierung: behält Distanz und Überblick, meldet, was sich am Rand der Station bewegt."
+      },
+      {
+        "emoji": "👀",
+        "name": "Reservat-Späher",
+        "function": "Späher-Spezialisierung: kundschaftet die nächste Station aus und gibt die Lage durch, bevor das Team weiterzieht."
+      },
+      {
+        "emoji": "🔍",
+        "name": "Tier-Identifizierer",
+        "function": "Späher-Spezialisierung: ordnet beobachtete Tiere und Merkmale zu und liefert den Tier-Identifikations-Code für die Karte."
+      },
+      {
+        "emoji": "📷",
+        "name": "Foto-Späher",
+        "function": "Tierfotograf-Spezialisierung: hält die entscheidenden Beobachtungen im Bild fest, ohne die \"Tiere\" zu verscheuchen."
+      },
+      {
+        "emoji": "🖼️",
+        "name": "Bildausschnitt-Detektiv",
+        "function": "Tierfotograf-Spezialisierung: entschlüsselt aus Bild-Ausschnitten, welcher Karten-Teil gemeint ist."
+      },
+      {
+        "emoji": "🎬",
+        "name": "Foto-Mission-Leader",
+        "function": "Tierfotograf-Spezialisierung: koordiniert, welche Beweisfotos noch fehlen, und stellt das Mannschaftsfoto vor der Übergabe."
+      },
+      {
+        "emoji": "🐾",
+        "name": "Fährten-Analyst",
+        "function": "Spurenleser-Spezialisierung: liest Spuren und Fährten und leitet daraus die nächste Richtung ab."
+      },
+      {
+        "emoji": "📐",
+        "name": "Karten-Vermesser",
+        "function": "Spurenleser-Spezialisierung: trägt die geknackten Codes zusammen und vermisst am Ende die vollständige Reservat-Karte."
+      },
+      {
+        "emoji": "🧭",
+        "name": "Pfad-Tracker",
+        "function": "Spurenleser-Spezialisierung: entschlüsselt die Routen-Codes und führt die Expedition zur unkartierten Stelle."
+      }
+    ],
+    "optOutNote": "Kein Kind muss sich festlegen. Wer sich nicht entscheiden will, übernimmt ein Spezialisten-Trio quer über alle drei Bereiche oder bleibt Beobachter ohne feste Aufgabe — Lizenz und Stempel bekommt es trotzdem. Die Sonderrollen sind ein Angebot, kein Zwang, und auch der Wechsel der Spezialisierung mitten in der Expedition ist erlaubt.",
+    "materialNote": "Spezialisten-Patches in drei Farben, Reservat-Karten mit offenen Stations-Feldern und blanko Lizenz-Vorlagen sind Pflicht; siehe shoppingList der jeweiligen Variante. Den \"Sorgfalt-Spezialist\"-Stempel und den Brief der Reservat-Leitung druckst bzw. besorgst du selbst — sinnvoll, aber nicht zwingend. Vorlagen liegen im Einladungs- und Druck-Bereich."
   },
   "variants": [
     {

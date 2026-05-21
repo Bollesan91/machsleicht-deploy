@@ -15,14 +15,75 @@
   "metaDescription": "Safari-Kindergeburtstag für 3-5-Jährige als Tier-Helfer-Tag im Reservat: 3 fertige Konzepte mit Zeitplan, einfachen Spielen, Pirsch und Plüsch-Tier-Übergabe. Kostenlos.",
   "introParagraph": "Dein Kind wird 3, 4 oder 5 und liebt Tiere? Hier sind drei fertige Konzepte für den Tier-Helfer-Tag im Reservat — von 90 Minuten Mini-Safari bis zur entspannten 2-Stunden-Variante mit Pirsch und Plüsch-Tier-Übergabe. Kein Wettbewerb, keine Verlierer: Jedes Kind hilft einem Tier und bekommt am Ende seine Urkunde. Eltern bleiben mit dabei — bei 3- bis 5-Jährigen ist das kein Notnagel, sondern Teil des Plans.",
   "signatureRitual": {
-    "name": null,
-    "subtitle": null,
-    "introText": null,
-    "setupSteps": [],
-    "rolesList": [],
-    "optOutNote": null,
-    "materialNote": null,
-    "_note": "Safari-3-5 hat kein eigenes Ritual-Modul im Quell-HTML — wie safari-mittel. Der wiederkehrende Anker ist die Helfer-Namen-Vergabe bei der Ankunft (jedes Kind bekommt ein Stirnband + Tiernamen) und die Urkunden-Übergabe am Ende ('Du hast heute dem Löwen geholfen'). Die Urkunde bekommt jeder Helfer — das schafft jedes Kind. Details in preparationWeeks und parentTips."
+    "name": "Das kleine Helfer-Versprechen",
+    "subtitle": "Eröffnet die Party + Urkunden-Übergabe am Ende",
+    "introText": "Bei 3–5 funktioniert kein Eid und keine Lizenz — die Begriffe sind zu groß, das Stillstehen zu lang. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener Hand in Hand mit dem Kind macht: Beim Ankommen bekommt jedes Kind ein Stirnband und einen Helfer-Namen — aus „Gast“ wird „Helfer Mia, die heute den Tieren im Reservat hilft“. Am Ende kommt jedes Kind einzeln nach vorne, hört seinen Helfer-Namen und bekommt seine Urkunde („Du hast heute dem Löwen geholfen“). Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende — und jedes Kind geht mit Helfer-Status und einem Foto nach Hause. Wichtig: Das Versprechen wird laut zusammen gesprochen, nicht einzeln abgefragt — kein Kind muss vorsprechen.",
+    "setupSteps": [
+      {
+        "title": "Stirnbänder mit Helfer-Namen vorbereiten",
+        "content": "Pro Kind ein Filz-Stirnband, am besten schon mit dem Namen drauf (oder ein Klett-Schild zum Anstecken). Beim Aufsetzen sagst du: „Du bist jetzt Helfer Mia. Du hilfst heute den Tieren im Reservat.“ Das Aufsetzen durch einen Erwachsenen ist der Moment — nicht das Kind setzt es sich selbst auf."
+      },
+      {
+        "title": "Das Versprechen auf einen Satz kürzen",
+        "content": "Ein einziger kurzer Satz, den alle gleichzeitig nachsprechen: „Heute helfe ich den Tieren!“ Groß auf eine Karte schreiben (für dich, nicht zum Vorlesen durch die Kinder). 3–5-Jährige sprechen im Chor nach — niemand muss allein reden, das nimmt allen Druck."
+      },
+      {
+        "title": "Eltern als Helfer-Paten einplanen",
+        "content": "Bei 3–5 brauchen viele Kinder Eltern-Nähe. Lass begleitende Eltern direkt hinter ihrem Kind stehen, beim Stirnband-Aufsetzen die Hand auf die Schulter legen. Schüchterne Kinder machen das Versprechen dann zusammen mit Mama oder Papa — das ist ausdrücklich erlaubt."
+      },
+      {
+        "title": "Urkunden vorab vorbereiten",
+        "content": "Eine Urkunde pro Kind, mit Platz für den Helfer-Namen. Trag die Namen vorher selbst ein (3–5 schreiben noch nicht zuverlässig). Auf jeder Urkunde steht sinngemäß „Du hast heute den Tieren im Reservat geholfen“ — die Urkunde bekommt jeder Helfer, das schafft wirklich jedes Kind."
+      },
+      {
+        "title": "Plüsch-Mini-Tiere für die Übergabe bereitlegen",
+        "content": "Optional, aber stark: ein kleines Plüsch- oder Mini-Tier pro Kind, das bei der Urkunden-Übergabe dazukommt („Das ist der kleine Löwe, dem du heute geholfen hast — er darf mit nach Hause“). Foto-Slot bei der Übergabe freilassen — kein Kind ohne Foto, kein Elternteil ohne Schnappschuss."
+      }
+    ],
+    "rolesList": [
+      {
+        "emoji": "🦁",
+        "name": "Löwen-Helfer",
+        "function": "Hilft, dem Löwen sein Futter zu bringen — füttert das Plüsch-Tier an der Futter-Station."
+      },
+      {
+        "emoji": "🐘",
+        "name": "Elefanten-Helfer",
+        "function": "Bringt dem Elefanten Wasser am Wasserloch — der große Durst-Helfer."
+      },
+      {
+        "emoji": "🐵",
+        "name": "Affen-Helfer",
+        "function": "Sammelt verstreute Bananen oder Bälle ein — der flinke Aufsammel-Helfer."
+      },
+      {
+        "emoji": "🦒",
+        "name": "Giraffen-Helfer",
+        "function": "Reicht die hohen Sachen an — alles, was weit oben hängt, ist sein Job."
+      },
+      {
+        "emoji": "🦓",
+        "name": "Zebra-Helfer",
+        "function": "Geht bei der kleinen Pirsch voran und zeigt den anderen den Weg zum nächsten Tier."
+      },
+      {
+        "emoji": "🧸",
+        "name": "Kuschel-Helfer",
+        "function": "Passt auf die Plüsch-Tiere auf und tröstet, wenn eins „traurig“ ist — perfekt für scheue Kinder."
+      },
+      {
+        "emoji": "📸",
+        "name": "Foto-Helfer",
+        "function": "Darf (mit einem Erwachsenen) bei der Urkunden-Übergabe das Gruppenfoto-Kommando geben."
+      },
+      {
+        "emoji": "🥕",
+        "name": "Futter-Helfer",
+        "function": "Verteilt an der Futter-Station die Tier-Snacks — Möhren, Bananen, kleine Häppchen."
+      }
+    ],
+    "optOutNote": "Kein Kind muss eine Helfer-Rolle übernehmen und niemand muss das Versprechen allein sprechen. Wer nur dabei sein will, ist trotzdem vollwertiger Helfer — Stirnband, Urkunde und Plüsch-Tier bekommt jedes Kind. Schüchterne Kinder dürfen das Versprechen leise mit Mama oder Papa zusammen sagen oder einfach nur zuhören. Die Rollen sind ein Angebot für Kinder, die gern eine kleine Aufgabe haben — kein Zwang und keine Hierarchie.",
+    "materialNote": "Pflicht: ein Stirnband pro Kind (mit Namen) und eine Urkunde-Vorlage pro Kind (Namen vorher selbst eintragen). Schön dazu: ein Plüsch- oder Mini-Tier pro Kind für die Übergabe. Stirnband-Sets findest du in der shoppingList der jeweiligen Variante; die Urkunde druckst du selbst aus — Vorlage liegt im Einladungs- und Druck-Bereich. Bewusst KEINE „Lizenz“ und KEINE Ausweise wie bei den Größeren — für 3–5 ist die Urkunde der richtige, verständliche Stolz-Moment."
   },
   "ageInsight": {
     "headline": "Was 3–5-Jährige ausmacht — und was das für die Safari-Party heißt",
