@@ -342,7 +342,7 @@
           "safetyRule": "Nur kindersichere, textil-geeignete Filzstifte (Edding Textil, Crayola). No-Name-Stoff-Färbe-Stifte können Hautreaktionen auslösen — im Zweifel Eltern fragen. Keine Verstecke an wackeligen Regalen oder hinter heißen Heizungen.",
           "ageAdjust6": "Spielleiter zeigt vorher ganz deutlich, wo ungeeignete Verstecke sind (\"hinter dem weißen Vorhang funktioniert dein braunes Tuch nicht\"). Pädagogische Bemerkung statt Regel.",
           "ageAdjust8": "Mehrere Verstecke nacheinander, Zeit knapper machen.",
-          "indoorTip": "Vorhänge, hinter Sofa, in Wäscheecke — gibt mehr Verstecke als man denkt. Indoor-Limit: max. 4 Kinder gleichzeitig tarnen lassen (raeumlich nicht mehr Versteckplaetze). Bei groesserer Gruppe in 2 Runden aufteilen ODER Outdoor.",
+          "indoorTip": "Vorhänge, hinter Sofa, in Wäscheecke — gibt mehr Verstecke als man denkt. Indoor-Limit: max. 4 Kinder gleichzeitig tarnen lassen (räumlich nicht mehr Versteckplätze). Bei größerer Gruppe in 2 Runden aufteilen ODER Outdoor.",
           "outdoorTip": "Im Garten Tarn-Tuch gegen echtes Grün und Erde testen — der Aha-Effekt ist draußen viel größer als drinnen.",
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Erst malen, dann verstecken: Das aktive Gestalten gibt jedem Kind ein Ergebnis in der Hand, bevor die schwere Disziplin Stillhalten kommt. Mit 6-8 verstehen Kinder hier das Prinzip Tarnung wirklich."
@@ -769,18 +769,18 @@
             },
             {
               "n": 2,
-              "name": "Spurenleser & Codeknacker",
-              "content": "Station 1: nicht-afrikanisches Tier streichen (Pinguin) → T. Station 2: Tier raus, das nicht in die Savanne gehört → F."
+              "name": "Spurenleser & Flamingo-Code",
+              "content": "Station 1: Flamingo-Tarnung — von 5 Vögeln den Flamingo erkennen → F. Station 2: Urwald-Pfad — von 4 Lebensraum-Karten den Urwald wählen → U."
             },
             {
               "n": 3,
-              "name": "Tier-Quiz & Pirsch-Test",
-              "content": "Station 3: drei Tier-Fragen, Antwort Strauß → S. Station 4: lautlos durch 6 Hindernisse pirschen → U."
+              "name": "Schmetterling- & Schlangen-Code",
+              "content": "Station 3: Schmetterling-Fang — den richtigen Falter aus 4 Bildern mit Tüllball antippen → S. Station 4: Schlangen-Tunnel — durch Reifen-Tunnel kriechen wie eine Schlange → S."
             },
             {
               "n": 4,
-              "name": "Tempel-Schloss",
-              "content": "Station 5: die Buchstaben T-F-S-U sortieren. Lösungswort FUSS verrät: der Tempel steht zu Füßen von etwas Markantem."
+              "name": "Tempel-Schloss F-U-S-S",
+              "content": "Station 5: die 4 Karten in Spur-Reihenfolge sortieren → Lösungswort FUSS. Der Tempel steht zu Füßen von etwas Markantem (z.B. großer Baum, Felsen, Spielhaus)."
             },
             {
               "n": 5,
@@ -790,7 +790,7 @@
           ],
           "safetyRule": "Tempel-Versteck und Stations-Wege ohne Stolperfallen wählen. Beim Loslaufen zum Schatz auf rutschige Böden und Türkanten achten.",
           "ageAdjust6": "Stationen 2 und 4 vereinfachen — bei Station 2 nur 3 Tiere, bei Station 4 dürfen die Kinder dreimal \"wachgemacht\" werden.",
-          "ageAdjust8": "Stationen schwieriger — bei Station 3 vier Fragen statt drei, bei Station 5 Bei 8-Jaehrigen optional 5. Buchstabe an Station 5 (etwa Loesungswort SCHUH statt FUSS) — komplett konsistent zur Wortlaenge.",
+          "ageAdjust8": "Schwieriger für 8-Jährige: bei Station 3 vier Fragen statt drei; optional 5. Station mit Zusatzbuchstaben — Lösungswort SCHUH statt FUSS (S-C-H-U-H aus Schmetterling-Schlange-Hyäne-Urwald-Hirsch).",
           "indoorTip": "Fünf Stationen durch Zimmer und Flur verteilen, Tempel-Versteck markant wählen (unter dem Bücherregal, im Schuhschrank).",
           "outdoorTip": "Stationen über den Garten ziehen, Walkie-Talkies fürs Team einsetzen — die Quest gewinnt draußen an Abenteuer-Atmosphäre.",
           "whyItWorksTitle": "Warum das funktioniert",
