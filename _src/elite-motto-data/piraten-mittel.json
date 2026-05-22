@@ -286,7 +286,7 @@
         },
         {
           "time": "15:35",
-          "title": "🨢 Knotenkunde",
+          "title": "🪢 Knotenkunde",
           "description": "3 Knoten lernen: einfacher Knoten, Schleife, Achterknoten. Wer alle schafft, bekommt einen „Seemanns-Stempel“. 15 Min."
         },
         {
@@ -392,7 +392,7 @@
           "whyItWorks": "Mit 6-8 können Kinder schon echt kombinieren: Das Zahlenschloss verwandelt Rätselraten in ein gemeinsames Ziel mit klarem Klick-Moment. Reihum-Vorlesen verteilt die Erfolgserlebnisse, statt das schnellste Kind alles abräumen zu lassen."
         },
         {
-          "name": "🨢 Knotenkunde — Spielanleitung",
+          "name": "🪢 Knotenkunde — Spielanleitung",
           "indoor": true,
           "outdoor": false,
           "duration": 15,
@@ -572,7 +572,7 @@
           "categoryReasoning": "Atmosphäre-Heber für Wache-Position, aber Stationen funktionieren auch ohne Fernrohre."
         },
         {
-          "emoji": "🨢",
+          "emoji": "🪢",
           "label": "Seile (Knotenkunde)",
           "url": null,
           "priceEur": 3,
@@ -604,7 +604,7 @@
     {
       "id": "wow",
       "label": "Wow — 3,5 Stunden, die volle Schicht",
-      "headline": "In braune Papiertüte („Piratenbeute von ___“). Kosten: ~4 € pro Kind.",
+      "headline": "Wow — die Piraten-Schatzsuche mit Schlafparty (3,5 Std., 8 Kinder)",
       "intro": "In 30 Sekunden fertig — mit Name, Datum und einem Piraten-Abenteuer als Vorgeschmack.",
       "timeWindow": "14:00–17:30, 6 Kinder",
       "schedule": [
@@ -795,7 +795,7 @@
           "categoryReasoning": "Wow-Atmosphäre, aber Augenklappen + Goldmünzen tragen Verkleidungs-Element funktional."
         },
         {
-          "emoji": "🨢",
+          "emoji": "🪢",
           "label": "Seile für Knotenkunde",
           "url": null,
           "priceEur": 3,

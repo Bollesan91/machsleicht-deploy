@@ -2264,7 +2264,7 @@ var ELITE_MOTTO_DATA = {
           "indoor": true,
           "outdoor": false,
           "material": "5 Quiz-Karten ausgedruckt (Vorlagen unten), 2 alte Smartphones im Flugmodus (oder ohne SIM), 1 Stoppuhr",
-          "anleitung": "Spiel-Format wie ein Quiz mit drei Aufgaben pro Kind. Aufgabe 1: „Welche Nummer wählst du bei einem Brand?\" Aufgabe 2: „Nenne die 5 W — wer / wo / was / wie viele / warten.\" Aufgabe 3: „Du rufst an — was sagst du als erstes?\" Disponentin Clara nimmt die Anrufe auf dem Smartphone entgegen (Flugmodus!), Crew probiert reihum. Wer alle 3 schafft, bekommt einen kleinen Sticker auf den Dienstausweis. Keine Verlierer — wer hängen bleibt, bekommt einen Tipp.\n\nQuiz-Vorlagen: 1) Brand-Notruf, 2) Verkehrsunfall (Polizei oder 112?), 3) Katze auf Baum (kein 112-Fall!), 4) Oma fällt um (112!), 5) Streichholzkasten gefunden — wem sagen?",
+          "anleitung": "Spiel-Format wie ein Quiz mit drei Aufgaben pro Kind. Aufgabe 1: „Welche Nummer wählst du bei einem Brand?\" Aufgabe 2: „Nenne die 2 wichtigsten Fragen am Notruf: Wo ist es passiert? und Was ist passiert? Plus: Dranbleiben, bis die Leitstelle sagt \"alles klar\". (Die früher gelehrte 5-W-Regel gilt 2025 als überholt — moderne Leitstellen führen strukturierte Abfragen).\" Aufgabe 3: „Du rufst an — was sagst du als erstes?\" Disponentin Clara nimmt die Anrufe auf dem Smartphone entgegen (Flugmodus!), Crew probiert reihum. Wer alle 3 schafft, bekommt einen kleinen Sticker auf den Dienstausweis. Keine Verlierer — wer hängen bleibt, bekommt einen Tipp.\n\nQuiz-Vorlagen: 1) Brand-Notruf, 2) Verkehrsunfall (Polizei oder 112?), 3) Katze auf Baum (kein 112-Fall!), 4) Oma fällt um (112!), 5) Streichholzkasten gefunden — wem sagen?",
           "whyItWorks": "6-8 lernen hier wirklich was, das im Notfall greift. Die Kinder gehen mit konkretem Wissen nach Hause — Eltern bemerken's beim Abholen („Mama, weißt du was die 5 W sind?\"). SICHERHEIT: Smartphone MUSS im Flugmodus sein, sonst riskierst du einen versehentlichen echten Notruf — der ist kein Witz und kann eine Strafanzeige zur Folge haben."
         },
         {
@@ -2373,7 +2373,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Spiele in dieser Vorlage funktionieren auch drinnen. Zielspritzen ins Bad (Wanne!), Ausbildungs-Stationen ins Wohnzimmer + Flur, Einsatz-Alarm durch alle Zimmer der Wohnung. Wenn du draußen planst: Räume innen schon vorab freihalten, falls's umkippt. Nie ohne Plan B."
+          "detail": "Fast alle Spiele funktionieren auch drinnen — Ausnahme: die Eimerkette braucht draußen oder Garage. Indoor-Ersatz dafür: Drill-Training (Flammen-Zielscheibe), das wetterunabhängig läuft. Zielspritzen ins Bad (Wanne!), Ausbildungs-Stationen ins Wohnzimmer + Flur, Einsatz-Alarm durch alle Zimmer der Wohnung. Wenn du draußen planst: Räume innen schon vorab freihalten, falls's umkippt. Nie ohne Plan B."
         },
         {
           "topic": "📱 Partyseite statt WhatsApp-Chaos",
@@ -2393,7 +2393,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "topic": "📲 Notruf-Erziehung beiläufig",
-          "detail": "Wenn du das Theorie-Briefing der Wow-Variante machst oder das 112-Quiz aus den Bonus-Spielen, kannst du beiläufig drei lebenswichtige Inhalte mitgeben: 1. Die 112 ist die Feuerwehr-Notrufnummer in ganz Europa — funktioniert auch ohne SIM-Karte vom Smartphone aus. 2. Beim Notruf gilt die 5-W-Regel: Wer (rufe ich an, mein Name), Wo (ist es passiert), Was (ist passiert), Wie viele (sind verletzt/in Gefahr), Warten (auf Rückfragen). 3. Auflegen erst, wenn die Leitstelle es sagt. Diese drei Punkte sind die offizielle Brandschutzerziehung — die kommt in der Schule nochmal, aber wenn dein Kind und seine Freunde es schon auf der Party hören, ist die Schicht beim Erinnern halbiert."
+          "detail": "Wenn du das Theorie-Briefing der Wow-Variante machst oder das 112-Quiz aus den Bonus-Spielen, kannst du beiläufig drei lebenswichtige Inhalte mitgeben: 1. Die 112 ist die Feuerwehr-Notrufnummer in ganz Europa — funktioniert von jedem Handy mit gültiger SIM — auch ohne Guthaben und in fremden Netzen (Notrufe ohne SIM wurden in Deutschland abgeschaltet). 2. Beim Notruf gilt die 5-W-Regel: Wer (rufe ich an, mein Name), Wo (ist es passiert), Was (ist passiert), Wie viele (sind verletzt/in Gefahr), Warten (auf Rückfragen). 3. Auflegen erst, wenn die Leitstelle es sagt. Diese drei Punkte sind die offizielle Brandschutzerziehung — die kommt in der Schule nochmal, aber wenn dein Kind und seine Freunde es schon auf der Party hören, ist die Schicht beim Erinnern halbiert."
         }
       ],
       "educationalValue": "Kinder, die hier waren, gehen mit drei konkreten Brandschutz-Skills nach Hause: 1. Sie wissen, dass die 112 die richtige Notrufnummer ist, und sie kennen die 5 W (Wer / Wo / Was / Wie viele / Warten). 2. Sie wissen, dass Wasser nicht alles löscht — Fett-Brand wird mit Deckel erstickt, nicht mit Wasser bespritzt. 3. Sie wissen, dass im Brandfall Rauch das Hauptproblem ist und dass tief am Boden die sauberste Luft ist. Das sind keine Marketing-Versprechen — das passiert beiläufig in den Spielen und im Theorie-Briefing der Wow-Variante. Die Deutsche Brandschutzerziehung empfiehlt diese Inhalte ab 5 Jahren. Wir packen sie hier in eine Geburtstagsparty, ohne dass es nach Schulstunde aussieht."
@@ -6192,7 +6192,7 @@ var ELITE_MOTTO_DATA = {
           "detail": "In 6–8-Jahren ist Wettbewerb okay — aber „nur Sieger\" zählt nicht. Bei Parcours, Quiz, Rätselrallye: Verlierer-Team bekommt „Trost-Regenbogen\" (= extra Gummibärchen + Sticker). Funktional: ein zweites Belohnungs-Set vorbereiten, optisch identisch, nur Beschriftung anders („Sieger-Stern\" vs. „Mut-Stern\"). So bekommt JEDES Kind etwas am Ende. Hat sich bei Schultern-Hochziehen-Kindern als Game-Changer erwiesen."
         }
       ],
-      "educationalValue": null
+      "educationalValue": "Hinter dem Glitzer steckt echtes Lernen: Das Regenbogen-Milch-Experiment zeigt Oberflächenspannung (Physik zum Anfassen), die Rätselrallye trainiert Logik und Teamwork, das Quiz vermittelt Tier-Mythologie und Geografie (Schottland-Bezug zum Einhorn-Wappentier). Die Wächter-Ausbildung mit Prüfungen und Urkunde fördert Selbstwirksamkeit — Kinder erleben, dass sie etwas erreichen, statt nur bespaßt zu werden. Bei der Drachen-Variante für Jungen zusätzlich: Fantasy-Worldbuilding + soziale Rollenflexibilität."
     },
     "invitationTemplate": "Eine persönliche Einhorn-Einladung macht schon vor der Party Lust auf den Tag. Auf machsleicht kannst du deine Einladung kostenlos in 3 Minuten erstellen — mit Foto, Datum, Treffpunkt und allen Infos. PDF oder digitaler Link zum Verschicken.\n[🦄 Einhorn-Einladung erstellen →](/einladung/erstellen?motto=einhorn)\n\n[📱 Per WhatsApp teilen](https://wa.me/?text=%F0%9F%A6%84%20Einhorn-Kindergeburtstag%20f%C3%BCr%206%E2%80%938-J%C3%A4hrige%20planen%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Zeitplan%2C%20Spielen%20und%20Einkaufsliste%3A%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Feinhorn-6-8-jahre)",
     "faq": [
@@ -17350,7 +17350,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "time": "15:35",
-            "title": "🨢 Knotenkunde",
+            "title": "🪢 Knotenkunde",
             "description": "3 Knoten lernen: einfacher Knoten, Schleife, Achterknoten. Wer alle schafft, bekommt einen „Seemanns-Stempel“. 15 Min."
           },
           {
@@ -17456,7 +17456,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Mit 6-8 können Kinder schon echt kombinieren: Das Zahlenschloss verwandelt Rätselraten in ein gemeinsames Ziel mit klarem Klick-Moment. Reihum-Vorlesen verteilt die Erfolgserlebnisse, statt das schnellste Kind alles abräumen zu lassen."
           },
           {
-            "name": "🨢 Knotenkunde — Spielanleitung",
+            "name": "🪢 Knotenkunde — Spielanleitung",
             "indoor": true,
             "outdoor": false,
             "duration": 15,
@@ -17636,7 +17636,7 @@ var ELITE_MOTTO_DATA = {
             "categoryReasoning": "Atmosphäre-Heber für Wache-Position, aber Stationen funktionieren auch ohne Fernrohre."
           },
           {
-            "emoji": "🨢",
+            "emoji": "🪢",
             "label": "Seile (Knotenkunde)",
             "url": null,
             "priceEur": 3,
@@ -17668,7 +17668,7 @@ var ELITE_MOTTO_DATA = {
       {
         "id": "wow",
         "label": "Wow — 3,5 Stunden, die volle Schicht",
-        "headline": "In braune Papiertüte („Piratenbeute von ___“). Kosten: ~4 € pro Kind.",
+        "headline": "Wow — die Piraten-Schatzsuche mit Schlafparty (3,5 Std., 8 Kinder)",
         "intro": "In 30 Sekunden fertig — mit Name, Datum und einem Piraten-Abenteuer als Vorgeschmack.",
         "timeWindow": "14:00–17:30, 6 Kinder",
         "schedule": [
@@ -17859,7 +17859,7 @@ var ELITE_MOTTO_DATA = {
             "categoryReasoning": "Wow-Atmosphäre, aber Augenklappen + Goldmünzen tragen Verkleidungs-Element funktional."
           },
           {
-            "emoji": "🨢",
+            "emoji": "🪢",
             "label": "Seile für Knotenkunde",
             "url": null,
             "priceEur": 3,
@@ -26219,7 +26219,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:55",
             "title": "Spiel: Geheimtinte & Spuren-Parcours",
-            "description": "Versteckte Botschaft sichtbar machen und durch den Spuren-Parcours zum nächsten Hinweis."
+            "description": "Versteckte Botschaft sichtbar machen und durch den Spuren-Parcours zum nächsten Hinweis. BONUS-SPIELE: Beschattungs-Mission + Junior-Ermittler-Test sind als optionale Puffer-Spiele in der games-Liste verfügbar — bei Zeitüberschuss einsetzen oder als Indoor-Plan-B (z.B. wenn Geheimtinte mangels UV-Lampe ausfällt)."
           },
           {
             "time": "16:35",
