@@ -28652,7 +28652,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 3,
             "loudness": "mittel",
             "effort": "leicht",
-            "material": "Bunte Plastik-Perlen oder bemalte Wattekugeln (gross genug, nicht verschluckbar), eine „Schatztruhe“ (Schuhkarton blau beklebt), evtl. blaues Tuch als „Meeresboden“.",
+            "material": "Ca. 6-8 Perlen pro Kind (bei 6 Kindern also 40-50 Perlen): bunte Plastik-Perlen oder bemalte Wattekugeln (gross genug, nicht verschluckbar), eine „Schatztruhe“ (Schuhkarton blau beklebt), evtl. blaues Tuch als „Meeresboden“.",
             "prepText": "Perlen im Raum / Garten verstecken — NICHT zu schwer: halb sichtbar unter Kissen, hinter Pflanzen, auf niedrigen Regalen in Augenhoehe. Bei 3-Jaehrigen lieber offen liegend, sie sollen Erfolg haben.",
             "steps": [
               {
@@ -28725,7 +28725,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Das Quiz braucht null Material und holt jedes Kind dort ab, wo es steht: schuechterne machen nur nach, mutige fuehren vor. Bewegung plus Mitmachen ohne Leistungsdruck — ein verlaesslicher Lueckenfueller, wenn ein Spiel mal schneller vorbei ist als gedacht."
           }
         ],
-        "food": "Einfach und meeresblau: Wackelpudding in Blau („Meerwasser“) mit Gummi-Fischen drin, Gurken-„Algen“-Sticks, blaue Muffins mit Muschel-Keks obendrauf. Dazu „Meerwasser“ (heller Apfelsaft mit Schuss blauem Sirup, sparsam). Kein Aufwand, alles am Vortag machbar.",
+        "food": "Einfach und meeresblau: Wackelpudding in Blau („Meerwasser“) mit Gummi-Fischen drin, Gurken-„Algen“-Sticks, blaue Muffins mit Muschel-Keks obendrauf. Dazu „Meerwasser“ (heller Apfelsaft mit Schuss blauem Sirup, sparsam). Kein Aufwand, alles am Vortag machbar. ⚠️ Für 3-Jährige: Gummi-Süßes klein schneiden — Erstickungsrisiko.",
         "decoration": "Ein blaues Tuch oder Bettlaken am Boden als Meeresgrund, ein paar Plueschfische und Deko-Muscheln drauf. Blaue Luftballons, falls da. Mehr braucht das Wohnzimmer-Riff nicht.",
         "giveaways": "Perlen-Beutel (Schoko-Perlen) + Urkunde + das selbst gebastelte Muschel-Stirnband. Reicht voellig.",
         "shoppingList": [
@@ -29072,7 +29072,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Ein gemeinsames Bau-Werk gibt jedem Kind etwas zum Anfassen und Mitnehmen, ohne Wettbewerb. Der Korallen-Garten ist am Ende ein sichtbares „Das haben WIR gebaut“ — stolzmachend und ruhig zugleich, perfekt als Gegengewicht zu den bewegten Spielen."
           }
         ],
-        "food": "Meeresblaues Buffet: blaue Muffins mit Muschel-Keks, Wackelpudding-„Meer“ mit Gummi-Fischen, Gurken- und Paprika-„Algen“-Sticks mit Dip, Melonen-Sticks, kleine Brezel-„Seesterne“. Dazu „Meerwasser“ (heller Saft mit etwas blauem Sirup). Vieles am Vortag vorbereitbar.",
+        "food": "Meeresblaues Buffet: blaue Muffins mit Muschel-Keks, Wackelpudding-„Meer“ mit Gummi-Fischen, Gurken- und Paprika-„Algen“-Sticks mit Dip, Melonen-Sticks, kleine Brezel-„Seesterne“. Dazu „Meerwasser“ (heller Saft mit etwas blauem Sirup). Vieles am Vortag vorbereitbar. ⚠️ Für 3-Jährige: Gummi-Süßes klein schneiden — Erstickungsrisiko.",
         "decoration": "Blaues Bodentuch als Meeresgrund, blaue und tuerkise Luftballons, eine Krepp-Papier-„Wellen“-Girlande an der Wand, Deko-Muscheln und Plueschfische verteilt. Der gebaute Korallen-Garten wird Teil der Deko.",
         "giveaways": "Perlen-Beutel + Urkunde + Muschel-Stirnband + selbst gebaute Mini-Koralle aus dem Garten zum Mitnehmen.",
         "shoppingList": [
@@ -29500,7 +29500,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Die Schatzsuche ist der dramaturgische Hoehepunkt und liefert gleichzeitig das Finale-Ritual: alle oeffnen die Truhe gemeinsam, alle bekommen denselben Schatz. So fuehrt das spannendste Spiel direkt in den ruhigen, fairen Abschluss — kein Streit, wer zuerst war."
           }
         ],
-        "food": "Grosses Meeres-Buffet: blaue Muffins mit Muschel-Keks, Wackelpudding-„Meer“ mit Gummi-Fischen, Obst-„Meerestiere“ (Melonen-Fische, Trauben-Algen), Gurken-/Paprika-Sticks mit Dip, Brezel-Seesterne, kleine „Schatz“-Schoki. Dazu „Meerwasser“ und Wasser. Mit zweiter Hand gut zu stemmen.",
+        "food": "Grosses Meeres-Buffet: blaue Muffins mit Muschel-Keks, Wackelpudding-„Meer“ mit Gummi-Fischen, Obst-„Meerestiere“ (Melonen-Fische, Trauben-Algen), Gurken-/Paprika-Sticks mit Dip, Brezel-Seesterne, kleine „Schatz“-Schoki. Dazu „Meerwasser“ und Wasser. Mit zweiter Hand gut zu stemmen. ⚠️ Für 3-Jährige: Gummi-Süßes klein schneiden — Erstickungsrisiko.",
         "decoration": "Voll-Deko: blaues Bodentuch, blaue/tuerkise Ballons, Wellen-Girlande, eine Lichterkette als „Meeresleuchten“, Deko-Muscheln und Plueschfische, plus die Foto-Ecke mit Papp-Korallen. Der gebaute Korallen-Garten kroent das Riff.",
         "giveaways": "Perlen-Beutel + Urkunde + Stirnband + Mini-Koralle + ausgedrucktes Meeres-Foto fuer die Eltern.",
         "shoppingList": [
@@ -29649,7 +29649,7 @@ var ELITE_MOTTO_DATA = {
       }
     ],
     "cakeRecipe": {
-      "intro": "Ein Meeres-Kuchen muss bei 3-5 nicht aufwendig sein — ein einfacher Ruehrkuchen mit blauem Zuckerguss, ein paar Muschel-Keksen und Schoko-Perlen sieht aus wie ein kleines Riff und ist in einer guten Stunde gemacht. Wichtiger als Tortendeko-Kunst: er muss schmecken und am Vortag vorbereitbar sein.",
+      "intro": "Ein Meeres-Kuchen muss bei 3-5 nicht aufwendig sein — ein einfacher Ruehrkuchen mit blauem Zuckerguss, ein paar Muschel-Keksen und Schoko-Perlen sieht aus wie ein kleines Riff und ist in einer guten Stunde gemacht. Wichtiger als Tortendeko-Kunst: er muss schmecken und am Vortag vorbereitbar sein. Eine Kastenform reicht für ca. 8 Kinderstücke — bei mitessenden Eltern doppelte Menge oder zusätzliche Muffins planen.",
       "steps": [
         {
           "n": 1,
@@ -29673,13 +29673,14 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "n": 6,
-          "content": "Guss ueber den ausgekuehlten Kuchen giessen. Bevor er fest wird: Schoko-Perlen, Muschel-Kekse und ein paar Gummi-Fische auflegen — fertig ist das Riff."
+          "content": "Guss ueber den ausgekuehlten Kuchen giessen. Bevor er fest wird: Schoko-Perlen, Muschel-Kekse und ein paar Gummi-Fische auflegen — fertig ist das Riff. ⚠️ Bei 3-Jährigen: Gummi-Fische klein schneiden oder weglassen (Erstickungsrisiko). Weiche Beeren als Alternative."
         }
       ],
       "meta": {
         "aufwand": "ca. 1 Std. + Backzeit, einfach",
         "kosten": "ca. 6 €",
-        "allergiker": "Enthaelt Ei, Milch, Gluten. Eifrei mit Apfelmus-Ersatz; glutenfrei mit Mehlmischung 1:1 moeglich — Allergien vorab abfragen."
+        "allergiker": "Enthaelt Ei, Milch, Gluten. Eifrei mit Apfelmus-Ersatz; glutenfrei mit Mehlmischung 1:1 moeglich — Allergien vorab abfragen.",
+        "portionen": "ca. 8 Kinderstücke (bei Eltern dabei: Menge verdoppeln)"
       },
       "tips": [
         {
@@ -30265,7 +30266,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Ein ruhiges Quiz ist der perfekte Gegenpol zu den bewegten Spielen und gibt der Crew eine Verschnaufpause. Echtes Tierwissen verpackt in eine „Prüfung\" fühlt sich für 6–8-Jährige wichtig an, und die gemeinsame Team-Wertung verhindert, dass langsamere Kinder das Gefühl haben zu verlieren."
           }
         ],
-        "food": "🎂 Meeres-Kuchen — 1 Rührkuchen mit blauem Guss\n💧 „Meerwasser\" — 6 Apfelschorle/Capri-Sun\n🥪 Muschel-Sandwiches — 12 Stück\n🍓 Obst-Teller — Melone, Trauben, Gurke\n🍿 Popcorn — 250 g\n🍬 Gummi-Fische — 1 Tüte (200 g)",
+        "food": "🎂 Meeres-Kuchen — 1 Rührkuchen mit blauem Guss\n💧 „Meerwasser\" — 6-8 Apfelschorle/Wasser + Wasserkrug zum Nachfüllen/Capri-Sun\n🥪 Muschel-Sandwiches — 12 Stück\n🍓 Obst-Teller — Melone, Trauben, Gurke\n🍿 Popcorn — 250 g\n🍬 Gummi-Fische — 1 Tüte (200 g)",
         "decoration": "🌊 Blaues Tuch als „Meer\" auf dem Tisch — kostenlos\n🐚 Echte oder Deko-Muscheln verstreut — ~2 €\n🎈 Ein paar blaue/türkise Luftballons — ~3 €\n\n💡 Wellen-Trick: Ein blaues Bettlaken oder Tuch über den Tisch, Muscheln und ein paar Glasperlen darauf verstreut. Sieht sofort nach Unterwasser aus, kostet fast nichts.",
         "giveaways": "🐚 Selbst gefädelte Crew-Perlenkette\n🐠 1 Meerestier-Figur aus der Schatzsuche\n🪙 Schoko-Goldmünzen\n🍬 1 Tüte Gummi-Fische\n\nAlles in eine blaue Papiertüte, beschriftet mit dem Crew-Namen des Kindes. Kosten: ~2 € pro Kind.",
         "shoppingList": [
@@ -30732,7 +30733,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Lösungswort legen",
-                "content": "Nach fünf Stationen die Buchstaben sortieren, bis das Lösungswort dasteht (z. B. SCHATZ)."
+                "content": "Nach fünf Stationen die Buchstaben sortieren, bis das Lösungswort dasteht (z. B. PERLE)."
               },
               {
                 "n": 5,
@@ -31477,7 +31478,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 2,
                 "name": "PERLE-Lösung",
-                "content": "Pottwal 1800 / Elefantenrobbe 600 / Riesenkrake 400 / Leopardenhai 300 / Echte Karettschildkröte 90 → P-E-R-L-E."
+                "content": "Pottwal 1800 / Elefantenrobbe 600 / Riesenkrake 1300 / Leopardenhai 180 / Echte Karettschildkröte 90 → P-E-R-L-E."
               },
               {
                 "n": 3,
@@ -32207,7 +32208,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 2,
                 "name": "Station 2 (Navigator) → T",
-                "content": "4 Tiefen-Schichten nach Tiefe sortieren: epipelagisch (0-200m), mesopelagisch (200-1000m), bathypelagisch (1000-4000m), abyssopelagisch (4000-6000m). Schicht mit Tiefsee-Beginn (1000m) = Tiefsee-Übergang → T."
+                "content": "Direkte Frage statt Sortierung: Welche Meeres-Schicht beginnt bei 200 m und heisst Daemmerungszone? Loesung: Twilight-Zone / mesopelagisch (200-1000 m) → Buchstabe T. Eindeutig: eine Frage, ein Buchstabe. Wenn die Antwort kein T liefert, war die Frage falsch verstanden."
               },
               {
                 "n": 3,
@@ -32247,7 +32248,7 @@ var ELITE_MOTTO_DATA = {
             ],
             "safetyRule": "Bei Garten-Stationen im Dunkeln auf Stolperfallen achten — Stationen vor Einbruch der Dunkelheit ablaufen. Wasser-Stationen nur knöcheltief.",
             "ageAdjust9": "Stationen 1 + 2 vereinfachen — nur 3 Perlen-Sorten in Station 1, klare Schicht-Bilder in Station 2.",
-            "ageAdjust12": "Mehr Tiefe in Station 8: Lösungswort aus 8 Buchstaben rekonstruieren, einer per Caesar-Chiffre verschlüsselt (Buchstabe 1 zurück).",
+            "ageAdjust12": "Mehr Tiefe: Loesungswort aus 8 Buchstaben rekonstruieren. Der ERSTE Buchstabe ist um 1 nach hinten verschoben — B steht statt A, M statt L. Verschiebe ihn um 1 zurueck. Beispiel: \"BTLANTIS\" → ATLANTIS. Die anderen 7 Buchstaben sind unveraendert.",
             "indoorTip": "Die 8 Stationen durch verschiedene Räume verteilen — der Wechsel hält die Spannung.",
             "outdoorTip": "Im Garten wirkt die Tauch-Signal-Station am besten — echte Bewegungs-Übungen unter freiem Himmel.",
             "whyItWorksTitle": "Wettbewerb wird Mission",
@@ -32287,7 +32288,7 @@ var ELITE_MOTTO_DATA = {
             ],
             "safetyRule": "Eltern-Opt-In schriftlich. Allergien, Asthma-Inhalator und Medikamente vorher einsammeln. Bei der Garten-Suche Stolperfallen vorher entschärfen, Stirnlampen für alle. Sternenhimmel-Beobachtung nur bei klarem Wetter sinnvoll.",
             "ageAdjust9": "Nicht empfohlen unter 10 — eher Wow ohne Schlafparty.",
-            "ageAdjust12": "Meeres-Doku anspruchsvoller wählen (Tiefsee-Folge mit Anglerfisch & Riesenkalmar), längere Sterne-Sitzung, ggf. Caesar-Chiffre als Bonus-Rätsel.",
+            "ageAdjust12": "Mehr Tiefe: Loesungswort aus 8 Buchstaben rekonstruieren. Der ERSTE Buchstabe ist um 1 nach hinten verschoben — B steht statt A, M statt L. Verschiebe ihn um 1 zurueck. Beispiel: \"BTLANTIS\" → ATLANTIS. Die anderen 7 Buchstaben sind unveraendert.",
             "indoorTip": "Bei Regen die Meerestier-Suche in eine abgedunkelte Wohnung verlegen — Stirnlampen funktionieren drinnen genauso. Statt Sterne: Bioluminiszenz-Videos auf dem Beamer.",
             "outdoorTip": "Garten vorher auf Stolperfallen prüfen, reflektierende Aufkleber auf Augenhöhe verstecken. Ideal mit Decke auf dem Rasen für die Sterne-Phase.",
             "whyItWorksTitle": "Der Auftakt, nicht das ganze Programm",
