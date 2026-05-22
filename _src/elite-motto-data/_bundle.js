@@ -9561,7 +9561,7 @@ var ELITE_MOTTO_DATA = {
             "safetyRule": "Nur kindersichere, textil-geeignete Filzstifte (Edding Textil, Crayola). No-Name-Stoff-Färbe-Stifte können Hautreaktionen auslösen — im Zweifel Eltern fragen. Keine Verstecke an wackeligen Regalen oder hinter heißen Heizungen.",
             "ageAdjust6": "Spielleiter zeigt vorher ganz deutlich, wo ungeeignete Verstecke sind (\"hinter dem weißen Vorhang funktioniert dein braunes Tuch nicht\"). Pädagogische Bemerkung statt Regel.",
             "ageAdjust8": "Mehrere Verstecke nacheinander, Zeit knapper machen.",
-            "indoorTip": "Vorhänge, hinter Sofa, in Wäscheecke — gibt mehr Verstecke als man denkt. Indoor-Limit: max. 4 Kinder gleichzeitig tarnen lassen (raeumlich nicht mehr Versteckplaetze). Bei groesserer Gruppe in 2 Runden aufteilen ODER Outdoor.",
+            "indoorTip": "Vorhänge, hinter Sofa, in Wäscheecke — gibt mehr Verstecke als man denkt. Indoor-Limit: max. 4 Kinder gleichzeitig tarnen lassen (räumlich nicht mehr Versteckplätze). Bei größerer Gruppe in 2 Runden aufteilen ODER Outdoor.",
             "outdoorTip": "Im Garten Tarn-Tuch gegen echtes Grün und Erde testen — der Aha-Effekt ist draußen viel größer als drinnen.",
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Erst malen, dann verstecken: Das aktive Gestalten gibt jedem Kind ein Ergebnis in der Hand, bevor die schwere Disziplin Stillhalten kommt. Mit 6-8 verstehen Kinder hier das Prinzip Tarnung wirklich."
@@ -9988,18 +9988,18 @@ var ELITE_MOTTO_DATA = {
               },
               {
                 "n": 2,
-                "name": "Spurenleser & Codeknacker",
-                "content": "Station 1: nicht-afrikanisches Tier streichen (Pinguin) → T. Station 2: Tier raus, das nicht in die Savanne gehört → F."
+                "name": "Spurenleser & Flamingo-Code",
+                "content": "Station 1: Flamingo-Tarnung — von 5 Vögeln den Flamingo erkennen → F. Station 2: Urwald-Pfad — von 4 Lebensraum-Karten den Urwald wählen → U."
               },
               {
                 "n": 3,
-                "name": "Tier-Quiz & Pirsch-Test",
-                "content": "Station 3: drei Tier-Fragen, Antwort Strauß → S. Station 4: lautlos durch 6 Hindernisse pirschen → U."
+                "name": "Schmetterling- & Schlangen-Code",
+                "content": "Station 3: Schmetterling-Fang — den richtigen Falter aus 4 Bildern mit Tüllball antippen → S. Station 4: Schlangen-Tunnel — durch Reifen-Tunnel kriechen wie eine Schlange → S."
               },
               {
                 "n": 4,
-                "name": "Tempel-Schloss",
-                "content": "Station 5: die Buchstaben T-F-S-U sortieren. Lösungswort FUSS verrät: der Tempel steht zu Füßen von etwas Markantem."
+                "name": "Tempel-Schloss F-U-S-S",
+                "content": "Station 5: die 4 Karten in Spur-Reihenfolge sortieren → Lösungswort FUSS. Der Tempel steht zu Füßen von etwas Markantem (z.B. großer Baum, Felsen, Spielhaus)."
               },
               {
                 "n": 5,
@@ -10009,7 +10009,7 @@ var ELITE_MOTTO_DATA = {
             ],
             "safetyRule": "Tempel-Versteck und Stations-Wege ohne Stolperfallen wählen. Beim Loslaufen zum Schatz auf rutschige Böden und Türkanten achten.",
             "ageAdjust6": "Stationen 2 und 4 vereinfachen — bei Station 2 nur 3 Tiere, bei Station 4 dürfen die Kinder dreimal \"wachgemacht\" werden.",
-            "ageAdjust8": "Stationen schwieriger — bei Station 3 vier Fragen statt drei, bei Station 5 Bei 8-Jaehrigen optional 5. Buchstabe an Station 5 (etwa Loesungswort SCHUH statt FUSS) — komplett konsistent zur Wortlaenge.",
+            "ageAdjust8": "Schwieriger für 8-Jährige: bei Station 3 vier Fragen statt drei; optional 5. Station mit Zusatzbuchstaben — Lösungswort SCHUH statt FUSS (S-C-H-U-H aus Schmetterling-Schlange-Hyäne-Urwald-Hirsch).",
             "indoorTip": "Fünf Stationen durch Zimmer und Flur verteilen, Tempel-Versteck markant wählen (unter dem Bücherregal, im Schuhschrank).",
             "outdoorTip": "Stationen über den Garten ziehen, Walkie-Talkies fürs Team einsetzen — die Quest gewinnt draußen an Abenteuer-Atmosphäre.",
             "whyItWorksTitle": "Warum das funktioniert",
@@ -15113,7 +15113,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🔐",
             "title": "Escape-Room-Plot ausarbeiten (Wow)",
-            "detail": "5-6 Phasen mit Codes/Hinweisen. Phase 1: Code unter dem Tisch. Phase 2: Quiz-Antwort = Zahlencode. Phase 3: UV-Hinweis (bei Wow). Phase 4: Vulkan-Eruption als Climax. Phase 5: Schatztruhe öffnen. Plot kurz aufschreiben — sonst stockst du beim Erklären."
+            "detail": "5 Phasen (Caesar → Ausgrabung → Quiz → Vulkan → Escape-Parcours). UV-Lampe ist OPTIONAL als Mini-Aktion vor Start, nicht Teil der 5 Code-Stationen. Phase 1: Code unter dem Tisch. Phase 2: Quiz-Antwort = Zahlencode. Phase 3: UV-Hinweis (bei Wow). Phase 4: Vulkan-Eruption als Climax. Phase 5: Schatztruhe öffnen. Plot kurz aufschreiben — sonst stockst du beim Erklären."
           },
           {
             "icon": "📦",
@@ -15163,7 +15163,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🗣️",
             "title": "Escape-Room-Plot final durchspielen (Wow)",
-            "detail": "Plot kurz aufsagen: ‚Phase 1 Tisch-Code → Phase 2 Quiz-Antwort → Phase 3 Vulkan-Eruption → Phase 4 Schatztruhe öffnen.' Wenn du stockst, stocken die Kinder mit."
+            "detail": "Phasen-Reihenfolge zum Aufbau am Tag: Phase 1 Caesar-Chiffre → Phase 2 Fossilien-Ausgrabung → Phase 3 Forscher-Quiz → Phase 4 Vulkan-Experiment → Phase 5 Escape-Parcours mit Schatztruhe (Code 31427). UV-Lampe optional als pre-Start-Akt."
           },
           {
             "icon": "🪧",
@@ -15178,7 +15178,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🔒",
             "title": "Wow-Setup: Schatztruhe + Code-Hinweise platzieren",
-            "detail": "Schuhkarton-Truhe mit Zahlenschloss (Code 31427 (5 Ziffern aus den 5 Prüfungen — siehe Escape-Logik in variants[2].games[1].codeLogic). NICHT das Geburtsdatum verwenden), drinnen: Forscher-Diplome + Wunderkerze + Auflösungs-Karte. Code-Hinweise an 5-6 Phasen-Stationen verstecken."
+            "detail": "Schuhkarton-Truhe mit Zahlenschloss (Code 31427 — eine Ziffer pro bestandener Prüfung (5 Stationen). NICHT das Geburtsdatum), drinnen: Forscher-Diplome + Wunderkerze + Auflösungs-Karte. Code-Hinweise an 5-6 Phasen-Stationen verstecken."
           }
         ]
       },
@@ -15208,7 +15208,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🔒",
             "title": "Wow-Setup: Schatztruhe-Code testen",
-            "detail": "Zahlenschloss-Code (z.B. Code 31427 (5 Ziffern aus den 5 Prüfungen — siehe Escape-Logik in variants[2].games[1].codeLogic). NICHT das Geburtsdatum verwenden) zweimal testen. UV-Hinweise (falls Wow Premium) mit UV-Stift schreiben + UV-Lampe checken."
+            "detail": "Zahlenschloss-Code (z.B. Code 31427 — eine Ziffer pro bestandener Prüfung (5 Stationen). NICHT das Geburtsdatum) zweimal testen. UV-Hinweise (falls Wow Premium) mit UV-Stift schreiben + UV-Lampe (OPTIONAL — gehört nicht zum 5-Phasen-Plan) checken."
           }
         ]
       },
@@ -15223,7 +15223,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🎯",
             "title": "30 Min vor Ankunft: Escape-Setup final (Wow)",
-            "detail": "Schatztruhe in finalem Versteck (Garten-Boden, Schrank, oder Balkon-Ecke), Hinweis-Karten in Schritt-für-Schritt-Logik verteilt. UV-Lampe griffbereit."
+            "detail": "Schatztruhe in finalem Versteck (Garten-Boden, Schrank, oder Balkon-Ecke), Hinweis-Karten in Schritt-für-Schritt-Logik verteilt. UV-Lampe (OPTIONAL — gehört nicht zum 5-Phasen-Plan) griffbereit."
           },
           {
             "icon": "🎯",
@@ -15354,7 +15354,7 @@ var ELITE_MOTTO_DATA = {
     },
     "signatureRitual": {
       "name": "Die Paläontologen-Initiation",
-      "subtitle": null,
+      "subtitle": "Der Forscherpass als roter Faden der Quest",
       "introText": "Vor dem ersten Spiel: Jedes Kind faltet seinen eigenen Forscherpass aus festem Papier. Name auf den Pass schreiben, ersten Stempel oben links setzen (Mini-Dino-Stempel). Die Gastgeberin sagt feierlich: \"Ab jetzt bist du Paläontologin/Paläontologe. An jeder Station gibt es einen weiteren Stempel — der Pass beweist, dass du alle Prüfungen bestanden hast.\" Erst dann beginnt die erste Station.",
       "setupSteps": [
         "A5-Papier vorbereiten (1 Blatt pro Kind + 2 Reserve)",
@@ -15362,10 +15362,35 @@ var ELITE_MOTTO_DATA = {
         "Stationen-Stempel: 5 verschiedene Motive (Caesar-Schriftrolle, Pinsel, Quizfrage, Vulkan, Schloss)",
         "Endpunkt: Goldener \"Forscher-Diplom\"-Stempel als Krönung"
       ],
-      "rolesList": [],
+      "rolesList": [
+        {
+          "emoji": "🔍",
+          "name": "Chef-Forscher",
+          "content": "Hält die Master-Karte mit allen 5 Stempel-Plätzen, ruft \"Nächste Station!\""
+        },
+        {
+          "emoji": "✍️",
+          "name": "Chef-Dokumentar",
+          "content": "Beobachter-Rolle für stille Kinder: führt das Gruppen-Logbuch, bekommt Spezial-Pass"
+        },
+        {
+          "emoji": "🦴",
+          "name": "Paläontologe",
+          "content": "Spezialist für Fossilien-Ausgrabung, hilft anderen bei Gips-Mischung"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Vulkan-Chemiker",
+          "content": "Mischt unter Aufsicht das Natron-Essig-Experiment, kennt die Sättigungsregel"
+        },
+        {
+          "emoji": "🔐",
+          "name": "Code-Knacker",
+          "content": "Trägt die 5 Stationen-Ziffern zusammen, öffnet am Ende das Schloss"
+        }
+      ],
       "optOutNote": "Kinder, die nicht im Vordergrund stehen wollen, übernehmen die Beobachter-Rolle (existiert auch im SOS-Szenario): Sie führen das Logbuch der ganzen Gruppe und bekommen einen Spezial-Pass \"Chef-Dokumentar\".",
-      "materialNote": null,
-      "_note": "Dino-Mottoseiten haben keine eigene Ritual-Sektion im Quell-HTML. Dino-Spurensuche oder Vulkan-Ausbruch sind die motto-zentralen Aktivitäten.",
+      "materialNote": "A5-Papier (1/Kind + 2 Reserve), Mini-Dino-Stempel + Kissen (~6 €), 5 Stations-Stempel verschiedener Motive, 1 goldener Diplom-Stempel",
       "durationMin": 5,
       "materialCost": "6-8 €",
       "whyItWorks": "Der Pass ist der rote Faden: Jedes Spiel zahlt sichtbar auf den Pass ein (= ein Stempel mehr). Kein abstrakter \"Spaß\" — konkretes Belohnungssystem, das 9-12-jährige Kinder bei der Ehre packt. Plus: Der Pass ist das Mitgebsel — kein zusätzliches Material nötig."
@@ -18522,7 +18547,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 8,
                 "name": "KOMPASS-Lösung",
-                "content": "Krabben-Spur, Old Toms Hütte, Möwen-Nest, Palmen-Allee, Anker-Wrack, Sturmlaterne, Schmuggler-Höhle → K-O-M-P-A-S-S."
+                "content": "Krabben-Spur, Old Toms Hütte, Möwen-Nest, Palmen-Allee, Anker-Wrack, Sturmlaterne, Schmuggler-Höhle → K-O-M-P-A-S-S. SELBST-CHECK-NOTE: Bei KOMPASS sind die beiden S-Stationen (Sturmlaterne, Schmuggler-Höhle) durch die Story-Reihenfolge fix: Sturmlaterne steht VOR der Höhle (im Anker-Wrack davor liegen). Die Selbst-Kontrolle der beiden S-Stationen funktioniert geografisch, nicht über eindeutige Buchstaben. Saubere Alternative: SEGLER (6 unique Buchstaben), siehe kompassReihenfolgeNote."
               },
               {
                 "n": 9,
@@ -19129,9 +19154,9 @@ var ELITE_MOTTO_DATA = {
             "description": "Tagesgäste werden abgeholt; die Übernacht-Crew isst zu Abend und macht sich für die Nacht-Schatzsuche bereit."
           },
           {
-            "time": "ab 20:00",
+            "time": "Bei Dunkelheit",
             "title": "🌙 Nacht-Schatzsuche & Schlafparty (optional)",
-            "description": "Mit Stirnlampen eine kurze Nacht-Route ablaufen, danach Lager an Bord. Eltern-Opt-In vorher klären."
+            "description": "Mit Stirnlampen eine kurze Nacht-Route ablaufen, danach Lager an Bord. Eltern-Opt-In vorher klären. JAHRESZEIT: Sommer (Juni-August) erst ab ~21:30 dunkel — Abholzeit auf 22:30 verschieben ODER Indoor (Keller). Winter: 17:30-19:00 ideal."
           }
         ],
         "games": [
@@ -19459,8 +19484,8 @@ var ELITE_MOTTO_DATA = {
           "detail": "Die Übernacht-Option vorher schriftlich mit allen Eltern klären (Schlafsack, Abholzeit am Morgen, Notfallnummern). Nicht jedes Kind will übernachten — ein Abhol-Zeitpunkt am Abend muss selbstverständlich möglich sein."
         },
         {
-          "tip": "Jahreszeit-Warnung Nacht-Schatzsuche",
-          "content": "Nacht-Schatzsuche (Wow-Variante) NUR bei echter Dunkelheit. Sommer (Juni-August): erst ab 21:30 Uhr — entweder Abholzeit verschieben oder Indoor (abgedunkelter Keller). Winter: 17:30-19:00 Uhr ideal. Reflektor-Karten + Stirnlampen funktionieren nur bei <100 Lux Restlicht."
+          "topic": "Jahreszeit-Warnung Nacht-Schatzsuche",
+          "detail": "Nacht-Schatzsuche (Wow-Variante) NUR bei echter Dunkelheit. Sommer (Juni-August): erst ab 21:30 Uhr — entweder Abholzeit verschieben oder Indoor (abgedunkelter Keller). Winter: 17:30-19:00 Uhr ideal. Reflektor-Karten + Stirnlampen funktionieren nur bei <100 Lux Restlicht."
         }
       ],
       "educationalValue": "Die Kinder üben ganz nebenbei echte Fähigkeiten: Koordinaten lesen, Werte sortieren und teilen, aus Hinweisen logisch eine Reihenfolge ableiten, echte Knoten binden und im Team eine mehrstufige Aufgabe koordinieren. Vor allem lernen sie, dass genaues Hinschauen und Zusammenarbeit weiter führen als Hektik — der Selbst-Check macht das spürbar: Wer schludert, liest Buchstabensalat; wer sorgfältig ist, liest ein Wort."
@@ -19982,7 +20007,6 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Der Countdown gibt einen klaren, gemeinsamen Rhythmus, und das „Einfrieren“ baut eine eingebaute Ruhepause ein — so wechseln sich Toben und Stillsein ab, genau das brauchen kleine Kinder."
           },
           {
-            "_source": "SEO-Cross-Pollination",
             "name": "🎨 Planeten-Malen",
             "indoor": true,
             "outdoor": false,
@@ -20330,7 +20354,6 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Basteln gibt jedem Kind ein fertiges Ergebnis in die Hand, das es behalten darf — das stärkt den Stolz, und die ruhige Tätigkeit bremst die Gruppe nach einer Toben-Phase angenehm herunter."
           },
           {
-            "_source": "SEO-Cross-Pollination",
             "name": "🌟 Sternen-Memory",
             "indoor": true,
             "outdoor": false,
@@ -20660,7 +20683,7 @@ var ELITE_MOTTO_DATA = {
             "indoor": true,
             "outdoor": false,
             "duration": "20 Min.",
-            "minAge": 5,
+            "minAge": 4,
             "loudness": "leise",
             "effort": "mittel",
             "material": "Pro Kind eine leere Klopapierrolle, bunte Stifte oder Fingerfarbe, Krepppapier-Streifen (rot/orange = Flamme), Klebestift, ein Stern-Sticker.",
@@ -20696,7 +20719,6 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Basteln gibt jedem Kind ein fertiges Ergebnis in die Hand, das es behalten darf — das stärkt den Stolz, und die ruhige Tätigkeit bremst die Gruppe nach einer Toben-Phase angenehm herunter."
           },
           {
-            "_source": "SEO-Cross-Pollination",
             "name": "👽 Freundlicher Alien-Fang",
             "indoor": true,
             "outdoor": true,
@@ -20916,7 +20938,7 @@ var ELITE_MOTTO_DATA = {
       "meta": {
         "aufwand": "mittel (Rührteig + 15 Min. Deko)",
         "kosten": "ca. 5–8 €",
-        "allergiker": "Für Ei-Allergie: fertigen Marmorkuchen vom Bäcker nehmen und nur die Glasur + Krater selbst draufmachen — sieht genauso aus. Glutenfrei: Reismehl-Mischung (Schaer/Bauckhof) statt Weizen. Laktosefrei: Pflanzenmargarine + Hafermilch statt Butter/Milch. Mit Eltern vorab durchsprechen, was im Buttercreme-Stern noch ersetzt werden muss."
+        "allergiker": "Für Ei-Allergie: fertigen Marmorkuchen vom Bäcker nehmen und nur die Glasur + Krater selbst draufmachen — sieht genauso aus. Glutenfrei: Reismehl-Mischung (Schaer/Bauckhof) statt Weizen. Laktosefrei: Pflanzenmargarine + Hafermilch statt Butter/Milch. Mit Eltern vorab durchsprechen, was im Glasur noch ersetzt werden muss."
       },
       "tips": [
         {
@@ -20977,12 +20999,10 @@ var ELITE_MOTTO_DATA = {
         "a": "Teilweise. Das Karton-Raumschiff und das Sammeln begeistern auch die Kleinsten, aber Stern-Projektor und aufblasbare Deko-Figuren können 3-Jährige überfordern oder erschrecken. Für reine 3-Jährigen-Runden bleib bei Minimal oder Standard — die Wow-Extras lohnen sich ab etwa 5 Jahren."
       },
       {
-        "_source": "SEO-Cross-Pollination",
         "q": "Sind Alien-Spiele für so kleine Kinder nicht zu gruselig?",
         "a": "Nur wenn man sie gruselig macht. Wir verwenden bewusst freundliche Aliens (lächelnde Pappe-Gesichter, grünes Tuch als Erkennung, kein dunkles Maskenspiel) und drehen das Fangen in eine Begrüßungs-Geste. Wer „gefangen“ wird, wird mit High-Five willkommen geheißen und ist dann selbst Alien-Helfer — keiner verliert, niemand erschrickt. Für 3-Jährige besser ganz weglassen, ab 4–5 funktioniert es zuverlässig."
       },
       {
-        "_source": "SEO-Cross-Pollination",
         "q": "Was kostet ein Weltraum-Geburtstag pro Kind ungefähr?",
         "a": "Bei der Minimal-Variante rund 6 € pro Kind (35 € für 6 Kinder), Standard ca. 7 € pro Kind (55 € für 8 Kinder), Wow ca. 10 € pro Kind (80 € für 8 Kinder). Mit Bestand aus dem Haushalt (Klopapierrollen, Alufolie, Buntstifte) drückst du das auf 3–5 € pro Kind. Das Karton-Raumschiff kostet nichts und ist trotzdem der Star der Party."
       }
@@ -21232,7 +21252,6 @@ var ELITE_MOTTO_DATA = {
         "tone": "ruhig"
       },
       "kind_hat_angst_vor_dunkelheit": {
-        "_source": "SEO-Cross-Pollination",
         "icon": "🌑",
         "label": "Kind hat Angst vor Dunkelheit oder Alien-Optik",
         "headline": "Nie komplett abdunkeln — nur dimmen — und freundliche Alien-Optik bewahren.",

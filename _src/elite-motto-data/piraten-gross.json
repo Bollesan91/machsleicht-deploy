@@ -221,7 +221,7 @@
             {
               "n": 8,
               "name": "KOMPASS-Lösung",
-              "content": "Krabben-Spur, Old Toms Hütte, Möwen-Nest, Palmen-Allee, Anker-Wrack, Sturmlaterne, Schmuggler-Höhle → K-O-M-P-A-S-S."
+              "content": "Krabben-Spur, Old Toms Hütte, Möwen-Nest, Palmen-Allee, Anker-Wrack, Sturmlaterne, Schmuggler-Höhle → K-O-M-P-A-S-S. SELBST-CHECK-NOTE: Bei KOMPASS sind die beiden S-Stationen (Sturmlaterne, Schmuggler-Höhle) durch die Story-Reihenfolge fix: Sturmlaterne steht VOR der Höhle (im Anker-Wrack davor liegen). Die Selbst-Kontrolle der beiden S-Stationen funktioniert geografisch, nicht über eindeutige Buchstaben. Saubere Alternative: SEGLER (6 unique Buchstaben), siehe kompassReihenfolgeNote."
             },
             {
               "n": 9,
@@ -828,9 +828,9 @@
           "description": "Tagesgäste werden abgeholt; die Übernacht-Crew isst zu Abend und macht sich für die Nacht-Schatzsuche bereit."
         },
         {
-          "time": "ab 20:00",
+          "time": "Bei Dunkelheit",
           "title": "🌙 Nacht-Schatzsuche & Schlafparty (optional)",
-          "description": "Mit Stirnlampen eine kurze Nacht-Route ablaufen, danach Lager an Bord. Eltern-Opt-In vorher klären."
+          "description": "Mit Stirnlampen eine kurze Nacht-Route ablaufen, danach Lager an Bord. Eltern-Opt-In vorher klären. JAHRESZEIT: Sommer (Juni-August) erst ab ~21:30 dunkel — Abholzeit auf 22:30 verschieben ODER Indoor (Keller). Winter: 17:30-19:00 ideal."
         }
       ],
       "games": [
@@ -1158,8 +1158,8 @@
         "detail": "Die Übernacht-Option vorher schriftlich mit allen Eltern klären (Schlafsack, Abholzeit am Morgen, Notfallnummern). Nicht jedes Kind will übernachten — ein Abhol-Zeitpunkt am Abend muss selbstverständlich möglich sein."
       },
       {
-        "tip": "Jahreszeit-Warnung Nacht-Schatzsuche",
-        "content": "Nacht-Schatzsuche (Wow-Variante) NUR bei echter Dunkelheit. Sommer (Juni-August): erst ab 21:30 Uhr — entweder Abholzeit verschieben oder Indoor (abgedunkelter Keller). Winter: 17:30-19:00 Uhr ideal. Reflektor-Karten + Stirnlampen funktionieren nur bei <100 Lux Restlicht."
+        "topic": "Jahreszeit-Warnung Nacht-Schatzsuche",
+        "detail": "Nacht-Schatzsuche (Wow-Variante) NUR bei echter Dunkelheit. Sommer (Juni-August): erst ab 21:30 Uhr — entweder Abholzeit verschieben oder Indoor (abgedunkelter Keller). Winter: 17:30-19:00 Uhr ideal. Reflektor-Karten + Stirnlampen funktionieren nur bei <100 Lux Restlicht."
       }
     ],
     "educationalValue": "Die Kinder üben ganz nebenbei echte Fähigkeiten: Koordinaten lesen, Werte sortieren und teilen, aus Hinweisen logisch eine Reihenfolge ableiten, echte Knoten binden und im Team eine mehrstufige Aufgabe koordinieren. Vor allem lernen sie, dass genaues Hinschauen und Zusammenarbeit weiter führen als Hektik — der Selbst-Check macht das spürbar: Wer schludert, liest Buchstabensalat; wer sorgfältig ist, liest ein Wort."
