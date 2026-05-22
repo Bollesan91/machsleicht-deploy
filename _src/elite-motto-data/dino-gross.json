@@ -74,7 +74,7 @@
             "Beispiel: „Warum starben die Dinos aus?“ → Asteroideneinschlag",
             "Stichfrage bei Gleichstand: „Wie lang war ein Diplodocus?“ → ca. 25–30 m"
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
+          "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Prüfung (Klopapierrollen-Test).",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": "Tisch + Stühle + Punktetafel zentral. Buzzer-Geräte griffbereit.",
@@ -100,7 +100,7 @@
             "Wessen Schaum-Säule ist höher? Variante: warmes vs kaltes Wasser testen",
             "Wiederholbar 2–3× pro Team"
           ],
-          "safetyRule": "Kinder min. 1 Armlaenge zurueck, nie ins Krater-Innere beugen. Schuerze/alte Kleidung wegen Lebensmittelfarbe (faerbt!). Erwachsene*r misst Mengen ab. Faktencheck: Mehr Natron = NICHT hoehere Eruption (Saettigung ab ca 50g). Bei Augenkontakt: 5 Min mit Wasser spuelen.",
+          "safetyRule": "Kinder min. 1 Armlaenge zurück, nie ins Krater-Innere beugen. Schuerze/alte Kleidung wegen Lebensmittelfarbe (färbt!). Erwachsene*r misst Mengen ab. Faktencheck: Mehr Natron = NICHT hoehere Eruption (Saettigung ab ca 50g). Bei Augenkontakt: 5 Min mit Wasser spuelen.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": "Badewanne oder Balkon, mit Folie.",
@@ -126,7 +126,7 @@
             "3 Durchgänge, addiere Zeiten",
             "Gewinner = niedrigste Gesamtzeit. Verlierer bekommen Trostpreis"
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
+          "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Prüfung (Klopapierrollen-Test).",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -135,7 +135,7 @@
           "whyItWorks": "Bewegung mit klaren Regeln + Teams + Zeitmessung = motiviertes Forscher-Training. Wettbewerb ist erwünscht in dem Alter, aber Trostpreis verhindert Frust-Spirale."
         }
       ],
-      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🍿Popcorn2 Schüsseln\n🧃Getränke4 Liter",
+      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 Stück pro Kind = 4 Pizzen ergeben 16 Stück = 8 Portionen a 2\n🍿Popcorn2 Schüsseln\n🧃Getränke4 Liter",
       "decoration": "🎈 Grüne Ballons~2 €\n🦕 Dino-Figuren TischdekoIm Set",
       "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~2 € pro Kind.\n\n🦕 Mini-Dino\n🍬 Süßigkeiten\n📝 Quiz-Urkunde",
       "shoppingList": [
@@ -253,7 +253,7 @@
             "Beispiel: „Welches heutige Tier ist mit Dinos verwandt?“ → Vögel",
             "Stichfrage: „Wie viele Zähne hatte Nigersaurus?“ → ca. 500"
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
+          "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Prüfung (Klopapierrollen-Test).",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -305,7 +305,7 @@
             "Chemie erklären: Säure + Base → CO2 + Wasser + Natriumacetat. Spüli fängt CO2 = Schaum",
             "Höchste Eruption gewinnt → Stempel im Forscherpass für alle"
           ],
-          "safetyRule": "Kinder min. 1 Armlaenge zurueck, nie ins Krater-Innere beugen. Schuerze/alte Kleidung wegen Lebensmittelfarbe (faerbt!). Erwachsene*r misst Mengen ab. Faktencheck: Mehr Natron = NICHT hoehere Eruption (Saettigung ab ca 50g). Bei Augenkontakt: 5 Min mit Wasser spuelen.",
+          "safetyRule": "Kinder min. 1 Armlaenge zurück, nie ins Krater-Innere beugen. Schuerze/alte Kleidung wegen Lebensmittelfarbe (färbt!). Erwachsene*r misst Mengen ab. Faktencheck: Mehr Natron = NICHT hoehere Eruption (Saettigung ab ca 50g). Bei Augenkontakt: 5 Min mit Wasser spuelen.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -324,7 +324,7 @@
           "material": "2 Seile, Kissen, Bälle, Löffel, Stoppuhr",
           "prepText": "",
           "steps": [],
-          "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
+          "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Prüfung (Klopapierrollen-Test).",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -333,7 +333,7 @@
           "whyItWorks": null
         }
       ],
-      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🥨 Chips/Nachos2 Schüsseln",
+      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 Stück pro Kind = 4 Pizzen ergeben 16 Stück = 8 Portionen a 2\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🥨 Chips/Nachos2 Schüsseln",
       "decoration": "🎈 Grüne Luftballons (10 Stk.)~2 €\n🦶 Fußspuren-Pfad am BodenKostenlos, 15 Min.\n🦕 Dino-Figuren als TischdekoIm Set\n📜 „Urzeit-Dschungel“-Schild am EingangKostenlosPappe + Edding",
       "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~3 € pro Kind.\n\nForscherpass (mit Urkunde)\n🦕 Dino-Figur (aus Ausgrabung)\n🍬 Süßigkeiten\n💎 „Fossil“ (Muschel/Stein)",
       "shoppingList": [
@@ -501,7 +501,7 @@
             "Stoppuhr nur für Spannung — alle Teams kommen durch, keine Niederlage",
             "Code-Ziffer der finalen Station + 4 vorige Ziffern = 5-stelliger Code für die Schatztruhe"
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
+          "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Prüfung (Klopapierrollen-Test).",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -511,7 +511,7 @@
           "codeLogic": "Saubere Code-Logik: 5 Stationen, jede gibt eine vorab festgelegte Ziffer per gedruckter Karte. Reihenfolge der Stationen = Schloss-Code. Beispiel-Default: 3-1-4-2-7. Station 1 (Caesar-Chiffre): Loesungswort steht auf Karte mit \"Ziffer 3\". Station 2 (Forscher-Quiz): Bei >=8/15 Punkten Karte \"Ziffer 1\" entnehmen; sonst Hilfe-Karte. Station 3 (Fossilien-Suche): Ziffer \"4\" unter der Auffangschale versteckt. Station 4 (Vulkan): Ziffer \"2\" steckt am Krater-Rand (nicht an Eruptionshoehe gekoppelt). Station 5 (Final): Ziffer \"7\" als Belohnungs-Karte. Code \"31427\" oeffnet Schloss. NICHT auf Geburtsdatum koppeln (das ist die alte falsche Logik)."
         }
       ],
-      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🥔Kartoffelbrei-Vulkan1 Schüssel\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🌮 Nachos + Dip2 Schüsseln",
+      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza2 Stück pro Kind = 4 Pizzen ergeben 16 Stück = 8 Portionen a 2\n🥔Kartoffelbrei-Vulkan1 Schüssel\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🌮 Nachos + Dip2 Schüsseln",
       "decoration": "🎈 Grüne Luftballons~2 €\n🦶 Fußspuren-PfadKostenlos, 15 Min.\n📜 „Urzeit-Dschungel“-SchildKostenlosPappe + Edding\n🔊 Dschungel-SoundsKostenlosYouTube: „Jungle Ambience“\n🦕 Dino-Figuren überallIm Set\n🕯️ Wunderkerzen für Kuchen~2 €",
       "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~4 € pro Kind.\n\nForscherpass + Urkunde\n🦕 Dino-Figur\n💎 „Fossil“ (Muschel/Stein)\n🍬 Süßigkeiten\n🗝️ Mini-Lupe",
       "shoppingList": [

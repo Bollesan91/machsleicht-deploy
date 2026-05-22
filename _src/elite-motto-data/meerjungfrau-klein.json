@@ -3,7 +3,7 @@
     "source_file": "meerjungfrau-3-5-jahre.html (Phase B)",
     "extracted": "2026-05-21",
     "schema_version": "1.0",
-    "purpose": "Strukturierte Elite-Motto-Daten fuer den Planer (P3-13 bis P3-19). Meerjungfrau, Altersgruppe klein (3-5). Phase-B-Vollausbau: preparationWeeks + sosScenarios + shoppingList[].category geschrieben."
+    "purpose": "Strukturierte Elite-Motto-Daten für den Planer (P3-13 bis P3-19). Meerjungfrau, Altersgruppe klein (3-5). Phase-B-Vollausbau: preparationWeeks + sosScenarios + shoppingList[].category geschrieben."
   },
   "motto": "meerjungfrau",
   "ageGroup": "klein",
@@ -12,8 +12,8 @@
     5
   ],
   "title": "🧜‍♀️ Meerjungfrau-Kindergeburtstag — 3–5 Jahre",
-  "metaDescription": "Meerjungfrau-Geburtstag fuer 3–5 Jahre: ruhige Unterwasser-Welt statt gruseliger Tiefsee. Perlen sammeln, Korallen-Garten bauen, Fisch-Freunde finden. Drei Budget-Varianten ab 35 €, 10 Spiele mit Altersanpassung, Vorbereitungsplan und SOS-Hilfen. Auch fuer Jungen (Meerprinz-Variante).",
-  "introParagraph": "Eine Meerjungfrau-Party fuer Drei- bis Fuenfjaehrige lebt nicht von Glitzer-Wettbewerb, sondern von einer ruhigen, freundlichen Unterwasser-Welt: ein Korallenriff im Wohnzimmer, verlorene Perlen, die gesammelt werden wollen, und ein paar Fisch-Freunde, denen man hilft. Kein gruseliges Tiefsee-Thema, keine Haie, keine Strudel — bei kleinen Kindern macht das mehr Angst als Freude. Und ganz wichtig: Meerjungfrau ist hier kein reines Maedchen-Thema. Mit der Meerprinz-Variante (Wellen-Krone, Seestern-Stirnband) und geschlechtsneutralen „Ozean-Helfern“ sind alle Kinder gemeint. Diese Seite gibt dir drei Varianten vom 35-Euro-Wohnzimmer-Riff bis zur 80-Euro-Schatzsuche, jede mit fertigem Ablauf, Einkaufsliste und Plan B.",
+  "metaDescription": "Meerjungfrau-Geburtstag für 3–5 Jahre: ruhige Unterwasser-Welt statt gruseliger Tiefsee. Perlen sammeln, Korallen-Garten bauen, Fisch-Freunde finden. Drei Budget-Varianten ab 35 €, 10 Spiele mit Altersanpassung, Vorbereitungsplan und SOS-Hilfen. Auch für Jungen (Meerprinz-Variante).",
+  "introParagraph": "Eine Meerjungfrau-Party für Drei- bis Fuenfjaehrige lebt nicht von Glitzer-Wettbewerb, sondern von einer ruhigen, freundlichen Unterwasser-Welt: ein Korallenriff im Wohnzimmer, verlorene Perlen, die gesammelt werden wollen, und ein paar Fisch-Freunde, denen man hilft. Kein gruseliges Tiefsee-Thema, keine Haie, keine Strudel — bei kleinen Kindern macht das mehr Angst als Freude. Und ganz wichtig: Meerjungfrau ist hier kein reines Mädchen-Thema. Mit der Meerprinz-Variante (Wellen-Krone, Seestern-Stirnband) und geschlechtsneutralen „Ozean-Helfern“ sind alle Kinder gemeint. Diese Seite gibt dir drei Varianten vom 35-Euro-Wohnzimmer-Riff bis zur 80-Euro-Schatzsuche, jede mit fertigem Ablauf, Einkaufsliste und Plan B.",
   "signatureRitual": {
     "name": "Das kleine Meerjungfrau-Versprechen",
     "subtitle": "Eroeffnet die Party (Muschel-Uebergabe) + Perlen-Urkunde am Ende",
@@ -21,7 +21,7 @@
     "setupSteps": [
       {
         "title": "Muschel-Stirnbaender mit Meeres-Namen vorbereiten",
-        "content": "Pro Kind ein Stirnband aus Tonpapier (ca. 5 cm × 55 cm) mit einem Muschel-Sticker oder einer aufgeklebten Pappmuschel. Schreib den Namen schon drauf oder nutze ein Klett-Schild zum Anstecken. Beim Aufsetzen sagst du: „Du bist jetzt Mini-Meerjungfrau Mia.“ — oder „Meerprinz Ben“ fuer Jungen. Erwachsener setzt auf, das ist der rituelle Moment."
+        "content": "Pro Kind ein Stirnband aus Tonpapier (ca. 5 cm × 55 cm) mit einem Muschel-Sticker oder einer aufgeklebten Pappmuschel. Schreib den Namen schon drauf oder nutze ein Klett-Schild zum Anstecken. Beim Aufsetzen sagst du: „Du bist jetzt Mini-Meerjungfrau Mia.“ — oder „Meerprinz Ben“ für Jungen. Erwachsener setzt auf, das ist der rituelle Moment."
       },
       {
         "title": "Start-Muscheln bereitlegen",
@@ -29,15 +29,15 @@
       },
       {
         "title": "Perlen-Urkunden ausdrucken (eine pro Kind, identisch)",
-        "content": "Eine schlichte Urkunde „Meeres-Helfer-Urkunde fuer [Name]“. Bewusst alle gleich — kein „1. Platz“. Vorlage gibt es im machsleicht-Urkunden-Generator. Namen vorab eintragen spart Stress am Tag."
+        "content": "Eine schlichte Urkunde „Meeres-Helfer-Urkunde für [Name]“. Bewusst alle gleich — kein „1. Platz“. Vorlage gibt es im machsleicht-Urkunden-Generator. Namen vorab eintragen spart Stress am Tag."
       },
       {
         "title": "Perlen-Beutel fuellen (Perlen-Schoki)",
-        "content": "Pro Kind ein kleines Organza-Saeckchen mit Perlen-Schokolade (Schoko-Perlen / runde Schoko-Kugeln). Das ist die „Belohnung“ am Ende — fuer alle gleich viel, kein Sammel-Wettbewerb."
+        "content": "Pro Kind ein kleines Organza-Saeckchen mit Perlen-Schokolade (Schoko-Perlen / runde Schoko-Kugeln). Das ist die „Belohnung“ am Ende — für alle gleich viel, kein Sammel-Wettbewerb."
       },
       {
         "title": "Abschluss-Moment planen (vor dem Abholen)",
-        "content": "Letzte 5 Minuten ruhig: alle Kinder im Halbkreis, du gehst herum, ueberreichst Urkunde + Perlen-Beutel und sagst jedem Kind seinen Meeres-Namen. Foto-Moment fuer die Eltern, sanfter Ausklang statt Chaos-Ende."
+        "content": "Letzte 5 Minuten ruhig: alle Kinder im Halbkreis, du gehst herum, ueberreichst Urkunde + Perlen-Beutel und sagst jedem Kind seinen Meeres-Namen. Foto-Moment für die Eltern, sanfter Ausklang statt Chaos-Ende."
       }
     ],
     "rolesList": [
@@ -49,7 +49,7 @@
       {
         "emoji": "🐠",
         "name": "Fisch-Freund",
-        "function": "Kuemmert sich um die Plueschfische und bringt sie zurueck zu ihrer Koralle."
+        "function": "Kuemmert sich um die Plueschfische und bringt sie zurück zu ihrer Koralle."
       },
       {
         "emoji": "🐚",
@@ -83,7 +83,7 @@
       }
     ],
     "optOutNote": "Manche Kinder wollen kein Stirnband, keine Rolle oder einfach nur zuschauen — das ist bei 3-5 voellig normal und kein Problem. Zwing kein Kind in eine Rolle. Leg das Stirnband daneben, sag „du kannst es spaeter aufsetzen, wenn du magst“ und mach weiter. Oft kommt das Kind nach 10 Minuten von selbst dazu, wenn es sieht, dass es Spass macht. Die Start-Muschel und die Urkunde bekommt JEDES Kind am Ende — auch das, das nicht mitgespielt hat. Kein Kind geht ohne Perlen-Beutel nach Hause.",
-    "materialNote": "Fuer das Ritual brauchst du nur drei Dinge: Tonpapier-Stirnbaender mit Muschel-Stickern (👉 amazon.de/s?k=muschel+sticker+basteln&tag=machsleicht-21, ~5 €), kleine Deko-Muscheln im Set (👉 amazon.de/s?k=deko+muscheln+set&tag=machsleicht-21, ~6 €) und Perlen-Schokolade fuer die Beutel (👉 amazon.de/s?k=schokoladen+perlen&tag=machsleicht-21, ~4 €). Stirnbaender kannst du auch komplett selbst aus Tonpapier-Resten basteln — ein aufgemalter Muschel-Kringel reicht den Kleinen voellig. Die Meerprinz-Variante fuer Jungen: statt Muschel ein Wellen-Sticker oder eine kleine Krone."
+    "materialNote": "Für das Ritual brauchst du nur drei Dinge: Tonpapier-Stirnbaender mit Muschel-Stickern (👉 amazon.de/s?k=muschel+sticker+basteln&tag=machsleicht-21, ~5 €), kleine Deko-Muscheln im Set (👉 amazon.de/s?k=deko+muscheln+set&tag=machsleicht-21, ~6 €) und Perlen-Schokolade für die Beutel (👉 amazon.de/s?k=schokoladen+perlen&tag=machsleicht-21, ~4 €). Stirnbaender kannst du auch komplett selbst aus Tonpapier-Resten basteln — ein aufgemalter Muschel-Kringel reicht den Kleinen voellig. Die Meerprinz-Variante für Jungen: statt Muschel ein Wellen-Sticker oder eine kleine Krone."
   },
   "ageInsight": {
     "headline": "Warum 3–5-Jaehrige eine ruhige Unterwasser-Welt brauchen — keine Tiefsee",
@@ -94,7 +94,7 @@
       },
       {
         "topic": "🤝 Parallel- statt Gruppenspiel",
-        "detail": "Mit 3 spielen Kinder oft nebeneinander, nicht miteinander. Wettkampf-Spiele („wer hat die meisten Perlen“) frustrieren mehr, als sie motivieren. Setz auf Sammeln und Bauen, wo jedes Kind fuer sich werkelt und am Ende alle gemeinsam gewinnen."
+        "detail": "Mit 3 spielen Kinder oft nebeneinander, nicht miteinander. Wettkampf-Spiele („wer hat die meisten Perlen“) frustrieren mehr, als sie motivieren. Setz auf Sammeln und Bauen, wo jedes Kind für sich werkelt und am Ende alle gemeinsam gewinnen."
       },
       {
         "topic": "✂️ Feinmotorik noch im Aufbau",
@@ -118,14 +118,14 @@
       }
     ],
     "whyMottoFitsHeadline": "Warum Meerjungfrau bei 3–5 so gut traegt",
-    "whyMottoFits": "Die Unterwasser-Welt ist fuer kleine Kinder ein Sehnsuchts-Bild, das sie aus Bilderbuechern und Filmen kennen — bunt, sanft, voller freundlicher Tiere. Anders als Piraten (Kampf) oder Weltraum (Dunkelheit) bietet das Meer von Natur aus ruhige, helle Bilder: Perlen, Muscheln, Fische, Korallen. Die Verwandlung in eine Mini-Meerjungfrau oder einen Meerprinzen ist einfach (ein Stirnband reicht) und traegt das ganze Rollenspiel. Und weil es ums Sammeln, Helfen und Bauen geht statt ums Gewinnen, passt das Thema perfekt zur Parallelspiel-Phase. Wichtig fuer die Inklusion: Mit Meerprinzen und geschlechtsneutralen „Ozean-Helfern“ ist es ausdruecklich kein Maedchen-Thema — alle Kinder sind im Riff willkommen."
+    "whyMottoFits": "Die Unterwasser-Welt ist für kleine Kinder ein Sehnsuchts-Bild, das sie aus Bilderbuechern und Filmen kennen — bunt, sanft, voller freundlicher Tiere. Anders als Piraten (Kampf) oder Weltraum (Dunkelheit) bietet das Meer von Natur aus ruhige, helle Bilder: Perlen, Muscheln, Fische, Korallen. Die Verwandlung in eine Mini-Meerjungfrau oder einen Meerprinzen ist einfach (ein Stirnband reicht) und traegt das ganze Rollenspiel. Und weil es ums Sammeln, Helfen und Bauen geht statt ums Gewinnen, passt das Thema perfekt zur Parallelspiel-Phase. Wichtig für die Inklusion: Mit Meerprinzen und geschlechtsneutralen „Ozean-Helfern“ ist es ausdruecklich kein Mädchen-Thema — alle Kinder sind im Riff willkommen."
   },
   "variants": [
     {
       "id": "minimal",
       "label": "Minimal — 90 Minuten, kleines Budget",
       "headline": "🌿 Minimal — 90 Minuten, kleines Budget",
-      "intro": "Das Wohnzimmer-Riff: ein blaues Tuch am Boden, verstreute Perlen, ein paar Plueschfische — mehr braucht es nicht. Fuer 6 Kinder, etwa 90 Minuten. Stirnband-Basteln, Perlen sammeln, ein Fisch-Quiz und Kuchen. Kaum Vorbereitung, fast alles aus dem Bestand.",
+      "intro": "Das Wohnzimmer-Riff: ein blaues Tuch am Boden, verstreute Perlen, ein paar Plueschfische — mehr braucht es nicht. Für 6 Kinder, etwa 90 Minuten. Stirnband-Basteln, Perlen sammeln, ein Fisch-Quiz und Kuchen. Kaum Vorbereitung, fast alles aus dem Bestand.",
       "timeWindow": "14:00–15:30, 6 Kinder",
       "schedule": [
         {
@@ -151,7 +151,7 @@
         {
           "time": "15:25",
           "title": "Perlen-Versprechen + Abschied",
-          "description": "Urkunde + Perlen-Beutel fuer jedes Kind. Sanfter Ausklang bis zum Abholen."
+          "description": "Urkunde + Perlen-Beutel für jedes Kind. Sanfter Ausklang bis zum Abholen."
         }
       ],
       "games": [
@@ -164,7 +164,7 @@
           "loudness": "leise",
           "effort": "mittel",
           "material": "Vorgeschnittene Tonpapier-Streifen (~5 cm × 55 cm), Muschel-Sticker oder Pappmuscheln, dicke Filzstifte, Klebepunkte, Glitzer-Sticker. Schere und Tacker NUR in Erwachsenenhand.",
-          "prepText": "Stirnbaender komplett vorbereiten: Laenge passend zugeschnitten, eine Pappmuschel pro Band schon angeklebt. Kinder duerfen nur noch verzieren und Sticker aufkleben. Fuer die Meerprinz-Variante: ein paar Wellen-Sticker oder Kronen-Vorlagen dazulegen.",
+          "prepText": "Stirnbaender komplett vorbereiten: Laenge passend zugeschnitten, eine Pappmuschel pro Band schon angeklebt. Kinder duerfen nur noch verzieren und Sticker aufkleben. Für die Meerprinz-Variante: ein paar Wellen-Sticker oder Kronen-Vorlagen dazulegen.",
           "steps": [
             {
               "n": 1,
@@ -219,7 +219,7 @@
             {
               "n": 3,
               "name": "Gemeinsam zaehlen",
-              "content": "Am Ende zaehlt ihr zusammen, ob alle Perlen wieder da sind. „Geschafft — das Riff hat seine Perlen zurueck!“"
+              "content": "Am Ende zaehlt ihr zusammen, ob alle Perlen wieder da sind. „Geschafft — das Riff hat seine Perlen zurück!“"
             },
             {
               "n": 4,
@@ -227,13 +227,13 @@
               "content": "Die Truhe wird feierlich geschlossen. Die Perlen sind sicher — die Mission ist erfuellt."
             }
           ],
-          "safetyRule": "Perlen mind. murmelgross, besser groesser — bei 3-Jaehrigen gilt: passt es durch eine Klopapierrolle, ist es zu klein. Keine Verstecke in der Hoehe, auf die geklettert werden muss.",
+          "safetyRule": "Perlen mind. murmelgross, besser größer — bei 3-Jaehrigen gilt: passt es durch eine Klopapierrolle, ist es zu klein. Keine Verstecke in der Hoehe, auf die geklettert werden muss.",
           "ageAdjust3": "Perlen offen sichtbar verteilen, nicht verstecken. Du gibst kleine Tipps: „Schau mal beim Sofa.“",
           "ageAdjust5": "5-Jaehrige duerfen kniffligere Verstecke haben und die Perlen am Ende nach Farben sortieren.",
           "indoorTip": "Im Wohnzimmer mit blauem Tuch am Boden als „Meeresgrund“ — die Perlen leuchten gut auf Blau.",
           "outdoorTip": "Im Garten mit echten kleinen Muscheln gemischt — noch mehr zu entdecken.",
           "whyItWorksTitle": "Warum das funktioniert",
-          "whyItWorks": "Sammeln ist das ideale Spiel fuer die Parallelspiel-Phase: jedes Kind werkelt fuer sich, aber alle gewinnen gemeinsam. Der „Alle Perlen sind wieder da“-Moment gibt ein klares, freudiges Ende ohne Verlierer — genau das, was 3-5-Jaehrige brauchen."
+          "whyItWorks": "Sammeln ist das ideale Spiel für die Parallelspiel-Phase: jedes Kind werkelt für sich, aber alle gewinnen gemeinsam. Der „Alle Perlen sind wieder da“-Moment gibt ein klares, freudiges Ende ohne Verlierer — genau das, was 3-5-Jaehrige brauchen."
         },
         {
           "name": "🐠 Fisch-Freunde-Quiz (Tierstimmen + Bewegungen)",
@@ -271,7 +271,7 @@
           "ageAdjust3": "Du machst alle Bewegungen vor, Kinder ahmen nur nach. Kein eigenes Vormachen verlangen.",
           "ageAdjust5": "5-Jaehrige erfinden eigene Meerestier-Bewegungen — das fordert Kreativitaet und macht Spass.",
           "indoorTip": "Perfekt als ruhiger Einstieg im Sitzkreis, bringt schuechterne Kinder sanft in Stimmung.",
-          "outdoorTip": "Draussen darf das „Schwimmen“ grosszuegiger sein — mehr Platz fuer Bewegung.",
+          "outdoorTip": "Draussen darf das „Schwimmen“ grosszuegiger sein — mehr Platz für Bewegung.",
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Das Quiz braucht null Material und holt jedes Kind dort ab, wo es steht: schuechterne machen nur nach, mutige fuehren vor. Bewegung plus Mitmachen ohne Leistungsdruck — ein verlaesslicher Lueckenfueller, wenn ein Spiel mal schneller vorbei ist als gedacht."
         }
@@ -296,7 +296,7 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Grundmaterial fuer Stirnbaender und Urkunden — ohne geht es nicht."
+          "categoryReasoning": "Grundmaterial für Stirnbaender und Urkunden — ohne geht es nicht."
         },
         {
           "emoji": "✨",
@@ -314,7 +314,7 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Fuellen die Perlen-Beutel — die Belohnung fuer alle gleich."
+          "categoryReasoning": "Fuellen die Perlen-Beutel — die Belohnung für alle gleich."
         },
         {
           "emoji": "🔵",
@@ -382,7 +382,7 @@
       "id": "standard",
       "label": "Standard — 2 Stunden, das runde Paket",
       "headline": "🌊 Standard — 2 Stunden, das runde Paket",
-      "intro": "Das volle Riff-Erlebnis fuer 6–8 Kinder, etwa 2 Stunden: Stirnband, Perlen-Suche, Korallen-Garten bauen und das laute Wellen-Tuch als Energie-Ablass dazwischen. Etwas mehr Vorbereitung, aber ein runder, abwechslungsreicher Nachmittag mit ruhigen und bewegten Phasen im Wechsel.",
+      "intro": "Das volle Riff-Erlebnis für 6–8 Kinder, etwa 2 Stunden: Stirnband, Perlen-Suche, Korallen-Garten bauen und das laute Wellen-Tuch als Energie-Ablass dazwischen. Etwas mehr Vorbereitung, aber ein runder, abwechslungsreicher Nachmittag mit ruhigen und bewegten Phasen im Wechsel.",
       "timeWindow": "14:00–16:00, 6–8 Kinder",
       "schedule": [
         {
@@ -418,7 +418,7 @@
         {
           "time": "15:55",
           "title": "Perlen-Versprechen + Abschied",
-          "description": "Urkunde + Perlen-Beutel fuer jedes Kind. Sanfter Ausklang."
+          "description": "Urkunde + Perlen-Beutel für jedes Kind. Sanfter Ausklang."
         }
       ],
       "games": [
@@ -431,7 +431,7 @@
           "loudness": "leise",
           "effort": "mittel",
           "material": "Vorgeschnittene Tonpapier-Streifen (~5 cm × 55 cm), Muschel-Sticker oder Pappmuscheln, dicke Filzstifte, Klebepunkte, Glitzer-Sticker. Schere und Tacker NUR in Erwachsenenhand.",
-          "prepText": "Stirnbaender komplett vorbereiten: Laenge passend zugeschnitten, eine Pappmuschel pro Band schon angeklebt. Kinder duerfen nur noch verzieren und Sticker aufkleben. Fuer die Meerprinz-Variante: ein paar Wellen-Sticker oder Kronen-Vorlagen dazulegen.",
+          "prepText": "Stirnbaender komplett vorbereiten: Laenge passend zugeschnitten, eine Pappmuschel pro Band schon angeklebt. Kinder duerfen nur noch verzieren und Sticker aufkleben. Für die Meerprinz-Variante: ein paar Wellen-Sticker oder Kronen-Vorlagen dazulegen.",
           "steps": [
             {
               "n": 1,
@@ -498,7 +498,7 @@
           "ageAdjust3": "Du machst alle Bewegungen vor, Kinder ahmen nur nach. Kein eigenes Vormachen verlangen.",
           "ageAdjust5": "5-Jaehrige erfinden eigene Meerestier-Bewegungen — das fordert Kreativitaet und macht Spass.",
           "indoorTip": "Perfekt als ruhiger Einstieg im Sitzkreis, bringt schuechterne Kinder sanft in Stimmung.",
-          "outdoorTip": "Draussen darf das „Schwimmen“ grosszuegiger sein — mehr Platz fuer Bewegung.",
+          "outdoorTip": "Draussen darf das „Schwimmen“ grosszuegiger sein — mehr Platz für Bewegung.",
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Das Quiz braucht null Material und holt jedes Kind dort ab, wo es steht: schuechterne machen nur nach, mutige fuehren vor. Bewegung plus Mitmachen ohne Leistungsdruck — ein verlaesslicher Lueckenfueller, wenn ein Spiel mal schneller vorbei ist als gedacht."
         },
@@ -566,7 +566,7 @@
             {
               "n": 3,
               "name": "Gemeinsam zaehlen",
-              "content": "Am Ende zaehlt ihr zusammen, ob alle Perlen wieder da sind. „Geschafft — das Riff hat seine Perlen zurueck!“"
+              "content": "Am Ende zaehlt ihr zusammen, ob alle Perlen wieder da sind. „Geschafft — das Riff hat seine Perlen zurück!“"
             },
             {
               "n": 4,
@@ -574,13 +574,13 @@
               "content": "Die Truhe wird feierlich geschlossen. Die Perlen sind sicher — die Mission ist erfuellt."
             }
           ],
-          "safetyRule": "Perlen mind. murmelgross, besser groesser — bei 3-Jaehrigen gilt: passt es durch eine Klopapierrolle, ist es zu klein. Keine Verstecke in der Hoehe, auf die geklettert werden muss.",
+          "safetyRule": "Perlen mind. murmelgross, besser größer — bei 3-Jaehrigen gilt: passt es durch eine Klopapierrolle, ist es zu klein. Keine Verstecke in der Hoehe, auf die geklettert werden muss.",
           "ageAdjust3": "Perlen offen sichtbar verteilen, nicht verstecken. Du gibst kleine Tipps: „Schau mal beim Sofa.“",
           "ageAdjust5": "5-Jaehrige duerfen kniffligere Verstecke haben und die Perlen am Ende nach Farben sortieren.",
           "indoorTip": "Im Wohnzimmer mit blauem Tuch am Boden als „Meeresgrund“ — die Perlen leuchten gut auf Blau.",
           "outdoorTip": "Im Garten mit echten kleinen Muscheln gemischt — noch mehr zu entdecken.",
           "whyItWorksTitle": "Warum das funktioniert",
-          "whyItWorks": "Sammeln ist das ideale Spiel fuer die Parallelspiel-Phase: jedes Kind werkelt fuer sich, aber alle gewinnen gemeinsam. Der „Alle Perlen sind wieder da“-Moment gibt ein klares, freudiges Ende ohne Verlierer — genau das, was 3-5-Jaehrige brauchen."
+          "whyItWorks": "Sammeln ist das ideale Spiel für die Parallelspiel-Phase: jedes Kind werkelt für sich, aber alle gewinnen gemeinsam. Der „Alle Perlen sind wieder da“-Moment gibt ein klares, freudiges Ende ohne Verlierer — genau das, was 3-5-Jaehrige brauchen."
         },
         {
           "name": "🪸 Korallen-Garten bauen",
@@ -614,7 +614,7 @@
               "content": "Zum Schluss „schwimmen“ Plueschfische oder Papp-Fische in den fertigen Garten. „Jetzt haben sie ein Zuhause!“"
             }
           ],
-          "safetyRule": "Klebestifte statt Fluessigkleber (weniger Chaos, ungiftig). Keine Schere fuer die Kinder — alles vorgeschnitten.",
+          "safetyRule": "Klebestifte statt Fluessigkleber (weniger Chaos, ungiftig). Keine Schere für die Kinder — alles vorgeschnitten.",
           "ageAdjust3": "Korallen schon fertig, Kind klebt nur auf die Grundpappe. Du haeltst die Pappe fest.",
           "ageAdjust5": "5-Jaehrige duerfen eigene Korallen-Formen aus weichem Moosgummi ausschneiden (Kindersicherheitsschere) und den Garten arrangieren.",
           "indoorTip": "Ideal als ruhiges Mittel-Spiel nach einer aktiven Phase — bringt die Gruppe wieder runter.",
@@ -661,7 +661,7 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Fuellen die Perlen-Beutel — Belohnung fuer alle gleich."
+          "categoryReasoning": "Fuellen die Perlen-Beutel — Belohnung für alle gleich."
         },
         {
           "emoji": "🧵",
@@ -679,7 +679,7 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Algen fuer Korallen-Garten + Wellen-Girlande — traegt zwei Stationen."
+          "categoryReasoning": "Algen für Korallen-Garten + Wellen-Girlande — traegt zwei Stationen."
         },
         {
           "emoji": "🔵",
@@ -724,7 +724,7 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Fuer Korallen-Garten + Stirnband — ungiftig, weniger Chaos als Fluessigkleber."
+          "categoryReasoning": "Für Korallen-Garten + Stirnband — ungiftig, weniger Chaos als Fluessigkleber."
         },
         {
           "emoji": "🖤",
@@ -765,7 +765,7 @@
       "id": "wow",
       "label": "Wow — 2,5 Stunden, das grosse Riff",
       "headline": "🌟 Wow — 2,5 Stunden, das grosse Riff",
-      "intro": "Das grosse Unterwasser-Abenteuer fuer bis zu 8 Kinder, etwa 2,5 Stunden — mit allem: Stirnband, Korallen-Garten, Wellen-Tuch, Foto-Ecke und als Hoehepunkt die Mini-Schatzsuche zur Perlen-Truhe. Braucht Platz und eine zweite helfende Hand, belohnt aber mit einem unvergesslichen Riff-Erlebnis.",
+      "intro": "Das grosse Unterwasser-Abenteuer für bis zu 8 Kinder, etwa 2,5 Stunden — mit allem: Stirnband, Korallen-Garten, Wellen-Tuch, Foto-Ecke und als Hoehepunkt die Mini-Schatzsuche zur Perlen-Truhe. Braucht Platz und eine zweite helfende Hand, belohnt aber mit einem unvergesslichen Riff-Erlebnis.",
       "timeWindow": "14:00–16:30, bis 8 Kinder (+ 1 Helfer)",
       "schedule": [
         {
@@ -806,7 +806,7 @@
         {
           "time": "16:20",
           "title": "Perlen-Versprechen + Abschied",
-          "description": "Truhe gemeinsam geoeffnet: Urkunde + Perlen-Beutel fuer alle. Sanfter Ausklang."
+          "description": "Truhe gemeinsam geoeffnet: Urkunde + Perlen-Beutel für alle. Sanfter Ausklang."
         }
       ],
       "games": [
@@ -819,7 +819,7 @@
           "loudness": "leise",
           "effort": "mittel",
           "material": "Vorgeschnittene Tonpapier-Streifen (~5 cm × 55 cm), Muschel-Sticker oder Pappmuscheln, dicke Filzstifte, Klebepunkte, Glitzer-Sticker. Schere und Tacker NUR in Erwachsenenhand.",
-          "prepText": "Stirnbaender komplett vorbereiten: Laenge passend zugeschnitten, eine Pappmuschel pro Band schon angeklebt. Kinder duerfen nur noch verzieren und Sticker aufkleben. Fuer die Meerprinz-Variante: ein paar Wellen-Sticker oder Kronen-Vorlagen dazulegen.",
+          "prepText": "Stirnbaender komplett vorbereiten: Laenge passend zugeschnitten, eine Pappmuschel pro Band schon angeklebt. Kinder duerfen nur noch verzieren und Sticker aufkleben. Für die Meerprinz-Variante: ein paar Wellen-Sticker oder Kronen-Vorlagen dazulegen.",
           "steps": [
             {
               "n": 1,
@@ -886,7 +886,7 @@
           "ageAdjust3": "Du machst alle Bewegungen vor, Kinder ahmen nur nach. Kein eigenes Vormachen verlangen.",
           "ageAdjust5": "5-Jaehrige erfinden eigene Meerestier-Bewegungen — das fordert Kreativitaet und macht Spass.",
           "indoorTip": "Perfekt als ruhiger Einstieg im Sitzkreis, bringt schuechterne Kinder sanft in Stimmung.",
-          "outdoorTip": "Draussen darf das „Schwimmen“ grosszuegiger sein — mehr Platz fuer Bewegung.",
+          "outdoorTip": "Draussen darf das „Schwimmen“ grosszuegiger sein — mehr Platz für Bewegung.",
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Das Quiz braucht null Material und holt jedes Kind dort ab, wo es steht: schuechterne machen nur nach, mutige fuehren vor. Bewegung plus Mitmachen ohne Leistungsdruck — ein verlaesslicher Lueckenfueller, wenn ein Spiel mal schneller vorbei ist als gedacht."
         },
@@ -962,7 +962,7 @@
               "content": "Zum Schluss „schwimmen“ Plueschfische oder Papp-Fische in den fertigen Garten. „Jetzt haben sie ein Zuhause!“"
             }
           ],
-          "safetyRule": "Klebestifte statt Fluessigkleber (weniger Chaos, ungiftig). Keine Schere fuer die Kinder — alles vorgeschnitten.",
+          "safetyRule": "Klebestifte statt Fluessigkleber (weniger Chaos, ungiftig). Keine Schere für die Kinder — alles vorgeschnitten.",
           "ageAdjust3": "Korallen schon fertig, Kind klebt nur auf die Grundpappe. Du haeltst die Pappe fest.",
           "ageAdjust5": "5-Jaehrige duerfen eigene Korallen-Formen aus weichem Moosgummi ausschneiden (Kindersicherheitsschere) und den Garten arrangieren.",
           "indoorTip": "Ideal als ruhiges Mittel-Spiel nach einer aktiven Phase — bringt die Gruppe wieder runter.",
@@ -1003,7 +1003,7 @@
             }
           ],
           "safetyRule": "Lichterkette ausser Reichweite / mit Klett fixieren, kein Kabel auf Kinderhoehe. Keine Foto-Pflicht — manche Kinder moegen das nicht.",
-          "ageAdjust3": "Schnelle Schnappschuesse statt langem Posieren — die Geduld reicht nicht fuer Inszenierung.",
+          "ageAdjust3": "Schnelle Schnappschuesse statt langem Posieren — die Geduld reicht nicht für Inszenierung.",
           "ageAdjust5": "5-Jaehrige posieren gern bewusst und machen Gruppen-Fotos mit „allen Meeres-Helfern“.",
           "indoorTip": "Eine ruhige Ecke abseits vom Spiel-Trubel, damit es nicht hektisch wird.",
           "outdoorTip": null,
@@ -1039,13 +1039,13 @@
             {
               "n": 4,
               "name": "Schatz verteilen",
-              "content": "In der Truhe: die Perlen-Beutel + Urkunden, fuer JEDES Kind gleich. Der grosse Abschluss-Moment."
+              "content": "In der Truhe: die Perlen-Beutel + Urkunden, für JEDES Kind gleich. Der grosse Abschluss-Moment."
             }
           ],
           "safetyRule": "Weg vorher abgehen, Stolperfallen weg. Bei Aussen-Schatzsuche immer ein Erwachsener vorne, einer hinten. Truhe nicht in der Hoehe verstecken.",
           "ageAdjust3": "Weglassen oder als reine „alle zusammen zur Truhe laufen“-Version, ohne Hinweise. Die Aufmerksamkeit reicht sonst nicht.",
           "ageAdjust5": "5-Jaehrige duerfen die Muschel-Hinweise selbst suchen und die Reihenfolge mitdenken — eine Mini-Karte erhoeht den Reiz.",
-          "indoorTip": "Stationen ueber 2 Raeume verteilen (Wohnzimmer, Flur, Kinderzimmer) — reicht voellig fuer Spannung.",
+          "indoorTip": "Stationen ueber 2 Raeume verteilen (Wohnzimmer, Flur, Kinderzimmer) — reicht voellig für Spannung.",
           "outdoorTip": "Im Garten/Park mit echten Muscheln als Wegmarken — das groesste Highlight der Wow-Variante.",
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Die Schatzsuche ist der dramaturgische Hoehepunkt und liefert gleichzeitig das Finale-Ritual: alle oeffnen die Truhe gemeinsam, alle bekommen denselben Schatz. So fuehrt das spannendste Spiel direkt in den ruhigen, fairen Abschluss — kein Streit, wer zuerst war."
@@ -1053,7 +1053,7 @@
       ],
       "food": "Grosses Meeres-Buffet: blaue Muffins mit Muschel-Keks, Wackelpudding-„Meer“ mit Gummi-Fischen, Obst-„Meerestiere“ (Melonen-Fische, Trauben-Algen), Gurken-/Paprika-Sticks mit Dip, Brezel-Seesterne, kleine „Schatz“-Schoki. Dazu „Meerwasser“ und Wasser. Mit zweiter Hand gut zu stemmen. ⚠️ Für 3-Jährige: Gummi-Süßes klein schneiden — Erstickungsrisiko.",
       "decoration": "Voll-Deko: blaues Bodentuch, blaue/tuerkise Ballons, Wellen-Girlande, eine Lichterkette als „Meeresleuchten“, Deko-Muscheln und Plueschfische, plus die Foto-Ecke mit Papp-Korallen. Der gebaute Korallen-Garten kroent das Riff.",
-      "giveaways": "Perlen-Beutel + Urkunde + Stirnband + Mini-Koralle + ausgedrucktes Meeres-Foto fuer die Eltern.",
+      "giveaways": "Perlen-Beutel + Urkunde + Stirnband + Mini-Koralle + ausgedrucktes Meeres-Foto für die Eltern.",
       "shoppingList": [
         {
           "emoji": "🐚",
@@ -1089,7 +1089,7 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Fuellen die Perlen-Beutel in der Schatztruhe — fuer alle gleich."
+          "categoryReasoning": "Fuellen die Perlen-Beutel in der Schatztruhe — für alle gleich."
         },
         {
           "emoji": "🧵",
@@ -1220,7 +1220,7 @@
       },
       {
         "n": 5,
-        "content": "Fuer den „Meer“-Guss: 150 g Puderzucker mit 2-3 EL Wasser und einem kleinen Tropfen blauer Lebensmittelfarbe glatt ruehren. Lieber blasser — zu viel Farbe faerbt Zaehne und Zungen."
+        "content": "Für den „Meer“-Guss: 150 g Puderzucker mit 2-3 EL Wasser und einem kleinen Tropfen blauer Lebensmittelfarbe glatt ruehren. Lieber blasser — zu viel Farbe färbt Zaehne und Zungen."
       },
       {
         "n": 6,
@@ -1252,7 +1252,7 @@
       },
       {
         "topic": "👥 Ab 6 Kindern: eine zweite Hand",
-        "detail": "Bei 6+ Kindern in dem Alter brauchst du Unterstuetzung — ein Elternteil, Oma, Nachbar. Eine Person spielt, eine kuemmert sich um Toilette, Traenen und Nachschub. Fuer die Wow-Variante ist die zweite Hand Pflicht."
+        "detail": "Bei 6+ Kindern in dem Alter brauchst du Unterstuetzung — ein Elternteil, Oma, Nachbar. Eine Person spielt, eine kuemmert sich um Toilette, Traenen und Nachschub. Für die Wow-Variante ist die zweite Hand Pflicht."
       },
       {
         "topic": "⏱️ Lieber zu viel Programm als zu wenig",
@@ -1267,12 +1267,12 @@
         "detail": "Keine Sieger, kein „1. Meerjungfrau“. Jedes Kind — auch das, das nicht mitgespielt hat — bekommt am Ende dieselbe Urkunde und denselben Perlen-Beutel. In dem Alter zaehlt Dazugehoeren, nicht Gewinnen."
       },
       {
-        "topic": "💙 Auch fuer Jungen: Meerprinzen statt Tabu",
-        "detail": "Meerjungfrau ist kein Maedchen-Thema. Bietet von Anfang an Meerprinz-Stirnbaender (Wellen-Krone, Seestern-Stirnband) und sprecht von „Meeres-Helfern“ oder „Ozean-Helfern“. Dann fuehlt sich kein Kind ausgeschlossen — weder Jungen noch Maedchen, die lieber Meerprinz sein wollen."
+        "topic": "💙 Auch für Jungen: Meerprinzen statt Tabu",
+        "detail": "Meerjungfrau ist kein Mädchen-Thema. Bietet von Anfang an Meerprinz-Stirnbaender (Wellen-Krone, Seestern-Stirnband) und sprecht von „Meeres-Helfern“ oder „Ozean-Helfern“. Dann fuehlt sich kein Kind ausgeschlossen — weder Jungen noch Mädchen, die lieber Meerprinz sein wollen."
       },
       {
         "topic": "👕 Wechselklamotten bereithalten",
-        "detail": "3-Jaehrige kleckern. Blauer Guss, „Meerwasser“, Klebestift — irgendwas landet auf dem Pulli. Schreib in die Einladung: „Bitte Wechsel-Shirt mitbringen.“ Und leg fuer dein eigenes Kind eins bereit."
+        "detail": "3-Jaehrige kleckern. Blauer Guss, „Meerwasser“, Klebestift — irgendwas landet auf dem Pulli. Schreib in die Einladung: „Bitte Wechsel-Shirt mitbringen.“ Und leg für dein eigenes Kind eins bereit."
       },
       {
         "topic": "⏰ Nicht in den Mittagsschlaf legen",
@@ -1292,16 +1292,16 @@
       },
       {
         "topic": "Klopapierrollen-Test (Erstickungs-Gefahr)",
-        "detail": "Faustregel fuer 3-Jaehrige: Was durch eine Klopapierrolle passt (∅ < 4,5 cm), ist Erstickungsgefahr. Bei reinen 3-Jaehrigen Plastik-Perlen weglassen, nur Wattekugeln oder handtellergrosse Muscheln verwenden. Glitzer-Sticker nur unter Aufsicht."
+        "detail": "Faustregel für 3-Jaehrige: Was durch eine Klopapierrolle passt (∅ < 4,5 cm), ist Erstickungsgefahr. Bei reinen 3-Jaehrigen Plastik-Perlen weglassen, nur Wattekugeln oder handtellergrosse Muscheln verwenden. Glitzer-Sticker nur unter Aufsicht."
       }
     ],
     "educationalValue": "Hinter der bunten Unterwasser-Welt steckt mehr als Spass. Beim gemeinsamen Perlen-Sammeln und Korallen-Garten-Bauen ueben die Kinder Zusammenarbeit ohne Konkurrenz — alle gewinnen gemeinsam, niemand verliert. Das Fisch-Quiz foerdert Sprache und Koerpergefuehl, das Stirnband-Basteln die Feinmotorik in kleinen Schritten. Und das Wichtigste: Die Meeres-Helfer-Rollen geben jedem Kind das Gefuehl, gebraucht zu werden — das staerkt Selbstvertrauen und Empathie weit mehr als jeder Wettkampf."
   },
-  "invitationTemplate": "Du brauchst noch passende Einladungen? Der machsleicht-Einladungs-Generator macht aus diesem Meerjungfrau-Motto in zwei Minuten fertige Karten — mit Muschel-Design, Allergie-Abfrage und RSVP-Link auf party.machsleicht.de. Auch in der Meerprinz-Variante fuer alle Kinder. Einfach Motto „Meerjungfrau“ waehlen und Datum eintragen.",
+  "invitationTemplate": "Du brauchst noch passende Einladungen? Der machsleicht-Einladungs-Generator macht aus diesem Meerjungfrau-Motto in zwei Minuten fertige Karten — mit Muschel-Design, Allergie-Abfrage und RSVP-Link auf party.machsleicht.de. Auch in der Meerprinz-Variante für alle Kinder. Einfach Motto „Meerjungfrau“ waehlen und Datum eintragen.",
   "faq": [
     {
-      "q": "Ist eine Meerjungfrau-Party auch fuer Jungen geeignet?",
-      "a": "Ja, ausdruecklich. Mit der Meerprinz-Variante (Wellen-Krone oder Seestern-Stirnband statt Muschel) und geschlechtsneutralen „Meeres-Helfern“ ist das Thema fuer alle Kinder offen. Wir empfehlen, beide Stirnband-Varianten bereitzulegen, damit jedes Kind frei waehlen kann. Auch Maedchen, die lieber Meerprinz sein wollen, sind ausdruecklich willkommen."
+      "q": "Ist eine Meerjungfrau-Party auch für Jungen geeignet?",
+      "a": "Ja, ausdruecklich. Mit der Meerprinz-Variante (Wellen-Krone oder Seestern-Stirnband statt Muschel) und geschlechtsneutralen „Meeres-Helfern“ ist das Thema für alle Kinder offen. Wir empfehlen, beide Stirnband-Varianten bereitzulegen, damit jedes Kind frei waehlen kann. Auch Mädchen, die lieber Meerprinz sein wollen, sind ausdruecklich willkommen."
     },
     {
       "q": "Was, wenn mein Kind erst 3 ist — sind die Spiele nicht zu schwer?",
@@ -1313,10 +1313,10 @@
     },
     {
       "q": "Wir haben wenig Platz — geht das trotzdem?",
-      "a": "Ja. Die Minimal- und Standard-Variante laufen komplett im Wohnzimmer: ein blaues Tuch am Boden, Perlen verstreut, Korallen-Garten am Tisch. Nur die Wow-Schatzsuche braucht etwas mehr Raum — verteil die Stationen sonst einfach auf zwei Zimmer (Wohnzimmer + Flur + Kinderzimmer reichen fuer 8 Kinder)."
+      "a": "Ja. Die Minimal- und Standard-Variante laufen komplett im Wohnzimmer: ein blaues Tuch am Boden, Perlen verstreut, Korallen-Garten am Tisch. Nur die Wow-Schatzsuche braucht etwas mehr Raum — verteil die Stationen sonst einfach auf zwei Zimmer (Wohnzimmer + Flur + Kinderzimmer reichen für 8 Kinder)."
     },
     {
-      "q": "Was kostet ein Meerjungfrau-Geburtstag fuer 3–5-Jaehrige?",
+      "q": "Was kostet ein Meerjungfrau-Geburtstag für 3–5-Jaehrige?",
       "a": "Zwischen 35 € (Minimal, 6 Kinder) und 80 € (Wow, bis 8 Kinder). Die Standard-Variante liegt bei ca. 55 € und bietet das beste Verhaeltnis aus Aufwand und Ergebnis. Wenn du Tonpapier, Stifte, Tuch und Plueschfische aus dem Bestand nimmst, sind 10–15 € Einsparung locker drin."
     },
     {
@@ -1335,12 +1335,12 @@
         {
           "icon": "📅",
           "title": "Datum + Uhrzeit + Ort fixieren",
-          "detail": "Nachmittag (14–16 Uhr) ist bei 3-5 am besten — nicht in den Mittagsschlaf legen. Drinnen-Plan B fuer das Riff im Hinterkopf behalten."
+          "detail": "Nachmittag (14–16 Uhr) ist bei 3-5 am besten — nicht in den Mittagsschlaf legen. Drinnen-Plan B für das Riff im Hinterkopf behalten."
         },
         {
           "icon": "👥",
           "title": "Gaesteliste festzurren",
-          "detail": "6 Kinder fuer Minimal/Standard, bis 8 fuer Wow. Faustregel 3-5: nicht mehr Gaeste als das Kind alt ist plus zwei. Ueber 8 wird's wuselig."
+          "detail": "6 Kinder für Minimal/Standard, bis 8 für Wow. Faustregel 3-5: nicht mehr Gaeste als das Kind alt ist plus zwei. Ueber 8 wird's wuselig."
         },
         {
           "icon": "💶",
@@ -1350,7 +1350,7 @@
         {
           "icon": "✉️",
           "title": "Einladungen rausschicken",
-          "detail": "Pflicht im Text: Allergie-Abfrage. Meerprinz-Variante erwaehnen („fuer alle Kinder“). Hinweis, dass Eltern gern bleiben duerfen. RSVP-Link auf party.machsleicht.de."
+          "detail": "Pflicht im Text: Allergie-Abfrage. Meerprinz-Variante erwaehnen („für alle Kinder“). Hinweis, dass Eltern gern bleiben duerfen. RSVP-Link auf party.machsleicht.de."
         },
         {
           "icon": "🏠",
@@ -1395,7 +1395,7 @@
         {
           "icon": "🤝",
           "title": "Zweite Hand organisieren (ab 6 Kindern)",
-          "detail": "Elternteil, Oma oder Nachbar fest einplanen. Fuer Wow Pflicht. Kurz absprechen, wer was macht (Spiel vs. Toilette/Traenen)."
+          "detail": "Elternteil, Oma oder Nachbar fest einplanen. Für Wow Pflicht. Kurz absprechen, wer was macht (Spiel vs. Toilette/Traenen)."
         },
         {
           "icon": "🥗",
@@ -1475,7 +1475,7 @@
         {
           "icon": "😮‍💨",
           "title": "Durchatmen vor der Ankunft",
-          "detail": "15 Minuten vorher fertig sein. Toiletten-Check, Handy fuer Fotos bereit, zweite Hand briefen. Dann kommen die kleinen Meeres-Helfer."
+          "detail": "15 Minuten vorher fertig sein. Toiletten-Check, Handy für Fotos bereit, zweite Hand briefen. Dann kommen die kleinen Meeres-Helfer."
         }
       ]
     }
@@ -1502,7 +1502,7 @@
         "Spiele bleiben gleich, nur entspannter. Jedes Kind bekommt mehr Aufmerksamkeit.",
         "Perlen-Suche: weniger Perlen verstecken, sonst dauert es ewig.",
         "Korallen-Garten wird kleiner, aber feiner — mehr Zeit zum Verzieren.",
-        "Mehr Zeit fuer die Foto-Ecke und ruhige Momente einplanen."
+        "Mehr Zeit für die Foto-Ecke und ruhige Momente einplanen."
       ],
       "fallback": "Bei nur 2-3 Kindern wird's fast ein Spiel-Nachmittag — das ist gemuetlich, kein Mangel.",
       "tone": "locker"
@@ -1540,7 +1540,7 @@
       "steps": [
         "Kuchen zu trocken/schief? Mit blauem Guss grosszuegig uebergiessen — versteckt viel.",
         "Schoko-Perlen, Muschel-Keks und Gummi-Fische druffladen — Kinder sehen nur das Bunte.",
-        "Komplett misslungen? In Stuecke schneiden, als „Meeres-Schatz-Happen“ im Becher servieren.",
+        "Komplett misslungen? In Stücke schneiden, als „Meeres-Schatz-Happen“ im Becher servieren.",
         "Notfall: schnell Muffins oder Kekse besorgen, blau anpinseln — keiner merkt's."
       ],
       "fallback": "3-5-Jaehrige bewerten keine Konditor-Kunst. Suess + bunt = Erfolg, egal wie krumm.",
@@ -1591,7 +1591,7 @@
       "headline": "Wechsel-Shirt aus dem Reserve-Beutel, kein Drama draus machen.",
       "steps": [
         "Halt 2-3 T-Shirts in Groesse 104/116 im Reserve-Beutel (deins oder Geschwister) — Kleinkinder kleckern garantiert.",
-        "Wechseln im Bad ohne Kommentar vor der Gruppe — Aufmerksamkeit macht's groesser.",
+        "Wechseln im Bad ohne Kommentar vor der Gruppe — Aufmerksamkeit macht's größer.",
         "Nasse/verschmierte Sachen direkt in eine Plastiktuete zum Mitnehmen, beschriftet mit dem Kindernamen.",
         "Bei Heul-Reaktion: Mini-Geschichte erzaehlen („auch Meerjungfrauen werden mal nass von einer Welle“) — entlastet vom Peinlichkeits-Gefuehl."
       ],

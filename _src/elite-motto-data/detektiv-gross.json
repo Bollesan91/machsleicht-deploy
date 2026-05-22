@@ -5,7 +5,7 @@
     "schema_version": "1.0",
     "purpose": "Detektiv 9-12 — Phase B Elite-Slot (Kriminalfall-Simulation, Escape-Room-Style, kein Tempo-Stempel, Codeknacker-Kern mit echten Woertern)",
     "phase_b_complete": "2026-05-21",
-    "phase_b_method": "Writer-Subagent Stream-C. Codeknacker-Math VORHER per Skript verifiziert: INDIZ (Spurensicherer, Haeufigkeit am Tatort), MOTIV (Profiler, Verdachts-Staerke), BEWEIS (Code-Knacker, Beweis-Wert) fuer Minimal; TAT (Standard, odd-one-out Asservaten) am Tatort-Ort; TRESOR (Wow, 6-Stationen-Schatzsuche, inkl. Caesar-Chiffre F->E und Zahlencode 18->R). Alle Loesungswoerter sind echte deutsche Woerter — kein INSEL-/Pseudo-Salat. Plot-Twist: staerkster MOTIV-Verdacht ist Ablenkung, BEWEIS-Faser ueberfuehrt den wahren Taeter. Sorgfalt-Spezialist statt 1.-Detektiv. Keine reale Gewalt — Diebstahl/Verschwinden statt Verbrechen gegen Personen."
+    "phase_b_method": "Writer-Subagent Stream-C. Codeknacker-Math VORHER per Skript verifiziert: INDIZ (Spurensicherer, Haeufigkeit am Tatort), MOTIV (Profiler, Verdachts-Staerke), BEWEIS (Code-Knacker, Beweis-Wert) für Minimal; TAT (Standard, odd-one-out Asservaten) am Tatort-Ort; TRESOR (Wow, 6-Stationen-Schatzsuche, inkl. Caesar-Chiffre F->E und Zahlencode 18->R). Alle Loesungswoerter sind echte deutsche Woerter — kein INSEL-/Pseudo-Salat. Plot-Twist: staerkster MOTIV-Verdacht ist Ablenkung, BEWEIS-Faser ueberfuehrt den wahren Taeter. Sorgfalt-Spezialist statt 1.-Detektiv. Keine reale Gewalt — Diebstahl/Verschwinden statt Verbrechen gegen Personen."
   },
   "motto": "detektiv",
   "ageGroup": "gross",
@@ -1353,7 +1353,7 @@
         "title": "Die Detektiv-Hüte sind optional",
         "body": "Die 143 € sind ohne die Detektiv-Hüte gerechnet — die kosten als Highlight zusätzlich 70-110 € für 10 Kinder. Die Party trägt auch ohne sie: Die eigene UV-Geheimkarte aus der Werkstatt plus UV-Stift ist ein vollwertiges, persönlicheres Mitgebsel. UV-Taschenlampen brauchst du nur, wenn wirklich eine Schlafparty mit Nacht-Spurensuche geplant ist. Wraps und Zweitkuchen lassen sich streichen, wenn die Gruppe kleiner bleibt. Absperrband (5 €) ersetzt fast die komplette gekaufte Deko."
       },
-      "ageNote": "Empfohlen ab 10 Jahren — zwei Module (Kreuzverhoer, UV-Nacht-Spurensuche) sind fuer 9-Jaehrige nicht freigegeben (minAge=10). Bei reiner 9-Jahre-Gruppe diese durch Standard-Verhoer bzw. fruehen Abschluss ersetzen."
+      "ageNote": "Empfohlen ab 10 Jahren — zwei Module (Kreuzverhoer, UV-Nacht-Spurensuche) sind für 9-Jaehrige nicht freigegeben (minAge=10). Bei reiner 9-Jahre-Gruppe diese durch Standard-Verhoer bzw. fruehen Abschluss ersetzen."
     }
   ],
   "cakeRecipe": {

@@ -136,7 +136,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
             "whyItWorksTitle": "Warum Rasierschaum",
             "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
-            "ageAdjust3": "WICHTIG fuer 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           },
           {
             "name": "🚒 Helm-Bilder ausmalen",
@@ -381,7 +381,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": null,
             "whyItWorksTitle": null,
             "whyItWorks": null,
-            "ageAdjust3": "WICHTIG fuer 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           }
         ],
         "food": "🎂Feuerwehrauto-Kuchen1 Kastenform\n🥤Apfelschorle2 l\n🥨Brezeln + Salzstangenje 1 Tüte\n🥒GemüsesticksGurke + Möhre\n🌭Mini-Würstchen (weich)10 Stk., klein geschnitten",
@@ -638,7 +638,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": null,
             "whyItWorksTitle": null,
             "whyItWorks": null,
-            "ageAdjust3": "WICHTIG fuer 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           }
         ],
         "food": "🎂Feuerwehrauto-Kuchen1 Kastenform + \n🥤Apfelschorle2 l\n🥨Brezeln + Salzstangenje 1 Tüte\n🥒Gemüsesticks + HummusGurke + Möhre\n🌭Mini-Würstchen (weich)10 Stk., klein geschnitten\n🍓Erdbeeren / Beeren200 g",
@@ -4340,8 +4340,8 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": null,
             "whyItWorksTitle": null,
             "whyItWorks": null,
-            "ageAdjust3": "Fuer 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Fuer 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "🌈 Regenbogen-Tanz",
@@ -4359,8 +4359,8 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Auf Wiese mit Tüchern in Regenbogenfarben besonders magisch — Wind macht die Tücher zum Flügel.",
             "whyItWorksTitle": null,
             "whyItWorks": null,
-            "ageAdjust3": "Fuer 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Fuer 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           }
         ],
         "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Saft\"6 Trinkpäckchen\n🍓Obst-Teller200 g Erdbeeren\n🍿Popcorn150 g\n\n💡 „Einhorn-Saft\"?\nApfelschorle oder klare Limo, 2 Tropfen Grenadine oder Johannisbeersaft rein → wird sofort rosa. „Einhorn-Saft\" aufs Etikett schreiben. 3-Jährige glauben das sofort. Kostet nix extra, macht den ganzen Unterschied.",
@@ -4502,8 +4502,8 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": null,
             "whyItWorksTitle": null,
             "whyItWorks": null,
-            "ageAdjust3": "Fuer 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Fuer 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "🌈 Regenbogen-Milch-Experiment",
@@ -4521,8 +4521,8 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": null,
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Spülmittel zerstört die Oberflächenspannung der Milch. Das Fett „flieht\" und nimmt die Farben mit.",
-            "ageAdjust3": "Fuer 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Fuer 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "✨ Sternenstaub suchen",
@@ -4540,8 +4540,8 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Auf der Terrasse oder Wiese großzügig — verstreuter Reis ist Vogelfutter.",
             "whyItWorksTitle": null,
             "whyItWorks": null,
-            "ageAdjust3": "Fuer 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Fuer 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "🌈 Regenbogen-Tanz",
@@ -4559,8 +4559,8 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": null,
             "whyItWorksTitle": null,
             "whyItWorks": null,
-            "ageAdjust3": "Fuer 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Fuer 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           }
         ],
         "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Saft\"8 Trinkpäckchen\n🍓Rosa Obst-TellerErdbeeren, Himbeeren\n🥒Gemüse-SticksGurke, Möhre\n🍿Popcorn200 g",
@@ -4717,8 +4717,8 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": null,
             "whyItWorksTitle": null,
             "whyItWorks": null,
-            "ageAdjust3": "Fuer 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Fuer 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "🪄 Einhorn-Zauberstab basteln",
@@ -4736,8 +4736,8 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": null,
             "whyItWorksTitle": null,
             "whyItWorks": null,
-            "ageAdjust3": "Fuer 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Fuer 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           }
         ],
         "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Saft\"10 Trinkpäckchen\n⭐Stern-Kekse15 Stk. (Ausstecher)\n🍓Rosa Obst-TellerErdbeeren, Himbeeren\n🥒Gemüse-SticksGurke, Möhre\n🍿Popcorn200 g\n🍭Gummibärchen1 Tüte (200 g)\n\n💡 Stern-Kekse ohne Backen:\nFertigen Butterkeks-Teig (Kühlregal, ~2 €) ausrollen, mit Stern-Ausstecher ausstechen, 10 Min. backen, rosa Glasur drüber (Puderzucker + 1 Tropfen Lebensmittelfarbe). 15 Kekse in 20 Minuten. Oder: einfach fertige Butterkekse kaufen und mit rosa Glasur bestreichen — schmeckt den Kindern genauso.",
@@ -6997,7 +6997,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Dieses Spiel ist selbstlaufend. Hinstellen, Material erklären, zurücklehnen. Die Kinder reden, lachen, basteln — und du hast 30 Minuten zum Aufräumen und Mitgebsel-Vorbereiten."
           }
         ],
-        "food": "🎂Galaxy-Kuchen1 Springform\n🍕Pizza-Brötchen20 Stück\n💧Limo / Wasser4 Flaschen\n🍓Obst & GemüseErdbeeren, Gurke\n🍿Popcorn300 g\n🍭SüßigkeitenHaribo, M&Ms",
+        "food": "🎂Galaxy-Kuchen1 Springform\n🍕Pizza-Brötchen20 Stück\n💧Limo / Wasser4 Flaschen\n🍓Obst & GemüseErdbeeren, Gurke\n🍿Popcorn300 g\n🍭SüßigkeitenHaribo, bunte Schoko-Linsen",
         "decoration": "🎈 Iridescent / Metallic-Ballons10 Stk. ~5 €Schimmernd, nicht Pastell-Rosa\n🌈 Regenbogen-Lichterkette~6 €LED, batteriebetrieben\n✨ Metallic-Sterne an der Decke~4 €Gold/Silber-Karton, an Fäden aufhängen\n🔊 Playlist „Fantasy Vibes\"KostenlosSpotify: instrumentale Fantasy-Musik\n\n💡 Deko-Regel für 9–12:\nWeniger ist cooler. Keine rosa Papp-Teller mit Einhorn-Gesicht (die Kinder würden sich schämen). Stattdessen: Metallic-Töne, Lichterketten, Sterne. Fantasy statt Kinderzimmer. Die Atmosphäre soll „Zauberschule trifft Einhorn\" sein, nicht „Kindergarten-Party\".",
         "giveaways": "💎 Selbst gemachtes Perlen-Armband\n🦄 Einhorn-Charm (extra, zum Anhängen)\n✨ Metallic-Tattoo\n🍭 Süßigkeiten aus der Schatztruhe\n\nIn Kraftpapier-Tüten mit Code-Name-Aufkleber. Kosten: ~3,50 € pro Kind.",
         "shoppingList": [
@@ -10917,7 +10917,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Quadranten an drei Stationen im Garten — die kurzen Wege dazwischen sind willkommene Bewegung.",
             "whyItWorksTitle": "Kooperation + Selbstkontrolle statt Tempo",
             "whyItWorks": "Kein Quadrant funktioniert allein — die drei Spezialisierungen müssen sich am Ende abstimmen. Ergibt ein Lösungswort keinen Sinn, prüfen die Kinder ihre Reihenfolge selbst nach, statt zu raten. Genaues Hinschauen wird belohnt, nicht Geschwindigkeit. Steckt ein Team fest, hilft eine andere Spezialisierung mit — das ist die Story: „Im Reservat zählt, wer hinschaut.“",
-            "codeMechanic": "Chiffre: Tierspur-Symbol -> Anlaut-Buchstabe. Pro Quadrant 6 Symbolkarten ausgedruckt. Beispiel: Spuren-Symbol von Pfote = \"P\" (fuer Panther) -> Wort bauen. Selbstkontrolle: ergibt sich ein echtes Wort (WASSER/FELS/TEMPEL), war die Loesung richtig. 15 Min Setup: Tier-Spur-Karten am Vorabend aus Vorlage drucken.",
+            "codeMechanic": "Chiffre: Tierspur-Symbol -> Anlaut-Buchstabe. Pro Quadrant 6 Symbolkarten ausgedruckt. Beispiel: Spuren-Symbol von Pfote = \"P\" (für Panther) -> Wort bauen. Selbstkontrolle: ergibt sich ein echtes Wort (WASSER/FELS/TEMPEL), war die Loesung richtig. 15 Min Setup: Tier-Spur-Karten am Vorabend aus Vorlage drucken.",
             "animalFacts": [
               {
                 "tier": "Löwe",
@@ -13020,7 +13020,7 @@ var ELITE_MOTTO_DATA = {
           "detail": "Statt einzelne Nachrichten: erstelle eine [WhatsApp-Partyseite](https://party.machsleicht.de). Adresse, Uhrzeit, Motto, Abholzeit — alles auf einer Seite. Eltern antworten mit einem Klick. Kostenlos, in 2 Minuten fertig."
         }
       ],
-      "educationalValue": "Auch fuer 3-5-Jaehrige steckt Lernen drin: Tier-/Fossilien-Erkennung trainiert Beobachtungsgabe und Mustererkennung, das Ausgrabungs-Spiel foerdert Feinmotorik und Geduld (langsam-graben), Dino-Spuren-Story baut einfache Erzaehl-Logik (Anfang/Mitte/Ende). Das Triumph-Erlebnis \"Ich hab ein Dino-Ei gefunden!\" foerdert Selbstwirksamkeit. Kein Lernzwang — Spiel-im-Vordergrund."
+      "educationalValue": "Auch für 3-5-Jaehrige steckt Lernen drin: Tier-/Fossilien-Erkennung trainiert Beobachtungsgabe und Mustererkennung, das Ausgrabungs-Spiel foerdert Feinmotorik und Geduld (langsam-graben), Dino-Spuren-Story baut einfache Erzaehl-Logik (Anfang/Mitte/Ende). Das Triumph-Erlebnis \"Ich hab ein Dino-Ei gefunden!\" foerdert Selbstwirksamkeit. Kein Lernzwang — Spiel-im-Vordergrund."
     },
     "invitationTemplate": "🦕 Interaktive Dino-Einladung per WhatsApp verschicken\n\nErstelle in 30 Sekunden eine fertige Einladung mit Name, Datum und Ort — die Gäste bekommen ein kleines Dino-Abenteuer als Vorgeschmack auf die Party.\n[🦕 Dino-Einladung erstellen →](/einladung/erstellen?motto=dino)\n\n[💬 Idee per WhatsApp teilen](https://wa.me/?text=Schau%20mal%3A%20Dino-Abenteuer%20Kindergeburtstag%20f%C3%BCr%203%E2%80%935%20Jahre%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Spielanleitungen%20und%20Einkaufsliste!%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Fdino-3-5-jahre)",
     "preparationWeeks": {
@@ -14112,7 +14112,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "tip": "Mengen-Faustregel",
-          "content": "2 Getraenke pro Kind + 2 Reserve = bei 6 Kindern 14 Saftpaeckchen. Gilt fuer Minimal UND Standard."
+          "content": "2 Getraenke pro Kind + 2 Reserve = bei 6 Kindern 14 Saftpaeckchen. Gilt für Minimal UND Standard."
         },
         {
           "topic": "🦶 Dino-Fußspuren-Trick",
@@ -14522,7 +14522,7 @@ var ELITE_MOTTO_DATA = {
               "Beispiel: „Warum starben die Dinos aus?“ → Asteroideneinschlag",
               "Stichfrage bei Gleichstand: „Wie lang war ein Diplodocus?“ → ca. 25–30 m"
             ],
-            "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
+            "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Prüfung (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": "Tisch + Stühle + Punktetafel zentral. Buzzer-Geräte griffbereit.",
@@ -14548,7 +14548,7 @@ var ELITE_MOTTO_DATA = {
               "Wessen Schaum-Säule ist höher? Variante: warmes vs kaltes Wasser testen",
               "Wiederholbar 2–3× pro Team"
             ],
-            "safetyRule": "Kinder min. 1 Armlaenge zurueck, nie ins Krater-Innere beugen. Schuerze/alte Kleidung wegen Lebensmittelfarbe (faerbt!). Erwachsene*r misst Mengen ab. Faktencheck: Mehr Natron = NICHT hoehere Eruption (Saettigung ab ca 50g). Bei Augenkontakt: 5 Min mit Wasser spuelen.",
+            "safetyRule": "Kinder min. 1 Armlaenge zurück, nie ins Krater-Innere beugen. Schuerze/alte Kleidung wegen Lebensmittelfarbe (färbt!). Erwachsene*r misst Mengen ab. Faktencheck: Mehr Natron = NICHT hoehere Eruption (Saettigung ab ca 50g). Bei Augenkontakt: 5 Min mit Wasser spuelen.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": "Badewanne oder Balkon, mit Folie.",
@@ -14574,7 +14574,7 @@ var ELITE_MOTTO_DATA = {
               "3 Durchgänge, addiere Zeiten",
               "Gewinner = niedrigste Gesamtzeit. Verlierer bekommen Trostpreis"
             ],
-            "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
+            "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Prüfung (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -14583,7 +14583,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Bewegung mit klaren Regeln + Teams + Zeitmessung = motiviertes Forscher-Training. Wettbewerb ist erwünscht in dem Alter, aber Trostpreis verhindert Frust-Spirale."
           }
         ],
-        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🍿Popcorn2 Schüsseln\n🧃Getränke4 Liter",
+        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 Stück pro Kind = 4 Pizzen ergeben 16 Stück = 8 Portionen a 2\n🍿Popcorn2 Schüsseln\n🧃Getränke4 Liter",
         "decoration": "🎈 Grüne Ballons~2 €\n🦕 Dino-Figuren TischdekoIm Set",
         "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~2 € pro Kind.\n\n🦕 Mini-Dino\n🍬 Süßigkeiten\n📝 Quiz-Urkunde",
         "shoppingList": [
@@ -14701,7 +14701,7 @@ var ELITE_MOTTO_DATA = {
               "Beispiel: „Welches heutige Tier ist mit Dinos verwandt?“ → Vögel",
               "Stichfrage: „Wie viele Zähne hatte Nigersaurus?“ → ca. 500"
             ],
-            "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
+            "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Prüfung (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -14753,7 +14753,7 @@ var ELITE_MOTTO_DATA = {
               "Chemie erklären: Säure + Base → CO2 + Wasser + Natriumacetat. Spüli fängt CO2 = Schaum",
               "Höchste Eruption gewinnt → Stempel im Forscherpass für alle"
             ],
-            "safetyRule": "Kinder min. 1 Armlaenge zurueck, nie ins Krater-Innere beugen. Schuerze/alte Kleidung wegen Lebensmittelfarbe (faerbt!). Erwachsene*r misst Mengen ab. Faktencheck: Mehr Natron = NICHT hoehere Eruption (Saettigung ab ca 50g). Bei Augenkontakt: 5 Min mit Wasser spuelen.",
+            "safetyRule": "Kinder min. 1 Armlaenge zurück, nie ins Krater-Innere beugen. Schuerze/alte Kleidung wegen Lebensmittelfarbe (färbt!). Erwachsene*r misst Mengen ab. Faktencheck: Mehr Natron = NICHT hoehere Eruption (Saettigung ab ca 50g). Bei Augenkontakt: 5 Min mit Wasser spuelen.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -14772,7 +14772,7 @@ var ELITE_MOTTO_DATA = {
             "material": "2 Seile, Kissen, Bälle, Löffel, Stoppuhr",
             "prepText": "",
             "steps": [],
-            "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
+            "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Prüfung (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -14781,7 +14781,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": null
           }
         ],
-        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🥨 Chips/Nachos2 Schüsseln",
+        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 Stück pro Kind = 4 Pizzen ergeben 16 Stück = 8 Portionen a 2\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🥨 Chips/Nachos2 Schüsseln",
         "decoration": "🎈 Grüne Luftballons (10 Stk.)~2 €\n🦶 Fußspuren-Pfad am BodenKostenlos, 15 Min.\n🦕 Dino-Figuren als TischdekoIm Set\n📜 „Urzeit-Dschungel“-Schild am EingangKostenlosPappe + Edding",
         "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~3 € pro Kind.\n\nForscherpass (mit Urkunde)\n🦕 Dino-Figur (aus Ausgrabung)\n🍬 Süßigkeiten\n💎 „Fossil“ (Muschel/Stein)",
         "shoppingList": [
@@ -14949,7 +14949,7 @@ var ELITE_MOTTO_DATA = {
               "Stoppuhr nur für Spannung — alle Teams kommen durch, keine Niederlage",
               "Code-Ziffer der finalen Station + 4 vorige Ziffern = 5-stelliger Code für die Schatztruhe"
             ],
-            "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
+            "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Prüfung (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -14959,7 +14959,7 @@ var ELITE_MOTTO_DATA = {
             "codeLogic": "Saubere Code-Logik: 5 Stationen, jede gibt eine vorab festgelegte Ziffer per gedruckter Karte. Reihenfolge der Stationen = Schloss-Code. Beispiel-Default: 3-1-4-2-7. Station 1 (Caesar-Chiffre): Loesungswort steht auf Karte mit \"Ziffer 3\". Station 2 (Forscher-Quiz): Bei >=8/15 Punkten Karte \"Ziffer 1\" entnehmen; sonst Hilfe-Karte. Station 3 (Fossilien-Suche): Ziffer \"4\" unter der Auffangschale versteckt. Station 4 (Vulkan): Ziffer \"2\" steckt am Krater-Rand (nicht an Eruptionshoehe gekoppelt). Station 5 (Final): Ziffer \"7\" als Belohnungs-Karte. Code \"31427\" oeffnet Schloss. NICHT auf Geburtsdatum koppeln (das ist die alte falsche Logik)."
           }
         ],
-        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🥔Kartoffelbrei-Vulkan1 Schüssel\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🌮 Nachos + Dip2 Schüsseln",
+        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza2 Stück pro Kind = 4 Pizzen ergeben 16 Stück = 8 Portionen a 2\n🥔Kartoffelbrei-Vulkan1 Schüssel\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🌮 Nachos + Dip2 Schüsseln",
         "decoration": "🎈 Grüne Luftballons~2 €\n🦶 Fußspuren-PfadKostenlos, 15 Min.\n📜 „Urzeit-Dschungel“-SchildKostenlosPappe + Edding\n🔊 Dschungel-SoundsKostenlosYouTube: „Jungle Ambience“\n🦕 Dino-Figuren überallIm Set\n🕯️ Wunderkerzen für Kuchen~2 €",
         "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~4 € pro Kind.\n\nForscherpass + Urkunde\n🦕 Dino-Figur\n💎 „Fossil“ (Muschel/Stein)\n🍬 Süßigkeiten\n🗝️ Mini-Lupe",
         "shoppingList": [
@@ -15686,7 +15686,7 @@ var ELITE_MOTTO_DATA = {
       "source_file": "kindergeburtstag/piraten-3-5-jahre.html",
       "extracted": "2026-05-21",
       "schema_version": "1.0",
-      "purpose": "Phase-B Elite-Motto-Data fuer Planer-Frisur-Sprint. Piraten 3-5, Pattern safari-klein (Score 97): signatureRitual + ageInsight + 3 Varianten mit Game-steps + cakeRecipe + parentTips + faq + preparationWeeks + sosScenarios."
+      "purpose": "Phase-B Elite-Motto-Data für Planer-Frisur-Sprint. Piraten 3-5, Pattern safari-klein (Score 97): signatureRitual + ageInsight + 3 Varianten mit Game-steps + cakeRecipe + parentTips + faq + preparationWeeks + sosScenarios."
     },
     "motto": "piraten",
     "ageGroup": "klein",
@@ -15695,12 +15695,12 @@ var ELITE_MOTTO_DATA = {
       5
     ],
     "title": "🏴‍☠️ Piraten-Kindergeburtstag — 3–5 Jahre",
-    "metaDescription": "Piraten-Kindergeburtstag fuer 3-5-Jaehrige als gemeinsame Schatzsuche — ohne Saebel, ohne Wettkampf, alle finden den Schatz zusammen. Drei fertige Varianten von 35 bis 80 Euro, mit Schatzspur, Goldmuenzen-Tauchen und Piratenschiff-Kuchen.",
+    "metaDescription": "Piraten-Kindergeburtstag für 3-5-Jaehrige als gemeinsame Schatzsuche — ohne Saebel, ohne Wettkampf, alle finden den Schatz zusammen. Drei fertige Varianten von 35 bis 80 Euro, mit Schatzspur, Goldmuenzen-Tauchen und Piratenschiff-Kuchen.",
     "introParagraph": "Dein Kind wird 3, 4 oder 5 und will Pirat sein? Dann braucht es keine Saebel-Schlacht und kein Seeungeheuer — das ist in dem Alter eher gruselig als spannend. Was funktioniert: eine Augenklappe, eine Schatzkarte und am Ende eine Kiste voll Goldmuenzen, die alle gemeinsam finden. Hier sind drei fertige Varianten — Minimal (90 Min., ~35 €), Standard (2 Std., ~55 €) und Wow (2 Std. mit Bastel-Highlight, ~80 €). Du bleibst die ganze Zeit dabei, und genau so ist es gedacht: Bei 3-5 ist der Erwachsene der Kompass, nicht der Aufpasser.",
     "signatureRitual": {
       "name": "Das kleine Piraten-Versprechen",
       "subtitle": "Eroeffnet die Party + Schatzkisten-Uebergabe am Ende",
-      "introText": "Bei 3-5 funktioniert kein Schwur und keine Mannschafts-Hierarchie — 'Anwaerter', 'Kapitaen in Ausbildung' oder Raenge sind zu abstrakt und sortieren Kinder in Gewinner und Verlierer. Stattdessen ein einfaches Bild: Jedes Kind bekommt eine Augenklappe (oder ein Stirnband mit Piraten-Totenkopf) und wird damit zum Mini-Piraten. Das Versprechen ist kurz, koerperlich und ohne Worte zu lernen — alle legen eine Hand auf die Schatzkarte und 'spueren', dass sie jetzt eine Crew sind. Am Ende kommt das Bild zurueck: Die Schatzkiste wird nicht verteilt, sondern gemeinsam geoeffnet, und jedes Kind nimmt sich seine Goldmuenze selbst. Anfang und Ende klammern den Nachmittag — das gibt 3-5-Jaehrigen Halt, ohne dass sie irgendetwas leisten muessen.",
+      "introText": "Bei 3-5 funktioniert kein Schwur und keine Mannschafts-Hierarchie — 'Anwaerter', 'Kapitaen in Ausbildung' oder Raenge sind zu abstrakt und sortieren Kinder in Gewinner und Verlierer. Stattdessen ein einfaches Bild: Jedes Kind bekommt eine Augenklappe (oder ein Stirnband mit Piraten-Totenkopf) und wird damit zum Mini-Piraten. Das Versprechen ist kurz, koerperlich und ohne Worte zu lernen — alle legen eine Hand auf die Schatzkarte und 'spueren', dass sie jetzt eine Crew sind. Am Ende kommt das Bild zurück: Die Schatzkiste wird nicht verteilt, sondern gemeinsam geoeffnet, und jedes Kind nimmt sich seine Goldmuenze selbst. Anfang und Ende klammern den Nachmittag — das gibt 3-5-Jaehrigen Halt, ohne dass sie irgendetwas leisten muessen.",
       "setupSteps": [
         {
           "title": "Augenklappen mit Namen vorbereiten",
@@ -15738,7 +15738,7 @@ var ELITE_MOTTO_DATA = {
         {
           "emoji": "🔍",
           "name": "Spaeh-Pirat",
-          "function": "Darf als Erstes ums Eck schauen, ob die naechste Spur kommt. Gut fuer vorsichtige Kinder."
+          "function": "Darf als Erstes ums Eck schauen, ob die naechste Spur kommt. Gut für vorsichtige Kinder."
         },
         {
           "emoji": "🧵",
@@ -15748,7 +15748,7 @@ var ELITE_MOTTO_DATA = {
         {
           "emoji": "🏴‍☠️",
           "name": "Flaggen-Pirat",
-          "function": "Traegt die Piratenflagge (Stoff am Stock) voran. Beliebte Rolle, gut fuer das Geburtstagskind."
+          "function": "Traegt die Piratenflagge (Stoff am Stock) voran. Beliebte Rolle, gut für das Geburtstagskind."
         },
         {
           "emoji": "🚢",
@@ -15765,7 +15765,7 @@ var ELITE_MOTTO_DATA = {
       "materialNote": "Pflicht: eine Augenklappe pro Kind (mit Namen) und eine Schatzkisten-Urkunde zum Mitnehmen. Sinnvoll: ein Piraten-Hut oder Bandana pro Kind und eine grosse Schatzkarte (DIN A3). Die Schatzkiste ist ein beklebter Schuhkarton — nichts muss gekauft werden. Ritual-Schatz = Plastik-Goldmuenzen (essen-unabhaengig, keine Aspiration). Schoko-Goldmuenzen NUR am Esstisch unter Aufsicht servieren, NICHT im Such-Spiel der 3-Jaehrigen: eine pro Kind plus drei Reserve, falls eine zerbroeselt."
     },
     "ageInsight": {
-      "headline": "Was 3-5-Jaehrige ausmacht — und was das fuer die Piraten-Party heisst",
+      "headline": "Was 3-5-Jaehrige ausmacht — und was das für die Piraten-Party heisst",
       "traits": [
         {
           "topic": "Aufmerksamkeit",
@@ -15800,8 +15800,8 @@ var ELITE_MOTTO_DATA = {
           "detail": "3-Jaehrige nehmen alles in den Mund. Mini-Dinos/-Tiere mindestens 3 cm, keine runden harten Suessigkeiten (Schoko-Goldmuenzen, Gummibaerchen) als Such-/Spielobjekte. Bei Schoko-Goldmuenzen am Esstisch: Folie abziehen, Aufsicht. Klopapierrollen-Test als Pflicht-Check."
         }
       ],
-      "whyMottoFitsHeadline": "Warum Piraten fuer 3-5 funktionieren",
-      "whyMottoFits": "Piraten sind eines der ersten grossen Fantasie-Themen, das Kinder ab 3 von selbst aufgreifen — Augenklappe, Schatz, 'Land in Sicht'. Das Gute daran: Die Kern-Idee ist eine Suche, und Suchen koennen schon Dreijaehrige. Eine Schatzspur durch die Wohnung ist ein klares Ziel mit eingebautem Happy End. Anders als bei aelteren Kindern braucht es hier keine Raetsel, keine Schiffs-Schlacht und keine Story mit Wendung — es reicht: Karte, Spur, Kiste, Gold. Genau diese Schlichtheit macht Piraten zum dankbarsten Motto fuer die kleinste Altersgruppe."
+      "whyMottoFitsHeadline": "Warum Piraten für 3-5 funktionieren",
+      "whyMottoFits": "Piraten sind eines der ersten grossen Fantasie-Themen, das Kinder ab 3 von selbst aufgreifen — Augenklappe, Schatz, 'Land in Sicht'. Das Gute daran: Die Kern-Idee ist eine Suche, und Suchen koennen schon Dreijaehrige. Eine Schatzspur durch die Wohnung ist ein klares Ziel mit eingebautem Happy End. Anders als bei aelteren Kindern braucht es hier keine Raetsel, keine Schiffs-Schlacht und keine Story mit Wendung — es reicht: Karte, Spur, Kiste, Gold. Genau diese Schlichtheit macht Piraten zum dankbarsten Motto für die kleinste Altersgruppe."
     },
     "variants": [
       {
@@ -15917,20 +15917,20 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 5,
                 "name": "Gemeinsam oeffnen",
-                "content": "Die Kiste wird im Kreis geoeffnet, jedes Kind nimmt sich eine Goldmuenze — gleich viele fuer alle."
+                "content": "Die Kiste wird im Kreis geoeffnet, jedes Kind nimmt sich eine Goldmuenze — gleich viele für alle."
               }
             ],
-            "safetyRule": "Schoko-Goldmuenzen sind bei 3-Jaehrigen Erstickungsrisiko (klein, rund, hart, Folie). Fuer Tauchspiel/Suchspiel: Plastik-Muenzen statt Schoko-Muenzen. Schoko-Muenzen nur zum Essen unter Sicht-Aufsicht; Folien sofort wegsammeln.",
+            "safetyRule": "Schoko-Goldmuenzen sind bei 3-Jaehrigen Erstickungsrisiko (klein, rund, hart, Folie). Für Tauchspiel/Suchspiel: Plastik-Muenzen statt Schoko-Muenzen. Schoko-Muenzen nur zum Essen unter Sicht-Aufsicht; Folien sofort wegsammeln.",
             "ageAdjust3": "Spur kurz halten (6-8 Marken), Endpunkt sichtbar verstecken. Ein Erwachsener geht voran und 'sucht mit'.",
             "ageAdjust5": "Spur laenger, zwei, drei Etappen mit Mini-Aufgabe dazwischen ('Klatscht dreimal, dann geht's weiter'). Karte selbst halten lassen.",
             "indoorTip": "In 60-75 m2 geht die Spur ueber 2-3 Raeume — ums Sofa, durch den Flur, in die Garderobe. Reicht voellig.",
             "outdoorTip": "Im Garten oder Park die Spur um Baeume und Buesche legen — das 'Suchen' wird automatisch spannender. Bei Wind die Papier-Pfeile beschweren.",
             "whyItWorksTitle": "Warum das funktioniert",
-            "whyItWorks": "Eine Suche hat ein klares Ziel und ein eingebautes Happy End — das verstehen schon Dreijaehrige. Weil alle gemeinsam suchen und das Gold geteilt wird, gibt es keine Verlierer und keine Traenen. Das ist das Herzstueck jeder Piraten-Party fuer die Kleinen."
+            "whyItWorks": "Eine Suche hat ein klares Ziel und ein eingebautes Happy End — das verstehen schon Dreijaehrige. Weil alle gemeinsam suchen und das Gold geteilt wird, gibt es keine Verlierer und keine Traenen. Das ist das Herzstueck jeder Piraten-Party für die Kleinen."
           }
         ],
-        "food": "🎂 Piratenschiff-Kuchen (Kastenkuchen mit Papier-Segel) — reicht fuer 6 Kinder. 🥛 'Piraten-Grog' (Apfelschorle in Karaffen). 🍎 Obst-Haeppchen (bei 3-4-Jaehrigen ohne Spiess) als 'Schatz-Haeppchen'. Schlicht und satt machend — mehr ist bei 90 Minuten nicht noetig.",
-        "decoration": "🏴‍☠️ Ein, zwei blaue Tuecher als 'Meer' und die grosse Schatzkarte in der Mitte. Mehr braucht es nicht — Kinder achten auf die Spiele, nicht die Deko.",
+        "food": "🎂 Piratenschiff-Kuchen (Kastenkuchen mit Papier-Segel) — reicht für 6 Kinder. 🥛 'Piraten-Grog' (Apfelschorle in Karaffen). 🍎 Obst-Haeppchen (bei 3-4-Jaehrigen ohne Spiess) als 'Schatz-Haeppchen'. Schlicht und satt machend — mehr ist bei 90 Minuten nicht noetig.",
+        "decoration": "🏴‍☠️ Ein, zwei blaue Tücher als 'Meer' und die grosse Schatzkarte in der Mitte. Mehr braucht es nicht — Kinder achten auf die Spiele, nicht die Deko.",
         "giveaways": "🪙 Pro Kind ein paar Schoko-Goldmuenzen + die Schatzkisten-Urkunde. Optional ein Mini-Mitgebsel. Klein halten — das Erlebnis ist das Geschenk.",
         "shoppingList": [
           {
@@ -15962,12 +15962,12 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🥛",
-            "label": "Apfelschorle / Saft fuer 'Piraten-Grog'",
+            "label": "Apfelschorle / Saft für 'Piraten-Grog'",
             "url": "https://www.amazon.de/s?k=apfelschorle+kinder&tag=machsleicht-21",
             "priceEur": 4,
             "hasAffiliate": false,
             "category": "pflicht",
-            "categoryReasoning": "Getraenk fuer 6 Kinder — als 'Grog' getauft kostet es nichts extra und macht Stimmung."
+            "categoryReasoning": "Getraenk für 6 Kinder — als 'Grog' getauft kostet es nichts extra und macht Stimmung."
           },
           {
             "emoji": "🎂",
@@ -15976,11 +15976,11 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 6,
             "hasAffiliate": false,
             "category": "pflicht",
-            "categoryReasoning": "Basis fuer den Piratenschiff-Kuchen — meist teilweise im Haus, daher guenstig."
+            "categoryReasoning": "Basis für den Piratenschiff-Kuchen — meist teilweise im Haus, daher guenstig."
           },
           {
             "emoji": "📦",
-            "label": "Tonkarton / Goldfolie fuer Schatzkiste",
+            "label": "Tonkarton / Goldfolie für Schatzkiste",
             "url": "https://www.amazon.de/s?k=tonkarton+goldfolie+bastel&tag=machsleicht-21",
             "priceEur": 3,
             "hasAffiliate": true,
@@ -15994,7 +15994,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "sinnvoll",
-            "categoryReasoning": "Verstaerkt das Kostuem fuer Kinder, die keine Augenklappe moegen — nicht zwingend, aber stimmungsvoll."
+            "categoryReasoning": "Verstaerkt das Kostuem für Kinder, die keine Augenklappe moegen — nicht zwingend, aber stimmungsvoll."
           },
           {
             "emoji": "🧻",
@@ -16012,7 +16012,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
-            "categoryReasoning": "Nettes Requisit fuer das Kompass-Spiel — oft schon in der Spielkiste. Tut's auch ohne."
+            "categoryReasoning": "Nettes Requisit für das Kompass-Spiel — oft schon in der Spielkiste. Tut's auch ohne."
           },
           {
             "emoji": "🧵",
@@ -16021,7 +16021,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
-            "categoryReasoning": "Fuer das Crew-am-Tau-Spiel — ein vorhandenes Springseil oder Waescheleine reicht voellig."
+            "categoryReasoning": "Für das Crew-am-Tau-Spiel — ein vorhandenes Springseil oder Waescheleine reicht voellig."
           }
         ],
         "estimatedCostEur": 35,
@@ -16035,7 +16035,7 @@ var ELITE_MOTTO_DATA = {
         "id": "standard",
         "label": "Standard — 2 Std., Sweet Spot",
         "headline": "🏴‍☠️ Standard — 2 Stunden, vier Stationen",
-        "intro": "Die ausgewogene Variante: 2 Stunden, 6 Kinder, vier Stationen + 1 Reserve-Spiel (Schatzinsel-Huepfen als optionaler Puffer wenn Tempo es zulaesst) mit Kuchen-Pause in der Mitte. Genug Programm, dass keine Langeweile aufkommt, aber kein Stress beim Vorbereiten. Das ist der Sweet Spot fuer die meisten Familien — abwechslungsreich, aber machbar.",
+        "intro": "Die ausgewogene Variante: 2 Stunden, 6 Kinder, vier Stationen + 1 Reserve-Spiel (Schatzinsel-Huepfen als optionaler Puffer wenn Tempo es zulaesst) mit Kuchen-Pause in der Mitte. Genug Programm, dass keine Langeweile aufkommt, aber kein Stress beim Vorbereiten. Das ist der Sweet Spot für die meisten Familien — abwechslungsreich, aber machbar.",
         "timeWindow": "15:00–17:00, 6 Kinder",
         "schedule": [
           {
@@ -16066,7 +16066,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "16:40",
             "title": "Crew am Tau",
-            "description": "Letztes ruhiges Spiel als Ausklang — alle am Seil 'zurueck zum Hafen'."
+            "description": "Letztes ruhiges Spiel als Ausklang — alle am Seil 'zurück zum Hafen'."
           },
           {
             "time": "16:55",
@@ -16124,7 +16124,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "halblaut",
             "effort": "leicht",
             "material": "Grosse Schuessel oder Wanne, Wasser oder trockene Fuellung (Sand, zerknuelltes Papier, getrocknete Erbsen), Schoko-Goldmuenzen in Folie oder Plastik-Muenzen, Handtuecher.",
-            "prepText": "TROCKENE Variante als Default (Tuechern auf dem Boden, Muenzen darunter): sicher fuer 3-Jaehrige. Eine grosse Schuessel mit lauwarmem Wasser fuellen (oder trocken mit Sand/Papier, falls Wasser zu viel Chaos macht). Goldmuenzen reinwerfen. Handtuecher danebenlegen — es wird nass.",
+            "prepText": "TROCKENE Variante als Default (Tüchern auf dem Boden, Muenzen darunter): sicher für 3-Jaehrige. Eine grosse Schuessel mit lauwarmem Wasser fuellen (oder trocken mit Sand/Papier, falls Wasser zu viel Chaos macht). Goldmuenzen reinwerfen. Handtuecher danebenlegen — es wird nass.",
             "steps": [
               {
                 "n": 1,
@@ -16148,12 +16148,12 @@ var ELITE_MOTTO_DATA = {
               }
             ],
             "safetyRule": "Bei Wasser: kleine Kinder nie unbeaufsichtigt an der Schuessel. Boden mit Handtuch auslegen — Rutschgefahr durch Spritzer. Schoko-Muenzen danach essen, Plastik-Muenzen nicht in den Mund.",
-            "ageAdjust3": "Trockene Variante (Sand/Papier) ist fuer Dreijaehrige sauberer und stressfreier. Grosse, leicht greifbare Muenzen nehmen.",
+            "ageAdjust3": "Trockene Variante (Sand/Papier) ist für Dreijaehrige sauberer und stressfreier. Grosse, leicht greifbare Muenzen nehmen.",
             "ageAdjust5": "Mit Wasser und mehr Muenzen — 5-Jaehrige finden das Planschen super. Eine kleine 'Schatzkarte' dazu, auf der abgehakt wird, wie viel schon geborgen ist.",
             "indoorTip": "Im Bad oder in der Kueche spielen, wo der Boden wischbar ist. Ein altes Handtuch unter die Schuessel.",
             "outdoorTip": "Im Garten ist das ideal — da darf gespritzt werden. An warmen Tagen ein echtes Highlight.",
             "whyItWorksTitle": "Warum das funktioniert",
-            "whyItWorks": "Tauchen und Greifen ist sinnlich und braucht keine Regeln — perfekt fuer 3-5. Weil jede Muenze in die gemeinsame Kiste geht und am Ende geteilt wird, bleibt es kooperativ. Der Wasser-Effekt macht aus einer simplen Greif-Aufgabe ein kleines Abenteuer."
+            "whyItWorks": "Tauchen und Greifen ist sinnlich und braucht keine Regeln — perfekt für 3-5. Weil jede Muenze in die gemeinsame Kiste geht und am Ende geteilt wird, bleibt es kooperativ. Der Wasser-Effekt macht aus einer simplen Greif-Aufgabe ein kleines Abenteuer."
           },
           {
             "name": "🗺️ Die grosse Schatzspur",
@@ -16189,16 +16189,16 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 5,
                 "name": "Gemeinsam oeffnen",
-                "content": "Die Kiste wird im Kreis geoeffnet, jedes Kind nimmt sich eine Goldmuenze — gleich viele fuer alle."
+                "content": "Die Kiste wird im Kreis geoeffnet, jedes Kind nimmt sich eine Goldmuenze — gleich viele für alle."
               }
             ],
-            "safetyRule": "Schoko-Goldmuenzen sind bei 3-Jaehrigen Erstickungsrisiko (klein, rund, hart, Folie). Fuer Tauchspiel/Suchspiel: Plastik-Muenzen statt Schoko-Muenzen. Schoko-Muenzen nur zum Essen unter Sicht-Aufsicht; Folien sofort wegsammeln.",
+            "safetyRule": "Schoko-Goldmuenzen sind bei 3-Jaehrigen Erstickungsrisiko (klein, rund, hart, Folie). Für Tauchspiel/Suchspiel: Plastik-Muenzen statt Schoko-Muenzen. Schoko-Muenzen nur zum Essen unter Sicht-Aufsicht; Folien sofort wegsammeln.",
             "ageAdjust3": "Spur kurz halten (6-8 Marken), Endpunkt sichtbar verstecken. Ein Erwachsener geht voran und 'sucht mit'.",
             "ageAdjust5": "Spur laenger, zwei, drei Etappen mit Mini-Aufgabe dazwischen ('Klatscht dreimal, dann geht's weiter'). Karte selbst halten lassen.",
             "indoorTip": "In 60-75 m2 geht die Spur ueber 2-3 Raeume — ums Sofa, durch den Flur, in die Garderobe. Reicht voellig.",
             "outdoorTip": "Im Garten oder Park die Spur um Baeume und Buesche legen — das 'Suchen' wird automatisch spannender. Bei Wind die Papier-Pfeile beschweren.",
             "whyItWorksTitle": "Warum das funktioniert",
-            "whyItWorks": "Eine Suche hat ein klares Ziel und ein eingebautes Happy End — das verstehen schon Dreijaehrige. Weil alle gemeinsam suchen und das Gold geteilt wird, gibt es keine Verlierer und keine Traenen. Das ist das Herzstueck jeder Piraten-Party fuer die Kleinen."
+            "whyItWorks": "Eine Suche hat ein klares Ziel und ein eingebautes Happy End — das verstehen schon Dreijaehrige. Weil alle gemeinsam suchen und das Gold geteilt wird, gibt es keine Verlierer und keine Traenen. Das ist das Herzstueck jeder Piraten-Party für die Kleinen."
           },
           {
             "name": "🧵 Crew am Tau (Festhalte-Spiel)",
@@ -16273,11 +16273,11 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": "Wohnzimmer-Klassiker — Sofakissen funktionieren am besten. Vorher Glastisch oder zerbrechliche Deko aus dem Weg raeumen.",
             "outdoorTip": "Im Garten Hula-Hoop-Reifen oder Picknickdecken als Inseln. Bei Wind die Decken mit Steinen beschweren.",
             "whyItWorksTitle": "Warum das funktioniert",
-            "whyItWorks": "Boden-ist-Lava-Spiele sind ein 3-5-Klassiker, der in der Piraten-Welt von selbst Sinn macht: Inseln und Meer brauchen keine Erklaerung. Es ist Bewegung mit klarer Geschichte, ohne Wettbewerb und ohne Ausscheiden — und die 'Rettung' aus dem Meer ist fuer Dreijaehrige der Lieblings-Moment."
+            "whyItWorks": "Boden-ist-Lava-Spiele sind ein 3-5-Klassiker, der in der Piraten-Welt von selbst Sinn macht: Inseln und Meer brauchen keine Erklaerung. Es ist Bewegung mit klarer Geschichte, ohne Wettbewerb und ohne Ausscheiden — und die 'Rettung' aus dem Meer ist für Dreijaehrige der Lieblings-Moment."
           }
         ],
-        "food": "🎂 Piratenschiff-Kuchen. 🥛 'Piraten-Grog' (Apfelschorle). 🍪 'Schiffszwieback' (einfache Butterkekse). 🍎 Obst-Haeppchen (bei 3-4-Jaehrigen ohne Spiess). 🧀 Kaese-Wuerfel als 'Proviant'. Eine Handvoll herzhafter Snacks neben dem Kuchen — gut, weil 2 Stunden mit nur Kuchen zu suess werden.",
-        "decoration": "🏴‍☠️ Blaue Tuecher als Meer, ein, zwei Piratenflaggen, Schatzkarte in der Mitte und Piraten-Servietten auf dem Tisch. Stimmungsvoll, aber in 20 Minuten aufgebaut.",
+        "food": "🎂 Piratenschiff-Kuchen. 🥛 'Piraten-Grog' (Apfelschorle). 🍪 'Schiffszwieback' (einfache Butterkekse). 🍎 Obst-Haeppchen (bei 3-4-Jaehrigen ohne Spiess). 🧀 Kaese-Würfel als 'Proviant'. Eine Handvoll herzhafter Snacks neben dem Kuchen — gut, weil 2 Stunden mit nur Kuchen zu suess werden.",
+        "decoration": "🏴‍☠️ Blaue Tücher als Meer, ein, zwei Piratenflaggen, Schatzkarte in der Mitte und Piraten-Servietten auf dem Tisch. Stimmungsvoll, aber in 20 Minuten aufgebaut.",
         "giveaways": "🪙 Mitgebsel-Tuete pro Kind: Goldmuenzen, Mini-Spielzeug, Schatzkisten-Urkunde. Wer mag, legt die Augenklappe als Andenken dazu.",
         "shoppingList": [
           {
@@ -16309,12 +16309,12 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🥛",
-            "label": "Apfelschorle / Saft fuer 'Piraten-Grog'",
+            "label": "Apfelschorle / Saft für 'Piraten-Grog'",
             "url": "https://www.amazon.de/s?k=apfelschorle+kinder&tag=machsleicht-21",
             "priceEur": 4,
             "hasAffiliate": false,
             "category": "pflicht",
-            "categoryReasoning": "Getraenk fuer 6 Kinder — als 'Grog' getauft kostet es nichts extra und macht Stimmung."
+            "categoryReasoning": "Getraenk für 6 Kinder — als 'Grog' getauft kostet es nichts extra und macht Stimmung."
           },
           {
             "emoji": "🎂",
@@ -16323,11 +16323,11 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 6,
             "hasAffiliate": false,
             "category": "pflicht",
-            "categoryReasoning": "Basis fuer den Piratenschiff-Kuchen — meist teilweise im Haus, daher guenstig."
+            "categoryReasoning": "Basis für den Piratenschiff-Kuchen — meist teilweise im Haus, daher guenstig."
           },
           {
             "emoji": "📦",
-            "label": "Tonkarton / Goldfolie fuer Schatzkiste",
+            "label": "Tonkarton / Goldfolie für Schatzkiste",
             "url": "https://www.amazon.de/s?k=tonkarton+goldfolie+bastel&tag=machsleicht-21",
             "priceEur": 3,
             "hasAffiliate": true,
@@ -16341,7 +16341,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "sinnvoll",
-            "categoryReasoning": "Verstaerkt das Kostuem fuer Kinder, die keine Augenklappe moegen — nicht zwingend, aber stimmungsvoll."
+            "categoryReasoning": "Verstaerkt das Kostuem für Kinder, die keine Augenklappe moegen — nicht zwingend, aber stimmungsvoll."
           },
           {
             "emoji": "🧻",
@@ -16354,12 +16354,12 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🗺️",
-            "label": "Papier fuer Schatzkarten + Stempel-Set",
+            "label": "Papier für Schatzkarten + Stempel-Set",
             "url": "https://www.amazon.de/s?k=kinder+stempel+set+bastel&tag=machsleicht-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "sinnvoll",
-            "categoryReasoning": "Fuer die Bastel-Station Schatzkarten. Stempel sind wiederverwendbar — lohnt sich auch fuer spaeter."
+            "categoryReasoning": "Für die Bastel-Station Schatzkarten. Stempel sind wiederverwendbar — lohnt sich auch für spaeter."
           },
           {
             "emoji": "🍬",
@@ -16377,7 +16377,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
-            "categoryReasoning": "Nettes Requisit fuer das Kompass-Spiel — oft schon in der Spielkiste. Tut's auch ohne."
+            "categoryReasoning": "Nettes Requisit für das Kompass-Spiel — oft schon in der Spielkiste. Tut's auch ohne."
           },
           {
             "emoji": "🧵",
@@ -16386,14 +16386,14 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
-            "categoryReasoning": "Fuer das Crew-am-Tau-Spiel — ein vorhandenes Springseil oder Waescheleine reicht voellig."
+            "categoryReasoning": "Für das Crew-am-Tau-Spiel — ein vorhandenes Springseil oder Waescheleine reicht voellig."
           }
         ],
         "estimatedCostEur": 55,
         "costContext": "Geschaetzte Kosten (Standard, 6 Kinder)",
         "savingsTip": {
           "title": "Snacks und Deko aus dem Vorrat",
-          "body": "Butterkekse, Kaese und Obst sind meist im Haus — die musst du nicht extra als 'Piraten-Proviant' kaufen, nur umtaufen. Servietten und Flaggen kann man wiederverwenden oder aus Papier selbst basteln. So bleiben von den 55 € realistisch 40-45 € uebrig fuer Augenklappen, Gold und Kuchen."
+          "body": "Butterkekse, Kaese und Obst sind meist im Haus — die musst du nicht extra als 'Piraten-Proviant' kaufen, nur umtaufen. Servietten und Flaggen kann man wiederverwenden oder aus Papier selbst basteln. So bleiben von den 55 € realistisch 40-45 € uebrig für Augenklappen, Gold und Kuchen."
         }
       },
       {
@@ -16554,16 +16554,16 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 5,
                 "name": "Gemeinsam oeffnen",
-                "content": "Die Kiste wird im Kreis geoeffnet, jedes Kind nimmt sich eine Goldmuenze — gleich viele fuer alle."
+                "content": "Die Kiste wird im Kreis geoeffnet, jedes Kind nimmt sich eine Goldmuenze — gleich viele für alle."
               }
             ],
-            "safetyRule": "Schoko-Goldmuenzen sind bei 3-Jaehrigen Erstickungsrisiko (klein, rund, hart, Folie). Fuer Tauchspiel/Suchspiel: Plastik-Muenzen statt Schoko-Muenzen. Schoko-Muenzen nur zum Essen unter Sicht-Aufsicht; Folien sofort wegsammeln.",
+            "safetyRule": "Schoko-Goldmuenzen sind bei 3-Jaehrigen Erstickungsrisiko (klein, rund, hart, Folie). Für Tauchspiel/Suchspiel: Plastik-Muenzen statt Schoko-Muenzen. Schoko-Muenzen nur zum Essen unter Sicht-Aufsicht; Folien sofort wegsammeln.",
             "ageAdjust3": "Spur kurz halten (6-8 Marken), Endpunkt sichtbar verstecken. Ein Erwachsener geht voran und 'sucht mit'.",
             "ageAdjust5": "Spur laenger, zwei, drei Etappen mit Mini-Aufgabe dazwischen ('Klatscht dreimal, dann geht's weiter'). Karte selbst halten lassen.",
             "indoorTip": "In 60-75 m2 geht die Spur ueber 2-3 Raeume — ums Sofa, durch den Flur, in die Garderobe. Reicht voellig.",
             "outdoorTip": "Im Garten oder Park die Spur um Baeume und Buesche legen — das 'Suchen' wird automatisch spannender. Bei Wind die Papier-Pfeile beschweren.",
             "whyItWorksTitle": "Warum das funktioniert",
-            "whyItWorks": "Eine Suche hat ein klares Ziel und ein eingebautes Happy End — das verstehen schon Dreijaehrige. Weil alle gemeinsam suchen und das Gold geteilt wird, gibt es keine Verlierer und keine Traenen. Das ist das Herzstueck jeder Piraten-Party fuer die Kleinen."
+            "whyItWorks": "Eine Suche hat ein klares Ziel und ein eingebautes Happy End — das verstehen schon Dreijaehrige. Weil alle gemeinsam suchen und das Gold geteilt wird, gibt es keine Verlierer und keine Traenen. Das ist das Herzstueck jeder Piraten-Party für die Kleinen."
           },
           {
             "name": "💃 Piraten-Tanz (Stopp-Tanz mit Kissen-Inseln)",
@@ -16607,7 +16607,7 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "food": "🎂 Piratenschiff-Kuchen auf 'Meer'-Platte (blauer Tonkarton). 🥛 'Piraten-Grog'. 🍪 'Schiffszwieback'. 🍌 'Schwertfisch-Haeppchen (Obst einzeln serviert, NICHT auf Spiessen bei 3-Jaehrigen)' (Obst auf Holzspiessen). 🧀 Kaese-Anker (Kaese mit Ausstecher). Liebevoll angerichtet — bei Wow ist das Auge mit am Tisch.",
-        "decoration": "🏴‍☠️ Volle Deko: blaues 'Meer' aus Tuechern, mehrere Piratenflaggen, Schatzkarte gross an der Wand, Piraten-Servietten und ggf. ein paar aufgehaengte Goldmuenzen-Girlanden. Macht aus dem Raum ein Schiff.",
+        "decoration": "🏴‍☠️ Volle Deko: blaues 'Meer' aus Tüchern, mehrere Piratenflaggen, Schatzkarte gross an der Wand, Piraten-Servietten und ggf. ein paar aufgehaengte Goldmuenzen-Girlanden. Macht aus dem Raum ein Schiff.",
         "giveaways": "🗺️ Jedes Kind nimmt seine selbstgebastelte Schatzkarte mit — das beste Mitgebsel, weil selbst gemacht. Dazu Goldmuenzen, Urkunde und die Augenklappe.",
         "shoppingList": [
           {
@@ -16639,12 +16639,12 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🥛",
-            "label": "Apfelschorle / Saft fuer 'Piraten-Grog'",
+            "label": "Apfelschorle / Saft für 'Piraten-Grog'",
             "url": "https://www.amazon.de/s?k=apfelschorle+kinder&tag=machsleicht-21",
             "priceEur": 4,
             "hasAffiliate": false,
             "category": "pflicht",
-            "categoryReasoning": "Getraenk fuer 6 Kinder — als 'Grog' getauft kostet es nichts extra und macht Stimmung."
+            "categoryReasoning": "Getraenk für 6 Kinder — als 'Grog' getauft kostet es nichts extra und macht Stimmung."
           },
           {
             "emoji": "🎂",
@@ -16653,11 +16653,11 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 6,
             "hasAffiliate": false,
             "category": "pflicht",
-            "categoryReasoning": "Basis fuer den Piratenschiff-Kuchen — meist teilweise im Haus, daher guenstig."
+            "categoryReasoning": "Basis für den Piratenschiff-Kuchen — meist teilweise im Haus, daher guenstig."
           },
           {
             "emoji": "📦",
-            "label": "Tonkarton / Goldfolie fuer Schatzkiste",
+            "label": "Tonkarton / Goldfolie für Schatzkiste",
             "url": "https://www.amazon.de/s?k=tonkarton+goldfolie+bastel&tag=machsleicht-21",
             "priceEur": 3,
             "hasAffiliate": true,
@@ -16671,7 +16671,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "sinnvoll",
-            "categoryReasoning": "Verstaerkt das Kostuem fuer Kinder, die keine Augenklappe moegen — nicht zwingend, aber stimmungsvoll."
+            "categoryReasoning": "Verstaerkt das Kostuem für Kinder, die keine Augenklappe moegen — nicht zwingend, aber stimmungsvoll."
           },
           {
             "emoji": "🧻",
@@ -16698,7 +16698,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 9,
             "hasAffiliate": true,
             "category": "sinnvoll",
-            "categoryReasoning": "Verwandelt den Raum ins Schiff — fuer die Wow-Variante, bei der Atmosphaere zaehlt."
+            "categoryReasoning": "Verwandelt den Raum ins Schiff — für die Wow-Variante, bei der Atmosphaere zaehlt."
           },
           {
             "emoji": "🪝",
@@ -16707,7 +16707,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 13,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
-            "categoryReasoning": "Echte kleine Holzkiste als Highlight — schoen, aber ein beklebter Schuhkarton tut es genauso. Nur fuer Wow-Budget."
+            "categoryReasoning": "Echte kleine Holzkiste als Highlight — schoen, aber ein beklebter Schuhkarton tut es genauso. Nur für Wow-Budget."
           },
           {
             "emoji": "📸",
@@ -16716,7 +16716,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
-            "categoryReasoning": "Nettes Requisit fuer das Kompass-Spiel — oft schon in der Spielkiste. Tut's auch ohne."
+            "categoryReasoning": "Nettes Requisit für das Kompass-Spiel — oft schon in der Spielkiste. Tut's auch ohne."
           },
           {
             "emoji": "🧵",
@@ -16725,14 +16725,14 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
-            "categoryReasoning": "Fuer das Crew-am-Tau-Spiel — ein vorhandenes Springseil oder Waescheleine reicht voellig."
+            "categoryReasoning": "Für das Crew-am-Tau-Spiel — ein vorhandenes Springseil oder Waescheleine reicht voellig."
           }
         ],
         "estimatedCostEur": 80,
         "costContext": "Geschaetzte Kosten (Wow, 6 Kinder)",
         "savingsTip": {
           "title": "Bastel-Material lohnt sich ueber die Party hinaus",
-          "body": "Das Stempel-Set und die Stifte sind nicht nur fuer den Geburtstag — die liegen danach in der Bastelkiste und werden weiterbenutzt. Wer eine echte Holz-Schatzkiste streicht und stattdessen den beklebten Schuhkarton nimmt, spart die teuerste Einzelposition. Realistisch landen die 80 € dann bei 60-65 €, ohne dass die Party aermer wirkt."
+          "body": "Das Stempel-Set und die Stifte sind nicht nur für den Geburtstag — die liegen danach in der Bastelkiste und werden weiterbenutzt. Wer eine echte Holz-Schatzkiste streicht und stattdessen den beklebten Schuhkarton nimmt, spart die teuerste Einzelposition. Realistisch landen die 80 € dann bei 60-65 €, ohne dass die Party aermer wirkt."
         }
       }
     ],
@@ -16767,7 +16767,7 @@ var ELITE_MOTTO_DATA = {
       "meta": {
         "aufwand": "mittel (Kastenkuchen + 15 Min. Deko)",
         "kosten": "ca. 5-7 €",
-        "allergiker": "Glasur durch Puderzucker-Wasser-Guss ersetzen. Fuer eifrei/milchfrei einen veganen Kastenkuchen vom Discounter nehmen — die Schiffs-Deko funktioniert auf jedem Kasten."
+        "allergiker": "Glasur durch Puderzucker-Wasser-Guss ersetzen. Für eifrei/milchfrei einen veganen Kastenkuchen vom Discounter nehmen — die Schiffs-Deko funktioniert auf jedem Kasten."
       },
       "tips": [
         {
@@ -16776,7 +16776,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "title": "Muffins statt Schiff",
-          "body": "Wer es noch einfacher will: 12 Muffins backen, in jeden ein Mini-Papierfaehnchen mit Totenkopf stecken. Jedes Kind bekommt sein eigenes 'Schiffchen' — weniger Schneiderei, weniger Streit ums groesste Stueck."
+          "body": "Wer es noch einfacher will: 12 Muffins backen, in jeden ein Mini-Papierfaehnchen mit Totenkopf stecken. Jedes Kind bekommt sein eigenes 'Schiffchen' — weniger Schneiderei, weniger Streit ums groesste Stück."
         }
       ]
     },
@@ -16808,10 +16808,10 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "topic": "Holzspiess-Sicherheit",
-          "detail": "Bei 3-4-Jaehrigen Obst von Holzspiessen ABZIEHEN und einzeln servieren. Holzspiesse nur fuer Aeltere oder unter Aufsicht. Beim Kuchen vor dem Anschneiden die Holzspieß-Maste der Piraten-Deko ZIEHEN."
+          "detail": "Bei 3-4-Jaehrigen Obst von Holzspiessen ABZIEHEN und einzeln servieren. Holzspiesse nur für Aeltere oder unter Aufsicht. Beim Kuchen vor dem Anschneiden die Holzspieß-Maste der Piraten-Deko ZIEHEN."
         }
       ],
-      "educationalValue": "Die Kinder ueben ganz nebenbei: gemeinsam ein Ziel verfolgen, aufeinander warten und am Ende teilen. Eine Schatzsuche ohne Sieger zeigt 3-5-Jaehrigen, dass ein Erfolg schoener wird, wenn ihn alle haben — das ist die erste Erfahrung von Kooperation statt Konkurrenz. Dazu kommt ein Stueck Selbstwirksamkeit: 'Ich habe den Schatz mitgefunden' ist fuer ein Dreijaehriges ein echtes Erfolgserlebnis. Und das Rollenspiel — jemand anders sein, in eine Geschichte eintauchen — trainiert Fantasie und Sprache, ohne dass es nach Lernen aussieht."
+      "educationalValue": "Die Kinder ueben ganz nebenbei: gemeinsam ein Ziel verfolgen, aufeinander warten und am Ende teilen. Eine Schatzsuche ohne Sieger zeigt 3-5-Jaehrigen, dass ein Erfolg schoener wird, wenn ihn alle haben — das ist die erste Erfahrung von Kooperation statt Konkurrenz. Dazu kommt ein Stück Selbstwirksamkeit: 'Ich habe den Schatz mitgefunden' ist für ein Dreijaehriges ein echtes Erfolgserlebnis. Und das Rollenspiel — jemand anders sein, in eine Geschichte eintauchen — trainiert Fantasie und Sprache, ohne dass es nach Lernen aussieht."
     },
     "invitationTemplate": "Lust auf passende Piraten-Einladungen? Der Einladungs-Generator von machsleicht baut dir in zwei Minuten eine fertige Karte mit Schatzkarten-Optik, Datum und Uhrzeit — zum Ausdrucken oder als WhatsApp-Bild. Schreib das Motto 'Piraten' rein, waehl das Alter 3-5, fertig.",
     "faq": [
@@ -16820,19 +16820,19 @@ var ELITE_MOTTO_DATA = {
         "a": "Ja. Die Schatzspur braucht keinen Garten — sie geht ums Sofa, hinter den Vorhang, in den Flur. Bei 60-75 m2 legst du die Spur ueber zwei, drei Raeume und versteckst die Kiste in der Garderobe oder im Schlafzimmer. Piraten ist akustisch eher ruhig: Suchen, schleichen, fluestern — das geht drinnen gut."
       },
       {
-        "q": "Ist das nicht zu gruselig fuer 3-Jaehrige?",
-        "a": "Nicht, wenn du die freundliche Version spielst. Lass Skelette, Geister und Saebel-Kaempfe komplett weg. Hier sind Piraten freundliche Schatzsucher mit Augenklappe und Karte — das ist fuer Dreijaehrige nicht gruseliger als eine Schnitzeljagd."
+        "q": "Ist das nicht zu gruselig für 3-Jaehrige?",
+        "a": "Nicht, wenn du die freundliche Version spielst. Lass Skelette, Geister und Saebel-Kaempfe komplett weg. Hier sind Piraten freundliche Schatzsucher mit Augenklappe und Karte — das ist für Dreijaehrige nicht gruseliger als eine Schnitzeljagd."
       },
       {
         "q": "Was, wenn ein Kind die Augenklappe nicht aufsetzen will?",
-        "a": "Dann laesst es sie weg. Ein Auge zu bedecken ist fuer manche Kinder unangenehm. Stirnband, Bandana oder einfach ein Piratenhut tun es genauso. Niemand wird zu einem Kostuem-Teil gezwungen — Pirat ist man durch Mitmachen, nicht durch die Klappe."
+        "a": "Dann laesst es sie weg. Ein Auge zu bedecken ist für manche Kinder unangenehm. Stirnband, Bandana oder einfach ein Piratenhut tun es genauso. Niemand wird zu einem Kostuem-Teil gezwungen — Pirat ist man durch Mitmachen, nicht durch die Klappe."
       },
       {
         "q": "Wie verhindere ich Streit ums Gold?",
         "a": "Vorher gleich viele Goldmuenzen pro Kind abzaehlen und am Ende sichtbar gerecht aufteilen — nicht 'wer findet, behaelt'. Der Schatz gehoert der ganzen Crew. So gibt es keine Gewinner und Verlierer und keine Traenen am Buffet."
       },
       {
-        "q": "Reicht eine Schatzsuche fuer 90 Minuten?",
+        "q": "Reicht eine Schatzsuche für 90 Minuten?",
         "a": "Knapp — darum die Minimal-Variante mit zwei kurzen Spielen plus Kuchen. Bei 3-5 fuellt sich die Zeit schneller als gedacht: Ankommen, Augenklappen, ein Spiel, Kuchen, zweites Spiel, Schatz teilen, und schon sind 90 Minuten um."
       }
     ],
@@ -16863,7 +16863,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "💰",
             "title": "Budget grob abstecken",
-            "detail": "35 / 55 / 80 € sind Richtwerte fuer 6 Kinder. Aus dem Bestand schoepfen (Schuhkarton, Stoffreste, Stifte) druckt jede Variante deutlich."
+            "detail": "35 / 55 / 80 € sind Richtwerte für 6 Kinder. Aus dem Bestand schoepfen (Schuhkarton, Stoffreste, Stifte) druckt jede Variante deutlich."
           }
         ]
       },
@@ -16978,7 +16978,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🏴‍☠️",
             "title": "Deko aufhaengen",
-            "detail": "Piratenflaggen, blaue Tuecher als 'Meer', Schatzkarte in die Mitte. Muss nicht perfekt sein — Kinder achten auf die Spiele, nicht die Deko."
+            "detail": "Piratenflaggen, blaue Tücher als 'Meer', Schatzkarte in die Mitte. Muss nicht perfekt sein — Kinder achten auf die Spiele, nicht die Deko."
           },
           {
             "icon": "😌",
@@ -17012,7 +17012,7 @@ var ELITE_MOTTO_DATA = {
           "Mehr Zeit pro Kind: jedes darf eine Rolle uebernehmen und oefter 'die naechste Marke' finden.",
           "Tisch enger decken — eine kleine Crew an einem Tisch ist gemuetlicher als ein leerer grosser."
         ],
-        "fallback": "Mit 2-3 Kindern wird die Party ruhiger und intensiver — das ist kein Verlust, sondern oft die schoenere Variante fuer 3-Jaehrige.",
+        "fallback": "Mit 2-3 Kindern wird die Party ruhiger und intensiver — das ist kein Verlust, sondern oft die schoenere Variante für 3-Jaehrige.",
         "tone": "beruhigend"
       },
       "mehr_kinder_als_erwartet": {
@@ -17020,7 +17020,7 @@ var ELITE_MOTTO_DATA = {
         "label": "Mehr Kinder als geplant",
         "headline": "Crew aufteilen, Goldmuenzen strecken.",
         "steps": [
-          "Goldmuenzen-Reserve und Kuchen-Stueck checken — zur Not Muffins als Backup oder Kuchen kleiner schneiden.",
+          "Goldmuenzen-Reserve und Kuchen-Stück checken — zur Not Muffins als Backup oder Kuchen kleiner schneiden.",
           "Bei der Schatzspur in zwei Mini-Crews aufteilen, jede mit einem Erwachsenen — sonst Gedraenge.",
           "Augenklappen/Urkunden nachzaehlen — lieber ein, zwei Reserve-Sets vorhalten.",
           "Mehr Erwachsene einspannen: ein Begleiter pro 2-3 Kinder ist bei 3-5 Pflicht, nicht Luxus."
@@ -17074,7 +17074,7 @@ var ELITE_MOTTO_DATA = {
         "steps": [
           "Kind aus der Gruppe nehmen, in eine ruhige Ecke — Reizueberflutung ist bei 3-5 der haeufigste Grund.",
           "Eltern dazu (sie sind ja da) — ein vertrauter Schoss wirkt schneller als jedes Trostwort.",
-          "Eine Goldmuenze oder ein 'wichtiger Auftrag' (Kiste bewachen) holt manche zurueck ins Spiel.",
+          "Eine Goldmuenze oder ein 'wichtiger Auftrag' (Kiste bewachen) holt manche zurück ins Spiel.",
           "Wenn nichts hilft: Pause ist okay. Das Kind muss nicht jede Minute mitmachen."
         ],
         "fallback": "Traenen gehoeren bei Kleinkind-Partys dazu und sind selten ein Drama. Ruhig bleiben, das Kind beruhigt sich meist in Minuten.",
@@ -17101,7 +17101,7 @@ var ELITE_MOTTO_DATA = {
           "Schatzspur in die kuehleren Raeume (Flur, Schlafzimmer) verlegen — Wohnzimmer-Sonne meiden.",
           "Goldmuenzen-Tauchen mit lauwarmem (nicht eiskaltem) Wasser draussen im Schatten — wirkt wie Mini-Pool und kuehlt nebenbei.",
           "Trinkpause alle 30 Minuten fest einplanen, nicht nur 'wenn jemand fragt'. Wasser oder stark verduennte Schorle, keine Eiswuerfel an Kleinkinder.",
-          "Sonnencreme der Eltern bei Ankunft sichtbar an einen Sammelplatz legen — du bist nicht der Sonnenschutz-Manager fuer 6 Kinder."
+          "Sonnencreme der Eltern bei Ankunft sichtbar an einen Sammelplatz legen — du bist nicht der Sonnenschutz-Manager für 6 Kinder."
         ],
         "fallback": "Wird es ueber 30 Grad: Schatzsuche stark kuerzen, mehr Sitz-Aktionen (Kuchen, Schatzkarte ausmalen, Geschichte vorlesen). Eltern dabei sein lassen statt Abholen, das gibt zusaetzliche Augen.",
         "tone": "praktisch"
@@ -19046,7 +19046,7 @@ var ELITE_MOTTO_DATA = {
             ],
             "safetyRule": "Verstecke nur an sicheren, gut erreichbaren Orten — kein Klettern, keine verschlossenen Räume.",
             "ageAdjust9": "Pfad kurz und im selben Raum, deutliche Markierungen.",
-            "ageAdjust12": "Pfad über mehrere Räume/den ganzen Garten, ein letzter Hinweis per Caesar-Chiffre (ein Buchstabe zurück) verschlüsselt. WICHTIG: Dieser Caesar-Hinweis ist verschluesselt — der Wort-Selbst-Check gilt fuer diese eine Stelle NICHT.",
+            "ageAdjust12": "Pfad über mehrere Räume/den ganzen Garten, ein letzter Hinweis per Caesar-Chiffre (ein Buchstabe zurück) verschlüsselt. WICHTIG: Dieser Caesar-Hinweis ist verschluesselt — der Wort-Selbst-Check gilt für diese eine Stelle NICHT.",
             "indoorTip": "Den Schatz in einem klar abgegrenzten Bereich verstecken, damit nicht die ganze Wohnung durchsucht wird.",
             "outdoorTip": "Truhe flach eingraben oder unter Laub — das echte Buddeln ist der Höhepunkt.",
             "whyItWorksTitle": "Alle Stränge laufen zusammen",
@@ -19303,7 +19303,7 @@ var ELITE_MOTTO_DATA = {
             ],
             "safetyRule": "Bei Garten-Stationen im Halbdunkel auf Stolperfallen achten; die Brandungs-Strecke nur über stabile, niedrige Hindernisse führen — kein Klettern in Höhe.",
             "ageAdjust9": "Stationen 1 und 5 vereinfachen — nur 3 Koordinaten, niedrigere Brandungs-Hindernisse.",
-            "ageAdjust12": "Station 6 verschärfen: das Lösungswort zusätzlich per Caesar-Chiffre (ein Buchstabe zurück) verschlüsseln, sodass die Crew erst dekodieren muss. WICHTIG: Dieser Caesar-Hinweis ist verschluesselt — der Wort-Selbst-Check gilt fuer diese eine Stelle NICHT.",
+            "ageAdjust12": "Station 6 verschärfen: das Lösungswort zusätzlich per Caesar-Chiffre (ein Buchstabe zurück) verschlüsseln, sodass die Crew erst dekodieren muss. WICHTIG: Dieser Caesar-Hinweis ist verschluesselt — der Wort-Selbst-Check gilt für diese eine Stelle NICHT.",
             "indoorTip": "Die 6 Stationen auf verschiedene Räume verteilen — der Raumwechsel hält die Spannung der langen Quest.",
             "outdoorTip": "Die Brandungs-Strecke (Station 5) wirkt im Garten am besten — Slalom über flache Kisten und Seile als „Riff“.",
             "whyItWorksTitle": "Wettbewerb wird Mission",
@@ -19924,7 +19924,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "name": "Sensorik",
-          "content": "Dunkelheit und Lautstaerke sind Trigger fuer 3-Jaehrige. NIE komplett abdunkeln - nur dimmen. Rueckzugsort anbieten."
+          "content": "Dunkelheit und Lautstaerke sind Trigger für 3-Jaehrige. NIE komplett abdunkeln - nur dimmen. Rueckzugsort anbieten."
         }
       ],
       "whyMottoFitsHeadline": "Warum Weltraum für 3–5 funktioniert",
@@ -21809,7 +21809,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Jede Crew, die eine Rakete gestartet hat, bekommt ihren Stern. Mehrere Starts machen — alle wollen pusten."
               }
             ],
-            "safetyRule": "Schutzbrille PFLICHT fuer alle in Reichweite (kein optional). Mindestabstand 2 m, nicht 2 Schritte. Bei Blindgaenger 60 Sek. warten, NUR Erwachsener naehert sich + oeffnet vorsichtig. Drinnen NIEMALS unter Haengelampe (Dose kann gegen Lampen/Gesichter schiessen). Geschlossene Filmdosen koennen mit erheblichem Druck in unvorhersehbare Richtung abheben.",
+            "safetyRule": "Schutzbrille PFLICHT für alle in Reichweite (kein optional). Mindestabstand 2 m, nicht 2 Schritte. Bei Blindgaenger 60 Sek. warten, NUR Erwachsener naehert sich + oeffnet vorsichtig. Drinnen NIEMALS unter Haengelampe (Dose kann gegen Lampen/Gesichter schiessen). Geschlossene Filmdosen koennen mit erheblichem Druck in unvorhersehbare Richtung abheben.",
             "ageAdjust6": "Erwachsener mischt und schließt die Dose, Kinder zählen den Countdown und treten zurück. Staunen reicht.",
             "ageAdjust8": "Kinder dürfen unter Aufsicht selbst dosieren und vergleichen: mehr Natron = höherer Start? Kleines Experiment.",
             "indoorTip": "Drinnen nur über dem Spülbecken oder in einer großen Wanne — und mit Brausetablette statt Essig, das spritzt weniger.",
@@ -22842,7 +22842,7 @@ var ELITE_MOTTO_DATA = {
       "schema_version": "1.0",
       "purpose": "Weltraum 9-12 — Phase B Elite-Slot (Mars-Missions-Frame, kein Tempo-Stempel, Codeknacker-Kern mit echten Woertern)",
       "phase_b_complete": "2026-05-21",
-      "phase_b_method": "Writer-Subagent Stream-C. Codeknacker-Math gegen SIMBAD/Raumfahrt-Behoerde-Werte verifiziert (Stand 22.05.2026): STERN (Pilot, scheinbare Helligkeit), PLANET (Wissenschaftler, Sonnenabstand), MOTOR (Mechaniker, Reparatur-Pfad) fuer Minimal; MARS (odd-one-out) fuer Standard; PLANET als 5-Stationen-Schatzsuche fuer Wow. Alle Loesungswoerter sind echte deutsche Woerter — kein INSEL-/Pseudo-Salat. Sorgfalt-Spezialist statt 1.-Astronaut."
+      "phase_b_method": "Writer-Subagent Stream-C. Codeknacker-Math gegen SIMBAD/Raumfahrt-Behoerde-Werte verifiziert (Stand 22.05.2026): STERN (Pilot, scheinbare Helligkeit), PLANET (Wissenschaftler, Sonnenabstand), MOTOR (Mechaniker, Reparatur-Pfad) für Minimal; MARS (odd-one-out) für Standard; PLANET als 5-Stationen-Schatzsuche für Wow. Alle Loesungswoerter sind echte deutsche Woerter — kein INSEL-/Pseudo-Salat. Sorgfalt-Spezialist statt 1.-Astronaut."
     },
     "motto": "weltraum",
     "ageGroup": "gross",
@@ -25206,9 +25206,9 @@ var ELITE_MOTTO_DATA = {
       },
       {
         "id": "wow",
-        "label": "Wow — 3 Stunden, durchgehender Fall mit Höhepunkt (ab 4-5 Jahre — fuer echte 3-Jaehrige zu lang)",
+        "label": "Wow — 3 Stunden, durchgehender Fall mit Höhepunkt (ab 4-5 Jahre — für echte 3-Jaehrige zu lang)",
         "headline": "🎉 Wow — 3 Stunden großer Spürnasen-Fall",
-        "intro": "Für den großen Bahnhof mit 8–10 Kindern: ein durchgehender Fall, der alle Stationen zu einer Geschichte verbindet — vom Lupen-Basteln über Fingerabdrücke und Spuren-Suche bis zur Mini-Schatzsuche nach den verschwundenen Schoko-Münzen, mit feierlicher Urkunden-Zeremonie. Mehr Material, mehr Helfer, mehr Wow — aber immer noch mit Ruhepausen für 3-5. Hinweis: Fuer echte 3-Jaehrige ist diese Variante zu lang — dann Standard waehlen.",
+        "intro": "Für den großen Bahnhof mit 8–10 Kindern: ein durchgehender Fall, der alle Stationen zu einer Geschichte verbindet — vom Lupen-Basteln über Fingerabdrücke und Spuren-Suche bis zur Mini-Schatzsuche nach den verschwundenen Schoko-Münzen, mit feierlicher Urkunden-Zeremonie. Mehr Material, mehr Helfer, mehr Wow — aber immer noch mit Ruhepausen für 3-5. Hinweis: Für echte 3-Jaehrige ist diese Variante zu lang — dann Standard waehlen.",
         "timeWindow": "14:00–17:00, 10 Kinder",
         "schedule": [
           {
@@ -27418,7 +27418,7 @@ var ELITE_MOTTO_DATA = {
       "schema_version": "1.0",
       "purpose": "Detektiv 9-12 — Phase B Elite-Slot (Kriminalfall-Simulation, Escape-Room-Style, kein Tempo-Stempel, Codeknacker-Kern mit echten Woertern)",
       "phase_b_complete": "2026-05-21",
-      "phase_b_method": "Writer-Subagent Stream-C. Codeknacker-Math VORHER per Skript verifiziert: INDIZ (Spurensicherer, Haeufigkeit am Tatort), MOTIV (Profiler, Verdachts-Staerke), BEWEIS (Code-Knacker, Beweis-Wert) fuer Minimal; TAT (Standard, odd-one-out Asservaten) am Tatort-Ort; TRESOR (Wow, 6-Stationen-Schatzsuche, inkl. Caesar-Chiffre F->E und Zahlencode 18->R). Alle Loesungswoerter sind echte deutsche Woerter — kein INSEL-/Pseudo-Salat. Plot-Twist: staerkster MOTIV-Verdacht ist Ablenkung, BEWEIS-Faser ueberfuehrt den wahren Taeter. Sorgfalt-Spezialist statt 1.-Detektiv. Keine reale Gewalt — Diebstahl/Verschwinden statt Verbrechen gegen Personen."
+      "phase_b_method": "Writer-Subagent Stream-C. Codeknacker-Math VORHER per Skript verifiziert: INDIZ (Spurensicherer, Haeufigkeit am Tatort), MOTIV (Profiler, Verdachts-Staerke), BEWEIS (Code-Knacker, Beweis-Wert) für Minimal; TAT (Standard, odd-one-out Asservaten) am Tatort-Ort; TRESOR (Wow, 6-Stationen-Schatzsuche, inkl. Caesar-Chiffre F->E und Zahlencode 18->R). Alle Loesungswoerter sind echte deutsche Woerter — kein INSEL-/Pseudo-Salat. Plot-Twist: staerkster MOTIV-Verdacht ist Ablenkung, BEWEIS-Faser ueberfuehrt den wahren Taeter. Sorgfalt-Spezialist statt 1.-Detektiv. Keine reale Gewalt — Diebstahl/Verschwinden statt Verbrechen gegen Personen."
     },
     "motto": "detektiv",
     "ageGroup": "gross",
@@ -28766,7 +28766,7 @@ var ELITE_MOTTO_DATA = {
           "title": "Die Detektiv-Hüte sind optional",
           "body": "Die 143 € sind ohne die Detektiv-Hüte gerechnet — die kosten als Highlight zusätzlich 70-110 € für 10 Kinder. Die Party trägt auch ohne sie: Die eigene UV-Geheimkarte aus der Werkstatt plus UV-Stift ist ein vollwertiges, persönlicheres Mitgebsel. UV-Taschenlampen brauchst du nur, wenn wirklich eine Schlafparty mit Nacht-Spurensuche geplant ist. Wraps und Zweitkuchen lassen sich streichen, wenn die Gruppe kleiner bleibt. Absperrband (5 €) ersetzt fast die komplette gekaufte Deko."
         },
-        "ageNote": "Empfohlen ab 10 Jahren — zwei Module (Kreuzverhoer, UV-Nacht-Spurensuche) sind fuer 9-Jaehrige nicht freigegeben (minAge=10). Bei reiner 9-Jahre-Gruppe diese durch Standard-Verhoer bzw. fruehen Abschluss ersetzen."
+        "ageNote": "Empfohlen ab 10 Jahren — zwei Module (Kreuzverhoer, UV-Nacht-Spurensuche) sind für 9-Jaehrige nicht freigegeben (minAge=10). Bei reiner 9-Jahre-Gruppe diese durch Standard-Verhoer bzw. fruehen Abschluss ersetzen."
       }
     ],
     "cakeRecipe": {
@@ -29214,7 +29214,7 @@ var ELITE_MOTTO_DATA = {
       "source_file": "meerjungfrau-3-5-jahre.html (Phase B)",
       "extracted": "2026-05-21",
       "schema_version": "1.0",
-      "purpose": "Strukturierte Elite-Motto-Daten fuer den Planer (P3-13 bis P3-19). Meerjungfrau, Altersgruppe klein (3-5). Phase-B-Vollausbau: preparationWeeks + sosScenarios + shoppingList[].category geschrieben."
+      "purpose": "Strukturierte Elite-Motto-Daten für den Planer (P3-13 bis P3-19). Meerjungfrau, Altersgruppe klein (3-5). Phase-B-Vollausbau: preparationWeeks + sosScenarios + shoppingList[].category geschrieben."
     },
     "motto": "meerjungfrau",
     "ageGroup": "klein",
@@ -29223,8 +29223,8 @@ var ELITE_MOTTO_DATA = {
       5
     ],
     "title": "🧜‍♀️ Meerjungfrau-Kindergeburtstag — 3–5 Jahre",
-    "metaDescription": "Meerjungfrau-Geburtstag fuer 3–5 Jahre: ruhige Unterwasser-Welt statt gruseliger Tiefsee. Perlen sammeln, Korallen-Garten bauen, Fisch-Freunde finden. Drei Budget-Varianten ab 35 €, 10 Spiele mit Altersanpassung, Vorbereitungsplan und SOS-Hilfen. Auch fuer Jungen (Meerprinz-Variante).",
-    "introParagraph": "Eine Meerjungfrau-Party fuer Drei- bis Fuenfjaehrige lebt nicht von Glitzer-Wettbewerb, sondern von einer ruhigen, freundlichen Unterwasser-Welt: ein Korallenriff im Wohnzimmer, verlorene Perlen, die gesammelt werden wollen, und ein paar Fisch-Freunde, denen man hilft. Kein gruseliges Tiefsee-Thema, keine Haie, keine Strudel — bei kleinen Kindern macht das mehr Angst als Freude. Und ganz wichtig: Meerjungfrau ist hier kein reines Maedchen-Thema. Mit der Meerprinz-Variante (Wellen-Krone, Seestern-Stirnband) und geschlechtsneutralen „Ozean-Helfern“ sind alle Kinder gemeint. Diese Seite gibt dir drei Varianten vom 35-Euro-Wohnzimmer-Riff bis zur 80-Euro-Schatzsuche, jede mit fertigem Ablauf, Einkaufsliste und Plan B.",
+    "metaDescription": "Meerjungfrau-Geburtstag für 3–5 Jahre: ruhige Unterwasser-Welt statt gruseliger Tiefsee. Perlen sammeln, Korallen-Garten bauen, Fisch-Freunde finden. Drei Budget-Varianten ab 35 €, 10 Spiele mit Altersanpassung, Vorbereitungsplan und SOS-Hilfen. Auch für Jungen (Meerprinz-Variante).",
+    "introParagraph": "Eine Meerjungfrau-Party für Drei- bis Fuenfjaehrige lebt nicht von Glitzer-Wettbewerb, sondern von einer ruhigen, freundlichen Unterwasser-Welt: ein Korallenriff im Wohnzimmer, verlorene Perlen, die gesammelt werden wollen, und ein paar Fisch-Freunde, denen man hilft. Kein gruseliges Tiefsee-Thema, keine Haie, keine Strudel — bei kleinen Kindern macht das mehr Angst als Freude. Und ganz wichtig: Meerjungfrau ist hier kein reines Mädchen-Thema. Mit der Meerprinz-Variante (Wellen-Krone, Seestern-Stirnband) und geschlechtsneutralen „Ozean-Helfern“ sind alle Kinder gemeint. Diese Seite gibt dir drei Varianten vom 35-Euro-Wohnzimmer-Riff bis zur 80-Euro-Schatzsuche, jede mit fertigem Ablauf, Einkaufsliste und Plan B.",
     "signatureRitual": {
       "name": "Das kleine Meerjungfrau-Versprechen",
       "subtitle": "Eroeffnet die Party (Muschel-Uebergabe) + Perlen-Urkunde am Ende",
@@ -29232,7 +29232,7 @@ var ELITE_MOTTO_DATA = {
       "setupSteps": [
         {
           "title": "Muschel-Stirnbaender mit Meeres-Namen vorbereiten",
-          "content": "Pro Kind ein Stirnband aus Tonpapier (ca. 5 cm × 55 cm) mit einem Muschel-Sticker oder einer aufgeklebten Pappmuschel. Schreib den Namen schon drauf oder nutze ein Klett-Schild zum Anstecken. Beim Aufsetzen sagst du: „Du bist jetzt Mini-Meerjungfrau Mia.“ — oder „Meerprinz Ben“ fuer Jungen. Erwachsener setzt auf, das ist der rituelle Moment."
+          "content": "Pro Kind ein Stirnband aus Tonpapier (ca. 5 cm × 55 cm) mit einem Muschel-Sticker oder einer aufgeklebten Pappmuschel. Schreib den Namen schon drauf oder nutze ein Klett-Schild zum Anstecken. Beim Aufsetzen sagst du: „Du bist jetzt Mini-Meerjungfrau Mia.“ — oder „Meerprinz Ben“ für Jungen. Erwachsener setzt auf, das ist der rituelle Moment."
         },
         {
           "title": "Start-Muscheln bereitlegen",
@@ -29240,15 +29240,15 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "title": "Perlen-Urkunden ausdrucken (eine pro Kind, identisch)",
-          "content": "Eine schlichte Urkunde „Meeres-Helfer-Urkunde fuer [Name]“. Bewusst alle gleich — kein „1. Platz“. Vorlage gibt es im machsleicht-Urkunden-Generator. Namen vorab eintragen spart Stress am Tag."
+          "content": "Eine schlichte Urkunde „Meeres-Helfer-Urkunde für [Name]“. Bewusst alle gleich — kein „1. Platz“. Vorlage gibt es im machsleicht-Urkunden-Generator. Namen vorab eintragen spart Stress am Tag."
         },
         {
           "title": "Perlen-Beutel fuellen (Perlen-Schoki)",
-          "content": "Pro Kind ein kleines Organza-Saeckchen mit Perlen-Schokolade (Schoko-Perlen / runde Schoko-Kugeln). Das ist die „Belohnung“ am Ende — fuer alle gleich viel, kein Sammel-Wettbewerb."
+          "content": "Pro Kind ein kleines Organza-Saeckchen mit Perlen-Schokolade (Schoko-Perlen / runde Schoko-Kugeln). Das ist die „Belohnung“ am Ende — für alle gleich viel, kein Sammel-Wettbewerb."
         },
         {
           "title": "Abschluss-Moment planen (vor dem Abholen)",
-          "content": "Letzte 5 Minuten ruhig: alle Kinder im Halbkreis, du gehst herum, ueberreichst Urkunde + Perlen-Beutel und sagst jedem Kind seinen Meeres-Namen. Foto-Moment fuer die Eltern, sanfter Ausklang statt Chaos-Ende."
+          "content": "Letzte 5 Minuten ruhig: alle Kinder im Halbkreis, du gehst herum, ueberreichst Urkunde + Perlen-Beutel und sagst jedem Kind seinen Meeres-Namen. Foto-Moment für die Eltern, sanfter Ausklang statt Chaos-Ende."
         }
       ],
       "rolesList": [
@@ -29260,7 +29260,7 @@ var ELITE_MOTTO_DATA = {
         {
           "emoji": "🐠",
           "name": "Fisch-Freund",
-          "function": "Kuemmert sich um die Plueschfische und bringt sie zurueck zu ihrer Koralle."
+          "function": "Kuemmert sich um die Plueschfische und bringt sie zurück zu ihrer Koralle."
         },
         {
           "emoji": "🐚",
@@ -29294,7 +29294,7 @@ var ELITE_MOTTO_DATA = {
         }
       ],
       "optOutNote": "Manche Kinder wollen kein Stirnband, keine Rolle oder einfach nur zuschauen — das ist bei 3-5 voellig normal und kein Problem. Zwing kein Kind in eine Rolle. Leg das Stirnband daneben, sag „du kannst es spaeter aufsetzen, wenn du magst“ und mach weiter. Oft kommt das Kind nach 10 Minuten von selbst dazu, wenn es sieht, dass es Spass macht. Die Start-Muschel und die Urkunde bekommt JEDES Kind am Ende — auch das, das nicht mitgespielt hat. Kein Kind geht ohne Perlen-Beutel nach Hause.",
-      "materialNote": "Fuer das Ritual brauchst du nur drei Dinge: Tonpapier-Stirnbaender mit Muschel-Stickern (👉 amazon.de/s?k=muschel+sticker+basteln&tag=machsleicht-21, ~5 €), kleine Deko-Muscheln im Set (👉 amazon.de/s?k=deko+muscheln+set&tag=machsleicht-21, ~6 €) und Perlen-Schokolade fuer die Beutel (👉 amazon.de/s?k=schokoladen+perlen&tag=machsleicht-21, ~4 €). Stirnbaender kannst du auch komplett selbst aus Tonpapier-Resten basteln — ein aufgemalter Muschel-Kringel reicht den Kleinen voellig. Die Meerprinz-Variante fuer Jungen: statt Muschel ein Wellen-Sticker oder eine kleine Krone."
+      "materialNote": "Für das Ritual brauchst du nur drei Dinge: Tonpapier-Stirnbaender mit Muschel-Stickern (👉 amazon.de/s?k=muschel+sticker+basteln&tag=machsleicht-21, ~5 €), kleine Deko-Muscheln im Set (👉 amazon.de/s?k=deko+muscheln+set&tag=machsleicht-21, ~6 €) und Perlen-Schokolade für die Beutel (👉 amazon.de/s?k=schokoladen+perlen&tag=machsleicht-21, ~4 €). Stirnbaender kannst du auch komplett selbst aus Tonpapier-Resten basteln — ein aufgemalter Muschel-Kringel reicht den Kleinen voellig. Die Meerprinz-Variante für Jungen: statt Muschel ein Wellen-Sticker oder eine kleine Krone."
     },
     "ageInsight": {
       "headline": "Warum 3–5-Jaehrige eine ruhige Unterwasser-Welt brauchen — keine Tiefsee",
@@ -29305,7 +29305,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "topic": "🤝 Parallel- statt Gruppenspiel",
-          "detail": "Mit 3 spielen Kinder oft nebeneinander, nicht miteinander. Wettkampf-Spiele („wer hat die meisten Perlen“) frustrieren mehr, als sie motivieren. Setz auf Sammeln und Bauen, wo jedes Kind fuer sich werkelt und am Ende alle gemeinsam gewinnen."
+          "detail": "Mit 3 spielen Kinder oft nebeneinander, nicht miteinander. Wettkampf-Spiele („wer hat die meisten Perlen“) frustrieren mehr, als sie motivieren. Setz auf Sammeln und Bauen, wo jedes Kind für sich werkelt und am Ende alle gemeinsam gewinnen."
         },
         {
           "topic": "✂️ Feinmotorik noch im Aufbau",
@@ -29329,14 +29329,14 @@ var ELITE_MOTTO_DATA = {
         }
       ],
       "whyMottoFitsHeadline": "Warum Meerjungfrau bei 3–5 so gut traegt",
-      "whyMottoFits": "Die Unterwasser-Welt ist fuer kleine Kinder ein Sehnsuchts-Bild, das sie aus Bilderbuechern und Filmen kennen — bunt, sanft, voller freundlicher Tiere. Anders als Piraten (Kampf) oder Weltraum (Dunkelheit) bietet das Meer von Natur aus ruhige, helle Bilder: Perlen, Muscheln, Fische, Korallen. Die Verwandlung in eine Mini-Meerjungfrau oder einen Meerprinzen ist einfach (ein Stirnband reicht) und traegt das ganze Rollenspiel. Und weil es ums Sammeln, Helfen und Bauen geht statt ums Gewinnen, passt das Thema perfekt zur Parallelspiel-Phase. Wichtig fuer die Inklusion: Mit Meerprinzen und geschlechtsneutralen „Ozean-Helfern“ ist es ausdruecklich kein Maedchen-Thema — alle Kinder sind im Riff willkommen."
+      "whyMottoFits": "Die Unterwasser-Welt ist für kleine Kinder ein Sehnsuchts-Bild, das sie aus Bilderbuechern und Filmen kennen — bunt, sanft, voller freundlicher Tiere. Anders als Piraten (Kampf) oder Weltraum (Dunkelheit) bietet das Meer von Natur aus ruhige, helle Bilder: Perlen, Muscheln, Fische, Korallen. Die Verwandlung in eine Mini-Meerjungfrau oder einen Meerprinzen ist einfach (ein Stirnband reicht) und traegt das ganze Rollenspiel. Und weil es ums Sammeln, Helfen und Bauen geht statt ums Gewinnen, passt das Thema perfekt zur Parallelspiel-Phase. Wichtig für die Inklusion: Mit Meerprinzen und geschlechtsneutralen „Ozean-Helfern“ ist es ausdruecklich kein Mädchen-Thema — alle Kinder sind im Riff willkommen."
     },
     "variants": [
       {
         "id": "minimal",
         "label": "Minimal — 90 Minuten, kleines Budget",
         "headline": "🌿 Minimal — 90 Minuten, kleines Budget",
-        "intro": "Das Wohnzimmer-Riff: ein blaues Tuch am Boden, verstreute Perlen, ein paar Plueschfische — mehr braucht es nicht. Fuer 6 Kinder, etwa 90 Minuten. Stirnband-Basteln, Perlen sammeln, ein Fisch-Quiz und Kuchen. Kaum Vorbereitung, fast alles aus dem Bestand.",
+        "intro": "Das Wohnzimmer-Riff: ein blaues Tuch am Boden, verstreute Perlen, ein paar Plueschfische — mehr braucht es nicht. Für 6 Kinder, etwa 90 Minuten. Stirnband-Basteln, Perlen sammeln, ein Fisch-Quiz und Kuchen. Kaum Vorbereitung, fast alles aus dem Bestand.",
         "timeWindow": "14:00–15:30, 6 Kinder",
         "schedule": [
           {
@@ -29362,7 +29362,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:25",
             "title": "Perlen-Versprechen + Abschied",
-            "description": "Urkunde + Perlen-Beutel fuer jedes Kind. Sanfter Ausklang bis zum Abholen."
+            "description": "Urkunde + Perlen-Beutel für jedes Kind. Sanfter Ausklang bis zum Abholen."
           }
         ],
         "games": [
@@ -29375,7 +29375,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "leise",
             "effort": "mittel",
             "material": "Vorgeschnittene Tonpapier-Streifen (~5 cm × 55 cm), Muschel-Sticker oder Pappmuscheln, dicke Filzstifte, Klebepunkte, Glitzer-Sticker. Schere und Tacker NUR in Erwachsenenhand.",
-            "prepText": "Stirnbaender komplett vorbereiten: Laenge passend zugeschnitten, eine Pappmuschel pro Band schon angeklebt. Kinder duerfen nur noch verzieren und Sticker aufkleben. Fuer die Meerprinz-Variante: ein paar Wellen-Sticker oder Kronen-Vorlagen dazulegen.",
+            "prepText": "Stirnbaender komplett vorbereiten: Laenge passend zugeschnitten, eine Pappmuschel pro Band schon angeklebt. Kinder duerfen nur noch verzieren und Sticker aufkleben. Für die Meerprinz-Variante: ein paar Wellen-Sticker oder Kronen-Vorlagen dazulegen.",
             "steps": [
               {
                 "n": 1,
@@ -29430,7 +29430,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 3,
                 "name": "Gemeinsam zaehlen",
-                "content": "Am Ende zaehlt ihr zusammen, ob alle Perlen wieder da sind. „Geschafft — das Riff hat seine Perlen zurueck!“"
+                "content": "Am Ende zaehlt ihr zusammen, ob alle Perlen wieder da sind. „Geschafft — das Riff hat seine Perlen zurück!“"
               },
               {
                 "n": 4,
@@ -29438,13 +29438,13 @@ var ELITE_MOTTO_DATA = {
                 "content": "Die Truhe wird feierlich geschlossen. Die Perlen sind sicher — die Mission ist erfuellt."
               }
             ],
-            "safetyRule": "Perlen mind. murmelgross, besser groesser — bei 3-Jaehrigen gilt: passt es durch eine Klopapierrolle, ist es zu klein. Keine Verstecke in der Hoehe, auf die geklettert werden muss.",
+            "safetyRule": "Perlen mind. murmelgross, besser größer — bei 3-Jaehrigen gilt: passt es durch eine Klopapierrolle, ist es zu klein. Keine Verstecke in der Hoehe, auf die geklettert werden muss.",
             "ageAdjust3": "Perlen offen sichtbar verteilen, nicht verstecken. Du gibst kleine Tipps: „Schau mal beim Sofa.“",
             "ageAdjust5": "5-Jaehrige duerfen kniffligere Verstecke haben und die Perlen am Ende nach Farben sortieren.",
             "indoorTip": "Im Wohnzimmer mit blauem Tuch am Boden als „Meeresgrund“ — die Perlen leuchten gut auf Blau.",
             "outdoorTip": "Im Garten mit echten kleinen Muscheln gemischt — noch mehr zu entdecken.",
             "whyItWorksTitle": "Warum das funktioniert",
-            "whyItWorks": "Sammeln ist das ideale Spiel fuer die Parallelspiel-Phase: jedes Kind werkelt fuer sich, aber alle gewinnen gemeinsam. Der „Alle Perlen sind wieder da“-Moment gibt ein klares, freudiges Ende ohne Verlierer — genau das, was 3-5-Jaehrige brauchen."
+            "whyItWorks": "Sammeln ist das ideale Spiel für die Parallelspiel-Phase: jedes Kind werkelt für sich, aber alle gewinnen gemeinsam. Der „Alle Perlen sind wieder da“-Moment gibt ein klares, freudiges Ende ohne Verlierer — genau das, was 3-5-Jaehrige brauchen."
           },
           {
             "name": "🐠 Fisch-Freunde-Quiz (Tierstimmen + Bewegungen)",
@@ -29482,7 +29482,7 @@ var ELITE_MOTTO_DATA = {
             "ageAdjust3": "Du machst alle Bewegungen vor, Kinder ahmen nur nach. Kein eigenes Vormachen verlangen.",
             "ageAdjust5": "5-Jaehrige erfinden eigene Meerestier-Bewegungen — das fordert Kreativitaet und macht Spass.",
             "indoorTip": "Perfekt als ruhiger Einstieg im Sitzkreis, bringt schuechterne Kinder sanft in Stimmung.",
-            "outdoorTip": "Draussen darf das „Schwimmen“ grosszuegiger sein — mehr Platz fuer Bewegung.",
+            "outdoorTip": "Draussen darf das „Schwimmen“ grosszuegiger sein — mehr Platz für Bewegung.",
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Das Quiz braucht null Material und holt jedes Kind dort ab, wo es steht: schuechterne machen nur nach, mutige fuehren vor. Bewegung plus Mitmachen ohne Leistungsdruck — ein verlaesslicher Lueckenfueller, wenn ein Spiel mal schneller vorbei ist als gedacht."
           }
@@ -29507,7 +29507,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
-            "categoryReasoning": "Grundmaterial fuer Stirnbaender und Urkunden — ohne geht es nicht."
+            "categoryReasoning": "Grundmaterial für Stirnbaender und Urkunden — ohne geht es nicht."
           },
           {
             "emoji": "✨",
@@ -29525,7 +29525,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
-            "categoryReasoning": "Fuellen die Perlen-Beutel — die Belohnung fuer alle gleich."
+            "categoryReasoning": "Fuellen die Perlen-Beutel — die Belohnung für alle gleich."
           },
           {
             "emoji": "🔵",
@@ -29593,7 +29593,7 @@ var ELITE_MOTTO_DATA = {
         "id": "standard",
         "label": "Standard — 2 Stunden, das runde Paket",
         "headline": "🌊 Standard — 2 Stunden, das runde Paket",
-        "intro": "Das volle Riff-Erlebnis fuer 6–8 Kinder, etwa 2 Stunden: Stirnband, Perlen-Suche, Korallen-Garten bauen und das laute Wellen-Tuch als Energie-Ablass dazwischen. Etwas mehr Vorbereitung, aber ein runder, abwechslungsreicher Nachmittag mit ruhigen und bewegten Phasen im Wechsel.",
+        "intro": "Das volle Riff-Erlebnis für 6–8 Kinder, etwa 2 Stunden: Stirnband, Perlen-Suche, Korallen-Garten bauen und das laute Wellen-Tuch als Energie-Ablass dazwischen. Etwas mehr Vorbereitung, aber ein runder, abwechslungsreicher Nachmittag mit ruhigen und bewegten Phasen im Wechsel.",
         "timeWindow": "14:00–16:00, 6–8 Kinder",
         "schedule": [
           {
@@ -29629,7 +29629,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:55",
             "title": "Perlen-Versprechen + Abschied",
-            "description": "Urkunde + Perlen-Beutel fuer jedes Kind. Sanfter Ausklang."
+            "description": "Urkunde + Perlen-Beutel für jedes Kind. Sanfter Ausklang."
           }
         ],
         "games": [
@@ -29642,7 +29642,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "leise",
             "effort": "mittel",
             "material": "Vorgeschnittene Tonpapier-Streifen (~5 cm × 55 cm), Muschel-Sticker oder Pappmuscheln, dicke Filzstifte, Klebepunkte, Glitzer-Sticker. Schere und Tacker NUR in Erwachsenenhand.",
-            "prepText": "Stirnbaender komplett vorbereiten: Laenge passend zugeschnitten, eine Pappmuschel pro Band schon angeklebt. Kinder duerfen nur noch verzieren und Sticker aufkleben. Fuer die Meerprinz-Variante: ein paar Wellen-Sticker oder Kronen-Vorlagen dazulegen.",
+            "prepText": "Stirnbaender komplett vorbereiten: Laenge passend zugeschnitten, eine Pappmuschel pro Band schon angeklebt. Kinder duerfen nur noch verzieren und Sticker aufkleben. Für die Meerprinz-Variante: ein paar Wellen-Sticker oder Kronen-Vorlagen dazulegen.",
             "steps": [
               {
                 "n": 1,
@@ -29709,7 +29709,7 @@ var ELITE_MOTTO_DATA = {
             "ageAdjust3": "Du machst alle Bewegungen vor, Kinder ahmen nur nach. Kein eigenes Vormachen verlangen.",
             "ageAdjust5": "5-Jaehrige erfinden eigene Meerestier-Bewegungen — das fordert Kreativitaet und macht Spass.",
             "indoorTip": "Perfekt als ruhiger Einstieg im Sitzkreis, bringt schuechterne Kinder sanft in Stimmung.",
-            "outdoorTip": "Draussen darf das „Schwimmen“ grosszuegiger sein — mehr Platz fuer Bewegung.",
+            "outdoorTip": "Draussen darf das „Schwimmen“ grosszuegiger sein — mehr Platz für Bewegung.",
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Das Quiz braucht null Material und holt jedes Kind dort ab, wo es steht: schuechterne machen nur nach, mutige fuehren vor. Bewegung plus Mitmachen ohne Leistungsdruck — ein verlaesslicher Lueckenfueller, wenn ein Spiel mal schneller vorbei ist als gedacht."
           },
@@ -29777,7 +29777,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 3,
                 "name": "Gemeinsam zaehlen",
-                "content": "Am Ende zaehlt ihr zusammen, ob alle Perlen wieder da sind. „Geschafft — das Riff hat seine Perlen zurueck!“"
+                "content": "Am Ende zaehlt ihr zusammen, ob alle Perlen wieder da sind. „Geschafft — das Riff hat seine Perlen zurück!“"
               },
               {
                 "n": 4,
@@ -29785,13 +29785,13 @@ var ELITE_MOTTO_DATA = {
                 "content": "Die Truhe wird feierlich geschlossen. Die Perlen sind sicher — die Mission ist erfuellt."
               }
             ],
-            "safetyRule": "Perlen mind. murmelgross, besser groesser — bei 3-Jaehrigen gilt: passt es durch eine Klopapierrolle, ist es zu klein. Keine Verstecke in der Hoehe, auf die geklettert werden muss.",
+            "safetyRule": "Perlen mind. murmelgross, besser größer — bei 3-Jaehrigen gilt: passt es durch eine Klopapierrolle, ist es zu klein. Keine Verstecke in der Hoehe, auf die geklettert werden muss.",
             "ageAdjust3": "Perlen offen sichtbar verteilen, nicht verstecken. Du gibst kleine Tipps: „Schau mal beim Sofa.“",
             "ageAdjust5": "5-Jaehrige duerfen kniffligere Verstecke haben und die Perlen am Ende nach Farben sortieren.",
             "indoorTip": "Im Wohnzimmer mit blauem Tuch am Boden als „Meeresgrund“ — die Perlen leuchten gut auf Blau.",
             "outdoorTip": "Im Garten mit echten kleinen Muscheln gemischt — noch mehr zu entdecken.",
             "whyItWorksTitle": "Warum das funktioniert",
-            "whyItWorks": "Sammeln ist das ideale Spiel fuer die Parallelspiel-Phase: jedes Kind werkelt fuer sich, aber alle gewinnen gemeinsam. Der „Alle Perlen sind wieder da“-Moment gibt ein klares, freudiges Ende ohne Verlierer — genau das, was 3-5-Jaehrige brauchen."
+            "whyItWorks": "Sammeln ist das ideale Spiel für die Parallelspiel-Phase: jedes Kind werkelt für sich, aber alle gewinnen gemeinsam. Der „Alle Perlen sind wieder da“-Moment gibt ein klares, freudiges Ende ohne Verlierer — genau das, was 3-5-Jaehrige brauchen."
           },
           {
             "name": "🪸 Korallen-Garten bauen",
@@ -29825,7 +29825,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Zum Schluss „schwimmen“ Plueschfische oder Papp-Fische in den fertigen Garten. „Jetzt haben sie ein Zuhause!“"
               }
             ],
-            "safetyRule": "Klebestifte statt Fluessigkleber (weniger Chaos, ungiftig). Keine Schere fuer die Kinder — alles vorgeschnitten.",
+            "safetyRule": "Klebestifte statt Fluessigkleber (weniger Chaos, ungiftig). Keine Schere für die Kinder — alles vorgeschnitten.",
             "ageAdjust3": "Korallen schon fertig, Kind klebt nur auf die Grundpappe. Du haeltst die Pappe fest.",
             "ageAdjust5": "5-Jaehrige duerfen eigene Korallen-Formen aus weichem Moosgummi ausschneiden (Kindersicherheitsschere) und den Garten arrangieren.",
             "indoorTip": "Ideal als ruhiges Mittel-Spiel nach einer aktiven Phase — bringt die Gruppe wieder runter.",
@@ -29872,7 +29872,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
-            "categoryReasoning": "Fuellen die Perlen-Beutel — Belohnung fuer alle gleich."
+            "categoryReasoning": "Fuellen die Perlen-Beutel — Belohnung für alle gleich."
           },
           {
             "emoji": "🧵",
@@ -29890,7 +29890,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "pflicht",
-            "categoryReasoning": "Algen fuer Korallen-Garten + Wellen-Girlande — traegt zwei Stationen."
+            "categoryReasoning": "Algen für Korallen-Garten + Wellen-Girlande — traegt zwei Stationen."
           },
           {
             "emoji": "🔵",
@@ -29935,7 +29935,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
-            "categoryReasoning": "Fuer Korallen-Garten + Stirnband — ungiftig, weniger Chaos als Fluessigkleber."
+            "categoryReasoning": "Für Korallen-Garten + Stirnband — ungiftig, weniger Chaos als Fluessigkleber."
           },
           {
             "emoji": "🖤",
@@ -29976,7 +29976,7 @@ var ELITE_MOTTO_DATA = {
         "id": "wow",
         "label": "Wow — 2,5 Stunden, das grosse Riff",
         "headline": "🌟 Wow — 2,5 Stunden, das grosse Riff",
-        "intro": "Das grosse Unterwasser-Abenteuer fuer bis zu 8 Kinder, etwa 2,5 Stunden — mit allem: Stirnband, Korallen-Garten, Wellen-Tuch, Foto-Ecke und als Hoehepunkt die Mini-Schatzsuche zur Perlen-Truhe. Braucht Platz und eine zweite helfende Hand, belohnt aber mit einem unvergesslichen Riff-Erlebnis.",
+        "intro": "Das grosse Unterwasser-Abenteuer für bis zu 8 Kinder, etwa 2,5 Stunden — mit allem: Stirnband, Korallen-Garten, Wellen-Tuch, Foto-Ecke und als Hoehepunkt die Mini-Schatzsuche zur Perlen-Truhe. Braucht Platz und eine zweite helfende Hand, belohnt aber mit einem unvergesslichen Riff-Erlebnis.",
         "timeWindow": "14:00–16:30, bis 8 Kinder (+ 1 Helfer)",
         "schedule": [
           {
@@ -30017,7 +30017,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "16:20",
             "title": "Perlen-Versprechen + Abschied",
-            "description": "Truhe gemeinsam geoeffnet: Urkunde + Perlen-Beutel fuer alle. Sanfter Ausklang."
+            "description": "Truhe gemeinsam geoeffnet: Urkunde + Perlen-Beutel für alle. Sanfter Ausklang."
           }
         ],
         "games": [
@@ -30030,7 +30030,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "leise",
             "effort": "mittel",
             "material": "Vorgeschnittene Tonpapier-Streifen (~5 cm × 55 cm), Muschel-Sticker oder Pappmuscheln, dicke Filzstifte, Klebepunkte, Glitzer-Sticker. Schere und Tacker NUR in Erwachsenenhand.",
-            "prepText": "Stirnbaender komplett vorbereiten: Laenge passend zugeschnitten, eine Pappmuschel pro Band schon angeklebt. Kinder duerfen nur noch verzieren und Sticker aufkleben. Fuer die Meerprinz-Variante: ein paar Wellen-Sticker oder Kronen-Vorlagen dazulegen.",
+            "prepText": "Stirnbaender komplett vorbereiten: Laenge passend zugeschnitten, eine Pappmuschel pro Band schon angeklebt. Kinder duerfen nur noch verzieren und Sticker aufkleben. Für die Meerprinz-Variante: ein paar Wellen-Sticker oder Kronen-Vorlagen dazulegen.",
             "steps": [
               {
                 "n": 1,
@@ -30097,7 +30097,7 @@ var ELITE_MOTTO_DATA = {
             "ageAdjust3": "Du machst alle Bewegungen vor, Kinder ahmen nur nach. Kein eigenes Vormachen verlangen.",
             "ageAdjust5": "5-Jaehrige erfinden eigene Meerestier-Bewegungen — das fordert Kreativitaet und macht Spass.",
             "indoorTip": "Perfekt als ruhiger Einstieg im Sitzkreis, bringt schuechterne Kinder sanft in Stimmung.",
-            "outdoorTip": "Draussen darf das „Schwimmen“ grosszuegiger sein — mehr Platz fuer Bewegung.",
+            "outdoorTip": "Draussen darf das „Schwimmen“ grosszuegiger sein — mehr Platz für Bewegung.",
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Das Quiz braucht null Material und holt jedes Kind dort ab, wo es steht: schuechterne machen nur nach, mutige fuehren vor. Bewegung plus Mitmachen ohne Leistungsdruck — ein verlaesslicher Lueckenfueller, wenn ein Spiel mal schneller vorbei ist als gedacht."
           },
@@ -30173,7 +30173,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Zum Schluss „schwimmen“ Plueschfische oder Papp-Fische in den fertigen Garten. „Jetzt haben sie ein Zuhause!“"
               }
             ],
-            "safetyRule": "Klebestifte statt Fluessigkleber (weniger Chaos, ungiftig). Keine Schere fuer die Kinder — alles vorgeschnitten.",
+            "safetyRule": "Klebestifte statt Fluessigkleber (weniger Chaos, ungiftig). Keine Schere für die Kinder — alles vorgeschnitten.",
             "ageAdjust3": "Korallen schon fertig, Kind klebt nur auf die Grundpappe. Du haeltst die Pappe fest.",
             "ageAdjust5": "5-Jaehrige duerfen eigene Korallen-Formen aus weichem Moosgummi ausschneiden (Kindersicherheitsschere) und den Garten arrangieren.",
             "indoorTip": "Ideal als ruhiges Mittel-Spiel nach einer aktiven Phase — bringt die Gruppe wieder runter.",
@@ -30214,7 +30214,7 @@ var ELITE_MOTTO_DATA = {
               }
             ],
             "safetyRule": "Lichterkette ausser Reichweite / mit Klett fixieren, kein Kabel auf Kinderhoehe. Keine Foto-Pflicht — manche Kinder moegen das nicht.",
-            "ageAdjust3": "Schnelle Schnappschuesse statt langem Posieren — die Geduld reicht nicht fuer Inszenierung.",
+            "ageAdjust3": "Schnelle Schnappschuesse statt langem Posieren — die Geduld reicht nicht für Inszenierung.",
             "ageAdjust5": "5-Jaehrige posieren gern bewusst und machen Gruppen-Fotos mit „allen Meeres-Helfern“.",
             "indoorTip": "Eine ruhige Ecke abseits vom Spiel-Trubel, damit es nicht hektisch wird.",
             "outdoorTip": null,
@@ -30250,13 +30250,13 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Schatz verteilen",
-                "content": "In der Truhe: die Perlen-Beutel + Urkunden, fuer JEDES Kind gleich. Der grosse Abschluss-Moment."
+                "content": "In der Truhe: die Perlen-Beutel + Urkunden, für JEDES Kind gleich. Der grosse Abschluss-Moment."
               }
             ],
             "safetyRule": "Weg vorher abgehen, Stolperfallen weg. Bei Aussen-Schatzsuche immer ein Erwachsener vorne, einer hinten. Truhe nicht in der Hoehe verstecken.",
             "ageAdjust3": "Weglassen oder als reine „alle zusammen zur Truhe laufen“-Version, ohne Hinweise. Die Aufmerksamkeit reicht sonst nicht.",
             "ageAdjust5": "5-Jaehrige duerfen die Muschel-Hinweise selbst suchen und die Reihenfolge mitdenken — eine Mini-Karte erhoeht den Reiz.",
-            "indoorTip": "Stationen ueber 2 Raeume verteilen (Wohnzimmer, Flur, Kinderzimmer) — reicht voellig fuer Spannung.",
+            "indoorTip": "Stationen ueber 2 Raeume verteilen (Wohnzimmer, Flur, Kinderzimmer) — reicht voellig für Spannung.",
             "outdoorTip": "Im Garten/Park mit echten Muscheln als Wegmarken — das groesste Highlight der Wow-Variante.",
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Die Schatzsuche ist der dramaturgische Hoehepunkt und liefert gleichzeitig das Finale-Ritual: alle oeffnen die Truhe gemeinsam, alle bekommen denselben Schatz. So fuehrt das spannendste Spiel direkt in den ruhigen, fairen Abschluss — kein Streit, wer zuerst war."
@@ -30264,7 +30264,7 @@ var ELITE_MOTTO_DATA = {
         ],
         "food": "Grosses Meeres-Buffet: blaue Muffins mit Muschel-Keks, Wackelpudding-„Meer“ mit Gummi-Fischen, Obst-„Meerestiere“ (Melonen-Fische, Trauben-Algen), Gurken-/Paprika-Sticks mit Dip, Brezel-Seesterne, kleine „Schatz“-Schoki. Dazu „Meerwasser“ und Wasser. Mit zweiter Hand gut zu stemmen. ⚠️ Für 3-Jährige: Gummi-Süßes klein schneiden — Erstickungsrisiko.",
         "decoration": "Voll-Deko: blaues Bodentuch, blaue/tuerkise Ballons, Wellen-Girlande, eine Lichterkette als „Meeresleuchten“, Deko-Muscheln und Plueschfische, plus die Foto-Ecke mit Papp-Korallen. Der gebaute Korallen-Garten kroent das Riff.",
-        "giveaways": "Perlen-Beutel + Urkunde + Stirnband + Mini-Koralle + ausgedrucktes Meeres-Foto fuer die Eltern.",
+        "giveaways": "Perlen-Beutel + Urkunde + Stirnband + Mini-Koralle + ausgedrucktes Meeres-Foto für die Eltern.",
         "shoppingList": [
           {
             "emoji": "🐚",
@@ -30300,7 +30300,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
-            "categoryReasoning": "Fuellen die Perlen-Beutel in der Schatztruhe — fuer alle gleich."
+            "categoryReasoning": "Fuellen die Perlen-Beutel in der Schatztruhe — für alle gleich."
           },
           {
             "emoji": "🧵",
@@ -30431,7 +30431,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "n": 5,
-          "content": "Fuer den „Meer“-Guss: 150 g Puderzucker mit 2-3 EL Wasser und einem kleinen Tropfen blauer Lebensmittelfarbe glatt ruehren. Lieber blasser — zu viel Farbe faerbt Zaehne und Zungen."
+          "content": "Für den „Meer“-Guss: 150 g Puderzucker mit 2-3 EL Wasser und einem kleinen Tropfen blauer Lebensmittelfarbe glatt ruehren. Lieber blasser — zu viel Farbe färbt Zaehne und Zungen."
         },
         {
           "n": 6,
@@ -30463,7 +30463,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "topic": "👥 Ab 6 Kindern: eine zweite Hand",
-          "detail": "Bei 6+ Kindern in dem Alter brauchst du Unterstuetzung — ein Elternteil, Oma, Nachbar. Eine Person spielt, eine kuemmert sich um Toilette, Traenen und Nachschub. Fuer die Wow-Variante ist die zweite Hand Pflicht."
+          "detail": "Bei 6+ Kindern in dem Alter brauchst du Unterstuetzung — ein Elternteil, Oma, Nachbar. Eine Person spielt, eine kuemmert sich um Toilette, Traenen und Nachschub. Für die Wow-Variante ist die zweite Hand Pflicht."
         },
         {
           "topic": "⏱️ Lieber zu viel Programm als zu wenig",
@@ -30478,12 +30478,12 @@ var ELITE_MOTTO_DATA = {
           "detail": "Keine Sieger, kein „1. Meerjungfrau“. Jedes Kind — auch das, das nicht mitgespielt hat — bekommt am Ende dieselbe Urkunde und denselben Perlen-Beutel. In dem Alter zaehlt Dazugehoeren, nicht Gewinnen."
         },
         {
-          "topic": "💙 Auch fuer Jungen: Meerprinzen statt Tabu",
-          "detail": "Meerjungfrau ist kein Maedchen-Thema. Bietet von Anfang an Meerprinz-Stirnbaender (Wellen-Krone, Seestern-Stirnband) und sprecht von „Meeres-Helfern“ oder „Ozean-Helfern“. Dann fuehlt sich kein Kind ausgeschlossen — weder Jungen noch Maedchen, die lieber Meerprinz sein wollen."
+          "topic": "💙 Auch für Jungen: Meerprinzen statt Tabu",
+          "detail": "Meerjungfrau ist kein Mädchen-Thema. Bietet von Anfang an Meerprinz-Stirnbaender (Wellen-Krone, Seestern-Stirnband) und sprecht von „Meeres-Helfern“ oder „Ozean-Helfern“. Dann fuehlt sich kein Kind ausgeschlossen — weder Jungen noch Mädchen, die lieber Meerprinz sein wollen."
         },
         {
           "topic": "👕 Wechselklamotten bereithalten",
-          "detail": "3-Jaehrige kleckern. Blauer Guss, „Meerwasser“, Klebestift — irgendwas landet auf dem Pulli. Schreib in die Einladung: „Bitte Wechsel-Shirt mitbringen.“ Und leg fuer dein eigenes Kind eins bereit."
+          "detail": "3-Jaehrige kleckern. Blauer Guss, „Meerwasser“, Klebestift — irgendwas landet auf dem Pulli. Schreib in die Einladung: „Bitte Wechsel-Shirt mitbringen.“ Und leg für dein eigenes Kind eins bereit."
         },
         {
           "topic": "⏰ Nicht in den Mittagsschlaf legen",
@@ -30503,16 +30503,16 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "topic": "Klopapierrollen-Test (Erstickungs-Gefahr)",
-          "detail": "Faustregel fuer 3-Jaehrige: Was durch eine Klopapierrolle passt (∅ < 4,5 cm), ist Erstickungsgefahr. Bei reinen 3-Jaehrigen Plastik-Perlen weglassen, nur Wattekugeln oder handtellergrosse Muscheln verwenden. Glitzer-Sticker nur unter Aufsicht."
+          "detail": "Faustregel für 3-Jaehrige: Was durch eine Klopapierrolle passt (∅ < 4,5 cm), ist Erstickungsgefahr. Bei reinen 3-Jaehrigen Plastik-Perlen weglassen, nur Wattekugeln oder handtellergrosse Muscheln verwenden. Glitzer-Sticker nur unter Aufsicht."
         }
       ],
       "educationalValue": "Hinter der bunten Unterwasser-Welt steckt mehr als Spass. Beim gemeinsamen Perlen-Sammeln und Korallen-Garten-Bauen ueben die Kinder Zusammenarbeit ohne Konkurrenz — alle gewinnen gemeinsam, niemand verliert. Das Fisch-Quiz foerdert Sprache und Koerpergefuehl, das Stirnband-Basteln die Feinmotorik in kleinen Schritten. Und das Wichtigste: Die Meeres-Helfer-Rollen geben jedem Kind das Gefuehl, gebraucht zu werden — das staerkt Selbstvertrauen und Empathie weit mehr als jeder Wettkampf."
     },
-    "invitationTemplate": "Du brauchst noch passende Einladungen? Der machsleicht-Einladungs-Generator macht aus diesem Meerjungfrau-Motto in zwei Minuten fertige Karten — mit Muschel-Design, Allergie-Abfrage und RSVP-Link auf party.machsleicht.de. Auch in der Meerprinz-Variante fuer alle Kinder. Einfach Motto „Meerjungfrau“ waehlen und Datum eintragen.",
+    "invitationTemplate": "Du brauchst noch passende Einladungen? Der machsleicht-Einladungs-Generator macht aus diesem Meerjungfrau-Motto in zwei Minuten fertige Karten — mit Muschel-Design, Allergie-Abfrage und RSVP-Link auf party.machsleicht.de. Auch in der Meerprinz-Variante für alle Kinder. Einfach Motto „Meerjungfrau“ waehlen und Datum eintragen.",
     "faq": [
       {
-        "q": "Ist eine Meerjungfrau-Party auch fuer Jungen geeignet?",
-        "a": "Ja, ausdruecklich. Mit der Meerprinz-Variante (Wellen-Krone oder Seestern-Stirnband statt Muschel) und geschlechtsneutralen „Meeres-Helfern“ ist das Thema fuer alle Kinder offen. Wir empfehlen, beide Stirnband-Varianten bereitzulegen, damit jedes Kind frei waehlen kann. Auch Maedchen, die lieber Meerprinz sein wollen, sind ausdruecklich willkommen."
+        "q": "Ist eine Meerjungfrau-Party auch für Jungen geeignet?",
+        "a": "Ja, ausdruecklich. Mit der Meerprinz-Variante (Wellen-Krone oder Seestern-Stirnband statt Muschel) und geschlechtsneutralen „Meeres-Helfern“ ist das Thema für alle Kinder offen. Wir empfehlen, beide Stirnband-Varianten bereitzulegen, damit jedes Kind frei waehlen kann. Auch Mädchen, die lieber Meerprinz sein wollen, sind ausdruecklich willkommen."
       },
       {
         "q": "Was, wenn mein Kind erst 3 ist — sind die Spiele nicht zu schwer?",
@@ -30524,10 +30524,10 @@ var ELITE_MOTTO_DATA = {
       },
       {
         "q": "Wir haben wenig Platz — geht das trotzdem?",
-        "a": "Ja. Die Minimal- und Standard-Variante laufen komplett im Wohnzimmer: ein blaues Tuch am Boden, Perlen verstreut, Korallen-Garten am Tisch. Nur die Wow-Schatzsuche braucht etwas mehr Raum — verteil die Stationen sonst einfach auf zwei Zimmer (Wohnzimmer + Flur + Kinderzimmer reichen fuer 8 Kinder)."
+        "a": "Ja. Die Minimal- und Standard-Variante laufen komplett im Wohnzimmer: ein blaues Tuch am Boden, Perlen verstreut, Korallen-Garten am Tisch. Nur die Wow-Schatzsuche braucht etwas mehr Raum — verteil die Stationen sonst einfach auf zwei Zimmer (Wohnzimmer + Flur + Kinderzimmer reichen für 8 Kinder)."
       },
       {
-        "q": "Was kostet ein Meerjungfrau-Geburtstag fuer 3–5-Jaehrige?",
+        "q": "Was kostet ein Meerjungfrau-Geburtstag für 3–5-Jaehrige?",
         "a": "Zwischen 35 € (Minimal, 6 Kinder) und 80 € (Wow, bis 8 Kinder). Die Standard-Variante liegt bei ca. 55 € und bietet das beste Verhaeltnis aus Aufwand und Ergebnis. Wenn du Tonpapier, Stifte, Tuch und Plueschfische aus dem Bestand nimmst, sind 10–15 € Einsparung locker drin."
       },
       {
@@ -30546,12 +30546,12 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "📅",
             "title": "Datum + Uhrzeit + Ort fixieren",
-            "detail": "Nachmittag (14–16 Uhr) ist bei 3-5 am besten — nicht in den Mittagsschlaf legen. Drinnen-Plan B fuer das Riff im Hinterkopf behalten."
+            "detail": "Nachmittag (14–16 Uhr) ist bei 3-5 am besten — nicht in den Mittagsschlaf legen. Drinnen-Plan B für das Riff im Hinterkopf behalten."
           },
           {
             "icon": "👥",
             "title": "Gaesteliste festzurren",
-            "detail": "6 Kinder fuer Minimal/Standard, bis 8 fuer Wow. Faustregel 3-5: nicht mehr Gaeste als das Kind alt ist plus zwei. Ueber 8 wird's wuselig."
+            "detail": "6 Kinder für Minimal/Standard, bis 8 für Wow. Faustregel 3-5: nicht mehr Gaeste als das Kind alt ist plus zwei. Ueber 8 wird's wuselig."
           },
           {
             "icon": "💶",
@@ -30561,7 +30561,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "✉️",
             "title": "Einladungen rausschicken",
-            "detail": "Pflicht im Text: Allergie-Abfrage. Meerprinz-Variante erwaehnen („fuer alle Kinder“). Hinweis, dass Eltern gern bleiben duerfen. RSVP-Link auf party.machsleicht.de."
+            "detail": "Pflicht im Text: Allergie-Abfrage. Meerprinz-Variante erwaehnen („für alle Kinder“). Hinweis, dass Eltern gern bleiben duerfen. RSVP-Link auf party.machsleicht.de."
           },
           {
             "icon": "🏠",
@@ -30606,7 +30606,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🤝",
             "title": "Zweite Hand organisieren (ab 6 Kindern)",
-            "detail": "Elternteil, Oma oder Nachbar fest einplanen. Fuer Wow Pflicht. Kurz absprechen, wer was macht (Spiel vs. Toilette/Traenen)."
+            "detail": "Elternteil, Oma oder Nachbar fest einplanen. Für Wow Pflicht. Kurz absprechen, wer was macht (Spiel vs. Toilette/Traenen)."
           },
           {
             "icon": "🥗",
@@ -30686,7 +30686,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "😮‍💨",
             "title": "Durchatmen vor der Ankunft",
-            "detail": "15 Minuten vorher fertig sein. Toiletten-Check, Handy fuer Fotos bereit, zweite Hand briefen. Dann kommen die kleinen Meeres-Helfer."
+            "detail": "15 Minuten vorher fertig sein. Toiletten-Check, Handy für Fotos bereit, zweite Hand briefen. Dann kommen die kleinen Meeres-Helfer."
           }
         ]
       }
@@ -30713,7 +30713,7 @@ var ELITE_MOTTO_DATA = {
           "Spiele bleiben gleich, nur entspannter. Jedes Kind bekommt mehr Aufmerksamkeit.",
           "Perlen-Suche: weniger Perlen verstecken, sonst dauert es ewig.",
           "Korallen-Garten wird kleiner, aber feiner — mehr Zeit zum Verzieren.",
-          "Mehr Zeit fuer die Foto-Ecke und ruhige Momente einplanen."
+          "Mehr Zeit für die Foto-Ecke und ruhige Momente einplanen."
         ],
         "fallback": "Bei nur 2-3 Kindern wird's fast ein Spiel-Nachmittag — das ist gemuetlich, kein Mangel.",
         "tone": "locker"
@@ -30751,7 +30751,7 @@ var ELITE_MOTTO_DATA = {
         "steps": [
           "Kuchen zu trocken/schief? Mit blauem Guss grosszuegig uebergiessen — versteckt viel.",
           "Schoko-Perlen, Muschel-Keks und Gummi-Fische druffladen — Kinder sehen nur das Bunte.",
-          "Komplett misslungen? In Stuecke schneiden, als „Meeres-Schatz-Happen“ im Becher servieren.",
+          "Komplett misslungen? In Stücke schneiden, als „Meeres-Schatz-Happen“ im Becher servieren.",
           "Notfall: schnell Muffins oder Kekse besorgen, blau anpinseln — keiner merkt's."
         ],
         "fallback": "3-5-Jaehrige bewerten keine Konditor-Kunst. Suess + bunt = Erfolg, egal wie krumm.",
@@ -30802,7 +30802,7 @@ var ELITE_MOTTO_DATA = {
         "headline": "Wechsel-Shirt aus dem Reserve-Beutel, kein Drama draus machen.",
         "steps": [
           "Halt 2-3 T-Shirts in Groesse 104/116 im Reserve-Beutel (deins oder Geschwister) — Kleinkinder kleckern garantiert.",
-          "Wechseln im Bad ohne Kommentar vor der Gruppe — Aufmerksamkeit macht's groesser.",
+          "Wechseln im Bad ohne Kommentar vor der Gruppe — Aufmerksamkeit macht's größer.",
           "Nasse/verschmierte Sachen direkt in eine Plastiktuete zum Mitnehmen, beschriftet mit dem Kindernamen.",
           "Bei Heul-Reaktion: Mini-Geschichte erzaehlen („auch Meerjungfrauen werden mal nass von einer Welle“) — entlastet vom Peinlichkeits-Gefuehl."
         ],
@@ -33118,7 +33118,7 @@ var ELITE_MOTTO_DATA = {
             ],
             "safetyRule": "Bei Garten-Stationen im Dunkeln auf Stolperfallen achten — Stationen vor Einbruch der Dunkelheit ablaufen. Wasser-Stationen nur knöcheltief.",
             "ageAdjust9": "Stationen 1 + 2 vereinfachen — nur 3 Perlen-Sorten in Station 1, klare Schicht-Bilder in Station 2.",
-            "ageAdjust12": "Mehr Tiefe: Loesungswort aus 8 Buchstaben rekonstruieren. Der ERSTE Buchstabe ist um 1 nach hinten verschoben — B steht statt A, M statt L. Verschiebe ihn um 1 zurueck. Beispiel: \"BTLANTIS\" → ATLANTIS. Die anderen 7 Buchstaben sind unveraendert.",
+            "ageAdjust12": "Mehr Tiefe: Loesungswort aus 8 Buchstaben rekonstruieren. Der ERSTE Buchstabe ist um 1 nach hinten verschoben — B steht statt A, M statt L. Verschiebe ihn um 1 zurück. Beispiel: \"BTLANTIS\" → ATLANTIS. Die anderen 7 Buchstaben sind unveraendert.",
             "indoorTip": "Die 8 Stationen durch verschiedene Räume verteilen — der Wechsel hält die Spannung.",
             "outdoorTip": "Im Garten wirkt die Tauch-Signal-Station am besten — echte Bewegungs-Übungen unter freiem Himmel.",
             "whyItWorksTitle": "Wettbewerb wird Mission",
@@ -33158,7 +33158,7 @@ var ELITE_MOTTO_DATA = {
             ],
             "safetyRule": "Eltern-Opt-In schriftlich. Allergien, Asthma-Inhalator und Medikamente vorher einsammeln. Bei der Garten-Suche Stolperfallen vorher entschärfen, Stirnlampen für alle. Sternenhimmel-Beobachtung nur bei klarem Wetter sinnvoll.",
             "ageAdjust9": "Nicht empfohlen unter 10 — eher Wow ohne Schlafparty.",
-            "ageAdjust12": "Mehr Tiefe: Loesungswort aus 8 Buchstaben rekonstruieren. Der ERSTE Buchstabe ist um 1 nach hinten verschoben — B steht statt A, M statt L. Verschiebe ihn um 1 zurueck. Beispiel: \"BTLANTIS\" → ATLANTIS. Die anderen 7 Buchstaben sind unveraendert.",
+            "ageAdjust12": "Mehr Tiefe: Loesungswort aus 8 Buchstaben rekonstruieren. Der ERSTE Buchstabe ist um 1 nach hinten verschoben — B steht statt A, M statt L. Verschiebe ihn um 1 zurück. Beispiel: \"BTLANTIS\" → ATLANTIS. Die anderen 7 Buchstaben sind unveraendert.",
             "indoorTip": "Bei Regen die Meerestier-Suche in eine abgedunkelte Wohnung verlegen — Stirnlampen funktionieren drinnen genauso. Statt Sterne: Bioluminiszenz-Videos auf dem Beamer.",
             "outdoorTip": "Garten vorher auf Stolperfallen prüfen, reflektierende Aufkleber auf Augenhöhe verstecken. Ideal mit Decke auf dem Rasen für die Sterne-Phase.",
             "whyItWorksTitle": "Der Auftakt, nicht das ganze Programm",
@@ -39007,7 +39007,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Im Garten in echte Blumenkübel/Töpfe legen — wirkt extra magisch.",
             "whyItWorksTitle": null,
             "whyItWorks": null,
-            "ageAdjust3": "Fuer 3-Jaehrige: Tuellball-Wurf-Distanz auf 1 m, langsamer Wurf. Eltern fangen mit, kein Wettbewerb. Max 3 Tueller-Schmetterlinge gleichzeitig (Reiz-Reduktion)."
+            "ageAdjust3": "Für 3-Jaehrige: Tuellball-Wurf-Distanz auf 1 m, langsamer Wurf. Eltern fangen mit, kein Wettbewerb. Max 3 Tueller-Schmetterlinge gleichzeitig (Reiz-Reduktion)."
           },
           {
             "name": "💎 Magische Steine bemalen",
@@ -39027,7 +39027,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": null,
             "whyItWorksTitle": null,
             "whyItWorks": null,
-            "ageAdjust3": "Fuer 3-Jaehrige: Nur dicke Wasser-Filzstifte, 1 Stein pro Kind, Erwachsener haelt den Stein fest. Statt Buchstaben nur Punkte tupfen."
+            "ageAdjust3": "Für 3-Jaehrige: Nur dicke Wasser-Filzstifte, 1 Stein pro Kind, Erwachsener haelt den Stein fest. Statt Buchstaben nur Punkte tupfen."
           },
           {
             "name": "✨ Glitzer-Staub-Suche (Minimal)",
@@ -39047,7 +39047,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Auf einer Picknickdecke im Garten — Reis kann liegen bleiben, Vögel räumen den Rest auf.",
             "whyItWorksTitle": null,
             "whyItWorks": null,
-            "ageAdjust3": "Fuer 3-Jaehrige: Nur 3-4 grosse Figuren (min. 5 cm), flach auf den Reis gelegt nicht vergraben — Buddeln frustriert 3-Jaehrige. Erwachsener begleitet die Suche."
+            "ageAdjust3": "Für 3-Jaehrige: Nur 3-4 grosse Figuren (min. 5 cm), flach auf den Reis gelegt nicht vergraben — Buddeln frustriert 3-Jaehrige. Erwachsener begleitet die Suche."
           }
         ],
         "food": "🎂 Vanille-Kuchen mit rosa Buttercreme + essbaren Blüten (1 Gugelhupf)\n💧 „Blüten-Limo\" (Apfelschorle + Blütenblatt obendrauf, 6 Trinkpäckchen)\n🍓 Beeren-Mix (Erdbeeren + Heidelbeeren, 250 g)\n🥨 Salzige Brezel-Sticks (1 Packung)\n\n💡 „Blüten-Limo\"?\nApfelschorle oder klare Limo, 1 essbares Blütenblatt obendrauf (Stiefmütterchen, Gänseblümchen — Bio-Hof oder selber pflücken, ungespritzt). Sieht aus wie Hexenmagie, kostet nix extra. 3-Jährige sind hin und weg.",
@@ -39209,7 +39209,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": null,
             "whyItWorksTitle": null,
             "whyItWorks": null,
-            "ageAdjust3": "Fuer 3-Jaehrige: Vorgefertigte Stirnbaender mit Klett (kein Faedeln, kein Tacker). Bluetenblaetter selbst aufkleben mit Aufkleber-Klebepunkten."
+            "ageAdjust3": "Für 3-Jaehrige: Vorgefertigte Stirnbaender mit Klett (kein Faedeln, kein Tacker). Bluetenblaetter selbst aufkleben mit Aufkleber-Klebepunkten."
           },
           {
             "name": "✨ Glitzer-Staub-Suche",
@@ -39229,7 +39229,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Auf einer Picknickdecke im Garten — Reis kann liegen bleiben, Vögel räumen den Rest auf.",
             "whyItWorksTitle": null,
             "whyItWorks": null,
-            "ageAdjust3": "Fuer 3-Jaehrige: Nur 3-4 grosse Figuren (min. 5 cm), flach auf den Reis gelegt nicht vergraben — Buddeln frustriert 3-Jaehrige. Erwachsener begleitet die Suche."
+            "ageAdjust3": "Für 3-Jaehrige: Nur 3-4 grosse Figuren (min. 5 cm), flach auf den Reis gelegt nicht vergraben — Buddeln frustriert 3-Jaehrige. Erwachsener begleitet die Suche."
           },
           {
             "name": "💎 Magische Steine bemalen",
@@ -39249,7 +39249,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": null,
             "whyItWorksTitle": null,
             "whyItWorks": null,
-            "ageAdjust3": "Fuer 3-Jaehrige: Nur dicke Wasser-Filzstifte, 1 Stein pro Kind, Erwachsener haelt den Stein fest. Statt Buchstaben nur Punkte tupfen."
+            "ageAdjust3": "Für 3-Jaehrige: Nur dicke Wasser-Filzstifte, 1 Stein pro Kind, Erwachsener haelt den Stein fest. Statt Buchstaben nur Punkte tupfen."
           },
           {
             "name": "🦋 Feentanz mit Schleier",
@@ -39269,7 +39269,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Im Garten auf weichem Rasen — Kinder fallen seltener, Sturz weicher.",
             "whyItWorksTitle": null,
             "whyItWorks": null,
-            "ageAdjust3": "Fuer 3-Jaehrige: Musik max. 80 dB, Tanz max. 3-4 Min, dann ruhige Pause. Schleier nicht ueber den Kopf wickeln, nur in der Hand halten."
+            "ageAdjust3": "Für 3-Jaehrige: Musik max. 80 dB, Tanz max. 3-4 Min, dann ruhige Pause. Schleier nicht ueber den Kopf wickeln, nur in der Hand halten."
           }
         ],
         "food": "🎂 Vanille-Kuchen mit rosa Buttercreme + essbaren Blüten + Glitzer (1 Gugelhupf)\n💧 Blüten-Limo (8 Trinkpäckchen + Blütenblatt)\n🍓 Rosa Obst-Teller (Erdbeeren, Himbeeren, rosa Trauben)\n🥒 Gemüse-Sticks (Gurke, Möhre, Paprika)\n🥨 Brezel-Sticks (200 g)\n🍪 Stiefmütterchen-Kekse (fertig kaufen + selber dekorieren)",
@@ -39455,7 +39455,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": null,
             "whyItWorksTitle": null,
             "whyItWorks": null,
-            "ageAdjust3": "Fuer 3-Jaehrige: Vorgefertigte Stirnbaender mit Klett (kein Faedeln, kein Tacker). Bluetenblaetter selbst aufkleben mit Aufkleber-Klebepunkten."
+            "ageAdjust3": "Für 3-Jaehrige: Vorgefertigte Stirnbaender mit Klett (kein Faedeln, kein Tacker). Bluetenblaetter selbst aufkleben mit Aufkleber-Klebepunkten."
           },
           {
             "name": "✨ Glitzer-Staub-Suche",
@@ -39475,7 +39475,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Picknickdecke im Garten.",
             "whyItWorksTitle": null,
             "whyItWorks": null,
-            "ageAdjust3": "Fuer 3-Jaehrige: Nur 3-4 grosse Figuren (min. 5 cm), flach auf den Reis gelegt nicht vergraben — Buddeln frustriert 3-Jaehrige. Erwachsener begleitet die Suche."
+            "ageAdjust3": "Für 3-Jaehrige: Nur 3-4 grosse Figuren (min. 5 cm), flach auf den Reis gelegt nicht vergraben — Buddeln frustriert 3-Jaehrige. Erwachsener begleitet die Suche."
           },
           {
             "name": "💎 Magische Steine bemalen",
@@ -39495,7 +39495,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": null,
             "whyItWorksTitle": null,
             "whyItWorks": null,
-            "ageAdjust3": "Fuer 3-Jaehrige: Nur dicke Wasser-Filzstifte, 1 Stein pro Kind, Erwachsener haelt den Stein fest. Statt Buchstaben nur Punkte tupfen."
+            "ageAdjust3": "Für 3-Jaehrige: Nur dicke Wasser-Filzstifte, 1 Stein pro Kind, Erwachsener haelt den Stein fest. Statt Buchstaben nur Punkte tupfen."
           },
           {
             "name": "🪄 Feenflügel-Stäbchen basteln",
@@ -39515,7 +39515,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": null,
             "whyItWorksTitle": null,
             "whyItWorks": null,
-            "ageAdjust3": "Fuer 3-Jaehrige: Aufmerksamkeit max. 5 Min, dann Wechsel oder Pause. Erwachsener begleitet immer. Eltern duerfen jederzeit pausieren ohne Druck."
+            "ageAdjust3": "Für 3-Jaehrige: Aufmerksamkeit max. 5 Min, dann Wechsel oder Pause. Erwachsener begleitet immer. Eltern duerfen jederzeit pausieren ohne Druck."
           }
         ],
         "food": "🎂 Vanille-Kuchen mit rosa Buttercreme + essbaren Blüten + Glitzer (1 Gugelhupf)\n💧 Blüten-Limo (10 Trinkpäckchen + Blütenblatt)\n🍪 Stiefmütterchen-Kekse (fertig + selber dekoriert, 15 Stk.)\n🍓 Rosa Obst-Teller (Erdbeeren, Himbeeren, rosa Trauben)\n🥒 Gemüse-Sticks (Gurke, Möhre, Paprika)\n🥨 Brezel-Sticks (200 g)\n🍭 Gummibärchen (1 Tüte 200 g)\n\n💡 Stiefmütterchen-Kekse ohne Backen:\nFertige Butterkekse (~2 €) mit rosa Glasur bestreichen (Puderzucker + 1 Tropfen Lebensmittelfarbe), 1 essbares Stiefmütterchen oder Gänseblümchen obendrauf. 15 Kekse in 15 Minuten. Sieht aus wie aus dem Feenwald-Café.",

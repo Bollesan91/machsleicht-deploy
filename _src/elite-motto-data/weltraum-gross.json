@@ -5,7 +5,7 @@
     "schema_version": "1.0",
     "purpose": "Weltraum 9-12 — Phase B Elite-Slot (Mars-Missions-Frame, kein Tempo-Stempel, Codeknacker-Kern mit echten Woertern)",
     "phase_b_complete": "2026-05-21",
-    "phase_b_method": "Writer-Subagent Stream-C. Codeknacker-Math gegen SIMBAD/Raumfahrt-Behoerde-Werte verifiziert (Stand 22.05.2026): STERN (Pilot, scheinbare Helligkeit), PLANET (Wissenschaftler, Sonnenabstand), MOTOR (Mechaniker, Reparatur-Pfad) fuer Minimal; MARS (odd-one-out) fuer Standard; PLANET als 5-Stationen-Schatzsuche fuer Wow. Alle Loesungswoerter sind echte deutsche Woerter — kein INSEL-/Pseudo-Salat. Sorgfalt-Spezialist statt 1.-Astronaut."
+    "phase_b_method": "Writer-Subagent Stream-C. Codeknacker-Math gegen SIMBAD/Raumfahrt-Behoerde-Werte verifiziert (Stand 22.05.2026): STERN (Pilot, scheinbare Helligkeit), PLANET (Wissenschaftler, Sonnenabstand), MOTOR (Mechaniker, Reparatur-Pfad) für Minimal; MARS (odd-one-out) für Standard; PLANET als 5-Stationen-Schatzsuche für Wow. Alle Loesungswoerter sind echte deutsche Woerter — kein INSEL-/Pseudo-Salat. Sorgfalt-Spezialist statt 1.-Astronaut."
   },
   "motto": "weltraum",
   "ageGroup": "gross",
