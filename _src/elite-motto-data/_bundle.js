@@ -2969,7 +2969,7 @@ var ELITE_MOTTO_DATA = {
               },
               {
                 "name": "Beweise",
-                "content": "Beweis 1: Streichholz im Lagerraum. Beweis 2: Lieferschein (14:32). Beweis 3: Heizkessel-Logbuch (14:30 Wartung). Beweis 4: Kind sagt: Onkel war noch nicht da."
+                "content": "Beweis 1: Streichholz im Lagerraum. Beweis 2: Lieferschein (14:32). Beweis 3: Heizkessel-Logbuch (14:30 Wartung). Beweis 4: Kind sagt: Vater Becker kam erst um 14:35 (Alibi bestaetigt)."
               },
               {
                 "name": "Indizienkette",
@@ -2977,7 +2977,7 @@ var ELITE_MOTTO_DATA = {
               },
               {
                 "name": "Loesung",
-                "content": "TAETER = D) Baecker. Motiv: Streit mit Hausmeister. Beweis: Streichholz aus Baecker-Brigade-Set. Kinder gleichen 4 Verdaechtige + 4 Beweise ab."
+                "content": "TAETER = D) Koechin (Fettbrand). Motiv: Streit mit Hausmeister. Beweis: Pfanne mit Fettrueckstaenden + ueberhitzter Herd. Kinder gleichen 4 Verdaechtige + 4 Beweise ab."
               }
             ],
             "safetyRule": null,
@@ -3207,7 +3207,7 @@ var ELITE_MOTTO_DATA = {
               },
               {
                 "name": "Beweise",
-                "content": "Beweis 1: Streichholz im Lagerraum. Beweis 2: Lieferschein (14:32). Beweis 3: Heizkessel-Logbuch (14:30 Wartung). Beweis 4: Kind sagt: Onkel war noch nicht da."
+                "content": "Beweis 1: Streichholz im Lagerraum. Beweis 2: Lieferschein (14:32). Beweis 3: Heizkessel-Logbuch (14:30 Wartung). Beweis 4: Kind sagt: Vater Becker kam erst um 14:35 (Alibi bestaetigt)."
               },
               {
                 "name": "Indizienkette",
@@ -3215,7 +3215,7 @@ var ELITE_MOTTO_DATA = {
               },
               {
                 "name": "Loesung",
-                "content": "TAETER = D) Baecker. Motiv: Streit mit Hausmeister. Beweis: Streichholz aus Baecker-Brigade-Set. Kinder gleichen 4 Verdaechtige + 4 Beweise ab."
+                "content": "TAETER = D) Koechin (Fettbrand). Motiv: Streit mit Hausmeister. Beweis: Pfanne mit Fettrueckstaenden + ueberhitzter Herd. Kinder gleichen 4 Verdaechtige + 4 Beweise ab."
               }
             ],
             "safetyRule": null,
@@ -3470,7 +3470,7 @@ var ELITE_MOTTO_DATA = {
               },
               {
                 "name": "Beweise",
-                "content": "Beweis 1: Streichholz im Lagerraum. Beweis 2: Lieferschein (14:32). Beweis 3: Heizkessel-Logbuch (14:30 Wartung). Beweis 4: Kind sagt: Onkel war noch nicht da."
+                "content": "Beweis 1: Streichholz im Lagerraum. Beweis 2: Lieferschein (14:32). Beweis 3: Heizkessel-Logbuch (14:30 Wartung). Beweis 4: Kind sagt: Vater Becker kam erst um 14:35 (Alibi bestaetigt)."
               },
               {
                 "name": "Indizienkette",
@@ -3478,7 +3478,7 @@ var ELITE_MOTTO_DATA = {
               },
               {
                 "name": "Loesung",
-                "content": "TAETER = D) Baecker. Motiv: Streit mit Hausmeister. Beweis: Streichholz aus Baecker-Brigade-Set. Kinder gleichen 4 Verdaechtige + 4 Beweise ab."
+                "content": "TAETER = D) Koechin (Fettbrand). Motiv: Streit mit Hausmeister. Beweis: Pfanne mit Fettrueckstaenden + ueberhitzter Herd. Kinder gleichen 4 Verdaechtige + 4 Beweise ab."
               }
             ],
             "safetyRule": null,
@@ -3766,7 +3766,7 @@ var ELITE_MOTTO_DATA = {
       "structured": [
         {
           "topic": "🧠 Was 9–12-Jährige wirklich mitnehmen — der Bildungswert dieser Party",
-          "detail": "Bei dieser Altersgruppe ist der Bildungswert nicht nebenher — er ist der Kern. Was die Kinder am Ende dieses Tages mitnehmen: 1. Sie können einen 112-Notruf abgeben. Sie kennen die 5 W (Wer / Wo / Was / Wie viele / Warten) und haben sie in der Notruf-Simulation einmal richtig durchgespielt. Im echten Notfall hilft das. 2. Sie kennen Brandklassen. Fett-Brand wird mit Deckel erstickt, nicht mit Wasser bespritzt. Strom-Brand: erst Stecker ziehen. Das ist konkretes Sicherheits-Wissen, das sie ihr Leben lang abrufen können. 3. Sie wissen, dass Rauch das eigentliche Problem ist und tief am Boden die saubere Luft ist. 4. Sie haben einmal in einer Krimi-Logik denken müssen — Hypothesen aufstellen, Beweise abwägen, Diskussion moderieren. Das ist Soft-Skill. Die Deutsche Brandschutzerziehung empfiehlt diese Inhalte für 9-12 als Standard. Auf dieser Party werden sie geübt, nicht nur gelehrt."
+          "detail": "Bei dieser Altersgruppe ist der Bildungswert nicht nebenher — er ist der Kern. Was die Kinder am Ende dieses Tages mitnehmen: 1. Sie können einen 112-Notruf abgeben. Sie kennen die 5 W (Wer / Wo / Was / Wie viele / Warten) und haben sie in der Notruf-Simulation einmal richtig durchgespielt. Im echten Notfall hilft das. 2. Sie kennen Brandklassen. Fett-Brand wird mit Deckel erstickt, nicht mit Wasser bespritzt. Strom-Brand: erst Stecker ziehen. Das ist konkretes Sicherheits-Wissen, das sie ihr Leben lang abrufen können. 3. Sie wissen, dass Rauch das eigentliche Problem ist und tief am Boden die saubere Luft ist. 4. Sie haben einmal in einer Krimi-Logik denken müssen — Hypothesen aufstellen, Beweise abwägen, Diskussion moderieren. Das ist Soft-Skill. Die Brandschutzerziehung (Quellen variieren) empfiehlt diese Inhalte für 9-12 als Standard. Auf dieser Party werden sie geübt, nicht nur gelehrt."
         },
         {
           "topic": "📋 Vorbereitung: Diese Party kostet 4 Std. vor dem Tag",
@@ -21544,7 +21544,6 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Raten ohne Verlierer: Mit 6-8 wollen Kinder ihr Weltraum-Wissen zeigen, aber das Reihum-Prinzip sorgt dafür, dass auch das ruhigere Kind dran kommt. Die Fakten kommen nebenbei statt als Frontalunterricht — und ein echtes Sonnensystem zum Anschauen macht es greifbar."
           },
           {
-            "_source": "SEO-Cross-Pollination",
             "name": "🛸 Weltraum-Rallye (5 Planeten-Stationen)",
             "indoor": true,
             "outdoor": true,
@@ -21935,7 +21934,6 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Bricht kurz vor der Lizenz-Übergabe die Stations-Konkurrenz auf: kooperativ statt kompetitiv, jedes Kind trägt zum Crystal-Fund bei. Das Mond-Hüpfen kanalisiert die aufgestaute Energie in eine kontrollierte Bewegung — und gibt der Geschichte einen zweiten dramatischen Bogen."
           },
           {
-            "_source": "SEO-Cross-Pollination",
             "name": "👽 Alien-Geheimsprache erfinden",
             "indoor": true,
             "outdoor": false,
@@ -21981,7 +21979,6 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Selbst erfinden ist mit 7–8 sehr viel reizvoller als nur dekodieren: Die Kinder werden zu Code-Designern und Empfängern zugleich. Das stärkt Sprach- und Symbol-Verständnis und macht das ruhigere Pendant zum lauten Raketen-Experiment — perfekt als Verschnaufphase mit echtem Inhalt."
           },
           {
-            "_source": "SEO-Cross-Pollination",
             "name": "🎯 Sternen-Bingo (Weltraum-Bingo)",
             "indoor": true,
             "outdoor": false,
@@ -22826,7 +22823,7 @@ var ELITE_MOTTO_DATA = {
       "schema_version": "1.0",
       "purpose": "Weltraum 9-12 — Phase B Elite-Slot (Mars-Missions-Frame, kein Tempo-Stempel, Codeknacker-Kern mit echten Woertern)",
       "phase_b_complete": "2026-05-21",
-      "phase_b_method": "Writer-Subagent Stream-C. Codeknacker-Math gegen SIMBAD/NASA-Werte verifiziert (Stand 22.05.2026): STERN (Pilot, scheinbare Helligkeit), PLANET (Wissenschaftler, Sonnenabstand), MOTOR (Mechaniker, Reparatur-Pfad) fuer Minimal; MARS (odd-one-out) fuer Standard; PLANET als 5-Stationen-Schatzsuche fuer Wow. Alle Loesungswoerter sind echte deutsche Woerter — kein INSEL-/Pseudo-Salat. Sorgfalt-Spezialist statt 1.-Astronaut."
+      "phase_b_method": "Writer-Subagent Stream-C. Codeknacker-Math gegen SIMBAD/Raumfahrt-Behoerde-Werte verifiziert (Stand 22.05.2026): STERN (Pilot, scheinbare Helligkeit), PLANET (Wissenschaftler, Sonnenabstand), MOTOR (Mechaniker, Reparatur-Pfad) fuer Minimal; MARS (odd-one-out) fuer Standard; PLANET als 5-Stationen-Schatzsuche fuer Wow. Alle Loesungswoerter sind echte deutsche Woerter — kein INSEL-/Pseudo-Salat. Sorgfalt-Spezialist statt 1.-Astronaut."
     },
     "motto": "weltraum",
     "ageGroup": "gross",
@@ -23099,7 +23096,6 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "9-12-Jährige durchschauen Pseudo-Wissenschaft sofort. Hier passieren echte chemische Reaktionen (Essig + Backpulver sprudelt), die Kinder beobachten und dokumentieren wirklich. Das Logbuch macht aus dem Spiel eine nachvollziehbare Analyse, und die Schmuggelware-Pointe gibt einen klaren Aha-Moment, ohne dass jemand „verliert“."
           },
           {
-            "_source": "SEO-Cross-Pollination",
             "name": "🏃 Weltraum-Olympiade (Schwerkraft-Slalom + Meteoritendodge + Sternenwerfen)",
             "indoor": true,
             "outdoor": true,
@@ -23140,7 +23136,6 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "9-12-Jährige brauchen Bewegungs-Phasen, aber Pseudo-Spiele („Schwung-Schwung-Tanz“) finden sie peinlich. Die Olympiade-Disziplinen sind echte sportliche Aufgaben mit klaren Regeln und Weltraum-Frame — bewertet wird Technik statt Tempo, was auch die weniger Sportlichen einbindet. Drei kurze Disziplinen halten die Aufmerksamkeit."
           },
           {
-            "_source": "SEO-Cross-Pollination",
             "name": "🤖 Roboter programmieren (offline mit Befehls-Karten)",
             "indoor": true,
             "outdoor": true,
@@ -23148,8 +23143,8 @@ var ELITE_MOTTO_DATA = {
             "minAge": 9,
             "loudness": "ruhig",
             "effort": "leicht",
-            "material": "Karten mit Befehlen: „vor“, „links“, „rechts“, „halt“ (jeweils 10–15 Stück, mit Pfeil-Symbol). Ein Spielfeld auf dem Boden mit Klebeband: 6×6-Raster, dazwischen 2–3 „Asteroiden“ (Kissen) als Hindernisse, ein Ziel-Feld (Mars-Markierung). Optional ein echter Mini-Roboter (z.B. Bee-Bot, falls vorhanden), aber Mensch-als-Roboter funktioniert genauso. Logbuch.",
-            "prepText": "Die Crew programmiert einen „Roboter“ (entweder ein echter Bee-Bot oder ein Crew-Mitglied, das nur strikt Befehle befolgt) so, dass er vom Start durch das Asteroiden-Feld zum Mars-Ziel kommt — ohne mit einem Asteroiden zu kollidieren. Das ist algorithmisches Denken im Spiel-Frame.",
+            "material": "Karten mit Befehlen: „vor“, „links“, „rechts“, „halt“ (jeweils 10–15 Stück, mit Pfeil-Symbol). Ein Spielfeld auf dem Boden mit Klebeband: 6×6-Raster, dazwischen 2–3 „Asteroiden“ (Kissen) als Hindernisse, ein Ziel-Feld (Mars-Markierung). Optional ein echter Mini-Roboter (z.B. Lern-Roboter, falls vorhanden), aber Mensch-als-Roboter funktioniert genauso. Logbuch.",
+            "prepText": "Die Crew programmiert einen „Roboter“ (entweder ein echter Lern-Roboter oder ein Crew-Mitglied, das nur strikt Befehle befolgt) so, dass er vom Start durch das Asteroiden-Feld zum Mars-Ziel kommt — ohne mit einem Asteroiden zu kollidieren. Das ist algorithmisches Denken im Spiel-Frame.",
             "steps": [
               {
                 "n": 1,
@@ -23164,7 +23159,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 3,
                 "name": "Programm ausführen",
-                "content": "Der Roboter (Kind oder Bee-Bot) führt die Karten der Reihe nach aus, eine pro Schritt. Niemand darf zwischendurch zurufen — der Roboter kennt nur die programmierten Befehle."
+                "content": "Der Roboter (Kind oder Lern-Roboter) führt die Karten der Reihe nach aus, eine pro Schritt. Niemand darf zwischendurch zurufen — der Roboter kennt nur die programmierten Befehle."
               },
               {
                 "n": 4,
@@ -23584,7 +23579,6 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Die Hauptmission belohnt, dass jede Station ihren Teil beigetragen hat — ohne alle Ergebnisse geht die Karte nicht auf. Das macht den Abschluss zu einem gemeinsamen Erfolg statt zu einem Wettlauf, und das Bergen der Kapsel ist der emotionale Höhepunkt."
           },
           {
-            "_source": "SEO-Cross-Pollination",
             "name": "🚀 Wasser-Raketen-Engineering-Challenge",
             "indoor": false,
             "outdoor": true,
@@ -23622,7 +23616,7 @@ var ELITE_MOTTO_DATA = {
               }
             ],
             "safetyRule": "NUR draußen, NIE drinnen oder unter Bäumen/Stromleitungen. Mindestens 5 m Sicherheitsabstand, alle hinter der Pump-Person. Schutzbrille empfohlen. NUR Erwachsene bedienen die Pumpe — der Druck kann den Korken mit Wucht in unvorhersehbare Richtung schleudern. NIE auf Menschen oder Tiere zielen. PET-Flaschen mit Druckschäden (Risse, Knicke) NICHT verwenden — Bruch-Gefahr. Nach Start die abgehobene Rakete erst nach 30 Sek. einsammeln (kann noch nachtropfen oder zurückkommen).",
-            "ageAdjust9": "Fertig gekauftes Wasserrakete-Set (z.B. Rezi oder Bresser, ~20 €) statt DIY — die Sicherheitstechnik ist eingebaut. Erwachsene starten, Kinder zählen Countdown.",
+            "ageAdjust9": "Fertig gekauftes Wasserrakete-Set (z.B. Online-Rezi-Plattform oder Einsteiger-Teleskop, ~20 €) statt DIY — die Sicherheitstechnik ist eingebaut. Erwachsene starten, Kinder zählen Countdown.",
             "ageAdjust12": "DIY-Konstruktion erlaubt, Kinder dürfen Finnen-Formen experimentell variieren (lang/kurz/breit). Maßband-Messung der Flughöhe, Logbuch mit Mess-Tabelle.",
             "indoorTip": null,
             "outdoorTip": "Großer Rasenfläche oder leerer Hof — keine Bäume in Schussweite. Sandkasten als Aufprall-Zone für die Rakete einplanen.",
@@ -23630,7 +23624,6 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Mit 10-12 ist Pseudo-Wissenschaft durch — hier passiert echte Strömungslehre, und die Kinder erleben, wie ihre Hypothese (Wassermenge) das Ergebnis (Flughöhe) wirklich beeinflusst. Der Aha-Moment „mehr Wasser ist nicht mehr Höhe“ bleibt. Vorsicht: Das ist das mit Abstand sicherheitskritischste Spiel im Programm — bei Unsicherheit lieber das kommerzielle Wasserrakete-Set kaufen und nicht selbst aus Korken basteln."
           },
           {
-            "_source": "SEO-Cross-Pollination",
             "name": "📸 Astro-Fotografie (Lichtmalerei mit Langzeitbelichtung)",
             "indoor": true,
             "outdoor": true,
@@ -24262,12 +24255,10 @@ var ELITE_MOTTO_DATA = {
         "a": "Wenn die Eltern zustimmen und der Himmel klar ist: ja, das ist der Wow-Moment. Der erste bewusste Blick auf einen Jupitermond oder die Milchstraße bleibt hängen. Wichtig ist das Eltern-Opt-In für die Wach-Zeit und ein klarer Abhol-Punkt für Kinder, die nicht übernachten."
       },
       {
-        "_source": "SEO-Cross-Pollination",
         "q": "Ist die Wasser-Rakete für 9-12-Jährige nicht zu gefährlich?",
-        "a": "Mit den richtigen Sicherheits-Regeln nein — aber sie ist das mit Abstand sicherheits-kritischste Spiel im Programm. Mindestens 5 m Abstand, nur Erwachsene bedienen die Pumpe, NIE drinnen oder unter Stromleitungen, NIE auf Menschen zielen. Wer unsicher ist: ein gekauftes Wasserrakete-Starter-Set (z.B. Rezi/Bresser, ~20 €) hat die Sicherheitstechnik eingebaut. Alternative für drinnen: die Brausetablette-Filmdose-Rakete aus der mittel-Variante oder die Strohhalm-Rakete — beide vermitteln den Rückstoß-Effekt ohne Risiko."
+        "a": "Mit den richtigen Sicherheits-Regeln nein — aber sie ist das mit Abstand sicherheits-kritischste Spiel im Programm. Mindestens 5 m Abstand, nur Erwachsene bedienen die Pumpe, NIE drinnen oder unter Stromleitungen, NIE auf Menschen zielen. Wer unsicher ist: ein gekauftes Wasserrakete-Starter-Set (z.B. Online-Rezi-Plattform/Einsteiger-Teleskop, ~20 €) hat die Sicherheitstechnik eingebaut. Alternative für drinnen: die Brausetablette-Filmdose-Rakete aus der mittel-Variante oder die Strohhalm-Rakete — beide vermitteln den Rückstoß-Effekt ohne Risiko."
       },
       {
-        "_source": "SEO-Cross-Pollination",
         "q": "Welche Mitgebsel passen — neben Logbuch und Patch?",
         "a": "Leucht-Sterne (50er-Pack ab 3 €), ein selbst gestaltetes Astronauten-Ausweis-Kärtchen, Mini-Teleskope (3–5 €), Weltraum-Sticker, Schoko-Sterne aus der „Versorgungs-Kapsel“. In Silber-Tüten verpackt wirkt es besonders motto-passend. Für 9-12-Jährige gilt: lieber wenige hochwertige Stücke (Ausweis, Logbuch-Kopie, ein Stern-Stein/Stein in Alufolie als Mond-Andenken) als ein Berg billiger Plastik-Krimskrams — das durchschauen sie sofort und werten es ab."
       }
@@ -24459,13 +24450,12 @@ var ELITE_MOTTO_DATA = {
         "tone": "praktisch"
       },
       "wasser_rakete_nicht_moeglich": {
-        "_source": "SEO-Cross-Pollination",
         "icon": "🚀",
         "label": "Wasser-Rakete fällt aus (Regen, Nachbarn, kein Outdoor)",
         "headline": "Drei Indoor-Alternativen, die genauso Physik vermitteln.",
         "steps": [
-          "Brausetablette-Filmdose-Rakete über dem Spülbecken (siehe mittel-Variante) — sicher drinnen, gleicher Rückstoß-Effekt im kleinen Maßstab.",
-          "Strohhalm-Rakete mit Pusten (siehe mittel-Variante) — funktioniert im Flur, vermittelt Form-Aerodynamik.",
+          "Brausetablette-Filmdose-Rakete über dem Spülbecken (Filmdose 1/3 mit Wasser + halbe Brausetablette, sofort verschliessen, umdrehen, 2 m Abstand) — sicher drinnen, gleicher Rückstoß-Effekt im kleinen Maßstab.",
+          "Strohhalm-Rakete mit Pusten (Filmdose 1/3 mit Wasser + halbe Brausetablette, sofort verschliessen, umdrehen, 2 m Abstand) — funktioniert im Flur, vermittelt Form-Aerodynamik.",
           "Astro-Fotografie als Ersatz-Highlight — drinnen abdunkeln, Lichtmalerei statt Wasser-Start. Liefert sogar ein Mitgebsel-Foto.",
           "Roboter-Programmierung als Ersatz-Aktivität — fordert kognitiv genauso wie die Wasser-Rakete körperlich, ohne Sicherheits-Risiko."
         ],
@@ -28105,7 +28095,7 @@ var ELITE_MOTTO_DATA = {
           {
             "name": "🎨 Phantombild-Station (Bonus-Modul)",
             "indoor": true,
-            "outdoor": false,
+            "outdoor": true,
             "duration": 15,
             "minAge": 9,
             "loudness": "leise",
@@ -28143,7 +28133,7 @@ var ELITE_MOTTO_DATA = {
             "ageAdjust9": "Vereinfachte Beschreibung mit nur 3 Merkmalen. Vorgezeichnetes Gesicht ist halb fertig — nur Brille/Haare ergänzen.",
             "ageAdjust12": "Detailreiche Beschreibung (7-8 Merkmale), keine Vorlage — leeres Blatt. Wer mag, zeichnet zwei Versionen (Frontal + Profil) wie auf einer echten Fahndungs-Akte.",
             "indoorTip": "Am Esstisch mit guter Beleuchtung — Zeichnen braucht Licht. Bleistifte mit weicher Mine (B oder 2B) gehen leichter.",
-            "outdoorTip": null,
+            "outdoorTip": "Am Gartentisch mit Klemmbrett-Unterlage — bei Wind die Vorlagen mit Waescheklammern fixieren, Schatten suchen damit das Papier nicht blendet.",
             "whyItWorksTitle": "Beschreiben üben — wichtiger als Talent",
             "whyItWorks": "Phantombild-Zeichnen ist Genauigkeit, keine Kunst: Wie präzise übersetzt das Hirn Wörter in Bilder? Auch nicht-zeichnerische Kinder kommen gut zurecht, weil es um Merkmale geht. Der direkte Abgleich mit den Verdächtigen-Karten gibt einen klaren Aha-Moment, der den Plot-Twist sichtbar macht."
           },
@@ -28756,7 +28746,8 @@ var ELITE_MOTTO_DATA = {
         "savingsTip": {
           "title": "Die Detektiv-Hüte sind optional",
           "body": "Die 143 € sind ohne die Detektiv-Hüte gerechnet — die kosten als Highlight zusätzlich 70-110 € für 10 Kinder. Die Party trägt auch ohne sie: Die eigene UV-Geheimkarte aus der Werkstatt plus UV-Stift ist ein vollwertiges, persönlicheres Mitgebsel. UV-Taschenlampen brauchst du nur, wenn wirklich eine Schlafparty mit Nacht-Spurensuche geplant ist. Wraps und Zweitkuchen lassen sich streichen, wenn die Gruppe kleiner bleibt. Absperrband (5 €) ersetzt fast die komplette gekaufte Deko."
-        }
+        },
+        "ageNote": "Empfohlen ab 10 Jahren — zwei Module (Kreuzverhoer, UV-Nacht-Spurensuche) sind fuer 9-Jaehrige nicht freigegeben (minAge=10). Bei reiner 9-Jahre-Gruppe diese durch Standard-Verhoer bzw. fruehen Abschluss ersetzen."
       }
     ],
     "cakeRecipe": {
@@ -28844,6 +28835,10 @@ var ELITE_MOTTO_DATA = {
         {
           "topic": "🌳 Garten-Erweiterung für die Wow-Variante",
           "detail": "Garten ist Pflicht-Plus für die TRESOR-Schatzsuche und die UV-Nacht-Spurensuche. Spuren-Sicherung im Beet (echter Schuhabdruck im Sand) wirkt 10× authentischer als drinnen. Aber: Alle 5 Standard-Stationen funktionieren komplett indoor — der Garten ist Ergänzung, nicht Voraussetzung. Vor der Schlafparty-Nacht-Spurensuche: Stolperfallen im Dunkeln vorher entschärfen."
+        },
+        {
+          "topic": "📷 DSGVO bei Kinder-Fotos",
+          "detail": "Fotos von Gaestekindern nur mit kurzer Rueckfrage bei den Eltern (muendlich beim Bringen reicht). Sofortbilder auf den Ausweis sind unkritisch, weil sie beim Kind bleiben — ein gemeinsames \"Beweis-Album\" oder das Posten von Fotos nur mit Einverstaendnis. Beim \"Tatort-Fotograf\"-Rollenspiel kann statt Gesichtern auch nur die Tatort-Szene fotografiert werden."
         }
       ],
       "educationalValue": "Was die Kinder mitnehmen: forensische Grundtechniken (Fingerabdruck mit Graphit und Klebeband sichern, Fasern und Spuren vergleichen), Ermittler-Logik (ein einzelnes Indiz beweist nichts, das stärkste Motiv macht nicht den Täter), das Prüfen von Aussagen gegen eine Zeitleiste statt gegen das Bauchgefühl, echte Kryptografie (Caesar-Chiffre und Zahlen-Codes selbst lösen) und Kooperation zwischen Spezialisierungen, von denen keine allein zum Ziel kommt. Die Leitidee „im Ermittlungsdienst zählt, wer am genauesten hinschaut, nicht wer am schnellsten beschuldigt“ trägt durch die ganze Party."

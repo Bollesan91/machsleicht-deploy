@@ -5,7 +5,7 @@
     "schema_version": "1.0",
     "purpose": "Weltraum 9-12 — Phase B Elite-Slot (Mars-Missions-Frame, kein Tempo-Stempel, Codeknacker-Kern mit echten Woertern)",
     "phase_b_complete": "2026-05-21",
-    "phase_b_method": "Writer-Subagent Stream-C. Codeknacker-Math gegen SIMBAD/NASA-Werte verifiziert (Stand 22.05.2026): STERN (Pilot, scheinbare Helligkeit), PLANET (Wissenschaftler, Sonnenabstand), MOTOR (Mechaniker, Reparatur-Pfad) fuer Minimal; MARS (odd-one-out) fuer Standard; PLANET als 5-Stationen-Schatzsuche fuer Wow. Alle Loesungswoerter sind echte deutsche Woerter — kein INSEL-/Pseudo-Salat. Sorgfalt-Spezialist statt 1.-Astronaut."
+    "phase_b_method": "Writer-Subagent Stream-C. Codeknacker-Math gegen SIMBAD/Raumfahrt-Behoerde-Werte verifiziert (Stand 22.05.2026): STERN (Pilot, scheinbare Helligkeit), PLANET (Wissenschaftler, Sonnenabstand), MOTOR (Mechaniker, Reparatur-Pfad) fuer Minimal; MARS (odd-one-out) fuer Standard; PLANET als 5-Stationen-Schatzsuche fuer Wow. Alle Loesungswoerter sind echte deutsche Woerter — kein INSEL-/Pseudo-Salat. Sorgfalt-Spezialist statt 1.-Astronaut."
   },
   "motto": "weltraum",
   "ageGroup": "gross",
@@ -278,7 +278,6 @@
           "whyItWorks": "9-12-Jährige durchschauen Pseudo-Wissenschaft sofort. Hier passieren echte chemische Reaktionen (Essig + Backpulver sprudelt), die Kinder beobachten und dokumentieren wirklich. Das Logbuch macht aus dem Spiel eine nachvollziehbare Analyse, und die Schmuggelware-Pointe gibt einen klaren Aha-Moment, ohne dass jemand „verliert“."
         },
         {
-          "_source": "SEO-Cross-Pollination",
           "name": "🏃 Weltraum-Olympiade (Schwerkraft-Slalom + Meteoritendodge + Sternenwerfen)",
           "indoor": true,
           "outdoor": true,
@@ -319,7 +318,6 @@
           "whyItWorks": "9-12-Jährige brauchen Bewegungs-Phasen, aber Pseudo-Spiele („Schwung-Schwung-Tanz“) finden sie peinlich. Die Olympiade-Disziplinen sind echte sportliche Aufgaben mit klaren Regeln und Weltraum-Frame — bewertet wird Technik statt Tempo, was auch die weniger Sportlichen einbindet. Drei kurze Disziplinen halten die Aufmerksamkeit."
         },
         {
-          "_source": "SEO-Cross-Pollination",
           "name": "🤖 Roboter programmieren (offline mit Befehls-Karten)",
           "indoor": true,
           "outdoor": true,
@@ -327,8 +325,8 @@
           "minAge": 9,
           "loudness": "ruhig",
           "effort": "leicht",
-          "material": "Karten mit Befehlen: „vor“, „links“, „rechts“, „halt“ (jeweils 10–15 Stück, mit Pfeil-Symbol). Ein Spielfeld auf dem Boden mit Klebeband: 6×6-Raster, dazwischen 2–3 „Asteroiden“ (Kissen) als Hindernisse, ein Ziel-Feld (Mars-Markierung). Optional ein echter Mini-Roboter (z.B. Bee-Bot, falls vorhanden), aber Mensch-als-Roboter funktioniert genauso. Logbuch.",
-          "prepText": "Die Crew programmiert einen „Roboter“ (entweder ein echter Bee-Bot oder ein Crew-Mitglied, das nur strikt Befehle befolgt) so, dass er vom Start durch das Asteroiden-Feld zum Mars-Ziel kommt — ohne mit einem Asteroiden zu kollidieren. Das ist algorithmisches Denken im Spiel-Frame.",
+          "material": "Karten mit Befehlen: „vor“, „links“, „rechts“, „halt“ (jeweils 10–15 Stück, mit Pfeil-Symbol). Ein Spielfeld auf dem Boden mit Klebeband: 6×6-Raster, dazwischen 2–3 „Asteroiden“ (Kissen) als Hindernisse, ein Ziel-Feld (Mars-Markierung). Optional ein echter Mini-Roboter (z.B. Lern-Roboter, falls vorhanden), aber Mensch-als-Roboter funktioniert genauso. Logbuch.",
+          "prepText": "Die Crew programmiert einen „Roboter“ (entweder ein echter Lern-Roboter oder ein Crew-Mitglied, das nur strikt Befehle befolgt) so, dass er vom Start durch das Asteroiden-Feld zum Mars-Ziel kommt — ohne mit einem Asteroiden zu kollidieren. Das ist algorithmisches Denken im Spiel-Frame.",
           "steps": [
             {
               "n": 1,
@@ -343,7 +341,7 @@
             {
               "n": 3,
               "name": "Programm ausführen",
-              "content": "Der Roboter (Kind oder Bee-Bot) führt die Karten der Reihe nach aus, eine pro Schritt. Niemand darf zwischendurch zurufen — der Roboter kennt nur die programmierten Befehle."
+              "content": "Der Roboter (Kind oder Lern-Roboter) führt die Karten der Reihe nach aus, eine pro Schritt. Niemand darf zwischendurch zurufen — der Roboter kennt nur die programmierten Befehle."
             },
             {
               "n": 4,
@@ -763,7 +761,6 @@
           "whyItWorks": "Die Hauptmission belohnt, dass jede Station ihren Teil beigetragen hat — ohne alle Ergebnisse geht die Karte nicht auf. Das macht den Abschluss zu einem gemeinsamen Erfolg statt zu einem Wettlauf, und das Bergen der Kapsel ist der emotionale Höhepunkt."
         },
         {
-          "_source": "SEO-Cross-Pollination",
           "name": "🚀 Wasser-Raketen-Engineering-Challenge",
           "indoor": false,
           "outdoor": true,
@@ -801,7 +798,7 @@
             }
           ],
           "safetyRule": "NUR draußen, NIE drinnen oder unter Bäumen/Stromleitungen. Mindestens 5 m Sicherheitsabstand, alle hinter der Pump-Person. Schutzbrille empfohlen. NUR Erwachsene bedienen die Pumpe — der Druck kann den Korken mit Wucht in unvorhersehbare Richtung schleudern. NIE auf Menschen oder Tiere zielen. PET-Flaschen mit Druckschäden (Risse, Knicke) NICHT verwenden — Bruch-Gefahr. Nach Start die abgehobene Rakete erst nach 30 Sek. einsammeln (kann noch nachtropfen oder zurückkommen).",
-          "ageAdjust9": "Fertig gekauftes Wasserrakete-Set (z.B. Rezi oder Bresser, ~20 €) statt DIY — die Sicherheitstechnik ist eingebaut. Erwachsene starten, Kinder zählen Countdown.",
+          "ageAdjust9": "Fertig gekauftes Wasserrakete-Set (z.B. Online-Rezi-Plattform oder Einsteiger-Teleskop, ~20 €) statt DIY — die Sicherheitstechnik ist eingebaut. Erwachsene starten, Kinder zählen Countdown.",
           "ageAdjust12": "DIY-Konstruktion erlaubt, Kinder dürfen Finnen-Formen experimentell variieren (lang/kurz/breit). Maßband-Messung der Flughöhe, Logbuch mit Mess-Tabelle.",
           "indoorTip": null,
           "outdoorTip": "Großer Rasenfläche oder leerer Hof — keine Bäume in Schussweite. Sandkasten als Aufprall-Zone für die Rakete einplanen.",
@@ -809,7 +806,6 @@
           "whyItWorks": "Mit 10-12 ist Pseudo-Wissenschaft durch — hier passiert echte Strömungslehre, und die Kinder erleben, wie ihre Hypothese (Wassermenge) das Ergebnis (Flughöhe) wirklich beeinflusst. Der Aha-Moment „mehr Wasser ist nicht mehr Höhe“ bleibt. Vorsicht: Das ist das mit Abstand sicherheitskritischste Spiel im Programm — bei Unsicherheit lieber das kommerzielle Wasserrakete-Set kaufen und nicht selbst aus Korken basteln."
         },
         {
-          "_source": "SEO-Cross-Pollination",
           "name": "📸 Astro-Fotografie (Lichtmalerei mit Langzeitbelichtung)",
           "indoor": true,
           "outdoor": true,
@@ -1441,12 +1437,10 @@
       "a": "Wenn die Eltern zustimmen und der Himmel klar ist: ja, das ist der Wow-Moment. Der erste bewusste Blick auf einen Jupitermond oder die Milchstraße bleibt hängen. Wichtig ist das Eltern-Opt-In für die Wach-Zeit und ein klarer Abhol-Punkt für Kinder, die nicht übernachten."
     },
     {
-      "_source": "SEO-Cross-Pollination",
       "q": "Ist die Wasser-Rakete für 9-12-Jährige nicht zu gefährlich?",
-      "a": "Mit den richtigen Sicherheits-Regeln nein — aber sie ist das mit Abstand sicherheits-kritischste Spiel im Programm. Mindestens 5 m Abstand, nur Erwachsene bedienen die Pumpe, NIE drinnen oder unter Stromleitungen, NIE auf Menschen zielen. Wer unsicher ist: ein gekauftes Wasserrakete-Starter-Set (z.B. Rezi/Bresser, ~20 €) hat die Sicherheitstechnik eingebaut. Alternative für drinnen: die Brausetablette-Filmdose-Rakete aus der mittel-Variante oder die Strohhalm-Rakete — beide vermitteln den Rückstoß-Effekt ohne Risiko."
+      "a": "Mit den richtigen Sicherheits-Regeln nein — aber sie ist das mit Abstand sicherheits-kritischste Spiel im Programm. Mindestens 5 m Abstand, nur Erwachsene bedienen die Pumpe, NIE drinnen oder unter Stromleitungen, NIE auf Menschen zielen. Wer unsicher ist: ein gekauftes Wasserrakete-Starter-Set (z.B. Online-Rezi-Plattform/Einsteiger-Teleskop, ~20 €) hat die Sicherheitstechnik eingebaut. Alternative für drinnen: die Brausetablette-Filmdose-Rakete aus der mittel-Variante oder die Strohhalm-Rakete — beide vermitteln den Rückstoß-Effekt ohne Risiko."
     },
     {
-      "_source": "SEO-Cross-Pollination",
       "q": "Welche Mitgebsel passen — neben Logbuch und Patch?",
       "a": "Leucht-Sterne (50er-Pack ab 3 €), ein selbst gestaltetes Astronauten-Ausweis-Kärtchen, Mini-Teleskope (3–5 €), Weltraum-Sticker, Schoko-Sterne aus der „Versorgungs-Kapsel“. In Silber-Tüten verpackt wirkt es besonders motto-passend. Für 9-12-Jährige gilt: lieber wenige hochwertige Stücke (Ausweis, Logbuch-Kopie, ein Stern-Stein/Stein in Alufolie als Mond-Andenken) als ein Berg billiger Plastik-Krimskrams — das durchschauen sie sofort und werten es ab."
     }
@@ -1638,13 +1632,12 @@
       "tone": "praktisch"
     },
     "wasser_rakete_nicht_moeglich": {
-      "_source": "SEO-Cross-Pollination",
       "icon": "🚀",
       "label": "Wasser-Rakete fällt aus (Regen, Nachbarn, kein Outdoor)",
       "headline": "Drei Indoor-Alternativen, die genauso Physik vermitteln.",
       "steps": [
-        "Brausetablette-Filmdose-Rakete über dem Spülbecken (siehe mittel-Variante) — sicher drinnen, gleicher Rückstoß-Effekt im kleinen Maßstab.",
-        "Strohhalm-Rakete mit Pusten (siehe mittel-Variante) — funktioniert im Flur, vermittelt Form-Aerodynamik.",
+        "Brausetablette-Filmdose-Rakete über dem Spülbecken (Filmdose 1/3 mit Wasser + halbe Brausetablette, sofort verschliessen, umdrehen, 2 m Abstand) — sicher drinnen, gleicher Rückstoß-Effekt im kleinen Maßstab.",
+        "Strohhalm-Rakete mit Pusten (Filmdose 1/3 mit Wasser + halbe Brausetablette, sofort verschliessen, umdrehen, 2 m Abstand) — funktioniert im Flur, vermittelt Form-Aerodynamik.",
         "Astro-Fotografie als Ersatz-Highlight — drinnen abdunkeln, Lichtmalerei statt Wasser-Start. Liefert sogar ein Mitgebsel-Foto.",
         "Roboter-Programmierung als Ersatz-Aktivität — fordert kognitiv genauso wie die Wasser-Rakete körperlich, ohne Sicherheits-Risiko."
       ],

@@ -223,7 +223,7 @@
             },
             {
               "name": "Beweise",
-              "content": "Beweis 1: Streichholz im Lagerraum. Beweis 2: Lieferschein (14:32). Beweis 3: Heizkessel-Logbuch (14:30 Wartung). Beweis 4: Kind sagt: Onkel war noch nicht da."
+              "content": "Beweis 1: Streichholz im Lagerraum. Beweis 2: Lieferschein (14:32). Beweis 3: Heizkessel-Logbuch (14:30 Wartung). Beweis 4: Kind sagt: Vater Becker kam erst um 14:35 (Alibi bestaetigt)."
             },
             {
               "name": "Indizienkette",
@@ -231,7 +231,7 @@
             },
             {
               "name": "Loesung",
-              "content": "TAETER = D) Baecker. Motiv: Streit mit Hausmeister. Beweis: Streichholz aus Baecker-Brigade-Set. Kinder gleichen 4 Verdaechtige + 4 Beweise ab."
+              "content": "TAETER = D) Koechin (Fettbrand). Motiv: Streit mit Hausmeister. Beweis: Pfanne mit Fettrueckstaenden + ueberhitzter Herd. Kinder gleichen 4 Verdaechtige + 4 Beweise ab."
             }
           ],
           "safetyRule": null,
@@ -461,7 +461,7 @@
             },
             {
               "name": "Beweise",
-              "content": "Beweis 1: Streichholz im Lagerraum. Beweis 2: Lieferschein (14:32). Beweis 3: Heizkessel-Logbuch (14:30 Wartung). Beweis 4: Kind sagt: Onkel war noch nicht da."
+              "content": "Beweis 1: Streichholz im Lagerraum. Beweis 2: Lieferschein (14:32). Beweis 3: Heizkessel-Logbuch (14:30 Wartung). Beweis 4: Kind sagt: Vater Becker kam erst um 14:35 (Alibi bestaetigt)."
             },
             {
               "name": "Indizienkette",
@@ -469,7 +469,7 @@
             },
             {
               "name": "Loesung",
-              "content": "TAETER = D) Baecker. Motiv: Streit mit Hausmeister. Beweis: Streichholz aus Baecker-Brigade-Set. Kinder gleichen 4 Verdaechtige + 4 Beweise ab."
+              "content": "TAETER = D) Koechin (Fettbrand). Motiv: Streit mit Hausmeister. Beweis: Pfanne mit Fettrueckstaenden + ueberhitzter Herd. Kinder gleichen 4 Verdaechtige + 4 Beweise ab."
             }
           ],
           "safetyRule": null,
@@ -724,7 +724,7 @@
             },
             {
               "name": "Beweise",
-              "content": "Beweis 1: Streichholz im Lagerraum. Beweis 2: Lieferschein (14:32). Beweis 3: Heizkessel-Logbuch (14:30 Wartung). Beweis 4: Kind sagt: Onkel war noch nicht da."
+              "content": "Beweis 1: Streichholz im Lagerraum. Beweis 2: Lieferschein (14:32). Beweis 3: Heizkessel-Logbuch (14:30 Wartung). Beweis 4: Kind sagt: Vater Becker kam erst um 14:35 (Alibi bestaetigt)."
             },
             {
               "name": "Indizienkette",
@@ -732,7 +732,7 @@
             },
             {
               "name": "Loesung",
-              "content": "TAETER = D) Baecker. Motiv: Streit mit Hausmeister. Beweis: Streichholz aus Baecker-Brigade-Set. Kinder gleichen 4 Verdaechtige + 4 Beweise ab."
+              "content": "TAETER = D) Koechin (Fettbrand). Motiv: Streit mit Hausmeister. Beweis: Pfanne mit Fettrueckstaenden + ueberhitzter Herd. Kinder gleichen 4 Verdaechtige + 4 Beweise ab."
             }
           ],
           "safetyRule": null,
@@ -1020,7 +1020,7 @@
     "structured": [
       {
         "topic": "🧠 Was 9–12-Jährige wirklich mitnehmen — der Bildungswert dieser Party",
-        "detail": "Bei dieser Altersgruppe ist der Bildungswert nicht nebenher — er ist der Kern. Was die Kinder am Ende dieses Tages mitnehmen: 1. Sie können einen 112-Notruf abgeben. Sie kennen die 5 W (Wer / Wo / Was / Wie viele / Warten) und haben sie in der Notruf-Simulation einmal richtig durchgespielt. Im echten Notfall hilft das. 2. Sie kennen Brandklassen. Fett-Brand wird mit Deckel erstickt, nicht mit Wasser bespritzt. Strom-Brand: erst Stecker ziehen. Das ist konkretes Sicherheits-Wissen, das sie ihr Leben lang abrufen können. 3. Sie wissen, dass Rauch das eigentliche Problem ist und tief am Boden die saubere Luft ist. 4. Sie haben einmal in einer Krimi-Logik denken müssen — Hypothesen aufstellen, Beweise abwägen, Diskussion moderieren. Das ist Soft-Skill. Die Deutsche Brandschutzerziehung empfiehlt diese Inhalte für 9-12 als Standard. Auf dieser Party werden sie geübt, nicht nur gelehrt."
+        "detail": "Bei dieser Altersgruppe ist der Bildungswert nicht nebenher — er ist der Kern. Was die Kinder am Ende dieses Tages mitnehmen: 1. Sie können einen 112-Notruf abgeben. Sie kennen die 5 W (Wer / Wo / Was / Wie viele / Warten) und haben sie in der Notruf-Simulation einmal richtig durchgespielt. Im echten Notfall hilft das. 2. Sie kennen Brandklassen. Fett-Brand wird mit Deckel erstickt, nicht mit Wasser bespritzt. Strom-Brand: erst Stecker ziehen. Das ist konkretes Sicherheits-Wissen, das sie ihr Leben lang abrufen können. 3. Sie wissen, dass Rauch das eigentliche Problem ist und tief am Boden die saubere Luft ist. 4. Sie haben einmal in einer Krimi-Logik denken müssen — Hypothesen aufstellen, Beweise abwägen, Diskussion moderieren. Das ist Soft-Skill. Die Brandschutzerziehung (Quellen variieren) empfiehlt diese Inhalte für 9-12 als Standard. Auf dieser Party werden sie geübt, nicht nur gelehrt."
       },
       {
         "topic": "📋 Vorbereitung: Diese Party kostet 4 Std. vor dem Tag",
