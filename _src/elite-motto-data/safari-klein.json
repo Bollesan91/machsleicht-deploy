@@ -544,7 +544,7 @@
               "content": "5-Jährige dürfen selbst suchen. 3-Jährige bleiben beim gemeinsamen Verstecken — Allein-Suchen überfordert noch."
             }
           ],
-          "safetyRule": "Pflicht: jedes Versteck muss jederzeit fuer den Erwachsenen einsehbar bleiben. Kein vollstaendiges Verstecken bei U4. Erwachsener zaehlt mit OFFENEN Augen und schaut nach jedem Kind. Verboten: Truhen mit zufallender Tuer, Waeschekoerbe, hinterm Sofa kopfueber.",
+          "safetyRule": "Pflicht: jedes Versteck muss jederzeit für den Erwachsenen einsehbar bleiben. Kein vollstaendiges Verstecken bei U4. Erwachsener zaehlt mit OFFENEN Augen und schaut nach jedem Kind. Verboten: Truhen mit zufallender Tür, Wäschekörbe, hinterm Sofa kopfüber.",
           "ageAdjust3": "Gemeinsam verstecken, du suchst immer — Kind muss nicht allein bleiben oder allein suchen.",
           "ageAdjust5": "5-Jährige verstecken sich allein und übernehmen abwechselnd das Suchen.",
           "indoorTip": "In 60-75 m² ein Raum mit verschachtelten Verstecken reicht. Türen zu = wirkt nach mehr Welt.",
@@ -904,7 +904,7 @@
               "content": "5-Jährige dürfen selbst suchen. 3-Jährige bleiben beim gemeinsamen Verstecken — Allein-Suchen überfordert noch."
             }
           ],
-          "safetyRule": "Pflicht: jedes Versteck muss jederzeit fuer den Erwachsenen einsehbar bleiben. Kein vollstaendiges Verstecken bei U4. Erwachsener zaehlt mit OFFENEN Augen und schaut nach jedem Kind. Verboten: Truhen mit zufallender Tuer, Waeschekoerbe, hinterm Sofa kopfueber.",
+          "safetyRule": "Pflicht: jedes Versteck muss jederzeit für den Erwachsenen einsehbar bleiben. Kein vollstaendiges Verstecken bei U4. Erwachsener zaehlt mit OFFENEN Augen und schaut nach jedem Kind. Verboten: Truhen mit zufallender Tür, Wäschekörbe, hinterm Sofa kopfüber.",
           "ageAdjust3": "Gemeinsam verstecken, du suchst immer — Kind muss nicht allein bleiben oder allein suchen.",
           "ageAdjust5": "5-Jährige verstecken sich allein und übernehmen abwechselnd das Suchen.",
           "indoorTip": "In 60-75 m² ein Raum mit verschachtelten Verstecken reicht. Türen zu = wirkt nach mehr Welt.",
@@ -944,7 +944,7 @@
               "content": "Beim Pirsch-Spiel später dürfen die Tücher mitgenommen werden — die Kinder wickeln sich darin ein und schleichen leise. Doppelnutzen statt nur Bastel-Pflicht."
             }
           ],
-          "safetyRule": "Nur Textil-Filzstifte (Edding Textil, Crayola) — manche Kinder reagieren auf No-Name-Stoff-Färbe-Stifte. Wachstuch unter dem Stoff, Filzstifte sofort weg sobald fertig. Schere bleibt bei Erwachsenen.",
+          "safetyRule": "Nur Textil-Filzstifte (Edding Textil, Crayola) — manche Kinder reagieren auf No-Name-Stoff-Färbe-Stifte. Wachstuch unter dem Stoff, Filzstifte sofort weg sobald fertig. Schere bleibt bei Erwachsenen. WICHTIG für 3-Jaehrige: Tuch wird getragen oder in der Hand gehalten — NICHT um Hals oder Kopf wickeln (Strangulationsgefahr). Bei Stoff <30 cm bleiben.",
           "ageAdjust3": "Tücher kleiner schneiden (20×20 cm), nur 2 Farben anbieten (sonst wird's matschig), Mama oder Papa hält die Hand mit am Stift.",
           "ageAdjust5": "Volle Größe (30×30 cm), alle 3 Farben, dürfen auch Tierspuren oder Tier-Silhouetten draufmalen.",
           "indoorTip": "Reines Tisch-Spiel, ideal als ruhiger Einstieg direkt nach Stirnband-Verleihung. Tücher trocknen weiter auf der Fensterbank, kommen nicht zurück auf den Esstisch (Kuchen wartet).",

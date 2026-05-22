@@ -124,7 +124,7 @@
   "variants": [
     {
       "id": "minimal",
-      "label": "Minimal — 2 Stunden, minimaler Aufwand",
+      "label": "Minimal — 1,5 Stunden, minimaler Aufwand",
       "headline": "⚡ Minimal — 1,5 Stunden, stressfrei",
       "intro": "Das ehrliche Konzept für Eltern, die nicht 3 Tage vorbereiten wollen. 2 Spiele, Kuchen, fertig. Kinder in diesem Alter brauchen nicht mehr — sie brauchen weniger. Funktioniert auch alleine ohne Helfer.",
       "timeWindow": "15:00–16:30, 5 Kinder",
@@ -168,12 +168,12 @@
           "prepText": "Pappteller einmal falten → Kegel-Form rollen → mit Tacker fixieren. Das ist das Horn. Jedes Kind darf sein Horn mit Glitzer-Kleber und Stickern verzieren. Mit Gummiband am Kopf befestigen oder auf einen Haarreif kleben.\n\nVorbereitung: Hörner vorher schon zur Kegel-Form rollen und tackern — 3-Jährige können das nicht selbst. Sie kleben nur die Deko drauf.\n\nTipp: Tisch vorher mit alter Zeitung abdecken. Glitzer geht nie wieder raus — akzeptiere das jetzt.",
           "steps": [],
           "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband. Glitzer + Glitzer-Kleber vorher 1 Tag an Innenseite Unterarm testen (Allergie-Vortest); bei Rötung Sticker statt Glitzer.",
-          "ageAdjust6": "Glitzer-Kleber statt loser Glitzer (weniger Sauerei). Große Sticker statt kleine.",
-          "ageAdjust8": "Dürfen mit Kinderschere selbst den Pappteller zuschneiden. Zusätzlich Ohren aus Pappe ausschneiden und drankleben.",
           "indoorTip": "Tisch mit alter Zeitung oder Wachstuch abdecken, Müllbeutel als Bastel-Schürze pro Kind — Glitzer-Kleber landet überall.",
           "outdoorTip": null,
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "ageAdjust3": "Fuer 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Fuer 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
         },
         {
           "name": "🌈 Regenbogen-Tanz",
@@ -187,12 +187,12 @@
           "prepText": "Musik an → alle tanzen, hüpfen, galoppieren wie Einhörner. Musik aus → alle frieren ein wie Eisskulpturen! Wer sich bewegt, bekommt einen Glitzer-Aufkleber auf die Hand — das ist eine Belohnung, kein Rauswerfen.\n\nVariante „Regenbogen-Farben\": Rufe eine Farbe, alle müssen etwas in dieser Farbe im Raum berühren und weiter tanzen.\n\nTipp: Bunte Tücher zum Schwenken machen es 10x magischer. 6 Stück kosten ~3 € bei Action.",
           "steps": [],
           "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Glitzer-Aufkleber sind klein — nur auf Hand/Arm aufbringen, nicht zum Naschen liegen lassen.",
-          "ageAdjust6": "Einfrieren ist noch schwer — lass sie einfach tanzen. Bei Stopp alle auf den Boden setzen (das können sie).",
-          "ageAdjust8": "Einfrieren als Tier-Figur: „Jetzt bist du ein Einhorn!\" — Pose halten.",
           "indoorTip": "Wohnzimmer-Möbel zur Seite schieben, Teppich rollt sich beim Galoppieren auf — kurz fixieren.",
           "outdoorTip": "Auf Wiese mit Tüchern in Regenbogenfarben besonders magisch — Wind macht die Tücher zum Flügel.",
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "ageAdjust3": "Fuer 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Fuer 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
         }
       ],
       "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Saft\"6 Trinkpäckchen\n🍓Obst-Teller200 g Erdbeeren\n🍿Popcorn150 g\n\n💡 „Einhorn-Saft\"?\nApfelschorle oder klare Limo, 2 Tropfen Grenadine oder Johannisbeersaft rein → wird sofort rosa. „Einhorn-Saft\" aufs Etikett schreiben. 3-Jährige glauben das sofort. Kostet nix extra, macht den ganzen Unterschied.",
@@ -276,7 +276,7 @@
     },
     {
       "id": "standard",
-      "label": "Standard — 3 Stunden, vollständige Schicht",
+      "label": "Standard — 2 Stunden, vollständige Schicht",
       "headline": "🎯 Standard — 2 Stunden, rund und gut",
       "intro": "Der Sweet Spot für 3–5-Jährige: genug Programm ohne Überforderung. 4 Aktivitäten, Kuchen, Deko. Die Party, an die sich die Kinder erinnern — und die Eltern nicht bereuen.",
       "timeWindow": "15:00–17:00, 5 Kinder",
@@ -330,12 +330,12 @@
           "prepText": "Pappteller vorher zur Kegel-Form rollen und tackern. Kinder verzieren mit Glitzer-Kleber und Stickern. Am Kopf befestigen → „Du bist jetzt ein echtes Einhorn!\"",
           "steps": [],
           "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband.",
-          "ageAdjust6": "Alles vorbereiten, sie kleben nur drauf. Große Sticker.",
-          "ageAdjust8": "Zusätzlich Ohren aus Pappe ausschneiden und ankleben.",
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "ageAdjust3": "Fuer 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Fuer 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
         },
         {
           "name": "🌈 Regenbogen-Milch-Experiment",
@@ -349,12 +349,12 @@
           "prepText": "Milch in den Teller gießen. Kinder tropfen je eine Farbe rein (du hilfst!). Dann: Wattestäbchen in Spülmittel tunken und in die Milch stippen — Farben „explodieren\" in Regenbogen-Spiralen! Sieht aus wie Magie.\n\nTipp: Milch danach einfach wegschütten (nicht trinken — Spülmittel!). Kosten: quasi 0 €, Effekt: riesig. 3–4 Runden sind normal — danach ist der Effekt weg (Milch gesättigt), frischer Teller hilft.",
           "steps": [],
           "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Lebensmittelfarbe + Spülmittel — KEIN Trinken, Hände waschen vor Snacks. Teller-Standort kippsicher (Tablett mit Rand drunter).",
-          "ageAdjust6": "DU tropfst die Farben, DU hältst das Wattestäbchen — sie dürfen zuschauen und staunen. Das reicht völlig. Nach dem Staunen darf jedes Kind einmal selbst stippen.",
-          "ageAdjust8": "Sie dürfen alles selbst machen. 3–4 Runden sind normal — immer ein frischer Teller Milch.",
           "indoorTip": "Auf Wachstuch oder Tablett platzieren — Milch + Spülmittel-Spritzer sind unausweichlich.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum das funktioniert",
-          "whyItWorks": "Spülmittel zerstört die Oberflächenspannung der Milch. Das Fett „flieht\" und nimmt die Farben mit."
+          "whyItWorks": "Spülmittel zerstört die Oberflächenspannung der Milch. Das Fett „flieht\" und nimmt die Farben mit.",
+          "ageAdjust3": "Fuer 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Fuer 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
         },
         {
           "name": "✨ Sternenstaub suchen",
@@ -368,12 +368,12 @@
           "prepText": "Reis mit Glitzer in die Wanne. Einhorn-Figuren im Reis vergraben. Jedes Kind bekommt einen Löffel und gräbt vorsichtig. Wer ein Einhorn findet, darf es behalten.\n\nWichtig: Immer mehr Figuren als Kinder (bei 5 Kindern → 8 Figuren). So findet jedes Kind mindestens eins — kein Frust.\n\nTipp: Dieses Spiel beruhigt nach dem Kuchen-Zucker-Hoch. Perfekter Rhythmus-Wechsel.",
           "steps": [],
           "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
-          "ageAdjust6": "Figuren nur leicht bedecken. Reis statt Sand (wiederverwendbar, weniger Sauerei). Auf einer alten Tischdecke oder in der Badewanne aufstellen.",
-          "ageAdjust8": "Tiefer vergraben. Augen zu und nur ertasten — welches Einhorn ist das (stehend oder liegend)?",
           "indoorTip": "Wanne in die Badewanne oder auf eine alte Tischdecke — Reis-Körner gehen sonst tagelang aus dem Teppich.",
           "outdoorTip": "Auf der Terrasse oder Wiese großzügig — verstreuter Reis ist Vogelfutter.",
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "ageAdjust3": "Fuer 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Fuer 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
         },
         {
           "name": "🌈 Regenbogen-Tanz",
@@ -387,12 +387,12 @@
           "prepText": "Musik an → tanzen wie Einhörner (galoppieren!). Musik aus → einfrieren! Wer sich bewegt, bekommt einen Glitzer-Aufkleber. Kein Ausscheiden — alle tanzen weiter.",
           "steps": [],
           "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr).",
-          "ageAdjust6": "Einfrieren ist noch schwer — bei Stopp einfach hinsetzen.",
-          "ageAdjust8": "Einfrieren als Figur: „Zeig mir ein Einhorn!\" — Pose halten.",
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "ageAdjust3": "Fuer 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Fuer 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
         }
       ],
       "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Saft\"8 Trinkpäckchen\n🍓Rosa Obst-TellerErdbeeren, Himbeeren\n🥒Gemüse-SticksGurke, Möhre\n🍿Popcorn200 g",
@@ -486,7 +486,7 @@
     },
     {
       "id": "wow",
-      "label": "Wow — 3,5 Stunden, die volle Schicht",
+      "label": "Wow — 2,5 Stunden, die volle Schicht",
       "headline": "✨ Wow — 2,5 Stunden, die volle Magie",
       "intro": "Die Kinder erleben eine „Regenbogen-Zauber-Reise\" — eine zusammenhängende Geschichte in 5 Kapiteln. Jede Station baut auf der vorherigen auf: zuerst werden sie zu Einhörnern (Verkleidung), dann lernen sie Regenbogen-Magie (Milch-Experiment), füttern ihr Einhorn (Ballwurf), suchen den verlorenen Sternenstaub (Schatzsuche) und basteln sich ihren eigenen Zauberstab für den großen Abschluss-Tanz. Aufwand mittel, Erinnerung riesig.",
       "timeWindow": "14:30–17:00, 5 Kinder",
@@ -545,12 +545,12 @@
           "prepText": "Auf den Karton ein Einhorn-Gesicht malen mit großem offenem Maul (ca. 20 cm Durchmesser ausschneiden). Karton an die Wand lehnen oder auf einen Stuhl stellen. Kinder werfen bunte Bälle ins Maul.",
           "steps": [],
           "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband.",
-          "ageAdjust6": "Ganz nah ran (50 cm Abstand). Großes Maul (30 cm). Jeder Wurf ist ein Treffer.",
-          "ageAdjust8": "Weiter weg (1,5 m). Verschiedene Farben = verschiedene „Einhorn-Snacks\" (roter Ball = Erdbeere, gelb = Banane).",
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "ageAdjust3": "Fuer 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Fuer 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
         },
         {
           "name": "🪄 Einhorn-Zauberstab basteln",
@@ -564,12 +564,12 @@
           "prepText": "Du schneidest vorher die Sterne aus Glitzerpappe aus und klebst sie mit Heißklebe oben auf die Stäbe. Kinder dürfen bunte Bänder dran knoten (du hilfst) und den Stab mit Glitzer-Kleber verzieren. Fertig ist der Zauberstab.",
           "steps": [],
           "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband.",
-          "ageAdjust6": "Stab + Stern komplett vorher zusammenkleben. Kinder kleben nur Bänder und Sticker drauf.",
-          "ageAdjust8": "Sie dürfen den Stern selbst auf den Stab kleben (Klebeband) und die Bänder selbst knoten.",
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "ageAdjust3": "Fuer 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Fuer 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
         }
       ],
       "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Saft\"10 Trinkpäckchen\n⭐Stern-Kekse15 Stk. (Ausstecher)\n🍓Rosa Obst-TellerErdbeeren, Himbeeren\n🥒Gemüse-SticksGurke, Möhre\n🍿Popcorn200 g\n🍭Gummibärchen1 Tüte (200 g)\n\n💡 Stern-Kekse ohne Backen:\nFertigen Butterkeks-Teig (Kühlregal, ~2 €) ausrollen, mit Stern-Ausstecher ausstechen, 10 Min. backen, rosa Glasur drüber (Puderzucker + 1 Tropfen Lebensmittelfarbe). 15 Kekse in 20 Minuten. Oder: einfach fertige Butterkekse kaufen und mit rosa Glasur bestreichen — schmeckt den Kindern genauso.",
