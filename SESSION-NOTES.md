@@ -1,3 +1,74 @@
+# Session-Notiz — 22.05.2026 (Nacht: Partyseite Berater-Review + P0-Security-Plan)
+
+**Branch:** `draft` (kein neuer Feature-Branch, nur SESSION-NOTES + Review-Artefakte)
+
+## Was gemacht wurde
+
+1. **3 Kern-HTMLs inspiziert für externen Berater:**
+   - `kindergeburtstag.html` (465 Z., Planer mit SEO-Fallback + React-Mount)
+   - `einladung/piraten/index.html` (1823 Z., extrahiert App-Code nach `C:\tmp\piraten-app-code-only.html`)
+   - `party-worker.js` (1627 Z., Cloudflare Worker für Partyseite)
+
+2. **Berater-Feedback erhalten** (3-Zahnrad-Bewertung):
+   - Idee 88/100, MVP 72/100, Monetarisierung 80/100, Privacy 55-65/100, Scalability 75/100
+   - Stark: Worker+KV, Limits, Affiliate-Wunschliste als Plattform-Hebel
+   - Kritisch: CORS offen, fehlende URL-Validation, Smyths+Lego beide AWIN-ID 15498, kein Host/Gast-Token-Split
+
+3. **Feature-Mapping erstellt** (`C:\tmp\berater-antwort-partyseite.md`):
+   - ✅ Implementiert: editToken-Auth, claimedBy-Reserve, 90-Tage-TTL, Affiliate-Disclosure (2x), WhatsApp-Share, ICS-Download, Editor-Preview, Email-DOI
+   - ⚠️ Identifiziert: CORS=*, AWIN-Duplikat, Foto-Upload existiert
+   - ❌ Fehlt: URL-Validation, Gastgeber-Dashboard, Kinder-UI, Nach-Party-Flow, Google-Maps, sichtbarer Lösch-Hinweis
+
+4. **Berater hat nach Mapping aufgewertet** auf 77/100 aktuell, 88/100 Potenzial.
+
+5. **Authentischer Re-Review (Anti-Sycophancy):**
+   - **Echter P0-XSS-Bug entdeckt:** `esc()` Line 117-120 escapt `<>&"'`, aber NICHT das Protokoll einer URL. Wunsch-Link `javascript:alert(...)` läuft durch und produziert Stored-XSS beim Klick.
+   - **Berater-Scores teils inflationiert** ohne neuen Code-Beweis (Auth 55→75, Sicherheitsreife 55→63 trotz XSS-Lücke)
+   - **Eigene Aufwandsschätzungen korrigiert:** Rate-Limit ohne Durable Objects nicht in 45min sicher machbar (race-conditions in KV); Dashboard 4-6h statt 2h
+   - **Ehrlich:** Real-Score eher 70/100, nicht 77/100
+
+## User-Entscheidungen (Nacht-Session)
+
+- **Foto-Upload bleibt drin** (nicht entfernen)
+- **Nichts offline nehmen** (alle P0-Fixes in-place via wrangler)
+- **P0-Plan revidiert:** Foto-Härtung statt -Entfernung als P1-Paket
+
+## P0-Plan (vorbereitet, noch nicht implementiert)
+
+| # | Task | Aufwand |
+|---|------|---------|
+| 1 | XSS-Fix Wunsch-URLs (`https:` Whitelist input + output) | 30 min |
+| 2 | CORS Origin-Whitelist (3 Domains) | 25 min |
+| 3 | AWIN Smyths/Lego ID-Verifikation im Dashboard | 10 min |
+| 4 | noindex,nofollow + X-Robots-Tag auf Partyseiten | 10 min |
+| 5 | Lösch-Hinweis sichtbar (Editor + Gast) | 15 min |
+
+Total ~90 min, alle add-only/defensive, brechen keine bestehenden Parties.
+
+## P1-Foto-Härtung-Paket (nicht Entfernung)
+
+- MIME-Whitelist (image/jpeg|png|webp)
+- Magic-Bytes-Check (Content-Type-Header allein nicht vertrauen)
+- EXIF-Strip beim Upload (Geo-Tags raus)
+- Max-Dimensions serverseitig
+- Foto-spezifischer Lösch-Hinweis
+
+## Nächste Schritte (für Folge-Session)
+
+- **Start mit P0-1 (XSS-Fix)** auf neuem Branch `feat/party-p0-security`
+- Diff-Review vor Push
+- Danach P0-2 bis P0-5 in einem Rutsch
+- Dann P1-Foto-Härtung
+- Erst danach: Gastgeber-Dashboard
+
+## Artefakte ausserhalb Repo
+
+- `C:\tmp\berater-antwort-partyseite.md` — Feature-Mapping ausführlich
+- `C:\tmp\piraten-app-code-only.html` — Einladungsspiel ohne minified React
+- `C:\tmp\partyseite-worker.js` — Worker-Export für Berater-Inspektion
+
+---
+
 # Session-Notiz — 22.05.2026 (Spät-Abend FINAL: Welle 8-31 — 100% Chrome-Coverage)
 
 **Branch:** `claude/meerjungfrau-elite-2026-05-22` → main (Commit `6549b2b`) → Netlify deployed
