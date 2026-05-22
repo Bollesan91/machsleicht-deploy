@@ -10009,7 +10009,7 @@ var ELITE_MOTTO_DATA = {
             ],
             "safetyRule": "Tempel-Versteck und Stations-Wege ohne Stolperfallen wählen. Beim Loslaufen zum Schatz auf rutschige Böden und Türkanten achten.",
             "ageAdjust6": "Stationen 2 und 4 vereinfachen — bei Station 2 nur 3 Tiere, bei Station 4 dürfen die Kinder dreimal \"wachgemacht\" werden.",
-            "ageAdjust8": "Schwieriger für 8-Jährige: bei Station 3 vier Fragen statt drei; optional 5. Station mit Zusatzbuchstaben — Lösungswort SCHUH statt FUSS (S-C-H-U-H aus Schmetterling-Schlange-Hyäne-Urwald-Hirsch).",
+            "ageAdjust8": "Schwieriger für 8-Jährige: bei Station 3 vier Fragen statt drei; optional 5. Station mit Zusatzbuchstaben — Lösungswort SCHUH statt FUSS (S-C-H-U-H aus Schmetterling-Chamäleon-Hirsch-Urwald-Hyäne).",
             "indoorTip": "Fünf Stationen durch Zimmer und Flur verteilen, Tempel-Versteck markant wählen (unter dem Bücherregal, im Schuhschrank).",
             "outdoorTip": "Stationen über den Garten ziehen, Walkie-Talkies fürs Team einsetzen — die Quest gewinnt draußen an Abenteuer-Atmosphäre.",
             "whyItWorksTitle": "Warum das funktioniert",
@@ -20938,7 +20938,7 @@ var ELITE_MOTTO_DATA = {
       "meta": {
         "aufwand": "mittel (Rührteig + 15 Min. Deko)",
         "kosten": "ca. 5–8 €",
-        "allergiker": "Für Ei-Allergie: fertigen Marmorkuchen vom Bäcker nehmen und nur die Glasur + Krater selbst draufmachen — sieht genauso aus. Glutenfrei: Reismehl-Mischung (Schaer/Bauckhof) statt Weizen. Laktosefrei: Pflanzenmargarine + Hafermilch statt Butter/Milch. Mit Eltern vorab durchsprechen, was im Glasur noch ersetzt werden muss."
+        "allergiker": "Für Ei-Allergie: fertigen Marmorkuchen vom Bäcker nehmen und nur die Glasur + Krater selbst draufmachen — sieht genauso aus. Glutenfrei: Reismehl-Mischung (Schaer/Bauckhof) statt Weizen. Laktosefrei: Pflanzenmargarine + Hafermilch statt Butter/Milch. Mit Eltern vorab durchsprechen, was in der Glasur noch ersetzt werden muss."
       },
       "tips": [
         {
