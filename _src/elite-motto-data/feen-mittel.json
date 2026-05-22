@@ -1,0 +1,1438 @@
+{
+  "_meta": {
+    "source_file": "kindergeburtstag/feen-6-8-jahre.html",
+    "extracted": "2026-05-22",
+    "schema_version": "1.0",
+    "purpose": "Feen 6-8 (mittel) — Phase-B Elite-Slot (analog Einhorn-mittel + feen-klein)",
+    "phase_b_complete": "2026-05-22",
+    "phase_b_method": "Direct draft — Geschlechts-Inklusion (Waldwächter parallel zu Blumenfeen, Krieger-Flügel-Variante), Anti-IP eingehalten (keine geschützten Marken-Anspielungen, eigenes Vokabular Blumenfee/Waldwächter/Elfenkrieger), Codeknacker mit Lösungswort FARN (F-A-R-N, 4 Stationen, jeder Buchstabe genau einmal), 6 preparationWeeks, 8 sosScenarios, FAQ inkl. 'Für Jungen geeignet?', signatureRitual 'Feen-Schwur/Waldwächter-Eid' vollständig befüllt."
+  },
+  "motto": "feen",
+  "ageGroup": "mittel",
+  "ageRange": [
+    6,
+    8
+  ],
+  "title": "🧚 Feen-Kindergeburtstag — 6–8 Jahre",
+  "metaDescription": "Feen-Kindergeburtstag für 6–8-Jährige: 3 fertige Party-Konzepte (Minimal/Standard/Wow) mit Feenwald-Quest, Pflanzen-Chiffre und Zauberbaum-Mythos. Auch für Jungen — Waldwächter-Variante mit Krieger-Flügeln und Elfen-Schwert.",
+  "introParagraph": "Dein Kind wird 6, 7 oder 8 und träumt vom Feenwald? Hier bekommst du drei fertige Party-Konzepte rund um den Zauberbaum-Mythos — von schnell und stressfrei bis zur vollen Feenwald-Quest mit Pflanzen-Chiffre und Geocaching. Jedes Konzept mit Zeitplan, Spielanleitungen, Einkaufsliste und Kosten.\n\n**Auch für Jungen — Waldwächter-Variante:** Statt Schmetterlings-Flügeln gibt es Krieger-Flügel (Blattmuster, dunkelgrün/braun), statt Blüten-Diadem eine Waldkrone aus Eichenlaub. Die Rolle „Waldwächter\" läuft parallel zur Rolle „Blumenfee\" — gleiche Quest, gleiche Prüfungen, andere Ästhetik. Im FAQ und in jedem Spiel zeigen wir die Doppel-Variante.\n\n[🧚 Feen-Geburtstag planen →](/kindergeburtstag?motto=feen&alter=7#planer)",
+  "ageInsight": {
+    "headline": "Was 6–8-Jährige ausmacht — und was das für die Feen-Party heißt",
+    "traits": [
+      {
+        "topic": "Aufmerksamkeit",
+        "detail": "20–30 Min. pro Aktivität realistisch, dann brauchen sie Wechsel. Pflanzen-Quest in 4 Stationen funktioniert, eine 60-Min-Daueraufgabe nicht."
+      },
+      {
+        "topic": "Regeln",
+        "detail": "Können einfache Spielregeln verstehen und einhalten. Pflanzen-Chiffre mit Buchstaben-Stationen ist genau ihr Niveau — Code knacken statt nur sammeln."
+      },
+      {
+        "topic": "Wettbewerb",
+        "detail": "Erster Ehrgeiz ist da — Feen-Team vs. Waldwächter-Team funktioniert. Verlierer brauchen Trost-Preis (Blüten-Anhänger oder Eichel-Talisman reicht)."
+      },
+      {
+        "topic": "Motorik",
+        "detail": "Schreiben, schneiden, kleben, malen geht sicher. Blumenkranz binden und Waldkrone basteln gehen in dem Alter eigenständig — du musst nicht alles vorbinden."
+      },
+      {
+        "topic": "Dauer",
+        "detail": "2,5–3 Stunden ideal. Danach kippt die Stimmung. Lieber kurz und gut als lang und chaotisch."
+      },
+      {
+        "topic": "Essen",
+        "detail": "Mehr als bei Kleinkindern — rechne mit 1,3× der Portionen für 3–5-Jährige. Fingerfood schlägt Besteck. „Waldfrüchte\" (Beeren) und „Elfen-Sandwiches\" (Blüten-Ausstecher) kommen besonders gut an."
+      },
+      {
+        "topic": "Eltern",
+        "detail": "Können kurz abgesetzt werden, müssen aber telefonisch erreichbar sein. Frag Abholzeit vorher ab."
+      }
+    ],
+    "whyMottoFits": "In diesem Alter werden Feen erstmals nicht nur „süß\" empfunden, sondern bekommen eine eigene Story. Die Kinder lieben Regeln, Rituale, Prüfungen — darum funktioniert das Konzept „Zauberbaum-Wächter-Prüfung\" so gut: sie werden als Blumenfeen oder Waldwächter eingeschworen, lösen eine Pflanzen-Chiffre, bestehen vier Quest-Stationen, bekommen am Ende eine Waldwächter-Urkunde. Das Motto ist nicht mehr kitschig-blümchen, sondern ernsthaft magisch — und genau das macht es für Jungen wie Mädchen anschlussfähig.",
+    "whyMottoFitsHeadline": "🧚 Warum Feenwald für 6–8-Jährige besonders gut funktioniert"
+  },
+  "signatureRitual": {
+    "name": "Der Feen-Schwur & Waldwächter-Eid",
+    "subtitle": "Für alle 3 Varianten — beide Rollen parallel",
+    "introText": "Der stärkste Moment der Party passiert in den ersten 5 Minuten nach Ankunft. Aus „sechs Kindern, die sich vielleicht nicht alle kennen\" werden sechs benannte, markierte Wächter des Zauberbaums — und der ganze Quest-Bogen trägt den Rest der Party. Wichtig: Jedes Kind wählt frei zwischen Blumenfee (Schmetterlings-Flügel + Blüten-Diadem) und Waldwächter (Krieger-Flügel + Eichenlaub-Krone). Keine Rolle ist „die für Mädchen\" oder „die für Jungen\" — beide haben gleiches Gewicht, gleiche Prüfungen, gleiche Urkunde.",
+    "setupSteps": [
+      {
+        "title": "Zauberbaum-Beutel vorbereiten",
+        "content": "Stoffbeutel oder kleiner Korb, darin 12 Zettel mit Feen- und Waldwächter-Namen gemischt. Etwas getrocknete Blüten und Eichenlaub-Stücke dazu — beim Reingreifen riecht es nach Wald."
+      },
+      {
+        "title": "Kind kommt an & wählt Rolle",
+        "content": "Erste Wahl: Blumenfee oder Waldwächter? Beides ist gleichwertig. Dann Zettel ziehen — der gezogene Name passt zur gewählten Rolle. Wer den eigenen Vornamen behalten will, behält ihn — kein Zwang."
+      },
+      {
+        "title": "Stirnreif / Waldkrone aufsetzen",
+        "content": "Blumenfee bekommt Blüten-Diadem (Draht-Stirnreif mit Stoffblüten, vorbereitet — 3 Modelle zur Auswahl). Waldwächter bekommt Waldkrone aus Eichenlaub (Karton-Krone, vor der Party mit echtem oder Plastik-Eichenlaub beklebt). Beide Versionen liegen am Ankunfts-Tisch — Kind sucht selbst aus."
+      },
+      {
+        "title": "Schwur sprechen & in den Quest-Pass eintragen",
+        "content": "Gemeinsam laut: „Ich schütze den Zauberbaum, ich teile die Waldfrüchte, ich passe auf meine Wald-Freunde auf.\" Dann Name + Rolle (Fee/Waldwächter) in den Quest-Pass eintragen. Foto mit Krone/Diadem machen — kommt in der Wow-Variante in den Pass."
+      }
+    ],
+    "rolesList": [
+      {
+        "emoji": "🌸",
+        "name": "Lyra Blütenlicht (Blumenfee)",
+        "function": null
+      },
+      {
+        "emoji": "🍃",
+        "name": "Eron Laubschild (Waldwächter)",
+        "function": null
+      },
+      {
+        "emoji": "🌼",
+        "name": "Mira Pollenglanz (Blumenfee)",
+        "function": null
+      },
+      {
+        "emoji": "🌳",
+        "name": "Thoran Eichenherz (Waldwächter)",
+        "function": null
+      },
+      {
+        "emoji": "🦋",
+        "name": "Nyla Falterstaub (Blumenfee)",
+        "function": null
+      },
+      {
+        "emoji": "🪶",
+        "name": "Faron Federwald (Waldwächter)",
+        "function": null
+      },
+      {
+        "emoji": "🌷",
+        "name": "Selma Knospenruf (Blumenfee)",
+        "function": null
+      },
+      {
+        "emoji": "🌿",
+        "name": "Kael Farnflüsterer (Waldwächter)",
+        "function": null
+      },
+      {
+        "emoji": "🌺",
+        "name": "Iva Tauperle (Blumenfee)",
+        "function": null
+      },
+      {
+        "emoji": "🍂",
+        "name": "Brann Mooswächter (Waldwächter)",
+        "function": null
+      },
+      {
+        "emoji": "✨",
+        "name": "Elin Funkelflug (Blumenfee)",
+        "function": null
+      },
+      {
+        "emoji": "🗡️",
+        "name": "Aldor Elfenklinge (Waldwächter)",
+        "function": null
+      }
+    ],
+    "optOutNote": "Kein Zwang. Wer den eigenen Namen behalten möchte — passt auch. Wer keine Flügel will (Empfindlichkeit auf dem Rücken, persönliche Abneigung): Nur Diadem oder Waldkrone reicht völlig. Wer weder Fee noch Wächter sein will: „Pflanzenforscher der Akademie\" ist die dritte Rolle — bekommt ein Notizbuch statt Krone und darf an jeder Quest-Station die Pflanze in einem Buch nachschlagen. Niemand wird ausgeschlossen.",
+    "materialNote": "[Blüten-Stirnreif-Set*](https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht-21) (~6 € für 6 Stück), Karton + Eichenlaub für Waldkronen (Bastelladen ~3 €, oder echtes Laub sammeln), Stoffbeutel (Stoffrest oder ~2 €), die Namensliste oben einfach ausdrucken und zerschneiden."
+  },
+  "variants": [
+    {
+      "id": "minimal",
+      "label": "Minimal — 2 Stunden, minimaler Aufwand",
+      "headline": "🌿 Minimal — 2 Stunden, minimaler Aufwand",
+      "intro": "Funktioniert auch wenn du gestern erst angefangen hast zu planen. Zwei Spiele, Kuchen, Ausmalbilder, fertig. Kein Kind geht unglücklich nach Hause — Fee oder Waldwächter, beide haben Spaß.",
+      "timeWindow": "14:00–16:00, 6 Kinder",
+      "schedule": [
+        {
+          "time": "14:00",
+          "title": "Zauberbaum-Beutel & Ausmalbilder",
+          "description": "Jedes Kind wählt Rolle (Blumenfee oder Waldwächter), zieht beim Reinkommen einen Namen aus dem Zauberbaum-Beutel (Details oben im Ritual-Block), bekommt Blüten-Diadem oder Eichenlaub-Krone aufgesetzt. Danach: 3–4 verschiedene Ausmalbilder pro Kind auf den Tisch (Mix aus Feen, Schmetterlingen, Elfen, Waldwesen) + Buntstifte (Grün, Braun, Pastelltöne). Hält die Ersten beschäftigt bis alle da sind. Kostenlose Vorlagen z.B. auf [kribbelbunt.de](https://www.kribbelbunt.de/) oder [malvorlagen-seite.de](https://malvorlagen-seite.de/)."
+        },
+        {
+          "time": "14:25",
+          "title": "🌿 Pflanzen-Quest: Codeknacker FARN",
+          "description": "Hauptspiel, 30 Min. — Anleitung unten. 4 Stationen, an jeder ein Buchstabe (F → A → R → N), am Ende öffnet sich die Zauberbaum-Schatzkiste."
+        },
+        {
+          "time": "14:55",
+          "title": "🎂 Kuchen & Waldfrüchte-Punsch",
+          "description": "Blüten-Kuchen + „Waldfrüchte-Punsch\" (Apfelschorle mit Tropfen Beerensaft — wird hellrosa, sieht aus wie Feenwasser). 20 Min. Ruhe für alle."
+        },
+        {
+          "time": "15:20",
+          "title": "🦋 Schmetterling-Bestimmungs-Quiz",
+          "description": "Ruhiges Quiz, 15 Min. — Bildkarten von 6 echten Schmetterlingen (Tagpfauenauge, Zitronenfalter, Kohlweißling, Schwalbenschwanz, Distelfalter, Admiral). Wer kennt welchen? Pflanzen-Wissen + Spaß."
+        },
+        {
+          "time": "15:40",
+          "title": "🎁 Mitgebsel & Abholung",
+          "description": "Tüten verteilen. Tipp: Restliche Ausmalbilder + gefundener Talisman aus der Quest mitgeben.\n\n💡 Warum nur 2 Spiele reichen:\n6–8-Jährige wollen nicht durchanimiert werden. Zwischen den beiden Spielen kommen Kuchen und Ausmalbilder — das ist genug Struktur. Weniger Programm = weniger Stress für dich, weniger Reizüberflutung für die Kinder. Die Pflanzen-Quest ist schon der Höhepunkt."
+        }
+      ],
+      "games": [
+        {
+          "name": "🌿 Pflanzen-Quest: Codeknacker FARN",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 30,
+          "minAge": 6,
+          "loudness": "ruhig",
+          "effort": "mittel",
+          "material": "4 echte oder gedruckte Pflanzen (Farn, Ahornblatt, Rose oder Rosenblüte, Nadelzweig), 4 beschriftete Umschläge mit Buchstaben (F/A/R/N), 1 Zauberbaum-Schatzkiste (Schuhkarton mit grüner Pappe + Moos beklebt, Inhalt: 6 Talismane — Glasstein, Eichel, Blüten-Anhänger), 4 Quest-Pässe (DIN-A6-Karton mit 4 Stempel-Feldern)",
+          "prepText": "An 4 Stationen liegt je eine Pflanze + Umschlag mit Buchstaben. Reihenfolge nicht vorgegeben — die Kinder müssen rausfinden, welches Wort die Buchstaben ergeben (F-A-R-N). Lösung in den Quest-Pass schreiben. Wenn alle 4 Buchstaben gesammelt → Schatzkiste am Zauberbaum öffnet sich.",
+          "steps": [
+            {
+              "n": 1,
+              "content": "Station 1 — Farn: Zeig den Kindern einen Farn (echt oder Bild). Buchstabe: F. „Welche Pflanze hat keine Blüten, sondern Sporen?\""
+            },
+            {
+              "n": 2,
+              "content": "Station 2 — Ahornblatt: Großes 5-zackiges Blatt zeigen. Buchstabe: A. „Welcher Baum gibt im Frühling Sirup?\""
+            },
+            {
+              "n": 3,
+              "content": "Station 3 — Rose: Eine Rosenblüte (echt oder getrocknet). Buchstabe: R. „Welche Blume hat Dornen und duftet süß?\""
+            },
+            {
+              "n": 4,
+              "content": "Station 4 — Nadelzweig (Tanne/Fichte): Zweig mit Nadeln. Buchstabe: N. „Welcher Baum hat keine Blätter, sondern was?\""
+            },
+            {
+              "n": 5,
+              "content": "Lösung F-A-R-N in den Quest-Pass schreiben — gemeinsam laut rufen, Schatzkiste öffnet sich."
+            }
+          ],
+          "safetyRule": "Pflanzen-Sicherheit: Nur ungiftige, bekannte Pflanzen verwenden — KEINE Maiglöckchen, KEIN Eisenhut, KEIN Fingerhut. Farn, Ahorn, Rose, Tanne sind alle unbedenklich beim Anfassen. Hände waschen nach der Quest (manche Kinder sind allergisch auf Birken-Pollen, Gräser etc.). Bei Rosen: Dornen vorher abschneiden.",
+          "ageAdjust6": "Buchstaben groß auf die Umschläge schreiben — leichter zu erkennen. Du flüsterst notfalls die Pflanzen-Antwort, das Wort FARN müssen sie selbst zusammensetzen.",
+          "ageAdjust8": "Bonus-Frage pro Station: „In welchem Lebensraum wächst Farn?\" (Wald, Schatten, feucht). Wer alle 4 Bonus-Fragen richtig hat, bekommt einen Extra-Talisman.",
+          "indoorTip": "4 Räume oder 4 Ecken eines großen Raums — Stationen mit Stuhl + Karton markieren.",
+          "outdoorTip": "Im Garten an echten Pflanzen ablaufen — wenn Farn/Rose/Nadelbaum tatsächlich da stehen, ist es authentischer.",
+          "whyItWorksTitle": "Warum die Pflanzen-Chiffre für 6–8 funktioniert",
+          "whyItWorks": "Erste Lese-Sicherheit + erste Botanik-Neugier treffen perfekt zusammen. Sie lernen, dass jede Pflanze einen Namen hat (Bildungswert), dass Buchstaben ein Wort ergeben (Lese-Kompetenz), und dass Teamarbeit zur Lösung führt (Sozial). Anders als bei reinen Schatzsuchen müssen sie hier mit-denken — und genau das lieben sie in dem Alter."
+        },
+        {
+          "name": "🦋 Schmetterling-Bestimmungs-Quiz",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 15,
+          "minAge": 6,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "6 Bildkarten mit echten Schmetterlingen (Tagpfauenauge, Zitronenfalter, Kohlweißling, Schwalbenschwanz, Distelfalter, Admiral) — gedruckt von Google Bilder oder gekauft, 1 Stift pro Kind, 1 Punktezettel",
+          "prepText": "Karten verdeckt auf den Tisch. Du hebst eine hoch: „Welcher Schmetterling ist das?\" Wer zuerst die Hand hebt + den Namen sagt, bekommt 1 Punkt. Falsch = anderes Kind darf. Sieger bekommt einen Extra-Talisman (Schmetterlings-Anhänger).",
+          "steps": [
+            {
+              "n": 1,
+              "content": "Bildkarten der 6 Schmetterlinge bereitlegen — Bilder vorher selbst kurz angucken, damit du weißt, welcher welcher ist."
+            },
+            {
+              "n": 2,
+              "content": "Erste Runde: Erklärungsrunde — du zeigst alle 6 Karten, sagst kurz den Namen. „Das ist der Schwalbenschwanz — der mit den Schwänzchen hinten.\""
+            },
+            {
+              "n": 3,
+              "content": "Zweite Runde: Quiz. Karte hoch, wer ruft als Erster den Namen? Punkt notieren."
+            },
+            {
+              "n": 4,
+              "content": "Bonus-Frage: „Welche Pflanze frisst die Raupe vom Kohlweißling?\" (Antwort: Kohl). Bildungswert obendrauf."
+            }
+          ],
+          "safetyRule": "Sichtaufsicht durch Erwachsene; Bildkarten sind unbedenklich. Bei lebenden Schmetterlingen (Garten): nicht anfassen, nur beobachten — Flügelschuppen sind empfindlich.",
+          "ageAdjust6": "Multiple Choice (3 Antworten als Wahlmöglichkeit unter die Karte legen).",
+          "ageAdjust8": "Bonus: „Welcher Schmetterling überwintert als erwachsenes Tier?\" (Tagpfauenauge, Zitronenfalter).",
+          "indoorTip": "Am Tisch reicht völlig.",
+          "outdoorTip": "Im Garten: wenn ein echter Schmetterling vorbeifliegt, ist es perfekt — Buchwissen + Realität.",
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        }
+      ],
+      "food": "🎂 Blüten-Kuchen (Gugelhupf mit Blüten-Deko) 1 Stück\n💧 „Waldfrüchte-Punsch\" (Apfelschorle + Beerensaft) 8 Becher\n🍓 Waldfrüchte-Teller (Beeren, Trauben) 250 g\n🍞 Elfen-Sandwiches (mit Blüten-Ausstecher) 6 Stück\n🍿 Popcorn 200 g\n\n💡 „Waldfrüchte-Punsch\"?\nApfelschorle in Gläser, 2 Tropfen Beerensaft (Heidelbeere, Holunder) rein — wird sofort feenrosa. „Waldfrüchte-Punsch der Zauberquelle\" aufs Etikett schreiben. Sorgt garantiert für Staunen. Kostet nix extra, macht den Unterschied.",
+      "decoration": "🎈 Pastell-Luftballons (grün/rosa/lila) 6 Stk. ~2 €\n🌿 Eichenlaub + Blüten auf dem Tisch Kostenlos (im Garten sammeln)\n🎉 Girlande mit Schmetterling-Motiv ~3 € (DM/Action)\n🍃 Tüllstoff über Tisch drapieren ~3 € (Bastelladen oder Reste)\n\n💡 Minimal-Deko-Regel:\n3 Dinge reichen: Ballons, Girlande, Eichenlaub + Blüten auf dem Tisch. Die Stirnreif/Waldkrone-Auswahl und das Pflanzen-Quest SIND die Deko — die Kinder interessieren sich für das Erlebnis, nicht für die Raumdeko.",
+      "giveaways": "🌿 1 Talisman aus der Pflanzen-Quest (Glasstein, Eichel oder Blüten-Anhänger — haben sie selbst gefunden, emotionaler Wert)\n🖍️ 2–3 Ausmalbilder zum Mitnehmen\n🍭 1 kleine Tüte Beeren-Bonbons oder Blüten-Gummibärchen\n\nIn grüne oder weiße Papiertüte (10 Stk. ~1–2 € bei DM/Action) mit „Zauberbaum-Geschenke für ___\" beschriften. Kosten: ~2 € pro Kind.",
+      "shoppingList": [
+        {
+          "emoji": "🌸",
+          "label": "Blumenkranz-Stirnreif (6 Stk., Feen-Variante)",
+          "url": "https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Variant-Defining: Stirnreif ist der visuelle Anker für Blumenfee-Rolle — ohne kollabiert die halbe Rollen-Auswahl."
+        },
+        {
+          "emoji": "🍃",
+          "label": "Eichenlaub-Kronen (Bastelmaterial Karton + Blätter)",
+          "url": null,
+          "priceEur": 3,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Variant-Defining für Waldwächter-Rolle — Geschlechts-Inklusion steht oder fällt mit der Krone als Alternative."
+        },
+        {
+          "emoji": "🌿",
+          "label": "Pflanzen für Quest (Farn/Ahorn/Rose/Nadelzweig)",
+          "url": null,
+          "priceEur": 0,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Quest-Defining — ohne 4 Pflanzen kollabiert der Codeknacker. Aus Garten/Wald sammeln = 0€."
+        },
+        {
+          "emoji": "🎁",
+          "label": "Talismane für Schatzkiste (Glassteine, Eicheln)",
+          "url": "https://www.amazon.de/s?k=glassteine+deko+kinder&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Quest-Belohnung am Ende der Pflanzen-Chiffre — ohne Belohnung verpufft die Quest-Klimax."
+        },
+        {
+          "emoji": "🦋",
+          "label": "Schmetterling-Bildkarten (Druck)",
+          "url": null,
+          "priceEur": 0,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Bildungswert + Quiz-Spiel-Mechanik — Bilder aus Google selbst drucken kostet 0€."
+        },
+        {
+          "emoji": "🧃",
+          "label": "Apfelschorle + Beerensaft",
+          "url": null,
+          "priceEur": 5,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Getränke nicht optional — 6 durstige Feen/Wächter ohne Trinken läuft Party nur 30 Min."
+        },
+        {
+          "emoji": "🍿",
+          "label": "Popcorn-Mais + Snacks",
+          "url": null,
+          "priceEur": 4,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Salzige Beilage rundet ab, aber Kuchen + Beeren tragen die 2h-Slot ohne Showstopper."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Backmischung + Blüten-Deko",
+          "url": null,
+          "priceEur": 6,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Blüten-Kuchen ist sozialer Pflichtteil und motto-zentrales Symbol."
+        },
+        {
+          "emoji": "📄",
+          "label": "Quest-Pässe + Ausmalbilder (Druck)",
+          "url": null,
+          "priceEur": 0,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "0€-Print trägt Zauberbaum-Beutel + Quest-Pass — strukturelle Klammer der Party."
+        },
+        {
+          "emoji": "🍭",
+          "label": "Beeren-Bonbons / Blüten-Gummibärchen (Mitgebsel)",
+          "url": null,
+          "priceEur": 2,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Trost-Preis-Funktion, aber Talisman-Vorrat tut's für Verlierer-Trost ebenso."
+        },
+        {
+          "emoji": "🛍️",
+          "label": "Papiertüten + Stoffbeutel (DM/Action)",
+          "url": null,
+          "priceEur": 2,
+          "hasAffiliate": false,
+          "category": "habIchVielleicht",
+          "categoryReasoning": "Stoffbeutel/Stoffrest ist im Haushalt oft da, Papiertüten gibt's auch in jeder Schublade."
+        }
+      ],
+      "estimatedCostEur": 50,
+      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
+    },
+    {
+      "id": "standard",
+      "label": "Standard — 3 Stunden, vollständige Quest",
+      "headline": "🎯 Standard — 3 Stunden, klassische Feenwald-Party",
+      "intro": "Der Sweet Spot: genug Programm ohne Stress. Vier Aktivitäten, Kuchen, Deko, Mitgebsel. Die Party, von der die Kinder am Montag in der Schule erzählen. Blumenfeen und Waldwächter machen alle Stationen gemeinsam — Teamwork statt Geschlechter-Spaltung.",
+      "timeWindow": "14:00–17:00, 6 Kinder",
+      "schedule": [
+        {
+          "time": "14:00",
+          "title": "Zauberbaum-Beutel & Stirnreif/Waldkrone basteln",
+          "description": "Beim Reinkommen wählt jedes Kind seine Rolle (Blumenfee oder Waldwächter), zieht den Quest-Namen aus dem Zauberbaum-Beutel (siehe Ritual-Block oben), bekommt entweder Blüten-Diadem oder Eichenlaub-Krone. Danach 15 Min. Verfeinerung: eigene Blüten/Blätter zusätzlich draufkleben (Bastel-Tisch mit Stoffblüten, Eichenlaub, Heißkleber-Pen-Stift). Fertige Kopfbedeckung aufsetzen → „Lyra Blütenlicht, du bist bereit für deine erste Prüfung.\""
+        },
+        {
+          "time": "14:30",
+          "title": "🌿 Pflanzen-Quest: Codeknacker FARN (4 Stationen)",
+          "description": "DER Wow-Moment der Standard-Variante. 30 Min. — 4 Stationen, jedes Kind sammelt 4 Buchstaben (F→A→R→N), Lösungswort öffnet die Zauberbaum-Schatzkiste."
+        },
+        {
+          "time": "15:00",
+          "title": "🦋 Schmetterling-Bestimmungs-Quiz",
+          "description": "Ruhigeres Bildkarten-Quiz nach dem Quest-Hype. 20 Min. konzentriertes Mit-Raten."
+        },
+        {
+          "time": "15:25",
+          "title": "🎂 Kuchen & Waldfrüchte-Punsch",
+          "description": "Blüten-Kuchen mit Zucker-Blüten-Deko. Happy Birthday singen. 25 Min."
+        },
+        {
+          "time": "15:55",
+          "title": "💃 Elfen-Tanz oder Schwertkampf-Choreographie",
+          "description": "Doppel-Aktivität: Blumenfeen tanzen Elfen-Tanz mit Schleier (langsame Musik), Waldwächter machen Schaumstoff-Schwertkampf-Choreographie (auf Kommando: hoch-tief-Kreis-vor). Beide Gruppen 20 Min. parallel — Helfer übernimmt eine Gruppe."
+        },
+        {
+          "time": "16:20",
+          "title": "🌺 Blumenkranz binden / Waldkrone vervollständigen",
+          "description": "Ruhiger Abschluss. 20 Min. — Blumenfeen binden zusätzlich kleinen Blumenkranz für ihre Mama daheim, Waldwächter flechten Eichenlaub-Armband. Geht als Mitgebsel mit."
+        },
+        {
+          "time": "16:45",
+          "title": "🎁 Mitgebsel & Abholung",
+          "description": "Talisman + Stirnreif/Waldkrone + Bastel-Geschenk + Süßes in Tüte. Fertig.\n\n💡 Rhythmus-Regel:\nImmer abwechseln: laut → leise → laut → leise. Quest (aktiv) → Quiz (ruhig) → Kuchen (Pause) → Tanz/Schwertkampf (laut) → Blumenkranz binden (ruhig). So kippt die Stimmung nie."
+        }
+      ],
+      "games": [
+        {
+          "name": "🌸 Stirnreif/Waldkrone verfeinern (Ankunfts-Aktivität)",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 15,
+          "minAge": 6,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "[Blüten-Stirnreif-Set*](https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht-21) (~6 € für 6 Stk.), Karton-Kronen für Waldwächter (selbst zugeschnitten oder Bastelladen), Stoffblüten (~3 € Tüte), Eichenlaub (gesammelt oder Plastik), Klebepunkte oder Tesa (KEIN Heißkleber bei 6-Jährigen — Verbrennungsgefahr)",
+          "prepText": "Perfekte Ankunfts-Aktivität: Stirnreife und Waldkronen-Rohlinge liegen schon auf dem Tisch, wenn die Kinder reinkommen. Jedes Kind wählt Rolle und verziert seine Kopfbedeckung — Feen kleben Blüten, Wächter kleben Eichenlaub und Federn. Fertig aufsetzen.",
+          "steps": [
+            {
+              "n": 1,
+              "content": "Tisch vorher decken: links Feen-Materialien (Blüten, rosa/lila Bänder), rechts Waldwächter-Materialien (Laub, braune/grüne Bänder, kleine Federn)."
+            },
+            {
+              "n": 2,
+              "content": "Kind wählt Seite — keine Beeinflussung. Beide Tische sind gleich „cool\" dekoriert."
+            },
+            {
+              "n": 3,
+              "content": "Mit Klebepunkten verzieren — Erwachsener hilft beim Festmachen am Stirnreif."
+            },
+            {
+              "n": 4,
+              "content": "Fertige Krone aufsetzen, Quest-Name vorlesen, Foto."
+            }
+          ],
+          "safetyRule": "Glitzer-Sicherheit: KEIN loser Glitzer auf Augen-Höhe. Wenn Glitzer benutzt wird, dann Glitzer-Kleber (in Tube) — kein Streu-Glitzer für 6-Jährige. Bei Kontakt mit Auge: sofort mit Wasser spülen, nicht reiben. KEIN Heißkleber für Kinder — nur Erwachsene oder Klebepunkte verwenden. Bei Pollen-Allergie: Stoffblüten statt echte Blüten.",
+          "ageAdjust6": "Vorgefertigte Stirnreife mit nur 2-3 Stellen zum Verzieren — sonst überfordert.",
+          "ageAdjust8": "Komplett offen — die wollen ihre Krone individueller, mit Glitzer-Kleber, kleinen Perlen, Schleifen.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
+          "name": "🌿 Pflanzen-Quest: Codeknacker FARN",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 30,
+          "minAge": 6,
+          "loudness": "ruhig",
+          "effort": "mittel",
+          "material": "4 echte Pflanzen (Farn, Ahornblatt, Rose, Nadelzweig), 4 Umschläge mit Buchstaben F/A/R/N, 1 Zauberbaum-Schatzkiste (mit Moos beklebter Karton), 6 Talismane drin, 6 Quest-Pässe",
+          "prepText": "Wie in Minimal — aber hier als „Zweite Prüfung der Zauberbaum-Wächter-Akademie\" angekündigt. Stationen werden 1-2 Tage vorher aufgebaut, an den Pflanzen die Quest-Aufgaben in versteckten Umschlägen. Lösungswort F-A-R-N öffnet die Kiste.",
+          "steps": [
+            {
+              "n": 1,
+              "content": "Station 1 (Farn-Pflanze): Buchstabe F. „Diese Pflanze ist älter als Dinosaurier — sie hatte schon Sporen, als es noch keine Blumen gab.\""
+            },
+            {
+              "n": 2,
+              "content": "Station 2 (Ahornblatt): Buchstabe A. „Im Herbst werden meine Blätter rot — und mein Saft schmeckt süß.\""
+            },
+            {
+              "n": 3,
+              "content": "Station 3 (Rose): Buchstabe R. „Ich habe Dornen zum Schutz und Duft zum Locken — was bin ich?\""
+            },
+            {
+              "n": 4,
+              "content": "Station 4 (Nadelzweig): Buchstabe N. „Ich bin grün im Winter, wenn alle anderen Bäume nackt sind — woran liegt das?\""
+            },
+            {
+              "n": 5,
+              "content": "Lösungswort F-A-R-N gemeinsam rufen — Zauberbaum-Schatzkiste öffnet sich."
+            }
+          ],
+          "safetyRule": "Pflanzen-Sicherheit: Nur ungiftige Pflanzen (Farn, Ahorn, Rose, Tanne) — KEINE Maiglöckchen, KEIN Eisenhut, KEIN Fingerhut. Bei Rosen: Dornen vorher abschneiden. Hände waschen nach der Quest. Bei Pollen-Allergie: gedruckte Bilder statt echter Pflanzen.",
+          "ageAdjust6": "Buchstaben groß und farbig auf den Umschlägen — leichter zuordenbar.",
+          "ageAdjust8": "Bonus: nach jedem Buchstaben eine Pflanzen-Spur (Fußabdruck aus Blättern) zur nächsten Station — Detektiv-Element für die Älteren.",
+          "indoorTip": "Stationen in 4 Räume verteilen — Pflanzen auf Stühle, Umschläge darunter.",
+          "outdoorTip": "Im Garten an echten Pflanzen — wenn Farn/Rose/Nadelbaum tatsächlich da stehen, ist es authentischer.",
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
+          "name": "🦋 Schmetterling-Bestimmungs-Quiz",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 20,
+          "minAge": 6,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "6 Bildkarten Schmetterlinge, optional ein gerahmtes Schmetterlings-Poster zum Nachschlagen, 1 Stift pro Kind, Punktezettel",
+          "prepText": "Du zeigst Karten der Reihe nach. Erste Runde: Erklär-Runde. Zweite Runde: Quiz mit Punkten. Bonus-Runde: Lebensweise — welcher Schmetterling überwintert, welcher fliegt nachts, welcher trinkt Brennnessel-Saft.",
+          "steps": [],
+          "safetyRule": "Sichtaufsicht durch Erwachsene; Bildkarten unbedenklich. Bei lebenden Schmetterlingen: nicht anfassen, Flügelschuppen sind empfindlich.",
+          "ageAdjust6": "Multiple Choice (3 Antworten zur Auswahl unter jeder Karte).",
+          "ageAdjust8": "Offen mit Lebensweise-Bonus-Fragen.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
+          "name": "💃 Elfen-Tanz / 🗡️ Schwertkampf-Choreographie (parallel)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 20,
+          "minAge": 6,
+          "loudness": "laut",
+          "effort": "mittel",
+          "material": "Bluetooth-Box + Spotify-Playlist „Magic Forest\" oder „Celtic Music\", 6 Tüllschleier (~3 € Bastelladen) für Feen, 6 Schaumstoff-Stäbe für Waldwächter (~5 € als Set Amazon — KEIN Holz, KEIN Plastik mit harten Kanten)",
+          "prepText": "Zwei parallele Gruppen — Helfer übernimmt eine. Blumenfeen tanzen mit Tüllschleiern zu langsamer Musik (Drehen, Armkreise, Sprünge). Waldwächter lernen Schwertkampf-Choreographie (auf Kommando: 'Hoch! Tief! Kreis! Vor!' — 4 Bewegungen, dann durchwechseln). Beide Gruppen ca. 10 Min. üben, dann Show füreinander.",
+          "steps": [
+            {
+              "n": 1,
+              "content": "Gruppen einteilen: Wer hat Tüllschleier (Blumenfeen)? Wer Schaumstoff-Stab (Waldwächter)? Wer beides will, darf wechseln."
+            },
+            {
+              "n": 2,
+              "content": "Feen-Tanz: Du zeigst 4 Bewegungen vor (Drehen, Beuge, Sprung, Schleier-Welle). Kinder machen nach, dann zu Musik."
+            },
+            {
+              "n": 3,
+              "content": "Wächter-Schwertkampf: Helfer zeigt 4 Kommandos (Hoch/Tief/Kreis/Vor). Kinder reagieren auf Ruf. Niemals direkt aufeinander schlagen — nur in die Luft."
+            },
+            {
+              "n": 4,
+              "content": "Show-Runde: Feen tanzen für Wächter, Wächter zeigen Schwertkampf für Feen — Applaus, kein Wettbewerb."
+            }
+          ],
+          "safetyRule": "Schaumstoff-Stäbe ausschließlich aus weichem Material — KEIN Holz, KEIN Hartplastik. Regel klar ansagen: 'Nie ins Gesicht, nie auf den Kopf, nur in die Luft.' Bei kleinen Räumen: Wächter-Gruppe in Garten/Flur, Feen-Tanz im Wohnzimmer. Sichtaufsicht durch Erwachsene während der gesamten Aktivität.",
+          "ageAdjust6": "Nur 2 Kommandos statt 4 (Hoch/Tief), kürzere Tanz-Sequenz.",
+          "ageAdjust8": "Komplette Choreographie + freie Kür am Ende.",
+          "indoorTip": null,
+          "outdoorTip": "Im Garten ist Schwertkampf-Choreographie besser — mehr Platz, kein Lampenschirm-Risiko.",
+          "whyItWorksTitle": "Warum die Doppel-Aktivität funktioniert",
+          "whyItWorks": "Geschlechts-Inklusion ohne Belehrung. Beide Aktivitäten sind körperlich aktiv, beide sind kunstvoll choreographiert — Tanz ist nicht weicher, Schwertkampf ist nicht harter. Wer als Fee Schwertkampf machen will, darf wechseln. Wer als Wächter tanzen will, auch. Die Doppel-Struktur signalisiert: beide Welten sind gleich wertvoll."
+        },
+        {
+          "name": "🌺 Blumenkranz binden / 🍂 Eichenlaub-Armband flechten",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 20,
+          "minAge": 6,
+          "loudness": "ruhig",
+          "effort": "mittel",
+          "material": "Stoffblüten (~3 € Tüte für 50 Stück), Eichenlaub (gesammelt) oder Plastik-Eichenlaub (~3 €), grüne Pfeifenputzer (~2 € für 20 Stk.), braune Kordel (~2 €), Schere (kindersicher)",
+          "prepText": "Feen-Gruppe: 3 Pfeifenputzer als Ring formen, Stoffblüten daran festwickeln. Wächter-Gruppe: Kordel als Armband-Basis, Eichenlaub und kleine Eicheln einflechten. Beide Bastel-Geschenke gehen als Mitgebsel mit (für Mama oder Geschwister daheim).",
+          "steps": [],
+          "safetyRule": "Sichtaufsicht durch Erwachsene; kindersichere Schere verwenden. Pflanzen-Sicherheit: Eichenlaub ist unbedenklich, aber bei Eichel-Aufschluck-Gefahr bei Geschwistern auf Eichenlaub-Stücke statt ganze Eicheln achten. KEIN Heißkleber für 6–8-Jährige — Klebepunkte oder Pfeifenputzer-Wickeltechnik.",
+          "ageAdjust6": "Vorgewickelte Basis-Ringe — Kind klebt nur Blüten/Laub drauf.",
+          "ageAdjust8": "Komplett selber: Pfeifenputzer-Ring formen, Festknoten, mehrere Lagen verzieren.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        }
+      ],
+      "food": "🎂 Blüten-Kuchen 1 Gugelhupf\n💧 „Waldfrüchte-Punsch\" 12 Becher\n🍞 Elfen-Sandwiches 12 Stück (mit Blüten-Ausstecher)\n🍓 Waldfrüchte-Teller Erdbeeren, Trauben, Heidelbeeren\n🍿 Popcorn 250 g\n🍯 Honig-Brötchen 6 Stück\n🍭 Blüten-Gummibärchen 1 Tüte (200 g)",
+      "decoration": "🧚 Feen/Wald-Teller & Becher Set ~8 €\n🎈 Pastell-Luftballons (grün/rosa/lila) 10 Stk. ~3 €\n🌿 Eichenlaub-Girlande 1 Stk. ~4 € (oder selbstgemacht aus echtem Laub)\n🍃 Tüllstoff über Tisch und Decke Kostenlos (Stoffreste) oder ~5 €\n🌸 Blüten in kleinen Vasen Kostenlos (Garten)\n\n💡 Feenwald-Tisch-Trick:\nTischdecke grün oder weiß, darüber Eichenlaub und Stoffblüten verstreut. Dazwischen kleine Glasstein-Häufchen („Feentränen\") und Tannenzapfen. Sieht sofort magisch aus, kostet fast nix, dauert 10 Minuten. Noch besser: die Snack-Teller in Wald-Farben (grünes Popcorn aus essbarer Farbe, rosa Erdbeeren, dunkelblaue Heidelbeeren).",
+      "giveaways": "🌸 Stirnreif oder 🍂 Waldkrone (selbst verziert)\n🌺 Blumenkranz oder 🍃 Eichenlaub-Armband (selbst gebastelt)\n🌿 Talisman aus der Pflanzen-Quest\n🦋 Schmetterling-Bildkarte (zum Behalten)\n🍭 1 Tüte Blüten-Gummibärchen\n\nAlles in grüne oder rosa Papiertüte (10 Stk. ~1–2 € bei DM/Action), beschriftet mit „Zauberbaum-Geschenke für Lyra ___\". Kosten: ~3 € pro Kind.",
+      "shoppingList": [
+        {
+          "emoji": "🌸",
+          "label": "Blüten-Stirnreif-Set (6 Stk.)",
+          "url": "https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Variant-Defining: Visueller Anker der Blumenfee-Rolle, ohne kollabiert die Rollen-Auswahl."
+        },
+        {
+          "emoji": "🍃",
+          "label": "Eichenlaub-Kronen + Bastel-Karton",
+          "url": null,
+          "priceEur": 3,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Variant-Defining für Waldwächter-Rolle — Geschlechts-Inklusion ohne diese Option bricht zusammen."
+        },
+        {
+          "emoji": "🌷",
+          "label": "Stoffblüten (große Tüte)",
+          "url": "https://www.amazon.de/s?k=stoffblueten+basteln+kinder&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Bastel-Defining für Stirnreif-Verfeinerung UND Blumenkranz binden — zwei Aktivitäten basieren darauf."
+        },
+        {
+          "emoji": "🌿",
+          "label": "Pfeifenputzer + grüne Kordel",
+          "url": null,
+          "priceEur": 4,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Direkter Anhang an Blumenkranz/Eichenlaub-Armband — beide Bastel-Mitgebsel brauchen die Basis-Materialien."
+        },
+        {
+          "emoji": "🗡️",
+          "label": "Schaumstoff-Stäbe (6 Stk., Schwertkampf)",
+          "url": "https://www.amazon.de/s?k=schaumstoff+schwert+kinder+set&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Variant-Defining für Waldwächter-Choreographie — ohne weiche Stäbe kein sicheres Schwertkampf-Spiel."
+        },
+        {
+          "emoji": "🎭",
+          "label": "Tüllschleier (6 Stk., Elfen-Tanz)",
+          "url": "https://www.amazon.de/s?k=t%C3%BCllschleier+kinder+tanzen&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Direkter Anhang an Elfen-Tanz-Choreographie — Schleier macht das visuelle Element der Tanz-Variante."
+        },
+        {
+          "emoji": "🦋",
+          "label": "Schmetterling-Bildkarten / Poster",
+          "url": null,
+          "priceEur": 0,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Bildungswert-Quiz, gedruckt von Google = 0€."
+        },
+        {
+          "emoji": "🎁",
+          "label": "Talismane (Glassteine, Eicheln)",
+          "url": "https://www.amazon.de/s?k=glassteine+deko+kinder&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Quest-Belohnung — ohne Inhalt in der Schatzkiste verpufft die Quest-Klimax."
+        },
+        {
+          "emoji": "🧚",
+          "label": "Feen/Wald-Teller & Becher Set",
+          "url": "https://www.amazon.de/s?k=feen+teller+becher+kindergeburtstag&tag=machsleicht-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Atmosphäre-Heber für Sandwich-Service, aber Pappgeschirr tut's auch."
+        },
+        {
+          "emoji": "🎈",
+          "label": "Pastell-Luftballons (10 Stk.)",
+          "url": null,
+          "priceEur": 3,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Deko-Element, hebt Wow-Faktor, aber Stationen funktionieren auch ohne."
+        },
+        {
+          "emoji": "🌿",
+          "label": "Eichenlaub-Girlande / Tüllstoff",
+          "url": null,
+          "priceEur": 4,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Foto-Background + Deko, kein Spiel-Material."
+        },
+        {
+          "emoji": "🧃",
+          "label": "Apfelschorle + Sandwiches + Beeren",
+          "url": null,
+          "priceEur": 12,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Essen + Getränke bei 3h Party nicht optional — Sandwiches sind Lückenfüller im Mittagsslot."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Backmischung + Blüten-Deko + Streusel",
+          "url": null,
+          "priceEur": 7,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Blüten-Kuchen Pflichtteil — Zucker-Blüten und Streusel gehören zum motto-zentralen Symbol."
+        },
+        {
+          "emoji": "🛍️",
+          "label": "Papiertüten + Stoffbeutel + Bändchen",
+          "url": null,
+          "priceEur": 3,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Mitgebsel-Verpackung, Bändchen sind nettes Detail aber nicht zwingend."
+        }
+      ],
+      "estimatedCostEur": 75,
+      "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
+    },
+    {
+      "id": "wow",
+      "label": "Wow — 3,5 Stunden, die volle Quest",
+      "headline": "✨ Wow — 3,5 Stunden, die volle Feenwald-Magie",
+      "intro": "Auf der Standard-Variante aufbauend, mit Geocaching im Garten oder Park. Die Kinder werden zu Zauberbaum-Wächtern ausgebildet, absolvieren 5 Prüfungen mit GPS-Hinweisen, und bekommen am Ende eine richtige Waldwächter-Urkunde. Aufwand hoch, Erinnerung für's Leben. Blumenfeen und Waldwächter sind gleichberechtigt — die Quest unterscheidet nicht.",
+      "timeWindow": "13:30–17:15, 6 Kinder",
+      "schedule": [
+        {
+          "time": "13:30",
+          "title": "🪪 Zauberbaum-Beutel, Rollenwahl & Quest-Pass",
+          "description": "Das große Auftakt-Ritual (siehe Block oben): jedes Kind wählt Rolle (Blumenfee oder Waldwächter), zieht seinen Quest-Namen aus dem Zauberbaum-Beutel, bekommt Stirnreif oder Eichenlaub-Krone, bekommt seinen Quest-Pass (selbst gebastelt aus Tonkarton mit Moos-Stempel). Foto mit Krone machen → später in den Pass kleben. Die Kinder sind jetzt offizielle Anwärter der Zauberbaum-Akademie."
+        },
+        {
+          "time": "14:00",
+          "title": "🌸 Prüfung 1: Stirnreif/Waldkrone verfeinern",
+          "description": "Erste Bastel-Aufgabe — eigene Krone individualisieren. „Jeder Wächter trägt seine eigene Krone, niemand hat dieselbe.\" 20 Min."
+        },
+        {
+          "time": "14:25",
+          "title": "🌿 Prüfung 2: Pflanzen-Quest Codeknacker FARN",
+          "description": "4 Stationen im Garten/Wohnung mit echten Pflanzen. 30 Min. Lösungswort FARN öffnet die Zauberbaum-Schatzkiste."
+        },
+        {
+          "time": "14:55",
+          "title": "📍 Prüfung 3: Geocaching im Garten/Park",
+          "description": "Mit Handy-GPS-App (z.B. c:geo oder Geocaching.com) im Garten oder Park 5 versteckte Mini-Caches finden. Pflanzen-Hinweise als Koordinaten-Rätsel. 40 Min. — siehe unten."
+        },
+        {
+          "time": "15:35",
+          "title": "🎂 Kuchen, Waldfrüchte-Punsch & Waldwesen-Sandwiches",
+          "description": "Blüten-Kuchen mit Zucker-Schmetterlingen. Waldwesen-Sandwich (Toast mit Blüten-Ausstecher) als herzhafter Snack. 25 Min."
+        },
+        {
+          "time": "16:00",
+          "title": "🦋 Prüfung 4: Schmetterling-Bestimmungs-Quiz",
+          "description": "Ruhigere Phase nach dem Geocaching-Hype. 20 Min. — Pflanzen-Wissen + Schmetterlings-Erkennung."
+        },
+        {
+          "time": "16:20",
+          "title": "💃 Prüfung 5: Elfen-Tanz / Schwertkampf-Choreographie",
+          "description": "Doppel-Aktivität. Beide Gruppen 20 Min. parallel — am Ende Show füreinander."
+        },
+        {
+          "time": "16:40",
+          "title": "🎖️ Wächter-Zeremonie & Feenwald-Kino",
+          "description": "Feierliche Urkundenverleihung: „Hiermit wird ___ zum offiziellen Zauberbaum-Wächter ernannt.\" Quest-Pass umdrehen — die Urkunde ist auf der Rückseite. Danach 15 Min. Naturfilm-Clip zum Runterkommen (YouTube: „Schmetterlinge Zeitlupe\" oder „Tiere im Wald für Kinder\", Popcorn dazu)."
+        },
+        {
+          "time": "17:00",
+          "title": "🎁 Mitgebsel & Abholung",
+          "description": "Quest-Pass + Blumenkranz/Eichenlaub-Armband + Talisman + Stirnreif/Waldkrone. Die Kinder gehen als zertifizierte Zauberbaum-Wächter nach Hause.\n\n💡 Die Wächter-Geschichte trägt 3,5 Stunden\nDie „Zauberbaum-Wächter-Ausbildung\" gibt den 5 Prüfungen einen roten Faden. Statt „jetzt machen wir Spiel 3\" sagst du: „Eure dritte Prüfung wartet!\" Das Tempo bleibt hoch, weil jede Aktivität ein narratives Ziel hat. Und am Ende gibt die Urkunde dem Ganzen einen echten Abschluss — die Kinder fühlen, dass sie etwas erreicht haben."
+        }
+      ],
+      "games": [
+        {
+          "name": "📍 Geocaching im Garten/Park (5 Mini-Caches)",
+          "indoor": false,
+          "outdoor": true,
+          "duration": 40,
+          "minAge": 7,
+          "loudness": "laut",
+          "effort": "hoch",
+          "material": "1 Smartphone mit Geocaching-App (c:geo kostenlos, oder Geocaching.com), 5 kleine wasserdichte Behälter (Filmdöschen, Tic-Tac-Box, ~3 €), Mini-Talismane drin (Glassteine, Eicheln, Blüten-Anhänger), 5 Pflanzen-Hinweis-Zettel, 1 große Schatzkiste am Endpunkt",
+          "prepText": "1-2 Tage vorher: 5 Caches im Garten oder Park verstecken — unter Stein, im Astloch, hinter Baum-Wurzel. Koordinaten per App speichern oder mit Pflanzen-Hinweisen arbeiten („zwischen 3 Farnen und einem Stein\"). Am Party-Tag: Kinder bekommen Pflanzen-Hinweis-Zettel, suchen Caches in Reihenfolge. Letzter Cache enthält den Hinweis zur großen Schatzkiste am Zauberbaum.",
+          "steps": [
+            {
+              "n": 1,
+              "content": "Vorbereitung (1-2 Tage vor): App installieren, Koordinaten von 5 Verstecken speichern."
+            },
+            {
+              "n": 2,
+              "content": "Caches verstecken — wasserdicht verpackt, mit Pflanzen-Hinweis im Inneren."
+            },
+            {
+              "n": 3,
+              "content": "Am Party-Tag: Erstes Pflanzen-Rätsel vorlesen — „Wo wächst Moos am häufigsten? (Antwort: an der Nordseite eines Baums)\""
+            },
+            {
+              "n": 4,
+              "content": "Kinder gehen los, finden Cache 1, lesen nächsten Hinweis, gehen weiter — bis Cache 5."
+            },
+            {
+              "n": 5,
+              "content": "Cache 5 enthält Koordinaten oder Beschreibung zur großen Schatzkiste am Zauberbaum (oder echten/Topf-Baum im Garten)."
+            }
+          ],
+          "safetyRule": "Im Park: Erwachsene begleiten IMMER. Niemand allein in fremde Büsche. Bei feuchtem Wetter: rutschige Stellen meiden, festes Schuhwerk Pflicht. Pflanzen-Hinweise nur an unbedenklichen Stellen verstecken — keine giftigen Pflanzen in der Nähe (Eibe, Maiglöckchen). Zecken-Check nach dem Spielen Pflicht.",
+          "ageAdjust6": "Geocaching streichen oder vereinfachen: nur Pflanzen-Hinweise im Garten, kein GPS — zu komplex.",
+          "ageAdjust8": "Voll-Version mit echten GPS-Koordinaten. Lass die 8-Jährigen das Handy halten.",
+          "indoorTip": "Nicht ideal — Pflanzen-Hinweise drinnen verstecken funktioniert, aber das Geocaching-Element verpufft.",
+          "outdoorTip": "Garten 1.000 m² reicht völlig, Park noch besser — mehr Verstecke, größerer Abenteuer-Faktor.",
+          "whyItWorksTitle": "Warum Geocaching für 7-8-Jährige der Wow-Moment ist",
+          "whyItWorks": "Erste GPS-Erfahrung + echte Pflanzen-Spuren + Schatzsuche-Mechanik = der Moment, an den sie sich in 5 Jahren noch erinnern. Anders als reine Schatzsuche müssen sie Pflanzen erkennen, Karte lesen, Team-koordinieren. Bildungswert (Botanik + Orientierung) versteckt im Abenteuer."
+        },
+        {
+          "name": "🌿 Pflanzen-Quest: Codeknacker FARN",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 30,
+          "minAge": 6,
+          "loudness": "ruhig",
+          "effort": "mittel",
+          "material": "Wie in Standard — 4 Pflanzen, 4 Buchstaben-Umschläge, Zauberbaum-Schatzkiste mit 6 Talismanen, 6 Quest-Pässe",
+          "prepText": "Wie in Standard-Variante. In Wow wird die Quest als „Zweite Prüfung der Zauberbaum-Akademie\" angekündigt — vor dem Geocaching, als Aufwärm-Quest.",
+          "steps": [],
+          "safetyRule": "Pflanzen-Sicherheit: Nur ungiftige Pflanzen (Farn, Ahorn, Rose, Tanne) — KEINE Maiglöckchen, KEIN Eisenhut, KEIN Fingerhut. Bei Rosen: Dornen vorher abschneiden. Hände waschen nach der Quest. Bei Pollen-Allergie: gedruckte Bilder statt echter Pflanzen.",
+          "ageAdjust6": null,
+          "ageAdjust8": "Bonus: Lebensraum-Quiz nach jedem Buchstaben („In welchem Wald-Boden wächst Farn am besten? Sauer oder kalkhaltig?\")",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
+          "name": "🧠 Pflanzen-Botanik-Quiz (optional statt einer Prüfung)",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 20,
+          "minAge": 7,
+          "loudness": "ruhig",
+          "effort": "mittel",
+          "material": "10 Fragen zur Botanik (siehe Beispiele unten), Buzzer/Klingel/Topfdeckel, Punktetafel (Whiteboard oder Papier)",
+          "prepText": "2 Teams (Feen vs. Wächter). Frage vorlesen, wer zuerst buzzert darf antworten. Richtig = 1 Punkt. Falsch = anderes Team darf.",
+          "steps": [
+            {
+              "n": 1,
+              "content": "Frage 1: „Wie heißt der Saft, den Bienen aus Blüten trinken?\" (Antwort: Nektar)"
+            },
+            {
+              "n": 2,
+              "content": "Frage 2: „Welcher Baum hat fünfzackige Blätter und süßen Saft?\" (Antwort: Ahorn)"
+            },
+            {
+              "n": 3,
+              "content": "Frage 3: „Welche Pflanze hat keine Blüten, sondern Sporen?\" (Antwort: Farn)"
+            },
+            {
+              "n": 4,
+              "content": "Frage 4: „Was machen Schmetterlinge, bevor sie Schmetterlinge sind?\" (Antwort: Raupe)"
+            },
+            {
+              "n": 5,
+              "content": "Frage 5: „Welcher Pilz wächst nur an Bäumen?\" (Antwort: Baumpilz)"
+            }
+          ],
+          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen.",
+          "ageAdjust6": "Multiple Choice (3 Antworten).",
+          "ageAdjust8": "Offene Fragen + Bonus für Latein-Namen (Farn = Filicophyta — nur Spaß-Bonus).",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        }
+      ],
+      "food": "🎂 Blüten-Kuchen 1 Gugelhupf + Wunderkerze\n💧 „Waldfrüchte-Punsch\" 14 Becher\n🍞 Waldwesen-Sandwiches 12 Stück (Blüten-/Pilz-Ausstecher)\n🍓 Waldfrüchte-Teller Erdbeeren, Trauben, Heidelbeeren, Brombeeren\n🍿 Popcorn 300 g (grün gefärbt = Mooskugeln)\n🍯 Honig-Brötchen 8 Stück\n🍫 Schoko-Blätter 1 Packung (Schatz)\n🍭 Blüten-Gummibärchen 1 Tüte (200 g)\n\n💡 Waldwesen-Sandwiches:\nMit Blüten-Ausstecher (oder einfach großer runder Ausstecher) Toast-Scheiben ausstechen. Frischkäse drauf, oben zweite Blüte drüber. Sieht sofort zauberhaft aus, schmeckt den Kindern, und 12 Stück sind in 15 Minuten gemacht.",
+      "decoration": "🧚 Feen/Wald-Teller & Becher Set ~8 €\n🎈 Pastell-Ballon-Bogen ~15 € (30 Stk., grün/rosa/lila)\n🌿 Eichenlaub-Girlande ~4 €\n🍃 Tüllstoff über Decke ~5 €, 20 Min.\n✨ Glitzer-Tischläufer ~3 € Krepppapier (für Feen-Seite)\n🌳 „Zauberbaum-Akademie\"-Schild Kostenlos Pappe + Edding + Eichenlaub, am Eingang\n🔊 Feenwald-Musik Kostenlos YouTube/Spotify: „Magic Forest Music\" oder „Celtic Music\" leise im Hintergrund\n🌸 Blumen in kleinen Vasen ~5 € (echte Schnittblumen vom Supermarkt)\n\n🧚 Wow-Bonus: Aufblasbares Feen-Flügel-Kostüm für Mama oder Papa\nDer absolute Überraschungs-Hit: ein [Feen-Flügel-Kostüm Erwachsene*](https://www.amazon.de/s?k=feen+fl%C3%BCgel+erwachsene+kost%C3%BCm&tag=machsleicht-21) (~25–35 €). Du öffnest die Tür als riesige Zauberbaum-Hüterin — die Kinder rasten aus. Funktioniert als „Lyra, die Hüterin der Zauberbaum-Akademie\", als Überraschungsgast beim Kuchen oder als „Wächter-Prüferin\" für die Urkundenverleihung. Wird DAS Foto des Tages. Die Kinder erzählen noch Wochen davon. Geschlechts-neutrale Alternative: Robin-Hood-Kostüm für die Waldwächter-Hüter-Rolle.\n\n🍄 Optional: Die Pilz-Lichter-Inszenierung (LED-Lichterketten-Moment)\nDas Element, das eine Feen-Party wirklich magisch macht — wenn du das Drumherum bauen kannst. Mit warmweißen [LED-Lichterketten*](https://www.amazon.de/s?k=led+lichterkette+warmwei%C3%9F+batterie&tag=machsleicht-21) (~10 € für 3 Sets) wickelst du Eichenlaub-Girlanden und Tüllstoffe ein. Wenn die Kinder nach dem Kuchen rein kommen, schaltest du Hauptlicht aus — der Raum leuchtet plötzlich wie ein Feenwald in der Dämmerung. Die Kinder sind komplett still für 5 Sekunden.\n\nWann einbauen: Beim Übergang zu Prüfung 5 (Elfen-Tanz/Schwertkampf) — Licht aus, Musik leiser, Lichterketten an. Was du brauchst: 3 Sets LED-Lichterketten (batteriebetrieben für Flexibilität), Tüllstoff oder Eichenlaub-Girlanden zum Einwickeln, abdunkelbarer Raum. Warum optional: Nicht jedes Zuhause lässt sich leicht verdunkeln, und die Lichterketten wollen sorgfältig vorbereitet sein. Wenn der Rest der Wow-Variante schon ausreicht, lass es weg — es ist die Kirsche, nicht der Kuchen.",
+      "giveaways": "🪪 Quest-Pass (mit Foto und Urkunde)\n🌺 Blumenkranz / 🍂 Eichenlaub-Armband (selbst gebastelt)\n🌿 Talisman aus der Pflanzen-Quest\n💍 Geocaching-Mini-Cache-Inhalt (selbst gefunden)\n🦋 Schmetterling-Bildkarte\n🌸 Stirnreif / 🍃 Waldkrone\n🍫 Schoko-Blätter\n\nIn grüne Papiertüte (10 Stk. ~1–2 € bei DM/Action) mit „Zauberbaum-Akademie · Lyra ___\". Kosten: ~5 € pro Kind.",
+      "shoppingList": [
+        {
+          "emoji": "🌸",
+          "label": "Blüten-Stirnreif-Set (6 Stk.)",
+          "url": "https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Konsistent über Varianten — Feen-Rollen-Anker."
+        },
+        {
+          "emoji": "🍃",
+          "label": "Eichenlaub-Kronen + Bastel-Karton",
+          "url": null,
+          "priceEur": 3,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Konsistent — Waldwächter-Rolle-Anker, Geschlechts-Inklusion."
+        },
+        {
+          "emoji": "🌷",
+          "label": "Stoffblüten (große Tüte)",
+          "url": "https://www.amazon.de/s?k=stoffblueten+basteln+kinder&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Bastel-Material für Stirnreif + Blumenkranz."
+        },
+        {
+          "emoji": "🌿",
+          "label": "Pfeifenputzer + grüne Kordel",
+          "url": null,
+          "priceEur": 4,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Direkter Anhang an Blumenkranz/Armband-Basteln."
+        },
+        {
+          "emoji": "🗡️",
+          "label": "Schaumstoff-Stäbe (6 Stk.)",
+          "url": "https://www.amazon.de/s?k=schaumstoff+schwert+kinder+set&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Schwertkampf-Choreographie — Sicherheits-Defining (keine harten Stäbe)."
+        },
+        {
+          "emoji": "🎭",
+          "label": "Tüllschleier (6 Stk.)",
+          "url": "https://www.amazon.de/s?k=t%C3%BCllschleier+kinder+tanzen&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Elfen-Tanz-Anker für Blumenfeen."
+        },
+        {
+          "emoji": "📦",
+          "label": "Geocaching-Cache-Behälter (5 Stk.)",
+          "url": "https://www.amazon.de/s?k=geocaching+container+kinder&tag=machsleicht-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Variant-Defining für Wow-Geocaching — ohne wasserdichte Cache-Container kollabiert das zentrale Wow-Spiel."
+        },
+        {
+          "emoji": "🦋",
+          "label": "Schmetterling-Bildkarten / Poster",
+          "url": null,
+          "priceEur": 0,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Bildungswert-Quiz, gedruckt von Google = 0€."
+        },
+        {
+          "emoji": "🎁",
+          "label": "Talismane (Glassteine, Eicheln, Blüten-Anhänger)",
+          "url": "https://www.amazon.de/s?k=glassteine+deko+kinder&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Quest-Belohnungen — 5 Mini-Caches + 6 Quest-Belohnungen brauchen Inhalte."
+        },
+        {
+          "emoji": "🧚",
+          "label": "Feen/Wald-Teller & Becher Set",
+          "url": "https://www.amazon.de/s?k=feen+teller+becher+kindergeburtstag&tag=machsleicht-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Atmosphäre-Premium, aber Pappgeschirr tut's."
+        },
+        {
+          "emoji": "🎈",
+          "label": "Pastell-Ballon-Bogen + Eichenlaub-Girlande",
+          "url": null,
+          "priceEur": 19,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Deko-Premium für Foto-Background, kein Spiel-Material."
+        },
+        {
+          "emoji": "🍯",
+          "label": "Apfelschorle + Sandwiches + Beeren + Honig-Brötchen",
+          "url": null,
+          "priceEur": 15,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Essen + Getränke für 3-3,5h Party nicht optional, Honig-Brötchen sind motto-zentral."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Backmischung + Blüten-Deko + Wunderkerze",
+          "url": null,
+          "priceEur": 8,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Blüten-Kuchen Pflichtteil, Wunderkerze ist Wow-Upgrade aber Sub-Position."
+        },
+        {
+          "emoji": "🍫",
+          "label": "Schoko-Blätter / Schoko-Marienkäfer",
+          "url": "https://www.amazon.de/s?k=schokolade+bl%C3%A4tter+pralinen&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Kuchen-Topping-Extra, aber Streusel + Smarties tun's auch."
+        },
+        {
+          "emoji": "🧚",
+          "label": "Feen-Flügel-Kostüm Erwachsene (optional)",
+          "url": "https://www.amazon.de/s?k=feen+fl%C3%BCgel+erwachsene+kost%C3%BCm&tag=machsleicht-21",
+          "priceEur": 30,
+          "hasAffiliate": true,
+          "category": "habIchVielleicht",
+          "categoryReasoning": "Explizit optional + Geburtstagskind-Eltern haben oft ein Verkleidungs-Teil im Schrank (langes grünes Kleid + DIY-Flügel reicht)."
+        },
+        {
+          "emoji": "💡",
+          "label": "LED-Lichterketten warmweiß (3 Sets, optional)",
+          "url": "https://www.amazon.de/s?k=led+lichterkette+warmwei%C3%9F+batterie&tag=machsleicht-21",
+          "priceEur": 10,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Atmosphäre-Verstärker für Pilz-Lichter-Inszenierung, aber Hauptlicht aus reicht zur Not."
+        },
+        {
+          "emoji": "📱",
+          "label": "Geocaching-App (kostenlos: c:geo)",
+          "url": null,
+          "priceEur": 0,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Variant-Defining für Wow-Geocaching — App muss aufs Handy, 0€."
+        },
+        {
+          "emoji": "📄",
+          "label": "Quest-Pass + Pflanzen-Hinweise + Namensliste (Druck)",
+          "url": null,
+          "priceEur": 0,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "0€-Print trägt Quest-Pass + Geocaching-Hinweise + Quiz-Karten — Strukturanker."
+        },
+        {
+          "emoji": "🛍️",
+          "label": "Papiertüten + Stoffbeutel + Bändchen",
+          "url": null,
+          "priceEur": 4,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Konsistent zu Standard — nettes Detail, kein Pflicht-Anker."
+        }
+      ],
+      "estimatedCostEur": 113,
+      "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm & LED-Set)"
+    }
+  ],
+  "cakeRecipe": {
+    "intro": "Geht mit jedem Gugelhupf. Das Besondere ist die Deko — nicht das Backen.",
+    "steps": [
+      {
+        "n": 1,
+        "content": "Gugelhupf backen — Fertigmischung reicht völlig (Dr. Oetker, Kathi, whatever). Kein Mensch schmeckt den Unterschied."
+      },
+      {
+        "n": 2,
+        "content": "Teig vor dem Backen in 3 Schüsseln teilen. Jede Schüssel mit einer Lebensmittelfarbe einfärben (hellgrün, rosa, lila). Nacheinander in die Form schichten → innen Feenwald-Optik beim Anschnitt."
+      },
+      {
+        "n": 3,
+        "content": "Komplett abkühlen lassen. Ungeduld = Glasur-Desaster."
+      },
+      {
+        "n": 4,
+        "content": "Mit weißer Glasur überziehen (200 g Puderzucker + 3 EL Wasser, cremig rühren)."
+      },
+      {
+        "n": 5,
+        "content": "Essbare Blüten (Stiefmütterchen, Ringelblume, Borretsch — gibt's in der Gemüse-Abteilung) auf die Glasur legen. Oder Zucker-Blüten aus der Backabteilung."
+      },
+      {
+        "n": 6,
+        "content": "Grüne Streusel (Pistazien-Krümel oder grüne Zucker-Streusel) um den Fuß als „Moos\". Optional: ein Schoko-Schmetterling oder Marienkäfer obenauf."
+      },
+      {
+        "n": 7,
+        "content": "Optional: Wunderkerze reinstecken und beim Happy-Birthday anzünden (Wow-Variante)."
+      }
+    ],
+    "meta": {
+      "aufwand": "60 Min. inkl. Backen und Deko",
+      "kosten": "~8 €",
+      "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. Essbare Blüten enthalten manchmal Pollen — bei Pollen-Allergie auf Zucker-Blüten ausweichen."
+    },
+    "tips": [
+      {
+        "title": "🌸 Kein Bock auf essbare Blüten? Zwei Wege zum Feen-Kuchen",
+        "body": "Weg 1 (einfach): Zucker-Blüten aus der Backabteilung kaufen (DM, Rewe, Edeka — meist bei den Tortendeko). Kostet ~3 €, sieht perfekt aus, 2 Minuten aufgesetzt. Das machen die meisten. Weg 2 (notfalls): Bunte Streusel + grüne Pistazien-Krümel als Moos-Imitat — schlicht, aber wirkt. Kein Kind zählt nach, ob Blüten echt waren."
+      },
+      {
+        "title": "🎂 Keine Lust zu backen?",
+        "body": "Fertigen Zitronen- oder Vanillekuchen beim Bäcker kaufen, weiße Glasur drüber, essbare Blüten oder Zucker-Blüten aufstecken, grüne Streusel drumherum. Sieht aus wie gewollt, dauert 5 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.\""
+      }
+    ]
+  },
+  "parentTips": {
+    "structured": [
+      {
+        "topic": "🚨 Allergien vorher abfragen",
+        "detail": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten, Pollen). In die Einladung schreiben: „Hat dein Kind Allergien oder Unverträglichkeiten?\" Apfelschorle und Popcorn sind fast immer safe. Essbare Blüten und Pollen-haltige Materialien (Stoffblüten aus echtem Pollen-Stoff) sind bei Pollen-Allergikern Tabu."
+      },
+      {
+        "topic": "🍃 Pflanzen-Sicherheit",
+        "detail": "Für die Pflanzen-Quest und das Geocaching: Nur ungiftige, klar bestimmbare Pflanzen verwenden. Sicher sind: Farn, Ahorn, Rose (Dornen ab!), Tanne/Fichte, Eichenlaub, Stiefmütterchen, Ringelblume. UNSICHER: Maiglöckchen (giftig!), Eisenhut (giftig!), Fingerhut (giftig!), Eibe (Beeren giftig!), Engelstrompete. Bei Unsicherheit: gedruckte Pflanzen-Bilder statt echter Pflanzen."
+      },
+      {
+        "topic": "✨ Glitzer-Sicherheit",
+        "detail": "Für Krone-Verzieren und Bastel-Aktivitäten: KEIN loser Streu-Glitzer auf Augen-Höhe. Glitzer-Kleber (in Tube) ist sicher, lose Glitzer-Pailletten KÖNNEN ins Auge geraten. Bei Kontakt mit Auge: sofort mit Wasser spülen, nicht reiben — ggf. Augenarzt. Mit 6–8-Jährigen reden: „Glitzer ist auf Kleidung und Krone, nicht ins Gesicht.\""
+      },
+      {
+        "topic": "📋 Plan B bei Regen",
+        "detail": "Alle Spiele in dieser Vorlage funktionieren auch drinnen — Pflanzen-Quest mit gedruckten Pflanzen-Bildern oder Mini-Topfpflanzen geht in der Wohnung. Geocaching (Wow) ist draußen — Plan B: Pflanzen-Hinweise in der Wohnung verstecken (verschiedene Räume = verschiedene „Wälder\"). Nie ohne Plan B."
+      },
+      {
+        "topic": "📱 Partyseite statt WhatsApp-Chaos",
+        "detail": "Kein Eltern-Gruppen-Chaos mehr. Erstelle eine [Partyseite auf party.machsleicht.de](https://party.machsleicht.de) mit Datum, Uhrzeit, Treffpunkt und Wunschliste — verschicke nur einen Link. Eltern können sich eintragen, Geschenke abstimmen, Rückfragen stellen. Kostet nichts."
+      },
+      {
+        "topic": "👥 Ab 6 Kindern: 1 Helfer dazu",
+        "detail": "Bis 5 Kinder schaffst du eine Standard-Party allein. Bei 6+ brauchst du Unterstützung — besonders für Elfen-Tanz / Schwertkampf-Choreographie (parallel 2 Gruppen) und Geocaching (Park-Begleitung). Oma, andere Elternteile, oder eine Teenager-Nachbarin (10 € für 3 Stunden) retten dir den Tag.\n\n⏰ Abholzeit vorher klären\nIn diesem Alter können Eltern kurz abgesetzt werden — müssen aber telefonisch erreichbar sein. Schreib in die Einladung: „Abholung 17:00 Uhr pünktlich bitte.\" Sonst stehen um 17:30 noch 3 Kinder da und du hast schon alles abgebaut."
+      }
+    ],
+    "educationalValue": "Die Feen-Party 6-8 vermittelt drei messbare Bildungs-Bausteine: (1) Pflanzennamen-Wissen — Kinder lernen Farn, Ahorn, Rose, Nadelbäume zu unterscheiden, plus 6 Schmetterlings-Arten. Das ist erste Botanik-Grundlage, anschlussfähig an die 3. Klasse Sachunterricht. (2) Botanik-Spuren-Lesen — bei der Pflanzen-Quest und beim Geocaching müssen sie Pflanzen-Hinweise (Schatten/Sonne, feucht/trocken, Boden-Beschaffenheit) deuten. Das schult Beobachtungsgabe und logisches Schließen. (3) Teamwork — Codeknacker funktioniert nur, wenn alle 4 Stationen besetzt sind und die Buchstaben am Ende zusammengesetzt werden. Blumenfeen und Waldwächter müssen kooperieren, nicht konkurrieren. Geschlechts-Inklusion ist hier kein Nebeneffekt, sondern Spiel-Mechanik."
+  },
+  "invitationTemplate": "Eine persönliche Feen-Einladung macht schon vor der Party Lust auf den Tag. Auf machsleicht kannst du deine Einladung kostenlos in 3 Minuten erstellen — mit Foto, Datum, Treffpunkt und allen Infos. PDF oder digitaler Link zum Verschicken.\n[🧚 Feen-Einladung erstellen →](/einladung/erstellen?motto=feen)\n\n[📱 Per WhatsApp teilen](https://wa.me/?text=%F0%9F%A7%9A%20Feen-Kindergeburtstag%20f%C3%BCr%206%E2%80%938-J%C3%A4hrige%20planen%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Zeitplan%2C%20Spielen%20und%20Einkaufsliste%3A%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Ffeen-6-8-jahre)",
+  "faq": [
+    {
+      "q": "Wie lange sollte ein Feen-Geburtstag für 6–8-Jährige dauern?",
+      "a": "2,5 bis 3 Stunden sind ideal. Kürzer ist besser als länger — nach 3 Stunden kippt die Stimmung bei den meisten Kindern. Die Minimal-Variante (2 Stunden) funktioniert auch perfekt, besonders wenn du wenig Vorbereitungszeit hast. Die Wow-Variante mit Geocaching braucht 3,5 Stunden, weil die GPS-Suche Zeit verdient."
+    },
+    {
+      "q": "Wie viele Kinder sollte man zum Feen-Geburtstag einladen?",
+      "a": "Faustregel: 6 Kinder sind ideal (inkl. Geburtstagskind). Bei 7-8 Gästen: 2. Helfer einplanen + Mengen um 30% erhöhen. Bei >8 Kindern: Wow-Variante mit längerem Zeitplan wählen — aber dann unbedingt eine zweite erwachsene Person für die Geocaching-Aufsicht."
+    },
+    {
+      "q": "Was kostet ein Feen-Geburtstag?",
+      "a": "Zwischen 50 € (Minimal) und 113 € (Wow, ohne Kostüm und LED-Set) für 6 Kinder — je nachdem wie viel Aufwand du betreiben willst. Die Standard-Variante liegt bei ca. 75 € und bietet das beste Verhältnis aus Aufwand und Ergebnis. Das Feen-Flügel-Kostüm für Erwachsene (~30 €) und das LED-Lichterketten-Set (~10 €) sind optional, aber die Wow-Faktoren, an die sich die Kinder jahrelang erinnern."
+    },
+    {
+      "q": "Ist das Feen-Motto auch für Jungen geeignet?",
+      "a": "Ja, ausdrücklich — und genau dafür ist diese Vorlage gebaut. Jedes Kind wählt am Eingang zwischen zwei gleichberechtigten Rollen: **Blumenfee** (mit Schmetterlings-Flügeln + Blüten-Diadem) oder **Waldwächter** (mit Krieger-Flügeln im Blattmuster + Waldkrone aus Eichenlaub). Beide Rollen machen dieselben Quests, dieselben Prüfungen, bekommen dieselbe Urkunde. Statt Elfen-Tanz mit Schleier gibt es für Waldwächter Schwertkampf-Choreographie mit weichen Schaumstoff-Stäben. Statt Blumenkranz binden gibt es Eichenlaub-Armband flechten. Die Vornamen-Liste hat 6 Feen-Namen und 6 Wächter-Namen — wer welche zieht, ist Zufall. Erfahrung von Eltern: Jungen wählen oft zuerst neugierig den Waldwächter, manche wechseln nach 30 Min. zum Feen-Tisch, weil das Blumenkranz-Basteln cool aussieht. Keine Rolle ist „die für Mädchen\" oder „die für Jungen\" — beide haben gleiches Gewicht."
+    },
+    {
+      "q": "Funktioniert das Feen-Motto in gemischten Gruppen (Jungen + Mädchen)?",
+      "a": "Ja, und sogar besser als in einer reinen Mädchen- oder Jungen-Gruppe. Die Doppel-Rollen (Blumenfee + Waldwächter) erzeugen automatisch Diversität, die Pflanzen-Quest mit Codeknacker FARN ist geschlechtsneutral, das Geocaching (Wow) begeistert beide gleichermaßen. Die Farbwelt lässt sich leicht anpassen (weniger rosa-pink, mehr Grün, Braun, Türkis, Gold). Wichtig: nicht „Mädchen tanzen, Jungen kämpfen\" — sondern „Jeder wählt selbst, manche wechseln zwischendurch.\""
+    },
+    {
+      "q": "Können wir die Pflanzen-Quest auch ohne echte Pflanzen machen?",
+      "a": "Ja — gedruckte Bilder aus Google funktionieren genauso. Vorteil: kein Allergie-Risiko, keine Pflanzen-Bestimmungs-Sorgen. Nachteil: weniger sinnlich. Wenn du draußen Zugang zu echten Pflanzen hast (Garten, Park), lohnt sich der echte Weg. Sonst: 4 große Bilder ausdrucken (DIN A4) und an den Stationen aufhängen — funktioniert."
+    },
+    {
+      "q": "Brauchen wir wirklich Geocaching für die Wow-Variante?",
+      "a": "Nein — Geocaching ist der Wow-Bonus, kein Pflicht-Anker. Wenn du keinen Garten/Park hast oder kein GPS-fähiges Handy nutzen willst, ersetze Prüfung 3 durch eine zweite Pflanzen-Quest (anderes Lösungswort, z.B. MOOS) oder ein längeres Botanik-Quiz. Die Wow-Variante steht auch ohne Geocaching auf 3 Stunden Programm."
+    }
+  ],
+  "preparationWeeks": {
+    "minus4Weeks": {
+      "headline": "4 Wochen vorher — Grundgerüst stellen",
+      "items": [
+        {
+          "icon": "📅",
+          "title": "Datum, Uhrzeit, Treffpunkt fixieren",
+          "detail": "Samstag oder Sonntag 14–17 Uhr ist Standard — Mittagsschlaf der Kleinen durch, abends sind alle platt. Drinnen-Plan-B-Adresse schon im Kopf haben, falls das Wetter kippt. Bei Geocaching-Wow: Park-Locations vorprüfen, ungiftige Pflanzen-Inventur."
+        },
+        {
+          "icon": "👥",
+          "title": "Gästeliste festzurren — max 6 Kinder",
+          "detail": "12 Quest-Namen sind im Beutel (6 Feen + 6 Wächter), du brauchst nur 6 Zettel ziehen. Über 6 wird's bei Bastel-Stationen und Geocaching eng (parallel an 2 Gruppen heißt: 2 Helfer)."
+        },
+        {
+          "icon": "💶",
+          "title": "Variante wählen: Minimal / Standard / Wow",
+          "detail": "Minimal 50€ (Zauberbaum-Beutel + Pflanzen-Quest + Schmetterling-Quiz, DIY-Schwer), Standard 75€ (zusätzlich Stirnreif-Bastel + Elfen-Tanz/Schwertkampf + Blumenkranz binden), Wow 113€ (zusätzlich Geocaching mit GPS-App + Botanik-Quiz). Entscheidung jetzt — danach Bestelllisten."
+        },
+        {
+          "icon": "✉️",
+          "title": "Einladungen rausschicken",
+          "detail": "Pflicht im Text: ‚Hat dein Kind Allergien oder Unverträglichkeiten?' — Pollen-Allergie besonders relevant, weil echte Blüten verwendet werden. Zusätzlich: ‚Möchtest du als Blumenfee oder Waldwächter kommen? Beides ist gleich cool.' — schon in der Einladung die Doppel-Rolle ankündigen, damit Jungs nicht zögern. RSVP-Link auf party.machsleicht.de spart dir den WhatsApp-Chat-Krieg."
+        },
+        {
+          "icon": "🏠",
+          "title": "Bei Mietwohnung: Boden checken",
+          "detail": "Feenwald ist akustisch zahm, aber Stoffblüten + Eichenlaub + Glitzer-Kleber + Schaumstoff-Schwerter sind Boden-Bomben für 3 Stunden. Teppich abdecken oder Aktivitäten in die Küche/aufs Balkon-Backup. Nachbarn unter dir freuen sich nicht über tropfende Krone-Verfeinerung."
+        },
+        {
+          "icon": "🌿",
+          "title": "Pflanzen-Inventur (Garten/Park scouten)",
+          "detail": "Hast du Farn, Ahorn, Rose, Nadelbaum im Garten? Wenn ja: Quest authentischer. Wenn nein: Bilder ausdrucken — funktioniert auch. Bei Wow-Geocaching: Park-Location 1× scouten, Verstecke mental durchspielen."
+        }
+      ]
+    },
+    "minus2Weeks": {
+      "headline": "2 Wochen vorher — Logistik festziehen",
+      "items": [
+        {
+          "icon": "📋",
+          "title": "RSVPs einsammeln und Liste schließen",
+          "detail": "Wer hat geantwortet, wer nicht? Nachzügler einmal anstupsen, dann ist gut. Wer kommt als Fee, wer als Waldwächter? Im Zweifel: Frag's nicht explizit — die Kinder wählen am Tag selbst, am Tisch."
+        },
+        {
+          "icon": "🥜",
+          "title": "Allergien zusammenschreiben",
+          "detail": "Eine Liste, ein Zettel: Kind X = Laktose, Kind Y = Nüsse, Kind Z = Pollen (essbare Blüten weglassen!). Bei 6 Kindern hat statistisch eins was. Liste am Backtag und am Party-Tag griffbereit — auf Papier, nicht im Hinterkopf."
+        },
+        {
+          "icon": "🙋",
+          "title": "Bei 6+ Kindern: Helfer organisieren",
+          "detail": "Standard/Wow brauchen 2. Person bei Elfen-Tanz/Schwertkampf (parallel 2 Gruppen) und Pflanzen-Quest-Aufsicht. Wow-Geocaching: 2. Erwachsener Pflicht im Park. Oma, Partner, andere Mutter, Teenager-Nachbarin (10€/3h ist fair)."
+        },
+        {
+          "icon": "📦",
+          "title": "Bestellliste finalisieren",
+          "detail": "Was kaufst du wo? Blüten-Stirnreif-Set + Stoffblüten + Schaumstoff-Stäbe + Tüllschleier bei Amazon, Karton + Eichenlaub im Bastelladen (oder gesammelt), Apfelschorle + Beerensaft + Backmischung im Supermarkt. Bei Wow: zusätzlich Geocaching-Container + LED-Lichterketten. Liste machen — sonst kaufst du in Woche -1 dreimal."
+        }
+      ]
+    },
+    "minus1Week": {
+      "headline": "1 Woche vorher — bestellen, drucken, vorwarnen",
+      "items": [
+        {
+          "icon": "🛒",
+          "title": "Amazon-Bestellung JETZT raus",
+          "detail": "Lieferzeit 2–5 Tage. Blüten-Stirnreif-Set (~6€), Stoffblüten (~4€), Schaumstoff-Stäbe (~5€), Tüllschleier (~4€), Talismane/Glassteine (~4€). Bei Wow zusätzlich Geocaching-Container (~8€) + LED-Lichterketten (~10€). Später bestellen = Panik."
+        },
+        {
+          "icon": "🖨️",
+          "title": "Quest-Pass + Namensliste + Pflanzen-Bilder drucken",
+          "detail": "Quest-Pass-Vorlage (DIN A6, 6x falten) gibt's kostenlos auf kribbelbunt.de oder selber gestalten. Plus die 12 Quest-Namen einmal ausdrucken und in Streifen schneiden — kommen in den Zauberbaum-Beutel. Bei Wow: zusätzlich Pflanzen-Hinweis-Zettel für Geocaching-Caches."
+        },
+        {
+          "icon": "🍃",
+          "title": "Eichenlaub-Kronen vorbasteln",
+          "detail": "Karton-Kronen-Rohlinge zuschneiden (6 Stück), echtes oder Plastik-Eichenlaub bereitlegen. Die Kinder verzieren am Party-Tag selbst — aber die Basis sollte fertig sein."
+        },
+        {
+          "icon": "🔔",
+          "title": "Mietwohnung: Hausordnung gegenchecken",
+          "detail": "Lautstärke kein großes Thema bei Feen, aber Stoffblüten + Eichenlaub + Glitzer-Kleber können beim Auszug Ärger machen. Tücher und Wachs-Tücher griffbereit halten. Falls Sorge: kurz vorab Nachbarn mit Kind über Lautstärke beruhigen (Schwertkampf-Choreographie wird laut)."
+        },
+        {
+          "icon": "🌧️",
+          "title": "Plan B Regen mental durchspielen",
+          "detail": "Pflanzen-Quest ist drinnen mit gedruckten Pflanzen-Bildern genauso gut. Schwertkampf-Choreographie im Flur improvisieren (Schaumstoff-Stäbe brauchen Platz, aber kein Garten). Bei Wow-Geocaching: Plan B = ausführlichere Pflanzen-Quest mit zweitem Lösungswort (MOOS — M, O, O, S — Achtung: O wiederholt sich, also Variante: ROSE oder TANG)."
+        },
+        {
+          "icon": "🧪",
+          "title": "Allergie-Check: Stoffblüten + Glitzer-Kleber vorab testen",
+          "detail": "Stoffblüten auf eigene Haut tupfen 5 Min — manchmal sind Färbungen reizend. Glitzer-Kleber an Schüssel-Rand wischen, trocknen lassen, mit Wasser ablösbar prüfen. Bei essbaren Blüten auf dem Kuchen: ein Blütchen probieren, ob Reaktion ausbleibt."
+        },
+        {
+          "icon": "📦",
+          "title": "Pakete bei Ankunft sofort öffnen",
+          "detail": "Stirnreif-Set auf Vollständigkeit prüfen (6 Stück?), Schaumstoff-Stäbe auf Härte testen (wirklich weich?), Tüllschleier auf Risse. Reklamation muss bis Tag X durch sein. Geocaching-Container (Wow): wasserdicht? Innen trocken?"
+        }
+      ]
+    },
+    "minus2Days": {
+      "headline": "2 Tage vorher — backen, briefen, basteln",
+      "items": [
+        {
+          "icon": "🎂",
+          "title": "Blüten-Kuchen backen — oder Plan B",
+          "detail": "Wenn Zeit/Nerven da: Gugelhupf-Fertigmischung in 3 Schüsseln, je 1 Lebensmittelfarbe rein (hellgrün/rosa/lila), schichten, backen. Wenn nicht: weißen Gugelhupf vom Bäcker (4–6€), morgen kommt weiße Glasur + essbare Blüten oder Zucker-Blüten drauf."
+        },
+        {
+          "icon": "🗣️",
+          "title": "Helfer briefen — 5 Minuten reichen",
+          "detail": "Zettel mit Tagesablauf, wer macht was: ‚Du Elfen-Tanz-Gruppe, ich Schwertkampf-Choreographie' (Standard) oder ‚Du Pflanzen-Quest-Stationen 1+3, ich 2+4, beide zusammen Geocaching' (Wow). Bei Allergien: Liste zeigen, nicht erzählen."
+        },
+        {
+          "icon": "🪪",
+          "title": "Quest-Pässe vorbereiten + zerschneiden",
+          "detail": "DIN A4 → 6x ausschneiden, falzen, Namensfeld + 4 Stempel-Felder (Standard) oder 5 (Wow). Bei Wow: Rätsel-Felder + Pflanzen-Hinweise vorab in den Pass schreiben (gemeinsam mit Quest-Stationen)."
+        },
+        {
+          "icon": "🌿",
+          "title": "Pflanzen für Quest vorbereiten",
+          "detail": "4 Pflanzen sammeln oder ausdrucken: Farn (echt oder Bild), Ahornblatt (echt oder Bild), Rose (Blüte, Dornen abschneiden!), Nadelzweig (Tanne/Fichte, echt). Mit Buchstaben-Umschlägen F/A/R/N an Stationen platzieren. Bei Wow-Geocaching: zusätzlich 5 Caches verstecken im Garten/Park."
+        },
+        {
+          "icon": "🎁",
+          "title": "Goodie-Bags packen",
+          "detail": "Pro Kind: Stirnreif/Waldkrone (fertig verziert), Blumenkranz/Armband (entsteht in Aktivität, kommt am Tag rein), Talisman aus Quest, Schmetterling-Bildkarte, Blüten-Gummibärchen. In Papiertüte mit Quest-Namen drauf. 15 Min Arbeit, spart dir morgen Stress."
+        },
+        {
+          "icon": "✨",
+          "title": "Zauberbaum-Beutel füllen",
+          "detail": "Stoffbeutel oder Korb, 12 ausgeschnittene Namens-Zettel rein (6 Feen + 6 Wächter gemischt), dazu eine Prise getrockneter Blüten und Eichenlaub-Stücke (für den Wald-Geruch beim Reingreifen). Beutel auf Ankunfts-Tisch platzieren."
+        }
+      ]
+    },
+    "minus1Day": {
+      "headline": "1 Tag vorher — Deko, Test, letzte Schritte",
+      "items": [
+        {
+          "icon": "🌸",
+          "title": "Kuchen-Glasur + Blüten-Deko",
+          "detail": "Weiße Glasur drüber (200g Puderzucker + 3 EL Wasser), essbare Blüten (Stiefmütterchen, Ringelblume) oder Zucker-Blüten draufsetzen, grüne Pistazien-Krümel oder Streusel um den Fuß als ‚Moos'. Über Nacht fest werden lassen."
+        },
+        {
+          "icon": "🧪",
+          "title": "Pflanzen-Quest vortesten (alle Varianten)",
+          "detail": "Alle 4 Pflanzen + Umschläge an Stationen platzieren, einmal selbst durchlaufen — sind die Buchstaben gut sichtbar? Reihenfolge frei wählbar? Funktioniert das Lösungswort FARN? Bei Wow: Geocaching-Caches einmal mit der App durchgehen, GPS-Genauigkeit prüfen."
+        },
+        {
+          "icon": "🚧",
+          "title": "Stationen + Ankunfts-Tisch dekorieren",
+          "detail": "Pastell-Luftballons aufhängen, Eichenlaub-Girlande spannen, Zauberbaum-Beutel + Quest-Pässe + Stirnreif-Auswahl + Waldkronen-Rohlinge am Eingangs-Tisch. Bei Wow: LED-Lichterketten in Tüllstoff/Girlanden einwickeln (noch nicht anschalten — erst beim Übergang zu Prüfung 5)."
+        },
+        {
+          "icon": "🔋",
+          "title": "Geocaching-App + Spotify-Playlist testen (Wow)",
+          "detail": "App c:geo öffnen, GPS-Genauigkeit prüfen, 5 Caches einmal abgehen. Spotify-Playlist ‚Magic Forest' oder ‚Celtic Music' in der Notiz-App speichern. Nicht erst am Party-Tag suchen."
+        },
+        {
+          "icon": "🌿",
+          "title": "Bastel-Tische einräumen (Standard/Wow)",
+          "detail": "Links Feen-Tisch (Stoffblüten, rosa Bänder, Klebepunkte), rechts Wächter-Tisch (Eichenlaub, braune Bänder, Federn). Beide gleich attraktiv dekorieren — Kinder wählen am Tag selbst. Schaumstoff-Stäbe und Tüllschleier griffbereit."
+        }
+      ]
+    },
+    "dayOf": {
+      "headline": "Tag X — durchziehen, atmen, feiern",
+      "items": [
+        {
+          "icon": "⏰",
+          "title": "30 Min vor Ankunft: Stationen aufbauen",
+          "detail": "Tische vorbereiten (Bastel-Tisch, Pflanzen-Quest-Stationen, Kuchen-Tisch), Apfelschorle kühlen, Sandwiches/Beeren schneiden. Helfer ist da oder kommt jetzt. Kuchen aus dem Kühlschrank — Zimmertemperatur schmeckt besser."
+        },
+        {
+          "icon": "🎯",
+          "title": "15 Min vor Ankunft: Ankunfts-Tisch final",
+          "detail": "Zauberbaum-Beutel mit 12 Zetteln, Quest-Pässe gefaltet, Stirnreif-Auswahl + Waldkronen-Rohlinge bereit, Glitzer-Kleber + Stoffblüten + Eichenlaub griffbereit. Wow-Setup: Geocaching-App offen, LED-Lichterketten an Strom/Batterien, Quiz-Karten geheim auf Wächter-Pult."
+        },
+        {
+          "icon": "🫁",
+          "title": "5 Min vor Ankunft: durchatmen + Wechselklamotten-Tüte",
+          "detail": "Klo, Wasser, einmal tief Luft holen. Tüte an Türklinke hängen mit ‚Wechselklamotten falls nötig?' für Eltern — Bastel + Pflanzen-Quest sind Glitzer-Klamotten-Risiko. Sonst kriegst du sie nicht."
+        },
+        {
+          "icon": "✨",
+          "title": "Ankunft: Rollen-Wahl + Zauberbaum-Beutel",
+          "detail": "Jedes Kind wählt: Blumenfee oder Waldwächter? Zieht passenden Quest-Namen aus dem Beutel, liest laut vor (Vorlesen üben hilft schüchternen Kindern), bekommt Stirnreif oder Waldkrone aufgesetzt, Name in Quest-Pass. Das sind die ersten 10 Minuten."
+        },
+        {
+          "icon": "📸",
+          "title": "Foto-Runde nach Schwur",
+          "detail": "Wenn alle Kronen aufgesetzt sind und Quest-Pass-Namen eingetragen, gemeinsamer Schwur sprechen, dann Gruppenfoto vor Eichenlaub-Girlande. Eins, fertig, weiter. Bei Wow: Polaroid-Sofortdruck für jeden Quest-Pass als ‚Akademie-Foto'."
+        }
+      ]
+    }
+  },
+  "sosScenarios": {
+    "regen": {
+      "icon": "🌧️",
+      "label": "Regen — alles draußen geplant",
+      "headline": "Pflanzen-Quest geht drinnen mit Bildern — Wald-Quest ins Wohnzimmer.",
+      "steps": [
+        "Pflanzen-Quest mit gedruckten Pflanzen-Bildern an 4 Räume verteilen.",
+        "Schwertkampf-Choreographie im Flur improvisieren (Schaumstoff-Stäbe brauchen kein Garten).",
+        "Bei Wow-Geocaching: Plan B = zweite Pflanzen-Quest mit anderem Lösungswort (ROSE — R, O, S, E) durch die Wohnung.",
+        "Elfen-Tanz im Wohnzimmer — Tüllschleier brauchen keine Wiese."
+      ],
+      "fallback": "Wenn kein Platz für Schwertkampf-Choreographie: alles ans Bastel-Pult, Stirnreif-Verfeinerung + Blumenkranz binden + Schmetterling-Quiz reicht für 2,5h Programm.",
+      "tone": "praktisch"
+    },
+    "weniger_kinder_als_erwartet": {
+      "icon": "👥",
+      "label": "Weniger Kinder als erwartet (2–3 fehlen)",
+      "headline": "Weniger Wächter, gleicher Zauber — straffer, nicht dünner.",
+      "steps": [
+        "Zauberbaum-Beutel: nur die Hälfte der Zettel ziehen lassen, kleine Wächter-Runde wirkt dadurch enger.",
+        "Pflanzen-Quest: alle 4 Stationen gemeinsam abgehen statt aufteilen — wird zur Team-Quest.",
+        "Doppel-Rollen vergeben: Lyra + Mira können zusammen ein Sub-Team bilden.",
+        "Pufferzeit füllen mit zweiter Schmetterling-Quiz-Runde oder Bonus-Botanik-Quiz."
+      ],
+      "fallback": "Wenn Stimmung kippt: alles ans Ankunfts-Pult, Stirnreif-Zeremonie nochmal ausführlich + Foto-Runde als Hauptprogramm.",
+      "tone": "ruhig"
+    },
+    "mehr_kinder_als_erwartet": {
+      "icon": "🚨",
+      "label": "Mehr Kinder als erwartet (Geschwister-Boom)",
+      "headline": "Zweiten Quest-Pool öffnen — alle 12 Namen sind ohnehin da.",
+      "steps": [
+        "Zauberbaum-Beutel hält 12 Namen bereit — alle ziehen lassen, niemand bleibt namenlos.",
+        "Pflanzen-Quest: 2. Durchgang mit 2 Teams (Feen vs. Wächter) parallel laufen lassen (Helfer übernimmt eines).",
+        "Sofort Verstärkung anrufen: Oma/Nachbarin, 10€ für 2 Std Tisch-Aufsicht.",
+        "Stirnreif/Waldkronen verteilen vor allem anderen — Geschwister NICHT leer ausgehen lassen.",
+        "Apfelschorle nachbestellen lassen (Tankstelle/Lieferdienst), Kuchen-Stücke kleiner schneiden."
+      ],
+      "fallback": "Kein Helfer erreichbar? Schwertkampf-Choreographie streichen, dafür Pflanzen-Quest + Stirnreif-Bastel parallel — du läufst zwischen 2 Tischen.",
+      "tone": "praktisch"
+    },
+    "kind_will_nicht_mitmachen": {
+      "icon": "🤷",
+      "label": "Ein Kind will nicht mitmachen — auch wenn es ein Junge ist und Fee-Sachen ablehnt",
+      "headline": "Waldwächter-Brücke anbieten — Krieger-Flügel + Schwertkampf statt Tüll.",
+      "steps": [
+        "Erste Brücke: ‚Magst du lieber Waldwächter sein? Du bekommst Eichenlaub-Krone und einen Schaumstoff-Stab.' Vor allem für Jungen, die ‚Feen sind doof' sagen — die Doppel-Rolle ist genau für sie gemacht.",
+        "Zweite Brücke: ‚Pflanzenforscher der Akademie' — Notizbuch statt Krone, darf an jeder Station die Pflanze nachschlagen. Gibt's für Kinder, die Verkleidung doof finden.",
+        "Tattoo statt Krone: Eichel oder Blatt-Stempel auf Handrücken als ‚Wächter-Abzeichen' — minimaler Aufwand.",
+        "Sitzplatz mit eigenem Apfelschorle + Talisman — Beobachter-Posten, kein Außenseiter-Posten."
+      ],
+      "fallback": "Will gar nichts? Buch + Decke in die ruhige Ecke, alle 10 Min kurz reinschauen. Manche steigen nach 20 Min selbst ein — wenn der Schwertkampf-Lärm losgeht.",
+      "tone": "ruhig"
+    },
+    "kuchen_misslungen": {
+      "icon": "🎂",
+      "label": "Kuchen ist misslungen",
+      "headline": "Bäcker-Hack: weißer Gugelhupf + Glasur + Blüten = Notfall in 10 Min.",
+      "steps": [
+        "Weißen Gugelhupf beim Bäcker oder im Supermarkt holen (4–6€).",
+        "200g Puderzucker + 3 EL Wasser anrühren, weißen Guss drüber gießen — fertig die ‚Wolken-Basis'.",
+        "Zucker-Blüten aus der Backabteilung oder echte essbare Blüten drauflegen — sieht aus wie gewollt.",
+        "Grüne Pistazien-Krümel um den Fuß als ‚Moos' — perfektes Feen-Optik."
+      ],
+      "fallback": "Bäcker zu? Muffins aus dem Vorrat, pro Muffin ein kleines Marshmallow + eine essbare Blüte obendrauf — Mini-Feen-Hütchen.",
+      "tone": "motivierend"
+    },
+    "allergie_beim_kind": {
+      "icon": "🥜",
+      "label": "Allergie-Vorfall (Pollen, Nüsse, Laktose)",
+      "headline": "Plan greifen, ruhig bleiben, Eltern anrufen.",
+      "steps": [
+        "Kind sofort aus der Aktivität nehmen, fragen: ‚Was juckt/zwickt?' — Allergie-Liste zur Hand.",
+        "Bei Pollen-Reaktion (Niesen, Augen-Tränen): essbare Blüten weglassen, raus aus dem Bastel-Tisch mit Stoffblüten, Apfelschorle ohne Garnitur anbieten.",
+        "Bei Nuss-Reaktion: Notfall-Set des Kindes (sollte mitgegeben sein), Eltern anrufen, ggf. 112.",
+        "Bei Laktose: alternativen Snack anbieten (Salzstangen, Apfelschnitze, Beeren ohne Sahne).",
+        "Bei Glitzer-Kontakt mit Auge: sofort mit Wasser spülen, nicht reiben. Bei Schmerzen 30 Min+: Augenarzt."
+      ],
+      "fallback": "Eltern erreichbar? Anrufen lassen, abholen lassen — lieber 30 Min früher als ein Notfall. Bei Atemnot: 112 sofort, nicht warten.",
+      "tone": "praktisch"
+    },
+    "spielzeug_kaputt_oder_fehlt": {
+      "icon": "🔧",
+      "label": "Spielzeug kaputt oder vergessen",
+      "headline": "Improvisieren mit Haushalts-Material — Wächter merken nichts.",
+      "steps": [
+        "Schaumstoff-Stäbe fehlen? Zusammengerollte Zeitungen mit Tesa umwickeln — weich, sicher, schnell.",
+        "Tüllschleier weg? Alte Bettwäsche-Reste, Geschirrtücher oder dünne Schals tun's auch.",
+        "Stirnreif-Set kaputt? Pfeifenputzer + Stoffblüten direkt am Kopf festwickeln (Erwachsener hilft).",
+        "Eichenlaub fehlt (Standard/Wow)? Aus grünem Tonkarton zackige Blätter schneiden — sieht aus wie gewollt.",
+        "Geocaching-App spinnt (Wow)? Papier-Schatzkarte mit gemalten Pflanzen-Hinweisen — der Original-Weg."
+      ],
+      "fallback": "Total katastrophal? Zauberbaum-Beutel + Quest-Pass + Kuchen reichen für 2h Programm — Zeremonie statt Aktivität.",
+      "tone": "praktisch"
+    },
+    "ein_kind_weint": {
+      "icon": "😢",
+      "label": "Ein Kind weint",
+      "headline": "Raus aus dem Trubel — 5 Min am Ankunfts-Pult, dann sehen wir weiter.",
+      "steps": [
+        "Kind aus der Gruppe nehmen — Küche oder Flur, weg vom Lärm.",
+        "Apfelschorle + Talisman in die Hand drücken als Beruhigungs-Ritual.",
+        "Rolle anbieten: ‚Magst du die Quest-Pässe verteilen? Du sagst, wer dran ist.'",
+        "Bei Heimweh: Wahl anbieten — anrufen oder Foto von Mama am Handy zeigen. Anruf nur wenn Kind danach fragt.",
+        "Nach 5 Min an die Hand nehmen, zur nächsten Station mitnehmen — nicht fragen."
+      ],
+      "fallback": "Geht gar nicht mehr? Eltern anrufen, abholen lassen — kein Drama, lieber 30 Min früher als ein Trauma.",
+      "tone": "ruhig"
+    }
+  }
+}
