@@ -2965,7 +2965,7 @@ var ELITE_MOTTO_DATA = {
               },
               {
                 "name": "Verdaechtige",
-                "content": "A) Hausmeister Mueller (14:00-15:00 Heizkeller). B) Erzieherin Schmidt (ab 14:00 Bastel-Raum). C) Vater Becker (kam 14:35). D) Baecker (Lieferung 14:25, ging 14:32)."
+                "content": "A) Hausmeister Mueller (14:00-15:00 Heizkeller). B) Erzieherin Schmidt (ab 14:00 Bastel-Raum). C) Vater Becker (kam 14:35). D) Koechin (Lieferung 14:25, ging 14:32)."
               },
               {
                 "name": "Beweise",
@@ -2973,7 +2973,7 @@ var ELITE_MOTTO_DATA = {
               },
               {
                 "name": "Indizienkette",
-                "content": "Hausmeister: Logbuch deckt 14:30 ab = ALIBI. Erzieherin: Lieferschein 14:32 bestaetigt = ALIBI. Baecker: hatte 7 Min Zeit, ging als letzter durch Lager. Vater: erst 14:35 = ALIBI."
+                "content": "Hausmeister: Logbuch deckt 14:30 ab = ALIBI. Erzieherin: Lieferschein 14:32 bestaetigt = ALIBI. Koechin: hatte 7 Min Zeit alleine in der Kueche, Pfanne stand auf der Herdplatte. Vater: erst 14:35 = ALIBI."
               },
               {
                 "name": "Loesung",
@@ -3203,7 +3203,7 @@ var ELITE_MOTTO_DATA = {
               },
               {
                 "name": "Verdaechtige",
-                "content": "A) Hausmeister Mueller (14:00-15:00 Heizkeller). B) Erzieherin Schmidt (ab 14:00 Bastel-Raum). C) Vater Becker (kam 14:35). D) Baecker (Lieferung 14:25, ging 14:32)."
+                "content": "A) Hausmeister Mueller (14:00-15:00 Heizkeller). B) Erzieherin Schmidt (ab 14:00 Bastel-Raum). C) Vater Becker (kam 14:35). D) Koechin (Lieferung 14:25, ging 14:32)."
               },
               {
                 "name": "Beweise",
@@ -3211,7 +3211,7 @@ var ELITE_MOTTO_DATA = {
               },
               {
                 "name": "Indizienkette",
-                "content": "Hausmeister: Logbuch deckt 14:30 ab = ALIBI. Erzieherin: Lieferschein 14:32 bestaetigt = ALIBI. Baecker: hatte 7 Min Zeit, ging als letzter durch Lager. Vater: erst 14:35 = ALIBI."
+                "content": "Hausmeister: Logbuch deckt 14:30 ab = ALIBI. Erzieherin: Lieferschein 14:32 bestaetigt = ALIBI. Koechin: hatte 7 Min Zeit alleine in der Kueche, Pfanne stand auf der Herdplatte. Vater: erst 14:35 = ALIBI."
               },
               {
                 "name": "Loesung",
@@ -3466,7 +3466,7 @@ var ELITE_MOTTO_DATA = {
               },
               {
                 "name": "Verdaechtige",
-                "content": "A) Hausmeister Mueller (14:00-15:00 Heizkeller). B) Erzieherin Schmidt (ab 14:00 Bastel-Raum). C) Vater Becker (kam 14:35). D) Baecker (Lieferung 14:25, ging 14:32)."
+                "content": "A) Hausmeister Mueller (14:00-15:00 Heizkeller). B) Erzieherin Schmidt (ab 14:00 Bastel-Raum). C) Vater Becker (kam 14:35). D) Koechin (Lieferung 14:25, ging 14:32)."
               },
               {
                 "name": "Beweise",
@@ -3474,7 +3474,7 @@ var ELITE_MOTTO_DATA = {
               },
               {
                 "name": "Indizienkette",
-                "content": "Hausmeister: Logbuch deckt 14:30 ab = ALIBI. Erzieherin: Lieferschein 14:32 bestaetigt = ALIBI. Baecker: hatte 7 Min Zeit, ging als letzter durch Lager. Vater: erst 14:35 = ALIBI."
+                "content": "Hausmeister: Logbuch deckt 14:30 ab = ALIBI. Erzieherin: Lieferschein 14:32 bestaetigt = ALIBI. Koechin: hatte 7 Min Zeit alleine in der Kueche, Pfanne stand auf der Herdplatte. Vater: erst 14:35 = ALIBI."
               },
               {
                 "name": "Loesung",
