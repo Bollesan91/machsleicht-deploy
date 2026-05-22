@@ -278,7 +278,7 @@
       ],
       "food": "Einfach und meeresblau: Wackelpudding in Blau („Meerwasser“) mit Gummi-Fischen drin, Gurken-„Algen“-Sticks, blaue Muffins mit Muschel-Keks obendrauf. Dazu „Meerwasser“ (heller Apfelsaft mit Schuss blauem Sirup, sparsam). Kein Aufwand, alles am Vortag machbar. ⚠️ Für 3-Jährige: Gummi-Süßes klein schneiden — Erstickungsrisiko.",
       "decoration": "Ein blaues Tuch oder Bettlaken am Boden als Meeresgrund, ein paar Plueschfische und Deko-Muscheln drauf. Blaue Luftballons, falls da. Mehr braucht das Wohnzimmer-Riff nicht.",
-      "giveaways": "Perlen-Beutel (Schoko-Perlen) + Urkunde + das selbst gebastelte Muschel-Stirnband. Reicht voellig.",
+      "giveaways": "Perlen-Beutel (Schoko-Perlen) + Urkunde + das selbst gebastelte Muschel-Stirnband. Reicht voellig. Allergen-Hinweis: Schoko-Perlen koennen Spuren von Milch/Soja/Nuss enthalten — Eltern vorab fragen, ob das Kind verträgt.",
       "shoppingList": [
         {
           "emoji": "🐚",
@@ -1289,6 +1289,10 @@
       {
         "topic": "✨ Perlen + Glitzer: auf Allergie-Hinweise achten",
         "detail": "Billige Glitzer-Sticker und Perlen koennen Nickel oder Phthalate enthalten — bei empfindlicher Kinderhaut Ausschlag moeglich. Bei der Einladungs-Allergie-Abfrage gezielt nach „Kontaktallergie Modeschmuck/Sticker“ fragen. Im Zweifel: nur Pappmuscheln und Filzstifte verwenden, fertige Perlen-Beutel verschlossen weitergeben statt offen am Tisch. Essbarer Glitzer auf Kuchen oft mit E-Nummern — bei E-Nummern-Empfindlichkeit weglassen."
+      },
+      {
+        "topic": "Klopapierrollen-Test (Erstickungs-Gefahr)",
+        "detail": "Faustregel fuer 3-Jaehrige: Was durch eine Klopapierrolle passt (∅ < 4,5 cm), ist Erstickungsgefahr. Bei reinen 3-Jaehrigen Plastik-Perlen weglassen, nur Wattekugeln oder handtellergrosse Muscheln verwenden. Glitzer-Sticker nur unter Aufsicht."
       }
     ],
     "educationalValue": "Hinter der bunten Unterwasser-Welt steckt mehr als Spass. Beim gemeinsamen Perlen-Sammeln und Korallen-Garten-Bauen ueben die Kinder Zusammenarbeit ohne Konkurrenz — alle gewinnen gemeinsam, niemand verliert. Das Fisch-Quiz foerdert Sprache und Koerpergefuehl, das Stirnband-Basteln die Feinmotorik in kleinen Schritten. Und das Wichtigste: Die Meeres-Helfer-Rollen geben jedem Kind das Gefuehl, gebraucht zu werden — das staerkt Selbstvertrauen und Empathie weit mehr als jeder Wettkampf."
