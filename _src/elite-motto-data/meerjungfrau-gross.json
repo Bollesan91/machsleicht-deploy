@@ -191,7 +191,7 @@
             {
               "n": 2,
               "name": "PERLE-Lösung",
-              "content": "Pottwal 1800 / Elefantenrobbe 600 / Riesenkrake 400 / Leopardenhai 300 / Echte Karettschildkröte 90 → P-E-R-L-E."
+              "content": "Pottwal 1800 / Elefantenrobbe 600 / Riesenkrake 1300 / Leopardenhai 180 / Echte Karettschildkröte 90 → P-E-R-L-E."
             },
             {
               "n": 3,
@@ -921,7 +921,7 @@
             {
               "n": 2,
               "name": "Station 2 (Navigator) → T",
-              "content": "4 Tiefen-Schichten nach Tiefe sortieren: epipelagisch (0-200m), mesopelagisch (200-1000m), bathypelagisch (1000-4000m), abyssopelagisch (4000-6000m). Schicht mit Tiefsee-Beginn (1000m) = Tiefsee-Übergang → T."
+              "content": "Direkte Frage statt Sortierung: Welche Meeres-Schicht beginnt bei 200 m und heisst Daemmerungszone? Loesung: Twilight-Zone / mesopelagisch (200-1000 m) → Buchstabe T. Eindeutig: eine Frage, ein Buchstabe. Wenn die Antwort kein T liefert, war die Frage falsch verstanden."
             },
             {
               "n": 3,
@@ -961,7 +961,7 @@
           ],
           "safetyRule": "Bei Garten-Stationen im Dunkeln auf Stolperfallen achten — Stationen vor Einbruch der Dunkelheit ablaufen. Wasser-Stationen nur knöcheltief.",
           "ageAdjust9": "Stationen 1 + 2 vereinfachen — nur 3 Perlen-Sorten in Station 1, klare Schicht-Bilder in Station 2.",
-          "ageAdjust12": "Mehr Tiefe in Station 8: Lösungswort aus 8 Buchstaben rekonstruieren, einer per Caesar-Chiffre verschlüsselt (Buchstabe 1 zurück).",
+          "ageAdjust12": "Mehr Tiefe: Loesungswort aus 8 Buchstaben rekonstruieren. Der ERSTE Buchstabe ist um 1 nach hinten verschoben — B steht statt A, M statt L. Verschiebe ihn um 1 zurueck. Beispiel: \"BTLANTIS\" → ATLANTIS. Die anderen 7 Buchstaben sind unveraendert.",
           "indoorTip": "Die 8 Stationen durch verschiedene Räume verteilen — der Wechsel hält die Spannung.",
           "outdoorTip": "Im Garten wirkt die Tauch-Signal-Station am besten — echte Bewegungs-Übungen unter freiem Himmel.",
           "whyItWorksTitle": "Wettbewerb wird Mission",
@@ -1001,7 +1001,7 @@
           ],
           "safetyRule": "Eltern-Opt-In schriftlich. Allergien, Asthma-Inhalator und Medikamente vorher einsammeln. Bei der Garten-Suche Stolperfallen vorher entschärfen, Stirnlampen für alle. Sternenhimmel-Beobachtung nur bei klarem Wetter sinnvoll.",
           "ageAdjust9": "Nicht empfohlen unter 10 — eher Wow ohne Schlafparty.",
-          "ageAdjust12": "Meeres-Doku anspruchsvoller wählen (Tiefsee-Folge mit Anglerfisch & Riesenkalmar), längere Sterne-Sitzung, ggf. Caesar-Chiffre als Bonus-Rätsel.",
+          "ageAdjust12": "Mehr Tiefe: Loesungswort aus 8 Buchstaben rekonstruieren. Der ERSTE Buchstabe ist um 1 nach hinten verschoben — B steht statt A, M statt L. Verschiebe ihn um 1 zurueck. Beispiel: \"BTLANTIS\" → ATLANTIS. Die anderen 7 Buchstaben sind unveraendert.",
           "indoorTip": "Bei Regen die Meerestier-Suche in eine abgedunkelte Wohnung verlegen — Stirnlampen funktionieren drinnen genauso. Statt Sterne: Bioluminiszenz-Videos auf dem Beamer.",
           "outdoorTip": "Garten vorher auf Stolperfallen prüfen, reflektierende Aufkleber auf Augenhöhe verstecken. Ideal mit Decke auf dem Rasen für die Sterne-Phase.",
           "whyItWorksTitle": "Der Auftakt, nicht das ganze Programm",
