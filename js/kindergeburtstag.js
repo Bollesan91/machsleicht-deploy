@@ -15347,7 +15347,7 @@ var ELITE_MOTTO_DATA = {
             "material": "15 Quizfragen (ausdrucken oder vorlesen), Küchenglöckchen oder Kochlöffel zum Buzzern, Punkte-Tafel",
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -15366,7 +15366,7 @@ var ELITE_MOTTO_DATA = {
             "material": "2 Plastikflaschen (0,5l), Essig, Natron, Spülmittel, rote + gelbe Lebensmittelfarbe, 2 Auffangschalen",
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Kinder min. 1 Armlaenge zurueck, nie ins Krater-Innere beugen. Schuerze/alte Kleidung wegen Lebensmittelfarbe (faerbt!). Erwachsene*r misst Mengen ab. Faktencheck: Mehr Natron = NICHT hoehere Eruption (Saettigung ab ca 50g). Bei Augenkontakt: 5 Min mit Wasser spuelen.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -15385,7 +15385,7 @@ var ELITE_MOTTO_DATA = {
             "material": "2 Seile, 6 Kissen, 2 Bälle (=„Fossilien“), Stoppuhr",
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -15394,7 +15394,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": null
           }
         ],
-        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 pro Kind\n🍿Popcorn2 Schüsseln\n🧃Getränke4 Liter",
+        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🍿Popcorn2 Schüsseln\n🧃Getränke4 Liter",
         "decoration": "🎈 Grüne Ballons~2 €\n🦕 Dino-Figuren TischdekoIm Set",
         "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~2 € pro Kind.\n\n🦕 Mini-Dino\n🍬 Süßigkeiten\n📝 Quiz-Urkunde",
         "shoppingList": [
@@ -15506,7 +15506,7 @@ var ELITE_MOTTO_DATA = {
             "material": "15 Quizfragen, Küchenglöckchen/Kochlöffel, Punkte-Tafel",
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -15525,7 +15525,7 @@ var ELITE_MOTTO_DATA = {
             "material": "Große Wanne (60×40 cm), Sand/Reis (10 kg), Salzteig-Knochen (am Vortag backen), Dino-Figuren, Muscheln, Pinsel, Löffel, Dokumentations-Vorlage",
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Gips wird warm. Gipsstaub Maske beim Anruehren. Erwachsene*r mischt Gips. Mini-Dinos > 3 cm waehlen.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -15544,7 +15544,7 @@ var ELITE_MOTTO_DATA = {
             "material": "2× Plastikflasche 0,5l, Essig, Natron, Spülmittel, rote + gelbe Lebensmittelfarbe, 2 Auffangschalen, Sand",
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Kinder min. 1 Armlaenge zurueck, nie ins Krater-Innere beugen. Schuerze/alte Kleidung wegen Lebensmittelfarbe (faerbt!). Erwachsene*r misst Mengen ab. Faktencheck: Mehr Natron = NICHT hoehere Eruption (Saettigung ab ca 50g). Bei Augenkontakt: 5 Min mit Wasser spuelen.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -15563,7 +15563,7 @@ var ELITE_MOTTO_DATA = {
             "material": "2 Seile, Kissen, Bälle, Löffel, Stoppuhr",
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -15572,8 +15572,8 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": null
           }
         ],
-        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 pro Kind\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🍭Chips/Nachos2 Schüsseln",
-        "decoration": "🎈 Grüne Luftballons (10 Stk.)~2 €\n🦶 Fußspuren-Pfad am BodenKostenlos, 15 Min.\n🦕 Dino-Figuren als TischdekoIm Set\n📜 „Jurassic Park“-Schild am EingangKostenlosPappe + Edding",
+        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🍭Chips/Nachos2 Schüsseln",
+        "decoration": "🎈 Grüne Luftballons (10 Stk.)~2 €\n🦶 Fußspuren-Pfad am BodenKostenlos, 15 Min.\n🦕 Dino-Figuren als TischdekoIm Set\n📜 „Urzeit-Dschungel“-Schild am EingangKostenlosPappe + Edding",
         "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~3 € pro Kind.\n\nǺ AA; Forscherpass (mit Urkunde)\n🦕 Dino-Figur (aus Ausgrabung)\n🍬 Süßigkeiten\n💎 „Fossil“ (Muschel/Stein)",
         "shoppingList": [
           {
@@ -15707,7 +15707,7 @@ var ELITE_MOTTO_DATA = {
             "material": "Verschlüsselte Nachricht (Caesar-Chiffre, Buchstabe+3), Alphabet-Übersetzungstabelle ausdrucken",
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -15726,17 +15726,18 @@ var ELITE_MOTTO_DATA = {
             "material": "Parcours-Material (Seile, Kissen), 3 Umschläge mit Mini-Rätseln (Logik-Puzzle, Kreuzworträtsel, Zahlenreihe), Stoppuhr",
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
             "outdoorTip": null,
             "whyItWorksTitle": null,
-            "whyItWorks": null
+            "whyItWorks": null,
+            "codeLogic": "Saubere Code-Logik: 5 Stationen, jede gibt eine vorab festgelegte Ziffer per gedruckter Karte. Reihenfolge der Stationen = Schloss-Code. Beispiel-Default: 3-1-4-2-7. Station 1 (Caesar-Chiffre): Loesungswort steht auf Karte mit \"Ziffer 3\". Station 2 (Forscher-Quiz): Bei >=8/15 Punkten Karte \"Ziffer 1\" entnehmen; sonst Hilfe-Karte. Station 3 (Fossilien-Suche): Ziffer \"4\" unter der Auffangschale versteckt. Station 4 (Vulkan): Ziffer \"2\" steckt am Krater-Rand (nicht an Eruptionshoehe gekoppelt). Station 5 (Final): Ziffer \"7\" als Belohnungs-Karte. Code \"31427\" oeffnet Schloss. NICHT auf Geburtsdatum koppeln (das ist die alte falsche Logik)."
           }
         ],
-        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza2 pro Kind\n🥔Kartoffelbrei-Vulkan1 Schüssel\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🍭Nachos + Dip2 Schüsseln",
-        "decoration": "🎈 Grüne Luftballons~2 €\n🦶 Fußspuren-PfadKostenlos, 15 Min.\n📜 „Jurassic Park“-SchildKostenlosPappe + Edding\n🔊 Dschungel-SoundsKostenlosYouTube: „Jungle Ambience“\n🦕 Dino-Figuren überallIm Set\n🕯️ Wunderkerzen für Kuchen~2 €",
+        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🥔Kartoffelbrei-Vulkan1 Schüssel\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🍭Nachos + Dip2 Schüsseln",
+        "decoration": "🎈 Grüne Luftballons~2 €\n🦶 Fußspuren-PfadKostenlos, 15 Min.\n📜 „Urzeit-Dschungel“-SchildKostenlosPappe + Edding\n🔊 Dschungel-SoundsKostenlosYouTube: „Jungle Ambience“\n🦕 Dino-Figuren überallIm Set\n🕯️ Wunderkerzen für Kuchen~2 €",
         "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~4 € pro Kind.\n\nǺ AA; Forscherpass + Urkunde\n🦕 Dino-Figur\n💎 „Fossil“ (Muschel/Stein)\n🍬 Süßigkeiten\n🗝️ Mini-Lupe",
         "shoppingList": [
           {
@@ -15825,7 +15826,7 @@ var ELITE_MOTTO_DATA = {
       }
     ],
     "cakeRecipe": {
-      "intro": "Der einfachste Wow-Kuchen: Gugelhupf + Smarties",
+      "intro": "Der einfachste Wow-Kuchen: Gugelhupf + bunte Schoko-Linsen",
       "steps": [
         {
           "n": 1,
@@ -15841,11 +15842,11 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "n": 4,
-          "content": "Rote + orange Smarties in den Krater und am Rand verteilen"
+          "content": "Rote + orange bunte Schoko-Linsen in den Krater und am Rand verteilen"
         },
         {
           "n": 5,
-          "content": "Grüne Smarties unten am Fuß = Dschungel"
+          "content": "Grüne bunte Schoko-Linsen unten am Fuß = Dschungel"
         }
       ],
       "meta": {
@@ -15872,6 +15873,10 @@ var ELITE_MOTTO_DATA = {
         {
           "topic": "📞 Abholzeit klar kommunizieren",
           "detail": "Eltern setzen die Kinder ab und fahren. Das ist normal ab 8–9 Jahren. Aber: Abholzeit VORHER klar ansagen (z.B. „Abholung 17:00, bitte pünktlich“). Telefonnummern aller Eltern einsammeln. Ein zweiter Erwachsener als Helfer ist Pflicht ab 8 Kindern."
+        },
+        {
+          "tip": "Getraenke-Faustregel",
+          "content": "2 Getraenke pro Kind + 2 Reserve. Bei 8 Kindern 18 Getraenke. NICHT zusaetzlich Cola + Saftpaeckchen + Wasser parallel = ueberversorgt."
         }
       ],
       "educationalValue": null
@@ -15969,7 +15974,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🎂",
             "title": "Vulkan-Kuchen backen — oder Plan B",
-            "detail": "Wenn Zeit/Nerven: Gugelhupf + Schokoglasur + Smarties-Lava. Wenn nicht: Sahnetorte vom Bäcker (~8€), Schokoglasur + Smarties drauf. Bei Wow Wunderkerze + LED-Kerzen für Climax-Moment."
+            "detail": "Wenn Zeit/Nerven: Gugelhupf + Schokoglasur + bunte Schoko-Linsen-Lava. Wenn nicht: Sahnetorte vom Bäcker (~8€), Schokoglasur + bunte Schoko-Linsen drauf. Bei Wow Wunderkerze + LED-Kerzen für Climax-Moment."
           },
           {
             "icon": "🗣️",
@@ -15999,7 +16004,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🍫",
             "title": "Kuchen verzieren — Vulkan-Look",
-            "detail": "Schokoglasur drüber, Smarties als Lava von oben nach unten, grüne Smarties unten = Bäume. Bei Wow: Wunderkerze in Krater, LED-Kerzen rundherum für Magie-Effekt."
+            "detail": "Schokoglasur drüber, bunte Schoko-Linsen als Lava von oben nach unten, grüne bunte Schoko-Linsen unten = Bäume. Bei Wow: Wunderkerze in Krater, LED-Kerzen rundherum für Magie-Effekt."
           },
           {
             "icon": "🏗️",
@@ -16014,7 +16019,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🔊",
             "title": "Sirenen + Bluetooth-Box testen",
-            "detail": "Spotify ‚Jurassic Park Soundtrack' Playlist. Bei Wow Vulkan-Climax: Dino-Brüll-Sound separat speichern für ‚Eruption-Climax'."
+            "detail": "Spotify ‚Urzeit-Dschungel Soundtrack' Playlist. Bei Wow Vulkan-Climax: Dino-Brüll-Sound separat speichern für ‚Eruption-Climax'."
           },
           {
             "icon": "🔒",
@@ -16029,7 +16034,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "⏰",
             "title": "60 Min vor Ankunft: Stationen aufbauen",
-            "detail": "4 Stationen platzieren (Ausgrabung + Vulkan + Quiz + Forscherpass-Pult), Pizza-Bestellung bestätigen, Capri-Sun + Cola in Kühlschrank. Helfer ist da oder kommt jetzt."
+            "detail": "4 Stationen platzieren (Ausgrabung + Vulkan + Quiz + Forscherpass-Pult), Pizza-Bestellung bestätigen, Saftpaeckchen + Cola in Kühlschrank. Helfer ist da oder kommt jetzt."
           },
           {
             "icon": "🎯",
@@ -16039,7 +16044,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🎯",
             "title": "15 Min vor Ankunft: Audio + Forscherpass",
-            "detail": "Bluetooth-Box an, Jurassic-Playlist startet leise, Forscherpass-Auslage am Eingangs-Tisch. Stempelkissen offen, Dino-Figuren als Tisch-Deko."
+            "detail": "Bluetooth-Box an, Urzeit-Playlist startet leise, Forscherpass-Auslage am Eingangs-Tisch. Stempelkissen offen, Dino-Figuren als Tisch-Deko."
           },
           {
             "icon": "🫁",
@@ -16111,14 +16116,14 @@ var ELITE_MOTTO_DATA = {
       "kuchen_misslungen": {
         "icon": "🎂",
         "label": "Kuchen ist misslungen",
-        "headline": "Bäcker-Hack: Schoko-Gugelhupf + Mirror-Glaze-Smarties = Notfall in 10 Min.",
+        "headline": "Bäcker-Hack: Schoko-Gugelhupf + Mirror-Glaze-bunte Schoko-Linsen = Notfall in 10 Min.",
         "steps": [
           "Schoko-Gugelhupf beim Bäcker (~6-8€) oder Schoko-Kasten + Krater rein-bohren.",
           "Schokoglasur drüber laufen lassen = Lava-Strom.",
-          "Rote + orange Smarties als Lava-Strom + grüne Smarties unten als Bäume.",
+          "Rote + orange bunte Schoko-Linsen als Lava-Strom + grüne bunte Schoko-Linsen unten als Bäume.",
           "Bei Wow: Wunderkerze in Krater + LED-Kerzen rundherum für Magie-Effekt."
         ],
-        "fallback": "Bäcker zu? Stückkuchen vom Discounter, je Stück Smarties + Wunderkerze = ‚Mini-Vulkan-Stücke'. Bei 9-12 funktioniert humor: ‚Mini-Eruptionen, bewusst geplant.'",
+        "fallback": "Bäcker zu? Stückkuchen vom Discounter, je Stück bunte Schoko-Linsen + Wunderkerze = ‚Mini-Vulkan-Stücke'. Bei 9-12 funktioniert humor: ‚Mini-Eruptionen, bewusst geplant.'",
         "tone": "motivierend"
       },
       "spielzeug_kaputt_oder_fehlt": {
