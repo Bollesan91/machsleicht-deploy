@@ -21339,7 +21339,7 @@ var ELITE_MOTTO_DATA = {
       8
     ],
     "title": "🚀 Weltraum-Kindergeburtstag — 6–8 Jahre",
-    "metaDescription": "Weltraum-Kindergeburtstag für 6-8-Jährige: 3 fertige Party-Konzepte mit Astronauten-Crew, Mond-Mission, Spielanleitungen, Zeitplan, Einkaufsliste und Kosten. Kostenlos.",
+    "metaDescription": "Weltraum-Kindergeburtstag für 6-8-Jährige: 3 fertige Party-Konzepte mit Astronauten-Crew, Mond-Mission, Spielanleitungen, Zeitplan, Einkaufsliste und Kosten....",
     "introParagraph": "Dein Kind wird 6, 7 oder 8 und träumt von Raketen, Planeten und dem Mond? Hier bekommst du drei fertige Party-Konzepte rund um eine Astronauten-Crew auf Mond-Mission — von schnell und stressfrei bis zum vollen Programm mit Stations-Rotation und Sternen-Quest. Jede Crew übt die Mond-Landung, sammelt Energie-Crystals und bekommt am Ende ihre Astronauten-Lizenz. Jedes Konzept mit Zeitplan, Spielanleitungen, Einkaufsliste und Kosten.\n\n[Weltraum-Geburtstag planen →](/kindergeburtstag?motto=weltraum&alter=7#planer)",
     "ageInsight": {
       "headline": "Was 6–8-Jährige ausmacht — und was das für die Weltraum-Party heißt",
@@ -21514,7 +21514,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Jede Weite wird gefeiert, nicht nur die längste. Wer mag, baut um und startet eine zweite Runde mit besserer Form."
               }
             ],
-            "safetyRule": "Schutzbrille PFLICHT fuer alle in Reichweite (kein optional). Mindestabstand 2 m, nicht 2 Schritte. Bei Blindgaenger 60 Sek. warten, NUR Erwachsener naehert sich + oeffnet vorsichtig. Drinnen NIEMALS unter Haengelampe (Dose kann gegen Lampen/Gesichter schiessen). Geschlossene Filmdosen koennen mit erheblichem Druck in unvorhersehbare Richtung abheben.",
+            "safetyRule": "Halm nicht auf Gesichter/Augen richten, Abstand 2 m zur Pust-Linie, kein Verschlucken kleiner Papier-Finnen. Erwachsene kontrollieren, dass Rakete sicher geklebt ist (kein lockerer Strohhalm).",
             "ageAdjust6": "Rakete vorab fertig kleben, Kinder bemalen nur und pusten. Keine Mess-Pflicht — Hauptsache, sie fliegt.",
             "ageAdjust8": "Mehrere Bau-Varianten testen lassen (lange vs. kurze Finnen) und vergleichen, welche Form weiter fliegt — kleines Mini-Experiment.",
             "indoorTip": "Im Flur entlang pusten — die lange Bahn macht den Weiten-Vergleich fairer und es geht nichts kaputt.",
@@ -21780,7 +21780,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 6,
             "loudness": "laut",
             "effort": "mittel",
-            "material": "Pro Start: 1 Filmdose mit Deckel (oder kleine PET-Flasche), Brausetablette oder Natron + Essig, etwas Wasser. Schutzbrille optional. Eine glatte Fläche im Freien. Küchenpapier zum Aufwischen.",
+            "material": "Pro Start: 1 Filmdose mit Deckel (oder kleine PET-Flasche), Brausetablette oder Natron + Essig, etwas Wasser. Schutzbrille PFLICHT für alle in Reichweite. Eine glatte Fläche im Freien. Küchenpapier zum Aufwischen.",
             "prepText": "Das Highlight zum Staunen: Essig + Natron (oder eine Brausetablette in Wasser) in eine Filmdose, Deckel drauf, umdrehen, abstellen — und nach ein paar Sekunden schießt die Dose mit lautem Plopp in die Höhe. Sicher, billig, garantiert ein Aaah-Moment.",
             "steps": [
               {
@@ -21796,7 +21796,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 3,
                 "name": "Umdrehen & wegtreten",
-                "content": "Dose mit dem Deckel nach unten auf den Boden stellen — und alle treten zwei Schritte zurück. Countdown zählen."
+                "content": "Dose mit dem Deckel nach unten auf den Boden stellen — und alle treten 2 m Abstand. Countdown zählen."
               },
               {
                 "n": 4,
@@ -21825,7 +21825,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 6,
             "loudness": "ruhig",
             "effort": "leicht",
-            "material": "Pro Team 1 Code-Karte mit einer einfachen Symbol-Tabelle (jedem Buchstaben ein Symbol zugeordnet), 1 verschlüsselter Funkspruch auf Papier, Stift. Vorlage selbst zeichnen — 8 Symbole für die Buchstaben von MARS und MOND reichen.",
+            "material": "Pro Team 1 Code-Karte mit einer einfachen Symbol-Tabelle (jedem Buchstaben ein Symbol zugeordnet), 1 verschlüsselter Funkspruch auf Papier, Stift. Vorlage selbst zeichnen — 7 Symbole für die unique Buchstaben aus MARS und MOND (A, D, M, N, O, R, S) reichen.",
             "prepText": "Ein Funkspruch von einem fremden Planeten ist angekommen — aber er ist in Alien-Schrift. Mit der Code-Karte übersetzt die Crew Symbol für Symbol und knackt ein kurzes 3- bis 4-Buchstaben-Lösungswort wie MARS oder MOND.",
             "steps": [
               {
@@ -22184,7 +22184,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "16:10",
             "title": "🛰️ Sternen-Quest: Die verlorene Raumstation (5 Stationen)",
-            "description": "Der Höhepunkt der Wow-Variante. 5-Stationen-Tour durch Garten/Wohnung mit Sternen-Hinweisen, Codes, kleinen Weltraum-Rätseln und einem finalen Lösungswort, das den Standort der Raumstation verrät. 45 Min. Kann mit dem [machsleicht-Schatzsuche-Generator](/kindergeburtstag?modus=schatzsuche&motto=weltraum) erstellt werden — Motto Weltraum ist dort als Story hinterlegt."
+            "description": "Der Höhepunkt der Wow-Variante. 5-Stationen-Tour durch Garten/Wohnung mit Sternen-Hinweisen, Codes, kleinen Weltraum-Rätseln und einem finalen Lösungswort, das den Standort der Raumstation verrät. 45 Min. Kann mit dem [machsleicht-Schatzsuche-Generator](/kindergeburtstag?modus=schatzsuche&motto=weltraum) erstellt werden — Motto Weltraum ist dort als Story hinterlegt. (Stations-Spiele übernommen aus Standard-Variante — siehe variants[1].games: Sternen-Sammeln, Codeknacker, Funkspruch-Aliens, Geheimsprache)."
           },
           {
             "time": "16:55",
@@ -40775,7 +40775,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:55",
             "title": "📍 Prüfung 3: Geocaching im Garten/Park",
-            "description": "Mit Handy-GPS-App (z.B. c:geo oder Geocaching.com) im Garten oder Park 5 versteckte Mini-Caches finden. Pflanzen-Hinweise als Koordinaten-Rätsel. 40 Min. — siehe unten."
+            "description": "Mit Handy-GPS-App (z.B. GPS-Koordinaten-App (statt c:geo das nur für öffentliche Caches taugt) oder Geocaching.com) im Garten oder Park 5 versteckte Mini-Caches finden. Pflanzen-Hinweise als Koordinaten-Rätsel. 40 Min. — siehe unten."
           },
           {
             "time": "15:35",
@@ -40812,7 +40812,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 7,
             "loudness": "laut",
             "effort": "hoch",
-            "material": "1 Smartphone mit Geocaching-App (c:geo kostenlos, oder Geocaching.com), 5 kleine wasserdichte Behälter (Filmdöschen, Tic-Tac-Box, ~3 €), Mini-Talismane drin (Glassteine, Eicheln, Blüten-Anhänger), 5 Pflanzen-Hinweis-Zettel, 1 große Schatzkiste am Endpunkt",
+            "material": "1 Smartphone mit Geocaching-App (GPS-Koordinaten-App (statt c:geo das nur für öffentliche Caches taugt) kostenlos, oder Geocaching.com), 5 kleine wasserdichte Behälter (Filmdöschen, Tic-Tac-Box, ~3 €), Mini-Talismane drin (Glassteine, Eicheln, Blüten-Anhänger), 5 Pflanzen-Hinweis-Zettel, 1 große Schatzkiste am Endpunkt",
             "prepText": "1-2 Tage vorher: 5 Caches im Garten oder Park verstecken — unter Stein, im Astloch, hinter Baum-Wurzel. Koordinaten per App speichern oder mit Pflanzen-Hinweisen arbeiten („zwischen 3 Farnen und einem Stein\"). Am Party-Tag: Kinder bekommen Pflanzen-Hinweis-Zettel, suchen Caches in Reihenfolge. Letzter Cache enthält den Hinweis zur großen Schatzkiste am Zauberbaum.",
             "steps": [
               {
@@ -41054,7 +41054,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "📱",
-            "label": "Geocaching-App (kostenlos: c:geo)",
+            "label": "Geocaching-App (kostenlos: GPS-Koordinaten-App (statt c:geo das nur für öffentliche Caches taugt))",
             "url": null,
             "priceEur": 0,
             "hasAffiliate": false,
@@ -41349,7 +41349,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🔋",
             "title": "Geocaching-App + Spotify-Playlist testen (Wow)",
-            "detail": "App c:geo öffnen, GPS-Genauigkeit prüfen, 5 Caches einmal abgehen. Spotify-Playlist ‚Magic Forest' oder ‚Celtic Music' in der Notiz-App speichern. Nicht erst am Party-Tag suchen."
+            "detail": "App GPS-Koordinaten-App (statt c:geo das nur für öffentliche Caches taugt) öffnen, GPS-Genauigkeit prüfen, 5 Caches einmal abgehen. Spotify-Playlist ‚Magic Forest' oder ‚Celtic Music' in der Notiz-App speichern. Nicht erst am Party-Tag suchen."
           },
           {
             "icon": "🌿",
