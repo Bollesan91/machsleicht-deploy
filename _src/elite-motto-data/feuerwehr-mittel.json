@@ -1012,7 +1012,7 @@
         "indoor": true,
         "outdoor": false,
         "material": "5 Quiz-Karten ausgedruckt (Vorlagen unten), 2 alte Smartphones im Flugmodus (oder ohne SIM), 1 Stoppuhr",
-        "anleitung": "Spiel-Format wie ein Quiz mit drei Aufgaben pro Kind. Aufgabe 1: „Welche Nummer wählst du bei einem Brand?\" Aufgabe 2: „Nenne die 5 W — wer / wo / was / wie viele / warten.\" Aufgabe 3: „Du rufst an — was sagst du als erstes?\" Disponentin Clara nimmt die Anrufe auf dem Smartphone entgegen (Flugmodus!), Crew probiert reihum. Wer alle 3 schafft, bekommt einen kleinen Sticker auf den Dienstausweis. Keine Verlierer — wer hängen bleibt, bekommt einen Tipp.\n\nQuiz-Vorlagen: 1) Brand-Notruf, 2) Verkehrsunfall (Polizei oder 112?), 3) Katze auf Baum (kein 112-Fall!), 4) Oma fällt um (112!), 5) Streichholzkasten gefunden — wem sagen?",
+        "anleitung": "Spiel-Format wie ein Quiz mit drei Aufgaben pro Kind. Aufgabe 1: „Welche Nummer wählst du bei einem Brand?\" Aufgabe 2: „Nenne die 2 wichtigsten Fragen am Notruf: Wo ist es passiert? und Was ist passiert? Plus: Dranbleiben, bis die Leitstelle sagt \"alles klar\". (Die früher gelehrte 5-W-Regel gilt 2025 als überholt — moderne Leitstellen führen strukturierte Abfragen).\" Aufgabe 3: „Du rufst an — was sagst du als erstes?\" Disponentin Clara nimmt die Anrufe auf dem Smartphone entgegen (Flugmodus!), Crew probiert reihum. Wer alle 3 schafft, bekommt einen kleinen Sticker auf den Dienstausweis. Keine Verlierer — wer hängen bleibt, bekommt einen Tipp.\n\nQuiz-Vorlagen: 1) Brand-Notruf, 2) Verkehrsunfall (Polizei oder 112?), 3) Katze auf Baum (kein 112-Fall!), 4) Oma fällt um (112!), 5) Streichholzkasten gefunden — wem sagen?",
         "whyItWorks": "6-8 lernen hier wirklich was, das im Notfall greift. Die Kinder gehen mit konkretem Wissen nach Hause — Eltern bemerken's beim Abholen („Mama, weißt du was die 5 W sind?\"). SICHERHEIT: Smartphone MUSS im Flugmodus sein, sonst riskierst du einen versehentlichen echten Notruf — der ist kein Witz und kann eine Strafanzeige zur Folge haben."
       },
       {
@@ -1121,7 +1121,7 @@
       },
       {
         "topic": "📋 Plan B bei Regen",
-        "detail": "Alle Spiele in dieser Vorlage funktionieren auch drinnen. Zielspritzen ins Bad (Wanne!), Ausbildungs-Stationen ins Wohnzimmer + Flur, Einsatz-Alarm durch alle Zimmer der Wohnung. Wenn du draußen planst: Räume innen schon vorab freihalten, falls's umkippt. Nie ohne Plan B."
+        "detail": "Fast alle Spiele funktionieren auch drinnen — Ausnahme: die Eimerkette braucht draußen oder Garage. Indoor-Ersatz dafür: Drill-Training (Flammen-Zielscheibe), das wetterunabhängig läuft. Zielspritzen ins Bad (Wanne!), Ausbildungs-Stationen ins Wohnzimmer + Flur, Einsatz-Alarm durch alle Zimmer der Wohnung. Wenn du draußen planst: Räume innen schon vorab freihalten, falls's umkippt. Nie ohne Plan B."
       },
       {
         "topic": "📱 Partyseite statt WhatsApp-Chaos",
@@ -1141,7 +1141,7 @@
       },
       {
         "topic": "📲 Notruf-Erziehung beiläufig",
-        "detail": "Wenn du das Theorie-Briefing der Wow-Variante machst oder das 112-Quiz aus den Bonus-Spielen, kannst du beiläufig drei lebenswichtige Inhalte mitgeben: 1. Die 112 ist die Feuerwehr-Notrufnummer in ganz Europa — funktioniert auch ohne SIM-Karte vom Smartphone aus. 2. Beim Notruf gilt die 5-W-Regel: Wer (rufe ich an, mein Name), Wo (ist es passiert), Was (ist passiert), Wie viele (sind verletzt/in Gefahr), Warten (auf Rückfragen). 3. Auflegen erst, wenn die Leitstelle es sagt. Diese drei Punkte sind die offizielle Brandschutzerziehung — die kommt in der Schule nochmal, aber wenn dein Kind und seine Freunde es schon auf der Party hören, ist die Schicht beim Erinnern halbiert."
+        "detail": "Wenn du das Theorie-Briefing der Wow-Variante machst oder das 112-Quiz aus den Bonus-Spielen, kannst du beiläufig drei lebenswichtige Inhalte mitgeben: 1. Die 112 ist die Feuerwehr-Notrufnummer in ganz Europa — funktioniert von jedem Handy mit gültiger SIM — auch ohne Guthaben und in fremden Netzen (Notrufe ohne SIM wurden in Deutschland abgeschaltet). 2. Beim Notruf gilt die 5-W-Regel: Wer (rufe ich an, mein Name), Wo (ist es passiert), Was (ist passiert), Wie viele (sind verletzt/in Gefahr), Warten (auf Rückfragen). 3. Auflegen erst, wenn die Leitstelle es sagt. Diese drei Punkte sind die offizielle Brandschutzerziehung — die kommt in der Schule nochmal, aber wenn dein Kind und seine Freunde es schon auf der Party hören, ist die Schicht beim Erinnern halbiert."
       }
     ],
     "educationalValue": "Kinder, die hier waren, gehen mit drei konkreten Brandschutz-Skills nach Hause: 1. Sie wissen, dass die 112 die richtige Notrufnummer ist, und sie kennen die 5 W (Wer / Wo / Was / Wie viele / Warten). 2. Sie wissen, dass Wasser nicht alles löscht — Fett-Brand wird mit Deckel erstickt, nicht mit Wasser bespritzt. 3. Sie wissen, dass im Brandfall Rauch das Hauptproblem ist und dass tief am Boden die sauberste Luft ist. Das sind keine Marketing-Versprechen — das passiert beiläufig in den Spielen und im Theorie-Briefing der Wow-Variante. Die Deutsche Brandschutzerziehung empfiehlt diese Inhalte ab 5 Jahren. Wir packen sie hier in eine Geburtstagsparty, ohne dass es nach Schulstunde aussieht."
