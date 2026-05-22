@@ -129,7 +129,8 @@
           "indoorTip": null,
           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
           "whyItWorksTitle": "Warum Rasierschaum",
-          "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min."
+          "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+          "ageAdjust3": "WICHTIG fuer 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
         },
         {
           "name": "🚒 Helm-Bilder ausmalen",
@@ -373,7 +374,8 @@
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "ageAdjust3": "WICHTIG fuer 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
         }
       ],
       "food": "🎂Feuerwehrauto-Kuchen1 Kastenform\n🥤Apfelschorle2 l\n🥨Brezeln + Salzstangenje 1 Tüte\n🥒GemüsesticksGurke + Möhre\n🌭Mini-Würstchen (weich)10 Stk., klein geschnitten",
@@ -564,7 +566,7 @@
           "loudness": null,
           "effort": null,
           "material": "1 altersgerechtes Feuerwehr-Bilderbuch (Bibliothek leihen, oder günstig in der Buchhandlung — bei der Bibliothekarin nach „Feuerwehr für 3-5 Jahre\" fragen, die Pixi-Reihe und die Wieso-Weshalb-Warum-Reihe haben passende Titel). Eine bequeme Sitzecke (Sofa oder Kissen am Boden).",
-          "prepText": "Genau zwischen Helm-Bemalen (ruhig-fokussiert) und Spritz-Probe (laut). Die Kinder sind nach dem Bemalen tendenziell ruhig — diese Phase nutzt das aus. Du sitzt vorne mit dem Buch, Kinder im Halbkreis, mit fertigen Helmen auf dem Kopf. Lese langsam vor, zeige die Bilder, lass die Kinder zwischendurch reagieren („Was siehst du?\", „Das macht der Feuerwehrmann da, oder?\").\n\nFunktioniert magisch — die Kinder sind fokussierter als bei einem reinen Spiel. Sie wollen wirklich wissen, was im Buch passiert.",
+          "prepText": "Genau zwischen Helm-Bemalen (ruhig-fokussiert) und Spritz-Probe (laut). Die Kinder sind nach dem Bemalen tendenziell ruhig — diese Phase nutzt das aus. Du sitzt vorne mit dem Buch, Kinder im Halbkreis, mit fertigen Helmen auf dem Kopf. Lese langsam vor, zeige die Bilder, lass die Kinder zwischendurch reagieren („Was siehst du?\", „Das machen die Feuerwehrleute da, oder?\").\n\nFunktioniert magisch — die Kinder sind fokussierter als bei einem reinen Spiel. Sie wollen wirklich wissen, was im Buch passiert.",
           "steps": [],
           "safetyRule": null,
           "ageAdjust6": null,
@@ -629,7 +631,8 @@
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "ageAdjust3": "WICHTIG fuer 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
         }
       ],
       "food": "🎂Feuerwehrauto-Kuchen1 Kastenform + \n🥤Apfelschorle2 l\n🥨Brezeln + Salzstangenje 1 Tüte\n🥒Gemüsesticks + HummusGurke + Möhre\n🌭Mini-Würstchen (weich)10 Stk., klein geschnitten\n🍓Erdbeeren / Beeren200 g",
@@ -791,7 +794,7 @@
         "indoor": true,
         "outdoor": true,
         "material": "Bluetooth-Box + Handy mit Feuerwehr-Sirene + Kinderlieder im Wechsel. Sonst nichts.",
-        "anleitung": "Musik läuft = die Kinder bewegen sich frei (rennen, tanzen, hüpfen). Sobald die Sirene ertönt, müssen alle „einfrieren\" — wie ein Feuerwehrmann am Einsatzort. Wer wackelt, hilft beim nächsten Runde-Anschmeißen mit. Kein Ausscheiden, kein Verlieren — bei 3-5 sind kooperative Varianten Pflicht. Funktioniert als Energie-Burner direkt vor der ersten Snack-Pause.",
+        "anleitung": "Musik läuft = die Kinder bewegen sich frei (rennen, tanzen, hüpfen). Sobald die Sirene ertönt, müssen alle „einfrieren\" — wie ein Feuerwehr-Profi am Einsatzort. Wer wackelt, hilft beim nächsten Runde-Anschmeißen mit. Kein Ausscheiden, kein Verlieren — bei 3-5 sind kooperative Varianten Pflicht. Funktioniert als Energie-Burner direkt vor der ersten Snack-Pause.",
         "whyItWorks": "3-5-Jährige brauchen Bewegungs-Slots zwischen den eher statischen Bastel/Schaum-Aktivitäten. Sirene als Stop-Signal ist motto-stimmig und für die Kleinen sofort verständlich — kein Regelerklären nötig."
       },
       {

@@ -79,14 +79,14 @@
       }
     ],
     "optOutNote": "Kein Kind muss eine Rolle uebernehmen, und niemand muss die Augenklappe tragen. Manche 3-Jaehrige finden die Klappe doof oder bekommen Angst, wenn ein Auge bedeckt ist — dann reicht das Stirnband oder gar nichts. Wer nicht in den Kreis will, schaut von Mamas Schoss aus zu und ist trotzdem Teil der Crew. Rollen sind ein Angebot, kein Pflicht-Programm. Bei den Spielen gewinnt niemand und verliert niemand — der Schatz gehoert am Ende allen.",
-    "materialNote": "Pflicht: eine Augenklappe pro Kind (mit Namen) und eine Schatzkisten-Urkunde zum Mitnehmen. Sinnvoll: ein Piraten-Hut oder Bandana pro Kind und eine grosse Schatzkarte (DIN A3). Die Schatzkiste ist ein beklebter Schuhkarton — nichts muss gekauft werden. Schoko-Goldmuenzen sind das Herz der Uebergabe: eine pro Kind plus drei Reserve, falls eine zerbroeselt."
+    "materialNote": "Pflicht: eine Augenklappe pro Kind (mit Namen) und eine Schatzkisten-Urkunde zum Mitnehmen. Sinnvoll: ein Piraten-Hut oder Bandana pro Kind und eine grosse Schatzkarte (DIN A3). Die Schatzkiste ist ein beklebter Schuhkarton — nichts muss gekauft werden. Ritual-Schatz = Plastik-Goldmuenzen (essen-unabhaengig, keine Aspiration). Schoko-Goldmuenzen NUR am Esstisch unter Aufsicht servieren, NICHT im Such-Spiel der 3-Jaehrigen: eine pro Kind plus drei Reserve, falls eine zerbroeselt."
   },
   "ageInsight": {
     "headline": "Was 3-5-Jaehrige ausmacht — und was das fuer die Piraten-Party heisst",
     "traits": [
       {
         "topic": "Aufmerksamkeit",
-        "detail": "10-15 Minuten pro Aktion, dann kippt die Stimmung. Kurze Schatzspur, schnelle Erfolge, oft den Tee wechseln — lieber drei Mini-Etappen als eine lange Suche."
+        "detail": "10-15 Minuten pro Aktion, dann kippt die Stimmung. Kurze Schatzspur, schnelle Erfolge, oft den Takt wechseln — lieber drei Mini-Etappen als eine lange Suche."
       },
       {
         "topic": "Wettbewerb",
@@ -111,6 +111,10 @@
       {
         "topic": "Hunger & Pausen",
         "detail": "Nach spaetestens 45 Minuten Aktion kommt der Kuchen, sonst Meltdown. Der Essens-Slot ist kein Lueckenfueller, sondern fester Anker im Ablauf — plan ihn frueh ein."
+      },
+      {
+        "name": "Schluck- & Erstickungsgefahr",
+        "detail": "3-Jaehrige nehmen alles in den Mund. Mini-Dinos/-Tiere mindestens 3 cm, keine runden harten Suessigkeiten (Schoko-Goldmuenzen, Gummibaerchen) als Such-/Spielobjekte. Bei Schoko-Goldmuenzen am Esstisch: Folie abziehen, Aufsicht. Klopapierrollen-Test als Pflicht-Check."
       }
     ],
     "whyMottoFitsHeadline": "Warum Piraten fuer 3-5 funktionieren",
@@ -242,7 +246,7 @@
           "whyItWorks": "Eine Suche hat ein klares Ziel und ein eingebautes Happy End — das verstehen schon Dreijaehrige. Weil alle gemeinsam suchen und das Gold geteilt wird, gibt es keine Verlierer und keine Traenen. Das ist das Herzstueck jeder Piraten-Party fuer die Kleinen."
         }
       ],
-      "food": "🎂 Piratenschiff-Kuchen (Kastenkuchen mit Papier-Segel) — reicht fuer 6 Kinder. 🥛 'Piraten-Grog' (Apfelschorle in Karaffen). 🍎 Obst-Spiesse als 'Schatz-Haeppchen'. Schlicht und satt machend — mehr ist bei 90 Minuten nicht noetig.",
+      "food": "🎂 Piratenschiff-Kuchen (Kastenkuchen mit Papier-Segel) — reicht fuer 6 Kinder. 🥛 'Piraten-Grog' (Apfelschorle in Karaffen). 🍎 Obst-Haeppchen (bei 3-4-Jaehrigen ohne Spiess) als 'Schatz-Haeppchen'. Schlicht und satt machend — mehr ist bei 90 Minuten nicht noetig.",
       "decoration": "🏴‍☠️ Ein, zwei blaue Tuecher als 'Meer' und die grosse Schatzkarte in der Mitte. Mehr braucht es nicht — Kinder achten auf die Spiele, nicht die Deko.",
       "giveaways": "🪙 Pro Kind ein paar Schoko-Goldmuenzen + die Schatzkisten-Urkunde. Optional ein Mini-Mitgebsel. Klein halten — das Erlebnis ist das Geschenk.",
       "shoppingList": [
@@ -348,7 +352,7 @@
       "id": "standard",
       "label": "Standard — 2 Std., Sweet Spot",
       "headline": "🏴‍☠️ Standard — 2 Stunden, vier Stationen",
-      "intro": "Die ausgewogene Variante: 2 Stunden, 6 Kinder, vier Spiele mit Kuchen-Pause in der Mitte. Genug Programm, dass keine Langeweile aufkommt, aber kein Stress beim Vorbereiten. Das ist der Sweet Spot fuer die meisten Familien — abwechslungsreich, aber machbar.",
+      "intro": "Die ausgewogene Variante: 2 Stunden, 6 Kinder, vier Stationen + 1 Reserve-Spiel (Schatzinsel-Huepfen als optionaler Puffer wenn Tempo es zulaesst) mit Kuchen-Pause in der Mitte. Genug Programm, dass keine Langeweile aufkommt, aber kein Stress beim Vorbereiten. Das ist der Sweet Spot fuer die meisten Familien — abwechslungsreich, aber machbar.",
       "timeWindow": "15:00–17:00, 6 Kinder",
       "schedule": [
         {
@@ -589,7 +593,7 @@
           "whyItWorks": "Boden-ist-Lava-Spiele sind ein 3-5-Klassiker, der in der Piraten-Welt von selbst Sinn macht: Inseln und Meer brauchen keine Erklaerung. Es ist Bewegung mit klarer Geschichte, ohne Wettbewerb und ohne Ausscheiden — und die 'Rettung' aus dem Meer ist fuer Dreijaehrige der Lieblings-Moment."
         }
       ],
-      "food": "🎂 Piratenschiff-Kuchen. 🥛 'Piraten-Grog' (Apfelschorle). 🍪 'Schiffszwieback' (einfache Butterkekse). 🍎 Obst-Spiesse. 🧀 Kaese-Wuerfel als 'Proviant'. Eine Handvoll herzhafter Snacks neben dem Kuchen — gut, weil 2 Stunden mit nur Kuchen zu suess werden.",
+      "food": "🎂 Piratenschiff-Kuchen. 🥛 'Piraten-Grog' (Apfelschorle). 🍪 'Schiffszwieback' (einfache Butterkekse). 🍎 Obst-Haeppchen (bei 3-4-Jaehrigen ohne Spiess). 🧀 Kaese-Wuerfel als 'Proviant'. Eine Handvoll herzhafter Snacks neben dem Kuchen — gut, weil 2 Stunden mit nur Kuchen zu suess werden.",
       "decoration": "🏴‍☠️ Blaue Tuecher als Meer, ein, zwei Piratenflaggen, Schatzkarte in der Mitte und Piraten-Servietten auf dem Tisch. Stimmungsvoll, aber in 20 Minuten aufgebaut.",
       "giveaways": "🪙 Mitgebsel-Tuete pro Kind: Goldmuenzen, Mini-Spielzeug, Schatzkisten-Urkunde. Wer mag, legt die Augenklappe als Andenken dazu.",
       "shoppingList": [
@@ -919,7 +923,7 @@
           "whyItWorks": "Stopp-Tanz ist ein 3-5-Klassiker, der mit Piraten-Geschichte einen frischen Rahmen bekommt — aus 'Stopp' wird 'Land in Sicht'. Die Inseln-schrumpfen-Mechanik baut Naehe statt Wettbewerb auf: Am Ende kleben alle freudig zusammen, statt dass einer als Verlierer ausscheidet. Perfekt als laute Abschluss-Welle vor dem Schatz-Teilen."
         }
       ],
-      "food": "🎂 Piratenschiff-Kuchen auf 'Meer'-Platte (blauer Tonkarton). 🥛 'Piraten-Grog'. 🍪 'Schiffszwieback'. 🍌 'Schwertfisch-Spiesse' (Obst auf Holzspiessen). 🧀 Kaese-Anker (Kaese mit Ausstecher). Liebevoll angerichtet — bei Wow ist das Auge mit am Tisch.",
+      "food": "🎂 Piratenschiff-Kuchen auf 'Meer'-Platte (blauer Tonkarton). 🥛 'Piraten-Grog'. 🍪 'Schiffszwieback'. 🍌 'Schwertfisch-Haeppchen (Obst einzeln serviert, NICHT auf Spiessen bei 3-Jaehrigen)' (Obst auf Holzspiessen). 🧀 Kaese-Anker (Kaese mit Ausstecher). Liebevoll angerichtet — bei Wow ist das Auge mit am Tisch.",
       "decoration": "🏴‍☠️ Volle Deko: blaues 'Meer' aus Tuechern, mehrere Piratenflaggen, Schatzkarte gross an der Wand, Piraten-Servietten und ggf. ein paar aufgehaengte Goldmuenzen-Girlanden. Macht aus dem Raum ein Schiff.",
       "giveaways": "🗺️ Jedes Kind nimmt seine selbstgebastelte Schatzkarte mit — das beste Mitgebsel, weil selbst gemacht. Dazu Goldmuenzen, Urkunde und die Augenklappe.",
       "shoppingList": [
@@ -1070,7 +1074,7 @@
       },
       {
         "n": 5,
-        "content": "Zwei Holzspiesse als Maste einstecken. Aus weissem oder buntem Papier zwei Segel ausschneiden (Dreieck/Rechteck), auf die Spiesse fAedeln."
+        "content": "Zwei Holzspiesse als Maste einstecken. Aus weissem oder buntem Papier zwei Segel ausschneiden (Dreieck/Rechteck), auf die Spiesse faedeln."
       },
       {
         "n": 6,
@@ -1120,8 +1124,8 @@
         "detail": "90 Minuten bis 2 Stunden sind genug. Lieber aufhoeren, wenn es am schoensten ist, als eine Stunde zu lang. Ein klares Ende-Ritual (Schatz teilen, Urkunde, Tschuess) gibt allen das Signal — sonst zerfasert die Party."
       },
       {
-        "tip": "Holzspiess-Sicherheit",
-        "content": "Bei 3-4-Jaehrigen Obst von Holzspiessen ABZIEHEN und einzeln servieren. Holzspiesse nur fuer Aeltere oder unter Aufsicht. Beim Kuchen vor dem Anschneiden die Holzspieß-Maste der Piraten-Deko ZIEHEN."
+        "topic": "Holzspiess-Sicherheit",
+        "detail": "Bei 3-4-Jaehrigen Obst von Holzspiessen ABZIEHEN und einzeln servieren. Holzspiesse nur fuer Aeltere oder unter Aufsicht. Beim Kuchen vor dem Anschneiden die Holzspieß-Maste der Piraten-Deko ZIEHEN."
       }
     ],
     "educationalValue": "Die Kinder ueben ganz nebenbei: gemeinsam ein Ziel verfolgen, aufeinander warten und am Ende teilen. Eine Schatzsuche ohne Sieger zeigt 3-5-Jaehrigen, dass ein Erfolg schoener wird, wenn ihn alle haben — das ist die erste Erfahrung von Kooperation statt Konkurrenz. Dazu kommt ein Stueck Selbstwirksamkeit: 'Ich habe den Schatz mitgefunden' ist fuer ein Dreijaehriges ein echtes Erfolgserlebnis. Und das Rollenspiel — jemand anders sein, in eine Geschichte eintauchen — trainiert Fantasie und Sprache, ohne dass es nach Lernen aussieht."

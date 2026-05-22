@@ -112,7 +112,7 @@
           "minAge": 3,
           "loudness": "mittel",
           "effort": "leicht",
-          "material": "15–20 bunte Plastik-Eier oder bunt bemalte Steine, 5 kleine Schüsseln/Eimer, Mini-Dinos oder Gummibärchen zum Reinlegen",
+          "material": "15–20 bunte Plastik-Eier oder bunt bemalte Steine, 5 kleine Schüsseln/Eimer, Mini-Dinos (>3 cm) zum Reinlegen. KEINE Süßigkeiten in die Eier — separat NACH dem Spiel am Tisch verteilen (Aspirationsgefahr bei 3-Jährigen)",
           "prepText": "Eier im Raum/Garten verteilen — bei 3-Jährigen halb sichtbar, bei 5-Jährigen besser versteckt. Jedes Kind bekommt eine Schüssel. Alle suchen gleichzeitig. Wer eins findet, darf es öffnen und den Inhalt behalten.",
           "steps": [
             "Eier vor Ankunft im Raum/Garten verstecken (5 pro Kind)",
@@ -259,7 +259,7 @@
           "minAge": 3,
           "loudness": "mittel",
           "effort": "leicht",
-          "material": "20 bunte Plastik-Eier, Mini-Dinos oder Gummibärchen zum Reinlegen, 5 Schüsseln",
+          "material": "20 bunte Plastik-Eier, Mini-Dinos (>3 cm) zum Reinlegen. KEINE Süßigkeiten in die Eier — separat NACH dem Spiel am Tisch verteilen (Aspirationsgefahr bei 3-Jährigen), 5 Schüsseln",
           "prepText": "Eier verteilen (bei 3-Jährigen halb sichtbar, bei 5-Jährigen versteckter). Alle suchen gleichzeitig, kein Wettbewerb. „Wer eins findet, darf es öffnen!“ Ersatz-Eier in der Tasche für Kinder die leer ausgehen.",
           "steps": [
             "20 Eier mit Mini-Dino oder Gummibärchen befüllen",
@@ -689,12 +689,30 @@
   "cakeRecipe": {
     "intro": "Der einfachste Wow-Kuchen: Gugelhupf + bunte Schoko-Linsen",
     "steps": [
-      {"n": 1, "content": "Schoko-Gugelhupf backen (Fertigmischung reicht völlig)"},
-      {"n": 2, "content": "Auf Teller stürzen — das Loch in der Mitte = Krater"},
-      {"n": 3, "content": "Schoko-Glasur über den Rand laufen lassen = Lava"},
-      {"n": 4, "content": "Rote + orange bunte Schoko-Linsen in den Krater und am Rand verteilen"},
-      {"n": 5, "content": "Grüne bunte Schoko-Linsen unten am Fuß = Dschungel"},
-      {"n": 6, "content": "Optional: kleine Dino-Figur obendrauf. KEINE Wunderkerze bei 3–5 (Brand-Panik-Eltern)."}
+      {
+        "n": 1,
+        "content": "Schoko-Gugelhupf backen (Fertigmischung reicht völlig)"
+      },
+      {
+        "n": 2,
+        "content": "Auf Teller stürzen — das Loch in der Mitte = Krater"
+      },
+      {
+        "n": 3,
+        "content": "Schoko-Glasur über den Rand laufen lassen = Lava"
+      },
+      {
+        "n": 4,
+        "content": "Rote + orange bunte Schoko-Linsen in den Krater und am Rand verteilen"
+      },
+      {
+        "n": 5,
+        "content": "Grüne bunte Schoko-Linsen unten am Fuß = Dschungel"
+      },
+      {
+        "n": 6,
+        "content": "Optional: kleine Dino-Figur obendrauf. KEINE Wunderkerze bei 3–5 (Brand-Panik-Eltern)."
+      }
     ],
     "meta": {
       "aufwand": "45 Min. inkl. Backen",
@@ -731,7 +749,7 @@
         "detail": "Statt einzelne Nachrichten: erstelle eine [WhatsApp-Partyseite](https://party.machsleicht.de). Adresse, Uhrzeit, Motto, Abholzeit — alles auf einer Seite. Eltern antworten mit einem Klick. Kostenlos, in 2 Minuten fertig."
       }
     ],
-    "educationalValue": null
+    "educationalValue": "Auch fuer 3-5-Jaehrige steckt Lernen drin: Tier-/Fossilien-Erkennung trainiert Beobachtungsgabe und Mustererkennung, das Ausgrabungs-Spiel foerdert Feinmotorik und Geduld (langsam-graben), Dino-Spuren-Story baut einfache Erzaehl-Logik (Anfang/Mitte/Ende). Das Triumph-Erlebnis \"Ich hab ein Dino-Ei gefunden!\" foerdert Selbstwirksamkeit. Kein Lernzwang — Spiel-im-Vordergrund."
   },
   "invitationTemplate": "🦕 Interaktive Dino-Einladung per WhatsApp verschicken\n\nErstelle in 30 Sekunden eine fertige Einladung mit Name, Datum und Ort — die Gäste bekommen ein kleines Dino-Abenteuer als Vorgeschmack auf die Party.\n[🦕 Dino-Einladung erstellen →](/einladung/erstellen?motto=dino)\n\n[💬 Idee per WhatsApp teilen](https://wa.me/?text=Schau%20mal%3A%20Dino-Abenteuer%20Kindergeburtstag%20f%C3%BCr%203%E2%80%935%20Jahre%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Spielanleitungen%20und%20Einkaufsliste!%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Fdino-3-5-jahre)",
   "preparationWeeks": {

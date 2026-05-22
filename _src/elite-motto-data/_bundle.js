@@ -135,7 +135,8 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": null,
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
             "whyItWorksTitle": "Warum Rasierschaum",
-            "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min."
+            "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+            "ageAdjust3": "WICHTIG fuer 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           },
           {
             "name": "🚒 Helm-Bilder ausmalen",
@@ -379,7 +380,8 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": null,
             "outdoorTip": null,
             "whyItWorksTitle": null,
-            "whyItWorks": null
+            "whyItWorks": null,
+            "ageAdjust3": "WICHTIG fuer 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           }
         ],
         "food": "🎂Feuerwehrauto-Kuchen1 Kastenform\n🥤Apfelschorle2 l\n🥨Brezeln + Salzstangenje 1 Tüte\n🥒GemüsesticksGurke + Möhre\n🌭Mini-Würstchen (weich)10 Stk., klein geschnitten",
@@ -570,7 +572,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": null,
             "effort": null,
             "material": "1 altersgerechtes Feuerwehr-Bilderbuch (Bibliothek leihen, oder günstig in der Buchhandlung — bei der Bibliothekarin nach „Feuerwehr für 3-5 Jahre\" fragen, die Pixi-Reihe und die Wieso-Weshalb-Warum-Reihe haben passende Titel). Eine bequeme Sitzecke (Sofa oder Kissen am Boden).",
-            "prepText": "Genau zwischen Helm-Bemalen (ruhig-fokussiert) und Spritz-Probe (laut). Die Kinder sind nach dem Bemalen tendenziell ruhig — diese Phase nutzt das aus. Du sitzt vorne mit dem Buch, Kinder im Halbkreis, mit fertigen Helmen auf dem Kopf. Lese langsam vor, zeige die Bilder, lass die Kinder zwischendurch reagieren („Was siehst du?\", „Das macht der Feuerwehrmann da, oder?\").\n\nFunktioniert magisch — die Kinder sind fokussierter als bei einem reinen Spiel. Sie wollen wirklich wissen, was im Buch passiert.",
+            "prepText": "Genau zwischen Helm-Bemalen (ruhig-fokussiert) und Spritz-Probe (laut). Die Kinder sind nach dem Bemalen tendenziell ruhig — diese Phase nutzt das aus. Du sitzt vorne mit dem Buch, Kinder im Halbkreis, mit fertigen Helmen auf dem Kopf. Lese langsam vor, zeige die Bilder, lass die Kinder zwischendurch reagieren („Was siehst du?\", „Das machen die Feuerwehrleute da, oder?\").\n\nFunktioniert magisch — die Kinder sind fokussierter als bei einem reinen Spiel. Sie wollen wirklich wissen, was im Buch passiert.",
             "steps": [],
             "safetyRule": null,
             "ageAdjust6": null,
@@ -635,7 +637,8 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": null,
             "outdoorTip": null,
             "whyItWorksTitle": null,
-            "whyItWorks": null
+            "whyItWorks": null,
+            "ageAdjust3": "WICHTIG fuer 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           }
         ],
         "food": "🎂Feuerwehrauto-Kuchen1 Kastenform + \n🥤Apfelschorle2 l\n🥨Brezeln + Salzstangenje 1 Tüte\n🥒Gemüsesticks + HummusGurke + Möhre\n🌭Mini-Würstchen (weich)10 Stk., klein geschnitten\n🍓Erdbeeren / Beeren200 g",
@@ -797,7 +800,7 @@ var ELITE_MOTTO_DATA = {
           "indoor": true,
           "outdoor": true,
           "material": "Bluetooth-Box + Handy mit Feuerwehr-Sirene + Kinderlieder im Wechsel. Sonst nichts.",
-          "anleitung": "Musik läuft = die Kinder bewegen sich frei (rennen, tanzen, hüpfen). Sobald die Sirene ertönt, müssen alle „einfrieren\" — wie ein Feuerwehrmann am Einsatzort. Wer wackelt, hilft beim nächsten Runde-Anschmeißen mit. Kein Ausscheiden, kein Verlieren — bei 3-5 sind kooperative Varianten Pflicht. Funktioniert als Energie-Burner direkt vor der ersten Snack-Pause.",
+          "anleitung": "Musik läuft = die Kinder bewegen sich frei (rennen, tanzen, hüpfen). Sobald die Sirene ertönt, müssen alle „einfrieren\" — wie ein Feuerwehr-Profi am Einsatzort. Wer wackelt, hilft beim nächsten Runde-Anschmeißen mit. Kein Ausscheiden, kein Verlieren — bei 3-5 sind kooperative Varianten Pflicht. Funktioniert als Energie-Burner direkt vor der ersten Snack-Pause.",
           "whyItWorks": "3-5-Jährige brauchen Bewegungs-Slots zwischen den eher statischen Bastel/Schaum-Aktivitäten. Sirene als Stop-Signal ist motto-stimmig und für die Kleinen sofort verständlich — kein Regelerklären nötig."
         },
         {
@@ -12380,7 +12383,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 3,
             "loudness": "mittel",
             "effort": "leicht",
-            "material": "15–20 bunte Plastik-Eier oder bunt bemalte Steine, 5 kleine Schüsseln/Eimer, Mini-Dinos oder Gummibärchen zum Reinlegen",
+            "material": "15–20 bunte Plastik-Eier oder bunt bemalte Steine, 5 kleine Schüsseln/Eimer, Mini-Dinos (>3 cm) zum Reinlegen. KEINE Süßigkeiten in die Eier — separat NACH dem Spiel am Tisch verteilen (Aspirationsgefahr bei 3-Jährigen)",
             "prepText": "Eier im Raum/Garten verteilen — bei 3-Jährigen halb sichtbar, bei 5-Jährigen besser versteckt. Jedes Kind bekommt eine Schüssel. Alle suchen gleichzeitig. Wer eins findet, darf es öffnen und den Inhalt behalten.",
             "steps": [
               "Eier vor Ankunft im Raum/Garten verstecken (5 pro Kind)",
@@ -12527,7 +12530,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 3,
             "loudness": "mittel",
             "effort": "leicht",
-            "material": "20 bunte Plastik-Eier, Mini-Dinos oder Gummibärchen zum Reinlegen, 5 Schüsseln",
+            "material": "20 bunte Plastik-Eier, Mini-Dinos (>3 cm) zum Reinlegen. KEINE Süßigkeiten in die Eier — separat NACH dem Spiel am Tisch verteilen (Aspirationsgefahr bei 3-Jährigen), 5 Schüsseln",
             "prepText": "Eier verteilen (bei 3-Jährigen halb sichtbar, bei 5-Jährigen versteckter). Alle suchen gleichzeitig, kein Wettbewerb. „Wer eins findet, darf es öffnen!“ Ersatz-Eier in der Tasche für Kinder die leer ausgehen.",
             "steps": [
               "20 Eier mit Mini-Dino oder Gummibärchen befüllen",
@@ -13017,7 +13020,7 @@ var ELITE_MOTTO_DATA = {
           "detail": "Statt einzelne Nachrichten: erstelle eine [WhatsApp-Partyseite](https://party.machsleicht.de). Adresse, Uhrzeit, Motto, Abholzeit — alles auf einer Seite. Eltern antworten mit einem Klick. Kostenlos, in 2 Minuten fertig."
         }
       ],
-      "educationalValue": null
+      "educationalValue": "Auch fuer 3-5-Jaehrige steckt Lernen drin: Tier-/Fossilien-Erkennung trainiert Beobachtungsgabe und Mustererkennung, das Ausgrabungs-Spiel foerdert Feinmotorik und Geduld (langsam-graben), Dino-Spuren-Story baut einfache Erzaehl-Logik (Anfang/Mitte/Ende). Das Triumph-Erlebnis \"Ich hab ein Dino-Ei gefunden!\" foerdert Selbstwirksamkeit. Kein Lernzwang — Spiel-im-Vordergrund."
     },
     "invitationTemplate": "🦕 Interaktive Dino-Einladung per WhatsApp verschicken\n\nErstelle in 30 Sekunden eine fertige Einladung mit Name, Datum und Ort — die Gäste bekommen ein kleines Dino-Abenteuer als Vorgeschmack auf die Party.\n[🦕 Dino-Einladung erstellen →](/einladung/erstellen?motto=dino)\n\n[💬 Idee per WhatsApp teilen](https://wa.me/?text=Schau%20mal%3A%20Dino-Abenteuer%20Kindergeburtstag%20f%C3%BCr%203%E2%80%935%20Jahre%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Spielanleitungen%20und%20Einkaufsliste!%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Fdino-3-5-jahre)",
     "preparationWeeks": {
@@ -15707,14 +15710,14 @@ var ELITE_MOTTO_DATA = {
         }
       ],
       "optOutNote": "Kein Kind muss eine Rolle uebernehmen, und niemand muss die Augenklappe tragen. Manche 3-Jaehrige finden die Klappe doof oder bekommen Angst, wenn ein Auge bedeckt ist — dann reicht das Stirnband oder gar nichts. Wer nicht in den Kreis will, schaut von Mamas Schoss aus zu und ist trotzdem Teil der Crew. Rollen sind ein Angebot, kein Pflicht-Programm. Bei den Spielen gewinnt niemand und verliert niemand — der Schatz gehoert am Ende allen.",
-      "materialNote": "Pflicht: eine Augenklappe pro Kind (mit Namen) und eine Schatzkisten-Urkunde zum Mitnehmen. Sinnvoll: ein Piraten-Hut oder Bandana pro Kind und eine grosse Schatzkarte (DIN A3). Die Schatzkiste ist ein beklebter Schuhkarton — nichts muss gekauft werden. Schoko-Goldmuenzen sind das Herz der Uebergabe: eine pro Kind plus drei Reserve, falls eine zerbroeselt."
+      "materialNote": "Pflicht: eine Augenklappe pro Kind (mit Namen) und eine Schatzkisten-Urkunde zum Mitnehmen. Sinnvoll: ein Piraten-Hut oder Bandana pro Kind und eine grosse Schatzkarte (DIN A3). Die Schatzkiste ist ein beklebter Schuhkarton — nichts muss gekauft werden. Ritual-Schatz = Plastik-Goldmuenzen (essen-unabhaengig, keine Aspiration). Schoko-Goldmuenzen NUR am Esstisch unter Aufsicht servieren, NICHT im Such-Spiel der 3-Jaehrigen: eine pro Kind plus drei Reserve, falls eine zerbroeselt."
     },
     "ageInsight": {
       "headline": "Was 3-5-Jaehrige ausmacht — und was das fuer die Piraten-Party heisst",
       "traits": [
         {
           "topic": "Aufmerksamkeit",
-          "detail": "10-15 Minuten pro Aktion, dann kippt die Stimmung. Kurze Schatzspur, schnelle Erfolge, oft den Tee wechseln — lieber drei Mini-Etappen als eine lange Suche."
+          "detail": "10-15 Minuten pro Aktion, dann kippt die Stimmung. Kurze Schatzspur, schnelle Erfolge, oft den Takt wechseln — lieber drei Mini-Etappen als eine lange Suche."
         },
         {
           "topic": "Wettbewerb",
@@ -15739,6 +15742,10 @@ var ELITE_MOTTO_DATA = {
         {
           "topic": "Hunger & Pausen",
           "detail": "Nach spaetestens 45 Minuten Aktion kommt der Kuchen, sonst Meltdown. Der Essens-Slot ist kein Lueckenfueller, sondern fester Anker im Ablauf — plan ihn frueh ein."
+        },
+        {
+          "name": "Schluck- & Erstickungsgefahr",
+          "detail": "3-Jaehrige nehmen alles in den Mund. Mini-Dinos/-Tiere mindestens 3 cm, keine runden harten Suessigkeiten (Schoko-Goldmuenzen, Gummibaerchen) als Such-/Spielobjekte. Bei Schoko-Goldmuenzen am Esstisch: Folie abziehen, Aufsicht. Klopapierrollen-Test als Pflicht-Check."
         }
       ],
       "whyMottoFitsHeadline": "Warum Piraten fuer 3-5 funktionieren",
@@ -15870,7 +15877,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Eine Suche hat ein klares Ziel und ein eingebautes Happy End — das verstehen schon Dreijaehrige. Weil alle gemeinsam suchen und das Gold geteilt wird, gibt es keine Verlierer und keine Traenen. Das ist das Herzstueck jeder Piraten-Party fuer die Kleinen."
           }
         ],
-        "food": "🎂 Piratenschiff-Kuchen (Kastenkuchen mit Papier-Segel) — reicht fuer 6 Kinder. 🥛 'Piraten-Grog' (Apfelschorle in Karaffen). 🍎 Obst-Spiesse als 'Schatz-Haeppchen'. Schlicht und satt machend — mehr ist bei 90 Minuten nicht noetig.",
+        "food": "🎂 Piratenschiff-Kuchen (Kastenkuchen mit Papier-Segel) — reicht fuer 6 Kinder. 🥛 'Piraten-Grog' (Apfelschorle in Karaffen). 🍎 Obst-Haeppchen (bei 3-4-Jaehrigen ohne Spiess) als 'Schatz-Haeppchen'. Schlicht und satt machend — mehr ist bei 90 Minuten nicht noetig.",
         "decoration": "🏴‍☠️ Ein, zwei blaue Tuecher als 'Meer' und die grosse Schatzkarte in der Mitte. Mehr braucht es nicht — Kinder achten auf die Spiele, nicht die Deko.",
         "giveaways": "🪙 Pro Kind ein paar Schoko-Goldmuenzen + die Schatzkisten-Urkunde. Optional ein Mini-Mitgebsel. Klein halten — das Erlebnis ist das Geschenk.",
         "shoppingList": [
@@ -15976,7 +15983,7 @@ var ELITE_MOTTO_DATA = {
         "id": "standard",
         "label": "Standard — 2 Std., Sweet Spot",
         "headline": "🏴‍☠️ Standard — 2 Stunden, vier Stationen",
-        "intro": "Die ausgewogene Variante: 2 Stunden, 6 Kinder, vier Spiele mit Kuchen-Pause in der Mitte. Genug Programm, dass keine Langeweile aufkommt, aber kein Stress beim Vorbereiten. Das ist der Sweet Spot fuer die meisten Familien — abwechslungsreich, aber machbar.",
+        "intro": "Die ausgewogene Variante: 2 Stunden, 6 Kinder, vier Stationen + 1 Reserve-Spiel (Schatzinsel-Huepfen als optionaler Puffer wenn Tempo es zulaesst) mit Kuchen-Pause in der Mitte. Genug Programm, dass keine Langeweile aufkommt, aber kein Stress beim Vorbereiten. Das ist der Sweet Spot fuer die meisten Familien — abwechslungsreich, aber machbar.",
         "timeWindow": "15:00–17:00, 6 Kinder",
         "schedule": [
           {
@@ -16217,7 +16224,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Boden-ist-Lava-Spiele sind ein 3-5-Klassiker, der in der Piraten-Welt von selbst Sinn macht: Inseln und Meer brauchen keine Erklaerung. Es ist Bewegung mit klarer Geschichte, ohne Wettbewerb und ohne Ausscheiden — und die 'Rettung' aus dem Meer ist fuer Dreijaehrige der Lieblings-Moment."
           }
         ],
-        "food": "🎂 Piratenschiff-Kuchen. 🥛 'Piraten-Grog' (Apfelschorle). 🍪 'Schiffszwieback' (einfache Butterkekse). 🍎 Obst-Spiesse. 🧀 Kaese-Wuerfel als 'Proviant'. Eine Handvoll herzhafter Snacks neben dem Kuchen — gut, weil 2 Stunden mit nur Kuchen zu suess werden.",
+        "food": "🎂 Piratenschiff-Kuchen. 🥛 'Piraten-Grog' (Apfelschorle). 🍪 'Schiffszwieback' (einfache Butterkekse). 🍎 Obst-Haeppchen (bei 3-4-Jaehrigen ohne Spiess). 🧀 Kaese-Wuerfel als 'Proviant'. Eine Handvoll herzhafter Snacks neben dem Kuchen — gut, weil 2 Stunden mit nur Kuchen zu suess werden.",
         "decoration": "🏴‍☠️ Blaue Tuecher als Meer, ein, zwei Piratenflaggen, Schatzkarte in der Mitte und Piraten-Servietten auf dem Tisch. Stimmungsvoll, aber in 20 Minuten aufgebaut.",
         "giveaways": "🪙 Mitgebsel-Tuete pro Kind: Goldmuenzen, Mini-Spielzeug, Schatzkisten-Urkunde. Wer mag, legt die Augenklappe als Andenken dazu.",
         "shoppingList": [
@@ -16547,7 +16554,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Stopp-Tanz ist ein 3-5-Klassiker, der mit Piraten-Geschichte einen frischen Rahmen bekommt — aus 'Stopp' wird 'Land in Sicht'. Die Inseln-schrumpfen-Mechanik baut Naehe statt Wettbewerb auf: Am Ende kleben alle freudig zusammen, statt dass einer als Verlierer ausscheidet. Perfekt als laute Abschluss-Welle vor dem Schatz-Teilen."
           }
         ],
-        "food": "🎂 Piratenschiff-Kuchen auf 'Meer'-Platte (blauer Tonkarton). 🥛 'Piraten-Grog'. 🍪 'Schiffszwieback'. 🍌 'Schwertfisch-Spiesse' (Obst auf Holzspiessen). 🧀 Kaese-Anker (Kaese mit Ausstecher). Liebevoll angerichtet — bei Wow ist das Auge mit am Tisch.",
+        "food": "🎂 Piratenschiff-Kuchen auf 'Meer'-Platte (blauer Tonkarton). 🥛 'Piraten-Grog'. 🍪 'Schiffszwieback'. 🍌 'Schwertfisch-Haeppchen (Obst einzeln serviert, NICHT auf Spiessen bei 3-Jaehrigen)' (Obst auf Holzspiessen). 🧀 Kaese-Anker (Kaese mit Ausstecher). Liebevoll angerichtet — bei Wow ist das Auge mit am Tisch.",
         "decoration": "🏴‍☠️ Volle Deko: blaues 'Meer' aus Tuechern, mehrere Piratenflaggen, Schatzkarte gross an der Wand, Piraten-Servietten und ggf. ein paar aufgehaengte Goldmuenzen-Girlanden. Macht aus dem Raum ein Schiff.",
         "giveaways": "🗺️ Jedes Kind nimmt seine selbstgebastelte Schatzkarte mit — das beste Mitgebsel, weil selbst gemacht. Dazu Goldmuenzen, Urkunde und die Augenklappe.",
         "shoppingList": [
@@ -16698,7 +16705,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "n": 5,
-          "content": "Zwei Holzspiesse als Maste einstecken. Aus weissem oder buntem Papier zwei Segel ausschneiden (Dreieck/Rechteck), auf die Spiesse fAedeln."
+          "content": "Zwei Holzspiesse als Maste einstecken. Aus weissem oder buntem Papier zwei Segel ausschneiden (Dreieck/Rechteck), auf die Spiesse faedeln."
         },
         {
           "n": 6,
@@ -16748,8 +16755,8 @@ var ELITE_MOTTO_DATA = {
           "detail": "90 Minuten bis 2 Stunden sind genug. Lieber aufhoeren, wenn es am schoensten ist, als eine Stunde zu lang. Ein klares Ende-Ritual (Schatz teilen, Urkunde, Tschuess) gibt allen das Signal — sonst zerfasert die Party."
         },
         {
-          "tip": "Holzspiess-Sicherheit",
-          "content": "Bei 3-4-Jaehrigen Obst von Holzspiessen ABZIEHEN und einzeln servieren. Holzspiesse nur fuer Aeltere oder unter Aufsicht. Beim Kuchen vor dem Anschneiden die Holzspieß-Maste der Piraten-Deko ZIEHEN."
+          "topic": "Holzspiess-Sicherheit",
+          "detail": "Bei 3-4-Jaehrigen Obst von Holzspiessen ABZIEHEN und einzeln servieren. Holzspiesse nur fuer Aeltere oder unter Aufsicht. Beim Kuchen vor dem Anschneiden die Holzspieß-Maste der Piraten-Deko ZIEHEN."
         }
       ],
       "educationalValue": "Die Kinder ueben ganz nebenbei: gemeinsam ein Ziel verfolgen, aufeinander warten und am Ende teilen. Eine Schatzsuche ohne Sieger zeigt 3-5-Jaehrigen, dass ein Erfolg schoener wird, wenn ihn alle haben — das ist die erste Erfahrung von Kooperation statt Konkurrenz. Dazu kommt ein Stueck Selbstwirksamkeit: 'Ich habe den Schatz mitgefunden' ist fuer ein Dreijaehriges ein echtes Erfolgserlebnis. Und das Rollenspiel — jemand anders sein, in eine Geschichte eintauchen — trainiert Fantasie und Sprache, ohne dass es nach Lernen aussieht."
@@ -29430,7 +29437,7 @@ var ELITE_MOTTO_DATA = {
         ],
         "food": "Einfach und meeresblau: Wackelpudding in Blau („Meerwasser“) mit Gummi-Fischen drin, Gurken-„Algen“-Sticks, blaue Muffins mit Muschel-Keks obendrauf. Dazu „Meerwasser“ (heller Apfelsaft mit Schuss blauem Sirup, sparsam). Kein Aufwand, alles am Vortag machbar. ⚠️ Für 3-Jährige: Gummi-Süßes klein schneiden — Erstickungsrisiko.",
         "decoration": "Ein blaues Tuch oder Bettlaken am Boden als Meeresgrund, ein paar Plueschfische und Deko-Muscheln drauf. Blaue Luftballons, falls da. Mehr braucht das Wohnzimmer-Riff nicht.",
-        "giveaways": "Perlen-Beutel (Schoko-Perlen) + Urkunde + das selbst gebastelte Muschel-Stirnband. Reicht voellig.",
+        "giveaways": "Perlen-Beutel (Schoko-Perlen) + Urkunde + das selbst gebastelte Muschel-Stirnband. Reicht voellig. Allergen-Hinweis: Schoko-Perlen koennen Spuren von Milch/Soja/Nuss enthalten — Eltern vorab fragen, ob das Kind verträgt.",
         "shoppingList": [
           {
             "emoji": "🐚",
@@ -30441,6 +30448,10 @@ var ELITE_MOTTO_DATA = {
         {
           "topic": "✨ Perlen + Glitzer: auf Allergie-Hinweise achten",
           "detail": "Billige Glitzer-Sticker und Perlen koennen Nickel oder Phthalate enthalten — bei empfindlicher Kinderhaut Ausschlag moeglich. Bei der Einladungs-Allergie-Abfrage gezielt nach „Kontaktallergie Modeschmuck/Sticker“ fragen. Im Zweifel: nur Pappmuscheln und Filzstifte verwenden, fertige Perlen-Beutel verschlossen weitergeben statt offen am Tisch. Essbarer Glitzer auf Kuchen oft mit E-Nummern — bei E-Nummern-Empfindlichkeit weglassen."
+        },
+        {
+          "topic": "Klopapierrollen-Test (Erstickungs-Gefahr)",
+          "detail": "Faustregel fuer 3-Jaehrige: Was durch eine Klopapierrolle passt (∅ < 4,5 cm), ist Erstickungsgefahr. Bei reinen 3-Jaehrigen Plastik-Perlen weglassen, nur Wattekugeln oder handtellergrosse Muscheln verwenden. Glitzer-Sticker nur unter Aufsicht."
         }
       ],
       "educationalValue": "Hinter der bunten Unterwasser-Welt steckt mehr als Spass. Beim gemeinsamen Perlen-Sammeln und Korallen-Garten-Bauen ueben die Kinder Zusammenarbeit ohne Konkurrenz — alle gewinnen gemeinsam, niemand verliert. Das Fisch-Quiz foerdert Sprache und Koerpergefuehl, das Stirnband-Basteln die Feinmotorik in kleinen Schritten. Und das Wichtigste: Die Meeres-Helfer-Rollen geben jedem Kind das Gefuehl, gebraucht zu werden — das staerkt Selbstvertrauen und Empathie weit mehr als jeder Wettkampf."
