@@ -240,7 +240,6 @@
           "whyItWorks": "Der Countdown gibt einen klaren, gemeinsamen Rhythmus, und das „Einfrieren“ baut eine eingebaute Ruhepause ein — so wechseln sich Toben und Stillsein ab, genau das brauchen kleine Kinder."
         },
         {
-          "_source": "SEO-Cross-Pollination",
           "name": "🎨 Planeten-Malen",
           "indoor": true,
           "outdoor": false,
@@ -588,7 +587,6 @@
           "whyItWorks": "Basteln gibt jedem Kind ein fertiges Ergebnis in die Hand, das es behalten darf — das stärkt den Stolz, und die ruhige Tätigkeit bremst die Gruppe nach einer Toben-Phase angenehm herunter."
         },
         {
-          "_source": "SEO-Cross-Pollination",
           "name": "🌟 Sternen-Memory",
           "indoor": true,
           "outdoor": false,
@@ -918,7 +916,7 @@
           "indoor": true,
           "outdoor": false,
           "duration": "20 Min.",
-          "minAge": 5,
+          "minAge": 4,
           "loudness": "leise",
           "effort": "mittel",
           "material": "Pro Kind eine leere Klopapierrolle, bunte Stifte oder Fingerfarbe, Krepppapier-Streifen (rot/orange = Flamme), Klebestift, ein Stern-Sticker.",
@@ -954,7 +952,6 @@
           "whyItWorks": "Basteln gibt jedem Kind ein fertiges Ergebnis in die Hand, das es behalten darf — das stärkt den Stolz, und die ruhige Tätigkeit bremst die Gruppe nach einer Toben-Phase angenehm herunter."
         },
         {
-          "_source": "SEO-Cross-Pollination",
           "name": "👽 Freundlicher Alien-Fang",
           "indoor": true,
           "outdoor": true,
@@ -1174,7 +1171,7 @@
     "meta": {
       "aufwand": "mittel (Rührteig + 15 Min. Deko)",
       "kosten": "ca. 5–8 €",
-      "allergiker": "Für Ei-Allergie: fertigen Marmorkuchen vom Bäcker nehmen und nur die Glasur + Krater selbst draufmachen — sieht genauso aus. Glutenfrei: Reismehl-Mischung (Schaer/Bauckhof) statt Weizen. Laktosefrei: Pflanzenmargarine + Hafermilch statt Butter/Milch. Mit Eltern vorab durchsprechen, was im Buttercreme-Stern noch ersetzt werden muss."
+      "allergiker": "Für Ei-Allergie: fertigen Marmorkuchen vom Bäcker nehmen und nur die Glasur + Krater selbst draufmachen — sieht genauso aus. Glutenfrei: Reismehl-Mischung (Schaer/Bauckhof) statt Weizen. Laktosefrei: Pflanzenmargarine + Hafermilch statt Butter/Milch. Mit Eltern vorab durchsprechen, was im Glasur noch ersetzt werden muss."
     },
     "tips": [
       {
@@ -1235,12 +1232,10 @@
       "a": "Teilweise. Das Karton-Raumschiff und das Sammeln begeistern auch die Kleinsten, aber Stern-Projektor und aufblasbare Deko-Figuren können 3-Jährige überfordern oder erschrecken. Für reine 3-Jährigen-Runden bleib bei Minimal oder Standard — die Wow-Extras lohnen sich ab etwa 5 Jahren."
     },
     {
-      "_source": "SEO-Cross-Pollination",
       "q": "Sind Alien-Spiele für so kleine Kinder nicht zu gruselig?",
       "a": "Nur wenn man sie gruselig macht. Wir verwenden bewusst freundliche Aliens (lächelnde Pappe-Gesichter, grünes Tuch als Erkennung, kein dunkles Maskenspiel) und drehen das Fangen in eine Begrüßungs-Geste. Wer „gefangen“ wird, wird mit High-Five willkommen geheißen und ist dann selbst Alien-Helfer — keiner verliert, niemand erschrickt. Für 3-Jährige besser ganz weglassen, ab 4–5 funktioniert es zuverlässig."
     },
     {
-      "_source": "SEO-Cross-Pollination",
       "q": "Was kostet ein Weltraum-Geburtstag pro Kind ungefähr?",
       "a": "Bei der Minimal-Variante rund 6 € pro Kind (35 € für 6 Kinder), Standard ca. 7 € pro Kind (55 € für 8 Kinder), Wow ca. 10 € pro Kind (80 € für 8 Kinder). Mit Bestand aus dem Haushalt (Klopapierrollen, Alufolie, Buntstifte) drückst du das auf 3–5 € pro Kind. Das Karton-Raumschiff kostet nichts und ist trotzdem der Star der Party."
     }
@@ -1490,7 +1485,6 @@
       "tone": "ruhig"
     },
     "kind_hat_angst_vor_dunkelheit": {
-      "_source": "SEO-Cross-Pollination",
       "icon": "🌑",
       "label": "Kind hat Angst vor Dunkelheit oder Alien-Optik",
       "headline": "Nie komplett abdunkeln — nur dimmen — und freundliche Alien-Optik bewahren.",

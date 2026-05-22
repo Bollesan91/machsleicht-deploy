@@ -705,7 +705,7 @@
         {
           "icon": "🔐",
           "title": "Escape-Room-Plot ausarbeiten (Wow)",
-          "detail": "5-6 Phasen mit Codes/Hinweisen. Phase 1: Code unter dem Tisch. Phase 2: Quiz-Antwort = Zahlencode. Phase 3: UV-Hinweis (bei Wow). Phase 4: Vulkan-Eruption als Climax. Phase 5: Schatztruhe öffnen. Plot kurz aufschreiben — sonst stockst du beim Erklären."
+          "detail": "5 Phasen (Caesar → Ausgrabung → Quiz → Vulkan → Escape-Parcours). UV-Lampe ist OPTIONAL als Mini-Aktion vor Start, nicht Teil der 5 Code-Stationen. Phase 1: Code unter dem Tisch. Phase 2: Quiz-Antwort = Zahlencode. Phase 3: UV-Hinweis (bei Wow). Phase 4: Vulkan-Eruption als Climax. Phase 5: Schatztruhe öffnen. Plot kurz aufschreiben — sonst stockst du beim Erklären."
         },
         {
           "icon": "📦",
@@ -755,7 +755,7 @@
         {
           "icon": "🗣️",
           "title": "Escape-Room-Plot final durchspielen (Wow)",
-          "detail": "Plot kurz aufsagen: ‚Phase 1 Tisch-Code → Phase 2 Quiz-Antwort → Phase 3 Vulkan-Eruption → Phase 4 Schatztruhe öffnen.' Wenn du stockst, stocken die Kinder mit."
+          "detail": "Phasen-Reihenfolge zum Aufbau am Tag: Phase 1 Caesar-Chiffre → Phase 2 Fossilien-Ausgrabung → Phase 3 Forscher-Quiz → Phase 4 Vulkan-Experiment → Phase 5 Escape-Parcours mit Schatztruhe (Code 31427). UV-Lampe optional als pre-Start-Akt."
         },
         {
           "icon": "🪧",
@@ -770,7 +770,7 @@
         {
           "icon": "🔒",
           "title": "Wow-Setup: Schatztruhe + Code-Hinweise platzieren",
-          "detail": "Schuhkarton-Truhe mit Zahlenschloss (Code 31427 (5 Ziffern aus den 5 Prüfungen — siehe Escape-Logik in variants[2].games[1].codeLogic). NICHT das Geburtsdatum verwenden), drinnen: Forscher-Diplome + Wunderkerze + Auflösungs-Karte. Code-Hinweise an 5-6 Phasen-Stationen verstecken."
+          "detail": "Schuhkarton-Truhe mit Zahlenschloss (Code 31427 — eine Ziffer pro bestandener Prüfung (5 Stationen). NICHT das Geburtsdatum), drinnen: Forscher-Diplome + Wunderkerze + Auflösungs-Karte. Code-Hinweise an 5-6 Phasen-Stationen verstecken."
         }
       ]
     },
@@ -800,7 +800,7 @@
         {
           "icon": "🔒",
           "title": "Wow-Setup: Schatztruhe-Code testen",
-          "detail": "Zahlenschloss-Code (z.B. Code 31427 (5 Ziffern aus den 5 Prüfungen — siehe Escape-Logik in variants[2].games[1].codeLogic). NICHT das Geburtsdatum verwenden) zweimal testen. UV-Hinweise (falls Wow Premium) mit UV-Stift schreiben + UV-Lampe checken."
+          "detail": "Zahlenschloss-Code (z.B. Code 31427 — eine Ziffer pro bestandener Prüfung (5 Stationen). NICHT das Geburtsdatum) zweimal testen. UV-Hinweise (falls Wow Premium) mit UV-Stift schreiben + UV-Lampe (OPTIONAL — gehört nicht zum 5-Phasen-Plan) checken."
         }
       ]
     },
@@ -815,7 +815,7 @@
         {
           "icon": "🎯",
           "title": "30 Min vor Ankunft: Escape-Setup final (Wow)",
-          "detail": "Schatztruhe in finalem Versteck (Garten-Boden, Schrank, oder Balkon-Ecke), Hinweis-Karten in Schritt-für-Schritt-Logik verteilt. UV-Lampe griffbereit."
+          "detail": "Schatztruhe in finalem Versteck (Garten-Boden, Schrank, oder Balkon-Ecke), Hinweis-Karten in Schritt-für-Schritt-Logik verteilt. UV-Lampe (OPTIONAL — gehört nicht zum 5-Phasen-Plan) griffbereit."
         },
         {
           "icon": "🎯",
@@ -946,7 +946,7 @@
   },
   "signatureRitual": {
     "name": "Die Paläontologen-Initiation",
-    "subtitle": null,
+    "subtitle": "Der Forscherpass als roter Faden der Quest",
     "introText": "Vor dem ersten Spiel: Jedes Kind faltet seinen eigenen Forscherpass aus festem Papier. Name auf den Pass schreiben, ersten Stempel oben links setzen (Mini-Dino-Stempel). Die Gastgeberin sagt feierlich: \"Ab jetzt bist du Paläontologin/Paläontologe. An jeder Station gibt es einen weiteren Stempel — der Pass beweist, dass du alle Prüfungen bestanden hast.\" Erst dann beginnt die erste Station.",
     "setupSteps": [
       "A5-Papier vorbereiten (1 Blatt pro Kind + 2 Reserve)",
@@ -954,10 +954,35 @@
       "Stationen-Stempel: 5 verschiedene Motive (Caesar-Schriftrolle, Pinsel, Quizfrage, Vulkan, Schloss)",
       "Endpunkt: Goldener \"Forscher-Diplom\"-Stempel als Krönung"
     ],
-    "rolesList": [],
+    "rolesList": [
+      {
+        "emoji": "🔍",
+        "name": "Chef-Forscher",
+        "content": "Hält die Master-Karte mit allen 5 Stempel-Plätzen, ruft \"Nächste Station!\""
+      },
+      {
+        "emoji": "✍️",
+        "name": "Chef-Dokumentar",
+        "content": "Beobachter-Rolle für stille Kinder: führt das Gruppen-Logbuch, bekommt Spezial-Pass"
+      },
+      {
+        "emoji": "🦴",
+        "name": "Paläontologe",
+        "content": "Spezialist für Fossilien-Ausgrabung, hilft anderen bei Gips-Mischung"
+      },
+      {
+        "emoji": "🧪",
+        "name": "Vulkan-Chemiker",
+        "content": "Mischt unter Aufsicht das Natron-Essig-Experiment, kennt die Sättigungsregel"
+      },
+      {
+        "emoji": "🔐",
+        "name": "Code-Knacker",
+        "content": "Trägt die 5 Stationen-Ziffern zusammen, öffnet am Ende das Schloss"
+      }
+    ],
     "optOutNote": "Kinder, die nicht im Vordergrund stehen wollen, übernehmen die Beobachter-Rolle (existiert auch im SOS-Szenario): Sie führen das Logbuch der ganzen Gruppe und bekommen einen Spezial-Pass \"Chef-Dokumentar\".",
-    "materialNote": null,
-    "_note": "Dino-Mottoseiten haben keine eigene Ritual-Sektion im Quell-HTML. Dino-Spurensuche oder Vulkan-Ausbruch sind die motto-zentralen Aktivitäten.",
+    "materialNote": "A5-Papier (1/Kind + 2 Reserve), Mini-Dino-Stempel + Kissen (~6 €), 5 Stations-Stempel verschiedener Motive, 1 goldener Diplom-Stempel",
     "durationMin": 5,
     "materialCost": "6-8 €",
     "whyItWorks": "Der Pass ist der rote Faden: Jedes Spiel zahlt sichtbar auf den Pass ein (= ein Stempel mehr). Kein abstrakter \"Spaß\" — konkretes Belohnungssystem, das 9-12-jährige Kinder bei der Ehre packt. Plus: Der Pass ist das Mitgebsel — kein zusätzliches Material nötig."
