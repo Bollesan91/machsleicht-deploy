@@ -40775,7 +40775,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:55",
             "title": "📍 Prüfung 3: Geocaching im Garten/Park",
-            "description": "Mit Handy-GPS-App (z.B. GPS-Koordinaten-App (statt c:geo das nur für öffentliche Caches taugt) oder Geocaching.com) im Garten oder Park 5 versteckte Mini-Caches finden. Pflanzen-Hinweise als Koordinaten-Rätsel. 40 Min. — siehe unten."
+            "description": "Mit Handy-GPS-App (z.B. GPS-Koordinaten-App (z.B. GPS Coordinates, kostenlos) oder Geocaching.com) im Garten oder Park 5 versteckte Mini-Caches finden. Pflanzen-Hinweise als Koordinaten-Rätsel. 40 Min. — siehe unten."
           },
           {
             "time": "15:35",
@@ -40812,7 +40812,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 7,
             "loudness": "laut",
             "effort": "hoch",
-            "material": "1 Smartphone mit Geocaching-App (GPS-Koordinaten-App (statt c:geo das nur für öffentliche Caches taugt) kostenlos, oder Geocaching.com), 5 kleine wasserdichte Behälter (Filmdöschen, Tic-Tac-Box, ~3 €), Mini-Talismane drin (Glassteine, Eicheln, Blüten-Anhänger), 5 Pflanzen-Hinweis-Zettel, 1 große Schatzkiste am Endpunkt",
+            "material": "1 Smartphone mit Geocaching-App (GPS-Koordinaten-App (z.B. GPS Coordinates, kostenlos) kostenlos, oder Geocaching.com), 5 kleine wasserdichte Behälter (Filmdöschen, Tic-Tac-Box, ~3 €), Mini-Talismane drin (Glassteine, Eicheln, Blüten-Anhänger), 5 Pflanzen-Hinweis-Zettel, 1 große Schatzkiste am Endpunkt",
             "prepText": "1-2 Tage vorher: 5 Caches im Garten oder Park verstecken — unter Stein, im Astloch, hinter Baum-Wurzel. Koordinaten per App speichern oder mit Pflanzen-Hinweisen arbeiten („zwischen 3 Farnen und einem Stein\"). Am Party-Tag: Kinder bekommen Pflanzen-Hinweis-Zettel, suchen Caches in Reihenfolge. Letzter Cache enthält den Hinweis zur großen Schatzkiste am Zauberbaum.",
             "steps": [
               {
@@ -41054,7 +41054,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "📱",
-            "label": "Geocaching-App (kostenlos: GPS-Koordinaten-App (statt c:geo das nur für öffentliche Caches taugt))",
+            "label": "Geocaching-App (kostenlos: GPS-Koordinaten-App (z.B. GPS Coordinates, kostenlos))",
             "url": null,
             "priceEur": 0,
             "hasAffiliate": false,
@@ -41349,7 +41349,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🔋",
             "title": "Geocaching-App + Spotify-Playlist testen (Wow)",
-            "detail": "App GPS-Koordinaten-App (statt c:geo das nur für öffentliche Caches taugt) öffnen, GPS-Genauigkeit prüfen, 5 Caches einmal abgehen. Spotify-Playlist ‚Magic Forest' oder ‚Celtic Music' in der Notiz-App speichern. Nicht erst am Party-Tag suchen."
+            "detail": "App GPS-Koordinaten-App (z.B. GPS Coordinates, kostenlos) öffnen, GPS-Genauigkeit prüfen, 5 Caches einmal abgehen. Spotify-Playlist ‚Magic Forest' oder ‚Celtic Music' in der Notiz-App speichern. Nicht erst am Party-Tag suchen."
           },
           {
             "icon": "🌿",
