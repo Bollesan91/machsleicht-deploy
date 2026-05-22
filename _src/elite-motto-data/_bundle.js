@@ -41054,7 +41054,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "📱",
-            "label": "Geocaching-App (kostenlos: GPS-Koordinaten-App (z.B. GPS Coordinates, kostenlos))",
+            "label": "GPS Coordinates (kostenlos) oder Geocaching.com",
             "url": null,
             "priceEur": 0,
             "hasAffiliate": false,
@@ -41349,7 +41349,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🔋",
             "title": "Geocaching-App + Spotify-Playlist testen (Wow)",
-            "detail": "App GPS-Koordinaten-App (z.B. GPS Coordinates, kostenlos) öffnen, GPS-Genauigkeit prüfen, 5 Caches einmal abgehen. Spotify-Playlist ‚Magic Forest' oder ‚Celtic Music' in der Notiz-App speichern. Nicht erst am Party-Tag suchen."
+            "detail": "App GPS Coordinates (kostenlos) öffnen, GPS-Genauigkeit prüfen, 5 Caches einmal abgehen. Spotify-Playlist ‚Magic Forest' oder ‚Celtic Music' in der Notiz-App speichern. Nicht erst am Party-Tag suchen."
           },
           {
             "icon": "🌿",
