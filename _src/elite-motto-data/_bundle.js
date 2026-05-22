@@ -6569,8 +6569,12 @@ var ELITE_MOTTO_DATA = {
     "signatureRitual": {
       "name": "Das Initiations-Ritual",
       "subtitle": "Für alle 3 Varianten",
-      "introText": "Jeder bekommt einen Einhorn-Code-Namen — aber cool Statt Sternenstaub-Beutel (zu kindlich für 9+): Umschläge mit Wachssiegel-Sticker. In jedem Umschlag ein Code-Name auf einer „alten\" Karte (Teebeutel-Trick: Papier in kaltem Tee einlegen, trocknen lassen → sieht aus wie Pergament). Dazu ein Einhorn-Tattoo in Metallic-Gold oder Silber — die sehen bei 9–12-Jährigen cool aus, nicht kindisch.",
-      "setupSteps": [],
+      "introText": "Jeder bekommt einen Einhorn-Code-Namen — aber cool. Statt Sternenstaub-Beutel (zu kindlich für 9+): Umschläge mit Wachssiegel-Sticker. In jedem Umschlag ein Code-Name auf einer „alten\" Karte (Teebeutel-Trick: Papier in kaltem Tee einlegen, trocknen lassen → sieht aus wie Pergament). Dazu ein Einhorn-Tattoo in Metallic-Gold oder Silber — die sehen bei 9–12-Jährigen cool aus, nicht kindisch.",
+      "setupSteps": [
+        "Umschläge mit Aufgaben + Lösungs-Code-Tafeln pro Crew vorbereiten (3 Umschläge × Crew)",
+        "Pergament-Optik: Teebeutel-Briefe einweichen, trocknen — 1 pro Kind",
+        "Glitzer-Tattoos + Sticker als Belohnung pro bestandene Aufgabe bereitlegen"
+      ],
       "rolesList": [
         {
           "emoji": "🌙",
@@ -6639,7 +6643,7 @@ var ELITE_MOTTO_DATA = {
     "variants": [
       {
         "id": "minimal",
-        "label": "Minimal — 2 Stunden, minimaler Aufwand",
+        "label": "Minimal — 2,5 Std.",
         "headline": "⚡ Minimal — 2,5 Stunden, wenig Aufwand",
         "intro": "2 Aktivitäten + Kuchen + Chillen. Für Eltern, die eine gute Party wollen ohne 3 Tage Vorbereitung. In diesem Alter reicht das — die Kinder unterhalten sich auch einfach gerne.",
         "timeWindow": "14:00–16:30, 8 Kinder",
@@ -6732,7 +6736,7 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "food": "🎂Galaxy-Kuchen1 Springform\n🍕Pizza-Brötchen16 Stück\n💧Limo / Wasser3 Flaschen\n🍿Popcorn300 g\n🍓Obst-TellerErdbeeren, Trauben",
-        "decoration": "🎈 Iridescent / Metallic-Ballons6 Stk. ~3 €Schimmernd, nicht Pastell-Rosa\n🔊 Fantasy-PlaylistKostenlosSpotify: „Fantasy Instrumental\" oder „Hogwarts Ambience\"\n🎉 Girlande „Happy Birthday\"~3 €Gold oder Silber-Metallic, keine Einhorn-Motive nötig\n\n💡 Minimal-Deko-Regel:\n3 Dinge reichen: Ballons, Girlande, Musik. Keine Einhorn-Papp-Teller (peinlich für 9–12). Die Metallic-Tattoos und Code-Name-Umschläge SIND die Deko — alles andere ist Bonus.",
+        "decoration": "🎈 Iridescent / Metallic-Ballons6 Stk. ~3 €Schimmernd, nicht Pastell-Rosa\n🔊 Fantasy-PlaylistKostenlosSpotify: „Fantasy Instrumental\" oder „Zauberschule Ambience\"\n🎉 Girlande „Happy Birthday\"~3 €Gold oder Silber-Metallic, keine Einhorn-Motive nötig\n\n💡 Minimal-Deko-Regel:\n3 Dinge reichen: Ballons, Girlande, Musik. Keine Einhorn-Papp-Teller (peinlich für 9–12). Die Metallic-Tattoos und Code-Name-Umschläge SIND die Deko — alles andere ist Bonus.",
         "giveaways": "💎 Selbst gemachtes Perlen-Armband\n✨ Metallic-Einhorn-Tattoo (haben sie schon auf der Hand)\n🍭 1 Tüte Süßigkeiten\n\nIn schlichten Kraftpapier-Tüten (nicht rosa — die finden das peinlich). Kosten: ~2,50 € pro Kind.",
         "shoppingList": [
           {
@@ -6804,7 +6808,7 @@ var ELITE_MOTTO_DATA = {
       },
       {
         "id": "standard",
-        "label": "Standard — 3 Stunden, vollständige Schicht",
+        "label": "Standard — 3,5 Std.",
         "headline": "🎯 Standard — 3,5 Stunden, rund und gut",
         "intro": "Der Sweet Spot: 5 Aktivitäten mit gutem Rhythmus-Wechsel. Chemie-Labor, Parcours, Escape-Rätsel, Schmuck und freies Chillen mit Musik. Die Party, von der die Kinder am Montag in der Schule erzählen.",
         "timeWindow": "14:00–17:15, 8 Kinder",
@@ -6855,8 +6859,29 @@ var ELITE_MOTTO_DATA = {
             "loudness": "ruhig",
             "effort": "mittel",
             "material": "1 Rotkohl (~2 €), 8 durchsichtige Becher pro Kind, Essig, Backpulver/Natron, Zitronensaft, Spülmittel, Waschsoda (~1 €), Pipetten oder Löffel, 1 Tablett pro Kind (gegen Sauerei)",
-            "prepText": "",
-            "steps": [],
+            "prepText": "Vorbereitung (20 Min. am Vortag): Rotkohl in Streifen schneiden, mit heißem Wasser übergießen, 30 Min. ziehen lassen → tiefvioletter Saft. In Flasche abfüllen, im Kühlschrank aufbewahren. Das ist dein „Zaubertrank-Basis\".\n\nDurchführung: Jedes Kind bekommt 8 Becher, je halb mit Rotkohlsaft gefüllt. Dann verschiedene Substanzen reinmischen — Farben wechseln je nach pH:\n• Essig → wird rosa/rot (sauer)\n• Zitronensaft → wird hellrosa (sauer)\n• Backpulver/Natron → wird blaugrün (basisch)\n• Waschsoda → wird gelb/grün (stark basisch)\n• Spülmittel → wird blau + schäumt\n\nDie Kinder experimentieren selbst: „Was passiert, wenn ich den sauren Trank in den basischen kippe?\" (Farbwechsel!). „Kann ich Lila wieder herstellen?\" (Ja — neutralisieren.)\n\nTipp: Kittel aus alten Hemden (Knöpfe vorne, Ärmel hochkrempeln) machen es offizieller und schützen die Klamotten. (Standard: gleicher Aufbau wie Minimal, aber als Gruppenexperiment statt Einzelarbeit — 2-3 Schalen, alle Kinder helfen mit).",
+            "steps": [
+              {
+                "name": "Vortag: Rotkohlsaft kochen",
+                "content": "Rotkohl in Streifen schneiden, mit heißem Wasser übergießen, 30 Min. ziehen lassen → tiefvioletter pH-Indikator-Saft. In Flasche abfüllen, im Kühlschrank aufbewahren."
+              },
+              {
+                "name": "Setup pro Kind",
+                "content": "8 durchsichtige Becher halb mit Rotkohlsaft füllen, auf Tablett aufstellen. Pipetten + Test-Substanzen (Essig, Natron, Zitrone, Spülmittel, Waschsoda) bereit."
+              },
+              {
+                "name": "Sauer = Rosa",
+                "content": "Essig oder Zitronensaft tropfenweise in einen Becher → Saft wird rosa/rot. Erste Erkenntnis: „Saures verändert die Farbe nach Rot.\""
+              },
+              {
+                "name": "Basisch = Grün",
+                "content": "Natron oder Backpulver in nächsten Becher → wird blaugrün. Waschsoda → wird gelb/grün (stark basisch). Schäumendes Spülmittel → blau."
+              },
+              {
+                "name": "Neutralisations-Challenge",
+                "content": "„Misch den perfekten Lila-Trank!\" → Kinder müssen sauer + basisch so kombinieren, dass die Ausgangsfarbe Lila wieder entsteht (= Neutralpunkt). Bonus-Aufgabe für 12-Jährige."
+              }
+            ],
             "safetyRule": "Waschsoda (Natriumcarbonat) reizt Augen + Haut. Schutzbrille für Kinder bei Mix-Phase. Nicht in Augen reiben, Hände nach jedem Experiment waschen. Nichts trinken. Tablett mit Rand gegen Überlauf. Erwachsene*r misst die Mengen ab.",
             "ageAdjust6": null,
             "ageAdjust8": null,
@@ -6922,7 +6947,7 @@ var ELITE_MOTTO_DATA = {
               },
               {
                 "name": "Rätsel 2: Einhorn-Mathe (→ Ziffer 7)",
-                "content": "Auf eine Karte schreiben: „Ein Einhorn hat 1 Horn. Ein Regenbogen hat ? Farben. Multipliziere beides. Die Lösung ist deine Ziffer.\" Lösung: 1 × 7 = 7."
+                "content": "Auf eine Karte schreiben: „Ein Einhorn hat 1 Horn. Ein Regenbogen hat ? Farben. Multipliziere beides. Die Lösung ist deine Ziffer.\" Lösung: 1 × 7 = 7. [POSITION: die zweite Ziffer im Schloss-Code]"
               },
               {
                 "name": "Rätsel 3: UV-Botschaft (→ Ziffer 1)",
@@ -6934,7 +6959,7 @@ var ELITE_MOTTO_DATA = {
               },
               {
                 "name": "Rätsel 5: Kreuzworträtsel (→ Ziffer 5)",
-                "content": "4 Fragen auf eine Karte: (1) „Welche Farbe hat Rotkohl-Saft, wenn man Essig reinmischt?\" (4 Buchst.) → ROSA. (2) „Was hat ein Einhorn auf der Stirn?\" (4 Buchst.) → HORN. (3) „Wie heißt die Zahl nach vier?\" (4 Buchst.) → FÜNF. (4) „Wie viele Farben hat ein Regenbogen?\" (6 Buchst.) → SIEBEN. Hinweis: „Der 1. Buchstabe von Antwort 3 ist der Schlüssel.\" Lösung: F = Fünf → 5."
+                "content": "4 Fragen auf eine Karte: (1) „Welche Farbe hat Rotkohl-Saft, wenn man Essig reinmischt?\" (4 Buchst.) → ROSA. (2) „Was hat ein Einhorn auf der Stirn?\" (4 Buchst.) → HORN. (3) „Wie heißt die Zahl nach vier?\" (4 Buchst.) → FÜNF. (4) „Wie viele Farben hat ein Regenbogen?\" (6 Buchst.) → SIEBEN. Hinweis: „Der 1. Buchstabe von Antwort 3 ist der Schlüssel.\" Lösung: F = Fünf → 5. [POSITION: die vierte Ziffer im Schloss-Code]"
               },
               {
                 "name": "Final: Schloss öffnen + Schatz teilen",
@@ -6970,7 +6995,7 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "food": "🎂Galaxy-Kuchen1 Springform\n🍕Pizza-Brötchen20 Stück\n💧Limo / Wasser4 Flaschen\n🍓Obst & GemüseErdbeeren, Gurke\n🍿Popcorn300 g\n🍭SüßigkeitenHaribo, M&Ms",
-        "decoration": "🎈 Iridescent / Metallic-Ballons10 Stk. ~5 €Schimmernd, nicht Pastell-Rosa\n🌈 Regenbogen-Lichterkette~6 €LED, batteriebetrieben\n✨ Metallic-Sterne an der Decke~4 €Gold/Silber-Karton, an Fäden aufhängen\n🔊 Playlist „Fantasy Vibes\"KostenlosSpotify: instrumentale Fantasy-Musik\n\n💡 Deko-Regel für 9–12:\nWeniger ist cooler. Keine rosa Papp-Teller mit Einhorn-Gesicht (die Kinder würden sich schämen). Stattdessen: Metallic-Töne, Lichterketten, Sterne. Fantasy statt Kinderzimmer. Die Atmosphäre soll „Hogwarts trifft Einhorn\" sein, nicht „Kindergarten-Party\".",
+        "decoration": "🎈 Iridescent / Metallic-Ballons10 Stk. ~5 €Schimmernd, nicht Pastell-Rosa\n🌈 Regenbogen-Lichterkette~6 €LED, batteriebetrieben\n✨ Metallic-Sterne an der Decke~4 €Gold/Silber-Karton, an Fäden aufhängen\n🔊 Playlist „Fantasy Vibes\"KostenlosSpotify: instrumentale Fantasy-Musik\n\n💡 Deko-Regel für 9–12:\nWeniger ist cooler. Keine rosa Papp-Teller mit Einhorn-Gesicht (die Kinder würden sich schämen). Stattdessen: Metallic-Töne, Lichterketten, Sterne. Fantasy statt Kinderzimmer. Die Atmosphäre soll „Zauberschule trifft Einhorn\" sein, nicht „Kindergarten-Party\".",
         "giveaways": "💎 Selbst gemachtes Perlen-Armband\n🦄 Einhorn-Charm (extra, zum Anhängen)\n✨ Metallic-Tattoo\n🍭 Süßigkeiten aus der Schatztruhe\n\nIn Kraftpapier-Tüten mit Code-Name-Aufkleber. Kosten: ~3,50 € pro Kind.",
         "shoppingList": [
           {
@@ -7069,7 +7094,7 @@ var ELITE_MOTTO_DATA = {
       },
       {
         "id": "wow",
-        "label": "Wow — 3,5 Stunden, die volle Schicht",
+        "label": "Wow — 4,5 Std.",
         "headline": "✨ Wow — 4,5 Stunden, die Akademie der Vergessenen Magie",
         "intro": "Die Kinder werden zu Schülern der „Akademie der Vergessenen Magie\" — einer geheimen Einhorn-Universität, deren Wissen verloren gegangen ist. In 6 Prüfungen müssen sie beweisen, dass sie würdig sind, die alte Magie wiederzubeleben. Mit Escape-Rätseln, Chemie-Experimenten, UV-Schwarzlicht-Geheimnissen und einem Kurzfilm-Dreh als Finale.",
         "timeWindow": "13:30–17:55, 8 Kinder",
@@ -7161,7 +7186,7 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "food": "🎂Galaxy-Kuchen1 Springform + Wunderkerze\n🍕Pizza-Brötchen24 Stück\n💧Limo / Wasser5 Flaschen\n🍓Obst & GemüseErdbeeren, Trauben, Gurke\n🍿Popcorn400 g\n🍭Süßigkeiten-Mix2 Tüten\n🥤„Zaubertrank\" (Fanta+Sprite)Bowle-Schüssel\n\n💡 „Zaubertrank\"-Bowle:\nFanta + Sprite mischen, blaue Lebensmittelfarbe rein → wird türkis. Eiswürfel mit Lebensmittelfarbe einfrieren (lila) → während der Party schmilzt das lila Eis in der türkisen Bowle und die Farbe ändert sich langsam. „Der Trank der Akademie verändert sich im Laufe des Tages.\" Die Kinder checken den Trick, finden ihn aber trotzdem cool.",
-        "decoration": "🎈 Iridescent / Metallic-Ballons15 Stk. ~6 €\n🌈 LED-Lichterkette (Regenbogen)~6 €\n✨ Metallic-Sterne + Monde an der Decke~5 €\n🪧 „Akademie der Vergessenen Magie\"-SchildKostenlosPappe + Edding + Goldfolie, am Eingang\n🕯️ LED-Kerzen (Teelichter)10 Stk. ~4 €Fantasy-Atmosphäre, keine echten Kerzen\n🔊 Fantasy-PlaylistKostenlosSpotify: „Fantasy Instrumental\" oder „Hogwarts Ambience\"\n📜 Pergament-Rollen als Tischdeko~3 €Teebeutel-Papier, eingerollt, mit Band\n\n✨ Wow-Bonus: Nebel-Maschine\nDer ultimative Atmosphäre-Hack: Eine kleine [Nebelmaschine*](https://www.amazon.de/s?k=nebelmaschine+klein+party+400w&tag=machsleicht-21) (~25–35 €) im Flur beim Reinkommen. Die Kinder öffnen die Tür, Nebel wallt ihnen entgegen, LED-Lichterketten schimmern durch den Dunst — „Willkommen in der Akademie.\" Das werden sie niemals vergessen. Funktioniert auch bei der Urkunden-Zeremonie. Einmal gekauft, für jede Party und Halloween wiederverwendbar.\n\n🔮 Wow-Bonus: Kristall-Zucht als Langzeit-Souvenir\nEin [Kristall-Zucht-Set*](https://www.amazon.de/s?k=kristall+z%C3%BCchten+kinder+set&tag=machsleicht-21) (~10–15 € für 8 Kinder) als zusätzliches Mitgebsel: Jedes Kind nimmt ein kleines Glas mit „Kristall-Samen\" (Alaun-Lösung + Lebensmittelfarbe) mit nach Hause. In 3–5 Tagen wachsen echte Kristalle. Das Mitgebsel, das 3 Tage nach der Party nochmal für Staunen sorgt — und an dem die Kinder sehen: „Das war echte Chemie auf der Party.\"",
+        "decoration": "🎈 Iridescent / Metallic-Ballons15 Stk. ~6 €\n🌈 LED-Lichterkette (Regenbogen)~6 €\n✨ Metallic-Sterne + Monde an der Decke~5 €\n🪧 „Akademie der Vergessenen Magie\"-SchildKostenlosPappe + Edding + Goldfolie, am Eingang\n🕯️ LED-Kerzen (Teelichter)10 Stk. ~4 €Fantasy-Atmosphäre, keine echten Kerzen\n🔊 Fantasy-PlaylistKostenlosSpotify: „Fantasy Instrumental\" oder „Zauberschule Ambience\"\n📜 Pergament-Rollen als Tischdeko~3 €Teebeutel-Papier, eingerollt, mit Band\n\n✨ Wow-Bonus: Nebel-Maschine\nDer ultimative Atmosphäre-Hack: Eine kleine [Nebelmaschine*](https://www.amazon.de/s?k=nebelmaschine+klein+party+400w&tag=machsleicht-21) (~25–35 €) im Flur beim Reinkommen. Die Kinder öffnen die Tür, Nebel wallt ihnen entgegen, LED-Lichterketten schimmern durch den Dunst — „Willkommen in der Akademie.\" Das werden sie niemals vergessen. Funktioniert auch bei der Urkunden-Zeremonie. Einmal gekauft, für jede Party und Halloween wiederverwendbar.\n\n🔮 Wow-Bonus: Kristall-Zucht als Langzeit-Souvenir\nEin [Kristall-Zucht-Set*](https://www.amazon.de/s?k=kristall+z%C3%BCchten+kinder+set&tag=machsleicht-21) (~10–15 € für 8 Kinder) als zusätzliches Mitgebsel: Jedes Kind nimmt ein kleines Glas mit „Kristall-Samen\" (Alaun-Lösung + Lebensmittelfarbe) mit nach Hause. In 3–5 Tagen wachsen echte Kristalle. Das Mitgebsel, das 3 Tage nach der Party nochmal für Staunen sorgt — und an dem die Kinder sehen: „Das war echte Chemie auf der Party.\"",
         "giveaways": "📜 Meister-Urkunde (mit Code-Name und Wachssiegel)\n💎 Selbst gemachtes Amulett-Armband\n🦄 Einhorn-Charm\n🔮 Kristall-Zucht-Glas (wächst zu Hause weiter)\n🍭 Süßigkeiten aus der Schatztruhe\n\nIn Kraftpapier-Tüten mit Code-Name und „Akademie\"-Stempel. Kosten: ~5 € pro Kind.",
         "shoppingList": [
           {
@@ -7350,7 +7375,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "topic": "🌌 Galaxy statt Rosa: Farb-Welt verschieben",
-          "detail": "Der zentrale Reframing-Hebel: 9–12-Jährige finden „Galaxy\" cool und „Regenbogen\" kindisch — bei gleichen Farben. Verwende: Dunkelblau + Lila + Türkis + Gold (Mirror-Glaze-Kuchen). Metallic-Tattoos in Gold/Silber statt Glitzer-Aufkleber. Iridescent-Ballons (schimmernd) statt Pastell-Rosa. Pergament-Karten statt Glitzer-Zettel. Schlicht-Kraftpapier-Tüten als Goodie-Bags (nicht rosa — die finden das peinlich). Die Atmosphäre soll „Hogwarts trifft Einhorn\" sein, nicht „Kindergarten-Party\"."
+          "detail": "Der zentrale Reframing-Hebel: 9–12-Jährige finden „Galaxy\" cool und „Regenbogen\" kindisch — bei gleichen Farben. Verwende: Dunkelblau + Lila + Türkis + Gold (Mirror-Glaze-Kuchen). Metallic-Tattoos in Gold/Silber statt Glitzer-Aufkleber. Iridescent-Ballons (schimmernd) statt Pastell-Rosa. Pergament-Karten statt Glitzer-Zettel. Schlicht-Kraftpapier-Tüten als Goodie-Bags (nicht rosa — die finden das peinlich). Die Atmosphäre soll „Zauberschule trifft Einhorn\" sein, nicht „Kindergarten-Party\"."
         },
         {
           "topic": "🐉 Drachen-/Magier-Alternative für Jungs-skeptische Gruppen",
@@ -32310,7 +32335,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 3,
                 "name": "Riesenkrake-Falle nutzen",
-                "content": "Der Riesenkrake (400 cm) ist größer als der Leopardenhai (300 cm) — überrascht 11-Jährige, weil viele Haie überschätzen. Lehrreich."
+                "content": "Der Riesenkrake (1300 cm) ist größer als der Leopardenhai (180 cm) — überrascht 11-Jährige, weil viele Haie überschätzen. Lehrreich."
               },
               {
                 "n": 4,
@@ -33381,6 +33406,10 @@ var ELITE_MOTTO_DATA = {
         {
           "topic": "✨ Perlen-Allergie & Glitzer-Kontaktekzeme",
           "detail": "9-12-Jährige sind raus aus dem „alles in den Mund\"-Alter, aber Perlen mit Nickel-Verschluss oder PVC-Glitzer können Kontaktekzeme auf der Haut hinterlassen — gerade bei Mädchen, die enge Crew-Ketten tragen. Hypoallergene Lederband-Ketten oder Bastelschnur statt billige Bling-Sets. Beim ersten Juck-Hinweis: Kette abnehmen, Haut waschen, beobachten. Bei vorab bekannter Schmuck-Allergie: nur Holzperlen verwenden."
+        },
+        {
+          "topic": "💧 Achtung Kleinkind-Geschwister",
+          "detail": "Kinder können bereits in wenigen Zentimetern Wasser ertrinken. Jede Wasserschüssel, jeder Eimer (TIEF-Ort, knöcheltiefe Stationen) nach Gebrauch sofort ausleeren, wenn jüngere Geschwister im Haus sind. Diese 5cm-Regel gilt auch für Planschbecken und Sushi-Schalen mit Wasser. Aufsicht NIE durch Geschwister ersetzen — immer Erwachsene."
         }
       ],
       "educationalValue": "Was die Kinder mitnehmen: Beobachtungs-Logik (Perlen und Quallen über Merkmale bestimmen statt raten), echte Meeres-Biologie-Kenntnisse (Schicht-Konzept, Quallen-Klassifikation, Bioluminiszenz), Kartografie (Tiefen-Schichten farbig kodieren bleibt im Kopf), Kooperation zwischen Spezialisierungen (keine kommt allein zum Ziel) und Selbstkontrolle beim Codeknacker (ergibt das Lösungswort keinen Sinn, prüfen sie ihre Reihenfolge selbst nach). Die Leitidee „in Atlantis zählt, wer hinschaut, nicht wer am schnellsten taucht“ trägt durch die ganze Party — Sorgfalt vor Tempo. Und Geschlechts-Inklusion ganz nebenbei: Meerprinz-Anrede und neutrale Forscher-Rollen zeigen, dass „Meeres-Themen“ für alle da sind."
@@ -37001,7 +37030,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 2,
                 "name": "Funkspruch 2 (Zoologe) → U",
-                "content": "6 Amazonas-Tiere, eines ist Unter-Wasser-Säuger und wird oft mit Fischen verwechselt: Jaguar, Faultier, Tukan, Unterwasser-Manati (Amazonas-Manati), Pfeilgiftfrosch, Ara. Falsch im Set: Manati ist kein klassisches Regenwald-Boden-Tier, sondern Fluss-Säuger → U."
+                "content": "6 Amazonas-Tiere, eines ist Unter-Wasser-Säuger und wird oft mit Fischen verwechselt: Jaguar, Faultier, Tukan, Ucayali-Quellfluss (Amazonas-Ucayali), Pfeilgiftfrosch, Ara. Falsch im Set: Ucayali ist kein klassisches Regenwald-Boden-Tier, sondern Fluss-Säuger → U."
               },
               {
                 "n": 3,
@@ -37011,7 +37040,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Funkspruch 4 (Ethologe-Trick / alle) → G",
-                "content": "4 Tier-Rufe nach Reichweite in Kilometern sortieren: Brüllaffen-Ruf 5 km / Tukan-Schrei 1 km / Ara-Schwarm 0,8 km / Jaguar-Grunzen 0,3 km. Größte Reichweite = Brüllaffe. Aber Vorsicht — der Schlüssel-Buchstabe ist nicht B, sondern der Anfangsbuchstabe des deutschen Begriffs für die akustische Reichweite einer Schallquelle: „Geräusch-Reichweite“ → G. (Hinweis-Karte beigelegt: Welcher deutsche Begriff beschreibt, wie weit ein Tierruf trägt?)"
+                "content": "4 Tier-Rufe nach Reichweite in Kilometern sortieren: Brüllaffen-Ruf 5 km / Tukan-Schrei 1 km / Ara-Schwarm 0,8 km / Jaguar-Grunzen 0,3 km. Größte Reichweite = Brüllaffe. Aber Vorsicht — der Schlüssel-Buchstabe ist nicht B, sondern der Anfangsbuchstabe des deutschen Begriffs für die akustische Reichweite einer Schallquelle: „Galeriewald-Bewohner“ → G. (Hinweis-Karte beigelegt: Welcher deutsche Begriff beschreibt, wie weit ein Tierruf trägt?)"
               },
               {
                 "n": 5,
@@ -38618,6 +38647,181 @@ var ELITE_MOTTO_DATA = {
         "fallback": "Bei Schlafparty: die Eltern der Nicht-Bleiber sind ohnehin ab einer festen Zeit verabschiedet — das vorher kommunizieren.",
         "tone": "diplomatisch"
       }
+    },
+    "ecologyQuiz": {
+      "title": "15-Fragen-Oekologie-Wissens-Quiz",
+      "note": "Quiz wird in der Wow-Variante (17:55 Quiz-Auswertung) eingesetzt. 3 Schwierigkeitsstufen, 5 Fragen pro Stufe.",
+      "easy": [
+        {
+          "q": "Wie viele Stockwerke hat ein typischer Regenwald?",
+          "options": [
+            "A) 1",
+            "B) 2",
+            "C) 4",
+            "D) 7"
+          ],
+          "a": "C",
+          "explain": "4 Stockwerke: Boden, Unterholz, Kronendach, Ueberholz."
+        },
+        {
+          "q": "Welches Tier ist das lauteste an Land?",
+          "options": [
+            "A) Tiger",
+            "B) Bruellaffe",
+            "C) Elefant",
+            "D) Wolf"
+          ],
+          "a": "B",
+          "explain": "Bruellaffe hoerbar bis 5 km Entfernung."
+        },
+        {
+          "q": "Wie heisst der groesste Fluss im Amazonas?",
+          "options": [
+            "A) Nil",
+            "B) Amazonas",
+            "C) Ganges",
+            "D) Donau"
+          ],
+          "a": "B",
+          "explain": "Der Amazonas fuehrt mehr Wasser als die naechsten 7 Fluesse zusammen."
+        },
+        {
+          "q": "Was bedeutet Habitat?",
+          "options": [
+            "A) Tierart",
+            "B) Lebensraum",
+            "C) Nahrung",
+            "D) Krankheit"
+          ],
+          "a": "B",
+          "explain": "Habitat = der natuerliche Lebensraum eines Tieres oder einer Pflanze."
+        },
+        {
+          "q": "Wie tarnen sich Faultiere?",
+          "options": [
+            "A) Schwarze Streifen",
+            "B) Algen im Fell",
+            "C) Tarnfarbe wechseln",
+            "D) Sie tarnen sich nicht"
+          ],
+          "a": "B",
+          "explain": "Algen im Fell faerben das Faultier gruenlich - perfekte Baumtarnung."
+        }
+      ],
+      "medium": [
+        {
+          "q": "Was bedeutet endemisch?",
+          "options": [
+            "A) ausgestorben",
+            "B) krank",
+            "C) nur in einem bestimmten Gebiet vorkommend",
+            "D) sehr gross"
+          ],
+          "a": "C",
+          "explain": "Endemische Arten leben ausschliesslich in einer bestimmten Region."
+        },
+        {
+          "q": "Wie lange braucht ein Faultier zur Verdauung einer Mahlzeit?",
+          "options": [
+            "A) 1 Tag",
+            "B) 1 Woche",
+            "C) 30 Tage",
+            "D) 1 Jahr"
+          ],
+          "a": "C",
+          "explain": "~30 Tage - daher die langsame Bewegung."
+        },
+        {
+          "q": "Was ist Biodiversitaet?",
+          "options": [
+            "A) Anzahl der Baeume",
+            "B) Vielfalt der Lebensformen",
+            "C) Hoehe der Berge",
+            "D) Wassergehalt"
+          ],
+          "a": "B",
+          "explain": "Biodiversitaet = Artenvielfalt eines Oekosystems."
+        },
+        {
+          "q": "Was ist ein Biotop?",
+          "options": [
+            "A) Tierart",
+            "B) Lebensraum mit allen seinen Bewohnern",
+            "C) Krankheit",
+            "D) Forschungsstation"
+          ],
+          "a": "B",
+          "explain": "Biotop = abgegrenzter Lebensraum mit charakteristischen Arten."
+        },
+        {
+          "q": "Wie viele Zehen hat ein Tapir an den Vorderfuessen?",
+          "options": [
+            "A) 1",
+            "B) 3",
+            "C) 4",
+            "D) 5"
+          ],
+          "a": "C",
+          "explain": "4 Zehen vorne, 3 hinten - typisches Tapir-Merkmal."
+        }
+      ],
+      "hard": [
+        {
+          "q": "Welcher Fluss ist der groesste Quellfluss des Amazonas?",
+          "options": [
+            "A) Rio Negro",
+            "B) Ucayali",
+            "C) Madeira",
+            "D) Tapajos"
+          ],
+          "a": "B",
+          "explain": "Ucayali in Peru - die laengere der beiden Quellflussverbindungen."
+        },
+        {
+          "q": "Was machen Aras mit Lehm?",
+          "options": [
+            "A) Nester bauen",
+            "B) Geophagie - Toxine binden",
+            "C) Ablegen",
+            "D) Spielen"
+          ],
+          "a": "B",
+          "explain": "Geophagie: Aras fressen Lehm, der Pflanzentoxine bindet."
+        },
+        {
+          "q": "Wie weit kann sich ein Bruellaffenruf ausbreiten?",
+          "options": [
+            "A) 100 m",
+            "B) 1 km",
+            "C) 5 km",
+            "D) 16 km"
+          ],
+          "a": "C",
+          "explain": "~5 km konservativ, einige Quellen nennen bis zu 16 km."
+        },
+        {
+          "q": "Wie oft pro Woche kommt ein Dreifinger-Faultier vom Baum?",
+          "options": [
+            "A) Taeglich",
+            "B) 1x pro Woche zur Defaekation",
+            "C) Nie",
+            "D) 3x"
+          ],
+          "a": "B",
+          "explain": "Etwa 1x pro Woche zur Defaekation am Boden."
+        },
+        {
+          "q": "Welche Pflanze ist im Amazonas endemisch?",
+          "options": [
+            "A) Acai",
+            "B) Victoria amazonica (Amazonas-Riesenseerose)",
+            "C) Mango",
+            "D) Kokospalme"
+          ],
+          "a": "B",
+          "explain": "Victoria amazonica ist die groesste Seerose der Welt und ein echter Endemit. Acai kommt weiter verbreitet vor."
+        }
+      ]
     }
   },
   "feen-klein": {
@@ -41439,7 +41643,7 @@ var ELITE_MOTTO_DATA = {
             "codeLogic": "Lösungswort: FLORA — fünf unterschiedliche Buchstaben (F, L, O, R, A) ohne Doppler, ausschließlich erste Buchstaben echter heimischer Pflanzen.\nStation 1 (Frage zu Sporen/Adlerfarn) → Buchstabe F\nStation 2 (Frage zum Lebenszyklus/Löwenzahn) → Buchstabe L\nStation 3 (Frage zur Heilpflanze mit gelben Ähren/Odermennig) → Buchstabe O\nStation 4 (Frage zur Wundheilungs-Korbblütlerin/Ringelblume) → Buchstabe R\nStation 5 (Frage zum Baumblatt der kanadischen Flagge/Ahorn) → Buchstabe A\nMath-Check: 5 Stationen × 1 Buchstabe = 5 Buchstaben → Code FLORA ist exakt 5-stellig und enthält keinen Doppler. Jede Pflanze gibt genau einen Buchstaben, jede Station genau eine Antwort.",
             "safetyRule": "Echtes Pflanzenmaterial: nur unbedenkliche heimische Pflanzen verwenden (Farn-Wedel aus dem Garten, Löwenzahn-Tee, getrocknete Ringelblumen-Blüten aus dem Apotheker-Tee — explizit NICHT giftige Pflanzen wie Maiglöckchen, Eibe, Tollkirsche). Bei Heuschnupfen-Allergie eines Kindes vor der Party klären; Notfall: Pflanzen-Fotos statt echtem Material. Kinder essen oder kosten NICHT von dem Material.",
             "ageAdjust9": "Pro Station nur 3 Antwort-Optionen statt 5, Pflanzen-Fotos statt Skizzen, Bestimmungsschlüssel sichtbar an der Wand.",
-            "ageAdjust12": "Lateinische Pflanzennamen als Bonus-Spalte, Trick-Frage in Station 4 (Sonnenblume gehört auch zu Korbblütlern, aber wird seit Mittelalter nicht zur Wundheilung verwendet — strenge Lese-Aufgabe).",
+            "ageAdjust12": "Lateinische Pflanzennamen als Bonus-Spalte, Trick-Frage in Station 4 (Kornblume gehört auch zu Korbblütlern, aber wird seit Mittelalter nicht zur Wundheilung verwendet — strenge Lese-Aufgabe).",
             "indoorTip": "Die fünf Quadranten an unterschiedliche Tische / Wände stellen, damit die Hüter sich nicht gegenseitig ins Material greifen.",
             "outdoorTip": "Stationen entlang eines Garten-Rundwegs verteilen — passt perfekt zum Zauberwald-Frame. An der Farn-Station echte Adlerfarn-Wedel platzieren.",
             "whyItWorksTitle": "Pflanzen-Wissen + Selbstkontrolle statt Tempo",
@@ -41750,7 +41954,7 @@ var ELITE_MOTTO_DATA = {
             "codeLogic": "Lösungswort: FLORA — fünf unterschiedliche Buchstaben (F, L, O, R, A) ohne Doppler.\nStation 1 (Adlerfarn → Sporen-Frage) → F\nStation 2 (Löwenzahn → Lebenszyklus-Frage) → L\nStation 3 (Odermennig → Heilpflanzen-Frage gelbe Ähren) → O\nStation 4 (Ringelblume → Wundheilungs-Korbblütlerin-Frage) → R\nStation 5 (Spitzahorn → 5-zackiges-Blatt-Frage) → A\nMath-Check: 5 Stationen × 1 Buchstabe = 5 Buchstaben. Jeder Buchstabe einzigartig (kein F-F, kein L-L, etc.). 5-Stellen-Wort-Schloss exakt befüllt. Bei doppeltem Tipp: war an einer Station eine falsche Pflanze-Antwort gekreuzt — Selbstkontrolle greift sofort.",
             "safetyRule": "Pflanzenmaterial: nur echte unbedenkliche heimische Pflanzen (Farn-Wedel aus dem Garten, Löwenzahn-Tee, Ringelblumen-Tee, Odermennig-Tee aus der Apotheke, Spitzahorn-Blatt aus dem Park). Kein Material aus dem Wald, das nicht eindeutig identifiziert ist. EXPLIZIT NICHT: Maiglöckchen, Tollkirsche, Eibe, Riesenbärenklau. Kinder essen oder kosten NICHT vom Material — das ist Sorgfalt-Übung, nicht Picknick.",
             "ageAdjust9": "Pro Station 3 Antwort-Optionen statt 5, Pflanzen-Fotos zusätzlich zu Skizzen.",
-            "ageAdjust12": "Lateinische Pflanzennamen einbauen, Trick-Frage bei Station 4 (Sonnenblume gehört auch zu Korbblütlern, aber „seit Mittelalter\" und „Wundheilungs-Salbe\" sind die Schlüsselworte).",
+            "ageAdjust12": "Lateinische Pflanzennamen einbauen, Trick-Frage bei Station 4 (Kornblume gehört auch zu Korbblütlern, aber „seit Mittelalter\" und „Wundheilungs-Salbe\" sind die Schlüsselworte).",
             "indoorTip": "Die 5 Quadranten in verschiedene Räume / an verschiedene Wände — verhindert Stau und gibt das Gefühl, „durch den Wald zu wandern\".",
             "outdoorTip": "Im Garten entlang eines Rundweges verteilen, an der Farn-Station echte Farn-Wedel, an der Ahorn-Station echtes Ahorn-Blatt von einem nahen Baum.",
             "whyItWorksTitle": "Pflanzen-Wissen wird echtes Können",
@@ -42066,7 +42270,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Zurück im Lager: alle 5 Buchstaben ins Formular = F-L-O-R-A. Selbst-Check: echtes Wort? Ja → Quest weitergeführt zur UV-Phase. Buchstabensalat → eine Station selbst nachprüfen."
               }
             ],
-            "codeLogic": "Lösungswort: FLORA — fünf unterschiedliche Buchstaben.\nStation 1 (Adlerfarn) → F\nStation 2 (Löwenzahn) → L\nStation 3 (Odermennig) → O\nStation 4 (Ringelblume) → R\nStation 5 (Spitzahorn) → A\nMath-Check: 5 GPS-Stationen × 1 Buchstabe = 5 Buchstaben, alle unique. Bei doppeltem Buchstaben im Ergebnis: eine Pflanzen-Antwort war falsch — Selbstkontrolle eingebaut.",
+            "codeLogic": "Lösungswort: FLORA — fünf unterschiedliche Buchstaben.\nStation 1 (Adlerfarn) → F\nStation 2 (Löwenzahn) → L\nStation 3 (Odermennig) → O\nStation 4 (Ringelblume) → R\nStation 5 (Spitzahorn) → A\nMath-Check: 5 GPS-Stationen × 1 Buchstabe = 5 Buchstaben, alle unique. Ergibt die Buchstabenfolge kein sinnvolles Wort (z.B. V-L-O-R-A statt F-L-O-R-A weil Veilchen statt Farn): mindestens eine Station war falsch — Selbstkontrolle uber Wort-Erkennung, nicht uber Doppler.",
             "safetyRule": "Outdoor-Sicherheit: Hüter:innen bewegen sich in Teams (mindestens 3), niemand allein. Jedes Team hat 1 Handy mit Notruf-Funktion. Aufsichtsperson (du + 1 Helfer:in) bleibt zentral, Reichweite max. 200 m. Bei Park: vorher mit Eltern abklären, dass Quest im öffentlichen Park stattfindet — Erlaubnis pro Kind erfragen. Knoten- und Hanf-Armband-Sicherheit: NIE eng am Handgelenk, immer abnehmbar.",
             "ageAdjust9": "Nur 3 Stationen, alle im Garten in Sichtweite, kein echter Park.",
             "ageAdjust12": "5 Stationen mit Koordinaten-Mathematik-Bonus („berechne die Reihenfolge nach kürzestem Weg\" — Routenplanung-Übung).",
