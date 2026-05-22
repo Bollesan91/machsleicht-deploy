@@ -26385,7 +26385,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 6,
             "loudness": "leise",
             "effort": "mittel",
-            "material": "Zitronensaft, Wattestäbchen, weißes Papier, 1 Bügeleisen ODER warme Lampe/Föhn (NUR Erwachsene), vorbereitete Geheim-Botschaft.",
+            "material": "Zitronensaft, Wattestäbchen, weißes Papier, 1 Föhn oder Backofen 100°C 5 Min (statt Bügeleisen — sicherer bei 6-8) ODER warme Lampe/Föhn (NUR Erwachsene), vorbereitete Geheim-Botschaft.",
             "prepText": "Vorab schreibst du mit Zitronensaft eine Botschaft auf Papier (z.B. \"Schau hinter das Buch\"). Getrocknet ist sie unsichtbar. Die Kinder machen sie mit Wärme sichtbar — der vielleicht größte Wow-Moment des Tages.",
             "steps": [
               {
@@ -26759,7 +26759,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "16:50",
             "title": "Finale: Schatz-Bergung & Auflösung",
-            "description": "Kuchen und Geschenk werden geborgen, der Fall aufgelöst."
+            "description": "Kuchen und Geschenk werden geborgen, der Fall aufgelöst. (Spiele aus Standard-games[] übernommen: siehe variants[1].games — Wow nutzt diese statt eigene Duplikate.)"
           },
           {
             "time": "17:10",
@@ -27140,7 +27140,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🍋",
             "title": "Geheimtinte einmal testen",
-            "detail": "Vorab mit Zitronensaft und Bügeleisen üben — so weißt du, wie viel Wärme die Schrift braucht."
+            "detail": "Vorab mit Zitronensaft und Föhn oder Backofen 100°C 5 Min (statt Bügeleisen — sicherer bei 6-8) üben — so weißt du, wie viel Wärme die Schrift braucht."
           }
         ]
       },
