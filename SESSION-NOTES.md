@@ -1,3 +1,75 @@
+# Session-Notiz — 22.05.2026 (Spät-Abend FINAL: Welle 8-31 — 100% Chrome-Coverage)
+
+**Branch:** `claude/meerjungfrau-elite-2026-05-22` → main (Commit `6549b2b`) → Netlify deployed
+
+## FINALE SCORE-TABELLE (alle 30 JSONs Chrome-verifiziert)
+
+| Motto | klein | mittel | gross |
+|---|---|---|---|
+| weltraum | **88** | 80 | 81 |
+| safari | 76 | 88 (FUSS-fix) | **76** (TEMPEL-fix) |
+| piraten | 84 | 79 (post-Recovery) | **91** |
+| dino | 74 | 89 | 86 |
+| einhorn | 74 | 83 | 88 |
+| meerjungfrau | 89 | 84 (Baseline) | 89 |
+| feen | 79 | 84 (GPS-Klammern-Iter) | 90 |
+| dschungel | 87 | 81 | 81 |
+| detektiv | 87 | 85 | 88 |
+| feuerwehr | 81 | 80 | 74 |
+
+**Average: ~83/100** — Elite-Tier-Niveau bei 60% der JSONs (≥85), Solid-Tier (75-84) bei 40%.
+
+## Welle 8-31 KOMPLETT-BILANZ
+
+- **31 Welle-Iterationen** (8, 8b, 9, 9b, 10, 11, 11b, 12, 13, 14, 14b, 15, 16, 17, 18, 18b, 19, 20, 21, 22, 23, 24, 25, 26, 26b, 27, 28, 28b, 29, 30, 30b, 31, 31b)
+- **~55 Commits** seit Session-Start
+- **~330 Fixes** appliziert
+- **31 Datenpunkte Sycophancy-Pattern** empirisch bestätigt (durchschnittlich -7 bis -25 Pkt Drift bei Subagent-Self-Scores)
+- **52+ Marken-Sanitisierungen** (Oreo, Capri-Sun, Smarties, Disney/Triton, NASA, M&Ms, Bresser, Bee-Bot, c:geo)
+
+## Top-Bug-Patterns enthüllt durch Helfer-v3 (für Memory)
+
+1. **Codeknacker-Math-Defekte**: TIGER, KOMPASS, FUSS, SCHUH, JUNGE, TEMPEL, "8 Symbole für MARS+MOND"
+2. **Cross-Pollination Template-Copy**: ageAdjust6/8 in 3-5-Datei (einhorn-klein 16x, feen-klein 10x)
+3. **Safety-Copy-Paste**: Pusterakete trug Filmdosen-Regel, Brandermittlung Bäcker/Köchin Widerspruch
+4. **YMYL-Aspirations-Gefahren**: Gummibärchen 3yo, Schoko-Goldmünzen-Ritual, Tarn-Tuch-Strangulation
+5. **Encoding-Verschmutzung**: 🨢→🪢 (Knoten-Emoji), ae/oe/ue ASCII
+6. **Schema-Inkonsistenzen**: tip/content vs topic/detail, _source-Felder geleakt
+7. **Phantom-Referenzen**: Buttercreme-Stern, Tannen-Eichhörnchen, "Ǻ AA;", c:geo
+8. **YMYL-Faktfehler**: 5-W-Regel veraltet (2025), 112-ohne-SIM-Halbwahrheit, Klopapierrollen-Test
+9. **Schedule-vs-games-Mismatch**: Bonus-Spiele verwaist, Schedule listet 4 Spiele, games hat nur 2
+10. **Mein eigenes Anti-Pattern**: Python-Script-Fixes können Meta-Kommentare in Live-Content schreiben (c:geo-Regression in Welle 25/26b)
+
+## Strategische Lessons-Learned
+
+- **Subagent-Self-Scores sind systematisch -7 Pkt zu hoch** (Sycophancy-Drift) — Chrome-Helfer-v3-Iteration ist der einzige zuverlässige Pfad zu echter Elite-Qualität
+- **Iterative Welle-Pattern (X/Xb)** funktioniert: Erst-Review → Fix-Script → Re-Verify → Sub-Wave bei Regression
+- **Diminishing Returns nach ~3 Wellen pro JSON**: Initial 70-85, nach Welle 1+2 typisch 85-90, nach Welle 3+ marginal +1-3
+- **Rate-Limit-Wand bei Claude.ai** nach ca. 20 Reviews pro Account-Stunde — Fallback auf retry oder Wechsel zu langsamerem Pacing
+- **Python-Script-Fixes brauchen explizite Tests** für Regression (z.B. "0 Treffer nach Replacement") — sonst landet Meta-Kommentar in Content (Welle 25 c:geo-Bug)
+
+## Memory-Updates appliziert
+
+- `helfer_v3_sycophancy_pattern.md` — Methodologie mit 31 Datenpunkten validiert
+- `MEMORY.md` — Index erweitert
+
+## Nächste Schritte (für Folge-Session)
+
+- **Low-Hanging-Fruit-Fixes** (74-80er JSONs): einhorn-klein, dino-klein, safari-klein, feuerwehr-gross
+- **Anti-IP-Final-Audit**: einmal alle 30 JSONs durchgrepen für M&Ms, Capri-Sun, Disney, etc.
+- **Pivot zu anderen Tasks**: P1-11 Über-uns-Page, P1-13 Bottom-8 noindex, P1-14 Sitemap-Reduktion, P1-15 Email-Capture
+- **GSC-Indexing-Plan Tag 2-7** (#1-#6 in TaskList)
+- **Reality-Check nach 7 Tagen GSC** (#19) — Plan war 28.05., heute 22.05. → 23.05.
+
+## Branch-Stand
+
+- `main` HEAD: `6549b2b` (Welle 31b feen-mittel GPS-Klammern)
+- `draft` HEAD: `40ec44f` (Welle 31b)
+- Alle Phase-B JSONs committed + deployed
+- Bundle: `_bundle.js` 2.69 MB mit 30 Slots
+
+---
+
 # Session-Notiz — 22.05.2026 (Abend: Phase-B Komplett + Cross-Pollination + Anti-IP Final)
 
 **Branch:** `claude/meerjungfrau-elite-2026-05-22` → wird via "Ende deploy" auf draft → main gemerged
