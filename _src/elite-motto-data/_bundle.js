@@ -13806,6 +13806,32 @@ var ELITE_MOTTO_DATA = {
         ],
         "games": [
           {
+            "name": "🌋 Vulkan-Experiment",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 20,
+            "minAge": 5,
+            "loudness": "laut",
+            "effort": "mittel",
+            "material": "1 leere PET-Flasche (0,5l), Alufolie oder braunes Papier zum Formen, 3 EL Natron, 100 ml Essig, 1 Spritzer Spülmittel, rote Lebensmittelfarbe (Supermarkt, Backzutaten-Regal, ~1 €), 1 Tablett oder große Unterlage",
+            "prepText": "Flasche mit Alufolie zu einem Vulkan-Kegel formen. Auf Tablett stellen. Natron in die Flasche, Spülmittel und rote Lebensmittelfarbe dazu. Dann auf Kommando („3, 2, 1 — VULKANAUSBRUCH!“) Essig reinkippen und einen Schritt zurücktreten. Die rote Lava schäumt über!",
+            "steps": [
+              "Flasche mit Alufolie zu Vulkan-Kegel formen, auf Tablett mit Rand stellen",
+              "3 EL Natron + 1 Spritzer Spüli + rote Farbe in die Flasche",
+              "Kinder hinter Sicherheitsabstand (1 Armlänge)",
+              "Countdown rufen: „3, 2, 1 — VULKANAUSBRUCH!“",
+              "Erwachsene*r kippt 100 ml Essig rein, sofort einen Schritt zurück",
+              "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
+            ],
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsene*r kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (Sättigung ab ca 50g) — Mehr Spüli macht den Schaum cremiger.",
+            "ageAdjust6": null,
+            "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
+            "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
+            "outdoorTip": "Im Sandhügel — beste Optik + einfachste Reinigung. Bei Wind nicht in Richtung Tisch/Snacks ausrichten.",
+            "whyItWorksTitle": "Warum es funktioniert",
+            "whyItWorks": "DER Wow-Moment der Party. Bei 6–8-Jährigen: Wissenschaft + Spektakel = die perfekte Kombination. Sie wollen es 3–4× wiederholt sehen — und plötzlich verstehen sie, warum mehr Spüli mehr Schaum macht."
+          },
+          {
             "name": "🗺️ Dino-Schatzsuche (5 Stationen)",
             "indoor": true,
             "outdoor": true,
@@ -13854,6 +13880,32 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Schwer outdoor (Vorlese-Akustik). Lieber als Ruhe-Highlight nach lautem Spiel drinnen lassen.",
             "whyItWorksTitle": "Warum es funktioniert",
             "whyItWorks": "6–8-Jährige LIEBEN Fakten. Quizfragen mit echtem Wissen („Nigersaurus hatte 500 Zähne“) sind für sie kein Schul-Wissen sondern Coolness-Punkte. Trost-Forschungsstipendium hält das Verlierer-Team bei Stimmung."
+          },
+          {
+            "name": "🪨 Fossilien gießen",
+            "indoor": true,
+            "outdoor": false,
+            "duration": 20,
+            "minAge": 6,
+            "loudness": "ruhig",
+            "effort": "mittel",
+            "material": "1 kg Gipspulver (~3€ Baumarkt), kleine Dino-Figuren, Joghurtbecher (1 pro Kind), Speiseöl, Rührstab",
+            "prepText": "Becher innen dünn mit Öl einpinseln (damit der Gips nicht klebt). Dino-Figur in den Becher drücken. Gips anrühren (Konsistenz wie Pfannkuchenteig), in den Becher gießen, 20 Min. trocknen lassen. Figur rausziehen → fertiger Fossil-Abdruck.",
+            "steps": [
+              "Joghurtbecher innen mit Öl einpinseln",
+              "Dino-Figur mit Vaseline / Öl bestreichen, dann in den Becher drücken (kopfüber)",
+              "Gips anrühren: 1 Teil Wasser : 1,5 Teile Pulver, Konsistenz wie Pfannkuchenteig",
+              "Gips in Becher gießen, kurz aufstoßen für Luftblasen",
+              "20 Min. trocknen, dann Figur vorsichtig herausziehen → Fossil-Abdruck",
+              "Name mit Zahnstocher in noch feuchten Gips ritzen — personalisiertes Mitgebsel"
+            ],
+            "safetyRule": "Gips wird beim Aushärten WARM (bis ~50°C) — Becher nicht in der Hand halten, auf den Tisch stellen. Gipsstaub nicht einatmen (Atemschutz/Tuch vor Mund beim Anrühren). Erwachsene*r mischt Gips. WICHTIG: Gips-Reste NIE ins Waschbecken oder Klo — verstopft Rohre dauerhaft. Reste antrocknen lassen und in den Restmüll.",
+            "ageAdjust6": "Gips anrühren übernimmst du. Kinder drücken nur die Figur rein.",
+            "ageAdjust8": "Können den Gips selbst anrühren. Mengenverhältnis an die Tafel schreiben.",
+            "indoorTip": "Auf Folie + Backblech arbeiten — Tropfen werden zu hartem Gips, schwer abzukratzen.",
+            "outdoorTip": "Geht draußen besser (Staub-Sorgen entfallen) — aber Trocknung nur in Schatten, Sonne macht Gips spröde.",
+            "whyItWorksTitle": "Warum es funktioniert",
+            "whyItWorks": "Echtes Mitgebsel = echter Stolz. Die Kinder haben etwas selbst gemacht, das sie zu Hause auf den Schreibtisch stellen. Kein Plastik-Krempel."
           }
         ],
         "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃\"Dino-Pipi\"14 Saftpaeckchen\n🌋Kartoffelbrei-Vulkan1 kg Kartoffeln\n🌭Mini-Würstchen16 Stück\n🥕Gemüse-Sticks4 Karotten, 2 Gurken\n🍿Popcorn300 g\n🍫Schoko-Goldmünzen1 Netz (Schatz)\n\n💡 Kartoffelbrei-Vulkan:\nKartoffelbrei auf den Teller häufeln, oben eine Mulde formen, Ketchup reingießen = Lava. Die Kinder lieben es. Funktioniert auch mit Würstchen als \"Baumstämme\" drumherum.",
@@ -14017,7 +14069,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "n": 4,
-          "content": "bunte Schoko-Linsen oder M&Ms als \"Lava-Strom\" von der Spitze nach unten legen — rot und orange Farben."
+          "content": "bunte Schoko-Linsen als \"Lava-Strom\" von der Spitze nach unten legen — rot und orange Farben."
         },
         {
           "n": 5,
@@ -33876,7 +33928,8 @@ var ELITE_MOTTO_DATA = {
         {
           "title": "Abschluss-Moment planen (vor dem Abholen)",
           "content": "Letzte 5 Minuten ruhig: alle Kinder im Halbkreis, du gehst herum, übergibst Forscher-Pass + Notizbuch + Plüsch-Affe (Mitgebsel) und sagst jedem Kind seinen Forscher-Namen. Foto-Moment für die Eltern — sanfter Ausklang statt Chaos-Ende."
-        }
+        },
+        "Türkise Bach-Decke ausrollen (Karton-Tape oder Tischdecke 1,5 m × 80 cm) — als visuelles Setting-Element + Spielfeld für den Bach-Beobachter (zählt Holztiere/Schwammtiere die durchschwimmen). Material: 1 türkise Decke + 5 kleine Tier-Schwammis."
       ],
       "rolesList": [
         {
@@ -34778,7 +34831,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Wer mag, geht eine zweite Runde. Wer fertig ist, setzt sich an den Rand und macht den Tukan-Ruf für die anderen."
               }
             ],
-            "safetyRule": "Pflicht: Stoff-Liane max. 30-40 cm Bodenabstand (Füße müssen den Boden fast berühren). Erwachsener hält IMMER am Knoten/oberen Stoff-Ende, kein freies Schwingen. Bei 3-Jährigen: NUR Hangel-Parcours, kein Schwingen ohne erwachsene Hand am Stoff. Keine Stühle/Möbel als Sprung-Inseln. Boden ringsum frei von harten Kanten. Maximal ein Kind gleichzeitig an der Liane.",
+            "safetyRule": "Pflicht: Stoff-Liane max. 30-40 cm Bodenabstand (Füße müssen den Boden fast berühren). Erwachsener hält IMMER am Knoten/oberen Stoff-Ende, kein freies Schwingen. Bei 3-Jährigen: NUR Hangel-Parcours, kein Schwingen ohne erwachsene Hand am Stoff. Keine Stühle/Möbel als Sprung-Inseln. Boden ringsum frei von harten Kanten. Maximal ein Kind gleichzeitig an der Liane. WICHTIG bei 8 Kindern Wow-Variante: Die Liane ist eine betreute Einzelstation — eine Person sichert dauerhaft am Knoten, eine zweite beschäftigt die wartenden Kinder an einer Parallel-Station (z.B. Bananen-Korb sortieren). NIEMALS 8 Kinder gleichzeitig an einer Liane mit nur einer Aufsichtsperson.",
             "ageAdjust3": "KEIN Schwingen, nur Hangel-Parcours: von Sitzkissen zu Sitzkissen krabbeln, die Liane nur kurz anfassen und 'Affen-Schrei' machen (Quatsch-Moment, kein echtes Schwingen). Du hältst dauerhaft die Hand am Kind.",
             "ageAdjust5": "5-Jährige dürfen sanft schwingen (du sicherst am Knoten). Hangel-Parcours mit 5-6 Inseln, türkise Bach-Decke breiter.",
             "indoorTip": "Türöffnung mit stabilem Türrahmen-Reck (Kinder-Reck) ideal. In Mietwohnung: keine Schraub-Hooks in die Decke, sondern Stoff-Liane über einen Türrahmen-Reck oder festen Querbalken.",

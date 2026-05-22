@@ -39,7 +39,8 @@
       {
         "title": "Abschluss-Moment planen (vor dem Abholen)",
         "content": "Letzte 5 Minuten ruhig: alle Kinder im Halbkreis, du gehst herum, übergibst Forscher-Pass + Notizbuch + Plüsch-Affe (Mitgebsel) und sagst jedem Kind seinen Forscher-Namen. Foto-Moment für die Eltern — sanfter Ausklang statt Chaos-Ende."
-      }
+      },
+      "Türkise Bach-Decke ausrollen (Karton-Tape oder Tischdecke 1,5 m × 80 cm) — als visuelles Setting-Element + Spielfeld für den Bach-Beobachter (zählt Holztiere/Schwammtiere die durchschwimmen). Material: 1 türkise Decke + 5 kleine Tier-Schwammis."
     ],
     "rolesList": [
       {
@@ -941,7 +942,7 @@
               "content": "Wer mag, geht eine zweite Runde. Wer fertig ist, setzt sich an den Rand und macht den Tukan-Ruf für die anderen."
             }
           ],
-          "safetyRule": "Pflicht: Stoff-Liane max. 30-40 cm Bodenabstand (Füße müssen den Boden fast berühren). Erwachsener hält IMMER am Knoten/oberen Stoff-Ende, kein freies Schwingen. Bei 3-Jährigen: NUR Hangel-Parcours, kein Schwingen ohne erwachsene Hand am Stoff. Keine Stühle/Möbel als Sprung-Inseln. Boden ringsum frei von harten Kanten. Maximal ein Kind gleichzeitig an der Liane.",
+          "safetyRule": "Pflicht: Stoff-Liane max. 30-40 cm Bodenabstand (Füße müssen den Boden fast berühren). Erwachsener hält IMMER am Knoten/oberen Stoff-Ende, kein freies Schwingen. Bei 3-Jährigen: NUR Hangel-Parcours, kein Schwingen ohne erwachsene Hand am Stoff. Keine Stühle/Möbel als Sprung-Inseln. Boden ringsum frei von harten Kanten. Maximal ein Kind gleichzeitig an der Liane. WICHTIG bei 8 Kindern Wow-Variante: Die Liane ist eine betreute Einzelstation — eine Person sichert dauerhaft am Knoten, eine zweite beschäftigt die wartenden Kinder an einer Parallel-Station (z.B. Bananen-Korb sortieren). NIEMALS 8 Kinder gleichzeitig an einer Liane mit nur einer Aufsichtsperson.",
           "ageAdjust3": "KEIN Schwingen, nur Hangel-Parcours: von Sitzkissen zu Sitzkissen krabbeln, die Liane nur kurz anfassen und 'Affen-Schrei' machen (Quatsch-Moment, kein echtes Schwingen). Du hältst dauerhaft die Hand am Kind.",
           "ageAdjust5": "5-Jährige dürfen sanft schwingen (du sicherst am Knoten). Hangel-Parcours mit 5-6 Inseln, türkise Bach-Decke breiter.",
           "indoorTip": "Türöffnung mit stabilem Türrahmen-Reck (Kinder-Reck) ideal. In Mietwohnung: keine Schraub-Hooks in die Decke, sondern Stoff-Liane über einen Türrahmen-Reck oder festen Querbalken.",
