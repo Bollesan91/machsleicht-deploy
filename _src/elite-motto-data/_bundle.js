@@ -8646,7 +8646,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 5,
             "loudness": null,
             "effort": "leicht",
-            "material": "12–15 Pfotenabdrücke aus Tonpapier ausgeschnitten (DIN A4 braunes Tonpapier, schwarzer vorgefertigte Tarn-Tuecher ODER abwaschbare Stoffmalfarben (Filzstift faerbt ab) oder Pfoten-Schablone — ein Löwenpfoten-Set kostet 5 Min. Vorbereitungszeit). Tesa zum Befestigen. Am Endpunkt: 1 Plüsch-Tier oder eine Box mit Mini-Tieren als \"Fund\". Druckvorlage Safari-Tierspuren ist in Vorbereitung — bis dahin: schnell selbst zeichnen, die Kinder merken den Unterschied nicht.",
+            "material": "12–15 Pfotenabdrücke aus Tonpapier ausgeschnitten (DIN A4 braunes Tonpapier, schwarzer Filzstift ODER vorgefertigte Tarn-Tücher ODER abwaschbare Stoffmalfarben (Filzstift färbt ab) oder Pfoten-Schablone — ein Löwenpfoten-Set kostet 5 Min. Vorbereitungszeit). Tesa zum Befestigen. Am Endpunkt: 1 Plüsch-Tier oder eine Box mit Mini-Tieren als \"Fund\". Druckvorlage Safari-Tierspuren ist in Vorbereitung — bis dahin: schnell selbst zeichnen, die Kinder merken den Unterschied nicht.",
             "prepText": "Vorher legst du eine Spur durch Garten oder Wohnung — z.B. Löwen-Pfoten an die Wand kleben (Augenhöhe Kind), die in eine bestimmte Richtung führen. Am Endpunkt versteckt sich das \"vermisste Tier\" (Plüsch-Löwe).",
             "steps": [
               {
@@ -8855,7 +8855,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 6,
             "loudness": "ruhig",
             "effort": "leicht",
-            "material": "Material pro Team: 2 Stoffquadrate (~30×30cm, alte Geschirrtücher oder weißer Stoff zerschnitten), vorgefertigte Tarn-Tuecher ODER abwaschbare Stoffmalfarben (Filzstift faerbt ab)e in Erdfarben (braun, grün, ocker), 1 Beispiel-Tarn-Tuch zum Vorzeigen",
+            "material": "Material pro Team: 2 Stoffquadrate (~30×30cm, alte Geschirrtücher oder weißer Stoff zerschnitten), vorgefertigte Tarn-Tücher ODER abwaschbare Stoffmalfarben (Filzstift färbt ab) in Erdfarben (braun, grün, ocker), 1 Beispiel-Tarn-Tuch zum Vorzeigen",
             "prepText": "Erst bemalen, dann tarnen. Jedes Kind bekommt ein Stoffquadrat und malt es mit Erdfarben so an, dass es zur Umgebung passt (Garten = grün-braun, Sofa = grau-beige). 8 Min. malen.\n\nDann: das Tuch über sich legen oder hinter sich halten und sich im Raum/Garten verstecken. Der Spielleiter (oder du) schaut 15 Sekunden weg, dann sucht er. Wer 30 Sekunden ungesehen bleibt, hat bestanden — und kriegt einen Stempel.",
             "steps": [
               {
@@ -9172,8 +9172,8 @@ var ELITE_MOTTO_DATA = {
             "categoryReasoning": "Wenn Apfelschorle + Snacks da sind, sind Mini-Pizzen eine Wow-Aufrüstung — nicht zwingend."
           },
           {
-            "emoji": "🦁 Plüsch-Tiere für Großspiel (vorhandenes Kuscheltier reicht — sonst",
-            "label": "hier",
+            "emoji": "🦁",
+            "label": "Plüsch-Tiere fürs Großspiel (vorhandenes Kuscheltier reicht — sonst günstig im Set)",
             "url": "https://www.amazon.de/s?k=plüsch+löwe+klein&tag=machsleicht-21",
             "priceEur": 0,
             "hasAffiliate": true,
@@ -9335,11 +9335,12 @@ var ELITE_MOTTO_DATA = {
             ],
             "safetyRule": "Tempel-Versteck und Stations-Wege ohne Stolperfallen wählen. Beim Loslaufen zum Schatz auf rutschige Böden und Türkanten achten.",
             "ageAdjust6": "Stationen 2 und 4 vereinfachen — bei Station 2 nur 3 Tiere, bei Station 4 dürfen die Kinder dreimal \"wachgemacht\" werden.",
-            "ageAdjust8": "Stationen schwieriger — bei Station 3 vier Fragen statt drei, bei Station 5 sechs Buchstaben statt vier.",
+            "ageAdjust8": "Stationen schwieriger — bei Station 3 vier Fragen statt drei, bei Station 5 Bei 8-Jaehrigen optional 5. Buchstabe an Station 5 (etwa Loesungswort SCHUH statt FUSS) — komplett konsistent zur Wortlaenge.",
             "indoorTip": "Fünf Stationen durch Zimmer und Flur verteilen, Tempel-Versteck markant wählen (unter dem Bücherregal, im Schuhschrank).",
             "outdoorTip": "Stationen über den Garten ziehen, Walkie-Talkies fürs Team einsetzen — die Quest gewinnt draußen an Abenteuer-Atmosphäre.",
             "whyItWorksTitle": "Warum das funktioniert",
-            "whyItWorks": "Fünf Stationen mit echtem Lösungswort am Ende: Das ist die kognitive Tiefe, die 6-8-Jährige tragen können — Rätsel kombinieren, Buchstaben sammeln, gemeinsam knobeln. Der Schatzfund liefert den emotionalen Höhepunkt der Wow-Variante."
+            "whyItWorks": "Fünf Stationen mit echtem Lösungswort am Ende: Das ist die kognitive Tiefe, die 6-8-Jährige tragen können — Rätsel kombinieren, Buchstaben sammeln, gemeinsam knobeln. Der Schatzfund liefert den emotionalen Höhepunkt der Wow-Variante.",
+            "codeLogic": "SAUBERE CODE-LOGIK: 4 Stationen liefern je einen Buchstaben aus dem Lösungswort FUSS (F-U-S-S). Station 1 (Flamingo-Tarnung) → Buchstabe F. Station 2 (Urwald-Pfad / Unter-dem-Baum-Versteck) → Buchstabe U. Station 3 (Schmetterling-Fang) → Buchstabe S. Station 4 (Schlangen-Tunnel) → Buchstabe S. Sortier-Station 5: Kinder ordnen die 4 Karten in der Spur-Reihenfolge → FUSS. Lösungswort öffnet die Schatzkiste. HINWEIS: Die alte TIGER-Logik (T-F-S-U) war mathematisch unmöglich — wurde durch saubere F-U-S-S-Mapping ersetzt."
           }
         ],
         "food": "🎂Savannen-Kuchen1 Blechkuchen + 1 kleiner\n🥤\"Wasserloch\"4 L Apfelschorle\n🍕Mini-Pizzen15 Stück\n🌯Wraps \"Anaconda\"10 Stück\n🍌Affen-Bananen10 Stk.\n🥕Karotten + Käse-Würfel\"Giraffen-Snack\"\n🍿Pop-Mais (Savannen-Kino)400 g\n🍫Schoko-GoldmünzenSchatzkisten-Inhalt",
@@ -13828,9 +13829,9 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": null
           }
         ],
-        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🍭Chips/Nachos2 Schüsseln",
+        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🥨 Chips/Nachos2 Schüsseln",
         "decoration": "🎈 Grüne Luftballons (10 Stk.)~2 €\n🦶 Fußspuren-Pfad am BodenKostenlos, 15 Min.\n🦕 Dino-Figuren als TischdekoIm Set\n📜 „Urzeit-Dschungel“-Schild am EingangKostenlosPappe + Edding",
-        "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~3 € pro Kind.\n\nǺ AA; Forscherpass (mit Urkunde)\n🦕 Dino-Figur (aus Ausgrabung)\n🍬 Süßigkeiten\n💎 „Fossil“ (Muschel/Stein)",
+        "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~3 € pro Kind.\n\nForscherpass (mit Urkunde)\n🦕 Dino-Figur (aus Ausgrabung)\n🍬 Süßigkeiten\n💎 „Fossil“ (Muschel/Stein)",
         "shoppingList": [
           {
             "emoji": "🦕",
@@ -13992,9 +13993,9 @@ var ELITE_MOTTO_DATA = {
             "codeLogic": "Saubere Code-Logik: 5 Stationen, jede gibt eine vorab festgelegte Ziffer per gedruckter Karte. Reihenfolge der Stationen = Schloss-Code. Beispiel-Default: 3-1-4-2-7. Station 1 (Caesar-Chiffre): Loesungswort steht auf Karte mit \"Ziffer 3\". Station 2 (Forscher-Quiz): Bei >=8/15 Punkten Karte \"Ziffer 1\" entnehmen; sonst Hilfe-Karte. Station 3 (Fossilien-Suche): Ziffer \"4\" unter der Auffangschale versteckt. Station 4 (Vulkan): Ziffer \"2\" steckt am Krater-Rand (nicht an Eruptionshoehe gekoppelt). Station 5 (Final): Ziffer \"7\" als Belohnungs-Karte. Code \"31427\" oeffnet Schloss. NICHT auf Geburtsdatum koppeln (das ist die alte falsche Logik)."
           }
         ],
-        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🥔Kartoffelbrei-Vulkan1 Schüssel\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🍭Nachos + Dip2 Schüsseln",
+        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🥔Kartoffelbrei-Vulkan1 Schüssel\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🌮 Nachos + Dip2 Schüsseln",
         "decoration": "🎈 Grüne Luftballons~2 €\n🦶 Fußspuren-PfadKostenlos, 15 Min.\n📜 „Urzeit-Dschungel“-SchildKostenlosPappe + Edding\n🔊 Dschungel-SoundsKostenlosYouTube: „Jungle Ambience“\n🦕 Dino-Figuren überallIm Set\n🕯️ Wunderkerzen für Kuchen~2 €",
-        "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~4 € pro Kind.\n\nǺ AA; Forscherpass + Urkunde\n🦕 Dino-Figur\n💎 „Fossil“ (Muschel/Stein)\n🍬 Süßigkeiten\n🗝️ Mini-Lupe",
+        "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~4 € pro Kind.\n\nForscherpass + Urkunde\n🦕 Dino-Figur\n💎 „Fossil“ (Muschel/Stein)\n🍬 Süßigkeiten\n🗝️ Mini-Lupe",
         "shoppingList": [
           {
             "emoji": "🦕",
@@ -14108,7 +14109,8 @@ var ELITE_MOTTO_DATA = {
       "meta": {
         "aufwand": "45 Min",
         "kosten": "~6 &euro;",
-        "allergiker": "Packung checken"
+        "allergiker": "Packung checken",
+        "safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Deko/Lianen/Tischtuch, nie mit Kindern allein lassen, bei Indoor IMMER Wassereimer griffbereit. Auspusten unmittelbar nach Aufnahme. Kein Funken-Wedeln."
       },
       "tips": null
     },
@@ -14250,7 +14252,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🔒",
             "title": "Wow-Setup: Schatztruhe + Code-Hinweise platzieren",
-            "detail": "Schuhkarton-Truhe mit Zahlenschloss (Code: Geburtstagsdatum), drinnen: Forscher-Diplome + Wunderkerze + Auflösungs-Karte. Code-Hinweise an 5-6 Phasen-Stationen verstecken."
+            "detail": "Schuhkarton-Truhe mit Zahlenschloss (Code 31427 (5 Ziffern aus den 5 Prüfungen — siehe Escape-Logik in variants[2].games[1].codeLogic). NICHT das Geburtsdatum verwenden), drinnen: Forscher-Diplome + Wunderkerze + Auflösungs-Karte. Code-Hinweise an 5-6 Phasen-Stationen verstecken."
           }
         ]
       },
@@ -14280,7 +14282,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🔒",
             "title": "Wow-Setup: Schatztruhe-Code testen",
-            "detail": "Zahlenschloss-Code (z.B. Geburtsdatum) zweimal testen. UV-Hinweise (falls Wow Premium) mit UV-Stift schreiben + UV-Lampe checken."
+            "detail": "Zahlenschloss-Code (z.B. Code 31427 (5 Ziffern aus den 5 Prüfungen — siehe Escape-Logik in variants[2].games[1].codeLogic). NICHT das Geburtsdatum verwenden) zweimal testen. UV-Hinweise (falls Wow Premium) mit UV-Stift schreiben + UV-Lampe checken."
           }
         ]
       },
@@ -14425,14 +14427,22 @@ var ELITE_MOTTO_DATA = {
       }
     },
     "signatureRitual": {
-      "name": null,
+      "name": "Die Paläontologen-Initiation",
       "subtitle": null,
-      "introText": null,
-      "setupSteps": [],
+      "introText": "Vor dem ersten Spiel: Jedes Kind faltet seinen eigenen Forscherpass aus festem Papier. Name auf den Pass schreiben, ersten Stempel oben links setzen (Mini-Dino-Stempel). Die Gastgeberin sagt feierlich: \"Ab jetzt bist du Paläontologin/Paläontologe. An jeder Station gibt es einen weiteren Stempel — der Pass beweist, dass du alle Prüfungen bestanden hast.\" Erst dann beginnt die erste Station.",
+      "setupSteps": [
+        "A5-Papier vorbereiten (1 Blatt pro Kind + 2 Reserve)",
+        "Mini-Dino-Stempel + Kissen bereitstellen (online ~6 €)",
+        "Stationen-Stempel: 5 verschiedene Motive (Caesar-Schriftrolle, Pinsel, Quizfrage, Vulkan, Schloss)",
+        "Endpunkt: Goldener \"Forscher-Diplom\"-Stempel als Krönung"
+      ],
       "rolesList": [],
-      "optOutNote": null,
+      "optOutNote": "Kinder, die nicht im Vordergrund stehen wollen, übernehmen die Beobachter-Rolle (existiert auch im SOS-Szenario): Sie führen das Logbuch der ganzen Gruppe und bekommen einen Spezial-Pass \"Chef-Dokumentar\".",
       "materialNote": null,
-      "_note": "Dino-Mottoseiten haben keine eigene Ritual-Sektion im Quell-HTML. Dino-Spurensuche oder Vulkan-Ausbruch sind die motto-zentralen Aktivitäten."
+      "_note": "Dino-Mottoseiten haben keine eigene Ritual-Sektion im Quell-HTML. Dino-Spurensuche oder Vulkan-Ausbruch sind die motto-zentralen Aktivitäten.",
+      "durationMin": 5,
+      "materialCost": "6-8 €",
+      "whyItWorks": "Der Pass ist der rote Faden: Jedes Spiel zahlt sichtbar auf den Pass ein (= ein Stempel mehr). Kein abstrakter \"Spaß\" — konkretes Belohnungssystem, das 9-12-jährige Kinder bei der Ehre packt. Plus: Der Pass ist das Mitgebsel — kein zusätzliches Material nötig."
     }
   },
   "piraten-klein": {
@@ -17193,7 +17203,8 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": "Die drei Quadranten an verschiedene Tische/Wände, damit sich die Crews nicht gegenseitig die Lösung abschauen.",
             "outdoorTip": "Quadranten an drei Stationen im Garten — die kurzen Wege dazwischen sind willkommene Bewegung.",
             "whyItWorksTitle": "Kombinieren + Selbstkontrolle statt Tempo",
-            "whyItWorks": "Kein Quadrant funktioniert allein — erst die drei Wörter zusammen ergeben den Pfad, also müssen sich die Spezialisierungen abstimmen. Ergibt ein Wort keinen Sinn, prüfen die Kinder ihre Reihenfolge selbst, statt zu raten. Genaues Lesen wird belohnt, nicht Geschwindigkeit. Steckt eine Crew fest, hilft eine andere Spezialisierung mit — das ist die Mission: „Auf See zählt, wer die Karte richtig liest.“"
+            "whyItWorks": "Kein Quadrant funktioniert allein — erst die drei Wörter zusammen ergeben den Pfad, also müssen sich die Spezialisierungen abstimmen. Ergibt ein Wort keinen Sinn, prüfen die Kinder ihre Reihenfolge selbst, statt zu raten. Genaues Lesen wird belohnt, nicht Geschwindigkeit. Steckt eine Crew fest, hilft eine andere Spezialisierung mit — das ist die Mission: „Auf See zählt, wer die Karte richtig liest.“",
+            "kompassReihenfolgeNote": "WICHTIG: Bei Lösungswort KOMPASS (K-O-M-P-A-S-S) sind die beiden S-Stationen NICHT austauschbar. Die geografische Reihenfolge ist fix: \"Sturmlaterne steht vor der Höhle, weil im Anker-Wrack davor\". Der Selbst-Check greift hier durch die Story-Logik (Sturmlaterne → Schmuggler-Höhle), nicht durch eindeutige Buchstaben. Alternative für sauberere Selbst-Kontrolle: Lösungswort auf SEGLER ändern (6 Buchstaben, alle unique → eine Station weniger, mathematisch sauber)."
           },
           {
             "name": "🪢 Knoten-Prüfung — Crew-Aufwärmer",
@@ -17568,7 +17579,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 5,
                 "name": "Umschlag E (Crew)",
-                "content": "4 Tiere am Strand, eines lebt im Gebirge: Krabbe, Möwe, Tintenfisch, Tannen-Eichhörnchen. Fremd → T."
+                "content": "4 Tiere am Strand, eines lebt im Dschungel: Krabbe, Möwe, Tintenfisch, Tiger. Fremd → T."
               },
               {
                 "n": 6,
@@ -18108,6 +18119,10 @@ var ELITE_MOTTO_DATA = {
         {
           "topic": "🌙 Schlafparty nur mit Opt-In",
           "detail": "Die Übernacht-Option vorher schriftlich mit allen Eltern klären (Schlafsack, Abholzeit am Morgen, Notfallnummern). Nicht jedes Kind will übernachten — ein Abhol-Zeitpunkt am Abend muss selbstverständlich möglich sein."
+        },
+        {
+          "tip": "Jahreszeit-Warnung Nacht-Schatzsuche",
+          "content": "Nacht-Schatzsuche (Wow-Variante) NUR bei echter Dunkelheit. Sommer (Juni-August): erst ab 21:30 Uhr — entweder Abholzeit verschieben oder Indoor (abgedunkelter Keller). Winter: 17:30-19:00 Uhr ideal. Reflektor-Karten + Stirnlampen funktionieren nur bei <100 Lux Restlicht."
         }
       ],
       "educationalValue": "Die Kinder üben ganz nebenbei echte Fähigkeiten: Koordinaten lesen, Werte sortieren und teilen, aus Hinweisen logisch eine Reihenfolge ableiten, echte Knoten binden und im Team eine mehrstufige Aufgabe koordinieren. Vor allem lernen sie, dass genaues Hinschauen und Zusammenarbeit weiter führen als Hektik — der Selbst-Check macht das spürbar: Wer schludert, liest Buchstabensalat; wer sorgfältig ist, liest ein Wort."
@@ -18411,11 +18426,6 @@ var ELITE_MOTTO_DATA = {
           "emoji": "🪐",
           "name": "Planeten-Helfer",
           "function": "Führt die Crew bei der Planeten-Reise von Station zu Station."
-        },
-        {
-          "emoji": "👽",
-          "name": "Alien-Begrüßer",
-          "function": "Zeigt den anderen den freundlichen Alien-Gruß und winkt zuerst."
         },
         {
           "emoji": "🎨",
@@ -18827,7 +18837,7 @@ var ELITE_MOTTO_DATA = {
             "indoor": true,
             "outdoor": true,
             "duration": "20 Min.",
-            "minAge": 5,
+            "minAge": 4,
             "loudness": "mittel",
             "effort": "mittel",
             "material": "4–5 Papp-Kreise als Planeten (Mars rot, Saturn mit Papp-Ring, Erde blau-grün), pro Planet eine Mini-Aufgabe auf einer Karte.",
@@ -18867,7 +18877,7 @@ var ELITE_MOTTO_DATA = {
             "indoor": true,
             "outdoor": false,
             "duration": "20 Min.",
-            "minAge": 5,
+            "minAge": 4,
             "loudness": "leise",
             "effort": "mittel",
             "material": "Pro Kind eine leere Klopapierrolle, bunte Stifte oder Fingerfarbe, Krepppapier-Streifen (rot/orange = Flamme), Klebestift, ein Stern-Sticker.",
@@ -18918,12 +18928,12 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🥤",
-            "label": "Apfelschorle (6er-Pack)",
+            "label": "Apfelschorle (2x6er-Pack (oder 1,5L-Flasche))",
             "url": "https://www.amazon.de/s?k=apfelschorle+kinder+6er&tag=machsleicht-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
-            "categoryReasoning": "Getränk für 6 Kinder. Gehört zu jeder Party — kann aber problemlos aus dem Vorrat kommen."
+            "categoryReasoning": "Getränk für 8 Kinder über 2,5 Std. — bei warmem Wetter eher 2 Packs einplanen. Gehört zu jeder Party — kann aber problemlos aus dem Vorrat kommen."
           },
           {
             "emoji": "🥈",
@@ -19243,12 +19253,12 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🥤",
-            "label": "Apfelschorle (6er-Pack)",
+            "label": "Apfelschorle (2x6er-Pack (oder 1,5L-Flasche))",
             "url": "https://www.amazon.de/s?k=apfelschorle+kinder+6er&tag=machsleicht-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
-            "categoryReasoning": "Getränk für 6 Kinder. Gehört zu jeder Party — kann aber problemlos aus dem Vorrat kommen."
+            "categoryReasoning": "Getränk für 8 Kinder über 2,5 Std. — bei warmem Wetter eher 2 Packs einplanen. Gehört zu jeder Party — kann aber problemlos aus dem Vorrat kommen."
           },
           {
             "emoji": "🥈",
@@ -19407,7 +19417,7 @@ var ELITE_MOTTO_DATA = {
       "meta": {
         "aufwand": "mittel (Rührteig + 15 Min. Deko)",
         "kosten": "ca. 5–8 €",
-        "allergiker": "Für Ei-Allergie: fertigen Marmorkuchen vom Bäcker nehmen und nur die Glasur + Krater selbst draufmachen — sieht genauso aus."
+        "allergiker": "Für Ei-Allergie: fertigen Marmorkuchen vom Bäcker nehmen und nur die Glasur + Krater selbst draufmachen — sieht genauso aus. Glutenfrei: Reismehl-Mischung (Schaer/Bauckhof) statt Weizen. Laktosefrei: Pflanzenmargarine + Hafermilch statt Butter/Milch. Mit Eltern vorab durchsprechen, was im Buttercreme-Stern noch ersetzt werden muss."
       },
       "tips": [
         {
@@ -31197,6 +31207,8922 @@ var ELITE_MOTTO_DATA = {
           "Klare Ansage in der Einladung beugt vor: „Zeremonie 17:00, Abholung 17:30.“"
         ],
         "fallback": "Bei Schlafparty: die Eltern der Nicht-Bleiber sind ohnehin ab einer festen Zeit verabschiedet — das vorher kommunizieren.",
+        "tone": "diplomatisch"
+      }
+    }
+  },
+  "dschungel-klein": {
+    "_meta": {
+      "source_file": "kindergeburtstag/dschungel.html",
+      "extracted": "2026-05-22",
+      "schema_version": "1.0",
+      "purpose": "Dschungel 3-5 (klein) — Phase-B Elite-Slot (analog Safari-klein)",
+      "phase_b_complete": "2026-05-22"
+    },
+    "motto": "dschungel",
+    "ageGroup": "klein",
+    "ageRange": [
+      3,
+      5
+    ],
+    "title": "🌴 Dschungel-Kindergeburtstag 3-5 Jahre — komplett geplant",
+    "metaDescription": "Dschungel-Kindergeburtstag für 3-5-Jährige als Forscher-Expedition: 3 fertige Konzepte mit Zeitplan, Lianen-Schwingen, Tier-Spuren, Trommeln und Forscher-Ernennung. Ohne Wettkampf, mit Plüsch-Affe und Forscher-Stirnband. Kostenlos.",
+    "introParagraph": "Dein Kind wird 3, 4 oder 5 und liebt Affen, Tiger und alles, was im Dschungel raschelt? Hier sind drei fertige Konzepte für die Dschungel-Expedition — von 90 Minuten Mini-Forscher-Tour bis zur entspannten 2-Stunden-Variante mit Lianen-Pfad und Tier-Fühlbox. Kein Rennen, keine Verlierer: Jedes Kind wird zum Dschungel-Forscher ernannt, beobachtet Tiere, liest Spuren und bekommt am Ende sein Forscher-Stirnband, Lupe und Notizbuch. Eltern bleiben mit dabei — bei 3- bis 5-Jährigen gehört das zum Plan, nicht zum Notnagel.",
+    "signatureRitual": {
+      "name": "Die Dschungel-Forscher-Ernennung",
+      "subtitle": "Eröffnet die Party + Forscher-Pass-Übergabe am Ende",
+      "introText": "Bei 3-5 funktioniert keine lange Zeremonie und kein Eid — das Stillstehen kippt nach 30 Sekunden. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener gemeinsam mit dem Kind macht. Beim Ankommen bekommt jedes Kind ein Forscher-Stirnband mit grünem Blatt-Aufnäher und einen Forscher-Namen — aus „Gast“ wird „Forscher Mia, die heute im Dschungel die Tiere beobachtet“. Dazu drückt man dem Kind eine kleine Holz-Lupe in die Hand: „Das ist deine Forscher-Lupe — damit kannst du die Spuren ganz genau sehen.“ Am Ende, statt einem Sieger-Moment, bekommt JEDES Kind seinen Forscher-Pass (kleines Heft mit Tier-Stempeln) plus ein Notizbuch — alle gleich, kein Ranking. Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende.",
+      "setupSteps": [
+        {
+          "title": "Forscher-Stirnbänder mit Namen vorbereiten",
+          "content": "Pro Kind ein Stirnband aus grünem oder braunem Tonpapier (ca. 5 cm × 55 cm) mit einem aufgeklebten Blatt-Sticker oder einer Pappel-Feder. Schreib den Forscher-Namen schon drauf oder nutze ein Klett-Schild. Beim Aufsetzen sagst du: „Du bist jetzt Forscher Mia. Du beobachtest heute die Dschungel-Tiere.“ Das Aufsetzen durch dich ist der Moment — nicht das Kind setzt es sich selbst auf."
+        },
+        {
+          "title": "Forscher-Lupen bereitlegen",
+          "content": "Eine kleine Kunststoff-Lupe pro Kind, am Eingang in einer Holzkiste. Die Lupen sind das physische Werkzeug, das den Forscher-Status sichtbar macht. Bruchsicher und ohne scharfe Kanten — bei 3-Jährigen lieber die runde Variante ohne Spitze."
+        },
+        {
+          "title": "Mini-Notizbücher beschriften",
+          "content": "Ein kleines DIN-A6-Heftchen pro Kind, vorne den Namen drauf („Forscher-Notizbuch von Mia“). Innen leere Seiten oder vorgemalte Tier-Silhouetten zum Ausmalen. 3-Jährige malen nur Striche rein, 5-Jährige kritzeln „Tier-Beobachtungen“ — beides ist richtig."
+        },
+        {
+          "title": "Forscher-Pässe drucken (eine pro Kind, identisch)",
+          "content": "Ein schlichter, gefalteter DIN-A5-Pass „Dschungel-Forscher-Pass für [Name]“ mit 6-8 Tier-Feldern zum Abstempeln. Bewusst alle gleich — kein „1. Forscher“. Namen vorab eintragen. Stempel-Felder werden im Laufe der Party an den Tier-Stationen abgehakt."
+        },
+        {
+          "title": "Abschluss-Moment planen (vor dem Abholen)",
+          "content": "Letzte 5 Minuten ruhig: alle Kinder im Halbkreis, du gehst herum, übergibst Forscher-Pass + Notizbuch + Plüsch-Affe (Mitgebsel) und sagst jedem Kind seinen Forscher-Namen. Foto-Moment für die Eltern — sanfter Ausklang statt Chaos-Ende."
+        }
+      ],
+      "rolesList": [
+        {
+          "emoji": "🐒",
+          "name": "Affen-Beobachter",
+          "function": "Kümmert sich um den Plüsch-Affen am Lianen-Pfad — passt auf, dass er sicher von Liane zu Liane kommt."
+        },
+        {
+          "emoji": "🐅",
+          "name": "Tiger-Spurenleser",
+          "function": "Hilft beim Lesen der Tiger-Spuren — zeigt den anderen, wo die nächste Pfote ist."
+        },
+        {
+          "emoji": "🦋",
+          "name": "Schmetterlings-Späher",
+          "function": "Sucht die versteckten Papp-Schmetterlinge im Raum und meldet jeden Fund."
+        },
+        {
+          "emoji": "🦥",
+          "name": "Faultier-Freund",
+          "function": "Begleitet das langsame Plüsch-Faultier und sorgt dafür, dass keiner es überholt — perfekt für ruhige Kinder."
+        },
+        {
+          "emoji": "🐸",
+          "name": "Frosch-Späher",
+          "function": "Hüpft als Erster zur nächsten Station und gibt das Frosch-Quak-Signal („wir sind da!“)."
+        },
+        {
+          "emoji": "🐍",
+          "name": "Schlangen-Wächter",
+          "function": "Passt auf die Stoff-Schlange in der Fühlbox auf — sie ist freundlich, kein Grusel-Tier."
+        },
+        {
+          "emoji": "🦜",
+          "name": "Tukan-Rufer",
+          "function": "Macht den Dschungel-Ruf, wenn ein neues Spiel startet — der laute, aber freundliche Helfer."
+        },
+        {
+          "emoji": "🐢",
+          "name": "Bach-Beobachter",
+          "function": "Bewacht die türkise Wasser-Decke (den „Bach“) und zählt die kleinen Holztiere, die hindurchschwimmen."
+        }
+      ],
+      "optOutNote": "Kein Kind muss eine Forscher-Rolle übernehmen, das Stirnband tragen oder die Lupe halten — bei 3-5 ist das normal. Zwing kein Kind in eine Rolle. Leg Stirnband + Lupe daneben, sag „kannst du später aufsetzen, wenn du magst“ und mach weiter. Oft kommt das Kind nach 10 Minuten von selbst dazu, sobald es sieht, dass es Spaß macht. Forscher-Pass, Notizbuch und Plüsch-Affe bekommt am Ende JEDES Kind — auch das, das die ganze Party im Eltern-Schoß sitzen geblieben ist.",
+      "materialNote": "Pflicht: ein Forscher-Stirnband pro Kind (mit Namen, grün/braun) und ein Forscher-Pass pro Kind. Schön dazu: Mini-Lupe und Mini-Notizbuch — das sind die haptischen Forscher-Werkzeuge, die Kinder lieben. Lupen-Sets findest du in der shoppingList der jeweiligen Variante; Pass und Notizbuch druckst/heftest du selbst. Bewusst KEINE Ausweise wie bei den Größeren — der Forscher-Pass mit Stempel-Feldern ist der richtige, verständliche Stolz-Moment für 3-5."
+    },
+    "ageInsight": {
+      "headline": "Was 3-5-Jährige ausmacht — und was das für die Dschungel-Party heißt",
+      "traits": [
+        {
+          "topic": "Aufmerksamkeit",
+          "detail": "10-15 Minuten pro Aktion, dann kippt es. Kurze Lianen-Runden, schnelle Erfolge, Plüsch-Affe zum Anfassen statt langer Erklärungen über Regenwald."
+        },
+        {
+          "topic": "Regeln",
+          "detail": "Eine Regel pro Spiel, vorgemacht statt erklärt. 'Wir hangeln vorsichtig' versteht ein 3-Jähriger nur, wenn du es ihm zeigst — nicht über Ansagen."
+        },
+        {
+          "topic": "Kein Wettbewerb",
+          "detail": "Wer schneller / höher / weiter gibt's bei 3-5 nicht. Jedes Kind schwingt einmal an der Liane, jedes Kind findet einen Schmetterling, jedes Kind bekommt den Forscher-Pass. Sonst weint die Hälfte."
+        },
+        {
+          "topic": "Motorik",
+          "detail": "Krabbeln, schwingen, fühlen — grobmotorisch ja, Basteln mit Schere nein. Stirnbänder vorbereiten, Kinder nur aufkleben lassen."
+        },
+        {
+          "topic": "Sensorik",
+          "detail": "Stoff-Lianen, raschelnde Blätter, weiche Fellsorten in der Fühlbox — die Sinne sind in dem Alter offen. Plane gezielt Material zum Anfassen ein, nicht nur zum Anschauen."
+        },
+        {
+          "topic": "Dauer",
+          "detail": "90 Min. bei Minimal, 2 Std. bei Standard/Wow ist das Maximum. Nach 2 Std. kippt selbst die fröhlichste Forscher-Truppe in Müdigkeit, Streit oder Heimweh."
+        },
+        {
+          "topic": "Essen",
+          "detail": "Fingerfood, das wie Dschungel-Snack aussieht: Bananen-'Boote', Trauben-'Beeren', Gurken-'Blätter', Cracker-'Steine'. Nichts Heißes, nichts mit Nüssen ungefragt."
+        },
+        {
+          "topic": "Eltern",
+          "detail": "Bleiben dabei — Trennungsangst ist mit 3 normal. Plane Eltern als Trostkontakt und zweite Hand ein, nicht als Störfaktor."
+        }
+      ],
+      "whyMottoFitsHeadline": "Warum Dschungel für 3-5 funktioniert",
+      "whyMottoFits": "Tiere sind das große Thema, das jedes Kind in dem Alter kennt und liebt — und der Dschungel bringt die buntesten Stars (Affen, Tukane, Schmetterlinge) ohne Vorwissen. Der Forscher-Frame dreht die Party weg vom Wettbewerb hin zum Entdecken: Spuren lesen, Schmetterlinge finden, leise zum Faultier schleichen. Das passt exakt zum Beobachter-Drang der Altersgruppe und kommt komplett ohne Verlierer aus. Sensorisch ist Dschungel ein Fest — Stoff-Lianen, Bambus-Stäbe, Plüsch-Fellbox. Akustisch je nach Trommel-Anteil leise bis mittel — gut für die Mietwohnung."
+    },
+    "variants": [
+      {
+        "id": "minimal",
+        "label": "Minimal — 90 Minuten, ein Spiel, wenig Aufwand",
+        "headline": "🌿 Minimal — 90 Minuten Mini-Forscher-Tour",
+        "intro": "Die ehrliche Sparvariante: 90 Minuten, 6 Kinder, ein Hauptspiel (die Tier-Spuren-Tour) plus Tier-Fühlbox als ruhiger Lückenfüller. Forscher-Stirnbänder als Ankunfts-Aktion, Plüsch-Affe-Übergabe und Forscher-Pass zum Schluss. Reicht völlig für 3-Jährige — mehr wäre eher zu viel.",
+        "timeWindow": "15:00-16:30, 6 Kinder",
+        "schedule": [
+          {
+            "time": "15:00",
+            "title": "Ankunft + Forscher werden",
+            "description": "Jedes Kind bekommt sein Forscher-Stirnband, seinen Namen und eine Mini-Lupe. Eltern dürfen bleiben."
+          },
+          {
+            "time": "15:15",
+            "title": "Tier-Fühlbox",
+            "description": "Einstieg im Sitzkreis. Kinder fühlen blind nach Plüsch-Tieren in der Box und raten — keine Hektik."
+          },
+          {
+            "time": "15:30",
+            "title": "Tier-Spuren-Tour",
+            "description": "Das Hauptspiel: leise den Tiger-Spuren folgen, den verlorenen Plüsch-Affen finden und ins Dschungel-Camp bringen."
+          },
+          {
+            "time": "15:55",
+            "title": "Bananen-Rätsel",
+            "description": "Ruhiges Such-Spiel zum Runterkommen. Jedes Kind findet eine versteckte Papp-Banane und legt sie in den Affen-Korb."
+          },
+          {
+            "time": "16:10",
+            "title": "Dschungel-Kuchen + Forscher-Pass",
+            "description": "Schokokuchen mit grünem Dschungel-Buttercreme, dann Pass-Übergabe: jeder Forscher kommt einzeln dran."
+          },
+          {
+            "time": "16:30",
+            "title": "Abholung",
+            "description": "Mitgebsel-Tüte an der Tür, fertig. Lieber 90 Min. glücklich als 3 Stunden eskaliert."
+          }
+        ],
+        "games": [
+          {
+            "name": "🐅 Tier-Spuren-Tour",
+            "indoor": true,
+            "outdoor": true,
+            "duration": "20 Min.",
+            "minAge": 3,
+            "loudness": "leise",
+            "effort": "leicht",
+            "material": "12-15 Tiger-Pfotenabdrücke aus orange/braunem Tonpapier (DIN A4, schwarzer Edding für die Streifen). Tesa. Am Endpunkt: 1 Plüsch-Affe oder eine Box mit kleinen Dschungel-Tieren als 'Fund'. Pfoten selbst zeichnen reicht — Kinder merken den Unterschied nicht.",
+            "prepText": "Vorher legst du eine Spur durch Wohnung oder Garten — z.B. Pfoten an die Wand kleben (Augenhöhe Kind, nicht zu hoch) in eine Richtung. Am Endpunkt versteckt sich der 'verlaufene' Plüsch-Affe unter einer grünen Decke oder hinter einem Stuhl.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Einstimmen",
+                "content": "Du flüsterst: 'Ein Affe hat sich im Dschungel verlaufen — wir folgen seinen Tiger-Freund-Spuren, der hat ihn zuletzt gesehen.'"
+              },
+              {
+                "n": 2,
+                "name": "Losschleichen",
+                "content": "Alle gehen gemeinsam los, leise wie eine Forscher-Truppe. Du gehst voraus und zeigst die erste Pfote."
+              },
+              {
+                "n": 3,
+                "name": "Spur folgen",
+                "content": "Kinder suchen die nächste Pfote mit ihrer Lupe, du bestätigst jedes Finden ('Da! Eine Spur!'). Tempo langsam halten."
+              },
+              {
+                "n": 4,
+                "name": "Affe finden",
+                "content": "Am Endpunkt liegt der Plüsch-Affe. Alle dürfen ihn streicheln, niemand reißt ihn weg — jeder kommt dran."
+              },
+              {
+                "n": 5,
+                "name": "Heimbringen",
+                "content": "Der Affe wird gemeinsam ins 'Dschungel-Camp' (Decken-Ecke) gebracht. Tour fertig, alle haben geholfen."
+              }
+            ],
+            "safetyRule": "Pfoten nicht zu hoch kleben — keine Stühle als Kletterhilfe. Endpunkt kindersicher (keine scharfen Kanten hinterm Versteck, keine Steckdosen in Reichweite). Lupen sind aus weichem Kunststoff, kein Glas.",
+            "ageAdjust3": "Spur kurz halten (10-12 Pfoten), Endpunkt sichtbar verstecken (unter Sofadecke). Du gehst die ganze Zeit voraus, lobst jedes Finden.",
+            "ageAdjust5": "Spur länger, 2 Tier-Arten parallel (Tiger + Affe), 2 Endpunkte. 5-Jährige dürfen abwechselnd 'Spur-Führer' sein und voran-pirschen.",
+            "indoorTip": "In 60-75 m² geht die Spur nicht über 2-3 Räume — dann ehrlich anders: ein Raum mit verschachtelten Verstecken (um Sofa, hinter Vorhang, unter Tisch, am Regal vorbei). Wirkt für 3-5 wie eine echte Dschungel-Reise.",
+            "outdoorTip": "Im Garten oder Park die Spur um Bäume und Büsche legen — die Kinder pirschen durchs 'Dickicht'. Stoff-Lianen aus grünen Tüchern an niedrige Äste hängen erhöht den Dschungel-Faktor.",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Schleichen mit Lupe ist ein Spiel mit eingebauter Lautstärke-Bremse. Kein Wettbewerb, alle finden gemeinsam — kein Kind geht leer aus. Der Plüsch-Fund ist greifbar, kein abstraktes Ziel. Die Lupe macht aus dem Suchen ein Werkzeug-Spiel — Kinder lieben Werkzeug."
+          },
+          {
+            "name": "🐍 Tier-Fühlbox",
+            "indoor": true,
+            "outdoor": true,
+            "duration": "10 Min.",
+            "minAge": 3,
+            "loudness": "leise",
+            "effort": "leicht",
+            "material": "Ein Karton mit Loch oben (etwa Schuhkarton-Größe) oder eine Stoff-Tasche. Drin: 5-6 Plüsch-Tiere mit eindeutigen Texturen (weicher Affe, kuschliger Tiger, leicht raue Stoff-Schlange, glatter Plüsch-Frosch, Plüsch-Schmetterling mit Flügel-Stoff). Optional ein Bambus-Stab als 'Forscher-Werkzeug'.",
+            "prepText": "Such 5-6 Plüsch-Tiere raus, die sich klar unterschiedlich anfühlen. Loch im Karton so groß, dass eine Kinderhand reinpasst, aber nicht der ganze Arm. Keine spitzen Plüschtier-Augen (Knopf-Augen statt Plastik-Spikes).",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Erklären",
+                "content": "Du sagst: 'Im Dschungel kann man die Tiere oft nur fühlen, nicht sehen — sie sind versteckt. Wir probieren das jetzt aus.'"
+              },
+              {
+                "n": 2,
+                "name": "Fühlen",
+                "content": "Jedes Kind greift einmal in die Box, fühlt ein Tier (ohne rauszuziehen!) und rät was es ist. Du moderierst, alle anderen warten."
+              },
+              {
+                "n": 3,
+                "name": "Aufdecken",
+                "content": "Nach dem Raten zieht das Kind das Tier raus. Alle freuen sich, ob richtig oder nicht — Hauptsache es ist ein Tier."
+              },
+              {
+                "n": 4,
+                "name": "Weiter",
+                "content": "Nächstes Kind. 6 Runden reichen, dann kippt die Aufmerksamkeit. Geübtere Tiere wieder reinlegen für die nächste Runde."
+              }
+            ],
+            "safetyRule": "Pflicht: Plüsch-Tiere mit Knopf-Augen oder gestickten Augen (keine harten Plastik-Augen, die in Mund/Auge stechen können). Karton-Kanten mit Tape abkleben. Wenn ein Kind nicht fühlen will: Kind darf zuschauen, Druck-Verbot.",
+            "ageAdjust3": "Nur 3-4 sehr eindeutige Tiere (Affe groß und weich, Schlange länglich, Frosch glatt), du hilfst beim Reingreifen wenn Kind unsicher.",
+            "ageAdjust5": "5-Jährige dürfen 2 Tiere gleichzeitig fühlen und vergleichen. Wer mag, beschreibt das Tier in Worten ('weich, klein, hat Flügel') bevor es geraten wird.",
+            "indoorTip": "Perfekt als ruhiger Lückenfüller drinnen — kein Platz nötig, alle sitzen im Kreis um die Box.",
+            "outdoorTip": "Draußen die Box auf eine Decke stellen, Kinder drumherum sitzen lassen. Im Sommer schattige Stelle wählen, damit kein Kind in der Sonne wartet.",
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          }
+        ],
+        "food": "🎂 Dschungel-Schokokuchen (Rührteig mit grüner Buttercreme + bunten Esspapier-Schmetterlingen). 🍌 Affen-Snack-Teller: Bananen-Boote (halbiert, mit Trauben gespickt), Gurken-'Blätter', Trauben-'Beeren', Cracker-'Steine'. 🥤 Apfelschorle in Trinkbechern. Nichts Heißes, keine ungefragten Nüsse.",
+        "decoration": "🌴 Ein paar grüne Tücher oder Zimmerpflanzen als 'Dschungel'-Ecke, ein türkises Tuch als 'Bach' am Boden. 🐒 Plüsch- und Plastiktiere verteilt (Affe, Tiger, Tukan, Frosch). Mehr braucht es bei Minimal nicht — die Kinder bringen die Fantasie mit.",
+        "giveaways": "🐒 Pro Kind ein Mini-Plüsch-Affe oder Plastik-Dschungeltier + Forscher-Pass mit Stempeln + Mini-Lupe (darf mit) + Forscher-Notizbuch in einer einfachen Papiertüte. Optional ein Tier-Sticker.",
+        "shoppingList": [
+          {
+            "emoji": "🌴",
+            "label": "Dschungel-Tierfiguren (12er-Set Plastik)",
+            "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+kinder&tag=machsleicht-21",
+            "priceEur": 7,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Trägt Tour, Fühlbox und Mitgebsel zugleich — das motto-zentrale Material. Ohne fehlt das Spiel-Element."
+          },
+          {
+            "emoji": "🐒",
+            "label": "Großer Plüsch-Affe (der 'Fund')",
+            "url": "https://www.amazon.de/s?k=pl%C3%BCsch+affe&tag=machsleicht-21",
+            "priceEur": 9,
+            "hasAffiliate": true,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Jeder größere Plüsch-Affe aus dem Kinderzimmer tut es. Nur kaufen, wenn nichts Passendes da ist."
+          },
+          {
+            "emoji": "🟫",
+            "label": "Orange/braunes Tonpapier (für Tiger-Spuren)",
+            "url": "https://www.amazon.de/s?k=tonpapier+orange+braun+a4&tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Basis der Spuren-Tour. Alternativ vorhandenes Bastelpapier — aber irgendein Papier muss her."
+          },
+          {
+            "emoji": "🎨",
+            "label": "Grünes Tonpapier-Set (Forscher-Stirnbänder)",
+            "url": "https://www.amazon.de/s?k=tonpapier+gr%C3%BCn+a4+set&tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Stirnband = Verwandlung zum Dschungel-Forscher, der Anker der ganzen Party. Pflicht."
+          },
+          {
+            "emoji": "🔍",
+            "label": "Mini-Lupen (6er-Set, Forscher-Werkzeug + Mitgebsel)",
+            "url": "https://www.amazon.de/s?k=kinder+lupe+set+6&tag=machsleicht-21",
+            "priceEur": 7,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Lupe ist das zentrale Forscher-Werkzeug und trägt die Tier-Spuren-Tour. Ohne Lupe kein Forscher-Frame. Pflicht."
+          },
+          {
+            "emoji": "✏️",
+            "label": "Dicke Filzstifte (Kinder)",
+            "url": "https://www.amazon.de/s?k=dicke+filzstifte+kinder&tag=machsleicht-21",
+            "priceEur": 5,
+            "hasAffiliate": true,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Haben die meisten Familien mit Kleinkind im Haus. Nur nachkaufen, wenn nicht vorhanden."
+          },
+          {
+            "emoji": "🔖",
+            "label": "Dschungel-Aufkleber (Blätter, Tiere)",
+            "url": "https://www.amazon.de/s?k=dschungel+sticker+kinder+set&tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Macht Stirnband + Pass + Mitgebsel hübsch, ist aber ersetzbar durch Selbstgemaltes."
+          },
+          {
+            "emoji": "📜",
+            "label": "Forscher-Pass-Vorlage / Tonpapier A4",
+            "url": "https://www.amazon.de/s?k=tonpapier+wei%C3%9F+a4&tag=machsleicht-21",
+            "priceEur": 3,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Pass bekommt jeder Forscher — wirkt stark, geht aber auch auf normalem Druckerpapier."
+          },
+          {
+            "emoji": "🥤",
+            "label": "Apfelschorle (1,5 l)",
+            "url": null,
+            "priceEur": 2,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Getränk für 6 Kinder. Kein Affiliate, aber klar Pflicht — daran sieht man, dass Affiliate kein Kategorie-Proxy ist."
+          },
+          {
+            "emoji": "🍌",
+            "label": "Bananen, Trauben, Gurke, Cracker (Affen-Snack)",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Das Essen. Pflicht, kommt aus dem Supermarkt, kein Link nötig."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Kuchen-Zutaten (Schokokuchen + grüne Buttercreme + Esspapier-Schmetterlinge)",
+            "url": null,
+            "priceEur": 6,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Dschungel-Kuchen-Basis. Mehl/Eier/Butter hat man teils, grüne Lebensmittelfarbe + Esspapier-Schmetterlinge meist nicht — als Pflicht eingeplant."
+          }
+        ],
+        "estimatedCostEur": 36,
+        "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
+        "savingsTip": {
+          "title": "Plüsch und Stifte hast du wahrscheinlich schon",
+          "body": "Plüsch-Tiere, Filzstifte und Bastelpapier sind in den meisten Familien mit Kleinkind vorhanden. Wer hier aus dem Bestand schöpft, drückt die 36 € locker auf 22-28 €. Die Tiger-Spuren zeichnest du in 5 Min. selbst — Kinder merken den Unterschied zu gekauften Schablonen nicht. Bambus-Stäbe statt gekauften Lianen-Sets: schick einen Erwachsenen in den Wald oder nimm Besenstiele mit grünem Krepp umwickelt."
+        }
+      },
+      {
+        "id": "standard",
+        "label": "Standard — 2 Stunden mit Stationen und Lianen-Pfad",
+        "headline": "🐒 Standard — die entspannte Forscher-Expedition",
+        "intro": "Zwei Stunden, 6 Kinder, mehr Abwechslung: Forscher-Stirnband-Basteln zum Ankommen, Tier-Spuren-Tour, Lianen-Schwingen und Affen-Hangeln als Stationen-Mix. Genug Programm, dass keine Langeweile aufkommt, aber ohne Bastel-Marathon für die Eltern. Das ist die Variante für die meisten Familien.",
+        "timeWindow": "14:00-16:00, 6 Kinder",
+        "schedule": [
+          {
+            "time": "14:00",
+            "title": "Ankunft + Forscher-Stirnband-Basteln",
+            "description": "Jedes Kind bastelt/verziert sein grünes Stirnband und bekommt seinen Forscher-Namen + Lupe. Ruhiger Einstieg."
+          },
+          {
+            "time": "14:20",
+            "title": "Tier-Fühlbox",
+            "description": "Im Kreis: Tiere blind fühlen und raten. Bringt die Gruppe ohne Rennen in den Dschungel-Modus."
+          },
+          {
+            "time": "14:35",
+            "title": "Tier-Spuren-Tour",
+            "description": "Leise den Tiger-Spuren folgen, den verlorenen Plüsch-Affen finden und ins Dschungel-Camp bringen."
+          },
+          {
+            "time": "15:00",
+            "title": "Kuchen-Pause",
+            "description": "Dschungel-Schokokuchen + Affen-Snack-Teller. Pause zum Durchatmen, danach wieder los."
+          },
+          {
+            "time": "15:25",
+            "title": "Lianen-Schwingen + Affen-Hangeln",
+            "description": "Das aktive Highlight: Stoff-Liane in der Türöffnung, Hangel-Parcours mit Decken/Kissen. Jedes Kind schwingt einmal."
+          },
+          {
+            "time": "15:45",
+            "title": "Bananen-Rätsel + Forscher-Pass",
+            "description": "Ruhiges Such-Spiel (Papp-Bananen finden), dann Pass-Übergabe einzeln an jeden Forscher."
+          },
+          {
+            "time": "16:00",
+            "title": "Abholung",
+            "description": "Mitgebsel-Tüte an der Tür. 2 Std. sind das Maximum — danach kippt die Stimmung."
+          }
+        ],
+        "games": [
+          {
+            "name": "🎨 Forscher-Stirnband-Basteln (mit Blatt-Stickern)",
+            "indoor": true,
+            "outdoor": false,
+            "duration": "15 Min.",
+            "minAge": 3,
+            "loudness": "leise",
+            "effort": "mittel",
+            "material": "Vorgeschnittene Stirnband-Streifen (grünes/braunes Tonpapier, je ~5 cm × 55 cm). Blatt-Aufkleber, Tukan-Federn (Krepppapier-Streifen), dicke Filzstifte, Klebepunkte. Tacker NUR in Erwachsenenhand.",
+            "prepText": "Stirnbänder komplett vorbereiten: Länge passend zugeschnitten, optional schon ein großer Blatt-Sticker drauf. Kinder dürfen nur noch verzieren und aufkleben lassen — Schere und Tacker bleiben bei dir.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Aussuchen",
+                "content": "Jedes Kind sucht sich seine Farbe aus (grün oder braun) und 2-3 Blatt-/Feder-Aufkleber."
+              },
+              {
+                "n": 2,
+                "name": "Verzieren",
+                "content": "Aufkleber drauf, mit dicken Stiften anmalen, optional eine kleine Tukan-Feder festkleben. Kein Anspruch an Schönheit — Hauptsache es macht Spaß."
+              },
+              {
+                "n": 3,
+                "name": "Anpassen",
+                "content": "Du tackerst/klebst das Band auf Kopfgröße. Ab jetzt ist jedes Kind ein Dschungel-Forscher."
+              }
+            ],
+            "safetyRule": "Schere und Tacker ausschließlich Erwachsenenhand. Keine Kleinteile, die in den Mund wandern (kleine Wackelaugen erst ab 4-5 und mit Aufsicht). Keine Federn aus echtem Material — nur Krepppapier-'Federn' wegen Allergie-Risiko und Verschluck-Gefahr.",
+            "ageAdjust3": "Komplett fertige Bänder, Kind klebt nur 2-3 große Aufkleber drauf. Anpassen machst du.",
+            "ageAdjust5": "5-Jährige dürfen mit dicken Stiften selbst Muster malen, größere Aufkleber platzieren und ihren Namen vorne aufkleben.",
+            "indoorTip": "Reines Tisch-Spiel, ideal als ruhiger Einstieg direkt nach der Ankunft. Wachstuch drunter spart Putzaufwand.",
+            "outdoorTip": null,
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Das Stirnband macht aus dem Gast einen Dschungel-Forscher — die Verwandlung, die das ganze Rollenspiel trägt. Vorgeschnitten heißt: kein Frust, kein Schere-Chaos, jedes Kind ist in 5 Min. fertig."
+          },
+          {
+            "name": "🐅 Tier-Spuren-Tour",
+            "indoor": true,
+            "outdoor": true,
+            "duration": "20 Min.",
+            "minAge": 3,
+            "loudness": "leise",
+            "effort": "leicht",
+            "material": "12-15 Tiger-Pfotenabdrücke aus orange/braunem Tonpapier (DIN A4, schwarzer Edding für die Streifen). Tesa. Am Endpunkt: 1 Plüsch-Affe oder eine Box mit kleinen Dschungel-Tieren als 'Fund'. Pfoten selbst zeichnen reicht — Kinder merken den Unterschied nicht.",
+            "prepText": "Vorher legst du eine Spur durch Wohnung oder Garten — z.B. Pfoten an die Wand kleben (Augenhöhe Kind, nicht zu hoch) in eine Richtung. Am Endpunkt versteckt sich der 'verlaufene' Plüsch-Affe unter einer grünen Decke oder hinter einem Stuhl.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Einstimmen",
+                "content": "Du flüsterst: 'Ein Affe hat sich im Dschungel verlaufen — wir folgen seinen Tiger-Freund-Spuren, der hat ihn zuletzt gesehen.'"
+              },
+              {
+                "n": 2,
+                "name": "Losschleichen",
+                "content": "Alle gehen gemeinsam los, leise wie eine Forscher-Truppe. Du gehst voraus und zeigst die erste Pfote."
+              },
+              {
+                "n": 3,
+                "name": "Spur folgen",
+                "content": "Kinder suchen die nächste Pfote mit ihrer Lupe, du bestätigst jedes Finden ('Da! Eine Spur!'). Tempo langsam halten."
+              },
+              {
+                "n": 4,
+                "name": "Affe finden",
+                "content": "Am Endpunkt liegt der Plüsch-Affe. Alle dürfen ihn streicheln, niemand reißt ihn weg — jeder kommt dran."
+              },
+              {
+                "n": 5,
+                "name": "Heimbringen",
+                "content": "Der Affe wird gemeinsam ins 'Dschungel-Camp' (Decken-Ecke) gebracht. Tour fertig, alle haben geholfen."
+              }
+            ],
+            "safetyRule": "Pfoten nicht zu hoch kleben — keine Stühle als Kletterhilfe. Endpunkt kindersicher (keine scharfen Kanten hinterm Versteck, keine Steckdosen in Reichweite). Lupen sind aus weichem Kunststoff, kein Glas.",
+            "ageAdjust3": "Spur kurz halten (10-12 Pfoten), Endpunkt sichtbar verstecken (unter Sofadecke). Du gehst die ganze Zeit voraus, lobst jedes Finden.",
+            "ageAdjust5": "Spur länger, 2 Tier-Arten parallel (Tiger + Affe), 2 Endpunkte. 5-Jährige dürfen abwechselnd 'Spur-Führer' sein und voran-pirschen.",
+            "indoorTip": "In 60-75 m² geht die Spur nicht über 2-3 Räume — dann ehrlich anders: ein Raum mit verschachtelten Verstecken. Wirkt für 3-5 wie eine echte Dschungel-Reise.",
+            "outdoorTip": "Im Garten die Spur um Bäume und Büsche legen — die Kinder pirschen durchs 'Dickicht'.",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Schleichen mit Lupe ist ein Spiel mit eingebauter Lautstärke-Bremse. Kein Wettbewerb, alle finden gemeinsam — kein Kind geht leer aus. Der Plüsch-Fund ist greifbar, kein abstraktes Ziel."
+          },
+          {
+            "name": "🌿 Lianen-Schwingen + Affen-Hangeln",
+            "indoor": true,
+            "outdoor": true,
+            "duration": "15 Min.",
+            "minAge": 3,
+            "loudness": "halblaut",
+            "effort": "mittel",
+            "material": "Eine stabile Stoff-Liane: ein dickes Bettlaken oder Stoff-Strang aus alten T-Shirts geflochten, in der Türöffnung an einem dicken Knoten oder über einem Türrahmen-Reck (max. 30-40 cm vom Boden!). Optional 4-5 Sitzkissen oder Decken auf dem Boden als 'Liana-Inseln' für das Affen-Hangeln (Boden-Parcours, NICHT klettern!). Eine türkise Decke als 'Bach' zum drüberhüpfen.",
+            "prepText": "WICHTIG: Bei 3-5 wird NICHT geklettert. Die Stoff-Liane hängt so niedrig, dass die Füße nahezu den Boden berühren — das Schwingen findet im Stehen statt, max. 20 cm Bodenabstand. Lege Sitzkissen/Decken als 'Inseln' auf den Boden, dazwischen die türkise Bach-Decke. Kinder hangeln von Insel zu Insel im Stehen oder Krabbeln, NICHT über Möbel.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Erklären",
+                "content": "Du machst vor: 'Affen schwingen sich an Lianen entlang und springen von Insel zu Insel. Erst zeige ich's, dann probiert jeder einmal — ganz langsam.'"
+              },
+              {
+                "n": 2,
+                "name": "Schwingen",
+                "content": "Jedes Kind greift die Stoff-Liane und schwingt einmal sanft vor und zurück (du hältst dabei am Knoten/Stoff, kein freies Schwingen!). Die Liane darf nicht weiter als Schulterhöhe vom Kind gehen."
+              },
+              {
+                "n": 3,
+                "name": "Hangeln",
+                "content": "Nacheinander von Insel zu Insel (Sitzkissen) — über die Bach-Decke springen oder krabbeln. Jeder hat seine Runde, kein Wettrennen."
+              },
+              {
+                "n": 4,
+                "name": "Wiederholen",
+                "content": "Wer mag, geht eine zweite Runde. Wer fertig ist, setzt sich an den Rand und macht den Tukan-Ruf für die anderen."
+              }
+            ],
+            "safetyRule": "Pflicht: Stoff-Liane max. 30-40 cm Bodenabstand (Füße müssen den Boden fast berühren). Erwachsener hält IMMER am Knoten/oberen Stoff-Ende, kein freies Schwingen. Bei 3-Jährigen: NUR Hangel-Parcours, kein Schwingen ohne erwachsene Hand am Stoff. Keine Stühle/Möbel als Sprung-Inseln. Boden ringsum frei von harten Kanten (Glastisch wegschieben). Maximal ein Kind gleichzeitig an der Liane.",
+            "ageAdjust3": "KEIN Schwingen, nur Hangel-Parcours: von Sitzkissen zu Sitzkissen krabbeln, die Liane nur kurz anfassen und einen lauten 'Affen-Schrei' machen (Quatsch-Moment, kein echtes Schwingen). Du hältst dauerhaft die Hand am Kind.",
+            "ageAdjust5": "5-Jährige dürfen sanft schwingen (du sicherst am Knoten). Hangel-Parcours mit 5-6 Inseln, türkise Bach-Decke breiter. Optional: Affen-Geräusche dabei machen.",
+            "indoorTip": "Türöffnung mit stabilem Türrahmen-Reck (Kinder-Reck) ideal. In Mietwohnung: keine Schraub-Hooks in die Decke, sondern Stoff-Liane über einen Türrahmen-Reck oder festen Querbalken. Sitzkissen-Parcours geht in jedem Wohnzimmer.",
+            "outdoorTip": "Im Garten ein dickes Seil an einen niedrigen Ast (max. 50 cm Bodenabstand!) — Erwachsener prüft Ast-Stabilität VORAB. Inseln als Kissen oder Strohballen.",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Affen-Hangeln ist DER Dschungel-Moment, den jedes Kind erwartet. Im Sitz-Inseln-Format ohne Klettern bleibt es altersgerecht und sicher — kein Sturz-Risiko, trotzdem das große Schwingen-Gefühl. Der laute Affen-Schrei beim Festhalten an der Liane ist der Lacher der Party."
+          },
+          {
+            "name": "🍌 Bananen-Rätsel",
+            "indoor": true,
+            "outdoor": true,
+            "duration": "10 Min.",
+            "minAge": 3,
+            "loudness": "leise",
+            "effort": "leicht",
+            "material": "6-8 ausgeschnittene Papp-Bananen (gelbes Tonpapier, einfache Form, DIN A5). Optional ein Affen-Korb oder Eimer mit grünem Tuch ('Affen-Höhle'). Kein Trick, einfache Such-Aufgabe.",
+            "prepText": "Verstecke die Papp-Bananen im Raum auf Kinder-Augenhöhe (nicht hinter Möbel, die umgekippt werden müssen). Optional je eine Banane in Sichtweite für 3-Jährige, andere etwas versteckter. Den Affen-Korb sichtbar in der Mitte aufstellen.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Auftrag",
+                "content": "'Der Affe hat seine Bananen verloren — überall im Dschungel. Wir Forscher helfen ihm beim Sammeln.'"
+              },
+              {
+                "n": 2,
+                "name": "Suchen",
+                "content": "Kinder suchen die Papp-Bananen. Jedes Kind, das eine findet, bringt sie zum Affen-Korb. Tempo egal, kein Wettrennen."
+              },
+              {
+                "n": 3,
+                "name": "Sammeln",
+                "content": "Du zählst laut mit, wenn eine reinkommt ('Drei Bananen! Vier!'). Alle freuen sich gemeinsam, niemand schaut, wer wie viele hat."
+              },
+              {
+                "n": 4,
+                "name": "Belohnung",
+                "content": "Wenn alle Bananen drin sind: 'Der Affe ist glücklich!' Du übergibst dem Plüsch-Affen die volle Schale, Kinder dürfen ihn streicheln."
+              }
+            ],
+            "safetyRule": "Verstecke auf Kinder-Augenhöhe. Keine Bananen hinter schweren Möbeln verstecken, die ein Kind umkippen könnte. Keine Bananen im Bad/Küche (Steckdosen, scharfe Kanten). Maximal 8-10 Verstecke — sonst wird's zu lange.",
+            "ageAdjust3": "Bananen sichtbar liegen lassen (kein wirkliches Verstecken), nur 4-5 Stück. Du zeigst diskret, wo eine liegt, wenn ein Kind keine findet — niemand geht leer aus.",
+            "ageAdjust5": "Bananen tatsächlich verstecken (hinter Vorhang, unter Kissen). 5-Jährige dürfen nach dem Sammeln selbst eine 'Lieblings-Banane' aussuchen und sie behalten als Mitgebsel.",
+            "indoorTip": "Funktioniert in jedem Raum, kein Bewegungs-Platz nötig. Gut als ruhiges Spiel nach dem aktiven Lianen-Schwingen.",
+            "outdoorTip": "Bananen draußen mit Doppelklebeband an Bäume oder Büsche kleben (auf Kinder-Augenhöhe). Bei Wind: schwerere Bananen aus Pappkarton statt Tonpapier.",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Suchen ist Urspiel, das jedes Kind kann. Der Affen-Frame macht es zum gemeinsamen Helfen, kein Wettkampf. Jedes Kind findet mindestens eine — du steuerst diskret, wer als nächstes 'zufällig' an einer Banane vorbeikommt."
+          }
+        ],
+        "food": "🎂 Dschungel-Schokokuchen (Rührteig mit grüner Buttercreme + bunten Esspapier-Schmetterlingen). 🍌 Affen-Snack-Teller mit Bananen-Booten, Trauben-'Beeren', Gurken-'Blättern', Käse-Würfeln, Cracker-'Steinen'. 🍪 Dschungel-Kekse (Schmetterlings- oder Affen-Ausstecher). 🥤 Apfelschorle. Allergien vorher abfragen, ein nuss-/laktosefreier Teller bereit.",
+        "decoration": "🌴 Dschungel-Ecke mit grünen Tüchern, Zimmerpflanzen und verteilten Plüsch-/Plastiktieren. 🌊 Türkise Decke als 'Bach' am Boden. 🐾 Tiger-Pfotenspuren am Boden als Deko-Pfad. 🎈 Ein paar grüne und türkise Luftballons. Tischdecke in Blatt-Optik oder einfarbig grün. Optional ein paar Bambus-Stäbe (oder Besenstiele mit grünem Krepp umwickelt) in einer Ecke als 'Dickicht'.",
+        "giveaways": "🐒 Mini-Plüsch-Affe oder Plastik-Dschungeltier + selbstgebasteltes Forscher-Stirnband (darf mit nach Hause) + Forscher-Pass mit Stempeln + Forscher-Notizbuch + Mini-Lupe + Dschungel-Sticker, alles in einer Dschungel-Papiertüte.",
+        "shoppingList": [
+          {
+            "emoji": "🌴",
+            "label": "Dschungel-Tierfiguren (12er-Set)",
+            "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+kinder&tag=machsleicht-21",
+            "priceEur": 8,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Trägt Tour, Fühlbox, Stationen und Mitgebsel — das zentrale Spiel-Material."
+          },
+          {
+            "emoji": "🎨",
+            "label": "Tonkarton-Set grün/braun (Stirnbänder)",
+            "url": "https://www.amazon.de/s?k=tonkarton+gr%C3%BCn+braun+a4+set&tag=machsleicht-21",
+            "priceEur": 6,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Forscher-Stirnband-Basteln ist hier eigene Station + Mitgebsel. Pflicht."
+          },
+          {
+            "emoji": "🔍",
+            "label": "Mini-Lupen (6er-Set)",
+            "url": "https://www.amazon.de/s?k=kinder+lupe+set+6&tag=machsleicht-21",
+            "priceEur": 7,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Lupe ist Forscher-Werkzeug und trägt die Tier-Spuren-Tour. Pflicht."
+          },
+          {
+            "emoji": "🔖",
+            "label": "Dschungel-Aufkleber (Blätter, Tiere)",
+            "url": "https://www.amazon.de/s?k=dschungel+sticker+kinder+set&tag=machsleicht-21",
+            "priceEur": 5,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Macht Stirnbänder, Pass und Tüten hübsch, lässt sich aber durch Aufmalen ersetzen."
+          },
+          {
+            "emoji": "🟫",
+            "label": "Tonpapier orange/braun (Tiger-Spuren)",
+            "url": "https://www.amazon.de/s?k=tonpapier+orange+a4&tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Spuren-Tour-Basis. Irgendein Papier muss her, dieses ist passend."
+          },
+          {
+            "emoji": "✏️",
+            "label": "Dicke Filzstifte",
+            "url": "https://www.amazon.de/s?k=dicke+filzstifte+kinder&tag=machsleicht-21",
+            "priceEur": 5,
+            "hasAffiliate": true,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Meist im Haushalt mit Kleinkind vorhanden. Nur nachkaufen, wenn nicht da."
+          },
+          {
+            "emoji": "📜",
+            "label": "Forscher-Pässe + weißes Tonpapier",
+            "url": "https://www.amazon.de/s?k=tonpapier+wei%C3%9F+a4&tag=machsleicht-21",
+            "priceEur": 3,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Pass bekommt jeder Forscher — geht auch auf Druckerpapier, dieses wirkt nur wertiger."
+          },
+          {
+            "emoji": "📓",
+            "label": "Mini-Notizbücher A6 (6er-Set, Mitgebsel)",
+            "url": "https://www.amazon.de/s?k=mini+notizbuch+a6+set+6&tag=machsleicht-21",
+            "priceEur": 6,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Schönes Mitgebsel mit Forscher-Bezug, aber kein Spiel hängt zwingend daran. Sinnvoll, nicht Pflicht."
+          },
+          {
+            "emoji": "🌿",
+            "label": "Stoff-Liane oder altes Bettlaken (Lianen-Schwingen)",
+            "url": "https://www.amazon.de/s?k=stoff+liane+kinder+spiel&tag=machsleicht-21",
+            "priceEur": 8,
+            "hasAffiliate": true,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Ein dickes Bettlaken oder geflochtenes Stoff-Stück aus alten T-Shirts tut es genauso. Nur kaufen, wenn nichts da ist."
+          },
+          {
+            "emoji": "🎈",
+            "label": "Luftballons grün/türkis (Deko)",
+            "url": "https://www.amazon.de/s?k=luftballons+gr%C3%BCn+t%C3%BCrkis&tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Reine Deko, oft noch von früher da. Verzichtbar."
+          },
+          {
+            "emoji": "🥤",
+            "label": "Apfelschorle (2 l)",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Getränk für 6 Kinder. Pflicht trotz fehlendem Affiliate-Link."
+          },
+          {
+            "emoji": "🍌",
+            "label": "Affen-Snack-Teller (Bananen, Gurke, Trauben, Käse, Cracker)",
+            "url": null,
+            "priceEur": 8,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Das Essen für 6 Kinder. Pflicht, aus dem Supermarkt."
+          },
+          {
+            "emoji": "🍪",
+            "label": "Schmetterling-Ausstecher + Teig-Zutaten",
+            "url": null,
+            "priceEur": 6,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Dschungel-Kekse sind ein nettes Extra, kein Muss. Ausstecher hat man teils."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Kuchen-Zutaten + grüne Buttercreme + Esspapier-Schmetterlinge",
+            "url": null,
+            "priceEur": 6,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Dschungel-Schokokuchen. Grüne Lebensmittelfarbe + Esspapier-Schmetterlinge meist nicht vorrätig — eingeplant."
+          }
+        ],
+        "estimatedCostEur": 56,
+        "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
+        "savingsTip": {
+          "title": "Stoff-Liane improvisieren + Deko aus dem Garten",
+          "body": "Bettlaken zu Stoff-Liane geflochten kostet nichts, sieht aber aus wie gekauft. Für die Dschungel-Ecke reichen Zimmerpflanzen + ein paar Bambus-Stäbe vom Spaziergang (oder Besenstiele mit grünem Krepp). Mini-Notizbücher kannst du weglassen, wenn das Budget knapp ist — der Forscher-Pass trägt auch ohne sie. So landest du eher bei 42-46 €."
+        }
+      },
+      {
+        "id": "wow",
+        "label": "Wow — 2 Stunden mit Dschungel-Pfad und Mini-Expedition",
+        "headline": "✨ Wow — die Dschungel-Expedition mit Foto-Ecke",
+        "intro": "Baut komplett auf Standard auf: gleiche Forscher-Expedition, gleiche Tier-Spuren-Tour — plus eine Mini-Expedition zum geheimen Dschungel-Schatz und eine DIY-Foto-Ecke mit Bambus-Wand. Für 8 Kinder ausgelegt. Wichtig: Wow ist nicht für jede Familie ehrlich. Wer das stemmen will, sollte die Bedingungen unten erst checken.",
+        "timeWindow": "14:00-16:00, 8 Kinder",
+        "schedule": [
+          {
+            "time": "14:00",
+            "title": "Ankunft + Forscher-Stirnband-Basteln",
+            "description": "Stirnbänder verzieren, Forscher-Namen vergeben, Lupen verteilen. Foto-Ecke schon aufgebaut für erste Bilder."
+          },
+          {
+            "time": "14:20",
+            "title": "Tier-Fühlbox + Dschungel-Trommeln",
+            "description": "Erst im Kreis fühlen (ruhig), dann kurzer Trommel-Moment mit Holzlöffeln auf Topfdeckeln. Bei 8 Kindern in 2 kleine Gruppen, sonst zu wuselig."
+          },
+          {
+            "time": "14:35",
+            "title": "Tier-Spuren-Tour",
+            "description": "Leise den Tiger-Spuren folgen. Bei 8 Kindern 2 Spuren parallel oder eine längere Spur in 2 Wellen."
+          },
+          {
+            "time": "15:00",
+            "title": "Kuchen-Pause",
+            "description": "Dschungel-Schokokuchen + Affen-Snack-Teller. Foto-Ecke offen für Eltern-Schnappschüsse."
+          },
+          {
+            "time": "15:20",
+            "title": "Mini-Expedition zum Dschungel-Schatz",
+            "description": "Das Highlight: von Tier-Station zu Tier-Station (Affe, Tiger, Tukan, Faultier) zum gemeinsamen Dschungel-Schatz."
+          },
+          {
+            "time": "15:45",
+            "title": "Lianen-Schwingen + Forscher-Pass",
+            "description": "Kurze Lianen-Runde, dann Pass-Übergabe einzeln. Jeder Forscher kommt dran."
+          },
+          {
+            "time": "16:00",
+            "title": "Abholung",
+            "description": "Mitgebsel + Foto-Ausdruck. Schluss bei 2 Std., auch wenn's gerade läuft."
+          }
+        ],
+        "games": [
+          {
+            "name": "🎨 Forscher-Stirnband-Basteln (mit Blatt-Stickern)",
+            "indoor": true,
+            "outdoor": false,
+            "duration": "15 Min.",
+            "minAge": 3,
+            "loudness": "leise",
+            "effort": "mittel",
+            "material": "Vorgeschnittene Stirnband-Streifen (grünes/braunes Tonpapier, je ~5 cm × 55 cm). Blatt-Aufkleber, Tukan-Federn (Krepppapier-Streifen), dicke Filzstifte, Klebepunkte. Tacker NUR in Erwachsenenhand.",
+            "prepText": "Stirnbänder komplett vorbereiten: Länge passend zugeschnitten, optional schon ein großer Blatt-Sticker drauf. Kinder dürfen nur noch verzieren und aufkleben lassen — Schere und Tacker bleiben bei dir.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Aussuchen",
+                "content": "Jedes Kind sucht sich seine Farbe aus (grün oder braun) und 2-3 Blatt-/Feder-Aufkleber."
+              },
+              {
+                "n": 2,
+                "name": "Verzieren",
+                "content": "Aufkleber drauf, mit dicken Stiften anmalen, optional eine kleine Tukan-Feder festkleben. Kein Anspruch an Schönheit — Hauptsache es macht Spaß."
+              },
+              {
+                "n": 3,
+                "name": "Anpassen",
+                "content": "Du tackerst/klebst das Band auf Kopfgröße. Ab jetzt ist jedes Kind ein Dschungel-Forscher."
+              }
+            ],
+            "safetyRule": "Schere und Tacker ausschließlich Erwachsenenhand. Keine Kleinteile, die in den Mund wandern (kleine Wackelaugen erst ab 4-5 und mit Aufsicht). Keine echten Federn — nur Krepppapier-'Federn' wegen Allergie und Verschluck-Gefahr.",
+            "ageAdjust3": "Komplett fertige Bänder, Kind klebt nur 2-3 große Aufkleber drauf. Anpassen machst du.",
+            "ageAdjust5": "5-Jährige dürfen mit dicken Stiften selbst Muster malen, größere Aufkleber platzieren und ihren Namen vorne aufkleben.",
+            "indoorTip": "Reines Tisch-Spiel, ideal als ruhiger Einstieg direkt nach der Ankunft. Wachstuch drunter spart Putzaufwand.",
+            "outdoorTip": null,
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Das Stirnband macht aus dem Gast einen Dschungel-Forscher — die Verwandlung, die das ganze Rollenspiel trägt. Vorgeschnitten heißt: kein Frust, kein Schere-Chaos, jedes Kind ist in 5 Min. fertig."
+          },
+          {
+            "name": "🥁 Dschungel-Trommeln",
+            "indoor": true,
+            "outdoor": true,
+            "duration": "10 Min.",
+            "minAge": 3,
+            "loudness": "laut",
+            "effort": "leicht",
+            "material": "6-8 Topfdeckel oder umgedrehte Plastik-Schüsseln + Holzlöffel als Trommelstöcke. Optional eine kleine Spielzeug-Trommel oder ein Bongo, falls vorhanden. Eine Audio-Quelle mit Dschungel-Beat (kurzer, ruhiger Loop, kein wildes Drumming).",
+            "prepText": "Sammle 6-8 Trommel-Stationen: Topfdeckel + Holzlöffel pro Kind. Stelle sie im Kreis auf einer Decke auf — jedes Kind hat seinen Platz. Audio-Quelle bereit mit langsamen, ruhigen Dschungel-Beats (kein metallisches Schlagzeug).",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Erklären",
+                "content": "Du sagst: 'Im Dschungel sprechen die Forscher mit Trommeln. Wir trommeln jetzt zusammen — erst langsam, dann zusammen mit dem Beat.'"
+              },
+              {
+                "n": 2,
+                "name": "Anfangen",
+                "content": "Jedes Kind nimmt 1-2 Löffel + einen Topfdeckel. Erstmal nur ausprobieren: leise klopfen, dann lauter — du machst vor."
+              },
+              {
+                "n": 3,
+                "name": "Mit Beat",
+                "content": "Du startest die Audio-Quelle. Kinder trommeln mit, niemand muss im Takt sein. Lautstärke nach 1-2 Min. drosseln, sonst wird's zu wild."
+              },
+              {
+                "n": 4,
+                "name": "Stoppen",
+                "content": "Audio aus, 'Trommel-Pause'. Alle legen die Löffel hin — kurze Stille gehört zum Trommeln dazu, sonst kein Stopp-Signal."
+              }
+            ],
+            "safetyRule": "Pflicht: KEINE Glas- oder Porzellan-Deckel (Bruchgefahr). Nur Plastik- oder Metall-Topfdeckel mit unbeschädigtem Rand. Holzlöffel ohne Splitter. Reizoffene/geräuschempfindliche Kinder dürfen Pause machen und nur zuschauen — Lautstärke nicht erzwingen. Max. 5 Minuten Trommel-Phase, dann Stille einfordern.",
+            "ageAdjust3": "Nur 5 Min. Trommeln, du hältst Tempo niedrig und stoppst, wenn ein Kind die Hände auf die Ohren legt. Optional weichere Trommelstöcke (Holzlöffel mit Stoff umwickelt).",
+            "ageAdjust5": "5-Jährige dürfen abwechselnd 'Trommel-Chef' sein und ein einfaches Muster (langsam-langsam-schnell-schnell) vorgeben, das die anderen nachtrommeln.",
+            "indoorTip": "Drinnen besser auf 5 Min. begrenzen — die Nachbarn freuen sich. Topfdeckel auf Sitzkissen legen dämpft den harten Schlag.",
+            "outdoorTip": "Draußen ruhig 10 Min. trommeln — niemand stört sich. Im Garten Trommeln im Kreis aufstellen, Kinder dürfen rumlaufen wenn sie wollen.",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Trommeln ist das einzige laute Spiel in diesem Setup — als kurzer Ausgleich zwischen den ruhigen Stationen perfekt. Jedes Kind kann es sofort, kein Können nötig. Der Stopp-Moment ist genauso wichtig wie das Trommeln selbst — Kinder lernen, dass Stille auch Musik ist."
+          },
+          {
+            "name": "🐅 Tier-Spuren-Tour",
+            "indoor": true,
+            "outdoor": true,
+            "duration": "20 Min.",
+            "minAge": 3,
+            "loudness": "leise",
+            "effort": "leicht",
+            "material": "12-15 Tiger-Pfotenabdrücke aus orange/braunem Tonpapier (DIN A4, schwarzer Edding für die Streifen). Tesa. Am Endpunkt: 1 Plüsch-Affe oder eine Box mit kleinen Dschungel-Tieren als 'Fund'.",
+            "prepText": "Vorher legst du eine Spur durch Wohnung oder Garten — z.B. Pfoten an die Wand kleben (Augenhöhe Kind, nicht zu hoch) in eine Richtung. Am Endpunkt versteckt sich der 'verlaufene' Plüsch-Affe unter einer grünen Decke oder hinter einem Stuhl.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Einstimmen",
+                "content": "Du flüsterst: 'Ein Affe hat sich im Dschungel verlaufen — wir folgen seinen Tiger-Freund-Spuren, der hat ihn zuletzt gesehen.'"
+              },
+              {
+                "n": 2,
+                "name": "Losschleichen",
+                "content": "Alle gehen gemeinsam los, leise wie eine Forscher-Truppe. Du gehst voraus und zeigst die erste Pfote."
+              },
+              {
+                "n": 3,
+                "name": "Spur folgen",
+                "content": "Kinder suchen die nächste Pfote mit ihrer Lupe, du bestätigst jedes Finden ('Da! Eine Spur!')."
+              },
+              {
+                "n": 4,
+                "name": "Affe finden",
+                "content": "Am Endpunkt liegt der Plüsch-Affe. Alle dürfen ihn streicheln, niemand reißt ihn weg — jeder kommt dran."
+              },
+              {
+                "n": 5,
+                "name": "Heimbringen",
+                "content": "Der Affe wird gemeinsam ins 'Dschungel-Camp' gebracht. Tour fertig, alle haben geholfen."
+              }
+            ],
+            "safetyRule": "Pfoten nicht zu hoch kleben — keine Stühle als Kletterhilfe. Endpunkt kindersicher (keine scharfen Kanten hinterm Versteck). Lupen aus weichem Kunststoff, kein Glas.",
+            "ageAdjust3": "Spur kurz halten (10-12 Pfoten), Endpunkt sichtbar verstecken (unter Sofadecke). Du gehst die ganze Zeit voraus.",
+            "ageAdjust5": "Spur länger, 2 Tier-Arten parallel (Tiger + Affe), 2 Endpunkte. 5-Jährige dürfen abwechselnd 'Spur-Führer' sein.",
+            "indoorTip": "Bei 8 Kindern in 2 Wellen pirschen — sonst Gedrängel an der Spur.",
+            "outdoorTip": "Im Garten die Spur um Bäume und Büsche legen — die Kinder pirschen durchs 'Dickicht'.",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Schleichen mit Lupe ist ein Spiel mit eingebauter Lautstärke-Bremse. Kein Wettbewerb, alle finden gemeinsam — kein Kind geht leer aus."
+          },
+          {
+            "name": "🗺️ Mini-Expedition: Der Dschungel-Schatz",
+            "indoor": true,
+            "outdoor": true,
+            "duration": "20 Min.",
+            "minAge": 3,
+            "loudness": "halblaut",
+            "effort": "mittel",
+            "material": "4 sehr einfache 'Tier-Stationen' (Plüsch-Affe, Plüsch-Tiger, Papp-Tukan, Plüsch-Faultier mit kleinen Aufgaben). Eine Schatzkiste/Korb mit Bambus-Tuch-Deckel und den Mitgebsel-Tüten oder einem gemeinsamen 'Dschungel-Schatz' (Sticker, Mini-Tiere, Schoko-Bananen). Optional eine gemalte Dschungel-Karte mit 4 Markern.",
+            "prepText": "Verstecke die Schatzkiste am Endpunkt (Garderobe, Schlafzimmer, hinter dem Baum). Leg 4 Stationen aus: an jeder wartet ein Tier mit einer Mini-Aufgabe ('Gib dem Affen ein High-Five', 'Mach den Tiger-Schmaus mit der Schmink-Stift-Schnurrhaar', 'Ruf wie der Tukan', 'Schleich zum Faultier ohne Geräusch').",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Auftrag",
+                "content": "'Im Dschungel wartet ein Schatz — aber nur Forscher, die allen Tieren unterwegs eine kleine Aufgabe lösen, finden ihn.'"
+              },
+              {
+                "n": 2,
+                "name": "Stationen",
+                "content": "Gemeinsam von Tier zu Tier. Jede Mini-Aufgabe schafft die Gruppe zusammen, kein Kind muss allein ran."
+              },
+              {
+                "n": 3,
+                "name": "Finden",
+                "content": "Am Endpunkt steht die Schatzkiste mit Bambus-Tuch-Deckel. Alle öffnen sie gemeinsam — drin ist für jeden was."
+              },
+              {
+                "n": 4,
+                "name": "Teilen",
+                "content": "Jedes Kind nimmt sich ein Teil. Du moderierst, damit das Teilen fair und ohne Gedrängel läuft."
+              }
+            ],
+            "safetyRule": "Keine Stationen an Treppen, Balkonen oder offenen Fenstern. Schatzkiste so verstecken, dass niemand klettern muss. Bambus-Stäbe in der Deko: keine spitzen Enden, mit Krepppapier abgeklebt oder abgeschmirgelt.",
+            "ageAdjust3": "Nur 3 Stationen, alles gemeinsam, du führst die Gruppe. Schatzkiste sichtbar nah verstecken. Aufgaben minimal (High-Five geht immer).",
+            "ageAdjust5": "4 Stationen, 5-Jährige dürfen die Dschungel-Karte 'lesen' und die Richtung zeigen. Aufgaben minimal anspruchsvoller (Tier-Geräusch nachmachen).",
+            "indoorTip": "In kleiner Wohnung Stationen über 2 Räume + Flur verteilen, Türen zu. Reicht völlig für die Spannung.",
+            "outdoorTip": "Draußen Stationen um den Garten verteilen — Schatzkiste hinterm Busch oder unterm Gartentisch.",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Eine echte Schatzsuche überfordert 3-5 schnell. Diese Mini-Expedition arbeitet ohne Rätsel, ohne Lesen, ohne Verlieren — gemeinsames Helfen führt zum Schatz, den alle teilen. Das ist das Wow ohne den Stress."
+          },
+          {
+            "name": "🌿 Lianen-Schwingen + Affen-Hangeln",
+            "indoor": true,
+            "outdoor": true,
+            "duration": "15 Min.",
+            "minAge": 3,
+            "loudness": "halblaut",
+            "effort": "mittel",
+            "material": "Eine stabile Stoff-Liane: ein dickes Bettlaken oder Stoff-Strang aus alten T-Shirts geflochten, in der Türöffnung an einem dicken Knoten oder über einem Türrahmen-Reck (max. 30-40 cm vom Boden!). 4-5 Sitzkissen oder Decken auf dem Boden als 'Liana-Inseln'. Eine türkise Decke als 'Bach' zum drüberhüpfen.",
+            "prepText": "WICHTIG: Bei 3-5 wird NICHT geklettert. Die Stoff-Liane hängt so niedrig, dass die Füße nahezu den Boden berühren. Lege Sitzkissen/Decken als 'Inseln' auf den Boden, dazwischen die türkise Bach-Decke. Kinder hangeln von Insel zu Insel im Stehen oder Krabbeln, NICHT über Möbel.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Erklären",
+                "content": "Du machst vor: 'Affen schwingen sich an Lianen entlang und springen von Insel zu Insel. Erst zeige ich's, dann probiert jeder einmal — ganz langsam.'"
+              },
+              {
+                "n": 2,
+                "name": "Schwingen",
+                "content": "Jedes Kind greift die Stoff-Liane und schwingt einmal sanft vor und zurück (du hältst dabei am Knoten/Stoff, kein freies Schwingen!). Die Liane darf nicht weiter als Schulterhöhe vom Kind gehen."
+              },
+              {
+                "n": 3,
+                "name": "Hangeln",
+                "content": "Nacheinander von Insel zu Insel (Sitzkissen) — über die Bach-Decke springen oder krabbeln. Jeder hat seine Runde, kein Wettrennen."
+              },
+              {
+                "n": 4,
+                "name": "Wiederholen",
+                "content": "Wer mag, geht eine zweite Runde. Wer fertig ist, setzt sich an den Rand und macht den Tukan-Ruf für die anderen."
+              }
+            ],
+            "safetyRule": "Pflicht: Stoff-Liane max. 30-40 cm Bodenabstand (Füße müssen den Boden fast berühren). Erwachsener hält IMMER am Knoten/oberen Stoff-Ende, kein freies Schwingen. Bei 3-Jährigen: NUR Hangel-Parcours, kein Schwingen ohne erwachsene Hand am Stoff. Keine Stühle/Möbel als Sprung-Inseln. Boden ringsum frei von harten Kanten. Maximal ein Kind gleichzeitig an der Liane.",
+            "ageAdjust3": "KEIN Schwingen, nur Hangel-Parcours: von Sitzkissen zu Sitzkissen krabbeln, die Liane nur kurz anfassen und 'Affen-Schrei' machen (Quatsch-Moment, kein echtes Schwingen). Du hältst dauerhaft die Hand am Kind.",
+            "ageAdjust5": "5-Jährige dürfen sanft schwingen (du sicherst am Knoten). Hangel-Parcours mit 5-6 Inseln, türkise Bach-Decke breiter.",
+            "indoorTip": "Türöffnung mit stabilem Türrahmen-Reck (Kinder-Reck) ideal. In Mietwohnung: keine Schraub-Hooks in die Decke, sondern Stoff-Liane über einen Türrahmen-Reck oder festen Querbalken.",
+            "outdoorTip": "Im Garten ein dickes Seil an einen niedrigen Ast (max. 50 cm Bodenabstand!) — Erwachsener prüft Ast-Stabilität VORAB.",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Affen-Hangeln ist DER Dschungel-Moment, den jedes Kind erwartet. Im Sitz-Inseln-Format ohne Klettern bleibt es altersgerecht und sicher."
+          }
+        ],
+        "food": "🎂 Dschungel-Schokokuchen mit grüner Buttercreme + Esspapier-Schmetterlingen + ein zweiter Affen-Kuchen oder Bananen-Muffins. 🍌 Großer Affen-Snack-Teller (Bananen, Gurke, Paprika, Trauben, Käse, Cracker). 🍪 Schmetterling-Kekse. 🥥 Kokos-Stücke (optional). 🥤 Apfelschorle + Wasser. Allergie-Teller separat.",
+        "decoration": "🌴 Dschungel-Ecke + DIY-Foto-Ecke: vor einer freien Wand 2-3 große Grünpflanzen, ein paar Bambus-Stäbe vertikal aufgestellt, Plüsch-Tiere am Boden, optional ein gemaltes Dschungel-Plakat. 🌊 Türkise 'Bach'-Decke am Boden mit kleinen Plastik-Schmetterlingen drauf. 🐾 Tiger-Pfotenspuren-Pfad. 🎈 Grüne und türkise Ballons. Tischdecke in Blatt-Optik.",
+        "giveaways": "🐒 Forscher-Stirnband + Mini-Plüsch-Affe + Forscher-Pass mit Stempeln + Mini-Notizbuch + Mini-Lupe + Foto-Ausdruck vom Foto-Eck + Dschungel-Sticker, in einer Dschungel-Tüte. Das volle Forscher-Paket zum Mitnehmen.",
+        "shoppingList": [
+          {
+            "emoji": "🌴",
+            "label": "Dschungel-Tierfiguren (24er-Set)",
+            "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+24&tag=machsleicht-21",
+            "priceEur": 11,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Für 8 Kinder + Stationen + Mitgebsel brauchst du mehr Tiere. Zentrales Material."
+          },
+          {
+            "emoji": "🎨",
+            "label": "Tonkarton-Set grün/braun (Stirnbänder, 8 Kinder)",
+            "url": "https://www.amazon.de/s?k=tonkarton+gr%C3%BCn+braun+a4+set&tag=machsleicht-21",
+            "priceEur": 7,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Forscher-Stirnband-Basteln für 8 Kinder. Pflicht."
+          },
+          {
+            "emoji": "🔍",
+            "label": "Mini-Lupen (8er-Set)",
+            "url": "https://www.amazon.de/s?k=kinder+lupe+set+8&tag=machsleicht-21",
+            "priceEur": 9,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Forscher-Werkzeug + Mitgebsel + zentral für Tier-Spuren-Tour. Pflicht."
+          },
+          {
+            "emoji": "🔖",
+            "label": "Dschungel-Aufkleber-Set (groß)",
+            "url": "https://www.amazon.de/s?k=dschungel+sticker+kinder+set&tag=machsleicht-21",
+            "priceEur": 5,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Verziert Stirnbänder, Tüten und Foto-Ecke. Ersetzbar durch Aufmalen."
+          },
+          {
+            "emoji": "🟫",
+            "label": "Tonpapier orange/braun (Tiger-Spuren)",
+            "url": "https://www.amazon.de/s?k=tonpapier+orange+a4&tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Spuren-Tour für 8 Kinder, ggf. 2 Spuren. Pflicht."
+          },
+          {
+            "emoji": "🪴",
+            "label": "2-3 Kunst-Grünpflanzen (Foto-Ecke)",
+            "url": "https://www.amazon.de/s?k=kunstpflanze+gr%C3%BCn+deko&tag=machsleicht-21",
+            "priceEur": 12,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Macht die Foto-Ecke zum Wow-Faktor, aber Zimmerpflanzen tun es auch. Sinnvoll, nicht Pflicht."
+          },
+          {
+            "emoji": "🎋",
+            "label": "Bambus-Stäbe (4er-Set, Foto-Ecke + Dickicht)",
+            "url": "https://www.amazon.de/s?k=bambus+st%C3%A4be+deko+set&tag=machsleicht-21",
+            "priceEur": 9,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Bambus macht die Wow-Foto-Ecke echt-dschungelig. Besenstiele mit grünem Krepp tun's auch — daher sinnvoll, nicht Pflicht."
+          },
+          {
+            "emoji": "📦",
+            "label": "Schatzkiste / Deko-Korb",
+            "url": "https://www.amazon.de/s?k=schatzkiste+kinder+holz&tag=machsleicht-21",
+            "priceEur": 8,
+            "hasAffiliate": true,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Jeder hübsche Korb oder Karton tut es. Nur kaufen, wenn nichts da ist."
+          },
+          {
+            "emoji": "📓",
+            "label": "Mini-Notizbücher A6 (8er-Set)",
+            "url": "https://www.amazon.de/s?k=mini+notizbuch+a6+set+8&tag=machsleicht-21",
+            "priceEur": 8,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Mitgebsel + passt zum Forscher-Frame. Kein Spiel hängt zwingend daran."
+          },
+          {
+            "emoji": "📜",
+            "label": "Forscher-Pässe + Tonpapier weiß",
+            "url": "https://www.amazon.de/s?k=tonpapier+wei%C3%9F+a4&tag=machsleicht-21",
+            "priceEur": 3,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Pass für jeden Forscher. Geht auch auf Druckerpapier."
+          },
+          {
+            "emoji": "🖨️",
+            "label": "Foto-Sofortdruck / Drogerie-Ausdruck",
+            "url": null,
+            "priceEur": 6,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Foto-Ausdruck als Mitgebsel — der WhatsApp-Status-Moment. Per Handy + Drogerie machbar, kein Affiliate."
+          },
+          {
+            "emoji": "🎈",
+            "label": "Luftballons grün/türkis + Deko",
+            "url": "https://www.amazon.de/s?k=luftballons+gr%C3%BCn+t%C3%BCrkis&tag=machsleicht-21",
+            "priceEur": 5,
+            "hasAffiliate": true,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Reine Deko, oft vorhanden. Verzichtbar."
+          },
+          {
+            "emoji": "🥤",
+            "label": "Apfelschorle + Wasser (3 l)",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Getränke für 8 Kinder. Pflicht trotz fehlendem Link."
+          },
+          {
+            "emoji": "🍌",
+            "label": "Großer Affen-Snack-Teller (8 Kinder)",
+            "url": null,
+            "priceEur": 12,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Essen für 8 Kinder. Pflicht, Supermarkt."
+          },
+          {
+            "emoji": "🍪",
+            "label": "Schmetterling-Kekse + Ausstecher",
+            "url": null,
+            "priceEur": 6,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Nettes Extra, kein Muss. Ausstecher teils vorhanden."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Kuchen-Zutaten (2 Kuchen + grüne Buttercreme + Esspapier-Schmetterlinge)",
+            "url": null,
+            "priceEur": 9,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Dschungel-Schokokuchen + Zweitkuchen/Muffins für 8 Kinder. Pflicht."
+          }
+        ],
+        "estimatedCostEur": 80,
+        "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Highlight-Produkte)",
+        "savingsTip": {
+          "title": "Wow ist nicht für jede Familie ehrlich",
+          "body": "Wow braucht: 80 m²+ Wohnfläche ODER Garten, eine zweite erwachsene Hand (Partner, Oma, befreundete Mama) und mindestens ein 5-jähriges Geburtstagskind. Mit 3-Jährigen + Solo-Moderation: Standard nehmen, nicht Wow. Wer Wow trotzdem will, spricht vorher mit der zweiten Hand ab, wer Stationen führt und wer Trostkontakt für überreizte Kinder ist. Foto-Ecke aus Zimmerpflanzen + Bettlaken statt Kauf-Deko spart 10-15 €. Bambus-Stäbe durch Besenstiele mit grünem Krepp ersetzen spart weitere 9 €. Optional gibt's ein aufblasbares Affen-Kostüm (~35-50 €) fürs Geburtstagskind — aber nur für ein 5-jähriges Kind, das das Kostüm vorher kennt und mag, sonst erschreckt die Pumpe und das Tragen überfordert. Nicht im 80-€-Budget enthalten."
+        }
+      }
+    ],
+    "cakeRecipe": {
+      "intro": "Der Dschungel-Schokokuchen ist ein simpler Schoko-Rührteig mit einem grünen Buttercreme-'Dschungel' obendrauf und bunten Esspapier-Schmetterlingen als Krönung. Sieht nach viel aus, ist aber Rührteig + Spritzbeutel — kein Fondant-Drama. Wenn Backen heute nicht drin ist: steht unten der Plan B.",
+      "steps": [
+        {
+          "n": 1,
+          "content": "Schoko-Rührteig anrühren (250 g Mehl, 200 g Butter, 150 g Zucker, 4 Eier, 1 Pck. Backpulver, 3 EL Kakao, Vanille). In eine 24er-Springform."
+        },
+        {
+          "n": 2,
+          "content": "Bei 175 °C ca. 40-45 Min. backen. Stäbchenprobe. Komplett auskühlen lassen, sonst schmilzt die Buttercreme."
+        },
+        {
+          "n": 3,
+          "content": "Buttercreme anrühren: 200 g weiche Butter + 250 g Puderzucker + 1-2 TL grüne Lebensmittelfarbe (Gel ist besser als flüssig). Cremig schlagen, bis sie ein sattes Dschungel-Grün hat."
+        },
+        {
+          "n": 4,
+          "content": "Buttercreme in einen Spritzbeutel mit Stern-Tülle füllen. Auf den Kuchen Tupfer für Tupfer aufspritzen, wild und durcheinander — das soll wie ein Dschungel-Blätterdach aussehen, nicht wie eine Hochzeitstorte."
+        },
+        {
+          "n": 5,
+          "content": "Esspapier-Schmetterlinge (gibt's bunt im Backshop oder online) zwischen die Buttercreme-Tupfer stecken. 6-10 Stück verteilt, je bunter desto besser."
+        },
+        {
+          "n": 6,
+          "content": "Kalt stellen bis zur Party. Vor dem Servieren in Tortenstücke schneiden — der Dschungel 'teilt sich' an alle Forscher."
+        }
+      ],
+      "meta": {
+        "aufwand": "mittel (Rührteig + 20 Min. Buttercreme + Schmetterlinge)",
+        "kosten": "ca. 6-9 €",
+        "allergiker": "Bei Nuss-/Mandel-Allergie unproblematisch — keine Nüsse im Rezept. Glutenfreies Mehl möglich. Esspapier-Schmetterlinge sind meist vegan und allergenarm — Zutaten-Check auf Packung. Buttercreme ohne Laktose: vegane Margarine + Puderzucker."
+      },
+      "tips": [
+        {
+          "title": "Keine Lust oder Zeit zu backen?",
+          "body": "Fertigen Schokokuchen vom Bäcker oder aus dem Supermarkt kaufen und nur die grüne Buttercreme + Schmetterlinge draufsetzen. 15 Min. Arbeit, niemand merkt es. Bei 3-5-Jährigen zählt der Dschungel-Effekt, nicht die Backleistung."
+        },
+        {
+          "title": "Nicht vom Pinterest-Foto stressen lassen",
+          "body": "Die perfekt symmetrische Dschungel-Torte mit Buttercreme-Palmen ist Deko-Profi-Arbeit. Dein Dschungel-Kuchen darf wild aussehen — die Kinder feiern die Schmetterlinge trotzdem. Lieber ein ehrlicher Wackel-Dschungel als ein Nervenzusammenbruch um Mitternacht."
+        },
+        {
+          "title": "Buttercreme zu weich? Kurz in den Kühlschrank.",
+          "body": "Wenn die Buttercreme beim Spritzen zerläuft: 10 Min. in den Kühlschrank, dann nochmal. Wenn sie zu fest ist: 5 Min. Raumtemperatur. Die Konsistenz ist das einzige, was Übung braucht — der Rest ist Wildheit."
+        }
+      ]
+    },
+    "parentTips": {
+      "structured": [
+        {
+          "topic": "🥜 Allergien VOR der Party abfragen",
+          "detail": "In der Einladung fragen. Esspapier-Schmetterlinge auf dem Kuchen, Käse im Snack-Teller, Kokos optional — alles potenzielle Stolperer. Ein nuss-/laktosefreier Teller bereit, dann ist niemand außen vor."
+        },
+        {
+          "topic": "🌧️ Plan B bei Regen steht immer",
+          "detail": "Dschungel ist drinnen wie draußen spielbar. Tier-Spuren-Tour und Lianen-Schwingen gehen im Wohnzimmer + Flur — Spuren auf Klebezettel, Stoff-Liane im Türrahmen. Garten ist schön, aber kein Muss."
+        },
+        {
+          "topic": "👥 Ab 7-8 Kindern: zweite Hand dazu",
+          "detail": "Bei 6 schaffst du es solo. Ab 7-8 (Wow) brauchst du Partner, Oma oder eine befreundete Mama — eine führt die Station, eine ist Trostkontakt für überreizte Kinder."
+        },
+        {
+          "topic": "🔇 Eltern bleiben — ist Teil des Plans",
+          "detail": "Bei 3-5 ist Trennungsangst normal. Eltern als Trostanker einplanen, nicht wegschicken. Ein Eltern-Schoß ist der beste Plan B, wenn ein Kind nicht mehr mag."
+        },
+        {
+          "topic": "⏱️ Nach 90-120 Min. ist Schluss",
+          "detail": "Auch wenn's gerade läuft: nach spätestens 2 Stunden kippt die Forscher-Truppe in Müdigkeit, Streit oder Heimweh. Lieber glücklich aufhören als überreizt eskalieren."
+        },
+        {
+          "topic": "🐒 Kein Wettbewerb, nie Verlierer",
+          "detail": "Bei dieser Altersgruppe keine Gewinner/Verlierer-Spiele. Jedes Kind findet eine Banane, schwingt einmal, bekommt den Forscher-Pass. Der Pass bekommt jeder Forscher — das schafft jedes Kind."
+        },
+        {
+          "topic": "🌿 Lianen-Sicherheit zuerst",
+          "detail": "Bei 3-5 wird NICHT geklettert. Die Stoff-Liane hängt so niedrig, dass die Füße den Boden fast berühren. Bei 3-Jährigen NUR Hangel-Parcours, kein freies Schwingen. Du sicherst immer am Knoten."
+        }
+      ],
+      "educationalValue": "Die Kinder üben ganz nebenbei: leise sein und beobachten (Tier-Spuren-Tour mit Lupe), grobmotorische Koordination (Lianen-Schwingen, Hangel-Parcours), sensorische Wahrnehmung (Tier-Fühlbox, Stoff-Lianen), gemeinsam ein Ziel erreichen (Mini-Expedition) und mit Verkleidung in eine Rolle schlüpfen (Forscher-Stirnband). Der Forscher-Frame macht aus Geburtstags-Trubel ein Entdecker-Spiel — das ist genau der Beobachter- und Bewegungs-Entwicklungsschritt, der mit 3-5 ansteht."
+    },
+    "invitationTemplate": "Lust auf passende Dschungel-Einladungen? Der Einladungs-Generator auf machsleicht baut dir Forscher-Karten mit Datum, Treffpunkt, RSVP-Link und Allergie-Abfrage in 2 Minuten. (Cross-Sell-Hinweis, kein echtes Template — CTA gehört ins Planer-Cockpit.)",
+    "faq": [
+      {
+        "q": "Funktioniert Dschungel auch in einer kleinen Wohnung?",
+        "a": "Ja. Tier-Spuren-Tour und Bananen-Rätsel gehen in 60-75 m² mit verschachtelten Verstecken in einem Raum — Spur um Sofa, hinter Vorhang, unter Tisch. Lianen-Schwingen braucht eine Türöffnung mit Türrahmen-Reck (Kinder-Reck) — das passt in jede Mietwohnung. Türen zu, dann wirkt es nach mehr Dschungel."
+      },
+      {
+        "q": "Wie viele Kinder sind ideal?",
+        "a": "6 für Minimal und Standard, bis 8 für Wow. Mehr als 8 wird mit dem Eltern-bleiben-Konzept zu wuselig — du hast plötzlich zu viele Erwachsene und Kinder im Raum."
+      },
+      {
+        "q": "Was kostet die Party?",
+        "a": "Zwischen 36 € (Minimal, 6 Kinder) und 80 € (Wow, 8 Kinder, ohne Highlight-Produkte). Standard liegt bei ca. 56 € für 6 Kinder. Wer aus dem Bestand schöpft (Plüsch, Bambus aus dem Wald, Bettlaken-Liane), kommt darunter."
+      },
+      {
+        "q": "Ist die Wow-Variante für 3-Jährige geeignet?",
+        "a": "Eher nicht. Wow braucht 80 m²+ oder Garten, eine zweite erwachsene Hand und mindestens ein 5-jähriges Geburtstagskind. Mit reinen 3-Jährigen und Solo-Moderation lieber Standard nehmen — Lianen-Schwingen wird sonst zu hektisch."
+      },
+      {
+        "q": "Ist Lianen-Schwingen wirklich sicher für 3-Jährige?",
+        "a": "Ja, wenn du die Regeln einhältst: Stoff-Liane max. 30-40 cm Bodenabstand, Erwachsener hält IMMER am Knoten, bei 3-Jährigen NUR Hangel-Parcours mit Sitzkissen-Inseln, kein freies Schwingen. Keine Stühle als Sprung-Inseln, keine harten Kanten ringsum. Maximal ein Kind gleichzeitig an der Liane."
+      },
+      {
+        "q": "Funktioniert Dschungel auch für Mädchen-Geburtstage?",
+        "a": "Selbstverständlich. Der Forscher-Frame ist komplett geschlechtsneutral — Schmetterlinge, Tukane und Faultiere sind genauso bunt wie Tiger und Affen. Die meisten Geburtstagskinder in diesem Alter wollen einfach Tiere sehen, egal welches Geschlecht."
+      }
+    ],
+    "preparationWeeks": {
+      "minus4Weeks": {
+        "headline": "4 Wochen vorher — Grundgerüst stellen",
+        "items": [
+          {
+            "icon": "📅",
+            "title": "Datum + Uhrzeit + Treffpunkt fixieren",
+            "detail": "Nachmittag (14-16 Uhr) ist bei 3-5 am besten — nicht in den Mittagsschlaf legen. Drinnen-Plan-B für die Tier-Spuren-Tour im Hinterkopf behalten."
+          },
+          {
+            "icon": "👥",
+            "title": "Gästeliste festzurren",
+            "detail": "6 Kinder für Minimal/Standard, bis 8 für Wow. Faustregel 3-5: nicht mehr Gäste als das Kind alt ist plus zwei. Über 8 wird's wuselig."
+          },
+          {
+            "icon": "💶",
+            "title": "Variante wählen: Minimal / Standard / Wow",
+            "detail": "Minimal 36€ (90 Min., Tour + Fühlbox), Standard 56€ (2 Std. + Lianen-Schwingen + Bananen-Rätsel), Wow 80€ (+ Mini-Expedition + Foto-Ecke, braucht Platz + zweite Hand). Jetzt entscheiden."
+          },
+          {
+            "icon": "✉️",
+            "title": "Einladungen rausschicken",
+            "detail": "Pflicht im Text: Allergie-Abfrage. Hinweis, dass Eltern gern bleiben dürfen — bei 3-5 oft nötig. RSVP-Link auf party.machsleicht.de."
+          },
+          {
+            "icon": "🏠",
+            "title": "Raum-Check (Tier-Spuren + Lianen-Schwingen)",
+            "detail": "In 60-75 m² die Tour nicht über mehrere Räume planen, sondern ein Raum mit verschachtelten Verstecken. Türrahmen-Reck für die Stoff-Liane: stabil und in Erwachsenen-Höhe montierbar? Garten/Park ist Bonus, kein Muss."
+          }
+        ]
+      },
+      "minus2Weeks": {
+        "headline": "2 Wochen vorher — RSVP einsammeln, Plan schärfen",
+        "items": [
+          {
+            "icon": "📞",
+            "title": "RSVP nachhalten",
+            "detail": "Wer nicht geantwortet hat, kurz anschreiben. Endgültige Kinderzahl bestimmt Stirnband-Anzahl, Snack-Teller-Menge und Mitgebsel."
+          },
+          {
+            "icon": "🥜",
+            "title": "Allergien notieren",
+            "detail": "Rückmeldungen sammeln. Esspapier-Schmetterlinge (Zutaten-Check), Käse (Laktose), Kokos (selten), Gluten. Pro Allergie eine Alternative auf dem Teller einplanen."
+          },
+          {
+            "icon": "🤝",
+            "title": "Bei Wow: zweite Hand fix zusagen lassen",
+            "detail": "Partner, Oma oder befreundete Mama verbindlich einplanen. Klären, wer Lianen-Station sichert und wer Trostkontakt ist. Ohne zweite Hand: auf Standard runter."
+          },
+          {
+            "icon": "🐒",
+            "title": "Spiel-Reihenfolge durchgehen",
+            "detail": "Schedule der gewählten Variante einmal laut durchdenken. Wo ist die ruhige Phase (Fühlbox), wo die aktive (Lianen + Trommeln)? Aktiv vor dem Kuchen, ruhig danach."
+          }
+        ]
+      },
+      "minus1Week": {
+        "headline": "1 Woche vorher — bestellen und drucken",
+        "items": [
+          {
+            "icon": "🛒",
+            "title": "Amazon-Bestellung JETZT raus",
+            "detail": "Lieferzeit 2-5 Tage. Tierfiguren, Tonkarton, Lupen, Aufkleber, bei Wow Kunstpflanzen + Bambus + Notizbücher. Später bestellen = Panik in der Festwoche."
+          },
+          {
+            "icon": "🖨️",
+            "title": "Forscher-Pässe + ggf. Dschungel-Karte drucken",
+            "detail": "Pass pro Kind ('Dschungel-Forscher-Pass für [Name]'). Namen mit dickem Edding vorab eintragen — 3-5-Jährige können noch nicht lesen, der Name wird vorgelesen. Falls Wow: Dschungel-Karte für die Mini-Expedition malen/drucken."
+          },
+          {
+            "icon": "🎨",
+            "title": "Forscher-Stirnbänder vorschneiden",
+            "detail": "Streifen zuschneiden, optional schon ein Blatt-Sticker drauf. Kinder dürfen am Tag nur noch verzieren — Schere bleibt bei dir. Spart am Festtag Stress und Tränen."
+          },
+          {
+            "icon": "🐾",
+            "title": "Tiger-Pfotenspuren basteln",
+            "detail": "12-15 Pfoten aus orangefarbenem Tonpapier ausschneiden mit schwarzen Tiger-Streifen drauf (Edding). 15 Min. Arbeit, hält für Tour + Deko-Pfad."
+          },
+          {
+            "icon": "🌿",
+            "title": "Stoff-Liane vorbereiten oder bestellen",
+            "detail": "Bettlaken zu einer dicken Liane drehen/flechten und am Knoten testen — hält dein Türrahmen-Reck das Kindergewicht? Bei Bedarf einen 2-Meter-Stoffstrang aus alten T-Shirts flechten. Vorab einen Erwachsenen drauf-testen-lassen."
+          }
+        ]
+      },
+      "minus2Days": {
+        "headline": "2 Tage vorher — backen und vorbereiten",
+        "items": [
+          {
+            "icon": "🎂",
+            "title": "Dschungel-Schokokuchen backen",
+            "detail": "Schoko-Rührteig in der Springform, komplett auskühlen lassen. Buttercreme + Esspapier-Schmetterlinge erst morgen — sonst werden die Schmetterlinge weich."
+          },
+          {
+            "icon": "🛍️",
+            "title": "Lebensmittel einkaufen",
+            "detail": "Apfelschorle, Bananen, Gurke, Trauben, Käse, Cracker für den Affen-Snack-Teller, ggf. Kokos-Stücke. Allergiker-Alternativen nicht vergessen."
+          },
+          {
+            "icon": "📦",
+            "title": "Lieferung prüfen + Vollständigkeit checken",
+            "detail": "Ist alles da? Genug Tierfiguren, Stirnband-Material für alle Kinder, Lupen, Aufkleber, bei Wow Bambus + Notizbücher? Fehlendes jetzt noch nachkaufen-fähig."
+          }
+        ]
+      },
+      "minus1Day": {
+        "headline": "1 Tag vorher — verzieren und packen",
+        "items": [
+          {
+            "icon": "🐒",
+            "title": "Kuchen verzieren",
+            "detail": "Grüne Buttercreme cremig schlagen und mit Spritzbeutel wild auf den Schokokuchen tupfen. 6-10 Esspapier-Schmetterlinge zwischen die Tupfer stecken. 20 Min. Kalt stellen."
+          },
+          {
+            "icon": "🎁",
+            "title": "Mitgebsel-Tüten packen",
+            "detail": "Pro Kind: Mini-Plüsch-Affe, Forscher-Pass, Lupe, bei Standard/Wow Notizbuch + Sticker. Eine Tüte mehr packen als Kinder kommen — falls ein Geschwister mitkommt."
+          },
+          {
+            "icon": "🌴",
+            "title": "Dschungel-Ecke + ggf. Foto-Ecke aufbauen",
+            "detail": "Grüne Tücher/Pflanzen, türkise Bach-Decke, Plüsch-Tiere arrangieren. Bei Wow Foto-Ecke an freier Wand mit Bambus-Stäben und Kunstpflanzen aufstellen. Tiger-Pfotenspuren-Pfad legen."
+          },
+          {
+            "icon": "🌿",
+            "title": "Stoff-Liane am Türrahmen-Reck montieren + testen",
+            "detail": "Liane am Knoten festmachen, Bodenabstand prüfen (30-40 cm!). Erwachsener hängt sich kurz dran — hält? Sitz-Inseln aus Sitzkissen schon mal in Position legen."
+          }
+        ]
+      },
+      "dayOf": {
+        "headline": "Am Party-Tag — Spuren legen und durchatmen",
+        "items": [
+          {
+            "icon": "🐾",
+            "title": "Tiger-Spur legen",
+            "detail": "Pfoten an die Wand (Augenhöhe Kind) oder Boden, Plüsch-Affe am Endpunkt verstecken. Bei Wow Schatz-Stationen + Schatzkiste platzieren."
+          },
+          {
+            "icon": "🍽️",
+            "title": "Tisch decken + Affen-Snack-Teller anrichten",
+            "detail": "Affen-Snack-Teller hübsch anrichten (Bananen-Boote mit Trauben gespickt, Gurken-Blätter). Getränke kalt stellen. Allergiker-Teller separat markieren."
+          },
+          {
+            "icon": "🎨",
+            "title": "Bastel-Station vorbereiten",
+            "detail": "Stirnbänder, Aufkleber und dicke Stifte auf den Tisch. Wachstuch drunter. Schere und Tacker griffbereit, aber außer Kinder-Reichweite."
+          },
+          {
+            "icon": "🥁",
+            "title": "Trommel-Station + Audio bereit (nur Wow)",
+            "detail": "Topfdeckel + Holzlöffel im Kreis auf einer Decke aufbauen. Audio-Quelle mit Dschungel-Beat testen — Lautstärke moderat einstellen, sonst Schreck-Moment."
+          },
+          {
+            "icon": "🧘",
+            "title": "Tief durchatmen",
+            "detail": "Alles steht. Es muss nicht perfekt sein — die Kinder feiern den schiefen Dschungel-Kuchen genauso. Eltern als zweite Hand kurz briefen, dann los."
+          }
+        ]
+      }
+    },
+    "sosScenarios": {
+      "regen": {
+        "icon": "🌧️",
+        "label": "Regen — alles drinnen",
+        "headline": "Tier-Spuren-Tour ins Wohnzimmer + Flur, Lianen-Schwingen im Türrahmen.",
+        "steps": [
+          "Tiger-Pfotenspuren mit Tesa/Klebezettel an Wände in Wohnzimmer + Flur kleben (Augenhöhe Kind).",
+          "Tour-Parcours: um Sofa, hinter Vorhang, unter Tisch, am Regal vorbei zum Plüsch-Affen.",
+          "Stoff-Liane am Türrahmen-Reck — Lianen-Schwingen funktioniert drinnen sogar besser (kontrollierter).",
+          "Bei Wow Schatzkiste in Garderobe oder Schlafzimmer verstecken, Tier-Stationen über 2 Räume."
+        ],
+        "fallback": "Zu wenig Platz? Tier-Fühlbox + Bananen-Rätsel + Stirnband-Basteln + Kuchen reichen für 1,5 Std. Programm.",
+        "tone": "praktisch"
+      },
+      "mehr_kinder": {
+        "icon": "👥",
+        "label": "Mehr Kinder gekommen als geplant",
+        "headline": "Zwei kleine Forscher-Trupps bilden, zweite Hand schnappen.",
+        "steps": [
+          "Bei 8+ Kindern in 2 Gruppen teilen — eine pirscht, eine bastelt am Stirnband, dann tauschen.",
+          "Zweite erwachsene Hand jetzt unbedingt einspannen (anwesende Eltern fragen — bei 3-5 sind eh welche da).",
+          "Tier-Spuren-Tour in 2 Wellen laufen lassen statt alle gleichzeitig — sonst Gedrängel an der Spur.",
+          "Stirnbänder + Mitgebsel knapp? Geschwister-Plüschtiere aus dem Bestand, niemand geht leer aus."
+        ],
+        "fallback": "Material reicht nicht für alle? Stirnbänder gemeinsam improvisieren (Aufkleber aufs T-Shirt) — Hauptsache jeder ist Forscher.",
+        "tone": "praktisch"
+      },
+      "weniger_kinder": {
+        "icon": "👤",
+        "label": "Weniger Kinder gekommen als geplant",
+        "headline": "Kein Problem — kleinere Forscher-Truppe, mehr Ruhe.",
+        "steps": [
+          "Spiele laufen mit 3-4 Kindern genauso. Tier-Spuren und Lianen-Schwingen werden sogar entspannter.",
+          "Übrige Stirnbänder + Mitgebsel: ein extra Forscher kann das Geburtstagskind sein — keine Reste-Diskussion.",
+          "Mehr Zeit pro Kind beim Lianen-Schwingen und der Pass-Übergabe. Jeder kommt ausführlicher dran.",
+          "Übriges Essen einfach kleiner anrichten — Reste gehen in den Familien-Kühlschrank."
+        ],
+        "fallback": "Bei nur 2-3 Kindern: Stationen weglassen, dafür länger pirschen und mehr Bananen verstecken. Intimer, kein Minus.",
+        "tone": "ruhig"
+      },
+      "kind_weint": {
+        "icon": "😢",
+        "label": "Ein Kind weint",
+        "headline": "Raus aus dem Trubel, runterkommen, kein Publikum.",
+        "steps": [
+          "Kind kurz aus der Gruppe nehmen — ruhige Ecke, Eltern dazu, kein Publikum.",
+          "Ablenken mit etwas Greifbarem: 'Magst du dem Faultier helfen? Der braucht jemand Ruhigen.'",
+          "Wasser/Cracker anbieten — oft ist es Müdigkeit, Hunger oder Reizüberflutung, kein echtes Drama.",
+          "Nach 5 Min. zurück anbieten, aber nicht drängen. Eltern-Schoß bleibt offen."
+        ],
+        "fallback": "Bleibt es untröstlich? Tempo der ganzen Gruppe drosseln — oft ist die Party einfach zu schnell für die Kleinen.",
+        "tone": "ruhig"
+      },
+      "allergie": {
+        "icon": "🥜",
+        "label": "Allergie-Vorfall (oder spät gemeldete Allergie)",
+        "headline": "Sofort separieren, Eltern fragen, Notfall-Plan parat.",
+        "steps": [
+          "Bei akutem Vorfall: Kind sofort aus der Essens-Situation nehmen, Eltern verständigen (Eltern sind ja da bei 3-5).",
+          "Bei spät gemeldeter Allergie (Eltern bringen das Kind, sagen 'übrigens, Nuss-Allergie'): allergenes Essen sofort vom Tisch räumen oder klar markieren ('NICHT FÜR ALLE').",
+          "Allergie-Teller separat aufstellen: Obst pur, ungewürzte Cracker, Apfelschorle pur. Esspapier-Schmetterlinge vom Kuchen abnehmen für das betroffene Kind.",
+          "Im Verdachtsfall (Hautausschlag, Atemnot): 112 anrufen. Bei bekannter Allergie: vorgegebenes Notfallmedikament (Eltern haben oft Adrenalin-Pen) — Eltern geben, nicht du."
+        ],
+        "fallback": "Unklare Situation? Lieber vorsichtig sein: Kind nichts mehr essen lassen, Eltern entscheiden, Hausarzt-Nummer parat.",
+        "tone": "ernsthaft"
+      },
+      "kuchen_misslungen": {
+        "icon": "🎂",
+        "label": "Kuchen misslungen",
+        "headline": "Bäcker-Schokokuchen + grüne Buttercreme + Schmetterlinge drauf, niemand merkt's.",
+        "steps": [
+          "Fertigen Schokokuchen oder Marmorkuchen vom Bäcker/Supermarkt holen (oder schon vorrätig).",
+          "Grüne Buttercreme schnell anrühren (200 g weiche Butter + 250 g Puderzucker + grüne Lebensmittelfarbe) — 5 Min. Arbeit.",
+          "Buttercreme mit Spritzbeutel oder Löffel wild draufschmieren, 6-10 Esspapier-Schmetterlinge reinstecken — fertig ist der Dschungel.",
+          "Bei 3-5-Jährigen zählt das grüne Buttercreme-Wirrwarr mit Schmetterlingen, nicht die Backleistung. Wirklich."
+        ],
+        "fallback": "Keine Zeit für Buttercreme? Muffins mit grünem Zuckerguss + Schmetterling-Aufstecker tun es auch — die Kinder lieben Muffins ohnehin.",
+        "tone": "entlastend"
+      },
+      "ein_kind_weg": {
+        "icon": "👀",
+        "label": "Ein Kind ist plötzlich weg",
+        "headline": "Ruhig bleiben — Bad/Garderobe/Schlafzimmer zuerst, dann nach draußen.",
+        "steps": [
+          "Erstmal durchatmen — bei 3-5 verschwindet das Kind meistens nur kurz ins Bad oder zur Garderobe (Mantel kuscheln).",
+          "Alle anderen Kinder bei der zweiten Hand parken (Eltern sind eh da). Du gehst suchen: Bad, Garderobe, Schlafzimmer, dann Kinderzimmer.",
+          "Wenn das Kind im Garten/Park-Setting verschwindet: SOFORT alle Anwesenden mobilisieren, jemand bleibt am Treffpunkt, andere suchen radial. Eltern des betroffenen Kindes anrufen.",
+          "Im Notfall (Kind nicht in 5 Min. auffindbar): 110. Lieber zu früh als zu spät — bei 3-5 zählt jede Minute."
+        ],
+        "fallback": "Sicherheits-Check VORAB: Wohnungstür immer abgeschlossen, Balkontür zu, Treppe abgesichert. Im Garten Tor zu. Dann passiert das gar nicht erst.",
+        "tone": "ernsthaft"
+      },
+      "geraete_kaputt": {
+        "icon": "🔧",
+        "label": "Material kaputt oder fehlt",
+        "headline": "Improvisieren — bei Dschungel geht fast alles aus dem Haushalt.",
+        "steps": [
+          "Plüsch-Affe kaputt/fehlt? Jedes Kuscheltier aus dem Kinderzimmer wird zum 'verlaufenen Tier'.",
+          "Stoff-Liane reißt? Bettlaken neu falten und mit dickem Knoten am Türrahmen-Reck festbinden — hält wieder.",
+          "Tiger-Pfotenspuren zerrissen? Schnell neue mit Edding auf Papier zeichnen — Kinder merken den Unterschied nicht.",
+          "Lupe kaputt? Brille/Kindergarten-Karton-Lupe basteln (Karton mit Kreis-Loch, Frischhaltefolie drüber — sieht aus wie Lupe).",
+          "Schatzkiste fehlt? Jeder Korb, Karton oder Wäschekorb mit grünem Tuch drüber tut es."
+        ],
+        "fallback": "Ganze Station fällt aus? Einfach mehr pirschen oder Bananen verstecken — die zwei Kernspiele tragen die Party allein.",
+        "tone": "praktisch"
+      }
+    }
+  },
+  "dschungel-mittel": {
+    "_meta": {
+      "source_file": "kindergeburtstag/dschungel-6-8-jahre.html",
+      "extracted": "2026-05-22",
+      "schema_version": "1.0",
+      "purpose": "Dschungel 6-8 — Phase B Elite-Slot (Forscher-Expedition mit Crew-Rollen-Mapping auf Forscher/Wächter/Künstler)",
+      "phase_b_complete": "2026-05-22",
+      "phase_b_method": "Direkter Draft auf Basis safari-mittel.json (Stations-Rotation, Lizenz-Zeremonie, Schatzsuche-Quest) plus feuerwehr-mittel.json (Crew-Rollen-Pattern mit funktionalen Aufgaben). 8 Crew-Rollen explizit auf 3 Funktionstypen Forscher/Wächter/Künstler gemappt. TIGER-Codeknacker (5 Stationen) als Bananen-Code-Knacker eingearbeitet."
+    },
+    "motto": "dschungel",
+    "ageGroup": "mittel",
+    "ageRange": [
+      6,
+      8
+    ],
+    "title": "🌴 Dschungel-Kindergeburtstag — 6–8 Jahre",
+    "metaDescription": "Dschungel-Kindergeburtstag für 6-8-Jährige: 3 fertige Forscher-Konzepte mit Bananen-Code-Knacker, Spuren-Rallye und Lianen-Parcours. Mit Zeitplan, Einkaufsliste und Kosten. Kostenlos.",
+    "introParagraph": "Dein Kind wird 6, 7 oder 8 und träumt von Affen, Tigern und Wasserfällen? Hier bekommst du drei fertige Party-Konzepte rund um eine echte Dschungel-Forschungs-Expedition — von schnell und stressfrei bis zum vollen Programm mit Lager-Aufbau, Bananen-Code-Knacker und Schatz-im-Dschungel-Suche. Jedes Konzept mit Zeitplan, Spielanleitungen, Einkaufsliste und Kosten.\n\n[Dschungel-Geburtstag planen →](/kindergeburtstag?motto=dschungel&alter=7#planer)",
+    "ageInsight": {
+      "headline": "Was 6–8-Jährige ausmacht — und was das für die Dschungel-Party heißt",
+      "traits": [
+        {
+          "topic": "Aufmerksamkeit",
+          "detail": "20–30 Min. pro Aktivität realistisch, dann braucht es Wechsel. Stations-Rotation in Forscher-Camp + Bananen-Code-Knacker passt perfekt — alle 12–15 Min. wartet eine neue Mission."
+        },
+        {
+          "topic": "Regeln",
+          "detail": "Können einfache Spielregeln verstehen und einhalten. Trotzdem: bei jeder Station kurz vormachen, nicht nur erklären — gerade beim Lianen-Parcours sind klare Sicherheitsregeln Gold wert."
+        },
+        {
+          "topic": "Wettbewerb",
+          "detail": "Erster Ehrgeiz ist da — Forscher-Teams funktionieren gut. Im Crew-Rollen-Konzept hat jedes Kind eine echte Aufgabe (Affen-Beobachter, Spuren-Leser, Pflanzen-Botaniker), niemand ist nur Statist. Das senkt Drama deutlich."
+        },
+        {
+          "topic": "Motorik",
+          "detail": "Schreiben (eigenen Namen aufs Forscher-Stirnband), schneiden, basteln geht sicher. Bananen-Code-Knacker mit 5 Buchstaben sortieren ist ein echter Stolz-Moment, wenn das Lösungswort TIGER aufgeht."
+        },
+        {
+          "topic": "Dauer",
+          "detail": "2,5–3 Stunden ideal. Mit Schatz-im-Dschungel-Quest bis zu 4 Stunden. Pufferzeit am Ende einplanen — Eltern kommen selten pünktlich."
+        },
+        {
+          "topic": "Essen",
+          "detail": "Mehr als bei Kleinkindern — rechne mit 1,3× der Portionen für 3–5-Jährige. Fingerfood schlägt Besteck. Affen-Bananen, Tukan-Obstspieße und Schoko-Vulkankuchen treffen den Ton."
+        },
+        {
+          "topic": "Eltern",
+          "detail": "Können abgesetzt werden, müssen aber telefonisch erreichbar sein. Abholzeit unbedingt vorher abstimmen — die Lager-Eröffnung mit Forscher-Eid funktioniert ohne wartende Eltern besser."
+        }
+      ],
+      "whyMottoFits": "Kinder in diesem Alter wollen jemand sein, nicht nur etwas tun. Mit Forscher-Stirnband, Namen und Rolle (\"Forscher Mia, Affen-Beobachterin\") werden aus Gästen Expeditionsteilnehmer mit Auftrag. Die Crew-Rollen-Logik kanalisiert ihre Wettbewerbslust, ohne Verlierer zu produzieren — am Ende hat jedes Kind seine Forschungs-Lizenz und die Crew hat den Schatz im Dschungel gefunden. Das funktioniert geschlechtsneutral und ist sofort verständlich, weil Kinder Dschungeltiere lange kennen, bevor sie über sie nachdenken. Bei den Jüngeren (3–5) ist noch jeder einfach Dschungel-Helfer; bei den Großen (9–12) baut jeder seine Spezial-Expedition auf. 6–8 liegt dazwischen: alle gehen auf dieselbe Forschungs-Tour, aber jeder hat seine Funktion — wer Affen liebt, wird Affen-Beobachter, wer gerne malt, wird Pflanzen-Botaniker.",
+      "whyMottoFitsHeadline": "🌴 Warum die Dschungel-Forschungs-Expedition für 6–8-Jährige besonders gut funktioniert"
+    },
+    "signatureRitual": {
+      "name": "Lager-Eröffnung & Forscher-Crew bilden",
+      "subtitle": "Anfang und Ende — für alle 3 Varianten",
+      "introText": "Dschungel 6–8 lebt von zwei Anker-Momenten: die Lager-Eröffnung am Anfang macht aus Kindern eine Forschungs-Crew mit echten Rollen, die Übergabe der Forschungs-Lizenz am Ende krönt die Expedition. Jedes Kind zieht beim Reinkommen seine Crew-Rolle aus dem Forscher-Rucksack — ab dem Moment ist es nicht mehr Gast, sondern Affen-Beobachter, Spuren-Leser oder Pflanzen-Botaniker. Beide Momente dauern zusammen keine 10 Minuten, tragen aber die ganze Party.",
+      "setupSteps": [
+        {
+          "title": "Forscher-Rucksack mit Rollen-Zetteln vorbereiten",
+          "content": "Alter Stoffbeutel oder Schuhkarton mit Banderole \"Forscher-Crew\". Darin so viele Rollen-Zettel wie Gäste (Standard: 8 Zettel für 6-8 Kinder) mit Name + Crew-Rolle (Liste unten). Wer früher ankommt, zieht zuerst."
+        },
+        {
+          "title": "Forscher-Stirnband mit Namen",
+          "content": "Tonpapier-Stirnband grün, jedes Kind schreibt seinen Namen + Crew-Rolle drauf (\"Forscher Mia — Affen-Beobachterin\"). Klettverschluss am Ende. Vorbereitete Stirnbänder liegen am Eingangs-Tisch."
+        },
+        {
+          "title": "In die Expeditions-Tafel eintragen",
+          "content": "Plakat mit Spalten \"Name / Crew-Rolle / Expeditions-Tag\". Jedes Kind trägt sich selbst ein — Datum dazu. Hängt sichtbar in der Lager-Mitte und ist später Foto-Hintergrund."
+        },
+        {
+          "title": "Forscher-Eid gemeinsam sprechen",
+          "content": "3 Sätze, groß ausgedruckt, alle gleichzeitig nachsprechen: \"Im Dschungel zählt nicht, wer am schnellsten ist — sondern wer hinschaut, leise ist und der Crew zuhört. Wir lassen keinen zurück. Ab jetzt sind wir Dschungel-Forscher.\" 30 Sekunden, schafft Atmosphäre für die ganze Party."
+        },
+        {
+          "title": "Forschungs-Lizenzen vorab beschriften",
+          "content": "Jedes Kind trägt seinen Namen selbst in die Dschungel-Forschungs-Lizenz ein (Foto-Slot bleibt frei). Lizenzen werden zum Lager-Hauptquartier gestapelt — am Ende der Party gibt es sie offiziell zurück."
+        }
+      ],
+      "rolesList": [
+        {
+          "emoji": "🐒",
+          "name": "Affen-Beobachter",
+          "function": "Forscher — beobachtet bei Bananen-Code-Knacker Station 1 die Affen und sortiert sie alphabetisch."
+        },
+        {
+          "emoji": "🐾",
+          "name": "Spuren-Leser",
+          "function": "Forscher — geht bei Spuren-Rallye voran und identifiziert die nächste Fährte."
+        },
+        {
+          "emoji": "🎭",
+          "name": "Tier-Stimmen-Imitator",
+          "function": "Künstler — macht beim Tier-Quiz die Geräusche vor und liefert Show-Einlage bei der Lizenz-Übergabe."
+        },
+        {
+          "emoji": "🌿",
+          "name": "Pflanzen-Botaniker",
+          "function": "Künstler — zeichnet bei Bananen-Code-Knacker Station 3 die Bananen-Stauden in das Forscher-Heft und gestaltet Mitgebsel-Karten."
+        },
+        {
+          "emoji": "💧",
+          "name": "Wasserfall-Navigator",
+          "function": "Forscher — leitet beim Lianen-Parcours die Crew durch den \"Wasserfall-Abschnitt\" und gibt das Tempo vor."
+        },
+        {
+          "emoji": "🦋",
+          "name": "Schmetterlings-Fänger",
+          "function": "Künstler — sortiert bei Bananen-Code-Knacker Station 4 die Schmetterlinge nach Farben und gestaltet das Krepppapier-Mobile."
+        },
+        {
+          "emoji": "🐍",
+          "name": "Schlangen-Beruhiger",
+          "function": "Wächter — prüft bei Bananen-Code-Knacker Station 5 die Schlangen-Geräusche und sorgt bei Pirsch-Stillzeiten für Ruhe."
+        },
+        {
+          "emoji": "⛺",
+          "name": "Camp-Leiter",
+          "function": "Wächter — verteilt am Wasserloch die Trink-Stopps, achtet auf die Zeit und ruft die Crew bei Stations-Wechseln zusammen."
+        }
+      ],
+      "optOutNote": "Kein Kind muss eine Crew-Rolle übernehmen. Wer nur als allgemeiner Forscher mitlaufen will, ist normales Crew-Mitglied — Lizenz und Stirnband bekommt es trotzdem. Die Sonderrollen sind Angebot, kein Zwang. Bei Hautempfindlichkeit: Tattoo auf die Lizenz statt auf den Handrücken kleben.",
+      "materialNote": "Tonpapier grün + Filzstifte (~5 €), [Forscher-Stirnband-Set oder DIY](https://www.amazon.de/s?k=forscher+stirnband+kinder&tag=machsleicht-21)* (~6 € für 10 Stk.), Rollen-Zettel zum Selbstausdrucken aus der Vorlage. Forschungs-Lizenzen DIN A6 selbst drucken — Vorlage liegt im Druck-Bereich. Optional: [Dschungel-Tattoo-Bogen](https://www.amazon.de/s?k=dschungel+tattoos+kinder+set&tag=machsleicht-21)* (~5 €) für 30+ Affen-/Tukan-/Tiger-Motive."
+    },
+    "variants": [
+      {
+        "id": "minimal",
+        "label": "Minimal — 2 Stunden, minimaler Aufwand",
+        "headline": "🌿 Minimal — 2 Stunden, minimaler Aufwand",
+        "intro": "Funktioniert auch wenn du erst gestern angefangen hast zu planen. Forscher-Stirnband + Spuren-Rallye + Tier-Quiz + Kuchen + kleine Lizenz-Übergabe — fertig. Kein Kind geht ohne Forscher-Status nach Hause.",
+        "timeWindow": "14:00–16:00, 6 Kinder",
+        "schedule": [
+          {
+            "time": "14:00",
+            "title": "🌴 Eintreffen im Forscher-Camp & Stirnband-Werkstatt",
+            "description": "Vorbereitete Stirnbänder aus grünem Tonpapier liegen auf dem Tisch + Filzstifte. Jedes Kind schreibt seinen Namen drauf, mit \"Forscher\" davor: Forscher Mia, Forscher Jonas. Jedes Kind zieht außerdem seine Crew-Rolle aus dem Forscher-Rucksack (Affen-Beobachter, Spuren-Leser etc.). Ergänzend: Ausmalbilder mit Dschungeltieren als Beschäftigung für die Wartezeit. Kostenlose Vorlagen z.B. auf [mowoli.de](https://mowoli.de/ausmalbilder-wildtiere-fuer-kinder/) (Affe, Tiger, Tukan, Faultier als PDF) oder [kinder-malvorlagen.com](https://www.kinder-malvorlagen.com/zum-ausmalen/vorlagen-tiere-dschungel.php)."
+          },
+          {
+            "time": "14:20",
+            "title": "🐾 Forscher-Eid & Spuren-Rallye",
+            "description": "Kurzer feierlicher Eid (3 Sätze, alle gleichzeitig sprechen — schafft 30 Sekunden Atmosphäre für die ganze Party), dann das Hauptspiel: 25 Min. Spuren-Rallye im Garten oder durch die Wohnung. Spuren-Leser geht voran. Anleitung unten."
+          },
+          {
+            "time": "14:50",
+            "title": "🎂 Pause am Wasserloch",
+            "description": "Schoko-Vulkankuchen mit grünem Krepp-Dschungel-Rand + Mini-Tiger aus Marzipan + \"Dschungel-Wasser\" (Apfelschorle in transparenten Bechern mit grünen Trinkhalmen). 25 Min. Ruhe für die ganze Crew. Camp-Leiter sagt: \"Jeder Forscher trinkt einmal am Wasserloch.\" Eltern, die schon abholen, kriegen einen Kaffee."
+          },
+          {
+            "time": "15:20",
+            "title": "🦜 Tier-Quiz (Dschungeltiere)",
+            "description": "15 Min. Ratespiel auf dem Sofa. Smartphone reicht. Tier-Stimmen-Imitator darf bei jedem Tier das Geräusch nachmachen. Anleitung mit konkreten YouTube-Quellen unten."
+          },
+          {
+            "time": "15:35",
+            "title": "🏅 Lizenz-Übergabe",
+            "description": "Jedes Kind bekommt seine \"Dschungel-Forschungs-Lizenz\" (Urkunde mit Namen + Crew-Rolle) feierlich überreicht. Eltern fotografieren. 15 Min. Puffer bis zur Abholung."
+          },
+          {
+            "time": "15:50",
+            "title": "🎁 Ausrüstung mitnehmen, Verabschiedung am Lager-Tor",
+            "description": "Mitgebsel-Tüten in die Hand, Stirnband bleibt auf dem Kopf, Lizenz unter den Arm. Expedition erfüllt.\n\n💡 Forscher-Eid (zum Vorlesen)\n\"Im Dschungel zählt nicht, wer am schnellsten ist — sondern wer hinschaut, leise ist und der Crew zuhört. Wir lassen keinen zurück. Ab jetzt sind wir Dschungel-Forscher.\" — Alle Kinder sprechen den Eid gemeinsam nach. Dauert 30 Sekunden, schafft Atmosphäre für die ganze Party."
+          }
+        ],
+        "games": [
+          {
+            "name": "🐾 Spuren-Rallye",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 25,
+            "minAge": 5,
+            "loudness": null,
+            "effort": "leicht",
+            "material": "12–15 Tierspuren aus Tonpapier ausgeschnitten (Tigerpfote, Tapir, Krokodil-Klaue — DIN A4 braunes/graues Tonpapier). Tesa zum Befestigen. Am Endpunkt: 1 Plüsch-Tier oder eine Box mit Mini-Dschungeltieren als \"Fund\". Druckvorlage Dschungel-Tierspuren ist in Vorbereitung — bis dahin: schnell selbst zeichnen, die Kinder merken den Unterschied nicht.",
+            "prepText": "Vorher legst du eine Spur durch Garten oder Wohnung — z.B. Tigerpfoten an die Wand kleben (Augenhöhe Kind), die in eine bestimmte Richtung führen. Am Endpunkt versteckt sich das \"verlorene Tier\" (Plüsch-Tiger oder Plüsch-Affe).",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Einstimmen",
+                "content": "Du flüsterst: 'Ein Tier hat sich verlaufen im Dschungel. Wir folgen seiner Spur — ganz leise wie echte Forscher.'"
+              },
+              {
+                "n": 2,
+                "name": "Spur aufnehmen",
+                "content": "Alle starten gemeinsam, Spuren-Leser geht voran und zeigt die erste Pfote. Tempo bewusst langsam, Pirsch-Modus an."
+              },
+              {
+                "n": 3,
+                "name": "Spur folgen",
+                "content": "Kinder suchen Pfote für Pfote. Jeden Fund kurz bestätigen ('Da, eine Spur!'), niemand rennt voraus."
+              },
+              {
+                "n": 4,
+                "name": "Tier-Ruf orten",
+                "content": "Aus dem Versteck kommt ein Tier-Ruf (du oder Helfer macht Affen-Geräusch). Wer's zuerst hört, zeigt die Richtung an."
+              },
+              {
+                "n": 5,
+                "name": "Tier finden",
+                "content": "Am Endpunkt liegt das Plüsch-Tier. Alle finden es gemeinsam — niemand 'gewinnt', jeder darf es halten."
+              }
+            ],
+            "safetyRule": "Spuren nur auf Augenhöhe kleben, nichts zum Klettern provozieren. Endpunkt-Versteck ohne scharfe Kanten oder kippelige Möbel. Pflicht: bei Augen-zu-Pirsch-Spielen ist eine ZWEITE Aufsichtsperson erforderlich. Solo-Variante (1 Erwachsener) ist hier nicht ausreichend.",
+            "ageAdjust6": "Spur kurz halten (15–20 Spuren reichen), Endpunkt sichtbar verstecken (unter Sofadecke, hinter Baum).",
+            "ageAdjust8": "Mehrere Tier-Arten parallel auslegen (Tiger + Tapir), 2 Endpunkte. In Teams suchen.",
+            "indoorTip": "Spuren in 3–4 Räume verteilen, Türen geschlossen halten — sieht nach mehr Dschungel aus als es ist.",
+            "outdoorTip": "Im Garten echte Erde/Rinde als Spur-Stationen nutzen — Spuren zwischen Sträucher, an Baumstämme. Wirkt sofort wie echter Tropenwald.",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Schleichen bremst die Lautstärke von selbst — und das gemeinsame Finden hält den Wettbewerb raus, der mit 6-8 sonst schnell Tränen macht. Greifbarer Plüsch-Fund statt abstraktem Ziel."
+          },
+          {
+            "name": "🦜 Tier-Quiz (Dschungeltiere)",
+            "indoor": true,
+            "outdoor": false,
+            "duration": 15,
+            "minAge": 5,
+            "loudness": "ruhig",
+            "effort": null,
+            "material": "Smartphone oder Bluetooth-Box, vorbereitete YouTube-Liste. Empfehlung: [\"Dschungel-Geräusche & Tropenwald-Tiere\"](https://www.youtube.com/watch?v=OPGagbm2vTI) (Affen, Tukan, Frösche — gezielt anspringbar) oder [\"Tropische Tiere Quiz für Kinder\"](https://www.youtube.com/watch?v=qmtLEmlOWN0) (komplett fertig, einfach abspielen)",
+            "prepText": "Die Crew sitzt im Halbkreis. Du spielst eine Tierstimme ab (5 Sekunden), alle dürfen mitraten — Tier-Stimmen-Imitator darf das Geräusch danach nachmachen. Schnellstes Kind antwortet, oder reihum, damit alle zum Zug kommen.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Crew setzen",
+                "content": "Alle sitzen im Halbkreis vor der Box. Du erklärst: 'Gleich hört ihr ein Dschungeltier — wer weiß, welches?'"
+              },
+              {
+                "n": 2,
+                "name": "Stimme abspielen",
+                "content": "Du spielst eine Tierstimme (5 Sek.). Schnellstes Kind antwortet, oder reihum, damit jeder drankommt."
+              },
+              {
+                "n": 3,
+                "name": "Imitator nachmachen",
+                "content": "Tier-Stimmen-Imitator macht das Tier nach ('Affe — UUH-UUH-AAH!'). Nebenbei kurze Faktenfrage: 'Wo lebt es?'"
+              },
+              {
+                "n": 4,
+                "name": "Weiter",
+                "content": "Nächstes Tier. 6-8 Runden reichen; danach kippt die Aufmerksamkeit, lieber früher aufhören."
+              }
+            ],
+            "safetyRule": null,
+            "ageAdjust6": "Bekannte Tiere (Affe, Tiger, Tukan, Frosch, Schlange als Joker). Nicht zu lange.",
+            "ageAdjust8": "Auch schwierigere Tiere mischen (Faultier, Tapir, Brüllaffe, Aguti). Punkte zählen optional.",
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Raten ohne Verlierer: Mit 6-8 wollen Kinder ihr Tier-Wissen zeigen, aber das Reihum-Prinzip sorgt dafür, dass auch das langsamere Kind dran kommt. Imitator-Rolle gibt dem Tier-Stimmen-Künstler-Kind eine kleine Show-Bühne."
+          }
+        ],
+        "food": "🎂Schoko-Vulkankuchen1 Gugelhupf\n🥤\"Dschungel-Wasser\"1,5 L Apfelschorle\n🍌Affen-Bananen6 Stk.\n🍿Forscher-Pop-Mais200 g\n\n💡 \"Dschungel-Wasser\" — funktioniert sofort\nApfelschorle in transparente Plastikbecher gießen, grüner Trinkhalm rein, fertig. Sieh's beim Servieren als Wasserloch-Erlebnis: \"Jeder Forscher trinkt einmal pro Stunde am Wasserloch.\" Kostet null extra, Kinder lieben den Vorwand.",
+        "giveaways": "🏅 1 Dschungel-Forschungs-Lizenz (selbst ausgedruckt mit Namen + Crew-Rolle + Foto-Slot)\n🐒 1 Mini-Dschungeltier-Figur (haben sie evtl. bei der Rallye entdeckt — Bezug zur Geschichte)\n🖍️ 2 Ausmalbilder zum Mitnehmen\n🍌 1 echte Banane für den Heimweg (\"Affen-Proviant\")\n🍬 1 kleine Tüte Gummibärchen (\"Wegzehrung\")\n\nIn grüne Papiertüte (10 Stk. ~1 € bei DM/Action) mit \"Forscher ___\" per Hand beschriften. Kosten: ~2 € pro Kind.",
+        "shoppingList": [
+          {
+            "emoji": "🐒",
+            "label": "Dschungeltier-Figuren (12 Stk.)",
+            "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+kinder&tag=machsleicht-21",
+            "priceEur": 5,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Tier-Quiz + Rallye-Endpunkt — ohne fehlt motto-zentrales Spiel-Element."
+          },
+          {
+            "emoji": "📜",
+            "label": "Tonpapier grün A4 (für Stirnbänder + Lizenzen)",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Stirnband-Verleihung + Forschungs-Lizenz — Ankunfts-Aktivität und Identifikations-Ritual."
+          },
+          {
+            "emoji": "🥤",
+            "label": "Apfelschorle (1,5 L) + Becher + grüne Halme",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Getränke + Becher nicht optional — grüne Halme sind Dschungel-Atmosphäre, aber Becher reichen."
+          },
+          {
+            "emoji": "🍿",
+            "label": "Popcorn-Mais + Bananen",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Snack-Beilage, aber Kuchen + Apfelschorle tragen 2h Party auch ohne."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Gugelhupf-Backmischung Schoko + grüner Streusel + Mini-Marzipan-Tiger",
+            "url": null,
+            "priceEur": 7,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Schoko-Vulkankuchen mit grünem Krepp-Rand und Marzipan-Tiger ist motto-zentral und sozialer Pflichtteil der Party."
+          },
+          {
+            "emoji": "📄",
+            "label": "Tierspuren + Ausmalbilder + Lizenz ausdrucken",
+            "url": null,
+            "priceEur": 0,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "0€-Print trägt Spuren-Rallye + Forschungs-Lizenz — strukturelle Klammer."
+          },
+          {
+            "emoji": "🍬",
+            "label": "Gummibärchen (Mitgebsel)",
+            "url": null,
+            "priceEur": 2,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Standard-Mitgebsel-Beilage, aber Lizenz + Tier-Figur tragen Goodie-Bag funktional auch."
+          },
+          {
+            "emoji": "🛍️",
+            "label": "Papiertüten grün (DM/Action)",
+            "url": null,
+            "priceEur": 1,
+            "hasAffiliate": false,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Papiertüten gibt's in jeder Schublade, kein Spezial-Einkauf nötig."
+          }
+        ],
+        "estimatedCostEur": 25,
+        "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
+      },
+      {
+        "id": "standard",
+        "label": "Standard — 3 Stunden, vollständige Expedition",
+        "headline": "🎯 Standard — 3 Stunden, klassische Forscher-Expedition mit Bananen-Code-Knacker",
+        "intro": "Genau richtig für 6–8-Jährige: Bananen-Code-Knacker mit 5 Stationen als echte Forschungs-Rotation (Lösungswort TIGER), Tier-Quiz und Lianen-Parcours als Höhepunkt, Lizenz-Zeremonie zum Abschluss. Funktioniert, weil die Stations-Logik genau das löst, was diese Altersgruppe braucht: alle 12 Minuten ein Wechsel (Aufmerksamkeitsspanne), klare Funktion durch Crew-Rolle (jeder ist jemand), und ein sichtbares Lösungswort am Ende, das die Kinder gemeinsam knacken (gemeinsamer Erfolg). Das ist die Party, von der die Kinder am Montag in der Schule erzählen — und die Forschungs-Lizenz hängt monatelang am Kühlschrank.",
+        "timeWindow": "14:00–17:00, 8 Kinder",
+        "schedule": [
+          {
+            "time": "14:00",
+            "title": "Eintreffen im Forscher-Camp, Stirnband-Werkstatt, Crew-Rollen, Eid",
+            "description": "Tonpapier-Stirnbänder mit Namen + Crew-Rolle (\"Forscher Mia — Spuren-Leserin\"). Wenn alle da sind: Forscher-Eid gemeinsam sprechen. Jedes Kind kriegt seine \"Forscher-Karte\" — ein kleines Kärtchen mit 5 leeren Stempel-Feldern für die 5 Bananen-Code-Knacker-Stationen. 20 Min."
+          },
+          {
+            "time": "14:20",
+            "title": "🍌 Bananen-Code-Knacker (5 Stationen × 12 Min)",
+            "description": "Fünf Stationen, vier 2er-Teams rotieren im Uhrzeigersinn. Nach jeder Station gibt's einen Stempel auf die Forscher-Karte UND einen Buchstaben für das Lösungswort. Stationen unten im Detail beschrieben. 60 Min. — der inhaltliche Kern der Party. Lösungswort am Ende: T-I-G-E-R."
+          },
+          {
+            "time": "15:20",
+            "title": "🎂 Pause am Wasserloch — Schoko-Vulkankuchen",
+            "description": "Schoko-Vulkankuchen mit grünem Krepp-Dschungel-Rand und Mini-Tiger aus Marzipan. Apfelschorle in Bechern als \"Dschungel-Wasser\". Happy Birthday singen. 25 Min. Ruhe für die ganze Crew. Camp-Leiter sammelt die Karten ein und prüft, dass alle Stempel da sind."
+          },
+          {
+            "time": "15:45",
+            "title": "🌿 Lianen-Parcours: Schatz im Dschungel finden",
+            "description": "Der Höhepunkt. Mit dem geknackten Lösungswort TIGER finden alle 4 Teams den Tiger-Schatz im Dschungel — ein gemeinsamer Lianen-Parcours führt zum Versteck. 25 Min. Anleitung unten."
+          },
+          {
+            "time": "16:10",
+            "title": "🏅 Lizenz-Zeremonie",
+            "description": "Alle Forscher-Karten zeigen 5 Stempel + Tiger-Schatz geborgen → die Expedition ist erfolgreich. Jedes Kind kommt einzeln nach vorne, kriegt seine Dschungel-Forschungs-Lizenz (Urkunde mit Foto-Slot + Crew-Rolle), das Klett-Abzeichen aufs Stirnband geklettet, und einen Forscher-Ausweis im Scheckkartenformat. Tier-Stimmen-Imitator darf zum Abschluss noch sein Lieblings-Tier nachmachen. Eltern fotografieren. 15 Min."
+          },
+          {
+            "time": "16:25",
+            "title": "🎁 Mitgebsel & freies Spielen",
+            "description": "Tüten verteilen, Dschungel-Memo-Karten zum freien Spielen liegen aus. Eltern kommen, Kinder zeigen stolz Lizenz und Abzeichen. 25 Min. Pufferzeit."
+          },
+          {
+            "time": "16:50",
+            "title": "🚪 Verabschiedung am Lager-Tor",
+            "description": "Mitgebsel-Tüte in die Hand, Stirnband bleibt auf dem Kopf, Lizenz unter den Arm, Forscher-Ausweis in der Hosentasche. Expedition erfüllt.\n\n💡 Wie viele Helfer brauchst du wirklich?\nMit 2 Helfern wird's entspannt: Du leitest die Lizenz-Zeremonie und den Lianen-Parcours, je 1 Helfer betreut die Stationen-Hälfte. Empfohlen, wenn 8+ Kinder.\n\nMit 1 Helfer geht's gut: Du nimmst 2–3 Stationen, Helfer nimmt 2–3. Pause am Wasserloch deckt Übergangs-Lücken.\n\nSolo machbar — mit Anpassung: Statt parallel-rotierender Stationen läuft die Gruppe gemeinsam alle 5 Stationen nacheinander durch (60 Min total). Geht, dauert aber jede Station 12 Min für die ganze Gruppe statt nur 2 Kinder. Funktioniert bis 6 Kinder, ab 8 Kindern wird's eng.\n\nFaustregel: Pro 4 Kinder rechne 1 Erwachsenen für volle Stations-Rotation. Eltern als Helfer einplanen — viele bleiben gerne, wenn man fragt.\n\n💡 Stations-Rotation organisieren\nBei 8 Kindern gehst du in 4 Teams à 2 Kinder. Jedes Team beginnt an einer anderen Station, alle 12 Min. wechseln im Uhrzeigersinn — eine 5. Station bleibt frei und wird von Team zu Team durchgereicht (das Camp-Leiter-Kind ruft den Wechsel aus). Alternativ: 4 Teams à 2 Kinder + Station 5 als Gemeinschafts-Schlussakt für alle. Beides funktioniert.\n\n💡 Rhythmus-Regel\nStationen wechseln zwischen aktiv und ruhig: Affen-Beobachten (ruhig) → Spuren-Lesen (aktiv) → Bananen-Math (ruhig) → Schmetterlings-Farben (ruhig) → Schlange-Geräusch (aktiv). Nach der Stations-Phase Pause, dann Lianen-Parcours als aktives Großspiel, dann ruhige Zeremonie. So kippt die Stimmung nie."
+          }
+        ],
+        "games": [
+          {
+            "name": "1️⃣ Affen-Beobachten (Station 1 → T)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 12,
+            "minAge": 6,
+            "loudness": "ruhig",
+            "effort": "leicht",
+            "material": "4 ausgedruckte Affen-Karten auf A5 mit Namen darunter: Theo, Una, Vito, Willi. Klemmbrett, Stift, Lösungs-Banderole für das Team mit T-Buchstabe zum Aufkleben",
+            "prepText": "Setting: \"Vier Affen turnen im Baum. Im Forscher-Heft müsst ihr sie alphabetisch sortieren. Der NAME, der GANZ AM ANFANG steht, ist euer Code-Buchstabe.\" Vorher hängst du die 4 Affen-Karten gut sichtbar im Raum auf (auf Stuhllehnen, Wänden, Regalen). Affen-Beobachter geht voran und liest alle Namen.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Karten finden",
+                "content": "Das Team sucht alle 4 Affen-Karten im Raum: Theo, Una, Vito, Willi. Affen-Beobachter notiert die Namen aufs Klemmbrett."
+              },
+              {
+                "n": 2,
+                "name": "Alphabetisch sortieren",
+                "content": "Im Forscher-Heft die Namen in Reihenfolge bringen: T-U-V-W. Wer kommt zuerst im Alphabet?"
+              },
+              {
+                "n": 3,
+                "name": "Erster Buchstabe = Code",
+                "content": "Der Affe, der alphabetisch ganz vorne steht, ist Theo. Sein Anfangsbuchstabe T ist der erste Code-Buchstabe."
+              },
+              {
+                "n": 4,
+                "name": "Stempel & Banderole",
+                "content": "Stempel auf die Forscher-Karte. Die Banderole mit T wird ans Forscher-Heft geklebt — erster von fünf Buchstaben gesichert."
+              }
+            ],
+            "safetyRule": null,
+            "ageAdjust6": "Karten direkt am Tisch nebeneinanderlegen statt im Raum suchen — nur sortieren, nicht suchen.",
+            "ageAdjust8": "5 Affen statt 4 (Theo, Una, Vito, Willi, Xenia) — gleich raus: Theo bleibt vorn, alphabetisches Sortieren mit fünf Karten anspruchsvoller.",
+            "indoorTip": "Karten an Regal, Tür und Stuhllehne hängen — Wohnung gibt mehr Versteck-Plätze als man denkt.",
+            "outdoorTip": "Karten in Sträucher und an Baumstämme hängen — sieht sofort wie echter Dschungel-Baum-Affen-Beobachtungs-Posten aus.",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Alphabetisch sortieren ist Schul-Skill, den 6-8-Jährige stolz zeigen — die Affen-Hülle macht aus Schul-Übung Forscher-Mission. Affen-Beobachter-Rolle gibt der Affen-Liebhaberin eine echte Aufgabe."
+          },
+          {
+            "name": "2️⃣ Spuren-Lesen (Station 2 → I)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 12,
+            "minAge": 6,
+            "loudness": "ruhig",
+            "effort": "mittel",
+            "material": "5 Tierspuren-Karten unterschiedlicher Größe ausgedruckt, jede mit Tier-Namen darunter: Tiger (groß), Jaguar (mittel-groß), Tapir (mittel), Ozelot (klein-mittel), Iguana/Leguan (kleinste). Maßstab durchgehend einhalten. Lupe (optional). Lösungs-Banderole mit I-Buchstabe",
+            "prepText": "Setting: \"Im Forscher-Heft sind 5 Spuren abgebildet — alle in echter Größe. Die KLEINSTE Spur gehört zum kleinsten Tier. Sein Anfangsbuchstabe ist euer Code.\" Spuren-Leser geht voran und vergleicht die Spuren.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Spuren auslegen",
+                "content": "Die 5 Spuren-Karten auf den Tisch legen, in zufälliger Reihenfolge. Spuren-Leser zeigt jede Karte und liest den Tier-Namen vor."
+              },
+              {
+                "n": 2,
+                "name": "Vergleichen",
+                "content": "Das Team vergleicht die Größen — eventuell mit Lupe, eventuell Karten übereinanderlegen. Welche Spur ist die KLEINSTE?"
+              },
+              {
+                "n": 3,
+                "name": "Kleinste finden",
+                "content": "Iguana (Leguan) hat die kleinste Spur. Sein Anfangsbuchstabe I ist der zweite Code-Buchstabe."
+              },
+              {
+                "n": 4,
+                "name": "Stempel & Banderole",
+                "content": "Stempel auf die Forscher-Karte. Banderole mit I ans Forscher-Heft — zweiter von fünf Buchstaben gesichert."
+              }
+            ],
+            "safetyRule": null,
+            "ageAdjust6": "Größenunterschied deutlich machen (Tiger-Pfote 4× so groß wie Iguana-Pfote), Spuren-Leser hilft mit Vergleich.",
+            "ageAdjust8": "Spuren ähnlicher in der Größe machen, Bonus-Frage: 'Warum hat Iguana so kleine Pfoten?' (Antwort: kleines Reptil).",
+            "indoorTip": "Küchentisch oder Couchtisch reicht völlig. Karten zwischendurch nochmal mischen lassen.",
+            "outdoorTip": "Karten in echten Sand oder Erde drücken (mit Wachs-Schicht laminiert) — wird zur echten Spurensuche.",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Größen vergleichen ist Vorschul- bis Grundschul-Skill, den 6-8 perfekt beherrschen. Die Tier-Hülle macht Mathe zur Forschung. Iguana ist außerdem ein \"Aha\"-Tier — die meisten Kinder kennen es als Echse aus dem Zoo, aber wenige wissen, wie klein die Spuren sind."
+          },
+          {
+            "name": "3️⃣ Bananen-Math (Station 3 → G)",
+            "indoor": true,
+            "outdoor": false,
+            "duration": 12,
+            "minAge": 6,
+            "loudness": "ruhig",
+            "effort": "mittel",
+            "material": "5 Affen-Karten mit Bananen-Stauden darunter (Mengen 3, 5, 7, 9, 11). Tier-Namen pro Karte: Brüllaffe (3), Kapuziner (5), Schimpanse (7), Orang-Utan (9), Gibbon (11). Klemmbrett, Stift. Pflanzen-Botaniker zeichnet die Bananen-Mengen ins Forscher-Heft.",
+            "prepText": "Setting: \"Fünf Affen-Arten haben unterschiedlich viele Bananen gesammelt. Welche Affen-Art hat die MEISTE Beute? Sein Anfangsbuchstabe ist euer Code.\" Pflanzen-Botaniker übernimmt die Bananen-Skizze ins Forscher-Heft — kleine Show-Aufgabe.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Karten ansehen",
+                "content": "5 Affen-Karten auf Tisch legen. Pflanzen-Botaniker zeichnet pro Karte die Bananen-Anzahl ins Forscher-Heft."
+              },
+              {
+                "n": 2,
+                "name": "Zählen",
+                "content": "Bananen pro Karte zählen: Brüllaffe 3, Kapuziner 5, Schimpanse 7, Orang-Utan 9, Gibbon 11."
+              },
+              {
+                "n": 3,
+                "name": "Größte finden",
+                "content": "Gibbon hat mit 11 Bananen die meisten. Sein Anfangsbuchstabe G ist der dritte Code-Buchstabe."
+              },
+              {
+                "n": 4,
+                "name": "Stempel & Banderole",
+                "content": "Stempel auf die Forscher-Karte. Banderole mit G ans Forscher-Heft — dritter von fünf Buchstaben gesichert."
+              }
+            ],
+            "safetyRule": null,
+            "ageAdjust6": "Kleinere Zahlen (2, 4, 6, 8, 10), Bananen einzeln aufgedruckt zum Zählen.",
+            "ageAdjust8": "Größere Zahlen (5, 8, 12, 15, 20), gemischt platziert, schnelles Zählen gefragt. Bonus: 'Wie viele Bananen hatten alle zusammen?' (Addition als Extra-Aufgabe).",
+            "indoorTip": "Karten auf den Tisch legen — keine versteckte Suche, reine Sortier-Aufgabe.",
+            "outdoorTip": null,
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Zahlen vergleichen ist Mathematik-Grundskill. Mit Affen-Hülle wird aus Mathe ein Forscher-Ergebnis. Pflanzen-Botaniker-Rolle als Skizzen-Künstler gibt dem mal-liebenden Kind eine echte Aufgabe."
+          },
+          {
+            "name": "4️⃣ Schmetterlings-Farben (Station 4 → E)",
+            "indoor": true,
+            "outdoor": false,
+            "duration": 12,
+            "minAge": 6,
+            "loudness": "ruhig",
+            "effort": "leicht",
+            "material": "5 Schmetterlings-Karten in verschiedenen Farben, jeder mit Schmetterlings-Art-Namen: Blauer Morpho (blau), Atlasspinner (braun), Eulenfalter (gelb), Monarch (orange), Schwalbenschwanz (schwarz-gelb). Pinzette oder Holzstäbchen als \"Forscher-Werkzeug\".",
+            "prepText": "Setting: \"Fünf Schmetterlinge sitzen auf einer Blüte. Nur einer ist KOMPLETT GELB. Sein Name ist euer Code.\" Schmetterlings-Fänger übernimmt das Sortieren — wieder klare Crew-Rolle.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Karten ansehen",
+                "content": "5 Schmetterlings-Karten auflegen. Schmetterlings-Fänger benennt die Farben."
+              },
+              {
+                "n": 2,
+                "name": "Farben sortieren",
+                "content": "Welche Schmetterlinge sind welche Farbe? Blauer Morpho = blau, Atlasspinner = braun, Eulenfalter = gelb."
+              },
+              {
+                "n": 3,
+                "name": "Gelben finden",
+                "content": "Nur Eulenfalter ist komplett gelb. Sein Anfangsbuchstabe E ist der vierte Code-Buchstabe."
+              },
+              {
+                "n": 4,
+                "name": "Stempel & Banderole",
+                "content": "Stempel auf die Forscher-Karte. Banderole mit E ans Forscher-Heft — vierter von fünf Buchstaben gesichert."
+              }
+            ],
+            "safetyRule": null,
+            "ageAdjust6": "Nur 3 Schmetterlinge (Eulenfalter gelb, Blauer Morpho blau, Monarch orange) — schneller zu unterscheiden.",
+            "ageAdjust8": "Alle 5 Schmetterlinge plus Bonus-Fakt pro Tier (\"Wo lebt der Atlasspinner? — Süd-Asien\").",
+            "indoorTip": "Karten flach auf Tisch — kein verstecktes Spiel, reine Farbsortier-Aufgabe mit Wissenstransfer.",
+            "outdoorTip": null,
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Farben unterscheiden geht bei 6-8 sicher — die Hülle ist die echte Schmetterlings-Art. Kinder lernen nebenbei, dass Schmetterlinge nicht nur eine Sorte sind. Schmetterlings-Fänger-Rolle löst die Affen-Beobachter-Konkurrenz auf."
+          },
+          {
+            "name": "5️⃣ Schlange-Geräusch (Station 5 → R)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 12,
+            "minAge": 6,
+            "loudness": "mittel",
+            "effort": "leicht",
+            "material": "Smartphone oder Bluetooth-Box mit 5 vorbereiteten Audio-Schnipseln à 3 Sek.: Wind, Regen, Vogel-Zwitschern, Trommeln, Rasseln (das echte Schlangen-Geräusch). Pro Geräusch eine Karte mit Wort-Schild und Buchstaben (W, R, V, T, R). Schlangen-Beruhiger übernimmt das Identifizieren.",
+            "prepText": "Setting: \"Im Dschungel raschelt es überall. Aber nur EIN Geräusch ist eine echte Schlange. Welches?\" Schlangen-Beruhiger hört genau hin und entscheidet — Crew-Rolle aktiv.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Geräusche abspielen",
+                "content": "Jedes der 5 Geräusche nacheinander 3 Sek. abspielen. Team rät pro Geräusch: Wind, Regen, Vogel, Trommel, Rasseln."
+              },
+              {
+                "n": 2,
+                "name": "Schlangen-Geräusch erkennen",
+                "content": "Schlangen-Beruhiger entscheidet: Nur das Rasseln ist eine echte Klapperschlange. Andere sind Wind, Regen, Vogel-Zwitschern, Trommeln."
+              },
+              {
+                "n": 3,
+                "name": "Lösungs-Buchstabe",
+                "content": "Rasseln beginnt mit R — fünfter und letzter Code-Buchstabe."
+              },
+              {
+                "n": 4,
+                "name": "Stempel & Banderole",
+                "content": "Stempel auf die Forscher-Karte. Banderole mit R ans Forscher-Heft — alle fünf Buchstaben sind da."
+              },
+              {
+                "n": 5,
+                "name": "TIGER zusammensetzen",
+                "content": "T-I-G-E-R: das Lösungswort lautet TIGER! Die Crew weiß jetzt: Der Tiger-Schatz im Dschungel kann geborgen werden."
+              }
+            ],
+            "safetyRule": "Geräusche nicht zu laut abspielen — Aufmerksamkeit hochhalten, aber Ohren schonen. Bei sehr lärm-empfindlichen Kindern: Lautstärke runter, Karten dazu zeigen.",
+            "ageAdjust6": "Nur 3 Geräusche (Rasseln, Wind, Vogel) — schneller zu unterscheiden.",
+            "ageAdjust8": "5 Geräusche + Bonus-Frage: 'Welche Schlange macht das Rasseln? — Klapperschlange'.",
+            "indoorTip": "Bluetooth-Box auf den Tisch, Kinder im Halbkreis. Karten neben der Box auflegen.",
+            "outdoorTip": "Im Garten Box auf Stein stellen, Kinder unter Baum — Geräusche wirken noch authentischer.",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Hör-Aufgabe ist anders als die vier Sortier-Stationen davor — bringt Variation. Schlangen-Beruhiger-Rolle gibt dem aufmerksamen Kind eine echte Funktion. Und: das gemeinsame Zusammensetzen T-I-G-E-R am Ende ist der emotionale Höhepunkt der Stations-Rotation."
+          },
+          {
+            "name": "🌿 Lianen-Parcours: Tiger-Schatz im Dschungel",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 25,
+            "minAge": 6,
+            "loudness": null,
+            "effort": "mittel",
+            "material": "5–6 Lianen aus Krepppapier (~3 €, von Decke hängen oder zwischen Stuhllehnen spannen), Klebeband-Markierungen am Boden für \"Wasserfall-Abschnitt\" und \"Krokodils-Sumpf\" (no-go-Zone), 1 Schuhkarton mit Goldfolie und Tiger-Aufkleber als Schatzkiste, 1 Plüsch-Tiger als \"Wächter\" beim Schatz, Mitgebsel-Inhalte in der Schatzkiste",
+            "prepText": "Story-Setup: \"Mit dem Lösungswort TIGER wissen wir jetzt: irgendwo im Dschungel liegt ein Tiger-Schatz. Er ist nur durch den Lianen-Parcours erreichbar — über den Wasserfall, am Krokodils-Sumpf vorbei, durch das Dickicht. Wasserfall-Navigator führt die Crew.\"",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Story-Setup",
+                "content": "'TIGER ist das Lösungswort — der Tiger-Schatz wartet. Aber der Weg führt durch den Lianen-Parcours.' Schatzkarte austeilen, Wasserfall-Navigator vorn."
+              },
+              {
+                "n": 2,
+                "name": "Lianen-Abschnitt",
+                "content": "Krepppapier-Lianen hängen von Decke / zwischen Stuhllehnen. Crew muss sich durchschlängeln, ohne eine Liane abzureißen — Geschick gefragt."
+              },
+              {
+                "n": 3,
+                "name": "Wasserfall-Sprung",
+                "content": "Klebeband-Linie am Boden = Wasserfall. Jedes Kind springt einmal drüber. Wasserfall-Navigator zeigt das Tempo."
+              },
+              {
+                "n": 4,
+                "name": "Krokodils-Sumpf umgehen",
+                "content": "Klebeband-Fläche am Boden = Sumpf, darf nicht betreten werden. Crew bahnt sich Weg drumherum. Schlangen-Beruhiger hilft mit Hand-Zeichen."
+              },
+              {
+                "n": 5,
+                "name": "Schatz heben",
+                "content": "Am Ende des Parcours wartet die Schatzkiste, bewacht vom Plüsch-Tiger. Geburtstagskind öffnet sie, Mitgebsel werden geborgen. Mission erfüllt — alle haben gewonnen."
+              }
+            ],
+            "safetyRule": "Lianen-Höhe so wählen, dass kein Kind hängenbleibt oder darunter durchklettern muss. Klebeband-Markierungen flach am Boden, keine echten Stolperfallen. Pflicht bei Augen-zu-Variante: ZWEITE Aufsichtsperson. Solo-Variante (1 Erwachsener) ist hier nicht ausreichend.",
+            "ageAdjust6": "Lianen weiter auseinander, Wasserfall-Sprung sehr kurz (30 cm), Sumpf-Fläche klein.",
+            "ageAdjust8": "Lianen enger, Wasserfall breiter (60–80 cm), Sumpf größer und mit verbundenen Augen führen (Wasserfall-Navigator führt Schlangen-Beruhiger durch).",
+            "indoorTip": "Lianen von der Decke hängen, Wasserfall am Türrahmen markieren, Sumpf im Flur — Wohnung wird zum Tropenwald.",
+            "outdoorTip": "Lianen zwischen Bäume spannen, Wasserfall auf dem Rasen markieren — im Garten ist die Bühne größer und atmosphärischer.",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Schließt nach kognitiver Stations-Phase mit motorischem Parcours ab — Körper-Energie raus. Crew-Rollen werden hier alle nochmal aktiv (Wasserfall-Navigator, Schlangen-Beruhiger). Schatz-Fund liefert den emotionalen Höhepunkt vor der Lizenz-Zeremonie."
+          }
+        ],
+        "food": "🎂Schoko-Vulkankuchen mit grünem Krepp-Rand und Mini-Marzipan-Tiger1 Gugelhupf\n🥤\"Dschungel-Wasser\"3 L Apfelschorle\n🍕Tropen-Mini-Pizzen12 Stück\n🌯Schlangen-Wraps8 Stück (zusammengerollt sehen sie aus wie Schlangen)\n🍌Affen-Bananen8 Stk.\n🥕Tukan-Schnabel-Sticks\"Karotten in Schnabel-Form geschnitten\"\n🧀Käse-Würfel200 g\n🍿Forscher-Pop-Mais300 g\n\n💡 Snacks im Story-Frame\nDie \"Schlangen-Wraps\" sind ganz normale Wraps mit Frischkäse/Schinken/Salat — aber zusammengerollt sehen sie aus wie eine Anaconda. Foto vom Snack-Tisch und die Story trägt sich selbst. Karotten-Sticks heißen \"Tukan-Schnäbel\", Bananen \"Affen-Bananen\". Kostet null extra, macht den Tisch zum Erlebnis.",
+        "decoration": "🌴 Dschungel-Teller & BecherSet ~8 €\n🎈 Luftballons grün/gelb/braun15 Stk. ~4 €\n🪧 Dschungel-Girlande1 Stk. ~4 €\n🌿 Grünpflanzen aus dem WohnzimmerKostenlosIn den Partyraum stellen — wirken sofort wie Tropenwald\n🐾 Tierspuren am BodenKostenlosTierspuren aus Tonpapier ausschneiden, vom Eingang zum Partyraum kleben — 15 Min.\n🎵 Dschungel-Geräusche im HintergrundKostenlosYouTube \"Dschungel-Sounds 2 Stunden\" leise im Hintergrund laufen lassen\n🌿 Krepppapier-Lianen5 €Von der Decke hängen = sofort Dschungel-Look\n\n💡 Tierspuren-Trick\nSchneide 10–12 Tierspuren aus braunem Tonpapier aus und klebe sie vom Eingang bis zum Partyraum auf den Boden. Die Kinder folgen der \"Spur\" sobald sie reinkommen — und sind sofort im Story-Modus, bevor sie überhaupt reden müssen.",
+        "giveaways": "🏅 1 Dschungel-Forschungs-Lizenz (Urkunde mit Namen + Crew-Rolle + Foto-Slot)\n🪪 1 Forscher-Ausweis im Scheckkartenformat (selbst ausgedruckt + laminiert)\n⭐ 1 Klett-Abzeichen am Stirnband (Tiger-, Affen- oder Tukan-Motiv)\n🦋 1 Forscher-Heft mit fünf Banderolen-Stickern T-I-G-E-R (das Code-Wort als Erinnerung)\n🐒 1 Mini-Dschungeltier-Figur aus dem Camp\n🍬 1 Tüte Gummibärchen (\"Wegzehrung für die Heimreise\")\n\nAlles in grüne Papiertüte, beschriftet mit \"Ausrüstung für Forscher ___\". Kosten: ~5 € pro Kind. Die Lizenz und der Ausweis nehmen die Kinder mit nach Hause — Eltern fotografieren sie, Kinder zeigen sie wochenlang.",
+        "shoppingList": [
+          {
+            "emoji": "📜",
+            "label": "Tonpapier grün A4 (Stirnbänder + Lizenzen + Ausweise)",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Wie Minimal — Variant-übergreifend für Stirnband-Verleihung und Crew-Rolle."
+          },
+          {
+            "emoji": "🐒",
+            "label": "Dschungeltier-Figuren-Set (12 Stk.)",
+            "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+kinder&tag=machsleicht-21",
+            "priceEur": 5,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Konsistent zu Minimal — motto-zentral, plus Schatzkisten-Inhalt."
+          },
+          {
+            "emoji": "🍌",
+            "label": "Bananen-Code-Knacker-Druckvorlagen (selbst ausdrucken: 4 Affen, 5 Spuren, 5 Affen mit Bananen, 5 Schmetterlinge)",
+            "url": null,
+            "priceEur": 0,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "0€-Print trägt die kompletten 5 Bananen-Code-Knacker-Stationen — strukturelle Klammer der Standard-Variante."
+          },
+          {
+            "emoji": "✏️",
+            "label": "Filzstifte grün/braun/gelb (Drogerie/DM)",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Hilft bei Stirnband-Verzierung + Lizenz-Stempelung, aber normaler Filzstift-Vorrat tut's auch."
+          },
+          {
+            "emoji": "⭐",
+            "label": "Klett-Abzeichen (Tiger-/Affen-/Tukan-Motive, selbstklebend)",
+            "url": "https://www.amazon.de/s?k=klett+abzeichen+tier+kinder&tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Verleihungs-Element für Lizenz-Premium, aber Stempel + Filzstift tut's auch."
+          },
+          {
+            "emoji": "🔖",
+            "label": "Stempel-Set (Drogerie, Sterne oder Pfoten)",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Forscher-Karten-Stempelung pro Station ist Identifikations-Ritual — Variant-Defining für offizielles Forscher-Gefühl."
+          },
+          {
+            "emoji": "🥤",
+            "label": "Apfelschorle (3 L) + Becher + grüne Halme",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Getränke nicht optional bei 2-3h Party."
+          },
+          {
+            "emoji": "🍿",
+            "label": "Snacks (Bananen, Pop-Mais, Karotten, Käse)",
+            "url": null,
+            "priceEur": 12,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Mittagssnack-Pflicht bei 8 Kindern + 3h Party."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Schoko-Backmischung (Gugelhupf) + grüner Krepppapier-Rand + Mini-Marzipan-Tiger",
+            "url": null,
+            "priceEur": 10,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Schoko-Vulkankuchen mit grünem Krepp-Rand und Marzipan-Tiger ist motto-spezifisches Pflicht-Element."
+          },
+          {
+            "emoji": "🍕",
+            "label": "Mini-Pizzen + Wraps für Mittagssnack",
+            "url": null,
+            "priceEur": 10,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Wenn Apfelschorle + Snacks da sind, sind Mini-Pizzen eine Wow-Aufrüstung — nicht zwingend."
+          },
+          {
+            "emoji": "🌿",
+            "label": "Krepppapier grün (für Kuchen-Rand + Lianen)",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Lianen-Parcours + Schoko-Vulkankuchen-Rand — doppelte Funktion."
+          },
+          {
+            "emoji": "🐅",
+            "label": "Plüsch-Tiger als Schatz-Wächter (vorhandenes Kuscheltier reicht — sonst",
+            "url": "https://www.amazon.de/s?k=pl%C3%BCsch+tiger+klein&tag=machsleicht-21",
+            "priceEur": 0,
+            "hasAffiliate": true,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Explizit ‚vorhandenes reicht' — Kuscheltier-Bestand im Kinderzimmer ist Standard."
+          },
+          {
+            "emoji": "🍬",
+            "label": "Gummibärchen + Papiertüten grün",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Konsistent — Mitgebsel + Verpackung."
+          },
+          {
+            "emoji": "🎈",
+            "label": "Luftballons + Dschungel-Teller-Set",
+            "url": null,
+            "priceEur": 12,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Atmosphäre-Premium, aber funktional verzichtbar."
+          }
+        ],
+        "estimatedCostEur": 80,
+        "costContext": "Geschätzte Kosten (Standard, 8 Kinder)"
+      },
+      {
+        "id": "wow",
+        "label": "Wow — 4 Stunden, die volle Expedition",
+        "headline": "✨ Wow — 4 Stunden, der Geburtstag des Jahres",
+        "intro": "Für den Geburtstag, über den noch Wochen später in der Schule geredet wird. Wow baut auf Standard auf: gleicher Bananen-Code-Knacker mit Lösungswort TIGER, gleicher Lianen-Parcours, gleiche Lizenz-Zeremonie. Erweitert wird es um eine 6. Station Tarn-Übung (Forscher-Tarnung in Erdfarben), die Schatz-im-Dschungel-Quest als zweiten dramatischen Bogen, echte Forscher-Buschhüte aus Filz als Mitgebsel-Highlight und optional Walkie-Talkie-Sets. Funktioniert besonders, wenn dein Kind auf größere Bühne reagiert oder du den 7. Geburtstag als Meilenstein gestalten willst. Wer mag, kann einzelnen Kindern hier schon eine kleine Spezial-Aufgabe geben (Camp-Leiter mit Walkie-Talkie, Pflanzen-Botaniker mit Forscher-Heft) — die ausgewachsene Spezialisierungs-Mechanik kommt erst in der 9–12-Variante.",
+        "timeWindow": "14:00–18:00, 10 Kinder",
+        "schedule": [
+          {
+            "time": "14:00",
+            "title": "Eintreffen im Forscher-Camp, Stirnband-Werkstatt, Crew-Rollen, Eid",
+            "description": "Wie in Standard: Tonpapier-Stirnbänder mit Namen + Crew-Rolle, Forscher-Karte mit jetzt 6 leeren Stempel-Feldern (eine Station mehr als Standard). 20 Min."
+          },
+          {
+            "time": "14:20",
+            "title": "🍌 Bananen-Code-Knacker + Tarn-Übung (6 Stationen × 10 Min)",
+            "description": "6 Stationen statt 5: Affen-Beobachten, Spuren-Lesen, Bananen-Math, Schmetterlings-Farben, Schlange-Geräusch — wie Standard — plus zusätzliche Tarn-Übung (Anleitung unten). 60 Min. Lösungswort bleibt TIGER, aber Tarn-Station gibt zusätzlichen Stempel ohne neuen Buchstaben."
+          },
+          {
+            "time": "15:20",
+            "title": "🎂 Pause am Wasserloch — Kuchen mit Wunderkerze",
+            "description": "Schoko-Vulkankuchen mit grünem Krepp-Dschungel-Rand + Marzipan-Tiger + Wunderkerze obendrauf. Apfelschorle als \"Dschungel-Wasser\". Happy Birthday singen, kurze Geburtstagsgeschenke-Runde. 30 Min. — länger als bei Standard, weil der zweite Akt Energie braucht."
+          },
+          {
+            "time": "15:50",
+            "title": "🏅 Lizenz-Zeremonie + Mission-Briefing",
+            "description": "Jedes Kind bekommt seine Dschungel-Forschungs-Lizenz, Klett-Abzeichen aufs Stirnband und — Wow-Highlight — den Filz-Forscherhut als echte Expeditions-Kopfbedeckung. Sofort danach: dramatisches Mission-Briefing. \"Frisch lizenzierte Forscher! Wir haben einen Notruf erhalten — der versteckte Tiger-Schatz im Dschungel ist in Gefahr. Wilderer sind unterwegs. Eure erste echte Mission beginnt jetzt.\" 20 Min."
+          },
+          {
+            "time": "16:10",
+            "title": "🗺️ Schatz-im-Dschungel-Quest (Lianen-Parcours-Variante: 5 Stationen)",
+            "description": "Der Höhepunkt der Wow-Variante. 5-Stationen-Tour durch Garten/Wohnung mit Tierspuren als Wegweisern, Tier-Rätseln und einem finalen Tarn-Test, der die Crew zum Tiger-Schatz führt. 45 Min. Kann mit dem [machsleicht-Schatzsuche-Generator](/kindergeburtstag?modus=schatzsuche&motto=dschungel) erstellt werden — Motto Dschungel ist dort als Story \"Durch den Tropenwald zum Tiger-Schatz\" hinterlegt."
+          },
+          {
+            "time": "16:55",
+            "title": "🏆 Schatz-Eröffnung & Beute-Sicherung",
+            "description": "Die Crew findet den Tiger-Schatz (Schuhkarton mit Goldfolie, Tiger-Aufkleber, kleine Schatzkiste innen) — und rettet seine \"Schätze\" (Mitgebsel-Inhalte) vor den Wilderern. Geburtstagskind eröffnet die Schatzkiste, jedes Kind bekommt sein Erinnerungsstück. 20 Min."
+          },
+          {
+            "time": "17:15",
+            "title": "🐒 Dschungel-Kino mit Forscher-Pop-Mais",
+            "description": "Runterkommen nach 4 Akten. 25 Min. Tier-Doku auf YouTube (\"Tiere des Tropenwalds — Lernvideos für Kinder\" oder \"Planet Schule Regenwald\"), Pop-Mais aus großer Schüssel, Kinder kuscheln auf Kissen. Eltern können langsam reinkommen."
+          },
+          {
+            "time": "17:40",
+            "title": "🎁 Verabschiedung am Lager-Tor",
+            "description": "Mitgebsel-Tüte voll, Filz-Forscherhut auf dem Kopf, Lizenz unter dem Arm, Forscher-Heft in der Hand. Die Kinder gehen als zertifizierte Dschungel-Forscher nach Hause. Eltern kommen nicht aus dem Staunen raus. 20 Min. Pufferzeit."
+          }
+        ],
+        "games": [
+          {
+            "name": "6️⃣ Tarn-Übung (zusätzliche 6. Station)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 10,
+            "minAge": 6,
+            "loudness": "ruhig",
+            "effort": "leicht",
+            "material": "Material pro Team: 2 Stoffquadrate (~30×30 cm, alte Geschirrtücher zerschnitten), abwaschbare Stoffmalfarben in Erdfarben (grün, braun, ocker), 1 Beispiel-Tarn-Tuch zum Vorzeigen",
+            "prepText": "Setting: \"Ein guter Forscher kann sich tarnen, ohne dass die Tiere ihn bemerken. Jeder bemalt sein Stofftuch wie der Dschungel — grün und braun. Wer sich danach 30 Sekunden ungesehen verstecken kann, hat bestanden.\"\n\nErst bemalen, dann tarnen. Jedes Kind bekommt ein Stoffquadrat und malt es mit Erdfarben so an, dass es zur Umgebung passt (Garten = grün-braun, Sofa = grau-beige). 6 Min. malen.\n\nDann: das Tuch über sich legen oder hinter sich halten und sich im Raum/Garten verstecken. Der Spielleiter schaut 15 Sekunden weg, dann sucht er. Wer 30 Sekunden ungesehen bleibt, hat bestanden — und kriegt einen Stempel.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Tuch bemalen",
+                "content": "Jedes Kind malt sein Stoffquadrat mit Erdfarben passend zur Umgebung an (Garten grün-braun, Sofa grau-beige). 6 Min."
+              },
+              {
+                "n": 2,
+                "name": "Prinzip zeigen",
+                "content": "Du zeigst am Beispiel-Tuch: ein gutes Tarn-Muster verschwindet vor passendem Hintergrund, ein falsches sticht raus."
+              },
+              {
+                "n": 3,
+                "name": "Verstecken",
+                "content": "Kind legt das Tuch über sich oder hält es vor sich und sucht ein passendes Versteck im Raum oder Garten."
+              },
+              {
+                "n": 4,
+                "name": "Suchen",
+                "content": "Spielleiter schaut 15 Sek. weg, dann sucht er. Wer 30 Sek. ungesehen bleibt, besteht."
+              },
+              {
+                "n": 5,
+                "name": "Stempel & Mitgebsel",
+                "content": "Bestanden gibt's einen Stempel auf die Forscher-Karte. Das Tarn-Tuch wandert als Mitgebsel mit nach Hause."
+              }
+            ],
+            "safetyRule": "Nur kindersichere, abwaschbare Filzstifte/Stoffmalfarben. Keine Verstecke an wackeligen Regalen oder hinter heißen Heizungen.",
+            "ageAdjust6": "Spielleiter zeigt vorher ganz deutlich, wo ungeeignete Verstecke sind ('hinter dem weißen Vorhang funktioniert dein grünes Tuch nicht'). Pädagogische Bemerkung statt Regel.",
+            "ageAdjust8": "Mehrere Verstecke nacheinander, Zeit knapper machen (45 Sek. statt 30 Sek.).",
+            "indoorTip": "Vorhänge, hinter Sofa, in Wäscheecke — gibt mehr Verstecke als man denkt. Indoor-Limit: max. 4 Kinder gleichzeitig tarnen lassen. Bei größerer Gruppe in 2 Runden aufteilen ODER Outdoor.",
+            "outdoorTip": "Im Garten Tarn-Tuch gegen echtes Grün und Erde testen — der Aha-Effekt ist draußen viel größer als drinnen.",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Erst malen, dann verstecken: Das aktive Gestalten gibt jedem Kind ein Ergebnis in der Hand, bevor die schwere Disziplin Stillhalten kommt. Mit 6-8 verstehen Kinder hier das Prinzip Tarnung wirklich — und nehmen ihr Tarn-Tuch als greifbares Mitgebsel mit nach Hause."
+          },
+          {
+            "name": "🗺️ Schatz-im-Dschungel-Quest: Tiger-Schatz bergen",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 45,
+            "minAge": 6,
+            "loudness": null,
+            "effort": "hoch",
+            "material": "5 vorbereitete Stations-Umschläge mit Rätseln, 1 Schatzkarte (mit dem [machsleicht-Schatzsuche-Generator](/kindergeburtstag?modus=schatzsuche&motto=dschungel) erstellen — Motto \"Dschungel\", Themen-Story \"Tiger-Schatz im Dschungel\" ist hinterlegt), 1 Schatzkiste (Schuhkarton mit Goldfolie und Tiger-Aufkleber) mit Mitgebsel-Inhalten, optionale Walkie-Talkies für Team-Kommunikation",
+            "prepText": "Setting: \"Wilderer haben Pläne vom versteckten Tiger-Schatz gestohlen. Wenn ihr den Schatz nicht vorher findet, ist er für immer verloren.\"\n\n5 Stationen führen in vorgegebener Reihenfolge zum Schatz. Jede Station hat ein Dschungel-Rätsel. Camp-Leiter ruft den Wechsel aus, Wasserfall-Navigator führt die Crew.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Quest-Setup",
+                "content": "'Wilderer haben die Schatz-Pläne gestohlen. Findet den Tiger-Schatz, bevor er verloren ist!' Schatzkarte austeilen."
+              },
+              {
+                "n": 2,
+                "name": "Station 1 — Affen-Hinweis",
+                "content": "Affen-Beobachter findet einen Hinweis bei den Affen-Karten: 'Wer kann am höchsten klettern? — Der Gibbon. Sucht weiter, wo etwas hoch hängt.'"
+              },
+              {
+                "n": 3,
+                "name": "Station 2-4 — Schmetterling, Schlange, Pflanze",
+                "content": "Drei weitere Stationen mit Mini-Rätseln zu Schmetterling, Schlange und Pflanze. Pro Station gibt's einen Tarn-Punkt für die Crew-Karte."
+              },
+              {
+                "n": 4,
+                "name": "Station 5 — Tiger-Tarn-Test",
+                "content": "Letzte Station: ein Tarn-Tuch (vom Vorlauf) muss richtig platziert werden, dann erscheint die letzte Hinweis-Karte. Auf der steht: 'Der Schatz liegt am [vereinbartes Versteck].'"
+              },
+              {
+                "n": 5,
+                "name": "Schatz heben",
+                "content": "Mit dem Lösungswort und der letzten Karte zum Versteck laufen, Schatz (Goldfolien-Karton mit Tiger-Aufkleber) öffnen, Mitgebsel als Schätze verteilen."
+              }
+            ],
+            "safetyRule": "Schatz-Versteck und Stations-Wege ohne Stolperfallen wählen. Beim Loslaufen zum Schatz auf rutschige Böden und Türkanten achten.",
+            "ageAdjust6": "Stationen 2 und 4 vereinfachen — Bilder direkt zeigen statt Rätsel formulieren.",
+            "ageAdjust8": "Stationen schwieriger — mehr Wortspiele, optional mit kleinem Symbol-Code (zwei aufeinander folgende Hinweise nötig, um das nächste Versteck zu finden).",
+            "indoorTip": "Fünf Stationen durch Zimmer und Flur verteilen, Schatz-Versteck markant wählen (unter dem Bücherregal, im Schuhschrank).",
+            "outdoorTip": "Stationen über den Garten ziehen, Walkie-Talkies fürs Team einsetzen — die Quest gewinnt draußen an Abenteuer-Atmosphäre.",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Fünf Stationen mit echtem Schatz-Fund am Ende: Das ist die kognitive Tiefe, die 6-8-Jährige tragen können — Rätsel kombinieren, Tarn-Tuch nutzen, gemeinsam knobeln. Der Schatzfund liefert den emotionalen Höhepunkt der Wow-Variante."
+          }
+        ],
+        "food": "🎂Schoko-Vulkankuchen mit Wunderkerze1 Gugelhupf + 1 kleiner\n🥤\"Dschungel-Wasser\"4 L Apfelschorle\n🍕Tropen-Mini-Pizzen15 Stück\n🌯Schlangen-Wraps10 Stück\n🍌Affen-Bananen10 Stk.\n🥕Tukan-Schnabel-Sticks + Käse-Würfel\"Forscher-Snack\"\n🍿Pop-Mais (Dschungel-Kino)400 g\n🍫Schoko-Goldmünzen mit Tiger-MotivSchatzkisten-Inhalt",
+        "decoration": "🌴 Dschungel-Teller & BecherSet ~10 €\n🎈 Luftballons grün/gelb/braun20 Stk. ~5 €\n🪧 Dschungel-Girlande~4 €\n🌿 Krepppapier-Lianen~5 € KrepppapierVon der Decke hängen = Tropenwald-Look\n🌿 Grünpflanzen aus dem WohnzimmerKostenlosIn den Partyraum stellen — Tropen-Atmosphäre sofort da\n🪧 \"Forscher-Camp\"-SchildKostenlosPappe + Edding, am Eingang aufstellen\n🐾 Tierspuren-PfadKostenlosTierspuren aus Tonpapier, vom Eingang bis zum Partyraum\n🔊 Dschungel-SoundsKostenlosYouTube \"Dschungel-Sounds 2 Stunden\" leise im Hintergrund\n📦 Tiger-Schatzkiste~5 €Schuhkarton + Goldfolie + Tiger-Aufkleber\n\n🐅 Optional: Aufblasbares Kostüm als Überraschungs-Auftritt\nEine Variante für die Eröffnung: ein [aufblasbares Tier-Kostüm*](https://www.amazon.de/s?k=aufblasbares+kost%C3%BCm+kinder+tier&tag=machsleicht-21) (~30 €) für das Geburtstagskind oder ein Elternteil. Geburtstagskind eröffnet die Tür im Kostüm, oder Mama/Papa taucht als Überraschungsgast beim Mission-Briefing auf. Funktioniert besonders, wenn du eh ein lustiges Foto für den Familien-Status willst — der Auftritt wird zum Eis-Brecher der Party. Nicht nötig, aber wirkungsvoll. Separat kalkuliert, weil optional.",
+        "giveaways": "🎩 Filz-Forscherhut (Wow-Highlight, geht direkt vom Kopf nach Hause)\n🏅 Dschungel-Forschungs-Lizenz (Urkunde mit Foto-Slot + Crew-Rolle)\n🪪 Forscher-Ausweis im Scheckkartenformat (laminiert)\n📓 Forscher-Heft (DIY-Notizbuch mit Foto-Slot vorne, Tier-Aufklebern innen, TIGER-Banderolen-Erinnerung)\n⭐ Klett-Abzeichen am Stirnband (Tiger-, Affen- oder Tukan-Motiv)\n🎽 Selbst gestaltetes Tarn-Tuch (von der Tarn-Station)\n🐒 Mini-Dschungeltier-Figur aus dem Camp\n🍫 Schoko-Goldmünzen mit Tiger-Motiv aus der Schatzkiste\n🍬 Tüte Gummibärchen (\"Wegzehrung\")\n\nAlles in grüne Papiertüte, beschriftet mit \"Ausrüstung für Forscher ___\". Kosten: ~10 € pro Kind (inklusive Filz-Forscherhut). Lizenz, Ausweis und Forscherhut nehmen die Kinder mit nach Hause — Eltern fotografieren sie, Kinder zeigen sie wochenlang, Forscherhut wird wochenlang getragen.",
+        "shoppingList": [
+          {
+            "emoji": "📜",
+            "label": "Tonpapier grün A4 (Stirnbänder + Lizenzen + Ausweise + Forscher-Heft-Cover)",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Wie Standard — Variant-übergreifend."
+          },
+          {
+            "emoji": "🐒",
+            "label": "Dschungeltier-Figuren-Set",
+            "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+kinder&tag=machsleicht-21",
+            "priceEur": 5,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Konsistent."
+          },
+          {
+            "emoji": "🍌",
+            "label": "Bananen-Code-Knacker-Druckvorlagen (alle 5 Stationen-Karten + Tarn-Karte)",
+            "url": null,
+            "priceEur": 0,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "0€-Print trägt die kompletten 5+1 Stationen + Schatzsuche-Quest-Karten — strukturelle Klammer der Wow-Variante."
+          },
+          {
+            "emoji": "🎽",
+            "label": "Stoffquadrate für Tarn-Tücher (alte Geschirrtücher zerschneiden)",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Geschirrtücher aus Haushalt, explizit DIY-Anweisung. Müll-zu-Outfit."
+          },
+          {
+            "emoji": "✏️",
+            "label": "Filzstifte + Stoffmalfarben Erdfarben (Drogerie/DM, grün/braun/ocker)",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Konsistent — Vorrat-Item + Stoffmal-Farben für Tarn-Übung."
+          },
+          {
+            "emoji": "⭐",
+            "label": "Klett-Abzeichen (Tiger-/Affen-/Tukan-Motive)",
+            "url": "https://www.amazon.de/s?k=klett+abzeichen+tier+kinder&tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Konsistent — Premium-Lizenz-Element."
+          },
+          {
+            "emoji": "🔖",
+            "label": "Stempel-Set (Drogerie)",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Konsistent — Forscher-Karten-Stempelung."
+          },
+          {
+            "emoji": "🥤",
+            "label": "Apfelschorle (4 L) + Becher + grüne Halme",
+            "url": null,
+            "priceEur": 7,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Wow-Verpflegung bei 8-10 Kindern + 4h Party."
+          },
+          {
+            "emoji": "🍿",
+            "label": "Snacks für 10 Kinder (Bananen, Pop-Mais, Karotten, Käse)",
+            "url": null,
+            "priceEur": 16,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Konsistent — Snack-Pflicht."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Schoko-Backmischung (Gugelhupf) + grüner Krepp-Rand + Marzipan-Tiger + Wunderkerze",
+            "url": null,
+            "priceEur": 12,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Konsistent — Schoko-Vulkankuchen-Pflicht + Wow-Wunderkerze."
+          },
+          {
+            "emoji": "🍕",
+            "label": "Mini-Pizzen + Wraps für Mittagssnack",
+            "url": null,
+            "priceEur": 14,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Konsistent zu Standard — Wow-Aufrüstung."
+          },
+          {
+            "emoji": "📦",
+            "label": "Tiger-Schatzkiste (Schuhkarton, Goldfolie, Tiger-Aufkleber)",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Schatz-im-Dschungel-Quest — Schuhkarton aus Vorrat, Goldfolie + Aufkleber = günstige Premium-Hülle."
+          },
+          {
+            "emoji": "🍫",
+            "label": "Schoko-Goldmünzen mit Tiger-Motiv (Supermarkt)",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Schatz-Inhalt-Premium, aber Charms + Tier-Figuren tun's funktional."
+          },
+          {
+            "emoji": "📓",
+            "label": "Forscher-Heft DIY (Aufkleber-Tiere, Heftklammern, Notizpapier, TIGER-Banderolen)",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Wow-Highlight-Goodie, aber Lizenz + Tier-Figur reicht als Mitgebsel-Set."
+          },
+          {
+            "emoji": "🍬",
+            "label": "Gummibärchen + Papiertüten grün",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Konsistent."
+          },
+          {
+            "emoji": "🎈",
+            "label": "Luftballons + Krepppapier-Lianen + Dschungel-Teller",
+            "url": null,
+            "priceEur": 18,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Konsistent — Atmosphäre-Premium."
+          },
+          {
+            "emoji": "🐅",
+            "label": "Plüsch-Tiger als Schatz-Wächter (vorhandenes Kuscheltier reicht)",
+            "url": null,
+            "priceEur": 0,
+            "hasAffiliate": false,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Konsistent — Kuscheltier-Bestand."
+          },
+          {
+            "emoji": "🎩",
+            "label": "Filz-Forscherhüte (10 Stk., optional)",
+            "url": "https://www.amazon.de/s?k=safari+hut+kinder+filz&tag=machsleicht-21",
+            "priceEur": 80,
+            "hasAffiliate": true,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Explizit optional, 80€ — Premium-Verkleidung, normalerweise nicht zwingend."
+          },
+          {
+            "emoji": "📻",
+            "label": "Walkie-Talkie-Set (4 Stk., optional)",
+            "url": "https://www.amazon.de/s?k=walkie+talkie+kinder+set&tag=machsleicht-21",
+            "priceEur": 25,
+            "hasAffiliate": true,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Explizit optional — Schatzsuche-Premium, normales Handy-Rufen tut's auch."
+          },
+          {
+            "emoji": "🐅",
+            "label": "Aufblasbares Tier-Kostüm (optional)",
+            "url": "https://www.amazon.de/s?k=aufblasbares+kost%C3%BCm+kinder+tier&tag=machsleicht-21",
+            "priceEur": 30,
+            "hasAffiliate": true,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Explizit optional — Foto-Highlight, kein Spielmaterial."
+          }
+        ],
+        "estimatedCostEur": 125,
+        "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)"
+      }
+    ],
+    "cakeRecipe": {
+      "intro": "Schoko-Vulkankuchen mit grünem Krepp-Dschungel-Rand und Mini-Tiger aus Marzipan. Geht mit jedem Gugelhupf oder Schoko-Kasten. Das Besondere ist die Kombination aus Vulkan-Form (klassischer Gugelhupf), grünem Krepppapier-Rand (Dschungel) und Marzipan-Tigern (Hauptdarsteller).",
+      "steps": [
+        {
+          "n": 1,
+          "content": "Schoko-Gugelhupf backen — Fertigmischung reicht völlig (Dr. Oetker, Kathi, Aurora). Kein Mensch schmeckt den Unterschied. Schoko-Variante wählen, damit der \"Vulkan\" dunkel und satt aussieht."
+        },
+        {
+          "n": 2,
+          "content": "Komplett abkühlen lassen. Ungeduld = Glasur-Desaster."
+        },
+        {
+          "n": 3,
+          "content": "Glasur in Schokolade: 1 Packung Schokoglasur dunkel über den ganzen Gugelhupf gießen, so dass es vom Vulkan-Krater hinunterläuft. Sieht aus wie Lava."
+        },
+        {
+          "n": 4,
+          "content": "Marzipan-Tiger obendrauf: Marzipan-Tiere aus dem Backregal (Dr. Oetker hat oft Sets mit Tiger, Affe, Löwe), oder Marzipan-Rohmasse + orange/schwarz-Lebensmittelfarbe + Hand-Formen. 2–3 Mini-Tiger reichen — sehen aus wie eine kleine Familie auf dem Vulkan."
+        },
+        {
+          "n": 5,
+          "content": "Grünes Krepppapier-Rand: 5 cm breiter Krepppapier-Streifen grün, am Tellerrand um den Kuchen herum legen — sieht aus wie Dschungel-Pflanzen, die den Vulkan umranden. Mit Zahnstocher fixieren, falls es rutscht."
+        },
+        {
+          "n": 6,
+          "content": "Optional Wow: Wunderkerze in der Vulkan-Mitte, beim Happy-Birthday anzünden — der \"Vulkan bricht aus\". Foto-Moment."
+        }
+      ],
+      "meta": {
+        "aufwand": "45 Min. inkl. Backen und Deko",
+        "kosten": "~10 €",
+        "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. Marzipan enthält Mandeln (Nuss-Allergie beachten)."
+      },
+      "tips": [
+        {
+          "title": "🎂 Keine Lust zu backen?",
+          "body": "Fertigen Schoko-Gugelhupf beim Bäcker oder Supermarkt kaufen, Schokoglasur drüber, Marzipan-Tiger obendrauf, grünen Krepppapier-Rand drumherum. Sieht aus wie gewollt, dauert 5 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: \"Der Kuchen war nicht selbstgemacht.\""
+        },
+        {
+          "title": "🐅 Marzipan-Tiger ohne Set",
+          "body": "Wenn dein Backregal keine fertigen Tiger-Sets hat: Rohmarzipan + orange Lebensmittelfarbe kneten, kleine Würste rollen, schwarz-Streifen mit Zahnstocher aufmalen, fertig. 3 Mini-Tiger in 10 Minuten gemacht. YouTube-Tutorials gibt's massenweise unter \"Marzipan Tiger formen\"."
+        }
+      ]
+    },
+    "parentTips": {
+      "structured": [
+        {
+          "topic": "🚨 Allergien vorher abfragen",
+          "detail": "Bei 8 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten). In die Einladung schreiben: \"Hat dein Kind Allergien oder Unverträglichkeiten?\" Apfelschorle, Pop-Mais und Karotten-Sticks sind fast immer safe — Marzipan-Tiger und Schokolade prüfen (Mandeln/Milch)."
+        },
+        {
+          "topic": "📋 Plan B bei Regen",
+          "detail": "Alle Dschungel-Stationen funktionieren auch drinnen. Bananen-Code-Knacker: Karten am Küchen- oder Wohnzimmertisch. Lianen-Parcours: Krepppapier-Lianen von der Decke + Klebeband-Wasserfall im Flur. Tarn-Übung: Verstecke hinter Sofa, Vorhang, Wäscheecke. Spuren-Rallye: durch Flur und Wohnzimmer. Einziges, was draußen schöner ist: das Tarn-Tuch im Garten testen — drinnen reicht der Vorhang. Nie ohne Plan B."
+        },
+        {
+          "topic": "🧑‍🤝‍🧑 Wie viele Helfer? Realistisch geplant",
+          "detail": "Bei der Stations-Rotation der Standard-Variante mit 5 parallel betriebenen Stationen reicht 1 Helfer — du machst zwei bis drei Stationen, der Helfer den Rest, gemeinsame Pause am Wasserloch deckt Übergänge. Ab 8 Kindern wird's solo-mit-1-Helfer eng aber machbar. Wow-Variante mit 10 Kindern, 6. Tarn-Station und Schatz-im-Dschungel-Quest braucht mindestens 2 Helfer, weil die Quest viel Geräuschkulisse und Bewegung erzeugt. Frag Partner, Großeltern, befreundete Eltern. Viele bleiben gerne — eine Forscher-Expedition ist auch für Erwachsene unterhaltsam zu beobachten."
+        },
+        {
+          "topic": "📱 Partyseite statt WhatsApp-Chaos",
+          "detail": "Statt 8 einzelne Nachrichten an die Eltern: erstelle eine [WhatsApp-Partyseite](https://party.machsleicht.de) mit machsleicht. Adresse, Uhrzeit, Dschungel-Motto-Hinweis (Eltern können erdfarbene Kleidung anziehen lassen), Abholzeit, Allergie-Abfrage — alles auf einer Seite. Eltern antworten mit einem Klick. Du siehst Zusagen und Allergien live. Kostenlos, in 2 Minuten fertig."
+        },
+        {
+          "topic": "📸 Foto-Moment einplanen",
+          "detail": "Die Lizenz-Zeremonie ist der Foto-Moment der Party. Jedes Kind mit Stirnband, Klett-Abzeichen, Lizenz in der Hand (Wow: Filz-Forscherhut auf dem Kopf, TIGER-Banderolen im Forscher-Heft) — als Gruppenbild und einzeln. Eltern fotografieren beim Geburtstagskind sowieso, aber ein guter Tipp ist, die anderen Eltern bei der Abholung zu fragen, ob du das Foto mit ihrem Kind per WhatsApp schicken sollst. Macht Eindruck und kostet null."
+        }
+      ],
+      "educationalValue": "Hinter dem Forscher-Spiel steckt echtes Lernen: Die Kinder sortieren alphabetisch (Affen-Beobachten), vergleichen Größen (Spuren-Lesen), zählen Mengen (Bananen-Math), unterscheiden Farben und Tier-Arten (Schmetterlinge) und identifizieren Geräusche (Schlange-Geräusch). Das Lösungswort TIGER schließt eine echte Codeknacker-Aufgabe ab — Buchstaben kombinieren, gemeinsames Erfolgserlebnis. Lianen-Parcours und Tarn-Übung trainieren Körperkontrolle, Geduld und Konzentration — mit 6-8 die schwerste Disziplin. Tier-Wissen, Forscher-Mindset und kooperative Problemlösung — fast nebenbei."
+    },
+    "invitationTemplate": "🌴 Interaktive Dschungel-Einladung per WhatsApp verschicken\n\nErstelle in 30 Sekunden eine fertige Einladung mit Name, Datum und Ort — die Gäste bekommen ein kleines Dschungel-Abenteuer als Vorgeschmack auf die Forscher-Expedition.\n[🌴 Dschungel-Einladung erstellen →](/einladung/erstellen?motto=dschungel)\n\n[💬 Idee per WhatsApp teilen](https://wa.me/?text=Schau%20mal%3A%20Dschungel-Kindergeburtstag%20f%C3%BCr%206%E2%80%938%20Jahre%20%E2%80%94%203%20fertige%20Forscher-Konzepte%20mit%20Bananen-Code-Knacker%2C%20Lianen-Parcours%20und%20Einkaufsliste!%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Fdschungel-6-8-jahre)",
+    "faq": [
+      {
+        "q": "Wie lange sollte ein Dschungel-Geburtstag für 6–8-Jährige dauern?",
+        "a": "2 bis 4 Stunden, je nach Variante. Minimal: 2 Stunden mit zwei Spielen. Standard: 3 Stunden mit Bananen-Code-Knacker und Lianen-Parcours. Wow: 4 Stunden mit zusätzlicher Tarn-Station und Schatz-im-Dschungel-Quest. Kürzer ist besser als länger — nach 4 Stunden kippt die Stimmung selbst bei 8-Jährigen."
+      },
+      {
+        "q": "Wie viele Kinder sollte man zum Dschungel-Geburtstag einladen?",
+        "a": "Faustregel: Alter des Kindes + 1. Also 7–9 Kinder bei einem 7-Jährigen. Für die Bananen-Code-Knacker-Stationen der Standard-Variante sind 8 Kinder ideal (4 Teams à 2 Kinder bei 5 Stationen). Wow funktioniert mit 10 Kindern und der zusätzlichen Tarn-Station, aber dann brauchst du 2 Helfer."
+      },
+      {
+        "q": "Was kostet ein Dschungel-Geburtstag?",
+        "a": "Zwischen 25 € (Minimal, 6 Kinder) und 125 € (Wow, 10 Kinder, ohne Highlight-Produkte). Standard liegt bei ca. 80 € für 8 Kinder und bietet das beste Verhältnis aus Aufwand und Ergebnis. Filz-Forscherhüte als Wow-Highlight kommen mit 80–120 € extra dazu, sind aber das emotional wertvollste Mitgebsel."
+      },
+      {
+        "q": "Funktioniert ein Dschungel-Geburtstag auch drinnen?",
+        "a": "Ja, alle Stationen und Spiele funktionieren drinnen. Bananen-Code-Knacker am Küchen-/Wohnzimmertisch, Lianen-Parcours mit Krepppapier-Lianen von der Decke, Tarn-Übung mit Vorhängen, Spuren-Rallye durch Flur und Wohnzimmer. Draußen ist es atmosphärischer (echte Tier-Spuren im Garten, Lianen zwischen Bäumen), drinnen genauso wirksam."
+      },
+      {
+        "q": "Was bedeutet der Bananen-Code-Knacker mit Lösungswort TIGER?",
+        "a": "Fünf Stations-Rätsel ergeben gemeinsam ein Lösungswort: T (alphabetisch erster Affe Theo), I (kleinste Spur Iguana), G (größte Bananen-Menge Gibbon), E (gelber Schmetterling Eulenfalter), R (Rasseln als Schlangen-Geräusch). Buchstaben werden nach jeder Station mit Banderolen ans Forscher-Heft geklebt — am Ende ergibt sich TIGER, und die Crew weiß, dass der Tiger-Schatz geborgen werden kann."
+      },
+      {
+        "q": "Brauche ich Helfer für die Stations-Rotation?",
+        "a": "Mit 2 Helfern wird's entspannt, mit 1 Helfer geht's gut. Solo machbar bei der Standard-Variante, wenn die Stationen nacheinander statt parallel laufen — dauert dann 60 Min für die ganze Gruppe statt nur 2 Kinder pro Station. Wow mit Schatz-im-Dschungel-Quest braucht mindestens 2 Helfer."
+      }
+    ],
+    "preparationWeeks": {
+      "minus4Weeks": {
+        "headline": "4 Wochen vorher — Grundgerüst stellen",
+        "items": [
+          {
+            "icon": "📅",
+            "title": "Datum + Uhrzeit + Treffpunkt fixieren",
+            "detail": "Samstag oder Sonntag 14–17 Uhr ist Sweet-Spot. Max 2-3h Party bei 6-8. Drinnen-Plan-B im Hinterkopf für Lianen-Parcours."
+          },
+          {
+            "icon": "👥",
+            "title": "Gästeliste festzurren — 6–8 Kinder",
+            "detail": "6 für Minimal/Standard, bis 8 für Wow (Schatz-im-Dschungel-Quest braucht Team-Größe). Über 10 wird's bei Tarn-Übung chaotisch."
+          },
+          {
+            "icon": "💶",
+            "title": "Variante wählen: Minimal / Standard / Wow",
+            "detail": "Minimal 25€ (Spuren-Rallye + Tier-Quiz), Standard 80€ (+ 5 Bananen-Code-Knacker-Stationen + Lianen-Parcours), Wow 125€ (+ 6. Tarn-Station + Schatz-im-Dschungel-Quest + Forscher-Heft). Entscheidung jetzt."
+          },
+          {
+            "icon": "✉️",
+            "title": "Einladungen rausschicken",
+            "detail": "Pflicht im Text: Allergie-Abfrage. Bei Wow Hinweis: ‚Wir gehen auf große Dschungel-Expedition, bequeme Outdoor-Klamotten anziehen.' RSVP-Link auf party.machsleicht.de."
+          },
+          {
+            "icon": "🏠",
+            "title": "Mietwohnung-Check (Lianen-Parcours)",
+            "detail": "Dschungel ist akustisch zahm, aber Lianen-Parcours + Tarn-Übung brauchen Bewegungsraum. Wenn Garten/Park: super. Wenn Wohnung: Tarn-Versteck-Plätze im Flur planen, Lianen-Hängung an Türrahmen testen."
+          }
+        ]
+      },
+      "minus2Weeks": {
+        "headline": "2 Wochen vorher — Logistik festziehen",
+        "items": [
+          {
+            "icon": "📋",
+            "title": "RSVPs einsammeln + Liste schließen",
+            "detail": "Wer hat geantwortet? Nachzügler einmal anstupsen. party.machsleicht.de zeigt den Stand."
+          },
+          {
+            "icon": "🥜",
+            "title": "Allergien zusammenschreiben",
+            "detail": "Eine Liste, ein Zettel: Kind X = Laktose, Kind Y = Nüsse (wichtig: Marzipan-Tiger enthalten Mandeln!). Bei Snacks (Bananen, Karotten, Käse) ist die Allergie-Lage meist entspannt, aber abfragen ist Pflicht."
+          },
+          {
+            "icon": "📦",
+            "title": "Bestellliste finalisieren",
+            "detail": "Tonpapier grün + Filzstifte erdfarben + Klett-Abzeichen + Stempel-Set bei DM/Rossmann, Dschungeltier-Figuren + Krepppapier + Schatzkiste-Material bei Amazon. Bei Wow: Stoffmalfarben für Tarn-Tücher (~5€)."
+          },
+          {
+            "icon": "🍌",
+            "title": "Bananen-Code-Knacker-Karten vorbereiten oder finalisieren",
+            "detail": "5 Stationen-Karten ausdrucken: 4 Affen-Karten (Theo, Una, Vito, Willi), 5 Spuren-Karten (Tiger groß bis Iguana klein), 5 Affen mit Bananen-Mengen (3, 5, 7, 9, 11), 5 Schmetterlinge in Farben, 5 Audio-Schnipsel speichern. Druckvorlagen ergänzen die JSON-Vorlage."
+          }
+        ]
+      },
+      "minus1Week": {
+        "headline": "1 Woche vorher — bestellen, drucken, vorwarnen",
+        "items": [
+          {
+            "icon": "🛒",
+            "title": "Amazon-Bestellung JETZT raus",
+            "detail": "Lieferzeit 2–5 Tage. Tonpapier grün (~5€), Dschungeltier-Figuren (~5€), Klett-Abzeichen (~4€), Stempel-Set (~5€), Krepppapier grün (~4€). Bei Wow zusätzlich Stoffmalfarben (~5€) + Aufkleber-Tier-Bogen für Forscher-Heft."
+          },
+          {
+            "icon": "🖨️",
+            "title": "Stations-Karten + Ausmalbilder + Lizenzen drucken",
+            "detail": "Bananen-Code-Knacker-Karten (5 Stationen) ausdrucken und laminieren, falls möglich. ‚Dschungel-Forschungs-Lizenz' DIN A6 mit Platz für Name + Crew-Rolle + Stempel + Datum, 6-8 ausdrucken. Banderolen mit T, I, G, E, R zum Aufkleben vorbereiten."
+          },
+          {
+            "icon": "🔔",
+            "title": "Nachbarn vorwarnen (gartengericht)",
+            "detail": "‚Sonntag 14-17 Uhr Dschungel-Party im Garten, mein Sohn wird 7. Vielleicht hört ihr Tier-Stimmen-Quiz-Geräusche.' Spart Erklärungs-Fragen."
+          },
+          {
+            "icon": "🌧️",
+            "title": "Plan B Regen mental durchspielen",
+            "detail": "Spuren-Rallye ins Wohnzimmer + Flur (Spuren auf Klebezetteln verstecken). Lianen-Parcours mit Krepppapier von der Decke. Schatz-im-Dschungel-Quest mit Verstecken in der Wohnung."
+          },
+          {
+            "icon": "✂️",
+            "title": "Stirnbänder vorbereiten",
+            "detail": "Tonpapier-Streifen grün 3cm breit, mit Filzstift ‚Forscher' beschreiben oder Stempel drauf, an Enden Klett-Verschluss. Bei 6-8 Kindern = 6-8 Stirnbänder. 30 Min Bastel-Vorlauf. Crew-Rollen-Zettel zerschneiden und in Forscher-Rucksack legen."
+          }
+        ]
+      },
+      "minus2Days": {
+        "headline": "2 Tage vorher — backen, briefen, basteln",
+        "items": [
+          {
+            "icon": "🎂",
+            "title": "Schoko-Vulkankuchen backen — oder Plan B",
+            "detail": "Schoko-Gugelhupf-Mischung backen, Schokoglasur drüber, Marzipan-Tiger oben. Plan B: Schoko-Gugelhupf vom Bäcker (~8€), Marzipan-Tiger drauf, grüner Krepppapier-Rand drumherum."
+          },
+          {
+            "icon": "🗣️",
+            "title": "Helfer briefen — 5 Minuten reichen",
+            "detail": "Bei Standard/Wow zusätzliche Person für Stations-Rotation. WhatsApp mit Programm-Übersicht: ‚14:00 Ankunft + Stirnband-Verleihung + Crew-Rollen, 14:20 Bananen-Code-Knacker-Start, 15:20 Kuchen, 15:45 Lianen-Parcours.'"
+          },
+          {
+            "icon": "🪧",
+            "title": "Stations-Karten finalisieren oder kaufen",
+            "detail": "Bei DIY: 5 Stations-Karten + Banderolen T-I-G-E-R, Tonpapier zugeschnitten, Tierbilder aufgeklebt. Bei Fertigkauf: Karten gemischt im Beutel bereitlegen, Banderolen vorgefertigt."
+          },
+          {
+            "icon": "🎁",
+            "title": "Goodie-Bags packen + Forscher-Heft (Wow)",
+            "detail": "Pro Kind: Lizenz, Tierfigur, 2-3 Tier-Tattoos/Aufkleber, Schoko-Goldmünze, evtl. Sticker. Bei Wow: zusätzlich Forscher-Heft DIY mit Tier-Aufklebern + Heftklammer-Bindung + TIGER-Banderolen-Erinnerung."
+          },
+          {
+            "icon": "🗺️",
+            "title": "Wow-Setup: Schatz-im-Dschungel-Hinweise platzieren",
+            "detail": "Schuhkarton mit Goldfolie + Tiger-Aufkleber ‚Tiger-Schatz'-Schatzkiste vorbereiten, 5-6 Hinweis-Karten an Garten/Wohnung-Plätzen verstecken (unter Stein, im Baum-Wipfel, hinter Pflanze, etc.)."
+          }
+        ]
+      },
+      "minus1Day": {
+        "headline": "1 Tag vorher — Deko, Test, letzte Schritte",
+        "items": [
+          {
+            "icon": "🌿",
+            "title": "Kuchen-Vulkan-Deko fertig",
+            "detail": "Marzipan-Tiger + Schokoglasur + grünen Krepppapier-Rand am Tellerrand. Bei Wow: Wunderkerze in Vulkan-Krater für Birthday-Moment. Über Nacht fest werden lassen."
+          },
+          {
+            "icon": "🌴",
+            "title": "Outdoor/Indoor-Stationen vorbereiten",
+            "detail": "Tierspuren-Klebezettel verstecken, Bananen-Code-Knacker-Karten an den 5 Stations-Plätzen platzieren, Tarnungs-Übung-Versteck-Plätze markieren, bei Wow zusätzlich Schatz-im-Dschungel-Hinweise verteilt. Lianen-Krepppapier von der Decke hängen oder zwischen Stuhllehnen."
+          },
+          {
+            "icon": "🚧",
+            "title": "Stirnband-Tisch dekorieren",
+            "detail": "Eingangs-Tisch: 6-8 Tonpapier-Stirnbänder grün mit Namen, Forscher-Rucksack mit Crew-Rollen-Zetteln, Tattoo-Stempelkissen, Klett-Abzeichen sortiert, ‚Dschungel-Forschungs-Lizenzen' zur Übergabe. Tisch mit Dschungeltier-Figuren als Deko."
+          },
+          {
+            "icon": "🎵",
+            "title": "Dschungel-Soundtrack + Bluetooth-Box testen",
+            "detail": "Spotify ‚Dschungel-Sounds' oder ‚Tropical Rainforest Sounds' Playlist in der Notiz-App. Tier-Stimmen-Audios für Quiz separat speichern (Affe, Tukan, Frosch, Tiger — pro Tier 10 Sek)."
+          },
+          {
+            "icon": "🍿",
+            "title": "Snack-Stationen vorbereiten",
+            "detail": "Bananen + Karotten + Käsewürfel + Popcorn in Schüsseln. Wasserflaschen mit grünen Halmen (Dschungel-Look). Bei Wow Mittagssnack: Mini-Pizzen + Schlangen-Wraps vorbereiten."
+          }
+        ]
+      },
+      "dayOf": {
+        "headline": "Tag X — durchziehen, atmen, feiern",
+        "items": [
+          {
+            "icon": "⏰",
+            "title": "45 Min vor Ankunft: Stationen aufbauen",
+            "detail": "Spuren-Rallye-Route ins Garten/Wohnzimmer (Klebezettel-Spuren versteckt), 5 Bananen-Code-Knacker-Stationen aufgebaut, Stirnband-Eingangs-Tisch fertig. Snack-Stationen kühl. Lianen-Parcours-Krepppapier hängt."
+          },
+          {
+            "icon": "🎯",
+            "title": "20 Min vor Ankunft: Wow-Schatzsuche final",
+            "detail": "Tiger-Schatzkiste in finalem Versteck (Garten-Boden, Schrank, oder Balkon-Ecke), Hinweis-Karten in Schritt-für-Schritt-Logik verteilt. Wow-Forscherhüte griffbereit am Lager-Tisch."
+          },
+          {
+            "icon": "🎯",
+            "title": "15 Min vor Ankunft: Audio + Stirnbänder",
+            "detail": "Bluetooth-Box an, Dschungel-Playlist startet leise, Tier-Stimmen-Audios bereit. Stirnbänder fertig + Lizenzen sortiert. Crew-Rollen-Zettel im Forscher-Rucksack griffbereit am Eingang."
+          },
+          {
+            "icon": "🫁",
+            "title": "5 Min vor Ankunft: durchatmen",
+            "detail": "Klo, Wasser, einmal tief Luft holen. Bei Dschungel ist Outdoor-Risiko = Wetterwechsel — falls Regen kommt: schnell auf Plan B (siehe Plan-B-Sektion) umschalten."
+          },
+          {
+            "icon": "🐒",
+            "title": "Ankunft: Stirnband-Verleihung + Crew-Rolle + Forschungs-Lizenz",
+            "detail": "Jedes Kind bekommt Stirnband (mit Klett auf passend ziehen), zieht eine Crew-Rolle aus dem Forscher-Rucksack (Affen-Beobachter, Spuren-Leser etc.), Tattoo aufs Handrücken, Dschungel-Forschungs-Lizenz mit Namen + Stempel + Datum. Sofort Forscher-Eid sprechen."
+          }
+        ]
+      }
+    },
+    "sosScenarios": {
+      "regen": {
+        "icon": "🌧️",
+        "label": "Regen — alles draußen geplant",
+        "headline": "Spuren-Rallye ins Wohnzimmer + Flur — Lianen von der Decke.",
+        "steps": [
+          "Tierspuren-Klebezettel von Garten ins Wohnzimmer + Flur kleben.",
+          "Lianen-Parcours: Krepppapier von der Decke + Klebeband-Wasserfall im Flur + Sumpf-Markierung am Boden.",
+          "Tarn-Übung: hinter Vorhänge, unter Decken, Schrank-Innenseite.",
+          "Bei Wow Schatz-im-Dschungel-Quest: Schatzkiste in Garderobe oder Schlafzimmer."
+        ],
+        "fallback": "Wenn Wohnzimmer zu klein: Bananen-Code-Knacker am Tisch + Tier-Quiz + Snacks reichen für 1,5h Programm.",
+        "tone": "praktisch"
+      },
+      "weniger_kinder_als_erwartet": {
+        "icon": "👥",
+        "label": "Weniger Kinder als erwartet (1–2 fehlen)",
+        "headline": "Engerer Forscher-Trupp — mehr Aufmerksamkeit pro Crew-Mitglied.",
+        "steps": [
+          "Programm leicht straffen: weniger Snack-Pausen, dafür längere Quest-Phase.",
+          "Tarn-Übung: jedes Kind eigenes Versteck statt Team-Verstecken.",
+          "Bananen-Code-Knacker: längere Stations-Zeit (15 Min statt 12), mehr Gespräche pro Station.",
+          "Pufferzeit füllen mit Forscher-Heft-Verzieren oder zweiter Tier-Quiz-Runde."
+        ],
+        "fallback": "Wenn Stimmung kippt: Stirnband-Foto + Lizenz-Stempel + Schoko-Goldmünzen-Übergabe als Hauptprogramm.",
+        "tone": "ruhig"
+      },
+      "mehr_kinder_als_erwartet": {
+        "icon": "🚨",
+        "label": "Mehr Kinder als erwartet (Geschwister-Boom)",
+        "headline": "Zwei Forscher-Teams bilden — Stationen-Karten verdoppeln.",
+        "steps": [
+          "Crew in 2 Teams splitten: Team Tiger + Team Affe, je ein älteres Kind als Team-Captain.",
+          "Bananen-Code-Knacker-Karten verdoppeln: 2 parallele Stations-Routen, jeder Trupp arbeitet eigene 5 Stationen ab.",
+          "Lianen-Parcours: 2 parallele Routen oder hintereinander durchlaufen lassen.",
+          "Sofort Verstärkung: Eltern, Oma, Nachbarin — 10€ für 2 Stunden Tisch-Aufsicht.",
+          "Snacks aufstocken: Bananen + Karotten + Käse-Stücke aus Vorrat ergänzen."
+        ],
+        "fallback": "Keine Verstärkung erreichbar? Schatz-im-Dschungel-Quest als Hauptprogramm + Tier-Quiz + Stirnband-Zeremonie + Kuchen.",
+        "tone": "praktisch"
+      },
+      "kind_will_nicht_mitmachen": {
+        "icon": "🤷",
+        "label": "Ein Kind will nicht mitmachen",
+        "headline": "Off-Action-Rolle: Foto-Reporter oder Stempel-Wart.",
+        "steps": [
+          "Rolle anbieten: ‚Du bist Foto-Reporter — du dokumentierst die Expedition für die Lizenz-Stempelung.'",
+          "Alternative: Stempel-Verwalter — passt auf, dass jedes Kind seinen Stempel bekommt.",
+          "Crew-Rolle frei wählen lassen statt ziehen — Schmetterlings-Fänger oder Pflanzen-Botaniker sind ruhige Rollen.",
+          "Stirnband muss nicht aufgesetzt werden — Lizenz mit Klett-Abzeichen drauf reicht als Identität.",
+          "Sitzplatz am Lager-Hauptquartier mit Apfelschorle + Tier-Figuren-Sortier-Aufgabe."
+        ],
+        "fallback": "Bleibt komplett raus? Buch + Decke + Stoff-Tier in die Ecke, alle 10 Min kurz reinschauen.",
+        "tone": "ruhig"
+      },
+      "kuchen_misslungen": {
+        "icon": "🎂",
+        "label": "Kuchen ist misslungen",
+        "headline": "Bäcker-Hack: Schoko-Gugelhupf + Marzipan-Tiger + grüner Krepp = 10 Min.",
+        "steps": [
+          "Schoko-Gugelhupf beim Bäcker holen (~8€) — kein dramatisches Backen mehr.",
+          "Marzipan-Tiger aus dem Backregal oben drauf — wirken wie geplant.",
+          "Grüner Krepppapier-Streifen am Tellerrand entlanglegen — Dschungel-Look in 2 Min.",
+          "Bei Wow: Wunderkerze im Vulkan-Krater für Magie-Moment."
+        ],
+        "fallback": "Bäcker zu? Schoko-Muffins aus Vorrat, je Muffin ein Mini-Marzipan-Tiger oben drauf — Mini-Dschungel-Cupcakes.",
+        "tone": "motivierend"
+      },
+      "spielzeug_kaputt_oder_fehlt": {
+        "icon": "🔧",
+        "label": "Spielzeug kaputt oder vergessen",
+        "headline": "Improvisieren mit Haushalts-Material — Forscher merken nichts.",
+        "steps": [
+          "Bananen-Code-Knacker-Karte fehlt? DIY mit Tonpapier + Filzstift improvisieren (10 Min Bastel-Notfall pro Station).",
+          "Stempel-Set vergessen? Filzstift-Markierung auf Forscher-Karte statt Stempel.",
+          "Krepppapier-Lianen weg (Wow)? Wollfäden + Schleife = improvisierte Lianen.",
+          "Tierspuren-Druckvorlagen fehlen? Tier-Figuren in den Sand drücken + Foto als ‚Spur-Beweis'."
+        ],
+        "fallback": "Total katastrophal? Tier-Quiz + Spuren-Rallye + Stirnband-Verleihung reicht für 1,5h.",
+        "tone": "praktisch"
+      },
+      "ein_kind_weint": {
+        "icon": "😢",
+        "label": "Ein Kind weint",
+        "headline": "Raus aus dem Trubel — 5 Min am Lager-Hauptquartier.",
+        "steps": [
+          "Kind kurz aus der Gruppe nehmen — Küche oder Garten-Ecke, weg vom Lärm.",
+          "Apfelschorle + Banane + Tattoo auf Handrücken als Beruhigungs-Ritual.",
+          "Rolle anbieten: ‚Du kannst die nächsten Tier-Spuren mit mir suchen — Spezial-Auftrag als Foto-Reporter.'",
+          "Bei Heimweh: kurzer Mama-Foto-Blick aufs Handy, nicht überreden.",
+          "Nach 5 Min sanft zurückführen, an die Hand nehmen zur nächsten Station."
+        ],
+        "fallback": "Geht gar nicht mehr? Eltern anrufen, abholen lassen — Goodie-Bag trotzdem mitgeben.",
+        "tone": "ruhig"
+      },
+      "eltern_kommen_frueh": {
+        "icon": "🚪",
+        "label": "Eltern stehen 30 Min zu früh vor der Tür",
+        "headline": "Übergang einleiten — ‚Lizenz-Ehrung in 10 Minuten'.",
+        "steps": [
+          "Eltern in den Flur bitten, Wasser anbieten — nicht ins Wohnzimmer.",
+          "Crew durchsagen: ‚Achtung Dschungel-Forscher-Lizenz-Ehrung in 10 Min — alle ans Lager-Hauptquartier!'",
+          "Gruppenfoto mit Stirnbändern + Lizenz-Hand in die Kamera.",
+          "Lizenz mit finalem Stempel-Datum versehen, Goodie-Bag in die Hand drücken.",
+          "Eltern + Kinder zur Tür — kurz, herzlich, nicht in lange Tür-Gespräche verheddern."
+        ],
+        "fallback": "Wirklich chaotisch? Goodie-Bags in den Flur stellen, jedes Kind nimmt eine, Abschied auf der Treppe.",
+        "tone": "praktisch"
+      }
+    }
+  },
+  "dschungel-gross": {
+    "_meta": {
+      "source_file": "kindergeburtstag/dschungel-9-12-jahre.html",
+      "extracted": "2026-05-22",
+      "schema_version": "1.0",
+      "purpose": "Dschungel 9-12 — Phase B Elite-Slot (Amazonas-Forschungs-Expedition, echte Ökologie, Codeknacker JUNGE, Escape-Room 'Verlorene Forschungs-Station' mit Dependency-Flow)",
+      "phase_b_complete": "2026-05-22",
+      "phase_b_method": "Writer-Subagent. Codeknacker JUNGE (5 Buchstaben: Pflanzen-pH, Spurabdruck-Anatomie, Hoehenlinien-Karte, Brüllaffen-Ruf-Distanz, Endemiten-Identifikation). Sechs-Stationen-Escape-Room mit explizitem Dependency-Flow (jede Station öffnet die nächste). 8 Tier-Fakten als animalFacts-Array nach safari-gross-Vorbild. Anti-IP: keine bekannten Marken- oder Franchise-Charaktere aus Film/TV/Buch — generische Wissenschafts-Expedition. Mythologie-Bezüge bewusst generisch gehalten (Sonne/Schlange/Stern als universelle Symbole) ohne kulturelle Aneignung indigener Bezeichnungen."
+    },
+    "motto": "dschungel",
+    "ageGroup": "gross",
+    "ageRange": [
+      9,
+      12
+    ],
+    "title": "🌴 Dschungel-Kindergeburtstag — 9–12 Jahre",
+    "metaDescription": "Dschungel-Kindergeburtstag für 9-12-Jährige: 3 fertige Amazonas-Expeditions-Konzepte mit Botaniker-, Zoologe-, Geograph-, Ethologe- und Ökologe-Spezialisierung, Codeknacker JUNGE, Escape-Room Verlorene Forschungs-Station, 15-Fragen-Ökologie-Quiz, Zeitplan und Einkaufsliste. Kostenlos.",
+    "introParagraph": "Dein Kind wird 9, 10, 11 oder 12 — und „bunte Lianen und ein Plüsch-Affe“ würde ein Augenrollen kassieren? Hier sind drei fertige Konzepte für eine Amazonas-Forschungs-Expedition: jedes Kind spezialisiert sich (Botaniker, Zoologe, Geograph, Ethologe, Ökologe), arbeitet mit echter Wissenschaft (Pflanzen-Bestimmung, Wildtier-Tracking, Höhenlinien-Karte, Ökosystem-Quiz) und bekommt am Ende seine eigene Forschungs-Lizenz. Keine Verkindischungs-Tropen, keine spirituell aufgeladene Mythen — eine ernst gemeinte Mission mit echter Biologie, die auch in der 7. Klasse noch erwähnt wird.",
+    "ageInsight": {
+      "headline": "Was 9–12-Jährige ausmacht — und was das für die Amazonas-Expedition heißt",
+      "traits": [
+        {
+          "topic": "Aufmerksamkeit",
+          "detail": "30–45 Min. pro Aktivität sind realistisch, wenn die Aufgabe wirklich fordert. Bestimmungs-Schlüssel mit echten Merkmalen (Blatt-Aderung, Spurabdruck-Anatomie) tragen länger als „findet 10 Tiere im Garten“. Jede Station braucht eine echte Knobel-Komponente."
+        },
+        {
+          "topic": "Regeln",
+          "detail": "Verstehen mehrstufige Regeln und können selbst Schiedsrichter spielen. Du erklärst das Codeknacker-System einmal — Sortier-Regel + Selbstkontrolle, ergibt das Wort keinen Sinn, war die Regel falsch — und sie wenden es eigenständig auf alle Stationen an."
+        },
+        {
+          "topic": "Wettbewerb",
+          "detail": "Stark ausgeprägt, aber nicht „wer findet am schnellsten“ — sondern „welcher Trupp hat das Ökosystem am vollständigsten kartiert, welcher Botaniker hat alle endemischen Pflanzen identifiziert“. Sinnvoller Wettbewerb mit messbarem Ergebnis. Anti-Verlierer-Logik: alle bekommen Lizenz."
+        },
+        {
+          "topic": "Motorik & Geist",
+          "detail": "Schreiben, zeichnen, kombinieren, mit Tabellen und Höhenlinien arbeiten — alles sicher. Eigenen Pflanzen-pH messen, Spurabdrücke zeichnen, Bachlauf kartieren. Verkindischen wird sofort gemerkt und mit Augenrollen quittiert."
+        },
+        {
+          "topic": "Dauer",
+          "detail": "3–4 Stunden ideal. Mit Schlafparty-Anschluss (Wow) inkl. Nacht-Insekten-Beobachtung bis in die Morgenstunden möglich. Pufferzeit am Ende einplanen, aber kein „Beschäftigungs-Buffer“ — die wissen, wann es langweilig wird."
+        },
+        {
+          "topic": "Sicherheit",
+          "detail": "Bei Chemie-Experiment (Rotkohl-Saft als pH-Indikator) Schutzbrille oder Abstand zu Augen. Bei Wildtier-Tracking-Station mit Gips-Spurabdruck: Gipspulver nicht einatmen, Hände waschen. Sicherheits-Hinweis in jeder Station explizit, wo nötig."
+        },
+        {
+          "topic": "Eltern",
+          "detail": "Können absetzen, sollten es auch. Eltern als Co-Spieler sind hier kontraproduktiv — die Kinder wollen unter sich sein. Abholzeit zwingend vorher klären; bei Schlafparty schriftlich bestätigen lassen, wer wann abholt und welche Allergien/Medikamente es gibt."
+        }
+      ],
+      "whyMottoFitsHeadline": "🌴 Warum die Amazonas-Expedition für 9–12-Jährige besonders gut funktioniert",
+      "whyMottoFits": "Kinder in diesem Alter werden nicht mehr durch „grüne Lianen und ein paar Plüsch-Affen“ geködert. Was sie packt, ist Spezialisierung — die Möglichkeit, eine eigene wissenschaftliche Rolle mit eigener Kompetenz zu wählen. Botaniker bestimmen endemische Pflanzen über Blatt-Aderung und pH-Werte. Zoologen lesen Spurabdrücke und Krallen-Anatomie. Geographen kartieren Bachläufe mit Höhenlinien. Ethologen beobachten Verhalten (Brüllaffen-Ruf-Distanz). Ökologen denken in Biotopen und Habitat-Vernetzung. Keine Spezialisierung funktioniert allein: erst zusammen finden sie die verlorene Forschungs-Station. Der Story-Frame bleibt sparsam und ernst — ein Brief des Instituts für Tropenökologie schickt die Mission, das reicht. Generische Mythologie als Würze (verschollene Gold-Legenden ohne reale Kultur-Bezüge, Jaguar-Symbolik als Atmosphäre) bleibt im Hintergrund — die echte Wissenschaft trägt. Genau das unterscheidet eine 9-12-Party von einer Kleinkind-Party."
+    },
+    "signatureRitual": {
+      "name": "Die Forschungs-Crew-Aufnahme & Lizenz-Übergabe",
+      "subtitle": "Eröffnet die Expedition und schließt sie ab — für alle 3 Varianten",
+      "introText": "Für 9-12 trägt nicht ein durchgehendes Ritual, sondern zwei ernst gemeinte Klammern: Am Anfang wählt jedes Kind selbst seine Spezialisierung (Botaniker, Zoologe, Geograph, Ethologe oder Ökologe) und hört den Brief des Instituts für Tropenökologie — eine echte Mission, kein „kleiner-Dschungel-Held“-Sprech. Die fünf Spezialisierungen sind ein Angebot, müssen aber nicht alle besetzt werden: bei 6 Kindern wählt man drei, bei 10 Kindern alle fünf. Am Ende bekommt jedes Kind die volle Forschungs-Lizenz, ohne Abstufung. Was diese Altersgruppe packt, ist die eigene Wahl der Rolle und echte Verantwortung statt Bespaßung. Wer eine knifflige Detail-Beobachtung beigesteuert oder besonders genau gearbeitet hat, kriegt zusätzlich einen „Sorgfalt-Spezialist“-Stempel auf die Lizenz — Anerkennung dafür, hingeschaut zu haben, nicht dafür, schnell gewesen zu sein. Eltern sind hier Beobachter beim Abschluss-Foto, keine Co-Spieler.",
+      "setupSteps": [
+        {
+          "title": "Fünf Spezialisierungs-Schalen vorbereiten",
+          "content": "Fünf beschriftete Bambus-Schalen (oder einfache Holz-Schalen) auf den Tisch — Botaniker (moosgrün), Zoologe (terrakotta), Geograph (waldbraun), Ethologe (gelb), Ökologe (tiefgrün) — mit farbigen Klett-Patches darin. Jedes Kind wählt bei Ankunft seine Spezialisierung selbst und klettet die Farbe ans Stirnband oder direkt an die Jacke. Bei nur 6 Kindern: drei Spezialisierungen anbieten (z.B. Botaniker, Zoologe, Geograph). Bei 10 Kindern: alle fünf, 2 pro Spezialisierung."
+        },
+        {
+          "title": "Brief des Instituts für Tropenökologie ausdrucken",
+          "content": "Eine knappe, ernsthafte Mission auf eine grüne Karte: das Forschungs-Camp Manaus-7 hat seit 14 Tagen keinen Funkkontakt zur Außen-Station im Regenwald, letzte Übertragung erwähnte eine ungewöhnliche pH-Anomalie im Bachlauf und einen unbekannten Endemiten. Auftrag: Station finden, Daten sichern, Ökosystem dokumentieren. Du liest ihn einmal vor — das ersetzt jede Begrüßungs-Ansprache. Kein Vorlese-Stress, einmal vorlesen reicht."
+        },
+        {
+          "title": "Expeditions-Karten mit offenen Biotop-Feldern",
+          "content": "Pro Kind eine Karte mit 5 leeren Stations-Feldern (als Biotop-Bezirke gezeichnet: Bachlauf, Kronendach, Unterholz, Wurzel-Zone, Lichtung) und freier Reihenfolge. 9-12-Jährige wollen Kontrolle über Route und Tempo — du gibst die Struktur, sie planen den Weg. Wird beim Vorlesen des Briefs verteilt."
+        },
+        {
+          "title": "Forschungs-Lizenzen selbst ausfüllen lassen",
+          "content": "Jedes Kind trägt seinen Namen und seine Spezialisierung selbst in die Lizenz ein. Am Ende vollständig ausgefüllt — alle bekommen die volle Forschungs-Lizenz, niemand eine Vorstufe. Foto-Slot freilassen."
+        },
+        {
+          "title": "„Sorgfalt-Spezialist“-Stempel bereitlegen",
+          "content": "Ein Stempel oder Aufkleber (Jaguar-Pranke-Motiv), der bei der Übergabe für besonders genaue Beobachtungen oder gründliche Arbeit vergeben wird. Keine Wettbewerbs-Logik, kein „Erste Forscherin“ — es geht um Sorgfalt, passend zur Botschaft, dass im Regenwald zählt, wer hinschaut, nicht wer am schnellsten rennt. Mehrere Kinder können ihn bekommen."
+        }
+      ],
+      "rolesList": [
+        {
+          "emoji": "🌿",
+          "name": "Endemiten-Bestimmer",
+          "function": "Botaniker-Spezialisierung: bestimmt Pflanzen anhand von Blatt-Aderung, Wuchsform und pH-Werten — liefert den Pflanzen-Code für die Karte."
+        },
+        {
+          "emoji": "🧪",
+          "name": "pH-Analyst",
+          "function": "Botaniker-Spezialisierung: misst Bodenwasser mit Rotkohl-Saft als Indikator, dokumentiert Säure-Anomalien."
+        },
+        {
+          "emoji": "📓",
+          "name": "Herbarium-Archivar",
+          "function": "Botaniker-Spezialisierung: presst Blatt-Proben und sortiert sie nach Habitat-Zone."
+        },
+        {
+          "emoji": "🐾",
+          "name": "Spur-Anatom",
+          "function": "Zoologe-Spezialisierung: liest Spurabdrücke nach Zehen-Anzahl, Krallen-Stellung und Schrittlänge."
+        },
+        {
+          "emoji": "🦎",
+          "name": "Wildtier-Tracker",
+          "function": "Zoologe-Spezialisierung: folgt Fährten und schließt vom Spurbild auf Tempo und Verhalten des Tieres."
+        },
+        {
+          "emoji": "🗺️",
+          "name": "Höhenlinien-Kartograf",
+          "function": "Geograph-Spezialisierung: kartiert den Bachlauf mit Höhenlinien und identifiziert Quell- und Mündungspunkte."
+        },
+        {
+          "emoji": "🧭",
+          "name": "Biotop-Vermesser",
+          "function": "Geograph-Spezialisierung: legt Transekte durch verschiedene Vegetations-Zonen und misst Übergangs-Bereiche."
+        },
+        {
+          "emoji": "👂",
+          "name": "Brüllaffen-Beobachter",
+          "function": "Ethologe-Spezialisierung: misst Ruf-Distanz und Tageszeit-Muster, schließt auf Reviergrößen."
+        },
+        {
+          "emoji": "🦜",
+          "name": "Schwarm-Analyst",
+          "function": "Ethologe-Spezialisierung: dokumentiert Ara- und Tukan-Schwarmverhalten an Lehmlecken."
+        },
+        {
+          "emoji": "🌳",
+          "name": "Habitat-Vernetzer",
+          "function": "Ökologe-Spezialisierung: zeichnet Nahrungsnetze und Bestäuber-Beziehungen ein."
+        },
+        {
+          "emoji": "🍃",
+          "name": "Biodiversitäts-Buchhalter",
+          "function": "Ökologe-Spezialisierung: führt Arten-Listen pro Biotop und berechnet einfache Diversitäts-Indizes."
+        }
+      ],
+      "optOutNote": "Kein Kind muss sich festlegen. Wer sich nicht entscheiden will, übernimmt eine Doppel-Rolle oder bleibt Beobachter („Expeditions-Chronist“) ohne feste Aufgabe — Lizenz und Stempel bekommt es trotzdem. Die Sonderrollen sind ein Angebot, kein Zwang, und auch der Wechsel der Spezialisierung mitten in der Expedition ist erlaubt. Bei nur 6 Kindern reichen drei Spezialisierungen (Botaniker, Zoologe, Geograph), die anderen zwei kommen bei Wow als Option dazu.",
+      "materialNote": "Spezialisten-Patches in fünf Farben (moosgrün / terrakotta / waldbraun / gelb / tiefgrün), Biotop-Karten mit offenen Stations-Feldern und blanko Lizenz-Vorlagen sind Pflicht; siehe shoppingList der jeweiligen Variante. Den „Sorgfalt-Spezialist“-Stempel mit Jaguar-Pranken-Motiv und den Brief des Instituts für Tropenökologie druckst bzw. besorgst du selbst — sinnvoll, aber nicht zwingend. Vorlagen liegen im Einladungs- und Druck-Bereich."
+    },
+    "variants": [
+      {
+        "id": "minimal",
+        "label": "Minimal — 2,5 Stunden, minimaler Aufwand",
+        "headline": "🌿 Minimal — 2,5 Stunden, minimaler Aufwand",
+        "intro": "Funktioniert auch, wenn du erst gestern angefangen hast zu planen. Spezialisierungs-Wahl (3 Rollen reichen), der Codeknacker JUNGE als Kern-Spiel, eine Tracking-Quest, Wraps-Station und Lizenz-Übergabe. Kein Stations-Aufbau, kein Helfer nötig — du leitest allein. Die ganze Codeknacker-Karte kannst du am Vorabend in 20 Minuten zeichnen, die eingebaute Selbstkontrolle nimmt dir das Gegenprüfen ab.",
+        "timeWindow": "15:00–17:30, 6 Kinder",
+        "schedule": [
+          {
+            "time": "15:00",
+            "title": "Eintreffen im Forschungs-Camp & Spezialisierungs-Wahl",
+            "description": "Drei Schalen mit farbigen Patches auf dem Tisch (Botaniker = moosgrün, Zoologe = terrakotta, Geograph = waldbraun). Jedes Kind nimmt sich seine Spezialisierung und klettet den Patch ans Stirnband, schreibt seinen Crew-Namen darauf."
+          },
+          {
+            "time": "15:15",
+            "title": "🗺️ Codeknacker: Die Funksprüche aus der Außen-Station",
+            "description": "Das Hauptspiel. Drei Funkspruch-Fragmente, jeder Trupp knackt eines und ermittelt einen Buchstaben. Zusammen mit zwei Schluss-Buchstaben aus dem Spur-Quadranten ergeben sie das Lösungswort JUNGE. 40 Min."
+          },
+          {
+            "time": "15:55",
+            "title": "🐾 Wildtier-Tracking-Quest „Wer war hier?“",
+            "description": "25 Min. Such-Quest durch Wohnung/Garten. Die Kinder finden 5 versteckte Spurkarten (Jaguar, Tapir, Faultier, Pfeilgiftfrosch, Tukan-Sitz-Spur) und bestimmen sie über einen Schlüssel. Auch Botaniker und Geographen machen mit."
+          },
+          {
+            "time": "16:20",
+            "title": "🌯 Forscher-Wraps + Getränkepause",
+            "description": "Wraps + Belag-Auswahl: Hähnchen/vegetarisch, Reis, Bohnen, Avocado, Salsa, Käse. Jedes Kind belegt selbst. 10 Min. belegen + 15 Min. essen = 25 Min. Aufenthalt. Selber zubereiten ist für 9-12 wichtig — verkindischen ausgeschlossen."
+          },
+          {
+            "time": "16:45",
+            "title": "🎂 Regenwald-Karten-Kuchen & Logbuch-Galerie",
+            "description": "Kuchen + die Spur-Steckbriefe aus der Tracking-Quest werden als Camp-Logbuch zusammengelegt. Wer die genaueste Beobachtung dokumentiert hat (Mehrheits-Entscheid der Crew), bekommt zusätzlich den Sorgfalt-Stempel."
+          },
+          {
+            "time": "17:10",
+            "title": "🏅 Forschungs-Lizenz-Übergabe",
+            "description": "Jedes Kind kommt einzeln nach vorne und bekommt seine Lizenz nach Spezialisierung. Urkunde mit Namen, Spezialisierung und einem „Sorgfalt-Spezialist“-Stempel für besonders genaue Beobachtungen."
+          },
+          {
+            "time": "17:30",
+            "title": "🎁 Verabschiedung am Camp-Tor",
+            "description": "Mitgebsel-Tüte mit Lizenz, Patch am Stirnband, kleine Wegzehrung. Mission erfüllt."
+          }
+        ],
+        "games": [
+          {
+            "name": "🗺️ Codeknacker: Die Funksprüche aus der Außen-Station",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 40,
+            "minAge": 9,
+            "loudness": "konzentriert",
+            "effort": "mittel",
+            "material": "5 Funkspruch-Karten A4 (selbst gezeichnet oder ausgedruckt — eine grobe Amazonas-Karte mit Bachlauf, Kronendach und Lichtung, in fünf Aufgaben-Felder geteilt). Pro Quadrant ein Aufgaben-Zettel mit 5-6 Tier- oder Pflanzen-Silhouetten und je einem Anfangsbuchstaben daneben. Bleistifte. Optional grüne A4-Karton-Unterlagen für Feld-Notizen. Druckvorlage gibt es nicht extra — das Vollbeispiel kannst du 1:1 abmalen.",
+            "prepText": "Setup am Vorabend (20 Min.): Du zeichnest 5 Aufgaben-Karten — jede gehört einer Spezialisierungs-Aufgabe und ergibt einen Buchstaben. Zusammen ergeben sie JUNGE (5 Buchstaben). Der Trick für müde Eltern um 22:30: Wer die Sortier-Regel richtig anwendet, liest am Ende ein echtes deutsches Wort. Kommt Buchstabensalat raus, war die Regel falsch — das ist die eingebaute Selbstkontrolle, du musst nichts gegenprüfen.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Funkspruch 1 (Botaniker) → J",
+                "content": "5 Amazonas-Pflanzen nach Wuchshöhe (Meter) vom höchsten zum niedrigsten sortieren, Anfangsbuchstaben des höchsten ablesen: Jacaranda 30 m / Paranuss 50 m / Kapokbaum 70 m / Bromelie 0,5 m / Heliconia 2 m. ACHTUNG: Anfangsbuchstabe ist J wenn die Sortier-Regel umgekehrt angewendet wird — vom kleinsten zum größten beginnend bei Bromelie 0,5 m → Heliconia 2 m → Jacaranda 30 m (J = dritter Eintrag, aber zugleich der erste Baum, weil Bromelie und Heliconia krautig sind). Hinweis-Karte: „Welche dieser fünf ist der niedrigste echte Baum?“ → Jacaranda → J."
+              },
+              {
+                "n": 2,
+                "name": "Funkspruch 2 (Zoologe) → U",
+                "content": "6 Amazonas-Tiere, eines ist Unter-Wasser-Säuger und wird oft mit Fischen verwechselt: Jaguar, Faultier, Tukan, Unterwasser-Manati (Amazonas-Manati), Pfeilgiftfrosch, Ara. Falsch im Set: Manati ist kein klassisches Regenwald-Boden-Tier, sondern Fluss-Säuger → U."
+              },
+              {
+                "n": 3,
+                "name": "Funkspruch 3 (Geograph) → N",
+                "content": "5 Höhenlinien-Punkte am Bachlauf sortieren: Nebelwald-Plateau 800 m / Tieflandregenwald 100 m / Galeriewald 200 m / Flussaue 50 m / Quell-Region 1500 m. Höchster Punkt = Quell-Region, aber gefragt ist: „Welche Zone liegt im NEBEL?“ → Nebelwald-Plateau → N."
+              },
+              {
+                "n": 4,
+                "name": "Funkspruch 4 (Ethologe-Trick / alle) → G",
+                "content": "4 Tier-Rufe nach Reichweite in Kilometern sortieren: Brüllaffen-Ruf 5 km / Tukan-Schrei 1 km / Ara-Schwarm 0,8 km / Jaguar-Grunzen 0,3 km. Größte Reichweite = Brüllaffe. Aber Vorsicht — der Schlüssel-Buchstabe ist nicht B, sondern der Anfangsbuchstabe des deutschen Begriffs für die akustische Reichweite einer Schallquelle: „Geräusch-Reichweite“ → G. (Hinweis-Karte beigelegt: Welcher deutsche Begriff beschreibt, wie weit ein Tierruf trägt?)"
+              },
+              {
+                "n": 5,
+                "name": "Funkspruch 5 (Ökologe) → E",
+                "content": "5 Pflanzen, eine ist endemisch im Amazonas (nur dort, nirgendwo anders): Euterpe-Palme (Açaí), Bambus, Eukalyptus, Mahagoni, Kakao. Endemisch laut Karte: Euterpe-Palme (Açaí) ist im Amazonas endemisch. → E."
+              },
+              {
+                "n": 6,
+                "name": "Selbst-Check",
+                "content": "Ergibt das Wort kein echtes deutsches Wort, war die Sortier- oder Antwort-Regel falsch — Reihenfolge selbst nachprüfen, nicht raten. JUNGE = 5 Buchstaben in Funkspruch-Reihenfolge."
+              },
+              {
+                "n": 7,
+                "name": "Zusammenführen",
+                "content": "Alle fünf Buchstaben zusammen J-U-N-G-E = JUNGE. Das ist das Code-Wort, mit dem ihr die Außen-Station eröffnet. (Alternative bei reinen Tier-Crew: TIGER — wenn das Geburtstagskind lieber Tier-Fokus mag, ersetzt du die Funksprüche mit Tier-Aufgaben, die T-I-G-E-R ergeben. Beide Wörter haben 5 Buchstaben, die Schluss-Logik bleibt gleich.)"
+              }
+            ],
+            "safetyRule": "Beim Selbstgegenchecken nicht über Erwartungen frustrieren — der Sinn ist, dass die Kinder die Regel anwenden. Wenn ein Trupp komplett feststeckt: eine Hinweis-Karte freigeben („welche der Pflanzen ist kein Baum?“).",
+            "ageAdjust9": "Pro Funkspruch nur 3 Aufgaben mit größeren Bildern, Hinweis-Karten an der Wand verfügbar.",
+            "ageAdjust12": "Alle 5-6 Aufgaben pro Funkspruch, kein Tipp — plus ein versteckter „Wilderer-Funkspruch“ (falsche Frequenz), der erkannt werden muss.",
+            "indoorTip": "Die fünf Funkspruch-Karten an verschiedene Wände/Tische im Raum, damit die Trupps sich nicht ins Gehege kommen. Ein „Funkraum“ in der Küche, ein „Bachlauf“ im Wohnzimmer.",
+            "outdoorTip": "Funksprüche an fünf Stationen im Garten — die kurzen Wege dazwischen sind willkommene Bewegung. Eine Station unbedingt am Bachlauf-Surrogat (Gartenschlauch mit Wasser).",
+            "whyItWorksTitle": "Kooperation + Selbstkontrolle statt Tempo",
+            "whyItWorks": "Kein Funkspruch funktioniert allein — die Spezialisierungen müssen sich am Ende abstimmen. Ergibt JUNGE keinen Sinn, prüfen die Kinder ihre Reihenfolge selbst nach, statt zu raten. Genaues Hinschauen wird belohnt, nicht Geschwindigkeit. Steckt ein Trupp fest, hilft eine andere Spezialisierung mit — das ist die Story: „Im Regenwald zählt, wer hinschaut.“",
+            "codeMechanic": "Funkspruch-Chiffre: Jede der 5 Aufgaben liefert genau einen Buchstaben in fester Reihenfolge. Selbstkontrolle: ergibt sich ein echtes Wort (JUNGE oder TIGER), war die Lösung richtig. 20 Min Setup: Aufgaben-Karten am Vorabend aus Vorlage drucken oder selbst zeichnen. Buchstaben-Reihenfolge ist FEST und wird auf den Karten oben rechts mit „Funkspruch 1/5“ etc. markiert — dann gibt es keine Reihenfolge-Streitigkeiten.",
+            "animalFacts": [
+              {
+                "tier": "Anakonda",
+                "spurbild": "keine Spur, aber Schleif-Furche im weichen Boden, 20-40 cm breit",
+                "habitat": "Sumpf, Flussufer, Galeriewald",
+                "merkmal": "größte Schlange der Welt nach Gewicht (bis 250 kg), Weibchen 3x größer als Männchen, vivipar (lebendgebärend)"
+              },
+              {
+                "tier": "Faultier",
+                "spurbild": "selten am Boden, dort 3 Krallen-Eindrücke an 3 Zehen, sehr langsam, schleppend",
+                "habitat": "Kronendach, Unterholz beim Toiletten-Gang (1x pro Woche!)",
+                "merkmal": "verdaut Blätter 30 Tage, Algen wachsen im Fell als Tarnung, dreht den Kopf 270 Grad"
+              },
+              {
+                "tier": "Tukan",
+                "spurbild": "Sitz-Spur am Ast, 2 Zehen vorn, 2 hinten (Zygodactyl)",
+                "habitat": "Kronendach des Tieflandregenwaldes",
+                "merkmal": "Schnabel hohl mit Knochen-Streben, dient als Klima-Anlage (Wärmeabgabe), nicht primär zum Beißen"
+              },
+              {
+                "tier": "Brüllaffe",
+                "spurbild": "Greif-Hand-Abdruck im Schlamm, Daumen voll opponierbar, 5 Finger",
+                "habitat": "Kronendach, Mittelschicht des Regenwalds",
+                "merkmal": "Hyoidknochen vergrößert wie Resonanz-Höhle, Ruf trägt 5 km — lauteste Landlebewesen-Stimme"
+              },
+              {
+                "tier": "Jaguar",
+                "spurbild": "rund, 4 Zehen, ohne Krallen-Abdruck (eingezogen), 10-12 cm Durchmesser",
+                "habitat": "Galeriewald, Bachlauf, Lichtung",
+                "merkmal": "stärkster Biss aller Katzen (Beißkraft 2x Löwe), durchbeißt Schildkrötenpanzer, schwimmt gut"
+              },
+              {
+                "tier": "Pfeilgiftfrosch",
+                "spurbild": "keine Spur (nur 2 cm groß), erkennbar an Farb-Signal-Verhalten",
+                "habitat": "Bodenstreu im Tieflandregenwald, feucht",
+                "merkmal": "Hautgift Batrachotoxin (nur in Wildform, durch Beute-Käfer aufgenommen), Aposematik-Färbung warnt Räuber"
+              },
+              {
+                "tier": "Tapir",
+                "spurbild": "3 Zehen vorn, 4 Zehen hinten — Kombination einzigartig, Abdruck wie kleine Bärentatze",
+                "habitat": "Flussaue, Bachlauf, Galeriewald",
+                "merkmal": "Rüsselchen-Nase für Greifen, lebendes Fossil — nächste Verwandte sind Pferd und Nashorn"
+              },
+              {
+                "tier": "Ara",
+                "spurbild": "Sitz-Spur am Ast (Zygodactyl wie Tukan), 2 vorn 2 hinten, Krallen-Abdrücke deutlich",
+                "habitat": "Kronendach, Lehmlecken (Geophagie)",
+                "merkmal": "monogam lebenslang, frisst Ton an Lehmlecken zur Neutralisation von Pflanzen-Giften"
+              }
+            ]
+          },
+          {
+            "name": "🐾 Wildtier-Tracking-Quest „Wer war hier?“",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 25,
+            "minAge": 9,
+            "loudness": "halblaut",
+            "effort": "leicht",
+            "material": "Pro Trupp ein Logbuch (A5-Heft oder gefaltete A4), 5 versteckte Spurkarten mit Spurabdruck (Jaguar unter der Sofadecke, Tapir hinter der Topfpflanze, Faultier auf dem Bücherregal, Pfeilgiftfrosch in der Schreibtisch-Schublade, Tukan-Sitz-Spur am Vorhang). An jeder Spurkarte eine Aufgaben-Karte mit Bestimmungs-Schlüssel-Auszug.",
+            "prepText": "Vorher 5 Spurkarten im Haus oder Garten platzieren — jede „in ihrer Habitat-Schicht“ (Sofadecke = Bachlauf, Bücherregal = Kronendach, unter dem Tisch = Unterholz). Jeder Trupp durchquert den Raum, findet die Spuren und trägt im Logbuch ein: welches Tier, Begründung, wahrscheinliches Verhalten. Am Ende werden alle Logbücher zusammengelegt — das gemeinsame Camp-Logbuch.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Spur 1 (Jaguar)",
+                "content": "Rund, 10-12 cm, 4 Zehen, KEINE Krallen-Abdrücke sichtbar (eingezogen). Notiere im Logbuch: Welches Tier? Begründung über Krallen-Stellung. (Lösung: Jaguar — Katzen ziehen Krallen ein.)"
+              },
+              {
+                "n": 2,
+                "name": "Spur 2 (Tapir)",
+                "content": "3 Zehen vorn, 4 Zehen hinten — sehr ungewöhnliche Kombination. Notiere: Welches Tier? Was sagt die Zehen-Anzahl über die Verwandtschaft? (Lösung: Tapir — verwandt mit Pferd & Nashorn.)"
+              },
+              {
+                "n": 3,
+                "name": "Spur 3 (Faultier)",
+                "content": "Selten am Boden, drei lange Krallen, schleppend. Aufgabe: Warum so selten am Boden? Was machen Faultiere dort? (Lösung: nur 1x pro Woche zum Stuhlgang — die Zeit nutzt es, um Algen-Tarnung zu erneuern.)"
+              },
+              {
+                "n": 4,
+                "name": "Spur 4 (Pfeilgiftfrosch)",
+                "content": "Keine echte Spur, sondern eine farbige Karte mit Warn-Färbung. Aufgabe: Was bedeutet Aposematik? Warum kein Tarn-Muster? (Lösung: Aposematik = Warn-Färbung, signalisiert Räubern die Giftigkeit — Tarnung wäre kontraproduktiv.)"
+              },
+              {
+                "n": 5,
+                "name": "Spur 5 (Tukan-Sitz-Spur)",
+                "content": "Krallen-Abdrücke am Ast, 2 Zehen vorn, 2 hinten. Aufgabe: Wie heißt diese Zehen-Anordnung? Welche Vogel-Gruppe hat sie? (Lösung: Zygodactyl — Tukane, Aras, Spechte, Papageien.)"
+              }
+            ],
+            "safetyRule": "Bei kleinen Geschwistern im Haus: keine essbaren Lockstoffe in den Verstecken (kein Schoko-Tropfen als „Spur-Markierung“, sonst saugt der Hund). Gips-Pulver für eventuelle Abdruck-Stationen außer Reichweite kleiner Kinder. Sonst keine Gefahr — reine Such- und Schreibaufgabe.",
+            "ageAdjust9": "Vorgedruckte Logbuch-Seiten mit Lückentext, eine Beispiel-Antwort als Muster.",
+            "ageAdjust12": "Logbuch ohne Vorlage, freie Skizzen erlaubt. Bonus: bestes Logbuch wird ausgedruckt und ins Camp-Archiv geklebt.",
+            "indoorTip": "Die Wohnung bietet mehr Habitat-Schichten als man denkt — Vorhänge (Kronendach), Bücherregal (Mittelschicht), unter Tischen (Unterholz und Boden).",
+            "outdoorTip": "Im Garten wirkt das Schicht-Konzept echter — Spuren am Bodengrund, im Strauch und an Ästen verteilen. Bei Erde im Garten: echte Gips-Abdrücke gießen (Anleitung in der Wow-Variante).",
+            "whyItWorksTitle": "Forscher-Logbuch statt Schnitzeljagd",
+            "whyItWorks": "Beobachten, notieren, dokumentieren — die Kinder merken, dass „Forscher sein“ mehr ist als etwas finden. Genau wie echte Tropenökologen arbeiten. Was sie schreiben, behalten sie — und das Logbuch ist ein vollwertiges Mitgebsel."
+          }
+        ],
+        "food": "🎂 Regenwald-Karten-Kuchen (1 Blechkuchen) · 🌯 Forscher-Wraps selbst gerollt (12 Wraps, 2/Kind) · 🥤 „Bachlauf-Wasser“ 2 L Apfelschorle leicht grün gefärbt · 🍌 Affen-Bananen (6 Stk.) · 🍿 Dschungel-Popcorn (300 g) · 🥒 Liana-Gemüse-Sticks „Kronendach-Snack“.",
+        "decoration": "🌴 Dschungel-Teller & Becher · 🎈 Luftballons grün/braun/gelb · 🪧 „Camp Manaus-7“-Schild (Pappe + Edding) · 🌿 Grünpflanzen aus dem Wohnzimmer in den Partyraum · 🌧️ Regenwald-Sounds leise im Hintergrund (YouTube, z.B. „Amazon Rainforest Ambience“) · 🪶 Echte oder Deko-Federn verstreut auf dem Tisch.",
+        "giveaways": "In grüne Papiertüte, beschriftet mit „Expeditions-Ausrüstung — ___“: 1 Forschungs-Lizenz nach Wahl, 1 ausgedrucktes Logbuch-Blatt aus der Tracking-Quest, 1 Tüte Schoko-Käfer („Camp-Wegzehrung“), optional 1 Mini-Tropentier-Figur. Ca. 3 € pro Kind.",
+        "shoppingList": [
+          {
+            "emoji": "🌯",
+            "label": "Wraps + Belag (Hähnchen/vegetarisch, Reis, Bohnen, Avocado, Salsa, Käse)",
+            "url": null,
+            "priceEur": 12,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Hauptessen, gleichzeitig Programmpunkt (Selbst-Belegen). Pflicht in jeder Variante."
+          },
+          {
+            "emoji": "🥤",
+            "label": "Apfelschorle (2 L) + grüne Lebensmittelfarbe + Becher + Halme",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Getränk für 6 Kinder über 2,5 Std. — ohne geht es nicht. Lebensmittelfarbe macht es zu „Bachlauf-Wasser“."
+          },
+          {
+            "emoji": "🍌",
+            "label": "Bananen, Popcorn-Mais, Gemüse-Sticks",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Snacks für die Pausen, Lebensmittel = Pflicht."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Blechkuchen-Backmischung + grüne Deko + Schoko-Streusel",
+            "url": null,
+            "priceEur": 6,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Geburtstagskuchen, der zentrale Foto-Moment. Pflicht."
+          },
+          {
+            "emoji": "📜",
+            "label": "Tonpapier grün A4 + Karten-Karton (Karten, Lizenzen, Patches)",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Material für Codeknacker-Karten und Lizenzen — der Kern der Minimal-Variante."
+          },
+          {
+            "emoji": "📄",
+            "label": "Funkspruch-Karten + Spurkarten + Lizenzen ausdrucken",
+            "url": null,
+            "priceEur": 0,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Druckkosten am eigenen Drucker. Die Codeknacker-Vorlagen sind Pflicht, aber kostenlos."
+          },
+          {
+            "emoji": "⭐",
+            "label": "Klett-Abzeichen 3-5 Farben (Spezialisierungs-Patches)",
+            "url": "https://www.amazon.de/s?k=klett+abzeichen+kinder+set&tag=machsleicht-21",
+            "priceEur": 6,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Macht die Spezialisierungs-Wahl greifbar — geht zur Not auch mit farbigen Aufklebern."
+          },
+          {
+            "emoji": "🪶",
+            "label": "Deko-Federn + Holz-Perlen-Set",
+            "url": "https://www.amazon.de/s?k=federn+deko+bastel+holzperlen&tag=machsleicht-21",
+            "priceEur": 5,
+            "hasAffiliate": true,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Für Atmosphäre und Mini-Mitgebsel — Bastel-Vorrat oder vorhandene Federn reichen meist."
+          },
+          {
+            "emoji": "🍫",
+            "label": "Schoko-Käfer + Papiertüten (Action/DM)",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Mitgebsel-Wegzehrung — nett, aber ersetzbar durch vorhandene Süßigkeiten."
+          },
+          {
+            "emoji": "🌿",
+            "label": "Plüsch-Tropentiere für Tracking-Quest",
+            "url": null,
+            "priceEur": 0,
+            "hasAffiliate": false,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf nötig."
+          }
+        ],
+        "estimatedCostEur": 45,
+        "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
+        "savingsTip": {
+          "title": "Codeknacker kostet fast nichts",
+          "body": "Der Kern der Minimal-Variante — der Codeknacker JUNGE — braucht nur Tonpapier, einen Stift und 20 Minuten am Vorabend. Keine Druckvorlage kaufen: das Vollbeispiel (JUNGE mit Pflanzen-Höhen, Spuren-Anatomie, Endemiten-Tabelle und Geräusch-Reichweite) malst du 1:1 ab. Plüsch-Tropentiere für die Tracking-Quest hast du sowieso im Haus. Damit liegst du leicht unter 45 €."
+        }
+      },
+      {
+        "id": "standard",
+        "label": "Standard — 3,5 Stunden, vollwertige Amazonas-Expedition",
+        "headline": "🎯 Standard — 3,5 Stunden, vollwertige Amazonas-Expedition",
+        "intro": "Die volle Expedition: jedes Kind wählt eine Spezialisierung (3-5 zur Auswahl), durchläuft fünf Stationen in selbst gewählter Reihenfolge, knackt den BAUM-Code und vermisst am Ende gemeinsam die Biotop-Karte, um die verlorene Außen-Station zu finden. Ein „Brief des Instituts für Tropenökologie“ setzt den Ton — ernst, kein „kleine-Dschungel-Helden“-Sprech. Mit 8 Kindern reicht 1 Helfer, mit guter Vorbereitung geht es auch solo.",
+        "timeWindow": "14:00–17:30, 8 Kinder",
+        "schedule": [
+          {
+            "time": "14:00",
+            "title": "Eintreffen, Spezialisierungs-Wahl, Brief des Instituts",
+            "description": "Fünf Schalen mit Patches, jedes Kind wählt aus mindestens drei Rollen (Botaniker, Zoologe, Geograph; bei größerer Gruppe auch Ethologe und Ökologe). Du liest den Brief des Instituts für Tropenökologie vor: kurze, ernsthafte Mission, kein Verkindischungs-Sprech. Jedes Team bekommt seine Karte mit 5 Stations-Feldern."
+          },
+          {
+            "time": "14:20",
+            "title": "🏕️ Stations-Wahl-Phase (5 Stationen, frei wählbare Reihenfolge)",
+            "description": "Fünf Stationen im Haus/Garten verteilt. Die Kinder wählen pro Spezialisierungs-Team selbst die Reihenfolge — nicht du. Sie starten bei ihrer Lieblings-Station. So entsteht kein Stau."
+          },
+          {
+            "time": "15:35",
+            "title": "🌯 Forscher-Wraps + Camp-Pause",
+            "description": "Reis vorbereitet, Wraps, Bohnen + Hähnchen/vegetarisch, jeder belegt 2-3 Wraps selbst. 12 Min. belegen + 15 Min. essen = 27 Min. In der Belege-Zeit: Apfelschorle, Liana-Gemüse-Sticks, Schoko-Käfer."
+          },
+          {
+            "time": "16:05",
+            "title": "🎂 Regenwald-Karten-Kuchen",
+            "description": "Kuchen mit Biotop-Topographie (Marzipan-Frösche, Schokoladen-Bachlauf, grüner Guss, Schoko-Lianen). Happy Birthday singen, kurze Geschenke-Runde, wenn das Geburtstagskind das will."
+          },
+          {
+            "time": "16:30",
+            "title": "🌳 Großes Team-Spiel: „Die Biotop-Karte vermessen“",
+            "description": "Der Höhepunkt. Alle Spezialisierungen führen ihre Stations-Ergebnisse zusammen, um die Biotop-Karte komplett zu vermessen — nur dann findet die Expedition die verlorene Außen-Station."
+          },
+          {
+            "time": "17:00",
+            "title": "🏅 Forschungs-Lizenz-Zeremonie",
+            "description": "Alle Stations-Stempel + Karte vermessen = bestanden. Jeder kommt einzeln nach vorne und bekommt seine Lizenz mit konkretem Titel: „Botaniker-Lizenz“, „Zoologe-Lizenz“, „Geograph-Lizenz“ usw."
+          },
+          {
+            "time": "17:20",
+            "title": "🎁 Mitgebsel & freies Spielen / Abholung",
+            "description": "Mitgebsel-Tüten verteilen. 10 Min. Pufferzeit für trödelnde Eltern. Manche Kinder wollen kurz noch ein Foto in voller Ausrüstung — gerne geben."
+          }
+        ],
+        "games": [
+          {
+            "name": "1️⃣ Botaniker-Hauptstation: Pflanzen-Bestimmung & pH-Test",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 25,
+            "minAge": 9,
+            "loudness": "konzentriert",
+            "effort": "mittel",
+            "material": "10 Pflanzen-Karten (Foto + Name verdeckt) auf einem Tisch, ein Bestimmungs-Schlüssel (A4-Tabelle mit Merkmalen: Blatt-Form, Aderung, Wuchsform, Habitat-Zone), 1 Glas Rotkohl-Saft als pH-Indikator (zu Hause selbst gemacht: Rotkohl klein schneiden, in heißem Wasser 10 Min ziehen, abgießen), 4 kleine Bodenproben (Erde aus dem Garten / vom Bachlauf / Sand / Blumenerde), Pipetten oder Strohhalme, Bleistifte, Notiz-Block.",
+            "prepText": "Die Karten liegen mit verdecktem Namen aus. Das Team bestimmt jede Pflanze nur über den Schlüssel — vergleichen, schlussfolgern, nicht raten. Genau das Vorgehen, das ein Tropenökologe macht. Zusätzlich: kleines Chemie-Experiment mit Rotkohl-Saft als pH-Indikator. Vier Bodenproben werden mit dem Saft beträufelt — blau = neutral, rosa = sauer, grün = basisch. Welche Probe stammt aus dem Bachlauf-Bereich (typisch sauer im Amazonas)?",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Bestimmen",
+                "content": "Jede Pflanzen-Karte über den Bestimmungs-Schlüssel anhand der Merkmale identifizieren — Name bleibt verdeckt. Ziel: 8 richtige Identifikationen."
+              },
+              {
+                "n": 2,
+                "name": "Endemiten markieren",
+                "content": "Aus den 8 bestimmten Pflanzen die endemischen Amazonas-Arten farbig markieren (Açaí-Palme, Paranuss, Heliconia, Victoria-Seerose)."
+              },
+              {
+                "n": 3,
+                "name": "Rotkohl-pH-Test",
+                "content": "Jede der 4 Bodenproben mit 5 Tropfen Rotkohl-Saft beträufeln. Farbänderung beobachten und in Tabelle eintragen: blau = neutral (pH 7), rosa = sauer (pH 4-5), grün/gelb = basisch (pH 8+)."
+              },
+              {
+                "n": 4,
+                "name": "Bachlauf-Boden identifizieren",
+                "content": "Welche Probe ist am sauersten? Das ist der Amazonas-Tieflandboden (typisch pH 4-5 durch Tanninsäuren aus zerfallenden Blättern). Diese Erkenntnis als Pflanzen-Code an den Karten-Vermesser weitergeben."
+              }
+            ],
+            "safetyRule": "PFLICHT: Rotkohl-Saft ist lebensmittelecht, aber bei empfindlichen Augen Schutzbrille tragen. Pipetten/Strohhalme nicht zum Mund führen. Nach dem Experiment Hände waschen. Erde nicht essen (klar, aber bei 9-Jährigen sicherheitshalber sagen). Pipetten nicht zwischen Proben tauschen — Kreuzkontamination verfälscht das Ergebnis. Aufsicht durch Erwachsenen oder Helfer während des pH-Tests.",
+            "ageAdjust9": "Schlüssel mit mehr Bildern und gröberen Merkmalen, 6 statt 10 Karten. Beim pH-Test nur 2 Bodenproben (eine sauer, eine neutral) für klaren Kontrast.",
+            "ageAdjust12": "Schwierige Verwechslungs-Paare einbauen (Açaí/Pejibaye-Palme, Heliconia/Strelitzie). Zusätzliche pH-Aufgabe: aus 6 Proben die zwei Amazonas-typischen heraussuchen.",
+            "indoorTip": "Ein ruhiger Tisch abseits der lauteren Stationen — Bestimmen und pH-Test brauchen Konzentration. Zeitungspapier unter den pH-Test legen, falls etwas tropft.",
+            "outdoorTip": "Pflanzen-Karten mit Wäscheklammern an einer Leine — wirkt wie eine echte Feld-Station. pH-Test auf einem Gartentisch unter Sonnenschirm (Sonne verfärbt den Saft).",
+            "whyItWorksTitle": "Echte Wissenschaft statt Bastel-Stunde",
+            "whyItWorks": "Tropenökologen arbeiten genau so — Bestimmungs-Schlüssel und pH-Messung sind tatsächliche Feldmethoden. Dass eine 11-Jährige selbst einen pH-Indikator mischt und damit Säurezonen identifiziert, bleibt im Kopf. Die Erkenntnis „Amazonas-Boden ist sauer“ ist außerdem ein häufig falsch erratenes Schul-Quiz-Item."
+          },
+          {
+            "name": "2️⃣ Zoologe-Hauptstation: Spurabdruck-Anatomie",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 25,
+            "minAge": 9,
+            "loudness": "konzentriert",
+            "effort": "mittel",
+            "material": "8 Spurkarten mit Zoll-genauen Abdrücken (Jaguar, Tapir, Faultier, Brüllaffe, Ozelot, Ameisenbär, Capybara, Coati), Spur-Schlüssel A4 (Zehen-Anzahl, Krallen-Stellung, Schrittlänge), Lineal, optional: Gips-Pulver + 4 leere Joghurt-Becher als Form für Live-Abdruck im Garten, Wasser-Becher zum Anrühren.",
+            "prepText": "8 Spurkarten liegen aus, jede mit präzisem Abdruck und Größenangabe in cm. Das Team bestimmt jedes Tier nur über den Spur-Schlüssel — Zehen-Anzahl, Krallen-Sichtbarkeit, Schrittlänge. Optional Live-Element: ein eigener Abdruck wird mit Gips in eine vorbereitete Spur gegossen (Anleitung in der Wow-Variante).",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Spuren lesen",
+                "content": "Jede Spurkarte über den Schlüssel identifizieren. Achten auf: Anzahl Zehen, Krallen-Abdruck ja/nein, Form (rund/oval/spaltig), Größe in cm."
+              },
+              {
+                "n": 2,
+                "name": "Bestimmen",
+                "content": "Identifizierte Tiere notieren. Schwierige Paare: Jaguar (rund, keine Krallen) vs. Ozelot (kleiner, keine Krallen) vs. Coati (Krallen sichtbar). Tapir (3+4 Zehen) ist einzigartig — leicht zu erkennen."
+              },
+              {
+                "n": 3,
+                "name": "Verhalten ableiten",
+                "content": "Bei einer Spur-Karte mit zwei Abdrucks-Paaren (eng = rennt, weit = schleicht) das Tempo ableiten. Bei einem Karten-Set mit Krallen-Abdruck eines Faultiers: warum so tief? (Faultier hängt — wenn am Boden, dann hilflos und gräbt sich rein.)"
+              },
+              {
+                "n": 4,
+                "name": "Spuren-Code sichern",
+                "content": "Die 8er-Identifikations-Liste später beim Karten-Vermessen einbringen — ohne sie geht die Hauptmission nicht weiter."
+              }
+            ],
+            "safetyRule": "Bei Gips-Abdruck-Option: Gipspulver NICHT einatmen (Staub), nur draußen anrühren oder mit FFP2-Maske drinnen. Hände waschen nach Gips-Arbeit. Trocknendes Gips wird heiß (chemische Reaktion) — nicht in der Hand halten, in Form aushärten lassen. Aufsicht durch Erwachsenen bei Gips-Anrühren.",
+            "ageAdjust9": "Schlüssel mit mehr Bildern und gröberen Merkmalen, 6 statt 8 Karten.",
+            "ageAdjust12": "Schwierige Verwechslungs-Paare (Jaguar/Ozelot, Coati/Nasenbär) einbauen, Schrittlänge-Berechnung zusätzlich.",
+            "indoorTip": "Spuren auf dem Boden in einer Reihe auslegen — die Kinder können hingehen und vergleichen, wie an einer echten Spur.",
+            "outdoorTip": "Echte Erde im Garten als Testfeld nutzen — ein paar Schuh-Abdrücke selbst zeigen das Prinzip Spurabdruck = Anatomie-Bild.",
+            "whyItWorksTitle": "Anatomie macht den Detektiv",
+            "whyItWorks": "Echtes Wildtier-Tracking basiert auf Anatomie-Wissen. Wer 3 Zehen vorn und 4 hinten sieht, weiß: Tapir, verwandt mit Pferd. Wer keine Krallen sieht: Katzenartig. Diese Logik bleibt — und ist nebenbei der Grund, warum Spuren-Lesen ein anerkannter wissenschaftlicher Skill ist (Wildlife Tracker certification existiert weltweit)."
+          },
+          {
+            "name": "3️⃣ Geograph-Hauptstation: Höhenlinien-Bachlauf-Kartierung",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 25,
+            "minAge": 9,
+            "loudness": "konzentriert",
+            "effort": "mittel",
+            "material": "1 große Topografie-Karte A3 mit grobem Höhenlinien-Raster (selbst gezeichnet — konzentrische Linien um einen „Berg“ und einen „Bach“), 4 Mess-Karten mit Tiefen- und Höhen-Angaben, ein leeres Karten-Raster (5×5) zum Eintragen, braune und blaue Stifte in 4 Schattierungen für Höhen-Schichten. Optional: Gartenschlauch als „Bachlauf-Modell“ draußen.",
+            "prepText": "4 Mess-Karten verteilen — jede zeigt einen Bachlauf-Abschnitt mit Höhenangaben (in Metern über Meer). Aufgabe: trage die Höhen in das leere Raster ein, koloriere nach Höhen-Schicht (hell = tief / Bachlauf, dunkel = hoch / Plateau). Bestand = alle 4 Abschnitte kohärent eingetragen.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Mess-Karten lesen",
+                "content": "Jede Mess-Karte einzeln durchgehen: Anfangshöhe, Mittel-Höhe, End-Höhe ablesen. Quelle ist immer höher als Mündung."
+              },
+              {
+                "n": 2,
+                "name": "Raster ausfüllen",
+                "content": "Höhen in das 5×5-Raster eintragen — hier zeigt sich, wo die Höhenlinien eng zusammenstehen (steiler Hang) oder weit auseinander (Flachland)."
+              },
+              {
+                "n": 3,
+                "name": "Schicht-Farben",
+                "content": "Nach Höhen-Schicht koloriert: 0-100 m hellgrün (Flussaue), 100-300 m mittelgrün (Tieflandregenwald), 300-800 m dunkelgrün (Bergregenwald), >800 m braun (Nebelwald-Plateau)."
+              },
+              {
+                "n": 4,
+                "name": "Bachlauf-Verlauf",
+                "content": "Mit blauem Stift den Bachlauf von der Quelle (höchster Punkt) zur Mündung (tiefster Punkt) einzeichnen — Wasser folgt der Fall-Linie senkrecht zu den Höhenlinien."
+              },
+              {
+                "n": 5,
+                "name": "Karten-Marke sichern",
+                "content": "Am Ende der Station die Camp-Marke (Symbol auf Karton) einsammeln — Schlüssel für die Karten-Vermessung."
+              }
+            ],
+            "safetyRule": null,
+            "ageAdjust9": "Vorgedrucktes Raster mit Hilfslinien, nur 2 Bachlauf-Abschnitte.",
+            "ageAdjust12": "Leeres Raster, 4 Abschnitte, einer davon gestört (Daten-Lücke — die Kinder müssen aus den Höhenlinien rekonstruieren, wo der Bach durchführt).",
+            "indoorTip": "Großer Tisch oder Boden — das A3-Raster braucht Platz, alle stehen drum herum wie auf einer Brücke.",
+            "outdoorTip": "Auf einer Picknick-Decke im Garten — wirkt wie ein Feld-Kartograf. Mit Gartenschlauch einen echten Wasserlauf-Modell mit Sand und Steinen bauen, wo das Wasser bergab läuft.",
+            "whyItWorksTitle": "Echtes Karten-Lesen",
+            "whyItWorks": "Kartografen und Geographen arbeiten genau so. Dass das eine richtige Wissenschaft ist, finden 9-12 cool — und das Schicht-Konzept (welche Höhe entspricht welcher Farbe) bleibt im Kopf. Höhenlinien-Lesen ist Schulstoff ab Klasse 5, aber selten praktisch geübt."
+          },
+          {
+            "name": "4️⃣ Ethologie-Crew-Station: Brüllaffen-Ruf-Synchronisation",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 15,
+            "minAge": 9,
+            "loudness": "laut",
+            "effort": "leicht",
+            "material": "4 Ruf-Signal-Karten (Pappkarten mit Symbolen: Brüllaffen-Morgenruf, Tukan-Warnschrei, Ara-Schwarm, Jaguar-Grunzen), 1 Spielleiter mit Stoppuhr, ein Wahl-Brett mit drei Schwierigkeiten (leicht / mittel / hart), Maßband oder Schritt-Zähler.",
+            "prepText": "„Jeder Tropenökologe muss Tier-Rufe unterscheiden — und ihre Reichweite einschätzen.“ Eine 5-6 Meter-Strecke durch Garten oder Flur. Das Team muss Tier-Rufe in der richtigen Reihenfolge ausführen UND danach die Reichweite des lautesten Rufes (Brüllaffe) abschreiten. Vor der Strecke wählt das Team selbst die Schwierigkeit.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Schwierigkeit wählen",
+                "content": "Am Wahl-Brett entscheiden: leicht (3 Rufe), mittel (5 Rufe), hart (7 Rufe + 1 falscher). 9-12 unterschätzen sich oft."
+              },
+              {
+                "n": 2,
+                "name": "Rufe folgen",
+                "content": "Spielleiter zeigt Ruf-Karten nacheinander, das Team führt aus: Brüllaffen-Morgenruf (laut, langgezogen), Tukan-Warnschrei (krächzend), Ara-Schwarm (durcheinander, mehrere Stimmen), Jaguar-Grunzen (tief, sparsam)."
+              },
+              {
+                "n": 3,
+                "name": "Falscher Ruf?",
+                "content": "Bei „hart“: ein Ruf gehört nicht in den Amazonas (z.B. Wolfsgeheul = nicht Amazonas, oder „Tiger-Brüll“ — Tiger leben in Asien). Wer den Fehler erkennt, gewinnt Bonus-Stempel."
+              },
+              {
+                "n": 4,
+                "name": "Reichweite abschreiten",
+                "content": "Nach den Rufen: Brüllaffen-Ruf trägt 5 km. Im Garten kann man das nicht abschreiten — aber mit Maßband 5 Meter zeigen und durch 1000 teilen, um zu erklären, wie viele Meter auf 1 km kommen. Das ist mehr Ableitungs-Arbeit als Lauf-Strecke."
+              },
+              {
+                "n": 5,
+                "name": "Geschafft",
+                "content": "Alle Rufe korrekt + Reichweite-Erklärung = Stempel. Wer hart wählt und scheitert, lernt mehr als wer immer leicht macht."
+              }
+            ],
+            "safetyRule": "Laute Rufe können die Nachbarn nerven — Outdoor-Variante in lautstarken Stunden vermeiden (sonntag-vormittag), Indoor-Variante mit gedämpftem Lautstärke-Limit. Niemand muss „brüllen“, der nicht will — Flüster-Modus möglich.",
+            "ageAdjust9": "Nur leicht/mittel anbieten, langsamer durch die Rufe.",
+            "ageAdjust12": "Zusätzliche Rufe, schnellere Folge, Zeit-Limit von 60 Sek. Außerdem: ein zweiter Ruf-Code zur Reichweiten-Berechnung (z.B. Tukan 1 km — wie weit muss ein Tukan-Schwarm fliegen, um sich zu hören?)."
+          },
+          {
+            "name": "5️⃣ Codeknacker-Station → BAUM (alle Spezialisierungen)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 20,
+            "minAge": 9,
+            "loudness": "konzentriert",
+            "effort": "mittel",
+            "material": "4 verschlossene Umschläge (mit Wachs-Imitat oder Aufkleber-„Siegel“), in jedem ein Rätsel. Tropen-Lexikon oder Internet-Zugang zum Recherchieren, Bleistifte.",
+            "prepText": "Vier versiegelte Umschläge: „Nur durch alle vier Codes findet ihr die verlorene Außen-Station.“ Gemeinsame Logik: In jedem Umschlag steckt ein Tropen-Detail, das auf einen bestimmten Buchstaben verweist. Die vier Buchstaben in Umschlag-Reihenfolge A-B-C-D ergeben ein echtes deutsches Wort.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Umschlag A (Botaniker) → B",
+                "content": "5 Bäume nach Höhe (m) vom höchsten zum niedrigsten sortieren: Brasilianischer Walnussbaum (Bertholletia) 50 m / Kapok 70 m / Mahagoni 45 m / Jacaranda 30 m / Heliconia 2 m. Höchster Baum = Kapok? Nein — Bertholletia (Paranuss) wird oft als Symbol-Baum genannt, aber Kapok ist höher. Achtung: gefragt ist der NÄCHST-höchste nach Kapok — das ist Bertholletia (Paranuss) → B."
+              },
+              {
+                "n": 2,
+                "name": "Umschlag B (Zoologe) → A",
+                "content": "4 Spurabdrücke, einer ist ungewöhnlich: 3-Zehen vorn, 4-Zehen hinten. Welches Tier? Antwort: Anta (portugiesisch für Tapir, Amazonas-Bezeichnung) → A. Hinweis-Karte: Wie heißt der Tapir auf Portugiesisch (Sprache Brasiliens)?"
+              },
+              {
+                "n": 3,
+                "name": "Umschlag C (Geograph) → U",
+                "content": "3 Bäche, einer mündet in den Amazonas-Hauptstrom: Ucayali, Madeira, Negro. Alle drei münden in den Amazonas, aber der Ucayali ist der Quellfluss (offiziell die längste Quelllinie). → U. Hinweis-Karte: Welcher Fluss gilt als wichtigster Quellfluss des Amazonas?"
+              },
+              {
+                "n": 4,
+                "name": "Umschlag D (Ethologe/Ökologe) → M",
+                "content": "3 Affenrufe, einer trägt am weitesten: Brüllaffe (5 km), Kapuzineraffe (0,5 km), Marmoset/Krallenaffe (0,1 km). Aber: gefragt ist der Affen-Typ mit dem KLEINSTEN Ruf-Radius (paradox — das wird oft falsch erraten). Das ist Marmoset → M."
+              },
+              {
+                "n": 5,
+                "name": "Lösung lesen",
+                "content": "Buchstaben in Umschlag-Reihenfolge A-B-C-D: B-A-U-M = BAUM. Echtes Wort, am Ort ablesbar."
+              },
+              {
+                "n": 6,
+                "name": "Ort finden",
+                "content": "Du hast vorher einen Ort mit „BAUM“ markiert (Wohnzimmer-Topfpflanze, Baum im Garten, Christbaum-Ständer falls Dezember-Geburtstag — oder einfach ein Holz-Möbel). Dort liegt die verlorene Außen-Station."
+              }
+            ],
+            "safetyRule": "Wenn die Außen-Station im Garten an einem echten Baum versteckt ist: vorher prüfen, dass keine Wespen / Hornissen / niedrigen Äste auf Augenhöhe sind.",
+            "ageAdjust9": "Auf jedem Umschlag steht „Wer löst das? — Botaniker / Zoologe / Geograph / Ökologe“. Klare Anleitung. Außerdem: Lösungsbuchstabe in Großbuchstaben markiert.",
+            "ageAdjust12": "Hinweis fehlt — sie müssen selbst entscheiden, welches Rätsel welche Spezialisierung löst. Plus: ein zusätzlicher Umschlag als „Wilderer-Falle“ — wer den löst, bekommt einen falschen Buchstaben.",
+            "indoorTip": "Den BAUM-Ort drinnen wählen (Topfpflanze, Holz-Möbel) — der „Ort am BAUM“ funktioniert in jeder Wohnung.",
+            "outdoorTip": "Ein echter Baum im Garten oder Park als Versteck-Ort markieren — wirkt am eindrucksvollsten.",
+            "whyItWorksTitle": "Jede Spezialisierung ist nötig",
+            "whyItWorks": "Wer eine Station nicht knackt, holt sich einen Spezialisten dazu, der seinen Code schon hat — gelöst wird gemeinsam, niemand bleibt hängen. Am Ende bekommt jedes Kind die volle Forschungs-Lizenz, ohne Abstufung. Wer besonders sorgfältig beobachtet oder recherchiert hat, kriegt einen „Sorgfalt-Spezialist“-Stempel auf die Lizenz — passt zur Hero-Botschaft „im Regenwald zählt nicht, wer am schnellsten rennt, sondern wer hinschaut“. Tempo wird hier nicht extra belohnt.",
+            "codeMechanic": "4-Umschlag-Chiffre: Pro Umschlag genau ein Tropen-Detail-Rätsel, das einen Buchstaben liefert. Selbstkontrolle: ergibt sich ein echtes Wort (BAUM), war die Lösung richtig. Reihenfolge ist nummeriert (A-B-C-D), die Logik ist nicht „wer zuerst löst gewinnt“ sondern „wer den nächsten Umschlag mit dem richtigen Vorgänger-Buchstaben aufschließt“.",
+            "animalFacts": [
+              {
+                "tier": "Anakonda",
+                "spurbild": "keine Spur, aber Schleif-Furche im weichen Boden, 20-40 cm breit",
+                "habitat": "Sumpf, Flussufer, Galeriewald",
+                "merkmal": "größte Schlange der Welt nach Gewicht (bis 250 kg), Weibchen 3x größer als Männchen, vivipar (lebendgebärend)"
+              },
+              {
+                "tier": "Faultier",
+                "spurbild": "selten am Boden, dort 3 Krallen-Eindrücke an 3 Zehen, sehr langsam, schleppend",
+                "habitat": "Kronendach, Unterholz beim Toiletten-Gang (1x pro Woche!)",
+                "merkmal": "verdaut Blätter 30 Tage, Algen wachsen im Fell als Tarnung, dreht den Kopf 270 Grad"
+              },
+              {
+                "tier": "Tukan",
+                "spurbild": "Sitz-Spur am Ast, 2 Zehen vorn, 2 hinten (Zygodactyl)",
+                "habitat": "Kronendach des Tieflandregenwaldes",
+                "merkmal": "Schnabel hohl mit Knochen-Streben, dient als Klima-Anlage (Wärmeabgabe), nicht primär zum Beißen"
+              },
+              {
+                "tier": "Brüllaffe",
+                "spurbild": "Greif-Hand-Abdruck im Schlamm, Daumen voll opponierbar, 5 Finger",
+                "habitat": "Kronendach, Mittelschicht des Regenwalds",
+                "merkmal": "Hyoidknochen vergrößert wie Resonanz-Höhle, Ruf trägt 5 km — lauteste Landlebewesen-Stimme"
+              },
+              {
+                "tier": "Jaguar",
+                "spurbild": "rund, 4 Zehen, ohne Krallen-Abdruck (eingezogen), 10-12 cm Durchmesser",
+                "habitat": "Galeriewald, Bachlauf, Lichtung",
+                "merkmal": "stärkster Biss aller Katzen (Beißkraft 2x Löwe), durchbeißt Schildkrötenpanzer, schwimmt gut"
+              },
+              {
+                "tier": "Pfeilgiftfrosch",
+                "spurbild": "keine Spur (nur 2 cm groß), erkennbar an Farb-Signal-Verhalten",
+                "habitat": "Bodenstreu im Tieflandregenwald, feucht",
+                "merkmal": "Hautgift Batrachotoxin (nur in Wildform, durch Beute-Käfer aufgenommen), Aposematik-Färbung warnt Räuber"
+              },
+              {
+                "tier": "Tapir",
+                "spurbild": "3 Zehen vorn, 4 Zehen hinten — Kombination einzigartig, Abdruck wie kleine Bärentatze",
+                "habitat": "Flussaue, Bachlauf, Galeriewald",
+                "merkmal": "Rüsselchen-Nase für Greifen, lebendes Fossil — nächste Verwandte sind Pferd und Nashorn"
+              },
+              {
+                "tier": "Ara",
+                "spurbild": "Sitz-Spur am Ast (Zygodactyl wie Tukan), 2 vorn 2 hinten, Krallen-Abdrücke deutlich",
+                "habitat": "Kronendach, Lehmlecken (Geophagie)",
+                "merkmal": "monogam lebenslang, frisst Ton an Lehmlecken zur Neutralisation von Pflanzen-Giften"
+              }
+            ]
+          },
+          {
+            "name": "🗺️ Die Biotop-Karte vermessen — Hauptmission",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 30,
+            "minAge": 9,
+            "loudness": "halblaut",
+            "effort": "mittel",
+            "material": "Eine große Biotop-Karte (A3 oder zwei A4 zusammengeklebt) mit 5 markierten, aber unbeschriebenen Standorten, Karten-Stifte, eine Forschungs-Kiste an der Außen-Station (Schuhkarton mit Tarn-Folie und Lehmlecken-Aufklebern), optional Klebeband für „Wilderer-Zonen“.",
+            "prepText": "„Eure Stationen sind abgeschlossen. Botaniker haben die Pflanzen-Liste und pH-Werte, Zoologen die Spurabdruck-Identifikationen, Geographen die Höhenlinien-Karte, Ethologen die Ruf-Reichweiten. Jetzt vermesst ihr gemeinsam die Biotop-Karte — und nur wenn alle Eintragungen stimmen, findet ihr die verlorene Außen-Station.“",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Karte auslegen",
+                "content": "Die A3-Biotop-Karte mit 5 markierten Standorten in die Mitte legen, Stifte bereit."
+              },
+              {
+                "n": 2,
+                "name": "Botaniker tragen ein",
+                "content": "An welchem Standort welche endemische Pflanze und welcher pH-Wert gemessen wurde — aus ihrer Bestimmungs-Liste."
+              },
+              {
+                "n": 3,
+                "name": "Zoologen markieren",
+                "content": "Welche Tier-Spur an welchem Standort gefunden wurde. Faultier-Standort vs. Jaguar-Standort vs. Tapir-Standort."
+              },
+              {
+                "n": 4,
+                "name": "Geographen kolorieren",
+                "content": "Ihre Höhen-Schicht-Farben (hellgrün Flussaue → braun Plateau) an die passenden Standorte legen. Bachlauf einzeichnen."
+              },
+              {
+                "n": 5,
+                "name": "Ethologen + Ökologen markieren",
+                "content": "Ruf-Reichweite-Kreise (5 km für Brüllaffe, 1 km für Tukan) als gestrichelte Linien einzeichnen — wo überlappen sich die Reviere? Nahrungsnetz-Pfeile zwischen Endemiten und Konsumenten ziehen."
+              },
+              {
+                "n": 6,
+                "name": "Außen-Station finden",
+                "content": "Sind alle Eintragungen schlüssig, ergibt sich der Standort. Suchen am Ort mit der BAUM-Markierung."
+              }
+            ],
+            "safetyRule": null,
+            "ageAdjust9": "Vorgezeichnete Hilfslinien auf der Karte, Standorte beschriftet.",
+            "ageAdjust12": "Wilderer-Twist: Klebeband-Streifen als „Wilderer-Zonen“ auf den Boden. Wer beim Suchen drauftritt, muss zurück zur Karte und einen Code erneut lösen.",
+            "indoorTip": "Großer Esstisch als „Kartentisch“ — alle stehen drumherum, das wirkt wie eine echte Lagebesprechung im Camp.",
+            "outdoorTip": "Karte auf einem Gartentisch, die verlorene Außen-Station kann im Garten liegen (z.B. unter einer Tarn-Plane).",
+            "whyItWorksTitle": "Erst zusammen ergibt es Sinn",
+            "whyItWorks": "Die ganze Expedition läuft hier zusammen: keine Spezialisierung kann die Karte allein vermessen. Der Höhepunkt belohnt Kooperation, nicht Einzelleistung. Echte Tropenökologie-Expeditionen funktionieren genau so — interdisziplinäre Teams führen ihre Daten zusammen."
+          }
+        ],
+        "food": "🎂 Regenwald-Karten-Kuchen (1 Blechkuchen) · 🌯 Forscher-Wraps selbst belegt (24 Wraps, 3/Kind) · 🥤 „Bachlauf-Wasser“ 3 L Apfelschorle grün gefärbt · 🍌 Affen-Bananen · 🥒 Liana-Gemüse-Buffet · 🍿 Dschungel-Popcorn · 🧀 Käse-Würfel als „Frosch-Eier“.",
+        "decoration": "🌴 Dschungel-Teller & Becher · 🎈 Luftballons grün/braun/gelb · 🪧 „Camp Manaus-7“-Schild · 🌿 Grünpflanzen aus dem Wohnzimmer + Krepppapier-Lianen · 🌧️ Regenwald-Sounds leise im Hintergrund (YouTube) · 🪶 Echte oder Deko-Federn verstreut · 📜 A3-Biotop-Karte als Tisch-Eyecatcher · 🏺 Eine generische „Forscher-Gold-Münze“ (Schoko-Goldmünze + Edding-Symbol) als Atmosphäre.",
+        "giveaways": "Grüne Papiertüte „Expeditions-Ausrüstung für ___“: Forschungs-Lizenz mit konkretem Titel, Camp-Forscher-Ausweis im Scheckkartenformat (laminiert), Lieblings-Logbuch-Seite, Klett-Abzeichen, Schoko-Käfer, optional Mini-Tropentier-Figur. Ca. 6 € pro Kind.",
+        "shoppingList": [
+          {
+            "emoji": "📜",
+            "label": "Tonpapier grün A4 + A3-Karten-Karton",
+            "url": null,
+            "priceEur": 6,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Material für Stations-Karten, A3-Biotop-Karte (Hauptmission), Lizenzen und Ausweise."
+          },
+          {
+            "emoji": "📄",
+            "label": "Druckkosten (Karten, Codes, Lizenzen, Spurkarten)",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Stations-Aufgaben, BAUM-Umschläge und Lizenzen ausdrucken — Pflicht für die Expedition."
+          },
+          {
+            "emoji": "🌯",
+            "label": "Wraps + Belag (Hähnchen/vegetarisch, Reis, Bohnen, Avocado, Salsa, Käse)",
+            "url": null,
+            "priceEur": 22,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Hauptessen + Programmpunkt für 8 Kinder. Pflicht."
+          },
+          {
+            "emoji": "🥤",
+            "label": "Apfelschorle (3 L) + grüne Lebensmittelfarbe + Becher + Halme",
+            "url": null,
+            "priceEur": 6,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Getränk für 8 Kinder über 3,5 Std., grün gefärbt als „Bachlauf-Wasser“."
+          },
+          {
+            "emoji": "🍿",
+            "label": "Snacks für 8 Kinder (Bananen, Popcorn, Käse, Gemüse)",
+            "url": null,
+            "priceEur": 14,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Pausen-Snacks, Lebensmittel = Pflicht."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Backmischung + Marzipan-Tropentiere + Wunderkerze + grüner Guss",
+            "url": null,
+            "priceEur": 10,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Regenwald-Karten-Kuchen, zentraler Moment. Marzipan-Tiere für die Topographie."
+          },
+          {
+            "emoji": "📦",
+            "label": "Außen-Station-Forschungs-Kiste (Karton + Tarn-Folie + Lehmlecken-Aufkleber)",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Ziel der Hauptmission „Karte vermessen“ — ohne Außen-Station kein Finale."
+          },
+          {
+            "emoji": "🧪",
+            "label": "Rotkohl + Pipetten (DM) + 4 kleine Becher für pH-Test",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Material für den Botaniker-pH-Test — günstig, aber zwingend für die Chemie-Station."
+          },
+          {
+            "emoji": "⭐",
+            "label": "Klett-Abzeichen 5 Farben (Spezialisierungs-Patches)",
+            "url": "https://www.amazon.de/s?k=klett+abzeichen+kinder+set&tag=machsleicht-21",
+            "priceEur": 7,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Macht die Spezialisierungs-Wahl sichtbar, lässt sich aber improvisieren."
+          },
+          {
+            "emoji": "🔭",
+            "label": "Spielzeug-Fernglas (für Ethologe-Beobachtung)",
+            "url": "https://www.amazon.de/s?k=fernglas+kinder+spielzeug&tag=machsleicht-21",
+            "priceEur": 7,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Verstärkt die Ethologe-Rolle — Klorollen-Fernrohr tut es auch."
+          },
+          {
+            "emoji": "🪶",
+            "label": "Deko-Federn + Holz-Perlen-Set",
+            "url": "https://www.amazon.de/s?k=federn+deko+bastel+holzperlen&tag=machsleicht-21",
+            "priceEur": 6,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Deko + Mini-Tropentier-Mitgebsel. Nett, kein Muss."
+          },
+          {
+            "emoji": "🪧",
+            "label": "Tropen-Girlande + Luftballons grün/braun/gelb",
+            "url": "https://www.amazon.de/s?k=dschungel+girlande+luftballons&tag=machsleicht-21",
+            "priceEur": 9,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Camp-Atmosphäre. Grünpflanzen aus dem Wohnzimmer ersetzen viel davon."
+          },
+          {
+            "emoji": "🍫",
+            "label": "Schoko-Käfer + Schoko-Goldmünzen + Papiertüten",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Mitgebsel-Wegzehrung, ersetzbar."
+          },
+          {
+            "emoji": "🌿",
+            "label": "Plüsch-Tropentiere für Tracking-Station",
+            "url": null,
+            "priceEur": 0,
+            "hasAffiliate": false,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf."
+          },
+          {
+            "emoji": "🪪",
+            "label": "Laminier-Folien für Camp-Forscher-Ausweise",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Macht die Ausweise wertiger — geht auch ohne Laminieren."
+          }
+        ],
+        "estimatedCostEur": 95,
+        "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
+        "savingsTip": {
+          "title": "Stations-Material aus dem Haus",
+          "body": "Drei der fünf Stationen brauchen fast nichts dazuzukaufen: die Spurabdruck-Karten zeichnest du auf Tonpapier, die Höhenlinien-Karte ist eine selbstgemachte A3-Skizze, die Ruf-Synchronisation nutzt nur Stoppuhr und Stimme. Rotkohl für den pH-Test kostet 1 € im Discounter. Grünpflanzen aus dem Wohnzimmer ersetzen gekaufte Deko. So bleibt der Aufpreis zu Minimal überschaubar."
+        }
+      },
+      {
+        "id": "wow",
+        "label": "Wow — 4 Stunden (oder Schlafparty), Escape-Room Verlorene Forschungs-Station",
+        "headline": "✨ Wow — 4 Stunden (oder Schlafparty), Escape-Room „Verlorene Forschungs-Station“",
+        "intro": "Für den Geburtstag, der noch in der 7. Klasse erwähnt wird. Wow baut auf Standard auf: gleiche Spezialisierungs-Wahl, gleiche 5 Stationen, gleiche Karten-Vermessung — erweitert um eine 6. Station (Gips-Spurabdruck-Werkstatt), eine angeschlossene Escape-Room-Quest „Verlorene Forschungs-Station“ mit 6 Stationen und expliziter Dependency-Flow-Kette (Atlantis-Wow-Variante: jede Station öffnet die nächste), ein 15-Fragen-Ökologie-Wissens-Quiz und optional einen Schlafparty-Anschluss mit Nacht-Insekten-Beobachtung. Echte Forscher-Bandanas als Highlight, Mini-Lupe zum Mitnehmen.",
+        "timeWindow": "15:00–19:00, 10 Kinder",
+        "schedule": [
+          {
+            "time": "15:00",
+            "title": "Eintreffen, Spezialisierungs-Wahl, Brief des Instituts",
+            "description": "Wie in Standard: 5 Schalen mit Patches, Brief des Instituts für Tropenökologie wird vorgelesen. Jedes Kind bekommt seine Expeditions-Karte mit jetzt 6 Stations-Feldern. 20 Min."
+          },
+          {
+            "time": "15:20",
+            "title": "🏕️ Stations-Wahl-Phase (6 Stationen, frei wählbare Reihenfolge)",
+            "description": "Die 5 Stationen aus Standard plus die 6. Station Gips-Spurabdruck-Werkstatt (die Kinder gießen ihre eigenen Spurabdrücke und nehmen sie als Mitgebsel mit). 90 Min."
+          },
+          {
+            "time": "16:50",
+            "title": "🌯 Forscher-Wraps + Camp-Pause",
+            "description": "Wie in Standard, aber mit 2 Wrap-Stationen parallel (für 10 Kinder kein Stau). 30 Min."
+          },
+          {
+            "time": "17:20",
+            "title": "🎂 Regenwald-Karten-Kuchen + Lizenz-Mini-Zeremonie",
+            "description": "Kuchen, Happy Birthday, Geschenke. Jeder bekommt seine Forschungs-Lizenz und das Forscher-Bandana. Nicht die finale Zeremonie — die kommt nach der Escape-Room-Mission. 25 Min."
+          },
+          {
+            "time": "17:45",
+            "title": "📡 Mission-Briefing: Verlorene Forschungs-Station gepeilt",
+            "description": "Dramatischer Übergang. „Wir haben die letzte Funkfrequenz der verschollenen Forschungs-Station angepeilt — die Krake im Bachlauf-Mythos bewegt sich, die verschollenen Gold-Legenden klingen wieder, und unsere Vorgänger haben offenbar etwas Wichtiges hinterlassen. Wenn wir die 6 Code-Schlösser schneller knacken, finden wir die Daten, bevor die Wilderer dort sind.“ Ab jetzt arbeiten alle Teams zusammen."
+          },
+          {
+            "time": "17:55",
+            "title": "🌳 Escape-Room-Quest „Verlorene Forschungs-Station“ (6 Stationen, Dependency-Flow)",
+            "description": "Sechs Stationen durch Garten/Wohnung. Jede Station öffnet die nächste — kein Sprung möglich. Lösungswort am Ende: AMAZONAS (8 Buchstaben in 6 Stationen, 2 Stationen geben Doppel-Buchstaben). 45 Min."
+          },
+          {
+            "time": "18:40",
+            "title": "🏆 Außen-Station-Eröffnung & Daten-Sicherung",
+            "description": "Außen-Station finden (Schuhkarton mit Tarn-Folie + Vorhängeschloss-Aufkleber), Schloss aufmachen (das Lösungswort AMAZONAS ist der Code), Daten sicherstellen = Mitgebsel-Inhalt + Quiz-Auswertung."
+          },
+          {
+            "time": "19:00",
+            "title": "🎁 Verabschiedung am Camp-Tor — oder Übergang zur Schlafparty",
+            "description": "Standard: Mitgebsel-Tüten, Forscher-Bandana umgebunden, Lizenz und Ausweis in der Hand, Abholung. Schlafparty: Eltern der Nicht-Bleiber ab 19 Uhr verabschiedet, Schlafsäcke aufbauen, Nacht-Insekten-Beobachtung startet 19:30."
+          }
+        ],
+        "games": [
+          {
+            "name": "6️⃣ Gips-Spurabdruck-Werkstatt (zusätzliche 6. Station)",
+            "indoor": false,
+            "outdoor": true,
+            "duration": 20,
+            "minAge": 10,
+            "loudness": "halblaut",
+            "effort": "mittel",
+            "material": "1 kg Gips-Pulver (Modellgips, Baumarkt oder Bastel-Laden), 10 Joghurt-Becher / Plastik-Schälchen als Form, 10 vorgefertigte „Negativ-Formen“ (z.B. ein Plastik-Spielzeug-Jaguar-Fuß auf Knete gedrückt, oder Karten-Schablonen ausgeschnitten), Wasser-Becher, Rührstäbchen, Schutzbrillen / FFP2-Masken (Gips-Staub).",
+            "prepText": "Jedes Kind bekommt eine Negativ-Form (vorbereitet) und gießt Gips-Brei hinein. Nach 20 Min. ist der Abdruck fest und kann ausgelöst werden. Mitgebsel: ein echter Gips-Spurabdruck eines Amazonas-Tiers, beschriftet mit dem eigenen Namen und der Tier-Art.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Schutz aufsetzen",
+                "content": "Schutzbrille / FFP2-Maske beim Anrühren (Gips-Staub ist lungenreizend). Nur im Freien oder gut belüfteten Raum arbeiten."
+              },
+              {
+                "n": 2,
+                "name": "Negativ-Form vorbereiten",
+                "content": "Vorbereitete Negativ-Form (Knete mit Spielzeug-Fuß-Abdruck oder Karton-Schablone) in den Joghurt-Becher legen. Das Tier (Jaguar, Tapir, Faultier) ist bereits aufgedrückt."
+              },
+              {
+                "n": 3,
+                "name": "Gips anrühren",
+                "content": "2 Esslöffel Gips-Pulver in den Wasserbecher (40 ml Wasser), kräftig rühren bis cremig — Konsistenz wie Joghurt. Nicht zu lange rühren, sonst zieht es an."
+              },
+              {
+                "n": 4,
+                "name": "Eingießen",
+                "content": "Gips-Brei vorsichtig in die Negativ-Form gießen, leicht klopfen, damit Luftblasen entweichen. Beschriften mit Bleistift auf der Außenseite des Bechers: Name + Tier-Art."
+              },
+              {
+                "n": 5,
+                "name": "Trocknen",
+                "content": "20 Min. trocknen lassen (Gips wird warm — das ist die chemische Reaktion). Während der Trockenzeit andere Stationen besuchen. Nach 20 Min. vorsichtig auslösen — der Abdruck zeigt das Spurbild."
+              }
+            ],
+            "safetyRule": "PFLICHT: Gips-Pulver NICHT einatmen — Schutzbrille und FFP2-Maske beim Anrühren. Nur draußen oder gut belüftet drinnen. Hände waschen nach Kontakt. Trocknender Gips wird heiß (chemische Reaktion bis 60°C) — nicht in der Hand halten, in Form aushärten lassen. Aufsicht durch Erwachsenen oder Helfer durchgehend. Nicht für unter 10-Jährige geeignet — Gips-Staub-Risiko. Reste nicht in den Abfluss! (Verstopfung) — separat in Restmüll.",
+            "ageAdjust9": "Nicht empfohlen unter 10 — Gips-Staub-Risiko. Für 9-Jährige stattdessen Wachs-Abdruck mit erkaltetem Kerzen-Wachs (auch gut, weniger Staub).",
+            "ageAdjust12": "Komplexere Formen: zwei Spuren in einem Becher (eine Jaguar-Pfote, eine Tapir-Pfote nebeneinander) für anatomischen Vergleich.",
+            "indoorTip": "Indoor nur mit Fenster auf und Schutzmaske. Zeitungspapier großflächig unterlegen.",
+            "outdoorTip": "Ideal — Wind trägt Staub weg, Reste können in den Komposter (Gips ist mineralisch). Auf dem Gartentisch arbeiten."
+          },
+          {
+            "name": "🌳 Escape-Room-Quest „Verlorene Forschungs-Station“ — 6 Stationen mit Dependency-Flow → AMAZONAS",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 45,
+            "minAge": 9,
+            "loudness": "laut",
+            "effort": "aufwendig",
+            "material": "6 versiegelte Boxen / Briefumschläge mit Schloss-Aufklebern, jede mit dem Schlüssel zur nächsten. Materialien je Station: Station 1 Pflanzen-pH-Test mit Rotkohl-Saft, Station 2 Spuren-Bestimmungs-Karten, Station 3 Höhenlinien-Karte mit Rätsel, Station 4 Brüllaffen-Ruf-Aufzeichnung (Smartphone-App), Station 5 Generische „Forscher-Gold-Münze“ mit Symbol-Code, Station 6 Endsiegel der Außen-Station. Ein Atlantis-Tor (Schuhkarton mit Tarn-Folie + Vorhängeschloss-Aufkleber). Optional: machsleicht-Schatzsuche-Generator für Detail-Rätsel.",
+            "prepText": "Setting: „Wir haben die letzte Funkfrequenz der verschollenen Forschungs-Station angepeilt. Sechs Code-Schlösser sichern die Daten. Jede Station gibt euch den Schlüssel zur nächsten — wenn ihr eine überspringt, bleibt die Mission unvollständig. Lösungswort am Ende: AMAZONAS, acht Buchstaben aus den sechs Stationen (zwei Stationen liefern Doppel-Buchstaben). Wettbewerb war Phase 1, jetzt arbeiten alle Trupps zusammen.“ \n\nDEPENDENCY-FLOW DOKUMENTATION:\n- Station 1 (pH-Test) muss zuerst gelöst werden — liefert Buchstabe A und gleichzeitig die FARBE (z.B. rosa = sauer), die als Code-Farbe auf der Schließe von Station 2 markiert ist. Ohne Farbe weiß die Crew nicht, welche Box als Nächstes zu öffnen ist.\n- Station 2 (Spuren-Bestimmung) → liefert Buchstabe M + Anzahl Zehen-Abdrücke (3+4=7), die als Zahlen-Code auf Station 3 markiert ist.\n- Station 3 (Höhenlinien-Karte) → liefert Buchstabe A (zweites A) + die Bach-Mündungs-Koordinate, die auf der Karte zu Station 4 zeigt.\n- Station 4 (Brüllaffen-Ruf) → liefert Buchstabe Z (Brüllaffen-Reichweite 5 km — Z für „Zone“ als Phonetik-Hinweis) + Akustik-Richtung, in die Station 5 versteckt ist.\n- Station 5 (Generische Forscher-Gold-Münze) → liefert Buchstaben O + N + A (Doppel-Lieferung: ein Münzcode mit drei Symbol-Übersetzungen) + das physische Schlüsselchen zu Station 6.\n- Station 6 (Endsiegel der Außen-Station) → liefert Buchstabe S + öffnet das Schloss mit dem Wort AMAZONAS, das die Crew jetzt komplett zusammengesetzt hat.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Station 1 (Botaniker-Schloss) → A + Farbcode",
+                "content": "pH-Test mit Rotkohl-Saft an 3 Bodenproben. Die SAURE Probe (rosa = pH 4-5) ist die Amazonas-Probe. Buchstabe = Anfangsbuchstabe des Wortes „Amazonas-Boden“ → A. Außerdem: die ROSA Farbe ist der Code für die nächste Box — Station 2 hat ein rosa Siegel. Nur wer pH-Farbe richtig liest, findet die Box."
+              },
+              {
+                "n": 2,
+                "name": "Station 2 (Zoologe-Schloss) → M + Zehen-Zahl",
+                "content": "Spur-Bestimmung: aus 4 Spurabdrücken den Tapir-Abdruck identifizieren (3 Zehen vorn, 4 Zehen hinten = einzigartig). Buchstabe = Anfangsbuchstabe des Tropen-Säugetier-Beispiels „Manati“ (Amazonas-Fluss-Säuger, taucht hier auf einer falschen Beispiel-Spurkarte auf — die Kinder müssen ihn als nicht-Tapir-Tier erkennen und seinen Namen ableiten) → M. Außerdem: 3+4=7 Zehen ist der Schloss-Code für Station 3 (Zahl 7 auf der Schließe)."
+              },
+              {
+                "n": 3,
+                "name": "Station 3 (Geograph-Schloss) → A (zweites) + Karten-Koordinate",
+                "content": "Höhenlinien-Karte mit Bachlauf. Aufgabe: wo mündet der Bach in den Hauptstrom? Höhe = 50 m (Flussaue). Buchstabe = Anfangsbuchstabe von „Aue“ → A (zweites A in AMAZONAS). Außerdem: Karten-Koordinate (z.B. „Quadrant C3“) zeigt physisch den Ort von Station 4 im Raum/Garten."
+              },
+              {
+                "n": 4,
+                "name": "Station 4 (Ethologe-Schloss) → Z + Akustik-Richtung",
+                "content": "Smartphone spielt 3 Tier-Rufe ab (Brüllaffe / Tukan / Ara). Aufgabe: welcher Ruf trägt am weitesten? Brüllaffe (5 km). Buchstabe = Anfangsbuchstabe von „Zone“ → Z (die Brüllaffen-Zone). Außerdem: die Crew muss in die Richtung gehen, aus der der lauteste Ruf zu kommen scheint — Spielleiter hat dort Station 5 versteckt."
+              },
+              {
+                "n": 5,
+                "name": "Station 5 (Ökologe-Schloss / Mythologie-Element) → O + N + A",
+                "content": "Eine generische „Forscher-Gold-Münze“ (Schoko-Goldmünze mit Edding-Symbol) liegt in einer kleinen Holzbox. Auf der Münze drei generische Symbole: Sonne, Schlange, Stern. Schlüssel-Karte (Übersetzung): Sonne = O (Anfangsbuchstabe „Ostsonne“), Schlange = N (Anfangsbuchstabe „Naja“, lateinischer Name einer Kobra-Gattung — generisch, keine spezifischen indigenen Spirituellen-Begriffe), Stern = A. Diese 3 Buchstaben O + N + A werden in dieser Reihenfolge eingetragen. Außerdem: in der Box liegt das physische Schlüsselchen (Spielzeug-Schlüssel) für Station 6. \n\nWichtig zur kulturellen Sensibilität: Die Mythologie-Symbole sind GENERISCH gehalten (Sonne / Schlange / Stern als universelle Bilder), keiner spezifischen indigenen Kultur zugeordnet. Bei der Schlüssel-Karte ist sogar ein Hinweis: „Diese Symbole sind erfunden für unsere Expedition — echte Mythologie indigener Völker ist viel reicher und sollte respektvoll gelernt werden, nicht hier in einer Schatzsuche verkürzt.“"
+              },
+              {
+                "n": 6,
+                "name": "Station 6 (Endsiegel der Außen-Station) → S",
+                "content": "Mit dem Schlüsselchen aus Station 5 öffnet die Crew die End-Box. Darin: ein Siegel mit Buchstabe S (für „Siegel“ oder „Station“). Buchstaben in Stations-Reihenfolge: A-M-A-Z-O-N-A-S = AMAZONAS. Die Crew schreibt das Wort auf das Schloss der Außen-Station — die Mission ist gelöst."
+              },
+              {
+                "n": 7,
+                "name": "Außen-Station öffnen",
+                "content": "Mit dem Lösungswort AMAZONAS zur Außen-Station laufen, Schloss-Aufkleber abziehen, Daten (Mitgebsel + ausgedruckte Quiz-Ergebnisse) sichern."
+              }
+            ],
+            "safetyRule": "Bei Garten-Stationen im Dunkeln auf Stolperfallen achten — Stationen vor Einbruch der Dunkelheit ablaufen. Bei Smartphone-Ruf-Aufzeichnung Lautstärke begrenzen (Nachbarn). Bei Gips- oder pH-Stationen die jeweiligen Schutz-Regeln einhalten (siehe Standard-Botaniker und Wow-Spurabdruck-Werkstatt).",
+            "ageAdjust9": "Stationen vereinfachen — pro Station nur 1 Aufgabe statt 2 (kein Farbcode + Buchstabe gleichzeitig). Die Reihenfolge bleibt strikt, aber die Hinweise sind deutlicher.",
+            "ageAdjust12": "Mehr Tiefe: in Station 5 kommt ein zusätzlicher Caesar-Code dazu (Buchstaben um 1 verschoben), oder eine Station mit Pollen-Mikroskop-Bild (mit Lupe statt Mikroskop), das echte vs. falsche Endemiten zeigt.",
+            "indoorTip": "Die 6 Stationen durch verschiedene Räume verteilen — der Wechsel hält die Spannung. Station 4 (Brüllaffen-Ruf) am Ende eines langen Flurs, damit die Akustik-Richtung erkennbar ist.",
+            "outdoorTip": "Im Garten wirken die Spuren-Station und der Brüllaffen-Ruf am besten — echte Bewegungs-Übungen unter freiem Himmel. Station 5 unter einer kleinen Holzbox am Stamm eines echten Baums verstecken.",
+            "whyItWorksTitle": "Dependency-Flow ist der Wow-Effekt",
+            "whyItWorks": "Echte Escape-Rooms funktionieren genau so — jede Station öffnet die nächste, keine Sprünge möglich. Das macht die Mission spannender als eine flache 6-Buchstaben-Quest, weil die Crew genau weiß: ohne Station 3 finden wir Station 4 nicht. Die Mythologie-Würze in Station 5 (generische Symbole, keine kulturelle Aneignung) hebt die Wow-Variante über klassische Codeknacker. Jedes Kind beiträgt seine Spezialisierungs-Erkenntnis — Botaniker den pH, Zoologe die Spuren, Geograph die Höhe, Ethologe den Ruf, Ökologe die Symbol-Übersetzung."
+          },
+          {
+            "name": "📚 15-Fragen-Ökologie-Quiz (während Schlafparty oder als Pausen-Element)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 25,
+            "minAge": 9,
+            "loudness": "halblaut",
+            "effort": "leicht",
+            "material": "15 Quiz-Karten in 3 Schwierigkeitsstufen (5 leicht / 5 mittel / 5 schwer), Antwort-Bögen für jedes Kind, Bleistifte, Auswertungs-Tabelle.",
+            "prepText": "Ein echtes Wissens-Quiz zu Tropenökologie, Biologie und Geographie. Drei Schwierigkeitsstufen, jedes Kind wählt seine Stufe selbst. Auswertung in Punkten — wer Anti-Verlierer-Schluss will: Mindest-Punkte = jede/r bekommt eine Spezialisten-Vertiefung auf der Lizenz (z.B. „mit Vertiefung Botanik“).",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Frage 1 (leicht) — Biotop",
+                "content": "Was ist ein Biotop? a) Ein Tier. b) Ein Lebensraum mit typischen Pflanzen und Tieren. c) Eine Karte. — Lösung: b) Ein Lebensraum."
+              },
+              {
+                "n": 2,
+                "name": "Frage 2 (leicht) — Endemisch",
+                "content": "Was bedeutet „endemisch“? a) Nur in einer Region vorkommend, nirgendwo anders. b) Sehr alt. c) Krank. — Lösung: a) Nur in einer Region."
+              },
+              {
+                "n": 3,
+                "name": "Frage 3 (leicht) — Habitat",
+                "content": "Was ist der Unterschied zwischen Habitat und Biotop? a) Kein Unterschied. b) Habitat = Lebensraum einer Art, Biotop = Lebensraum einer Gemeinschaft. c) Habitat ist größer. — Lösung: b)."
+              },
+              {
+                "n": 4,
+                "name": "Frage 4 (leicht) — Biodiversität",
+                "content": "Was bedeutet Biodiversität? a) Nur die Anzahl der Tiere. b) Vielfalt von Arten, Genen und Ökosystemen. c) Größe der Bäume. — Lösung: b)."
+              },
+              {
+                "n": 5,
+                "name": "Frage 5 (leicht) — Ökosystem",
+                "content": "Wie viele Schichten hat ein typischer Tieflandregenwald? a) 2. b) 4-5 (Kronendach, Mittelschicht, Unterholz, Boden, Wurzel-Zone). c) 10. — Lösung: b) 4-5 Schichten."
+              },
+              {
+                "n": 6,
+                "name": "Frage 6 (mittel) — Amazonas-Quellfluss",
+                "content": "Welcher Fluss gilt als Quellfluss des Amazonas? a) Madeira. b) Ucayali. c) Negro. — Lösung: b) Ucayali (offiziell die längste Quelllinie, 2014 wissenschaftlich bestätigt)."
+              },
+              {
+                "n": 7,
+                "name": "Frage 7 (mittel) — pH-Wert Amazonas",
+                "content": "Wie ist der typische pH-Wert von Amazonas-Tieflandboden? a) Stark basisch (pH 9+). b) Neutral (pH 7). c) Sauer (pH 4-5). — Lösung: c) Sauer durch Tannine."
+              },
+              {
+                "n": 8,
+                "name": "Frage 8 (mittel) — Tapir-Verwandtschaft",
+                "content": "Mit welchem Tier ist der Tapir am nächsten verwandt? a) Schwein. b) Pferd und Nashorn. c) Elefant. — Lösung: b) Pferd und Nashorn (Unpaarhufer)."
+              },
+              {
+                "n": 9,
+                "name": "Frage 9 (mittel) — Aposematik",
+                "content": "Was bedeutet Aposematik bei Pfeilgiftfröschen? a) Tarnung. b) Warn-Färbung gegen Räuber. c) Paarungs-Signal. — Lösung: b)."
+              },
+              {
+                "n": 10,
+                "name": "Frage 10 (mittel) — Geophagie der Aras",
+                "content": "Warum fressen Aras Ton an Lehmlecken? a) Sie haben Hunger. b) Zur Neutralisation von Pflanzen-Giften in ihrer Nahrung. c) Aus Versehen. — Lösung: b)."
+              },
+              {
+                "n": 11,
+                "name": "Frage 11 (schwer) — Brüllaffen-Anatomie",
+                "content": "Wodurch trägt der Brüllaffen-Ruf 5 km weit? a) Spezielle Lunge. b) Vergrößerter Hyoid-Knochen als Resonanzraum. c) Echo im Wald. — Lösung: b)."
+              },
+              {
+                "n": 12,
+                "name": "Frage 12 (schwer) — Faultier-Tarnung",
+                "content": "Warum wachsen Algen im Fell des Faultiers? a) Krankheit. b) Symbiose zur Tarnung. c) Schmutz. — Lösung: b) Algen geben dem Fell grünliche Tarnung, Faultier toleriert sie als Symbiose."
+              },
+              {
+                "n": 13,
+                "name": "Frage 13 (schwer) — Tukan-Schnabel",
+                "content": "Wofür dient der riesige Tukan-Schnabel hauptsächlich? a) Beißen von Beute. b) Wärmeabgabe (Klima-Anlage). c) Imponieren. — Lösung: b) Wärmeabgabe — Hauptfunktion ist Thermoregulation."
+              },
+              {
+                "n": 14,
+                "name": "Frage 14 (schwer) — Anakonda-Fortpflanzung",
+                "content": "Wie bringt die Anakonda ihre Jungen zur Welt? a) Eier. b) Lebendgeburt (vivipar). c) Larven. — Lösung: b) Lebendgeburt."
+              },
+              {
+                "n": 15,
+                "name": "Frage 15 (schwer) — Jaguar-Biss",
+                "content": "Was kann der Jaguar mit seinem Biss tun, was andere Großkatzen nicht können? a) Bäume zerbeißen. b) Schildkrötenpanzer durchbeißen. c) Steine zerquetschen. — Lösung: b) Schildkrötenpanzer (Beißkraft 2x Löwe)."
+              }
+            ],
+            "safetyRule": null,
+            "ageAdjust9": "Nur die 5 leichten Fragen, Multiple-Choice mit nur 2 Antwort-Optionen.",
+            "ageAdjust12": "Alle 15 Fragen, freie Antwort statt Multiple-Choice für die 5 schweren — Punkte halbe Punkte für teilweise Antworten."
+          },
+          {
+            "name": "🌙 Nacht-Insekten-Beobachtung (Schlafparty-Anschluss, Eltern-Opt-In)",
+            "indoor": false,
+            "outdoor": true,
+            "duration": 45,
+            "minAge": 10,
+            "loudness": "halblaut",
+            "effort": "mittel",
+            "material": "5 günstige Stirnlampen (Set ~15 €), eine weiße Stoff-Bahn (Bettlaken reicht), eine UV-Taschenlampe (Schwarzlicht-LED, ca. 5 €), Insekten-Bestimmungs-Karten (häufige Nacht-Insekten in DE: Nachtfalter, Marienkäfer, Laufkäfer, Spinnen — keine echten Tropen-Insekten, das wäre falsch), Schlafsäcke, Taschenlampen.",
+            "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Außen-Station-Eröffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Die Idee: Nacht-Beobachtung in Deutschland kann das Konzept einer Tropen-Nacht zeigen — viele Insekten kommen zum Licht (Lichtfalle mit Bettlaken + UV-Lampe). Das ist eine echte entomologische Methode. Zwingend vorher: schriftliche Eltern-Bestätigung + Allergien + Medikamente per WhatsApp einsammeln.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "19:30 Lichtfalle aufbauen",
+                "content": "Weißes Bettlaken zwischen zwei Bäumen oder Stühlen spannen, UV-Lampe davor positionieren. Nacht-Insekten kommen zum UV-Licht — das ist eine echte Methode zur Insekten-Erfassung."
+              },
+              {
+                "n": 2,
+                "name": "20:00 Beobachtung",
+                "content": "Mit Stirnlampen die ans Laken kommenden Insekten beobachten und über Bestimmungs-Karten identifizieren. Echte Forscher-Arbeit. Wer findet die meisten Arten?"
+              },
+              {
+                "n": 3,
+                "name": "20:30 Snack-Buffet",
+                "content": "Wraps-Reste / Snack-Buffet, ankommen, runterkommen."
+              },
+              {
+                "n": 4,
+                "name": "21:00 Tropen-Doku",
+                "content": "Doku auf Beamer/TV — z.B. „Planet Earth: Jungles“ oder „Wild Brazil“ (BBC). Gemeinsames Gucken beruhigt die Gruppe, verbindet die deutsche Nacht-Beobachtung mit den echten Tropen."
+              },
+              {
+                "n": 5,
+                "name": "22:00 Lichter aus",
+                "content": "Schlafsäcke ausrollen, Taschenlampen-Geschichten, langsam ausklingen lassen. Geschichten-Idee: „Was die Anakonda im Bachlauf erzählt hat.“"
+              }
+            ],
+            "safetyRule": "Eltern-Opt-In schriftlich. Allergien (besonders Insektenstiche!), Asthma-Inhalator und Medikamente vorher einsammeln. Bei der Garten-Beobachtung Stolperfallen vorher entschärfen, Stirnlampen für alle. Mücken-Spray bereitstellen (Pflegepflicht der Eltern abklären). Bei Wespen-/Hornissen-Allergie: Beobachtung im Wohnzimmer am Fenster statt im Garten.",
+            "ageAdjust9": "Nicht empfohlen unter 10 — Stolperfallen-Risiko im Dunkeln, lange Wachzeiten überfordern."
+          }
+        ],
+        "food": "🎂 Regenwald-Karten-Kuchen (1 Blechkuchen + 1 kleiner) · 🌯 Forscher-Wraps selbst belegt (40 Wraps, 4/Kind) · 🥗 Açaí-Bowl-Station (Tiefkühl-Beeren-Mix als „Açaí“, Granola, Banane, Honig) · 🥤 „Bachlauf-Wasser“ 4 L Apfelschorle grün gefärbt · 🍌 Affen-Bananen · 🥒 Liana-Gemüse-Buffet · 🧀 Käse-Frösche (400 g) · 🍿 Dschungel-Popcorn (500 g) · 🍫 Schoko-Goldmünzen (Forscher-Gold-Schatz, generisch) · 🥐 bei Schlafparty: Frühstück (Croissants, Nutella, Banane, Saft).",
+        "decoration": "Wow-Level: 🌴 Dschungel-Teller & Becher Set · 🎈 20 Luftballons grün/braun/gelb · 🪧 Tropen-Girlande · 🌿 Krepppapier-Lianen von der Decke · 🌿 Grünpflanzen aus dem Wohnzimmer · 🪧 „Camp Manaus-7 — Forschungs-Station 14 (verschollen)“-Schild · 🌧️ Regenwald-Sounds + Brüllaffen-Ruf-Loop bei Mission-Briefing · 📦 Außen-Station-Forschungs-Kiste (Tarn-Folie + Schloss-Aufkleber) · 📜 A3-Biotop-Karte · 🏺 Generische „Forscher-Gold-Münzen“ (Schoko-Goldmünzen mit Edding-Symbol) verstreut. Optional: aufblasbares Jaguar-Kostüm für ein Elternteil beim Mission-Briefing (~30 €).",
+        "giveaways": "Grüne Papiertüte „Expeditions-Ausrüstung für ___“: Forscher-Bandana (Highlight, geht direkt vom Hals nach Hause), Forschungs-Lizenz mit Titel, laminierter Camp-Forscher-Ausweis, selbst gegossener Gips-Spurabdruck (DIY mit Foto-Slot im Logbuch), Klett-Abzeichen „Senior“, Lieblings-Logbuch-Seite, Quiz-Ergebnis-Zertifikat, Schoko-Käfer, Gummibärchen, optional Mini-Lupe (10 € für 10 Stk. als Highlight-Mitgebsel). Ca. 12 € pro Kind inkl. Bandana.",
+        "shoppingList": [
+          {
+            "emoji": "📜",
+            "label": "Tonpapier grün A4 + A3-Karten-Karton",
+            "url": null,
+            "priceEur": 6,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Stations-Karten, A3-Biotop-Karte, Lizenzen, Ausweise."
+          },
+          {
+            "emoji": "📄",
+            "label": "Druckkosten (Karten, Codes, Lizenzen, Quiz-Karten)",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Alle Stations- und Quest-Vorlagen ausdrucken."
+          },
+          {
+            "emoji": "🌯",
+            "label": "Wraps + Belag für 10 Kinder (5 Sorten)",
+            "url": null,
+            "priceEur": 28,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Hauptessen für 10 Kinder, 2 Wrap-Stationen parallel."
+          },
+          {
+            "emoji": "🥗",
+            "label": "Açaí-Bowl-Material (Tiefkühl-Beeren, Granola, Honig)",
+            "url": null,
+            "priceEur": 12,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Zweite Essens-Komponente für die längere Wow-Party. Açaí-Bowl ist Amazonas-typisch (Açaí-Palme!), Tiefkühl-Beeren ersetzen das echte Açaí-Püree."
+          },
+          {
+            "emoji": "🥤",
+            "label": "Apfelschorle (4 L) + grüne Lebensmittelfarbe + Becher + Halme",
+            "url": null,
+            "priceEur": 8,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Getränk für 10 Kinder über 4 Std., grün gefärbt."
+          },
+          {
+            "emoji": "🍿",
+            "label": "Snacks für 10 Kinder (Bananen, Popcorn, Käse, Gemüse)",
+            "url": null,
+            "priceEur": 18,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Pausen-Snacks für die große Gruppe."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Backmischung + Marzipan-Tropentiere + Wunderkerze + grüner Guss",
+            "url": null,
+            "priceEur": 11,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Regenwald-Karten-Kuchen mit Topographie + kleiner Zweitkuchen."
+          },
+          {
+            "emoji": "📦",
+            "label": "Außen-Station-Forschungs-Kiste (Karton + Tarn-Folie + Schloss-Aufkleber)",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Finale der Escape-Room-Quest AMAZONAS — Pflicht."
+          },
+          {
+            "emoji": "🧪",
+            "label": "Gips-Pulver + Joghurt-Becher + Schutzbrillen/Masken",
+            "url": "https://www.amazon.de/s?k=modellgips+1kg+bastel&tag=machsleicht-21",
+            "priceEur": 12,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Material für Gips-Spurabdruck-Werkstatt (6. Station) + Schutz für Sicherheits-Pflicht."
+          },
+          {
+            "emoji": "🧣",
+            "label": "Bandanas (10 Stk., für Forscher-Mitgebsel)",
+            "url": "https://www.amazon.de/s?k=bandanas+10er+set+gruen+braun&tag=machsleicht-21",
+            "priceEur": 12,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Material für DIY-Mitgebsel. Alte Geschirrtücher gehen zur Not auch."
+          },
+          {
+            "emoji": "✏️",
+            "label": "Textilstifte/Permanent-Marker Erdfarben (DM)",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Für die Bandana-Gestaltung — Edding tut es auch."
+          },
+          {
+            "emoji": "⭐",
+            "label": "Klett-Abzeichen 5 Farben",
+            "url": "https://www.amazon.de/s?k=klett+abzeichen+kinder+set&tag=machsleicht-21",
+            "priceEur": 7,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Spezialisierungs-Patches, plus „Senior“-Abzeichen als Mitgebsel."
+          },
+          {
+            "emoji": "🔭",
+            "label": "Spielzeug-Fernglas (für Ethologe-Beobachtung)",
+            "url": "https://www.amazon.de/s?k=fernglas+kinder+spielzeug&tag=machsleicht-21",
+            "priceEur": 7,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Verstärkt die Ethologe-Rolle."
+          },
+          {
+            "emoji": "🔬",
+            "label": "Mini-Lupen-Set 10 Stk. (Wow-Highlight-Mitgebsel)",
+            "url": "https://www.amazon.de/s?k=lupe+kinder+set+10&tag=machsleicht-21",
+            "priceEur": 15,
+            "hasAffiliate": true,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Highlight-Mitgebsel: jede Forscherin nimmt ihre eigene Lupe mit nach Hause. Optional."
+          },
+          {
+            "emoji": "💡",
+            "label": "UV-Taschenlampe + Bettlaken (für Nacht-Insekten-Lichtfalle)",
+            "url": "https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht&tag=machsleicht-21",
+            "priceEur": 8,
+            "hasAffiliate": true,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Nur für die Nacht-Insekten-Beobachtung der Schlafparty-Variante. Ohne Schlafparty unnötig."
+          },
+          {
+            "emoji": "🔦",
+            "label": "Stirnlampen-Set (5 Stk., nur bei Schlafparty)",
+            "url": "https://www.amazon.de/s?k=stirnlampe+kinder+set+5&tag=machsleicht-21",
+            "priceEur": 15,
+            "hasAffiliate": true,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Nur für die Nacht-Beobachtung der Schlafparty-Variante."
+          },
+          {
+            "emoji": "📓",
+            "label": "Camp-Logbuch DIY (Aufkleber, Heftklammern, Notizpapier)",
+            "url": null,
+            "priceEur": 6,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Mitgebsel-Logbuch. Material-Bastel, kein Fertigkauf."
+          },
+          {
+            "emoji": "🌿",
+            "label": "Plüsch-Tropentiere für Tracking + Nacht-Beobachtung",
+            "url": null,
+            "priceEur": 0,
+            "hasAffiliate": false,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf."
+          }
+        ],
+        "estimatedCostEur": 155,
+        "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Mini-Lupen als Highlight)",
+        "savingsTip": {
+          "title": "Mini-Lupen sind optional",
+          "body": "Die 155 € sind ohne die Mini-Lupen als Highlight gerechnet — die kosten als Mitgebsel zusätzlich 10-15 € für 10 Kinder. Die Party trägt auch ohne sie: das selbst gegossene Gips-Spurabdruck-Mitgebsel ist persönlicher und kostet pro Kind nur 1 €. Stirnlampen und UV-Lampe brauchst du nur, wenn wirklich eine Schlafparty mit Nacht-Insekten-Beobachtung geplant ist. Açaí-Bowl und Zweitkuchen lassen sich streichen, wenn die Gruppe kleiner bleibt."
+        }
+      }
+    ],
+    "cakeRecipe": {
+      "intro": "Geht mit jedem Blechkuchen. Das Besondere ist die Biotop-Topographie obendrauf — nicht das Backen.",
+      "steps": [
+        {
+          "n": 1,
+          "content": "1 Blechkuchen backen — Fertigmischung reicht (Dr. Oetker, Kathi, Aurora). Schoko oder Vanille. 9-12-Jährige merken den Unterschied zu Selbstgemacht nicht."
+        },
+        {
+          "n": 2,
+          "content": "Komplett abkühlen lassen. Ungeduld = Glasur-Desaster."
+        },
+        {
+          "n": 3,
+          "content": "Grund-Glasur in Regenwald-Grün: Puderzucker + Wasser + 2 Tropfen Lebensmittelfarbe (moosgrün). Großzügig drüberstreichen."
+        },
+        {
+          "n": 4,
+          "content": "Biotop-Topographie: dünne Schokoladen-Linien als „Bachläufe“ ziehen (Spritzbeutel oder Spritze ohne Nadel), braune Klekse als „Schlamm-Lecken“ (Lehmlecken-Symbol)."
+        },
+        {
+          "n": 5,
+          "content": "5 Marzipan-Tropentiere aus dem Backregal an markanten Punkten platzieren (Faultier = grünes Oval, Jaguar = gelb mit schwarzen Flecken, Pfeilgiftfrosch = roter Tropfen, Tukan = schwarz/orange, Anakonda = grüne Schlange). Dr. Oetker hat oft fertige Tier-Sets."
+        },
+        {
+          "n": 6,
+          "content": "Grüne Gummibärchen oder Zuckerstreusel als „Kronendach-Blätter“ am Rand verteilen. Optional: ein paar Schoko-Goldmünzen-Krümel als „Gold-Schatz-Hinweis“."
+        },
+        {
+          "n": 7,
+          "content": "Optional Wow: eine kleine „Außen-Station“ aus weißen Schokoladen-Quadraten (Mikado-Stäbchen als Stelzen, Schokoladen-Dach) am Rand — visuelles Bindeglied zur Mission."
+        },
+        {
+          "n": 8,
+          "content": "Wunderkerze in die Mitte für Happy Birthday. Foto."
+        }
+      ],
+      "meta": {
+        "aufwand": "60 Min. inkl. Backen und Topographie",
+        "kosten": "~10 €",
+        "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. Marzipan-Tropentiere können Spuren von Nüssen enthalten (für Nuss-Allergiker auswechseln)."
+      },
+      "tips": [
+        {
+          "title": "Keine Lust zu backen?",
+          "body": "Ein gekaufter Blechkuchen vom Bäcker oder Discounter funktioniert genauso — die Biotop-Topographie obendrauf machst du in 15 Minuten selbst. Niemand merkt, dass der Boden gekauft ist."
+        },
+        {
+          "title": "Die Topographie ist der Trick",
+          "body": "Der Wow-Effekt kommt nicht vom Teig, sondern von der Karte obendrauf: Bachläufe, Lehmlecken, Tropentiere an markanten Punkten. Das verbindet den Kuchen direkt mit der Amazonas-Mission — die Kinder erkennen „ihre“ Karte wieder."
+        }
+      ]
+    },
+    "parentTips": {
+      "structured": [
+        {
+          "topic": "🚨 Allergien vorher abfragen — bei Schlafparty mit Medikamenten",
+          "detail": "Bei 8-10 Kindern in dieser Altersgruppe sind Unverträglichkeiten häufig (Nüsse, Laktose, Gluten, Avocado-Kreuzallergie). Die Wraps-Station löst das elegant — es gibt eh Auswahl, vegetarische Wraps sind Standard. Bei Schlafparty zwingend abfragen: Medikamente, Asthma-Inhalator, Insektenstich-Allergie (für Nacht-Beobachtung kritisch!), Allergie-Notfallplan."
+        },
+        {
+          "topic": "📋 Plan B bei Regen",
+          "detail": "Alle Expeditions-Stationen funktionieren drinnen: Pflanzen-Bestimmung und pH-Test am Esstisch (mit Zeitungspapier!), Spurabdruck-Bestimmung am Wohnzimmertisch, Höhenlinien-Karte am Couchtisch, Brüllaffen-Ruf-Synchronisation durch Flur und Esszimmer, Codeknacker am Tisch. Nur die Nacht-Insekten-Beobachtung (Wow-Schlafparty) braucht klare Sicht — bei Regen wird sie zur Tropen-Doku-Sitzung auf dem Beamer."
+        },
+        {
+          "topic": "🧪 Chemie-Experiment Sicherheit — Pflicht-Aufsicht",
+          "detail": "Der Rotkohl-pH-Test ist lebensmittelecht, aber: Pipetten nicht zum Mund führen, Schutzbrille empfohlen, Hände waschen. Bei Gips-Werkstatt (Wow): Schutz-Maske wegen Gips-Staub, nur draußen oder gut belüftet, nicht für unter 10-Jährige. Erwachsenen-Aufsicht beim Anrühren PFLICHT."
+        },
+        {
+          "topic": "🧑‍🤝‍🧑 Wie viele Helfer? Realistisch geplant",
+          "detail": "Standard mit 8 Kindern: 1 Helfer reicht. Du leitest Hauptmission und Lizenz-Zeremonie, der Helfer bedient die wartenden Stationen. Solo machbar bei guter Vorbereitung (Lösungs-Karten zur Selbstkontrolle an jeder Station). Wow mit 10 Kindern: 1-2 Helfer empfohlen, besonders für die parallelen Wrap-Stationen und die Gips-Werkstatt-Aufsicht."
+        },
+        {
+          "topic": "📱 Partyseite statt WhatsApp-Chaos",
+          "detail": "Statt 10 Einzel-Nachrichten an die Eltern: eine WhatsApp-Partyseite mit machsleicht. Adresse, Uhrzeit, Spezialisierungs-Hinweis (Kleidung in Erd-Tönen, lange Hosen für Schlafparty wegen Mücken), Abholzeit, Allergie-Abfrage (auch Insektenstiche!), bei Schlafparty die Medikamenten-Abfrage — alles an einem Ort."
+        },
+        {
+          "topic": "🏺 Kulturelle Sensibilität bei Mythologie-Elementen",
+          "detail": "Die Wow-Variante nutzt generische „Gold-Münzen“ und universelle Symbole (Sonne / Schlange / Stern) — bewusst keiner spezifischen indigenen Kultur zugeordnet. Falls Kinder oder Eltern aus südamerikanischen Kulturkreisen kommen, bei der Begrüßung kurz erwähnen: „Wir spielen mit erfundenen Symbolen, echte Kulturen sind viel reicher und respektieren wir.“ Das macht den pädagogischen Wert noch besser."
+        },
+        {
+          "topic": "📸 Foto-Moment einplanen — aber datenschutzbewusst",
+          "detail": "Die Lizenz-Zeremonie ist der Foto-Moment: Gruppenbild mit allen in Spezialisierungs-Patches (Wow: Forscher-Bandana), Einzel-Foto mit Lizenz. Vorher abklären: Welche Eltern erlauben Fotos ihrer Kinder in Gruppen-Chats? In der Einladung kurz nachfragen."
+        },
+        {
+          "topic": "🕒 Abholzeit vorher klären — bei Schlafparty doppelt",
+          "detail": "„Wir holen so gegen 17 Uhr ab“ ist keine Abholzeit. Konkret in die Einladung: „Abholung 17:30, die Lizenz-Zeremonie ist um 17:00 und wir wollen das Ende nicht stressen.“ Bei Schlafparty schriftlich bestätigen lassen, wer wann abholt und ob das Kind nachts mit Heimweh kontaktiert werden soll."
+        }
+      ],
+      "educationalValue": "Was die Kinder mitnehmen: Beobachtungs-Logik (Pflanzen und Spuren über Merkmale bestimmen statt raten), echte Tropenökologie-Kenntnisse (Schichten-Konzept des Regenwalds, pH-Wert von Böden, Endemiten-Konzept, Aposematik-Färbung, Brüllaffen-Resonanz), Kartografie (Höhenlinien lesen bleibt im Kopf), Chemie-Praxis (Rotkohl-pH-Test ist Schul-Lehrplan ab Klasse 6, hier praktisch ausprobiert), Kooperation zwischen Spezialisierungen (keine kommt allein zum Ziel) und Selbstkontrolle beim Codeknacker (ergibt das Lösungswort keinen Sinn, prüfen sie ihre Reihenfolge selbst nach). Die Leitidee „im Regenwald zählt, wer hinschaut, nicht wer am schnellsten rennt“ trägt durch die ganze Party — Sorgfalt vor Tempo. Und kulturelle Sensibilität ganz nebenbei: die Mythologie-Elemente sind generisch, mit Hinweis auf echte Kulturen — kein Aneignungs-Spiel.",
+      "longText": "Diese Amazonas-Expedition ist gleichzeitig ein versteckter Biologie- und Geographie-Unterricht. Die 5 Spezialisierungen (Botaniker, Zoologe, Geograph, Ethologe, Ökologe) sind echte Forschungs-Richtungen, die Vokabeln (Biotop, endemisch, Habitat, Biodiversität, Aposematik, Geophagie, Zygodactyl) sind echte Fachbegriffe. Das Pflicht-Vokabular wird in den Stationen organisch eingeführt — nicht durch Drill, sondern durch Erfahrung. Wer die Wow-Variante spielt, hat am Ende nicht nur eine schöne Schatzsuche erlebt, sondern auch 15 Quiz-Fragen aus dem echten Schul-Stoff Biologie/Geographie aktiv gelöst. Eltern berichten oft, dass die Kinder Wochen später noch „Das war ein endemischer Frosch“ oder „Der Tapir ist mit dem Pferd verwandt“ wissen — Fakten, die im Schulunterricht oft schwer hängen bleiben."
+    },
+    "invitationTemplate": "🌴 EXPEDITIONS-AUFRUF\n\nDas Institut für Tropenökologie sucht neue Botaniker, Zoologen, Geographen, Ethologen und Ökologen. {name} wird {alter} und leitet die Amazonas-Expedition zur verschollenen Außen-Station.\n\n📅 Wann: {datum}, {uhrzeit}\n📍 Treffpunkt: {treffpunkt}\n🎒 Mitbringen: bequeme Kleidung in Erd-Tönen, lange Hose und feste Schuhe (Outdoor-Stationen)\n📞 Rückmeldung bis {rsvp_deadline} an {kontakt}\n⚠️ Bitte Allergien/Unverträglichkeiten angeben — auch Nüsse, Avocado, Insektenstiche{schlafparty_zusatz}\n\nJedes Kind wählt vor Ort seine Spezialisierung — und bekommt am Ende seine eigene Forschungs-Lizenz. Im Regenwald zählt nicht, wer am schnellsten rennt, sondern wer hinschaut.",
+    "faq": [
+      {
+        "q": "Wie lange sollte ein Dschungel-Geburtstag für 9–12-Jährige dauern?",
+        "a": "2,5 bis 4 Stunden je nach Variante — oder als Wow mit Schlafparty-Anschluss bis zum Frühstück am nächsten Morgen. Minimal: 2,5 Stunden mit Spezialisierungs-Wahl, Codeknacker JUNGE und Tracking-Quest. Standard: 3,5 Stunden mit voller Stations-Wahl und Biotop-Karten-Vermessung. Wow: 4 Stunden inklusive Escape-Room-Quest AMAZONAS mit Dependency-Flow."
+      },
+      {
+        "q": "Wie viele Kinder sollte man einladen?",
+        "a": "Die Faustregel „Alter + 1“ wird mit 9-12 zu viel — lieber 8-10 Kinder maximal. Die Spezialisierungs-Logik funktioniert perfekt mit 6 (3 Rollen, je 2 Kinder), 8 (3-4 Rollen, je 2 Kinder) oder 10 (5 Rollen, je 2 Kinder). Bei mehr als 12: zwei Forschungs-Trupps bilden, sonst wird die Stations-Rotation chaotisch."
+      },
+      {
+        "q": "Was kostet ein Dschungel-Geburtstag für 9–12?",
+        "a": "Zwischen 45 € (Minimal, 6 Kinder) und 155 € (Wow, 10 Kinder, ohne Highlight-Mitgebsel). Standard liegt bei ca. 95 € für 8 Kinder und bietet das beste Verhältnis. Mini-Lupen als Wow-Highlight kommen mit 10-15 € extra dazu, sind aber komplett optional."
+      },
+      {
+        "q": "Ist das nicht zu „kindlich“ für 11-12-Jährige?",
+        "a": "Wenn du es wie eine Kleinkind-Party mit Plüsch-Affen-Spielen aufziehst: ja. Wenn du den Tropenökologie-Forschungs-Frame ernst nimmst, die Kinder als selbstständige Crew behandelst und die Aufgaben echte Herausforderungen sind (pH-Test, Höhenlinien-Karte, Spurabdruck-Anatomie, 15-Fragen-Quiz), funktioniert es genau richtig. Verkindischen wird sofort gemerkt — Ernsthaftigkeit nicht. Der Escape-Room mit Dependency-Flow in der Wow-Variante hebt es nochmal auf ein anderes Niveau."
+      },
+      {
+        "q": "Sind die Mythologie-Elemente kulturell sensibel?",
+        "a": "Ja, bewusst. Wir nutzen generische Symbole (Sonne / Schlange / Stern als universelle Bilder), keine spezifischen indigenen Spirituellen-Begriffe, keine echten Süd-Amerika-Hochkultur-Mythen, keine Hieroglyphen-Übernahmen. Bei der Wow-Variante steht auf der Schlüssel-Karte explizit: „Diese Symbole sind erfunden für unsere Expedition — echte Mythologie indigener Völker ist viel reicher und sollte respektvoll gelernt werden, nicht hier in einer Schatzsuche verkürzt.“ Das ist sowohl rechtlich (kein IP-Verstoß) als auch pädagogisch der sauberste Weg."
+      },
+      {
+        "q": "Funktioniert der Dschungel-Geburtstag auch als Schlafparty?",
+        "a": "Ja, die Wow-Variante ist explizit für den Schlafparty-Anschluss konzipiert. Programm: 15-19 Uhr volle Expedition + Escape-Room-Quest, ab 19 Uhr Eltern der Nicht-Bleiber raus, ab 19:30 Nacht-Insekten-Beobachtung mit Lichtfalle (echte entomologische Methode), dann Tropen-Doku, Schlafsäcke, Frühstück. Empfohlen ab 10 Jahren, schriftliche Eltern-Bestätigung zwingend. Mücken-Spray-Frage vorher klären (Pflegepflicht der Eltern)."
+      }
+    ],
+    "preparationWeeks": {
+      "minus4Weeks": {
+        "headline": "4 Wochen vorher — Grundgerüst stellen",
+        "items": [
+          {
+            "icon": "📅",
+            "title": "Datum, Uhrzeit, Treffpunkt fixieren",
+            "detail": "Samstag oder Sonntag 14–18 Uhr passt gut. 3-4 Std. bei 9-12. Bei Schlafparty (Wow): Übernachtungs-Termin früh klären, das beeinflusst die Gästeliste."
+          },
+          {
+            "icon": "👥",
+            "title": "Gästeliste festzurren — 8–10 Kinder",
+            "detail": "6 für Minimal (3 Spezialisierungen, je 2), 8 für Standard (3-4 Spezialisierungen), bis 10 für Wow (5 Spezialisierungen, je 2). Über 12 wird die Stations-Rotation chaotisch — dann zwei Trupps."
+          },
+          {
+            "icon": "💶",
+            "title": "Variante wählen: Minimal / Standard / Wow",
+            "detail": "Minimal 45 € (Codeknacker + Tracking-Quest), Standard 95 € (5 Stationen + Karte vermessen), Wow 155 € (+ 6. Station Gips + Escape-Room AMAZONAS + 15-Fragen-Quiz + optional Schlafparty mit Insekten-Beobachtung). Entscheidung jetzt."
+          },
+          {
+            "icon": "✉️",
+            "title": "Einladungen rausschicken",
+            "detail": "Pflicht im Text: Allergie-Abfrage (auch Avocado, Insektenstiche!) und Hinweis auf erdfarbene Outdoor-Kleidung + lange Hosen / feste Schuhe. Bei Schlafparty zusätzlich Medikamenten-Abfrage. RSVP-Link auf party.machsleicht.de."
+          },
+          {
+            "icon": "🏠",
+            "title": "Raum-Check (Outdoor-Fokus)",
+            "detail": "Die Stationen brauchen Bewegungsraum und mehrere „Orte“ (Bachlauf-Surrogat, Spuren-Pfad, Höhenlinien-Karte, Codeknacker-Quadranten). Garten/Park ideal, Wohnung geht mit guter Raum-Aufteilung. Bei Gips-Werkstatt (Wow): Garten oder gut belüftbarer Raum mit Fenster auf."
+          }
+        ]
+      },
+      "minus2Weeks": {
+        "headline": "2 Wochen vorher — Logistik festziehen",
+        "items": [
+          {
+            "icon": "📨",
+            "title": "RSVP einsammeln, Allergien sammeln",
+            "detail": "Wer kommt, welche Unverträglichkeiten (besonders Nüsse, Avocado, Insektenstiche)? Bei Schlafparty: schriftliche Eltern-Bestätigung + Medikamente + Abholzeiten festhalten."
+          },
+          {
+            "icon": "🛒",
+            "title": "Amazon-Bestellung raus (Lieferzeit 2-5 Tage)",
+            "detail": "Klett-Patches, Federn/Holz-Perlen-Set, bei Wow Bandanas/Gips-Pulver/Schutzbrillen/UV-Lampe. Früh bestellen — Gips-Pulver gibt's auch im Baumarkt."
+          },
+          {
+            "icon": "🗺️",
+            "title": "Codeknacker-Karten vorbereiten",
+            "detail": "Minimal: JUNGE-Funksprüche zeichnen (5 Buchstaben in 5 Aufgaben). Standard: BAUM-Umschläge (4 Buchstaben). Wow: 6-Stationen-Escape-Room AMAZONAS mit Dependency-Flow (mit machsleicht-Schatzsuche-Generator) — spart die Rätsel-Erfindung."
+          },
+          {
+            "icon": "🧑‍🤝‍🧑",
+            "title": "Helfer organisieren",
+            "detail": "Standard 8 Kinder: 1 Helfer reicht. Wow 10 Kinder: 1-2 Helfer. Bei Gips-Werkstatt zwingend Helfer für Anrühren-Aufsicht."
+          },
+          {
+            "icon": "📱",
+            "title": "Partyseite einrichten",
+            "detail": "WhatsApp-Partyseite mit allen Infos statt Einzel-Nachrichten — Adresse, Zeit, Kleidung, Allergie- und (bei Schlafparty) Medikamenten-Abfrage."
+          }
+        ]
+      },
+      "minus1Week": {
+        "headline": "1 Woche vorher — Material sichten",
+        "items": [
+          {
+            "icon": "📦",
+            "title": "Amazon-Lieferung prüfen",
+            "detail": "Sind Patches, Federn, Bandanas, Gips, Schutzbrillen, ggf. Lupen und Stirnlampen da? Fehlteile jetzt nachbestellen — eine Woche reicht noch."
+          },
+          {
+            "icon": "📜",
+            "title": "Lizenzen, Ausweise, Quiz-Karten drucken",
+            "detail": "Forschungs-Lizenzen mit Namensfeld, Camp-Forscher-Ausweise, A4-Bestimmungs-Schlüssel für die Botaniker- und Zoologe-Stationen. Bei Wow: 15 Quiz-Karten in 3 Schwierigkeitsstufen. Jaguar-Pranke-Stempel für „Sorgfalt-Spezialist“ bereitlegen."
+          },
+          {
+            "icon": "🧪",
+            "title": "Rotkohl-Saft testen",
+            "detail": "Wenn du noch nie pH-Indikator gemacht hast: einmal vorher testen. Rotkohl klein schneiden, in heißem Wasser 10 Min ziehen, abgießen — das ist's. Hält 1 Woche im Kühlschrank."
+          },
+          {
+            "icon": "🌿",
+            "title": "Plüsch-Tropentiere zusammensuchen",
+            "detail": "Für Tracking-Quest und (Wow) Nacht-Beobachtung. Vorhandene Kuscheltiere reichen — keine Käufe. Bei Nacht-Beobachtung reflektierende Augen-Aufkleber besorgen."
+          }
+        ]
+      },
+      "minus2Days": {
+        "headline": "2 Tage vorher — Vorbereiten, was haltbar ist",
+        "items": [
+          {
+            "icon": "🗺️",
+            "title": "Codeknacker-Karten fertig zeichnen",
+            "detail": "Funksprüche/Umschläge/Quest-Stationen vorbereiten. Selbst gegenchecken: Ergeben JUNGE, BAUM, AMAZONAS wirklich die echten Wörter beim Anwenden der Sortier-Regel? Bei Wow-Dependency-Flow: jede Station-zu-Station-Verbindung einmal selbst durchgehen."
+          },
+          {
+            "icon": "🐾",
+            "title": "Spuren-Pfad planen",
+            "detail": "Spurabdrücke aus Tonpapier ausschneiden, Wildtier-Tracking-Strecke gedanklich durchgehen. Camp-Marke (Jaguar-Pranke auf Karton) basteln. Bei Wow: Negativ-Formen für Gips-Werkstatt vorbereiten (Spielzeug-Tier-Fuß auf Knete drücken)."
+          },
+          {
+            "icon": "🛒",
+            "title": "Frische Lebensmittel kaufen",
+            "detail": "Wraps, Belag, Reis, Bohnen, Schorle, Snacks, Kuchen-Zutaten. Wraps-Belag in Schalen vorportionieren spart am Tag selbst Zeit. Rotkohl frisch."
+          },
+          {
+            "icon": "📦",
+            "title": "Außen-Station-Forschungs-Kiste bauen",
+            "detail": "Schuhkarton mit Tarn-Folie umwickeln, Lehmlecken-Aufkleber, Vorhängeschloss-Aufkleber auf den Deckel. Mitgebsel als „Forschungs-Daten“ hineinlegen."
+          }
+        ]
+      },
+      "minus1Day": {
+        "headline": "1 Tag vorher — Aufbau und Kuchen",
+        "items": [
+          {
+            "icon": "🎂",
+            "title": "Kuchen backen & Topographie",
+            "detail": "Blechkuchen backen, abkühlen lassen, Regenwald-Grün-Glasur + Schoko-Bachlauf-Linien + Marzipan-Tropentiere. 60 Min. inkl. Backen."
+          },
+          {
+            "icon": "🏕️",
+            "title": "Stationen aufbauen",
+            "detail": "Die 5 (bzw. 6) Stations-Plätze einrichten, Lösungs-Karten zur Selbstkontrolle dazulegen. Codeknacker-Quadranten an verschiedene Wände/Tische. Bei Wow-Escape-Room: Dependency-Flow physisch im Raum durchgehen — zeigt jede Station auf die nächste?"
+          },
+          {
+            "icon": "🎨",
+            "title": "Deko anbringen",
+            "detail": "Grünpflanzen umstellen, Tropen-Girlande, Krepppapier-Lianen, Spurabdrücke vom Eingang, „Camp Manaus-7“-Schild. Regenwald-Sound-Playlist bereitlegen."
+          },
+          {
+            "icon": "🎁",
+            "title": "Mitgebsel-Tüten packen",
+            "detail": "Grüne Papiertüten beschriften („Expeditions-Ausrüstung für ___“), Lizenz/Ausweis/Wegzehrung einsortieren. Foto, Bandana, Gips-Abdruck und Quiz-Ergebnis kommen am Tag selbst dazu."
+          }
+        ]
+      },
+      "dayOf": {
+        "headline": "Am Tag — letzte Handgriffe",
+        "items": [
+          {
+            "icon": "🌯",
+            "title": "Wraps-Station vorbereiten",
+            "detail": "Reis kochen, Bohnen erwärmen, Belag-Schalen füllen, Wraps griffbereit. Schorle grün färben und kalt stellen."
+          },
+          {
+            "icon": "🧪",
+            "title": "Rotkohl-Saft fertig stellen",
+            "detail": "Falls noch nicht gemacht: 30 Min. vorher Rotkohl kochen, abgießen, abkühlen lassen. In Glas-Schalen für die Botaniker-Station."
+          },
+          {
+            "icon": "🔭",
+            "title": "Spezialisierungs-Schalen aufstellen",
+            "detail": "Fünf Schalen mit Patches (moosgrün/terrakotta/waldbraun/gelb/tiefgrün) auf den Begrüßungs-Tisch, Stirnbänder und Stifte daneben."
+          },
+          {
+            "icon": "📜",
+            "title": "Brief des Instituts bereitlegen",
+            "detail": "Den Vorlese-Brief (Standard/Wow) griffbereit. Kurz, ernsthaft, kein Verkindischungs-Sprech."
+          },
+          {
+            "icon": "📞",
+            "title": "Eltern-Kontakte checken",
+            "detail": "Handynummern aller Eltern parat, Abholzeiten notiert. Bei Schlafparty: Medikamente und Notfallpläne griffbereit. Tief durchatmen."
+          }
+        ]
+      }
+    },
+    "sosScenarios": {
+      "regen": {
+        "icon": "🌧️",
+        "label": "Regen — alles draußen geplant",
+        "headline": "Expedition zieht nach drinnen — alle Stationen funktionieren in der Wohnung.",
+        "steps": [
+          "Pflanzen-Bestimmung und pH-Test an den Esstisch verlegen — Zeitungspapier drunter.",
+          "Spurabdruck-Bestimmung mit Karten auf dem Couchtisch.",
+          "Höhenlinien-Karte am großen Esstisch ausbreiten.",
+          "Brüllaffen-Ruf-Synchronisation durch Flur und Wohnzimmer (Lautstärke bedenken).",
+          "Bei Wow-Gips-Werkstatt: Fenster auf, FFP2-Masken, Zeitungspapier großflächig.",
+          "Bei Wow-Schlafparty: Nacht-Insekten-Beobachtung wird zur Tropen-Doku-Sitzung auf dem Beamer."
+        ],
+        "fallback": "Wenn der Platz knapp ist: Codeknacker + Tracking-Quest + Wraps reichen für 2 Stunden volles Programm.",
+        "tone": "praktisch"
+      },
+      "weniger_kinder_als_erwartet": {
+        "icon": "👤",
+        "label": "Weniger Kinder als erwartet",
+        "headline": "Spezialisierungen zusammenlegen — die Logik trägt auch mit kleinen Teams.",
+        "steps": [
+          "Bei 4-5 Kindern: 3 Spezialisierungen (Botaniker, Zoologe, Geograph), je 1-2 Kinder. Ethologe und Ökologe weglassen.",
+          "Stationen, die ein ganzes Team brauchen (Brüllaffen-Ruf), als gemeinsame Aufgabe für alle machen.",
+          "Karte vermessen geht auch mit drei Einzel-Spezialisten — sie tragen nacheinander ein.",
+          "Mehr Zeit pro Station, dafür entspannter — kein Stau, keine Wartezeit."
+        ],
+        "fallback": "Bei nur 3 Kindern: jeder übernimmt eine Spezialisierung, du moderierst stärker mit. Wird fast intimer.",
+        "tone": "beruhigend"
+      },
+      "mehr_kinder_als_erwartet": {
+        "icon": "👥",
+        "label": "Mehr Kinder als erwartet",
+        "headline": "Zwei Trupps bilden — die Stationen parallel doppelt laufen lassen.",
+        "steps": [
+          "Über 12 Kinder: zwei Forschungs-Trupps mit je 5 Spezialisierungen aufteilen.",
+          "Jeder Trupp startet an einer anderen Station, beide rotieren versetzt — kein Stau.",
+          "Wraps-Belegen mit zwei Stationen parallel (Wow hat das ohnehin).",
+          "Beim Karten-Vermessen beide Trupps an je einer Karten-Hälfte, am Ende zusammenführen.",
+          "Bei Wow-Escape-Room: zwei parallele Dependency-Flow-Ketten oder eine gemeinsame Kette, die alle besetzen."
+        ],
+        "fallback": "Wenn kein zweiter Helfer da ist: pro Station eine selbsterklärende Lösungs-Karte hinlegen, dann läuft vieles autonom.",
+        "tone": "praktisch"
+      },
+      "kind_will_nicht_mitmachen": {
+        "icon": "🙅",
+        "label": "Kind will nicht mitmachen",
+        "headline": "Beobachter-Rolle ohne Druck — „Expeditions-Chronist“ statt Action.",
+        "steps": [
+          "Anbieten: „Du kannst auch das Camp-Logbuch führen — aufschreiben, welcher Trupp welche Station geknackt hat.“",
+          "Keine Spezialisierung aufzwingen. Manche 11-12-Jährige beobachten lieber erst.",
+          "Oft steigen sie nach 15 Min. von selbst ein, wenn der Druck weg ist und sie sehen, dass die Aufgaben anspruchsvoll sind.",
+          "Bei einem Kind, das „Dschungel“ blöd findet: die Wissenschafts-Methodik betonen — pH-Test ist Schul-Stoff, das ist kein „Spiel“."
+        ],
+        "fallback": "Wenn es dabei bleibt: das Kind bekommt trotzdem eine Lizenz („Camp-Chronist“) — niemand geht ohne nach Hause.",
+        "tone": "einfühlsam"
+      },
+      "kuchen_misslungen": {
+        "icon": "🎂",
+        "label": "Kuchen misslungen",
+        "headline": "Gekaufter Boden + selbst gemachte Topographie — niemand merkt den Unterschied.",
+        "steps": [
+          "Blechkuchen vom Bäcker oder Discounter holen.",
+          "Regenwald-Grün-Glasur drüber, Schoko-Bachlauf-Linien ziehen, Marzipan-Tropentiere platzieren.",
+          "Die Biotop-Topographie macht den Wow-Effekt — nicht der Teig.",
+          "Wunderkerze rein, Foto, fertig. Kostet 15 Min."
+        ],
+        "fallback": "Selbst eine schlichte Packung Muffins mit je einem Marzipan-Tropentier obendrauf funktioniert als „Lichtungs-Snack“.",
+        "tone": "beruhigend"
+      },
+      "ph_test_misslungen": {
+        "icon": "🧪",
+        "label": "pH-Test funktioniert nicht — Rotkohl-Saft farblos",
+        "headline": "Backup-Plan: gekaufter Universal-Indikator oder Story-Twist.",
+        "steps": [
+          "Wenn Rotkohl-Saft nicht funktioniert (zu wenig gekocht, zu alt): Universal-Indikator-Streifen aus der Apotheke (~3 €) als Backup.",
+          "Wenn auch das ausfällt: die Story dreht — „Die Sensor-Geräte sind ausgefallen, ihr müsst über Pflanzen-Indikatoren arbeiten“. Verzweifeltes Improvisieren mit Zitronensaft (sauer = sichtbar an Geschmack) und Backpulver-Wasser (basisch = sichtbar an Sprudel-Reaktion).",
+          "Wichtig: nicht als Misserfolg framen — Forscher müssen oft improvisieren.",
+          "Mücken-Spray vorhanden? Dann gar nicht an pH-Test verzweifeln, sondern weitermachen mit den anderen Stationen."
+        ],
+        "fallback": "Wenn nichts hilft: Station als „Beobachtungs-Quartier“ umfunktionieren — keine Chemie, aber Pflanzen-Bestimmung über Merkmale geht trotzdem.",
+        "tone": "praktisch"
+      },
+      "gips_misslungen": {
+        "icon": "🔧",
+        "label": "Gips-Werkstatt misslungen — Abdrücke kleben/brechen",
+        "headline": "Improvisieren statt verzweifeln — die Story trägt auch durch Defekte.",
+        "steps": [
+          "Gips zu trocken: mehr Wasser dazugeben und neu rühren (klappt nur in den ersten 2 Minuten).",
+          "Gips bricht beim Auslösen: nicht reparieren, sondern als „Fossil-Fragment“ in die Story einbauen („die Außen-Station-Daten sind unvollständig — wir haben nur ein Fragment gefunden“).",
+          "Gips klebt am Joghurt-Becher: mit Messer vorsichtig die Becher-Wand aufschneiden, Becher um den Gips abziehen.",
+          "Gips wird heiß: normal — das ist die chemische Reaktion bis 60°C. Nicht in der Hand halten, einfach abwarten."
+        ],
+        "fallback": "Generell: Jeder Defekt lässt sich in die Story einbauen. „Die Wilderer haben hier gewütet — die Spuren sind beschädigt“ ist für 9-12 lustiger als perfekte Replikate.",
+        "tone": "praktisch"
+      },
+      "escape_room_stuck": {
+        "icon": "🧩",
+        "label": "Escape-Room-Frust — eine Station bleibt ungelöst",
+        "headline": "Cross-Hilfe aktivieren — Hinweis-Karten freigeben, Dependency-Flow nicht brechen.",
+        "steps": [
+          "Erinnere an den Selbst-Check: ergibt das Lösungswort AMAZONAS kein echtes Wort, war eine Station-Lösung falsch — welche?",
+          "Hinweis-Karten pro Station vorbereitet (am Vorabend): leicht, mittel, schwer. Bei Frust schrittweise freigeben.",
+          "Wenn eine Station komplett feststeckt: die Lösung als „Funkspruch des Vorgänger-Teams“ vorgeben — die Crew verifiziert nur noch und macht mit der nächsten weiter. Dependency-Flow bleibt erhalten.",
+          "Niemand bleibt hängen — gelöst wird gemeinsam. Wer den Hinweis braucht, verliert nicht."
+        ],
+        "fallback": "Wenn gar nichts geht: das Lösungswort AMAZONAS als „Notfall-Funkspruch“ vorgeben, alle 6 Stations-Boxen auf einmal öffnen, gemeinsame Reflexion am Ende.",
+        "tone": "praktisch"
+      },
+      "ein_kind_weint": {
+        "icon": "💧",
+        "label": "Ein Kind weint — Heimweh, Streit oder Überforderung",
+        "headline": "Kurz herausnehmen, ruhig reden, niemandem peinlich machen.",
+        "steps": [
+          "Kind ruhig in einen anderen Raum (Küche/Bad) holen, kein Publikum für die Tränen.",
+          "Fragen, was los ist — Heimweh, Streit mit anderem Kind, Aufgabe zu schwer? Nicht raten.",
+          "Bei Heimweh: kurze Eltern-Nachricht, dass das Kind weint, aber okay — die Eltern entscheiden, ob abholen.",
+          "Bei Streit: beide Kinder kurz getrennt sprechen, dann beim Wraps-Belegen wieder zusammenführen — Hände beschäftigt = Spannung weg.",
+          "Bei Überforderung: Spezialisierungs-Wechsel anbieten oder Chronist-Rolle („Du beobachtest und schreibst“) — kein Gesichtsverlust."
+        ],
+        "fallback": "Wenn nichts hilft: das Kind bekommt eine ruhige Aufgabe (Lehmlecken-Beobachtung, Logbuch sortieren) bis die Eltern kommen. Niemand wird ausgelacht.",
+        "tone": "einfühlsam"
+      },
+      "eltern_kommen_frueh": {
+        "icon": "🕐",
+        "label": "Eltern kommen früh",
+        "headline": "Foto-Moment vorziehen — die Lizenz-Zeremonie ist der Abschluss.",
+        "steps": [
+          "Wartende Eltern in den Foto-Moment einbinden: Gruppenbild in voller Ausrüstung mit Bandanas und Patches.",
+          "Falls die Mission noch läuft: kurz erklären, dass die Lizenz-Zeremonie das Finale ist — ungern unterbrechen.",
+          "Eltern können die A3-Biotop-Karte und die Logbuch-Galerie anschauen, während die Crew abschließt.",
+          "Klare Ansage in der Einladung beugt vor: „Zeremonie 17:00, Abholung 17:30.“"
+        ],
+        "fallback": "Bei Schlafparty: die Eltern der Nicht-Bleiber sind ohnehin ab einer festen Zeit verabschiedet — das vorher kommunizieren.",
+        "tone": "diplomatisch"
+      }
+    }
+  },
+  "feen-klein": {
+    "_meta": {
+      "source_file": "kindergeburtstag/feen.html",
+      "extracted": "2026-05-22",
+      "schema_version": "1.0",
+      "purpose": "Feen 3-5 (klein) — Phase-B Elite-Slot (analog Einhorn-klein)",
+      "phase_b_complete": "2026-05-22",
+      "phase_b_method": "Direct draft — feen-klein-spezifika (Verzauberter Feenwald, essbarer Glitzer-Staub, Geschlechts-Inklusion via Wald-Wächter, 1,5-2h, Eltern-Pflicht, Glitzer-Allergie-Test, kein Heißkleber) durchgehend angewandt. Anti-IP: Wald-Fee/Blüten-Helferin generisch — alle IP-Charaktere bewusst vermieden."
+    },
+    "motto": "feen",
+    "ageGroup": "klein",
+    "ageRange": [
+      3,
+      5
+    ],
+    "title": "Feen-Kindergeburtstag 3-5 Jahre — komplett geplant",
+    "metaDescription": "Feen-Kindergeburtstag für 3–5 Jahre: 3 fertige Party-Konzepte mit Zeitplan, 6 Spielen mit Anleitung, Einkaufsliste und Kosten pro Kind. Auch für Jungen sehr beliebt — Wald-Wächter-Variante mit Krieger-Flügeln. Komplett kostenlos.",
+    "introParagraph": "3 fertige Party-Konzepte: Minimal (1,5 Std.) · Standard (2 Std.) · Wow (2,5 Std.)\n\nMinutengenaue Zeitpläne, 6 altersgerechte Spiele mit kompletter Anleitung, Einkaufslisten mit Preisen und Kosten pro Kind. Für 3–5 Jahre: weniger Programm, viel Sensorik, kein Druck.\n\nAuch für Jungen sehr beliebt — Wald-Wächter-Variante mit Krieger-Flügeln und Schmetterlings-Brille. Geschlechts-offen als „Wald-Helfer\" oder „Blüten-Crew\" formulierbar.\n\n[🧚 Feen-Geburtstag planen →](/kindergeburtstag?motto=feen&alter=4#planer)",
+    "ageInsight": {
+      "headline": "Was du über 3–5-Jährige wissen musst — Feen-Party 3-5",
+      "traits": null,
+      "whyMottoFits": "Feen sind DAS Sensorik-Motto für diese Altersgruppe: Blüten anfassen, Glitzer-Staub rieseln lassen, Schmetterlinge fangen, magische Steine bemalen. Keine komplexe Geschichte, kein Wettkampf, keine schwierigen Regeln. Ein paar Tüllflügel auf dem Rücken, eine Hand voll Blüten im Haar — und die Kinder sind im Feenwald. Funktioniert mühelos parallel mit 3-Jährigen UND 5-Jährigen, weil das Staunen über Natur-Magie altersunabhängig ist. Bonus: Jungen lieben die Wald-Wächter-Variante mit Schmetterlings-Brille und kräftigen Krieger-Flügeln genauso.",
+      "whyMottoFitsHeadline": "🧚 Warum Feen für 3–5-Jährige perfekt funktionieren"
+    },
+    "signatureRitual": {
+      "name": "Das Feen-Versprechen",
+      "subtitle": "Für alle 3 Varianten",
+      "introText": "Jedes Kind bekommt beim Reinkommen seinen eigenen Blütennamen und seine ersten Feenflügel. Du bastelst vorher 12 gefaltete Zettel mit Blütennamen (Lavendel, Rose, Veilchen, Klatschmohn, Sonnenblume, Vergissmeinnicht, Glockenblume, Kornblume, Margerite, Schneeglöckchen, Löwenzahn, Mohn). In einer kleinen Holzschale (oder Bastel-Korb) liegen sie zwischen echten Blütenblättern (Rosenblätter aus dem Discounter, ~1,50 €). Jedes Kind greift rein, zieht einen Zettel, DU liest den Namen vor. Dann bekommt es seine Tüllflügel angesteckt mit Klettband — dazu sprichst du das Feen-Versprechen: „Du bist jetzt Lavendel, eine kleine Wald-Fee. Du versprichst, gut auf die Blüten aufzupassen?\" Das Kind nickt. Magie startet.",
+      "setupSteps": [],
+      "rolesList": [
+        {
+          "emoji": "🌸",
+          "name": "Lavendel",
+          "function": null
+        },
+        {
+          "emoji": "🌹",
+          "name": "Rose",
+          "function": null
+        },
+        {
+          "emoji": "💜",
+          "name": "Veilchen",
+          "function": null
+        },
+        {
+          "emoji": "🌺",
+          "name": "Klatschmohn",
+          "function": null
+        },
+        {
+          "emoji": "🌻",
+          "name": "Sonnenblume",
+          "function": null
+        },
+        {
+          "emoji": "💙",
+          "name": "Vergissmeinnicht",
+          "function": null
+        },
+        {
+          "emoji": "🔔",
+          "name": "Glockenblume",
+          "function": null
+        },
+        {
+          "emoji": "🌼",
+          "name": "Kornblume",
+          "function": null
+        },
+        {
+          "emoji": "🤍",
+          "name": "Margerite",
+          "function": null
+        },
+        {
+          "emoji": "❄️",
+          "name": "Schneeglöckchen",
+          "function": null
+        },
+        {
+          "emoji": "💛",
+          "name": "Löwenzahn",
+          "function": null
+        },
+        {
+          "emoji": "🍄",
+          "name": "Waldmoos (Wald-Wächter)",
+          "function": null
+        }
+      ],
+      "optOutNote": "💡 Für 3-Jährige: Du liest den Namen vor und sagst „Du bist jetzt Lavendel!\" — sie können den Zettel noch nicht selbst lesen. Das macht es sogar magischer. Für Jungen: Wald-Wächter-Variante anbieten — gleicher Ritus, aber statt Tüllflügel die Krieger-Flügel (aus Tonpapier, dunkelgrün/braun) plus Schmetterlings-Brille (Sonnenbrille mit aufgeklebten Tüll-Flügelchen). „Du bist jetzt Waldmoos, ein Wald-Wächter — du passt auf, dass keine Blüte zertrampelt wird.\"",
+      "materialNote": "⚠️ Vor der Party: Essbaren Glitzer, Glitzer-Kleber und Schminkfarbe an kleiner Hautstelle (Innenseite Unterarm) eines Kindes 1 Tag vorher testen. Bei Rötung → nur Blüten-Sticker und Klettband-Verzierungen statt Glitzer. Echte Blütenblätter (Rosen) vom Discounter sind unbehandelt — bei Heuschnupfen-Allergie vorab klären und auf Tüll-Blüten ausweichen. Heißkleber komplett tabu — alles vorbereitet oder Klettband/Doppelklebeband."
+    },
+    "variants": [
+      {
+        "id": "minimal",
+        "label": "Minimal — 1,5 Stunden, minimaler Aufwand",
+        "headline": "⚡ Minimal — 1,5 Stunden, stressfrei",
+        "intro": "Das ehrliche Konzept für Eltern, die nicht 3 Tage vorbereiten wollen. 2 Spiele, Kuchen, fertig. Kinder in diesem Alter brauchen nicht mehr — sie brauchen weniger Reize, mehr Sensorik. Funktioniert auch alleine ohne Helfer. Jungen kommen mit Wald-Wächter-Flügeln.",
+        "timeWindow": "15:00–16:30, 5 Kinder",
+        "schedule": [
+          {
+            "time": "15:00",
+            "title": "🧚 Feen-Versprechen & Flügel-Anstecken",
+            "description": "Kinder kommen an, ziehen ihren Blütennamen aus der Holzschale, bekommen ihre Tüllflügel mit Klettband angesteckt (oder Wald-Wächter-Flügel für Jungen). Du sprichst das kurze Feen-Versprechen mit jedem einzeln. Freies Spielen mit bereitliegenden Blüten-Ausmalbildern bis alle da sind."
+          },
+          {
+            "time": "15:15",
+            "title": "🦋 Schmetterlinge fangen mit Tüllbällen",
+            "description": "Bunte Tüllbälle (oder zusammengeknüllte Krepppapier-Schmetterlinge) durch den Raum werfen — Kinder fangen sie und legen sie in den „Blütenkorb\". 15 Min. Kein Wettbewerb, alle gewinnen. Bei 3-Jährigen liegen die Schmetterlinge teils auf Stühlen, sie pflücken sie nur ein."
+          },
+          {
+            "time": "15:30",
+            "title": "💎 Magische Steine bemalen",
+            "description": "Glatte Kieselsteine (Bastel-Set, ~3 €) mit Acrylstiften bemalen. Jedes Kind macht 2-3 Steine als „Feenwald-Glücksbringer\". 20 Min. Ruhige Phase — perfekt nach dem Toben."
+          },
+          {
+            "time": "15:55",
+            "title": "🎂 Kuchen & Blüten-Limo",
+            "description": "Vanille-Kuchen mit rosa Buttercreme und essbaren Blüten obendrauf. „Blüten-Limo\" (Apfelschorle mit 2 essbaren Blütenblättern obendrauf). Happy Birthday singen. Essbarer Glitzer als Spritzer auf den Kuchen — magisch! 20 Min."
+          },
+          {
+            "time": "16:20",
+            "title": "🎁 Mitgebsel & Abholung",
+            "description": "Tüllflügel + 2 magische Steine + 1 Blüten-Tattoo + Süßes in Tüte. Eltern kommen. Fertig.\n\n💡 Warum nur 1,5 Stunden?\nWeil 3–4-Jährige nach 90 Minuten durch sind. Wirklich. Die Aufmerksamkeit kippt, die Stimmung kippt, und dann stehst du mit 5 weinenden Kindern da. Kurz und gut schlägt lang und chaotisch — immer. Feen-Motto verträgt das besonders gut: sensorisch, kein Wettkampf."
+          }
+        ],
+        "games": [
+          {
+            "name": "🦋 Schmetterlinge fangen mit Tüllbällen",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 15,
+            "minAge": 3,
+            "loudness": "mittel",
+            "effort": "leicht",
+            "material": "8–12 bunte Tüllbälle (Bastelladen ~3 € oder zusammengeknülltes Krepppapier mit Klebeband fixiert), 1 Korb/Eimer als Blütenkorb, optional Tücher zum Schwenken",
+            "prepText": "Tüllbälle (oder Krepppapier-Schmetterlinge) durch den Raum werfen oder auf Stühle/Boden verteilen. Kinder fliegen wie Feen herum und „fangen\" die Schmetterlinge, indem sie sie aufheben und in den Blütenkorb legen. Kein Punktezählen — alle Schmetterlinge gehören in den Korb, jedes Kind hilft mit.",
+            "steps": [],
+            "safetyRule": "Bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Tüllbälle min. 5 cm Durchmesser. Generelle Aufsicht durch Erwachsene. Keine Schnüre/Drähte an den Schmetterlingen — Strangulationsrisiko.",
+            "ageAdjust6": "Schmetterlinge nicht werfen, sondern hinlegen — sie „pflücken\" sie nur ein. Bei Stopp einfach hinsetzen.",
+            "ageAdjust8": "Mit verbundenen Augen einen Schmetterling ertasten — welche Farbe? Schwieriger, macht mehr Spaß.",
+            "indoorTip": "Wohnzimmer-Boden mit Tüchern als „Wiese\" auslegen — Schmetterlinge landen in der Wiese.",
+            "outdoorTip": "Im Garten in echte Blumenkübel/Töpfe legen — wirkt extra magisch.",
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          },
+          {
+            "name": "💎 Magische Steine bemalen",
+            "indoor": true,
+            "outdoor": false,
+            "duration": 20,
+            "minAge": 3,
+            "loudness": "ruhig",
+            "effort": "leicht",
+            "material": "12-15 glatte Kieselsteine (Bastel-Set ~3 € oder kostenlos aus dem Garten/Bach), 1 Set Acryl- oder Posca-Stifte (~6 €), Zeitungspapier als Unterlage, feuchtes Tuch, Glitzer-Aufkleber",
+            "prepText": "Steine vorher waschen und trocknen. Auf Zeitungspapier verteilen, jedes Kind bekommt 2-3 Steine und Stifte. Sie malen Punkte, Blüten, Smileys, ihren Blütennamen-Anfangsbuchstaben. Optional: einen Glitzer-Aufkleber draufkleben als „magischen Funken\". Steine trocknen 5 Min an der Luft.",
+            "steps": [],
+            "safetyRule": "Acrylstifte nur mit Aufsicht — nicht in Mund. Bei 3-Jährigen lieber wasserbasierte Filzstifte. Steine min. handtellergroß wählen, damit nichts verschluckt wird. Heißkleber komplett tabu — falls Sticker aufgeklebt werden, normale selbstklebende.",
+            "ageAdjust6": "Vorgemalte Smiley-Vorlagen — Kinder malen nur aus. Wasserfilzstifte statt Acrylstift.",
+            "ageAdjust8": "Eigene Blüten- oder Schmetterlings-Motive frei zeichnen. Mit feinem Pinsel + Acrylfarbe.",
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          }
+        ],
+        "food": "🎂 Vanille-Kuchen mit rosa Buttercreme + essbaren Blüten (1 Gugelhupf)\n💧 „Blüten-Limo\" (Apfelschorle + Blütenblatt obendrauf, 6 Trinkpäckchen)\n🍓 Beeren-Mix (Erdbeeren + Heidelbeeren, 250 g)\n🥨 Salzige Brezel-Sticks (1 Packung)\n\n💡 „Blüten-Limo\"?\nApfelschorle oder klare Limo, 1 essbares Blütenblatt obendrauf (Stiefmütterchen, Gänseblümchen — Bio-Hof oder selber pflücken, ungespritzt). Sieht aus wie Hexenmagie, kostet nix extra. 3-Jährige sind hin und weg.",
+        "giveaways": "🦋 Tüllflügel (dürfen sie anbehalten — sind angesteckt, sie tragen sie eh)\n💎 2-3 magische Steine (selbst bemalt)\n🌸 1 Blüten-Tattoo (vorab gekauft, ~3 € für 30er-Set)\n🍭 1 Tüte Gummibärchen\n\nIn rosa oder grüne Papiertüte (10 Stk. ~1–2 € bei DM/Action) mit „Blüten-Geschenk für ___\" beschriften. Kosten: ~1,80 € pro Kind.",
+        "shoppingList": [
+          {
+            "emoji": "🦋",
+            "label": "Tüllflügel-Set (5-6 Stk., rosa/lila/Wald-Wächter-grün)",
+            "url": "https://www.amazon.de/s?k=t%C3%BCllfl%C3%BCgel+kinder+set+rosa&tag=machsleicht-21",
+            "priceEur": 12,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Feen-Versprechen-Ritual — ohne Flügel kein Verkleidungs-Anker. Wald-Wächter-Variante ebenfalls Flügel-basiert."
+          },
+          {
+            "emoji": "🌸",
+            "label": "Blüten-Tattoo-Set (30+ Motive)",
+            "url": "https://www.amazon.de/s?k=bl%C3%BCten+tattoos+kinder+set&tag=machsleicht-21",
+            "priceEur": 5,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Mitgebsel-Beilage, kein Spiel hängt daran — Steine + Flügel reichen funktional."
+          },
+          {
+            "emoji": "💎",
+            "label": "Kieselstein-Set + Acrylstifte (Posca-Style)",
+            "url": "https://www.amazon.de/s?k=kieselsteine+bemalen+set+kinder&tag=machsleicht-21",
+            "priceEur": 9,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Magische-Steine-Bemalen — eines von zwei Minimal-Spielen."
+          },
+          {
+            "emoji": "🦋",
+            "label": "Bunte Tüllbälle (12 Stk.) ODER Krepppapier (DIY)",
+            "url": "https://www.amazon.de/s?k=t%C3%BCllb%C3%A4lle+bunt+set+kinder&tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Krepppapier (~0,50 €) tut's funktional auch — Tüllbälle nur Premium-Variante."
+          },
+          {
+            "emoji": "🌹",
+            "label": "Echte Rosenblätter / essbare Blüten (Discounter)",
+            "url": null,
+            "priceEur": 2,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Feen-Versprechen-Schale + Kuchen-Topping. Sensorische Magie braucht echte Blüten."
+          },
+          {
+            "emoji": "✨",
+            "label": "Essbarer Glitzer (Backabteilung)",
+            "url": "https://www.amazon.de/s?k=essbarer+glitzer+kuchen+rosa&tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining — „Glitzer-Staub\" auf Kuchen + Blüten-Limo, motto-zentrale Magie. Essbar = sicher für 3-Jährige."
+          },
+          {
+            "emoji": "🧃",
+            "label": "Apfelschorle + Trinkpäckchen",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Getränke nicht optional — 5 durstige Kinder + Eltern brauchen Verpflegung."
+          },
+          {
+            "emoji": "🍓",
+            "label": "Beeren-Mix + Brezel-Sticks",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Snack-Pause-Beilage, aber Kuchen + Gummibärchen tragen die 1,5h auch ohne."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Backmischung (Vanille) + rosa Buttercreme",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Vanille-Kuchen mit Buttercreme + essbaren Blüten ist motto-zentral, Pflichtteil jeder Kinderparty."
+          },
+          {
+            "emoji": "🛍️",
+            "label": "Papiertüten + Gummibärchen",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Goodie-Verpackung, Tüten gehen auch aus Haushalt."
+          }
+        ],
+        "estimatedCostEur": 35,
+        "costContext": "Geschätzte Kosten (Minimal, 5 Kinder) — inkl. Tüllflügel als pflicht-Investition"
+      },
+      {
+        "id": "standard",
+        "label": "Standard — 2 Stunden, vollständige Schicht",
+        "headline": "🎯 Standard — 2 Stunden, rund und gut",
+        "intro": "Der Sweet Spot für 3–5-Jährige: genug Programm ohne Überforderung. 4 Aktivitäten im Sensorik-Rhythmus, Kuchen, Deko. Die Party, an die sich die Kinder erinnern — und die Eltern nicht bereuen. Jungen kommen mit Wald-Wächter-Flügeln und Schmetterlings-Brille.",
+        "timeWindow": "15:00–17:00, 5 Kinder",
+        "schedule": [
+          {
+            "time": "15:00",
+            "title": "🧚 Feen-Versprechen, Flügel & freies Spielen",
+            "description": "Jedes Kind zieht seinen Blütennamen aus der Holzschale (echte Rosenblätter drin), bekommt Tüllflügel oder Wald-Wächter-Flügel mit Klettband angesteckt. Du sprichst das Feen-Versprechen. Dann freies Spielen mit Blüten-Ausmalbildern und Wachsmalstiften, bis alle da sind."
+          },
+          {
+            "time": "15:15",
+            "title": "🌸 Blumenkranz-Werkstatt",
+            "description": "Filz- oder Papp-Blüten (vorgestanzt!) auf einen Stirnband-Streifen kleben. 20 Min. Wenn fertig: Aufsetzen und 1 Runde als Blüten-Crew durch den Raum tanzen."
+          },
+          {
+            "time": "15:40",
+            "title": "✨ Glitzer-Staub-Suche",
+            "description": "DER Wow-Moment für Sensorik-Kinder. Glitzer-Reis-Wanne mit versteckten Mini-Schmetterlingen + Mini-Marienkäfer. Jedes Kind darf mit dem Löffel graben. Essbarer Glitzer = sicher. 15 Min."
+          },
+          {
+            "time": "15:55",
+            "title": "🎂 Kuchen, Blüten-Limo & Obst",
+            "description": "Vanille-Kuchen mit rosa Buttercreme, essbaren Blüten und Glitzer-Staub. Happy Birthday singen. Blüten-Limo. 25 Min."
+          },
+          {
+            "time": "16:20",
+            "title": "💎 Magische Steine bemalen",
+            "description": "Glatte Kieselsteine mit Acryl-/Posca-Stiften bemalen. Ruhige Phase nach dem Kuchen. 15 Min."
+          },
+          {
+            "time": "16:35",
+            "title": "🦋 Feentanz mit Schleier",
+            "description": "Zum Auspowern. Bunte Chiffon-Schleier (~5 € für 6er-Set) schwenken zur Musik, Stopp = einfrieren wie Schmetterling auf Blüte. Kein Ausscheiden. 15 Min."
+          },
+          {
+            "time": "16:55",
+            "title": "🎁 Mitgebsel & Abholung",
+            "description": "Tüllflügel + Blumenkranz + magische Steine + Mini-Schmetterling + Süßes in Tüte. Fertig.\n\n💡 Rhythmus-Regel für Kleinkinder:\nRuhig → Sensorik → Pause → Ruhig → Aktiv. Blumenkranz (ruhig) → Glitzer-Staub-Suche (Sensorik-Wow) → Kuchen (Pause) → Steine bemalen (ruhig) → Feentanz (laut). So kippt die Stimmung nie. Wenn ein Kind trotzdem aussteigt: lass es. Ausmalbilder bereithalten als „sichere Insel\"."
+          }
+        ],
+        "games": [
+          {
+            "name": "🌸 Blumenkranz-Werkstatt",
+            "indoor": true,
+            "outdoor": false,
+            "duration": 20,
+            "minAge": 3,
+            "loudness": "ruhig",
+            "effort": "leicht",
+            "material": "1 Stirnband-Streifen pro Kind (Tonpapier, 5 cm × 55 cm, du schneidest vor!), Klettband + Tacker (du!), Filz- oder Papp-Blüten (vorgestanzt, Bastelladen ~4 €), Klebepunkte oder Doppelklebeband, optional Glitzer-Aufkleber",
+            "prepText": "Stirnband-Streifen vorher zuschneiden und Klett oder Tacker vorbereiten. Filz-Blüten ausgestanzt bereitlegen. Jedes Kind klebt 6-8 Blüten auf seinen Streifen. Erwachsener tackert am Schluss zum Kranz zusammen. Aufsetzen → „Du bist eine Blüten-Königin/Wald-Wächter mit Blüten-Krone!\"",
+            "steps": [],
+            "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband oder Klebepunkte. Kleine Blüten min. 3 cm — Verschluckungsgefahr.",
+            "ageAdjust6": "Alles vorbereiten, sie kleben nur Blüten drauf. Große Filz-Blüten (5 cm). Klebepunkte statt flüssiger Kleber.",
+            "ageAdjust8": "Eigene Blüten aus Tonpapier ausschneiden. Mehrlagig stapeln für 3D-Effekt.",
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          },
+          {
+            "name": "✨ Glitzer-Staub-Suche",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 15,
+            "minAge": 3,
+            "loudness": "ruhig",
+            "effort": "leicht",
+            "material": "1 große Plastikwanne, 2 kg Reis mit ESSBAREM Glitzer gemischt (Backabteilung, ~4 €), 8-10 Mini-Schmetterlinge aus Plastik + Mini-Marienkäfer-Figuren (~3 € im Set), 1 Löffel pro Kind",
+            "prepText": "Reis mit essbarem Glitzer in die Wanne. Schmetterlinge + Marienkäfer im Reis vergraben. Jedes Kind bekommt einen Löffel und gräbt vorsichtig. Wer einen Schmetterling findet, darf ihn behalten — landet später in der Mitgebsel-Tüte.",
+            "steps": [],
+            "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: NUR essbaren Glitzer verwenden (Backabteilung), kein Bastel-Glitzer — der kann in Atemwege/Augen gelangen. Mini-Figuren min. 4 cm — Verschluckungsgefahr. Kinder nicht alleine graben lassen. Reis nicht in die Augen — bei Augenkontakt mit Wasser spülen, ggf. Augenarzt.",
+            "ageAdjust6": "Figuren nur leicht bedecken. Reis statt Sand (wiederverwendbar, weniger Sauerei). Auf alter Tischdecke oder in Badewanne aufstellen — Glitzer wandert weniger.",
+            "ageAdjust8": "Tiefer vergraben. Augen zu und nur ertasten — welche Figur ist das (Schmetterling oder Marienkäfer)?",
+            "indoorTip": "In der Badewanne aufstellen — Glitzer wandert weniger, Kinder sitzen drumherum.",
+            "outdoorTip": "Auf einer Picknickdecke im Garten — Reis kann liegen bleiben, Vögel räumen den Rest auf.",
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          },
+          {
+            "name": "💎 Magische Steine bemalen",
+            "indoor": true,
+            "outdoor": false,
+            "duration": 15,
+            "minAge": 3,
+            "loudness": "ruhig",
+            "effort": "leicht",
+            "material": "12-15 glatte Kieselsteine, 1 Set Acryl- oder Posca-Stifte, Zeitungspapier, feuchtes Tuch, Glitzer-Aufkleber",
+            "prepText": "Steine vorher waschen, trocknen, auf Zeitungspapier verteilen. Jedes Kind bekommt 2 Steine und Stifte. Sie malen Blüten-Punkte, ihren Blütennamen-Anfangsbuchstaben, Smileys. Glitzer-Aufkleber als magischer Funken.",
+            "steps": [],
+            "safetyRule": "Acrylstifte nur mit Aufsicht — nicht in Mund. Bei 3-Jährigen lieber wasserbasierte Filzstifte. Steine min. handtellergroß — Verschluckungsgefahr. Heißkleber komplett tabu.",
+            "ageAdjust6": "Vorgemalte Smiley-Vorlagen — Kinder malen nur aus. Wasserfilzstifte.",
+            "ageAdjust8": "Eigene Blüten- oder Schmetterlings-Motive zeichnen. Feiner Pinsel + Acrylfarbe.",
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          },
+          {
+            "name": "🦋 Feentanz mit Schleier",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 15,
+            "minAge": 3,
+            "loudness": "laut",
+            "effort": "leicht",
+            "material": "Bluetooth-Box/Handy, ruhige Wald-Feen-Musik (Spotify: „Nature Sounds Kids\", „Forest Magic\" oder IP-freie generische Kindermusik mit Natur-Klang), 6 bunte Chiffon-Schleier (~5 € Bastelladen, oder Tücher aus dem Haushalt)",
+            "prepText": "Musik an → Kinder schwingen Schleier und tanzen wie Feen/Schmetterlinge. Musik aus → einfrieren wie Schmetterling auf Blüte. Wer sich bewegt, bekommt einen Blüten-Sticker auf den Schleier — das ist Belohnung, kein Rauswerfen. Kein Ausscheiden.",
+            "steps": [],
+            "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Schleier-Schnüre/Bändchen vorher abschneiden — Strangulationsrisiko. Bei Tanz: Möbelkanten polstern oder Spielzeug wegräumen.",
+            "ageAdjust6": "Einfrieren ist noch schwer — bei Stopp einfach hinhocken. Schleier nicht um den Hals — nur in der Hand.",
+            "ageAdjust8": "Einfrieren als bestimmte Figur: „Zeig mir einen Schmetterling auf einer Blüte!\" — Pose halten.",
+            "indoorTip": "Möbel zur Seite schieben — die Schleier brauchen Platz zum Schwingen.",
+            "outdoorTip": "Im Garten auf weichem Rasen — Kinder fallen seltener, Sturz weicher.",
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          }
+        ],
+        "food": "🎂 Vanille-Kuchen mit rosa Buttercreme + essbaren Blüten + Glitzer (1 Gugelhupf)\n💧 Blüten-Limo (8 Trinkpäckchen + Blütenblatt)\n🍓 Rosa Obst-Teller (Erdbeeren, Himbeeren, rosa Trauben)\n🥒 Gemüse-Sticks (Gurke, Möhre, Paprika)\n🥨 Brezel-Sticks (200 g)\n🍪 Stiefmütterchen-Kekse (fertig kaufen + selber dekorieren)",
+        "decoration": "🎈 Pastell-Luftballons (rosa/lila/grün) — 10 Stk. ~3 €\n🌿 Grüne Krepppapier-Girlande als „Efeu\" — 1 Stk. ~3 €\n🦋 Schmetterlings-Pappteller & Becher — Set ~6 €\n🌸 Blüten an Faden von der Decke — Kostenlos (Seidenblüten aus dem Bestand oder Bastelladen 2 €)\n\n💡 Kleinkinder-Deko-Trick:\nWenige große Deko-Teile wirken stärker als viele kleine. Ein Schmetterlings-Folienballon (DM, ~3 €) + 5 Pastell-Ballons + 1 Krepppapier-Efeu-Girlande reichen. Kinder in diesem Alter sehen die Ballons und sind glücklich. Den Rest checken sie nicht.",
+        "giveaways": "🦋 Tüllflügel (selbst getragen, dürfen sie behalten)\n🌸 Blumenkranz (selbst gebastelt)\n💎 2 magische Steine (selbst bemalt)\n🦋 1 Mini-Schmetterling (selbst gefunden — emotionaler Wert)\n🖍️ 2 Blüten-Ausmalbilder\n🍭 1 kleine Tüte Gummibärchen\n\nIn rosa oder grüne Papiertüte mit Blütennamen beschriften. Kosten: ~2,30 € pro Kind.",
+        "shoppingList": [
+          {
+            "emoji": "🦋",
+            "label": "Tüllflügel-Set (5-6 Stk. mit Wald-Wächter-Variante)",
+            "url": "https://www.amazon.de/s?k=t%C3%BCllfl%C3%BCgel+kinder+set+rosa&tag=machsleicht-21",
+            "priceEur": 12,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Konsistent zu Minimal — Verkleidungs-Anker."
+          },
+          {
+            "emoji": "🌸",
+            "label": "Filz-Blüten vorgestanzt (50+ Stk.) + Tonpapier",
+            "url": "https://www.amazon.de/s?k=filz+bl%C3%BCten+vorgestanzt+set&tag=machsleicht-21",
+            "priceEur": 6,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Blumenkranz-Werkstatt."
+          },
+          {
+            "emoji": "💎",
+            "label": "Kieselstein-Set + Posca-Stifte",
+            "url": "https://www.amazon.de/s?k=kieselsteine+bemalen+set+kinder&tag=machsleicht-21",
+            "priceEur": 9,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining — Magische-Steine-Bemalen ist Sensorik-Ruhe-Anker."
+          },
+          {
+            "emoji": "✨",
+            "label": "Essbarer Glitzer (groß, für Reis-Wanne + Kuchen)",
+            "url": "https://www.amazon.de/s?k=essbarer+glitzer+gro%C3%9F+set&tag=machsleicht-21",
+            "priceEur": 6,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Glitzer-Staub-Suche + Kuchen-Magie. Pflicht weil essbar = sicher für 3-Jährige."
+          },
+          {
+            "emoji": "🦋",
+            "label": "Mini-Schmetterlinge + Marienkäfer (Figuren-Set)",
+            "url": "https://www.amazon.de/s?k=mini+schmetterlinge+figuren+kinder&tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Glitzer-Staub-Suche-Beute + Mitgebsel."
+          },
+          {
+            "emoji": "🌹",
+            "label": "Essbare Blüten + Rosenblätter (Discounter/Bio)",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Feen-Versprechen-Schale + Kuchen + Blüten-Limo."
+          },
+          {
+            "emoji": "🦋",
+            "label": "Chiffon-Schleier (6er-Set, bunt)",
+            "url": "https://www.amazon.de/s?k=chiffon+schleier+kinder+bunt&tag=machsleicht-21",
+            "priceEur": 5,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Feentanz-Verstärker, aber Tücher aus dem Haushalt funktional gleichwertig."
+          },
+          {
+            "emoji": "🦋",
+            "label": "Schmetterlings-Teller & Becher Set",
+            "url": "https://www.amazon.de/s?k=schmetterling+teller+becher+kindergeburtstag&tag=machsleicht-21",
+            "priceEur": 6,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Atmosphäre-Heber, Pappgeschirr-Standard funktional gleichwertig."
+          },
+          {
+            "emoji": "🎈",
+            "label": "Pastell-Luftballons + Efeu-Girlande",
+            "url": null,
+            "priceEur": 6,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Deko-Premium, aber Stationen funktional ohne."
+          },
+          {
+            "emoji": "🧃",
+            "label": "Apfelschorle + Obst + Gemüse + Brezeln",
+            "url": null,
+            "priceEur": 8,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Getränke + gesunde Beilage bei 2h Party nicht optional."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Backmischung Vanille + rosa Buttercreme + Deko",
+            "url": null,
+            "priceEur": 7,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Kuchen-Pflichtteil — Vanille-Buttercreme mit essbaren Blüten ist motto-zentral."
+          },
+          {
+            "emoji": "🛍️",
+            "label": "Papiertüten + Gummibärchen + Ausmalbilder",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Goodie-Verpackung + Pufferzeit-Aktivität."
+          }
+        ],
+        "estimatedCostEur": 55,
+        "costContext": "Geschätzte Kosten (Standard, 5 Kinder) — Pflichtteil ~45 €, mit Sinnvoll-Extras ~60 €"
+      },
+      {
+        "id": "wow",
+        "label": "Wow — 2,5 Stunden, die volle Schicht",
+        "headline": "✨ Wow — 2,5 Stunden, die volle Magie im Feenwald",
+        "intro": "Die Kinder erleben eine „Feenwald-Reise\" — eine zusammenhängende Geschichte in 5 Kapiteln. Jede Station baut auf der vorherigen auf: zuerst werden sie zu Feen/Wald-Wächtern (Verwandlung), dann lernen sie Blüten-Magie (Blumenkranz), helfen einer verzauberten Schmetterlings-Königin (Glitzer-Staub finden), bauen ihre eigenen Feenflügel-Stäbchen und tanzen am Schluss den großen Blüten-Reigen mit Seifenblasen. Aufwand mittel, Erinnerung riesig. Helfer empfohlen.",
+        "timeWindow": "14:30–17:00, 5 Kinder",
+        "schedule": [
+          {
+            "time": "14:30",
+            "title": "📖 Kapitel 1: Die Verwandlung",
+            "description": "Jedes Kind zieht seinen Blütennamen aus der Holzschale mit echten Rosenblättern. Du erzählst die Feenwald-Geschichte: „Tief im Wald lebt die Schmetterlings-Königin. Sie braucht eure Hilfe — der Glitzer-Staub ist verloren!\" Tüllflügel / Wald-Wächter-Flügel mit Klettband anstecken, Blüten-Tattoo auf den Handrücken. „Jetzt seid ihr echte Wald-Feen!\" 20 Min."
+          },
+          {
+            "time": "14:55",
+            "title": "📖 Kapitel 2: Die Blüten-Krone schmieden",
+            "description": "„Bevor ihr die Königin trefft, braucht ihr eure Blüten-Krone!\" → Blumenkranz-Werkstatt: Filz-Blüten auf Stirnband-Streifen kleben. Erwachsene tackern zusammen. Aufsetzen. 20 Min."
+          },
+          {
+            "time": "15:15",
+            "title": "📖 Kapitel 3: Den Glitzer-Staub finden",
+            "description": "„Die Königin flüstert mir gerade zu — der Glitzer-Staub liegt im Wald verstreut, und kleine Schmetterlinge hüten ihn!\" → Glitzer-Reis-Wanne mit Schmetterlingen + Marienkäfern. Jedes Kind gräbt 2 Figuren aus. „Ihr habt den Staub gerettet!\" 15 Min."
+          },
+          {
+            "time": "15:30",
+            "title": "🎂 Pause: Kuchen, Blüten-Limo & Stiefmütterchen-Kekse",
+            "description": "„Auch Feen brauchen eine Pause!\" Vanille-Kuchen mit rosa Buttercreme + essbaren Blüten + Glitzer-Staub-Spritzer. Blüten-Limo. Stiefmütterchen-Kekse. 25 Min."
+          },
+          {
+            "time": "15:55",
+            "title": "📖 Kapitel 4: Den magischen Stein finden",
+            "description": "„Die Königin sagt: ‚Jeder Wald-Helfer braucht seinen eigenen Glücks-Stein!'\" → Magische Steine bemalen. Jedes Kind bemalt 2-3 Steine mit Blüten und Glitzer-Aufklebern. 15 Min."
+          },
+          {
+            "time": "16:10",
+            "title": "📖 Kapitel 5: Feenflügel-Stäbchen bauen",
+            "description": "„Mit dem Glitzer-Staub und den Steinen baut die Königin euch jetzt eure echten Zauber-Stäbchen!\" → Holz-Bastelstab + Tüll-Schmetterling oben drauf + bunte Bänder. 15 Min. „Euer Feenflügel-Stäbchen ist fertig. Jetzt kommt der große Blüten-Reigen!\""
+          },
+          {
+            "time": "16:30",
+            "title": "🦋 Finale: Der Blüten-Reigen mit Seifenblasen",
+            "description": "Alle tanzen mit Schleiern und Feenflügel-Stäbchen. „Schwingt eure Stäbe — die Königin schickt euch Seifenblasen als Dank!\" Du startest die [Seifenblasenmaschine*](https://www.amazon.de/s?k=seifenblasenmaschine+kinder+batterie&tag=machsleicht-21) — Kinder rasten aus. Der große, magische Abschluss. 15 Min. Danach kurz runterkommen mit Ausmalbildern."
+          },
+          {
+            "time": "16:50",
+            "title": "🎁 Mitgebsel & Abholung",
+            "description": "Flügel + Blumenkranz + Schmetterlinge + Steine + Feenflügel-Stäbchen + Süßes in Tüte. Die Kinder gehen als verzauberte Wald-Feen / Wald-Wächter nach Hause — sie haben der Königin geholfen.\n\n💡 Warum eine Geschichte?\n3–5-Jährige leben in Geschichten. Wenn du sagst „Jetzt spielen wir ein Spiel\", machen sie mit. Wenn du sagst „Die Königin braucht eure Hilfe!\", rennen sie los. Die Geschichte verwandelt 6 einzelne Aktivitäten in ein zusammenhängendes Abenteuer — und du musst dir keine Übergänge ausdenken, weil die Story sie liefert.\n\n💡 Für 2,5 Stunden brauchst du einen Helfer.\nBei 5 Kleinkindern über 2,5 Stunden brauchst du eine zweite Person — Oma, andere Mama, Teenager-Nachbarin (10 € für 2,5 Std.). Einer erzählt die Geschichte und betreut die Kinder, einer bereitet die nächste Station vor. Alleine wird es stressig."
+          }
+        ],
+        "games": [
+          {
+            "name": "🌸 Blumenkranz-Werkstatt",
+            "indoor": true,
+            "outdoor": false,
+            "duration": 20,
+            "minAge": 3,
+            "loudness": "ruhig",
+            "effort": "leicht",
+            "material": "Stirnband-Streifen (Tonpapier, vorgeschnitten), Filz-Blüten vorgestanzt (~6 €), Klebepunkte/Doppelklebeband, Klettband + Tacker (Erwachsene!), Glitzer-Aufkleber",
+            "prepText": "Stirnband-Streifen + Klett vorbereiten. Filz-Blüten ausgestanzt bereit. Kinder kleben 6-8 Blüten auf ihren Streifen. Erwachsener tackert/klettet zusammen. Aufsetzen → „Du bist eine Blüten-Königin / Wald-Wächter mit Blüten-Krone!\"",
+            "steps": [],
+            "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu — Doppelklebeband/Klebepunkte. Kleine Blüten min. 3 cm — Verschluckungsgefahr.",
+            "ageAdjust6": "Alles vorbereiten, sie kleben nur auf. Große Blüten. Klebepunkte.",
+            "ageAdjust8": "Eigene Blüten ausschneiden. Mehrlagig stapeln.",
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          },
+          {
+            "name": "✨ Glitzer-Staub-Suche",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 15,
+            "minAge": 3,
+            "loudness": "ruhig",
+            "effort": "leicht",
+            "material": "Große Plastikwanne, 2 kg Reis mit ESSBAREM Glitzer gemischt, 8-10 Mini-Schmetterlinge + Marienkäfer, 1 Löffel pro Kind",
+            "prepText": "Reis mit essbarem Glitzer in die Wanne. Figuren vergraben. Kinder graben mit Löffel. Gefundene Figuren dürfen sie behalten.",
+            "steps": [],
+            "safetyRule": "Sichtaufsicht zwingend. NUR essbaren Glitzer (Backabteilung) — Bastel-Glitzer ist tabu wegen Atemwege/Augen. Mini-Figuren min. 4 cm. Bei Augenkontakt mit Wasser spülen, ggf. Augenarzt.",
+            "ageAdjust6": "Figuren nur leicht bedecken. In Badewanne aufstellen.",
+            "ageAdjust8": "Tiefer vergraben. Mit verbundenen Augen ertasten.",
+            "indoorTip": "Badewanne als Container.",
+            "outdoorTip": "Picknickdecke im Garten.",
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          },
+          {
+            "name": "💎 Magische Steine bemalen",
+            "indoor": true,
+            "outdoor": false,
+            "duration": 15,
+            "minAge": 3,
+            "loudness": "ruhig",
+            "effort": "leicht",
+            "material": "12-15 Kieselsteine, Posca-Stifte, Zeitungspapier, Glitzer-Aufkleber",
+            "prepText": "Steine vorher gewaschen. Kinder bemalen 2-3 Steine. Aufkleber als „magischer Funken\".",
+            "steps": [],
+            "safetyRule": "Acrylstifte nur mit Aufsicht — nicht in Mund. Bei 3-Jährigen Wasser-Filzstifte. Steine min. handtellergroß. Heißkleber tabu.",
+            "ageAdjust6": "Smiley-Vorlagen — Kinder malen aus. Wasserfilzstifte.",
+            "ageAdjust8": "Eigene Motive zeichnen. Feiner Pinsel + Acryl.",
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          },
+          {
+            "name": "🪄 Feenflügel-Stäbchen basteln",
+            "indoor": true,
+            "outdoor": false,
+            "duration": 15,
+            "minAge": 3,
+            "loudness": "ruhig",
+            "effort": "mittel",
+            "material": "1 Holz-Bastelstab pro Kind (30 cm, ~3 € für 10 Stk.), 1 Tüll-Schmetterling (vorbereitet!) pro Kind, Klebepunkte/Doppelklebeband (KEINE Heißklebe!), bunte Bänder (Geschenkband ~2 €), Glitzer-Aufkleber",
+            "prepText": "Du bereitest vorher die Tüll-Schmetterlinge vor: Tüll-Stück in Schleifen-Form mit Draht in der Mitte (du!) gebunden, dann mit Doppelklebeband-Streifen am Stab fixierbar. Kinder kleben Schmetterling auf den Stab (Doppelklebeband-Streifen abziehen), knoten Bänder dran (Erwachsener hilft) und kleben Glitzer-Aufkleber drauf. Fertig ist das Feenflügel-Stäbchen.",
+            "steps": [],
+            "safetyRule": "Schere/Tacker NUR durch Erwachsene. Heißkleber KOMPLETT TABU für Kinder — alle Klebeverbindungen mit Doppelklebeband oder Klebepunkten. Drahtenden am Schmetterling vorher umbiegen — Stichgefahr. Bei 3-Jährigen: Stab nicht in der Hand schwingen lassen außerhalb des Tanzes — Augenstoßgefahr.",
+            "ageAdjust6": "Stab + Schmetterling komplett vorher zusammenkleben. Kinder kleben nur Bänder + Aufkleber drauf.",
+            "ageAdjust8": "Sie dürfen den Schmetterling selbst aufkleben und die Bänder selbst knoten.",
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          }
+        ],
+        "food": "🎂 Vanille-Kuchen mit rosa Buttercreme + essbaren Blüten + Glitzer (1 Gugelhupf)\n💧 Blüten-Limo (10 Trinkpäckchen + Blütenblatt)\n🍪 Stiefmütterchen-Kekse (fertig + selber dekoriert, 15 Stk.)\n🍓 Rosa Obst-Teller (Erdbeeren, Himbeeren, rosa Trauben)\n🥒 Gemüse-Sticks (Gurke, Möhre, Paprika)\n🥨 Brezel-Sticks (200 g)\n🍭 Gummibärchen (1 Tüte 200 g)\n\n💡 Stiefmütterchen-Kekse ohne Backen:\nFertige Butterkekse (~2 €) mit rosa Glasur bestreichen (Puderzucker + 1 Tropfen Lebensmittelfarbe), 1 essbares Stiefmütterchen oder Gänseblümchen obendrauf. 15 Kekse in 15 Minuten. Sieht aus wie aus dem Feenwald-Café.",
+        "decoration": "🎈 Pastell-Luftballons (rosa/lila/grün/weiß) — 15 Stk. ~4 €\n🦋 Schmetterlings-Folienballon — 1 Stk. ~3 €\n🌿 Grüne Krepppapier-„Efeu\"-Girlande — ~3 €\n🦋 Schmetterlings-Pappteller & Becher — Set ~6 €\n🌸 Seidenblüten an Faden von der Decke — Kostenlos (Bestand oder ~3 €)\n🍄 Pappmaché-Pilze auf dem Tisch — ~5 € im Set\n🔊 Wald-Sounds leise im Hintergrund — Kostenlos (YouTube: „Forest Sounds for Kids\" oder „Magical Forest Music\")\n\n🧚 Wow-Bonus: Der Feenwald-Eingang\n6 Streifen grünes Krepppapier (Hell- und Dunkelgrün) oben am Türrahmen befestigen, bis zum Boden hängen lassen. Die Kinder „treten durch das Blätterdach in den Feenwald\" wenn sie reinkommen. Kostet 2 €, dauert 5 Minuten, und die Kinder rasten beim Reinkommen sofort aus. DER erste Eindruck.\n\n🦋 Wow-Bonus: Seifenblasen-Regen beim Finale\nDer Moment, an den sich die Kinder in 3 Jahren noch erinnern: Während des Blüten-Reigens eine [Seifenblasenmaschine*](https://www.amazon.de/s?k=seifenblasenmaschine+kinder+batterie&tag=machsleicht-21) (~12 €) anmachen. Die Kinder tanzen mit Stäbchen, tragen ihre Flügel und Blumenkränze, und plötzlich fliegen hunderte Seifenblasen durch den Raum. DAS wird das Foto des Tages. Funktioniert drinnen und draußen.\n\n✨ Wow-Bonus: Lichterketten-Feenwald\nBatterie-betriebene Mini-LED-Lichterketten (~5 € bei Action) in Bücherregale, an Vorhänge, um die Krepppapier-Efeu-Girlande wickeln. Tageslicht abdunkeln. Sieht aus wie ein echter Zauber-Wald. Kinder fragen tagelang, ob sie nochmal in den Feenwald dürfen.",
+        "giveaways": "🦋 Tüllflügel / Wald-Wächter-Flügel (dürfen sie anbehalten)\n🌸 Blumenkranz (selbst gebastelt)\n💎 2-3 magische Steine (selbst bemalt)\n🦋 2 Mini-Schmetterlinge + Marienkäfer (selbst gefunden)\n🪄 Feenflügel-Stäbchen (selbst gebastelt)\n🖍️ 2 Blüten-Ausmalbilder\n🍭 1 Tüte Gummibärchen\n\nIn rosa oder grüne Papiertüte mit Blütennamen. Kosten: ~4 € pro Kind (inkl. Stäbchen-Bastel-Material).",
+        "shoppingList": [
+          {
+            "emoji": "🦋",
+            "label": "Tüllflügel-Set (5-6 Stk. inkl. Wald-Wächter-Variante)",
+            "url": "https://www.amazon.de/s?k=t%C3%BCllfl%C3%BCgel+kinder+set+rosa&tag=machsleicht-21",
+            "priceEur": 12,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Konsistent — Verkleidungs-Anker für alle 3 Varianten."
+          },
+          {
+            "emoji": "🌸",
+            "label": "Filz-Blüten vorgestanzt + Tonpapier-Stirnbänder",
+            "url": "https://www.amazon.de/s?k=filz+bl%C3%BCten+vorgestanzt+set&tag=machsleicht-21",
+            "priceEur": 6,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Blumenkranz-Werkstatt."
+          },
+          {
+            "emoji": "💎",
+            "label": "Kieselstein-Set + Posca-Stifte",
+            "url": "https://www.amazon.de/s?k=kieselsteine+bemalen+set+kinder&tag=machsleicht-21",
+            "priceEur": 9,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Magische-Steine-Bemalen ist Sensorik-Ruhe-Anker."
+          },
+          {
+            "emoji": "✨",
+            "label": "Essbarer Glitzer (groß, für Reis-Wanne + Kuchen)",
+            "url": "https://www.amazon.de/s?k=essbarer+glitzer+gro%C3%9F+set&tag=machsleicht-21",
+            "priceEur": 6,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Essbarer Glitzer = sicher, motto-zentral."
+          },
+          {
+            "emoji": "🦋",
+            "label": "Mini-Schmetterlinge + Marienkäfer-Figuren",
+            "url": "https://www.amazon.de/s?k=mini+schmetterlinge+figuren+kinder&tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Glitzer-Staub-Suche-Beute + Mitgebsel-Beilage."
+          },
+          {
+            "emoji": "🪄",
+            "label": "Holz-Bastelstäbe + Tüll-Stoff + Draht + Bänder",
+            "url": null,
+            "priceEur": 6,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Feenflügel-Stäbchen in Wow."
+          },
+          {
+            "emoji": "🌹",
+            "label": "Essbare Blüten + Rosenblätter",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Feen-Versprechen-Schale + Kuchen + Blüten-Limo."
+          },
+          {
+            "emoji": "🦋",
+            "label": "Chiffon-Schleier (6er-Set, bunt)",
+            "url": "https://www.amazon.de/s?k=chiffon+schleier+kinder+bunt&tag=machsleicht-21",
+            "priceEur": 5,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Blüten-Reigen-Verstärker, Tücher aus dem Haushalt funktional ok."
+          },
+          {
+            "emoji": "🦋",
+            "label": "Schmetterlings-Folienballon + Pappteller-Set",
+            "url": "https://www.amazon.de/s?k=schmetterling+teller+becher+kindergeburtstag&tag=machsleicht-21",
+            "priceEur": 9,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Highlight-Deko-Element, Standard-Pappgeschirr tut's funktional auch."
+          },
+          {
+            "emoji": "🍄",
+            "label": "Pappmaché-Pilze + Seidenblüten + Lichterketten",
+            "url": "https://www.amazon.de/s?k=papp+pilze+deko+kinder&tag=machsleicht-21",
+            "priceEur": 12,
+            "hasAffiliate": true,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Feenwald-Premium-Deko, optional aber Foto-Wert hoch."
+          },
+          {
+            "emoji": "🎈",
+            "label": "Pastell-Luftballons + Krepppapier-Efeu",
+            "url": null,
+            "priceEur": 7,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Deko-Premium, Stationen funktional ohne."
+          },
+          {
+            "emoji": "🧃",
+            "label": "Apfelschorle + Obst + Gemüse + Brezeln + Keksteig",
+            "url": null,
+            "priceEur": 10,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Wow-Verpflegung für 2,5h Party nicht optional."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Backmischung + rosa Buttercreme + Deko",
+            "url": null,
+            "priceEur": 7,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Kuchen-Pflichtteil."
+          },
+          {
+            "emoji": "🫧",
+            "label": "Seifenblasenmaschine (optional)",
+            "url": "https://www.amazon.de/s?k=seifenblasenmaschine+kinder+batterie&tag=machsleicht-21",
+            "priceEur": 12,
+            "hasAffiliate": true,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Explizit optional — Highlight-Effekt aber Programm läuft auch ohne."
+          },
+          {
+            "emoji": "🛍️",
+            "label": "Papiertüten + Gummibärchen + Ausmalbilder",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Konsistent — Goodie-Verpackung."
+          }
+        ],
+        "estimatedCostEur": 95,
+        "costContext": "Pflichtteil ~70 €, mit allen Sinnvoll-Extras ~110 €. Niedrigere Schätzung 80 € geht von Standard-Auswahl ohne alle Wow-Add-ons aus."
+      }
+    ],
+    "cakeRecipe": {
+      "intro": "Vanille-Kuchen mit rosa Buttercreme und essbaren Blüten — das ist Feenwald in Kuchenform. Geht mit jeder Vanille-Backmischung. Das Besondere ist die Blüten-Deko und der essbare Glitzer-Spritzer — nicht das Backen.",
+      "steps": [
+        {
+          "n": 1,
+          "content": "Vanille-Gugelhupf backen — Fertigmischung reicht völlig (Dr. Oetker, Kathi). Kein Mensch schmeckt den Unterschied, und du hast genug Stress mit 5 Kleinkindern."
+        },
+        {
+          "n": 2,
+          "content": "Komplett abkühlen lassen. Mindestens 1 Stunde. Ungeduld = Buttercreme-Desaster."
+        },
+        {
+          "n": 3,
+          "content": "Rosa Buttercreme: 150 g weiche Butter + 200 g Puderzucker + 2 EL Milch + 1 Tropfen rote Lebensmittelfarbe (oder Himbeer-Sirup für Naturfarbe). 5 Min mit dem Mixer schaumig schlagen — wird hellrosa und cremig."
+        },
+        {
+          "n": 4,
+          "content": "Buttercreme auf den Kuchen streichen — nicht perfekt sein müssen. Mit dem Spatel rustikal verteilen, sieht aus wie ein Wald-Hügel."
+        },
+        {
+          "n": 5,
+          "content": "Essbare Blüten drauf drapieren: Stiefmütterchen, Gänseblümchen, Rosenblätter (Bio, ungespritzt!). 6-8 Blüten reichen — wirkt magischer als 20."
+        },
+        {
+          "n": 6,
+          "content": "Essbaren Glitzer-Staub als finalen Spritzer drüber (Backabteilung, ~4 €). Sieht aus wie Feenmagie. Kinder rasten aus."
+        }
+      ],
+      "meta": {
+        "aufwand": "70 Min. inkl. Backen, Abkühlen und Deko",
+        "kosten": "~7 €",
+        "allergiker": "Fertigmischungen checken (Packung). Butter-Allergie: durch Schmand + Margarine ersetzen. Essbare Blüten: bei Heuschnupfen-Allergie auf Zucker-Blüten ausweichen (Backabteilung, ~3 €). KEIN Fondant für 3-Jährige — Erstickungsgefahr."
+      },
+      "tips": [
+        {
+          "title": "🌸 Welche Blüten sind essbar?",
+          "body": "Stiefmütterchen, Gänseblümchen, Veilchen, Rosenblätter, Lavendel-Blüten, Borretsch, Klatschmohn. Wichtig: BIO und UNGESPRITZT. Aus dem Bio-Hofladen oder ungedüngten Garten. NICHT vom Blumenladen — die sind gespritzt. Im Zweifel: Zucker-Blüten aus der Backabteilung (DM, Rewe) — sehen täuschend echt aus."
+        },
+        {
+          "title": "🎂 Keine Lust zu backen?",
+          "body": "Fertigen Vanille-Kuchen beim Bäcker, rosa Buttercreme drüber (200 g Puderzucker + 100 g Butter + 1 Tropfen Lebensmittelfarbe), essbare Blüten obendrauf, Glitzer-Staub. 10 Minuten, sieht perfekt aus. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.\""
+        },
+        {
+          "title": "🧁 Kleinkinder-Alternative: Feen-Muffins",
+          "body": "Für 3-Jährige sind Muffins oft praktischer als ein großer Kuchen — jedes Kind bekommt seinen eigenen, kein Schneiden, weniger Krümel. Fertig-Muffins aus dem Supermarkt, rosa Buttercreme drauf, je 1 essbare Blüte obendrauf + Glitzer-Spritzer. 15 Minuten Aufwand, null Backskills nötig. Bonus: „Mein eigener Feen-Muffin\" finden 3-5-Jährige spannender als ein Stück vom großen Kuchen."
+        }
+      ]
+    },
+    "parentTips": {
+      "structured": [
+        {
+          "topic": "🚨 Allergien & Windeln vorher klären",
+          "detail": "Bei 5 Kindern hat mindestens eins eine Unverträglichkeit. In die Einladung: „Hat dein Kind Allergien?\" Speziell für Feen-Party: Heuschnupfen (echte Blüten!), Lebensmittelfarben-Unverträglichkeit, Nuss-Allergie (Backmischung-Check). Bei 3-Jährigen zusätzlich: „Braucht dein Kind noch Windeln?\" Stell sicher, dass du welche da hast (oder bitte die Eltern mitzubringen)."
+        },
+        {
+          "topic": "💙 Auch für Jungen: Wald-Wächter statt Tabu",
+          "detail": "Feen sind kein Mädchen-Thema. Bietet von Anfang an Wald-Wächter-Flügel (dunkelgrün/braunes Tonpapier, kräftiger geschnitten) und Schmetterlings-Brille (Sonnenbrille mit aufgeklebten Tüll-Flügelchen). Sprecht von „Wald-Helfern\" oder „Blüten-Crew\". Dann fühlt sich kein Kind ausgeschlossen — weder Jungen noch Mädchen, die lieber Wächter sein wollen. Hinweis in der Einladung: „Wald-Wächter-Variante auf Wunsch — sag uns vorher Bescheid.\""
+        },
+        {
+          "topic": "👶 3-Jährige ≠ 5-Jährige",
+          "detail": "Der Unterschied ist riesig. 3-Jährige brauchen ständig einen Erwachsenen in der Nähe, können keine Regeln befolgen und weinen schnell. 5-Jährige spielen selbstständig, verstehen Anleitungen und können 15 Minuten konzentriert basteln. Plane für die Jüngsten — die Älteren langweilen sich nicht, aber Überforderte weinen. Feen-Motto verträgt das besonders gut: Sensorik-Stationen funktionieren bei allen Altern."
+        },
+        {
+          "topic": "📋 Plan B: Ausmalbilder",
+          "detail": "Druck 10 Blüten-/Schmetterlings-Ausmalbilder aus (Pinterest: „fairy coloring pages free\" oder „butterfly coloring kids\", kostenlos). Wenn ein Kind nicht mitmachen will, ein Spiel zu wild ist, oder du 5 Minuten zwischen zwei Stationen brauchst: Ausmalbilder + Stifte = sichere Insel. Funktioniert immer.\n\n⏰ Eltern bleiben bei 3-Jährigen\nUnter 4 Jahren bleiben die Eltern. Schreib es in die Einladung: „Wir freuen uns, wenn du dabei bleibst!\" Das ist kein Nachteil — mehr Hände beim Glitzer-Staub-Tisch, beim Aufräumen, und wenn ein Kind weint. Ab 5 Jahren können die meisten Kinder 2 Stunden ohne ihre Eltern sein."
+        },
+        {
+          "topic": "🌧️ Plan B bei Regen",
+          "detail": "Alle Spiele auf dieser Seite funktionieren drinnen — das ist Absicht. Glitzer-Staub-Wanne passt in die Badewanne, Blumenkranz-Werkstatt am Esstisch, Feentanz im Wohnzimmer (Möbel zur Seite). Nur das Schmetterlinge-Fangen braucht etwas Platz. Tipp: Flur + Wohnzimmer zusammen reichen für 5 Kleinkinder. Du brauchst keinen Garten."
+        },
+        {
+          "topic": "👕 Wechselklamotten bereithalten",
+          "detail": "3-Jährige kleckern. Buttercreme, essbarer Glitzer-Staub, Blüten-Limo — irgendwas landet auf dem Pulli. Schreib in die Einladung: „Bitte Wechsel-Shirt mitbringen.\" Und leg für dein eigenes Kind eins bereit. Spart dir die WhatsApp-Nachricht „Sorry, das Shirt hat jetzt Glitzer drauf\" an die andere Mama."
+        },
+        {
+          "topic": "📱 Partyseite statt WhatsApp-Chaos",
+          "detail": "Erstelle eine [Partyseite auf party.machsleicht.de](https://party.machsleicht.de) mit Datum, Uhrzeit, Adresse und Allergien-Abfrage. Einen Link verschicken statt 10 Nachrichten beantworten. Kostet nichts. Pflicht-Hinweis: „Wald-Wächter-Variante auf Wunsch verfügbar.\"\n\n⏰ Nicht nach 15 Uhr anfangen\n3–5-Jährige sind nachmittags fitter als morgens (nach dem Mittagsschlaf). Aber nach 16 Uhr wird's schwierig — müde Kleinkinder sind schlecht gelaunte Kleinkinder. Ideal: 15:00 Start, 16:30 oder 17:00 Ende. Freitagnachmittag funktioniert meistens am besten."
+        }
+      ],
+      "educationalValue": null
+    },
+    "invitationTemplate": "Du brauchst noch passende Einladungen? Der machsleicht-Einladungs-Generator macht aus diesem Feen-Motto in zwei Minuten fertige Karten — mit Blüten-Design, Allergie-Abfrage und RSVP-Link auf party.machsleicht.de. Auch in der Wald-Wächter-Variante für alle Kinder. Einfach Motto „Feen\" wählen und Datum eintragen.\n[🧚 Feen-Einladung erstellen →](/einladung/erstellen?motto=feen)\n\n[📱 Per WhatsApp teilen](https://wa.me/?text=%F0%9F%A7%9A%20Feen-Kindergeburtstag%20f%C3%BCr%203%E2%80%935-J%C3%A4hrige%20planen%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Zeitplan%2C%20Spielen%20und%20Einkaufsliste%3A%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Ffeen)",
+    "faq": [
+      {
+        "q": "Wie lange sollte ein Feen-Geburtstag für 3–5-Jährige dauern?",
+        "a": "1,5 bis 2 Stunden sind perfekt. Weniger ist mehr in diesem Alter — nach 2 Stunden sind die meisten Kinder durch. Die Minimal-Variante (90 Minuten) funktioniert hervorragend, besonders bei überwiegend 3-Jährigen. Die Wow-Variante (2,5 Stunden) nur mit Helfer und eher für 4–5-Jährige."
+      },
+      {
+        "q": "Wie viele Kinder einladen bei 3–5-Jährigen?",
+        "a": "Max 6 Kinder sind ideal, 5 ist die Sweet-Spot-Zahl. In diesem Alter kann es schnell chaotisch werden — weniger Kinder = weniger Stress = bessere Party. Die Faustregel „Alter + 1\" passt hier gut: Bei einem 4-Jährigen also 5 Gäste. Alle Mengenangaben auf dieser Seite sind für 5 Kinder berechnet."
+      },
+      {
+        "q": "Was kostet ein Feen-Geburtstag für 3–5-Jährige?",
+        "a": "Zwischen 35 € (Minimal) und 95 € (Wow) für 5 Kinder. Die Standard-Variante liegt bei ca. 55 € und bietet das beste Verhältnis aus Aufwand und Ergebnis. Größter Einzelposten: Tüllflügel-Set (12 €) — das ist Pflicht-Investition für alle 3 Varianten."
+      },
+      {
+        "q": "Müssen die Eltern der Gäste dabei bleiben?",
+        "a": "Bei 3-Jährigen: ja, unbedingt. Die Kinder kennen dich vielleicht nicht gut, und sie brauchen ihre Bezugsperson in der Nähe. Bei 4–5-Jährigen können die meisten Kinder 1,5–2 Stunden ohne ihre Eltern bleiben — aber schreib in die Einladung, dass sie erreichbar sein müssen. Tipp: Eltern, die bleiben, können beim Blumenkranz-Tisch helfen."
+      },
+      {
+        "q": "Ist eine Feen-Party auch für Jungen geeignet?",
+        "a": "Ja, ausdrücklich. Mit der Wald-Wächter-Variante (kräftigere Krieger-Flügel aus Tonpapier in Dunkelgrün/Braun, plus Schmetterlings-Brille statt Tüll-Krone) und geschlechtsneutralen Begriffen wie „Wald-Helfer\" oder „Blüten-Crew\" ist das Thema für alle Kinder offen. Wir empfehlen, beide Flügel-Varianten bereitzulegen, damit jedes Kind frei wählen kann. 3-5-Jährige haben noch keine starren Geschlechter-Vorstellungen — Glitzer-Staub-Suche und magische Steine begeistern jedes Kind."
+      },
+      {
+        "q": "Ist der essbare Glitzer wirklich sicher für 3-Jährige?",
+        "a": "Ja — essbarer Glitzer aus der Backabteilung (DM, Rewe, Edeka) ist explizit für Lebensmittel zugelassen und enthält in der Regel nur Zucker, Stärke und E-Nummern-Farbstoffe. WICHTIG: NUR essbaren Glitzer verwenden, KEINEN Bastel-Glitzer (Polyester-Plättchen) — der kann in Atemwege oder Augen gelangen. Bei der Glitzer-Staub-Wanne immer Sichtaufsicht, und bei Augenkontakt mit Wasser ausspülen. Vor der Party einen Allergie-Vortest an der Innenseite des Unterarms machen."
+      }
+    ],
+    "preparationWeeks": {
+      "minus4Weeks": {
+        "headline": "4 Wochen vorher — Grundgerüst stellen",
+        "items": [
+          {
+            "icon": "📅",
+            "title": "Datum + Uhrzeit + Treffpunkt fixieren",
+            "detail": "Samstag oder Sonntag 15–16:30 Uhr (klein) bis 17 Uhr (Standard/Wow). Max 1,5–2h für 3-5-Jährige, nicht länger. Drinnen-Plan-B mental haben — Feen-Stationen funktionieren alle drinnen."
+          },
+          {
+            "icon": "👥",
+            "title": "Gästeliste festzurren — max 6 Kinder",
+            "detail": "5-6 ist die richtige Zahl für 3-5 Feen: alle ziehen einen Blütennamen, niemand wartet zu lange am Glitzer-Staub-Tisch. Mehr als 6 wird's bei Blumenkranz-Werkstatt chaotisch."
+          },
+          {
+            "icon": "👨‍👩‍👧",
+            "title": "Eltern-Pflicht in die Einladung",
+            "detail": "Bei 3-5 sind Eltern keine Optionalität: „Ein Elternteil bleibt bitte mit dem Kind dabei.\" Pflicht-Hinweis: „Auch für Jungen sehr beliebt — Wald-Wächter-Variante mit Krieger-Flügeln auf Wunsch.\""
+          },
+          {
+            "icon": "💶",
+            "title": "Variante wählen: Minimal / Standard / Wow",
+            "detail": "Minimal 35€ (Schmetterlinge fangen + Steine), Standard 55€ (+ Blumenkranz + Glitzer-Staub-Suche + Feentanz), Wow 95€ (+ Feenflügel-Stäbchen + Seifenblasen + Lichterketten-Feenwald). Entscheidung jetzt."
+          },
+          {
+            "icon": "🏠",
+            "title": "Mietwohnung-Check (Glitzer-Risiko)",
+            "detail": "Feen 3-5 ist akustisch zahm (Sensorik-Motto!), aber essbarer Glitzer-Staub + Buttercreme + Acrylstifte sind Boden-Bombe Nr. 1. Folie/Tischdecke unterlegen, Wachs-Tücher griffbereit. Badewanne als Glitzer-Container reservieren."
+          }
+        ]
+      },
+      "minus2Weeks": {
+        "headline": "2 Wochen vorher — Logistik festziehen",
+        "items": [
+          {
+            "icon": "📋",
+            "title": "RSVPs einsammeln + Liste schließen",
+            "detail": "Bei 3-5 sind Eltern oft Last-Minute. Nachzügler einmal anstupsen, dann ist gut. party.machsleicht.de zeigt den Stand auf einen Blick. Wald-Wächter-Wunsch abfragen!"
+          },
+          {
+            "icon": "🥜",
+            "title": "Allergien + Heuschnupfen + Windeln klären",
+            "detail": "Speziell für Feen: Heuschnupfen (echte Blüten!), Lebensmittelfarbe (rosa Buttercreme!), Glitzer-Hautallergie. Bei 3-Jährigen ist Windel noch Thema — Eltern fragen ob Wechsel zuhause oder mitbringen."
+          },
+          {
+            "icon": "🙋",
+            "title": "Bei 5+ Kindern: Eltern als Co-Aufsicht aktivieren",
+            "detail": "Standard/Wow brauchen 2 Erwachsene parallel — du am Blumenkranz-Tisch, ein Elternteil am Steine-Tisch. Bei Wow Helfer Pflicht. Briefe einen vorab telefonisch."
+          },
+          {
+            "icon": "📦",
+            "title": "Bestellliste finalisieren",
+            "detail": "Tüllflügel-Set + Filz-Blüten + Kieselsteine-Set + Posca-Stifte + Mini-Schmetterlinge bei Amazon, essbaren Glitzer + Lebensmittelfarbe + Buttercreme-Zutaten bei DM/Rossmann, Vanille-Backmischung + Erdbeeren + ungespritzte Blüten im Supermarkt/Bio-Laden."
+          }
+        ]
+      },
+      "minus1Week": {
+        "headline": "1 Woche vorher — bestellen, drucken, vorwarnen",
+        "items": [
+          {
+            "icon": "🛒",
+            "title": "Amazon-Bestellung JETZT raus",
+            "detail": "Lieferzeit 2–5 Tage. Tüllflügel-Set (~12€), Filz-Blüten + Tonpapier (~6€), Kieselsteine + Posca-Stifte (~9€), essbarer Glitzer (~6€), Mini-Schmetterlinge + Marienkäfer (~4€), bei Wow Holz-Bastelstäbe + Tüll + Bänder (~6€)."
+          },
+          {
+            "icon": "🖨️",
+            "title": "Ausmalbilder + Namensliste drucken",
+            "detail": "DIN A4 Blüten- + Schmetterlings-Ausmalbilder (kostenlos auf Pinterest „fairy coloring pages\"), 12 Blütennamen-Zettel auf Papier ausdrucken und falten — bei 3-5 KEINE Schrift drauf, du liest vor. Wald-Wächter-Variante: 2-3 „Waldmoos\"-Zettel dazulegen."
+          },
+          {
+            "icon": "🔔",
+            "title": "Mietwohnung: Boden-Schutz vorbereiten",
+            "detail": "Folie oder Wachs-Tücher unter Bastel-Tisch, Müllbeutel als Schmier-Schutz für jedes Kind raussuchen. Badewanne als Glitzer-Reis-Container reservieren — danach absaugen leichter."
+          },
+          {
+            "icon": "🧪",
+            "title": "Essbarer Glitzer + Buttercreme Allergie-Vortest",
+            "detail": "Mini-Punkt essbaren Glitzer + Buttercreme an Innenseite Unterarm 1 Tag vorher auftragen, 24 h beobachten. Wenn juckt → bei diesem Kind nur Sticker statt Glitzer, dunkle Buttercreme statt rosa (ohne Lebensmittelfarbe). Acrylstifte auf Papier vortesten."
+          },
+          {
+            "icon": "📦",
+            "title": "Pakete bei Ankunft sofort prüfen",
+            "detail": "Tüllflügel-Anzahl (5+ inkl. Wald-Wächter-Farbe?), Filz-Blüten-Vollständigkeit, Kieselstein-Anzahl, essbaren Glitzer auf MHD prüfen. Reklamation muss bis Tag X durch sein."
+          }
+        ]
+      },
+      "minus2Days": {
+        "headline": "2 Tage vorher — backen, briefen, basteln",
+        "items": [
+          {
+            "icon": "🎂",
+            "title": "Vanille-Kuchen backen — oder Plan B",
+            "detail": "Wenn Zeit/Nerven: Vanille-Gugelhupf-Mischung backen + Buttercreme morgen vorbereiten. Wenn nicht: weißen Gugelhupf vom Bäcker (4–6€), morgen Buttercreme + essbare Blüten + Glitzer. Kein Drama. Stiefmütterchen-Kekse: Butterkekse + rosa Glasur + Blüte drauf, 15 Min."
+          },
+          {
+            "icon": "🗣️",
+            "title": "Eltern + Helfer briefen — 5 Min reichen",
+            "detail": "WhatsApp mit Programm: „15:00 Ankunft + Feen-Versprechen, 15:15 Blumenkranz, 15:40 Glitzer-Staub-Suche, 16:00 Kuchen.\" Eltern wissen dann was kommt + helfen automatisch. Wald-Wächter-Variante explizit erwähnen für Eltern mit Jungs."
+          },
+          {
+            "icon": "📃",
+            "title": "Mitgebsel-Tüten packen — kindgerecht",
+            "detail": "Pro Kind: 2-3 Blüten-Tattoos, Gummibärchen, ggf. Mini-Ausmalbild. Tüllflügel + Blumenkranz + Steine kommen während der Party dazu. NICHT zu viel vorab packen — bei 3-5 verlieren sie sonst die Übersicht."
+          },
+          {
+            "icon": "🧚",
+            "title": "Feen-Versprechen-Schale vorbereiten",
+            "detail": "Kleine Holzschale oder Korb, 12 ausgeschnittene Blütennamen-Zettel rein (10 Feen + 2 Wald-Wächter „Waldmoos\"), echte Rosenblätter aus dem Discounter dazu, Glitzer-Konfetti für den Funkel-Effekt. Auf Eingangs-Tisch platzieren."
+          },
+          {
+            "icon": "🪄",
+            "title": "Wow-Setup: Feenflügel-Stäbchen-Bastel-Tisch vorbereiten",
+            "detail": "Holz-Bastelstäbe + Tüll-Schmetterlinge (Tüll in Schleifen-Form mit Draht in der Mitte gebunden + Drahtenden umbiegen!) + Doppelklebeband + Bänder bereitlegen. Pro Kind 1 Stab, 1 Schmetterling, 2 Bänder. Bei 3-5 schneidest du vor, die Kinder kleben nur."
+          }
+        ]
+      },
+      "minus1Day": {
+        "headline": "1 Tag vorher — Deko, Test, letzte Schritte",
+        "items": [
+          {
+            "icon": "🌸",
+            "title": "Buttercreme + Kuchen-Deko",
+            "detail": "Rosa Buttercreme: 150 g Butter + 200 g Puderzucker + 2 EL Milch + 1 Tropfen Lebensmittelfarbe (oder Himbeer-Sirup). 5 Min mixen. Auf Kuchen verteilen. Essbare Blüten + Glitzer erst am Tag X drauf (sonst welken die Blüten)."
+          },
+          {
+            "icon": "🧪",
+            "title": "Glitzer-Reis-Wanne vorbereiten (Standard/Wow)",
+            "detail": "2 kg Reis mit essbarem Glitzer in der Wanne mischen. Schmetterlinge + Marienkäfer (min. 4 cm groß!) leicht vergraben. Bei 3-5 lieber halb-sichtbar lassen — Findefreude größer. Wanne abdecken bis morgen."
+          },
+          {
+            "icon": "🚧",
+            "title": "Tisch + Feenwald-Eingang dekorieren",
+            "detail": "Pastell-Luftballons aufpusten (Bei 3-5 das Highlight!), Krepppapier-Efeu-Girlande spannen, Feen-Versprechen-Schale + Tüllflügel-Sortierung am Eingang. Wow: Krepppapier-Streifen am Türrahmen, Lichterketten in Bücherregale wickeln. Müllbeutel-Schmier-Schutz griffbereit."
+          },
+          {
+            "icon": "🎵",
+            "title": "Wald-Musik-Playlist + Bluetooth-Box testen",
+            "detail": "Spotify „Forest Sounds for Kids\" oder „Magical Forest Music\" Playlist in der Notiz-App. Bewusst keine IP-Marken-Musik wählen — generische Natur-Klang-Playlists wirken in dem Alter sogar magischer. Bluetooth-Box laden, Sound testen. Bei 3-5 reicht ein kontinuierlicher leiser Soundtrack."
+          },
+          {
+            "icon": "💧",
+            "title": "Acryl-/Posca-Stifte-Stationen aufbauen",
+            "detail": "Bei Standard/Wow: pro 2 Kinder einen Tisch mit Posca-Stiften + Kieselsteinen + Schmier-Schutz. Tische auf Folie. Klamotten-Wechsel-Tüte an Tür hängen „Wechselklamotten bereit?\""
+          }
+        ]
+      },
+      "dayOf": {
+        "headline": "Tag X — durchziehen, atmen, feiern",
+        "items": [
+          {
+            "icon": "⏰",
+            "title": "30 Min vor Ankunft: Stationen aufbauen",
+            "detail": "Blumenkranz-Tisch mit Filz-Blüten + Klebepunkten, Apfelschorle in Kühlschrank, Obst schneiden, Feen-Versprechen-Schale am Eingang. Eltern-Sitzecke einrichten. Essbare Blüten + Glitzer-Staub auf den Kuchen — JETZT, nicht früher (sonst welken die Blüten)."
+          },
+          {
+            "icon": "🎯",
+            "title": "15 Min vor Ankunft: Endkontrolle",
+            "detail": "Feen-Versprechen-Schale mit 12 Blütennamen-Zetteln + Rosenblättern, Tüllflügel sortiert nach Größe (inkl. Wald-Wächter-Variante!), Pastell-Ballons hängen, Spotify-Playlist bereit. Wow: Feenflügel-Stäbchen-Tisch fertig, Lichterketten an, Seifenblasenmaschine getestet (Batterien!)."
+          },
+          {
+            "icon": "🫁",
+            "title": "5 Min vor Ankunft: durchatmen + Wechselklamotten-Tüte",
+            "detail": "Klo, Wasser, einmal tief Luft holen. Tüte an Türklinke hängen — essbarer Glitzer + Buttercreme + Acrylstifte sind Klamotten-Risiko. Eltern sind dein Sicherheitsnetz."
+          },
+          {
+            "icon": "🧚",
+            "title": "Ankunft: Feen-Versprechen-Ritual durchziehen",
+            "detail": "Jedes Kind zieht einen Zettel, DU liest den Blütennamen vor (sie können noch nicht lesen): „Du bist jetzt Lavendel, eine kleine Wald-Fee!\" — Tüllflügel mit Klettband anstecken (oder Wald-Wächter-Flügel), Schmier-Schutz-Müllbeutel überziehen. Pro Kind 60 Sekunden, das ist der magische Moment."
+          },
+          {
+            "icon": "🍓",
+            "title": "Mitten in der Party: Snack-Pause",
+            "detail": "Nach ~30 Min Pause einplanen — Blüten-Limo + Erdbeeren + Brezeln. Sitzen, runter vom Adrenalin, dann zweite Aktivität. 3-5er brauchen Erholungs-Slots. Bei Feen-Party besonders wichtig: nach Glitzer-Staub-Suche aufs Klo schicken zum Hände-Waschen."
+          }
+        ]
+      }
+    },
+    "sosScenarios": {
+      "regen": {
+        "icon": "🌧️",
+        "label": "Regen — alles draußen geplant",
+        "headline": "Feenwald drinnen ist authentischer — Lichterketten + Krepppapier-Efeu = echter Zauberwald.",
+        "steps": [
+          "Glitzer-Staub-Wanne + Blumenkranz + Steine-Bemalen sind drinnen sowieso besser — kein Anpassungs-Aufwand.",
+          "Feentanz mit Schleier: Möbel zur Seite, Wohnzimmer wird zur Lichtung.",
+          "Bei Wow Seifenblasenmaschine: bei Regen in Flur/Küche verlegen, Boden mit Handtuch schützen.",
+          "Schmetterlinge-Fangen: auf Stühlen/Boden verteilen statt durch den Raum werfen.",
+          "Eltern als zusätzliche Aufsicht bei Indoor-Trubel aktiv einbinden."
+        ],
+        "fallback": "Wenn Wohnzimmer zu klein: Programm abkürzen — Feen-Versprechen + Blumenkranz + Snack reicht für 1h.",
+        "tone": "praktisch"
+      },
+      "weniger_kinder_als_erwartet": {
+        "icon": "👥",
+        "label": "Weniger Kinder als erwartet (1–2 fehlen)",
+        "headline": "Kleinere Crew = engerer Kontakt — straffer, nicht ärmer.",
+        "steps": [
+          "Programm leicht straffen: weniger Snack-Pausen, dafür längere Bastel-Phase.",
+          "Feen-Versprechen-Schale: weniger Namen ziehen lassen — bleibt magisch.",
+          "Pufferzeit füllen mit zweiter Steine-Bemal-Runde oder Blüten-Such-Spiel im Garten.",
+          "Mehr individuelle Aufmerksamkeit pro Kind — bei 3-5 ist das Geschenk."
+        ],
+        "fallback": "Wenn Stimmung kippt: alles auf Feentanz umlegen + Fotoshooting mit Tüllflügeln + Blumenkränzen — Spaß-Maximum, kein Hektik.",
+        "tone": "ruhig"
+      },
+      "mehr_kinder_als_erwartet": {
+        "icon": "🚨",
+        "label": "Mehr Kinder als erwartet (Geschwister-Boom)",
+        "headline": "Eltern als Co-Aufsicht aktivieren — die sind eh da.",
+        "steps": [
+          "Schnell-Briefing der zusätzlich anwesenden Eltern: „Du übernimmst Blumenkranz-Tisch, ich Glitzer-Wanne.\"",
+          "Blüten-Tattoos + Mini-Schmetterlinge sofort verteilen — Geschwister-Kinder NICHT leer ausgehen lassen.",
+          "Bastel-Material aufstocken: Tonpapier + Filzstifte aus dem Haushalt als Notreserve.",
+          "Bei Tüllflügel-Knappheit: Tuch um die Schultern + Klett = Improvisations-Flügel.",
+          "Apfelschorle/Obst nachbestellen lassen (Eltern haben Auto)."
+        ],
+        "fallback": "Chaotisch? Programm abkürzen — Feen-Versprechen + 1 Bastel-Aktion + Snack + Mitgebsel-Verteilung + Fotos. 60 Min reicht für 3-5er-Party.",
+        "tone": "praktisch"
+      },
+      "kind_will_nicht_mitmachen": {
+        "icon": "🤷",
+        "label": "Ein Kind will nicht mitmachen (oder lehnt Feen-Rolle ab)",
+        "headline": "Bei 3-5 ist Eltern-Schoß immer Plan B — und Wald-Wächter ist die Brücke für Jungs.",
+        "steps": [
+          "Wenn Junge die Feen-Rolle ablehnt: SOFORT Wald-Wächter-Flügel anbieten. „Du bist Waldmoos, ein Wald-Wächter — du beschützt die Blüten.\" Meist macht er dann mit.",
+          "Eltern kommunizieren: „Setz dich kurz hin, schauen wir was passiert.\"",
+          "Blüten-Tattoo muss nicht auf Hand — Aufkleber auf T-Shirt oder Sternchen-Zettel mitgeben.",
+          "Eigenes Ausmalbild + Buntstifte am Rand — Kind kann dabei sein ohne mitmachen.",
+          "Nach 15 Min kurz checken — oft schwenkt das Kind selbst um wenn die anderen lachen."
+        ],
+        "fallback": "Bleibt komplett raus? Kein Drama. Mitgebsel-Tüte bekommt es trotzdem, alle behandeln das normal.",
+        "tone": "ruhig"
+      },
+      "kuchen_misslungen": {
+        "icon": "🎂",
+        "label": "Kuchen ist misslungen (Buttercreme verlaufen)",
+        "headline": "Bäcker-Hack: weißer Gugelhupf + Buttercreme + Blüten = 15 Min Notfall.",
+        "steps": [
+          "Weißen Vanille-Gugelhupf beim Bäcker oder Supermarkt holen (4-6€).",
+          "Rosa Buttercreme schnell anrühren: 100 g Butter + 150 g Puderzucker + 1 Tropfen Lebensmittelfarbe.",
+          "Rustikal mit Spatel verteilen — Unperfektion ist Feenwald-Charme.",
+          "Essbare Blüten obendrauf (Stiefmütterchen, Gänseblümchen) + essbaren Glitzer-Spritzer.",
+          "Sieht aus wie gewollt. Kein Kind merkt den Unterschied."
+        ],
+        "fallback": "Bäcker zu? Muffins aus dem Vorrat, je 1 Klecks Buttercreme + 1 essbare Blüte + Glitzer = Mini-Feen-Cupcakes.",
+        "tone": "motivierend"
+      },
+      "spielzeug_kaputt_oder_fehlt": {
+        "icon": "🔧",
+        "label": "Bastelmaterial kaputt oder vergessen",
+        "headline": "Improvisieren mit Haushalts-Material — Kinder merken nichts.",
+        "steps": [
+          "Filz-Blüten fehlen? Tonpapier-Blüten ausschneiden (5 Min pro 10 Stk.), oder Servietten-Blüten falten.",
+          "Tüllflügel zu wenig? Tuch oder Schal um die Schultern + Klettband = Improvisations-Flügel.",
+          "Kieselsteine vergessen? Aus dem Garten holen — sieht authentischer aus, ist Feenwald-Material.",
+          "Essbarer Glitzer alle? Bunte Zuckerstreusel + bisschen Goldpuder aus Backabteilung.",
+          "Acrylstifte ausgefallen? Wasserfarben + dicker Pinsel — wirkt sogar besser für 3-Jährige."
+        ],
+        "fallback": "Katastrophal? Feen-Versprechen + Feentanz mit Schleier + Kuchen reichen für 1h Programm — Zeremonie statt Aktivität.",
+        "tone": "praktisch"
+      },
+      "ein_kind_weint": {
+        "icon": "😢",
+        "label": "Ein Kind weint",
+        "headline": "Eltern kennen ihr Kind — Übergabe ist okay.",
+        "steps": [
+          "Eltern-Übergabe: „Magst du kurz mit ihr raus?\" — bei 3-5 sind Eltern dabei.",
+          "Blüten-Limo + Erdbeere als Beruhigungs-Ritual am Eingangs-Tisch.",
+          "Blüten-Sticker zum Selbst-Aussuchen — beruhigt durch Auswahl-Macht.",
+          "Wenn Heimweh: Mama-Foto am Handy zeigen, nicht überreden.",
+          "Nach 5 Min reinschauen — meist ist es vorbei wenn die anderen lachen.",
+          "Bei Glitzer-im-Auge: SOFORT zum Wasserhahn, mit lauwarmem Wasser ausspülen — bei anhaltender Rötung Augenarzt."
+        ],
+        "fallback": "Geht nicht mehr? Eltern können früher abholen — kein Drama, Goodie-Bag trotzdem.",
+        "tone": "ruhig"
+      },
+      "eltern_kommen_frueh": {
+        "icon": "🚪",
+        "label": "Eltern (die NICHT dabei waren) kommen früh",
+        "headline": "Übergang einleiten — Foto-Runde + Mitgebsel jetzt.",
+        "steps": [
+          "Abholende Eltern in den Flur bitten, Wasser anbieten.",
+          "Crew durchsagen: „Foto-Runde gleich — alle vor die Efeu-Girlande!\"",
+          "Gruppenfoto mit Tüllflügeln + Blumenkränzen + Feenflügel-Stäbchen (Wow) oder Blüten-Tattoos zeigen (Min/Std).",
+          "Mitgebsel-Tüte in die Hand drücken, Glitzer-Konfetti zum Abschied.",
+          "Eltern + Kinder zur Tür — kurz, herzlich, nicht in lange Tür-Gespräche."
+        ],
+        "fallback": "Chaotisch? Mitgebsel in den Flur stellen, jedes Kind nimmt eine, Abschied auf der Treppe.",
+        "tone": "praktisch"
+      }
+    }
+  },
+  "feen-mittel": {
+    "_meta": {
+      "source_file": "kindergeburtstag/feen-6-8-jahre.html",
+      "extracted": "2026-05-22",
+      "schema_version": "1.0",
+      "purpose": "Feen 6-8 (mittel) — Phase-B Elite-Slot (analog Einhorn-mittel + feen-klein)",
+      "phase_b_complete": "2026-05-22",
+      "phase_b_method": "Direct draft — Geschlechts-Inklusion (Waldwächter parallel zu Blumenfeen, Krieger-Flügel-Variante), Anti-IP eingehalten (keine geschützten Marken-Anspielungen, eigenes Vokabular Blumenfee/Waldwächter/Elfenkrieger), Codeknacker mit Lösungswort FARN (F-A-R-N, 4 Stationen, jeder Buchstabe genau einmal), 6 preparationWeeks, 8 sosScenarios, FAQ inkl. 'Für Jungen geeignet?', signatureRitual 'Feen-Schwur/Waldwächter-Eid' vollständig befüllt."
+    },
+    "motto": "feen",
+    "ageGroup": "mittel",
+    "ageRange": [
+      6,
+      8
+    ],
+    "title": "🧚 Feen-Kindergeburtstag — 6–8 Jahre",
+    "metaDescription": "Feen-Kindergeburtstag für 6–8-Jährige: 3 fertige Party-Konzepte (Minimal/Standard/Wow) mit Feenwald-Quest, Pflanzen-Chiffre und Zauberbaum-Mythos. Auch für Jungen — Waldwächter-Variante mit Krieger-Flügeln und Elfen-Schwert.",
+    "introParagraph": "Dein Kind wird 6, 7 oder 8 und träumt vom Feenwald? Hier bekommst du drei fertige Party-Konzepte rund um den Zauberbaum-Mythos — von schnell und stressfrei bis zur vollen Feenwald-Quest mit Pflanzen-Chiffre und Geocaching. Jedes Konzept mit Zeitplan, Spielanleitungen, Einkaufsliste und Kosten.\n\n**Auch für Jungen — Waldwächter-Variante:** Statt Schmetterlings-Flügeln gibt es Krieger-Flügel (Blattmuster, dunkelgrün/braun), statt Blüten-Diadem eine Waldkrone aus Eichenlaub. Die Rolle „Waldwächter\" läuft parallel zur Rolle „Blumenfee\" — gleiche Quest, gleiche Prüfungen, andere Ästhetik. Im FAQ und in jedem Spiel zeigen wir die Doppel-Variante.\n\n[🧚 Feen-Geburtstag planen →](/kindergeburtstag?motto=feen&alter=7#planer)",
+    "ageInsight": {
+      "headline": "Was 6–8-Jährige ausmacht — und was das für die Feen-Party heißt",
+      "traits": [
+        {
+          "topic": "Aufmerksamkeit",
+          "detail": "20–30 Min. pro Aktivität realistisch, dann brauchen sie Wechsel. Pflanzen-Quest in 4 Stationen funktioniert, eine 60-Min-Daueraufgabe nicht."
+        },
+        {
+          "topic": "Regeln",
+          "detail": "Können einfache Spielregeln verstehen und einhalten. Pflanzen-Chiffre mit Buchstaben-Stationen ist genau ihr Niveau — Code knacken statt nur sammeln."
+        },
+        {
+          "topic": "Wettbewerb",
+          "detail": "Erster Ehrgeiz ist da — Feen-Team vs. Waldwächter-Team funktioniert. Verlierer brauchen Trost-Preis (Blüten-Anhänger oder Eichel-Talisman reicht)."
+        },
+        {
+          "topic": "Motorik",
+          "detail": "Schreiben, schneiden, kleben, malen geht sicher. Blumenkranz binden und Waldkrone basteln gehen in dem Alter eigenständig — du musst nicht alles vorbinden."
+        },
+        {
+          "topic": "Dauer",
+          "detail": "2,5–3 Stunden ideal. Danach kippt die Stimmung. Lieber kurz und gut als lang und chaotisch."
+        },
+        {
+          "topic": "Essen",
+          "detail": "Mehr als bei Kleinkindern — rechne mit 1,3× der Portionen für 3–5-Jährige. Fingerfood schlägt Besteck. „Waldfrüchte\" (Beeren) und „Elfen-Sandwiches\" (Blüten-Ausstecher) kommen besonders gut an."
+        },
+        {
+          "topic": "Eltern",
+          "detail": "Können kurz abgesetzt werden, müssen aber telefonisch erreichbar sein. Frag Abholzeit vorher ab."
+        }
+      ],
+      "whyMottoFits": "In diesem Alter werden Feen erstmals nicht nur „süß\" empfunden, sondern bekommen eine eigene Story. Die Kinder lieben Regeln, Rituale, Prüfungen — darum funktioniert das Konzept „Zauberbaum-Wächter-Prüfung\" so gut: sie werden als Blumenfeen oder Waldwächter eingeschworen, lösen eine Pflanzen-Chiffre, bestehen vier Quest-Stationen, bekommen am Ende eine Waldwächter-Urkunde. Das Motto ist nicht mehr kitschig-blümchen, sondern ernsthaft magisch — und genau das macht es für Jungen wie Mädchen anschlussfähig.",
+      "whyMottoFitsHeadline": "🧚 Warum Feenwald für 6–8-Jährige besonders gut funktioniert"
+    },
+    "signatureRitual": {
+      "name": "Der Feen-Schwur & Waldwächter-Eid",
+      "subtitle": "Für alle 3 Varianten — beide Rollen parallel",
+      "introText": "Der stärkste Moment der Party passiert in den ersten 5 Minuten nach Ankunft. Aus „sechs Kindern, die sich vielleicht nicht alle kennen\" werden sechs benannte, markierte Wächter des Zauberbaums — und der ganze Quest-Bogen trägt den Rest der Party. Wichtig: Jedes Kind wählt frei zwischen Blumenfee (Schmetterlings-Flügel + Blüten-Diadem) und Waldwächter (Krieger-Flügel + Eichenlaub-Krone). Keine Rolle ist „die für Mädchen\" oder „die für Jungen\" — beide haben gleiches Gewicht, gleiche Prüfungen, gleiche Urkunde.",
+      "setupSteps": [
+        {
+          "title": "Zauberbaum-Beutel vorbereiten",
+          "content": "Stoffbeutel oder kleiner Korb, darin 12 Zettel mit Feen- und Waldwächter-Namen gemischt. Etwas getrocknete Blüten und Eichenlaub-Stücke dazu — beim Reingreifen riecht es nach Wald."
+        },
+        {
+          "title": "Kind kommt an & wählt Rolle",
+          "content": "Erste Wahl: Blumenfee oder Waldwächter? Beides ist gleichwertig. Dann Zettel ziehen — der gezogene Name passt zur gewählten Rolle. Wer den eigenen Vornamen behalten will, behält ihn — kein Zwang."
+        },
+        {
+          "title": "Stirnreif / Waldkrone aufsetzen",
+          "content": "Blumenfee bekommt Blüten-Diadem (Draht-Stirnreif mit Stoffblüten, vorbereitet — 3 Modelle zur Auswahl). Waldwächter bekommt Waldkrone aus Eichenlaub (Karton-Krone, vor der Party mit echtem oder Plastik-Eichenlaub beklebt). Beide Versionen liegen am Ankunfts-Tisch — Kind sucht selbst aus."
+        },
+        {
+          "title": "Schwur sprechen & in den Quest-Pass eintragen",
+          "content": "Gemeinsam laut: „Ich schütze den Zauberbaum, ich teile die Waldfrüchte, ich passe auf meine Wald-Freunde auf.\" Dann Name + Rolle (Fee/Waldwächter) in den Quest-Pass eintragen. Foto mit Krone/Diadem machen — kommt in der Wow-Variante in den Pass."
+        }
+      ],
+      "rolesList": [
+        {
+          "emoji": "🌸",
+          "name": "Lyra Blütenlicht (Blumenfee)",
+          "function": null
+        },
+        {
+          "emoji": "🍃",
+          "name": "Eron Laubschild (Waldwächter)",
+          "function": null
+        },
+        {
+          "emoji": "🌼",
+          "name": "Mira Pollenglanz (Blumenfee)",
+          "function": null
+        },
+        {
+          "emoji": "🌳",
+          "name": "Thoran Eichenherz (Waldwächter)",
+          "function": null
+        },
+        {
+          "emoji": "🦋",
+          "name": "Nyla Falterstaub (Blumenfee)",
+          "function": null
+        },
+        {
+          "emoji": "🪶",
+          "name": "Faron Federwald (Waldwächter)",
+          "function": null
+        },
+        {
+          "emoji": "🌷",
+          "name": "Selma Knospenruf (Blumenfee)",
+          "function": null
+        },
+        {
+          "emoji": "🌿",
+          "name": "Kael Farnflüsterer (Waldwächter)",
+          "function": null
+        },
+        {
+          "emoji": "🌺",
+          "name": "Iva Tauperle (Blumenfee)",
+          "function": null
+        },
+        {
+          "emoji": "🍂",
+          "name": "Brann Mooswächter (Waldwächter)",
+          "function": null
+        },
+        {
+          "emoji": "✨",
+          "name": "Elin Funkelflug (Blumenfee)",
+          "function": null
+        },
+        {
+          "emoji": "🗡️",
+          "name": "Aldor Elfenklinge (Waldwächter)",
+          "function": null
+        }
+      ],
+      "optOutNote": "Kein Zwang. Wer den eigenen Namen behalten möchte — passt auch. Wer keine Flügel will (Empfindlichkeit auf dem Rücken, persönliche Abneigung): Nur Diadem oder Waldkrone reicht völlig. Wer weder Fee noch Wächter sein will: „Pflanzenforscher der Akademie\" ist die dritte Rolle — bekommt ein Notizbuch statt Krone und darf an jeder Quest-Station die Pflanze in einem Buch nachschlagen. Niemand wird ausgeschlossen.",
+      "materialNote": "[Blüten-Stirnreif-Set*](https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht-21) (~6 € für 6 Stück), Karton + Eichenlaub für Waldkronen (Bastelladen ~3 €, oder echtes Laub sammeln), Stoffbeutel (Stoffrest oder ~2 €), die Namensliste oben einfach ausdrucken und zerschneiden."
+    },
+    "variants": [
+      {
+        "id": "minimal",
+        "label": "Minimal — 2 Stunden, minimaler Aufwand",
+        "headline": "🌿 Minimal — 2 Stunden, minimaler Aufwand",
+        "intro": "Funktioniert auch wenn du gestern erst angefangen hast zu planen. Zwei Spiele, Kuchen, Ausmalbilder, fertig. Kein Kind geht unglücklich nach Hause — Fee oder Waldwächter, beide haben Spaß.",
+        "timeWindow": "14:00–16:00, 6 Kinder",
+        "schedule": [
+          {
+            "time": "14:00",
+            "title": "Zauberbaum-Beutel & Ausmalbilder",
+            "description": "Jedes Kind wählt Rolle (Blumenfee oder Waldwächter), zieht beim Reinkommen einen Namen aus dem Zauberbaum-Beutel (Details oben im Ritual-Block), bekommt Blüten-Diadem oder Eichenlaub-Krone aufgesetzt. Danach: 3–4 verschiedene Ausmalbilder pro Kind auf den Tisch (Mix aus Feen, Schmetterlingen, Elfen, Waldwesen) + Buntstifte (Grün, Braun, Pastelltöne). Hält die Ersten beschäftigt bis alle da sind. Kostenlose Vorlagen z.B. auf [kribbelbunt.de](https://www.kribbelbunt.de/) oder [malvorlagen-seite.de](https://malvorlagen-seite.de/)."
+          },
+          {
+            "time": "14:25",
+            "title": "🌿 Pflanzen-Quest: Codeknacker FARN",
+            "description": "Hauptspiel, 30 Min. — Anleitung unten. 4 Stationen, an jeder ein Buchstabe (F → A → R → N), am Ende öffnet sich die Zauberbaum-Schatzkiste."
+          },
+          {
+            "time": "14:55",
+            "title": "🎂 Kuchen & Waldfrüchte-Punsch",
+            "description": "Blüten-Kuchen + „Waldfrüchte-Punsch\" (Apfelschorle mit Tropfen Beerensaft — wird hellrosa, sieht aus wie Feenwasser). 20 Min. Ruhe für alle."
+          },
+          {
+            "time": "15:20",
+            "title": "🦋 Schmetterling-Bestimmungs-Quiz",
+            "description": "Ruhiges Quiz, 15 Min. — Bildkarten von 6 echten Schmetterlingen (Tagpfauenauge, Zitronenfalter, Kohlweißling, Schwalbenschwanz, Distelfalter, Admiral). Wer kennt welchen? Pflanzen-Wissen + Spaß."
+          },
+          {
+            "time": "15:40",
+            "title": "🎁 Mitgebsel & Abholung",
+            "description": "Tüten verteilen. Tipp: Restliche Ausmalbilder + gefundener Talisman aus der Quest mitgeben.\n\n💡 Warum nur 2 Spiele reichen:\n6–8-Jährige wollen nicht durchanimiert werden. Zwischen den beiden Spielen kommen Kuchen und Ausmalbilder — das ist genug Struktur. Weniger Programm = weniger Stress für dich, weniger Reizüberflutung für die Kinder. Die Pflanzen-Quest ist schon der Höhepunkt."
+          }
+        ],
+        "games": [
+          {
+            "name": "🌿 Pflanzen-Quest: Codeknacker FARN",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 30,
+            "minAge": 6,
+            "loudness": "ruhig",
+            "effort": "mittel",
+            "material": "4 echte oder gedruckte Pflanzen (Farn, Ahornblatt, Rose oder Rosenblüte, Nadelzweig), 4 beschriftete Umschläge mit Buchstaben (F/A/R/N), 1 Zauberbaum-Schatzkiste (Schuhkarton mit grüner Pappe + Moos beklebt, Inhalt: 6 Talismane — Glasstein, Eichel, Blüten-Anhänger), 4 Quest-Pässe (DIN-A6-Karton mit 4 Stempel-Feldern)",
+            "prepText": "An 4 Stationen liegt je eine Pflanze + Umschlag mit Buchstaben. Reihenfolge nicht vorgegeben — die Kinder müssen rausfinden, welches Wort die Buchstaben ergeben (F-A-R-N). Lösung in den Quest-Pass schreiben. Wenn alle 4 Buchstaben gesammelt → Schatzkiste am Zauberbaum öffnet sich.",
+            "steps": [
+              {
+                "n": 1,
+                "content": "Station 1 — Farn: Zeig den Kindern einen Farn (echt oder Bild). Buchstabe: F. „Welche Pflanze hat keine Blüten, sondern Sporen?\""
+              },
+              {
+                "n": 2,
+                "content": "Station 2 — Ahornblatt: Großes 5-zackiges Blatt zeigen. Buchstabe: A. „Welcher Baum gibt im Frühling Sirup?\""
+              },
+              {
+                "n": 3,
+                "content": "Station 3 — Rose: Eine Rosenblüte (echt oder getrocknet). Buchstabe: R. „Welche Blume hat Dornen und duftet süß?\""
+              },
+              {
+                "n": 4,
+                "content": "Station 4 — Nadelzweig (Tanne/Fichte): Zweig mit Nadeln. Buchstabe: N. „Welcher Baum hat keine Blätter, sondern was?\""
+              },
+              {
+                "n": 5,
+                "content": "Lösung F-A-R-N in den Quest-Pass schreiben — gemeinsam laut rufen, Schatzkiste öffnet sich."
+              }
+            ],
+            "safetyRule": "Pflanzen-Sicherheit: Nur ungiftige, bekannte Pflanzen verwenden — KEINE Maiglöckchen, KEIN Eisenhut, KEIN Fingerhut. Farn, Ahorn, Rose, Tanne sind alle unbedenklich beim Anfassen. Hände waschen nach der Quest (manche Kinder sind allergisch auf Birken-Pollen, Gräser etc.). Bei Rosen: Dornen vorher abschneiden.",
+            "ageAdjust6": "Buchstaben groß auf die Umschläge schreiben — leichter zu erkennen. Du flüsterst notfalls die Pflanzen-Antwort, das Wort FARN müssen sie selbst zusammensetzen.",
+            "ageAdjust8": "Bonus-Frage pro Station: „In welchem Lebensraum wächst Farn?\" (Wald, Schatten, feucht). Wer alle 4 Bonus-Fragen richtig hat, bekommt einen Extra-Talisman.",
+            "indoorTip": "4 Räume oder 4 Ecken eines großen Raums — Stationen mit Stuhl + Karton markieren.",
+            "outdoorTip": "Im Garten an echten Pflanzen ablaufen — wenn Farn/Rose/Nadelbaum tatsächlich da stehen, ist es authentischer.",
+            "whyItWorksTitle": "Warum die Pflanzen-Chiffre für 6–8 funktioniert",
+            "whyItWorks": "Erste Lese-Sicherheit + erste Botanik-Neugier treffen perfekt zusammen. Sie lernen, dass jede Pflanze einen Namen hat (Bildungswert), dass Buchstaben ein Wort ergeben (Lese-Kompetenz), und dass Teamarbeit zur Lösung führt (Sozial). Anders als bei reinen Schatzsuchen müssen sie hier mit-denken — und genau das lieben sie in dem Alter."
+          },
+          {
+            "name": "🦋 Schmetterling-Bestimmungs-Quiz",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 15,
+            "minAge": 6,
+            "loudness": "ruhig",
+            "effort": "leicht",
+            "material": "6 Bildkarten mit echten Schmetterlingen (Tagpfauenauge, Zitronenfalter, Kohlweißling, Schwalbenschwanz, Distelfalter, Admiral) — gedruckt von Google Bilder oder gekauft, 1 Stift pro Kind, 1 Punktezettel",
+            "prepText": "Karten verdeckt auf den Tisch. Du hebst eine hoch: „Welcher Schmetterling ist das?\" Wer zuerst die Hand hebt + den Namen sagt, bekommt 1 Punkt. Falsch = anderes Kind darf. Sieger bekommt einen Extra-Talisman (Schmetterlings-Anhänger).",
+            "steps": [
+              {
+                "n": 1,
+                "content": "Bildkarten der 6 Schmetterlinge bereitlegen — Bilder vorher selbst kurz angucken, damit du weißt, welcher welcher ist."
+              },
+              {
+                "n": 2,
+                "content": "Erste Runde: Erklärungsrunde — du zeigst alle 6 Karten, sagst kurz den Namen. „Das ist der Schwalbenschwanz — der mit den Schwänzchen hinten.\""
+              },
+              {
+                "n": 3,
+                "content": "Zweite Runde: Quiz. Karte hoch, wer ruft als Erster den Namen? Punkt notieren."
+              },
+              {
+                "n": 4,
+                "content": "Bonus-Frage: „Welche Pflanze frisst die Raupe vom Kohlweißling?\" (Antwort: Kohl). Bildungswert obendrauf."
+              }
+            ],
+            "safetyRule": "Sichtaufsicht durch Erwachsene; Bildkarten sind unbedenklich. Bei lebenden Schmetterlingen (Garten): nicht anfassen, nur beobachten — Flügelschuppen sind empfindlich.",
+            "ageAdjust6": "Multiple Choice (3 Antworten als Wahlmöglichkeit unter die Karte legen).",
+            "ageAdjust8": "Bonus: „Welcher Schmetterling überwintert als erwachsenes Tier?\" (Tagpfauenauge, Zitronenfalter).",
+            "indoorTip": "Am Tisch reicht völlig.",
+            "outdoorTip": "Im Garten: wenn ein echter Schmetterling vorbeifliegt, ist es perfekt — Buchwissen + Realität.",
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          }
+        ],
+        "food": "🎂 Blüten-Kuchen (Gugelhupf mit Blüten-Deko) 1 Stück\n💧 „Waldfrüchte-Punsch\" (Apfelschorle + Beerensaft) 8 Becher\n🍓 Waldfrüchte-Teller (Beeren, Trauben) 250 g\n🍞 Elfen-Sandwiches (mit Blüten-Ausstecher) 6 Stück\n🍿 Popcorn 200 g\n\n💡 „Waldfrüchte-Punsch\"?\nApfelschorle in Gläser, 2 Tropfen Beerensaft (Heidelbeere, Holunder) rein — wird sofort feenrosa. „Waldfrüchte-Punsch der Zauberquelle\" aufs Etikett schreiben. Sorgt garantiert für Staunen. Kostet nix extra, macht den Unterschied.",
+        "decoration": "🎈 Pastell-Luftballons (grün/rosa/lila) 6 Stk. ~2 €\n🌿 Eichenlaub + Blüten auf dem Tisch Kostenlos (im Garten sammeln)\n🎉 Girlande mit Schmetterling-Motiv ~3 € (DM/Action)\n🍃 Tüllstoff über Tisch drapieren ~3 € (Bastelladen oder Reste)\n\n💡 Minimal-Deko-Regel:\n3 Dinge reichen: Ballons, Girlande, Eichenlaub + Blüten auf dem Tisch. Die Stirnreif/Waldkrone-Auswahl und das Pflanzen-Quest SIND die Deko — die Kinder interessieren sich für das Erlebnis, nicht für die Raumdeko.",
+        "giveaways": "🌿 1 Talisman aus der Pflanzen-Quest (Glasstein, Eichel oder Blüten-Anhänger — haben sie selbst gefunden, emotionaler Wert)\n🖍️ 2–3 Ausmalbilder zum Mitnehmen\n🍭 1 kleine Tüte Beeren-Bonbons oder Blüten-Gummibärchen\n\nIn grüne oder weiße Papiertüte (10 Stk. ~1–2 € bei DM/Action) mit „Zauberbaum-Geschenke für ___\" beschriften. Kosten: ~2 € pro Kind.",
+        "shoppingList": [
+          {
+            "emoji": "🌸",
+            "label": "Blumenkranz-Stirnreif (6 Stk., Feen-Variante)",
+            "url": "https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht-21",
+            "priceEur": 6,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining: Stirnreif ist der visuelle Anker für Blumenfee-Rolle — ohne kollabiert die halbe Rollen-Auswahl."
+          },
+          {
+            "emoji": "🍃",
+            "label": "Eichenlaub-Kronen (Bastelmaterial Karton + Blätter)",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Waldwächter-Rolle — Geschlechts-Inklusion steht oder fällt mit der Krone als Alternative."
+          },
+          {
+            "emoji": "🌿",
+            "label": "Pflanzen für Quest (Farn/Ahorn/Rose/Nadelzweig)",
+            "url": null,
+            "priceEur": 0,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Quest-Defining — ohne 4 Pflanzen kollabiert der Codeknacker. Aus Garten/Wald sammeln = 0€."
+          },
+          {
+            "emoji": "🎁",
+            "label": "Talismane für Schatzkiste (Glassteine, Eicheln)",
+            "url": "https://www.amazon.de/s?k=glassteine+deko+kinder&tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Quest-Belohnung am Ende der Pflanzen-Chiffre — ohne Belohnung verpufft die Quest-Klimax."
+          },
+          {
+            "emoji": "🦋",
+            "label": "Schmetterling-Bildkarten (Druck)",
+            "url": null,
+            "priceEur": 0,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Bildungswert + Quiz-Spiel-Mechanik — Bilder aus Google selbst drucken kostet 0€."
+          },
+          {
+            "emoji": "🧃",
+            "label": "Apfelschorle + Beerensaft",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Getränke nicht optional — 6 durstige Feen/Wächter ohne Trinken läuft Party nur 30 Min."
+          },
+          {
+            "emoji": "🍿",
+            "label": "Popcorn-Mais + Snacks",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Salzige Beilage rundet ab, aber Kuchen + Beeren tragen die 2h-Slot ohne Showstopper."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Backmischung + Blüten-Deko",
+            "url": null,
+            "priceEur": 6,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Blüten-Kuchen ist sozialer Pflichtteil und motto-zentrales Symbol."
+          },
+          {
+            "emoji": "📄",
+            "label": "Quest-Pässe + Ausmalbilder (Druck)",
+            "url": null,
+            "priceEur": 0,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "0€-Print trägt Zauberbaum-Beutel + Quest-Pass — strukturelle Klammer der Party."
+          },
+          {
+            "emoji": "🍭",
+            "label": "Beeren-Bonbons / Blüten-Gummibärchen (Mitgebsel)",
+            "url": null,
+            "priceEur": 2,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Trost-Preis-Funktion, aber Talisman-Vorrat tut's für Verlierer-Trost ebenso."
+          },
+          {
+            "emoji": "🛍️",
+            "label": "Papiertüten + Stoffbeutel (DM/Action)",
+            "url": null,
+            "priceEur": 2,
+            "hasAffiliate": false,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Stoffbeutel/Stoffrest ist im Haushalt oft da, Papiertüten gibt's auch in jeder Schublade."
+          }
+        ],
+        "estimatedCostEur": 50,
+        "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
+      },
+      {
+        "id": "standard",
+        "label": "Standard — 3 Stunden, vollständige Quest",
+        "headline": "🎯 Standard — 3 Stunden, klassische Feenwald-Party",
+        "intro": "Der Sweet Spot: genug Programm ohne Stress. Vier Aktivitäten, Kuchen, Deko, Mitgebsel. Die Party, von der die Kinder am Montag in der Schule erzählen. Blumenfeen und Waldwächter machen alle Stationen gemeinsam — Teamwork statt Geschlechter-Spaltung.",
+        "timeWindow": "14:00–17:00, 6 Kinder",
+        "schedule": [
+          {
+            "time": "14:00",
+            "title": "Zauberbaum-Beutel & Stirnreif/Waldkrone basteln",
+            "description": "Beim Reinkommen wählt jedes Kind seine Rolle (Blumenfee oder Waldwächter), zieht den Quest-Namen aus dem Zauberbaum-Beutel (siehe Ritual-Block oben), bekommt entweder Blüten-Diadem oder Eichenlaub-Krone. Danach 15 Min. Verfeinerung: eigene Blüten/Blätter zusätzlich draufkleben (Bastel-Tisch mit Stoffblüten, Eichenlaub, Heißkleber-Pen-Stift). Fertige Kopfbedeckung aufsetzen → „Lyra Blütenlicht, du bist bereit für deine erste Prüfung.\""
+          },
+          {
+            "time": "14:30",
+            "title": "🌿 Pflanzen-Quest: Codeknacker FARN (4 Stationen)",
+            "description": "DER Wow-Moment der Standard-Variante. 30 Min. — 4 Stationen, jedes Kind sammelt 4 Buchstaben (F→A→R→N), Lösungswort öffnet die Zauberbaum-Schatzkiste."
+          },
+          {
+            "time": "15:00",
+            "title": "🦋 Schmetterling-Bestimmungs-Quiz",
+            "description": "Ruhigeres Bildkarten-Quiz nach dem Quest-Hype. 20 Min. konzentriertes Mit-Raten."
+          },
+          {
+            "time": "15:25",
+            "title": "🎂 Kuchen & Waldfrüchte-Punsch",
+            "description": "Blüten-Kuchen mit Zucker-Blüten-Deko. Happy Birthday singen. 25 Min."
+          },
+          {
+            "time": "15:55",
+            "title": "💃 Elfen-Tanz oder Schwertkampf-Choreographie",
+            "description": "Doppel-Aktivität: Blumenfeen tanzen Elfen-Tanz mit Schleier (langsame Musik), Waldwächter machen Schaumstoff-Schwertkampf-Choreographie (auf Kommando: hoch-tief-Kreis-vor). Beide Gruppen 20 Min. parallel — Helfer übernimmt eine Gruppe."
+          },
+          {
+            "time": "16:20",
+            "title": "🌺 Blumenkranz binden / Waldkrone vervollständigen",
+            "description": "Ruhiger Abschluss. 20 Min. — Blumenfeen binden zusätzlich kleinen Blumenkranz für ihre Mama daheim, Waldwächter flechten Eichenlaub-Armband. Geht als Mitgebsel mit."
+          },
+          {
+            "time": "16:45",
+            "title": "🎁 Mitgebsel & Abholung",
+            "description": "Talisman + Stirnreif/Waldkrone + Bastel-Geschenk + Süßes in Tüte. Fertig.\n\n💡 Rhythmus-Regel:\nImmer abwechseln: laut → leise → laut → leise. Quest (aktiv) → Quiz (ruhig) → Kuchen (Pause) → Tanz/Schwertkampf (laut) → Blumenkranz binden (ruhig). So kippt die Stimmung nie."
+          }
+        ],
+        "games": [
+          {
+            "name": "🌸 Stirnreif/Waldkrone verfeinern (Ankunfts-Aktivität)",
+            "indoor": true,
+            "outdoor": false,
+            "duration": 15,
+            "minAge": 6,
+            "loudness": "ruhig",
+            "effort": "leicht",
+            "material": "[Blüten-Stirnreif-Set*](https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht-21) (~6 € für 6 Stk.), Karton-Kronen für Waldwächter (selbst zugeschnitten oder Bastelladen), Stoffblüten (~3 € Tüte), Eichenlaub (gesammelt oder Plastik), Klebepunkte oder Tesa (KEIN Heißkleber bei 6-Jährigen — Verbrennungsgefahr)",
+            "prepText": "Perfekte Ankunfts-Aktivität: Stirnreife und Waldkronen-Rohlinge liegen schon auf dem Tisch, wenn die Kinder reinkommen. Jedes Kind wählt Rolle und verziert seine Kopfbedeckung — Feen kleben Blüten, Wächter kleben Eichenlaub und Federn. Fertig aufsetzen.",
+            "steps": [
+              {
+                "n": 1,
+                "content": "Tisch vorher decken: links Feen-Materialien (Blüten, rosa/lila Bänder), rechts Waldwächter-Materialien (Laub, braune/grüne Bänder, kleine Federn)."
+              },
+              {
+                "n": 2,
+                "content": "Kind wählt Seite — keine Beeinflussung. Beide Tische sind gleich „cool\" dekoriert."
+              },
+              {
+                "n": 3,
+                "content": "Mit Klebepunkten verzieren — Erwachsener hilft beim Festmachen am Stirnreif."
+              },
+              {
+                "n": 4,
+                "content": "Fertige Krone aufsetzen, Quest-Name vorlesen, Foto."
+              }
+            ],
+            "safetyRule": "Glitzer-Sicherheit: KEIN loser Glitzer auf Augen-Höhe. Wenn Glitzer benutzt wird, dann Glitzer-Kleber (in Tube) — kein Streu-Glitzer für 6-Jährige. Bei Kontakt mit Auge: sofort mit Wasser spülen, nicht reiben. KEIN Heißkleber für Kinder — nur Erwachsene oder Klebepunkte verwenden. Bei Pollen-Allergie: Stoffblüten statt echte Blüten.",
+            "ageAdjust6": "Vorgefertigte Stirnreife mit nur 2-3 Stellen zum Verzieren — sonst überfordert.",
+            "ageAdjust8": "Komplett offen — die wollen ihre Krone individueller, mit Glitzer-Kleber, kleinen Perlen, Schleifen.",
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          },
+          {
+            "name": "🌿 Pflanzen-Quest: Codeknacker FARN",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 30,
+            "minAge": 6,
+            "loudness": "ruhig",
+            "effort": "mittel",
+            "material": "4 echte Pflanzen (Farn, Ahornblatt, Rose, Nadelzweig), 4 Umschläge mit Buchstaben F/A/R/N, 1 Zauberbaum-Schatzkiste (mit Moos beklebter Karton), 6 Talismane drin, 6 Quest-Pässe",
+            "prepText": "Wie in Minimal — aber hier als „Zweite Prüfung der Zauberbaum-Wächter-Akademie\" angekündigt. Stationen werden 1-2 Tage vorher aufgebaut, an den Pflanzen die Quest-Aufgaben in versteckten Umschlägen. Lösungswort F-A-R-N öffnet die Kiste.",
+            "steps": [
+              {
+                "n": 1,
+                "content": "Station 1 (Farn-Pflanze): Buchstabe F. „Diese Pflanze ist älter als Dinosaurier — sie hatte schon Sporen, als es noch keine Blumen gab.\""
+              },
+              {
+                "n": 2,
+                "content": "Station 2 (Ahornblatt): Buchstabe A. „Im Herbst werden meine Blätter rot — und mein Saft schmeckt süß.\""
+              },
+              {
+                "n": 3,
+                "content": "Station 3 (Rose): Buchstabe R. „Ich habe Dornen zum Schutz und Duft zum Locken — was bin ich?\""
+              },
+              {
+                "n": 4,
+                "content": "Station 4 (Nadelzweig): Buchstabe N. „Ich bin grün im Winter, wenn alle anderen Bäume nackt sind — woran liegt das?\""
+              },
+              {
+                "n": 5,
+                "content": "Lösungswort F-A-R-N gemeinsam rufen — Zauberbaum-Schatzkiste öffnet sich."
+              }
+            ],
+            "safetyRule": "Pflanzen-Sicherheit: Nur ungiftige Pflanzen (Farn, Ahorn, Rose, Tanne) — KEINE Maiglöckchen, KEIN Eisenhut, KEIN Fingerhut. Bei Rosen: Dornen vorher abschneiden. Hände waschen nach der Quest. Bei Pollen-Allergie: gedruckte Bilder statt echter Pflanzen.",
+            "ageAdjust6": "Buchstaben groß und farbig auf den Umschlägen — leichter zuordenbar.",
+            "ageAdjust8": "Bonus: nach jedem Buchstaben eine Pflanzen-Spur (Fußabdruck aus Blättern) zur nächsten Station — Detektiv-Element für die Älteren.",
+            "indoorTip": "Stationen in 4 Räume verteilen — Pflanzen auf Stühle, Umschläge darunter.",
+            "outdoorTip": "Im Garten an echten Pflanzen — wenn Farn/Rose/Nadelbaum tatsächlich da stehen, ist es authentischer.",
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          },
+          {
+            "name": "🦋 Schmetterling-Bestimmungs-Quiz",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 20,
+            "minAge": 6,
+            "loudness": "ruhig",
+            "effort": "leicht",
+            "material": "6 Bildkarten Schmetterlinge, optional ein gerahmtes Schmetterlings-Poster zum Nachschlagen, 1 Stift pro Kind, Punktezettel",
+            "prepText": "Du zeigst Karten der Reihe nach. Erste Runde: Erklär-Runde. Zweite Runde: Quiz mit Punkten. Bonus-Runde: Lebensweise — welcher Schmetterling überwintert, welcher fliegt nachts, welcher trinkt Brennnessel-Saft.",
+            "steps": [],
+            "safetyRule": "Sichtaufsicht durch Erwachsene; Bildkarten unbedenklich. Bei lebenden Schmetterlingen: nicht anfassen, Flügelschuppen sind empfindlich.",
+            "ageAdjust6": "Multiple Choice (3 Antworten zur Auswahl unter jeder Karte).",
+            "ageAdjust8": "Offen mit Lebensweise-Bonus-Fragen.",
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          },
+          {
+            "name": "💃 Elfen-Tanz / 🗡️ Schwertkampf-Choreographie (parallel)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 20,
+            "minAge": 6,
+            "loudness": "laut",
+            "effort": "mittel",
+            "material": "Bluetooth-Box + Spotify-Playlist „Magic Forest\" oder „Celtic Music\", 6 Tüllschleier (~3 € Bastelladen) für Feen, 6 Schaumstoff-Stäbe für Waldwächter (~5 € als Set Amazon — KEIN Holz, KEIN Plastik mit harten Kanten)",
+            "prepText": "Zwei parallele Gruppen — Helfer übernimmt eine. Blumenfeen tanzen mit Tüllschleiern zu langsamer Musik (Drehen, Armkreise, Sprünge). Waldwächter lernen Schwertkampf-Choreographie (auf Kommando: 'Hoch! Tief! Kreis! Vor!' — 4 Bewegungen, dann durchwechseln). Beide Gruppen ca. 10 Min. üben, dann Show füreinander.",
+            "steps": [
+              {
+                "n": 1,
+                "content": "Gruppen einteilen: Wer hat Tüllschleier (Blumenfeen)? Wer Schaumstoff-Stab (Waldwächter)? Wer beides will, darf wechseln."
+              },
+              {
+                "n": 2,
+                "content": "Feen-Tanz: Du zeigst 4 Bewegungen vor (Drehen, Beuge, Sprung, Schleier-Welle). Kinder machen nach, dann zu Musik."
+              },
+              {
+                "n": 3,
+                "content": "Wächter-Schwertkampf: Helfer zeigt 4 Kommandos (Hoch/Tief/Kreis/Vor). Kinder reagieren auf Ruf. Niemals direkt aufeinander schlagen — nur in die Luft."
+              },
+              {
+                "n": 4,
+                "content": "Show-Runde: Feen tanzen für Wächter, Wächter zeigen Schwertkampf für Feen — Applaus, kein Wettbewerb."
+              }
+            ],
+            "safetyRule": "Schaumstoff-Stäbe ausschließlich aus weichem Material — KEIN Holz, KEIN Hartplastik. Regel klar ansagen: 'Nie ins Gesicht, nie auf den Kopf, nur in die Luft.' Bei kleinen Räumen: Wächter-Gruppe in Garten/Flur, Feen-Tanz im Wohnzimmer. Sichtaufsicht durch Erwachsene während der gesamten Aktivität.",
+            "ageAdjust6": "Nur 2 Kommandos statt 4 (Hoch/Tief), kürzere Tanz-Sequenz.",
+            "ageAdjust8": "Komplette Choreographie + freie Kür am Ende.",
+            "indoorTip": null,
+            "outdoorTip": "Im Garten ist Schwertkampf-Choreographie besser — mehr Platz, kein Lampenschirm-Risiko.",
+            "whyItWorksTitle": "Warum die Doppel-Aktivität funktioniert",
+            "whyItWorks": "Geschlechts-Inklusion ohne Belehrung. Beide Aktivitäten sind körperlich aktiv, beide sind kunstvoll choreographiert — Tanz ist nicht weicher, Schwertkampf ist nicht harter. Wer als Fee Schwertkampf machen will, darf wechseln. Wer als Wächter tanzen will, auch. Die Doppel-Struktur signalisiert: beide Welten sind gleich wertvoll."
+          },
+          {
+            "name": "🌺 Blumenkranz binden / 🍂 Eichenlaub-Armband flechten",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 20,
+            "minAge": 6,
+            "loudness": "ruhig",
+            "effort": "mittel",
+            "material": "Stoffblüten (~3 € Tüte für 50 Stück), Eichenlaub (gesammelt) oder Plastik-Eichenlaub (~3 €), grüne Pfeifenputzer (~2 € für 20 Stk.), braune Kordel (~2 €), Schere (kindersicher)",
+            "prepText": "Feen-Gruppe: 3 Pfeifenputzer als Ring formen, Stoffblüten daran festwickeln. Wächter-Gruppe: Kordel als Armband-Basis, Eichenlaub und kleine Eicheln einflechten. Beide Bastel-Geschenke gehen als Mitgebsel mit (für Mama oder Geschwister daheim).",
+            "steps": [],
+            "safetyRule": "Sichtaufsicht durch Erwachsene; kindersichere Schere verwenden. Pflanzen-Sicherheit: Eichenlaub ist unbedenklich, aber bei Eichel-Aufschluck-Gefahr bei Geschwistern auf Eichenlaub-Stücke statt ganze Eicheln achten. KEIN Heißkleber für 6–8-Jährige — Klebepunkte oder Pfeifenputzer-Wickeltechnik.",
+            "ageAdjust6": "Vorgewickelte Basis-Ringe — Kind klebt nur Blüten/Laub drauf.",
+            "ageAdjust8": "Komplett selber: Pfeifenputzer-Ring formen, Festknoten, mehrere Lagen verzieren.",
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          }
+        ],
+        "food": "🎂 Blüten-Kuchen 1 Gugelhupf\n💧 „Waldfrüchte-Punsch\" 12 Becher\n🍞 Elfen-Sandwiches 12 Stück (mit Blüten-Ausstecher)\n🍓 Waldfrüchte-Teller Erdbeeren, Trauben, Heidelbeeren\n🍿 Popcorn 250 g\n🍯 Honig-Brötchen 6 Stück\n🍭 Blüten-Gummibärchen 1 Tüte (200 g)",
+        "decoration": "🧚 Feen/Wald-Teller & Becher Set ~8 €\n🎈 Pastell-Luftballons (grün/rosa/lila) 10 Stk. ~3 €\n🌿 Eichenlaub-Girlande 1 Stk. ~4 € (oder selbstgemacht aus echtem Laub)\n🍃 Tüllstoff über Tisch und Decke Kostenlos (Stoffreste) oder ~5 €\n🌸 Blüten in kleinen Vasen Kostenlos (Garten)\n\n💡 Feenwald-Tisch-Trick:\nTischdecke grün oder weiß, darüber Eichenlaub und Stoffblüten verstreut. Dazwischen kleine Glasstein-Häufchen („Feentränen\") und Tannenzapfen. Sieht sofort magisch aus, kostet fast nix, dauert 10 Minuten. Noch besser: die Snack-Teller in Wald-Farben (grünes Popcorn aus essbarer Farbe, rosa Erdbeeren, dunkelblaue Heidelbeeren).",
+        "giveaways": "🌸 Stirnreif oder 🍂 Waldkrone (selbst verziert)\n🌺 Blumenkranz oder 🍃 Eichenlaub-Armband (selbst gebastelt)\n🌿 Talisman aus der Pflanzen-Quest\n🦋 Schmetterling-Bildkarte (zum Behalten)\n🍭 1 Tüte Blüten-Gummibärchen\n\nAlles in grüne oder rosa Papiertüte (10 Stk. ~1–2 € bei DM/Action), beschriftet mit „Zauberbaum-Geschenke für Lyra ___\". Kosten: ~3 € pro Kind.",
+        "shoppingList": [
+          {
+            "emoji": "🌸",
+            "label": "Blüten-Stirnreif-Set (6 Stk.)",
+            "url": "https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht-21",
+            "priceEur": 6,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining: Visueller Anker der Blumenfee-Rolle, ohne kollabiert die Rollen-Auswahl."
+          },
+          {
+            "emoji": "🍃",
+            "label": "Eichenlaub-Kronen + Bastel-Karton",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Waldwächter-Rolle — Geschlechts-Inklusion ohne diese Option bricht zusammen."
+          },
+          {
+            "emoji": "🌷",
+            "label": "Stoffblüten (große Tüte)",
+            "url": "https://www.amazon.de/s?k=stoffblueten+basteln+kinder&tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Bastel-Defining für Stirnreif-Verfeinerung UND Blumenkranz binden — zwei Aktivitäten basieren darauf."
+          },
+          {
+            "emoji": "🌿",
+            "label": "Pfeifenputzer + grüne Kordel",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Direkter Anhang an Blumenkranz/Eichenlaub-Armband — beide Bastel-Mitgebsel brauchen die Basis-Materialien."
+          },
+          {
+            "emoji": "🗡️",
+            "label": "Schaumstoff-Stäbe (6 Stk., Schwertkampf)",
+            "url": "https://www.amazon.de/s?k=schaumstoff+schwert+kinder+set&tag=machsleicht-21",
+            "priceEur": 5,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Waldwächter-Choreographie — ohne weiche Stäbe kein sicheres Schwertkampf-Spiel."
+          },
+          {
+            "emoji": "🎭",
+            "label": "Tüllschleier (6 Stk., Elfen-Tanz)",
+            "url": "https://www.amazon.de/s?k=t%C3%BCllschleier+kinder+tanzen&tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Direkter Anhang an Elfen-Tanz-Choreographie — Schleier macht das visuelle Element der Tanz-Variante."
+          },
+          {
+            "emoji": "🦋",
+            "label": "Schmetterling-Bildkarten / Poster",
+            "url": null,
+            "priceEur": 0,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Bildungswert-Quiz, gedruckt von Google = 0€."
+          },
+          {
+            "emoji": "🎁",
+            "label": "Talismane (Glassteine, Eicheln)",
+            "url": "https://www.amazon.de/s?k=glassteine+deko+kinder&tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Quest-Belohnung — ohne Inhalt in der Schatzkiste verpufft die Quest-Klimax."
+          },
+          {
+            "emoji": "🧚",
+            "label": "Feen/Wald-Teller & Becher Set",
+            "url": "https://www.amazon.de/s?k=feen+teller+becher+kindergeburtstag&tag=machsleicht-21",
+            "priceEur": 8,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Atmosphäre-Heber für Sandwich-Service, aber Pappgeschirr tut's auch."
+          },
+          {
+            "emoji": "🎈",
+            "label": "Pastell-Luftballons (10 Stk.)",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Deko-Element, hebt Wow-Faktor, aber Stationen funktionieren auch ohne."
+          },
+          {
+            "emoji": "🌿",
+            "label": "Eichenlaub-Girlande / Tüllstoff",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Foto-Background + Deko, kein Spiel-Material."
+          },
+          {
+            "emoji": "🧃",
+            "label": "Apfelschorle + Sandwiches + Beeren",
+            "url": null,
+            "priceEur": 12,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Essen + Getränke bei 3h Party nicht optional — Sandwiches sind Lückenfüller im Mittagsslot."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Backmischung + Blüten-Deko + Streusel",
+            "url": null,
+            "priceEur": 7,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Blüten-Kuchen Pflichtteil — Zucker-Blüten und Streusel gehören zum motto-zentralen Symbol."
+          },
+          {
+            "emoji": "🛍️",
+            "label": "Papiertüten + Stoffbeutel + Bändchen",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Mitgebsel-Verpackung, Bändchen sind nettes Detail aber nicht zwingend."
+          }
+        ],
+        "estimatedCostEur": 75,
+        "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
+      },
+      {
+        "id": "wow",
+        "label": "Wow — 3,5 Stunden, die volle Quest",
+        "headline": "✨ Wow — 3,5 Stunden, die volle Feenwald-Magie",
+        "intro": "Auf der Standard-Variante aufbauend, mit Geocaching im Garten oder Park. Die Kinder werden zu Zauberbaum-Wächtern ausgebildet, absolvieren 5 Prüfungen mit GPS-Hinweisen, und bekommen am Ende eine richtige Waldwächter-Urkunde. Aufwand hoch, Erinnerung für's Leben. Blumenfeen und Waldwächter sind gleichberechtigt — die Quest unterscheidet nicht.",
+        "timeWindow": "13:30–17:15, 6 Kinder",
+        "schedule": [
+          {
+            "time": "13:30",
+            "title": "🪪 Zauberbaum-Beutel, Rollenwahl & Quest-Pass",
+            "description": "Das große Auftakt-Ritual (siehe Block oben): jedes Kind wählt Rolle (Blumenfee oder Waldwächter), zieht seinen Quest-Namen aus dem Zauberbaum-Beutel, bekommt Stirnreif oder Eichenlaub-Krone, bekommt seinen Quest-Pass (selbst gebastelt aus Tonkarton mit Moos-Stempel). Foto mit Krone machen → später in den Pass kleben. Die Kinder sind jetzt offizielle Anwärter der Zauberbaum-Akademie."
+          },
+          {
+            "time": "14:00",
+            "title": "🌸 Prüfung 1: Stirnreif/Waldkrone verfeinern",
+            "description": "Erste Bastel-Aufgabe — eigene Krone individualisieren. „Jeder Wächter trägt seine eigene Krone, niemand hat dieselbe.\" 20 Min."
+          },
+          {
+            "time": "14:25",
+            "title": "🌿 Prüfung 2: Pflanzen-Quest Codeknacker FARN",
+            "description": "4 Stationen im Garten/Wohnung mit echten Pflanzen. 30 Min. Lösungswort FARN öffnet die Zauberbaum-Schatzkiste."
+          },
+          {
+            "time": "14:55",
+            "title": "📍 Prüfung 3: Geocaching im Garten/Park",
+            "description": "Mit Handy-GPS-App (z.B. c:geo oder Geocaching.com) im Garten oder Park 5 versteckte Mini-Caches finden. Pflanzen-Hinweise als Koordinaten-Rätsel. 40 Min. — siehe unten."
+          },
+          {
+            "time": "15:35",
+            "title": "🎂 Kuchen, Waldfrüchte-Punsch & Waldwesen-Sandwiches",
+            "description": "Blüten-Kuchen mit Zucker-Schmetterlingen. Waldwesen-Sandwich (Toast mit Blüten-Ausstecher) als herzhafter Snack. 25 Min."
+          },
+          {
+            "time": "16:00",
+            "title": "🦋 Prüfung 4: Schmetterling-Bestimmungs-Quiz",
+            "description": "Ruhigere Phase nach dem Geocaching-Hype. 20 Min. — Pflanzen-Wissen + Schmetterlings-Erkennung."
+          },
+          {
+            "time": "16:20",
+            "title": "💃 Prüfung 5: Elfen-Tanz / Schwertkampf-Choreographie",
+            "description": "Doppel-Aktivität. Beide Gruppen 20 Min. parallel — am Ende Show füreinander."
+          },
+          {
+            "time": "16:40",
+            "title": "🎖️ Wächter-Zeremonie & Feenwald-Kino",
+            "description": "Feierliche Urkundenverleihung: „Hiermit wird ___ zum offiziellen Zauberbaum-Wächter ernannt.\" Quest-Pass umdrehen — die Urkunde ist auf der Rückseite. Danach 15 Min. Naturfilm-Clip zum Runterkommen (YouTube: „Schmetterlinge Zeitlupe\" oder „Tiere im Wald für Kinder\", Popcorn dazu)."
+          },
+          {
+            "time": "17:00",
+            "title": "🎁 Mitgebsel & Abholung",
+            "description": "Quest-Pass + Blumenkranz/Eichenlaub-Armband + Talisman + Stirnreif/Waldkrone. Die Kinder gehen als zertifizierte Zauberbaum-Wächter nach Hause.\n\n💡 Die Wächter-Geschichte trägt 3,5 Stunden\nDie „Zauberbaum-Wächter-Ausbildung\" gibt den 5 Prüfungen einen roten Faden. Statt „jetzt machen wir Spiel 3\" sagst du: „Eure dritte Prüfung wartet!\" Das Tempo bleibt hoch, weil jede Aktivität ein narratives Ziel hat. Und am Ende gibt die Urkunde dem Ganzen einen echten Abschluss — die Kinder fühlen, dass sie etwas erreicht haben."
+          }
+        ],
+        "games": [
+          {
+            "name": "📍 Geocaching im Garten/Park (5 Mini-Caches)",
+            "indoor": false,
+            "outdoor": true,
+            "duration": 40,
+            "minAge": 7,
+            "loudness": "laut",
+            "effort": "hoch",
+            "material": "1 Smartphone mit Geocaching-App (c:geo kostenlos, oder Geocaching.com), 5 kleine wasserdichte Behälter (Filmdöschen, Tic-Tac-Box, ~3 €), Mini-Talismane drin (Glassteine, Eicheln, Blüten-Anhänger), 5 Pflanzen-Hinweis-Zettel, 1 große Schatzkiste am Endpunkt",
+            "prepText": "1-2 Tage vorher: 5 Caches im Garten oder Park verstecken — unter Stein, im Astloch, hinter Baum-Wurzel. Koordinaten per App speichern oder mit Pflanzen-Hinweisen arbeiten („zwischen 3 Farnen und einem Stein\"). Am Party-Tag: Kinder bekommen Pflanzen-Hinweis-Zettel, suchen Caches in Reihenfolge. Letzter Cache enthält den Hinweis zur großen Schatzkiste am Zauberbaum.",
+            "steps": [
+              {
+                "n": 1,
+                "content": "Vorbereitung (1-2 Tage vor): App installieren, Koordinaten von 5 Verstecken speichern."
+              },
+              {
+                "n": 2,
+                "content": "Caches verstecken — wasserdicht verpackt, mit Pflanzen-Hinweis im Inneren."
+              },
+              {
+                "n": 3,
+                "content": "Am Party-Tag: Erstes Pflanzen-Rätsel vorlesen — „Wo wächst Moos am häufigsten? (Antwort: an der Nordseite eines Baums)\""
+              },
+              {
+                "n": 4,
+                "content": "Kinder gehen los, finden Cache 1, lesen nächsten Hinweis, gehen weiter — bis Cache 5."
+              },
+              {
+                "n": 5,
+                "content": "Cache 5 enthält Koordinaten oder Beschreibung zur großen Schatzkiste am Zauberbaum (oder echten/Topf-Baum im Garten)."
+              }
+            ],
+            "safetyRule": "Im Park: Erwachsene begleiten IMMER. Niemand allein in fremde Büsche. Bei feuchtem Wetter: rutschige Stellen meiden, festes Schuhwerk Pflicht. Pflanzen-Hinweise nur an unbedenklichen Stellen verstecken — keine giftigen Pflanzen in der Nähe (Eibe, Maiglöckchen). Zecken-Check nach dem Spielen Pflicht.",
+            "ageAdjust6": "Geocaching streichen oder vereinfachen: nur Pflanzen-Hinweise im Garten, kein GPS — zu komplex.",
+            "ageAdjust8": "Voll-Version mit echten GPS-Koordinaten. Lass die 8-Jährigen das Handy halten.",
+            "indoorTip": "Nicht ideal — Pflanzen-Hinweise drinnen verstecken funktioniert, aber das Geocaching-Element verpufft.",
+            "outdoorTip": "Garten 1.000 m² reicht völlig, Park noch besser — mehr Verstecke, größerer Abenteuer-Faktor.",
+            "whyItWorksTitle": "Warum Geocaching für 7-8-Jährige der Wow-Moment ist",
+            "whyItWorks": "Erste GPS-Erfahrung + echte Pflanzen-Spuren + Schatzsuche-Mechanik = der Moment, an den sie sich in 5 Jahren noch erinnern. Anders als reine Schatzsuche müssen sie Pflanzen erkennen, Karte lesen, Team-koordinieren. Bildungswert (Botanik + Orientierung) versteckt im Abenteuer."
+          },
+          {
+            "name": "🌿 Pflanzen-Quest: Codeknacker FARN",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 30,
+            "minAge": 6,
+            "loudness": "ruhig",
+            "effort": "mittel",
+            "material": "Wie in Standard — 4 Pflanzen, 4 Buchstaben-Umschläge, Zauberbaum-Schatzkiste mit 6 Talismanen, 6 Quest-Pässe",
+            "prepText": "Wie in Standard-Variante. In Wow wird die Quest als „Zweite Prüfung der Zauberbaum-Akademie\" angekündigt — vor dem Geocaching, als Aufwärm-Quest.",
+            "steps": [],
+            "safetyRule": "Pflanzen-Sicherheit: Nur ungiftige Pflanzen (Farn, Ahorn, Rose, Tanne) — KEINE Maiglöckchen, KEIN Eisenhut, KEIN Fingerhut. Bei Rosen: Dornen vorher abschneiden. Hände waschen nach der Quest. Bei Pollen-Allergie: gedruckte Bilder statt echter Pflanzen.",
+            "ageAdjust6": null,
+            "ageAdjust8": "Bonus: Lebensraum-Quiz nach jedem Buchstaben („In welchem Wald-Boden wächst Farn am besten? Sauer oder kalkhaltig?\")",
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          },
+          {
+            "name": "🧠 Pflanzen-Botanik-Quiz (optional statt einer Prüfung)",
+            "indoor": true,
+            "outdoor": false,
+            "duration": 20,
+            "minAge": 7,
+            "loudness": "ruhig",
+            "effort": "mittel",
+            "material": "10 Fragen zur Botanik (siehe Beispiele unten), Buzzer/Klingel/Topfdeckel, Punktetafel (Whiteboard oder Papier)",
+            "prepText": "2 Teams (Feen vs. Wächter). Frage vorlesen, wer zuerst buzzert darf antworten. Richtig = 1 Punkt. Falsch = anderes Team darf.",
+            "steps": [
+              {
+                "n": 1,
+                "content": "Frage 1: „Wie heißt der Saft, den Bienen aus Blüten trinken?\" (Antwort: Nektar)"
+              },
+              {
+                "n": 2,
+                "content": "Frage 2: „Welcher Baum hat fünfzackige Blätter und süßen Saft?\" (Antwort: Ahorn)"
+              },
+              {
+                "n": 3,
+                "content": "Frage 3: „Welche Pflanze hat keine Blüten, sondern Sporen?\" (Antwort: Farn)"
+              },
+              {
+                "n": 4,
+                "content": "Frage 4: „Was machen Schmetterlinge, bevor sie Schmetterlinge sind?\" (Antwort: Raupe)"
+              },
+              {
+                "n": 5,
+                "content": "Frage 5: „Welcher Pilz wächst nur an Bäumen?\" (Antwort: Baumpilz)"
+              }
+            ],
+            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen.",
+            "ageAdjust6": "Multiple Choice (3 Antworten).",
+            "ageAdjust8": "Offene Fragen + Bonus für Latein-Namen (Farn = Filicophyta — nur Spaß-Bonus).",
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          }
+        ],
+        "food": "🎂 Blüten-Kuchen 1 Gugelhupf + Wunderkerze\n💧 „Waldfrüchte-Punsch\" 14 Becher\n🍞 Waldwesen-Sandwiches 12 Stück (Blüten-/Pilz-Ausstecher)\n🍓 Waldfrüchte-Teller Erdbeeren, Trauben, Heidelbeeren, Brombeeren\n🍿 Popcorn 300 g (grün gefärbt = Mooskugeln)\n🍯 Honig-Brötchen 8 Stück\n🍫 Schoko-Blätter 1 Packung (Schatz)\n🍭 Blüten-Gummibärchen 1 Tüte (200 g)\n\n💡 Waldwesen-Sandwiches:\nMit Blüten-Ausstecher (oder einfach großer runder Ausstecher) Toast-Scheiben ausstechen. Frischkäse drauf, oben zweite Blüte drüber. Sieht sofort zauberhaft aus, schmeckt den Kindern, und 12 Stück sind in 15 Minuten gemacht.",
+        "decoration": "🧚 Feen/Wald-Teller & Becher Set ~8 €\n🎈 Pastell-Ballon-Bogen ~15 € (30 Stk., grün/rosa/lila)\n🌿 Eichenlaub-Girlande ~4 €\n🍃 Tüllstoff über Decke ~5 €, 20 Min.\n✨ Glitzer-Tischläufer ~3 € Krepppapier (für Feen-Seite)\n🌳 „Zauberbaum-Akademie\"-Schild Kostenlos Pappe + Edding + Eichenlaub, am Eingang\n🔊 Feenwald-Musik Kostenlos YouTube/Spotify: „Magic Forest Music\" oder „Celtic Music\" leise im Hintergrund\n🌸 Blumen in kleinen Vasen ~5 € (echte Schnittblumen vom Supermarkt)\n\n🧚 Wow-Bonus: Aufblasbares Feen-Flügel-Kostüm für Mama oder Papa\nDer absolute Überraschungs-Hit: ein [Feen-Flügel-Kostüm Erwachsene*](https://www.amazon.de/s?k=feen+fl%C3%BCgel+erwachsene+kost%C3%BCm&tag=machsleicht-21) (~25–35 €). Du öffnest die Tür als riesige Zauberbaum-Hüterin — die Kinder rasten aus. Funktioniert als „Lyra, die Hüterin der Zauberbaum-Akademie\", als Überraschungsgast beim Kuchen oder als „Wächter-Prüferin\" für die Urkundenverleihung. Wird DAS Foto des Tages. Die Kinder erzählen noch Wochen davon. Geschlechts-neutrale Alternative: Robin-Hood-Kostüm für die Waldwächter-Hüter-Rolle.\n\n🍄 Optional: Die Pilz-Lichter-Inszenierung (LED-Lichterketten-Moment)\nDas Element, das eine Feen-Party wirklich magisch macht — wenn du das Drumherum bauen kannst. Mit warmweißen [LED-Lichterketten*](https://www.amazon.de/s?k=led+lichterkette+warmwei%C3%9F+batterie&tag=machsleicht-21) (~10 € für 3 Sets) wickelst du Eichenlaub-Girlanden und Tüllstoffe ein. Wenn die Kinder nach dem Kuchen rein kommen, schaltest du Hauptlicht aus — der Raum leuchtet plötzlich wie ein Feenwald in der Dämmerung. Die Kinder sind komplett still für 5 Sekunden.\n\nWann einbauen: Beim Übergang zu Prüfung 5 (Elfen-Tanz/Schwertkampf) — Licht aus, Musik leiser, Lichterketten an. Was du brauchst: 3 Sets LED-Lichterketten (batteriebetrieben für Flexibilität), Tüllstoff oder Eichenlaub-Girlanden zum Einwickeln, abdunkelbarer Raum. Warum optional: Nicht jedes Zuhause lässt sich leicht verdunkeln, und die Lichterketten wollen sorgfältig vorbereitet sein. Wenn der Rest der Wow-Variante schon ausreicht, lass es weg — es ist die Kirsche, nicht der Kuchen.",
+        "giveaways": "🪪 Quest-Pass (mit Foto und Urkunde)\n🌺 Blumenkranz / 🍂 Eichenlaub-Armband (selbst gebastelt)\n🌿 Talisman aus der Pflanzen-Quest\n💍 Geocaching-Mini-Cache-Inhalt (selbst gefunden)\n🦋 Schmetterling-Bildkarte\n🌸 Stirnreif / 🍃 Waldkrone\n🍫 Schoko-Blätter\n\nIn grüne Papiertüte (10 Stk. ~1–2 € bei DM/Action) mit „Zauberbaum-Akademie · Lyra ___\". Kosten: ~5 € pro Kind.",
+        "shoppingList": [
+          {
+            "emoji": "🌸",
+            "label": "Blüten-Stirnreif-Set (6 Stk.)",
+            "url": "https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht-21",
+            "priceEur": 6,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Konsistent über Varianten — Feen-Rollen-Anker."
+          },
+          {
+            "emoji": "🍃",
+            "label": "Eichenlaub-Kronen + Bastel-Karton",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Konsistent — Waldwächter-Rolle-Anker, Geschlechts-Inklusion."
+          },
+          {
+            "emoji": "🌷",
+            "label": "Stoffblüten (große Tüte)",
+            "url": "https://www.amazon.de/s?k=stoffblueten+basteln+kinder&tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Bastel-Material für Stirnreif + Blumenkranz."
+          },
+          {
+            "emoji": "🌿",
+            "label": "Pfeifenputzer + grüne Kordel",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Direkter Anhang an Blumenkranz/Armband-Basteln."
+          },
+          {
+            "emoji": "🗡️",
+            "label": "Schaumstoff-Stäbe (6 Stk.)",
+            "url": "https://www.amazon.de/s?k=schaumstoff+schwert+kinder+set&tag=machsleicht-21",
+            "priceEur": 5,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Schwertkampf-Choreographie — Sicherheits-Defining (keine harten Stäbe)."
+          },
+          {
+            "emoji": "🎭",
+            "label": "Tüllschleier (6 Stk.)",
+            "url": "https://www.amazon.de/s?k=t%C3%BCllschleier+kinder+tanzen&tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Elfen-Tanz-Anker für Blumenfeen."
+          },
+          {
+            "emoji": "📦",
+            "label": "Geocaching-Cache-Behälter (5 Stk.)",
+            "url": "https://www.amazon.de/s?k=geocaching+container+kinder&tag=machsleicht-21",
+            "priceEur": 8,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Wow-Geocaching — ohne wasserdichte Cache-Container kollabiert das zentrale Wow-Spiel."
+          },
+          {
+            "emoji": "🦋",
+            "label": "Schmetterling-Bildkarten / Poster",
+            "url": null,
+            "priceEur": 0,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Bildungswert-Quiz, gedruckt von Google = 0€."
+          },
+          {
+            "emoji": "🎁",
+            "label": "Talismane (Glassteine, Eicheln, Blüten-Anhänger)",
+            "url": "https://www.amazon.de/s?k=glassteine+deko+kinder&tag=machsleicht-21",
+            "priceEur": 6,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Quest-Belohnungen — 5 Mini-Caches + 6 Quest-Belohnungen brauchen Inhalte."
+          },
+          {
+            "emoji": "🧚",
+            "label": "Feen/Wald-Teller & Becher Set",
+            "url": "https://www.amazon.de/s?k=feen+teller+becher+kindergeburtstag&tag=machsleicht-21",
+            "priceEur": 8,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Atmosphäre-Premium, aber Pappgeschirr tut's."
+          },
+          {
+            "emoji": "🎈",
+            "label": "Pastell-Ballon-Bogen + Eichenlaub-Girlande",
+            "url": null,
+            "priceEur": 19,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Deko-Premium für Foto-Background, kein Spiel-Material."
+          },
+          {
+            "emoji": "🍯",
+            "label": "Apfelschorle + Sandwiches + Beeren + Honig-Brötchen",
+            "url": null,
+            "priceEur": 15,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Essen + Getränke für 3-3,5h Party nicht optional, Honig-Brötchen sind motto-zentral."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Backmischung + Blüten-Deko + Wunderkerze",
+            "url": null,
+            "priceEur": 8,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Blüten-Kuchen Pflichtteil, Wunderkerze ist Wow-Upgrade aber Sub-Position."
+          },
+          {
+            "emoji": "🍫",
+            "label": "Schoko-Blätter / Schoko-Marienkäfer",
+            "url": "https://www.amazon.de/s?k=schokolade+bl%C3%A4tter+pralinen&tag=machsleicht-21",
+            "priceEur": 4,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Kuchen-Topping-Extra, aber Streusel + Smarties tun's auch."
+          },
+          {
+            "emoji": "🧚",
+            "label": "Feen-Flügel-Kostüm Erwachsene (optional)",
+            "url": "https://www.amazon.de/s?k=feen+fl%C3%BCgel+erwachsene+kost%C3%BCm&tag=machsleicht-21",
+            "priceEur": 30,
+            "hasAffiliate": true,
+            "category": "habIchVielleicht",
+            "categoryReasoning": "Explizit optional + Geburtstagskind-Eltern haben oft ein Verkleidungs-Teil im Schrank (langes grünes Kleid + DIY-Flügel reicht)."
+          },
+          {
+            "emoji": "💡",
+            "label": "LED-Lichterketten warmweiß (3 Sets, optional)",
+            "url": "https://www.amazon.de/s?k=led+lichterkette+warmwei%C3%9F+batterie&tag=machsleicht-21",
+            "priceEur": 10,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Atmosphäre-Verstärker für Pilz-Lichter-Inszenierung, aber Hauptlicht aus reicht zur Not."
+          },
+          {
+            "emoji": "📱",
+            "label": "Geocaching-App (kostenlos: c:geo)",
+            "url": null,
+            "priceEur": 0,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Wow-Geocaching — App muss aufs Handy, 0€."
+          },
+          {
+            "emoji": "📄",
+            "label": "Quest-Pass + Pflanzen-Hinweise + Namensliste (Druck)",
+            "url": null,
+            "priceEur": 0,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "0€-Print trägt Quest-Pass + Geocaching-Hinweise + Quiz-Karten — Strukturanker."
+          },
+          {
+            "emoji": "🛍️",
+            "label": "Papiertüten + Stoffbeutel + Bändchen",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Konsistent zu Standard — nettes Detail, kein Pflicht-Anker."
+          }
+        ],
+        "estimatedCostEur": 113,
+        "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm & LED-Set)"
+      }
+    ],
+    "cakeRecipe": {
+      "intro": "Geht mit jedem Gugelhupf. Das Besondere ist die Deko — nicht das Backen.",
+      "steps": [
+        {
+          "n": 1,
+          "content": "Gugelhupf backen — Fertigmischung reicht völlig (Dr. Oetker, Kathi, whatever). Kein Mensch schmeckt den Unterschied."
+        },
+        {
+          "n": 2,
+          "content": "Teig vor dem Backen in 3 Schüsseln teilen. Jede Schüssel mit einer Lebensmittelfarbe einfärben (hellgrün, rosa, lila). Nacheinander in die Form schichten → innen Feenwald-Optik beim Anschnitt."
+        },
+        {
+          "n": 3,
+          "content": "Komplett abkühlen lassen. Ungeduld = Glasur-Desaster."
+        },
+        {
+          "n": 4,
+          "content": "Mit weißer Glasur überziehen (200 g Puderzucker + 3 EL Wasser, cremig rühren)."
+        },
+        {
+          "n": 5,
+          "content": "Essbare Blüten (Stiefmütterchen, Ringelblume, Borretsch — gibt's in der Gemüse-Abteilung) auf die Glasur legen. Oder Zucker-Blüten aus der Backabteilung."
+        },
+        {
+          "n": 6,
+          "content": "Grüne Streusel (Pistazien-Krümel oder grüne Zucker-Streusel) um den Fuß als „Moos\". Optional: ein Schoko-Schmetterling oder Marienkäfer obenauf."
+        },
+        {
+          "n": 7,
+          "content": "Optional: Wunderkerze reinstecken und beim Happy-Birthday anzünden (Wow-Variante)."
+        }
+      ],
+      "meta": {
+        "aufwand": "60 Min. inkl. Backen und Deko",
+        "kosten": "~8 €",
+        "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. Essbare Blüten enthalten manchmal Pollen — bei Pollen-Allergie auf Zucker-Blüten ausweichen."
+      },
+      "tips": [
+        {
+          "title": "🌸 Kein Bock auf essbare Blüten? Zwei Wege zum Feen-Kuchen",
+          "body": "Weg 1 (einfach): Zucker-Blüten aus der Backabteilung kaufen (DM, Rewe, Edeka — meist bei den Tortendeko). Kostet ~3 €, sieht perfekt aus, 2 Minuten aufgesetzt. Das machen die meisten. Weg 2 (notfalls): Bunte Streusel + grüne Pistazien-Krümel als Moos-Imitat — schlicht, aber wirkt. Kein Kind zählt nach, ob Blüten echt waren."
+        },
+        {
+          "title": "🎂 Keine Lust zu backen?",
+          "body": "Fertigen Zitronen- oder Vanillekuchen beim Bäcker kaufen, weiße Glasur drüber, essbare Blüten oder Zucker-Blüten aufstecken, grüne Streusel drumherum. Sieht aus wie gewollt, dauert 5 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.\""
+        }
+      ]
+    },
+    "parentTips": {
+      "structured": [
+        {
+          "topic": "🚨 Allergien vorher abfragen",
+          "detail": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten, Pollen). In die Einladung schreiben: „Hat dein Kind Allergien oder Unverträglichkeiten?\" Apfelschorle und Popcorn sind fast immer safe. Essbare Blüten und Pollen-haltige Materialien (Stoffblüten aus echtem Pollen-Stoff) sind bei Pollen-Allergikern Tabu."
+        },
+        {
+          "topic": "🍃 Pflanzen-Sicherheit",
+          "detail": "Für die Pflanzen-Quest und das Geocaching: Nur ungiftige, klar bestimmbare Pflanzen verwenden. Sicher sind: Farn, Ahorn, Rose (Dornen ab!), Tanne/Fichte, Eichenlaub, Stiefmütterchen, Ringelblume. UNSICHER: Maiglöckchen (giftig!), Eisenhut (giftig!), Fingerhut (giftig!), Eibe (Beeren giftig!), Engelstrompete. Bei Unsicherheit: gedruckte Pflanzen-Bilder statt echter Pflanzen."
+        },
+        {
+          "topic": "✨ Glitzer-Sicherheit",
+          "detail": "Für Krone-Verzieren und Bastel-Aktivitäten: KEIN loser Streu-Glitzer auf Augen-Höhe. Glitzer-Kleber (in Tube) ist sicher, lose Glitzer-Pailletten KÖNNEN ins Auge geraten. Bei Kontakt mit Auge: sofort mit Wasser spülen, nicht reiben — ggf. Augenarzt. Mit 6–8-Jährigen reden: „Glitzer ist auf Kleidung und Krone, nicht ins Gesicht.\""
+        },
+        {
+          "topic": "📋 Plan B bei Regen",
+          "detail": "Alle Spiele in dieser Vorlage funktionieren auch drinnen — Pflanzen-Quest mit gedruckten Pflanzen-Bildern oder Mini-Topfpflanzen geht in der Wohnung. Geocaching (Wow) ist draußen — Plan B: Pflanzen-Hinweise in der Wohnung verstecken (verschiedene Räume = verschiedene „Wälder\"). Nie ohne Plan B."
+        },
+        {
+          "topic": "📱 Partyseite statt WhatsApp-Chaos",
+          "detail": "Kein Eltern-Gruppen-Chaos mehr. Erstelle eine [Partyseite auf party.machsleicht.de](https://party.machsleicht.de) mit Datum, Uhrzeit, Treffpunkt und Wunschliste — verschicke nur einen Link. Eltern können sich eintragen, Geschenke abstimmen, Rückfragen stellen. Kostet nichts."
+        },
+        {
+          "topic": "👥 Ab 6 Kindern: 1 Helfer dazu",
+          "detail": "Bis 5 Kinder schaffst du eine Standard-Party allein. Bei 6+ brauchst du Unterstützung — besonders für Elfen-Tanz / Schwertkampf-Choreographie (parallel 2 Gruppen) und Geocaching (Park-Begleitung). Oma, andere Elternteile, oder eine Teenager-Nachbarin (10 € für 3 Stunden) retten dir den Tag.\n\n⏰ Abholzeit vorher klären\nIn diesem Alter können Eltern kurz abgesetzt werden — müssen aber telefonisch erreichbar sein. Schreib in die Einladung: „Abholung 17:00 Uhr pünktlich bitte.\" Sonst stehen um 17:30 noch 3 Kinder da und du hast schon alles abgebaut."
+        }
+      ],
+      "educationalValue": "Die Feen-Party 6-8 vermittelt drei messbare Bildungs-Bausteine: (1) Pflanzennamen-Wissen — Kinder lernen Farn, Ahorn, Rose, Nadelbäume zu unterscheiden, plus 6 Schmetterlings-Arten. Das ist erste Botanik-Grundlage, anschlussfähig an die 3. Klasse Sachunterricht. (2) Botanik-Spuren-Lesen — bei der Pflanzen-Quest und beim Geocaching müssen sie Pflanzen-Hinweise (Schatten/Sonne, feucht/trocken, Boden-Beschaffenheit) deuten. Das schult Beobachtungsgabe und logisches Schließen. (3) Teamwork — Codeknacker funktioniert nur, wenn alle 4 Stationen besetzt sind und die Buchstaben am Ende zusammengesetzt werden. Blumenfeen und Waldwächter müssen kooperieren, nicht konkurrieren. Geschlechts-Inklusion ist hier kein Nebeneffekt, sondern Spiel-Mechanik."
+    },
+    "invitationTemplate": "Eine persönliche Feen-Einladung macht schon vor der Party Lust auf den Tag. Auf machsleicht kannst du deine Einladung kostenlos in 3 Minuten erstellen — mit Foto, Datum, Treffpunkt und allen Infos. PDF oder digitaler Link zum Verschicken.\n[🧚 Feen-Einladung erstellen →](/einladung/erstellen?motto=feen)\n\n[📱 Per WhatsApp teilen](https://wa.me/?text=%F0%9F%A7%9A%20Feen-Kindergeburtstag%20f%C3%BCr%206%E2%80%938-J%C3%A4hrige%20planen%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Zeitplan%2C%20Spielen%20und%20Einkaufsliste%3A%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Ffeen-6-8-jahre)",
+    "faq": [
+      {
+        "q": "Wie lange sollte ein Feen-Geburtstag für 6–8-Jährige dauern?",
+        "a": "2,5 bis 3 Stunden sind ideal. Kürzer ist besser als länger — nach 3 Stunden kippt die Stimmung bei den meisten Kindern. Die Minimal-Variante (2 Stunden) funktioniert auch perfekt, besonders wenn du wenig Vorbereitungszeit hast. Die Wow-Variante mit Geocaching braucht 3,5 Stunden, weil die GPS-Suche Zeit verdient."
+      },
+      {
+        "q": "Wie viele Kinder sollte man zum Feen-Geburtstag einladen?",
+        "a": "Faustregel: 6 Kinder sind ideal (inkl. Geburtstagskind). Bei 7-8 Gästen: 2. Helfer einplanen + Mengen um 30% erhöhen. Bei >8 Kindern: Wow-Variante mit längerem Zeitplan wählen — aber dann unbedingt eine zweite erwachsene Person für die Geocaching-Aufsicht."
+      },
+      {
+        "q": "Was kostet ein Feen-Geburtstag?",
+        "a": "Zwischen 50 € (Minimal) und 113 € (Wow, ohne Kostüm und LED-Set) für 6 Kinder — je nachdem wie viel Aufwand du betreiben willst. Die Standard-Variante liegt bei ca. 75 € und bietet das beste Verhältnis aus Aufwand und Ergebnis. Das Feen-Flügel-Kostüm für Erwachsene (~30 €) und das LED-Lichterketten-Set (~10 €) sind optional, aber die Wow-Faktoren, an die sich die Kinder jahrelang erinnern."
+      },
+      {
+        "q": "Ist das Feen-Motto auch für Jungen geeignet?",
+        "a": "Ja, ausdrücklich — und genau dafür ist diese Vorlage gebaut. Jedes Kind wählt am Eingang zwischen zwei gleichberechtigten Rollen: **Blumenfee** (mit Schmetterlings-Flügeln + Blüten-Diadem) oder **Waldwächter** (mit Krieger-Flügeln im Blattmuster + Waldkrone aus Eichenlaub). Beide Rollen machen dieselben Quests, dieselben Prüfungen, bekommen dieselbe Urkunde. Statt Elfen-Tanz mit Schleier gibt es für Waldwächter Schwertkampf-Choreographie mit weichen Schaumstoff-Stäben. Statt Blumenkranz binden gibt es Eichenlaub-Armband flechten. Die Vornamen-Liste hat 6 Feen-Namen und 6 Wächter-Namen — wer welche zieht, ist Zufall. Erfahrung von Eltern: Jungen wählen oft zuerst neugierig den Waldwächter, manche wechseln nach 30 Min. zum Feen-Tisch, weil das Blumenkranz-Basteln cool aussieht. Keine Rolle ist „die für Mädchen\" oder „die für Jungen\" — beide haben gleiches Gewicht."
+      },
+      {
+        "q": "Funktioniert das Feen-Motto in gemischten Gruppen (Jungen + Mädchen)?",
+        "a": "Ja, und sogar besser als in einer reinen Mädchen- oder Jungen-Gruppe. Die Doppel-Rollen (Blumenfee + Waldwächter) erzeugen automatisch Diversität, die Pflanzen-Quest mit Codeknacker FARN ist geschlechtsneutral, das Geocaching (Wow) begeistert beide gleichermaßen. Die Farbwelt lässt sich leicht anpassen (weniger rosa-pink, mehr Grün, Braun, Türkis, Gold). Wichtig: nicht „Mädchen tanzen, Jungen kämpfen\" — sondern „Jeder wählt selbst, manche wechseln zwischendurch.\""
+      },
+      {
+        "q": "Können wir die Pflanzen-Quest auch ohne echte Pflanzen machen?",
+        "a": "Ja — gedruckte Bilder aus Google funktionieren genauso. Vorteil: kein Allergie-Risiko, keine Pflanzen-Bestimmungs-Sorgen. Nachteil: weniger sinnlich. Wenn du draußen Zugang zu echten Pflanzen hast (Garten, Park), lohnt sich der echte Weg. Sonst: 4 große Bilder ausdrucken (DIN A4) und an den Stationen aufhängen — funktioniert."
+      },
+      {
+        "q": "Brauchen wir wirklich Geocaching für die Wow-Variante?",
+        "a": "Nein — Geocaching ist der Wow-Bonus, kein Pflicht-Anker. Wenn du keinen Garten/Park hast oder kein GPS-fähiges Handy nutzen willst, ersetze Prüfung 3 durch eine zweite Pflanzen-Quest (anderes Lösungswort, z.B. MOOS) oder ein längeres Botanik-Quiz. Die Wow-Variante steht auch ohne Geocaching auf 3 Stunden Programm."
+      }
+    ],
+    "preparationWeeks": {
+      "minus4Weeks": {
+        "headline": "4 Wochen vorher — Grundgerüst stellen",
+        "items": [
+          {
+            "icon": "📅",
+            "title": "Datum, Uhrzeit, Treffpunkt fixieren",
+            "detail": "Samstag oder Sonntag 14–17 Uhr ist Standard — Mittagsschlaf der Kleinen durch, abends sind alle platt. Drinnen-Plan-B-Adresse schon im Kopf haben, falls das Wetter kippt. Bei Geocaching-Wow: Park-Locations vorprüfen, ungiftige Pflanzen-Inventur."
+          },
+          {
+            "icon": "👥",
+            "title": "Gästeliste festzurren — max 6 Kinder",
+            "detail": "12 Quest-Namen sind im Beutel (6 Feen + 6 Wächter), du brauchst nur 6 Zettel ziehen. Über 6 wird's bei Bastel-Stationen und Geocaching eng (parallel an 2 Gruppen heißt: 2 Helfer)."
+          },
+          {
+            "icon": "💶",
+            "title": "Variante wählen: Minimal / Standard / Wow",
+            "detail": "Minimal 50€ (Zauberbaum-Beutel + Pflanzen-Quest + Schmetterling-Quiz, DIY-Schwer), Standard 75€ (zusätzlich Stirnreif-Bastel + Elfen-Tanz/Schwertkampf + Blumenkranz binden), Wow 113€ (zusätzlich Geocaching mit GPS-App + Botanik-Quiz). Entscheidung jetzt — danach Bestelllisten."
+          },
+          {
+            "icon": "✉️",
+            "title": "Einladungen rausschicken",
+            "detail": "Pflicht im Text: ‚Hat dein Kind Allergien oder Unverträglichkeiten?' — Pollen-Allergie besonders relevant, weil echte Blüten verwendet werden. Zusätzlich: ‚Möchtest du als Blumenfee oder Waldwächter kommen? Beides ist gleich cool.' — schon in der Einladung die Doppel-Rolle ankündigen, damit Jungs nicht zögern. RSVP-Link auf party.machsleicht.de spart dir den WhatsApp-Chat-Krieg."
+          },
+          {
+            "icon": "🏠",
+            "title": "Bei Mietwohnung: Boden checken",
+            "detail": "Feenwald ist akustisch zahm, aber Stoffblüten + Eichenlaub + Glitzer-Kleber + Schaumstoff-Schwerter sind Boden-Bomben für 3 Stunden. Teppich abdecken oder Aktivitäten in die Küche/aufs Balkon-Backup. Nachbarn unter dir freuen sich nicht über tropfende Krone-Verfeinerung."
+          },
+          {
+            "icon": "🌿",
+            "title": "Pflanzen-Inventur (Garten/Park scouten)",
+            "detail": "Hast du Farn, Ahorn, Rose, Nadelbaum im Garten? Wenn ja: Quest authentischer. Wenn nein: Bilder ausdrucken — funktioniert auch. Bei Wow-Geocaching: Park-Location 1× scouten, Verstecke mental durchspielen."
+          }
+        ]
+      },
+      "minus2Weeks": {
+        "headline": "2 Wochen vorher — Logistik festziehen",
+        "items": [
+          {
+            "icon": "📋",
+            "title": "RSVPs einsammeln und Liste schließen",
+            "detail": "Wer hat geantwortet, wer nicht? Nachzügler einmal anstupsen, dann ist gut. Wer kommt als Fee, wer als Waldwächter? Im Zweifel: Frag's nicht explizit — die Kinder wählen am Tag selbst, am Tisch."
+          },
+          {
+            "icon": "🥜",
+            "title": "Allergien zusammenschreiben",
+            "detail": "Eine Liste, ein Zettel: Kind X = Laktose, Kind Y = Nüsse, Kind Z = Pollen (essbare Blüten weglassen!). Bei 6 Kindern hat statistisch eins was. Liste am Backtag und am Party-Tag griffbereit — auf Papier, nicht im Hinterkopf."
+          },
+          {
+            "icon": "🙋",
+            "title": "Bei 6+ Kindern: Helfer organisieren",
+            "detail": "Standard/Wow brauchen 2. Person bei Elfen-Tanz/Schwertkampf (parallel 2 Gruppen) und Pflanzen-Quest-Aufsicht. Wow-Geocaching: 2. Erwachsener Pflicht im Park. Oma, Partner, andere Mutter, Teenager-Nachbarin (10€/3h ist fair)."
+          },
+          {
+            "icon": "📦",
+            "title": "Bestellliste finalisieren",
+            "detail": "Was kaufst du wo? Blüten-Stirnreif-Set + Stoffblüten + Schaumstoff-Stäbe + Tüllschleier bei Amazon, Karton + Eichenlaub im Bastelladen (oder gesammelt), Apfelschorle + Beerensaft + Backmischung im Supermarkt. Bei Wow: zusätzlich Geocaching-Container + LED-Lichterketten. Liste machen — sonst kaufst du in Woche -1 dreimal."
+          }
+        ]
+      },
+      "minus1Week": {
+        "headline": "1 Woche vorher — bestellen, drucken, vorwarnen",
+        "items": [
+          {
+            "icon": "🛒",
+            "title": "Amazon-Bestellung JETZT raus",
+            "detail": "Lieferzeit 2–5 Tage. Blüten-Stirnreif-Set (~6€), Stoffblüten (~4€), Schaumstoff-Stäbe (~5€), Tüllschleier (~4€), Talismane/Glassteine (~4€). Bei Wow zusätzlich Geocaching-Container (~8€) + LED-Lichterketten (~10€). Später bestellen = Panik."
+          },
+          {
+            "icon": "🖨️",
+            "title": "Quest-Pass + Namensliste + Pflanzen-Bilder drucken",
+            "detail": "Quest-Pass-Vorlage (DIN A6, 6x falten) gibt's kostenlos auf kribbelbunt.de oder selber gestalten. Plus die 12 Quest-Namen einmal ausdrucken und in Streifen schneiden — kommen in den Zauberbaum-Beutel. Bei Wow: zusätzlich Pflanzen-Hinweis-Zettel für Geocaching-Caches."
+          },
+          {
+            "icon": "🍃",
+            "title": "Eichenlaub-Kronen vorbasteln",
+            "detail": "Karton-Kronen-Rohlinge zuschneiden (6 Stück), echtes oder Plastik-Eichenlaub bereitlegen. Die Kinder verzieren am Party-Tag selbst — aber die Basis sollte fertig sein."
+          },
+          {
+            "icon": "🔔",
+            "title": "Mietwohnung: Hausordnung gegenchecken",
+            "detail": "Lautstärke kein großes Thema bei Feen, aber Stoffblüten + Eichenlaub + Glitzer-Kleber können beim Auszug Ärger machen. Tücher und Wachs-Tücher griffbereit halten. Falls Sorge: kurz vorab Nachbarn mit Kind über Lautstärke beruhigen (Schwertkampf-Choreographie wird laut)."
+          },
+          {
+            "icon": "🌧️",
+            "title": "Plan B Regen mental durchspielen",
+            "detail": "Pflanzen-Quest ist drinnen mit gedruckten Pflanzen-Bildern genauso gut. Schwertkampf-Choreographie im Flur improvisieren (Schaumstoff-Stäbe brauchen Platz, aber kein Garten). Bei Wow-Geocaching: Plan B = ausführlichere Pflanzen-Quest mit zweitem Lösungswort (MOOS — M, O, O, S — Achtung: O wiederholt sich, also Variante: ROSE oder TANG)."
+          },
+          {
+            "icon": "🧪",
+            "title": "Allergie-Check: Stoffblüten + Glitzer-Kleber vorab testen",
+            "detail": "Stoffblüten auf eigene Haut tupfen 5 Min — manchmal sind Färbungen reizend. Glitzer-Kleber an Schüssel-Rand wischen, trocknen lassen, mit Wasser ablösbar prüfen. Bei essbaren Blüten auf dem Kuchen: ein Blütchen probieren, ob Reaktion ausbleibt."
+          },
+          {
+            "icon": "📦",
+            "title": "Pakete bei Ankunft sofort öffnen",
+            "detail": "Stirnreif-Set auf Vollständigkeit prüfen (6 Stück?), Schaumstoff-Stäbe auf Härte testen (wirklich weich?), Tüllschleier auf Risse. Reklamation muss bis Tag X durch sein. Geocaching-Container (Wow): wasserdicht? Innen trocken?"
+          }
+        ]
+      },
+      "minus2Days": {
+        "headline": "2 Tage vorher — backen, briefen, basteln",
+        "items": [
+          {
+            "icon": "🎂",
+            "title": "Blüten-Kuchen backen — oder Plan B",
+            "detail": "Wenn Zeit/Nerven da: Gugelhupf-Fertigmischung in 3 Schüsseln, je 1 Lebensmittelfarbe rein (hellgrün/rosa/lila), schichten, backen. Wenn nicht: weißen Gugelhupf vom Bäcker (4–6€), morgen kommt weiße Glasur + essbare Blüten oder Zucker-Blüten drauf."
+          },
+          {
+            "icon": "🗣️",
+            "title": "Helfer briefen — 5 Minuten reichen",
+            "detail": "Zettel mit Tagesablauf, wer macht was: ‚Du Elfen-Tanz-Gruppe, ich Schwertkampf-Choreographie' (Standard) oder ‚Du Pflanzen-Quest-Stationen 1+3, ich 2+4, beide zusammen Geocaching' (Wow). Bei Allergien: Liste zeigen, nicht erzählen."
+          },
+          {
+            "icon": "🪪",
+            "title": "Quest-Pässe vorbereiten + zerschneiden",
+            "detail": "DIN A4 → 6x ausschneiden, falzen, Namensfeld + 4 Stempel-Felder (Standard) oder 5 (Wow). Bei Wow: Rätsel-Felder + Pflanzen-Hinweise vorab in den Pass schreiben (gemeinsam mit Quest-Stationen)."
+          },
+          {
+            "icon": "🌿",
+            "title": "Pflanzen für Quest vorbereiten",
+            "detail": "4 Pflanzen sammeln oder ausdrucken: Farn (echt oder Bild), Ahornblatt (echt oder Bild), Rose (Blüte, Dornen abschneiden!), Nadelzweig (Tanne/Fichte, echt). Mit Buchstaben-Umschlägen F/A/R/N an Stationen platzieren. Bei Wow-Geocaching: zusätzlich 5 Caches verstecken im Garten/Park."
+          },
+          {
+            "icon": "🎁",
+            "title": "Goodie-Bags packen",
+            "detail": "Pro Kind: Stirnreif/Waldkrone (fertig verziert), Blumenkranz/Armband (entsteht in Aktivität, kommt am Tag rein), Talisman aus Quest, Schmetterling-Bildkarte, Blüten-Gummibärchen. In Papiertüte mit Quest-Namen drauf. 15 Min Arbeit, spart dir morgen Stress."
+          },
+          {
+            "icon": "✨",
+            "title": "Zauberbaum-Beutel füllen",
+            "detail": "Stoffbeutel oder Korb, 12 ausgeschnittene Namens-Zettel rein (6 Feen + 6 Wächter gemischt), dazu eine Prise getrockneter Blüten und Eichenlaub-Stücke (für den Wald-Geruch beim Reingreifen). Beutel auf Ankunfts-Tisch platzieren."
+          }
+        ]
+      },
+      "minus1Day": {
+        "headline": "1 Tag vorher — Deko, Test, letzte Schritte",
+        "items": [
+          {
+            "icon": "🌸",
+            "title": "Kuchen-Glasur + Blüten-Deko",
+            "detail": "Weiße Glasur drüber (200g Puderzucker + 3 EL Wasser), essbare Blüten (Stiefmütterchen, Ringelblume) oder Zucker-Blüten draufsetzen, grüne Pistazien-Krümel oder Streusel um den Fuß als ‚Moos'. Über Nacht fest werden lassen."
+          },
+          {
+            "icon": "🧪",
+            "title": "Pflanzen-Quest vortesten (alle Varianten)",
+            "detail": "Alle 4 Pflanzen + Umschläge an Stationen platzieren, einmal selbst durchlaufen — sind die Buchstaben gut sichtbar? Reihenfolge frei wählbar? Funktioniert das Lösungswort FARN? Bei Wow: Geocaching-Caches einmal mit der App durchgehen, GPS-Genauigkeit prüfen."
+          },
+          {
+            "icon": "🚧",
+            "title": "Stationen + Ankunfts-Tisch dekorieren",
+            "detail": "Pastell-Luftballons aufhängen, Eichenlaub-Girlande spannen, Zauberbaum-Beutel + Quest-Pässe + Stirnreif-Auswahl + Waldkronen-Rohlinge am Eingangs-Tisch. Bei Wow: LED-Lichterketten in Tüllstoff/Girlanden einwickeln (noch nicht anschalten — erst beim Übergang zu Prüfung 5)."
+          },
+          {
+            "icon": "🔋",
+            "title": "Geocaching-App + Spotify-Playlist testen (Wow)",
+            "detail": "App c:geo öffnen, GPS-Genauigkeit prüfen, 5 Caches einmal abgehen. Spotify-Playlist ‚Magic Forest' oder ‚Celtic Music' in der Notiz-App speichern. Nicht erst am Party-Tag suchen."
+          },
+          {
+            "icon": "🌿",
+            "title": "Bastel-Tische einräumen (Standard/Wow)",
+            "detail": "Links Feen-Tisch (Stoffblüten, rosa Bänder, Klebepunkte), rechts Wächter-Tisch (Eichenlaub, braune Bänder, Federn). Beide gleich attraktiv dekorieren — Kinder wählen am Tag selbst. Schaumstoff-Stäbe und Tüllschleier griffbereit."
+          }
+        ]
+      },
+      "dayOf": {
+        "headline": "Tag X — durchziehen, atmen, feiern",
+        "items": [
+          {
+            "icon": "⏰",
+            "title": "30 Min vor Ankunft: Stationen aufbauen",
+            "detail": "Tische vorbereiten (Bastel-Tisch, Pflanzen-Quest-Stationen, Kuchen-Tisch), Apfelschorle kühlen, Sandwiches/Beeren schneiden. Helfer ist da oder kommt jetzt. Kuchen aus dem Kühlschrank — Zimmertemperatur schmeckt besser."
+          },
+          {
+            "icon": "🎯",
+            "title": "15 Min vor Ankunft: Ankunfts-Tisch final",
+            "detail": "Zauberbaum-Beutel mit 12 Zetteln, Quest-Pässe gefaltet, Stirnreif-Auswahl + Waldkronen-Rohlinge bereit, Glitzer-Kleber + Stoffblüten + Eichenlaub griffbereit. Wow-Setup: Geocaching-App offen, LED-Lichterketten an Strom/Batterien, Quiz-Karten geheim auf Wächter-Pult."
+          },
+          {
+            "icon": "🫁",
+            "title": "5 Min vor Ankunft: durchatmen + Wechselklamotten-Tüte",
+            "detail": "Klo, Wasser, einmal tief Luft holen. Tüte an Türklinke hängen mit ‚Wechselklamotten falls nötig?' für Eltern — Bastel + Pflanzen-Quest sind Glitzer-Klamotten-Risiko. Sonst kriegst du sie nicht."
+          },
+          {
+            "icon": "✨",
+            "title": "Ankunft: Rollen-Wahl + Zauberbaum-Beutel",
+            "detail": "Jedes Kind wählt: Blumenfee oder Waldwächter? Zieht passenden Quest-Namen aus dem Beutel, liest laut vor (Vorlesen üben hilft schüchternen Kindern), bekommt Stirnreif oder Waldkrone aufgesetzt, Name in Quest-Pass. Das sind die ersten 10 Minuten."
+          },
+          {
+            "icon": "📸",
+            "title": "Foto-Runde nach Schwur",
+            "detail": "Wenn alle Kronen aufgesetzt sind und Quest-Pass-Namen eingetragen, gemeinsamer Schwur sprechen, dann Gruppenfoto vor Eichenlaub-Girlande. Eins, fertig, weiter. Bei Wow: Polaroid-Sofortdruck für jeden Quest-Pass als ‚Akademie-Foto'."
+          }
+        ]
+      }
+    },
+    "sosScenarios": {
+      "regen": {
+        "icon": "🌧️",
+        "label": "Regen — alles draußen geplant",
+        "headline": "Pflanzen-Quest geht drinnen mit Bildern — Wald-Quest ins Wohnzimmer.",
+        "steps": [
+          "Pflanzen-Quest mit gedruckten Pflanzen-Bildern an 4 Räume verteilen.",
+          "Schwertkampf-Choreographie im Flur improvisieren (Schaumstoff-Stäbe brauchen kein Garten).",
+          "Bei Wow-Geocaching: Plan B = zweite Pflanzen-Quest mit anderem Lösungswort (ROSE — R, O, S, E) durch die Wohnung.",
+          "Elfen-Tanz im Wohnzimmer — Tüllschleier brauchen keine Wiese."
+        ],
+        "fallback": "Wenn kein Platz für Schwertkampf-Choreographie: alles ans Bastel-Pult, Stirnreif-Verfeinerung + Blumenkranz binden + Schmetterling-Quiz reicht für 2,5h Programm.",
+        "tone": "praktisch"
+      },
+      "weniger_kinder_als_erwartet": {
+        "icon": "👥",
+        "label": "Weniger Kinder als erwartet (2–3 fehlen)",
+        "headline": "Weniger Wächter, gleicher Zauber — straffer, nicht dünner.",
+        "steps": [
+          "Zauberbaum-Beutel: nur die Hälfte der Zettel ziehen lassen, kleine Wächter-Runde wirkt dadurch enger.",
+          "Pflanzen-Quest: alle 4 Stationen gemeinsam abgehen statt aufteilen — wird zur Team-Quest.",
+          "Doppel-Rollen vergeben: Lyra + Mira können zusammen ein Sub-Team bilden.",
+          "Pufferzeit füllen mit zweiter Schmetterling-Quiz-Runde oder Bonus-Botanik-Quiz."
+        ],
+        "fallback": "Wenn Stimmung kippt: alles ans Ankunfts-Pult, Stirnreif-Zeremonie nochmal ausführlich + Foto-Runde als Hauptprogramm.",
+        "tone": "ruhig"
+      },
+      "mehr_kinder_als_erwartet": {
+        "icon": "🚨",
+        "label": "Mehr Kinder als erwartet (Geschwister-Boom)",
+        "headline": "Zweiten Quest-Pool öffnen — alle 12 Namen sind ohnehin da.",
+        "steps": [
+          "Zauberbaum-Beutel hält 12 Namen bereit — alle ziehen lassen, niemand bleibt namenlos.",
+          "Pflanzen-Quest: 2. Durchgang mit 2 Teams (Feen vs. Wächter) parallel laufen lassen (Helfer übernimmt eines).",
+          "Sofort Verstärkung anrufen: Oma/Nachbarin, 10€ für 2 Std Tisch-Aufsicht.",
+          "Stirnreif/Waldkronen verteilen vor allem anderen — Geschwister NICHT leer ausgehen lassen.",
+          "Apfelschorle nachbestellen lassen (Tankstelle/Lieferdienst), Kuchen-Stücke kleiner schneiden."
+        ],
+        "fallback": "Kein Helfer erreichbar? Schwertkampf-Choreographie streichen, dafür Pflanzen-Quest + Stirnreif-Bastel parallel — du läufst zwischen 2 Tischen.",
+        "tone": "praktisch"
+      },
+      "kind_will_nicht_mitmachen": {
+        "icon": "🤷",
+        "label": "Ein Kind will nicht mitmachen — auch wenn es ein Junge ist und Fee-Sachen ablehnt",
+        "headline": "Waldwächter-Brücke anbieten — Krieger-Flügel + Schwertkampf statt Tüll.",
+        "steps": [
+          "Erste Brücke: ‚Magst du lieber Waldwächter sein? Du bekommst Eichenlaub-Krone und einen Schaumstoff-Stab.' Vor allem für Jungen, die ‚Feen sind doof' sagen — die Doppel-Rolle ist genau für sie gemacht.",
+          "Zweite Brücke: ‚Pflanzenforscher der Akademie' — Notizbuch statt Krone, darf an jeder Station die Pflanze nachschlagen. Gibt's für Kinder, die Verkleidung doof finden.",
+          "Tattoo statt Krone: Eichel oder Blatt-Stempel auf Handrücken als ‚Wächter-Abzeichen' — minimaler Aufwand.",
+          "Sitzplatz mit eigenem Apfelschorle + Talisman — Beobachter-Posten, kein Außenseiter-Posten."
+        ],
+        "fallback": "Will gar nichts? Buch + Decke in die ruhige Ecke, alle 10 Min kurz reinschauen. Manche steigen nach 20 Min selbst ein — wenn der Schwertkampf-Lärm losgeht.",
+        "tone": "ruhig"
+      },
+      "kuchen_misslungen": {
+        "icon": "🎂",
+        "label": "Kuchen ist misslungen",
+        "headline": "Bäcker-Hack: weißer Gugelhupf + Glasur + Blüten = Notfall in 10 Min.",
+        "steps": [
+          "Weißen Gugelhupf beim Bäcker oder im Supermarkt holen (4–6€).",
+          "200g Puderzucker + 3 EL Wasser anrühren, weißen Guss drüber gießen — fertig die ‚Wolken-Basis'.",
+          "Zucker-Blüten aus der Backabteilung oder echte essbare Blüten drauflegen — sieht aus wie gewollt.",
+          "Grüne Pistazien-Krümel um den Fuß als ‚Moos' — perfektes Feen-Optik."
+        ],
+        "fallback": "Bäcker zu? Muffins aus dem Vorrat, pro Muffin ein kleines Marshmallow + eine essbare Blüte obendrauf — Mini-Feen-Hütchen.",
+        "tone": "motivierend"
+      },
+      "allergie_beim_kind": {
+        "icon": "🥜",
+        "label": "Allergie-Vorfall (Pollen, Nüsse, Laktose)",
+        "headline": "Plan greifen, ruhig bleiben, Eltern anrufen.",
+        "steps": [
+          "Kind sofort aus der Aktivität nehmen, fragen: ‚Was juckt/zwickt?' — Allergie-Liste zur Hand.",
+          "Bei Pollen-Reaktion (Niesen, Augen-Tränen): essbare Blüten weglassen, raus aus dem Bastel-Tisch mit Stoffblüten, Apfelschorle ohne Garnitur anbieten.",
+          "Bei Nuss-Reaktion: Notfall-Set des Kindes (sollte mitgegeben sein), Eltern anrufen, ggf. 112.",
+          "Bei Laktose: alternativen Snack anbieten (Salzstangen, Apfelschnitze, Beeren ohne Sahne).",
+          "Bei Glitzer-Kontakt mit Auge: sofort mit Wasser spülen, nicht reiben. Bei Schmerzen 30 Min+: Augenarzt."
+        ],
+        "fallback": "Eltern erreichbar? Anrufen lassen, abholen lassen — lieber 30 Min früher als ein Notfall. Bei Atemnot: 112 sofort, nicht warten.",
+        "tone": "praktisch"
+      },
+      "spielzeug_kaputt_oder_fehlt": {
+        "icon": "🔧",
+        "label": "Spielzeug kaputt oder vergessen",
+        "headline": "Improvisieren mit Haushalts-Material — Wächter merken nichts.",
+        "steps": [
+          "Schaumstoff-Stäbe fehlen? Zusammengerollte Zeitungen mit Tesa umwickeln — weich, sicher, schnell.",
+          "Tüllschleier weg? Alte Bettwäsche-Reste, Geschirrtücher oder dünne Schals tun's auch.",
+          "Stirnreif-Set kaputt? Pfeifenputzer + Stoffblüten direkt am Kopf festwickeln (Erwachsener hilft).",
+          "Eichenlaub fehlt (Standard/Wow)? Aus grünem Tonkarton zackige Blätter schneiden — sieht aus wie gewollt.",
+          "Geocaching-App spinnt (Wow)? Papier-Schatzkarte mit gemalten Pflanzen-Hinweisen — der Original-Weg."
+        ],
+        "fallback": "Total katastrophal? Zauberbaum-Beutel + Quest-Pass + Kuchen reichen für 2h Programm — Zeremonie statt Aktivität.",
+        "tone": "praktisch"
+      },
+      "ein_kind_weint": {
+        "icon": "😢",
+        "label": "Ein Kind weint",
+        "headline": "Raus aus dem Trubel — 5 Min am Ankunfts-Pult, dann sehen wir weiter.",
+        "steps": [
+          "Kind aus der Gruppe nehmen — Küche oder Flur, weg vom Lärm.",
+          "Apfelschorle + Talisman in die Hand drücken als Beruhigungs-Ritual.",
+          "Rolle anbieten: ‚Magst du die Quest-Pässe verteilen? Du sagst, wer dran ist.'",
+          "Bei Heimweh: Wahl anbieten — anrufen oder Foto von Mama am Handy zeigen. Anruf nur wenn Kind danach fragt.",
+          "Nach 5 Min an die Hand nehmen, zur nächsten Station mitnehmen — nicht fragen."
+        ],
+        "fallback": "Geht gar nicht mehr? Eltern anrufen, abholen lassen — kein Drama, lieber 30 Min früher als ein Trauma.",
+        "tone": "ruhig"
+      }
+    }
+  },
+  "feen-gross": {
+    "_meta": {
+      "source_file": "kindergeburtstag/feen-9-12-jahre.html",
+      "extracted": "2026-05-22",
+      "schema_version": "1.0",
+      "purpose": "Feen 9-12 (gross) — Phase B Elite-Slot. Verlorener Zauberwald als Escape-Quest mit Pflanzen-Chiffre, geschlechtsoffen, Wurzel-Pakt-Ritual.",
+      "phase_b_complete": "2026-05-22",
+      "phase_b_method": "Direct draft analog safari-gross / einhorn-gross Pattern. Codeknacker FLORA (5 unique Buchstaben: F-L-O-R-A, je eine Station, alle echte heimische Pflanzen). Anti-IP konsequent: kein Tinkerbell/Hobbit/Harry-Potter-Vokabular. Geschlechts-Inklusion via Elfenkrieger/Waldwaechter gleichberechtigt zu Blumenfee/Lichtfee, kein farblicher Maedchen/Jungen-Split. Wurzel-Pakt mit Holzring-Rune ist Eroeffnungs- und Abschluss-Ritual."
+    },
+    "motto": "feen",
+    "ageGroup": "gross",
+    "ageRange": [
+      9,
+      12
+    ],
+    "title": "🌿 Feen-Kindergeburtstag — 9–12 Jahre",
+    "metaDescription": "Feen-Kindergeburtstag für 9–12 Jahre: 3 fertige Konzepte mit Escape-Quest „Verlorener Zauberwald\", Pflanzen-Chiffre FLORA, Zeitplan, Einkaufsliste und Kosten. Mädchen UND Jungen — Elfenkrieger und Waldwächter gleichwertig.",
+    "introParagraph": "3 fertige Konzepte: Minimal (2,5 Std.) · Standard (3,5 Std.) · Wow (4 Std.)\n\nDie Kinder werden zu Hütern eines verlorenen Zauberwaldes. Sie lösen die FLORA-Chiffre an 5 Stationen, lernen echte Pflanzen kennen, knacken ein Schloss, schwören einen Wurzel-Pakt auf einen eingebrannten Holzring. Ernsthafte Quest statt kitschiger Sternenstaub — und vor allem geschlechtsoffen: Elfenkrieger und Waldwächter sind keine Ersatzrollen, sondern gleichwertige Hüter.\n\n[🌿 Feen-Geburtstag planen →](/kindergeburtstag?motto=feen&alter=10#planer)",
+    "ageInsight": {
+      "headline": "Was 9–12-Jährige ausmacht — und was das für den Zauberwald heißt",
+      "traits": [
+        {
+          "topic": "Aufmerksamkeit",
+          "detail": "30–45 Min. pro Aktivität sind realistisch, wenn die Aufgabe wirklich fordert. Pflanzen-Bestimmung mit echtem Bestimmungsschlüssel hält Konzentration, Glitzer-Wedeln nicht mehr."
+        },
+        {
+          "topic": "Geschlechter-Mix",
+          "detail": "In dieser Altersgruppe sind gemischte Geburtstage Standard. „Feen-Party = nur für Mädchen\" ist 2026 erledigt — entscheidend ist die Aufzieh-Logik: Wenn Elfenkrieger und Waldwächter gleichwertige Rollen sind, kein Tüll-Pflicht, keine rosa Deko-Dominanz, kommen Jungen ebenso gerne. Anti-IP ist Pflicht: kein Tinkerbell, kein Hobbit, kein Harry Potter — eigenes Vokabular trägt."
+        },
+        {
+          "topic": "Regeln",
+          "detail": "Verstehen mehrstufige Regeln und Codes. Die FLORA-Chiffre baut auf Selbstkontrolle: ergibt das Lösungswort keinen Sinn, war eine Station falsch sortiert. Das spart dir das Gegenprüfen."
+        },
+        {
+          "topic": "Wettbewerb",
+          "detail": "Wenig Sinn für Tempo-Wettbewerb, aber starker Sinn für „wer hat sorgfältiger entschlüsselt, wer hat die Pflanze richtig bestimmt\". Sorgfalt-Anerkennung statt Erster-werden."
+        },
+        {
+          "topic": "Survival-Skills",
+          "detail": "Knoten lernen, Pflanzen identifizieren, unsichtbare Tinte mit Pflanzensaft — das wirkt in dieser Altersgruppe „echt\" statt „kindisch\". Wichtig: niemals Knoten an Hälsen oder Handgelenken eng — Wurzel-Pakt-Armband sitzt locker, abnehmbar."
+        },
+        {
+          "topic": "Dauer",
+          "detail": "3–4 Stunden ideal. Bei der Wow-Variante mit Outdoor-GPS-Quest gerne 4 Stunden — aber nicht in der Dämmerung enden lassen ohne klare Zeit-Markierung."
+        },
+        {
+          "topic": "Eltern",
+          "detail": "Können absetzen, sollten es auch. Eltern in der Quest = Spannungs-Killer. Abholzeit konkret klären — keine „so gegen 17 Uhr\"-Vereinbarungen."
+        }
+      ],
+      "whyMottoFitsHeadline": "🌿 Warum „Verlorener Zauberwald\" für 9–12-Jährige funktioniert",
+      "whyMottoFits": "Diese Altersgruppe wird nicht mehr durch Glitzer-Flügel und rosa Sternchen gepackt. Was sie packt, ist Quest-Logik mit echter Aufgabe: Eine Pflanzen-Chiffre entschlüsseln, ein Schloss knacken, einen Pakt schwören. Feen funktionieren in diesem Alter, wenn sie als alte Hüter eines vergessenen Waldes gerahmt werden — kein Kuscheltier-Sprech, kein Tüll-Zwang. Elfenkrieger, Waldwächter, Lichtfee, Blumenfee sind gleichwertige Rollen mit eigener Kompetenz. Der Wurzel-Pakt mit dem eingebrannten Holzring ist Initiations-Akt, kein Bastel-Quatsch — die Kinder gehen mit einem Symbol nach Hause, das sie tragen können, ohne sich zu schämen."
+    },
+    "signatureRitual": {
+      "name": "Der Wurzel-Pakt",
+      "subtitle": "Eröffnet und schließt die Quest — für alle 3 Varianten",
+      "introText": "Beim Eintreten zieht jedes Kind aus einer Holzschale einen Pflanzennamen-Zettel (Farn, Löwenzahn, Odermennig, Ringelblume, Ahorn — die fünf Hüter-Pflanzen) und nimmt einen Holzring (Birkenscheibe mit 3 cm Loch, vorgebrannte Rune passend zum Pflanzennamen). Der Ring wird mit einer dünnen Lederschnur oder Hanfschnur an einem locker sitzenden Armband befestigt — niemals straff, abnehmbar, kein Knoten am Handgelenk-Druckpunkt. Du sprichst den Wurzel-Pakt: „Du bist jetzt Hüter:in dieses Pflanzennamens. Du schwörst, im Zauberwald sorgfältig hinzuschauen, keinen Code zu raten, und am Ende deinen Mitwirkenden zu helfen, wenn sie feststecken.\" Das Kind nickt oder spricht „Ich schwöre auf die Wurzel.\" Damit ist die Quest eröffnet. Beim Abschluss bekommt der Ring auf der Rückseite eine zweite eingebrannte Rune — „Hüter-Bestätigung\" — und das Kind nimmt ihn als Symbol mit nach Hause. Geschlechts-offen: Elfenkrieger und Waldwächter schwören den gleichen Pakt, tragen den gleichen Ring, nur die Rune ist je nach gewähltem Pflanzennamen anders.",
+      "setupSteps": [
+        {
+          "title": "Holzringe vorbereiten (24h vorher)",
+          "content": "Birkenscheiben oder runde Holz-Anhänger (Bastel-Laden, ca. 5–8 € für 12 Stück) mit einem 3 mm Brand-Stift (Pyrographie-Stift, ca. 12 €, einmalig) je eine Rune pro Pflanze einbrennen: Farn = stilisierte Wedel-Spirale, Löwenzahn = Pusteblumen-Stern, Odermennig = Heil-Kreuz, Ringelblume = Sonnen-Spirale, Ahorn = 5-zackiges Blatt. Im Notfall: wasserfester Edding statt Brand-Stift, dann „eingeritzt\" als Story. Pro Hüter-Pflanze 2–3 Ringe vorbereiten."
+        },
+        {
+          "title": "Pflanzennamen-Zettel in Holzschale",
+          "content": "Pro Pflanze (Farn, Löwenzahn, Odermennig, Ringelblume, Ahorn) 2–3 Zettel falten und in eine kleine Holzschale legen. Mit echten getrockneten Pflanzenblättern auffüllen (Apotheke / DIY-Tee-Mischungen: Ringelblumen-Blüten, Löwenzahn-Tee, Farn-Wedel aus dem Garten — ca. 4 €). Bei Heuschnupfen-Allergie vorab klären; Notfall: Tüll-Blütenfetzen aus dem Bastel-Vorrat."
+        },
+        {
+          "title": "Lederschnur oder Hanfschnur zuschneiden",
+          "content": "Pro Kind 60 cm Hanf- oder Lederschnur (DM-Bastel, ~3 € für 10 m). Verknoten-Anleitung in 3 Schritten daneben legen. SAFETY: Armband sitzt locker, abnehmbar, Knoten NIE an Hals oder direkt am Druckpunkt des Handgelenks — du erklärst das einmal kurz, niemand windet die Schnur eng. Zur Not Sicherheits-Verschluss (Karabinerhaken, ~2 €) statt Knoten."
+        },
+        {
+          "title": "Wurzel-Pakt-Spruch ausdrucken",
+          "content": "Den Pakt-Text auf eine A5-Karte drucken: „Du bist jetzt Hüter:in von [Pflanzenname]. Du schwörst, sorgfältig hinzuschauen, keinen Code zu raten, und deinen Mitwirkenden zu helfen, wenn sie feststecken. — Ich schwöre auf die Wurzel.\" Du liest den Spruch personalisiert vor, das Kind antwortet mit der Schwur-Formel. Dauert pro Kind 20 Sekunden. Bei 8 Kindern: max. 3 Minuten Zeremonie."
+        },
+        {
+          "title": "Abschluss-Rune (2. Brand) vorbereiten",
+          "content": "Am Ende der Quest brennst (oder malst mit Edding) du auf die Rückseite jedes Rings die Hüter-Bestätigungs-Rune — ein einfacher Wurzel-Strich nach unten. Dauert pro Ring 30 Sekunden, kann während der Lizenz-Übergabe parallel passieren. Falls Brand-Stift zu langsam: Goldfolie-Sticker mit Wurzel-Symbol vorbereiten."
+        }
+      ],
+      "rolesList": [
+        {
+          "emoji": "🌿",
+          "name": "Farn-Hüter:in",
+          "function": "Hüter-Rolle: knackt den Farn-Quadranten (Station 1) und gibt den Buchstaben F für die FLORA-Chiffre weiter. Geschlechts-offen: Elfenkrieger:in, Waldwächter:in oder Lichtfee gleichermaßen."
+        },
+        {
+          "emoji": "🌼",
+          "name": "Löwenzahn-Hüter:in",
+          "function": "Hüter-Rolle: liest den Löwenzahn-Code (Station 2) und gibt den Buchstaben L weiter. Lebenszyklus-Wissen ist der Schlüssel."
+        },
+        {
+          "emoji": "🌾",
+          "name": "Odermennig-Hüter:in",
+          "function": "Hüter-Rolle: entschlüsselt die Odermennig-Heilpflanze (Station 3) und liefert den Buchstaben O. Heilpflanzen-Wissen schützt im Zauberwald."
+        },
+        {
+          "emoji": "🌻",
+          "name": "Ringelblume-Hüter:in",
+          "function": "Hüter-Rolle: bestimmt die Ringelblume (Station 4) und gibt den Buchstaben R weiter. Korbblütler-Detail-Erkennung."
+        },
+        {
+          "emoji": "🍁",
+          "name": "Ahorn-Hüter:in",
+          "function": "Hüter-Rolle: identifiziert das Ahorn-Blatt (Station 5) und liefert den Buchstaben A. Baum-Wissen als Abschluss der FLORA-Chiffre."
+        },
+        {
+          "emoji": "⚔️",
+          "name": "Elfenkrieger:in",
+          "function": "Geschlechts-offene Aufzieh-Variante jeder Hüter-Rolle. Statt Tüll-Flügeln: dunkelgrünes Stirnband, Holz-Anhänger, optional ein leichter Holz-Stab als „Wächter-Stab\". Schwört den gleichen Wurzel-Pakt."
+        },
+        {
+          "emoji": "🛡️",
+          "name": "Waldwächter:in",
+          "function": "Geschlechts-offene Aufzieh-Variante. Schwere Mantel-Optik (dunkelgrüner Umhang aus Decke oder altem Stoff). Aufgabe: behält die Quest-Karte und prüft, ob alle Stationen abgearbeitet sind."
+        }
+      ],
+      "optOutNote": "Keine Rolle ist Pflicht. Wer sich nicht festlegen will, zieht trotzdem einen Holzring und einen Pflanzennamen, schwört den Pakt und bekommt am Ende die Hüter-Bestätigung — die Quest-Mitarbeit erfolgt dann freiwillig pro Station. Kein Glitzer-Zwang, kein Flügel-Zwang. Ein Kind, das lieber als „Beobachter:in des Waldes\" mitläuft (Quest-Logbuch führen, Fotos der Stationen machen), bekommt einen vollwertigen Wurzel-Pakt-Ring mit eigener Sonder-Rune (offener Kreis = „Hüter:in des Blicks\").",
+      "materialNote": "Holzringe + Pyrographie-Stift + Hanfschnur sind Pflicht in jeder Variante. Goldfolie-Sticker oder Edding sind erlaubte Substitute, wenn der Brand-Stift nicht da ist. Wurzel-Pakt-Karten druckst du selbst — Vorlage liegt im Druck-Bereich. SAFETY: Pyrographie-Stift IMMER nur durch dich (Erwachsene:n) bedient, niemals durch Kinder — wird sehr heiß (450 °C). Brand-Vorgang vor der Party, nicht während. Armband-Schnur immer locker, kein eng gebundener Knoten an Hals oder Handgelenk."
+    },
+    "variants": [
+      {
+        "id": "minimal",
+        "label": "Minimal — 2,5 Stunden, minimaler Aufwand",
+        "headline": "⚡ Minimal — 2,5 Stunden, kompakte Quest",
+        "intro": "Funktioniert auch, wenn du erst gestern angefangen hast zu planen. Wurzel-Pakt-Eröffnung, die FLORA-Chiffre in kompakter Form (5 Stationen am selben Tisch), Pflanzenbestimmungs-Quiz, Pizza, Lizenz-Übergabe. Kein Outdoor-Setup nötig, kein Helfer zwingend. Die Codeknacker-Karten malst du am Vorabend in 20 Minuten ab — Selbstkontrolle ist eingebaut.",
+        "timeWindow": "14:30–17:00, 7 Kinder",
+        "schedule": [
+          {
+            "time": "14:30",
+            "title": "🌿 Eintreffen & Wurzel-Pakt-Zeremonie",
+            "description": "Jedes Kind zieht Pflanzennamen-Zettel + Holzring aus der Schale. Du sprichst den Pakt personalisiert vor, Kind antwortet „Ich schwöre auf die Wurzel.\" Lederschnur ans Armband (locker, abnehmbar). 20 Min für 7 Kinder inkl. Foto."
+          },
+          {
+            "time": "14:55",
+            "title": "🔓 Codeknacker FLORA: Die fünf Hüter-Pflanzen",
+            "description": "Das Hauptspiel. 5 Pflanzen-Quadranten am Tisch (Farn → F, Löwenzahn → L, Odermennig → O, Ringelblume → R, Ahorn → A). Pro Station eine Pflanzen-Frage zu lösen. Selbstkontrolle: ergibt FLORA = richtig. 45 Min."
+          },
+          {
+            "time": "15:45",
+            "title": "🌱 Pflanzen-Bestimmungs-Quiz",
+            "description": "8 echte heimische Pflanzen-Karten (Brennnessel, Löwenzahn, Klee, Eiche, Buche, Ringelblume, Spitzwegerich, Wilde Möhre) — bestimmen über Bestimmungs-Schlüssel mit Blatt-Form, Blüte, Lebensraum. 20 Min."
+          },
+          {
+            "time": "16:10",
+            "title": "🍕 Pizza-Belege-Station & Getränkepause",
+            "description": "Mini-Pizza-Böden, Tomatensauce, Käse, Belag-Schalen mit Kräutern (Basilikum, Oregano frisch). Jedes Kind belegt selbst. 10 Min belegen + 12 Min Backen + 8 Min Essen = 30 Min."
+          },
+          {
+            "time": "16:40",
+            "title": "🎂 Zauberwald-Kuchen & Foto",
+            "description": "Schokoladenkuchen mit grüner Glasur, essbarem Moos (zerbröselte Oreo-Streusel), Marzipan-Pilzen und 5 Pflanzen-Markern (Zahnstocher mit Foto der Hüter-Pflanze). 15 Min Kuchen + kurzes Gruppenfoto."
+          },
+          {
+            "time": "16:55",
+            "title": "🏅 Hüter-Bestätigung & Verabschiedung",
+            "description": "Zweite Rune (oder Goldfolie-Sticker) auf den Holzring brennen/kleben. Wurzel-Pakt-Karte als Mitgebsel. Mitgebsel-Tüte am Tor übergeben. 5 Min."
+          }
+        ],
+        "games": [
+          {
+            "name": "🔓 Codeknacker FLORA: Die fünf Hüter-Pflanzen",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 45,
+            "minAge": 9,
+            "loudness": "konzentriert",
+            "effort": "mittel",
+            "material": "5 Pflanzen-Quadranten DIN A4 (selbst gezeichnet oder ausgedruckt — je eine Karte pro Hüter-Pflanze mit Foto/Skizze, einer Pflanzen-Frage und 5 Antwort-Optionen). Pro Station eine kleine Holzschale mit echtem Pflanzenmaterial (Farn-Wedel aus dem Garten, Löwenzahn-Blätter, Ringelblumen-Blüten getrocknet aus dem Tee, Ahorn-Blatt, Odermennig-Tee). Bleistifte, ein Lösungs-Formular pro Team. 1 Wurzel-Pakt-Schloss (5-Buchstaben-Letter-Lock, ~10 €, oder als Story-Schloss: ein verschlossenes Glas mit 5 Pflanzenname-Streifen, die gemeinsam laut vorgelesen werden müssen). Druckvorlage: kannst du vom Beispiel 1:1 abmalen oder selbst gestalten.",
+            "prepText": "Setup am Vorabend (20 Min): Du zeichnest oder druckst 5 Pflanzen-Quadranten. Jede Station hat eine konkrete Frage, die mit echten heimischen Pflanzen-Eigenschaften lösbar ist (siehe codeLogic unten). Lösungswort ist FLORA — alle 5 Buchstaben einzigartig, alle 5 Pflanzen echt heimisch. Der Trick: Wer die Sortier-Regel richtig anwendet, liest am Ende das echte Wort FLORA — Buchstabensalat heißt, eine Station war falsch sortiert. Eingebaute Selbstkontrolle, du musst nichts gegenprüfen.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Station 1 — Farn (Adlerfarn): Buchstabe F",
+                "content": "Auf der Karte 5 Pflanzen-Skizzen: Adlerfarn, Tulpe, Rose, Brennnessel, Klee. Aufgabe: „Welche dieser Pflanzen hat keine Blüten und vermehrt sich über Sporen?\" Lösung: Adlerfarn. Anfangsbuchstabe Farn → F."
+              },
+              {
+                "n": 2,
+                "name": "Station 2 — Löwenzahn: Buchstabe L",
+                "content": "5 Lebensstadien einer Pflanze, gemischt: Pusteblume, Knospe, Blüte (gelb), Samen, Blattrosette. Aufgabe: „Welche Pflanze durchläuft alle 5 Stadien in dieser Reihenfolge: Blattrosette → Knospe → gelbe Blüte → Pusteblume → Samen?\" 5 Pflanzen-Optionen, davon der Löwenzahn richtig. Anfangsbuchstabe Löwenzahn → L."
+              },
+              {
+                "n": 3,
+                "name": "Station 3 — Odermennig: Buchstabe O",
+                "content": "Heilpflanzen-Karte mit 5 Pflanzen-Fotos + Wirkungen. Aufgabe: „Welche dieser Heilpflanzen wurde traditionell bei Halsschmerzen als Tee getrunken und hat gelbe Ähren-Blüten?\" Lösung: Odermennig (Agrimonia eupatoria — echt heimisch, echte Heilpflanze). Anfangsbuchstabe Odermennig → O."
+              },
+              {
+                "n": 4,
+                "name": "Station 4 — Ringelblume: Buchstabe R",
+                "content": "5 Korbblütler-Skizzen (Ringelblume, Sonnenblume, Margerite, Kamille, Löwenzahn). Aufgabe: „Welche Pflanze hat orange-gelbe Blüten und wird seit dem Mittelalter zur Wundheilung als Salbe verwendet?\" Lösung: Ringelblume (Calendula officinalis). Anfangsbuchstabe Ringelblume → R."
+              },
+              {
+                "n": 5,
+                "name": "Station 5 — Ahorn: Buchstabe A",
+                "content": "5 Baumblatt-Skizzen (Ahorn-Blatt, Eichen-Blatt, Buchen-Blatt, Linden-Blatt, Birken-Blatt). Aufgabe: „Welcher heimische Baum hat ein 5-zackiges Blatt, das dem kanadischen Flaggen-Symbol ähnelt?\" Lösung: Ahorn (Spitzahorn). Anfangsbuchstabe Ahorn → A."
+              },
+              {
+                "n": 6,
+                "name": "Zusammenführen & Selbst-Check",
+                "content": "Team trägt die 5 Buchstaben in das Lösungs-Formular ein: F-L-O-R-A. Ergibt das ein echtes Wort? Ja → FLORA, die Quest ist gelöst. Nein → eine Station war falsch beantwortet, selbst nachprüfen, nicht raten."
+              },
+              {
+                "n": 7,
+                "name": "Schloss / Glas öffnen",
+                "content": "5-Buchstaben-Letter-Lock auf F-L-O-R-A stellen → Schatzkasten öffnet sich. Inhalt: Wurzel-Pakt-Karten + Pflanzen-Aufkleber + Mitgebsel-Bezugsschein. Variante ohne Schloss: Team ruft das Wort laut zur „Hüterin des Waldes\" (Erwachsene:r), die dann das Glas öffnet."
+              }
+            ],
+            "codeLogic": "Lösungswort: FLORA — fünf unterschiedliche Buchstaben (F, L, O, R, A) ohne Doppler, ausschließlich erste Buchstaben echter heimischer Pflanzen.\nStation 1 (Frage zu Sporen/Adlerfarn) → Buchstabe F\nStation 2 (Frage zum Lebenszyklus/Löwenzahn) → Buchstabe L\nStation 3 (Frage zur Heilpflanze mit gelben Ähren/Odermennig) → Buchstabe O\nStation 4 (Frage zur Wundheilungs-Korbblütlerin/Ringelblume) → Buchstabe R\nStation 5 (Frage zum Baumblatt der kanadischen Flagge/Ahorn) → Buchstabe A\nMath-Check: 5 Stationen × 1 Buchstabe = 5 Buchstaben → Code FLORA ist exakt 5-stellig und enthält keinen Doppler. Jede Pflanze gibt genau einen Buchstaben, jede Station genau eine Antwort.",
+            "safetyRule": "Echtes Pflanzenmaterial: nur unbedenkliche heimische Pflanzen verwenden (Farn-Wedel aus dem Garten, Löwenzahn-Tee, getrocknete Ringelblumen-Blüten aus dem Apotheker-Tee — explizit NICHT giftige Pflanzen wie Maiglöckchen, Eibe, Tollkirsche). Bei Heuschnupfen-Allergie eines Kindes vor der Party klären; Notfall: Pflanzen-Fotos statt echtem Material. Kinder essen oder kosten NICHT von dem Material.",
+            "ageAdjust9": "Pro Station nur 3 Antwort-Optionen statt 5, Pflanzen-Fotos statt Skizzen, Bestimmungsschlüssel sichtbar an der Wand.",
+            "ageAdjust12": "Lateinische Pflanzennamen als Bonus-Spalte, Trick-Frage in Station 4 (Sonnenblume gehört auch zu Korbblütlern, aber wird seit Mittelalter nicht zur Wundheilung verwendet — strenge Lese-Aufgabe).",
+            "indoorTip": "Die fünf Quadranten an unterschiedliche Tische / Wände stellen, damit die Hüter sich nicht gegenseitig ins Material greifen.",
+            "outdoorTip": "Stationen entlang eines Garten-Rundwegs verteilen — passt perfekt zum Zauberwald-Frame. An der Farn-Station echte Adlerfarn-Wedel platzieren.",
+            "whyItWorksTitle": "Pflanzen-Wissen + Selbstkontrolle statt Tempo",
+            "whyItWorks": "Die FLORA-Chiffre belohnt sorgfältiges Lesen, nicht Geschwindigkeit. Ergibt das Lösungswort keinen Sinn, prüfen die Kinder selbst nach. Echtes Pflanzen-Wissen bleibt hängen — Odermennig, Ringelblume und Adlerfarn kennt nach der Party niemand mehr als „kindisch\", sondern als „cool, das wusste ich vorher nicht\".",
+            "codeMechanic": "Chiffre: Pflanzen-Identifikation → Anfangsbuchstabe der Lösung. Pro Station genau eine richtige Antwort = ein Buchstabe. Selbstkontrolle: ergibt das deutsche Wort FLORA, war alles richtig sortiert. 20 Min Setup am Vorabend: 5 Quadrant-Karten zeichnen oder ausdrucken.",
+            "plantFacts": [
+              {
+                "pflanze": "Adlerfarn",
+                "lateinisch": "Pteridium aquilinum",
+                "merkmal": "Vermehrung über Sporen, keine Blüten, dreieckige Wedel",
+                "habitat": "lichte Laubwälder, Waldränder",
+                "hinweis": "heimisch in Deutschland, Wedel werden bis 2 m hoch"
+              },
+              {
+                "pflanze": "Löwenzahn",
+                "lateinisch": "Taraxacum officinale",
+                "merkmal": "gelbe Korbblüte, durchläuft Pusteblumen-Stadium, gezackte Blätter",
+                "habitat": "Wiesen, Wegränder, überall",
+                "hinweis": "essbar, Blätter im Salat, Wurzel als Kaffee-Ersatz"
+              },
+              {
+                "pflanze": "Odermennig",
+                "lateinisch": "Agrimonia eupatoria",
+                "merkmal": "gelbe Ähren-Blüten, 5 Kronblätter pro Blüte, weich-behaarte Blätter",
+                "habitat": "Wegränder, Wiesen, lichte Wälder",
+                "hinweis": "traditionelle Heilpflanze, Tee bei Halsschmerzen — heimisch"
+              },
+              {
+                "pflanze": "Ringelblume",
+                "lateinisch": "Calendula officinalis",
+                "merkmal": "orange-gelbe Korbblüten, klebrige Blätter, runder Samen-Korb",
+                "habitat": "Gärten, eingebürgert auf Brachflächen",
+                "hinweis": "seit Mittelalter Wundheilungs-Salbe, essbare Blütenblätter"
+              },
+              {
+                "pflanze": "Spitzahorn",
+                "lateinisch": "Acer platanoides",
+                "merkmal": "5-zackiges Blatt, Flügelfrucht (Nasenzwicker), Milchsaft",
+                "habitat": "Laub- und Mischwälder, Parks",
+                "hinweis": "heimisch in Deutschland, das 5-zackige Blatt-Pattern ähnelt dem kanadischen Flaggen-Symbol"
+              },
+              {
+                "pflanze": "Brennnessel",
+                "lateinisch": "Urtica dioica",
+                "merkmal": "Brennhaare, herzförmige Blätter, kleine grüne Blüten in Trauben",
+                "habitat": "Wegränder, Brachflächen, Stickstoff-reiche Böden",
+                "hinweis": "essbar (gekocht), Heilpflanze, Indikator für nährstoffreichen Boden"
+              },
+              {
+                "pflanze": "Klee (Weißklee)",
+                "lateinisch": "Trifolium repens",
+                "merkmal": "drei eiförmige Blättchen, weiße Kugel-Blüten",
+                "habitat": "Wiesen, Rasen",
+                "hinweis": "vierblättrige Mutanten sind selten — daher das Glückssymbol"
+              },
+              {
+                "pflanze": "Stiel-Eiche",
+                "lateinisch": "Quercus robur",
+                "merkmal": "gelapptes Blatt, Eicheln mit langem Stiel, raue Borke",
+                "habitat": "Laubwälder",
+                "hinweis": "kann über 500 Jahre alt werden"
+              }
+            ]
+          },
+          {
+            "name": "🌱 Pflanzen-Bestimmungs-Quiz",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 20,
+            "minAge": 9,
+            "loudness": "ruhig",
+            "effort": "leicht",
+            "material": "8 Pflanzen-Karten (Brennnessel, Löwenzahn, Klee, Eiche, Buche, Ringelblume, Spitzwegerich, Wilde Möhre) — jede Karte mit Foto + Steckbrief verdeckt. 1 Bestimmungs-Schlüssel (A4-Tabelle: Blatt-Form, Blüten-Farbe, Lebensraum). Notiz-Blöcke, Bleistifte.",
+            "prepText": "Die Karten liegen mit verdecktem Namen aus. Hüter:innen bestimmen jede Pflanze nur über den Schlüssel — vergleichen, schlussfolgern, nicht raten. Genau so arbeiten Förster, Botaniker:innen und Kräuterkundige. Wer eine Pflanze richtig identifiziert, darf den Steckbrief vorlesen.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Bestimmen",
+                "content": "Jede Pflanze über den Schlüssel anhand der Merkmale identifizieren — Name bleibt verdeckt."
+              },
+              {
+                "n": 2,
+                "name": "Eintragen",
+                "content": "Identifizierte Pflanzen in den Notiz-Block schreiben. Ziel: 6 von 8 richtig."
+              },
+              {
+                "n": 3,
+                "name": "Steckbrief vorlesen",
+                "content": "Wer eine Pflanze richtig bestimmt, dreht die Karte und liest dem Team den Steckbrief vor."
+              }
+            ],
+            "safetyRule": "Brennnessel-Material in der Karte: nur Foto, kein echtes Brennhaar-Material. Wenn Originalpflanze gezeigt wird: Handschuhe.",
+            "ageAdjust9": "5 Karten statt 8, Schlüssel mit mehr Bildern.",
+            "ageAdjust12": "Verwechslungs-Paare (Brennnessel/Taubnessel, Wilde Möhre/Schierling-Warnung) einbauen.",
+            "indoorTip": "Karten am Esstisch auslegen, Schlüssel an der Wand.",
+            "outdoorTip": "Karten im Gras platzieren — wirkt sofort wie eine Feld-Station.",
+            "whyItWorksTitle": "Botanik als echtes Können",
+            "whyItWorks": "Pflanzen bestimmen ist Methode, nicht Glück. Die Kinder erleben, dass es eine erlernbare Fähigkeit ist — und nehmen Brennnessel/Spitzwegerich-Wissen mit nach Hause."
+          }
+        ],
+        "food": "🎂 Zauberwald-Schoko-Kuchen (1 Springform, grüne Glasur + Oreo-Krümel-Moos + Marzipan-Pilze) · 🍕 Mini-Pizzen mit frischen Kräutern (10 Stück, 1,5/Kind) · 🥤 Holunderblüten-Schorle oder Apfelschorle (2 L) · 🥒 Gemüse-Sticks „Waldgemüse\" mit Kräuterquark · 🍿 Popcorn „Wald-Snack\" (300 g)",
+        "decoration": "🌿 Echtes Grünzeug (Efeu-Ranken, Farn-Wedel aus dem Garten) als Tisch-Deko — kostenlos · 🕯️ LED-Teelichter „Glühwürmchen\" (10 Stk., ~4 €) · 🪵 Holz-Astscheiben als Untersetzer (~3 €) · 🔊 Playlist „Verlorener Zauberwald\" (Spotify: Forest Ambient, Celtic Instrumental, ohne Tinkerbell-Bezug)\n\n💡 Deko-Regel für 9–12:\nWeniger Tüll, mehr Holz, mehr echtes Grün. Keine rosa Papp-Teller mit Feen-Gesicht. Die Atmosphäre soll „alter Wald\" sein, nicht „Kinderzimmer-Rosa\".",
+        "giveaways": "🪵 Wurzel-Pakt-Holzring mit eingebrannter Rune (Hauptmitgebsel) · 📜 Wurzel-Pakt-Karte mit Pflanzennamen + Hüter-Bestätigung · 🌱 Mini-Tütchen mit Wildblumen-Samen (Ringelblume, Löwenzahn — Apotheke / Garten-Center) · 🍫 Schoko-Pilze (Lidl/DM, „Wald-Wegzehrung\") · 🌿 1 Aufkleber-Set Pflanzen-Runen\n\nIn unbleichten Kraftpapier-Tüten mit handgeschriebenem Pflanzennamen. Ca. 4 € pro Kind.",
+        "shoppingList": [
+          {
+            "emoji": "🪵",
+            "label": "Birken-Holzscheiben mit Loch (12 Stk.) — für Wurzel-Pakt-Ringe",
+            "url": "https://www.amazon.de/s?k=birken+holzscheiben+anhaenger+basteln&tag=machsleicht-21",
+            "priceEur": 8,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Wurzel-Pakt-Ring ist das Signature-Mitgebsel — pflicht in jeder Variante."
+          },
+          {
+            "emoji": "🔥",
+            "label": "Pyrographie-Stift (Brand-Stift) — einmalig",
+            "url": "https://www.amazon.de/s?k=pyrographie+stift+brennpeter+basteln&tag=machsleicht-21",
+            "priceEur": 14,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Erzeugt den authentischen Brand-Effekt auf den Ringen. Notfall-Substitut: wasserfester Edding (Pflicht-Punkt unten)."
+          },
+          {
+            "emoji": "🧵",
+            "label": "Hanf- oder Lederschnur (10 m)",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Für die Wurzel-Pakt-Armbänder — abnehmbar, locker geknotet."
+          },
+          {
+            "emoji": "🔒",
+            "label": "5-Buchstaben-Letter-Lock (Wort-Schloss)",
+            "url": "https://www.amazon.de/s?k=letter+lock+5+buchstaben+wort+schloss&tag=machsleicht-21",
+            "priceEur": 10,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Macht das FLORA-Knack-Erlebnis greifbar. Alternative: Glas mit Story-Verschluss (Erwachsene:r öffnet, wenn das Wort laut gerufen wird) — funktioniert auch."
+          },
+          {
+            "emoji": "🌱",
+            "label": "Wildblumen-Samen (Ringelblume, Löwenzahn, 8 Tütchen)",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Pflanzen-Wissen-Mitgebsel — Apotheke oder Garten-Center. Symbolische Wirkung."
+          },
+          {
+            "emoji": "📜",
+            "label": "Tonpapier braun A4 + Edding (Karten, Lizenzen)",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Codeknacker-Karten + Wurzel-Pakt-Karten."
+          },
+          {
+            "emoji": "🌿",
+            "label": "Getrocknete Pflanzen-Tees (Ringelblume, Löwenzahn, Odermennig)",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Echtes Pflanzenmaterial für die FLORA-Stationen — Apotheke. Notfall: Pflanzen-Fotos statt echtem Material."
+          },
+          {
+            "emoji": "🍕",
+            "label": "Mini-Pizza-Böden + Tomatensauce + Käse + frische Kräuter",
+            "url": null,
+            "priceEur": 10,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Hauptessen, gleichzeitig Programmpunkt (Selbst-Belegen mit Kräutern aus dem Garten)."
+          },
+          {
+            "emoji": "🥤",
+            "label": "Holunderblüten- oder Apfelschorle (2 L) + Becher",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Getränk für 7 Kinder über 2,5 Std."
+          },
+          {
+            "emoji": "🥒",
+            "label": "Gemüse-Sticks + Popcorn-Mais + Kräuterquark",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Snacks für die Pausen."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Backmischung + grüne Glasur + Oreo-Krümel + Marzipan-Pilze",
+            "url": null,
+            "priceEur": 8,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Zauberwald-Kuchen, zentraler Foto-Moment."
+          }
+        ],
+        "estimatedCostEur": 60,
+        "costContext": "Geschätzte Kosten (Minimal, 7 Kinder, inkl. Pyrographie-Stift als Einmalkauf)",
+        "savingsTip": {
+          "title": "Pyrographie-Stift einmal kaufen, lebenslang nutzen",
+          "body": "Der Brand-Stift (~14 €) ist nicht nur für diesen Geburtstag — er lässt sich für jeden weiteren Holz-Bastelmoment (Schlüsselanhänger, Türschilder, Geschenk-Anhänger) wiederverwenden. Wer ihn nicht kaufen will: wasserfester Edding macht den gleichen Effekt visuell, Story-Frame ist dann „mit Wald-Tinte eingeritzt\". Spart ~14 € und drückt die Variante unter 50 €."
+        }
+      },
+      {
+        "id": "standard",
+        "label": "Standard — 3,5 Stunden, vollwertige Zauberwald-Quest",
+        "headline": "🎯 Standard — 3,5 Stunden, die volle Quest",
+        "intro": "Die volle Quest: jedes Kind schwört den Wurzel-Pakt, durchläuft die 5 FLORA-Stationen in eigenständig gewählter Reihenfolge (kein Stau), löst eine UV-Lampen-Quest mit unsichtbarer Pflanzensaft-Tinte (Pflanzen-Geheimnis), bestimmt heimische Pflanzen am Bestimmungsschlüssel, knackt das Wort-Schloss und vermisst gemeinsam den Lichtweg zum Zauberwald-Zentrum. Mit 8 Kindern reicht 1 Helfer:in, mit guter Vorbereitung geht es solo.",
+        "timeWindow": "14:00–17:30, 8 Kinder",
+        "schedule": [
+          {
+            "time": "14:00",
+            "title": "🌿 Eintreffen & Wurzel-Pakt-Zeremonie",
+            "description": "Pflanzennamen-Zettel + Holzring aus der Schale ziehen. Pakt-Spruch + Schwur-Antwort. Lederschnur ans Armband (locker). Brief der Wald-Hüterin wird vorgelesen: kurze, ernsthafte Mission („Der Zauberwald ist verloren — nur Hüter mit Pflanzen-Wissen können ihn wieder finden\"). 20 Min."
+          },
+          {
+            "time": "14:25",
+            "title": "🔓 FLORA-Stations-Phase (5 Stationen, freie Reihenfolge)",
+            "description": "Die 5 Pflanzen-Stationen sind im Haus / Garten verteilt. Jedes Team (oder Hüter-Paar) wählt selbst die Reihenfolge. Lösungs-Karten an jeder Station zur Selbstkontrolle. 55 Min."
+          },
+          {
+            "time": "15:25",
+            "title": "🔦 UV-Lampen-Quest: Das Pflanzen-Geheimnis",
+            "description": "Mit Pflanzensaft (Kurkuma in Wasser + Zitronensaft + Backpulver — UV-aktiv) wurden vorab versteckte Botschaften auf Pergament geschrieben. Unter der UV-Lampe leuchten sie auf. 5 Hinweise führen zur Position des Lichtweg-Codes. 25 Min."
+          },
+          {
+            "time": "15:55",
+            "title": "🍕 Pizza-Belege-Pause",
+            "description": "Mini-Pizza-Böden + frische Kräuter (Basilikum, Oregano, Rosmarin) aus dem Garten. Jedes Kind belegt 2 Pizzen. 10 Min belegen + 12 Min Backen + 8 Min Essen = 30 Min. In der Backzeit: Schorle + Kräuterquark + Gemüse."
+          },
+          {
+            "time": "16:25",
+            "title": "🎂 Zauberwald-Kuchen",
+            "description": "Schokoladenkuchen mit grüner Glasur, essbarem Moos, Marzipan-Pilzen, einer Wunderkerze in der Mitte als „Lichtweg-Spitze\". 20 Min."
+          },
+          {
+            "time": "16:45",
+            "title": "⚔️ Großes Team-Spiel: Den Lichtweg vermessen",
+            "description": "Die FLORA-Lösung + die UV-Hinweise + das Pflanzen-Bestimmungs-Quiz-Ergebnis ergeben zusammen den Lichtweg. Alle Hüter zusammen vermessen ihn auf der A3-Zauberwald-Karte und finden das Wurzel-Pakt-Schloss. Wort-Schloss öffnen. 25 Min."
+          },
+          {
+            "time": "17:10",
+            "title": "🏅 Hüter-Bestätigung & Lizenz-Übergabe",
+            "description": "Zweite Rune auf jeden Holzring. Jede:r Hüter:in wird einzeln aufgerufen, bekommt die Wurzel-Pakt-Karte mit „Sorgfalt-Stempel\" für besonders genaue Beobachtungen. 15 Min."
+          },
+          {
+            "time": "17:25",
+            "title": "🎁 Mitgebsel & Abholung",
+            "description": "Kraftpapier-Tüten mit Pflanzennamen verteilen. Inhalt: Holzring (am Armband), Wurzel-Pakt-Karte, Wildblumen-Samen, Schoko-Pilze, Pflanzen-Runen-Aufkleber. Eltern-Abholung am Tor. 5 Min."
+          }
+        ],
+        "games": [
+          {
+            "name": "🔓 Codeknacker FLORA: Die fünf Hüter-Pflanzen (5 Stationen)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 55,
+            "minAge": 9,
+            "loudness": "konzentriert",
+            "effort": "mittel",
+            "material": "5 Pflanzen-Stations-Karten (analog Minimal, aber mit zusätzlichen Detail-Fragen). Echtes Pflanzenmaterial pro Station: getrocknete Ringelblumen, Löwenzahn-Tee, Farn-Wedel, Ahorn-Blatt, Odermennig-Tee (Apotheke, gesamt ~5 €). Lösungs-Formular pro Hüter-Paar. 1 Wort-Schloss (5 Buchstaben), 1 Schatzkasten (Schuhkarton mit grünem Filz beklebt, Wurzel-Symbol drauf). Druckvorlagen: kannst du vom Beispiel 1:1 abmalen.",
+            "prepText": "Setup am Vortag (30 Min): 5 Quadrant-Karten an verschiedene Tische / Wände stellen. Pro Station eine Lösungs-Karte ZUR SELBSTKONTROLLE unter einem Notiz-Klipp — das Hüter-Paar darf erst aufdecken, wenn sie ihre Antwort eingetragen haben. Wort-Schloss auf FLORA voreingestellt prüfen (zuerst auf andere Buchstaben drehen, dann beim Test wieder auf FLORA). Schatzkasten mit Wurzel-Pakt-Karten + Sorgfalt-Stempel füllen.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Station 1 — Farn-Quadrant: Buchstabe F",
+                "content": "5 Pflanzen-Skizzen: Adlerfarn, Tulpe, Rose, Brennnessel, Klee. Aufgabe: „Welche Pflanze hat keine Blüten und vermehrt sich über Sporen?\" Lösung: Adlerfarn → F."
+              },
+              {
+                "n": 2,
+                "name": "Station 2 — Löwenzahn-Quadrant: Buchstabe L",
+                "content": "5 Lebensstadien gemischt + 5 Pflanzen-Optionen. Aufgabe: „Welche Pflanze durchläuft: Blattrosette → Knospe → gelbe Blüte → Pusteblume → Samen?\" Lösung: Löwenzahn → L."
+              },
+              {
+                "n": 3,
+                "name": "Station 3 — Odermennig-Quadrant: Buchstabe O",
+                "content": "5 Heilpflanzen-Karten mit Wirkungen. Aufgabe: „Welche heimische Heilpflanze hat gelbe Ähren-Blüten und wurde traditionell als Tee bei Halsschmerzen verwendet?\" Lösung: Odermennig → O."
+              },
+              {
+                "n": 4,
+                "name": "Station 4 — Ringelblume-Quadrant: Buchstabe R",
+                "content": "5 Korbblütler-Skizzen (Ringelblume, Sonnenblume, Margerite, Kamille, Löwenzahn). Aufgabe: „Welche Pflanze hat orange-gelbe Blüten und wird seit dem Mittelalter als Wundheilungs-Salbe verwendet?\" Lösung: Ringelblume → R."
+              },
+              {
+                "n": 5,
+                "name": "Station 5 — Ahorn-Quadrant: Buchstabe A",
+                "content": "5 Baumblatt-Skizzen (Ahorn, Eiche, Buche, Linde, Birke). Aufgabe: „Welcher heimische Baum hat ein 5-zackiges Blatt, das dem kanadischen Flaggen-Symbol ähnelt?\" Lösung: Spitzahorn → A."
+              },
+              {
+                "n": 6,
+                "name": "Selbst-Check & Zusammenführen",
+                "content": "Alle 5 Buchstaben ins Formular: F-L-O-R-A. Echtes deutsches Wort? Ja → Quest geknackt. Buchstabensalat → Station selbst nachprüfen, nicht raten."
+              },
+              {
+                "n": 7,
+                "name": "Wort-Schloss öffnen",
+                "content": "Letter-Lock auf F-L-O-R-A drehen → Schatzkasten öffnet sich. Inhalt: Wurzel-Pakt-Karten, Sorgfalt-Stempel, Lichtweg-A3-Karte für das große Team-Spiel."
+              }
+            ],
+            "codeLogic": "Lösungswort: FLORA — fünf unterschiedliche Buchstaben (F, L, O, R, A) ohne Doppler.\nStation 1 (Adlerfarn → Sporen-Frage) → F\nStation 2 (Löwenzahn → Lebenszyklus-Frage) → L\nStation 3 (Odermennig → Heilpflanzen-Frage gelbe Ähren) → O\nStation 4 (Ringelblume → Wundheilungs-Korbblütlerin-Frage) → R\nStation 5 (Spitzahorn → 5-zackiges-Blatt-Frage) → A\nMath-Check: 5 Stationen × 1 Buchstabe = 5 Buchstaben. Jeder Buchstabe einzigartig (kein F-F, kein L-L, etc.). 5-Stellen-Wort-Schloss exakt befüllt. Bei doppeltem Tipp: war an einer Station eine falsche Pflanze-Antwort gekreuzt — Selbstkontrolle greift sofort.",
+            "safetyRule": "Pflanzenmaterial: nur echte unbedenkliche heimische Pflanzen (Farn-Wedel aus dem Garten, Löwenzahn-Tee, Ringelblumen-Tee, Odermennig-Tee aus der Apotheke, Spitzahorn-Blatt aus dem Park). Kein Material aus dem Wald, das nicht eindeutig identifiziert ist. EXPLIZIT NICHT: Maiglöckchen, Tollkirsche, Eibe, Riesenbärenklau. Kinder essen oder kosten NICHT vom Material — das ist Sorgfalt-Übung, nicht Picknick.",
+            "ageAdjust9": "Pro Station 3 Antwort-Optionen statt 5, Pflanzen-Fotos zusätzlich zu Skizzen.",
+            "ageAdjust12": "Lateinische Pflanzennamen einbauen, Trick-Frage bei Station 4 (Sonnenblume gehört auch zu Korbblütlern, aber „seit Mittelalter\" und „Wundheilungs-Salbe\" sind die Schlüsselworte).",
+            "indoorTip": "Die 5 Quadranten in verschiedene Räume / an verschiedene Wände — verhindert Stau und gibt das Gefühl, „durch den Wald zu wandern\".",
+            "outdoorTip": "Im Garten entlang eines Rundweges verteilen, an der Farn-Station echte Farn-Wedel, an der Ahorn-Station echtes Ahorn-Blatt von einem nahen Baum.",
+            "whyItWorksTitle": "Pflanzen-Wissen wird echtes Können",
+            "whyItWorks": "Die FLORA-Chiffre belohnt sorgfältiges Lesen + Pflanzen-Identifikation. Kein Tempo-Druck, sondern Sorgfalt. Die Kinder nehmen echtes Botanik-Wissen mit (Odermennig, Ringelblume, Adlerfarn) — das wirkt 6 Wochen später bei einem Waldspaziergang als „kannte ich von der Quest\"."
+          },
+          {
+            "name": "🔦 UV-Lampen-Quest: Das Pflanzen-Geheimnis",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 25,
+            "minAge": 9,
+            "loudness": "halblaut",
+            "effort": "mittel",
+            "material": "1 UV-Taschenlampe (LED, ~10 €), 5 Pergament-Karten mit unsichtbarer Pflanzensaft-Tinte vorbeschriftet (Kurkuma in Wasser + ein Tropfen Zitronensaft → UV-aktiv; alternativ Tonic Water mit Zitrone), 5 Verstecke im Raum / Garten (unter Topfpflanze, hinter Buch, etc.).",
+            "prepText": "Am Vortag: Tinte herstellen (1 EL Kurkuma in 100 ml Wasser, mit Pinsel auf Pergament schreiben — beim Trocknen verschwindet die Schrift fast vollständig, unter UV leuchtet sie gelb-orange auf). 5 Hinweise schreiben, die zusammen die Position des Lichtweg-Codes ergeben („Suche unter dem Farn-Wedel\", „Hinter dem Buch mit dem Eichenblatt\", etc.). Karten verstecken. Bei der Quest reicht 1 UV-Lampe — die Hüter:innen wandern als Gruppe, jede:r darf einmal leuchten.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "UV-Lampe einführen",
+                "content": "Du erklärst kurz: „Mit dem Saft heimischer Pflanzen kann man unsichtbar schreiben — nur unter UV-Licht wird es sichtbar. Das war im Zauberwald die geheime Botschaftssprache.\""
+              },
+              {
+                "n": 2,
+                "name": "5 Hinweise finden",
+                "content": "Die 5 Pergament-Karten sind im Raum versteckt. Jede:r Hüter:in darf einmal die UV-Lampe übernehmen und einen Hinweis lesen."
+              },
+              {
+                "n": 3,
+                "name": "Hinweise zusammenfügen",
+                "content": "Die 5 Hinweise ergeben zusammen den Lichtweg-Code auf der A3-Karte (z.B. „Lichtweg führt von Farn nach Löwenzahn, über Odermennig zur Ringelblume und endet beim Ahorn\"). Damit ist die Reihenfolge der FLORA-Stationen als „Pfad durch den Wald\" bestätigt."
+              }
+            ],
+            "safetyRule": "UV-Lampe: nicht direkt in die Augen leuchten. UV-Strahlung ist niedrig dosiert bei LED-Lampen, aber das Auge ist empfindlich — Regel vor der Quest klar ansagen. Bei längerer Quest: Pausen einlegen, kein Dauer-UV-Licht auf einer Stelle der Haut.",
+            "ageAdjust9": "Hinweise mit einfacheren Symbolen + Bilder, 3 statt 5 Karten.",
+            "ageAdjust12": "Kurzschrift / Code in den Hinweisen einbauen (z.B. „Pflanze Nr. 3 vor Pflanze Nr. 1\" — sie müssen die FLORA-Reihenfolge selbst durchnummerieren).",
+            "indoorTip": "Verstecke in dunklen Ecken (unter Sofa, hinter Bücherregal) — UV-Licht wirkt dort am stärksten.",
+            "outdoorTip": "Bei Tageslicht funktioniert UV schwerer — entweder in der Dämmerung (Sommer ab ~21:30, Winter ab ~17:30 — DAUER BEACHTEN: Quest muss vor Dunkelheit beendet sein wenn Outdoor!) oder in einem schattigen Schuppen / verdunkelten Raum.",
+            "whyItWorksTitle": "Echte Chemie, echte Magie",
+            "whyItWorks": "Kurkuma + Zitronensaft + UV-Lampe ist echte Chemie, kein Trick. Die Kinder sehen, dass „Pflanzen-Geheimnisse\" auf wissenschaftlicher Realität beruhen — das hebt die Quest aus dem „Kinderkram\"-Niveau."
+          },
+          {
+            "name": "⚔️ Den Lichtweg vermessen (großes Team-Spiel)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 25,
+            "minAge": 9,
+            "loudness": "halblaut",
+            "effort": "mittel",
+            "material": "1 A3-Zauberwald-Karte (selbst gezeichnet oder ausgedruckt: 5 Pflanzen-Symbole als Stationen, ein Lichtweg zwischen ihnen, in der Mitte ein verstecktes „Wurzel-Zentrum\"). Filzstifte oder Marker.",
+            "prepText": "Die A3-Karte zeigt nur Pflanzen-Symbole + ein offenes Wegenetz. Erst wenn alle FLORA-Buchstaben + UV-Hinweise zusammen sind, kann das Team den richtigen Lichtweg einzeichnen. Du moderierst, lässt sie aber selbst denken.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Karte ausbreiten",
+                "content": "Die A3-Karte liegt in der Mitte des Tisches. Alle Hüter um sie herum."
+              },
+              {
+                "n": 2,
+                "name": "FLORA-Reihenfolge übertragen",
+                "content": "Die Buchstaben F-L-O-R-A werden als Reihenfolge der Pflanzen-Stationen auf der Karte eingezeichnet — Farn → Löwenzahn → Odermennig → Ringelblume → Ahorn."
+              },
+              {
+                "n": 3,
+                "name": "UV-Hinweise einbauen",
+                "content": "Die UV-Hinweise haben Detail-Infos geliefert (z.B. „Lichtweg führt im Bogen, nicht gerade\"). Diese werden in den Wegverlauf integriert."
+              },
+              {
+                "n": 4,
+                "name": "Wurzel-Zentrum finden",
+                "content": "Der eingezeichnete Lichtweg führt zwangsläufig zu einem Punkt auf der Karte. Dort liegt das Wurzel-Zentrum, das mit einem Wurzel-Symbol markiert wird. Schlussfolgerung: „Wir haben den Zauberwald wiedergefunden.\""
+              }
+            ],
+            "safetyRule": null,
+            "ageAdjust9": "Karte hat schon hellgrau vorgezeichnete Pfade — die Hüter müssen nur den richtigen markieren.",
+            "ageAdjust12": "Karte ist komplett leer — alle Wege müssen selbst gezogen werden, mit Bonus-Aufgabe „berechne die Länge des Lichtwegs in cm\" (Lineal-Übung).",
+            "indoorTip": "Großer Tisch oder Boden — alle 8 Hüter müssen herumstehen können.",
+            "outdoorTip": "Karte auf einer Decke im Garten — wirkt wie eine echte Feld-Karte.",
+            "whyItWorksTitle": "Synthese-Moment",
+            "whyItWorks": "Alle bisherigen Stations-Ergebnisse fließen hier zusammen — kein:e Hüter:in kann allein zur Lösung kommen. Das ist Story und Mechanik in einem: „Im Zauberwald braucht es alle Hüter:innen.\""
+          }
+        ],
+        "food": "🎂 Zauberwald-Kuchen (1 Springform) · 🍕 Mini-Pizzen mit frischen Kräutern (16 Stück, 2/Kind) · 🥤 Holunderblüten- + Apfelschorle (3 L) · 🥒 Gemüse-Sticks + Kräuterquark · 🍿 Popcorn (400 g) · 🍓 Beeren-Schale (Erdbeeren, Heidelbeeren) · 🍫 Schoko-Pilze (Mitgebsel)",
+        "decoration": "🌿 Efeu-Ranken + Farn-Wedel + echte Astscheiben — kostenlos · 🕯️ LED-Teelichter „Glühwürmchen\" (15 Stk., ~6 €) · 🔦 UV-Lampe (multifunktional Deko + Spiel) · 🪧 „Verlorener Zauberwald\"-Schild aus Pappe + Edding · 🔊 Spotify-Playlist „Forest Ambient / Celtic Instrumental\" — kostenlos · 🌲 1–2 Topfpflanzen (Farn, Efeu) als Wald-Eingang",
+        "giveaways": "🪵 Wurzel-Pakt-Holzring (Hauptmitgebsel, mit 2 Runen) · 📜 Wurzel-Pakt-Karte (handgeschrieben mit Pflanzennamen, Sorgfalt-Stempel) · 🌱 Wildblumen-Samen (Ringelblume + Löwenzahn) · 🌿 Pflanzen-Runen-Aufkleber (5 Stk.) · 🍫 Schoko-Pilze („Wald-Wegzehrung\")\n\nIn Kraftpapier-Tüten mit handgeschriebenem Pflanzennamen + Wurzel-Symbol. ~5 € pro Kind.",
+        "shoppingList": [
+          {
+            "emoji": "🪵",
+            "label": "Birken-Holzscheiben mit Loch (12 Stk.)",
+            "url": "https://www.amazon.de/s?k=birken+holzscheiben+anhaenger+basteln&tag=machsleicht-21",
+            "priceEur": 8,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Konsistent zu Minimal — Wurzel-Pakt-Ring ist Signature."
+          },
+          {
+            "emoji": "🔥",
+            "label": "Pyrographie-Stift",
+            "url": "https://www.amazon.de/s?k=pyrographie+stift+brennpeter+basteln&tag=machsleicht-21",
+            "priceEur": 14,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Brand-Effekt auf Ringen, Edding als Substitut."
+          },
+          {
+            "emoji": "🧵",
+            "label": "Hanf- oder Lederschnur (10 m)",
+            "url": null,
+            "priceEur": 3,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Konsistent — Wurzel-Pakt-Armbänder."
+          },
+          {
+            "emoji": "🔒",
+            "label": "5-Buchstaben-Letter-Lock",
+            "url": "https://www.amazon.de/s?k=letter+lock+5+buchstaben+wort+schloss&tag=machsleicht-21",
+            "priceEur": 10,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Standard — knackbares Schloss als Quest-Höhepunkt."
+          },
+          {
+            "emoji": "🔦",
+            "label": "UV-Taschenlampe (LED)",
+            "url": "https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht-21",
+            "priceEur": 10,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für UV-Lampen-Quest in Standard."
+          },
+          {
+            "emoji": "🌶️",
+            "label": "Kurkuma + Pergament-Papier (UV-Tinte)",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "UV-aktive Pflanzensaft-Tinte für Pergament-Hinweise."
+          },
+          {
+            "emoji": "🌿",
+            "label": "Getrocknete Pflanzen-Tees (Ringelblume, Odermennig, Löwenzahn)",
+            "url": null,
+            "priceEur": 6,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Echtes Pflanzenmaterial für Stationen, Apotheke."
+          },
+          {
+            "emoji": "🌱",
+            "label": "Wildblumen-Samen (Ringelblume, Löwenzahn) — 10 Tütchen",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Pflanzen-Wissen-Mitgebsel."
+          },
+          {
+            "emoji": "📜",
+            "label": "Tonpapier + Pergament + Edding",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Codeknacker-Karten + UV-Pergamente + Wurzel-Pakt-Karten."
+          },
+          {
+            "emoji": "🕯️",
+            "label": "LED-Teelichter „Glühwürmchen\" (15 Stk.)",
+            "url": "https://www.amazon.de/s?k=led+teelichter+glühwürmchen+kinder&tag=machsleicht-21",
+            "priceEur": 6,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Atmosphäre — verstärkt Wald-Gefühl, aber verzichtbar."
+          },
+          {
+            "emoji": "🍕",
+            "label": "Mini-Pizza-Böden + Tomatensauce + Käse + frische Kräuter",
+            "url": null,
+            "priceEur": 13,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Hauptessen, Selbst-Belegen mit Kräutern."
+          },
+          {
+            "emoji": "🥤",
+            "label": "Holunderblüten- + Apfelschorle (3 L) + Becher",
+            "url": null,
+            "priceEur": 5,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Getränk für 8 Kinder über 3,5 Std."
+          },
+          {
+            "emoji": "🥒",
+            "label": "Gemüse-Sticks + Kräuterquark + Popcorn + Beeren",
+            "url": null,
+            "priceEur": 8,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Snacks für 3,5h-Programm."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Backmischung + grüne Glasur + Oreo-Krümel + Marzipan-Pilze + Wunderkerze",
+            "url": null,
+            "priceEur": 10,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Zauberwald-Kuchen, zentraler Foto-Moment."
+          }
+        ],
+        "estimatedCostEur": 95,
+        "costContext": "Geschätzte Kosten (Standard, 8 Kinder, inkl. Letter-Lock + UV-Lampe + Pyrographie-Stift)",
+        "savingsTip": {
+          "title": "Mehrfach-Nutzbares ausschöpfen",
+          "body": "Letter-Lock (~10 €), UV-Lampe (~10 €) und Pyrographie-Stift (~14 €) sind alle wiederverwendbar — für jeden weiteren Geburtstag, jede Schnitzeljagd, jeden Bastel-Nachmittag. Wenn du diese drei Items einmal hast, fällt die Standard-Variante künftig auf ~65 €."
+        }
+      },
+      {
+        "id": "wow",
+        "label": "Wow — 4 Stunden, die volle Outdoor-Expedition",
+        "headline": "✨ Wow — 4 Stunden, GPS-Outdoor-Quest und Survival-Initiation",
+        "intro": "Die Hüter:innen werden zu einer echten Wald-Expedition geschickt: GPS-Koordinaten auf dem Handy, fünf FLORA-Stationen draußen im Park oder Garten, eine UV-Pflanzensaft-Quest in der Dämmerung (Sommer ab ~21:30 / Winter ab ~17:30 — Quest VOR Dunkelheit beenden!), Survival-Knoten lernen für das Wurzel-Pakt-Armband, und am Ende eine Wurzel-Pakt-Zeremonie mit Lichterkette und Naturmusik. Kein Verkindischen — eine ernstgemeinte Initiation in das Hüter-Wissen.",
+        "timeWindow": "14:00–18:00, 10 Kinder",
+        "schedule": [
+          {
+            "time": "14:00",
+            "title": "🌿 Eintreffen & Brief der Wald-Hüterin",
+            "description": "Pflanzennamen-Zettel + Holzring ziehen. Du liest den Brief der Wald-Hüterin vor: kurze, ernsthafte Mission. „Der Zauberwald ist verloren — nur eine Expedition aus zehn Hütern kann ihn zurückbringen. Eure Ausrüstung: GPS, UV-Lampe, eure Pflanzen-Wissen. Eure Aufgabe: die FLORA-Chiffre lösen und den Wurzel-Pakt am Lichtweg-Zentrum schließen.\" 20 Min."
+          },
+          {
+            "time": "14:25",
+            "title": "🧵 Survival-Workshop: Knoten lernen für das Wurzel-Pakt-Armband",
+            "description": "Du zeigst drei einfache, sichere Knoten am Hanf-Armband: Achterknoten, Mastwurf, Schmuckknoten. Jede:r Hüter:in knüpft das eigene Armband — locker, abnehmbar, KEIN Knoten am Handgelenk-Druckpunkt. 25 Min."
+          },
+          {
+            "time": "14:55",
+            "title": "🗺️ GPS-Outdoor-Quest startet (5 FLORA-Stationen draußen)",
+            "description": "Jedes Team bekommt eine Handy-GPS-Koordinatenliste (5 Punkte im Park / Garten). An jeder Position eine echte FLORA-Station (Farn, Löwenzahn, Odermennig, Ringelblume, Ahorn). Stationen freie Reihenfolge — Hüter wählen die Route. 70 Min."
+          },
+          {
+            "time": "16:05",
+            "title": "🍕 Pizza-Belege-Pause + Holunder-Schorle",
+            "description": "Zurück im Hauptlager (Garten / Wohnung). Mini-Pizza-Böden + frische Kräuter selbst belegen. Backzeit nutzen für Pause + Schorle + Beeren. 30 Min."
+          },
+          {
+            "time": "16:35",
+            "title": "🔦 UV-Pflanzensaft-Quest in der Schummerung",
+            "description": "Mit UV-Lampe und Pergament-Karten 5 versteckte Pflanzen-Geheimnisse im Garten / Haus finden. WICHTIG: Outdoor nur in der Schummerung, nicht in der Dunkelheit — Sommer-Quest bis spätestens 19:30 beenden, Winter-Quest bis spätestens 17:00. Im Zweifel Quest ins Haus verlagern. 30 Min."
+          },
+          {
+            "time": "17:05",
+            "title": "🎂 Zauberwald-Kuchen + Lichtweg-Synthese",
+            "description": "Schokoladenkuchen mit grüner Glasur, essbarem Moos, Marzipan-Pilzen, einer Wunderkerze. Während des Kuchens vermessen die Hüter den Lichtweg auf der großen A3-Karte. 30 Min."
+          },
+          {
+            "time": "17:35",
+            "title": "🏅 Wurzel-Pakt-Schluss-Zeremonie (am Lichterketten-Lichtweg)",
+            "description": "Im Garten / Wohnzimmer wird ein „Lichtweg\" aus LED-Lichterketten gelegt. Jede:r Hüter:in geht ihn einzeln entlang, bekommt am Ende die zweite Rune auf den Holzring + Wurzel-Pakt-Karte mit Sorgfalt-Stempel. Foto-Moment, Naturmusik leise. 20 Min."
+          },
+          {
+            "time": "17:55",
+            "title": "🎁 Mitgebsel & Abholung",
+            "description": "Tüten verteilen: Holzring (am Armband), Wurzel-Pakt-Karte, Wildblumen-Samen, Pflanzen-Runen-Aufkleber-Set, Schoko-Pilze, optional: Mini-Kompass als „Hüter-Werkzeug\". 5 Min."
+          }
+        ],
+        "games": [
+          {
+            "name": "🗺️ GPS-Outdoor-Quest: Die FLORA-Stationen draußen",
+            "indoor": false,
+            "outdoor": true,
+            "duration": 70,
+            "minAge": 10,
+            "loudness": "halblaut",
+            "effort": "hoch",
+            "material": "2 Smartphones (Eltern-Handy oder altes Tablet mit GPS), GPS-Koordinaten-Liste (selbst erstellt mit Google Maps — 5 Punkte im Garten oder Park, jeder maximal 200 m vom Hauptlager entfernt). 5 Stations-Setups: an jedem GPS-Punkt eine wetterfeste Pflanzen-Karte (laminiert oder in Klarsichthülle), echtes Pflanzenmaterial in einer kleinen Schale (festgemacht gegen Wegtragen), Lösungs-Karte zur Selbstkontrolle versteckt unter dem Material. Wetterfeste Stifte (Lumocolor permanent). Wenn kein Park: Stationen rein in den Garten verteilen, GPS-Genauigkeit reicht ~3 m.",
+            "prepText": "Setup am Vortag (60 Min): GPS-Koordinaten der 5 Stationen ermitteln (Google Maps lange auf Punkt drücken → Koordinaten kopieren). Stations-Karten laminieren oder in Klarsichthülle stecken. Wettervorhersage prüfen — bei Dauerregen Plan B (Stationen ins Haus). Eltern-Handys mit GPS-Berechtigung der „Karten\"-App vorab klären. Jedes Team bekommt seine eigene Koordinaten-Liste (Reihenfolge variieren, damit keine Staus entstehen).",
+            "steps": [
+              {
+                "n": 1,
+                "name": "GPS-Briefing",
+                "content": "Du erklärst kurz, wie GPS-Koordinaten auf dem Handy gefunden werden (Karten-App öffnen, Koordinaten eingeben, Pfeil folgen). 5 Min Übung am ersten Punkt im Garten."
+              },
+              {
+                "n": 2,
+                "name": "Station 1 — Farn (F)",
+                "content": "GPS-Punkt am Adlerfarn (echtes Material oder Karte mit Foto). Sporen-Frage lösen → Buchstabe F."
+              },
+              {
+                "n": 3,
+                "name": "Station 2 — Löwenzahn (L)",
+                "content": "GPS-Punkt am Löwenzahn-Spot. Lebenszyklus-Frage → Buchstabe L."
+              },
+              {
+                "n": 4,
+                "name": "Station 3 — Odermennig (O)",
+                "content": "GPS-Punkt mit Odermennig-Tee + Heilpflanzen-Karte. Frage zu gelben Ähren → Buchstabe O."
+              },
+              {
+                "n": 5,
+                "name": "Station 4 — Ringelblume (R)",
+                "content": "GPS-Punkt mit Ringelblumen-Material. Wundheilungs-Frage → Buchstabe R."
+              },
+              {
+                "n": 6,
+                "name": "Station 5 — Ahorn (A)",
+                "content": "GPS-Punkt am Ahorn-Baum oder mit Ahorn-Blatt-Karte. 5-zackiges-Blatt-Frage → Buchstabe A."
+              },
+              {
+                "n": 7,
+                "name": "Selbst-Check & Synthese",
+                "content": "Zurück im Lager: alle 5 Buchstaben ins Formular = F-L-O-R-A. Selbst-Check: echtes Wort? Ja → Quest weitergeführt zur UV-Phase. Buchstabensalat → eine Station selbst nachprüfen."
+              }
+            ],
+            "codeLogic": "Lösungswort: FLORA — fünf unterschiedliche Buchstaben.\nStation 1 (Adlerfarn) → F\nStation 2 (Löwenzahn) → L\nStation 3 (Odermennig) → O\nStation 4 (Ringelblume) → R\nStation 5 (Spitzahorn) → A\nMath-Check: 5 GPS-Stationen × 1 Buchstabe = 5 Buchstaben, alle unique. Bei doppeltem Buchstaben im Ergebnis: eine Pflanzen-Antwort war falsch — Selbstkontrolle eingebaut.",
+            "safetyRule": "Outdoor-Sicherheit: Hüter:innen bewegen sich in Teams (mindestens 3), niemand allein. Jedes Team hat 1 Handy mit Notruf-Funktion. Aufsichtsperson (du + 1 Helfer:in) bleibt zentral, Reichweite max. 200 m. Bei Park: vorher mit Eltern abklären, dass Quest im öffentlichen Park stattfindet — Erlaubnis pro Kind erfragen. Knoten- und Hanf-Armband-Sicherheit: NIE eng am Handgelenk, immer abnehmbar.",
+            "ageAdjust9": "Nur 3 Stationen, alle im Garten in Sichtweite, kein echter Park.",
+            "ageAdjust12": "5 Stationen mit Koordinaten-Mathematik-Bonus („berechne die Reihenfolge nach kürzestem Weg\" — Routenplanung-Übung).",
+            "indoorTip": "Bei Dauerregen: Stationen im Haus verteilen, GPS durch Karten-Hinweise ersetzen.",
+            "outdoorTip": "Park-Setup ist ideal — die Bewegung zwischen den Stationen ist Teil der Quest-Erfahrung. Vorab Park-Bereich abschreiten und sichere Wege markieren.",
+            "whyItWorksTitle": "Bewegung + Wissen + Verantwortung",
+            "whyItWorks": "GPS-Navigation ist 2026 eine echte Lebens-Skill. Kombiniert mit Pflanzen-Bestimmung wird die Quest zur Mini-Expedition. Die Hüter:innen erleben sich als kompetent, nicht als bespaßt."
+          },
+          {
+            "name": "🧵 Survival-Workshop: Knoten für das Wurzel-Pakt-Armband",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 25,
+            "minAge": 9,
+            "loudness": "ruhig",
+            "effort": "mittel",
+            "material": "Hanf- oder Lederschnur pro Kind (60 cm), 1 ausgedruckte Knoten-Anleitung (Achterknoten, Mastwurf, Schmuckknoten — Bilder Schritt-für-Schritt), kleine Holzperlen (optional, ~3 €).",
+            "prepText": "Du übst die drei Knoten einmal vorher selbst. Beim Workshop zeigst du sie kurz vor und lässt die Kinder einzeln am eigenen Armband nachmachen. Wichtig: Armband sitzt LOCKER — der Knoten ist nur dekorativ, das Armband muss über die Hand abziehbar sein. KEIN Knoten direkt am Handgelenks-Druckpunkt. KEINE Schnüre an Hälsen.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Achterknoten lernen",
+                "content": "Klassischer Achterknoten als Anfangs-Knoten. Sicher, leicht zu öffnen."
+              },
+              {
+                "n": 2,
+                "name": "Schmuckknoten anbringen",
+                "content": "Zwischen den Knoten kleine Holzperle einfädeln (optional)."
+              },
+              {
+                "n": 3,
+                "name": "Armband schließen",
+                "content": "Verschluss mit Mastwurf — locker um das Handgelenk, Knoten so groß, dass das Armband über die Hand passt."
+              },
+              {
+                "n": 4,
+                "name": "Sicherheits-Check",
+                "content": "Du prüfst jedes Armband: sitzt es locker? Lässt es sich abziehen? Ist kein Knoten am Druckpunkt? — Erst dann wird der Holzring eingefädelt."
+              }
+            ],
+            "safetyRule": "PFLICHT: Armband sitzt locker und ist abnehmbar. Niemals eng knoten, niemals Schnur an Hals oder Gelenk verknoten. Bei jüngeren Hütern (9 Jahre): du knotest mit, prüfst persönlich. Knoten-Material ist Hanf oder Leder — keine dünnen Nylon-Schnüre (können einschneiden).",
+            "ageAdjust9": "Nur ein einfacher Achterknoten + Verschluss-Schlaufe; du knotest mit.",
+            "ageAdjust12": "Drei verschiedene Knoten, Bonus: Eigenes Muster mit Holzperlen entwerfen.",
+            "indoorTip": "Tisch mit guter Beleuchtung, Knoten-Anleitung sichtbar.",
+            "outdoorTip": "Auf einer Decke im Garten — passt zur Survival-Story.",
+            "whyItWorksTitle": "Praktische Fertigkeit als Mitgebsel",
+            "whyItWorks": "Knoten zu können ist eine konkrete Fertigkeit, die Kinder dieser Altersgruppe schätzen. Sie nehmen nicht nur das Armband mit, sondern das Wissen, wie es geknüpft wurde — und können das Armband bei Verlust selbst nachbauen."
+          },
+          {
+            "name": "🔦 UV-Pflanzensaft-Quest in der Schummerung",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 30,
+            "minAge": 10,
+            "loudness": "halblaut",
+            "effort": "mittel",
+            "material": "1–2 UV-Taschenlampen (LED, ~10 € pro Stück), 5–7 Pergament-Karten mit Kurkuma-UV-Tinte vorbeschriftet, 5–7 Verstecke (im Garten unter Steinen, hinter Baum, unter Topfpflanze).",
+            "prepText": "Am Vortag: Tinte aus Kurkuma + Wasser herstellen, Hinweise schreiben, trocknen lassen. Verstecke am Tag X. WICHTIG: Quest in der Schummerung, NICHT in der Dunkelheit. Sommer: dunkel ab ~21:30 — Quest muss bis 19:30 beendet sein. Winter: dunkel ab ~17:30 — Wow-Variante im Winter eher 13:00–17:00 planen oder Quest komplett ins Haus. Du behältst die Uhr im Blick und brichst rechtzeitig ab.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "UV-Lampe einführen & Sicherheits-Regel",
+                "content": "Du zeigst kurz, wie die Lampe funktioniert. Regel: nicht in die Augen leuchten, max. 10 Sek auf eine Hautstelle."
+              },
+              {
+                "n": 2,
+                "name": "Hinweise finden (in Teams)",
+                "content": "5–7 Pergament-Karten im Garten / Raum versteckt. Hüter-Teams wandern, leuchten an verdächtigen Stellen, lesen die unsichtbaren Hinweise."
+              },
+              {
+                "n": 3,
+                "name": "Hinweise zusammenfügen",
+                "content": "Die Hinweise ergeben den Lichtweg-Verlauf (z.B. „Vom Farn 12 Schritte nach Norden, dann 8 Schritte nach Osten\")."
+              },
+              {
+                "n": 4,
+                "name": "Lichtweg-Zentrum finden",
+                "content": "Am Endpunkt der Hinweis-Kette: ein Wurzel-Symbol auf einem Holzstück. Damit ist das Zentrum des Zauberwaldes lokalisiert."
+              }
+            ],
+            "safetyRule": "UV-Lampe: nicht in die Augen, nicht länger als 10 Sek auf einer Stelle. SOMMER: Quest spätestens 19:30 beenden (Dämmerung-Beginn ~21:30, aber Suche braucht Restlicht). WINTER: Quest 16:00–17:00, dunkel ab ~17:30. Bei Dauerregen oder zu früher Dunkelheit: Quest ins Haus (Wohnzimmer + Flur + Bad verteilen).",
+            "ageAdjust9": "Nur 3 Hinweise, alle in Sichtweite des Hauptlagers, du leuchtest mit.",
+            "ageAdjust12": "7 Hinweise mit Code-Sprache + Mathematik-Übung (Schrittzahlen ausrechnen).",
+            "indoorTip": "In verdunkelten Räumen (Vorhänge zu) wirkt UV stark — Schlafzimmer, Bad, Treppenhaus.",
+            "outdoorTip": "Schummerung (~30 Min vor Dunkelheit) ist ideal. Im Hochsommer um 20:00, im Frühling/Herbst um 18:00.",
+            "whyItWorksTitle": "Echte Chemie + Stimmung",
+            "whyItWorks": "Kurkuma + UV ist echte fluoreszierende Chemie. Die Schummerung verstärkt den „verlorener Zauberwald\"-Frame. Kombination aus Wissenschaft und Atmosphäre."
+          },
+          {
+            "name": "⚔️ Lichtweg-Vermessung + Wurzel-Pakt-Schluss",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 45,
+            "minAge": 9,
+            "loudness": "ruhig",
+            "effort": "mittel",
+            "material": "A3-Zauberwald-Karte, Filzstifte. LED-Lichterkette (~6 €) für die Schluss-Zeremonie. Wurzel-Pakt-Karten (vorgedruckt mit Pflanzennamen, Platz für Hüter-Namen und Sorgfalt-Stempel). Stempel oder Goldfolie-Sticker „Sorgfalt-Spezialist:in\". Pyrographie-Stift für zweite Rune (oder Edding als Substitut).",
+            "prepText": "LED-Lichterkette in S-Kurve oder Schleifen auf dem Boden auslegen — Wohnzimmer oder Garten. Wurzel-Pakt-Karten stempelbereit hinlegen. Naturmusik (Spotify: Forest Ambient, leise) abspielbar. Du moderierst die Zeremonie — feierlich, aber nicht peinlich, mit kurzer Ansage pro Kind.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "A3-Karte vermessen",
+                "content": "Die Hüter:innen tragen FLORA-Reihenfolge + UV-Hinweise + Pflanzenbestimmungs-Ergebnis in die Karte ein. Lichtweg wird gezeichnet, Wurzel-Zentrum markiert."
+              },
+              {
+                "n": 2,
+                "name": "Lichterketten-Lichtweg auslegen",
+                "content": "LED-Lichterkette wird vom Eingang des Wohnzimmers / Gartens zum Wurzel-Zentrum gelegt. Naturmusik leise."
+              },
+              {
+                "n": 3,
+                "name": "Zweite Rune auf jeden Ring",
+                "content": "Jede:r Hüter:in legt den Holzring auf den Tisch. Du brennst (oder malst mit Edding) die Hüter-Bestätigungs-Rune auf die Rückseite — pro Ring ca. 30 Sek."
+              },
+              {
+                "n": 4,
+                "name": "Wurzel-Pakt-Karten ausgeben",
+                "content": "Jede:r Hüter:in bekommt seine personalisierte Karte mit Pflanzennamen und Sorgfalt-Stempel (für besonders genaues Lesen / Helfen)."
+              },
+              {
+                "n": 5,
+                "name": "Lichtweg gehen + Gruppenfoto",
+                "content": "Jede:r Hüter:in geht den Lichtweg einzeln entlang. Am Ende: gemeinsames Foto am Wurzel-Zentrum mit Lichterkette."
+              }
+            ],
+            "safetyRule": "Pyrographie-Stift: NUR durch Erwachsene:n bedient. 450 °C heiß — kein Kontakt mit Kindern. Tisch mit feuerfester Unterlage. Lichterkette: Batterie-LED oder Niedervolt — keine 230V-Lichterkette über Boden, wo Kinder treten.",
+            "ageAdjust9": null,
+            "ageAdjust12": null,
+            "indoorTip": "Wohnzimmer abgedunkelt, LED-Lichterkette als einzige Hauptlichtquelle.",
+            "outdoorTip": "Garten bei Schummerung, Lichterkette als Wald-Lichtweg-Effekt.",
+            "whyItWorksTitle": "Ernsthafte Initiation",
+            "whyItWorks": "Die Zeremonie ist kein Bespaßungs-Akt, sondern eine ernste Übergabe. Die Hüter:innen erleben sich als „in den Hüter-Kreis aufgenommen\". Kein Zwang zur Ironie — die Atmosphäre trägt."
+          }
+        ],
+        "food": "🎂 Zauberwald-Kuchen (1 Springform + Wunderkerze) · 🍕 Mini-Pizzen mit frischen Kräutern (20 Stück, 2/Kind) · 🥤 Holunderblüten- + Apfelschorle (4 L) · 🥤 „Hüter-Trank\" (Apfel-Holunder-Schorle mit Eiswürfeln) · 🥒 Gemüse-Sticks + Kräuterquark + Hummus · 🍿 Popcorn (500 g) · 🍓 Beeren (Heidelbeeren, Erdbeeren, Brombeeren) · 🍫 Schoko-Pilze · 🌿 Kräuter-Tee-Verkostung (Ringelblume, Pfefferminze)",
+        "decoration": "🌿 Echtes Grünzeug (Efeu, Farn) als Tisch-Deko — kostenlos · 🕯️ LED-Teelichter (20 Stk., ~8 €) · 💡 LED-Lichterkette (Lichtweg, ~6 €) · 🪵 Holz-Astscheiben + Astgabeln als Untersetzer · 🔦 UV-Lampen (multifunktional) · 🪧 „Verlorener Zauberwald\"-Schild aus Pappe + Edding + Goldfolie · 🌲 2–3 Topfpflanzen (Farn, Efeu, Hopfen-Ranke) · 🔊 Spotify-Playlist „Forest Ambient / Celtic Instrumental\" — kostenlos\n\n✨ Wow-Bonus: Geräuschkulisse\nEin altes Tablet im Hintergrund spielt leise „Forest Sounds with Birds and Stream\" (YouTube, kostenlos). Verstärkt das Wald-Gefühl ohne Aufdringlichkeit.",
+        "giveaways": "🪵 Wurzel-Pakt-Holzring (mit 2 Runen) · 📜 Wurzel-Pakt-Karte (mit Pflanzennamen + Sorgfalt-Stempel) · 🌱 Wildblumen-Samen (Ringelblume + Löwenzahn + Wilde Möhre) · 🌿 Pflanzen-Runen-Aufkleber (10 Stk.) · 🍫 Schoko-Pilze + Lakritze · 🧭 Mini-Kompass (Hüter-Werkzeug, ~2 € pro Stück bei Amazon-Sammelbestellung)\n\nIn Kraftpapier-Tüten mit handgeschriebenem Pflanzennamen + Wurzel-Symbol + Sorgfalt-Stempel. ~6 € pro Kind.",
+        "shoppingList": [
+          {
+            "emoji": "🪵",
+            "label": "Birken-Holzscheiben mit Loch (15 Stk.)",
+            "url": "https://www.amazon.de/s?k=birken+holzscheiben+anhaenger+basteln&tag=machsleicht-21",
+            "priceEur": 10,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Konsistent — Wurzel-Pakt-Ring, mehr Reserve für 10 Hüter."
+          },
+          {
+            "emoji": "🔥",
+            "label": "Pyrographie-Stift",
+            "url": "https://www.amazon.de/s?k=pyrographie+stift+brennpeter+basteln&tag=machsleicht-21",
+            "priceEur": 14,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "In Wow ist die Brand-Rune Variant-Defining — Edding wäre sichtbar simpler."
+          },
+          {
+            "emoji": "🧵",
+            "label": "Hanf-Schnur (15 m) + Holzperlen",
+            "url": null,
+            "priceEur": 6,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Survival-Knoten-Workshop = Wow-spezifisches Element."
+          },
+          {
+            "emoji": "🔒",
+            "label": "5-Buchstaben-Letter-Lock",
+            "url": "https://www.amazon.de/s?k=letter+lock+5+buchstaben+wort+schloss&tag=machsleicht-21",
+            "priceEur": 10,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Konsistent zu Standard — Knack-Erlebnis."
+          },
+          {
+            "emoji": "🔦",
+            "label": "UV-Taschenlampe (2 Stück)",
+            "url": "https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht-21",
+            "priceEur": 20,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Bei 10 Hütern 2 UV-Lampen für parallele UV-Quest-Teams."
+          },
+          {
+            "emoji": "💡",
+            "label": "LED-Lichterkette (5 m, batteriebetrieben)",
+            "url": "https://www.amazon.de/s?k=led+lichterkette+batterie+5+meter+warmweiss&tag=machsleicht-21",
+            "priceEur": 6,
+            "hasAffiliate": true,
+            "category": "pflicht",
+            "categoryReasoning": "Variant-Defining für Wurzel-Pakt-Schluss-Zeremonie (Lichtweg-Auslegen)."
+          },
+          {
+            "emoji": "🧭",
+            "label": "Mini-Kompass (10 Stk., Hüter-Werkzeug-Mitgebsel)",
+            "url": "https://www.amazon.de/s?k=mini+kompass+kinder+karabiner&tag=machsleicht-21",
+            "priceEur": 12,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Optionales Wow-Mitgebsel — passt zur GPS-Quest, aber Quest läuft auch ohne."
+          },
+          {
+            "emoji": "🌶️",
+            "label": "Kurkuma + Pergament-Papier (UV-Tinte)",
+            "url": null,
+            "priceEur": 4,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "UV-Quest-Material."
+          },
+          {
+            "emoji": "🌿",
+            "label": "Getrocknete Pflanzen-Tees (Ringelblume, Odermennig, Löwenzahn)",
+            "url": null,
+            "priceEur": 7,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Stations-Material echt — Apotheke."
+          },
+          {
+            "emoji": "🌱",
+            "label": "Wildblumen-Samen (3 Sorten, 12 Tütchen)",
+            "url": null,
+            "priceEur": 7,
+            "hasAffiliate": false,
+            "category": "sinnvoll",
+            "categoryReasoning": "Pflanzen-Mitgebsel — wirkt 2 Wochen später beim Aussäen nochmal."
+          },
+          {
+            "emoji": "📜",
+            "label": "Tonpapier + Pergament + Edding + Goldfolie-Sticker",
+            "url": null,
+            "priceEur": 7,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Karten, Lizenzen, Sorgfalt-Stempel."
+          },
+          {
+            "emoji": "🕯️",
+            "label": "LED-Teelichter „Glühwürmchen\" (20 Stk.)",
+            "url": "https://www.amazon.de/s?k=led+teelichter+glühwürmchen+kinder&tag=machsleicht-21",
+            "priceEur": 8,
+            "hasAffiliate": true,
+            "category": "sinnvoll",
+            "categoryReasoning": "Atmosphäre, verstärkt Wow-Gefühl."
+          },
+          {
+            "emoji": "🍕",
+            "label": "Mini-Pizza-Böden + Tomatensauce + Käse + frische Kräuter + Bio-Beläge",
+            "url": null,
+            "priceEur": 18,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Hauptessen für 10 Kinder."
+          },
+          {
+            "emoji": "🥤",
+            "label": "Holunderblüten- + Apfelschorle (4 L) + Becher + Eiswürfel",
+            "url": null,
+            "priceEur": 7,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Getränk für 10 Kinder über 4 Std."
+          },
+          {
+            "emoji": "🥒",
+            "label": "Gemüse-Sticks + Hummus + Kräuterquark + Popcorn + Beeren",
+            "url": null,
+            "priceEur": 10,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Snacks für 4h Wow-Programm."
+          },
+          {
+            "emoji": "🎂",
+            "label": "Backmischung + grüne Glasur + Oreo-Krümel + Marzipan-Pilze + Wunderkerze",
+            "url": null,
+            "priceEur": 10,
+            "hasAffiliate": false,
+            "category": "pflicht",
+            "categoryReasoning": "Zauberwald-Kuchen."
+          }
+        ],
+        "estimatedCostEur": 146,
+        "costContext": "Geschätzte Kosten (Wow, 10 Kinder, inkl. allem außer Mini-Kompass und Pyrographie-Stift als Einmalkäufe)",
+        "savingsTip": {
+          "title": "Mini-Kompass weglassen, Pyrographie-Stift einmal kaufen",
+          "body": "Der Mini-Kompass (~12 €) ist optional — ohne ihn liegt Wow bei ~134 €. Pyrographie-Stift und UV-Lampen sind dauerhaft wiederverwendbar (Bastel-Nachmittage, Schnitzeljagden, Halloween) — bei nächstem Geburtstag fallen sie aus der Kalkulation."
+        }
+      }
+    ],
+    "cakeRecipe": {
+      "intro": "Der Zauberwald-Kuchen mit grünem Moos, Marzipan-Pilzen und Wurzel-Symbol. Sieht aufwendig aus, braucht aber nur 90 Minuten — und kein Mirror-Glaze-Stress.",
+      "steps": [
+        {
+          "n": 1,
+          "content": "Schokoladenkuchen in der Springform backen (Fertigmischung funktioniert) und komplett abkühlen lassen."
+        },
+        {
+          "n": 2,
+          "content": "Grüne Glasur: 200 g Puderzucker + 2–3 EL Wasser + grüne Lebensmittelfarbe (Spinat-Pulver für natürliche Färbung oder klassische Gel-Farbe). Dickflüssig anrühren, sodass sie haftet."
+        },
+        {
+          "n": 3,
+          "content": "Kuchen mit grüner Glasur überziehen — nicht gleichmäßig, sondern „mossig\" mit Spachtel oder Löffel-Rücken."
+        },
+        {
+          "n": 4,
+          "content": "„Moos-Effekt\": Oreo-Kekse zermahlen + grüne Lebensmittelfarbe untermischen → krümeliges grünes Pulver. Großzügig über den Kuchen streuen."
+        },
+        {
+          "n": 5,
+          "content": "Marzipan-Pilze: Weißes Marzipan zu kleinen Pilz-Hüten formen, mit roter Lebensmittelfarbe als Fliegenpilz-Optik (weiße Punkte mit Pinsel) — 6–8 Stück auf dem Kuchen verteilen."
+        },
+        {
+          "n": 6,
+          "content": "Wurzel-Symbol als „Wurzel-Mitte\": Aus dunkler Schokolade (geschmolzen + auf Backpapier gespritzt) ein Wurzel-Verzweigungs-Symbol erstarren lassen, dann auf den Kuchen setzen. Alternativ: mit dunklem Schokoguss direkt aufmalen."
+        },
+        {
+          "n": 7,
+          "content": "Wunderkerze (Wow-Variante) in die Mitte stecken. Bei Standard / Minimal: optional eine Pflanzen-Kerze."
+        }
+      ],
+      "meta": null,
+      "tips": [
+        {
+          "title": "Keine Lust zu backen?",
+          "body": "Gekaufter Schokoladenkuchen vom Bäcker oder Discounter funktioniert genauso. Die Moos-Optik (grüne Glasur + Oreo-Krümel + Marzipan-Pilze) machst du in 15 Min selbst — niemand merkt, dass der Boden gekauft ist."
+        },
+        {
+          "title": "Veganer / glutenfreier Kuchen",
+          "body": "Schokoladenkuchen lässt sich problemlos vegan backen (Pflanzendrink + Apfelmus statt Ei + Milch). Für glutenfrei: Reis-/Mandelmehl-Mischung. Die Glasur und Marzipan-Deko sind ohnehin vegan-fähig."
+        }
+      ]
+    },
+    "parentTips": {
+      "structured": [
+        {
+          "topic": "🚨 Allergien & Heuschnupfen vorher abfragen",
+          "detail": "Mit echtem Pflanzenmaterial (Farn, Löwenzahn, Ringelblume) ist Heuschnupfen-Allergie relevant. In die Einladung: „Gibt es Allergien, Heuschnupfen oder Ernährungsbesonderheiten?\" Notfall-Plan: Pflanzen-Fotos statt echtem Material. Bei Lebensmittel-Allergien: Pizza-Belege variabel, Kuchen vegan / glutenfrei möglich."
+        },
+        {
+          "topic": "👫 Geschlechts-Inklusion ist eingebaut",
+          "detail": "Elfenkrieger:innen und Waldwächter:innen sind keine Ersatzrollen, sondern gleichwertige Hüter. Pflanzennamen-Zettel sind alle geschlechts-neutral (Farn-Hüter:in, Löwenzahn-Hüter:in). Wenn das Geburtstagskind sich Wachskrieger:in oder Lichtfee nennen will, kann es das — alle Material-Optionen sind unisex. Kein Tüll-Zwang, kein Rosa-Dominanz."
+        },
+        {
+          "topic": "🌙 Dämmerung mit Jahreszeit im Blick",
+          "detail": "Wow-Variante mit Outdoor-UV-Quest braucht Schummerung, NICHT Dunkelheit. Sommer (Juni-August): dunkel ab ~21:30, Quest also bis spätestens 19:30 beenden. Winter (November-Februar): dunkel ab ~17:30, Wow-Quest auf 13:00–17:00 legen oder ganz ins Haus. Im Zweifel früher beenden — kein „nochmal 10 Minuten\"-Risiko."
+        },
+        {
+          "topic": "🧵 Knoten-Sicherheit ist NICHT optional",
+          "detail": "Wurzel-Pakt-Armband sitzt IMMER locker, ist IMMER abnehmbar, KEIN Knoten direkt am Druckpunkt des Handgelenks, KEINE Schnüre an Hälsen. Pyrographie-Stift NUR durch Erwachsene:n bedient — 450 °C heiß. Das einmal beim Setup klären und die Regel mit den Kindern kurz besprechen."
+        },
+        {
+          "topic": "🌧️ Plan B bei Regen",
+          "detail": "Minimal und Standard funktionieren komplett drinnen. Wow ist outdoor-orientiert — bei Dauerregen: GPS-Quest durch Karten-Hinweise im Haus ersetzen, UV-Quest verlegt sich von Garten ins Wohnzimmer/Flur/Bad. Wurzel-Pakt-Zeremonie ist drinnen ohnehin schöner (LED-Lichterkette in S-Kurve)."
+        },
+        {
+          "topic": "📱 Handys nutzen, nicht verbieten",
+          "detail": "Bei der Wow-GPS-Quest sind Handys Werkzeug. Regel: Smartphone ist Hüter-Werkzeug, kein Spiel. Nach jeder Station Geräte ins zentrale „Hüter-Lager\" — niemand daddelt zwischendurch. Foto-Erinnerungen am Ende über AirDrop / Bluetooth teilen, aber nur Foto-Aufgaben, keine Gesichter ohne Eltern-Erlaubnis."
+        },
+        {
+          "topic": "📋 Partyseite statt WhatsApp-Chaos",
+          "detail": "WhatsApp-Partyseite mit machsleicht statt 10 Einzelnachrichten: Adresse, Uhrzeit, „erdfarbene Kleidung empfohlen\", Allergie- und Heuschnupfen-Abfrage, Abholzeit. Spart Stress."
+        }
+      ],
+      "educationalValue": "Was die Hüter:innen mitnehmen: echtes Botanik-Wissen (Adlerfarn, Löwenzahn, Odermennig, Ringelblume, Spitzahorn — alle heimisch, alle wiedererkennbar bei nächstem Waldspaziergang), Symbol-Decodierung (FLORA-Chiffre mit Anfangsbuchstaben-Logik), Survival-Skills (3 Knoten am Hanf-Armband), GPS-Navigation (Wow-Variante), echte Chemie (Kurkuma + UV-Licht = fluoreszierende Pflanzensaft-Tinte), Selbstkontrolle als Methode (ergibt das Lösungswort keinen Sinn, war eine Station falsch). Die Leitidee „im Zauberwald zählt, wer sorgfältig hinschaut\" ist eine Haltung, die über die Party hinaus wirkt — weg vom Tempo, hin zur Aufmerksamkeit."
+    },
+    "invitationTemplate": "🌿 RUF DES ZAUBERWALDES\n\nDer Zauberwald ist verloren. Nur Hüter:innen mit Pflanzen-Wissen können ihn zurückbringen. {name} wird {alter} und ruft eine Expedition zusammen.\n\n📅 Wann: {datum}, {uhrzeit}\n📍 Treffpunkt: {treffpunkt}\n🎒 Mitbringen: erdfarbene Kleidung, festes Schuhwerk (Outdoor-Wow), Handy (Wow: GPS-Quest)\n📞 Rückmeldung bis {rsvp_deadline} an {kontakt}\n⚠️ Bitte Allergien, Heuschnupfen und Ernährungsbesonderheiten angeben\n\nJede:r Hüter:in wählt vor Ort einen Pflanzennamen, schwört den Wurzel-Pakt auf einen Holzring und bekommt am Ende die Hüter-Bestätigung. Elfenkrieger:innen und Waldwächter:innen sind gleichwertige Rollen — keine Tüll-Pflicht, keine Glitzer-Pflicht. Im Zauberwald zählt, wer sorgfältig hinschaut.\n\n[🌿 Einladung erstellen →](/einladung/erstellen?motto=feen)\n[📱 Per WhatsApp teilen](https://wa.me/?text=%F0%9F%8C%BF%20Feen-Geburtstag%20Verlorener%20Zauberwald%20f%C3%BCr%209%E2%80%9312%3A%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Ffeen-9-12-jahre)",
+    "faq": [
+      {
+        "q": "Ist „Feen\" nicht zu kindisch für 9–12-Jährige?",
+        "a": "Wenn du es als Glitzer-Tüll-Rosa-Party aufziehst: ja. Wenn du den „Verlorener Zauberwald\"-Frame ernst nimmst — Pflanzen-Chiffre FLORA, Wurzel-Pakt mit eingebranntem Holzring, GPS-Outdoor-Quest, UV-Pflanzensaft-Tinte —, funktioniert es genau richtig. Feen werden als alte Hüter eines vergessenen Waldes gerahmt, nicht als Kuscheltier. Elfenkrieger:innen und Waldwächter:innen sind gleichwertige Rollen, kein Geschlechts-Split. Die Atmosphäre soll „alter Wald\" sein, nicht „Kinderzimmer-Rosa\"."
+      },
+      {
+        "q": "Funktioniert das auch für gemischte Geburtstage mit Jungen?",
+        "a": "Ja — das Konzept ist explizit geschlechtsoffen gebaut. Elfenkrieger:innen und Waldwächter:innen sind keine Ersatzrollen, sondern gleichwertig zu Blumenfee / Lichtfee. Die Stations-Logik (FLORA-Chiffre, Pflanzen-Bestimmung, GPS-Navigation, Knoten-Workshop) ist neutral — alle Kinder lernen das Gleiche. Die Farbwelt (Grün, Braun, Holz) ist erdig und neutral, kein rosa Glitzer-Zwang. Eltern, deren Sohn skeptisch ist: einfach den GPS-Outdoor-Frame und die Survival-Knoten betonen, der „Feen\"-Begriff verschwindet hinter der Quest."
+      },
+      {
+        "q": "Was kostet ein Feen-Geburtstag für 9–12-Jährige?",
+        "a": "Zwischen 60 € (Minimal, 7 Kinder) und 146 € (Wow, 10 Kinder, inkl. allem). Standard liegt bei ca. 95 € für 8 Kinder und bietet das beste Verhältnis. Einmalige Anschaffungen (Pyrographie-Stift ~14 €, UV-Lampe ~10 €, Letter-Lock ~10 €) lassen sich bei nächsten Geburtstagen / Bastel-Nachmittagen wiederverwenden — bei Folge-Party fallen sie aus der Rechnung."
+      },
+      {
+        "q": "Wie lange sollte die Party dauern?",
+        "a": "2,5 Stunden (Minimal) bis 4 Stunden (Wow). 9–12-Jährige halten 4 Stunden gut durch, wenn die Stationen wirklich fordern — die FLORA-Chiffre und die GPS-Outdoor-Quest sind kein „Beschäftigungs-Buffer\". Unter 2 Stunden wirkt es zu kurz; über 4 Stunden braucht es eine Schlaf-Party-Verlängerung."
+      },
+      {
+        "q": "Wie viele Kinder einladen?",
+        "a": "7–10 Kinder sind ideal. Die FLORA-Chiffre funktioniert gut mit 5–10 Hütern (entweder solo pro Station oder in Hüter-Paaren). Unter 5: Stations-Aufteilung wird langweilig. Über 10: Stau bei den Stationen, dann zwei Hüter-Crews bilden."
+      },
+      {
+        "q": "Wie verhindere ich, dass die Quest in Glitzer-Rosa-Pinkpolitik kippt?",
+        "a": "Drei Hebel: 1) Material erdig — Holz, Hanf, Naturstoff, keine Tüll-Flügel als Pflicht. 2) Sprache — „Hüter:innen\" statt „Prinzessinnen\", „Zauberwald\" statt „Feenreich\", konkrete Pflanzennamen statt Sternenstaub-Vokabular. 3) Aufgaben mit echter Herausforderung — Pflanzen-Bestimmung, Knoten, GPS, UV-Tinte. Wer einmal eine Pflanzen-Chiffre geknackt hat, vergisst „kindisch\" als Kategorie."
+      },
+      {
+        "q": "Was, wenn ein Kind nicht mitmachen will?",
+        "a": "Beobachter:innen-Rolle: „Hüter:in des Blicks\". Kein Pflanzenname-Pflicht, sondern offener Kreis als Sonder-Rune auf dem Holzring. Aufgabe: Quest-Logbuch führen, Fotos der Stationen machen. Oft steigen sie nach 15-20 Min selbst ein, wenn der Druck weg ist. Im Zweifel: Trotzdem Holzring, trotzdem Wurzel-Pakt-Karte am Ende — niemand geht ohne Bestätigung nach Hause."
+      }
+    ],
+    "preparationWeeks": {
+      "minus4Weeks": {
+        "headline": "4 Wochen vorher — Grundgerüst stellen",
+        "items": [
+          {
+            "icon": "📅",
+            "title": "Datum, Uhrzeit, Treffpunkt fixieren",
+            "detail": "Samstag oder Sonntag 14–18 Uhr passt gut. Wow-Outdoor-Variante: Jahreszeit prüfen — Sommer ideal für Schummerungs-UV-Quest (dunkel ab ~21:30), Winter dunkel ab ~17:30 (Quest entsprechend früher). Treffpunkt: Garten ideal, Park machbar bei vorab-Erkundung, Wohnung funktioniert für Minimal + Standard."
+          },
+          {
+            "icon": "👥",
+            "title": "Gästeliste festzurren — 7–10 Kinder",
+            "detail": "7–8 für Minimal/Standard, 10 für Wow. Über 10 wird die FLORA-Stations-Rotation chaotisch — dann zwei Hüter-Crews. Bei gemischtem Geschlecht: Elfenkrieger:in / Waldwächter:in als Rollen-Option in die Einladung."
+          },
+          {
+            "icon": "💶",
+            "title": "Variante wählen: Minimal / Standard / Wow",
+            "detail": "Minimal ~60 € (FLORA + Pflanzen-Quiz, 2,5 Std.), Standard ~95 € (+ UV-Quest + Lichtweg-Vermessung, 3,5 Std.), Wow ~146 € (+ GPS-Outdoor + Knoten-Workshop + LED-Lichtweg, 4 Std.). Entscheidung jetzt — beeinflusst die Einkaufsliste."
+          },
+          {
+            "icon": "✉️",
+            "title": "Einladungen rausschicken — Anti-IP-Ton",
+            "detail": "Pflicht im Text: „Verlorener Zauberwald\"-Frame, Allergie- und Heuschnupfen-Abfrage, erdfarbene Kleidung empfohlen, Wow zusätzlich „Handy mit GPS möglich\". Keine Tinkerbell/Disney-Anspielungen. RSVP-Link auf party.machsleicht.de."
+          },
+          {
+            "icon": "🏠",
+            "title": "Raum-Check + Outdoor-Erkundung",
+            "detail": "Wow-Variante: Garten / nahen Park abschreiten, 5 GPS-Punkte definieren (Google Maps lange auf Punkt drücken → Koordinaten kopieren). Sichere Wege zwischen Punkten. Minimal/Standard: 5 Stations-Plätze in der Wohnung mental vorgemerkt."
+          }
+        ]
+      },
+      "minus2Weeks": {
+        "headline": "2 Wochen vorher — Logistik festziehen",
+        "items": [
+          {
+            "icon": "📨",
+            "title": "RSVPs einsammeln, Allergien sammeln",
+            "detail": "Wer kommt, welche Heuschnupfen-Allergien, welche Ernährungsbesonderheiten (Vegan, Glutenfrei, Laktose). Pizza-Belege entsprechend planen, Kuchen-Variante (vegan / glutenfrei) klären."
+          },
+          {
+            "icon": "🛒",
+            "title": "Amazon-Bestellung raus (2-5 Tage Lieferzeit)",
+            "detail": "Holzscheiben, Pyrographie-Stift, Hanfschnur, Letter-Lock (Standard/Wow), UV-Lampe (Standard/Wow), LED-Lichterkette (Wow). Früh bestellen — Letter-Locks sind manchmal knapp."
+          },
+          {
+            "icon": "🌿",
+            "title": "Pflanzenmaterial besorgen",
+            "detail": "Apotheke: getrocknete Ringelblumen, Löwenzahn-Tee, Odermennig-Tee (ca. 5–7 €). Garten: Farn-Wedel, Ahorn-Blatt. Notfall-Substitut: Pflanzen-Fotos ausdrucken statt echtes Material."
+          },
+          {
+            "icon": "🧑‍🤝‍🧑",
+            "title": "Helfer:in organisieren",
+            "detail": "Standard 8 Kinder: 1 Helfer:in reicht. Wow 10 Kinder mit Outdoor-Quest: 1–2 Helfer:innen empfohlen (eine:r bleibt im Lager, eine:r begleitet das Outdoor-Team). Helfer:in einweisen in die FLORA-Stations-Logik und die Knoten-Sicherheit."
+          },
+          {
+            "icon": "📱",
+            "title": "Partyseite einrichten",
+            "detail": "WhatsApp-Partyseite mit allen Infos: Adresse, Zeit, Kleidung, Allergien + Heuschnupfen-Abfrage, Wow: Handy-Bringen-Hinweis."
+          }
+        ]
+      },
+      "minus1Week": {
+        "headline": "1 Woche vorher — drucken, üben, Lieferung checken",
+        "items": [
+          {
+            "icon": "📦",
+            "title": "Amazon-Lieferung prüfen",
+            "detail": "Holzscheiben, Pyrographie-Stift, Letter-Lock, UV-Lampen, LED-Lichterkette da? Fehlteile jetzt nachbestellen — eine Woche reicht noch."
+          },
+          {
+            "icon": "🖨️",
+            "title": "FLORA-Stations-Karten + Lizenzen drucken",
+            "detail": "5 Pflanzen-Quadranten DIN A4 ausdrucken (oder selbst zeichnen). Wurzel-Pakt-Karten mit Pflanzennamen-Feld vorbereiten. A3-Zauberwald-Karte zeichnen (Wow: mit GPS-Koordinaten-Notiz)."
+          },
+          {
+            "icon": "🔥",
+            "title": "Pyrographie-Stift testen + Runen üben",
+            "detail": "Auf einer Test-Holzscheibe die 5 Pflanzen-Runen einbrennen — bis du sicher bist. Pro Rune dauert 30–60 Sek. Tisch mit Brand-Unterlage vorbereiten. Pyrographie-Stift IMMER nur durch dich, nie Kinder."
+          },
+          {
+            "icon": "🔔",
+            "title": "Nachbarn vorwarnen",
+            "detail": "„Samstag 14–18 Uhr wird's bei uns draußen / drinnen lauter, mein Kind wird 10.\" Bei Wow-GPS-Park-Quest: keine Genehmigung nötig im öffentlichen Park, aber kurze Erwähnung im Familie-Chat ist nett."
+          },
+          {
+            "icon": "🌧️",
+            "title": "Plan B Regen mental durchspielen",
+            "detail": "Minimal/Standard sind drinnen sowieso geeignet. Wow-Outdoor: GPS-Quest durch Karten-Hinweise im Haus ersetzen, UV-Quest in Wohnzimmer/Flur/Bad verteilen. Lichtweg-Zeremonie ist drinnen ohnehin schöner."
+          }
+        ]
+      },
+      "minus2Days": {
+        "headline": "2 Tage vorher — basteln und kochen",
+        "items": [
+          {
+            "icon": "🪵",
+            "title": "Wurzel-Pakt-Ringe einbrennen",
+            "detail": "Pro Pflanze (Farn, Löwenzahn, Odermennig, Ringelblume, Ahorn) 2–3 Ringe mit der jeweiligen Rune einbrennen. Dauert ~1 Stunde für 12 Ringe. Pyrographie-Stift abkühlen lassen vor dem Aufräumen."
+          },
+          {
+            "icon": "🌿",
+            "title": "FLORA-Stations-Karten + Lösungs-Karten finalisieren",
+            "detail": "Pro Station: Pflanzen-Karte + Frage + 5 Optionen + Lösungs-Karte zur Selbstkontrolle (verdeckt unter Notiz-Klipp). Selbst durchspielen: Ergibt der Code wirklich FLORA? Math-Check: F, L, O, R, A — alle 5 unique. Bei doppeltem Buchstaben war eine Station falsch designed."
+          },
+          {
+            "icon": "🔦",
+            "title": "UV-Pflanzensaft-Tinte herstellen (Standard/Wow)",
+            "detail": "1 EL Kurkuma in 100 ml Wasser + Spritzer Zitrone. Mit Pinsel auf Pergament-Karten schreiben. Trocknen lassen — die Schrift verschwindet fast vollständig. Test mit UV-Lampe: leuchtet sie? Wenn nicht: mehr Kurkuma, oder zu Tonic Water als UV-aktive Alternative wechseln."
+          },
+          {
+            "icon": "🛒",
+            "title": "Frische Lebensmittel kaufen",
+            "detail": "Pizza-Böden, Belag, Tomatensauce, Käse, frische Kräuter (Basilikum, Oregano), Holunder-/Apfelschorle, Gemüse-Sticks, Beeren, Schoko-Pilze. Bei Heuschnupfen-Allergie eines Kindes: Pflanzenmaterial nochmal prüfen, Notfall-Foto-Substitut bereitlegen."
+          },
+          {
+            "icon": "📦",
+            "title": "Wow-Setup: GPS-Koordinaten + Stations-Karten laminieren",
+            "detail": "5 GPS-Punkte abschreiten, Koordinaten exportieren. Stations-Karten in Klarsichthülle stecken (wetterfest). Helfer:in-Briefing per WhatsApp: Reihenfolge der Stationen, Sicherheits-Regeln, Abbruch-Kriterien (Regen, Dämmerung)."
+          }
+        ]
+      },
+      "minus1Day": {
+        "headline": "1 Tag vorher — Aufbau und Kuchen",
+        "items": [
+          {
+            "icon": "🎂",
+            "title": "Zauberwald-Kuchen backen",
+            "detail": "Schoko-Boden backen, abkühlen, grüne Glasur + Oreo-Krümel-Moos + Marzipan-Pilze + Wurzel-Symbol. 90 Min Gesamt. Bei vegan/glutenfrei rechtzeitig anders kalkulieren."
+          },
+          {
+            "icon": "🏕️",
+            "title": "Stationen aufbauen",
+            "detail": "Die 5 FLORA-Quadranten an verschiedene Plätze in Haus / Garten. Lösungs-Karten zur Selbstkontrolle dazulegen (verdeckt). Bei Wow: Outdoor-Setup nochmal abschreiten, GPS-Punkte mit dezenten Markern (kleine Holzscheiben mit Pflanzen-Rune) markieren."
+          },
+          {
+            "icon": "🎨",
+            "title": "Deko anbringen",
+            "detail": "Efeu-Ranken + Farn-Wedel als Tisch-Deko, „Verlorener Zauberwald\"-Schild am Eingang, Holzscheiben-Untersetzer, LED-Teelichter platzieren. Bei Wow: LED-Lichterkette als Lichtweg-Vorbereitung im Wohnzimmer parat (noch nicht ausgelegt — kommt zur Zeremonie)."
+          },
+          {
+            "icon": "🎁",
+            "title": "Mitgebsel-Tüten packen",
+            "detail": "Kraftpapier-Tüten beschriften mit Pflanzennamen (Farn-Hüter:in, Löwenzahn-Hüter:in, etc.). Inhalt: Wildblumen-Samen, Pflanzen-Runen-Aufkleber, Schoko-Pilze, leeres Wurzel-Pakt-Kartchen (wird beim Tag X personalisiert). Holzring und fertige Wurzel-Pakt-Karte kommen erst am Tag selbst dazu."
+          },
+          {
+            "icon": "🔊",
+            "title": "Musik + UV + GPS testen",
+            "detail": "Spotify „Forest Ambient / Celtic Instrumental\"-Playlist bereit. UV-Lampe an Batterien geprüft. Wow: GPS-App auf eigenem Handy testen, Koordinaten erreichen? Pyrographie-Stift für die zweite Rune am Tag X bereitlegen (mit Brand-Unterlage)."
+          }
+        ]
+      },
+      "dayOf": {
+        "headline": "Tag X — durchziehen, atmen, vermessen",
+        "items": [
+          {
+            "icon": "⏰",
+            "title": "60 Min vor Ankunft: letzte Stationen + Pflanzenmaterial",
+            "detail": "FLORA-Stationen finalisieren — echtes Pflanzenmaterial in die Schalen, Lösungs-Karten verdeckt. Pizza-Belag-Schalen vorbereiten, Schorle kühlen. Bei Wow: Helfer:in eintreffen lassen, Outdoor-Setup gemeinsam abschreiten."
+          },
+          {
+            "icon": "🌿",
+            "title": "30 Min vor Ankunft: Pflanzennamen-Schale + Holzringe",
+            "detail": "Pflanzennamen-Zettel falten und in die Holzschale mit getrockneten Blüten legen. Holzringe pro Pflanze sortiert daneben (Farn-Runen-Ringe, Löwenzahn-Runen-Ringe, etc.). Wurzel-Pakt-Karte griffbereit."
+          },
+          {
+            "icon": "🎯",
+            "title": "15 Min vor Ankunft: Audio + Stimmung",
+            "detail": "Forest-Ambient-Playlist leise an, LED-Teelichter angeschaltet, „Verlorener Zauberwald\"-Schild sichtbar. UV-Lampe + Wurzel-Pakt-Karten im Hauptlager."
+          },
+          {
+            "icon": "🫁",
+            "title": "5 Min vor Ankunft: durchatmen",
+            "detail": "Wasser, Klo, einmal tief Luft holen. Bei 9-12 wirst du als Hüter-Anleiter:in gebraucht, nicht als Bespaßer:in. Handy auf lautlos außer für Eltern-Anrufe."
+          },
+          {
+            "icon": "📜",
+            "title": "Ankunft: Wurzel-Pakt-Zeremonie",
+            "detail": "Jedes Kind zieht Pflanzennamen-Zettel + Holzring. Du sprichst den Pakt personalisiert vor („Du bist jetzt Farn-Hüter:in. Du schwörst, sorgfältig hinzuschauen…\"), Kind antwortet. Lederschnur ans Armband (locker). Dann sofort zur ersten Station."
+          }
+        ]
+      }
+    },
+    "sosScenarios": {
+      "regen": {
+        "icon": "🌧️",
+        "label": "Regen — Wow-Outdoor-Quest geplant",
+        "headline": "Quest zieht nach drinnen — FLORA-Stationen im Haus, GPS durch Karten-Hinweise ersetzen.",
+        "steps": [
+          "FLORA-Stationen in 5 verschiedene Räume verteilen (Wohnzimmer, Küche, Flur, Schlafzimmer, Bad) — fühlt sich wie „Wandern durch den Wald\" an.",
+          "GPS-Quest durch Karten-Hinweise ersetzen: A4-Kartenausschnitte mit Pflanzen-Symbolen, Hüter:innen navigieren analog.",
+          "UV-Quest in den dunkelsten Räumen (Vorhänge zu) — funktioniert drinnen sogar besser.",
+          "Lichtweg-Zeremonie ist drinnen mit LED-Lichterkette schöner — als Plus verkaufen."
+        ],
+        "fallback": "Wenn auch der Innenraum zu eng ist: FLORA-Stationen auf einen Tisch konzentrieren (Minimal-Setup), dafür mehr Zeit pro Station und ausführlichere Pflanzen-Gespräche.",
+        "tone": "praktisch"
+      },
+      "weniger_kinder_als_erwartet": {
+        "icon": "👤",
+        "label": "Weniger Kinder als erwartet (2 fehlen)",
+        "headline": "Hüter-Teams kleiner — mehr Sorgfalt pro Station, kein Stau.",
+        "steps": [
+          "Bei 4–5 Kindern: jede Station wird Solo oder in Hüter-Paaren bearbeitet, mehr Zeit pro Pflanze.",
+          "Pflanzen-Bestimmungs-Quiz strecken — von 8 auf 12 Pflanzen erweitern, Detail-Fragen einbauen.",
+          "Bei Wow GPS-Quest: zwei Hüter:innen pro Station, ruhigere Routenwahl, mehr Pause für Gespräche.",
+          "Lichtweg-Vermessung wird intimer — alle stehen um die A3-Karte, jede:r trägt einen Buchstaben ein."
+        ],
+        "fallback": "Bei nur 3 Kindern: alle gemeinsam durch die Stationen, du moderierst stärker mit. Wird fast wie ein Familien-Survival-Workshop.",
+        "tone": "ruhig"
+      },
+      "mehr_kinder_als_erwartet": {
+        "icon": "👥",
+        "label": "Mehr Kinder als erwartet (Geschwister-Boom)",
+        "headline": "Zwei Hüter-Crews bilden — FLORA-Stationen doppelt laufen lassen.",
+        "steps": [
+          "Über 10 Hüter:innen: zwei Crews mit je 5–6 Personen, jede mit eigenem A3-Karten-Ausschnitt.",
+          "Stationen werden parallel doppelt besetzt (z.B. zwei Farn-Stationen an verschiedenen Tischen).",
+          "Pflanzennamen-Zettel aufstocken — zur Not Doppel-Belegungen erlauben (zwei Farn-Hüter:innen sind okay).",
+          "Pizza-Belag-Schalen aufstocken (Eltern haben oft Auto und können nachholen lassen)."
+        ],
+        "fallback": "Keine Verstärkung erreichbar? FLORA-Chiffre als eine große Gruppen-Übung machen, jede:r liefert einen Buchstaben — dann Pflanzen-Quiz strecken.",
+        "tone": "praktisch"
+      },
+      "kind_will_nicht_mitmachen": {
+        "icon": "🤷",
+        "label": "Ein Kind will nicht mitmachen",
+        "headline": "Beobachter:in-Rolle: „Hüter:in des Blicks\" mit Quest-Logbuch.",
+        "steps": [
+          "Anbieten: „Du kannst Hüter:in des Blicks werden — du führst das Quest-Logbuch, schreibst auf, wer welche Pflanze richtig bestimmt hat, machst Fotos der Stationen.\"",
+          "Eigene Sonder-Rune (offener Kreis) auf den Holzring — keine Pflanzen-Zugehörigkeit erforderlich.",
+          "Sitzplatz mit Schorle + Snacks am Haupttisch, Beobachtungs-Posten mit echter Funktion.",
+          "Nach 15–20 Min steigen sie oft selbst ein, wenn der Druck weg ist — die FLORA-Chiffre zieht."
+        ],
+        "fallback": "Bleibt komplett raus? Buch + Decke + Schorle in eine Ecke. Bekommt trotzdem Holzring + Wurzel-Pakt-Karte mit „Hüter:in des Blicks\"-Stempel am Ende. Niemand geht ohne Bestätigung nach Hause.",
+        "tone": "einfühlsam"
+      },
+      "kuchen_misslungen": {
+        "icon": "🎂",
+        "label": "Kuchen ist misslungen",
+        "headline": "Bäcker-Hack: gekaufter Schoko-Boden + selbst gemachte Moos-Optik.",
+        "steps": [
+          "Schokoladenkuchen vom Bäcker oder Discounter holen (~8 €).",
+          "Grüne Glasur (200 g Puderzucker + Wasser + Lebensmittelfarbe) drüber, dann Oreo-Krümel-Moos.",
+          "Marzipan-Pilze formen (15 Min) und Wurzel-Symbol aus Schoko-Guss aufmalen.",
+          "Bei Wow: Wunderkerze rein, LED-Teelichter drum herum für Stimmung."
+        ],
+        "fallback": "Bäcker zu? Einzelne Schoko-Muffins mit grüner Glasur + einzelnem Marzipan-Pilz pro Muffin. Funktioniert als „Wald-Snacks\" — Frame trägt.",
+        "tone": "motivierend"
+      },
+      "codeknacker_frust": {
+        "icon": "🧩",
+        "label": "FLORA-Frust — ein Team steckt fest",
+        "headline": "Cross-Hilfe und Selbst-Check-Reminder.",
+        "steps": [
+          "Erinnere an den Selbst-Check: „Ergibt euer Wort einen Sinn? Wenn nicht, war eine Station falsch beantwortet — geht zurück und schaut nochmal hin.\"",
+          "Lass eine:n Hüter:in einer anderen Pflanze beim festgefahrenen Team kurz mitdenken — Cross-Hilfe ist Teil der Story.",
+          "Den Bestimmungsschlüssel an der Wand zeigen oder den Pflanzen-Fakten-Steckbrief vorlesen.",
+          "Bei 9-Jährigen: einen direkten Tipp freigeben („Welche Pflanze hat keine Blüten?\"). Niemand bleibt hängen — gelöst wird gemeinsam."
+        ],
+        "fallback": "Wenn gar nichts geht: das Lösungswort als „Funkspruch der Wald-Hüterin\" vorgeben, die Kinder verifizieren nur noch. Spaß bleibt erhalten.",
+        "tone": "praktisch"
+      },
+      "uv_lampe_funktioniert_nicht": {
+        "icon": "🔦",
+        "label": "UV-Lampe leer oder Tinte schwach",
+        "headline": "Story-Substitut: „Wald-Tinte\" mit Edding-Geheimschrift.",
+        "steps": [
+          "Batterien checken — bei Schwund: Ersatz-AA-Batterien aus Vorrat (jede:r Hauseigentümer:in hat welche).",
+          "Kurkuma-Tinte zu schwach: kleinen Pinselstrich mit gelbem Edding über jeden Hinweis ziehen → unter UV trotzdem sichtbar.",
+          "Komplett-Ausfall: Hinweise mit Bunt-Edding auf weißem Papier — Story: „Die Wald-Tinte hat ihre Magie verloren, jetzt sind die Hinweise sichtbar.\"",
+          "Bei Wow Outdoor: UV-Quest kurzfristig ins Haus verlegen, dunkelste Räume nutzen."
+        ],
+        "fallback": "Komplett ohne UV: 5 Hinweise einfach offen verteilen, „die Wald-Hüterin hat sie sichtbar zurückgelassen\". Funktioniert auch.",
+        "tone": "praktisch"
+      },
+      "eltern_kommen_frueh": {
+        "icon": "🚪",
+        "label": "Eltern stehen 30 Min zu früh vor der Tür",
+        "headline": "Wurzel-Pakt-Schluss-Zeremonie vorziehen.",
+        "steps": [
+          "Eltern in den Flur bitten, Schorle / Tee anbieten — nicht ins Quest-Lager.",
+          "Crew durchsagen: „Achtung Hüter:innen, die Wurzel-Pakt-Bestätigung beginnt in 10 Min — letzte Station abschließen!\"",
+          "Zweite Rune (oder Goldfolie-Sticker) auf jeden Holzring während der Vorlauf-Phase.",
+          "Wurzel-Pakt-Karte mit Sorgfalt-Stempel überreichen, kurzes Foto, Mitgebsel-Tüte in die Hand.",
+          "Bei Wow: Lichterketten-Lichtweg kurz auslegen für die Foto-Galerie."
+        ],
+        "fallback": "Bei chaotischer Abholung: Mitgebsel-Tüten in den Flur, jede:r Hüter:in nimmt eine im Rausgehen, Abschied auf der Treppe — niemand geht ohne Holzring.",
         "tone": "diplomatisch"
       }
     }
