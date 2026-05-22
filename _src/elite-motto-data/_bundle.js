@@ -7408,7 +7408,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Nächstes Tier. 5-6 Runden reichen, dann kippt die Aufmerksamkeit."
               }
             ],
-            "safetyRule": null,
+            "safetyRule": "Bruellen ist FREIWILLIG. Wer das nicht mag: leise zeigen oder Geraeusch fluestern. Reizoffene/geraeuschempfindliche Kinder duerfen Pause machen.",
             "ageAdjust3": "Nur 3-4 sehr eindeutige Tiere, du machst die Geräusche selbst und groß vor.",
             "ageAdjust5": "5-Jährige dürfen selbst ein Tier vormachen und die anderen raten lassen.",
             "indoorTip": "Perfekt als ruhiger Lückenfüller drinnen — kein Material, kein Platz nötig.",
@@ -7675,7 +7675,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "5-Jährige dürfen selbst suchen. 3-Jährige bleiben beim gemeinsamen Verstecken — Allein-Suchen überfordert noch."
               }
             ],
-            "safetyRule": "Keine Verstecke in Schränken mit zufallender Tür, nichts wo ein Kind eingeklemmt werden kann. Vorhänge ohne lange Schnüre.",
+            "safetyRule": "Pflicht: jedes Versteck muss jederzeit fuer den Erwachsenen einsehbar bleiben. Kein vollstaendiges Verstecken bei U4. Erwachsener zaehlt mit OFFENEN Augen und schaut nach jedem Kind. Verboten: Truhen mit zufallender Tuer, Waeschekoerbe, hinterm Sofa kopfueber.",
             "ageAdjust3": "Gemeinsam verstecken, du suchst immer — Kind muss nicht allein bleiben oder allein suchen.",
             "ageAdjust5": "5-Jährige verstecken sich allein und übernehmen abwechselnd das Suchen.",
             "indoorTip": "In 60-75 m² ein Raum mit verschachtelten Verstecken reicht. Türen zu = wirkt nach mehr Welt.",
@@ -8035,7 +8035,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "5-Jährige dürfen selbst suchen. 3-Jährige bleiben beim gemeinsamen Verstecken — Allein-Suchen überfordert noch."
               }
             ],
-            "safetyRule": "Keine Verstecke in Schränken mit zufallender Tür, nichts wo ein Kind eingeklemmt werden kann. Vorhänge ohne lange Schnüre.",
+            "safetyRule": "Pflicht: jedes Versteck muss jederzeit fuer den Erwachsenen einsehbar bleiben. Kein vollstaendiges Verstecken bei U4. Erwachsener zaehlt mit OFFENEN Augen und schaut nach jedem Kind. Verboten: Truhen mit zufallender Tuer, Waeschekoerbe, hinterm Sofa kopfueber.",
             "ageAdjust3": "Gemeinsam verstecken, du suchst immer — Kind muss nicht allein bleiben oder allein suchen.",
             "ageAdjust5": "5-Jährige verstecken sich allein und übernehmen abwechselnd das Suchen.",
             "indoorTip": "In 60-75 m² ein Raum mit verschachtelten Verstecken reicht. Türen zu = wirkt nach mehr Welt.",
@@ -8646,7 +8646,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 5,
             "loudness": null,
             "effort": "leicht",
-            "material": "12–15 Pfotenabdrücke aus Tonpapier ausgeschnitten (DIN A4 braunes Tonpapier, schwarzer Filzstift oder Pfoten-Schablone — ein Löwenpfoten-Set kostet 5 Min. Vorbereitungszeit). Tesa zum Befestigen. Am Endpunkt: 1 Plüsch-Tier oder eine Box mit Mini-Tieren als \"Fund\". Druckvorlage Safari-Tierspuren ist in Vorbereitung — bis dahin: schnell selbst zeichnen, die Kinder merken den Unterschied nicht.",
+            "material": "12–15 Pfotenabdrücke aus Tonpapier ausgeschnitten (DIN A4 braunes Tonpapier, schwarzer vorgefertigte Tarn-Tuecher ODER abwaschbare Stoffmalfarben (Filzstift faerbt ab) oder Pfoten-Schablone — ein Löwenpfoten-Set kostet 5 Min. Vorbereitungszeit). Tesa zum Befestigen. Am Endpunkt: 1 Plüsch-Tier oder eine Box mit Mini-Tieren als \"Fund\". Druckvorlage Safari-Tierspuren ist in Vorbereitung — bis dahin: schnell selbst zeichnen, die Kinder merken den Unterschied nicht.",
             "prepText": "Vorher legst du eine Spur durch Garten oder Wohnung — z.B. Löwen-Pfoten an die Wand kleben (Augenhöhe Kind), die in eine bestimmte Richtung führen. Am Endpunkt versteckt sich das \"vermisste Tier\" (Plüsch-Löwe).",
             "steps": [
               {
@@ -8675,7 +8675,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Am Endpunkt liegt der Plüsch-Löwe. Alle finden ihn gemeinsam — niemand 'gewinnt', jeder darf ihn halten."
               }
             ],
-            "safetyRule": "Pfoten nur auf Augenhöhe kleben, nichts zum Klettern provozieren. Endpunkt-Versteck ohne scharfe Kanten oder kippelige Möbel.",
+            "safetyRule": "Pfoten nur auf Augenhöhe kleben, nichts zum Klettern provozieren. Endpunkt-Versteck ohne scharfe Kanten oder kippelige Möbel. Pflicht: bei Augen-zu-Spielen ist eine ZWEITE Aufsichtsperson erforderlich. Solo-Variante (1 Erwachsener) ist hier nicht ausreichend.",
             "ageAdjust6": "Spur kurz halten (15–20 Spuren reichen), Endpunkt sichtbar verstecken (unter Sofadecke, hinter Baum).",
             "ageAdjust8": "Mehrere Tier-Arten parallel auslegen (Löwe + Elefant), 2 Endpunkte. In Teams suchen.",
             "indoorTip": "Spuren in 3–4 Räume verteilen, Türen geschlossen halten — sieht nach mehr Welt aus als es ist.",
@@ -8855,7 +8855,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 6,
             "loudness": "ruhig",
             "effort": "leicht",
-            "material": "Material pro Team: 2 Stoffquadrate (~30×30cm, alte Geschirrtücher oder weißer Stoff zerschnitten), Filzstifte in Erdfarben (braun, grün, ocker), 1 Beispiel-Tarn-Tuch zum Vorzeigen",
+            "material": "Material pro Team: 2 Stoffquadrate (~30×30cm, alte Geschirrtücher oder weißer Stoff zerschnitten), vorgefertigte Tarn-Tuecher ODER abwaschbare Stoffmalfarben (Filzstift faerbt ab)e in Erdfarben (braun, grün, ocker), 1 Beispiel-Tarn-Tuch zum Vorzeigen",
             "prepText": "Erst bemalen, dann tarnen. Jedes Kind bekommt ein Stoffquadrat und malt es mit Erdfarben so an, dass es zur Umgebung passt (Garten = grün-braun, Sofa = grau-beige). 8 Min. malen.\n\nDann: das Tuch über sich legen oder hinter sich halten und sich im Raum/Garten verstecken. Der Spielleiter (oder du) schaut 15 Sekunden weg, dann sucht er. Wer 30 Sekunden ungesehen bleibt, hat bestanden — und kriegt einen Stempel.",
             "steps": [
               {
@@ -8887,7 +8887,7 @@ var ELITE_MOTTO_DATA = {
             "safetyRule": "Nur kindersichere, abwaschbare Filzstifte. Keine Verstecke an wackeligen Regalen oder hinter heißen Heizungen.",
             "ageAdjust6": "Spielleiter zeigt vorher ganz deutlich, wo ungeeignete Verstecke sind (\"hinter dem weißen Vorhang funktioniert dein braunes Tuch nicht\"). Pädagogische Bemerkung statt Regel.",
             "ageAdjust8": "Mehrere Verstecke nacheinander, Zeit knapper machen.",
-            "indoorTip": "Vorhänge, hinter Sofa, in Wäscheecke — gibt mehr Verstecke als man denkt.",
+            "indoorTip": "Vorhänge, hinter Sofa, in Wäscheecke — gibt mehr Verstecke als man denkt. Indoor-Limit: max. 4 Kinder gleichzeitig tarnen lassen (raeumlich nicht mehr Versteckplaetze). Bei groesserer Gruppe in 2 Runden aufteilen ODER Outdoor.",
             "outdoorTip": "Im Garten Tarn-Tuch gegen echtes Grün und Erde testen — der Aha-Effekt ist draußen viel größer als drinnen.",
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Erst malen, dann verstecken: Das aktive Gestalten gibt jedem Kind ein Ergebnis in der Hand, bevor die schwere Disziplin Stillhalten kommt. Mit 6-8 verstehen Kinder hier das Prinzip Tarnung wirklich."
@@ -9014,7 +9014,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Wer die Beute lautlos erreicht, besteht und kriegt den Stempel. 8-Jährige optional rückwärts pirschen lassen."
               }
             ],
-            "safetyRule": "Strecke frei von Stolperfallen halten, Hindernisse nur weich (Papier, Folie). Spielleiter hat trotz 'geschlossener Augen' ein wachsames Ohr.",
+            "safetyRule": "Strecke frei von Stolperfallen halten, Hindernisse nur weich (Papier, Folie). Spielleiter hat trotz 'geschlossener Augen' ein wachsames Ohr. Pflicht: bei Augen-zu-Spielen ist eine ZWEITE Aufsichtsperson erforderlich. Solo-Variante (1 Erwachsener) ist hier nicht ausreichend.",
             "ageAdjust6": "Strecke kürzer (3 m), Hindernisse weiter auseinander, Spielleiter ist nachsichtig.",
             "ageAdjust8": "Strecke länger (5 m), mehr Hindernisse, Spielleiter ist strenger. Bonus-Variante: rückwärts pirschen.",
             "indoorTip": "Pirsch-Pfad durch Flur und Wohnzimmer legen — eine Tür als Start, der Sessel am Ende als Beute-Ziel.",
@@ -9059,7 +9059,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Andere Teams weisen den sicheren Pfad. Kommt das Junge bei Mama an, ist die Mission erfüllt — alle haben gewonnen."
               }
             ],
-            "safetyRule": "Gefahrenzonen nur mit Klebeband am Boden markieren, keine echten Hindernisse. Verstecke nicht hinter schweren, kippbaren Möbeln.",
+            "safetyRule": "Gefahrenzonen nur mit Klebeband am Boden markieren, keine echten Hindernisse. Verstecke nicht hinter schweren, kippbaren Möbeln. Pflicht: bei Augen-zu-Spielen ist eine ZWEITE Aufsichtsperson erforderlich. Solo-Variante (1 Erwachsener) ist hier nicht ausreichend.",
             "ageAdjust6": "Hinweise einfacher formulieren, keine versteckten Wortspiele.",
             "ageAdjust8": "Hinweise als Rätsel formulieren, optional mit kleinem Symbol-Code (zwei aufeinander folgende Hinweise nötig, um das nächste Versteck zu finden).",
             "indoorTip": "Verstecke über die ganze Wohnung verteilen — Bücherregal, Badezimmer (Wasser), dunkle Möbel-Ecke, Fensterbank.",
@@ -9204,7 +9204,7 @@ var ELITE_MOTTO_DATA = {
       },
       {
         "id": "wow",
-        "label": "Wow — 3,5 Stunden, die volle Schicht",
+        "label": "Wow — 4 Stunden, die volle Schicht",
         "headline": "✨ Wow — 4 Stunden, der Geburtstag des Jahres",
         "intro": "Für den Geburtstag, über den noch Wochen später in der Schule geredet wird. Wow baut auf Standard auf: gleiche Junior-Ranger-Ausbildung, gleiche 4 Stationen, gleiche Lizenz-Zeremonie. Erweitert wird es um eine 5. Station, die Schatzsuche-Quest \"Verborgener Tempel\" als zweiten dramatischen Bogen, echte Filz-Buschhüte als Mitgebsel-Highlight und optional Walkie-Talkie-Sets. Funktioniert besonders, wenn dein Kind auf größere Bühne reagiert, ihr ein Geschwister-Geburtstag plant oder du den 7. Geburtstag als Meilenstein gestalten willst. Wer mag, kann einzelnen Kindern hier schon eine kleine Sonderrolle geben (Spuren-Chef, Funker mit Walkie-Talkie) — die ausgewachsene Spezialisierungs-Mechanik kommt erst in der 9–12-Variante.",
         "timeWindow": "14:00–18:00, 10 Kinder",
@@ -10213,7 +10213,58 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": "Die drei Quadranten an verschiedene Wände/Tische im Raum, damit die Teams sich nicht ins Gehege kommen.",
             "outdoorTip": "Quadranten an drei Stationen im Garten — die kurzen Wege dazwischen sind willkommene Bewegung.",
             "whyItWorksTitle": "Kooperation + Selbstkontrolle statt Tempo",
-            "whyItWorks": "Kein Quadrant funktioniert allein — die drei Spezialisierungen müssen sich am Ende abstimmen. Ergibt ein Lösungswort keinen Sinn, prüfen die Kinder ihre Reihenfolge selbst nach, statt zu raten. Genaues Hinschauen wird belohnt, nicht Geschwindigkeit. Steckt ein Team fest, hilft eine andere Spezialisierung mit — das ist die Story: „Im Reservat zählt, wer hinschaut.“"
+            "whyItWorks": "Kein Quadrant funktioniert allein — die drei Spezialisierungen müssen sich am Ende abstimmen. Ergibt ein Lösungswort keinen Sinn, prüfen die Kinder ihre Reihenfolge selbst nach, statt zu raten. Genaues Hinschauen wird belohnt, nicht Geschwindigkeit. Steckt ein Team fest, hilft eine andere Spezialisierung mit — das ist die Story: „Im Reservat zählt, wer hinschaut.“",
+            "codeMechanic": "Chiffre: Tierspur-Symbol -> Anlaut-Buchstabe. Pro Quadrant 6 Symbolkarten ausgedruckt. Beispiel: Spuren-Symbol von Pfote = \"P\" (fuer Panther) -> Wort bauen. Selbstkontrolle: ergibt sich ein echtes Wort (WASSER/FELS/TEMPEL), war die Loesung richtig. 15 Min Setup: Tier-Spur-Karten am Vorabend aus Vorlage drucken.",
+            "animalFacts": [
+              {
+                "tier": "Loewe",
+                "spurbild": "rund, 4 Zehen, ohne Krallen",
+                "habitat": "Savanne",
+                "merkmal": "Maehne nur beim Maennchen"
+              },
+              {
+                "tier": "Elefant",
+                "spurbild": "oval, 5 Zehen vorn 4 hinten",
+                "habitat": "Savanne/Wald",
+                "merkmal": "Ohren bei Afrika groesser als Asien"
+              },
+              {
+                "tier": "Gepard",
+                "spurbild": "schmaler als Loewe, Krallenabdrücke sichtbar",
+                "habitat": "offene Savanne",
+                "merkmal": "einziges Katzentier mit nicht-einziehbaren Krallen"
+              },
+              {
+                "tier": "Giraffe",
+                "spurbild": "spaltig, 2 Hufzehen, sehr gross",
+                "habitat": "Savanne",
+                "merkmal": "7 Halswirbel wie Mensch"
+              },
+              {
+                "tier": "Nashorn",
+                "spurbild": "rund, 3 Zehen-Abdrucke",
+                "habitat": "Savanne/Buschland",
+                "merkmal": "Horn ist Haar, kein Knochen"
+              },
+              {
+                "tier": "Zebra",
+                "spurbild": "huf-foermig, einzelne Zehe",
+                "habitat": "Savanne",
+                "merkmal": "jedes Streifenmuster einzigartig wie Fingerabdruck"
+              },
+              {
+                "tier": "Erdmaennchen",
+                "spurbild": "klein, 5 Zehen mit Krallen",
+                "habitat": "Wueste/Halbwueste",
+                "merkmal": "Waechter steht aufrecht"
+              },
+              {
+                "tier": "Flusspferd",
+                "spurbild": "rund, 4 Zehen, sehr breit",
+                "habitat": "Wasser",
+                "merkmal": "gefaehrlichstes Saeugetier Afrikas trotz Pflanzenfresser"
+              }
+            ]
           },
           {
             "name": "📸 Foto-Quest „Hinter der Tarnung“",
@@ -10604,7 +10655,58 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": "Den TOR-Ort drinnen wählen (Türbogen, Speisekammer) — der „Ort am TOR“ funktioniert in jeder Wohnung.",
             "outdoorTip": "Gartentor oder Terrassentür als TOR markieren.",
             "whyItWorksTitle": "Jede Spezialisierung ist nötig",
-            "whyItWorks": "Wer eine Station nicht knackt, holt sich einen Spezialisten dazu, der seinen Code schon hat — gelöst wird gemeinsam, niemand bleibt hängen. Am Ende bekommt jedes Kind die volle Spezialisten-Lizenz, ohne Abstufung. Wer besonders sorgfältig beobachtet oder recherchiert hat, kriegt einen „Sorgfalt-Spezialist“-Stempel auf die Lizenz — passt zur Hero-Botschaft „im Reservat zählt nicht, wer der Schnellste ist, sondern wer hinschaut“. Tempo wird hier nicht extra belohnt."
+            "whyItWorks": "Wer eine Station nicht knackt, holt sich einen Spezialisten dazu, der seinen Code schon hat — gelöst wird gemeinsam, niemand bleibt hängen. Am Ende bekommt jedes Kind die volle Spezialisten-Lizenz, ohne Abstufung. Wer besonders sorgfältig beobachtet oder recherchiert hat, kriegt einen „Sorgfalt-Spezialist“-Stempel auf die Lizenz — passt zur Hero-Botschaft „im Reservat zählt nicht, wer der Schnellste ist, sondern wer hinschaut“. Tempo wird hier nicht extra belohnt.",
+            "codeMechanic": "Chiffre: Tierspur-Symbol -> Anlaut-Buchstabe. Pro Quadrant 6 Symbolkarten ausgedruckt. Beispiel: Spuren-Symbol von Pfote = \"P\" (fuer Panther) -> Wort bauen. Selbstkontrolle: ergibt sich ein echtes Wort (WASSER/FELS/TEMPEL), war die Loesung richtig. 15 Min Setup: Tier-Spur-Karten am Vorabend aus Vorlage drucken.",
+            "animalFacts": [
+              {
+                "tier": "Loewe",
+                "spurbild": "rund, 4 Zehen, ohne Krallen",
+                "habitat": "Savanne",
+                "merkmal": "Maehne nur beim Maennchen"
+              },
+              {
+                "tier": "Elefant",
+                "spurbild": "oval, 5 Zehen vorn 4 hinten",
+                "habitat": "Savanne/Wald",
+                "merkmal": "Ohren bei Afrika groesser als Asien"
+              },
+              {
+                "tier": "Gepard",
+                "spurbild": "schmaler als Loewe, Krallenabdrücke sichtbar",
+                "habitat": "offene Savanne",
+                "merkmal": "einziges Katzentier mit nicht-einziehbaren Krallen"
+              },
+              {
+                "tier": "Giraffe",
+                "spurbild": "spaltig, 2 Hufzehen, sehr gross",
+                "habitat": "Savanne",
+                "merkmal": "7 Halswirbel wie Mensch"
+              },
+              {
+                "tier": "Nashorn",
+                "spurbild": "rund, 3 Zehen-Abdrucke",
+                "habitat": "Savanne/Buschland",
+                "merkmal": "Horn ist Haar, kein Knochen"
+              },
+              {
+                "tier": "Zebra",
+                "spurbild": "huf-foermig, einzelne Zehe",
+                "habitat": "Savanne",
+                "merkmal": "jedes Streifenmuster einzigartig wie Fingerabdruck"
+              },
+              {
+                "tier": "Erdmaennchen",
+                "spurbild": "klein, 5 Zehen mit Krallen",
+                "habitat": "Wueste/Halbwueste",
+                "merkmal": "Waechter steht aufrecht"
+              },
+              {
+                "tier": "Flusspferd",
+                "spurbild": "rund, 4 Zehen, sehr breit",
+                "habitat": "Wasser",
+                "merkmal": "gefaehrlichstes Saeugetier Afrikas trotz Pflanzenfresser"
+              }
+            ]
           },
           {
             "name": "🗺️ Die Karte vermessen — Hauptmission",
@@ -10908,7 +11010,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 5,
                 "name": "Station 5 (Tempel-Schloss)",
-                "content": "3 fehlende Buchstaben: T (Ort des falschen Tigers) plus E, L (am Tempel-Tor). Vorne T, hinten EL → TEMPEL."
+                "content": "3 fehlende Buchstaben: T (Ort des falschen Tigers) plus E, L (am Tempel-Tor). Vorne T, hinten EL → SCHUTZGEBIET."
               },
               {
                 "n": 6,
@@ -14568,7 +14670,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Die Kiste wird im Kreis geoeffnet, jedes Kind nimmt sich eine Goldmuenze — gleich viele fuer alle."
               }
             ],
-            "safetyRule": "Spur nicht ueber Treppen, Stuehle oder erhoehte Verstecke legen — kein Klettern. Goldmuenzen nicht auf den Boden vor Tueren, ueber die gelaufen wird (Rutschgefahr).",
+            "safetyRule": "Schoko-Goldmuenzen sind bei 3-Jaehrigen Erstickungsrisiko (klein, rund, hart, Folie). Fuer Tauchspiel/Suchspiel: Plastik-Muenzen statt Schoko-Muenzen. Schoko-Muenzen nur zum Essen unter Sicht-Aufsicht; Folien sofort wegsammeln.",
             "ageAdjust3": "Spur kurz halten (6-8 Marken), Endpunkt sichtbar verstecken. Ein Erwachsener geht voran und 'sucht mit'.",
             "ageAdjust5": "Spur laenger, zwei, drei Etappen mit Mini-Aufgabe dazwischen ('Klatscht dreimal, dann geht's weiter'). Karte selbst halten lassen.",
             "indoorTip": "In 60-75 m2 geht die Spur ueber 2-3 Raeume — ums Sofa, durch den Flur, in die Garderobe. Reicht voellig.",
@@ -14772,7 +14874,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "halblaut",
             "effort": "leicht",
             "material": "Grosse Schuessel oder Wanne, Wasser oder trockene Fuellung (Sand, zerknuelltes Papier, getrocknete Erbsen), Schoko-Goldmuenzen in Folie oder Plastik-Muenzen, Handtuecher.",
-            "prepText": "Eine grosse Schuessel mit lauwarmem Wasser fuellen (oder trocken mit Sand/Papier, falls Wasser zu viel Chaos macht). Goldmuenzen reinwerfen. Handtuecher danebenlegen — es wird nass.",
+            "prepText": "TROCKENE Variante als Default (Tuechern auf dem Boden, Muenzen darunter): sicher fuer 3-Jaehrige. Eine grosse Schuessel mit lauwarmem Wasser fuellen (oder trocken mit Sand/Papier, falls Wasser zu viel Chaos macht). Goldmuenzen reinwerfen. Handtuecher danebenlegen — es wird nass.",
             "steps": [
               {
                 "n": 1,
@@ -14840,7 +14942,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Die Kiste wird im Kreis geoeffnet, jedes Kind nimmt sich eine Goldmuenze — gleich viele fuer alle."
               }
             ],
-            "safetyRule": "Spur nicht ueber Treppen, Stuehle oder erhoehte Verstecke legen — kein Klettern. Goldmuenzen nicht auf den Boden vor Tueren, ueber die gelaufen wird (Rutschgefahr).",
+            "safetyRule": "Schoko-Goldmuenzen sind bei 3-Jaehrigen Erstickungsrisiko (klein, rund, hart, Folie). Fuer Tauchspiel/Suchspiel: Plastik-Muenzen statt Schoko-Muenzen. Schoko-Muenzen nur zum Essen unter Sicht-Aufsicht; Folien sofort wegsammeln.",
             "ageAdjust3": "Spur kurz halten (6-8 Marken), Endpunkt sichtbar verstecken. Ein Erwachsener geht voran und 'sucht mit'.",
             "ageAdjust5": "Spur laenger, zwei, drei Etappen mit Mini-Aufgabe dazwischen ('Klatscht dreimal, dann geht's weiter'). Karte selbst halten lassen.",
             "indoorTip": "In 60-75 m2 geht die Spur ueber 2-3 Raeume — ums Sofa, durch den Flur, in die Garderobe. Reicht voellig.",
@@ -15165,7 +15267,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Die Kiste wird im Kreis geoeffnet, jedes Kind nimmt sich eine Goldmuenze — gleich viele fuer alle."
               }
             ],
-            "safetyRule": "Spur nicht ueber Treppen, Stuehle oder erhoehte Verstecke legen — kein Klettern. Goldmuenzen nicht auf den Boden vor Tueren, ueber die gelaufen wird (Rutschgefahr).",
+            "safetyRule": "Schoko-Goldmuenzen sind bei 3-Jaehrigen Erstickungsrisiko (klein, rund, hart, Folie). Fuer Tauchspiel/Suchspiel: Plastik-Muenzen statt Schoko-Muenzen. Schoko-Muenzen nur zum Essen unter Sicht-Aufsicht; Folien sofort wegsammeln.",
             "ageAdjust3": "Spur kurz halten (6-8 Marken), Endpunkt sichtbar verstecken. Ein Erwachsener geht voran und 'sucht mit'.",
             "ageAdjust5": "Spur laenger, zwei, drei Etappen mit Mini-Aufgabe dazwischen ('Klatscht dreimal, dann geht's weiter'). Karte selbst halten lassen.",
             "indoorTip": "In 60-75 m2 geht die Spur ueber 2-3 Raeume — ums Sofa, durch den Flur, in die Garderobe. Reicht voellig.",
@@ -15373,6 +15475,10 @@ var ELITE_MOTTO_DATA = {
         {
           "topic": "📵 Kurz halten, frueh enden",
           "detail": "90 Minuten bis 2 Stunden sind genug. Lieber aufhoeren, wenn es am schoensten ist, als eine Stunde zu lang. Ein klares Ende-Ritual (Schatz teilen, Urkunde, Tschuess) gibt allen das Signal — sonst zerfasert die Party."
+        },
+        {
+          "tip": "Holzspiess-Sicherheit",
+          "content": "Bei 3-4-Jaehrigen Obst von Holzspiessen ABZIEHEN und einzeln servieren. Holzspiesse nur fuer Aeltere oder unter Aufsicht. Beim Kuchen vor dem Anschneiden die Holzspieß-Maste der Piraten-Deko ZIEHEN."
         }
       ],
       "educationalValue": "Die Kinder ueben ganz nebenbei: gemeinsam ein Ziel verfolgen, aufeinander warten und am Ende teilen. Eine Schatzsuche ohne Sieger zeigt 3-5-Jaehrigen, dass ein Erfolg schoener wird, wenn ihn alle haben — das ist die erste Erfahrung von Kooperation statt Konkurrenz. Dazu kommt ein Stueck Selbstwirksamkeit: 'Ich habe den Schatz mitgefunden' ist fuer ein Dreijaehriges ein echtes Erfolgserlebnis. Und das Rollenspiel — jemand anders sein, in eine Geschichte eintauchen — trainiert Fantasie und Sprache, ohne dass es nach Lernen aussieht."
@@ -15664,7 +15770,7 @@ var ELITE_MOTTO_DATA = {
       "source_file": "kindergeburtstag/piraten-6-8-jahre.html",
       "extracted": "2026-05-19",
       "schema_version": "1.0",
-      "purpose": "Dino 6-8 — Phase C #6 Elite-Slot (no ritual)",
+      "purpose": "Piraten 6-8 — Elite-Slot (mit Ritual)",
       "phase_b_complete": "2026-05-20",
       "phase_b_method": "Direct draft analog Phase C — Piraten-spezifika: Schatzsuche + Augenklappen + Schatztruhe + Goldmünzen.",
       "phase_b_structural_refresh": "2026-05-21",
@@ -16458,7 +16564,11 @@ var ELITE_MOTTO_DATA = {
         "kosten": "~7 &euro;",
         "allergiker": "Packung checken"
       },
-      "tips": null
+      "tips": [
+        "Kuchen schon am Vortag backen, Deko erst am Partytag",
+        "Bei Kapitaensmuetze: aus Fondant pressen und 2h im Kuehlschrank stabilisieren",
+        "Pirat-Augenklappen aus dunkler Schokolade einfach mit Backpapier-Schablone formen"
+      ]
     },
     "parentTips": {
       "structured": [
@@ -16837,7 +16947,8 @@ var ELITE_MOTTO_DATA = {
         }
       ],
       "optOutNote": "Kein Kind muss eine Rolle nehmen. Wer einfach nur mitlaufen will, ist normaler Pirat — Augenklappe und Schatzanteil bekommt es trotzdem. Die Rollen sind ein Angebot, kein Zwang.",
-      "materialNote": "Augenklappen, Kopftücher und eine kleine Holz-Schatztruhe gibt es als Set; siehe shoppingList der jeweiligen Variante. Versprechen-Karte und Rollen-Kärtchen druckst du selbst aus — Vorlagen liegen im Einladungs- und Druck-Bereich."
+      "materialNote": "Augenklappen, Kopftücher und eine kleine Holz-Schatztruhe gibt es als Set; siehe shoppingList der jeweiligen Variante. Versprechen-Karte und Rollen-Kärtchen druckst du selbst aus — Vorlagen liegen im Einladungs- und Druck-Bereich.",
+      "roleSkalierung": "3 Kernrollen (Kapitaen + Steuermann + Ausguck) sind PFLICHT. 5 weitere optional je nach Kinderzahl. Bei wenigen Kindern: 2 Rollen pro Kind kombinieren. Schreiber-Funktion altersgerecht: 6-Jaehrige malen SYMBOLE statt schreiben."
     }
   },
   "piraten-gross": {
@@ -17048,7 +17159,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 5,
                 "name": "INSEL-Lösung",
-                "content": "Inka-Maske 500 / Nautischer Sextant 220 / Silberbeutel 90 / Edelstein-Ring 40 / Loggbuch 10 → I-N-S-E-L."
+                "content": "Inka-Maske 500 / Nautischer Sextant 220 / Silberbeutel 90 / Edelstein-Ring 40 / Logbuch 10 → I-N-S-E-L."
               },
               {
                 "n": 6,
@@ -17517,7 +17628,7 @@ var ELITE_MOTTO_DATA = {
             ],
             "safetyRule": "Verstecke nur an sicheren, gut erreichbaren Orten — kein Klettern, keine verschlossenen Räume.",
             "ageAdjust9": "Pfad kurz und im selben Raum, deutliche Markierungen.",
-            "ageAdjust12": "Pfad über mehrere Räume/den ganzen Garten, ein letzter Hinweis per Caesar-Chiffre (ein Buchstabe zurück) verschlüsselt.",
+            "ageAdjust12": "Pfad über mehrere Räume/den ganzen Garten, ein letzter Hinweis per Caesar-Chiffre (ein Buchstabe zurück) verschlüsselt. WICHTIG: Dieser Caesar-Hinweis ist verschluesselt — der Wort-Selbst-Check gilt fuer diese eine Stelle NICHT.",
             "indoorTip": "Den Schatz in einem klar abgegrenzten Bereich verstecken, damit nicht die ganze Wohnung durchsucht wird.",
             "outdoorTip": "Truhe flach eingraben oder unter Laub — das echte Buddeln ist der Höhepunkt.",
             "whyItWorksTitle": "Alle Stränge laufen zusammen",
@@ -17774,7 +17885,7 @@ var ELITE_MOTTO_DATA = {
             ],
             "safetyRule": "Bei Garten-Stationen im Halbdunkel auf Stolperfallen achten; die Brandungs-Strecke nur über stabile, niedrige Hindernisse führen — kein Klettern in Höhe.",
             "ageAdjust9": "Stationen 1 und 5 vereinfachen — nur 3 Koordinaten, niedrigere Brandungs-Hindernisse.",
-            "ageAdjust12": "Station 6 verschärfen: das Lösungswort zusätzlich per Caesar-Chiffre (ein Buchstabe zurück) verschlüsseln, sodass die Crew erst dekodieren muss.",
+            "ageAdjust12": "Station 6 verschärfen: das Lösungswort zusätzlich per Caesar-Chiffre (ein Buchstabe zurück) verschlüsseln, sodass die Crew erst dekodieren muss. WICHTIG: Dieser Caesar-Hinweis ist verschluesselt — der Wort-Selbst-Check gilt fuer diese eine Stelle NICHT.",
             "indoorTip": "Die 6 Stationen auf verschiedene Räume verteilen — der Raumwechsel hält die Spannung der langen Quest.",
             "outdoorTip": "Die Brandungs-Strecke (Station 5) wirkt im Garten am besten — Slalom über flache Kisten und Seile als „Riff“.",
             "whyItWorksTitle": "Wettbewerb wird Mission",
@@ -18355,6 +18466,10 @@ var ELITE_MOTTO_DATA = {
         {
           "topic": "Eltern",
           "detail": "Bei 3–5 bleiben Eltern oft dabei und das ist gut so — plane Eltern aktiv als Helfer ein, nicht als Störung."
+        },
+        {
+          "name": "Sensorik",
+          "content": "Dunkelheit und Lautstaerke sind Trigger fuer 3-Jaehrige. NIE komplett abdunkeln - nur dimmen. Rueckzugsort anbieten."
         }
       ],
       "whyMottoFitsHeadline": "Warum Weltraum für 3–5 funktioniert",
@@ -19024,7 +19139,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Am Ende legt ihr alle Mondsteine in die Mitte — sie funkeln in der Sonne und jedes Kind darf einen behalten."
               }
             ],
-            "safetyRule": "Steine fest in Folie wickeln, keine spitzen Kanten. Kinder nicht in Beete oder an Teiche schicken.",
+            "safetyRule": "Steine fest in Folie wickeln, keine spitzen Kanten. Kinder nicht in Beete oder an Teiche schicken. Mondsteine mindestens FAUSTGROSS, nicht mundgaengig. Nicht werfen lassen. Erwachsene Hand begleitet das Suchen.",
             "ageAdjust3": "Größere Steine nehmen, gut sichtbar im freien Gras platzieren. 3–4-Jährige brauchen es einfach.",
             "ageAdjust5": "Kleinere Steine, ein paar an kniffligeren Stellen. 5-Jährige dürfen ruhig ein bisschen suchen.",
             "indoorTip": "Drinnen Folien-Korken auf dem Boden verteilen — funktioniert genauso, nur auf kleinerem Raum.",
@@ -19803,7 +19918,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Jede Weite wird gefeiert, nicht nur die längste. Wer mag, baut um und startet eine zweite Runde mit besserer Form."
               }
             ],
-            "safetyRule": "Nicht aufeinander zielen — alle pusten in dieselbe Richtung. Kleinteile (Finnen) nicht in den Mund nehmen.",
+            "safetyRule": "Schutzbrille PFLICHT fuer alle in Reichweite (kein optional). Mindestabstand 2 m, nicht 2 Schritte. Bei Blindgaenger 60 Sek. warten, NUR Erwachsener naehert sich + oeffnet vorsichtig. Drinnen NIEMALS unter Haengelampe (Dose kann gegen Lampen/Gesichter schiessen). Geschlossene Filmdosen koennen mit erheblichem Druck in unvorhersehbare Richtung abheben.",
             "ageAdjust6": "Rakete vorab fertig kleben, Kinder bemalen nur und pusten. Keine Mess-Pflicht — Hauptsache, sie fliegt.",
             "ageAdjust8": "Mehrere Bau-Varianten testen lassen (lange vs. kurze Finnen) und vergleichen, welche Form weiter fliegt — kleines Mini-Experiment.",
             "indoorTip": "Im Flur entlang pusten — die lange Bahn macht den Weiten-Vergleich fairer und es geht nichts kaputt.",
@@ -19845,14 +19960,14 @@ var ELITE_MOTTO_DATA = {
             ],
             "safetyRule": null,
             "ageAdjust6": "Bekanntes wählen: Sonne, Mond, Erde, größter Planet. Bilder zeigen statt nur fragen. Hinweise erlaubt.",
-            "ageAdjust8": "Schwierigere Fragen mischen (Reihenfolge der Planeten, warum der Mond leuchtet). Optional Punkte zählen.",
+            "ageAdjust8": "Schwierigere Fragen mischen (Reihenfolge der Planeten, warum der Mond leuchtet (er reflektiert das Sonnenlicht, leuchtet nicht selbst)). Optional Punkte zählen.",
             "indoorTip": null,
             "outdoorTip": null,
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Raten ohne Verlierer: Mit 6-8 wollen Kinder ihr Weltraum-Wissen zeigen, aber das Reihum-Prinzip sorgt dafür, dass auch das ruhigere Kind dran kommt. Die Fakten kommen nebenbei statt als Frontalunterricht — und ein echtes Sonnensystem zum Anschauen macht es greifbar."
           }
         ],
-        "food": "🎂Raketen-Kuchen1 Blechkuchen\n🥤\"Energie-Drink\"1,5 L Apfelschorle\n🌟Stern-Kekse12 Stk.\n🍿Meteoriten-Popcorn200 g\n\n💡 \"Energie-Drink\" — funktioniert sofort\nApfelschorle in transparente Becher gießen, Strohhalm rein, fertig. Beim Servieren als Bord-Ritual framen: \"Jeder Astronaut tankt einmal pro Stunde Energie.\" Kostet null extra, Kinder lieben den Vorwand.",
+        "food": "🎂Raketen-Kuchen1 Blechkuchen\n🥤\"Energie-Drink\"2 L Apfelschorle\n🌟Stern-Kekse12 Stk.\n🍿Meteoriten-Popcorn200 g\n\n💡 \"Energie-Drink\" — funktioniert sofort\nApfelschorle in transparente Becher gießen, Strohhalm rein, fertig. Beim Servieren als Bord-Ritual framen: \"Jeder Astronaut tankt einmal pro Stunde Energie.\" Kostet null extra, Kinder lieben den Vorwand.",
         "decoration": "🌟 Luftballons schwarz/silber/blau10 Stk. ~3 €\n🪐 Planeten-Ausdrucke an der WandKostenlosKostenlose Vorlagen ausdrucken und aufhängen — sofort Weltall-Look\n🌙 Lichterkette als SterneKostenlosVorhandene Lichterkette in den Partyraum — wirkt wie ein Sternenhimmel\n🚀 Papier-Rakete am EingangKostenlosEine größere Rakete aus Tonpapier basteln, an die Tür kleben",
         "giveaways": "🏅 1 Astronauten-Lizenz (selbst ausgedruckt mit Namen + Foto-Slot)\n🚀 1 selbst gebaute Papier-Rakete (vom Wettstart — Bezug zur Party)\n🌟 2 Leucht-Sterne oder Weltraum-Sticker\n🍬 1 kleine Tüte Gummibärchen (\"Proviant für den Heimflug\")\n\nIn schwarze oder silberne Papiertüte (10 Stk. ~1 € bei DM/Action) mit Stern-Stempel oder per Hand \"Astronaut ___\" beschriften. Kosten: ~2 € pro Kind.",
         "shoppingList": [
@@ -20053,7 +20168,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Jede Crew, die eine Rakete gestartet hat, bekommt ihren Stern. Mehrere Starts machen — alle wollen pusten."
               }
             ],
-            "safetyRule": "NUR draußen oder über einem Waschbecken. Niemand beugt sich über die Dose, nachdem der Deckel drauf ist. Abstand halten, Erwachsener leitet jeden Start. Essig nicht in die Augen.",
+            "safetyRule": "Schutzbrille PFLICHT fuer alle in Reichweite (kein optional). Mindestabstand 2 m, nicht 2 Schritte. Bei Blindgaenger 60 Sek. warten, NUR Erwachsener naehert sich + oeffnet vorsichtig. Drinnen NIEMALS unter Haengelampe (Dose kann gegen Lampen/Gesichter schiessen). Geschlossene Filmdosen koennen mit erheblichem Druck in unvorhersehbare Richtung abheben.",
             "ageAdjust6": "Erwachsener mischt und schließt die Dose, Kinder zählen den Countdown und treten zurück. Staunen reicht.",
             "ageAdjust8": "Kinder dürfen unter Aufsicht selbst dosieren und vergleichen: mehr Natron = höherer Start? Kleines Experiment.",
             "indoorTip": "Drinnen nur über dem Spülbecken oder in einer großen Wanne — und mit Brausetablette statt Essig, das spritzt weniger.",
@@ -20180,7 +20295,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Mond-Hüpfen",
-                "content": "Zwischen den Crystals nur in großen, langsamen Schritten gehen — \"so läuft man auf dem Mond, weil man fast schwerelos ist\"."
+                "content": "Zwischen den Crystals nur in großen, langsamen Schritten gehen — \"so läuft man auf dem Mond, weil man mit viel kleinerer Schwerkraft (ein Sechstel der Erde) ist\"."
               },
               {
                 "n": 5,
@@ -20453,7 +20568,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Verbindet Essen und Mission: Die Kinder machen ihr eigenes Mittagessen und bleiben dabei in der Geschichte (Mond mit Kratern). Das Belegen ist eine ruhige, gestaltende Tätigkeit, die jedes Kind kann — und die Wartezeit beim Backen füllt elegant eine Programm-Lücke. Selbst gemachtes Essen schmeckt Kindern doppelt."
           }
         ],
-        "food": "🎂Raketen-Kuchen1 Blechkuchen + 1 kleiner\n🥤\"Energie-Drink\"4 L Apfelschorle\n🍕Mond-Pizzen (Backstation)10-12 Stück\n🌯Wraps \"Kometen\"10 Stück\n🌟Stern-Kekse10 Stk.\n🥕Möhren + Käse-Würfel\"Mond-Sticks\"\n🍿Meteoriten-Popcorn (Kino)400 g\n🍫Schoko-SterneRaumstation-Inhalt",
+        "food": "🎂Raketen-Kuchen1 Blechkuchen + 1 kleiner\n🥤\"Energie-Drink\"5 L Apfelschorle\n🍕Mond-Pizzen (Backstation)10-12 Stück\n🌯Wraps \"Kometen\"10 Stück\n🌟Stern-Kekse10 Stk.\n🥕Möhren + Käse-Würfel\"Mond-Sticks\"\n🍿Meteoriten-Popcorn (Kino)400 g\n🍫Schoko-SterneRaumstation-Inhalt",
         "decoration": "🌟 Weltraum-Teller & BecherSet ~10 €\n🎈 Luftballons schwarz/silber/blau20 Stk. ~5 €\n🪧 Weltraum-Girlande~4 €\n🪐 Planeten aus Styroporkugeln~5 € StyroporAufhängen oder auf den Tisch — komplettes Sonnensystem\n🌙 LED-Lichterkette als Sterne~3 €Von der Decke hängen = Sternenhimmel\n🛰️ \"Kontroll-Zentrum\"-SchildKostenlosPappe + Edding, am Eingang aufstellen\n🚀 Papier-Raketen-PfadKostenlosKleine Raketen aus Tonpapier, vom Eingang bis zum Partyraum\n🔊 Weltraum-SoundsKostenlosYouTube \"Space Ambient Sounds\" leise im Hintergrund\n📦 Raumstation-Karton~3 €Schuhkarton + Alufolie + Stern-Aufkleber\n\n🚀 Optional: Aufblasbares Astronauten-Kostüm als Überraschungs-Auftritt\nEine Variante für die Eröffnung: ein [aufblasbares Astronauten- oder Alien-Kostüm*](https://www.amazon.de/s?k=aufblasbares+kostüm+kinder+astronaut&tag=machsleicht-21) (~30 €) für das Geburtstagskind oder ein Elternteil. Geburtstagskind eröffnet die Tür im Kostüm, oder Mama/Papa taucht als Überraschungs-Alien beim Mission-Briefing auf. Funktioniert besonders, wenn du eh ein lustiges Foto willst — der Auftritt wird zum Eis-Brecher der Party. Nicht nötig, aber wirkungsvoll. Separat kalkuliert, weil optional.",
         "giveaways": "🪪 Astronauten-Ausweis im Scheckkartenformat (laminiert, Wow-Highlight)\n🏅 Astronauten-Lizenz (Urkunde mit Foto-Slot)\n🚀 Selbst gebaute Papier-Rakete\n📓 Astronauten-Logbuch (DIY-Notizbuch mit Foto-Slot vorne, Planeten-Stickern innen)\n🌟 Beutel Leucht-Sterne\n🪐 Planeten-Sticker-Bogen\n🍫 Schoko-Sterne aus der Raumstation\n🍬 Tüte Gummibärchen (\"Proviant\")\n\nAlles in schwarze/silberne Papiertüte, beschriftet mit \"Ausrüstung für Astronaut ___\". Kosten: ~8 € pro Kind. Lizenz, Ausweis und Logbuch nehmen die Kinder mit nach Hause — Eltern fotografieren sie, Kinder zeigen sie wochenlang.",
         "shoppingList": [
@@ -20682,7 +20797,7 @@ var ELITE_MOTTO_DATA = {
           "detail": "Statt 8 einzelne Nachrichten an die Eltern: erstelle eine [WhatsApp-Partyseite](https://party.machsleicht.de) mit machsleicht. Adresse, Uhrzeit, Weltraum-Motto-Hinweis (Eltern können dunkle Kleidung anziehen lassen), Abholzeit, Allergie-Abfrage und das Opt-In für die Sternen-Beobachtung — alles auf einer Seite. Eltern antworten mit einem Klick, du siehst Zusagen und Allergien live. Kostenlos, in 2 Minuten fertig."
         }
       ],
-      "educationalValue": "Hinter dem Astronauten-Spiel steckt echtes Lernen: Die Kinder lernen unser Sonnensystem kennen — welche Planeten es gibt und warum der Mond leuchtet. Beim Raketen-Wettstart und dem Essig-Natron-Experiment erleben sie das Prinzip Rückstoß und eine echte chemische Reaktion, ohne Formeln. Code-Knacken und Sternbild-Suche trainieren Mustererkennung, das Astronauten-Training Körperkontrolle und Geduld. Und weil die Crew die Energie-Crystals nur gemeinsam bergen kann, üben die Kinder Verantwortung füreinander statt reines Gewinnen — Sonnensystem-Wissen, Pioniergeist und Teamgeist, fast nebenbei."
+      "educationalValue": "Hinter dem Astronauten-Spiel steckt echtes Lernen: Die Kinder lernen unser Sonnensystem kennen — welche Planeten es gibt und warum der Mond leuchtet (er reflektiert das Sonnenlicht, leuchtet nicht selbst). Beim Raketen-Wettstart und dem Essig-Natron-Experiment erleben sie das Prinzip Rückstoß und eine echte chemische Reaktion, ohne Formeln. Code-Knacken und Sternbild-Suche trainieren Mustererkennung, das Astronauten-Training Körperkontrolle und Geduld. Und weil die Crew die Energie-Crystals nur gemeinsam bergen kann, üben die Kinder Verantwortung füreinander statt reines Gewinnen — Sonnensystem-Wissen, Pioniergeist und Teamgeist, fast nebenbei."
     },
     "invitationTemplate": "🚀 Interaktive Weltraum-Einladung per WhatsApp verschicken\n\nErstelle in 30 Sekunden eine fertige Einladung mit Name, Datum und Ort — die Gäste bekommen ein kleines Weltraum-Abenteuer als Vorgeschmack auf die Astronauten-Ausbildung.\n[🚀 Weltraum-Einladung erstellen →](/einladung/erstellen?motto=weltraum)\n\n[💬 Idee per WhatsApp teilen](https://wa.me/?text=Schau%20mal%3A%20Weltraum-Kindergeburtstag%20f%C3%BCr%206%E2%80%938%20Jahre%20%E2%80%94%203%20fertige%20Astronauten-Konzepte%20mit%20Mond-Mission%2C%20Sternen-Quest%20und%20Einkaufsliste!%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Fweltraum-6-8-jahre)",
     "faq": [
@@ -21001,7 +21116,7 @@ var ELITE_MOTTO_DATA = {
       "schema_version": "1.0",
       "purpose": "Weltraum 9-12 — Phase B Elite-Slot (Mars-Missions-Frame, kein Tempo-Stempel, Codeknacker-Kern mit echten Woertern)",
       "phase_b_complete": "2026-05-21",
-      "phase_b_method": "Writer-Subagent Stream-C. Codeknacker-Math VORHER verifiziert: STERN (Pilot, scheinbare Helligkeit), PLANET (Wissenschaftler, Sonnenabstand), MOTOR (Mechaniker, Reparatur-Pfad) fuer Minimal; MARS (odd-one-out) fuer Standard; PLANET als 5-Stationen-Schatzsuche fuer Wow. Alle Loesungswoerter sind echte deutsche Woerter — kein INSEL-/Pseudo-Salat. Sorgfalt-Spezialist statt 1.-Astronaut."
+      "phase_b_method": "Writer-Subagent Stream-C. Codeknacker-Math gegen SIMBAD/NASA-Werte verifiziert (Stand 22.05.2026): STERN (Pilot, scheinbare Helligkeit), PLANET (Wissenschaftler, Sonnenabstand), MOTOR (Mechaniker, Reparatur-Pfad) fuer Minimal; MARS (odd-one-out) fuer Standard; PLANET als 5-Stationen-Schatzsuche fuer Wow. Alle Loesungswoerter sind echte deutsche Woerter — kein INSEL-/Pseudo-Salat. Sorgfalt-Spezialist statt 1.-Astronaut."
     },
     "motto": "weltraum",
     "ageGroup": "gross",
@@ -21182,7 +21297,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 2,
                 "name": "STERN-Lösung",
-                "content": "Sonne (−26,7) / Toliman (−0,27) / Elnath (1,65) / Ruchbah (2,68) / Nunki (3,0) → S-T-E-R-N = STERN."
+                "content": "Sonne (−26,7) / Toliman (+0,01) / Elnath (1,65) / Ruchbah (2,68) / Nashira (3,7) → S-T-E-R-N = STERN."
               },
               {
                 "n": 3,
@@ -21265,7 +21380,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Das Gummibärchen ist der offensichtliche Fremdkörper — wer es als Erstes meldet, trägt „Sorgfalt-Spezialist“ ins Logbuch ein."
               }
             ],
-            "safetyRule": "Nichts probieren — auch wenn Mehl und Salz harmlos sind, gilt im „Labor“ die Regel: Proben werden nur getestet, nicht gegessen. Das ist Teil der Mission-Disziplin.",
+            "safetyRule": "Nichts probieren — auch wenn Mehl und Salz harmlos sind, gilt im „Labor“ die Regel: Proben werden nur getestet, nicht gegessen. Das ist Teil der Mission-Disziplin. Essig nur TROPFEN, nicht spruehen Richtung Gesicht. Bei Augenkontakt mit Wasser spuelen (5 Min). Becher beim Sprudeln OFFEN lassen (kein Druckaufbau). NUR die bereitgestellten Proben — nichts Eigenes mitbringen lassen.",
             "ageAdjust9": "Nur 4 Proben, klare Vorgabe welche Methode bei welcher Probe hilft.",
             "ageAdjust12": "Alle 6 Proben plus eine Mischung (z.B. Sand + Backpulver) zum Auseinanderhalten — fordert genaues Testen.",
             "indoorTip": "Über einer abwischbaren Tischdecke oder einem Tablett arbeiten — Essig und Wasser tropfen.",
@@ -22979,7 +23094,7 @@ var ELITE_MOTTO_DATA = {
             "safetyRule": "Spur nicht über Treppen oder durch die Küche legen. Endpunkt kindersicher.",
             "ageAdjust3": "Kurze Spur in einem Raum, Kärtchen mit ganz einfachen Bildern. Du gehst voraus.",
             "ageAdjust5": "Längere Spur mit einer „falschen Fährte“; 5-Jährige dürfen sich abwechseln beim Kärtchen-Deuten.",
-            "indoorTip": "In kleiner Wohnung die Spur in Schleifen durch einen Raum legen — um Möbel herum statt von Zimmer zu Zimmer.",
+            "indoorTip": "In kleiner Wohnung die Spur in Schleifen durch einen Raum legen — um Möbel herum statt von Zimmer zu Zimmer. DRINNEN: 6-8 Abdruecke + max. 3 Hinweis-Kaertchen (60-75 m² Wohnung = enge Spur, sonst unleserlich).",
             "outdoorTip": "Im Garten zwischen Bäumen, unter der Bank und um den Sandkasten — mehr Platz für eine längere Spur.",
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Bild-Kärtchen machen die Spur auch für Nicht-Leser lesbar — jedes Kind kann „mitlösen“, niemand ist abgehängt. Bewegung durch die Räume baut die Aufregung vor der Kuchen-Pause ab."
@@ -23129,9 +23244,9 @@ var ELITE_MOTTO_DATA = {
       },
       {
         "id": "wow",
-        "label": "Wow — 3 Stunden, durchgehender Fall mit Höhepunkt",
+        "label": "Wow — 3 Stunden, durchgehender Fall mit Höhepunkt (ab 4-5 Jahre — fuer echte 3-Jaehrige zu lang)",
         "headline": "🎉 Wow — 3 Stunden großer Spürnasen-Fall",
-        "intro": "Für den großen Bahnhof mit 8–10 Kindern: ein durchgehender Fall, der alle Stationen zu einer Geschichte verbindet — vom Lupen-Basteln über Fingerabdrücke und Spuren-Suche bis zur Mini-Schatzsuche nach den verschwundenen Schoko-Münzen, mit feierlicher Urkunden-Zeremonie. Mehr Material, mehr Helfer, mehr Wow — aber immer noch mit Ruhepausen für 3-5.",
+        "intro": "Für den großen Bahnhof mit 8–10 Kindern: ein durchgehender Fall, der alle Stationen zu einer Geschichte verbindet — vom Lupen-Basteln über Fingerabdrücke und Spuren-Suche bis zur Mini-Schatzsuche nach den verschwundenen Schoko-Münzen, mit feierlicher Urkunden-Zeremonie. Mehr Material, mehr Helfer, mehr Wow — aber immer noch mit Ruhepausen für 3-5. Hinweis: Fuer echte 3-Jaehrige ist diese Variante zu lang — dann Standard waehlen.",
         "timeWindow": "14:00–17:00, 10 Kinder",
         "schedule": [
           {
@@ -23291,7 +23406,7 @@ var ELITE_MOTTO_DATA = {
             "safetyRule": "Spur nicht über Treppen, durch die Küche oder zu hoch legen. Taschenlampen nicht in die Augen. Bei zwei Trupps je eine erwachsene Begleitung.",
             "ageAdjust3": "Kurze Spur, einfache Bilder, ein Erwachsener voraus. Tempo niedrig halten.",
             "ageAdjust5": "Längere Spur mit Verzweigung und einer falschen Fährte; 5-Jährige dürfen Trupp-Führer sein.",
-            "indoorTip": "Bei wenig Platz die Spur in Schleifen durch zwei Räume legen — fühlt sich für 3-5 wie eine lange Reise an.",
+            "indoorTip": "Bei wenig Platz die Spur in Schleifen durch zwei Räume legen — fühlt sich für 3-5 wie eine lange Reise an. DRINNEN: 6-8 Abdruecke + max. 3 Hinweis-Kaertchen (60-75 m² Wohnung = enge Spur, sonst unleserlich).",
             "outdoorTip": "Garten und Haus kombinieren: Spur startet drinnen, führt nach draußen zum Kuchen-Versteck.",
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Die durchgehende Geschichte (leere Kiste → Spur → Kuchen → Schatz) gibt dem langen Wow-Nachmittag einen roten Faden, dem auch 3-Jährige folgen können. Bewegung baut Energie ab, der Kuchen-Fund ist die natürliche Pause."
@@ -23518,6 +23633,10 @@ var ELITE_MOTTO_DATA = {
         {
           "topic": "⏱️ Tempo niedrig halten",
           "detail": "Nach 10-15 Minuten kippt die Aufmerksamkeit. Plan nach jeder bewegten Such-Runde eine ruhige Phase (Quiz, Kuchen, Basteln) ein — der Wechsel aus laut und leise trägt den ganzen Nachmittag."
+        },
+        {
+          "tip": "Schoko-Muenzen-Folie",
+          "content": "Bei 3-Jaehrigen Folie SCHON vorher entfernen — Schoko-Muenzen ohne Folie auslegen. Folie sammeln + wegwerfen. Alternativ: Trockenobst-Taler (Hartriegel + Mandelmus, folienfrei)."
         }
       ],
       "educationalValue": "Die Kinder üben bei der Detektiv-Party ganz nebenbei: genau hinschauen und beobachten (Spuren-Suche, Hinweis-Quiz), geduldig dranbleiben, bis etwas gefunden ist, und das gute Gefühl, gemeinsam ein Ziel zu erreichen — niemand gewinnt allein, alle finden zusammen. Der „Wir-finden-das-wieder“-Frame stärkt das Selbstvertrauen: Ein Kind erlebt, dass es mit einem einfachen Werkzeug selbst ein Problem lösen kann — der Schritt vom magischen Suchspiel zum zielgerichteten Denken, der mit 3-5 ansteht."
@@ -24217,7 +24336,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 6,
             "loudness": "leise",
             "effort": "mittel",
-            "material": "1 Stempelkissen (oder Bleistift-Mine + Tesafilm), weißes Papier, 1 Lupe pro Kind, 1 vorbereiteter \"Tatort-Abdruck\" auf Karte.",
+            "material": "1 Stempelkissen (oder Bleistift-Mine + Tesafilm), weißes Papier, 1 Lupe pro Kind, 1 vorbereiteter \"Tatort-Abdruck\" auf Karte. WICHTIG: Vorbereitet 4 Verdaechtigen-Abdruck-Karten mit klar unterscheidbarem Muster (Schlaufe / Wirbel / Bogen / Doppelschlaufe). Tatort-Abdruck matcht eindeutig EINEN davon. Ohne diese Vergleichs-Karten ist \"Beweis sichern\" Theater.",
             "prepText": "Am Tatort (Kuchen-Stelle) liegt ein großer Fingerabdruck als Karte. Die Kinder nehmen ihre eigenen Abdrücke und vergleichen Muster — eine ruhige, konzentrierte Station nach der bewegten Befragung.",
             "steps": [
               {
@@ -24291,7 +24410,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Die Botschaft schickt die Gruppe zum Spuren-Parcours / nächsten Versteck."
               }
             ],
-            "safetyRule": "Bügeleisen, warme Lampe und Föhn bedient AUSSCHLIESSLICH ein Erwachsener — die Kinder schreiben nur und schauen zu.",
+            "safetyRule": "DEFAULT: Foehn auf hoechster Stufe ODER Backofen-Restwaerme (max 80 Grad). BUEGELEISEN nur als NOTFALL-Option (>150 Grad = hohes Verbrennungsrisiko bei Kindern). Wenn Buegeleisen: AUSSCHLIESSLICH Erwachsener, Kinder SITZEN mit Mindestabstand 1 m, Erwachsener STEHT, abgedunkelter Raum erhoeht Risiko (Schatten ueber heisse Flaeche).",
             "ageAdjust6": "Das Sichtbarmachen komplett übernehmen, die 6-Jährigen nur staunen lassen — der Effekt zählt, nicht die Technik.",
             "ageAdjust8": "Erklären lassen, warum das funktioniert (Zitronensaft verbrennt schneller als Papier) — kleine Naturwissenschaft.",
             "indoorTip": "Im abgedunkelten Raum mit einer Schreibtischlampe als \"Labor\" — gibt Atmosphäre.",
@@ -25672,7 +25791,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 9,
             "loudness": "konzentriert",
             "effort": "mittel",
-            "material": "Ein verschlüsselter „Erpresser-Brief“ (Caesar-Chiffre, jeder Buchstabe um 3 verschoben), eine Caesar-Scheibe oder Alphabet-Tabelle zum Entschlüsseln, ein zweiter Code als Zahlen-Reihe (A=1, B=2 …), Bleistifte.",
+            "material": "Ein verschlüsselter „Erpresser-Brief“ (Caesar-Chiffre, jeder Buchstabe um 3 verschoben), eine Caesar-Scheibe oder Alphabet-Tabelle zum Entschlüsseln, ein zweiter Code als Zahlen-Reihe (A=1, B=2 …), Bleistifte. WICHTIG: Die Verschiebezahl steht GROSS auf der Stationskarte gedruckt. Falls Wow-Tier (Shift 1) — explizit hinweisen: \"Achtung, nur 1 Stelle verschoben, nicht 3 wie im Standard.\"",
             "prepText": "Am Tatort lag ein verschlüsselter Zettel. Das Team entschlüsselt ihn mit der Caesar-Chiffre (jeder Buchstabe 3 Stellen zurück) und einem Zahlen-Code. Die Lösung verrät, wo der nächste Hinweis liegt — und liefert einen Buchstaben für den großen TAT-Code.",
             "steps": [
               {
@@ -26071,7 +26190,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 9,
             "loudness": "laut",
             "effort": "aufwendig",
-            "material": "6 Stations-Setups durch Garten/Wohnung (Spuren-Karten, Verdächtigen-Aussagen, Caesar-Brief, Schuhabdruck-Reihe, Zeugen-Uhrzeiten, Zahlen-Code), 6 Umschläge mit Buchstaben, ein „Tresor“ (Schuhkarton mit aufgemaltem Zahlenschloss + Klappe). Optional: machsleicht-Schatzsuche-Generator für die Rätsel.",
+            "material": "6 Stations-Setups durch Garten/Wohnung (Spuren-Karten, Verdächtigen-Aussagen, Caesar-Brief, Schuhabdruck-Reihe, Zeugen-Uhrzeiten, Zahlen-Code), 6 Umschläge mit Buchstaben, ein „Tresor“ (Schuhkarton mit aufgemaltem Zahlenschloss + Klappe). Optional: machsleicht-Schatzsuche-Generator für die Rätsel. WICHTIG: Die Verschiebezahl steht GROSS auf der Stationskarte gedruckt. Falls Wow-Tier (Shift 1) — explizit hinweisen: \"Achtung, nur 1 Stelle verschoben, nicht 3 wie im Standard.\" WICHTIG: Schuhkarton allein hat kein Schloss = Kinder oeffnen einfach. Verwende stattdessen Vorhaengeschloss mit Buchstabenraedern (4-6 Stellen, ~8€ bei Amazon affiliate-tag machsleicht-21) ODER: 6 nummerierte Umschlaege, deren Reihenfolge das Wort TRESOR ergibt — Reihenfolge erst nach Loesung des Buchstaben-Codes klar.",
             "prepText": "Setting: „Tobias ist überführt — aber das Erbstück steckt in einem Tresor, den nur ein 6-stelliger Code öffnet. Sechs Hinweise liegen in der Villa verteilt.“ 6 Stationen in vorgegebener Reihenfolge, jede ruft eine Spezialisierungs-Fähigkeit ab. Aus jeder Station kommt ein Buchstabe — zusammen TRESOR. Die Math ist vorab geprüft, jeder Buchstabe geht eindeutig auf.",
             "steps": [
               {

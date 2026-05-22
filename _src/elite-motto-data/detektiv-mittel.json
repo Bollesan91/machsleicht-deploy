@@ -415,7 +415,7 @@
           "minAge": 6,
           "loudness": "leise",
           "effort": "mittel",
-          "material": "1 Stempelkissen (oder Bleistift-Mine + Tesafilm), weißes Papier, 1 Lupe pro Kind, 1 vorbereiteter \"Tatort-Abdruck\" auf Karte.",
+          "material": "1 Stempelkissen (oder Bleistift-Mine + Tesafilm), weißes Papier, 1 Lupe pro Kind, 1 vorbereiteter \"Tatort-Abdruck\" auf Karte. WICHTIG: Vorbereitet 4 Verdaechtigen-Abdruck-Karten mit klar unterscheidbarem Muster (Schlaufe / Wirbel / Bogen / Doppelschlaufe). Tatort-Abdruck matcht eindeutig EINEN davon. Ohne diese Vergleichs-Karten ist \"Beweis sichern\" Theater.",
           "prepText": "Am Tatort (Kuchen-Stelle) liegt ein großer Fingerabdruck als Karte. Die Kinder nehmen ihre eigenen Abdrücke und vergleichen Muster — eine ruhige, konzentrierte Station nach der bewegten Befragung.",
           "steps": [
             {
@@ -489,7 +489,7 @@
               "content": "Die Botschaft schickt die Gruppe zum Spuren-Parcours / nächsten Versteck."
             }
           ],
-          "safetyRule": "Bügeleisen, warme Lampe und Föhn bedient AUSSCHLIESSLICH ein Erwachsener — die Kinder schreiben nur und schauen zu.",
+          "safetyRule": "DEFAULT: Foehn auf hoechster Stufe ODER Backofen-Restwaerme (max 80 Grad). BUEGELEISEN nur als NOTFALL-Option (>150 Grad = hohes Verbrennungsrisiko bei Kindern). Wenn Buegeleisen: AUSSCHLIESSLICH Erwachsener, Kinder SITZEN mit Mindestabstand 1 m, Erwachsener STEHT, abgedunkelter Raum erhoeht Risiko (Schatten ueber heisse Flaeche).",
           "ageAdjust6": "Das Sichtbarmachen komplett übernehmen, die 6-Jährigen nur staunen lassen — der Effekt zählt, nicht die Technik.",
           "ageAdjust8": "Erklären lassen, warum das funktioniert (Zitronensaft verbrennt schneller als Papier) — kleine Naturwissenschaft.",
           "indoorTip": "Im abgedunkelten Raum mit einer Schreibtischlampe als \"Labor\" — gibt Atmosphäre.",

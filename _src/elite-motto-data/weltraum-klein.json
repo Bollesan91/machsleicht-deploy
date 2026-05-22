@@ -115,6 +115,10 @@
       {
         "topic": "Eltern",
         "detail": "Bei 3–5 bleiben Eltern oft dabei und das ist gut so — plane Eltern aktiv als Helfer ein, nicht als Störung."
+      },
+      {
+        "name": "Sensorik",
+        "content": "Dunkelheit und Lautstaerke sind Trigger fuer 3-Jaehrige. NIE komplett abdunkeln - nur dimmen. Rueckzugsort anbieten."
       }
     ],
     "whyMottoFitsHeadline": "Warum Weltraum für 3–5 funktioniert",
@@ -784,7 +788,7 @@
               "content": "Am Ende legt ihr alle Mondsteine in die Mitte — sie funkeln in der Sonne und jedes Kind darf einen behalten."
             }
           ],
-          "safetyRule": "Steine fest in Folie wickeln, keine spitzen Kanten. Kinder nicht in Beete oder an Teiche schicken.",
+          "safetyRule": "Steine fest in Folie wickeln, keine spitzen Kanten. Kinder nicht in Beete oder an Teiche schicken. Mondsteine mindestens FAUSTGROSS, nicht mundgaengig. Nicht werfen lassen. Erwachsene Hand begleitet das Suchen.",
           "ageAdjust3": "Größere Steine nehmen, gut sichtbar im freien Gras platzieren. 3–4-Jährige brauchen es einfach.",
           "ageAdjust5": "Kleinere Steine, ein paar an kniffligeren Stellen. 5-Jährige dürfen ruhig ein bisschen suchen.",
           "indoorTip": "Drinnen Folien-Korken auf dem Boden verteilen — funktioniert genauso, nur auf kleinerem Raum.",

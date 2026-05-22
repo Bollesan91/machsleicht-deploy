@@ -189,7 +189,7 @@
               "content": "Jede Weite wird gefeiert, nicht nur die längste. Wer mag, baut um und startet eine zweite Runde mit besserer Form."
             }
           ],
-          "safetyRule": "Nicht aufeinander zielen — alle pusten in dieselbe Richtung. Kleinteile (Finnen) nicht in den Mund nehmen.",
+          "safetyRule": "Schutzbrille PFLICHT fuer alle in Reichweite (kein optional). Mindestabstand 2 m, nicht 2 Schritte. Bei Blindgaenger 60 Sek. warten, NUR Erwachsener naehert sich + oeffnet vorsichtig. Drinnen NIEMALS unter Haengelampe (Dose kann gegen Lampen/Gesichter schiessen). Geschlossene Filmdosen koennen mit erheblichem Druck in unvorhersehbare Richtung abheben.",
           "ageAdjust6": "Rakete vorab fertig kleben, Kinder bemalen nur und pusten. Keine Mess-Pflicht — Hauptsache, sie fliegt.",
           "ageAdjust8": "Mehrere Bau-Varianten testen lassen (lange vs. kurze Finnen) und vergleichen, welche Form weiter fliegt — kleines Mini-Experiment.",
           "indoorTip": "Im Flur entlang pusten — die lange Bahn macht den Weiten-Vergleich fairer und es geht nichts kaputt.",
@@ -231,14 +231,14 @@
           ],
           "safetyRule": null,
           "ageAdjust6": "Bekanntes wählen: Sonne, Mond, Erde, größter Planet. Bilder zeigen statt nur fragen. Hinweise erlaubt.",
-          "ageAdjust8": "Schwierigere Fragen mischen (Reihenfolge der Planeten, warum der Mond leuchtet). Optional Punkte zählen.",
+          "ageAdjust8": "Schwierigere Fragen mischen (Reihenfolge der Planeten, warum der Mond leuchtet (er reflektiert das Sonnenlicht, leuchtet nicht selbst)). Optional Punkte zählen.",
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Raten ohne Verlierer: Mit 6-8 wollen Kinder ihr Weltraum-Wissen zeigen, aber das Reihum-Prinzip sorgt dafür, dass auch das ruhigere Kind dran kommt. Die Fakten kommen nebenbei statt als Frontalunterricht — und ein echtes Sonnensystem zum Anschauen macht es greifbar."
         }
       ],
-      "food": "🎂Raketen-Kuchen1 Blechkuchen\n🥤\"Energie-Drink\"1,5 L Apfelschorle\n🌟Stern-Kekse12 Stk.\n🍿Meteoriten-Popcorn200 g\n\n💡 \"Energie-Drink\" — funktioniert sofort\nApfelschorle in transparente Becher gießen, Strohhalm rein, fertig. Beim Servieren als Bord-Ritual framen: \"Jeder Astronaut tankt einmal pro Stunde Energie.\" Kostet null extra, Kinder lieben den Vorwand.",
+      "food": "🎂Raketen-Kuchen1 Blechkuchen\n🥤\"Energie-Drink\"2 L Apfelschorle\n🌟Stern-Kekse12 Stk.\n🍿Meteoriten-Popcorn200 g\n\n💡 \"Energie-Drink\" — funktioniert sofort\nApfelschorle in transparente Becher gießen, Strohhalm rein, fertig. Beim Servieren als Bord-Ritual framen: \"Jeder Astronaut tankt einmal pro Stunde Energie.\" Kostet null extra, Kinder lieben den Vorwand.",
       "decoration": "🌟 Luftballons schwarz/silber/blau10 Stk. ~3 €\n🪐 Planeten-Ausdrucke an der WandKostenlosKostenlose Vorlagen ausdrucken und aufhängen — sofort Weltall-Look\n🌙 Lichterkette als SterneKostenlosVorhandene Lichterkette in den Partyraum — wirkt wie ein Sternenhimmel\n🚀 Papier-Rakete am EingangKostenlosEine größere Rakete aus Tonpapier basteln, an die Tür kleben",
       "giveaways": "🏅 1 Astronauten-Lizenz (selbst ausgedruckt mit Namen + Foto-Slot)\n🚀 1 selbst gebaute Papier-Rakete (vom Wettstart — Bezug zur Party)\n🌟 2 Leucht-Sterne oder Weltraum-Sticker\n🍬 1 kleine Tüte Gummibärchen (\"Proviant für den Heimflug\")\n\nIn schwarze oder silberne Papiertüte (10 Stk. ~1 € bei DM/Action) mit Stern-Stempel oder per Hand \"Astronaut ___\" beschriften. Kosten: ~2 € pro Kind.",
       "shoppingList": [
@@ -439,7 +439,7 @@
               "content": "Jede Crew, die eine Rakete gestartet hat, bekommt ihren Stern. Mehrere Starts machen — alle wollen pusten."
             }
           ],
-          "safetyRule": "NUR draußen oder über einem Waschbecken. Niemand beugt sich über die Dose, nachdem der Deckel drauf ist. Abstand halten, Erwachsener leitet jeden Start. Essig nicht in die Augen.",
+          "safetyRule": "Schutzbrille PFLICHT fuer alle in Reichweite (kein optional). Mindestabstand 2 m, nicht 2 Schritte. Bei Blindgaenger 60 Sek. warten, NUR Erwachsener naehert sich + oeffnet vorsichtig. Drinnen NIEMALS unter Haengelampe (Dose kann gegen Lampen/Gesichter schiessen). Geschlossene Filmdosen koennen mit erheblichem Druck in unvorhersehbare Richtung abheben.",
           "ageAdjust6": "Erwachsener mischt und schließt die Dose, Kinder zählen den Countdown und treten zurück. Staunen reicht.",
           "ageAdjust8": "Kinder dürfen unter Aufsicht selbst dosieren und vergleichen: mehr Natron = höherer Start? Kleines Experiment.",
           "indoorTip": "Drinnen nur über dem Spülbecken oder in einer großen Wanne — und mit Brausetablette statt Essig, das spritzt weniger.",
@@ -566,7 +566,7 @@
             {
               "n": 4,
               "name": "Mond-Hüpfen",
-              "content": "Zwischen den Crystals nur in großen, langsamen Schritten gehen — \"so läuft man auf dem Mond, weil man fast schwerelos ist\"."
+              "content": "Zwischen den Crystals nur in großen, langsamen Schritten gehen — \"so läuft man auf dem Mond, weil man mit viel kleinerer Schwerkraft (ein Sechstel der Erde) ist\"."
             },
             {
               "n": 5,
@@ -839,7 +839,7 @@
           "whyItWorks": "Verbindet Essen und Mission: Die Kinder machen ihr eigenes Mittagessen und bleiben dabei in der Geschichte (Mond mit Kratern). Das Belegen ist eine ruhige, gestaltende Tätigkeit, die jedes Kind kann — und die Wartezeit beim Backen füllt elegant eine Programm-Lücke. Selbst gemachtes Essen schmeckt Kindern doppelt."
         }
       ],
-      "food": "🎂Raketen-Kuchen1 Blechkuchen + 1 kleiner\n🥤\"Energie-Drink\"4 L Apfelschorle\n🍕Mond-Pizzen (Backstation)10-12 Stück\n🌯Wraps \"Kometen\"10 Stück\n🌟Stern-Kekse10 Stk.\n🥕Möhren + Käse-Würfel\"Mond-Sticks\"\n🍿Meteoriten-Popcorn (Kino)400 g\n🍫Schoko-SterneRaumstation-Inhalt",
+      "food": "🎂Raketen-Kuchen1 Blechkuchen + 1 kleiner\n🥤\"Energie-Drink\"5 L Apfelschorle\n🍕Mond-Pizzen (Backstation)10-12 Stück\n🌯Wraps \"Kometen\"10 Stück\n🌟Stern-Kekse10 Stk.\n🥕Möhren + Käse-Würfel\"Mond-Sticks\"\n🍿Meteoriten-Popcorn (Kino)400 g\n🍫Schoko-SterneRaumstation-Inhalt",
       "decoration": "🌟 Weltraum-Teller & BecherSet ~10 €\n🎈 Luftballons schwarz/silber/blau20 Stk. ~5 €\n🪧 Weltraum-Girlande~4 €\n🪐 Planeten aus Styroporkugeln~5 € StyroporAufhängen oder auf den Tisch — komplettes Sonnensystem\n🌙 LED-Lichterkette als Sterne~3 €Von der Decke hängen = Sternenhimmel\n🛰️ \"Kontroll-Zentrum\"-SchildKostenlosPappe + Edding, am Eingang aufstellen\n🚀 Papier-Raketen-PfadKostenlosKleine Raketen aus Tonpapier, vom Eingang bis zum Partyraum\n🔊 Weltraum-SoundsKostenlosYouTube \"Space Ambient Sounds\" leise im Hintergrund\n📦 Raumstation-Karton~3 €Schuhkarton + Alufolie + Stern-Aufkleber\n\n🚀 Optional: Aufblasbares Astronauten-Kostüm als Überraschungs-Auftritt\nEine Variante für die Eröffnung: ein [aufblasbares Astronauten- oder Alien-Kostüm*](https://www.amazon.de/s?k=aufblasbares+kostüm+kinder+astronaut&tag=machsleicht-21) (~30 €) für das Geburtstagskind oder ein Elternteil. Geburtstagskind eröffnet die Tür im Kostüm, oder Mama/Papa taucht als Überraschungs-Alien beim Mission-Briefing auf. Funktioniert besonders, wenn du eh ein lustiges Foto willst — der Auftritt wird zum Eis-Brecher der Party. Nicht nötig, aber wirkungsvoll. Separat kalkuliert, weil optional.",
       "giveaways": "🪪 Astronauten-Ausweis im Scheckkartenformat (laminiert, Wow-Highlight)\n🏅 Astronauten-Lizenz (Urkunde mit Foto-Slot)\n🚀 Selbst gebaute Papier-Rakete\n📓 Astronauten-Logbuch (DIY-Notizbuch mit Foto-Slot vorne, Planeten-Stickern innen)\n🌟 Beutel Leucht-Sterne\n🪐 Planeten-Sticker-Bogen\n🍫 Schoko-Sterne aus der Raumstation\n🍬 Tüte Gummibärchen (\"Proviant\")\n\nAlles in schwarze/silberne Papiertüte, beschriftet mit \"Ausrüstung für Astronaut ___\". Kosten: ~8 € pro Kind. Lizenz, Ausweis und Logbuch nehmen die Kinder mit nach Hause — Eltern fotografieren sie, Kinder zeigen sie wochenlang.",
       "shoppingList": [
@@ -1068,7 +1068,7 @@
         "detail": "Statt 8 einzelne Nachrichten an die Eltern: erstelle eine [WhatsApp-Partyseite](https://party.machsleicht.de) mit machsleicht. Adresse, Uhrzeit, Weltraum-Motto-Hinweis (Eltern können dunkle Kleidung anziehen lassen), Abholzeit, Allergie-Abfrage und das Opt-In für die Sternen-Beobachtung — alles auf einer Seite. Eltern antworten mit einem Klick, du siehst Zusagen und Allergien live. Kostenlos, in 2 Minuten fertig."
       }
     ],
-    "educationalValue": "Hinter dem Astronauten-Spiel steckt echtes Lernen: Die Kinder lernen unser Sonnensystem kennen — welche Planeten es gibt und warum der Mond leuchtet. Beim Raketen-Wettstart und dem Essig-Natron-Experiment erleben sie das Prinzip Rückstoß und eine echte chemische Reaktion, ohne Formeln. Code-Knacken und Sternbild-Suche trainieren Mustererkennung, das Astronauten-Training Körperkontrolle und Geduld. Und weil die Crew die Energie-Crystals nur gemeinsam bergen kann, üben die Kinder Verantwortung füreinander statt reines Gewinnen — Sonnensystem-Wissen, Pioniergeist und Teamgeist, fast nebenbei."
+    "educationalValue": "Hinter dem Astronauten-Spiel steckt echtes Lernen: Die Kinder lernen unser Sonnensystem kennen — welche Planeten es gibt und warum der Mond leuchtet (er reflektiert das Sonnenlicht, leuchtet nicht selbst). Beim Raketen-Wettstart und dem Essig-Natron-Experiment erleben sie das Prinzip Rückstoß und eine echte chemische Reaktion, ohne Formeln. Code-Knacken und Sternbild-Suche trainieren Mustererkennung, das Astronauten-Training Körperkontrolle und Geduld. Und weil die Crew die Energie-Crystals nur gemeinsam bergen kann, üben die Kinder Verantwortung füreinander statt reines Gewinnen — Sonnensystem-Wissen, Pioniergeist und Teamgeist, fast nebenbei."
   },
   "invitationTemplate": "🚀 Interaktive Weltraum-Einladung per WhatsApp verschicken\n\nErstelle in 30 Sekunden eine fertige Einladung mit Name, Datum und Ort — die Gäste bekommen ein kleines Weltraum-Abenteuer als Vorgeschmack auf die Astronauten-Ausbildung.\n[🚀 Weltraum-Einladung erstellen →](/einladung/erstellen?motto=weltraum)\n\n[💬 Idee per WhatsApp teilen](https://wa.me/?text=Schau%20mal%3A%20Weltraum-Kindergeburtstag%20f%C3%BCr%206%E2%80%938%20Jahre%20%E2%80%94%203%20fertige%20Astronauten-Konzepte%20mit%20Mond-Mission%2C%20Sternen-Quest%20und%20Einkaufsliste!%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Fweltraum-6-8-jahre)",
   "faq": [

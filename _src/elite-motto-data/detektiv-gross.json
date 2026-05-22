@@ -531,7 +531,7 @@
           "minAge": 9,
           "loudness": "konzentriert",
           "effort": "mittel",
-          "material": "Ein verschlüsselter „Erpresser-Brief“ (Caesar-Chiffre, jeder Buchstabe um 3 verschoben), eine Caesar-Scheibe oder Alphabet-Tabelle zum Entschlüsseln, ein zweiter Code als Zahlen-Reihe (A=1, B=2 …), Bleistifte.",
+          "material": "Ein verschlüsselter „Erpresser-Brief“ (Caesar-Chiffre, jeder Buchstabe um 3 verschoben), eine Caesar-Scheibe oder Alphabet-Tabelle zum Entschlüsseln, ein zweiter Code als Zahlen-Reihe (A=1, B=2 …), Bleistifte. WICHTIG: Die Verschiebezahl steht GROSS auf der Stationskarte gedruckt. Falls Wow-Tier (Shift 1) — explizit hinweisen: \"Achtung, nur 1 Stelle verschoben, nicht 3 wie im Standard.\"",
           "prepText": "Am Tatort lag ein verschlüsselter Zettel. Das Team entschlüsselt ihn mit der Caesar-Chiffre (jeder Buchstabe 3 Stellen zurück) und einem Zahlen-Code. Die Lösung verrät, wo der nächste Hinweis liegt — und liefert einen Buchstaben für den großen TAT-Code.",
           "steps": [
             {
@@ -930,7 +930,7 @@
           "minAge": 9,
           "loudness": "laut",
           "effort": "aufwendig",
-          "material": "6 Stations-Setups durch Garten/Wohnung (Spuren-Karten, Verdächtigen-Aussagen, Caesar-Brief, Schuhabdruck-Reihe, Zeugen-Uhrzeiten, Zahlen-Code), 6 Umschläge mit Buchstaben, ein „Tresor“ (Schuhkarton mit aufgemaltem Zahlenschloss + Klappe). Optional: machsleicht-Schatzsuche-Generator für die Rätsel.",
+          "material": "6 Stations-Setups durch Garten/Wohnung (Spuren-Karten, Verdächtigen-Aussagen, Caesar-Brief, Schuhabdruck-Reihe, Zeugen-Uhrzeiten, Zahlen-Code), 6 Umschläge mit Buchstaben, ein „Tresor“ (Schuhkarton mit aufgemaltem Zahlenschloss + Klappe). Optional: machsleicht-Schatzsuche-Generator für die Rätsel. WICHTIG: Die Verschiebezahl steht GROSS auf der Stationskarte gedruckt. Falls Wow-Tier (Shift 1) — explizit hinweisen: \"Achtung, nur 1 Stelle verschoben, nicht 3 wie im Standard.\" WICHTIG: Schuhkarton allein hat kein Schloss = Kinder oeffnen einfach. Verwende stattdessen Vorhaengeschloss mit Buchstabenraedern (4-6 Stellen, ~8€ bei Amazon affiliate-tag machsleicht-21) ODER: 6 nummerierte Umschlaege, deren Reihenfolge das Wort TRESOR ergibt — Reihenfolge erst nach Loesung des Buchstaben-Codes klar.",
           "prepText": "Setting: „Tobias ist überführt — aber das Erbstück steckt in einem Tresor, den nur ein 6-stelliger Code öffnet. Sechs Hinweise liegen in der Villa verteilt.“ 6 Stationen in vorgegebener Reihenfolge, jede ruft eine Spezialisierungs-Fähigkeit ab. Aus jeder Station kommt ein Buchstabe — zusammen TRESOR. Die Math ist vorab geprüft, jeder Buchstabe geht eindeutig auf.",
           "steps": [
             {

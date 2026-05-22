@@ -235,7 +235,58 @@
           "indoorTip": "Die drei Quadranten an verschiedene Wände/Tische im Raum, damit die Teams sich nicht ins Gehege kommen.",
           "outdoorTip": "Quadranten an drei Stationen im Garten — die kurzen Wege dazwischen sind willkommene Bewegung.",
           "whyItWorksTitle": "Kooperation + Selbstkontrolle statt Tempo",
-          "whyItWorks": "Kein Quadrant funktioniert allein — die drei Spezialisierungen müssen sich am Ende abstimmen. Ergibt ein Lösungswort keinen Sinn, prüfen die Kinder ihre Reihenfolge selbst nach, statt zu raten. Genaues Hinschauen wird belohnt, nicht Geschwindigkeit. Steckt ein Team fest, hilft eine andere Spezialisierung mit — das ist die Story: „Im Reservat zählt, wer hinschaut.“"
+          "whyItWorks": "Kein Quadrant funktioniert allein — die drei Spezialisierungen müssen sich am Ende abstimmen. Ergibt ein Lösungswort keinen Sinn, prüfen die Kinder ihre Reihenfolge selbst nach, statt zu raten. Genaues Hinschauen wird belohnt, nicht Geschwindigkeit. Steckt ein Team fest, hilft eine andere Spezialisierung mit — das ist die Story: „Im Reservat zählt, wer hinschaut.“",
+          "codeMechanic": "Chiffre: Tierspur-Symbol -> Anlaut-Buchstabe. Pro Quadrant 6 Symbolkarten ausgedruckt. Beispiel: Spuren-Symbol von Pfote = \"P\" (fuer Panther) -> Wort bauen. Selbstkontrolle: ergibt sich ein echtes Wort (WASSER/FELS/TEMPEL), war die Loesung richtig. 15 Min Setup: Tier-Spur-Karten am Vorabend aus Vorlage drucken.",
+          "animalFacts": [
+            {
+              "tier": "Loewe",
+              "spurbild": "rund, 4 Zehen, ohne Krallen",
+              "habitat": "Savanne",
+              "merkmal": "Maehne nur beim Maennchen"
+            },
+            {
+              "tier": "Elefant",
+              "spurbild": "oval, 5 Zehen vorn 4 hinten",
+              "habitat": "Savanne/Wald",
+              "merkmal": "Ohren bei Afrika groesser als Asien"
+            },
+            {
+              "tier": "Gepard",
+              "spurbild": "schmaler als Loewe, Krallenabdrücke sichtbar",
+              "habitat": "offene Savanne",
+              "merkmal": "einziges Katzentier mit nicht-einziehbaren Krallen"
+            },
+            {
+              "tier": "Giraffe",
+              "spurbild": "spaltig, 2 Hufzehen, sehr gross",
+              "habitat": "Savanne",
+              "merkmal": "7 Halswirbel wie Mensch"
+            },
+            {
+              "tier": "Nashorn",
+              "spurbild": "rund, 3 Zehen-Abdrucke",
+              "habitat": "Savanne/Buschland",
+              "merkmal": "Horn ist Haar, kein Knochen"
+            },
+            {
+              "tier": "Zebra",
+              "spurbild": "huf-foermig, einzelne Zehe",
+              "habitat": "Savanne",
+              "merkmal": "jedes Streifenmuster einzigartig wie Fingerabdruck"
+            },
+            {
+              "tier": "Erdmaennchen",
+              "spurbild": "klein, 5 Zehen mit Krallen",
+              "habitat": "Wueste/Halbwueste",
+              "merkmal": "Waechter steht aufrecht"
+            },
+            {
+              "tier": "Flusspferd",
+              "spurbild": "rund, 4 Zehen, sehr breit",
+              "habitat": "Wasser",
+              "merkmal": "gefaehrlichstes Saeugetier Afrikas trotz Pflanzenfresser"
+            }
+          ]
         },
         {
           "name": "📸 Foto-Quest „Hinter der Tarnung“",
@@ -626,7 +677,58 @@
           "indoorTip": "Den TOR-Ort drinnen wählen (Türbogen, Speisekammer) — der „Ort am TOR“ funktioniert in jeder Wohnung.",
           "outdoorTip": "Gartentor oder Terrassentür als TOR markieren.",
           "whyItWorksTitle": "Jede Spezialisierung ist nötig",
-          "whyItWorks": "Wer eine Station nicht knackt, holt sich einen Spezialisten dazu, der seinen Code schon hat — gelöst wird gemeinsam, niemand bleibt hängen. Am Ende bekommt jedes Kind die volle Spezialisten-Lizenz, ohne Abstufung. Wer besonders sorgfältig beobachtet oder recherchiert hat, kriegt einen „Sorgfalt-Spezialist“-Stempel auf die Lizenz — passt zur Hero-Botschaft „im Reservat zählt nicht, wer der Schnellste ist, sondern wer hinschaut“. Tempo wird hier nicht extra belohnt."
+          "whyItWorks": "Wer eine Station nicht knackt, holt sich einen Spezialisten dazu, der seinen Code schon hat — gelöst wird gemeinsam, niemand bleibt hängen. Am Ende bekommt jedes Kind die volle Spezialisten-Lizenz, ohne Abstufung. Wer besonders sorgfältig beobachtet oder recherchiert hat, kriegt einen „Sorgfalt-Spezialist“-Stempel auf die Lizenz — passt zur Hero-Botschaft „im Reservat zählt nicht, wer der Schnellste ist, sondern wer hinschaut“. Tempo wird hier nicht extra belohnt.",
+          "codeMechanic": "Chiffre: Tierspur-Symbol -> Anlaut-Buchstabe. Pro Quadrant 6 Symbolkarten ausgedruckt. Beispiel: Spuren-Symbol von Pfote = \"P\" (fuer Panther) -> Wort bauen. Selbstkontrolle: ergibt sich ein echtes Wort (WASSER/FELS/TEMPEL), war die Loesung richtig. 15 Min Setup: Tier-Spur-Karten am Vorabend aus Vorlage drucken.",
+          "animalFacts": [
+            {
+              "tier": "Loewe",
+              "spurbild": "rund, 4 Zehen, ohne Krallen",
+              "habitat": "Savanne",
+              "merkmal": "Maehne nur beim Maennchen"
+            },
+            {
+              "tier": "Elefant",
+              "spurbild": "oval, 5 Zehen vorn 4 hinten",
+              "habitat": "Savanne/Wald",
+              "merkmal": "Ohren bei Afrika groesser als Asien"
+            },
+            {
+              "tier": "Gepard",
+              "spurbild": "schmaler als Loewe, Krallenabdrücke sichtbar",
+              "habitat": "offene Savanne",
+              "merkmal": "einziges Katzentier mit nicht-einziehbaren Krallen"
+            },
+            {
+              "tier": "Giraffe",
+              "spurbild": "spaltig, 2 Hufzehen, sehr gross",
+              "habitat": "Savanne",
+              "merkmal": "7 Halswirbel wie Mensch"
+            },
+            {
+              "tier": "Nashorn",
+              "spurbild": "rund, 3 Zehen-Abdrucke",
+              "habitat": "Savanne/Buschland",
+              "merkmal": "Horn ist Haar, kein Knochen"
+            },
+            {
+              "tier": "Zebra",
+              "spurbild": "huf-foermig, einzelne Zehe",
+              "habitat": "Savanne",
+              "merkmal": "jedes Streifenmuster einzigartig wie Fingerabdruck"
+            },
+            {
+              "tier": "Erdmaennchen",
+              "spurbild": "klein, 5 Zehen mit Krallen",
+              "habitat": "Wueste/Halbwueste",
+              "merkmal": "Waechter steht aufrecht"
+            },
+            {
+              "tier": "Flusspferd",
+              "spurbild": "rund, 4 Zehen, sehr breit",
+              "habitat": "Wasser",
+              "merkmal": "gefaehrlichstes Saeugetier Afrikas trotz Pflanzenfresser"
+            }
+          ]
         },
         {
           "name": "🗺️ Die Karte vermessen — Hauptmission",
@@ -930,7 +1032,7 @@
             {
               "n": 5,
               "name": "Station 5 (Tempel-Schloss)",
-              "content": "3 fehlende Buchstaben: T (Ort des falschen Tigers) plus E, L (am Tempel-Tor). Vorne T, hinten EL → TEMPEL."
+              "content": "3 fehlende Buchstaben: T (Ort des falschen Tigers) plus E, L (am Tempel-Tor). Vorne T, hinten EL → SCHUTZGEBIET."
             },
             {
               "n": 6,

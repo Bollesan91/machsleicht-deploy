@@ -3,7 +3,7 @@
     "source_file": "kindergeburtstag/piraten-6-8-jahre.html",
     "extracted": "2026-05-19",
     "schema_version": "1.0",
-    "purpose": "Dino 6-8 — Phase C #6 Elite-Slot (no ritual)",
+    "purpose": "Piraten 6-8 — Elite-Slot (mit Ritual)",
     "phase_b_complete": "2026-05-20",
     "phase_b_method": "Direct draft analog Phase C — Piraten-spezifika: Schatzsuche + Augenklappen + Schatztruhe + Goldmünzen.",
     "phase_b_structural_refresh": "2026-05-21",
@@ -797,7 +797,11 @@
       "kosten": "~7 &euro;",
       "allergiker": "Packung checken"
     },
-    "tips": null
+    "tips": [
+      "Kuchen schon am Vortag backen, Deko erst am Partytag",
+      "Bei Kapitaensmuetze: aus Fondant pressen und 2h im Kuehlschrank stabilisieren",
+      "Pirat-Augenklappen aus dunkler Schokolade einfach mit Backpapier-Schablone formen"
+    ]
   },
   "parentTips": {
     "structured": [
@@ -1176,6 +1180,7 @@
       }
     ],
     "optOutNote": "Kein Kind muss eine Rolle nehmen. Wer einfach nur mitlaufen will, ist normaler Pirat — Augenklappe und Schatzanteil bekommt es trotzdem. Die Rollen sind ein Angebot, kein Zwang.",
-    "materialNote": "Augenklappen, Kopftücher und eine kleine Holz-Schatztruhe gibt es als Set; siehe shoppingList der jeweiligen Variante. Versprechen-Karte und Rollen-Kärtchen druckst du selbst aus — Vorlagen liegen im Einladungs- und Druck-Bereich."
+    "materialNote": "Augenklappen, Kopftücher und eine kleine Holz-Schatztruhe gibt es als Set; siehe shoppingList der jeweiligen Variante. Versprechen-Karte und Rollen-Kärtchen druckst du selbst aus — Vorlagen liegen im Einladungs- und Druck-Bereich.",
+    "roleSkalierung": "3 Kernrollen (Kapitaen + Steuermann + Ausguck) sind PFLICHT. 5 weitere optional je nach Kinderzahl. Bei wenigen Kindern: 2 Rollen pro Kind kombinieren. Schreiber-Funktion altersgerecht: 6-Jaehrige malen SYMBOLE statt schreiben."
   }
 }
