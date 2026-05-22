@@ -54,8 +54,12 @@
   "signatureRitual": {
     "name": "Das Initiations-Ritual",
     "subtitle": "Für alle 3 Varianten",
-    "introText": "Jeder bekommt einen Einhorn-Code-Namen — aber cool Statt Sternenstaub-Beutel (zu kindlich für 9+): Umschläge mit Wachssiegel-Sticker. In jedem Umschlag ein Code-Name auf einer „alten\" Karte (Teebeutel-Trick: Papier in kaltem Tee einlegen, trocknen lassen → sieht aus wie Pergament). Dazu ein Einhorn-Tattoo in Metallic-Gold oder Silber — die sehen bei 9–12-Jährigen cool aus, nicht kindisch.",
-    "setupSteps": [],
+    "introText": "Jeder bekommt einen Einhorn-Code-Namen — aber cool. Statt Sternenstaub-Beutel (zu kindlich für 9+): Umschläge mit Wachssiegel-Sticker. In jedem Umschlag ein Code-Name auf einer „alten\" Karte (Teebeutel-Trick: Papier in kaltem Tee einlegen, trocknen lassen → sieht aus wie Pergament). Dazu ein Einhorn-Tattoo in Metallic-Gold oder Silber — die sehen bei 9–12-Jährigen cool aus, nicht kindisch.",
+    "setupSteps": [
+      "Umschläge mit Aufgaben + Lösungs-Code-Tafeln pro Crew vorbereiten (3 Umschläge × Crew)",
+      "Pergament-Optik: Teebeutel-Briefe einweichen, trocknen — 1 pro Kind",
+      "Glitzer-Tattoos + Sticker als Belohnung pro bestandene Aufgabe bereitlegen"
+    ],
     "rolesList": [
       {
         "emoji": "🌙",
@@ -124,7 +128,7 @@
   "variants": [
     {
       "id": "minimal",
-      "label": "Minimal — 2 Stunden, minimaler Aufwand",
+      "label": "Minimal — 2,5 Std.",
       "headline": "⚡ Minimal — 2,5 Stunden, wenig Aufwand",
       "intro": "2 Aktivitäten + Kuchen + Chillen. Für Eltern, die eine gute Party wollen ohne 3 Tage Vorbereitung. In diesem Alter reicht das — die Kinder unterhalten sich auch einfach gerne.",
       "timeWindow": "14:00–16:30, 8 Kinder",
@@ -217,7 +221,7 @@
         }
       ],
       "food": "🎂Galaxy-Kuchen1 Springform\n🍕Pizza-Brötchen16 Stück\n💧Limo / Wasser3 Flaschen\n🍿Popcorn300 g\n🍓Obst-TellerErdbeeren, Trauben",
-      "decoration": "🎈 Iridescent / Metallic-Ballons6 Stk. ~3 €Schimmernd, nicht Pastell-Rosa\n🔊 Fantasy-PlaylistKostenlosSpotify: „Fantasy Instrumental\" oder „Hogwarts Ambience\"\n🎉 Girlande „Happy Birthday\"~3 €Gold oder Silber-Metallic, keine Einhorn-Motive nötig\n\n💡 Minimal-Deko-Regel:\n3 Dinge reichen: Ballons, Girlande, Musik. Keine Einhorn-Papp-Teller (peinlich für 9–12). Die Metallic-Tattoos und Code-Name-Umschläge SIND die Deko — alles andere ist Bonus.",
+      "decoration": "🎈 Iridescent / Metallic-Ballons6 Stk. ~3 €Schimmernd, nicht Pastell-Rosa\n🔊 Fantasy-PlaylistKostenlosSpotify: „Fantasy Instrumental\" oder „Zauberschule Ambience\"\n🎉 Girlande „Happy Birthday\"~3 €Gold oder Silber-Metallic, keine Einhorn-Motive nötig\n\n💡 Minimal-Deko-Regel:\n3 Dinge reichen: Ballons, Girlande, Musik. Keine Einhorn-Papp-Teller (peinlich für 9–12). Die Metallic-Tattoos und Code-Name-Umschläge SIND die Deko — alles andere ist Bonus.",
       "giveaways": "💎 Selbst gemachtes Perlen-Armband\n✨ Metallic-Einhorn-Tattoo (haben sie schon auf der Hand)\n🍭 1 Tüte Süßigkeiten\n\nIn schlichten Kraftpapier-Tüten (nicht rosa — die finden das peinlich). Kosten: ~2,50 € pro Kind.",
       "shoppingList": [
         {
@@ -289,7 +293,7 @@
     },
     {
       "id": "standard",
-      "label": "Standard — 3 Stunden, vollständige Schicht",
+      "label": "Standard — 3,5 Std.",
       "headline": "🎯 Standard — 3,5 Stunden, rund und gut",
       "intro": "Der Sweet Spot: 5 Aktivitäten mit gutem Rhythmus-Wechsel. Chemie-Labor, Parcours, Escape-Rätsel, Schmuck und freies Chillen mit Musik. Die Party, von der die Kinder am Montag in der Schule erzählen.",
       "timeWindow": "14:00–17:15, 8 Kinder",
@@ -340,8 +344,29 @@
           "loudness": "ruhig",
           "effort": "mittel",
           "material": "1 Rotkohl (~2 €), 8 durchsichtige Becher pro Kind, Essig, Backpulver/Natron, Zitronensaft, Spülmittel, Waschsoda (~1 €), Pipetten oder Löffel, 1 Tablett pro Kind (gegen Sauerei)",
-          "prepText": "",
-          "steps": [],
+          "prepText": "Vorbereitung (20 Min. am Vortag): Rotkohl in Streifen schneiden, mit heißem Wasser übergießen, 30 Min. ziehen lassen → tiefvioletter Saft. In Flasche abfüllen, im Kühlschrank aufbewahren. Das ist dein „Zaubertrank-Basis\".\n\nDurchführung: Jedes Kind bekommt 8 Becher, je halb mit Rotkohlsaft gefüllt. Dann verschiedene Substanzen reinmischen — Farben wechseln je nach pH:\n• Essig → wird rosa/rot (sauer)\n• Zitronensaft → wird hellrosa (sauer)\n• Backpulver/Natron → wird blaugrün (basisch)\n• Waschsoda → wird gelb/grün (stark basisch)\n• Spülmittel → wird blau + schäumt\n\nDie Kinder experimentieren selbst: „Was passiert, wenn ich den sauren Trank in den basischen kippe?\" (Farbwechsel!). „Kann ich Lila wieder herstellen?\" (Ja — neutralisieren.)\n\nTipp: Kittel aus alten Hemden (Knöpfe vorne, Ärmel hochkrempeln) machen es offizieller und schützen die Klamotten. (Standard: gleicher Aufbau wie Minimal, aber als Gruppenexperiment statt Einzelarbeit — 2-3 Schalen, alle Kinder helfen mit).",
+          "steps": [
+            {
+              "name": "Vortag: Rotkohlsaft kochen",
+              "content": "Rotkohl in Streifen schneiden, mit heißem Wasser übergießen, 30 Min. ziehen lassen → tiefvioletter pH-Indikator-Saft. In Flasche abfüllen, im Kühlschrank aufbewahren."
+            },
+            {
+              "name": "Setup pro Kind",
+              "content": "8 durchsichtige Becher halb mit Rotkohlsaft füllen, auf Tablett aufstellen. Pipetten + Test-Substanzen (Essig, Natron, Zitrone, Spülmittel, Waschsoda) bereit."
+            },
+            {
+              "name": "Sauer = Rosa",
+              "content": "Essig oder Zitronensaft tropfenweise in einen Becher → Saft wird rosa/rot. Erste Erkenntnis: „Saures verändert die Farbe nach Rot.\""
+            },
+            {
+              "name": "Basisch = Grün",
+              "content": "Natron oder Backpulver in nächsten Becher → wird blaugrün. Waschsoda → wird gelb/grün (stark basisch). Schäumendes Spülmittel → blau."
+            },
+            {
+              "name": "Neutralisations-Challenge",
+              "content": "„Misch den perfekten Lila-Trank!\" → Kinder müssen sauer + basisch so kombinieren, dass die Ausgangsfarbe Lila wieder entsteht (= Neutralpunkt). Bonus-Aufgabe für 12-Jährige."
+            }
+          ],
           "safetyRule": "Waschsoda (Natriumcarbonat) reizt Augen + Haut. Schutzbrille für Kinder bei Mix-Phase. Nicht in Augen reiben, Hände nach jedem Experiment waschen. Nichts trinken. Tablett mit Rand gegen Überlauf. Erwachsene*r misst die Mengen ab.",
           "ageAdjust6": null,
           "ageAdjust8": null,
@@ -407,7 +432,7 @@
             },
             {
               "name": "Rätsel 2: Einhorn-Mathe (→ Ziffer 7)",
-              "content": "Auf eine Karte schreiben: „Ein Einhorn hat 1 Horn. Ein Regenbogen hat ? Farben. Multipliziere beides. Die Lösung ist deine Ziffer.\" Lösung: 1 × 7 = 7."
+              "content": "Auf eine Karte schreiben: „Ein Einhorn hat 1 Horn. Ein Regenbogen hat ? Farben. Multipliziere beides. Die Lösung ist deine Ziffer.\" Lösung: 1 × 7 = 7. [POSITION: die zweite Ziffer im Schloss-Code]"
             },
             {
               "name": "Rätsel 3: UV-Botschaft (→ Ziffer 1)",
@@ -419,7 +444,7 @@
             },
             {
               "name": "Rätsel 5: Kreuzworträtsel (→ Ziffer 5)",
-              "content": "4 Fragen auf eine Karte: (1) „Welche Farbe hat Rotkohl-Saft, wenn man Essig reinmischt?\" (4 Buchst.) → ROSA. (2) „Was hat ein Einhorn auf der Stirn?\" (4 Buchst.) → HORN. (3) „Wie heißt die Zahl nach vier?\" (4 Buchst.) → FÜNF. (4) „Wie viele Farben hat ein Regenbogen?\" (6 Buchst.) → SIEBEN. Hinweis: „Der 1. Buchstabe von Antwort 3 ist der Schlüssel.\" Lösung: F = Fünf → 5."
+              "content": "4 Fragen auf eine Karte: (1) „Welche Farbe hat Rotkohl-Saft, wenn man Essig reinmischt?\" (4 Buchst.) → ROSA. (2) „Was hat ein Einhorn auf der Stirn?\" (4 Buchst.) → HORN. (3) „Wie heißt die Zahl nach vier?\" (4 Buchst.) → FÜNF. (4) „Wie viele Farben hat ein Regenbogen?\" (6 Buchst.) → SIEBEN. Hinweis: „Der 1. Buchstabe von Antwort 3 ist der Schlüssel.\" Lösung: F = Fünf → 5. [POSITION: die vierte Ziffer im Schloss-Code]"
             },
             {
               "name": "Final: Schloss öffnen + Schatz teilen",
@@ -455,7 +480,7 @@
         }
       ],
       "food": "🎂Galaxy-Kuchen1 Springform\n🍕Pizza-Brötchen20 Stück\n💧Limo / Wasser4 Flaschen\n🍓Obst & GemüseErdbeeren, Gurke\n🍿Popcorn300 g\n🍭SüßigkeitenHaribo, M&Ms",
-      "decoration": "🎈 Iridescent / Metallic-Ballons10 Stk. ~5 €Schimmernd, nicht Pastell-Rosa\n🌈 Regenbogen-Lichterkette~6 €LED, batteriebetrieben\n✨ Metallic-Sterne an der Decke~4 €Gold/Silber-Karton, an Fäden aufhängen\n🔊 Playlist „Fantasy Vibes\"KostenlosSpotify: instrumentale Fantasy-Musik\n\n💡 Deko-Regel für 9–12:\nWeniger ist cooler. Keine rosa Papp-Teller mit Einhorn-Gesicht (die Kinder würden sich schämen). Stattdessen: Metallic-Töne, Lichterketten, Sterne. Fantasy statt Kinderzimmer. Die Atmosphäre soll „Hogwarts trifft Einhorn\" sein, nicht „Kindergarten-Party\".",
+      "decoration": "🎈 Iridescent / Metallic-Ballons10 Stk. ~5 €Schimmernd, nicht Pastell-Rosa\n🌈 Regenbogen-Lichterkette~6 €LED, batteriebetrieben\n✨ Metallic-Sterne an der Decke~4 €Gold/Silber-Karton, an Fäden aufhängen\n🔊 Playlist „Fantasy Vibes\"KostenlosSpotify: instrumentale Fantasy-Musik\n\n💡 Deko-Regel für 9–12:\nWeniger ist cooler. Keine rosa Papp-Teller mit Einhorn-Gesicht (die Kinder würden sich schämen). Stattdessen: Metallic-Töne, Lichterketten, Sterne. Fantasy statt Kinderzimmer. Die Atmosphäre soll „Zauberschule trifft Einhorn\" sein, nicht „Kindergarten-Party\".",
       "giveaways": "💎 Selbst gemachtes Perlen-Armband\n🦄 Einhorn-Charm (extra, zum Anhängen)\n✨ Metallic-Tattoo\n🍭 Süßigkeiten aus der Schatztruhe\n\nIn Kraftpapier-Tüten mit Code-Name-Aufkleber. Kosten: ~3,50 € pro Kind.",
       "shoppingList": [
         {
@@ -554,7 +579,7 @@
     },
     {
       "id": "wow",
-      "label": "Wow — 3,5 Stunden, die volle Schicht",
+      "label": "Wow — 4,5 Std.",
       "headline": "✨ Wow — 4,5 Stunden, die Akademie der Vergessenen Magie",
       "intro": "Die Kinder werden zu Schülern der „Akademie der Vergessenen Magie\" — einer geheimen Einhorn-Universität, deren Wissen verloren gegangen ist. In 6 Prüfungen müssen sie beweisen, dass sie würdig sind, die alte Magie wiederzubeleben. Mit Escape-Rätseln, Chemie-Experimenten, UV-Schwarzlicht-Geheimnissen und einem Kurzfilm-Dreh als Finale.",
       "timeWindow": "13:30–17:55, 8 Kinder",
@@ -646,7 +671,7 @@
         }
       ],
       "food": "🎂Galaxy-Kuchen1 Springform + Wunderkerze\n🍕Pizza-Brötchen24 Stück\n💧Limo / Wasser5 Flaschen\n🍓Obst & GemüseErdbeeren, Trauben, Gurke\n🍿Popcorn400 g\n🍭Süßigkeiten-Mix2 Tüten\n🥤„Zaubertrank\" (Fanta+Sprite)Bowle-Schüssel\n\n💡 „Zaubertrank\"-Bowle:\nFanta + Sprite mischen, blaue Lebensmittelfarbe rein → wird türkis. Eiswürfel mit Lebensmittelfarbe einfrieren (lila) → während der Party schmilzt das lila Eis in der türkisen Bowle und die Farbe ändert sich langsam. „Der Trank der Akademie verändert sich im Laufe des Tages.\" Die Kinder checken den Trick, finden ihn aber trotzdem cool.",
-      "decoration": "🎈 Iridescent / Metallic-Ballons15 Stk. ~6 €\n🌈 LED-Lichterkette (Regenbogen)~6 €\n✨ Metallic-Sterne + Monde an der Decke~5 €\n🪧 „Akademie der Vergessenen Magie\"-SchildKostenlosPappe + Edding + Goldfolie, am Eingang\n🕯️ LED-Kerzen (Teelichter)10 Stk. ~4 €Fantasy-Atmosphäre, keine echten Kerzen\n🔊 Fantasy-PlaylistKostenlosSpotify: „Fantasy Instrumental\" oder „Hogwarts Ambience\"\n📜 Pergament-Rollen als Tischdeko~3 €Teebeutel-Papier, eingerollt, mit Band\n\n✨ Wow-Bonus: Nebel-Maschine\nDer ultimative Atmosphäre-Hack: Eine kleine [Nebelmaschine*](https://www.amazon.de/s?k=nebelmaschine+klein+party+400w&tag=machsleicht-21) (~25–35 €) im Flur beim Reinkommen. Die Kinder öffnen die Tür, Nebel wallt ihnen entgegen, LED-Lichterketten schimmern durch den Dunst — „Willkommen in der Akademie.\" Das werden sie niemals vergessen. Funktioniert auch bei der Urkunden-Zeremonie. Einmal gekauft, für jede Party und Halloween wiederverwendbar.\n\n🔮 Wow-Bonus: Kristall-Zucht als Langzeit-Souvenir\nEin [Kristall-Zucht-Set*](https://www.amazon.de/s?k=kristall+z%C3%BCchten+kinder+set&tag=machsleicht-21) (~10–15 € für 8 Kinder) als zusätzliches Mitgebsel: Jedes Kind nimmt ein kleines Glas mit „Kristall-Samen\" (Alaun-Lösung + Lebensmittelfarbe) mit nach Hause. In 3–5 Tagen wachsen echte Kristalle. Das Mitgebsel, das 3 Tage nach der Party nochmal für Staunen sorgt — und an dem die Kinder sehen: „Das war echte Chemie auf der Party.\"",
+      "decoration": "🎈 Iridescent / Metallic-Ballons15 Stk. ~6 €\n🌈 LED-Lichterkette (Regenbogen)~6 €\n✨ Metallic-Sterne + Monde an der Decke~5 €\n🪧 „Akademie der Vergessenen Magie\"-SchildKostenlosPappe + Edding + Goldfolie, am Eingang\n🕯️ LED-Kerzen (Teelichter)10 Stk. ~4 €Fantasy-Atmosphäre, keine echten Kerzen\n🔊 Fantasy-PlaylistKostenlosSpotify: „Fantasy Instrumental\" oder „Zauberschule Ambience\"\n📜 Pergament-Rollen als Tischdeko~3 €Teebeutel-Papier, eingerollt, mit Band\n\n✨ Wow-Bonus: Nebel-Maschine\nDer ultimative Atmosphäre-Hack: Eine kleine [Nebelmaschine*](https://www.amazon.de/s?k=nebelmaschine+klein+party+400w&tag=machsleicht-21) (~25–35 €) im Flur beim Reinkommen. Die Kinder öffnen die Tür, Nebel wallt ihnen entgegen, LED-Lichterketten schimmern durch den Dunst — „Willkommen in der Akademie.\" Das werden sie niemals vergessen. Funktioniert auch bei der Urkunden-Zeremonie. Einmal gekauft, für jede Party und Halloween wiederverwendbar.\n\n🔮 Wow-Bonus: Kristall-Zucht als Langzeit-Souvenir\nEin [Kristall-Zucht-Set*](https://www.amazon.de/s?k=kristall+z%C3%BCchten+kinder+set&tag=machsleicht-21) (~10–15 € für 8 Kinder) als zusätzliches Mitgebsel: Jedes Kind nimmt ein kleines Glas mit „Kristall-Samen\" (Alaun-Lösung + Lebensmittelfarbe) mit nach Hause. In 3–5 Tagen wachsen echte Kristalle. Das Mitgebsel, das 3 Tage nach der Party nochmal für Staunen sorgt — und an dem die Kinder sehen: „Das war echte Chemie auf der Party.\"",
       "giveaways": "📜 Meister-Urkunde (mit Code-Name und Wachssiegel)\n💎 Selbst gemachtes Amulett-Armband\n🦄 Einhorn-Charm\n🔮 Kristall-Zucht-Glas (wächst zu Hause weiter)\n🍭 Süßigkeiten aus der Schatztruhe\n\nIn Kraftpapier-Tüten mit Code-Name und „Akademie\"-Stempel. Kosten: ~5 € pro Kind.",
       "shoppingList": [
         {
@@ -835,7 +860,7 @@
       },
       {
         "topic": "🌌 Galaxy statt Rosa: Farb-Welt verschieben",
-        "detail": "Der zentrale Reframing-Hebel: 9–12-Jährige finden „Galaxy\" cool und „Regenbogen\" kindisch — bei gleichen Farben. Verwende: Dunkelblau + Lila + Türkis + Gold (Mirror-Glaze-Kuchen). Metallic-Tattoos in Gold/Silber statt Glitzer-Aufkleber. Iridescent-Ballons (schimmernd) statt Pastell-Rosa. Pergament-Karten statt Glitzer-Zettel. Schlicht-Kraftpapier-Tüten als Goodie-Bags (nicht rosa — die finden das peinlich). Die Atmosphäre soll „Hogwarts trifft Einhorn\" sein, nicht „Kindergarten-Party\"."
+        "detail": "Der zentrale Reframing-Hebel: 9–12-Jährige finden „Galaxy\" cool und „Regenbogen\" kindisch — bei gleichen Farben. Verwende: Dunkelblau + Lila + Türkis + Gold (Mirror-Glaze-Kuchen). Metallic-Tattoos in Gold/Silber statt Glitzer-Aufkleber. Iridescent-Ballons (schimmernd) statt Pastell-Rosa. Pergament-Karten statt Glitzer-Zettel. Schlicht-Kraftpapier-Tüten als Goodie-Bags (nicht rosa — die finden das peinlich). Die Atmosphäre soll „Zauberschule trifft Einhorn\" sein, nicht „Kindergarten-Party\"."
       },
       {
         "topic": "🐉 Drachen-/Magier-Alternative für Jungs-skeptische Gruppen",

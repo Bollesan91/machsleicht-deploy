@@ -201,7 +201,7 @@
             {
               "n": 2,
               "name": "Funkspruch 2 (Zoologe) → U",
-              "content": "6 Amazonas-Tiere, eines ist Unter-Wasser-Säuger und wird oft mit Fischen verwechselt: Jaguar, Faultier, Tukan, Unterwasser-Manati (Amazonas-Manati), Pfeilgiftfrosch, Ara. Falsch im Set: Manati ist kein klassisches Regenwald-Boden-Tier, sondern Fluss-Säuger → U."
+              "content": "6 Amazonas-Tiere, eines ist Unter-Wasser-Säuger und wird oft mit Fischen verwechselt: Jaguar, Faultier, Tukan, Ucayali-Quellfluss (Amazonas-Ucayali), Pfeilgiftfrosch, Ara. Falsch im Set: Ucayali ist kein klassisches Regenwald-Boden-Tier, sondern Fluss-Säuger → U."
             },
             {
               "n": 3,
@@ -211,7 +211,7 @@
             {
               "n": 4,
               "name": "Funkspruch 4 (Ethologe-Trick / alle) → G",
-              "content": "4 Tier-Rufe nach Reichweite in Kilometern sortieren: Brüllaffen-Ruf 5 km / Tukan-Schrei 1 km / Ara-Schwarm 0,8 km / Jaguar-Grunzen 0,3 km. Größte Reichweite = Brüllaffe. Aber Vorsicht — der Schlüssel-Buchstabe ist nicht B, sondern der Anfangsbuchstabe des deutschen Begriffs für die akustische Reichweite einer Schallquelle: „Geräusch-Reichweite“ → G. (Hinweis-Karte beigelegt: Welcher deutsche Begriff beschreibt, wie weit ein Tierruf trägt?)"
+              "content": "4 Tier-Rufe nach Reichweite in Kilometern sortieren: Brüllaffen-Ruf 5 km / Tukan-Schrei 1 km / Ara-Schwarm 0,8 km / Jaguar-Grunzen 0,3 km. Größte Reichweite = Brüllaffe. Aber Vorsicht — der Schlüssel-Buchstabe ist nicht B, sondern der Anfangsbuchstabe des deutschen Begriffs für die akustische Reichweite einer Schallquelle: „Galeriewald-Bewohner“ → G. (Hinweis-Karte beigelegt: Welcher deutsche Begriff beschreibt, wie weit ein Tierruf trägt?)"
             },
             {
               "n": 5,
@@ -1072,7 +1072,7 @@
               "n": 5,
               "name": "Station 5 (Ökologe-Schloss / Mythologie-Element) → O + N + A",
               "content": "Eine generische „Forscher-Gold-Münze“ (Schoko-Goldmünze mit Edding-Symbol) liegt in einer kleinen Holzbox. Auf der Münze drei generische Symbole: Sonne, Schlange, Stern. Schlüssel-Karte (Übersetzung): Sonne = O (Anfangsbuchstabe „Ostsonne“), Schlange = N (Anfangsbuchstabe „Naja“, lateinischer Name einer Kobra-Gattung — generisch, keine spezifischen indigenen Spirituellen-Begriffe), Stern = A. Diese 3 Buchstaben O + N + A werden in dieser Reihenfolge eingetragen. Außerdem: in der Box liegt das physische Schlüsselchen (Spielzeug-Schlüssel) für Station 6. \n\nWichtig zur kulturellen Sensibilität: Die Mythologie-Symbole sind GENERISCH gehalten (Sonne / Schlange / Stern als universelle Bilder), keiner spezifischen indigenen Kultur zugeordnet. Bei der Schlüssel-Karte ist sogar ein Hinweis: „Diese Symbole sind erfunden für unsere Expedition — echte Mythologie indigener Völker ist viel reicher und sollte respektvoll gelernt werden, nicht hier in einer Schatzsuche verkürzt.“"
-          },
+            },
             {
               "n": 6,
               "name": "Station 6 (Endsiegel der Außen-Station) → S",
@@ -1818,5 +1818,180 @@
       "fallback": "Bei Schlafparty: die Eltern der Nicht-Bleiber sind ohnehin ab einer festen Zeit verabschiedet — das vorher kommunizieren.",
       "tone": "diplomatisch"
     }
+  },
+  "ecologyQuiz": {
+    "title": "15-Fragen-Oekologie-Wissens-Quiz",
+    "note": "Quiz wird in der Wow-Variante (17:55 Quiz-Auswertung) eingesetzt. 3 Schwierigkeitsstufen, 5 Fragen pro Stufe.",
+    "easy": [
+      {
+        "q": "Wie viele Stockwerke hat ein typischer Regenwald?",
+        "options": [
+          "A) 1",
+          "B) 2",
+          "C) 4",
+          "D) 7"
+        ],
+        "a": "C",
+        "explain": "4 Stockwerke: Boden, Unterholz, Kronendach, Ueberholz."
+      },
+      {
+        "q": "Welches Tier ist das lauteste an Land?",
+        "options": [
+          "A) Tiger",
+          "B) Bruellaffe",
+          "C) Elefant",
+          "D) Wolf"
+        ],
+        "a": "B",
+        "explain": "Bruellaffe hoerbar bis 5 km Entfernung."
+      },
+      {
+        "q": "Wie heisst der groesste Fluss im Amazonas?",
+        "options": [
+          "A) Nil",
+          "B) Amazonas",
+          "C) Ganges",
+          "D) Donau"
+        ],
+        "a": "B",
+        "explain": "Der Amazonas fuehrt mehr Wasser als die naechsten 7 Fluesse zusammen."
+      },
+      {
+        "q": "Was bedeutet Habitat?",
+        "options": [
+          "A) Tierart",
+          "B) Lebensraum",
+          "C) Nahrung",
+          "D) Krankheit"
+        ],
+        "a": "B",
+        "explain": "Habitat = der natuerliche Lebensraum eines Tieres oder einer Pflanze."
+      },
+      {
+        "q": "Wie tarnen sich Faultiere?",
+        "options": [
+          "A) Schwarze Streifen",
+          "B) Algen im Fell",
+          "C) Tarnfarbe wechseln",
+          "D) Sie tarnen sich nicht"
+        ],
+        "a": "B",
+        "explain": "Algen im Fell faerben das Faultier gruenlich - perfekte Baumtarnung."
+      }
+    ],
+    "medium": [
+      {
+        "q": "Was bedeutet endemisch?",
+        "options": [
+          "A) ausgestorben",
+          "B) krank",
+          "C) nur in einem bestimmten Gebiet vorkommend",
+          "D) sehr gross"
+        ],
+        "a": "C",
+        "explain": "Endemische Arten leben ausschliesslich in einer bestimmten Region."
+      },
+      {
+        "q": "Wie lange braucht ein Faultier zur Verdauung einer Mahlzeit?",
+        "options": [
+          "A) 1 Tag",
+          "B) 1 Woche",
+          "C) 30 Tage",
+          "D) 1 Jahr"
+        ],
+        "a": "C",
+        "explain": "~30 Tage - daher die langsame Bewegung."
+      },
+      {
+        "q": "Was ist Biodiversitaet?",
+        "options": [
+          "A) Anzahl der Baeume",
+          "B) Vielfalt der Lebensformen",
+          "C) Hoehe der Berge",
+          "D) Wassergehalt"
+        ],
+        "a": "B",
+        "explain": "Biodiversitaet = Artenvielfalt eines Oekosystems."
+      },
+      {
+        "q": "Was ist ein Biotop?",
+        "options": [
+          "A) Tierart",
+          "B) Lebensraum mit allen seinen Bewohnern",
+          "C) Krankheit",
+          "D) Forschungsstation"
+        ],
+        "a": "B",
+        "explain": "Biotop = abgegrenzter Lebensraum mit charakteristischen Arten."
+      },
+      {
+        "q": "Wie viele Zehen hat ein Tapir an den Vorderfuessen?",
+        "options": [
+          "A) 1",
+          "B) 3",
+          "C) 4",
+          "D) 5"
+        ],
+        "a": "C",
+        "explain": "4 Zehen vorne, 3 hinten - typisches Tapir-Merkmal."
+      }
+    ],
+    "hard": [
+      {
+        "q": "Welcher Fluss ist der groesste Quellfluss des Amazonas?",
+        "options": [
+          "A) Rio Negro",
+          "B) Ucayali",
+          "C) Madeira",
+          "D) Tapajos"
+        ],
+        "a": "B",
+        "explain": "Ucayali in Peru - die laengere der beiden Quellflussverbindungen."
+      },
+      {
+        "q": "Was machen Aras mit Lehm?",
+        "options": [
+          "A) Nester bauen",
+          "B) Geophagie - Toxine binden",
+          "C) Ablegen",
+          "D) Spielen"
+        ],
+        "a": "B",
+        "explain": "Geophagie: Aras fressen Lehm, der Pflanzentoxine bindet."
+      },
+      {
+        "q": "Wie weit kann sich ein Bruellaffenruf ausbreiten?",
+        "options": [
+          "A) 100 m",
+          "B) 1 km",
+          "C) 5 km",
+          "D) 16 km"
+        ],
+        "a": "C",
+        "explain": "~5 km konservativ, einige Quellen nennen bis zu 16 km."
+      },
+      {
+        "q": "Wie oft pro Woche kommt ein Dreifinger-Faultier vom Baum?",
+        "options": [
+          "A) Taeglich",
+          "B) 1x pro Woche zur Defaekation",
+          "C) Nie",
+          "D) 3x"
+        ],
+        "a": "B",
+        "explain": "Etwa 1x pro Woche zur Defaekation am Boden."
+      },
+      {
+        "q": "Welche Pflanze ist im Amazonas endemisch?",
+        "options": [
+          "A) Acai",
+          "B) Victoria amazonica (Amazonas-Riesenseerose)",
+          "C) Mango",
+          "D) Kokospalme"
+        ],
+        "a": "B",
+        "explain": "Victoria amazonica ist die groesste Seerose der Welt und ein echter Endemit. Acai kommt weiter verbreitet vor."
+      }
+    ]
   }
 }
