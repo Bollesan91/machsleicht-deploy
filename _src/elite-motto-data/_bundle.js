@@ -7337,6 +7337,46 @@ var ELITE_MOTTO_DATA = {
         ],
         "games": [
           {
+            "name": "🦓 Tiere füttern (Bälle in Eimer)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": "15 Min.",
+            "minAge": 3,
+            "loudness": "halblaut",
+            "effort": "leicht",
+            "material": "3 Eimer oder Wäschekörbe, an jeden ein DIN-A4-Tier-Bild kleben (Löwe, Elefant, Affe). 15–20 weiche Bälle, kleine Plüsch-Bananen oder zusammengeknüllte Zeitung als 'Futter'. Markierungslinie aus Krepp-Band 1,5 m vor den Eimern (sehr nah, 3-Jährige sollen es schaffen).",
+            "prepText": "Stell die 3 Eimer in eine Reihe an die Wand, klebe pro Eimer ein A4-Tier-Bild davor. Krepp-Band-Linie 1,5 m davor — bei 3-Jährigen lieber näher. Vasen, Stehlampen und Glas vorher wegräumen, das wird wilder als gedacht.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Story",
+                "content": "'Die drei Tiere haben Hunger. Affe mag Bananen, Löwe frisst alles, Elefant ist riesig — also viel rein!' Lachen schon eingebaut."
+              },
+              {
+                "n": 2,
+                "name": "Werfen",
+                "content": "Alle Kinder stehen gleichzeitig in lockerem Halbkreis vor den Eimern. Jedes Kind hat 3 Bälle und wirft einer nach dem anderen."
+              },
+              {
+                "n": 3,
+                "name": "Jubeln",
+                "content": "Nach jedem Treffer rufen alle 'Lecker, danke Helfer!'. Nicht gezählt, nicht verglichen. Daneben gewerfen = holen und nochmal."
+              },
+              {
+                "n": 4,
+                "name": "Wiederholen",
+                "content": "3 Runden, dann hat jeder die Erfolgserfahrung mehrfach. Foto-Moment: Eltern dahinter, applaudieren."
+              }
+            ],
+            "safetyRule": "Nur WEICHE Bälle (Stoff, Plüsch, Knüllpapier). Keine Tennis- oder Hartgummibälle drinnen. Eimer auf Sofa oder Stuhl, nicht auf wackelige Möbel. Vasen und Glas vorher wegstellen.",
+            "ageAdjust3": "Linie noch näher (1 m), Eimer breit aufstellen, mit Mama oder Papa zusammen werfen. Sie machen das stolz.",
+            "ageAdjust5": "Linie etwas weiter (2 m), eine Runde mit der schwachen Hand werfen — als kleine Variation, kein Wettbewerb.",
+            "indoorTip": "Eimer auf Sofa oder Stühle stellen, weiche Bälle nutzen. Vasen vorher wegräumen — wirkt wilder als gedacht.",
+            "outdoorTip": "Im Garten Eimer auf dem Rasen oder an die Hauswand stellen, dann darf auch lauter geworfen werden.",
+            "whyItWorksTitle": "Bewegung ohne Verlierer",
+            "whyItWorks": "Bewegung nach dem Ankommen, Erfolgserlebnis ohne Punkte, kein Gewinner — und ein Foto-Moment, wenn alle Eltern dahinter stehen und applaudieren. Idealer Aktiv-Einstieg vor der ruhigen Pirsch."
+          },
+          {
             "name": "🦁 Tierspuren-Pirsch",
             "indoor": true,
             "outdoor": true,
@@ -7345,17 +7385,17 @@ var ELITE_MOTTO_DATA = {
             "loudness": "leise",
             "effort": "leicht",
             "material": "12–15 Pfotenabdrücke aus braunem Tonpapier (DIN A4, schwarzer Edding oder Pfoten-Schablone). Tesa. Am Endpunkt: 1 Plüsch-Löwe oder eine Box mit Mini-Tieren als 'Fund'. Pfoten selbst zeichnen reicht — die Kinder merken den Unterschied nicht.",
-            "prepText": "Vorher legst du eine Spur durch Wohnung oder Garten — z.B. Pfoten an die Wand kleben (Augenhöhe Kind, nicht zu hoch) in eine Richtung. Am Endpunkt versteckt sich der 'schlafende' Plüsch-Löwe unter einer Decke oder hinter einem Stuhl.",
+            "prepText": "Vorher legst du eine Spur durch Wohnung oder Garten — z.B. Pfoten an die Wand kleben (Augenhöhe Kind, nicht zu hoch) in eine Richtung. Am Endpunkt versteckt sich der 'schlafende' Plüsch-Löwe unter einer Decke oder hinter einem Stuhl. Doppelnutzen-Trick: dieselben Pfoten vom Eingang her als Deko-Pfad nutzen — die Kinder folgen der Spur, sobald sie reinkommen.",
             "steps": [
               {
                 "n": 1,
                 "name": "Einstimmen",
-                "content": "Du flüsterst: 'Jede Pirsch beginnt leise. Ein Tier hat sich verlaufen — wir folgen seinen Spuren.'"
+                "content": "Du flüsterst: 'Pscht! Der Löwe schläft. Wir folgen seinen Spuren ganz, ganz leise und schauen, wo er ist.'"
               },
               {
                 "n": 2,
                 "name": "Losschleichen",
-                "content": "Alle gehen gemeinsam los, leise wie eine Herde. Du gehst voraus und zeigst die erste Pfote."
+                "content": "Alle gehen GEMEINSAM die Spur ab — niemand rennt voraus, du gehst voran oder mitten in der Herde."
               },
               {
                 "n": 3,
@@ -7365,18 +7405,18 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Tier finden",
-                "content": "Am Endpunkt liegt der Plüsch-Löwe. Alle dürfen ihn streicheln, niemand reißt ihn weg — jeder kommt dran."
+                "content": "Am Endpunkt liegt der Plüsch-Löwe. 'Wer findet ihn?' Alle suchen kurz, alle finden ihn gemeinsam. Niemand reißt ihn weg — jeder kommt dran."
               },
               {
                 "n": 5,
                 "name": "Heimbringen",
-                "content": "Das Tier wird gemeinsam ins 'Reservat' (Decken-Ecke) gebracht. Pirsch fertig, alle haben geholfen."
+                "content": "Du sagst leise: 'Wir haben dem Löwen geholfen — jetzt weiß seine Mama, wo er ist.' Plüsch-Löwe ans Geburtstagskind übergeben."
               }
             ],
-            "safetyRule": "Pfoten nicht zu hoch kleben — keine Stühle als Kletterhilfe. Endpunkt kindersicher (keine scharfen Kanten hinterm Versteck).",
-            "ageAdjust3": "Spur kurz halten (10–12 Pfoten), Endpunkt sichtbar verstecken (unter Sofadecke). Du gehst die ganze Zeit voraus.",
-            "ageAdjust5": "Spur länger, 2 Tier-Arten parallel (Löwe + Elefant), 2 Endpunkte. 5-Jährige dürfen abwechselnd 'Pirsch-Führer' sein.",
-            "indoorTip": "In 60-75 m² geht die Spur nicht über 2-3 Räume — dann ehrlich anders: ein Raum mit verschachtelten Verstecken (um Sofa, hinter Vorhang, unter Tisch, am Regal vorbei). Wirkt für 3-5 wie eine echte Reise.",
+            "safetyRule": "Pfoten nicht zu hoch kleben — keine Stühle als Kletterhilfe. Endpunkt kindersicher (keine scharfen Kanten hinterm Versteck). KEIN 'Löwen-Brüllen' als Schreck-Moment — 3-Jährige weinen davon, der Löwe schläft, fertig.",
+            "ageAdjust3": "Spur SEHR kurz halten (5-8 Pfoten), Löwe nur halb versteckt (Schwanz schaut raus). Eltern dürfen flüstern: 'Schau mal hier oben!'",
+            "ageAdjust5": "Spur länger (10-12 Pfoten), Löwe ganz versteckt. 5-Jährige dürfen rätseln, wo er sein könnte, oder abwechselnd 'Pirsch-Führer' sein.",
+            "indoorTip": "In 60-75 m² geht die Spur nicht über 2-3 Räume — dann ehrlich anders: ein Raum mit verschachtelten Verstecken (um Sofa, hinter Vorhang, unter Tisch, am Regal vorbei). Wirkt für 3-5 wie eine echte Reise. Schlafzimmer-Tür zu — sonst rennen sie aufs Bett.",
             "outdoorTip": "Im Garten oder Park die Spur um Bäume und Büsche legen — die Kinder pirschen durchs 'Gebüsch'.",
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Schleichen ist ein Spiel mit eingebauter Lautstärke-Bremse. Kein Wettbewerb, alle finden gemeinsam — kein Kind geht leer aus. Der Plüsch-Fund ist greifbar, kein abstraktes Ziel."
@@ -7389,35 +7429,40 @@ var ELITE_MOTTO_DATA = {
             "minAge": 3,
             "loudness": "halblaut",
             "effort": "leicht",
-            "material": "Handy mit Tierstimmen (kostenlose YouTube-Playlist oder App) oder du machst die Geräusche selbst. Optional 6–8 Tierbild-Karten zum Hochhalten.",
-            "prepText": "Such dir 5-6 eindeutige Tiere raus, die Kinder kennen (Löwe, Elefant, Affe, Schlange, Vogel, Kuh). Geräusche bereitlegen oder üben.",
+            "material": "Handy mit Tierstimmen (kostenlose YouTube-Playlist oder App) oder du machst die Geräusche selbst. Optional 6–8 Tierbild-Karten zum Hochhalten. Empfehlung für 3-5: Tierstimmen-Quiz mit Kokosnuss (YouTube) — kindgerechte Stimme spricht das Tier sofort aus, ideal als sanftes Mit-Rate-Spiel.",
+            "prepText": "Such dir 5-6 eindeutige Tiere raus, die Kinder kennen (Löwe, Elefant, Affe, Schlange, Vogel, Kuh). Geräusche bereitlegen oder üben. Bekannte Tiere wählen — niemals exotische wie Hyäne oder Gepard, die kennen 3-5-Jährige noch nicht und werden frustriert. Lautstärke vorher testen: mittlere Stufe + 1 Probe-Geräusch, damit sich die 3-Jährigen beim Löwen-Brüllen nicht erschrecken.",
             "steps": [
               {
                 "n": 1,
                 "name": "Geräusch",
-                "content": "Du spielst/machst ein Tiergeräusch. Kinder rufen das Tier oder zeigen auf die Karte."
+                "content": "Du spielst/machst ein Tiergeräusch (5 Sek.). Alle Kinder gleichzeitig dürfen rufen 'LÖWE!' oder 'ELEFANT!' — niemand einzeln, das nimmt Druck."
               },
               {
                 "n": 2,
+                "name": "Mini-Fakt",
+                "content": "Nach jedem Tier ein kindgerechter Mini-Fakt: 'Genau — und weißt du, was der Löwe macht, wenn er hungrig ist? Er ruft ganz laut, damit Mama-Löwe weiß, wo er ist.'"
+              },
+              {
+                "n": 3,
                 "name": "Nachmachen",
                 "content": "Alle machen das Tier gemeinsam nach — brüllen, trompeten, hüpfen. Bewegung gehört dazu."
               },
               {
-                "n": 3,
+                "n": 4,
                 "name": "Weiter",
                 "content": "Nächstes Tier. 5-6 Runden reichen, dann kippt die Aufmerksamkeit."
               }
             ],
-            "safetyRule": "Bruellen ist FREIWILLIG. Wer das nicht mag: leise zeigen oder Geraeusch fluestern. Reizoffene/geraeuschempfindliche Kinder duerfen Pause machen.",
-            "ageAdjust3": "Nur 3-4 sehr eindeutige Tiere, du machst die Geräusche selbst und groß vor.",
-            "ageAdjust5": "5-Jährige dürfen selbst ein Tier vormachen und die anderen raten lassen.",
+            "safetyRule": "Bruellen ist FREIWILLIG. Wer das nicht mag: leise zeigen oder Geraeusch fluestern. Reizoffene/geraeuschempfindliche Kinder duerfen Pause machen. Lautstärke moderat halten — bei zu lauter Box erschrecken sich die 3-Jährigen.",
+            "ageAdjust3": "Nur 3-4 sehr eindeutige Tiere (Löwe, Elefant, Affe, Hund), du machst die Geräusche selbst und groß vor und sprichst das Tier mit ('Wer ist das? Ein... LÖÖÖWE!').",
+            "ageAdjust5": "5-Jährige dürfen selbst ein Tier vormachen und die anderen raten lassen. Bonus-Frage: 'Wo lebt es?'",
             "indoorTip": "Perfekt als ruhiger Lückenfüller drinnen — kein Material, kein Platz nötig.",
             "outdoorTip": "Draußen ruhig lauter machen lassen, niemand stört sich am Brüllen.",
-            "whyItWorksTitle": null,
-            "whyItWorks": null
+            "whyItWorksTitle": "Ruhig-Slot zwischen aktiven Phasen",
+            "whyItWorks": "Aufmerksamkeit wieder einsammeln nach lautem Spiel, ohne dass es langweilig wird. Alle gleichzeitig rufen lassen nimmt den Einzel-Druck weg — bei 3-5 pure Freude statt Performance."
           }
         ],
-        "food": "🎂 Löwen-Kuchen (Gugelhupf mit Mähne aus Mandelblättchen/Knusperflakes). 🥒 Tierfutter-Teller: Gurken-'Blätter', Cracker-'Steine', Trauben-'Beeren'. 🥤 Apfelschorle in Trinkbechern. Nichts Heißes, keine ungefragten Nüsse.",
+        "food": "🎂 Löwen-Kuchen (Gugelhupf mit Mähne aus Mandelblättchen/Knusperflakes). 🥒 Tierfutter-Teller: Gurken-'Blätter', Cracker-'Steine', Trauben-'Beeren'. 🥤 Apfelschorle in Trinkbechern. 🥨 Salzbrezeln. Nichts Heißes, keine ungefragten Nüsse. Snacks im Story-Frame: Karotten-Sticks = 'Giraffen-Snack', Bananen = 'Affen-Bananen', Apfelschorle = 'Wasserloch' (transparente Becher + blaue Halme).",
         "decoration": "🌿 Ein paar grüne Tücher oder Zimmerpflanzen als 'Reservat'-Ecke. 🦁 Plüsch- und Plastiktiere verteilt. Mehr braucht es bei Minimal nicht — die Kinder bringen die Fantasie mit.",
         "giveaways": "🦓 Pro Kind ein Mini-Tier (Plastik-Safaritier) + die Urkunde ('Du hast heute dem Löwen geholfen') in einer einfachen Papiertüte. Optional ein Tier-Sticker.",
         "shoppingList": [
@@ -8042,10 +8087,90 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Im Garten Büsche, Bäume und Gartenmöbel als Verstecke — das beste Tarnungs-Gelände.",
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Verstecken ist Urspiel, das jedes Kind kann. Der Tarnungs-Frame macht es zum Tier-Helfer-Training, ohne Druck. Gefunden-werden ist hier der Erfolg, nicht das Verlieren."
+          },
+          {
+            "name": "🎽 Tarn-Tuch bemalen (Bastel-Station)",
+            "indoor": true,
+            "outdoor": false,
+            "duration": "15 Min.",
+            "minAge": 3,
+            "loudness": "leise",
+            "effort": "mittel",
+            "material": "1 Stoffquadrat pro Kind (~30×30 cm, alte Geschirrtücher zerschnitten ODER weißer Bettlaken-Stoff aus dem Stoffladen ~4 €/m). Textil-Filzstifte in Erdfarben (braun, grün, ocker — wichtig: textil-geeignete Filzstifte, sonst geht beim ersten Waschen alles raus). Wachstuch auf den Tisch zum Schutz. 1 Beispiel-Tarn-Tuch zum Zeigen.",
+            "prepText": "Bettlaken oder alte Geschirrtücher abends vorher in 8 Quadrate schneiden. Mit Bügeleisen die Schnittkante kurz versiegeln (kein Saum nötig) oder einfach franselig lassen — wirkt sogar 'wilder'. Wachstuch auf Esstisch, Beispiel-Tuch zum Zeigen daneben.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Erklären",
+                "content": "Du zeigst das Beispiel-Tuch: 'Helfer im Reservat haben Tücher, die aussehen wie Gras und Erde. So sehen die Tiere uns nicht.'"
+              },
+              {
+                "n": 2,
+                "name": "Frei malen",
+                "content": "Jedes Kind bekommt ein Stoffquadrat. 'Mal du dein Tuch, wie du willst — Flecken, Streifen, Punkte — alles geht.' 3-Jährige brauchen Eltern-Hand am Stift, 5-Jährige machen alleine."
+              },
+              {
+                "n": 3,
+                "name": "Trocknen",
+                "content": "Nach 10-12 Min. wandern die Tücher auf den Wäscheständer oder die Fensterbank — NICHT auf dem Esstisch liegen lassen, der wird gleich wieder gebraucht."
+              },
+              {
+                "n": 4,
+                "name": "Bei der Pirsch tragen",
+                "content": "Beim Pirsch-Spiel später dürfen die Tücher mitgenommen werden — die Kinder wickeln sich darin ein und schleichen leise. Doppelnutzen statt nur Bastel-Pflicht."
+              }
+            ],
+            "safetyRule": "Nur Textil-Filzstifte (Edding Textil, Crayola) — manche Kinder reagieren auf No-Name-Stoff-Färbe-Stifte. Wachstuch unter dem Stoff, Filzstifte sofort weg sobald fertig. Schere bleibt bei Erwachsenen.",
+            "ageAdjust3": "Tücher kleiner schneiden (20×20 cm), nur 2 Farben anbieten (sonst wird's matschig), Mama oder Papa hält die Hand mit am Stift.",
+            "ageAdjust5": "Volle Größe (30×30 cm), alle 3 Farben, dürfen auch Tierspuren oder Tier-Silhouetten draufmalen.",
+            "indoorTip": "Reines Tisch-Spiel, ideal als ruhiger Einstieg direkt nach Stirnband-Verleihung. Tücher trocknen weiter auf der Fensterbank, kommen nicht zurück auf den Esstisch (Kuchen wartet).",
+            "outdoorTip": null,
+            "whyItWorksTitle": "Selbstgemacht statt gekauft",
+            "whyItWorks": "Jedes Kind hat ein selbst gestaltetes Mitgebsel in der Hand, bevor das laute Programm losgeht — und das Tuch kommt beim Pirsch nochmal zum Einsatz. Ist also kein isoliertes Bastel-Highlight, sondern Teil der Story."
+          },
+          {
+            "name": "🎧 Tier-Lauscher (Geräusche raten)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": "15 Min.",
+            "minAge": 3,
+            "loudness": "leise",
+            "effort": "leicht",
+            "material": "Smartphone mit kostenloser Tier-Geräusche-App ODER YouTube-Playlist (alles kostenlos). 6-8 Plüsch-Tiere oder Tier-Bilder (sind sowieso schon im Raum). Optional: kleine Bluetooth-Box, falls der Smartphone-Lautsprecher zu leise ist. Kosten: 0 €.",
+            "prepText": "Plüsch-Tiere oder Tier-Bilder in einem Halbkreis vor den Kindern auslegen (Löwe, Elefant, Affe, Vogel, Schlange, Krokodil). Lautstärke vorher checken: mittlere Stufe + 1 Probe-Geräusch — bei zu leiser Box hören die Kinder nichts, bei zu lauter erschrecken sich die 3-Jährigen beim Löwen-Brüllen.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Story-Anker",
+                "content": "'Im Reservat lauschen Helfer ganz genau, wer in der Nähe ist — das machen wir auch. Schließt die Augen und hört genau hin: Welches Tier ruft da?'"
+              },
+              {
+                "n": 2,
+                "name": "Geräusch abspielen",
+                "content": "5-8 Sekunden ein Tier-Geräusch (Löwe brüllt, Affe johlt, Elefant tütet, Vogel zwitschert, Schlange zischt, Krokodil knirscht). Kinder horchen still."
+              },
+              {
+                "n": 3,
+                "name": "Gemeinsam zeigen",
+                "content": "Alle Kinder zeigen GLEICHZEITIG auf das passende Tier. Du lobst, lachst, löst auf: 'Aaah — der LÖWE! Hört ihr, wie tief das ist?'"
+              },
+              {
+                "n": 4,
+                "name": "Trick-Tier",
+                "content": "Zwischendurch 1-2 'Trick-Tiere' wie Kuh oder Hund einbauen — sorgt für Gelächter. Niemand wird einzeln drangenommen, Eltern dürfen mit auflösen."
+              }
+            ],
+            "safetyRule": "Lautstärke vorher testen — bei zu lauter Box erschrecken sich die 3-Jährigen beim Löwen-Brüllen. Mittlere Stufe + 1 Probe-Geräusch. Wer die Geräusche unangenehm findet (Schlangen-Zischen kann triggern), darf sich auf Mamas Schoß setzen.",
+            "ageAdjust3": "Nur 4-5 sehr eindeutige Geräusche (Löwe, Elefant, Affe, Vogel). Eltern dürfen früh Tipps geben — das ist kein Test.",
+            "ageAdjust5": "6-8 Geräusche, gerne auch knifflige wie Schlange oder Krokodil. Bonus-Frage: 'Welches Tier macht den schnellsten Schritt?' oder 'Welches Tier ist am größten?'",
+            "indoorTip": "Im Sitzkreis auf dem Boden oder Sofa. Konzentrierte Tier-Helfer-Gesichter = Foto-Moment der Station.",
+            "outdoorTip": "Draußen funktioniert es auch — auf dem Rasen sitzen, Bluetooth-Box mitnehmen.",
+            "whyItWorksTitle": "Ruhe-Station, die wirklich nichts kostet",
+            "whyItWorks": "Konzentration nach lautem Füttern, ein gemeinsames 'Aaah!' wenn die Helfer das Tier erkennen, konzentrierte Tier-Helfer-Gesichter als Foto-Moment. 0 € Material, hohe Wirkung."
           }
         ],
-        "food": "🎂 Löwen-Kuchen mit Mähne + ein zweiter 'Reservat'-Kuchen oder Muffins. 🥒 Großer Tierfutter-Teller (Gurke, Paprika, Trauben, Käse, Cracker). 🍪 Tier-Kekse. 🍌 Affen-Bananen. 🥤 Apfelschorle + Wasser. Allergie-Teller separat.",
-        "decoration": "🌿 Reservat-Ecke + DIY-Foto-Ecke: vor einer freien Wand 2-3 Grünpflanzen, ein paar große Plüsch-Tiere, optional ein gemaltes Dschungel-Plakat. 🐾 Pfotenspuren-Pfad. 🎈 Grün-braune Ballons. Tischdecke in Tarn-Optik.",
+        "food": "🎂 Löwen-Kuchen mit Mähne + ein zweiter 'Reservat'-Kuchen oder Muffins. 🥒 Großer Tierfutter-Teller (Gurke, Paprika, Trauben, Käse, Cracker). 🍪 Tier-Kekse. 🍌 Affen-Bananen. 🍓 'Flamingo-Beeren' (Erdbeeren-Schale). 🥤 Apfelschorle + Wasser. Allergie-Teller separat. Marzipan-Deko auf dem Kuchen IMMER bei Eltern abfragen (Mandel-Allergie!) — Alternative: Schoko-Linsen und bunte Schoko-Linsen.",
+        "decoration": "🌿 Reservat-Ecke + DIY-Foto-Ecke: vor einer freien Wand 2-3 Grünpflanzen, ein paar große Plüsch-Tiere, optional ein selbst gemaltes Pappschild ('Reservat — Helfer-Station 🦁') und einen kleinen Hocker für die Größenverhältnisse. 🐾 Pfotenspuren-Pfad. 🎈 Grün-braune Ballons. Tischdecke in Tarn-Optik. Kostet 0 € extra, sieht aus wie 50 € Aufwand — Wow-Faktor für WhatsApp-Status.",
         "giveaways": "🦓 Stirnband + Mini-Tier + Urkunde + Mini-Lupe + Foto-Ausdruck vom Foto-Eck + Tier-Sticker, in einer Safari-Tüte. Das volle Helfer-Paket zum Mitnehmen.",
         "shoppingList": [
           {
@@ -8261,6 +8386,14 @@ var ELITE_MOTTO_DATA = {
         {
           "topic": "🦁 Kein Wettbewerb, nie Verlierer",
           "detail": "Bei dieser Altersgruppe keine Gewinner/Verlierer-Spiele. Jedes Kind findet ein Tier, hilft, bekommt die Urkunde. Die Urkunde bekommt jeder Helfer — das schafft jedes Kind."
+        },
+        {
+          "topic": "🧠 Meltdown-Plan — bei 3-5 fast garantiert",
+          "detail": "Statistisch wird mindestens ein Kind während der 2 Stunden müde, übermüdet oder schlicht überreizt. Das ist normal, nicht persönlich. Plan: 1 ruhiger Rückzugs-Ort vorbereiten (Sofa-Ecke mit Decke und 2 Plüsch-Tieren), Mama/Papa des Kindes hin, 5-10 Min. Pause, dann meistens wieder dabei. Wenn nicht: das Kind verabschiedet sich früher, das ist OK. NICHT: das Kind zwingen 'mitzumachen' oder mit Tränen vor allen anderen weinen lassen — beides eskaliert."
+        },
+        {
+          "topic": "📸 Foto-Moment: Urkunden-Übergabe ist DER Moment",
+          "detail": "Du musst nicht parallel filmen — die Eltern stehen ohnehin daneben und fotografieren ihr eigenes Kind. Bei der Abholung jeden Elternteil fragen, ob du das Foto vom Geburtstagskind-mit-seinem-Kind per WhatsApp schicken sollst. Macht Eindruck und kostet null Aufwand mehr."
         }
       ],
       "educationalValue": "Die Kinder üben ganz nebenbei: leise sein und sich konzentrieren (Pirsch), für jemanden sorgen statt zu gewinnen (Tiere füttern), gemeinsam ein Ziel erreichen (Schatzsuche) und mit Verkleidung in eine Rolle schlüpfen (Stirnband). Der Tier-Helfer-Frame macht aus Geburtstags-Trubel ein Kümmer-Spiel — das ist genau der soziale Entwicklungsschritt, der mit 3-5 ansteht."
@@ -8282,6 +8415,18 @@ var ELITE_MOTTO_DATA = {
       {
         "q": "Ist die Wow-Variante für 3-Jährige geeignet?",
         "a": "Eher nicht. Wow braucht 80 m²+ oder Garten, eine zweite erwachsene Hand und mindestens ein 5-jähriges Geburtstagskind. Mit reinen 3-Jährigen und Solo-Moderation lieber Standard nehmen."
+      },
+      {
+        "q": "Müssen Eltern bei der Party dabeibleiben?",
+        "a": "Bei 3-5 ja. Auch wenn das Kind sonst im Kindergarten gut ohne Eltern klarkommt — Geburtstag ist neue Umgebung, viele Kinder gleichzeitig, hohe Reizdichte. Aktiv kommunizieren: 'Wir freuen uns, wenn ihr Eltern bei einem Kaffee bleibt — die Party dauert nur 2 Stunden.' Kaffee/Tee bereitstellen, eine ruhige Ecke einrichten, dann sind alle entspannt."
+      },
+      {
+        "q": "Welche Allergien sind in dieser Altersgruppe am wichtigsten?",
+        "a": "In 3-5 sind Lebensmittel-Allergien häufiger als in jeder anderen Altersgruppe — Nüsse, Milch, Erdnüsse, Eier sind die Top 4. Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit. Apfelschorle, Bananen, Karotten und Salzbrezeln sind fast immer safe. Marzipan-Deko auf dem Kuchen IMMER bei Eltern abfragen (Mandel-Allergie). Tarn-Tuch-Filzstifte: nur Marken-Textilstifte (Edding Textil, Crayola), manche Kinder reagieren auf No-Name."
+      },
+      {
+        "q": "Funktioniert ein Safari-Geburtstag auch drinnen?",
+        "a": "Ja, das ist sogar oft die bessere Option bei 3-5. Tiere füttern im Wohnzimmer (Vasen wegräumen), Memory am Küchentisch, Pirsch durch Flur und Wohnzimmer mit Pfotenspur, Tier-Lauscher im Sitzkreis mit Smartphone, Tarn-Tuch-Basteln auf Wachstuch. Draußen ist es atmosphärischer (echte Pfoten auf dem Rasen, Pirsch im Garten), drinnen genauso wirksam — und Toiletten/Mama/Pflaster sind in Reichweite."
       }
     ],
     "preparationWeeks": {
@@ -8527,6 +8672,32 @@ var ELITE_MOTTO_DATA = {
         ],
         "fallback": "Bleibt es untröstlich? Tempo der ganzen Gruppe drosseln — oft ist die Party einfach zu schnell für die Kleinen.",
         "tone": "ruhig"
+      },
+      "kind_uebermuedet": {
+        "icon": "😴",
+        "label": "Ein Kind wird übermüdet oder überreizt",
+        "headline": "Rückzugs-Ort + Eltern + 5-10 Min. Pause, dann meist wieder dabei.",
+        "steps": [
+          "Vorbereiteten Rückzugs-Ort nutzen: Sofa-Ecke mit Decke, 2 Plüsch-Tiere, ruhig.",
+          "Eltern des Kindes dazu (sind bei 3-5 ja eh da), gemeinsam runterkommen.",
+          "5-10 Min. ohne Aktivitäts-Druck — Wasser, Brezel, ein Buch reicht oft.",
+          "Nach der Pause leise wieder anbieten, aber nicht drängen."
+        ],
+        "fallback": "Bleibt es überreizt: das Kind verabschiedet sich früher, das ist OK. NICHT zwingen, NICHT mit Tränen vor anderen weinen lassen — beides eskaliert. Mitgebsel-Tüte bekommt es trotzdem.",
+        "tone": "ruhig"
+      },
+      "kostuem_pumpe_erschreckt": {
+        "icon": "🦖",
+        "label": "Aufblasbares Tier-Kostüm erschreckt ein Kind",
+        "headline": "Sofort weg damit — Lärm + Kontrollverlust am Körper = Meltdown-Risiko.",
+        "steps": [
+          "Pumpe sofort ausschalten, Kostüm runter — nicht 'durchhalten lassen', das eskaliert.",
+          "Bei 3- und 4-Jährigen meist sowieso zu viel: Lärm UND Kontrollverlust am eigenen Körper.",
+          "5-Jährige bei denen das Kostüm 2-3 Tage vorher anprobiert wurde, schaffen es meist.",
+          "Foto-Plan B: Geburtstagskind mit Plüsch-Löwe und Urkunde — funktioniert auch ohne Kostüm."
+        ],
+        "fallback": "Generelle Regel: Kostüm nur einsetzen, wenn das 5-jährige Geburtstagskind es vorher kennt und lacht — sonst weglassen. Ein Meltdown des Geburtstagskinds bei der Übergabe kippt die ganze Party.",
+        "tone": "bestimmt"
       },
       "eltern_kommen_frueh": {
         "icon": "⏰",
@@ -8884,7 +9055,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Bestanden gibt's einen Stempel auf die Ranger-Karte. Das Tarn-Tuch wandert als Mitgebsel mit nach Hause."
               }
             ],
-            "safetyRule": "Nur kindersichere, abwaschbare Filzstifte. Keine Verstecke an wackeligen Regalen oder hinter heißen Heizungen.",
+            "safetyRule": "Nur kindersichere, textil-geeignete Filzstifte (Edding Textil, Crayola). No-Name-Stoff-Färbe-Stifte können Hautreaktionen auslösen — im Zweifel Eltern fragen. Keine Verstecke an wackeligen Regalen oder hinter heißen Heizungen.",
             "ageAdjust6": "Spielleiter zeigt vorher ganz deutlich, wo ungeeignete Verstecke sind (\"hinter dem weißen Vorhang funktioniert dein braunes Tuch nicht\"). Pädagogische Bemerkung statt Regel.",
             "ageAdjust8": "Mehrere Verstecke nacheinander, Zeit knapper machen.",
             "indoorTip": "Vorhänge, hinter Sofa, in Wäscheecke — gibt mehr Verstecke als man denkt. Indoor-Limit: max. 4 Kinder gleichzeitig tarnen lassen (raeumlich nicht mehr Versteckplaetze). Bei groesserer Gruppe in 2 Runden aufteilen ODER Outdoor.",
@@ -9041,7 +9212,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 2,
                 "name": "Hinweise verteilen",
-                "content": "Jedes der 4 Teams bekommt eine Hinweis-Karte, die Schritt für Schritt zum Versteck des Jungen führt."
+                "content": "Jedes der 4 Teams bekommt eine Hinweis-Karte. Konkrete Beispiele: Team 1 'Sucht zwischen den Büchern, die nach Tieren benannt sind.' Team 2 'Findet den Ort, an dem die Mama-Löwen ihre Jungen waschen würden — ein Ort mit Wasser.' Team 3 'Sucht da, wo es im Reservat dunkel ist — unter einem schweren Möbelstück.' Team 4 'Sucht da, wo die Sonne reinkommt — bei einem Fenster.'"
               },
               {
                 "n": 3,
@@ -9051,7 +9222,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Junges bergen",
-                "content": "Wer das Junge findet, übernimmt die Rückbringung. Klebeband-Gefahrenzonen (Hyänen) dürfen nicht betreten werden."
+                "content": "Wer das Junge findet, übernimmt die Rückbringung. Klebeband-Gefahrenzonen (Hyänen-Territorium) dürfen nicht betreten werden — andere Teams können helfen, sicheren Pfad zu finden."
               },
               {
                 "n": 5,
@@ -9511,12 +9682,12 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🎩",
-            "label": "Filz-Buschhüte (10 Stk., optional)",
+            "label": "Filz-Buschhüte (10 Stk., optional Wow-Highlight)",
             "url": "https://www.amazon.de/s?k=safari+hut+kinder+filz&tag=machsleicht-21",
             "priceEur": 80,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
-            "categoryReasoning": "Explizit optional, 80€ — Premium-Verkleidung, normalerweise nicht zwingend."
+            "categoryReasoning": "Visuelles Signature-Moment der Wow-Variante: bei der Lizenz-Zeremonie wird die Verwandlung vom Anwärter zum lizenzierten Ranger sichtbar. Hut geht mit nach Hause, wird wochenlang in Kindergarten/Schule getragen — kein anderes Mitgebsel hat diese Halbwertszeit. 8-12 €/Stück (10 Kinder = 80-120 €). Günstige Alternative bei knappem Budget: braune Filz-Imitat-Hüte aus dem Karneval-Sortiment, ~4-6 €/Stück."
           },
           {
             "emoji": "📻",
@@ -9525,7 +9696,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 25,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
-            "categoryReasoning": "Explizit optional — Schatzsuche-Premium, normales Handy-Rufen tut's auch."
+            "categoryReasoning": "Bei der Schatzsuche-Quest können sich zwei Teams beim Tempel-Suchen über Funk koordinieren — macht die Mission kommunikativer und gibt 'echte Mission'-Stimmung. Wer Walkies zu Hause hat oder welche fürs Kind ohnehin geplant ist: ideal. Funktioniert auch ohne völlig — die Quest ist nicht darauf angewiesen, normales Handy-Rufen tut's auch."
           },
           {
             "emoji": "🦖",
@@ -10755,7 +10926,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Die ganze Expedition läuft hier zusammen: keine Spezialisierung kann die Karte allein vermessen. Der Höhepunkt belohnt Kooperation, nicht Einzelleistung."
           }
         ],
-        "food": "🎂 Reservat-Karten-Kuchen (1 Blechkuchen) · 🍕 Mini-Pizzen selbst belegt (12 Stück) · 🥤 „Wasserloch“ 3 L Apfelschorle · 🍌 Affen-Bananen · 🥒 Gemüse-Buffet „Giraffen-Snack“ · 🍿 Savannen-Popcorn · 🧀 Käse-Würfel.",
+        "food": "🎂 Reservat-Karten-Kuchen (1 Blechkuchen) · 🍕 Mini-Pizzen selbst belegt (12 Stück, jeder belegt 1,5) · 🌯 Wraps „Anaconda“ (normale Wraps mit Frischkäse/Salat/Schinken, zusammengerollt sehen sie aus wie eine Schlange) · 🥤 „Wasserloch“ 3 L Apfelschorle (transparente Becher + blaue Halme) · 🍌 Affen-Bananen · 🥒 Gemüse-Buffet „Giraffen-Snack“ · 🍿 Savannen-Popcorn · 🧀 Käse-Würfel. Selber-Belegen ist für 9-12 wichtig — verkindischen ausgeschlossen, sie wollen aktiv beteiligt sein. Story-Frame beim Servieren kostet null extra.",
         "decoration": "🦁 Safari-Teller & Becher · 🎈 Luftballons grün/braun/ocker · 🪧 Safari-Girlande · 🌿 Grünpflanzen aus dem Wohnzimmer in den Partyraum · 🪧 „Ranger-Camp Reservat“-Schild (Pappe + Edding) · 🦶 Tierspuren-Pfad vom Eingang · 🔊 Savannen-Sounds leise im Hintergrund (YouTube) · 📜 A3-Reservat-Karte als Tisch-Eyecatcher.",
         "giveaways": "Braune Papiertüte „Expeditions-Ausrüstung für ___“: Spezialisten-Lizenz mit konkretem Titel, Reservat-Ausweis im Scheckkartenformat (laminiert), Lieblings-Foto aus der Galerie, Klett-Abzeichen, Schoko-Goldmünzen, optional Mini-Tierfigur. Ca. 6 € pro Kind.",
         "shoppingList": [
@@ -11068,7 +11239,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Wow funktioniert perfekt als Schlafparty-Auftakt: die Expedition tagsüber, die Nacht-Safari als ruhiger Übergang in den Abend. Kein Programm-Zwang nach 22 Uhr — die wissen selbst, wann Schluss ist."
           }
         ],
-        "food": "🎂 Reservat-Karten-Kuchen (1 Blechkuchen + 1 kleiner) · 🍕 Mini-Pizzen selbst belegt (18 Stück) · 🌯 Wraps „Anaconda“ (10 Stück) · 🥤 „Wasserloch“ 4 L Apfelschorle · 🍌 Affen-Bananen · 🥒 Gemüse-Buffet · 🧀 Käse-Würfel (400 g) · 🍿 Savannen-Popcorn (500 g) · 🍫 Schoko-Goldmünzen (Tempel-Schatz) · 🥐 bei Schlafparty: Frühstück (Croissants, Nutella, Saft).",
+        "food": "🎂 Reservat-Karten-Kuchen (1 Blechkuchen + 1 kleiner) · 🍕 Mini-Pizzen selbst belegt (18 Stück) · 🌯 Wraps „Anaconda“ (10 Stück, normale Wraps mit Frischkäse/Schinken/Salat — zusammengerollt sehen sie aus wie eine Schlange) · 🥤 „Wasserloch“ 4 L Apfelschorle (transparente Becher + blaue Halme) · 🍌 Affen-Bananen · 🥒 „Giraffen-Snack“ Gemüse-Buffet · 🧀 Käse-Würfel (400 g) · 🍿 Savannen-Popcorn (500 g) · 🍫 Schoko-Goldmünzen (Tempel-Schatz) · 🥐 bei Schlafparty: Frühstück (Croissants, Nuss-Nougat-Aufstrich, Saft). Story-Frame kostet null extra — die Umbenennung beim Servieren macht den Tisch zum Erlebnis.",
         "decoration": "Wow-Level: 🦁 Safari-Teller & Becher Set · 🎈 20 Luftballons grün/braun/ocker · 🪧 Safari-Girlande · 🌿 Krepppapier-Lianen von der Decke · 🌿 Grünpflanzen aus dem Wohnzimmer · 🪧 „Ranger-Camp“-Schild · 🦶 Tierspuren-Pfad bis zum Partyraum · 🔊 Savannen-Sounds · 📦 Tempel-Schatzkiste (Goldfolie + Schloss-Aufkleber) · 📜 A3-Reservat-Karte. Optional: aufblasbares Tier-Kostüm für ein Elternteil beim Mission-Briefing (~30 €).",
         "giveaways": "Braune Papiertüte „Expeditions-Ausrüstung für ___“: Filz-Buschhut (Highlight, geht direkt vom Kopf nach Hause), Spezialisten-Lizenz mit Titel, laminierter Reservat-Ausweis, selbst bemaltes Tarn-Bandana, Reservat-Logbuch (DIY mit Foto-Slot), Klett-Abzeichen „Senior“, Lieblings-Foto, Schoko-Goldmünzen, Gummibärchen, optional Mini-Tierfigur. Ca. 12 € pro Kind inkl. Buschhut.",
         "shoppingList": [
@@ -11625,6 +11796,59 @@ var ELITE_MOTTO_DATA = {
     "title": "🦕 Dino-Abenteuer Kindergeburtstag — 3–5 Jahre",
     "metaDescription": "Dino-Kindergeburtstag für 3-5-Jährige: 3 fertige Party-Konzepte (Minimal/Standard/Wow) mit altersgerechten Spielen, Zeitplan, Einkaufsliste und Kosten.",
     "introParagraph": "Dein Kind wird 3, 4 oder 5 und liebt Dinosaurier? Hier bekommst du drei fertige Party-Konzepte — von „in einer Stunde vorbereitet“ bis zum vollen Dino-Erlebnis. Jedes Konzept mit Zeitplan, altersgerechten Spielen, Einkaufsliste und Kosten.\n\n[Dino-Geburtstag planen →](/kindergeburtstag?motto=dino&alter=4#planer)",
+    "ageInsight": {
+      "headline": "Was 3–5-Jährige ausmacht — und was das für die Dino-Party heißt",
+      "traits": [
+        {
+          "topic": "Aufmerksamkeit",
+          "detail": "5–10 Minuten pro Aktivität, dann brauchen sie Wechsel. Kürzer ist immer besser als länger."
+        },
+        {
+          "topic": "Regeln",
+          "detail": "Einfache Regeln — maximal 1–2 Anweisungen gleichzeitig. Vorzeigen statt erklären."
+        },
+        {
+          "topic": "Wettbewerb",
+          "detail": "Vermeiden. Alle machen alles zusammen, niemand scheidet aus. Tränen sind bei Gewinner/Verlierer fast garantiert."
+        },
+        {
+          "topic": "Motorik",
+          "detail": "Grobmotorik gut, Feinmotorik noch begrenzt. Stempeln, kleben und großflächig malen — ja. Ausschneiden und Schreiben — nein."
+        },
+        {
+          "topic": "Dauer",
+          "detail": "1,5–2 Stunden maximal. Danach sind die Kinder platt. Lieber eine Stunde Spaß als zwei Stunden mit Zusammenbruch."
+        },
+        {
+          "topic": "Essen",
+          "detail": "Fingerfood. Nichts, was man schneiden muss. Kleine Portionen — die meisten essen vor Aufregung wenig."
+        },
+        {
+          "topic": "Eltern",
+          "detail": "Bleiben in der Regel da. Das ist gut — du hast automatisch Helfer. Bei unter 4-Jährigen bleiben sie definitiv."
+        }
+      ],
+      "whyMottoFitsHeadline": "🦕 Warum Dino für 3–5-Jährige besonders gut funktioniert",
+      "whyMottoFits": "Kleine Kinder lieben große Tiere. Der T-Rex ist riesig, brüllt laut und ist ein bisschen gruselig — genau die richtige Mischung aus Faszination und Nervenkitzel. Dino funktioniert geschlechtsneutral (Jungs UND Mädchen finden Dinos toll), braucht keine komplizierten Geschichten und lässt sich mit einfachen Mitteln umsetzen: Plastik-Dinos, Brüllen, Stampfen, Eier suchen — fertig."
+    },
+    "faq": [
+      {
+        "q": "Wie lange sollte ein Dino-Geburtstag für 3–5-Jährige dauern?",
+        "a": "1,5 bis 2 Stunden sind perfekt. Nach 2 Stunden sind die meisten Kinder in diesem Alter überreizt. Die Minimal-Variante (1,5 Stunden) ist oft die bessere Wahl — die Kinder gehen glücklich nach Hause statt übermüdet."
+      },
+      {
+        "q": "Wie viele Kinder einladen bei 3–5-Jährigen?",
+        "a": "Faustregel: Alter des Kindes = Anzahl Gäste. Also 3–5 Kinder. Bei 3-Jährigen reichen oft 2–3 Gäste völlig. Mehr Kinder = mehr Chaos, mehr Tränen, mehr Eltern die bleiben müssen."
+      },
+      {
+        "q": "Was kostet ein Dino-Geburtstag für Kleinkinder?",
+        "a": "Zwischen 29 € (Minimal) und 60 € (Wow) für 5 Kinder. Die Standard-Variante liegt bei ca. 46 € und bietet das beste Verhältnis aus Aufwand und Ergebnis."
+      },
+      {
+        "q": "Können 3-Jährige schon „richtige“ Geburtstagsspiele spielen?",
+        "a": "Ja, aber nur sehr einfache. Eier suchen, Stopptanz und Ausgrabung funktionieren ab 3. Wichtig: keine Gewinner/Verlierer, alle machen alles zusammen, und jede Aktivität darf höchstens 10 Minuten dauern. Vorzeigen statt erklären."
+      }
+    ],
     "variants": [
       {
         "id": "minimal",
@@ -11646,7 +11870,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:25",
             "title": "🎂 Kuchen & Happy Birthday",
-            "description": "Vulkan-Kuchen (Gugelhupf mit Smarties). Kerzen auspusten, Happy Birthday singen. 20 Min. Dazu Apfelschorle — nenn es „Dino-Pipi“ und die Kinder lachen sich kaputt. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
+            "description": "Vulkan-Kuchen (Gugelhupf mit bunte Schoko-Linsen). Kerzen auspusten, Happy Birthday singen. 20 Min. Dazu Apfelschorle — nenn es „Dino-Pipi“ und die Kinder lachen sich kaputt. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
           },
           {
             "time": "15:45",
@@ -11663,40 +11887,52 @@ var ELITE_MOTTO_DATA = {
           {
             "name": "🦕 Dino-Eier suchen — Spielanleitung",
             "indoor": true,
-            "outdoor": false,
+            "outdoor": true,
             "duration": 10,
-            "minAge": null,
-            "loudness": null,
-            "effort": null,
-            "material": null,
-            "prepText": "",
-            "steps": [],
-            "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
+            "minAge": 3,
+            "loudness": "mittel",
+            "effort": "leicht",
+            "material": "15–20 bunte Plastik-Eier oder bunt bemalte Steine, 5 kleine Schüsseln/Eimer, Mini-Dinos oder Gummibärchen zum Reinlegen",
+            "prepText": "Eier im Raum/Garten verteilen — bei 3-Jährigen halb sichtbar, bei 5-Jährigen besser versteckt. Jedes Kind bekommt eine Schüssel. Alle suchen gleichzeitig. Wer eins findet, darf es öffnen und den Inhalt behalten.",
+            "steps": [
+              "Eier vor Ankunft im Raum/Garten verstecken (5 pro Kind)",
+              "Schüsseln/Eimer am Eingang bereitstellen",
+              "Auf Kommando: alle suchen gleichzeitig",
+              "Wer ein Ei findet, darf es öffnen und Inhalt behalten",
+              "Am Ende gemeinsam zählen — KEIN „wer findet die meisten?“"
+            ],
+            "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test). Mini-Dinos > 3 cm wählen.",
             "ageAdjust6": null,
             "ageAdjust8": null,
-            "indoorTip": null,
-            "outdoorTip": null,
-            "whyItWorksTitle": null,
-            "whyItWorks": null
+            "indoorTip": "Unter Sofa-Kissen, hinter Vorhang, im Schuh. Bei 3-Jährigen sichtbar liegen lassen.",
+            "outdoorTip": "Im Gras, hinter Pflanzen, auf Stufen. Karte mit Versteck-Liste machen, falls nicht alle gefunden werden.",
+            "whyItWorksTitle": "Warum es funktioniert",
+            "whyItWorks": "Kein Wettbewerb („Wer findet die meisten?“) — das endet bei Kleinkindern in Tränen. Stattdessen: „Helft alle zusammen, alle Eier zu finden!“ Falls ein Kind leer ausgeht: Ersatz-Eier in der Tasche haben."
           },
           {
             "name": "🦖 Dino-Stampfen (Stopptanz) — Spielanleitung",
             "indoor": true,
-            "outdoor": false,
+            "outdoor": true,
             "duration": 10,
             "minAge": 3,
-            "loudness": null,
-            "effort": null,
-            "material": null,
-            "prepText": "",
-            "steps": [],
-            "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
+            "loudness": "laut",
+            "effort": "leicht",
+            "material": "Musikbox oder Handy mit Lautsprecher. Jede Musik funktioniert — Kinderlieder oder „Dschungel-Sounds“ (YouTube).",
+            "prepText": "Musik an = alle stampfen wie ein T-Rex durch den Raum. Musik aus = alle frieren ein wie ein Fossil. Du machst laut mit — das gibt den Kindern Sicherheit.",
+            "steps": [
+              "Musik starten — alle stampfen wie T-Rex",
+              "Plötzlich Musik aus — alle einfrieren wie Fossil",
+              "Wer noch bewegt? Liebevoll erinnern, nicht ausschließen",
+              "Varianten ab 4: T-Rex (laut), Raptor (Zehenspitzen), Flugsaurier (Arme flattern)",
+              "5–15 Min. dehnbar — bei Müdigkeit beenden"
+            ],
+            "safetyRule": "Sichtaufsicht durch Erwachsene. Platz freiräumen (Tisch-Kanten, harte Möbel). Bei 3-Jährigen Niemand-scheidet-aus-Regel strikt einhalten.",
             "ageAdjust6": null,
             "ageAdjust8": null,
-            "indoorTip": null,
-            "outdoorTip": null,
-            "whyItWorksTitle": null,
-            "whyItWorks": null
+            "indoorTip": "Teppich oder Wohnzimmer-Boden. Stuhl-Hindernisse wegräumen.",
+            "outdoorTip": "Auf Rasen oder Terrasse. Bei Hitze in den Schatten.",
+            "whyItWorksTitle": "Warum es funktioniert",
+            "whyItWorks": "Niemand scheidet aus. Alle machen immer mit. Das Spiel lässt sich perfekt dehnen (5–15 Min.) oder spontan beenden, wenn die Energie kippt."
           }
         ],
         "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃Apfelschorle2 Liter\n🍇Trauben/Beeren500g\n🥨Salzstangen1 Packung",
@@ -11776,7 +12012,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:35",
             "title": "🎂 Kuchen & Dino-Pipi",
-            "description": "Vulkan-Kuchen (Gugelhupf + Smarties-Lava). Happy Birthday singen. Dazu „Dino-Pipi“ (Apfelschorle). 20 Min. Ruhe für alle. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
+            "description": "Vulkan-Kuchen (Gugelhupf + bunte Schoko-Linsen-Lava). Happy Birthday singen. Dazu „Dino-Pipi“ (Apfelschorle). 20 Min. Ruhe für alle. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
           },
           {
             "time": "15:55",
@@ -11798,34 +12034,46 @@ var ELITE_MOTTO_DATA = {
           {
             "name": "🦕 Dino-Eier suchen — Spielanleitung",
             "indoor": true,
-            "outdoor": false,
+            "outdoor": true,
             "duration": 10,
-            "minAge": null,
-            "loudness": null,
-            "effort": null,
-            "material": null,
-            "prepText": "",
-            "steps": [],
-            "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
+            "minAge": 3,
+            "loudness": "mittel",
+            "effort": "leicht",
+            "material": "20 bunte Plastik-Eier, Mini-Dinos oder Gummibärchen zum Reinlegen, 5 Schüsseln",
+            "prepText": "Eier verteilen (bei 3-Jährigen halb sichtbar, bei 5-Jährigen versteckter). Alle suchen gleichzeitig, kein Wettbewerb. „Wer eins findet, darf es öffnen!“ Ersatz-Eier in der Tasche für Kinder die leer ausgehen.",
+            "steps": [
+              "20 Eier mit Mini-Dino oder Gummibärchen befüllen",
+              "Vor Ankunft verstecken (5 pro Kind)",
+              "Schüsseln am Eingang bereitstellen",
+              "Auf Kommando: alle suchen — wer fertig ist, hilft den Anderen",
+              "Gemeinsam zählen und Inhalte zeigen"
+            ],
+            "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test). Mini-Dinos > 3 cm wählen.",
             "ageAdjust6": null,
             "ageAdjust8": null,
-            "indoorTip": null,
-            "outdoorTip": null,
+            "indoorTip": "Wohnzimmer + Flur + Kinderzimmer aufteilen, Suchradius klar abstecken.",
+            "outdoorTip": "Garten — Karte mit Versteck-Liste griffbereit für nicht gefundene Eier.",
             "whyItWorksTitle": null,
             "whyItWorks": null
           },
           {
             "name": "🦖 Dino-Stampfen (Stopptanz) — Spielanleitung",
             "indoor": true,
-            "outdoor": false,
+            "outdoor": true,
             "duration": 10,
             "minAge": 3,
-            "loudness": null,
-            "effort": null,
-            "material": null,
-            "prepText": "",
-            "steps": [],
-            "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
+            "loudness": "laut",
+            "effort": "leicht",
+            "material": "Musikbox oder Handy mit Lautsprecher",
+            "prepText": "Musik an = stampfen wie T-Rex. Musik aus = Fossil. Varianten ab 4 Jahren: verschiedene Dinos nachahmen (Raptor schleichen, Flugsaurier flattern). Niemand scheidet aus, alle machen immer mit.",
+            "steps": [
+              "Musik starten — alle stampfen",
+              "Plötzlich Musik aus — alle einfrieren",
+              "Tier-Ansagen: T-Rex (laut), Raptor (Zehenspitzen), Flugsaurier (Arme), Langhals (lang)",
+              "Du machst aktiv mit — gibt Sicherheit",
+              "10 Min., spontan beenden wenn Energie kippt"
+            ],
+            "safetyRule": "Sichtaufsicht durch Erwachsene. Platz freiräumen (Tisch-Kanten, harte Möbel). Niemand-scheidet-aus-Regel strikt einhalten.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -11836,40 +12084,52 @@ var ELITE_MOTTO_DATA = {
           {
             "name": "🌋 Vulkan-Experiment — Spielanleitung",
             "indoor": true,
-            "outdoor": false,
+            "outdoor": true,
             "duration": 10,
             "minAge": 3,
-            "loudness": null,
-            "effort": null,
-            "material": null,
-            "prepText": "",
-            "steps": [],
-            "safetyRule": "Erwachsene*r gießt Essig/Natron. Kinder hinter Tisch-Kante (1 m). Schutzbrille empfohlen. Nicht trinken, nicht in Augen.",
+            "loudness": "laut",
+            "effort": "mittel",
+            "material": "1 leere Plastikflasche (0,5l), Essig, Natron (1–2 EL), Spülmittel (Spritzer), rote Lebensmittelfarbe, Auffangschale oder Wanne",
+            "prepText": "Flasche in Sandhügel oder Blumentopf stellen. 3 EL Natron + Spritzer Spüli + rote Farbe in die Flasche. Kinder zählen runter. Essig dazugießen — Lava! Funktioniert 3–4 Mal hintereinander. Die Kinder wollen es IMMER nochmal sehen.",
+            "steps": [
+              "Flasche in Sandhügel / Blumentopf stellen, auf Tablett",
+              "Natron + Spüli-Spritzer + rote Farbe rein",
+              "Kinder zählen: „3, 2, 1, AUSBRUCH!“",
+              "Erwachsene*r gießt Essig dazu — Lava!",
+              "Wiederholbar 3–4× mit Nachfüllen"
+            ],
+            "safetyRule": "Erwachsene*r gießt Essig/Natron. Kinder hinter Tisch-Kante (1 m). Schutzbrille empfohlen. Nicht trinken, nicht in Augen. Bei Augenkontakt 5 Min mit Wasser spülen. Lebensmittelfarbe färbt — Schürze/alte Kleidung.",
             "ageAdjust6": null,
             "ageAdjust8": null,
-            "indoorTip": null,
-            "outdoorTip": null,
-            "whyItWorksTitle": null,
-            "whyItWorks": null
+            "indoorTip": "Badewanne oder Balkon mit Unterlage. Wachs-Tücher griffbereit.",
+            "outdoorTip": "Im Sand-Hügel — beste Wirkung.",
+            "whyItWorksTitle": "Warum es funktioniert",
+            "whyItWorks": "DER Wow-Moment der Party. Die Reaktion ist visuell, kindgerecht ungefährlich und mehrfach wiederholbar. 3–5-Jährige verstehen die Chemie noch nicht — sie brauchen es nicht zu verstehen, das Staunen reicht."
           },
           {
             "name": "🏗️ Dino-Ausgrabung — Spielanleitung",
-            "indoor": false,
-            "outdoor": false,
+            "indoor": true,
+            "outdoor": true,
             "duration": 15,
             "minAge": 3,
-            "loudness": null,
-            "effort": null,
-            "material": null,
-            "prepText": "",
-            "steps": [],
-            "safetyRule": "Sand-Wanne mit Sichtaufsicht. Kleinteile (Mini-Dinos < 3 cm) bei 3-Jährigen vermeiden — Verschluckungsgefahr.",
+            "loudness": "ruhig",
+            "effort": "leicht",
+            "material": "Große Wanne (40×30 cm reicht), Sand oder Reis (5 kg), 8–10 Dino-Figuren, Löffel + Pinsel zum Graben",
+            "prepText": "Dinos im Sand vergraben. Kinder graben mit Löffeln. Wer einen findet, ruft „Fossil gefunden!“ und darf ihn behalten. Wanne auf ein Handtuch stellen (Sand-Schutz).",
+            "steps": [
+              "Wanne auf Handtuch stellen (Sand-Schutz)",
+              "8–10 Dino-Figuren im Sand vergraben",
+              "Bei 3-Jährigen: zur Hälfte sichtbar, 2–3 cm tief",
+              "Kinder bekommen Löffel + Pinsel",
+              "Wer findet, ruft „Fossil gefunden!“ — Fund gehört dem Finder"
+            ],
+            "safetyRule": "Sand-Wanne mit Sichtaufsicht. Kleinteile (Mini-Dinos < 3 cm) bei 3-Jährigen vermeiden — Verschluckungsgefahr. Hände waschen vor Snacks.",
             "ageAdjust6": null,
             "ageAdjust8": null,
-            "indoorTip": null,
-            "outdoorTip": null,
-            "whyItWorksTitle": null,
-            "whyItWorks": null
+            "indoorTip": "Auf Küchentisch mit dicker Folie oder in der Badewanne.",
+            "outdoorTip": "Sandkasten oder Rasen — Sand-Reste fallen einfach raus.",
+            "whyItWorksTitle": "Warum es funktioniert",
+            "whyItWorks": "Die Freude ist das Finden, nicht das Graben. Bei 3-Jährigen sollten Dinos teilweise sichtbar sein — sonst Frust nach 30 Sekunden."
           }
         ],
         "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃Apfelschorle3 Liter\n🍇Obst-TellerTrauben + Beeren\n🥒Gemüse-SticksGurke + Paprika\n🍿Popcorn1 Schüssel",
@@ -11972,7 +12232,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:50",
             "title": "🎂 Kuchen & Dino-Pipi",
-            "description": "Vulkan-Kuchen mit Smarties-Lava und einer Dino-Figur obendrauf. Kerzen, Happy Birthday, 20 Min. Ruhe. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
+            "description": "Vulkan-Kuchen mit bunte Schoko-Linsen-Lava und einer Dino-Figur obendrauf. Kerzen, Happy Birthday, 20 Min. Ruhe. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
           },
           {
             "time": "16:10",
@@ -11994,15 +12254,21 @@ var ELITE_MOTTO_DATA = {
           {
             "name": "🦕 Dino-Eier suchen — Spielanleitung",
             "indoor": true,
-            "outdoor": false,
+            "outdoor": true,
             "duration": 10,
-            "minAge": null,
-            "loudness": null,
-            "effort": null,
-            "material": null,
-            "prepText": "",
-            "steps": [],
-            "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
+            "minAge": 3,
+            "loudness": "mittel",
+            "effort": "leicht",
+            "material": "25 Plastik-Eier (1 goldenes als Schatz-Ei), Mini-Dinos + Schoko-Goldmünzen, Schüsseln",
+            "prepText": "Wow-Variante: 25 Eier, etwas schwieriger versteckt. Ein besonderes goldenes Ei enthält den „Schatz“ — Schoko-Goldmünzen für alle. Wer das goldene Ei findet, darf sie verteilen.",
+            "steps": [
+              "24 Plastik-Eier mit Mini-Dino, 1 goldenes mit Schoko-Goldmünzen befüllen",
+              "Schwieriger als bei Standard verstecken",
+              "Goldenes Ei besonders gut platzieren",
+              "Alle suchen — wer das goldene findet, darf Münzen verteilen",
+              "Soziales Highlight: Schatz teilen, nicht horten"
+            ],
+            "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen Mini-Dinos > 3 cm wählen. Goldfolie der Münzen vor Verzehr abziehen lassen.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -12012,54 +12278,72 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "name": "🏗️ Dino-Ausgrabung — Spielanleitung",
-            "indoor": false,
-            "outdoor": false,
+            "indoor": true,
+            "outdoor": true,
             "duration": 15,
             "minAge": 3,
-            "loudness": null,
-            "effort": null,
-            "material": null,
-            "prepText": "",
-            "steps": [],
-            "safetyRule": "Sand-Wanne mit Sichtaufsicht. Kleinteile (Mini-Dinos < 3 cm) bei 3-Jährigen vermeiden — Verschluckungsgefahr.",
+            "loudness": "ruhig",
+            "effort": "mittel",
+            "material": "Große Wanne, Sand/Reis, Dino-Figuren + echte Muscheln + bunte Steine, Löffel + Pinsel",
+            "prepText": "Dinos 2–3 cm tief vergraben (bei 3-Jährigen zur Hälfte sichtbar lassen). Kinder graben mit Pinseln wie echte Paläontologen. Jeder darf seinen Fund behalten. Wanne auf Handtuch stellen.",
+            "steps": [
+              "Wanne auf Handtuch, Sand 5cm hoch einfüllen",
+              "Dinos + Muscheln + bunte Steine vergraben",
+              "Pinsel + Löffel pro Kind verteilen",
+              "„Wie echte Paläontologen graben!“ — feierlich ankündigen",
+              "Fund-Karte führen: jedes Kind notiert, was es gefunden hat (oder ein Erwachsener)"
+            ],
+            "safetyRule": "Sand-Wanne mit Sichtaufsicht. Kleinteile (Mini-Dinos < 3 cm) bei 3-Jährigen vermeiden — Verschluckungsgefahr. Hände waschen vor Snacks.",
             "ageAdjust6": null,
             "ageAdjust8": null,
-            "indoorTip": null,
-            "outdoorTip": null,
+            "indoorTip": "Auf Küchentisch mit dicker Folie. Hochstuhl-Tablett ist top.",
+            "outdoorTip": "Sandkasten oder Wiese.",
             "whyItWorksTitle": null,
             "whyItWorks": null
           },
           {
             "name": "🌋 Vulkan-Experiment — Spielanleitung",
-            "indoor": false,
+            "indoor": true,
             "outdoor": true,
             "duration": 10,
             "minAge": 3,
-            "loudness": null,
-            "effort": null,
-            "material": null,
-            "prepText": "",
-            "steps": [],
-            "safetyRule": "Erwachsene*r gießt Essig/Natron. Kinder hinter Tisch-Kante (1 m). Schutzbrille empfohlen. Nicht trinken, nicht in Augen.",
+            "loudness": "laut",
+            "effort": "mittel",
+            "material": "Plastikflasche (0,5l), Essig, Natron (1–2 EL), Spülmittel, rote Lebensmittelfarbe, Sandhügel oder Blumentopf, Auffangschale",
+            "prepText": "Natron + Spüli + Farbe in die Flasche. Kinder zählen runter: „3, 2, 1, AUSBRUCH!“ Essig dazugießen — Lava! Funktioniert 3–4 Mal. Die Kinder wollen es IMMER nochmal.",
+            "steps": [
+              "Flasche im Sandhügel oder Blumentopf stellen",
+              "Natron, Spüli-Spritzer, rote Farbe rein",
+              "Kinder rufen Countdown: „3, 2, 1, AUSBRUCH!“",
+              "Erwachsene*r gießt Essig — Schaum-Eruption!",
+              "Wiederholen — gerne mit mehr Farbe oder kalt/warmem Essig (Variation)"
+            ],
+            "safetyRule": "Erwachsene*r gießt Essig/Natron. Kinder hinter Tisch-Kante (1 m). Schutzbrille empfohlen. Nicht trinken, nicht in Augen. Bei Augenkontakt 5 Min mit Wasser spülen. Lebensmittelfarbe färbt — Schürze/alte Kleidung.",
             "ageAdjust6": null,
             "ageAdjust8": null,
-            "indoorTip": null,
-            "outdoorTip": null,
+            "indoorTip": "Badewanne oder Balkon mit Unterlage. Backblech als Tropf-Schutz.",
+            "outdoorTip": "Sandhügel im Garten — beste Wirkung + einfachste Reinigung.",
             "whyItWorksTitle": null,
             "whyItWorks": null
           },
           {
             "name": "🦖 Dino-Stampfen mit Varianten — Spielanleitung",
             "indoor": true,
-            "outdoor": false,
+            "outdoor": true,
             "duration": 10,
             "minAge": 3,
-            "loudness": null,
-            "effort": null,
-            "material": null,
-            "prepText": "",
-            "steps": [],
-            "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
+            "loudness": "laut",
+            "effort": "leicht",
+            "material": "Musikbox oder Handy mit Lautsprecher",
+            "prepText": "Wow-Variante: Stopptanz PLUS Tier-Ansagen. Du rufst: „T-Rex!“ (laut stampfen), „Raptor!“ (leise schleichen), „Flugsaurier!“ (Arme flattern), „Langhals!“ (auf Zehenspitzen). Kinder machen nach. Du machst aktiv mit — das gibt Sicherheit.",
+            "steps": [
+              "Musik starten",
+              "Tier rufen, alle imitieren",
+              "Musik aus = einfrieren",
+              "Nächste Runde: anderes Tier",
+              "Du machst alles mit — keine Beobachter-Rolle"
+            ],
+            "safetyRule": "Sichtaufsicht durch Erwachsene. Platz freiräumen (Tisch-Kanten). Niemand-scheidet-aus-Regel strikt einhalten.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -12070,19 +12354,25 @@ var ELITE_MOTTO_DATA = {
           {
             "name": "🦖 Dino-Parcours — Spielanleitung",
             "indoor": true,
-            "outdoor": false,
+            "outdoor": true,
             "duration": 10,
             "minAge": 3,
-            "loudness": null,
-            "effort": null,
-            "material": null,
-            "prepText": "",
-            "steps": [],
-            "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
+            "loudness": "laut",
+            "effort": "mittel",
+            "material": "2 Seile/Schnüre, 4–5 Kissen, 1 Decke + 2 Stühle (Tunnel), optional Pylonen",
+            "prepText": "Aufbau: Seil zwischen 2 Stühle (30 cm Höhe = drunter kriechen). Kissen in Reihe (drüber springen). Decke über 2 Stühle (Tunnel = Dino-Höhle). Bei 3-5: KEIN Wettrennen!",
+            "steps": [
+              "Seil zwischen 2 Stühle spannen (30 cm Höhe)",
+              "Kissen in Reihe als Trittsteine",
+              "Decke über 2 Stühle = Tunnel/Dino-Höhle",
+              "Du läufst voraus und zeigst, was zu tun ist",
+              "Alle laufen zusammen, kein Wettrennen — bei 3-Jährigen Seil höher (leichter), Kissen weglassen"
+            ],
+            "safetyRule": "Sichtaufsicht durch Erwachsene. Stuhl-Stabilität prüfen (Decke darf nicht ziehen). Bei 3-Jährigen: Tunnel-Decke nur leicht auflegen, nicht festknoten.",
             "ageAdjust6": null,
             "ageAdjust8": null,
-            "indoorTip": null,
-            "outdoorTip": null,
+            "indoorTip": "Flur + Wohnzimmer kombinieren. Möbel-Kanten polstern.",
+            "outdoorTip": "Wiese — Pylonen optional, Bäume als Slalom.",
             "whyItWorksTitle": null,
             "whyItWorks": null
           }
@@ -12177,14 +12467,44 @@ var ELITE_MOTTO_DATA = {
       }
     ],
     "cakeRecipe": {
-      "intro": "Der einfachste Wow-Kuchen: Gugelhupf + Smarties",
-      "steps": [],
+      "intro": "Der einfachste Wow-Kuchen: Gugelhupf + bunte Schoko-Linsen",
+      "steps": [
+        {
+          "n": 1,
+          "content": "Schoko-Gugelhupf backen (Fertigmischung reicht völlig)"
+        },
+        {
+          "n": 2,
+          "content": "Auf Teller stürzen — das Loch in der Mitte = Krater"
+        },
+        {
+          "n": 3,
+          "content": "Schoko-Glasur über den Rand laufen lassen = Lava"
+        },
+        {
+          "n": 4,
+          "content": "Rote + orange bunte Schoko-Linsen in den Krater und am Rand verteilen"
+        },
+        {
+          "n": 5,
+          "content": "Grüne bunte Schoko-Linsen unten am Fuß = Dschungel"
+        },
+        {
+          "n": 6,
+          "content": "Optional: kleine Dino-Figur obendrauf. KEINE Wunderkerze bei 3–5 (Brand-Panik-Eltern)."
+        }
+      ],
       "meta": {
         "aufwand": "45 Min. inkl. Backen",
-        "kosten": "~6 &euro;",
-        "allergiker": "Fertigmischungen sind oft allergen&auml;rmer — Packung checken"
+        "kosten": "~6 €",
+        "allergiker": "Fertigmischungen sind oft allergenärmer — Packung checken"
       },
-      "tips": null
+      "tips": [
+        {
+          "title": "🍰 Keine-Lust-zu-backen-Variante",
+          "body": "Fertigen Schoko-Kuchen vom Bäcker kaufen, eine Dino-Figur obendrauf, grüne bunte Schoko-Linsen drum. 2 Minuten, sieht toll aus. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.“"
+        }
+      ]
     },
     "parentTips": {
       "structured": [
@@ -12305,7 +12625,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🎂",
             "title": "Vulkan-Kuchen backen — oder Plan B",
-            "detail": "Wenn Zeit/Nerven: Gugelhupf + Schokoglasur + rote/orange Smarties. Wenn nicht: Schoko-Boden vom Bäcker (~6€), morgen Smarties drauf. Bei 3-5 KEINE Wunderkerze (Brand-Panik-Eltern)."
+            "detail": "Wenn Zeit/Nerven: Gugelhupf + Schokoglasur + rote/orange bunte Schoko-Linsen. Wenn nicht: Schoko-Boden vom Bäcker (~6€), morgen bunte Schoko-Linsen drauf. Bei 3-5 KEINE Wunderkerze (Brand-Panik-Eltern)."
           },
           {
             "icon": "🗣️",
@@ -12335,7 +12655,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🍫",
             "title": "Kuchen verzieren — Vulkan-Look",
-            "detail": "Schokoglasur über Gugelhupf (Loch in Mitte = Krater), rote + orange Smarties als ‚Lava-Strom' von oben nach unten, grüne Smarties unten als ‚Bäume'. 10 Min. Über Nacht fest werden lassen."
+            "detail": "Schokoglasur über Gugelhupf (Loch in Mitte = Krater), rote + orange bunte Schoko-Linsen als ‚Lava-Strom' von oben nach unten, grüne bunte Schoko-Linsen unten als ‚Bäume'. 10 Min. Über Nacht fest werden lassen."
           },
           {
             "icon": "🥚",
@@ -12447,11 +12767,11 @@ var ELITE_MOTTO_DATA = {
       "kuchen_misslungen": {
         "icon": "🎂",
         "label": "Kuchen ist misslungen",
-        "headline": "Bäcker-Hack: Schoko-Gugelhupf + Smarties = 10 Min Notfall.",
+        "headline": "Bäcker-Hack: Schoko-Gugelhupf + bunte Schoko-Linsen = 10 Min Notfall.",
         "steps": [
           "Schoko-Gugelhupf beim Bäcker holen (~6€) oder Schoko-Kasten + Krater rein-bohren.",
           "Schokoglasur drüber, von oben nach unten laufen lassen = ‚Lava'.",
-          "Rote + orange Smarties als Lava-Strom seitlich ankleben.",
+          "Rote + orange bunte Schoko-Linsen als Lava-Strom seitlich ankleben.",
           "Grüne Gummibärchen unten als ‚Bäume' platzieren."
         ],
         "fallback": "Bäcker zu? Muffins aus Vorrat, je Muffin ein Gummibärchen + roter Edding-Strich = Mini-Vulkan-Muffins.",
@@ -12753,22 +13073,29 @@ var ELITE_MOTTO_DATA = {
         "games": [
           {
             "name": "🌋 Vulkan-Experiment",
-            "indoor": false,
-            "outdoor": false,
+            "indoor": true,
+            "outdoor": true,
             "duration": 20,
             "minAge": 5,
             "loudness": "laut",
             "effort": "mittel",
             "material": "1 leere PET-Flasche (0,5l), Alufolie oder braunes Papier zum Formen, 3 EL Natron, 100 ml Essig, 1 Spritzer Spülmittel, rote Lebensmittelfarbe (Supermarkt, Backzutaten-Regal, ~1 €), 1 Tablett oder große Unterlage",
-            "prepText": "Flasche mit Alufolie zu einem Vulkan-Kegel formen. Auf Tablett stellen. Natron in die Flasche, Spülmittel und rote Lebensmittelfarbe dazu. Dann auf Kommando (\"3, 2, 1 — VULKANAUSBRUCH!\") Essig reinkippen und einen Schritt zurücktreten. Die rote Lava schäumt über!",
-            "steps": [],
-            "safetyRule": "Kinder min. 1 Armlaenge zurueck, niemals in den Krater schauen. Schuerze/alte Kleidung. Erwachsene*r kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort spuelen.",
+            "prepText": "Flasche mit Alufolie zu einem Vulkan-Kegel formen. Auf Tablett stellen. Natron in die Flasche, Spülmittel und rote Lebensmittelfarbe dazu. Dann auf Kommando („3, 2, 1 — VULKANAUSBRUCH!“) Essig reinkippen und einen Schritt zurücktreten. Die rote Lava schäumt über!",
+            "steps": [
+              "Flasche mit Alufolie zu Vulkan-Kegel formen, auf Tablett mit Rand stellen",
+              "3 EL Natron + 1 Spritzer Spüli + rote Farbe in die Flasche",
+              "Kinder hinter Sicherheitsabstand (1 Armlänge)",
+              "Countdown rufen: „3, 2, 1 — VULKANAUSBRUCH!“",
+              "Erwachsene*r kippt 100 ml Essig rein, sofort einen Schritt zurück",
+              "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
+            ],
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsene*r kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (Sättigung ab ca 50g) — Mehr Spüli macht den Schaum cremiger.",
             "ageAdjust6": null,
-            "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: \"Das ist eine chemische Reaktion — Säure trifft Base!\"",
-            "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht.",
-            "outdoorTip": null,
-            "whyItWorksTitle": null,
-            "whyItWorks": null
+            "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
+            "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
+            "outdoorTip": "Im Sandhügel — beste Optik + einfachste Reinigung. Bei Wind nicht in Richtung Tisch/Snacks ausrichten.",
+            "whyItWorksTitle": "Warum es funktioniert",
+            "whyItWorks": "DER Wow-Moment der Party. Bei 6–8-Jährigen: Wissenschaft + Spektakel = die perfekte Kombination. Sie wollen es 3–4× wiederholt sehen — und plötzlich verstehen sie, warum mehr Spüli mehr Schaum macht."
           },
           {
             "name": "🦴 Dino-Ausgrabung",
@@ -12776,16 +13103,23 @@ var ELITE_MOTTO_DATA = {
             "outdoor": true,
             "duration": 25,
             "minAge": 5,
-            "loudness": null,
-            "effort": null,
+            "loudness": "ruhig",
+            "effort": "leicht",
             "material": "1 große Plastikwanne, 3 kg Reis oder Sand, 10 kleine Dino-Figuren, 1 Pinsel pro Kind",
             "prepText": "Wie in der Minimal-Variante — aber hier als \"offizielle Forschungsstation 1\" im Rahmen der Dino-Forscher-Ausbildung ankündigen. Jedes Kind, das einen Dino findet, trägt ihn in einen \"Forschungsbericht\" ein (Zettel mit Dino-Name + Fundort).",
-            "steps": [],
+            "steps": [
+              "1 große Plastikwanne mit 3 kg Reis oder Sand befüllen",
+              "10 Mini-Dino-Figuren unterschiedlich tief vergraben",
+              "Pinsel pro Kind verteilen + Löffel als Backup",
+              "Als „offizielle Forschungsstation 1“ ankündigen — Forschungsbericht-Zettel führen lassen",
+              "Wer einen Dino findet, trägt ihn mit Dino-Name + Fundort in den Bericht ein",
+              "Mehr Dinos als Kinder vergraben (bei 6 Kindern → 10 Dinos) — jeder findet mind. einen"
+            ],
             "safetyRule": "Mini-Dinos < 3 cm vermeiden bei juengeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Haende waschen vor Snacks.",
-            "ageAdjust6": null,
-            "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen lassen). Kinder müssen mit Hammer und Meißel (Holzstäbchen) den Gips aufbrechen.",
-            "indoorTip": null,
-            "outdoorTip": null,
+            "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Sand (weniger Dreck).",
+            "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Kinder müssen mit Hammer/Holzstäbchen den Gips aufbrechen.",
+            "indoorTip": "Wanne auf alte Tischdecke oder in die Badewanne stellen.",
+            "outdoorTip": "Sandkasten direkt — kein Verschütt-Stress.",
             "whyItWorksTitle": null,
             "whyItWorks": null
           },
@@ -12799,14 +13133,21 @@ var ELITE_MOTTO_DATA = {
             "effort": "leicht",
             "material": "5 Kissen (Trittsteine), 2 Stühle (Höhle), 1 Seil oder Schnur (Lava-Fluss), Stoppuhr (Handy)",
             "prepText": "Parcours aufbauen: über Kissen-Trittsteine hüpfen (ohne den \"Lava-Boden\" zu berühren), unter Stühlen durchkriechen (\"Dino-Höhle\"), über Seil balancieren (\"Brücke über den Vulkan\"), am Ende eine Dino-Figur vom Tisch greifen und zurückrennen.\n\nErst alle einmal langsam durchführen lassen, dann auf Zeit stoppen. Bestzeit an die Tafel schreiben.",
-            "steps": [],
+            "steps": [
+              "Parcours aufbauen: Kissen-Trittsteine (Lava-Boden nicht berühren!)",
+              "Stühle mit Decke = Dino-Höhle (zum Durchkriechen)",
+              "Seil als „Brücke über den Vulkan“ (balancieren)",
+              "Am Ende: Dino-Figur vom Tisch greifen + zurückrennen",
+              "Erst alle einmal langsam, dann auf Zeit stoppen — Bestzeit notieren",
+              "Verlierer kriegen Trost-Dino (Gummibärchen) — kein Kind geht leer aus"
+            ],
             "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen.",
             "ageAdjust6": null,
             "ageAdjust8": null,
-            "indoorTip": null,
-            "outdoorTip": null,
-            "whyItWorksTitle": null,
-            "whyItWorks": null
+            "indoorTip": "Flur + Wohnzimmer nutzen, Strecke kürzer.",
+            "outdoorTip": "Parcours größer machen, echte Hindernisse (Bank zum Drübersteigen, Slalom um Bäume).",
+            "whyItWorksTitle": "Warum es funktioniert",
+            "whyItWorks": "Bewegung nach dem Kuchen ist Pflicht — Zucker-Energie muss raus. Wettbewerb ist erwünscht in diesem Alter, aber Trost-Dino verhindert Tränen."
           },
           {
             "name": "🪨 Fossilien gießen",
@@ -12818,14 +13159,21 @@ var ELITE_MOTTO_DATA = {
             "effort": "mittel",
             "material": "1 kg Gipspulver (~3€ Baumarkt), kleine Dino-Figuren, Joghurtbecher (1 pro Kind), Speiseöl, Rührstab",
             "prepText": "Becher innen dünn mit Öl einpinseln (damit der Gips nicht klebt). Dino-Figur in den Becher drücken. Gips anrühren (Konsistenz wie Pfannkuchenteig), in den Becher gießen, 20 Min. trocknen lassen. Figur rausziehen → fertiger Fossil-Abdruck.",
-            "steps": [],
-            "safetyRule": "Gips wird warm beim Aushaerten. Gipsstaub nicht einatmen (Maske beim Anruehren). Erwachsene*r mischt Gips.",
+            "steps": [
+              "Joghurtbecher innen mit Öl einpinseln",
+              "Dino-Figur mit Vaseline / Öl bestreichen, dann in den Becher drücken (kopfüber)",
+              "Gips anrühren: 1 Teil Wasser : 1,5 Teile Pulver, Konsistenz wie Pfannkuchenteig",
+              "Gips in Becher gießen, kurz aufstoßen für Luftblasen",
+              "20 Min. trocknen, dann Figur vorsichtig herausziehen → Fossil-Abdruck",
+              "Name mit Zahnstocher in noch feuchten Gips ritzen — personalisiertes Mitgebsel"
+            ],
+            "safetyRule": "Gips wird beim Aushärten WARM (bis ~50°C) — Becher nicht in der Hand halten, auf den Tisch stellen. Gipsstaub nicht einatmen (Atemschutz/Tuch vor Mund beim Anrühren). Erwachsene*r mischt Gips. WICHTIG: Gips-Reste NIE ins Waschbecken oder Klo — verstopft Rohre dauerhaft. Reste antrocknen lassen und in den Restmüll.",
             "ageAdjust6": "Gips anrühren übernimmst du. Kinder drücken nur die Figur rein.",
             "ageAdjust8": "Können den Gips selbst anrühren. Mengenverhältnis an die Tafel schreiben.",
-            "indoorTip": null,
-            "outdoorTip": null,
-            "whyItWorksTitle": null,
-            "whyItWorks": null
+            "indoorTip": "Auf Folie + Backblech arbeiten — Tropfen werden zu hartem Gips, schwer abzukratzen.",
+            "outdoorTip": "Geht draußen besser (Staub-Sorgen entfallen) — aber Trocknung nur in Schatten, Sonne macht Gips spröde.",
+            "whyItWorksTitle": "Warum es funktioniert",
+            "whyItWorks": "Echtes Mitgebsel = echter Stolz. Die Kinder haben etwas selbst gemacht, das sie zu Hause auf den Schreibtisch stellen. Kein Plastik-Krempel."
           }
         ],
         "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃\"Dino-Pipi\"12 Saftpaeckchen\n🌭Mini-Würstchen12 Stück\n🥕Gemüse-Sticks3 Karotten, 1 Gurke\n🍿Popcorn250 g\n🍬Gummibärchen1 Tüte (200 g)",
@@ -12974,16 +13322,22 @@ var ELITE_MOTTO_DATA = {
             "minAge": 6,
             "loudness": "laut",
             "effort": "hoch",
-            "material": "5 Umschläge mit Rätseln, 1 Schatzkarte (mit [machsleicht erstellen](/kindergeburtstag?modus=schatzsuche)), 1 Schatzkiste mit Inhalt (Schuhkarton reicht)",
-            "prepText": "Erstelle mit dem machsleicht-Planer eine Dino-Schatzsuche mit 5 Stationen. Jede Station hat ein altersgerechtes Rätsel:",
-            "steps": [],
-            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen.",
-            "ageAdjust6": null,
-            "ageAdjust8": null,
-            "indoorTip": null,
-            "outdoorTip": null,
-            "whyItWorksTitle": null,
-            "whyItWorks": null
+            "material": "5 Umschläge mit Rätseln, 1 Schatzkarte (mit [machsleicht erstellen](/kindergeburtstag?modus=schatzsuche)), 1 Schatzkiste mit Inhalt (Schuhkarton reicht), Lupen-Set (~4€ bei Action/Amazon)",
+            "prepText": "Erstelle mit dem machsleicht-Planer eine Dino-Schatzsuche mit 5 Stationen. Jede Station hat ein altersgerechtes Rätsel. Schatzkisten-Inhalt: Dino-Figuren, Schoko-Goldmünzen, Lupen, Dino-Tattoos. Alles geht in die Mitgebsel-Tüte.",
+            "steps": [
+              "Station 1: „Wie viele Hörner hatte ein Triceratops?“ (3) → nächster Hinweis unter dem 3. Blumentopf",
+              "Station 2: „Was bedeutet T-Rex auf Deutsch?“ (Tyrannen-Echse) → Buchstaben-Scramble lösen",
+              "Station 3: Dino-Puzzle zusammensetzen (4 Teile) → Bild zeigt den nächsten Ort",
+              "Station 4: „Welcher Dino konnte fliegen?“ (Trick: keiner! Flugsaurier waren keine Dinos!) → Belohnung: Lupe",
+              "Station 5: Lösungswort aus allen Stationen ergibt den Versteck-Ort der Schatzkiste"
+            ],
+            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Bei Outdoor-Stationen auf Zaun/Verkehr achten — Stationen im sicheren Radius bündeln.",
+            "ageAdjust6": "Bilder statt Buchstaben-Scramble, Hinweise offensichtlicher.",
+            "ageAdjust8": "Schwierigere Rätsel + längere Stations-Pfade — Karte verwenden.",
+            "indoorTip": "Stationen in 3–4 Zimmern verteilen, Türen markieren mit Dino-Fußspuren.",
+            "outdoorTip": "Garten gut für Stations 1+3+5, Bad/Küche für 2+4 — Mischweg funktioniert.",
+            "whyItWorksTitle": "Warum es funktioniert",
+            "whyItWorks": "5 Stationen = perfekte Dramaturgie: Einstieg + Wissens-Test + manuelle Aufgabe + Trickfrage + Lösungswort-Climax. Trickfrage in Station 4 macht die Kinder zu „echten Forschern“ — Stolz auf richtige Antwort."
           },
           {
             "name": "🧠 Dino-Wissens-Quiz",
@@ -12994,15 +13348,21 @@ var ELITE_MOTTO_DATA = {
             "loudness": "ruhig",
             "effort": "mittel",
             "material": "15 Fragen (→ [Druckvorlage mit allen 15 Fragen](/kindergeburtstag/dino-quiz)), Buzzer/Klingel/Topfdeckel, Punktetafel (Whiteboard oder Papier)",
-            "prepText": "2 Teams. Frage vorlesen, wer zuerst buzzert darf antworten. Richtig = 1 Punkt. Falsch = anderes Team darf.",
-            "steps": [],
-            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen.",
+            "prepText": "2 Teams. Frage vorlesen, wer zuerst buzzert darf antworten. Richtig = 1 Punkt. Falsch = anderes Team darf. Verlierer-Team bekommt „Trost-Forschungsstipendium“ (= Gummibärchen). Niemand geht leer aus.",
+            "steps": [
+              "Beispielfrage: „Was bedeutet T-Rex?“ → Tyrannen-Echse",
+              "Beispielfrage: „Waren Dinosaurier warm- oder kaltblütig?“ → Umstritten! Beide Antworten gelten",
+              "Beispielfrage: „Welcher Dino hatte 500 Zähne?“ → Nigersaurus",
+              "Beispielfrage: „Wie lang war ein Brachiosaurus?“ → Etwa 25 Meter",
+              "Beispielfrage: „Lebten Dinos und Menschen gleichzeitig?“ → Nein, 65 Millionen Jahre dazwischen"
+            ],
+            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Buzzer-Material rutschfest auf Tisch (Topfdeckel auf Tuch).",
             "ageAdjust6": "Multiple Choice (3 Antworten).",
             "ageAdjust8": "Offene Fragen.",
-            "indoorTip": null,
-            "outdoorTip": null,
-            "whyItWorksTitle": null,
-            "whyItWorks": null
+            "indoorTip": "Tisch + Stühle + Punktetafel zentral. Buzzer-Geräte griffbereit.",
+            "outdoorTip": "Schwer outdoor (Vorlese-Akustik). Lieber als Ruhe-Highlight nach lautem Spiel drinnen lassen.",
+            "whyItWorksTitle": "Warum es funktioniert",
+            "whyItWorks": "6–8-Jährige LIEBEN Fakten. Quizfragen mit echtem Wissen („Nigersaurus hatte 500 Zähne“) sind für sie kein Schul-Wissen sondern Coolness-Punkte. Trost-Forschungsstipendium hält das Verlierer-Team bei Stimmung."
           }
         ],
         "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃\"Dino-Pipi\"14 Saftpaeckchen\n🌋Kartoffelbrei-Vulkan1 kg Kartoffeln\n🌭Mini-Würstchen16 Stück\n🥕Gemüse-Sticks4 Karotten, 2 Gurken\n🍿Popcorn300 g\n🍫Schoko-Goldmünzen1 Netz (Schatz)\n\n💡 Kartoffelbrei-Vulkan:\nKartoffelbrei auf den Teller häufeln, oben eine Mulde formen, Ketchup reingießen = Lava. Die Kinder lieben es. Funktioniert auch mit Würstchen als \"Baumstämme\" drumherum.",
@@ -13210,6 +13570,14 @@ var ELITE_MOTTO_DATA = {
         {
           "tip": "Mengen-Faustregel",
           "content": "2 Getraenke pro Kind + 2 Reserve = bei 6 Kindern 14 Saftpaeckchen. Gilt fuer Minimal UND Standard."
+        },
+        {
+          "topic": "🦶 Dino-Fußspuren-Trick",
+          "detail": "Schneide 8–10 Dino-Fußspuren aus grünem Tonpapier (oder grün bemaltem Papier) aus und klebe sie vom Eingang bis zum Partyraum auf den Boden. Die Kinder folgen der „Dino-Spur“ sobald sie reinkommen. Kostet nix, dauert 15 Minuten, macht sofort Stimmung."
+        },
+        {
+          "topic": "🎵 Rhythmus-Regel",
+          "detail": "Immer abwechseln: laut → leise → laut → leise. Vulkan (laut) → Ausgrabung (leise) → Kuchen (Pause) → Parcours (laut) → Fossilien (leise). So kippt die Stimmung nie. Nach jedem lauten Spiel kommt ein ruhiges — Gold-Regel für 6–8-Jährige."
         }
       ],
       "educationalValue": null
@@ -13602,15 +13970,22 @@ var ELITE_MOTTO_DATA = {
             "loudness": null,
             "effort": null,
             "material": "15 Quizfragen (ausdrucken oder vorlesen), Küchenglöckchen oder Kochlöffel zum Buzzern, Punkte-Tafel",
-            "prepText": "",
-            "steps": [],
+            "prepText": "Teams bilden. Du liest die Frage vor, Teams buzzern. Richtige Antwort = 1 Punkt. Bei Gleichstand: Stichfrage. Verlierer-Team bekommt „Trost-Forschungsstipendium“ (Gummibärchen). 15 Fragen druckbereit auf /kindergeburtstag/dino-quiz.",
+            "steps": [
+              "Beispiel: „Welcher Dino hatte die kleinsten Arme?“ → T-Rex",
+              "Beispiel: „Was bedeutet Paläontologie?“ → Lehre vom alten Leben",
+              "Beispiel: „In welchem Erdzeitalter lebte der Triceratops?“ → Kreidezeit",
+              "Beispiel: „Welcher Dino hatte 500 Zähne?“ → Nigersaurus",
+              "Beispiel: „Warum starben die Dinos aus?“ → Asteroideneinschlag",
+              "Stichfrage bei Gleichstand: „Wie lang war ein Diplodocus?“ → ca. 25–30 m"
+            ],
             "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
-            "indoorTip": null,
-            "outdoorTip": null,
-            "whyItWorksTitle": null,
-            "whyItWorks": null
+            "indoorTip": "Tisch + Stühle + Punktetafel zentral. Buzzer-Geräte griffbereit.",
+            "outdoorTip": "Schwer outdoor (Akustik). Lieber als Ruhe-Highlight indoor.",
+            "whyItWorksTitle": "Warum es funktioniert",
+            "whyItWorks": "9–12 sind stolz auf Wissen. Wer „Nigersaurus mit 500 Zähnen“ kennt, hat Coolness-Punkte. Trost-Stipendium für Verlierer-Team verhindert Gesichtsverlust."
           },
           {
             "name": "🌋 Vulkan-Experiment — Spielanleitung",
@@ -13621,15 +13996,22 @@ var ELITE_MOTTO_DATA = {
             "loudness": null,
             "effort": null,
             "material": "2 Plastikflaschen (0,5l), Essig, Natron, Spülmittel, rote + gelbe Lebensmittelfarbe, 2 Auffangschalen",
-            "prepText": "",
-            "steps": [],
+            "prepText": "2 Teams bauen je einen Vulkan und treten gegeneinander an. Wer hat die spektakulärste Eruption? Die Kinder dürfen selbst mischen und dosieren. Wissenschaftlich: erkläre kurz Säure-Base-Reaktion — in diesem Alter finden sie das spannend, nicht langweilig.",
+            "steps": [
+              "2 Plastikflaschen, je 0,5l, in Sandhügel oder Schale stellen",
+              "Team A + Team B mischen jeweils: 3 EL Natron + Spritzer Spüli + rote/gelbe Farbe",
+              "Auf Kommando: Essig dazu (~100 ml)",
+              "Chemie erklären: Essig (Säure) + Natron (Base) → CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen → Schaum",
+              "Wessen Schaum-Säule ist höher? Variante: warmes vs kaltes Wasser testen",
+              "Wiederholbar 2–3× pro Team"
+            ],
             "safetyRule": "Kinder min. 1 Armlaenge zurueck, nie ins Krater-Innere beugen. Schuerze/alte Kleidung wegen Lebensmittelfarbe (faerbt!). Erwachsene*r misst Mengen ab. Faktencheck: Mehr Natron = NICHT hoehere Eruption (Saettigung ab ca 50g). Bei Augenkontakt: 5 Min mit Wasser spuelen.",
             "ageAdjust6": null,
             "ageAdjust8": null,
-            "indoorTip": null,
-            "outdoorTip": null,
-            "whyItWorksTitle": null,
-            "whyItWorks": null
+            "indoorTip": "Badewanne oder Balkon, mit Folie.",
+            "outdoorTip": "Sandhügel — beste Optik.",
+            "whyItWorksTitle": "Warum es funktioniert",
+            "whyItWorks": "9–12 wollen Wissenschaft, nicht Kindergarten-Show. Säure-Base-Erklärung macht sie zu Forschern, nicht Zuschauern. Wettbewerb zwischen Teams pusht die Eruption-Vergleichs-Spannung."
           },
           {
             "name": "🏃 Dino-Parcours-Staffel — Spielanleitung",
@@ -13640,15 +14022,22 @@ var ELITE_MOTTO_DATA = {
             "loudness": null,
             "effort": null,
             "material": "2 Seile, 6 Kissen, 2 Bälle (=„Fossilien“), Stoppuhr",
-            "prepText": "",
-            "steps": [],
+            "prepText": "Parcours mit Hindernissen: unter Seilen durch, über Kissen springen, Ball auf Löffel balancieren. 2 Teams im Staffel-Wettlauf. 3 Durchgänge, Zeiten addieren. Verlierer-Team bekommt Trostpreis (Gummibärchen).",
+            "steps": [
+              "2 Seile zwischen Stühle spannen (zum Drunter-durch)",
+              "6 Kissen in 2 Reihen als Trittsteine",
+              "Bälle als „Fossilien“ — auf Löffel balancieren",
+              "Team A startet, Stoppuhr läuft — Wechsel an Marke",
+              "3 Durchgänge, addiere Zeiten",
+              "Gewinner = niedrigste Gesamtzeit. Verlierer bekommen Trostpreis"
+            ],
             "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
             "outdoorTip": null,
-            "whyItWorksTitle": null,
-            "whyItWorks": null
+            "whyItWorksTitle": "Warum es funktioniert",
+            "whyItWorks": "Bewegung mit klaren Regeln + Teams + Zeitmessung = motiviertes Forscher-Training. Wettbewerb ist erwünscht in dem Alter, aber Trostpreis verhindert Frust-Spirale."
           }
         ],
         "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🍿Popcorn2 Schüsseln\n🧃Getränke4 Liter",
@@ -13761,15 +14150,21 @@ var ELITE_MOTTO_DATA = {
             "loudness": null,
             "effort": null,
             "material": "15 Quizfragen, Küchenglöckchen/Kochlöffel, Punkte-Tafel",
-            "prepText": "",
-            "steps": [],
+            "prepText": "Teams buzzern, du liest vor. Richtige Antwort = 1 Punkt. Druckvorlage mit 15 Fragen: /kindergeburtstag/dino-quiz.",
+            "steps": [
+              "Beispiel: „In welchem Erdzeitalter lebten die Dinosaurier?“ → Mesozoikum",
+              "Beispiel: „Welcher Dino war der größte Fleischfresser?“ → Spinosaurus",
+              "Beispiel: „Warum starben die Dinos aus?“ → Asteroideneinschlag + Folgen",
+              "Beispiel: „Welches heutige Tier ist mit Dinos verwandt?“ → Vögel",
+              "Stichfrage: „Wie viele Zähne hatte Nigersaurus?“ → ca. 500"
+            ],
             "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
             "outdoorTip": null,
-            "whyItWorksTitle": null,
-            "whyItWorks": null
+            "whyItWorksTitle": "Warum es funktioniert",
+            "whyItWorks": "Forscherpass-Integration: Siegerteam bekommt einen Quiz-Stempel — das erhebt das Quiz vom „Spiel“ zur „bestandenen Prüfung“."
           },
           {
             "name": "🏗️ Fossilien-Ausgrabung — Spielanleitung",
@@ -13780,15 +14175,22 @@ var ELITE_MOTTO_DATA = {
             "loudness": null,
             "effort": null,
             "material": "Große Wanne (60×40 cm), Sand/Reis (10 kg), Salzteig-Knochen (am Vortag backen), Dino-Figuren, Muscheln, Pinsel, Löffel, Dokumentations-Vorlage",
-            "prepText": "",
-            "steps": [],
-            "safetyRule": "Gips wird warm. Gipsstaub Maske beim Anruehren. Erwachsene*r mischt Gips. Mini-Dinos > 3 cm waehlen.",
+            "prepText": "9–12 Variante: Planquadrate mit Schnur in der Wanne markieren. Kinder graben systematisch und dokumentieren jeden Fund mit Koordinaten (A3, B1 etc.) auf einer Karte. Das ist echte Paläontologie! Wer den „seltenen Fund“ (goldene Figur) findet, wird „Grabungsleiter“.",
+            "steps": [
+              "Wanne (60×40 cm) mit Folie auslegen, dann 10 kg Sand/Reis einfüllen",
+              "Planquadrate mit dünner Schnur markieren (A1–D4)",
+              "Salzteig-Knochen (Rezept unten), Dino-Figuren, Muscheln vergraben",
+              "Eine besondere goldene Figur platzieren → „seltener Fund“ → Grabungsleiter-Titel",
+              "Dokumentations-Karte austeilen: jeder notiert Fund + Koordinate",
+              "Pinsel + Holzspatel als Werkzeug"
+            ],
+            "safetyRule": "Sand-Wanne mit Sichtaufsicht. Salzteig-Knochen sind ungiftig (Mehl, Salz, Wasser) — aber nicht zum Essen gedacht. Hände waschen vor Snacks.",
             "ageAdjust6": null,
             "ageAdjust8": null,
-            "indoorTip": null,
-            "outdoorTip": null,
-            "whyItWorksTitle": null,
-            "whyItWorks": null
+            "indoorTip": "Auf Folie + Backblech. Bei Wohnzimmer-Teppich: zusätzlich alte Decke drunter.",
+            "outdoorTip": "Im Garten ideal — kein Sand-Verschütt-Stress.",
+            "whyItWorksTitle": "Salzteig-Knochen vorab backen",
+            "whyItWorks": "Rezept: 2 Tassen Mehl + 1 Tasse Salz + 1 Tasse Wasser zu Teig kneten. Zu Knochen-Form rollen (Oberschenkel, Schädel, Rippen). 2 Std. bei 150°C im Backofen backen. Am Vorabend machen — hält tagelang. Tipp: vor dem Backen mit Kaffeepulver einreiben → braune „alte“ Knochen-Optik."
           },
           {
             "name": "🌋 Vulkan-Experiment — Spielanleitung",
@@ -13799,15 +14201,22 @@ var ELITE_MOTTO_DATA = {
             "loudness": null,
             "effort": null,
             "material": "2× Plastikflasche 0,5l, Essig, Natron, Spülmittel, rote + gelbe Lebensmittelfarbe, 2 Auffangschalen, Sand",
-            "prepText": "",
-            "steps": [],
+            "prepText": "9–12 Variante: 2 Teams bauen je einen Vulkan und experimentieren mit Dosierung. Erkläre die Chemie: Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt das CO2 in Blasen = Schaum. Die Kinder verstehen das und finden es spannend.",
+            "steps": [
+              "Pro Team: 1 Plastikflasche (0,5l) im Sandhügel",
+              "Team A: 3 EL Natron + Spüli + rote Farbe",
+              "Team B: 3 EL Natron + Spüli + gelbe Farbe",
+              "Auf Kommando: je 100 ml Essig rein",
+              "Chemie erklären: Säure + Base → CO2 + Wasser + Natriumacetat. Spüli fängt CO2 = Schaum",
+              "Höchste Eruption gewinnt → Stempel im Forscherpass für alle"
+            ],
             "safetyRule": "Kinder min. 1 Armlaenge zurueck, nie ins Krater-Innere beugen. Schuerze/alte Kleidung wegen Lebensmittelfarbe (faerbt!). Erwachsene*r misst Mengen ab. Faktencheck: Mehr Natron = NICHT hoehere Eruption (Saettigung ab ca 50g). Bei Augenkontakt: 5 Min mit Wasser spuelen.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
             "outdoorTip": null,
-            "whyItWorksTitle": null,
-            "whyItWorks": null
+            "whyItWorksTitle": "Warum es funktioniert",
+            "whyItWorks": "Echtes Chemie-Experiment + Team-Wettbewerb + Forscher-Identität. Faktencheck: Mehr Natron = NICHT höhere Eruption (Sättigung ab ~50g), Mehr Spüli = cremigerer Schaum, warmes Wasser beschleunigt die Reaktion."
           },
           {
             "name": "🏃 Dino-Parcours-Staffel — Spielanleitung",
@@ -13962,15 +14371,22 @@ var ELITE_MOTTO_DATA = {
             "loudness": null,
             "effort": null,
             "material": "Verschlüsselte Nachricht (Caesar-Chiffre, Buchstabe+3), Alphabet-Übersetzungstabelle ausdrucken",
-            "prepText": "",
-            "steps": [],
-            "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
+            "prepText": "Nachricht schreiben, jeden Buchstaben um 3 verschieben (A→D, B→E etc.). Kinder bekommen die verschlüsselte Nachricht + Alphabet-Tabelle. Beispiel: „GLQR“ = „DINO“. Die entschlüsselte Nachricht verrät den Ort der nächsten Station + eine Ziffer für das Zahlenschloss.",
+            "steps": [
+              "Alphabet-Tabelle ausdrucken: A↔D, B↔E, C↔F, ... X↔A, Y↔B, Z↔C",
+              "Codierte Beispiel-Nachricht: „GLH GLQR-NLVWH OLHJW LP EDGH]LPPHU“",
+              "Entschlüsselt: „DIE DINO-KISTE LIEGT IM BADEZIMMER“",
+              "Team-Arbeit: einer liest, einer schreibt, einer prüft",
+              "Gelöste Nachricht zeigt: Ort der nächsten Station + erste Ziffer (z.B. 3)",
+              "Bei Frust: Hinweis-Karte „Buchstaben rückwärts um 3 verschieben“"
+            ],
+            "safetyRule": "Reine Knobel-Aufgabe — keine physische Gefahr. Wenn ein Team frustriert: Hinweis-Karte geben, nicht überfordern.",
             "ageAdjust6": null,
             "ageAdjust8": null,
-            "indoorTip": null,
-            "outdoorTip": null,
-            "whyItWorksTitle": null,
-            "whyItWorks": null
+            "indoorTip": "An Tisch arbeiten lassen, gut beleuchtet. Buntstifte zum Markieren der Buchstaben.",
+            "outdoorTip": "Geht draußen — Klemmbrett mitgeben.",
+            "whyItWorksTitle": "Warum es funktioniert",
+            "whyItWorks": "Echte historische Chiffre (Julius Caesar) gibt der Aufgabe Tiefe. Kinder lernen nebenbei: erste 2000 Jahre alte Verschlüsselung. Team-Lösung (lesen + schreiben + prüfen) erzwingt Kooperation."
           },
           {
             "name": "🧩 Escape-Parcours — Spielanleitung",
@@ -13981,8 +14397,15 @@ var ELITE_MOTTO_DATA = {
             "loudness": null,
             "effort": null,
             "material": "Parcours-Material (Seile, Kissen), 3 Umschläge mit Mini-Rätseln (Logik-Puzzle, Kreuzworträtsel, Zahlenreihe), Stoppuhr",
-            "prepText": "",
-            "steps": [],
+            "prepText": "Parcours durchlaufen, an 3 Stationen anhalten und je ein Rätsel lösen. Erst wenn das Rätsel gelöst ist, darf weitergelaufen werden. Teams treten nacheinander an (Stoppuhr). Jedes Rätsel gibt eine Ziffer oder einen Buchstaben für den Gesamtcode.",
+            "steps": [
+              "Station A: Logik-Puzzle — „Welcher Dino kommt als nächstes? T-Rex, Stegosaurus, Brachiosaurus, ___“ (Triceratops, Ziffer 4)",
+              "Station B: Kreuzworträtsel mit 3 Dino-Begriffen (Lösung horizontal = Ziffer-Hinweis)",
+              "Station C: Zahlenreihe — „2, 4, 8, 16, ___“ (32, Quersumme 5)",
+              "Zwischen Stationen: Hindernisse (Kissen-Trittsteine, Seil-Tunnel)",
+              "Stoppuhr nur für Spannung — alle Teams kommen durch, keine Niederlage",
+              "Code-Ziffer der finalen Station + 4 vorige Ziffern = 5-stelliger Code für die Schatztruhe"
+            ],
             "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
@@ -14443,6 +14866,251 @@ var ELITE_MOTTO_DATA = {
       "durationMin": 5,
       "materialCost": "6-8 €",
       "whyItWorks": "Der Pass ist der rote Faden: Jedes Spiel zahlt sichtbar auf den Pass ein (= ein Stempel mehr). Kein abstrakter \"Spaß\" — konkretes Belohnungssystem, das 9-12-jährige Kinder bei der Ehre packt. Plus: Der Pass ist das Mitgebsel — kein zusätzliches Material nötig."
+    },
+    "ageInsight": {
+      "headline": "Was 9–12-Jährige ausmacht — und was das für die Dino-Party heißt",
+      "traits": [
+        {
+          "topic": "Aufmerksamkeit",
+          "detail": "30–45 Min. pro Aktivität realistisch. Sie wollen nicht unterbrochen werden wenn sie in eine Aufgabe vertieft sind."
+        },
+        {
+          "topic": "Regeln",
+          "detail": "Komplexe Spielregeln werden verstanden. Erklärungen dürfen länger sein — aber Praxis schlägt Theorie."
+        },
+        {
+          "topic": "Wettbewerb",
+          "detail": "Teams funktionieren super. Einzelwettbewerb ist ok — aber bei Verlieren sollte es Trost-Preise geben. Fairness ist in diesem Alter SEHR wichtig."
+        },
+        {
+          "topic": "Motorik & Kognition",
+          "detail": "Lesen, Schreiben, Rechnen, logisches Denken — alles da. Sie WOLLEN gefordert werden. Zu einfache Spiele sind „babyhaft“."
+        },
+        {
+          "topic": "Dauer",
+          "detail": "3–3,5 Stunden ideal. Sie halten länger durch als jüngere Kinder und beschweren sich eher, wenn es zu früh vorbei ist."
+        },
+        {
+          "topic": "Essen",
+          "detail": "Mehr als bei jüngeren Kindern. Rechne mit 1,5× der Portionen. Pizza, Hot Dogs und Popcorn schlagen jeden Gemüseteller."
+        },
+        {
+          "topic": "Eltern",
+          "detail": "Werden abgesetzt und später abgeholt. Telefonnummern vorher einsammeln, Abholzeit klar kommunizieren."
+        }
+      ],
+      "whyMottoFitsHeadline": "🦕 Warum Dino für 9–12-Jährige funktioniert",
+      "whyMottoFits": "In diesem Alter verschiebt sich der Dino-Fokus von „Dinos sind cool“ zu „Paläontologie ist Wissenschaft“. Kinder wollen echte Fakten, echte Ausgrabungen und echte Rätsel. Der Forscher-Ansatz passt perfekt: Forscherpass, Wissens-Quiz mit echten Dino-Fakten, codierte Nachrichten und systematische Ausgrabung. Dino als Motto ist geschlechtsneutral und hat keinen „Kinderparty-Stempel“ — auch 12-Jährige finden Paläontologie spannend."
+    },
+    "faq": [
+      {
+        "q": "Wie lange sollte ein Dino-Geburtstag für 9–12-Jährige dauern?",
+        "a": "3 bis 3,5 Stunden sind ideal. In diesem Alter halten die Kinder gut durch und beschweren sich eher, wenn es zu früh vorbei ist. Die Minimal-Variante (2,5 Stunden) funktioniert auch gut, besonders an Schultagen."
+      },
+      {
+        "q": "Wie viele Kinder einladen?",
+        "a": "Faustregel: Alter + 1. Also 10–13 Kinder bei einem 10-Jährigen. Alle Angaben auf dieser Seite sind für 8 Kinder berechnet. Ab 10 Kindern brauchst du definitiv einen zweiten Erwachsenen."
+      },
+      {
+        "q": "Was kostet ein Dino-Geburtstag für ältere Kinder?",
+        "a": "Zwischen 53 € (Minimal) und 101 € (Wow) für 8 Kinder. Die Standard-Variante liegt bei ca. 78 €. Der höhere Preis gegenüber jüngeren Altersgruppen kommt durch mehr Essen und längere Dauer."
+      },
+      {
+        "q": "Ist Dino für 12-Jährige nicht zu „babyhaft“?",
+        "a": "Nein — wenn du es richtig framest. „Paläontologen-Escape-Room“ klingt deutlich cooler als „Dino-Party“. Der Fokus auf echte Wissenschaft (Caesar-Verschlüsselung, systematische Ausgrabung, Chemie-Experiment) macht es altersgerecht. Auch 12-Jährige finden Fossilien und Vulkan-Experimente spannend."
+      }
+    ],
+    "bonusQuiz": {
+      "title": "🧠 Dino-Wissens-Quiz — 15 Fragen mit Lösungen",
+      "intro": "15 Multiple-Choice-Fragen für die 9–12er Zielgruppe. Druckvorlage online: /kindergeburtstag/dino-quiz. Spielregeln: Frage vorlesen. Wer zuerst buzzert (Klingel/Topfdeckel) darf antworten. Richtig = 1 Punkt. Falsch = anderes Team darf. Verlierer-Team bekommt „Trost-Forschungsstipendium“ (Gummibärchen).",
+      "questions": [
+        {
+          "n": 1,
+          "q": "Was bedeutet „T-Rex“ auf Deutsch?",
+          "options": [
+            "A) Riesen-Echse",
+            "B) Tyrannen-Echse",
+            "C) Turbo-Echse"
+          ],
+          "answer": "B",
+          "fun": "„König der Tyrannen-Echsen“, klingt cool!"
+        },
+        {
+          "n": 2,
+          "q": "Wie viele Hörner hatte ein Triceratops?",
+          "options": [
+            "A) 2",
+            "B) 3",
+            "C) 5"
+          ],
+          "answer": "B",
+          "fun": "„Tri“ = drei, „ceratops“ = Horngesicht"
+        },
+        {
+          "n": 3,
+          "q": "Konnten Dinosaurier fliegen?",
+          "options": [
+            "A) Ja, alle",
+            "B) Nur manche",
+            "C) Nein — Flugsaurier waren keine Dinos!"
+          ],
+          "answer": "C",
+          "fun": "Flugsaurier (Pterodactylus etc.) waren KEINE Dinosaurier. Trickfrage!"
+        },
+        {
+          "n": 4,
+          "q": "Was fraßen Brachiosaurier?",
+          "options": [
+            "A) Fleisch",
+            "B) Pflanzen",
+            "C) Fische"
+          ],
+          "answer": "B",
+          "fun": "Mit dem langen Hals kamen sie an die höchsten Baumkronen"
+        },
+        {
+          "n": 5,
+          "q": "Wie lang war ein T-Rex ungefähr?",
+          "options": [
+            "A) 5 Meter",
+            "B) 13 Meter",
+            "C) 30 Meter"
+          ],
+          "answer": "B",
+          "fun": "So lang wie ein Linienbus!"
+        },
+        {
+          "n": 6,
+          "q": "Welcher Dino hatte Platten auf dem Rücken?",
+          "options": [
+            "A) Stegosaurus",
+            "B) Velociraptor",
+            "C) Diplodocus"
+          ],
+          "answer": "A",
+          "fun": "Die Platten dienten vermutlich zur Temperaturregelung"
+        },
+        {
+          "n": 7,
+          "q": "Lebten Dinos und Menschen gleichzeitig?",
+          "options": [
+            "A) Ja",
+            "B) Nein, 65 Millionen Jahre dazwischen"
+          ],
+          "answer": "B",
+          "fun": "In Filmen schon, in echt leider nicht"
+        },
+        {
+          "n": 8,
+          "q": "Welcher Dino hatte besonders lange Arme?",
+          "options": [
+            "A) T-Rex (kurze Arme!)",
+            "B) Therizinosaurus",
+            "C) Ankylosaurus"
+          ],
+          "answer": "B",
+          "fun": "T-Rex hatte lächerlich kurze Arme, das wissen die meisten Kinder!"
+        },
+        {
+          "n": 9,
+          "q": "Was passierte vor 66 Millionen Jahren mit den Dinos?",
+          "options": [
+            "A) Sie sind umgezogen",
+            "B) Ein Asteroid hat sie ausgelöscht",
+            "C) Sie leben im Meer weiter"
+          ],
+          "answer": "B",
+          "fun": "Einschlag in Mexiko, 12 km großer Brocken"
+        },
+        {
+          "n": 10,
+          "q": "Welcher Dino war so groß wie ein Huhn?",
+          "options": [
+            "A) Compsognathus",
+            "B) Brachiosaurus",
+            "C) Spinosaurus"
+          ],
+          "answer": "A",
+          "fun": "Klein aber schnell — bis zu 40 km/h!"
+        },
+        {
+          "n": 11,
+          "q": "Aus was bestehen Fossilien?",
+          "options": [
+            "A) Plastik",
+            "B) Stein (versteinerter Knochen)",
+            "C) Holz"
+          ],
+          "answer": "B",
+          "fun": "Knochen werden über Millionen Jahre zu Stein"
+        },
+        {
+          "n": 12,
+          "q": "Welches Tier heute ist mit Dinos verwandt?",
+          "options": [
+            "A) Hunde",
+            "B) Vögel",
+            "C) Fische"
+          ],
+          "answer": "B",
+          "fun": "Hühner sind entfernte Verwandte des T-Rex!"
+        },
+        {
+          "n": 13,
+          "q": "Wie nennt man Wissenschaftler, die Dinos erforschen?",
+          "options": [
+            "A) Astronauten",
+            "B) Paläontologen",
+            "C) Biologen"
+          ],
+          "answer": "B",
+          "fun": "Genau wie ihr heute!"
+        },
+        {
+          "n": 14,
+          "q": "Welcher Dino hatte eine Keule am Schwanz?",
+          "options": [
+            "A) Ankylosaurus",
+            "B) Parasaurolophus",
+            "C) Pteranodon"
+          ],
+          "answer": "A",
+          "fun": "Die Keule wog bis zu 30 kg — damit wollte niemand Streit"
+        },
+        {
+          "n": 15,
+          "q": "Wie schwer war ein T-Rex ungefähr?",
+          "options": [
+            "A) So schwer wie ein Auto",
+            "B) So schwer wie ein Elefant (6–8 Tonnen)",
+            "C) So schwer wie ein Haus"
+          ],
+          "answer": "B",
+          "fun": "6–8 Tonnen, aber trotzdem konnte er rennen!"
+        }
+      ],
+      "harderQuestions": [
+        {
+          "q": "In welchem Erdzeitalter lebten die Dinosaurier?",
+          "a": "Mesozoikum (Trias, Jura, Kreide)"
+        },
+        {
+          "q": "Welcher Dino war der größte Fleischfresser?",
+          "a": "Spinosaurus (länger als T-Rex)"
+        },
+        {
+          "q": "Warum starben die Dinos aus?",
+          "a": "Asteroideneinschlag + Klimafolgen (Verdunkelung, Kälteeinbruch)"
+        },
+        {
+          "q": "Welcher Dino hatte 500 Zähne?",
+          "a": "Nigersaurus — eine Pflanzenfresser-Säge im Maul"
+        },
+        {
+          "q": "Waren Dinosaurier warm- oder kaltblütig?",
+          "a": "Umstritten! Beide Antworten gelten — neue Forschung tendiert zu „warmblütig wie Vögel“"
+        }
+      ]
     }
   },
   "piraten-klein": {
@@ -14994,6 +15662,46 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Im Garten ueber 'Wellen' (Huegel) und 'um Klippen' (Baeume) — wird zur kleinen Schiffsreise.",
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Das Tau loest das Klassik-Problem jeder Kleinkind-Party: Wie bringe ich sechs Dreijaehrige gemeinsam von A nach B, ohne dass drei abbiegen? Aus Logistik wird ein Spiel. Und das gemeinsame Festhalten gibt unsicheren Kindern Halt — woertlich."
+          },
+          {
+            "name": "🏝️ Schatzinsel-Huepfen (Boden-ist-Meer)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": "8 Min.",
+            "minAge": 3,
+            "loudness": "halblaut",
+            "effort": "leicht",
+            "material": "5-7 grosse Kissen, Decken oder Teppichfliesen als 'Inseln'. Optional ein blaues Tuch als 'Meer' rundherum.",
+            "prepText": "Kissen oder Teppichfliesen als 'Inseln' im Raum auslegen — gerade so weit auseinander, dass ein Dreijaehriger gut von einer zur naechsten kommt. Der Boden dazwischen ist 'Meer'. Wer ins Meer faellt, wird vom Erwachsenen wieder 'rausgefischt' — niemand scheidet aus.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Inseln verteilen",
+                "content": "Die Kissen oder Decken so legen, dass auch der kleinste Pirat ohne Sprung von Insel zu Insel kommt — Schritte reichen, kein Hechtsprung noetig."
+              },
+              {
+                "n": 2,
+                "name": "Spielregel erzaehlen",
+                "content": "Du sagst: 'Achtung Crew, das Schiff sinkt — schnell auf die Inseln! Der Boden ist Meer, da schwimmen Haie.' Kurze Geschichte, klare Regel."
+              },
+              {
+                "n": 3,
+                "name": "Wandern zwischen Inseln",
+                "content": "Die Kinder wandern reihum von Insel zu Insel. Du gibst Kommandos: 'Alle auf die rote Insel!' — kleines Sortierspiel, das die Gruppe lenkt."
+              },
+              {
+                "n": 4,
+                "name": "Rettung im Meer",
+                "content": "Wer aus Versehen ins 'Meer' tritt, wird laut 'gerettet' — ein Erwachsener hebt das Kind kurz auf die naechste Insel. Kein Verlierer, sondern eine Mini-Show."
+              }
+            ],
+            "safetyRule": "Inseln mit Anti-Rutsch-Unterlage oder rutschfest auf Teppich auslegen — sonst schiessen Kissen unter den Fuessen weg. Genug Abstand zwischen den Inseln, damit Kinder nicht zusammenstossen. Keine Tisch- oder Stuhlkanten in Reichweite.",
+            "ageAdjust3": "Inseln dicht nebeneinander, fast wie ein Pfad — ein Schritt reicht. Erwachsener begleitet jedes Kind beim ersten Durchgang.",
+            "ageAdjust5": "Inseln weiter auseinander, kleine Spruenge erlaubt. Mit Musik dazu — Stopp = jeder muss auf einer Insel stehen, sonst ins Meer.",
+            "indoorTip": "Wohnzimmer-Klassiker — Sofakissen funktionieren am besten. Vorher Glastisch oder zerbrechliche Deko aus dem Weg raeumen.",
+            "outdoorTip": "Im Garten Hula-Hoop-Reifen oder Picknickdecken als Inseln. Bei Wind die Decken mit Steinen beschweren.",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Boden-ist-Lava-Spiele sind ein 3-5-Klassiker, der in der Piraten-Welt von selbst Sinn macht: Inseln und Meer brauchen keine Erklaerung. Es ist Bewegung mit klarer Geschichte, ohne Wettbewerb und ohne Ausscheiden — und die 'Rettung' aus dem Meer ist fuer Dreijaehrige der Lieblings-Moment."
           }
         ],
         "food": "🎂 Piratenschiff-Kuchen. 🥛 'Piraten-Grog' (Apfelschorle). 🍪 'Schiffszwieback' (einfache Butterkekse). 🍎 Obst-Spiesse. 🧀 Kaese-Wuerfel als 'Proviant'. Eine Handvoll herzhafter Snacks neben dem Kuchen — gut, weil 2 Stunden mit nur Kuchen zu suess werden.",
@@ -15284,6 +15992,46 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Im Garten oder Park die Spur um Baeume und Buesche legen — das 'Suchen' wird automatisch spannender. Bei Wind die Papier-Pfeile beschweren.",
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Eine Suche hat ein klares Ziel und ein eingebautes Happy End — das verstehen schon Dreijaehrige. Weil alle gemeinsam suchen und das Gold geteilt wird, gibt es keine Verlierer und keine Traenen. Das ist das Herzstueck jeder Piraten-Party fuer die Kleinen."
+          },
+          {
+            "name": "💃 Piraten-Tanz (Stopp-Tanz mit Kissen-Inseln)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": "8 Min.",
+            "minAge": 3,
+            "loudness": "laut",
+            "effort": "leicht",
+            "material": "Eine Musikquelle (Handy, Bluetooth-Box) mit ein, zwei froehlichen Liedern; 5-6 grosse Kissen oder kleine Decken als 'Inseln'.",
+            "prepText": "Eine Playlist mit kindgerechten Sea-Shanty- oder froehlichen Tanz-Liedern bereitlegen (ohne markenspezifische Film-Soundtracks). Kissen verteilt im Raum auslegen — sie sind die rettenden 'Inseln'. Eine Stelle freilassen, an der ihr gut zusammen tanzen koennt.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Musik an, alle tanzen",
+                "content": "Die Crew tanzt frei zur Musik — wackeln, klatschen, im Kreis huepfen. Du tanzt mit, das senkt die Hemmschwelle bei zoegerlichen Kindern."
+              },
+              {
+                "n": 2,
+                "name": "Stopp — auf die Insel!",
+                "content": "Plötzlich die Musik anhalten und 'Land in Sicht!' rufen. Jedes Kind springt auf eine Insel — auch zu zweit auf einem Kissen ist okay."
+              },
+              {
+                "n": 3,
+                "name": "Niemand ins Meer",
+                "content": "Kein Kind scheidet aus. Wer es nicht rechtzeitig schafft, wird vom 'Schiff gerettet' und kommt mit auf die naechste Insel. Lacher garantiert."
+              },
+              {
+                "n": 4,
+                "name": "Inseln schrumpfen",
+                "content": "Mit jeder Runde ein Kissen weniger — alle muessen enger zusammenruecken. Kein Wettkampf, sondern ein Wir-Spiel. Endet, wenn alle auf einer einzigen 'Insel' kleben."
+              }
+            ],
+            "safetyRule": "Kissen muessen rutschfest liegen — bei glattem Boden Anti-Rutsch-Unterlage oder auf Teppich spielen. Kein wildes Springen aus dem Stand, eher Schritte und Hocken. Glastische und scharfe Kanten vorher abdecken oder wegruecken.",
+            "ageAdjust3": "Inseln gross und nah beieinander, langsame Musik. Bei 'Stopp' nicht hetzen — Dreijaehrige brauchen zwei, drei Sekunden Reaktionszeit.",
+            "ageAdjust5": "Schnellere Lieder, mehr Inseln-schrumpfen-Runden. Fuenfjaehrige lieben es, wenn ein Kind die Musik selbst stoppen darf.",
+            "indoorTip": "Wohnzimmer-Tanzflaeche mit Kissen drumherum. Lautstaerke moderat halten — Nachbarn freuen sich nicht ueber stundenlangen Sea-Shanty.",
+            "outdoorTip": "Im Garten mit Picknickdecken als Inseln. Bluetooth-Box auf den Gartentisch — und die Crew tanzt unter freiem Himmel, was den Klang-Eindruck verdoppelt.",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Stopp-Tanz ist ein 3-5-Klassiker, der mit Piraten-Geschichte einen frischen Rahmen bekommt — aus 'Stopp' wird 'Land in Sicht'. Die Inseln-schrumpfen-Mechanik baut Naehe statt Wettbewerb auf: Am Ende kleben alle freudig zusammen, statt dass einer als Verlierer ausscheidet. Perfekt als laute Abschluss-Welle vor dem Schatz-Teilen."
           }
         ],
         "food": "🎂 Piratenschiff-Kuchen auf 'Meer'-Platte (blauer Tonkarton). 🥛 'Piraten-Grog'. 🍪 'Schiffszwieback'. 🍌 'Schwertfisch-Spiesse' (Obst auf Holzspiessen). 🧀 Kaese-Anker (Kaese mit Ausstecher). Liebevoll angerichtet — bei Wow ist das Auge mit am Tisch.",
@@ -15772,6 +16520,32 @@ var ELITE_MOTTO_DATA = {
         ],
         "fallback": "Bei 3-5 ist ein frueher Abschluss kein Problem — die Aufmerksamkeit war ohnehin am Limit. Ein klares Ende ist besser als ein zaehes.",
         "tone": "praktisch"
+      },
+      "sommer_hitze": {
+        "icon": "☀️",
+        "label": "Hitze ueber 28 Grad — Garten faellt aus",
+        "headline": "Schatten, Wasser, Spielen nach drinnen verlegen.",
+        "steps": [
+          "Schatzspur in die kuehleren Raeume (Flur, Schlafzimmer) verlegen — Wohnzimmer-Sonne meiden.",
+          "Goldmuenzen-Tauchen mit lauwarmem (nicht eiskaltem) Wasser draussen im Schatten — wirkt wie Mini-Pool und kuehlt nebenbei.",
+          "Trinkpause alle 30 Minuten fest einplanen, nicht nur 'wenn jemand fragt'. Wasser oder stark verduennte Schorle, keine Eiswuerfel an Kleinkinder.",
+          "Sonnencreme der Eltern bei Ankunft sichtbar an einen Sammelplatz legen — du bist nicht der Sonnenschutz-Manager fuer 6 Kinder."
+        ],
+        "fallback": "Wird es ueber 30 Grad: Schatzsuche stark kuerzen, mehr Sitz-Aktionen (Kuchen, Schatzkarte ausmalen, Geschichte vorlesen). Eltern dabei sein lassen statt Abholen, das gibt zusaetzliche Augen.",
+        "tone": "praktisch"
+      },
+      "drei_jaehriger_panik": {
+        "icon": "😨",
+        "label": "Dreijaehriger hat Angst vor 'Piraten'",
+        "headline": "Aus Angst raus, in vertrautes Spiel rein.",
+        "steps": [
+          "Augenklappe weglassen — manche Dreijaehrige finden ein bedecktes Auge bedrohlich. Bandana oder gar nichts tut es genauso.",
+          "Saebel, Skelette, dunkle Stimme komplett rausnehmen. 'Wir sind freundliche Schatzsucher' ist die einzige Story-Linie hier.",
+          "Mit dem Kind an der Schatzkarte starten — eine reine Such-Geschichte ist viel weniger gruselig als 'Piraten kommen!'",
+          "Eltern dranlassen — bei dem Alter ist es voellig okay, wenn das Kind die erste Stunde von Mamas Schoss aus zuschaut."
+        ],
+        "fallback": "Bleibt es aengstlich: 'Piraten' nicht mehr aussprechen, das Spiel als 'Schatzsuche' weiterlaufen lassen. Das Wort macht oft den Unterschied, nicht das Spiel selbst.",
+        "tone": "beruhigend"
       }
     }
   },
@@ -15795,6 +16569,67 @@ var ELITE_MOTTO_DATA = {
     "title": "🏴‍☠️ Piraten-Abenteuer Kindergeburtstag — 6–8 Jahre",
     "metaDescription": "Piraten-Kindergeburtstag für 6-8-Jährige: 3 fertige Party-Konzepte (Minimal/Standard/Wow) mit Schatzsuche, Zeitplan, Einkaufsliste und Kosten.",
     "introParagraph": "Dein Kind wird 6, 7 oder 8 und träumt von Schatzsuche und Piratenschiff? Hier bekommst du drei fertige Party-Konzepte — von der schnellen Schatzsuche bis zur kompletten Piraten-Ausbildung mit Schatzkarte, Knotenkunde und Zahlenschloss-Truhe.\n\n[Piraten-Geburtstag planen →](/kindergeburtstag?motto=piraten&alter=7#planer)",
+    "ageInsight": {
+      "headline": "Was 6–8-Jährige ausmacht — und was das für die Piraten-Party heißt",
+      "traits": [
+        {
+          "topic": "Aufmerksamkeit",
+          "detail": "20–30 Min. pro Aktivität sind realistisch, dann brauchen sie Wechsel. Lieber sechs kürzere Stationen als drei lange — und nach jeder lauten Aktion bewusst eine ruhige."
+        },
+        {
+          "topic": "Regeln",
+          "detail": "Einfache Spielregeln werden verstanden, mehrstufige nur mit Demo. Vormachen statt nur erklären: ein, zwei Runden langsam vorzeigen, dann läuft es. Schiedsrichter dürfen 7-Jährige schon mal selbst sein."
+        },
+        {
+          "topic": "Wettbewerb",
+          "detail": "Erster Ehrgeiz ist da — Team-Spiele funktionieren super, Einzelrennen erzeugen Frust. Trostpreis fürs Verlierer-Team einplanen, dann bleibt die Stimmung. Schatz wird immer gemeinsam geteilt, nie 'erster gewinnt alles'."
+        },
+        {
+          "topic": "Motorik",
+          "detail": "Schreiben, schneiden, kleben gehen sicher. Knoten üben macht Spaß und hängt als echte Fähigkeit nach — ein, zwei einfache Knoten reichen. Tee-färben, Schatzkarte gestalten, X markieren — alles drin."
+        },
+        {
+          "topic": "Dauer",
+          "detail": "2,5–3 Stunden sind ideal, danach kippt die Stimmung. Lieber pünktlich aufhören, wenn es noch gut ist, als die letzten 20 Minuten überziehen — die Eltern merken den Unterschied beim Abholen."
+        },
+        {
+          "topic": "Essen",
+          "detail": "Fingerfood schlägt Besteck. 'Piratenmahl' als Programm statt normaler Mahlzeit — Kanonenkugeln (Fleischbällchen), Schiffszwieback (Brezeln), Schwertspieße (Obst). Genug einplanen, 7-Jährige essen mehr, als man denkt."
+        },
+        {
+          "topic": "Eltern",
+          "detail": "Können meistens abgesetzt werden, müssen aber telefonisch erreichbar sein. Abholzeit vorher klar kommunizieren und Notfallnummern parat haben. Allergien immer in der Einladung abfragen — bei 6 Kindern fast immer mindestens eine Auffälligkeit."
+        }
+      ],
+      "whyMottoFitsHeadline": "Warum Piraten für 6–8 perfekt funktioniert",
+      "whyMottoFits": "Piraten = Abenteuer + Verkleidung + Schatz. Die Kombination ist mit 6-8 unschlagbar: Die Kinder verkleiden sich gern (eine Augenklappe reicht für den Effekt), sie lieben echte Rätsel-Schatzsuchen mit Hinweisen zum Knacken, und das Rollenspiel 'Wir sind eine Crew' gibt der Party einen roten Faden durch alle Stationen. Piraten ist geschlechtsneutral, funktioniert drinnen wie draußen gleich gut, und die Welt trägt von der einfachen Spur durch die Wohnung bis zur Zahlenschloss-Schatztruhe — du wählst die Komplexität, das Motto bleibt dasselbe."
+    },
+    "faq": [
+      {
+        "q": "Wie lange sollte ein Piraten-Geburtstag dauern?",
+        "a": "2,5 bis 3 Stunden sind ideal für 6–8-Jährige — die Standard-Variante mit Schatzsuche, Knotenkunde und Parcours läuft genau in diesem Fenster. Die Minimal-Variante mit 2 Stunden funktioniert auch perfekt und ist gut für jüngere Sechsjährige. Über 3 Stunden kippt die Stimmung; lieber einen klaren Schlusspunkt mit Truhen-Übergabe als auslaufen lassen."
+      },
+      {
+        "q": "Wie viele Kinder einladen?",
+        "a": "Faustregel 'Alter + 1' — also 7–9 Kinder bei einer Sieben-Jährigen. Ab 8 Kindern brauchst du verlässlich einen zweiten Erwachsenen, sonst rennt die Schatzsuche auseinander. Sweet Spot für die Standard-Variante sind 6 Kinder, ab Wow auch bis 8."
+      },
+      {
+        "q": "Was kostet ein Piraten-Geburtstag?",
+        "a": "Zwischen ~35 € (Minimal, 6 Kinder) und ~75 € (Wow, 6 Kinder ohne eigenes Kostüm). Standard landet bei ~59 €. Die meisten Posten — Schatzkarte, Schatztruhe, Flaschenpost — gehen aus Schuhkarton, Pergament-Papier und Bastelresten; das Geld steckt sinnvoller in Augenklappen, Goldmünzen und gutes Essen für hungrige 7-Jährige."
+      },
+      {
+        "q": "Funktioniert ein Piraten-Geburtstag auch drinnen?",
+        "a": "Ja, sogar besser. In der Wohnung gibt es mehr Verstecke als im Garten, und die Schatzsuche fühlt sich enger und spannender an. Parcours im Flur, Dosenwerfen im Wohnzimmer (auf Teppich, damit es nicht scheppert), Knotenkunde am Esstisch — alle Standard-Stationen laufen indoor. Bei der Schatzkarte mit Tee-Färbung eine alte Tischdecke oder Zeitungspapier unterlegen, die Flecken sind hartnäckig."
+      },
+      {
+        "q": "Müssen die Kinder verkleidet kommen?",
+        "a": "Nein, aber wenn ja, dann reicht 'Stirnband + alter dunkler Pulli'. In die Einladung schreiben: 'Komm in Piraten-Kleidung, wenn du magst — Augenklappe gibt's bei uns.' So fühlt sich kein Kind aus dem Rahmen, das ohne Kostüm kommt. Augenklappe und Bandana bekommen bei Ankunft eh alle — ab dann sind sowieso alle Piraten."
+      },
+      {
+        "q": "Was, wenn die Schatzsuche zu schnell vorbei ist?",
+        "a": "Stationen-Anzahl flexibel halten: 5 Stationen für Minimal, 7 für Standard, ein versteckter Bonus-Hinweis 'die Rivalen waren hier' für Wow. Reicht das nicht: vor der Truhen-Öffnung noch ein Kompass-Tanz-Spiel einbauen, das Kuchen-Slot 10 Minuten vorziehen. Lieber satt und ruhig zur Truhe als gestreckt mit quengelnden Piraten."
+      }
+    ],
     "variants": [
       {
         "id": "minimal",
@@ -16362,7 +17197,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "16:25",
             "title": "🎁 Freispiel & Abholung",
-            "description": "Dino-Doku — nein, natürlich Piratenfilm (Fluch der Karibik? Nee, lieber Pippi Langstrumpf). Abholung ab 17:00.\n\n🎯 Der geheime Wow-Faktor\nEin [Piratenkostüm*](https://www.amazon.de/s?k=piraten+kost%C3%BCm+erwachsene&tag=machsleicht-21) für dich (~20–35 €). Du begrüßt die Kinder als „Käpt’n“ — mit Hut, Augenklappe und rauem Piraten-Akzent. Die Kinder finden das GENIAL und der ganze Tag hat einen Erzähler. Alternativ günstiger: Nur [Piratenhut*](https://www.amazon.de/s?k=piraten+hut+erwachsene&tag=machsleicht-21) + Augenklappe + Akzent reicht völlig."
+            "description": "Ruhige Ausklang-Phase mit Hörspiel (kindgerechtes Seefahrer-Abenteuer) oder freiem Spiel auf dem Teppich. Abholung ab 17:00.\n\n🎯 Der geheime Wow-Faktor\nEin [Piratenkostüm*](https://www.amazon.de/s?k=piraten+kost%C3%BCm+erwachsene&tag=machsleicht-21) für dich (~20–35 €). Du begrüßt die Kinder als „Käpt'n“ — mit Hut, Augenklappe und rauem Piraten-Akzent. Die Kinder finden das GENIAL und der ganze Tag hat einen Erzähler. Alternativ günstiger: Nur [Piratenhut*](https://www.amazon.de/s?k=piraten+hut+erwachsene&tag=machsleicht-21) + Augenklappe + Akzent reicht völlig."
           }
         ],
         "games": [
@@ -16694,7 +17529,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🎂",
             "title": "Schatzinsel-Kuchen backen — oder Plan B",
-            "detail": "Wenn Zeit/Nerven: Gugelhupf + Schokoglasur + Goldmünzen-Smarties als ‚Schatz'. Wenn nicht: Sandkuchen vom Bäcker (~6€), morgen Goldmünzen-Streusel drauf. Bei 6-8 keine Wunderkerze ist OK (Piraten haben kein Feuerwerk-Klischee)."
+            "detail": "Wenn Zeit/Nerven: Gugelhupf + Schokoglasur + bunte Schokolinsen als ‚Schatz'. Wenn nicht: Sandkuchen vom Bäcker (~6€), morgen Goldmünzen-Streusel drauf. Bei 6-8 keine Wunderkerze ist OK (Piraten haben kein Feuerwerk-Klischee)."
           },
           {
             "icon": "🗣️",
@@ -16724,7 +17559,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🌟",
             "title": "Kuchen verzieren",
-            "detail": "Schokoglasur drüber, Goldmünzen-Smarties als ‚Schatz' obendrauf, grüne Marzipan-Bäume (DIY oder Smarties). Bei Wow: ‚X' aus weißem Zuckerstift = Markierung. Über Nacht fest werden lassen."
+            "detail": "Schokoglasur drüber, bunte Schokolinsen als ‚Schatz' obendrauf, grüne Marzipan-Bäume (DIY oder weitere Schokolinsen). Bei Wow: ‚X' aus weißem Zuckerstift = Markierung. Über Nacht fest werden lassen."
           },
           {
             "icon": "🔥",
@@ -16739,7 +17574,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🎵",
             "title": "Audio + Bluetooth-Box testen",
-            "detail": "Spotify ‚Piraten der Karibik Soundtrack' Playlist. Bei Wow: Wellen-Sound für Stations-Übergang. Soundkulisse macht 6-8 Kindern viel mehr Spaß als nur Reden."
+            "detail": "Eine Playlist mit Sea-Shanty-Liedern (gemeinfreie Seemannslieder, kein Marken-Soundtrack) und dezentem Wellen-Sound für Stations-Übergang. Soundkulisse macht 6-8 Kindern viel mehr Spaß als nur Reden."
           },
           {
             "icon": "🗺️",
@@ -16840,7 +17675,7 @@ var ELITE_MOTTO_DATA = {
         "steps": [
           "Sandkuchen oder Schoko-Boden beim Bäcker holen (4-6€).",
           "Schokoglasur drüber, ‚X' mit weißem Zuckerstift drauf = Schatz-Markierung.",
-          "Schoko-Goldmünzen rundum verteilen + grüne Smarties als ‚Insel-Bäume'.",
+          "Schoko-Goldmünzen rundum verteilen + grüne Schokolinsen als ‚Insel-Bäume'.",
           "Optional: Piraten-Flagge aus Papier + Zahnstocher als Topping."
         ],
         "fallback": "Bäcker zu? Muffins aus dem Vorrat, je Muffin eine Schoko-Goldmünze + roter Edding-X = Mini-Schatz-Inseln.",
@@ -18148,6 +18983,18 @@ var ELITE_MOTTO_DATA = {
       {
         "q": "Lohnt sich die Schlafparty-Option?",
         "a": "Wenn die Kinder sich kennen und die Eltern zustimmen, ist die Nacht-Schatzsuche mit Stirnlampen der Höhepunkt des Tages. Wichtig: vorher schriftlich klären, wer übernachtet, und einen Abhol-Zeitpunkt am Abend selbstverständlich anbieten."
+      },
+      {
+        "q": "Wie verhindere ich, dass die Crew nach dem Schatz die Lust verliert?",
+        "a": "Den Übergabe-Moment nicht ans Ende der Party setzen, sondern 20–30 Minuten Puffer für Auslaufen einplanen: Beute begutachten, Crew-Lizenz fertig schreiben, Fotos mit der Truhe. So bricht die Energie nicht abrupt ab, und die Übergabe wirkt wie ein Höhepunkt mit Nachklang statt wie ein Schlusspfiff. Bei der Wow-Variante leitet das Abendessen oder die Schlafparty den ruhigen Auslauf von selbst ein."
+      },
+      {
+        "q": "Soll ich Geschwister mit einplanen?",
+        "a": "Bei dieser Altersgruppe eher nicht. Jüngere Geschwister (3–7) verlieren den Anschluss an die Codes und stören die Konzentration der Großen — oder umgekehrt: Die 12-Jährigen reduzieren das Niveau auf den Kleinsten. Wenn es nicht anders geht, bekommt das Geschwisterkind die Logbuch-Rolle (Karten halten, Hinweise weiterreichen) und einen eigenen Erwachsenen-Kompass an die Seite."
+      },
+      {
+        "q": "Was, wenn ein Kind im Dunkeln Angst bekommt?",
+        "a": "Vor der Nacht-Schatzsuche die Route bei Licht einmal gemeinsam ablaufen — viele Ängste verfliegen, sobald die Kinder das Terrain im Hellen kennen. Während der Tour bleibt mindestens ein Erwachsener bei der Crew, und jedes Kind hat die eigene Stirnlampe direkt einschaltbereit. Will ein Kind nicht mitlaufen: am Lagerfeuer/Lichtspot bleiben mit einer aktiven Aufgabe wie 'Kartograph der Nacht-Route'. Kein Druck, niemand muss in den Garten."
       }
     ],
     "preparationWeeks": {
@@ -18361,6 +19208,32 @@ var ELITE_MOTTO_DATA = {
         ],
         "fallback": "Alle früh fertig: die Crew-Pause (Wraps) vorziehen und die Quest/Übergabe nach vorn schieben — der Plan ist flexibel.",
         "tone": "praktisch"
+      },
+      "schlafparty_heimweh": {
+        "icon": "🌙",
+        "label": "Schlafparty — Heimweh oder schlaflose Crew",
+        "headline": "Ruhig andocken, Eltern-Linie offen halten.",
+        "steps": [
+          "Vor dem Schlafengehen klar kommunizieren: 'Wer nicht schlafen kann, kommt zu mir — ich bin wach' (oder im Nebenraum). Das senkt die Schwelle, sich zu melden.",
+          "Eine Eltern-Hotline einrichten: Ein Elternteil pro Kind ist nachts erreichbar, Abholung mitten in der Nacht ist okay und kein Versagen.",
+          "Heimweh-Klassiker: Tee, Decke, ruhige Geschichte (kein Bildschirm). Manche Kinder beruhigt schon ein kurzes Telefonat mit Mama/Papa unter vier Augen.",
+          "Schlaflose Crew: Lichter dimmen, Hörbuch oder leise Musik anbieten, niemanden zwingen zu schlafen — wer wach bleibt, liest oder zeichnet still."
+        ],
+        "fallback": "Wenn ein Kind weinend abgeholt werden will: ohne Erklärungen oder 'Bleib doch noch'-Verhandlungen — Eltern kommen, das Kind geht, am Morgen ist alles vergessen. Die anderen sehen, dass Abholen okay ist, und schlafen oft besser.",
+        "tone": "einfühlsam"
+      },
+      "rivalen_eskalation": {
+        "icon": "⚔️",
+        "label": "Crew-Rivalität eskaliert",
+        "headline": "Vom Wettbewerb zur gemeinsamen Mission switchen.",
+        "steps": [
+          "Sofort unterbrechen und den Reederei-Brief erinnern: 'Auf See gibt es nur EINE Crew gegen die Rivalen — wir helfen uns.' Der Story-Rahmen rettet die Situation oft im ersten Anlauf.",
+          "Crews bewusst durchmischen für die nächste Station — kurz neu zuteilen, statt die alten Konflikt-Lager weiterzufahren.",
+          "Den 'Sorgfalt-Spezialist'-Stempel sichtbar an ein Kind aus dem leiseren Lager vergeben — das verschiebt den Fokus weg von 'wer hat zuerst geknackt' hin zu 'wer hat genau gearbeitet'.",
+          "Wenn ein einzelnes Kind hochkocht: kurze Pause im anderen Raum mit einer Aufgabe ('schreib das Logbuch der letzten Station'), Erwachsener bleibt zugewandt aber ruhig."
+        ],
+        "fallback": "Bleibt ein Kind dauerhaft drüber: in eine andere Spezialisierung wechseln lassen, neue Aufgabe, neue Karten. Frischer Start statt 'sich beruhigen müssen' funktioniert mit 9-12 oft besser als jede Diskussion.",
+        "tone": "deeskalierend"
       }
     }
   },
@@ -18604,6 +19477,47 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Im Garten dürfen die Raketen weite Bahnen fliegen — perfekt, um aufgestaute Energie loszuwerden.",
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Der Countdown gibt einen klaren, gemeinsamen Rhythmus, und das „Einfrieren“ baut eine eingebaute Ruhepause ein — so wechseln sich Toben und Stillsein ab, genau das brauchen kleine Kinder."
+          },
+          {
+            "_source": "SEO-Cross-Pollination",
+            "name": "🎨 Planeten-Malen",
+            "indoor": true,
+            "outdoor": false,
+            "duration": "15 Min.",
+            "minAge": 3,
+            "loudness": "leise",
+            "effort": "leicht",
+            "material": "Pro Kind 1–2 große Kreise aus weißem Tonpapier (DIN A4-Größe, vorab ausgeschnitten), dicke Wachsmal- oder Filzstifte, Fingerfarben (abwaschbar), eine alte Tischdecke als Unterlage.",
+            "prepText": "Die großen Papp-Kreise werden zum eigenen Planeten — jedes Kind gestaltet einen oder zwei und gibt ihnen Namen. Eine ruhige Bastel-Phase, die nach dem Toben perfekt zur Verschnaufpause passt.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Tisch decken",
+                "content": "Alte Tischdecke drauf, pro Platz einen Papp-Kreis und einen kleinen Becher mit Stiften — niemand muss warten."
+              },
+              {
+                "n": 2,
+                "name": "Planeten ankündigen",
+                "content": "„Jede Crew braucht ihren eigenen Planeten. Bemalt euren Kreis so, wie euer Planet aussehen soll — Streifen, Punkte, Krater.“"
+              },
+              {
+                "n": 3,
+                "name": "Malen lassen",
+                "content": "Die Kinder bemalen bunt. Keine Vorgaben, kein „richtig“ — Hauptsache, der Planet bekommt seinen Charakter."
+              },
+              {
+                "n": 4,
+                "name": "Namen vergeben",
+                "content": "Jedes Kind sucht einen Namen für seinen Planeten. Du schreibst ihn drauf — fertige Planeten werden später aufgehängt oder mitgenommen."
+              }
+            ],
+            "safetyRule": "Abwaschbare Farben wählen — Fingerfarbe geht ohne Stress raus. Wachsmaler bleiben auf Kleidung; lieber Kittel oder altes T-Shirt überziehen.",
+            "ageAdjust3": "Nur Stifte, keine Fingerfarbe — bei 3-Jährigen landet die zu schnell auf Gesicht und Tisch. Ein Kreis pro Kind reicht.",
+            "ageAdjust5": "Fingerfarbe erlaubt, zwei Kreise pro Kind, kleine Sticker (Sterne, Punkte) zum Aufkleben dazu.",
+            "indoorTip": "Am gedeckten Tisch perfekt als Ruhe-Phase zwischen den Toben-Spielen — gibt dir 15 Minuten zum Durchatmen.",
+            "outdoorTip": null,
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Jedes Kind bekommt ein eigenes Werk in die Hand, das es behalten darf — das stärkt Stolz und gibt Bewegungs-Pausen einen sinnvollen Inhalt. Bei 3-5-Jährigen ist Malen die zuverlässigste Beruhigungs-Aktivität, und der eigene Planet wird oft tagelang weiter bespielt."
           }
         ],
         "food": "Planeten-Muffins mit bunter Glasur, Apfelschorle, dazu Obst-Sterne (mit Ausstecher aus Melone oder Apfel). Kein aufwändiges Buffet — bei 3-Jährigen wird ohnehin wenig gegessen.",
@@ -18911,6 +19825,47 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": null,
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Basteln gibt jedem Kind ein fertiges Ergebnis in die Hand, das es behalten darf — das stärkt den Stolz, und die ruhige Tätigkeit bremst die Gruppe nach einer Toben-Phase angenehm herunter."
+          },
+          {
+            "_source": "SEO-Cross-Pollination",
+            "name": "🌟 Sternen-Memory",
+            "indoor": true,
+            "outdoor": false,
+            "duration": "10 Min.",
+            "minAge": 4,
+            "loudness": "leise",
+            "effort": "leicht",
+            "material": "10–12 Pärchen einfache Memory-Karten zum Selbstdrucken oder Selbstmalen (je 2 gleiche Sterne, Planeten, Raketen, Monde — pro Paar ein anderes Motiv). Ein freier Tisch oder Teppich-Bereich.",
+            "prepText": "Klassisches Memory in Weltraum-Optik. Bei 4–5 reicht eine kleine Karten-Anzahl, sonst kippt die Konzentration. Die Karten kannst du in 15 Minuten selbst malen, oder du druckst kostenlose Weltraum-Memory-Vorlagen aus dem Netz aus.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Karten verdeckt auslegen",
+                "content": "Die Karten gut gemischt verdeckt auf den Tisch oder Teppich legen, am besten in einem Raster (3×4 oder 4×4)."
+              },
+              {
+                "n": 2,
+                "name": "Reihum aufdecken",
+                "content": "Die Crew sitzt im Kreis. Jedes Kind deckt zwei Karten auf — zeigen die das gleiche Motiv, darf es das Paar behalten und nochmal."
+              },
+              {
+                "n": 3,
+                "name": "Helfen erlaubt",
+                "content": "Wer ein Paar nicht findet, darf von der Crew Tipps holen („Du hattest da hinten den Mond!“). Gemeinsam zählt mehr als Wettkampf."
+              },
+              {
+                "n": 4,
+                "name": "Abschluss",
+                "content": "Wenn alle Paare gefunden sind, kommen alle Karten zusammen in die Mitte — die ganze Crew hat „die Sterne sortiert“."
+              }
+            ],
+            "safetyRule": "Karten flach auf dem Tisch lassen — kein Hochhalten, sonst sehen die anderen die Rückseite, und das gibt Streit.",
+            "ageAdjust3": "Nur 6 Paare, alle gut sichtbar — 3-Jährige merken sich noch wenig, das gemeinsame Aufdecken zählt mehr als das Behalten.",
+            "ageAdjust5": "Bis zu 12 Paare, schwerere Motiv-Unterschiede (zwei verschiedene Sterne) — fordert das Erinnern bewusst.",
+            "indoorTip": "Ideal als Ruhe-Insel zwischen zwei Toben-Spielen oder als sanfter Abschluss vor dem Versprechen.",
+            "outdoorTip": null,
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Memory trainiert spielerisch Konzentration und passt zur Aufmerksamkeitsspanne von 4–5-Jährigen. Das Helfen-Dürfen nimmt den Druck raus, und ein Kind, das gerade nicht laufen will, kann hier still mitspielen, ohne aus dem Programm zu fallen."
           }
         ],
         "food": "Mond-Kuchen (Gugelhupf mit silbriger Glasur), Planeten-Muffins, Sternen-Obstspieße, Apfelschorle. Dazu ein paar herzhafte Cracker — kleine Mägen brauchen die salzige Abwechslung.",
@@ -19236,6 +20191,47 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": null,
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Basteln gibt jedem Kind ein fertiges Ergebnis in die Hand, das es behalten darf — das stärkt den Stolz, und die ruhige Tätigkeit bremst die Gruppe nach einer Toben-Phase angenehm herunter."
+          },
+          {
+            "_source": "SEO-Cross-Pollination",
+            "name": "👽 Freundlicher Alien-Fang",
+            "indoor": true,
+            "outdoor": true,
+            "duration": "10 Min.",
+            "minAge": 5,
+            "loudness": "laut",
+            "effort": "leicht",
+            "material": "Eine freundliche Alien-Maske oder ein grünes Tuch als Erkennung (für den Fänger), genug Platz zum Laufen. Nichts Gruseliges — wir setzen auf „freundliches Begrüßungs-Alien“, nicht auf „Monster“.",
+            "prepText": "Klassisches Fang-Spiel im Weltraum-Frame, aber bewusst entschärft: Wer gefangen wird, wird vom Alien begrüßt und ist dann selbst ein Alien-Helfer. Niemand „verliert“ oder „stirbt“ — verwandelt das Fangen in ein Sammel-Spiel ohne Tränen.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Fänger bestimmen",
+                "content": "Ein Kind oder ein Erwachsener bekommt die Alien-Maske oder das grüne Tuch. Der Rest der Crew ist Astronauten-Crew."
+              },
+              {
+                "n": 2,
+                "name": "Spielfeld festlegen",
+                "content": "Mit Kreide oder Klebeband ein klares Spielfeld markieren — kein Auslaufen in Beete oder Räume, die nicht dazugehören."
+              },
+              {
+                "n": 3,
+                "name": "Begrüßungs-Spiel starten",
+                "content": "„Das freundliche Alien sucht neue Crew-Mitglieder! Wer berührt wird, wird mit High-Five begrüßt und hilft dann beim Suchen.“"
+              },
+              {
+                "n": 4,
+                "name": "Bis alle dabei sind",
+                "content": "Es endet nicht mit einem Verlierer — sondern wenn alle Crew-Mitglieder „begrüßt“ und damit selbst Alien-Helfer sind. Großer Applaus."
+              }
+            ],
+            "safetyRule": "Spielfeld klar abgrenzen — keine Möbel-Kanten, keine Treppen, keine Beete. Bei 3–4-Jährigen lieber ein Erwachsener als Fänger, damit niemand zu wild gefangen wird. NICHT auf glattem Boden, Kinder rennen sonst aus.",
+            "ageAdjust3": "Eher weglassen — 3-Jährige verstehen den freundlichen Frame oft nicht und bekommen vor der Alien-Maske echte Angst. Erst ab 4–5 sinnvoll.",
+            "ageAdjust5": "Volles Spielfeld, 5-Jährige lieben das Laufen. Die Maske darf bleiben, der Frame als „Begrüßungs-Alien“ ist wichtig.",
+            "indoorTip": "Drinnen nur in einem großen Raum oder im Flur — Möbel als Hindernisse vorher freiräumen.",
+            "outdoorTip": "Im Garten ideal — viel Platz, weicher Boden, alle dürfen sich austoben.",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Das klassische Fangen erschreckt 3-5-Jährige oft, weil „gefangen werden = verlieren“ Stress auslöst. Hier wird die Mechanik gedreht: Gefangen werden ist eine Begrüßung, niemand fliegt raus, und am Ende ist die ganze Crew gemeinsam ein Alien-Begrüßungs-Komitee — perfekt für die Altersgruppe."
           }
         ],
         "food": "Mond-Kuchen mit silbriger Glasur als Highlight, Planeten-Muffins, Sternen-Obstspieße, Raketen-Würstchen im Teig, Apfelschorle. Genug Auswahl, ohne dass kleine Kinder überfordert sind.",
@@ -19476,6 +20472,16 @@ var ELITE_MOTTO_DATA = {
       {
         "q": "Ist die Wow-Variante auch für 3-Jährige geeignet?",
         "a": "Teilweise. Das Karton-Raumschiff und das Sammeln begeistern auch die Kleinsten, aber Stern-Projektor und aufblasbare Deko-Figuren können 3-Jährige überfordern oder erschrecken. Für reine 3-Jährigen-Runden bleib bei Minimal oder Standard — die Wow-Extras lohnen sich ab etwa 5 Jahren."
+      },
+      {
+        "_source": "SEO-Cross-Pollination",
+        "q": "Sind Alien-Spiele für so kleine Kinder nicht zu gruselig?",
+        "a": "Nur wenn man sie gruselig macht. Wir verwenden bewusst freundliche Aliens (lächelnde Pappe-Gesichter, grünes Tuch als Erkennung, kein dunkles Maskenspiel) und drehen das Fangen in eine Begrüßungs-Geste. Wer „gefangen“ wird, wird mit High-Five willkommen geheißen und ist dann selbst Alien-Helfer — keiner verliert, niemand erschrickt. Für 3-Jährige besser ganz weglassen, ab 4–5 funktioniert es zuverlässig."
+      },
+      {
+        "_source": "SEO-Cross-Pollination",
+        "q": "Was kostet ein Weltraum-Geburtstag pro Kind ungefähr?",
+        "a": "Bei der Minimal-Variante rund 6 € pro Kind (35 € für 6 Kinder), Standard ca. 7 € pro Kind (55 € für 8 Kinder), Wow ca. 10 € pro Kind (80 € für 8 Kinder). Mit Bestand aus dem Haushalt (Klopapierrollen, Alufolie, Buntstifte) drückst du das auf 3–5 € pro Kind. Das Karton-Raumschiff kostet nichts und ist trotzdem der Star der Party."
       }
     ],
     "preparationWeeks": {
@@ -19721,6 +20727,20 @@ var ELITE_MOTTO_DATA = {
         ],
         "fallback": "Bleibt es untröstlich? Tempo der ganzen Gruppe rausnehmen und eine ruhige Vorlese- oder Bastel-Phase einlegen.",
         "tone": "ruhig"
+      },
+      "kind_hat_angst_vor_dunkelheit": {
+        "_source": "SEO-Cross-Pollination",
+        "icon": "🌑",
+        "label": "Kind hat Angst vor Dunkelheit oder Alien-Optik",
+        "headline": "Nie komplett abdunkeln — nur dimmen — und freundliche Alien-Optik bewahren.",
+        "steps": [
+          "Lampe an, Vorhänge nur halb zu — bei 3-Jährigen NIE komplett abdunkeln, auch nicht für den „Wow-Effekt“ Sternenprojektor.",
+          "Alien-Maske weglegen, falls ein Kind weint oder zurückweicht. Stattdessen ein freundliches grünes Tuch zur Erkennung — niemand braucht Gesichts-Verkleidung.",
+          "Rückzugsort einrichten: eine ruhige Ecke mit Kissen und Decke, wohin sich ein überfordertes Kind zurückziehen darf, ohne dass jemand drängt.",
+          "Den Stern-Projektor nur kurz und mit angekündigtem Countdown laufen lassen — „in 1 Minute machen wir die Sterne an“ —, damit niemand überrascht wird."
+        ],
+        "fallback": "Bleibt ein Kind ängstlich? Eltern dazubitten oder das Kind beim Bastel-Tisch lassen — Hauptsache, kein Druck. Tränen erinnern Kinder lange.",
+        "tone": "einfühlsam"
       },
       "eltern_kommen_frueh": {
         "icon": "⏰",
@@ -19975,6 +20995,52 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": null,
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Raten ohne Verlierer: Mit 6-8 wollen Kinder ihr Weltraum-Wissen zeigen, aber das Reihum-Prinzip sorgt dafür, dass auch das ruhigere Kind dran kommt. Die Fakten kommen nebenbei statt als Frontalunterricht — und ein echtes Sonnensystem zum Anschauen macht es greifbar."
+          },
+          {
+            "_source": "SEO-Cross-Pollination",
+            "name": "🛸 Weltraum-Rallye (5 Planeten-Stationen)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 20,
+            "minAge": 6,
+            "loudness": "mittel",
+            "effort": "leicht",
+            "material": "5 Papp-Kreise (DIN A4) als Planeten — Merkur, Venus, Erde, Mars, Jupiter — beschriftet. Pro Planet eine kleine Aufgabe auf einer Karte (s.u.). Sticker oder Stempel als „Stern für den Astronauten-Pass“, ein einfacher Astronauten-Pass pro Kind (DIN A6 mit 5 leeren Feldern).",
+            "prepText": "Eine geführte Reise durchs Sonnensystem als kurze Alternative zur Stations-Rotation — ideal für Minimal-Varianten ohne 2 Helfer. Die Crew zieht gemeinsam von Planet zu Planet, an jeder Station wartet eine Mini-Aufgabe, und für jede gelöste Station gibt es einen Stern in den Astronauten-Pass.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Planeten auslegen",
+                "content": "Die 5 Papp-Planeten in Reihenfolge vom inneren zum äußeren Planeten in der Wohnung oder im Garten verteilen — jeder mit seinem Namen lesbar oben."
+              },
+              {
+                "n": 2,
+                "name": "Mission ansagen",
+                "content": "„Crew, wir starten eine Erkundungs-Rallye durchs Sonnensystem. Auf jedem Planeten wartet eine Aufgabe — wer alle 5 schafft, bekommt seinen vollen Astronauten-Pass.“"
+              },
+              {
+                "n": 3,
+                "name": "Aufgaben lösen",
+                "content": "Merkur: 5x hüpfen wie auf der heißen Oberfläche. Venus: einen Mitspieler ein Kompliment machen. Erde: dem Geburtstagskind die Hand schütteln. Mars: einen roten Gegenstand finden. Jupiter: laut „Sturm-Warnung!“ rufen und 3 Sekunden still stehen."
+              },
+              {
+                "n": 4,
+                "name": "Stern abholen",
+                "content": "Nach jeder gelösten Aufgabe bekommt jedes Kind einen Stern-Sticker in den Astronauten-Pass — kein Wettlauf, alle bekommen alle Sterne."
+              },
+              {
+                "n": 5,
+                "name": "Heimreise",
+                "content": "Mission erfüllt: die Crew sammelt sich am Startplaneten Erde und feiert mit einem gemeinsamen „Mission accomplished!“"
+              }
+            ],
+            "safetyRule": "Aufgaben so wählen, dass kein Kind klettern, springen oder rennen muss, was es überfordert. Bei Indoor-Rallye Stolperfallen zwischen den Stationen entfernen.",
+            "ageAdjust6": "Nur 4 Planeten, einfachste Aufgaben (klatschen, drehen, winken). Bilder statt Schrift auf den Karten.",
+            "ageAdjust8": "Alle 8 Planeten plus eine Wissens-Aufgabe pro Station („Welcher Planet hat Ringe?“ — Saturn). Optional als Team-Rallye mit Zeit-Bonus.",
+            "indoorTip": "Planeten durch mehrere Zimmer verteilen — der Wohnungs-Rundgang wird zur Reise. Pro Zimmer ein Planet.",
+            "outdoorTip": "Im Garten in einem großen Kreis auslegen, zwischen den Stationen darf „im Raumanzug geflogen“ werden (in Zeitlupe gehen).",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Die Rallye gibt der Party einen klaren roten Faden mit fünf eingebauten Erfolgs-Momenten und vermittelt nebenbei die Planeten-Reihenfolge. Weil jedes Kind alle Sterne bekommt, gibt es keine Verlierer — und der Astronauten-Pass als sichtbares Belohnungs-Stück trägt die Motivation auch über die letzte Station hinaus."
           }
         ],
         "food": "🎂Raketen-Kuchen1 Blechkuchen\n🥤\"Energie-Drink\"2 L Apfelschorle\n🌟Stern-Kekse12 Stk.\n🍿Meteoriten-Popcorn200 g\n\n💡 \"Energie-Drink\" — funktioniert sofort\nApfelschorle in transparente Becher gießen, Strohhalm rein, fertig. Beim Servieren als Bord-Ritual framen: \"Jeder Astronaut tankt einmal pro Stunde Energie.\" Kostet null extra, Kinder lieben den Vorwand.",
@@ -20320,6 +21386,93 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Im Garten Beete, Gebüsch und Terrasse als Verstecke nutzen, Krater mit Kreide auf den Boden malen. Mehr Lauf-Energie und größere Bühne.",
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Bricht kurz vor der Lizenz-Übergabe die Stations-Konkurrenz auf: kooperativ statt kompetitiv, jedes Kind trägt zum Crystal-Fund bei. Das Mond-Hüpfen kanalisiert die aufgestaute Energie in eine kontrollierte Bewegung — und gibt der Geschichte einen zweiten dramatischen Bogen."
+          },
+          {
+            "_source": "SEO-Cross-Pollination",
+            "name": "👽 Alien-Geheimsprache erfinden",
+            "indoor": true,
+            "outdoor": false,
+            "duration": 20,
+            "minAge": 7,
+            "loudness": "ruhig",
+            "effort": "leicht",
+            "material": "Pro Team 1 leeres Blatt + Stift, eine Liste mit 6–8 deutschen Wörtern, die übersetzt werden sollen (z.B. „HALLO“, „MOND“, „CREW“, „GEFAHR“, „FREUND“, „ZUHAUSE“). Ein zweites Blatt für die Empfänger-Übersetzung.",
+            "prepText": "Statt einen vorgegebenen Code zu knacken, erfinden die Kinder selbst eine Alien-Sprache. Jedes Team entwickelt eine eigene Symbol-Tabelle (z.B. Buchstabe = Symbol), verfasst eine kurze Nachricht und übergibt sie samt Schlüssel an das andere Team — das übersetzt zurück. Fördert Kreativität und Logik gleichzeitig.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Teams bilden",
+                "content": "Die Crew teilt sich in zwei Teams. Jedes Team setzt sich für 8 Minuten zusammen — möglichst aus Sichtweite des anderen Teams."
+              },
+              {
+                "n": 2,
+                "name": "Symbole erfinden",
+                "content": "Jedes Team denkt sich für die 26 Buchstaben (oder zumindest die für die Wörter benötigten) ein eigenes Alien-Symbol aus — Striche, Kreise, kleine Figuren."
+              },
+              {
+                "n": 3,
+                "name": "Nachricht schreiben",
+                "content": "Das Team schreibt 2–3 Wörter aus der Liste in Alien-Symbolen und fertigt eine zweite Karte mit dem Schlüssel (Symbol = Buchstabe)."
+              },
+              {
+                "n": 4,
+                "name": "Tauschen",
+                "content": "Die Teams tauschen Nachricht UND Schlüssel. Jedes Team übersetzt die Nachricht des anderen mit Hilfe des Schlüssels zurück ins Deutsche."
+              },
+              {
+                "n": 5,
+                "name": "Vorlesen",
+                "content": "Wenn beide Teams entschlüsselt haben, werden die Übersetzungen laut vorgelesen — meist kommt es zu lustigen Verwechslungen, weil ein Symbol unsauber gemalt war."
+              }
+            ],
+            "safetyRule": null,
+            "ageAdjust6": "Nur 4–5 Buchstaben pro Team kodieren, eine vorgegebene Symbol-Auswahl zum Ankreuzen statt Selbsterfinden. Hilfe von einem Erwachsenen beim Schlüssel-Schreiben.",
+            "ageAdjust8": "Volle 26 Buchstaben, längere Nachrichten (ganze Sätze), Tausch ohne Schlüssel — die Empfänger müssen den Code selbst entschlüsseln (Häufigkeit der Symbole = häufige Buchstaben). Echtes Knobeln.",
+            "indoorTip": "Zwei Ecken im Raum oder zwei Tische mit Sichtschutz dazwischen (eine aufgestellte Pizza-Box reicht) — der Reiz ist, sich nicht in die Karten schauen zu können.",
+            "outdoorTip": null,
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Selbst erfinden ist mit 7–8 sehr viel reizvoller als nur dekodieren: Die Kinder werden zu Code-Designern und Empfängern zugleich. Das stärkt Sprach- und Symbol-Verständnis und macht das ruhigere Pendant zum lauten Raketen-Experiment — perfekt als Verschnaufphase mit echtem Inhalt."
+          },
+          {
+            "_source": "SEO-Cross-Pollination",
+            "name": "🎯 Sternen-Bingo (Weltraum-Bingo)",
+            "indoor": true,
+            "outdoor": false,
+            "duration": 15,
+            "minAge": 6,
+            "loudness": "mittel",
+            "effort": "leicht",
+            "material": "Pro Kind eine 4×4-Bingo-Karte mit Planeten-Namen, Sternbildern und Weltraum-Begriffen (selbst gedruckt, kostenlose Vorlagen online). Bingo-Marker (Bohnen, Schoko-Linsen oder kleine Sterne). Eine Liste mit Fragen oder Begriffen für den Aufrufer.",
+            "prepText": "Klassisches Bingo in Weltraum-Optik. Die Karten zeigen Planeten-Namen (Mars, Saturn, Jupiter), Sternbilder (Großer Wagen, Orion) und Weltraum-Begriffe (Rakete, Mond, Komet). Statt einfach Begriffe aufzurufen, kannst du Fragen stellen — das fordert das Weltraum-Wissen.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Karten verteilen",
+                "content": "Jedes Kind bekommt eine andere 4×4-Karte und einen Becher mit Bingo-Markern. Die Crew sitzt am Tisch oder im Kreis."
+              },
+              {
+                "n": 2,
+                "name": "Regel erklären",
+                "content": "„Wer 4 Felder in einer Reihe (waagrecht, senkrecht oder diagonal) markiert hat, ruft ‚Weltraum!‘ und gewinnt eine Mini-Runde.“"
+              },
+              {
+                "n": 3,
+                "name": "Begriffe aufrufen",
+                "content": "Du rufst entweder direkt einen Begriff („Mars!“) oder stellst eine Frage („Welcher Planet ist nach dem Kriegsgott benannt?“). Wer den passenden Begriff auf seiner Karte hat, markiert ihn."
+              },
+              {
+                "n": 4,
+                "name": "Bingo-Runden spielen",
+                "content": "3–4 Runden reichen für 15 Minuten. Bei jedem „Weltraum!“-Ruf gibt es einen kleinen Preis (Stern-Sticker oder Schoko-Linse) — niemand geht leer aus."
+              }
+            ],
+            "safetyRule": null,
+            "ageAdjust6": "3×3-Karten mit Bildern statt Wörtern (Rakete-Bild, Mond-Bild). Begriffe direkt aufrufen, keine Fragen.",
+            "ageAdjust8": "5×5-Karten, schwerere Fragen („Welcher Planet hat die meisten Monde?“ — Saturn). Optional auf Zeit für die Mutigen.",
+            "indoorTip": "Perfekte Indoor-Aktivität bei Regen — Tisch und 4 Stühle reichen. Ruhe-Phase nach dem Toben.",
+            "outdoorTip": null,
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Bingo bringt das vertraute Erlebnis von Wartesaal und Großeltern-Spielnachmittag in den Weltraum-Frame — sofort verstanden, aber durch die Weltraum-Begriffe motto-passend. Mit Fragen statt direkter Begriffe wird Wissen abgefragt, ohne dass es sich nach Quiz anfühlt. Mehrere Bingo-Sieger pro Runde halten alle im Spiel."
           }
         ],
         "food": "🎂Raketen-Kuchen1 Blechkuchen\n🥤\"Energie-Drink\"3 L Apfelschorle\n🍕Mini-Pizzen \"Asteroiden\"12 Stück\n🌯Wraps \"Kometen\"8 Stück\n🌟Stern-Kekse8 Stk.\n🥕Möhren-Sticks\"Mond-Sticks\"\n🧀Käse-Würfel \"Meteoriten\"200 g\n🍿Meteoriten-Popcorn300 g\n\n💡 Snacks im Story-Frame\nDie \"Kometen\" sind ganz normale Wraps mit Frischkäse/Schinken/Salat — zusammengerollt sehen sie aus wie ein Komet mit Schweif. Mini-Pizzen heißen \"Asteroiden\", Käse-Würfel \"Meteoriten\", Möhren \"Mond-Sticks\". Kostet null extra, macht den Tisch zum Erlebnis.",
@@ -21397,6 +22550,93 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Am Gartentisch ideal — Kleckern egal, und die Sonne hilft beim Trocknen der Wasser-Proben.",
             "whyItWorksTitle": "Echtes Experimentieren statt So-tun-als-ob",
             "whyItWorks": "9-12-Jährige durchschauen Pseudo-Wissenschaft sofort. Hier passieren echte chemische Reaktionen (Essig + Backpulver sprudelt), die Kinder beobachten und dokumentieren wirklich. Das Logbuch macht aus dem Spiel eine nachvollziehbare Analyse, und die Schmuggelware-Pointe gibt einen klaren Aha-Moment, ohne dass jemand „verliert“."
+          },
+          {
+            "_source": "SEO-Cross-Pollination",
+            "name": "🏃 Weltraum-Olympiade (Schwerkraft-Slalom + Meteoritendodge + Sternenwerfen)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 30,
+            "minAge": 9,
+            "loudness": "laut",
+            "effort": "mittel",
+            "material": "Für Schwerkraft-Slalom: 6–8 Sofakissen oder Luftballons als „Schwerkraft-Anomalien“. Für Meteoritendodge: 4–6 weiche Bälle oder zusammengeknüllte Socken. Für Sternenwerfen: 3 Hula-Hoops oder Eimer als Ziele, 5 selbst gebastelte Papp-Sterne pro Werfer. Logbuch.",
+            "prepText": "Drei kurze körperliche Disziplinen als Astronauten-Olympiade — Bewegung als Gegenpol zu den ruhigen Codeknacker-Stationen. Jede Disziplin trainiert eine andere Fähigkeit (Koordination, Reaktion, Zielen), niemand wird nach Tempo bewertet — der Sorgfalt-Spezialist-Stempel geht an den, der eine Disziplin technisch sauber gelöst hat.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Schwerkraft-Slalom",
+                "content": "Die Crew läuft in Zeitlupe (= „erhöhte Schwerkraft auf einem schweren Planeten“) durch einen Slalom-Parcours aus Kissen. Wer ein Kissen berührt, beginnt von vorn — Konzentration vor Tempo."
+              },
+              {
+                "n": 2,
+                "name": "Meteoritendodge",
+                "content": "Die Crew steht in einem markierten Feld, ein Erwachsener wirft die weichen „Meteoriten“ (Socken-Bälle) in Bauch- oder Schulterhöhe. Wer getroffen wird, geht in „Reparatur-Modus“ und macht 5 Kniebeugen, dann wieder ins Feld."
+              },
+              {
+                "n": 3,
+                "name": "Sternenwerfen",
+                "content": "Jedes Kind wirft seine 5 Papp-Sterne nacheinander in die drei Hula-Hoop-Ziele in verschiedenen Entfernungen. Sterne in den hinteren Hoops zählen mehr, aber die Genauigkeit zählt — ein knapper Treffer ist ein voller Punkt."
+              },
+              {
+                "n": 4,
+                "name": "Logbuch-Eintrag",
+                "content": "Wer in welcher Disziplin besonders kontrolliert war, wird im Logbuch vermerkt — Sorgfalt-Spezialist-Stempel an die Technisch-Saubersten, nicht an die Schnellsten."
+              }
+            ],
+            "safetyRule": "Nur weiche Wurfgeschosse (Socken-Bälle, Krepp-Bälle), kein Treffer im Gesicht. Schwerkraft-Slalom auf rutschfestem Boden. Sternenwerfen weg von Fenstern und zerbrechlichen Möbeln. Bei Meteoritendodge nicht in die Augen werfen — Brillenträger an den Spielfeld-Rand.",
+            "ageAdjust9": "Slalom mit weniger Kissen, Meteoritendodge mit größerem Spielfeld (mehr Ausweich-Platz), Hula-Hoops näher heran.",
+            "ageAdjust12": "Slalom mit Augenbinde und Crew-Anweisungen, Meteoritendodge mit zwei Werfern gleichzeitig, Sternenwerfen mit Vorgabe (welcher Stern in welchen Hoop).",
+            "indoorTip": "Wohnzimmer für Slalom und Meteoritendodge frei räumen, Sternenwerfen in den Flur oder ein zweites Zimmer verlegen. Lampen und Vasen weg.",
+            "outdoorTip": "Im Garten ideal — viel Platz für Slalom und Dodge, Hula-Hoops auf den Rasen für Sternenwerfen. Drei Stationen parallel laufen lassen.",
+            "whyItWorksTitle": "Körper-Programm, das nicht peinlich ist",
+            "whyItWorks": "9-12-Jährige brauchen Bewegungs-Phasen, aber Pseudo-Spiele („Schwung-Schwung-Tanz“) finden sie peinlich. Die Olympiade-Disziplinen sind echte sportliche Aufgaben mit klaren Regeln und Weltraum-Frame — bewertet wird Technik statt Tempo, was auch die weniger Sportlichen einbindet. Drei kurze Disziplinen halten die Aufmerksamkeit."
+          },
+          {
+            "_source": "SEO-Cross-Pollination",
+            "name": "🤖 Roboter programmieren (offline mit Befehls-Karten)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 25,
+            "minAge": 9,
+            "loudness": "ruhig",
+            "effort": "leicht",
+            "material": "Karten mit Befehlen: „vor“, „links“, „rechts“, „halt“ (jeweils 10–15 Stück, mit Pfeil-Symbol). Ein Spielfeld auf dem Boden mit Klebeband: 6×6-Raster, dazwischen 2–3 „Asteroiden“ (Kissen) als Hindernisse, ein Ziel-Feld (Mars-Markierung). Optional ein echter Mini-Roboter (z.B. Bee-Bot, falls vorhanden), aber Mensch-als-Roboter funktioniert genauso. Logbuch.",
+            "prepText": "Die Crew programmiert einen „Roboter“ (entweder ein echter Bee-Bot oder ein Crew-Mitglied, das nur strikt Befehle befolgt) so, dass er vom Start durch das Asteroiden-Feld zum Mars-Ziel kommt — ohne mit einem Asteroiden zu kollidieren. Das ist algorithmisches Denken im Spiel-Frame.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Spielfeld erklären",
+                "content": "Das Klebeband-Raster zeigen, Start- und Ziel-Feld markieren. „Der Roboter versteht nur 4 Befehle: vor, links, rechts, halt. Asteroiden darf er nicht berühren — sonst stürzt er ab.“"
+              },
+              {
+                "n": 2,
+                "name": "Befehls-Liste planen",
+                "content": "Das Team legt die Befehls-Karten in der Reihenfolge aus, die der Roboter ausführen soll — vor dem Loslaufen. Tipps und Diskussionen im Team erlaubt."
+              },
+              {
+                "n": 3,
+                "name": "Programm ausführen",
+                "content": "Der Roboter (Kind oder Bee-Bot) führt die Karten der Reihe nach aus, eine pro Schritt. Niemand darf zwischendurch zurufen — der Roboter kennt nur die programmierten Befehle."
+              },
+              {
+                "n": 4,
+                "name": "Debuggen",
+                "content": "Erreicht der Roboter das Ziel nicht? Stürzt er an einem Asteroiden ab? Das Team analysiert, wo der Fehler im Programm war, korrigiert die Befehls-Liste und versucht es nochmal."
+              },
+              {
+                "n": 5,
+                "name": "Eintragen",
+                "content": "Mission erfolgreich = „Navigations-Algorithmus debuggt“ im Logbuch. Wer den effizientesten Pfad gefunden hat (wenigste Befehle), bekommt Sorgfalt-Spezialist."
+              }
+            ],
+            "safetyRule": "Wenn ein Kind den Roboter spielt: keine Stolperfallen im Raster, andere Kinder halten Abstand zum Spielfeld-Rand.",
+            "ageAdjust9": "4×4-Raster, ein Asteroide, einfache Pfade.",
+            "ageAdjust12": "6×6 oder 8×8-Raster, mehrere Asteroiden, optional ein „Schwerkraft-Brunnen“ (Feld, das den Roboter automatisch nach links lenkt) — fordert echte Algorithmen-Logik.",
+            "indoorTip": "Im Wohnzimmer Klebeband-Raster auf den Teppich — bleibt 2 Std. drauf, lässt sich gut lösen.",
+            "outdoorTip": "Im Garten Raster mit Kreide auf Pflaster oder Terrasse — größeres Feld möglich, Asteroiden aus Eimern oder Kissen.",
+            "whyItWorksTitle": "Programmieren ohne Bildschirm",
+            "whyItWorks": "Algorithmisches Denken (Befehls-Reihenfolge, Debuggen) ist Schul-Stoff und Zukunfts-Kompetenz — hier wird es als Spiel erlebbar. Mit 9-12 verstehen die Kinder erstmals wirklich, was „programmieren“ bedeutet, ohne dass Code geschrieben werden muss. Der menschliche Roboter macht das Konzept greifbar, und das Debuggen ist der wertvollste Teil: Fehler suchen statt sich frustrieren."
           }
         ],
         "food": "🎂 Sternenkarten-Kuchen (1 Blechkuchen) · 🍫 „Astronauten-Nahrung“-Beutel selbst gemischt (Müsliriegel, Trockenfrüchte, Nüsse) · 🥤 „Treibstoff“ = Apfelschorle (2 L) · 🥛 Käse-/Gemüse-Sticks als herzhafte Option",
@@ -21795,6 +23035,98 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Versteck im Garten — der Pfad nutzt echte Wege zwischen Stationen.",
             "whyItWorksTitle": "Der Mission-Abschluss als Teamleistung",
             "whyItWorks": "Die Hauptmission belohnt, dass jede Station ihren Teil beigetragen hat — ohne alle Ergebnisse geht die Karte nicht auf. Das macht den Abschluss zu einem gemeinsamen Erfolg statt zu einem Wettlauf, und das Bergen der Kapsel ist der emotionale Höhepunkt."
+          },
+          {
+            "_source": "SEO-Cross-Pollination",
+            "name": "🚀 Wasser-Raketen-Engineering-Challenge",
+            "indoor": false,
+            "outdoor": true,
+            "duration": 30,
+            "minAge": 10,
+            "loudness": "laut",
+            "effort": "hoch",
+            "material": "Pro Team 1 leere PET-Flasche (1,5 L), Korken oder Gummistopfen mit Loch, Fahrrad-Luftpumpe mit Ventil-Adapter (oder gekaufter Wasserrakete-Starter, ca. 15 €). Tonpapier und Klebeband für Finnen und Spitze. Wasser, ein freier Außenbereich, eine Maßband-Markierung.",
+            "prepText": "Echte Physik — die Crew baut Wasser-Raketen aus PET-Flaschen, experimentiert mit dem Wasser-Luft-Verhältnis und misst die Flughöhe. Nur draußen, nur mit Sicherheitsabstand. Der Lerneffekt: Rückstoß (Newtons drittes Gesetz) in der Praxis, und dass mehr Wasser nicht automatisch höher fliegt — das richtige Verhältnis tut es.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Rakete bauen",
+                "content": "Jedes Team gestaltet seine PET-Flasche: Tonpapier-Finnen unten ankleben (für Stabilität), Pappkegel-Spitze oben (optional). Team-Logo und Crew-Name drauf."
+              },
+              {
+                "n": 2,
+                "name": "Wasser-Mischung wählen",
+                "content": "Jedes Team entscheidet: Wieviel Wasser in die Flasche? 1/4, 1/3, 1/2 voll? Begründung im Logbuch eintragen (Hypothese)."
+              },
+              {
+                "n": 3,
+                "name": "Aufbau und Sicherheitsabstand",
+                "content": "Rakete kopfüber auf den Korken/Stopfen mit Pumpe stecken, alle Kinder treten mindestens 5 m zurück. Erwachsener bedient die Pumpe."
+              },
+              {
+                "n": 4,
+                "name": "Start",
+                "content": "Pumpen, bis der Druck reicht — die Rakete schießt hoch (typisch 5-15 m). Höhe schätzen oder mit dem Maßband-Schatten messen."
+              },
+              {
+                "n": 5,
+                "name": "Vergleichen",
+                "content": "Welches Team hat das beste Verhältnis gewählt? Das Logbuch füllen: Hypothese, Wasser-Menge, Flughöhe. Zweite Runde mit korrigierter Hypothese."
+              }
+            ],
+            "safetyRule": "NUR draußen, NIE drinnen oder unter Bäumen/Stromleitungen. Mindestens 5 m Sicherheitsabstand, alle hinter der Pump-Person. Schutzbrille empfohlen. NUR Erwachsene bedienen die Pumpe — der Druck kann den Korken mit Wucht in unvorhersehbare Richtung schleudern. NIE auf Menschen oder Tiere zielen. PET-Flaschen mit Druckschäden (Risse, Knicke) NICHT verwenden — Bruch-Gefahr. Nach Start die abgehobene Rakete erst nach 30 Sek. einsammeln (kann noch nachtropfen oder zurückkommen).",
+            "ageAdjust9": "Fertig gekauftes Wasserrakete-Set (z.B. Rezi oder Bresser, ~20 €) statt DIY — die Sicherheitstechnik ist eingebaut. Erwachsene starten, Kinder zählen Countdown.",
+            "ageAdjust12": "DIY-Konstruktion erlaubt, Kinder dürfen Finnen-Formen experimentell variieren (lang/kurz/breit). Maßband-Messung der Flughöhe, Logbuch mit Mess-Tabelle.",
+            "indoorTip": null,
+            "outdoorTip": "Großer Rasenfläche oder leerer Hof — keine Bäume in Schussweite. Sandkasten als Aufprall-Zone für die Rakete einplanen.",
+            "whyItWorksTitle": "Echte Physik, echte Ergebnisse",
+            "whyItWorks": "Mit 10-12 ist Pseudo-Wissenschaft durch — hier passiert echte Strömungslehre, und die Kinder erleben, wie ihre Hypothese (Wassermenge) das Ergebnis (Flughöhe) wirklich beeinflusst. Der Aha-Moment „mehr Wasser ist nicht mehr Höhe“ bleibt. Vorsicht: Das ist das mit Abstand sicherheitskritischste Spiel im Programm — bei Unsicherheit lieber das kommerzielle Wasserrakete-Set kaufen und nicht selbst aus Korken basteln."
+          },
+          {
+            "_source": "SEO-Cross-Pollination",
+            "name": "📸 Astro-Fotografie (Lichtmalerei mit Langzeitbelichtung)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 25,
+            "minAge": 10,
+            "loudness": "ruhig",
+            "effort": "mittel",
+            "material": "1 Smartphone mit Kamera-App, die Langzeitbelichtung kann (iPhone: Live-Photo → langer Belichtung; Android: „Nacht-Modus“ oder Apps wie „Camera FV-5“). 1 Stativ oder fest fixierte Auflage (z.B. Buch-Stapel). Pro Kind eine kleine Taschenlampe oder ein LED-Stab. Ein abgedunkelter Raum oder dunkler Garten am Abend.",
+            "prepText": "Die Crew gestaltet mit Taschenlampen leuchtende Figuren in der Luft, das Smartphone mit Langzeitbelichtung „malt“ die Lichtspuren auf — Sterne, Raketen, Planeten, der Schriftzug der Mission. Ein Bild, das die Eltern später als Geburtstags-Erinnerung bekommen. Mit Schlafparty-Anschluss (Wow) ideal als Nacht-Aktivität direkt vor der Sternenbeobachtung.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Setup aufbauen",
+                "content": "Smartphone auf Stativ oder Buchstapel, Raum gut abdunkeln (Vorhänge zu, nur Restlicht). Langzeitbelichtung in der Kamera-App aktivieren (Nacht-Modus oder Langzeit-App)."
+              },
+              {
+                "n": 2,
+                "name": "Probebild machen",
+                "content": "Ein erstes Bild ohne Lichter: Test, ob die Belichtungszeit dunkel genug ist. Dann mit einer Taschenlampe einen Kreis in die Luft malen — kommt der Kreis im Bild?"
+              },
+              {
+                "n": 3,
+                "name": "Figur planen",
+                "content": "Die Crew überlegt: Was malen wir gemeinsam? Eine Rakete, einen Stern, die Mission-Botschaft „CREW“ in Buchstaben? Pro Person eine Aufgabe."
+              },
+              {
+                "n": 4,
+                "name": "Aufnahme starten",
+                "content": "Auslöser drücken (oder Selbstauslöser für ruhiges Bild), die Crew malt mit den Taschenlampen die geplante Figur — 10-20 Sekunden Belichtungszeit, dann automatisches Ende."
+              },
+              {
+                "n": 5,
+                "name": "Bild ansehen",
+                "content": "Crew schaut gemeinsam aufs Display — die Lichtspuren formen die Figur. 2-3 Versuche, das beste Bild wird ins Logbuch geklebt (Polaroid-Druck oder Bildschirm-Foto)."
+              }
+            ],
+            "safetyRule": "Nicht direkt in die Augen leuchten — Taschenlampen mit Rotlicht sind augenfreundlicher und ohnehin Pflicht für die anschließende Sternenbeobachtung. Stolperfallen im abgedunkelten Raum vorher entfernen. Smartphone auf festem Untergrund, nicht freihändig — verwackelt sonst.",
+            "ageAdjust9": "Vorgegebene einfache Figur (Kreis, Stern), Erwachsener bedient das Smartphone. 1-2 Aufnahmen.",
+            "ageAdjust12": "Die Crew gestaltet selbst Komposition und Bedienung, mehrere Belichtungszeiten ausprobieren, optional ein „Photoshoot“-Modus mit verschiedenen Figuren.",
+            "indoorTip": "Abgedunkeltes Wohnzimmer ideal. Bei Tag mit dichten Vorhängen oder Bettlaken über den Fenstern arbeiten — wirkt nachts magisch.",
+            "outdoorTip": "Im Garten nach Einbruch der Dämmerung — die Figuren leuchten besonders kräftig, weil der Hintergrund komplett schwarz ist.",
+            "whyItWorksTitle": "Foto-Wow mit Eltern-Effekt",
+            "whyItWorks": "Lichtmalerei verbindet Technik (Langzeitbelichtung verstehen) mit Kreativität (was malen wir?). Mit 10-12 ist der „Wie funktioniert das?“-Effekt echt — die Kinder verstehen das Prinzip Belichtungszeit zum ersten Mal. Das fertige Bild ist ein konkretes Mitgebsel, das Eltern später per WhatsApp bekommen — wirkt wochenlang nach."
           }
         ],
         "food": "🎂 Sternenkarten-Kuchen · 🍕 Mini-Pizzen selbst belegt (1,5/Kind) · 🍫 Astronauten-Nahrung-Beutel · 🥤 „Treibstoff“-Schorle (3 L) · 🥜 Nüsse & Studentenfutter als Snack",
@@ -22304,7 +23636,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "n": 6,
-          "content": "Optional: aus farbigem Fondant oder Smarties die Planeten in ihrer Reihenfolge legen — passt zur Wissenschaftler-Station."
+          "content": "Optional: aus farbigem Fondant oder bunte Schoko-Linsen die Planeten in ihrer Reihenfolge legen — passt zur Wissenschaftler-Station."
         },
         {
           "n": 7,
@@ -22318,7 +23650,7 @@ var ELITE_MOTTO_DATA = {
       "meta": {
         "aufwand": "50 Min. inkl. Backen, plus Gestalten durch die Kinder",
         "kosten": "~9 €",
-        "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. Smarties/Fondant können Spuren von Nüssen/Milch enthalten; für Allergiker auf gekennzeichnete Streusel ausweichen."
+        "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. bunte Schoko-Linsen/Fondant können Spuren von Nüssen/Milch enthalten; für Allergiker auf gekennzeichnete Streusel ausweichen."
       },
       "tips": [
         {
@@ -22381,6 +23713,16 @@ var ELITE_MOTTO_DATA = {
       {
         "q": "Lohnt sich die Schlafparty mit Sternenbeobachtung?",
         "a": "Wenn die Eltern zustimmen und der Himmel klar ist: ja, das ist der Wow-Moment. Der erste bewusste Blick auf einen Jupitermond oder die Milchstraße bleibt hängen. Wichtig ist das Eltern-Opt-In für die Wach-Zeit und ein klarer Abhol-Punkt für Kinder, die nicht übernachten."
+      },
+      {
+        "_source": "SEO-Cross-Pollination",
+        "q": "Ist die Wasser-Rakete für 9-12-Jährige nicht zu gefährlich?",
+        "a": "Mit den richtigen Sicherheits-Regeln nein — aber sie ist das mit Abstand sicherheits-kritischste Spiel im Programm. Mindestens 5 m Abstand, nur Erwachsene bedienen die Pumpe, NIE drinnen oder unter Stromleitungen, NIE auf Menschen zielen. Wer unsicher ist: ein gekauftes Wasserrakete-Starter-Set (z.B. Rezi/Bresser, ~20 €) hat die Sicherheitstechnik eingebaut. Alternative für drinnen: die Brausetablette-Filmdose-Rakete aus der mittel-Variante oder die Strohhalm-Rakete — beide vermitteln den Rückstoß-Effekt ohne Risiko."
+      },
+      {
+        "_source": "SEO-Cross-Pollination",
+        "q": "Welche Mitgebsel passen — neben Logbuch und Patch?",
+        "a": "Leucht-Sterne (50er-Pack ab 3 €), ein selbst gestaltetes Astronauten-Ausweis-Kärtchen, Mini-Teleskope (3–5 €), Weltraum-Sticker, Schoko-Sterne aus der „Versorgungs-Kapsel“. In Silber-Tüten verpackt wirkt es besonders motto-passend. Für 9-12-Jährige gilt: lieber wenige hochwertige Stücke (Ausweis, Logbuch-Kopie, ein Stern-Stein/Stein in Alufolie als Mond-Andenken) als ein Berg billiger Plastik-Krimskrams — das durchschauen sie sofort und werten es ab."
       }
     ],
     "preparationWeeks": {
@@ -22567,6 +23909,20 @@ var ELITE_MOTTO_DATA = {
           "Eine andere Spezialisierung dazuholen, die ihren Quadranten schon hat — gelöst wird im Team."
         ],
         "fallback": "Wenn gar nichts geht: einen Quadranten gemeinsam lösen, die Lösung steckt im Spiel-Ablauf — niemand soll im Frust steckenbleiben.",
+        "tone": "praktisch"
+      },
+      "wasser_rakete_nicht_moeglich": {
+        "_source": "SEO-Cross-Pollination",
+        "icon": "🚀",
+        "label": "Wasser-Rakete fällt aus (Regen, Nachbarn, kein Outdoor)",
+        "headline": "Drei Indoor-Alternativen, die genauso Physik vermitteln.",
+        "steps": [
+          "Brausetablette-Filmdose-Rakete über dem Spülbecken (siehe mittel-Variante) — sicher drinnen, gleicher Rückstoß-Effekt im kleinen Maßstab.",
+          "Strohhalm-Rakete mit Pusten (siehe mittel-Variante) — funktioniert im Flur, vermittelt Form-Aerodynamik.",
+          "Astro-Fotografie als Ersatz-Highlight — drinnen abdunkeln, Lichtmalerei statt Wasser-Start. Liefert sogar ein Mitgebsel-Foto.",
+          "Roboter-Programmierung als Ersatz-Aktivität — fordert kognitiv genauso wie die Wasser-Rakete körperlich, ohne Sicherheits-Risiko."
+        ],
+        "fallback": "Wenn keine Alternative greift: Codeknacker-Tiefe ausbauen — eine zusätzliche Quadrant-Runde mit längeren Wörtern (RAKETE, GALAXIS) füllt 30 Minuten und passt zum Standard-Frame.",
         "tone": "praktisch"
       },
       "handy_abdriften": {

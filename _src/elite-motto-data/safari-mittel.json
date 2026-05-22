@@ -339,7 +339,7 @@
               "content": "Bestanden gibt's einen Stempel auf die Ranger-Karte. Das Tarn-Tuch wandert als Mitgebsel mit nach Hause."
             }
           ],
-          "safetyRule": "Nur kindersichere, abwaschbare Filzstifte. Keine Verstecke an wackeligen Regalen oder hinter heißen Heizungen.",
+          "safetyRule": "Nur kindersichere, textil-geeignete Filzstifte (Edding Textil, Crayola). No-Name-Stoff-Färbe-Stifte können Hautreaktionen auslösen — im Zweifel Eltern fragen. Keine Verstecke an wackeligen Regalen oder hinter heißen Heizungen.",
           "ageAdjust6": "Spielleiter zeigt vorher ganz deutlich, wo ungeeignete Verstecke sind (\"hinter dem weißen Vorhang funktioniert dein braunes Tuch nicht\"). Pädagogische Bemerkung statt Regel.",
           "ageAdjust8": "Mehrere Verstecke nacheinander, Zeit knapper machen.",
           "indoorTip": "Vorhänge, hinter Sofa, in Wäscheecke — gibt mehr Verstecke als man denkt. Indoor-Limit: max. 4 Kinder gleichzeitig tarnen lassen (raeumlich nicht mehr Versteckplaetze). Bei groesserer Gruppe in 2 Runden aufteilen ODER Outdoor.",
@@ -496,7 +496,7 @@
             {
               "n": 2,
               "name": "Hinweise verteilen",
-              "content": "Jedes der 4 Teams bekommt eine Hinweis-Karte, die Schritt für Schritt zum Versteck des Jungen führt."
+              "content": "Jedes der 4 Teams bekommt eine Hinweis-Karte. Konkrete Beispiele: Team 1 'Sucht zwischen den Büchern, die nach Tieren benannt sind.' Team 2 'Findet den Ort, an dem die Mama-Löwen ihre Jungen waschen würden — ein Ort mit Wasser.' Team 3 'Sucht da, wo es im Reservat dunkel ist — unter einem schweren Möbelstück.' Team 4 'Sucht da, wo die Sonne reinkommt — bei einem Fenster.'"
             },
             {
               "n": 3,
@@ -506,7 +506,7 @@
             {
               "n": 4,
               "name": "Junges bergen",
-              "content": "Wer das Junge findet, übernimmt die Rückbringung. Klebeband-Gefahrenzonen (Hyänen) dürfen nicht betreten werden."
+              "content": "Wer das Junge findet, übernimmt die Rückbringung. Klebeband-Gefahrenzonen (Hyänen-Territorium) dürfen nicht betreten werden — andere Teams können helfen, sicheren Pfad zu finden."
             },
             {
               "n": 5,
@@ -966,12 +966,12 @@
         },
         {
           "emoji": "🎩",
-          "label": "Filz-Buschhüte (10 Stk., optional)",
+          "label": "Filz-Buschhüte (10 Stk., optional Wow-Highlight)",
           "url": "https://www.amazon.de/s?k=safari+hut+kinder+filz&tag=machsleicht-21",
           "priceEur": 80,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Explizit optional, 80€ — Premium-Verkleidung, normalerweise nicht zwingend."
+          "categoryReasoning": "Visuelles Signature-Moment der Wow-Variante: bei der Lizenz-Zeremonie wird die Verwandlung vom Anwärter zum lizenzierten Ranger sichtbar. Hut geht mit nach Hause, wird wochenlang in Kindergarten/Schule getragen — kein anderes Mitgebsel hat diese Halbwertszeit. 8-12 €/Stück (10 Kinder = 80-120 €). Günstige Alternative bei knappem Budget: braune Filz-Imitat-Hüte aus dem Karneval-Sortiment, ~4-6 €/Stück."
         },
         {
           "emoji": "📻",
@@ -980,7 +980,7 @@
           "priceEur": 25,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Explizit optional — Schatzsuche-Premium, normales Handy-Rufen tut's auch."
+          "categoryReasoning": "Bei der Schatzsuche-Quest können sich zwei Teams beim Tempel-Suchen über Funk koordinieren — macht die Mission kommunikativer und gibt 'echte Mission'-Stimmung. Wer Walkies zu Hause hat oder welche fürs Kind ohnehin geplant ist: ideal. Funktioniert auch ohne völlig — die Quest ist nicht darauf angewiesen, normales Handy-Rufen tut's auch."
         },
         {
           "emoji": "🦖",

@@ -1185,6 +1185,18 @@
     {
       "q": "Lohnt sich die Schlafparty-Option?",
       "a": "Wenn die Kinder sich kennen und die Eltern zustimmen, ist die Nacht-Schatzsuche mit Stirnlampen der Höhepunkt des Tages. Wichtig: vorher schriftlich klären, wer übernachtet, und einen Abhol-Zeitpunkt am Abend selbstverständlich anbieten."
+    },
+    {
+      "q": "Wie verhindere ich, dass die Crew nach dem Schatz die Lust verliert?",
+      "a": "Den Übergabe-Moment nicht ans Ende der Party setzen, sondern 20–30 Minuten Puffer für Auslaufen einplanen: Beute begutachten, Crew-Lizenz fertig schreiben, Fotos mit der Truhe. So bricht die Energie nicht abrupt ab, und die Übergabe wirkt wie ein Höhepunkt mit Nachklang statt wie ein Schlusspfiff. Bei der Wow-Variante leitet das Abendessen oder die Schlafparty den ruhigen Auslauf von selbst ein."
+    },
+    {
+      "q": "Soll ich Geschwister mit einplanen?",
+      "a": "Bei dieser Altersgruppe eher nicht. Jüngere Geschwister (3–7) verlieren den Anschluss an die Codes und stören die Konzentration der Großen — oder umgekehrt: Die 12-Jährigen reduzieren das Niveau auf den Kleinsten. Wenn es nicht anders geht, bekommt das Geschwisterkind die Logbuch-Rolle (Karten halten, Hinweise weiterreichen) und einen eigenen Erwachsenen-Kompass an die Seite."
+    },
+    {
+      "q": "Was, wenn ein Kind im Dunkeln Angst bekommt?",
+      "a": "Vor der Nacht-Schatzsuche die Route bei Licht einmal gemeinsam ablaufen — viele Ängste verfliegen, sobald die Kinder das Terrain im Hellen kennen. Während der Tour bleibt mindestens ein Erwachsener bei der Crew, und jedes Kind hat die eigene Stirnlampe direkt einschaltbereit. Will ein Kind nicht mitlaufen: am Lagerfeuer/Lichtspot bleiben mit einer aktiven Aufgabe wie 'Kartograph der Nacht-Route'. Kein Druck, niemand muss in den Garten."
     }
   ],
   "preparationWeeks": {
@@ -1398,6 +1410,32 @@
       ],
       "fallback": "Alle früh fertig: die Crew-Pause (Wraps) vorziehen und die Quest/Übergabe nach vorn schieben — der Plan ist flexibel.",
       "tone": "praktisch"
+    },
+    "schlafparty_heimweh": {
+      "icon": "🌙",
+      "label": "Schlafparty — Heimweh oder schlaflose Crew",
+      "headline": "Ruhig andocken, Eltern-Linie offen halten.",
+      "steps": [
+        "Vor dem Schlafengehen klar kommunizieren: 'Wer nicht schlafen kann, kommt zu mir — ich bin wach' (oder im Nebenraum). Das senkt die Schwelle, sich zu melden.",
+        "Eine Eltern-Hotline einrichten: Ein Elternteil pro Kind ist nachts erreichbar, Abholung mitten in der Nacht ist okay und kein Versagen.",
+        "Heimweh-Klassiker: Tee, Decke, ruhige Geschichte (kein Bildschirm). Manche Kinder beruhigt schon ein kurzes Telefonat mit Mama/Papa unter vier Augen.",
+        "Schlaflose Crew: Lichter dimmen, Hörbuch oder leise Musik anbieten, niemanden zwingen zu schlafen — wer wach bleibt, liest oder zeichnet still."
+      ],
+      "fallback": "Wenn ein Kind weinend abgeholt werden will: ohne Erklärungen oder 'Bleib doch noch'-Verhandlungen — Eltern kommen, das Kind geht, am Morgen ist alles vergessen. Die anderen sehen, dass Abholen okay ist, und schlafen oft besser.",
+      "tone": "einfühlsam"
+    },
+    "rivalen_eskalation": {
+      "icon": "⚔️",
+      "label": "Crew-Rivalität eskaliert",
+      "headline": "Vom Wettbewerb zur gemeinsamen Mission switchen.",
+      "steps": [
+        "Sofort unterbrechen und den Reederei-Brief erinnern: 'Auf See gibt es nur EINE Crew gegen die Rivalen — wir helfen uns.' Der Story-Rahmen rettet die Situation oft im ersten Anlauf.",
+        "Crews bewusst durchmischen für die nächste Station — kurz neu zuteilen, statt die alten Konflikt-Lager weiterzufahren.",
+        "Den 'Sorgfalt-Spezialist'-Stempel sichtbar an ein Kind aus dem leiseren Lager vergeben — das verschiebt den Fokus weg von 'wer hat zuerst geknackt' hin zu 'wer hat genau gearbeitet'.",
+        "Wenn ein einzelnes Kind hochkocht: kurze Pause im anderen Raum mit einer Aufgabe ('schreib das Logbuch der letzten Station'), Erwachsener bleibt zugewandt aber ruhig."
+      ],
+      "fallback": "Bleibt ein Kind dauerhaft drüber: in eine andere Spezialisierung wechseln lassen, neue Aufgabe, neue Karten. Frischer Start statt 'sich beruhigen müssen' funktioniert mit 9-12 oft besser als jede Diskussion.",
+      "tone": "deeskalierend"
     }
   }
 }

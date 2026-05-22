@@ -161,6 +161,46 @@
       ],
       "games": [
         {
+          "name": "🦓 Tiere füttern (Bälle in Eimer)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "15 Min.",
+          "minAge": 3,
+          "loudness": "halblaut",
+          "effort": "leicht",
+          "material": "3 Eimer oder Wäschekörbe, an jeden ein DIN-A4-Tier-Bild kleben (Löwe, Elefant, Affe). 15–20 weiche Bälle, kleine Plüsch-Bananen oder zusammengeknüllte Zeitung als 'Futter'. Markierungslinie aus Krepp-Band 1,5 m vor den Eimern (sehr nah, 3-Jährige sollen es schaffen).",
+          "prepText": "Stell die 3 Eimer in eine Reihe an die Wand, klebe pro Eimer ein A4-Tier-Bild davor. Krepp-Band-Linie 1,5 m davor — bei 3-Jährigen lieber näher. Vasen, Stehlampen und Glas vorher wegräumen, das wird wilder als gedacht.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Story",
+              "content": "'Die drei Tiere haben Hunger. Affe mag Bananen, Löwe frisst alles, Elefant ist riesig — also viel rein!' Lachen schon eingebaut."
+            },
+            {
+              "n": 2,
+              "name": "Werfen",
+              "content": "Alle Kinder stehen gleichzeitig in lockerem Halbkreis vor den Eimern. Jedes Kind hat 3 Bälle und wirft einer nach dem anderen."
+            },
+            {
+              "n": 3,
+              "name": "Jubeln",
+              "content": "Nach jedem Treffer rufen alle 'Lecker, danke Helfer!'. Nicht gezählt, nicht verglichen. Daneben gewerfen = holen und nochmal."
+            },
+            {
+              "n": 4,
+              "name": "Wiederholen",
+              "content": "3 Runden, dann hat jeder die Erfolgserfahrung mehrfach. Foto-Moment: Eltern dahinter, applaudieren."
+            }
+          ],
+          "safetyRule": "Nur WEICHE Bälle (Stoff, Plüsch, Knüllpapier). Keine Tennis- oder Hartgummibälle drinnen. Eimer auf Sofa oder Stuhl, nicht auf wackelige Möbel. Vasen und Glas vorher wegstellen.",
+          "ageAdjust3": "Linie noch näher (1 m), Eimer breit aufstellen, mit Mama oder Papa zusammen werfen. Sie machen das stolz.",
+          "ageAdjust5": "Linie etwas weiter (2 m), eine Runde mit der schwachen Hand werfen — als kleine Variation, kein Wettbewerb.",
+          "indoorTip": "Eimer auf Sofa oder Stühle stellen, weiche Bälle nutzen. Vasen vorher wegräumen — wirkt wilder als gedacht.",
+          "outdoorTip": "Im Garten Eimer auf dem Rasen oder an die Hauswand stellen, dann darf auch lauter geworfen werden.",
+          "whyItWorksTitle": "Bewegung ohne Verlierer",
+          "whyItWorks": "Bewegung nach dem Ankommen, Erfolgserlebnis ohne Punkte, kein Gewinner — und ein Foto-Moment, wenn alle Eltern dahinter stehen und applaudieren. Idealer Aktiv-Einstieg vor der ruhigen Pirsch."
+        },
+        {
           "name": "🦁 Tierspuren-Pirsch",
           "indoor": true,
           "outdoor": true,
@@ -169,17 +209,17 @@
           "loudness": "leise",
           "effort": "leicht",
           "material": "12–15 Pfotenabdrücke aus braunem Tonpapier (DIN A4, schwarzer Edding oder Pfoten-Schablone). Tesa. Am Endpunkt: 1 Plüsch-Löwe oder eine Box mit Mini-Tieren als 'Fund'. Pfoten selbst zeichnen reicht — die Kinder merken den Unterschied nicht.",
-          "prepText": "Vorher legst du eine Spur durch Wohnung oder Garten — z.B. Pfoten an die Wand kleben (Augenhöhe Kind, nicht zu hoch) in eine Richtung. Am Endpunkt versteckt sich der 'schlafende' Plüsch-Löwe unter einer Decke oder hinter einem Stuhl.",
+          "prepText": "Vorher legst du eine Spur durch Wohnung oder Garten — z.B. Pfoten an die Wand kleben (Augenhöhe Kind, nicht zu hoch) in eine Richtung. Am Endpunkt versteckt sich der 'schlafende' Plüsch-Löwe unter einer Decke oder hinter einem Stuhl. Doppelnutzen-Trick: dieselben Pfoten vom Eingang her als Deko-Pfad nutzen — die Kinder folgen der Spur, sobald sie reinkommen.",
           "steps": [
             {
               "n": 1,
               "name": "Einstimmen",
-              "content": "Du flüsterst: 'Jede Pirsch beginnt leise. Ein Tier hat sich verlaufen — wir folgen seinen Spuren.'"
+              "content": "Du flüsterst: 'Pscht! Der Löwe schläft. Wir folgen seinen Spuren ganz, ganz leise und schauen, wo er ist.'"
             },
             {
               "n": 2,
               "name": "Losschleichen",
-              "content": "Alle gehen gemeinsam los, leise wie eine Herde. Du gehst voraus und zeigst die erste Pfote."
+              "content": "Alle gehen GEMEINSAM die Spur ab — niemand rennt voraus, du gehst voran oder mitten in der Herde."
             },
             {
               "n": 3,
@@ -189,18 +229,18 @@
             {
               "n": 4,
               "name": "Tier finden",
-              "content": "Am Endpunkt liegt der Plüsch-Löwe. Alle dürfen ihn streicheln, niemand reißt ihn weg — jeder kommt dran."
+              "content": "Am Endpunkt liegt der Plüsch-Löwe. 'Wer findet ihn?' Alle suchen kurz, alle finden ihn gemeinsam. Niemand reißt ihn weg — jeder kommt dran."
             },
             {
               "n": 5,
               "name": "Heimbringen",
-              "content": "Das Tier wird gemeinsam ins 'Reservat' (Decken-Ecke) gebracht. Pirsch fertig, alle haben geholfen."
+              "content": "Du sagst leise: 'Wir haben dem Löwen geholfen — jetzt weiß seine Mama, wo er ist.' Plüsch-Löwe ans Geburtstagskind übergeben."
             }
           ],
-          "safetyRule": "Pfoten nicht zu hoch kleben — keine Stühle als Kletterhilfe. Endpunkt kindersicher (keine scharfen Kanten hinterm Versteck).",
-          "ageAdjust3": "Spur kurz halten (10–12 Pfoten), Endpunkt sichtbar verstecken (unter Sofadecke). Du gehst die ganze Zeit voraus.",
-          "ageAdjust5": "Spur länger, 2 Tier-Arten parallel (Löwe + Elefant), 2 Endpunkte. 5-Jährige dürfen abwechselnd 'Pirsch-Führer' sein.",
-          "indoorTip": "In 60-75 m² geht die Spur nicht über 2-3 Räume — dann ehrlich anders: ein Raum mit verschachtelten Verstecken (um Sofa, hinter Vorhang, unter Tisch, am Regal vorbei). Wirkt für 3-5 wie eine echte Reise.",
+          "safetyRule": "Pfoten nicht zu hoch kleben — keine Stühle als Kletterhilfe. Endpunkt kindersicher (keine scharfen Kanten hinterm Versteck). KEIN 'Löwen-Brüllen' als Schreck-Moment — 3-Jährige weinen davon, der Löwe schläft, fertig.",
+          "ageAdjust3": "Spur SEHR kurz halten (5-8 Pfoten), Löwe nur halb versteckt (Schwanz schaut raus). Eltern dürfen flüstern: 'Schau mal hier oben!'",
+          "ageAdjust5": "Spur länger (10-12 Pfoten), Löwe ganz versteckt. 5-Jährige dürfen rätseln, wo er sein könnte, oder abwechselnd 'Pirsch-Führer' sein.",
+          "indoorTip": "In 60-75 m² geht die Spur nicht über 2-3 Räume — dann ehrlich anders: ein Raum mit verschachtelten Verstecken (um Sofa, hinter Vorhang, unter Tisch, am Regal vorbei). Wirkt für 3-5 wie eine echte Reise. Schlafzimmer-Tür zu — sonst rennen sie aufs Bett.",
           "outdoorTip": "Im Garten oder Park die Spur um Bäume und Büsche legen — die Kinder pirschen durchs 'Gebüsch'.",
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Schleichen ist ein Spiel mit eingebauter Lautstärke-Bremse. Kein Wettbewerb, alle finden gemeinsam — kein Kind geht leer aus. Der Plüsch-Fund ist greifbar, kein abstraktes Ziel."
@@ -213,35 +253,40 @@
           "minAge": 3,
           "loudness": "halblaut",
           "effort": "leicht",
-          "material": "Handy mit Tierstimmen (kostenlose YouTube-Playlist oder App) oder du machst die Geräusche selbst. Optional 6–8 Tierbild-Karten zum Hochhalten.",
-          "prepText": "Such dir 5-6 eindeutige Tiere raus, die Kinder kennen (Löwe, Elefant, Affe, Schlange, Vogel, Kuh). Geräusche bereitlegen oder üben.",
+          "material": "Handy mit Tierstimmen (kostenlose YouTube-Playlist oder App) oder du machst die Geräusche selbst. Optional 6–8 Tierbild-Karten zum Hochhalten. Empfehlung für 3-5: Tierstimmen-Quiz mit Kokosnuss (YouTube) — kindgerechte Stimme spricht das Tier sofort aus, ideal als sanftes Mit-Rate-Spiel.",
+          "prepText": "Such dir 5-6 eindeutige Tiere raus, die Kinder kennen (Löwe, Elefant, Affe, Schlange, Vogel, Kuh). Geräusche bereitlegen oder üben. Bekannte Tiere wählen — niemals exotische wie Hyäne oder Gepard, die kennen 3-5-Jährige noch nicht und werden frustriert. Lautstärke vorher testen: mittlere Stufe + 1 Probe-Geräusch, damit sich die 3-Jährigen beim Löwen-Brüllen nicht erschrecken.",
           "steps": [
             {
               "n": 1,
               "name": "Geräusch",
-              "content": "Du spielst/machst ein Tiergeräusch. Kinder rufen das Tier oder zeigen auf die Karte."
+              "content": "Du spielst/machst ein Tiergeräusch (5 Sek.). Alle Kinder gleichzeitig dürfen rufen 'LÖWE!' oder 'ELEFANT!' — niemand einzeln, das nimmt Druck."
             },
             {
               "n": 2,
+              "name": "Mini-Fakt",
+              "content": "Nach jedem Tier ein kindgerechter Mini-Fakt: 'Genau — und weißt du, was der Löwe macht, wenn er hungrig ist? Er ruft ganz laut, damit Mama-Löwe weiß, wo er ist.'"
+            },
+            {
+              "n": 3,
               "name": "Nachmachen",
               "content": "Alle machen das Tier gemeinsam nach — brüllen, trompeten, hüpfen. Bewegung gehört dazu."
             },
             {
-              "n": 3,
+              "n": 4,
               "name": "Weiter",
               "content": "Nächstes Tier. 5-6 Runden reichen, dann kippt die Aufmerksamkeit."
             }
           ],
-          "safetyRule": "Bruellen ist FREIWILLIG. Wer das nicht mag: leise zeigen oder Geraeusch fluestern. Reizoffene/geraeuschempfindliche Kinder duerfen Pause machen.",
-          "ageAdjust3": "Nur 3-4 sehr eindeutige Tiere, du machst die Geräusche selbst und groß vor.",
-          "ageAdjust5": "5-Jährige dürfen selbst ein Tier vormachen und die anderen raten lassen.",
+          "safetyRule": "Bruellen ist FREIWILLIG. Wer das nicht mag: leise zeigen oder Geraeusch fluestern. Reizoffene/geraeuschempfindliche Kinder duerfen Pause machen. Lautstärke moderat halten — bei zu lauter Box erschrecken sich die 3-Jährigen.",
+          "ageAdjust3": "Nur 3-4 sehr eindeutige Tiere (Löwe, Elefant, Affe, Hund), du machst die Geräusche selbst und groß vor und sprichst das Tier mit ('Wer ist das? Ein... LÖÖÖWE!').",
+          "ageAdjust5": "5-Jährige dürfen selbst ein Tier vormachen und die anderen raten lassen. Bonus-Frage: 'Wo lebt es?'",
           "indoorTip": "Perfekt als ruhiger Lückenfüller drinnen — kein Material, kein Platz nötig.",
           "outdoorTip": "Draußen ruhig lauter machen lassen, niemand stört sich am Brüllen.",
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorksTitle": "Ruhig-Slot zwischen aktiven Phasen",
+          "whyItWorks": "Aufmerksamkeit wieder einsammeln nach lautem Spiel, ohne dass es langweilig wird. Alle gleichzeitig rufen lassen nimmt den Einzel-Druck weg — bei 3-5 pure Freude statt Performance."
         }
       ],
-      "food": "🎂 Löwen-Kuchen (Gugelhupf mit Mähne aus Mandelblättchen/Knusperflakes). 🥒 Tierfutter-Teller: Gurken-'Blätter', Cracker-'Steine', Trauben-'Beeren'. 🥤 Apfelschorle in Trinkbechern. Nichts Heißes, keine ungefragten Nüsse.",
+      "food": "🎂 Löwen-Kuchen (Gugelhupf mit Mähne aus Mandelblättchen/Knusperflakes). 🥒 Tierfutter-Teller: Gurken-'Blätter', Cracker-'Steine', Trauben-'Beeren'. 🥤 Apfelschorle in Trinkbechern. 🥨 Salzbrezeln. Nichts Heißes, keine ungefragten Nüsse. Snacks im Story-Frame: Karotten-Sticks = 'Giraffen-Snack', Bananen = 'Affen-Bananen', Apfelschorle = 'Wasserloch' (transparente Becher + blaue Halme).",
       "decoration": "🌿 Ein paar grüne Tücher oder Zimmerpflanzen als 'Reservat'-Ecke. 🦁 Plüsch- und Plastiktiere verteilt. Mehr braucht es bei Minimal nicht — die Kinder bringen die Fantasie mit.",
       "giveaways": "🦓 Pro Kind ein Mini-Tier (Plastik-Safaritier) + die Urkunde ('Du hast heute dem Löwen geholfen') in einer einfachen Papiertüte. Optional ein Tier-Sticker.",
       "shoppingList": [
@@ -866,10 +911,90 @@
           "outdoorTip": "Im Garten Büsche, Bäume und Gartenmöbel als Verstecke — das beste Tarnungs-Gelände.",
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Verstecken ist Urspiel, das jedes Kind kann. Der Tarnungs-Frame macht es zum Tier-Helfer-Training, ohne Druck. Gefunden-werden ist hier der Erfolg, nicht das Verlieren."
+        },
+        {
+          "name": "🎽 Tarn-Tuch bemalen (Bastel-Station)",
+          "indoor": true,
+          "outdoor": false,
+          "duration": "15 Min.",
+          "minAge": 3,
+          "loudness": "leise",
+          "effort": "mittel",
+          "material": "1 Stoffquadrat pro Kind (~30×30 cm, alte Geschirrtücher zerschnitten ODER weißer Bettlaken-Stoff aus dem Stoffladen ~4 €/m). Textil-Filzstifte in Erdfarben (braun, grün, ocker — wichtig: textil-geeignete Filzstifte, sonst geht beim ersten Waschen alles raus). Wachstuch auf den Tisch zum Schutz. 1 Beispiel-Tarn-Tuch zum Zeigen.",
+          "prepText": "Bettlaken oder alte Geschirrtücher abends vorher in 8 Quadrate schneiden. Mit Bügeleisen die Schnittkante kurz versiegeln (kein Saum nötig) oder einfach franselig lassen — wirkt sogar 'wilder'. Wachstuch auf Esstisch, Beispiel-Tuch zum Zeigen daneben.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Erklären",
+              "content": "Du zeigst das Beispiel-Tuch: 'Helfer im Reservat haben Tücher, die aussehen wie Gras und Erde. So sehen die Tiere uns nicht.'"
+            },
+            {
+              "n": 2,
+              "name": "Frei malen",
+              "content": "Jedes Kind bekommt ein Stoffquadrat. 'Mal du dein Tuch, wie du willst — Flecken, Streifen, Punkte — alles geht.' 3-Jährige brauchen Eltern-Hand am Stift, 5-Jährige machen alleine."
+            },
+            {
+              "n": 3,
+              "name": "Trocknen",
+              "content": "Nach 10-12 Min. wandern die Tücher auf den Wäscheständer oder die Fensterbank — NICHT auf dem Esstisch liegen lassen, der wird gleich wieder gebraucht."
+            },
+            {
+              "n": 4,
+              "name": "Bei der Pirsch tragen",
+              "content": "Beim Pirsch-Spiel später dürfen die Tücher mitgenommen werden — die Kinder wickeln sich darin ein und schleichen leise. Doppelnutzen statt nur Bastel-Pflicht."
+            }
+          ],
+          "safetyRule": "Nur Textil-Filzstifte (Edding Textil, Crayola) — manche Kinder reagieren auf No-Name-Stoff-Färbe-Stifte. Wachstuch unter dem Stoff, Filzstifte sofort weg sobald fertig. Schere bleibt bei Erwachsenen.",
+          "ageAdjust3": "Tücher kleiner schneiden (20×20 cm), nur 2 Farben anbieten (sonst wird's matschig), Mama oder Papa hält die Hand mit am Stift.",
+          "ageAdjust5": "Volle Größe (30×30 cm), alle 3 Farben, dürfen auch Tierspuren oder Tier-Silhouetten draufmalen.",
+          "indoorTip": "Reines Tisch-Spiel, ideal als ruhiger Einstieg direkt nach Stirnband-Verleihung. Tücher trocknen weiter auf der Fensterbank, kommen nicht zurück auf den Esstisch (Kuchen wartet).",
+          "outdoorTip": null,
+          "whyItWorksTitle": "Selbstgemacht statt gekauft",
+          "whyItWorks": "Jedes Kind hat ein selbst gestaltetes Mitgebsel in der Hand, bevor das laute Programm losgeht — und das Tuch kommt beim Pirsch nochmal zum Einsatz. Ist also kein isoliertes Bastel-Highlight, sondern Teil der Story."
+        },
+        {
+          "name": "🎧 Tier-Lauscher (Geräusche raten)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "15 Min.",
+          "minAge": 3,
+          "loudness": "leise",
+          "effort": "leicht",
+          "material": "Smartphone mit kostenloser Tier-Geräusche-App ODER YouTube-Playlist (alles kostenlos). 6-8 Plüsch-Tiere oder Tier-Bilder (sind sowieso schon im Raum). Optional: kleine Bluetooth-Box, falls der Smartphone-Lautsprecher zu leise ist. Kosten: 0 €.",
+          "prepText": "Plüsch-Tiere oder Tier-Bilder in einem Halbkreis vor den Kindern auslegen (Löwe, Elefant, Affe, Vogel, Schlange, Krokodil). Lautstärke vorher checken: mittlere Stufe + 1 Probe-Geräusch — bei zu leiser Box hören die Kinder nichts, bei zu lauter erschrecken sich die 3-Jährigen beim Löwen-Brüllen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Story-Anker",
+              "content": "'Im Reservat lauschen Helfer ganz genau, wer in der Nähe ist — das machen wir auch. Schließt die Augen und hört genau hin: Welches Tier ruft da?'"
+            },
+            {
+              "n": 2,
+              "name": "Geräusch abspielen",
+              "content": "5-8 Sekunden ein Tier-Geräusch (Löwe brüllt, Affe johlt, Elefant tütet, Vogel zwitschert, Schlange zischt, Krokodil knirscht). Kinder horchen still."
+            },
+            {
+              "n": 3,
+              "name": "Gemeinsam zeigen",
+              "content": "Alle Kinder zeigen GLEICHZEITIG auf das passende Tier. Du lobst, lachst, löst auf: 'Aaah — der LÖWE! Hört ihr, wie tief das ist?'"
+            },
+            {
+              "n": 4,
+              "name": "Trick-Tier",
+              "content": "Zwischendurch 1-2 'Trick-Tiere' wie Kuh oder Hund einbauen — sorgt für Gelächter. Niemand wird einzeln drangenommen, Eltern dürfen mit auflösen."
+            }
+          ],
+          "safetyRule": "Lautstärke vorher testen — bei zu lauter Box erschrecken sich die 3-Jährigen beim Löwen-Brüllen. Mittlere Stufe + 1 Probe-Geräusch. Wer die Geräusche unangenehm findet (Schlangen-Zischen kann triggern), darf sich auf Mamas Schoß setzen.",
+          "ageAdjust3": "Nur 4-5 sehr eindeutige Geräusche (Löwe, Elefant, Affe, Vogel). Eltern dürfen früh Tipps geben — das ist kein Test.",
+          "ageAdjust5": "6-8 Geräusche, gerne auch knifflige wie Schlange oder Krokodil. Bonus-Frage: 'Welches Tier macht den schnellsten Schritt?' oder 'Welches Tier ist am größten?'",
+          "indoorTip": "Im Sitzkreis auf dem Boden oder Sofa. Konzentrierte Tier-Helfer-Gesichter = Foto-Moment der Station.",
+          "outdoorTip": "Draußen funktioniert es auch — auf dem Rasen sitzen, Bluetooth-Box mitnehmen.",
+          "whyItWorksTitle": "Ruhe-Station, die wirklich nichts kostet",
+          "whyItWorks": "Konzentration nach lautem Füttern, ein gemeinsames 'Aaah!' wenn die Helfer das Tier erkennen, konzentrierte Tier-Helfer-Gesichter als Foto-Moment. 0 € Material, hohe Wirkung."
         }
       ],
-      "food": "🎂 Löwen-Kuchen mit Mähne + ein zweiter 'Reservat'-Kuchen oder Muffins. 🥒 Großer Tierfutter-Teller (Gurke, Paprika, Trauben, Käse, Cracker). 🍪 Tier-Kekse. 🍌 Affen-Bananen. 🥤 Apfelschorle + Wasser. Allergie-Teller separat.",
-      "decoration": "🌿 Reservat-Ecke + DIY-Foto-Ecke: vor einer freien Wand 2-3 Grünpflanzen, ein paar große Plüsch-Tiere, optional ein gemaltes Dschungel-Plakat. 🐾 Pfotenspuren-Pfad. 🎈 Grün-braune Ballons. Tischdecke in Tarn-Optik.",
+      "food": "🎂 Löwen-Kuchen mit Mähne + ein zweiter 'Reservat'-Kuchen oder Muffins. 🥒 Großer Tierfutter-Teller (Gurke, Paprika, Trauben, Käse, Cracker). 🍪 Tier-Kekse. 🍌 Affen-Bananen. 🍓 'Flamingo-Beeren' (Erdbeeren-Schale). 🥤 Apfelschorle + Wasser. Allergie-Teller separat. Marzipan-Deko auf dem Kuchen IMMER bei Eltern abfragen (Mandel-Allergie!) — Alternative: Schoko-Linsen und bunte Schoko-Linsen.",
+      "decoration": "🌿 Reservat-Ecke + DIY-Foto-Ecke: vor einer freien Wand 2-3 Grünpflanzen, ein paar große Plüsch-Tiere, optional ein selbst gemaltes Pappschild ('Reservat — Helfer-Station 🦁') und einen kleinen Hocker für die Größenverhältnisse. 🐾 Pfotenspuren-Pfad. 🎈 Grün-braune Ballons. Tischdecke in Tarn-Optik. Kostet 0 € extra, sieht aus wie 50 € Aufwand — Wow-Faktor für WhatsApp-Status.",
       "giveaways": "🦓 Stirnband + Mini-Tier + Urkunde + Mini-Lupe + Foto-Ausdruck vom Foto-Eck + Tier-Sticker, in einer Safari-Tüte. Das volle Helfer-Paket zum Mitnehmen.",
       "shoppingList": [
         {
@@ -1085,6 +1210,14 @@
       {
         "topic": "🦁 Kein Wettbewerb, nie Verlierer",
         "detail": "Bei dieser Altersgruppe keine Gewinner/Verlierer-Spiele. Jedes Kind findet ein Tier, hilft, bekommt die Urkunde. Die Urkunde bekommt jeder Helfer — das schafft jedes Kind."
+      },
+      {
+        "topic": "🧠 Meltdown-Plan — bei 3-5 fast garantiert",
+        "detail": "Statistisch wird mindestens ein Kind während der 2 Stunden müde, übermüdet oder schlicht überreizt. Das ist normal, nicht persönlich. Plan: 1 ruhiger Rückzugs-Ort vorbereiten (Sofa-Ecke mit Decke und 2 Plüsch-Tieren), Mama/Papa des Kindes hin, 5-10 Min. Pause, dann meistens wieder dabei. Wenn nicht: das Kind verabschiedet sich früher, das ist OK. NICHT: das Kind zwingen 'mitzumachen' oder mit Tränen vor allen anderen weinen lassen — beides eskaliert."
+      },
+      {
+        "topic": "📸 Foto-Moment: Urkunden-Übergabe ist DER Moment",
+        "detail": "Du musst nicht parallel filmen — die Eltern stehen ohnehin daneben und fotografieren ihr eigenes Kind. Bei der Abholung jeden Elternteil fragen, ob du das Foto vom Geburtstagskind-mit-seinem-Kind per WhatsApp schicken sollst. Macht Eindruck und kostet null Aufwand mehr."
       }
     ],
     "educationalValue": "Die Kinder üben ganz nebenbei: leise sein und sich konzentrieren (Pirsch), für jemanden sorgen statt zu gewinnen (Tiere füttern), gemeinsam ein Ziel erreichen (Schatzsuche) und mit Verkleidung in eine Rolle schlüpfen (Stirnband). Der Tier-Helfer-Frame macht aus Geburtstags-Trubel ein Kümmer-Spiel — das ist genau der soziale Entwicklungsschritt, der mit 3-5 ansteht."
@@ -1106,6 +1239,18 @@
     {
       "q": "Ist die Wow-Variante für 3-Jährige geeignet?",
       "a": "Eher nicht. Wow braucht 80 m²+ oder Garten, eine zweite erwachsene Hand und mindestens ein 5-jähriges Geburtstagskind. Mit reinen 3-Jährigen und Solo-Moderation lieber Standard nehmen."
+    },
+    {
+      "q": "Müssen Eltern bei der Party dabeibleiben?",
+      "a": "Bei 3-5 ja. Auch wenn das Kind sonst im Kindergarten gut ohne Eltern klarkommt — Geburtstag ist neue Umgebung, viele Kinder gleichzeitig, hohe Reizdichte. Aktiv kommunizieren: 'Wir freuen uns, wenn ihr Eltern bei einem Kaffee bleibt — die Party dauert nur 2 Stunden.' Kaffee/Tee bereitstellen, eine ruhige Ecke einrichten, dann sind alle entspannt."
+    },
+    {
+      "q": "Welche Allergien sind in dieser Altersgruppe am wichtigsten?",
+      "a": "In 3-5 sind Lebensmittel-Allergien häufiger als in jeder anderen Altersgruppe — Nüsse, Milch, Erdnüsse, Eier sind die Top 4. Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit. Apfelschorle, Bananen, Karotten und Salzbrezeln sind fast immer safe. Marzipan-Deko auf dem Kuchen IMMER bei Eltern abfragen (Mandel-Allergie). Tarn-Tuch-Filzstifte: nur Marken-Textilstifte (Edding Textil, Crayola), manche Kinder reagieren auf No-Name."
+    },
+    {
+      "q": "Funktioniert ein Safari-Geburtstag auch drinnen?",
+      "a": "Ja, das ist sogar oft die bessere Option bei 3-5. Tiere füttern im Wohnzimmer (Vasen wegräumen), Memory am Küchentisch, Pirsch durch Flur und Wohnzimmer mit Pfotenspur, Tier-Lauscher im Sitzkreis mit Smartphone, Tarn-Tuch-Basteln auf Wachstuch. Draußen ist es atmosphärischer (echte Pfoten auf dem Rasen, Pirsch im Garten), drinnen genauso wirksam — und Toiletten/Mama/Pflaster sind in Reichweite."
     }
   ],
   "preparationWeeks": {
@@ -1351,6 +1496,32 @@
       ],
       "fallback": "Bleibt es untröstlich? Tempo der ganzen Gruppe drosseln — oft ist die Party einfach zu schnell für die Kleinen.",
       "tone": "ruhig"
+    },
+    "kind_uebermuedet": {
+      "icon": "😴",
+      "label": "Ein Kind wird übermüdet oder überreizt",
+      "headline": "Rückzugs-Ort + Eltern + 5-10 Min. Pause, dann meist wieder dabei.",
+      "steps": [
+        "Vorbereiteten Rückzugs-Ort nutzen: Sofa-Ecke mit Decke, 2 Plüsch-Tiere, ruhig.",
+        "Eltern des Kindes dazu (sind bei 3-5 ja eh da), gemeinsam runterkommen.",
+        "5-10 Min. ohne Aktivitäts-Druck — Wasser, Brezel, ein Buch reicht oft.",
+        "Nach der Pause leise wieder anbieten, aber nicht drängen."
+      ],
+      "fallback": "Bleibt es überreizt: das Kind verabschiedet sich früher, das ist OK. NICHT zwingen, NICHT mit Tränen vor anderen weinen lassen — beides eskaliert. Mitgebsel-Tüte bekommt es trotzdem.",
+      "tone": "ruhig"
+    },
+    "kostuem_pumpe_erschreckt": {
+      "icon": "🦖",
+      "label": "Aufblasbares Tier-Kostüm erschreckt ein Kind",
+      "headline": "Sofort weg damit — Lärm + Kontrollverlust am Körper = Meltdown-Risiko.",
+      "steps": [
+        "Pumpe sofort ausschalten, Kostüm runter — nicht 'durchhalten lassen', das eskaliert.",
+        "Bei 3- und 4-Jährigen meist sowieso zu viel: Lärm UND Kontrollverlust am eigenen Körper.",
+        "5-Jährige bei denen das Kostüm 2-3 Tage vorher anprobiert wurde, schaffen es meist.",
+        "Foto-Plan B: Geburtstagskind mit Plüsch-Löwe und Urkunde — funktioniert auch ohne Kostüm."
+      ],
+      "fallback": "Generelle Regel: Kostüm nur einsetzen, wenn das 5-jährige Geburtstagskind es vorher kennt und lacht — sonst weglassen. Ein Meltdown des Geburtstagskinds bei der Übergabe kippt die ganze Party.",
+      "tone": "bestimmt"
     },
     "eltern_kommen_frueh": {
       "icon": "⏰",
