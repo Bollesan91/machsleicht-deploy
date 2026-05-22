@@ -14,18 +14,35 @@
     5
   ],
   "title": "Feen-Kindergeburtstag 3-5 Jahre — komplett geplant",
-  "metaDescription": "Feen-Kindergeburtstag für 3–5 Jahre: 3 fertige Party-Konzepte mit Zeitplan, 6 Spielen mit Anleitung, Einkaufsliste und Kosten pro Kind. Auch für Jungen sehr beliebt — Wald-Wächter-Variante mit Krieger-Flügeln. Komplett kostenlos.",
+  "metaDescription": "Feen-Kindergeburtstag für 3–5 Jahre: 3 fertige Party-Konzepte mit Zeitplan, 6 Spielen mit Anleitung, Einkaufsliste und Kosten pro Kind. Auch für Jungen...",
   "introParagraph": "3 fertige Party-Konzepte: Minimal (1,5 Std.) · Standard (2 Std.) · Wow (2,5 Std.)\n\nMinutengenaue Zeitpläne, 6 altersgerechte Spiele mit kompletter Anleitung, Einkaufslisten mit Preisen und Kosten pro Kind. Für 3–5 Jahre: weniger Programm, viel Sensorik, kein Druck.\n\nAuch für Jungen sehr beliebt — Wald-Wächter-Variante mit Krieger-Flügeln und Schmetterlings-Brille. Geschlechts-offen als „Wald-Helfer\" oder „Blüten-Crew\" formulierbar.\n\n[🧚 Feen-Geburtstag planen →](/kindergeburtstag?motto=feen&alter=4#planer)",
   "ageInsight": {
     "headline": "Was du über 3–5-Jährige wissen musst — Feen-Party 3-5",
-    "traits": null,
+    "traits": [
+      {
+        "name": "Sensorik (taktil)",
+        "detail": "Reis-/Bluetenblaetter-Beruehrung beruhigt 3-Jaehrige. Glitzer fasziniert kurz aber ueberreizt schnell. Max 5 Min pro sensorischer Station, dann Wechsel."
+      },
+      {
+        "name": "Reiz-Reduktion",
+        "detail": "Musik max. 80 dB. Dunkelheit/Stimmung-Licht kann ueberforden (Dunkelangst typisch ab 3). Nie komplett abdunkeln — nur dimmen."
+      },
+      {
+        "name": "Aufmerksamkeitsspanne",
+        "detail": "Parallele Aufmerksamkeit max. 5 Min. Wechsel zwischen Sensorik + Bewegung + Pause. Feentanz: max. 3-4 Min."
+      },
+      {
+        "name": "Bindung an Eltern",
+        "detail": "3-Jaehrige brauchen Sichtkontakt zu Eltern. Eltern duerfen bleiben oder das Kind kurz holen. Kein Druck zur Teilnahme."
+      }
+    ],
     "whyMottoFits": "Feen sind DAS Sensorik-Motto für diese Altersgruppe: Blüten anfassen, Glitzer-Staub rieseln lassen, Schmetterlinge fangen, magische Steine bemalen. Keine komplexe Geschichte, kein Wettkampf, keine schwierigen Regeln. Ein paar Tüllflügel auf dem Rücken, eine Hand voll Blüten im Haar — und die Kinder sind im Feenwald. Funktioniert mühelos parallel mit 3-Jährigen UND 5-Jährigen, weil das Staunen über Natur-Magie altersunabhängig ist. Bonus: Jungen lieben die Wald-Wächter-Variante mit Schmetterlings-Brille und kräftigen Krieger-Flügeln genauso.",
     "whyMottoFitsHeadline": "🧚 Warum Feen für 3–5-Jährige perfekt funktionieren"
   },
   "signatureRitual": {
     "name": "Das Feen-Versprechen",
     "subtitle": "Für alle 3 Varianten",
-    "introText": "Jedes Kind bekommt beim Reinkommen seinen eigenen Blütennamen und seine ersten Feenflügel. Du bastelst vorher 12 gefaltete Zettel mit Blütennamen (Lavendel, Rose, Veilchen, Klatschmohn, Sonnenblume, Vergissmeinnicht, Glockenblume, Kornblume, Margerite, Schneeglöckchen, Löwenzahn, Mohn). In einer kleinen Holzschale (oder Bastel-Korb) liegen sie zwischen echten Blütenblättern (Rosenblätter aus dem Discounter, ~1,50 €). Jedes Kind greift rein, zieht einen Zettel, DU liest den Namen vor. Dann bekommt es seine Tüllflügel angesteckt mit Klettband — dazu sprichst du das Feen-Versprechen: „Du bist jetzt Lavendel, eine kleine Wald-Fee. Du versprichst, gut auf die Blüten aufzupassen?\" Das Kind nickt. Magie startet.",
+    "introText": "Jedes Kind bekommt beim Reinkommen seinen eigenen Blütennamen und seine ersten Feenflügel. Du bastelst vorher 12 gefaltete Zettel mit Blütennamen (Lavendel, Rose, Veilchen, Klatschmohn, Sonnenblume, Vergissmeinnicht, Glockenblume, Kornblume, Margerite, Schneeglöckchen, Löwenzahn, Waldmoos). In einer kleinen Holzschale (oder Bastel-Korb) liegen sie zwischen echten Blütenblättern (Rosenblätter aus dem Discounter, ~1,50 €). Jedes Kind greift rein, zieht einen Zettel, DU liest den Namen vor. Dann bekommt es seine Tüllflügel angesteckt mit Klettband — dazu sprichst du das Feen-Versprechen: „Du bist jetzt Lavendel, eine kleine Wald-Fee. Du versprichst, gut auf die Blüten aufzupassen?\" Das Kind nickt. Magie startet.",
     "setupSteps": [],
     "rolesList": [
       {
@@ -144,7 +161,8 @@
           "indoorTip": "Wohnzimmer-Boden mit Tüchern als „Wiese\" auslegen — Schmetterlinge landen in der Wiese.",
           "outdoorTip": "Im Garten in echte Blumenkübel/Töpfe legen — wirkt extra magisch.",
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "ageAdjust3": "Fuer 3-Jaehrige: Tuellball-Wurf-Distanz auf 1 m, langsamer Wurf. Eltern fangen mit, kein Wettbewerb. Max 3 Tueller-Schmetterlinge gleichzeitig (Reiz-Reduktion)."
         },
         {
           "name": "💎 Magische Steine bemalen",
@@ -163,7 +181,28 @@
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "ageAdjust3": "Fuer 3-Jaehrige: Nur dicke Wasser-Filzstifte, 1 Stein pro Kind, Erwachsener haelt den Stein fest. Statt Buchstaben nur Punkte tupfen."
+        },
+        {
+          "name": "✨ Glitzer-Staub-Suche (Minimal)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 10,
+          "minAge": 3,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "3-4 grosse Plastik-Figuren (min. 5 cm), 1 Schale Reis, essbarer Glitzer-Streuer",
+          "prepText": "Reis mit essbarem Glitzer in die Wanne. Schmetterlinge + Marienkäfer im Reis vergraben. Jedes Kind bekommt einen Löffel und gräbt vorsichtig. Wer einen Schmetterling findet, darf ihn behalten — landet später in der Mitgebsel-Tüte.",
+          "steps": [],
+          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: NUR essbaren Glitzer verwenden (Backabteilung), kein Bastel-Glitzer — der kann in Atemwege/Augen gelangen. Mini-Figuren min. 4 cm — Verschluckungsgefahr. Kinder nicht alleine graben lassen. Reis nicht in die Augen — bei Augenkontakt mit Wasser spülen, ggf. Augenarzt.",
+          "ageAdjust6": "Figuren nur leicht bedecken. Reis statt Sand (wiederverwendbar, weniger Sauerei). Auf alter Tischdecke oder in Badewanne aufstellen — Glitzer wandert weniger.",
+          "ageAdjust8": "Tiefer vergraben. Augen zu und nur ertasten — welche Figur ist das (Schmetterling oder Marienkäfer)?",
+          "indoorTip": "In der Badewanne aufstellen — Glitzer wandert weniger, Kinder sitzen drumherum.",
+          "outdoorTip": "Auf einer Picknickdecke im Garten — Reis kann liegen bleiben, Vögel räumen den Rest auf.",
+          "whyItWorksTitle": null,
+          "whyItWorks": null,
+          "ageAdjust3": "Fuer 3-Jaehrige: Nur 3-4 grosse Figuren (min. 5 cm), flach auf den Reis gelegt nicht vergraben — Buddeln frustriert 3-Jaehrige. Erwachsener begleitet die Suche."
         }
       ],
       "food": "🎂 Vanille-Kuchen mit rosa Buttercreme + essbaren Blüten (1 Gugelhupf)\n💧 „Blüten-Limo\" (Apfelschorle + Blütenblatt obendrauf, 6 Trinkpäckchen)\n🍓 Beeren-Mix (Erdbeeren + Heidelbeeren, 250 g)\n🥨 Salzige Brezel-Sticks (1 Packung)\n\n💡 „Blüten-Limo\"?\nApfelschorle oder klare Limo, 1 essbares Blütenblatt obendrauf (Stiefmütterchen, Gänseblümchen — Bio-Hof oder selber pflücken, ungespritzt). Sieht aus wie Hexenmagie, kostet nix extra. 3-Jährige sind hin und weg.",
@@ -324,7 +363,8 @@
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "ageAdjust3": "Fuer 3-Jaehrige: Vorgefertigte Stirnbaender mit Klett (kein Faedeln, kein Tacker). Bluetenblaetter selbst aufkleben mit Aufkleber-Klebepunkten."
         },
         {
           "name": "✨ Glitzer-Staub-Suche",
@@ -343,7 +383,8 @@
           "indoorTip": "In der Badewanne aufstellen — Glitzer wandert weniger, Kinder sitzen drumherum.",
           "outdoorTip": "Auf einer Picknickdecke im Garten — Reis kann liegen bleiben, Vögel räumen den Rest auf.",
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "ageAdjust3": "Fuer 3-Jaehrige: Nur 3-4 grosse Figuren (min. 5 cm), flach auf den Reis gelegt nicht vergraben — Buddeln frustriert 3-Jaehrige. Erwachsener begleitet die Suche."
         },
         {
           "name": "💎 Magische Steine bemalen",
@@ -362,7 +403,8 @@
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "ageAdjust3": "Fuer 3-Jaehrige: Nur dicke Wasser-Filzstifte, 1 Stein pro Kind, Erwachsener haelt den Stein fest. Statt Buchstaben nur Punkte tupfen."
         },
         {
           "name": "🦋 Feentanz mit Schleier",
@@ -381,7 +423,8 @@
           "indoorTip": "Möbel zur Seite schieben — die Schleier brauchen Platz zum Schwingen.",
           "outdoorTip": "Im Garten auf weichem Rasen — Kinder fallen seltener, Sturz weicher.",
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "ageAdjust3": "Fuer 3-Jaehrige: Musik max. 80 dB, Tanz max. 3-4 Min, dann ruhige Pause. Schleier nicht ueber den Kopf wickeln, nur in der Hand halten."
         }
       ],
       "food": "🎂 Vanille-Kuchen mit rosa Buttercreme + essbaren Blüten + Glitzer (1 Gugelhupf)\n💧 Blüten-Limo (8 Trinkpäckchen + Blütenblatt)\n🍓 Rosa Obst-Teller (Erdbeeren, Himbeeren, rosa Trauben)\n🥒 Gemüse-Sticks (Gurke, Möhre, Paprika)\n🥨 Brezel-Sticks (200 g)\n🍪 Stiefmütterchen-Kekse (fertig kaufen + selber dekorieren)",
@@ -566,7 +609,8 @@
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "ageAdjust3": "Fuer 3-Jaehrige: Vorgefertigte Stirnbaender mit Klett (kein Faedeln, kein Tacker). Bluetenblaetter selbst aufkleben mit Aufkleber-Klebepunkten."
         },
         {
           "name": "✨ Glitzer-Staub-Suche",
@@ -585,7 +629,8 @@
           "indoorTip": "Badewanne als Container.",
           "outdoorTip": "Picknickdecke im Garten.",
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "ageAdjust3": "Fuer 3-Jaehrige: Nur 3-4 grosse Figuren (min. 5 cm), flach auf den Reis gelegt nicht vergraben — Buddeln frustriert 3-Jaehrige. Erwachsener begleitet die Suche."
         },
         {
           "name": "💎 Magische Steine bemalen",
@@ -604,7 +649,8 @@
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "ageAdjust3": "Fuer 3-Jaehrige: Nur dicke Wasser-Filzstifte, 1 Stein pro Kind, Erwachsener haelt den Stein fest. Statt Buchstaben nur Punkte tupfen."
         },
         {
           "name": "🪄 Feenflügel-Stäbchen basteln",
@@ -623,7 +669,8 @@
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "ageAdjust3": "Fuer 3-Jaehrige: Aufmerksamkeit max. 5 Min, dann Wechsel oder Pause. Erwachsener begleitet immer. Eltern duerfen jederzeit pausieren ohne Druck."
         }
       ],
       "food": "🎂 Vanille-Kuchen mit rosa Buttercreme + essbaren Blüten + Glitzer (1 Gugelhupf)\n💧 Blüten-Limo (10 Trinkpäckchen + Blütenblatt)\n🍪 Stiefmütterchen-Kekse (fertig + selber dekoriert, 15 Stk.)\n🍓 Rosa Obst-Teller (Erdbeeren, Himbeeren, rosa Trauben)\n🥒 Gemüse-Sticks (Gurke, Möhre, Paprika)\n🥨 Brezel-Sticks (200 g)\n🍭 Gummibärchen (1 Tüte 200 g)\n\n💡 Stiefmütterchen-Kekse ohne Backen:\nFertige Butterkekse (~2 €) mit rosa Glasur bestreichen (Puderzucker + 1 Tropfen Lebensmittelfarbe), 1 essbares Stiefmütterchen oder Gänseblümchen obendrauf. 15 Kekse in 15 Minuten. Sieht aus wie aus dem Feenwald-Café.",
