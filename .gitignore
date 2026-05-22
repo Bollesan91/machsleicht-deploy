@@ -6,3 +6,12 @@ desktop.ini
 ~$*
 dev-server.bat
 .claude/worktrees/
+
+# LibreOffice / OpenOffice Lock-Files
+.~lock.*
+# Editor-Tempfiles
+*.tmp
+*.bak
+# Claude-Test-Reste
+.claude/cowork-test.txt
+.claude/test-write.txt
