@@ -701,7 +701,7 @@
         {
           "name": "🎨 Phantombild-Station (Bonus-Modul)",
           "indoor": true,
-          "outdoor": false,
+          "outdoor": true,
           "duration": 15,
           "minAge": 9,
           "loudness": "leise",
@@ -739,7 +739,7 @@
           "ageAdjust9": "Vereinfachte Beschreibung mit nur 3 Merkmalen. Vorgezeichnetes Gesicht ist halb fertig — nur Brille/Haare ergänzen.",
           "ageAdjust12": "Detailreiche Beschreibung (7-8 Merkmale), keine Vorlage — leeres Blatt. Wer mag, zeichnet zwei Versionen (Frontal + Profil) wie auf einer echten Fahndungs-Akte.",
           "indoorTip": "Am Esstisch mit guter Beleuchtung — Zeichnen braucht Licht. Bleistifte mit weicher Mine (B oder 2B) gehen leichter.",
-          "outdoorTip": null,
+          "outdoorTip": "Am Gartentisch mit Klemmbrett-Unterlage — bei Wind die Vorlagen mit Waescheklammern fixieren, Schatten suchen damit das Papier nicht blendet.",
           "whyItWorksTitle": "Beschreiben üben — wichtiger als Talent",
           "whyItWorks": "Phantombild-Zeichnen ist Genauigkeit, keine Kunst: Wie präzise übersetzt das Hirn Wörter in Bilder? Auch nicht-zeichnerische Kinder kommen gut zurecht, weil es um Merkmale geht. Der direkte Abgleich mit den Verdächtigen-Karten gibt einen klaren Aha-Moment, der den Plot-Twist sichtbar macht."
         },
@@ -1352,7 +1352,8 @@
       "savingsTip": {
         "title": "Die Detektiv-Hüte sind optional",
         "body": "Die 143 € sind ohne die Detektiv-Hüte gerechnet — die kosten als Highlight zusätzlich 70-110 € für 10 Kinder. Die Party trägt auch ohne sie: Die eigene UV-Geheimkarte aus der Werkstatt plus UV-Stift ist ein vollwertiges, persönlicheres Mitgebsel. UV-Taschenlampen brauchst du nur, wenn wirklich eine Schlafparty mit Nacht-Spurensuche geplant ist. Wraps und Zweitkuchen lassen sich streichen, wenn die Gruppe kleiner bleibt. Absperrband (5 €) ersetzt fast die komplette gekaufte Deko."
-      }
+      },
+      "ageNote": "Empfohlen ab 10 Jahren — zwei Module (Kreuzverhoer, UV-Nacht-Spurensuche) sind fuer 9-Jaehrige nicht freigegeben (minAge=10). Bei reiner 9-Jahre-Gruppe diese durch Standard-Verhoer bzw. fruehen Abschluss ersetzen."
     }
   ],
   "cakeRecipe": {
@@ -1440,6 +1441,10 @@
       {
         "topic": "🌳 Garten-Erweiterung für die Wow-Variante",
         "detail": "Garten ist Pflicht-Plus für die TRESOR-Schatzsuche und die UV-Nacht-Spurensuche. Spuren-Sicherung im Beet (echter Schuhabdruck im Sand) wirkt 10× authentischer als drinnen. Aber: Alle 5 Standard-Stationen funktionieren komplett indoor — der Garten ist Ergänzung, nicht Voraussetzung. Vor der Schlafparty-Nacht-Spurensuche: Stolperfallen im Dunkeln vorher entschärfen."
+      },
+      {
+        "topic": "📷 DSGVO bei Kinder-Fotos",
+        "detail": "Fotos von Gaestekindern nur mit kurzer Rueckfrage bei den Eltern (muendlich beim Bringen reicht). Sofortbilder auf den Ausweis sind unkritisch, weil sie beim Kind bleiben — ein gemeinsames \"Beweis-Album\" oder das Posten von Fotos nur mit Einverstaendnis. Beim \"Tatort-Fotograf\"-Rollenspiel kann statt Gesichtern auch nur die Tatort-Szene fotografiert werden."
       }
     ],
     "educationalValue": "Was die Kinder mitnehmen: forensische Grundtechniken (Fingerabdruck mit Graphit und Klebeband sichern, Fasern und Spuren vergleichen), Ermittler-Logik (ein einzelnes Indiz beweist nichts, das stärkste Motiv macht nicht den Täter), das Prüfen von Aussagen gegen eine Zeitleiste statt gegen das Bauchgefühl, echte Kryptografie (Caesar-Chiffre und Zahlen-Codes selbst lösen) und Kooperation zwischen Spezialisierungen, von denen keine allein zum Ziel kommt. Die Leitidee „im Ermittlungsdienst zählt, wer am genauesten hinschaut, nicht wer am schnellsten beschuldigt“ trägt durch die ganze Party."
