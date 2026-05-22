@@ -10917,20 +10917,20 @@ var ELITE_MOTTO_DATA = {
             "codeMechanic": "Chiffre: Tierspur-Symbol -> Anlaut-Buchstabe. Pro Quadrant 6 Symbolkarten ausgedruckt. Beispiel: Spuren-Symbol von Pfote = \"P\" (fuer Panther) -> Wort bauen. Selbstkontrolle: ergibt sich ein echtes Wort (WASSER/FELS/TEMPEL), war die Loesung richtig. 15 Min Setup: Tier-Spur-Karten am Vorabend aus Vorlage drucken.",
             "animalFacts": [
               {
-                "tier": "Loewe",
+                "tier": "Löwe",
                 "spurbild": "rund, 4 Zehen, ohne Krallen",
                 "habitat": "Savanne",
-                "merkmal": "Maehne nur beim Maennchen"
+                "merkmal": "Mähne nur beim Maennchen"
               },
               {
                 "tier": "Elefant",
                 "spurbild": "oval, 5 Zehen vorn 4 hinten",
                 "habitat": "Savanne/Wald",
-                "merkmal": "Ohren bei Afrika groesser als Asien"
+                "merkmal": "Ohren bei Afrika größer als Asien"
               },
               {
                 "tier": "Gepard",
-                "spurbild": "schmaler als Loewe, Krallenabdrücke sichtbar",
+                "spurbild": "schmaler als Löwe, Krallenabdrücke sichtbar",
                 "habitat": "offene Savanne",
                 "merkmal": "einziges Katzentier mit nicht-einziehbaren Krallen"
               },
@@ -10953,7 +10953,7 @@ var ELITE_MOTTO_DATA = {
                 "merkmal": "jedes Streifenmuster einzigartig wie Fingerabdruck"
               },
               {
-                "tier": "Erdmaennchen",
+                "tier": "Erdmännchen",
                 "spurbild": "klein, 5 Zehen mit Krallen",
                 "habitat": "Wueste/Halbwueste",
                 "merkmal": "Waechter steht aufrecht"
@@ -11356,57 +11356,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Gartentor oder Terrassentür als TOR markieren.",
             "whyItWorksTitle": "Jede Spezialisierung ist nötig",
             "whyItWorks": "Wer eine Station nicht knackt, holt sich einen Spezialisten dazu, der seinen Code schon hat — gelöst wird gemeinsam, niemand bleibt hängen. Am Ende bekommt jedes Kind die volle Spezialisten-Lizenz, ohne Abstufung. Wer besonders sorgfältig beobachtet oder recherchiert hat, kriegt einen „Sorgfalt-Spezialist“-Stempel auf die Lizenz — passt zur Hero-Botschaft „im Reservat zählt nicht, wer der Schnellste ist, sondern wer hinschaut“. Tempo wird hier nicht extra belohnt.",
-            "codeMechanic": "Chiffre: Tierspur-Symbol -> Anlaut-Buchstabe. Pro Quadrant 6 Symbolkarten ausgedruckt. Beispiel: Spuren-Symbol von Pfote = \"P\" (fuer Panther) -> Wort bauen. Selbstkontrolle: ergibt sich ein echtes Wort (WASSER/FELS/TEMPEL), war die Loesung richtig. 15 Min Setup: Tier-Spur-Karten am Vorabend aus Vorlage drucken.",
-            "animalFacts": [
-              {
-                "tier": "Loewe",
-                "spurbild": "rund, 4 Zehen, ohne Krallen",
-                "habitat": "Savanne",
-                "merkmal": "Maehne nur beim Maennchen"
-              },
-              {
-                "tier": "Elefant",
-                "spurbild": "oval, 5 Zehen vorn 4 hinten",
-                "habitat": "Savanne/Wald",
-                "merkmal": "Ohren bei Afrika groesser als Asien"
-              },
-              {
-                "tier": "Gepard",
-                "spurbild": "schmaler als Loewe, Krallenabdrücke sichtbar",
-                "habitat": "offene Savanne",
-                "merkmal": "einziges Katzentier mit nicht-einziehbaren Krallen"
-              },
-              {
-                "tier": "Giraffe",
-                "spurbild": "spaltig, 2 Hufzehen, sehr gross",
-                "habitat": "Savanne",
-                "merkmal": "7 Halswirbel wie Mensch"
-              },
-              {
-                "tier": "Nashorn",
-                "spurbild": "rund, 3 Zehen-Abdrucke",
-                "habitat": "Savanne/Buschland",
-                "merkmal": "Horn ist Haar, kein Knochen"
-              },
-              {
-                "tier": "Zebra",
-                "spurbild": "huf-foermig, einzelne Zehe",
-                "habitat": "Savanne",
-                "merkmal": "jedes Streifenmuster einzigartig wie Fingerabdruck"
-              },
-              {
-                "tier": "Erdmaennchen",
-                "spurbild": "klein, 5 Zehen mit Krallen",
-                "habitat": "Wueste/Halbwueste",
-                "merkmal": "Waechter steht aufrecht"
-              },
-              {
-                "tier": "Flusspferd",
-                "spurbild": "rund, 4 Zehen, sehr breit",
-                "habitat": "Wasser",
-                "merkmal": "gefaehrlichstes Saeugetier Afrikas trotz Pflanzenfresser"
-              }
-            ]
+            "codeMechanic": "Falsch-Tier-Logik: pro Umschlag das gebietsfremde Tier identifizieren — sein Anfangsbuchstabe ergibt die Code-Ziffer. Bei 3 Stationen ergibt sich Lösungswort TOR (Tiger / Orang-Utan / Renntier — alle drei sind NICHT im afrikanischen Reservat heimisch). Selbstkontrolle: ergibt sich kein sinnvolles Wort, war ein Tier falsch identifiziert."
           },
           {
             "name": "🗺️ Die Karte vermessen — Hauptmission",
@@ -11685,37 +11635,47 @@ var ELITE_MOTTO_DATA = {
             "loudness": "laut",
             "effort": "aufwendig",
             "material": "5 Stations-Setups durch Garten/Wohnung (Tier-Karten, Foto-Ausschnitte, Fährten-Karte, raschelnde Pirsch-Strecke, Reservat-Karte mit Lücken), 5 Umschläge mit Buchstaben, ein Tempel (Schuhkarton mit Goldfolie + Vorhängeschloss-Aufkleber). Optional: machsleicht-Schatzsuche-Generator für die Rätsel.",
-            "prepText": "Setting: „Wilderer haben die Tempel-Karte abgefangen, sind aber noch nicht am Tempel. Wir haben Vorsprung — wenn wir die Codes schneller lösen, retten wir die Schätze.“ 5 Stationen in vorgegebener Reihenfolge, jede ruft eine Spezialisierungs-Fähigkeit ab. Aus jeder Station kommt ein Buchstabe — zusammen TEMPEL.",
+            "prepText": "TEMPEL-Schatzsuche: 6 Stationen liefern je einen Buchstaben des Lösungsworts TEMPEL (T-E-M-P-E-L). Vorab Station-Karten + Buchstaben-Schloss vorbereiten. Selbstkontrolle eingebaut über Wort-Erkennung. SCHUTZGEBIET-Konzept ist nicht Teil der Mechanik — wer das im alten Plan sah, bitte überspringen.",
             "steps": [
               {
                 "n": 1,
-                "name": "Station 1 (Späher)",
-                "content": "6 Tier-Karten, eines lebt in Asien (Tiger). Welches gehört nicht ins Reservat? → T."
+                "name": "Station 1: Spurenleser",
+                "content": "Welches Tier hat 3 Krallen vorne, 4 hinten? Tapir-Spur identifizieren → Anfangsbuchstabe TAPIR = T (erste Ziffer/Buchstabe)."
               },
               {
                 "n": 2,
-                "name": "Station 2 (Foto) → E",
-                "content": "4 Tiere alphabetisch ordnen: Elefant, Löwe, Strauß, Zebra. Erstes Tier = Elefant → E."
+                "name": "Station 2: Reservats-Quiz",
+                "content": "Welches Tier ist in Afrika endemisch? Elefant/Erdmännchen/etc. Antwort ELEFANT → Anfangsbuchstabe E (zweite Position)."
               },
               {
                 "n": 3,
-                "name": "Station 3 (Spuren) → M",
-                "content": "5 Fährten, eine von einem Tier ohne Beine. Kriech-Spur = Mamba (so beschriftet) → M."
+                "name": "Station 3: Pirsch-Test",
+                "content": "Lautlos durch 6 Hindernisse pirschen. Wer es schafft, deckt Karte mit Anfangsbuchstabe MAMBA = M auf (dritte Position)."
               },
               {
                 "n": 4,
-                "name": "Station 4 (Pirsch) → P",
-                "content": "6-Meter-Strecke mit 5 raschelnden Hindernissen lautlos schaffen. Spielleiter öffnet Umschlag P (Pirsch)."
+                "name": "Station 4: Tarn-Wettkampf",
+                "content": "Schnellstes Tarn-Tuch erkennen + zuordnen. Anfangsbuchstabe PYTHON = P (vierte Position)."
               },
               {
                 "n": 5,
-                "name": "Station 5 (Tempel-Schloss)",
-                "content": "3 fehlende Buchstaben: T (Ort des falschen Tigers) plus E, L (am Tempel-Tor). Vorne T, hinten EL → SCHUTZGEBIET."
+                "name": "Station 5: Tier-Stimmen-Quiz",
+                "content": "Geräusche raten. Korrekt: ELEFANT (Trompeten-Laut) → wiederholter Buchstabe E (fünfte Position — gleicher Buchstabe wie Station 2 ist OK, weil andere Station, andere Aufgabe)."
               },
               {
                 "n": 6,
-                "name": "Tempel öffnen",
-                "content": "Mit dem Lösungswort zum Tempel laufen, Schloss-Aufkleber abziehen, Schätze (Mitgebsel) sichern."
+                "name": "Station 6: Reservats-Schluss",
+                "content": "Letzte Aufgabe: Lautstärkstes Land-Tier. Antwort LÖWE → Anfangsbuchstabe L (sechste Position)."
+              },
+              {
+                "n": 7,
+                "name": "Lösungswort zusammenführen",
+                "content": "Die 6 Buchstaben in Stations-Reihenfolge sortieren: T-E-M-P-E-L = TEMPEL. Schloss-Code = TEMPEL. Selbstkontrolle: ergibt das Wort keinen Sinn (z.B. T-E-M-P-E-T), war mindestens eine Station falsch — Reihenfolge prüfen."
+              },
+              {
+                "n": 8,
+                "name": "Schatz heben",
+                "content": "Mit dem Lösungswort TEMPEL zum Versteck laufen (Goldfolien-Karton mit Schloss), Buchstaben-Schloss öffnet sich, Mitgebsel als Schätze verteilen."
               }
             ],
             "safetyRule": "Bei Garten-Stationen im Dunkeln auf Stolperfallen achten — Stationen vor Einbruch der Dunkelheit ablaufen.",
