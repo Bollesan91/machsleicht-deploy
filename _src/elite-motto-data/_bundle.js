@@ -17206,8 +17206,8 @@ var ELITE_MOTTO_DATA = {
       {
         "id": "minimal",
         "label": "Minimal — 2 Stunden, minimaler Aufwand",
-        "headline": "Tipp: Für draußen: Schatzkarte aus Tee-gefärbtem Papier basteln (Ränder ansengen, Tee darüber — sieht alt aus). 10 Min. extra Vorbereitung, riesiger Wow-Effekt.",
-        "intro": null,
+        "headline": "Minimal — die Piraten-Crew-Party (2 Std., 6 Kinder)",
+        "intro": "Für 6-8-Jährige: vier echte Stationen, sauberer Spannungsbogen vom Aufnahme-Ritual bis zur Schatz-Vergabe. Kein Wettkampf-Druck, jedes Kind ist gleichwertige Crew.",
         "timeWindow": "14:00–16:00, 6 Kinder",
         "schedule": [
           {
@@ -17378,8 +17378,8 @@ var ELITE_MOTTO_DATA = {
       {
         "id": "standard",
         "label": "Standard — 3 Stunden, vollständige Schicht",
-        "headline": "Tipp: Erstelle mit dem machsleicht-Planer eine [fertige Piraten-Schnitzeljagd](/kindergeburtstag?motto=piraten&alter=7&modus=schatzsuche) mit 5 Stationen, Schatzkarte und Hinweis-Zetteln — druckfertig.",
-        "intro": null,
+        "headline": "Standard — die Piraten-Schatzsuche (2,5 Std., 8 Kinder)",
+        "intro": "Vier Stationen + 1 Reserve-Spiel. Knoten-Werkstatt, Codeknacker und Schatzsuche im Wechsel. Mit Crew-Foto und Sorgfalt-Stempel — niemand wird ausgeschlossen.",
         "timeWindow": "14:00–17:00, 6 Kinder",
         "schedule": [
           {
@@ -17728,7 +17728,7 @@ var ELITE_MOTTO_DATA = {
         "id": "wow",
         "label": "Wow — 3,5 Stunden, die volle Schicht",
         "headline": "Wow — die Piraten-Schatzsuche mit Schlafparty (3,5 Std., 8 Kinder)",
-        "intro": "In 30 Sekunden fertig — mit Name, Datum und einem Piraten-Abenteuer als Vorgeschmack.",
+        "intro": "Vier Spiele + Schlafparty: Knoten, Codeknacker, Nacht-Schatzsuche und Frühstück am nächsten Morgen. Ab 7 Jahren empfohlen, Schlafparty-Heimweh-Plan inklusive.",
         "timeWindow": "14:00–17:30, 6 Kinder",
         "schedule": [
           {
