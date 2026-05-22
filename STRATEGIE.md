@@ -67,7 +67,7 @@
 
 **Was NICHT zur Diskussion steht:**
 - Re-Aktivierung einzelner Lizenz-Mottos. Die Entscheidung ist final — Wiedereinführung würde alle vier Begründungen wieder aktivieren.
-- Meerjungfrau-Wiedereinführung als Voll-Motto. Zwar im Backlog gesehen, aber: **gestrichen.** Konkurrenz im SEO zu hart (Disney Arielle), Tool-Aufbau ohne klaren Mehrwert gegenüber Einhorn (gleiches Mädchen-Spektrum 4–8). Wenn ein 8. Voll-Motto kommen soll, dann **Prinzessin** (geschlechtsneutraler Suchbegriff, weniger Disney-Lock-in) oder **Superheld** (siehe `/einladung/superheld/` als Vorarbeit).
+- ~~Meerjungfrau-Wiedereinführung als Voll-Motto. Zwar im Backlog gesehen, aber: **gestrichen.**~~ **REAKTIVIERT 22.05.2026** als 8. Voll-Motto. Re-Eval-Begründung: "Meerjungfrau" ist generischer Begriff (nicht Disney-Marke wie "Arielle"); eigenes Suchvolumen, Pinterest-tauglich, komplementär zum Einhorn-Cluster (anderes Persönlichkeits-Spektrum: Wasser/Schuppen statt Glitzer/Pastell). Phase-B-Elite-JSONs am 21.05. gebaut, Hub-Page + Schatzsuche-Theme folgen. **Disney-Vermeidungs-Richtlinie:** Im Content nie "Arielle"/"Ariel" verwenden, keine rothaarige-Meerjungfrau-Visuals, keine "Unter dem Meer"-Anspielungen, kein Triton/Sebastian/Flounder. Generisch: türkis/blau, Schuppen, Korallen, Muscheln, Perlen, Ozean, Wellen.
 
 **Validator-Guard:** `validate-all.sh` Stufe 8 prüft seit 30.04.2026 dass keine veralteten Zahlen („17 Mottos", „153 Spiele") und keine Lizenz-Motto-Pages/-Verlinkungen mehr im Repo existieren. Wenn das jemals wieder failt, ist es eine Regression.
 
