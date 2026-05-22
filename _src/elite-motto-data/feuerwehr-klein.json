@@ -5,7 +5,7 @@
     "schema_version": "1.0",
     "purpose": "Feuerwehr 3-5 (klein) — Phase C #2 Elite-Slot",
     "phase_b_complete": "2026-05-19",
-    "phase_b_method": "Direct draft — klein-spezifika (Eltern Co-Aufsicht, max 5 Kinder, 1.5-2h, keine Sirene, keine Wunderkerze) durchgehend angewandt."
+    "phase_b_method": "Direct draft — klein-spezifika (Eltern Co-Aufsicht, max 5 Kinder, 1.5-2h, keine Hand-Signal \"Notruf!\" + leiser Spruch. keine Wunderkerze) durchgehend angewandt."
   },
   "motto": "feuerwehr",
   "ageGroup": "klein",
@@ -58,7 +58,7 @@
     "setupSteps": [
       {
         "title": "Helme bereitstellen + Aufkleber-Box vorbereiten",
-        "content": "5 Pappkarton-Helme (einer pro Kind, ~3 €/Stück oder Schuhkartons selbst rot anmalen) liegen auf dem Tisch. Daneben eine kleine Box (Schuhkarton reicht) mit den 5 Aufkleber-Bögen — jeweils ein Funktions-Bildchen (Schlauch, Pflaster, Sirene, Schwimmreif, Helm)."
+        "content": "5 Pappkarton-Helme (einer pro Kind, ~3 €/Stück oder Schuhkartons selbst rot anmalen) liegen auf dem Tisch. Daneben eine kleine Box (Schuhkarton reicht) mit den 5 Aufkleber-Bögen — jeweils ein Funktions-Bildchen (Schlauch, Pflaster, Hand-Signal \"Notruf!\" + leiser Spruch. Schwimmreif, Helm)."
       },
       {
         "title": "Kind kommt an",
@@ -88,7 +88,7 @@
         {
           "time": "15:00",
           "title": "🚒 Schicht-Appell & Helm-Probe",
-          "description": "Beim Reinkommen bekommt jedes Kind seinen Helm aufgesetzt + zieht einen Aufkleber-Dienstausweis (Schlauch/Pflaster/Sirene/Schwimmreif/Helm). Foto pro Kind. Sobald alle da sind: gemeinsamer Schichtbeginn-Spruch („Wir helfen, wo Hilfe gebraucht wird. Los geht's!\"). Eltern können beim Helm-Aufsetzen helfen — geht zu fünft schneller, als du allein."
+          "description": "Beim Reinkommen bekommt jedes Kind seinen Helm aufgesetzt + zieht einen Aufkleber-Dienstausweis (Schlauch/Pflaster/ Hand-Signal \"Notruf!\" + leiser Spruch. Foto pro Kind. Sobald alle da sind: gemeinsamer Schichtbeginn-Spruch („Wir helfen, wo Hilfe gebraucht wird. Los geht's!\"). Eltern können beim Helm-Aufsetzen helfen — geht zu fünft schneller, als du allein."
         },
         {
           "time": "15:15",
@@ -120,11 +120,11 @@
           "minAge": 3,
           "loudness": "ruhig",
           "effort": "leicht",
-          "material": "1–2 Dosen Rasierschaum (Drogerie-Eigenmarke, parfümfrei, ~3 € pro Dose), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder",
+          "material": "1–2 Dosen Rasierschaum (Drogerie-Eigenmarke, parfümfrei, ~3 € pro Dose), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
           "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
           "steps": [],
           "safetyRule": null,
-          "ageAdjust6": "Tiere nur leicht bedecken, Eltern müssen daneben sein. Manche schmieren sich gern Schaum ins Gesicht — okay, weglächeln, abwischen.",
+          "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt 5 Min mit klarem Wasser ausspülen.",
           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
           "indoorTip": null,
           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
@@ -151,7 +151,7 @@
           "whyItWorks": null
         }
       ],
-      "food": "🎂Feuerwehrauto-Kuchen1 Kastenform\n🥤Apfelschorle1,5 l\n🥨Brezeln1 Tüte\n🥒Gurkensticks1 Gurke\n\n💡 Bei 3–5 weniger ist mehr\nNicht überfüttern. 1 Kuchenstück + 1 kleines Glas Apfelschorle + ein paar Knabbersachen reicht. Die Kinder essen sowieso wenig — ihre Mägen sind klein und die Aufregung schiebt das Hungergefühl beiseite. Wenn du Würstchen anbietest: weiche, in kleine Stücke geschnitten (Erstickungsrisiko bei runden ganzen Würstchen). Süßigkeiten sparsam — eine Tafel Schoki halbiert reicht für 5 Kinder.",
+      "food": "🎂Feuerwehrauto-Kuchen1 Kastenform\n🥤Apfelschorle2 l\n🥨Brezeln1 Tüte\n🥒Gurkensticks1 Gurke\n\n💡 Bei 3–5 weniger ist mehr\nNicht überfüttern. 1 Kuchenstück + 1 kleines Glas Apfelschorle + ein paar Knabbersachen reicht. Die Kinder essen sowieso wenig — ihre Mägen sind klein und die Aufregung schiebt das Hungergefühl beiseite. Wenn du Würstchen anbietest: weiche, in kleine Stücke geschnitten (Erstickungsrisiko bei runden ganzen Würstchen). Süßigkeiten sparsam — eine Tafel Schoki halbiert reicht für 5 Kinder.",
       "decoration": "🎈 Rote Luftballons8 Stk. ~2 €Reichen für die Grundstimmung\n🚧 Absperrband am Eingang~6 €Kinder lieben das\n🖍️ Ausmalbilder auf dem TischKostenloskribbelbunt.de\n\n💡 Minimal-Deko-Regel:\n3 Dinge reichen: Ballons, Absperrband am Eingang, Ausmalbilder auf dem Tisch. Die Helme der Kinder + Aufkleber + die Schaum-Wanne SIND die Deko — es muss nicht der Wohnzimmer-Wand-Ballon-Bogen sein. Pinterest-Marathon ist verboten.",
       "giveaways": "⛑️ 1 Pappkarton-Helm (wenn nach 90 Min. noch intakt — meistens ja)\n🚒 1 Mini-Feuerwehrauto (selbst aus dem Schaum „gerettet\")\n💫 1 Aufkleber-Bogen Feuerwehr (3-5-tauglich, große Motive)\n🖍️ Das eigene Helm-Bild zum Mitnehmen\n🍭 1 kleine Tüte Gummibärchen\n🏆 Tag-1-Feuerwehrkind-Urkunde mit Funktion\n\nHelm separat (zu groß für die Tüte), Rest in rot-weiße Papiertüte (10 Stk. ~1–2 € bei DM/Action) mit „Crew-Geschenk für ___\" beschriften. Kosten: ~5,50 € pro Kind (inkl. Helm).",
       "shoppingList": [
@@ -273,7 +273,7 @@
         {
           "time": "15:30",
           "title": "🚨 Mini-Einsatz: Tiere retten",
-          "description": "DER Höhepunkt für die Kleinen. 20 Min. — Sirene vom Handy kurz an, Notruf, Crew geht durch die Wohnung und rettet 6–8 Kuscheltiere. Eltern begleiten. Anleitung unten. Wer das nicht vergisst, dann das."
+          "description": "DER Höhepunkt für die Kleinen. 20 Min. — Hand-Signal \"Notruf!\" + leiser Spruch. Notruf, Crew geht durch die Wohnung und rettet 6–8 Kuscheltiere. Eltern begleiten. Anleitung unten. Wer das nicht vergisst, dann das."
         },
         {
           "time": "15:50",
@@ -319,12 +319,12 @@
           "minAge": 3,
           "loudness": "mittel",
           "effort": "mittel",
-          "material": "Kurzer Sirenen-Sound vom Handy (10 Sekunden, NICHT 30 — bei 3-5 zu lang), 6–8 Kuscheltiere, 1 Pappkarton oder Decke als „Krankenhaus\", optional kleine Decken zum Abdecken der Tiere",
+          "material": "Kurzer Hand-Signal \"Notruf!\" + leiser Spruch. NICHT 30 — bei 3-5 zu lang), 6–8 Kuscheltiere, 1 Pappkarton oder Decke als „Krankenhaus\", optional kleine Decken zum Abdecken der Tiere",
           "prepText": "Vorbereitung 5 Min. vor dem Spiel: 6–8 Kuscheltiere im Wohnzimmer/Flur „verstecken\" — gut sichtbar (hinter Vorhang, unter Tisch, auf Stuhl), nicht zu schwer zu finden. Bei 3-5 ist das Finden Teil des Spaßes, nicht die Herausforderung.",
           "steps": [
             {
               "n": 1,
-              "name": "Sirene",
+              "name": "Hand-Signal \"Notruf!\" + leiser Spruch.",
               "content": "10 Sek. vom Handy (nicht zu laut — kann erschrecken). Du sagst dramatisch: „Ein Notruf! Hilfe gebraucht!\""
             },
             {
@@ -364,7 +364,7 @@
           "minAge": 3,
           "loudness": "ruhig",
           "effort": "leicht",
-          "material": "Wie in Minimal-Variante. Rasierschaum + Spielzeug-Tiere + Wanne + Pinsel.",
+          "material": "Wie in Minimal-Variante. Rasierschaum + Spielzeug-Tiere + Wanne + Pinsel. (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
           "prepText": "Wie in Minimal-Variante (siehe oben). Funktioniert als ruhiger Abschluss perfekt — die Kinder kommen runter, dürfen taktil arbeiten, und retten nochmal etwas. Ankerpunkt für die Stimmung vor der Urkunden-Übergabe.",
           "steps": [],
           "safetyRule": null,
@@ -517,7 +517,7 @@
         {
           "time": "15:20",
           "title": "🚨 Mini-Einsatz mit Parcours",
-          "description": "25 Min. — Wow-Variante: zwischen Crew und Tieren ist ein kleiner Parcours (über Kissen klettern, durch einen Tunnel-Karton kriechen, unter einem Stuhl durch). Sirene + Notruf wie in Standard. Eltern führen jedes Kind durch den Parcours. Anleitung unten."
+          "description": "25 Min. — Wow-Variante: zwischen Crew und Tieren ist ein kleiner Parcours (über Kissen klettern, durch einen Tunnel-Karton kriechen, unter einem Stuhl durch). Hand-Signal \"Notruf!\" + leiser Spruch. Eltern führen jedes Kind durch den Parcours. Anleitung unten."
         },
         {
           "time": "15:45",
@@ -545,7 +545,7 @@
           "loudness": null,
           "effort": "leicht",
           "material": "5 weiße/unbedruckte [Pappkarton-Helme zum Bemalen](https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht-21)* (~4 €/Stück), dicke Filzstifte (rot, blau, gelb, schwarz), [große Feuerwehr-Aufkleber](https://www.amazon.de/s?k=feuerwehr+sticker+kinder+gross&tag=machsleicht-21)* (~5 €), optional Glitzer-Kleber, alte Tischdecke unterlegen, Eltern-Hilfe!",
-          "prepText": "Ankunfts-Aktivität: Helme + Stifte liegen schon auf dem Tisch. Jedes Kind nimmt einen Helm und bemalt ihn — rote Streifen, „112\" drauf, Aufkleber von Schlauchsymbolen oder Sirenen, Glitzer, was sie wollen. Keine Vorgabe, keine Bewertung.\n\nEltern dürfen helfen — gerade bei 3-Jährigen, die Mühe mit Filzstift-Druck haben. Kein Helm muss „gut\" werden — der Wert ist, dass es ihrer ist.",
+          "prepText": "Ankunfts-Aktivität: Helme + Stifte liegen schon auf dem Tisch. Jedes Kind nimmt einen Helm und bemalt ihn — rote Streifen, „112\" drauf, Aufkleber von Schlauchsymbolen oder Hand-Signal \"Notruf!\" + leiser Spruch. Glitzer, was sie wollen. Keine Vorgabe, keine Bewertung.\n\nEltern dürfen helfen — gerade bei 3-Jährigen, die Mühe mit Filzstift-Druck haben. Kein Helm muss „gut\" werden — der Wert ist, dass es ihrer ist.",
           "steps": [],
           "safetyRule": null,
           "ageAdjust6": "Kritzeln ist Bemalen. Aufkleber sind die Hauptfreude — Filzstift sekundär. Eltern müssen daneben sitzen.",
@@ -632,8 +632,8 @@
           "whyItWorks": null
         }
       ],
-      "food": "🎂Feuerwehrauto-Kuchen1 Kastenform + Wunderkerze\n🥤Apfelschorle2 l\n🥨Brezeln + Salzstangenje 1 Tüte\n🥒Gemüsesticks + HummusGurke + Möhre\n🌭Mini-Würstchen (weich)10 Stk., klein geschnitten\n🍓Erdbeeren / Beeren200 g",
-      "decoration": "🚒 Feuerwehr-Teller & BecherSet ~8 €\n🚧 Absperrband (50 m)~6 €\n🎈 Rote Luftballons12 Stk. ~4 €\n⛑️ Weiße Pappkarton-Helme zum Bemalen5 Stk. ~20 €Highlight-Material\n📺 Kurzer Sirene-Loop auf HandyKostenlos10 Sekunden, NICHT 30\n📸 Polaroid oder Sofortdruck~10 €Rossmann/dm Sofortdruck",
+      "food": "🎂Feuerwehrauto-Kuchen1 Kastenform + \n🥤Apfelschorle2 l\n🥨Brezeln + Salzstangenje 1 Tüte\n🥒Gemüsesticks + HummusGurke + Möhre\n🌭Mini-Würstchen (weich)10 Stk., klein geschnitten\n🍓Erdbeeren / Beeren200 g",
+      "decoration": "🚒 Feuerwehr-Teller & BecherSet ~8 €\n🚧 Absperrband (50 m)~6 €\n🎈 Rote Luftballons12 Stk. ~4 €\n⛑️ Weiße Pappkarton-Helme zum Bemalen5 Stk. ~20 €Highlight-Material\n📺 Kurzer Hand-Signal \"Notruf!\" + leiser Spruch. NICHT 30\n📸 Polaroid oder Sofortdruck~10 €Rossmann/dm Sofortdruck",
       "giveaways": "⛑️ 1 selbst bemalter Pappkarton-Helm (Highlight, einzigartig)\n🚒 1 Mini-Feuerwehrauto (selbst aus dem Schaum „gerettet\")\n📸 1 Polaroid mit Funktion auf der Rückseite\n💫 1 Aufkleber-Bogen Feuerwehr\n🍭 1 Tüte Gummibärchen oder Lolli\n🏆 Tag-1-Feuerwehrkind-Urkunde\n\nIn rot-weiße Papiertüte (Helm separat — ist zu groß für die Tüte). Kosten: ~10 € pro Kind.",
       "shoppingList": [
         {
@@ -802,10 +802,6 @@
       {
         "n": 5,
         "content": "„112\" mit weißer Glasur oder weißem Zuckerstift auf die Seite schreiben. Optional: blaues Blaulicht aus Smartie oder Blaubeere oben drauf."
-      },
-      {
-        "n": 6,
-        "content": "Wow-Variante: Wunderkerze in den Kuchen stecken, beim „Happy Birthday\" anzünden."
       }
     ],
     "meta": {
@@ -824,7 +820,7 @@
     "structured": [
       {
         "topic": "🧠 Was 3–5-Jährige bei dieser Party wirklich mitnehmen",
-        "detail": "Kinder in dem Alter merken sich nicht „112\" oder Brandklassen — die Theorie kommt später bei den Älteren. Was sie aus dieser Party mitnehmen: 1. Helfen ist toll. Sie haben Tiere gerettet, gemeinsam, mit Helm. Das ist ein Selbstbild-Anker für die nächsten Jahre. 2. Eine Sirene ist nicht beängstigend, sondern bedeutet „jemand hilft jetzt\". Das ist Brandschutz-Erziehung im weitesten Sinn — Vertrauen statt Angst. 3. Was eine Feuerwehr macht, in einfachen Bildern: Schlauch, Helm, Auto, Sirene. Das nehmen sie mit, wenn ihnen später die echte Theorie begegnet (in Schule oder in der Brandschutz-Erziehung im Kindergarten). Die echte Lehre kommt noch — diese Party legt das Fundament."
+        "detail": "Kinder in dem Alter merken sich nicht „112\" oder Brandklassen — die Theorie kommt später bei den Älteren. Was sie aus dieser Party mitnehmen: 1. Helfen ist toll. Sie haben Tiere gerettet, gemeinsam, mit Helm. Das ist ein Selbstbild-Anker für die nächsten Jahre. 2. Eine Hand-Signal \"Notruf!\" + leiser Spruch. sondern bedeutet „jemand hilft jetzt\". Das ist Brandschutz-Erziehung im weitesten Sinn — Vertrauen statt Angst. 3. Was eine Feuerwehr macht, in einfachen Bildern: Schlauch, Helm, Auto, Hand-Signal \"Notruf!\" + leiser Spruch. Das nehmen sie mit, wenn ihnen später die echte Theorie begegnet (in Schule oder in der Brandschutz-Erziehung im Kindergarten). Die echte Lehre kommt noch — diese Party legt das Fundament."
       },
       {
         "topic": "🚨 Allergien vorher abfragen",
@@ -844,7 +840,7 @@
       },
       {
         "topic": "😢 Plan für Tränen-Momente",
-        "detail": "Bei 3-5 weint mindestens ein Kind in 90 Min. — das ist normal. Häufige Auslöser: Sirene war zu laut, Schaum schreckt, Kind will nicht den falschen Aufkleber, Eltern sind kurz weg. Plan: Eltern bleiben dabei, ruhige Ecke (Sofa) für „kurze Pause\" einrichten, Kuscheltier griffbereit, kein Drama wenn ein Kind aussetzt. Nach 5 Min. Pause sind die meisten wieder da. Zwingen ist kontraproduktiv."
+        "detail": "Bei 3-5 weint mindestens ein Kind in 90 Min. — das ist normal. Häufige Auslöser: Hand-Signal \"Notruf!\" + leiser Spruch. Schaum schreckt, Kind will nicht den falschen Aufkleber, Eltern sind kurz weg. Plan: Eltern bleiben dabei, ruhige Ecke (Sofa) für „kurze Pause\" einrichten, Kuscheltier griffbereit, kein Drama wenn ein Kind aussetzt. Nach 5 Min. Pause sind die meisten wieder da. Zwingen ist kontraproduktiv."
       }
     ],
     "educationalValue": null
@@ -865,7 +861,7 @@
     },
     {
       "q": "Müssen Eltern bei der Feuerwehr-Party für 3–5 wirklich bleiben?",
-      "a": "Ja, bei dieser Altersgruppe ist Eltern-Anwesenheit Pflicht — und zwar als aktive Helfer, nicht als Beobachter. Begründung: Bei 3-5 brauchst du Hilfe für Toilettenbegleitung, Trösten, Spritzpistole-Halten, Schaum-Nachfüllen. Du allein schaffst das für 5 Kinder nicht. Schreib in die Einladung: „Ein Elternteil bleibt bitte mit dem Kind und hilft mit.\" Verteile Aufgaben (Foto, Sirene, Pinsel) — Eltern, die einen Job haben, sind glücklicher als die, die rumstehen. Aus dem „Eltern-Café-Problem\" wird so „Crew-Eltern als Co-Wachleiter\"."
+      "a": "Ja, bei dieser Altersgruppe ist Eltern-Anwesenheit Pflicht — und zwar als aktive Helfer, nicht als Beobachter. Begründung: Bei 3-5 brauchst du Hilfe für Toilettenbegleitung, Trösten, Spritzpistole-Halten, Schaum-Nachfüllen. Du allein schaffst das für 5 Kinder nicht. Schreib in die Einladung: „Ein Elternteil bleibt bitte mit dem Kind und hilft mit.\" Verteile Aufgaben (Foto, Hand-Signal \"Notruf!\" + leiser Spruch. Pinsel) — Eltern, die einen Job haben, sind glücklicher als die, die rumstehen. Aus dem „Eltern-Café-Problem\" wird so „Crew-Eltern als Co-Wachleiter\"."
     }
   ],
   "preparationWeeks": {
@@ -895,7 +891,7 @@
         {
           "icon": "🏠",
           "title": "Mietwohnung-Check",
-          "detail": "3-5er Party ist akustisch zahm (KEINE Sirene — die löst Tränen aus), aber Schaum-Löschen + Wasserspritzpistolen erzeugen Boden-Pfützen. Folie/Handtücher unterlegen, Nachbarn vorab kurz informieren reicht."
+          "detail": "3-5er Party ist akustisch zahm (KEINE Hand-Signal \"Notruf!\" + leiser Spruch. aber Schaum-Löschen + Wasserspritzpistolen erzeugen Boden-Pfützen. Folie/Handtücher unterlegen, Nachbarn vorab kurz informieren reicht."
         }
       ]
     },
@@ -1109,7 +1105,7 @@
         "4 Oreos halbieren = 8 Reifen, seitlich ankleben.",
         "Mit weißem Zuckerstift ‚112' draufschreiben — sieht aus wie gewollt."
       ],
-      "fallback": "Bäcker zu? Muffins aus dem Vorrat, je ein Marshmallow + roter Zahnstocher = Mini-Sirene-Hütchen. Funktioniert für 3-5.",
+      "fallback": "Bäcker zu? Muffins aus dem Vorrat, je ein Marshmallow + roter Zahnstocher = Mini- Hand-Signal \"Notruf!\" + leiser Spruch. Funktioniert für 3-5.",
       "tone": "motivierend"
     },
     "spielzeug_kaputt_oder_fehlt": {

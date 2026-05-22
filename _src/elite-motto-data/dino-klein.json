@@ -37,7 +37,7 @@
         {
           "time": "15:25",
           "title": "🎂 Kuchen & Happy Birthday",
-          "description": "Vulkan-Kuchen (Gugelhupf mit Smarties). Kerzen auspusten, Happy Birthday singen. 20 Min. Dazu Apfelschorle — nenn es „Dino-Pipi“ und die Kinder lachen sich kaputt."
+          "description": "Vulkan-Kuchen (Gugelhupf mit Smarties). Kerzen auspusten, Happy Birthday singen. 20 Min. Dazu Apfelschorle — nenn es „Dino-Pipi“ und die Kinder lachen sich kaputt. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
         },
         {
           "time": "15:45",
@@ -62,7 +62,7 @@
           "material": null,
           "prepText": "",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -81,7 +81,7 @@
           "material": null,
           "prepText": "",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -128,7 +128,7 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Capri-Sun + Brezeln aus Vorrat trägt 1,5h auch."
+          "categoryReasoning": "Saftpäckchen + Brezeln aus Vorrat trägt 1,5h auch."
         },
         {
           "emoji": "🎁",
@@ -167,7 +167,7 @@
         {
           "time": "15:35",
           "title": "🎂 Kuchen & Dino-Pipi",
-          "description": "Vulkan-Kuchen (Gugelhupf + Smarties-Lava). Happy Birthday singen. Dazu „Dino-Pipi“ (Apfelschorle). 20 Min. Ruhe für alle."
+          "description": "Vulkan-Kuchen (Gugelhupf + Smarties-Lava). Happy Birthday singen. Dazu „Dino-Pipi“ (Apfelschorle). 20 Min. Ruhe für alle. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
         },
         {
           "time": "15:55",
@@ -182,7 +182,7 @@
         {
           "time": "16:20",
           "title": "🎈 Freispiel & Abholphase",
-          "description": "Plastik-Dinos, Bücher, Freispiel. Mitgebsel-Tüten verteilen wenn Eltern kommen.\n\n💡 Immer abwechseln: laut → leise\nEier suchen (mittel) → Vulkan (laut) → Kuchen (Pause) → Stampfen (laut) → Ausgrabung (leise). So kippt die Stimmung nie. Nach jedem lauten Spiel kommt ein ruhiges."
+          "description": "Plastik-Dinos, Bücher, Freispiel. Mitgebsel-Tüten verteilen wenn Eltern kommen.\n\n💡 Immer abwechseln: laut → leise\nEier suchen (mittel) → Vulkan (laut) → Kuchen (Pause) → Stampfen (laut) → Ausgrabung (leise). So kippt die Stimmung nie. Nach jedem lauten Spiel kommt ein ruhiges. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
         }
       ],
       "games": [
@@ -197,7 +197,7 @@
           "material": null,
           "prepText": "",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -216,7 +216,7 @@
           "material": null,
           "prepText": "",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -235,7 +235,7 @@
           "material": null,
           "prepText": "",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Erwachsene*r gießt Essig/Natron. Kinder hinter Tisch-Kante (1 m). Schutzbrille empfohlen. Nicht trinken, nicht in Augen.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -254,7 +254,7 @@
           "material": null,
           "prepText": "",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Sand-Wanne mit Sichtaufsicht. Kleinteile (Mini-Dinos < 3 cm) bei 3-Jährigen vermeiden — Verschluckungsgefahr.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -363,12 +363,12 @@
         {
           "time": "15:50",
           "title": "🎂 Kuchen & Dino-Pipi",
-          "description": "Vulkan-Kuchen mit Smarties-Lava und einer Dino-Figur obendrauf. Kerzen, Happy Birthday, 20 Min. Ruhe."
+          "description": "Vulkan-Kuchen mit Smarties-Lava und einer Dino-Figur obendrauf. Kerzen, Happy Birthday, 20 Min. Ruhe. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
         },
         {
           "time": "16:10",
           "title": "🦖 Dino-Parcours",
-          "description": "„Dschungel-Parcours“: unter Seilen durchkriechen (Lianen!), über Kissen springen (Vulkan-Steine!), durch einen Tunnel krabbeln (Dino-Höhle = Decke über 2 Stühle). Alle laufen zusammen, kein Wettrennen. 10 Min."
+          "description": "„Dschungel-Parcours“: unter Seilen durchkriechen (Lianen!), über Kissen springen (Vulkan-Steine!), durch einen Tunnel krabbeln (Dino-Höhle = Decke über 2 Stühle). Alle laufen zusammen, kein Wettrennen. 10 Min. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
         },
         {
           "time": "16:20",
@@ -393,7 +393,7 @@
           "material": null,
           "prepText": "",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -412,7 +412,7 @@
           "material": null,
           "prepText": "",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Sand-Wanne mit Sichtaufsicht. Kleinteile (Mini-Dinos < 3 cm) bei 3-Jährigen vermeiden — Verschluckungsgefahr.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -431,7 +431,7 @@
           "material": null,
           "prepText": "",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Erwachsene*r gießt Essig/Natron. Kinder hinter Tisch-Kante (1 m). Schutzbrille empfohlen. Nicht trinken, nicht in Augen.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -450,7 +450,7 @@
           "material": null,
           "prepText": "",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -469,7 +469,7 @@
           "material": null,
           "prepText": "",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -479,7 +479,7 @@
         }
       ],
       "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃„Dino-Pipi“3 Liter\n🍇Obst-Dino-Spieße2 pro Kind\n🥒Gemüse-SticksGurke + Paprika\n🍿Popcorn1 Schüssel\n🧁Dino-Muffins1 pro Kind",
-      "decoration": "🎈 Grüne Luftballons (10 Stk.)~2 €\n🦶 Fußspuren-Pfad am BodenKostenlos, 15 Min.\n🦕 Dino-Figuren auf dem ganzen TischIm Set\n🪧 „Jurassic Park“-Schild am EingangKostenlos\n🔊 Dschungel-Sounds leise im HintergrundKostenlos (YouTube)",
+      "decoration": "🎈 Grüne Luftballons (10 Stk.)~2 €\n🦶 Fußspuren-Pfad am BodenKostenlos, 15 Min.\n🦕 Dino-Figuren auf dem ganzen TischIm Set\n🪧 „Dino-Expedition“-Schild am EingangKostenlos\n🔊 Dschungel-Sounds leise im HintergrundKostenlos (YouTube)",
       "giveaways": "In braune Papiertüte mit „Dino-Schatz von ___“. Kosten: ~3 € pro Kind.\n\n🦕 Dino-Figur (aus Ausgrabung)\n🖍️ Dino-Tattoo\n🎨 Stempelbild\n🍬 Gummibärchen\n🥚 Dino-Ei",
       "shoppingList": [
         {
@@ -692,6 +692,7 @@
     "minus2Days": {
       "headline": "2 Tage vorher — backen, briefen, basteln",
       "items": [
+        "⚠️ Sicherheits-Check bei 3-Jährigen: Plastik-Eier mit Süßigkeit erst öffnen, wenn Kind sicher kaut (kein Schluck-Risiko). Mini-Dinos > 3 cm wählen.",
         {
           "icon": "🎂",
           "title": "Vulkan-Kuchen backen — oder Plan B",
@@ -755,7 +756,7 @@
         {
           "icon": "⏰",
           "title": "30 Min vor Ankunft: Stationen aufbauen",
-          "detail": "Eier-Suche-Plan im Kopf, Vulkan-Tisch fertig, Kuchen aus Kühlschrank, Capri-Sun kühlen. Eltern-Sitzecke einrichten."
+          "detail": "Eier-Suche-Plan im Kopf, Vulkan-Tisch fertig, Kuchen aus Kühlschrank, Saftpäckchen kühlen. Eltern-Sitzecke einrichten."
         },
         {
           "icon": "🎯",
@@ -815,7 +816,7 @@
         "Eltern kurz briefen: ‚Du übernimmst Eier-Suche-Aufsicht, ich Vulkan.'",
         "Mehr Eier verstecken (aus dem Vorrat) — jedes Kind findet 4-5 statt 5.",
         "Mini-Dinos aufstocken: leere Pappkarton-Boxen mit Punkten bemalen als Notreserve.",
-        "Capri-Sun nachbestellen lassen (Eltern haben Auto, Tankstelle/Edeka nah).",
+        "Saftpäckchen nachbestellen lassen (Eltern haben Auto, Tankstelle/Edeka nah).",
         "Kuchen-Stücke kleiner schneiden, evtl. Brezeln + Gummibärchen aus Vorrat."
       ],
       "fallback": "Chaotisch? Programm kürzen — Eier-Suche + Snack + Mitgebsel-Verteilung. 60 Min reicht für 3-5er.",
@@ -866,7 +867,7 @@
       "headline": "Eltern kennen ihr Kind — Übergabe ist okay.",
       "steps": [
         "Eltern-Übergabe: ‚Magst du kurz mit ihr raus?' — bei 3-5 sind Eltern dabei.",
-        "Capri-Sun + Brezel + roter Becher als Beruhigungs-Ritual.",
+        "Saftpäckchen + Brezel + roter Becher als Beruhigungs-Ritual.",
         "Eigenes Plastik-Ei mit Süßigkeit zum Selbst-Auspacken.",
         "Wenn Heimweh: nicht überreden — Mama-Foto am Handy zeigen.",
         "Nach 5 Min reinschauen — meist ist's vorbei wenn die anderen den Vulkan sehen."
