@@ -1,3 +1,62 @@
+# Session-Notiz — 22.05.2026 (Nacht-Spät: Welle 33 Phase 0+1 — SEO-Template-Konsolidierung)
+
+**Branch:** `feat/detektiv-seo-elite` → draft → main (Ende deploy)
+
+## Welle 33 Cross-Pollination Re-Check Abschluss
+
+**Phase 0 (Konsolidierung):**
+- Detektiv-6-8-jahre.html als konsolidierter Goldstandard etabliert
+  - v1 Helfer-v3: 76/100
+  - v2 (5 Fixes): 87/100
+  - v3 (Polish): 93/100 ✅
+  - v4 (Phase-0-Ergänzung: „Was Kinder lernen" + „Vorbereitungs-Fahrplan"): 95/100 ✅
+- `_dev/SEO-PAGE-TEMPLATE-SPEC.md` als Living-Referenz für alle 24 Pages
+
+**Phase 1 (Stub-Rescue — 2 echte Bugs „0 Spiele" + leeres `<ul></ul>`):**
+- detektiv-3-5-jahre.html (16 KB Stub → 67 KB Elite)
+  - Quelle: detektiv-klein.json (Spürnasen-Tag)
+  - Helfer-v3: 84 → 93/100 ✅
+  - Fixes: Schwur→Versprechen-Tonalität, Zeitplan-Mathe-Lücke, Verschluckungsgefahr-Hinweis, Einladungs-„Hilfe!"-Frame-Bruch
+- detektiv-9-12-jahre.html (16 KB Stub → 78 KB Elite)
+  - Quelle: detektiv-gross.json (Kriminalfall-Simulation)
+  - Helfer-v3: 78 → ~92/100 ✅
+  - Fixes: Plot-Twist-Spoiler-Leak (Tobias-Name in Spielanleitung + Wow-Timeline) entfernt
+
+**Korrigierter Audit:**
+- Mein erster Pauschal-Audit war zu strikt (11 „Reduced"). Realität:
+  - 14 ELITE (einhorn 3x, safari 3x, dino 3x, meerjungfrau 3x, piraten-6-8, detektiv-6-8)
+  - 8 LIGHT (piraten 3-5/9-12, feuerwehr 3x, weltraum 3x)
+  - 2 WIRKLICH KAPUTT (detektiv-3-5 + detektiv-9-12) ← jetzt gefixt
+- 16 Elite-Pages nach Phase 1 (alle 3 Detektiv inkl.)
+
+**Erkenntnis Strukturelle Drift (für Phase 3):**
+- signatureRitual-Sektion fehlt in 7 von 14 bestehenden Elite-Pages
+- „Was Kinder lernen" + „Vorbereitungs-Fahrplan" nur in Meerjungfrau-6-8 + Detektiv-6-8
+- Meerjungfrau-6-8 ist inoffizieller Goldstandard (11 H2-Sektionen)
+
+## Backlog-Update
+
+- Task #51: Welle 33 Cross-Pollination Re-Check → completed
+- Task #52: Welle 33 Phase 1 (Detektiv-3-5 + 9-12) → completed (mit diesem Commit)
+- Task #53: Welle 33 Phase 2 (8 Light-Pages auf Elite) → pending, ~24h
+- Task #54: Welle 33 Phase 3 (14 Elite-Pages Ritual+Lernen+Fahrplan+SOS retrofit) → pending, ~13h
+
+## Commits diese Session
+
+- `67ce156` Detektiv-6-8 v1→v3 Elite (Helfer-v3 76→93)
+- `0cadef1` Detektiv-6-8 Phase-0-Ergänzung (Edu + Fahrplan, 93→95)
+- `6bd91ef` SEO-Page Template-Spec dokumentiert
+- `8a0a764` Detektiv-3-5 + Detektiv-9-12 Stub-Rescue auf Elite (Phase 1 fertig)
+
+## Nächste Schritte
+
+- Phase 2 (8 Light-Pages: piraten 3-5/9-12, feuerwehr 3x, weltraum 3x): ~24h Sprint
+- Phase 3 (14 Elite-Retrofit): ~13h danach
+- Total Restaufwand: ~37h für 24/24 vollständig konsolidiert
+- Parallel: P0-Partyseite-Tasks #46-48 (XSS-Fix + CORS + AWIN) noch offen
+
+---
+
 # Session-Notiz — 22.05.2026 (Nacht: Partyseite Berater-Review + P0-Security-Plan)
 
 **Branch:** `draft` (kein neuer Feature-Branch, nur SESSION-NOTES + Review-Artefakte)
