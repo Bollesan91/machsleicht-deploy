@@ -62,11 +62,6 @@
         "function": "Führt die Crew bei der Planeten-Reise von Station zu Station."
       },
       {
-        "emoji": "👽",
-        "name": "Alien-Begrüßer",
-        "function": "Zeigt den anderen den freundlichen Alien-Gruß und winkt zuerst."
-      },
-      {
         "emoji": "🎨",
         "name": "Bastel-Helfer",
         "function": "Teilt Stifte und Krepppapier aus und hilft, den Tisch ordentlich zu halten."
@@ -476,7 +471,7 @@
           "indoor": true,
           "outdoor": true,
           "duration": "20 Min.",
-          "minAge": 5,
+          "minAge": 4,
           "loudness": "mittel",
           "effort": "mittel",
           "material": "4–5 Papp-Kreise als Planeten (Mars rot, Saturn mit Papp-Ring, Erde blau-grün), pro Planet eine Mini-Aufgabe auf einer Karte.",
@@ -516,7 +511,7 @@
           "indoor": true,
           "outdoor": false,
           "duration": "20 Min.",
-          "minAge": 5,
+          "minAge": 4,
           "loudness": "leise",
           "effort": "mittel",
           "material": "Pro Kind eine leere Klopapierrolle, bunte Stifte oder Fingerfarbe, Krepppapier-Streifen (rot/orange = Flamme), Klebestift, ein Stern-Sticker.",
@@ -567,12 +562,12 @@
         },
         {
           "emoji": "🥤",
-          "label": "Apfelschorle (6er-Pack)",
+          "label": "Apfelschorle (2x6er-Pack (oder 1,5L-Flasche))",
           "url": "https://www.amazon.de/s?k=apfelschorle+kinder+6er&tag=machsleicht-21",
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Getränk für 6 Kinder. Gehört zu jeder Party — kann aber problemlos aus dem Vorrat kommen."
+          "categoryReasoning": "Getränk für 8 Kinder über 2,5 Std. — bei warmem Wetter eher 2 Packs einplanen. Gehört zu jeder Party — kann aber problemlos aus dem Vorrat kommen."
         },
         {
           "emoji": "🥈",
@@ -892,12 +887,12 @@
         },
         {
           "emoji": "🥤",
-          "label": "Apfelschorle (6er-Pack)",
+          "label": "Apfelschorle (2x6er-Pack (oder 1,5L-Flasche))",
           "url": "https://www.amazon.de/s?k=apfelschorle+kinder+6er&tag=machsleicht-21",
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Getränk für 6 Kinder. Gehört zu jeder Party — kann aber problemlos aus dem Vorrat kommen."
+          "categoryReasoning": "Getränk für 8 Kinder über 2,5 Std. — bei warmem Wetter eher 2 Packs einplanen. Gehört zu jeder Party — kann aber problemlos aus dem Vorrat kommen."
         },
         {
           "emoji": "🥈",
@@ -1056,7 +1051,7 @@
     "meta": {
       "aufwand": "mittel (Rührteig + 15 Min. Deko)",
       "kosten": "ca. 5–8 €",
-      "allergiker": "Für Ei-Allergie: fertigen Marmorkuchen vom Bäcker nehmen und nur die Glasur + Krater selbst draufmachen — sieht genauso aus."
+      "allergiker": "Für Ei-Allergie: fertigen Marmorkuchen vom Bäcker nehmen und nur die Glasur + Krater selbst draufmachen — sieht genauso aus. Glutenfrei: Reismehl-Mischung (Schaer/Bauckhof) statt Weizen. Laktosefrei: Pflanzenmargarine + Hafermilch statt Butter/Milch. Mit Eltern vorab durchsprechen, was im Buttercreme-Stern noch ersetzt werden muss."
     },
     "tips": [
       {

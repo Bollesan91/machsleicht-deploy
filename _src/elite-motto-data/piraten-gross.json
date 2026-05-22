@@ -240,7 +240,8 @@
           "indoorTip": "Die drei Quadranten an verschiedene Tische/Wände, damit sich die Crews nicht gegenseitig die Lösung abschauen.",
           "outdoorTip": "Quadranten an drei Stationen im Garten — die kurzen Wege dazwischen sind willkommene Bewegung.",
           "whyItWorksTitle": "Kombinieren + Selbstkontrolle statt Tempo",
-          "whyItWorks": "Kein Quadrant funktioniert allein — erst die drei Wörter zusammen ergeben den Pfad, also müssen sich die Spezialisierungen abstimmen. Ergibt ein Wort keinen Sinn, prüfen die Kinder ihre Reihenfolge selbst, statt zu raten. Genaues Lesen wird belohnt, nicht Geschwindigkeit. Steckt eine Crew fest, hilft eine andere Spezialisierung mit — das ist die Mission: „Auf See zählt, wer die Karte richtig liest.“"
+          "whyItWorks": "Kein Quadrant funktioniert allein — erst die drei Wörter zusammen ergeben den Pfad, also müssen sich die Spezialisierungen abstimmen. Ergibt ein Wort keinen Sinn, prüfen die Kinder ihre Reihenfolge selbst, statt zu raten. Genaues Lesen wird belohnt, nicht Geschwindigkeit. Steckt eine Crew fest, hilft eine andere Spezialisierung mit — das ist die Mission: „Auf See zählt, wer die Karte richtig liest.“",
+          "kompassReihenfolgeNote": "WICHTIG: Bei Lösungswort KOMPASS (K-O-M-P-A-S-S) sind die beiden S-Stationen NICHT austauschbar. Die geografische Reihenfolge ist fix: \"Sturmlaterne steht vor der Höhle, weil im Anker-Wrack davor\". Der Selbst-Check greift hier durch die Story-Logik (Sturmlaterne → Schmuggler-Höhle), nicht durch eindeutige Buchstaben. Alternative für sauberere Selbst-Kontrolle: Lösungswort auf SEGLER ändern (6 Buchstaben, alle unique → eine Station weniger, mathematisch sauber)."
         },
         {
           "name": "🪢 Knoten-Prüfung — Crew-Aufwärmer",
@@ -615,7 +616,7 @@
             {
               "n": 5,
               "name": "Umschlag E (Crew)",
-              "content": "4 Tiere am Strand, eines lebt im Gebirge: Krabbe, Möwe, Tintenfisch, Tannen-Eichhörnchen. Fremd → T."
+              "content": "4 Tiere am Strand, eines lebt im Dschungel: Krabbe, Möwe, Tintenfisch, Tiger. Fremd → T."
             },
             {
               "n": 6,
@@ -1155,6 +1156,10 @@
       {
         "topic": "🌙 Schlafparty nur mit Opt-In",
         "detail": "Die Übernacht-Option vorher schriftlich mit allen Eltern klären (Schlafsack, Abholzeit am Morgen, Notfallnummern). Nicht jedes Kind will übernachten — ein Abhol-Zeitpunkt am Abend muss selbstverständlich möglich sein."
+      },
+      {
+        "tip": "Jahreszeit-Warnung Nacht-Schatzsuche",
+        "content": "Nacht-Schatzsuche (Wow-Variante) NUR bei echter Dunkelheit. Sommer (Juni-August): erst ab 21:30 Uhr — entweder Abholzeit verschieben oder Indoor (abgedunkelter Keller). Winter: 17:30-19:00 Uhr ideal. Reflektor-Karten + Stirnlampen funktionieren nur bei <100 Lux Restlicht."
       }
     ],
     "educationalValue": "Die Kinder üben ganz nebenbei echte Fähigkeiten: Koordinaten lesen, Werte sortieren und teilen, aus Hinweisen logisch eine Reihenfolge ableiten, echte Knoten binden und im Team eine mehrstufige Aufgabe koordinieren. Vor allem lernen sie, dass genaues Hinschauen und Zusammenarbeit weiter führen als Hektik — der Selbst-Check macht das spürbar: Wer schludert, liest Buchstabensalat; wer sorgfältig ist, liest ein Wort."

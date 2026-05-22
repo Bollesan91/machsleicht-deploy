@@ -101,7 +101,7 @@
           "minAge": 5,
           "loudness": null,
           "effort": "leicht",
-          "material": "12–15 Pfotenabdrücke aus Tonpapier ausgeschnitten (DIN A4 braunes Tonpapier, schwarzer vorgefertigte Tarn-Tuecher ODER abwaschbare Stoffmalfarben (Filzstift faerbt ab) oder Pfoten-Schablone — ein Löwenpfoten-Set kostet 5 Min. Vorbereitungszeit). Tesa zum Befestigen. Am Endpunkt: 1 Plüsch-Tier oder eine Box mit Mini-Tieren als \"Fund\". Druckvorlage Safari-Tierspuren ist in Vorbereitung — bis dahin: schnell selbst zeichnen, die Kinder merken den Unterschied nicht.",
+          "material": "12–15 Pfotenabdrücke aus Tonpapier ausgeschnitten (DIN A4 braunes Tonpapier, schwarzer Filzstift ODER vorgefertigte Tarn-Tücher ODER abwaschbare Stoffmalfarben (Filzstift färbt ab) oder Pfoten-Schablone — ein Löwenpfoten-Set kostet 5 Min. Vorbereitungszeit). Tesa zum Befestigen. Am Endpunkt: 1 Plüsch-Tier oder eine Box mit Mini-Tieren als \"Fund\". Druckvorlage Safari-Tierspuren ist in Vorbereitung — bis dahin: schnell selbst zeichnen, die Kinder merken den Unterschied nicht.",
           "prepText": "Vorher legst du eine Spur durch Garten oder Wohnung — z.B. Löwen-Pfoten an die Wand kleben (Augenhöhe Kind), die in eine bestimmte Richtung führen. Am Endpunkt versteckt sich das \"vermisste Tier\" (Plüsch-Löwe).",
           "steps": [
             {
@@ -310,7 +310,7 @@
           "minAge": 6,
           "loudness": "ruhig",
           "effort": "leicht",
-          "material": "Material pro Team: 2 Stoffquadrate (~30×30cm, alte Geschirrtücher oder weißer Stoff zerschnitten), vorgefertigte Tarn-Tuecher ODER abwaschbare Stoffmalfarben (Filzstift faerbt ab)e in Erdfarben (braun, grün, ocker), 1 Beispiel-Tarn-Tuch zum Vorzeigen",
+          "material": "Material pro Team: 2 Stoffquadrate (~30×30cm, alte Geschirrtücher oder weißer Stoff zerschnitten), vorgefertigte Tarn-Tücher ODER abwaschbare Stoffmalfarben (Filzstift färbt ab) in Erdfarben (braun, grün, ocker), 1 Beispiel-Tarn-Tuch zum Vorzeigen",
           "prepText": "Erst bemalen, dann tarnen. Jedes Kind bekommt ein Stoffquadrat und malt es mit Erdfarben so an, dass es zur Umgebung passt (Garten = grün-braun, Sofa = grau-beige). 8 Min. malen.\n\nDann: das Tuch über sich legen oder hinter sich halten und sich im Raum/Garten verstecken. Der Spielleiter (oder du) schaut 15 Sekunden weg, dann sucht er. Wer 30 Sekunden ungesehen bleibt, hat bestanden — und kriegt einen Stempel.",
           "steps": [
             {
@@ -627,8 +627,8 @@
           "categoryReasoning": "Wenn Apfelschorle + Snacks da sind, sind Mini-Pizzen eine Wow-Aufrüstung — nicht zwingend."
         },
         {
-          "emoji": "🦁 Plüsch-Tiere für Großspiel (vorhandenes Kuscheltier reicht — sonst",
-          "label": "hier",
+          "emoji": "🦁",
+          "label": "Plüsch-Tiere fürs Großspiel (vorhandenes Kuscheltier reicht — sonst günstig im Set)",
           "url": "https://www.amazon.de/s?k=plüsch+löwe+klein&tag=machsleicht-21",
           "priceEur": 0,
           "hasAffiliate": true,
@@ -790,11 +790,12 @@
           ],
           "safetyRule": "Tempel-Versteck und Stations-Wege ohne Stolperfallen wählen. Beim Loslaufen zum Schatz auf rutschige Böden und Türkanten achten.",
           "ageAdjust6": "Stationen 2 und 4 vereinfachen — bei Station 2 nur 3 Tiere, bei Station 4 dürfen die Kinder dreimal \"wachgemacht\" werden.",
-          "ageAdjust8": "Stationen schwieriger — bei Station 3 vier Fragen statt drei, bei Station 5 sechs Buchstaben statt vier.",
+          "ageAdjust8": "Stationen schwieriger — bei Station 3 vier Fragen statt drei, bei Station 5 Bei 8-Jaehrigen optional 5. Buchstabe an Station 5 (etwa Loesungswort SCHUH statt FUSS) — komplett konsistent zur Wortlaenge.",
           "indoorTip": "Fünf Stationen durch Zimmer und Flur verteilen, Tempel-Versteck markant wählen (unter dem Bücherregal, im Schuhschrank).",
           "outdoorTip": "Stationen über den Garten ziehen, Walkie-Talkies fürs Team einsetzen — die Quest gewinnt draußen an Abenteuer-Atmosphäre.",
           "whyItWorksTitle": "Warum das funktioniert",
-          "whyItWorks": "Fünf Stationen mit echtem Lösungswort am Ende: Das ist die kognitive Tiefe, die 6-8-Jährige tragen können — Rätsel kombinieren, Buchstaben sammeln, gemeinsam knobeln. Der Schatzfund liefert den emotionalen Höhepunkt der Wow-Variante."
+          "whyItWorks": "Fünf Stationen mit echtem Lösungswort am Ende: Das ist die kognitive Tiefe, die 6-8-Jährige tragen können — Rätsel kombinieren, Buchstaben sammeln, gemeinsam knobeln. Der Schatzfund liefert den emotionalen Höhepunkt der Wow-Variante.",
+          "codeLogic": "SAUBERE CODE-LOGIK: 4 Stationen liefern je einen Buchstaben aus dem Lösungswort FUSS (F-U-S-S). Station 1 (Flamingo-Tarnung) → Buchstabe F. Station 2 (Urwald-Pfad / Unter-dem-Baum-Versteck) → Buchstabe U. Station 3 (Schmetterling-Fang) → Buchstabe S. Station 4 (Schlangen-Tunnel) → Buchstabe S. Sortier-Station 5: Kinder ordnen die 4 Karten in der Spur-Reihenfolge → FUSS. Lösungswort öffnet die Schatzkiste. HINWEIS: Die alte TIGER-Logik (T-F-S-U) war mathematisch unmöglich — wurde durch saubere F-U-S-S-Mapping ersetzt."
         }
       ],
       "food": "🎂Savannen-Kuchen1 Blechkuchen + 1 kleiner\n🥤\"Wasserloch\"4 L Apfelschorle\n🍕Mini-Pizzen15 Stück\n🌯Wraps \"Anaconda\"10 Stück\n🍌Affen-Bananen10 Stk.\n🥕Karotten + Käse-Würfel\"Giraffen-Snack\"\n🍿Pop-Mais (Savannen-Kino)400 g\n🍫Schoko-GoldmünzenSchatzkisten-Inhalt",

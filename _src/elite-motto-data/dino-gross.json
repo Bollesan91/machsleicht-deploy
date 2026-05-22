@@ -292,9 +292,9 @@
           "whyItWorks": null
         }
       ],
-      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🍭Chips/Nachos2 Schüsseln",
+      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🥨 Chips/Nachos2 Schüsseln",
       "decoration": "🎈 Grüne Luftballons (10 Stk.)~2 €\n🦶 Fußspuren-Pfad am BodenKostenlos, 15 Min.\n🦕 Dino-Figuren als TischdekoIm Set\n📜 „Urzeit-Dschungel“-Schild am EingangKostenlosPappe + Edding",
-      "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~3 € pro Kind.\n\nǺ AA; Forscherpass (mit Urkunde)\n🦕 Dino-Figur (aus Ausgrabung)\n🍬 Süßigkeiten\n💎 „Fossil“ (Muschel/Stein)",
+      "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~3 € pro Kind.\n\nForscherpass (mit Urkunde)\n🦕 Dino-Figur (aus Ausgrabung)\n🍬 Süßigkeiten\n💎 „Fossil“ (Muschel/Stein)",
       "shoppingList": [
         {
           "emoji": "🦕",
@@ -456,9 +456,9 @@
           "codeLogic": "Saubere Code-Logik: 5 Stationen, jede gibt eine vorab festgelegte Ziffer per gedruckter Karte. Reihenfolge der Stationen = Schloss-Code. Beispiel-Default: 3-1-4-2-7. Station 1 (Caesar-Chiffre): Loesungswort steht auf Karte mit \"Ziffer 3\". Station 2 (Forscher-Quiz): Bei >=8/15 Punkten Karte \"Ziffer 1\" entnehmen; sonst Hilfe-Karte. Station 3 (Fossilien-Suche): Ziffer \"4\" unter der Auffangschale versteckt. Station 4 (Vulkan): Ziffer \"2\" steckt am Krater-Rand (nicht an Eruptionshoehe gekoppelt). Station 5 (Final): Ziffer \"7\" als Belohnungs-Karte. Code \"31427\" oeffnet Schloss. NICHT auf Geburtsdatum koppeln (das ist die alte falsche Logik)."
         }
       ],
-      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🥔Kartoffelbrei-Vulkan1 Schüssel\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🍭Nachos + Dip2 Schüsseln",
+      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🥔Kartoffelbrei-Vulkan1 Schüssel\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🌮 Nachos + Dip2 Schüsseln",
       "decoration": "🎈 Grüne Luftballons~2 €\n🦶 Fußspuren-PfadKostenlos, 15 Min.\n📜 „Urzeit-Dschungel“-SchildKostenlosPappe + Edding\n🔊 Dschungel-SoundsKostenlosYouTube: „Jungle Ambience“\n🦕 Dino-Figuren überallIm Set\n🕯️ Wunderkerzen für Kuchen~2 €",
-      "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~4 € pro Kind.\n\nǺ AA; Forscherpass + Urkunde\n🦕 Dino-Figur\n💎 „Fossil“ (Muschel/Stein)\n🍬 Süßigkeiten\n🗝️ Mini-Lupe",
+      "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~4 € pro Kind.\n\nForscherpass + Urkunde\n🦕 Dino-Figur\n💎 „Fossil“ (Muschel/Stein)\n🍬 Süßigkeiten\n🗝️ Mini-Lupe",
       "shoppingList": [
         {
           "emoji": "🦕",
@@ -572,7 +572,8 @@
     "meta": {
       "aufwand": "45 Min",
       "kosten": "~6 &euro;",
-      "allergiker": "Packung checken"
+      "allergiker": "Packung checken",
+      "safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Deko/Lianen/Tischtuch, nie mit Kindern allein lassen, bei Indoor IMMER Wassereimer griffbereit. Auspusten unmittelbar nach Aufnahme. Kein Funken-Wedeln."
     },
     "tips": null
   },
@@ -714,7 +715,7 @@
         {
           "icon": "🔒",
           "title": "Wow-Setup: Schatztruhe + Code-Hinweise platzieren",
-          "detail": "Schuhkarton-Truhe mit Zahlenschloss (Code: Geburtstagsdatum), drinnen: Forscher-Diplome + Wunderkerze + Auflösungs-Karte. Code-Hinweise an 5-6 Phasen-Stationen verstecken."
+          "detail": "Schuhkarton-Truhe mit Zahlenschloss (Code 31427 (5 Ziffern aus den 5 Prüfungen — siehe Escape-Logik in variants[2].games[1].codeLogic). NICHT das Geburtsdatum verwenden), drinnen: Forscher-Diplome + Wunderkerze + Auflösungs-Karte. Code-Hinweise an 5-6 Phasen-Stationen verstecken."
         }
       ]
     },
@@ -744,7 +745,7 @@
         {
           "icon": "🔒",
           "title": "Wow-Setup: Schatztruhe-Code testen",
-          "detail": "Zahlenschloss-Code (z.B. Geburtsdatum) zweimal testen. UV-Hinweise (falls Wow Premium) mit UV-Stift schreiben + UV-Lampe checken."
+          "detail": "Zahlenschloss-Code (z.B. Code 31427 (5 Ziffern aus den 5 Prüfungen — siehe Escape-Logik in variants[2].games[1].codeLogic). NICHT das Geburtsdatum verwenden) zweimal testen. UV-Hinweise (falls Wow Premium) mit UV-Stift schreiben + UV-Lampe checken."
         }
       ]
     },
@@ -889,13 +890,21 @@
     }
   },
   "signatureRitual": {
-    "name": null,
+    "name": "Die Paläontologen-Initiation",
     "subtitle": null,
-    "introText": null,
-    "setupSteps": [],
+    "introText": "Vor dem ersten Spiel: Jedes Kind faltet seinen eigenen Forscherpass aus festem Papier. Name auf den Pass schreiben, ersten Stempel oben links setzen (Mini-Dino-Stempel). Die Gastgeberin sagt feierlich: \"Ab jetzt bist du Paläontologin/Paläontologe. An jeder Station gibt es einen weiteren Stempel — der Pass beweist, dass du alle Prüfungen bestanden hast.\" Erst dann beginnt die erste Station.",
+    "setupSteps": [
+      "A5-Papier vorbereiten (1 Blatt pro Kind + 2 Reserve)",
+      "Mini-Dino-Stempel + Kissen bereitstellen (online ~6 €)",
+      "Stationen-Stempel: 5 verschiedene Motive (Caesar-Schriftrolle, Pinsel, Quizfrage, Vulkan, Schloss)",
+      "Endpunkt: Goldener \"Forscher-Diplom\"-Stempel als Krönung"
+    ],
     "rolesList": [],
-    "optOutNote": null,
+    "optOutNote": "Kinder, die nicht im Vordergrund stehen wollen, übernehmen die Beobachter-Rolle (existiert auch im SOS-Szenario): Sie führen das Logbuch der ganzen Gruppe und bekommen einen Spezial-Pass \"Chef-Dokumentar\".",
     "materialNote": null,
-    "_note": "Dino-Mottoseiten haben keine eigene Ritual-Sektion im Quell-HTML. Dino-Spurensuche oder Vulkan-Ausbruch sind die motto-zentralen Aktivitäten."
+    "_note": "Dino-Mottoseiten haben keine eigene Ritual-Sektion im Quell-HTML. Dino-Spurensuche oder Vulkan-Ausbruch sind die motto-zentralen Aktivitäten.",
+    "durationMin": 5,
+    "materialCost": "6-8 €",
+    "whyItWorks": "Der Pass ist der rote Faden: Jedes Spiel zahlt sichtbar auf den Pass ein (= ein Stempel mehr). Kein abstrakter \"Spaß\" — konkretes Belohnungssystem, das 9-12-jährige Kinder bei der Ehre packt. Plus: Der Pass ist das Mitgebsel — kein zusätzliches Material nötig."
   }
 }
