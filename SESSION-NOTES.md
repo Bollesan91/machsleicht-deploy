@@ -1,3 +1,28 @@
+# Session-Notiz — 22.05.2026 (Marktreife-Audit + SEO-Cleanup + Meerjungfrau-Reaktivierung + Helfer-v3-Start)
+
+**Übergabe:** Siehe `_dev/HANDOFF-2026-05-22.md` für nächste Session.
+
+**Zusatz-Session (Nachmittag):**
+- Meerjungfrau als 8. Voll-Motto reaktiviert (Strategie §0.7 updated, Disney-Vermeidungs-Richtlinie)
+- Hub-Page neu (40KB, 2076W, 0 Disney) — Commit `5be5da9`
+- Helfer-v3-Loop gestartet für 4 Streams (3 Altersgruppen + Schatzsuche-Theme)
+- 4 von 5 Pages haben v1+ (Stream 1-4 generiert via Subagent, Stream 2+4 sind v3)
+- Bolle's klare Anweisung: Adversarial-Reviews müssen in Chrome-Tabs laufen, NICHT als Subagent
+- 4 Chrome-Tabs vorbereitet (claude.ai/new) — ID 1532776390/95/97/98
+- Pivot zu Chrome-Adversarial wartet auf Deploy-Zwischenschritt (Live-URLs nötig)
+
+**Score-Tabelle Helfer-v3 Stand 22.05. abends:**
+
+| Stream | File | KB | Versionen | Reviews | Score | Status |
+|---|---|---|---|---|---|---|
+| Hub | meerjungfrau.html | 40 | v1 | 1 adv (Subagent) | 76 | FIXES (3 Schwächen) |
+| 1 | meerjungfrau-3-5-jahre.html | 35 | v1 | 0 | self-est | READY-FOR-CHROME-ADV |
+| 2 | meerjungfrau-6-8-jahre.html | 60 | v3 | 1 adv (Subagent) | 88 | READY (Chrome-v4 pending) |
+| 3 | meerjungfrau-9-12-jahre.html | 50 | v1 | 0 | self-est | READY-FOR-CHROME-ADV |
+| 4 | schatzsuche/meerjungfrau.html | 22 | v3 | 1 adv (Subagent) | 86 | READY (Chrome-v4 pending) |
+
+---
+
 # Session-Notiz — 22.05.2026 (Marktreife-Audit + SEO-Massive-Cleanup)
 
 ## Kontext der Session
