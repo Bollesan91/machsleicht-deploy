@@ -321,7 +321,7 @@
         },
         {
           "emoji": "🎂",
-          "label": "Backmischung + Zuckerguss + Oreo + Wunderkerze",
+          "label": "Backmischung + Zuckerguss + Schoko-Sandwich-Keks + Wunderkerze",
           "url": null,
           "priceEur": 8,
           "hasAffiliate": false,
@@ -568,7 +568,7 @@
         },
         {
           "emoji": "🎂",
-          "label": "Backmischung + Zuckerguss + Oreo + Wunderkerze",
+          "label": "Backmischung + Zuckerguss + Schoko-Sandwich-Keks + Wunderkerze",
           "url": null,
           "priceEur": 8,
           "hasAffiliate": false,
@@ -912,6 +912,66 @@
       }
     }
   ],
+  "bonusGames": {
+    "intro": "Diese Spiele kannst du in jeder Variante einbauen oder weglassen — alle 9-12-tauglich, mit echter intellektueller Tiefe. Vier davon sind Indoor-Alternativen für Regenwetter, eines ist eine Outdoor-Großübung.",
+    "items": [
+      {
+        "name": "🤖 Lego-Lösch-Roboter (Bastel-Challenge)",
+        "duration": 45,
+        "minAge": 9,
+        "loudness": "ruhig",
+        "indoor": true,
+        "outdoor": false,
+        "material": "Pro Trupp (2-3 Kinder): 1 Lego-Box mit gemischten Steinen (Technik-Lego ist Bonus, klassisches Duplo geht auch — aus dem Eigenbestand oder geliehen), optional 1 kleine Spritz-Demonstrations-Aufgabe (Klorollen als „Brand\"). 1 Stoppuhr für die Wettbewerbs-Variante.",
+        "anleitung": "Story: „Die Wache braucht neue Technik — entwerft einen Lösch-Roboter, der Brände findet und löscht!\" Trupps von 2-3 Kindern bekommen je eine Lego-Box. 30 Min Bau-Zeit. Nach Ablauf präsentiert jeder Trupp seinen Roboter: Funktion, Lösch-Mechanismus, Reichweite. Eine Jury (du + ein Eltern-Helfer) bewertet nach Kreativität, Funktionalität, Team-Präsentation.\n\nVarianten: Mit Technik-Lego oder Mindstorms (falls vorhanden) lassen sich tatsächlich bewegliche Modelle bauen — dann ist's eher 60 Min. Standard-Variante ohne Motoren reicht aber völlig.",
+        "whyItWorks": "9-12 lieben Konstruktions-Aufgaben mit offenem Ende. Trainiert Teamwork, Kreativität, technisches Verständnis. Perfekt als Indoor-Alternative bei Regen oder als zusätzliche Wow-Aktivität. Eltern, die das Ergebnis sehen, sind beeindruckt — die Kinder spüren das."
+      },
+      {
+        "name": "📡 Großeinsatz mit Walkie-Talkies",
+        "duration": 40,
+        "minAge": 10,
+        "loudness": "laut",
+        "indoor": true,
+        "outdoor": true,
+        "material": "3 Walkie-Talkies (~25 € für 3er-Set auf Amazon, sonst 2 alte Smartphones + Messenger-App), 3 verschiedene „Einsatzorte\" (z.B. Garten, Bad, Küche), 8-10 Kuscheltiere zum Retten, 1 Karten-Skizze der Wohnung pro Team",
+        "anleitung": "Die ambitionierte Variante des Einsatz-Alarms. Crew wird in 3 Teams aufgeteilt, jedes Team hat ein Walkie-Talkie. Story: „3 gleichzeitige Notrufe — koordiniert euch über Funk! Team A: Brand im Garten. Team B: Verletzter im Bad. Team C: Tiere in der Küche.\"\n\nAblauf: Du bist Leitstelle. Du funkst die Befehle, die Teams melden zurück. Die Teams müssen miteinander kommunizieren („Team A an Team B — kommt zur Verstärkung in den Garten!\"). Du gibst neue Lageinfos rein („Atemschutz-Warnung im Bad — Team B mit Augenbinde weiter!\").\n\nDauer: 40 Min — länger ist anstrengend.",
+        "whyItWorks": "Echte Team-Koordination unter Zeitdruck. 10-12-Jährige lieben Funkgeräte — das fühlt sich nach echter Mission an. Trainiert klare Kommunikation, Lage-Beurteilung, Prioritäten setzen. SICHERHEIT: Walkie-Talkies haben echte Lautstärke — vorher Volume-Limits einstellen, sonst Ohrenpein. Nur draußen oder in großer Wohnung."
+      },
+      {
+        "name": "🔍 Brandschutz-Detektive (Realitäts-Check)",
+        "duration": 25,
+        "minAge": 10,
+        "loudness": "ruhig",
+        "indoor": true,
+        "outdoor": false,
+        "material": "1 Klemmbrett + Stift pro Kind, 1 Liste mit „typischen Gefahren\" zum Abhaken (Vorlage unten), evtl. eine Lupe (Showbiz, nicht funktional)",
+        "anleitung": "Crew geht durch deine Wohnung und identifiziert echte Brandschutz-Gefahren — wie echte Brandschutz-Inspektoren. Jedes Kind hat eine Checkliste mit 10 Punkten: \n\n1. Sind alle Rauchmelder vorhanden und funktionsfähig? (Test-Knopf drücken)\n2. Gibt es überlastete Mehrfachsteckdosen?\n3. Sind Fluchtwege frei (keine Möbel davor)?\n4. Stehen brennbare Stoffe nahe der Herdplatte?\n5. Sind Kerzen sicher aufgestellt?\n6. Ist der Wäschetrockner-Flusenfilter sauber?\n7. Wo hängt der Feuerlöscher (oder gibt es keinen)?\n8. Ist das Treppenhaus als Fluchtweg frei?\n9. Liegen Streichhölzer/Feuerzeuge unzugänglich für Kleinkinder?\n10. Kennt die Familie die Notfall-Sammelstelle vorm Haus?\n\nNach 20 Min Sammelpunkt — Crew berichtet, was sie gefunden hat. Du dokumentierst, was tatsächlich zu verbessern ist. Bonus: Die Familie macht's danach wirklich besser. ECHTE PARENTAL VALUE.",
+        "whyItWorks": "9-12 lieben Realitäts-Bezüge. Hier wird Brandschutz konkret — nicht abstrakt. Eltern, die das Ergebnis sehen, sind beeindruckt von der Tiefe. Plus: Das Geburtstagskind und seine Freunde nehmen echtes Sicherheits-Wissen mit nach Hause, das auch ihren eigenen Familien hilft. Funktioniert nur, wenn die Wohnung „inspizierbar\" ist — bei sehr persönlichen Räumen (Schlafzimmer) ggf. ausnehmen."
+      },
+      {
+        "name": "🧪 Hydraulische Presse — Physik-Experiment",
+        "duration": 20,
+        "minAge": 10,
+        "loudness": "ruhig",
+        "indoor": true,
+        "outdoor": false,
+        "material": "2 große Plastik-Spritzen (apothekenfrei, ohne Nadel, ~5 € für 2 Stück), 1 m durchsichtiger Schlauch (Aquaristik-Bedarf, ~2 €), Wasser, ggf. 1 Holzbrett als „Plattform\" und kleine Gewichte (Bauklötze) zum Demonstrieren",
+        "anleitung": "Eine Spritze ist klein (10 ml), die andere groß (60 ml). Mit dem Schlauch verbinden, beide mit Wasser füllen, keine Luftblasen. Wenn du die kleine Spritze drückst (mit Daumen-Kraft), hebt die große Spritze ein vielfaches Gewicht — Hydraulik-Prinzip.\n\nDemonstration: 1. Erkläre das Prinzip (Druck ist überall im Wasser gleich). 2. Lass Crew probieren — mit dem kleinen Druck bewegen sie etwas Großes. 3. Verbindung zur Feuerwehr: Die echten Feuerwehr-Pumpen funktionieren so. Genau dieses Prinzip macht es möglich, Wasser aus dem Hydrant 20 m hoch auf ein brennendes Haus zu schießen.\n\nNach 15 Min haben sie's verstanden — und sind beeindruckt.",
+        "whyItWorks": "Echtes Physik-Lernen, eingebettet in die Feuerwehr-Story. Funktioniert für die ganze Crew gleichzeitig (alle schauen zu, einer demonstriert reihum). Trainiert konzeptuelles Verständnis, nicht nur Faktenwissen. SICHERHEIT: Plastik-Spritzen ohne Nadel — keine echten Injektionsspritzen!"
+      },
+      {
+        "name": "🎬 Feuerwehr-Dokumentar (Video-Bericht)",
+        "duration": 30,
+        "minAge": 10,
+        "loudness": "mittel",
+        "indoor": true,
+        "outdoor": true,
+        "material": "1-2 Smartphones (ggf. deine + ein Eltern-Helfer-Handy), evtl. ein günstiges Stativ (~10 €) oder einfach Stuhl/Tisch als Auflage. 1 ausgedrucktes „Story-Board\" mit 5 Aufnahme-Ideen.",
+        "anleitung": "Crew dreht einen kurzen Doku-Bericht über den Tag. Wird am Ende der Party in der Zeremonie projiziert (Smartphone an Beamer/TV) oder per Familien-Chat-Mail an Eltern verschickt.\n\nStory-Board (kurz und konkret):\n1. Eröffnung: Wachleiter Max stellt die Crew vor (jedes Kind sagt Name + Funktion).\n2. Stationen-Bericht: Jedes Kind erklärt 1 Station in 20 Sekunden.\n3. Einsatz-Highlight: Crew dreht eine 1-Minuten-Szene aus dem Mini-Einsatz oder der Brandermittlung.\n4. Bestleistungs-Interview: Beste-Brandermittlerin/Bester-Brandermittler bekommt ein 30-Sek-Interview.\n5. Schlusswort: Geburtstagskind sagt 30 Sek über den Tag.\n\nGesamt-Dreh: 20 Min. Schneiden: nach der Party (Eltern als Editor). Verbreitung nur mit Eltern-Zustimmung — Datenschutz beachten!",
+        "whyItWorks": "9-12 lieben Smartphone-Produktion. Trainiert Storytelling, Self-Präsentation, Teamwork. Plus: Eltern bekommen ein einzigartiges Erinnerungs-Video. PFLICHT-CHECK: Vor dem Versand der Videos: jedes Eltern-Paar einzeln zustimmen lassen (DSGVO!). Notfalls Gesichter unkenntlich machen oder nur an die abgebildete Familie schicken."
+      }
+    ]
+  },
   "cakeRecipe": {
     "intro": "Bei 9-12 darf der Kuchen anspruchsvoller werden — die Kinder erkennen Mühe und schätzen sie.",
     "steps": [
@@ -929,15 +989,15 @@
       },
       {
         "n": 4,
-        "content": "Reifen aus Oreo-Keksen oder schwarzem Fondant — 4 Stück seitlich anpressen. Bei 9-12 dürfen die Reifen ordentlich aussehen."
+        "content": "Reifen aus Schoko-Sandwich-Keks-Keksen oder schwarzem Fondant — 4 Stück seitlich anpressen. Bei 9-12 dürfen die Reifen ordentlich aussehen."
       },
       {
         "n": 5,
-        "content": "Drehleiter aus zwei Strohhalmen (oben drauf liegend, mit Querstreben aus weißen Smarties) ODER eine Mini-Leiter aus Salzteig (vorm Backen formen, separat 10 Min. mitbacken). Die Leiter macht den Unterschied zwischen „roter Kasten\" und „Feuerwehrauto-Kuchen\"."
+        "content": "Drehleiter aus zwei Strohhalmen (oben drauf liegend, mit Querstreben aus weißen Zuckerperlen oder Schokolinsen) ODER eine Mini-Leiter aus Salzteig (vorm Backen formen, separat 10 Min. mitbacken). Die Leiter macht den Unterschied zwischen „roter Kasten\" und „Feuerwehrauto-Kuchen\"."
       },
       {
         "n": 6,
-        "content": "„112\" mit weißer Glasur seitlich. Optional: blaues Blaulicht aus Smartie oder Blaubeere oben drauf, mit weißem Stern aus Zuckerguss."
+        "content": "„112\" mit weißer Glasur seitlich. Optional: blaues Blaulicht aus einer Blaubeere oder einer blauen Zuckerperle oben drauf, mit weißem Stern aus Zuckerguss."
       },
       {
         "n": 7,
@@ -952,7 +1012,7 @@
     "tips": [
       {
         "title": "🎂 Keine Lust zu backen?",
-        "body": "Fertigen Schoko-Kasten beim Bäcker kaufen, rote Glasur drüber, Oreo-Reifen ankleben, „112\" mit weißem Zuckerstift draufschreiben. Sieht aus wie gewollt, dauert 15 Minuten, schmeckt den Kindern genauso gut. Bei 9-12 erkennen sie ggf. den Kauf-Kuchen — aber sie würden's nie sagen, weil ihnen das Konzept des „Mama backt mit Liebe\" eher peinlich ist als das eines geschäftsmäßigen Geburtstags."
+        "body": "Fertigen Schoko-Kasten beim Bäcker kaufen, rote Glasur drüber, Schoko-Sandwich-Keks-Reifen ankleben, „112\" mit weißem Zuckerstift draufschreiben. Sieht aus wie gewollt, dauert 15 Minuten, schmeckt den Kindern genauso gut. Bei 9-12 erkennen sie ggf. den Kauf-Kuchen — aber sie würden's nie sagen, weil ihnen das Konzept des „Mama backt mit Liebe\" eher peinlich ist als das eines geschäftsmäßigen Geburtstags."
       }
     ]
   },
@@ -985,6 +1045,14 @@
       {
         "topic": "📱 Partyseite statt WhatsApp-Chaos",
         "detail": "Auch bei 9-12 lohnt sich die [Partyseite auf party.machsleicht.de](https://party.machsleicht.de) — Allergien-Abfrage, Cola/Apfelschorle-Präferenz, Vegetarier-Status, Smartphone-Regel, alles in einem Link. Eltern lesen es ohne Nachfragen, und du hast es schwarz auf weiß."
+      },
+      {
+        "topic": "🏠 Brandschutz-Detektive — eigene Wohnung vorher checken",
+        "detail": "Wenn du das Bonus-Spiel „Brandschutz-Detektive\" planst (Crew geht durch die Wohnung und identifiziert Gefahren), lohnt sich ein eigener Vor-Check 2 Tage vorher. 10-Punkte-Liste durchgehen: Rauchmelder funktionieren? Mehrfachsteckdosen nicht überlastet? Fluchtwege frei? Streichhölzer unzugänglich? Wenn du selbst 3-4 Punkte verbessern kannst, geht das in 30 Min. Die Crew findet dann am Tag X die übrigen 6-7 Punkte — und du hast danach selbst eine sichere Wohnung. Echter parental value, der über die Party hinausreicht. Die Deutsche Feuerwehr-Schutzkommission empfiehlt diesen Check jährlich."
+      },
+      {
+        "topic": "🎬 Datenschutz bei Videoaufnahmen (Wow + Dokumentar-Bonus)",
+        "detail": "Wenn du die Notruf-Simulation, das Dokumentar-Spiel oder Polaroids machst: vorher klären, wer abgebildet werden darf. DSGVO gilt auch für Kindergeburtstage. Drei Optionen: (a) Vor der Party in der Einladung anfragen — schriftliche Zustimmung pro Familie. (b) Am Tag X kurz fragen, alle Eltern stimmen einzeln zu — funktioniert bei 7-8 Familien noch. (c) Videos/Fotos nur an die jeweilige Familie senden — jeder bekommt nur die Bilder seines eigenen Kindes. Niemals ohne Zustimmung in soziale Medien posten (auch nicht in geschlossene Familien-Gruppen anderer Familien). Bei Verstoß droht Abmahnung — selbst wenn die andere Familie nett ist."
       }
     ],
     "educationalValue": null
@@ -1010,6 +1078,14 @@
     {
       "q": "Funktioniert die Brandermittlung wirklich oder ist das zu schwer für 9-12?",
       "a": "Sie funktioniert, aber nur, wenn ihr die Phasenstruktur einhaltet. 9-Jährige sollten die Minimal-Brandermittlung machen (4 Verdächtige, deutliche Beweise, 60 Min.). 10-12-Jährige können die Standard- oder Wow-Variante durchspielen (4-6 Verdächtige, längere Diskussion, 75-90 Min.). Wichtig: du moderierst — wenn die Crew nicht weiterkommt, gib einen Hinweis, das ist Eskalation, nicht Mogelei. Die Auflösung mit der Köchin und der Fett-Pfanne knüpft direkt an das Theorie-Briefing an. Wer das Briefing skippt, verliert die Auflösungs-Logik. Das Briefing ist nicht optional."
+    },
+    {
+      "q": "Was tun bei schlechtem Wetter ohne Wasser-Spiele?",
+      "a": "Bei 9-12 ist Indoor sogar oft eleganter, weil die Brandermittlung und das Theorie-Briefing eh drinnen stattfinden. Statt Spritzen-Station: 1. Lego-Lösch-Roboter bauen (siehe Bonus-Spiele) — anspruchsvolle Bastel-Challenge für 30-45 Min. 2. Feuerwehr-Quiz-Duell mit 20 Fragen zu Technik/Taktik/Geschichte. 3. Hydraulik-Experiment (Spritzen-Demo mit 2 verbundenen Spritzen) — Physik-Coolness. 4. Brandschutz-Detektive: Die Crew geht durch die Wohnung und identifiziert echte Gefahren (überlasteter Stecker, blockierter Fluchtweg, fehlender Rauchmelder). Letzteres bringt sogar Eltern-Lernwert mit nach Hause."
+    },
+    {
+      "q": "Welche Mitgebsel passen zum Feuerwehr-Motto bei 9-12?",
+      "a": "9-12 schätzt Detail-Qualität über Menge. Funktionierende Tüten enthalten: 1 Plastik-Helm (oder Pin), 1 Crew-Diplom mit individueller Beurteilung (gerollt mit Bändchen — der emotionale Anker), 1 kleine Lupe (haben sie bei der Brandermittlung benutzt, wird Detektiv-Spielzeug), 1 Mini-Notruf-Karte als Erinnerung an die 5 W, 1-2 Schokoriegel oder Mini-Chipstüte. Bei Wow zusätzlich: Polaroid mit Funktion auf der Rückseite + Crew-Pin. Vermeide: Kindergarten-Spielzeug, billige Lutscher, Plastikfiguren — bei 9-12 ist das peinlich und landet auf dem Heimweg im Mülleimer."
     }
   ],
   "preparationWeeks": {
@@ -1104,7 +1180,7 @@
         {
           "icon": "🎂",
           "title": "Feuerwehrauto-Kuchen backen — oder Plan B",
-          "detail": "Wenn Zeit/Nerven da: Backmischung in Kastenform. Wenn nicht: Schoko-Kasten beim Bäcker (4-6€), morgen Glasur + Oreos + Wunderkerze. Bei 9-12 ist Wunderkerze OK — keine Brand-Panik wie bei den Kleinen."
+          "detail": "Wenn Zeit/Nerven da: Backmischung in Kastenform. Wenn nicht: Schoko-Kasten beim Bäcker (4-6€), morgen Glasur + Schoko-Sandwich-Kekss + Wunderkerze. Bei 9-12 ist Wunderkerze OK — keine Brand-Panik wie bei den Kleinen."
         },
         {
           "icon": "🗣️",
@@ -1134,7 +1210,7 @@
         {
           "icon": "🍫",
           "title": "Kuchen verzieren",
-          "detail": "Rote Glasur drüber, Oreos halbieren = Reifen, weißer Zuckerstift für ‚112'. Bei Wow: Wunderkerze in den Kuchen für ‚Happy Birthday'-Moment. 10 Minuten Arbeit, über Nacht fest werden lassen."
+          "detail": "Rote Glasur drüber, Schoko-Sandwich-Kekss halbieren = Reifen, weißer Zuckerstift für ‚112'. Bei Wow: Wunderkerze in den Kuchen für ‚Happy Birthday'-Moment. 10 Minuten Arbeit, über Nacht fest werden lassen."
         },
         {
           "icon": "🕵️",
@@ -1246,11 +1322,11 @@
     "kuchen_misslungen": {
       "icon": "🎂",
       "label": "Kuchen ist misslungen",
-      "headline": "Bäcker-Hack: Schoko-Kasten + Glasur + Oreos = Notfall in 10 Min.",
+      "headline": "Bäcker-Hack: Schoko-Kasten + Glasur + Schoko-Sandwich-Kekss = Notfall in 10 Min.",
       "steps": [
         "Schoko-Kastenkuchen beim nächsten Bäcker oder Edeka-Kuchenecke (4–6 €).",
         "Rote Tortenguss-Glasur drüber — Tube, 1,50 €.",
-        "4 Oreos halbieren = 8 Reifen, seitlich ankleben, weißer Zuckerstift für ‚112'.",
+        "4 Schoko-Sandwich-Kekss halbieren = 8 Reifen, seitlich ankleben, weißer Zuckerstift für ‚112'.",
         "Wunderkerze obendrauf für Wow-Happy-Birthday-Moment, fertig."
       ],
       "fallback": "Bäcker zu? Stückkuchen vom Discounter, in der Mitte Wunderkerze, je ein Mini-Marshmallow + Zahnstocher als Sirene-Spitze. Bei 9-12 funktioniert humor: ‚Tarn-Modus, Feuerwehr-Geheimoperation.'",
@@ -1296,6 +1372,48 @@
       ],
       "fallback": "Wirklich chaotisch? Mitgebsel in den Flur stellen, jedes Kind nimmt im Rausgehen eine, Abschied auf der Treppe.",
       "tone": "praktisch"
+    },
+    "brandermittlung_zu_schwer": {
+      "icon": "🧩",
+      "label": "Brandermittlung — Crew kommt nicht weiter",
+      "headline": "Hint-System aktivieren: nach 5 Min Stillstand 1 Tipp-Karte rausgeben.",
+      "steps": [
+        "Stoppe die Diskussion kurz: ‚Crew, ich hab einen Anruf von der Leitstelle — neuer Hinweis ist eingetroffen.'",
+        "Übergebe eine Tipp-Karte aus dem Hint-Umschlag (vorher vorbereitet, 1 Tipp pro Phase).",
+        "Tipp formulieren als Story-Element: ‚Ein Zeuge hat gerade gemeldet, dass...' — nicht als Auflösung.",
+        "Crew weiter arbeiten lassen — nicht moderieren, nur zuhören.",
+        "Falls nach weiteren 5 Min keine Bewegung: zweiter Tipp. Maximum 2 Tipps pro Phase, sonst verlieren die Kinder das Erfolgs-Gefühl."
+      ],
+      "fallback": "Echt festgefahren nach 2 Tipps? Phase abbrechen, gemeinsam die Auflösung herleiten — als Crew-Diskussion, nicht als Vortrag. Anschluss: ‚Beim echten Einsatz hilft Teamwork — das war jetzt unser Teamwork-Moment.' Funktioniert.",
+      "tone": "ruhig"
+    },
+    "smartphone_drama": {
+      "icon": "📱",
+      "label": "Smartphone-Konflikte oder versehentliche 112",
+      "headline": "Sofort einsammeln, dann ruhig erklären — Notruf abklären falls passiert.",
+      "steps": [
+        "Wenn ein Kind heimlich Insta/TikTok postet: kurz beiseite nehmen, Foto/Video löschen lassen, Handy in Sammelbox bis Schicht-Ende.",
+        "Wenn versehentliche 112: SOFORT zurückrufen oder warten bis Leitstelle anruft, ruhig erklären (‚Mein Sohn hat versehentlich gewählt, es ist kein Notfall, danke').",
+        "NIEMALS einfach auflegen ohne Erklärung — die Leitstelle muss verifizieren, sonst schicken sie Einsatzkräfte raus.",
+        "Vor der Notruf-Simulation IMMER Flugmodus aktivieren, am besten alte Smartphones ohne SIM nutzen.",
+        "Eltern bei Smartphone-Drama anrufen — kurze Lage-Übergabe, lieber transparent als verheimlicht."
+      ],
+      "fallback": "Echt schwerwiegender Vorfall (z.B. mehrere Notrufe oder ernsthafte Datenschutz-Verletzung)? Party in Zeremonie-Modus schalten, Mitgebsel raus, Eltern anrufen. Verantwortung übergeben statt vertuschen.",
+      "tone": "praktisch"
+    },
+    "streit_unter_kindern": {
+      "icon": "⚔️",
+      "label": "Streit unter Kindern (typisch 9-12)",
+      "headline": "5-Min-Mediation — bei 9-12 reicht meistens Reden.",
+      "steps": [
+        "Beide Kinder aus der Gruppe nehmen, in ruhigen Raum (Küche oder Flur).",
+        "Jeder sagt 1 Min lang seine Sicht — der andere hört zu, ohne zu unterbrechen.",
+        "Danach: ‚Was bräuchtest du jetzt, damit's weitergeht?' — meistens kommt ein konkreter Vorschlag.",
+        "Wenn beide einverstanden: zurück zur Crew, kein großes Brimborium — sonst verlieren die Beteiligten das Gesicht.",
+        "Wenn nicht: kurze Time-Out-Phase, jedes Kind eine Aufgabe (Wachen-Schreiber, Foto-Reporter) — Distanz schafft Beruhigung."
+      ],
+      "fallback": "Eskaliert weiter (körperliche Konflikte, Tränen, Aggression)? Eltern beider Kinder anrufen — gemeinsam entscheiden, ob früher abgeholt wird. Bei 9-12 ist Eltern-Einbindung kein Versagen, sondern Verantwortung.",
+      "tone": "ruhig"
     }
   }
 }

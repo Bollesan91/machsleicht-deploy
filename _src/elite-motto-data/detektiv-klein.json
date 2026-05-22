@@ -244,6 +244,46 @@
           "outdoorTip": null,
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Genau-Hinschauen ist die einzige „Detektiv-Fähigkeit“, die 3-5-Jährige schon können. Das Spiel braucht null Material, läuft sitzend und gibt jedem Kind einen kleinen Aha-Moment — ideal als ruhiger Kontrast zur Such-Runde."
+        },
+        {
+          "name": "👆 Stempel-Spürnasen: Dein eigener Ausweis-Abdruck",
+          "indoor": true,
+          "outdoor": false,
+          "duration": "10 Min.",
+          "minAge": 3,
+          "loudness": "leise",
+          "effort": "leicht",
+          "material": "Ein abwaschbares Stempelkissen (kindgeprüft, auf Wasserbasis), pro Kind eine vorbereitete Spürnasen-Karte (Tonkarton A6 mit Detektiv-Namen und einem Stempel-Feld), feuchte Tücher zum Abwischen.",
+          "prepText": "Nach dem Kuchen, bevor die Urkunden kommen: Jedes Kind bekommt seinen eigenen kleinen Ausweis mit Stempel-Feld. Du beschriftest die Karten vorher mit dem Detektiv-Namen, sodass am Tag selbst nur noch der Daumen aufs Kissen muss.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Daumen aufs Kissen",
+              "content": "Du führst den Daumen jedes Kindes kurz aufs Stempelkissen — bei den ganz Kleinen am besten selbst halten, das spart Geklecks."
+            },
+            {
+              "n": 2,
+              "name": "Abdruck auf die Karte",
+              "content": "Daumen einmal kurz aufs Stempel-Feld der Spürnasen-Karte drücken. Fertig ist der eigene „Beweis“ — ein Abdruck, den nur dieses Kind hat."
+            },
+            {
+              "n": 3,
+              "name": "Mit der Lupe anschauen",
+              "content": "Mit der Pappkarton-Lupe den eigenen Abdruck „untersuchen“ — kleine Wirbel und Linien anschauen. Mini-Aha-Moment."
+            },
+            {
+              "n": 4,
+              "name": "Sofort Hände wischen",
+              "content": "Direkt mit dem feuchten Tuch abwischen, bevor die Hand an Kuchen, Mütze oder Tapete kommt. Diese eine Regel rettet den Nachmittag."
+            }
+          ],
+          "safetyRule": "Nur abwaschbare, kindgeprüfte Stempelfarbe (Wasserbasis) verwenden. Daumen-Abdruck reicht — finger-für-finger-Pflicht würde 3-5 überfordern. Bei sehr jungen Kindern den Daumen selbst führen.",
+          "ageAdjust3": "Du nimmst den Abdruck selbst ab — ein Daumen genügt, kein zweiter Versuch.",
+          "ageAdjust5": "5-Jährige stempeln selbst, dürfen auch zwei Daumen probieren und ihren Detektiv-Namen mit krakeligem Stift drunter setzen.",
+          "indoorTip": "Eine wischbare Unterlage (Wachstuch oder Backpapier) unter die Station legen — spart Putzen.",
+          "outdoorTip": null,
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Der eigene Abdruck ist für 3-5 ein kleines Wunder: „Das hat nur ich.“ Es macht die Lupe sofort sinnvoll, gibt jedem Kind ein zweites Mitgebsel neben der Urkunde und passt zwischen Kuchen und Urkunden-Übergabe als ruhige 10-Minuten-Station perfekt rein."
         }
       ],
       "food": "🍪 Spürnasen-Snacks: der gefundene Kuchen (Schoko-Marmorkuchen mit Lupen-Deko aus Zuckerguss), dazu „Beweismittel-Tüten“ mit Schoko-Münzen, Trauben und Salzstangen. Wasser und gespritzter Apfelsaft reichen — kein bunter Zuckersprudel, das überdreht 3-5 nur.",
@@ -1050,6 +1090,14 @@
       {
         "tip": "Schoko-Muenzen-Folie",
         "content": "Bei 3-Jaehrigen Folie SCHON vorher entfernen — Schoko-Muenzen ohne Folie auslegen. Folie sammeln + wegwerfen. Alternativ: Trockenobst-Taler (Hartriegel + Mandelmus, folienfrei)."
+      },
+      {
+        "topic": "🏠 Wohnung als Tatort denken",
+        "detail": "Schau die Räume mit Detektiv-Augen an: Sofakissen (Versteck-Klassiker), Vorhang (dunkle Ecke für Taschenlampe), unter Tisch (Krabbel-Ziel), Regalbrett auf Kinderhöhe (sichtbarer Schatz). Drei bis vier solcher „Mikro-Verstecke“ in einem Raum fühlen sich für 3-5 nach einer Detektiv-Reise an, ohne dass du die ganze Wohnung präparierst."
+      },
+      {
+        "topic": "🌳 Garten als Bonus, nicht Pflicht",
+        "detail": "Garten verlängert die Spur ohne Mehraufwand: zwischen Bäumen, um den Sandkasten, unter die Bank. Aber: Wenn das Wetter schlecht wird, ist das KEIN Plan-B-Problem — die Wohnung trägt allein. Den Garten lieber als „Wir laufen einmal raus zum Endpunkt“-Schluss-Sequenz einsetzen statt als ganzen Schauplatz."
       }
     ],
     "educationalValue": "Die Kinder üben bei der Detektiv-Party ganz nebenbei: genau hinschauen und beobachten (Spuren-Suche, Hinweis-Quiz), geduldig dranbleiben, bis etwas gefunden ist, und das gute Gefühl, gemeinsam ein Ziel zu erreichen — niemand gewinnt allein, alle finden zusammen. Der „Wir-finden-das-wieder“-Frame stärkt das Selbstvertrauen: Ein Kind erlebt, dass es mit einem einfachen Werkzeug selbst ein Problem lösen kann — der Schritt vom magischen Suchspiel zum zielgerichteten Denken, der mit 3-5 ansteht."
@@ -1071,6 +1119,14 @@
     {
       "q": "Was, wenn ein Kind nicht mitsuchen will?",
       "a": "Kein Zwang. Mütze, Lupe und Urkunde bekommt jedes Kind, egal ob es mitsucht. Schüchterne Kinder bleiben beim Elternteil oder bekommen die ruhige Kuschel-Wächter-Rolle. Niemand muss vorsprechen oder gewinnen."
+    },
+    {
+      "q": "Ist die Fingerabdruck-Station nicht zu kleckrig für 3-5?",
+      "a": "Mit der richtigen Vorbereitung nicht. Nimm ein abwaschbares Stempelkissen auf Wasserbasis (kindgeprüft), eine wischbare Unterlage und feuchte Tücher direkt daneben. Du führst den Daumen selbst — ein Abdruck pro Kind reicht. Sofort danach Hände wischen, dann landet keine Farbe auf Mütze oder Tapete. Geht 10 Minuten und gibt jedem Kind seinen eigenen kleinen „Beweis“."
+    },
+    {
+      "q": "Was tun, wenn ein Kind die Spur einfach nicht findet?",
+      "a": "Bei 3-5 nie still daneben stehen. Geh mit, drück dem Kind die Lupe in die Hand und zeige unauffällig auf die nächste Fußspur. Wenn nötig, leg eine Schoko-Münze dorthin, wo es gerade hinschaut — die „Spürnase“ hat gefunden, niemand merkt etwas. Alle Funde gehören der Gruppe, nicht dem Schnellsten."
     }
   ],
   "preparationWeeks": {
@@ -1329,6 +1385,32 @@
       ],
       "fallback": "Noch mitten im Fall? Eltern kurz dazubitten — bei 3-5 freuen sich die Kinder, ihnen die Lupe und den Fund zu zeigen.",
       "tone": "praktisch"
+    },
+    "kind_findet_spur_nicht": {
+      "icon": "🐾",
+      "label": "Kind findet die Spur einfach nicht",
+      "headline": "Du wirst zum „Mit-Spürer“ — niemand sucht allein vor 3-5.",
+      "steps": [
+        "Bei 3-5 nie still daneben stehen, wenn ein Kind verzweifelt sucht — du gehst mit und sagst leise: „Lass uns mal hier ganz genau gucken.“",
+        "Dem Kind die Lupe in die Hand drücken und gemeinsam auf die nächste Fußspur zeigen — „Schau, da! Hast du auch eine Spur entdeckt?“",
+        "Notfalls eine Schoko-Münze unauffällig hinlegen, wo das Kind gerade hinschaut — die „Spürnase“ hat gefunden, niemand merkt was.",
+        "Nie kommentieren, dass ein Kind hinterherhinkt — alle Funde gehören der Gruppe, nicht dem Schnellsten."
+      ],
+      "fallback": "Frustriert das Kind komplett? Direkt zum Endpunkt der Spur gehen und alle gemeinsam den Kuchen „entdecken“ lassen — die Story trägt auch ohne Vollständigkeit.",
+      "tone": "ruhig"
+    },
+    "streit_ueber_loesung": {
+      "icon": "🤝",
+      "label": "Streit, wer's zuerst gefunden hat",
+      "headline": "„Die Spürnasen haben es ZUSAMMEN gelöst“ — dieser eine Satz, früh gesagt.",
+      "steps": [
+        "Schon vor dem ersten Spiel ein Mal laut sagen: „Bei uns sind alle Spürnasen — wir finden zusammen, niemand zuerst.“ Spart 90 % der Streits.",
+        "Wenn doch: ruhig dazwischen — „Ihr habt beide eine Spur gefunden! Schau, da ist sogar noch eine.“ Niemand muss verlieren.",
+        "Funde immer auf einen gemeinsamen „Beweis-Tisch“ legen, statt sie bei einem Kind anzuhäufen — Eigentum wird zur Gruppen-Sammlung.",
+        "Bei hartnäckigem Streit beide Kinder kurz zur Lupen-Untersuchung des Funds einladen — gleiche Aufmerksamkeit beruhigt am schnellsten."
+      ],
+      "fallback": "Bleibt es heiß? Kurze Snack-Pause einschieben, das senkt den Pegel sofort und gibt dir Zeit für eine ruhige Spur-Neuverteilung.",
+      "tone": "ruhig"
     }
   }
 }
