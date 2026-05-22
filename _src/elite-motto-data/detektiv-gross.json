@@ -531,7 +531,7 @@
           "minAge": 9,
           "loudness": "konzentriert",
           "effort": "mittel",
-          "material": "Ein verschlüsselter „Erpresser-Brief“ (Caesar-Chiffre, jeder Buchstabe um 3 verschoben), eine Caesar-Scheibe oder Alphabet-Tabelle zum Entschlüsseln, ein zweiter Code als Zahlen-Reihe (A=1, B=2 …), Bleistifte.",
+          "material": "Ein verschlüsselter „Erpresser-Brief“ (Caesar-Chiffre, jeder Buchstabe um 3 verschoben), eine Caesar-Scheibe oder Alphabet-Tabelle zum Entschlüsseln, ein zweiter Code als Zahlen-Reihe (A=1, B=2 …), Bleistifte. WICHTIG: Die Verschiebezahl steht GROSS auf der Stationskarte gedruckt. Falls Wow-Tier (Shift 1) — explizit hinweisen: \"Achtung, nur 1 Stelle verschoben, nicht 3 wie im Standard.\"",
           "prepText": "Am Tatort lag ein verschlüsselter Zettel. Das Team entschlüsselt ihn mit der Caesar-Chiffre (jeder Buchstabe 3 Stellen zurück) und einem Zahlen-Code. Die Lösung verrät, wo der nächste Hinweis liegt — und liefert einen Buchstaben für den großen TAT-Code.",
           "steps": [
             {
@@ -652,6 +652,186 @@
           "outdoorTip": "Terrassentür oder Gartentor als Tatort markieren.",
           "whyItWorksTitle": "Jede Spezialisierung ist nötig",
           "whyItWorks": "Wer eine Tüte nicht knackt, holt sich einen Spezialisten dazu, der seinen Buchstaben schon hat — gelöst wird gemeinsam, niemand bleibt hängen. Am Ende bekommt jedes Kind die volle Ermittler-Lizenz, ohne Abstufung. Wer besonders sorgfältig kombiniert hat, kriegt einen „Sorgfalt-Spezialist“-Stempel — passt zur Leitidee „im Ermittlungsdienst zählt nicht, wer der Schnellste ist, sondern wer am genauesten hinschaut“. Tempo wird hier nicht extra belohnt."
+        },
+        {
+          "name": "👁️ Observation auf Zeit — die Zeugen-Probe",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 15,
+          "minAge": 9,
+          "loudness": "leise",
+          "effort": "leicht",
+          "material": "1 erwachsene Person (oder älteres Geschwisterkind), die als „Augenzeuge“ in den Raum kommt. Notiz-Bögen pro Detektiv, Bleistifte. Optional: Stoppuhr.",
+          "prepText": "Echte Ermittler prüfen Zeugen-Aussagen — aber Zeugen erinnern sich falsch oder übersehen Veränderungen. Aufgabe: 2 Minuten lang eine Person beim „normalen Tun“ ansehen, dann verlässt sie den Raum und kommt mit 3 absichtlich veränderten Details zurück.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Erster Auftritt: 10 Handlungen",
+              "content": "Die Zeugen-Person betritt den Raum und macht 2 Minuten lang 10 spezifische Dinge: Buch anfassen, Bild gerade rücken, kurz aus der Flasche trinken, etwas aus der Tasche nehmen, etc. Die Detektive schauen schweigend zu und merken — nicht schreiben."
+            },
+            {
+              "n": 2,
+              "name": "Raum verlassen — und alle aufschreiben",
+              "content": "Die Person geht. Die Crew schreibt aus dem Gedächtnis auf, was sie gemacht hat — möglichst alle 10 Handlungen, in der richtigen Reihenfolge. Einzeln, nicht im Team."
+            },
+            {
+              "n": 3,
+              "name": "Zweiter Auftritt: 3 Veränderungen",
+              "content": "Die Person kommt zurück — mit 3 absichtlich geänderten Details: Ärmel hochgekrempelt (vorher unten), andere Schuhe (rechts/links getauscht oder andere Farbe), Brille auf (vorher ohne) oder Haarklammer entfernt. Die Detektive sollen die Veränderungen erkennen."
+            },
+            {
+              "n": 4,
+              "name": "Im Team abgleichen",
+              "content": "Jede Crew vergleicht ihre Notizen. Welche Handlungen hat das ganze Team gesehen, welche nur einzelne? Welche Veränderungen sind aufgefallen? Punkte zählen jetzt: 1 Punkt pro korrekter Handlung, 2 Punkte pro entdeckter Veränderung."
+            },
+            {
+              "n": 5,
+              "name": "Sorgfalt-Spezialist-Erkenntnis",
+              "content": "Wer hat mehr Veränderungen entdeckt als Handlungen erinnert? Das ist der „Sorgfalt-Spezialist“-Modus — Hinschauen ist eine andere Fähigkeit als Reihenfolge merken. Beide zählen."
+            }
+          ],
+          "safetyRule": "Keine Veränderungen, die verunsichern könnten (kein Pflaster, kein Verband, kein vorgetäuschter Schmerz) — nur Kleidung und Accessoires.",
+          "ageAdjust9": "7 Handlungen statt 10, 2 Veränderungen statt 3 — und die Veränderungen sehr deutlich machen (knallrote Mütze auf statt Brille).",
+          "ageAdjust12": "12 Handlungen, 4 subtile Veränderungen — z.B. Uhr ans andere Handgelenk, anderes Armband, Haar anders gescheitelt. Erfordert echte Beobachtungsschärfe.",
+          "indoorTip": "Im hell beleuchteten Wohnzimmer — die Detektive müssen die Details klar sehen können. Im Halbdunkel ist das frustrierend.",
+          "outdoorTip": "Im Garten geht es auch — die Zeugen-Person macht ihren „Auftritt“ am Gartentisch, die Detektive sitzen drumherum.",
+          "whyItWorksTitle": "Echte Ermittler-Fähigkeit: präzise Beobachtung",
+          "whyItWorks": "Echte Forensiker wissen: Zeugen erinnern sich oft falsch oder übersehen Offensichtliches. Die Kinder erleben das selbst — Beobachten ist trainierbar, im Team wird mehr gesehen als allein. Im Gegensatz zum Memory-Tablett trainiert das hier den Vergleich „vorher/nachher an einer Person“ — eine andere kognitive Leistung."
+        },
+        {
+          "name": "🎨 Phantombild-Station (Bonus-Modul)",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 15,
+          "minAge": 9,
+          "loudness": "leise",
+          "effort": "leicht",
+          "material": "Pro Detektiv: 1 Phantombild-Vorlage (DIN A5, vorgezeichnetes Gesichts-Oval mit Hilfslinien für Augen/Mund), Bleistifte, 1 Beschreibungs-Karte mit Zeugen-Aussage zum „Verdächtigen“, optional Radiergummi.",
+          "prepText": "Auf der Karte steht eine kurze Zeugen-Aussage zum Verdächtigen, z.B.: „Mittelgroß, runde Brille, kurze Haare, kleine Narbe links über dem Auge, schiefes Lächeln.“ Aufgabe: aus dieser Beschreibung ein Phantombild zeichnen — Genauigkeits-Übung, kein Kunst-Wettbewerb.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Aussage vorlesen",
+              "content": "Du liest die Zeugen-Aussage zwei Mal laut vor. Die Detektive notieren in Stichworten, was beschrieben wird."
+            },
+            {
+              "n": 2,
+              "name": "Phantombild zeichnen",
+              "content": "Jeder zeichnet aus den Stichworten auf seiner Vorlage ein Phantombild — keine Kunstnoten, es geht um Genauigkeit zur Beschreibung."
+            },
+            {
+              "n": 3,
+              "name": "Bilder vergleichen",
+              "content": "Die fertigen Phantombilder werden nebeneinander gelegt. Welche Merkmale haben alle erkannt? Welche nur einzelne? Wo gibt es Abweichungen?"
+            },
+            {
+              "n": 4,
+              "name": "Mit den Verdächtigen abgleichen",
+              "content": "Die 5 Verdächtigen-Karten aus dem Profiler-Spiel werden gezeigt. Welcher passt am besten zum Phantombild? Achtung: Es ist der mit der Brille und der Narbe — nicht Mara, sondern Tobias."
+            },
+            {
+              "n": 5,
+              "name": "Ins Logbuch",
+              "content": "Das beste Phantombild wandert als „Beweisstück Nr. X“ in die Fallakte und stützt den Plot-Twist beim Showdown."
+            }
+          ],
+          "safetyRule": null,
+          "ageAdjust9": "Vereinfachte Beschreibung mit nur 3 Merkmalen. Vorgezeichnetes Gesicht ist halb fertig — nur Brille/Haare ergänzen.",
+          "ageAdjust12": "Detailreiche Beschreibung (7-8 Merkmale), keine Vorlage — leeres Blatt. Wer mag, zeichnet zwei Versionen (Frontal + Profil) wie auf einer echten Fahndungs-Akte.",
+          "indoorTip": "Am Esstisch mit guter Beleuchtung — Zeichnen braucht Licht. Bleistifte mit weicher Mine (B oder 2B) gehen leichter.",
+          "outdoorTip": null,
+          "whyItWorksTitle": "Beschreiben üben — wichtiger als Talent",
+          "whyItWorks": "Phantombild-Zeichnen ist Genauigkeit, keine Kunst: Wie präzise übersetzt das Hirn Wörter in Bilder? Auch nicht-zeichnerische Kinder kommen gut zurecht, weil es um Merkmale geht. Der direkte Abgleich mit den Verdächtigen-Karten gibt einen klaren Aha-Moment, der den Plot-Twist sichtbar macht."
+        },
+        {
+          "name": "💓 Lügendetektor-Probe (Bonus-Modul)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 15,
+          "minAge": 9,
+          "loudness": "leise",
+          "effort": "leicht",
+          "material": "1 Stoppuhr oder Handy-Stopuhr, 1 Notiz-Bogen pro Detektiv, eine ruhige Sitzecke. Optional: pulsmesser-Uhr (falls vorhanden — nicht nötig, der Daumen am Handgelenk reicht völlig).",
+          "prepText": "Echte Lügendetektoren messen Puls und Hautleitfähigkeit — wir nutzen den Klassiker: Puls mit zwei Fingern am Handgelenk fühlen. Pulsschlag im Ruhezustand und bei einer „Aufregungs-Frage“ vergleichen. Spannend, harmlos, echte forensische Logik.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Ruhepuls finden",
+              "content": "Jeder Detektiv legt zwei Finger ans Handgelenk (Daumenseite) oder am Hals, bis er den eigenen Puls spürt. 15 Sekunden Schläge zählen, mal 4 = Puls pro Minute. Notieren."
+            },
+            {
+              "n": 2,
+              "name": "Eine kleine Aufregungs-Frage",
+              "content": "Du stellst eine harmlose, aber leicht aufregende Frage: „Was ist dein peinlichster Spitzname?“ oder „Was wünschst du dir am meisten zum Geburtstag?“ — und misst direkt danach erneut Puls. Notieren."
+            },
+            {
+              "n": 3,
+              "name": "Vergleichen",
+              "content": "Bei den meisten ist der Puls leicht höher. Das ist normal — Aufregung erhöht den Puls. Genau das nutzen echte Lügendetektoren: sie messen, ob Antworten Stress auslösen."
+            },
+            {
+              "n": 4,
+              "name": "Die Detektiv-Lektion",
+              "content": "Höherer Puls = NICHT zwingend Lüge, oft nur Aufregung. Deshalb gelten echte Lügendetektoren nicht vor Gericht — gute Ermittler vergleichen Aussagen und Indizien, nicht Pulswerte."
+            },
+            {
+              "n": 5,
+              "name": "Logbuch-Eintrag",
+              "content": "In die Fallakte: „Lügendetektor allein reicht nicht — nur die Indizienkette zählt.“ Direkte Brücke zum Plot-Twist (stärkstes Motiv ≠ Beweis)."
+            }
+          ],
+          "safetyRule": "Keine peinlichen, beschämenden Fragen — die „Aufregungs-Frage“ bleibt leicht. Wer nicht antworten will, misst nur Ruhepuls; der Effekt zeigt sich an anderen.",
+          "ageAdjust9": "Bei der Puls-Messung selbst helfen — kleine Finger finden den Puls manchmal nur schwer. Eine ruhige Sitzposition macht das Zählen leichter.",
+          "ageAdjust12": "Zweite Messung nach 20 Hampelmännern (körperliche Aktivität) — und vergleichen mit der „Aufregungs-Frage“-Messung. Was treibt den Puls stärker hoch? Echte forensische Erkenntnis: Stress sieht man oft nicht am Puls allein.",
+          "indoorTip": "Eine ruhige Ecke abseits des Trubels — Pulsfühlen geht nur im Sitzen und in halbwegs leiser Umgebung.",
+          "outdoorTip": "Im schattigen Garten geht das gut — frische Luft + Ruhe = klarer Pulsschlag spürbar.",
+          "whyItWorksTitle": "Forensik-Lektion mit Aha-Moment",
+          "whyItWorks": "Die Kinder erleben am eigenen Körper, wie Aufregung den Puls steigert — und schließen daraus, dass das allein kein Beweis ist. Vertieft die Plot-Twist-Lektion: Verdächtig-Wirken ist kein Beweis. Körperliche Erfahrung + logische Erkenntnis bleibt in dem Alter im Gedächtnis."
+        },
+        {
+          "name": "🗣️ Kreuzverhör mit Fangfragen (Bonus für 11-12)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 20,
+          "minAge": 10,
+          "loudness": "halblaut",
+          "effort": "mittel",
+          "material": "1 Erwachsener oder älteres Geschwisterkind als „Verdächtige(r)“ mit gut vorbereiteter Alibi-Geschichte (5-6 Details, davon 1-2 absichtliche Widersprüche). Notiz-Hefte für die Detektive, Bleistifte. Optional: Stoppuhr für Fragenrunde.",
+          "prepText": "Anders als das Standard-Verhör formuliert hier jedes Kind eigene Fragen — Bonuspunkte für Fangfragen, die einen Widerspruch entlarven. Profiler-Arbeit: Fragen so stellen, dass die Antwort verrät, ob jemand seine Geschichte erlebt hat.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Vorgeschichte vorlesen",
+              "content": "Der Verdächtige liest sein Alibi vor: „19:00-21:00 im Park, Spaziergang, dann beim Bäcker eine Brezel.“ Inkl. 1-2 versteckter Widersprüche (z.B. Bäcker war laut Aussage geschlossen)."
+            },
+            {
+              "n": 2,
+              "name": "Fragen formulieren",
+              "content": "Jedes Team hat 3 Min., um eigene Fragen zu notieren. Tipp: Welche Details kann man prüfen? Welche Fragen brauchen konkrete Antworten (nicht ja/nein)?"
+            },
+            {
+              "n": 3,
+              "name": "Kreuzverhör",
+              "content": "Reihum eine Frage pro Team. Der Verdächtige antwortet — mal vage, mal mit Detail. Widersprüche notieren."
+            },
+            {
+              "n": 4,
+              "name": "Punkte vergeben",
+              "content": "Ehrliche Detail-Frage = 1 Punkt. Frage, die einen Widerspruch aufdeckt = 3 Punkte („Fangfrage“). Punkte = Sorgfalt-Spezialist-Stempel."
+            },
+            {
+              "n": 5,
+              "name": "Abschluss",
+              "content": "Teams präsentieren entdeckte Widersprüche. Bonuspunkte für selbst gefundene Details. Übergabe an die Indizienkette."
+            }
+          ],
+          "safetyRule": "Der Verdächtige bleibt freundlich und nicht-bedrohlich — Kreuzverhör heißt nicht „anbrüllen“. Bei jüngeren Kindern (9-10) auf das Standard-Verhör zurückgreifen.",
+          "ageAdjust9": "Nicht empfohlen — bei 9-10 das Standard-Verhör nutzen. Diese Variante ist explizit für 11-12.",
+          "ageAdjust12": "Volle Tiefe: 2-3 versteckte Widersprüche, freie Fragen ohne Vorgaben, Punkte werden öffentlich angeschrieben und sind sportlich-fair. Zeitlimit von 5 Minuten pro Team — schult Fokus.",
+          "indoorTip": "Ein „Verhör-Raum“ mit gedämpftem Licht und einer hellen Schreibtisch-Lampe — wirkt sofort wie Krimi. Verdächtiger sitzt, Detektive stehen oder sitzen gegenüber.",
+          "outdoorTip": "Im schattigen Garten als „Aussage am Gartentisch“ — funktioniert genauso, ist nur weniger atmosphärisch.",
+          "whyItWorksTitle": "Logische Schärfe — kein Bauchgefühl",
+          "whyItWorks": "Eigene Fragen zu formulieren ist die anspruchsvollste Detektiv-Übung: vom „wer wirkt verdächtig“ zum „welche Antwort wäre verräterisch“. Genau dieser Wechsel grenzt ältere Tweens vom „Kinder-Krimi“ ab — sie wollen ernst genommen werden und echte logische Arbeit, nicht nur Hinweise sammeln."
         },
         {
           "name": "🔍 Die Indizienkette schließen — Hauptmission",
@@ -930,7 +1110,7 @@
           "minAge": 9,
           "loudness": "laut",
           "effort": "aufwendig",
-          "material": "6 Stations-Setups durch Garten/Wohnung (Spuren-Karten, Verdächtigen-Aussagen, Caesar-Brief, Schuhabdruck-Reihe, Zeugen-Uhrzeiten, Zahlen-Code), 6 Umschläge mit Buchstaben, ein „Tresor“ (Schuhkarton mit aufgemaltem Zahlenschloss + Klappe). Optional: machsleicht-Schatzsuche-Generator für die Rätsel.",
+          "material": "6 Stations-Setups durch Garten/Wohnung (Spuren-Karten, Verdächtigen-Aussagen, Caesar-Brief, Schuhabdruck-Reihe, Zeugen-Uhrzeiten, Zahlen-Code), 6 Umschläge mit Buchstaben, ein „Tresor“ (Schuhkarton mit aufgemaltem Zahlenschloss + Klappe). Optional: machsleicht-Schatzsuche-Generator für die Rätsel. WICHTIG: Die Verschiebezahl steht GROSS auf der Stationskarte gedruckt. Falls Wow-Tier (Shift 1) — explizit hinweisen: \"Achtung, nur 1 Stelle verschoben, nicht 3 wie im Standard.\" WICHTIG: Schuhkarton allein hat kein Schloss = Kinder oeffnen einfach. Verwende stattdessen Vorhaengeschloss mit Buchstabenraedern (4-6 Stellen, ~8€ bei Amazon affiliate-tag machsleicht-21) ODER: 6 nummerierte Umschlaege, deren Reihenfolge das Wort TRESOR ergibt — Reihenfolge erst nach Loesung des Buchstaben-Codes klar.",
           "prepText": "Setting: „Tobias ist überführt — aber das Erbstück steckt in einem Tresor, den nur ein 6-stelliger Code öffnet. Sechs Hinweise liegen in der Villa verteilt.“ 6 Stationen in vorgegebener Reihenfolge, jede ruft eine Spezialisierungs-Fähigkeit ab. Aus jeder Station kommt ein Buchstabe — zusammen TRESOR. Die Math ist vorab geprüft, jeder Buchstabe geht eindeutig auf.",
           "steps": [
             {
@@ -1252,6 +1432,14 @@
       {
         "topic": "🕒 Abholzeit vorher klären — bei Schlafparty doppelt",
         "detail": "„Wir holen so gegen 17 Uhr ab“ ist keine Abholzeit. Konkret in die Einladung: „Abholung 17:30, die Lizenz-Zeremonie ist um 17:00 und wir wollen den Fall-Abschluss nicht stressen.“ Bei Schlafparty schriftlich bestätigen lassen, wer wann abholt."
+      },
+      {
+        "topic": "🏠 Wohnung als Detektiv-Agentur denken",
+        "detail": "Verteile die fünf Stationen sichtbar auf verschiedene Räume: Tatort im Wohnzimmer (Absperrband, Fingerabdruck-Glas), Verhör-Raum in der Küche (Aussage-Karten + Zeitleiste), Codeknacker am Esstisch, Geheimschrift-Ecke im halbdunklen Flur, Beobachtungs-Tablett am Sideboard. Die Wohnung wird zur „Villa Sonnberg“ — und die Raum-Wechsel selbst sind schon Bewegung."
+      },
+      {
+        "topic": "🌳 Garten-Erweiterung für die Wow-Variante",
+        "detail": "Garten ist Pflicht-Plus für die TRESOR-Schatzsuche und die UV-Nacht-Spurensuche. Spuren-Sicherung im Beet (echter Schuhabdruck im Sand) wirkt 10× authentischer als drinnen. Aber: Alle 5 Standard-Stationen funktionieren komplett indoor — der Garten ist Ergänzung, nicht Voraussetzung. Vor der Schlafparty-Nacht-Spurensuche: Stolperfallen im Dunkeln vorher entschärfen."
       }
     ],
     "educationalValue": "Was die Kinder mitnehmen: forensische Grundtechniken (Fingerabdruck mit Graphit und Klebeband sichern, Fasern und Spuren vergleichen), Ermittler-Logik (ein einzelnes Indiz beweist nichts, das stärkste Motiv macht nicht den Täter), das Prüfen von Aussagen gegen eine Zeitleiste statt gegen das Bauchgefühl, echte Kryptografie (Caesar-Chiffre und Zahlen-Codes selbst lösen) und Kooperation zwischen Spezialisierungen, von denen keine allein zum Ziel kommt. Die Leitidee „im Ermittlungsdienst zählt, wer am genauesten hinschaut, nicht wer am schnellsten beschuldigt“ trägt durch die ganze Party."
@@ -1281,6 +1469,18 @@
     {
       "q": "Funktioniert der Detektiv-Geburtstag auch als Schlafparty?",
       "a": "Ja, die Wow-Variante ist explizit für den Schlafparty-Anschluss konzipiert. Programm: 15-19 Uhr voller Fall + Escape-Room-Schatzsuche, ab 19 Uhr Eltern der Nicht-Bleiber raus, ab 19:30 UV-Nacht-Spurensuche im Dunkeln, dann Krimi-Film, Schlafsäcke, Frühstück. Empfohlen ab 10 Jahren, schriftliche Eltern-Bestätigung zwingend."
+    },
+    {
+      "q": "Was tun, wenn ein Kind den Plot-Twist verrät, bevor er sich entwickelt?",
+      "a": "Nicht abwürgen — stattdessen zurückfragen: „Welcher Beweis stützt das? Motiv allein reicht noch nicht.“ Das nimmt die voreilige Beschuldigung ernst und lenkt die Gruppe wieder auf Sorgfalt. Wenn die Antwort wackelig ist, lobst du das genaue Nachfragen („Genau, da müssen wir noch prüfen“) — das macht aus dem Spoiler einen Lernmoment, ohne den Twist zu zerstören."
+    },
+    {
+      "q": "Wie messen die Kinder beim Lügendetektor-Test wirklich Puls?",
+      "a": "Zwei Finger ans Handgelenk (Daumenseite, eine Daumenbreite unter dem Knöchel) oder seitlich am Hals legen, bis der Puls spürbar wird. 15 Sekunden zählen, Ergebnis × 4 = Schläge pro Minute. Die meisten Kinder finden den Puls mit etwas Hilfe — eine ruhige Sitzposition macht es leichter. Eine extra Pulsmesser-Uhr ist nicht nötig, der Daumen reicht. Wichtig: Die Aufregungs-Frage harmlos halten und besprechen, dass höherer Puls nicht „Lüge“, sondern oft nur „Nervosität“ heißt — genau diese forensische Lektion ist der Wert der Übung."
+    },
+    {
+      "q": "Wie verhindere ich Streit, wer den Fall „gelöst hat“?",
+      "a": "Vergib den Sorgfalt-Spezialist-Stempel an mehrere Kinder — explizit an die, die GENAU gearbeitet haben, nicht an die, die als Erste eine Antwort gerufen haben. Sage das beim Eid laut: „Im Ermittlungsdienst zählt nicht Tempo, sondern Sorgfalt.“ Bei festgefahrenen Konflikten zwei „Co-Chefermittler“ ernennen, die zusammen die Auflösung vortragen — zwingt zur Kooperation und löst die Spannung."
     }
   ],
   "preparationWeeks": {
@@ -1549,6 +1749,45 @@
       ],
       "fallback": "Die Lizenz-Übergabe dauert 5 Minuten und rundet jeden Fall ab — sie lässt sich jederzeit vorziehen.",
       "tone": "diplomatisch"
+    },
+    "kind_findet_spur_nicht": {
+      "icon": "🐾",
+      "label": "Crew kommt an einer Station nicht weiter",
+      "headline": "„Spezialisten-Wechsel“ erlauben — keine Verlierer-Logik bei 9-12.",
+      "steps": [
+        "Sage von Anfang an klar: Jede Station hat eine Lösungs-Karte am Tisch zum Selbst-Check. Wer 10 Minuten nicht weiterkommt, darf reinschauen — das ist Teil der Ermittlung, nicht Schummeln.",
+        "Bei festgefahrenem Codeknacker: Ein Kind der anderen Spezialisierung darf einen Tipp geben („Schaut mal auf die Zahlen“). Das ist genau die Kooperation, die der Fall sowieso braucht.",
+        "Wenn ein Kind merkt, dass es die Sortier-Regel falsch verstanden hat: lobend bestätigen („Genau, du hast den Fehler gefunden — Selbst-Korrektur ist Sorgfalt-Spezialist-Stoff“). Belohne den Selbst-Check, nicht das Sofort-Wissen.",
+        "Bei Caesar-Chiffre: Die Verschiebezahl groß auf die Stationskarte schreiben — und einen Tipp-Umschlag mit einem Beispiel-Buchstaben bereitlegen."
+      ],
+      "fallback": "Die ganze Crew kommt nicht weiter? Du wirst zum „Ermittlungs-Leiter“, gehst mit ihnen Schritt für Schritt durch die Aufgabe und löst sie als Team-Erlebnis. Bei 9-12 ist das ehrenhaft, kein Versagen.",
+      "tone": "praktisch"
+    },
+    "streit_ueber_loesung": {
+      "icon": "🤝",
+      "label": "Streit, wer den Fall „wirklich“ gelöst hat",
+      "headline": "Sorgfalt-Spezialist statt 1.-Detektiv — Anerkennung neu verteilen.",
+      "steps": [
+        "Schon beim Fall-Auftrag explizit sagen: „Im Ermittlungsdienst zählt nicht, wer am schnellsten beschuldigt, sondern wer am genauesten hinschaut.“ Das ist die Grundregel.",
+        "Wer als Erster ruft „Es war Tobias!“: ruhig zurückfragen: „Welcher Beweis stützt das? Motiv allein reicht nicht.“ Das nimmt Tempo raus und lenkt auf Sorgfalt.",
+        "Den Sorgfalt-Spezialist-Stempel bewusst an Kinder vergeben, die genau gearbeitet haben — nicht an die, die zuerst eine Antwort gerufen haben. Mehrere Stempel sind explizit erlaubt.",
+        "Bei harten Konflikten: zwei „Co-Chefermittler“ ernennen, die zusammen die Auflösung vor der Crew vortragen. Zwingt zur Kooperation, löst die Spannung."
+      ],
+      "fallback": "Schwerer Streit zwischen 2-3 Kindern? Du zerlegst die Auflösung in 3 Sätze und gibst jedem Kind einen Satz vor der Crew zu sprechen — kollektive Ehre, keine Hierarchie.",
+      "tone": "ruhig"
+    },
+    "fall_zu_komplex": {
+      "icon": "🧩",
+      "label": "Der Fall überfordert die Gruppe",
+      "headline": "Schritte abkürzen, Plot-Twist erklären — Story trägt den Rest.",
+      "steps": [
+        "Wenn der Codeknacker stockt: Du löst öffentlich einen Quadranten („Ich zeige euch mal, wie der Spurensicherer-Teil funktioniert“) — die anderen zwei lösen sie selbst, und die Crew merkt den Unterschied gar nicht.",
+        "Wenn die Indizienkette nicht zustande kommt: Du legst die Fäden selbst auf der Tafel, erklärst aber laut die Logik. Erfahrungsbasiert lernen statt selbst-erfahren — beides ist erlaubt.",
+        "Wenn der Plot-Twist nicht greift: Direkt nach dem Codeknacker laut ankündigen: „Achtung Detektive — wer das stärkste Motiv hat, ist diesmal nicht der Täter. Sammelt die Beweise sorgfältig.“ Spoiler hilft mehr als Frust.",
+        "Lieber die TRESOR-Schatzsuche (Wow) auf 4 statt 6 Stationen kürzen als sie halb gelöst abbrechen."
+      ],
+      "fallback": "Komplett zu komplex? Variante runtersetzen mitten in der Party — von Standard auf Minimal: Codeknacker + Fingerabdruck + Indizienkette in 90 Min reicht für einen vollwertigen Fall.",
+      "tone": "entlastend"
     }
   }
 }

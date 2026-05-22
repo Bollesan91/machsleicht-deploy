@@ -16,6 +16,59 @@
   "title": "🦕 Dino-Abenteuer Kindergeburtstag — 3–5 Jahre",
   "metaDescription": "Dino-Kindergeburtstag für 3-5-Jährige: 3 fertige Party-Konzepte (Minimal/Standard/Wow) mit altersgerechten Spielen, Zeitplan, Einkaufsliste und Kosten.",
   "introParagraph": "Dein Kind wird 3, 4 oder 5 und liebt Dinosaurier? Hier bekommst du drei fertige Party-Konzepte — von „in einer Stunde vorbereitet“ bis zum vollen Dino-Erlebnis. Jedes Konzept mit Zeitplan, altersgerechten Spielen, Einkaufsliste und Kosten.\n\n[Dino-Geburtstag planen →](/kindergeburtstag?motto=dino&alter=4#planer)",
+  "ageInsight": {
+    "headline": "Was 3–5-Jährige ausmacht — und was das für die Dino-Party heißt",
+    "traits": [
+      {
+        "topic": "Aufmerksamkeit",
+        "detail": "5–10 Minuten pro Aktivität, dann brauchen sie Wechsel. Kürzer ist immer besser als länger."
+      },
+      {
+        "topic": "Regeln",
+        "detail": "Einfache Regeln — maximal 1–2 Anweisungen gleichzeitig. Vorzeigen statt erklären."
+      },
+      {
+        "topic": "Wettbewerb",
+        "detail": "Vermeiden. Alle machen alles zusammen, niemand scheidet aus. Tränen sind bei Gewinner/Verlierer fast garantiert."
+      },
+      {
+        "topic": "Motorik",
+        "detail": "Grobmotorik gut, Feinmotorik noch begrenzt. Stempeln, kleben und großflächig malen — ja. Ausschneiden und Schreiben — nein."
+      },
+      {
+        "topic": "Dauer",
+        "detail": "1,5–2 Stunden maximal. Danach sind die Kinder platt. Lieber eine Stunde Spaß als zwei Stunden mit Zusammenbruch."
+      },
+      {
+        "topic": "Essen",
+        "detail": "Fingerfood. Nichts, was man schneiden muss. Kleine Portionen — die meisten essen vor Aufregung wenig."
+      },
+      {
+        "topic": "Eltern",
+        "detail": "Bleiben in der Regel da. Das ist gut — du hast automatisch Helfer. Bei unter 4-Jährigen bleiben sie definitiv."
+      }
+    ],
+    "whyMottoFitsHeadline": "🦕 Warum Dino für 3–5-Jährige besonders gut funktioniert",
+    "whyMottoFits": "Kleine Kinder lieben große Tiere. Der T-Rex ist riesig, brüllt laut und ist ein bisschen gruselig — genau die richtige Mischung aus Faszination und Nervenkitzel. Dino funktioniert geschlechtsneutral (Jungs UND Mädchen finden Dinos toll), braucht keine komplizierten Geschichten und lässt sich mit einfachen Mitteln umsetzen: Plastik-Dinos, Brüllen, Stampfen, Eier suchen — fertig."
+  },
+  "faq": [
+    {
+      "q": "Wie lange sollte ein Dino-Geburtstag für 3–5-Jährige dauern?",
+      "a": "1,5 bis 2 Stunden sind perfekt. Nach 2 Stunden sind die meisten Kinder in diesem Alter überreizt. Die Minimal-Variante (1,5 Stunden) ist oft die bessere Wahl — die Kinder gehen glücklich nach Hause statt übermüdet."
+    },
+    {
+      "q": "Wie viele Kinder einladen bei 3–5-Jährigen?",
+      "a": "Faustregel: Alter des Kindes = Anzahl Gäste. Also 3–5 Kinder. Bei 3-Jährigen reichen oft 2–3 Gäste völlig. Mehr Kinder = mehr Chaos, mehr Tränen, mehr Eltern die bleiben müssen."
+    },
+    {
+      "q": "Was kostet ein Dino-Geburtstag für Kleinkinder?",
+      "a": "Zwischen 29 € (Minimal) und 60 € (Wow) für 5 Kinder. Die Standard-Variante liegt bei ca. 46 € und bietet das beste Verhältnis aus Aufwand und Ergebnis."
+    },
+    {
+      "q": "Können 3-Jährige schon „richtige“ Geburtstagsspiele spielen?",
+      "a": "Ja, aber nur sehr einfache. Eier suchen, Stopptanz und Ausgrabung funktionieren ab 3. Wichtig: keine Gewinner/Verlierer, alle machen alles zusammen, und jede Aktivität darf höchstens 10 Minuten dauern. Vorzeigen statt erklären."
+    }
+  ],
   "variants": [
     {
       "id": "minimal",
@@ -37,7 +90,7 @@
         {
           "time": "15:25",
           "title": "🎂 Kuchen & Happy Birthday",
-          "description": "Vulkan-Kuchen (Gugelhupf mit Smarties). Kerzen auspusten, Happy Birthday singen. 20 Min. Dazu Apfelschorle — nenn es „Dino-Pipi“ und die Kinder lachen sich kaputt."
+          "description": "Vulkan-Kuchen (Gugelhupf mit bunte Schoko-Linsen). Kerzen auspusten, Happy Birthday singen. 20 Min. Dazu Apfelschorle — nenn es „Dino-Pipi“ und die Kinder lachen sich kaputt. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
         },
         {
           "time": "15:45",
@@ -54,40 +107,52 @@
         {
           "name": "🦕 Dino-Eier suchen — Spielanleitung",
           "indoor": true,
-          "outdoor": false,
+          "outdoor": true,
           "duration": 10,
-          "minAge": null,
-          "loudness": null,
-          "effort": null,
-          "material": null,
-          "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "minAge": 3,
+          "loudness": "mittel",
+          "effort": "leicht",
+          "material": "15–20 bunte Plastik-Eier oder bunt bemalte Steine, 5 kleine Schüsseln/Eimer, Mini-Dinos oder Gummibärchen zum Reinlegen",
+          "prepText": "Eier im Raum/Garten verteilen — bei 3-Jährigen halb sichtbar, bei 5-Jährigen besser versteckt. Jedes Kind bekommt eine Schüssel. Alle suchen gleichzeitig. Wer eins findet, darf es öffnen und den Inhalt behalten.",
+          "steps": [
+            "Eier vor Ankunft im Raum/Garten verstecken (5 pro Kind)",
+            "Schüsseln/Eimer am Eingang bereitstellen",
+            "Auf Kommando: alle suchen gleichzeitig",
+            "Wer ein Ei findet, darf es öffnen und Inhalt behalten",
+            "Am Ende gemeinsam zählen — KEIN „wer findet die meisten?“"
+          ],
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test). Mini-Dinos > 3 cm wählen.",
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "indoorTip": "Unter Sofa-Kissen, hinter Vorhang, im Schuh. Bei 3-Jährigen sichtbar liegen lassen.",
+          "outdoorTip": "Im Gras, hinter Pflanzen, auf Stufen. Karte mit Versteck-Liste machen, falls nicht alle gefunden werden.",
+          "whyItWorksTitle": "Warum es funktioniert",
+          "whyItWorks": "Kein Wettbewerb („Wer findet die meisten?“) — das endet bei Kleinkindern in Tränen. Stattdessen: „Helft alle zusammen, alle Eier zu finden!“ Falls ein Kind leer ausgeht: Ersatz-Eier in der Tasche haben."
         },
         {
           "name": "🦖 Dino-Stampfen (Stopptanz) — Spielanleitung",
           "indoor": true,
-          "outdoor": false,
+          "outdoor": true,
           "duration": 10,
           "minAge": 3,
-          "loudness": null,
-          "effort": null,
-          "material": null,
-          "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "loudness": "laut",
+          "effort": "leicht",
+          "material": "Musikbox oder Handy mit Lautsprecher. Jede Musik funktioniert — Kinderlieder oder „Dschungel-Sounds“ (YouTube).",
+          "prepText": "Musik an = alle stampfen wie ein T-Rex durch den Raum. Musik aus = alle frieren ein wie ein Fossil. Du machst laut mit — das gibt den Kindern Sicherheit.",
+          "steps": [
+            "Musik starten — alle stampfen wie T-Rex",
+            "Plötzlich Musik aus — alle einfrieren wie Fossil",
+            "Wer noch bewegt? Liebevoll erinnern, nicht ausschließen",
+            "Varianten ab 4: T-Rex (laut), Raptor (Zehenspitzen), Flugsaurier (Arme flattern)",
+            "5–15 Min. dehnbar — bei Müdigkeit beenden"
+          ],
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Platz freiräumen (Tisch-Kanten, harte Möbel). Bei 3-Jährigen Niemand-scheidet-aus-Regel strikt einhalten.",
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "indoorTip": "Teppich oder Wohnzimmer-Boden. Stuhl-Hindernisse wegräumen.",
+          "outdoorTip": "Auf Rasen oder Terrasse. Bei Hitze in den Schatten.",
+          "whyItWorksTitle": "Warum es funktioniert",
+          "whyItWorks": "Niemand scheidet aus. Alle machen immer mit. Das Spiel lässt sich perfekt dehnen (5–15 Min.) oder spontan beenden, wenn die Energie kippt."
         }
       ],
       "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃Apfelschorle2 Liter\n🍇Trauben/Beeren500g\n🥨Salzstangen1 Packung",
@@ -128,7 +193,7 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Capri-Sun + Brezeln aus Vorrat trägt 1,5h auch."
+          "categoryReasoning": "Saftpäckchen + Brezeln aus Vorrat trägt 1,5h auch."
         },
         {
           "emoji": "🎁",
@@ -167,7 +232,7 @@
         {
           "time": "15:35",
           "title": "🎂 Kuchen & Dino-Pipi",
-          "description": "Vulkan-Kuchen (Gugelhupf + Smarties-Lava). Happy Birthday singen. Dazu „Dino-Pipi“ (Apfelschorle). 20 Min. Ruhe für alle."
+          "description": "Vulkan-Kuchen (Gugelhupf + bunte Schoko-Linsen-Lava). Happy Birthday singen. Dazu „Dino-Pipi“ (Apfelschorle). 20 Min. Ruhe für alle. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
         },
         {
           "time": "15:55",
@@ -182,41 +247,53 @@
         {
           "time": "16:20",
           "title": "🎈 Freispiel & Abholphase",
-          "description": "Plastik-Dinos, Bücher, Freispiel. Mitgebsel-Tüten verteilen wenn Eltern kommen.\n\n💡 Immer abwechseln: laut → leise\nEier suchen (mittel) → Vulkan (laut) → Kuchen (Pause) → Stampfen (laut) → Ausgrabung (leise). So kippt die Stimmung nie. Nach jedem lauten Spiel kommt ein ruhiges."
+          "description": "Plastik-Dinos, Bücher, Freispiel. Mitgebsel-Tüten verteilen wenn Eltern kommen.\n\n💡 Immer abwechseln: laut → leise\nEier suchen (mittel) → Vulkan (laut) → Kuchen (Pause) → Stampfen (laut) → Ausgrabung (leise). So kippt die Stimmung nie. Nach jedem lauten Spiel kommt ein ruhiges. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
         }
       ],
       "games": [
         {
           "name": "🦕 Dino-Eier suchen — Spielanleitung",
           "indoor": true,
-          "outdoor": false,
+          "outdoor": true,
           "duration": 10,
-          "minAge": null,
-          "loudness": null,
-          "effort": null,
-          "material": null,
-          "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "minAge": 3,
+          "loudness": "mittel",
+          "effort": "leicht",
+          "material": "20 bunte Plastik-Eier, Mini-Dinos oder Gummibärchen zum Reinlegen, 5 Schüsseln",
+          "prepText": "Eier verteilen (bei 3-Jährigen halb sichtbar, bei 5-Jährigen versteckter). Alle suchen gleichzeitig, kein Wettbewerb. „Wer eins findet, darf es öffnen!“ Ersatz-Eier in der Tasche für Kinder die leer ausgehen.",
+          "steps": [
+            "20 Eier mit Mini-Dino oder Gummibärchen befüllen",
+            "Vor Ankunft verstecken (5 pro Kind)",
+            "Schüsseln am Eingang bereitstellen",
+            "Auf Kommando: alle suchen — wer fertig ist, hilft den Anderen",
+            "Gemeinsam zählen und Inhalte zeigen"
+          ],
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test). Mini-Dinos > 3 cm wählen.",
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
+          "indoorTip": "Wohnzimmer + Flur + Kinderzimmer aufteilen, Suchradius klar abstecken.",
+          "outdoorTip": "Garten — Karte mit Versteck-Liste griffbereit für nicht gefundene Eier.",
           "whyItWorksTitle": null,
           "whyItWorks": null
         },
         {
           "name": "🦖 Dino-Stampfen (Stopptanz) — Spielanleitung",
           "indoor": true,
-          "outdoor": false,
+          "outdoor": true,
           "duration": 10,
           "minAge": 3,
-          "loudness": null,
-          "effort": null,
-          "material": null,
-          "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "loudness": "laut",
+          "effort": "leicht",
+          "material": "Musikbox oder Handy mit Lautsprecher",
+          "prepText": "Musik an = stampfen wie T-Rex. Musik aus = Fossil. Varianten ab 4 Jahren: verschiedene Dinos nachahmen (Raptor schleichen, Flugsaurier flattern). Niemand scheidet aus, alle machen immer mit.",
+          "steps": [
+            "Musik starten — alle stampfen",
+            "Plötzlich Musik aus — alle einfrieren",
+            "Tier-Ansagen: T-Rex (laut), Raptor (Zehenspitzen), Flugsaurier (Arme), Langhals (lang)",
+            "Du machst aktiv mit — gibt Sicherheit",
+            "10 Min., spontan beenden wenn Energie kippt"
+          ],
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Platz freiräumen (Tisch-Kanten, harte Möbel). Niemand-scheidet-aus-Regel strikt einhalten.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -227,40 +304,52 @@
         {
           "name": "🌋 Vulkan-Experiment — Spielanleitung",
           "indoor": true,
-          "outdoor": false,
+          "outdoor": true,
           "duration": 10,
           "minAge": 3,
-          "loudness": null,
-          "effort": null,
-          "material": null,
-          "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "loudness": "laut",
+          "effort": "mittel",
+          "material": "1 leere Plastikflasche (0,5l), Essig, Natron (1–2 EL), Spülmittel (Spritzer), rote Lebensmittelfarbe, Auffangschale oder Wanne",
+          "prepText": "Flasche in Sandhügel oder Blumentopf stellen. 3 EL Natron + Spritzer Spüli + rote Farbe in die Flasche. Kinder zählen runter. Essig dazugießen — Lava! Funktioniert 3–4 Mal hintereinander. Die Kinder wollen es IMMER nochmal sehen.",
+          "steps": [
+            "Flasche in Sandhügel / Blumentopf stellen, auf Tablett",
+            "Natron + Spüli-Spritzer + rote Farbe rein",
+            "Kinder zählen: „3, 2, 1, AUSBRUCH!“",
+            "Erwachsene*r gießt Essig dazu — Lava!",
+            "Wiederholbar 3–4× mit Nachfüllen"
+          ],
+          "safetyRule": "Erwachsene*r gießt Essig/Natron. Kinder hinter Tisch-Kante (1 m). Schutzbrille empfohlen. Nicht trinken, nicht in Augen. Bei Augenkontakt 5 Min mit Wasser spülen. Lebensmittelfarbe färbt — Schürze/alte Kleidung.",
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "indoorTip": "Badewanne oder Balkon mit Unterlage. Wachs-Tücher griffbereit.",
+          "outdoorTip": "Im Sand-Hügel — beste Wirkung.",
+          "whyItWorksTitle": "Warum es funktioniert",
+          "whyItWorks": "DER Wow-Moment der Party. Die Reaktion ist visuell, kindgerecht ungefährlich und mehrfach wiederholbar. 3–5-Jährige verstehen die Chemie noch nicht — sie brauchen es nicht zu verstehen, das Staunen reicht."
         },
         {
           "name": "🏗️ Dino-Ausgrabung — Spielanleitung",
-          "indoor": false,
-          "outdoor": false,
+          "indoor": true,
+          "outdoor": true,
           "duration": 15,
           "minAge": 3,
-          "loudness": null,
-          "effort": null,
-          "material": null,
-          "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "Große Wanne (40×30 cm reicht), Sand oder Reis (5 kg), 8–10 Dino-Figuren, Löffel + Pinsel zum Graben",
+          "prepText": "Dinos im Sand vergraben. Kinder graben mit Löffeln. Wer einen findet, ruft „Fossil gefunden!“ und darf ihn behalten. Wanne auf ein Handtuch stellen (Sand-Schutz).",
+          "steps": [
+            "Wanne auf Handtuch stellen (Sand-Schutz)",
+            "8–10 Dino-Figuren im Sand vergraben",
+            "Bei 3-Jährigen: zur Hälfte sichtbar, 2–3 cm tief",
+            "Kinder bekommen Löffel + Pinsel",
+            "Wer findet, ruft „Fossil gefunden!“ — Fund gehört dem Finder"
+          ],
+          "safetyRule": "Sand-Wanne mit Sichtaufsicht. Kleinteile (Mini-Dinos < 3 cm) bei 3-Jährigen vermeiden — Verschluckungsgefahr. Hände waschen vor Snacks.",
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "indoorTip": "Auf Küchentisch mit dicker Folie oder in der Badewanne.",
+          "outdoorTip": "Sandkasten oder Rasen — Sand-Reste fallen einfach raus.",
+          "whyItWorksTitle": "Warum es funktioniert",
+          "whyItWorks": "Die Freude ist das Finden, nicht das Graben. Bei 3-Jährigen sollten Dinos teilweise sichtbar sein — sonst Frust nach 30 Sekunden."
         }
       ],
       "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃Apfelschorle3 Liter\n🍇Obst-TellerTrauben + Beeren\n🥒Gemüse-SticksGurke + Paprika\n🍿Popcorn1 Schüssel",
@@ -363,12 +452,12 @@
         {
           "time": "15:50",
           "title": "🎂 Kuchen & Dino-Pipi",
-          "description": "Vulkan-Kuchen mit Smarties-Lava und einer Dino-Figur obendrauf. Kerzen, Happy Birthday, 20 Min. Ruhe."
+          "description": "Vulkan-Kuchen mit bunte Schoko-Linsen-Lava und einer Dino-Figur obendrauf. Kerzen, Happy Birthday, 20 Min. Ruhe. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
         },
         {
           "time": "16:10",
           "title": "🦖 Dino-Parcours",
-          "description": "„Dschungel-Parcours“: unter Seilen durchkriechen (Lianen!), über Kissen springen (Vulkan-Steine!), durch einen Tunnel krabbeln (Dino-Höhle = Decke über 2 Stühle). Alle laufen zusammen, kein Wettrennen. 10 Min."
+          "description": "„Dschungel-Parcours“: unter Seilen durchkriechen (Lianen!), über Kissen springen (Vulkan-Steine!), durch einen Tunnel krabbeln (Dino-Höhle = Decke über 2 Stühle). Alle laufen zusammen, kein Wettrennen. 10 Min. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
         },
         {
           "time": "16:20",
@@ -385,15 +474,21 @@
         {
           "name": "🦕 Dino-Eier suchen — Spielanleitung",
           "indoor": true,
-          "outdoor": false,
+          "outdoor": true,
           "duration": 10,
-          "minAge": null,
-          "loudness": null,
-          "effort": null,
-          "material": null,
-          "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "minAge": 3,
+          "loudness": "mittel",
+          "effort": "leicht",
+          "material": "25 Plastik-Eier (1 goldenes als Schatz-Ei), Mini-Dinos + Schoko-Goldmünzen, Schüsseln",
+          "prepText": "Wow-Variante: 25 Eier, etwas schwieriger versteckt. Ein besonderes goldenes Ei enthält den „Schatz“ — Schoko-Goldmünzen für alle. Wer das goldene Ei findet, darf sie verteilen.",
+          "steps": [
+            "24 Plastik-Eier mit Mini-Dino, 1 goldenes mit Schoko-Goldmünzen befüllen",
+            "Schwieriger als bei Standard verstecken",
+            "Goldenes Ei besonders gut platzieren",
+            "Alle suchen — wer das goldene findet, darf Münzen verteilen",
+            "Soziales Highlight: Schatz teilen, nicht horten"
+          ],
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen Mini-Dinos > 3 cm wählen. Goldfolie der Münzen vor Verzehr abziehen lassen.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -403,54 +498,72 @@
         },
         {
           "name": "🏗️ Dino-Ausgrabung — Spielanleitung",
-          "indoor": false,
-          "outdoor": false,
+          "indoor": true,
+          "outdoor": true,
           "duration": 15,
           "minAge": 3,
-          "loudness": null,
-          "effort": null,
-          "material": null,
-          "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "loudness": "ruhig",
+          "effort": "mittel",
+          "material": "Große Wanne, Sand/Reis, Dino-Figuren + echte Muscheln + bunte Steine, Löffel + Pinsel",
+          "prepText": "Dinos 2–3 cm tief vergraben (bei 3-Jährigen zur Hälfte sichtbar lassen). Kinder graben mit Pinseln wie echte Paläontologen. Jeder darf seinen Fund behalten. Wanne auf Handtuch stellen.",
+          "steps": [
+            "Wanne auf Handtuch, Sand 5cm hoch einfüllen",
+            "Dinos + Muscheln + bunte Steine vergraben",
+            "Pinsel + Löffel pro Kind verteilen",
+            "„Wie echte Paläontologen graben!“ — feierlich ankündigen",
+            "Fund-Karte führen: jedes Kind notiert, was es gefunden hat (oder ein Erwachsener)"
+          ],
+          "safetyRule": "Sand-Wanne mit Sichtaufsicht. Kleinteile (Mini-Dinos < 3 cm) bei 3-Jährigen vermeiden — Verschluckungsgefahr. Hände waschen vor Snacks.",
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
+          "indoorTip": "Auf Küchentisch mit dicker Folie. Hochstuhl-Tablett ist top.",
+          "outdoorTip": "Sandkasten oder Wiese.",
           "whyItWorksTitle": null,
           "whyItWorks": null
         },
         {
           "name": "🌋 Vulkan-Experiment — Spielanleitung",
-          "indoor": false,
+          "indoor": true,
           "outdoor": true,
           "duration": 10,
           "minAge": 3,
-          "loudness": null,
-          "effort": null,
-          "material": null,
-          "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "loudness": "laut",
+          "effort": "mittel",
+          "material": "Plastikflasche (0,5l), Essig, Natron (1–2 EL), Spülmittel, rote Lebensmittelfarbe, Sandhügel oder Blumentopf, Auffangschale",
+          "prepText": "Natron + Spüli + Farbe in die Flasche. Kinder zählen runter: „3, 2, 1, AUSBRUCH!“ Essig dazugießen — Lava! Funktioniert 3–4 Mal. Die Kinder wollen es IMMER nochmal.",
+          "steps": [
+            "Flasche im Sandhügel oder Blumentopf stellen",
+            "Natron, Spüli-Spritzer, rote Farbe rein",
+            "Kinder rufen Countdown: „3, 2, 1, AUSBRUCH!“",
+            "Erwachsene*r gießt Essig — Schaum-Eruption!",
+            "Wiederholen — gerne mit mehr Farbe oder kalt/warmem Essig (Variation)"
+          ],
+          "safetyRule": "Erwachsene*r gießt Essig/Natron. Kinder hinter Tisch-Kante (1 m). Schutzbrille empfohlen. Nicht trinken, nicht in Augen. Bei Augenkontakt 5 Min mit Wasser spülen. Lebensmittelfarbe färbt — Schürze/alte Kleidung.",
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
+          "indoorTip": "Badewanne oder Balkon mit Unterlage. Backblech als Tropf-Schutz.",
+          "outdoorTip": "Sandhügel im Garten — beste Wirkung + einfachste Reinigung.",
           "whyItWorksTitle": null,
           "whyItWorks": null
         },
         {
           "name": "🦖 Dino-Stampfen mit Varianten — Spielanleitung",
           "indoor": true,
-          "outdoor": false,
+          "outdoor": true,
           "duration": 10,
           "minAge": 3,
-          "loudness": null,
-          "effort": null,
-          "material": null,
-          "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "loudness": "laut",
+          "effort": "leicht",
+          "material": "Musikbox oder Handy mit Lautsprecher",
+          "prepText": "Wow-Variante: Stopptanz PLUS Tier-Ansagen. Du rufst: „T-Rex!“ (laut stampfen), „Raptor!“ (leise schleichen), „Flugsaurier!“ (Arme flattern), „Langhals!“ (auf Zehenspitzen). Kinder machen nach. Du machst aktiv mit — das gibt Sicherheit.",
+          "steps": [
+            "Musik starten",
+            "Tier rufen, alle imitieren",
+            "Musik aus = einfrieren",
+            "Nächste Runde: anderes Tier",
+            "Du machst alles mit — keine Beobachter-Rolle"
+          ],
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Platz freiräumen (Tisch-Kanten). Niemand-scheidet-aus-Regel strikt einhalten.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -461,25 +574,31 @@
         {
           "name": "🦖 Dino-Parcours — Spielanleitung",
           "indoor": true,
-          "outdoor": false,
+          "outdoor": true,
           "duration": 10,
           "minAge": 3,
-          "loudness": null,
-          "effort": null,
-          "material": null,
-          "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "loudness": "laut",
+          "effort": "mittel",
+          "material": "2 Seile/Schnüre, 4–5 Kissen, 1 Decke + 2 Stühle (Tunnel), optional Pylonen",
+          "prepText": "Aufbau: Seil zwischen 2 Stühle (30 cm Höhe = drunter kriechen). Kissen in Reihe (drüber springen). Decke über 2 Stühle (Tunnel = Dino-Höhle). Bei 3-5: KEIN Wettrennen!",
+          "steps": [
+            "Seil zwischen 2 Stühle spannen (30 cm Höhe)",
+            "Kissen in Reihe als Trittsteine",
+            "Decke über 2 Stühle = Tunnel/Dino-Höhle",
+            "Du läufst voraus und zeigst, was zu tun ist",
+            "Alle laufen zusammen, kein Wettrennen — bei 3-Jährigen Seil höher (leichter), Kissen weglassen"
+          ],
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Stuhl-Stabilität prüfen (Decke darf nicht ziehen). Bei 3-Jährigen: Tunnel-Decke nur leicht auflegen, nicht festknoten.",
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
+          "indoorTip": "Flur + Wohnzimmer kombinieren. Möbel-Kanten polstern.",
+          "outdoorTip": "Wiese — Pylonen optional, Bäume als Slalom.",
           "whyItWorksTitle": null,
           "whyItWorks": null
         }
       ],
       "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃„Dino-Pipi“3 Liter\n🍇Obst-Dino-Spieße2 pro Kind\n🥒Gemüse-SticksGurke + Paprika\n🍿Popcorn1 Schüssel\n🧁Dino-Muffins1 pro Kind",
-      "decoration": "🎈 Grüne Luftballons (10 Stk.)~2 €\n🦶 Fußspuren-Pfad am BodenKostenlos, 15 Min.\n🦕 Dino-Figuren auf dem ganzen TischIm Set\n🪧 „Jurassic Park“-Schild am EingangKostenlos\n🔊 Dschungel-Sounds leise im HintergrundKostenlos (YouTube)",
+      "decoration": "🎈 Grüne Luftballons (10 Stk.)~2 €\n🦶 Fußspuren-Pfad am BodenKostenlos, 15 Min.\n🦕 Dino-Figuren auf dem ganzen TischIm Set\n🪧 „Dino-Expedition“-Schild am EingangKostenlos\n🔊 Dschungel-Sounds leise im HintergrundKostenlos (YouTube)",
       "giveaways": "In braune Papiertüte mit „Dino-Schatz von ___“. Kosten: ~3 € pro Kind.\n\n🦕 Dino-Figur (aus Ausgrabung)\n🖍️ Dino-Tattoo\n🎨 Stempelbild\n🍬 Gummibärchen\n🥚 Dino-Ei",
       "shoppingList": [
         {
@@ -568,14 +687,26 @@
     }
   ],
   "cakeRecipe": {
-    "intro": "Der einfachste Wow-Kuchen: Gugelhupf + Smarties",
-    "steps": [],
+    "intro": "Der einfachste Wow-Kuchen: Gugelhupf + bunte Schoko-Linsen",
+    "steps": [
+      {"n": 1, "content": "Schoko-Gugelhupf backen (Fertigmischung reicht völlig)"},
+      {"n": 2, "content": "Auf Teller stürzen — das Loch in der Mitte = Krater"},
+      {"n": 3, "content": "Schoko-Glasur über den Rand laufen lassen = Lava"},
+      {"n": 4, "content": "Rote + orange bunte Schoko-Linsen in den Krater und am Rand verteilen"},
+      {"n": 5, "content": "Grüne bunte Schoko-Linsen unten am Fuß = Dschungel"},
+      {"n": 6, "content": "Optional: kleine Dino-Figur obendrauf. KEINE Wunderkerze bei 3–5 (Brand-Panik-Eltern)."}
+    ],
     "meta": {
       "aufwand": "45 Min. inkl. Backen",
-      "kosten": "~6 &euro;",
-      "allergiker": "Fertigmischungen sind oft allergen&auml;rmer — Packung checken"
+      "kosten": "~6 €",
+      "allergiker": "Fertigmischungen sind oft allergenärmer — Packung checken"
     },
-    "tips": null
+    "tips": [
+      {
+        "title": "🍰 Keine-Lust-zu-backen-Variante",
+        "body": "Fertigen Schoko-Kuchen vom Bäcker kaufen, eine Dino-Figur obendrauf, grüne bunte Schoko-Linsen drum. 2 Minuten, sieht toll aus. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.“"
+      }
+    ]
   },
   "parentTips": {
     "structured": [
@@ -692,10 +823,11 @@
     "minus2Days": {
       "headline": "2 Tage vorher — backen, briefen, basteln",
       "items": [
+        "⚠️ Sicherheits-Check bei 3-Jährigen: Plastik-Eier mit Süßigkeit erst öffnen, wenn Kind sicher kaut (kein Schluck-Risiko). Mini-Dinos > 3 cm wählen.",
         {
           "icon": "🎂",
           "title": "Vulkan-Kuchen backen — oder Plan B",
-          "detail": "Wenn Zeit/Nerven: Gugelhupf + Schokoglasur + rote/orange Smarties. Wenn nicht: Schoko-Boden vom Bäcker (~6€), morgen Smarties drauf. Bei 3-5 KEINE Wunderkerze (Brand-Panik-Eltern)."
+          "detail": "Wenn Zeit/Nerven: Gugelhupf + Schokoglasur + rote/orange bunte Schoko-Linsen. Wenn nicht: Schoko-Boden vom Bäcker (~6€), morgen bunte Schoko-Linsen drauf. Bei 3-5 KEINE Wunderkerze (Brand-Panik-Eltern)."
         },
         {
           "icon": "🗣️",
@@ -725,7 +857,7 @@
         {
           "icon": "🍫",
           "title": "Kuchen verzieren — Vulkan-Look",
-          "detail": "Schokoglasur über Gugelhupf (Loch in Mitte = Krater), rote + orange Smarties als ‚Lava-Strom' von oben nach unten, grüne Smarties unten als ‚Bäume'. 10 Min. Über Nacht fest werden lassen."
+          "detail": "Schokoglasur über Gugelhupf (Loch in Mitte = Krater), rote + orange bunte Schoko-Linsen als ‚Lava-Strom' von oben nach unten, grüne bunte Schoko-Linsen unten als ‚Bäume'. 10 Min. Über Nacht fest werden lassen."
         },
         {
           "icon": "🥚",
@@ -755,7 +887,7 @@
         {
           "icon": "⏰",
           "title": "30 Min vor Ankunft: Stationen aufbauen",
-          "detail": "Eier-Suche-Plan im Kopf, Vulkan-Tisch fertig, Kuchen aus Kühlschrank, Capri-Sun kühlen. Eltern-Sitzecke einrichten."
+          "detail": "Eier-Suche-Plan im Kopf, Vulkan-Tisch fertig, Kuchen aus Kühlschrank, Saftpäckchen kühlen. Eltern-Sitzecke einrichten."
         },
         {
           "icon": "🎯",
@@ -815,7 +947,7 @@
         "Eltern kurz briefen: ‚Du übernimmst Eier-Suche-Aufsicht, ich Vulkan.'",
         "Mehr Eier verstecken (aus dem Vorrat) — jedes Kind findet 4-5 statt 5.",
         "Mini-Dinos aufstocken: leere Pappkarton-Boxen mit Punkten bemalen als Notreserve.",
-        "Capri-Sun nachbestellen lassen (Eltern haben Auto, Tankstelle/Edeka nah).",
+        "Saftpäckchen nachbestellen lassen (Eltern haben Auto, Tankstelle/Edeka nah).",
         "Kuchen-Stücke kleiner schneiden, evtl. Brezeln + Gummibärchen aus Vorrat."
       ],
       "fallback": "Chaotisch? Programm kürzen — Eier-Suche + Snack + Mitgebsel-Verteilung. 60 Min reicht für 3-5er.",
@@ -837,11 +969,11 @@
     "kuchen_misslungen": {
       "icon": "🎂",
       "label": "Kuchen ist misslungen",
-      "headline": "Bäcker-Hack: Schoko-Gugelhupf + Smarties = 10 Min Notfall.",
+      "headline": "Bäcker-Hack: Schoko-Gugelhupf + bunte Schoko-Linsen = 10 Min Notfall.",
       "steps": [
         "Schoko-Gugelhupf beim Bäcker holen (~6€) oder Schoko-Kasten + Krater rein-bohren.",
         "Schokoglasur drüber, von oben nach unten laufen lassen = ‚Lava'.",
-        "Rote + orange Smarties als Lava-Strom seitlich ankleben.",
+        "Rote + orange bunte Schoko-Linsen als Lava-Strom seitlich ankleben.",
         "Grüne Gummibärchen unten als ‚Bäume' platzieren."
       ],
       "fallback": "Bäcker zu? Muffins aus Vorrat, je Muffin ein Gummibärchen + roter Edding-Strich = Mini-Vulkan-Muffins.",
@@ -866,7 +998,7 @@
       "headline": "Eltern kennen ihr Kind — Übergabe ist okay.",
       "steps": [
         "Eltern-Übergabe: ‚Magst du kurz mit ihr raus?' — bei 3-5 sind Eltern dabei.",
-        "Capri-Sun + Brezel + roter Becher als Beruhigungs-Ritual.",
+        "Saftpäckchen + Brezel + roter Becher als Beruhigungs-Ritual.",
         "Eigenes Plastik-Ei mit Süßigkeit zum Selbst-Auspacken.",
         "Wenn Heimweh: nicht überreden — Mama-Foto am Handy zeigen.",
         "Nach 5 Min reinschauen — meist ist's vorbei wenn die anderen den Vulkan sehen."

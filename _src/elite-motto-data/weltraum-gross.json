@@ -5,7 +5,7 @@
     "schema_version": "1.0",
     "purpose": "Weltraum 9-12 — Phase B Elite-Slot (Mars-Missions-Frame, kein Tempo-Stempel, Codeknacker-Kern mit echten Woertern)",
     "phase_b_complete": "2026-05-21",
-    "phase_b_method": "Writer-Subagent Stream-C. Codeknacker-Math VORHER verifiziert: STERN (Pilot, scheinbare Helligkeit), PLANET (Wissenschaftler, Sonnenabstand), MOTOR (Mechaniker, Reparatur-Pfad) fuer Minimal; MARS (odd-one-out) fuer Standard; PLANET als 5-Stationen-Schatzsuche fuer Wow. Alle Loesungswoerter sind echte deutsche Woerter — kein INSEL-/Pseudo-Salat. Sorgfalt-Spezialist statt 1.-Astronaut."
+    "phase_b_method": "Writer-Subagent Stream-C. Codeknacker-Math gegen SIMBAD/NASA-Werte verifiziert (Stand 22.05.2026): STERN (Pilot, scheinbare Helligkeit), PLANET (Wissenschaftler, Sonnenabstand), MOTOR (Mechaniker, Reparatur-Pfad) fuer Minimal; MARS (odd-one-out) fuer Standard; PLANET als 5-Stationen-Schatzsuche fuer Wow. Alle Loesungswoerter sind echte deutsche Woerter — kein INSEL-/Pseudo-Salat. Sorgfalt-Spezialist statt 1.-Astronaut."
   },
   "motto": "weltraum",
   "ageGroup": "gross",
@@ -186,7 +186,7 @@
             {
               "n": 2,
               "name": "STERN-Lösung",
-              "content": "Sonne (−26,7) / Toliman (−0,27) / Elnath (1,65) / Ruchbah (2,68) / Nunki (3,0) → S-T-E-R-N = STERN."
+              "content": "Sonne (−26,7) / Toliman (+0,01) / Elnath (1,65) / Ruchbah (2,68) / Nashira (3,7) → S-T-E-R-N = STERN."
             },
             {
               "n": 3,
@@ -269,13 +269,100 @@
               "content": "Das Gummibärchen ist der offensichtliche Fremdkörper — wer es als Erstes meldet, trägt „Sorgfalt-Spezialist“ ins Logbuch ein."
             }
           ],
-          "safetyRule": "Nichts probieren — auch wenn Mehl und Salz harmlos sind, gilt im „Labor“ die Regel: Proben werden nur getestet, nicht gegessen. Das ist Teil der Mission-Disziplin.",
+          "safetyRule": "Nichts probieren — auch wenn Mehl und Salz harmlos sind, gilt im „Labor“ die Regel: Proben werden nur getestet, nicht gegessen. Das ist Teil der Mission-Disziplin. Essig nur TROPFEN, nicht spruehen Richtung Gesicht. Bei Augenkontakt mit Wasser spuelen (5 Min). Becher beim Sprudeln OFFEN lassen (kein Druckaufbau). NUR die bereitgestellten Proben — nichts Eigenes mitbringen lassen.",
           "ageAdjust9": "Nur 4 Proben, klare Vorgabe welche Methode bei welcher Probe hilft.",
           "ageAdjust12": "Alle 6 Proben plus eine Mischung (z.B. Sand + Backpulver) zum Auseinanderhalten — fordert genaues Testen.",
           "indoorTip": "Über einer abwischbaren Tischdecke oder einem Tablett arbeiten — Essig und Wasser tropfen.",
           "outdoorTip": "Am Gartentisch ideal — Kleckern egal, und die Sonne hilft beim Trocknen der Wasser-Proben.",
           "whyItWorksTitle": "Echtes Experimentieren statt So-tun-als-ob",
           "whyItWorks": "9-12-Jährige durchschauen Pseudo-Wissenschaft sofort. Hier passieren echte chemische Reaktionen (Essig + Backpulver sprudelt), die Kinder beobachten und dokumentieren wirklich. Das Logbuch macht aus dem Spiel eine nachvollziehbare Analyse, und die Schmuggelware-Pointe gibt einen klaren Aha-Moment, ohne dass jemand „verliert“."
+        },
+        {
+          "_source": "SEO-Cross-Pollination",
+          "name": "🏃 Weltraum-Olympiade (Schwerkraft-Slalom + Meteoritendodge + Sternenwerfen)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 30,
+          "minAge": 9,
+          "loudness": "laut",
+          "effort": "mittel",
+          "material": "Für Schwerkraft-Slalom: 6–8 Sofakissen oder Luftballons als „Schwerkraft-Anomalien“. Für Meteoritendodge: 4–6 weiche Bälle oder zusammengeknüllte Socken. Für Sternenwerfen: 3 Hula-Hoops oder Eimer als Ziele, 5 selbst gebastelte Papp-Sterne pro Werfer. Logbuch.",
+          "prepText": "Drei kurze körperliche Disziplinen als Astronauten-Olympiade — Bewegung als Gegenpol zu den ruhigen Codeknacker-Stationen. Jede Disziplin trainiert eine andere Fähigkeit (Koordination, Reaktion, Zielen), niemand wird nach Tempo bewertet — der Sorgfalt-Spezialist-Stempel geht an den, der eine Disziplin technisch sauber gelöst hat.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Schwerkraft-Slalom",
+              "content": "Die Crew läuft in Zeitlupe (= „erhöhte Schwerkraft auf einem schweren Planeten“) durch einen Slalom-Parcours aus Kissen. Wer ein Kissen berührt, beginnt von vorn — Konzentration vor Tempo."
+            },
+            {
+              "n": 2,
+              "name": "Meteoritendodge",
+              "content": "Die Crew steht in einem markierten Feld, ein Erwachsener wirft die weichen „Meteoriten“ (Socken-Bälle) in Bauch- oder Schulterhöhe. Wer getroffen wird, geht in „Reparatur-Modus“ und macht 5 Kniebeugen, dann wieder ins Feld."
+            },
+            {
+              "n": 3,
+              "name": "Sternenwerfen",
+              "content": "Jedes Kind wirft seine 5 Papp-Sterne nacheinander in die drei Hula-Hoop-Ziele in verschiedenen Entfernungen. Sterne in den hinteren Hoops zählen mehr, aber die Genauigkeit zählt — ein knapper Treffer ist ein voller Punkt."
+            },
+            {
+              "n": 4,
+              "name": "Logbuch-Eintrag",
+              "content": "Wer in welcher Disziplin besonders kontrolliert war, wird im Logbuch vermerkt — Sorgfalt-Spezialist-Stempel an die Technisch-Saubersten, nicht an die Schnellsten."
+            }
+          ],
+          "safetyRule": "Nur weiche Wurfgeschosse (Socken-Bälle, Krepp-Bälle), kein Treffer im Gesicht. Schwerkraft-Slalom auf rutschfestem Boden. Sternenwerfen weg von Fenstern und zerbrechlichen Möbeln. Bei Meteoritendodge nicht in die Augen werfen — Brillenträger an den Spielfeld-Rand.",
+          "ageAdjust9": "Slalom mit weniger Kissen, Meteoritendodge mit größerem Spielfeld (mehr Ausweich-Platz), Hula-Hoops näher heran.",
+          "ageAdjust12": "Slalom mit Augenbinde und Crew-Anweisungen, Meteoritendodge mit zwei Werfern gleichzeitig, Sternenwerfen mit Vorgabe (welcher Stern in welchen Hoop).",
+          "indoorTip": "Wohnzimmer für Slalom und Meteoritendodge frei räumen, Sternenwerfen in den Flur oder ein zweites Zimmer verlegen. Lampen und Vasen weg.",
+          "outdoorTip": "Im Garten ideal — viel Platz für Slalom und Dodge, Hula-Hoops auf den Rasen für Sternenwerfen. Drei Stationen parallel laufen lassen.",
+          "whyItWorksTitle": "Körper-Programm, das nicht peinlich ist",
+          "whyItWorks": "9-12-Jährige brauchen Bewegungs-Phasen, aber Pseudo-Spiele („Schwung-Schwung-Tanz“) finden sie peinlich. Die Olympiade-Disziplinen sind echte sportliche Aufgaben mit klaren Regeln und Weltraum-Frame — bewertet wird Technik statt Tempo, was auch die weniger Sportlichen einbindet. Drei kurze Disziplinen halten die Aufmerksamkeit."
+        },
+        {
+          "_source": "SEO-Cross-Pollination",
+          "name": "🤖 Roboter programmieren (offline mit Befehls-Karten)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 9,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "Karten mit Befehlen: „vor“, „links“, „rechts“, „halt“ (jeweils 10–15 Stück, mit Pfeil-Symbol). Ein Spielfeld auf dem Boden mit Klebeband: 6×6-Raster, dazwischen 2–3 „Asteroiden“ (Kissen) als Hindernisse, ein Ziel-Feld (Mars-Markierung). Optional ein echter Mini-Roboter (z.B. Bee-Bot, falls vorhanden), aber Mensch-als-Roboter funktioniert genauso. Logbuch.",
+          "prepText": "Die Crew programmiert einen „Roboter“ (entweder ein echter Bee-Bot oder ein Crew-Mitglied, das nur strikt Befehle befolgt) so, dass er vom Start durch das Asteroiden-Feld zum Mars-Ziel kommt — ohne mit einem Asteroiden zu kollidieren. Das ist algorithmisches Denken im Spiel-Frame.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Spielfeld erklären",
+              "content": "Das Klebeband-Raster zeigen, Start- und Ziel-Feld markieren. „Der Roboter versteht nur 4 Befehle: vor, links, rechts, halt. Asteroiden darf er nicht berühren — sonst stürzt er ab.“"
+            },
+            {
+              "n": 2,
+              "name": "Befehls-Liste planen",
+              "content": "Das Team legt die Befehls-Karten in der Reihenfolge aus, die der Roboter ausführen soll — vor dem Loslaufen. Tipps und Diskussionen im Team erlaubt."
+            },
+            {
+              "n": 3,
+              "name": "Programm ausführen",
+              "content": "Der Roboter (Kind oder Bee-Bot) führt die Karten der Reihe nach aus, eine pro Schritt. Niemand darf zwischendurch zurufen — der Roboter kennt nur die programmierten Befehle."
+            },
+            {
+              "n": 4,
+              "name": "Debuggen",
+              "content": "Erreicht der Roboter das Ziel nicht? Stürzt er an einem Asteroiden ab? Das Team analysiert, wo der Fehler im Programm war, korrigiert die Befehls-Liste und versucht es nochmal."
+            },
+            {
+              "n": 5,
+              "name": "Eintragen",
+              "content": "Mission erfolgreich = „Navigations-Algorithmus debuggt“ im Logbuch. Wer den effizientesten Pfad gefunden hat (wenigste Befehle), bekommt Sorgfalt-Spezialist."
+            }
+          ],
+          "safetyRule": "Wenn ein Kind den Roboter spielt: keine Stolperfallen im Raster, andere Kinder halten Abstand zum Spielfeld-Rand.",
+          "ageAdjust9": "4×4-Raster, ein Asteroide, einfache Pfade.",
+          "ageAdjust12": "6×6 oder 8×8-Raster, mehrere Asteroiden, optional ein „Schwerkraft-Brunnen“ (Feld, das den Roboter automatisch nach links lenkt) — fordert echte Algorithmen-Logik.",
+          "indoorTip": "Im Wohnzimmer Klebeband-Raster auf den Teppich — bleibt 2 Std. drauf, lässt sich gut lösen.",
+          "outdoorTip": "Im Garten Raster mit Kreide auf Pflaster oder Terrasse — größeres Feld möglich, Asteroiden aus Eimern oder Kissen.",
+          "whyItWorksTitle": "Programmieren ohne Bildschirm",
+          "whyItWorks": "Algorithmisches Denken (Befehls-Reihenfolge, Debuggen) ist Schul-Stoff und Zukunfts-Kompetenz — hier wird es als Spiel erlebbar. Mit 9-12 verstehen die Kinder erstmals wirklich, was „programmieren“ bedeutet, ohne dass Code geschrieben werden muss. Der menschliche Roboter macht das Konzept greifbar, und das Debuggen ist der wertvollste Teil: Fehler suchen statt sich frustrieren."
         }
       ],
       "food": "🎂 Sternenkarten-Kuchen (1 Blechkuchen) · 🍫 „Astronauten-Nahrung“-Beutel selbst gemischt (Müsliriegel, Trockenfrüchte, Nüsse) · 🥤 „Treibstoff“ = Apfelschorle (2 L) · 🥛 Käse-/Gemüse-Sticks als herzhafte Option",
@@ -674,6 +761,98 @@
           "outdoorTip": "Versteck im Garten — der Pfad nutzt echte Wege zwischen Stationen.",
           "whyItWorksTitle": "Der Mission-Abschluss als Teamleistung",
           "whyItWorks": "Die Hauptmission belohnt, dass jede Station ihren Teil beigetragen hat — ohne alle Ergebnisse geht die Karte nicht auf. Das macht den Abschluss zu einem gemeinsamen Erfolg statt zu einem Wettlauf, und das Bergen der Kapsel ist der emotionale Höhepunkt."
+        },
+        {
+          "_source": "SEO-Cross-Pollination",
+          "name": "🚀 Wasser-Raketen-Engineering-Challenge",
+          "indoor": false,
+          "outdoor": true,
+          "duration": 30,
+          "minAge": 10,
+          "loudness": "laut",
+          "effort": "hoch",
+          "material": "Pro Team 1 leere PET-Flasche (1,5 L), Korken oder Gummistopfen mit Loch, Fahrrad-Luftpumpe mit Ventil-Adapter (oder gekaufter Wasserrakete-Starter, ca. 15 €). Tonpapier und Klebeband für Finnen und Spitze. Wasser, ein freier Außenbereich, eine Maßband-Markierung.",
+          "prepText": "Echte Physik — die Crew baut Wasser-Raketen aus PET-Flaschen, experimentiert mit dem Wasser-Luft-Verhältnis und misst die Flughöhe. Nur draußen, nur mit Sicherheitsabstand. Der Lerneffekt: Rückstoß (Newtons drittes Gesetz) in der Praxis, und dass mehr Wasser nicht automatisch höher fliegt — das richtige Verhältnis tut es.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Rakete bauen",
+              "content": "Jedes Team gestaltet seine PET-Flasche: Tonpapier-Finnen unten ankleben (für Stabilität), Pappkegel-Spitze oben (optional). Team-Logo und Crew-Name drauf."
+            },
+            {
+              "n": 2,
+              "name": "Wasser-Mischung wählen",
+              "content": "Jedes Team entscheidet: Wieviel Wasser in die Flasche? 1/4, 1/3, 1/2 voll? Begründung im Logbuch eintragen (Hypothese)."
+            },
+            {
+              "n": 3,
+              "name": "Aufbau und Sicherheitsabstand",
+              "content": "Rakete kopfüber auf den Korken/Stopfen mit Pumpe stecken, alle Kinder treten mindestens 5 m zurück. Erwachsener bedient die Pumpe."
+            },
+            {
+              "n": 4,
+              "name": "Start",
+              "content": "Pumpen, bis der Druck reicht — die Rakete schießt hoch (typisch 5-15 m). Höhe schätzen oder mit dem Maßband-Schatten messen."
+            },
+            {
+              "n": 5,
+              "name": "Vergleichen",
+              "content": "Welches Team hat das beste Verhältnis gewählt? Das Logbuch füllen: Hypothese, Wasser-Menge, Flughöhe. Zweite Runde mit korrigierter Hypothese."
+            }
+          ],
+          "safetyRule": "NUR draußen, NIE drinnen oder unter Bäumen/Stromleitungen. Mindestens 5 m Sicherheitsabstand, alle hinter der Pump-Person. Schutzbrille empfohlen. NUR Erwachsene bedienen die Pumpe — der Druck kann den Korken mit Wucht in unvorhersehbare Richtung schleudern. NIE auf Menschen oder Tiere zielen. PET-Flaschen mit Druckschäden (Risse, Knicke) NICHT verwenden — Bruch-Gefahr. Nach Start die abgehobene Rakete erst nach 30 Sek. einsammeln (kann noch nachtropfen oder zurückkommen).",
+          "ageAdjust9": "Fertig gekauftes Wasserrakete-Set (z.B. Rezi oder Bresser, ~20 €) statt DIY — die Sicherheitstechnik ist eingebaut. Erwachsene starten, Kinder zählen Countdown.",
+          "ageAdjust12": "DIY-Konstruktion erlaubt, Kinder dürfen Finnen-Formen experimentell variieren (lang/kurz/breit). Maßband-Messung der Flughöhe, Logbuch mit Mess-Tabelle.",
+          "indoorTip": null,
+          "outdoorTip": "Großer Rasenfläche oder leerer Hof — keine Bäume in Schussweite. Sandkasten als Aufprall-Zone für die Rakete einplanen.",
+          "whyItWorksTitle": "Echte Physik, echte Ergebnisse",
+          "whyItWorks": "Mit 10-12 ist Pseudo-Wissenschaft durch — hier passiert echte Strömungslehre, und die Kinder erleben, wie ihre Hypothese (Wassermenge) das Ergebnis (Flughöhe) wirklich beeinflusst. Der Aha-Moment „mehr Wasser ist nicht mehr Höhe“ bleibt. Vorsicht: Das ist das mit Abstand sicherheitskritischste Spiel im Programm — bei Unsicherheit lieber das kommerzielle Wasserrakete-Set kaufen und nicht selbst aus Korken basteln."
+        },
+        {
+          "_source": "SEO-Cross-Pollination",
+          "name": "📸 Astro-Fotografie (Lichtmalerei mit Langzeitbelichtung)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 10,
+          "loudness": "ruhig",
+          "effort": "mittel",
+          "material": "1 Smartphone mit Kamera-App, die Langzeitbelichtung kann (iPhone: Live-Photo → langer Belichtung; Android: „Nacht-Modus“ oder Apps wie „Camera FV-5“). 1 Stativ oder fest fixierte Auflage (z.B. Buch-Stapel). Pro Kind eine kleine Taschenlampe oder ein LED-Stab. Ein abgedunkelter Raum oder dunkler Garten am Abend.",
+          "prepText": "Die Crew gestaltet mit Taschenlampen leuchtende Figuren in der Luft, das Smartphone mit Langzeitbelichtung „malt“ die Lichtspuren auf — Sterne, Raketen, Planeten, der Schriftzug der Mission. Ein Bild, das die Eltern später als Geburtstags-Erinnerung bekommen. Mit Schlafparty-Anschluss (Wow) ideal als Nacht-Aktivität direkt vor der Sternenbeobachtung.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Setup aufbauen",
+              "content": "Smartphone auf Stativ oder Buchstapel, Raum gut abdunkeln (Vorhänge zu, nur Restlicht). Langzeitbelichtung in der Kamera-App aktivieren (Nacht-Modus oder Langzeit-App)."
+            },
+            {
+              "n": 2,
+              "name": "Probebild machen",
+              "content": "Ein erstes Bild ohne Lichter: Test, ob die Belichtungszeit dunkel genug ist. Dann mit einer Taschenlampe einen Kreis in die Luft malen — kommt der Kreis im Bild?"
+            },
+            {
+              "n": 3,
+              "name": "Figur planen",
+              "content": "Die Crew überlegt: Was malen wir gemeinsam? Eine Rakete, einen Stern, die Mission-Botschaft „CREW“ in Buchstaben? Pro Person eine Aufgabe."
+            },
+            {
+              "n": 4,
+              "name": "Aufnahme starten",
+              "content": "Auslöser drücken (oder Selbstauslöser für ruhiges Bild), die Crew malt mit den Taschenlampen die geplante Figur — 10-20 Sekunden Belichtungszeit, dann automatisches Ende."
+            },
+            {
+              "n": 5,
+              "name": "Bild ansehen",
+              "content": "Crew schaut gemeinsam aufs Display — die Lichtspuren formen die Figur. 2-3 Versuche, das beste Bild wird ins Logbuch geklebt (Polaroid-Druck oder Bildschirm-Foto)."
+            }
+          ],
+          "safetyRule": "Nicht direkt in die Augen leuchten — Taschenlampen mit Rotlicht sind augenfreundlicher und ohnehin Pflicht für die anschließende Sternenbeobachtung. Stolperfallen im abgedunkelten Raum vorher entfernen. Smartphone auf festem Untergrund, nicht freihändig — verwackelt sonst.",
+          "ageAdjust9": "Vorgegebene einfache Figur (Kreis, Stern), Erwachsener bedient das Smartphone. 1-2 Aufnahmen.",
+          "ageAdjust12": "Die Crew gestaltet selbst Komposition und Bedienung, mehrere Belichtungszeiten ausprobieren, optional ein „Photoshoot“-Modus mit verschiedenen Figuren.",
+          "indoorTip": "Abgedunkeltes Wohnzimmer ideal. Bei Tag mit dichten Vorhängen oder Bettlaken über den Fenstern arbeiten — wirkt nachts magisch.",
+          "outdoorTip": "Im Garten nach Einbruch der Dämmerung — die Figuren leuchten besonders kräftig, weil der Hintergrund komplett schwarz ist.",
+          "whyItWorksTitle": "Foto-Wow mit Eltern-Effekt",
+          "whyItWorks": "Lichtmalerei verbindet Technik (Langzeitbelichtung verstehen) mit Kreativität (was malen wir?). Mit 10-12 ist der „Wie funktioniert das?“-Effekt echt — die Kinder verstehen das Prinzip Belichtungszeit zum ersten Mal. Das fertige Bild ist ein konkretes Mitgebsel, das Eltern später per WhatsApp bekommen — wirkt wochenlang nach."
         }
       ],
       "food": "🎂 Sternenkarten-Kuchen · 🍕 Mini-Pizzen selbst belegt (1,5/Kind) · 🍫 Astronauten-Nahrung-Beutel · 🥤 „Treibstoff“-Schorle (3 L) · 🥜 Nüsse & Studentenfutter als Snack",
@@ -1183,7 +1362,7 @@
       },
       {
         "n": 6,
-        "content": "Optional: aus farbigem Fondant oder Smarties die Planeten in ihrer Reihenfolge legen — passt zur Wissenschaftler-Station."
+        "content": "Optional: aus farbigem Fondant oder bunte Schoko-Linsen die Planeten in ihrer Reihenfolge legen — passt zur Wissenschaftler-Station."
       },
       {
         "n": 7,
@@ -1197,7 +1376,7 @@
     "meta": {
       "aufwand": "50 Min. inkl. Backen, plus Gestalten durch die Kinder",
       "kosten": "~9 €",
-      "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. Smarties/Fondant können Spuren von Nüssen/Milch enthalten; für Allergiker auf gekennzeichnete Streusel ausweichen."
+      "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. bunte Schoko-Linsen/Fondant können Spuren von Nüssen/Milch enthalten; für Allergiker auf gekennzeichnete Streusel ausweichen."
     },
     "tips": [
       {
@@ -1260,6 +1439,16 @@
     {
       "q": "Lohnt sich die Schlafparty mit Sternenbeobachtung?",
       "a": "Wenn die Eltern zustimmen und der Himmel klar ist: ja, das ist der Wow-Moment. Der erste bewusste Blick auf einen Jupitermond oder die Milchstraße bleibt hängen. Wichtig ist das Eltern-Opt-In für die Wach-Zeit und ein klarer Abhol-Punkt für Kinder, die nicht übernachten."
+    },
+    {
+      "_source": "SEO-Cross-Pollination",
+      "q": "Ist die Wasser-Rakete für 9-12-Jährige nicht zu gefährlich?",
+      "a": "Mit den richtigen Sicherheits-Regeln nein — aber sie ist das mit Abstand sicherheits-kritischste Spiel im Programm. Mindestens 5 m Abstand, nur Erwachsene bedienen die Pumpe, NIE drinnen oder unter Stromleitungen, NIE auf Menschen zielen. Wer unsicher ist: ein gekauftes Wasserrakete-Starter-Set (z.B. Rezi/Bresser, ~20 €) hat die Sicherheitstechnik eingebaut. Alternative für drinnen: die Brausetablette-Filmdose-Rakete aus der mittel-Variante oder die Strohhalm-Rakete — beide vermitteln den Rückstoß-Effekt ohne Risiko."
+    },
+    {
+      "_source": "SEO-Cross-Pollination",
+      "q": "Welche Mitgebsel passen — neben Logbuch und Patch?",
+      "a": "Leucht-Sterne (50er-Pack ab 3 €), ein selbst gestaltetes Astronauten-Ausweis-Kärtchen, Mini-Teleskope (3–5 €), Weltraum-Sticker, Schoko-Sterne aus der „Versorgungs-Kapsel“. In Silber-Tüten verpackt wirkt es besonders motto-passend. Für 9-12-Jährige gilt: lieber wenige hochwertige Stücke (Ausweis, Logbuch-Kopie, ein Stern-Stein/Stein in Alufolie als Mond-Andenken) als ein Berg billiger Plastik-Krimskrams — das durchschauen sie sofort und werten es ab."
     }
   ],
   "preparationWeeks": {
@@ -1446,6 +1635,20 @@
         "Eine andere Spezialisierung dazuholen, die ihren Quadranten schon hat — gelöst wird im Team."
       ],
       "fallback": "Wenn gar nichts geht: einen Quadranten gemeinsam lösen, die Lösung steckt im Spiel-Ablauf — niemand soll im Frust steckenbleiben.",
+      "tone": "praktisch"
+    },
+    "wasser_rakete_nicht_moeglich": {
+      "_source": "SEO-Cross-Pollination",
+      "icon": "🚀",
+      "label": "Wasser-Rakete fällt aus (Regen, Nachbarn, kein Outdoor)",
+      "headline": "Drei Indoor-Alternativen, die genauso Physik vermitteln.",
+      "steps": [
+        "Brausetablette-Filmdose-Rakete über dem Spülbecken (siehe mittel-Variante) — sicher drinnen, gleicher Rückstoß-Effekt im kleinen Maßstab.",
+        "Strohhalm-Rakete mit Pusten (siehe mittel-Variante) — funktioniert im Flur, vermittelt Form-Aerodynamik.",
+        "Astro-Fotografie als Ersatz-Highlight — drinnen abdunkeln, Lichtmalerei statt Wasser-Start. Liefert sogar ein Mitgebsel-Foto.",
+        "Roboter-Programmierung als Ersatz-Aktivität — fordert kognitiv genauso wie die Wasser-Rakete körperlich, ohne Sicherheits-Risiko."
+      ],
+      "fallback": "Wenn keine Alternative greift: Codeknacker-Tiefe ausbauen — eine zusätzliche Quadrant-Runde mit längeren Wörtern (RAKETE, GALAXIS) füllt 30 Minuten und passt zum Standard-Frame.",
       "tone": "praktisch"
     },
     "handy_abdriften": {

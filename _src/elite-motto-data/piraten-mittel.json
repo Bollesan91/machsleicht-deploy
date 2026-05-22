@@ -3,7 +3,7 @@
     "source_file": "kindergeburtstag/piraten-6-8-jahre.html",
     "extracted": "2026-05-19",
     "schema_version": "1.0",
-    "purpose": "Dino 6-8 — Phase C #6 Elite-Slot (no ritual)",
+    "purpose": "Piraten 6-8 — Elite-Slot (mit Ritual)",
     "phase_b_complete": "2026-05-20",
     "phase_b_method": "Direct draft analog Phase C — Piraten-spezifika: Schatzsuche + Augenklappen + Schatztruhe + Goldmünzen.",
     "phase_b_structural_refresh": "2026-05-21",
@@ -18,6 +18,67 @@
   "title": "🏴‍☠️ Piraten-Abenteuer Kindergeburtstag — 6–8 Jahre",
   "metaDescription": "Piraten-Kindergeburtstag für 6-8-Jährige: 3 fertige Party-Konzepte (Minimal/Standard/Wow) mit Schatzsuche, Zeitplan, Einkaufsliste und Kosten.",
   "introParagraph": "Dein Kind wird 6, 7 oder 8 und träumt von Schatzsuche und Piratenschiff? Hier bekommst du drei fertige Party-Konzepte — von der schnellen Schatzsuche bis zur kompletten Piraten-Ausbildung mit Schatzkarte, Knotenkunde und Zahlenschloss-Truhe.\n\n[Piraten-Geburtstag planen →](/kindergeburtstag?motto=piraten&alter=7#planer)",
+  "ageInsight": {
+    "headline": "Was 6–8-Jährige ausmacht — und was das für die Piraten-Party heißt",
+    "traits": [
+      {
+        "topic": "Aufmerksamkeit",
+        "detail": "20–30 Min. pro Aktivität sind realistisch, dann brauchen sie Wechsel. Lieber sechs kürzere Stationen als drei lange — und nach jeder lauten Aktion bewusst eine ruhige."
+      },
+      {
+        "topic": "Regeln",
+        "detail": "Einfache Spielregeln werden verstanden, mehrstufige nur mit Demo. Vormachen statt nur erklären: ein, zwei Runden langsam vorzeigen, dann läuft es. Schiedsrichter dürfen 7-Jährige schon mal selbst sein."
+      },
+      {
+        "topic": "Wettbewerb",
+        "detail": "Erster Ehrgeiz ist da — Team-Spiele funktionieren super, Einzelrennen erzeugen Frust. Trostpreis fürs Verlierer-Team einplanen, dann bleibt die Stimmung. Schatz wird immer gemeinsam geteilt, nie 'erster gewinnt alles'."
+      },
+      {
+        "topic": "Motorik",
+        "detail": "Schreiben, schneiden, kleben gehen sicher. Knoten üben macht Spaß und hängt als echte Fähigkeit nach — ein, zwei einfache Knoten reichen. Tee-färben, Schatzkarte gestalten, X markieren — alles drin."
+      },
+      {
+        "topic": "Dauer",
+        "detail": "2,5–3 Stunden sind ideal, danach kippt die Stimmung. Lieber pünktlich aufhören, wenn es noch gut ist, als die letzten 20 Minuten überziehen — die Eltern merken den Unterschied beim Abholen."
+      },
+      {
+        "topic": "Essen",
+        "detail": "Fingerfood schlägt Besteck. 'Piratenmahl' als Programm statt normaler Mahlzeit — Kanonenkugeln (Fleischbällchen), Schiffszwieback (Brezeln), Schwertspieße (Obst). Genug einplanen, 7-Jährige essen mehr, als man denkt."
+      },
+      {
+        "topic": "Eltern",
+        "detail": "Können meistens abgesetzt werden, müssen aber telefonisch erreichbar sein. Abholzeit vorher klar kommunizieren und Notfallnummern parat haben. Allergien immer in der Einladung abfragen — bei 6 Kindern fast immer mindestens eine Auffälligkeit."
+      }
+    ],
+    "whyMottoFitsHeadline": "Warum Piraten für 6–8 perfekt funktioniert",
+    "whyMottoFits": "Piraten = Abenteuer + Verkleidung + Schatz. Die Kombination ist mit 6-8 unschlagbar: Die Kinder verkleiden sich gern (eine Augenklappe reicht für den Effekt), sie lieben echte Rätsel-Schatzsuchen mit Hinweisen zum Knacken, und das Rollenspiel 'Wir sind eine Crew' gibt der Party einen roten Faden durch alle Stationen. Piraten ist geschlechtsneutral, funktioniert drinnen wie draußen gleich gut, und die Welt trägt von der einfachen Spur durch die Wohnung bis zur Zahlenschloss-Schatztruhe — du wählst die Komplexität, das Motto bleibt dasselbe."
+  },
+  "faq": [
+    {
+      "q": "Wie lange sollte ein Piraten-Geburtstag dauern?",
+      "a": "2,5 bis 3 Stunden sind ideal für 6–8-Jährige — die Standard-Variante mit Schatzsuche, Knotenkunde und Parcours läuft genau in diesem Fenster. Die Minimal-Variante mit 2 Stunden funktioniert auch perfekt und ist gut für jüngere Sechsjährige. Über 3 Stunden kippt die Stimmung; lieber einen klaren Schlusspunkt mit Truhen-Übergabe als auslaufen lassen."
+    },
+    {
+      "q": "Wie viele Kinder einladen?",
+      "a": "Faustregel 'Alter + 1' — also 7–9 Kinder bei einer Sieben-Jährigen. Ab 8 Kindern brauchst du verlässlich einen zweiten Erwachsenen, sonst rennt die Schatzsuche auseinander. Sweet Spot für die Standard-Variante sind 6 Kinder, ab Wow auch bis 8."
+    },
+    {
+      "q": "Was kostet ein Piraten-Geburtstag?",
+      "a": "Zwischen ~35 € (Minimal, 6 Kinder) und ~75 € (Wow, 6 Kinder ohne eigenes Kostüm). Standard landet bei ~59 €. Die meisten Posten — Schatzkarte, Schatztruhe, Flaschenpost — gehen aus Schuhkarton, Pergament-Papier und Bastelresten; das Geld steckt sinnvoller in Augenklappen, Goldmünzen und gutes Essen für hungrige 7-Jährige."
+    },
+    {
+      "q": "Funktioniert ein Piraten-Geburtstag auch drinnen?",
+      "a": "Ja, sogar besser. In der Wohnung gibt es mehr Verstecke als im Garten, und die Schatzsuche fühlt sich enger und spannender an. Parcours im Flur, Dosenwerfen im Wohnzimmer (auf Teppich, damit es nicht scheppert), Knotenkunde am Esstisch — alle Standard-Stationen laufen indoor. Bei der Schatzkarte mit Tee-Färbung eine alte Tischdecke oder Zeitungspapier unterlegen, die Flecken sind hartnäckig."
+    },
+    {
+      "q": "Müssen die Kinder verkleidet kommen?",
+      "a": "Nein, aber wenn ja, dann reicht 'Stirnband + alter dunkler Pulli'. In die Einladung schreiben: 'Komm in Piraten-Kleidung, wenn du magst — Augenklappe gibt's bei uns.' So fühlt sich kein Kind aus dem Rahmen, das ohne Kostüm kommt. Augenklappe und Bandana bekommen bei Ankunft eh alle — ab dann sind sowieso alle Piraten."
+    },
+    {
+      "q": "Was, wenn die Schatzsuche zu schnell vorbei ist?",
+      "a": "Stationen-Anzahl flexibel halten: 5 Stationen für Minimal, 7 für Standard, ein versteckter Bonus-Hinweis 'die Rivalen waren hier' für Wow. Reicht das nicht: vor der Truhen-Öffnung noch ein Kompass-Tanz-Spiel einbauen, das Kuchen-Slot 10 Minuten vorziehen. Lieber satt und ruhig zur Truhe als gestreckt mit quengelnden Piraten."
+    }
+  ],
   "variants": [
     {
       "id": "minimal",
@@ -585,7 +646,7 @@
         {
           "time": "16:25",
           "title": "🎁 Freispiel & Abholung",
-          "description": "Dino-Doku — nein, natürlich Piratenfilm (Fluch der Karibik? Nee, lieber Pippi Langstrumpf). Abholung ab 17:00.\n\n🎯 Der geheime Wow-Faktor\nEin [Piratenkostüm*](https://www.amazon.de/s?k=piraten+kost%C3%BCm+erwachsene&tag=machsleicht-21) für dich (~20–35 €). Du begrüßt die Kinder als „Käpt’n“ — mit Hut, Augenklappe und rauem Piraten-Akzent. Die Kinder finden das GENIAL und der ganze Tag hat einen Erzähler. Alternativ günstiger: Nur [Piratenhut*](https://www.amazon.de/s?k=piraten+hut+erwachsene&tag=machsleicht-21) + Augenklappe + Akzent reicht völlig."
+          "description": "Ruhige Ausklang-Phase mit Hörspiel (kindgerechtes Seefahrer-Abenteuer) oder freiem Spiel auf dem Teppich. Abholung ab 17:00.\n\n🎯 Der geheime Wow-Faktor\nEin [Piratenkostüm*](https://www.amazon.de/s?k=piraten+kost%C3%BCm+erwachsene&tag=machsleicht-21) für dich (~20–35 €). Du begrüßt die Kinder als „Käpt'n“ — mit Hut, Augenklappe und rauem Piraten-Akzent. Die Kinder finden das GENIAL und der ganze Tag hat einen Erzähler. Alternativ günstiger: Nur [Piratenhut*](https://www.amazon.de/s?k=piraten+hut+erwachsene&tag=machsleicht-21) + Augenklappe + Akzent reicht völlig."
         }
       ],
       "games": [
@@ -797,7 +858,11 @@
       "kosten": "~7 &euro;",
       "allergiker": "Packung checken"
     },
-    "tips": null
+    "tips": [
+      "Kuchen schon am Vortag backen, Deko erst am Partytag",
+      "Bei Kapitaensmuetze: aus Fondant pressen und 2h im Kuehlschrank stabilisieren",
+      "Pirat-Augenklappen aus dunkler Schokolade einfach mit Backpapier-Schablone formen"
+    ]
   },
   "parentTips": {
     "structured": [
@@ -913,7 +978,7 @@
         {
           "icon": "🎂",
           "title": "Schatzinsel-Kuchen backen — oder Plan B",
-          "detail": "Wenn Zeit/Nerven: Gugelhupf + Schokoglasur + Goldmünzen-Smarties als ‚Schatz'. Wenn nicht: Sandkuchen vom Bäcker (~6€), morgen Goldmünzen-Streusel drauf. Bei 6-8 keine Wunderkerze ist OK (Piraten haben kein Feuerwerk-Klischee)."
+          "detail": "Wenn Zeit/Nerven: Gugelhupf + Schokoglasur + bunte Schokolinsen als ‚Schatz'. Wenn nicht: Sandkuchen vom Bäcker (~6€), morgen Goldmünzen-Streusel drauf. Bei 6-8 keine Wunderkerze ist OK (Piraten haben kein Feuerwerk-Klischee)."
         },
         {
           "icon": "🗣️",
@@ -943,7 +1008,7 @@
         {
           "icon": "🌟",
           "title": "Kuchen verzieren",
-          "detail": "Schokoglasur drüber, Goldmünzen-Smarties als ‚Schatz' obendrauf, grüne Marzipan-Bäume (DIY oder Smarties). Bei Wow: ‚X' aus weißem Zuckerstift = Markierung. Über Nacht fest werden lassen."
+          "detail": "Schokoglasur drüber, bunte Schokolinsen als ‚Schatz' obendrauf, grüne Marzipan-Bäume (DIY oder weitere Schokolinsen). Bei Wow: ‚X' aus weißem Zuckerstift = Markierung. Über Nacht fest werden lassen."
         },
         {
           "icon": "🔥",
@@ -958,7 +1023,7 @@
         {
           "icon": "🎵",
           "title": "Audio + Bluetooth-Box testen",
-          "detail": "Spotify ‚Piraten der Karibik Soundtrack' Playlist. Bei Wow: Wellen-Sound für Stations-Übergang. Soundkulisse macht 6-8 Kindern viel mehr Spaß als nur Reden."
+          "detail": "Eine Playlist mit Sea-Shanty-Liedern (gemeinfreie Seemannslieder, kein Marken-Soundtrack) und dezentem Wellen-Sound für Stations-Übergang. Soundkulisse macht 6-8 Kindern viel mehr Spaß als nur Reden."
         },
         {
           "icon": "🗺️",
@@ -1059,7 +1124,7 @@
       "steps": [
         "Sandkuchen oder Schoko-Boden beim Bäcker holen (4-6€).",
         "Schokoglasur drüber, ‚X' mit weißem Zuckerstift drauf = Schatz-Markierung.",
-        "Schoko-Goldmünzen rundum verteilen + grüne Smarties als ‚Insel-Bäume'.",
+        "Schoko-Goldmünzen rundum verteilen + grüne Schokolinsen als ‚Insel-Bäume'.",
         "Optional: Piraten-Flagge aus Papier + Zahnstocher als Topping."
       ],
       "fallback": "Bäcker zu? Muffins aus dem Vorrat, je Muffin eine Schoko-Goldmünze + roter Edding-X = Mini-Schatz-Inseln.",
@@ -1176,6 +1241,7 @@
       }
     ],
     "optOutNote": "Kein Kind muss eine Rolle nehmen. Wer einfach nur mitlaufen will, ist normaler Pirat — Augenklappe und Schatzanteil bekommt es trotzdem. Die Rollen sind ein Angebot, kein Zwang.",
-    "materialNote": "Augenklappen, Kopftücher und eine kleine Holz-Schatztruhe gibt es als Set; siehe shoppingList der jeweiligen Variante. Versprechen-Karte und Rollen-Kärtchen druckst du selbst aus — Vorlagen liegen im Einladungs- und Druck-Bereich."
+    "materialNote": "Augenklappen, Kopftücher und eine kleine Holz-Schatztruhe gibt es als Set; siehe shoppingList der jeweiligen Variante. Versprechen-Karte und Rollen-Kärtchen druckst du selbst aus — Vorlagen liegen im Einladungs- und Druck-Bereich.",
+    "roleSkalierung": "3 Kernrollen (Kapitaen + Steuermann + Ausguck) sind PFLICHT. 5 weitere optional je nach Kinderzahl. Bei wenigen Kindern: 2 Rollen pro Kind kombinieren. Schreiber-Funktion altersgerecht: 6-Jaehrige malen SYMBOLE statt schreiben."
   }
 }

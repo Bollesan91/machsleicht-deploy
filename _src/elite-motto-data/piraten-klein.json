@@ -233,7 +233,7 @@
               "content": "Die Kiste wird im Kreis geoeffnet, jedes Kind nimmt sich eine Goldmuenze — gleich viele fuer alle."
             }
           ],
-          "safetyRule": "Spur nicht ueber Treppen, Stuehle oder erhoehte Verstecke legen — kein Klettern. Goldmuenzen nicht auf den Boden vor Tueren, ueber die gelaufen wird (Rutschgefahr).",
+          "safetyRule": "Schoko-Goldmuenzen sind bei 3-Jaehrigen Erstickungsrisiko (klein, rund, hart, Folie). Fuer Tauchspiel/Suchspiel: Plastik-Muenzen statt Schoko-Muenzen. Schoko-Muenzen nur zum Essen unter Sicht-Aufsicht; Folien sofort wegsammeln.",
           "ageAdjust3": "Spur kurz halten (6-8 Marken), Endpunkt sichtbar verstecken. Ein Erwachsener geht voran und 'sucht mit'.",
           "ageAdjust5": "Spur laenger, zwei, drei Etappen mit Mini-Aufgabe dazwischen ('Klatscht dreimal, dann geht's weiter'). Karte selbst halten lassen.",
           "indoorTip": "In 60-75 m2 geht die Spur ueber 2-3 Raeume — ums Sofa, durch den Flur, in die Garderobe. Reicht voellig.",
@@ -437,7 +437,7 @@
           "loudness": "halblaut",
           "effort": "leicht",
           "material": "Grosse Schuessel oder Wanne, Wasser oder trockene Fuellung (Sand, zerknuelltes Papier, getrocknete Erbsen), Schoko-Goldmuenzen in Folie oder Plastik-Muenzen, Handtuecher.",
-          "prepText": "Eine grosse Schuessel mit lauwarmem Wasser fuellen (oder trocken mit Sand/Papier, falls Wasser zu viel Chaos macht). Goldmuenzen reinwerfen. Handtuecher danebenlegen — es wird nass.",
+          "prepText": "TROCKENE Variante als Default (Tuechern auf dem Boden, Muenzen darunter): sicher fuer 3-Jaehrige. Eine grosse Schuessel mit lauwarmem Wasser fuellen (oder trocken mit Sand/Papier, falls Wasser zu viel Chaos macht). Goldmuenzen reinwerfen. Handtuecher danebenlegen — es wird nass.",
           "steps": [
             {
               "n": 1,
@@ -505,7 +505,7 @@
               "content": "Die Kiste wird im Kreis geoeffnet, jedes Kind nimmt sich eine Goldmuenze — gleich viele fuer alle."
             }
           ],
-          "safetyRule": "Spur nicht ueber Treppen, Stuehle oder erhoehte Verstecke legen — kein Klettern. Goldmuenzen nicht auf den Boden vor Tueren, ueber die gelaufen wird (Rutschgefahr).",
+          "safetyRule": "Schoko-Goldmuenzen sind bei 3-Jaehrigen Erstickungsrisiko (klein, rund, hart, Folie). Fuer Tauchspiel/Suchspiel: Plastik-Muenzen statt Schoko-Muenzen. Schoko-Muenzen nur zum Essen unter Sicht-Aufsicht; Folien sofort wegsammeln.",
           "ageAdjust3": "Spur kurz halten (6-8 Marken), Endpunkt sichtbar verstecken. Ein Erwachsener geht voran und 'sucht mit'.",
           "ageAdjust5": "Spur laenger, zwei, drei Etappen mit Mini-Aufgabe dazwischen ('Klatscht dreimal, dann geht's weiter'). Karte selbst halten lassen.",
           "indoorTip": "In 60-75 m2 geht die Spur ueber 2-3 Raeume — ums Sofa, durch den Flur, in die Garderobe. Reicht voellig.",
@@ -547,6 +547,46 @@
           "outdoorTip": "Im Garten ueber 'Wellen' (Huegel) und 'um Klippen' (Baeume) — wird zur kleinen Schiffsreise.",
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Das Tau loest das Klassik-Problem jeder Kleinkind-Party: Wie bringe ich sechs Dreijaehrige gemeinsam von A nach B, ohne dass drei abbiegen? Aus Logistik wird ein Spiel. Und das gemeinsame Festhalten gibt unsicheren Kindern Halt — woertlich."
+        },
+        {
+          "name": "🏝️ Schatzinsel-Huepfen (Boden-ist-Meer)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "8 Min.",
+          "minAge": 3,
+          "loudness": "halblaut",
+          "effort": "leicht",
+          "material": "5-7 grosse Kissen, Decken oder Teppichfliesen als 'Inseln'. Optional ein blaues Tuch als 'Meer' rundherum.",
+          "prepText": "Kissen oder Teppichfliesen als 'Inseln' im Raum auslegen — gerade so weit auseinander, dass ein Dreijaehriger gut von einer zur naechsten kommt. Der Boden dazwischen ist 'Meer'. Wer ins Meer faellt, wird vom Erwachsenen wieder 'rausgefischt' — niemand scheidet aus.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Inseln verteilen",
+              "content": "Die Kissen oder Decken so legen, dass auch der kleinste Pirat ohne Sprung von Insel zu Insel kommt — Schritte reichen, kein Hechtsprung noetig."
+            },
+            {
+              "n": 2,
+              "name": "Spielregel erzaehlen",
+              "content": "Du sagst: 'Achtung Crew, das Schiff sinkt — schnell auf die Inseln! Der Boden ist Meer, da schwimmen Haie.' Kurze Geschichte, klare Regel."
+            },
+            {
+              "n": 3,
+              "name": "Wandern zwischen Inseln",
+              "content": "Die Kinder wandern reihum von Insel zu Insel. Du gibst Kommandos: 'Alle auf die rote Insel!' — kleines Sortierspiel, das die Gruppe lenkt."
+            },
+            {
+              "n": 4,
+              "name": "Rettung im Meer",
+              "content": "Wer aus Versehen ins 'Meer' tritt, wird laut 'gerettet' — ein Erwachsener hebt das Kind kurz auf die naechste Insel. Kein Verlierer, sondern eine Mini-Show."
+            }
+          ],
+          "safetyRule": "Inseln mit Anti-Rutsch-Unterlage oder rutschfest auf Teppich auslegen — sonst schiessen Kissen unter den Fuessen weg. Genug Abstand zwischen den Inseln, damit Kinder nicht zusammenstossen. Keine Tisch- oder Stuhlkanten in Reichweite.",
+          "ageAdjust3": "Inseln dicht nebeneinander, fast wie ein Pfad — ein Schritt reicht. Erwachsener begleitet jedes Kind beim ersten Durchgang.",
+          "ageAdjust5": "Inseln weiter auseinander, kleine Spruenge erlaubt. Mit Musik dazu — Stopp = jeder muss auf einer Insel stehen, sonst ins Meer.",
+          "indoorTip": "Wohnzimmer-Klassiker — Sofakissen funktionieren am besten. Vorher Glastisch oder zerbrechliche Deko aus dem Weg raeumen.",
+          "outdoorTip": "Im Garten Hula-Hoop-Reifen oder Picknickdecken als Inseln. Bei Wind die Decken mit Steinen beschweren.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Boden-ist-Lava-Spiele sind ein 3-5-Klassiker, der in der Piraten-Welt von selbst Sinn macht: Inseln und Meer brauchen keine Erklaerung. Es ist Bewegung mit klarer Geschichte, ohne Wettbewerb und ohne Ausscheiden — und die 'Rettung' aus dem Meer ist fuer Dreijaehrige der Lieblings-Moment."
         }
       ],
       "food": "🎂 Piratenschiff-Kuchen. 🥛 'Piraten-Grog' (Apfelschorle). 🍪 'Schiffszwieback' (einfache Butterkekse). 🍎 Obst-Spiesse. 🧀 Kaese-Wuerfel als 'Proviant'. Eine Handvoll herzhafter Snacks neben dem Kuchen — gut, weil 2 Stunden mit nur Kuchen zu suess werden.",
@@ -830,13 +870,53 @@
               "content": "Die Kiste wird im Kreis geoeffnet, jedes Kind nimmt sich eine Goldmuenze — gleich viele fuer alle."
             }
           ],
-          "safetyRule": "Spur nicht ueber Treppen, Stuehle oder erhoehte Verstecke legen — kein Klettern. Goldmuenzen nicht auf den Boden vor Tueren, ueber die gelaufen wird (Rutschgefahr).",
+          "safetyRule": "Schoko-Goldmuenzen sind bei 3-Jaehrigen Erstickungsrisiko (klein, rund, hart, Folie). Fuer Tauchspiel/Suchspiel: Plastik-Muenzen statt Schoko-Muenzen. Schoko-Muenzen nur zum Essen unter Sicht-Aufsicht; Folien sofort wegsammeln.",
           "ageAdjust3": "Spur kurz halten (6-8 Marken), Endpunkt sichtbar verstecken. Ein Erwachsener geht voran und 'sucht mit'.",
           "ageAdjust5": "Spur laenger, zwei, drei Etappen mit Mini-Aufgabe dazwischen ('Klatscht dreimal, dann geht's weiter'). Karte selbst halten lassen.",
           "indoorTip": "In 60-75 m2 geht die Spur ueber 2-3 Raeume — ums Sofa, durch den Flur, in die Garderobe. Reicht voellig.",
           "outdoorTip": "Im Garten oder Park die Spur um Baeume und Buesche legen — das 'Suchen' wird automatisch spannender. Bei Wind die Papier-Pfeile beschweren.",
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Eine Suche hat ein klares Ziel und ein eingebautes Happy End — das verstehen schon Dreijaehrige. Weil alle gemeinsam suchen und das Gold geteilt wird, gibt es keine Verlierer und keine Traenen. Das ist das Herzstueck jeder Piraten-Party fuer die Kleinen."
+        },
+        {
+          "name": "💃 Piraten-Tanz (Stopp-Tanz mit Kissen-Inseln)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "8 Min.",
+          "minAge": 3,
+          "loudness": "laut",
+          "effort": "leicht",
+          "material": "Eine Musikquelle (Handy, Bluetooth-Box) mit ein, zwei froehlichen Liedern; 5-6 grosse Kissen oder kleine Decken als 'Inseln'.",
+          "prepText": "Eine Playlist mit kindgerechten Sea-Shanty- oder froehlichen Tanz-Liedern bereitlegen (ohne markenspezifische Film-Soundtracks). Kissen verteilt im Raum auslegen — sie sind die rettenden 'Inseln'. Eine Stelle freilassen, an der ihr gut zusammen tanzen koennt.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Musik an, alle tanzen",
+              "content": "Die Crew tanzt frei zur Musik — wackeln, klatschen, im Kreis huepfen. Du tanzt mit, das senkt die Hemmschwelle bei zoegerlichen Kindern."
+            },
+            {
+              "n": 2,
+              "name": "Stopp — auf die Insel!",
+              "content": "Plötzlich die Musik anhalten und 'Land in Sicht!' rufen. Jedes Kind springt auf eine Insel — auch zu zweit auf einem Kissen ist okay."
+            },
+            {
+              "n": 3,
+              "name": "Niemand ins Meer",
+              "content": "Kein Kind scheidet aus. Wer es nicht rechtzeitig schafft, wird vom 'Schiff gerettet' und kommt mit auf die naechste Insel. Lacher garantiert."
+            },
+            {
+              "n": 4,
+              "name": "Inseln schrumpfen",
+              "content": "Mit jeder Runde ein Kissen weniger — alle muessen enger zusammenruecken. Kein Wettkampf, sondern ein Wir-Spiel. Endet, wenn alle auf einer einzigen 'Insel' kleben."
+            }
+          ],
+          "safetyRule": "Kissen muessen rutschfest liegen — bei glattem Boden Anti-Rutsch-Unterlage oder auf Teppich spielen. Kein wildes Springen aus dem Stand, eher Schritte und Hocken. Glastische und scharfe Kanten vorher abdecken oder wegruecken.",
+          "ageAdjust3": "Inseln gross und nah beieinander, langsame Musik. Bei 'Stopp' nicht hetzen — Dreijaehrige brauchen zwei, drei Sekunden Reaktionszeit.",
+          "ageAdjust5": "Schnellere Lieder, mehr Inseln-schrumpfen-Runden. Fuenfjaehrige lieben es, wenn ein Kind die Musik selbst stoppen darf.",
+          "indoorTip": "Wohnzimmer-Tanzflaeche mit Kissen drumherum. Lautstaerke moderat halten — Nachbarn freuen sich nicht ueber stundenlangen Sea-Shanty.",
+          "outdoorTip": "Im Garten mit Picknickdecken als Inseln. Bluetooth-Box auf den Gartentisch — und die Crew tanzt unter freiem Himmel, was den Klang-Eindruck verdoppelt.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Stopp-Tanz ist ein 3-5-Klassiker, der mit Piraten-Geschichte einen frischen Rahmen bekommt — aus 'Stopp' wird 'Land in Sicht'. Die Inseln-schrumpfen-Mechanik baut Naehe statt Wettbewerb auf: Am Ende kleben alle freudig zusammen, statt dass einer als Verlierer ausscheidet. Perfekt als laute Abschluss-Welle vor dem Schatz-Teilen."
         }
       ],
       "food": "🎂 Piratenschiff-Kuchen auf 'Meer'-Platte (blauer Tonkarton). 🥛 'Piraten-Grog'. 🍪 'Schiffszwieback'. 🍌 'Schwertfisch-Spiesse' (Obst auf Holzspiessen). 🧀 Kaese-Anker (Kaese mit Ausstecher). Liebevoll angerichtet — bei Wow ist das Auge mit am Tisch.",
@@ -1038,6 +1118,10 @@
       {
         "topic": "📵 Kurz halten, frueh enden",
         "detail": "90 Minuten bis 2 Stunden sind genug. Lieber aufhoeren, wenn es am schoensten ist, als eine Stunde zu lang. Ein klares Ende-Ritual (Schatz teilen, Urkunde, Tschuess) gibt allen das Signal — sonst zerfasert die Party."
+      },
+      {
+        "tip": "Holzspiess-Sicherheit",
+        "content": "Bei 3-4-Jaehrigen Obst von Holzspiessen ABZIEHEN und einzeln servieren. Holzspiesse nur fuer Aeltere oder unter Aufsicht. Beim Kuchen vor dem Anschneiden die Holzspieß-Maste der Piraten-Deko ZIEHEN."
       }
     ],
     "educationalValue": "Die Kinder ueben ganz nebenbei: gemeinsam ein Ziel verfolgen, aufeinander warten und am Ende teilen. Eine Schatzsuche ohne Sieger zeigt 3-5-Jaehrigen, dass ein Erfolg schoener wird, wenn ihn alle haben — das ist die erste Erfahrung von Kooperation statt Konkurrenz. Dazu kommt ein Stueck Selbstwirksamkeit: 'Ich habe den Schatz mitgefunden' ist fuer ein Dreijaehriges ein echtes Erfolgserlebnis. Und das Rollenspiel — jemand anders sein, in eine Geschichte eintauchen — trainiert Fantasie und Sprache, ohne dass es nach Lernen aussieht."
@@ -1321,6 +1405,32 @@
       ],
       "fallback": "Bei 3-5 ist ein frueher Abschluss kein Problem — die Aufmerksamkeit war ohnehin am Limit. Ein klares Ende ist besser als ein zaehes.",
       "tone": "praktisch"
+    },
+    "sommer_hitze": {
+      "icon": "☀️",
+      "label": "Hitze ueber 28 Grad — Garten faellt aus",
+      "headline": "Schatten, Wasser, Spielen nach drinnen verlegen.",
+      "steps": [
+        "Schatzspur in die kuehleren Raeume (Flur, Schlafzimmer) verlegen — Wohnzimmer-Sonne meiden.",
+        "Goldmuenzen-Tauchen mit lauwarmem (nicht eiskaltem) Wasser draussen im Schatten — wirkt wie Mini-Pool und kuehlt nebenbei.",
+        "Trinkpause alle 30 Minuten fest einplanen, nicht nur 'wenn jemand fragt'. Wasser oder stark verduennte Schorle, keine Eiswuerfel an Kleinkinder.",
+        "Sonnencreme der Eltern bei Ankunft sichtbar an einen Sammelplatz legen — du bist nicht der Sonnenschutz-Manager fuer 6 Kinder."
+      ],
+      "fallback": "Wird es ueber 30 Grad: Schatzsuche stark kuerzen, mehr Sitz-Aktionen (Kuchen, Schatzkarte ausmalen, Geschichte vorlesen). Eltern dabei sein lassen statt Abholen, das gibt zusaetzliche Augen.",
+      "tone": "praktisch"
+    },
+    "drei_jaehriger_panik": {
+      "icon": "😨",
+      "label": "Dreijaehriger hat Angst vor 'Piraten'",
+      "headline": "Aus Angst raus, in vertrautes Spiel rein.",
+      "steps": [
+        "Augenklappe weglassen — manche Dreijaehrige finden ein bedecktes Auge bedrohlich. Bandana oder gar nichts tut es genauso.",
+        "Saebel, Skelette, dunkle Stimme komplett rausnehmen. 'Wir sind freundliche Schatzsucher' ist die einzige Story-Linie hier.",
+        "Mit dem Kind an der Schatzkarte starten — eine reine Such-Geschichte ist viel weniger gruselig als 'Piraten kommen!'",
+        "Eltern dranlassen — bei dem Alter ist es voellig okay, wenn das Kind die erste Stunde von Mamas Schoss aus zuschaut."
+      ],
+      "fallback": "Bleibt es aengstlich: 'Piraten' nicht mehr aussprechen, das Spiel als 'Schatzsuche' weiterlaufen lassen. Das Wort macht oft den Unterschied, nicht das Spiel selbst.",
+      "tone": "beruhigend"
     }
   }
 }

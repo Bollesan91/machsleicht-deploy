@@ -18,7 +18,36 @@
   "introParagraph": "3 fertige Party-Konzepte: Minimal (1,5 Std.) · Standard (2 Std.) · Wow (2,5 Std.)\n\nMinutengenaue Zeitpläne, 6 altersgerechte Spiele mit kompletter Anleitung, Einkaufslisten mit Preisen und Kosten pro Kind. Für 3–5 Jahre: weniger Programm, mehr Staunen.\n\n[🦄 Einhorn-Geburtstag planen →](/kindergeburtstag?motto=einhorn&alter=4#planer)",
   "ageInsight": {
     "headline": "Was du über 3–5-Jährige wissen musst — Einhorn-Party 3-5",
-    "traits": null,
+    "traits": [
+      {
+        "topic": "Kurze Aufmerksamkeit",
+        "detail": "3-Jährige halten 5–10 Minuten durch, 5-Jährige maximal 15. Jedes Spiel muss sofort verständlich sein — keine langen Regelerklärungen."
+      },
+      {
+        "topic": "Weniger ist mehr",
+        "detail": "2 Spiele + Kuchen reichen für eine perfekte Party. Lieber ein Spiel zu wenig als eines zu viel — überstimulierte Kleinkinder weinen, und dann weinen alle."
+      },
+      {
+        "topic": "Kein Wettkampf",
+        "detail": "In diesem Alter gibt es keine Gewinner und Verlierer. Kein „wer ist schneller\", kein „wer hat mehr gefunden\". Jedes Kind soll Erfolge erleben, nicht Niederlagen. Staunen statt Siegen."
+      },
+      {
+        "topic": "Motorik beachten",
+        "detail": "3-Jährige schneiden noch nicht mit der Schere, kleben unsauber, können kaum stillsitzen. 5-Jährige basteln schon geschickt. Bastel-Aktivitäten müssen für beide klappen — einfache Materialien, grobe Bewegungen, kein Filigranwerk."
+      },
+      {
+        "topic": "Kurze Party",
+        "detail": "1,5 bis 2 Stunden sind perfekt. Nach 2 Stunden sind die meisten 3-Jährigen erschöpft, egal wie toll die Party ist. Die Wow-Variante mit 2,5 Stunden funktioniert nur bei 5-Jährigen gut."
+      },
+      {
+        "topic": "Essen = einfach",
+        "detail": "Kinder in diesem Alter essen wenig auf Partys — zu aufgeregt. Kleine Portionen, Fingerfood, nichts was man mit Besteck essen muss. Kuchen wird angebissen, der Rest wandert in die Mitgebsel-Tüte."
+      },
+      {
+        "topic": "Eltern bleiben da",
+        "detail": "Bei 3–4-Jährigen bleiben die Eltern. Das ist kein Bug, das ist ein Feature: mehr Hände zum Helfen, weniger Verantwortung für dich. Bei 5-Jährigen können manche Eltern gehen — aber kläre das vorher."
+      }
+    ],
     "whyMottoFits": "Einhorn ist DAS Motto für diese Altersgruppe: Glitzer, Farben, Magie — alles, was kleine Kinder lieben. Es braucht keine komplexe Geschichte und keine schwierigen Spiele. Ein Einhorn-Tattoo auf der Hand, ein bisschen Sternenstaub, rosa Limo — und die Kinder sind im Einhorn-Himmel. Kein anderes Motto funktioniert so mühelos bei 3-Jährigen UND 5-Jährigen gleichzeitig.",
     "whyMottoFitsHeadline": "🦄 Warum Einhorn für 3–5-Jährige perfekt funktioniert"
   },
@@ -90,7 +119,7 @@
       }
     ],
     "optOutNote": "💡 Für 3-Jährige: Du liest den Namen vor und sagst „Du bist jetzt Luna Mondsilber!\" — sie können den Zettel noch nicht selbst lesen. Das macht es sogar magischer.",
-    "materialNote": null
+    "materialNote": "⚠️ Vor der Party: Glitzer-Kleber, Tattoo und Schminkfarbe an kleiner Hautstelle (Innenseite Unterarm) eines Kindes 1 Tag vorher testen. Bei Rötung → nur Sticker und Klettband-Verzierungen statt Tattoo/Glitzer/Schminke."
   },
   "variants": [
     {
@@ -136,12 +165,12 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "1 Pappteller pro Kind (weiß), Schere (du schneidest vor!), Klebeband/Tacker, Glitzer-Kleber oder Glitzer + Klebestift, bunte Sticker, Gummiband oder Haarreif zum Befestigen",
-          "prepText": "Pappteller einmal falten → Kegel-Form rollen → mit Tacker fixieren. Das ist das Horn. Jedes Kind darf sein Horn mit Glitzer-Kleber und Stickern verzieren. Mit Gummiband am Kopf befestigen oder auf einen Haarreif kleben.",
+          "prepText": "Pappteller einmal falten → Kegel-Form rollen → mit Tacker fixieren. Das ist das Horn. Jedes Kind darf sein Horn mit Glitzer-Kleber und Stickern verzieren. Mit Gummiband am Kopf befestigen oder auf einen Haarreif kleben.\n\nVorbereitung: Hörner vorher schon zur Kegel-Form rollen und tackern — 3-Jährige können das nicht selbst. Sie kleben nur die Deko drauf.\n\nTipp: Tisch vorher mit alter Zeitung abdecken. Glitzer geht nie wieder raus — akzeptiere das jetzt.",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband. Glitzer + Glitzer-Kleber vorher 1 Tag an Innenseite Unterarm testen (Allergie-Vortest); bei Rötung Sticker statt Glitzer.",
           "ageAdjust6": "Glitzer-Kleber statt loser Glitzer (weniger Sauerei). Große Sticker statt kleine.",
           "ageAdjust8": "Dürfen mit Kinderschere selbst den Pappteller zuschneiden. Zusätzlich Ohren aus Pappe ausschneiden und drankleben.",
-          "indoorTip": null,
+          "indoorTip": "Tisch mit alter Zeitung oder Wachstuch abdecken, Müllbeutel als Bastel-Schürze pro Kind — Glitzer-Kleber landet überall.",
           "outdoorTip": null,
           "whyItWorksTitle": null,
           "whyItWorks": null
@@ -155,13 +184,13 @@
           "loudness": "laut",
           "effort": "leicht",
           "material": "Bluetooth-Lautsprecher oder Handy, fröhliche Kindermusik (Spotify: „Kindergeburtstag Party\"), bunte Tücher zum Schwenken (optional, je 1 pro Kind)",
-          "prepText": "Musik an → alle tanzen, hüpfen, galoppieren wie Einhörner. Musik aus → alle frieren ein wie Eisskulpturen! Wer sich bewegt, bekommt einen Glitzer-Aufkleber auf die Hand — das ist eine Belohnung, kein Rauswerfen.",
+          "prepText": "Musik an → alle tanzen, hüpfen, galoppieren wie Einhörner. Musik aus → alle frieren ein wie Eisskulpturen! Wer sich bewegt, bekommt einen Glitzer-Aufkleber auf die Hand — das ist eine Belohnung, kein Rauswerfen.\n\nVariante „Regenbogen-Farben\": Rufe eine Farbe, alle müssen etwas in dieser Farbe im Raum berühren und weiter tanzen.\n\nTipp: Bunte Tücher zum Schwenken machen es 10x magischer. 6 Stück kosten ~3 € bei Action.",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Glitzer-Aufkleber sind klein — nur auf Hand/Arm aufbringen, nicht zum Naschen liegen lassen.",
           "ageAdjust6": "Einfrieren ist noch schwer — lass sie einfach tanzen. Bei Stopp alle auf den Boden setzen (das können sie).",
           "ageAdjust8": "Einfrieren als Tier-Figur: „Jetzt bist du ein Einhorn!\" — Pose halten.",
-          "indoorTip": null,
-          "outdoorTip": null,
+          "indoorTip": "Wohnzimmer-Möbel zur Seite schieben, Teppich rollt sich beim Galoppieren auf — kurz fixieren.",
+          "outdoorTip": "Auf Wiese mit Tüchern in Regenbogenfarben besonders magisch — Wind macht die Tücher zum Flügel.",
           "whyItWorksTitle": null,
           "whyItWorks": null
         }
@@ -300,7 +329,7 @@
           "material": "1 Pappteller pro Kind (weiß), Tacker, Glitzer-Kleber, bunte Sticker, Gummiband/Haarreif",
           "prepText": "Pappteller vorher zur Kegel-Form rollen und tackern. Kinder verzieren mit Glitzer-Kleber und Stickern. Am Kopf befestigen → „Du bist jetzt ein echtes Einhorn!\"",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband.",
           "ageAdjust6": "Alles vorbereiten, sie kleben nur drauf. Große Sticker.",
           "ageAdjust8": "Zusätzlich Ohren aus Pappe ausschneiden und ankleben.",
           "indoorTip": null,
@@ -317,12 +346,12 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "1 flacher weißer Teller, 1 Tasse Vollmilch, Lebensmittelfarben (4 Farben, ~2 € im Supermarkt), Spülmittel, 1 Wattestäbchen pro Kind",
-          "prepText": "Milch in den Teller gießen. Kinder tropfen je eine Farbe rein (du hilfst!). Dann: Wattestäbchen in Spülmittel tunken und in die Milch stippen — Farben „explodieren\" in Regenbogen-Spiralen! Sieht aus wie Magie.",
+          "prepText": "Milch in den Teller gießen. Kinder tropfen je eine Farbe rein (du hilfst!). Dann: Wattestäbchen in Spülmittel tunken und in die Milch stippen — Farben „explodieren\" in Regenbogen-Spiralen! Sieht aus wie Magie.\n\nTipp: Milch danach einfach wegschütten (nicht trinken — Spülmittel!). Kosten: quasi 0 €, Effekt: riesig. 3–4 Runden sind normal — danach ist der Effekt weg (Milch gesättigt), frischer Teller hilft.",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Lebensmittelfarbe + Spülmittel — KEIN Trinken, Hände waschen vor Snacks. Teller-Standort kippsicher (Tablett mit Rand drunter).",
           "ageAdjust6": "DU tropfst die Farben, DU hältst das Wattestäbchen — sie dürfen zuschauen und staunen. Das reicht völlig. Nach dem Staunen darf jedes Kind einmal selbst stippen.",
           "ageAdjust8": "Sie dürfen alles selbst machen. 3–4 Runden sind normal — immer ein frischer Teller Milch.",
-          "indoorTip": null,
+          "indoorTip": "Auf Wachstuch oder Tablett platzieren — Milch + Spülmittel-Spritzer sind unausweichlich.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Spülmittel zerstört die Oberflächenspannung der Milch. Das Fett „flieht\" und nimmt die Farben mit."
@@ -336,13 +365,13 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "1 große Plastikwanne, 2 kg Reis mit essbarem Glitzer gemischt, 8 kleine Einhorn-Figuren, 1 Löffel pro Kind",
-          "prepText": "Reis mit Glitzer in die Wanne. Einhorn-Figuren im Reis vergraben. Jedes Kind bekommt einen Löffel und gräbt vorsichtig. Wer ein Einhorn findet, darf es behalten.",
+          "prepText": "Reis mit Glitzer in die Wanne. Einhorn-Figuren im Reis vergraben. Jedes Kind bekommt einen Löffel und gräbt vorsichtig. Wer ein Einhorn findet, darf es behalten.\n\nWichtig: Immer mehr Figuren als Kinder (bei 5 Kindern → 8 Figuren). So findet jedes Kind mindestens eins — kein Frust.\n\nTipp: Dieses Spiel beruhigt nach dem Kuchen-Zucker-Hoch. Perfekter Rhythmus-Wechsel.",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
           "ageAdjust6": "Figuren nur leicht bedecken. Reis statt Sand (wiederverwendbar, weniger Sauerei). Auf einer alten Tischdecke oder in der Badewanne aufstellen.",
           "ageAdjust8": "Tiefer vergraben. Augen zu und nur ertasten — welches Einhorn ist das (stehend oder liegend)?",
-          "indoorTip": null,
-          "outdoorTip": null,
+          "indoorTip": "Wanne in die Badewanne oder auf eine alte Tischdecke — Reis-Körner gehen sonst tagelang aus dem Teppich.",
+          "outdoorTip": "Auf der Terrasse oder Wiese großzügig — verstreuter Reis ist Vogelfutter.",
           "whyItWorksTitle": null,
           "whyItWorks": null
         },
@@ -357,7 +386,7 @@
           "material": "Bluetooth-Box/Handy, fröhliche Kindermusik, bunte Tücher zum Schwenken (optional)",
           "prepText": "Musik an → tanzen wie Einhörner (galoppieren!). Musik aus → einfrieren! Wer sich bewegt, bekommt einen Glitzer-Aufkleber. Kein Ausscheiden — alle tanzen weiter.",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr).",
           "ageAdjust6": "Einfrieren ist noch schwer — bei Stopp einfach hinsetzen.",
           "ageAdjust8": "Einfrieren als Figur: „Zeig mir ein Einhorn!\" — Pose halten.",
           "indoorTip": null,
@@ -515,7 +544,7 @@
           "material": "1 großer Pappkarton, Filzstifte (Einhorn-Gesicht malen), Cutter/Schere (Maul ausschneiden), 8–10 bunte Bälle (Bällebad-Bälle ~5 € bei Action, oder Sockenbälle)",
           "prepText": "Auf den Karton ein Einhorn-Gesicht malen mit großem offenem Maul (ca. 20 cm Durchmesser ausschneiden). Karton an die Wand lehnen oder auf einen Stuhl stellen. Kinder werfen bunte Bälle ins Maul.",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband.",
           "ageAdjust6": "Ganz nah ran (50 cm Abstand). Großes Maul (30 cm). Jeder Wurf ist ein Treffer.",
           "ageAdjust8": "Weiter weg (1,5 m). Verschiedene Farben = verschiedene „Einhorn-Snacks\" (roter Ball = Erdbeere, gelb = Banane).",
           "indoorTip": null,
@@ -534,7 +563,7 @@
           "material": "1 Holzstab pro Kind (30 cm, Bastelstäbe ~3 € für 10 Stk.), 1 Stern aus Glitzerpappe (vorher ausschneiden!), Klebeband/Heißklebe, bunte Bänder (Geschenkband, ~2 €), Glitzer-Kleber",
           "prepText": "Du schneidest vorher die Sterne aus Glitzerpappe aus und klebst sie mit Heißklebe oben auf die Stäbe. Kinder dürfen bunte Bänder dran knoten (du hilfst) und den Stab mit Glitzer-Kleber verzieren. Fertig ist der Zauberstab.",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband.",
           "ageAdjust6": "Stab + Stern komplett vorher zusammenkleben. Kinder kleben nur Bänder und Sticker drauf.",
           "ageAdjust8": "Sie dürfen den Stern selbst auf den Stab kleben (Klebeband) und die Bänder selbst knoten.",
           "indoorTip": null,
@@ -683,8 +712,8 @@
           "categoryReasoning": "Konsistent — Goodie-Verpackung."
         }
       ],
-      "estimatedCostEur": 75,
-      "costContext": "Geschätzte Kosten (Wow, 5 Kinder, ohne optionale Extras)"
+      "estimatedCostEur": 90,
+      "costContext": "Pflichtteil ~65 €, mit allen Sinnvoll-Extras ~105 €. Die niedrigere Schätzung 75 € geht von Standard-Auswahl ohne alle Wow-Add-ons aus."
     }
   ],
   "cakeRecipe": {
@@ -712,7 +741,7 @@
       },
       {
         "n": 6,
-        "content": "Regenbogen-Streusel oder Smarties drumherum. Essbarer Glitzer drüber = magisch."
+        "content": "Regenbogen-Streusel oder bunte Schoko-Linsen drumherum. Essbarer Glitzer drüber = magisch."
       }
     ],
     "meta": {
@@ -758,6 +787,10 @@
         "detail": "3-Jährige kleckern. Glitzer-Kleber, Einhorn-Saft, Kuchen — irgendwas landet auf dem Pulli. Schreib in die Einladung: „Bitte Wechsel-Shirt mitbringen.\" Und leg für dein eigenes Kind eins bereit. Spart dir die WhatsApp-Nachricht „Sorry, das Shirt hat jetzt Glitzer drauf\" an die andere Mama."
       },
       {
+        "topic": "🐉 Geschlechts-Inklusion: Auch für Jungs",
+        "detail": "Falls Jungs in der Gruppe sind und „Einhorn ist Mädchenkram\" sagen: lass das Geburtstagskind antworten, nicht du. Reframen funktioniert sofort — „Regenbogen-Zauber-Party\" statt „Einhorn-Party\" auf die Einladung. Alternativ Drachen-/Magier-Anker einbauen: Horn aus Pappteller heißt jetzt „Drachen-Horn\", Sternenstaub-Wanne ist „Drachen-Schatzkammer\". Beim Tanz galoppieren ALLE Kinder als magische Wesen — Einhorn, Drachen oder Pegasus, je nach Geschmack. Inhalte bleiben identisch."
+      },
+      {
         "topic": "📱 Partyseite statt WhatsApp-Chaos",
         "detail": "Erstelle eine [Partyseite auf party.machsleicht.de](https://party.machsleicht.de) mit Datum, Uhrzeit, Adresse und Allergien-Abfrage. Einen Link verschicken statt 10 Nachrichten beantworten. Kostet nichts.\n\n⏰ Nicht nach 15 Uhr anfangen\n3–5-Jährige sind nachmittags fitter als morgens (nach dem Mittagsschlaf). Aber nach 16 Uhr wird's schwierig — müde Kleinkinder sind schlecht gelaunte Kleinkinder. Ideal: 15:00 Start, 16:30 oder 17:00 Ende. Freitagnachmittag funktioniert meistens am besten."
       }
@@ -784,7 +817,11 @@
     },
     {
       "q": "Funktioniert das Einhorn-Motto auch für Jungs?",
-      "a": "Ja — besonders in diesem Alter. 3–5-Jährige haben noch keine starren Geschlechter-Vorstellungen. Regenbogen-Milch, Sternenstaub suchen und Bälle werfen begeistern jedes Kind. Wenn du willst, nenn es „Regenbogen-Zauber-Party\" statt „Einhorn-Party\" — gleicher Inhalt, neutralerer Name."
+      "a": "Ja — besonders in diesem Alter. 3–5-Jährige haben noch keine starren Geschlechter-Vorstellungen. Regenbogen-Milch, Sternenstaub suchen und Bälle werfen begeistern jedes Kind. Wenn du willst, nenn es „Regenbogen-Zauber-Party\" statt „Einhorn-Party\" — gleicher Inhalt, neutralerer Name. Drachen-Variante: Einhorn-Horn → Drachen-Horn aus Pappteller, Sternenstaub-Wanne → Drachen-Schatzkammer. Sind die gleichen Spiele, andere Story-Verpackung."
+    },
+    {
+      "q": "Wie gehe ich mit Glitzer-Allergien und empfindlicher Kinderhaut um?",
+      "a": "1 Tag vorher Allergie-Vortest: Glitzer-Kleber, Tattoo und ggf. Schminkfarbe an kleiner Hautstelle (Innenseite Unterarm) eines Kindes 5 Min. auftragen. Bei Rötung → nur Sticker und Klettband-Verzierungen statt Tattoo/Glitzer/Schminke. Essbaren Glitzer nimmst du immer mit E-Nummer-Check (Packung lesen) — bei Zucker-Unverträglichkeit gibt es Zucker-freie Alternativen (Bio-Backabteilung). Wer kein Tattoo mag: Tattoo auf den Wächter-Zettel oder auf das T-Shirt-Schild kleben — niemand wird ausgeschlossen."
     }
   ],
   "preparationWeeks": {
@@ -924,7 +961,7 @@
         {
           "icon": "🎵",
           "title": "Musik-Playlist + Bluetooth-Box testen",
-          "detail": "Spotify ‚Einhorn Kindergeburtstag' oder ‚Kinder Disney Songs' Playlist in der Notiz-App. Bluetooth-Box laden, Sound testen. Bei 3-5 reicht ein kontinuierlicher Soundtrack."
+          "detail": "Spotify ‚Einhorn Kindergeburtstag' oder ‚Kinder Party Songs' Playlist in der Notiz-App. Bluetooth-Box laden, Sound testen. Bei 3-5 reicht ein kontinuierlicher Soundtrack."
         },
         {
           "icon": "💧",
@@ -1024,7 +1061,7 @@
       "steps": [
         "Weißen Gugelhupf beim Bäcker oder Supermarkt holen (4-6€).",
         "200g Puderzucker + 3 EL Wasser anrühren, weißen Guss drüber.",
-        "Regenbogen-Streusel oder Smarties als ‚Wolken-Lava' um den Fuß.",
+        "Regenbogen-Streusel oder bunte Schoko-Linsen als ‚Wolken-Lava' um den Fuß.",
         "Eiswaffel mit Goldglasur als Einhorn-Horn obendrauf — sieht aus wie gewollt."
       ],
       "fallback": "Bäcker zu? Muffins aus dem Vorrat, je ein Mini-Marshmallow + Zahnstocher mit rosa Papier = Mini-Einhorn-Hörner.",

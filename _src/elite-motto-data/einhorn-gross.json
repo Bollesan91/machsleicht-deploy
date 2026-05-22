@@ -16,6 +16,41 @@
   "title": "🦄 Einhorn-Kindergeburtstag — 9–12 Jahre",
   "metaDescription": "Einhorn-Kindergeburtstag für 9–12 Jahre: 3 fertige Party-Konzepte mit Zeitplan, 6 Aktivitäten mit Anleitung, Einkaufsliste und Kosten. Cool statt kitschig.",
   "introParagraph": "3 fertige Party-Konzepte: Minimal (2,5 Std.) · Standard (3,5 Std.) · Wow (4,5 Std.)\n\nMinutengenaue Zeitpläne, 6 altersgerechte Aktivitäten mit kompletter Anleitung, Einkaufslisten mit Preisen und Kosten pro Kind. Für 9–12 Jahre: cool statt kitschig, herausfordernd statt niedlich.\n\n[🦄 Einhorn-Geburtstag planen →](/kindergeburtstag?motto=einhorn&alter=10#planer)",
+  "ageInsight": {
+    "headline": "Was 9–12-Jährige ausmacht — und was das für die Einhorn-Party heißt",
+    "traits": [
+      {
+        "topic": "🎯 Aufmerksamkeit",
+        "detail": "30–45 Minuten an einer Sache? Kein Problem. Aber wenn es langweilig wird, sagen sie es dir — laut. Lieber 3 richtig gute Aktivitäten als 6 halbgare. Qualität schlägt Quantität."
+      },
+      {
+        "topic": "📋 Regeln",
+        "detail": "Komplexe Spielregeln sind kein Problem — im Gegenteil, sie wollen Herausforderung. Escape-Rätsel, Codes knacken, mehrstufige Aufgaben: Das ist genau ihr Ding. Zu einfache Spiele führen zu Augenrollen."
+      },
+      {
+        "topic": "🏆 Wettbewerb",
+        "detail": "Ja, aber fair. In diesem Alter gibt es Cliquen, Außenseiter, beste Freundinnen. Team-Aktivitäten müssen so gestaltet sein, dass niemand ausgeschlossen wird. Zufällige Team-Einteilung (Los ziehen) statt „wählt euch Teams\"."
+      },
+      {
+        "topic": "🤸 Motorik",
+        "detail": "Körperlich voll entwickelt — Parcours, Staffelspiele und sportliche Challenges funktionieren super. Aber: nicht nur Action. Die Mischung aus Denk-Aufgaben und Bewegung ist der Schlüssel."
+      },
+      {
+        "topic": "⏱️ Dauer",
+        "detail": "2,5–4 Stunden sind ideal. Kürzer fühlt sich „zu babymäßig\" an, länger wird anstrengend (für dich). Bei Wow-Varianten mit 4+ Stunden unbedingt eine echte Chill-Phase einbauen."
+      },
+      {
+        "topic": "🍕 Essen",
+        "detail": "Vergiss aufwendiges Fingerfood — Pizza, Wraps, Nachos kommen besser an als geschnittenes Obst. Beim Trinken: Wasser und Saft reichen, Sirup-Mischstationen kommen gut an. Kuchen muss cool aussehen, nicht nur schmecken."
+      },
+      {
+        "topic": "👋 Eltern",
+        "detail": "Können komplett abgesetzt werden — die Kinder wollen das sogar. Abholzeit vorher per WhatsApp kommunizieren. Handys sind da: akzeptiere es. Nutze es — Fotos machen, Timer stellen, Musik abspielen. Verbieten bringt nichts."
+      }
+    ],
+    "whyMottoFits": "Weil es nicht um rosa Glitzer geht, sondern um Fantasy. Einhörner sind magische Wesen — wie Drachen oder Phönixe. 9–12-Jährige lieben Fantasy-Welten und Mystery-Geschichten. Ein Einhorn-Geburtstag in diesem Alter funktioniert über Mystery-Elemente, Escape-Rätsel und kreative Challenges — nicht über Niedlichkeit. Das Motto wird zum Portal in eine Fantasy-Story, und genau das wollen Kinder in dem Alter.",
+    "whyMottoFitsHeadline": "🦄 Warum Einhorn für 9–12 besonders gut funktioniert"
+  },
   "signatureRitual": {
     "name": "Das Initiations-Ritual",
     "subtitle": "Für alle 3 Varianten",
@@ -129,13 +164,34 @@
           "minAge": 9,
           "loudness": "ruhig",
           "effort": "mittel",
-          "material": "1 Rotkohl (Supermarkt, ~2 €), 8 durchsichtige Becher pro Kind, Essig, Backpulver/Natron, Zitronensaft, Spülmittel, Waschsoda (Drogerie ~1 €), Pipetten oder Löffel, Lebensmittelfarben (optional), 1 Tablett pro Kind (gegen Sauerei)",
-          "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "material": "1 Rotkohl (Supermarkt, ~2 €), 8 durchsichtige Becher pro Kind, Essig, Backpulver/Natron, Zitronensaft, Spülmittel, Waschsoda (Drogerie ~1 €), Pipetten oder Löffel, Lebensmittelfarben (optional), 1 Tablett pro Kind (gegen Sauerei), optional: alte Hemden als „Lab-Kittel\"",
+          "prepText": "Vorbereitung (20 Min. am Vortag): Rotkohl in Streifen schneiden, mit heißem Wasser übergießen, 30 Min. ziehen lassen → tiefvioletter Saft. In Flasche abfüllen, im Kühlschrank aufbewahren. Das ist dein „Zaubertrank-Basis\".\n\nDurchführung: Jedes Kind bekommt 8 Becher, je halb mit Rotkohlsaft gefüllt. Dann verschiedene Substanzen reinmischen — Farben wechseln je nach pH:\n• Essig → wird rosa/rot (sauer)\n• Zitronensaft → wird hellrosa (sauer)\n• Backpulver/Natron → wird blaugrün (basisch)\n• Waschsoda → wird gelb/grün (stark basisch)\n• Spülmittel → wird blau + schäumt\n\nDie Kinder experimentieren selbst: „Was passiert, wenn ich den sauren Trank in den basischen kippe?\" (Farbwechsel!). „Kann ich Lila wieder herstellen?\" (Ja — neutralisieren.)\n\nTipp: Kittel aus alten Hemden (Knöpfe vorne, Ärmel hochkrempeln) machen es offizieller und schützen die Klamotten.",
+          "steps": [
+            {
+              "name": "Vortag: Rotkohlsaft kochen",
+              "content": "Rotkohl in Streifen schneiden, mit heißem Wasser übergießen, 30 Min. ziehen lassen → tiefvioletter pH-Indikator-Saft. In Flasche abfüllen, im Kühlschrank aufbewahren."
+            },
+            {
+              "name": "Setup pro Kind",
+              "content": "8 durchsichtige Becher halb mit Rotkohlsaft füllen, auf Tablett aufstellen. Pipetten + Test-Substanzen (Essig, Natron, Zitrone, Spülmittel, Waschsoda) bereit."
+            },
+            {
+              "name": "Sauer = Rosa",
+              "content": "Essig oder Zitronensaft tropfenweise in einen Becher → Saft wird rosa/rot. Erste Erkenntnis: „Saures verändert die Farbe nach Rot.\""
+            },
+            {
+              "name": "Basisch = Grün",
+              "content": "Natron oder Backpulver in nächsten Becher → wird blaugrün. Waschsoda → wird gelb/grün (stark basisch). Schäumendes Spülmittel → blau."
+            },
+            {
+              "name": "Neutralisations-Challenge",
+              "content": "„Misch den perfekten Lila-Trank!\" → Kinder müssen sauer + basisch so kombinieren, dass die Ausgangsfarbe Lila wieder entsteht (= Neutralpunkt). Bonus-Aufgabe für 12-Jährige."
+            }
+          ],
+          "safetyRule": "Waschsoda (Natriumcarbonat) reizt Augen + Haut — Schutzbrille bei Mix-Phase (Bastel-Schutzbrille ~5€ Apotheke). Nicht in Augen reiben, Hände nach jedem Experiment waschen. Nichts trinken — auch wenn es nach Limo aussieht. Tablett mit Rand gegen Überlauf. Erwachsene*r misst Waschsoda + Essig-Mengen ab (max. 1 TL Waschsoda pro Becher). Bei Empfindlicher Kinderhaut: Latex-frei Handschuhe für Mix-Phase.",
           "ageAdjust6": "Du erklärst die Grundregel (sauer = rosa, basisch = grün) und lässt sie dann experimentieren.",
           "ageAdjust8": "pH-Skala aufmalen, Kinder ordnen ihre Ergebnisse ein. Bonusaufgabe: „Misch den perfekten Lila-Trank\" (= Neutralpunkt finden).",
-          "indoorTip": null,
+          "indoorTip": "Auf abwischbare Tisch-Unterlage oder Wachstuch — Rotkohl-Saft färbt Holz und Stoffe lila-rosa.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Rotkohlsaft ist ein natürlicher pH-Indikator. Je nach Säure/Base zeigt er eine andere Farbe. Das ist echte Chemie — und die Kinder kapieren das sofort."
@@ -149,7 +205,7 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "[Perlen-Set mit Buchstaben*](https://www.amazon.de/s?k=perlen+set+kinder+buchstaben+armband&tag=machsleicht-21) (~10–12 €, reicht für 8+ Armbänder), Elastikband (0,8 mm, im Set meist dabei), [Einhorn-Charms*](https://www.amazon.de/s?k=einhorn+anh%C3%A4nger+charm+silber&tag=machsleicht-21) (~6 € für 20 Stk.), Schere, Klebeband (zum Fixieren beim Auffädeln)",
-          "prepText": "Jedes Kind macht sein eigenes Armband: Buchstaben-Perlen für den eigenen Namen oder den Code-Namen, dazwischen bunte Perlen in Regenbogenfarben, am Ende einen Einhorn-Charm dran.",
+          "prepText": "Jedes Kind macht sein eigenes Armband: Buchstaben-Perlen für den eigenen Namen oder den Code-Namen, dazwischen bunte Perlen in Regenbogenfarben, am Ende einen Einhorn-Charm dran.\n\nTipp: Elastikband-Ende mit Klebeband am Tisch fixieren, dann rutschen die Perlen nicht runter. Doppelknoten am Ende, Tropfen Kleber drauf — hält ewig.\n\nVorteil: Dieses Spiel ist selbstlaufend. Hinstellen, Material erklären, zurücklehnen. Die Kinder reden, lachen, basteln — und du hast 40 Minuten Ruhe.",
           "steps": [],
           "safetyRule": null,
           "ageAdjust6": "Einfache Armbänder mit Namen.",
@@ -286,7 +342,7 @@
           "material": "1 Rotkohl (~2 €), 8 durchsichtige Becher pro Kind, Essig, Backpulver/Natron, Zitronensaft, Spülmittel, Waschsoda (~1 €), Pipetten oder Löffel, 1 Tablett pro Kind (gegen Sauerei)",
           "prepText": "",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Waschsoda (Natriumcarbonat) reizt Augen + Haut. Schutzbrille für Kinder bei Mix-Phase. Nicht in Augen reiben, Hände nach jedem Experiment waschen. Nichts trinken. Tablett mit Rand gegen Überlauf. Erwachsene*r misst die Mengen ab.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -303,13 +359,34 @@
           "loudness": "laut",
           "effort": "leicht",
           "material": "2 Löffel, 2 Tischtennisbälle (oder Eier), 6 Becher, 1 Seil oder Kreppband (Bodenmarkierung), 2 Kissen, 2 Stühle, Timer (Handy)",
-          "prepText": "2 Teams (gleich wie beim Chemie-Labor). Staffel-Wettbewerb: Jedes Team-Mitglied muss den Parcours durchlaufen und das nächste abklatschen. Das schnellere Team gewinnt.",
-          "steps": [],
-          "safetyRule": null,
-          "ageAdjust6": null,
-          "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
+          "prepText": "2 Teams (gleich wie beim Chemie-Labor). Staffel-Wettbewerb: Jedes Team-Mitglied muss den Parcours durchlaufen und das nächste abklatschen. Das schnellere Team gewinnt.\n\nTipp: Timer laufen lassen und Zeiten ansagen — der Wettbewerb-Faktor motiviert diese Altersgruppe enorm. „Team Nova: 3 Minuten 42! Team Eclipse, schafft ihr das?\"",
+          "steps": [
+            {
+              "name": "Station 1: Einhorn-Balance",
+              "content": "Tischtennisball auf Löffel balancieren, 5 Meter laufen ohne Runterfallen. Fällt er runter → zurück zum Start der Station."
+            },
+            {
+              "name": "Station 2: Becherstapel-Turm",
+              "content": "6 Becher zur Pyramide stapeln (3-2-1), dann wieder abbauen und in eine Reihe stellen."
+            },
+            {
+              "name": "Station 3: Lava-Fluss",
+              "content": "3 Meter auf 2 Kissen „überqueren\" — ein Kissen hinlegen, draufsteigen, das andere vorlegen, weiter. Boden berühren = nochmal."
+            },
+            {
+              "name": "Station 4: Slalom",
+              "content": "Um 4 Stühle im Zickzack laufen — Stühle als Pylonen mit ca. 1m Abstand."
+            },
+            {
+              "name": "Station 5: Zielwurf",
+              "content": "3 zusammengeknüllte Socken in einen Eimer werfen (2 Meter Abstand). Mindestens 1 Treffer, sonst nochmal."
+            }
+          ],
+          "safetyRule": "Stations-Wege vorher abgehen — keine Stolperfallen, keine offenen Steckdosen, kein scharfkantiges Möbelstück im Lauf-Korridor. Kissen-Lava-Fluss: Stoff-Kissen ohne Reißverschluss-Metall, rutschfeste Unterlage. Becher: leichte Plastik-Becher, keine Glas-Becher.",
+          "ageAdjust6": "Stationen einfacher: Becher nur in Reihe stapeln (nicht Pyramide), Slalom mit weniger Stühlen, Lava-Fluss mit 3 statt 2 Kissen.",
+          "ageAdjust8": "Anspruchsvoller: bei Becher-Stapel Bonus-Runde mit 10 Bechern, Lava-Fluss mit nur 1 Kissen + Sprung, Slalom rückwärts.",
+          "indoorTip": "Im Flur, Wohnzimmer oder Keller aufbauen. Stühle als Slalom, Kissen für den Lava-Fluss, Becher auf dem Boden. Teppich-Ecken fixieren!",
+          "outdoorTip": "Im Garten — gleicher Aufbau, mehr Platz für Slalom. Eimer beim Zielwurf gegen Wind sichern (Stein rein).",
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Nach 30 Min. Chemie-Labor brauchen die Kinder dringend Bewegung. 20 Minuten reichen — länger wird es bei 9–12-Jährigen albern. Kurz, intensiv, laut."
         },
@@ -322,13 +399,38 @@
           "loudness": "laut",
           "effort": "hoch",
           "material": "5 Umschläge mit Rätseln, 1 Zahlenschloss (Fahrradschloss, ~5 € oder vorhandenes), 1 Schatztruhe (Schuhkarton, bemalt/beklebt), Inhalt: Süßigkeiten + Einhorn-Charms, optional: [UV-Taschenlampe*](https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht-21) (~12 €) + [UV-Stift*](https://www.amazon.de/s?k=uv+geheimschrift+stift+unsichtbar&tag=machsleicht-21) (~7 €)",
-          "prepText": "2 Teams (4 vs. 4, per Los). Jedes Team bekommt die gleichen 5 Rätsel, aber in unterschiedlicher Reihenfolge. Wer zuerst den 4-stelligen Code für das Zahlenschloss knackt, öffnet die Schatztruhe. Der Code ist:",
-          "steps": [],
-          "safetyRule": null,
+          "prepText": "2 Teams (4 vs. 4, per Los). Jedes Team bekommt die gleichen 5 Rätsel, aber in unterschiedlicher Reihenfolge. Wer zuerst den 4-stelligen Code für das Zahlenschloss knackt, öffnet die Schatztruhe. Der Code ist 4-7-1-5 (stell dein Zahlenschloss vorher darauf ein). Die 4 Ziffern werden über 4 Rätsel ermittelt + 1 Puzzle zeigt den Versteck-Ort.\n\nVorbereitung (30 Min.): Rätsel abschreiben oder ausdrucken, in Umschläge stecken, nummerieren. UV-Botschaft schreiben. Foto ausdrucken und zerschneiden. Zahlenschloss auf 4-7-1-5 einstellen. Truhe (beklebter Schuhkarton) mit Süßigkeiten + Charms füllen und im Raum vom Puzzle-Foto verstecken.\n\nTipp: 25 Min. Timer auf dem Handy stellen. Wenn nach 20 Min. kein Team fertig ist, Hinweise geben. Am Ende wird der Schatz geteilt — kein Team verliert.",
+          "steps": [
+            {
+              "name": "Rätsel 1: Spiegelschrift (→ Ziffer 4)",
+              "content": "Schreibe diesen Satz spiegelverkehrt auf ein Blatt (jeden Buchstaben einzeln rückwärts): „reiv tsi reffiz etsre eiD\". Lösung: „Die erste Ziffer ist vier\" → 4. Tipp für Kinder: Vor einen Spiegel halten macht es lesbar."
+            },
+            {
+              "name": "Rätsel 2: Einhorn-Mathe (→ Ziffer 7)",
+              "content": "Auf eine Karte schreiben: „Ein Einhorn hat 1 Horn. Ein Regenbogen hat ? Farben. Multipliziere beides. Die Lösung ist deine Ziffer.\" Lösung: 1 × 7 = 7."
+            },
+            {
+              "name": "Rätsel 3: UV-Botschaft (→ Ziffer 1)",
+              "content": "Mit dem UV-Stift auf ein weißes Blatt schreiben: „Die dritte Ziffer ist die kleinste Zahl, die keine Null ist.\" Scheinbar leeres Blatt in einen Umschlag mit Hinweis: „Nicht alles ist sichtbar. Manchmal braucht man ein anderes Licht.\" UV-Taschenlampe separat verstecken (z.B. Küchenschublade mit Hinweis „Licht der Wahrheit\"). Lösung: 1. Ohne UV-Set: stattdessen mit weißem Wachsmalstift auf weißes Papier schreiben — Hinweis: „Male mit einem Buntstift sanft über das Papier.\" Die Wachsschrift wird sichtbar."
+            },
+            {
+              "name": "Rätsel 4: Bilder-Puzzle (→ Versteck-Ort)",
+              "content": "Drucke ein Foto des Raumes aus, in dem die Truhe versteckt ist (z.B. Flur, Schlafzimmer). Schneide es in 6 unregelmäßige Teile. In einen Umschlag mit Hinweis: „Setze die Karte zusammen — sie zeigt den Ort des Schatzes.\" Lösung: Bild zeigt den Raum → Kinder suchen dort die Truhe."
+            },
+            {
+              "name": "Rätsel 5: Kreuzworträtsel (→ Ziffer 5)",
+              "content": "4 Fragen auf eine Karte: (1) „Welche Farbe hat Rotkohl-Saft, wenn man Essig reinmischt?\" (4 Buchst.) → ROSA. (2) „Was hat ein Einhorn auf der Stirn?\" (4 Buchst.) → HORN. (3) „Wie heißt die Zahl nach vier?\" (4 Buchst.) → FÜNF. (4) „Wie viele Farben hat ein Regenbogen?\" (6 Buchst.) → SIEBEN. Hinweis: „Der 1. Buchstabe von Antwort 3 ist der Schlüssel.\" Lösung: F = Fünf → 5."
+            },
+            {
+              "name": "Final: Schloss öffnen + Schatz teilen",
+              "content": "Code 4-7-1-5 → Schatzkasten öffnet sich am Versteck-Ort aus Rätsel 4. Inhalt: Süßigkeiten + Einhorn-Charms wird ZWISCHEN beiden Teams geteilt — kein Team verliert. Optional eine Urkunde pro Kind („Meister der Vergessenen Magie\") für späteren Mitgebsel-Boost."
+            }
+          ],
+          "safetyRule": "Rätsel-Stationen im Wohnungs-/Garten-Raum vorher abgehen — keine Stolperfallen, keine offenen Steckdosen, keine zerbrechlichen Gegenstände im Suchen-Korridor. Zahlenschloss: leichtes Fahrradschloss (keine schweren Vorhängeschlösser, die beim Aufgehen runterfallen). UV-Lampe: nicht in Augen leuchten lassen — Hinweis vorab geben.",
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
+          "indoorTip": "Wohnung in 5 Räume aufteilen: jedes Rätsel in eigenem Raum, UV-Lampe versteckt in 6. Raum. Türen offen halten, Sichtkontakt.",
+          "outdoorTip": "Garten + Terrasse — Umschläge in Klarsicht-Hüllen wetterfest, Hinweise mit Wäscheklammer befestigen. UV-Botschaft NUR drinnen (Tageslicht killt den Effekt).",
           "whyItWorksTitle": null,
           "whyItWorks": null
         },
@@ -513,13 +615,13 @@
           "loudness": "laut",
           "effort": "leicht",
           "material": "2 Handys (von Kindern oder Eltern), optional: [Mini-Stativ*](https://www.amazon.de/s?k=handy+stativ+klein+tischstativ&tag=machsleicht-21) (~8 €), Requisiten (Einhorn-Hörner, Zauberstäbe, Tücher als Umhänge)",
-          "prepText": "2 Teams (4 vs. 4). Jedes Team hat 10 Minuten zum Planen: Wer spielt wen? Was ist die Story? Dann 15 Minuten drehen — maximal 60 Sekunden Film. Am Ende schauen sich alle gemeinsam beide Filme an.",
+          "prepText": "2 Teams (4 vs. 4). Jedes Team hat 10 Minuten zum Planen: Wer spielt wen? Was ist die Story? Dann 15 Minuten drehen — maximal 60 Sekunden Film. Am Ende schauen sich alle gemeinsam beide Filme an.\n\nStory-Vorgabe (optional): „Drehbuch: Ein Schüler der Akademie entdeckt ein Geheimnis. Zeigt, was passiert.\" — reicht als Impuls, den Rest machen die Kinder selbst.\n\nTipp: DAS wird die Aktivität, die sie am coolsten finden. Jedes Kind bekommt den Film per AirDrop/WhatsApp geschickt — die Erinnerung schlechthin. Kostet nix extra.",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Handy-Datenschutz: Vorher mit Eltern klären, dass Kinder gefilmt werden + Film im Familien-Chat geteilt wird. Bei Eltern-Bedenken: Kind nur als „Kamera-Operator\" einsetzen, nicht vor Linse. Filme NUR im Privat-Chat teilen, nicht in Social Media posten.",
           "ageAdjust6": "Du oder ein Elternteil führt die Kamera, Kinder spielen nur. Story muss nicht komplex sein — „Wir entdecken einen Kristall und er macht uns unsichtbar\" reicht. Wichtig: Du gibst die Struktur vor (Anfang, Mitte, Ende) und hilfst beim Schneiden.",
-          "ageAdjust8": "Eigene Handys, schneiden direkt in iMovie/CapCut (die können das), Slow-Mo und Effekte einbauen. Die brauchen null Hilfe.",
-          "indoorTip": null,
-          "outdoorTip": null,
+          "ageAdjust8": "Kinder filmen sich gegenseitig (10-11 Jahre: Story-Impuls von dir + sie schneiden im Handy). 12-Jährige: Eigene Handys, direktes Schneiden in iMovie/CapCut, Slow-Mo und Effekte einbauen — brauchen null Hilfe.",
+          "indoorTip": "Wohnzimmer als Hauptset, Flur für „Akademie-Gang\", Bad/Küche für Sondereffekte. Türen schließen → bessere Akustik.",
+          "outdoorTip": "Garten + Terrasse für Outdoor-Szenen, Schatten suchen (Sonne überstrahlt Display, Kinder sehen Aufnahme nicht).",
           "whyItWorksTitle": null,
           "whyItWorks": null
         },
@@ -532,9 +634,9 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "8 Urkunden (A4, ausdrucken oder auf Pergament-Papier schreiben), 1 Wachssiegel-Set (optional, ~10 €) oder Goldfolie-Sticker",
-          "prepText": "Vorher vorbereiten: Urkunden mit „Akademie der Vergessenen Magie\" Header, Platz für Code-Name, Datum, und „Hiermit wird ___ zum Meister der Vergessenen Magie ernannt.\"\n\nBei der Zeremonie: Feierliche Musik an (YouTube: „epic orchestral fantasy\"), jedes Kind einzeln aufrufen, Urkunde überreichen, alle applaudieren. Die Kinder finden das halb lustig, halb cool — genau die richtige Mischung für das Alter.",
+          "prepText": "Vorher vorbereiten: Urkunden mit „Akademie der Vergessenen Magie\" Header, Platz für Code-Name, Datum, und „Hiermit wird ___ zum Meister der Vergessenen Magie ernannt.\"\n\nBei der Zeremonie: Feierliche Musik an (YouTube: „epic orchestral fantasy\"), jedes Kind einzeln aufrufen, Urkunde überreichen, alle applaudieren. Die Kinder finden das halb lustig, halb cool — genau die richtige Mischung für das Alter.\n\nTipp: Urkunde auf Pergament-Papier (Amazon: ~5 € für 25 Blatt) drucken oder den Teebeutel-Trick verwenden (Papier in kaltem Tee einlegen, trocknen). Wachssiegel drauf = nächstes Level.",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Wachssiegel-Set: heißes Wachs — nur Erwachsene siegeln, Kinder bekommen fertige Urkunden überreicht. Alternativ Goldfolie-Sticker als Wachssiegel-Ersatz (kalt, kein Risiko).",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -678,7 +780,7 @@
       },
       {
         "n": 2,
-        "content": "Mirror Glaze: 200 g weiße Schokolade + 150 g Zucker + 150 ml Kondensmilch + 10 g Gelatine + 150 ml Wasser. Aufkochen, auf 35°C abkühlen lassen. In 3 Schüsseln teilen."
+        "content": "Mirror Glaze: 200 g weiße Schokolade + 150 g Zucker + 150 ml Kondensmilch + 10 g Gelatine + 150 ml Wasser. Aufkochen, auf 30-32°C abkühlen lassen. In 3 Schüsseln teilen."
       },
       {
         "n": 3,
@@ -732,6 +834,14 @@
         "detail": "Falls ein Gast-Kind meckert: „Einhorn? Echt jetzt?\" — lass das Geburtstagskind antworten, nicht du. Meistens reicht der erste Blick aufs Chemie-Labor oder die Escape-Rätsel. Und spätestens beim UV-Schwarzlicht-Moment ist jeder still. Einhorn als Fantasy-Kreatur verkaufen, nicht als Kuscheltier — dann funktioniert es bis 12."
       },
       {
+        "topic": "🌌 Galaxy statt Rosa: Farb-Welt verschieben",
+        "detail": "Der zentrale Reframing-Hebel: 9–12-Jährige finden „Galaxy\" cool und „Regenbogen\" kindisch — bei gleichen Farben. Verwende: Dunkelblau + Lila + Türkis + Gold (Mirror-Glaze-Kuchen). Metallic-Tattoos in Gold/Silber statt Glitzer-Aufkleber. Iridescent-Ballons (schimmernd) statt Pastell-Rosa. Pergament-Karten statt Glitzer-Zettel. Schlicht-Kraftpapier-Tüten als Goodie-Bags (nicht rosa — die finden das peinlich). Die Atmosphäre soll „Hogwarts trifft Einhorn\" sein, nicht „Kindergarten-Party\"."
+      },
+      {
+        "topic": "🐉 Drachen-/Magier-Alternative für Jungs-skeptische Gruppen",
+        "detail": "Falls gemischte Gruppen mit Jungs-Skepsis: Code-Namen sind absichtlich Fantasy-RPG-Style (Phoenix Goldstaub, Raven Mondklinge, Onyx Flammenschweif, Atlas Bergschatten). Bei stärkerer Skepsis: reframe als „Akademie der Vergessenen Magie\" komplett ohne Einhorn-Wort — Charms können statt Einhorn auch Drachen oder Phönix sein (gleiche Bezugsquelle, andere Suche). Chemie-Labor, Escape-Challenge, Kurzfilm und Schmuck-Workshop sind 100% geschlechtsneutral. Inhalte bleiben gleich, Story-Verpackung swappen."
+      },
+      {
         "topic": "📱 Partyseite statt WhatsApp-Chaos",
         "detail": "Erstelle eine [Partyseite auf party.machsleicht.de](https://party.machsleicht.de) mit Datum, Uhrzeit, Adresse und Allergien-Abfrage. Ein Link statt 10 Nachrichten. Kostet nichts."
       }
@@ -758,7 +868,11 @@
     },
     {
       "q": "Funktioniert das auch in gemischten Gruppen?",
-      "a": "Ja — das Konzept ist bewusst so gebaut. Chemie-Experimente, Escape-Rätsel und Kurzfilm-Dreh begeistern alle Kinder gleichermaßen. Die „Akademie der Vergessenen Magie\" ist Fantasy, nicht „Einhorn-Prinzessin\". Und der Schmuck-Workshop? Friendship-Bracelets sind 2025/2026 bei allen beliebt, nicht nur bei Mädchen. Die Farbwelt (Galaxy, Metallic, Dunkelblau) ist bewusst geschlechtsneutral."
+      "a": "Ja — das Konzept ist bewusst so gebaut. Chemie-Experimente, Escape-Rätsel und Kurzfilm-Dreh begeistern alle Kinder gleichermaßen. Die „Akademie der Vergessenen Magie\" ist Fantasy, nicht „Einhorn-Prinzessin\". Und der Schmuck-Workshop? Friendship-Bracelets sind 2025/2026 bei allen beliebt, nicht nur bei Mädchen. Die Farbwelt (Galaxy, Metallic, Dunkelblau) ist bewusst geschlechtsneutral. Falls ein Gast „Einhorn? Echt jetzt?\" murrt — lass das Geburtstagskind antworten, nicht du. Spätestens beim UV-Schwarzlicht-Moment oder beim Code-Knacken in der Escape-Challenge ist jeder still."
+    },
+    {
+      "q": "Wie gehe ich mit Chemie-Labor-Sicherheit um (Waschsoda, Schutzbrille)?",
+      "a": "Waschsoda (Natriumcarbonat) ist reizend für Augen und Haut — deshalb gehört eine Schutzbrille (Bastel-Schutzbrille ~5€/Stk. in Apotheke oder Drogerie) zur Mix-Phase Pflicht. Latex-frei Handschuhe für empfindliche Kinderhaut. Du als Erwachsene*r misst die Substanzen ab (max. 1 TL Waschsoda pro Becher), die Kinder mixen + experimentieren. Tablett mit Rand drunter gegen Überlauf. Wichtig: trotz „Zaubertrank\"-Optik — NIE trinken lassen. Bei Tartrazin-Empfindlichkeit (E102) Lebensmittelfarben weglassen, Rotkohlsaft alleine reicht für Farbwechsel-Show."
     }
   ],
   "preparationWeeks": {
@@ -999,7 +1113,7 @@
       "steps": [
         "Weißen Boden beim Bäcker holen (~6-8€) — Sahne-Boden oder Biskuit.",
         "Mirror-Glaze fertig aus Tube (Tortenguss-Section, ~3€) in 2 Farben.",
-        "Essbare Glitzer-Sterne + Smarties als Galaxy-Streuung obendrauf.",
+        "Essbare Glitzer-Sterne + bunte Schoko-Linsen als Galaxy-Streuung obendrauf.",
         "Bei Wow: Wunderkerze obendrauf, LED-Kerzen drumherum für Magie-Effekt."
       ],
       "fallback": "Bäcker zu? Stückkuchen vom Discounter mit Mirror-Glaze Pulver übergossen + Glitzer. Bei 9-12 funktioniert humor: ‚Tarn-Kuchen, magisch verändert.'",

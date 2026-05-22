@@ -40,6 +40,12 @@ SLOTS = [
     ('meerjungfrau', 'klein'),
     ('meerjungfrau', 'mittel'),
     ('meerjungfrau', 'gross'),
+    ('dschungel', 'klein'),
+    ('dschungel', 'mittel'),
+    ('dschungel', 'gross'),
+    ('feen', 'klein'),
+    ('feen', 'mittel'),
+    ('feen', 'gross'),
 ]
 
 data_map = {}

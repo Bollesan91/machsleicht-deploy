@@ -65,15 +65,22 @@
           "loudness": null,
           "effort": null,
           "material": "15 Quizfragen (ausdrucken oder vorlesen), Küchenglöckchen oder Kochlöffel zum Buzzern, Punkte-Tafel",
-          "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "prepText": "Teams bilden. Du liest die Frage vor, Teams buzzern. Richtige Antwort = 1 Punkt. Bei Gleichstand: Stichfrage. Verlierer-Team bekommt „Trost-Forschungsstipendium“ (Gummibärchen). 15 Fragen druckbereit auf /kindergeburtstag/dino-quiz.",
+          "steps": [
+            "Beispiel: „Welcher Dino hatte die kleinsten Arme?“ → T-Rex",
+            "Beispiel: „Was bedeutet Paläontologie?“ → Lehre vom alten Leben",
+            "Beispiel: „In welchem Erdzeitalter lebte der Triceratops?“ → Kreidezeit",
+            "Beispiel: „Welcher Dino hatte 500 Zähne?“ → Nigersaurus",
+            "Beispiel: „Warum starben die Dinos aus?“ → Asteroideneinschlag",
+            "Stichfrage bei Gleichstand: „Wie lang war ein Diplodocus?“ → ca. 25–30 m"
+          ],
+          "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "indoorTip": "Tisch + Stühle + Punktetafel zentral. Buzzer-Geräte griffbereit.",
+          "outdoorTip": "Schwer outdoor (Akustik). Lieber als Ruhe-Highlight indoor.",
+          "whyItWorksTitle": "Warum es funktioniert",
+          "whyItWorks": "9–12 sind stolz auf Wissen. Wer „Nigersaurus mit 500 Zähnen“ kennt, hat Coolness-Punkte. Trost-Stipendium für Verlierer-Team verhindert Gesichtsverlust."
         },
         {
           "name": "🌋 Vulkan-Experiment — Spielanleitung",
@@ -84,15 +91,22 @@
           "loudness": null,
           "effort": null,
           "material": "2 Plastikflaschen (0,5l), Essig, Natron, Spülmittel, rote + gelbe Lebensmittelfarbe, 2 Auffangschalen",
-          "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "prepText": "2 Teams bauen je einen Vulkan und treten gegeneinander an. Wer hat die spektakulärste Eruption? Die Kinder dürfen selbst mischen und dosieren. Wissenschaftlich: erkläre kurz Säure-Base-Reaktion — in diesem Alter finden sie das spannend, nicht langweilig.",
+          "steps": [
+            "2 Plastikflaschen, je 0,5l, in Sandhügel oder Schale stellen",
+            "Team A + Team B mischen jeweils: 3 EL Natron + Spritzer Spüli + rote/gelbe Farbe",
+            "Auf Kommando: Essig dazu (~100 ml)",
+            "Chemie erklären: Essig (Säure) + Natron (Base) → CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen → Schaum",
+            "Wessen Schaum-Säule ist höher? Variante: warmes vs kaltes Wasser testen",
+            "Wiederholbar 2–3× pro Team"
+          ],
+          "safetyRule": "Kinder min. 1 Armlaenge zurueck, nie ins Krater-Innere beugen. Schuerze/alte Kleidung wegen Lebensmittelfarbe (faerbt!). Erwachsene*r misst Mengen ab. Faktencheck: Mehr Natron = NICHT hoehere Eruption (Saettigung ab ca 50g). Bei Augenkontakt: 5 Min mit Wasser spuelen.",
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "indoorTip": "Badewanne oder Balkon, mit Folie.",
+          "outdoorTip": "Sandhügel — beste Optik.",
+          "whyItWorksTitle": "Warum es funktioniert",
+          "whyItWorks": "9–12 wollen Wissenschaft, nicht Kindergarten-Show. Säure-Base-Erklärung macht sie zu Forschern, nicht Zuschauern. Wettbewerb zwischen Teams pusht die Eruption-Vergleichs-Spannung."
         },
         {
           "name": "🏃 Dino-Parcours-Staffel — Spielanleitung",
@@ -103,18 +117,25 @@
           "loudness": null,
           "effort": null,
           "material": "2 Seile, 6 Kissen, 2 Bälle (=„Fossilien“), Stoppuhr",
-          "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "prepText": "Parcours mit Hindernissen: unter Seilen durch, über Kissen springen, Ball auf Löffel balancieren. 2 Teams im Staffel-Wettlauf. 3 Durchgänge, Zeiten addieren. Verlierer-Team bekommt Trostpreis (Gummibärchen).",
+          "steps": [
+            "2 Seile zwischen Stühle spannen (zum Drunter-durch)",
+            "6 Kissen in 2 Reihen als Trittsteine",
+            "Bälle als „Fossilien“ — auf Löffel balancieren",
+            "Team A startet, Stoppuhr läuft — Wechsel an Marke",
+            "3 Durchgänge, addiere Zeiten",
+            "Gewinner = niedrigste Gesamtzeit. Verlierer bekommen Trostpreis"
+          ],
+          "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
           "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorksTitle": "Warum es funktioniert",
+          "whyItWorks": "Bewegung mit klaren Regeln + Teams + Zeitmessung = motiviertes Forscher-Training. Wettbewerb ist erwünscht in dem Alter, aber Trostpreis verhindert Frust-Spirale."
         }
       ],
-      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 pro Kind\n🍿Popcorn2 Schüsseln\n🧃Getränke4 Liter",
+      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🍿Popcorn2 Schüsseln\n🧃Getränke4 Liter",
       "decoration": "🎈 Grüne Ballons~2 €\n🦕 Dino-Figuren TischdekoIm Set",
       "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~2 € pro Kind.\n\n🦕 Mini-Dino\n🍬 Süßigkeiten\n📝 Quiz-Urkunde",
       "shoppingList": [
@@ -224,15 +245,21 @@
           "loudness": null,
           "effort": null,
           "material": "15 Quizfragen, Küchenglöckchen/Kochlöffel, Punkte-Tafel",
-          "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "prepText": "Teams buzzern, du liest vor. Richtige Antwort = 1 Punkt. Druckvorlage mit 15 Fragen: /kindergeburtstag/dino-quiz.",
+          "steps": [
+            "Beispiel: „In welchem Erdzeitalter lebten die Dinosaurier?“ → Mesozoikum",
+            "Beispiel: „Welcher Dino war der größte Fleischfresser?“ → Spinosaurus",
+            "Beispiel: „Warum starben die Dinos aus?“ → Asteroideneinschlag + Folgen",
+            "Beispiel: „Welches heutige Tier ist mit Dinos verwandt?“ → Vögel",
+            "Stichfrage: „Wie viele Zähne hatte Nigersaurus?“ → ca. 500"
+          ],
+          "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
           "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorksTitle": "Warum es funktioniert",
+          "whyItWorks": "Forscherpass-Integration: Siegerteam bekommt einen Quiz-Stempel — das erhebt das Quiz vom „Spiel“ zur „bestandenen Prüfung“."
         },
         {
           "name": "🏗️ Fossilien-Ausgrabung — Spielanleitung",
@@ -243,15 +270,22 @@
           "loudness": null,
           "effort": null,
           "material": "Große Wanne (60×40 cm), Sand/Reis (10 kg), Salzteig-Knochen (am Vortag backen), Dino-Figuren, Muscheln, Pinsel, Löffel, Dokumentations-Vorlage",
-          "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "prepText": "9–12 Variante: Planquadrate mit Schnur in der Wanne markieren. Kinder graben systematisch und dokumentieren jeden Fund mit Koordinaten (A3, B1 etc.) auf einer Karte. Das ist echte Paläontologie! Wer den „seltenen Fund“ (goldene Figur) findet, wird „Grabungsleiter“.",
+          "steps": [
+            "Wanne (60×40 cm) mit Folie auslegen, dann 10 kg Sand/Reis einfüllen",
+            "Planquadrate mit dünner Schnur markieren (A1–D4)",
+            "Salzteig-Knochen (Rezept unten), Dino-Figuren, Muscheln vergraben",
+            "Eine besondere goldene Figur platzieren → „seltener Fund“ → Grabungsleiter-Titel",
+            "Dokumentations-Karte austeilen: jeder notiert Fund + Koordinate",
+            "Pinsel + Holzspatel als Werkzeug"
+          ],
+          "safetyRule": "Sand-Wanne mit Sichtaufsicht. Salzteig-Knochen sind ungiftig (Mehl, Salz, Wasser) — aber nicht zum Essen gedacht. Hände waschen vor Snacks.",
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "indoorTip": "Auf Folie + Backblech. Bei Wohnzimmer-Teppich: zusätzlich alte Decke drunter.",
+          "outdoorTip": "Im Garten ideal — kein Sand-Verschütt-Stress.",
+          "whyItWorksTitle": "Salzteig-Knochen vorab backen",
+          "whyItWorks": "Rezept: 2 Tassen Mehl + 1 Tasse Salz + 1 Tasse Wasser zu Teig kneten. Zu Knochen-Form rollen (Oberschenkel, Schädel, Rippen). 2 Std. bei 150°C im Backofen backen. Am Vorabend machen — hält tagelang. Tipp: vor dem Backen mit Kaffeepulver einreiben → braune „alte“ Knochen-Optik."
         },
         {
           "name": "🌋 Vulkan-Experiment — Spielanleitung",
@@ -262,15 +296,22 @@
           "loudness": null,
           "effort": null,
           "material": "2× Plastikflasche 0,5l, Essig, Natron, Spülmittel, rote + gelbe Lebensmittelfarbe, 2 Auffangschalen, Sand",
-          "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "prepText": "9–12 Variante: 2 Teams bauen je einen Vulkan und experimentieren mit Dosierung. Erkläre die Chemie: Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt das CO2 in Blasen = Schaum. Die Kinder verstehen das und finden es spannend.",
+          "steps": [
+            "Pro Team: 1 Plastikflasche (0,5l) im Sandhügel",
+            "Team A: 3 EL Natron + Spüli + rote Farbe",
+            "Team B: 3 EL Natron + Spüli + gelbe Farbe",
+            "Auf Kommando: je 100 ml Essig rein",
+            "Chemie erklären: Säure + Base → CO2 + Wasser + Natriumacetat. Spüli fängt CO2 = Schaum",
+            "Höchste Eruption gewinnt → Stempel im Forscherpass für alle"
+          ],
+          "safetyRule": "Kinder min. 1 Armlaenge zurueck, nie ins Krater-Innere beugen. Schuerze/alte Kleidung wegen Lebensmittelfarbe (faerbt!). Erwachsene*r misst Mengen ab. Faktencheck: Mehr Natron = NICHT hoehere Eruption (Saettigung ab ca 50g). Bei Augenkontakt: 5 Min mit Wasser spuelen.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
           "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorksTitle": "Warum es funktioniert",
+          "whyItWorks": "Echtes Chemie-Experiment + Team-Wettbewerb + Forscher-Identität. Faktencheck: Mehr Natron = NICHT höhere Eruption (Sättigung ab ~50g), Mehr Spüli = cremigerer Schaum, warmes Wasser beschleunigt die Reaktion."
         },
         {
           "name": "🏃 Dino-Parcours-Staffel — Spielanleitung",
@@ -283,7 +324,7 @@
           "material": "2 Seile, Kissen, Bälle, Löffel, Stoppuhr",
           "prepText": "",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -292,9 +333,9 @@
           "whyItWorks": null
         }
       ],
-      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 pro Kind\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🍭Chips/Nachos2 Schüsseln",
-      "decoration": "🎈 Grüne Luftballons (10 Stk.)~2 €\n🦶 Fußspuren-Pfad am BodenKostenlos, 15 Min.\n🦕 Dino-Figuren als TischdekoIm Set\n📜 „Jurassic Park“-Schild am EingangKostenlosPappe + Edding",
-      "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~3 € pro Kind.\n\nǺ AA; Forscherpass (mit Urkunde)\n🦕 Dino-Figur (aus Ausgrabung)\n🍬 Süßigkeiten\n💎 „Fossil“ (Muschel/Stein)",
+      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🥨 Chips/Nachos2 Schüsseln",
+      "decoration": "🎈 Grüne Luftballons (10 Stk.)~2 €\n🦶 Fußspuren-Pfad am BodenKostenlos, 15 Min.\n🦕 Dino-Figuren als TischdekoIm Set\n📜 „Urzeit-Dschungel“-Schild am EingangKostenlosPappe + Edding",
+      "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~3 € pro Kind.\n\nForscherpass (mit Urkunde)\n🦕 Dino-Figur (aus Ausgrabung)\n🍬 Süßigkeiten\n💎 „Fossil“ (Muschel/Stein)",
       "shoppingList": [
         {
           "emoji": "🦕",
@@ -425,15 +466,22 @@
           "loudness": null,
           "effort": null,
           "material": "Verschlüsselte Nachricht (Caesar-Chiffre, Buchstabe+3), Alphabet-Übersetzungstabelle ausdrucken",
-          "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "prepText": "Nachricht schreiben, jeden Buchstaben um 3 verschieben (A→D, B→E etc.). Kinder bekommen die verschlüsselte Nachricht + Alphabet-Tabelle. Beispiel: „GLQR“ = „DINO“. Die entschlüsselte Nachricht verrät den Ort der nächsten Station + eine Ziffer für das Zahlenschloss.",
+          "steps": [
+            "Alphabet-Tabelle ausdrucken: A↔D, B↔E, C↔F, ... X↔A, Y↔B, Z↔C",
+            "Codierte Beispiel-Nachricht: „GLH GLQR-NLVWH OLHJW LP EDGH]LPPHU“",
+            "Entschlüsselt: „DIE DINO-KISTE LIEGT IM BADEZIMMER“",
+            "Team-Arbeit: einer liest, einer schreibt, einer prüft",
+            "Gelöste Nachricht zeigt: Ort der nächsten Station + erste Ziffer (z.B. 3)",
+            "Bei Frust: Hinweis-Karte „Buchstaben rückwärts um 3 verschieben“"
+          ],
+          "safetyRule": "Reine Knobel-Aufgabe — keine physische Gefahr. Wenn ein Team frustriert: Hinweis-Karte geben, nicht überfordern.",
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "indoorTip": "An Tisch arbeiten lassen, gut beleuchtet. Buntstifte zum Markieren der Buchstaben.",
+          "outdoorTip": "Geht draußen — Klemmbrett mitgeben.",
+          "whyItWorksTitle": "Warum es funktioniert",
+          "whyItWorks": "Echte historische Chiffre (Julius Caesar) gibt der Aufgabe Tiefe. Kinder lernen nebenbei: erste 2000 Jahre alte Verschlüsselung. Team-Lösung (lesen + schreiben + prüfen) erzwingt Kooperation."
         },
         {
           "name": "🧩 Escape-Parcours — Spielanleitung",
@@ -444,20 +492,28 @@
           "loudness": null,
           "effort": null,
           "material": "Parcours-Material (Seile, Kissen), 3 Umschläge mit Mini-Rätseln (Logik-Puzzle, Kreuzworträtsel, Zahlenreihe), Stoppuhr",
-          "prepText": "",
-          "steps": [],
-          "safetyRule": null,
+          "prepText": "Parcours durchlaufen, an 3 Stationen anhalten und je ein Rätsel lösen. Erst wenn das Rätsel gelöst ist, darf weitergelaufen werden. Teams treten nacheinander an (Stoppuhr). Jedes Rätsel gibt eine Ziffer oder einen Buchstaben für den Gesamtcode.",
+          "steps": [
+            "Station A: Logik-Puzzle — „Welcher Dino kommt als nächstes? T-Rex, Stegosaurus, Brachiosaurus, ___“ (Triceratops, Ziffer 4)",
+            "Station B: Kreuzworträtsel mit 3 Dino-Begriffen (Lösung horizontal = Ziffer-Hinweis)",
+            "Station C: Zahlenreihe — „2, 4, 8, 16, ___“ (32, Quersumme 5)",
+            "Zwischen Stationen: Hindernisse (Kissen-Trittsteine, Seil-Tunnel)",
+            "Stoppuhr nur für Spannung — alle Teams kommen durch, keine Niederlage",
+            "Code-Ziffer der finalen Station + 4 vorige Ziffern = 5-stelliger Code für die Schatztruhe"
+          ],
+          "safetyRule": "Sichtaufsicht durch Erwachsene; bei Kleinteilen Verschluck-Pruefung (Klopapierrollen-Test).",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "codeLogic": "Saubere Code-Logik: 5 Stationen, jede gibt eine vorab festgelegte Ziffer per gedruckter Karte. Reihenfolge der Stationen = Schloss-Code. Beispiel-Default: 3-1-4-2-7. Station 1 (Caesar-Chiffre): Loesungswort steht auf Karte mit \"Ziffer 3\". Station 2 (Forscher-Quiz): Bei >=8/15 Punkten Karte \"Ziffer 1\" entnehmen; sonst Hilfe-Karte. Station 3 (Fossilien-Suche): Ziffer \"4\" unter der Auffangschale versteckt. Station 4 (Vulkan): Ziffer \"2\" steckt am Krater-Rand (nicht an Eruptionshoehe gekoppelt). Station 5 (Final): Ziffer \"7\" als Belohnungs-Karte. Code \"31427\" oeffnet Schloss. NICHT auf Geburtsdatum koppeln (das ist die alte falsche Logik)."
         }
       ],
-      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza2 pro Kind\n🥔Kartoffelbrei-Vulkan1 Schüssel\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🍭Nachos + Dip2 Schüsseln",
-      "decoration": "🎈 Grüne Luftballons~2 €\n🦶 Fußspuren-PfadKostenlos, 15 Min.\n📜 „Jurassic Park“-SchildKostenlosPappe + Edding\n🔊 Dschungel-SoundsKostenlosYouTube: „Jungle Ambience“\n🦕 Dino-Figuren überallIm Set\n🕯️ Wunderkerzen für Kuchen~2 €",
-      "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~4 € pro Kind.\n\nǺ AA; Forscherpass + Urkunde\n🦕 Dino-Figur\n💎 „Fossil“ (Muschel/Stein)\n🍬 Süßigkeiten\n🗝️ Mini-Lupe",
+      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza2 Stueck pro Kind = 4 Pizzen ergeben 16 Stueck = 8 Portionen a 2\n🥔Kartoffelbrei-Vulkan1 Schüssel\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🌮 Nachos + Dip2 Schüsseln",
+      "decoration": "🎈 Grüne Luftballons~2 €\n🦶 Fußspuren-PfadKostenlos, 15 Min.\n📜 „Urzeit-Dschungel“-SchildKostenlosPappe + Edding\n🔊 Dschungel-SoundsKostenlosYouTube: „Jungle Ambience“\n🦕 Dino-Figuren überallIm Set\n🕯️ Wunderkerzen für Kuchen~2 €",
+      "giveaways": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~4 € pro Kind.\n\nForscherpass + Urkunde\n🦕 Dino-Figur\n💎 „Fossil“ (Muschel/Stein)\n🍬 Süßigkeiten\n🗝️ Mini-Lupe",
       "shoppingList": [
         {
           "emoji": "🦕",
@@ -545,7 +601,7 @@
     }
   ],
   "cakeRecipe": {
-    "intro": "Der einfachste Wow-Kuchen: Gugelhupf + Smarties",
+    "intro": "Der einfachste Wow-Kuchen: Gugelhupf + bunte Schoko-Linsen",
     "steps": [
       {
         "n": 1,
@@ -561,17 +617,18 @@
       },
       {
         "n": 4,
-        "content": "Rote + orange Smarties in den Krater und am Rand verteilen"
+        "content": "Rote + orange bunte Schoko-Linsen in den Krater und am Rand verteilen"
       },
       {
         "n": 5,
-        "content": "Grüne Smarties unten am Fuß = Dschungel"
+        "content": "Grüne bunte Schoko-Linsen unten am Fuß = Dschungel"
       }
     ],
     "meta": {
       "aufwand": "45 Min",
       "kosten": "~6 &euro;",
-      "allergiker": "Packung checken"
+      "allergiker": "Packung checken",
+      "safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Deko/Lianen/Tischtuch, nie mit Kindern allein lassen, bei Indoor IMMER Wassereimer griffbereit. Auspusten unmittelbar nach Aufnahme. Kein Funken-Wedeln."
     },
     "tips": null
   },
@@ -592,6 +649,10 @@
       {
         "topic": "📞 Abholzeit klar kommunizieren",
         "detail": "Eltern setzen die Kinder ab und fahren. Das ist normal ab 8–9 Jahren. Aber: Abholzeit VORHER klar ansagen (z.B. „Abholung 17:00, bitte pünktlich“). Telefonnummern aller Eltern einsammeln. Ein zweiter Erwachsener als Helfer ist Pflicht ab 8 Kindern."
+      },
+      {
+        "tip": "Getraenke-Faustregel",
+        "content": "2 Getraenke pro Kind + 2 Reserve. Bei 8 Kindern 18 Getraenke. NICHT zusaetzlich Cola + Saftpaeckchen + Wasser parallel = ueberversorgt."
       }
     ],
     "educationalValue": null
@@ -689,7 +750,7 @@
         {
           "icon": "🎂",
           "title": "Vulkan-Kuchen backen — oder Plan B",
-          "detail": "Wenn Zeit/Nerven: Gugelhupf + Schokoglasur + Smarties-Lava. Wenn nicht: Sahnetorte vom Bäcker (~8€), Schokoglasur + Smarties drauf. Bei Wow Wunderkerze + LED-Kerzen für Climax-Moment."
+          "detail": "Wenn Zeit/Nerven: Gugelhupf + Schokoglasur + bunte Schoko-Linsen-Lava. Wenn nicht: Sahnetorte vom Bäcker (~8€), Schokoglasur + bunte Schoko-Linsen drauf. Bei Wow Wunderkerze + LED-Kerzen für Climax-Moment."
         },
         {
           "icon": "🗣️",
@@ -709,7 +770,7 @@
         {
           "icon": "🔒",
           "title": "Wow-Setup: Schatztruhe + Code-Hinweise platzieren",
-          "detail": "Schuhkarton-Truhe mit Zahlenschloss (Code: Geburtstagsdatum), drinnen: Forscher-Diplome + Wunderkerze + Auflösungs-Karte. Code-Hinweise an 5-6 Phasen-Stationen verstecken."
+          "detail": "Schuhkarton-Truhe mit Zahlenschloss (Code 31427 (5 Ziffern aus den 5 Prüfungen — siehe Escape-Logik in variants[2].games[1].codeLogic). NICHT das Geburtsdatum verwenden), drinnen: Forscher-Diplome + Wunderkerze + Auflösungs-Karte. Code-Hinweise an 5-6 Phasen-Stationen verstecken."
         }
       ]
     },
@@ -719,7 +780,7 @@
         {
           "icon": "🍫",
           "title": "Kuchen verzieren — Vulkan-Look",
-          "detail": "Schokoglasur drüber, Smarties als Lava von oben nach unten, grüne Smarties unten = Bäume. Bei Wow: Wunderkerze in Krater, LED-Kerzen rundherum für Magie-Effekt."
+          "detail": "Schokoglasur drüber, bunte Schoko-Linsen als Lava von oben nach unten, grüne bunte Schoko-Linsen unten = Bäume. Bei Wow: Wunderkerze in Krater, LED-Kerzen rundherum für Magie-Effekt."
         },
         {
           "icon": "🏗️",
@@ -734,12 +795,12 @@
         {
           "icon": "🔊",
           "title": "Sirenen + Bluetooth-Box testen",
-          "detail": "Spotify ‚Jurassic Park Soundtrack' Playlist. Bei Wow Vulkan-Climax: Dino-Brüll-Sound separat speichern für ‚Eruption-Climax'."
+          "detail": "Spotify ‚Urzeit-Dschungel Soundtrack' Playlist. Bei Wow Vulkan-Climax: Dino-Brüll-Sound separat speichern für ‚Eruption-Climax'."
         },
         {
           "icon": "🔒",
           "title": "Wow-Setup: Schatztruhe-Code testen",
-          "detail": "Zahlenschloss-Code (z.B. Geburtsdatum) zweimal testen. UV-Hinweise (falls Wow Premium) mit UV-Stift schreiben + UV-Lampe checken."
+          "detail": "Zahlenschloss-Code (z.B. Code 31427 (5 Ziffern aus den 5 Prüfungen — siehe Escape-Logik in variants[2].games[1].codeLogic). NICHT das Geburtsdatum verwenden) zweimal testen. UV-Hinweise (falls Wow Premium) mit UV-Stift schreiben + UV-Lampe checken."
         }
       ]
     },
@@ -749,7 +810,7 @@
         {
           "icon": "⏰",
           "title": "60 Min vor Ankunft: Stationen aufbauen",
-          "detail": "4 Stationen platzieren (Ausgrabung + Vulkan + Quiz + Forscherpass-Pult), Pizza-Bestellung bestätigen, Capri-Sun + Cola in Kühlschrank. Helfer ist da oder kommt jetzt."
+          "detail": "4 Stationen platzieren (Ausgrabung + Vulkan + Quiz + Forscherpass-Pult), Pizza-Bestellung bestätigen, Saftpaeckchen + Cola in Kühlschrank. Helfer ist da oder kommt jetzt."
         },
         {
           "icon": "🎯",
@@ -759,7 +820,7 @@
         {
           "icon": "🎯",
           "title": "15 Min vor Ankunft: Audio + Forscherpass",
-          "detail": "Bluetooth-Box an, Jurassic-Playlist startet leise, Forscherpass-Auslage am Eingangs-Tisch. Stempelkissen offen, Dino-Figuren als Tisch-Deko."
+          "detail": "Bluetooth-Box an, Urzeit-Playlist startet leise, Forscherpass-Auslage am Eingangs-Tisch. Stempelkissen offen, Dino-Figuren als Tisch-Deko."
         },
         {
           "icon": "🫁",
@@ -831,14 +892,14 @@
     "kuchen_misslungen": {
       "icon": "🎂",
       "label": "Kuchen ist misslungen",
-      "headline": "Bäcker-Hack: Schoko-Gugelhupf + Mirror-Glaze-Smarties = Notfall in 10 Min.",
+      "headline": "Bäcker-Hack: Schoko-Gugelhupf + Mirror-Glaze-bunte Schoko-Linsen = Notfall in 10 Min.",
       "steps": [
         "Schoko-Gugelhupf beim Bäcker (~6-8€) oder Schoko-Kasten + Krater rein-bohren.",
         "Schokoglasur drüber laufen lassen = Lava-Strom.",
-        "Rote + orange Smarties als Lava-Strom + grüne Smarties unten als Bäume.",
+        "Rote + orange bunte Schoko-Linsen als Lava-Strom + grüne bunte Schoko-Linsen unten als Bäume.",
         "Bei Wow: Wunderkerze in Krater + LED-Kerzen rundherum für Magie-Effekt."
       ],
-      "fallback": "Bäcker zu? Stückkuchen vom Discounter, je Stück Smarties + Wunderkerze = ‚Mini-Vulkan-Stücke'. Bei 9-12 funktioniert humor: ‚Mini-Eruptionen, bewusst geplant.'",
+      "fallback": "Bäcker zu? Stückkuchen vom Discounter, je Stück bunte Schoko-Linsen + Wunderkerze = ‚Mini-Vulkan-Stücke'. Bei 9-12 funktioniert humor: ‚Mini-Eruptionen, bewusst geplant.'",
       "tone": "motivierend"
     },
     "spielzeug_kaputt_oder_fehlt": {
@@ -884,13 +945,266 @@
     }
   },
   "signatureRitual": {
-    "name": null,
+    "name": "Die Paläontologen-Initiation",
     "subtitle": null,
-    "introText": null,
-    "setupSteps": [],
+    "introText": "Vor dem ersten Spiel: Jedes Kind faltet seinen eigenen Forscherpass aus festem Papier. Name auf den Pass schreiben, ersten Stempel oben links setzen (Mini-Dino-Stempel). Die Gastgeberin sagt feierlich: \"Ab jetzt bist du Paläontologin/Paläontologe. An jeder Station gibt es einen weiteren Stempel — der Pass beweist, dass du alle Prüfungen bestanden hast.\" Erst dann beginnt die erste Station.",
+    "setupSteps": [
+      "A5-Papier vorbereiten (1 Blatt pro Kind + 2 Reserve)",
+      "Mini-Dino-Stempel + Kissen bereitstellen (online ~6 €)",
+      "Stationen-Stempel: 5 verschiedene Motive (Caesar-Schriftrolle, Pinsel, Quizfrage, Vulkan, Schloss)",
+      "Endpunkt: Goldener \"Forscher-Diplom\"-Stempel als Krönung"
+    ],
     "rolesList": [],
-    "optOutNote": null,
+    "optOutNote": "Kinder, die nicht im Vordergrund stehen wollen, übernehmen die Beobachter-Rolle (existiert auch im SOS-Szenario): Sie führen das Logbuch der ganzen Gruppe und bekommen einen Spezial-Pass \"Chef-Dokumentar\".",
     "materialNote": null,
-    "_note": "Dino-Mottoseiten haben keine eigene Ritual-Sektion im Quell-HTML. Dino-Spurensuche oder Vulkan-Ausbruch sind die motto-zentralen Aktivitäten."
+    "_note": "Dino-Mottoseiten haben keine eigene Ritual-Sektion im Quell-HTML. Dino-Spurensuche oder Vulkan-Ausbruch sind die motto-zentralen Aktivitäten.",
+    "durationMin": 5,
+    "materialCost": "6-8 €",
+    "whyItWorks": "Der Pass ist der rote Faden: Jedes Spiel zahlt sichtbar auf den Pass ein (= ein Stempel mehr). Kein abstrakter \"Spaß\" — konkretes Belohnungssystem, das 9-12-jährige Kinder bei der Ehre packt. Plus: Der Pass ist das Mitgebsel — kein zusätzliches Material nötig."
+  },
+  "ageInsight": {
+    "headline": "Was 9–12-Jährige ausmacht — und was das für die Dino-Party heißt",
+    "traits": [
+      {
+        "topic": "Aufmerksamkeit",
+        "detail": "30–45 Min. pro Aktivität realistisch. Sie wollen nicht unterbrochen werden wenn sie in eine Aufgabe vertieft sind."
+      },
+      {
+        "topic": "Regeln",
+        "detail": "Komplexe Spielregeln werden verstanden. Erklärungen dürfen länger sein — aber Praxis schlägt Theorie."
+      },
+      {
+        "topic": "Wettbewerb",
+        "detail": "Teams funktionieren super. Einzelwettbewerb ist ok — aber bei Verlieren sollte es Trost-Preise geben. Fairness ist in diesem Alter SEHR wichtig."
+      },
+      {
+        "topic": "Motorik & Kognition",
+        "detail": "Lesen, Schreiben, Rechnen, logisches Denken — alles da. Sie WOLLEN gefordert werden. Zu einfache Spiele sind „babyhaft“."
+      },
+      {
+        "topic": "Dauer",
+        "detail": "3–3,5 Stunden ideal. Sie halten länger durch als jüngere Kinder und beschweren sich eher, wenn es zu früh vorbei ist."
+      },
+      {
+        "topic": "Essen",
+        "detail": "Mehr als bei jüngeren Kindern. Rechne mit 1,5× der Portionen. Pizza, Hot Dogs und Popcorn schlagen jeden Gemüseteller."
+      },
+      {
+        "topic": "Eltern",
+        "detail": "Werden abgesetzt und später abgeholt. Telefonnummern vorher einsammeln, Abholzeit klar kommunizieren."
+      }
+    ],
+    "whyMottoFitsHeadline": "🦕 Warum Dino für 9–12-Jährige funktioniert",
+    "whyMottoFits": "In diesem Alter verschiebt sich der Dino-Fokus von „Dinos sind cool“ zu „Paläontologie ist Wissenschaft“. Kinder wollen echte Fakten, echte Ausgrabungen und echte Rätsel. Der Forscher-Ansatz passt perfekt: Forscherpass, Wissens-Quiz mit echten Dino-Fakten, codierte Nachrichten und systematische Ausgrabung. Dino als Motto ist geschlechtsneutral und hat keinen „Kinderparty-Stempel“ — auch 12-Jährige finden Paläontologie spannend."
+  },
+  "faq": [
+    {
+      "q": "Wie lange sollte ein Dino-Geburtstag für 9–12-Jährige dauern?",
+      "a": "3 bis 3,5 Stunden sind ideal. In diesem Alter halten die Kinder gut durch und beschweren sich eher, wenn es zu früh vorbei ist. Die Minimal-Variante (2,5 Stunden) funktioniert auch gut, besonders an Schultagen."
+    },
+    {
+      "q": "Wie viele Kinder einladen?",
+      "a": "Faustregel: Alter + 1. Also 10–13 Kinder bei einem 10-Jährigen. Alle Angaben auf dieser Seite sind für 8 Kinder berechnet. Ab 10 Kindern brauchst du definitiv einen zweiten Erwachsenen."
+    },
+    {
+      "q": "Was kostet ein Dino-Geburtstag für ältere Kinder?",
+      "a": "Zwischen 53 € (Minimal) und 101 € (Wow) für 8 Kinder. Die Standard-Variante liegt bei ca. 78 €. Der höhere Preis gegenüber jüngeren Altersgruppen kommt durch mehr Essen und längere Dauer."
+    },
+    {
+      "q": "Ist Dino für 12-Jährige nicht zu „babyhaft“?",
+      "a": "Nein — wenn du es richtig framest. „Paläontologen-Escape-Room“ klingt deutlich cooler als „Dino-Party“. Der Fokus auf echte Wissenschaft (Caesar-Verschlüsselung, systematische Ausgrabung, Chemie-Experiment) macht es altersgerecht. Auch 12-Jährige finden Fossilien und Vulkan-Experimente spannend."
+    }
+  ],
+  "bonusQuiz": {
+    "title": "🧠 Dino-Wissens-Quiz — 15 Fragen mit Lösungen",
+    "intro": "15 Multiple-Choice-Fragen für die 9–12er Zielgruppe. Druckvorlage online: /kindergeburtstag/dino-quiz. Spielregeln: Frage vorlesen. Wer zuerst buzzert (Klingel/Topfdeckel) darf antworten. Richtig = 1 Punkt. Falsch = anderes Team darf. Verlierer-Team bekommt „Trost-Forschungsstipendium“ (Gummibärchen).",
+    "questions": [
+      {
+        "n": 1,
+        "q": "Was bedeutet „T-Rex“ auf Deutsch?",
+        "options": [
+          "A) Riesen-Echse",
+          "B) Tyrannen-Echse",
+          "C) Turbo-Echse"
+        ],
+        "answer": "B",
+        "fun": "„König der Tyrannen-Echsen“, klingt cool!"
+      },
+      {
+        "n": 2,
+        "q": "Wie viele Hörner hatte ein Triceratops?",
+        "options": [
+          "A) 2",
+          "B) 3",
+          "C) 5"
+        ],
+        "answer": "B",
+        "fun": "„Tri“ = drei, „ceratops“ = Horngesicht"
+      },
+      {
+        "n": 3,
+        "q": "Konnten Dinosaurier fliegen?",
+        "options": [
+          "A) Ja, alle",
+          "B) Nur manche",
+          "C) Nein — Flugsaurier waren keine Dinos!"
+        ],
+        "answer": "C",
+        "fun": "Flugsaurier (Pterodactylus etc.) waren KEINE Dinosaurier. Trickfrage!"
+      },
+      {
+        "n": 4,
+        "q": "Was fraßen Brachiosaurier?",
+        "options": [
+          "A) Fleisch",
+          "B) Pflanzen",
+          "C) Fische"
+        ],
+        "answer": "B",
+        "fun": "Mit dem langen Hals kamen sie an die höchsten Baumkronen"
+      },
+      {
+        "n": 5,
+        "q": "Wie lang war ein T-Rex ungefähr?",
+        "options": [
+          "A) 5 Meter",
+          "B) 13 Meter",
+          "C) 30 Meter"
+        ],
+        "answer": "B",
+        "fun": "So lang wie ein Linienbus!"
+      },
+      {
+        "n": 6,
+        "q": "Welcher Dino hatte Platten auf dem Rücken?",
+        "options": [
+          "A) Stegosaurus",
+          "B) Velociraptor",
+          "C) Diplodocus"
+        ],
+        "answer": "A",
+        "fun": "Die Platten dienten vermutlich zur Temperaturregelung"
+      },
+      {
+        "n": 7,
+        "q": "Lebten Dinos und Menschen gleichzeitig?",
+        "options": [
+          "A) Ja",
+          "B) Nein, 65 Millionen Jahre dazwischen"
+        ],
+        "answer": "B",
+        "fun": "In Filmen schon, in echt leider nicht"
+      },
+      {
+        "n": 8,
+        "q": "Welcher Dino hatte besonders lange Arme?",
+        "options": [
+          "A) T-Rex (kurze Arme!)",
+          "B) Therizinosaurus",
+          "C) Ankylosaurus"
+        ],
+        "answer": "B",
+        "fun": "T-Rex hatte lächerlich kurze Arme, das wissen die meisten Kinder!"
+      },
+      {
+        "n": 9,
+        "q": "Was passierte vor 66 Millionen Jahren mit den Dinos?",
+        "options": [
+          "A) Sie sind umgezogen",
+          "B) Ein Asteroid hat sie ausgelöscht",
+          "C) Sie leben im Meer weiter"
+        ],
+        "answer": "B",
+        "fun": "Einschlag in Mexiko, 12 km großer Brocken"
+      },
+      {
+        "n": 10,
+        "q": "Welcher Dino war so groß wie ein Huhn?",
+        "options": [
+          "A) Compsognathus",
+          "B) Brachiosaurus",
+          "C) Spinosaurus"
+        ],
+        "answer": "A",
+        "fun": "Klein aber schnell — bis zu 40 km/h!"
+      },
+      {
+        "n": 11,
+        "q": "Aus was bestehen Fossilien?",
+        "options": [
+          "A) Plastik",
+          "B) Stein (versteinerter Knochen)",
+          "C) Holz"
+        ],
+        "answer": "B",
+        "fun": "Knochen werden über Millionen Jahre zu Stein"
+      },
+      {
+        "n": 12,
+        "q": "Welches Tier heute ist mit Dinos verwandt?",
+        "options": [
+          "A) Hunde",
+          "B) Vögel",
+          "C) Fische"
+        ],
+        "answer": "B",
+        "fun": "Hühner sind entfernte Verwandte des T-Rex!"
+      },
+      {
+        "n": 13,
+        "q": "Wie nennt man Wissenschaftler, die Dinos erforschen?",
+        "options": [
+          "A) Astronauten",
+          "B) Paläontologen",
+          "C) Biologen"
+        ],
+        "answer": "B",
+        "fun": "Genau wie ihr heute!"
+      },
+      {
+        "n": 14,
+        "q": "Welcher Dino hatte eine Keule am Schwanz?",
+        "options": [
+          "A) Ankylosaurus",
+          "B) Parasaurolophus",
+          "C) Pteranodon"
+        ],
+        "answer": "A",
+        "fun": "Die Keule wog bis zu 30 kg — damit wollte niemand Streit"
+      },
+      {
+        "n": 15,
+        "q": "Wie schwer war ein T-Rex ungefähr?",
+        "options": [
+          "A) So schwer wie ein Auto",
+          "B) So schwer wie ein Elefant (6–8 Tonnen)",
+          "C) So schwer wie ein Haus"
+        ],
+        "answer": "B",
+        "fun": "6–8 Tonnen, aber trotzdem konnte er rennen!"
+      }
+    ],
+    "harderQuestions": [
+      {
+        "q": "In welchem Erdzeitalter lebten die Dinosaurier?",
+        "a": "Mesozoikum (Trias, Jura, Kreide)"
+      },
+      {
+        "q": "Welcher Dino war der größte Fleischfresser?",
+        "a": "Spinosaurus (länger als T-Rex)"
+      },
+      {
+        "q": "Warum starben die Dinos aus?",
+        "a": "Asteroideneinschlag + Klimafolgen (Verdunkelung, Kälteeinbruch)"
+      },
+      {
+        "q": "Welcher Dino hatte 500 Zähne?",
+        "a": "Nigersaurus — eine Pflanzenfresser-Säge im Maul"
+      },
+      {
+        "q": "Waren Dinosaurier warm- oder kaltblütig?",
+        "a": "Umstritten! Beide Antworten gelten — neue Forschung tendiert zu „warmblütig wie Vögel“"
+      }
+    ]
   }
 }

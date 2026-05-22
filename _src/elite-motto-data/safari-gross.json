@@ -235,7 +235,58 @@
           "indoorTip": "Die drei Quadranten an verschiedene Wände/Tische im Raum, damit die Teams sich nicht ins Gehege kommen.",
           "outdoorTip": "Quadranten an drei Stationen im Garten — die kurzen Wege dazwischen sind willkommene Bewegung.",
           "whyItWorksTitle": "Kooperation + Selbstkontrolle statt Tempo",
-          "whyItWorks": "Kein Quadrant funktioniert allein — die drei Spezialisierungen müssen sich am Ende abstimmen. Ergibt ein Lösungswort keinen Sinn, prüfen die Kinder ihre Reihenfolge selbst nach, statt zu raten. Genaues Hinschauen wird belohnt, nicht Geschwindigkeit. Steckt ein Team fest, hilft eine andere Spezialisierung mit — das ist die Story: „Im Reservat zählt, wer hinschaut.“"
+          "whyItWorks": "Kein Quadrant funktioniert allein — die drei Spezialisierungen müssen sich am Ende abstimmen. Ergibt ein Lösungswort keinen Sinn, prüfen die Kinder ihre Reihenfolge selbst nach, statt zu raten. Genaues Hinschauen wird belohnt, nicht Geschwindigkeit. Steckt ein Team fest, hilft eine andere Spezialisierung mit — das ist die Story: „Im Reservat zählt, wer hinschaut.“",
+          "codeMechanic": "Chiffre: Tierspur-Symbol -> Anlaut-Buchstabe. Pro Quadrant 6 Symbolkarten ausgedruckt. Beispiel: Spuren-Symbol von Pfote = \"P\" (fuer Panther) -> Wort bauen. Selbstkontrolle: ergibt sich ein echtes Wort (WASSER/FELS/TEMPEL), war die Loesung richtig. 15 Min Setup: Tier-Spur-Karten am Vorabend aus Vorlage drucken.",
+          "animalFacts": [
+            {
+              "tier": "Loewe",
+              "spurbild": "rund, 4 Zehen, ohne Krallen",
+              "habitat": "Savanne",
+              "merkmal": "Maehne nur beim Maennchen"
+            },
+            {
+              "tier": "Elefant",
+              "spurbild": "oval, 5 Zehen vorn 4 hinten",
+              "habitat": "Savanne/Wald",
+              "merkmal": "Ohren bei Afrika groesser als Asien"
+            },
+            {
+              "tier": "Gepard",
+              "spurbild": "schmaler als Loewe, Krallenabdrücke sichtbar",
+              "habitat": "offene Savanne",
+              "merkmal": "einziges Katzentier mit nicht-einziehbaren Krallen"
+            },
+            {
+              "tier": "Giraffe",
+              "spurbild": "spaltig, 2 Hufzehen, sehr gross",
+              "habitat": "Savanne",
+              "merkmal": "7 Halswirbel wie Mensch"
+            },
+            {
+              "tier": "Nashorn",
+              "spurbild": "rund, 3 Zehen-Abdrucke",
+              "habitat": "Savanne/Buschland",
+              "merkmal": "Horn ist Haar, kein Knochen"
+            },
+            {
+              "tier": "Zebra",
+              "spurbild": "huf-foermig, einzelne Zehe",
+              "habitat": "Savanne",
+              "merkmal": "jedes Streifenmuster einzigartig wie Fingerabdruck"
+            },
+            {
+              "tier": "Erdmaennchen",
+              "spurbild": "klein, 5 Zehen mit Krallen",
+              "habitat": "Wueste/Halbwueste",
+              "merkmal": "Waechter steht aufrecht"
+            },
+            {
+              "tier": "Flusspferd",
+              "spurbild": "rund, 4 Zehen, sehr breit",
+              "habitat": "Wasser",
+              "merkmal": "gefaehrlichstes Saeugetier Afrikas trotz Pflanzenfresser"
+            }
+          ]
         },
         {
           "name": "📸 Foto-Quest „Hinter der Tarnung“",
@@ -626,7 +677,58 @@
           "indoorTip": "Den TOR-Ort drinnen wählen (Türbogen, Speisekammer) — der „Ort am TOR“ funktioniert in jeder Wohnung.",
           "outdoorTip": "Gartentor oder Terrassentür als TOR markieren.",
           "whyItWorksTitle": "Jede Spezialisierung ist nötig",
-          "whyItWorks": "Wer eine Station nicht knackt, holt sich einen Spezialisten dazu, der seinen Code schon hat — gelöst wird gemeinsam, niemand bleibt hängen. Am Ende bekommt jedes Kind die volle Spezialisten-Lizenz, ohne Abstufung. Wer besonders sorgfältig beobachtet oder recherchiert hat, kriegt einen „Sorgfalt-Spezialist“-Stempel auf die Lizenz — passt zur Hero-Botschaft „im Reservat zählt nicht, wer der Schnellste ist, sondern wer hinschaut“. Tempo wird hier nicht extra belohnt."
+          "whyItWorks": "Wer eine Station nicht knackt, holt sich einen Spezialisten dazu, der seinen Code schon hat — gelöst wird gemeinsam, niemand bleibt hängen. Am Ende bekommt jedes Kind die volle Spezialisten-Lizenz, ohne Abstufung. Wer besonders sorgfältig beobachtet oder recherchiert hat, kriegt einen „Sorgfalt-Spezialist“-Stempel auf die Lizenz — passt zur Hero-Botschaft „im Reservat zählt nicht, wer der Schnellste ist, sondern wer hinschaut“. Tempo wird hier nicht extra belohnt.",
+          "codeMechanic": "Chiffre: Tierspur-Symbol -> Anlaut-Buchstabe. Pro Quadrant 6 Symbolkarten ausgedruckt. Beispiel: Spuren-Symbol von Pfote = \"P\" (fuer Panther) -> Wort bauen. Selbstkontrolle: ergibt sich ein echtes Wort (WASSER/FELS/TEMPEL), war die Loesung richtig. 15 Min Setup: Tier-Spur-Karten am Vorabend aus Vorlage drucken.",
+          "animalFacts": [
+            {
+              "tier": "Loewe",
+              "spurbild": "rund, 4 Zehen, ohne Krallen",
+              "habitat": "Savanne",
+              "merkmal": "Maehne nur beim Maennchen"
+            },
+            {
+              "tier": "Elefant",
+              "spurbild": "oval, 5 Zehen vorn 4 hinten",
+              "habitat": "Savanne/Wald",
+              "merkmal": "Ohren bei Afrika groesser als Asien"
+            },
+            {
+              "tier": "Gepard",
+              "spurbild": "schmaler als Loewe, Krallenabdrücke sichtbar",
+              "habitat": "offene Savanne",
+              "merkmal": "einziges Katzentier mit nicht-einziehbaren Krallen"
+            },
+            {
+              "tier": "Giraffe",
+              "spurbild": "spaltig, 2 Hufzehen, sehr gross",
+              "habitat": "Savanne",
+              "merkmal": "7 Halswirbel wie Mensch"
+            },
+            {
+              "tier": "Nashorn",
+              "spurbild": "rund, 3 Zehen-Abdrucke",
+              "habitat": "Savanne/Buschland",
+              "merkmal": "Horn ist Haar, kein Knochen"
+            },
+            {
+              "tier": "Zebra",
+              "spurbild": "huf-foermig, einzelne Zehe",
+              "habitat": "Savanne",
+              "merkmal": "jedes Streifenmuster einzigartig wie Fingerabdruck"
+            },
+            {
+              "tier": "Erdmaennchen",
+              "spurbild": "klein, 5 Zehen mit Krallen",
+              "habitat": "Wueste/Halbwueste",
+              "merkmal": "Waechter steht aufrecht"
+            },
+            {
+              "tier": "Flusspferd",
+              "spurbild": "rund, 4 Zehen, sehr breit",
+              "habitat": "Wasser",
+              "merkmal": "gefaehrlichstes Saeugetier Afrikas trotz Pflanzenfresser"
+            }
+          ]
         },
         {
           "name": "🗺️ Die Karte vermessen — Hauptmission",
@@ -674,7 +776,7 @@
           "whyItWorks": "Die ganze Expedition läuft hier zusammen: keine Spezialisierung kann die Karte allein vermessen. Der Höhepunkt belohnt Kooperation, nicht Einzelleistung."
         }
       ],
-      "food": "🎂 Reservat-Karten-Kuchen (1 Blechkuchen) · 🍕 Mini-Pizzen selbst belegt (12 Stück) · 🥤 „Wasserloch“ 3 L Apfelschorle · 🍌 Affen-Bananen · 🥒 Gemüse-Buffet „Giraffen-Snack“ · 🍿 Savannen-Popcorn · 🧀 Käse-Würfel.",
+      "food": "🎂 Reservat-Karten-Kuchen (1 Blechkuchen) · 🍕 Mini-Pizzen selbst belegt (12 Stück, jeder belegt 1,5) · 🌯 Wraps „Anaconda“ (normale Wraps mit Frischkäse/Salat/Schinken, zusammengerollt sehen sie aus wie eine Schlange) · 🥤 „Wasserloch“ 3 L Apfelschorle (transparente Becher + blaue Halme) · 🍌 Affen-Bananen · 🥒 Gemüse-Buffet „Giraffen-Snack“ · 🍿 Savannen-Popcorn · 🧀 Käse-Würfel. Selber-Belegen ist für 9-12 wichtig — verkindischen ausgeschlossen, sie wollen aktiv beteiligt sein. Story-Frame beim Servieren kostet null extra.",
       "decoration": "🦁 Safari-Teller & Becher · 🎈 Luftballons grün/braun/ocker · 🪧 Safari-Girlande · 🌿 Grünpflanzen aus dem Wohnzimmer in den Partyraum · 🪧 „Ranger-Camp Reservat“-Schild (Pappe + Edding) · 🦶 Tierspuren-Pfad vom Eingang · 🔊 Savannen-Sounds leise im Hintergrund (YouTube) · 📜 A3-Reservat-Karte als Tisch-Eyecatcher.",
       "giveaways": "Braune Papiertüte „Expeditions-Ausrüstung für ___“: Spezialisten-Lizenz mit konkretem Titel, Reservat-Ausweis im Scheckkartenformat (laminiert), Lieblings-Foto aus der Galerie, Klett-Abzeichen, Schoko-Goldmünzen, optional Mini-Tierfigur. Ca. 6 € pro Kind.",
       "shoppingList": [
@@ -930,7 +1032,7 @@
             {
               "n": 5,
               "name": "Station 5 (Tempel-Schloss)",
-              "content": "3 fehlende Buchstaben: T (Ort des falschen Tigers) plus E, L (am Tempel-Tor). Vorne T, hinten EL → TEMPEL."
+              "content": "3 fehlende Buchstaben: T (Ort des falschen Tigers) plus E, L (am Tempel-Tor). Vorne T, hinten EL → SCHUTZGEBIET."
             },
             {
               "n": 6,
@@ -987,7 +1089,7 @@
           "whyItWorks": "Wow funktioniert perfekt als Schlafparty-Auftakt: die Expedition tagsüber, die Nacht-Safari als ruhiger Übergang in den Abend. Kein Programm-Zwang nach 22 Uhr — die wissen selbst, wann Schluss ist."
         }
       ],
-      "food": "🎂 Reservat-Karten-Kuchen (1 Blechkuchen + 1 kleiner) · 🍕 Mini-Pizzen selbst belegt (18 Stück) · 🌯 Wraps „Anaconda“ (10 Stück) · 🥤 „Wasserloch“ 4 L Apfelschorle · 🍌 Affen-Bananen · 🥒 Gemüse-Buffet · 🧀 Käse-Würfel (400 g) · 🍿 Savannen-Popcorn (500 g) · 🍫 Schoko-Goldmünzen (Tempel-Schatz) · 🥐 bei Schlafparty: Frühstück (Croissants, Nutella, Saft).",
+      "food": "🎂 Reservat-Karten-Kuchen (1 Blechkuchen + 1 kleiner) · 🍕 Mini-Pizzen selbst belegt (18 Stück) · 🌯 Wraps „Anaconda“ (10 Stück, normale Wraps mit Frischkäse/Schinken/Salat — zusammengerollt sehen sie aus wie eine Schlange) · 🥤 „Wasserloch“ 4 L Apfelschorle (transparente Becher + blaue Halme) · 🍌 Affen-Bananen · 🥒 „Giraffen-Snack“ Gemüse-Buffet · 🧀 Käse-Würfel (400 g) · 🍿 Savannen-Popcorn (500 g) · 🍫 Schoko-Goldmünzen (Tempel-Schatz) · 🥐 bei Schlafparty: Frühstück (Croissants, Nuss-Nougat-Aufstrich, Saft). Story-Frame kostet null extra — die Umbenennung beim Servieren macht den Tisch zum Erlebnis.",
       "decoration": "Wow-Level: 🦁 Safari-Teller & Becher Set · 🎈 20 Luftballons grün/braun/ocker · 🪧 Safari-Girlande · 🌿 Krepppapier-Lianen von der Decke · 🌿 Grünpflanzen aus dem Wohnzimmer · 🪧 „Ranger-Camp“-Schild · 🦶 Tierspuren-Pfad bis zum Partyraum · 🔊 Savannen-Sounds · 📦 Tempel-Schatzkiste (Goldfolie + Schloss-Aufkleber) · 📜 A3-Reservat-Karte. Optional: aufblasbares Tier-Kostüm für ein Elternteil beim Mission-Briefing (~30 €).",
       "giveaways": "Braune Papiertüte „Expeditions-Ausrüstung für ___“: Filz-Buschhut (Highlight, geht direkt vom Kopf nach Hause), Spezialisten-Lizenz mit Titel, laminierter Reservat-Ausweis, selbst bemaltes Tarn-Bandana, Reservat-Logbuch (DIY mit Foto-Slot), Klett-Abzeichen „Senior“, Lieblings-Foto, Schoko-Goldmünzen, Gummibärchen, optional Mini-Tierfigur. Ca. 12 € pro Kind inkl. Buschhut.",
       "shoppingList": [
