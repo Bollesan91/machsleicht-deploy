@@ -232,7 +232,7 @@
               "content": "Nächstes Tier. 5-6 Runden reichen, dann kippt die Aufmerksamkeit."
             }
           ],
-          "safetyRule": null,
+          "safetyRule": "Bruellen ist FREIWILLIG. Wer das nicht mag: leise zeigen oder Geraeusch fluestern. Reizoffene/geraeuschempfindliche Kinder duerfen Pause machen.",
           "ageAdjust3": "Nur 3-4 sehr eindeutige Tiere, du machst die Geräusche selbst und groß vor.",
           "ageAdjust5": "5-Jährige dürfen selbst ein Tier vormachen und die anderen raten lassen.",
           "indoorTip": "Perfekt als ruhiger Lückenfüller drinnen — kein Material, kein Platz nötig.",
@@ -499,7 +499,7 @@
               "content": "5-Jährige dürfen selbst suchen. 3-Jährige bleiben beim gemeinsamen Verstecken — Allein-Suchen überfordert noch."
             }
           ],
-          "safetyRule": "Keine Verstecke in Schränken mit zufallender Tür, nichts wo ein Kind eingeklemmt werden kann. Vorhänge ohne lange Schnüre.",
+          "safetyRule": "Pflicht: jedes Versteck muss jederzeit fuer den Erwachsenen einsehbar bleiben. Kein vollstaendiges Verstecken bei U4. Erwachsener zaehlt mit OFFENEN Augen und schaut nach jedem Kind. Verboten: Truhen mit zufallender Tuer, Waeschekoerbe, hinterm Sofa kopfueber.",
           "ageAdjust3": "Gemeinsam verstecken, du suchst immer — Kind muss nicht allein bleiben oder allein suchen.",
           "ageAdjust5": "5-Jährige verstecken sich allein und übernehmen abwechselnd das Suchen.",
           "indoorTip": "In 60-75 m² ein Raum mit verschachtelten Verstecken reicht. Türen zu = wirkt nach mehr Welt.",
@@ -859,7 +859,7 @@
               "content": "5-Jährige dürfen selbst suchen. 3-Jährige bleiben beim gemeinsamen Verstecken — Allein-Suchen überfordert noch."
             }
           ],
-          "safetyRule": "Keine Verstecke in Schränken mit zufallender Tür, nichts wo ein Kind eingeklemmt werden kann. Vorhänge ohne lange Schnüre.",
+          "safetyRule": "Pflicht: jedes Versteck muss jederzeit fuer den Erwachsenen einsehbar bleiben. Kein vollstaendiges Verstecken bei U4. Erwachsener zaehlt mit OFFENEN Augen und schaut nach jedem Kind. Verboten: Truhen mit zufallender Tuer, Waeschekoerbe, hinterm Sofa kopfueber.",
           "ageAdjust3": "Gemeinsam verstecken, du suchst immer — Kind muss nicht allein bleiben oder allein suchen.",
           "ageAdjust5": "5-Jährige verstecken sich allein und übernehmen abwechselnd das Suchen.",
           "indoorTip": "In 60-75 m² ein Raum mit verschachtelten Verstecken reicht. Türen zu = wirkt nach mehr Welt.",

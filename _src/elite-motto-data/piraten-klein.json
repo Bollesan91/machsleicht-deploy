@@ -233,7 +233,7 @@
               "content": "Die Kiste wird im Kreis geoeffnet, jedes Kind nimmt sich eine Goldmuenze — gleich viele fuer alle."
             }
           ],
-          "safetyRule": "Spur nicht ueber Treppen, Stuehle oder erhoehte Verstecke legen — kein Klettern. Goldmuenzen nicht auf den Boden vor Tueren, ueber die gelaufen wird (Rutschgefahr).",
+          "safetyRule": "Schoko-Goldmuenzen sind bei 3-Jaehrigen Erstickungsrisiko (klein, rund, hart, Folie). Fuer Tauchspiel/Suchspiel: Plastik-Muenzen statt Schoko-Muenzen. Schoko-Muenzen nur zum Essen unter Sicht-Aufsicht; Folien sofort wegsammeln.",
           "ageAdjust3": "Spur kurz halten (6-8 Marken), Endpunkt sichtbar verstecken. Ein Erwachsener geht voran und 'sucht mit'.",
           "ageAdjust5": "Spur laenger, zwei, drei Etappen mit Mini-Aufgabe dazwischen ('Klatscht dreimal, dann geht's weiter'). Karte selbst halten lassen.",
           "indoorTip": "In 60-75 m2 geht die Spur ueber 2-3 Raeume — ums Sofa, durch den Flur, in die Garderobe. Reicht voellig.",
@@ -437,7 +437,7 @@
           "loudness": "halblaut",
           "effort": "leicht",
           "material": "Grosse Schuessel oder Wanne, Wasser oder trockene Fuellung (Sand, zerknuelltes Papier, getrocknete Erbsen), Schoko-Goldmuenzen in Folie oder Plastik-Muenzen, Handtuecher.",
-          "prepText": "Eine grosse Schuessel mit lauwarmem Wasser fuellen (oder trocken mit Sand/Papier, falls Wasser zu viel Chaos macht). Goldmuenzen reinwerfen. Handtuecher danebenlegen — es wird nass.",
+          "prepText": "TROCKENE Variante als Default (Tuechern auf dem Boden, Muenzen darunter): sicher fuer 3-Jaehrige. Eine grosse Schuessel mit lauwarmem Wasser fuellen (oder trocken mit Sand/Papier, falls Wasser zu viel Chaos macht). Goldmuenzen reinwerfen. Handtuecher danebenlegen — es wird nass.",
           "steps": [
             {
               "n": 1,
@@ -505,7 +505,7 @@
               "content": "Die Kiste wird im Kreis geoeffnet, jedes Kind nimmt sich eine Goldmuenze — gleich viele fuer alle."
             }
           ],
-          "safetyRule": "Spur nicht ueber Treppen, Stuehle oder erhoehte Verstecke legen — kein Klettern. Goldmuenzen nicht auf den Boden vor Tueren, ueber die gelaufen wird (Rutschgefahr).",
+          "safetyRule": "Schoko-Goldmuenzen sind bei 3-Jaehrigen Erstickungsrisiko (klein, rund, hart, Folie). Fuer Tauchspiel/Suchspiel: Plastik-Muenzen statt Schoko-Muenzen. Schoko-Muenzen nur zum Essen unter Sicht-Aufsicht; Folien sofort wegsammeln.",
           "ageAdjust3": "Spur kurz halten (6-8 Marken), Endpunkt sichtbar verstecken. Ein Erwachsener geht voran und 'sucht mit'.",
           "ageAdjust5": "Spur laenger, zwei, drei Etappen mit Mini-Aufgabe dazwischen ('Klatscht dreimal, dann geht's weiter'). Karte selbst halten lassen.",
           "indoorTip": "In 60-75 m2 geht die Spur ueber 2-3 Raeume — ums Sofa, durch den Flur, in die Garderobe. Reicht voellig.",
@@ -830,7 +830,7 @@
               "content": "Die Kiste wird im Kreis geoeffnet, jedes Kind nimmt sich eine Goldmuenze — gleich viele fuer alle."
             }
           ],
-          "safetyRule": "Spur nicht ueber Treppen, Stuehle oder erhoehte Verstecke legen — kein Klettern. Goldmuenzen nicht auf den Boden vor Tueren, ueber die gelaufen wird (Rutschgefahr).",
+          "safetyRule": "Schoko-Goldmuenzen sind bei 3-Jaehrigen Erstickungsrisiko (klein, rund, hart, Folie). Fuer Tauchspiel/Suchspiel: Plastik-Muenzen statt Schoko-Muenzen. Schoko-Muenzen nur zum Essen unter Sicht-Aufsicht; Folien sofort wegsammeln.",
           "ageAdjust3": "Spur kurz halten (6-8 Marken), Endpunkt sichtbar verstecken. Ein Erwachsener geht voran und 'sucht mit'.",
           "ageAdjust5": "Spur laenger, zwei, drei Etappen mit Mini-Aufgabe dazwischen ('Klatscht dreimal, dann geht's weiter'). Karte selbst halten lassen.",
           "indoorTip": "In 60-75 m2 geht die Spur ueber 2-3 Raeume — ums Sofa, durch den Flur, in die Garderobe. Reicht voellig.",
@@ -1038,6 +1038,10 @@
       {
         "topic": "📵 Kurz halten, frueh enden",
         "detail": "90 Minuten bis 2 Stunden sind genug. Lieber aufhoeren, wenn es am schoensten ist, als eine Stunde zu lang. Ein klares Ende-Ritual (Schatz teilen, Urkunde, Tschuess) gibt allen das Signal — sonst zerfasert die Party."
+      },
+      {
+        "tip": "Holzspiess-Sicherheit",
+        "content": "Bei 3-4-Jaehrigen Obst von Holzspiessen ABZIEHEN und einzeln servieren. Holzspiesse nur fuer Aeltere oder unter Aufsicht. Beim Kuchen vor dem Anschneiden die Holzspieß-Maste der Piraten-Deko ZIEHEN."
       }
     ],
     "educationalValue": "Die Kinder ueben ganz nebenbei: gemeinsam ein Ziel verfolgen, aufeinander warten und am Ende teilen. Eine Schatzsuche ohne Sieger zeigt 3-5-Jaehrigen, dass ein Erfolg schoener wird, wenn ihn alle haben — das ist die erste Erfahrung von Kooperation statt Konkurrenz. Dazu kommt ein Stueck Selbstwirksamkeit: 'Ich habe den Schatz mitgefunden' ist fuer ein Dreijaehriges ein echtes Erfolgserlebnis. Und das Rollenspiel — jemand anders sein, in eine Geschichte eintauchen — trainiert Fantasie und Sprache, ohne dass es nach Lernen aussieht."
