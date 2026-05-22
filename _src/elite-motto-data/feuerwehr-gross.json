@@ -140,7 +140,8 @@
       }
     ],
     "optOutNote": "In dem Alter selten Thema. Falls doch (Hautempfindlichkeit fürs Tattoo, oder „ich will keine Disponentin sein, ich will Brandermittler\"): tauschen ist erlaubt, einmal pro Crew. Eigener Name behalten geht auch. Aber wer eine Funktion zieht, übernimmt sie — das ist die Verbindlichkeit, die das Motto trägt.",
-    "materialNote": "[Feuerwehr-Tattoo-Set](https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht-21)* (~5 €), [Plastik-Helme](https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht-21)* (5–8 €/Stück, sehen wertig aus), die 12 Dienstausweise ausdrucken (kostenlos), Wachen-Tafel-Plakat (~1 €)."
+    "materialNote": "[Feuerwehr-Tattoo-Set](https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht-21)* (~5 €), [Plastik-Helme](https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht-21)* (5–8 €/Stück, sehen wertig aus), die 12 Dienstausweise ausdrucken (kostenlos), Wachen-Tafel-Plakat (~1 €).",
+    "scoringFormula": "Stationen-Punkte (max 10/Station Team) + Brandermittlung-Bonus (max 15 Team) + Funktion-Bonus (5/Person). Sieger-Trupp: Goldhelm-Sticker. Verlierer: Silber-Schlauch-Sticker. Jedes Kind: Urkunde mit individuellem Funktion-Lob."
   },
   "variants": [
     {
@@ -209,9 +210,30 @@
           "minAge": 9,
           "loudness": null,
           "effort": "hoch",
-          "material": "4 vorbereitete Verdächtigen-Karten (DIN A5, mit Foto/Zeichnung + Beschreibung — siehe Vorlage in Eltern-Tipps), 4 „Beweise\" zum Verstecken (siehe unten), 1 Fall-Akte pro Crew (DIN A4 ausgedruckt mit Tabellen zum Ausfüllen), 2-3 [Lupen](https://www.amazon.de/s?k=lupe+kinder+detektiv&tag=machsleicht-21)* (~3 €/Stück), Klemmbretter, Stifte",
+          "material": "4 Verdaechtigen-Karten (DIN A5), 4 Beweis-Karten, 1 Tatort-Briefing, 1 Loesungsblatt im Umschlag. Vorlagen als PDF im machsleicht-Generator.",
           "prepText": "",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Tatort-Briefing",
+              "content": "Brand im Kindergarten-Lagerraum. Brandbeginn: 14:30. 4 Verdaechtige waren im Gebaeude. Eure Aufgabe: Indizien sammeln + Ausschluss-Verfahren."
+            },
+            {
+              "name": "Verdaechtige",
+              "content": "A) Hausmeister Mueller (14:00-15:00 Heizkeller). B) Erzieherin Schmidt (ab 14:00 Bastel-Raum). C) Vater Becker (kam 14:35). D) Baecker (Lieferung 14:25, ging 14:32)."
+            },
+            {
+              "name": "Beweise",
+              "content": "Beweis 1: Streichholz im Lagerraum. Beweis 2: Lieferschein (14:32). Beweis 3: Heizkessel-Logbuch (14:30 Wartung). Beweis 4: Kind sagt: Onkel war noch nicht da."
+            },
+            {
+              "name": "Indizienkette",
+              "content": "Hausmeister: Logbuch deckt 14:30 ab = ALIBI. Erzieherin: Lieferschein 14:32 bestaetigt = ALIBI. Baecker: hatte 7 Min Zeit, ging als letzter durch Lager. Vater: erst 14:35 = ALIBI."
+            },
+            {
+              "name": "Loesung",
+              "content": "TAETER = D) Baecker. Motiv: Streit mit Hausmeister. Beweis: Streichholz aus Baecker-Brigade-Set. Kinder gleichen 4 Verdaechtige + 4 Beweise ab."
+            }
+          ],
           "safetyRule": null,
           "ageAdjust6": "Beweise deutlicher kennzeichnen, Verdächtige reduzieren auf 3, Diskussionsphase kürzer (10 Min. statt 15).",
           "ageAdjust8": "Volle 4 Verdächtige, ggf. einen 5. „Roten Hering\" einbauen, Diskussion freier laufen lassen, du moderierst weniger.",
@@ -428,7 +450,28 @@
           "effort": "hoch",
           "material": "Wie in Minimal-Variante, plus: 3 Eltern oder ältere Geschwister als „Verdächtige\" (mit Verdächtigen-Karte als Skript), 1 Stuhl als „Vernehmungs-Sitz\". Die 4. Verdächtige (Frau Schneider, die Köchin) wird NICHT befragt — ist abwesend, was Teil der Lösung ist.",
           "prepText": "Wie in Minimal, plus eingefügte Vernehmungs-Phase nach der Spurensuche:",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Tatort-Briefing",
+              "content": "Brand im Kindergarten-Lagerraum. Brandbeginn: 14:30. 4 Verdaechtige waren im Gebaeude. Eure Aufgabe: Indizien sammeln + Ausschluss-Verfahren."
+            },
+            {
+              "name": "Verdaechtige",
+              "content": "A) Hausmeister Mueller (14:00-15:00 Heizkeller). B) Erzieherin Schmidt (ab 14:00 Bastel-Raum). C) Vater Becker (kam 14:35). D) Baecker (Lieferung 14:25, ging 14:32)."
+            },
+            {
+              "name": "Beweise",
+              "content": "Beweis 1: Streichholz im Lagerraum. Beweis 2: Lieferschein (14:32). Beweis 3: Heizkessel-Logbuch (14:30 Wartung). Beweis 4: Kind sagt: Onkel war noch nicht da."
+            },
+            {
+              "name": "Indizienkette",
+              "content": "Hausmeister: Logbuch deckt 14:30 ab = ALIBI. Erzieherin: Lieferschein 14:32 bestaetigt = ALIBI. Baecker: hatte 7 Min Zeit, ging als letzter durch Lager. Vater: erst 14:35 = ALIBI."
+            },
+            {
+              "name": "Loesung",
+              "content": "TAETER = D) Baecker. Motiv: Streit mit Hausmeister. Beweis: Streichholz aus Baecker-Brigade-Set. Kinder gleichen 4 Verdaechtige + 4 Beweise ab."
+            }
+          ],
           "safetyRule": null,
           "ageAdjust6": "Vernehmungs-Phase auf 10 Min. kürzen, Skripte einfacher.",
           "ageAdjust8": "Volle Phase, ggf. Skripte komplexer (Lügen einbauen, die Crew durchschauen muss).",
@@ -670,14 +713,36 @@
           "effort": null,
           "material": "Wie in Standard-Variante, plus: 2 weitere Verdächtigen-Karten (insgesamt 6), 2 weitere Beweise (insgesamt 6), erweiterte Fall-Akte mit Tabellen-Format, mehrere Räume als „Beweis-Bereiche\" (Wohnzimmer, Küche, Garten, Keller falls vorhanden), 4 Lupen, ggf. UV-Taschenlampe für versteckten Hinweis (~10 €), 3-4 Eltern oder ältere Geschwister als Verdächtige",
           "prepText": "Wie Standard-Variante, aber mit deutlich mehr Tiefe. 6 Verdächtige statt 4, 6 Beweise statt 4, 8 Phasen statt 6.",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Tatort-Briefing",
+              "content": "Brand im Kindergarten-Lagerraum. Brandbeginn: 14:30. 4 Verdaechtige waren im Gebaeude. Eure Aufgabe: Indizien sammeln + Ausschluss-Verfahren."
+            },
+            {
+              "name": "Verdaechtige",
+              "content": "A) Hausmeister Mueller (14:00-15:00 Heizkeller). B) Erzieherin Schmidt (ab 14:00 Bastel-Raum). C) Vater Becker (kam 14:35). D) Baecker (Lieferung 14:25, ging 14:32)."
+            },
+            {
+              "name": "Beweise",
+              "content": "Beweis 1: Streichholz im Lagerraum. Beweis 2: Lieferschein (14:32). Beweis 3: Heizkessel-Logbuch (14:30 Wartung). Beweis 4: Kind sagt: Onkel war noch nicht da."
+            },
+            {
+              "name": "Indizienkette",
+              "content": "Hausmeister: Logbuch deckt 14:30 ab = ALIBI. Erzieherin: Lieferschein 14:32 bestaetigt = ALIBI. Baecker: hatte 7 Min Zeit, ging als letzter durch Lager. Vater: erst 14:35 = ALIBI."
+            },
+            {
+              "name": "Loesung",
+              "content": "TAETER = D) Baecker. Motiv: Streit mit Hausmeister. Beweis: Streichholz aus Baecker-Brigade-Set. Kinder gleichen 4 Verdaechtige + 4 Beweise ab."
+            }
+          ],
           "safetyRule": null,
           "ageAdjust6": null,
           "ageAdjust8": "Volle Wow-Variante. Ggf. einen Plot-Twist mehr einbauen — z.B. einen 7. Verdächtigen, der erst in Phase 4 auftaucht („Es kommt ein neuer Zeuge — was sagt er?\").",
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorks": null,
+          "phaseFlow": "Phase 1 Code -> oeffnet Phase 2 Werkzeugkasten -> Phase 3 Funk -> Phase 4 Notruf-Sim -> Phase 5 Tatort -> Phase 6 Taeter. HINT-SYSTEM: pro Phase 1 Tipp-Karte im Umschlag, Erwachsener gibt nach 5 Min Stillstand."
         },
         {
           "name": "🏆 Große Bewertete Zeremonie + Ehrentafel",

@@ -132,7 +132,7 @@
           "material": "1 Rotkohl (Supermarkt, ~2 €), 8 durchsichtige Becher pro Kind, Essig, Backpulver/Natron, Zitronensaft, Spülmittel, Waschsoda (Drogerie ~1 €), Pipetten oder Löffel, Lebensmittelfarben (optional), 1 Tablett pro Kind (gegen Sauerei)",
           "prepText": "",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Waschsoda (Natriumcarbonat) reizt Augen + Haut. Schutzbrille für Kinder bei Mix-Phase. Nicht in Augen reiben, Hände nach jedem Experiment waschen. Nichts trinken. Tablett mit Rand gegen Überlauf. Erwachsene*r misst die Mengen ab.",
           "ageAdjust6": "Du erklärst die Grundregel (sauer = rosa, basisch = grün) und lässt sie dann experimentieren.",
           "ageAdjust8": "pH-Skala aufmalen, Kinder ordnen ihre Ergebnisse ein. Bonusaufgabe: „Misch den perfekten Lila-Trank\" (= Neutralpunkt finden).",
           "indoorTip": null,
@@ -286,7 +286,7 @@
           "material": "1 Rotkohl (~2 €), 8 durchsichtige Becher pro Kind, Essig, Backpulver/Natron, Zitronensaft, Spülmittel, Waschsoda (~1 €), Pipetten oder Löffel, 1 Tablett pro Kind (gegen Sauerei)",
           "prepText": "",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Waschsoda (Natriumcarbonat) reizt Augen + Haut. Schutzbrille für Kinder bei Mix-Phase. Nicht in Augen reiben, Hände nach jedem Experiment waschen. Nichts trinken. Tablett mit Rand gegen Überlauf. Erwachsene*r misst die Mengen ab.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": null,
@@ -322,8 +322,29 @@
           "loudness": "laut",
           "effort": "hoch",
           "material": "5 Umschläge mit Rätseln, 1 Zahlenschloss (Fahrradschloss, ~5 € oder vorhandenes), 1 Schatztruhe (Schuhkarton, bemalt/beklebt), Inhalt: Süßigkeiten + Einhorn-Charms, optional: [UV-Taschenlampe*](https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht-21) (~12 €) + [UV-Stift*](https://www.amazon.de/s?k=uv+geheimschrift+stift+unsichtbar&tag=machsleicht-21) (~7 €)",
-          "prepText": "2 Teams (4 vs. 4, per Los). Jedes Team bekommt die gleichen 5 Rätsel, aber in unterschiedlicher Reihenfolge. Wer zuerst den 4-stelligen Code für das Zahlenschloss knackt, öffnet die Schatztruhe. Der Code ist:",
-          "steps": [],
+          "prepText": "2 Teams (4 vs. 4, per Los). Jedes Team bekommt die gleichen 5 Rätsel, aber in unterschiedlicher Reihenfolge. Wer zuerst den 4-stelligen Code für das Zahlenschloss knackt, öffnet die Schatztruhe. Der Code ist 9312 (Default-Code, ändere bei Bedarf am Schloss). Die 4 Ziffern werden über 4 Rätsel ermittelt — jede Station liefert eine Ziffer. Vorab 5 Rätsel-Kärtchen ausdrucken + Vorhängeschloss am Schatzkasten anbringen.",
+          "steps": [
+            {
+              "name": "Rätsel 1: Sternenkarte (Ziffer 9)",
+              "content": "Wieviele Sterne sind im Sternenbild \"Großer Bär\"? (Lösung: 9 Hauptsterne → Ziffer 1 des Codes = 9)"
+            },
+            {
+              "name": "Rätsel 2: Einhorn-Reim (Ziffer 3)",
+              "content": "\"Drei Hörner haben wir gefunden, drei Magie-Schalen tief im Bunten.\" — Ziffer 2 = 3"
+            },
+            {
+              "name": "Rätsel 3: Farbcode (Ziffer 1)",
+              "content": "In welcher Reihenfolge liegen die Regenbogen-Farben? Erste Farbe = Rot = 1. Buchstabe → Ziffer 3 = 1"
+            },
+            {
+              "name": "Rätsel 4: Mathe-Rune (Ziffer 2)",
+              "content": "2 Einhorn-Pakete × 1 Pegasus = ? Lösung 2 → Ziffer 4 = 2"
+            },
+            {
+              "name": "Final: Schloss öffnen",
+              "content": "Code 9-3-1-2 → Schatzkasten öffnet. Drin: Mitgebsel + Urkunde für jedes Kind."
+            }
+          ],
           "safetyRule": null,
           "ageAdjust6": null,
           "ageAdjust8": null,
@@ -678,7 +699,7 @@
       },
       {
         "n": 2,
-        "content": "Mirror Glaze: 200 g weiße Schokolade + 150 g Zucker + 150 ml Kondensmilch + 10 g Gelatine + 150 ml Wasser. Aufkochen, auf 35°C abkühlen lassen. In 3 Schüsseln teilen."
+        "content": "Mirror Glaze: 200 g weiße Schokolade + 150 g Zucker + 150 ml Kondensmilch + 10 g Gelatine + 150 ml Wasser. Aufkochen, auf 30-32°C abkühlen lassen. In 3 Schüsseln teilen."
       },
       {
         "n": 3,

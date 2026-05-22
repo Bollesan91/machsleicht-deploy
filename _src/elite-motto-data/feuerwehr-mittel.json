@@ -58,7 +58,7 @@
     "setupSteps": [
       {
         "title": "Helm-Box vorbereiten",
-        "content": "alter Schuhkarton oder Pappkarton-Helm aus dem Bastelladen (~3 €), darin 12 Zettel mit Name + Funktion (Liste unten zum Ausdrucken)."
+        "content": "alter Schuhkarton oder Pappkarton-Helm aus dem Bastelladen (~3 €), darin so viele Zettel wie Gäste (Standard: 8 Zettel für 6-8 Kinder) mit Name + Funktion (Liste unten zum Ausdrucken)."
       },
       {
         "title": "Kind kommt an",
@@ -663,14 +663,14 @@
           "indoor": true,
           "outdoor": false,
           "duration": 10,
-          "minAge": 7,
+          "minAge": 6,
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "3 vorbereitete Bilder/Karten (1× Notruf-Telefon, 1× verschiedene Feuer-Symbole für Brandklassen, 1× Rauch vor Feuer). Ein Stuhl als „Wachen-Pult\". Optional: ein Wachen-Plakat im Hintergrund (siehe Deko).",
           "prepText": "Kinder sitzen halbkreisförmig. Du stehst vorn — wie eine Lehrerin auf einer echten Wachen-Schulung. 10 Minuten reichen, länger wird langweilig.",
           "steps": [],
           "safetyRule": null,
-          "ageAdjust6": "Nur Punkt 1 (Notruf 112). Brandklassen und Rauch zu komplex.",
+          "ageAdjust6": "6-Jährige: 2 Hauptregeln statt Vortrag — Bilder statt Text-Karten, max 5 Min.",
           "ageAdjust8": "Alle 3 Punkte. Sie können sich das merken und sind stolz drauf.",
           "indoorTip": null,
           "outdoorTip": null,
@@ -743,7 +743,7 @@
               "content": "Wer hat welches Tier gerettet? Polaroid mit dem geretteten Tier in der Hand — kommt an die Ehrentafel."
             }
           ],
-          "safetyRule": null,
+          "safetyRule": "Nebelmaschine: nur kurze Stöße (max 3 Sek), Fenster auf, Gerät außer Kinder-Reichweite, nie direkt auf Gesichter. Asthma-Kinder vorher fragen. Rauchmelder im Blick behalten.",
           "ageAdjust6": "Wenig Nebel (kurz an, lange aus), Bereich klein, du bist sichtbar dabei.",
           "ageAdjust8": "Volle Inszenierung. Sie genießen das Drama.",
           "indoorTip": null,
@@ -756,7 +756,7 @@
           "indoor": true,
           "outdoor": false,
           "duration": 25,
-          "minAge": 7,
+          "minAge": 6,
           "loudness": "ruhig",
           "effort": "hoch",
           "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
@@ -789,7 +789,7 @@
             }
           ],
           "safetyRule": null,
-          "ageAdjust6": null,
+          "ageAdjust6": "6-Jährige: Verdächtige als Symbol-Karten (Bild), nicht Text. Erwachsener moderiert.",
           "ageAdjust8": "Mehr Raum für eigene Hypothesen, du gibst weniger vor.",
           "indoorTip": null,
           "outdoorTip": null,

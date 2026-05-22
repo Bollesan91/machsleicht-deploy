@@ -11,7 +11,7 @@ var ELITE_MOTTO_DATA = {
       "schema_version": "1.0",
       "purpose": "Feuerwehr 3-5 (klein) — Phase C #2 Elite-Slot",
       "phase_b_complete": "2026-05-19",
-      "phase_b_method": "Direct draft — klein-spezifika (Eltern Co-Aufsicht, max 5 Kinder, 1.5-2h, keine Sirene, keine Wunderkerze) durchgehend angewandt."
+      "phase_b_method": "Direct draft — klein-spezifika (Eltern Co-Aufsicht, max 5 Kinder, 1.5-2h, keine Hand-Signal \"Notruf!\" + leiser Spruch. keine Wunderkerze) durchgehend angewandt."
     },
     "motto": "feuerwehr",
     "ageGroup": "klein",
@@ -64,7 +64,7 @@ var ELITE_MOTTO_DATA = {
       "setupSteps": [
         {
           "title": "Helme bereitstellen + Aufkleber-Box vorbereiten",
-          "content": "5 Pappkarton-Helme (einer pro Kind, ~3 €/Stück oder Schuhkartons selbst rot anmalen) liegen auf dem Tisch. Daneben eine kleine Box (Schuhkarton reicht) mit den 5 Aufkleber-Bögen — jeweils ein Funktions-Bildchen (Schlauch, Pflaster, Sirene, Schwimmreif, Helm)."
+          "content": "5 Pappkarton-Helme (einer pro Kind, ~3 €/Stück oder Schuhkartons selbst rot anmalen) liegen auf dem Tisch. Daneben eine kleine Box (Schuhkarton reicht) mit den 5 Aufkleber-Bögen — jeweils ein Funktions-Bildchen (Schlauch, Pflaster, Hand-Signal \"Notruf!\" + leiser Spruch. Schwimmreif, Helm)."
         },
         {
           "title": "Kind kommt an",
@@ -94,7 +94,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:00",
             "title": "🚒 Schicht-Appell & Helm-Probe",
-            "description": "Beim Reinkommen bekommt jedes Kind seinen Helm aufgesetzt + zieht einen Aufkleber-Dienstausweis (Schlauch/Pflaster/Sirene/Schwimmreif/Helm). Foto pro Kind. Sobald alle da sind: gemeinsamer Schichtbeginn-Spruch („Wir helfen, wo Hilfe gebraucht wird. Los geht's!\"). Eltern können beim Helm-Aufsetzen helfen — geht zu fünft schneller, als du allein."
+            "description": "Beim Reinkommen bekommt jedes Kind seinen Helm aufgesetzt + zieht einen Aufkleber-Dienstausweis (Schlauch/Pflaster/ Hand-Signal \"Notruf!\" + leiser Spruch. Foto pro Kind. Sobald alle da sind: gemeinsamer Schichtbeginn-Spruch („Wir helfen, wo Hilfe gebraucht wird. Los geht's!\"). Eltern können beim Helm-Aufsetzen helfen — geht zu fünft schneller, als du allein."
           },
           {
             "time": "15:15",
@@ -126,11 +126,11 @@ var ELITE_MOTTO_DATA = {
             "minAge": 3,
             "loudness": "ruhig",
             "effort": "leicht",
-            "material": "1–2 Dosen Rasierschaum (Drogerie-Eigenmarke, parfümfrei, ~3 € pro Dose), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder",
+            "material": "1–2 Dosen Rasierschaum (Drogerie-Eigenmarke, parfümfrei, ~3 € pro Dose), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
             "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
             "steps": [],
             "safetyRule": null,
-            "ageAdjust6": "Tiere nur leicht bedecken, Eltern müssen daneben sein. Manche schmieren sich gern Schaum ins Gesicht — okay, weglächeln, abwischen.",
+            "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt 5 Min mit klarem Wasser ausspülen.",
             "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
             "indoorTip": null,
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
@@ -157,7 +157,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": null
           }
         ],
-        "food": "🎂Feuerwehrauto-Kuchen1 Kastenform\n🥤Apfelschorle1,5 l\n🥨Brezeln1 Tüte\n🥒Gurkensticks1 Gurke\n\n💡 Bei 3–5 weniger ist mehr\nNicht überfüttern. 1 Kuchenstück + 1 kleines Glas Apfelschorle + ein paar Knabbersachen reicht. Die Kinder essen sowieso wenig — ihre Mägen sind klein und die Aufregung schiebt das Hungergefühl beiseite. Wenn du Würstchen anbietest: weiche, in kleine Stücke geschnitten (Erstickungsrisiko bei runden ganzen Würstchen). Süßigkeiten sparsam — eine Tafel Schoki halbiert reicht für 5 Kinder.",
+        "food": "🎂Feuerwehrauto-Kuchen1 Kastenform\n🥤Apfelschorle2 l\n🥨Brezeln1 Tüte\n🥒Gurkensticks1 Gurke\n\n💡 Bei 3–5 weniger ist mehr\nNicht überfüttern. 1 Kuchenstück + 1 kleines Glas Apfelschorle + ein paar Knabbersachen reicht. Die Kinder essen sowieso wenig — ihre Mägen sind klein und die Aufregung schiebt das Hungergefühl beiseite. Wenn du Würstchen anbietest: weiche, in kleine Stücke geschnitten (Erstickungsrisiko bei runden ganzen Würstchen). Süßigkeiten sparsam — eine Tafel Schoki halbiert reicht für 5 Kinder.",
         "decoration": "🎈 Rote Luftballons8 Stk. ~2 €Reichen für die Grundstimmung\n🚧 Absperrband am Eingang~6 €Kinder lieben das\n🖍️ Ausmalbilder auf dem TischKostenloskribbelbunt.de\n\n💡 Minimal-Deko-Regel:\n3 Dinge reichen: Ballons, Absperrband am Eingang, Ausmalbilder auf dem Tisch. Die Helme der Kinder + Aufkleber + die Schaum-Wanne SIND die Deko — es muss nicht der Wohnzimmer-Wand-Ballon-Bogen sein. Pinterest-Marathon ist verboten.",
         "giveaways": "⛑️ 1 Pappkarton-Helm (wenn nach 90 Min. noch intakt — meistens ja)\n🚒 1 Mini-Feuerwehrauto (selbst aus dem Schaum „gerettet\")\n💫 1 Aufkleber-Bogen Feuerwehr (3-5-tauglich, große Motive)\n🖍️ Das eigene Helm-Bild zum Mitnehmen\n🍭 1 kleine Tüte Gummibärchen\n🏆 Tag-1-Feuerwehrkind-Urkunde mit Funktion\n\nHelm separat (zu groß für die Tüte), Rest in rot-weiße Papiertüte (10 Stk. ~1–2 € bei DM/Action) mit „Crew-Geschenk für ___\" beschriften. Kosten: ~5,50 € pro Kind (inkl. Helm).",
         "shoppingList": [
@@ -279,7 +279,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:30",
             "title": "🚨 Mini-Einsatz: Tiere retten",
-            "description": "DER Höhepunkt für die Kleinen. 20 Min. — Sirene vom Handy kurz an, Notruf, Crew geht durch die Wohnung und rettet 6–8 Kuscheltiere. Eltern begleiten. Anleitung unten. Wer das nicht vergisst, dann das."
+            "description": "DER Höhepunkt für die Kleinen. 20 Min. — Hand-Signal \"Notruf!\" + leiser Spruch. Notruf, Crew geht durch die Wohnung und rettet 6–8 Kuscheltiere. Eltern begleiten. Anleitung unten. Wer das nicht vergisst, dann das."
           },
           {
             "time": "15:50",
@@ -325,12 +325,12 @@ var ELITE_MOTTO_DATA = {
             "minAge": 3,
             "loudness": "mittel",
             "effort": "mittel",
-            "material": "Kurzer Sirenen-Sound vom Handy (10 Sekunden, NICHT 30 — bei 3-5 zu lang), 6–8 Kuscheltiere, 1 Pappkarton oder Decke als „Krankenhaus\", optional kleine Decken zum Abdecken der Tiere",
+            "material": "Kurzer Hand-Signal \"Notruf!\" + leiser Spruch. NICHT 30 — bei 3-5 zu lang), 6–8 Kuscheltiere, 1 Pappkarton oder Decke als „Krankenhaus\", optional kleine Decken zum Abdecken der Tiere",
             "prepText": "Vorbereitung 5 Min. vor dem Spiel: 6–8 Kuscheltiere im Wohnzimmer/Flur „verstecken\" — gut sichtbar (hinter Vorhang, unter Tisch, auf Stuhl), nicht zu schwer zu finden. Bei 3-5 ist das Finden Teil des Spaßes, nicht die Herausforderung.",
             "steps": [
               {
                 "n": 1,
-                "name": "Sirene",
+                "name": "Hand-Signal \"Notruf!\" + leiser Spruch.",
                 "content": "10 Sek. vom Handy (nicht zu laut — kann erschrecken). Du sagst dramatisch: „Ein Notruf! Hilfe gebraucht!\""
               },
               {
@@ -370,7 +370,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 3,
             "loudness": "ruhig",
             "effort": "leicht",
-            "material": "Wie in Minimal-Variante. Rasierschaum + Spielzeug-Tiere + Wanne + Pinsel.",
+            "material": "Wie in Minimal-Variante. Rasierschaum + Spielzeug-Tiere + Wanne + Pinsel. (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
             "prepText": "Wie in Minimal-Variante (siehe oben). Funktioniert als ruhiger Abschluss perfekt — die Kinder kommen runter, dürfen taktil arbeiten, und retten nochmal etwas. Ankerpunkt für die Stimmung vor der Urkunden-Übergabe.",
             "steps": [],
             "safetyRule": null,
@@ -523,7 +523,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:20",
             "title": "🚨 Mini-Einsatz mit Parcours",
-            "description": "25 Min. — Wow-Variante: zwischen Crew und Tieren ist ein kleiner Parcours (über Kissen klettern, durch einen Tunnel-Karton kriechen, unter einem Stuhl durch). Sirene + Notruf wie in Standard. Eltern führen jedes Kind durch den Parcours. Anleitung unten."
+            "description": "25 Min. — Wow-Variante: zwischen Crew und Tieren ist ein kleiner Parcours (über Kissen klettern, durch einen Tunnel-Karton kriechen, unter einem Stuhl durch). Hand-Signal \"Notruf!\" + leiser Spruch. Eltern führen jedes Kind durch den Parcours. Anleitung unten."
           },
           {
             "time": "15:45",
@@ -551,7 +551,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": null,
             "effort": "leicht",
             "material": "5 weiße/unbedruckte [Pappkarton-Helme zum Bemalen](https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht-21)* (~4 €/Stück), dicke Filzstifte (rot, blau, gelb, schwarz), [große Feuerwehr-Aufkleber](https://www.amazon.de/s?k=feuerwehr+sticker+kinder+gross&tag=machsleicht-21)* (~5 €), optional Glitzer-Kleber, alte Tischdecke unterlegen, Eltern-Hilfe!",
-            "prepText": "Ankunfts-Aktivität: Helme + Stifte liegen schon auf dem Tisch. Jedes Kind nimmt einen Helm und bemalt ihn — rote Streifen, „112\" drauf, Aufkleber von Schlauchsymbolen oder Sirenen, Glitzer, was sie wollen. Keine Vorgabe, keine Bewertung.\n\nEltern dürfen helfen — gerade bei 3-Jährigen, die Mühe mit Filzstift-Druck haben. Kein Helm muss „gut\" werden — der Wert ist, dass es ihrer ist.",
+            "prepText": "Ankunfts-Aktivität: Helme + Stifte liegen schon auf dem Tisch. Jedes Kind nimmt einen Helm und bemalt ihn — rote Streifen, „112\" drauf, Aufkleber von Schlauchsymbolen oder Hand-Signal \"Notruf!\" + leiser Spruch. Glitzer, was sie wollen. Keine Vorgabe, keine Bewertung.\n\nEltern dürfen helfen — gerade bei 3-Jährigen, die Mühe mit Filzstift-Druck haben. Kein Helm muss „gut\" werden — der Wert ist, dass es ihrer ist.",
             "steps": [],
             "safetyRule": null,
             "ageAdjust6": "Kritzeln ist Bemalen. Aufkleber sind die Hauptfreude — Filzstift sekundär. Eltern müssen daneben sitzen.",
@@ -638,8 +638,8 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": null
           }
         ],
-        "food": "🎂Feuerwehrauto-Kuchen1 Kastenform + Wunderkerze\n🥤Apfelschorle2 l\n🥨Brezeln + Salzstangenje 1 Tüte\n🥒Gemüsesticks + HummusGurke + Möhre\n🌭Mini-Würstchen (weich)10 Stk., klein geschnitten\n🍓Erdbeeren / Beeren200 g",
-        "decoration": "🚒 Feuerwehr-Teller & BecherSet ~8 €\n🚧 Absperrband (50 m)~6 €\n🎈 Rote Luftballons12 Stk. ~4 €\n⛑️ Weiße Pappkarton-Helme zum Bemalen5 Stk. ~20 €Highlight-Material\n📺 Kurzer Sirene-Loop auf HandyKostenlos10 Sekunden, NICHT 30\n📸 Polaroid oder Sofortdruck~10 €Rossmann/dm Sofortdruck",
+        "food": "🎂Feuerwehrauto-Kuchen1 Kastenform + \n🥤Apfelschorle2 l\n🥨Brezeln + Salzstangenje 1 Tüte\n🥒Gemüsesticks + HummusGurke + Möhre\n🌭Mini-Würstchen (weich)10 Stk., klein geschnitten\n🍓Erdbeeren / Beeren200 g",
+        "decoration": "🚒 Feuerwehr-Teller & BecherSet ~8 €\n🚧 Absperrband (50 m)~6 €\n🎈 Rote Luftballons12 Stk. ~4 €\n⛑️ Weiße Pappkarton-Helme zum Bemalen5 Stk. ~20 €Highlight-Material\n📺 Kurzer Hand-Signal \"Notruf!\" + leiser Spruch. NICHT 30\n📸 Polaroid oder Sofortdruck~10 €Rossmann/dm Sofortdruck",
         "giveaways": "⛑️ 1 selbst bemalter Pappkarton-Helm (Highlight, einzigartig)\n🚒 1 Mini-Feuerwehrauto (selbst aus dem Schaum „gerettet\")\n📸 1 Polaroid mit Funktion auf der Rückseite\n💫 1 Aufkleber-Bogen Feuerwehr\n🍭 1 Tüte Gummibärchen oder Lolli\n🏆 Tag-1-Feuerwehrkind-Urkunde\n\nIn rot-weiße Papiertüte (Helm separat — ist zu groß für die Tüte). Kosten: ~10 € pro Kind.",
         "shoppingList": [
           {
@@ -808,10 +808,6 @@ var ELITE_MOTTO_DATA = {
         {
           "n": 5,
           "content": "„112\" mit weißer Glasur oder weißem Zuckerstift auf die Seite schreiben. Optional: blaues Blaulicht aus Smartie oder Blaubeere oben drauf."
-        },
-        {
-          "n": 6,
-          "content": "Wow-Variante: Wunderkerze in den Kuchen stecken, beim „Happy Birthday\" anzünden."
         }
       ],
       "meta": {
@@ -830,7 +826,7 @@ var ELITE_MOTTO_DATA = {
       "structured": [
         {
           "topic": "🧠 Was 3–5-Jährige bei dieser Party wirklich mitnehmen",
-          "detail": "Kinder in dem Alter merken sich nicht „112\" oder Brandklassen — die Theorie kommt später bei den Älteren. Was sie aus dieser Party mitnehmen: 1. Helfen ist toll. Sie haben Tiere gerettet, gemeinsam, mit Helm. Das ist ein Selbstbild-Anker für die nächsten Jahre. 2. Eine Sirene ist nicht beängstigend, sondern bedeutet „jemand hilft jetzt\". Das ist Brandschutz-Erziehung im weitesten Sinn — Vertrauen statt Angst. 3. Was eine Feuerwehr macht, in einfachen Bildern: Schlauch, Helm, Auto, Sirene. Das nehmen sie mit, wenn ihnen später die echte Theorie begegnet (in Schule oder in der Brandschutz-Erziehung im Kindergarten). Die echte Lehre kommt noch — diese Party legt das Fundament."
+          "detail": "Kinder in dem Alter merken sich nicht „112\" oder Brandklassen — die Theorie kommt später bei den Älteren. Was sie aus dieser Party mitnehmen: 1. Helfen ist toll. Sie haben Tiere gerettet, gemeinsam, mit Helm. Das ist ein Selbstbild-Anker für die nächsten Jahre. 2. Eine Hand-Signal \"Notruf!\" + leiser Spruch. sondern bedeutet „jemand hilft jetzt\". Das ist Brandschutz-Erziehung im weitesten Sinn — Vertrauen statt Angst. 3. Was eine Feuerwehr macht, in einfachen Bildern: Schlauch, Helm, Auto, Hand-Signal \"Notruf!\" + leiser Spruch. Das nehmen sie mit, wenn ihnen später die echte Theorie begegnet (in Schule oder in der Brandschutz-Erziehung im Kindergarten). Die echte Lehre kommt noch — diese Party legt das Fundament."
         },
         {
           "topic": "🚨 Allergien vorher abfragen",
@@ -850,7 +846,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "topic": "😢 Plan für Tränen-Momente",
-          "detail": "Bei 3-5 weint mindestens ein Kind in 90 Min. — das ist normal. Häufige Auslöser: Sirene war zu laut, Schaum schreckt, Kind will nicht den falschen Aufkleber, Eltern sind kurz weg. Plan: Eltern bleiben dabei, ruhige Ecke (Sofa) für „kurze Pause\" einrichten, Kuscheltier griffbereit, kein Drama wenn ein Kind aussetzt. Nach 5 Min. Pause sind die meisten wieder da. Zwingen ist kontraproduktiv."
+          "detail": "Bei 3-5 weint mindestens ein Kind in 90 Min. — das ist normal. Häufige Auslöser: Hand-Signal \"Notruf!\" + leiser Spruch. Schaum schreckt, Kind will nicht den falschen Aufkleber, Eltern sind kurz weg. Plan: Eltern bleiben dabei, ruhige Ecke (Sofa) für „kurze Pause\" einrichten, Kuscheltier griffbereit, kein Drama wenn ein Kind aussetzt. Nach 5 Min. Pause sind die meisten wieder da. Zwingen ist kontraproduktiv."
         }
       ],
       "educationalValue": null
@@ -871,7 +867,7 @@ var ELITE_MOTTO_DATA = {
       },
       {
         "q": "Müssen Eltern bei der Feuerwehr-Party für 3–5 wirklich bleiben?",
-        "a": "Ja, bei dieser Altersgruppe ist Eltern-Anwesenheit Pflicht — und zwar als aktive Helfer, nicht als Beobachter. Begründung: Bei 3-5 brauchst du Hilfe für Toilettenbegleitung, Trösten, Spritzpistole-Halten, Schaum-Nachfüllen. Du allein schaffst das für 5 Kinder nicht. Schreib in die Einladung: „Ein Elternteil bleibt bitte mit dem Kind und hilft mit.\" Verteile Aufgaben (Foto, Sirene, Pinsel) — Eltern, die einen Job haben, sind glücklicher als die, die rumstehen. Aus dem „Eltern-Café-Problem\" wird so „Crew-Eltern als Co-Wachleiter\"."
+        "a": "Ja, bei dieser Altersgruppe ist Eltern-Anwesenheit Pflicht — und zwar als aktive Helfer, nicht als Beobachter. Begründung: Bei 3-5 brauchst du Hilfe für Toilettenbegleitung, Trösten, Spritzpistole-Halten, Schaum-Nachfüllen. Du allein schaffst das für 5 Kinder nicht. Schreib in die Einladung: „Ein Elternteil bleibt bitte mit dem Kind und hilft mit.\" Verteile Aufgaben (Foto, Hand-Signal \"Notruf!\" + leiser Spruch. Pinsel) — Eltern, die einen Job haben, sind glücklicher als die, die rumstehen. Aus dem „Eltern-Café-Problem\" wird so „Crew-Eltern als Co-Wachleiter\"."
       }
     ],
     "preparationWeeks": {
@@ -901,7 +897,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🏠",
             "title": "Mietwohnung-Check",
-            "detail": "3-5er Party ist akustisch zahm (KEINE Sirene — die löst Tränen aus), aber Schaum-Löschen + Wasserspritzpistolen erzeugen Boden-Pfützen. Folie/Handtücher unterlegen, Nachbarn vorab kurz informieren reicht."
+            "detail": "3-5er Party ist akustisch zahm (KEINE Hand-Signal \"Notruf!\" + leiser Spruch. aber Schaum-Löschen + Wasserspritzpistolen erzeugen Boden-Pfützen. Folie/Handtücher unterlegen, Nachbarn vorab kurz informieren reicht."
           }
         ]
       },
@@ -1115,7 +1111,7 @@ var ELITE_MOTTO_DATA = {
           "4 Oreos halbieren = 8 Reifen, seitlich ankleben.",
           "Mit weißem Zuckerstift ‚112' draufschreiben — sieht aus wie gewollt."
         ],
-        "fallback": "Bäcker zu? Muffins aus dem Vorrat, je ein Marshmallow + roter Zahnstocher = Mini-Sirene-Hütchen. Funktioniert für 3-5.",
+        "fallback": "Bäcker zu? Muffins aus dem Vorrat, je ein Marshmallow + roter Zahnstocher = Mini- Hand-Signal \"Notruf!\" + leiser Spruch. Funktioniert für 3-5.",
         "tone": "motivierend"
       },
       "spielzeug_kaputt_oder_fehlt": {
@@ -1221,7 +1217,7 @@ var ELITE_MOTTO_DATA = {
       "setupSteps": [
         {
           "title": "Helm-Box vorbereiten",
-          "content": "alter Schuhkarton oder Pappkarton-Helm aus dem Bastelladen (~3 €), darin 12 Zettel mit Name + Funktion (Liste unten zum Ausdrucken)."
+          "content": "alter Schuhkarton oder Pappkarton-Helm aus dem Bastelladen (~3 €), darin so viele Zettel wie Gäste (Standard: 8 Zettel für 6-8 Kinder) mit Name + Funktion (Liste unten zum Ausdrucken)."
         },
         {
           "title": "Kind kommt an",
@@ -1826,14 +1822,14 @@ var ELITE_MOTTO_DATA = {
             "indoor": true,
             "outdoor": false,
             "duration": 10,
-            "minAge": 7,
+            "minAge": 6,
             "loudness": "ruhig",
             "effort": "leicht",
             "material": "3 vorbereitete Bilder/Karten (1× Notruf-Telefon, 1× verschiedene Feuer-Symbole für Brandklassen, 1× Rauch vor Feuer). Ein Stuhl als „Wachen-Pult\". Optional: ein Wachen-Plakat im Hintergrund (siehe Deko).",
             "prepText": "Kinder sitzen halbkreisförmig. Du stehst vorn — wie eine Lehrerin auf einer echten Wachen-Schulung. 10 Minuten reichen, länger wird langweilig.",
             "steps": [],
             "safetyRule": null,
-            "ageAdjust6": "Nur Punkt 1 (Notruf 112). Brandklassen und Rauch zu komplex.",
+            "ageAdjust6": "6-Jährige: 2 Hauptregeln statt Vortrag — Bilder statt Text-Karten, max 5 Min.",
             "ageAdjust8": "Alle 3 Punkte. Sie können sich das merken und sind stolz drauf.",
             "indoorTip": null,
             "outdoorTip": null,
@@ -1906,7 +1902,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Wer hat welches Tier gerettet? Polaroid mit dem geretteten Tier in der Hand — kommt an die Ehrentafel."
               }
             ],
-            "safetyRule": null,
+            "safetyRule": "Nebelmaschine: nur kurze Stöße (max 3 Sek), Fenster auf, Gerät außer Kinder-Reichweite, nie direkt auf Gesichter. Asthma-Kinder vorher fragen. Rauchmelder im Blick behalten.",
             "ageAdjust6": "Wenig Nebel (kurz an, lange aus), Bereich klein, du bist sichtbar dabei.",
             "ageAdjust8": "Volle Inszenierung. Sie genießen das Drama.",
             "indoorTip": null,
@@ -1919,7 +1915,7 @@ var ELITE_MOTTO_DATA = {
             "indoor": true,
             "outdoor": false,
             "duration": 25,
-            "minAge": 7,
+            "minAge": 6,
             "loudness": "ruhig",
             "effort": "hoch",
             "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
@@ -1952,7 +1948,7 @@ var ELITE_MOTTO_DATA = {
               }
             ],
             "safetyRule": null,
-            "ageAdjust6": null,
+            "ageAdjust6": "6-Jährige: Verdächtige als Symbol-Karten (Bild), nicht Text. Erwachsener moderiert.",
             "ageAdjust8": "Mehr Raum für eigene Hypothesen, du gibst weniger vor.",
             "indoorTip": null,
             "outdoorTip": null,
@@ -2693,7 +2689,8 @@ var ELITE_MOTTO_DATA = {
         }
       ],
       "optOutNote": "In dem Alter selten Thema. Falls doch (Hautempfindlichkeit fürs Tattoo, oder „ich will keine Disponentin sein, ich will Brandermittler\"): tauschen ist erlaubt, einmal pro Crew. Eigener Name behalten geht auch. Aber wer eine Funktion zieht, übernimmt sie — das ist die Verbindlichkeit, die das Motto trägt.",
-      "materialNote": "[Feuerwehr-Tattoo-Set](https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht-21)* (~5 €), [Plastik-Helme](https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht-21)* (5–8 €/Stück, sehen wertig aus), die 12 Dienstausweise ausdrucken (kostenlos), Wachen-Tafel-Plakat (~1 €)."
+      "materialNote": "[Feuerwehr-Tattoo-Set](https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht-21)* (~5 €), [Plastik-Helme](https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht-21)* (5–8 €/Stück, sehen wertig aus), die 12 Dienstausweise ausdrucken (kostenlos), Wachen-Tafel-Plakat (~1 €).",
+      "scoringFormula": "Stationen-Punkte (max 10/Station Team) + Brandermittlung-Bonus (max 15 Team) + Funktion-Bonus (5/Person). Sieger-Trupp: Goldhelm-Sticker. Verlierer: Silber-Schlauch-Sticker. Jedes Kind: Urkunde mit individuellem Funktion-Lob."
     },
     "variants": [
       {
@@ -2762,9 +2759,30 @@ var ELITE_MOTTO_DATA = {
             "minAge": 9,
             "loudness": null,
             "effort": "hoch",
-            "material": "4 vorbereitete Verdächtigen-Karten (DIN A5, mit Foto/Zeichnung + Beschreibung — siehe Vorlage in Eltern-Tipps), 4 „Beweise\" zum Verstecken (siehe unten), 1 Fall-Akte pro Crew (DIN A4 ausgedruckt mit Tabellen zum Ausfüllen), 2-3 [Lupen](https://www.amazon.de/s?k=lupe+kinder+detektiv&tag=machsleicht-21)* (~3 €/Stück), Klemmbretter, Stifte",
+            "material": "4 Verdaechtigen-Karten (DIN A5), 4 Beweis-Karten, 1 Tatort-Briefing, 1 Loesungsblatt im Umschlag. Vorlagen als PDF im machsleicht-Generator.",
             "prepText": "",
-            "steps": [],
+            "steps": [
+              {
+                "name": "Tatort-Briefing",
+                "content": "Brand im Kindergarten-Lagerraum. Brandbeginn: 14:30. 4 Verdaechtige waren im Gebaeude. Eure Aufgabe: Indizien sammeln + Ausschluss-Verfahren."
+              },
+              {
+                "name": "Verdaechtige",
+                "content": "A) Hausmeister Mueller (14:00-15:00 Heizkeller). B) Erzieherin Schmidt (ab 14:00 Bastel-Raum). C) Vater Becker (kam 14:35). D) Baecker (Lieferung 14:25, ging 14:32)."
+              },
+              {
+                "name": "Beweise",
+                "content": "Beweis 1: Streichholz im Lagerraum. Beweis 2: Lieferschein (14:32). Beweis 3: Heizkessel-Logbuch (14:30 Wartung). Beweis 4: Kind sagt: Onkel war noch nicht da."
+              },
+              {
+                "name": "Indizienkette",
+                "content": "Hausmeister: Logbuch deckt 14:30 ab = ALIBI. Erzieherin: Lieferschein 14:32 bestaetigt = ALIBI. Baecker: hatte 7 Min Zeit, ging als letzter durch Lager. Vater: erst 14:35 = ALIBI."
+              },
+              {
+                "name": "Loesung",
+                "content": "TAETER = D) Baecker. Motiv: Streit mit Hausmeister. Beweis: Streichholz aus Baecker-Brigade-Set. Kinder gleichen 4 Verdaechtige + 4 Beweise ab."
+              }
+            ],
             "safetyRule": null,
             "ageAdjust6": "Beweise deutlicher kennzeichnen, Verdächtige reduzieren auf 3, Diskussionsphase kürzer (10 Min. statt 15).",
             "ageAdjust8": "Volle 4 Verdächtige, ggf. einen 5. „Roten Hering\" einbauen, Diskussion freier laufen lassen, du moderierst weniger.",
@@ -2981,7 +2999,28 @@ var ELITE_MOTTO_DATA = {
             "effort": "hoch",
             "material": "Wie in Minimal-Variante, plus: 3 Eltern oder ältere Geschwister als „Verdächtige\" (mit Verdächtigen-Karte als Skript), 1 Stuhl als „Vernehmungs-Sitz\". Die 4. Verdächtige (Frau Schneider, die Köchin) wird NICHT befragt — ist abwesend, was Teil der Lösung ist.",
             "prepText": "Wie in Minimal, plus eingefügte Vernehmungs-Phase nach der Spurensuche:",
-            "steps": [],
+            "steps": [
+              {
+                "name": "Tatort-Briefing",
+                "content": "Brand im Kindergarten-Lagerraum. Brandbeginn: 14:30. 4 Verdaechtige waren im Gebaeude. Eure Aufgabe: Indizien sammeln + Ausschluss-Verfahren."
+              },
+              {
+                "name": "Verdaechtige",
+                "content": "A) Hausmeister Mueller (14:00-15:00 Heizkeller). B) Erzieherin Schmidt (ab 14:00 Bastel-Raum). C) Vater Becker (kam 14:35). D) Baecker (Lieferung 14:25, ging 14:32)."
+              },
+              {
+                "name": "Beweise",
+                "content": "Beweis 1: Streichholz im Lagerraum. Beweis 2: Lieferschein (14:32). Beweis 3: Heizkessel-Logbuch (14:30 Wartung). Beweis 4: Kind sagt: Onkel war noch nicht da."
+              },
+              {
+                "name": "Indizienkette",
+                "content": "Hausmeister: Logbuch deckt 14:30 ab = ALIBI. Erzieherin: Lieferschein 14:32 bestaetigt = ALIBI. Baecker: hatte 7 Min Zeit, ging als letzter durch Lager. Vater: erst 14:35 = ALIBI."
+              },
+              {
+                "name": "Loesung",
+                "content": "TAETER = D) Baecker. Motiv: Streit mit Hausmeister. Beweis: Streichholz aus Baecker-Brigade-Set. Kinder gleichen 4 Verdaechtige + 4 Beweise ab."
+              }
+            ],
             "safetyRule": null,
             "ageAdjust6": "Vernehmungs-Phase auf 10 Min. kürzen, Skripte einfacher.",
             "ageAdjust8": "Volle Phase, ggf. Skripte komplexer (Lügen einbauen, die Crew durchschauen muss).",
@@ -3223,14 +3262,36 @@ var ELITE_MOTTO_DATA = {
             "effort": null,
             "material": "Wie in Standard-Variante, plus: 2 weitere Verdächtigen-Karten (insgesamt 6), 2 weitere Beweise (insgesamt 6), erweiterte Fall-Akte mit Tabellen-Format, mehrere Räume als „Beweis-Bereiche\" (Wohnzimmer, Küche, Garten, Keller falls vorhanden), 4 Lupen, ggf. UV-Taschenlampe für versteckten Hinweis (~10 €), 3-4 Eltern oder ältere Geschwister als Verdächtige",
             "prepText": "Wie Standard-Variante, aber mit deutlich mehr Tiefe. 6 Verdächtige statt 4, 6 Beweise statt 4, 8 Phasen statt 6.",
-            "steps": [],
+            "steps": [
+              {
+                "name": "Tatort-Briefing",
+                "content": "Brand im Kindergarten-Lagerraum. Brandbeginn: 14:30. 4 Verdaechtige waren im Gebaeude. Eure Aufgabe: Indizien sammeln + Ausschluss-Verfahren."
+              },
+              {
+                "name": "Verdaechtige",
+                "content": "A) Hausmeister Mueller (14:00-15:00 Heizkeller). B) Erzieherin Schmidt (ab 14:00 Bastel-Raum). C) Vater Becker (kam 14:35). D) Baecker (Lieferung 14:25, ging 14:32)."
+              },
+              {
+                "name": "Beweise",
+                "content": "Beweis 1: Streichholz im Lagerraum. Beweis 2: Lieferschein (14:32). Beweis 3: Heizkessel-Logbuch (14:30 Wartung). Beweis 4: Kind sagt: Onkel war noch nicht da."
+              },
+              {
+                "name": "Indizienkette",
+                "content": "Hausmeister: Logbuch deckt 14:30 ab = ALIBI. Erzieherin: Lieferschein 14:32 bestaetigt = ALIBI. Baecker: hatte 7 Min Zeit, ging als letzter durch Lager. Vater: erst 14:35 = ALIBI."
+              },
+              {
+                "name": "Loesung",
+                "content": "TAETER = D) Baecker. Motiv: Streit mit Hausmeister. Beweis: Streichholz aus Baecker-Brigade-Set. Kinder gleichen 4 Verdaechtige + 4 Beweise ab."
+              }
+            ],
             "safetyRule": null,
             "ageAdjust6": null,
             "ageAdjust8": "Volle Wow-Variante. Ggf. einen Plot-Twist mehr einbauen — z.B. einen 7. Verdächtigen, der erst in Phase 4 auftaucht („Es kommt ein neuer Zeuge — was sagt er?\").",
             "indoorTip": null,
             "outdoorTip": null,
             "whyItWorksTitle": null,
-            "whyItWorks": null
+            "whyItWorks": null,
+            "phaseFlow": "Phase 1 Code -> oeffnet Phase 2 Werkzeugkasten -> Phase 3 Funk -> Phase 4 Notruf-Sim -> Phase 5 Tatort -> Phase 6 Taeter. HINT-SYSTEM: pro Phase 1 Tipp-Karte im Umschlag, Erwachsener gibt nach 5 Min Stillstand."
           },
           {
             "name": "🏆 Große Bewertete Zeremonie + Ehrentafel",
@@ -3879,7 +3940,7 @@ var ELITE_MOTTO_DATA = {
         }
       ],
       "optOutNote": "💡 Für 3-Jährige: Du liest den Namen vor und sagst „Du bist jetzt Luna Mondsilber!\" — sie können den Zettel noch nicht selbst lesen. Das macht es sogar magischer.",
-      "materialNote": null
+      "materialNote": "⚠️ Vor der Party: Glitzer-Kleber, Tattoo und Schminkfarbe an kleiner Hautstelle (Innenseite Unterarm) eines Kindes 1 Tag vorher testen. Bei Rötung → nur Sticker und Klettband-Verzierungen statt Tattoo/Glitzer/Schminke."
     },
     "variants": [
       {
@@ -3927,7 +3988,7 @@ var ELITE_MOTTO_DATA = {
             "material": "1 Pappteller pro Kind (weiß), Schere (du schneidest vor!), Klebeband/Tacker, Glitzer-Kleber oder Glitzer + Klebestift, bunte Sticker, Gummiband oder Haarreif zum Befestigen",
             "prepText": "Pappteller einmal falten → Kegel-Form rollen → mit Tacker fixieren. Das ist das Horn. Jedes Kind darf sein Horn mit Glitzer-Kleber und Stickern verzieren. Mit Gummiband am Kopf befestigen oder auf einen Haarreif kleben.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband.",
             "ageAdjust6": "Glitzer-Kleber statt loser Glitzer (weniger Sauerei). Große Sticker statt kleine.",
             "ageAdjust8": "Dürfen mit Kinderschere selbst den Pappteller zuschneiden. Zusätzlich Ohren aus Pappe ausschneiden und drankleben.",
             "indoorTip": null,
@@ -3946,7 +4007,7 @@ var ELITE_MOTTO_DATA = {
             "material": "Bluetooth-Lautsprecher oder Handy, fröhliche Kindermusik (Spotify: „Kindergeburtstag Party\"), bunte Tücher zum Schwenken (optional, je 1 pro Kind)",
             "prepText": "Musik an → alle tanzen, hüpfen, galoppieren wie Einhörner. Musik aus → alle frieren ein wie Eisskulpturen! Wer sich bewegt, bekommt einen Glitzer-Aufkleber auf die Hand — das ist eine Belohnung, kein Rauswerfen.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr).",
             "ageAdjust6": "Einfrieren ist noch schwer — lass sie einfach tanzen. Bei Stopp alle auf den Boden setzen (das können sie).",
             "ageAdjust8": "Einfrieren als Tier-Figur: „Jetzt bist du ein Einhorn!\" — Pose halten.",
             "indoorTip": null,
@@ -4089,7 +4150,7 @@ var ELITE_MOTTO_DATA = {
             "material": "1 Pappteller pro Kind (weiß), Tacker, Glitzer-Kleber, bunte Sticker, Gummiband/Haarreif",
             "prepText": "Pappteller vorher zur Kegel-Form rollen und tackern. Kinder verzieren mit Glitzer-Kleber und Stickern. Am Kopf befestigen → „Du bist jetzt ein echtes Einhorn!\"",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband.",
             "ageAdjust6": "Alles vorbereiten, sie kleben nur drauf. Große Sticker.",
             "ageAdjust8": "Zusätzlich Ohren aus Pappe ausschneiden und ankleben.",
             "indoorTip": null,
@@ -4108,7 +4169,7 @@ var ELITE_MOTTO_DATA = {
             "material": "1 flacher weißer Teller, 1 Tasse Vollmilch, Lebensmittelfarben (4 Farben, ~2 € im Supermarkt), Spülmittel, 1 Wattestäbchen pro Kind",
             "prepText": "Milch in den Teller gießen. Kinder tropfen je eine Farbe rein (du hilfst!). Dann: Wattestäbchen in Spülmittel tunken und in die Milch stippen — Farben „explodieren\" in Regenbogen-Spiralen! Sieht aus wie Magie.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr).",
             "ageAdjust6": "DU tropfst die Farben, DU hältst das Wattestäbchen — sie dürfen zuschauen und staunen. Das reicht völlig. Nach dem Staunen darf jedes Kind einmal selbst stippen.",
             "ageAdjust8": "Sie dürfen alles selbst machen. 3–4 Runden sind normal — immer ein frischer Teller Milch.",
             "indoorTip": null,
@@ -4127,7 +4188,7 @@ var ELITE_MOTTO_DATA = {
             "material": "1 große Plastikwanne, 2 kg Reis mit essbarem Glitzer gemischt, 8 kleine Einhorn-Figuren, 1 Löffel pro Kind",
             "prepText": "Reis mit Glitzer in die Wanne. Einhorn-Figuren im Reis vergraben. Jedes Kind bekommt einen Löffel und gräbt vorsichtig. Wer ein Einhorn findet, darf es behalten.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden.",
             "ageAdjust6": "Figuren nur leicht bedecken. Reis statt Sand (wiederverwendbar, weniger Sauerei). Auf einer alten Tischdecke oder in der Badewanne aufstellen.",
             "ageAdjust8": "Tiefer vergraben. Augen zu und nur ertasten — welches Einhorn ist das (stehend oder liegend)?",
             "indoorTip": null,
@@ -4146,7 +4207,7 @@ var ELITE_MOTTO_DATA = {
             "material": "Bluetooth-Box/Handy, fröhliche Kindermusik, bunte Tücher zum Schwenken (optional)",
             "prepText": "Musik an → tanzen wie Einhörner (galoppieren!). Musik aus → einfrieren! Wer sich bewegt, bekommt einen Glitzer-Aufkleber. Kein Ausscheiden — alle tanzen weiter.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr).",
             "ageAdjust6": "Einfrieren ist noch schwer — bei Stopp einfach hinsetzen.",
             "ageAdjust8": "Einfrieren als Figur: „Zeig mir ein Einhorn!\" — Pose halten.",
             "indoorTip": null,
@@ -4304,7 +4365,7 @@ var ELITE_MOTTO_DATA = {
             "material": "1 großer Pappkarton, Filzstifte (Einhorn-Gesicht malen), Cutter/Schere (Maul ausschneiden), 8–10 bunte Bälle (Bällebad-Bälle ~5 € bei Action, oder Sockenbälle)",
             "prepText": "Auf den Karton ein Einhorn-Gesicht malen mit großem offenem Maul (ca. 20 cm Durchmesser ausschneiden). Karton an die Wand lehnen oder auf einen Stuhl stellen. Kinder werfen bunte Bälle ins Maul.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband.",
             "ageAdjust6": "Ganz nah ran (50 cm Abstand). Großes Maul (30 cm). Jeder Wurf ist ein Treffer.",
             "ageAdjust8": "Weiter weg (1,5 m). Verschiedene Farben = verschiedene „Einhorn-Snacks\" (roter Ball = Erdbeere, gelb = Banane).",
             "indoorTip": null,
@@ -4323,7 +4384,7 @@ var ELITE_MOTTO_DATA = {
             "material": "1 Holzstab pro Kind (30 cm, Bastelstäbe ~3 € für 10 Stk.), 1 Stern aus Glitzerpappe (vorher ausschneiden!), Klebeband/Heißklebe, bunte Bänder (Geschenkband, ~2 €), Glitzer-Kleber",
             "prepText": "Du schneidest vorher die Sterne aus Glitzerpappe aus und klebst sie mit Heißklebe oben auf die Stäbe. Kinder dürfen bunte Bänder dran knoten (du hilfst) und den Stab mit Glitzer-Kleber verzieren. Fertig ist der Zauberstab.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband.",
             "ageAdjust6": "Stab + Stern komplett vorher zusammenkleben. Kinder kleben nur Bänder und Sticker drauf.",
             "ageAdjust8": "Sie dürfen den Stern selbst auf den Stab kleben (Klebeband) und die Bänder selbst knoten.",
             "indoorTip": null,
@@ -4472,8 +4533,8 @@ var ELITE_MOTTO_DATA = {
             "categoryReasoning": "Konsistent — Goodie-Verpackung."
           }
         ],
-        "estimatedCostEur": 75,
-        "costContext": "Geschätzte Kosten (Wow, 5 Kinder, ohne optionale Extras)"
+        "estimatedCostEur": 90,
+        "costContext": "Pflichtteil ~65 €, mit allen Sinnvoll-Extras ~105 €. Die niedrigere Schätzung 75 € geht von Standard-Auswahl ohne alle Wow-Add-ons aus."
       }
     ],
     "cakeRecipe": {
@@ -5048,7 +5109,7 @@ var ELITE_MOTTO_DATA = {
             "material": "1 große Plastikwanne, 3 kg weißer Reis oder Zucker, 2 EL essbarer Glitzer oder Zucker-Perlen (Backzutaten-Regal), 10 kleine Einhorn-Figuren (~4 € für 12 Stück auf Amazon), 1 Löffel pro Kind",
             "prepText": "Reis mit Glitzer mischen — sieht sofort nach Sternenstaub aus. Einhorn-Figuren in der Wanne unter dem „Sternenstaub\" vergraben. Jedes Kind bekommt einen Löffel und „gräbt\" vorsichtig. Wer ein Einhorn findet, darf es behalten.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Glitzer-Reis nicht zum Naschen — Hände waschen vor Snacks. Bei jüngeren Kindern (oder bei Allergien) nur Reis ohne Glitzer. Reis-Korn-Aspirationsrisiko bei sehr jungen Geschwistern.",
             "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Zucker (weniger Sauerei, wiederverwendbar).",
             "ageAdjust8": "Tiefer vergraben. Variante: mit verbundenen Augen nur ertasten — welches Einhorn ist es (stehend, liegend, fliegend)?",
             "indoorTip": "Wanne auf eine alte Tischdecke oder in die Badewanne stellen.",
@@ -5067,7 +5128,7 @@ var ELITE_MOTTO_DATA = {
             "material": "6 farbige Tücher/Handtücher (rot, orange, gelb, grün, blau, lila), 4 Pylonen/Schuhe, 1 Einhorn-Kuscheltier als Ziel",
             "prepText": "Tücher in Regenbogen-Reihenfolge auf dem Boden auslegen (jedes etwa 1 m Abstand). Jedes Kind „galoppiert\" über den Regenbogen zum Einhorn am Ende, begrüßt es mit einer Verbeugung und galoppiert zurück.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen.",
             "ageAdjust6": "Kurze Strecke, langsames Galoppieren.",
             "ageAdjust8": "Slalom zwischen den Tüchern, Zeit stoppen, Bestzeit notieren.",
             "indoorTip": "Flur reicht — Tücher enger legen.",
@@ -5220,7 +5281,7 @@ var ELITE_MOTTO_DATA = {
             "material": "[Einhorn-Masken zum Ausmalen*](https://www.amazon.de/s?k=einhorn+masken+kinder+ausmalen&tag=machsleicht-21) (~6 € für 10 Stk.), Gummibänder (meist dabei), Filzstifte in Regenbogenfarben",
             "prepText": "Perfekte Ankunfts-Aktivität: Masken liegen schon auf dem Tisch, wenn die Kinder reinkommen. Jedes Kind malt seine Maske in Regenbogenfarben an, während auf die anderen gewartet wird. Gummiband dran, aufsetzen — fertig.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen.",
             "ageAdjust6": "Einfach ausmalen reicht. Hilf beim Gummiband-Befestigen.",
             "ageAdjust8": "Zusätzlich Glitzer-Kleber oder Aufkleber zum Verzieren bereitstellen. Die wollen ihre Maske individueller.",
             "indoorTip": null,
@@ -5239,7 +5300,7 @@ var ELITE_MOTTO_DATA = {
             "material": "1 flacher Teller (weiß), 1 Tasse Vollmilch (je fetter, desto besser), Lebensmittelfarben (4 Farben — rot, gelb, blau, grün; Supermarkt ~2 €), Spülmittel, Wattestäbchen (1 pro Kind)",
             "prepText": "Milch in den Teller gießen, bis der Boden komplett bedeckt ist. Jedes Kind tropft eine Farbe in die Mitte. Dann: Wattestäbchen in Spülmittel tunken und mitten in die Milch stippen — die Farben „explodieren\" in Regenbogen-Spiralen. Sieht aus wie Magie, ist aber Physik.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Lebensmittelfarbe + Spülmittel — nicht trinken, Hände waschen. Schalen-Standort sicher.",
             "ageAdjust6": "Du tropfst die Farben rein, sie halten nur die Wattestäbchen. Hände-wasch-Pause danach.",
             "ageAdjust8": "Kinder dürfen selbst alles dosieren. Erkläre die Physik dahinter — in dem Alter lieben sie solche „echten\" Erklärungen.",
             "indoorTip": null,
@@ -5258,7 +5319,7 @@ var ELITE_MOTTO_DATA = {
             "material": "1 große Plastikwanne, 3 kg Reis mit essbarem Glitzer gemischt, 10 Einhorn-Figuren, 1 Löffel pro Kind",
             "prepText": "Wie in der Minimal-Variante — aber hier als „Erste Prüfung der Regenbogen-Wächter-Ausbildung\" angekündigt. Jedes Kind, das ein Einhorn findet, darf seinen Einhorn-Namen in den „Wächter-Pass\" eintragen.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Glitzer-Reis nicht zum Naschen — Hände waschen vor Snacks. Bei jüngeren Kindern (oder bei Allergien) nur Reis ohne Glitzer. Reis-Korn-Aspirationsrisiko bei sehr jungen Geschwistern.",
             "ageAdjust6": null,
             "ageAdjust8": "Farbige Einhörner (je 2 Stück pro Farbe). Kind darf nur seine „zugeteilte Farbe\" suchen und muss die anderen wieder vergraben.",
             "indoorTip": null,
@@ -5277,7 +5338,7 @@ var ELITE_MOTTO_DATA = {
             "material": "6 farbige Tücher (Regenbogen), 5 Kissen (Wolken), 2 Stühle (Regenbogen-Tor), 1 Seil, Stoppuhr (Handy), Einhorn-Kuscheltier als Ziel",
             "prepText": "Parcours aufbauen: über Wolken-Kissen hüpfen, unter dem Regenbogen-Tor durchkriechen, über das Seil balancieren („Regenbogen-Brücke\"), am Ende das Einhorn begrüßen und zurückrennen.\n\nErst alle einmal langsam durchführen lassen, dann auf Zeit stoppen. Bestzeit notieren.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -5296,7 +5357,7 @@ var ELITE_MOTTO_DATA = {
             "material": "500 g transparente Glycerin-Seife (Rohling, ~6–8 € Bastelladen oder Amazon), essbarer Glitzer oder kosmetischer Glitzer, Silikon-Förmchen (Einhorn-/Stern-/Herz-Form, ~5 €), 1 Mikrowellen-Becher, Lebensmittelfarben (rosa/lila/türkis)",
             "prepText": "Glycerin-Seife in Würfel schneiden (machst du vorher). Für jedes Kind einen Würfel in den Becher, 30 Sek. in die Mikrowelle → flüssig. Kind wählt Farbe (2 Tropfen rein), streut Glitzer dazu, gießt in sein Silikon-Förmchen. 15 Min. auskühlen lassen → vorsichtig rauspressen. Fertige Einhorn-Seife geht als Mitgebsel mit.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Glitzer-Reis nicht zum Naschen — Hände waschen vor Snacks. Bei jüngeren Kindern (oder bei Allergien) nur Reis ohne Glitzer. Reis-Korn-Aspirationsrisiko bei sehr jungen Geschwistern.",
             "ageAdjust6": "Du machst alles Heiße. Kinder wählen nur Farbe und Glitzer-Menge.",
             "ageAdjust8": "Dürfen unter Aufsicht den Becher aus der Mikrowelle nehmen (Topflappen!) und selber gießen.",
             "indoorTip": null,
@@ -5472,7 +5533,7 @@ var ELITE_MOTTO_DATA = {
             "material": "5 Umschläge mit Rätseln, 1 Schatzkarte (mit [machsleicht erstellen](/kindergeburtstag?modus=schatzsuche)), 1 Sternenstaub-Kiste (Schuhkarton mit Glitzer beklebt, Inhalt: Einhorn-Figuren, Gummibärchen, Haarsträhnchen in Regenbogenfarben)",
             "prepText": "Erstelle mit dem machsleicht-Planer eine Einhorn-Schatzsuche mit 5 Stationen. Jede Station hat ein altersgerechtes Rätsel:",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Glitzer-Reis nicht zum Naschen — Hände waschen vor Snacks. Bei jüngeren Kindern (oder bei Allergien) nur Reis ohne Glitzer. Reis-Korn-Aspirationsrisiko bei sehr jungen Geschwistern.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -5491,7 +5552,7 @@ var ELITE_MOTTO_DATA = {
             "material": "10 Fragen (siehe Beispiele unten), Buzzer/Klingel/Topfdeckel, Punktetafel (Whiteboard oder Papier)",
             "prepText": "2 Teams. Frage vorlesen, wer zuerst buzzert darf antworten. Richtig = 1 Punkt. Falsch = anderes Team darf.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen.",
             "ageAdjust6": "Multiple Choice (3 Antworten).",
             "ageAdjust8": "Offene Fragen.",
             "indoorTip": null,
@@ -5739,7 +5800,7 @@ var ELITE_MOTTO_DATA = {
       },
       {
         "q": "Wie viele Kinder sollte man zum Einhorn-Geburtstag einladen?",
-        "a": "Faustregel: Alter des Kindes + 1. Also 7–9 Kinder bei einem 7-Jährigen. Ab 8 Kindern brauchst du definitiv einen zweiten Erwachsenen als Helfer — besonders bei den Bastel-Stationen (Seife gießen, Masken). Alle Mengenangaben auf dieser Seite sind für 6 Kinder berechnet."
+        "a": "Faustregel: 6 Kinder sind ideal für diese Variante (inkl. Geburtstagskind). Bei 7-8 Gästen: 2. Helfer einplanen + Mengen um 30% erhöhen. Bei >8 Kindern: Wow-Variante mit längerem Zeitplan wählen."
       },
       {
         "q": "Was kostet ein Einhorn-Geburtstag?",
@@ -6176,7 +6237,7 @@ var ELITE_MOTTO_DATA = {
             "material": "1 Rotkohl (Supermarkt, ~2 €), 8 durchsichtige Becher pro Kind, Essig, Backpulver/Natron, Zitronensaft, Spülmittel, Waschsoda (Drogerie ~1 €), Pipetten oder Löffel, Lebensmittelfarben (optional), 1 Tablett pro Kind (gegen Sauerei)",
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Waschsoda (Natriumcarbonat) reizt Augen + Haut. Schutzbrille für Kinder bei Mix-Phase. Nicht in Augen reiben, Hände nach jedem Experiment waschen. Nichts trinken. Tablett mit Rand gegen Überlauf. Erwachsene*r misst die Mengen ab.",
             "ageAdjust6": "Du erklärst die Grundregel (sauer = rosa, basisch = grün) und lässt sie dann experimentieren.",
             "ageAdjust8": "pH-Skala aufmalen, Kinder ordnen ihre Ergebnisse ein. Bonusaufgabe: „Misch den perfekten Lila-Trank\" (= Neutralpunkt finden).",
             "indoorTip": null,
@@ -6330,7 +6391,7 @@ var ELITE_MOTTO_DATA = {
             "material": "1 Rotkohl (~2 €), 8 durchsichtige Becher pro Kind, Essig, Backpulver/Natron, Zitronensaft, Spülmittel, Waschsoda (~1 €), Pipetten oder Löffel, 1 Tablett pro Kind (gegen Sauerei)",
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Waschsoda (Natriumcarbonat) reizt Augen + Haut. Schutzbrille für Kinder bei Mix-Phase. Nicht in Augen reiben, Hände nach jedem Experiment waschen. Nichts trinken. Tablett mit Rand gegen Überlauf. Erwachsene*r misst die Mengen ab.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -6366,8 +6427,29 @@ var ELITE_MOTTO_DATA = {
             "loudness": "laut",
             "effort": "hoch",
             "material": "5 Umschläge mit Rätseln, 1 Zahlenschloss (Fahrradschloss, ~5 € oder vorhandenes), 1 Schatztruhe (Schuhkarton, bemalt/beklebt), Inhalt: Süßigkeiten + Einhorn-Charms, optional: [UV-Taschenlampe*](https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht-21) (~12 €) + [UV-Stift*](https://www.amazon.de/s?k=uv+geheimschrift+stift+unsichtbar&tag=machsleicht-21) (~7 €)",
-            "prepText": "2 Teams (4 vs. 4, per Los). Jedes Team bekommt die gleichen 5 Rätsel, aber in unterschiedlicher Reihenfolge. Wer zuerst den 4-stelligen Code für das Zahlenschloss knackt, öffnet die Schatztruhe. Der Code ist:",
-            "steps": [],
+            "prepText": "2 Teams (4 vs. 4, per Los). Jedes Team bekommt die gleichen 5 Rätsel, aber in unterschiedlicher Reihenfolge. Wer zuerst den 4-stelligen Code für das Zahlenschloss knackt, öffnet die Schatztruhe. Der Code ist 9312 (Default-Code, ändere bei Bedarf am Schloss). Die 4 Ziffern werden über 4 Rätsel ermittelt — jede Station liefert eine Ziffer. Vorab 5 Rätsel-Kärtchen ausdrucken + Vorhängeschloss am Schatzkasten anbringen.",
+            "steps": [
+              {
+                "name": "Rätsel 1: Sternenkarte (Ziffer 9)",
+                "content": "Wieviele Sterne sind im Sternenbild \"Großer Bär\"? (Lösung: 9 Hauptsterne → Ziffer 1 des Codes = 9)"
+              },
+              {
+                "name": "Rätsel 2: Einhorn-Reim (Ziffer 3)",
+                "content": "\"Drei Hörner haben wir gefunden, drei Magie-Schalen tief im Bunten.\" — Ziffer 2 = 3"
+              },
+              {
+                "name": "Rätsel 3: Farbcode (Ziffer 1)",
+                "content": "In welcher Reihenfolge liegen die Regenbogen-Farben? Erste Farbe = Rot = 1. Buchstabe → Ziffer 3 = 1"
+              },
+              {
+                "name": "Rätsel 4: Mathe-Rune (Ziffer 2)",
+                "content": "2 Einhorn-Pakete × 1 Pegasus = ? Lösung 2 → Ziffer 4 = 2"
+              },
+              {
+                "name": "Final: Schloss öffnen",
+                "content": "Code 9-3-1-2 → Schatzkasten öffnet. Drin: Mitgebsel + Urkunde für jedes Kind."
+              }
+            ],
             "safetyRule": null,
             "ageAdjust6": null,
             "ageAdjust8": null,
@@ -6722,7 +6804,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "n": 2,
-          "content": "Mirror Glaze: 200 g weiße Schokolade + 150 g Zucker + 150 ml Kondensmilch + 10 g Gelatine + 150 ml Wasser. Aufkochen, auf 35°C abkühlen lassen. In 3 Schüsseln teilen."
+          "content": "Mirror Glaze: 200 g weiße Schokolade + 150 g Zucker + 150 ml Kondensmilch + 10 g Gelatine + 150 ml Wasser. Aufkochen, auf 30-32°C abkühlen lassen. In 3 Schüsseln teilen."
         },
         {
           "n": 3,
@@ -11461,7 +11543,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:25",
             "title": "🎂 Kuchen & Happy Birthday",
-            "description": "Vulkan-Kuchen (Gugelhupf mit Smarties). Kerzen auspusten, Happy Birthday singen. 20 Min. Dazu Apfelschorle — nenn es „Dino-Pipi“ und die Kinder lachen sich kaputt."
+            "description": "Vulkan-Kuchen (Gugelhupf mit Smarties). Kerzen auspusten, Happy Birthday singen. 20 Min. Dazu Apfelschorle — nenn es „Dino-Pipi“ und die Kinder lachen sich kaputt. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
           },
           {
             "time": "15:45",
@@ -11486,7 +11568,7 @@ var ELITE_MOTTO_DATA = {
             "material": null,
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -11505,7 +11587,7 @@ var ELITE_MOTTO_DATA = {
             "material": null,
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -11552,7 +11634,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 5,
             "hasAffiliate": false,
             "category": "sinnvoll",
-            "categoryReasoning": "Capri-Sun + Brezeln aus Vorrat trägt 1,5h auch."
+            "categoryReasoning": "Saftpäckchen + Brezeln aus Vorrat trägt 1,5h auch."
           },
           {
             "emoji": "🎁",
@@ -11591,7 +11673,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:35",
             "title": "🎂 Kuchen & Dino-Pipi",
-            "description": "Vulkan-Kuchen (Gugelhupf + Smarties-Lava). Happy Birthday singen. Dazu „Dino-Pipi“ (Apfelschorle). 20 Min. Ruhe für alle."
+            "description": "Vulkan-Kuchen (Gugelhupf + Smarties-Lava). Happy Birthday singen. Dazu „Dino-Pipi“ (Apfelschorle). 20 Min. Ruhe für alle. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
           },
           {
             "time": "15:55",
@@ -11606,7 +11688,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "16:20",
             "title": "🎈 Freispiel & Abholphase",
-            "description": "Plastik-Dinos, Bücher, Freispiel. Mitgebsel-Tüten verteilen wenn Eltern kommen.\n\n💡 Immer abwechseln: laut → leise\nEier suchen (mittel) → Vulkan (laut) → Kuchen (Pause) → Stampfen (laut) → Ausgrabung (leise). So kippt die Stimmung nie. Nach jedem lauten Spiel kommt ein ruhiges."
+            "description": "Plastik-Dinos, Bücher, Freispiel. Mitgebsel-Tüten verteilen wenn Eltern kommen.\n\n💡 Immer abwechseln: laut → leise\nEier suchen (mittel) → Vulkan (laut) → Kuchen (Pause) → Stampfen (laut) → Ausgrabung (leise). So kippt die Stimmung nie. Nach jedem lauten Spiel kommt ein ruhiges. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
           }
         ],
         "games": [
@@ -11621,7 +11703,7 @@ var ELITE_MOTTO_DATA = {
             "material": null,
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -11640,7 +11722,7 @@ var ELITE_MOTTO_DATA = {
             "material": null,
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -11659,7 +11741,7 @@ var ELITE_MOTTO_DATA = {
             "material": null,
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Erwachsene*r gießt Essig/Natron. Kinder hinter Tisch-Kante (1 m). Schutzbrille empfohlen. Nicht trinken, nicht in Augen.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -11678,7 +11760,7 @@ var ELITE_MOTTO_DATA = {
             "material": null,
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sand-Wanne mit Sichtaufsicht. Kleinteile (Mini-Dinos < 3 cm) bei 3-Jährigen vermeiden — Verschluckungsgefahr.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -11787,12 +11869,12 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:50",
             "title": "🎂 Kuchen & Dino-Pipi",
-            "description": "Vulkan-Kuchen mit Smarties-Lava und einer Dino-Figur obendrauf. Kerzen, Happy Birthday, 20 Min. Ruhe."
+            "description": "Vulkan-Kuchen mit Smarties-Lava und einer Dino-Figur obendrauf. Kerzen, Happy Birthday, 20 Min. Ruhe. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
           },
           {
             "time": "16:10",
             "title": "🦖 Dino-Parcours",
-            "description": "„Dschungel-Parcours“: unter Seilen durchkriechen (Lianen!), über Kissen springen (Vulkan-Steine!), durch einen Tunnel krabbeln (Dino-Höhle = Decke über 2 Stühle). Alle laufen zusammen, kein Wettrennen. 10 Min."
+            "description": "„Dschungel-Parcours“: unter Seilen durchkriechen (Lianen!), über Kissen springen (Vulkan-Steine!), durch einen Tunnel krabbeln (Dino-Höhle = Decke über 2 Stühle). Alle laufen zusammen, kein Wettrennen. 10 Min. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
           },
           {
             "time": "16:20",
@@ -11817,7 +11899,7 @@ var ELITE_MOTTO_DATA = {
             "material": null,
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -11836,7 +11918,7 @@ var ELITE_MOTTO_DATA = {
             "material": null,
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sand-Wanne mit Sichtaufsicht. Kleinteile (Mini-Dinos < 3 cm) bei 3-Jährigen vermeiden — Verschluckungsgefahr.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -11855,7 +11937,7 @@ var ELITE_MOTTO_DATA = {
             "material": null,
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Erwachsene*r gießt Essig/Natron. Kinder hinter Tisch-Kante (1 m). Schutzbrille empfohlen. Nicht trinken, nicht in Augen.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -11874,7 +11956,7 @@ var ELITE_MOTTO_DATA = {
             "material": null,
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -11893,7 +11975,7 @@ var ELITE_MOTTO_DATA = {
             "material": null,
             "prepText": "",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -11903,7 +11985,7 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃„Dino-Pipi“3 Liter\n🍇Obst-Dino-Spieße2 pro Kind\n🥒Gemüse-SticksGurke + Paprika\n🍿Popcorn1 Schüssel\n🧁Dino-Muffins1 pro Kind",
-        "decoration": "🎈 Grüne Luftballons (10 Stk.)~2 €\n🦶 Fußspuren-Pfad am BodenKostenlos, 15 Min.\n🦕 Dino-Figuren auf dem ganzen TischIm Set\n🪧 „Jurassic Park“-Schild am EingangKostenlos\n🔊 Dschungel-Sounds leise im HintergrundKostenlos (YouTube)",
+        "decoration": "🎈 Grüne Luftballons (10 Stk.)~2 €\n🦶 Fußspuren-Pfad am BodenKostenlos, 15 Min.\n🦕 Dino-Figuren auf dem ganzen TischIm Set\n🪧 „Dino-Expedition“-Schild am EingangKostenlos\n🔊 Dschungel-Sounds leise im HintergrundKostenlos (YouTube)",
         "giveaways": "In braune Papiertüte mit „Dino-Schatz von ___“. Kosten: ~3 € pro Kind.\n\n🦕 Dino-Figur (aus Ausgrabung)\n🖍️ Dino-Tattoo\n🎨 Stempelbild\n🍬 Gummibärchen\n🥚 Dino-Ei",
         "shoppingList": [
           {
@@ -12116,6 +12198,7 @@ var ELITE_MOTTO_DATA = {
       "minus2Days": {
         "headline": "2 Tage vorher — backen, briefen, basteln",
         "items": [
+          "⚠️ Sicherheits-Check bei 3-Jährigen: Plastik-Eier mit Süßigkeit erst öffnen, wenn Kind sicher kaut (kein Schluck-Risiko). Mini-Dinos > 3 cm wählen.",
           {
             "icon": "🎂",
             "title": "Vulkan-Kuchen backen — oder Plan B",
@@ -12179,7 +12262,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "⏰",
             "title": "30 Min vor Ankunft: Stationen aufbauen",
-            "detail": "Eier-Suche-Plan im Kopf, Vulkan-Tisch fertig, Kuchen aus Kühlschrank, Capri-Sun kühlen. Eltern-Sitzecke einrichten."
+            "detail": "Eier-Suche-Plan im Kopf, Vulkan-Tisch fertig, Kuchen aus Kühlschrank, Saftpäckchen kühlen. Eltern-Sitzecke einrichten."
           },
           {
             "icon": "🎯",
@@ -12239,7 +12322,7 @@ var ELITE_MOTTO_DATA = {
           "Eltern kurz briefen: ‚Du übernimmst Eier-Suche-Aufsicht, ich Vulkan.'",
           "Mehr Eier verstecken (aus dem Vorrat) — jedes Kind findet 4-5 statt 5.",
           "Mini-Dinos aufstocken: leere Pappkarton-Boxen mit Punkten bemalen als Notreserve.",
-          "Capri-Sun nachbestellen lassen (Eltern haben Auto, Tankstelle/Edeka nah).",
+          "Saftpäckchen nachbestellen lassen (Eltern haben Auto, Tankstelle/Edeka nah).",
           "Kuchen-Stücke kleiner schneiden, evtl. Brezeln + Gummibärchen aus Vorrat."
         ],
         "fallback": "Chaotisch? Programm kürzen — Eier-Suche + Snack + Mitgebsel-Verteilung. 60 Min reicht für 3-5er.",
@@ -12290,7 +12373,7 @@ var ELITE_MOTTO_DATA = {
         "headline": "Eltern kennen ihr Kind — Übergabe ist okay.",
         "steps": [
           "Eltern-Übergabe: ‚Magst du kurz mit ihr raus?' — bei 3-5 sind Eltern dabei.",
-          "Capri-Sun + Brezel + roter Becher als Beruhigungs-Ritual.",
+          "Saftpäckchen + Brezel + roter Becher als Beruhigungs-Ritual.",
           "Eigenes Plastik-Ei mit Süßigkeit zum Selbst-Auspacken.",
           "Wenn Heimweh: nicht überreden — Mama-Foto am Handy zeigen.",
           "Nach 5 Min reinschauen — meist ist's vorbei wenn die anderen den Vulkan sehen."
@@ -12423,7 +12506,7 @@ var ELITE_MOTTO_DATA = {
             "material": "1 große Plastikwanne (oder Sandkasten), 3 kg Reis oder Sand, 10 kleine Dino-Figuren (~3€ für 12 Stück auf Amazon), 1 Pinsel pro Kind, Löffel als Backup",
             "prepText": "Dino-Figuren in der Wanne unter Reis vergraben — unterschiedlich tief. Jedes Kind bekommt einen Pinsel und gräbt vorsichtig wie ein Paläontologe. Wer einen Dino findet, darf ihn behalten.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Mini-Dinos < 3 cm vermeiden bei juengeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Haende waschen vor Snacks.",
             "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Sand (weniger Dreck).",
             "ageAdjust8": "Tiefer vergraben. Variante: mit verbundenen Augen nur ertasten — welcher Dino ist es?",
             "indoorTip": "Wanne auf eine alte Tischdecke oder in die Badewanne stellen.",
@@ -12442,7 +12525,7 @@ var ELITE_MOTTO_DATA = {
             "material": "1 Esslöffel pro Kind, Tischtennisbälle oder hartgekochte Eier, 4 Pylonen/Schuhe als Markierung",
             "prepText": "\"Dino-Ei\" auf den Löffel, Strecke hin und zurück laufen ohne das Ei fallen zu lassen. Wer es verliert, geht zurück zum Start.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Tischtennisbaelle statt echten Eiern (Rutschgefahr). Auf Teppich oder Wiese.",
             "ageAdjust6": "Kurze Strecke (5m), großer Suppenlöffel, Tischtennisball.",
             "ageAdjust8": "Längere Strecke, normaler Esslöffel, Hindernisse einbauen.",
             "indoorTip": "Flur reicht — Strecke kürzer, Slalom um Kissen.",
@@ -12451,7 +12534,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": null
           }
         ],
-        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃\"Dino-Pipi\"8 Capri-Sun\n🥕Gemüse-Sticks3 Karotten, 1 Gurke\n🍿Popcorn200 g\n\n💡 \"Dino-Pipi\"?\nApfelschorle-Flaschen umetikettieren. Einfach \"🦕 Dino-Pipi\" auf Aufkleber drucken oder von Hand schreiben. Sorgt garantiert für Gelächter. Kostet nix extra, macht den Unterschied.",
+        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃\"Dino-Pipi\"8 Saftpaeckchen\n🥕Gemüse-Sticks3 Karotten, 1 Gurke\n🍿Popcorn200 g\n\n💡 \"Dino-Pipi\"?\nApfelschorle-Flaschen umetikettieren. Einfach \"🦕 Dino-Pipi\" auf Aufkleber drucken oder von Hand schreiben. Sorgt garantiert für Gelächter. Kostet nix extra, macht den Unterschied.",
         "giveaways": "🦕 1 Dino-Figur aus der Ausgrabung (haben sie selbst gefunden — emotionaler Wert)\n🖍️ 2–3 Ausmalbilder zum Mitnehmen\n🍬 1 kleine Tüte Gummibärchen\n\nIn braune Papiertüte (10 Stk. ~1 € bei DM/Action) mit \"Dino-Forschungsergebnisse von ___\" beschriften. Kosten: ~1,50 € pro Kind.",
         "shoppingList": [
           {
@@ -12465,7 +12548,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🧃",
-            "label": "Capri-Sun (10er Pack)",
+            "label": "Saftpaeckchen (10er Pack)",
             "url": null,
             "priceEur": 4,
             "hasAffiliate": false,
@@ -12483,7 +12566,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🎂",
-            "label": "Backmischung + Smarties",
+            "label": "Backmischung + bunte Schoko-Linsen",
             "url": null,
             "priceEur": 6,
             "hasAffiliate": false,
@@ -12546,7 +12629,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:25",
             "title": "🎂 Kuchen & Dino-Pipi",
-            "description": "Vulkan-Kuchen mit Smarties-Lava. Happy Birthday singen. 25 Min."
+            "description": "Vulkan-Kuchen mit bunte Schoko-Linsen-Lava. Happy Birthday singen. 25 Min."
           },
           {
             "time": "15:55",
@@ -12576,7 +12659,7 @@ var ELITE_MOTTO_DATA = {
             "material": "1 leere PET-Flasche (0,5l), Alufolie oder braunes Papier zum Formen, 3 EL Natron, 100 ml Essig, 1 Spritzer Spülmittel, rote Lebensmittelfarbe (Supermarkt, Backzutaten-Regal, ~1 €), 1 Tablett oder große Unterlage",
             "prepText": "Flasche mit Alufolie zu einem Vulkan-Kegel formen. Auf Tablett stellen. Natron in die Flasche, Spülmittel und rote Lebensmittelfarbe dazu. Dann auf Kommando (\"3, 2, 1 — VULKANAUSBRUCH!\") Essig reinkippen und einen Schritt zurücktreten. Die rote Lava schäumt über!",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Kinder min. 1 Armlaenge zurueck, niemals in den Krater schauen. Schuerze/alte Kleidung. Erwachsene*r kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort spuelen.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: \"Das ist eine chemische Reaktion — Säure trifft Base!\"",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht.",
@@ -12595,7 +12678,7 @@ var ELITE_MOTTO_DATA = {
             "material": "1 große Plastikwanne, 3 kg Reis oder Sand, 10 kleine Dino-Figuren, 1 Pinsel pro Kind",
             "prepText": "Wie in der Minimal-Variante — aber hier als \"offizielle Forschungsstation 1\" im Rahmen der Dino-Forscher-Ausbildung ankündigen. Jedes Kind, das einen Dino findet, trägt ihn in einen \"Forschungsbericht\" ein (Zettel mit Dino-Name + Fundort).",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Mini-Dinos < 3 cm vermeiden bei juengeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Haende waschen vor Snacks.",
             "ageAdjust6": null,
             "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen lassen). Kinder müssen mit Hammer und Meißel (Holzstäbchen) den Gips aufbrechen.",
             "indoorTip": null,
@@ -12614,7 +12697,7 @@ var ELITE_MOTTO_DATA = {
             "material": "5 Kissen (Trittsteine), 2 Stühle (Höhle), 1 Seil oder Schnur (Lava-Fluss), Stoppuhr (Handy)",
             "prepText": "Parcours aufbauen: über Kissen-Trittsteine hüpfen (ohne den \"Lava-Boden\" zu berühren), unter Stühlen durchkriechen (\"Dino-Höhle\"), über Seil balancieren (\"Brücke über den Vulkan\"), am Ende eine Dino-Figur vom Tisch greifen und zurückrennen.\n\nErst alle einmal langsam durchführen lassen, dann auf Zeit stoppen. Bestzeit an die Tafel schreiben.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -12633,7 +12716,7 @@ var ELITE_MOTTO_DATA = {
             "material": "1 kg Gipspulver (~3€ Baumarkt), kleine Dino-Figuren, Joghurtbecher (1 pro Kind), Speiseöl, Rührstab",
             "prepText": "Becher innen dünn mit Öl einpinseln (damit der Gips nicht klebt). Dino-Figur in den Becher drücken. Gips anrühren (Konsistenz wie Pfannkuchenteig), in den Becher gießen, 20 Min. trocknen lassen. Figur rausziehen → fertiger Fossil-Abdruck.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Gips wird warm beim Aushaerten. Gipsstaub nicht einatmen (Maske beim Anruehren). Erwachsene*r mischt Gips.",
             "ageAdjust6": "Gips anrühren übernimmst du. Kinder drücken nur die Figur rein.",
             "ageAdjust8": "Können den Gips selbst anrühren. Mengenverhältnis an die Tafel schreiben.",
             "indoorTip": null,
@@ -12642,7 +12725,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": null
           }
         ],
-        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃\"Dino-Pipi\"12 Capri-Sun\n🌭Mini-Würstchen12 Stück\n🥕Gemüse-Sticks3 Karotten, 1 Gurke\n🍿Popcorn250 g\n🍬Gummibärchen1 Tüte (200 g)",
+        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃\"Dino-Pipi\"12 Saftpaeckchen\n🌭Mini-Würstchen12 Stück\n🥕Gemüse-Sticks3 Karotten, 1 Gurke\n🍿Popcorn250 g\n🍬Gummibärchen1 Tüte (200 g)",
         "decoration": "🦕 Dino-Teller & BecherSet ~8 €\n🎈 Grüne Luftballons10 Stk. ~3 €\n🪧 Dino-Girlande1 Stk. ~4 €\n🦶 Fußspuren am BodenKostenlosTonpapier (oder normales Papier grün anmalen) ausschneiden, 15 Min.\n\n💡 Dino-Fußspuren-Trick:\nSchneide 8–10 Dino-Fußspuren aus grünem Tonpapier (oder grün bemaltem Papier) aus und klebe sie vom Eingang bis zum Partyraum auf den Boden. Die Kinder folgen der \"Dino-Spur\" sobald sie reinkommen. Kostet nix, dauert 15 Minuten, macht sofort Stimmung.",
         "giveaways": "🪨 1 selbst gegossenes Fossil (personalisiert mit Namen)\n🦕 1 Dino-Figur aus der Ausgrabung\n🎭 Eigene Dino-Maske (selbst gebastelt)\n🍬 1 Tüte Gummibärchen\n\nAlles in braune Papiertüte (10 Stk. ~1 € bei DM/Action), beschriftet mit \"Forschungsergebnisse von ___\". Kosten: ~2,50 € pro Kind.",
         "shoppingList": [
@@ -12693,7 +12776,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🧃",
-            "label": "Capri-Sun + Snacks + Würstchen",
+            "label": "Saftpaeckchen + Snacks + Würstchen",
             "url": null,
             "priceEur": 12,
             "hasAffiliate": false,
@@ -12791,7 +12874,7 @@ var ELITE_MOTTO_DATA = {
             "material": "5 Umschläge mit Rätseln, 1 Schatzkarte (mit [machsleicht erstellen](/kindergeburtstag?modus=schatzsuche)), 1 Schatzkiste mit Inhalt (Schuhkarton reicht)",
             "prepText": "Erstelle mit dem machsleicht-Planer eine Dino-Schatzsuche mit 5 Stationen. Jede Station hat ein altersgerechtes Rätsel:",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -12810,7 +12893,7 @@ var ELITE_MOTTO_DATA = {
             "material": "15 Fragen (→ [Druckvorlage mit allen 15 Fragen](/kindergeburtstag/dino-quiz)), Buzzer/Klingel/Topfdeckel, Punktetafel (Whiteboard oder Papier)",
             "prepText": "2 Teams. Frage vorlesen, wer zuerst buzzert darf antworten. Richtig = 1 Punkt. Falsch = anderes Team darf.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen.",
             "ageAdjust6": "Multiple Choice (3 Antworten).",
             "ageAdjust8": "Offene Fragen.",
             "indoorTip": null,
@@ -12819,8 +12902,8 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": null
           }
         ],
-        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃\"Dino-Pipi\"14 Capri-Sun\n🌋Kartoffelbrei-Vulkan1 kg Kartoffeln\n🌭Mini-Würstchen16 Stück\n🥕Gemüse-Sticks4 Karotten, 2 Gurken\n🍿Popcorn300 g\n🍫Schoko-Goldmünzen1 Netz (Schatz)\n\n💡 Kartoffelbrei-Vulkan:\nKartoffelbrei auf den Teller häufeln, oben eine Mulde formen, Ketchup reingießen = Lava. Die Kinder lieben es. Funktioniert auch mit Würstchen als \"Baumstämme\" drumherum.",
-        "decoration": "🦕 Dino-Teller & BecherSet ~8 €\n🎈 Grüne Luftballons10 Stk. ~3 €\n🪧 Dino-Girlande1 Stk. ~4 €\n🦶 Fußspuren-PfadKostenlos, 15 Min.\n🌿 Krepppapier-Lianen~2 € KrepppapierVon der Decke hängen = Dschungel\n🪧 \"Jurassic Park\"-SchildKostenlosPappe + Edding, am Eingang\n🔊 Dschungel-SoundsKostenlosYouTube: \"Jungle Ambience\" leise im Hintergrund\n🦕 Dinos mit Partyhüten~3 € FigurenSpielzeug-Dinos mit Mini-Hüten auf den Tisch\n\n🦖 Wow-Bonus: Dino-Kostüm für Mama oder Papa\nDer absolute Überraschungs-Hit: ein [aufblasbares T-Rex-Kostüm*](https://www.amazon.de/s?k=aufblasbares+dino+kostüm+erwachsene&tag=machsleicht-21) (~35–50 €). Du öffnest die Tür als riesiger Dinosaurier — die Kinder rasten aus. Funktioniert als Spielleiter für die Forscher-Ausbildung, als Überraschungsgast beim Kuchen oder beim Parcours als \"jagendes Raubtier\". Wird DAS Foto des Tages. Die Kinder erzählen noch Wochen davon.",
+        "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃\"Dino-Pipi\"14 Saftpaeckchen\n🌋Kartoffelbrei-Vulkan1 kg Kartoffeln\n🌭Mini-Würstchen16 Stück\n🥕Gemüse-Sticks4 Karotten, 2 Gurken\n🍿Popcorn300 g\n🍫Schoko-Goldmünzen1 Netz (Schatz)\n\n💡 Kartoffelbrei-Vulkan:\nKartoffelbrei auf den Teller häufeln, oben eine Mulde formen, Ketchup reingießen = Lava. Die Kinder lieben es. Funktioniert auch mit Würstchen als \"Baumstämme\" drumherum.",
+        "decoration": "🦕 Dino-Teller & BecherSet ~8 €\n🎈 Grüne Luftballons10 Stk. ~3 €\n🪧 Dino-Girlande1 Stk. ~4 €\n🦶 Fußspuren-PfadKostenlos, 15 Min.\n🌿 Krepppapier-Lianen~2 € KrepppapierVon der Decke hängen = Dschungel\n🪧 \"Dino-Expedition\"-SchildKostenlosPappe + Edding, am Eingang\n🔊 Dschungel-SoundsKostenlosYouTube: \"Jungle Ambience\" leise im Hintergrund\n🦕 Dinos mit Partyhüten~3 € FigurenSpielzeug-Dinos mit Mini-Hüten auf den Tisch\n\n🦖 Wow-Bonus: Dino-Kostüm für Mama oder Papa\nDer absolute Überraschungs-Hit: ein [aufblasbares T-Rex-Kostüm*](https://www.amazon.de/s?k=aufblasbares+dino+kostüm+erwachsene&tag=machsleicht-21) (~35–50 €). Du öffnest die Tür als riesiger Dinosaurier — die Kinder rasten aus. Funktioniert als Spielleiter für die Forscher-Ausbildung, als Überraschungsgast beim Kuchen oder beim Parcours als \"jagendes Raubtier\". Wird DAS Foto des Tages. Die Kinder erzählen noch Wochen davon.",
         "giveaways": "🪪 Forscherpass (mit Foto und Urkunde)\n🪨 Selbst gegossenes Fossil\n🦕 Dino-Figur aus der Ausgrabung\n🔍 Lupe aus der Schatzsuche\n🍫 Schoko-Goldmünzen\n\nIn braune Papiertüte (10 Stk. ~1 € bei DM/Action) mit \"Forschungsergebnisse von ___\". Kosten: ~4 € pro Kind.",
         "shoppingList": [
           {
@@ -12888,7 +12971,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🧃",
-            "label": "Capri-Sun + Snacks + Würstchen",
+            "label": "Saftpaeckchen + Snacks + Würstchen",
             "url": null,
             "priceEur": 15,
             "hasAffiliate": false,
@@ -12980,7 +13063,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "n": 4,
-          "content": "Smarties oder M&Ms als \"Lava-Strom\" von der Spitze nach unten legen — rot und orange Farben."
+          "content": "bunte Schoko-Linsen oder M&Ms als \"Lava-Strom\" von der Spitze nach unten legen — rot und orange Farben."
         },
         {
           "n": 5,
@@ -12999,7 +13082,7 @@ var ELITE_MOTTO_DATA = {
       "tips": [
         {
           "title": "🎂 Keine Lust zu backen?",
-          "body": "Fertigen Schoko-Kuchen beim Bäcker oder Supermarkt kaufen, eine Dino-Figur obendrauf stellen, grüne Smarties drumherum streuen. Sieht aus wie gewollt, dauert 2 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: \"Der Kuchen war nicht selbstgemacht.\""
+          "body": "Fertigen Schoko-Kuchen beim Bäcker oder Supermarkt kaufen, eine Dino-Figur obendrauf stellen, grüne bunte Schoko-Linsen drumherum streuen. Sieht aus wie gewollt, dauert 2 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: \"Der Kuchen war nicht selbstgemacht.\""
         }
       ]
     },
@@ -13007,7 +13090,7 @@ var ELITE_MOTTO_DATA = {
       "structured": [
         {
           "topic": "🚨 Allergien vorher abfragen",
-          "detail": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten). In die Einladung schreiben: \"Hat dein Kind Allergien oder Unverträglichkeiten?\" Capri-Sun und Popcorn sind fast immer safe."
+          "detail": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten). In die Einladung schreiben: \"Hat dein Kind Allergien oder Unverträglichkeiten?\" Saftpaeckchen und Popcorn sind fast immer safe."
         },
         {
           "topic": "📋 Plan B bei Regen",
@@ -13020,6 +13103,10 @@ var ELITE_MOTTO_DATA = {
         {
           "topic": "🎯 Die \"1 Helfer\"-Regel",
           "detail": "Ab 6 Kindern brauchst du mindestens 1 zweiten Erwachsenen. Frag Partner, Großeltern oder eine befreundete Mutter/Vater. Alleine 6–8 aufgedrehte Kinder 3 Stunden zu managen ist kein Spaß."
+        },
+        {
+          "tip": "Mengen-Faustregel",
+          "content": "2 Getraenke pro Kind + 2 Reserve = bei 6 Kindern 14 Saftpaeckchen. Gilt fuer Minimal UND Standard."
         }
       ],
       "educationalValue": null
@@ -13085,7 +13172,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🥜",
             "title": "Allergien zusammenschreiben",
-            "detail": "Liste: Kind X = Laktose, Kind Y = Nüsse. Bei Snacks (Brezeln, Popcorn, Smarties, Gummibärchen) ist Allergie-Lage meist entspannt, aber abfragen ist Pflicht."
+            "detail": "Liste: Kind X = Laktose, Kind Y = Nüsse. Bei Snacks (Brezeln, Popcorn, bunte Schoko-Linsen, Gummibärchen) ist Allergie-Lage meist entspannt, aber abfragen ist Pflicht."
           },
           {
             "icon": "🙋",
@@ -13095,7 +13182,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "📦",
             "title": "Bestellliste finalisieren",
-            "detail": "Dino-Figuren + Masken (bei Standard+) bei Amazon, Gipspulver (1kg ~3€) bei OBI/Baumarkt, Lebensmittelfarbe + Backmischung + Capri-Sun im Supermarkt."
+            "detail": "Dino-Figuren + Masken (bei Standard+) bei Amazon, Gipspulver (1kg ~3€) bei OBI/Baumarkt, Lebensmittelfarbe + Backmischung + Saftpaeckchen im Supermarkt."
           }
         ]
       },
@@ -13140,7 +13227,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🎂",
             "title": "Vulkan-Kuchen backen — oder Plan B",
-            "detail": "Wenn Zeit/Nerven: Gugelhupf + Schokoglasur + Lava-Smarties. Wenn nicht: Schoko-Boden vom Bäcker (~6-8€), morgen Glasur + Smarties drauf."
+            "detail": "Wenn Zeit/Nerven: Gugelhupf + Schokoglasur + Lava-bunte Schoko-Linsen. Wenn nicht: Schoko-Boden vom Bäcker (~6-8€), morgen Glasur + bunte Schoko-Linsen drauf."
           },
           {
             "icon": "🗣️",
@@ -13170,7 +13257,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🍫",
             "title": "Kuchen verzieren — Vulkan-Look",
-            "detail": "Schokoglasur drüber (Loch = Krater), rot + orange Smarties als Lava von oben nach unten, grüne Smarties unten als Bäume. Bei Wow: Wunderkerze in Mitte für Happy-Birthday."
+            "detail": "Schokoglasur drüber (Loch = Krater), rot + orange bunte Schoko-Linsen als Lava von oben nach unten, grüne bunte Schoko-Linsen unten als Bäume. Bei Wow: Wunderkerze in Mitte für Happy-Birthday."
           },
           {
             "icon": "🥚",
@@ -13185,7 +13272,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🔊",
             "title": "Audio + Bluetooth-Box testen",
-            "detail": "Spotify ‚Dino Sounds' oder ‚Jurassic Park Theme' Playlist. Dino-Brüll-Audio für Vulkan-Demo-Climax separat speichern."
+            "detail": "Spotify ‚Dino Sounds' oder ‚Dino-Expedition Theme' Playlist. Dino-Brüll-Audio für Vulkan-Demo-Climax separat speichern."
           },
           {
             "icon": "🏗️",
@@ -13200,7 +13287,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "⏰",
             "title": "30 Min vor Ankunft: Stationen aufbauen",
-            "detail": "Vulkan-Tisch fertig, Ausgrabung-Tisch fertig, Capri-Sun kühlen, Schmier-Schutz-Folien ausgelegt. Eltern-Sitzecke einrichten (sie warten 2-2,5h)."
+            "detail": "Vulkan-Tisch fertig, Ausgrabung-Tisch fertig, Saftpaeckchen kühlen, Schmier-Schutz-Folien ausgelegt. Eltern-Sitzecke einrichten (sie warten 2-2,5h)."
           },
           {
             "icon": "🎯",
@@ -13261,7 +13348,7 @@ var ELITE_MOTTO_DATA = {
           "Vulkan-Demo doppelt: 2 Eruptionen parallel oder hintereinander.",
           "Sofort Verstärkung anrufen: Eltern, Oma, 10€ für 2 Std Aufsicht.",
           "Dino-Figuren + Mitgebsel-Material aufstocken aus Reserve.",
-          "Capri-Sun nachbestellen lassen, Kuchen-Stücke kleiner schneiden."
+          "Saftpaeckchen nachbestellen lassen, Kuchen-Stücke kleiner schneiden."
         ],
         "fallback": "Keine Verstärkung erreichbar? Programm abkürzen — Eier-Suche + Vulkan + Snack + Mitgebsel.",
         "tone": "praktisch"
@@ -13274,7 +13361,7 @@ var ELITE_MOTTO_DATA = {
           "Rolle anbieten: ‚Du bist Foto-Reporter — du dokumentierst die Vulkan-Eruption.'",
           "Alternative: Forscher-Notar — trägt Quiz-Antworten ein, stempelt Pässe.",
           "Tattoo nicht auf Hand? Auf den Forscherpass kleben — sieht offizieller aus.",
-          "Sitzplatz mit Capri-Sun + Dino-Figuren-Sortier-Aufgabe."
+          "Sitzplatz mit Saftpaeckchen + Dino-Figuren-Sortier-Aufgabe."
         ],
         "fallback": "Bleibt komplett raus? Buch + Decke in die ruhige Ecke. Bei 6-8 oft nach 20 Min selbst eingestiegen.",
         "tone": "ruhig"
@@ -13282,11 +13369,11 @@ var ELITE_MOTTO_DATA = {
       "kuchen_misslungen": {
         "icon": "🎂",
         "label": "Kuchen ist misslungen",
-        "headline": "Bäcker-Hack: Schoko-Gugelhupf + Smarties = 10 Min Notfall.",
+        "headline": "Bäcker-Hack: Schoko-Gugelhupf + bunte Schoko-Linsen = 10 Min Notfall.",
         "steps": [
           "Schoko-Gugelhupf beim Bäcker (~6-8€) oder Schoko-Kasten + Krater rein-bohren.",
           "Schokoglasur drüber laufen lassen = Lava.",
-          "Rote + orange Smarties als Lava-Strom seitlich ankleben.",
+          "Rote + orange bunte Schoko-Linsen als Lava-Strom seitlich ankleben.",
           "Grüne Gummibärchen unten = Dschungel, bei Wow Wunderkerze in Krater."
         ],
         "fallback": "Bäcker zu? Muffins aus Vorrat, je Muffin ein Gummibärchen + roter Edding-Strich = Mini-Vulkan-Muffins.",
@@ -13311,7 +13398,7 @@ var ELITE_MOTTO_DATA = {
         "headline": "Raus aus dem Trubel — 5 Min Pause am Wache-Pult.",
         "steps": [
           "Kind aus der Gruppe nehmen — Küche oder Garten-Ecke.",
-          "Capri-Sun + Brezel + Tattoo auf Handrücken als Beruhigungs-Ritual.",
+          "Saftpaeckchen + Brezel + Tattoo auf Handrücken als Beruhigungs-Ritual.",
           "Rolle anbieten: ‚Du suchst die nächsten Eier mit mir — Spezial-Auftrag.'",
           "Bei Heimweh: Mama-Foto am Handy zeigen, nicht überreden.",
           "Nach 5 Min sanft zurückführen, an die Hand zur nächsten Station."

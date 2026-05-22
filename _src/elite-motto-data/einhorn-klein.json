@@ -90,7 +90,7 @@
       }
     ],
     "optOutNote": "💡 Für 3-Jährige: Du liest den Namen vor und sagst „Du bist jetzt Luna Mondsilber!\" — sie können den Zettel noch nicht selbst lesen. Das macht es sogar magischer.",
-    "materialNote": null
+    "materialNote": "⚠️ Vor der Party: Glitzer-Kleber, Tattoo und Schminkfarbe an kleiner Hautstelle (Innenseite Unterarm) eines Kindes 1 Tag vorher testen. Bei Rötung → nur Sticker und Klettband-Verzierungen statt Tattoo/Glitzer/Schminke."
   },
   "variants": [
     {
@@ -138,7 +138,7 @@
           "material": "1 Pappteller pro Kind (weiß), Schere (du schneidest vor!), Klebeband/Tacker, Glitzer-Kleber oder Glitzer + Klebestift, bunte Sticker, Gummiband oder Haarreif zum Befestigen",
           "prepText": "Pappteller einmal falten → Kegel-Form rollen → mit Tacker fixieren. Das ist das Horn. Jedes Kind darf sein Horn mit Glitzer-Kleber und Stickern verzieren. Mit Gummiband am Kopf befestigen oder auf einen Haarreif kleben.",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband.",
           "ageAdjust6": "Glitzer-Kleber statt loser Glitzer (weniger Sauerei). Große Sticker statt kleine.",
           "ageAdjust8": "Dürfen mit Kinderschere selbst den Pappteller zuschneiden. Zusätzlich Ohren aus Pappe ausschneiden und drankleben.",
           "indoorTip": null,
@@ -157,7 +157,7 @@
           "material": "Bluetooth-Lautsprecher oder Handy, fröhliche Kindermusik (Spotify: „Kindergeburtstag Party\"), bunte Tücher zum Schwenken (optional, je 1 pro Kind)",
           "prepText": "Musik an → alle tanzen, hüpfen, galoppieren wie Einhörner. Musik aus → alle frieren ein wie Eisskulpturen! Wer sich bewegt, bekommt einen Glitzer-Aufkleber auf die Hand — das ist eine Belohnung, kein Rauswerfen.",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr).",
           "ageAdjust6": "Einfrieren ist noch schwer — lass sie einfach tanzen. Bei Stopp alle auf den Boden setzen (das können sie).",
           "ageAdjust8": "Einfrieren als Tier-Figur: „Jetzt bist du ein Einhorn!\" — Pose halten.",
           "indoorTip": null,
@@ -300,7 +300,7 @@
           "material": "1 Pappteller pro Kind (weiß), Tacker, Glitzer-Kleber, bunte Sticker, Gummiband/Haarreif",
           "prepText": "Pappteller vorher zur Kegel-Form rollen und tackern. Kinder verzieren mit Glitzer-Kleber und Stickern. Am Kopf befestigen → „Du bist jetzt ein echtes Einhorn!\"",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband.",
           "ageAdjust6": "Alles vorbereiten, sie kleben nur drauf. Große Sticker.",
           "ageAdjust8": "Zusätzlich Ohren aus Pappe ausschneiden und ankleben.",
           "indoorTip": null,
@@ -319,7 +319,7 @@
           "material": "1 flacher weißer Teller, 1 Tasse Vollmilch, Lebensmittelfarben (4 Farben, ~2 € im Supermarkt), Spülmittel, 1 Wattestäbchen pro Kind",
           "prepText": "Milch in den Teller gießen. Kinder tropfen je eine Farbe rein (du hilfst!). Dann: Wattestäbchen in Spülmittel tunken und in die Milch stippen — Farben „explodieren\" in Regenbogen-Spiralen! Sieht aus wie Magie.",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr).",
           "ageAdjust6": "DU tropfst die Farben, DU hältst das Wattestäbchen — sie dürfen zuschauen und staunen. Das reicht völlig. Nach dem Staunen darf jedes Kind einmal selbst stippen.",
           "ageAdjust8": "Sie dürfen alles selbst machen. 3–4 Runden sind normal — immer ein frischer Teller Milch.",
           "indoorTip": null,
@@ -338,7 +338,7 @@
           "material": "1 große Plastikwanne, 2 kg Reis mit essbarem Glitzer gemischt, 8 kleine Einhorn-Figuren, 1 Löffel pro Kind",
           "prepText": "Reis mit Glitzer in die Wanne. Einhorn-Figuren im Reis vergraben. Jedes Kind bekommt einen Löffel und gräbt vorsichtig. Wer ein Einhorn findet, darf es behalten.",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden.",
           "ageAdjust6": "Figuren nur leicht bedecken. Reis statt Sand (wiederverwendbar, weniger Sauerei). Auf einer alten Tischdecke oder in der Badewanne aufstellen.",
           "ageAdjust8": "Tiefer vergraben. Augen zu und nur ertasten — welches Einhorn ist das (stehend oder liegend)?",
           "indoorTip": null,
@@ -357,7 +357,7 @@
           "material": "Bluetooth-Box/Handy, fröhliche Kindermusik, bunte Tücher zum Schwenken (optional)",
           "prepText": "Musik an → tanzen wie Einhörner (galoppieren!). Musik aus → einfrieren! Wer sich bewegt, bekommt einen Glitzer-Aufkleber. Kein Ausscheiden — alle tanzen weiter.",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr).",
           "ageAdjust6": "Einfrieren ist noch schwer — bei Stopp einfach hinsetzen.",
           "ageAdjust8": "Einfrieren als Figur: „Zeig mir ein Einhorn!\" — Pose halten.",
           "indoorTip": null,
@@ -515,7 +515,7 @@
           "material": "1 großer Pappkarton, Filzstifte (Einhorn-Gesicht malen), Cutter/Schere (Maul ausschneiden), 8–10 bunte Bälle (Bällebad-Bälle ~5 € bei Action, oder Sockenbälle)",
           "prepText": "Auf den Karton ein Einhorn-Gesicht malen mit großem offenem Maul (ca. 20 cm Durchmesser ausschneiden). Karton an die Wand lehnen oder auf einen Stuhl stellen. Kinder werfen bunte Bälle ins Maul.",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband.",
           "ageAdjust6": "Ganz nah ran (50 cm Abstand). Großes Maul (30 cm). Jeder Wurf ist ein Treffer.",
           "ageAdjust8": "Weiter weg (1,5 m). Verschiedene Farben = verschiedene „Einhorn-Snacks\" (roter Ball = Erdbeere, gelb = Banane).",
           "indoorTip": null,
@@ -534,7 +534,7 @@
           "material": "1 Holzstab pro Kind (30 cm, Bastelstäbe ~3 € für 10 Stk.), 1 Stern aus Glitzerpappe (vorher ausschneiden!), Klebeband/Heißklebe, bunte Bänder (Geschenkband, ~2 €), Glitzer-Kleber",
           "prepText": "Du schneidest vorher die Sterne aus Glitzerpappe aus und klebst sie mit Heißklebe oben auf die Stäbe. Kinder dürfen bunte Bänder dran knoten (du hilfst) und den Stab mit Glitzer-Kleber verzieren. Fertig ist der Zauberstab.",
           "steps": [],
-          "safetyRule": null,
+          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband.",
           "ageAdjust6": "Stab + Stern komplett vorher zusammenkleben. Kinder kleben nur Bänder und Sticker drauf.",
           "ageAdjust8": "Sie dürfen den Stern selbst auf den Stab kleben (Klebeband) und die Bänder selbst knoten.",
           "indoorTip": null,
@@ -683,8 +683,8 @@
           "categoryReasoning": "Konsistent — Goodie-Verpackung."
         }
       ],
-      "estimatedCostEur": 75,
-      "costContext": "Geschätzte Kosten (Wow, 5 Kinder, ohne optionale Extras)"
+      "estimatedCostEur": 90,
+      "costContext": "Pflichtteil ~65 €, mit allen Sinnvoll-Extras ~105 €. Die niedrigere Schätzung 75 € geht von Standard-Auswahl ohne alle Wow-Add-ons aus."
     }
   ],
   "cakeRecipe": {
