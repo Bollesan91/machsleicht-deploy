@@ -1,3 +1,65 @@
+# Session-Notiz — 22.05.2026 (Abend: Phase-B Komplett + Cross-Pollination + Anti-IP Final)
+
+**Branch:** `claude/meerjungfrau-elite-2026-05-22` → wird via "Ende deploy" auf draft → main gemerged
+
+**Was gemacht wurde:**
+
+1. **Helfer-v3 Welle 8 Chrome-Deep-Push (4 Gold-JSONs):** Echte Scores 79-84 statt sycophanter 88. 34 Fixes appliziert:
+   - weltraum-klein 88→84→fix: Apfelschorle "6 Kinder" bei 8-Kinder-Variants, minAge=5 bei 3-5yo, Alien-Begrüßer ohne Spiel
+   - safari-mittel 88→79→fix: TIGER-Codeknacker T-F-S-U für FUSS (zwei S nötig!) → FUSS-Logik repariert
+   - piraten-gross 88→82→fix: KOMPASS Doppel-S, Tannen-Eichhörnchen erfunden, 20:00 im Sommer hell
+   - dino-gross 88→79→fix: Code 31427 vs Geburtsdatum-Widerspruch, signatureRitual KOMPLETT NULL, "Ǻ AA;" Garbage
+
+2. **Phase-B Generation Welle 1+2 (6 neue JSONs):**
+   - Dschungel klein (90KB) / mittel (95KB TIGER-Codeknacker) / gross (128KB AMAZONAS-Escape)
+   - Feen klein (76KB) / mittel (91KB FARN-Codeknacker) / gross (104KB FLORA-Codeknacker, Letter-Lock)
+   - Alle 0 IP-Treffer, alle math-verified Codeknacker, alle signatureRitual befüllt
+
+3. **Cross-Pollination SEO ↔ Phase-B (24 base-Mottos, 2 Waves):**
+   - Wave 1: Weltraum + Safari + Piraten + Dino
+   - Wave 2: Feuerwehr + Einhorn + Detektiv + Meerjungfrau
+   - Kritische Befunde gefixt:
+     - einhorn-gross hatte ageInsight KOMPLETT FEHLEND
+     - einhorn-mittel hatte steps[] LEER bei Wolkenwald + Quiz
+     - einhorn-gross Escape-Code 9312 falsch → korrekt 4-7-1-5
+     - piraten-mittel ageInsight + faq KOMPLETT LEER
+     - meerjungfrau ALLE 3 hatten Triton (Disney) → Meerprinz ersetzt
+   - 50+ neue Spiele migriert (Wasser-Raketen-Engineering, Lügendetektor mit Puls, 112-Quiz, 15-Fragen-Mythologie-Quiz mit echter Volkskunde)
+
+4. **Anti-IP Final Sanitization (52 Replacements):**
+   - 32x Oreo → Schoko-Sandwich-Keks
+   - 18x Capri-Sun + 13x Smarties saniert (pre-existing in alten JSONs!)
+   - 1x Disney + 4x Tinkerbell + 2x Hobbit + 1x Harry Potter (meta-refs) entfernt
+   - ALLE 30 JSONs ANTI-IP CLEAN (verified)
+
+**Bundle:** _bundle.js auf 30 Slots erweitert, 2.66 MB (war 1.79 MB).
+`getEliteData(motto, age)` funktioniert ab jetzt für ALLE 10 Mottos.
+
+**Commits diese Session (7):**
+1. `95da7d5` Welle 8 + 3 new (Dschungel klein/mittel + Feen-klein)
+2. `44527e1` Dschungel-gross
+3. `0967e15` Feen-mittel
+4. `cdcd647` Feen-gross
+5. `2361d14` Bundle 30 SLOTS
+6. `f28ac98` Cross-Pollination Wave 1
+7. `7acc272` Cross-Pollination Wave 2 + Anti-IP Final
+
+**Nächste Schritte (in nächster Session):**
+- Chrome-Re-Verification der Welle-8-Fixes (Task #28) — JSONs sind jetzt auf GitHub, Chrome-Helfer-v3 kann sie re-fetchen
+- GSC-Indexing-Plan Tag 2 starten (Long-Tail SEO-Stars)
+- Über-uns-Page (P1-11)
+- Email-Capture LIVE (P1-15)
+- Cross-Pollination für Dschungel + Feen sobald SEO-Pages erstellt sind
+
+**Wichtige Lessons Learned:**
+- Subagent-Scores für Phase-B sind systematisch zu hoch ("Gold-88" war tatsächlich 79-84). Chrome-Helfer-v3 liefert brutalere und genauere Bewertung.
+- ageInsight, faq, steps[] können in Phase-B JSONs LEER sein, ohne dass Subagent das bemerkt. Cross-Pollination via SEO-Vergleich fängt das.
+- Codeknacker mit doppelten Buchstaben (KOMPASS, FUSS mit zwei S) sabotieren die Selbst-Check-Logik. Immer unique Buchstaben.
+- Erfundene Tiere/Pflanzen (Tannen-Eichhörnchen) werden bei älteren Kindern entlarvt — nur echte Spezies.
+- Nacht-Zeit-Angaben brauchen Jahreszeit-Warnung (Sommer dunkel ab ~21:30, Winter ~17:30).
+
+---
+
 # Session-Notiz — 22.05.2026 (Marktreife-Audit + SEO-Cleanup + Meerjungfrau-Reaktivierung + Helfer-v3-Start)
 
 **Übergabe:** Siehe `_dev/HANDOFF-2026-05-22.md` für nächste Session.
