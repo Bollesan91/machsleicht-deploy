@@ -5,7 +5,7 @@
     "schema_version": "1.0",
     "purpose": "Feen 9-12 (gross) — Phase B Elite-Slot. Verlorener Zauberwald als Escape-Quest mit Pflanzen-Chiffre, geschlechtsoffen, Wurzel-Pakt-Ritual.",
     "phase_b_complete": "2026-05-22",
-    "phase_b_method": "Direct draft analog safari-gross / einhorn-gross Pattern. Codeknacker FLORA (5 unique Buchstaben: F-L-O-R-A, je eine Station, alle echte heimische Pflanzen). Anti-IP konsequent: kein Tinkerbell/Hobbit/Harry-Potter-Vokabular. Geschlechts-Inklusion via Elfenkrieger/Waldwaechter gleichberechtigt zu Blumenfee/Lichtfee, kein farblicher Maedchen/Jungen-Split. Wurzel-Pakt mit Holzring-Rune ist Eroeffnungs- und Abschluss-Ritual."
+    "phase_b_method": "Direct draft analog safari-gross / einhorn-gross Pattern. Codeknacker FLORA (5 unique Buchstaben: F-L-O-R-A, je eine Station, alle echte heimische Pflanzen). Anti-IP konsequent: keine fremden Markenfiguren"
   },
   "motto": "feen",
   "ageGroup": "gross",
@@ -25,7 +25,7 @@
       },
       {
         "topic": "Geschlechter-Mix",
-        "detail": "In dieser Altersgruppe sind gemischte Geburtstage Standard. „Feen-Party = nur für Mädchen\" ist 2026 erledigt — entscheidend ist die Aufzieh-Logik: Wenn Elfenkrieger und Waldwächter gleichwertige Rollen sind, kein Tüll-Pflicht, keine rosa Deko-Dominanz, kommen Jungen ebenso gerne. Anti-IP ist Pflicht: kein Tinkerbell, kein Hobbit, kein Harry Potter — eigenes Vokabular trägt."
+        "detail": "In dieser Altersgruppe sind gemischte Geburtstage Standard. „Feen-Party = nur für Mädchen\" ist 2026 erledigt — entscheidend ist die Aufzieh-Logik: Wenn Elfenkrieger und Waldwächter gleichwertige Rollen sind, kein Tüll-Pflicht, keine rosa Deko-Dominanz, kommen Jungen ebenso gerne. Anti-IP ist Pflicht: keine fremden Markenfiguren"
       },
       {
         "topic": "Regeln",
@@ -148,7 +148,7 @@
         {
           "time": "16:40",
           "title": "🎂 Zauberwald-Kuchen & Foto",
-          "description": "Schokoladenkuchen mit grüner Glasur, essbarem Moos (zerbröselte Oreo-Streusel), Marzipan-Pilzen und 5 Pflanzen-Markern (Zahnstocher mit Foto der Hüter-Pflanze). 15 Min Kuchen + kurzes Gruppenfoto."
+          "description": "Schokoladenkuchen mit grüner Glasur, essbarem Moos (zerbröselte Schoko-Sandwich-Keks-Streusel), Marzipan-Pilzen und 5 Pflanzen-Markern (Zahnstocher mit Foto der Hüter-Pflanze). 15 Min Kuchen + kurzes Gruppenfoto."
         },
         {
           "time": "16:55",
@@ -308,8 +308,8 @@
           "whyItWorks": "Pflanzen bestimmen ist Methode, nicht Glück. Die Kinder erleben, dass es eine erlernbare Fähigkeit ist — und nehmen Brennnessel/Spitzwegerich-Wissen mit nach Hause."
         }
       ],
-      "food": "🎂 Zauberwald-Schoko-Kuchen (1 Springform, grüne Glasur + Oreo-Krümel-Moos + Marzipan-Pilze) · 🍕 Mini-Pizzen mit frischen Kräutern (10 Stück, 1,5/Kind) · 🥤 Holunderblüten-Schorle oder Apfelschorle (2 L) · 🥒 Gemüse-Sticks „Waldgemüse\" mit Kräuterquark · 🍿 Popcorn „Wald-Snack\" (300 g)",
-      "decoration": "🌿 Echtes Grünzeug (Efeu-Ranken, Farn-Wedel aus dem Garten) als Tisch-Deko — kostenlos · 🕯️ LED-Teelichter „Glühwürmchen\" (10 Stk., ~4 €) · 🪵 Holz-Astscheiben als Untersetzer (~3 €) · 🔊 Playlist „Verlorener Zauberwald\" (Spotify: Forest Ambient, Celtic Instrumental, ohne Tinkerbell-Bezug)\n\n💡 Deko-Regel für 9–12:\nWeniger Tüll, mehr Holz, mehr echtes Grün. Keine rosa Papp-Teller mit Feen-Gesicht. Die Atmosphäre soll „alter Wald\" sein, nicht „Kinderzimmer-Rosa\".",
+      "food": "🎂 Zauberwald-Schoko-Kuchen (1 Springform, grüne Glasur + Schoko-Sandwich-Keks-Krümel-Moos + Marzipan-Pilze) · 🍕 Mini-Pizzen mit frischen Kräutern (10 Stück, 1,5/Kind) · 🥤 Holunderblüten-Schorle oder Apfelschorle (2 L) · 🥒 Gemüse-Sticks „Waldgemüse\" mit Kräuterquark · 🍿 Popcorn „Wald-Snack\" (300 g)",
+      "decoration": "🌿 Echtes Grünzeug (Efeu-Ranken, Farn-Wedel aus dem Garten) als Tisch-Deko — kostenlos · 🕯️ LED-Teelichter „Glühwürmchen\" (10 Stk., ~4 €) · 🪵 Holz-Astscheiben als Untersetzer (~3 €) · 🔊 Playlist „Verlorener Zauberwald\" (Spotify: Forest Ambient, Celtic Instrumental, ohne klassische Fantasy-Bezug)\n\n💡 Deko-Regel für 9–12:\nWeniger Tüll, mehr Holz, mehr echtes Grün. Keine rosa Papp-Teller mit Feen-Gesicht. Die Atmosphäre soll „alter Wald\" sein, nicht „Kinderzimmer-Rosa\".",
       "giveaways": "🪵 Wurzel-Pakt-Holzring mit eingebrannter Rune (Hauptmitgebsel) · 📜 Wurzel-Pakt-Karte mit Pflanzennamen + Hüter-Bestätigung · 🌱 Mini-Tütchen mit Wildblumen-Samen (Ringelblume, Löwenzahn — Apotheke / Garten-Center) · 🍫 Schoko-Pilze (Lidl/DM, „Wald-Wegzehrung\") · 🌿 1 Aufkleber-Set Pflanzen-Runen\n\nIn unbleichten Kraftpapier-Tüten mit handgeschriebenem Pflanzennamen. Ca. 4 € pro Kind.",
       "shoppingList": [
         {
@@ -404,7 +404,7 @@
         },
         {
           "emoji": "🎂",
-          "label": "Backmischung + grüne Glasur + Oreo-Krümel + Marzipan-Pilze",
+          "label": "Backmischung + grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze",
           "url": null,
           "priceEur": 8,
           "hasAffiliate": false,
@@ -723,7 +723,7 @@
         },
         {
           "emoji": "🎂",
-          "label": "Backmischung + grüne Glasur + Oreo-Krümel + Marzipan-Pilze + Wunderkerze",
+          "label": "Backmischung + grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze + Wunderkerze",
           "url": null,
           "priceEur": 10,
           "hasAffiliate": false,
@@ -1110,7 +1110,7 @@
         },
         {
           "emoji": "🎂",
-          "label": "Backmischung + grüne Glasur + Oreo-Krümel + Marzipan-Pilze + Wunderkerze",
+          "label": "Backmischung + grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze + Wunderkerze",
           "url": null,
           "priceEur": 10,
           "hasAffiliate": false,
@@ -1143,7 +1143,7 @@
       },
       {
         "n": 4,
-        "content": "„Moos-Effekt\": Oreo-Kekse zermahlen + grüne Lebensmittelfarbe untermischen → krümeliges grünes Pulver. Großzügig über den Kuchen streuen."
+        "content": "„Moos-Effekt\": Schoko-Sandwich-Keks-Kekse zermahlen + grüne Lebensmittelfarbe untermischen → krümeliges grünes Pulver. Großzügig über den Kuchen streuen."
       },
       {
         "n": 5,
@@ -1162,7 +1162,7 @@
     "tips": [
       {
         "title": "Keine Lust zu backen?",
-        "body": "Gekaufter Schokoladenkuchen vom Bäcker oder Discounter funktioniert genauso. Die Moos-Optik (grüne Glasur + Oreo-Krümel + Marzipan-Pilze) machst du in 15 Min selbst — niemand merkt, dass der Boden gekauft ist."
+        "body": "Gekaufter Schokoladenkuchen vom Bäcker oder Discounter funktioniert genauso. Die Moos-Optik (grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze) machst du in 15 Min selbst — niemand merkt, dass der Boden gekauft ist."
       },
       {
         "title": "Veganer / glutenfreier Kuchen",
@@ -1256,7 +1256,7 @@
         {
           "icon": "✉️",
           "title": "Einladungen rausschicken — Anti-IP-Ton",
-          "detail": "Pflicht im Text: „Verlorener Zauberwald\"-Frame, Allergie- und Heuschnupfen-Abfrage, erdfarbene Kleidung empfohlen, Wow zusätzlich „Handy mit GPS möglich\". Keine Tinkerbell/Disney-Anspielungen. RSVP-Link auf party.machsleicht.de."
+          "detail": "Pflicht im Text: „Verlorener Zauberwald\"-Frame, Allergie- und Heuschnupfen-Abfrage, erdfarbene Kleidung empfohlen, Wow zusätzlich „Handy mit GPS möglich\". keine fremden Markenfiguren"
         },
         {
           "icon": "🏠",
@@ -1361,7 +1361,7 @@
         {
           "icon": "🎂",
           "title": "Zauberwald-Kuchen backen",
-          "detail": "Schoko-Boden backen, abkühlen, grüne Glasur + Oreo-Krümel-Moos + Marzipan-Pilze + Wurzel-Symbol. 90 Min Gesamt. Bei vegan/glutenfrei rechtzeitig anders kalkulieren."
+          "detail": "Schoko-Boden backen, abkühlen, grüne Glasur + Schoko-Sandwich-Keks-Krümel-Moos + Marzipan-Pilze + Wurzel-Symbol. 90 Min Gesamt. Bei vegan/glutenfrei rechtzeitig anders kalkulieren."
         },
         {
           "icon": "🏕️",
@@ -1475,7 +1475,7 @@
       "headline": "Bäcker-Hack: gekaufter Schoko-Boden + selbst gemachte Moos-Optik.",
       "steps": [
         "Schokoladenkuchen vom Bäcker oder Discounter holen (~8 €).",
-        "Grüne Glasur (200 g Puderzucker + Wasser + Lebensmittelfarbe) drüber, dann Oreo-Krümel-Moos.",
+        "Grüne Glasur (200 g Puderzucker + Wasser + Lebensmittelfarbe) drüber, dann Schoko-Sandwich-Keks-Krümel-Moos.",
         "Marzipan-Pilze formen (15 Min) und Wurzel-Symbol aus Schoko-Guss aufmalen.",
         "Bei Wow: Wunderkerze rein, LED-Teelichter drum herum für Stimmung."
       ],

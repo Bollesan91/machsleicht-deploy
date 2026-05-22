@@ -1001,6 +1001,66 @@
       }
     }
   ],
+  "bonusGames": {
+    "intro": "Diese Spiele kannst du in jeder Variante einbauen oder weglassen — alle 6-8-tauglich, ergänzen die Stationen-Rotation um neue Module. Drei davon funktionieren auch indoor bei Regen.",
+    "items": [
+      {
+        "name": "📞 112-Quiz (Notruf-Mini)",
+        "duration": 15,
+        "minAge": 6,
+        "loudness": "ruhig",
+        "indoor": true,
+        "outdoor": false,
+        "material": "5 Quiz-Karten ausgedruckt (Vorlagen unten), 2 alte Smartphones im Flugmodus (oder ohne SIM), 1 Stoppuhr",
+        "anleitung": "Spiel-Format wie ein Quiz mit drei Aufgaben pro Kind. Aufgabe 1: „Welche Nummer wählst du bei einem Brand?\" Aufgabe 2: „Nenne die 5 W — wer / wo / was / wie viele / warten.\" Aufgabe 3: „Du rufst an — was sagst du als erstes?\" Disponentin Clara nimmt die Anrufe auf dem Smartphone entgegen (Flugmodus!), Crew probiert reihum. Wer alle 3 schafft, bekommt einen kleinen Sticker auf den Dienstausweis. Keine Verlierer — wer hängen bleibt, bekommt einen Tipp.\n\nQuiz-Vorlagen: 1) Brand-Notruf, 2) Verkehrsunfall (Polizei oder 112?), 3) Katze auf Baum (kein 112-Fall!), 4) Oma fällt um (112!), 5) Streichholzkasten gefunden — wem sagen?",
+        "whyItWorks": "6-8 lernen hier wirklich was, das im Notfall greift. Die Kinder gehen mit konkretem Wissen nach Hause — Eltern bemerken's beim Abholen („Mama, weißt du was die 5 W sind?\"). SICHERHEIT: Smartphone MUSS im Flugmodus sein, sonst riskierst du einen versehentlichen echten Notruf — der ist kein Witz und kann eine Strafanzeige zur Folge haben."
+      },
+      {
+        "name": "🪣 Eimerkette (Wasser-Staffel)",
+        "duration": 15,
+        "minAge": 6,
+        "loudness": "mittel",
+        "indoor": false,
+        "outdoor": true,
+        "material": "2 große Eimer (Start und Ziel), 6 kleinere Becher oder Tassen, viele alte Handtücher",
+        "anleitung": "Klassische Feuerwehr-Übung kindgerecht: Crew stellt sich in einer Reihe auf, ein voller Wasser-Eimer am Anfang, ein leerer am Ende, ~3-5 Meter dazwischen. Mit kleinen Bechern wird Wasser von Hand zu Hand weitergegeben, ohne zu verschütten. Ziel: Den Ziel-Eimer in 5 Min so voll wie möglich. Bei 2 Trupps gegeneinander = Wettbewerb (welcher Trupp hat mehr Wasser im Ziel-Eimer). Bei 6 in einem Trupp = kollaborativ („Wie voll kriegen wir den Eimer in 5 Min?\").\n\nVarianten: rückwärts laufen, mit verbundenen Augen (Eltern als Sicherheitsnetz), oder über kleine Hindernisse.",
+        "whyItWorks": "Trainiert Teamwork ohne Trainerwort. Sieht aus wie echte Feuerwehr-Ausbildung (Eimerketten gab's früher wirklich). Kinder spüren: ich bin Teil eines Systems — nicht nur ein Einzel-Spritzer. Funktioniert nur draußen oder in der Garage — drinnen wird's chaotisch."
+      },
+      {
+        "name": "📦 Mini-Feuerwehrauto basteln",
+        "duration": 25,
+        "minAge": 6,
+        "loudness": "ruhig",
+        "indoor": true,
+        "outdoor": false,
+        "material": "Pro Kind: 1 Milchkarton (1 l, leer + ausgespült), 4 Kronkorken als Räder (oder schwarze Knöpfe), rote Bastelfarbe + Pinsel, Alufolie für die Drehleiter, schwarzer Edding für „112\"-Schrift, Kleber. Zentral: 1 Heißkleber (Eltern bedienen!) oder doppelseitiges Klebeband.",
+        "anleitung": "Bastel-Slot in der Mitte der Party, perfekt nach Kuchen-Pause. Jedes Kind bemalt seinen Milchkarton rot (10 Min, trocknet während des Snacks), klebt 4 Kronkorken als Räder unten an, formt aus Alufolie eine kleine Drehleiter und klebt sie obendrauf, schreibt „112\" auf die Seite. Eltern helfen bei Heißkleber und schwierigen Stellen.\n\nDas Ergebnis ist nicht perfekt — das ist Teil der Pointe. Es ist IHR Auto, mit nach Hause genommen.",
+        "whyItWorks": "Bastel-Aktivität als ruhiger Slot zwischen lauten Spielen — bei 6-8 sind 25 Min konzentrierte Bastel-Arbeit machbar. Plus: Das Mini-Auto wird zum besten Mitgebsel überhaupt, weil's selbst gemacht ist. SICHERHEIT: Heißkleber NUR Erwachsene bedienen — Hautverbrennung ist häufige Bastel-Unfall-Quelle. Ersatz: doppelseitiges Klebeband oder UHU."
+      },
+      {
+        "name": "🚪 Feuerwehr-Escape — der verqualmte Raum",
+        "duration": 20,
+        "minAge": 7,
+        "loudness": "ruhig",
+        "indoor": true,
+        "outdoor": false,
+        "material": "3 Rätsel-Karten ausgedruckt (Vorlagen unten), 1 abschließbare Box oder Schublade als „Notausgang\", 3 Zahlen (z.B. 1-1-2) als Lösung, optional: 1 Taschenlampe (für „Sichteinschränkung\"-Effekt), 1 dünnes Tuch als Augenbinde",
+        "anleitung": "Story: „Crew, der Raum ist verqualmt — ihr müsst den Notausgang finden! 3 Rätsel führen zur Zahlen-Kombination, die den Ausgang öffnet.\" Crew arbeitet zusammen — kein Einzelspiel.\n\nRätsel 1: Welche Zahl ist die Notrufnummer der Feuerwehr? (Antwort: 1, weil 112 mit 1 beginnt). Rätsel 2: Wie viele W gibt es beim Notruf? (Antwort: 5 — Reduktion auf eine Ziffer: 1). Rätsel 3: Welche Brandklasse passt zu einem Fett-Brand? (Antwort: F, oder als Zahl: 2 für die zweite Spezial-Klasse).\n\nWenn die Crew 1-1-2 hat, dürfen sie die Box öffnen — drin: ein Schlüssel + die nächste Mitgebsel-Übergabe.",
+        "whyItWorks": "Knüpft an Theorie-Briefing der Wow-Variante an — wer das gemacht hat, hat hier einen Vorsprung. Funktioniert auch standalone bei Minimal/Standard. Kollaborativ — kein Wettbewerb, alle gewinnen oder verlieren zusammen. Bei 7+ Jahren passt's, bei 6-Jährigen ggf. mit mehr Tipps moderieren."
+      },
+      {
+        "name": "🎯 Drill-Training (Flammen-Zielscheibe)",
+        "duration": 15,
+        "minAge": 6,
+        "loudness": "mittel",
+        "indoor": true,
+        "outdoor": true,
+        "material": "4-5 Papp-Zielscheiben mit aufgemalten Flammen (rote/orange Tusche, Größe DIN A4), 5-6 weiche Bälle oder Erbsensäckchen, Klebeband zum Aufhängen",
+        "anleitung": "Indoor-Variante des Zielspritzens, ohne Wasser. Flammen-Zielscheiben mit Tesa an die Wand kleben (max. 1 m hoch, damit Kinder zielen können), Crew steht 2-3 m entfernt, jeder hat 5 Würfe. Punkte werden in der Wertungs-Tafel eingetragen — perfekte Ergänzung zum Stations-Wettbewerb. Eltern stehen als „Werfer-Sicherheit\" daneben, damit niemand auf andere Kinder zielt.\n\n2 Trupps gegeneinander = Wettbewerb. Bei der Bonus-Runde: Wer alle 5 Flammen in 1 Runde trifft = doppelte Punkte.",
+        "whyItWorks": "Volle Indoor-Alternative zum Wasser-Spritzen, wenn das Wetter nicht mitspielt oder die Wohnung kein Spritz-tolerantes Bad hat. Trainiert Hand-Auge-Koordination. Lässt sich nahtlos in die Standard-/Wow-Stationen-Rotation einklinken — wirkt wie eine neue Station, kostet aber nur 3 € für die Pappe."
+      }
+    ]
+  },
   "cakeRecipe": {
     "intro": "Geht mit jeder Kastenform. Das Besondere ist die Form — nicht das Backen.",
     "steps": [
@@ -1018,15 +1078,15 @@
       },
       {
         "n": 4,
-        "content": "Reifen aus Oreo-Keksen oder schwarzem Fondant — 4 Stück seitlich anpressen (zwei vorne, zwei hinten)."
+        "content": "Reifen aus Schoko-Sandwich-Keks-Keksen oder schwarzem Fondant — 4 Stück seitlich anpressen (zwei vorne, zwei hinten)."
       },
       {
         "n": 5,
-        "content": "Drehleiter aus zwei Strohhalmen (oben drauf liegend, mit kleinen Querstreben aus weißen Smarties) ODER eine Mini-Leiter aus Salzteig (vorm Backen formen, separat 10 Min. mitbacken, oben aufkleben mit Glasur). Zwei Versionen, beide funktionieren."
+        "content": "Drehleiter aus zwei Strohhalmen (oben drauf liegend, mit kleinen Querstreben aus weißen Zuckerperlen oder Schokolinsen) ODER eine Mini-Leiter aus Salzteig (vorm Backen formen, separat 10 Min. mitbacken, oben aufkleben mit Glasur). Zwei Versionen, beide funktionieren."
       },
       {
         "n": 6,
-        "content": "„112\" mit weißer Glasur oder weißem Zuckerstift auf die Seite schreiben. Optional: blaues Blaulicht aus Smartie oder Blaubeere oben drauf."
+        "content": "„112\" mit weißer Glasur oder weißem Zuckerstift auf die Seite schreiben. Optional: blaues Blaulicht aus einer Blaubeere oder einer blauen Zuckerperle oben drauf."
       },
       {
         "n": 7,
@@ -1041,7 +1101,7 @@
     "tips": [
       {
         "title": "🎂 Keine Lust zu backen?",
-        "body": "Fertigen Schoko-Kasten beim Bäcker kaufen, rote Glasur drüber, Oreo-Reifen ankleben, „112\" mit weißem Zuckerstift draufschreiben. Sieht aus wie gewollt, dauert 10 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.\""
+        "body": "Fertigen Schoko-Kasten beim Bäcker kaufen, rote Glasur drüber, Schoko-Sandwich-Keks-Reifen ankleben, „112\" mit weißem Zuckerstift draufschreiben. Sieht aus wie gewollt, dauert 10 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.\""
       },
       {
         "title": "🚒 Pinterest-Inspiration ohne Pinterest-Aufwand",
@@ -1074,6 +1134,14 @@
       {
         "topic": "🔇 Nachbarn & Lautstärke",
         "detail": "Ehrlich: Sirene + 6 spritzende Kinder + Einsatz-Alarm ist laut. Wenn du in einer Mietwohnung bist, kurz vorab beim Nachbarn klingeln und sagen: „Sonntag von 14 bis 17 wird's lauter, mein Sohn wird 7.\" Das kostet 30 Sekunden, kostet vielleicht eine Tafel Schokolade in der Nachbarwohnung, und erspart dir Stress mitten in der Sirene-Phase. Sirene draußen besser am späten Nachmittag, nicht abends nach 19:00."
+      },
+      {
+        "topic": "🔥 Echte Sicherheits-Regeln — Wasser-Spiele",
+        "detail": "Drei Regeln, die du beim Schicht-Appell einmal kurz durchgehst — die Kinder merken sich das, weil es sich nach „Crew-Briefing\" anfühlt: 1. „Strahlrohr nur zur Seite, nie ins Gesicht.\" Bei Verstoß: Strahlrohr für 1 Runde abgegeben — funktioniert besser als Schimpfen. 2. „Wasser nur auf den Becher oder die Flamme, nicht aufs andere Kind.\" Eltern stehen als Sicherheitsnetz daneben. 3. „Auf nassem Boden Schritt-Tempo — sonst Rutschgefahr.\" Diese drei Sätze beim Schicht-Beginn-Spruch reichen, kein Vortrag. Die Kinder spüren, dass du sie ernst nimmst — und halten sich besser dran als bei generischem „Vorsichtig!\"."
+      },
+      {
+        "topic": "📲 Notruf-Erziehung beiläufig",
+        "detail": "Wenn du das Theorie-Briefing der Wow-Variante machst oder das 112-Quiz aus den Bonus-Spielen, kannst du beiläufig drei lebenswichtige Inhalte mitgeben: 1. Die 112 ist die Feuerwehr-Notrufnummer in ganz Europa — funktioniert auch ohne SIM-Karte vom Smartphone aus. 2. Beim Notruf gilt die 5-W-Regel: Wer (rufe ich an, mein Name), Wo (ist es passiert), Was (ist passiert), Wie viele (sind verletzt/in Gefahr), Warten (auf Rückfragen). 3. Auflegen erst, wenn die Leitstelle es sagt. Diese drei Punkte sind die offizielle Brandschutzerziehung — die kommt in der Schule nochmal, aber wenn dein Kind und seine Freunde es schon auf der Party hören, ist die Schicht beim Erinnern halbiert."
       }
     ],
     "educationalValue": "Kinder, die hier waren, gehen mit drei konkreten Brandschutz-Skills nach Hause: 1. Sie wissen, dass die 112 die richtige Notrufnummer ist, und sie kennen die 5 W (Wer / Wo / Was / Wie viele / Warten). 2. Sie wissen, dass Wasser nicht alles löscht — Fett-Brand wird mit Deckel erstickt, nicht mit Wasser bespritzt. 3. Sie wissen, dass im Brandfall Rauch das Hauptproblem ist und dass tief am Boden die sauberste Luft ist. Das sind keine Marketing-Versprechen — das passiert beiläufig in den Spielen und im Theorie-Briefing der Wow-Variante. Die Deutsche Brandschutzerziehung empfiehlt diese Inhalte ab 5 Jahren. Wir packen sie hier in eine Geburtstagsparty, ohne dass es nach Schulstunde aussieht."
@@ -1095,6 +1163,14 @@
     {
       "q": "Funktioniert das Feuerwehr-Motto in gemischten Gruppen — auch für Mädchen?",
       "a": "Ja, und zwar besser als die meisten denken. Die 12 Crew-Funktionen sind bewusst gemischt-geschlechtlich besetzt: Funkerin, Sanitäterin, Disponentin, Strahlrohrführerin, Atemschutzträgerin, Wasserretterin sind weibliche Rollen, die zur echten Feuerwehr-Realität gehören. Mädchen, die zum Schicht-Appell kommen, ziehen ihren Dienstausweis und werden Crew-Mitglied — kein Klischee, keine Sonderrolle. Funktioniert in jeder Konstellation: reine Jungen-Crews, reine Mädchen-Crews, gemischte Crews. Was nicht funktioniert: das Motto „Mädchen-tauglich\" zu machen durch rosa Glitzer-Helme. Lass es so wie es ist — die Kinder spüren Authentizität."
+    },
+    {
+      "q": "Was tun bei schlechtem Wetter ohne Wasser-Spiele?",
+      "a": "Drei Indoor-Alternativen, alle motto-stimmig: 1. Statt Zielspritzen: rote Papier-Flammen mit Tesa an die Wand kleben — Kinder müssen sie mit Bällen oder Erbsensäckchen „abschießen\". Funktioniert wie eine Schießbude und ist genauso laut. 2. Statt Schlauch-Parcours: Sprossenwand oder Stuhl-Kissen-Strecke als Leiter-Klettern. 3. Statt Schaum-Löschen draußen: in der Wanne, das Bad ist eh wasser-tolerant. Plus: Knoten-Station, Erste-Hilfe an Kuscheltieren, Brandermittlung-Mini — alles funktioniert ohne ein Tropfen Wasser."
+    },
+    {
+      "q": "Welche Mitgebsel passen zum Feuerwehr-Motto bei 6-8?",
+      "a": "Bei 6-8 funktionieren: 1 Pappkarton- oder Plastik-Helm (Höhepunkt der Tüte), 1 Feuerwehr-Ausweis mit Foto und Funktion vom Schicht-Appell (emotional aufgeladen), 1 Mini-Feuerwehrauto (selbst „gerettet\" beim Schaum-Löschen — Story), 1 Tattoo-Bogen zum Mitnehmen, 1 Tüte Gummibärchen und das Feuerwehr-Diplom gerollt mit Bändchen. Optional: ein Reflektor-Aufkleber als „Sicherheitsausweis\" (mit Sicherheitsbezug, kostet 30 ct/Stück). Vermeide Trillerpfeifen — Eltern danken's dir nicht."
     }
   ],
   "preparationWeeks": {
@@ -1224,7 +1300,7 @@
         {
           "icon": "🍫",
           "title": "Kuchen verzieren",
-          "detail": "Rote Glasur drüber (Tube aus Supermarkt reicht), 4 Oreos halbieren = 8 Reifen für ‚Feuerwehrauto', weißer Zuckerstift für ‚112'. 10 Minuten. Über Nacht fest werden lassen."
+          "detail": "Rote Glasur drüber (Tube aus Supermarkt reicht), 4 Schoko-Sandwich-Kekss halbieren = 8 Reifen für ‚Feuerwehrauto', weißer Zuckerstift für ‚112'. 10 Minuten. Über Nacht fest werden lassen."
         },
         {
           "icon": "🧸",
@@ -1335,11 +1411,11 @@
     "kuchen_misslungen": {
       "icon": "🎂",
       "label": "Kuchen ist misslungen",
-      "headline": "Bäcker-Hack: Schoko-Kasten + rote Glasur + Oreos = Notfall-Kuchen in 15 Min.",
+      "headline": "Bäcker-Hack: Schoko-Kasten + rote Glasur + Schoko-Sandwich-Kekss = Notfall-Kuchen in 15 Min.",
       "steps": [
         "Schoko-Kastenkuchen beim nächsten Bäcker holen (oder Edeka/Rewe-Kuchenecke).",
         "Rote Tortenguss-Glasur drüber (Tube, 1,50 €) — Feuerwehr-Rot, Volltreffer.",
-        "4 Oreos seitlich ankleben als Reifen, weiße Zuckerstift-„112\" auf die Oberseite.",
+        "4 Schoko-Sandwich-Kekss seitlich ankleben als Reifen, weiße Zuckerstift-„112\" auf die Oberseite.",
         "Sirenen-Sound vom Handy bereitlegen für die Anzünden-Szene — sieht aus wie gewollt."
       ],
       "fallback": "Bäcker zu? Muffins aus dem Vorrat, je ein Mini-Marshmallow + Zahnstocher mit roter Papierfahne reinstecken — Mini-Feuerwehr-Hütchen.",
@@ -1385,6 +1461,34 @@
       ],
       "fallback": "Wenn's wirklich chaotisch wird: Mitgebsel-Tüten in den Flur stellen, jedes Kind nimmt im Rausgehen eine — Abschied auf der Treppe statt im Wohnzimmer.",
       "tone": "praktisch"
+    },
+    "wasser_chaos_im_wohnzimmer": {
+      "icon": "💧",
+      "label": "Wasser-Sauerei im Wohnzimmer",
+      "headline": "Garagenboden-Trick: trockenwischen, lüften, Spielort verlagern.",
+      "steps": [
+        "Sofort 3 große Handtücher auf die Pfütze legen — saugt 80 % auf in 2 Min.",
+        "Spritzen-Station ins Bad verlagern (Wanne) oder auf den Balkon, falls trocken.",
+        "Wenn Pfütze in der Garage oder auf Fliesen: trockenwischen + 5 Min lüften — sonst Rutschgefahr für Eltern und Kinder.",
+        "Crew ablenken mit Knoten-Station oder Erste-Hilfe-Station, während Wohnzimmer trocknet.",
+        "Folie oder alte Bettlaken für Round 2 unterlegen, falls Wasser-Phase weitergeht."
+      ],
+      "fallback": "Wirklich alles nass? Spritzen-Phase abbrechen, dafür Schaum-Wanne im Bad strecken und Brandermittlung-Spiel früher starten. Kinder merken die Plan-Änderung kaum.",
+      "tone": "praktisch"
+    },
+    "asthma_kind_bei_nebel": {
+      "icon": "🌫️",
+      "label": "Asthma-Kind bei Nebelmaschine (Wow)",
+      "headline": "Nebel sofort aus, Fenster auf, betroffenes Kind raus — Plan B aktiviert.",
+      "steps": [
+        "Nebelmaschine sofort ausschalten, Fenster und Türen weit öffnen — Wohnung in 3 Min durchgelüftet.",
+        "Asthma-Kind in andere Raumecke oder Garten, frische Luft, eventuell Spray (Eltern entscheiden — vorher abgesprochen).",
+        "Story-Switch: „Crew, der Nebel ist verflogen — der Einsatz geht trotzdem weiter!\" Kinder bemerken den Switch nicht als Notfall.",
+        "Restliche Crew durch den Nebel-freien Bereich führen — Mini-Einsatz wie in Standard-Variante.",
+        "Eltern des betroffenen Kindes anrufen, kurze Lage-Übergabe, ggf. früherer Abholzeitpunkt absprechen."
+      ],
+      "fallback": "Akut-Beschwerden trotz Nebel-Aus (Atemnot bleibt)? 112 anrufen — kein Drama machen, aber lieber 1× zu viel als 1× zu wenig. Das ist nicht das Versagen der Party, das ist Verantwortung. Bei der Wow-Variante Asthma IMMER vorher abfragen, nicht im Notfall überraschen lassen.",
+      "tone": "ruhig"
     }
   }
 }

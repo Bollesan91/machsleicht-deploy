@@ -104,7 +104,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:40",
             "title": "🎂 Kuchen & Lösch-Wasser",
-            "description": "Feuerwehrauto-Kuchen (Kastenform mit Reifen aus Oreo) + Apfelschorle in roten Bechern. Happy Birthday singen, 25 Min. Pause für alle Kinder. Wichtigster Slot für Ruhe."
+            "description": "Feuerwehrauto-Kuchen (Kastenform mit Reifen aus Schoko-Sandwich-Keks) + Apfelschorle in roten Bechern. Happy Birthday singen, 25 Min. Pause für alle Kinder. Wichtigster Slot für Ruhe."
           },
           {
             "time": "16:05",
@@ -460,12 +460,12 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🎂",
-            "label": "Backmischung Kastenform + roter Zuckerguss + Oreo-Reifen",
+            "label": "Backmischung Kastenform + roter Zuckerguss + Schoko-Sandwich-Keks-Reifen",
             "url": null,
             "priceEur": 6,
             "hasAffiliate": false,
             "category": "pflicht",
-            "categoryReasoning": "Geburtstagskuchen Pflichtteil + Oreo-Reifen sind Standard-Upgrade Sub-Position."
+            "categoryReasoning": "Geburtstagskuchen Pflichtteil + Schoko-Sandwich-Keks-Reifen sind Standard-Upgrade Sub-Position."
           },
           {
             "emoji": "🎈",
@@ -743,7 +743,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🎂",
-            "label": "Backmischung + Zuckerguss + Oreo + Wunderkerze",
+            "label": "Backmischung + Zuckerguss + Schoko-Sandwich-Keks + Wunderkerze",
             "url": null,
             "priceEur": 7,
             "hasAffiliate": false,
@@ -786,6 +786,55 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
+    "bonusGames": {
+      "intro": "Diese Spiele kannst du je nach Wetter, Energielevel und Kindern einbauen oder weglassen — alle 3-5-tauglich, alle ohne neues Material gegenüber den Hauptvarianten.",
+      "items": [
+        {
+          "name": "🎶 Tatü-Tata-Tanz (Sirenen-Stopp-Spiel)",
+          "duration": 10,
+          "minAge": 3,
+          "loudness": "laut",
+          "indoor": true,
+          "outdoor": true,
+          "material": "Bluetooth-Box + Handy mit Feuerwehr-Sirene + Kinderlieder im Wechsel. Sonst nichts.",
+          "anleitung": "Musik läuft = die Kinder bewegen sich frei (rennen, tanzen, hüpfen). Sobald die Sirene ertönt, müssen alle „einfrieren\" — wie ein Feuerwehrmann am Einsatzort. Wer wackelt, hilft beim nächsten Runde-Anschmeißen mit. Kein Ausscheiden, kein Verlieren — bei 3-5 sind kooperative Varianten Pflicht. Funktioniert als Energie-Burner direkt vor der ersten Snack-Pause.",
+          "whyItWorks": "3-5-Jährige brauchen Bewegungs-Slots zwischen den eher statischen Bastel/Schaum-Aktivitäten. Sirene als Stop-Signal ist motto-stimmig und für die Kleinen sofort verständlich — kein Regelerklären nötig."
+        },
+        {
+          "name": "🔴 Feuer finden — rote Tücher suchen",
+          "duration": 10,
+          "minAge": 3,
+          "loudness": "ruhig",
+          "indoor": true,
+          "outdoor": false,
+          "material": "6-8 rote Tücher oder rote Stoffreste (auch rote Servietten gehen), 1 großer Wasser-Eimer als „Lösch-Sammelstelle\"",
+          "anleitung": "Vorher heimlich 6-8 rote Tücher in der Wohnung verteilt — gut sichtbar (auf Stuhl, hinterm Vorhang, auf Sofa, an der Lampe). Story: „Im Haus sind kleine Brände — findet sie und bringt sie in den Lösch-Eimer!\" Jedes Kind sucht und sammelt. Bei 3-5 ist Finden der Spaß, nicht das Versteck. Wer ein Tuch in den Eimer legt, ruft laut „Brand gelöscht!\" Kein Wettbewerb — am Ende sind alle Brände aus.",
+          "whyItWorks": "Niedrig-Schwellig wie eine Ostereiersuche, aber motto-eingebettet. Funktioniert ohne Wasser-Sauerei bei Regen. Bei 3-Jährigen genügen 4 Tücher, sehr sichtbar; bei 5-Jährigen 8 Tücher etwas anspruchsvoller."
+        },
+        {
+          "name": "🎈 Lösch-Ballon (Wasser auf rote Luftballons)",
+          "duration": 15,
+          "minAge": 4,
+          "loudness": "laut",
+          "indoor": false,
+          "outdoor": true,
+          "material": "5-6 rote Luftballons (zur Hälfte aufgepustet, an einer Schnur an Wäscheleine oder Ast hängend), Spritzpistolen (wenn schon in der Variante vorhanden), alte Handtücher unter der Spritz-Zone",
+          "anleitung": "Rote Luftballons als „Brand-Symbole\" an Wäscheleine im Garten oder am Balkon — sie wackeln im Wind, das macht es noch witziger. Crew spritzt mit Wasserpistolen drauf, Ziel: alle Ballons werden nass (nicht zerplatzen, das erschreckt). Sehr beliebt im Sommer. Eltern stehen daneben, korrigieren Spritz-Richtung falls jemand das andere Kind nimmt statt den Ballon.",
+          "whyItWorks": "Sichtbares, bewegliches Ziel ist für die Kleinen leichter als ein umgekippter Becher. Funktioniert auch wenn die Spritz-Probe der Standard-/Wow-Variante schon abgefrühstückt ist — eine zweite Runde mit anderem Setup wirkt wie ein neues Spiel."
+        },
+        {
+          "name": "🪢 Schlauch ausrollen (Seil-Variante)",
+          "duration": 10,
+          "minAge": 4,
+          "loudness": "ruhig",
+          "indoor": true,
+          "outdoor": true,
+          "material": "2 Springseile à 2 m (oder lange Stoffstreifen, oder Wäscheleine), 2 Pylonen oder Schuhe als Ziel-Markierung",
+          "anleitung": "Story: „Bevor die Crew löschen kann, müssen Schläuche ausgerollt werden!\" Jedes Kind bekommt ein aufgerolltes Seil — Aufgabe: von Punkt A bis Punkt B ausrollen, möglichst gerade. Bei 5 Kindern in Zweier-Teams, im Wechsel. Kein Wettbewerb auf Zeit — wer fertig ist, hilft den anderen. Eltern zeigen Aufrollen vor, wenn das Seil nochmal gebraucht wird.",
+          "whyItWorks": "Schult Feinmotorik kindgerecht, ohne dass es nach „Übung\" aussieht. Funktioniert drinnen im Flur wie draußen. Lässt sich als Mini-Übung an die Spritz-Probe anhängen („erst Schlauch, dann Spritze!\") und gibt der Choreografie Tiefe."
+        }
+      ]
+    },
     "cakeRecipe": {
       "intro": "Geht mit jeder Kastenform. Bei 3-5 reicht die einfache Version: roter Kasten, Reifen, „112\" drauf — fertig.",
       "steps": [
@@ -803,11 +852,11 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "n": 4,
-          "content": "Reifen aus Oreo-Keksen — 4 Stück seitlich anpressen."
+          "content": "Reifen aus Schoko-Sandwich-Keks-Keksen — 4 Stück seitlich anpressen."
         },
         {
           "n": 5,
-          "content": "„112\" mit weißer Glasur oder weißem Zuckerstift auf die Seite schreiben. Optional: blaues Blaulicht aus Smartie oder Blaubeere oben drauf."
+          "content": "„112\" mit weißer Glasur oder weißem Zuckerstift auf die Seite schreiben. Optional: blaues Blaulicht aus Blaubeere oder einer blauen Zuckerperle oben drauf."
         }
       ],
       "meta": {
@@ -818,7 +867,7 @@ var ELITE_MOTTO_DATA = {
       "tips": [
         {
           "title": "🎂 Keine Lust zu backen?",
-          "body": "Fertigen Schoko-Kasten beim Bäcker kaufen, rote Glasur drüber, Oreo-Reifen ankleben, „112\" mit weißem Zuckerstift draufschreiben. Sieht aus wie gewollt, dauert 10 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.\" Schon gar nicht ein 3-Jähriges."
+          "body": "Fertigen Schoko-Kasten beim Bäcker kaufen, rote Glasur drüber, Schoko-Sandwich-Keks-Reifen ankleben, „112\" mit weißem Zuckerstift draufschreiben. Sieht aus wie gewollt, dauert 10 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.\" Schon gar nicht ein 3-Jähriges."
         }
       ]
     },
@@ -847,6 +896,14 @@ var ELITE_MOTTO_DATA = {
         {
           "topic": "😢 Plan für Tränen-Momente",
           "detail": "Bei 3-5 weint mindestens ein Kind in 90 Min. — das ist normal. Häufige Auslöser: Hand-Signal \"Notruf!\" + leiser Spruch. Schaum schreckt, Kind will nicht den falschen Aufkleber, Eltern sind kurz weg. Plan: Eltern bleiben dabei, ruhige Ecke (Sofa) für „kurze Pause\" einrichten, Kuscheltier griffbereit, kein Drama wenn ein Kind aussetzt. Nach 5 Min. Pause sind die meisten wieder da. Zwingen ist kontraproduktiv."
+        },
+        {
+          "topic": "🔥 Echte Sicherheits-Botschaft (auch für 3-5)",
+          "detail": "Auch wenn die Theorie erst bei 6-8 voll greift, kannst du in zwei Sätzen ein Sicherheits-Anker für die Kleinen setzen — beiläufig, nicht als Vortrag. Beim Schicht-Appell oder vor dem Mini-Einsatz: „Echte Feuerwehr ist toll — aber Feuer ist heiß und macht aua. Wenn du echtes Feuer siehst: nicht hingehen, sondern zur Mama oder zum Papa rennen.\" Das ist die altersgerechte 3-5-Variante von Brandschutz-Erziehung. Mehr nicht, mehr verstehen sie nicht. Aber dieser eine Satz bleibt hängen — die Eltern hören es auch und können später anknüpfen."
+        },
+        {
+          "topic": "🧴 Rasierschaum-Sicherheit — die kleine Checkliste",
+          "detail": "Drei Regeln für sicheres Schaum-Löschen: 1. Schaum NICHT ins Gesicht, NICHT in die Augen, NICHT in den Mund. Wenn doch: 5 Min mit klarem Wasser spülen, kein Reiben. 2. Hände vor jedem Snack waschen — der Schaum klebt unsichtbar an den Fingern. 3. Drogerie-Eigenmarke kaufen (parfümfrei), KEINE Sahne nehmen (kippt + klebt + riecht), KEINEN Bauschaum oder Reinigungsschaum (toxisch). Diese drei Regeln einmal vor dem Spiel den Eltern durchgeben, dann sind alle ruhiger."
         }
       ],
       "educationalValue": null
@@ -868,6 +925,14 @@ var ELITE_MOTTO_DATA = {
       {
         "q": "Müssen Eltern bei der Feuerwehr-Party für 3–5 wirklich bleiben?",
         "a": "Ja, bei dieser Altersgruppe ist Eltern-Anwesenheit Pflicht — und zwar als aktive Helfer, nicht als Beobachter. Begründung: Bei 3-5 brauchst du Hilfe für Toilettenbegleitung, Trösten, Spritzpistole-Halten, Schaum-Nachfüllen. Du allein schaffst das für 5 Kinder nicht. Schreib in die Einladung: „Ein Elternteil bleibt bitte mit dem Kind und hilft mit.\" Verteile Aufgaben (Foto, Hand-Signal \"Notruf!\" + leiser Spruch. Pinsel) — Eltern, die einen Job haben, sind glücklicher als die, die rumstehen. Aus dem „Eltern-Café-Problem\" wird so „Crew-Eltern als Co-Wachleiter\"."
+      },
+      {
+        "q": "Was tun bei schlechtem Wetter ohne Wasser-Spiele?",
+        "a": "Bei 3-5 sind Indoor-Alternativen ohnehin oft besser — weniger Reizüberflutung. Drei Drinnen-Hacks: 1. Statt Spritzpistole gegen Becher: rote Tücher von der Wand „abreißen\" (mit Tesa locker befestigt) als Lösch-Übung. 2. Statt Schaum-Wanne: Wattebällchen-Schaum in einer Schüssel — Kinder „pusten Brände aus\". 3. Statt Mini-Einsatz draußen: Kuscheltiere im Wohnzimmer hinter Vorhang/Sofa verstecken. Funktioniert alles ohne ein Tropfen Wasser."
+      },
+      {
+        "q": "Welche Mitgebsel passen zum Feuerwehr-Motto bei 3-5?",
+        "a": "Bei den Kleinen funktioniert wenig + wertig: ein Pappkarton-Helm (oder selbstbemalter in der Wow-Variante), ein Aufkleberbogen mit großen Motiven (keine fummeligen Mini-Sticker — Erstickungsrisiko), ein Mini-Feuerwehrauto, eine kleine Tüte Gummibärchen und die Tag-1-Feuerwehrkind-Urkunde mit Namen. Vermeide Trillerpfeifen (verlieren Eltern den Verstand auf dem Heimweg), keine Reflektoren mit Sicherheitsnadeln (Verletzungsrisiko), keine Süßigkeiten ohne klare Allergen-Kennzeichnung."
       }
     ],
     "preparationWeeks": {
@@ -962,7 +1027,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🎂",
             "title": "Feuerwehrauto-Kuchen backen — oder Plan B",
-            "detail": "Wenn Zeit/Nerven da: Backmischung in Kastenform. Wenn nicht: Schoko-Kasten beim Bäcker (4-6€), morgen Glasur + Oreos drauf. Schmeckt den Kindern genauso. Bei 3-5 keine Wunderkerze (Brandgefahr-Panik bei Eltern)."
+            "detail": "Wenn Zeit/Nerven da: Backmischung in Kastenform. Wenn nicht: Schoko-Kasten beim Bäcker (4-6€), morgen Glasur + Schoko-Sandwich-Kekss drauf. Schmeckt den Kindern genauso. Bei 3-5 keine Wunderkerze (Brandgefahr-Panik bei Eltern)."
           },
           {
             "icon": "🗣️",
@@ -992,7 +1057,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🍫",
             "title": "Kuchen verzieren",
-            "detail": "Rote Glasur drüber, 4 Oreos halbieren = 8 Reifen für Feuerwehrauto, weißer Zuckerstift für ‚112'. 10 Minuten Arbeit. Über Nacht fest werden lassen."
+            "detail": "Rote Glasur drüber, 4 Schoko-Sandwich-Kekss halbieren = 8 Reifen für Feuerwehrauto, weißer Zuckerstift für ‚112'. 10 Minuten Arbeit. Über Nacht fest werden lassen."
           },
           {
             "icon": "🐻",
@@ -1104,11 +1169,11 @@ var ELITE_MOTTO_DATA = {
       "kuchen_misslungen": {
         "icon": "🎂",
         "label": "Kuchen ist misslungen",
-        "headline": "Bäcker-Hack: Schoko-Kasten + Glasur + Oreos = 10 Min Notfall.",
+        "headline": "Bäcker-Hack: Schoko-Kasten + Glasur + Schoko-Sandwich-Kekss = 10 Min Notfall.",
         "steps": [
           "Schoko-Kastenkuchen beim Bäcker holen (4-6€) — Edeka/Rewe geht auch.",
           "Rote Tortenguss-Glasur drüber (Tube, 1,50 €).",
-          "4 Oreos halbieren = 8 Reifen, seitlich ankleben.",
+          "4 Schoko-Sandwich-Kekss halbieren = 8 Reifen, seitlich ankleben.",
           "Mit weißem Zuckerstift ‚112' draufschreiben — sieht aus wie gewollt."
         ],
         "fallback": "Bäcker zu? Muffins aus dem Vorrat, je ein Marshmallow + roter Zahnstocher = Mini- Hand-Signal \"Notruf!\" + leiser Spruch. Funktioniert für 3-5.",
@@ -1154,6 +1219,34 @@ var ELITE_MOTTO_DATA = {
         ],
         "fallback": "Chaotisch? Goodie-Bags in den Flur stellen, jedes Kind nimmt im Rausgehen eine — Abschied auf der Treppe.",
         "tone": "praktisch"
+      },
+      "wasser_chaos_im_wohnzimmer": {
+        "icon": "💧",
+        "label": "Wasser-Sauerei im Wohnzimmer",
+        "headline": "Schnell trockenwischen, Spiel in Bad/Küche verlagern — Kinder merken's kaum.",
+        "steps": [
+          "Eltern als Putz-Crew aktivieren: ‚Du Handtuch, du Wischlappen, ich Eimer.' 3 Min, dann ist's weg.",
+          "Spielstation sofort in Bad/Küche verlagern — Wanne als neuer Spritz-Bereich.",
+          "Garagenboden-Trick (falls Outdoor-Wasser drinnen gelandet): Mit Handtuch trockenwischen + 5 Min Lüften, sonst Rutschgefahr.",
+          "Kinder ablenken mit Helm-Bemal- oder Ausmal-Pause am Tisch — bis Wohnzimmer wieder begehbar.",
+          "Folie oder alte Bettlaken für Round 2 unterlegen, falls noch eine Wasser-Phase kommt."
+        ],
+        "fallback": "Wirklich nass alles? Spritz-Phase abbrechen, Schaum-Löschen in der Wanne (Bad) ziehen, Mini-Einsatz übers Trockene. Kinder vergessen den Plan-Wechsel innerhalb von 5 Min.",
+        "tone": "praktisch"
+      },
+      "schaum_im_gesicht": {
+        "icon": "🫧",
+        "label": "Schaum im Gesicht oder in den Augen",
+        "headline": "Augenkontakt = 5 Min mit klarem Wasser ausspülen — Plan ruhig fortsetzen.",
+        "steps": [
+          "Kind ans Waschbecken/Wanne, klares Wasser, 5 Min Auge spülen (oder Mund/Nase je nach Kontakt).",
+          "Eltern dazuholen — bei Augenkontakt ist Eltern-Vertrauen jetzt wichtig, nicht deine Aufsicht.",
+          "Andere Kinder weiter am Schaum-Spiel — Eltern moderieren, du bleibst beim betroffenen Kind.",
+          "Nach Spülen: Kind kurz mit Apfelschorle + Brezel am Wache-Pult beruhigen — meist nach 5 Min wieder eingestiegen.",
+          "Schaum-Wanne weiter weg von Gesichtshöhe aufstellen — sitzend am Boden statt stehend am Tisch."
+        ],
+        "fallback": "Reizung bleibt > 15 Min oder Kind reibt weiter? Eltern entscheiden über Augenarzt-Check — kein Drama machen, aber Verantwortung übergeben.",
+        "tone": "ruhig"
       }
     }
   },
@@ -2160,6 +2253,66 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
+    "bonusGames": {
+      "intro": "Diese Spiele kannst du in jeder Variante einbauen oder weglassen — alle 6-8-tauglich, ergänzen die Stationen-Rotation um neue Module. Drei davon funktionieren auch indoor bei Regen.",
+      "items": [
+        {
+          "name": "📞 112-Quiz (Notruf-Mini)",
+          "duration": 15,
+          "minAge": 6,
+          "loudness": "ruhig",
+          "indoor": true,
+          "outdoor": false,
+          "material": "5 Quiz-Karten ausgedruckt (Vorlagen unten), 2 alte Smartphones im Flugmodus (oder ohne SIM), 1 Stoppuhr",
+          "anleitung": "Spiel-Format wie ein Quiz mit drei Aufgaben pro Kind. Aufgabe 1: „Welche Nummer wählst du bei einem Brand?\" Aufgabe 2: „Nenne die 5 W — wer / wo / was / wie viele / warten.\" Aufgabe 3: „Du rufst an — was sagst du als erstes?\" Disponentin Clara nimmt die Anrufe auf dem Smartphone entgegen (Flugmodus!), Crew probiert reihum. Wer alle 3 schafft, bekommt einen kleinen Sticker auf den Dienstausweis. Keine Verlierer — wer hängen bleibt, bekommt einen Tipp.\n\nQuiz-Vorlagen: 1) Brand-Notruf, 2) Verkehrsunfall (Polizei oder 112?), 3) Katze auf Baum (kein 112-Fall!), 4) Oma fällt um (112!), 5) Streichholzkasten gefunden — wem sagen?",
+          "whyItWorks": "6-8 lernen hier wirklich was, das im Notfall greift. Die Kinder gehen mit konkretem Wissen nach Hause — Eltern bemerken's beim Abholen („Mama, weißt du was die 5 W sind?\"). SICHERHEIT: Smartphone MUSS im Flugmodus sein, sonst riskierst du einen versehentlichen echten Notruf — der ist kein Witz und kann eine Strafanzeige zur Folge haben."
+        },
+        {
+          "name": "🪣 Eimerkette (Wasser-Staffel)",
+          "duration": 15,
+          "minAge": 6,
+          "loudness": "mittel",
+          "indoor": false,
+          "outdoor": true,
+          "material": "2 große Eimer (Start und Ziel), 6 kleinere Becher oder Tassen, viele alte Handtücher",
+          "anleitung": "Klassische Feuerwehr-Übung kindgerecht: Crew stellt sich in einer Reihe auf, ein voller Wasser-Eimer am Anfang, ein leerer am Ende, ~3-5 Meter dazwischen. Mit kleinen Bechern wird Wasser von Hand zu Hand weitergegeben, ohne zu verschütten. Ziel: Den Ziel-Eimer in 5 Min so voll wie möglich. Bei 2 Trupps gegeneinander = Wettbewerb (welcher Trupp hat mehr Wasser im Ziel-Eimer). Bei 6 in einem Trupp = kollaborativ („Wie voll kriegen wir den Eimer in 5 Min?\").\n\nVarianten: rückwärts laufen, mit verbundenen Augen (Eltern als Sicherheitsnetz), oder über kleine Hindernisse.",
+          "whyItWorks": "Trainiert Teamwork ohne Trainerwort. Sieht aus wie echte Feuerwehr-Ausbildung (Eimerketten gab's früher wirklich). Kinder spüren: ich bin Teil eines Systems — nicht nur ein Einzel-Spritzer. Funktioniert nur draußen oder in der Garage — drinnen wird's chaotisch."
+        },
+        {
+          "name": "📦 Mini-Feuerwehrauto basteln",
+          "duration": 25,
+          "minAge": 6,
+          "loudness": "ruhig",
+          "indoor": true,
+          "outdoor": false,
+          "material": "Pro Kind: 1 Milchkarton (1 l, leer + ausgespült), 4 Kronkorken als Räder (oder schwarze Knöpfe), rote Bastelfarbe + Pinsel, Alufolie für die Drehleiter, schwarzer Edding für „112\"-Schrift, Kleber. Zentral: 1 Heißkleber (Eltern bedienen!) oder doppelseitiges Klebeband.",
+          "anleitung": "Bastel-Slot in der Mitte der Party, perfekt nach Kuchen-Pause. Jedes Kind bemalt seinen Milchkarton rot (10 Min, trocknet während des Snacks), klebt 4 Kronkorken als Räder unten an, formt aus Alufolie eine kleine Drehleiter und klebt sie obendrauf, schreibt „112\" auf die Seite. Eltern helfen bei Heißkleber und schwierigen Stellen.\n\nDas Ergebnis ist nicht perfekt — das ist Teil der Pointe. Es ist IHR Auto, mit nach Hause genommen.",
+          "whyItWorks": "Bastel-Aktivität als ruhiger Slot zwischen lauten Spielen — bei 6-8 sind 25 Min konzentrierte Bastel-Arbeit machbar. Plus: Das Mini-Auto wird zum besten Mitgebsel überhaupt, weil's selbst gemacht ist. SICHERHEIT: Heißkleber NUR Erwachsene bedienen — Hautverbrennung ist häufige Bastel-Unfall-Quelle. Ersatz: doppelseitiges Klebeband oder UHU."
+        },
+        {
+          "name": "🚪 Feuerwehr-Escape — der verqualmte Raum",
+          "duration": 20,
+          "minAge": 7,
+          "loudness": "ruhig",
+          "indoor": true,
+          "outdoor": false,
+          "material": "3 Rätsel-Karten ausgedruckt (Vorlagen unten), 1 abschließbare Box oder Schublade als „Notausgang\", 3 Zahlen (z.B. 1-1-2) als Lösung, optional: 1 Taschenlampe (für „Sichteinschränkung\"-Effekt), 1 dünnes Tuch als Augenbinde",
+          "anleitung": "Story: „Crew, der Raum ist verqualmt — ihr müsst den Notausgang finden! 3 Rätsel führen zur Zahlen-Kombination, die den Ausgang öffnet.\" Crew arbeitet zusammen — kein Einzelspiel.\n\nRätsel 1: Welche Zahl ist die Notrufnummer der Feuerwehr? (Antwort: 1, weil 112 mit 1 beginnt). Rätsel 2: Wie viele W gibt es beim Notruf? (Antwort: 5 — Reduktion auf eine Ziffer: 1). Rätsel 3: Welche Brandklasse passt zu einem Fett-Brand? (Antwort: F, oder als Zahl: 2 für die zweite Spezial-Klasse).\n\nWenn die Crew 1-1-2 hat, dürfen sie die Box öffnen — drin: ein Schlüssel + die nächste Mitgebsel-Übergabe.",
+          "whyItWorks": "Knüpft an Theorie-Briefing der Wow-Variante an — wer das gemacht hat, hat hier einen Vorsprung. Funktioniert auch standalone bei Minimal/Standard. Kollaborativ — kein Wettbewerb, alle gewinnen oder verlieren zusammen. Bei 7+ Jahren passt's, bei 6-Jährigen ggf. mit mehr Tipps moderieren."
+        },
+        {
+          "name": "🎯 Drill-Training (Flammen-Zielscheibe)",
+          "duration": 15,
+          "minAge": 6,
+          "loudness": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "material": "4-5 Papp-Zielscheiben mit aufgemalten Flammen (rote/orange Tusche, Größe DIN A4), 5-6 weiche Bälle oder Erbsensäckchen, Klebeband zum Aufhängen",
+          "anleitung": "Indoor-Variante des Zielspritzens, ohne Wasser. Flammen-Zielscheiben mit Tesa an die Wand kleben (max. 1 m hoch, damit Kinder zielen können), Crew steht 2-3 m entfernt, jeder hat 5 Würfe. Punkte werden in der Wertungs-Tafel eingetragen — perfekte Ergänzung zum Stations-Wettbewerb. Eltern stehen als „Werfer-Sicherheit\" daneben, damit niemand auf andere Kinder zielt.\n\n2 Trupps gegeneinander = Wettbewerb. Bei der Bonus-Runde: Wer alle 5 Flammen in 1 Runde trifft = doppelte Punkte.",
+          "whyItWorks": "Volle Indoor-Alternative zum Wasser-Spritzen, wenn das Wetter nicht mitspielt oder die Wohnung kein Spritz-tolerantes Bad hat. Trainiert Hand-Auge-Koordination. Lässt sich nahtlos in die Standard-/Wow-Stationen-Rotation einklinken — wirkt wie eine neue Station, kostet aber nur 3 € für die Pappe."
+        }
+      ]
+    },
     "cakeRecipe": {
       "intro": "Geht mit jeder Kastenform. Das Besondere ist die Form — nicht das Backen.",
       "steps": [
@@ -2177,15 +2330,15 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "n": 4,
-          "content": "Reifen aus Oreo-Keksen oder schwarzem Fondant — 4 Stück seitlich anpressen (zwei vorne, zwei hinten)."
+          "content": "Reifen aus Schoko-Sandwich-Keks-Keksen oder schwarzem Fondant — 4 Stück seitlich anpressen (zwei vorne, zwei hinten)."
         },
         {
           "n": 5,
-          "content": "Drehleiter aus zwei Strohhalmen (oben drauf liegend, mit kleinen Querstreben aus weißen Smarties) ODER eine Mini-Leiter aus Salzteig (vorm Backen formen, separat 10 Min. mitbacken, oben aufkleben mit Glasur). Zwei Versionen, beide funktionieren."
+          "content": "Drehleiter aus zwei Strohhalmen (oben drauf liegend, mit kleinen Querstreben aus weißen Zuckerperlen oder Schokolinsen) ODER eine Mini-Leiter aus Salzteig (vorm Backen formen, separat 10 Min. mitbacken, oben aufkleben mit Glasur). Zwei Versionen, beide funktionieren."
         },
         {
           "n": 6,
-          "content": "„112\" mit weißer Glasur oder weißem Zuckerstift auf die Seite schreiben. Optional: blaues Blaulicht aus Smartie oder Blaubeere oben drauf."
+          "content": "„112\" mit weißer Glasur oder weißem Zuckerstift auf die Seite schreiben. Optional: blaues Blaulicht aus einer Blaubeere oder einer blauen Zuckerperle oben drauf."
         },
         {
           "n": 7,
@@ -2200,7 +2353,7 @@ var ELITE_MOTTO_DATA = {
       "tips": [
         {
           "title": "🎂 Keine Lust zu backen?",
-          "body": "Fertigen Schoko-Kasten beim Bäcker kaufen, rote Glasur drüber, Oreo-Reifen ankleben, „112\" mit weißem Zuckerstift draufschreiben. Sieht aus wie gewollt, dauert 10 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.\""
+          "body": "Fertigen Schoko-Kasten beim Bäcker kaufen, rote Glasur drüber, Schoko-Sandwich-Keks-Reifen ankleben, „112\" mit weißem Zuckerstift draufschreiben. Sieht aus wie gewollt, dauert 10 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.\""
         },
         {
           "title": "🚒 Pinterest-Inspiration ohne Pinterest-Aufwand",
@@ -2233,6 +2386,14 @@ var ELITE_MOTTO_DATA = {
         {
           "topic": "🔇 Nachbarn & Lautstärke",
           "detail": "Ehrlich: Sirene + 6 spritzende Kinder + Einsatz-Alarm ist laut. Wenn du in einer Mietwohnung bist, kurz vorab beim Nachbarn klingeln und sagen: „Sonntag von 14 bis 17 wird's lauter, mein Sohn wird 7.\" Das kostet 30 Sekunden, kostet vielleicht eine Tafel Schokolade in der Nachbarwohnung, und erspart dir Stress mitten in der Sirene-Phase. Sirene draußen besser am späten Nachmittag, nicht abends nach 19:00."
+        },
+        {
+          "topic": "🔥 Echte Sicherheits-Regeln — Wasser-Spiele",
+          "detail": "Drei Regeln, die du beim Schicht-Appell einmal kurz durchgehst — die Kinder merken sich das, weil es sich nach „Crew-Briefing\" anfühlt: 1. „Strahlrohr nur zur Seite, nie ins Gesicht.\" Bei Verstoß: Strahlrohr für 1 Runde abgegeben — funktioniert besser als Schimpfen. 2. „Wasser nur auf den Becher oder die Flamme, nicht aufs andere Kind.\" Eltern stehen als Sicherheitsnetz daneben. 3. „Auf nassem Boden Schritt-Tempo — sonst Rutschgefahr.\" Diese drei Sätze beim Schicht-Beginn-Spruch reichen, kein Vortrag. Die Kinder spüren, dass du sie ernst nimmst — und halten sich besser dran als bei generischem „Vorsichtig!\"."
+        },
+        {
+          "topic": "📲 Notruf-Erziehung beiläufig",
+          "detail": "Wenn du das Theorie-Briefing der Wow-Variante machst oder das 112-Quiz aus den Bonus-Spielen, kannst du beiläufig drei lebenswichtige Inhalte mitgeben: 1. Die 112 ist die Feuerwehr-Notrufnummer in ganz Europa — funktioniert auch ohne SIM-Karte vom Smartphone aus. 2. Beim Notruf gilt die 5-W-Regel: Wer (rufe ich an, mein Name), Wo (ist es passiert), Was (ist passiert), Wie viele (sind verletzt/in Gefahr), Warten (auf Rückfragen). 3. Auflegen erst, wenn die Leitstelle es sagt. Diese drei Punkte sind die offizielle Brandschutzerziehung — die kommt in der Schule nochmal, aber wenn dein Kind und seine Freunde es schon auf der Party hören, ist die Schicht beim Erinnern halbiert."
         }
       ],
       "educationalValue": "Kinder, die hier waren, gehen mit drei konkreten Brandschutz-Skills nach Hause: 1. Sie wissen, dass die 112 die richtige Notrufnummer ist, und sie kennen die 5 W (Wer / Wo / Was / Wie viele / Warten). 2. Sie wissen, dass Wasser nicht alles löscht — Fett-Brand wird mit Deckel erstickt, nicht mit Wasser bespritzt. 3. Sie wissen, dass im Brandfall Rauch das Hauptproblem ist und dass tief am Boden die sauberste Luft ist. Das sind keine Marketing-Versprechen — das passiert beiläufig in den Spielen und im Theorie-Briefing der Wow-Variante. Die Deutsche Brandschutzerziehung empfiehlt diese Inhalte ab 5 Jahren. Wir packen sie hier in eine Geburtstagsparty, ohne dass es nach Schulstunde aussieht."
@@ -2254,6 +2415,14 @@ var ELITE_MOTTO_DATA = {
       {
         "q": "Funktioniert das Feuerwehr-Motto in gemischten Gruppen — auch für Mädchen?",
         "a": "Ja, und zwar besser als die meisten denken. Die 12 Crew-Funktionen sind bewusst gemischt-geschlechtlich besetzt: Funkerin, Sanitäterin, Disponentin, Strahlrohrführerin, Atemschutzträgerin, Wasserretterin sind weibliche Rollen, die zur echten Feuerwehr-Realität gehören. Mädchen, die zum Schicht-Appell kommen, ziehen ihren Dienstausweis und werden Crew-Mitglied — kein Klischee, keine Sonderrolle. Funktioniert in jeder Konstellation: reine Jungen-Crews, reine Mädchen-Crews, gemischte Crews. Was nicht funktioniert: das Motto „Mädchen-tauglich\" zu machen durch rosa Glitzer-Helme. Lass es so wie es ist — die Kinder spüren Authentizität."
+      },
+      {
+        "q": "Was tun bei schlechtem Wetter ohne Wasser-Spiele?",
+        "a": "Drei Indoor-Alternativen, alle motto-stimmig: 1. Statt Zielspritzen: rote Papier-Flammen mit Tesa an die Wand kleben — Kinder müssen sie mit Bällen oder Erbsensäckchen „abschießen\". Funktioniert wie eine Schießbude und ist genauso laut. 2. Statt Schlauch-Parcours: Sprossenwand oder Stuhl-Kissen-Strecke als Leiter-Klettern. 3. Statt Schaum-Löschen draußen: in der Wanne, das Bad ist eh wasser-tolerant. Plus: Knoten-Station, Erste-Hilfe an Kuscheltieren, Brandermittlung-Mini — alles funktioniert ohne ein Tropfen Wasser."
+      },
+      {
+        "q": "Welche Mitgebsel passen zum Feuerwehr-Motto bei 6-8?",
+        "a": "Bei 6-8 funktionieren: 1 Pappkarton- oder Plastik-Helm (Höhepunkt der Tüte), 1 Feuerwehr-Ausweis mit Foto und Funktion vom Schicht-Appell (emotional aufgeladen), 1 Mini-Feuerwehrauto (selbst „gerettet\" beim Schaum-Löschen — Story), 1 Tattoo-Bogen zum Mitnehmen, 1 Tüte Gummibärchen und das Feuerwehr-Diplom gerollt mit Bändchen. Optional: ein Reflektor-Aufkleber als „Sicherheitsausweis\" (mit Sicherheitsbezug, kostet 30 ct/Stück). Vermeide Trillerpfeifen — Eltern danken's dir nicht."
       }
     ],
     "preparationWeeks": {
@@ -2383,7 +2552,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🍫",
             "title": "Kuchen verzieren",
-            "detail": "Rote Glasur drüber (Tube aus Supermarkt reicht), 4 Oreos halbieren = 8 Reifen für ‚Feuerwehrauto', weißer Zuckerstift für ‚112'. 10 Minuten. Über Nacht fest werden lassen."
+            "detail": "Rote Glasur drüber (Tube aus Supermarkt reicht), 4 Schoko-Sandwich-Kekss halbieren = 8 Reifen für ‚Feuerwehrauto', weißer Zuckerstift für ‚112'. 10 Minuten. Über Nacht fest werden lassen."
           },
           {
             "icon": "🧸",
@@ -2494,11 +2663,11 @@ var ELITE_MOTTO_DATA = {
       "kuchen_misslungen": {
         "icon": "🎂",
         "label": "Kuchen ist misslungen",
-        "headline": "Bäcker-Hack: Schoko-Kasten + rote Glasur + Oreos = Notfall-Kuchen in 15 Min.",
+        "headline": "Bäcker-Hack: Schoko-Kasten + rote Glasur + Schoko-Sandwich-Kekss = Notfall-Kuchen in 15 Min.",
         "steps": [
           "Schoko-Kastenkuchen beim nächsten Bäcker holen (oder Edeka/Rewe-Kuchenecke).",
           "Rote Tortenguss-Glasur drüber (Tube, 1,50 €) — Feuerwehr-Rot, Volltreffer.",
-          "4 Oreos seitlich ankleben als Reifen, weiße Zuckerstift-„112\" auf die Oberseite.",
+          "4 Schoko-Sandwich-Kekss seitlich ankleben als Reifen, weiße Zuckerstift-„112\" auf die Oberseite.",
           "Sirenen-Sound vom Handy bereitlegen für die Anzünden-Szene — sieht aus wie gewollt."
         ],
         "fallback": "Bäcker zu? Muffins aus dem Vorrat, je ein Mini-Marshmallow + Zahnstocher mit roter Papierfahne reinstecken — Mini-Feuerwehr-Hütchen.",
@@ -2544,6 +2713,34 @@ var ELITE_MOTTO_DATA = {
         ],
         "fallback": "Wenn's wirklich chaotisch wird: Mitgebsel-Tüten in den Flur stellen, jedes Kind nimmt im Rausgehen eine — Abschied auf der Treppe statt im Wohnzimmer.",
         "tone": "praktisch"
+      },
+      "wasser_chaos_im_wohnzimmer": {
+        "icon": "💧",
+        "label": "Wasser-Sauerei im Wohnzimmer",
+        "headline": "Garagenboden-Trick: trockenwischen, lüften, Spielort verlagern.",
+        "steps": [
+          "Sofort 3 große Handtücher auf die Pfütze legen — saugt 80 % auf in 2 Min.",
+          "Spritzen-Station ins Bad verlagern (Wanne) oder auf den Balkon, falls trocken.",
+          "Wenn Pfütze in der Garage oder auf Fliesen: trockenwischen + 5 Min lüften — sonst Rutschgefahr für Eltern und Kinder.",
+          "Crew ablenken mit Knoten-Station oder Erste-Hilfe-Station, während Wohnzimmer trocknet.",
+          "Folie oder alte Bettlaken für Round 2 unterlegen, falls Wasser-Phase weitergeht."
+        ],
+        "fallback": "Wirklich alles nass? Spritzen-Phase abbrechen, dafür Schaum-Wanne im Bad strecken und Brandermittlung-Spiel früher starten. Kinder merken die Plan-Änderung kaum.",
+        "tone": "praktisch"
+      },
+      "asthma_kind_bei_nebel": {
+        "icon": "🌫️",
+        "label": "Asthma-Kind bei Nebelmaschine (Wow)",
+        "headline": "Nebel sofort aus, Fenster auf, betroffenes Kind raus — Plan B aktiviert.",
+        "steps": [
+          "Nebelmaschine sofort ausschalten, Fenster und Türen weit öffnen — Wohnung in 3 Min durchgelüftet.",
+          "Asthma-Kind in andere Raumecke oder Garten, frische Luft, eventuell Spray (Eltern entscheiden — vorher abgesprochen).",
+          "Story-Switch: „Crew, der Nebel ist verflogen — der Einsatz geht trotzdem weiter!\" Kinder bemerken den Switch nicht als Notfall.",
+          "Restliche Crew durch den Nebel-freien Bereich führen — Mini-Einsatz wie in Standard-Variante.",
+          "Eltern des betroffenen Kindes anrufen, kurze Lage-Übergabe, ggf. früherer Abholzeitpunkt absprechen."
+        ],
+        "fallback": "Akut-Beschwerden trotz Nebel-Aus (Atemnot bleibt)? 112 anrufen — kein Drama machen, aber lieber 1× zu viel als 1× zu wenig. Das ist nicht das Versagen der Party, das ist Verantwortung. Bei der Wow-Variante Asthma IMMER vorher abfragen, nicht im Notfall überraschen lassen.",
+        "tone": "ruhig"
       }
     }
   },
@@ -2870,7 +3067,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🎂",
-            "label": "Backmischung + Zuckerguss + Oreo + Wunderkerze",
+            "label": "Backmischung + Zuckerguss + Schoko-Sandwich-Keks + Wunderkerze",
             "url": null,
             "priceEur": 8,
             "hasAffiliate": false,
@@ -3117,7 +3314,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🎂",
-            "label": "Backmischung + Zuckerguss + Oreo + Wunderkerze",
+            "label": "Backmischung + Zuckerguss + Schoko-Sandwich-Keks + Wunderkerze",
             "url": null,
             "priceEur": 8,
             "hasAffiliate": false,
@@ -3461,6 +3658,66 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
+    "bonusGames": {
+      "intro": "Diese Spiele kannst du in jeder Variante einbauen oder weglassen — alle 9-12-tauglich, mit echter intellektueller Tiefe. Vier davon sind Indoor-Alternativen für Regenwetter, eines ist eine Outdoor-Großübung.",
+      "items": [
+        {
+          "name": "🤖 Lego-Lösch-Roboter (Bastel-Challenge)",
+          "duration": 45,
+          "minAge": 9,
+          "loudness": "ruhig",
+          "indoor": true,
+          "outdoor": false,
+          "material": "Pro Trupp (2-3 Kinder): 1 Lego-Box mit gemischten Steinen (Technik-Lego ist Bonus, klassisches Duplo geht auch — aus dem Eigenbestand oder geliehen), optional 1 kleine Spritz-Demonstrations-Aufgabe (Klorollen als „Brand\"). 1 Stoppuhr für die Wettbewerbs-Variante.",
+          "anleitung": "Story: „Die Wache braucht neue Technik — entwerft einen Lösch-Roboter, der Brände findet und löscht!\" Trupps von 2-3 Kindern bekommen je eine Lego-Box. 30 Min Bau-Zeit. Nach Ablauf präsentiert jeder Trupp seinen Roboter: Funktion, Lösch-Mechanismus, Reichweite. Eine Jury (du + ein Eltern-Helfer) bewertet nach Kreativität, Funktionalität, Team-Präsentation.\n\nVarianten: Mit Technik-Lego oder Mindstorms (falls vorhanden) lassen sich tatsächlich bewegliche Modelle bauen — dann ist's eher 60 Min. Standard-Variante ohne Motoren reicht aber völlig.",
+          "whyItWorks": "9-12 lieben Konstruktions-Aufgaben mit offenem Ende. Trainiert Teamwork, Kreativität, technisches Verständnis. Perfekt als Indoor-Alternative bei Regen oder als zusätzliche Wow-Aktivität. Eltern, die das Ergebnis sehen, sind beeindruckt — die Kinder spüren das."
+        },
+        {
+          "name": "📡 Großeinsatz mit Walkie-Talkies",
+          "duration": 40,
+          "minAge": 10,
+          "loudness": "laut",
+          "indoor": true,
+          "outdoor": true,
+          "material": "3 Walkie-Talkies (~25 € für 3er-Set auf Amazon, sonst 2 alte Smartphones + Messenger-App), 3 verschiedene „Einsatzorte\" (z.B. Garten, Bad, Küche), 8-10 Kuscheltiere zum Retten, 1 Karten-Skizze der Wohnung pro Team",
+          "anleitung": "Die ambitionierte Variante des Einsatz-Alarms. Crew wird in 3 Teams aufgeteilt, jedes Team hat ein Walkie-Talkie. Story: „3 gleichzeitige Notrufe — koordiniert euch über Funk! Team A: Brand im Garten. Team B: Verletzter im Bad. Team C: Tiere in der Küche.\"\n\nAblauf: Du bist Leitstelle. Du funkst die Befehle, die Teams melden zurück. Die Teams müssen miteinander kommunizieren („Team A an Team B — kommt zur Verstärkung in den Garten!\"). Du gibst neue Lageinfos rein („Atemschutz-Warnung im Bad — Team B mit Augenbinde weiter!\").\n\nDauer: 40 Min — länger ist anstrengend.",
+          "whyItWorks": "Echte Team-Koordination unter Zeitdruck. 10-12-Jährige lieben Funkgeräte — das fühlt sich nach echter Mission an. Trainiert klare Kommunikation, Lage-Beurteilung, Prioritäten setzen. SICHERHEIT: Walkie-Talkies haben echte Lautstärke — vorher Volume-Limits einstellen, sonst Ohrenpein. Nur draußen oder in großer Wohnung."
+        },
+        {
+          "name": "🔍 Brandschutz-Detektive (Realitäts-Check)",
+          "duration": 25,
+          "minAge": 10,
+          "loudness": "ruhig",
+          "indoor": true,
+          "outdoor": false,
+          "material": "1 Klemmbrett + Stift pro Kind, 1 Liste mit „typischen Gefahren\" zum Abhaken (Vorlage unten), evtl. eine Lupe (Showbiz, nicht funktional)",
+          "anleitung": "Crew geht durch deine Wohnung und identifiziert echte Brandschutz-Gefahren — wie echte Brandschutz-Inspektoren. Jedes Kind hat eine Checkliste mit 10 Punkten: \n\n1. Sind alle Rauchmelder vorhanden und funktionsfähig? (Test-Knopf drücken)\n2. Gibt es überlastete Mehrfachsteckdosen?\n3. Sind Fluchtwege frei (keine Möbel davor)?\n4. Stehen brennbare Stoffe nahe der Herdplatte?\n5. Sind Kerzen sicher aufgestellt?\n6. Ist der Wäschetrockner-Flusenfilter sauber?\n7. Wo hängt der Feuerlöscher (oder gibt es keinen)?\n8. Ist das Treppenhaus als Fluchtweg frei?\n9. Liegen Streichhölzer/Feuerzeuge unzugänglich für Kleinkinder?\n10. Kennt die Familie die Notfall-Sammelstelle vorm Haus?\n\nNach 20 Min Sammelpunkt — Crew berichtet, was sie gefunden hat. Du dokumentierst, was tatsächlich zu verbessern ist. Bonus: Die Familie macht's danach wirklich besser. ECHTE PARENTAL VALUE.",
+          "whyItWorks": "9-12 lieben Realitäts-Bezüge. Hier wird Brandschutz konkret — nicht abstrakt. Eltern, die das Ergebnis sehen, sind beeindruckt von der Tiefe. Plus: Das Geburtstagskind und seine Freunde nehmen echtes Sicherheits-Wissen mit nach Hause, das auch ihren eigenen Familien hilft. Funktioniert nur, wenn die Wohnung „inspizierbar\" ist — bei sehr persönlichen Räumen (Schlafzimmer) ggf. ausnehmen."
+        },
+        {
+          "name": "🧪 Hydraulische Presse — Physik-Experiment",
+          "duration": 20,
+          "minAge": 10,
+          "loudness": "ruhig",
+          "indoor": true,
+          "outdoor": false,
+          "material": "2 große Plastik-Spritzen (apothekenfrei, ohne Nadel, ~5 € für 2 Stück), 1 m durchsichtiger Schlauch (Aquaristik-Bedarf, ~2 €), Wasser, ggf. 1 Holzbrett als „Plattform\" und kleine Gewichte (Bauklötze) zum Demonstrieren",
+          "anleitung": "Eine Spritze ist klein (10 ml), die andere groß (60 ml). Mit dem Schlauch verbinden, beide mit Wasser füllen, keine Luftblasen. Wenn du die kleine Spritze drückst (mit Daumen-Kraft), hebt die große Spritze ein vielfaches Gewicht — Hydraulik-Prinzip.\n\nDemonstration: 1. Erkläre das Prinzip (Druck ist überall im Wasser gleich). 2. Lass Crew probieren — mit dem kleinen Druck bewegen sie etwas Großes. 3. Verbindung zur Feuerwehr: Die echten Feuerwehr-Pumpen funktionieren so. Genau dieses Prinzip macht es möglich, Wasser aus dem Hydrant 20 m hoch auf ein brennendes Haus zu schießen.\n\nNach 15 Min haben sie's verstanden — und sind beeindruckt.",
+          "whyItWorks": "Echtes Physik-Lernen, eingebettet in die Feuerwehr-Story. Funktioniert für die ganze Crew gleichzeitig (alle schauen zu, einer demonstriert reihum). Trainiert konzeptuelles Verständnis, nicht nur Faktenwissen. SICHERHEIT: Plastik-Spritzen ohne Nadel — keine echten Injektionsspritzen!"
+        },
+        {
+          "name": "🎬 Feuerwehr-Dokumentar (Video-Bericht)",
+          "duration": 30,
+          "minAge": 10,
+          "loudness": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "material": "1-2 Smartphones (ggf. deine + ein Eltern-Helfer-Handy), evtl. ein günstiges Stativ (~10 €) oder einfach Stuhl/Tisch als Auflage. 1 ausgedrucktes „Story-Board\" mit 5 Aufnahme-Ideen.",
+          "anleitung": "Crew dreht einen kurzen Doku-Bericht über den Tag. Wird am Ende der Party in der Zeremonie projiziert (Smartphone an Beamer/TV) oder per Familien-Chat-Mail an Eltern verschickt.\n\nStory-Board (kurz und konkret):\n1. Eröffnung: Wachleiter Max stellt die Crew vor (jedes Kind sagt Name + Funktion).\n2. Stationen-Bericht: Jedes Kind erklärt 1 Station in 20 Sekunden.\n3. Einsatz-Highlight: Crew dreht eine 1-Minuten-Szene aus dem Mini-Einsatz oder der Brandermittlung.\n4. Bestleistungs-Interview: Beste-Brandermittlerin/Bester-Brandermittler bekommt ein 30-Sek-Interview.\n5. Schlusswort: Geburtstagskind sagt 30 Sek über den Tag.\n\nGesamt-Dreh: 20 Min. Schneiden: nach der Party (Eltern als Editor). Verbreitung nur mit Eltern-Zustimmung — Datenschutz beachten!",
+          "whyItWorks": "9-12 lieben Smartphone-Produktion. Trainiert Storytelling, Self-Präsentation, Teamwork. Plus: Eltern bekommen ein einzigartiges Erinnerungs-Video. PFLICHT-CHECK: Vor dem Versand der Videos: jedes Eltern-Paar einzeln zustimmen lassen (DSGVO!). Notfalls Gesichter unkenntlich machen oder nur an die abgebildete Familie schicken."
+        }
+      ]
+    },
     "cakeRecipe": {
       "intro": "Bei 9-12 darf der Kuchen anspruchsvoller werden — die Kinder erkennen Mühe und schätzen sie.",
       "steps": [
@@ -3478,15 +3735,15 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "n": 4,
-          "content": "Reifen aus Oreo-Keksen oder schwarzem Fondant — 4 Stück seitlich anpressen. Bei 9-12 dürfen die Reifen ordentlich aussehen."
+          "content": "Reifen aus Schoko-Sandwich-Keks-Keksen oder schwarzem Fondant — 4 Stück seitlich anpressen. Bei 9-12 dürfen die Reifen ordentlich aussehen."
         },
         {
           "n": 5,
-          "content": "Drehleiter aus zwei Strohhalmen (oben drauf liegend, mit Querstreben aus weißen Smarties) ODER eine Mini-Leiter aus Salzteig (vorm Backen formen, separat 10 Min. mitbacken). Die Leiter macht den Unterschied zwischen „roter Kasten\" und „Feuerwehrauto-Kuchen\"."
+          "content": "Drehleiter aus zwei Strohhalmen (oben drauf liegend, mit Querstreben aus weißen Zuckerperlen oder Schokolinsen) ODER eine Mini-Leiter aus Salzteig (vorm Backen formen, separat 10 Min. mitbacken). Die Leiter macht den Unterschied zwischen „roter Kasten\" und „Feuerwehrauto-Kuchen\"."
         },
         {
           "n": 6,
-          "content": "„112\" mit weißer Glasur seitlich. Optional: blaues Blaulicht aus Smartie oder Blaubeere oben drauf, mit weißem Stern aus Zuckerguss."
+          "content": "„112\" mit weißer Glasur seitlich. Optional: blaues Blaulicht aus einer Blaubeere oder einer blauen Zuckerperle oben drauf, mit weißem Stern aus Zuckerguss."
         },
         {
           "n": 7,
@@ -3501,7 +3758,7 @@ var ELITE_MOTTO_DATA = {
       "tips": [
         {
           "title": "🎂 Keine Lust zu backen?",
-          "body": "Fertigen Schoko-Kasten beim Bäcker kaufen, rote Glasur drüber, Oreo-Reifen ankleben, „112\" mit weißem Zuckerstift draufschreiben. Sieht aus wie gewollt, dauert 15 Minuten, schmeckt den Kindern genauso gut. Bei 9-12 erkennen sie ggf. den Kauf-Kuchen — aber sie würden's nie sagen, weil ihnen das Konzept des „Mama backt mit Liebe\" eher peinlich ist als das eines geschäftsmäßigen Geburtstags."
+          "body": "Fertigen Schoko-Kasten beim Bäcker kaufen, rote Glasur drüber, Schoko-Sandwich-Keks-Reifen ankleben, „112\" mit weißem Zuckerstift draufschreiben. Sieht aus wie gewollt, dauert 15 Minuten, schmeckt den Kindern genauso gut. Bei 9-12 erkennen sie ggf. den Kauf-Kuchen — aber sie würden's nie sagen, weil ihnen das Konzept des „Mama backt mit Liebe\" eher peinlich ist als das eines geschäftsmäßigen Geburtstags."
         }
       ]
     },
@@ -3534,6 +3791,14 @@ var ELITE_MOTTO_DATA = {
         {
           "topic": "📱 Partyseite statt WhatsApp-Chaos",
           "detail": "Auch bei 9-12 lohnt sich die [Partyseite auf party.machsleicht.de](https://party.machsleicht.de) — Allergien-Abfrage, Cola/Apfelschorle-Präferenz, Vegetarier-Status, Smartphone-Regel, alles in einem Link. Eltern lesen es ohne Nachfragen, und du hast es schwarz auf weiß."
+        },
+        {
+          "topic": "🏠 Brandschutz-Detektive — eigene Wohnung vorher checken",
+          "detail": "Wenn du das Bonus-Spiel „Brandschutz-Detektive\" planst (Crew geht durch die Wohnung und identifiziert Gefahren), lohnt sich ein eigener Vor-Check 2 Tage vorher. 10-Punkte-Liste durchgehen: Rauchmelder funktionieren? Mehrfachsteckdosen nicht überlastet? Fluchtwege frei? Streichhölzer unzugänglich? Wenn du selbst 3-4 Punkte verbessern kannst, geht das in 30 Min. Die Crew findet dann am Tag X die übrigen 6-7 Punkte — und du hast danach selbst eine sichere Wohnung. Echter parental value, der über die Party hinausreicht. Die Deutsche Feuerwehr-Schutzkommission empfiehlt diesen Check jährlich."
+        },
+        {
+          "topic": "🎬 Datenschutz bei Videoaufnahmen (Wow + Dokumentar-Bonus)",
+          "detail": "Wenn du die Notruf-Simulation, das Dokumentar-Spiel oder Polaroids machst: vorher klären, wer abgebildet werden darf. DSGVO gilt auch für Kindergeburtstage. Drei Optionen: (a) Vor der Party in der Einladung anfragen — schriftliche Zustimmung pro Familie. (b) Am Tag X kurz fragen, alle Eltern stimmen einzeln zu — funktioniert bei 7-8 Familien noch. (c) Videos/Fotos nur an die jeweilige Familie senden — jeder bekommt nur die Bilder seines eigenen Kindes. Niemals ohne Zustimmung in soziale Medien posten (auch nicht in geschlossene Familien-Gruppen anderer Familien). Bei Verstoß droht Abmahnung — selbst wenn die andere Familie nett ist."
         }
       ],
       "educationalValue": null
@@ -3559,6 +3824,14 @@ var ELITE_MOTTO_DATA = {
       {
         "q": "Funktioniert die Brandermittlung wirklich oder ist das zu schwer für 9-12?",
         "a": "Sie funktioniert, aber nur, wenn ihr die Phasenstruktur einhaltet. 9-Jährige sollten die Minimal-Brandermittlung machen (4 Verdächtige, deutliche Beweise, 60 Min.). 10-12-Jährige können die Standard- oder Wow-Variante durchspielen (4-6 Verdächtige, längere Diskussion, 75-90 Min.). Wichtig: du moderierst — wenn die Crew nicht weiterkommt, gib einen Hinweis, das ist Eskalation, nicht Mogelei. Die Auflösung mit der Köchin und der Fett-Pfanne knüpft direkt an das Theorie-Briefing an. Wer das Briefing skippt, verliert die Auflösungs-Logik. Das Briefing ist nicht optional."
+      },
+      {
+        "q": "Was tun bei schlechtem Wetter ohne Wasser-Spiele?",
+        "a": "Bei 9-12 ist Indoor sogar oft eleganter, weil die Brandermittlung und das Theorie-Briefing eh drinnen stattfinden. Statt Spritzen-Station: 1. Lego-Lösch-Roboter bauen (siehe Bonus-Spiele) — anspruchsvolle Bastel-Challenge für 30-45 Min. 2. Feuerwehr-Quiz-Duell mit 20 Fragen zu Technik/Taktik/Geschichte. 3. Hydraulik-Experiment (Spritzen-Demo mit 2 verbundenen Spritzen) — Physik-Coolness. 4. Brandschutz-Detektive: Die Crew geht durch die Wohnung und identifiziert echte Gefahren (überlasteter Stecker, blockierter Fluchtweg, fehlender Rauchmelder). Letzteres bringt sogar Eltern-Lernwert mit nach Hause."
+      },
+      {
+        "q": "Welche Mitgebsel passen zum Feuerwehr-Motto bei 9-12?",
+        "a": "9-12 schätzt Detail-Qualität über Menge. Funktionierende Tüten enthalten: 1 Plastik-Helm (oder Pin), 1 Crew-Diplom mit individueller Beurteilung (gerollt mit Bändchen — der emotionale Anker), 1 kleine Lupe (haben sie bei der Brandermittlung benutzt, wird Detektiv-Spielzeug), 1 Mini-Notruf-Karte als Erinnerung an die 5 W, 1-2 Schokoriegel oder Mini-Chipstüte. Bei Wow zusätzlich: Polaroid mit Funktion auf der Rückseite + Crew-Pin. Vermeide: Kindergarten-Spielzeug, billige Lutscher, Plastikfiguren — bei 9-12 ist das peinlich und landet auf dem Heimweg im Mülleimer."
       }
     ],
     "preparationWeeks": {
@@ -3653,7 +3926,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🎂",
             "title": "Feuerwehrauto-Kuchen backen — oder Plan B",
-            "detail": "Wenn Zeit/Nerven da: Backmischung in Kastenform. Wenn nicht: Schoko-Kasten beim Bäcker (4-6€), morgen Glasur + Oreos + Wunderkerze. Bei 9-12 ist Wunderkerze OK — keine Brand-Panik wie bei den Kleinen."
+            "detail": "Wenn Zeit/Nerven da: Backmischung in Kastenform. Wenn nicht: Schoko-Kasten beim Bäcker (4-6€), morgen Glasur + Schoko-Sandwich-Kekss + Wunderkerze. Bei 9-12 ist Wunderkerze OK — keine Brand-Panik wie bei den Kleinen."
           },
           {
             "icon": "🗣️",
@@ -3683,7 +3956,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🍫",
             "title": "Kuchen verzieren",
-            "detail": "Rote Glasur drüber, Oreos halbieren = Reifen, weißer Zuckerstift für ‚112'. Bei Wow: Wunderkerze in den Kuchen für ‚Happy Birthday'-Moment. 10 Minuten Arbeit, über Nacht fest werden lassen."
+            "detail": "Rote Glasur drüber, Schoko-Sandwich-Kekss halbieren = Reifen, weißer Zuckerstift für ‚112'. Bei Wow: Wunderkerze in den Kuchen für ‚Happy Birthday'-Moment. 10 Minuten Arbeit, über Nacht fest werden lassen."
           },
           {
             "icon": "🕵️",
@@ -3795,11 +4068,11 @@ var ELITE_MOTTO_DATA = {
       "kuchen_misslungen": {
         "icon": "🎂",
         "label": "Kuchen ist misslungen",
-        "headline": "Bäcker-Hack: Schoko-Kasten + Glasur + Oreos = Notfall in 10 Min.",
+        "headline": "Bäcker-Hack: Schoko-Kasten + Glasur + Schoko-Sandwich-Kekss = Notfall in 10 Min.",
         "steps": [
           "Schoko-Kastenkuchen beim nächsten Bäcker oder Edeka-Kuchenecke (4–6 €).",
           "Rote Tortenguss-Glasur drüber — Tube, 1,50 €.",
-          "4 Oreos halbieren = 8 Reifen, seitlich ankleben, weißer Zuckerstift für ‚112'.",
+          "4 Schoko-Sandwich-Kekss halbieren = 8 Reifen, seitlich ankleben, weißer Zuckerstift für ‚112'.",
           "Wunderkerze obendrauf für Wow-Happy-Birthday-Moment, fertig."
         ],
         "fallback": "Bäcker zu? Stückkuchen vom Discounter, in der Mitte Wunderkerze, je ein Mini-Marshmallow + Zahnstocher als Sirene-Spitze. Bei 9-12 funktioniert humor: ‚Tarn-Modus, Feuerwehr-Geheimoperation.'",
@@ -3845,6 +4118,48 @@ var ELITE_MOTTO_DATA = {
         ],
         "fallback": "Wirklich chaotisch? Mitgebsel in den Flur stellen, jedes Kind nimmt im Rausgehen eine, Abschied auf der Treppe.",
         "tone": "praktisch"
+      },
+      "brandermittlung_zu_schwer": {
+        "icon": "🧩",
+        "label": "Brandermittlung — Crew kommt nicht weiter",
+        "headline": "Hint-System aktivieren: nach 5 Min Stillstand 1 Tipp-Karte rausgeben.",
+        "steps": [
+          "Stoppe die Diskussion kurz: ‚Crew, ich hab einen Anruf von der Leitstelle — neuer Hinweis ist eingetroffen.'",
+          "Übergebe eine Tipp-Karte aus dem Hint-Umschlag (vorher vorbereitet, 1 Tipp pro Phase).",
+          "Tipp formulieren als Story-Element: ‚Ein Zeuge hat gerade gemeldet, dass...' — nicht als Auflösung.",
+          "Crew weiter arbeiten lassen — nicht moderieren, nur zuhören.",
+          "Falls nach weiteren 5 Min keine Bewegung: zweiter Tipp. Maximum 2 Tipps pro Phase, sonst verlieren die Kinder das Erfolgs-Gefühl."
+        ],
+        "fallback": "Echt festgefahren nach 2 Tipps? Phase abbrechen, gemeinsam die Auflösung herleiten — als Crew-Diskussion, nicht als Vortrag. Anschluss: ‚Beim echten Einsatz hilft Teamwork — das war jetzt unser Teamwork-Moment.' Funktioniert.",
+        "tone": "ruhig"
+      },
+      "smartphone_drama": {
+        "icon": "📱",
+        "label": "Smartphone-Konflikte oder versehentliche 112",
+        "headline": "Sofort einsammeln, dann ruhig erklären — Notruf abklären falls passiert.",
+        "steps": [
+          "Wenn ein Kind heimlich Insta/TikTok postet: kurz beiseite nehmen, Foto/Video löschen lassen, Handy in Sammelbox bis Schicht-Ende.",
+          "Wenn versehentliche 112: SOFORT zurückrufen oder warten bis Leitstelle anruft, ruhig erklären (‚Mein Sohn hat versehentlich gewählt, es ist kein Notfall, danke').",
+          "NIEMALS einfach auflegen ohne Erklärung — die Leitstelle muss verifizieren, sonst schicken sie Einsatzkräfte raus.",
+          "Vor der Notruf-Simulation IMMER Flugmodus aktivieren, am besten alte Smartphones ohne SIM nutzen.",
+          "Eltern bei Smartphone-Drama anrufen — kurze Lage-Übergabe, lieber transparent als verheimlicht."
+        ],
+        "fallback": "Echt schwerwiegender Vorfall (z.B. mehrere Notrufe oder ernsthafte Datenschutz-Verletzung)? Party in Zeremonie-Modus schalten, Mitgebsel raus, Eltern anrufen. Verantwortung übergeben statt vertuschen.",
+        "tone": "praktisch"
+      },
+      "streit_unter_kindern": {
+        "icon": "⚔️",
+        "label": "Streit unter Kindern (typisch 9-12)",
+        "headline": "5-Min-Mediation — bei 9-12 reicht meistens Reden.",
+        "steps": [
+          "Beide Kinder aus der Gruppe nehmen, in ruhigen Raum (Küche oder Flur).",
+          "Jeder sagt 1 Min lang seine Sicht — der andere hört zu, ohne zu unterbrechen.",
+          "Danach: ‚Was bräuchtest du jetzt, damit's weitergeht?' — meistens kommt ein konkreter Vorschlag.",
+          "Wenn beide einverstanden: zurück zur Crew, kein großes Brimborium — sonst verlieren die Beteiligten das Gesicht.",
+          "Wenn nicht: kurze Time-Out-Phase, jedes Kind eine Aufgabe (Wachen-Schreiber, Foto-Reporter) — Distanz schafft Beruhigung."
+        ],
+        "fallback": "Eskaliert weiter (körperliche Konflikte, Tränen, Aggression)? Eltern beider Kinder anrufen — gemeinsam entscheiden, ob früher abgeholt wird. Bei 9-12 ist Eltern-Einbindung kein Versagen, sondern Verantwortung.",
+        "tone": "ruhig"
       }
     }
   },
@@ -3868,7 +4183,36 @@ var ELITE_MOTTO_DATA = {
     "introParagraph": "3 fertige Party-Konzepte: Minimal (1,5 Std.) · Standard (2 Std.) · Wow (2,5 Std.)\n\nMinutengenaue Zeitpläne, 6 altersgerechte Spiele mit kompletter Anleitung, Einkaufslisten mit Preisen und Kosten pro Kind. Für 3–5 Jahre: weniger Programm, mehr Staunen.\n\n[🦄 Einhorn-Geburtstag planen →](/kindergeburtstag?motto=einhorn&alter=4#planer)",
     "ageInsight": {
       "headline": "Was du über 3–5-Jährige wissen musst — Einhorn-Party 3-5",
-      "traits": null,
+      "traits": [
+        {
+          "topic": "Kurze Aufmerksamkeit",
+          "detail": "3-Jährige halten 5–10 Minuten durch, 5-Jährige maximal 15. Jedes Spiel muss sofort verständlich sein — keine langen Regelerklärungen."
+        },
+        {
+          "topic": "Weniger ist mehr",
+          "detail": "2 Spiele + Kuchen reichen für eine perfekte Party. Lieber ein Spiel zu wenig als eines zu viel — überstimulierte Kleinkinder weinen, und dann weinen alle."
+        },
+        {
+          "topic": "Kein Wettkampf",
+          "detail": "In diesem Alter gibt es keine Gewinner und Verlierer. Kein „wer ist schneller\", kein „wer hat mehr gefunden\". Jedes Kind soll Erfolge erleben, nicht Niederlagen. Staunen statt Siegen."
+        },
+        {
+          "topic": "Motorik beachten",
+          "detail": "3-Jährige schneiden noch nicht mit der Schere, kleben unsauber, können kaum stillsitzen. 5-Jährige basteln schon geschickt. Bastel-Aktivitäten müssen für beide klappen — einfache Materialien, grobe Bewegungen, kein Filigranwerk."
+        },
+        {
+          "topic": "Kurze Party",
+          "detail": "1,5 bis 2 Stunden sind perfekt. Nach 2 Stunden sind die meisten 3-Jährigen erschöpft, egal wie toll die Party ist. Die Wow-Variante mit 2,5 Stunden funktioniert nur bei 5-Jährigen gut."
+        },
+        {
+          "topic": "Essen = einfach",
+          "detail": "Kinder in diesem Alter essen wenig auf Partys — zu aufgeregt. Kleine Portionen, Fingerfood, nichts was man mit Besteck essen muss. Kuchen wird angebissen, der Rest wandert in die Mitgebsel-Tüte."
+        },
+        {
+          "topic": "Eltern bleiben da",
+          "detail": "Bei 3–4-Jährigen bleiben die Eltern. Das ist kein Bug, das ist ein Feature: mehr Hände zum Helfen, weniger Verantwortung für dich. Bei 5-Jährigen können manche Eltern gehen — aber kläre das vorher."
+        }
+      ],
       "whyMottoFits": "Einhorn ist DAS Motto für diese Altersgruppe: Glitzer, Farben, Magie — alles, was kleine Kinder lieben. Es braucht keine komplexe Geschichte und keine schwierigen Spiele. Ein Einhorn-Tattoo auf der Hand, ein bisschen Sternenstaub, rosa Limo — und die Kinder sind im Einhorn-Himmel. Kein anderes Motto funktioniert so mühelos bei 3-Jährigen UND 5-Jährigen gleichzeitig.",
       "whyMottoFitsHeadline": "🦄 Warum Einhorn für 3–5-Jährige perfekt funktioniert"
     },
@@ -3986,12 +4330,12 @@ var ELITE_MOTTO_DATA = {
             "loudness": "ruhig",
             "effort": "leicht",
             "material": "1 Pappteller pro Kind (weiß), Schere (du schneidest vor!), Klebeband/Tacker, Glitzer-Kleber oder Glitzer + Klebestift, bunte Sticker, Gummiband oder Haarreif zum Befestigen",
-            "prepText": "Pappteller einmal falten → Kegel-Form rollen → mit Tacker fixieren. Das ist das Horn. Jedes Kind darf sein Horn mit Glitzer-Kleber und Stickern verzieren. Mit Gummiband am Kopf befestigen oder auf einen Haarreif kleben.",
+            "prepText": "Pappteller einmal falten → Kegel-Form rollen → mit Tacker fixieren. Das ist das Horn. Jedes Kind darf sein Horn mit Glitzer-Kleber und Stickern verzieren. Mit Gummiband am Kopf befestigen oder auf einen Haarreif kleben.\n\nVorbereitung: Hörner vorher schon zur Kegel-Form rollen und tackern — 3-Jährige können das nicht selbst. Sie kleben nur die Deko drauf.\n\nTipp: Tisch vorher mit alter Zeitung abdecken. Glitzer geht nie wieder raus — akzeptiere das jetzt.",
             "steps": [],
-            "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband.",
+            "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband. Glitzer + Glitzer-Kleber vorher 1 Tag an Innenseite Unterarm testen (Allergie-Vortest); bei Rötung Sticker statt Glitzer.",
             "ageAdjust6": "Glitzer-Kleber statt loser Glitzer (weniger Sauerei). Große Sticker statt kleine.",
             "ageAdjust8": "Dürfen mit Kinderschere selbst den Pappteller zuschneiden. Zusätzlich Ohren aus Pappe ausschneiden und drankleben.",
-            "indoorTip": null,
+            "indoorTip": "Tisch mit alter Zeitung oder Wachstuch abdecken, Müllbeutel als Bastel-Schürze pro Kind — Glitzer-Kleber landet überall.",
             "outdoorTip": null,
             "whyItWorksTitle": null,
             "whyItWorks": null
@@ -4005,13 +4349,13 @@ var ELITE_MOTTO_DATA = {
             "loudness": "laut",
             "effort": "leicht",
             "material": "Bluetooth-Lautsprecher oder Handy, fröhliche Kindermusik (Spotify: „Kindergeburtstag Party\"), bunte Tücher zum Schwenken (optional, je 1 pro Kind)",
-            "prepText": "Musik an → alle tanzen, hüpfen, galoppieren wie Einhörner. Musik aus → alle frieren ein wie Eisskulpturen! Wer sich bewegt, bekommt einen Glitzer-Aufkleber auf die Hand — das ist eine Belohnung, kein Rauswerfen.",
+            "prepText": "Musik an → alle tanzen, hüpfen, galoppieren wie Einhörner. Musik aus → alle frieren ein wie Eisskulpturen! Wer sich bewegt, bekommt einen Glitzer-Aufkleber auf die Hand — das ist eine Belohnung, kein Rauswerfen.\n\nVariante „Regenbogen-Farben\": Rufe eine Farbe, alle müssen etwas in dieser Farbe im Raum berühren und weiter tanzen.\n\nTipp: Bunte Tücher zum Schwenken machen es 10x magischer. 6 Stück kosten ~3 € bei Action.",
             "steps": [],
-            "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr).",
+            "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Glitzer-Aufkleber sind klein — nur auf Hand/Arm aufbringen, nicht zum Naschen liegen lassen.",
             "ageAdjust6": "Einfrieren ist noch schwer — lass sie einfach tanzen. Bei Stopp alle auf den Boden setzen (das können sie).",
             "ageAdjust8": "Einfrieren als Tier-Figur: „Jetzt bist du ein Einhorn!\" — Pose halten.",
-            "indoorTip": null,
-            "outdoorTip": null,
+            "indoorTip": "Wohnzimmer-Möbel zur Seite schieben, Teppich rollt sich beim Galoppieren auf — kurz fixieren.",
+            "outdoorTip": "Auf Wiese mit Tüchern in Regenbogenfarben besonders magisch — Wind macht die Tücher zum Flügel.",
             "whyItWorksTitle": null,
             "whyItWorks": null
           }
@@ -4167,12 +4511,12 @@ var ELITE_MOTTO_DATA = {
             "loudness": "ruhig",
             "effort": "leicht",
             "material": "1 flacher weißer Teller, 1 Tasse Vollmilch, Lebensmittelfarben (4 Farben, ~2 € im Supermarkt), Spülmittel, 1 Wattestäbchen pro Kind",
-            "prepText": "Milch in den Teller gießen. Kinder tropfen je eine Farbe rein (du hilfst!). Dann: Wattestäbchen in Spülmittel tunken und in die Milch stippen — Farben „explodieren\" in Regenbogen-Spiralen! Sieht aus wie Magie.",
+            "prepText": "Milch in den Teller gießen. Kinder tropfen je eine Farbe rein (du hilfst!). Dann: Wattestäbchen in Spülmittel tunken und in die Milch stippen — Farben „explodieren\" in Regenbogen-Spiralen! Sieht aus wie Magie.\n\nTipp: Milch danach einfach wegschütten (nicht trinken — Spülmittel!). Kosten: quasi 0 €, Effekt: riesig. 3–4 Runden sind normal — danach ist der Effekt weg (Milch gesättigt), frischer Teller hilft.",
             "steps": [],
-            "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr).",
+            "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Lebensmittelfarbe + Spülmittel — KEIN Trinken, Hände waschen vor Snacks. Teller-Standort kippsicher (Tablett mit Rand drunter).",
             "ageAdjust6": "DU tropfst die Farben, DU hältst das Wattestäbchen — sie dürfen zuschauen und staunen. Das reicht völlig. Nach dem Staunen darf jedes Kind einmal selbst stippen.",
             "ageAdjust8": "Sie dürfen alles selbst machen. 3–4 Runden sind normal — immer ein frischer Teller Milch.",
-            "indoorTip": null,
+            "indoorTip": "Auf Wachstuch oder Tablett platzieren — Milch + Spülmittel-Spritzer sind unausweichlich.",
             "outdoorTip": null,
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Spülmittel zerstört die Oberflächenspannung der Milch. Das Fett „flieht\" und nimmt die Farben mit."
@@ -4186,13 +4530,13 @@ var ELITE_MOTTO_DATA = {
             "loudness": "ruhig",
             "effort": "leicht",
             "material": "1 große Plastikwanne, 2 kg Reis mit essbarem Glitzer gemischt, 8 kleine Einhorn-Figuren, 1 Löffel pro Kind",
-            "prepText": "Reis mit Glitzer in die Wanne. Einhorn-Figuren im Reis vergraben. Jedes Kind bekommt einen Löffel und gräbt vorsichtig. Wer ein Einhorn findet, darf es behalten.",
+            "prepText": "Reis mit Glitzer in die Wanne. Einhorn-Figuren im Reis vergraben. Jedes Kind bekommt einen Löffel und gräbt vorsichtig. Wer ein Einhorn findet, darf es behalten.\n\nWichtig: Immer mehr Figuren als Kinder (bei 5 Kindern → 8 Figuren). So findet jedes Kind mindestens eins — kein Frust.\n\nTipp: Dieses Spiel beruhigt nach dem Kuchen-Zucker-Hoch. Perfekter Rhythmus-Wechsel.",
             "steps": [],
-            "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden.",
+            "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
             "ageAdjust6": "Figuren nur leicht bedecken. Reis statt Sand (wiederverwendbar, weniger Sauerei). Auf einer alten Tischdecke oder in der Badewanne aufstellen.",
             "ageAdjust8": "Tiefer vergraben. Augen zu und nur ertasten — welches Einhorn ist das (stehend oder liegend)?",
-            "indoorTip": null,
-            "outdoorTip": null,
+            "indoorTip": "Wanne in die Badewanne oder auf eine alte Tischdecke — Reis-Körner gehen sonst tagelang aus dem Teppich.",
+            "outdoorTip": "Auf der Terrasse oder Wiese großzügig — verstreuter Reis ist Vogelfutter.",
             "whyItWorksTitle": null,
             "whyItWorks": null
           },
@@ -4562,7 +4906,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "n": 6,
-          "content": "Regenbogen-Streusel oder Smarties drumherum. Essbarer Glitzer drüber = magisch."
+          "content": "Regenbogen-Streusel oder bunte Schoko-Linsen drumherum. Essbarer Glitzer drüber = magisch."
         }
       ],
       "meta": {
@@ -4608,6 +4952,10 @@ var ELITE_MOTTO_DATA = {
           "detail": "3-Jährige kleckern. Glitzer-Kleber, Einhorn-Saft, Kuchen — irgendwas landet auf dem Pulli. Schreib in die Einladung: „Bitte Wechsel-Shirt mitbringen.\" Und leg für dein eigenes Kind eins bereit. Spart dir die WhatsApp-Nachricht „Sorry, das Shirt hat jetzt Glitzer drauf\" an die andere Mama."
         },
         {
+          "topic": "🐉 Geschlechts-Inklusion: Auch für Jungs",
+          "detail": "Falls Jungs in der Gruppe sind und „Einhorn ist Mädchenkram\" sagen: lass das Geburtstagskind antworten, nicht du. Reframen funktioniert sofort — „Regenbogen-Zauber-Party\" statt „Einhorn-Party\" auf die Einladung. Alternativ Drachen-/Magier-Anker einbauen: Horn aus Pappteller heißt jetzt „Drachen-Horn\", Sternenstaub-Wanne ist „Drachen-Schatzkammer\". Beim Tanz galoppieren ALLE Kinder als magische Wesen — Einhorn, Drachen oder Pegasus, je nach Geschmack. Inhalte bleiben identisch."
+        },
+        {
           "topic": "📱 Partyseite statt WhatsApp-Chaos",
           "detail": "Erstelle eine [Partyseite auf party.machsleicht.de](https://party.machsleicht.de) mit Datum, Uhrzeit, Adresse und Allergien-Abfrage. Einen Link verschicken statt 10 Nachrichten beantworten. Kostet nichts.\n\n⏰ Nicht nach 15 Uhr anfangen\n3–5-Jährige sind nachmittags fitter als morgens (nach dem Mittagsschlaf). Aber nach 16 Uhr wird's schwierig — müde Kleinkinder sind schlecht gelaunte Kleinkinder. Ideal: 15:00 Start, 16:30 oder 17:00 Ende. Freitagnachmittag funktioniert meistens am besten."
         }
@@ -4634,7 +4982,11 @@ var ELITE_MOTTO_DATA = {
       },
       {
         "q": "Funktioniert das Einhorn-Motto auch für Jungs?",
-        "a": "Ja — besonders in diesem Alter. 3–5-Jährige haben noch keine starren Geschlechter-Vorstellungen. Regenbogen-Milch, Sternenstaub suchen und Bälle werfen begeistern jedes Kind. Wenn du willst, nenn es „Regenbogen-Zauber-Party\" statt „Einhorn-Party\" — gleicher Inhalt, neutralerer Name."
+        "a": "Ja — besonders in diesem Alter. 3–5-Jährige haben noch keine starren Geschlechter-Vorstellungen. Regenbogen-Milch, Sternenstaub suchen und Bälle werfen begeistern jedes Kind. Wenn du willst, nenn es „Regenbogen-Zauber-Party\" statt „Einhorn-Party\" — gleicher Inhalt, neutralerer Name. Drachen-Variante: Einhorn-Horn → Drachen-Horn aus Pappteller, Sternenstaub-Wanne → Drachen-Schatzkammer. Sind die gleichen Spiele, andere Story-Verpackung."
+      },
+      {
+        "q": "Wie gehe ich mit Glitzer-Allergien und empfindlicher Kinderhaut um?",
+        "a": "1 Tag vorher Allergie-Vortest: Glitzer-Kleber, Tattoo und ggf. Schminkfarbe an kleiner Hautstelle (Innenseite Unterarm) eines Kindes 5 Min. auftragen. Bei Rötung → nur Sticker und Klettband-Verzierungen statt Tattoo/Glitzer/Schminke. Essbaren Glitzer nimmst du immer mit E-Nummer-Check (Packung lesen) — bei Zucker-Unverträglichkeit gibt es Zucker-freie Alternativen (Bio-Backabteilung). Wer kein Tattoo mag: Tattoo auf den Wächter-Zettel oder auf das T-Shirt-Schild kleben — niemand wird ausgeschlossen."
       }
     ],
     "preparationWeeks": {
@@ -4774,7 +5126,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🎵",
             "title": "Musik-Playlist + Bluetooth-Box testen",
-            "detail": "Spotify ‚Einhorn Kindergeburtstag' oder ‚Kinder Disney Songs' Playlist in der Notiz-App. Bluetooth-Box laden, Sound testen. Bei 3-5 reicht ein kontinuierlicher Soundtrack."
+            "detail": "Spotify ‚Einhorn Kindergeburtstag' oder ‚Kinder Party Songs' Playlist in der Notiz-App. Bluetooth-Box laden, Sound testen. Bei 3-5 reicht ein kontinuierlicher Soundtrack."
           },
           {
             "icon": "💧",
@@ -4874,7 +5226,7 @@ var ELITE_MOTTO_DATA = {
         "steps": [
           "Weißen Gugelhupf beim Bäcker oder Supermarkt holen (4-6€).",
           "200g Puderzucker + 3 EL Wasser anrühren, weißen Guss drüber.",
-          "Regenbogen-Streusel oder Smarties als ‚Wolken-Lava' um den Fuß.",
+          "Regenbogen-Streusel oder bunte Schoko-Linsen als ‚Wolken-Lava' um den Fuß.",
           "Eiswaffel mit Goldglasur als Einhorn-Horn obendrauf — sieht aus wie gewollt."
         ],
         "fallback": "Bäcker zu? Muffins aus dem Vorrat, je ein Mini-Marshmallow + Zahnstocher mit rosa Papier = Mini-Einhorn-Hörner.",
@@ -5107,13 +5459,13 @@ var ELITE_MOTTO_DATA = {
             "loudness": "ruhig",
             "effort": "leicht",
             "material": "1 große Plastikwanne, 3 kg weißer Reis oder Zucker, 2 EL essbarer Glitzer oder Zucker-Perlen (Backzutaten-Regal), 10 kleine Einhorn-Figuren (~4 € für 12 Stück auf Amazon), 1 Löffel pro Kind",
-            "prepText": "Reis mit Glitzer mischen — sieht sofort nach Sternenstaub aus. Einhorn-Figuren in der Wanne unter dem „Sternenstaub\" vergraben. Jedes Kind bekommt einen Löffel und „gräbt\" vorsichtig. Wer ein Einhorn findet, darf es behalten.",
+            "prepText": "Reis mit Glitzer mischen — sieht sofort nach Sternenstaub aus. Einhorn-Figuren in der Wanne unter dem „Sternenstaub\" vergraben. Jedes Kind bekommt einen Löffel und „gräbt\" vorsichtig. Wer ein Einhorn findet, darf es behalten.\n\nTipp: Immer mehr Einhörner vergraben als Kinder da sind (bei 6 Kindern → 10 Einhörner). So findet jedes Kind mindestens eins — kein Frust.",
             "steps": [],
-            "safetyRule": "Glitzer-Reis nicht zum Naschen — Hände waschen vor Snacks. Bei jüngeren Kindern (oder bei Allergien) nur Reis ohne Glitzer. Reis-Korn-Aspirationsrisiko bei sehr jungen Geschwistern.",
+            "safetyRule": "Glitzer-Reis nicht zum Naschen — Hände waschen vor Snacks. Bei jüngeren Kindern (oder bei Allergien) nur Reis ohne Glitzer. Reis-Korn-Aspirationsrisiko bei sehr jungen Geschwistern. Glitzer-Inhaltsstoffe checken (essbar vs. kosmetisch).",
             "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Zucker (weniger Sauerei, wiederverwendbar).",
             "ageAdjust8": "Tiefer vergraben. Variante: mit verbundenen Augen nur ertasten — welches Einhorn ist es (stehend, liegend, fliegend)?",
             "indoorTip": "Wanne auf eine alte Tischdecke oder in die Badewanne stellen.",
-            "outdoorTip": null,
+            "outdoorTip": "Auf Terrasse oder Wiese — verstreuter Reis ist Vogelfutter, kein Aufräum-Stress.",
             "whyItWorksTitle": null,
             "whyItWorks": null
           },
@@ -5126,18 +5478,18 @@ var ELITE_MOTTO_DATA = {
             "loudness": "laut",
             "effort": "leicht",
             "material": "6 farbige Tücher/Handtücher (rot, orange, gelb, grün, blau, lila), 4 Pylonen/Schuhe, 1 Einhorn-Kuscheltier als Ziel",
-            "prepText": "Tücher in Regenbogen-Reihenfolge auf dem Boden auslegen (jedes etwa 1 m Abstand). Jedes Kind „galoppiert\" über den Regenbogen zum Einhorn am Ende, begrüßt es mit einer Verbeugung und galoppiert zurück.",
+            "prepText": "Tücher in Regenbogen-Reihenfolge auf dem Boden auslegen (jedes etwa 1 m Abstand). Jedes Kind „galoppiert\" über den Regenbogen zum Einhorn am Ende, begrüßt es mit einer Verbeugung und galoppiert zurück.\n\nVarianten: Rückwärts, auf einem Bein, als Staffel in 2 Teams, zu zweit Hand in Hand.\n\nTipp: Verlierer kriegen „Trost-Stern\" (Gummibärchen). Kein Kind geht leer aus.",
             "steps": [],
-            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen.",
+            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Bei Slalom/Staffel: Bodenfreiheit checken (keine Stolperfallen, keine offene Steckdose im Lauf-Korridor).",
             "ageAdjust6": "Kurze Strecke, langsames Galoppieren.",
             "ageAdjust8": "Slalom zwischen den Tüchern, Zeit stoppen, Bestzeit notieren.",
-            "indoorTip": "Flur reicht — Tücher enger legen.",
-            "outdoorTip": null,
+            "indoorTip": "Flur reicht — Tücher enger legen. Wohnzimmer-Möbel zur Seite, Teppich-Ecken fixieren.",
+            "outdoorTip": "Größer aufbauen, Bäume als „Wolken-Wald\" einbauen — Sichtkontakt zu allen Kindern halten.",
             "whyItWorksTitle": null,
             "whyItWorks": null
           }
         ],
-        "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Tränen\"8 Capri-Sun\n🍓Obst (rosa/rot)250 g Erdbeeren\n🍿Popcorn200 g\n\n💡 „Einhorn-Tränen\"?\nApfelschorle oder klare Limo in Gläser, 2 Tropfen Johannisbeersaft oder Grenadine rein → wird sofort rosa. „Einhorn-Tränen\" aufs Etikett schreiben. Sorgt garantiert für Staunen. Kostet nix extra, macht den Unterschied.",
+        "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Tränen\"8 Saftpäckchen\n🍓Obst (rosa/rot)250 g Erdbeeren\n🍿Popcorn200 g\n\n💡 „Einhorn-Tränen\"?\nApfelschorle oder klare Limo in Gläser, 2 Tropfen Johannisbeersaft oder Grenadine rein → wird sofort rosa. „Einhorn-Tränen\" aufs Etikett schreiben. Sorgt garantiert für Staunen. Kostet nix extra, macht den Unterschied.",
         "decoration": "🎈 Rosa / Lila Luftballons6 Stk. ~2 €Reichen für die Grundstimmung\n🖍️ Ausmalbilder auf dem TischKostenloskribbelbunt.de oder malvorlagen-seite.de\n🎉 Girlande „Happy Birthday\"~2 €Rosa/Lila, DM oder Action\n\n💡 Minimal-Deko-Regel:\n3 Dinge reichen: Ballons, Girlande, Ausmalbilder auf dem Tisch. Die Sternenstaub-Wanne und die Einhorn-Tattoos SIND die Deko — die Kinder interessieren sich für das Erlebnis, nicht für die Raumdeko.",
         "giveaways": "🦄 1 Einhorn-Figur aus der Schatzsuche (haben sie selbst gefunden — emotionaler Wert)\n🖍️ 2–3 Ausmalbilder zum Mitnehmen\n🍭 1 kleine Tüte Regenbogen-Gummibärchen oder Lolli\n\nIn rosa oder weiße Papiertüte (10 Stk. ~1–2 € bei DM/Action) mit „Einhorn-Geschenke für ___\" beschriften. Kosten: ~1,80 € pro Kind.",
         "shoppingList": [
@@ -5170,7 +5522,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🧃",
-            "label": "Capri-Sun + Grenadine",
+            "label": "Saftpäckchen + Grenadine",
             "url": null,
             "priceEur": 5,
             "hasAffiliate": false,
@@ -5298,15 +5650,15 @@ var ELITE_MOTTO_DATA = {
             "loudness": "ruhig",
             "effort": "leicht",
             "material": "1 flacher Teller (weiß), 1 Tasse Vollmilch (je fetter, desto besser), Lebensmittelfarben (4 Farben — rot, gelb, blau, grün; Supermarkt ~2 €), Spülmittel, Wattestäbchen (1 pro Kind)",
-            "prepText": "Milch in den Teller gießen, bis der Boden komplett bedeckt ist. Jedes Kind tropft eine Farbe in die Mitte. Dann: Wattestäbchen in Spülmittel tunken und mitten in die Milch stippen — die Farben „explodieren\" in Regenbogen-Spiralen. Sieht aus wie Magie, ist aber Physik.",
+            "prepText": "Milch in den Teller gießen, bis der Boden komplett bedeckt ist. Jedes Kind tropft eine Farbe in die Mitte. Dann: Wattestäbchen in Spülmittel tunken und mitten in die Milch stippen — die Farben „explodieren\" in Regenbogen-Spiralen. Sieht aus wie Magie, ist aber Physik.\n\nErklärung (für neugierige Kinder): Spülmittel zerstört die Oberflächenspannung der Milch, und das Fett „flieht\" vor der Seife — dabei nimmt es die Farben mit. Echte Chemie.\n\nTipp: Geht mit einem frischen Teller beliebig oft. 3–4 Runden sind normal. Danach ist der Effekt weg (Milch gesättigt).",
             "steps": [],
-            "safetyRule": "Lebensmittelfarbe + Spülmittel — nicht trinken, Hände waschen. Schalen-Standort sicher.",
+            "safetyRule": "Lebensmittelfarbe + Spülmittel — nicht trinken, Hände waschen vor Snacks. Schalen-Standort sicher (Tablett mit Rand drunter, kippsicher). Bei Allergiker: Lebensmittelfarbe-Inhaltsstoffe checken (E-Nummern, Tartrazin).",
             "ageAdjust6": "Du tropfst die Farben rein, sie halten nur die Wattestäbchen. Hände-wasch-Pause danach.",
             "ageAdjust8": "Kinder dürfen selbst alles dosieren. Erkläre die Physik dahinter — in dem Alter lieben sie solche „echten\" Erklärungen.",
-            "indoorTip": null,
+            "indoorTip": "Auf Wachstuch oder altem Backblech als Tablett — Spülmittel-Spritzer landen sonst auf der Tischplatte.",
             "outdoorTip": null,
-            "whyItWorksTitle": null,
-            "whyItWorks": null
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Spülmittel zerstört die Oberflächenspannung der Milch. Das Fett „flieht\" vor der Seife und nimmt die Farben mit — Regenbogen-Spirale."
           },
           {
             "name": "✨ Sternenstaub-Schatzsuche",
@@ -5317,9 +5669,9 @@ var ELITE_MOTTO_DATA = {
             "loudness": "ruhig",
             "effort": "leicht",
             "material": "1 große Plastikwanne, 3 kg Reis mit essbarem Glitzer gemischt, 10 Einhorn-Figuren, 1 Löffel pro Kind",
-            "prepText": "Wie in der Minimal-Variante — aber hier als „Erste Prüfung der Regenbogen-Wächter-Ausbildung\" angekündigt. Jedes Kind, das ein Einhorn findet, darf seinen Einhorn-Namen in den „Wächter-Pass\" eintragen.",
+            "prepText": "Wie in der Minimal-Variante — aber hier als „Erste Prüfung der Regenbogen-Wächter-Ausbildung\" angekündigt. Jedes Kind, das ein Einhorn findet, darf seinen Einhorn-Namen in den „Wächter-Pass\" eintragen.\n\nTipp: Immer 10 Einhörner bei 6 Kindern (mehr Figuren als Suchende) — keiner geht leer aus.",
             "steps": [],
-            "safetyRule": "Glitzer-Reis nicht zum Naschen — Hände waschen vor Snacks. Bei jüngeren Kindern (oder bei Allergien) nur Reis ohne Glitzer. Reis-Korn-Aspirationsrisiko bei sehr jungen Geschwistern.",
+            "safetyRule": "Glitzer-Reis nicht zum Naschen — Hände waschen vor Snacks. Bei jüngeren Kindern (oder bei Allergien) nur Reis ohne Glitzer. Reis-Korn-Aspirationsrisiko bei sehr jungen Geschwistern. Bei Allergikern: Glitzer auf E-Nummern checken (oft Lebensmittelfarben + Glanz-Zusatz).",
             "ageAdjust6": null,
             "ageAdjust8": "Farbige Einhörner (je 2 Stück pro Farbe). Kind darf nur seine „zugeteilte Farbe\" suchen und muss die anderen wieder vergraben.",
             "indoorTip": null,
@@ -5355,18 +5707,18 @@ var ELITE_MOTTO_DATA = {
             "loudness": "ruhig",
             "effort": "mittel",
             "material": "500 g transparente Glycerin-Seife (Rohling, ~6–8 € Bastelladen oder Amazon), essbarer Glitzer oder kosmetischer Glitzer, Silikon-Förmchen (Einhorn-/Stern-/Herz-Form, ~5 €), 1 Mikrowellen-Becher, Lebensmittelfarben (rosa/lila/türkis)",
-            "prepText": "Glycerin-Seife in Würfel schneiden (machst du vorher). Für jedes Kind einen Würfel in den Becher, 30 Sek. in die Mikrowelle → flüssig. Kind wählt Farbe (2 Tropfen rein), streut Glitzer dazu, gießt in sein Silikon-Förmchen. 15 Min. auskühlen lassen → vorsichtig rauspressen. Fertige Einhorn-Seife geht als Mitgebsel mit.",
+            "prepText": "Glycerin-Seife in Würfel schneiden (machst du vorher). Für jedes Kind einen Würfel in den Becher, 30 Sek. in die Mikrowelle → flüssig. Kind wählt Farbe (2 Tropfen rein), streut Glitzer dazu, gießt in sein Silikon-Förmchen. 15 Min. auskühlen lassen → vorsichtig rauspressen. Fertige Einhorn-Seife geht als Mitgebsel mit.\n\nTipp: Tüte + Bändchen bereithalten, damit die fertige Seife „verpackt\" wie ein Geschenk nach Hause geht.",
             "steps": [],
-            "safetyRule": "Glitzer-Reis nicht zum Naschen — Hände waschen vor Snacks. Bei jüngeren Kindern (oder bei Allergien) nur Reis ohne Glitzer. Reis-Korn-Aspirationsrisiko bei sehr jungen Geschwistern.",
+            "safetyRule": "ACHTUNG: Seife kommt flüssig-warm aus der Mikrowelle (~60°C) — nur Erwachsene handhaben die heißen Becher. Kinder dürfen die Zutaten aussuchen und reingießen. Topflappen griffbereit. Glitzer auf Allergie-Inhaltsstoffe checken (kosmetischer Glitzer vs. essbarer Glitzer — beide gehen, kosmetischer ist bunter aber nicht zum Naschen).",
             "ageAdjust6": "Du machst alles Heiße. Kinder wählen nur Farbe und Glitzer-Menge.",
             "ageAdjust8": "Dürfen unter Aufsicht den Becher aus der Mikrowelle nehmen (Topflappen!) und selber gießen.",
-            "indoorTip": null,
+            "indoorTip": "Mikrowellen-Station 1 Meter vom Bastel-Tisch entfernt — Kinder warten am Tisch, nur du gehst zur Mikrowelle und zurück.",
             "outdoorTip": null,
             "whyItWorksTitle": null,
             "whyItWorks": null
           }
         ],
-        "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Tränen\"12 Capri-Sun\n🥪Stern-Sandwiches12 Stück\n🍓Rosa Obst-TellerErdbeeren, Melone\n🍿Popcorn250 g\n🍭Regenbogen-Gummibärchen1 Tüte (200 g)",
+        "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Tränen\"12 Saftpäckchen\n🥪Stern-Sandwiches12 Stück\n🍓Rosa Obst-TellerErdbeeren, Melone\n🍿Popcorn250 g\n🍭Regenbogen-Gummibärchen1 Tüte (200 g)",
         "decoration": "🦄 Einhorn-Teller & BecherSet ~8 €\n🎈 Pastell-Luftballons (rosa/lila/türkis)10 Stk. ~3 €\n🌈 Regenbogen-Girlande1 Stk. ~4 €\n☁️ Wolken aus Watte an der DeckeKostenlosWatte-Bälle mit Faden aufhängen, 20 Min.\n\n💡 Regenbogen-Tisch-Trick:\nTischdecke weiß, darüber 6 schmale Stoffstreifen (oder Krepppapier-Streifen) in Regenbogenfarben längs auflegen. Sieht sofort magisch aus, kostet fast nix, dauert 5 Minuten. Noch besser: die Snack-Teller in derselben Farbreihenfolge aufstellen (rosa Erdbeeren → orange Möhrchen → gelbes Popcorn → grüne Gurken → blaue Tränen → lila Traubenstücke).",
         "giveaways": "🧼 1 selbst gegossene Einhorn-Seife (mit ausgesuchter Farbe)\n🦄 1 Einhorn-Figur aus der Schatzsuche\n🎭 Eigene Einhorn-Maske (selbst gebastelt)\n🍭 1 Tüte Regenbogen-Gummibärchen\n\nAlles in rosa oder weiße Papiertüte (10 Stk. ~1–2 € bei DM/Action), beschriftet mit „Luna-Mondsilber-Geschenke für ___\". Kosten: ~3 € pro Kind.",
         "shoppingList": [
@@ -5413,7 +5765,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
-            "categoryReasoning": "Atmosphäre-Heber für Capri-Sun + Sandwich-Service, aber Pappgeschirr tut's auch."
+            "categoryReasoning": "Atmosphäre-Heber für Saftpäckchen + Sandwich-Service, aber Pappgeschirr tut's auch."
           },
           {
             "emoji": "💫",
@@ -5444,7 +5796,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🧃",
-            "label": "Capri-Sun + Sandwiches + Obst",
+            "label": "Saftpäckchen + Sandwiches + Obst",
             "url": null,
             "priceEur": 12,
             "hasAffiliate": false,
@@ -5531,13 +5883,34 @@ var ELITE_MOTTO_DATA = {
             "loudness": "laut",
             "effort": "hoch",
             "material": "5 Umschläge mit Rätseln, 1 Schatzkarte (mit [machsleicht erstellen](/kindergeburtstag?modus=schatzsuche)), 1 Sternenstaub-Kiste (Schuhkarton mit Glitzer beklebt, Inhalt: Einhorn-Figuren, Gummibärchen, Haarsträhnchen in Regenbogenfarben)",
-            "prepText": "Erstelle mit dem machsleicht-Planer eine Einhorn-Schatzsuche mit 5 Stationen. Jede Station hat ein altersgerechtes Rätsel:",
-            "steps": [],
-            "safetyRule": "Glitzer-Reis nicht zum Naschen — Hände waschen vor Snacks. Bei jüngeren Kindern (oder bei Allergien) nur Reis ohne Glitzer. Reis-Korn-Aspirationsrisiko bei sehr jungen Geschwistern.",
-            "ageAdjust6": null,
-            "ageAdjust8": null,
-            "indoorTip": null,
-            "outdoorTip": null,
+            "prepText": "Erstelle mit dem machsleicht-Planer eine Einhorn-Schatzsuche mit 5 Stationen. Jede Station hat ein altersgerechtes Rätsel. Lösungswort aus allen Stationen ergibt am Ende den Versteck-Ort der Sternenstaub-Kiste.",
+            "steps": [
+              {
+                "name": "Station 1: Regenbogen-Mathematik",
+                "content": "„Wie viele Farben hat ein Regenbogen?\" (Lösung: 7) → nächster Hinweis liegt unter dem 7. Blumentopf / 7. Gegenstand."
+              },
+              {
+                "name": "Station 2: Einhorn-Spur lesen",
+                "content": "3 gezeichnete Hufabdrücke liegen aus — nur einer passt zum echten Einhorn. Einer hat 4 Zehen (Katze), einer ist gespalten (Ziege), einer ist rund und ungeteilt wie beim Pferd (richtige Antwort — Einhörner sind Pferde-verwandt). Richtige Spur zeigt den Weg."
+              },
+              {
+                "name": "Station 3: Einhorn-Puzzle",
+                "content": "4 Teile zusammensetzen → Bild zeigt den nächsten Ort (Schrank, Küche, Garten)."
+              },
+              {
+                "name": "Station 4: Einhorn-Tränen-Trick",
+                "content": "„Was bekommt ein Einhorn, wenn es weint?\" (Lösung: Regenbogen-Tränen — deshalb heißt die Limo so!) → Belohnung: Armband mit Regenbogenperlen pro Kind."
+              },
+              {
+                "name": "Station 5: Lösungswort & Schatz",
+                "content": "Lösungswort aus den vorherigen Stationen ergibt den Versteck-Ort (z.B. „WOLKE\" → im Wäschekorb, „STERN\" → unter dem Kissen). Sternenstaub-Kisten-Inhalt: Einhorn-Figuren, Schoko-Sterne, Regenbogen-Perlen-Armbänder, Einhorn-Tattoos, Glitzer-Haarsträhnchen — alles geht in die Mitgebsel-Tüte."
+              }
+            ],
+            "safetyRule": "Stations-Wege vorher abgehen — keine Stolperfallen, kein offenes Wasser, keine Steckdosen-Nähe. Bei Outdoor: Sichtkontakt zu Kindern auf allen Stationen, bei großem Garten 2 Erwachsene als Stations-Wächter. Glitzer/Konfetti auf Schatzkiste nicht zum Naschen (Allergie-Risiko).",
+            "ageAdjust6": "Bilder statt Texte — Symbole zeigen die Rätsel-Aufgabe (Regenbogen-Bild für Frage 1). Du liest mit, Kinder lösen mündlich.",
+            "ageAdjust8": "Rätsel komplexer machen — bei Station 1 z.B. „Wie viele Farben hat ein Regenbogen + wie viele Beine hat ein Einhorn?\" (7+4=11). Schwierigkeitsgrad nach Gruppen-Niveau anpassen.",
+            "indoorTip": "Wohnzimmer + Flur + Küche reichen für 5 Stationen — Versteck-Orte vorher markieren mit Klebezettel, damit du selbst nicht den Überblick verlierst.",
+            "outdoorTip": "Garten oder Park — Umschläge wetterfest in Klarsicht-Hüllen, Hinweise mit Wäscheklammer an Ast oder Zaun befestigen.",
             "whyItWorksTitle": null,
             "whyItWorks": null
           },
@@ -5549,19 +5922,40 @@ var ELITE_MOTTO_DATA = {
             "minAge": 7,
             "loudness": "ruhig",
             "effort": "mittel",
-            "material": "10 Fragen (siehe Beispiele unten), Buzzer/Klingel/Topfdeckel, Punktetafel (Whiteboard oder Papier)",
-            "prepText": "2 Teams. Frage vorlesen, wer zuerst buzzert darf antworten. Richtig = 1 Punkt. Falsch = anderes Team darf.",
-            "steps": [],
-            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen.",
-            "ageAdjust6": "Multiple Choice (3 Antworten).",
-            "ageAdjust8": "Offene Fragen.",
-            "indoorTip": null,
+            "material": "10 Fragen (Beispiele unten), Buzzer/Klingel/Topfdeckel, Punktetafel (Whiteboard oder Papier)",
+            "prepText": "2 Teams. Frage vorlesen, wer zuerst buzzert darf antworten. Richtig = 1 Punkt. Falsch = anderes Team darf.\n\nTipp: Verlierer-Team bekommt „Trost-Regenbogen\" (= extra Gummibärchen). Niemand geht leer aus.",
+            "steps": [
+              {
+                "name": "Frage 1: Pegasus",
+                "content": "„Wie heißt das geflügelte Pferd in der Mythologie?\" → Pegasus."
+              },
+              {
+                "name": "Frage 2: National-Tier",
+                "content": "„In welchem Land gilt das Einhorn als National-Tier?\" → Schottland."
+              },
+              {
+                "name": "Frage 3: Regenbogen-Farben",
+                "content": "„Wie viele Farben hat ein klassischer Regenbogen?\" → 7."
+              },
+              {
+                "name": "Frage 4: Einhorn-Stirn",
+                "content": "„Was hat ein Einhorn auf der Stirn?\" → Ein Horn."
+              },
+              {
+                "name": "Frage 5: Tapisserien",
+                "content": "„In welcher Geschichte jagt man ein Einhorn mit einer Jungfrau als Köder?\" → Mittelalterliche Legende / Einhorn-Tapisserien."
+              }
+            ],
+            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Buzzer-Geräte vorher testen, scharfe Kanten abkleben.",
+            "ageAdjust6": "Multiple Choice (3 Antworten zur Auswahl) — bei 6-Jährigen reine Wissens-Fragen oft zu schwer.",
+            "ageAdjust8": "Offene Fragen, schnelles Tempo, kleine Bonus-Frage zwischendurch („Wie heißt das Einhorn aus deinem Lieblingsbuch?\").",
+            "indoorTip": "Im Sitzkreis auf dem Boden oder am Esstisch — Buzzer-Mitte gleich erreichbar für beide Teams.",
             "outdoorTip": null,
             "whyItWorksTitle": null,
             "whyItWorks": null
           }
         ],
-        "food": "🎂Regenbogen-Kuchen1 Gugelhupf + Wunderkerze\n💧„Einhorn-Tränen\"14 Capri-Sun\n☁️Wolken-Sandwiches12 Stück (Toast mit Wolken-Form)\n🍓Rosa Obst-TellerErdbeeren, Melone, Trauben\n🍿Popcorn300 g (rosa gefärbt)\n⭐Schoko-Sterne1 Netz (Schatz)\n🍭Regenbogen-Gummibärchen1 Tüte (200 g)\n\n💡 Wolken-Sandwiches:\nMit einem Wolken-Ausstecher (oder einfach großer runder Ausstecher) Toast-Scheiben ausstechen. Frischkäse drauf, oben zweite Wolke drüber. Sieht sofort zauberhaft aus, schmeckt den Kindern, und 12 Stück sind in 15 Minuten gemacht.",
+        "food": "🎂Regenbogen-Kuchen1 Gugelhupf + Wunderkerze\n💧„Einhorn-Tränen\"14 Saftpäckchen\n☁️Wolken-Sandwiches12 Stück (Toast mit Wolken-Form)\n🍓Rosa Obst-TellerErdbeeren, Melone, Trauben\n🍿Popcorn300 g (rosa gefärbt)\n⭐Schoko-Sterne1 Netz (Schatz)\n🍭Regenbogen-Gummibärchen1 Tüte (200 g)\n\n💡 Wolken-Sandwiches:\nMit einem Wolken-Ausstecher (oder einfach großer runder Ausstecher) Toast-Scheiben ausstechen. Frischkäse drauf, oben zweite Wolke drüber. Sieht sofort zauberhaft aus, schmeckt den Kindern, und 12 Stück sind in 15 Minuten gemacht.",
         "decoration": "🦄 Einhorn-Teller & BecherSet ~8 €\n🎈 Pastell-Ballon-Bogen~15 € (30 Stk.)\n🌈 Regenbogen-Girlande~4 €\n☁️ Watte-Wolken an der DeckeKostenlos, 20 Min.\n✨ Glitzer-Tischläufer~3 € Krepppapier\n🪧 „Regenbogen-Akademie\"-SchildKostenlosPappe + Edding + Glitzer, am Eingang\n🔊 Einhorn-MusikKostenlosYouTube: „Unicorn Music for Kids\" leise im Hintergrund\n🦄 Einhörner mit Blumenkränzchen~4 € FigurenSpielzeug-Einhörner mit Mini-Blumenkränzen auf den Tisch\n\n🦄 Wow-Bonus: Aufblasbares Einhorn-Kostüm für Mama oder Papa\nDer absolute Überraschungs-Hit: ein [aufblasbares Einhorn-Kostüm*](https://www.amazon.de/s?k=aufblasbares+einhorn+kost%C3%BCm+erwachsene&tag=machsleicht-21) (~35–50 €). Du öffnest die Tür als riesiges Einhorn — die Kinder rasten aus. Funktioniert als „Luna, die Direktorin der Regenbogen-Akademie\", als Überraschungsgast beim Kuchen oder als „Wächter-Prüferin\" für die Urkundenverleihung. Wird DAS Foto des Tages. Die Kinder erzählen noch Wochen davon.\n\n🌙 Optional: Die Mondlicht-Botschaft (UV-Schwarzlicht-Moment)\nDas Element, das eine Einhorn-Party wirklich magisch macht — wenn du das Drumherum bauen kannst. Mit einer [UV-Taschenlampe*](https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht-21) (~12 €) und einem [UV-Geheimschrift-Stift*](https://www.amazon.de/s?k=uv+geheimschrift+stift+unsichtbar&tag=machsleicht-21) (~7 €) schreibst du vorher eine unsichtbare Botschaft auf weißes Papier — z.B. das Lösungswort der Rätselrallye oder den Versteck-Ort der Sternenstaub-Kiste.\n\nWenn die Kinder an diese Station kommen: Badezimmer oder Flur verdunkeln (Handtuch über das Fenster reicht), UV-Lampe an, Papier drunter — die Buchstaben leuchten plötzlich auf. Die Kinder sind komplett still. Das ist der Moment, an den sie sich in 5 Jahren noch erinnern.\n\nWann einbauen: Als „Prüfung 3b\" zwischen Rätselrallye und Schatzsuche — 5 Min. reichen. Was du brauchst: UV-Lampe, UV-Stift, weißes Papier, verdunkelbarer Raum, etwas Nerven für die Vorbereitung. Warum optional: Nicht jedes Zuhause lässt sich leicht verdunkeln, und die Botschaft will sorgfältig vorbereitet sein. Wenn der Rest der Wow-Variante schon ausreicht, lass es weg — es ist die Kirsche, nicht der Kuchen.",
         "giveaways": "🪪 Wächter-Pass (mit Foto und Urkunde)\n🧼 Selbst gegossene Einhorn-Seife\n🦄 Einhorn-Figur aus der Schatzsuche\n💍 Regenbogen-Perlen-Armband (aus der Rätselrallye)\n⭐ Schoko-Sterne\n\nIn rosa Papiertüte (10 Stk. ~1–2 € bei DM/Action) mit „Regenbogen-Akademie · Luna ___\". Kosten: ~4,50 € pro Kind.",
         "shoppingList": [
@@ -5648,7 +6042,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🧃",
-            "label": "Capri-Sun + Sandwiches + Obst + Würstchen",
+            "label": "Saftpäckchen + Sandwiches + Obst + Würstchen",
             "url": null,
             "priceEur": 15,
             "hasAffiliate": false,
@@ -5671,7 +6065,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
-            "categoryReasoning": "Kuchen-Topping-Extra, aber Streusel + Smarties tun's auch."
+            "categoryReasoning": "Kuchen-Topping-Extra, aber Streusel + bunte Schoko-Linsen tun's auch."
           },
           {
             "emoji": "🦄",
@@ -5748,7 +6142,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "n": 6,
-          "content": "Regenbogen-Streusel oder Smarties um den Fuß herum als „Wolken-Lava\". Essbarer Glitzer drüber = magisch."
+          "content": "Regenbogen-Streusel oder bunte Schoko-Linsen um den Fuß herum als „Wolken-Lava\". Essbarer Glitzer drüber = magisch."
         },
         {
           "n": 7,
@@ -5775,7 +6169,7 @@ var ELITE_MOTTO_DATA = {
       "structured": [
         {
           "topic": "🚨 Allergien vorher abfragen",
-          "detail": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten). In die Einladung schreiben: „Hat dein Kind Allergien oder Unverträglichkeiten?\" Capri-Sun und Popcorn sind fast immer safe. Essbarer Glitzer ist oft aus Zucker — also Zucker-Unverträglichkeit beachten."
+          "detail": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten). In die Einladung schreiben: „Hat dein Kind Allergien oder Unverträglichkeiten?\" Saftpäckchen und Popcorn sind fast immer safe. Essbarer Glitzer ist oft aus Zucker — also Zucker-Unverträglichkeit beachten."
         },
         {
           "topic": "📋 Plan B bei Regen",
@@ -5788,6 +6182,14 @@ var ELITE_MOTTO_DATA = {
         {
           "topic": "👥 Ab 6 Kindern: 1 Helfer dazu",
           "detail": "Bis 5 Kinder schaffst du eine Standard-Party allein. Bei 6+ brauchst du Unterstützung — besonders für Seife-gießen (Mikrowelle) und das Regenbogen-Milch-Experiment (parallel an 2 Tischen). Oma, andere Elternteile, oder eine Teenager-Nachbarin (10 € für 3 Stunden) retten dir den Tag.\n\n⏰ Abholzeit vorher klären\nIn diesem Alter können Eltern kurz abgesetzt werden — müssen aber telefonisch erreichbar sein. Schreib in die Einladung: „Abholung 17:00 Uhr pünktlich bitte.\" Sonst stehen um 17:30 noch 3 Kinder da und du hast schon alles abgebaut."
+        },
+        {
+          "topic": "🐉 Gender-Inklusion: Drachen-Variante für Jungs",
+          "detail": "Bei gemischten Gruppen mit Jungs-Skepsis: Wächter-Namen sind absichtlich Fantasy-RPG-Style (Phoenix Flammenhuf, Atlas Bergschatten, Orion Jägerstern) — niemand findet das kindisch. Falls trotzdem Murren: reframe als „Regenbogen-Wächter-Akademie\" oder „Magier-Ausbildung\". Drachen-Variante: Einhorn-Maske → Drachen-Maske ausmalen (gleiches Material, andere Farbpalette: grün, schwarz, rot). Sternenstaub-Suche bleibt — heißt halt „Drachen-Schatz\". Inhalte 100% gleich, nur Story-Verpackung swappen. Spätestens bei UV-Schwarzlicht (Wow) und Quiz ist jeder still."
+        },
+        {
+          "topic": "🍰 Trost-Preis-Regel: Niemand verliert",
+          "detail": "In 6–8-Jahren ist Wettbewerb okay — aber „nur Sieger\" zählt nicht. Bei Parcours, Quiz, Rätselrallye: Verlierer-Team bekommt „Trost-Regenbogen\" (= extra Gummibärchen + Sticker). Funktional: ein zweites Belohnungs-Set vorbereiten, optisch identisch, nur Beschriftung anders („Sieger-Stern\" vs. „Mut-Stern\"). So bekommt JEDES Kind etwas am Ende. Hat sich bei Schultern-Hochziehen-Kindern als Game-Changer erwiesen."
         }
       ],
       "educationalValue": null
@@ -5808,7 +6210,15 @@ var ELITE_MOTTO_DATA = {
       },
       {
         "q": "Funktioniert das Einhorn-Motto in gemischten Gruppen?",
-        "a": "Ja, die Regenbogen-Wächter-Ausbildung ist darauf ausgelegt, für alle Kinder zu funktionieren — weil sie nicht um Prinzessinnen kreist, sondern um Prüfungen, Experimente und Magie. Das Regenbogen-Milch-Experiment begeistert jedes Kind, die Schatzsuche ist geschlechtsneutral, und die Urkunden-Zeremonie mit eigenem Einhorn-Namen funktioniert für Jungen genauso wie für Mädchen. Die Farbwelt lässt sich leicht anpassen (weniger Rosa, mehr Türkis, Indigo, Gold)."
+        "a": "Ja, die Regenbogen-Wächter-Ausbildung ist darauf ausgelegt, für alle Kinder zu funktionieren — weil sie nicht um Prinzessinnen kreist, sondern um Prüfungen, Experimente und Magie. Das Regenbogen-Milch-Experiment begeistert jedes Kind, die Schatzsuche ist geschlechtsneutral, und die Urkunden-Zeremonie mit eigenem Einhorn-Namen funktioniert für Jungen genauso wie für Mädchen. Die Farbwelt lässt sich leicht anpassen (weniger Rosa, mehr Türkis, Indigo, Gold). Für Jungs-skeptische Gruppen: Wächter-Namen wie „Phoenix Flammenhuf\", „Atlas Bergschatten\", „Orion Jägerstern\" und „Ares Sturmwelle\" sind bewusst Fantasy-RPG-Style — keiner findet das kindisch."
+      },
+      {
+        "q": "Wie gehe ich mit Allergien (Glitzer, Lebensmittelfarbe, Glycerin) um?",
+        "a": "Drei Allergie-Risiken in dieser Variante: (1) Essbarer Glitzer enthält oft E-Nummern (Lebensmittelfarben + Glanz-Zusatz) — Packung lesen, bei Zucker-Unverträglichkeit auf zucker-freien Bio-Glitzer wechseln. (2) Lebensmittelfarbe-Tropfen für Milch-Experiment + Seife — bei Tartrazin-Empfindlichkeit (E102) nur natürliche Beeren-Säfte verwenden. (3) Glycerin-Seifen-Rohling: Inhaltsstoffe auf Parfümfreie Versionen prüfen für Kinder mit empfindlicher Haut. Vorher 5 Min. Spot-Test an Innenseite Unterarm bei einem freiwilligen Kind. Wer kein Tattoo will: aufs Wächter-Pass kleben statt auf die Hand."
+      },
+      {
+        "q": "Was ist der Unterschied zwischen den 3 Varianten (Minimal/Standard/Wow)?",
+        "a": "Minimal (2h, 32€): Sternenstaub-Schatzsuche + Regenbogen-Parcours + Kuchen. Stressfrei, kein Helfer nötig. Standard (3h, 65€): zusätzlich Masken-Basteln, Milch-Experiment und Seife-Gießen — 4 Aktivitäten mit gutem Rhythmus-Wechsel. Wow (3,5h, 93€): zusätzlich Wolkenwald-Rätselrallye + optional UV-Schwarzlicht-Geheimschrift + Wächter-Zeremonie mit Urkunden. Komplette Wächter-Ausbildungs-Story, braucht 2. Erwachsenen. Tendenz: bei 6 Kindern 1. Mal: Standard. Bei Routine + Helfer: Wow."
       }
     ],
     "preparationWeeks": {
@@ -5863,7 +6273,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "📦",
             "title": "Bestellliste finalisieren",
-            "detail": "Was kaufst du wo? Einhorn-Tattoo-Set + Figuren + Masken + Tatlampe (Wow) bei Amazon, Glycerin-Seife + Lebensmittelfarbe bei Rossmann/dm, Capri-Sun + Backmischung im Supermarkt. Liste machen — sonst kaufst du in Woche -1 dreimal."
+            "detail": "Was kaufst du wo? Einhorn-Tattoo-Set + Figuren + Masken + Tatlampe (Wow) bei Amazon, Glycerin-Seife + Lebensmittelfarbe bei Rossmann/dm, Saftpäckchen + Backmischung im Supermarkt. Liste machen — sonst kaufst du in Woche -1 dreimal."
           }
         ]
       },
@@ -5938,7 +6348,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🌈",
             "title": "Kuchen-Wolken-Guss + Deko",
-            "detail": "Weiße Glasur drüber (200g Puderzucker + 3 EL Wasser), Regenbogen-Streusel oder Smarties um den Fuß als ‚Wolken-Lava'. Einhorn-Horn aus Fondant oder Eiswaffel mit Schoko (HANDOFF-Trick). Über Nacht fest werden lassen."
+            "detail": "Weiße Glasur drüber (200g Puderzucker + 3 EL Wasser), Regenbogen-Streusel oder bunte Schoko-Linsen um den Fuß als ‚Wolken-Lava'. Einhorn-Horn aus Fondant oder Eiswaffel mit Schoko (HANDOFF-Trick). Über Nacht fest werden lassen."
           },
           {
             "icon": "🧪",
@@ -5968,7 +6378,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "⏰",
             "title": "30 Min vor Ankunft: Stationen aufbauen",
-            "detail": "Tische vorbereiten (Masken-Tisch oder Milch-Experiment oder Seife-Tisch, je nach Variante), Capri-Sun kühlen, Sandwiches/Obst schneiden. Helfer ist da oder kommt jetzt. Kuchen aus dem Kühlschrank — Zimmertemperatur schmeckt besser."
+            "detail": "Tische vorbereiten (Masken-Tisch oder Milch-Experiment oder Seife-Tisch, je nach Variante), Saftpäckchen kühlen, Sandwiches/Obst schneiden. Helfer ist da oder kommt jetzt. Kuchen aus dem Kühlschrank — Zimmertemperatur schmeckt besser."
           },
           {
             "icon": "🎯",
@@ -6029,7 +6439,7 @@ var ELITE_MOTTO_DATA = {
           "Milch-Experiment: 2. Tisch eröffnen, parallel laufen lassen (Helfer übernimmt einen).",
           "Sofort Verstärkung anrufen: Oma/Nachbarin, 10€ für 2 Std Tisch-Aufsicht.",
           "Tattoos + Wächter-Pässe verteilen vor allem anderen — Geschwister NICHT leer ausgehen lassen.",
-          "Capri-Sun nachbestellen lassen (Tankstelle/Lieferdienst), Kuchen-Stücke kleiner schneiden."
+          "Saftpäckchen nachbestellen lassen (Tankstelle/Lieferdienst), Kuchen-Stücke kleiner schneiden."
         ],
         "fallback": "Kein Helfer erreichbar? Parcours streichen, dafür Milch-Experiment + Masken-Basteln parallel — du läufst zwischen 2 Tischen.",
         "tone": "praktisch"
@@ -6042,7 +6452,7 @@ var ELITE_MOTTO_DATA = {
           "Rolle anbieten: ‚Du bist heute Hofdame der Königin — du verteilst die Wächter-Pässe.'",
           "Alternative: ‚Glitzer-Inspekteurin' — checkt ob alle Tattoos sitzen, Foto-Reporterin mit deinem Handy.",
           "Tattoo nicht auf die Hand? Auf den Wächter-Pass kleben, ist sowieso vorgesehen.",
-          "Sitzplatz mit eigenem Capri-Sun + Einhorn-Figur — Beobachter-Posten, kein Außenseiter-Posten."
+          "Sitzplatz mit eigenem Saftpäckchen + Einhorn-Figur — Beobachter-Posten, kein Außenseiter-Posten."
         ],
         "fallback": "Will gar nichts? Buch + Decke in die ruhige Ecke, alle 10 Min kurz reinschauen. Manche steigen nach 20 Min selbst ein.",
         "tone": "ruhig"
@@ -6050,11 +6460,11 @@ var ELITE_MOTTO_DATA = {
       "kuchen_misslungen": {
         "icon": "🎂",
         "label": "Kuchen ist misslungen",
-        "headline": "Bäcker-Hack: weißer Gugelhupf + Wolken-Guss + Smarties = Notfall in 10 Min.",
+        "headline": "Bäcker-Hack: weißer Gugelhupf + Wolken-Guss + bunte Schoko-Linsen = Notfall in 10 Min.",
         "steps": [
           "Weißen Gugelhupf beim Bäcker oder im Supermarkt holen (4–6€).",
           "200g Puderzucker + 3 EL Wasser anrühren, weißen Guss drüber gießen — fertig die ‚Wolke'.",
-          "Regenbogen-Smarties oder essbare Streusel um den Fuß als ‚Wolken-Lava' ankleben.",
+          "Regenbogen-bunte Schoko-Linsen oder essbare Streusel um den Fuß als ‚Wolken-Lava' ankleben.",
           "Eiswaffel mit Schoko-Spitze als Einhorn-Horn obendrauf — sieht aus wie gewollt."
         ],
         "fallback": "Bäcker zu? Muffins aus dem Vorrat, pro Muffin ein kleines Marshmallow + Zahnstocher mit rosa Papier-Spitze — Mini-Einhorn-Hörner.",
@@ -6079,7 +6489,7 @@ var ELITE_MOTTO_DATA = {
         "headline": "Raus aus dem Trubel — 5 Min am Wächter-Pult, dann sehen wir weiter.",
         "steps": [
           "Kind aus der Gruppe nehmen — Küche oder Flur, weg vom Lärm.",
-          "Capri-Sun + Tattoo auf Handrücken kleben als Beruhigungs-Ritual.",
+          "Saftpäckchen + Tattoo auf Handrücken kleben als Beruhigungs-Ritual.",
           "Rolle anbieten: ‚Magst du die Wächter-Pässe verteilen? Du sagst, wer dran ist.'",
           "Bei Heimweh: Wahl anbieten — anrufen oder Foto von Mama am Handy zeigen. Anruf nur wenn Kind danach fragt.",
           "Nach 5 Min an die Hand nehmen, zur nächsten Station mitnehmen — nicht fragen."
@@ -6121,6 +6531,41 @@ var ELITE_MOTTO_DATA = {
     "title": "🦄 Einhorn-Kindergeburtstag — 9–12 Jahre",
     "metaDescription": "Einhorn-Kindergeburtstag für 9–12 Jahre: 3 fertige Party-Konzepte mit Zeitplan, 6 Aktivitäten mit Anleitung, Einkaufsliste und Kosten. Cool statt kitschig.",
     "introParagraph": "3 fertige Party-Konzepte: Minimal (2,5 Std.) · Standard (3,5 Std.) · Wow (4,5 Std.)\n\nMinutengenaue Zeitpläne, 6 altersgerechte Aktivitäten mit kompletter Anleitung, Einkaufslisten mit Preisen und Kosten pro Kind. Für 9–12 Jahre: cool statt kitschig, herausfordernd statt niedlich.\n\n[🦄 Einhorn-Geburtstag planen →](/kindergeburtstag?motto=einhorn&alter=10#planer)",
+    "ageInsight": {
+      "headline": "Was 9–12-Jährige ausmacht — und was das für die Einhorn-Party heißt",
+      "traits": [
+        {
+          "topic": "🎯 Aufmerksamkeit",
+          "detail": "30–45 Minuten an einer Sache? Kein Problem. Aber wenn es langweilig wird, sagen sie es dir — laut. Lieber 3 richtig gute Aktivitäten als 6 halbgare. Qualität schlägt Quantität."
+        },
+        {
+          "topic": "📋 Regeln",
+          "detail": "Komplexe Spielregeln sind kein Problem — im Gegenteil, sie wollen Herausforderung. Escape-Rätsel, Codes knacken, mehrstufige Aufgaben: Das ist genau ihr Ding. Zu einfache Spiele führen zu Augenrollen."
+        },
+        {
+          "topic": "🏆 Wettbewerb",
+          "detail": "Ja, aber fair. In diesem Alter gibt es Cliquen, Außenseiter, beste Freundinnen. Team-Aktivitäten müssen so gestaltet sein, dass niemand ausgeschlossen wird. Zufällige Team-Einteilung (Los ziehen) statt „wählt euch Teams\"."
+        },
+        {
+          "topic": "🤸 Motorik",
+          "detail": "Körperlich voll entwickelt — Parcours, Staffelspiele und sportliche Challenges funktionieren super. Aber: nicht nur Action. Die Mischung aus Denk-Aufgaben und Bewegung ist der Schlüssel."
+        },
+        {
+          "topic": "⏱️ Dauer",
+          "detail": "2,5–4 Stunden sind ideal. Kürzer fühlt sich „zu babymäßig\" an, länger wird anstrengend (für dich). Bei Wow-Varianten mit 4+ Stunden unbedingt eine echte Chill-Phase einbauen."
+        },
+        {
+          "topic": "🍕 Essen",
+          "detail": "Vergiss aufwendiges Fingerfood — Pizza, Wraps, Nachos kommen besser an als geschnittenes Obst. Beim Trinken: Wasser und Saft reichen, Sirup-Mischstationen kommen gut an. Kuchen muss cool aussehen, nicht nur schmecken."
+        },
+        {
+          "topic": "👋 Eltern",
+          "detail": "Können komplett abgesetzt werden — die Kinder wollen das sogar. Abholzeit vorher per WhatsApp kommunizieren. Handys sind da: akzeptiere es. Nutze es — Fotos machen, Timer stellen, Musik abspielen. Verbieten bringt nichts."
+        }
+      ],
+      "whyMottoFits": "Weil es nicht um rosa Glitzer geht, sondern um Fantasy. Einhörner sind magische Wesen — wie Drachen oder Phönixe. 9–12-Jährige lieben Fantasy-Welten und Mystery-Geschichten. Ein Einhorn-Geburtstag in diesem Alter funktioniert über Mystery-Elemente, Escape-Rätsel und kreative Challenges — nicht über Niedlichkeit. Das Motto wird zum Portal in eine Fantasy-Story, und genau das wollen Kinder in dem Alter.",
+      "whyMottoFitsHeadline": "🦄 Warum Einhorn für 9–12 besonders gut funktioniert"
+    },
     "signatureRitual": {
       "name": "Das Initiations-Ritual",
       "subtitle": "Für alle 3 Varianten",
@@ -6234,13 +6679,34 @@ var ELITE_MOTTO_DATA = {
             "minAge": 9,
             "loudness": "ruhig",
             "effort": "mittel",
-            "material": "1 Rotkohl (Supermarkt, ~2 €), 8 durchsichtige Becher pro Kind, Essig, Backpulver/Natron, Zitronensaft, Spülmittel, Waschsoda (Drogerie ~1 €), Pipetten oder Löffel, Lebensmittelfarben (optional), 1 Tablett pro Kind (gegen Sauerei)",
-            "prepText": "",
-            "steps": [],
-            "safetyRule": "Waschsoda (Natriumcarbonat) reizt Augen + Haut. Schutzbrille für Kinder bei Mix-Phase. Nicht in Augen reiben, Hände nach jedem Experiment waschen. Nichts trinken. Tablett mit Rand gegen Überlauf. Erwachsene*r misst die Mengen ab.",
+            "material": "1 Rotkohl (Supermarkt, ~2 €), 8 durchsichtige Becher pro Kind, Essig, Backpulver/Natron, Zitronensaft, Spülmittel, Waschsoda (Drogerie ~1 €), Pipetten oder Löffel, Lebensmittelfarben (optional), 1 Tablett pro Kind (gegen Sauerei), optional: alte Hemden als „Lab-Kittel\"",
+            "prepText": "Vorbereitung (20 Min. am Vortag): Rotkohl in Streifen schneiden, mit heißem Wasser übergießen, 30 Min. ziehen lassen → tiefvioletter Saft. In Flasche abfüllen, im Kühlschrank aufbewahren. Das ist dein „Zaubertrank-Basis\".\n\nDurchführung: Jedes Kind bekommt 8 Becher, je halb mit Rotkohlsaft gefüllt. Dann verschiedene Substanzen reinmischen — Farben wechseln je nach pH:\n• Essig → wird rosa/rot (sauer)\n• Zitronensaft → wird hellrosa (sauer)\n• Backpulver/Natron → wird blaugrün (basisch)\n• Waschsoda → wird gelb/grün (stark basisch)\n• Spülmittel → wird blau + schäumt\n\nDie Kinder experimentieren selbst: „Was passiert, wenn ich den sauren Trank in den basischen kippe?\" (Farbwechsel!). „Kann ich Lila wieder herstellen?\" (Ja — neutralisieren.)\n\nTipp: Kittel aus alten Hemden (Knöpfe vorne, Ärmel hochkrempeln) machen es offizieller und schützen die Klamotten.",
+            "steps": [
+              {
+                "name": "Vortag: Rotkohlsaft kochen",
+                "content": "Rotkohl in Streifen schneiden, mit heißem Wasser übergießen, 30 Min. ziehen lassen → tiefvioletter pH-Indikator-Saft. In Flasche abfüllen, im Kühlschrank aufbewahren."
+              },
+              {
+                "name": "Setup pro Kind",
+                "content": "8 durchsichtige Becher halb mit Rotkohlsaft füllen, auf Tablett aufstellen. Pipetten + Test-Substanzen (Essig, Natron, Zitrone, Spülmittel, Waschsoda) bereit."
+              },
+              {
+                "name": "Sauer = Rosa",
+                "content": "Essig oder Zitronensaft tropfenweise in einen Becher → Saft wird rosa/rot. Erste Erkenntnis: „Saures verändert die Farbe nach Rot.\""
+              },
+              {
+                "name": "Basisch = Grün",
+                "content": "Natron oder Backpulver in nächsten Becher → wird blaugrün. Waschsoda → wird gelb/grün (stark basisch). Schäumendes Spülmittel → blau."
+              },
+              {
+                "name": "Neutralisations-Challenge",
+                "content": "„Misch den perfekten Lila-Trank!\" → Kinder müssen sauer + basisch so kombinieren, dass die Ausgangsfarbe Lila wieder entsteht (= Neutralpunkt). Bonus-Aufgabe für 12-Jährige."
+              }
+            ],
+            "safetyRule": "Waschsoda (Natriumcarbonat) reizt Augen + Haut — Schutzbrille bei Mix-Phase (Bastel-Schutzbrille ~5€ Apotheke). Nicht in Augen reiben, Hände nach jedem Experiment waschen. Nichts trinken — auch wenn es nach Limo aussieht. Tablett mit Rand gegen Überlauf. Erwachsene*r misst Waschsoda + Essig-Mengen ab (max. 1 TL Waschsoda pro Becher). Bei Empfindlicher Kinderhaut: Latex-frei Handschuhe für Mix-Phase.",
             "ageAdjust6": "Du erklärst die Grundregel (sauer = rosa, basisch = grün) und lässt sie dann experimentieren.",
             "ageAdjust8": "pH-Skala aufmalen, Kinder ordnen ihre Ergebnisse ein. Bonusaufgabe: „Misch den perfekten Lila-Trank\" (= Neutralpunkt finden).",
-            "indoorTip": null,
+            "indoorTip": "Auf abwischbare Tisch-Unterlage oder Wachstuch — Rotkohl-Saft färbt Holz und Stoffe lila-rosa.",
             "outdoorTip": null,
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Rotkohlsaft ist ein natürlicher pH-Indikator. Je nach Säure/Base zeigt er eine andere Farbe. Das ist echte Chemie — und die Kinder kapieren das sofort."
@@ -6254,7 +6720,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "ruhig",
             "effort": "leicht",
             "material": "[Perlen-Set mit Buchstaben*](https://www.amazon.de/s?k=perlen+set+kinder+buchstaben+armband&tag=machsleicht-21) (~10–12 €, reicht für 8+ Armbänder), Elastikband (0,8 mm, im Set meist dabei), [Einhorn-Charms*](https://www.amazon.de/s?k=einhorn+anh%C3%A4nger+charm+silber&tag=machsleicht-21) (~6 € für 20 Stk.), Schere, Klebeband (zum Fixieren beim Auffädeln)",
-            "prepText": "Jedes Kind macht sein eigenes Armband: Buchstaben-Perlen für den eigenen Namen oder den Code-Namen, dazwischen bunte Perlen in Regenbogenfarben, am Ende einen Einhorn-Charm dran.",
+            "prepText": "Jedes Kind macht sein eigenes Armband: Buchstaben-Perlen für den eigenen Namen oder den Code-Namen, dazwischen bunte Perlen in Regenbogenfarben, am Ende einen Einhorn-Charm dran.\n\nTipp: Elastikband-Ende mit Klebeband am Tisch fixieren, dann rutschen die Perlen nicht runter. Doppelknoten am Ende, Tropfen Kleber drauf — hält ewig.\n\nVorteil: Dieses Spiel ist selbstlaufend. Hinstellen, Material erklären, zurücklehnen. Die Kinder reden, lachen, basteln — und du hast 40 Minuten Ruhe.",
             "steps": [],
             "safetyRule": null,
             "ageAdjust6": "Einfache Armbänder mit Namen.",
@@ -6408,13 +6874,34 @@ var ELITE_MOTTO_DATA = {
             "loudness": "laut",
             "effort": "leicht",
             "material": "2 Löffel, 2 Tischtennisbälle (oder Eier), 6 Becher, 1 Seil oder Kreppband (Bodenmarkierung), 2 Kissen, 2 Stühle, Timer (Handy)",
-            "prepText": "2 Teams (gleich wie beim Chemie-Labor). Staffel-Wettbewerb: Jedes Team-Mitglied muss den Parcours durchlaufen und das nächste abklatschen. Das schnellere Team gewinnt.",
-            "steps": [],
-            "safetyRule": null,
-            "ageAdjust6": null,
-            "ageAdjust8": null,
-            "indoorTip": null,
-            "outdoorTip": null,
+            "prepText": "2 Teams (gleich wie beim Chemie-Labor). Staffel-Wettbewerb: Jedes Team-Mitglied muss den Parcours durchlaufen und das nächste abklatschen. Das schnellere Team gewinnt.\n\nTipp: Timer laufen lassen und Zeiten ansagen — der Wettbewerb-Faktor motiviert diese Altersgruppe enorm. „Team Nova: 3 Minuten 42! Team Eclipse, schafft ihr das?\"",
+            "steps": [
+              {
+                "name": "Station 1: Einhorn-Balance",
+                "content": "Tischtennisball auf Löffel balancieren, 5 Meter laufen ohne Runterfallen. Fällt er runter → zurück zum Start der Station."
+              },
+              {
+                "name": "Station 2: Becherstapel-Turm",
+                "content": "6 Becher zur Pyramide stapeln (3-2-1), dann wieder abbauen und in eine Reihe stellen."
+              },
+              {
+                "name": "Station 3: Lava-Fluss",
+                "content": "3 Meter auf 2 Kissen „überqueren\" — ein Kissen hinlegen, draufsteigen, das andere vorlegen, weiter. Boden berühren = nochmal."
+              },
+              {
+                "name": "Station 4: Slalom",
+                "content": "Um 4 Stühle im Zickzack laufen — Stühle als Pylonen mit ca. 1m Abstand."
+              },
+              {
+                "name": "Station 5: Zielwurf",
+                "content": "3 zusammengeknüllte Socken in einen Eimer werfen (2 Meter Abstand). Mindestens 1 Treffer, sonst nochmal."
+              }
+            ],
+            "safetyRule": "Stations-Wege vorher abgehen — keine Stolperfallen, keine offenen Steckdosen, kein scharfkantiges Möbelstück im Lauf-Korridor. Kissen-Lava-Fluss: Stoff-Kissen ohne Reißverschluss-Metall, rutschfeste Unterlage. Becher: leichte Plastik-Becher, keine Glas-Becher.",
+            "ageAdjust6": "Stationen einfacher: Becher nur in Reihe stapeln (nicht Pyramide), Slalom mit weniger Stühlen, Lava-Fluss mit 3 statt 2 Kissen.",
+            "ageAdjust8": "Anspruchsvoller: bei Becher-Stapel Bonus-Runde mit 10 Bechern, Lava-Fluss mit nur 1 Kissen + Sprung, Slalom rückwärts.",
+            "indoorTip": "Im Flur, Wohnzimmer oder Keller aufbauen. Stühle als Slalom, Kissen für den Lava-Fluss, Becher auf dem Boden. Teppich-Ecken fixieren!",
+            "outdoorTip": "Im Garten — gleicher Aufbau, mehr Platz für Slalom. Eimer beim Zielwurf gegen Wind sichern (Stein rein).",
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Nach 30 Min. Chemie-Labor brauchen die Kinder dringend Bewegung. 20 Minuten reichen — länger wird es bei 9–12-Jährigen albern. Kurz, intensiv, laut."
           },
@@ -6427,34 +6914,38 @@ var ELITE_MOTTO_DATA = {
             "loudness": "laut",
             "effort": "hoch",
             "material": "5 Umschläge mit Rätseln, 1 Zahlenschloss (Fahrradschloss, ~5 € oder vorhandenes), 1 Schatztruhe (Schuhkarton, bemalt/beklebt), Inhalt: Süßigkeiten + Einhorn-Charms, optional: [UV-Taschenlampe*](https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht-21) (~12 €) + [UV-Stift*](https://www.amazon.de/s?k=uv+geheimschrift+stift+unsichtbar&tag=machsleicht-21) (~7 €)",
-            "prepText": "2 Teams (4 vs. 4, per Los). Jedes Team bekommt die gleichen 5 Rätsel, aber in unterschiedlicher Reihenfolge. Wer zuerst den 4-stelligen Code für das Zahlenschloss knackt, öffnet die Schatztruhe. Der Code ist 9312 (Default-Code, ändere bei Bedarf am Schloss). Die 4 Ziffern werden über 4 Rätsel ermittelt — jede Station liefert eine Ziffer. Vorab 5 Rätsel-Kärtchen ausdrucken + Vorhängeschloss am Schatzkasten anbringen.",
+            "prepText": "2 Teams (4 vs. 4, per Los). Jedes Team bekommt die gleichen 5 Rätsel, aber in unterschiedlicher Reihenfolge. Wer zuerst den 4-stelligen Code für das Zahlenschloss knackt, öffnet die Schatztruhe. Der Code ist 4-7-1-5 (stell dein Zahlenschloss vorher darauf ein). Die 4 Ziffern werden über 4 Rätsel ermittelt + 1 Puzzle zeigt den Versteck-Ort.\n\nVorbereitung (30 Min.): Rätsel abschreiben oder ausdrucken, in Umschläge stecken, nummerieren. UV-Botschaft schreiben. Foto ausdrucken und zerschneiden. Zahlenschloss auf 4-7-1-5 einstellen. Truhe (beklebter Schuhkarton) mit Süßigkeiten + Charms füllen und im Raum vom Puzzle-Foto verstecken.\n\nTipp: 25 Min. Timer auf dem Handy stellen. Wenn nach 20 Min. kein Team fertig ist, Hinweise geben. Am Ende wird der Schatz geteilt — kein Team verliert.",
             "steps": [
               {
-                "name": "Rätsel 1: Sternenkarte (Ziffer 9)",
-                "content": "Wieviele Sterne sind im Sternenbild \"Großer Bär\"? (Lösung: 9 Hauptsterne → Ziffer 1 des Codes = 9)"
+                "name": "Rätsel 1: Spiegelschrift (→ Ziffer 4)",
+                "content": "Schreibe diesen Satz spiegelverkehrt auf ein Blatt (jeden Buchstaben einzeln rückwärts): „reiv tsi reffiz etsre eiD\". Lösung: „Die erste Ziffer ist vier\" → 4. Tipp für Kinder: Vor einen Spiegel halten macht es lesbar."
               },
               {
-                "name": "Rätsel 2: Einhorn-Reim (Ziffer 3)",
-                "content": "\"Drei Hörner haben wir gefunden, drei Magie-Schalen tief im Bunten.\" — Ziffer 2 = 3"
+                "name": "Rätsel 2: Einhorn-Mathe (→ Ziffer 7)",
+                "content": "Auf eine Karte schreiben: „Ein Einhorn hat 1 Horn. Ein Regenbogen hat ? Farben. Multipliziere beides. Die Lösung ist deine Ziffer.\" Lösung: 1 × 7 = 7."
               },
               {
-                "name": "Rätsel 3: Farbcode (Ziffer 1)",
-                "content": "In welcher Reihenfolge liegen die Regenbogen-Farben? Erste Farbe = Rot = 1. Buchstabe → Ziffer 3 = 1"
+                "name": "Rätsel 3: UV-Botschaft (→ Ziffer 1)",
+                "content": "Mit dem UV-Stift auf ein weißes Blatt schreiben: „Die dritte Ziffer ist die kleinste Zahl, die keine Null ist.\" Scheinbar leeres Blatt in einen Umschlag mit Hinweis: „Nicht alles ist sichtbar. Manchmal braucht man ein anderes Licht.\" UV-Taschenlampe separat verstecken (z.B. Küchenschublade mit Hinweis „Licht der Wahrheit\"). Lösung: 1. Ohne UV-Set: stattdessen mit weißem Wachsmalstift auf weißes Papier schreiben — Hinweis: „Male mit einem Buntstift sanft über das Papier.\" Die Wachsschrift wird sichtbar."
               },
               {
-                "name": "Rätsel 4: Mathe-Rune (Ziffer 2)",
-                "content": "2 Einhorn-Pakete × 1 Pegasus = ? Lösung 2 → Ziffer 4 = 2"
+                "name": "Rätsel 4: Bilder-Puzzle (→ Versteck-Ort)",
+                "content": "Drucke ein Foto des Raumes aus, in dem die Truhe versteckt ist (z.B. Flur, Schlafzimmer). Schneide es in 6 unregelmäßige Teile. In einen Umschlag mit Hinweis: „Setze die Karte zusammen — sie zeigt den Ort des Schatzes.\" Lösung: Bild zeigt den Raum → Kinder suchen dort die Truhe."
               },
               {
-                "name": "Final: Schloss öffnen",
-                "content": "Code 9-3-1-2 → Schatzkasten öffnet. Drin: Mitgebsel + Urkunde für jedes Kind."
+                "name": "Rätsel 5: Kreuzworträtsel (→ Ziffer 5)",
+                "content": "4 Fragen auf eine Karte: (1) „Welche Farbe hat Rotkohl-Saft, wenn man Essig reinmischt?\" (4 Buchst.) → ROSA. (2) „Was hat ein Einhorn auf der Stirn?\" (4 Buchst.) → HORN. (3) „Wie heißt die Zahl nach vier?\" (4 Buchst.) → FÜNF. (4) „Wie viele Farben hat ein Regenbogen?\" (6 Buchst.) → SIEBEN. Hinweis: „Der 1. Buchstabe von Antwort 3 ist der Schlüssel.\" Lösung: F = Fünf → 5."
+              },
+              {
+                "name": "Final: Schloss öffnen + Schatz teilen",
+                "content": "Code 4-7-1-5 → Schatzkasten öffnet sich am Versteck-Ort aus Rätsel 4. Inhalt: Süßigkeiten + Einhorn-Charms wird ZWISCHEN beiden Teams geteilt — kein Team verliert. Optional eine Urkunde pro Kind („Meister der Vergessenen Magie\") für späteren Mitgebsel-Boost."
               }
             ],
-            "safetyRule": null,
+            "safetyRule": "Rätsel-Stationen im Wohnungs-/Garten-Raum vorher abgehen — keine Stolperfallen, keine offenen Steckdosen, keine zerbrechlichen Gegenstände im Suchen-Korridor. Zahlenschloss: leichtes Fahrradschloss (keine schweren Vorhängeschlösser, die beim Aufgehen runterfallen). UV-Lampe: nicht in Augen leuchten lassen — Hinweis vorab geben.",
             "ageAdjust6": null,
             "ageAdjust8": null,
-            "indoorTip": null,
-            "outdoorTip": null,
+            "indoorTip": "Wohnung in 5 Räume aufteilen: jedes Rätsel in eigenem Raum, UV-Lampe versteckt in 6. Raum. Türen offen halten, Sichtkontakt.",
+            "outdoorTip": "Garten + Terrasse — Umschläge in Klarsicht-Hüllen wetterfest, Hinweise mit Wäscheklammer befestigen. UV-Botschaft NUR drinnen (Tageslicht killt den Effekt).",
             "whyItWorksTitle": null,
             "whyItWorks": null
           },
@@ -6639,13 +7130,13 @@ var ELITE_MOTTO_DATA = {
             "loudness": "laut",
             "effort": "leicht",
             "material": "2 Handys (von Kindern oder Eltern), optional: [Mini-Stativ*](https://www.amazon.de/s?k=handy+stativ+klein+tischstativ&tag=machsleicht-21) (~8 €), Requisiten (Einhorn-Hörner, Zauberstäbe, Tücher als Umhänge)",
-            "prepText": "2 Teams (4 vs. 4). Jedes Team hat 10 Minuten zum Planen: Wer spielt wen? Was ist die Story? Dann 15 Minuten drehen — maximal 60 Sekunden Film. Am Ende schauen sich alle gemeinsam beide Filme an.",
+            "prepText": "2 Teams (4 vs. 4). Jedes Team hat 10 Minuten zum Planen: Wer spielt wen? Was ist die Story? Dann 15 Minuten drehen — maximal 60 Sekunden Film. Am Ende schauen sich alle gemeinsam beide Filme an.\n\nStory-Vorgabe (optional): „Drehbuch: Ein Schüler der Akademie entdeckt ein Geheimnis. Zeigt, was passiert.\" — reicht als Impuls, den Rest machen die Kinder selbst.\n\nTipp: DAS wird die Aktivität, die sie am coolsten finden. Jedes Kind bekommt den Film per AirDrop/WhatsApp geschickt — die Erinnerung schlechthin. Kostet nix extra.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Handy-Datenschutz: Vorher mit Eltern klären, dass Kinder gefilmt werden + Film im Familien-Chat geteilt wird. Bei Eltern-Bedenken: Kind nur als „Kamera-Operator\" einsetzen, nicht vor Linse. Filme NUR im Privat-Chat teilen, nicht in Social Media posten.",
             "ageAdjust6": "Du oder ein Elternteil führt die Kamera, Kinder spielen nur. Story muss nicht komplex sein — „Wir entdecken einen Kristall und er macht uns unsichtbar\" reicht. Wichtig: Du gibst die Struktur vor (Anfang, Mitte, Ende) und hilfst beim Schneiden.",
-            "ageAdjust8": "Eigene Handys, schneiden direkt in iMovie/CapCut (die können das), Slow-Mo und Effekte einbauen. Die brauchen null Hilfe.",
-            "indoorTip": null,
-            "outdoorTip": null,
+            "ageAdjust8": "Kinder filmen sich gegenseitig (10-11 Jahre: Story-Impuls von dir + sie schneiden im Handy). 12-Jährige: Eigene Handys, direktes Schneiden in iMovie/CapCut, Slow-Mo und Effekte einbauen — brauchen null Hilfe.",
+            "indoorTip": "Wohnzimmer als Hauptset, Flur für „Akademie-Gang\", Bad/Küche für Sondereffekte. Türen schließen → bessere Akustik.",
+            "outdoorTip": "Garten + Terrasse für Outdoor-Szenen, Schatten suchen (Sonne überstrahlt Display, Kinder sehen Aufnahme nicht).",
             "whyItWorksTitle": null,
             "whyItWorks": null
           },
@@ -6658,9 +7149,9 @@ var ELITE_MOTTO_DATA = {
             "loudness": "ruhig",
             "effort": "leicht",
             "material": "8 Urkunden (A4, ausdrucken oder auf Pergament-Papier schreiben), 1 Wachssiegel-Set (optional, ~10 €) oder Goldfolie-Sticker",
-            "prepText": "Vorher vorbereiten: Urkunden mit „Akademie der Vergessenen Magie\" Header, Platz für Code-Name, Datum, und „Hiermit wird ___ zum Meister der Vergessenen Magie ernannt.\"\n\nBei der Zeremonie: Feierliche Musik an (YouTube: „epic orchestral fantasy\"), jedes Kind einzeln aufrufen, Urkunde überreichen, alle applaudieren. Die Kinder finden das halb lustig, halb cool — genau die richtige Mischung für das Alter.",
+            "prepText": "Vorher vorbereiten: Urkunden mit „Akademie der Vergessenen Magie\" Header, Platz für Code-Name, Datum, und „Hiermit wird ___ zum Meister der Vergessenen Magie ernannt.\"\n\nBei der Zeremonie: Feierliche Musik an (YouTube: „epic orchestral fantasy\"), jedes Kind einzeln aufrufen, Urkunde überreichen, alle applaudieren. Die Kinder finden das halb lustig, halb cool — genau die richtige Mischung für das Alter.\n\nTipp: Urkunde auf Pergament-Papier (Amazon: ~5 € für 25 Blatt) drucken oder den Teebeutel-Trick verwenden (Papier in kaltem Tee einlegen, trocknen). Wachssiegel drauf = nächstes Level.",
             "steps": [],
-            "safetyRule": null,
+            "safetyRule": "Wachssiegel-Set: heißes Wachs — nur Erwachsene siegeln, Kinder bekommen fertige Urkunden überreicht. Alternativ Goldfolie-Sticker als Wachssiegel-Ersatz (kalt, kein Risiko).",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": null,
@@ -6858,6 +7349,14 @@ var ELITE_MOTTO_DATA = {
           "detail": "Falls ein Gast-Kind meckert: „Einhorn? Echt jetzt?\" — lass das Geburtstagskind antworten, nicht du. Meistens reicht der erste Blick aufs Chemie-Labor oder die Escape-Rätsel. Und spätestens beim UV-Schwarzlicht-Moment ist jeder still. Einhorn als Fantasy-Kreatur verkaufen, nicht als Kuscheltier — dann funktioniert es bis 12."
         },
         {
+          "topic": "🌌 Galaxy statt Rosa: Farb-Welt verschieben",
+          "detail": "Der zentrale Reframing-Hebel: 9–12-Jährige finden „Galaxy\" cool und „Regenbogen\" kindisch — bei gleichen Farben. Verwende: Dunkelblau + Lila + Türkis + Gold (Mirror-Glaze-Kuchen). Metallic-Tattoos in Gold/Silber statt Glitzer-Aufkleber. Iridescent-Ballons (schimmernd) statt Pastell-Rosa. Pergament-Karten statt Glitzer-Zettel. Schlicht-Kraftpapier-Tüten als Goodie-Bags (nicht rosa — die finden das peinlich). Die Atmosphäre soll „Hogwarts trifft Einhorn\" sein, nicht „Kindergarten-Party\"."
+        },
+        {
+          "topic": "🐉 Drachen-/Magier-Alternative für Jungs-skeptische Gruppen",
+          "detail": "Falls gemischte Gruppen mit Jungs-Skepsis: Code-Namen sind absichtlich Fantasy-RPG-Style (Phoenix Goldstaub, Raven Mondklinge, Onyx Flammenschweif, Atlas Bergschatten). Bei stärkerer Skepsis: reframe als „Akademie der Vergessenen Magie\" komplett ohne Einhorn-Wort — Charms können statt Einhorn auch Drachen oder Phönix sein (gleiche Bezugsquelle, andere Suche). Chemie-Labor, Escape-Challenge, Kurzfilm und Schmuck-Workshop sind 100% geschlechtsneutral. Inhalte bleiben gleich, Story-Verpackung swappen."
+        },
+        {
           "topic": "📱 Partyseite statt WhatsApp-Chaos",
           "detail": "Erstelle eine [Partyseite auf party.machsleicht.de](https://party.machsleicht.de) mit Datum, Uhrzeit, Adresse und Allergien-Abfrage. Ein Link statt 10 Nachrichten. Kostet nichts."
         }
@@ -6884,7 +7383,11 @@ var ELITE_MOTTO_DATA = {
       },
       {
         "q": "Funktioniert das auch in gemischten Gruppen?",
-        "a": "Ja — das Konzept ist bewusst so gebaut. Chemie-Experimente, Escape-Rätsel und Kurzfilm-Dreh begeistern alle Kinder gleichermaßen. Die „Akademie der Vergessenen Magie\" ist Fantasy, nicht „Einhorn-Prinzessin\". Und der Schmuck-Workshop? Friendship-Bracelets sind 2025/2026 bei allen beliebt, nicht nur bei Mädchen. Die Farbwelt (Galaxy, Metallic, Dunkelblau) ist bewusst geschlechtsneutral."
+        "a": "Ja — das Konzept ist bewusst so gebaut. Chemie-Experimente, Escape-Rätsel und Kurzfilm-Dreh begeistern alle Kinder gleichermaßen. Die „Akademie der Vergessenen Magie\" ist Fantasy, nicht „Einhorn-Prinzessin\". Und der Schmuck-Workshop? Friendship-Bracelets sind 2025/2026 bei allen beliebt, nicht nur bei Mädchen. Die Farbwelt (Galaxy, Metallic, Dunkelblau) ist bewusst geschlechtsneutral. Falls ein Gast „Einhorn? Echt jetzt?\" murrt — lass das Geburtstagskind antworten, nicht du. Spätestens beim UV-Schwarzlicht-Moment oder beim Code-Knacken in der Escape-Challenge ist jeder still."
+      },
+      {
+        "q": "Wie gehe ich mit Chemie-Labor-Sicherheit um (Waschsoda, Schutzbrille)?",
+        "a": "Waschsoda (Natriumcarbonat) ist reizend für Augen und Haut — deshalb gehört eine Schutzbrille (Bastel-Schutzbrille ~5€/Stk. in Apotheke oder Drogerie) zur Mix-Phase Pflicht. Latex-frei Handschuhe für empfindliche Kinderhaut. Du als Erwachsene*r misst die Substanzen ab (max. 1 TL Waschsoda pro Becher), die Kinder mixen + experimentieren. Tablett mit Rand drunter gegen Überlauf. Wichtig: trotz „Zaubertrank\"-Optik — NIE trinken lassen. Bei Tartrazin-Empfindlichkeit (E102) Lebensmittelfarben weglassen, Rotkohlsaft alleine reicht für Farbwechsel-Show."
       }
     ],
     "preparationWeeks": {
@@ -7125,7 +7628,7 @@ var ELITE_MOTTO_DATA = {
         "steps": [
           "Weißen Boden beim Bäcker holen (~6-8€) — Sahne-Boden oder Biskuit.",
           "Mirror-Glaze fertig aus Tube (Tortenguss-Section, ~3€) in 2 Farben.",
-          "Essbare Glitzer-Sterne + Smarties als Galaxy-Streuung obendrauf.",
+          "Essbare Glitzer-Sterne + bunte Schoko-Linsen als Galaxy-Streuung obendrauf.",
           "Bei Wow: Wunderkerze obendrauf, LED-Kerzen drumherum für Magie-Effekt."
         ],
         "fallback": "Bäcker zu? Stückkuchen vom Discounter mit Mirror-Glaze Pulver übergossen + Glitzer. Bei 9-12 funktioniert humor: ‚Tarn-Kuchen, magisch verändert.'",
@@ -24197,6 +24700,46 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": null,
             "whyItWorksTitle": "Warum das funktioniert",
             "whyItWorks": "Genau-Hinschauen ist die einzige „Detektiv-Fähigkeit“, die 3-5-Jährige schon können. Das Spiel braucht null Material, läuft sitzend und gibt jedem Kind einen kleinen Aha-Moment — ideal als ruhiger Kontrast zur Such-Runde."
+          },
+          {
+            "name": "👆 Stempel-Spürnasen: Dein eigener Ausweis-Abdruck",
+            "indoor": true,
+            "outdoor": false,
+            "duration": "10 Min.",
+            "minAge": 3,
+            "loudness": "leise",
+            "effort": "leicht",
+            "material": "Ein abwaschbares Stempelkissen (kindgeprüft, auf Wasserbasis), pro Kind eine vorbereitete Spürnasen-Karte (Tonkarton A6 mit Detektiv-Namen und einem Stempel-Feld), feuchte Tücher zum Abwischen.",
+            "prepText": "Nach dem Kuchen, bevor die Urkunden kommen: Jedes Kind bekommt seinen eigenen kleinen Ausweis mit Stempel-Feld. Du beschriftest die Karten vorher mit dem Detektiv-Namen, sodass am Tag selbst nur noch der Daumen aufs Kissen muss.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Daumen aufs Kissen",
+                "content": "Du führst den Daumen jedes Kindes kurz aufs Stempelkissen — bei den ganz Kleinen am besten selbst halten, das spart Geklecks."
+              },
+              {
+                "n": 2,
+                "name": "Abdruck auf die Karte",
+                "content": "Daumen einmal kurz aufs Stempel-Feld der Spürnasen-Karte drücken. Fertig ist der eigene „Beweis“ — ein Abdruck, den nur dieses Kind hat."
+              },
+              {
+                "n": 3,
+                "name": "Mit der Lupe anschauen",
+                "content": "Mit der Pappkarton-Lupe den eigenen Abdruck „untersuchen“ — kleine Wirbel und Linien anschauen. Mini-Aha-Moment."
+              },
+              {
+                "n": 4,
+                "name": "Sofort Hände wischen",
+                "content": "Direkt mit dem feuchten Tuch abwischen, bevor die Hand an Kuchen, Mütze oder Tapete kommt. Diese eine Regel rettet den Nachmittag."
+              }
+            ],
+            "safetyRule": "Nur abwaschbare, kindgeprüfte Stempelfarbe (Wasserbasis) verwenden. Daumen-Abdruck reicht — finger-für-finger-Pflicht würde 3-5 überfordern. Bei sehr jungen Kindern den Daumen selbst führen.",
+            "ageAdjust3": "Du nimmst den Abdruck selbst ab — ein Daumen genügt, kein zweiter Versuch.",
+            "ageAdjust5": "5-Jährige stempeln selbst, dürfen auch zwei Daumen probieren und ihren Detektiv-Namen mit krakeligem Stift drunter setzen.",
+            "indoorTip": "Eine wischbare Unterlage (Wachstuch oder Backpapier) unter die Station legen — spart Putzen.",
+            "outdoorTip": null,
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Der eigene Abdruck ist für 3-5 ein kleines Wunder: „Das hat nur ich.“ Es macht die Lupe sofort sinnvoll, gibt jedem Kind ein zweites Mitgebsel neben der Urkunde und passt zwischen Kuchen und Urkunden-Übergabe als ruhige 10-Minuten-Station perfekt rein."
           }
         ],
         "food": "🍪 Spürnasen-Snacks: der gefundene Kuchen (Schoko-Marmorkuchen mit Lupen-Deko aus Zuckerguss), dazu „Beweismittel-Tüten“ mit Schoko-Münzen, Trauben und Salzstangen. Wasser und gespritzter Apfelsaft reichen — kein bunter Zuckersprudel, das überdreht 3-5 nur.",
@@ -25003,6 +25546,14 @@ var ELITE_MOTTO_DATA = {
         {
           "tip": "Schoko-Muenzen-Folie",
           "content": "Bei 3-Jaehrigen Folie SCHON vorher entfernen — Schoko-Muenzen ohne Folie auslegen. Folie sammeln + wegwerfen. Alternativ: Trockenobst-Taler (Hartriegel + Mandelmus, folienfrei)."
+        },
+        {
+          "topic": "🏠 Wohnung als Tatort denken",
+          "detail": "Schau die Räume mit Detektiv-Augen an: Sofakissen (Versteck-Klassiker), Vorhang (dunkle Ecke für Taschenlampe), unter Tisch (Krabbel-Ziel), Regalbrett auf Kinderhöhe (sichtbarer Schatz). Drei bis vier solcher „Mikro-Verstecke“ in einem Raum fühlen sich für 3-5 nach einer Detektiv-Reise an, ohne dass du die ganze Wohnung präparierst."
+        },
+        {
+          "topic": "🌳 Garten als Bonus, nicht Pflicht",
+          "detail": "Garten verlängert die Spur ohne Mehraufwand: zwischen Bäumen, um den Sandkasten, unter die Bank. Aber: Wenn das Wetter schlecht wird, ist das KEIN Plan-B-Problem — die Wohnung trägt allein. Den Garten lieber als „Wir laufen einmal raus zum Endpunkt“-Schluss-Sequenz einsetzen statt als ganzen Schauplatz."
         }
       ],
       "educationalValue": "Die Kinder üben bei der Detektiv-Party ganz nebenbei: genau hinschauen und beobachten (Spuren-Suche, Hinweis-Quiz), geduldig dranbleiben, bis etwas gefunden ist, und das gute Gefühl, gemeinsam ein Ziel zu erreichen — niemand gewinnt allein, alle finden zusammen. Der „Wir-finden-das-wieder“-Frame stärkt das Selbstvertrauen: Ein Kind erlebt, dass es mit einem einfachen Werkzeug selbst ein Problem lösen kann — der Schritt vom magischen Suchspiel zum zielgerichteten Denken, der mit 3-5 ansteht."
@@ -25024,6 +25575,14 @@ var ELITE_MOTTO_DATA = {
       {
         "q": "Was, wenn ein Kind nicht mitsuchen will?",
         "a": "Kein Zwang. Mütze, Lupe und Urkunde bekommt jedes Kind, egal ob es mitsucht. Schüchterne Kinder bleiben beim Elternteil oder bekommen die ruhige Kuschel-Wächter-Rolle. Niemand muss vorsprechen oder gewinnen."
+      },
+      {
+        "q": "Ist die Fingerabdruck-Station nicht zu kleckrig für 3-5?",
+        "a": "Mit der richtigen Vorbereitung nicht. Nimm ein abwaschbares Stempelkissen auf Wasserbasis (kindgeprüft), eine wischbare Unterlage und feuchte Tücher direkt daneben. Du führst den Daumen selbst — ein Abdruck pro Kind reicht. Sofort danach Hände wischen, dann landet keine Farbe auf Mütze oder Tapete. Geht 10 Minuten und gibt jedem Kind seinen eigenen kleinen „Beweis“."
+      },
+      {
+        "q": "Was tun, wenn ein Kind die Spur einfach nicht findet?",
+        "a": "Bei 3-5 nie still daneben stehen. Geh mit, drück dem Kind die Lupe in die Hand und zeige unauffällig auf die nächste Fußspur. Wenn nötig, leg eine Schoko-Münze dorthin, wo es gerade hinschaut — die „Spürnase“ hat gefunden, niemand merkt etwas. Alle Funde gehören der Gruppe, nicht dem Schnellsten."
       }
     ],
     "preparationWeeks": {
@@ -25282,6 +25841,32 @@ var ELITE_MOTTO_DATA = {
         ],
         "fallback": "Noch mitten im Fall? Eltern kurz dazubitten — bei 3-5 freuen sich die Kinder, ihnen die Lupe und den Fund zu zeigen.",
         "tone": "praktisch"
+      },
+      "kind_findet_spur_nicht": {
+        "icon": "🐾",
+        "label": "Kind findet die Spur einfach nicht",
+        "headline": "Du wirst zum „Mit-Spürer“ — niemand sucht allein vor 3-5.",
+        "steps": [
+          "Bei 3-5 nie still daneben stehen, wenn ein Kind verzweifelt sucht — du gehst mit und sagst leise: „Lass uns mal hier ganz genau gucken.“",
+          "Dem Kind die Lupe in die Hand drücken und gemeinsam auf die nächste Fußspur zeigen — „Schau, da! Hast du auch eine Spur entdeckt?“",
+          "Notfalls eine Schoko-Münze unauffällig hinlegen, wo das Kind gerade hinschaut — die „Spürnase“ hat gefunden, niemand merkt was.",
+          "Nie kommentieren, dass ein Kind hinterherhinkt — alle Funde gehören der Gruppe, nicht dem Schnellsten."
+        ],
+        "fallback": "Frustriert das Kind komplett? Direkt zum Endpunkt der Spur gehen und alle gemeinsam den Kuchen „entdecken“ lassen — die Story trägt auch ohne Vollständigkeit.",
+        "tone": "ruhig"
+      },
+      "streit_ueber_loesung": {
+        "icon": "🤝",
+        "label": "Streit, wer's zuerst gefunden hat",
+        "headline": "„Die Spürnasen haben es ZUSAMMEN gelöst“ — dieser eine Satz, früh gesagt.",
+        "steps": [
+          "Schon vor dem ersten Spiel ein Mal laut sagen: „Bei uns sind alle Spürnasen — wir finden zusammen, niemand zuerst.“ Spart 90 % der Streits.",
+          "Wenn doch: ruhig dazwischen — „Ihr habt beide eine Spur gefunden! Schau, da ist sogar noch eine.“ Niemand muss verlieren.",
+          "Funde immer auf einen gemeinsamen „Beweis-Tisch“ legen, statt sie bei einem Kind anzuhäufen — Eigentum wird zur Gruppen-Sammlung.",
+          "Bei hartnäckigem Streit beide Kinder kurz zur Lupen-Untersuchung des Funds einladen — gleiche Aufmerksamkeit beruhigt am schnellsten."
+        ],
+        "fallback": "Bleibt es heiß? Kurze Snack-Pause einschieben, das senkt den Pegel sofort und gibt dir Zeit für eine ruhige Spur-Neuverteilung.",
+        "tone": "ruhig"
       }
     }
   },
@@ -25830,6 +26415,96 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Nach Befragung, Fingerabdrücken und Geheimtinte brauchen 6–8-Jährige dringend Bewegung — der Parcours fängt diese Energie ein und gibt ihr eine Story (\"wir folgen der Spur\"). Die Mini-Stationen halten es abwechslungsreich, und das Ziel mit der letzten Hinweis-Karte bindet das Toben sauber zurück in den Fall."
           },
           {
+            "name": "🕵️ Beschattungs-Mission (Bonus-Spiel)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 20,
+            "minAge": 6,
+            "loudness": "leise",
+            "effort": "leicht",
+            "material": "1 erwachsene Person als „Verdächtige(r)“ (oder älteres Geschwisterkind), 1 Ermittlungs-Heft pro 2er-Team, Bleistifte. Optional: ein auffälliges „Beweisstück“ (Tuch, Schlüsselbund), das der Verdächtige bei sich trägt.",
+            "prepText": "Der „Verdächtige“ besucht 3–4 Räume (oder Garten-Stationen) und macht in jedem etwas Auffälliges — ein Buch anfassen, das Licht anschalten, das Beweisstück kurz hinlegen und wieder mitnehmen. Die Detektiv-Teams folgen heimlich auf Abstand und notieren in ihrem Heft, was sie beobachtet haben.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Briefing",
+                "content": "Du erklärst: „Achtung Detektive — der Verdächtige bewegt sich gleich durchs Haus. Eure Aufgabe: ihm leise folgen und merken, was er anfasst und wo er hingeht. Nicht ansprechen!“"
+              },
+              {
+                "n": 2,
+                "name": "Beschattung",
+                "content": "Der Verdächtige startet seinen Rundgang. Die Teams folgen auf 2–3 Meter Abstand und schreiben/malen in ihre Hefte: wo war er, was hat er angefasst, was hat er mitgenommen?"
+              },
+              {
+                "n": 3,
+                "name": "Rückkehr & Notizen abgleichen",
+                "content": "Nach 3–4 Stationen versammelt sich die Gruppe. Jedes Team liest seine Beobachtungen vor — wer hat das auffällige Beweisstück bemerkt?"
+              },
+              {
+                "n": 4,
+                "name": "Verhör des Verdächtigen",
+                "content": "Du fragst stellvertretend für die Detektive: „Wo waren Sie um 15:30? Was hatten Sie dabei?“ — die Notizen werden gegen die Antworten geprüft."
+              },
+              {
+                "n": 5,
+                "name": "Bonus-Indiz sichern",
+                "content": "Das Team mit den genauesten Beobachtungen darf das Beweisstück als zusätzlichen Hinweis für den Code-Showdown einfordern — perfekte Brücke zum nächsten Spiel."
+              }
+            ],
+            "safetyRule": "Der Verdächtige geht IMMER im Schritttempo und nutzt keine Treppen ohne Begleitung — Beschattung darf nicht in Rennen ausarten. Klar vorher sagen: „Nicht anrempeln, nicht anschreien — leise bleiben.“",
+            "ageAdjust6": "Nur 2 Stationen, der Verdächtige macht sehr offensichtliche Dinge (deutlich winken, laut etwas hinlegen). Du begleitest die Gruppe.",
+            "ageAdjust8": "4 Stationen, der Verdächtige macht subtile Bewegungen (Buch zurückstellen, etwas einstecken statt hinlegen). Die Teams arbeiten selbstständig.",
+            "indoorTip": "Den Rundgang durch 3 Räume legen — Wohnzimmer, Flur, Küche reicht für 6-8 völlig. Mehr ist Stress.",
+            "outdoorTip": "Garten-Tour an Bank, Baum und Sandkasten — die Teams können sich besser verteilen, ohne sich gegenseitig im Weg zu stehen.",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Beobachten, leise sein und mitschreiben kombiniert drei Dinge, die 6-8-Jährige genau jetzt üben: Konzentration, Selbstbeherrschung und Detail-Gedächtnis. Es wirkt wie ein „richtiger“ Detektiv-Auftrag, kostet null Material und überbrückt elegant die Phase zwischen Spuren-Parcours und Code-Finale. Eltern, die mitkommen, dürfen einfach mit beschatten — keine zusätzliche Helfer-Last."
+          },
+          {
+            "name": "🔑 Junior-Ermittler-Test (Geschicklichkeits-Bonus)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 15,
+            "minAge": 6,
+            "loudness": "leise",
+            "effort": "leicht",
+            "material": "1 leere Glas- oder Plastikflasche (Engel-Hals), 1 Schlüssel an einer Schnur (oder Schlüsselanhänger), 1 Stift (oder Holzlöffel) pro Kind. Optional: 1 Stoppuhr und ein Mini-Hindernis-Set (z.B. ein paar Stifte zum Übersteigen).",
+            "prepText": "Die Detektiv-Crew muss vor dem großen Showdown beweisen, dass sie auch geschickt ist — denn an einem Tatort braucht man manchmal Fingerspitzengefühl. Aufgabe: einen Schlüssel mit dem Stift aus der Flasche angeln. Eine ruhige, konzentrierte Mini-Prüfung als Brücke zum Finale.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Aufbau zeigen",
+                "content": "Du legst den Schlüssel an seiner Schnur in die Flasche, die Schnur hängt nach außen. „Aufgabe: Mit dem Stift den Schlüssel hochangeln, ohne die Flasche umzukippen.“"
+              },
+              {
+                "n": 2,
+                "name": "Reihum versuchen",
+                "content": "Jedes Kind ist einmal dran — mit dem Stift den Schnur-Bogen vorsichtig anheben. Keine Zeit, kein Wettkampf, jedes Kind schafft es."
+              },
+              {
+                "n": 3,
+                "name": "Bei Frust helfen",
+                "content": "Wer es nicht schafft, bekommt einen kleinen Stups: „Stift waagerecht halten, ganz langsam ziehen.“ Niemand wird stehen gelassen."
+              },
+              {
+                "n": 4,
+                "name": "Stempel für die Akte",
+                "content": "Jedes Kind, das den Schlüssel hochangelt, bekommt einen Stempel oder Sticker auf seine Detektiv-Karte — „Geschicklichkeit bestanden“."
+              },
+              {
+                "n": 5,
+                "name": "Übergang zum Showdown",
+                "content": "„Jetzt seid ihr bereit für den letzten Code.“ — der Test verbindet sich nahtlos mit dem Code-Finale."
+              }
+            ],
+            "safetyRule": "Keine Glasflasche mit Sprüngen, kein scharfkantiger Schlüssel. Auf einem Tisch (nicht auf dem Boden) ausführen — verhindert Kopfdunst beim Hinunterbeugen.",
+            "ageAdjust6": "Größere Flaschen-Öffnung verwenden, Schlüssel an einer dickeren Kordel — leichter zu fassen.",
+            "ageAdjust8": "Kleinere Öffnung, dünnere Schnur. Bonus-Variante: Mini-Hindernis-Parcours davor (über drei Stifte steigen), dann angeln.",
+            "indoorTip": "Auf dem Esstisch unter dem Verhör-Licht — wirkt wie ein echtes Asservaten-Labor.",
+            "outdoorTip": "Im Garten auf einem stabilen Tisch — keine Wind-Anfälligkeit, die Flasche darf nicht wegrollen.",
+            "whyItWorksTitle": "Warum das funktioniert",
+            "whyItWorks": "Reine Sitz-Spiele ermüden 6-8-Jährige — Feinmotorik mit klarem Erfolgserlebnis aktiviert sie nochmal frisch vor dem Code-Finale. Niemand muss schnell sein, jeder bekommt seinen Stempel. Das ist genau die Pause, die das Hirn vor dem letzten Rätsel braucht."
+          },
+          {
             "name": "🔑 Großer Code & Fall-Auflösung",
             "indoor": true,
             "outdoor": true,
@@ -25875,7 +26550,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Das Finale zieht alle Fäden zusammen und gibt dem Nachmittag einen klaren Höhepunkt — die Kinder spüren, dass ihre einzelnen Funde zusammen den Fall gelöst haben. Die einzeln aufgerufene Diplom-Übergabe gibt jedem Kind seinen Moment, und der wiedergefundene Kuchen leitet nahtlos zum gemeinsamen Essen über."
           }
         ],
-        "food": "🥪Detektiv-Brote (rund ausgestochen)12 Stück\n🥤\"Spuren-Saft\"3 L Apfelschorle\n🍕Mini-Pizzen \"Beweisstücke\"12 Stück\n🍪Lupen-Kekse8 Stk.\n🥕Gemüse-Sticks \"Indizien\"1 Teller\n🧀Käse-Würfel \"Fingerabdrücke\"200 g\n\n💡 Snacks im Story-Frame\nNamen genügen, um normale Snacks zur Detektiv-Verpflegung zu machen. Die \"Beweisstücke\" sind ganz normale Mini-Pizzen — der Name macht den Unterschied.",
+        "food": "🥪Detektiv-Brote (rund ausgestochen)12 Stück\n🥤\"Spuren-Saft\"3 L Apfelschorle\n🍕Mini-Pizzen \"Beweisstücke\"12 Stück\n🍪Lupen-Kekse8 Stk.\n🥕Gemüse-Sticks \"Indizien\"1 Teller\n🧀Käse-Würfel \"Fingerabdrücke\"200 g\n📜Geheimakte-Sandwiches8 Stück\n🧪Detektiv-Limo \"Beweis Nr. 7\"8 Fläschchen\n\n💡 Snacks im Story-Frame\nNamen genügen, um normale Snacks zur Detektiv-Verpflegung zu machen. Die \"Beweisstücke\" sind ganz normale Mini-Pizzen — der Name macht den Unterschied. Geheimakte-Sandwiches sind Tramezzini- oder Toastdreiecke in braunem Packpapier gewickelt, mit einem \"GEHEIM\"-Stempel oder Edding drauf — sieht aus wie eine Akte, schmeckt wie Frühstück. Die Detektiv-Limo füllst du in kleine durchsichtige Trinkfläschchen oder Reagenzglas-Optik-Becher mit handgeschriebenem \"Beweis Nr. 7\"-Etikett (dunkelrote Johannisbeer-Schorle oder normaler Saft); die Kinder „analysieren\" ihr Getränk und es kostet null Extra-Aufwand.",
         "decoration": "🔍 Lupen-Girlande1 Stk. ~3 €\n🎈 Luftballons schwarz/gelb15 Stk. ~4 €\n🚧 Tatort-Absperrband (gelb)1 Rolle ~2 €\n👣 Fußspuren aus Tonpapierkostenlos / ~2 €\n🪧 Verdächtigen-Schilder selbst gemaltkostenlos\nGroße Lupe aus Pappe an die Tür — \"Detektiv-Agentur\" als Empfang.",
         "giveaways": "🏅 1 Ehren-Detektiv-Diplom (Name + Stempel)\n🔍 1 Lupe\n📓 1 Mini-Ermittlungs-Heft + Bleistift\n🖐️ 1 Karte mit eigenem Fingerabdruck\n🍋 1 Geheimtinten-Set zum Mitnehmen (Wattestäbchen + Anleitung)",
         "shoppingList": [
@@ -26261,7 +26936,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "n": 3,
-          "content": "Aus Schokolinsen oder Smarties eine Reihe Fußspuren über den Kuchen legen — der Täter ist entkommen."
+          "content": "Aus Schokolinsen oder bunte Schoko-Linsen eine Reihe Fußspuren über den Kuchen legen — der Täter ist entkommen."
         },
         {
           "n": 4,
@@ -26313,6 +26988,14 @@ var ELITE_MOTTO_DATA = {
         {
           "topic": "🎒 Pufferzeit einplanen",
           "detail": "Kinder lösen Rätsel mal in 5, mal in 20 Minuten. Plane pro Spiel etwas Luft ein und habe ein kurzes Reserve-Spiel (z.B. \"Detektiv-Memory\") parat, falls am Ende noch Zeit ist — oder kürze, wenn es länger dauert."
+        },
+        {
+          "topic": "🏠 Wohnung als Tatort denken",
+          "detail": "Verteile die Stationen bewusst auf verschiedene Räume: Tatort im Wohnzimmer (Absperrband), Verhör in der Küche (Sitzplätze), Fingerabdruck-Labor am Esstisch, Geheimtinte im abgedunkelten Bad/Flur. Das macht aus deiner Wohnung eine echte Detektiv-Agentur — und wenn ein Spiel kippt, gibt es im nächsten Raum schon den Reset."
+        },
+        {
+          "topic": "🌳 Garten-Erweiterung: ja, aber als Bonus",
+          "detail": "Garten ist ideal für den Spuren-Parcours (mehr Bewegung) und die Beschattungs-Mission (mehr Platz zum Pirschen). Aber: Plane immer eine Indoor-Alternative parallel — Regen macht 30 Minuten vor Party-Start aus dem Garten-Plan eine Stress-Situation, wenn es keinen Plan-B gibt."
         }
       ],
       "educationalValue": "Hinter dem Detektiv-Spiel steckt echtes Lernen. Beim Befragen der Verdächtigen und Vergleichen der Aussagen üben Kinder logisches Schlussfolgern und das Entdecken von Widersprüchen — eine Grundfähigkeit für Mathe und Sachkunde. Das Code-Knacken trainiert Mustererkennung und stärkt die entstehende Lesekompetenz. Fingerabdrücke und Geheimtinte liefern erste naturwissenschaftliche Aha-Momente. In den 2er-Teams üben die Kinder Zusammenarbeit und Geduld. Und über allem steht das Selbstwirksamkeits-Gefühl: \"Wir haben den Fall gelöst\" — das nimmt jedes Kind als Selbstvertrauen mit nach Hause."
@@ -26338,6 +27021,18 @@ var ELITE_MOTTO_DATA = {
       {
         "q": "Wie verhindere ich, dass ein Rätsel die Stimmung kippt?",
         "a": "Halte pro Spiel einen \"Tipp-Umschlag\" bereit und gib lieber früh einen Hinweis. Kinder von 6–8 frustrieren schnell, wenn etwas zu schwer ist. Die Faustregel: Ein zu leicht gelöstes Rätsel ist kein Problem, ein ungelöstes schon. Im Zweifel führst du die Gruppe mit warm/kalt-Hinweisen ans Ziel."
+      },
+      {
+        "q": "Wie verhindere ich Streit, wer den Fall „gelöst hat“?",
+        "a": "Mache Gruppenarbeit zur Regel — schon beim Schwur. Sag klar: „Wir lösen den Fall zusammen, niemand ist Chefermittler.“ Beim großen Code wird jeder Buchstabe sichtbar einem Team zugeordnet, sodass die Lösung erkennbar Gruppenarbeit ist. Die Diplome formulierst du gleichwertig („Ehren-Detektiv im Fall XY“) statt mit unterschiedlichen Rängen. Wenn doch zwei Kinder streiten, beide zu „Co-Code-Knackern“ machen — zwingt zur Kooperation."
+      },
+      {
+        "q": "Brauche ich für die Beschattungs-Mission einen extra Erwachsenen?",
+        "a": "Nicht zwingend — ein älteres Geschwisterkind reicht oder ein abholendes Elternteil, das kurz vorher schon da ist. Der „Verdächtige“ muss nur durch 3-4 Räume gehen und auffällige Dinge tun (Buch anfassen, ein Beweisstück hinlegen). Geht in 20 Minuten und kostet null Material. Wenn niemand verfügbar ist, kann auch ein großes Stofftier mit Begleit-Story als „Verdächtiger“ dienen, das du heimlich umsetzt."
+      },
+      {
+        "q": "Was ist mit Kindern, die nicht gut lesen können?",
+        "a": "Alle Codes und Hinweise haben Bilder UND Buchstaben — das ist eingeplant. Wer noch nicht sicher liest, kommt über das Bild mit. Außerdem gibt es Rollen ohne Lese-Anforderung: Spurenleser (sucht), Protokollführer (malt statt schreibt), Beweis-Fotograf, Karten-Hüter. Bei der Verdächtigen-Befragung dürfen ältere Kinder oder der „Befrager“ vorlesen — niemand muss vor der Gruppe lesen."
       }
     ],
     "preparationWeeks": {
@@ -26621,6 +27316,45 @@ var ELITE_MOTTO_DATA = {
         ],
         "fallback": "Wirklich chaotisch? Goodie-Bags mit Diplom, Lupe und Fingerabdruck-Karte in den Flur stellen, jedes Kind bekommt eins beim Gehen.",
         "tone": "praktisch"
+      },
+      "kind_findet_spur_nicht": {
+        "icon": "🐾",
+        "label": "Kind findet die nächste Spur nicht",
+        "headline": "Tipp-Umschlag öffnen — lieber zu früh helfen als die Stimmung kippen lassen.",
+        "steps": [
+          "Pro Spiel einen vorbereiteten „Tipp-Umschlag“ bereitliegen haben (Wort: „warm“, Pfeil, Bild des Verstecks). Wer ihn öffnen will, darf — das ist ausdrücklich erlaubt.",
+          "Den warm/kalt-Hinweis ins Spiel einbauen: „Ihr seid jetzt warm… wärmer… kalt!“ — das fühlt sich wie Teil der Ermittlung an, nicht wie Schummeln.",
+          "Wenn ein Kind frustriert ist: ihm gezielt eine kleine Teilaufgabe geben („Schau du mal hinter dem grünen Buch“) — Erfolgserlebnis statt Versagensgefühl.",
+          "Bei der Hinweis-Karte: prüfen, ob das Versteck eindeutig ist. Bei 6-8 sind „auf dem Bücherregal“ oder „zwischen Sofakissen“ klarer als „im Wohnzimmer“."
+        ],
+        "fallback": "Bleibt die ganze Gruppe stecken? Du selbst spielst Verdächtige(r) und „verrätst“ den Fundort beim Verhör — die Story trägt es.",
+        "tone": "praktisch"
+      },
+      "streit_ueber_loesung": {
+        "icon": "🤝",
+        "label": "Streit, wer den Fall gelöst hat",
+        "headline": "Gruppen-Lösung explizit machen — kein einzelner „Chefermittler“.",
+        "steps": [
+          "Schon beim Schwur klar sagen: „Wir sind ein Ermittler-Team. Den Fall lösen wir gemeinsam — niemand ist Chefermittler, alle sind Spürnasen.“",
+          "Wenn ein Kind „Ich hab’s zuerst gewusst!“ ruft: ruhig spiegeln: „Genau, du hast einen wichtigen Hinweis gefunden — und [Name] hat den Code geknackt. Ohne beides geht es nicht.“",
+          "Beim großen Code: jeder Buchstabe wird einzeln einem Team zugeordnet — so ist die Lösung sichtbar Gruppenarbeit, nicht Einzelleistung.",
+          "Diplome explizit gleichwertig formulieren: „Ehren-Detektiv — Teil der Ermittlung im Fall XY“ statt unterschiedlicher Ränge."
+        ],
+        "fallback": "Heißer Streit zwischen zwei Kindern? Beide kurz zu „Co-Code-Knackern“ ernennen und die Buchstaben-Tafel zu zweit aufschlüsseln lassen — zwingt zur Kooperation und löst die Spannung.",
+        "tone": "ruhig"
+      },
+      "raetsel_zu_schwer": {
+        "icon": "🧩",
+        "label": "Ein Rätsel ist zu schwer — Stimmung droht zu kippen",
+        "headline": "„Detektiv-Trick“ einsetzen statt Stille auszuhalten.",
+        "steps": [
+          "Du legst dem Code-Knacker einen „Detektiv-Trick“ in die Hand — eine bereits halb gelöste Variante des Rätsels („Schaut, ich hab schon mal die ersten zwei Buchstaben rausgefunden“). Niemand wird beschämt.",
+          "Bei zu komplexen Aussagen die Verdächtigen vorlesen lassen, statt die Kinder selbst lesen zu lassen — Lese-Hürde sinkt sofort.",
+          "Buchstaben-Karten umlegen, sodass ein Wort halb sichtbar wird — der Aha-Moment kommt früher, ist aber immer noch eine Lösung.",
+          "Bei Geheimtinte, die nicht erscheint: sofort eine zweite vorbereitete Botschaft hervorholen („Da war ja noch eine!“) — kein Drama, einfach weiter."
+        ],
+        "fallback": "Komplett verloren? Springt direkt zur Code-Auflösung mit „Tipp“: Du nimmst die Buchstaben in die Hand und legst sie öffentlich in die richtige Reihenfolge — als „Detektiv-Lehrer-Modus“. Das ist Geschichte, kein Eingeständnis.",
+        "tone": "entlastend"
       }
     }
   },
@@ -27280,6 +28014,186 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Wer eine Tüte nicht knackt, holt sich einen Spezialisten dazu, der seinen Buchstaben schon hat — gelöst wird gemeinsam, niemand bleibt hängen. Am Ende bekommt jedes Kind die volle Ermittler-Lizenz, ohne Abstufung. Wer besonders sorgfältig kombiniert hat, kriegt einen „Sorgfalt-Spezialist“-Stempel — passt zur Leitidee „im Ermittlungsdienst zählt nicht, wer der Schnellste ist, sondern wer am genauesten hinschaut“. Tempo wird hier nicht extra belohnt."
           },
           {
+            "name": "👁️ Observation auf Zeit — die Zeugen-Probe",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 15,
+            "minAge": 9,
+            "loudness": "leise",
+            "effort": "leicht",
+            "material": "1 erwachsene Person (oder älteres Geschwisterkind), die als „Augenzeuge“ in den Raum kommt. Notiz-Bögen pro Detektiv, Bleistifte. Optional: Stoppuhr.",
+            "prepText": "Echte Ermittler prüfen Zeugen-Aussagen — aber Zeugen erinnern sich falsch oder übersehen Veränderungen. Aufgabe: 2 Minuten lang eine Person beim „normalen Tun“ ansehen, dann verlässt sie den Raum und kommt mit 3 absichtlich veränderten Details zurück.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Erster Auftritt: 10 Handlungen",
+                "content": "Die Zeugen-Person betritt den Raum und macht 2 Minuten lang 10 spezifische Dinge: Buch anfassen, Bild gerade rücken, kurz aus der Flasche trinken, etwas aus der Tasche nehmen, etc. Die Detektive schauen schweigend zu und merken — nicht schreiben."
+              },
+              {
+                "n": 2,
+                "name": "Raum verlassen — und alle aufschreiben",
+                "content": "Die Person geht. Die Crew schreibt aus dem Gedächtnis auf, was sie gemacht hat — möglichst alle 10 Handlungen, in der richtigen Reihenfolge. Einzeln, nicht im Team."
+              },
+              {
+                "n": 3,
+                "name": "Zweiter Auftritt: 3 Veränderungen",
+                "content": "Die Person kommt zurück — mit 3 absichtlich geänderten Details: Ärmel hochgekrempelt (vorher unten), andere Schuhe (rechts/links getauscht oder andere Farbe), Brille auf (vorher ohne) oder Haarklammer entfernt. Die Detektive sollen die Veränderungen erkennen."
+              },
+              {
+                "n": 4,
+                "name": "Im Team abgleichen",
+                "content": "Jede Crew vergleicht ihre Notizen. Welche Handlungen hat das ganze Team gesehen, welche nur einzelne? Welche Veränderungen sind aufgefallen? Punkte zählen jetzt: 1 Punkt pro korrekter Handlung, 2 Punkte pro entdeckter Veränderung."
+              },
+              {
+                "n": 5,
+                "name": "Sorgfalt-Spezialist-Erkenntnis",
+                "content": "Wer hat mehr Veränderungen entdeckt als Handlungen erinnert? Das ist der „Sorgfalt-Spezialist“-Modus — Hinschauen ist eine andere Fähigkeit als Reihenfolge merken. Beide zählen."
+              }
+            ],
+            "safetyRule": "Keine Veränderungen, die verunsichern könnten (kein Pflaster, kein Verband, kein vorgetäuschter Schmerz) — nur Kleidung und Accessoires.",
+            "ageAdjust9": "7 Handlungen statt 10, 2 Veränderungen statt 3 — und die Veränderungen sehr deutlich machen (knallrote Mütze auf statt Brille).",
+            "ageAdjust12": "12 Handlungen, 4 subtile Veränderungen — z.B. Uhr ans andere Handgelenk, anderes Armband, Haar anders gescheitelt. Erfordert echte Beobachtungsschärfe.",
+            "indoorTip": "Im hell beleuchteten Wohnzimmer — die Detektive müssen die Details klar sehen können. Im Halbdunkel ist das frustrierend.",
+            "outdoorTip": "Im Garten geht es auch — die Zeugen-Person macht ihren „Auftritt“ am Gartentisch, die Detektive sitzen drumherum.",
+            "whyItWorksTitle": "Echte Ermittler-Fähigkeit: präzise Beobachtung",
+            "whyItWorks": "Echte Forensiker wissen: Zeugen erinnern sich oft falsch oder übersehen Offensichtliches. Die Kinder erleben das selbst — Beobachten ist trainierbar, im Team wird mehr gesehen als allein. Im Gegensatz zum Memory-Tablett trainiert das hier den Vergleich „vorher/nachher an einer Person“ — eine andere kognitive Leistung."
+          },
+          {
+            "name": "🎨 Phantombild-Station (Bonus-Modul)",
+            "indoor": true,
+            "outdoor": false,
+            "duration": 15,
+            "minAge": 9,
+            "loudness": "leise",
+            "effort": "leicht",
+            "material": "Pro Detektiv: 1 Phantombild-Vorlage (DIN A5, vorgezeichnetes Gesichts-Oval mit Hilfslinien für Augen/Mund), Bleistifte, 1 Beschreibungs-Karte mit Zeugen-Aussage zum „Verdächtigen“, optional Radiergummi.",
+            "prepText": "Auf der Karte steht eine kurze Zeugen-Aussage zum Verdächtigen, z.B.: „Mittelgroß, runde Brille, kurze Haare, kleine Narbe links über dem Auge, schiefes Lächeln.“ Aufgabe: aus dieser Beschreibung ein Phantombild zeichnen — Genauigkeits-Übung, kein Kunst-Wettbewerb.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Aussage vorlesen",
+                "content": "Du liest die Zeugen-Aussage zwei Mal laut vor. Die Detektive notieren in Stichworten, was beschrieben wird."
+              },
+              {
+                "n": 2,
+                "name": "Phantombild zeichnen",
+                "content": "Jeder zeichnet aus den Stichworten auf seiner Vorlage ein Phantombild — keine Kunstnoten, es geht um Genauigkeit zur Beschreibung."
+              },
+              {
+                "n": 3,
+                "name": "Bilder vergleichen",
+                "content": "Die fertigen Phantombilder werden nebeneinander gelegt. Welche Merkmale haben alle erkannt? Welche nur einzelne? Wo gibt es Abweichungen?"
+              },
+              {
+                "n": 4,
+                "name": "Mit den Verdächtigen abgleichen",
+                "content": "Die 5 Verdächtigen-Karten aus dem Profiler-Spiel werden gezeigt. Welcher passt am besten zum Phantombild? Achtung: Es ist der mit der Brille und der Narbe — nicht Mara, sondern Tobias."
+              },
+              {
+                "n": 5,
+                "name": "Ins Logbuch",
+                "content": "Das beste Phantombild wandert als „Beweisstück Nr. X“ in die Fallakte und stützt den Plot-Twist beim Showdown."
+              }
+            ],
+            "safetyRule": null,
+            "ageAdjust9": "Vereinfachte Beschreibung mit nur 3 Merkmalen. Vorgezeichnetes Gesicht ist halb fertig — nur Brille/Haare ergänzen.",
+            "ageAdjust12": "Detailreiche Beschreibung (7-8 Merkmale), keine Vorlage — leeres Blatt. Wer mag, zeichnet zwei Versionen (Frontal + Profil) wie auf einer echten Fahndungs-Akte.",
+            "indoorTip": "Am Esstisch mit guter Beleuchtung — Zeichnen braucht Licht. Bleistifte mit weicher Mine (B oder 2B) gehen leichter.",
+            "outdoorTip": null,
+            "whyItWorksTitle": "Beschreiben üben — wichtiger als Talent",
+            "whyItWorks": "Phantombild-Zeichnen ist Genauigkeit, keine Kunst: Wie präzise übersetzt das Hirn Wörter in Bilder? Auch nicht-zeichnerische Kinder kommen gut zurecht, weil es um Merkmale geht. Der direkte Abgleich mit den Verdächtigen-Karten gibt einen klaren Aha-Moment, der den Plot-Twist sichtbar macht."
+          },
+          {
+            "name": "💓 Lügendetektor-Probe (Bonus-Modul)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 15,
+            "minAge": 9,
+            "loudness": "leise",
+            "effort": "leicht",
+            "material": "1 Stoppuhr oder Handy-Stopuhr, 1 Notiz-Bogen pro Detektiv, eine ruhige Sitzecke. Optional: pulsmesser-Uhr (falls vorhanden — nicht nötig, der Daumen am Handgelenk reicht völlig).",
+            "prepText": "Echte Lügendetektoren messen Puls und Hautleitfähigkeit — wir nutzen den Klassiker: Puls mit zwei Fingern am Handgelenk fühlen. Pulsschlag im Ruhezustand und bei einer „Aufregungs-Frage“ vergleichen. Spannend, harmlos, echte forensische Logik.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Ruhepuls finden",
+                "content": "Jeder Detektiv legt zwei Finger ans Handgelenk (Daumenseite) oder am Hals, bis er den eigenen Puls spürt. 15 Sekunden Schläge zählen, mal 4 = Puls pro Minute. Notieren."
+              },
+              {
+                "n": 2,
+                "name": "Eine kleine Aufregungs-Frage",
+                "content": "Du stellst eine harmlose, aber leicht aufregende Frage: „Was ist dein peinlichster Spitzname?“ oder „Was wünschst du dir am meisten zum Geburtstag?“ — und misst direkt danach erneut Puls. Notieren."
+              },
+              {
+                "n": 3,
+                "name": "Vergleichen",
+                "content": "Bei den meisten ist der Puls leicht höher. Das ist normal — Aufregung erhöht den Puls. Genau das nutzen echte Lügendetektoren: sie messen, ob Antworten Stress auslösen."
+              },
+              {
+                "n": 4,
+                "name": "Die Detektiv-Lektion",
+                "content": "Höherer Puls = NICHT zwingend Lüge, oft nur Aufregung. Deshalb gelten echte Lügendetektoren nicht vor Gericht — gute Ermittler vergleichen Aussagen und Indizien, nicht Pulswerte."
+              },
+              {
+                "n": 5,
+                "name": "Logbuch-Eintrag",
+                "content": "In die Fallakte: „Lügendetektor allein reicht nicht — nur die Indizienkette zählt.“ Direkte Brücke zum Plot-Twist (stärkstes Motiv ≠ Beweis)."
+              }
+            ],
+            "safetyRule": "Keine peinlichen, beschämenden Fragen — die „Aufregungs-Frage“ bleibt leicht. Wer nicht antworten will, misst nur Ruhepuls; der Effekt zeigt sich an anderen.",
+            "ageAdjust9": "Bei der Puls-Messung selbst helfen — kleine Finger finden den Puls manchmal nur schwer. Eine ruhige Sitzposition macht das Zählen leichter.",
+            "ageAdjust12": "Zweite Messung nach 20 Hampelmännern (körperliche Aktivität) — und vergleichen mit der „Aufregungs-Frage“-Messung. Was treibt den Puls stärker hoch? Echte forensische Erkenntnis: Stress sieht man oft nicht am Puls allein.",
+            "indoorTip": "Eine ruhige Ecke abseits des Trubels — Pulsfühlen geht nur im Sitzen und in halbwegs leiser Umgebung.",
+            "outdoorTip": "Im schattigen Garten geht das gut — frische Luft + Ruhe = klarer Pulsschlag spürbar.",
+            "whyItWorksTitle": "Forensik-Lektion mit Aha-Moment",
+            "whyItWorks": "Die Kinder erleben am eigenen Körper, wie Aufregung den Puls steigert — und schließen daraus, dass das allein kein Beweis ist. Vertieft die Plot-Twist-Lektion: Verdächtig-Wirken ist kein Beweis. Körperliche Erfahrung + logische Erkenntnis bleibt in dem Alter im Gedächtnis."
+          },
+          {
+            "name": "🗣️ Kreuzverhör mit Fangfragen (Bonus für 11-12)",
+            "indoor": true,
+            "outdoor": true,
+            "duration": 20,
+            "minAge": 10,
+            "loudness": "halblaut",
+            "effort": "mittel",
+            "material": "1 Erwachsener oder älteres Geschwisterkind als „Verdächtige(r)“ mit gut vorbereiteter Alibi-Geschichte (5-6 Details, davon 1-2 absichtliche Widersprüche). Notiz-Hefte für die Detektive, Bleistifte. Optional: Stoppuhr für Fragenrunde.",
+            "prepText": "Anders als das Standard-Verhör formuliert hier jedes Kind eigene Fragen — Bonuspunkte für Fangfragen, die einen Widerspruch entlarven. Profiler-Arbeit: Fragen so stellen, dass die Antwort verrät, ob jemand seine Geschichte erlebt hat.",
+            "steps": [
+              {
+                "n": 1,
+                "name": "Vorgeschichte vorlesen",
+                "content": "Der Verdächtige liest sein Alibi vor: „19:00-21:00 im Park, Spaziergang, dann beim Bäcker eine Brezel.“ Inkl. 1-2 versteckter Widersprüche (z.B. Bäcker war laut Aussage geschlossen)."
+              },
+              {
+                "n": 2,
+                "name": "Fragen formulieren",
+                "content": "Jedes Team hat 3 Min., um eigene Fragen zu notieren. Tipp: Welche Details kann man prüfen? Welche Fragen brauchen konkrete Antworten (nicht ja/nein)?"
+              },
+              {
+                "n": 3,
+                "name": "Kreuzverhör",
+                "content": "Reihum eine Frage pro Team. Der Verdächtige antwortet — mal vage, mal mit Detail. Widersprüche notieren."
+              },
+              {
+                "n": 4,
+                "name": "Punkte vergeben",
+                "content": "Ehrliche Detail-Frage = 1 Punkt. Frage, die einen Widerspruch aufdeckt = 3 Punkte („Fangfrage“). Punkte = Sorgfalt-Spezialist-Stempel."
+              },
+              {
+                "n": 5,
+                "name": "Abschluss",
+                "content": "Teams präsentieren entdeckte Widersprüche. Bonuspunkte für selbst gefundene Details. Übergabe an die Indizienkette."
+              }
+            ],
+            "safetyRule": "Der Verdächtige bleibt freundlich und nicht-bedrohlich — Kreuzverhör heißt nicht „anbrüllen“. Bei jüngeren Kindern (9-10) auf das Standard-Verhör zurückgreifen.",
+            "ageAdjust9": "Nicht empfohlen — bei 9-10 das Standard-Verhör nutzen. Diese Variante ist explizit für 11-12.",
+            "ageAdjust12": "Volle Tiefe: 2-3 versteckte Widersprüche, freie Fragen ohne Vorgaben, Punkte werden öffentlich angeschrieben und sind sportlich-fair. Zeitlimit von 5 Minuten pro Team — schult Fokus.",
+            "indoorTip": "Ein „Verhör-Raum“ mit gedämpftem Licht und einer hellen Schreibtisch-Lampe — wirkt sofort wie Krimi. Verdächtiger sitzt, Detektive stehen oder sitzen gegenüber.",
+            "outdoorTip": "Im schattigen Garten als „Aussage am Gartentisch“ — funktioniert genauso, ist nur weniger atmosphärisch.",
+            "whyItWorksTitle": "Logische Schärfe — kein Bauchgefühl",
+            "whyItWorks": "Eigene Fragen zu formulieren ist die anspruchsvollste Detektiv-Übung: vom „wer wirkt verdächtig“ zum „welche Antwort wäre verräterisch“. Genau dieser Wechsel grenzt ältere Tweens vom „Kinder-Krimi“ ab — sie wollen ernst genommen werden und echte logische Arbeit, nicht nur Hinweise sammeln."
+          },
+          {
             "name": "🔍 Die Indizienkette schließen — Hauptmission",
             "indoor": true,
             "outdoor": true,
@@ -27878,6 +28792,14 @@ var ELITE_MOTTO_DATA = {
         {
           "topic": "🕒 Abholzeit vorher klären — bei Schlafparty doppelt",
           "detail": "„Wir holen so gegen 17 Uhr ab“ ist keine Abholzeit. Konkret in die Einladung: „Abholung 17:30, die Lizenz-Zeremonie ist um 17:00 und wir wollen den Fall-Abschluss nicht stressen.“ Bei Schlafparty schriftlich bestätigen lassen, wer wann abholt."
+        },
+        {
+          "topic": "🏠 Wohnung als Detektiv-Agentur denken",
+          "detail": "Verteile die fünf Stationen sichtbar auf verschiedene Räume: Tatort im Wohnzimmer (Absperrband, Fingerabdruck-Glas), Verhör-Raum in der Küche (Aussage-Karten + Zeitleiste), Codeknacker am Esstisch, Geheimschrift-Ecke im halbdunklen Flur, Beobachtungs-Tablett am Sideboard. Die Wohnung wird zur „Villa Sonnberg“ — und die Raum-Wechsel selbst sind schon Bewegung."
+        },
+        {
+          "topic": "🌳 Garten-Erweiterung für die Wow-Variante",
+          "detail": "Garten ist Pflicht-Plus für die TRESOR-Schatzsuche und die UV-Nacht-Spurensuche. Spuren-Sicherung im Beet (echter Schuhabdruck im Sand) wirkt 10× authentischer als drinnen. Aber: Alle 5 Standard-Stationen funktionieren komplett indoor — der Garten ist Ergänzung, nicht Voraussetzung. Vor der Schlafparty-Nacht-Spurensuche: Stolperfallen im Dunkeln vorher entschärfen."
         }
       ],
       "educationalValue": "Was die Kinder mitnehmen: forensische Grundtechniken (Fingerabdruck mit Graphit und Klebeband sichern, Fasern und Spuren vergleichen), Ermittler-Logik (ein einzelnes Indiz beweist nichts, das stärkste Motiv macht nicht den Täter), das Prüfen von Aussagen gegen eine Zeitleiste statt gegen das Bauchgefühl, echte Kryptografie (Caesar-Chiffre und Zahlen-Codes selbst lösen) und Kooperation zwischen Spezialisierungen, von denen keine allein zum Ziel kommt. Die Leitidee „im Ermittlungsdienst zählt, wer am genauesten hinschaut, nicht wer am schnellsten beschuldigt“ trägt durch die ganze Party."
@@ -27907,6 +28829,18 @@ var ELITE_MOTTO_DATA = {
       {
         "q": "Funktioniert der Detektiv-Geburtstag auch als Schlafparty?",
         "a": "Ja, die Wow-Variante ist explizit für den Schlafparty-Anschluss konzipiert. Programm: 15-19 Uhr voller Fall + Escape-Room-Schatzsuche, ab 19 Uhr Eltern der Nicht-Bleiber raus, ab 19:30 UV-Nacht-Spurensuche im Dunkeln, dann Krimi-Film, Schlafsäcke, Frühstück. Empfohlen ab 10 Jahren, schriftliche Eltern-Bestätigung zwingend."
+      },
+      {
+        "q": "Was tun, wenn ein Kind den Plot-Twist verrät, bevor er sich entwickelt?",
+        "a": "Nicht abwürgen — stattdessen zurückfragen: „Welcher Beweis stützt das? Motiv allein reicht noch nicht.“ Das nimmt die voreilige Beschuldigung ernst und lenkt die Gruppe wieder auf Sorgfalt. Wenn die Antwort wackelig ist, lobst du das genaue Nachfragen („Genau, da müssen wir noch prüfen“) — das macht aus dem Spoiler einen Lernmoment, ohne den Twist zu zerstören."
+      },
+      {
+        "q": "Wie messen die Kinder beim Lügendetektor-Test wirklich Puls?",
+        "a": "Zwei Finger ans Handgelenk (Daumenseite, eine Daumenbreite unter dem Knöchel) oder seitlich am Hals legen, bis der Puls spürbar wird. 15 Sekunden zählen, Ergebnis × 4 = Schläge pro Minute. Die meisten Kinder finden den Puls mit etwas Hilfe — eine ruhige Sitzposition macht es leichter. Eine extra Pulsmesser-Uhr ist nicht nötig, der Daumen reicht. Wichtig: Die Aufregungs-Frage harmlos halten und besprechen, dass höherer Puls nicht „Lüge“, sondern oft nur „Nervosität“ heißt — genau diese forensische Lektion ist der Wert der Übung."
+      },
+      {
+        "q": "Wie verhindere ich Streit, wer den Fall „gelöst hat“?",
+        "a": "Vergib den Sorgfalt-Spezialist-Stempel an mehrere Kinder — explizit an die, die GENAU gearbeitet haben, nicht an die, die als Erste eine Antwort gerufen haben. Sage das beim Eid laut: „Im Ermittlungsdienst zählt nicht Tempo, sondern Sorgfalt.“ Bei festgefahrenen Konflikten zwei „Co-Chefermittler“ ernennen, die zusammen die Auflösung vortragen — zwingt zur Kooperation und löst die Spannung."
       }
     ],
     "preparationWeeks": {
@@ -28175,6 +29109,45 @@ var ELITE_MOTTO_DATA = {
         ],
         "fallback": "Die Lizenz-Übergabe dauert 5 Minuten und rundet jeden Fall ab — sie lässt sich jederzeit vorziehen.",
         "tone": "diplomatisch"
+      },
+      "kind_findet_spur_nicht": {
+        "icon": "🐾",
+        "label": "Crew kommt an einer Station nicht weiter",
+        "headline": "„Spezialisten-Wechsel“ erlauben — keine Verlierer-Logik bei 9-12.",
+        "steps": [
+          "Sage von Anfang an klar: Jede Station hat eine Lösungs-Karte am Tisch zum Selbst-Check. Wer 10 Minuten nicht weiterkommt, darf reinschauen — das ist Teil der Ermittlung, nicht Schummeln.",
+          "Bei festgefahrenem Codeknacker: Ein Kind der anderen Spezialisierung darf einen Tipp geben („Schaut mal auf die Zahlen“). Das ist genau die Kooperation, die der Fall sowieso braucht.",
+          "Wenn ein Kind merkt, dass es die Sortier-Regel falsch verstanden hat: lobend bestätigen („Genau, du hast den Fehler gefunden — Selbst-Korrektur ist Sorgfalt-Spezialist-Stoff“). Belohne den Selbst-Check, nicht das Sofort-Wissen.",
+          "Bei Caesar-Chiffre: Die Verschiebezahl groß auf die Stationskarte schreiben — und einen Tipp-Umschlag mit einem Beispiel-Buchstaben bereitlegen."
+        ],
+        "fallback": "Die ganze Crew kommt nicht weiter? Du wirst zum „Ermittlungs-Leiter“, gehst mit ihnen Schritt für Schritt durch die Aufgabe und löst sie als Team-Erlebnis. Bei 9-12 ist das ehrenhaft, kein Versagen.",
+        "tone": "praktisch"
+      },
+      "streit_ueber_loesung": {
+        "icon": "🤝",
+        "label": "Streit, wer den Fall „wirklich“ gelöst hat",
+        "headline": "Sorgfalt-Spezialist statt 1.-Detektiv — Anerkennung neu verteilen.",
+        "steps": [
+          "Schon beim Fall-Auftrag explizit sagen: „Im Ermittlungsdienst zählt nicht, wer am schnellsten beschuldigt, sondern wer am genauesten hinschaut.“ Das ist die Grundregel.",
+          "Wer als Erster ruft „Es war Tobias!“: ruhig zurückfragen: „Welcher Beweis stützt das? Motiv allein reicht nicht.“ Das nimmt Tempo raus und lenkt auf Sorgfalt.",
+          "Den Sorgfalt-Spezialist-Stempel bewusst an Kinder vergeben, die genau gearbeitet haben — nicht an die, die zuerst eine Antwort gerufen haben. Mehrere Stempel sind explizit erlaubt.",
+          "Bei harten Konflikten: zwei „Co-Chefermittler“ ernennen, die zusammen die Auflösung vor der Crew vortragen. Zwingt zur Kooperation, löst die Spannung."
+        ],
+        "fallback": "Schwerer Streit zwischen 2-3 Kindern? Du zerlegst die Auflösung in 3 Sätze und gibst jedem Kind einen Satz vor der Crew zu sprechen — kollektive Ehre, keine Hierarchie.",
+        "tone": "ruhig"
+      },
+      "fall_zu_komplex": {
+        "icon": "🧩",
+        "label": "Der Fall überfordert die Gruppe",
+        "headline": "Schritte abkürzen, Plot-Twist erklären — Story trägt den Rest.",
+        "steps": [
+          "Wenn der Codeknacker stockt: Du löst öffentlich einen Quadranten („Ich zeige euch mal, wie der Spurensicherer-Teil funktioniert“) — die anderen zwei lösen sie selbst, und die Crew merkt den Unterschied gar nicht.",
+          "Wenn die Indizienkette nicht zustande kommt: Du legst die Fäden selbst auf der Tafel, erklärst aber laut die Logik. Erfahrungsbasiert lernen statt selbst-erfahren — beides ist erlaubt.",
+          "Wenn der Plot-Twist nicht greift: Direkt nach dem Codeknacker laut ankündigen: „Achtung Detektive — wer das stärkste Motiv hat, ist diesmal nicht der Täter. Sammelt die Beweise sorgfältig.“ Spoiler hilft mehr als Frust.",
+          "Lieber die TRESOR-Schatzsuche (Wow) auf 4 statt 6 Stationen kürzen als sie halb gelöst abbrechen."
+        ],
+        "fallback": "Komplett zu komplex? Variante runtersetzen mitten in der Party — von Standard auf Minimal: Codeknacker + Fingerabdruck + Indizienkette in 90 Min reicht für einen vollwertigen Fall.",
+        "tone": "entlastend"
       }
     }
   },
@@ -28192,16 +29165,16 @@ var ELITE_MOTTO_DATA = {
       5
     ],
     "title": "🧜‍♀️ Meerjungfrau-Kindergeburtstag — 3–5 Jahre",
-    "metaDescription": "Meerjungfrau-Geburtstag fuer 3–5 Jahre: ruhige Unterwasser-Welt statt gruseliger Tiefsee. Perlen sammeln, Korallen-Garten bauen, Fisch-Freunde finden. Drei Budget-Varianten ab 35 €, 10 Spiele mit Altersanpassung, Vorbereitungsplan und SOS-Hilfen. Auch fuer Jungen (Tritonen-Variante).",
-    "introParagraph": "Eine Meerjungfrau-Party fuer Drei- bis Fuenfjaehrige lebt nicht von Glitzer-Wettbewerb, sondern von einer ruhigen, freundlichen Unterwasser-Welt: ein Korallenriff im Wohnzimmer, verlorene Perlen, die gesammelt werden wollen, und ein paar Fisch-Freunde, denen man hilft. Kein gruseliges Tiefsee-Thema, keine Haie, keine Strudel — bei kleinen Kindern macht das mehr Angst als Freude. Und ganz wichtig: Meerjungfrau ist hier kein reines Maedchen-Thema. Mit der Tritonen-Variante (Meermaenner) und geschlechtsneutralen „Ozean-Helfern“ sind alle Kinder gemeint. Diese Seite gibt dir drei Varianten vom 35-Euro-Wohnzimmer-Riff bis zur 80-Euro-Schatzsuche, jede mit fertigem Ablauf, Einkaufsliste und Plan B.",
+    "metaDescription": "Meerjungfrau-Geburtstag fuer 3–5 Jahre: ruhige Unterwasser-Welt statt gruseliger Tiefsee. Perlen sammeln, Korallen-Garten bauen, Fisch-Freunde finden. Drei Budget-Varianten ab 35 €, 10 Spiele mit Altersanpassung, Vorbereitungsplan und SOS-Hilfen. Auch fuer Jungen (Meerprinz-Variante).",
+    "introParagraph": "Eine Meerjungfrau-Party fuer Drei- bis Fuenfjaehrige lebt nicht von Glitzer-Wettbewerb, sondern von einer ruhigen, freundlichen Unterwasser-Welt: ein Korallenriff im Wohnzimmer, verlorene Perlen, die gesammelt werden wollen, und ein paar Fisch-Freunde, denen man hilft. Kein gruseliges Tiefsee-Thema, keine Haie, keine Strudel — bei kleinen Kindern macht das mehr Angst als Freude. Und ganz wichtig: Meerjungfrau ist hier kein reines Maedchen-Thema. Mit der Meerprinz-Variante (Wellen-Krone, Seestern-Stirnband) und geschlechtsneutralen „Ozean-Helfern“ sind alle Kinder gemeint. Diese Seite gibt dir drei Varianten vom 35-Euro-Wohnzimmer-Riff bis zur 80-Euro-Schatzsuche, jede mit fertigem Ablauf, Einkaufsliste und Plan B.",
     "signatureRitual": {
       "name": "Das kleine Meerjungfrau-Versprechen",
       "subtitle": "Eroeffnet die Party (Muschel-Uebergabe) + Perlen-Urkunde am Ende",
-      "introText": "Bei 3–5 funktioniert kein langes Versprechen und kein Stillstehen im Kreis — die Geduld reicht nicht. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener Hand in Hand mit dem Kind macht. Beim Ankommen bekommt jedes Kind ein Muschel-Stirnband und einen Meeres-Namen: aus „Gast“ wird „Mini-Meerjungfrau Mia“ oder „Triton Ben“. Der Erwachsene setzt das Stirnband auf — das Aufsetzen ist der Moment, nicht das Kind macht es selbst. Dazu drueckt man dem Kind eine kleine Muschel in die Hand: „Das ist deine Start-Muschel. Heute helfen wir den Fischen und sammeln die verlorenen Perlen.“ Am Ende, statt eines Wettkampf-Siegers, bekommt JEDES Kind dieselbe Perlen-Urkunde und eine Hand voll „echter“ Perlen (Perlen-Schoki). Kein Tempo, kein Ranking — alle sind Meeres-Helfer, alle bekommen dasselbe.",
+      "introText": "Bei 3–5 funktioniert kein langes Versprechen und kein Stillstehen im Kreis — die Geduld reicht nicht. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener Hand in Hand mit dem Kind macht. Beim Ankommen bekommt jedes Kind ein Muschel-Stirnband und einen Meeres-Namen: aus „Gast“ wird „Mini-Meerjungfrau Mia“ oder „Meerprinz Ben“. Der Erwachsene setzt das Stirnband auf — das Aufsetzen ist der Moment, nicht das Kind macht es selbst. Dazu drueckt man dem Kind eine kleine Muschel in die Hand: „Das ist deine Start-Muschel. Heute helfen wir den Fischen und sammeln die verlorenen Perlen.“ Am Ende, statt eines Wettkampf-Siegers, bekommt JEDES Kind dieselbe Perlen-Urkunde und eine Hand voll „echter“ Perlen (Perlen-Schoki). Kein Tempo, kein Ranking — alle sind Meeres-Helfer, alle bekommen dasselbe.",
       "setupSteps": [
         {
           "title": "Muschel-Stirnbaender mit Meeres-Namen vorbereiten",
-          "content": "Pro Kind ein Stirnband aus Tonpapier (ca. 5 cm × 55 cm) mit einem Muschel-Sticker oder einer aufgeklebten Pappmuschel. Schreib den Namen schon drauf oder nutze ein Klett-Schild zum Anstecken. Beim Aufsetzen sagst du: „Du bist jetzt Mini-Meerjungfrau Mia.“ — oder „Triton Ben“ fuer Jungen. Erwachsener setzt auf, das ist der rituelle Moment."
+          "content": "Pro Kind ein Stirnband aus Tonpapier (ca. 5 cm × 55 cm) mit einem Muschel-Sticker oder einer aufgeklebten Pappmuschel. Schreib den Namen schon drauf oder nutze ein Klett-Schild zum Anstecken. Beim Aufsetzen sagst du: „Du bist jetzt Mini-Meerjungfrau Mia.“ — oder „Meerprinz Ben“ fuer Jungen. Erwachsener setzt auf, das ist der rituelle Moment."
         },
         {
           "title": "Start-Muscheln bereitlegen",
@@ -28263,7 +29236,7 @@ var ELITE_MOTTO_DATA = {
         }
       ],
       "optOutNote": "Manche Kinder wollen kein Stirnband, keine Rolle oder einfach nur zuschauen — das ist bei 3-5 voellig normal und kein Problem. Zwing kein Kind in eine Rolle. Leg das Stirnband daneben, sag „du kannst es spaeter aufsetzen, wenn du magst“ und mach weiter. Oft kommt das Kind nach 10 Minuten von selbst dazu, wenn es sieht, dass es Spass macht. Die Start-Muschel und die Urkunde bekommt JEDES Kind am Ende — auch das, das nicht mitgespielt hat. Kein Kind geht ohne Perlen-Beutel nach Hause.",
-      "materialNote": "Fuer das Ritual brauchst du nur drei Dinge: Tonpapier-Stirnbaender mit Muschel-Stickern (👉 amazon.de/s?k=muschel+sticker+basteln&tag=machsleicht-21, ~5 €), kleine Deko-Muscheln im Set (👉 amazon.de/s?k=deko+muscheln+set&tag=machsleicht-21, ~6 €) und Perlen-Schokolade fuer die Beutel (👉 amazon.de/s?k=schokoladen+perlen&tag=machsleicht-21, ~4 €). Stirnbaender kannst du auch komplett selbst aus Tonpapier-Resten basteln — ein aufgemalter Muschel-Kringel reicht den Kleinen voellig. Die Tritonen-Variante fuer Jungen: statt Muschel ein Dreizack-Sticker oder eine kleine Krone."
+      "materialNote": "Fuer das Ritual brauchst du nur drei Dinge: Tonpapier-Stirnbaender mit Muschel-Stickern (👉 amazon.de/s?k=muschel+sticker+basteln&tag=machsleicht-21, ~5 €), kleine Deko-Muscheln im Set (👉 amazon.de/s?k=deko+muscheln+set&tag=machsleicht-21, ~6 €) und Perlen-Schokolade fuer die Beutel (👉 amazon.de/s?k=schokoladen+perlen&tag=machsleicht-21, ~4 €). Stirnbaender kannst du auch komplett selbst aus Tonpapier-Resten basteln — ein aufgemalter Muschel-Kringel reicht den Kleinen voellig. Die Meerprinz-Variante fuer Jungen: statt Muschel ein Wellen-Sticker oder eine kleine Krone."
     },
     "ageInsight": {
       "headline": "Warum 3–5-Jaehrige eine ruhige Unterwasser-Welt brauchen — keine Tiefsee",
@@ -28298,7 +29271,7 @@ var ELITE_MOTTO_DATA = {
         }
       ],
       "whyMottoFitsHeadline": "Warum Meerjungfrau bei 3–5 so gut traegt",
-      "whyMottoFits": "Die Unterwasser-Welt ist fuer kleine Kinder ein Sehnsuchts-Bild, das sie aus Bilderbuechern und Filmen kennen — bunt, sanft, voller freundlicher Tiere. Anders als Piraten (Kampf) oder Weltraum (Dunkelheit) bietet das Meer von Natur aus ruhige, helle Bilder: Perlen, Muscheln, Fische, Korallen. Die Verwandlung in eine Mini-Meerjungfrau oder einen Triton ist einfach (ein Stirnband reicht) und traegt das ganze Rollenspiel. Und weil es ums Sammeln, Helfen und Bauen geht statt ums Gewinnen, passt das Thema perfekt zur Parallelspiel-Phase. Wichtig fuer die Inklusion: Mit Tritonen und geschlechtsneutralen „Ozean-Helfern“ ist es ausdruecklich kein Maedchen-Thema — alle Kinder sind im Riff willkommen."
+      "whyMottoFits": "Die Unterwasser-Welt ist fuer kleine Kinder ein Sehnsuchts-Bild, das sie aus Bilderbuechern und Filmen kennen — bunt, sanft, voller freundlicher Tiere. Anders als Piraten (Kampf) oder Weltraum (Dunkelheit) bietet das Meer von Natur aus ruhige, helle Bilder: Perlen, Muscheln, Fische, Korallen. Die Verwandlung in eine Mini-Meerjungfrau oder einen Meerprinzen ist einfach (ein Stirnband reicht) und traegt das ganze Rollenspiel. Und weil es ums Sammeln, Helfen und Bauen geht statt ums Gewinnen, passt das Thema perfekt zur Parallelspiel-Phase. Wichtig fuer die Inklusion: Mit Meerprinzen und geschlechtsneutralen „Ozean-Helfern“ ist es ausdruecklich kein Maedchen-Thema — alle Kinder sind im Riff willkommen."
     },
     "variants": [
       {
@@ -28344,12 +29317,12 @@ var ELITE_MOTTO_DATA = {
             "loudness": "leise",
             "effort": "mittel",
             "material": "Vorgeschnittene Tonpapier-Streifen (~5 cm × 55 cm), Muschel-Sticker oder Pappmuscheln, dicke Filzstifte, Klebepunkte, Glitzer-Sticker. Schere und Tacker NUR in Erwachsenenhand.",
-            "prepText": "Stirnbaender komplett vorbereiten: Laenge passend zugeschnitten, eine Pappmuschel pro Band schon angeklebt. Kinder duerfen nur noch verzieren und Sticker aufkleben. Fuer die Tritonen-Variante: ein paar Dreizack-Sticker oder Kronen-Vorlagen dazulegen.",
+            "prepText": "Stirnbaender komplett vorbereiten: Laenge passend zugeschnitten, eine Pappmuschel pro Band schon angeklebt. Kinder duerfen nur noch verzieren und Sticker aufkleben. Fuer die Meerprinz-Variante: ein paar Wellen-Sticker oder Kronen-Vorlagen dazulegen.",
             "steps": [
               {
                 "n": 1,
                 "name": "Aussuchen",
-                "content": "Jedes Kind sucht sich sein Band aus — Muschel (Mini-Meerjungfrau) oder Dreizack/Krone (Triton). Beides liegt bereit, kein „richtig oder falsch“."
+                "content": "Jedes Kind sucht sich sein Band aus — Muschel (Mini-Meerjungfrau) oder Wellen-Krone (Meerprinz). Beides liegt bereit, kein „richtig oder falsch“."
               },
               {
                 "n": 2,
@@ -28373,7 +29346,7 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": "Reines Tisch-Spiel, ideal als ruhiger Einstieg direkt nach der Ankunft, solange noch Kinder eintrudeln.",
             "outdoorTip": null,
             "whyItWorksTitle": "Warum das funktioniert",
-            "whyItWorks": "Das Stirnband macht aus dem Gast eine Mini-Meerjungfrau oder einen Triton — die Verwandlung, die das ganze Rollenspiel traegt. Vorgeschnitten heisst: kein Frust, kein Schere-Chaos, jedes Kind ist in unter 10 Minuten fertig und fuehlt sich sofort als Teil der Unterwasser-Welt."
+            "whyItWorks": "Das Stirnband macht aus dem Gast eine Mini-Meerjungfrau oder einen Meerprinzen — die Verwandlung, die das ganze Rollenspiel traegt. Vorgeschnitten heisst: kein Frust, kein Schere-Chaos, jedes Kind ist in unter 10 Minuten fertig und fuehlt sich sofort als Teil der Unterwasser-Welt."
           },
           {
             "name": "🦪 Verlorene Perlen sammeln",
@@ -28611,12 +29584,12 @@ var ELITE_MOTTO_DATA = {
             "loudness": "leise",
             "effort": "mittel",
             "material": "Vorgeschnittene Tonpapier-Streifen (~5 cm × 55 cm), Muschel-Sticker oder Pappmuscheln, dicke Filzstifte, Klebepunkte, Glitzer-Sticker. Schere und Tacker NUR in Erwachsenenhand.",
-            "prepText": "Stirnbaender komplett vorbereiten: Laenge passend zugeschnitten, eine Pappmuschel pro Band schon angeklebt. Kinder duerfen nur noch verzieren und Sticker aufkleben. Fuer die Tritonen-Variante: ein paar Dreizack-Sticker oder Kronen-Vorlagen dazulegen.",
+            "prepText": "Stirnbaender komplett vorbereiten: Laenge passend zugeschnitten, eine Pappmuschel pro Band schon angeklebt. Kinder duerfen nur noch verzieren und Sticker aufkleben. Fuer die Meerprinz-Variante: ein paar Wellen-Sticker oder Kronen-Vorlagen dazulegen.",
             "steps": [
               {
                 "n": 1,
                 "name": "Aussuchen",
-                "content": "Jedes Kind sucht sich sein Band aus — Muschel (Mini-Meerjungfrau) oder Dreizack/Krone (Triton). Beides liegt bereit, kein „richtig oder falsch“."
+                "content": "Jedes Kind sucht sich sein Band aus — Muschel (Mini-Meerjungfrau) oder Wellen-Krone (Meerprinz). Beides liegt bereit, kein „richtig oder falsch“."
               },
               {
                 "n": 2,
@@ -28640,7 +29613,7 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": "Reines Tisch-Spiel, ideal als ruhiger Einstieg direkt nach der Ankunft, solange noch Kinder eintrudeln.",
             "outdoorTip": null,
             "whyItWorksTitle": "Warum das funktioniert",
-            "whyItWorks": "Das Stirnband macht aus dem Gast eine Mini-Meerjungfrau oder einen Triton — die Verwandlung, die das ganze Rollenspiel traegt. Vorgeschnitten heisst: kein Frust, kein Schere-Chaos, jedes Kind ist in unter 10 Minuten fertig und fuehlt sich sofort als Teil der Unterwasser-Welt."
+            "whyItWorks": "Das Stirnband macht aus dem Gast eine Mini-Meerjungfrau oder einen Meerprinzen — die Verwandlung, die das ganze Rollenspiel traegt. Vorgeschnitten heisst: kein Frust, kein Schere-Chaos, jedes Kind ist in unter 10 Minuten fertig und fuehlt sich sofort als Teil der Unterwasser-Welt."
           },
           {
             "name": "🐠 Fisch-Freunde-Quiz (Tierstimmen + Bewegungen)",
@@ -28999,12 +29972,12 @@ var ELITE_MOTTO_DATA = {
             "loudness": "leise",
             "effort": "mittel",
             "material": "Vorgeschnittene Tonpapier-Streifen (~5 cm × 55 cm), Muschel-Sticker oder Pappmuscheln, dicke Filzstifte, Klebepunkte, Glitzer-Sticker. Schere und Tacker NUR in Erwachsenenhand.",
-            "prepText": "Stirnbaender komplett vorbereiten: Laenge passend zugeschnitten, eine Pappmuschel pro Band schon angeklebt. Kinder duerfen nur noch verzieren und Sticker aufkleben. Fuer die Tritonen-Variante: ein paar Dreizack-Sticker oder Kronen-Vorlagen dazulegen.",
+            "prepText": "Stirnbaender komplett vorbereiten: Laenge passend zugeschnitten, eine Pappmuschel pro Band schon angeklebt. Kinder duerfen nur noch verzieren und Sticker aufkleben. Fuer die Meerprinz-Variante: ein paar Wellen-Sticker oder Kronen-Vorlagen dazulegen.",
             "steps": [
               {
                 "n": 1,
                 "name": "Aussuchen",
-                "content": "Jedes Kind sucht sich sein Band aus — Muschel (Mini-Meerjungfrau) oder Dreizack/Krone (Triton). Beides liegt bereit, kein „richtig oder falsch“."
+                "content": "Jedes Kind sucht sich sein Band aus — Muschel (Mini-Meerjungfrau) oder Wellen-Krone (Meerprinz). Beides liegt bereit, kein „richtig oder falsch“."
               },
               {
                 "n": 2,
@@ -29028,7 +30001,7 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": "Reines Tisch-Spiel, ideal als ruhiger Einstieg direkt nach der Ankunft, solange noch Kinder eintrudeln.",
             "outdoorTip": null,
             "whyItWorksTitle": "Warum das funktioniert",
-            "whyItWorks": "Das Stirnband macht aus dem Gast eine Mini-Meerjungfrau oder einen Triton — die Verwandlung, die das ganze Rollenspiel traegt. Vorgeschnitten heisst: kein Frust, kein Schere-Chaos, jedes Kind ist in unter 10 Minuten fertig und fuehlt sich sofort als Teil der Unterwasser-Welt."
+            "whyItWorks": "Das Stirnband macht aus dem Gast eine Mini-Meerjungfrau oder einen Meerprinzen — die Verwandlung, die das ganze Rollenspiel traegt. Vorgeschnitten heisst: kein Frust, kein Schere-Chaos, jedes Kind ist in unter 10 Minuten fertig und fuehlt sich sofort als Teil der Unterwasser-Welt."
           },
           {
             "name": "🐠 Fisch-Freunde-Quiz (Tierstimmen + Bewegungen)",
@@ -29169,7 +30142,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 2,
                 "name": "Einzeln + Gruppe",
-                "content": "Jedes Kind darf einzeln und alle zusammen ein Foto machen — in voller Meerjungfrau-/Triton-Montur."
+                "content": "Jedes Kind darf einzeln und alle zusammen ein Foto machen — in voller Meerjungfrau-/Meerprinz-Montur."
               },
               {
                 "n": 3,
@@ -29447,17 +30420,37 @@ var ELITE_MOTTO_DATA = {
           "detail": "Keine Sieger, kein „1. Meerjungfrau“. Jedes Kind — auch das, das nicht mitgespielt hat — bekommt am Ende dieselbe Urkunde und denselben Perlen-Beutel. In dem Alter zaehlt Dazugehoeren, nicht Gewinnen."
         },
         {
-          "topic": "💙 Auch fuer Jungen: Tritonen statt Tabu",
-          "detail": "Meerjungfrau ist kein Maedchen-Thema. Bietet von Anfang an Triton-Stirnbaender (Dreizack/Krone) und sprecht von „Meeres-Helfern“ oder „Ozean-Helfern“. Dann fuehlt sich kein Kind ausgeschlossen — weder Jungen noch Maedchen, die lieber Triton sein wollen."
+          "topic": "💙 Auch fuer Jungen: Meerprinzen statt Tabu",
+          "detail": "Meerjungfrau ist kein Maedchen-Thema. Bietet von Anfang an Meerprinz-Stirnbaender (Wellen-Krone, Seestern-Stirnband) und sprecht von „Meeres-Helfern“ oder „Ozean-Helfern“. Dann fuehlt sich kein Kind ausgeschlossen — weder Jungen noch Maedchen, die lieber Meerprinz sein wollen."
+        },
+        {
+          "topic": "👕 Wechselklamotten bereithalten",
+          "detail": "3-Jaehrige kleckern. Blauer Guss, „Meerwasser“, Klebestift — irgendwas landet auf dem Pulli. Schreib in die Einladung: „Bitte Wechsel-Shirt mitbringen.“ Und leg fuer dein eigenes Kind eins bereit."
+        },
+        {
+          "topic": "⏰ Nicht in den Mittagsschlaf legen",
+          "detail": "3–5-Jaehrige sind nachmittags fitter als morgens (nach dem Mittagsschlaf). Aber nach 16 Uhr wird's schwierig — muede Kleinkinder sind schlecht gelaunte Kleinkinder. Ideal: 14:00 Start, 15:30 oder 16:00 Ende. Freitagnachmittag funktioniert meistens am besten."
+        },
+        {
+          "topic": "📱 Partyseite statt WhatsApp-Chaos",
+          "detail": "Erstelle eine Partyseite auf party.machsleicht.de mit Datum, Uhrzeit, Adresse und Allergien-Abfrage. Einen Link verschicken statt 10 Nachrichten beantworten. Kostet nichts."
+        },
+        {
+          "topic": "🌊 Sicherheit am Wasser — kleine Schuesseln statt grosse Wannen",
+          "detail": "Bei 3-5 KEIN tiefes Wasserbecken (Ertrinkungs-Risiko bereits ab 5 cm). Wenn Perlen-Spiel mit Wasser: flache Schuessel hoechstens knoecheltief, IMMER erwachsene Aufsicht direkt daneben. Bei Schwimmbad-Geburtstag (kommt selten vor in dem Alter): pro Kind ein Erwachsener im Wasser, Schwimmhilfen Pflicht, vor und nach jeder Wasserphase Toilettenrunde."
+        },
+        {
+          "topic": "✨ Perlen + Glitzer: auf Allergie-Hinweise achten",
+          "detail": "Billige Glitzer-Sticker und Perlen koennen Nickel oder Phthalate enthalten — bei empfindlicher Kinderhaut Ausschlag moeglich. Bei der Einladungs-Allergie-Abfrage gezielt nach „Kontaktallergie Modeschmuck/Sticker“ fragen. Im Zweifel: nur Pappmuscheln und Filzstifte verwenden, fertige Perlen-Beutel verschlossen weitergeben statt offen am Tisch. Essbarer Glitzer auf Kuchen oft mit E-Nummern — bei E-Nummern-Empfindlichkeit weglassen."
         }
       ],
       "educationalValue": "Hinter der bunten Unterwasser-Welt steckt mehr als Spass. Beim gemeinsamen Perlen-Sammeln und Korallen-Garten-Bauen ueben die Kinder Zusammenarbeit ohne Konkurrenz — alle gewinnen gemeinsam, niemand verliert. Das Fisch-Quiz foerdert Sprache und Koerpergefuehl, das Stirnband-Basteln die Feinmotorik in kleinen Schritten. Und das Wichtigste: Die Meeres-Helfer-Rollen geben jedem Kind das Gefuehl, gebraucht zu werden — das staerkt Selbstvertrauen und Empathie weit mehr als jeder Wettkampf."
     },
-    "invitationTemplate": "Du brauchst noch passende Einladungen? Der machsleicht-Einladungs-Generator macht aus diesem Meerjungfrau-Motto in zwei Minuten fertige Karten — mit Muschel-Design, Allergie-Abfrage und RSVP-Link auf party.machsleicht.de. Auch in der Tritonen-Variante fuer alle Kinder. Einfach Motto „Meerjungfrau“ waehlen und Datum eintragen.",
+    "invitationTemplate": "Du brauchst noch passende Einladungen? Der machsleicht-Einladungs-Generator macht aus diesem Meerjungfrau-Motto in zwei Minuten fertige Karten — mit Muschel-Design, Allergie-Abfrage und RSVP-Link auf party.machsleicht.de. Auch in der Meerprinz-Variante fuer alle Kinder. Einfach Motto „Meerjungfrau“ waehlen und Datum eintragen.",
     "faq": [
       {
         "q": "Ist eine Meerjungfrau-Party auch fuer Jungen geeignet?",
-        "a": "Ja, ausdruecklich. Mit der Tritonen-Variante (Meermaenner mit Dreizack-Stirnband oder Krone statt Muschel) und geschlechtsneutralen „Meeres-Helfern“ ist das Thema fuer alle Kinder offen. Wir empfehlen, beide Stirnband-Varianten bereitzulegen, damit jedes Kind frei waehlen kann."
+        "a": "Ja, ausdruecklich. Mit der Meerprinz-Variante (Wellen-Krone oder Seestern-Stirnband statt Muschel) und geschlechtsneutralen „Meeres-Helfern“ ist das Thema fuer alle Kinder offen. Wir empfehlen, beide Stirnband-Varianten bereitzulegen, damit jedes Kind frei waehlen kann. Auch Maedchen, die lieber Meerprinz sein wollen, sind ausdruecklich willkommen."
       },
       {
         "q": "Was, wenn mein Kind erst 3 ist — sind die Spiele nicht zu schwer?",
@@ -29469,7 +30462,19 @@ var ELITE_MOTTO_DATA = {
       },
       {
         "q": "Wir haben wenig Platz — geht das trotzdem?",
-        "a": "Ja. Die Minimal- und Standard-Variante laufen komplett im Wohnzimmer: ein blaues Tuch am Boden, Perlen verstreut, Korallen-Garten am Tisch. Nur die Wow-Schatzsuche braucht etwas mehr Raum — verteil die Stationen sonst einfach auf zwei Zimmer."
+        "a": "Ja. Die Minimal- und Standard-Variante laufen komplett im Wohnzimmer: ein blaues Tuch am Boden, Perlen verstreut, Korallen-Garten am Tisch. Nur die Wow-Schatzsuche braucht etwas mehr Raum — verteil die Stationen sonst einfach auf zwei Zimmer (Wohnzimmer + Flur + Kinderzimmer reichen fuer 8 Kinder)."
+      },
+      {
+        "q": "Was kostet ein Meerjungfrau-Geburtstag fuer 3–5-Jaehrige?",
+        "a": "Zwischen 35 € (Minimal, 6 Kinder) und 80 € (Wow, bis 8 Kinder). Die Standard-Variante liegt bei ca. 55 € und bietet das beste Verhaeltnis aus Aufwand und Ergebnis. Wenn du Tonpapier, Stifte, Tuch und Plueschfische aus dem Bestand nimmst, sind 10–15 € Einsparung locker drin."
+      },
+      {
+        "q": "Mein Kind hat Angst vor Wasser/Schwimmbad — schliesst das die Meerjungfrau-Party aus?",
+        "a": "Im Gegenteil — die Klein-Variante kommt ohne echtes Wasser aus. Die „Unterwasser-Welt“ ist hier ein blaues Tuch am Boden plus Phantasie. Kein Tauchen, kein Wasserbecken, keine nassen Spielsachen. Perlen werden trocken gesammelt, das Wellen-Tuch ist ein Bettlaken. So koennen auch wasserscheue Kinder voll mitmachen — und Plueschfische sind nie nass."
+      },
+      {
+        "q": "Was, wenn ein Kind nasse Klamotten bekommt (Klecker mit Saft/Wackelpudding)?",
+        "a": "Halt 1-2 ausgeliehene T-Shirts in passenden Groessen bereit (deins oder Geschwister). Wechseln im Bad ohne Aufsehen — kein Kommentar vor der Gruppe. Nassen Pulli in einen Beutel zum Mitnehmen, trocken weiterspielen. In die Einladung „bitte Wechsel-Shirt“ schreiben spart dir den Notfall."
       }
     ],
     "preparationWeeks": {
@@ -29494,7 +30499,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "✉️",
             "title": "Einladungen rausschicken",
-            "detail": "Pflicht im Text: Allergie-Abfrage. Triton-Variante erwaehnen („fuer alle Kinder“). Hinweis, dass Eltern gern bleiben duerfen. RSVP-Link auf party.machsleicht.de."
+            "detail": "Pflicht im Text: Allergie-Abfrage. Meerprinz-Variante erwaehnen („fuer alle Kinder“). Hinweis, dass Eltern gern bleiben duerfen. RSVP-Link auf party.machsleicht.de."
           },
           {
             "icon": "🏠",
@@ -29614,7 +30619,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🧜‍♀️",
             "title": "Stirnbaender + Muscheln am Eingang bereitlegen",
-            "detail": "Stirnbaender, Start-Muscheln und Klett-Namensschilder an den Eingang. Triton-Variante sichtbar dazulegen."
+            "detail": "Stirnbaender, Start-Muscheln und Klett-Namensschilder an den Eingang. Meerprinz-Variante sichtbar dazulegen."
           },
           {
             "icon": "😮‍💨",
@@ -29727,6 +30732,32 @@ var ELITE_MOTTO_DATA = {
           "Restliche Kinder spielen weiter, kein Bruch im Programm."
         ],
         "fallback": "Halt Urkunden + Perlen-Beutel von Anfang an griffbereit, dann ist frueher Abschied kein Stress.",
+        "tone": "praktisch"
+      },
+      "nasse_klamotten": {
+        "icon": "💧",
+        "label": "Kind hat nasse oder verschmierte Klamotten",
+        "headline": "Wechsel-Shirt aus dem Reserve-Beutel, kein Drama draus machen.",
+        "steps": [
+          "Halt 2-3 T-Shirts in Groesse 104/116 im Reserve-Beutel (deins oder Geschwister) — Kleinkinder kleckern garantiert.",
+          "Wechseln im Bad ohne Kommentar vor der Gruppe — Aufmerksamkeit macht's groesser.",
+          "Nasse/verschmierte Sachen direkt in eine Plastiktuete zum Mitnehmen, beschriftet mit dem Kindernamen.",
+          "Bei Heul-Reaktion: Mini-Geschichte erzaehlen („auch Meerjungfrauen werden mal nass von einer Welle“) — entlastet vom Peinlichkeits-Gefuehl."
+        ],
+        "fallback": "Pulli durchnaesst und Reserve aus? Mit Foehn anpusten geht in 5 Min., zur Not Geburtstagskind-Pulli ausleihen.",
+        "tone": "sanft"
+      },
+      "wasser_zu_tief": {
+        "icon": "🚱",
+        "label": "Wasser-Spiel zu tief oder Wasser-Angst",
+        "headline": "Sofort entscharfen — Schuessel statt Wanne, oder ganz trocken.",
+        "steps": [
+          "Wenn die Wasserschuessel zu tief erscheint (Augen-Hoehe der Kinder!): Wasser auf max. 3-4 cm reduzieren, Boden mit Handtuechern absichern.",
+          "Bei einem wasserscheuen Kind: Trocken-Version anbieten („du sammelst die Perlen auf dem Tisch, die anderen aus dem Wasser“) — nie ausschliessen.",
+          "Kein Kind nass machen, das nicht will — Sand-/Reis-Schuessel ist eine vollwertige Alternative.",
+          "WICHTIG bei 3-Jaehrigen: Wasser-Schuessel ist Aufsichtspflicht — ein Erwachsener daneben, immer. Schon 5 cm Wasser sind potenziell gefaehrlich."
+        ],
+        "fallback": "Im Zweifel komplett trocken spielen — Perlen unter Kissen verstecken ersetzt jede Wasserschuessel. Bei 3-5 ist trocken eh die sicherere Variante.",
         "tone": "praktisch"
       }
     }
@@ -29997,7 +31028,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Ein ruhiges Quiz ist der perfekte Gegenpol zu den bewegten Spielen und gibt der Crew eine Verschnaufpause. Echtes Tierwissen verpackt in eine „Prüfung\" fühlt sich für 6–8-Jährige wichtig an, und die gemeinsame Team-Wertung verhindert, dass langsamere Kinder das Gefühl haben zu verlieren."
           }
         ],
-        "food": "🎂 Meeres-Kuchen — 1 Rührkuchen mit blauem Guss\n💧 „Meerwasser\" — 6-8 Apfelschorle/Wasser + Wasserkrug zum Nachfüllen/Capri-Sun\n🥪 Muschel-Sandwiches — 12 Stück\n🍓 Obst-Teller — Melone, Trauben, Gurke\n🍿 Popcorn — 250 g\n🍬 Gummi-Fische — 1 Tüte (200 g)",
+        "food": "🎂 Meeres-Kuchen — 1 Rührkuchen mit blauem Guss\n💧 „Meerwasser\" — 6-8 Apfelschorle/Wasser + Wasserkrug zum Nachfüllen/Saftpäckchen\n🥪 Muschel-Sandwiches — 12 Stück\n🍓 Obst-Teller — Melone, Trauben, Gurke\n🍿 Popcorn — 250 g\n🍬 Gummi-Fische — 1 Tüte (200 g)",
         "decoration": "🌊 Blaues Tuch als „Meer\" auf dem Tisch — kostenlos\n🐚 Echte oder Deko-Muscheln verstreut — ~2 €\n🎈 Ein paar blaue/türkise Luftballons — ~3 €\n\n💡 Wellen-Trick: Ein blaues Bettlaken oder Tuch über den Tisch, Muscheln und ein paar Glasperlen darauf verstreut. Sieht sofort nach Unterwasser aus, kostet fast nichts.",
         "giveaways": "🐚 Selbst gefädelte Crew-Perlenkette\n🐠 1 Meerestier-Figur aus der Schatzsuche\n🪙 Schoko-Goldmünzen\n🍬 1 Tüte Gummi-Fische\n\nAlles in eine blaue Papiertüte, beschriftet mit dem Crew-Namen des Kindes. Kosten: ~2 € pro Kind.",
         "shoppingList": [
@@ -30030,7 +31061,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🥤",
-            "label": "Apfelschorle / Capri-Sun",
+            "label": "Apfelschorle / Saftpäckchen",
             "url": "https://www.amazon.de/s?k=capri+sun+12er&tag=machsleicht-21",
             "priceEur": 4,
             "hasAffiliate": true,
@@ -30296,7 +31327,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Die Schatzsuche ist das narrative Finale, auf das die ganze Party hingebaut wurde — jedes vorige Spiel war Training dafür. Dass die Truhe nur gemeinsam gefunden und der Schatz gerecht geteilt wird, beendet die Party in einem Wir-Moment statt mit einem einzelnen Gewinner, und die geborgene Truhe gibt allen das Gefühl, eine echte Mission geschafft zu haben."
           }
         ],
-        "food": "🎂 Meeres-Kuchen — 1 Rührkuchen, blauer Guss + Zucker-Muscheln\n💧 „Meerwasser\" — 6 Apfelschorle/Capri-Sun\n🥪 Muschel-Sandwiches — 12 Stück\n🍓 Obst-Teller (Algen-Look) — Melone, Trauben, Gurke\n🥕 Möhren & Käsewürfel — 1 Schale\n🍿 Popcorn — 250 g\n🍬 Gummi-Fische — 1 Tüte (200 g)",
+        "food": "🎂 Meeres-Kuchen — 1 Rührkuchen, blauer Guss + Zucker-Muscheln\n💧 „Meerwasser\" — 6 Apfelschorle/Saftpäckchen\n🥪 Muschel-Sandwiches — 12 Stück\n🍓 Obst-Teller (Algen-Look) — Melone, Trauben, Gurke\n🥕 Möhren & Käsewürfel — 1 Schale\n🍿 Popcorn — 250 g\n🍬 Gummi-Fische — 1 Tüte (200 g)",
         "decoration": "🌊 Blaues Tuch + Muscheln als Meeres-Tisch — ~2 €\n🎈 Blaue/türkise Luftballons (10 Stk.) — ~3 €\n🐚 Girlande in Meeresfarben — ~4 €\n🪸 Watte- oder Krepp-„Korallen\" an der Wand — kostenlos\n\n💡 Riff-Tisch-Trick: Tischdecke weiß oder blau, darüber blaue und türkise Stoffstreifen längs gelegt, Muscheln und Glasperlen verstreut. Die Snack-Schalen passend in Blau- und Grüntönen — sieht sofort nach Korallenriff aus, kostet fast nichts und dauert 5 Minuten.",
         "giveaways": "🐚 Selbst gefädelte Crew-Perlenkette\n🪸 Selbst gestaltete Koralle/Bastelei\n🐠 1 Meerestier-Figur aus der Schatzsuche\n🪙 Schoko-Goldmünzen aus der Truhe\n🍬 1 Tüte Gummi-Fische\n\nAlles in eine blaue Papiertüte (10 Stk. ~1–2 € bei DM/Action), beschriftet mit dem Crew-Namen. Kosten: ~3 € pro Kind.",
         "shoppingList": [
@@ -30329,7 +31360,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🥤",
-            "label": "Apfelschorle / Capri-Sun",
+            "label": "Apfelschorle / Saftpäckchen",
             "url": "https://www.amazon.de/s?k=capri+sun+12er&tag=machsleicht-21",
             "priceEur": 4,
             "hasAffiliate": true,
@@ -30521,7 +31552,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Selbst verzierter Proviant verbindet Essen und Aktivität und gibt eine ruhige Phase zwischen den bewegten Spielen. 6–8-Jährige sind stolz auf ihr eigenes Werk und essen es eher als vorgesetzte Snacks, und die Algen-Spieße schmuggeln nebenbei Obst und Gemüse in die Party — ohne dass es nach „gesund\" aussieht."
           }
         ],
-        "food": "🎂 Meeres-Kuchen — 1 Rührkuchen, blauer Guss + Wunderkerze\n🧁 Selbst verzierte Wellen-Muffins (Snack-Werkstatt)\n🍢 Algen-Obst-Spieße — Trauben, Melone, Gurke\n💧 „Meerwasser\" — Apfelschorle/Capri-Sun für 6–8\n🥪 Muschel-Sandwiches + Wraps\n🥕 Möhren & Käsewürfel\n🍿 Popcorn — 300 g\n🍬 Gummi-Fische",
+        "food": "🎂 Meeres-Kuchen — 1 Rührkuchen, blauer Guss + Wunderkerze\n🧁 Selbst verzierte Wellen-Muffins (Snack-Werkstatt)\n🍢 Algen-Obst-Spieße — Trauben, Melone, Gurke\n💧 „Meerwasser\" — Apfelschorle/Saftpäckchen für 6–8\n🥪 Muschel-Sandwiches + Wraps\n🥕 Möhren & Käsewürfel\n🍿 Popcorn — 300 g\n🍬 Gummi-Fische",
         "decoration": "🌊 Blaues Tuch + Muscheln als Meeres-Tisch — ~2 €\n🎈 Blaue/türkise Luftballons (10–12 Stk.) — ~4 €\n🐚 Girlande + Watte-Korallen — ~4 €\n🔦 Abgedunkelte Quest-Ecke für UV-Geheimschrift — Vorhänge zu\n\n💡 Tiefsee-Ecke: Einen Raum oder eine Ecke abdunkeln (Vorhänge/Decke), blaue Lichterkette + Watte-Korallen. Hier finden die UV-Stationen der Quest statt — der Wechsel von hell nach „Tiefsee\" ist allein schon ein Effekt.",
         "giveaways": "🐚 Selbst gefädelte Crew-Perlenkette\n🪸 Selbst gestaltete Bastelei\n🧁 Eigener verzierter Wellen-Muffin (eingepackt)\n🐠 Meerestier-Figur + 🪙 Schoko-Goldmünzen aus der Schatzkammer\n📸 Crew-Foto / Crew-Pass mit Tauch-Maske\n\nAlles in eine blaue Papiertüte mit Crew-Namen. Kosten: ~4 € pro Kind.",
         "shoppingList": [
@@ -30554,7 +31585,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🥤",
-            "label": "Apfelschorle / Capri-Sun",
+            "label": "Apfelschorle / Saftpäckchen",
             "url": "https://www.amazon.de/s?k=capri+sun+12er&tag=machsleicht-21",
             "priceEur": 4,
             "hasAffiliate": true,
@@ -30695,6 +31726,18 @@ var ELITE_MOTTO_DATA = {
         {
           "topic": "🦪 Kleinteile im Blick behalten",
           "detail": "Perlen und kleine Muscheln sind bei 6–8-Jährigen unkritisch, aber wenn jüngere Geschwister mitlaufen: Perlen sind Verschluck-Risiko unter 3 Jahren. Sortiertische außer Reichweite der Kleinsten halten."
+        },
+        {
+          "topic": "🏊 Wasser-Sicherheit auch bei kleinem Becken",
+          "detail": "Selbst eine knöcheltiefe Wanne ist Aufsichtspflicht — ein Erwachsener bleibt an der Wasser-Station, immer. Glasperlen NICHT als Tauch-Schatz verwenden (Verschluck-Risiko bei jüngeren Geschwistern), lieber große Plastikperlen oder Muscheln. Wenn das Geburtstagskind oder Gäste nicht schwimmen können: das gilt auch fürs Schwimmbecken im Garten — kein „kurz allein lassen“."
+        },
+        {
+          "topic": "✨ Glitzer & Lebensmittelfarbe: E-Nummer-Hinweis",
+          "detail": "Essbarer Glitzer und blaue Lebensmittelfarbe enthalten oft E-Nummern (E133, E122, Aluminiumglimmer). Bei Kindern mit E-Nummer-Empfindlichkeit oder ADHS-Diagnose: blauen Kuchenguss mit Heidelbeer- oder Spirulina-Pulver statt Industriefarbe einfärben. Glitzer auf Stirnband statt auf Lebensmitteln verwenden — sicherer."
+        },
+        {
+          "topic": "🐠 Perlen-Allergie: Nickel + Phthalate",
+          "detail": "Billige Bastel-Perlen aus Asien können Nickel (Verschluss-Schmuck) oder Phthalate (Weichmacher in PVC) enthalten — bei empfindlicher Kinderhaut Ausschlag möglich. Crew-Ketten aus Holzperlen oder Glasperlen sind hautfreundlicher. Bei bekannter Kontaktallergie: Eltern vorab fragen, Lederband-Crew-Kette statt Plastik."
         }
       ],
       "educationalValue": "Eine Meerjungfrau-Party kann mehr als unterhalten. Das Crew-Modell mit verteilten Rollen übt Zusammenarbeit: Jedes Kind ist zuständig, und die Schatztruhe lässt sich nur gemeinsam bergen — Kooperation statt Konkurrenz. Muschel-Sortieren und Perlen-Auffädeln trainieren nebenbei Feinmotorik und Sortieren nach Form und Farbe. Das Tierstimmen-Quiz vermittelt echtes Wissen über Meerestiere, und das Korallen-Hüter-Framing macht aus Deko beiläufig ein Umwelt-Thema. Schwur und Perlen-Übergabe geben schüchternen Kindern eine Rolle, hinter der sie sich sicher fühlen — und weil das Motto geschlechts-offen ist, lernen Kinder, dass Tauchen und Schatzsuche für alle da sind."
@@ -30720,6 +31763,14 @@ var ELITE_MOTTO_DATA = {
       {
         "q": "Was, wenn ein Kind nicht mitmachen will?",
         "a": "Völlig normal in diesem Alter. Druck macht es schlimmer. Gib dem Kind eine „stille\" Rolle — Stella Seestern hütet die Schatzkarte, Tilda Tiefseeschild passt auf die Perlen auf. Beobachten ist auch Mitmachen; die meisten tauen nach 20 Minuten von selbst auf, wenn sie sehen, dass es Spaß macht."
+      },
+      {
+        "q": "Wie sicher ist das Muschel-Tauchen? Mein Kind kann nicht schwimmen.",
+        "a": "Knöcheltiefes Wasser in einer Wanne oder Schüssel ist kein Schwimm-Risiko, sondern ein Greif-Spiel. Trotzdem: eine erwachsene Person bleibt während des Spiels durchgehend am Becken — ohne Ausnahme. Wer komplett aufs Wasser verzichten möchte, ersetzt es durch Sand- oder Reis-Schüssel, in der die Muscheln genauso versteckt werden können. Der Spiel-Effekt ist identisch, das Nass-Risiko gleich null."
+      },
+      {
+        "q": "Ist Meerjungfrau auch für gemischte Mädchen-Jungen-Gruppen geeignet?",
+        "a": "Ausdrücklich ja — die Konzeption als „Meeres-Crew\" macht das Thema geschlechts-offen. Niemand muss „die Meerjungfrau\" sein, alle sind gleichberechtigte Crew-Mitglieder. Jungen wählen Meerprinz-Stirnbänder oder bleiben einfach „Crew-Mitglied\", Mädchen können beides wählen. In der Einladung gleichberechtigt formulieren: „die Tauch-Crew braucht alle\"."
       }
     ],
     "preparationWeeks": {
@@ -31013,6 +32064,32 @@ var ELITE_MOTTO_DATA = {
         ],
         "fallback": "Faustregel: die letzten 15 Min sind immer Puffer für Übergabe — nie das Finale auf die letzte Minute legen.",
         "tone": "praktisch"
+      },
+      "kind_hat_angst_vor_wasser": {
+        "icon": "🚱",
+        "label": "Kind hat Angst vor Wasser",
+        "headline": "Trocken-Variante bereithalten — niemand muss tauchen.",
+        "steps": [
+          "Sand-/Reis-Becken als Parallel-Station aufbauen — der gleiche Spiel-Trick ohne Nässe.",
+          "Dem ängstlichen Kind eine andere Crew-Rolle anbieten: Muschel-Archivar zählt die geborgenen Schätze trocken am Tisch.",
+          "Andere Kinder NICHT zwingen, das wasserscheue Kind ins Wasser zu ziehen — Hänseln verhindern.",
+          "Beim Korallenriff-Experiment (das auch Wasser nutzt): Kind sitzt etwas Abstand und beobachtet — Sprudel-Effekt ist visuell genauso schön."
+        ],
+        "fallback": "Im Zweifel: Muschel-Tauchen komplett gegen Sand-Schatzsuche austauschen — die ganze Crew akzeptiert das, der Spielwert bleibt identisch.",
+        "tone": "sanft"
+      },
+      "perlen_oder_glitzer_allergie": {
+        "icon": "🌟",
+        "label": "Hautausschlag durch Perlen oder Glitzer",
+        "headline": "Sofort abnehmen, kühlen, Hand-Wash — kein Drama, aber schnell handeln.",
+        "steps": [
+          "Kontaktstelle mit lauwarmem Wasser und milder Seife waschen, dann mit kühlem feuchtem Tuch abdecken.",
+          "Allergie-Auslöser (verdächtige Perle/Sticker) sofort vom Kind entfernen, beiseitelegen — den Eltern später zeigen, was ausgelöst hat.",
+          "Falls Eltern in der Nähe: kurz informieren. Bei vollflächigem Ausschlag oder Atemnot: 112 oder Kinderarzt-Notdienst.",
+          "Dem Kind eine alternative „Allergie-freie\" Crew-Kette aus Holzperlen anbieten — fertig vorbereitet als Plan B."
+        ],
+        "fallback": "Halt eine kleine Notfall-Box mit Bepanthen-Salbe, Cetirizin-Saft (nur nach Eltern-Rücksprache!) und 2 hypoallergenen Lederband-Crew-Ketten als Ersatz bereit.",
+        "tone": "praktisch"
       }
     }
   },
@@ -31023,7 +32100,7 @@ var ELITE_MOTTO_DATA = {
       "schema_version": "1.0",
       "purpose": "Meerjungfrau 9-12 — Phase B Elite-Slot (Atlantis-Expedition, kein Verkindischen, Codeknacker-Kern PERLE/STROM/QUALLE)",
       "phase_b_complete": "2026-05-21",
-      "phase_b_method": "Writer-Subagent. Codeknacker PERLE (Minimal, Perlentaucher sortiert 5 Meeres-Tiere nach Groesse), STROM (Standard, Navigator sortiert 5 Stationen nach Tiefe), QUALLE (Standard zusaetzlich, Biologe sortiert 6 Quallen nach Schirm-Durchmesser). Wow erweitert auf ATLANTIS-Schatzsuche mit 8 Buchstaben. Sorgfalt-Spezialist statt Tempo. Geschlechts-inklusiv mit Tritonen-Anrede."
+      "phase_b_method": "Writer-Subagent. Codeknacker PERLE (Minimal, Perlentaucher sortiert 5 Meeres-Tiere nach Groesse), STROM (Standard, Navigator sortiert 5 Stationen nach Tiefe), QUALLE (Standard zusaetzlich, Biologe sortiert 6 Quallen nach Schirm-Durchmesser). Wow erweitert auf ATLANTIS-Schatzsuche mit 8 Buchstaben. Sorgfalt-Spezialist statt Tempo. Geschlechts-inklusiv mit Meerprinz-Anrede."
     },
     "motto": "meerjungfrau",
     "ageGroup": "gross",
@@ -31032,8 +32109,8 @@ var ELITE_MOTTO_DATA = {
       12
     ],
     "title": "🧜‍♀️ Meerjungfrau-Kindergeburtstag — 9–12 Jahre",
-    "metaDescription": "Meerjungfrau-Kindergeburtstag für 9-12-Jährige: 3 fertige Atlantis-Expeditions-Konzepte mit Perlentaucher-, Navigator- und Meeresbiologe-Spezialisierung, Codeknacker, Karten, Zeitplan und Einkaufsliste. Auch für Jungen (Tritonen). Kostenlos.",
-    "introParagraph": "Dein Kind wird 9, 10, 11 oder 12 — und „rosa Prinzessinnen-Meerjungfrau“ würde ein Augenrollen kassieren? Hier sind drei fertige Konzepte für eine Atlantis-Expedition: jedes Kind spezialisiert sich (Perlentaucher, Strömungs-Navigator, Meeres-Biologe), entschlüsselt echte Codes (PERLE, STROM, QUALLE), kartografiert die versunkene Stadt und bekommt am Ende eine eigene Spezialisten-Lizenz. Jungen sind als Tritonen genauso gemeint wie Meerjungfrauen — alle sind Atlantis-Crew. Keine Verkindischung — eine ernst gemeinte Mission, die auch in der 7. Klasse noch erwähnt wird.",
+    "metaDescription": "Meerjungfrau-Kindergeburtstag für 9-12-Jährige: 3 fertige Atlantis-Expeditions-Konzepte mit Perlentaucher-, Navigator- und Meeresbiologe-Spezialisierung, Codeknacker, Karten, Zeitplan und Einkaufsliste. Auch für Jungen (Meerprinzen). Kostenlos.",
+    "introParagraph": "Dein Kind wird 9, 10, 11 oder 12 — und „rosa Prinzessinnen-Meerjungfrau“ würde ein Augenrollen kassieren? Hier sind drei fertige Konzepte für eine Atlantis-Expedition: jedes Kind spezialisiert sich (Perlentaucher, Strömungs-Navigator, Meeres-Biologe), entschlüsselt echte Codes (PERLE, STROM, QUALLE), kartografiert die versunkene Stadt und bekommt am Ende eine eigene Spezialisten-Lizenz. Jungen sind als Meerprinzen genauso gemeint wie Meerjungfrauen — alle sind Atlantis-Crew. Keine Verkindischung — eine ernst gemeinte Mission, die auch in der 7. Klasse noch erwähnt wird.",
     "ageInsight": {
       "headline": "Was 9–12-Jährige ausmacht — und was das für die Atlantis-Expedition heißt",
       "traits": [
@@ -31059,7 +32136,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "topic": "Geschlecht",
-          "detail": "9-12 ist die Phase, in der „typisch Mädchen-Themen“ schnell abgelehnt werden. Meerjungfrau funktioniert nur, wenn es als ernsthafte Tauch- und Forschungs-Expedition aufgezogen wird. Tritonen-Anrede für Jungen, neutrale Spezialisten-Titel, niemand muss „die Meerjungfrau“ sein."
+          "detail": "9-12 ist die Phase, in der „typisch Mädchen-Themen“ schnell abgelehnt werden. Meerjungfrau funktioniert nur, wenn es als ernsthafte Tauch- und Forschungs-Expedition aufgezogen wird. Meerprinz-Anrede für Jungen, neutrale Spezialisten-Titel, niemand muss „die Meerjungfrau“ sein."
         },
         {
           "topic": "Eltern",
@@ -31072,7 +32149,7 @@ var ELITE_MOTTO_DATA = {
     "signatureRitual": {
       "name": "Die Meeres-Crew-Aufnahme & Lizenz-Übergabe",
       "subtitle": "Eröffnet die Expedition und schließt sie ab — für alle 3 Varianten",
-      "introText": "Für 9-12 trägt nicht ein durchgehendes Ritual, sondern zwei ernst gemeinte Klammern: Am Anfang wählt jedes Kind selbst seine Spezialisierung (Perlentaucher, Strömungs-Navigator, Meeres-Biologe) und hört den Brief der Forschungsstation Poseidon-7 — eine echte Mission, kein „kleine-Meerjungfrau“-Sprech. Jungen werden mit Tritonen-Anrede gleichberechtigt aufgenommen. Am Ende bekommt jedes Kind die volle Spezialisten-Lizenz, ohne Abstufung. Was diese Altersgruppe packt, ist die eigene Wahl der Rolle und echte Verantwortung statt Bespaßung. Wer eine knifflige Detail-Beobachtung beigesteuert oder besonders genau gearbeitet hat, kriegt zusätzlich einen „Sorgfalt-Spezialist“-Stempel auf die Lizenz — Anerkennung dafür, hingeschaut zu haben, nicht dafür, schnell gewesen zu sein. Eltern sind hier Beobachter beim Abschluss-Foto, keine Co-Spieler.",
+      "introText": "Für 9-12 trägt nicht ein durchgehendes Ritual, sondern zwei ernst gemeinte Klammern: Am Anfang wählt jedes Kind selbst seine Spezialisierung (Perlentaucher, Strömungs-Navigator, Meeres-Biologe) und hört den Brief der Forschungsstation Poseidon-7 — eine echte Mission, kein „kleine-Meerjungfrau“-Sprech. Jungen werden mit Meerprinz-Anrede gleichberechtigt aufgenommen. Am Ende bekommt jedes Kind die volle Spezialisten-Lizenz, ohne Abstufung. Was diese Altersgruppe packt, ist die eigene Wahl der Rolle und echte Verantwortung statt Bespaßung. Wer eine knifflige Detail-Beobachtung beigesteuert oder besonders genau gearbeitet hat, kriegt zusätzlich einen „Sorgfalt-Spezialist“-Stempel auf die Lizenz — Anerkennung dafür, hingeschaut zu haben, nicht dafür, schnell gewesen zu sein. Eltern sind hier Beobachter beim Abschluss-Foto, keine Co-Spieler.",
       "setupSteps": [
         {
           "title": "Drei Spezialisierungs-Schalen vorbereiten",
@@ -31088,7 +32165,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "title": "Lizenzen selbst ausfüllen lassen",
-          "content": "Jedes Kind trägt seinen Namen (oder Tritonen-/Meerjungfrau-Namen, freiwillig) und seine Spezialisierung selbst in die Lizenz ein. Am Ende vollständig ausgefüllt — alle bekommen die volle Atlantis-Lizenz, niemand eine Vorstufe. Foto-Slot freilassen."
+          "content": "Jedes Kind trägt seinen Namen (oder Meerprinz-/Meerjungfrau-Namen, freiwillig) und seine Spezialisierung selbst in die Lizenz ein. Am Ende vollständig ausgefüllt — alle bekommen die volle Atlantis-Lizenz, niemand eine Vorstufe. Foto-Slot freilassen."
         },
         {
           "title": "„Sorgfalt-Spezialist“-Stempel bereitlegen",
@@ -31142,7 +32219,7 @@ var ELITE_MOTTO_DATA = {
           "function": "Meeres-Biologe-Spezialisierung: katalogisiert Fisch-Vorkommen und Korallen-Zustand der Stadt."
         }
       ],
-      "optOutNote": "Kein Kind muss sich festlegen. Wer sich nicht entscheiden will, übernimmt ein Spezialisten-Trio quer über alle drei Bereiche oder bleibt Beobachter („Logbuch-Führer von Poseidon-7“) ohne feste Aufgabe — Lizenz und Stempel bekommt es trotzdem. Die Sonderrollen sind ein Angebot, kein Zwang, und auch der Wechsel der Spezialisierung mitten in der Expedition ist erlaubt. Jungen wählen Tritonen-Anrede, Mädchen Meerjungfrau-Anrede, niemand muss eine bestimmte Form annehmen.",
+      "optOutNote": "Kein Kind muss sich festlegen. Wer sich nicht entscheiden will, übernimmt ein Spezialisten-Trio quer über alle drei Bereiche oder bleibt Beobachter („Logbuch-Führer von Poseidon-7“) ohne feste Aufgabe — Lizenz und Stempel bekommt es trotzdem. Die Sonderrollen sind ein Angebot, kein Zwang, und auch der Wechsel der Spezialisierung mitten in der Expedition ist erlaubt. Jungen wählen Meerprinz-Anrede, Mädchen Meerjungfrau-Anrede, niemand muss eine bestimmte Form annehmen.",
       "materialNote": "Spezialisten-Patches in drei Farben (perlweiß / tiefblau / türkis), Atlantis-Karten mit offenen Korallen-Stations-Feldern und blanko Lizenz-Vorlagen sind Pflicht; siehe shoppingList der jeweiligen Variante. Den „Sorgfalt-Spezialist“-Stempel mit Kraken-Motiv und den Brief der Forschungsstation Poseidon-7 druckst bzw. besorgst du selbst — sinnvoll, aber nicht zwingend. Vorlagen liegen im Einladungs- und Druck-Bereich."
     },
     "variants": [
@@ -31413,7 +32490,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:00",
             "title": "Eintreffen, Spezialisierungs-Wahl, Brief von Poseidon-7",
-            "description": "Drei Muschel-Schalen mit Patches, jedes Kind wählt. Du liest den Brief der Forschungsstation Poseidon-7 vor: kurze, ernsthafte Mission, kein Verkindischungs-Sprech. Tritonen- und Meerjungfrauen-Anrede freigestellt. Jedes Team bekommt seine Karte mit 5 Stations-Feldern."
+            "description": "Drei Muschel-Schalen mit Patches, jedes Kind wählt. Du liest den Brief der Forschungsstation Poseidon-7 vor: kurze, ernsthafte Mission, kein Verkindischungs-Sprech. Meerprinz- und Meerjungfrauen-Anrede freigestellt. Jedes Team bekommt seine Karte mit 5 Stations-Feldern."
           },
           {
             "time": "14:20",
@@ -31846,7 +32923,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:00",
             "title": "Eintreffen, Spezialisierungs-Wahl, Brief von Poseidon-7",
-            "description": "Wie in Standard: 3 Muschel-Schalen mit Patches, Brief der Forschungsstation Poseidon-7 wird vorgelesen. Jedes Kind bekommt seine Expeditions-Karte mit jetzt 6 Stations-Feldern. Tritonen- und Meerjungfrauen-Anrede freigestellt. 20 Min."
+            "description": "Wie in Standard: 3 Muschel-Schalen mit Patches, Brief der Forschungsstation Poseidon-7 wird vorgelesen. Jedes Kind bekommt seine Expeditions-Karte mit jetzt 6 Stations-Feldern. Meerprinz- und Meerjungfrauen-Anrede freigestellt. 20 Min."
           },
           {
             "time": "15:20",
@@ -32263,17 +33340,160 @@ var ELITE_MOTTO_DATA = {
           "detail": "Statt 10 Einzel-Nachrichten an die Eltern: eine WhatsApp-Partyseite mit machsleicht. Adresse, Uhrzeit, Spezialisierungs-Hinweis (Kleidung in Blau-Tönen, falls vorhanden), Abholzeit, Allergie-Abfrage (Fisch!), bei Schlafparty die Medikamenten-Abfrage — alles an einem Ort."
         },
         {
-          "topic": "🧑 Jungen sind als Tritonen genauso gemeint",
-          "detail": "Meerjungfrau wird in 9-12 schnell als „Mädchen-Thema“ abgestempelt — das ist hier explizit nicht so. Tritonen-Anrede für Jungen, neutrale Spezialisten-Titel (Perlentaucher, Navigator, Biologe — alle geschlechtsneutral), kein Glitzer-Druck. In der Einladung kurz erwähnen: „Tritonen und Meerjungfrauen sind alle willkommen — die Expedition braucht beide.“"
+          "topic": "🧑 Jungen sind als Meerprinzen genauso gemeint",
+          "detail": "Meerjungfrau wird in 9-12 schnell als „Mädchen-Thema“ abgestempelt — das ist hier explizit nicht so. Meerprinz-Anrede für Jungen, neutrale Spezialisten-Titel (Perlentaucher, Navigator, Biologe — alle geschlechtsneutral), kein Glitzer-Druck. In der Einladung kurz erwähnen: „Meerprinzen und Meerjungfrauen sind alle willkommen — die Expedition braucht beide.“"
         },
         {
           "topic": "🕒 Abholzeit vorher klären — bei Schlafparty doppelt",
           "detail": "„Wir holen so gegen 17 Uhr ab“ ist keine Abholzeit. Konkret in die Einladung: „Abholung 17:30, die Lizenz-Zeremonie ist um 17:00 und wir wollen das Ende nicht stressen.“ Bei Schlafparty schriftlich bestätigen lassen, wer wann abholt und ob das Kind nachts mit Heimweh kontaktiert werden soll."
+        },
+        {
+          "topic": "🙄 „Meerjungfrau? Echt jetzt?“ — die Eltern-Antwort",
+          "detail": "Falls ein Gast-Kind meckert: lass das Geburtstagskind antworten, nicht du. Meistens reicht der erste Blick auf den Codeknacker, die Quallen-Klassifikation oder das Mission-Briefing der Krake. Meerjungfrau als ernst gemeinte Tiefsee-Forschungs-Expedition verkaufen, nicht als rosa Prinzessinnen-Party. Spätestens beim TIEF-Code knacken ist niemand mehr peinlich berührt."
+        },
+        {
+          "topic": "🏊 Schwimmbad-Sicherheit, falls Wasser-Komponente",
+          "detail": "Falls die Party im Schwimmbad oder am See stattfindet: 1 Erwachsener pro 4 Kinder im Wasser, niemand allein, schwimmunsichere Kinder mit Schwimmnudel/Weste. Vorher schriftlich von Eltern bestätigen lassen, ob ihr Kind schwimmen kann — „so halbwegs“ reicht NICHT. Handys griffbereit, Wasserrettungs-Nummer im Kopf (112). Nach dem Wasser zwingend Toilettenrunde + Aufwärmen + trockene Klamotten — sonst Erkältungsrisiko."
+        },
+        {
+          "topic": "💧 Auch ohne Schwimmbad: Wassersicherheit am Sushi-Tisch",
+          "detail": "Heißer Reis und Sushi-Messer sind das Hauptrisiko, nicht das Tauchen. Sushi-Roll-Station: Reis muss handwarm (nicht heiß!) sein, ein Erwachsener portioniert die Belag-Teile vor, KEINE scharfen Messer für Kinder. Sojasauce in kleinen Schälchen — Verschütt-Gefahr auf Klamotten und Spuren-Soja-Allergie."
+        },
+        {
+          "topic": "✨ Perlen-Allergie & Glitzer-Kontaktekzeme",
+          "detail": "9-12-Jährige sind raus aus dem „alles in den Mund\"-Alter, aber Perlen mit Nickel-Verschluss oder PVC-Glitzer können Kontaktekzeme auf der Haut hinterlassen — gerade bei Mädchen, die enge Crew-Ketten tragen. Hypoallergene Lederband-Ketten oder Bastelschnur statt billige Bling-Sets. Beim ersten Juck-Hinweis: Kette abnehmen, Haut waschen, beobachten. Bei vorab bekannter Schmuck-Allergie: nur Holzperlen verwenden."
         }
       ],
-      "educationalValue": "Was die Kinder mitnehmen: Beobachtungs-Logik (Perlen und Quallen über Merkmale bestimmen statt raten), echte Meeres-Biologie-Kenntnisse (Schicht-Konzept, Quallen-Klassifikation, Bioluminiszenz), Kartografie (Tiefen-Schichten farbig kodieren bleibt im Kopf), Kooperation zwischen Spezialisierungen (keine kommt allein zum Ziel) und Selbstkontrolle beim Codeknacker (ergibt das Lösungswort keinen Sinn, prüfen sie ihre Reihenfolge selbst nach). Die Leitidee „in Atlantis zählt, wer hinschaut, nicht wer am schnellsten taucht“ trägt durch die ganze Party — Sorgfalt vor Tempo. Und Geschlechts-Inklusion ganz nebenbei: Tritonen-Anrede und neutrale Forscher-Rollen zeigen, dass „Meeres-Themen“ für alle da sind."
+      "educationalValue": "Was die Kinder mitnehmen: Beobachtungs-Logik (Perlen und Quallen über Merkmale bestimmen statt raten), echte Meeres-Biologie-Kenntnisse (Schicht-Konzept, Quallen-Klassifikation, Bioluminiszenz), Kartografie (Tiefen-Schichten farbig kodieren bleibt im Kopf), Kooperation zwischen Spezialisierungen (keine kommt allein zum Ziel) und Selbstkontrolle beim Codeknacker (ergibt das Lösungswort keinen Sinn, prüfen sie ihre Reihenfolge selbst nach). Die Leitidee „in Atlantis zählt, wer hinschaut, nicht wer am schnellsten taucht“ trägt durch die ganze Party — Sorgfalt vor Tempo. Und Geschlechts-Inklusion ganz nebenbei: Meerprinz-Anrede und neutrale Forscher-Rollen zeigen, dass „Meeres-Themen“ für alle da sind."
     },
-    "invitationTemplate": "🧜‍♀️ EXPEDITIONS-AUFRUF\n\nDie Forschungsstation Poseidon-7 sucht neue Perlentaucher, Strömungs-Navigatoren und Meeres-Biologen. {name} wird {alter} und leitet die Atlantis-Expedition. Tritonen und Meerjungfrauen sind beide willkommen — die Expedition braucht euch alle.\n\n📅 Wann: {datum}, {uhrzeit}\n📍 Treffpunkt: {treffpunkt}\n🎒 Mitbringen: bequeme Kleidung, gerne in Blau-Tönen\n📞 Rückmeldung bis {rsvp_deadline} an {kontakt}\n⚠️ Bitte Allergien/Unverträglichkeiten angeben — auch Fisch/Meeresfrüchte{schlafparty_zusatz}\n\nJedes Kind wählt vor Ort seine Spezialisierung — und bekommt am Ende seine eigene Lizenz. In Atlantis zählt nicht, wer am schnellsten taucht, sondern wer hinschaut.",
+    "invitationTemplate": "🧜‍♀️ EXPEDITIONS-AUFRUF\n\nDie Forschungsstation Poseidon-7 sucht neue Perlentaucher, Strömungs-Navigatoren und Meeres-Biologen. {name} wird {alter} und leitet die Atlantis-Expedition. Meerprinzen und Meerjungfrauen sind beide willkommen — die Expedition braucht euch alle.\n\n📅 Wann: {datum}, {uhrzeit}\n📍 Treffpunkt: {treffpunkt}\n🎒 Mitbringen: bequeme Kleidung, gerne in Blau-Tönen\n📞 Rückmeldung bis {rsvp_deadline} an {kontakt}\n⚠️ Bitte Allergien/Unverträglichkeiten angeben — auch Fisch/Meeresfrüchte{schlafparty_zusatz}\n\nJedes Kind wählt vor Ort seine Spezialisierung — und bekommt am Ende seine eigene Lizenz. In Atlantis zählt nicht, wer am schnellsten taucht, sondern wer hinschaut.",
+    "mythologyQuiz": {
+      "headline": "Meerjungfrau-Wissens-Quiz — echte Meeres-Mythologie",
+      "intro": "15 Fragen in 3 Schwierigkeitsstufen. Lege das Quiz auf einen Tisch beim Eintreffen aus — wer früh da ist, kann schon knobeln. Oder als Bonus-Aufgabe für die Wartezeiten zwischen den Stationen. Echte Mythologie aus Griechenland, Japan und der slawischen Welt — kein verkindischter Trickfilm-Stoff. Drucke die 15 Fragen einmal als Quiz-Karte aus, die Lösungen separat (oder in Spiegelschrift unter der Frage — passt zum Codeknacker-Stil). Wer 8 von 15 schafft, bekommt einen Sorgfalt-Spezialist-Stempel.",
+      "stufen": [
+        {
+          "level": "🌊 Stufe 1: Sirenen & Seetang (leicht, ab 9)",
+          "fragen": [
+            {
+              "n": 1,
+              "q": "In welchem Land glaubte man an die „Ningyo“ — eine Meerjungfrau, die angeblich 800 Jahre Leben schenkt, wenn man ihr Fleisch isst?",
+              "a": "Japan"
+            },
+            {
+              "n": 2,
+              "q": "Wie heißen die meerjungfrauen-ähnlichen Wassergeister in slawischen Sagen, die in Flüssen und Seen leben?",
+              "a": "Rusalki"
+            },
+            {
+              "n": 3,
+              "q": "Welcher griechische Held band sich an den Mast, um den Gesang der Sirenen zu überleben?",
+              "a": "Odysseus"
+            },
+            {
+              "n": 4,
+              "q": "Wie viele Arme hat ein Oktopus?",
+              "a": "8"
+            },
+            {
+              "n": 5,
+              "q": "Ab welcher Tiefe ist es im Ozean vollständig dunkel?",
+              "a": "~1000 m (Bathypelagial — zwischen 200 m und 1000 m herrscht die Dämmerungszone mit blau-restlichem Licht)"
+            }
+          ]
+        },
+        {
+          "level": "🐙 Stufe 2: Mythen & Meeresbiologie (mittel, ab 10)",
+          "fragen": [
+            {
+              "n": 6,
+              "q": "In der griechischen Mythologie waren Sirenen ursprünglich keine Meerjungfrauen, sondern was?",
+              "a": "Vogel-Mischwesen / halb Vogel, halb Mensch"
+            },
+            {
+              "n": 7,
+              "q": "Wie heißt die Meerestiefen-Schicht zwischen 1000 und 4000 Metern, in der kein Sonnenlicht mehr ankommt?",
+              "a": "bathypelagisch / Bathypelagial"
+            },
+            {
+              "n": 8,
+              "q": "Wie nennt man das Leuchten, das viele Tiefsee-Lebewesen selbst erzeugen?",
+              "a": "Biolumineszenz"
+            },
+            {
+              "n": 9,
+              "q": "Welches Meeresreich-Wesen wird in irischen Sagen „Merrow“ oder „Mara“ genannt und trägt einen magischen Hut?",
+              "a": "irische Meerjungfrau / Merrow"
+            },
+            {
+              "n": 10,
+              "q": "Welches Meerestier kann seine Hautfarbe und -textur in Sekunden ändern?",
+              "a": "Oktopus / Kraken / Tintenfisch"
+            }
+          ]
+        },
+        {
+          "level": "🌌 Stufe 3: Tiefsee-Geheimnisse (schwer, ab 11)",
+          "fragen": [
+            {
+              "n": 11,
+              "q": "Wie heißt der tiefste Punkt aller Ozeane, der etwa 11.000 Meter unter der Meeresoberfläche liegt?",
+              "a": "Mariannengraben / Challengertief"
+            },
+            {
+              "n": 12,
+              "q": "Welche japanische Legende erzählt von einer Meerjungfrau-Königin, die einen sterblichen Fischer in ihr Unterwasser-Palast „Ryūgū-jō“ einlud?",
+              "a": "Urashima Tarō"
+            },
+            {
+              "n": 13,
+              "q": "Wie heißt die schottische Wasserkreatur-Art, die als wunderschöne Meerjungfrau erscheint, aber tatsächlich ein gestaltwandelndes Robbenwesen ist?",
+              "a": "Selkie"
+            },
+            {
+              "n": 14,
+              "q": "In welcher Tiefen-Schicht (Bezeichnung) leben Anglerfische, die mit einer Leucht-Antenne Beute anlocken?",
+              "a": "bathypelagisch / Tiefsee"
+            },
+            {
+              "n": 15,
+              "q": "Welche Quallen-Art kann sich nach dem Erwachsensein wieder in ihr Jugendstadium zurückverwandeln und gilt deshalb als „unsterblich“?",
+              "a": "Turritopsis dohrnii / unsterbliche Qualle"
+            }
+          ]
+        }
+      ],
+      "anwendung": "Die Stufen-Logik macht es fair: Jüngere fangen bei Stufe 1 an, Ältere überspringen sie. Niemand fühlt sich überfordert oder unterfordert. Slawische Rusalki und schottische Selkies sind die Anti-Trickfilm-Pointe: echte Mythologie aus dem europäischen Volksglauben statt verkitschte Pop-Variante. Kein „rosa Prinzessinnen“-Sprech."
+    },
+    "bonusActivities": [
+      {
+        "name": "🔮 Geheimschrift mit Zitronensaft („Alte Tiefsee-Botschaft“)",
+        "duration": "10 Min.",
+        "minAge": 9,
+        "subtitle": "Eine echte Geheimschrift, die nach 200 Jahren auf dem Meeresboden wieder lesbar wird",
+        "context": "Funktioniert in jeder Variante als Add-On für 10 Min. zwischen den Stationen. Du schreibst vor der Party mit Zitronensaft eine kurze Botschaft auf weißes Papier (Wattestäbchen als Pinsel, oder einen Zahnstocher). Trocknen lassen — die Schrift ist unsichtbar.",
+        "story": "„Diese Botschaft hat 200 Jahre im Mariannengraben gelegen — die Krake hat sie gerade an die Oberfläche gespült. Aber das Salzwasser hat die Tinte unsichtbar gemacht. Wer kennt den Trick, sie wieder sichtbar zu machen?“",
+        "loesung": "Das Papier vorsichtig über eine Wärmequelle halten (Bügeleisen-Sohle auf niedriger Stufe, oder unter eine warme Lampe). Der Zitronensaft oxidiert bei Wärme und wird braun — die Botschaft erscheint.",
+        "botschaftVorschlag": "„Hinter dem Korallenriff-Ökosystem liegt ein Pfad. Folgt dem Quallen-Code.“ — verbindet den Bonus direkt mit der Hauptmission, lenkt die Kinder zur nächsten Station.",
+        "safetyRule": "Bügeleisen-Phase macht ein Erwachsener. Kinder beobachten gespannt — das Erscheinen der Schrift ist der eigentliche Wow-Moment. Alternativ: Föhn auf höchster Stufe direkt aufs Papier, etwas langsamer aber sicherer.",
+        "whyItWorks": "Zitronensaft enthält organische Verbindungen, die bei etwa 100 °C oxidieren und braun werden. Echte Chemie, echtes Erfolgserlebnis. 9-12-Jährige finden das nicht „Zauberei“, sondern „cool — das ist Wissenschaft“. Genau die richtige Tonalität für diese Altersgruppe."
+      },
+      {
+        "name": "🌌 Bioluminiszenz-Schale (Tonic-Water unter UV)",
+        "duration": "5 Min.",
+        "minAge": 9,
+        "subtitle": "Tiefsee im Glas — Tonic-Water leuchtet türkis unter UV-Licht",
+        "context": "Eine schnelle Wissenschafts-Spielerei für den Übergang in die Schlafparty-Phase (Wow) oder als Pause zwischen zwei Stationen. Tonic-Water enthält Chinin — das fluoresziert unter UV-Licht und leuchtet türkis-blau wie echte Bioluminiszenz im Riff.",
+        "material": "1 Flasche Tonic-Water (kein Bitter Lemon!), 6 durchsichtige Gläser, 1 UV-Taschenlampe oder Schwarzlicht-LED (~5-15 €), abgedunkelter Raum.",
+        "schritte": [
+          "Vorhänge zu, Licht aus. Tonic-Water in die Gläser eingießen.",
+          "UV-Lampe drauf halten — das Wasser leuchtet türkis. Staunen-Faktor: maximal.",
+          "Erklärung dazu: „Genau so leuchten Quallen und manche Krebse in der Tiefsee — sie haben Stoffe, die unter UV-Strahlung Energie als Licht abgeben.“",
+          "Optional: Salz, Apfelschorle, Cola in andere Gläser zum Vergleich — nur Tonic leuchtet."
+        ],
+        "safetyRule": "Tonic-Water enthält wenig Chinin, ist trinkbar (in Limonade-Mengen) — aber NICHT als Hauptgetränk an Kinder ausgeben (bitterer Geschmack, gehört nicht in den Magen größerer Mengen). UV-Lampe NIE in Augen.",
+        "whyItWorks": "Echter Wow-Effekt mit Haushaltsmittel. Verknüpft mit der Sterne-Beobachtung der Wow-Schlafparty (Bioluminiszenz + Sterne haben dasselbe Leuchten) und macht das Thema Tiefsee greifbar. Genau die Art Detail, die 9-12-Jährige in der Schule beim „Mein Wochenende“ erzählen."
+      }
+    ],
     "faq": [
       {
         "q": "Wie lange sollte ein Meerjungfrau-Geburtstag für 9–12-Jährige dauern?",
@@ -32281,7 +33501,7 @@ var ELITE_MOTTO_DATA = {
       },
       {
         "q": "Funktioniert das Motto auch für Jungen?",
-        "a": "Ja, explizit. Die Atlantis-Expedition ist als Forschungs-Mission aufgezogen, nicht als Prinzessinnen-Party. Jungen nehmen die Tritonen-Anrede an oder bleiben einfach „Crew“. Die drei Spezialisierungen (Perlentaucher, Strömungs-Navigator, Meeres-Biologe) sind geschlechtsneutrale Forscher-Rollen — keine „Meerjungfrau-Prinzessin“ erforderlich. In gemischten Gruppen ab 9 Jahren wird das gut angenommen."
+        "a": "Ja, explizit. Die Atlantis-Expedition ist als Forschungs-Mission aufgezogen, nicht als Prinzessinnen-Party. Jungen nehmen die Meerprinz-Anrede an oder bleiben einfach „Crew“. Die drei Spezialisierungen (Perlentaucher, Strömungs-Navigator, Meeres-Biologe) sind geschlechtsneutrale Forscher-Rollen — keine „Meerjungfrau-Prinzessin“ erforderlich. In gemischten Gruppen ab 9 Jahren wird das gut angenommen."
       },
       {
         "q": "Wie viele Kinder sollte man einladen?",
@@ -32294,6 +33514,14 @@ var ELITE_MOTTO_DATA = {
       {
         "q": "Ist das nicht zu „kindlich“ für 11-12-Jährige?",
         "a": "Wenn du es wie eine Kleinkind-Party mit rosa Glitzer aufziehst: ja. Wenn du den Atlantis-Expedition-Frame ernst nimmst, die Kinder als selbstständige Crew behandelst und die Aufgaben echte Herausforderungen sind (Codes, Karten, Quallen-Klassifikation, Perlen-Bestimmung), funktioniert es genau richtig. Verkindischen wird sofort gemerkt — Ernsthaftigkeit nicht. Die Krake als intelligenter Hüter (kein Gruselmonster) und der „Sorgfalt-Spezialist“-Stempel statt Tempo-Wettbewerb sind die zwei wichtigsten Anker."
+      },
+      {
+        "q": "Was, wenn ein Kind nicht schwimmen kann oder Angst vor Wasser hat?",
+        "a": "Die Standard- und Wow-Variante laufen komplett trocken — Atlantis-Karte vermessen, Codeknacker, Quallen-Klassifikation, Tauch-Synchronisation und Sushi-Rollen brauchen NULL Wasser. Falls eine Schwimmbad-Schlafparty geplant ist: schwimmunsichere Kinder mit Schwimmnudel/Weste ausstatten und 1 Erwachsener pro 4 Kinder im Wasser sicherstellen. Eltern vorab schriftlich fragen, ob das Kind schwimmen kann — „so halbwegs“ reicht NICHT. Im Zweifel den Schwimmbad-Teil weglassen und durch eine zusätzliche Tiefsee-Mission ersetzen — kein Kind muss sich exponieren."
+      },
+      {
+        "q": "Kann ich das Quiz mit der echten Mythologie-Frage (Rusalki, Selkies) einbauen?",
+        "a": "Ja — das ist sogar empfohlen für 10-12-Jährige. Das Meerjungfrau-Wissens-Quiz mit 15 Fragen in 3 Stufen (siehe „mythologyQuiz“) ist auf echte Volksmythologie aus Japan (Ningyo), den slawischen Sagen (Rusalki), Griechenland (Sirenen als Vogel-Mischwesen), Schottland (Selkies) und der Tiefsee-Biologie (unsterbliche Qualle, Bioluminiszenz, Mariannengraben) aufgebaut. Genau das, was diese Altersgruppe von „Trickfilm-Meerjungfrau“ abgrenzt — sie wollen echtes Wissen, nicht Trickfilm-Klischees."
       }
     ],
     "preparationWeeks": {
@@ -32318,7 +33546,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "✉️",
             "title": "Einladungen rausschicken",
-            "detail": "Pflicht im Text: Allergie-Abfrage (auch Fisch!) und Tritonen/Meerjungfrau-Hinweis („alle willkommen“). Bei Schlafparty zusätzlich Medikamenten-Abfrage. RSVP-Link auf party.machsleicht.de."
+            "detail": "Pflicht im Text: Allergie-Abfrage (auch Fisch!) und Meerprinz/Meerjungfrau-Hinweis („alle willkommen“). Bei Schlafparty zusätzlich Medikamenten-Abfrage. RSVP-Link auf party.machsleicht.de."
           },
           {
             "icon": "🏠",
@@ -32353,7 +33581,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "📱",
             "title": "Partyseite einrichten",
-            "detail": "WhatsApp-Partyseite mit allen Infos statt Einzel-Nachrichten — Adresse, Zeit, Kleidung, Allergie- (insb. Fisch) und (bei Schlafparty) Medikamenten-Abfrage. Tritonen-Hinweis nicht vergessen."
+            "detail": "WhatsApp-Partyseite mit allen Infos statt Einzel-Nachrichten — Adresse, Zeit, Kleidung, Allergie- (insb. Fisch) und (bei Schlafparty) Medikamenten-Abfrage. Meerprinz-Hinweis nicht vergessen."
           }
         ]
       },
@@ -32507,7 +33735,7 @@ var ELITE_MOTTO_DATA = {
           "Anbieten: „Du kannst auch das Logbuch führen — aufschreiben, welches Team welche Station geknackt hat.“",
           "Keine Spezialisierung aufzwingen. Manche 11-12-Jährige beobachten lieber erst, besonders wenn sie das Motto „zu kindlich“ finden.",
           "Oft steigen sie nach 15 Min. von selbst ein, wenn der Druck weg ist und sie sehen, dass die Aufgaben anspruchsvoll sind.",
-          "Bei einem Jungen, der „Meerjungfrau“ blöd findet: Tritonen-Anrede betonen, Spezialist-Titel statt Meerjungfrau-Rolle."
+          "Bei einem Jungen, der „Meerjungfrau“ blöd findet: Meerprinz-Anrede betonen, Spezialist-Titel statt Meerjungfrau-Rolle."
         ],
         "fallback": "Wenn es dabei bleibt: das Kind bekommt trotzdem eine Lizenz („Atlantis-Chronist“) — niemand geht ohne nach Hause.",
         "tone": "einfühlsam"
@@ -32564,6 +33792,32 @@ var ELITE_MOTTO_DATA = {
         ],
         "fallback": "Bei Schlafparty: die Eltern der Nicht-Bleiber sind ohnehin ab einer festen Zeit verabschiedet — das vorher kommunizieren.",
         "tone": "diplomatisch"
+      },
+      "kind_will_nicht_schwimmen": {
+        "icon": "🚱",
+        "label": "Kind will/kann nicht schwimmen (Schwimmbad-Schlafparty)",
+        "headline": "Niemals ins Wasser zwingen — Trocken-Rolle anbieten ohne Gesichtsverlust.",
+        "steps": [
+          "„Die Crew braucht jemanden für das Land-Logbuch — wer dokumentiert die Tauchgänge der anderen?“ → ehrenvoll, nicht exklusiv.",
+          "Schwimmunsicheren mit Schwimmnudel/Weste ausstatten — niemals ohne. 1 Erwachsener pro 4 Kinder im Wasser, immer.",
+          "Bei akuter Wasserangst: ans Beckenrand setzen, Füße baumeln lassen, weniger ist mehr. Hänsel-Stopp aus der Crew muss kommen, nicht nur von dir.",
+          "Falls das Kind komplett raus will: trockene Bonus-Mission anbieten (Geheimschrift entziffern, Quallen-Klassifikation), Lizenz bekommt es trotzdem."
+        ],
+        "fallback": "Lieber das ganze Schwimmbad-Modul streichen und alle trocken auf der Tiefsee-Quest lassen, als ein einzelnes Kind exponieren.",
+        "tone": "einfühlsam"
+      },
+      "allergische_reaktion": {
+        "icon": "🚨",
+        "label": "Allergische Reaktion (Fisch im Sushi, Nüsse im Kuchen, Hautekzem von Perlen)",
+        "headline": "Ruhe bewahren, Auslöser entfernen, Eltern + ggf. 112 alarmieren.",
+        "steps": [
+          "Bei Fisch/Soja-Reaktion am Sushi-Tisch (geschwollene Lippen, Atemnot, Übelkeit): SOFORT 112 anrufen, falls Kind einen Adrenalin-Pen bei sich hat → Eltern hatten den vermutlich für diesen Fall mitgegeben.",
+          "Bei Hautekzem von Perlen/Glitzer: Kontaktstelle waschen, kühlen, beobachten. Bei Ausbreitung: Kinderarzt-Notdienst.",
+          "Eltern parallel anrufen — bei schwerer Reaktion zwingend, bei leichter Reaktion zur Info.",
+          "Den Allergie-Spickzettel zur Hand haben (Liste von Kind X = Nuss, Kind Y = Laktose, Kind Z = E-Nummern) — kein Raten, was im Sushi war."
+        ],
+        "fallback": "Vorab in der Einladung GANZ KONKRET fragen: „Allergie auf Fisch, Soja, Nüsse, Laktose, Gluten, E-Nummern, Modeschmuck-Metall? Bitte unbedingt angeben.“ Bei bestätigter Allergie das Kind getrennt im Auge behalten und Notfall-Medikamente neben Handy bereitlegen.",
+        "tone": "ernst"
       }
     }
   },
@@ -39489,7 +40743,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
-            "categoryReasoning": "Kuchen-Topping-Extra, aber Streusel + Smarties tun's auch."
+            "categoryReasoning": "Kuchen-Topping-Extra, aber Streusel + bunte Schoko-Linsen tun's auch."
           },
           {
             "emoji": "🧚",
@@ -39964,7 +41218,7 @@ var ELITE_MOTTO_DATA = {
       "schema_version": "1.0",
       "purpose": "Feen 9-12 (gross) — Phase B Elite-Slot. Verlorener Zauberwald als Escape-Quest mit Pflanzen-Chiffre, geschlechtsoffen, Wurzel-Pakt-Ritual.",
       "phase_b_complete": "2026-05-22",
-      "phase_b_method": "Direct draft analog safari-gross / einhorn-gross Pattern. Codeknacker FLORA (5 unique Buchstaben: F-L-O-R-A, je eine Station, alle echte heimische Pflanzen). Anti-IP konsequent: kein Tinkerbell/Hobbit/Harry-Potter-Vokabular. Geschlechts-Inklusion via Elfenkrieger/Waldwaechter gleichberechtigt zu Blumenfee/Lichtfee, kein farblicher Maedchen/Jungen-Split. Wurzel-Pakt mit Holzring-Rune ist Eroeffnungs- und Abschluss-Ritual."
+      "phase_b_method": "Direct draft analog safari-gross / einhorn-gross Pattern. Codeknacker FLORA (5 unique Buchstaben: F-L-O-R-A, je eine Station, alle echte heimische Pflanzen). Anti-IP konsequent: keine fremden Markenfiguren"
     },
     "motto": "feen",
     "ageGroup": "gross",
@@ -39984,7 +41238,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "topic": "Geschlechter-Mix",
-          "detail": "In dieser Altersgruppe sind gemischte Geburtstage Standard. „Feen-Party = nur für Mädchen\" ist 2026 erledigt — entscheidend ist die Aufzieh-Logik: Wenn Elfenkrieger und Waldwächter gleichwertige Rollen sind, kein Tüll-Pflicht, keine rosa Deko-Dominanz, kommen Jungen ebenso gerne. Anti-IP ist Pflicht: kein Tinkerbell, kein Hobbit, kein Harry Potter — eigenes Vokabular trägt."
+          "detail": "In dieser Altersgruppe sind gemischte Geburtstage Standard. „Feen-Party = nur für Mädchen\" ist 2026 erledigt — entscheidend ist die Aufzieh-Logik: Wenn Elfenkrieger und Waldwächter gleichwertige Rollen sind, kein Tüll-Pflicht, keine rosa Deko-Dominanz, kommen Jungen ebenso gerne. Anti-IP ist Pflicht: keine fremden Markenfiguren"
         },
         {
           "topic": "Regeln",
@@ -40107,7 +41361,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "16:40",
             "title": "🎂 Zauberwald-Kuchen & Foto",
-            "description": "Schokoladenkuchen mit grüner Glasur, essbarem Moos (zerbröselte Oreo-Streusel), Marzipan-Pilzen und 5 Pflanzen-Markern (Zahnstocher mit Foto der Hüter-Pflanze). 15 Min Kuchen + kurzes Gruppenfoto."
+            "description": "Schokoladenkuchen mit grüner Glasur, essbarem Moos (zerbröselte Schoko-Sandwich-Keks-Streusel), Marzipan-Pilzen und 5 Pflanzen-Markern (Zahnstocher mit Foto der Hüter-Pflanze). 15 Min Kuchen + kurzes Gruppenfoto."
           },
           {
             "time": "16:55",
@@ -40267,8 +41521,8 @@ var ELITE_MOTTO_DATA = {
             "whyItWorks": "Pflanzen bestimmen ist Methode, nicht Glück. Die Kinder erleben, dass es eine erlernbare Fähigkeit ist — und nehmen Brennnessel/Spitzwegerich-Wissen mit nach Hause."
           }
         ],
-        "food": "🎂 Zauberwald-Schoko-Kuchen (1 Springform, grüne Glasur + Oreo-Krümel-Moos + Marzipan-Pilze) · 🍕 Mini-Pizzen mit frischen Kräutern (10 Stück, 1,5/Kind) · 🥤 Holunderblüten-Schorle oder Apfelschorle (2 L) · 🥒 Gemüse-Sticks „Waldgemüse\" mit Kräuterquark · 🍿 Popcorn „Wald-Snack\" (300 g)",
-        "decoration": "🌿 Echtes Grünzeug (Efeu-Ranken, Farn-Wedel aus dem Garten) als Tisch-Deko — kostenlos · 🕯️ LED-Teelichter „Glühwürmchen\" (10 Stk., ~4 €) · 🪵 Holz-Astscheiben als Untersetzer (~3 €) · 🔊 Playlist „Verlorener Zauberwald\" (Spotify: Forest Ambient, Celtic Instrumental, ohne Tinkerbell-Bezug)\n\n💡 Deko-Regel für 9–12:\nWeniger Tüll, mehr Holz, mehr echtes Grün. Keine rosa Papp-Teller mit Feen-Gesicht. Die Atmosphäre soll „alter Wald\" sein, nicht „Kinderzimmer-Rosa\".",
+        "food": "🎂 Zauberwald-Schoko-Kuchen (1 Springform, grüne Glasur + Schoko-Sandwich-Keks-Krümel-Moos + Marzipan-Pilze) · 🍕 Mini-Pizzen mit frischen Kräutern (10 Stück, 1,5/Kind) · 🥤 Holunderblüten-Schorle oder Apfelschorle (2 L) · 🥒 Gemüse-Sticks „Waldgemüse\" mit Kräuterquark · 🍿 Popcorn „Wald-Snack\" (300 g)",
+        "decoration": "🌿 Echtes Grünzeug (Efeu-Ranken, Farn-Wedel aus dem Garten) als Tisch-Deko — kostenlos · 🕯️ LED-Teelichter „Glühwürmchen\" (10 Stk., ~4 €) · 🪵 Holz-Astscheiben als Untersetzer (~3 €) · 🔊 Playlist „Verlorener Zauberwald\" (Spotify: Forest Ambient, Celtic Instrumental, ohne klassische Fantasy-Bezug)\n\n💡 Deko-Regel für 9–12:\nWeniger Tüll, mehr Holz, mehr echtes Grün. Keine rosa Papp-Teller mit Feen-Gesicht. Die Atmosphäre soll „alter Wald\" sein, nicht „Kinderzimmer-Rosa\".",
         "giveaways": "🪵 Wurzel-Pakt-Holzring mit eingebrannter Rune (Hauptmitgebsel) · 📜 Wurzel-Pakt-Karte mit Pflanzennamen + Hüter-Bestätigung · 🌱 Mini-Tütchen mit Wildblumen-Samen (Ringelblume, Löwenzahn — Apotheke / Garten-Center) · 🍫 Schoko-Pilze (Lidl/DM, „Wald-Wegzehrung\") · 🌿 1 Aufkleber-Set Pflanzen-Runen\n\nIn unbleichten Kraftpapier-Tüten mit handgeschriebenem Pflanzennamen. Ca. 4 € pro Kind.",
         "shoppingList": [
           {
@@ -40363,7 +41617,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🎂",
-            "label": "Backmischung + grüne Glasur + Oreo-Krümel + Marzipan-Pilze",
+            "label": "Backmischung + grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze",
             "url": null,
             "priceEur": 8,
             "hasAffiliate": false,
@@ -40682,7 +41936,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🎂",
-            "label": "Backmischung + grüne Glasur + Oreo-Krümel + Marzipan-Pilze + Wunderkerze",
+            "label": "Backmischung + grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze + Wunderkerze",
             "url": null,
             "priceEur": 10,
             "hasAffiliate": false,
@@ -41069,7 +42323,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🎂",
-            "label": "Backmischung + grüne Glasur + Oreo-Krümel + Marzipan-Pilze + Wunderkerze",
+            "label": "Backmischung + grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze + Wunderkerze",
             "url": null,
             "priceEur": 10,
             "hasAffiliate": false,
@@ -41102,7 +42356,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "n": 4,
-          "content": "„Moos-Effekt\": Oreo-Kekse zermahlen + grüne Lebensmittelfarbe untermischen → krümeliges grünes Pulver. Großzügig über den Kuchen streuen."
+          "content": "„Moos-Effekt\": Schoko-Sandwich-Keks-Kekse zermahlen + grüne Lebensmittelfarbe untermischen → krümeliges grünes Pulver. Großzügig über den Kuchen streuen."
         },
         {
           "n": 5,
@@ -41121,7 +42375,7 @@ var ELITE_MOTTO_DATA = {
       "tips": [
         {
           "title": "Keine Lust zu backen?",
-          "body": "Gekaufter Schokoladenkuchen vom Bäcker oder Discounter funktioniert genauso. Die Moos-Optik (grüne Glasur + Oreo-Krümel + Marzipan-Pilze) machst du in 15 Min selbst — niemand merkt, dass der Boden gekauft ist."
+          "body": "Gekaufter Schokoladenkuchen vom Bäcker oder Discounter funktioniert genauso. Die Moos-Optik (grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze) machst du in 15 Min selbst — niemand merkt, dass der Boden gekauft ist."
         },
         {
           "title": "Veganer / glutenfreier Kuchen",
@@ -41215,7 +42469,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "✉️",
             "title": "Einladungen rausschicken — Anti-IP-Ton",
-            "detail": "Pflicht im Text: „Verlorener Zauberwald\"-Frame, Allergie- und Heuschnupfen-Abfrage, erdfarbene Kleidung empfohlen, Wow zusätzlich „Handy mit GPS möglich\". Keine Tinkerbell/Disney-Anspielungen. RSVP-Link auf party.machsleicht.de."
+            "detail": "Pflicht im Text: „Verlorener Zauberwald\"-Frame, Allergie- und Heuschnupfen-Abfrage, erdfarbene Kleidung empfohlen, Wow zusätzlich „Handy mit GPS möglich\". keine fremden Markenfiguren"
           },
           {
             "icon": "🏠",
@@ -41320,7 +42574,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🎂",
             "title": "Zauberwald-Kuchen backen",
-            "detail": "Schoko-Boden backen, abkühlen, grüne Glasur + Oreo-Krümel-Moos + Marzipan-Pilze + Wurzel-Symbol. 90 Min Gesamt. Bei vegan/glutenfrei rechtzeitig anders kalkulieren."
+            "detail": "Schoko-Boden backen, abkühlen, grüne Glasur + Schoko-Sandwich-Keks-Krümel-Moos + Marzipan-Pilze + Wurzel-Symbol. 90 Min Gesamt. Bei vegan/glutenfrei rechtzeitig anders kalkulieren."
           },
           {
             "icon": "🏕️",
@@ -41434,7 +42688,7 @@ var ELITE_MOTTO_DATA = {
         "headline": "Bäcker-Hack: gekaufter Schoko-Boden + selbst gemachte Moos-Optik.",
         "steps": [
           "Schokoladenkuchen vom Bäcker oder Discounter holen (~8 €).",
-          "Grüne Glasur (200 g Puderzucker + Wasser + Lebensmittelfarbe) drüber, dann Oreo-Krümel-Moos.",
+          "Grüne Glasur (200 g Puderzucker + Wasser + Lebensmittelfarbe) drüber, dann Schoko-Sandwich-Keks-Krümel-Moos.",
           "Marzipan-Pilze formen (15 Min) und Wurzel-Symbol aus Schoko-Guss aufmalen.",
           "Bei Wow: Wunderkerze rein, LED-Teelichter drum herum für Stimmung."
         ],

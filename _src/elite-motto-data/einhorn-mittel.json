@@ -182,13 +182,13 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "1 große Plastikwanne, 3 kg weißer Reis oder Zucker, 2 EL essbarer Glitzer oder Zucker-Perlen (Backzutaten-Regal), 10 kleine Einhorn-Figuren (~4 € für 12 Stück auf Amazon), 1 Löffel pro Kind",
-          "prepText": "Reis mit Glitzer mischen — sieht sofort nach Sternenstaub aus. Einhorn-Figuren in der Wanne unter dem „Sternenstaub\" vergraben. Jedes Kind bekommt einen Löffel und „gräbt\" vorsichtig. Wer ein Einhorn findet, darf es behalten.",
+          "prepText": "Reis mit Glitzer mischen — sieht sofort nach Sternenstaub aus. Einhorn-Figuren in der Wanne unter dem „Sternenstaub\" vergraben. Jedes Kind bekommt einen Löffel und „gräbt\" vorsichtig. Wer ein Einhorn findet, darf es behalten.\n\nTipp: Immer mehr Einhörner vergraben als Kinder da sind (bei 6 Kindern → 10 Einhörner). So findet jedes Kind mindestens eins — kein Frust.",
           "steps": [],
-          "safetyRule": "Glitzer-Reis nicht zum Naschen — Hände waschen vor Snacks. Bei jüngeren Kindern (oder bei Allergien) nur Reis ohne Glitzer. Reis-Korn-Aspirationsrisiko bei sehr jungen Geschwistern.",
+          "safetyRule": "Glitzer-Reis nicht zum Naschen — Hände waschen vor Snacks. Bei jüngeren Kindern (oder bei Allergien) nur Reis ohne Glitzer. Reis-Korn-Aspirationsrisiko bei sehr jungen Geschwistern. Glitzer-Inhaltsstoffe checken (essbar vs. kosmetisch).",
           "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Zucker (weniger Sauerei, wiederverwendbar).",
           "ageAdjust8": "Tiefer vergraben. Variante: mit verbundenen Augen nur ertasten — welches Einhorn ist es (stehend, liegend, fliegend)?",
           "indoorTip": "Wanne auf eine alte Tischdecke oder in die Badewanne stellen.",
-          "outdoorTip": null,
+          "outdoorTip": "Auf Terrasse oder Wiese — verstreuter Reis ist Vogelfutter, kein Aufräum-Stress.",
           "whyItWorksTitle": null,
           "whyItWorks": null
         },
@@ -201,18 +201,18 @@
           "loudness": "laut",
           "effort": "leicht",
           "material": "6 farbige Tücher/Handtücher (rot, orange, gelb, grün, blau, lila), 4 Pylonen/Schuhe, 1 Einhorn-Kuscheltier als Ziel",
-          "prepText": "Tücher in Regenbogen-Reihenfolge auf dem Boden auslegen (jedes etwa 1 m Abstand). Jedes Kind „galoppiert\" über den Regenbogen zum Einhorn am Ende, begrüßt es mit einer Verbeugung und galoppiert zurück.",
+          "prepText": "Tücher in Regenbogen-Reihenfolge auf dem Boden auslegen (jedes etwa 1 m Abstand). Jedes Kind „galoppiert\" über den Regenbogen zum Einhorn am Ende, begrüßt es mit einer Verbeugung und galoppiert zurück.\n\nVarianten: Rückwärts, auf einem Bein, als Staffel in 2 Teams, zu zweit Hand in Hand.\n\nTipp: Verlierer kriegen „Trost-Stern\" (Gummibärchen). Kein Kind geht leer aus.",
           "steps": [],
-          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen.",
+          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Bei Slalom/Staffel: Bodenfreiheit checken (keine Stolperfallen, keine offene Steckdose im Lauf-Korridor).",
           "ageAdjust6": "Kurze Strecke, langsames Galoppieren.",
           "ageAdjust8": "Slalom zwischen den Tüchern, Zeit stoppen, Bestzeit notieren.",
-          "indoorTip": "Flur reicht — Tücher enger legen.",
-          "outdoorTip": null,
+          "indoorTip": "Flur reicht — Tücher enger legen. Wohnzimmer-Möbel zur Seite, Teppich-Ecken fixieren.",
+          "outdoorTip": "Größer aufbauen, Bäume als „Wolken-Wald\" einbauen — Sichtkontakt zu allen Kindern halten.",
           "whyItWorksTitle": null,
           "whyItWorks": null
         }
       ],
-      "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Tränen\"8 Capri-Sun\n🍓Obst (rosa/rot)250 g Erdbeeren\n🍿Popcorn200 g\n\n💡 „Einhorn-Tränen\"?\nApfelschorle oder klare Limo in Gläser, 2 Tropfen Johannisbeersaft oder Grenadine rein → wird sofort rosa. „Einhorn-Tränen\" aufs Etikett schreiben. Sorgt garantiert für Staunen. Kostet nix extra, macht den Unterschied.",
+      "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Tränen\"8 Saftpäckchen\n🍓Obst (rosa/rot)250 g Erdbeeren\n🍿Popcorn200 g\n\n💡 „Einhorn-Tränen\"?\nApfelschorle oder klare Limo in Gläser, 2 Tropfen Johannisbeersaft oder Grenadine rein → wird sofort rosa. „Einhorn-Tränen\" aufs Etikett schreiben. Sorgt garantiert für Staunen. Kostet nix extra, macht den Unterschied.",
       "decoration": "🎈 Rosa / Lila Luftballons6 Stk. ~2 €Reichen für die Grundstimmung\n🖍️ Ausmalbilder auf dem TischKostenloskribbelbunt.de oder malvorlagen-seite.de\n🎉 Girlande „Happy Birthday\"~2 €Rosa/Lila, DM oder Action\n\n💡 Minimal-Deko-Regel:\n3 Dinge reichen: Ballons, Girlande, Ausmalbilder auf dem Tisch. Die Sternenstaub-Wanne und die Einhorn-Tattoos SIND die Deko — die Kinder interessieren sich für das Erlebnis, nicht für die Raumdeko.",
       "giveaways": "🦄 1 Einhorn-Figur aus der Schatzsuche (haben sie selbst gefunden — emotionaler Wert)\n🖍️ 2–3 Ausmalbilder zum Mitnehmen\n🍭 1 kleine Tüte Regenbogen-Gummibärchen oder Lolli\n\nIn rosa oder weiße Papiertüte (10 Stk. ~1–2 € bei DM/Action) mit „Einhorn-Geschenke für ___\" beschriften. Kosten: ~1,80 € pro Kind.",
       "shoppingList": [
@@ -245,7 +245,7 @@
         },
         {
           "emoji": "🧃",
-          "label": "Capri-Sun + Grenadine",
+          "label": "Saftpäckchen + Grenadine",
           "url": null,
           "priceEur": 5,
           "hasAffiliate": false,
@@ -373,15 +373,15 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "1 flacher Teller (weiß), 1 Tasse Vollmilch (je fetter, desto besser), Lebensmittelfarben (4 Farben — rot, gelb, blau, grün; Supermarkt ~2 €), Spülmittel, Wattestäbchen (1 pro Kind)",
-          "prepText": "Milch in den Teller gießen, bis der Boden komplett bedeckt ist. Jedes Kind tropft eine Farbe in die Mitte. Dann: Wattestäbchen in Spülmittel tunken und mitten in die Milch stippen — die Farben „explodieren\" in Regenbogen-Spiralen. Sieht aus wie Magie, ist aber Physik.",
+          "prepText": "Milch in den Teller gießen, bis der Boden komplett bedeckt ist. Jedes Kind tropft eine Farbe in die Mitte. Dann: Wattestäbchen in Spülmittel tunken und mitten in die Milch stippen — die Farben „explodieren\" in Regenbogen-Spiralen. Sieht aus wie Magie, ist aber Physik.\n\nErklärung (für neugierige Kinder): Spülmittel zerstört die Oberflächenspannung der Milch, und das Fett „flieht\" vor der Seife — dabei nimmt es die Farben mit. Echte Chemie.\n\nTipp: Geht mit einem frischen Teller beliebig oft. 3–4 Runden sind normal. Danach ist der Effekt weg (Milch gesättigt).",
           "steps": [],
-          "safetyRule": "Lebensmittelfarbe + Spülmittel — nicht trinken, Hände waschen. Schalen-Standort sicher.",
+          "safetyRule": "Lebensmittelfarbe + Spülmittel — nicht trinken, Hände waschen vor Snacks. Schalen-Standort sicher (Tablett mit Rand drunter, kippsicher). Bei Allergiker: Lebensmittelfarbe-Inhaltsstoffe checken (E-Nummern, Tartrazin).",
           "ageAdjust6": "Du tropfst die Farben rein, sie halten nur die Wattestäbchen. Hände-wasch-Pause danach.",
           "ageAdjust8": "Kinder dürfen selbst alles dosieren. Erkläre die Physik dahinter — in dem Alter lieben sie solche „echten\" Erklärungen.",
-          "indoorTip": null,
+          "indoorTip": "Auf Wachstuch oder altem Backblech als Tablett — Spülmittel-Spritzer landen sonst auf der Tischplatte.",
           "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Spülmittel zerstört die Oberflächenspannung der Milch. Das Fett „flieht\" vor der Seife und nimmt die Farben mit — Regenbogen-Spirale."
         },
         {
           "name": "✨ Sternenstaub-Schatzsuche",
@@ -392,9 +392,9 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "1 große Plastikwanne, 3 kg Reis mit essbarem Glitzer gemischt, 10 Einhorn-Figuren, 1 Löffel pro Kind",
-          "prepText": "Wie in der Minimal-Variante — aber hier als „Erste Prüfung der Regenbogen-Wächter-Ausbildung\" angekündigt. Jedes Kind, das ein Einhorn findet, darf seinen Einhorn-Namen in den „Wächter-Pass\" eintragen.",
+          "prepText": "Wie in der Minimal-Variante — aber hier als „Erste Prüfung der Regenbogen-Wächter-Ausbildung\" angekündigt. Jedes Kind, das ein Einhorn findet, darf seinen Einhorn-Namen in den „Wächter-Pass\" eintragen.\n\nTipp: Immer 10 Einhörner bei 6 Kindern (mehr Figuren als Suchende) — keiner geht leer aus.",
           "steps": [],
-          "safetyRule": "Glitzer-Reis nicht zum Naschen — Hände waschen vor Snacks. Bei jüngeren Kindern (oder bei Allergien) nur Reis ohne Glitzer. Reis-Korn-Aspirationsrisiko bei sehr jungen Geschwistern.",
+          "safetyRule": "Glitzer-Reis nicht zum Naschen — Hände waschen vor Snacks. Bei jüngeren Kindern (oder bei Allergien) nur Reis ohne Glitzer. Reis-Korn-Aspirationsrisiko bei sehr jungen Geschwistern. Bei Allergikern: Glitzer auf E-Nummern checken (oft Lebensmittelfarben + Glanz-Zusatz).",
           "ageAdjust6": null,
           "ageAdjust8": "Farbige Einhörner (je 2 Stück pro Farbe). Kind darf nur seine „zugeteilte Farbe\" suchen und muss die anderen wieder vergraben.",
           "indoorTip": null,
@@ -430,18 +430,18 @@
           "loudness": "ruhig",
           "effort": "mittel",
           "material": "500 g transparente Glycerin-Seife (Rohling, ~6–8 € Bastelladen oder Amazon), essbarer Glitzer oder kosmetischer Glitzer, Silikon-Förmchen (Einhorn-/Stern-/Herz-Form, ~5 €), 1 Mikrowellen-Becher, Lebensmittelfarben (rosa/lila/türkis)",
-          "prepText": "Glycerin-Seife in Würfel schneiden (machst du vorher). Für jedes Kind einen Würfel in den Becher, 30 Sek. in die Mikrowelle → flüssig. Kind wählt Farbe (2 Tropfen rein), streut Glitzer dazu, gießt in sein Silikon-Förmchen. 15 Min. auskühlen lassen → vorsichtig rauspressen. Fertige Einhorn-Seife geht als Mitgebsel mit.",
+          "prepText": "Glycerin-Seife in Würfel schneiden (machst du vorher). Für jedes Kind einen Würfel in den Becher, 30 Sek. in die Mikrowelle → flüssig. Kind wählt Farbe (2 Tropfen rein), streut Glitzer dazu, gießt in sein Silikon-Förmchen. 15 Min. auskühlen lassen → vorsichtig rauspressen. Fertige Einhorn-Seife geht als Mitgebsel mit.\n\nTipp: Tüte + Bändchen bereithalten, damit die fertige Seife „verpackt\" wie ein Geschenk nach Hause geht.",
           "steps": [],
-          "safetyRule": "Glitzer-Reis nicht zum Naschen — Hände waschen vor Snacks. Bei jüngeren Kindern (oder bei Allergien) nur Reis ohne Glitzer. Reis-Korn-Aspirationsrisiko bei sehr jungen Geschwistern.",
+          "safetyRule": "ACHTUNG: Seife kommt flüssig-warm aus der Mikrowelle (~60°C) — nur Erwachsene handhaben die heißen Becher. Kinder dürfen die Zutaten aussuchen und reingießen. Topflappen griffbereit. Glitzer auf Allergie-Inhaltsstoffe checken (kosmetischer Glitzer vs. essbarer Glitzer — beide gehen, kosmetischer ist bunter aber nicht zum Naschen).",
           "ageAdjust6": "Du machst alles Heiße. Kinder wählen nur Farbe und Glitzer-Menge.",
           "ageAdjust8": "Dürfen unter Aufsicht den Becher aus der Mikrowelle nehmen (Topflappen!) und selber gießen.",
-          "indoorTip": null,
+          "indoorTip": "Mikrowellen-Station 1 Meter vom Bastel-Tisch entfernt — Kinder warten am Tisch, nur du gehst zur Mikrowelle und zurück.",
           "outdoorTip": null,
           "whyItWorksTitle": null,
           "whyItWorks": null
         }
       ],
-      "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Tränen\"12 Capri-Sun\n🥪Stern-Sandwiches12 Stück\n🍓Rosa Obst-TellerErdbeeren, Melone\n🍿Popcorn250 g\n🍭Regenbogen-Gummibärchen1 Tüte (200 g)",
+      "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Tränen\"12 Saftpäckchen\n🥪Stern-Sandwiches12 Stück\n🍓Rosa Obst-TellerErdbeeren, Melone\n🍿Popcorn250 g\n🍭Regenbogen-Gummibärchen1 Tüte (200 g)",
       "decoration": "🦄 Einhorn-Teller & BecherSet ~8 €\n🎈 Pastell-Luftballons (rosa/lila/türkis)10 Stk. ~3 €\n🌈 Regenbogen-Girlande1 Stk. ~4 €\n☁️ Wolken aus Watte an der DeckeKostenlosWatte-Bälle mit Faden aufhängen, 20 Min.\n\n💡 Regenbogen-Tisch-Trick:\nTischdecke weiß, darüber 6 schmale Stoffstreifen (oder Krepppapier-Streifen) in Regenbogenfarben längs auflegen. Sieht sofort magisch aus, kostet fast nix, dauert 5 Minuten. Noch besser: die Snack-Teller in derselben Farbreihenfolge aufstellen (rosa Erdbeeren → orange Möhrchen → gelbes Popcorn → grüne Gurken → blaue Tränen → lila Traubenstücke).",
       "giveaways": "🧼 1 selbst gegossene Einhorn-Seife (mit ausgesuchter Farbe)\n🦄 1 Einhorn-Figur aus der Schatzsuche\n🎭 Eigene Einhorn-Maske (selbst gebastelt)\n🍭 1 Tüte Regenbogen-Gummibärchen\n\nAlles in rosa oder weiße Papiertüte (10 Stk. ~1–2 € bei DM/Action), beschriftet mit „Luna-Mondsilber-Geschenke für ___\". Kosten: ~3 € pro Kind.",
       "shoppingList": [
@@ -488,7 +488,7 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Heber für Capri-Sun + Sandwich-Service, aber Pappgeschirr tut's auch."
+          "categoryReasoning": "Atmosphäre-Heber für Saftpäckchen + Sandwich-Service, aber Pappgeschirr tut's auch."
         },
         {
           "emoji": "💫",
@@ -519,7 +519,7 @@
         },
         {
           "emoji": "🧃",
-          "label": "Capri-Sun + Sandwiches + Obst",
+          "label": "Saftpäckchen + Sandwiches + Obst",
           "url": null,
           "priceEur": 12,
           "hasAffiliate": false,
@@ -606,13 +606,34 @@
           "loudness": "laut",
           "effort": "hoch",
           "material": "5 Umschläge mit Rätseln, 1 Schatzkarte (mit [machsleicht erstellen](/kindergeburtstag?modus=schatzsuche)), 1 Sternenstaub-Kiste (Schuhkarton mit Glitzer beklebt, Inhalt: Einhorn-Figuren, Gummibärchen, Haarsträhnchen in Regenbogenfarben)",
-          "prepText": "Erstelle mit dem machsleicht-Planer eine Einhorn-Schatzsuche mit 5 Stationen. Jede Station hat ein altersgerechtes Rätsel:",
-          "steps": [],
-          "safetyRule": "Glitzer-Reis nicht zum Naschen — Hände waschen vor Snacks. Bei jüngeren Kindern (oder bei Allergien) nur Reis ohne Glitzer. Reis-Korn-Aspirationsrisiko bei sehr jungen Geschwistern.",
-          "ageAdjust6": null,
-          "ageAdjust8": null,
-          "indoorTip": null,
-          "outdoorTip": null,
+          "prepText": "Erstelle mit dem machsleicht-Planer eine Einhorn-Schatzsuche mit 5 Stationen. Jede Station hat ein altersgerechtes Rätsel. Lösungswort aus allen Stationen ergibt am Ende den Versteck-Ort der Sternenstaub-Kiste.",
+          "steps": [
+            {
+              "name": "Station 1: Regenbogen-Mathematik",
+              "content": "„Wie viele Farben hat ein Regenbogen?\" (Lösung: 7) → nächster Hinweis liegt unter dem 7. Blumentopf / 7. Gegenstand."
+            },
+            {
+              "name": "Station 2: Einhorn-Spur lesen",
+              "content": "3 gezeichnete Hufabdrücke liegen aus — nur einer passt zum echten Einhorn. Einer hat 4 Zehen (Katze), einer ist gespalten (Ziege), einer ist rund und ungeteilt wie beim Pferd (richtige Antwort — Einhörner sind Pferde-verwandt). Richtige Spur zeigt den Weg."
+            },
+            {
+              "name": "Station 3: Einhorn-Puzzle",
+              "content": "4 Teile zusammensetzen → Bild zeigt den nächsten Ort (Schrank, Küche, Garten)."
+            },
+            {
+              "name": "Station 4: Einhorn-Tränen-Trick",
+              "content": "„Was bekommt ein Einhorn, wenn es weint?\" (Lösung: Regenbogen-Tränen — deshalb heißt die Limo so!) → Belohnung: Armband mit Regenbogenperlen pro Kind."
+            },
+            {
+              "name": "Station 5: Lösungswort & Schatz",
+              "content": "Lösungswort aus den vorherigen Stationen ergibt den Versteck-Ort (z.B. „WOLKE\" → im Wäschekorb, „STERN\" → unter dem Kissen). Sternenstaub-Kisten-Inhalt: Einhorn-Figuren, Schoko-Sterne, Regenbogen-Perlen-Armbänder, Einhorn-Tattoos, Glitzer-Haarsträhnchen — alles geht in die Mitgebsel-Tüte."
+            }
+          ],
+          "safetyRule": "Stations-Wege vorher abgehen — keine Stolperfallen, kein offenes Wasser, keine Steckdosen-Nähe. Bei Outdoor: Sichtkontakt zu Kindern auf allen Stationen, bei großem Garten 2 Erwachsene als Stations-Wächter. Glitzer/Konfetti auf Schatzkiste nicht zum Naschen (Allergie-Risiko).",
+          "ageAdjust6": "Bilder statt Texte — Symbole zeigen die Rätsel-Aufgabe (Regenbogen-Bild für Frage 1). Du liest mit, Kinder lösen mündlich.",
+          "ageAdjust8": "Rätsel komplexer machen — bei Station 1 z.B. „Wie viele Farben hat ein Regenbogen + wie viele Beine hat ein Einhorn?\" (7+4=11). Schwierigkeitsgrad nach Gruppen-Niveau anpassen.",
+          "indoorTip": "Wohnzimmer + Flur + Küche reichen für 5 Stationen — Versteck-Orte vorher markieren mit Klebezettel, damit du selbst nicht den Überblick verlierst.",
+          "outdoorTip": "Garten oder Park — Umschläge wetterfest in Klarsicht-Hüllen, Hinweise mit Wäscheklammer an Ast oder Zaun befestigen.",
           "whyItWorksTitle": null,
           "whyItWorks": null
         },
@@ -624,19 +645,40 @@
           "minAge": 7,
           "loudness": "ruhig",
           "effort": "mittel",
-          "material": "10 Fragen (siehe Beispiele unten), Buzzer/Klingel/Topfdeckel, Punktetafel (Whiteboard oder Papier)",
-          "prepText": "2 Teams. Frage vorlesen, wer zuerst buzzert darf antworten. Richtig = 1 Punkt. Falsch = anderes Team darf.",
-          "steps": [],
-          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen.",
-          "ageAdjust6": "Multiple Choice (3 Antworten).",
-          "ageAdjust8": "Offene Fragen.",
-          "indoorTip": null,
+          "material": "10 Fragen (Beispiele unten), Buzzer/Klingel/Topfdeckel, Punktetafel (Whiteboard oder Papier)",
+          "prepText": "2 Teams. Frage vorlesen, wer zuerst buzzert darf antworten. Richtig = 1 Punkt. Falsch = anderes Team darf.\n\nTipp: Verlierer-Team bekommt „Trost-Regenbogen\" (= extra Gummibärchen). Niemand geht leer aus.",
+          "steps": [
+            {
+              "name": "Frage 1: Pegasus",
+              "content": "„Wie heißt das geflügelte Pferd in der Mythologie?\" → Pegasus."
+            },
+            {
+              "name": "Frage 2: National-Tier",
+              "content": "„In welchem Land gilt das Einhorn als National-Tier?\" → Schottland."
+            },
+            {
+              "name": "Frage 3: Regenbogen-Farben",
+              "content": "„Wie viele Farben hat ein klassischer Regenbogen?\" → 7."
+            },
+            {
+              "name": "Frage 4: Einhorn-Stirn",
+              "content": "„Was hat ein Einhorn auf der Stirn?\" → Ein Horn."
+            },
+            {
+              "name": "Frage 5: Tapisserien",
+              "content": "„In welcher Geschichte jagt man ein Einhorn mit einer Jungfrau als Köder?\" → Mittelalterliche Legende / Einhorn-Tapisserien."
+            }
+          ],
+          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Buzzer-Geräte vorher testen, scharfe Kanten abkleben.",
+          "ageAdjust6": "Multiple Choice (3 Antworten zur Auswahl) — bei 6-Jährigen reine Wissens-Fragen oft zu schwer.",
+          "ageAdjust8": "Offene Fragen, schnelles Tempo, kleine Bonus-Frage zwischendurch („Wie heißt das Einhorn aus deinem Lieblingsbuch?\").",
+          "indoorTip": "Im Sitzkreis auf dem Boden oder am Esstisch — Buzzer-Mitte gleich erreichbar für beide Teams.",
           "outdoorTip": null,
           "whyItWorksTitle": null,
           "whyItWorks": null
         }
       ],
-      "food": "🎂Regenbogen-Kuchen1 Gugelhupf + Wunderkerze\n💧„Einhorn-Tränen\"14 Capri-Sun\n☁️Wolken-Sandwiches12 Stück (Toast mit Wolken-Form)\n🍓Rosa Obst-TellerErdbeeren, Melone, Trauben\n🍿Popcorn300 g (rosa gefärbt)\n⭐Schoko-Sterne1 Netz (Schatz)\n🍭Regenbogen-Gummibärchen1 Tüte (200 g)\n\n💡 Wolken-Sandwiches:\nMit einem Wolken-Ausstecher (oder einfach großer runder Ausstecher) Toast-Scheiben ausstechen. Frischkäse drauf, oben zweite Wolke drüber. Sieht sofort zauberhaft aus, schmeckt den Kindern, und 12 Stück sind in 15 Minuten gemacht.",
+      "food": "🎂Regenbogen-Kuchen1 Gugelhupf + Wunderkerze\n💧„Einhorn-Tränen\"14 Saftpäckchen\n☁️Wolken-Sandwiches12 Stück (Toast mit Wolken-Form)\n🍓Rosa Obst-TellerErdbeeren, Melone, Trauben\n🍿Popcorn300 g (rosa gefärbt)\n⭐Schoko-Sterne1 Netz (Schatz)\n🍭Regenbogen-Gummibärchen1 Tüte (200 g)\n\n💡 Wolken-Sandwiches:\nMit einem Wolken-Ausstecher (oder einfach großer runder Ausstecher) Toast-Scheiben ausstechen. Frischkäse drauf, oben zweite Wolke drüber. Sieht sofort zauberhaft aus, schmeckt den Kindern, und 12 Stück sind in 15 Minuten gemacht.",
       "decoration": "🦄 Einhorn-Teller & BecherSet ~8 €\n🎈 Pastell-Ballon-Bogen~15 € (30 Stk.)\n🌈 Regenbogen-Girlande~4 €\n☁️ Watte-Wolken an der DeckeKostenlos, 20 Min.\n✨ Glitzer-Tischläufer~3 € Krepppapier\n🪧 „Regenbogen-Akademie\"-SchildKostenlosPappe + Edding + Glitzer, am Eingang\n🔊 Einhorn-MusikKostenlosYouTube: „Unicorn Music for Kids\" leise im Hintergrund\n🦄 Einhörner mit Blumenkränzchen~4 € FigurenSpielzeug-Einhörner mit Mini-Blumenkränzen auf den Tisch\n\n🦄 Wow-Bonus: Aufblasbares Einhorn-Kostüm für Mama oder Papa\nDer absolute Überraschungs-Hit: ein [aufblasbares Einhorn-Kostüm*](https://www.amazon.de/s?k=aufblasbares+einhorn+kost%C3%BCm+erwachsene&tag=machsleicht-21) (~35–50 €). Du öffnest die Tür als riesiges Einhorn — die Kinder rasten aus. Funktioniert als „Luna, die Direktorin der Regenbogen-Akademie\", als Überraschungsgast beim Kuchen oder als „Wächter-Prüferin\" für die Urkundenverleihung. Wird DAS Foto des Tages. Die Kinder erzählen noch Wochen davon.\n\n🌙 Optional: Die Mondlicht-Botschaft (UV-Schwarzlicht-Moment)\nDas Element, das eine Einhorn-Party wirklich magisch macht — wenn du das Drumherum bauen kannst. Mit einer [UV-Taschenlampe*](https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht-21) (~12 €) und einem [UV-Geheimschrift-Stift*](https://www.amazon.de/s?k=uv+geheimschrift+stift+unsichtbar&tag=machsleicht-21) (~7 €) schreibst du vorher eine unsichtbare Botschaft auf weißes Papier — z.B. das Lösungswort der Rätselrallye oder den Versteck-Ort der Sternenstaub-Kiste.\n\nWenn die Kinder an diese Station kommen: Badezimmer oder Flur verdunkeln (Handtuch über das Fenster reicht), UV-Lampe an, Papier drunter — die Buchstaben leuchten plötzlich auf. Die Kinder sind komplett still. Das ist der Moment, an den sie sich in 5 Jahren noch erinnern.\n\nWann einbauen: Als „Prüfung 3b\" zwischen Rätselrallye und Schatzsuche — 5 Min. reichen. Was du brauchst: UV-Lampe, UV-Stift, weißes Papier, verdunkelbarer Raum, etwas Nerven für die Vorbereitung. Warum optional: Nicht jedes Zuhause lässt sich leicht verdunkeln, und die Botschaft will sorgfältig vorbereitet sein. Wenn der Rest der Wow-Variante schon ausreicht, lass es weg — es ist die Kirsche, nicht der Kuchen.",
       "giveaways": "🪪 Wächter-Pass (mit Foto und Urkunde)\n🧼 Selbst gegossene Einhorn-Seife\n🦄 Einhorn-Figur aus der Schatzsuche\n💍 Regenbogen-Perlen-Armband (aus der Rätselrallye)\n⭐ Schoko-Sterne\n\nIn rosa Papiertüte (10 Stk. ~1–2 € bei DM/Action) mit „Regenbogen-Akademie · Luna ___\". Kosten: ~4,50 € pro Kind.",
       "shoppingList": [
@@ -723,7 +765,7 @@
         },
         {
           "emoji": "🧃",
-          "label": "Capri-Sun + Sandwiches + Obst + Würstchen",
+          "label": "Saftpäckchen + Sandwiches + Obst + Würstchen",
           "url": null,
           "priceEur": 15,
           "hasAffiliate": false,
@@ -746,7 +788,7 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Kuchen-Topping-Extra, aber Streusel + Smarties tun's auch."
+          "categoryReasoning": "Kuchen-Topping-Extra, aber Streusel + bunte Schoko-Linsen tun's auch."
         },
         {
           "emoji": "🦄",
@@ -823,7 +865,7 @@
       },
       {
         "n": 6,
-        "content": "Regenbogen-Streusel oder Smarties um den Fuß herum als „Wolken-Lava\". Essbarer Glitzer drüber = magisch."
+        "content": "Regenbogen-Streusel oder bunte Schoko-Linsen um den Fuß herum als „Wolken-Lava\". Essbarer Glitzer drüber = magisch."
       },
       {
         "n": 7,
@@ -850,7 +892,7 @@
     "structured": [
       {
         "topic": "🚨 Allergien vorher abfragen",
-        "detail": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten). In die Einladung schreiben: „Hat dein Kind Allergien oder Unverträglichkeiten?\" Capri-Sun und Popcorn sind fast immer safe. Essbarer Glitzer ist oft aus Zucker — also Zucker-Unverträglichkeit beachten."
+        "detail": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten). In die Einladung schreiben: „Hat dein Kind Allergien oder Unverträglichkeiten?\" Saftpäckchen und Popcorn sind fast immer safe. Essbarer Glitzer ist oft aus Zucker — also Zucker-Unverträglichkeit beachten."
       },
       {
         "topic": "📋 Plan B bei Regen",
@@ -863,6 +905,14 @@
       {
         "topic": "👥 Ab 6 Kindern: 1 Helfer dazu",
         "detail": "Bis 5 Kinder schaffst du eine Standard-Party allein. Bei 6+ brauchst du Unterstützung — besonders für Seife-gießen (Mikrowelle) und das Regenbogen-Milch-Experiment (parallel an 2 Tischen). Oma, andere Elternteile, oder eine Teenager-Nachbarin (10 € für 3 Stunden) retten dir den Tag.\n\n⏰ Abholzeit vorher klären\nIn diesem Alter können Eltern kurz abgesetzt werden — müssen aber telefonisch erreichbar sein. Schreib in die Einladung: „Abholung 17:00 Uhr pünktlich bitte.\" Sonst stehen um 17:30 noch 3 Kinder da und du hast schon alles abgebaut."
+      },
+      {
+        "topic": "🐉 Gender-Inklusion: Drachen-Variante für Jungs",
+        "detail": "Bei gemischten Gruppen mit Jungs-Skepsis: Wächter-Namen sind absichtlich Fantasy-RPG-Style (Phoenix Flammenhuf, Atlas Bergschatten, Orion Jägerstern) — niemand findet das kindisch. Falls trotzdem Murren: reframe als „Regenbogen-Wächter-Akademie\" oder „Magier-Ausbildung\". Drachen-Variante: Einhorn-Maske → Drachen-Maske ausmalen (gleiches Material, andere Farbpalette: grün, schwarz, rot). Sternenstaub-Suche bleibt — heißt halt „Drachen-Schatz\". Inhalte 100% gleich, nur Story-Verpackung swappen. Spätestens bei UV-Schwarzlicht (Wow) und Quiz ist jeder still."
+      },
+      {
+        "topic": "🍰 Trost-Preis-Regel: Niemand verliert",
+        "detail": "In 6–8-Jahren ist Wettbewerb okay — aber „nur Sieger\" zählt nicht. Bei Parcours, Quiz, Rätselrallye: Verlierer-Team bekommt „Trost-Regenbogen\" (= extra Gummibärchen + Sticker). Funktional: ein zweites Belohnungs-Set vorbereiten, optisch identisch, nur Beschriftung anders („Sieger-Stern\" vs. „Mut-Stern\"). So bekommt JEDES Kind etwas am Ende. Hat sich bei Schultern-Hochziehen-Kindern als Game-Changer erwiesen."
       }
     ],
     "educationalValue": null
@@ -883,7 +933,15 @@
     },
     {
       "q": "Funktioniert das Einhorn-Motto in gemischten Gruppen?",
-      "a": "Ja, die Regenbogen-Wächter-Ausbildung ist darauf ausgelegt, für alle Kinder zu funktionieren — weil sie nicht um Prinzessinnen kreist, sondern um Prüfungen, Experimente und Magie. Das Regenbogen-Milch-Experiment begeistert jedes Kind, die Schatzsuche ist geschlechtsneutral, und die Urkunden-Zeremonie mit eigenem Einhorn-Namen funktioniert für Jungen genauso wie für Mädchen. Die Farbwelt lässt sich leicht anpassen (weniger Rosa, mehr Türkis, Indigo, Gold)."
+      "a": "Ja, die Regenbogen-Wächter-Ausbildung ist darauf ausgelegt, für alle Kinder zu funktionieren — weil sie nicht um Prinzessinnen kreist, sondern um Prüfungen, Experimente und Magie. Das Regenbogen-Milch-Experiment begeistert jedes Kind, die Schatzsuche ist geschlechtsneutral, und die Urkunden-Zeremonie mit eigenem Einhorn-Namen funktioniert für Jungen genauso wie für Mädchen. Die Farbwelt lässt sich leicht anpassen (weniger Rosa, mehr Türkis, Indigo, Gold). Für Jungs-skeptische Gruppen: Wächter-Namen wie „Phoenix Flammenhuf\", „Atlas Bergschatten\", „Orion Jägerstern\" und „Ares Sturmwelle\" sind bewusst Fantasy-RPG-Style — keiner findet das kindisch."
+    },
+    {
+      "q": "Wie gehe ich mit Allergien (Glitzer, Lebensmittelfarbe, Glycerin) um?",
+      "a": "Drei Allergie-Risiken in dieser Variante: (1) Essbarer Glitzer enthält oft E-Nummern (Lebensmittelfarben + Glanz-Zusatz) — Packung lesen, bei Zucker-Unverträglichkeit auf zucker-freien Bio-Glitzer wechseln. (2) Lebensmittelfarbe-Tropfen für Milch-Experiment + Seife — bei Tartrazin-Empfindlichkeit (E102) nur natürliche Beeren-Säfte verwenden. (3) Glycerin-Seifen-Rohling: Inhaltsstoffe auf Parfümfreie Versionen prüfen für Kinder mit empfindlicher Haut. Vorher 5 Min. Spot-Test an Innenseite Unterarm bei einem freiwilligen Kind. Wer kein Tattoo will: aufs Wächter-Pass kleben statt auf die Hand."
+    },
+    {
+      "q": "Was ist der Unterschied zwischen den 3 Varianten (Minimal/Standard/Wow)?",
+      "a": "Minimal (2h, 32€): Sternenstaub-Schatzsuche + Regenbogen-Parcours + Kuchen. Stressfrei, kein Helfer nötig. Standard (3h, 65€): zusätzlich Masken-Basteln, Milch-Experiment und Seife-Gießen — 4 Aktivitäten mit gutem Rhythmus-Wechsel. Wow (3,5h, 93€): zusätzlich Wolkenwald-Rätselrallye + optional UV-Schwarzlicht-Geheimschrift + Wächter-Zeremonie mit Urkunden. Komplette Wächter-Ausbildungs-Story, braucht 2. Erwachsenen. Tendenz: bei 6 Kindern 1. Mal: Standard. Bei Routine + Helfer: Wow."
     }
   ],
   "preparationWeeks": {
@@ -938,7 +996,7 @@
         {
           "icon": "📦",
           "title": "Bestellliste finalisieren",
-          "detail": "Was kaufst du wo? Einhorn-Tattoo-Set + Figuren + Masken + Tatlampe (Wow) bei Amazon, Glycerin-Seife + Lebensmittelfarbe bei Rossmann/dm, Capri-Sun + Backmischung im Supermarkt. Liste machen — sonst kaufst du in Woche -1 dreimal."
+          "detail": "Was kaufst du wo? Einhorn-Tattoo-Set + Figuren + Masken + Tatlampe (Wow) bei Amazon, Glycerin-Seife + Lebensmittelfarbe bei Rossmann/dm, Saftpäckchen + Backmischung im Supermarkt. Liste machen — sonst kaufst du in Woche -1 dreimal."
         }
       ]
     },
@@ -1013,7 +1071,7 @@
         {
           "icon": "🌈",
           "title": "Kuchen-Wolken-Guss + Deko",
-          "detail": "Weiße Glasur drüber (200g Puderzucker + 3 EL Wasser), Regenbogen-Streusel oder Smarties um den Fuß als ‚Wolken-Lava'. Einhorn-Horn aus Fondant oder Eiswaffel mit Schoko (HANDOFF-Trick). Über Nacht fest werden lassen."
+          "detail": "Weiße Glasur drüber (200g Puderzucker + 3 EL Wasser), Regenbogen-Streusel oder bunte Schoko-Linsen um den Fuß als ‚Wolken-Lava'. Einhorn-Horn aus Fondant oder Eiswaffel mit Schoko (HANDOFF-Trick). Über Nacht fest werden lassen."
         },
         {
           "icon": "🧪",
@@ -1043,7 +1101,7 @@
         {
           "icon": "⏰",
           "title": "30 Min vor Ankunft: Stationen aufbauen",
-          "detail": "Tische vorbereiten (Masken-Tisch oder Milch-Experiment oder Seife-Tisch, je nach Variante), Capri-Sun kühlen, Sandwiches/Obst schneiden. Helfer ist da oder kommt jetzt. Kuchen aus dem Kühlschrank — Zimmertemperatur schmeckt besser."
+          "detail": "Tische vorbereiten (Masken-Tisch oder Milch-Experiment oder Seife-Tisch, je nach Variante), Saftpäckchen kühlen, Sandwiches/Obst schneiden. Helfer ist da oder kommt jetzt. Kuchen aus dem Kühlschrank — Zimmertemperatur schmeckt besser."
         },
         {
           "icon": "🎯",
@@ -1104,7 +1162,7 @@
         "Milch-Experiment: 2. Tisch eröffnen, parallel laufen lassen (Helfer übernimmt einen).",
         "Sofort Verstärkung anrufen: Oma/Nachbarin, 10€ für 2 Std Tisch-Aufsicht.",
         "Tattoos + Wächter-Pässe verteilen vor allem anderen — Geschwister NICHT leer ausgehen lassen.",
-        "Capri-Sun nachbestellen lassen (Tankstelle/Lieferdienst), Kuchen-Stücke kleiner schneiden."
+        "Saftpäckchen nachbestellen lassen (Tankstelle/Lieferdienst), Kuchen-Stücke kleiner schneiden."
       ],
       "fallback": "Kein Helfer erreichbar? Parcours streichen, dafür Milch-Experiment + Masken-Basteln parallel — du läufst zwischen 2 Tischen.",
       "tone": "praktisch"
@@ -1117,7 +1175,7 @@
         "Rolle anbieten: ‚Du bist heute Hofdame der Königin — du verteilst die Wächter-Pässe.'",
         "Alternative: ‚Glitzer-Inspekteurin' — checkt ob alle Tattoos sitzen, Foto-Reporterin mit deinem Handy.",
         "Tattoo nicht auf die Hand? Auf den Wächter-Pass kleben, ist sowieso vorgesehen.",
-        "Sitzplatz mit eigenem Capri-Sun + Einhorn-Figur — Beobachter-Posten, kein Außenseiter-Posten."
+        "Sitzplatz mit eigenem Saftpäckchen + Einhorn-Figur — Beobachter-Posten, kein Außenseiter-Posten."
       ],
       "fallback": "Will gar nichts? Buch + Decke in die ruhige Ecke, alle 10 Min kurz reinschauen. Manche steigen nach 20 Min selbst ein.",
       "tone": "ruhig"
@@ -1125,11 +1183,11 @@
     "kuchen_misslungen": {
       "icon": "🎂",
       "label": "Kuchen ist misslungen",
-      "headline": "Bäcker-Hack: weißer Gugelhupf + Wolken-Guss + Smarties = Notfall in 10 Min.",
+      "headline": "Bäcker-Hack: weißer Gugelhupf + Wolken-Guss + bunte Schoko-Linsen = Notfall in 10 Min.",
       "steps": [
         "Weißen Gugelhupf beim Bäcker oder im Supermarkt holen (4–6€).",
         "200g Puderzucker + 3 EL Wasser anrühren, weißen Guss drüber gießen — fertig die ‚Wolke'.",
-        "Regenbogen-Smarties oder essbare Streusel um den Fuß als ‚Wolken-Lava' ankleben.",
+        "Regenbogen-bunte Schoko-Linsen oder essbare Streusel um den Fuß als ‚Wolken-Lava' ankleben.",
         "Eiswaffel mit Schoko-Spitze als Einhorn-Horn obendrauf — sieht aus wie gewollt."
       ],
       "fallback": "Bäcker zu? Muffins aus dem Vorrat, pro Muffin ein kleines Marshmallow + Zahnstocher mit rosa Papier-Spitze — Mini-Einhorn-Hörner.",
@@ -1154,7 +1212,7 @@
       "headline": "Raus aus dem Trubel — 5 Min am Wächter-Pult, dann sehen wir weiter.",
       "steps": [
         "Kind aus der Gruppe nehmen — Küche oder Flur, weg vom Lärm.",
-        "Capri-Sun + Tattoo auf Handrücken kleben als Beruhigungs-Ritual.",
+        "Saftpäckchen + Tattoo auf Handrücken kleben als Beruhigungs-Ritual.",
         "Rolle anbieten: ‚Magst du die Wächter-Pässe verteilen? Du sagst, wer dran ist.'",
         "Bei Heimweh: Wahl anbieten — anrufen oder Foto von Mama am Handy zeigen. Anruf nur wenn Kind danach fragt.",
         "Nach 5 Min an die Hand nehmen, zur nächsten Station mitnehmen — nicht fragen."

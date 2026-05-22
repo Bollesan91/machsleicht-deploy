@@ -543,6 +543,96 @@
           "whyItWorks": "Nach Befragung, Fingerabdrücken und Geheimtinte brauchen 6–8-Jährige dringend Bewegung — der Parcours fängt diese Energie ein und gibt ihr eine Story (\"wir folgen der Spur\"). Die Mini-Stationen halten es abwechslungsreich, und das Ziel mit der letzten Hinweis-Karte bindet das Toben sauber zurück in den Fall."
         },
         {
+          "name": "🕵️ Beschattungs-Mission (Bonus-Spiel)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 20,
+          "minAge": 6,
+          "loudness": "leise",
+          "effort": "leicht",
+          "material": "1 erwachsene Person als „Verdächtige(r)“ (oder älteres Geschwisterkind), 1 Ermittlungs-Heft pro 2er-Team, Bleistifte. Optional: ein auffälliges „Beweisstück“ (Tuch, Schlüsselbund), das der Verdächtige bei sich trägt.",
+          "prepText": "Der „Verdächtige“ besucht 3–4 Räume (oder Garten-Stationen) und macht in jedem etwas Auffälliges — ein Buch anfassen, das Licht anschalten, das Beweisstück kurz hinlegen und wieder mitnehmen. Die Detektiv-Teams folgen heimlich auf Abstand und notieren in ihrem Heft, was sie beobachtet haben.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Briefing",
+              "content": "Du erklärst: „Achtung Detektive — der Verdächtige bewegt sich gleich durchs Haus. Eure Aufgabe: ihm leise folgen und merken, was er anfasst und wo er hingeht. Nicht ansprechen!“"
+            },
+            {
+              "n": 2,
+              "name": "Beschattung",
+              "content": "Der Verdächtige startet seinen Rundgang. Die Teams folgen auf 2–3 Meter Abstand und schreiben/malen in ihre Hefte: wo war er, was hat er angefasst, was hat er mitgenommen?"
+            },
+            {
+              "n": 3,
+              "name": "Rückkehr & Notizen abgleichen",
+              "content": "Nach 3–4 Stationen versammelt sich die Gruppe. Jedes Team liest seine Beobachtungen vor — wer hat das auffällige Beweisstück bemerkt?"
+            },
+            {
+              "n": 4,
+              "name": "Verhör des Verdächtigen",
+              "content": "Du fragst stellvertretend für die Detektive: „Wo waren Sie um 15:30? Was hatten Sie dabei?“ — die Notizen werden gegen die Antworten geprüft."
+            },
+            {
+              "n": 5,
+              "name": "Bonus-Indiz sichern",
+              "content": "Das Team mit den genauesten Beobachtungen darf das Beweisstück als zusätzlichen Hinweis für den Code-Showdown einfordern — perfekte Brücke zum nächsten Spiel."
+            }
+          ],
+          "safetyRule": "Der Verdächtige geht IMMER im Schritttempo und nutzt keine Treppen ohne Begleitung — Beschattung darf nicht in Rennen ausarten. Klar vorher sagen: „Nicht anrempeln, nicht anschreien — leise bleiben.“",
+          "ageAdjust6": "Nur 2 Stationen, der Verdächtige macht sehr offensichtliche Dinge (deutlich winken, laut etwas hinlegen). Du begleitest die Gruppe.",
+          "ageAdjust8": "4 Stationen, der Verdächtige macht subtile Bewegungen (Buch zurückstellen, etwas einstecken statt hinlegen). Die Teams arbeiten selbstständig.",
+          "indoorTip": "Den Rundgang durch 3 Räume legen — Wohnzimmer, Flur, Küche reicht für 6-8 völlig. Mehr ist Stress.",
+          "outdoorTip": "Garten-Tour an Bank, Baum und Sandkasten — die Teams können sich besser verteilen, ohne sich gegenseitig im Weg zu stehen.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Beobachten, leise sein und mitschreiben kombiniert drei Dinge, die 6-8-Jährige genau jetzt üben: Konzentration, Selbstbeherrschung und Detail-Gedächtnis. Es wirkt wie ein „richtiger“ Detektiv-Auftrag, kostet null Material und überbrückt elegant die Phase zwischen Spuren-Parcours und Code-Finale. Eltern, die mitkommen, dürfen einfach mit beschatten — keine zusätzliche Helfer-Last."
+        },
+        {
+          "name": "🔑 Junior-Ermittler-Test (Geschicklichkeits-Bonus)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 15,
+          "minAge": 6,
+          "loudness": "leise",
+          "effort": "leicht",
+          "material": "1 leere Glas- oder Plastikflasche (Engel-Hals), 1 Schlüssel an einer Schnur (oder Schlüsselanhänger), 1 Stift (oder Holzlöffel) pro Kind. Optional: 1 Stoppuhr und ein Mini-Hindernis-Set (z.B. ein paar Stifte zum Übersteigen).",
+          "prepText": "Die Detektiv-Crew muss vor dem großen Showdown beweisen, dass sie auch geschickt ist — denn an einem Tatort braucht man manchmal Fingerspitzengefühl. Aufgabe: einen Schlüssel mit dem Stift aus der Flasche angeln. Eine ruhige, konzentrierte Mini-Prüfung als Brücke zum Finale.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Aufbau zeigen",
+              "content": "Du legst den Schlüssel an seiner Schnur in die Flasche, die Schnur hängt nach außen. „Aufgabe: Mit dem Stift den Schlüssel hochangeln, ohne die Flasche umzukippen.“"
+            },
+            {
+              "n": 2,
+              "name": "Reihum versuchen",
+              "content": "Jedes Kind ist einmal dran — mit dem Stift den Schnur-Bogen vorsichtig anheben. Keine Zeit, kein Wettkampf, jedes Kind schafft es."
+            },
+            {
+              "n": 3,
+              "name": "Bei Frust helfen",
+              "content": "Wer es nicht schafft, bekommt einen kleinen Stups: „Stift waagerecht halten, ganz langsam ziehen.“ Niemand wird stehen gelassen."
+            },
+            {
+              "n": 4,
+              "name": "Stempel für die Akte",
+              "content": "Jedes Kind, das den Schlüssel hochangelt, bekommt einen Stempel oder Sticker auf seine Detektiv-Karte — „Geschicklichkeit bestanden“."
+            },
+            {
+              "n": 5,
+              "name": "Übergang zum Showdown",
+              "content": "„Jetzt seid ihr bereit für den letzten Code.“ — der Test verbindet sich nahtlos mit dem Code-Finale."
+            }
+          ],
+          "safetyRule": "Keine Glasflasche mit Sprüngen, kein scharfkantiger Schlüssel. Auf einem Tisch (nicht auf dem Boden) ausführen — verhindert Kopfdunst beim Hinunterbeugen.",
+          "ageAdjust6": "Größere Flaschen-Öffnung verwenden, Schlüssel an einer dickeren Kordel — leichter zu fassen.",
+          "ageAdjust8": "Kleinere Öffnung, dünnere Schnur. Bonus-Variante: Mini-Hindernis-Parcours davor (über drei Stifte steigen), dann angeln.",
+          "indoorTip": "Auf dem Esstisch unter dem Verhör-Licht — wirkt wie ein echtes Asservaten-Labor.",
+          "outdoorTip": "Im Garten auf einem stabilen Tisch — keine Wind-Anfälligkeit, die Flasche darf nicht wegrollen.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Reine Sitz-Spiele ermüden 6-8-Jährige — Feinmotorik mit klarem Erfolgserlebnis aktiviert sie nochmal frisch vor dem Code-Finale. Niemand muss schnell sein, jeder bekommt seinen Stempel. Das ist genau die Pause, die das Hirn vor dem letzten Rätsel braucht."
+        },
+        {
           "name": "🔑 Großer Code & Fall-Auflösung",
           "indoor": true,
           "outdoor": true,
@@ -588,7 +678,7 @@
           "whyItWorks": "Das Finale zieht alle Fäden zusammen und gibt dem Nachmittag einen klaren Höhepunkt — die Kinder spüren, dass ihre einzelnen Funde zusammen den Fall gelöst haben. Die einzeln aufgerufene Diplom-Übergabe gibt jedem Kind seinen Moment, und der wiedergefundene Kuchen leitet nahtlos zum gemeinsamen Essen über."
         }
       ],
-      "food": "🥪Detektiv-Brote (rund ausgestochen)12 Stück\n🥤\"Spuren-Saft\"3 L Apfelschorle\n🍕Mini-Pizzen \"Beweisstücke\"12 Stück\n🍪Lupen-Kekse8 Stk.\n🥕Gemüse-Sticks \"Indizien\"1 Teller\n🧀Käse-Würfel \"Fingerabdrücke\"200 g\n\n💡 Snacks im Story-Frame\nNamen genügen, um normale Snacks zur Detektiv-Verpflegung zu machen. Die \"Beweisstücke\" sind ganz normale Mini-Pizzen — der Name macht den Unterschied.",
+      "food": "🥪Detektiv-Brote (rund ausgestochen)12 Stück\n🥤\"Spuren-Saft\"3 L Apfelschorle\n🍕Mini-Pizzen \"Beweisstücke\"12 Stück\n🍪Lupen-Kekse8 Stk.\n🥕Gemüse-Sticks \"Indizien\"1 Teller\n🧀Käse-Würfel \"Fingerabdrücke\"200 g\n📜Geheimakte-Sandwiches8 Stück\n🧪Detektiv-Limo \"Beweis Nr. 7\"8 Fläschchen\n\n💡 Snacks im Story-Frame\nNamen genügen, um normale Snacks zur Detektiv-Verpflegung zu machen. Die \"Beweisstücke\" sind ganz normale Mini-Pizzen — der Name macht den Unterschied. Geheimakte-Sandwiches sind Tramezzini- oder Toastdreiecke in braunem Packpapier gewickelt, mit einem \"GEHEIM\"-Stempel oder Edding drauf — sieht aus wie eine Akte, schmeckt wie Frühstück. Die Detektiv-Limo füllst du in kleine durchsichtige Trinkfläschchen oder Reagenzglas-Optik-Becher mit handgeschriebenem \"Beweis Nr. 7\"-Etikett (dunkelrote Johannisbeer-Schorle oder normaler Saft); die Kinder „analysieren\" ihr Getränk und es kostet null Extra-Aufwand.",
       "decoration": "🔍 Lupen-Girlande1 Stk. ~3 €\n🎈 Luftballons schwarz/gelb15 Stk. ~4 €\n🚧 Tatort-Absperrband (gelb)1 Rolle ~2 €\n👣 Fußspuren aus Tonpapierkostenlos / ~2 €\n🪧 Verdächtigen-Schilder selbst gemaltkostenlos\nGroße Lupe aus Pappe an die Tür — \"Detektiv-Agentur\" als Empfang.",
       "giveaways": "🏅 1 Ehren-Detektiv-Diplom (Name + Stempel)\n🔍 1 Lupe\n📓 1 Mini-Ermittlungs-Heft + Bleistift\n🖐️ 1 Karte mit eigenem Fingerabdruck\n🍋 1 Geheimtinten-Set zum Mitnehmen (Wattestäbchen + Anleitung)",
       "shoppingList": [
@@ -974,7 +1064,7 @@
       },
       {
         "n": 3,
-        "content": "Aus Schokolinsen oder Smarties eine Reihe Fußspuren über den Kuchen legen — der Täter ist entkommen."
+        "content": "Aus Schokolinsen oder bunte Schoko-Linsen eine Reihe Fußspuren über den Kuchen legen — der Täter ist entkommen."
       },
       {
         "n": 4,
@@ -1026,6 +1116,14 @@
       {
         "topic": "🎒 Pufferzeit einplanen",
         "detail": "Kinder lösen Rätsel mal in 5, mal in 20 Minuten. Plane pro Spiel etwas Luft ein und habe ein kurzes Reserve-Spiel (z.B. \"Detektiv-Memory\") parat, falls am Ende noch Zeit ist — oder kürze, wenn es länger dauert."
+      },
+      {
+        "topic": "🏠 Wohnung als Tatort denken",
+        "detail": "Verteile die Stationen bewusst auf verschiedene Räume: Tatort im Wohnzimmer (Absperrband), Verhör in der Küche (Sitzplätze), Fingerabdruck-Labor am Esstisch, Geheimtinte im abgedunkelten Bad/Flur. Das macht aus deiner Wohnung eine echte Detektiv-Agentur — und wenn ein Spiel kippt, gibt es im nächsten Raum schon den Reset."
+      },
+      {
+        "topic": "🌳 Garten-Erweiterung: ja, aber als Bonus",
+        "detail": "Garten ist ideal für den Spuren-Parcours (mehr Bewegung) und die Beschattungs-Mission (mehr Platz zum Pirschen). Aber: Plane immer eine Indoor-Alternative parallel — Regen macht 30 Minuten vor Party-Start aus dem Garten-Plan eine Stress-Situation, wenn es keinen Plan-B gibt."
       }
     ],
     "educationalValue": "Hinter dem Detektiv-Spiel steckt echtes Lernen. Beim Befragen der Verdächtigen und Vergleichen der Aussagen üben Kinder logisches Schlussfolgern und das Entdecken von Widersprüchen — eine Grundfähigkeit für Mathe und Sachkunde. Das Code-Knacken trainiert Mustererkennung und stärkt die entstehende Lesekompetenz. Fingerabdrücke und Geheimtinte liefern erste naturwissenschaftliche Aha-Momente. In den 2er-Teams üben die Kinder Zusammenarbeit und Geduld. Und über allem steht das Selbstwirksamkeits-Gefühl: \"Wir haben den Fall gelöst\" — das nimmt jedes Kind als Selbstvertrauen mit nach Hause."
@@ -1051,6 +1149,18 @@
     {
       "q": "Wie verhindere ich, dass ein Rätsel die Stimmung kippt?",
       "a": "Halte pro Spiel einen \"Tipp-Umschlag\" bereit und gib lieber früh einen Hinweis. Kinder von 6–8 frustrieren schnell, wenn etwas zu schwer ist. Die Faustregel: Ein zu leicht gelöstes Rätsel ist kein Problem, ein ungelöstes schon. Im Zweifel führst du die Gruppe mit warm/kalt-Hinweisen ans Ziel."
+    },
+    {
+      "q": "Wie verhindere ich Streit, wer den Fall „gelöst hat“?",
+      "a": "Mache Gruppenarbeit zur Regel — schon beim Schwur. Sag klar: „Wir lösen den Fall zusammen, niemand ist Chefermittler.“ Beim großen Code wird jeder Buchstabe sichtbar einem Team zugeordnet, sodass die Lösung erkennbar Gruppenarbeit ist. Die Diplome formulierst du gleichwertig („Ehren-Detektiv im Fall XY“) statt mit unterschiedlichen Rängen. Wenn doch zwei Kinder streiten, beide zu „Co-Code-Knackern“ machen — zwingt zur Kooperation."
+    },
+    {
+      "q": "Brauche ich für die Beschattungs-Mission einen extra Erwachsenen?",
+      "a": "Nicht zwingend — ein älteres Geschwisterkind reicht oder ein abholendes Elternteil, das kurz vorher schon da ist. Der „Verdächtige“ muss nur durch 3-4 Räume gehen und auffällige Dinge tun (Buch anfassen, ein Beweisstück hinlegen). Geht in 20 Minuten und kostet null Material. Wenn niemand verfügbar ist, kann auch ein großes Stofftier mit Begleit-Story als „Verdächtiger“ dienen, das du heimlich umsetzt."
+    },
+    {
+      "q": "Was ist mit Kindern, die nicht gut lesen können?",
+      "a": "Alle Codes und Hinweise haben Bilder UND Buchstaben — das ist eingeplant. Wer noch nicht sicher liest, kommt über das Bild mit. Außerdem gibt es Rollen ohne Lese-Anforderung: Spurenleser (sucht), Protokollführer (malt statt schreibt), Beweis-Fotograf, Karten-Hüter. Bei der Verdächtigen-Befragung dürfen ältere Kinder oder der „Befrager“ vorlesen — niemand muss vor der Gruppe lesen."
     }
   ],
   "preparationWeeks": {
@@ -1334,6 +1444,45 @@
       ],
       "fallback": "Wirklich chaotisch? Goodie-Bags mit Diplom, Lupe und Fingerabdruck-Karte in den Flur stellen, jedes Kind bekommt eins beim Gehen.",
       "tone": "praktisch"
+    },
+    "kind_findet_spur_nicht": {
+      "icon": "🐾",
+      "label": "Kind findet die nächste Spur nicht",
+      "headline": "Tipp-Umschlag öffnen — lieber zu früh helfen als die Stimmung kippen lassen.",
+      "steps": [
+        "Pro Spiel einen vorbereiteten „Tipp-Umschlag“ bereitliegen haben (Wort: „warm“, Pfeil, Bild des Verstecks). Wer ihn öffnen will, darf — das ist ausdrücklich erlaubt.",
+        "Den warm/kalt-Hinweis ins Spiel einbauen: „Ihr seid jetzt warm… wärmer… kalt!“ — das fühlt sich wie Teil der Ermittlung an, nicht wie Schummeln.",
+        "Wenn ein Kind frustriert ist: ihm gezielt eine kleine Teilaufgabe geben („Schau du mal hinter dem grünen Buch“) — Erfolgserlebnis statt Versagensgefühl.",
+        "Bei der Hinweis-Karte: prüfen, ob das Versteck eindeutig ist. Bei 6-8 sind „auf dem Bücherregal“ oder „zwischen Sofakissen“ klarer als „im Wohnzimmer“."
+      ],
+      "fallback": "Bleibt die ganze Gruppe stecken? Du selbst spielst Verdächtige(r) und „verrätst“ den Fundort beim Verhör — die Story trägt es.",
+      "tone": "praktisch"
+    },
+    "streit_ueber_loesung": {
+      "icon": "🤝",
+      "label": "Streit, wer den Fall gelöst hat",
+      "headline": "Gruppen-Lösung explizit machen — kein einzelner „Chefermittler“.",
+      "steps": [
+        "Schon beim Schwur klar sagen: „Wir sind ein Ermittler-Team. Den Fall lösen wir gemeinsam — niemand ist Chefermittler, alle sind Spürnasen.“",
+        "Wenn ein Kind „Ich hab’s zuerst gewusst!“ ruft: ruhig spiegeln: „Genau, du hast einen wichtigen Hinweis gefunden — und [Name] hat den Code geknackt. Ohne beides geht es nicht.“",
+        "Beim großen Code: jeder Buchstabe wird einzeln einem Team zugeordnet — so ist die Lösung sichtbar Gruppenarbeit, nicht Einzelleistung.",
+        "Diplome explizit gleichwertig formulieren: „Ehren-Detektiv — Teil der Ermittlung im Fall XY“ statt unterschiedlicher Ränge."
+      ],
+      "fallback": "Heißer Streit zwischen zwei Kindern? Beide kurz zu „Co-Code-Knackern“ ernennen und die Buchstaben-Tafel zu zweit aufschlüsseln lassen — zwingt zur Kooperation und löst die Spannung.",
+      "tone": "ruhig"
+    },
+    "raetsel_zu_schwer": {
+      "icon": "🧩",
+      "label": "Ein Rätsel ist zu schwer — Stimmung droht zu kippen",
+      "headline": "„Detektiv-Trick“ einsetzen statt Stille auszuhalten.",
+      "steps": [
+        "Du legst dem Code-Knacker einen „Detektiv-Trick“ in die Hand — eine bereits halb gelöste Variante des Rätsels („Schaut, ich hab schon mal die ersten zwei Buchstaben rausgefunden“). Niemand wird beschämt.",
+        "Bei zu komplexen Aussagen die Verdächtigen vorlesen lassen, statt die Kinder selbst lesen zu lassen — Lese-Hürde sinkt sofort.",
+        "Buchstaben-Karten umlegen, sodass ein Wort halb sichtbar wird — der Aha-Moment kommt früher, ist aber immer noch eine Lösung.",
+        "Bei Geheimtinte, die nicht erscheint: sofort eine zweite vorbereitete Botschaft hervorholen („Da war ja noch eine!“) — kein Drama, einfach weiter."
+      ],
+      "fallback": "Komplett verloren? Springt direkt zur Code-Auflösung mit „Tipp“: Du nimmst die Buchstaben in die Hand und legst sie öffentlich in die richtige Reihenfolge — als „Detektiv-Lehrer-Modus“. Das ist Geschichte, kein Eingeständnis.",
+      "tone": "entlastend"
     }
   }
 }

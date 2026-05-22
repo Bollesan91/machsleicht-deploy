@@ -98,7 +98,7 @@
         {
           "time": "15:40",
           "title": "🎂 Kuchen & Lösch-Wasser",
-          "description": "Feuerwehrauto-Kuchen (Kastenform mit Reifen aus Oreo) + Apfelschorle in roten Bechern. Happy Birthday singen, 25 Min. Pause für alle Kinder. Wichtigster Slot für Ruhe."
+          "description": "Feuerwehrauto-Kuchen (Kastenform mit Reifen aus Schoko-Sandwich-Keks) + Apfelschorle in roten Bechern. Happy Birthday singen, 25 Min. Pause für alle Kinder. Wichtigster Slot für Ruhe."
         },
         {
           "time": "16:05",
@@ -454,12 +454,12 @@
         },
         {
           "emoji": "🎂",
-          "label": "Backmischung Kastenform + roter Zuckerguss + Oreo-Reifen",
+          "label": "Backmischung Kastenform + roter Zuckerguss + Schoko-Sandwich-Keks-Reifen",
           "url": null,
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Geburtstagskuchen Pflichtteil + Oreo-Reifen sind Standard-Upgrade Sub-Position."
+          "categoryReasoning": "Geburtstagskuchen Pflichtteil + Schoko-Sandwich-Keks-Reifen sind Standard-Upgrade Sub-Position."
         },
         {
           "emoji": "🎈",
@@ -737,7 +737,7 @@
         },
         {
           "emoji": "🎂",
-          "label": "Backmischung + Zuckerguss + Oreo + Wunderkerze",
+          "label": "Backmischung + Zuckerguss + Schoko-Sandwich-Keks + Wunderkerze",
           "url": null,
           "priceEur": 7,
           "hasAffiliate": false,
@@ -780,6 +780,55 @@
       }
     }
   ],
+  "bonusGames": {
+    "intro": "Diese Spiele kannst du je nach Wetter, Energielevel und Kindern einbauen oder weglassen — alle 3-5-tauglich, alle ohne neues Material gegenüber den Hauptvarianten.",
+    "items": [
+      {
+        "name": "🎶 Tatü-Tata-Tanz (Sirenen-Stopp-Spiel)",
+        "duration": 10,
+        "minAge": 3,
+        "loudness": "laut",
+        "indoor": true,
+        "outdoor": true,
+        "material": "Bluetooth-Box + Handy mit Feuerwehr-Sirene + Kinderlieder im Wechsel. Sonst nichts.",
+        "anleitung": "Musik läuft = die Kinder bewegen sich frei (rennen, tanzen, hüpfen). Sobald die Sirene ertönt, müssen alle „einfrieren\" — wie ein Feuerwehrmann am Einsatzort. Wer wackelt, hilft beim nächsten Runde-Anschmeißen mit. Kein Ausscheiden, kein Verlieren — bei 3-5 sind kooperative Varianten Pflicht. Funktioniert als Energie-Burner direkt vor der ersten Snack-Pause.",
+        "whyItWorks": "3-5-Jährige brauchen Bewegungs-Slots zwischen den eher statischen Bastel/Schaum-Aktivitäten. Sirene als Stop-Signal ist motto-stimmig und für die Kleinen sofort verständlich — kein Regelerklären nötig."
+      },
+      {
+        "name": "🔴 Feuer finden — rote Tücher suchen",
+        "duration": 10,
+        "minAge": 3,
+        "loudness": "ruhig",
+        "indoor": true,
+        "outdoor": false,
+        "material": "6-8 rote Tücher oder rote Stoffreste (auch rote Servietten gehen), 1 großer Wasser-Eimer als „Lösch-Sammelstelle\"",
+        "anleitung": "Vorher heimlich 6-8 rote Tücher in der Wohnung verteilt — gut sichtbar (auf Stuhl, hinterm Vorhang, auf Sofa, an der Lampe). Story: „Im Haus sind kleine Brände — findet sie und bringt sie in den Lösch-Eimer!\" Jedes Kind sucht und sammelt. Bei 3-5 ist Finden der Spaß, nicht das Versteck. Wer ein Tuch in den Eimer legt, ruft laut „Brand gelöscht!\" Kein Wettbewerb — am Ende sind alle Brände aus.",
+        "whyItWorks": "Niedrig-Schwellig wie eine Ostereiersuche, aber motto-eingebettet. Funktioniert ohne Wasser-Sauerei bei Regen. Bei 3-Jährigen genügen 4 Tücher, sehr sichtbar; bei 5-Jährigen 8 Tücher etwas anspruchsvoller."
+      },
+      {
+        "name": "🎈 Lösch-Ballon (Wasser auf rote Luftballons)",
+        "duration": 15,
+        "minAge": 4,
+        "loudness": "laut",
+        "indoor": false,
+        "outdoor": true,
+        "material": "5-6 rote Luftballons (zur Hälfte aufgepustet, an einer Schnur an Wäscheleine oder Ast hängend), Spritzpistolen (wenn schon in der Variante vorhanden), alte Handtücher unter der Spritz-Zone",
+        "anleitung": "Rote Luftballons als „Brand-Symbole\" an Wäscheleine im Garten oder am Balkon — sie wackeln im Wind, das macht es noch witziger. Crew spritzt mit Wasserpistolen drauf, Ziel: alle Ballons werden nass (nicht zerplatzen, das erschreckt). Sehr beliebt im Sommer. Eltern stehen daneben, korrigieren Spritz-Richtung falls jemand das andere Kind nimmt statt den Ballon.",
+        "whyItWorks": "Sichtbares, bewegliches Ziel ist für die Kleinen leichter als ein umgekippter Becher. Funktioniert auch wenn die Spritz-Probe der Standard-/Wow-Variante schon abgefrühstückt ist — eine zweite Runde mit anderem Setup wirkt wie ein neues Spiel."
+      },
+      {
+        "name": "🪢 Schlauch ausrollen (Seil-Variante)",
+        "duration": 10,
+        "minAge": 4,
+        "loudness": "ruhig",
+        "indoor": true,
+        "outdoor": true,
+        "material": "2 Springseile à 2 m (oder lange Stoffstreifen, oder Wäscheleine), 2 Pylonen oder Schuhe als Ziel-Markierung",
+        "anleitung": "Story: „Bevor die Crew löschen kann, müssen Schläuche ausgerollt werden!\" Jedes Kind bekommt ein aufgerolltes Seil — Aufgabe: von Punkt A bis Punkt B ausrollen, möglichst gerade. Bei 5 Kindern in Zweier-Teams, im Wechsel. Kein Wettbewerb auf Zeit — wer fertig ist, hilft den anderen. Eltern zeigen Aufrollen vor, wenn das Seil nochmal gebraucht wird.",
+        "whyItWorks": "Schult Feinmotorik kindgerecht, ohne dass es nach „Übung\" aussieht. Funktioniert drinnen im Flur wie draußen. Lässt sich als Mini-Übung an die Spritz-Probe anhängen („erst Schlauch, dann Spritze!\") und gibt der Choreografie Tiefe."
+      }
+    ]
+  },
   "cakeRecipe": {
     "intro": "Geht mit jeder Kastenform. Bei 3-5 reicht die einfache Version: roter Kasten, Reifen, „112\" drauf — fertig.",
     "steps": [
@@ -797,11 +846,11 @@
       },
       {
         "n": 4,
-        "content": "Reifen aus Oreo-Keksen — 4 Stück seitlich anpressen."
+        "content": "Reifen aus Schoko-Sandwich-Keks-Keksen — 4 Stück seitlich anpressen."
       },
       {
         "n": 5,
-        "content": "„112\" mit weißer Glasur oder weißem Zuckerstift auf die Seite schreiben. Optional: blaues Blaulicht aus Smartie oder Blaubeere oben drauf."
+        "content": "„112\" mit weißer Glasur oder weißem Zuckerstift auf die Seite schreiben. Optional: blaues Blaulicht aus Blaubeere oder einer blauen Zuckerperle oben drauf."
       }
     ],
     "meta": {
@@ -812,7 +861,7 @@
     "tips": [
       {
         "title": "🎂 Keine Lust zu backen?",
-        "body": "Fertigen Schoko-Kasten beim Bäcker kaufen, rote Glasur drüber, Oreo-Reifen ankleben, „112\" mit weißem Zuckerstift draufschreiben. Sieht aus wie gewollt, dauert 10 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.\" Schon gar nicht ein 3-Jähriges."
+        "body": "Fertigen Schoko-Kasten beim Bäcker kaufen, rote Glasur drüber, Schoko-Sandwich-Keks-Reifen ankleben, „112\" mit weißem Zuckerstift draufschreiben. Sieht aus wie gewollt, dauert 10 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.\" Schon gar nicht ein 3-Jähriges."
       }
     ]
   },
@@ -841,6 +890,14 @@
       {
         "topic": "😢 Plan für Tränen-Momente",
         "detail": "Bei 3-5 weint mindestens ein Kind in 90 Min. — das ist normal. Häufige Auslöser: Hand-Signal \"Notruf!\" + leiser Spruch. Schaum schreckt, Kind will nicht den falschen Aufkleber, Eltern sind kurz weg. Plan: Eltern bleiben dabei, ruhige Ecke (Sofa) für „kurze Pause\" einrichten, Kuscheltier griffbereit, kein Drama wenn ein Kind aussetzt. Nach 5 Min. Pause sind die meisten wieder da. Zwingen ist kontraproduktiv."
+      },
+      {
+        "topic": "🔥 Echte Sicherheits-Botschaft (auch für 3-5)",
+        "detail": "Auch wenn die Theorie erst bei 6-8 voll greift, kannst du in zwei Sätzen ein Sicherheits-Anker für die Kleinen setzen — beiläufig, nicht als Vortrag. Beim Schicht-Appell oder vor dem Mini-Einsatz: „Echte Feuerwehr ist toll — aber Feuer ist heiß und macht aua. Wenn du echtes Feuer siehst: nicht hingehen, sondern zur Mama oder zum Papa rennen.\" Das ist die altersgerechte 3-5-Variante von Brandschutz-Erziehung. Mehr nicht, mehr verstehen sie nicht. Aber dieser eine Satz bleibt hängen — die Eltern hören es auch und können später anknüpfen."
+      },
+      {
+        "topic": "🧴 Rasierschaum-Sicherheit — die kleine Checkliste",
+        "detail": "Drei Regeln für sicheres Schaum-Löschen: 1. Schaum NICHT ins Gesicht, NICHT in die Augen, NICHT in den Mund. Wenn doch: 5 Min mit klarem Wasser spülen, kein Reiben. 2. Hände vor jedem Snack waschen — der Schaum klebt unsichtbar an den Fingern. 3. Drogerie-Eigenmarke kaufen (parfümfrei), KEINE Sahne nehmen (kippt + klebt + riecht), KEINEN Bauschaum oder Reinigungsschaum (toxisch). Diese drei Regeln einmal vor dem Spiel den Eltern durchgeben, dann sind alle ruhiger."
       }
     ],
     "educationalValue": null
@@ -862,6 +919,14 @@
     {
       "q": "Müssen Eltern bei der Feuerwehr-Party für 3–5 wirklich bleiben?",
       "a": "Ja, bei dieser Altersgruppe ist Eltern-Anwesenheit Pflicht — und zwar als aktive Helfer, nicht als Beobachter. Begründung: Bei 3-5 brauchst du Hilfe für Toilettenbegleitung, Trösten, Spritzpistole-Halten, Schaum-Nachfüllen. Du allein schaffst das für 5 Kinder nicht. Schreib in die Einladung: „Ein Elternteil bleibt bitte mit dem Kind und hilft mit.\" Verteile Aufgaben (Foto, Hand-Signal \"Notruf!\" + leiser Spruch. Pinsel) — Eltern, die einen Job haben, sind glücklicher als die, die rumstehen. Aus dem „Eltern-Café-Problem\" wird so „Crew-Eltern als Co-Wachleiter\"."
+    },
+    {
+      "q": "Was tun bei schlechtem Wetter ohne Wasser-Spiele?",
+      "a": "Bei 3-5 sind Indoor-Alternativen ohnehin oft besser — weniger Reizüberflutung. Drei Drinnen-Hacks: 1. Statt Spritzpistole gegen Becher: rote Tücher von der Wand „abreißen\" (mit Tesa locker befestigt) als Lösch-Übung. 2. Statt Schaum-Wanne: Wattebällchen-Schaum in einer Schüssel — Kinder „pusten Brände aus\". 3. Statt Mini-Einsatz draußen: Kuscheltiere im Wohnzimmer hinter Vorhang/Sofa verstecken. Funktioniert alles ohne ein Tropfen Wasser."
+    },
+    {
+      "q": "Welche Mitgebsel passen zum Feuerwehr-Motto bei 3-5?",
+      "a": "Bei den Kleinen funktioniert wenig + wertig: ein Pappkarton-Helm (oder selbstbemalter in der Wow-Variante), ein Aufkleberbogen mit großen Motiven (keine fummeligen Mini-Sticker — Erstickungsrisiko), ein Mini-Feuerwehrauto, eine kleine Tüte Gummibärchen und die Tag-1-Feuerwehrkind-Urkunde mit Namen. Vermeide Trillerpfeifen (verlieren Eltern den Verstand auf dem Heimweg), keine Reflektoren mit Sicherheitsnadeln (Verletzungsrisiko), keine Süßigkeiten ohne klare Allergen-Kennzeichnung."
     }
   ],
   "preparationWeeks": {
@@ -956,7 +1021,7 @@
         {
           "icon": "🎂",
           "title": "Feuerwehrauto-Kuchen backen — oder Plan B",
-          "detail": "Wenn Zeit/Nerven da: Backmischung in Kastenform. Wenn nicht: Schoko-Kasten beim Bäcker (4-6€), morgen Glasur + Oreos drauf. Schmeckt den Kindern genauso. Bei 3-5 keine Wunderkerze (Brandgefahr-Panik bei Eltern)."
+          "detail": "Wenn Zeit/Nerven da: Backmischung in Kastenform. Wenn nicht: Schoko-Kasten beim Bäcker (4-6€), morgen Glasur + Schoko-Sandwich-Kekss drauf. Schmeckt den Kindern genauso. Bei 3-5 keine Wunderkerze (Brandgefahr-Panik bei Eltern)."
         },
         {
           "icon": "🗣️",
@@ -986,7 +1051,7 @@
         {
           "icon": "🍫",
           "title": "Kuchen verzieren",
-          "detail": "Rote Glasur drüber, 4 Oreos halbieren = 8 Reifen für Feuerwehrauto, weißer Zuckerstift für ‚112'. 10 Minuten Arbeit. Über Nacht fest werden lassen."
+          "detail": "Rote Glasur drüber, 4 Schoko-Sandwich-Kekss halbieren = 8 Reifen für Feuerwehrauto, weißer Zuckerstift für ‚112'. 10 Minuten Arbeit. Über Nacht fest werden lassen."
         },
         {
           "icon": "🐻",
@@ -1098,11 +1163,11 @@
     "kuchen_misslungen": {
       "icon": "🎂",
       "label": "Kuchen ist misslungen",
-      "headline": "Bäcker-Hack: Schoko-Kasten + Glasur + Oreos = 10 Min Notfall.",
+      "headline": "Bäcker-Hack: Schoko-Kasten + Glasur + Schoko-Sandwich-Kekss = 10 Min Notfall.",
       "steps": [
         "Schoko-Kastenkuchen beim Bäcker holen (4-6€) — Edeka/Rewe geht auch.",
         "Rote Tortenguss-Glasur drüber (Tube, 1,50 €).",
-        "4 Oreos halbieren = 8 Reifen, seitlich ankleben.",
+        "4 Schoko-Sandwich-Kekss halbieren = 8 Reifen, seitlich ankleben.",
         "Mit weißem Zuckerstift ‚112' draufschreiben — sieht aus wie gewollt."
       ],
       "fallback": "Bäcker zu? Muffins aus dem Vorrat, je ein Marshmallow + roter Zahnstocher = Mini- Hand-Signal \"Notruf!\" + leiser Spruch. Funktioniert für 3-5.",
@@ -1148,6 +1213,34 @@
       ],
       "fallback": "Chaotisch? Goodie-Bags in den Flur stellen, jedes Kind nimmt im Rausgehen eine — Abschied auf der Treppe.",
       "tone": "praktisch"
+    },
+    "wasser_chaos_im_wohnzimmer": {
+      "icon": "💧",
+      "label": "Wasser-Sauerei im Wohnzimmer",
+      "headline": "Schnell trockenwischen, Spiel in Bad/Küche verlagern — Kinder merken's kaum.",
+      "steps": [
+        "Eltern als Putz-Crew aktivieren: ‚Du Handtuch, du Wischlappen, ich Eimer.' 3 Min, dann ist's weg.",
+        "Spielstation sofort in Bad/Küche verlagern — Wanne als neuer Spritz-Bereich.",
+        "Garagenboden-Trick (falls Outdoor-Wasser drinnen gelandet): Mit Handtuch trockenwischen + 5 Min Lüften, sonst Rutschgefahr.",
+        "Kinder ablenken mit Helm-Bemal- oder Ausmal-Pause am Tisch — bis Wohnzimmer wieder begehbar.",
+        "Folie oder alte Bettlaken für Round 2 unterlegen, falls noch eine Wasser-Phase kommt."
+      ],
+      "fallback": "Wirklich nass alles? Spritz-Phase abbrechen, Schaum-Löschen in der Wanne (Bad) ziehen, Mini-Einsatz übers Trockene. Kinder vergessen den Plan-Wechsel innerhalb von 5 Min.",
+      "tone": "praktisch"
+    },
+    "schaum_im_gesicht": {
+      "icon": "🫧",
+      "label": "Schaum im Gesicht oder in den Augen",
+      "headline": "Augenkontakt = 5 Min mit klarem Wasser ausspülen — Plan ruhig fortsetzen.",
+      "steps": [
+        "Kind ans Waschbecken/Wanne, klares Wasser, 5 Min Auge spülen (oder Mund/Nase je nach Kontakt).",
+        "Eltern dazuholen — bei Augenkontakt ist Eltern-Vertrauen jetzt wichtig, nicht deine Aufsicht.",
+        "Andere Kinder weiter am Schaum-Spiel — Eltern moderieren, du bleibst beim betroffenen Kind.",
+        "Nach Spülen: Kind kurz mit Apfelschorle + Brezel am Wache-Pult beruhigen — meist nach 5 Min wieder eingestiegen.",
+        "Schaum-Wanne weiter weg von Gesichtshöhe aufstellen — sitzend am Boden statt stehend am Tisch."
+      ],
+      "fallback": "Reizung bleibt > 15 Min oder Kind reibt weiter? Eltern entscheiden über Augenarzt-Check — kein Drama machen, aber Verantwortung übergeben.",
+      "tone": "ruhig"
     }
   }
 }
