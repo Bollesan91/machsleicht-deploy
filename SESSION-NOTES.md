@@ -1,3 +1,75 @@
+# Session-Notiz — 23.05.2026 (Strategie-Pivot: Traffic erzwingen + Funnel scharf — Live-SEO-Audit)
+
+**Branch:** `draft` (nur SESSION-NOTES — kein Code/Content geändert diese Session)
+
+## Kontext: Berater-Papier + harter Reality-Check
+
+Externes Strategiepapier (5 Kernschritte: Goldflow, Partyseite-Plattform, SEO-Hygiene, Einladung-Einstieg, Traffic-Maschine) eingegangen. Grinch-Mode-Bewertung: strategisch gut, aber **blind für den echten Engpass**. GSC-Stand bleibt: 343 gecrawlt, 1 indexiert, 0 Besucher, 0 Backlinks. Kein Conversion-Problem — ein **Existenz-Problem**. Die Berater-Reihenfolge (Goldflow zuerst, Traffic in Woche 4) ist verkehrt herum: Distribution + Indexierung gehören NACH VORN.
+
+Berater-Fehler dokumentiert: rechnet mit 9 Mottos (real 10, Meerjungfrau reaktiviert); will Foto-Upload löschen (Widerspruch zur Nacht-Entscheidung: Härtung statt Entfernung); Umsatzkorridor "5-35k€/Monat" ist Fantasie bei 0 Besuchern — Anker ist 0-500€ in den ersten 3 Monaten.
+
+## LIVE-SEO-AUDIT der 24 Altersgruppen-Seiten (einzeln gelesen, kein Script-Pauschalurteil)
+
+Scharfe Trennlinie, kein Graubereich. Merkmal-Gold = FAQPage-Schema + Varianten-System (Minimal/Standard/Wow) + 8-13 H2 + ausgeführte Inhalte (Material/Mengen/Gruppendynamik). Light = nur HowTo-Schema, kein FAQ, keine Varianten, Spiele nur als Halbsatz-Überschrift.
+
+**16 GOLD-Seiten (indexieren + GSC-Priorität):**
+- safari-9-12 (8.415 W, Spitzenklasse: Rollensystem, Gruppendynamik), safari-3-5 (6.486), safari-6-8 (5.605)
+- meerjungfrau-9-12 (8.209), meerjungfrau-6-8 (7.710, Goldstandard), meerjungfrau-3-5 (6.278)
+- einhorn-9-12 (4.925), einhorn-3-5 (4.448), einhorn-6-8 (4.265)
+- detektiv-9-12 (4.742), detektiv-6-8 (4.489, konsolidiert), detektiv-3-5 (4.226) — Stub-Rescue verifiziert echt
+- dino-6-8 (3.170, Berater-Liebling), dino-3-5 (3.036), dino-9-12 (2.936)
+- piraten-6-8 (2.451) — GOLD, aber SCHWÄCHSTE Gold-Seite & ausgerechnet Goldflow-Anker
+
+**8 LIGHT-Seiten (NICHT Gold — ~700-740 W, kein FAQ, keine Varianten):**
+- feuerwehr-3-5 / -6-8 / -9-12 (Motto komplett Light)
+- weltraum-3-5 / -6-8 / -9-12 (Motto komplett Light)
+- piraten-3-5 / piraten-9-12 (nur piraten-6-8 ist Gold)
+
+**Vollständig-Gold-Mottos (alle 3 Altersgruppen):** Safari, Meerjungfrau, Einhorn, Detektiv, Dino = die echten SEO-Champions.
+
+## ENTSCHEIDUNG: 2 parallele Spuren (Traffic + Funnel)
+
+Begründung gegen "8 Light-Seiten auf Elite, ~24h": Bereits gecrawlt-und-verworfene URLs aufzubohren ist mühsamer als der Hebel daneben. Solange KEINE der 16 fertigen Gold-Seiten indexiert ist, beweist nichts, dass der Content-Typ rankt. Erst Indexierung beweisen, DANN skalieren. Content-Ballern ist nicht dumm — aber blind, bis ein Muster rankt.
+
+### SPUR A — TRAFFIC (Sichtbarkeit erzwingen)
+
+- **A1 — Crap-Ratio killen (Code, höchster Hebel):** 51 Einzeljahr-Stubs per 301 → Altersgruppe. 8 Light-Seiten auf noindex. Sitemap 172 → ~45 starke URLs. Google hört auf, Müll zu crawlen. Mapping + `_redirects` + Sitemap als Review-Paket, Push erst nach Freigabe.
+- **A2 — GSC-Indexierung erzwingen (Bolle, manuell, ~30 Min):** 16 Gold-Seiten einzeln "Indexierung beantragen". → Bolle macht das MORGEN (24.05.).
+- **A3 — Pinterest starten (Bolle, ab Tag 1, entkoppelt von Content):** Business-Account, Website verifizieren (Trust-Signal), 5 Boards. Indexiert in Tagen, braucht keine Domain-Authority = schnellster Kanal.
+- **A4 — 1 echter Backlink (Bolle):** GuteFrage-Antwort oder r/Eltern-Post mit Verweis. Fehlendes Trust-Signal, beschleunigt Indexierung.
+
+### SPUR B — FUNNEL SCHARF (Code, parallel)
+
+- **B1 — piraten-6-8 verstärken:** Schwächste Gold-Seite trägt den Goldflow → auf Safari-6-8-Tiefe (~5.600 W). DAS ist "Content-Ballern", aber gezielt auf die eine Funnel-kritische Seite statt 8 unsichtbare.
+- **B2 — CTA-Parameter durchreichen:** SEO-Seite → Planer → Einladung → Partyseite mit `?theme=piraten&age=6-8`. Macht aus 4 Tools einen Flow (Berater 1.1/1.2).
+- **B3 — Gast-CTA nach RSVP:** "Auch bald Geburtstag? Eigene Party erstellen." Einziger Growth-Loop, der OHNE Traffic funktioniert.
+
+## PINTEREST-AUTOMATISIERUNG — recherchiert (Stand 05/2026)
+
+3 Ebenen. Grinch-Verdikt: Voll-Automatisierung am Anfang FALSCH (löst Skalierung, nicht das fehlende Muster).
+1. **Nativer Pinterest-Scheduler (kostenlos):** Business-Account, 2 Wochen im Voraus, 1 Pin/Mal, max 100 in Queue. → FÜR JETZT.
+2. **Scheduling-Tools (Planable etc.):** Multi-Board, bequemer, Pins baust du selbst.
+3. **Posting-API (PostPeer/Zernio/Ayrshare):** programmatisch Pins aus den 16 Gold-JSONs. Pinterest-Algo braucht ~3 Wochen stetiges Posten; 5-25 Pins/Tag = manuell Burnout, per API trivial. → ERST in ~3 Wochen, wenn ein Pin-Muster nachweislich klickt. Cloudflare-Worker-Pipeline technisch machbar.
+
+**Sofort-Hilfe offen:** Pin-Material-Sheet für die 16 Gold-Seiten (Board, Pin-Titel, Keyword-Beschreibung, UTM-Ziel-URL) — macht manuelles Posten zu Copy-Paste + Bild. Noch nicht gebaut.
+
+## REIHENFOLGE (2 Wochen)
+
+- **Diese Woche:** P0-Security-Fix (~90 Min, ältester offener Punkt) → A1 (Code) → nach A1-Deploy: A2+A3 (Bolle) → B1 parallel.
+- **Nächste Woche:** GSC beobachten (springt eine Gold-Seite an?) + B2/B3 + A4. Pinterest läuft durchgehend.
+- **Messpunkt:** ~7-10 Tage nach A1+A2 zeigt GSC, ob Content-Typ rankt. DANN Content-Ballern = Skalieren eines bewiesenen Musters statt Blindflug.
+
+## OFFENE P0/P1 aus Vor-Session (NICHT vergessen)
+
+- **P0-XSS Partyseite:** `esc()` (party-worker.js Z.117-120) escapt keine URL-Protokolle → `javascript:`-Stored-XSS in Wunsch-Links. Plan: Branch `feat/party-p0-security`, dann CORS-Whitelist, AWIN-ID-Verify, noindex Partyseiten, sichtbarer Lösch-Hinweis (~90 Min total). DECKT SICH mit Berater 2.1/2.2/2.3.
+- **P1-Foto-Härtung** (statt Entfernung): MIME-Whitelist, Magic-Bytes, EXIF-Strip.
+
+## NÄCHSTER KONKRETER SCHRITT (Folge-Session)
+
+Bolle entscheidet Startpunkt: **A1 (301+Sitemap, mehr Traffic-Hebel)** ODER **P0-Security (ältester offener Bug)**. Beide sofort machbar, ich baue jeweils Review-Paket vor Push. GSC (A2) + Pinterest-Account (A3) macht Bolle am 24.05. parallel.
+
+---
+
 # Session-Notiz — 22.05.2026 (Nacht-Spät: Welle 33 Phase 0+1 — SEO-Template-Konsolidierung)
 
 **Branch:** `feat/detektiv-seo-elite` → draft → main (Ende deploy)
