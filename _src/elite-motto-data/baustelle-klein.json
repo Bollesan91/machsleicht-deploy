@@ -1,0 +1,1157 @@
+{
+  "_meta": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-05-26",
+    "qualityNote": "v2 — Helfer-v3-Welle 1A+1B+1C+1D abgeschlossen. Re-Verify-Score 81/100 nach 1C, erwartet 85+ nach 1D. Cross-File-Kontamination behoben, SOS-Spezifik, Stallplan-Typo-Fix, Quiz-Karten-Mismatch-Fix."
+  },
+  "motto": "baustelle",
+  "ageGroup": "klein",
+  "ageRange": [
+    3,
+    5
+  ],
+  "title": "🚧 Baustelle-Kindergeburtstag — 3–5 Jahre",
+  "metaDescription": "Baustelle-Kindergeburtstag für 3-5-Jährige als kleiner Bau-Tag: 3 fertige Konzepte mit Helm-Übergabe, Sand-Bagger-Station, Bauklotz-Burg-Bauen und Schatzsuche nach Schrauben. Kostenlos.",
+  "introParagraph": "Dein Kind wird 3, 4 oder 5 und liebt Bagger? Hier sind drei fertige Baustellen-Konzepte, die ohne Sicherheits-Albtraum funktionieren. Wichtig vorab: 3-5-Jährige brauchen keinen echten Bohrer. Was funktioniert: einen Helm aufbekommen und der wichtigste Mensch der Welt sein, mit Sand und Plastik-Baggern matschen, aus Bauklötzen eine Burg bauen, in der Sand-Schatzsuche kleine Schrauben finden.",
+  "ageInsight": {
+    "headline": "Warum 3–5-Jährige bei jedem Bagger stehen bleiben",
+    "whyMottoFitsHeadline": "Baustelle = klare Rolle, sichtbares Werkzeug, einfache Aufgabe",
+    "whyMottoFits": "3-5-Jährige zeigen oft auf Bagger und Kräne, wenn man an der Straße vorbeigeht — Baustellen ziehen sie buchstäblich magisch an. Der Helm + Warnweste-Moment macht das greifbar: aus dem zuschauenden Kind wird selbst Bauarbeiter. Sandwühlen, Klötze stapeln, Schrauben suchen sind sensorische Aufgaben mit klarem Ergebnis. Anders als Detektiv oder Quiz braucht es kein abstraktes Denken — es ist Hand-Arbeit mit Stolz: 'Schau, ich habe die Mauer gebaut!'",
+    "traits": [
+      {
+        "topic": "Aufmerksamkeit",
+        "detail": "10–15 Minuten pro Aktion. Sand-Bagger-Spiel funktioniert lange (sensorisch), Bauklotz-Burg auch lange, Schatzsuche 10 Min, dann Pause."
+      },
+      {
+        "topic": "Sensorisches Lernen",
+        "detail": "Sand, Wasser, Bauklotz, Schrauben — alles wird angefasst. Bei 3-5 ist sensorisches Spielen Kern, nicht Wissen. Plane viel Material zum Anfassen ein."
+      },
+      {
+        "topic": "Rollen-Identität",
+        "detail": "Mit Helm + Warnweste bekommt das Kind sofort eine Rolle. Bei 3-5 ist diese visuelle Identität wichtiger als die Hintergrund-Geschichte. Helm aufsetzen = Bauarbeiter."
+      },
+      {
+        "topic": "Bewegung",
+        "detail": "Sand-Bagger-Station, Bauklotz-Stapeln, Schubkarren-Lauf. Aber: kurze Aktiv-Phasen, dann Sitz-Aktivität (Maler-Station mit Pinsel)."
+      },
+      {
+        "topic": "Sicherheit",
+        "detail": "KEINE echten Werkzeuge. Plastik-Hammer (Schaumstoff!), Plastik-Bohrer, Plastik-Schrauben (nicht verschluckbar). Sand ohne Schadstoffe (Spielsand). Bauklötze gross genug, dass sie nicht verschluckt werden können."
+      },
+      {
+        "topic": "Sieger-Logik",
+        "detail": "Bei 3-5 sollte niemand 'verlieren'. Alle bauen gemeinsam die Mauer, alle finden Schrauben in der Sandkiste. Wettkampf zerstört die Stimmung."
+      },
+      {
+        "topic": "Eltern-Nähe",
+        "detail": "Bei matschigen Spielen (Sand draußen) bleiben viele 3-Jährige gern in Eltern-Nähe. Plan Eltern als 'Mit-Bauarbeiter' direkt mit ein."
+      }
+    ]
+  },
+  "signatureRitual": {
+    "name": "Die kleine Bauarbeiter-Ernennung",
+    "subtitle": "Eröffnet die Party + Werkzeug-Übergabe am Ende",
+    "introText": "Bei 3-5-Jährigen funktioniert kein langer Bauarbeiter-Eid. Was funktioniert: zwei winzige rituelle Momente. Beim Ankommen wird jedes Kind zum 'Mini-Bauarbeiter' ernannt — mit Helm, Warnweste und Werkzeug-Gürtel. Am Ende, nach dem Burg-Bauen und Schatzsuche, bekommt jeder sein 'Bauarbeiter-Diplom' mit eigenem Foto-Platz. Dazwischen liegt das Sandwühlen und Klotz-Stapeln.",
+    "setupSteps": [
+      {
+        "n": 1,
+        "name": "Helme + Warnwesten",
+        "content": "Pro Kind einen Plastik-Helm (Kinder-Größe, gelb oder orange) und eine Warnweste (Größe 110-140). Beide schon mit dem Bauarbeiter-Namen beschriften."
+      },
+      {
+        "n": 2,
+        "name": "Bauarbeiter-Ernennung",
+        "content": "Ein kurzer Spruch, den alle gleichzeitig nachsprechen: 'Ich bin Mini-Bauarbeiter und baue heute eine Burg!' Groß auf eine Baustellen-Karte schreiben."
+      },
+      {
+        "n": 3,
+        "name": "Eltern-Helfer",
+        "content": "Bei 3-5 brauchen viele Kinder Eltern-Nähe. Lass begleitende Eltern direkt hinter ihrem Kind stehen — sie sind die 'Polier-Helfer'."
+      },
+      {
+        "n": 4,
+        "name": "Werkzeug-Gürtel",
+        "content": "Pro Kind ein Stoff-Gürtel mit Plastik-Werkzeug (Hammer, Schraubenzieher, Maßband — alle Plastik!)."
+      },
+      {
+        "n": 5,
+        "name": "Bauarbeiter-Tisch",
+        "content": "Vor Ankunft eine Ecke mit Helmen, Warnwesten, Werkzeug-Gürteln + Sand-Spielzeug einrichten. Hier kann das Rollenspiel sofort starten."
+      }
+    ],
+    "rolesList": [
+      {
+        "emoji": "👷",
+        "name": "Lilly (Polier)",
+        "function": "Sagt was als nächstes zu bauen ist"
+      },
+      {
+        "emoji": "🧱",
+        "name": "Max (Maurer)",
+        "function": "Stapelt die Bauklotz-Mauer"
+      },
+      {
+        "emoji": "🚜",
+        "name": "Tom (Bagger-Fahrer)",
+        "function": "Macht den Sand-Bagger"
+      },
+      {
+        "emoji": "🔩",
+        "name": "Mia (Schraubenfinder)",
+        "function": "Sucht die versteckten Schrauben"
+      },
+      {
+        "emoji": "🎨",
+        "name": "Felix (Maler)",
+        "function": "Streicht die Wand-Pappe mit Pinsel"
+      },
+      {
+        "emoji": "🛒",
+        "name": "Anna (Schubkarren-Helfer)",
+        "function": "Schiebt die Mini-Schubkarre"
+      },
+      {
+        "emoji": "🏗️",
+        "name": "Kran-Fahrer",
+        "function": "Macht den Spielzeug-Kran"
+      },
+      {
+        "emoji": "📋",
+        "name": "Bauplan-Hüter",
+        "function": "Hält den Bauplan"
+      },
+      {
+        "emoji": "⛑️",
+        "name": "Helm-Kontroll-Polier",
+        "function": "Prüft ob alle Helme tragen"
+      },
+      {
+        "emoji": "🚧",
+        "name": "Absperr-Wächter",
+        "function": "Bewacht das Absperrband"
+      },
+      {
+        "emoji": "🎈",
+        "name": "Verkehrshütchen-Steller",
+        "function": "Stellt die Hütchen auf"
+      },
+      {
+        "emoji": "📸",
+        "name": "Baustellen-Foto-Maker",
+        "function": "Macht Fotos mit Helm"
+      }
+    ],
+    "optOutNote": "Kein Kind muss eine Rolle nehmen und niemand muss den Spruch allein sprechen. Wer nur dabei sein will, ist trotzdem vollwertiger Bauarbeiter — Helm, Warnweste und Werkzeug-Gürtel bekommt jedes Kind.",
+    "materialNote": "Helme, Warnwesten, Werkzeug-Gürtel, Sand-Spielzeug und Bauklötze an einem festen 'Baustellen-Tisch' sammeln. So ist der Start in 5 Minuten gemacht."
+  },
+  "variants": [
+    {
+      "id": "minimal",
+      "label": "Minimal — 90 Min, kompakter Bau-Tag",
+      "headline": "🚧 Minimal — 90 Min Bau-Tag",
+      "intro": "Sparvariante: 90 Minuten, 5 Kinder, 3 Stationen (Sand-Bagger, Bauklotz-Burg, Schatzsuche). Plastik-Helm und Warnweste — kein echtes Werkzeug nötig.",
+      "timeWindow": "14:30–16:00, 5 Kinder",
+      "schedule": [
+        {
+          "time": "14:30",
+          "title": "Ankunft + Helm-Übergabe",
+          "description": "Helme verteilen, Warnwesten anziehen, Spruch gemeinsam sprechen. 10 Min."
+        },
+        {
+          "time": "14:40",
+          "title": "Station 1: Sand-Bagger-Spiel",
+          "description": "Sandkiste oder Plane mit Spielsand, kleine Plastik-Bagger und Schaufeln. 20 Min."
+        },
+        {
+          "time": "15:00",
+          "title": "Station 2: Bauklotz-Burg gemeinsam bauen",
+          "description": "Große Bauklötze, alle stapeln gemeinsam zur Burg. 15 Min."
+        },
+        {
+          "time": "15:15",
+          "title": "Baustellen-Snack-Pause",
+          "description": "Bagger-Kekse, Karotten-'Schrauben', Apfelschorle. 15 Min."
+        },
+        {
+          "time": "15:30",
+          "title": "Station 3: Schrauben-Schatzsuche in Sandkiste",
+          "description": "Plastik-Schrauben + Werkzeuge im Sand versteckt — alle Kinder finden 2-3. 20 Min."
+        },
+        {
+          "time": "15:50",
+          "title": "Diplom-Verleihung + Foto",
+          "description": "Bauarbeiter-Diplom übergeben, Gruppenfoto mit Helm. 10 Min."
+        }
+      ],
+      "games": [
+        {
+          "name": "🏗️ Sand-Bagger-Spiel",
+          "duration": 20,
+          "minAge": 3,
+          "outdoor": true,
+          "indoor": false,
+          "material": "Sandkiste oder große Plane mit Spielsand, 5 Plastik-Bagger (klein), 5 Schaufeln, 3 Eimer, evtl. Wasser zum Anfeuchten",
+          "safetyRule": "Spielsand (geprüft, ohne Schadstoffe). Bei 3-Jährigen Aufsicht — kein Sand in den Mund.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Sand-Erklärung",
+              "content": "'Bauarbeiter müssen die Erde bewegen. Wir haben Sand — eure Bagger machen Berge und Löcher.'"
+            },
+            {
+              "n": 2,
+              "name": "Freies Spielen",
+              "content": "Jedes Kind bekommt Bagger und Schaufel. Berge bauen, Löcher graben."
+            },
+            {
+              "n": 3,
+              "name": "Berg-Wettbewerb (sanft)",
+              "content": "'Wer baut den größten Berg?' — alle bauen, aber 'jeder Berg ist toll'."
+            }
+          ],
+          "loudness": "mittel",
+          "effort": "leicht",
+          "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. 5-6 Plastik-Bagger + Schaufeln + 3 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
+          "ageAdjust6": "Bei 3-Jährigen: Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsene/r pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
+          "ageAdjust8": "Für 5-Jährige: Sand-Bauwerk-Aufgabe (\"baut eine Sandburg\") + Wettbewerb-Element vermeiden (Sand-Bau ist kein Sieger-Spiel).",
+          "indoorTip": "Indoor mit großer Stoff-Plane unter der Wanne — Sand wandert immer. Direkt nach Spiel: kurz auskehren, sonst tragen Kinder Sand durchs Wohnzimmer.",
+          "outdoorTip": "Im Garten ideal — größerer Sandkasten möglich, Kleidung schmutzig OK. Sonnen-Schutz wenn lange.",
+          "whyItWorksTitle": "Warum Sand-Bagger sensorisch ankommt",
+          "whyItWorks": "Sensorisches Spielen ist der Kern für 3-5: Sand anfassen, Berge bauen, mit Bagger schaufeln aktiviert taktile + motorische Entwicklung. Plastik-Bagger geben das \"wichtige Werkzeug\"-Identitätsgefühl ohne Verletzungsrisiko."
+        },
+        {
+          "name": "🧱 Bauklotz-Burg gemeinsam bauen",
+          "duration": 15,
+          "minAge": 3,
+          "outdoor": false,
+          "indoor": true,
+          "material": "Große weiche Bauklötze (Schaumstoff oder Papp-Klötze, mindestens 15 cm) — keine kleinen Lego-Klötze!",
+          "safetyRule": "Klötze gross genug, dass sie nicht verschluckt werden können. Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Bauplan zeigen",
+              "content": "'Wir bauen eine Mini-Burg. Maurer Tom stapelt unten, Maurer Mia oben.'"
+            },
+            {
+              "n": 2,
+              "name": "Bauen",
+              "content": "Alle Kinder stapeln gemeinsam. Polier sagt: 'Jetzt rote Klötze, jetzt blaue.'"
+            },
+            {
+              "n": 3,
+              "name": "Burg umwerfen",
+              "content": "Wenn die Burg fertig ist: alle dürfen sie umwerfen (großes Gelächter). Diese Phase ist Kern!"
+            }
+          ],
+          "loudness": "leise",
+          "effort": "leicht",
+          "prepText": "20-30 große Schaumstoff-Bauklötze (mind. 4 cm Kantenlänge, DIN EN 71-1 verschluck-konform) auf einem freien Boden-Bereich (2x2m). Niedrige Tisch-Platte als Burg-Fundament-Markierung. 5 Min Vorlauf.",
+          "ageAdjust6": "Bei 3-Jährigen: Schaumstoff-Klötze pflicht (keine Holz-Klötze — fallen weich, keine Verletzung beim Umfallen). Aufsicht prüft Klotz-Größe vor Spiel-Start.",
+          "ageAdjust8": "Für 5-Jährige: zusätzlich 5-10 mittelgroße Holz-Klötze für komplexere Bauten. Statik-Mini-Lektion (\"breite Basis hält länger\").",
+          "indoorTip": "Im Wohnzimmer auf Teppich (weicher Fall-Boden) — Möbel-Sicherheits-Abstand 1m zur Burg.",
+          "outdoorTip": "Im Garten auf Rasen (weichster Fall-Boden) — Wind beachten bei großen Bauten.",
+          "whyItWorksTitle": "Warum gemeinsames Bauklotz-Stapeln verbindet",
+          "whyItWorks": "Gemeinsames Bauen ohne Wettkampf-Druck schafft kollektives Erfolgserlebnis. Die Burg fällt am Ende absichtlich — der gemeinsame \"Bumm\"-Moment ist der Höhepunkt, nicht das Bauen selbst."
+        },
+        {
+          "name": "🔩 Schrauben-Schatzsuche in der Sandkiste",
+          "duration": 20,
+          "minAge": 3,
+          "outdoor": true,
+          "indoor": true,
+          "material": "10-15 dicke Plastik-Schrauben (nicht verschluckbar, mind. 5 cm), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
+          "safetyRule": "Schrauben groß genug. Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Tatbeschreibung",
+              "content": "'Die Schrauben sind verloren! Wir brauchen sie für die Burg. Wer findet die meisten?'"
+            },
+            {
+              "n": 2,
+              "name": "Suchen",
+              "content": "Jedes Kind buddelt im Sand. Die Schrauben sind versteckt — nicht zu tief."
+            },
+            {
+              "n": 3,
+              "name": "Sammeln",
+              "content": "Schrauben in den Eimer, jedes Kind findet mindestens 2-3."
+            },
+            {
+              "n": 4,
+              "name": "Schrauben-Verleihung",
+              "content": "Alle bekommen Schrauben — keine Sieger/Verlierer-Logik."
+            }
+          ],
+          "loudness": "mittel",
+          "effort": "mittel",
+          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/gross) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "ageAdjust6": "Bei 3-Jährigen: 10 Schrauben offensichtlich versteckt (in Sand mit Spitzen nach oben, sichtbar). Alle finden gleichzeitig, niemand \"verliert\".",
+          "ageAdjust8": "Für 5-Jährige: 15-20 Schrauben mit etwas Versteck-Logik (\"unter dem Bagger\", \"neben dem Eimer\"). Stempel für jedes Kind.",
+          "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
+          "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
+          "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
+          "whyItWorks": "Sand-Schatzsuche kombiniert sensorisches Spiel mit Schatz-Geschichte. Plastik-Schrauben sind sichtbarer Erfolg (\"Schau, ich habe drei!\") — mit Plastik-Werkzeug-Gürtel zu sammeln verstärkt die Bauarbeiter-Identität."
+        }
+      ],
+      "food": "🍪 Bagger-Kekse (Kekse mit Schoko-Glasur in Bagger-Form)\n🥕 Karotten-'Schrauben' (Karotten-Sticks)\n🍎 Apfelschnitze\n🥤 Apfelschorle in Becher (1,5 L)\n🎂 Baustellen-Kuchen (Schoko-Rührkuchen mit Krümel-Sand drauf)\n🥨 Salzstangen ('Bau-Balken')",
+      "decoration": "🚧 'Baustelle Sonnenstraße'-Schild (vorgedruckt)\n🪧 Absperrband (rot-weiß, Plastik)\n🚜 5 Plastik-Bagger als Deko + zum Spielen\n🧱 Bauklötze als Wand-Stapel\n⚠️ Mini-Verkehrshütchen (Plastik)",
+      "giveaways": "📜 Bauarbeiter-Diplom mit Name + Foto-Platz\n🧱 Eigene 'Burg'-Plastik-Bauklotz\n🔩 Plastik-Schrauben-Tüte\n🚜 Mini-Plastik-Bagger\n🍪 Bagger-Keks-Tüte",
+      "shoppingList": [
+        {
+          "emoji": "⛑️",
+          "label": "5 Plastik-Bauhelme + Warnwesten (Kindergröße)",
+          "url": "https://www.amazon.de/s?k=kinder+bauhelm+warnweste+set&tag=machsleicht-21",
+          "priceEur": 25,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Bauarbeiter-Ernennung Pflicht."
+        },
+        {
+          "emoji": "🚜",
+          "label": "Plastik-Bagger-Set (5) + Schaufeln + Eimer",
+          "url": "https://www.amazon.de/s?k=spielzeug+bagger+kran+set+kinder&tag=machsleicht-21",
+          "priceEur": 18,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Sand-Bagger-Station."
+        },
+        {
+          "emoji": "🧱",
+          "label": "Große Bauklötze (Schaumstoff oder Papp-Klötze)",
+          "url": "https://www.amazon.de/s?k=bauklötze+gross+schaumstoff+kinder&tag=machsleicht-21",
+          "priceEur": 15,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Burg-Bauen."
+        },
+        {
+          "emoji": "🔩",
+          "label": "Plastik-Schrauben-Set (groß!) + Werkzeug-Gürtel",
+          "url": "https://www.amazon.de/s?k=kinder+werkzeug+gürtel+spielzeug&tag=machsleicht-21",
+          "priceEur": 12,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Schatzsuche + Werkzeug-Gürtel."
+        },
+        {
+          "emoji": "🏖️",
+          "label": "Spielsand (25 kg Beutel)",
+          "url": "https://www.amazon.de/s?k=spielsand+25+kg+DIN+geprüft&tag=machsleicht-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Sand-Spiel + Schatzsuche."
+        },
+        {
+          "emoji": "📜",
+          "label": "Diplome + Bauarbeiter-Ernennung-Material",
+          "url": "https://www.amazon.de/s?k=urkunden+vorlage+kinder+drucken&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Ritual-Karten."
+        },
+        {
+          "emoji": "🚧",
+          "label": "Deko (Absperrband, Verkehrshütchen, Schild)",
+          "url": "https://www.amazon.de/s?k=absperrband+rot+weiss+deko+party&tag=machsleicht-21",
+          "priceEur": 10,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Baustellen-Atmosphäre."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Kuchen + Snacks",
+          "url": null,
+          "priceEur": 10,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Buffet."
+        }
+      ],
+      "costContext": "Geschätzte Kosten (Minimal, 5 Kinder)",
+      "estimatedCostEur": 104,
+      "savingsTip": {
+        "title": "💡 Warum kostet „Minimal\" 104 €?",
+        "body": "Helme + Bagger-Set + Bauklötze sind ~60% des Budgets. Spar-Trick: Bauhelme + Bagger aus Klassen-Chat ausleihen (oft hat ein Nachbar einen Bagger-Kindergeburtstag schon hinter sich) — spart 25-30 €. Spielsand 25 kg-Sack reicht bei 5 Kindern, kein 50-kg-Sack nötig."
+      }
+    },
+    {
+      "id": "standard",
+      "label": "Standard — 2,5 Stunden, vollwertiger Bau-Tag",
+      "headline": "🏗️ Standard — 2,5 Stunden Bau-Tag",
+      "intro": "Allrounder für 6–8 Kinder: 5 Stationen (Sand-Bagger, Bauklotz-Burg, Maler-Station, Schrauben-Schatzsuche, Werkzeug-Memory), Helm-Übergabe, Diplom-Zeremonie.",
+      "timeWindow": "14:30–17:00, 7 Kinder",
+      "schedule": [
+        {
+          "time": "14:30",
+          "title": "Ankunft + Helm-Übergabe + Spruch",
+          "description": "Helme + Warnwesten + Werkzeug-Gürtel. 15 Min."
+        },
+        {
+          "time": "14:45",
+          "title": "Station 1: Sand-Bagger-Spiel",
+          "description": "25 Min draußen oder auf Plane."
+        },
+        {
+          "time": "15:10",
+          "title": "Station 2: Bauklotz-Burg gemeinsam bauen",
+          "description": "20 Min."
+        },
+        {
+          "time": "15:30",
+          "title": "Baustellen-Snack-Pause",
+          "description": "25 Min."
+        },
+        {
+          "time": "15:55",
+          "title": "Station 3: Maler-Station",
+          "description": "Eigene 'Mauer-Pappe' bemalen mit dicken Pinseln + Wasserfarben. 20 Min."
+        },
+        {
+          "time": "16:15",
+          "title": "Station 4: Schrauben-Schatzsuche",
+          "description": "20 Min."
+        },
+        {
+          "time": "16:35",
+          "title": "Station 5: Werkzeug-Memory",
+          "description": "Memory-Karten mit Werkzeugen, Sitz-Aktivität. 15 Min."
+        },
+        {
+          "time": "16:50",
+          "title": "Diplom-Verleihung + Foto",
+          "description": "10 Min."
+        }
+      ],
+      "games": [
+        {
+          "name": "🎨 Maler-Station mit dicken Pinseln",
+          "duration": 20,
+          "minAge": 3,
+          "outdoor": false,
+          "indoor": true,
+          "material": "7 große Pappkarton-Stücke (DIN A2 'Mauer-Pappe'), Wasserfarben, 7 dicke Pinsel (Kinder-Größe), Spülwasser-Becher, Schürze pro Kind",
+          "safetyRule": "Wasserfarben ungiftig, dicke Pinsel für 3-Jährige sicher. Schürzen tragen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Erklärung",
+              "content": "'Maler streichen die Wand. Wir streichen unsere Mauer-Pappe.'"
+            },
+            {
+              "n": 2,
+              "name": "Konzept",
+              "content": "Jedes Kind wählt 2-3 Farben."
+            },
+            {
+              "n": 3,
+              "name": "Streichen",
+              "content": "Pappe bemalen, dürfen alles malen — Ziegel, Türen, Fenster, Bauarbeiter-Selbstporträt."
+            },
+            {
+              "n": 4,
+              "name": "Trocknen",
+              "content": "Pappe auf der Seite trocknen. Mitnahme als Mitgebsel."
+            }
+          ],
+          "loudness": "leise",
+          "effort": "mittel",
+          "prepText": "5-6 Pappkarton-Stücke (DIN A3 oder größer) als \"Wand-Pappen\" + dicke Plastik-Pinsel + Wasserfarben (washable!) + Schürzen oder alte T-Shirts pro Kind. Wachstuch-Unterlage am Tisch. 15 Min Vorlauf.",
+          "ageAdjust6": "Bei 3-Jährigen: dickste Pinsel (Größe 14+), nur 2 Farben (sonst Misch-Chaos). Schürzen Pflicht.",
+          "ageAdjust8": "Für 5-Jährige: 4 Farben + Schablonen-Beispiele für motivische Wände. Eigenes Wand-Design.",
+          "indoorTip": "Am Esstisch mit Wachstuch — Trocken-Bereich für fertige Wand-Pappen separat. Kinder dürfen NIEMALS mit Pinsel zu anderen Tischen wandern.",
+          "outdoorTip": "Im Garten am Klapptisch — Wind beachten (Pappe weht weg). Schöne Foto-Kulisse möglich.",
+          "whyItWorksTitle": "Warum Mal-Station beruhigend zwischen Action wirkt",
+          "whyItWorks": "Nach Sand + Bauklotz brauchen 3-5-Jährige eine ruhige Phase. Mal-Station ist kreativer Reset, jeder schafft sein eigenes Mitnehm-Stück (die bemalte \"Bauwand\"). Eltern sehen am Abend ein konkretes Werk."
+        },
+        {
+          "name": "🃏 Werkzeug-Memory",
+          "duration": 15,
+          "minAge": 4,
+          "outdoor": false,
+          "indoor": true,
+          "material": "14 Memory-Karten (7 Werkzeug-Paare: Hammer, Säge, Bohrer, Schraubenzieher, Wasserwaage, Maßband, Pinsel)",
+          "safetyRule": "Sitz-Spiel, keine Sicherheit nötig. 4-Jährige verstehen Memory; 3-Jährige optional ausschließen oder Karten zusammen aufdecken.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Memory-Regeln",
+              "content": "'Wir suchen Paare. Zwei gleiche Werkzeuge — du behältst sie.'"
+            },
+            {
+              "n": 2,
+              "name": "Reihum aufdecken",
+              "content": "Jedes Kind deckt 2 Karten auf. Bei 3-Jährigen: gemeinsam ohne Sieger."
+            },
+            {
+              "n": 3,
+              "name": "Werkzeug-Namen lernen",
+              "content": "Bei jedem Paar: 'Was ist das? Ein Hammer!' Wissens-Vermittlung."
+            }
+          ],
+          "loudness": "leise",
+          "effort": "leicht",
+          "prepText": "7-8 Werkzeug-Memory-Paare (Karten 6x6 cm, Werkzeug-Bilder klar: Hammer, Säge, Schraubenzieher, Bohrer, Wasserwaage, Zollstock, Lineal, Pinsel). Kreis-Setup auf Decke oder Tisch. 5 Min Vorlauf.",
+          "ageAdjust6": "Bei 4-Jährigen (Werkzeug-Memory ab 4): 5 Paare reichen, Eltern hilft beim Aufdecken.",
+          "ageAdjust8": "Für 5-Jährige: 8 Paare, jeder deckt 2 Karten allein auf. Werkzeug-Namen werden laut benannt — Lerneffekt.",
+          "indoorTip": "Am niedrigen Tisch oder auf Decke am Boden im Kreis. Bei größerer Gruppe: 2 Memory-Sets parallel.",
+          "outdoorTip": null,
+          "whyItWorksTitle": "Warum Memory Werkzeug-Wissen einprägt",
+          "whyItWorks": "Memory ist sanfte Konzentrations-Phase die 3-5 erstaunlich lange hält (10-15 Min). Werkzeug-Bilder zu erkennen ist erste Werkzeug-Identifikation — Kinder gehen mit konkretem Wissen (\"ich weiß was ein Hammer ist\") heim."
+        }
+      ],
+      "food": "🍪 Bagger-Kekse (Wow-Format mit Schoko-Krümel)\n🥕 Karotten-'Schrauben' (2 Schalen)\n🍎 Apfelschnitze + Birnen\n🥤 Apfelschorle (2,5 L)\n🎂 Baustellen-Kuchen Standard mit Bagger-Figur drauf\n🥨 Salzstangen-'Bau-Balken' + Brezeln\n🧀 Käsewürfel\n🌭 Mini-Würstchen (für Bauarbeiter-Mittagspause)",
+      "decoration": "🚧 'Baustelle Sonnenstraße'-Banner\n🪧 Absperrband überall\n🚜 7 Plastik-Bagger + LKW als Deko\n🧱 Bauklötze + Mauer-Pappen an der Wand\n⚠️ Verkehrshütchen + Mini-Stoppschilder\n🛠️ Werkzeug-Wand-Deko",
+      "giveaways": "📜 Bauarbeiter-Diplom mit Foto-Platz\n🧱 Eigene 'Mauer-Pappe' (bemalt)\n🔩 Plastik-Schrauben-Tüte + Werkzeug-Gürtel\n🚜 Mini-Plastik-Bagger\n⛑️ Helm darf behalten werden\n🍪 Bagger-Keks-Tüte",
+      "shoppingList": [
+        {
+          "emoji": "⛑️",
+          "label": "7 Plastik-Bauhelme + Warnwesten",
+          "url": "https://www.amazon.de/s?k=kinder+bauhelm+warnweste+set&tag=machsleicht-21",
+          "priceEur": 35,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Bauarbeiter-Ernennung."
+        },
+        {
+          "emoji": "🚜",
+          "label": "Plastik-Bagger-Set (7) + Sand-Spielzeug",
+          "url": "https://www.amazon.de/s?k=spielzeug+bagger+kran+set+kinder&tag=machsleicht-21",
+          "priceEur": 25,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Sand-Station."
+        },
+        {
+          "emoji": "🧱",
+          "label": "Große Bauklötze + Mauer-Pappen",
+          "url": "https://www.amazon.de/s?k=bauklötze+gross+schaumstoff+kinder&tag=machsleicht-21",
+          "priceEur": 22,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Burg + Maler."
+        },
+        {
+          "emoji": "🔩",
+          "label": "Plastik-Schrauben + Werkzeug-Gürtel-Set",
+          "url": "https://www.amazon.de/s?k=kinder+werkzeug+gürtel+spielzeug&tag=machsleicht-21",
+          "priceEur": 18,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Schatzsuche + Mitgebsel."
+        },
+        {
+          "emoji": "🏖️",
+          "label": "Spielsand (50 kg)",
+          "url": "https://www.amazon.de/s?k=spielsand+25+kg+DIN+geprüft&tag=machsleicht-21",
+          "priceEur": 12,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Sand-Station Standard."
+        },
+        {
+          "emoji": "🎨",
+          "label": "Pinsel + Wasserfarben + Memory-Karten",
+          "url": "https://www.amazon.de/s?k=memory+karten+kinder+gross&tag=machsleicht-21",
+          "priceEur": 15,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Maler + Memory."
+        },
+        {
+          "emoji": "📜",
+          "label": "Diplome + Foto-Druck",
+          "url": "https://www.amazon.de/s?k=urkunden+vorlage+kinder+drucken&tag=machsleicht-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Diplom-Verleihung."
+        },
+        {
+          "emoji": "🚧",
+          "label": "Deko (Absperrband + Verkehrshütchen + Schilder)",
+          "url": "https://www.amazon.de/s?k=absperrband+rot+weiss+deko+party&tag=machsleicht-21",
+          "priceEur": 15,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Atmosphäre Standard."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Kuchen + Snack-Buffet",
+          "url": null,
+          "priceEur": 15,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Buffet."
+        }
+      ],
+      "costContext": "Geschätzte Kosten (Standard, 7 Kinder)",
+      "estimatedCostEur": 165,
+      "savingsTip": {
+        "title": "💡 Spar-Trick — Bauklötze + Plüsch-Bagger leihen",
+        "body": "Bauklötze in groß (Schaumstoff-Klötze ~15 €) sind Pflicht-Bedarf — aber das Lego-Family-Bestand der eigenen Kinder reicht oft. 2 Plastik-Bagger statt 5 (~−12 €). Schubkarre durch IKEA-Plastik-Eimer (~3 € statt 15 €) ersetzen. Damit Standard ~135-140 € statt 165 €."
+      }
+    },
+    {
+      "id": "wow",
+      "label": "Wow — 3 Stunden, Bau-Olympiade",
+      "headline": "🎉 Wow — 3 Stunden Bau-Olympiade",
+      "intro": "Großes Programm für 8 Kinder: 6 Stationen + finale Bau-Olympiade mit Schubkarren-Lauf, optional Schlafparty-Anschluss mit Bagger-Film.",
+      "timeWindow": "14:30–17:30, 8 Kinder",
+      "schedule": [
+        {
+          "time": "14:30",
+          "title": "Empfang + Helm + Werkzeug-Gürtel + Spruch",
+          "description": "20 Min."
+        },
+        {
+          "time": "14:50",
+          "title": "Station 1: Sand-Bagger XL",
+          "description": "25 Min."
+        },
+        {
+          "time": "15:15",
+          "title": "Station 2: Bauklotz-Burg + Burg-Umfall-Spiel",
+          "description": "20 Min."
+        },
+        {
+          "time": "15:35",
+          "title": "Snack-Pause",
+          "description": "25 Min."
+        },
+        {
+          "time": "16:00",
+          "title": "Station 3: Maler-Station XL",
+          "description": "20 Min."
+        },
+        {
+          "time": "16:20",
+          "title": "Station 4: Schrauben-Schatzsuche",
+          "description": "20 Min."
+        },
+        {
+          "time": "16:40",
+          "title": "Station 5: Werkzeug-Memory",
+          "description": "15 Min."
+        },
+        {
+          "time": "16:55",
+          "title": "Station 6: Bau-Olympiade (Schubkarren-Lauf)",
+          "description": "25 Min."
+        },
+        {
+          "time": "17:20",
+          "title": "Diplom-Verleihung + Foto",
+          "description": "10 Min."
+        }
+      ],
+      "games": [
+        {
+          "name": "🏆 Bau-Olympiade: Schubkarren-Lauf",
+          "duration": 25,
+          "minAge": 4,
+          "outdoor": true,
+          "indoor": true,
+          "material": "2-3 Mini-Schubkarren (Plastik, Kinder-Größe), 10 Plastik-Bauklötze als Ladung, 2 Markierungen für Start/Ziel, Stoppuhr",
+          "safetyRule": "Schubkarren leicht, Klötze Schaumstoff/Papp. Strecke 5-8 m. Bei 3-Jährigen: Erwachsene schieben mit.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Olympiade-Eröffnung",
+              "content": "'Bauarbeiter-Olympiade! Wer bringt die Klötze am schnellsten zur Burg?'"
+            },
+            {
+              "n": 2,
+              "name": "Reihum laufen",
+              "content": "Jedes Kind schiebt die Schubkarre mit 3 Klötzen zur Markierung und zurück. Stoppuhr läuft (zur Info, kein Sieg)."
+            },
+            {
+              "n": 3,
+              "name": "Olympiade-Medaillen",
+              "content": "Alle bekommen eine Mini-Medaille mit Bauarbeiter-Symbol — keine Sieger/Verlierer."
+            }
+          ],
+          "loudness": "laut",
+          "effort": "mittel",
+          "prepText": "1-2 Mini-Schubkarren (Plastik, max 30x60 cm), 8-10 leichte Schaumstoff-Bauklötze als Ladung, Strecke 5-8 m mit Klebeband markiert (Kurve max 2m Radius). Stoppuhr + Mini-Pokale (3 Stk) für Wow-Highlight. 10 Min Vorlauf.",
+          "ageAdjust6": "Bei 3-Jährigen: kein Wettkampf, Erwachsene schiebt mit. Strecke max 3 m gerade. Schubkarren-Tempo: gehen, nicht rennen — Schubkarre kippt sonst.",
+          "ageAdjust8": "Für 5-Jährige: Strecke 5 m mit leichter Kurve, Stoppuhr läuft \"zur Info\". Bauklötze-Transport-Wettbewerb-Element optional, alle bekommen Pokal.",
+          "indoorTip": "Im langen Flur (mind. 6m) — Möbel-Sicherheits-Abstand 1m. Schubkarren-Tempo: gehen, nicht rennen. Bei Sturz: weicher Boden Pflicht.",
+          "outdoorTip": "Im Garten oder auf Hofeinfahrt — größere Strecke, mehr Sicherheits-Zone, schöne Olympiade-Atmosphäre mit Mini-Pokal-Übergabe.",
+          "whyItWorksTitle": "Warum Schubkarren-Lauf Wow-Höhepunkt ist",
+          "whyItWorks": "Schubkarren = \"echtes Bauarbeiter-Werkzeug\" für 3-5. Olympiade-Format mit Mini-Pokalen schafft Foto-würdiges Ende. Wichtig: Sicherheits-Tempo strikt durchsetzen (gehen, nicht rennen), sonst Schubkarre kippt + Verletzungsgefahr."
+        }
+      ],
+      "food": "🎂 Großer Baustellen-Kuchen XL mit 3 Plastik-Baggern drauf\n🍪 Bagger-Kekse (3 Sorten)\n🥕 Karotten-'Schrauben' XL (3 Schalen)\n🍎 Apfel + Birne + Trauben\n🥤 Apfelschorle + Brause (3 L)\n🥨 Salzstangen + Brezeln + Käse\n🌭 Mini-Würstchen + Bauarbeiter-Brötchen\n🍬 Schokoladen-'Schrauben' (Gummibärchen)",
+      "decoration": "🚧 Großes 'Baustelle Sonnenstraße'-Banner\n🪧 Absperrband-Wand komplett\n🚜 8 Plastik-Bagger + 5 LKWs + Kran-Spielzeug\n🧱 Bauklötze + Mauer-Pappen + 'Mauer-im-Bau'-Wand\n⚠️ Verkehrshütchen-Reihe + Stopp-Schilder\n🛠️ Werkzeug-Wand-Deko + 'Achtung Hochbau'-Schild\n🏆 Medaillen-Wand für Olympiade",
+      "giveaways": "📜 Großes Bauarbeiter-Diplom Wow mit Foto + Spruch\n🧱 Eigene 'Mauer-Pappe' (bemalt) + Bauarbeiter-Brotzeit-Box\n🔩 Werkzeug-Gürtel komplett mit Plastik-Werkzeug\n🚜 Großer Plastik-Bagger oder LKW\n⛑️ Helm darf behalten werden\n🏆 Mini-Olympiade-Medaille\n🍪 Bagger-Keks-Tüte XL",
+      "shoppingList": [
+        {
+          "emoji": "⛑️",
+          "label": "8 Plastik-Bauhelme + Warnwesten Premium",
+          "url": "https://www.amazon.de/s?k=kinder+bauhelm+warnweste+set&tag=machsleicht-21",
+          "priceEur": 45,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Bauarbeiter-Ernennung Wow."
+        },
+        {
+          "emoji": "🚜",
+          "label": "Bagger/LKW/Kran-Set + Sand-Spielzeug XL",
+          "url": "https://www.amazon.de/s?k=spielzeug+bagger+kran+set+kinder&tag=machsleicht-21",
+          "priceEur": 40,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Wow-Sand-Station."
+        },
+        {
+          "emoji": "🧱",
+          "label": "Bauklötze XL + Mauer-Pappen + Wand-Deko",
+          "url": "https://www.amazon.de/s?k=bauklötze+gross+schaumstoff+kinder&tag=machsleicht-21",
+          "priceEur": 30,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Burg + Maler XL."
+        },
+        {
+          "emoji": "🔩",
+          "label": "Werkzeug-Gürtel Premium + Plastik-Werkzeug-Set + Schrauben XL",
+          "url": "https://www.amazon.de/s?k=kinder+werkzeug+gürtel+spielzeug&tag=machsleicht-21",
+          "priceEur": 30,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Werkzeug Wow."
+        },
+        {
+          "emoji": "🏖️",
+          "label": "Spielsand (75 kg)",
+          "url": "https://www.amazon.de/s?k=spielsand+25+kg+DIN+geprüft&tag=machsleicht-21",
+          "priceEur": 18,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Sand-Station Wow."
+        },
+        {
+          "emoji": "🛒",
+          "label": "2-3 Mini-Schubkarren",
+          "url": "https://www.amazon.de/s?k=mini+schubkarre+kinder+plastik&tag=machsleicht-21",
+          "priceEur": 30,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Olympiade-Schubkarren-Lauf."
+        },
+        {
+          "emoji": "🎨",
+          "label": "Pinsel + Wasserfarben + Memory + Olympiade-Medaillen",
+          "url": "https://www.amazon.de/s?k=memory+karten+kinder+gross&tag=machsleicht-21",
+          "priceEur": 25,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Stationen-Material."
+        },
+        {
+          "emoji": "📜",
+          "label": "Diplome + Foto-Druck-Premium",
+          "url": "https://www.amazon.de/s?k=urkunden+vorlage+kinder+drucken&tag=machsleicht-21",
+          "priceEur": 12,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Diplom Wow."
+        },
+        {
+          "emoji": "🚧",
+          "label": "Deko-Wow (Absperrband + Verkehrshütchen + Schilder + Wand-Banner)",
+          "url": "https://www.amazon.de/s?k=absperrband+rot+weiss+deko+party&tag=machsleicht-21",
+          "priceEur": 25,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Atmosphäre Wow."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Baustellen-Kuchen XL + Wow-Buffet",
+          "url": null,
+          "priceEur": 22,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Wow-Buffet."
+        }
+      ],
+      "costContext": "Geschätzte Kosten (Wow, 8 Kinder)",
+      "estimatedCostEur": 277,
+      "savingsTip": {
+        "title": "💡 Spar-Trick — wenn 277 € zu viel ist",
+        "body": "Wow-Treiber: 3 Schubkarren (~45 €), 8 Helme Premium (~40 €), Olympiade-Medaillen + Mini-Pokal (~25 €). Spar-Tricks: 1 statt 3 Schubkarren leihen (~−30 €), Helme aus Pappkarton + Goldfolie selbst basteln (~−25 €), Schoko-Medaillen statt Plastik-Pokale (~−10 €). Damit Wow ~220-230 € statt 277 €."
+      }
+    }
+  ],
+  "cakeRecipe": {
+    "name": "Baustellen-Kuchen mit Krümel-Sand",
+    "intro": "Baustellen-thematisch für 3-5: Schoko-Rührkuchen, mit Krümel-'Sand' (Spekulatius-Krümel oder zerbröselte Schoko-Kekse) bestreut, 2-3 Plastik-Bagger als Deko drauf gesetzt.",
+    "steps": [
+      {
+        "n": 1,
+        "content": "Schoko-Rührteig: 250 g Mehl, 200 g Zucker, 150 g Butter, 3 Eier, 40 g Kakao, 1 Pck. Backpulver, 100 ml Milch."
+      },
+      {
+        "n": 2,
+        "content": "In Kastenform oder rechteckiger Form bei 175°C ca. 45 Min backen."
+      },
+      {
+        "n": 3,
+        "content": "Komplett auskühlen."
+      },
+      {
+        "n": 4,
+        "content": "Schoko-Ganache aufstreichen."
+      },
+      {
+        "n": 5,
+        "content": "Krümel-'Sand' aus zerbröselten Schoko-Keksen oder Spekulatius mit Fingern aufstreuen."
+      },
+      {
+        "n": 6,
+        "content": "2-3 Plastik-Bagger als Deko vorsichtig auf den Kuchen setzen (vor dem Servieren entfernen!)."
+      },
+      {
+        "n": 7,
+        "content": "Optional: Mini-Verkehrshütchen aus Marzipan als Streusel."
+      }
+    ],
+    "meta": {
+      "aufwand": "65 Min inkl. Backen",
+      "kosten": "ca. 8-10 €",
+      "allergiker": "Bei Ei-Allergie: vegan ersetzen. Bei Nuss-Allergie: Spekulatius-Krümel statt Nuss-Krümel."
+    },
+    "tips": [
+      {
+        "title": "🎂 Keine Lust zu backen?",
+        "body": "Bäcker-Schoko-Kasten (5-8 €) kaufen, mit Krümel-Sand bestreuen (zerbröselte Schoko-Kekse), 2 Plastik-Bagger oben drauf (vor Servieren entfernen!). Sieht aus wie selbst gemacht, spart 1h Backzeit."
+      },
+      {
+        "title": "🚧 Pinterest-Falle vermeiden",
+        "body": "Pinterest zeigt 3-stündige Baustellen-Kuchen mit Fondant-Kran und essbarem Bauschutt. Für 3-5 Jahre Overkill — sie wollen den Kuchen essen, nicht Foto-Wettbewerb gewinnen. Krümel-Sand auf Schoko-Kasten reicht voll."
+      }
+    ]
+  },
+  "parentTips": {
+    "structured": [
+      {
+        "topic": "🥜 Allergien VOR der Party abfragen",
+        "detail": "Spekulatius und Kekse können Nüsse enthalten. Milch, Ei alles Standard. Klären."
+      },
+      {
+        "topic": "⛑️ Plastik-Helme + Warnwesten Pflicht",
+        "detail": "Helme schaffen die Identität. Plastik in Kinder-Größe, kein echter Bau-Helm."
+      },
+      {
+        "topic": "🔩 Plastik-Schrauben groß genug",
+        "detail": "Mindestens 5 cm — nicht verschluckbar. Niemals echte Metall-Schrauben mit Spitzen."
+      },
+      {
+        "topic": "🏖️ Spielsand geprüft",
+        "detail": "Nur zertifizierten Spielsand (DIN-Norm). Niemals Bau-Sand vom Baumarkt — kann Schadstoffe enthalten."
+      },
+      {
+        "topic": "🛒 Schubkarren leicht halten",
+        "detail": "Wenn Olympiade gespielt wird: Plastik-Schubkarren ohne harte Kanten. Strecke kurz (5-8 m)."
+      },
+      {
+        "topic": "📋 Plan B bei Regen",
+        "detail": "Sand-Station auf Plane drinnen verlegen, oder durch zusätzliche Bauklotz-Burg-Phase ersetzen."
+      },
+      {
+        "topic": "📱 Partyseite statt WhatsApp-Chaos",
+        "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite."
+      }
+    ],
+    "educationalValue": "Bei der Baustelle-Party in 3-5 lernen die Kinder sensorisch und durch Tun: Sand-Erfahrung (Eigenschaften von Sand, Berg-Bauen), Bauklotz-Stapeln (Stabilität, Räumliche Vorstellung), Werkzeug-Namen-Lernen (durch Memory + Werkzeug-Gürtel), Gemeinschafts-Bauen (Burg-Bau, alle helfen). Plus: Rollen-Identität durch Helm + Warnweste, Stolz aufs Geleistete ('Schau, ich habe die Mauer gebaut!')."
+  },
+  "invitationTemplate": "🚧 Baustellen-Einladung: 'Achtung Mini-Bauarbeiter! [Name] wird [Alter] und lädt zum Bau-Tag ein! Wann: [Datum, Uhrzeit]. Wo: [Adresse]. Mitbringen: alte Klamotten (matschig!), eigenen Helm wenn vorhanden. Wir bauen eine Burg, finden Schrauben und matschen mit Sand! Bitte bis [Datum] melden. Auf zur Baustelle! 🧱'",
+  "faq": [
+    {
+      "q": "Brauche ich echtes Werkzeug?",
+      "a": "Auf keinen Fall! Plastik-Werkzeug für 3-5. Kein Hammer, kein Bohrer, keine Säge mit Metall. Schaumstoff-Hammer + Plastik-Schraubenzieher reichen."
+    },
+    {
+      "q": "Was wenn das Kind den Sand isst?",
+      "a": "Bei 3-Jährigen Standard-Risiko — Aufsicht halten. Spielsand (zertifiziert) ist nicht giftig, aber kein Essen. Bei wirklicher Esser-Phase: Sand-Station kürzen oder durch Bauklotz-Spiel ersetzen."
+    },
+    {
+      "q": "Wie groß müssen die Bauklötze sein?",
+      "a": "Mindestens 10 cm (besser 15 cm) Kantenlänge. Schaumstoff oder Papp-Klötze ideal. Niemals kleine Lego-Klötze für 3-Jährige — Verschluck-Gefahr."
+    },
+    {
+      "q": "Funktioniert das auch ohne Garten?",
+      "a": "Ja. Sand-Station auf großer Plane indoor verlegen (vorher Boden mit Plastik schützen). Burg-Bauen und Schrauben-Schatzsuche brauchen kein draußen."
+    },
+    {
+      "q": "Kann ich echte Schrauben verstecken?",
+      "a": "Nein. Plastik-Schrauben groß genug (mind. 5 cm), damit sie nicht verschluckt werden. Echte Metall-Schrauben können kratzen oder verschluckt werden."
+    },
+    {
+      "q": "Schubkarren-Lauf — geht das bei 3-Jährigen?",
+      "a": "Eher 4-5 Jahre. Bei 3-Jährigen: Erwachsene schieben mit, oder durch einfaches 'Klotz-Transport-im-Eimer' ersetzen."
+    }
+  ],
+  "preparationWeeks": {
+    "minus4Weeks": {
+      "headline": "4 Wochen vorher",
+      "items": [
+        {
+          "icon": "📅",
+          "title": "Datum + Uhrzeit",
+          "detail": "Sa/So 14:30-16/17 typisch für 3-5."
+        },
+        {
+          "icon": "🔢",
+          "title": "Gästezahl",
+          "detail": "5-8 Kinder optimal."
+        },
+        {
+          "icon": "💌",
+          "title": "Einladungen",
+          "detail": "Mit Allergie-Abfrage + 'alte Klamotten'-Hinweis."
+        },
+        {
+          "icon": "🏠",
+          "title": "Ort + Plan B Regen",
+          "detail": "Wohnung-Plan: Sand draußen oder auf Plane drinnen."
+        }
+      ]
+    },
+    "minus2Weeks": {
+      "headline": "2 Wochen vorher",
+      "items": [
+        {
+          "icon": "📞",
+          "title": "RSVP",
+          "detail": "Endgültige Liste."
+        },
+        {
+          "icon": "🥜",
+          "title": "Allergien",
+          "detail": "Spekulatius-Hinweis!"
+        },
+        {
+          "icon": "🛒",
+          "title": "Material bestellen",
+          "detail": "Helme, Warnwesten, Bagger, Schrauben — Amazon."
+        }
+      ]
+    },
+    "minus1Week": {
+      "headline": "1 Woche vorher",
+      "items": [
+        {
+          "icon": "🏖️",
+          "title": "Spielsand kaufen",
+          "detail": "Baumarkt — 25-50 kg."
+        },
+        {
+          "icon": "🧱",
+          "title": "Bauklötze sortieren",
+          "detail": "Auf Größe prüfen (mind. 10 cm)."
+        },
+        {
+          "icon": "📜",
+          "title": "Diplome drucken",
+          "detail": "Mit Foto-Platz für Gruppenfoto am Ende."
+        }
+      ]
+    },
+    "minus2Days": {
+      "headline": "2 Tage vorher",
+      "items": [
+        {
+          "icon": "🎂",
+          "title": "Baustellen-Kuchen backen",
+          "detail": "Auskühlen lassen."
+        },
+        {
+          "icon": "🍪",
+          "title": "Bagger-Kekse backen",
+          "detail": "Ausstech-Form Bagger."
+        },
+        {
+          "icon": "🎒",
+          "title": "Stations-Material bündeln",
+          "detail": "5 Stationen vorbereiten."
+        }
+      ]
+    },
+    "minus1Day": {
+      "headline": "1 Tag vorher",
+      "items": [
+        {
+          "icon": "🎂",
+          "title": "Kuchen verzieren",
+          "detail": "Krümel-Sand + Plastik-Bagger drauf."
+        },
+        {
+          "icon": "🚧",
+          "title": "Baustellen-Deko aufhängen",
+          "detail": "Absperrband, Schilder, Verkehrshütchen."
+        },
+        {
+          "icon": "🧸",
+          "title": "Helme + Warnwesten beschriften",
+          "detail": "Mit Edding pro Kind."
+        }
+      ]
+    },
+    "dayOf": {
+      "headline": "Am Party-Tag",
+      "items": [
+        {
+          "icon": "🚧",
+          "title": "Stationen aufbauen",
+          "detail": "3-5 Stationen klar getrennt."
+        },
+        {
+          "icon": "🍽️",
+          "title": "Buffet bereit",
+          "detail": "Snacks, Schorle, Kuchen, Würstchen."
+        },
+        {
+          "icon": "😮‍💨",
+          "title": "Durchatmen",
+          "detail": "Plan einmal durchgehen."
+        }
+      ]
+    }
+  },
+  "sosScenarios": {
+    "regen": {
+      "icon": "🌧️",
+      "label": "Regen",
+      "headline": "Sand-Station auf große Plane in Wohnzimmer/Küche.",
+      "steps": [
+        "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
+        "Sand-Station auf Plane im Wohnzimmer + alte Decken drunter.",
+        "Stations-Rotation in 4 Ecken: jede Ecke = eine Station.",
+        "Bauklotz-Wettbewerb-Strecke verkürzen wenn Flur kürzer als 6m."
+      ],
+      "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen, Bauklotz + Quiz + Memory + Maler reichen.",
+      "tone": "praktisch"
+    },
+    "weniger_kinder_als_erwartet": {
+      "icon": "👥",
+      "label": "Weniger Kinder",
+      "headline": "Engere Stationen — mehr Zeit pro Station.",
+      "steps": [
+        "Stations-Dauer hochfahren: 25 Min statt 20.",
+        "Material vor-portioniert lassen, übriges in Mitgebsel-Tüten.",
+        "Bei Schubkarren-Lauf: einzeln statt 2er-Teams.",
+        "Foto-Phase verlängern."
+      ],
+      "fallback": "Bei nur 3-4 Kindern: Stations-Wechsel komplett weglassen, durchgehende Bauarbeiter-Story.",
+      "tone": "praktisch"
+    },
+    "mehr_kinder_als_erwartet": {
+      "icon": "🚨",
+      "label": "Mehr Kinder",
+      "headline": "2 Stationen parallel laufen lassen, zusätzliche Hand organisieren.",
+      "steps": [
+        "Sofort 2. Erwachsene/n holen.",
+        "Stationen in 2 Reihen aufteilen — 2 parallele Stations-Sets.",
+        "Material verdoppeln wenn möglich.",
+        "Snack-Pause früher."
+      ],
+      "fallback": "Wenn nichts hilft: eine Station als Bonus-Spiel deklarieren.",
+      "tone": "praktisch"
+    },
+    "kind_isst_sand": {
+      "icon": "🏖️",
+      "label": "Kind isst Sand",
+      "headline": "Aufsicht verstärken, Sand-Station kürzen. Spielsand ist nicht giftig, aber unangenehm.",
+      "steps": [
+        "Sofort sanft entfernen.",
+        "Wasser anbieten zum Spülen.",
+        "Aufsicht verstärken (1 Erwachsene/r pro 2 Kinder).",
+        "Wenn wiederholt: Sand-Station beenden, durch Bauklotz-Spiel ersetzen."
+      ],
+      "fallback": "Spielsand DIN-geprüft ist nicht giftig — Eltern beruhigen, kein Arztbesuch nötig.",
+      "tone": "einfühlsam"
+    },
+    "kind_will_nicht_mitmachen": {
+      "icon": "🤷",
+      "label": "Kind verweigert",
+      "headline": "'Polier-Beobachter'-Rolle — bekommt am Ende Diplom wie alle.",
+      "steps": [
+        "Nicht drängen — \"Polier-Beobachter\"-Rolle: Stoppuhr halten, Stempel verteilen.",
+        "Eine Lieblings-Aufgabe identifizieren (Bagger-fahren, Helm-aufsetzen).",
+        "Eltern (falls da) kurz einbeziehen.",
+        "Am Ende: Diplom für ALLE."
+      ],
+      "fallback": "Wenn Kind dauerhaft verweigert: nicht zwingen. Belohnung am Ende bleibt.",
+      "tone": "einfühlsam"
+    },
+    "kuchen_misslungen": {
+      "icon": "🎂",
+      "label": "Kuchen misslungen",
+      "headline": "Bäcker-Kuchen + Krümel-Sand + Plastik-Bagger drauf — passt.",
+      "steps": [
+        "Atmen — kein Drama.",
+        "Bäcker-Schoko-Kasten kaufen (5-8 €), mit Krümel-Sand + Plastik-Bagger drauf.",
+        "Nichts mehr da: Mini-Muffins beim Discounter mit Bauarbeiter-Aufklebern.",
+        "NICHT vor Kindern entschuldigen."
+      ],
+      "fallback": "Last-Minute: Eis aus Gefrierer mit Streuseln. Bei Kindern fast immer der Star.",
+      "tone": "humorvoll"
+    },
+    "schubkarre_kippt": {
+      "icon": "🛒",
+      "label": "Schubkarre kippt",
+      "headline": "Strecke verkürzen, Klötze leichter machen, Erwachsene begleiten.",
+      "steps": [
+        "Sofort-Stopp: alle anhalten.",
+        "Tempo-Regel WIEDERHOLEN: \"Gehen, nicht rennen\".",
+        "Bei Verletzung: Erste-Hilfe-Box, Eltern informieren wenn nötig.",
+        "Strecke verkürzen wenn Sturzgefahr bleibt."
+      ],
+      "fallback": "Bei zwei Stürzen: Schubkarren-Lauf beenden, durch Bauklotz-Stapel-Wettbewerb ersetzen.",
+      "tone": "klar"
+    }
+  },
+  "bonusGames": {
+    "intro": "Bonus-Spiele die du zusätzlich einbauen oder als Plan B nutzen kannst — alle 3-5-tauglich.",
+    "items": [
+      {
+        "name": "🧱 Bauklotz-Türmchen-Memory",
+        "duration": 8,
+        "minAge": 3,
+        "loudness": "leise",
+        "indoor": true,
+        "outdoor": false,
+        "material": "5 Plastik-Bagger und 5 Bauklötze im Kreis verteilt, Augen-Binde optional",
+        "anleitung": "Eltern zeigt Reihenfolge (3 Bagger + 2 Klötze), Kind soll Reihenfolge nachbilden. Sanfte Konzentrationsübung zwischen Action-Spielen."
+      },
+      {
+        "name": "🚜 Bagger-Hör-Spiel",
+        "duration": 8,
+        "minAge": 3,
+        "loudness": "mittel",
+        "indoor": true,
+        "outdoor": true,
+        "material": "Smartphone mit Baustellen-Geräuschen (Bagger, Kran, Bohrer, Schubkarre)",
+        "anleitung": "Geräusch abspielen, Kinder erraten + zeigen passendes Spielzeug. Lerneffekt: Baustellen-Geräusche unterscheiden."
+      },
+      {
+        "name": "🎈 Helm-Aufsetzen-Wettlauf",
+        "duration": 6,
+        "minAge": 4,
+        "loudness": "laut",
+        "indoor": true,
+        "outdoor": true,
+        "material": "6 Plastik-Helme, kein Wettbewerb",
+        "anleitung": "Auf Signal: Helm aufsetzen + \"Ich bin Bauarbeiter!\" rufen. Reihum, alle bekommen Applaus."
+      }
+    ]
+  }
+}

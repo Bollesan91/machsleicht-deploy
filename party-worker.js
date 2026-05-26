@@ -6,7 +6,30 @@
 //   AWIN_PUBLISHER_ID (z.B. "123456")
 // ═══════════════════════════════════════════════════════════════
 
-const CORS = { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS", "Access-Control-Allow-Headers": "Content-Type" };
+// P0-Security: CORS Origin-Whitelist (statt Wildcard *).
+// Erlaubt: machsleicht.de + party.machsleicht.de Subdomains + localhost für Dev.
+const CORS_ALLOWED_ORIGINS = [
+  "https://machsleicht.de",
+  "https://www.machsleicht.de",
+  "https://party.machsleicht.de",
+  "http://localhost:3000",
+  "http://localhost:5173",
+  "http://localhost:8080",
+  "http://127.0.0.1:3000",
+];
+function corsHeaders(request) {
+  const origin = request.headers.get("origin") || "";
+  const allowed = CORS_ALLOWED_ORIGINS.includes(origin) ? origin : CORS_ALLOWED_ORIGINS[0];
+  return {
+    "Access-Control-Allow-Origin": allowed,
+    "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Vary": "Origin",
+  };
+}
+// Backwards-compat — Legacy-CORS-Konstante mit Wildcard, NUR für Helpers ohne request-Context.
+// Sobald alle Aufrufer corsHeaders(request) nutzen, kann CORS entfernt werden.
+const CORS = { "Access-Control-Allow-Origin": "https://machsleicht.de", "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS", "Access-Control-Allow-Headers": "Content-Type", "Vary": "Origin" };
 const MAX_GUESTS = 30;
 const MAX_WISHES = 20;
 const MAX_PHOTO_BYTES = 500000;
@@ -144,8 +167,9 @@ function autoMottoColor(motto) {
 }
 
 // ── Helpers ─────────────────────────────────────────────
-function json(data, status = 200) {
-  return new Response(JSON.stringify(data), { status, headers: { ...CORS, "Content-Type": "application/json" } });
+function json(data, status = 200, request = null) {
+  const cors = request ? corsHeaders(request) : CORS;
+  return new Response(JSON.stringify(data), { status, headers: { ...cors, "Content-Type": "application/json" } });
 }
 function generateId(len = 8) {
   const chars = "abcdefghjkmnpqrstuvwxyz23456789";
@@ -188,6 +212,34 @@ function isSafeUrl(s) {
   return typeof s === "string" && (s.startsWith("https://") || s.startsWith("http://"));
 }
 
+// P1-Security: Foto-Upload-Härtung. Base64-Image-Format-Whitelist + Magic-Bytes-Check.
+// Erlaubt: data:image/(jpeg|jpg|png|webp);base64,...
+// Blockiert: SVG (XSS-Risiko via <script> im SVG), PDF, GIF (animiert + alte CVEs), willkürliche Base64.
+// Returns: true wenn safe, false sonst.
+function isSafePhoto(b64) {
+  if (!b64 || typeof b64 !== "string") return false;
+  if (b64.length > MAX_PHOTO_BYTES * 1.37) return false; // Längen-Check (1.37 = Base64-Overhead)
+  // Format-Prefix: data:image/jpeg|jpg|png|webp;base64,
+  const m = b64.match(/^data:image\/(jpeg|jpg|png|webp);base64,([A-Za-z0-9+/=]+)$/);
+  if (!m) return false;
+  const payload = m[2];
+  if (payload.length < 100) return false; // Min-Sanity (< 75 Bytes Bild ist unrealistisch)
+  // Magic-Bytes-Check via Base64-Anfangs-Decode (erste 6 Bytes reichen)
+  try {
+    const head = atob(payload.slice(0, 12)); // ~8-9 decoded Bytes
+    const codes = [head.charCodeAt(0), head.charCodeAt(1), head.charCodeAt(2), head.charCodeAt(3)];
+    // JPEG: FF D8 FF
+    if (codes[0] === 0xFF && codes[1] === 0xD8 && codes[2] === 0xFF) return true;
+    // PNG: 89 50 4E 47
+    if (codes[0] === 0x89 && codes[1] === 0x50 && codes[2] === 0x4E && codes[3] === 0x47) return true;
+    // WebP: starts with "RIFF" (52 49 46 46)
+    if (codes[0] === 0x52 && codes[1] === 0x49 && codes[2] === 0x46 && codes[3] === 0x46) return true;
+    return false; // Anderes Magic = ablehnen
+  } catch {
+    return false; // Base64-Decode-Fehler
+  }
+}
+
 // ═══════════════════════════════════════════════════════════════
 // MAIN ROUTER
 // ═══════════════════════════════════════════════════════════════
@@ -195,7 +247,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const path = url.pathname;
-    if (request.method === "OPTIONS") return new Response(null, { headers: CORS });
+    if (request.method === "OPTIONS") return new Response(null, { headers: corsHeaders(request) });
 
     // POST /api/create
     if (path === "/api/create" && request.method === "POST") {
@@ -224,24 +276,26 @@ export default {
       };
       const ttl = calcTTL(party.date);
       await env.PARTY.put(`party:${id}`, JSON.stringify(party), {expirationTtl:ttl});
-      if (body.photo && body.photo.length <= MAX_PHOTO_BYTES*1.37) {
+      if (body.photo && isSafePhoto(body.photo)) {
         await env.PARTY.put(`photo:${id}`, body.photo, {expirationTtl:ttl});
       }
-      if (body.photoRound && body.photoRound.length <= MAX_PHOTO_BYTES*1.37) {
+      if (body.photoRound && isSafePhoto(body.photoRound)) {
         await env.PARTY.put(`photoRound:${id}`, body.photoRound, {expirationTtl:ttl});
       }
-      return json({id, editToken, url:`https://party.machsleicht.de/${id}`, editUrl:`https://party.machsleicht.de/${id}?edit=${editToken}`});
+      return json({id, editToken, url:`https://party.machsleicht.de/${id}`, editUrl:`https://party.machsleicht.de/${id}?edit=${editToken}`}, 200, request);
     }
 
     // GET /api/party/:id
     if (path.match(/^\/api\/party\/[a-z0-9]+$/) && request.method === "GET") {
       const id = path.split("/")[3];
       const raw = await env.PARTY.get(`party:${id}`);
-      if (!raw) return json({error:"Party nicht gefunden"},404);
+      if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = JSON.parse(raw);
       const edit = url.searchParams.get("edit");
-      if (edit === party.editToken) return json(party);
-      const {editToken,email,...safe} = party;
+      if (edit === party.editToken) return json(party, 200, request);
+      // P0-Security Welle 1C: doiToken aus Public-GET strippen — sonst kann jeder Gast
+      // /api/newsletter-confirm?token=... triggern und fremde E-Mails ungewollt bestätigen.
+      const {editToken,email,doiToken,...safe} = party;
       safe.wishes = (safe.wishes||[]).map(w=>{
         const cb = w.claimedBy||[];
         const claimedAmountTotal = cb.reduce((s,e)=>s+(typeof e==="object" && e && typeof e.amount==="number" ? e.amount : 0),0);
@@ -249,44 +303,80 @@ export default {
       });
       safe.guestCount = safe.guests.filter(g=>g.status==="ja").length;
       safe.guests = undefined;
-      return json(safe);
+      return json(safe, 200, request);
     }
 
     // PUT /api/party/:id
     if (path.match(/^\/api\/party\/[a-z0-9]+$/) && request.method === "PUT") {
       const id = path.split("/")[3];
       const raw = await env.PARTY.get(`party:${id}`);
-      if (!raw) return json({error:"Party nicht gefunden"},404);
+      if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = JSON.parse(raw);
       const body = await request.json();
-      if (body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403);
+      // P0-Security Welle 1E: Legacy-Party ohne editToken darf NICHT editierbar sein.
+      // Sonst Auth-Bypass: body.editToken=undefined gegen party.editToken=undefined → match.
+      if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
       ["childName","age","motto","mottoEmoji","mottoColor","date","time","endTime","address","notes","askAllergies","askPickup","paypalMe","email"].forEach(f=>{if(body[f]!==undefined)party[f]=body[f];});
       if (Array.isArray(body.wishes)) {
         party.wishes = body.wishes.slice(0,MAX_WISHES).map(w=>({
           id:w.id||generateId(6),title:(w.title||"").slice(0,100),url:normalizeWishUrl(w.url),
-          price:(w.price||"").slice(0,20),sharedGift:!!w.sharedGift,claimedBy:w.claimedBy||[]
+          // P0-Security Welle 1E: claimedBy MUSS Array sein. Sonst Type-Confusion bei späterem
+          // claim-Call: String-length-Check umgeht Auth bei sharedGift-Wünschen.
+          price:(w.price||"").slice(0,20),sharedGift:!!w.sharedGift,claimedBy:Array.isArray(w.claimedBy)?w.claimedBy:[]
         }));
       }
       const ttl = calcTTL(party.date);
       if (body.photo===null) await env.PARTY.delete(`photo:${id}`);
-      else if (body.photo && body.photo.length<=MAX_PHOTO_BYTES*1.37) await env.PARTY.put(`photo:${id}`,body.photo,{expirationTtl:ttl});
+      else if (body.photo && isSafePhoto(body.photo)) await env.PARTY.put(`photo:${id}`,body.photo,{expirationTtl:ttl});
       if (body.photoRound===null) await env.PARTY.delete(`photoRound:${id}`);
-      else if (body.photoRound && body.photoRound.length<=MAX_PHOTO_BYTES*1.37) await env.PARTY.put(`photoRound:${id}`,body.photoRound,{expirationTtl:ttl});
+      else if (body.photoRound && isSafePhoto(body.photoRound)) await env.PARTY.put(`photoRound:${id}`,body.photoRound,{expirationTtl:ttl});
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:ttl});
-      return json({ok:true});
+      return json({ok:true}, 200, request);
     }
 
-    // POST /api/party/:id/rsvp
+    // DELETE /api/party/:id — DSGVO Self-Service-Lösch-Endpoint
+    // Auth: editToken NUR via Body (Query würde in Cloudflare-Logs persistieren).
+    // Löscht: party + photo + photoRound + doi-Token (falls vorhanden) aus KV.
+    if (path.match(/^\/api\/party\/[a-z0-9]+$/) && request.method === "DELETE") {
+      const id = path.split("/")[3];
+      // P0-Security: Token NUR aus Body — Query-Parameter wäre in CF-Logs persistiert
+      let providedToken = null;
+      try {
+        const body = await request.json();
+        providedToken = body && body.editToken;
+      } catch { /* no body */ }
+      if (!providedToken) return json({error:"Token fehlt"},400,request);
+      const raw = await env.PARTY.get(`party:${id}`);
+      if (!raw) return json({error:"Party nicht gefunden"},404,request);
+      // Defensive: robust gegen kaputtes JSON
+      let party = null;
+      try { party = JSON.parse(raw); } catch { party = null; }
+      if (!party) {
+        // P0-Security Welle 1C: KEIN Lösch ohne Token-Check.
+        // Corrupted JSON darf nicht als Backdoor missbraucht werden (Attack-Vector:
+        // KV-Race forcen, dann auth-frei löschen). Statt löschen → 500-Fehler,
+        // erfordert Admin-Intervention via Cloudflare-Dashboard.
+        return json({error:"Party-Daten korrupt (JSON-Parse fehlgeschlagen) — bitte kontaktiere kontakt@machsleicht.de"}, 500, request);
+      }
+      if (providedToken !== party.editToken) return json({error:"Nicht berechtigt"},403,request);
+      await env.PARTY.delete(`party:${id}`);
+      await env.PARTY.delete(`photo:${id}`);
+      await env.PARTY.delete(`photoRound:${id}`);
+      if (party.doiToken) await env.PARTY.delete(`doi:${party.doiToken}`);
+      return json({ok:true, deleted:true, message:"Party und alle zugehörigen Daten wurden gelöscht."}, 200, request);
+    }
+
+// POST /api/party/:id/rsvp
     if (path.match(/^\/api\/party\/[a-z0-9]+\/rsvp$/) && request.method === "POST") {
       const id = path.split("/")[3];
       const raw = await env.PARTY.get(`party:${id}`);
-      if (!raw) return json({error:"Party nicht gefunden"},404);
+      if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = JSON.parse(raw);
       const body = await request.json();
       const name = (body.name||"").trim().slice(0,50);
-      if (!name) return json({error:"Name fehlt"},400);
+      if (!name) return json({error:"Name fehlt"},400, request);
       if (party.guests.length>=MAX_GUESTS && !party.guests.find(g=>g.name.toLowerCase()===name.toLowerCase()))
-        return json({error:"Maximale Gästezahl erreicht"},400);
+        return json({error:"Maximale Gästezahl erreicht"},400, request);
       const guest = {
         name, status:["ja","nein","vielleicht"].includes(body.status)?body.status:"ja",
         allergies:(body.allergies||"").slice(0,200), pickupTime:(body.pickupTime||"").slice(0,10),
@@ -295,7 +385,7 @@ export default {
       const existing = party.guests.findIndex(g=>g.name.toLowerCase()===name.toLowerCase());
       if (existing>=0) party.guests[existing]=guest; else party.guests.push(guest);
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
-      return json({ok:true,guestCount:party.guests.filter(g=>g.status==="ja").length});
+      return json({ok:true,guestCount:party.guests.filter(g=>g.status==="ja").length}, request);
     }
 
     // POST /api/party/:id/wish/:wid/claim
@@ -303,11 +393,11 @@ export default {
       const parts = path.split("/");
       const id=parts[3], wishId=parts[5];
       const raw = await env.PARTY.get(`party:${id}`);
-      if (!raw) return json({error:"Party nicht gefunden"},404);
+      if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = JSON.parse(raw);
       const body = await request.json();
       const guestName = (body.name||"").trim();
-      if (!guestName) return json({error:"Name fehlt"},400);
+      if (!guestName) return json({error:"Name fehlt"},400, request);
       // amount nur bei sharedGift relevant; 0 < amount < 9999
       let amount = null;
       if (body.amount !== undefined && body.amount !== null && body.amount !== "") {
@@ -315,11 +405,11 @@ export default {
         if (!isNaN(a) && a > 0 && a < 9999) amount = Math.round(a*100)/100;
       }
       const wish = (party.wishes||[]).find(w=>w.id===wishId);
-      if (!wish) return json({error:"Wunsch nicht gefunden"},404);
+      if (!wish) return json({error:"Wunsch nicht gefunden"},404, request);
       // Helfer: aus gemischtem Array (Strings + Objects) nur Namen extrahieren
       const getName = (entry) => typeof entry === "string" ? entry : (entry && entry.name) || "";
       if (!wish.sharedGift && wish.claimedBy.length>0 && !wish.claimedBy.find(n=>getName(n).toLowerCase()===guestName.toLowerCase()))
-        return json({error:"Bereits vergeben"},400);
+        return json({error:"Bereits vergeben"},400, request);
       const idx = wish.claimedBy.findIndex(n=>getName(n).toLowerCase()===guestName.toLowerCase());
       if (idx>=0) {
         wish.claimedBy.splice(idx,1);
@@ -329,41 +419,45 @@ export default {
         else wish.claimedBy.push(guestName);
       }
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
-      return json({ok:true,claimedBy:wish.claimedBy,claimedCount:wish.claimedBy.length});
+      return json({ok:true,claimedBy:wish.claimedBy,claimedCount:wish.claimedBy.length}, 200, request);
     }
 
     // GET /api/photo/:id
     if (path.match(/^\/api\/photo\/[a-z0-9]+$/) && request.method === "GET") {
       const id = path.split("/")[3];
       const photo = await env.PARTY.get(`photo:${id}`);
-      if (!photo) return json({error:"Kein Foto"},404);
-      return json({photo});
+      if (!photo) return json({error:"Kein Foto"},404, request);
+      return json({photo}, 200, request);
     }
 
     // GET /api/photoRound/:id
     if (path.match(/^\/api\/photoRound\/[a-z0-9]+$/) && request.method === "GET") {
       const id = path.split("/")[3];
       const photo = await env.PARTY.get(`photoRound:${id}`);
-      if (!photo) return json({error:"Kein Foto"},404);
-      return json({photo});
+      if (!photo) return json({error:"Kein Foto"},404, request);
+      return json({photo}, 200, request);
     }
 
     // POST /api/party/:id/send-edit-link
     if (path.match(/^\/api\/party\/[a-z0-9]+\/send-edit-link$/) && request.method === "POST") {
-      // Origin-Check (CORS-Hardening): nur von machsleicht.de/party.machsleicht.de
+      // Origin-Check (CORS-Hardening): nur von machsleicht.de/party.machsleicht.de.
+      // P0-Security Welle 1C: empty Origin auch ablehnen (Server-to-Server-Bypass via
+      // curl wäre Email-Spam-Vector — Angreifer könnte beliebige Edit-Mails triggern).
       const origin = request.headers.get("Origin") || "";
-      if (origin && !/^https:\/\/(www\.|party\.)?machsleicht\.de$/.test(origin)) {
-        return json({error:"Nicht autorisiert"},403);
+      if (!origin || !/^https:\/\/(www\.|party\.)?machsleicht\.de$/.test(origin)) {
+        return json({error:"Nicht autorisiert"},403, request);
       }
 
       const id = path.split("/")[3];
       const raw = await env.PARTY.get(`party:${id}`);
-      if (!raw) return json({error:"Party nicht gefunden"},404);
+      if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = JSON.parse(raw);
       const body = await request.json();
-      if (body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403);
+      if (body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
       const email = (body.email||"").trim().slice(0,200);
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({error:"Ung\u00FCltige E-Mail"},400);
+      // P0-Security Welle 1E: Control-Chars (NUL, CR, LF, Tab) in Email blocken \u2014 Resend-Header-Injection-Risk.
+      if (/[\x00-\x1F\x7F]/.test(email)) return json({error:"Ung\u00FCltige E-Mail"},400, request);
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({error:"Ung\u00FCltige E-Mail"},400, request);
       const newsletterOptIn = body.newsletterOptIn === true;
 
       // Save email to party
@@ -371,7 +465,7 @@ export default {
       await env.PARTY.put(`party:${id}`, JSON.stringify(party), {expirationTtl: calcTTL(party.date)});
 
       // Send email via Resend
-      if (!env.RESEND_API_KEY) return json({error:"E-Mail-Versand nicht konfiguriert"},500);
+      if (!env.RESEND_API_KEY) return json({error:"E-Mail-Versand nicht konfiguriert"},500, request);
       const childName = party.childName || "Kind";
       const editUrl = `https://party.machsleicht.de/${id}?edit=${party.editToken}`;
       const guestUrl = `https://party.machsleicht.de/${id}`;
@@ -380,6 +474,12 @@ export default {
       //    damit der Bestätigungs-Button direkt in der Edit-Link-Mail landet.
       let confirmUrl = "";
       if (newsletterOptIn) {
+        // P0-Security Welle 1C: Verwaisten alten doiToken zuerst löschen (Race-Condition-Schutz).
+        // Sonst akkumulieren bei wiederholten send-edit-link-Calls verwaiste doi-Einträge im KV,
+        // die nicht mehr über die party referenziert sind.
+        if (party.doiToken) {
+          await env.PARTY.delete(`doi:${party.doiToken}`);
+        }
         const doiToken = generateToken();
         const ip = request.headers.get("cf-connecting-ip") || "";
         const ua = (request.headers.get("user-agent") || "").slice(0,200);
@@ -391,6 +491,9 @@ export default {
           origin,
           source: "partyseite-creator"
         };
+        // P0-DSGVO: doiToken in party tracken für späteren Lösch-Cleanup
+        party.doiToken = doiToken;
+        await env.PARTY.put(`party:${id}`, JSON.stringify(party), {expirationTtl: calcTTL(party.date)});
         await env.PARTY.put(`doi:${doiToken}`, JSON.stringify(doiEntry), {expirationTtl: 7*24*60*60});
         confirmUrl = `https://party.machsleicht.de/api/newsletter-confirm?token=${doiToken}`;
       }
@@ -430,15 +533,15 @@ export default {
         });
         if (!res.ok) {
           const err = await res.text();
-          return json({error:"E-Mail konnte nicht gesendet werden"},500);
+          return json({error:"E-Mail konnte nicht gesendet werden"},500, request);
         }
         // Mail erfolgreich raus — Newsletter-Bestätigungs-Button ist drin, falls Opt-In.
         if (newsletterOptIn) doiSent = true;
       } catch(e) {
-        return json({error:"E-Mail-Versand fehlgeschlagen"},500);
+        return json({error:"E-Mail-Versand fehlgeschlagen"},500, request);
       }
 
-      return json({ok:true, doiMailSent:doiSent});
+      return json({ok:true, doiMailSent:doiSent}, 200, request);
     }
 
     // Affiliate Redirect /go/:partyId/:wishId
@@ -494,8 +597,10 @@ export default {
             body: JSON.stringify({email: entry.email, unsubscribed: false})
           });
           // 200/201 = ok, 409 = schon vorhanden → auch ok
+          // P0-DSGVO Welle 1C: Status loggen, aber NICHT resp.text() (kann Email enthalten,
+          // CF-Worker-Logs sind 7 Tage retained — vermeidet PII-Leak in Logs).
           if (!resp.ok && resp.status !== 409) {
-            console.log("Resend audience add error:", await resp.text());
+            console.log("Resend audience add error status:", resp.status);
           }
         } catch(e) {
           console.log("Resend audience add exception:", e.message);
@@ -519,7 +624,9 @@ export default {
           confirmedIp: request.headers.get("cf-connecting-ip") || "",
           confirmedUa: (request.headers.get("user-agent") || "").slice(0,200)
         };
-        await env.PARTY.put(`consent:${emailHash}`, JSON.stringify(consentRecord));
+        // P0-DSGVO Welle 1E: 3-Jahres-TTL für Consent-Audit (Art-7-Nachweispflicht erfüllt,
+        // aber NICHT ewig — Art-17 Recht-auf-Löschung soll nach 3 Jahren greifen).
+        await env.PARTY.put(`consent:${emailHash}`, JSON.stringify(consentRecord), {expirationTtl: 3*365*24*60*60});
       } catch(e) {
         console.log("Consent audit-trail write error:", e.message);
       }
@@ -1553,6 +1660,29 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     <span class="badge" style="background:${color}15;color:${color};margin-top:8px">\u{1F511} Editor-Ansicht</span>
   </div>
 
+  ${(()=>{
+    const __dateMs = party.date ? new Date(party.date).getTime() : NaN; const daysToParty = isNaN(__dateMs) ? null : Math.ceil((__dateMs - Date.now()) / 86400000);
+    const dayLabel = daysToParty === null ? null : daysToParty < 0 ? `vor ${Math.abs(daysToParty)} Tagen` : daysToParty === 0 ? "Heute!" : daysToParty === 1 ? "Morgen!" : daysToParty <= 7 ? `in ${daysToParty} Tagen` : `in ${daysToParty} Tagen`;
+    const dayColor = daysToParty === null ? "var(--m)" : daysToParty < 0 ? "#888" : daysToParty <= 1 ? "#C62828" : daysToParty <= 7 ? "#E65100" : color;
+    const allergenList = allergies.length ? allergies.map(g=>`${esc(g.name)}: ${esc(g.allergies)}`).join("\\n") : "";
+    return `<div class="card fade-up" style="background:${color}08;border-left:4px solid ${color}">
+    <h2 style="font-size:15px;color:${color};margin-bottom:14px">\u{1F4CA} Status-Übersicht</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px">
+      <div style="text-align:center;padding:10px 4px;background:#fff;border-radius:10px"><div style="font-size:24px;font-weight:800;color:#2E7D32">${ja.length}</div><div style="font-size:11px;color:var(--m)">dabei</div></div>
+      <div style="text-align:center;padding:10px 4px;background:#fff;border-radius:10px"><div style="font-size:24px;font-weight:800;color:#E65100">${vielleicht.length}</div><div style="font-size:11px;color:var(--m)">vielleicht</div></div>
+      <div style="text-align:center;padding:10px 4px;background:#fff;border-radius:10px"><div style="font-size:24px;font-weight:800;color:#C62828">${nein.length}</div><div style="font-size:11px;color:var(--m)">abgesagt</div></div>
+      <div style="text-align:center;padding:10px 4px;background:#fff;border-radius:10px"><div style="font-size:24px;font-weight:800;color:${dayColor}">${daysToParty===null?"—":daysToParty<0?"⏳":daysToParty}</div><div style="font-size:11px;color:var(--m)">${dayLabel||"Datum offen"}</div></div>
+    </div>
+    ${allergies.length?`<div style="background:#FFF3E0;border-left:3px solid #E65100;padding:10px 12px;border-radius:6px;margin-bottom:12px"><p style="font-size:12px;font-weight:700;color:#E65100;margin-bottom:4px">⚠️ ${allergies.length} ${allergies.length===1?"Kind hat":"Kinder haben"} Allergie-Hinweise:</p><pre style="font-size:12px;color:#5D4037;margin:0;white-space:pre-wrap;font-family:inherit">${esc(allergenList)}</pre></div>`:""}
+    ${party.guests.length === 0 ? `<p style="font-size:13px;color:var(--m);text-align:center;padding:8px 0">Noch keine Antworten — teile den Gäste-Link, um Zusagen zu sammeln.</p>` : ""}
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <button class="btn btn-outline btn-sm" onclick="copyGuestLink()" style="flex:1;min-width:140px">\u{1F4CB} Link kopieren</button>
+      <button class="btn btn-outline btn-sm" onclick="shareWA()" style="flex:1;min-width:140px">\u{1F4AC} WhatsApp teilen</button>
+      <a href="${esc(guestUrl)}" target="_blank" class="btn btn-outline btn-sm" style="flex:1;min-width:140px;text-align:center;text-decoration:none">\u{1F441}️ Gäste-Ansicht</a>
+    </div>
+  </div>`;
+  })()}
+
   <div class="card fade-up">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
       <h2 style="font-size:15px;color:${color};margin:0">\u{1F4CB} Party-Details</h2>
@@ -1575,6 +1705,10 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       <div class="field"><label>Adresse</label><textarea id="edAddress" rows="2">${esc(party.address)}</textarea></div>
       <div class="field"><label>Hinweise</label><textarea id="edNotes" rows="3">${esc(party.notes)}</textarea></div>
       <button class="btn" id="saveBtn" onclick="saveEdit()" style="background:${color}">\u{1F4BE} Speichern</button>
+      <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--l)">
+        <p style="font-size:12px;color:var(--m);margin-bottom:8px"><strong>DSGVO:</strong> Diese Party und alle Daten (Gäste, Allergien, Fotos) werden automatisch nach 90 Tagen gelöscht. Du kannst sie auch jetzt sofort löschen — die Aktion ist endgültig und kann nicht rückgängig gemacht werden.</p>
+        <button class="btn btn-outline btn-sm" id="deleteBtn" onclick="confirmDelete()" style="color:#C62828;border-color:#C62828">\u{1F5D1}️ Party endgültig löschen</button>
+      </div>
     </div>
   </div>
 
@@ -1647,6 +1781,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   (async function(){try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo)document.getElementById("heroPhotoEd").innerHTML='<img src="'+d.photo+'" class="hero-photo">';}catch{}})();
   function shareWA(){const t="${esc(party.mottoEmoji||"\u{1F389}")} ${name?name+"s ":""}${motto||"Geburtstag"}!\\n\\nAlle Infos & Zusage hier:\\n${esc(guestUrl)}";window.open("https://wa.me/?text="+encodeURIComponent(t));}
   function copyLink(){navigator.clipboard.writeText("${esc(guestUrl)}").then(()=>{const b=event.target;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Link kopieren",2000);});}
+  function copyGuestLink(){navigator.clipboard.writeText("${esc(guestUrl)}").then(()=>{const b=event.target;const o=b.textContent;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent=o,2000);});}
   async function saveEdit(){
     const btn=document.getElementById("saveBtn");btn.textContent="\u23F3 Speichern...";btn.disabled=true;
     const editToken=new URLSearchParams(location.search).get("edit");
@@ -1661,6 +1796,28 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       if(!r.ok){const d=await r.json();throw new Error(d.error);}
       location.reload();
     }catch(e){alert("Fehler: "+e.message);btn.textContent="\u{1F4BE} Speichern";btn.disabled=false;}
+  }
+  function confirmDelete(){
+    const childName="${esc(name||"diese Party")}";
+    const confirmed=confirm("Wirklich löschen?\\n\\nDie Party \""+childName+"\" und alle zugehörigen Daten (Gäste, Allergien, Fotos, Wünsche) werden ENDGÜLTIG gelöscht.\\n\\nDiese Aktion kann nicht rückgängig gemacht werden.\\n\\nWeiter?");
+    if(!confirmed)return;
+    const second=confirm("Letzte Bestätigung — wirklich endgültig löschen?");
+    if(!second)return;
+    deleteParty();
+  }
+  async function deleteParty(){
+    const btn=document.getElementById("deleteBtn");
+    if(btn){btn.textContent="⏳ Lösche...";btn.disabled=true;}
+    const editToken=new URLSearchParams(location.search).get("edit");
+    try{
+      const r=await fetch(location.origin+"/api/party/${party.id}",{method:"DELETE",headers:{"Content-Type":"application/json"},body:JSON.stringify({editToken:editToken})});
+      if(!r.ok){const d=await r.json();throw new Error(d.error||"Lösch-Fehler");}
+      alert("Party wurde gelöscht. Du wirst zur Startseite weitergeleitet.");
+      location.href="https://machsleicht.de/";
+    }catch(e){
+      alert("Fehler beim Löschen: "+e.message);
+      if(btn){btn.textContent="\u{1F5D1}️ Party endgültig löschen";btn.disabled=false;}
+    }
   }
   </script>`;
 }
