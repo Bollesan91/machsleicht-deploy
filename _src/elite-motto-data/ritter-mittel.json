@@ -1043,32 +1043,81 @@
     "regen": {
       "icon": "🌧️",
       "label": "Regen",
-      "headline": "Alles geht drinnen — Schwert-Parcours in den Flur."
+      "headline": "Alles geht drinnen — Schwert-Parcours in den Flur.",
+      "steps": [
+        "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen — Möbel an die Wand für mehr Platz.",
+        "Stations-Rotation in 4 Ecken: jede Ecke = eine Station, klare Markierungen mit Klebeband am Boden.",
+        "Wenn Sand/Wasser geplant war: Plane oder alte Decke als Unterlage, Putztuch griffbereit.",
+        "Aktivierungs-Spiele kürzer (10 Min statt 20) damit Bewegungsdrang nicht eskaliert."
+      ],
+      "fallback": "Kein Platz im Wohnzimmer? Kinderzimmer + Flur kombinieren. Notfall: Spiele auf den Esstisch verlegen (Bastel-Stationen, Quiz).",
+      "tone": "praktisch"
     },
     "weniger_kinder_als_erwartet": {
       "icon": "👥",
       "label": "Weniger Kinder",
-      "headline": "Engere Stationen — mehr Zeit pro Kind und mehr Wappen-Detail."
+      "headline": "Engere Stationen — mehr Zeit pro Kind und mehr Wappen-Detail.",
+      "steps": [
+        "Stations-Dauer hochfahren: 25 Min statt 20 — jedes Kind hat mehr Zeit.",
+        "Material vor-portioniert lassen, NICHT reduzieren — übriges Material gehört in Mitgebsel-Tüten.",
+        "Bei Wettkampf-Spielen: 2er-Teams in 1er-Stationen umbauen, damit niemand allein steht.",
+        "Foto-Phase verlängern — kleinere Gruppe = stärkere Foto-Aufmerksamkeit pro Kind."
+      ],
+      "fallback": "Bei nur 3-4 Kindern: Stations-Wechsel komplett weglassen, durchgehende Story als Spiel-Bogen.",
+      "tone": "praktisch"
     },
     "mehr_kinder_als_erwartet": {
       "icon": "🚨",
       "label": "Mehr Kinder",
-      "headline": "2 Stationen parallel laufen lassen + zweite Hand organisieren."
+      "headline": "2 Stationen parallel laufen lassen + zweite Hand organisieren.",
+      "steps": [
+        "Sofort eine zweite Erwachsene/n als Helfer holen (Nachbar, anderes Eltern-Paar).",
+        "Stationen in 2-Reihen aufteilen: 2 Stationen laufen parallel, halbiert die Wartezeit.",
+        "Material verdoppeln wenn möglich (mehr Becher, mehr Bürsten) — Bestand checken.",
+        "Snack-Pause früher einplanen — Hunger kombiniert mit Überstimulation = Streit.",
+        "Mitgebsel-Tüten ggf. simpler füllen, damit die Stückzahl reicht."
+      ],
+      "fallback": "Wenn nichts hilft: eine Station als Bonus-Spiel deklarieren, statt die Stations-Rotation zu starten. Reduziert Logistik-Stress.",
+      "tone": "praktisch"
     },
     "kind_will_nicht_mitmachen": {
       "icon": "🤷",
       "label": "Kind verweigert",
-      "headline": "'Burg-Wächter'-Rolle — passt auf, gibt Stempel. Bekommt am Ende Ritter-Brief."
+      "headline": "'Burg-Wächter'-Rolle — passt auf, gibt Stempel. Bekommt am Ende Ritter-Brief.",
+      "steps": [
+        "Nicht drängen — anbieten als \"Beobachter/Schiedsrichter\": Stoppuhr halten, Stempel verteilen, mitnotieren.",
+        "Eine Lieblings-Aufgabe identifizieren (Karotten verteilen, Helm aufsetzen) — kleine Rolle reaktiviert.",
+        "Eltern (falls noch da) kurz einbeziehen, dann Distanz schaffen — meist klappt es nach 15-20 Min Beobachtung.",
+        "Am Ende: Diplom/Lizenz/Brief bekommen ALLE — auch der Beobachter. Sonst geht ein Kind als \"Verlierer\" heim."
+      ],
+      "fallback": "Wenn ein Kind dauerhaft verweigert: nicht zwingen. Manchmal sind solche Tage einfach so. Belohnung am Ende bleibt.",
+      "tone": "einfühlsam"
     },
     "kuchen_misslungen": {
       "icon": "🎂",
       "label": "Kuchen misslungen",
-      "headline": "Bäcker-Kuchen + Wappen drauf — passt."
+      "headline": "Bäcker-Kuchen + Wappen drauf — passt.",
+      "steps": [
+        "Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.",
+        "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss / Pappschild als Wappen / Bagger drauf).",
+        "Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als \"Mini-Versionen\" verteilen.",
+        "Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt."
+      ],
+      "fallback": "Last-Minute-Rettung: Eis aus dem Gefrierer mit Streuseln und Soße — das ist bei Kindern fast immer der heimliche Star.",
+      "tone": "humorvoll"
     },
     "schwert_kampft_zu_wild": {
       "icon": "⚔️",
       "label": "Schwert-Kampf zu wild",
-      "headline": "Sofort 'Burg-Wächter-Pause' — alle Schwerter ablegen, 5 Min Sitz-Aktivität (Quiz)."
+      "headline": "Sofort 'Burg-Wächter-Pause' — alle Schwerter ablegen, 5 Min Sitz-Aktivität (Quiz).",
+      "steps": [
+        "Sofort-Stopp: \"Schwerter ablegen, Pause\" — laut + klar. Alle Schwerter in einen Eimer einsammeln.",
+        "5 Min Sitz-Aktivität als Reset (Quiz, Wappen-Schmücken, Snack-Pause).",
+        "Regel-Wiederholung VOR Schwert-Rückgabe: \"Nur am Strohballen, niemals auf ein Kind. Verstanden?\"",
+        "Wenn ein Kind weiter zu wild ist: persönliche Burg-Wächter-Rolle ohne Schwert geben (Kontrolle ohne Eskalation)."
+      ],
+      "fallback": "Wenn die Stimmung gekippt ist: Schwert-Parcours für heute beendet, stattdessen Wappen-Werkstatt verlängern. Kinder akzeptieren das.",
+      "tone": "klar"
     }
   }
 }

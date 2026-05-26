@@ -994,32 +994,81 @@
     "regen": {
       "icon": "🌧️",
       "label": "Regen",
-      "headline": "Parcours drinnen — durch Wohnung-Flur."
+      "headline": "Parcours drinnen — durch Wohnung-Flur.",
+      "steps": [
+        "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen — Möbel an die Wand für mehr Platz.",
+        "Stations-Rotation in 4 Ecken: jede Ecke = eine Station, klare Markierungen mit Klebeband am Boden.",
+        "Wenn Sand/Wasser geplant war: Plane oder alte Decke als Unterlage, Putztuch griffbereit.",
+        "Aktivierungs-Spiele kürzer (10 Min statt 20) damit Bewegungsdrang nicht eskaliert."
+      ],
+      "fallback": "Kein Platz im Wohnzimmer? Kinderzimmer + Flur kombinieren. Notfall: Spiele auf den Esstisch verlegen (Bastel-Stationen, Quiz).",
+      "tone": "praktisch"
     },
     "weniger_kinder_als_erwartet": {
       "icon": "👥",
       "label": "Weniger Kinder",
-      "headline": "Engere Stationen — mehr Zeit pro Kind."
+      "headline": "Engere Stationen — mehr Zeit pro Kind.",
+      "steps": [
+        "Stations-Dauer hochfahren: 25 Min statt 20 — jedes Kind hat mehr Zeit.",
+        "Material vor-portioniert lassen, NICHT reduzieren — übriges Material gehört in Mitgebsel-Tüten.",
+        "Bei Wettkampf-Spielen: 2er-Teams in 1er-Stationen umbauen, damit niemand allein steht.",
+        "Foto-Phase verlängern — kleinere Gruppe = stärkere Foto-Aufmerksamkeit pro Kind."
+      ],
+      "fallback": "Bei nur 3-4 Kindern: Stations-Wechsel komplett weglassen, durchgehende Story als Spiel-Bogen.",
+      "tone": "praktisch"
     },
     "mehr_kinder_als_erwartet": {
       "icon": "🚨",
       "label": "Mehr Kinder",
-      "headline": "2 Stationen parallel laufen lassen."
+      "headline": "2 Stationen parallel laufen lassen.",
+      "steps": [
+        "Sofort eine zweite Erwachsene/n als Helfer holen (Nachbar, anderes Eltern-Paar).",
+        "Stationen in 2-Reihen aufteilen: 2 Stationen laufen parallel, halbiert die Wartezeit.",
+        "Material verdoppeln wenn möglich (mehr Becher, mehr Bürsten) — Bestand checken.",
+        "Snack-Pause früher einplanen — Hunger kombiniert mit Überstimulation = Streit.",
+        "Mitgebsel-Tüten ggf. simpler füllen, damit die Stückzahl reicht."
+      ],
+      "fallback": "Wenn nichts hilft: eine Station als Bonus-Spiel deklarieren, statt die Stations-Rotation zu starten. Reduziert Logistik-Stress.",
+      "tone": "praktisch"
     },
     "kind_will_nicht_mitmachen": {
       "icon": "🤷",
       "label": "Kind verweigert",
-      "headline": "'Quiz-Beobachter'-Rolle — bekommt am Ende Lizenz wie alle."
+      "headline": "'Quiz-Beobachter'-Rolle — bekommt am Ende Lizenz wie alle.",
+      "steps": [
+        "Nicht drängen — anbieten als \"Beobachter/Schiedsrichter\": Stoppuhr halten, Stempel verteilen, mitnotieren.",
+        "Eine Lieblings-Aufgabe identifizieren (Karotten verteilen, Helm aufsetzen) — kleine Rolle reaktiviert.",
+        "Eltern (falls noch da) kurz einbeziehen, dann Distanz schaffen — meist klappt es nach 15-20 Min Beobachtung.",
+        "Am Ende: Diplom/Lizenz/Brief bekommen ALLE — auch der Beobachter. Sonst geht ein Kind als \"Verlierer\" heim."
+      ],
+      "fallback": "Wenn ein Kind dauerhaft verweigert: nicht zwingen. Manchmal sind solche Tage einfach so. Belohnung am Ende bleibt.",
+      "tone": "einfühlsam"
     },
     "kuchen_misslungen": {
       "icon": "🎂",
       "label": "Kuchen misslungen",
-      "headline": "Bäcker-Kuchen + Hufeisen drauf — passt."
+      "headline": "Bäcker-Kuchen + Hufeisen drauf — passt.",
+      "steps": [
+        "Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.",
+        "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss / Pappschild als Wappen / Bagger drauf).",
+        "Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als \"Mini-Versionen\" verteilen.",
+        "Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt."
+      ],
+      "fallback": "Last-Minute-Rettung: Eis aus dem Gefrierer mit Streuseln und Soße — das ist bei Kindern fast immer der heimliche Star.",
+      "tone": "humorvoll"
     },
     "echtes_pony_nicht_möglich": {
       "icon": "🐎",
       "label": "Echtes Pony abgesagt",
-      "headline": "Programm fortsetzen — Plüsch + Steckenpferd."
+      "headline": "Programm fortsetzen — Plüsch + Steckenpferd.",
+      "steps": [
+        "Reiterhof-Besuch abgesagt? Programm fortsetzen — Plüsch + Steckenpferd übernehmen die Rolle vollwertig.",
+        "Olympiade-Phase (Hufeisen-Wurf, Parcours mit Zeitmessung) als Ersatz-Highlight 20-30 Min ausbauen.",
+        "Diplom-Zeremonie aufwerten: feierliche Übergabe mit Wanderpokal als Trost-Highlight.",
+        "Kinder merken am Ende selten was fehlt — wenn die Story trägt, fehlt das echte Pony nicht."
+      ],
+      "fallback": "Wenn das Geburtstagskind besonders enttäuscht: am nächsten Wochenende einen echten Reiterhof-Besuch nachholen, dann ist es ein \"extra Tag\".",
+      "tone": "einfühlsam"
     }
   }
 }
