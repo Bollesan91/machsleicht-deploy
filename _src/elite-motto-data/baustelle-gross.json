@@ -1,8 +1,15 @@
 {
-  "_meta": {"version": "1.0.0", "lastUpdated": "2026-05-26", "qualityNote": "v1 — Phase-B-Skelett. Template-Anker: feuerwehr-gross + baustelle-mittel. Gross-Spezifika (3-4h, Eltern absetzen, echter Wettbewerb, Architekten-Prüfung als Quest) durchgängig angewandt. Helfer-v3-Iteration ausstehend."},
+  "_meta": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-05-26",
+    "qualityNote": "v2 — Helfer-v3-Welle 1A+1B in Bearbeitung (Schema-Parität + Affiliate-Aktivierung). Initial-Review-Score 68/100. Weitere Wellen folgen."
+  },
   "motto": "baustelle",
   "ageGroup": "gross",
-  "ageRange": [9, 12],
+  "ageRange": [
+    9,
+    12
+  ],
   "title": "🚧 Baustelle-Kindergeburtstag — 9–12 Jahre",
   "metaDescription": "Baustelle-Kindergeburtstag für 9-12-Jährige: 3 fertige Baustellen-Konzepte mit Architekten-Prüfung, bewertetem Bauklotz-Wettbewerb, Werkzeug-Quiz Klasse 2, Sabotage-Ermittlung und Bauleiter-Diplom mit Funktion.",
   "introParagraph": "In dem Alter wollen Kinder ein Motto, das sie ernst nimmt — keine Bagger-Plüsch-Romantik, sondern Strategie, Statik, ein bisschen Druck. Diese Konzepte liefern das: Theorie-Briefing wie an einer Baustelle, bewerteter Bauklotz-Wettbewerb mit Stoppuhr und Statik-Note, Werkzeug-Quiz Klasse 2 mit echten Bau-Berufen, Sabotage-Ermittlung als Krimi-Phase (auf der Baustelle wurde sabotiert!) und Bauleiter-Diplom mit Funktion am Ende. Eltern können absetzen, in Wow-Variante völlig wegbleiben.",
@@ -11,13 +18,34 @@
     "whyMottoFitsHeadline": "🏗️ Warum Baustelle für 9-12-Jährige besonders gut funktioniert",
     "whyMottoFits": "In dem Alter haben Kinder Lego-Technik gebaut, Minecraft gespielt, Häuserbau gesehen. Was sie NICHT mehr wollen: Plastik-Schraubenzieher mit Sand. Was sie suchen: ein Motto, das ihre Konstruktions-Lust ernst nimmt. Die Architekten-Prüfung trifft das punktgenau: Theorie-Briefing zu Statik (warum fallen Brücken um?) und Bau-Reihenfolge ist echter Stoff, der Bauklotz-Wettbewerb wird mit Höhe + Statik-Note bewertet, die Sabotage-Ermittlung läuft als echter Krimi mit Verdächtigen (Bauleiter, Maurer, Elektriker, Polier, Architekt) und Beweisen. Die Kinder gehen mit echtem Bauleiter-Diplom heim — nicht 'war schön' sondern 'ich habe Konstruktions-Wissen'. Das überzeugt Eltern, und die Kinder spüren es.",
     "traits": [
-      {"topic": "Aufmerksamkeit", "detail": "30–45 Min pro Station problemlos, wenn die Aktivität sie fordert. Sabotage-Ermittlung mit 4 Verdächtigen hält 8 Zwölfjährige eine Stunde. Generisches 'Bauklotz-Stapeln' verlieren sie nach 10 Min."},
-      {"topic": "Regeln", "detail": "Komplexe Regeln werden nicht nur verstanden, sondern gewünscht. Wenn die Sabotage nur 3 Spuren hat, fragen sie nach mehr. Plane Tiefe ein."},
-      {"topic": "Wettbewerb", "detail": "Echter Wettbewerb mit Statik-Wertung ist erwünscht. Höchster + stabilster Turm wird gewürdigt, 'verloren' ist okay. Trupp gegen Trupp im Bau-Wettbewerb, Punkte addieren, Sieger-Bonus — alles erlaubt."},
-      {"topic": "Motorik", "detail": "Volle Bandbreite. Echte Holzschrauben (klein!) mit Plastik-Schraubenzieher, Lupe für Spuren, Bauplan zeichnen, Wasserwaage benutzen, Maßband messen. Ein 11-Jähriger kann Ermittlungs-Akten ausfüllen."},
-      {"topic": "Dauer", "detail": "3–4 Stunden ohne Probleme. Eine 3-Stunden-Party fühlt sich bei 9-12 kurz an."},
-      {"topic": "Echtes Werkzeug", "detail": "Kleine Holzschrauben mit Plastik-Schraubenzieher okay, ab 10 auch Hammer (für Pappnägel, nicht Metall). Schutzbrille bei Säge-Übungen (sicher: Plastik-Säge mit Kork)."},
-      {"topic": "Eltern", "detail": "Definitiv weg in Wow-Variante. Kinder in dem Alter wollen Party ohne Eltern. Telefonisch erreichbar reicht. 1-2 Erwachsene als 'Polier-Aufsicht'."}
+      {
+        "topic": "Aufmerksamkeit",
+        "detail": "30–45 Min pro Station problemlos, wenn die Aktivität sie fordert. Sabotage-Ermittlung mit 4 Verdächtigen hält 8 Zwölfjährige eine Stunde. Generisches 'Bauklotz-Stapeln' verlieren sie nach 10 Min."
+      },
+      {
+        "topic": "Regeln",
+        "detail": "Komplexe Regeln werden nicht nur verstanden, sondern gewünscht. Wenn die Sabotage nur 3 Spuren hat, fragen sie nach mehr. Plane Tiefe ein."
+      },
+      {
+        "topic": "Wettbewerb",
+        "detail": "Echter Wettbewerb mit Statik-Wertung ist erwünscht. Höchster + stabilster Turm wird gewürdigt, 'verloren' ist okay. Trupp gegen Trupp im Bau-Wettbewerb, Punkte addieren, Sieger-Bonus — alles erlaubt."
+      },
+      {
+        "topic": "Motorik",
+        "detail": "Volle Bandbreite. Echte Holzschrauben (klein!) mit Plastik-Schraubenzieher, Lupe für Spuren, Bauplan zeichnen, Wasserwaage benutzen, Maßband messen. Ein 11-Jähriger kann Ermittlungs-Akten ausfüllen."
+      },
+      {
+        "topic": "Dauer",
+        "detail": "3–4 Stunden ohne Probleme. Eine 3-Stunden-Party fühlt sich bei 9-12 kurz an."
+      },
+      {
+        "topic": "Echtes Werkzeug",
+        "detail": "Kleine Holzschrauben mit Plastik-Schraubenzieher okay, ab 10 auch Hammer (für Pappnägel, nicht Metall). Schutzbrille bei Säge-Übungen (sicher: Plastik-Säge mit Kork)."
+      },
+      {
+        "topic": "Eltern",
+        "detail": "Definitiv weg in Wow-Variante. Kinder in dem Alter wollen Party ohne Eltern. Telefonisch erreichbar reicht. 1-2 Erwachsene als 'Polier-Aufsicht'."
+      }
     ]
   },
   "signatureRitual": {
@@ -25,20 +53,98 @@
     "subtitle": "Eröffnet mit Architekten-Briefing, endet mit Bauleiter-Diplom",
     "introText": "Bei 9-12 funktioniert die Architekten-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Architekten-Anwärtern. Jeder zieht eine Funktion (Polier Tom, Architektin Mia, Bauleiter Jonas, Elektrikerin Lina, Maurerin Hanna, Tiefbau-Ingenieur Nora...). Die Funktion wird gelebt — wer die Architektin-Karte zieht, leitet die Bauplan-Station an. Während der Party absolvieren sie 5-6 Prüfungs-Stationen mit echten Bewertungen (Höhe, Statik-Note, Quiz-Punkte). Am Ende: Diplom-Übergabe mit Funktion ('Bauleiter Klasse 1'), bestes Team bekommt den Bauleiter-Pokal.",
     "setupSteps": [
-      {"n": 1, "name": "Funktions-Box vorbereiten", "content": "Schuhkarton mit 12 Architekten-Funktions-Karten auf festem Papier (laminieren = Bonus). Karten ziehen, Funktion gilt für die ganze Party."},
-      {"n": 2, "name": "Architekten-Briefing", "content": "5 Min Theorie: Welche Bau-Berufe gibt es? Maurer/Elektriker/Tiefbau/Polier/Architekt. Statik-Grundregel: Breite Basis = stabil. Dreiecke sind stärker als Vierecke. Echtes Wissen, kurz, präzise."},
-      {"n": 3, "name": "Prüfungs-Mappe", "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, 5 Stations-Bewertungs-Feldern (Zeit, Statik-Note, Quiz-Punkte) und Notiz-Platz für Sabotage-Ermittlung."},
-      {"n": 4, "name": "Baustellen-Tafel", "content": "Großes Plakat mit Spalten Name / Funktion / Station-Bewertungen / Gesamt-Score. Hängt sichtbar in der Mitte."},
-      {"n": 5, "name": "Architekten-Eid (alle gemeinsam, 1×)", "content": "'Wir bauen sicher, wir bauen stabil, wir helfen unserem Team. Bau-Beginn.' Klar, knapp, dann starten."},
-      {"n": 6, "name": "Diplom + Bauleiter-Pokal vorbereiten", "content": "Diplome: 'Bauleiter Klasse 1 — geprüft und für tauglich befunden' mit Funktion und Datum. Bauleiter-Pokal: Echter kleiner Pokal für bestes Team (geht 1 Jahr zum Sieger)."}
+      {
+        "n": 1,
+        "name": "Funktions-Box vorbereiten",
+        "content": "Schuhkarton mit 12 Architekten-Funktions-Karten auf festem Papier (laminieren = Bonus). Karten ziehen, Funktion gilt für die ganze Party."
+      },
+      {
+        "n": 2,
+        "name": "Architekten-Briefing",
+        "content": "5 Min Theorie: Welche Bau-Berufe gibt es? Maurer/Elektriker/Tiefbau/Polier/Architekt. Statik-Grundregel: Breite Basis = stabil. Dreiecke sind stärker als Vierecke. Echtes Wissen, kurz, präzise."
+      },
+      {
+        "n": 3,
+        "name": "Prüfungs-Mappe",
+        "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, 5 Stations-Bewertungs-Feldern (Zeit, Statik-Note, Quiz-Punkte) und Notiz-Platz für Sabotage-Ermittlung."
+      },
+      {
+        "n": 4,
+        "name": "Baustellen-Tafel",
+        "content": "Großes Plakat mit Spalten Name / Funktion / Station-Bewertungen / Gesamt-Score. Hängt sichtbar in der Mitte."
+      },
+      {
+        "n": 5,
+        "name": "Architekten-Eid (alle gemeinsam, 1×)",
+        "content": "'Wir bauen sicher, wir bauen stabil, wir helfen unserem Team. Bau-Beginn.' Klar, knapp, dann starten."
+      },
+      {
+        "n": 6,
+        "name": "Diplom + Bauleiter-Pokal vorbereiten",
+        "content": "Diplome: 'Bauleiter Klasse 1 — geprüft und für tauglich befunden' mit Funktion und Datum. Bauleiter-Pokal: Echter kleiner Pokal für bestes Team (geht 1 Jahr zum Sieger)."
+      }
     ],
     "rolesList": [
-      {"name": "Polier Tom", "description": "Leitet die Baustelle"},
-      {"name": "Architektin Mia", "description": "Bauplan-Station-Chefin"},
-      {"name": "Bauleiter Jonas", "description": "Sabotage-Ermittler-Chef"},
-      {"name": "Elektrikerin Lina", "description": "Werkzeug-Quiz-Wissens-Star"},
-      {"name": "Maurerin Hanna", "description": "Bauklotz-Wettbewerb-Profi"},
-      {"name": "Tiefbau-Ingenieur Nora", "description": "Statik-Bewerterin"}
+      {
+        "emoji": "👷",
+        "name": "Polier Tom",
+        "function": "Leitet die Baustelle"
+      },
+      {
+        "emoji": "📐",
+        "name": "Architektin Mia",
+        "function": "Bauplan-Station-Chefin"
+      },
+      {
+        "emoji": "👷‍♂️",
+        "name": "Bauleiter Jonas",
+        "function": "Sabotage-Ermittler-Chef"
+      },
+      {
+        "emoji": "⚡",
+        "name": "Elektrikerin Lina",
+        "function": "Werkzeug-Quiz-Wissens-Star"
+      },
+      {
+        "emoji": "🧱",
+        "name": "Maurerin Hanna",
+        "function": "Bauklotz-Wettbewerb-Profi"
+      },
+      {
+        "emoji": "🛠️",
+        "name": "Tiefbau-Ingenieurin Nora",
+        "function": "Statik-Bewerterin"
+      },
+      {
+        "emoji": "🏗️",
+        "name": "Kranführer Felix",
+        "function": "Bedient den großen Spielzeug-Kran"
+      },
+      {
+        "emoji": "🔬",
+        "name": "Material-Diagnostikerin Sophia",
+        "function": "Untersucht Material-Erkennungs-Beutel"
+      },
+      {
+        "emoji": "📋",
+        "name": "Akademie-Koordinator David",
+        "function": "Hält die Baustellen-Tafel sauber"
+      },
+      {
+        "emoji": "🏆",
+        "name": "Pokal-Verleiher Anna",
+        "function": "Übergibt Bauleiter-Pokal + Mini-Pokale"
+      },
+      {
+        "emoji": "📸",
+        "name": "Foto-Chronistin Greta",
+        "function": "Dokumentiert die Architekten-Prüfung"
+      },
+      {
+        "emoji": "🕵️",
+        "name": "Spuren-Analyst Paul",
+        "function": "Hilft bei der Sabotage-Ermittlung"
+      }
     ],
     "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Sicherheits-Beobachter' wählen — bekommt am Ende trotzdem das Diplom."
   },
@@ -50,13 +156,41 @@
       "intro": "Sparvariante: 3 Stunden, 8 Kinder, 4 Prüfungs-Stationen (Bauplan, Bauklotz-Wettbewerb mit Statik, Werkzeug-Quiz, Sabotage-Ermittlung). Echtes Werkzeug (klein!) + Helm + Warnweste. Eltern setzen ab.",
       "timeWindow": "14:00–17:00, 8 Kinder",
       "schedule": [
-        {"time": "14:00", "title": "Empfang + Funktion + Architekten-Briefing", "description": "Funktions-Karten, Theorie-Briefing (5 Min Bau-Berufe + Statik), Prüfungs-Mappen. 20 Min."},
-        {"time": "14:20", "title": "Station 1: Bauplan-Werkstatt", "description": "Eigenen Bauplan zeichnen (Haus, Brücke, Burg) mit Lineal + Bleistift, Architektin Mia bewertet. 35 Min."},
-        {"time": "14:55", "title": "Station 2: Bauklotz-Wettbewerb mit Statik", "description": "Höchster stabiler Turm in 5 Min, Tiefbau-Ingenieur Nora bewertet Stabilität. 35 Min."},
-        {"time": "15:30", "title": "Bauarbeiter-Snack-Pause", "description": "Bauarbeiter-Pizza, Karotten-Schrauben, Apfelschorle. 25 Min."},
-        {"time": "15:55", "title": "Station 3: Werkzeug-Quiz Klasse 2", "description": "25 Quiz-Karten in 4 Kategorien (Werkzeug, Berufe, Materialien, Statik), Elektrikerin Lina. 30 Min."},
-        {"time": "16:25", "title": "Station 4: Sabotage-Ermittlung (Krimi-Quest)", "description": "Auf der Baustelle wurde sabotiert! 4 Verdächtige, 3 Spuren, Lupe + Beweis-Bogen. 25 Min."},
-        {"time": "16:50", "title": "Diplom + Bauleiter-Pokal-Verleihung", "description": "Feierliche Übergabe. Bestes Team Bauleiter-Pokal. 10 Min."}
+        {
+          "time": "14:00",
+          "title": "Empfang + Funktion + Architekten-Briefing",
+          "description": "Funktions-Karten, Theorie-Briefing (5 Min Bau-Berufe + Statik), Prüfungs-Mappen. 20 Min."
+        },
+        {
+          "time": "14:20",
+          "title": "Station 1: Bauplan-Werkstatt",
+          "description": "Eigenen Bauplan zeichnen (Haus, Brücke, Burg) mit Lineal + Bleistift, Architektin Mia bewertet. 35 Min."
+        },
+        {
+          "time": "14:55",
+          "title": "Station 2: Bauklotz-Wettbewerb mit Statik",
+          "description": "Höchster stabiler Turm in 5 Min, Tiefbau-Ingenieur Nora bewertet Stabilität. 35 Min."
+        },
+        {
+          "time": "15:30",
+          "title": "Bauarbeiter-Snack-Pause",
+          "description": "Bauarbeiter-Pizza, Karotten-Schrauben, Apfelschorle. 25 Min."
+        },
+        {
+          "time": "15:55",
+          "title": "Station 3: Werkzeug-Quiz Klasse 2",
+          "description": "25 Quiz-Karten in 4 Kategorien (Werkzeug, Berufe, Materialien, Statik), Elektrikerin Lina. 30 Min."
+        },
+        {
+          "time": "16:25",
+          "title": "Station 4: Sabotage-Ermittlung (Krimi-Quest)",
+          "description": "Auf der Baustelle wurde sabotiert! 4 Verdächtige, 3 Spuren, Lupe + Beweis-Bogen. 25 Min."
+        },
+        {
+          "time": "16:50",
+          "title": "Diplom + Bauleiter-Pokal-Verleihung",
+          "description": "Feierliche Übergabe. Bestes Team Bauleiter-Pokal. 10 Min."
+        }
       ],
       "games": [
         {
@@ -68,10 +202,26 @@
           "material": "8 Pappschilde (A3), Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg/Hochhaus), Statik-Regel-Karte",
           "safetyRule": "Bleistifte mit weicher Spitze. Lineale aus Kunststoff.",
           "steps": [
-            {"n": 1, "name": "Architekten-Theorie", "content": "Architektin Mia: 'Ein Architekt plant zuerst, dann baut er. Wir zeichnen Bauplan: Was wollen wir bauen? Wo sind Türen, Fenster, Mauern?'"},
-            {"n": 2, "name": "Konzept-Phase", "content": "5 Min: Welches Gebäude? Brücke? Haus? Burg? Welche Etagen? Welche Räume?"},
-            {"n": 3, "name": "Bauplan zeichnen", "content": "25 Min: Mit Lineal + Bleistift gezeichneter Bauplan. Mit Beschriftung (Eingang, Schlafzimmer, Dach)."},
-            {"n": 4, "name": "Bauplan-Präsentation + Stilnote", "content": "Jedes Kind erklärt seinen Plan. Architektin gibt Stilnote (Sauberkeit, Vollständigkeit, Statik-Plausibilität)."}
+            {
+              "n": 1,
+              "name": "Architekten-Theorie",
+              "content": "Architektin Mia: 'Ein Architekt plant zuerst, dann baut er. Wir zeichnen Bauplan: Was wollen wir bauen? Wo sind Türen, Fenster, Mauern?'"
+            },
+            {
+              "n": 2,
+              "name": "Konzept-Phase",
+              "content": "5 Min: Welches Gebäude? Brücke? Haus? Burg? Welche Etagen? Welche Räume?"
+            },
+            {
+              "n": 3,
+              "name": "Bauplan zeichnen",
+              "content": "25 Min: Mit Lineal + Bleistift gezeichneter Bauplan. Mit Beschriftung (Eingang, Schlafzimmer, Dach)."
+            },
+            {
+              "n": 4,
+              "name": "Bauplan-Präsentation + Stilnote",
+              "content": "Jedes Kind erklärt seinen Plan. Architektin gibt Stilnote (Sauberkeit, Vollständigkeit, Statik-Plausibilität)."
+            }
           ]
         },
         {
@@ -83,10 +233,26 @@
           "material": "120 Bauklötze (Lego oder ähnlich), Maßband, Stoppuhr, Wertungsbogen für Statik-Note, evtl. kleiner Lüfter für Stabilitäts-Test (Wow)",
           "safetyRule": "Klötze nicht werfen. Bei hohem Turm: Sicherheits-Abstand 1 m.",
           "steps": [
-            {"n": 1, "name": "Statik-Theorie", "content": "Tiefbau-Ingenieur Nora: 'Statik = Wie steht das Bauwerk stabil? Breite Basis. Symmetrie. Dreiecks-Verstärkungen. Wir testen euer Wissen am Bau.'"},
-            {"n": 2, "name": "Bau-Phase 5 Min", "content": "Reihum oder 2er-Teams. 5 Min Stoppuhr. Höchster Turm, der noch steht."},
-            {"n": 3, "name": "Statik-Test", "content": "Maßband: Höhe messen. Statik-Test: Sanftes Wackeln + Lüfter (Wow) — wer hält am längsten?"},
-            {"n": 4, "name": "Punktevergabe", "content": "Höhe (1 Pkt pro 5 cm) + Statik (1-10) = Gesamt-Score. Sieger bekommt Bonus für Bauleiter-Pokal."}
+            {
+              "n": 1,
+              "name": "Statik-Theorie",
+              "content": "Tiefbau-Ingenieur Nora: 'Statik = Wie steht das Bauwerk stabil? Breite Basis. Symmetrie. Dreiecks-Verstärkungen. Wir testen euer Wissen am Bau.'"
+            },
+            {
+              "n": 2,
+              "name": "Bau-Phase 5 Min",
+              "content": "Reihum oder 2er-Teams. 5 Min Stoppuhr. Höchster Turm, der noch steht."
+            },
+            {
+              "n": 3,
+              "name": "Statik-Test",
+              "content": "Maßband: Höhe messen. Statik-Test: Sanftes Wackeln + Lüfter (Wow) — wer hält am längsten?"
+            },
+            {
+              "n": 4,
+              "name": "Punktevergabe",
+              "content": "Höhe (1 Pkt pro 5 cm) + Statik (1-10) = Gesamt-Score. Sieger bekommt Bonus für Bauleiter-Pokal."
+            }
           ]
         },
         {
@@ -98,11 +264,31 @@
           "material": "4 Verdächtigen-Karten (Maurer Frank, Polier Anna, Elektriker Tom, Architekt Klaus), 3 versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
           "safetyRule": "Spuren nicht an gefährlichen Orten verstecken. Lupe Plastik.",
           "steps": [
-            {"n": 1, "name": "Tatbeschreibung", "content": "Bauleiter Jonas: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. 4 Verdächtige, 3 Spuren — wer war es?'"},
-            {"n": 2, "name": "Verdächtige vorstellen", "content": "Karten mit Foto + Motiv + Alibi: Maurer Frank (gekündigt), Polier Anna (Streit mit Bauleiter), Elektriker Tom (Schulden), Architekt Klaus (Konkurrent-Auftrag verloren)."},
-            {"n": 3, "name": "Spuren-Suche", "content": "2er-Teams suchen 3 Spuren in der Wohnung. Werkzeug-Spur (Küche), Foto-Footprint (Bad), Notiz-Fragment (Wohnzimmer)."},
-            {"n": 4, "name": "Beweis-Verbindung", "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Werkzeug-Spur deutet auf Elektriker Tom. Footprint zu Maurer Frank. Notiz-Fragment zu Architekt Klaus."},
-            {"n": 5, "name": "Auflösung", "content": "Team mit korrekter Lösung gewinnt. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."}
+            {
+              "n": 1,
+              "name": "Tatbeschreibung",
+              "content": "Bauleiter Jonas: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. 4 Verdächtige, 3 Spuren — wer war es?'"
+            },
+            {
+              "n": 2,
+              "name": "Verdächtige vorstellen",
+              "content": "Karten mit Foto + Motiv + Alibi: Maurer Frank (gekündigt), Polier Anna (Streit mit Bauleiter), Elektriker Tom (Schulden), Architekt Klaus (Konkurrent-Auftrag verloren)."
+            },
+            {
+              "n": 3,
+              "name": "Spuren-Suche",
+              "content": "2er-Teams suchen 3 Spuren in der Wohnung. Werkzeug-Spur (Küche), Foto-Footprint (Bad), Notiz-Fragment (Wohnzimmer)."
+            },
+            {
+              "n": 4,
+              "name": "Beweis-Verbindung",
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Werkzeug-Spur deutet auf Elektriker Tom. Footprint zu Maurer Frank. Notiz-Fragment zu Architekt Klaus."
+            },
+            {
+              "n": 5,
+              "name": "Auflösung",
+              "content": "Team mit korrekter Lösung gewinnt. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."
+            }
           ]
         }
       ],
@@ -110,18 +296,103 @@
       "decoration": "🚧 'Baustelle Goldgasse'-Banner\n🪧 Absperrband überall\n🚜 8 Plastik-Bagger + LKW + Kran-Spielzeug\n🧱 Bauklötze + Mauer-Pappen\n⚠️ Verkehrshütchen + Stopp-Schilder + LED-Warnlampe\n🛠️ Werkzeug-Wand-Deko + 'Achtung Hochbau'-Schild\n📋 Großer Baustellen-Lageplan\n🏆 Bauleiter-Pokal sichtbar",
       "giveaways": "📜 Bauleiter Klasse 1 mit Funktion\n📐 Eigener Bauplan (gezeichnet)\n🔩 Werkzeug-Gürtel + echtes Werkzeug (klein!)\n🚜 Mini-Plastik-Bagger\n⛑️ Helm darf behalten werden\n🌟 Statik-Star-Pin (für Bauklotz-Sieger)\n🍪 Bagger-Keks-Tüte",
       "shoppingList": [
-        {"emoji": "⛑️", "label": "8 Plastik-Bauhelme + Warnwesten + Schutzbrille", "url": null, "priceEur": 40, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Identifikation."},
-        {"emoji": "🚜", "label": "Bagger/LKW/Kran-Set (8)", "url": null, "priceEur": 32, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Spielzeug + Mitgebsel."},
-        {"emoji": "📜", "label": "Prüfungs-Mappen + Funktions-Karten + Diplome + Bauleiter-Pokal", "url": null, "priceEur": 35, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Architekten-System komplett."},
-        {"emoji": "🕵️", "label": "Sabotage-Ermittlungs-Set (4 Verdächtige + 3 Spuren + Lupen)", "url": null, "priceEur": 18, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Krimi-Quest."},
-        {"emoji": "🃏", "label": "Werkzeug-Quiz-Karten Klasse 2 (25)", "url": null, "priceEur": 15, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Quiz Klasse 2."},
-        {"emoji": "📐", "label": "Bauplan-Material (Pappschilde + Lineale + Bleistifte + Beispiele)", "url": null, "priceEur": 18, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Bauplan-Werkstatt."},
-        {"emoji": "🧱", "label": "Bauklötze (120 Stk Premium)", "url": null, "priceEur": 35, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Bauklotz-Wettbewerb."},
-        {"emoji": "🔩", "label": "Werkzeug-Gürtel + echtes kleines Werkzeug (Plastik-Schraubenzieher, Holz-Schrauben, Maßband)", "url": null, "priceEur": 25, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Echte Werkzeuge."},
-        {"emoji": "🚧", "label": "Deko (Absperrband, Hütchen, Schilder, LED-Warnlampe)", "url": null, "priceEur": 20, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Atmosphäre."},
-        {"emoji": "🎂", "label": "Bauarbeiter-Kuchen + Pizza + Buffet", "url": null, "priceEur": 28, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "9-12 Buffet."}
+        {
+          "emoji": "⛑️",
+          "label": "8 Plastik-Bauhelme + Warnwesten + Schutzbrille",
+          "url": "https://www.amazon.de/s?k=kinder+bauhelm+warnweste+set&tag=machsleicht-21",
+          "priceEur": 40,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Identifikation."
+        },
+        {
+          "emoji": "🚜",
+          "label": "Bagger/LKW/Kran-Set (8)",
+          "url": "https://www.amazon.de/s?k=spielzeug+bagger+kran+set+kinder&tag=machsleicht-21",
+          "priceEur": 32,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Spielzeug + Mitgebsel."
+        },
+        {
+          "emoji": "📜",
+          "label": "Prüfungs-Mappen + Funktions-Karten + Diplome + Bauleiter-Pokal",
+          "url": "https://www.amazon.de/s?k=urkunden+vorlage+kinder+drucken&tag=machsleicht-21",
+          "priceEur": 35,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Architekten-System komplett."
+        },
+        {
+          "emoji": "🕵️",
+          "label": "Sabotage-Ermittlungs-Set (4 Verdächtige + 3 Spuren + Lupen)",
+          "url": null,
+          "priceEur": 18,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Krimi-Quest."
+        },
+        {
+          "emoji": "🃏",
+          "label": "Werkzeug-Quiz-Karten Klasse 2 (25)",
+          "url": "https://www.amazon.de/s?k=memory+karten+kinder+gross&tag=machsleicht-21",
+          "priceEur": 15,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Quiz Klasse 2."
+        },
+        {
+          "emoji": "📐",
+          "label": "Bauplan-Material (Pappschilde + Lineale + Bleistifte + Beispiele)",
+          "url": null,
+          "priceEur": 18,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Bauplan-Werkstatt."
+        },
+        {
+          "emoji": "🧱",
+          "label": "Bauklötze (120 Stk Premium)",
+          "url": "https://www.amazon.de/s?k=bauklötze+gross+schaumstoff+kinder&tag=machsleicht-21",
+          "priceEur": 35,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Bauklotz-Wettbewerb."
+        },
+        {
+          "emoji": "🔩",
+          "label": "Werkzeug-Gürtel + echtes kleines Werkzeug (Plastik-Schraubenzieher, Holz-Schrauben, Maßband)",
+          "url": "https://www.amazon.de/s?k=kinder+werkzeug+gürtel+spielzeug&tag=machsleicht-21",
+          "priceEur": 25,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Echte Werkzeuge."
+        },
+        {
+          "emoji": "🚧",
+          "label": "Deko (Absperrband, Hütchen, Schilder, LED-Warnlampe)",
+          "url": "https://www.amazon.de/s?k=absperrband+rot+weiss+deko+party&tag=machsleicht-21",
+          "priceEur": 20,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Atmosphäre."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Bauarbeiter-Kuchen + Pizza + Buffet",
+          "url": null,
+          "priceEur": 28,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "9-12 Buffet."
+        }
       ],
-      "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)"
+      "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)",
+      "estimatedCostEur": 266,
+      "savingsTip": {
+        "title": "💡 Warum kostet „Minimal\" 266 €?",
+        "body": "Bei 9-12 sind Prüfungs-Mappen-System (~35 €) + echtes Werkzeug-Set (~25 €) + Sabotage-Ermittlungs-Set (~18 €) + 8 Bauarbeiter-Bauplan-Material (~18 €) Pflicht — die akzeptieren keinen Bagger-Plüsch-Kompromiss. Spar-Trick: Prüfungs-Mappen am PC drucken (~−15 €), Sabotage-Verdächtige aus Foto-Bestand (~−10 €). Damit Minimal ~230-240 € statt 266 €."
+      }
     },
     {
       "id": "standard",
@@ -130,14 +401,46 @@
       "intro": "Allrounder für 8-10 Kinder: 5 Prüfungs-Stationen (Bauplan, Bauklotz, Werkzeug-Quiz, Sabotage, Material-Erkennung), Funktions-System, Bauleiter-Pokal-Wettbewerb.",
       "timeWindow": "14:00–17:30, 10 Kinder",
       "schedule": [
-        {"time": "14:00", "title": "Empfang + Funktion + Briefing", "description": "20 Min."},
-        {"time": "14:20", "title": "Station 1: Bauplan-Werkstatt", "description": "35 Min."},
-        {"time": "14:55", "title": "Station 2: Bauklotz-Wettbewerb mit Statik", "description": "35 Min."},
-        {"time": "15:30", "title": "Snack-Pause", "description": "25 Min."},
-        {"time": "15:55", "title": "Station 3: Werkzeug-Quiz Klasse 2", "description": "30 Min."},
-        {"time": "16:25", "title": "Station 4: Sabotage-Ermittlung", "description": "30 Min."},
-        {"time": "16:55", "title": "Station 5: Material-Erkennung", "description": "Stein, Holz, Metall, Beton erfühlen + benennen. 25 Min."},
-        {"time": "17:20", "title": "Diplom + Bauleiter-Pokal", "description": "10 Min."}
+        {
+          "time": "14:00",
+          "title": "Empfang + Funktion + Briefing",
+          "description": "20 Min."
+        },
+        {
+          "time": "14:20",
+          "title": "Station 1: Bauplan-Werkstatt",
+          "description": "35 Min."
+        },
+        {
+          "time": "14:55",
+          "title": "Station 2: Bauklotz-Wettbewerb mit Statik",
+          "description": "35 Min."
+        },
+        {
+          "time": "15:30",
+          "title": "Snack-Pause",
+          "description": "25 Min."
+        },
+        {
+          "time": "15:55",
+          "title": "Station 3: Werkzeug-Quiz Klasse 2",
+          "description": "30 Min."
+        },
+        {
+          "time": "16:25",
+          "title": "Station 4: Sabotage-Ermittlung",
+          "description": "30 Min."
+        },
+        {
+          "time": "16:55",
+          "title": "Station 5: Material-Erkennung",
+          "description": "Stein, Holz, Metall, Beton erfühlen + benennen. 25 Min."
+        },
+        {
+          "time": "17:20",
+          "title": "Diplom + Bauleiter-Pokal",
+          "description": "10 Min."
+        }
       ],
       "games": [
         {
@@ -149,10 +452,26 @@
           "material": "10 verschiedene Bau-Materialien in Stoff-Beuteln (Stein, Holz, Metall, Beton-Stück, Ziegel, Sand, Kies, Glas-Stein, Kunststoff, Gips), Beschriftungs-Bögen",
           "safetyRule": "Materialien glatt geschliffen, keine scharfen Kanten. Glas nur Kunststein-Imitat.",
           "steps": [
-            {"n": 1, "name": "Theorie", "content": "Polier Tom: 'Bauarbeiter erkennen Materialien am Anfassen. Wir testen das.'"},
-            {"n": 2, "name": "Stoff-Beutel-Test", "content": "10 Beutel, jedes Kind erfühlt + benennt. Aufschreiben auf Bogen ohne reinzuschauen."},
-            {"n": 3, "name": "Auflösung", "content": "Beutel öffnen, Materialien zeigen. Punkte: 1 pro korrekte Erkennung."},
-            {"n": 4, "name": "Stempel für Lizenz", "content": "Bei 7/10: Stempel. Sonst: 'Material-Lehrling' (alle bekommen Stempel)."}
+            {
+              "n": 1,
+              "name": "Theorie",
+              "content": "Polier Tom: 'Bauarbeiter erkennen Materialien am Anfassen. Wir testen das.'"
+            },
+            {
+              "n": 2,
+              "name": "Stoff-Beutel-Test",
+              "content": "10 Beutel, jedes Kind erfühlt + benennt. Aufschreiben auf Bogen ohne reinzuschauen."
+            },
+            {
+              "n": 3,
+              "name": "Auflösung",
+              "content": "Beutel öffnen, Materialien zeigen. Punkte: 1 pro korrekte Erkennung."
+            },
+            {
+              "n": 4,
+              "name": "Stempel für Lizenz",
+              "content": "Bei 7/10: Stempel. Sonst: 'Material-Lehrling' (alle bekommen Stempel)."
+            }
           ]
         }
       ],
@@ -160,18 +479,103 @@
       "decoration": "🚧 Großes 'Baustelle Goldgasse'-Banner\n🪧 Absperrband-Wand komplett\n🚜 10 Plastik-Bagger + LKW + Kran + Kipper\n🧱 Bauklötze + Mauer-Pappen\n⚠️ Verkehrshütchen + Stopp-Schilder + LED-Warnlampe-Reihe\n🛠️ Werkzeug-Wand-Deko + Foto-Wand\n📋 Großer Baustellen-Lageplan\n🏆 Bauleiter-Pokal-Wand + 3 Mini-Pokale",
       "giveaways": "📜 Großes Bauleiter-Diplom Klasse 1\n📐 Eigener Bauplan\n🔩 Werkzeug-Gürtel + echtes Werkzeug-Set\n🚜 Mini-Plastik-Bagger / LKW\n⛑️ Helm darf behalten werden\n🌟 Statik-Star-Pin Bronze/Silber/Gold\n🍪 Bagger-Keks-Tüte XL",
       "shoppingList": [
-        {"emoji": "⛑️", "label": "10 Helme + Warnwesten + Schutzbrillen", "url": null, "priceEur": 55, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Identifikation Standard."},
-        {"emoji": "🚜", "label": "Bagger/LKW/Kran-Set Premium (10)", "url": null, "priceEur": 45, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Spielzeug + Mitgebsel."},
-        {"emoji": "📜", "label": "Architekten-System Komplett", "url": null, "priceEur": 45, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Standard-System."},
-        {"emoji": "🕵️", "label": "Sabotage-Set XL (5 Verdächtige + 4 Spuren)", "url": null, "priceEur": 25, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Krimi XL."},
-        {"emoji": "🃏", "label": "Werkzeug-Quiz Klasse 2 XL (30 Karten)", "url": null, "priceEur": 18, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Quiz Standard."},
-        {"emoji": "📐", "label": "Bauplan-Material + Statik-Regel-Karten + Beispiele", "url": null, "priceEur": 22, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Werkstatt Standard."},
-        {"emoji": "🧱", "label": "Bauklötze (150 Premium) + Materialien für Material-Erkennung", "url": null, "priceEur": 50, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Wettbewerb + Material-Station."},
-        {"emoji": "🔩", "label": "Werkzeug-Gürtel + echtes Werkzeug-Premium-Set (10)", "url": null, "priceEur": 35, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Werkzeug-Komplett."},
-        {"emoji": "🚧", "label": "Deko Standard + LED-Warnlampen + Foto-Wand", "url": null, "priceEur": 28, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Atmosphäre."},
-        {"emoji": "🎂", "label": "Baustellen-Kuchen + Pizza-XL + Buffet", "url": null, "priceEur": 40, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "9-12 Buffet Standard."}
+        {
+          "emoji": "⛑️",
+          "label": "10 Helme + Warnwesten + Schutzbrillen",
+          "url": "https://www.amazon.de/s?k=kinder+bauhelm+warnweste+set&tag=machsleicht-21",
+          "priceEur": 55,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Identifikation Standard."
+        },
+        {
+          "emoji": "🚜",
+          "label": "Bagger/LKW/Kran-Set Premium (10)",
+          "url": "https://www.amazon.de/s?k=spielzeug+bagger+kran+set+kinder&tag=machsleicht-21",
+          "priceEur": 45,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Spielzeug + Mitgebsel."
+        },
+        {
+          "emoji": "📜",
+          "label": "Architekten-System Komplett",
+          "url": null,
+          "priceEur": 45,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Standard-System."
+        },
+        {
+          "emoji": "🕵️",
+          "label": "Sabotage-Set XL (5 Verdächtige + 4 Spuren)",
+          "url": null,
+          "priceEur": 25,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Krimi XL."
+        },
+        {
+          "emoji": "🃏",
+          "label": "Werkzeug-Quiz Klasse 2 XL (30 Karten)",
+          "url": null,
+          "priceEur": 18,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Quiz Standard."
+        },
+        {
+          "emoji": "📐",
+          "label": "Bauplan-Material + Statik-Regel-Karten + Beispiele",
+          "url": null,
+          "priceEur": 22,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Werkstatt Standard."
+        },
+        {
+          "emoji": "🧱",
+          "label": "Bauklötze (150 Premium) + Materialien für Material-Erkennung",
+          "url": "https://www.amazon.de/s?k=bauklötze+gross+schaumstoff+kinder&tag=machsleicht-21",
+          "priceEur": 50,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Wettbewerb + Material-Station."
+        },
+        {
+          "emoji": "🔩",
+          "label": "Werkzeug-Gürtel + echtes Werkzeug-Premium-Set (10)",
+          "url": "https://www.amazon.de/s?k=kinder+werkzeug+gürtel+spielzeug&tag=machsleicht-21",
+          "priceEur": 35,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Werkzeug-Komplett."
+        },
+        {
+          "emoji": "🚧",
+          "label": "Deko Standard + LED-Warnlampen + Foto-Wand",
+          "url": "https://www.amazon.de/s?k=led+warnlampe+blinklicht+kinder&tag=machsleicht-21",
+          "priceEur": 28,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Atmosphäre."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Baustellen-Kuchen + Pizza-XL + Buffet",
+          "url": null,
+          "priceEur": 40,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "9-12 Buffet Standard."
+        }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 10 Kinder)"
+      "costContext": "Geschätzte Kosten (Standard, 10 Kinder)",
+      "estimatedCostEur": 363,
+      "savingsTip": {
+        "title": "💡 Spar-Trick — Material-Erkennung aus Haushalt",
+        "body": "Material-Erkennung-Beutel (~12 €) lassen sich kostenlos aus Haushalt-Material zusammenstellen (Stein aus Garten, Holz aus Baumarkt-Restposten, Beton-Stück gratis). Werkzeug-Premium-Set (~35 €) auf Standard-Set reduzieren (~22 €). Damit Standard ~310-325 € statt 363 €."
+      }
     },
     {
       "id": "wow",
@@ -180,15 +584,51 @@
       "intro": "Großes Programm für 10 Kinder: 6 Prüfungs-Stationen + finale Bau-Olympiade mit Schubkarren-Lauf, Bauklotz-Stapel-Finale + Brücken-Bau-Wettbewerb, optional Baustellen-Besuch (richtige Baustelle mit Schutzbekleidung). Bauleiter-Diplom Klasse 2 + Bauleiter-Pokal.",
       "timeWindow": "14:00–18:00, 10 Kinder",
       "schedule": [
-        {"time": "14:00", "title": "Empfang + Funktion + Großes Briefing", "description": "25 Min."},
-        {"time": "14:25", "title": "Station 1: Bauplan-Werkstatt XL", "description": "35 Min."},
-        {"time": "15:00", "title": "Station 2: Bauklotz-Wettbewerb XL mit Statik-Test", "description": "35 Min."},
-        {"time": "15:35", "title": "Snack-Pause + Baustellen-Video", "description": "30 Min."},
-        {"time": "16:05", "title": "Station 3: Werkzeug-Quiz Klasse 2 XL", "description": "30 Min."},
-        {"time": "16:35", "title": "Station 4: Sabotage-Ermittlung XL (6 Verdächtige)", "description": "35 Min."},
-        {"time": "17:10", "title": "Station 5: Material-Erkennung + Brücken-Bau", "description": "25 Min."},
-        {"time": "17:35", "title": "Bau-Olympiade: Schubkarren + Klotz-Stapel + Brücken-Last", "description": "20 Min."},
-        {"time": "17:55", "title": "Diplom + Bauleiter-Pokal + Foto", "description": "5 Min."}
+        {
+          "time": "14:00",
+          "title": "Empfang + Funktion + Großes Briefing",
+          "description": "25 Min."
+        },
+        {
+          "time": "14:25",
+          "title": "Station 1: Bauplan-Werkstatt XL",
+          "description": "35 Min."
+        },
+        {
+          "time": "15:00",
+          "title": "Station 2: Bauklotz-Wettbewerb XL mit Statik-Test",
+          "description": "35 Min."
+        },
+        {
+          "time": "15:35",
+          "title": "Snack-Pause + Baustellen-Video",
+          "description": "30 Min."
+        },
+        {
+          "time": "16:05",
+          "title": "Station 3: Werkzeug-Quiz Klasse 2 XL",
+          "description": "30 Min."
+        },
+        {
+          "time": "16:35",
+          "title": "Station 4: Sabotage-Ermittlung XL (6 Verdächtige)",
+          "description": "35 Min."
+        },
+        {
+          "time": "17:10",
+          "title": "Station 5: Material-Erkennung + Brücken-Bau",
+          "description": "25 Min."
+        },
+        {
+          "time": "17:35",
+          "title": "Bau-Olympiade: Schubkarren + Klotz-Stapel + Brücken-Last",
+          "description": "20 Min."
+        },
+        {
+          "time": "17:55",
+          "title": "Diplom + Bauleiter-Pokal + Foto",
+          "description": "5 Min."
+        }
       ],
       "games": [
         {
@@ -200,10 +640,26 @@
           "material": "150 Bauklötze (oder Holzleisten + Klebepunkte), 2 Stützen (Bücher-Stapel) im Abstand 30 cm, Gewichts-Set (kleine Sandsäckchen 50g/100g/200g), Stoppuhr",
           "safetyRule": "Klötze nicht werfen, Bücher sicher stapeln. Gewichte vorsichtig aufsetzen.",
           "steps": [
-            {"n": 1, "name": "Brücken-Theorie", "content": "Tiefbau-Ingenieur Nora: 'Brücken trägt das Gewicht. Bogenform = stark. Dreiecke = stabil. Wer baut die stärkste?'"},
-            {"n": 2, "name": "Bau-Phase", "content": "2er-Teams. 12 Min Stoppuhr. Brücke zwischen den 2 Stützen bauen."},
-            {"n": 3, "name": "Last-Test", "content": "Nacheinander Gewichte auf Brücke setzen. 50g → 100g → 200g → 300g. Bei Bruch: das vorherige Gewicht ist Best-Wert."},
-            {"n": 4, "name": "Olympiade-Sieger", "content": "Bestes Team bekommt Brücken-Pokal-Bonus + Statik-Star-Pin Gold."}
+            {
+              "n": 1,
+              "name": "Brücken-Theorie",
+              "content": "Tiefbau-Ingenieur Nora: 'Brücken trägt das Gewicht. Bogenform = stark. Dreiecke = stabil. Wer baut die stärkste?'"
+            },
+            {
+              "n": 2,
+              "name": "Bau-Phase",
+              "content": "2er-Teams. 12 Min Stoppuhr. Brücke zwischen den 2 Stützen bauen."
+            },
+            {
+              "n": 3,
+              "name": "Last-Test",
+              "content": "Nacheinander Gewichte auf Brücke setzen. 50g → 100g → 200g → 300g. Bei Bruch: das vorherige Gewicht ist Best-Wert."
+            },
+            {
+              "n": 4,
+              "name": "Olympiade-Sieger",
+              "content": "Bestes Team bekommt Brücken-Pokal-Bonus + Statik-Star-Pin Gold."
+            }
           ]
         },
         {
@@ -215,10 +671,26 @@
           "material": "3 Mini-Schubkarren, 40 Bauklötze, 3 Markierungen (Start, Stapel-Punkt, Ziel), Stoppuhr, Pokale Top 3",
           "safetyRule": "Schubkarren-Strecke max 10 m. Klötze nicht werfen.",
           "steps": [
-            {"n": 1, "name": "Olympiade-Eröffnung", "content": "'Olympiade-Finale! Schubkarre + Stapel + Last-Test = Gesamt-Score.'"},
-            {"n": 2, "name": "Schubkarren-Lauf", "content": "2er-Teams: Schubkarre mit 10 Klötzen zur Stapel-Stelle. Stoppuhr."},
-            {"n": 3, "name": "Klotz-Stapel + Statik", "content": "Stapel bauen so hoch wie möglich. Statik-Wert + Zeit-Wert = Punkte."},
-            {"n": 4, "name": "Olympiade-Sieger + Bauleiter-Pokal", "content": "Top 3 Pokale + Bauleiter-Pokal für bestes Gesamt-Team."}
+            {
+              "n": 1,
+              "name": "Olympiade-Eröffnung",
+              "content": "'Olympiade-Finale! Schubkarre + Stapel + Last-Test = Gesamt-Score.'"
+            },
+            {
+              "n": 2,
+              "name": "Schubkarren-Lauf",
+              "content": "2er-Teams: Schubkarre mit 10 Klötzen zur Stapel-Stelle. Stoppuhr."
+            },
+            {
+              "n": 3,
+              "name": "Klotz-Stapel + Statik",
+              "content": "Stapel bauen so hoch wie möglich. Statik-Wert + Zeit-Wert = Punkte."
+            },
+            {
+              "n": 4,
+              "name": "Olympiade-Sieger + Bauleiter-Pokal",
+              "content": "Top 3 Pokale + Bauleiter-Pokal für bestes Gesamt-Team."
+            }
           ]
         }
       ],
@@ -226,49 +698,223 @@
       "decoration": "🚧 Riesiges 'Baustelle Goldgasse'-Banner\n🪧 Absperrband-Wand komplett\n🚜 10 Bagger + LKW + Kran + Kipper + Walze-Spielzeug XXL\n🧱 Bauklötze + Mauer-Pappen + Mauer-im-Bau-Wand\n⚠️ Verkehrshütchen + Stopp + LED-Warnlampe XL + Stroboskop (Wow)\n🛠️ Werkzeug-Wand komplett + 'Achtung Hochbau'-Schild XL\n📋 Großer Baustellen-Lageplan + Foto-Bereich\n🏆 Bauleiter-Pokal-Wand + 3 Mini-Pokale + Brücken-Pokal",
       "giveaways": "📜 Bauleiter-Diplom Klasse 2 mit Foto + Funktion\n📐 Eigener Bauplan + Bauleiter-Skizzen-Heft\n🔩 Werkzeug-Gürtel Premium + echtes Werkzeug-Set\n🚜 Großer Plastik-Bagger oder LKW + Kran\n⛑️ Helm + Warnweste behalten\n🌟 Statik-Star-Pin Bronze/Silber/Gold + Olympiade-Pin\n🌉 Brücken-Bau-Pokal (für bestes Team)\n🍪 Bagger-Keks-Tüte XL + Schoko-Schrauben + Marzipan-Bagger\n📓 Bauleiter-Profi-Heft (Statik, Materialien, Bau-Berufe, Sicherheit)",
       "shoppingList": [
-        {"emoji": "⛑️", "label": "10 Premium-Helme + Warnwesten + Schutzbrillen", "url": null, "priceEur": 70, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Identifikation Wow."},
-        {"emoji": "🚜", "label": "Bagger/LKW/Kran/Kipper-Set XL (10)", "url": null, "priceEur": 65, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Spielzeug Wow + Mitgebsel."},
-        {"emoji": "📜", "label": "Architekten-System Wow (Diplom Kl 2 + Pokale + Pins + Bauleiter-Pokal + Brücken-Pokal)", "url": null, "priceEur": 65, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Wow-System."},
-        {"emoji": "🕵️", "label": "Sabotage XXL (6 Verdächtige + 5 Spuren + Verhör-Karten)", "url": null, "priceEur": 35, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Krimi XXL."},
-        {"emoji": "🃏", "label": "Werkzeug-Quiz Klasse 2 XXL (35 Karten + Bonus)", "url": null, "priceEur": 22, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Quiz Wow."},
-        {"emoji": "📐", "label": "Bauplan-Material Wow + Skizzen-Heft + Profi-Beispiele", "url": null, "priceEur": 28, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Werkstatt XL."},
-        {"emoji": "🧱", "label": "Bauklötze (200 Premium) + Brücken-Bau-Set + Material-Erkennung-Beutel", "url": null, "priceEur": 65, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Wettbewerb XL + Brücke + Material."},
-        {"emoji": "🔩", "label": "Werkzeug-Gürtel Premium + echtes Werkzeug Wow-Set + Maßband + Wasserwaage", "url": null, "priceEur": 50, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Werkzeug Wow-Komplett."},
-        {"emoji": "🛒", "label": "3 Mini-Schubkarren", "url": null, "priceEur": 45, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Olympiade-Schubkarren-Lauf."},
-        {"emoji": "🌉", "label": "Brücken-Last-Test-Set (Sandsäckchen 50/100/200g)", "url": null, "priceEur": 15, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Brücken-Bau-Wettbewerb."},
-        {"emoji": "🚧", "label": "Deko-Wow + LED-Warnlampen + Stroboskop + Foto-Bereich", "url": null, "priceEur": 40, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Atmosphäre Wow."},
-        {"emoji": "🎂", "label": "Baustellen-Kuchen XXL + Pizza-Lieferung + Wow-Buffet", "url": null, "priceEur": 55, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Wow-Buffet."},
-        {"emoji": "🏗️", "label": "Optional: Mini-Baustellen-Besuch mit Schutzbekleidung (1h, geführt)", "url": null, "priceEur": 80, "hasAffiliate": false, "category": "wow", "categoryReasoning": "Wow-Highlight."}
+        {
+          "emoji": "⛑️",
+          "label": "10 Premium-Helme + Warnwesten + Schutzbrillen",
+          "url": "https://www.amazon.de/s?k=kinder+bauhelm+warnweste+set&tag=machsleicht-21",
+          "priceEur": 70,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Identifikation Wow."
+        },
+        {
+          "emoji": "🚜",
+          "label": "Bagger/LKW/Kran/Kipper-Set XL (10)",
+          "url": "https://www.amazon.de/s?k=spielzeug+bagger+kran+set+kinder&tag=machsleicht-21",
+          "priceEur": 65,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Spielzeug Wow + Mitgebsel."
+        },
+        {
+          "emoji": "📜",
+          "label": "Architekten-System Wow (Diplom Kl 2 + Pokale + Pins + Bauleiter-Pokal + Brücken-Pokal)",
+          "url": null,
+          "priceEur": 65,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Wow-System."
+        },
+        {
+          "emoji": "🕵️",
+          "label": "Sabotage XXL (6 Verdächtige + 5 Spuren + Verhör-Karten)",
+          "url": null,
+          "priceEur": 35,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Krimi XXL."
+        },
+        {
+          "emoji": "🃏",
+          "label": "Werkzeug-Quiz Klasse 2 XXL (35 Karten + Bonus)",
+          "url": null,
+          "priceEur": 22,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Quiz Wow."
+        },
+        {
+          "emoji": "📐",
+          "label": "Bauplan-Material Wow + Skizzen-Heft + Profi-Beispiele",
+          "url": null,
+          "priceEur": 28,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Werkstatt XL."
+        },
+        {
+          "emoji": "🧱",
+          "label": "Bauklötze (200 Premium) + Brücken-Bau-Set + Material-Erkennung-Beutel",
+          "url": "https://www.amazon.de/s?k=bauklötze+gross+schaumstoff+kinder&tag=machsleicht-21",
+          "priceEur": 65,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Wettbewerb XL + Brücke + Material."
+        },
+        {
+          "emoji": "🔩",
+          "label": "Werkzeug-Gürtel Premium + echtes Werkzeug Wow-Set + Maßband + Wasserwaage",
+          "url": "https://www.amazon.de/s?k=kinder+werkzeug+gürtel+spielzeug&tag=machsleicht-21",
+          "priceEur": 50,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Werkzeug Wow-Komplett."
+        },
+        {
+          "emoji": "🛒",
+          "label": "3 Mini-Schubkarren",
+          "url": "https://www.amazon.de/s?k=mini+schubkarre+kinder+plastik&tag=machsleicht-21",
+          "priceEur": 45,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Olympiade-Schubkarren-Lauf."
+        },
+        {
+          "emoji": "🌉",
+          "label": "Brücken-Last-Test-Set (Sandsäckchen 50/100/200g)",
+          "url": "https://www.amazon.de/s?k=spielsand+25+kg+DIN+geprüft&tag=machsleicht-21",
+          "priceEur": 15,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Brücken-Bau-Wettbewerb."
+        },
+        {
+          "emoji": "🚧",
+          "label": "Deko-Wow + LED-Warnlampen + Stroboskop + Foto-Bereich",
+          "url": "https://www.amazon.de/s?k=led+warnlampe+blinklicht+kinder&tag=machsleicht-21",
+          "priceEur": 40,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Atmosphäre Wow."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Baustellen-Kuchen XXL + Pizza-Lieferung + Wow-Buffet",
+          "url": null,
+          "priceEur": 55,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Wow-Buffet."
+        },
+        {
+          "emoji": "🏗️",
+          "label": "Optional: Mini-Baustellen-Besuch mit Schutzbekleidung (1h, geführt)",
+          "url": null,
+          "priceEur": 80,
+          "hasAffiliate": false,
+          "category": "wow",
+          "categoryReasoning": "Wow-Highlight."
+        }
       ],
-      "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne optionalen Baustellen-Besuch)"
+      "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne optionalen Baustellen-Besuch)",
+      "estimatedCostEur": 555,
+      "savingsTip": {
+        "title": "💡 Spar-Trick — wenn 555 € zu viel ist",
+        "body": "Bei 555 € sind die größten Posten: 3 Schubkarren-Premium (~45 €), Wow-Deko mit LED-Warnlampen + Stroboskop (~40 €), Wow-Buffet inkl. Pizza-Lieferung (~55 €), Bauarbeiter-Kuchen XXL (~25 €), Optionaler Baustellen-Besuch (~80 € extern). Spar-Tricks: Stroboskop weglassen (~−25 €), Pizza selbst belegen statt Lieferung (~−25 €), Baustellen-Besuch durch Baustellen-Video ersetzen (~−80 €). Damit Wow ~370-400 € statt 555 €."
+      }
     }
   ],
   "cakeRecipe": {
     "name": "Baustellen-Kuchen XXL mit Bagger + Kran + Maurer",
     "intro": "Baustellen-thematisch für 9-12: Großer Schoko-Rührkuchen, mit Krümel-'Sand' (Schoko-Kekse) bestreut, 2-3 Plastik-Bagger + Spielzeug-Kran + Marzipan-Maurer-Figur als Deko drauf. Aufwendiger als bei Jüngeren — passt zum Anspruch.",
     "steps": [
-      {"n": 1, "content": "Schoko-Rührteig: 350 g Mehl, 300 g Zucker, 250 g Butter, 5 Eier, 60 g Kakao, 1 Pck. Backpulver, 200 ml Milch."},
-      {"n": 2, "content": "In großer rechteckiger Form (Baustellen-Form) bei 175°C ca. 55 Min backen."},
-      {"n": 3, "content": "Komplett auskühlen."},
-      {"n": 4, "content": "Schoko-Ganache aufstreichen."},
-      {"n": 5, "content": "Krümel-'Sand' aus zerbröselten Schoko-Keksen XXL aufstreuen."},
-      {"n": 6, "content": "Plastik-Bagger + Kran + Kipper als Deko vorsichtig auf Kuchen setzen (vor Servieren entfernen!)."},
-      {"n": 7, "content": "Marzipan-Maurer (kleine Figur mit Helm + Schubkarre) selber formen oder vorgefertigt kaufen."},
-      {"n": 8, "content": "Optional: Marzipan-Werkzeug (Hammer/Säge/Schraubenschlüssel) als Streusel."}
+      {
+        "n": 1,
+        "content": "Schoko-Rührteig: 350 g Mehl, 300 g Zucker, 250 g Butter, 5 Eier, 60 g Kakao, 1 Pck. Backpulver, 200 ml Milch."
+      },
+      {
+        "n": 2,
+        "content": "In großer rechteckiger Form (Baustellen-Form) bei 175°C ca. 55 Min backen."
+      },
+      {
+        "n": 3,
+        "content": "Komplett auskühlen."
+      },
+      {
+        "n": 4,
+        "content": "Schoko-Ganache aufstreichen."
+      },
+      {
+        "n": 5,
+        "content": "Krümel-'Sand' aus zerbröselten Schoko-Keksen XXL aufstreuen."
+      },
+      {
+        "n": 6,
+        "content": "Plastik-Bagger + Kran + Kipper als Deko vorsichtig auf Kuchen setzen (vor Servieren entfernen!)."
+      },
+      {
+        "n": 7,
+        "content": "Marzipan-Maurer (kleine Figur mit Helm + Schubkarre) selber formen oder vorgefertigt kaufen."
+      },
+      {
+        "n": 8,
+        "content": "Optional: Marzipan-Werkzeug (Hammer/Säge/Schraubenschlüssel) als Streusel."
+      }
     ],
-    "meta": {"aufwand": "100 Min inkl. Backen + Verzieren", "kosten": "ca. 15-18 €", "allergiker": "Bei Ei-Allergie: vegan ersetzen. Marzipan = Mandeln (Nuss-Allergie!). Bei Lactose: pflanzliche Milch."}
+    "meta": {
+      "aufwand": "100 Min inkl. Backen + Verzieren",
+      "kosten": "ca. 15-18 €",
+      "allergiker": "Bei Ei-Allergie: vegan ersetzen. Marzipan = Mandeln (Nuss-Allergie!). Bei Lactose: pflanzliche Milch."
+    },
+    "tips": [
+      {
+        "title": "🎂 Keine Lust zu backen?",
+        "body": "Bäcker-Bestellung: großen rechteckigen Schoko-Kuchen (12-15 €) holen, Krümel-Sand drauf, 3 Plastik-Bagger + Spielzeug-Kran + Maurer-Marzipan-Figur als Deko. Spart 90 Min und 9-12-Jährige merken den Unterschied nicht."
+      },
+      {
+        "title": "🏗️ Marzipan-Maurer — wann es sich lohnt",
+        "body": "Marzipan-Bauarbeiter-Figur ist Wow-Wert, aber 30 Min Aufwand. Lohnt nur, wenn das Geburtstagskind WIRKLICH auf Bauarbeiter steht. Alternative: Schoko-Drops als \"Bauschutt\" + Marzipan-Werkzeug als Streusel — 5 Min, fast gleicher Wow-Effekt."
+      }
+    ]
   },
   "parentTips": {
     "structured": [
-      {"topic": "🥜 Marzipan = Mandeln", "detail": "Baustellen-Kuchen XXL enthält Marzipan. Bei Nuss-/Mandel-Allergie unbedingt vorher fragen oder durch weißen Zuckerguss ersetzen."},
-      {"topic": "🔩 Kleine Holz-Schrauben ab 9 möglich", "detail": "Mit Plastik-Schraubenzieher unter Aufsicht. Niemals scharfe Metall-Schrauben mit Spitzen, die kratzen können."},
-      {"topic": "🏖️ Spielsand geprüft", "detail": "Nur zertifizierten Spielsand (DIN-Norm). Niemals Bau-Sand vom Baumarkt — kann Schadstoffe enthalten."},
-      {"topic": "🛒 Schubkarren leicht, Strecke kurz", "detail": "Plastik-Schubkarren, Strecke max 10 m. Bei Olympiade: Stoppuhr zur Info, kein Druck."},
-      {"topic": "🧱 Bauklotz-Statik-Test ohne Verletzung", "detail": "Wenn Lüfter für Stabilität-Test: weiche Klötze, niemand fängt fallende Klötze mit Gesicht."},
-      {"topic": "🕵️ Sabotage-Ermittlung kindgerecht", "detail": "Krimi-Quest mit 'Schrauben gelockert' statt Mord. Auch 9-12 brauchen kindgerechten Rahmen."},
-      {"topic": "👥 Eltern absetzen reicht in Wow-Variante", "detail": "9-12 wollen Party ohne Eltern. Telefonisch erreichbar reichen. 1-2 Erwachsene als 'Polier-Aufsicht'."},
-      {"topic": "📋 Plan B bei Regen", "detail": "Alle Stationen funktionieren drinnen. Brücken-Bau-Test im Wohnzimmer."},
-      {"topic": "📱 Partyseite statt WhatsApp-Chaos", "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite."}
+      {
+        "topic": "🥜 Marzipan = Mandeln",
+        "detail": "Baustellen-Kuchen XXL enthält Marzipan. Bei Nuss-/Mandel-Allergie unbedingt vorher fragen oder durch weißen Zuckerguss ersetzen."
+      },
+      {
+        "topic": "🔩 Kleine Holz-Schrauben ab 9 möglich",
+        "detail": "Mit Plastik-Schraubenzieher unter Aufsicht. Niemals scharfe Metall-Schrauben mit Spitzen, die kratzen können."
+      },
+      {
+        "topic": "🏖️ Spielsand geprüft",
+        "detail": "Nur zertifizierten Spielsand (DIN-Norm). Niemals Bau-Sand vom Baumarkt — kann Schadstoffe enthalten."
+      },
+      {
+        "topic": "🛒 Schubkarren leicht, Strecke kurz",
+        "detail": "Plastik-Schubkarren, Strecke max 10 m. Bei Olympiade: Stoppuhr zur Info, kein Druck."
+      },
+      {
+        "topic": "🧱 Bauklotz-Statik-Test ohne Verletzung",
+        "detail": "Wenn Lüfter für Stabilität-Test: weiche Klötze, niemand fängt fallende Klötze mit Gesicht."
+      },
+      {
+        "topic": "🕵️ Sabotage-Ermittlung kindgerecht",
+        "detail": "Krimi-Quest mit 'Schrauben gelockert' statt Mord. Auch 9-12 brauchen kindgerechten Rahmen."
+      },
+      {
+        "topic": "👥 Eltern absetzen reicht in Wow-Variante",
+        "detail": "9-12 wollen Party ohne Eltern. Telefonisch erreichbar reichen. 1-2 Erwachsene als 'Polier-Aufsicht'."
+      },
+      {
+        "topic": "📋 Plan B bei Regen",
+        "detail": "Alle Stationen funktionieren drinnen. Brücken-Bau-Test im Wohnzimmer."
+      },
+      {
+        "topic": "📱 Partyseite statt WhatsApp-Chaos",
+        "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite."
+      }
     ],
     "educationalValue": "Bei der Architekten-Prüfung in 9-12 lernen die Kinder ECHTES Bau-Wissen: Statik (breite Basis = stabil, Dreiecke verstärken, Bogenform trägt), Bau-Berufe (Maurer/Elektriker/Tiefbau/Architekt/Polier), Materialien (Stein/Holz/Beton/Metall — Eigenschaften erfühlen), Werkzeug-Funktion (Wasserwaage misst gerade, Maßband misst Länge, Lot zeigt senkrecht). Plus: Detektiv-Logik (Sabotage-Ermittlung mit Verdächtigen, Motiven, Beweisen), Konstruktions-Planung (Bauplan vor Bau), Wettkampf-Fairness (Statik-Wertung, Brücken-Last-Test, Team-Pokal). Das Bauleiter-Diplom ist nicht Spielzeug — die Kinder gehen mit echtem Konstruktions-Wissen heim."
   },
@@ -300,48 +946,182 @@
     }
   ],
   "preparationWeeks": {
-    "minus4Weeks": {"headline": "4 Wochen vorher", "items": [
-      {"icon": "📅", "title": "Datum + Uhrzeit", "detail": "Sa/So 14-18 Uhr für Wow, sonst 14-17."},
-      {"icon": "🔢", "title": "Gästezahl", "detail": "8-10 Kinder optimal."},
-      {"icon": "💌", "title": "Einladungen mit Architekten-Briefing-Vorinfo", "detail": "Allergie-Abfrage + Vorbereitungs-Tipp ('Statik anschauen')."},
-      {"icon": "🏠", "title": "Ort + ggf. Baustellen-Besuch klären (Wow)", "detail": "Baustellen-Besuch mit Schutzkleidung — 4 Wochen vorher Termin."}
-    ]},
-    "minus2Weeks": {"headline": "2 Wochen vorher", "items": [
-      {"icon": "📞", "title": "RSVP + Funktions-Verteilungs-Plan", "detail": "Funktionen vorbereiten."},
-      {"icon": "🥜", "title": "Allergien", "detail": "Marzipan-Warnung!"},
-      {"icon": "🛒", "title": "Material bestellen", "detail": "Akademie-System, Sabotage-Set, Bauklötze XL, Brücken-Bau-Set, Werkzeug-Premium."}
-    ]},
-    "minus1Week": {"headline": "1 Woche vorher", "items": [
-      {"icon": "📜", "title": "Prüfungs-Mappen + Funktions-Karten + Diplome drucken", "detail": "Mit Namen + 5-6 Stations-Feldern."},
-      {"icon": "🕵️", "title": "Sabotage-Quest scripten", "detail": "Verdächtige + Motive + Alibis + Spuren-Verteilung planen, 2× durchspielen."},
-      {"icon": "🃏", "title": "Werkzeug-Quiz Klasse 2 erstellen", "detail": "30-35 Karten."},
-      {"icon": "📐", "title": "Beispiel-Baupläne zeichnen", "detail": "3 Verschwierigkeitsgrade (Haus/Brücke/Hochhaus)."},
-      {"icon": "🏆", "title": "Bauleiter-Pokal-Übergabe choreographieren", "detail": "Wer übergibt? Wie wird zurückgeholt?"}
-    ]},
-    "minus2Days": {"headline": "2 Tage vorher", "items": [
-      {"icon": "🎂", "title": "Baustellen-Kuchen XXL backen", "detail": "Auskühlen, Verzieren am nächsten Tag."},
-      {"icon": "🧱", "title": "Bauklotz-Wettbewerb-Layout testen", "detail": "Bauklötze sortieren + Wettbewerb-Stelle planen."},
-      {"icon": "🎒", "title": "5-6 Stationen vorbereiten", "detail": "Material pro Station bündeln."}
-    ]},
-    "minus1Day": {"headline": "1 Tag vorher", "items": [
-      {"icon": "🎂", "title": "Baustellen-Kuchen verzieren", "detail": "Krümel-Sand + Bagger + Marzipan-Maurer drauf."},
-      {"icon": "🏗️", "title": "Sabotage-Spuren verstecken", "detail": "In verschiedenen Räumen, gut aber findbar."},
-      {"icon": "🛡️", "title": "Baustellen-Tafel aufhängen", "detail": "Namen + Wertungs-Spalten."}
-    ]},
-    "dayOf": {"headline": "Am Party-Tag", "items": [
-      {"icon": "🚧", "title": "Stationen aufbauen", "detail": "5-6 Stationen klar getrennt, Lageplan zentral."},
-      {"icon": "🍽️", "title": "Pizza vorbestellt", "detail": "Lieferung 15:25 für 15:30 Pause."},
-      {"icon": "😮‍💨", "title": "Briefing-Spickzettel + Sabotage-Auflösung parat", "detail": "Theorie-Punkte + Auflösungs-Brief."}
-    ]}
+    "minus4Weeks": {
+      "headline": "4 Wochen vorher",
+      "items": [
+        {
+          "icon": "📅",
+          "title": "Datum + Uhrzeit",
+          "detail": "Sa/So 14-18 Uhr für Wow, sonst 14-17."
+        },
+        {
+          "icon": "🔢",
+          "title": "Gästezahl",
+          "detail": "8-10 Kinder optimal."
+        },
+        {
+          "icon": "💌",
+          "title": "Einladungen mit Architekten-Briefing-Vorinfo",
+          "detail": "Allergie-Abfrage + Vorbereitungs-Tipp ('Statik anschauen')."
+        },
+        {
+          "icon": "🏠",
+          "title": "Ort + ggf. Baustellen-Besuch klären (Wow)",
+          "detail": "Baustellen-Besuch mit Schutzkleidung — 4 Wochen vorher Termin."
+        }
+      ]
+    },
+    "minus2Weeks": {
+      "headline": "2 Wochen vorher",
+      "items": [
+        {
+          "icon": "📞",
+          "title": "RSVP + Funktions-Verteilungs-Plan",
+          "detail": "Funktionen vorbereiten."
+        },
+        {
+          "icon": "🥜",
+          "title": "Allergien",
+          "detail": "Marzipan-Warnung!"
+        },
+        {
+          "icon": "🛒",
+          "title": "Material bestellen",
+          "detail": "Akademie-System, Sabotage-Set, Bauklötze XL, Brücken-Bau-Set, Werkzeug-Premium."
+        }
+      ]
+    },
+    "minus1Week": {
+      "headline": "1 Woche vorher",
+      "items": [
+        {
+          "icon": "📜",
+          "title": "Prüfungs-Mappen + Funktions-Karten + Diplome drucken",
+          "detail": "Mit Namen + 5-6 Stations-Feldern."
+        },
+        {
+          "icon": "🕵️",
+          "title": "Sabotage-Quest scripten",
+          "detail": "Verdächtige + Motive + Alibis + Spuren-Verteilung planen, 2× durchspielen."
+        },
+        {
+          "icon": "🃏",
+          "title": "Werkzeug-Quiz Klasse 2 erstellen",
+          "detail": "30-35 Karten."
+        },
+        {
+          "icon": "📐",
+          "title": "Beispiel-Baupläne zeichnen",
+          "detail": "3 Verschwierigkeitsgrade (Haus/Brücke/Hochhaus)."
+        },
+        {
+          "icon": "🏆",
+          "title": "Bauleiter-Pokal-Übergabe choreographieren",
+          "detail": "Wer übergibt? Wie wird zurückgeholt?"
+        }
+      ]
+    },
+    "minus2Days": {
+      "headline": "2 Tage vorher",
+      "items": [
+        {
+          "icon": "🎂",
+          "title": "Baustellen-Kuchen XXL backen",
+          "detail": "Auskühlen, Verzieren am nächsten Tag."
+        },
+        {
+          "icon": "🧱",
+          "title": "Bauklotz-Wettbewerb-Layout testen",
+          "detail": "Bauklötze sortieren + Wettbewerb-Stelle planen."
+        },
+        {
+          "icon": "🎒",
+          "title": "5-6 Stationen vorbereiten",
+          "detail": "Material pro Station bündeln."
+        }
+      ]
+    },
+    "minus1Day": {
+      "headline": "1 Tag vorher",
+      "items": [
+        {
+          "icon": "🎂",
+          "title": "Baustellen-Kuchen verzieren",
+          "detail": "Krümel-Sand + Bagger + Marzipan-Maurer drauf."
+        },
+        {
+          "icon": "🏗️",
+          "title": "Sabotage-Spuren verstecken",
+          "detail": "In verschiedenen Räumen, gut aber findbar."
+        },
+        {
+          "icon": "🛡️",
+          "title": "Baustellen-Tafel aufhängen",
+          "detail": "Namen + Wertungs-Spalten."
+        }
+      ]
+    },
+    "dayOf": {
+      "headline": "Am Party-Tag",
+      "items": [
+        {
+          "icon": "🚧",
+          "title": "Stationen aufbauen",
+          "detail": "5-6 Stationen klar getrennt, Lageplan zentral."
+        },
+        {
+          "icon": "🍽️",
+          "title": "Pizza vorbestellt",
+          "detail": "Lieferung 15:25 für 15:30 Pause."
+        },
+        {
+          "icon": "😮‍💨",
+          "title": "Briefing-Spickzettel + Sabotage-Auflösung parat",
+          "detail": "Theorie-Punkte + Auflösungs-Brief."
+        }
+      ]
+    }
   },
   "sosScenarios": {
-    "regen": {"icon": "🌧️", "label": "Regen", "headline": "Alle Stationen drinnen, Sand-Spielzeug auf Plane in Küche."},
-    "weniger_kinder_als_erwartet": {"icon": "👥", "label": "Weniger Kinder", "headline": "Mehr Stations-Zeit, Sabotage mit 4 Verdächtigen statt 6."},
-    "mehr_kinder_als_erwartet": {"icon": "🚨", "label": "Mehr Kinder", "headline": "2 Stationen parallel, zweite Hand organisieren, Sabotage in 3er-Teams."},
-    "sabotage_zu_kompliziert": {"icon": "🕵️", "label": "Sabotage zu kompliziert", "headline": "Zusatz-Hinweis-Karten verteilen, eine Spur direkt zuordnen, Auflösung etwas früher öffnen."},
-    "kind_will_nicht_mitmachen": {"icon": "🤷", "label": "Kind verweigert", "headline": "'Polier-Beobachter'-Funktion — bewertet als Schiedsrichter mit, bekommt Diplom."},
-    "kuchen_misslungen": {"icon": "🎂", "label": "Kuchen misslungen", "headline": "Bäcker-Kuchen + Krümel-Sand + Bagger drauf — passt."},
-    "baustellen_besuch_abgesagt": {"icon": "🏗️", "label": "Baustellen-Besuch abgesagt", "headline": "Olympiade als Ersatz-Highlight, Baustellen-Video als zusätzlicher Programm-Block."},
-    "brücke_bricht_zu_schnell": {"icon": "🌉", "label": "Brücke bricht zu schnell", "headline": "Mehr Bauklötze freigeben, Stützen näher zusammen rücken."}
+    "regen": {
+      "icon": "🌧️",
+      "label": "Regen",
+      "headline": "Alle Stationen drinnen, Sand-Spielzeug auf Plane in Küche."
+    },
+    "weniger_kinder_als_erwartet": {
+      "icon": "👥",
+      "label": "Weniger Kinder",
+      "headline": "Mehr Stations-Zeit, Sabotage mit 4 Verdächtigen statt 6."
+    },
+    "mehr_kinder_als_erwartet": {
+      "icon": "🚨",
+      "label": "Mehr Kinder",
+      "headline": "2 Stationen parallel, zweite Hand organisieren, Sabotage in 3er-Teams."
+    },
+    "sabotage_zu_kompliziert": {
+      "icon": "🕵️",
+      "label": "Sabotage zu kompliziert",
+      "headline": "Zusatz-Hinweis-Karten verteilen, eine Spur direkt zuordnen, Auflösung etwas früher öffnen."
+    },
+    "kind_will_nicht_mitmachen": {
+      "icon": "🤷",
+      "label": "Kind verweigert",
+      "headline": "'Polier-Beobachter'-Funktion — bewertet als Schiedsrichter mit, bekommt Diplom."
+    },
+    "kuchen_misslungen": {
+      "icon": "🎂",
+      "label": "Kuchen misslungen",
+      "headline": "Bäcker-Kuchen + Krümel-Sand + Bagger drauf — passt."
+    },
+    "baustellen_besuch_abgesagt": {
+      "icon": "🏗️",
+      "label": "Baustellen-Besuch abgesagt",
+      "headline": "Olympiade als Ersatz-Highlight, Baustellen-Video als zusätzlicher Programm-Block."
+    },
+    "brücke_bricht_zu_schnell": {
+      "icon": "🌉",
+      "label": "Brücke bricht zu schnell",
+      "headline": "Mehr Bauklötze freigeben, Stützen näher zusammen rücken."
+    }
   }
 }
