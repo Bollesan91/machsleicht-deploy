@@ -1,8 +1,15 @@
 {
-  "_meta": {"version": "1.0.0", "lastUpdated": "2026-05-26", "qualityNote": "v1 — Phase-B-Skelett. Template-Anker: feuerwehr-gross + ritter-mittel. Gross-Spezifika (3-4h, Eltern absetzen, echter Wettbewerb, Burgenermittlung als Quest) durchgängig angewandt. Helfer-v3-Iteration ausstehend."},
+  "_meta": {
+    "version": "1.0.0",
+    "lastUpdated": "2026-05-26",
+    "qualityNote": "v1 — Phase-B-Skelett. Template-Anker: feuerwehr-gross + ritter-mittel. Gross-Spezifika (3-4h, Eltern absetzen, echter Wettbewerb, Burgenermittlung als Quest) durchgängig angewandt. Helfer-v3-Iteration ausstehend."
+  },
   "motto": "ritter",
   "ageGroup": "gross",
-  "ageRange": [9, 12],
+  "ageRange": [
+    9,
+    12
+  ],
   "title": "⚔️ Ritter-Kindergeburtstag — 9–12 Jahre",
   "metaDescription": "Ritter-Kindergeburtstag für 9-12-Jährige: 3 fertige Burg-Konzepte mit Ritter-Ausbildung, bewertetem Schwert-Parcours, Mittelalter-Quiz, Burgenermittlung als Krimi-Quest und Ritter-Diplom mit Funktion.",
   "introParagraph": "In dem Alter wollen Kinder ein Motto, das sie ernst nimmt — keine Plastikschwert-Romantik, sondern echte Mittelalter-Geschichte, Strategie und ein bisschen Wettkampf. Diese Konzepte liefern das: Theorie-Briefing wie an einer Ritter-Akademie, bewerteter Schwert-Parcours mit Stoppuhr, Mittelalter-Quiz mit Burgenwissen, Burgenermittlung als Krimi-Quest (verschwundener Schatz, 4 Verdächtige) und Ritter-Diplom mit Funktion am Ende. Eltern können absetzen, in Wow-Variante völlig wegbleiben.",
@@ -11,13 +18,34 @@
     "whyMottoFitsHeadline": "⚔️ Warum Ritter für 9-12-Jährige besonders gut funktioniert",
     "whyMottoFits": "In dem Alter haben Kinder Ritter-Bücher gelesen, Mittelalter-Filme gesehen, Schloss-Besuche gemacht. Was sie NICHT mehr wollen: Plastik-Schwert + Krepppapier-Burg. Was sie suchen: ein Motto, das ihr Mittelalter-Wissen anerkennt und vertieft. Die Ritter-Akademie trifft das punktgenau: Theorie-Briefing zu Burgen-Architektur und Ritter-Tugenden ist echter Stoff, der Schwert-Parcours wird mit Zeit und Stilnoten bewertet wie ein echtes Turnier, die Burgenermittlung läuft wie ein echter Krimi mit Verdächtigen, Beweisen und Motiven. Die Kinder gehen mit echtem Ritter-Diplom heim — nicht 'war schön' sondern 'ich habe die Prüfungen bestanden'. Das überzeugt Eltern, und die Kinder spüren es.",
     "traits": [
-      {"topic": "Aufmerksamkeit", "detail": "30–45 Min pro Station problemlos, wenn die Aktivität sie fordert. Burgenermittlung mit 4 Verdächtigen hält 8 Zwölfjährige eine Stunde. Generisches 'Schwertkampf' verlieren sie nach 10 Min."},
-      {"topic": "Regeln", "detail": "Komplexe Regeln werden nicht nur verstanden, sondern gewünscht. Wenn die Ermittlung nur 3 Spuren hat, fragen sie nach mehr. Plane Tiefe ein."},
-      {"topic": "Wettbewerb", "detail": "Echter Wettbewerb mit Zeitnehmen ist erwünscht. Beste Schwert-Zeit wird gewürdigt, 'verloren' ist okay. Trupp gegen Trupp im Quiz, Punkte addieren, Sieger-Bonus — alles erlaubt."},
-      {"topic": "Motorik", "detail": "Volle Bandbreite. Echte Knoten knoten, Lupe für Spuren, Beweis-Bogen ausfüllen, Wappen-Design mit Lineal + Bleistift. Ein 11-Jähriger kann Ermittlungs-Akten ausfüllen."},
-      {"topic": "Dauer", "detail": "3–4 Stunden ohne Probleme. Eine 3-Stunden-Party fühlt sich bei 9-12 kurz an."},
-      {"topic": "Schwerter", "detail": "Pool-Nudel-Schwerter funktionieren bei 9-12 noch — aber ergänzt um Holz-Schaumstoff-Schwerter (gepolstert) für mehr Realismus. Strenge Regel: 'Schlag nur am Strohballen, niemals auf Person.'"},
-      {"topic": "Eltern", "detail": "In Wow-Variante definitiv weg. Kinder in dem Alter wollen Party ohne Eltern. Telefonisch erreichbar reicht. 1-2 Erwachsene als Aufsicht (als 'Burgvogt' getarnt)."}
+      {
+        "topic": "Aufmerksamkeit",
+        "detail": "30–45 Min pro Station problemlos, wenn die Aktivität sie fordert. Burgenermittlung mit 4 Verdächtigen hält 8 Zwölfjährige eine Stunde. Generisches 'Schwertkampf' verlieren sie nach 10 Min."
+      },
+      {
+        "topic": "Regeln",
+        "detail": "Komplexe Regeln werden nicht nur verstanden, sondern gewünscht. Wenn die Ermittlung nur 3 Spuren hat, fragen sie nach mehr. Plane Tiefe ein."
+      },
+      {
+        "topic": "Wettbewerb",
+        "detail": "Echter Wettbewerb mit Zeitnehmen ist erwünscht. Beste Schwert-Zeit wird gewürdigt, 'verloren' ist okay. Trupp gegen Trupp im Quiz, Punkte addieren, Sieger-Bonus — alles erlaubt."
+      },
+      {
+        "topic": "Motorik",
+        "detail": "Volle Bandbreite. Echte Knoten knoten, Lupe für Spuren, Beweis-Bogen ausfüllen, Wappen-Design mit Lineal + Bleistift. Ein 11-Jähriger kann Ermittlungs-Akten ausfüllen."
+      },
+      {
+        "topic": "Dauer",
+        "detail": "3–4 Stunden ohne Probleme. Eine 3-Stunden-Party fühlt sich bei 9-12 kurz an."
+      },
+      {
+        "topic": "Schwerter",
+        "detail": "Pool-Nudel-Schwerter funktionieren bei 9-12 noch — aber ergänzt um Holz-Schaumstoff-Schwerter (gepolstert) für mehr Realismus. Strenge Regel: 'Schlag nur am Strohballen, niemals auf Person.'"
+      },
+      {
+        "topic": "Eltern",
+        "detail": "In Wow-Variante definitiv weg. Kinder in dem Alter wollen Party ohne Eltern. Telefonisch erreichbar reicht. 1-2 Erwachsene als Aufsicht (als 'Burgvogt' getarnt)."
+      }
     ]
   },
   "signatureRitual": {
@@ -25,20 +53,62 @@
     "subtitle": "Eröffnet mit Akademie-Briefing, endet mit Schwert-Schlag-Zeremonie",
     "introText": "Bei 9-12 funktioniert die Ritter-Akademie als Quest-Rahmen: Beim Ankommen werden alle zu Ritter-Anwärtern der Akademie. Jeder zieht eine Funktion (Ermittler Jonas, Schwert-Champion Mia, Burgen-Kennerin Lina, Hofnarr Tom...). Die Funktion wird gelebt — wer die Ermittler-Karte zieht, leitet die Burgenermittlung an. Während der Party absolvieren sie 5-6 Prüfungs-Stationen mit echten Bewertungen (Zeit, Stilnote, Quiz-Punkte). Am Ende: Schwert-Schlag-Zeremonie mit Diplom-Übergabe und Funktion ('Ritter-Anwärter Klasse 1'), bestes Team bekommt den Ritter-Pokal.",
     "setupSteps": [
-      {"n": 1, "name": "Funktions-Box vorbereiten", "content": "Schuhkarton mit 12 Ritter-Akademie-Funktions-Karten auf festem Papier (laminieren = Bonus). Karten ziehen, Funktion gilt für die ganze Party."},
-      {"n": 2, "name": "Akademie-Briefing", "content": "5 Min Theorie: Welche Burgen-Typen gibt es nach Lage? Höhenburg (z.B. Spornburg, Gipfelburg) vs Wasserburg vs Niederungsburg. Welche Ritter-Tugenden? Treue, Ehre, Tapferkeit, Mäßigung, Demut. Echtes Wissen, kurz, präzise."},
-      {"n": 3, "name": "Prüfungs-Mappe", "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, 5 Stations-Bewertungs-Feldern (Zeit, Stilnote, Quiz-Punkte) und Notiz-Platz für Burgenermittlung."},
-      {"n": 4, "name": "Akademie-Tafel", "content": "Großes Plakat mit Spalten Name / Funktion / Station-Bewertungen / Gesamt-Score. Hängt sichtbar in der Mitte."},
-      {"n": 5, "name": "Ritter-Schwur (alle gemeinsam, 1×)", "content": "'Wir sind treu, wir sind mutig, wir helfen den Schwachen. So sei es.' Klar, knapp, dann starten."},
-      {"n": 6, "name": "Diplom + Ritter-Pokal vorbereiten", "content": "Diplome: 'Ritter-Anwärter Klasse 1 — geprüft und für tapfer befunden' mit Funktion und Datum. Ritter-Pokal: Echter kleiner Pokal für bestes Team (geht 1 Jahr zum Sieger). Schwert für Schlag-Zeremonie (Pool-Nudel oder dekoratives Schwert)."}
+      {
+        "n": 1,
+        "name": "Funktions-Box vorbereiten",
+        "content": "Schuhkarton mit 12 Ritter-Akademie-Funktions-Karten auf festem Papier (laminieren = Bonus). Karten ziehen, Funktion gilt für die ganze Party."
+      },
+      {
+        "n": 2,
+        "name": "Akademie-Briefing",
+        "content": "5 Min Theorie: Welche Burgen-Typen gibt es nach Lage? Höhenburg (z.B. Spornburg, Gipfelburg) vs Wasserburg vs Niederungsburg. Welche Ritter-Tugenden? Treue, Ehre, Tapferkeit, Mäßigung, Demut. Echtes Wissen, kurz, präzise."
+      },
+      {
+        "n": 3,
+        "name": "Prüfungs-Mappe",
+        "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, 5 Stations-Bewertungs-Feldern (Zeit, Stilnote, Quiz-Punkte) und Notiz-Platz für Burgenermittlung."
+      },
+      {
+        "n": 4,
+        "name": "Akademie-Tafel",
+        "content": "Großes Plakat mit Spalten Name / Funktion / Station-Bewertungen / Gesamt-Score. Hängt sichtbar in der Mitte."
+      },
+      {
+        "n": 5,
+        "name": "Ritter-Schwur (alle gemeinsam, 1×)",
+        "content": "'Wir sind treu, wir sind mutig, wir helfen den Schwachen. So sei es.' Klar, knapp, dann starten."
+      },
+      {
+        "n": 6,
+        "name": "Diplom + Ritter-Pokal vorbereiten",
+        "content": "Diplome: 'Ritter-Anwärter Klasse 1 — geprüft und für tapfer befunden' mit Funktion und Datum. Ritter-Pokal: Echter kleiner Pokal für bestes Team (geht 1 Jahr zum Sieger). Schwert für Schlag-Zeremonie (Pool-Nudel oder dekoratives Schwert)."
+      }
     ],
     "rolesList": [
-      {"name": "Ermittler Jonas", "description": "Leitet die Burgenermittlung an"},
-      {"name": "Schwert-Champion Mia", "description": "Kommandiert beim Schwert-Parcours"},
-      {"name": "Burgen-Kennerin Lina", "description": "Quiz-Wissen-Expertin"},
-      {"name": "Wappen-Heroldin Hanna", "description": "Bewertet Wappen-Design"},
-      {"name": "Hofnarr Tom", "description": "Sorgt für Pausen-Stimmung + Witze"},
-      {"name": "Burgvogtin Nora", "description": "Vergibt Stilnoten und hält Tafel"}
+      {
+        "name": "Ermittler Jonas",
+        "description": "Leitet die Burgenermittlung an"
+      },
+      {
+        "name": "Schwert-Champion Mia",
+        "description": "Kommandiert beim Schwert-Parcours"
+      },
+      {
+        "name": "Burgen-Kennerin Lina",
+        "description": "Quiz-Wissen-Expertin"
+      },
+      {
+        "name": "Wappen-Heroldin Hanna",
+        "description": "Bewertet Wappen-Design"
+      },
+      {
+        "name": "Hofnarr Tom",
+        "description": "Sorgt für Pausen-Stimmung + Witze"
+      },
+      {
+        "name": "Burgvogtin Nora",
+        "description": "Vergibt Stilnoten und hält Tafel"
+      }
     ],
     "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Burgwächter-Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",
     "materialNote": "Funktions-Karten, Prüfungs-Mappen, Akademie-Tafel, Ritter-Diplome und Ritter-Pokal an einem festen 'Akademie-Tisch' sammeln. Schwert für Schwert-Schlag-Zeremonie separat vorhalten (Pool-Nudel oder dekoratives Holz-Schwert)."
@@ -51,13 +121,41 @@
       "intro": "Sparvariante: 3 Stunden, 8 Kinder, 4 Prüfungs-Stationen (Wappen-Design, Schwert-Parcours, Mittelalter-Quiz, Burgenermittlung). Pool-Nudel-Schwerter + Kartonschilde. Eltern setzen ab.",
       "timeWindow": "14:00–17:00, 8 Kinder",
       "schedule": [
-        {"time": "14:00", "title": "Empfang + Funktion + Akademie-Briefing", "description": "Funktions-Karten ziehen, Theorie-Briefing (5 Min Burgen-Typen + Tugenden), Prüfungs-Mappen. 20 Min."},
-        {"time": "14:20", "title": "Station 1: Wappen-Design-Werkstatt", "description": "Eigenes Wappen heraldisch korrekt entwerfen, Burgvogtin gibt Stilnote. 35 Min."},
-        {"time": "14:55", "title": "Station 2: Schwert-Parcours mit Zeit", "description": "Hindernis-Parcours mit Stoppuhr + Stilnote. 35 Min."},
-        {"time": "15:30", "title": "Mittelalter-Snack-Pause", "description": "Ritter-Pizza, Stockbrot, Met-Schorle. 25 Min."},
-        {"time": "15:55", "title": "Station 3: Mittelalter-Quiz Klasse 2", "description": "20 Quiz-Karten, Burgenteile + Tugenden + Berufe, Burgen-Kennerin Lina. 30 Min."},
-        {"time": "16:25", "title": "Station 4: Burgenermittlung (Krimi-Quest)", "description": "Verschwundener Schatz, 4 Verdächtige, 3 Spuren, Lupe + Beweis-Bogen. 25 Min."},
-        {"time": "16:50", "title": "Schwert-Schlag-Zeremonie + Diplom", "description": "Feierliche Übergabe der Ritter-Anwärter-Diplome mit Schwert-Schlag. Bestes Team bekommt Ritter-Pokal. 10 Min."}
+        {
+          "time": "14:00",
+          "title": "Empfang + Funktion + Akademie-Briefing",
+          "description": "Funktions-Karten ziehen, Theorie-Briefing (5 Min Burgen-Typen + Tugenden), Prüfungs-Mappen. 20 Min."
+        },
+        {
+          "time": "14:20",
+          "title": "Station 1: Wappen-Design-Werkstatt",
+          "description": "Eigenes Wappen heraldisch korrekt entwerfen, Burgvogtin gibt Stilnote. 35 Min."
+        },
+        {
+          "time": "14:55",
+          "title": "Station 2: Schwert-Parcours mit Zeit",
+          "description": "Hindernis-Parcours mit Stoppuhr + Stilnote. 35 Min."
+        },
+        {
+          "time": "15:30",
+          "title": "Mittelalter-Snack-Pause",
+          "description": "Ritter-Pizza, Stockbrot, Met-Schorle. 25 Min."
+        },
+        {
+          "time": "15:55",
+          "title": "Station 3: Mittelalter-Quiz Klasse 2",
+          "description": "20 Quiz-Karten, Burgenteile + Tugenden + Berufe, Burgen-Kennerin Lina. 30 Min."
+        },
+        {
+          "time": "16:25",
+          "title": "Station 4: Burgenermittlung (Krimi-Quest)",
+          "description": "Verschwundener Schatz, 4 Verdächtige, 3 Spuren, Lupe + Beweis-Bogen. 25 Min."
+        },
+        {
+          "time": "16:50",
+          "title": "Schwert-Schlag-Zeremonie + Diplom",
+          "description": "Feierliche Übergabe der Ritter-Anwärter-Diplome mit Schwert-Schlag. Bestes Team bekommt Ritter-Pokal. 10 Min."
+        }
       ],
       "games": [
         {
@@ -69,11 +167,31 @@
           "material": "4 Verdächtigen-Karten (Hofnarr, Burgwächter, Küchenmeister, Stallbursche), 3 versteckte Spuren (Goldknopf, Fußabdruck-Foto, Stoffstück), Lupe pro 2er-Team, Beweis-Bögen, gelöste-Fall-Karte für Auflösung",
           "safetyRule": "Spuren nicht an gefährlichen Orten verstecken. Lupe Plastik, keine Glas.",
           "steps": [
-            {"n": 1, "name": "Tatbeschreibung", "content": "Ermittler Jonas: 'Letzte Nacht wurde der Burgschatz gestohlen! 4 Verdächtige, 3 Spuren — wer war es?'"},
-            {"n": 2, "name": "Verdächtige vorstellen", "content": "Karten mit Foto + Motiv + Alibi: Hofnarr (Spielschulden), Burgwächter (in Liebe verfeindet), Küchenmeister (gekündigt worden), Stallbursche (verschuldet)."},
-            {"n": 3, "name": "Spuren-Suche", "content": "2er-Teams suchen versteckte Spuren in der Wohnung. Goldknopf (an Türrahmen), Fußabdruck-Foto (im Bad), Stoffstück (unter Sofa)."},
-            {"n": 4, "name": "Beweis-Bogen ausfüllen", "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Goldknopf gehört Hofnarr (passt), Fußabdruck Burgwächter (passt nicht — sein Stiefel war kleiner)..."},
-            {"n": 5, "name": "Auflösung", "content": "Team mit korrekter Lösung gewinnt. Lösung: Es war der Küchenmeister (alle 3 Spuren passen). Bonus-Punkte zur Stallmeister-Tafel."}
+            {
+              "n": 1,
+              "name": "Tatbeschreibung",
+              "content": "Ermittler Jonas: 'Letzte Nacht wurde der Burgschatz gestohlen! 4 Verdächtige, 3 Spuren — wer war es?'"
+            },
+            {
+              "n": 2,
+              "name": "Verdächtige vorstellen",
+              "content": "Karten mit Foto + Motiv + Alibi: Hofnarr (Spielschulden), Burgwächter (in Liebe verfeindet), Küchenmeister (gekündigt worden), Stallbursche (verschuldet)."
+            },
+            {
+              "n": 3,
+              "name": "Spuren-Suche",
+              "content": "2er-Teams suchen versteckte Spuren in der Wohnung. Goldknopf (an Türrahmen), Fußabdruck-Foto (im Bad), Stoffstück (unter Sofa)."
+            },
+            {
+              "n": 4,
+              "name": "Beweis-Bogen ausfüllen",
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Goldknopf gehört Hofnarr (passt), Fußabdruck Burgwächter (passt nicht — sein Stiefel war kleiner)..."
+            },
+            {
+              "n": 5,
+              "name": "Auflösung",
+              "content": "Team mit korrekter Lösung gewinnt. Lösung: Es war der Küchenmeister (alle 3 Spuren passen). Bonus-Punkte zur Stallmeister-Tafel."
+            }
           ]
         },
         {
@@ -85,10 +203,26 @@
           "material": "8 Pappschilde (A3 oval), Wappen-Regel-Karte (Heraldik-Regeln einfach erklärt), Wachsmalstifte, Filzstifte, Gold-/Silber-Stifte, Tieren/Symbol-Vorlagen, Wappen-Spruchstreifen",
           "safetyRule": "Stifte ohne giftige Inhalte. Schilde mit weichen Henkeln.",
           "steps": [
-            {"n": 1, "name": "Heraldik-Theorie", "content": "Wappen-Heroldin Hanna: 'Wappen sind nicht zufällig. Regel 1 (Tinkturregel): Metall nie auf Metall, Farbe nie auf Farbe — Metalle sind Gold + Silber, Farben sind Rot/Blau/Grün/Schwarz/Purpur. Klassisches Einsteiger-Wappen: max 2 Farben + 1 Metall. Regel 2: ein Tier = eine Eigenschaft (Löwe = Mut, Adler = Weisheit, Hirsch = Schnelligkeit). Regel 3: Familien-Devise.'"},
-            {"n": 2, "name": "Konzept-Phase", "content": "5 Min: Was symbolisiert mein Wappen? Tier? Farben? Devise?"},
-            {"n": 3, "name": "Wappen zeichnen", "content": "25 Min: Eigenes Wappen gestalten mit Heraldik-Regeln. Devise-Spruchstreifen unter Wappen."},
-            {"n": 4, "name": "Wappen-Präsentation + Stilnote", "content": "Jedes Kind erklärt sein Wappen: 'Mein Wappen zeigt einen Adler auf Gold mit der Devise: WAHRHEIT IST MEIN PFAD.' Burgvogtin gibt Stilnote (Sauberkeit, Konzept, Heraldik-Treue)."}
+            {
+              "n": 1,
+              "name": "Heraldik-Theorie",
+              "content": "Wappen-Heroldin Hanna: 'Wappen sind nicht zufällig. Regel 1 (Tinkturregel): Metall nie auf Metall, Farbe nie auf Farbe — Metalle sind Gold + Silber, Farben sind Rot/Blau/Grün/Schwarz/Purpur. Klassisches Einsteiger-Wappen: max 2 Farben + 1 Metall. Regel 2: ein Tier = eine Eigenschaft (Löwe = Mut, Adler = Weisheit, Hirsch = Schnelligkeit). Regel 3: Familien-Devise.'"
+            },
+            {
+              "n": 2,
+              "name": "Konzept-Phase",
+              "content": "5 Min: Was symbolisiert mein Wappen? Tier? Farben? Devise?"
+            },
+            {
+              "n": 3,
+              "name": "Wappen zeichnen",
+              "content": "25 Min: Eigenes Wappen gestalten mit Heraldik-Regeln. Devise-Spruchstreifen unter Wappen."
+            },
+            {
+              "n": 4,
+              "name": "Wappen-Präsentation + Stilnote",
+              "content": "Jedes Kind erklärt sein Wappen: 'Mein Wappen zeigt einen Adler auf Gold mit der Devise: WAHRHEIT IST MEIN PFAD.' Burgvogtin gibt Stilnote (Sauberkeit, Konzept, Heraldik-Treue)."
+            }
           ]
         },
         {
@@ -100,10 +234,26 @@
           "material": "8 Pool-Nudel-Schwerter (60 cm), 2 Strohballen (Übungs-Ziele), 6 Hindernisse (Slalom-Markierungen, Tunnel-Kissen, Spirale, Sprung-Hindernis 30cm, Wassergraben-Stoff, Kreuz-Markierung), Stoppuhr, Wertungsbogen",
           "safetyRule": "Schwerter nur am Strohballen. Niemals auf Kind. Reihum, nie zwei gleichzeitig. Bei Sturz: weicher Boden.",
           "steps": [
-            {"n": 1, "name": "Parcours-Inspektion", "content": "Schwert-Champion Mia zeigt den Weg vor: Start → Slalom → Schwert-Schlag am Strohballen → Tunnel → Spirale → Sprung → Wassergraben → Kreuz-Schlag → Ziel. Erklärt Stilkriterien."},
-            {"n": 2, "name": "Probelauf", "content": "Jedes Kind testet einmal langsam, Hindernisse erkunden."},
-            {"n": 3, "name": "Wertungs-Durchgang", "content": "Reihum gegen Stoppuhr. Zeit + Stilnote (1-10) auf Tafel."},
-            {"n": 4, "name": "Bestes Team", "content": "Top 3 Gesamt-Wertung bekommen Bonus-Punkte für Ritter-Pokal."}
+            {
+              "n": 1,
+              "name": "Parcours-Inspektion",
+              "content": "Schwert-Champion Mia zeigt den Weg vor: Start → Slalom → Schwert-Schlag am Strohballen → Tunnel → Spirale → Sprung → Wassergraben → Kreuz-Schlag → Ziel. Erklärt Stilkriterien."
+            },
+            {
+              "n": 2,
+              "name": "Probelauf",
+              "content": "Jedes Kind testet einmal langsam, Hindernisse erkunden."
+            },
+            {
+              "n": 3,
+              "name": "Wertungs-Durchgang",
+              "content": "Reihum gegen Stoppuhr. Zeit + Stilnote (1-10) auf Tafel."
+            },
+            {
+              "n": 4,
+              "name": "Bestes Team",
+              "content": "Top 3 Gesamt-Wertung bekommen Bonus-Punkte für Ritter-Pokal."
+            }
           ]
         }
       ],
@@ -111,16 +261,85 @@
       "decoration": "🏰 'Burg Schwarzfels'-Banner\n🛡️ Wappenschild-Wand mit Heraldik-Beispielen\n⚔️ Schwert-Wand (gepolsterte Schwerter, Pool-Nudel)\n🐉 Großer Pappkarton-Drache als Deko\n🕯️ LED-Kerzen + Tonkrüge + Kettenpanzer-Imitat (Aluhüte gar nicht — Kettenhemd-Stoff!)\n🎭 Mittelalter-Musik (z.B. Hurdy-Gurdy-Playlist)\n🪙 Schatz-Box (für Ermittlungs-Auflösung)\n🏆 Ritter-Pokal sichtbar",
       "giveaways": "📜 Ritter-Anwärter-Diplom Klasse 1 mit Funktion\n🛡️ Eigenes Wappenschild (heraldisch entworfen)\n⚔️ Pool-Nudel-Schwert (60 cm)\n👑 Goldkarton-Krone\n🌟 Ritter-Pin (für besten Quiz-Score)\n🪙 Schokoladentaler-Tüte\n📓 Mittelalter-Wissens-Heft + Heraldik-Karte",
       "shoppingList": [
-        {"emoji": "🛡️", "label": "8 Pappschilde + Heraldik-Bastel-Premium", "url": null, "priceEur": 28, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Wappen-Werkstatt."},
-        {"emoji": "⚔️", "label": "Pool-Nudel-Schwerter (8) + 2 Strohballen + Hindernisse", "url": null, "priceEur": 30, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Schwert-Parcours."},
-        {"emoji": "📜", "label": "Komplett-System (Prüfungs-Mappen + Funktion + Diplome + Ritter-Pokal)", "url": null, "priceEur": 32, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Akademie-System komplett."},
-        {"emoji": "🕵️", "label": "Burgenermittlung-Set (4 Verdächtige + 3 Spuren + Lupen + Bögen)", "url": null, "priceEur": 18, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Krimi-Quest."},
-        {"emoji": "🃏", "label": "Mittelalter-Quiz-Karten Klasse 2 (20)", "url": null, "priceEur": 12, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Quiz."},
-        {"emoji": "🐉", "label": "Pappkarton-Drache + Schatz-Box + LED-Deko", "url": null, "priceEur": 18, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Atmosphäre."},
-        {"emoji": "🍕", "label": "Ritter-Pizza + Stockbrot + Mittelalter-Buffet", "url": null, "priceEur": 25, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "9-12 Buffet."},
-        {"emoji": "🎂", "label": "Burg-Kuchen-Material", "url": null, "priceEur": 10, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Kuchen."}
+        {
+          "emoji": "🛡️",
+          "label": "8 Pappschilde + Heraldik-Bastel-Premium",
+          "url": null,
+          "priceEur": 28,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Wappen-Werkstatt."
+        },
+        {
+          "emoji": "⚔️",
+          "label": "Pool-Nudel-Schwerter (8) + 2 Strohballen + Hindernisse",
+          "url": null,
+          "priceEur": 30,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Schwert-Parcours."
+        },
+        {
+          "emoji": "📜",
+          "label": "Komplett-System (Prüfungs-Mappen + Funktion + Diplome + Ritter-Pokal)",
+          "url": null,
+          "priceEur": 32,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Akademie-System komplett."
+        },
+        {
+          "emoji": "🕵️",
+          "label": "Burgenermittlung-Set (4 Verdächtige + 3 Spuren + Lupen + Bögen)",
+          "url": null,
+          "priceEur": 18,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Krimi-Quest."
+        },
+        {
+          "emoji": "🃏",
+          "label": "Mittelalter-Quiz-Karten Klasse 2 (20)",
+          "url": null,
+          "priceEur": 12,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Quiz."
+        },
+        {
+          "emoji": "🐉",
+          "label": "Pappkarton-Drache + Schatz-Box + LED-Deko",
+          "url": null,
+          "priceEur": 18,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Atmosphäre."
+        },
+        {
+          "emoji": "🍕",
+          "label": "Ritter-Pizza + Stockbrot + Mittelalter-Buffet",
+          "url": null,
+          "priceEur": 25,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "9-12 Buffet."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Burg-Kuchen-Material",
+          "url": null,
+          "priceEur": 10,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Kuchen."
+        }
       ],
-      "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)"
+      "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)",
+      "estimatedCostEur": 173,
+      "savingsTip": {
+        "title": "💡 Warum kostet „Minimal\" 173 €?",
+        "body": "Pool-Nudel-Schwerter (~12 € für 6) + Pappkarton-Schilde (selbst gemacht → 0 €, gekauft ~15 €) + Wappen-Bastel-Material sind der Kern. Spar-Trick: Schilde aus alten Pappkartons (Amazon-Boxen!) selbst schneiden und nur Stifte kaufen → spart 12 €."
+      }
     },
     {
       "id": "standard",
@@ -129,14 +348,46 @@
       "intro": "Allrounder für 8-10 Kinder: 5 Prüfungs-Stationen (Wappen, Schwert, Quiz, Ermittlung, Bogenschießen), Funktions-System, Ritter-Pokal, Schwert-Schlag-Zeremonie.",
       "timeWindow": "14:00–17:30, 10 Kinder",
       "schedule": [
-        {"time": "14:00", "title": "Empfang + Funktion + Akademie-Briefing", "description": "Funktions-Karten, Theorie, Mappen. 20 Min."},
-        {"time": "14:20", "title": "Station 1: Wappen-Design XL", "description": "35 Min — Burgvogtin bewertet."},
-        {"time": "14:55", "title": "Station 2: Schwert-Parcours mit Zeit", "description": "35 Min."},
-        {"time": "15:30", "title": "Mittelalter-Snack-Pause", "description": "25 Min."},
-        {"time": "15:55", "title": "Station 3: Mittelalter-Quiz Klasse 2", "description": "30 Min."},
-        {"time": "16:25", "title": "Station 4: Burgenermittlung XL", "description": "30 Min — 5 Verdächtige, 4 Spuren, Detektiv-Bögen."},
-        {"time": "16:55", "title": "Station 5: Bogenschießen (Saugnapf-Pfeile)", "description": "25 Min."},
-        {"time": "17:20", "title": "Schwert-Schlag-Zeremonie + Ritter-Pokal", "description": "Feierliche Übergabe + Gruppenfoto. 10 Min."}
+        {
+          "time": "14:00",
+          "title": "Empfang + Funktion + Akademie-Briefing",
+          "description": "Funktions-Karten, Theorie, Mappen. 20 Min."
+        },
+        {
+          "time": "14:20",
+          "title": "Station 1: Wappen-Design XL",
+          "description": "35 Min — Burgvogtin bewertet."
+        },
+        {
+          "time": "14:55",
+          "title": "Station 2: Schwert-Parcours mit Zeit",
+          "description": "35 Min."
+        },
+        {
+          "time": "15:30",
+          "title": "Mittelalter-Snack-Pause",
+          "description": "25 Min."
+        },
+        {
+          "time": "15:55",
+          "title": "Station 3: Mittelalter-Quiz Klasse 2",
+          "description": "30 Min."
+        },
+        {
+          "time": "16:25",
+          "title": "Station 4: Burgenermittlung XL",
+          "description": "30 Min — 5 Verdächtige, 4 Spuren, Detektiv-Bögen."
+        },
+        {
+          "time": "16:55",
+          "title": "Station 5: Bogenschießen (Saugnapf-Pfeile)",
+          "description": "25 Min."
+        },
+        {
+          "time": "17:20",
+          "title": "Schwert-Schlag-Zeremonie + Ritter-Pokal",
+          "description": "Feierliche Übergabe + Gruppenfoto. 10 Min."
+        }
       ],
       "games": [
         {
@@ -148,10 +399,26 @@
           "material": "3 Spielzeug-Bögen mit Saugnapf-Pfeilen, 2 Zielscheiben (Pappkarton mit Ringen 10/30/50 Pkt), 10 Schutzbrillen, Stoppuhr",
           "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile, keine echten. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand. Bogen NIE auf Personen.",
           "steps": [
-            {"n": 1, "name": "Bogen-Theorie", "content": "Schwert-Champion Mia: 'Bogenschießen war Schlüssel-Kunst bei Rittern. Bogen halten, Pfeil einlegen, ruhig zielen, ausatmen, loslassen.' Demonstration."},
-            {"n": 2, "name": "3 Schüsse pro Kind", "content": "Jedes Kind 3 Pfeile pro Runde. Saugnapf bleibt am Karton kleben, Ringe geben Punkte."},
-            {"n": 3, "name": "Punkte addieren", "content": "Bisherige Stations-Score + Bogenschießen-Punkte = Final-Wertung."},
-            {"n": 4, "name": "Wertung in Akademie-Tafel", "content": "Bogenschießen-Sieger bekommt Pin, alle Punkte zählen zum Ritter-Pokal."}
+            {
+              "n": 1,
+              "name": "Bogen-Theorie",
+              "content": "Schwert-Champion Mia: 'Bogenschießen war Schlüssel-Kunst bei Rittern. Bogen halten, Pfeil einlegen, ruhig zielen, ausatmen, loslassen.' Demonstration."
+            },
+            {
+              "n": 2,
+              "name": "3 Schüsse pro Kind",
+              "content": "Jedes Kind 3 Pfeile pro Runde. Saugnapf bleibt am Karton kleben, Ringe geben Punkte."
+            },
+            {
+              "n": 3,
+              "name": "Punkte addieren",
+              "content": "Bisherige Stations-Score + Bogenschießen-Punkte = Final-Wertung."
+            },
+            {
+              "n": 4,
+              "name": "Wertung in Akademie-Tafel",
+              "content": "Bogenschießen-Sieger bekommt Pin, alle Punkte zählen zum Ritter-Pokal."
+            }
           ]
         }
       ],
@@ -159,17 +426,94 @@
       "decoration": "🏰 Großes 'Burg Schwarzfels'-Banner\n🛡️ Wappen-Wand mit 10 Schilden + Heraldik-Beispielen\n⚔️ Schwert-Wand + Bogenschießen-Bereich\n🐉 Großer Pappkarton-Drache (lebensgroß)\n🕯️ LED-Kerzen + Fackeln-Imitat + Kettenhemd-Stoff\n🎭 Mittelalter-Musik\n🪙 Schatz-Box + Verdächtigen-Wand\n🏆 Ritter-Pokal-Wand + Foto-Bereich",
       "giveaways": "📜 Großes Ritter-Diplom Klasse 1\n🛡️ Eigenes Wappenschild (heraldisch)\n⚔️ Pool-Nudel-Schwert (60 cm)\n🏹 Mini-Bogen-Set zum Üben (Saugnapf)\n👑 Krone aus Goldkarton\n🌟 Ritter-Pin (Bronze/Silber/Gold je Stations-Score)\n🪙 Schokoladentaler-Tüte\n📓 Mittelalter-Wissens-Heft + Heraldik-Stift",
       "shoppingList": [
-        {"emoji": "🛡️", "label": "10 Pappschilde + Heraldik-Premium", "url": null, "priceEur": 35, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Wappen."},
-        {"emoji": "⚔️", "label": "Pool-Nudel-Schwerter (10) + Strohballen + Hindernis-Premium", "url": null, "priceEur": 40, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Parcours."},
-        {"emoji": "📜", "label": "Akademie-System Komplett", "url": null, "priceEur": 42, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Standard-System."},
-        {"emoji": "🕵️", "label": "Burgenermittlung XL (5 Verdächtige + 4 Spuren)", "url": null, "priceEur": 25, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Krimi XL."},
-        {"emoji": "🃏", "label": "Mittelalter-Quiz Klasse 2 XL (25 Karten)", "url": null, "priceEur": 15, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Quiz Standard."},
-        {"emoji": "🏹", "label": "3 Bogen + Saugnapf-Pfeile + 10 Schutzbrillen + Zielscheiben", "url": null, "priceEur": 35, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Bogenschießen."},
-        {"emoji": "🐉", "label": "Drache + Schatz-Box + Premium-Deko", "url": null, "priceEur": 25, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Atmosphäre."},
-        {"emoji": "🍕", "label": "Ritter-Pizza XL + Mittelalter-Buffet", "url": null, "priceEur": 35, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "9-12 Buffet."},
-        {"emoji": "🎂", "label": "Burg-Kuchen Standard + Marzipan", "url": null, "priceEur": 12, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Kuchen."}
+        {
+          "emoji": "🛡️",
+          "label": "10 Pappschilde + Heraldik-Premium",
+          "url": null,
+          "priceEur": 35,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Wappen."
+        },
+        {
+          "emoji": "⚔️",
+          "label": "Pool-Nudel-Schwerter (10) + Strohballen + Hindernis-Premium",
+          "url": null,
+          "priceEur": 40,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Parcours."
+        },
+        {
+          "emoji": "📜",
+          "label": "Akademie-System Komplett",
+          "url": null,
+          "priceEur": 42,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Standard-System."
+        },
+        {
+          "emoji": "🕵️",
+          "label": "Burgenermittlung XL (5 Verdächtige + 4 Spuren)",
+          "url": null,
+          "priceEur": 25,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Krimi XL."
+        },
+        {
+          "emoji": "🃏",
+          "label": "Mittelalter-Quiz Klasse 2 XL (25 Karten)",
+          "url": null,
+          "priceEur": 15,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Quiz Standard."
+        },
+        {
+          "emoji": "🏹",
+          "label": "3 Bogen + Saugnapf-Pfeile + 10 Schutzbrillen + Zielscheiben",
+          "url": null,
+          "priceEur": 35,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Bogenschießen."
+        },
+        {
+          "emoji": "🐉",
+          "label": "Drache + Schatz-Box + Premium-Deko",
+          "url": null,
+          "priceEur": 25,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Atmosphäre."
+        },
+        {
+          "emoji": "🍕",
+          "label": "Ritter-Pizza XL + Mittelalter-Buffet",
+          "url": null,
+          "priceEur": 35,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "9-12 Buffet."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Burg-Kuchen Standard + Marzipan",
+          "url": null,
+          "priceEur": 12,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Kuchen."
+        }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 10 Kinder)"
+      "costContext": "Geschätzte Kosten (Standard, 10 Kinder)",
+      "estimatedCostEur": 264,
+      "savingsTip": {
+        "title": "💡 Spar-Trick — Schilde selbst basteln",
+        "body": "Gekaufte Pappschilde (8 Stk ~22 €) vs selbst geschnittene aus Pizza-Kartons (kostenlos). Pool-Nudel-Schwerter sind unverzichtbar — nicht durch Holz ersetzen. Schokoladentaler in Bulk (~6 € statt einzeln 12 €). Knappen-Hefte zuhause am PC drucken statt drucken lassen → spart 8-12 €."
+      }
     },
     {
       "id": "wow",
@@ -178,15 +522,51 @@
       "intro": "Großes Programm für 10 Kinder: 6 Prüfungs-Stationen + Burgenermittlung als Krimi-Quest mit 6 Verdächtigen, finale Ritter-Olympiade mit Schwert-Schlag-Finale + Bogenschießen-Meisterschaft, optional Mittelalter-Markt-Besuch oder Schlafparty mit Ritterfilm. Ritter-Diplom Klasse 2 + Wanderpokal.",
       "timeWindow": "14:00–18:00, 10 Kinder",
       "schedule": [
-        {"time": "14:00", "title": "Empfang + Funktion + Großes Akademie-Briefing", "description": "Funktions-Karten, ausgedehntes Briefing (10 Min Theorie), Prüfungs-Mappen mit Foto-Platz. 25 Min."},
-        {"time": "14:25", "title": "Station 1: Wappen-Design XL", "description": "35 Min — heraldisch korrekt."},
-        {"time": "15:00", "title": "Station 2: Schwert-Parcours mit Zeit", "description": "35 Min."},
-        {"time": "15:35", "title": "Mittelalter-Snack-Pause + Ritter-Film-Trailer", "description": "30 Min."},
-        {"time": "16:05", "title": "Station 3: Mittelalter-Quiz Klasse 2 XL", "description": "30 Min — 30 Karten + Bonus."},
-        {"time": "16:35", "title": "Station 4: Burgenermittlung XXL (6 Verdächtige)", "description": "35 Min — vollständiger Krimi mit Verhören, Beweisen, Auflösung."},
-        {"time": "17:10", "title": "Station 5: Bogenschießen-Meisterschaft", "description": "25 Min — 3 Distanzen."},
-        {"time": "17:35", "title": "Ritter-Olympiade: Schwert-Schlag-Finale", "description": "20 Min — am Strohballen, Wertung."},
-        {"time": "17:55", "title": "Schwert-Schlag-Zeremonie + Ritter-Pokal", "description": "Feierlich. 5 Min."}
+        {
+          "time": "14:00",
+          "title": "Empfang + Funktion + Großes Akademie-Briefing",
+          "description": "Funktions-Karten, ausgedehntes Briefing (10 Min Theorie), Prüfungs-Mappen mit Foto-Platz. 25 Min."
+        },
+        {
+          "time": "14:25",
+          "title": "Station 1: Wappen-Design XL",
+          "description": "35 Min — heraldisch korrekt."
+        },
+        {
+          "time": "15:00",
+          "title": "Station 2: Schwert-Parcours mit Zeit",
+          "description": "35 Min."
+        },
+        {
+          "time": "15:35",
+          "title": "Mittelalter-Snack-Pause + Ritter-Film-Trailer",
+          "description": "30 Min."
+        },
+        {
+          "time": "16:05",
+          "title": "Station 3: Mittelalter-Quiz Klasse 2 XL",
+          "description": "30 Min — 30 Karten + Bonus."
+        },
+        {
+          "time": "16:35",
+          "title": "Station 4: Burgenermittlung XXL (6 Verdächtige)",
+          "description": "35 Min — vollständiger Krimi mit Verhören, Beweisen, Auflösung."
+        },
+        {
+          "time": "17:10",
+          "title": "Station 5: Bogenschießen-Meisterschaft",
+          "description": "25 Min — 3 Distanzen."
+        },
+        {
+          "time": "17:35",
+          "title": "Ritter-Olympiade: Schwert-Schlag-Finale",
+          "description": "20 Min — am Strohballen, Wertung."
+        },
+        {
+          "time": "17:55",
+          "title": "Schwert-Schlag-Zeremonie + Ritter-Pokal",
+          "description": "Feierlich. 5 Min."
+        }
       ],
       "games": [
         {
@@ -198,11 +578,31 @@
           "material": "6 Verdächtigen-Karten mit Foto/Motiv/Alibi, 5 versteckte Spuren (Brief-Fragment, Tee-Tasse, Stoff-Streifen, Münze, Haar), Lupen + Beweis-Bögen, Verhör-Karten (mit Antworten der Verdächtigen), Auflösung-Brief",
           "safetyRule": "Spuren nicht an gefährlichen Orten. Verhör-Karten kindgerecht (kein wirklicher Mord — der Hofnarr 'überlebt nach Trank-Vergiftung knapp').",
           "steps": [
-            {"n": 1, "name": "Tatbeschreibung", "content": "Ermittler Jonas: 'Heute Morgen wurde der Hofnarr bewusstlos im Burgturm gefunden — Trank-Vergiftung! 6 Verdächtige, 5 Spuren. Wer war es?'"},
-            {"n": 2, "name": "Verdächtige verhören", "content": "2er-Teams ziehen je 2 Verhör-Karten. Pro Karte: Verdächtiger-Antwort (mit Lügen-Hinweisen)."},
-            {"n": 3, "name": "Spuren-Suche durch die Burg", "content": "Teams suchen 5 Spuren in der Wohnung (Küche, Bibliothek, Burgturm = Schlafzimmer, Burggraben = Bad, Stall = Flur)."},
-            {"n": 4, "name": "Beweis-Verbindung", "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Detektiv-Bogen ausfüllen. Tee-Tasse spricht gegen Küchenmeisterin. Münze gegen Stallburschen."},
-            {"n": 5, "name": "Auflösung-Showdown", "content": "Jedes Team präsentiert seinen Tipp. Ermittler Jonas öffnet Auflösung-Brief: 'Es war die Hofdame Cornelia — Eifersucht, der Trank kam aus ihrer Apotheke.' Bonus-Punkte für korrektes Team."}
+            {
+              "n": 1,
+              "name": "Tatbeschreibung",
+              "content": "Ermittler Jonas: 'Heute Morgen wurde der Hofnarr bewusstlos im Burgturm gefunden — Trank-Vergiftung! 6 Verdächtige, 5 Spuren. Wer war es?'"
+            },
+            {
+              "n": 2,
+              "name": "Verdächtige verhören",
+              "content": "2er-Teams ziehen je 2 Verhör-Karten. Pro Karte: Verdächtiger-Antwort (mit Lügen-Hinweisen)."
+            },
+            {
+              "n": 3,
+              "name": "Spuren-Suche durch die Burg",
+              "content": "Teams suchen 5 Spuren in der Wohnung (Küche, Bibliothek, Burgturm = Schlafzimmer, Burggraben = Bad, Stall = Flur)."
+            },
+            {
+              "n": 4,
+              "name": "Beweis-Verbindung",
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Detektiv-Bogen ausfüllen. Tee-Tasse spricht gegen Küchenmeisterin. Münze gegen Stallburschen."
+            },
+            {
+              "n": 5,
+              "name": "Auflösung-Showdown",
+              "content": "Jedes Team präsentiert seinen Tipp. Ermittler Jonas öffnet Auflösung-Brief: 'Es war die Hofdame Cornelia — Eifersucht, der Trank kam aus ihrer Apotheke.' Bonus-Punkte für korrektes Team."
+            }
           ]
         },
         {
@@ -214,10 +614,26 @@
           "material": "10 Pool-Nudel-Schwerter, 3 Strohballen (verschiedene Entfernungen/Höhen), Wertungstafel, Mini-Pokale (3 Stk), Wanderpokal-Übergabe-Set",
           "safetyRule": "Schwerter nur am Strohballen. Übung pro Kind max 2 Min. Schutzbrille optional.",
           "steps": [
-            {"n": 1, "name": "Olympiade-Eröffnung", "content": "Schwert-Champion Mia: 'Wer holt sich den Ritter-Pokal? 3 Distanzen, 3 Schläge je Distanz, Punkte addieren.'"},
-            {"n": 2, "name": "3 Distanzen", "content": "Strohballen 1: 1m (leicht, 1 Pkt). 2: 2m mit Bewegung (mittel, 3 Pkt). 3: 3m mit Sprung (schwer, 5 Pkt)."},
-            {"n": 3, "name": "Final-Wertung", "content": "Bisherige Stations-Score + Schwert-Olympiade-Punkte = Gesamt. Auf Tafel sichtbar."},
-            {"n": 4, "name": "Olympiade-Sieger + Wanderpokal", "content": "Top 3 bekommen Mini-Pokale. Bestes Team bekommt Ritter-Pokal (geht 1 Jahr zum Sieger)."}
+            {
+              "n": 1,
+              "name": "Olympiade-Eröffnung",
+              "content": "Schwert-Champion Mia: 'Wer holt sich den Ritter-Pokal? 3 Distanzen, 3 Schläge je Distanz, Punkte addieren.'"
+            },
+            {
+              "n": 2,
+              "name": "3 Distanzen",
+              "content": "Strohballen 1: 1m (leicht, 1 Pkt). 2: 2m mit Bewegung (mittel, 3 Pkt). 3: 3m mit Sprung (schwer, 5 Pkt)."
+            },
+            {
+              "n": 3,
+              "name": "Final-Wertung",
+              "content": "Bisherige Stations-Score + Schwert-Olympiade-Punkte = Gesamt. Auf Tafel sichtbar."
+            },
+            {
+              "n": 4,
+              "name": "Olympiade-Sieger + Wanderpokal",
+              "content": "Top 3 bekommen Mini-Pokale. Bestes Team bekommt Ritter-Pokal (geht 1 Jahr zum Sieger)."
+            }
           ]
         }
       ],
@@ -225,43 +641,169 @@
       "decoration": "🏰 Riesiges 'Burg Schwarzfels'-Banner (Wow-Format)\n🛡️ Wappen-Wand 10 Schilde + Heraldik-Beispiele + Helmen\n⚔️ Schwert-Wand + Rüstungs-Imitat + Bogenschießen-Stand\n🐉 Lebensgroßer Pappkarton-Drache + Schatz-Box\n🕯️ LED-Fackeln + Kerzen + Tonkrüge + Kettenhemd-Stoff\n🎭 Mittelalter-Musik + Hurdy-Gurdy\n🪙 Verdächtigen-Wand (6 Foto-Profile)\n🏆 Wanderpokal-Wand + 3 Mini-Pokale + Foto-Bereich",
       "giveaways": "📜 Ritter-Diplom Klasse 2 mit Foto + Funktion\n🛡️ Eigenes Wappenschild (heraldisch)\n⚔️ Pool-Nudel-Schwert (60 cm)\n🏹 Mini-Bogen-Set + Saugnapf-Pfeile\n👑 Krone aus Goldkarton\n🌟 Ritter-Pin Bronze/Silber/Gold + Olympiade-Pin\n🪙 Schokoladentaler-Tüte XL\n📓 Mittelalter-Profi-Heft (Burgen, Heraldik, Ritter-Tugenden, Ermittler-Wissen) + Heraldik-Stift",
       "shoppingList": [
-        {"emoji": "🛡️", "label": "10 Premium-Schilde + Heraldik-Wow", "url": null, "priceEur": 45, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Wappen-Werkstatt XL."},
-        {"emoji": "⚔️", "label": "Pool-Nudel-Schwerter Premium + 3 Strohballen + Hindernis-Wow", "url": null, "priceEur": 55, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Parcours + Olympiade."},
-        {"emoji": "📜", "label": "Akademie-System Wow (Diplom Kl 2 + Pokale + Pins + Wanderpokal + Foto-Mappen)", "url": null, "priceEur": 60, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Wow-System."},
-        {"emoji": "🕵️", "label": "Burgenermittlung XXL (6 Verdächtige + 5 Spuren + Verhör-Karten + Auflösung)", "url": null, "priceEur": 35, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Krimi-Quest XXL."},
-        {"emoji": "🃏", "label": "Mittelalter-Quiz Klasse 2 XXL (30 Karten + Bonus)", "url": null, "priceEur": 20, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Quiz Wow."},
-        {"emoji": "🏹", "label": "3 Bogen Premium + Saugnapf-Pfeile + 10 Schutzbrillen + 2 Ziele", "url": null, "priceEur": 45, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Bogenschießen-Meisterschaft."},
-        {"emoji": "🐉", "label": "Großer Pappkarton-Drache + Schatz + Wow-Deko + Fackeln-LED", "url": null, "priceEur": 35, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Atmosphäre Wow."},
-        {"emoji": "🍕", "label": "Pizza-Lieferung + Wow-Mittelalter-Buffet", "url": null, "priceEur": 50, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "9-12 Wow-Buffet."},
-        {"emoji": "🎂", "label": "Burg-Kuchen XXL + Marzipan-Drache", "url": null, "priceEur": 20, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Wow-Kuchen."}
+        {
+          "emoji": "🛡️",
+          "label": "10 Premium-Schilde + Heraldik-Wow",
+          "url": null,
+          "priceEur": 45,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Wappen-Werkstatt XL."
+        },
+        {
+          "emoji": "⚔️",
+          "label": "Pool-Nudel-Schwerter Premium + 3 Strohballen + Hindernis-Wow",
+          "url": null,
+          "priceEur": 55,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Parcours + Olympiade."
+        },
+        {
+          "emoji": "📜",
+          "label": "Akademie-System Wow (Diplom Kl 2 + Pokale + Pins + Wanderpokal + Foto-Mappen)",
+          "url": null,
+          "priceEur": 60,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Wow-System."
+        },
+        {
+          "emoji": "🕵️",
+          "label": "Burgenermittlung XXL (6 Verdächtige + 5 Spuren + Verhör-Karten + Auflösung)",
+          "url": null,
+          "priceEur": 35,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Krimi-Quest XXL."
+        },
+        {
+          "emoji": "🃏",
+          "label": "Mittelalter-Quiz Klasse 2 XXL (30 Karten + Bonus)",
+          "url": null,
+          "priceEur": 20,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Quiz Wow."
+        },
+        {
+          "emoji": "🏹",
+          "label": "3 Bogen Premium + Saugnapf-Pfeile + 10 Schutzbrillen + 2 Ziele",
+          "url": null,
+          "priceEur": 45,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Bogenschießen-Meisterschaft."
+        },
+        {
+          "emoji": "🐉",
+          "label": "Großer Pappkarton-Drache + Schatz + Wow-Deko + Fackeln-LED",
+          "url": null,
+          "priceEur": 35,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Atmosphäre Wow."
+        },
+        {
+          "emoji": "🍕",
+          "label": "Pizza-Lieferung + Wow-Mittelalter-Buffet",
+          "url": null,
+          "priceEur": 50,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "9-12 Wow-Buffet."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Burg-Kuchen XXL + Marzipan-Drache",
+          "url": null,
+          "priceEur": 20,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Wow-Kuchen."
+        }
       ],
-      "costContext": "Geschätzte Kosten (Wow, 10 Kinder)"
+      "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",
+      "estimatedCostEur": 365,
+      "savingsTip": {
+        "title": "💡 Spar-Trick — wenn 365 € zu viel ist",
+        "body": "Bogenschießen-Set teuer (~45 € für 3 Bogen + Pfeile + 10 Schutzbrillen) — alternativ EIN Bogen + 1-Kind-Stationen-Logik (~18 €). LED-Fackeln nur 4 statt 10 (~−15 €). Wappenschilde selbst aus Pizza-Kartons + nur Stifte gekauft (~−25 €). Damit liegt Wow bei ~280-300 € statt 365 €."
+      }
     }
   ],
   "cakeRecipe": {
     "name": "Burg-Kuchen XXL mit 4 Türmen",
     "intro": "Ritter-thematisch für 9-12: Großer Schoko-Rührkuchen als Burg geformt, mit 4 Türmen aus Eishörnchen und Marzipan-Wappen drauf. Aufwendiger als bei den Jüngeren — passt zum Anspruch.",
     "steps": [
-      {"n": 1, "content": "Schoko-Rührteig (große Form): 350 g Mehl, 300 g Zucker, 250 g Butter, 5 Eier, 60 g Kakao, 1 Pck. Backpulver, 200 ml Milch."},
-      {"n": 2, "content": "In quadratischer Form backen (oder 2 rechteckige zusammenstellen). Bei 175°C ca. 55 Min."},
-      {"n": 3, "content": "Komplett auskühlen. Form: 4 Ecken bleiben, in der Mitte vertieft als Burghof."},
-      {"n": 4, "content": "Mit Schoko-Ganache überziehen."},
-      {"n": 5, "content": "4 Eishörnchen (umgekehrt) als Türme auf die 4 Ecken setzen. Mit Schokoladen-Drops verzieren als Zinnen."},
-      {"n": 6, "content": "Marzipan-Wappen (rot/blau) ausschneiden, mittig auf die Mauer-Fassade kleben (mit Zuckerguss)."},
-      {"n": 7, "content": "Optional: Marzipan-Drache als Höhepunkt auf einen Turm setzen. Schokoladen-Streusel als 'Burggraben' rundherum."}
+      {
+        "n": 1,
+        "content": "Schoko-Rührteig (große Form): 350 g Mehl, 300 g Zucker, 250 g Butter, 5 Eier, 60 g Kakao, 1 Pck. Backpulver, 200 ml Milch."
+      },
+      {
+        "n": 2,
+        "content": "In quadratischer Form backen (oder 2 rechteckige zusammenstellen). Bei 175°C ca. 55 Min."
+      },
+      {
+        "n": 3,
+        "content": "Komplett auskühlen. Form: 4 Ecken bleiben, in der Mitte vertieft als Burghof."
+      },
+      {
+        "n": 4,
+        "content": "Mit Schoko-Ganache überziehen."
+      },
+      {
+        "n": 5,
+        "content": "4 Eishörnchen (umgekehrt) als Türme auf die 4 Ecken setzen. Mit Schokoladen-Drops verzieren als Zinnen."
+      },
+      {
+        "n": 6,
+        "content": "Marzipan-Wappen (rot/blau) ausschneiden, mittig auf die Mauer-Fassade kleben (mit Zuckerguss)."
+      },
+      {
+        "n": 7,
+        "content": "Optional: Marzipan-Drache als Höhepunkt auf einen Turm setzen. Schokoladen-Streusel als 'Burggraben' rundherum."
+      }
     ],
-    "meta": {"aufwand": "100 Min inkl. Backen + Verzieren", "kosten": "ca. 14-18 €", "allergiker": "Marzipan = Mandeln (Nuss-Allergie!). Bei Lactose: pflanzliche Milch. Bei Gluten: glutenfreies Mehl."}
+    "meta": {
+      "aufwand": "100 Min inkl. Backen + Verzieren",
+      "kosten": "ca. 14-18 €",
+      "allergiker": "Marzipan = Mandeln (Nuss-Allergie!). Bei Lactose: pflanzliche Milch. Bei Gluten: glutenfreies Mehl."
+    }
   },
   "parentTips": {
     "structured": [
-      {"topic": "🥜 Marzipan = Mandeln", "detail": "Burg-Kuchen enthält Marzipan. Bei Nuss-/Mandel-Allergie unbedingt vorher fragen oder durch weißen Zuckerguss ersetzen."},
-      {"topic": "⚔️ Pool-Nudel-Schwerter, niemals Holz", "detail": "Auch mit 9-12: Schwerter nur aus Schaumstoff (Pool-Nudel). Holz oder Plastik mit Kanten = Verletzungsrisiko."},
-      {"topic": "🏹 Bogenschießen: Saugnapf + Schutzbrille Pflicht", "detail": "AUSSCHLIESSLICH Spielzeug-Bogen mit Saugnapf. Schutzbrille jedes Kind. 3 Meter Sicherheitsabstand. Niemals echte Pfeile."},
-      {"topic": "🕯️ LED statt Feuer", "detail": "Mittelalter-Atmosphäre nur mit LED-Kerzen + LED-Fackeln. Niemals echte Flammen bei Kinderparty."},
-      {"topic": "👥 Eltern absetzen reicht", "detail": "9-12 wollen Party ohne Eltern. 1-2 Erwachsene als Aufsicht (als 'Burgvogt' getarnt), Eltern telefonisch erreichbar."},
-      {"topic": "🏆 Wettbewerb-Stress vermeiden", "detail": "Sieger-Bonus klein halten, alle bekommen Diplom + Funktions-Eintrag. Niemand soll als Loser heimgehen."},
-      {"topic": "🕵️ Burgenermittlung kindgerecht", "detail": "Krimi-Quest mit 'Vergiftung-knapp-überlebt' statt Mord. Auch 9-12 brauchen kindgerechten Rahmen."},
-      {"topic": "📱 Partyseite statt WhatsApp-Chaos", "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite."}
+      {
+        "topic": "🥜 Marzipan = Mandeln",
+        "detail": "Burg-Kuchen enthält Marzipan. Bei Nuss-/Mandel-Allergie unbedingt vorher fragen oder durch weißen Zuckerguss ersetzen."
+      },
+      {
+        "topic": "⚔️ Pool-Nudel-Schwerter, niemals Holz",
+        "detail": "Auch mit 9-12: Schwerter nur aus Schaumstoff (Pool-Nudel). Holz oder Plastik mit Kanten = Verletzungsrisiko."
+      },
+      {
+        "topic": "🏹 Bogenschießen: Saugnapf + Schutzbrille Pflicht",
+        "detail": "AUSSCHLIESSLICH Spielzeug-Bogen mit Saugnapf. Schutzbrille jedes Kind. 3 Meter Sicherheitsabstand. Niemals echte Pfeile."
+      },
+      {
+        "topic": "🕯️ LED statt Feuer",
+        "detail": "Mittelalter-Atmosphäre nur mit LED-Kerzen + LED-Fackeln. Niemals echte Flammen bei Kinderparty."
+      },
+      {
+        "topic": "👥 Eltern absetzen reicht",
+        "detail": "9-12 wollen Party ohne Eltern. 1-2 Erwachsene als Aufsicht (als 'Burgvogt' getarnt), Eltern telefonisch erreichbar."
+      },
+      {
+        "topic": "🏆 Wettbewerb-Stress vermeiden",
+        "detail": "Sieger-Bonus klein halten, alle bekommen Diplom + Funktions-Eintrag. Niemand soll als Loser heimgehen."
+      },
+      {
+        "topic": "🕵️ Burgenermittlung kindgerecht",
+        "detail": "Krimi-Quest mit 'Vergiftung-knapp-überlebt' statt Mord. Auch 9-12 brauchen kindgerechten Rahmen."
+      },
+      {
+        "topic": "📱 Partyseite statt WhatsApp-Chaos",
+        "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite."
+      }
     ],
     "educationalValue": "Bei der Ritter-Akademie in 9-12 lernen die Kinder ECHTES Mittelalter-Wissen: Burgen-Architektur nach Lage (Höhenburg vs Wasserburg vs Niederungsburg; Spornburg/Gipfelburg als Unterkategorien) und Funktion (Bergfried = zentraler Wehrturm, Zinnen, Burggraben), Heraldik (Tinkturregel: Metall nie auf Metall, Farbe nie auf Farbe; klassisch max 2 Farben + 1 Metall), Ritter-Tugenden (Treue, Ehre, Tapferkeit, Mäßigung, Demut — keine Mut/Tapferkeit-Doppelung), Mittelalter-Berufe (Hofnarr, Burgvogt, Hufschmied, Bogner). Plus: Wettkampf-Fairness (Stoppuhr, Stilnote, Team-Pokal), Detektiv-Logik (Burgenermittlung mit Verdächtigen, Motiven, Spuren), Selbstständigkeit (Funktion, Prüfungs-Mappe). Das Ritter-Diplom ist nicht Spielzeug — die Kinder gehen mit echtem Mittelalter-Wissen heim."
   },
@@ -293,46 +835,172 @@
     }
   ],
   "preparationWeeks": {
-    "minus4Weeks": {"headline": "4 Wochen vorher", "items": [
-      {"icon": "📅", "title": "Datum + Uhrzeit", "detail": "Sa/So 14-18 für Wow, sonst 14-17."},
-      {"icon": "🔢", "title": "Gästezahl", "detail": "8-10 optimal."},
-      {"icon": "💌", "title": "Einladungen mit Akademie-Briefing-Vorinfo", "detail": "Allergie-Abfrage + Vorbereitungs-Tipp ('Mittelalter-Buch anschauen')."},
-      {"icon": "🏠", "title": "Ort + ggf. Mittelalter-Markt klären", "detail": "Wow-Highlight Markt-Besuch — 4 Wochen vorher Termin klären."}
-    ]},
-    "minus2Weeks": {"headline": "2 Wochen vorher", "items": [
-      {"icon": "📞", "title": "RSVP + Funktions-Verteilungs-Plan", "detail": "Funktionen vorbereiten."},
-      {"icon": "🥜", "title": "Allergien", "detail": "Marzipan-Warnung!"},
-      {"icon": "🛒", "title": "Material bestellen", "detail": "Akademie-System, Burgenermittlungs-Set, Bogenschießen, Wanderpokal."}
-    ]},
-    "minus1Week": {"headline": "1 Woche vorher", "items": [
-      {"icon": "📜", "title": "Prüfungs-Mappen + Funktions-Karten + Diplome drucken", "detail": "Mit Namen + 5-6 Stations-Feldern."},
-      {"icon": "🕵️", "title": "Burgenermittlung scripten", "detail": "Verdächtige + Motive + Alibis + Spuren-Verteilung planen, 2× durchspielen."},
-      {"icon": "🃏", "title": "Mittelalter-Quiz Klasse 2 erstellen", "detail": "25-30 Karten."},
-      {"icon": "🏆", "title": "Wanderpokal-Übergabe choreographieren", "detail": "Schwert-Schlag-Zeremonie vorbereiten."}
-    ]},
-    "minus2Days": {"headline": "2 Tage vorher", "items": [
-      {"icon": "🎂", "title": "Burg-Kuchen XXL backen", "detail": "Auskühlen, Verzieren am nächsten Tag."},
-      {"icon": "⚔️", "title": "Schwert-Parcours-Layout testen", "detail": "Hindernisse aufbauen + abmessen."},
-      {"icon": "🎒", "title": "5 Stationen vorbereiten", "detail": "Material pro Station bündeln."}
-    ]},
-    "minus1Day": {"headline": "1 Tag vorher", "items": [
-      {"icon": "🎂", "title": "Burg-Kuchen verzieren", "detail": "Türme, Wappen, Drache."},
-      {"icon": "🏰", "title": "Burgenermittlungs-Spuren verstecken", "detail": "In verschiedenen Räumen, gut aber findbar."},
-      {"icon": "🛡️", "title": "Akademie-Tafel aufhängen", "detail": "Namen-Felder + Wertungs-Spalten."}
-    ]},
-    "dayOf": {"headline": "Am Party-Tag", "items": [
-      {"icon": "🏰", "title": "Stationen aufbauen", "detail": "5 Stationen klar getrennt, Wertungs-Tafel zentral."},
-      {"icon": "🍽️", "title": "Pizza vorbestellt", "detail": "Lieferung 15:25 für 15:30 Pause."},
-      {"icon": "😮‍💨", "title": "Briefing-Spickzettel + Burgenermittlungs-Auflösung parat", "detail": "Briefing-Punkte + Auflösungs-Brief."}
-    ]}
+    "minus4Weeks": {
+      "headline": "4 Wochen vorher",
+      "items": [
+        {
+          "icon": "📅",
+          "title": "Datum + Uhrzeit",
+          "detail": "Sa/So 14-18 für Wow, sonst 14-17."
+        },
+        {
+          "icon": "🔢",
+          "title": "Gästezahl",
+          "detail": "8-10 optimal."
+        },
+        {
+          "icon": "💌",
+          "title": "Einladungen mit Akademie-Briefing-Vorinfo",
+          "detail": "Allergie-Abfrage + Vorbereitungs-Tipp ('Mittelalter-Buch anschauen')."
+        },
+        {
+          "icon": "🏠",
+          "title": "Ort + ggf. Mittelalter-Markt klären",
+          "detail": "Wow-Highlight Markt-Besuch — 4 Wochen vorher Termin klären."
+        }
+      ]
+    },
+    "minus2Weeks": {
+      "headline": "2 Wochen vorher",
+      "items": [
+        {
+          "icon": "📞",
+          "title": "RSVP + Funktions-Verteilungs-Plan",
+          "detail": "Funktionen vorbereiten."
+        },
+        {
+          "icon": "🥜",
+          "title": "Allergien",
+          "detail": "Marzipan-Warnung!"
+        },
+        {
+          "icon": "🛒",
+          "title": "Material bestellen",
+          "detail": "Akademie-System, Burgenermittlungs-Set, Bogenschießen, Wanderpokal."
+        }
+      ]
+    },
+    "minus1Week": {
+      "headline": "1 Woche vorher",
+      "items": [
+        {
+          "icon": "📜",
+          "title": "Prüfungs-Mappen + Funktions-Karten + Diplome drucken",
+          "detail": "Mit Namen + 5-6 Stations-Feldern."
+        },
+        {
+          "icon": "🕵️",
+          "title": "Burgenermittlung scripten",
+          "detail": "Verdächtige + Motive + Alibis + Spuren-Verteilung planen, 2× durchspielen."
+        },
+        {
+          "icon": "🃏",
+          "title": "Mittelalter-Quiz Klasse 2 erstellen",
+          "detail": "25-30 Karten."
+        },
+        {
+          "icon": "🏆",
+          "title": "Wanderpokal-Übergabe choreographieren",
+          "detail": "Schwert-Schlag-Zeremonie vorbereiten."
+        }
+      ]
+    },
+    "minus2Days": {
+      "headline": "2 Tage vorher",
+      "items": [
+        {
+          "icon": "🎂",
+          "title": "Burg-Kuchen XXL backen",
+          "detail": "Auskühlen, Verzieren am nächsten Tag."
+        },
+        {
+          "icon": "⚔️",
+          "title": "Schwert-Parcours-Layout testen",
+          "detail": "Hindernisse aufbauen + abmessen."
+        },
+        {
+          "icon": "🎒",
+          "title": "5 Stationen vorbereiten",
+          "detail": "Material pro Station bündeln."
+        }
+      ]
+    },
+    "minus1Day": {
+      "headline": "1 Tag vorher",
+      "items": [
+        {
+          "icon": "🎂",
+          "title": "Burg-Kuchen verzieren",
+          "detail": "Türme, Wappen, Drache."
+        },
+        {
+          "icon": "🏰",
+          "title": "Burgenermittlungs-Spuren verstecken",
+          "detail": "In verschiedenen Räumen, gut aber findbar."
+        },
+        {
+          "icon": "🛡️",
+          "title": "Akademie-Tafel aufhängen",
+          "detail": "Namen-Felder + Wertungs-Spalten."
+        }
+      ]
+    },
+    "dayOf": {
+      "headline": "Am Party-Tag",
+      "items": [
+        {
+          "icon": "🏰",
+          "title": "Stationen aufbauen",
+          "detail": "5 Stationen klar getrennt, Wertungs-Tafel zentral."
+        },
+        {
+          "icon": "🍽️",
+          "title": "Pizza vorbestellt",
+          "detail": "Lieferung 15:25 für 15:30 Pause."
+        },
+        {
+          "icon": "😮‍💨",
+          "title": "Briefing-Spickzettel + Burgenermittlungs-Auflösung parat",
+          "detail": "Briefing-Punkte + Auflösungs-Brief."
+        }
+      ]
+    }
   },
   "sosScenarios": {
-    "regen": {"icon": "🌧️", "label": "Regen", "headline": "Parcours komplett indoor — Flur als Strecke, Hindernisse im Wohnzimmer."},
-    "weniger_kinder_als_erwartet": {"icon": "👥", "label": "Weniger Kinder", "headline": "Mehr Stations-Zeit, Burgenermittlung mit 4 Verdächtigen statt 6."},
-    "mehr_kinder_als_erwartet": {"icon": "🚨", "label": "Mehr Kinder", "headline": "2 Stationen parallel, zweite Hand organisieren, Burgenermittlung in 3er-Teams."},
-    "burgenermittlung_zu_kompliziert": {"icon": "🕵️", "label": "Ermittlung zu kompliziert", "headline": "Zusatz-Hinweis-Karten verteilen, eine Spur direkt zuordnen, Auflösungs-Brief etwas früher öffnen."},
-    "kind_will_nicht_mitmachen": {"icon": "🤷", "label": "Kind verweigert", "headline": "'Burgwächter-Beobachter'-Funktion — bewertet als Schiedsrichter mit, bekommt Diplom."},
-    "kuchen_misslungen": {"icon": "🎂", "label": "Kuchen misslungen", "headline": "Bäcker-Kuchen + Marzipan-Wappen drauf — passt."},
-    "olympiade_zu_lange": {"icon": "⏱️", "label": "Olympiade dehnt sich", "headline": "Auf 2 Distanzen kürzen, jeder nur 2 Schläge je Distanz."}
+    "regen": {
+      "icon": "🌧️",
+      "label": "Regen",
+      "headline": "Parcours komplett indoor — Flur als Strecke, Hindernisse im Wohnzimmer."
+    },
+    "weniger_kinder_als_erwartet": {
+      "icon": "👥",
+      "label": "Weniger Kinder",
+      "headline": "Mehr Stations-Zeit, Burgenermittlung mit 4 Verdächtigen statt 6."
+    },
+    "mehr_kinder_als_erwartet": {
+      "icon": "🚨",
+      "label": "Mehr Kinder",
+      "headline": "2 Stationen parallel, zweite Hand organisieren, Burgenermittlung in 3er-Teams."
+    },
+    "burgenermittlung_zu_kompliziert": {
+      "icon": "🕵️",
+      "label": "Ermittlung zu kompliziert",
+      "headline": "Zusatz-Hinweis-Karten verteilen, eine Spur direkt zuordnen, Auflösungs-Brief etwas früher öffnen."
+    },
+    "kind_will_nicht_mitmachen": {
+      "icon": "🤷",
+      "label": "Kind verweigert",
+      "headline": "'Burgwächter-Beobachter'-Funktion — bewertet als Schiedsrichter mit, bekommt Diplom."
+    },
+    "kuchen_misslungen": {
+      "icon": "🎂",
+      "label": "Kuchen misslungen",
+      "headline": "Bäcker-Kuchen + Marzipan-Wappen drauf — passt."
+    },
+    "olympiade_zu_lange": {
+      "icon": "⏱️",
+      "label": "Olympiade dehnt sich",
+      "headline": "Auf 2 Distanzen kürzen, jeder nur 2 Schläge je Distanz."
+    }
   }
 }
