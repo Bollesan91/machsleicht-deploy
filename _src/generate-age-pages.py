@@ -187,7 +187,9 @@ def render_ritual(rit, brand):
         roles_html += "</ul>\n"
     opt_html = f'<div class="tip">💡 <strong>Opt-Out:</strong> {esc(opt)}</div>' if opt else ""
     mat_html = f'<div class="tip">🛒 <strong>Material:</strong> {esc(mat)}</div>' if mat else ""
-    return f"""  <h2>✨ Das {esc(name)}-Ritual (für alle 3 Varianten)</h2>
+    # Fix Welle 3: signatureRitual.name kann bereits "Die ..." enthalten → kein doppeltes "Das ... -Ritual"
+    h2_title = f"✨ {name}" if name.startswith(("Die ","Der ","Das ")) else f"✨ {name} — das Ritual"
+    return f"""  <h2>{esc(h2_title)} (für alle 3 Varianten)</h2>
   <div class="card">
     <h3>{esc(subtitle)}</h3>
     <p>{esc(intro)}</p>
@@ -497,11 +499,17 @@ def build_page(json_path, motto, age):
 
     variant_tabs = ""
     variant_panels = ""
+    # Fix Welle 3: Tab-Labels kurz halten. Phase-B-label kann lang sein
+    # ("Minimal — 3 Stunden, kompakte ..."). Nehmen wir nur das erste Wort vor dem em-dash.
+    tab_emoji = {"minimal":"⚡","standard":"🎯","wow":"✨"}
     for i, v in enumerate(variants):
         vid = v.get("id", f"v{i}")
-        lbl = v.get("label","Variante")
+        lbl_full = v.get("label","Variante")
+        # Tab-Label: erstes Wort/Slot vor em-dash/n-dash/hyphen
+        lbl_short = re.split(r'\s+[—–-]\s+', lbl_full, 1)[0].strip()
+        em = tab_emoji.get(vid, tab_emoji.get(lbl_short.lower(), "•"))
         cls = "active" if i == 0 else ""
-        variant_tabs += f'    <div class="variant-tab {cls}" onclick="showVariant(\'{esc(vid)}\')">{esc(lbl)}</div>\n'
+        variant_tabs += f'    <div class="variant-tab {cls}" onclick="showVariant(\'{esc(vid)}\')">{em} {esc(lbl_short)}</div>\n'
         variant_panels += render_variant_panel(v, i, brand, motto, active=(i==0)) + "\n"
 
     cake_html = render_cake(d.get("cakeRecipe",{}), brand)
