@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "1.0.0",
+    "version": "2.0.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v1 — Phase-B-Skelett. Template-Anker: feuerwehr-gross + pferde-mittel. Gross-Spezifika (3-4h, Eltern absetzen, echter Wettbewerb, Stallmeister-Prüfung als Quest) durchgängig angewandt. Helfer-v3-Iteration ausstehend."
+    "qualityNote": "v2 — Helfer-v3-Welle 1A+1B+1C+1D+1E abgeschlossen. Adversarial-Review-Scores: Pferde 87/100, Ritter 88/100 (Welle 3V). Beide Mottos ≥85 Ziel erreicht."
   },
   "motto": "pferde",
   "ageGroup": "gross",
@@ -276,13 +276,13 @@
           ],
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "Quiz-Karten in 3 Kategorien (Rassen, Pflege, Sicherheit) in Word selbst gestalten oder fertigem Set kaufen. Antwortbögen pro Kind + Quiz-Buzzer optional. 15 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: 8-10 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
-          "ageAdjust8": "Für 8-Jährige: 12 Karten, schwierigere Fragen mit Detail-Wissen (Pferderasse-Bestimmung, Pflege-Reihenfolge). Bonus-Stempel für Top-Quiz-Score.",
+          "prepText": "20 Quiz-Karten in 4 Kategorien (Rassen, Gangarten, Pflege, Krankheiten/Sicherheit). Bilder von Wikipedia (frei nutzbar) oder Pferde-Zeitschriften. Antwortbögen + Quiz-Buzzer optional. 20 Min Vorlauf.",
+          "ageAdjust6": "NICHT für 6 — Klasse 2 ist 9-12. Für Mischgruppe Pferde-Quiz Klasse 1 (12 Karten) aus pferde-mittel verwenden.",
+          "ageAdjust8": "Auch zu schwer — Pferde-Quiz Klasse 1 aus mittel-Variante ist passender für 8-Jährige.",
           "indoorTip": "Am Esstisch oder im Kreis am Boden — Quiz-Karten gut sichtbar hochhalten. Bei Smartphone-Buzzer: Lautsprecher-Modus.",
           "outdoorTip": null,
-          "whyItWorksTitle": "Warum Pferde-Quiz Klasse 1 bei 6-8 zieht",
-          "whyItWorks": "6-8 wollen ihr Pferde-Fachwissen zeigen — Rassen erkennen, Pflege-Regeln benennen ist die Identitäts-Bestätigung als \"echter Reiter\". Wichtig: keine Trickfragen, immer Erklärung warum die Antwort stimmt.",
+          "whyItWorksTitle": "Warum Pferde-Quiz Klasse 2 bei 9-12 funktioniert",
+          "whyItWorks": "9-12-Jährige haben echtes Pferde-Fachwissen aus Büchern, Pferde-Magazinen + YouTube-Pferde-Channels. Sie wollen Detail-Wissen zeigen (Friesen-Kennzeichen, Vollblut vs Warmblut, Jakobskreuzkraut-Gefahr, Pflege-Reihenfolge). Wichtig: keine Trickfragen, immer Erklärung warum die Antwort stimmt — das vertieft das Wissen statt nur abzufragen.",
           "quizCards": [
             {
               "kategorie": "Rassen",

@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "1.0.0",
+    "version": "2.0.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v1 — Phase-B-Skelett. Template-Anker: feuerwehr-mittel. Helfer-v3-Iteration noch ausstehend."
+    "qualityNote": "v2 — Helfer-v3-Welle 1A+1B+1C+1D+1E abgeschlossen. Adversarial-Review-Scores: Pferde 87/100, Ritter 88/100 (Welle 3V). Beide Mottos ≥85 Ziel erreicht."
   },
   "motto": "pferde",
   "ageGroup": "mittel",

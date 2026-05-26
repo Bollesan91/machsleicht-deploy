@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "1.0.0",
+    "version": "2.0.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v1 — Phase-B-Skelett. Template-Anker: feuerwehr-mittel + pferde-mittel. Helfer-v3-Iteration noch ausstehend."
+    "qualityNote": "v2 — Helfer-v3-Welle 1A+1B+1C+1D+1E abgeschlossen. Adversarial-Review-Scores: Pferde 87/100, Ritter 88/100 (Welle 3V). Beide Mottos ≥85 Ziel erreicht."
   },
   "motto": "ritter",
   "ageGroup": "mittel",
@@ -626,12 +626,12 @@
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "1 Kissen-Burg-Konstruktion (8-12 Kissen aufgestapelt zu Mauern und Türmen) + 6-8 weiche Stoffbälle als \"Belagerungs-Kugeln\". Sicherheits-Markierung auf dem Boden 1,5 m von der Burg. 15 Min Vorlauf für Burg-Aufbau.",
-          "ageAdjust6": "Bei 3-Jährigen: Kissen-Burg niedriger (max 80 cm), weichste Bälle ohne Schaumkern. Belagerung in 2 Wellen, alle gleichzeitig werfen.",
-          "ageAdjust8": "Bei 5-Jährigen: Burg höher (1 m), Belagerung in 3 Wellen mit Pause dazwischen für taktische Diskussion (\"wo gehen wir hin?\").",
+          "ageAdjust6": "Bei 6-Jährigen: Kissen-Burg niedriger (max 80 cm), weichste Bälle ohne Schaumkern. Belagerung in 2 Wellen, alle gleichzeitig werfen — kein Wettkampf.",
+          "ageAdjust8": "Bei 8-Jährigen: Burg höher (1,2 m), Belagerung in 3 Wellen mit taktischer Diskussion zwischen Wellen (\"wo ist die schwache Stelle?\"). Stempel für Team-Sieg.",
           "indoorTip": "Im Wohnzimmer mit großer Stoff-Decke unter der Burg — Kissen fallen weich. Möbel verschieben für 2 m Spielzone.",
           "outdoorTip": "Im Garten am besten — wenn die Burg fällt, fallen Kissen ins Gras, kein Geräusch-Stress.",
-          "whyItWorksTitle": "Warum Burg-Erstürmung der Ritter-Moment ist",
-          "whyItWorks": "Burg-Erstürmung ist der epische Ritter-Höhepunkt — Team-Sieg, sichtbarer Erfolg (Burg fällt zusammen), und der Stolz-Moment \"wir haben sie erobert\". Für 3-5-Jährige sicherer Übergang zu Wettkampf-Elementen."
+          "whyItWorksTitle": "Warum Burg-Erstürmung bei 6-8 zieht",
+          "whyItWorks": "6-8-Jährige wollen Action mit klarem Ziel — Burg fällt, sichtbarer Erfolg. Team-Element (alle helfen) baut Gruppendynamik, Taktik-Diskussion bei höheren Burgen fordert die wachsende Strategie-Fähigkeit dieser Altersgruppe."
         }
       ],
       "food": "🍖 Ritter-Spieße (2 Schalen)\n🥖 Kerker-Brote (Stockbrot)\n🍇 Trauben + Apfelschnitze\n🥤 Met-Schorle (3 L Apfel-/Trauben-Schorle in Tonbechern)\n🎂 Schild-Kuchen mit Wappen\n🥨 Salzstangen + Brezeln\n🧀 Käsewürfel (Ritter-Vorrat)\n🌭 Mini-Würstchen (Burg-Speise)",

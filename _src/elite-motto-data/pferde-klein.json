@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "1.0.0",
+    "version": "2.0.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v1 — Phase-B-Skelett. Template-Anker: feuerwehr-klein. Helfer-v3-Iteration noch ausstehend."
+    "qualityNote": "v2 — Helfer-v3-Welle 1A+1B+1C+1D+1E abgeschlossen. Adversarial-Review-Scores: Pferde 87/100, Ritter 88/100 (Welle 3V). Beide Mottos ≥85 Ziel erreicht."
   },
   "motto": "pferde",
   "ageGroup": "klein",
@@ -779,8 +779,8 @@
           "loudness": "mittel",
           "effort": "mittel",
           "prepText": "20-30 Karotten (echte oder Filz) in verschiedenen Räumen verstecken — vorab durch 2 Erwachsene platziert, Zettel mit Verstecken zur Sicherheit. Schatzkarten mit Hinweisen + Sammel-Eimer. 20 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: 20 Karotten, Verstecke offensichtlicher (Augenhöhe, klare Hinweise auf der Karte). 2er-Teams suchen gemeinsam.",
-          "ageAdjust8": "Für 8-Jährige: 30 Karotten, kniffligere Verstecke (höher/tiefer mit Logik). Zeitwertung + Stempel-Bonus.",
+          "ageAdjust6": "Für 3-Jährige: 10-15 Karotten, Verstecke offensichtlicher (Augenhöhe, niemand muss bücken). Erwachsene zeigt mit. Alle finden gemeinsam, niemand \"verliert\".",
+          "ageAdjust8": "Für 5-Jährige: 15-20 Karotten, leichte Verschachtelung der Verstecke (Hinweis-Karten helfen). Stempel für jedes Kind.",
           "indoorTip": "Karotten in verschiedenen Räumen verstecken (Wohnzimmer + Flur + Bad — nicht Schlafzimmer). Karte mit erlaubten Räumen markiert.",
           "outdoorTip": "Im Garten — Karotten in Sträuchern, unter Blumentopfen, an Geräten. Nicht im Boden vergraben (Erde-Schmutz).",
           "whyItWorksTitle": "Warum Karotten-Schatzsuche Reiterhof-Stimmung perfekt einfängt",

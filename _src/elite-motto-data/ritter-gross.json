@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "1.0.0",
+    "version": "2.0.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v1 — Phase-B-Skelett. Template-Anker: feuerwehr-gross + ritter-mittel. Gross-Spezifika (3-4h, Eltern absetzen, echter Wettbewerb, Burgenermittlung als Quest) durchgängig angewandt. Helfer-v3-Iteration ausstehend."
+    "qualityNote": "v2 — Helfer-v3-Welle 1A+1B+1C+1D+1E abgeschlossen. Adversarial-Review-Scores: Pferde 87/100, Ritter 88/100 (Welle 3V). Beide Mottos ≥85 Ziel erreicht."
   },
   "motto": "ritter",
   "ageGroup": "gross",
@@ -312,12 +312,12 @@
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "6-8 Pool-Nudel-Schwerter (50-60 cm) + 2-3 Strohballen (oder dicker Pappkarton) als Ziel + 4-6 Hindernisse (Slalom, Tunnel-Kissen, Spirale). Stoppuhr + Wertungsbogen. 15-20 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: Pool-Nudel 50 cm, max 4 Hindernisse, Schwert-Schlag nur am Strohballen (nie im Tunnel). Zeit \"zur Info\".",
-          "ageAdjust8": "Für 8-Jährige: 6 Hindernisse + Stilnote durch Heroldin. Schwert-Choreografie am Strohballen (3-Bewegungen-Folge).",
+          "ageAdjust6": "NICHT für 6 — 9-12-Schwert-Parcours mit Zeitmessung ist Akademie-Niveau. Bei Mischgruppe: einfachere Variante aus ritter-mittel ohne Stoppuhr.",
+          "ageAdjust8": "8-Jährige als Wow-Erweiterung möglich, aber Sprung-Block max 15 cm + Stilnote ohne Druck.",
           "indoorTip": "Im langen Flur als Schwert-Parcours-Strecke. Strohballen-Ersatz durch dicken Pappkarton mit Stoff überzogen.",
           "outdoorTip": "Im Garten als Reiter-Burg-Vorhof mit echtem Stroh-Akzent. Schwerter immer am Strohballen, nie aufs Kind.",
-          "whyItWorksTitle": "Warum Schwert-Parcours bei 6-8 zieht",
-          "whyItWorks": "6-8-Jährige wollen ihre Schwert-Kunst zeigen mit echtem Wettkampf-Element. Stoppuhr + Stilnote + Choreografie-Bewegung gibt Struktur. Pool-Nudel-Sicherheit + Strohballen-Ziel = niemand wird verletzt."
+          "whyItWorksTitle": "Warum Schwert-Parcours mit Stoppuhr bei 9-12 fordert",
+          "whyItWorks": "9-12 wollen echtes Turnier-Niveau — Stoppuhr + Stilnote + Choreografie-Bewegungen simulieren die Schwert-Sport-Welt aus YouTube und Mittelalter-Filmen. Pool-Nudel-Sicherheit erhält die Eltern-Akzeptanz, die Sicherheits-Regel \"nur am Strohballen\" wird konsequent durchgesetzt — sonst Schwerter-Pause."
         },
         {
           "name": "📜 Mittelalter-Quiz Klasse 2",
