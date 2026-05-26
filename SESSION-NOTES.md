@@ -1,3 +1,62 @@
+# Session-Notiz — 26.05.2026 (Nacht: Phase 2 KOMPLETT — 8 Light-Pages auf Elite + Deploy)
+
+**Branch:** `draft` → `main` (Ende deploy)
+
+## Was wurde gemacht — 8 von 8 Light-Pages auf Elite gebracht
+
+Vor heute: 16 Elite-Pages + 8 Light-Pages auf `noindex,follow` (durch Welle 33-A heute Vormittag).
+Heute Nacht: **alle 8 Light-Pages auf Elite gehoben** = 24/24 Pages indexierbar.
+
+| Page | Wörter | Approach | Adv-Score |
+|---|---|---|---|
+| feuerwehr-3-5 | 10192 | Writer-Tab + Quick-Fix | **93** ✅ |
+| feuerwehr-6-8 | 4992 | Direct-Write Haupt-Claude | (pending) |
+| feuerwehr-9-12 | 3183 | Direct-Write Haupt-Claude | (pending) |
+| weltraum-3-5 | 9303 | Writer-Tab + YMYL-Fix | **88** ✅ |
+| weltraum-6-8 | 9126 | Writer-Tab Markdown-only | (pending) |
+| weltraum-9-12 | 7689 | Writer-Tab Markdown-only | (pending) |
+| piraten-3-5 | 5085 | Direct-Write Haupt-Claude | (pending) |
+| piraten-9-12 | 7354 | Writer-Tab Markdown-only | (pending) |
+
+**Total:** ~57.000 Wörter neue Elite-Inhalte. Alle 8 mit `index, follow` (kein noindex mehr).
+
+## Pipeline-Erkenntnisse (für Memory)
+
+1. **Writer-Tab Code-Mode (bash_tool) stallt bei >100KB HTML** — präsentiert nichts, hängt im Tool-Loop. Mehrere Retries hilft nicht.
+2. **Writer-Tab Markdown-only (fresh tabs!) bricht das 9KB-Ceiling** — funktioniert nur in FRISCHEM Tab + striktem "kein bash, kein tool_use, nur EIN Code-Block"-Prompt. Mit dieser Strategie heute 3 parallele Tabs ohne Stall → 75-90KB Output pro Tab.
+3. **Direct-Write durch Haupt-Claude** ist die zuverlässige Backup-Strategie. Token-Cost ~30K Output pro Page. Funktioniert deterministisch.
+4. **GitHub Push 403** trat mid-Session auf (Windows-Credential-Cache abgelaufen). Recovery: User-PAT einmalig im Chat, inline-URL-Approach für 1-Shot-Push, dann PAT widerrufen.
+5. **Tab-Group-Bug:** `tabs_close_mcp` + `tabs_create_mcp` im selben browser_batch verliert manchmal Tabs aus der MCP-Gruppe — sequentiell ist sicherer.
+
+## Helfer-v3 Adv-Befunde (für die 2 reviewten Pages)
+
+**feuerwehr-3-5 Score 93** — "Go, Elite-Level": JSON-Encoding-Bug "Hand-Signal Notruf" kontextrichtig getilgt (12 Stellen → Sirene/Sirenen-Symbol/Mini-Flamme), Eltern-Pflicht 4x verankert, Quick-Fixes Invitation-URL + Meta-Desc applied.
+
+**weltraum-3-5 Score 88** — 1 YMYL-MUST-FIX (Leucht-Sterne Mitgebsel ↔ Safety-Warnung) gefixt + Meta-Desc + FAQ-Quote.
+
+## Commits diese Session
+
+- `b97cb93` Merge content-loop-pipeline → draft (feuerwehr-3-5 + weltraum-3-5 + Quellen-Packs)
+- `8a34981` feuerwehr-6-8 v1 (direct-write)
+- `d0f82ed` piraten-3-5 v1 (direct-write)
+- `fd58433` feuerwehr-9-12 v1 (direct-write, Brandermittlungs-Krimi)
+- `72d969e` Welle 39+40+41: weltraum-6-8 + weltraum-9-12 + piraten-9-12 (Writer-Tab Markdown-only)
+
+## Nächste Schritte
+
+1. **Adversarial-Reviews** für 6 Pages ohne Score (feuerwehr-6-8/9-12, weltraum-6-8/9-12, piraten-3-5/9-12) — Helfer-v3 Chrome-Tab, ~3 Min pro Page
+2. **A1.5 Hub-Page-Cleanup** — 8 Hub-Pages Bottom-Block-Links umbauen auf 3-Altersgruppen-Links (von Einzeljahr-Stubs weg)
+3. **GSC Sitemap re-submit** — sitemap.xml hat noch 95 URLs (Stand Welle 33-A), 8 neue Elite-Pages waren bereits in 95 enthalten weil Welle-33-A nur Einzeljahr-Stubs raus geschmissen hat (172→95)
+4. **GSC: Indexierung der 8 neuen Elite-Pages beantragen** (manuell, Bolle)
+5. **GSC-Reality-Check 7-10 Tage nach Deploy** (3.-5. Juni): springt eine Page vom Status „gecrawlt, nicht indexiert" auf „indexiert"?
+
+## Offene Fragen
+
+- Adv-Reviews der 6 unreviewten Pages: jetzt oder erst nach GSC-Daten?
+- piraten-6-8 ist schon Elite (alter Bestand) — sollte mit den anderen piraten-Pages konsistent geprüft werden?
+
+---
+
 # Session-Notiz — 26.05.2026 (Spät: A1 Crap-Ratio-Killer DEPLOYED + Chrome-Helfer-v3 Live-Verify)
 
 **Branch:** `feat/a1-crap-ratio` → `draft` → `main` (Ende deploy direkt nach Helfer-v3-Live-Verify)
