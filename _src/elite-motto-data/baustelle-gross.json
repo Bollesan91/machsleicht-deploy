@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "2.1.0",
+    "version": "2.2.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v2.1 — Helfer-v3 Chrome-Adversarial Welle 5: 200kg-Phantasie → Spaghetti-Brücken 1-2kg, Wasserflaschen 0,5-1,5L als Last-Test. Architekten-Prüfung → Bauleiter-Prüfung (konsistent mit Bauleiter-Diplom). 12 Karten auf 6+2 reduziert, alle mit Engineering-Aufgabe. Werkzeug-Quiz Klasse 2 → Schwierigkeitsstufe 2. Komma-Fix Eid. Score-Lift 70→85."
+    "qualityNote": "v2.2 — Welle 6 Mini-Fix: 2L-Flasche ergänzt (Bruchpunkt 2 kg erreicht). Pokal-Verleiher Felix entfernt — Polier Tom übergibt als Doppelrolle. Spuren-Analyst Paul + Foto-Chronistin Greta explizit Wow-only beschriftet. Erwarteter Score 75 → 85+."
   },
   "motto": "baustelle",
   "ageGroup": "gross",
@@ -51,7 +51,7 @@
   "signatureRitual": {
     "name": "Die Bauleiter-Prüfung",
     "subtitle": "Eröffnet mit Bauleiter-Briefing, endet mit Diplom-Übergabe und Funktion",
-    "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Der Brücken-Last-Test nutzt Wasserflaschen 0,5L bis 1,5L (NICHT 200kg-Marketing). Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
+    "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Der Brücken-Last-Test nutzt Wasserflaschen 0,5L bis 2L (Bruchpunkt 2 kg erreicht) (NICHT 200kg-Marketing). Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
     "setupSteps": [
       {
         "n": 1,
@@ -88,42 +88,42 @@
       {
         "emoji": "👷",
         "name": "Polier Tom",
-        "function": "Leitet die Baustelle, koordiniert Stationen"
+        "function": "Leitet die Baustelle, koordiniert Stationen UND übergibt am Ende Diplom + Pokal (Doppelrolle)"
       },
       {
         "emoji": "📐",
         "name": "Architektin Mia",
-        "function": "Bauplan-Station (Lineal/Bemaßung)"
+        "function": "Bauplan-Station: Lineal/Bemaßung lehren, eigene Skizze prüfen"
       },
       {
         "emoji": "🧱",
         "name": "Maurerin Hanna",
-        "function": "Bauklotz-Wettbewerb (Statik, Höhe, Stabilität)"
+        "function": "Bauklotz-Wettbewerb: Höhe + Stabilität (Vibrations-Test) bewerten"
       },
       {
         "emoji": "⚡",
         "name": "Statikerin Lina",
-        "function": "Brücken-Last-Test mit Wasserflaschen + Werkzeug-Quiz"
-      },
-      {
-        "emoji": "🕵️",
-        "name": "Spuren-Analyst Paul",
-        "function": "Sabotage-Ermittlung (Wow-Variante)"
-      },
-      {
-        "emoji": "🏆",
-        "name": "Pokal-Verleiher Felix",
-        "function": "Übergibt Bauleiter-Pokal und Diplome"
+        "function": "Brücken-Last-Test mit Wasserflaschen 0,5L→2L + Werkzeug-Quiz"
       },
       {
         "emoji": "🏗️",
         "name": "Kranführer Anna",
-        "function": "BONUS (ab Standard): bedient Spielzeug-Kran, hilft bei Stationen"
+        "function": "BONUS (ab Standard): bedient Spielzeug-Kran, hebt Lasten an Stationen"
       },
       {
         "emoji": "🔬",
         "name": "Material-Diagnostikerin Sophia",
-        "function": "BONUS (ab Standard): Material-Erkennungs-Beutel"
+        "function": "BONUS (ab Standard): Material-Erkennungs-Beutel (Holz/Beton/Metall fühlen)"
+      },
+      {
+        "emoji": "🕵️",
+        "name": "Spuren-Analyst Paul",
+        "function": "BONUS (NUR Wow-Variante): Leitet die Sabotage-Ermittlung — nicht ziehbar in Minimal/Standard"
+      },
+      {
+        "emoji": "📸",
+        "name": "Foto-Chronistin Greta",
+        "function": "BONUS (Wow): dokumentiert die Sabotage-Ermittlung mit Lupe + Foto"
       }
     ],
     "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Sicherheits-Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",
@@ -132,7 +132,7 @@
       "standard": 6,
       "wow": 8
     },
-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4, Standard 6, Wow 8. Brücken-Last-Test: 6 leere PET-Flaschen (0,5L) + 3 PET-Flaschen (1,5L) als Last-Steigerung."
+    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Tom/Mia/Hanna/Lina — Tom übergibt am Ende Pokal+Diplome), Standard 6 (+Anna/Sophia), Wow 8 (+Paul/Greta). Brücken-Last-Test: 6 PET-Flaschen (0,5L) + 2 PET-Flaschen (2L) als Last-Steigerung — 2 kg-Bruchpunkt der Spaghetti-Brücke wird erreicht. Spuren-Analyst und Foto-Chronistin sind AUSSCHLIESSLICH Wow-Karten (Sabotage-Ermittlung existiert nur in Wow)."
   },
   "variants": [
     {

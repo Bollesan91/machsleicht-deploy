@@ -114,6 +114,52 @@ def patch_ritter():
     save("ritter-gross.json", d)
     return "ritter-gross.json v2.2.0"
 
+# ─── BAUSTELLE-GROSS Welle 6 ────────────────────────────────────────
+def patch_baustelle():
+    d = load("baustelle-gross.json")
+    rit = d["signatureRitual"]
+    # Finding 1: 2kg-Schwelle vs 1,5L-Max → 2-L-Flasche ergänzen
+    for t in d["ageInsight"]["traits"]:
+        if "Spaghetti" in t.get("detail",""):
+            t["detail"] = t["detail"].replace("0,5L → 1,5L", "0,5L → 2L (durchgehend bis 2 kg)")
+            t["detail"] = t["detail"].replace("0,5 L → 1,5 L", "0,5L → 2L (durchgehend bis 2 kg)")
+            break
+    rit["introText"] = rit["introText"].replace("0,5L bis 1,5L", "0,5L bis 2L (Bruchpunkt 2 kg erreicht)")
+    rit["introText"] = rit["introText"].replace("0,5L → 1,5L", "0,5L → 2L")
+    # Finding 2+3: Pokal-Verleiher Felix raus (Füll-Rolle), Polier Tom übergibt Pokal als Doppelrolle.
+    # Spuren-Analyst Paul explizit Wow-only.
+    rit["rolesList"] = [
+        {"emoji": "👷", "name": "Polier Tom", "function": "Leitet die Baustelle, koordiniert Stationen UND übergibt am Ende Diplom + Pokal (Doppelrolle)"},
+        {"emoji": "📐", "name": "Architektin Mia", "function": "Bauplan-Station: Lineal/Bemaßung lehren, eigene Skizze prüfen"},
+        {"emoji": "🧱", "name": "Maurerin Hanna", "function": "Bauklotz-Wettbewerb: Höhe + Stabilität (Vibrations-Test) bewerten"},
+        {"emoji": "⚡", "name": "Statikerin Lina", "function": "Brücken-Last-Test mit Wasserflaschen 0,5L→2L + Werkzeug-Quiz"},
+        # BONUS-Karten
+        {"emoji": "🏗️", "name": "Kranführer Anna", "function": "BONUS (ab Standard): bedient Spielzeug-Kran, hebt Lasten an Stationen"},
+        {"emoji": "🔬", "name": "Material-Diagnostikerin Sophia", "function": "BONUS (ab Standard): Material-Erkennungs-Beutel (Holz/Beton/Metall fühlen)"},
+        {"emoji": "🕵️", "name": "Spuren-Analyst Paul", "function": "BONUS (NUR Wow-Variante): Leitet die Sabotage-Ermittlung — nicht ziehbar in Minimal/Standard"},
+        {"emoji": "📸", "name": "Foto-Chronistin Greta", "function": "BONUS (Wow): dokumentiert die Sabotage-Ermittlung mit Lupe + Foto"},
+    ]
+    rit["roleCountByVariant"] = {"minimal": 4, "standard": 6, "wow": 8}
+    rit["materialNote"] = (
+        "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am "
+        "'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Tom/Mia/Hanna/Lina — "
+        "Tom übergibt am Ende Pokal+Diplome), Standard 6 (+Anna/Sophia), Wow 8 (+Paul/Greta). "
+        "Brücken-Last-Test: 6 PET-Flaschen (0,5L) + 2 PET-Flaschen (2L) als Last-Steigerung — "
+        "2 kg-Bruchpunkt der Spaghetti-Brücke wird erreicht. "
+        "Spuren-Analyst und Foto-Chronistin sind AUSSCHLIESSLICH Wow-Karten (Sabotage-Ermittlung existiert nur in Wow)."
+    )
+    d["_meta"]["version"] = "2.2.0"
+    d["_meta"]["lastUpdated"] = "2026-05-26"
+    d["_meta"]["qualityNote"] = (
+        "v2.2 — Welle 6 Mini-Fix: 2L-Flasche ergänzt (Bruchpunkt 2 kg erreicht). "
+        "Pokal-Verleiher Felix entfernt — Polier Tom übergibt als Doppelrolle. "
+        "Spuren-Analyst Paul + Foto-Chronistin Greta explizit Wow-only beschriftet. "
+        "Erwarteter Score 75 → 85+."
+    )
+    save("baustelle-gross.json", d)
+    return "baustelle-gross.json v2.2.0"
+
 if __name__ == "__main__":
     print(patch_pferde())
     print(patch_ritter())
+    print(patch_baustelle())
