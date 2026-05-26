@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "2.2.0",
+    "version": "2.3.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v2.2 — Welle 6 Mini-Fix: Sophie/Zeitnehmerin aus Kern in Bonus (entlastet Minimal-Cap), Mia macht in Minimal Timing+Stilnote (Doppelaufgabe). minimal-cap auf 5 erhöht damit Felix als Pokal-Verleiher dabei. Doppel-Karten-Hinweis bei >5 Kindern in Minimal. Erwarteter Score 85+."
+    "qualityNote": "v2.3 — Welle 7 Elite-Push: 'Reit-Lehrerin' → 'Reitlehrerin' (Standard-Schreibweise), Team-Modell-Klausel in materialNote (8 Kinder / 5 Rollen), Kuchen-Zeit 90→120 Min (Pferdekopf-Schnitzen realistisch). Ziel-Score ≥85 nach Korrektur."
   },
   "motto": "pferde",
   "ageGroup": "gross",
@@ -51,7 +51,7 @@
   "signatureRitual": {
     "name": "Die Stallmeister-Prüfung",
     "subtitle": "Eröffnet mit Stallmeister-Briefing, endet mit Diplom-Übergabe und Funktion",
-    "introText": "Bei 9-12 funktioniert die Stallmeister-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Stallmeister-Anwärtern. Jeder zieht eine Funktions-Karte aus der Box (Pflege-Chefin Hanna, Reit-Lehrerin Mia, Hufschmied Jonas, Quizmaster Lina, Zeitnehmerin Sophie, Pokal-Verleiher Felix). Die Funktion wird gelebt — wer die Pflege-Karte zieht, leitet die Pflege-Station an. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Zeit, Stilnote, Quiz-Punkte). Am Ende: Diplom-Übergabe mit Funktion ('Stallmeister-Anwärter Klasse 1'), das beste Reit-Team bekommt den Wanderpokal.",
+    "introText": "Bei 9-12 funktioniert die Stallmeister-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Stallmeister-Anwärtern. Jeder zieht eine Funktions-Karte aus der Box (Pflege-Chefin Hanna, Reitlehrerin Mia, Hufschmied Jonas, Quizmaster Lina, Zeitnehmerin Sophie, Pokal-Verleiher Felix). Die Funktion wird gelebt — wer die Pflege-Karte zieht, leitet die Pflege-Station an. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Zeit, Stilnote, Quiz-Punkte). Am Ende: Diplom-Übergabe mit Funktion ('Stallmeister-Anwärter Klasse 1'), das beste Reit-Team bekommt den Wanderpokal.",
     "setupSteps": [
       {
         "n": 1,
@@ -92,7 +92,7 @@
       },
       {
         "emoji": "🏇",
-        "name": "Reit-Lehrerin Mia",
+        "name": "Reitlehrerin Mia",
         "function": "Kommandiert Reit-Parcours, gibt Stilnoten UND nimmt die Zeit mit Stoppuhr (in Minimal)"
       },
       {
@@ -127,7 +127,7 @@
       }
     ],
     "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",
-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Reiterhof-Tafel, Diplome, Wanderpokal an einem festen 'Stallmeister-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 5 (Hanna/Mia/Jonas/Lina/Felix — Mia macht in Minimal Timing+Stilnote), Standard 7 (+Sophie/Paul), Wow 8 (+Greta). Bei mehr als 5 Kindern in Minimal: zusätzliche Kinder ziehen Karte 'Pflege-Chefin' oder 'Reit-Lehrerin' als Team — Doppel-Karten erlaubt.",
+    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Reiterhof-Tafel, Diplome, Wanderpokal an einem festen 'Stallmeister-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 5 (Hanna/Mia/Jonas/Lina/Felix — Mia macht in Minimal Timing+Stilnote), Standard 7 (+Sophie/Paul), Wow 8 (+Greta). Bei mehr als 5 Kindern in Minimal: zusätzliche Kinder ziehen Karte 'Pflege-Chefin' oder 'Reitlehrerin' als Team — Doppel-Karten erlaubt. TEAM-MODELL: Bei 8 Kindern / 5 Rollen ziehen mehrere Kinder dieselbe Karte und arbeiten als Team (z.B. 2× Pflege-Chefin = 2 Kinder bewerten gemeinsam mit Hanna). Niemand bleibt ohne Funktion.",
     "roleCountByVariant": {
       "minimal": 5,
       "standard": 7,
@@ -994,7 +994,7 @@
       }
     ],
     "meta": {
-      "aufwand": "90 Min inkl. Backen + Verzieren",
+      "aufwand": "120 Min (Schnitzen + Crumb-Coat + Marzipan-Mähne) inkl. Backen + Verzieren",
       "kosten": "ca. 12-15 €",
       "allergiker": "Bei Ei-Allergie: vegan ersetzen. Marzipan = Mandeln (Vorsicht bei Nuss-Allergie!). Bei Lactose: pflanzliche Milch."
     },
