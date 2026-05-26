@@ -280,7 +280,7 @@
   ],
   "cakeRecipe": {
     "name": "Burg-Kuchen mit Türmen",
-    "intro": "Pferde-thematischer Kuchen: ein einfacher Kastenkuchen mit kleinen Waffel-Türmchen darauf und einem Schwert aus Zuckerguss als Highlight. Sieht aus wie eine Mini-Burg, schmeckt nach saftigem Geburtstagskuchen.",
+    "intro": "Burg-thematischer Kuchen: ein einfacher Kastenkuchen mit kleinen Waffel-Türmchen darauf und einem Schwert aus Zuckerguss als Highlight. Sieht aus wie eine Mini-Burg, schmeckt nach saftigem Geburtstagskuchen.",
     "steps": [
       {"n": 1, "content": "Marmor-Rührteig anrühren (250 g Mehl, 200 g Butter, 150 g Zucker, 4 Eier, 1 Pck. Backpulver). Hälfte mit 2 EL Kakao dunkel färben."},
       {"n": 2, "content": "Hellen und dunklen Teig abwechselnd in eine Kastenform geben. Mit Gabel einmal spiralig durchziehen."},
@@ -307,6 +307,8 @@
       {"topic": "👥 Ab 8 Kindern zweite Hand", "detail": "Bei 8+ Kindern brauchst du eine zweite erwachsene Begleitung — vor allem für Schwert-Akademie und Burg-Erstürmung."},
       {"topic": "📋 Plan B bei Regen", "detail": "Alle Spiele funktionieren komplett drinnen. Wappen-Schmücken am Tisch, Schwert-Übung im Flur, Burg-Erstürmung im Wohnzimmer."},
       {"topic": "⏱️ Aktion-Pause-Wechsel", "detail": "Nach 10 Min Bewegung: 15 Min Sitz-Aktivität (Schild bemalen, Snack-Pause). Sonst überdreht."},
+      {"topic": "🕯️ NIEMALS echte Flammen", "detail": "Mittelalter-Atmosphäre nur mit LED-Kerzen + LED-Fackeln. Echte Kerzen oder Fackeln sind bei einer 3-5-Kinderparty fahrlässig — Pappschilde, Stoff-Drache, Strohballen sind brennbar. Akku-LED-Fackeln gibt es ab 3 € pro Stück."},
+      {"topic": "🪑 Nachbarn vorwarnen bei Mietwohnung", "detail": "Burg-Erstürmung mit Pool-Nudel-Schwert-Klatschen wird LAUT. Bei Mietshaus: Nachbarn vorher kurz informieren und ggf. ein Stück Kuchen vorbeibringen. Spart Beschwerden."},
       {"topic": "📱 Partyseite statt WhatsApp-Chaos", "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite. Kostenlos."}
     ],
     "educationalValue": "Bei der Ritter-Party üben Kinder ganz nebenbei: Rolle annehmen und stolz sein (Ritter-Identität als Selbstwert), sanfte Bewegung (Schwertkampf-Regeln = Selbstkontrolle), Teamwork (gemeinsamer Drachen-Sieg, gemeinsame Burg-Erstürmung) und Selbstvertrauen (jeder wird gekrönt). Plus: die Wappen-Bastelei trainiert Feinmotorik und Farbsinn."

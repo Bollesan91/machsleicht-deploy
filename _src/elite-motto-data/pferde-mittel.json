@@ -16,7 +16,7 @@
       {"topic": "Wettbewerb (sanft)", "detail": "Stations-Quiz mit Punkten ist OK. Aber: Keine harten Sieger/Verlierer-Logiken. Alle bekommen eine Reiter-Lizenz, aber wer am gründlichsten arbeitet, bekommt einen Bonus-Stempel."},
       {"topic": "Selbstständigkeit", "detail": "Kinder können selbst Schleifen binden, Pony pflegen, Quiz-Antworten geben. Erwachsene leiten, aber Kinder machen es selbst."},
       {"topic": "Bewegung", "detail": "Hindernis-Parcours mit Steckenpferden, Hufeisen-Werfen mit Wettkampf-Logik. Bewegung und Konzentration im Wechsel."},
-      {"topic": "Sicherheit", "detail": "Echtes Pony erstmals möglich AB 7 JAHREN — und nur mit erfahrenen Pony-Führern. Bei 6-Jährigen besser Plüsch + Steckenpferd. Bei echtem Pony: Helm Pflicht, niemals allein."},
+      {"topic": "Sicherheit", "detail": "Geführtes Pony-Sitzen (Profi hält das Pony) ist auf Reiterhöfen schon ab 3-4 Jahren etabliert. Selbstständiges Reiten erst ab 7-8. Bei 6-Jährigen besser Plüsch + Steckenpferd zu Hause, ECHTES Pony nur auf Reiterhof mit Reitlehrer. Helm-Pflicht bei jedem Pony-Kontakt — keine Ausnahme."},
       {"topic": "Gruppendynamik", "detail": "2-3er-Teams für Pflege-Stationen funktionieren gut. Bei Wettkampf-Spielen: max 2 Min pro Kind, sonst kippt es."}
     ]
   },
@@ -243,7 +243,7 @@
   "parentTips": {
     "structured": [
       {"topic": "🥜 Allergien VOR der Party abfragen", "detail": "Carrot Cake kann Nüsse enthalten. Müsli, Pizza — alle gängigen Allergene möglich."},
-      {"topic": "🐴 Echtes Pony ab 7 Jahre, mit Profi", "detail": "Bei 6-Jährigen besser Plüsch + Steckenpferd. Bei 7-8 echtes Pony möglich, aber NUR mit erfahrenen Pony-Führern und Helm-Pflicht."},
+      {"topic": "🐴 Pony-Reiten alters-differenziert", "detail": "Geführtes Pony-Sitzen (Profi hält das Pony) ist auf Reiterhöfen ab 3-4 Jahren etabliert — für 6-8-Jährige perfekt. SELBSTSTÄNDIGES Reiten erst ab 7-8 mit Reitlehrer. Helm-Pflicht ohne Ausnahme bei JEDEM Pony-Kontakt — niemals 'nur kurz drauf sitzen' ohne Helm."},
       {"topic": "🎀 Wolle ohne Drahtkern", "detail": "Beim Mähnen-Flechten kein Filzdraht oder Bastel-Draht — Verletzungsgefahr."},
       {"topic": "👥 Ab 8 Kindern zweite Hand", "detail": "Bei 8+ Kindern eine zweite erwachsene Begleitung für Stationen-Wechsel."},
       {"topic": "📋 Plan B bei Regen", "detail": "Alle Stationen funktionieren drinnen. Parcours im Flur/Wohnzimmer."},
@@ -272,7 +272,7 @@
     },
     {
       "q": "Wie schwer macht man das Pferde-Quiz?",
-      "a": "Einfache Bilder + 2-3 Antwortmöglichkeiten. Beispiel: 'Welches Tier ist das?' Bild: Pony. Optionen: Hund, Pony, Katze. Mit 8 Jahren auch: 'Welche Mähnenfarbe hat ein Apfelschimmel?' (weiß-grau)."
+      "a": "Einfache Bilder + 2-3 Antwortmöglichkeiten. Beispiel: 'Welches Tier ist das?' Bild: Pony. Optionen: Hund, Pony, Katze. Mit 8 Jahren auch: 'Welche Farbe hat ein Rappe?' (schwarz) oder 'Wie nennt man das Pferde-Baby?' (Fohlen). Keine Trickfragen zu Schimmel-Untertypen — die verwirren sogar Erwachsene."
     },
     {
       "q": "Funktioniert das auch in einer kleinen Wohnung?",

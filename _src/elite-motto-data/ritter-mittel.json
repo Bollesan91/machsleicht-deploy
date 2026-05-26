@@ -12,7 +12,7 @@
     "whyMottoFits": "Mit 6-8 wollen Kinder nicht mehr nur kämpfen — sie wollen DAZUGEHÖREN. Eine Ritter-Party in diesem Alter bedient das perfekt: Sie werden zu 'Knappen' ernannt, lernen Wappen-Design, durchlaufen Schwert-Übungen, bestehen das Burgen-Quiz und werden am Ende zum 'Ritter ohne Furcht' geschlagen. Identifikation: 'Ich bin Ritter, ich habe die Prüfungen bestanden.' Wertvoll: Mittelalter-Wissen wird beiläufig gelernt.",
     "traits": [
       {"topic": "Aufmerksamkeit", "detail": "20-30 Min. pro Station mit klarem Ausbildungs-Ziel. Wappen-Werkstatt, Quiz, Schwert-Parcours — alle mit Knappen-Stempeln. Nach 30 Min Wechsel."},
-      {"topic": "Wissensdurst", "detail": "6-8 wollen Fakten lernen. Burgen-Teile (Bergfried, Zinnen, Burggraben), Ritter-Werte (Treue, Mut, Ehre), Mittelalter-Berufe. Einfache aber ECHTE Information."},
+      {"topic": "Wissensdurst", "detail": "6-8 wollen Fakten lernen. Burgen-Teile (Bergfried = zentraler Wehrturm, Zinnen, Burggraben), Ritter-Werte (Treue, Ehre, Tapferkeit, Mäßigung — nicht Mut/Tapferkeit doppelt), Mittelalter-Berufe (Knappe, Burgvogt, Schmied). Einfache aber ECHTE Information."},
       {"topic": "Wettbewerb (sanft)", "detail": "Schwert-Parcours mit Punkten ist OK. Aber: Keine Sieger/Verlierer-Logik beim Kampf. Alle bekommen Knappen-Brief, wer am gründlichsten arbeitet, bekommt Ritter-Schlag-Bonus."},
       {"topic": "Selbstständigkeit", "detail": "Kinder können selbst Wappen entwerfen, Quiz beantworten, Schwert-Übungen durchlaufen. Erwachsene leiten, aber Kinder gestalten selbst."},
       {"topic": "Bewegung", "detail": "Schwert-Parcours mit Pool-Nudeln, Drachen-Schatzsuche, Burg-Erstürmung. Bewegung und Konzentration im Wechsel."},
@@ -68,7 +68,7 @@
           "safetyRule": "Stifte ohne giftige Inhalte. Vor Beginn aufmalen lassen, dann Farbe.",
           "steps": [
             {"n": 1, "name": "Wappen-Inspiration", "content": "Zeig 5 echte Ritter-Wappen-Beispiele (Löwe, Adler, Schwert, Stern, Rose). Erkläre: 'Das Wappen sagt: Wer bist du?'"},
-            {"n": 2, "name": "Wappen entwerfen", "content": "Jedes Kind entwirft eigenes Wappen mit max 2 Symbolen + 2 Farben."},
+            {"n": 2, "name": "Wappen entwerfen", "content": "Jedes Kind entwirft eigenes Wappen mit max 1 Tier-Symbol + 2 Farben + optional 1 Metall (Gold/Silber). Faustregel: Metall (Gold/Silber) nie direkt auf Metall, Farbe nicht auf Farbe — das ist die echte Tinkturregel."},
             {"n": 3, "name": "Wappen vorstellen", "content": "Jedes Kind erklärt sein Wappen kurz: 'Mein Wappen zeigt einen Löwen, weil ich mutig bin.'"},
             {"n": 4, "name": "Stempel für Knappen-Brief", "content": "Alle bekommen Stempel 1."}
           ]
@@ -82,7 +82,7 @@
           "material": "12 Quiz-Karten mit Bildern (Burgteile, Ritter-Werte, Mittelalter-Berufe, Tiere), Antwortbogen pro Kind",
           "safetyRule": "Sitz-Spiel, keine Sicherheit nötig.",
           "steps": [
-            {"n": 1, "name": "Quiz-Karten zeigen", "content": "Du zeigst Karte, alle Kinder antworten gleichzeitig oder auf Antwortbogen. Beispiel: 'Welcher Turm ist der höchste in der Burg?' (Bergfried)"},
+            {"n": 1, "name": "Quiz-Karten zeigen", "content": "Du zeigst Karte, alle Kinder antworten gleichzeitig oder auf Antwortbogen. Beispiel: 'Welcher Turm ist der zentrale Wehrturm einer Burg, in den sich die Burgbewohner im Angriff zurückzogen?' (Bergfried) — Funktion, nicht Höhe."},
             {"n": 2, "name": "Antworten besprechen", "content": "Bei falscher Antwort: erklären und nochmal versuchen lassen. Wissen vermitteln, nicht prüfen."},
             {"n": 3, "name": "Stempel für Knappen-Brief", "content": "Bei 8 von 12 richtig: Stempel 2. Sonst: 'Knappen-Wissen wächst noch' (alle bekommen Stempel)."}
           ]
@@ -103,7 +103,7 @@
         }
       ],
       "food": "🍖 Ritter-Spieße (Käse-Schinken-Spieße)\n🥖 Kerker-Brote (Stockbrot vom Buffet)\n🍇 Ritter-Trauben + Apfelschnitze\n🥤 Met-Schorle (Apfelschorle in Tonbechern, 2 L)\n🎂 Schild-Kuchen (mit Wappen aus Zuckerguss)\n🥨 Salzstangen",
-      "decoration": "🏰 'Burg Eichenfels'-Schild\n🛡️ 6 vorgefertigte Wappenschilde an Wänden\n⚔️ Pool-Nudel-Schwerter am Eingang\n🐉 Pappkarton-Drache als Deko\n🕯️ LED-Kerzen (Burg-Atmosphäre)\n🎭 Mittelalter-Musik im Hintergrund",
+      "decoration": "🏰 'Burg Schwarzfels'-Schild\n🛡️ 6 vorgefertigte Wappenschilde an Wänden\n⚔️ Pool-Nudel-Schwerter am Eingang\n🐉 Pappkarton-Drache als Deko\n🕯️ LED-Kerzen (Burg-Atmosphäre)\n🎭 Mittelalter-Musik im Hintergrund",
       "giveaways": "📜 Ritter-Brief mit Namen + Wappen\n🛡️ Eigenes gestaltetes Wappenschild (Pappschild)\n⚔️ Pool-Nudel-Schwert (Schaumstoff)\n👑 Mini-Krone aus Pappkarton\n🍪 Burg-Kekse",
       "shoppingList": [
         {"emoji": "🛡️", "label": "6 Pappschilde + Wappenfarben", "url": null, "priceEur": 15, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Wappen-Werkstatt-Kern."},
@@ -166,7 +166,7 @@
         }
       ],
       "food": "🍖 Ritter-Spieße (2 Schalen)\n🥖 Kerker-Brote (Stockbrot)\n🍇 Trauben + Apfelschnitze\n🥤 Met-Schorle (3 L Apfel-/Trauben-Schorle in Tonbechern)\n🎂 Schild-Kuchen mit Wappen\n🥨 Salzstangen + Brezeln\n🧀 Käsewürfel (Ritter-Vorrat)\n🌭 Mini-Würstchen (Burg-Speise)",
-      "decoration": "🏰 'Burg Eichenfels'-Banner\n🛡️ 8 Wappenschilde an Wänden\n⚔️ Schwert-Wand\n🐉 Großer Pappkarton-Drache\n🕯️ LED-Kerzen + Kronleuchter-Imitat\n🎭 Mittelalter-Musik\n👑 5 Stationen-Schilder",
+      "decoration": "🏰 'Burg Schwarzfels'-Banner\n🛡️ 8 Wappenschilde an Wänden\n⚔️ Schwert-Wand\n🐉 Großer Pappkarton-Drache\n🕯️ LED-Kerzen + Kronleuchter-Imitat\n🎭 Mittelalter-Musik\n👑 5 Stationen-Schilder",
       "giveaways": "📜 Großer Ritter-Brief\n🛡️ Eigenes Wappenschild\n⚔️ Pool-Nudel-Schwert\n👑 Krone aus Goldkarton\n🪙 Schokoladentaler-Tüte\n🍪 Burg-Kekse",
       "shoppingList": [
         {"emoji": "🛡️", "label": "8 Pappschilde + Bastel-Material", "url": null, "priceEur": 22, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Wappen + Mitgebsel."},
@@ -228,7 +228,7 @@
         }
       ],
       "food": "🎂 Großer Ritter-Schild-Kuchen mit Marzipan-Wappen\n🍖 Ritter-Spieße (3 Schalen)\n🥖 Stockbrot vom Lagerfeuer (oder Pfannen-Imitat)\n🍇 Trauben + Apfel + Birne\n🥤 Met-Schorle (4 L)\n🌭 Ritter-Würstchen\n🥨 Salzstangen + Brezeln + Käse",
-      "decoration": "🏰 Großes 'Burg Eichenfels'-Banner\n🛡️ Wappen-Wand mit 10 Schilden\n⚔️ Schwert-Wand + Bogenschießen-Bereich\n🐉 Großer Pappkarton-Drache (lebensgroß)\n🕯️ LED-Kerzen + Fackeln (LED!)\n🎭 Mittelalter-Musik + Kronleuchter-Imitat\n👑 6 Stationen-Schilder\n🏆 Pokal-Wand",
+      "decoration": "🏰 Großes 'Burg Schwarzfels'-Banner\n🛡️ Wappen-Wand mit 10 Schilden\n⚔️ Schwert-Wand + Bogenschießen-Bereich\n🐉 Großer Pappkarton-Drache (lebensgroß)\n🕯️ LED-Kerzen + Fackeln (LED!)\n🎭 Mittelalter-Musik + Kronleuchter-Imitat\n👑 6 Stationen-Schilder\n🏆 Pokal-Wand",
       "giveaways": "📜 Großer Ritter-Brief Klasse 1+2 mit Foto\n🛡️ Eigenes Wappenschild + Ritter-Heft\n⚔️ Pool-Nudel-Schwert\n👑 Goldkarton-Krone\n🌟 Ritter-Pin (Bronze/Silber/Gold je nach Olympiade)\n🪙 Schokoladentaler-Tüte\n🍪 Burg-Kekse + Ritter-Stift",
       "shoppingList": [
         {"emoji": "🛡️", "label": "10 Pappschilde + Premium-Bastel", "url": null, "priceEur": 32, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Wappen + Mitgebsel."},
@@ -267,9 +267,9 @@
       {"topic": "🕯️ LED-Kerzen statt Echtflammen", "detail": "Für die Burg-Atmosphäre nur LED. Niemals echte Kerzen / Fackeln bei einer Kinderparty."},
       {"topic": "📱 Partyseite statt WhatsApp-Chaos", "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite."}
     ],
-    "educationalValue": "Bei der Ritter-Party in 6-8 lernen die Kinder ECHTES Wissen: Burgen-Architektur (Bergfried, Zinnen, Burggraben), Ritter-Werte (Treue, Mut, Ehre, Hilfe für Schwächere), Mittelalter-Berufe (Knappe, Hofnarr, Burgwächter, Schmied). Plus: Selbstständigkeit (eigenes Wappen-Design, eigener Knappen-Brief) und Teamwork (Burg-Erstürmung als Gruppen-Spiel, Drachen-Schatzsuche in 2er-Teams). Der Knappen-Brief mit Stempeln trainiert Verantwortung, der Ritter-Schlag am Ende ist ein Stolz-Moment, der lange bleibt."
+    "educationalValue": "Bei der Ritter-Party in 6-8 lernen die Kinder ECHTES Wissen: Burgen-Architektur (Bergfried = zentraler Wehrturm, Zinnen, Burggraben), Ritter-Werte (Treue, Ehre, Tapferkeit, Mäßigung — ohne Doppelung), Mittelalter-Berufe (Knappe, Hofnarr, Burgwächter, Schmied). Plus: Selbstständigkeit (eigenes Wappen-Design mit Tinkturregel) und Teamwork (Burg-Erstürmung als Gruppen-Spiel, Drachen-Schatzsuche in 2er-Teams). Der Knappen-Brief mit Stempeln trainiert Verantwortung, der Ritter-Schlag am Ende ist ein Stolz-Moment, der lange bleibt."
   },
-  "invitationTemplate": "🏰 Burg-Einladung: 'Hört, hört, tapfere Knappen! [Name] wird [Alter] und lädt zur Ritter-Ausbildung auf Burg Eichenfels ein! Wann: [Datum, Uhrzeit]. Wo: [Adresse]. Mitbringen: Mut, gute Laune und ein eigenes Wappen-Tier im Kopf! Bitte bis [Datum] melden. So sei es! ⚔️'",
+  "invitationTemplate": "🏰 Burg-Einladung: 'Hört, hört, tapfere Knappen! [Name] wird [Alter] und lädt zur Ritter-Ausbildung auf Burg Schwarzfels ein! Wann: [Datum, Uhrzeit]. Wo: [Adresse]. Mitbringen: Mut, gute Laune und ein eigenes Wappen-Tier im Kopf! Bitte bis [Datum] melden. So sei es! ⚔️'",
   "faq": [
     {
       "q": "Sind Pool-Nudel-Schwerter wirklich sicher?",
