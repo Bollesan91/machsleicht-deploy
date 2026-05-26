@@ -1,3 +1,80 @@
+# Session-Notiz — 26.05.2026 (Spät-Nacht: Phase 3 Wave 1 + Planer-Cleanup + Schatzsuche-Hub-Fix + Deploy)
+
+**Branch:** `draft` → `main` (Ende deploy)
+
+## Was wurde gemacht
+
+### Phase 3 Wave 1: dschungel + feen Voll-Mottos (8 neue Pages)
+
+Strategie: Writer-Tab Markdown-only in 3 frischen Tabs parallel, Direct-Write Haupt-Claude für die Hubs.
+
+| Page | Wörter (geschätzt) | Approach | Status |
+|---|---|---|---|
+| dschungel-3-5 | ~8.500 | Writer-Tab (vorher gepusht) | ✅ live |
+| dschungel-6-8 | ~7.100 | Writer-Tab (vorher gepusht) | ✅ live |
+| dschungel-9-12 | 76 KB / ~10K Wörter | Writer-Tab + Blob-Extract | ✅ live (f6ef8a4) |
+| feen-3-5 | ~7.400 | Direct-Write (vorher gepusht) | ✅ live |
+| feen-6-8 | 83 KB / ~11K Wörter | Writer-Tab + Blob-Extract | ✅ live (f6ef8a4) |
+| feen-9-12 | 64 KB / ~8K Wörter | Writer-Tab + Blob-Extract | ✅ live (f6ef8a4) |
+| **dschungel.html** Hub | ~14 KB | Direct-Write Haupt-Claude | ✅ live (f6ef8a4) |
+| **feen.html** Hub | ~16 KB | Direct-Write Haupt-Claude | ✅ live (f6ef8a4) |
+
+**Total neue Elite-Inhalte heute Phase 3:** ~55 K Wörter. Keine Adv-Reviews durchgeführt — User hat 2 Reviews angekündigt, prüfung folgt.
+
+### Planer-Cleanup (Direkt-User-Befund)
+
+User-Befund: "Vom Planer kann man auch noch zu Charaktere (Lizenzmottos) switchen" → Toggle war dead UI (LICENSE-Array seit 29.04.2026 leer).
+
+- `_src/kindergeburtstag.jsx`: Toggle-UI entfernt, Filter vereinfacht auf `GENERIC.map(...)`
+- `js/kindergeburtstag.js`: Compiled-Code entsprechend gepatcht (live ohne Build-Step)
+- Empty-State + mottoTab-State bleiben als harmless dead code
+
+### Schatzsuche-Hub-Fix (Vorgängiger Commit da1632c)
+
+User-Befund: "Irgendwas stimmt mit dem schatzsuche nicht" → Page war auf MVP-Stand mit 6/13 Themen + obsoletem "Feuerwehr-Schatzsuche kommt als nächstes"-Text. Alle 13 Themes verlinkt, Count + Copy korrigiert.
+
+### Registry + Sitemap
+
+- `js/theme-registry.js`: +dschungel (#43A047) +feen (#CE93D8), beide `modules:['planner','treasure']`
+- `sitemap.xml`: +8 URLs (2 Hubs + 6 Age-Pages)
+- ⚠️ **Bekanntes Inkonsistenz-Issue:** pferde/ritter/baustelle fehlen ebenfalls in theme-registry.js — separater Konsistenz-Fix-Bedarf
+
+## Commits diese Session
+
+- `8553535` content-loop Welle 42+43+45: dschungel-3-5 + dschungel-6-8 + feen-3-5 v1
+- `da1632c` schatzsuche.html: 13 Schatzsuche-Themen vollständig verlinkt
+- `f6ef8a4` Phase 3 Wave 1 + Charaktere-Toggle entfernt [skip netlify → wird mit Ende-deploy live]
+
+## Pipeline-Erkenntnisse
+
+1. **GitHub Push 403 erneut** — Windows-Credential-Cache abgelaufen, User-PAT inline-URL Recovery wie beim ersten Mal heute. PAT-Widerruf-Reminder gegeben.
+2. **Writer-Tab Markdown-only in frischen Tabs funktioniert verlässlich** — 3 parallele Tabs, alle 3 mit endsClean=`</html>`, 64-83 KB Output je Tab.
+3. **Direct-Write fuer Hubs deterministisch** — 14-16 KB pro Hub-Page in einem Write-Call, kein Token-Risk.
+
+## GSC-Reminder (PFLICHT-Workflow neu eingeführt 2026-05-26)
+
+Nach JEDEM Deploy der `sitemap.xml` ändert MUSS Claude den User erinnern an:
+1. Sitemap neu einreichen in Google Search Console (machsleicht + machsruhig)
+2. URL-Indexierung beantragen für neue URLs (max ~10/Tag)
+
+Memory-File: `feedback_gsc_sitemap_reminder.md`.
+
+## Nächste Schritte
+
+1. **User-Reviews** der 2 angekündigten Reviews durch Haupt-Claude einarbeiten
+2. **Adv-Reviews** für die 8 neuen Phase-3-Pages (Helfer-v3 Chrome-Tab) — alle pending
+3. **pferde/ritter/baustelle in theme-registry.js nachpflegen** (Konsistenz-Issue)
+4. **GSC: Indexierung der 8 neuen Phase-3-URLs beantragen** (manuell, Bolle)
+5. **GSC: Sitemap neu einreichen** (manuell, Bolle)
+6. **GSC-Reality-Check 7-10 Tage nach Deploy** (3.-5. Juni)
+
+## Offene Fragen
+
+- Welche Reviews zeigt der User? Adv-Reviews der Phase-3-Pages oder etwas anderes?
+- Adv-Reviews der 8 Phase-3-Pages: jetzt oder erst nach GSC-Daten?
+
+---
+
 # Session-Notiz — 26.05.2026 (Nacht: Phase 2 KOMPLETT — 8 Light-Pages auf Elite + Deploy)
 
 **Branch:** `draft` → `main` (Ende deploy)

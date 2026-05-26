@@ -1947,21 +1947,11 @@ function App() {
 
           {/* Step 2: Motto */}
           <div style={{ marginBottom: 24 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-              <div style={{ fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb" }}>
-                <span style={{ color: "var(--a)", marginRight: 6 }}>②</span> Motto wählen
-              </div>
-              <div style={{ display: "flex", gap: 4 }}>
-                {[["generic", "🎨 Klassisch"], ["license", "⭐ Charaktere"]].map(([val, label]) => (
-                  <button key={val} onClick={() => { setMottoTab(val); setMottoId(null); }} style={{
-                    padding: "4px 10px", fontSize: 11, fontWeight: 600, border: "none", borderRadius: 100,
-                    background: mottoTab === val ? "var(--a)" : "#f0ede8", color: mottoTab === val ? "#fff" : "#999", cursor: "pointer",
-                  }}>{label}</button>
-                ))}
-              </div>
+            <div style={{ fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#bbb", marginBottom: 10 }}>
+              <span style={{ color: "var(--a)", marginRight: 6 }}>②</span> Motto wählen
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(90px, 1fr))", gap: 6 }}>
-              {(mottoTab === "generic" ? GENERIC : filteredLicense).map((m) => (
+              {GENERIC.map((m) => (
                 <button key={m.id} onClick={() => { setMottoId(m.id); window.plausible && plausible("motto-selected", { props: { motto: m.id } }); }} style={{
                   position: "relative", display: "flex", flexDirection: "column", alignItems: "center", gap: 4,
                   padding: "12px 6px 10px", background: mottoId === m.id ? m.color + "12" : "#fff",
@@ -1970,13 +1960,9 @@ function App() {
                 }}>
                   <span style={{ fontSize: 24 }}>{m.emoji}</span>
                   <span style={{ fontSize: 10, fontWeight: 600, color: mottoId === m.id ? m.color : "#666" }}>{m.name}</span>
-                  {m.cat === "license" && <span style={{ fontSize: 9, color: mottoId === m.id ? m.color : "#999", background: mottoId === m.id ? m.color + "15" : "#f5f5f5", padding: "1px 6px", borderRadius: 100 }}>{m.ages[0]}–{m.ages[m.ages.length - 1]} J.</span>}
                   {mottoId === m.id && <span style={{ position: "absolute", top: -5, right: -5, width: 18, height: 18, borderRadius: "50%", background: m.color, color: "#fff", fontSize: 10, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 2px 8px ${m.color}50` }}>✓</span>}
                 </button>
               ))}
-              {mottoTab === "license" && filteredLicense.length === 0 && (
-                <div style={{ padding: 16, color: "var(--m)", fontSize: 13 }}>Für {age} Jahre keine Lizenz-Mottos verfügbar.</div>
-              )}
             </div>
           </div>
 

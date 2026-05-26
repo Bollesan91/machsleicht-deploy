@@ -148,6 +148,28 @@
       treasureUrl: null,
       plannerUrl: '/kindergeburtstag/meerjungfrau',
       invitationUrl: '/einladung/meerjungfrau'
+    },
+    dschungel: {
+      slug: 'dschungel',
+      label: 'Dschungel',
+      emoji: '\u{1F334}',
+      color: '#43A047',
+      modules: ['planner', 'treasure'],
+      licenseRisk: 'none',
+      treasureUrl: '/schatzsuche/dschungel',
+      plannerUrl: '/kindergeburtstag/dschungel',
+      invitationUrl: null
+    },
+    feen: {
+      slug: 'feen',
+      label: 'Feen',
+      emoji: '\u{1F9DA}',
+      color: '#CE93D8',
+      modules: ['planner', 'treasure'],
+      licenseRisk: 'none',
+      treasureUrl: '/schatzsuche/feen',
+      plannerUrl: '/kindergeburtstag/feen',
+      invitationUrl: null
     }
   };
 
