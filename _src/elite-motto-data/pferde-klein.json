@@ -216,13 +216,13 @@
           ],
           "loudness": "leise",
           "effort": "hoch",
-          "prepText": "Material pro Kind in einzelnen Bündeln vorportionieren (Pappkarton, Stifte, Wolle) — sonst gibt es 10 Min Streit ums Material. Schürzen oder alte T-Shirts bereitstellen. 20-30 Min Vorlauf.",
-          "ageAdjust6": "Vorgefertigte Vorlagen + große Aufkleber statt Frei-Design. Jedes Kind kann sein Werk fertigstellen, kein Druck zu Perfektion.",
-          "ageAdjust8": "Eigene Konzept-Phase (5 Min Plan zeichnen) + freies Gestalten. Wer fertig ist, kann mit zusätzlichen Details weitermachen.",
-          "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Farben, Klebepunkte, Stifte griffbereit. Trocken-Bereich planen (auf der Seite, niemand stolpert drüber).",
-          "outdoorTip": "Im Garten an einem Klapptisch — Sonne + Schatten je nach Material (Klebe mag keine Sonne). Wind-Schutz bei kleinen Teilen.",
-          "whyItWorksTitle": "Warum Bastelei der heimliche Höhepunkt ist",
-          "whyItWorks": "Bastel-Stationen schaffen echte Mitnehm-Stücke (das eigene Wappen, der gemalte Schild) und sind die ruhigste Phase einer Party. Eltern lieben es, weil das Kind danach ein Foto-würdiges Werk hat. Kinder lieben es, weil sie etwas Eigenes machen statt nur konsumieren."
+          "prepText": "6-8 Plüsch-Ponys in einem Kreis-Setup vorbereiten (auf Decke oder Stuhl-Stuhl-Reihe). Bürsten, Filz-Schleifen pro Pony bereitstellen. 10 Min Vorlauf — diese Phase ist die Ruhe-Insel des Tages.",
+          "ageAdjust6": "Bei 3-Jährigen: Erwachsene hält das Pony, Kind streichelt nur. Pflege-Aufgabe (Bürsten) ist optional, niemand muss \"richtig\" bürsten.",
+          "ageAdjust8": "Streichel-Runde nicht primär für 8-Jährige — die wollen schon richtige Pflege. Falls Mischgruppe: ältere Kinder bekommen die \"Pony-Lehrer\"-Rolle und zeigen jüngeren wie man bürstet.",
+          "indoorTip": "Im Kreis auf dem Wohnzimmerteppich — Ponys in der Mitte. Eltern sitzen am Rand als Stall-Helfer für ruhige Stimmung.",
+          "outdoorTip": "Auf einer großen Picknick-Decke im Garten — schöne Foto-Kulisse mit Sonnenblumen-Hintergrund.",
+          "whyItWorksTitle": "Warum Plüsch-Pony-Streicheln 3-5-Jährige begeistert",
+          "whyItWorks": "Das Plüsch-Pony wird zur eigenen Verantwortung — das Kind übernimmt eine Tier-Pflegerinnen-Rolle ohne echtes Tier-Risiko. Diese Magie funktioniert besonders bei 3-5, weil sie sich identifizieren (\"mein Pony\"), aber das Plüsch-Tier nicht erschrickt oder beißt. Beruhigender Moment zwischen aktiveren Spielen."
         },
         {
           "name": "🌾 Hufeisen-Werfen",
@@ -420,13 +420,13 @@
           ],
           "loudness": "leise",
           "effort": "hoch",
-          "prepText": "Material pro Kind in einzelnen Bündeln vorportionieren (Pappkarton, Stifte, Wolle) — sonst gibt es 10 Min Streit ums Material. Schürzen oder alte T-Shirts bereitstellen. 20-30 Min Vorlauf.",
-          "ageAdjust6": "Vorgefertigte Vorlagen + große Aufkleber statt Frei-Design. Jedes Kind kann sein Werk fertigstellen, kein Druck zu Perfektion.",
-          "ageAdjust8": "Eigene Konzept-Phase (5 Min Plan zeichnen) + freies Gestalten. Wer fertig ist, kann mit zusätzlichen Details weitermachen.",
-          "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Farben, Klebepunkte, Stifte griffbereit. Trocken-Bereich planen (auf der Seite, niemand stolpert drüber).",
-          "outdoorTip": "Im Garten an einem Klapptisch — Sonne + Schatten je nach Material (Klebe mag keine Sonne). Wind-Schutz bei kleinen Teilen.",
-          "whyItWorksTitle": "Warum Bastelei der heimliche Höhepunkt ist",
-          "whyItWorks": "Bastel-Stationen schaffen echte Mitnehm-Stücke (das eigene Wappen, der gemalte Schild) und sind die ruhigste Phase einer Party. Eltern lieben es, weil das Kind danach ein Foto-würdiges Werk hat. Kinder lieben es, weil sie etwas Eigenes machen statt nur konsumieren."
+          "prepText": "6 Plüsch-Ponys + Wolle in 3-4 Farben + Filz-Schleifen + Klebepunkte vorbereiten. Wolle ohne Drahtkern (Verletzungsgefahr) — Klebepunkte statt Nadel und Faden. 15 Min Vorlauf.",
+          "ageAdjust6": "Bei 3-Jährigen: Eltern flechten vor, Kind klebt nur Schleifen. Wolle-Stränge sind vor-zugeschnitten (kein Schere-Stress).",
+          "ageAdjust8": "Für 5-Jährige: einfache Wickel-Technik (Wolle einmal um Mähne), eine Schleife pro Pony. Frisuren-Ergebnis wird gewürdigt, nicht bewertet.",
+          "indoorTip": "Am niedrigen Tisch — Kinder sitzen auf dem Boden. Spiegel daneben damit Kind die Pony-Frisur stolz anschauen kann.",
+          "outdoorTip": "Im Garten an einem Klapptisch, aber: Wolle bei Wind festkleben oder in Box arbeiten.",
+          "whyItWorksTitle": "Warum Mähnen-Flechten 3-5 lange beschäftigt",
+          "whyItWorks": "Feinmotorisch herausfordernd genug für Konzentration (10-15 Min), aber niedrige Frustrations-Schwelle (Klebepunkt statt Knoten). Plus: das Ergebnis nimmt jedes Kind mit nach Hause — das eigene gestylte Pony."
         },
         {
           "name": "🌾 Hufeisen-Werfen (Team-Version)",
@@ -525,13 +525,13 @@
           ],
           "loudness": "leise",
           "effort": "hoch",
-          "prepText": "Material pro Kind in einzelnen Bündeln vorportionieren (Pappkarton, Stifte, Wolle) — sonst gibt es 10 Min Streit ums Material. Schürzen oder alte T-Shirts bereitstellen. 20-30 Min Vorlauf.",
-          "ageAdjust6": "Vorgefertigte Vorlagen + große Aufkleber statt Frei-Design. Jedes Kind kann sein Werk fertigstellen, kein Druck zu Perfektion.",
-          "ageAdjust8": "Eigene Konzept-Phase (5 Min Plan zeichnen) + freies Gestalten. Wer fertig ist, kann mit zusätzlichen Details weitermachen.",
-          "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Farben, Klebepunkte, Stifte griffbereit. Trocken-Bereich planen (auf der Seite, niemand stolpert drüber).",
-          "outdoorTip": "Im Garten an einem Klapptisch — Sonne + Schatten je nach Material (Klebe mag keine Sonne). Wind-Schutz bei kleinen Teilen.",
-          "whyItWorksTitle": "Warum Bastelei der heimliche Höhepunkt ist",
-          "whyItWorks": "Bastel-Stationen schaffen echte Mitnehm-Stücke (das eigene Wappen, der gemalte Schild) und sind die ruhigste Phase einer Party. Eltern lieben es, weil das Kind danach ein Foto-würdiges Werk hat. Kinder lieben es, weil sie etwas Eigenes machen statt nur konsumieren."
+          "prepText": "1 großes Plüsch-Pony (50+ cm) als Mittelpunkt — oder 2 mittlere. Kinder-Kreis vorab geübt (Stuhl-Stellung). 5 Min Vorlauf — kurzes Eröffnungs-Ritual, nicht Haupt-Phase.",
+          "ageAdjust6": "Bei 3-Jährigen: Eltern sitzen DAHINTER, nicht im Kreis — sonst werden Kinder unsicher. Pony wird reihum weitergegeben, jedes Kind hat 30 Sek-1 Min Streichel-Zeit.",
+          "ageAdjust8": "Mit Mischgruppe 3-5: das größere Kind hilft dem kleineren das Pony \"richtig\" zu streicheln. Identifikation als Helfer.",
+          "indoorTip": "Im Wohnzimmer-Sofa-Halbkreis — alle sehen das Pony. Musik (sanfte Pferdehof-Playlist) im Hintergrund verstärkt Atmosphäre.",
+          "outdoorTip": "Im Garten auf Decken im Kreis — Sonnenblumen oder Stroh-Bunde als Reiterhof-Kulisse.",
+          "whyItWorksTitle": "Warum dieses Eröffnungs-Ritual den Tag setzt",
+          "whyItWorks": "Der erste Stations-Moment definiert die Stimmung. Ein gemeinsamer ruhiger Streichel-Kreis signalisiert: heute geht es um Pferde und Sanftheit. Funktioniert besser als hyperaktive Begrüßung, weil Kinder nach Anreise oft schon übererregt sind."
         }
       ],
       "food": "🥕 Karotten-Sticks (2 Schalen)\n🍎 Apfelschnitze (2 Schalen)\n🥣 Hafer-Müsli in Kornsäckchen (8 Stk)\n🥤 Pferde-Schorle (3 L)\n🎂 Hufeisen-Kuchen (Kastenkuchen)\n🥨 Salzstangen + Brezeln\n🧀 Käsewürfel",
@@ -703,13 +703,13 @@
           ],
           "loudness": "leise",
           "effort": "hoch",
-          "prepText": "Material pro Kind in einzelnen Bündeln vorportionieren (Pappkarton, Stifte, Wolle) — sonst gibt es 10 Min Streit ums Material. Schürzen oder alte T-Shirts bereitstellen. 20-30 Min Vorlauf.",
-          "ageAdjust6": "Vorgefertigte Vorlagen + große Aufkleber statt Frei-Design. Jedes Kind kann sein Werk fertigstellen, kein Druck zu Perfektion.",
-          "ageAdjust8": "Eigene Konzept-Phase (5 Min Plan zeichnen) + freies Gestalten. Wer fertig ist, kann mit zusätzlichen Details weitermachen.",
-          "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Farben, Klebepunkte, Stifte griffbereit. Trocken-Bereich planen (auf der Seite, niemand stolpert drüber).",
-          "outdoorTip": "Im Garten an einem Klapptisch — Sonne + Schatten je nach Material (Klebe mag keine Sonne). Wind-Schutz bei kleinen Teilen.",
-          "whyItWorksTitle": "Warum Bastelei der heimliche Höhepunkt ist",
-          "whyItWorks": "Bastel-Stationen schaffen echte Mitnehm-Stücke (das eigene Wappen, der gemalte Schild) und sind die ruhigste Phase einer Party. Eltern lieben es, weil das Kind danach ein Foto-würdiges Werk hat. Kinder lieben es, weil sie etwas Eigenes machen statt nur konsumieren."
+          "prepText": "8-10 Plüsch-Ponys + Wolle in 6+ Farben + Glitzer-Stifte + Sticker-Sets + Spiegel pro 2-Kinder-Team + Frisur-Karten zur Inspiration. 25 Min Vorlauf — diese Wow-Station braucht viel Material.",
+          "ageAdjust6": "Bei 3-Jährigen: nicht für die Wow-Variante gedacht — bei Mischgruppe nur als Beobachter dazu setzen, ältere zeigen.",
+          "ageAdjust8": "Für 5-Jährige als Premium-Aktivität: 3 Frisur-Optionen anbieten (Schweif-Locken, klassischer Zopf, wilde Mähne), Kind wählt. Spiegel-Vorführung am Ende.",
+          "indoorTip": "Mehrere Stationen-Tische im Wohnzimmer + Esszimmer — jede Station 2 Ponys. Catwalk-Linie mit Klebeband für Vorführung.",
+          "outdoorTip": "Im Garten unter Pavillon — Glitzer-Stifte und Wolle dürfen nicht im Wind verloren gehen.",
+          "whyItWorksTitle": "Warum eine Frisuren-Werkstatt der Wow-Anker ist",
+          "whyItWorks": "Wow-Erlebnis bei Pferdefans = Premium-Pflege-Phase mit echten Frisur-Optionen. Foto-würdiges Ergebnis, Stolz-Moment beim Catwalk-Vorführen. Wirkt wie eine echte Reiterhof-Vorbereitung auf ein Turnier."
         },
         {
           "name": "🧠 Pony-Quiz",
