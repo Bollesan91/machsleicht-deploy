@@ -122,6 +122,26 @@ function escJson(str) {
   if (!str) return "";
   return String(str).replace(/\\/g,"\\\\").replace(/"/g,'\\"').replace(/\n/g,"\\n").replace(/\r/g,"\\r");
 }
+// P0-Security: Wunsch-URL-Validation. Verhindert javascript:/data:/vbscript:/file:-Protokoll-Injection.
+// Whitelist: nur http:/https:. Längenlimit 500. Bei invalid → "" (= kein Link).
+function normalizeWishUrl(rawUrl) {
+  if (!rawUrl || typeof rawUrl !== "string") return "";
+  const trimmed = rawUrl.trim().slice(0, 500);
+  if (!trimmed) return "";
+  try {
+    const u = new URL(trimmed);
+    // Nur http und https — javascript:, data:, file:, vbscript:, blob:, etc. blockieren
+    if (u.protocol !== "http:" && u.protocol !== "https:") return "";
+    // http → https upgrade (Sicherheit + Mixed-Content-Verhinderung)
+    if (u.protocol === "http:") u.protocol = "https:";
+    return u.toString();
+  } catch {
+    return ""; // Invalid URL
+  }
+}
+function isSafeUrl(s) {
+  return typeof s === "string" && (s.startsWith("https://") || s.startsWith("http://"));
+}
 
 // ═══════════════════════════════════════════════════════════════
 // MAIN ROUTER
@@ -150,7 +170,7 @@ export default {
         askAllergies: body.askAllergies!==false,
         askPickup: body.askPickup!==false,
         wishes: (body.wishes||[]).slice(0,MAX_WISHES).map(w=>({
-          id: generateId(6), title:(w.title||"").slice(0,100), url:(w.url||"").slice(0,500),
+          id: generateId(6), title:(w.title||"").slice(0,100), url:normalizeWishUrl(w.url),
           price:(w.price||"").slice(0,20), sharedGift:!!w.sharedGift, claimedBy:[]
         })).filter(w=>w.title),
         guests: [],
@@ -198,7 +218,7 @@ export default {
       ["childName","age","motto","mottoEmoji","mottoColor","date","time","endTime","address","notes","askAllergies","askPickup","paypalMe","email"].forEach(f=>{if(body[f]!==undefined)party[f]=body[f];});
       if (Array.isArray(body.wishes)) {
         party.wishes = body.wishes.slice(0,MAX_WISHES).map(w=>({
-          id:w.id||generateId(6),title:(w.title||"").slice(0,100),url:(w.url||"").slice(0,500),
+          id:w.id||generateId(6),title:(w.title||"").slice(0,100),url:normalizeWishUrl(w.url),
           price:(w.price||"").slice(0,20),sharedGift:!!w.sharedGift,claimedBy:w.claimedBy||[]
         }));
       }
@@ -385,6 +405,9 @@ export default {
       const party = JSON.parse(raw);
       const wish = (party.wishes||[]).find(w=>w.id===wishId);
       if (!wish||!wish.url) return Response.redirect("https://machsleicht.de",302);
+      // P0-Security: Defense-in-Depth — auch beim Redirect nochmal Protokoll prüfen,
+      // falls alter KV-State noch unsanitierte URLs enthält
+      if (!isSafeUrl(wish.url)) return Response.redirect("https://machsleicht.de",302);
       return Response.redirect(affiliateUrl(wish.url,env),302);
     }
 
@@ -843,6 +866,7 @@ document.getElementById("heroZoomOut").addEventListener("click",function(){var s
 document.getElementById("heroZoomIn").addEventListener("click",function(){var step=(_heroMaxScale-_heroMinScale)/15;_heroScale=Math.min(_heroMaxScale,_heroScale+step);_redrawHero();_updateHeroTrack();});
 document.getElementById("circZoomOut").addEventListener("click",function(){var step=(_circMaxScale-_circMinScale)/15;_circScale=Math.max(_circMinScale,_circScale-step);_redrawCircle();_updateCircTrack();});
 document.getElementById("circZoomIn").addEventListener("click",function(){var step=(_circMaxScale-_circMinScale)/15;_circScale=Math.min(_circMaxScale,_circScale+step);_redrawCircle();_updateCircTrack();});
+function _escAttr(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
 function addWish(){
   if(wishes.length>=20){alert("Max. 20 W\u00FCnsche");return;}
   wishes.push({id:"w"+Date.now().toString(36),title:"",url:"",price:"",sharedGift:false});renderWishes();
@@ -852,10 +876,10 @@ function renderWishes(){
   document.getElementById("wishList").innerHTML=wishes.map(function(w,i){
     return '<div style="border:1px solid var(--l);border-radius:12px;padding:12px;margin-bottom:8px;position:relative">'
       +'<button onclick="removeWish(\\x27'+w.id+'\\x27)" style="position:absolute;top:8px;right:8px;background:none;border:none;font-size:18px;cursor:pointer;color:var(--m)">\u00D7</button>'
-      +'<div class="field"><label>Geschenk '+(i+1)+'</label><input type="text" placeholder="z.B. LEGO City" oninput="wishes.find(x=>x.id===\\x27'+w.id+'\\x27).title=this.value" value="'+w.title+'"></div>'
-      +'<div class="field"><label>Link (optional)</label><input type="url" placeholder="https://amazon.de/..." oninput="wishes.find(x=>x.id===\\x27'+w.id+'\\x27).url=this.value" value="'+w.url+'"></div>'
+      +'<div class="field"><label>Geschenk '+(i+1)+'</label><input type="text" placeholder="z.B. LEGO City" oninput="wishes.find(x=>x.id===\\x27'+w.id+'\\x27).title=this.value" value="'+_escAttr(w.title)+'"></div>'
+      +'<div class="field"><label>Link (optional)</label><input type="url" placeholder="https://amazon.de/..." oninput="wishes.find(x=>x.id===\\x27'+w.id+'\\x27).url=this.value" value="'+_escAttr(w.url)+'"></div>'
       +'<div style="display:flex;gap:8px">'
-      +'<div class="field" style="flex:1"><label>Preis ca.</label><input type="text" placeholder="z.B. 29\u20AC" oninput="wishes.find(x=>x.id===\\x27'+w.id+'\\x27).price=this.value" value="'+w.price+'"></div>'
+      +'<div class="field" style="flex:1"><label>Preis ca.</label><input type="text" placeholder="z.B. 29\u20AC" oninput="wishes.find(x=>x.id===\\x27'+w.id+'\\x27).price=this.value" value="'+_escAttr(w.price)+'"></div>'
       +'<div class="toggle" style="flex:1;margin-top:16px"><input type="checkbox" '+(w.sharedGift?"checked":"")+' onchange="wishes.find(x=>x.id===\\x27'+w.id+'\\x27).sharedGift=this.checked;togglePaypal()"><span style="font-size:12px">Gemeinsam schenken</span></div>'
       +'</div></div>';
   }).join("");
