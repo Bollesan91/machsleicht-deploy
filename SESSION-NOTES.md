@@ -1,3 +1,39 @@
+# Session-Notiz — 26.05.2026 (Repo-Reality-Check gegen externes Marktreife-Beraterpapier + Einladungs-Konzept — Doppelsession, NUR Analyse, kein Code geändert)
+
+**Branch:** `draft` (nur SESSION-NOTES — kein Code/Content geändert diese Session)
+
+## Kontext
+Externes Beraterpapier ("260–480h bis Marktreife") gegen echten Repo-Stand geprüft (frischer Clone, Dateien einzeln gelesen). Verdikt: **Das Papier optimiert ein Conversion-Problem, das wir nicht haben, und ignoriert das Existenz-Problem (Indexierung), das wir haben.** Bestätigt den 23.05.-Pivot.
+
+## Verifizierte Befunde machsleicht
+- **KORREKTUR zu früherer Annahme: Einladung↔Partyseite IST bereits gekoppelt.** `einladung/erstellen/index.html` Z.497–512 reicht Einladungsdaten als Query-Params an `party.machsleicht.de` durch (childName/motto/mottoEmoji) + Plausible-Event `invite-to-party-cta`. Der Growth-Loop existiert — war NICHT offen.
+- **CORS-Whitelist im party-worker.js bereits drin** (Origin-Regex). Berater "Partyseite finalisieren 25–45h" überschätzt.
+- **XSS Wunsch-URL-Fix FEHLT WEITERHIN (P0 Security):** `esc()` escapt nur HTML (`<>&"'`), KEINE Protokoll-Prüfung, kein `safeUrl`/`isHttps`. `javascript:`/`data:`-Links nicht geblockt. Fix = `normalizeWishUrl()` nur `https:` zulassen, `new URL()`-Validierung, Längenlimit, `rel="noopener noreferrer"`. Aufwand 30–90 Min, NICHT Teil von 45h.
+- **Einladung-Mechanik heute:** Creator (546 Z.) → Netlify-Function → `/e/slug`; 11 Motto-Landingpages mit Animationen (piraten/ hat 21 keyframes, setTimeout). KEINE Trailer/Rollenpass-Mechanik (0 Treffer).
+- **A1-Last bestätigt:** ~69 Einzeljahr-Stubs + 8 Light-Seiten; Sitemap aufgebläht (Ziel 172→~45). 16 Gold-Seiten lt. 23.05.-Audit. Höchster SEO-Hebel.
+
+## STRATEGIE-ANKER: Das Messgate (gilt für BEIDE Projekte)
+Alle Stundenschätzungen setzen voraus, dass der Content überhaupt rankt — UNBEWIESEN (343 gecrawlt, 1 indexiert, 0 Backlinks). Deshalb: erst billige Pflicht-Schritte, dann **STOPP + 2–3 Wochen GSC messen**. Springt EINE Gold-Seite auf indexiert+Impressionen → GO (skalieren). Bewegt sich nichts → NO-GO (Problem ist upstream: Authority/EEAT/Nische, nicht durch Bau-Stunden lösbar). Messpunkt: ~7–10 Tage nach A1+GSC-Submit.
+Regel: Gate-UNABHÄNGIGE Arbeit (Loops, Funnel-Verdrahtung, Einladungs-Engine, 1 Motto) läuft im Fenster weiter. Gate-ABHÄNGIGE Arbeit (20. Content-Variante, alle Mottos, Pin-Maschine) wartet auf GO. "Nichts tun" ist NICHT gemeint.
+
+## Pflicht-Schritte VOR dem Gate (Reihenfolge)
+1. **(machsruhig) Angebotsprüfer-Versicherung** — siehe ruhig-Notiz.
+2. **XSS Wunsch-URL-Fix** (machsleicht, 30–90 Min).
+3. **A1 Redirect/noindex/Sitemap** (machsleicht): 69 Stubs → 301 auf Gruppenseiten, 8 Light → noindex, Sitemap 172→~45, interne Links + Canonicals prüfen. Als Review-Paket, Push erst nach Freigabe.
+4. **(Bolle, manuell) GSC-Indexierung** der 16 Gold-Seiten beantragen + Sitemap neu einreichen + 1 Distributionskanal (Pinterest/Backlink).
+
+## Gate-FENSTER-Arbeit (parallel, gate-unabhängig — JETZT sinnvoll)
+- **Rollenpass-Einladungs-Engine + Geheimwort, 1 Motto** (aus Berater-Einladungspapier adaptiert). Begründung: Rollenpass ist der einzige Typ, der mechanisch in die Schatzsuche zurückgreift ("nur der Kartenleser öffnet den Kompass-Hinweis") = Tool-Verdrahtung, kein Gimmick. Geheimwort/"Fortsetzung folgt am Partytag" = billigstes starkes Detail (String in Einladung gesetzt, in Schatzsuche abgefragt). **Erst Engine, dann Themes — NICHT sofort 10 Mottos** (= Gate-Falle). Trailer-Typ = Phase 2 (teuer, verpufft ohne Pass-Finale).
+- **Eigene Idee (über Berater hinaus): Crew-Liste im Host-Dashboard** — wählt Gastkind Rolle + sagt zu, sieht Geburtstagskind/Eltern die Crew ("Emma: Kartenleserin"). Macht Einladung+Partyseite+Schatzsuche zu EINEM Produkt. Verdrahtung des Funnel-Axioms.
+- **Goldflow-Anker NICHT piraten-6-8** (schwächste Gold-Seite, 2.451 W) — auf safari-6-8 oder meerjungfrau-6-8 aufsetzen (doppelt so tief).
+- Gast-CTA nach RSVP (reiner Loop, kein Traffic nötig).
+
+## Offene Fragen
+- Start mit Pflicht-Schritt 2 (XSS) oder 3 (A1, größerer Hebel)?
+- Rollenpass-Engine: welches Motto zuerst (Safari/Meerjungfrau als tiefste Gold-Seiten naheliegend)?
+
+---
+
 # Session-Notiz — 23.05.2026 (Strategie-Pivot: Traffic erzwingen + Funnel scharf — Live-SEO-Audit)
 
 **Branch:** `draft` (nur SESSION-NOTES — kein Code/Content geändert diese Session)
