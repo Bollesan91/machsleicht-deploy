@@ -14,9 +14,9 @@
   "metaDescription": "Baustelle-Kindergeburtstag für 9-12-Jährige: 3 fertige Baustellen-Konzepte mit Architekten-Prüfung, bewertetem Bauklotz-Wettbewerb, Werkzeug-Quiz Klasse 2, Sabotage-Ermittlung und Bauleiter-Diplom mit Funktion.",
   "introParagraph": "In dem Alter wollen Kinder ein Motto, das sie ernst nimmt — keine Bagger-Plüsch-Romantik, sondern Strategie, Statik, ein bisschen Druck. Diese Konzepte liefern das: Theorie-Briefing wie an einer Baustelle, bewerteter Bauklotz-Wettbewerb mit Stoppuhr und Statik-Note, Werkzeug-Quiz Klasse 2 mit echten Bau-Berufen, Sabotage-Ermittlung als Krimi-Phase (auf der Baustelle wurde sabotiert!) und Bauleiter-Diplom mit Funktion am Ende. Eltern können absetzen, in Wow-Variante völlig wegbleiben.",
   "ageInsight": {
-    "headline": "Was 9–12-Jährige am Baustelle-Motto suchen — und was das heißt",
+    "headline": "Was 9–12-Jährige am Engineering-Aspekt der Baustelle anzieht",
     "whyMottoFitsHeadline": "🏗️ Warum Baustelle für 9-12-Jährige besonders gut funktioniert",
-    "whyMottoFits": "In dem Alter haben Kinder Lego-Technik gebaut, Minecraft gespielt, Häuserbau gesehen. Was sie NICHT mehr wollen: Plastik-Schraubenzieher mit Sand. Was sie suchen: ein Motto, das ihre Konstruktions-Lust ernst nimmt. Die Architekten-Prüfung trifft das punktgenau: Theorie-Briefing zu Statik (warum fallen Brücken um?) und Bau-Reihenfolge ist echter Stoff, der Bauklotz-Wettbewerb wird mit Höhe + Statik-Note bewertet, die Sabotage-Ermittlung läuft als echter Krimi mit Verdächtigen (Bauleiter, Maurer, Elektriker, Polier, Architekt) und Beweisen. Die Kinder gehen mit echtem Bauleiter-Diplom heim — nicht 'war schön' sondern 'ich habe Konstruktions-Wissen'. Das überzeugt Eltern, und die Kinder spüren es.",
+    "whyMottoFits": "9-12 haben Lego-Technik gebaut, Minecraft-Häuser konstruiert, Bau-Doku auf YouTube geschaut. Sie wollen kein Plastik-Schraubenzieher-Spielen mehr, sondern Engineering: warum trägt eine Brücke 200kg aber bricht bei 300? Wer ist Polier vs Statiker vs Tiefbau-Ingenieur? Die Architekten-Prüfung antwortet konkret mit Bauplan-Werkstatt (Lineal + Bemaßung), Statik-bewertetem Bauklotz-Wettbewerb, Brücken-Last-Test mit Sandsäckchen, Material-Erkennung sensorisch, Sabotage-Krimi mit Alibi-Logik. Das ist Schul-Geometrie + Physik in greifbarer Party-Form.",
     "traits": [
       {
         "topic": "Aufmerksamkeit",
@@ -316,7 +316,370 @@
           "indoorTip": "Spuren in 3-4 Räumen verstecken (Küche, Bad, Wohnzimmer, Flur) — nicht Schlafzimmer. Verdächtigen-Wand zentral.",
           "outdoorTip": "Im Garten ungeeignet — Krimi-Story braucht Indoor-Räume mit verschiedenen \"Tatorten\".",
           "whyItWorksTitle": "Warum Sabotage-Ermittlung 9-12 fesselt",
-          "whyItWorks": "9-12 sind im Detektiv-Modus (Drei-Fragezeichen, Sherlock). Sabotage-Krimi mit echten Spuren + Verdächtigen-Befragung simuliert diese Welt. KRITISCH: Alibi-Tabelle muss konsistent sein — eine Spur passt eindeutig zu EINEM Täter, andere Spuren sind Red-Herrings die zu Alibis passen."
+          "whyItWorks": "9-12 sind im Detektiv-Modus (Drei-Fragezeichen, Sherlock). Sabotage-Krimi mit echten Spuren + Verdächtigen-Befragung simuliert diese Welt. KRITISCH: Alibi-Tabelle muss konsistent sein — eine Spur passt eindeutig zu EINEM Täter, andere Spuren sind Red-Herrings die zu Alibis passen.",
+          "alibiTabelle": {
+            "verdaechtige": [
+              {
+                "name": "Maurer Frank",
+                "foto_hinweis": "breite Statur, Schuhgröße 44",
+                "motiv": "wurde gekündigt, hatte Wut auf den Bauleiter",
+                "alibi_behauptung": "\"War zur Tat-Zeit allein im Pausenraum\"",
+                "alibi_problem": "Niemand kann das bestätigen — Frank hat die SCHWÄCHSTE Alibi-Lage",
+                "spuren_zuordnung": "TÄTER: Schuhabdruck Größe 44 (passt nur zu Frank), gelockerte Werkzeug-Schraube (Maurer-Werkzeug), Werkzeug-Spur am Gerüst"
+              },
+              {
+                "name": "Polier Anna",
+                "foto_hinweis": "kleine Statur, Schuhgröße 38",
+                "motiv": "hatte Streit mit Bauleiter über Zeitplan",
+                "alibi_behauptung": "\"War mit drei Lehrlingen im Büro\"",
+                "alibi_problem": "Bestätigt durch 3 Zeugen — solides Alibi",
+                "spuren_zuordnung": "NICHT TÄTER: Schuhabdruck passt nicht (38 vs 44), war nachweislich nicht am Tatort"
+              },
+              {
+                "name": "Elektriker Tom",
+                "foto_hinweis": "mittlere Statur, Schuhgröße 42",
+                "motiv": "hatte Schulden, Geld-Probleme",
+                "alibi_behauptung": "\"War in der Werkstatt am Schaltkasten\"",
+                "alibi_problem": "Bestätigt durch Schaltkasten-Logdatei (12:30-13:45)",
+                "spuren_zuordnung": "NICHT TÄTER: Schuhabdruck passt nicht (42 vs 44), Werkzeug-Spur war NICHT Elektriker-Werkzeug"
+              },
+              {
+                "name": "Architekt Klaus",
+                "foto_hinweis": "große Statur, Schuhgröße 46",
+                "motiv": "Konkurrent hat ihm Auftrag weggenommen",
+                "alibi_behauptung": "\"War im Büro am Bauplan\"",
+                "alibi_problem": "Bestätigt durch Foto-Zeitstempel der Plan-Datei (12:45)",
+                "spuren_zuordnung": "NICHT TÄTER: Schuhabdruck passt nicht (46 vs 44), Notiz-Fragment ist nicht seine Handschrift"
+              }
+            ],
+            "spuren": [
+              {
+                "name": "Schuhabdruck Größe 44",
+                "fundort": "am Gerüst (Sabotage-Stelle)",
+                "passt_zu": "Frank (44) — eindeutig"
+              },
+              {
+                "name": "Werkzeug-Spur am gelockerten Bolzen",
+                "fundort": "am Gerüst",
+                "passt_zu": "Frank (Maurer-Werkzeug, nicht Elektriker)"
+              },
+              {
+                "name": "Notiz-Fragment \"Dem zeig ich es\"",
+                "fundort": "Mülltonne neben Tatort",
+                "passt_zu": "Frank (Handschrift-Vergleich mit Personalakte)"
+              }
+            ],
+            "aufloesung": "Maurer Frank ist der Täter: alle 3 Spuren konvergieren auf ihn (Schuhgröße 44, Maurer-Werkzeug-Spur, Handschrift Notiz). Motiv: Kündigung. Die anderen 3 Verdächtigen haben solide Alibis durch Zeugen / Logdatei / Foto-Zeitstempel."
+          }
+        },
+        {
+          "name": "🃏 Werkzeug-Quiz Klasse 2",
+          "duration": 30,
+          "minAge": 9,
+          "outdoor": false,
+          "indoor": true,
+          "material": "25 Quiz-Karten in 5 Kategorien (Werkzeug-Erkennen, Bau-Berufe, Statik, Materialien, Sicherheit). Antwortbögen pro Kind + Quiz-Buzzer optional.",
+          "safetyRule": "Sitz-Spiel, keine besondere Sicherheit nötig.",
+          "loudness": "leise",
+          "effort": "leicht",
+          "prepText": "25 Quiz-Karten ausdrucken (Word + Wikipedia-Bilder), Antwortbögen pro Kind. 20 Min Vorlauf. Bei großer Gruppe: Wandprojektor mit Karten als Foto.",
+          "ageAdjust6": "NICHT für 6 — Klasse 2 ist 9-12. Für Mischgruppe Werkzeug-Quiz aus baustelle-mittel (12 Karten) nehmen.",
+          "ageAdjust8": "Auch zu schwer — Werkzeug-Quiz mittel ist passender.",
+          "indoorTip": "Am Esstisch — Quiz-Karten gut sichtbar. Bei Bauleiter-Pokal-Wertung: gut sichtbare Tafel mit Punkten.",
+          "outdoorTip": null,
+          "whyItWorksTitle": "Warum Werkzeug-Quiz Klasse 2 bei 9-12 funktioniert",
+          "whyItWorks": "9-12 wollen echtes Bau-Engineering-Wissen: Statik-Regeln, Material-Eigenschaften, Bau-Berufe-Spezifik. Quiz Klasse 2 mit 25 Karten + 5 Kategorien + Erklärungen ist auf YouTube-Bauleiter-Niveau — sie gehen mit echtem Fach-Wissen heim.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Quiz-Regeln",
+              "content": "5 Kategorien à 5 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
+            },
+            {
+              "n": 2,
+              "name": "Runde 1: Werkzeug-Erkennen",
+              "content": "6 Karten zu Akku-Bohrer, Wasserwaage, Lot, Kettensäge, Hochdruckreiniger, Spachtel."
+            },
+            {
+              "n": 3,
+              "name": "Runde 2: Bau-Berufe",
+              "content": "5 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
+            },
+            {
+              "n": 4,
+              "name": "Runde 3: Statik",
+              "content": "5 Karten zu Dreieck=stabil, breite Basis, Stahlbeton-Logik, Brücken-Bogen, Klotz-Stapel-Regel."
+            },
+            {
+              "n": 5,
+              "name": "Runde 4: Materialien",
+              "content": "5 Karten zu Kupfer-Leitfähigkeit, Stahlbeton, Fichte für Dachstühle, Mörtel, Glas-Eigenschaften."
+            },
+            {
+              "n": 6,
+              "name": "Runde 5: Sicherheit",
+              "content": "4 Karten zu Schutzkleidung, Bauzaun-Zweck, Stromunfall-Regel, Gehörschutz."
+            },
+            {
+              "n": 7,
+              "name": "Bewertung",
+              "content": "Punkte addieren, Quiz-Sieger bekommt Werkzeug-Champion-Pin. Alle bekommen Stempel."
+            }
+          ],
+          "quizCards": [
+            {
+              "kategorie": "Werkzeug-Erkennen",
+              "frage": "Was unterscheidet einen Akku-Bohrer von einem Schlagbohrer?",
+              "optionen": [
+                "Akku-Bohrer ist kabellos und für Holz/Metall, Schlagbohrer mit Schlagfunktion für Stein/Beton",
+                "Akku-Bohrer ist größer",
+                "Sie sind identisch"
+              ],
+              "antwort": "Akku-Bohrer ist kabellos und für Holz/Metall, Schlagbohrer mit Schlagfunktion für Stein/Beton"
+            },
+            {
+              "kategorie": "Werkzeug-Erkennen",
+              "frage": "Wofür ist eine Wasserwaage?",
+              "optionen": [
+                "Wasser messen",
+                "Prüfen ob etwas waagrecht oder senkrecht ist (Luftblase in Mitte)",
+                "Wasserrohre verbinden"
+              ],
+              "antwort": "Prüfen ob etwas waagrecht oder senkrecht ist (Luftblase in Mitte)"
+            },
+            {
+              "kategorie": "Werkzeug-Erkennen",
+              "frage": "Was ist ein Lot?",
+              "optionen": [
+                "Ein Stein mit Schnur zum Prüfen der Senkrechten",
+                "Eine Werkzeug-Tasche",
+                "Ein Bauplan"
+              ],
+              "antwort": "Ein Stein mit Schnur zum Prüfen der Senkrechten",
+              "note": "Schwerkraft zieht Stein nach unten, Schnur zeigt exakt senkrecht."
+            },
+            {
+              "kategorie": "Werkzeug-Erkennen",
+              "frage": "Was macht eine Kettensäge (im Bauwesen)?",
+              "optionen": [
+                "Holz schneiden mit umlaufender Kette",
+                "Schrauben festziehen",
+                "Beton mischen"
+              ],
+              "antwort": "Holz schneiden mit umlaufender Kette"
+            },
+            {
+              "kategorie": "Werkzeug-Erkennen",
+              "frage": "Was ist ein Hochdruckreiniger?",
+              "optionen": [
+                "Wasserstrahl mit hohem Druck zum Reinigen",
+                "Ein Werkzeug zum Anheben",
+                "Eine Mess-Lupe"
+              ],
+              "antwort": "Wasserstrahl mit hohem Druck zum Reinigen"
+            },
+            {
+              "kategorie": "Werkzeug-Erkennen",
+              "frage": "Wofür ist eine Spachtel?",
+              "optionen": [
+                "Wandflächen glätten oder spachteln",
+                "Lampen anbringen",
+                "Schrauben drehen"
+              ],
+              "antwort": "Wandflächen glätten oder spachteln"
+            },
+            {
+              "kategorie": "Bau-Berufe",
+              "frage": "Was macht ein Tiefbau-Ingenieur?",
+              "optionen": [
+                "Plant Straßen, Brücken, Tunnel — also Bauwerke unter oder auf dem Boden",
+                "Macht Dächer",
+                "Verlegt Strom"
+              ],
+              "antwort": "Plant Straßen, Brücken, Tunnel — also Bauwerke unter oder auf dem Boden"
+            },
+            {
+              "kategorie": "Bau-Berufe",
+              "frage": "Was macht ein Hochbau-Ingenieur?",
+              "optionen": [
+                "Plant Häuser, Hochhäuser, Wohngebäude — alles oberirdisch",
+                "Plant U-Bahn-Tunnel",
+                "Macht nur Garten-Bau"
+              ],
+              "antwort": "Plant Häuser, Hochhäuser, Wohngebäude — alles oberirdisch"
+            },
+            {
+              "kategorie": "Bau-Berufe",
+              "frage": "Was ist ein Zimmermann?",
+              "optionen": [
+                "Spezialist für Holzkonstruktionen (Dachstuhl, Holzhäuser)",
+                "Ein Manager im Zimmer",
+                "Ein Bauarbeiter, der nur Schornsteine baut"
+              ],
+              "antwort": "Spezialist für Holzkonstruktionen (Dachstuhl, Holzhäuser)"
+            },
+            {
+              "kategorie": "Bau-Berufe",
+              "frage": "Wer ist auf der Baustelle der Chef?",
+              "optionen": [
+                "Polier (lokaler Chef vor Ort, untersteht dem Bauleiter)",
+                "Maler",
+                "Maurer"
+              ],
+              "antwort": "Polier (lokaler Chef vor Ort, untersteht dem Bauleiter)"
+            },
+            {
+              "kategorie": "Bau-Berufe",
+              "frage": "Was macht ein Statiker?",
+              "optionen": [
+                "Berechnet ob ein Bauwerk stabil ist (Kräfte, Tragfähigkeit)",
+                "Macht die Lieferung von Baustoffen",
+                "Räumt die Baustelle auf"
+              ],
+              "antwort": "Berechnet ob ein Bauwerk stabil ist (Kräfte, Tragfähigkeit)"
+            },
+            {
+              "kategorie": "Statik",
+              "frage": "Welche Form ist die stabilste in der Statik?",
+              "optionen": [
+                "Quadrat",
+                "Dreieck",
+                "Kreis"
+              ],
+              "antwort": "Dreieck",
+              "note": "Dreieck kann nicht \"schief\" werden — daher wird es in Brücken-Verstrebungen genutzt."
+            },
+            {
+              "kategorie": "Statik",
+              "frage": "Warum braucht ein hohes Gebäude eine breite Basis?",
+              "optionen": [
+                "Damit es bei Wind und Erdbeben nicht umkippt",
+                "Damit mehr Leute hineinpassen",
+                "Damit es schöner aussieht"
+              ],
+              "antwort": "Damit es bei Wind und Erdbeben nicht umkippt"
+            },
+            {
+              "kategorie": "Statik",
+              "frage": "Wofür wird Stahl im Beton verwendet?",
+              "optionen": [
+                "Damit Beton Zug-Kräfte aushält (Beton allein bricht bei Zug)",
+                "Damit Beton glänzt",
+                "Aus Tradition"
+              ],
+              "antwort": "Damit Beton Zug-Kräfte aushält (Beton allein bricht bei Zug)"
+            },
+            {
+              "kategorie": "Statik",
+              "frage": "Warum sind Brücken oft gewölbt (Bogen-Form)?",
+              "optionen": [
+                "Damit das Gewicht über die Bögen verteilt wird",
+                "Aus Schönheits-Gründen",
+                "Damit Wasser besser darunter fließt"
+              ],
+              "antwort": "Damit das Gewicht über die Bögen verteilt wird"
+            },
+            {
+              "kategorie": "Statik",
+              "frage": "Wenn du einen hohen Turm aus Klötzen baust: was ist die wichtigste Regel?",
+              "optionen": [
+                "Schwere Klötze unten, leichte oben + breite Basis",
+                "Alle Klötze gleich groß",
+                "Bunt mischen"
+              ],
+              "antwort": "Schwere Klötze unten, leichte oben + breite Basis"
+            },
+            {
+              "kategorie": "Materialien",
+              "frage": "Welches Material wird für Strom-Leitungen verwendet?",
+              "optionen": [
+                "Kupfer (sehr gut leitfähig)",
+                "Glas",
+                "Stein"
+              ],
+              "antwort": "Kupfer (sehr gut leitfähig)"
+            },
+            {
+              "kategorie": "Materialien",
+              "frage": "Was ist Stahlbeton?",
+              "optionen": [
+                "Beton mit Stahl-Stangen darin (Bewehrung)",
+                "Beton aus Stahl",
+                "Hartes Holz"
+              ],
+              "antwort": "Beton mit Stahl-Stangen darin (Bewehrung)"
+            },
+            {
+              "kategorie": "Materialien",
+              "frage": "Welches Holz wird am häufigsten für Dachstühle verwendet?",
+              "optionen": [
+                "Fichte oder Lärche (Nadelhölzer)",
+                "Eiche allein",
+                "Bambus"
+              ],
+              "antwort": "Fichte oder Lärche (Nadelhölzer)"
+            },
+            {
+              "kategorie": "Materialien",
+              "frage": "Was ist Mörtel?",
+              "optionen": [
+                "Klebstoff zwischen Ziegeln (aus Sand, Zement, Wasser)",
+                "Eine Werkzeug-Art",
+                "Ein Hammer-Aufsatz"
+              ],
+              "antwort": "Klebstoff zwischen Ziegeln (aus Sand, Zement, Wasser)"
+            },
+            {
+              "kategorie": "Materialien",
+              "frage": "Welche Eigenschaft hat Glas im Bau?",
+              "optionen": [
+                "Lässt Licht durch, ist aber zerbrechlich",
+                "Sehr stark, niemals zerbrechlich",
+                "Wärmt sich von selbst auf"
+              ],
+              "antwort": "Lässt Licht durch, ist aber zerbrechlich"
+            },
+            {
+              "kategorie": "Sicherheit",
+              "frage": "Welche Schutzkleidung trägt ein Bauarbeiter immer?",
+              "optionen": [
+                "Helm + Warnweste + Sicherheitsschuhe",
+                "Nur Helm",
+                "Keine besondere Schutzkleidung"
+              ],
+              "antwort": "Helm + Warnweste + Sicherheitsschuhe"
+            },
+            {
+              "kategorie": "Sicherheit",
+              "frage": "Wofür dient ein Bauzaun?",
+              "optionen": [
+                "Schützt Baustelle vor Eindringlingen + warnt vor Gefahren",
+                "Macht die Baustelle schöner",
+                "Verhindert Regen"
+              ],
+              "antwort": "Schützt Baustelle vor Eindringlingen + warnt vor Gefahren"
+            },
+            {
+              "kategorie": "Sicherheit",
+              "frage": "Was tun bei Stromunfall auf der Baustelle?",
+              "optionen": [
+                "Sofort Strom abschalten, Notruf 112 wählen, Verletzten NICHT anfassen bis Strom aus",
+                "Verletzten sofort weghalten ohne Strom abzuschalten",
+                "Wasser drüber gießen"
+              ],
+              "antwort": "Sofort Strom abschalten, Notruf 112 wählen, Verletzten NICHT anfassen bis Strom aus"
+            },
+            {
+              "kategorie": "Sicherheit",
+              "frage": "Wozu trägt man Gehörschutz auf Baustellen?",
+              "optionen": [
+                "Schutz vor Lärm (z.B. Presslufthammer, Kreissäge — können das Gehör dauerhaft schädigen)",
+                "Damit man hübscher aussieht",
+                "Aus Tradition"
+              ],
+              "antwort": "Schutz vor Lärm (z.B. Presslufthammer, Kreissäge — können das Gehör dauerhaft schädigen)"
+            }
+          ]
         }
       ],
       "food": "🍕 Bauarbeiter-Pizza (3 große)\n🥖 Stockbrot 'Maurer-Brot'\n🥕 Karotten-Schrauben + Trauben + Apfelschnitze\n🥤 Apfelschorle (4 L)\n🎂 Baustellen-Kuchen XL (Schoko-Rührkuchen mit Krümel-Sand, Bagger + Kran drauf)\n🥨 Brezeln + Salzstangen + Käse + Wurst\n🍬 Schoko-Schrauben (Gummibärchen-Schrauben)",

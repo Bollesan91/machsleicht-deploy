@@ -14,9 +14,9 @@
   "metaDescription": "Baustelle-Kindergeburtstag für 6-8-Jährige: 3 fertige Baustellen-Konzepte mit Bauarbeiter-Lizenz, Bauklotz-Wettbewerb, Werkzeug-Quiz, Schrauben-Schatzsuche und Bauleiter-Diplom mit Stempeln.",
   "introParagraph": "Dein Kind wird 6, 7 oder 8 und liebt Baustellen? Mit 6-8 Jahren geht es nicht mehr nur ums Matschen mit Sand — die Kinder wollen ECHTES Bauarbeiter-Wissen, eine Bauarbeiter-Lizenz und ein richtiges Stationen-System. Hier sind drei fertige Konzepte mit Werkzeug-Quiz, Bauklotz-Wettbewerb, Schrauben-Schatzsuche und Mini-Architekten-Aufgaben.",
   "ageInsight": {
-    "headline": "Was 6–8-Jährige am Baustelle-Motto fasziniert",
+    "headline": "Was 6–8-Jährige an der Baustelle konkret wissen wollen",
     "whyMottoFitsHeadline": "Baustelle = echtes Werkzeug-Wissen + Bauarbeit + Stolz-Moment",
-    "whyMottoFits": "Mit 6-8 wollen Kinder nicht mehr nur spielen — sie wollen WISSEN und ein Ergebnis. Welches Werkzeug macht was? Wie baut man stabil? Eine Baustellen-Party in diesem Alter bedient genau das. Sie bekommen eine echte 'Bauarbeiter-Lizenz' (mit Werkzeug-Quiz!), bauen Bauklotz-Türme mit Wettbewerbs-Element, suchen Schrauben strategisch und werden am Ende zu 'Bauleiter Klasse 1' ernannt. Identifikation: 'Ich bin Bauarbeiter, ich kenne die Werkzeuge.'",
+    "whyMottoFits": "Mit 6-8 haben Kinder Lego-Technik gebaut, sehen Bagger an Straßen-Baustellen arbeiten und fragen 'wie funktioniert ein Kran?' Eine Baustellen-Party bedient genau diese konkrete Frage: Werkzeug-Quiz mit echten Funktionen (Wasserwaage zeigt Gerades), Bauklotz-Wettbewerb mit Höhe/Statik-Bewertung, Schrauben-Schatzsuche mit Plan. Am Ende: Bauarbeiter-Lizenz Klasse 1 — sie wissen jetzt, was ein Polier macht und welches Werkzeug die Wasserwaage ist.",
     "traits": [
       {
         "topic": "Aufmerksamkeit",
@@ -222,7 +222,131 @@
           "indoorTip": "Am Esstisch im Kreis — Quiz-Karten gut sichtbar hochhalten. Smartphone-Foto der Karten als Backup.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Werkzeug-Quiz bei 6-8 Bauarbeiter-Identität schafft",
-          "whyItWorks": "6-8 wollen ihr Werkzeug-Wissen zeigen — Quiz ist die freundlichste Form davon. Sie gehen mit konkretem Wissen heim (\"ich kenne die Wasserwaage\"). Wichtig: keine Trickfragen, immer Erklärung warum die Antwort stimmt."
+          "whyItWorks": "6-8 wollen ihr Werkzeug-Wissen zeigen — Quiz ist die freundlichste Form davon. Sie gehen mit konkretem Wissen heim (\"ich kenne die Wasserwaage\"). Wichtig: keine Trickfragen, immer Erklärung warum die Antwort stimmt.",
+          "quizCards": [
+            {
+              "kategorie": "Werkzeug-Erkennen",
+              "frage": "Welches Werkzeug zeigt, ob etwas gerade ist?",
+              "optionen": [
+                "Hammer",
+                "Wasserwaage",
+                "Säge"
+              ],
+              "antwort": "Wasserwaage",
+              "note": "Die Luftblase muss in der Mitte sein."
+            },
+            {
+              "kategorie": "Werkzeug-Erkennen",
+              "frage": "Welches Werkzeug misst Längen?",
+              "optionen": [
+                "Maßband",
+                "Bohrer",
+                "Spachtel"
+              ],
+              "antwort": "Maßband"
+            },
+            {
+              "kategorie": "Werkzeug-Erkennen",
+              "frage": "Was macht ein Schraubenzieher?",
+              "optionen": [
+                "Schrauben hineindrehen oder herausdrehen",
+                "Nägel einschlagen",
+                "Holz schneiden"
+              ],
+              "antwort": "Schrauben hineindrehen oder herausdrehen"
+            },
+            {
+              "kategorie": "Werkzeug-Erkennen",
+              "frage": "Welches Werkzeug bohrt Löcher?",
+              "optionen": [
+                "Säge",
+                "Bohrer (Akku-Bohrer oder Schlagbohrer)",
+                "Zollstock"
+              ],
+              "antwort": "Bohrer (Akku-Bohrer oder Schlagbohrer)"
+            },
+            {
+              "kategorie": "Bau-Berufe",
+              "frage": "Wer baut Wände aus Steinen?",
+              "optionen": [
+                "Maurer",
+                "Elektriker",
+                "Maler"
+              ],
+              "antwort": "Maurer"
+            },
+            {
+              "kategorie": "Bau-Berufe",
+              "frage": "Wer verlegt Stromkabel und installiert Lampen?",
+              "optionen": [
+                "Tiefbau-Ingenieur",
+                "Elektriker",
+                "Architekt"
+              ],
+              "antwort": "Elektriker"
+            },
+            {
+              "kategorie": "Bau-Berufe",
+              "frage": "Wer plant das Haus, bevor es gebaut wird?",
+              "optionen": [
+                "Polier",
+                "Architekt",
+                "Stallmeister"
+              ],
+              "antwort": "Architekt"
+            },
+            {
+              "kategorie": "Bau-Berufe",
+              "frage": "Wer leitet die Baustelle vor Ort?",
+              "optionen": [
+                "Polier (oder Bauleiter)",
+                "Bagger-Fahrer",
+                "Maler"
+              ],
+              "antwort": "Polier (oder Bauleiter)"
+            },
+            {
+              "kategorie": "Materialien",
+              "frage": "Aus welchen Steinen werden Hauswände gebaut?",
+              "optionen": [
+                "Sand",
+                "Ziegel",
+                "Glas"
+              ],
+              "antwort": "Ziegel"
+            },
+            {
+              "kategorie": "Materialien",
+              "frage": "Was ist Beton?",
+              "optionen": [
+                "Mischung aus Sand, Zement, Kies und Wasser",
+                "Eine Pflanze",
+                "Eine Metall-Art"
+              ],
+              "antwort": "Mischung aus Sand, Zement, Kies und Wasser"
+            },
+            {
+              "kategorie": "Materialien",
+              "frage": "Welches Material ist am stabilsten beim Hausbau?",
+              "optionen": [
+                "Pappe",
+                "Stahl-Beton (kombiniert)",
+                "Stoff"
+              ],
+              "antwort": "Stahl-Beton (kombiniert)"
+            },
+            {
+              "kategorie": "Werkzeug-Erkennen",
+              "frage": "Was ist eine Schubkarre?",
+              "optionen": [
+                "Ein Werkzeug zum Bohren",
+                "Ein Transport-Wagen mit einem Rad",
+                "Eine Säge"
+              ],
+              "antwort": "Ein Transport-Wagen mit einem Rad",
+              "note": "Wichtig: gehen, nicht rennen — sonst kippt sie."
+            }
+          ]
         },
         {
           "name": "🧱 Bauklotz-Wettbewerb",
