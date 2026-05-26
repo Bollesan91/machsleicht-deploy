@@ -81,28 +81,64 @@
     ],
     "rolesList": [
       {
+        "emoji": "🐴",
         "name": "Stall-Meister",
-        "description": "Pflegt die Plüsch-Ponys"
+        "function": "Pflegt die Plüsch-Ponys"
       },
       {
+        "emoji": "🧲",
         "name": "Hufeisen-Champion",
-        "description": "Hufeisen-Werfen Profi"
+        "function": "Hufeisen-Werfen Profi"
       },
       {
+        "emoji": "🧠",
         "name": "Quiz-Spezialist",
-        "description": "Pferdewissen-Star"
+        "function": "Pferdewissen-Star"
       },
       {
+        "emoji": "🗺️",
         "name": "Karten-Hüter",
-        "description": "Karotten-Schatzsuche-Leiter"
+        "function": "Karotten-Schatzsuche-Leiter"
       },
       {
+        "emoji": "🎀",
         "name": "Schweif-Künstler",
-        "description": "Mähnen-Flechten Profi"
+        "function": "Mähnen-Flechten Profi"
       },
       {
+        "emoji": "🥕",
         "name": "Fütter-Beauftragter",
-        "description": "Verteilt Snacks gerecht"
+        "function": "Verteilt Snacks gerecht"
+      },
+      {
+        "emoji": "🌾",
+        "name": "Heu-Manager",
+        "function": "Verwaltet das Pferde-Lager"
+      },
+      {
+        "emoji": "⏱️",
+        "name": "Zeit-Nehmer",
+        "function": "Hält die Stoppuhr beim Parcours"
+      },
+      {
+        "emoji": "📋",
+        "name": "Stallplan-Hüter",
+        "function": "Kennt jede Stations-Position"
+      },
+      {
+        "emoji": "🏆",
+        "name": "Lizenz-Verleiher",
+        "function": "Übergibt die Reiter-Lizenz feierlich"
+      },
+      {
+        "emoji": "📸",
+        "name": "Reiter-Fotograph",
+        "function": "Dokumentiert die Stationen-Erfolge"
+      },
+      {
+        "emoji": "🍎",
+        "name": "Apfel-Belohnung",
+        "function": "Verteilt Apfel-Snacks als Belohnung"
       }
     ],
     "optOutNote": "Kein Kind muss eine Rolle nehmen. Wer nur dabei sein will, bekommt trotzdem alle Stempel — kein Quiz-Zwang.",

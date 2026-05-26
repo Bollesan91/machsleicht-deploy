@@ -81,28 +81,64 @@
     ],
     "rolesList": [
       {
+        "emoji": "🛡️",
         "name": "Wappen-Meister",
-        "description": "Hilft beim Wappen-Entwurf"
+        "function": "Hilft beim Wappen-Entwurf"
       },
       {
+        "emoji": "⚔️",
         "name": "Schwert-Champion",
-        "description": "Führt durch den Schwert-Parcours"
+        "function": "Führt durch den Schwert-Parcours"
       },
       {
+        "emoji": "📚",
         "name": "Burgen-Gelehrte:r",
-        "description": "Quiz-Wissen-Star"
+        "function": "Quiz-Wissen-Star"
       },
       {
+        "emoji": "🐉",
         "name": "Drachen-Jäger",
-        "description": "Drachen-Schatzsuche-Leiter"
+        "function": "Drachen-Schatzsuche-Leiter"
       },
       {
+        "emoji": "🏰",
         "name": "Burg-Wächter",
-        "description": "Bewacht das Tor, kontrolliert Einlass"
+        "function": "Bewacht das Tor, kontrolliert Einlass"
       },
       {
+        "emoji": "🤡",
         "name": "Hofnarr",
-        "description": "Erzählt Witze + macht Stimmung"
+        "function": "Erzählt Witze + macht Stimmung"
+      },
+      {
+        "emoji": "📋",
+        "name": "Burg-Lageplan-Hüter",
+        "function": "Erklärt die Stations-Karte"
+      },
+      {
+        "emoji": "🎀",
+        "name": "Heroldin",
+        "function": "Proklamiert Sieger des Schwert-Parcours"
+      },
+      {
+        "emoji": "⏱️",
+        "name": "Stunden-Glocken-Läuter",
+        "function": "Wechsel-Signal alle 25 Min"
+      },
+      {
+        "emoji": "📜",
+        "name": "Schwur-Karten-Hüter",
+        "function": "Bewacht die Knappen-Schwur-Karte"
+      },
+      {
+        "emoji": "🥨",
+        "name": "Stockbrot-Bäcker",
+        "function": "Bereitet das Mittelalter-Brot vor"
+      },
+      {
+        "emoji": "📸",
+        "name": "Ritter-Fotograph",
+        "function": "Hält die Schwert-Schlag-Zeremonie fest"
       }
     ],
     "optOutNote": "Kein Kind muss eine Rolle nehmen. Wer nur zuschauen will, bekommt trotzdem alle Stempel — Quiz-Pflicht entfällt.",

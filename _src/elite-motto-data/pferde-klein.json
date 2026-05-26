@@ -81,28 +81,64 @@
     ],
     "rolesList": [
       {
+        "emoji": "🐴",
         "name": "Stall-Meister",
-        "description": "Sorgt für ordentliches Futter und Wasser"
+        "function": "Sorgt für ordentliches Futter und Wasser"
       },
       {
+        "emoji": "🎀",
         "name": "Mähnen-Stylist",
-        "description": "Flechtet und kämmt die Pony-Mähnen"
+        "function": "Flechtet und kämmt die Pony-Mähnen"
       },
       {
+        "emoji": "🥕",
         "name": "Karotten-Verteiler",
-        "description": "Belohnt die Ponys mit Snacks"
+        "function": "Belohnt die Ponys mit Snacks"
       },
       {
+        "emoji": "🧲",
         "name": "Hufeisen-Werfer",
-        "description": "Trainiert das Hufeisen-Wurf-Spiel"
+        "function": "Trainiert das Hufeisen-Wurf-Spiel"
       },
       {
+        "emoji": "🤠",
         "name": "Reiter-Lehrling",
-        "description": "Übt das langsame Reiten am Steckenpferd"
+        "function": "Übt das langsame Reiten am Steckenpferd"
       },
       {
+        "emoji": "📸",
         "name": "Pony-Foto-Reporter",
-        "description": "Macht Fotos vom Stall (optional)"
+        "function": "Macht Fotos vom Stall (optional)"
+      },
+      {
+        "emoji": "🌾",
+        "name": "Heu-Sammler",
+        "function": "Sammelt das Pferdefutter ein"
+      },
+      {
+        "emoji": "🌟",
+        "name": "Pony-Streichler",
+        "function": "Streichelt die Plüsch-Ponys liebevoll"
+      },
+      {
+        "emoji": "🚪",
+        "name": "Stalltür-Klopfer",
+        "function": "Klopft an, wenn jemand neues kommt"
+      },
+      {
+        "emoji": "👑",
+        "name": "Reiter-Krönchen-Hüter",
+        "function": "Verteilt die Reiter-Hüte"
+      },
+      {
+        "emoji": "🍎",
+        "name": "Apfel-Reicher",
+        "function": "Reicht die Apfel-Snacks an die Ponys"
+      },
+      {
+        "emoji": "🎈",
+        "name": "Sonnenblumen-Wächter",
+        "function": "Passt auf die Reiterhof-Deko auf"
       }
     ],
     "optOutNote": "Kein Kind muss eine Rolle nehmen und niemand muss den Schwur allein sprechen. Wer nur dabei sein will, ist trotzdem vollwertiger Reiter — Hut, Steckenpferd und Urkunde bekommt jedes Kind.",

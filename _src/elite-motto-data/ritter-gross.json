@@ -86,28 +86,64 @@
     ],
     "rolesList": [
       {
+        "emoji": "🕵️",
         "name": "Ermittler Jonas",
-        "description": "Leitet die Burgenermittlung an"
+        "function": "Leitet die Burgenermittlung an"
       },
       {
+        "emoji": "⚔️",
         "name": "Schwert-Champion Mia",
-        "description": "Kommandiert beim Schwert-Parcours"
+        "function": "Kommandiert beim Schwert-Parcours"
       },
       {
+        "emoji": "📚",
         "name": "Burgen-Kennerin Lina",
-        "description": "Quiz-Wissen-Expertin"
+        "function": "Quiz-Wissen-Expertin"
       },
       {
+        "emoji": "🛡️",
         "name": "Wappen-Heroldin Hanna",
-        "description": "Bewertet Wappen-Design"
+        "function": "Bewertet Wappen-Design"
       },
       {
+        "emoji": "🤡",
         "name": "Hofnarr Tom",
-        "description": "Sorgt für Pausen-Stimmung + Witze"
+        "function": "Sorgt für Pausen-Stimmung + Witze"
       },
       {
+        "emoji": "🏰",
         "name": "Burgvogtin Nora",
-        "description": "Vergibt Stilnoten und hält Tafel"
+        "function": "Vergibt Stilnoten und hält Tafel"
+      },
+      {
+        "emoji": "🔬",
+        "name": "Spuren-Analystin Sophia",
+        "function": "Untersucht Burgenermittlungs-Spuren"
+      },
+      {
+        "emoji": "⏱️",
+        "name": "Zeitnehmer Felix",
+        "function": "Misst Schwert-Parcours-Zeiten"
+      },
+      {
+        "emoji": "📋",
+        "name": "Akademie-Koordinator David",
+        "function": "Hält die Akademie-Tafel sauber"
+      },
+      {
+        "emoji": "🏹",
+        "name": "Bogenschütze Paul",
+        "function": "Leitet das Bogenschießen mit Saugnapf-Pfeilen"
+      },
+      {
+        "emoji": "🏆",
+        "name": "Pokal-Verleiher Anna",
+        "function": "Übergibt Ritter-Pokal + Mini-Pokale"
+      },
+      {
+        "emoji": "📸",
+        "name": "Foto-Chronistin Greta",
+        "function": "Dokumentiert die Ritter-Akademie"
       }
     ],
     "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Burgwächter-Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",

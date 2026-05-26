@@ -86,28 +86,64 @@
     ],
     "rolesList": [
       {
+        "emoji": "🐴",
         "name": "Stallmeister Tom",
-        "description": "Leitet die Pflege-Station an"
+        "function": "Leitet die Pflege-Station an"
       },
       {
+        "emoji": "🏇",
         "name": "Reitlehrerin Mia",
-        "description": "Kommandiert beim Reit-Parcours"
+        "function": "Kommandiert beim Reit-Parcours"
       },
       {
+        "emoji": "🔨",
         "name": "Hufschmied Jonas",
-        "description": "Führt den Hufschmied-Workshop"
+        "function": "Führt den Hufschmied-Workshop"
       },
       {
+        "emoji": "🧠",
         "name": "Quizmaster Lina",
-        "description": "Bewertet das Pferde-Quiz"
+        "function": "Bewertet das Pferde-Quiz"
       },
       {
+        "emoji": "🩺",
         "name": "Tierärztin Hanna",
-        "description": "Beurteilt die Pferde-Pflege-Note"
+        "function": "Beurteilt die Pferde-Pflege-Note"
       },
       {
+        "emoji": "⚖️",
         "name": "Wettkampf-Richterin Nora",
-        "description": "Vergibt Stilnoten am Parcours"
+        "function": "Vergibt Stilnoten am Parcours"
+      },
+      {
+        "emoji": "🔬",
+        "name": "Pferde-Diagnostikerin Anna",
+        "function": "Stellt Krankheits-Diagnosen am Plüsch-Pony"
+      },
+      {
+        "emoji": "🌾",
+        "name": "Fütterungs-Meister Paul",
+        "function": "Koordiniert die Snack-Pause"
+      },
+      {
+        "emoji": "⏱️",
+        "name": "Zeitnehmerin Sophie",
+        "function": "Misst Parcours-Zeiten + Hufeisen-Wurf"
+      },
+      {
+        "emoji": "📋",
+        "name": "Stations-Koordinator David",
+        "function": "Hält die Stallmeister-Tafel sauber"
+      },
+      {
+        "emoji": "🏆",
+        "name": "Pokal-Verleiher Felix",
+        "function": "Übergibt Wanderpokal + Mini-Pokale"
+      },
+      {
+        "emoji": "📸",
+        "name": "Foto-Reporterin Greta",
+        "function": "Dokumentiert die Stallmeister-Prüfung"
       }
     ],
     "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",

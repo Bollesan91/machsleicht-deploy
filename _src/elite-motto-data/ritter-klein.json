@@ -81,28 +81,64 @@
     ],
     "rolesList": [
       {
+        "emoji": "🛡️",
         "name": "Burg-Wächter",
-        "description": "Bewacht das Tor mit dem Schild"
+        "function": "Bewacht das Tor mit dem Schild"
       },
       {
+        "emoji": "🐉",
         "name": "Drachen-Jäger",
-        "description": "Führt den Drachen-Wurf an"
+        "function": "Führt den Drachen-Wurf an"
       },
       {
+        "emoji": "🤡",
         "name": "Hofnarr",
-        "description": "Erzählt witzige Burg-Geschichten"
+        "function": "Erzählt witzige Burg-Geschichten"
       },
       {
+        "emoji": "🐎",
         "name": "Pferdeknecht",
-        "description": "Pflegt die Plüsch-Rosse (Steckenpferde)"
+        "function": "Pflegt die Plüsch-Rosse (Steckenpferde)"
       },
       {
+        "emoji": "🎨",
         "name": "Wappen-Maler",
-        "description": "Hilft beim Schild-Schmücken"
+        "function": "Hilft beim Schild-Schmücken"
       },
       {
+        "emoji": "📜",
         "name": "Königs-Bote",
-        "description": "Sammelt Nachrichten von Raum zu Raum"
+        "function": "Sammelt Nachrichten von Raum zu Raum"
+      },
+      {
+        "emoji": "⚔️",
+        "name": "Pool-Nudel-Trainer",
+        "function": "Hilft beim sicheren Schwert-Üben"
+      },
+      {
+        "emoji": "👑",
+        "name": "Kronen-Bändiger",
+        "function": "Verteilt die Kronen am Ende"
+      },
+      {
+        "emoji": "🔔",
+        "name": "Burg-Glocken-Läuter",
+        "function": "Läutet vor jedem Spiel-Start"
+      },
+      {
+        "emoji": "🥨",
+        "name": "Brezel-Verteiler",
+        "function": "Bringt Brezeln vom Buffet"
+      },
+      {
+        "emoji": "🎈",
+        "name": "Drachen-Anpfeifer",
+        "function": "Macht Drachen-Geräusche fürs Spiel"
+      },
+      {
+        "emoji": "📸",
+        "name": "Burg-Foto-Maker",
+        "function": "Macht Fotos mit dem Wappenschild"
       }
     ],
     "optOutNote": "Kein Kind muss eine Rolle nehmen und niemand muss den Spruch allein sprechen. Wer nur dabei sein will, ist trotzdem vollwertiger Ritter — Schild, Schwert und Krone bekommt jedes Kind.",
