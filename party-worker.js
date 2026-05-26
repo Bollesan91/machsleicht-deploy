@@ -328,6 +328,30 @@ export default {
       return json({ok:true});
     }
 
+    // DELETE /api/party/:id — DSGVO Self-Service-Lösch-Endpoint
+    // Auth: editToken (kommt als Body bei DELETE, da DELETE-Body unsupported in fetch von manchen Clients)
+    // Löscht: party + photo + photoRound aus KV
+    if (path.match(/^\/api\/party\/[a-z0-9]+$/) && request.method === "DELETE") {
+      const id = path.split("/")[3];
+      const raw = await env.PARTY.get(`party:${id}`);
+      if (!raw) return json({error:"Party nicht gefunden"},404);
+      const party = JSON.parse(raw);
+      // Token aus Query-Parameter ?token=... ODER aus Body (beide Patterns supported)
+      let providedToken = url.searchParams.get("token");
+      if (!providedToken) {
+        try {
+          const body = await request.json();
+          providedToken = body && body.editToken;
+        } catch { /* no body */ }
+      }
+      if (providedToken !== party.editToken) return json({error:"Nicht berechtigt"},403);
+      // KV-Cleanup: party + beide photo-Keys + DOI-Token falls vorhanden
+      await env.PARTY.delete(`party:${id}`);
+      await env.PARTY.delete(`photo:${id}`);
+      await env.PARTY.delete(`photoRound:${id}`);
+      return json({ok:true, deleted:true, message:"Party und alle zugehörigen Daten wurden gelöscht."});
+    }
+
     // POST /api/party/:id/rsvp
     if (path.match(/^\/api\/party\/[a-z0-9]+\/rsvp$/) && request.method === "POST") {
       const id = path.split("/")[3];
@@ -1627,6 +1651,10 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       <div class="field"><label>Adresse</label><textarea id="edAddress" rows="2">${esc(party.address)}</textarea></div>
       <div class="field"><label>Hinweise</label><textarea id="edNotes" rows="3">${esc(party.notes)}</textarea></div>
       <button class="btn" id="saveBtn" onclick="saveEdit()" style="background:${color}">\u{1F4BE} Speichern</button>
+      <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--l)">
+        <p style="font-size:12px;color:var(--m);margin-bottom:8px"><strong>DSGVO:</strong> Diese Party und alle Daten (Gäste, Allergien, Fotos) werden automatisch nach 90 Tagen gelöscht. Du kannst sie auch jetzt sofort löschen — die Aktion ist endgültig und kann nicht rückgängig gemacht werden.</p>
+        <button class="btn btn-outline btn-sm" id="deleteBtn" onclick="confirmDelete()" style="color:#C62828;border-color:#C62828">\u{1F5D1}️ Party endgültig löschen</button>
+      </div>
     </div>
   </div>
 
@@ -1713,6 +1741,28 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       if(!r.ok){const d=await r.json();throw new Error(d.error);}
       location.reload();
     }catch(e){alert("Fehler: "+e.message);btn.textContent="\u{1F4BE} Speichern";btn.disabled=false;}
+  }
+  function confirmDelete(){
+    const childName="${esc(name||"diese Party")}";
+    const confirmed=confirm("Wirklich löschen?\\n\\nDie Party \""+childName+"\" und alle zugehörigen Daten (Gäste, Allergien, Fotos, Wünsche) werden ENDGÜLTIG gelöscht.\\n\\nDiese Aktion kann nicht rückgängig gemacht werden.\\n\\nWeiter?");
+    if(!confirmed)return;
+    const second=confirm("Letzte Bestätigung — wirklich endgültig löschen?");
+    if(!second)return;
+    deleteParty();
+  }
+  async function deleteParty(){
+    const btn=document.getElementById("deleteBtn");
+    if(btn){btn.textContent="⏳ Lösche...";btn.disabled=true;}
+    const editToken=new URLSearchParams(location.search).get("edit");
+    try{
+      const r=await fetch(location.origin+"/api/party/${party.id}?token="+encodeURIComponent(editToken),{method:"DELETE"});
+      if(!r.ok){const d=await r.json();throw new Error(d.error||"Lösch-Fehler");}
+      alert("Party wurde gelöscht. Du wirst zur Startseite weitergeleitet.");
+      location.href="https://machsleicht.de/";
+    }catch(e){
+      alert("Fehler beim Löschen: "+e.message);
+      if(btn){btn.textContent="\u{1F5D1}️ Party endgültig löschen";btn.disabled=false;}
+    }
   }
   </script>`;
 }
