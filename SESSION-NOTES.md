@@ -1,3 +1,49 @@
+# Session-Notiz — 26.05.2026 (Spät: A1 Crap-Ratio-Killer DEPLOYED + Chrome-Helfer-v3 Live-Verify)
+
+**Branch:** `feat/a1-crap-ratio` → `draft` → `main` (Ende deploy direkt nach Helfer-v3-Live-Verify)
+
+## GSC-Befund (visuelle Bestätigung der 26.05.-These)
+
+GSC zeigt: **365 nicht indexiert vs 1 indexiert**, davon 300 „gecrawlt – zurzeit nicht indexiert". Der grüne Index-Peak Ende März/Anfang April ist eingebrochen — klassisches Crap-Ratio-Symptom. Domain-Authority hat gekippt.
+
+## A1 Crap-Ratio-Killer (Welle 33-A)
+
+3 Files, 129 insertions, 582 deletions:
+
+| Datei | Änderung |
+|-------|----------|
+| `_redirects` | 118 Einzeljahr-Stubs → `301!` (Force-Flag verhindert Netlify-Shadowing!) + 28 broken redirects (baustelle/pferde/ritter/zirkus) → Hub + ritter-3-jahre ergänzt |
+| `sitemap.xml` | **172 → 95 URLs** (69 Stubs + 8 Light-Pages raus) |
+| 8 Light-Pages | `<meta name="robots" content="noindex,follow">` (feuerwehr 3x, weltraum 3x, piraten-3-5, piraten-9-12) |
+
+### Helfer-v3 SEO-Hygiene Iteration
+
+| Runde | Score | Befund |
+|-------|------:|--------|
+| v1 | **72** | KRITISCH: Netlify-Shadowing-Risiko — `_redirects` 301 würde von existierenden .html-Files überschrieben werden |
+| v2 | **93** | Force-Flag `301!` an 118 Stub-Redirects + 28 broken Redirects auf Hub |
+| v3 | **~96** | ritter-3-jahre Konsistenz-Lücke geschlossen |
+
+### Chrome-Helfer-v3 Live-Verify (vor Deploy)
+
+Live-Page `https://machsleicht.de/kindergeburtstag/feuerwehr-11-jahre` inspiziert. Befunde, die A1-Strategie bestätigen:
+
+1. **wordCount nur 320** (Gold = 2k-8k)
+2. **Canonical zeigt auf Light-Page** (feuerwehr-9-12-jahre, jetzt noindex,follow)
+3. **3 Game-Cards mit identischem Boilerplate-Text** „Ein spannendes Spiel, das die Kinder begeistert..." — klassisches Content-Farm-Spam-Signal
+4. **Bottom-Block linkt auf alle Einzeljahr-Stubs** = 78-Stub-Link-Quelle in Hub-Pages
+
+→ Page Score ~22/100. Stub-Tier bestätigt. A1-Killer ist korrekt.
+
+## Nächste Schritte
+
+- **A1.5 Hub-Page-Cleanup** — 8 Hub-Pages haben Bottom-Block-Links zu allen Einzeljahr-Stubs (78 Links total). Umbauen auf 3-Altersgruppen-Links.
+- **Phase 2** — 8 Light-Pages auf Elite (feuerwehr 3x, weltraum 3x, piraten-3-5, piraten-9-12), damit noindex,follow wieder weg kann.
+- **GSC-Sitemap neu einreichen** (Bolle, manuell)
+- **GSC-Indexierung 16 Gold-Pages beantragen** (Bolle, manuell)
+
+---
+
 # Session-Notiz — 26.05.2026 (Repo-Reality-Check gegen externes Marktreife-Beraterpapier + Einladungs-Konzept — Doppelsession, NUR Analyse, kein Code geändert)
 
 **Branch:** `draft` (nur SESSION-NOTES — kein Code/Content geändert diese Session)
