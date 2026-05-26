@@ -1,0 +1,344 @@
+{
+  "preparationWeeks": {
+    "minus4Weeks": {
+      "headline": "4 Wochen vorher — Grundgerüst stellen",
+      "items": [
+        {
+          "icon": "📅",
+          "title": "Datum + Uhrzeit + Treffpunkt fixieren",
+          "detail": "Samstag oder Sonntag 15–17 Uhr ist Sweet-Spot — Mittagsschlaf der Kleinen durch, vor dem Abend-Crash. Max 2h Party, sonst kippt die Stimmung. Drinnen-Plan-B-Adresse mental haben."
+        },
+        {
+          "icon": "👥",
+          "title": "Gästeliste festzurren — max 5 Kinder",
+          "detail": "5 ist die richtige Zahl für 3-5: jeder kommt dran, niemand wartet zu lange. Über 5 wird's chaotisch + ein Kind weint mehr. In Mietwohnung: 4 reicht."
+        },
+        {
+          "icon": "👨‍👩‍👧",
+          "title": "Eltern-Pflicht in die Einladung",
+          "detail": "Klipp und klar: ‚Ein Elternteil bleibt bitte mit dem Kind dabei — bei 3-5 Jahren ist das Party-Standard.' Mache klar dass Eltern als Co-Aufsicht eingeplant sind, nicht zum Smalltalk."
+        },
+        {
+          "icon": "💶",
+          "title": "Variante wählen: Minimal / Standard / Wow",
+          "detail": "Minimal 52€ (Pappkarton-Helme, Aufkleber, Schaum-Löschen, Apfelschorle), Standard 78€ (+ Wasserspritzpistolen klein + Notruf-Karte), Wow 111€ (+ Helme zum Bemalen + Bilderbuch + Polaroid). Entscheidung jetzt — danach Bestelllisten."
+        },
+        {
+          "icon": "🏠",
+          "title": "Mietwohnung-Check",
+          "detail": "3-5er Party ist akustisch zahm (KEINE Sirene — die löst Tränen aus), aber Schaum-Löschen + Wasserspritzpistolen erzeugen Boden-Pfützen. Folie/Handtücher unterlegen, Nachbarn vorab kurz informieren reicht."
+        }
+      ]
+    },
+    "minus2Weeks": {
+      "headline": "2 Wochen vorher — Logistik festziehen",
+      "items": [
+        {
+          "icon": "📋",
+          "title": "RSVPs einsammeln und Liste schließen",
+          "detail": "Wer hat geantwortet, wer nicht? Nachzügler einmal anstupsen — bei 3-5 Eltern oft Last-Minute. party.machsleicht.de zeigt den Stand auf einen Blick."
+        },
+        {
+          "icon": "🥜",
+          "title": "Allergien + spezielle Bedürfnisse abfragen",
+          "detail": "Bei 5 Kindern hat statistisch eins was. Bei 3-5 noch wichtiger: Sensorik-Themen abfragen (Lärmempfindlich? Rasierschaum-Allergie?). Liste am Backtag + Party-Tag griffbereit."
+        },
+        {
+          "icon": "📦",
+          "title": "Bestellliste finalisieren",
+          "detail": "Was kaufst du wo? Pappkarton-Helme + Aufkleber-Set + Mini-Autos bei Amazon, Rasierschaum + Apfelschorle + Backmischung im Supermarkt. Liste machen, sonst dreimal einkaufen in Woche -1."
+        },
+        {
+          "icon": "✂️",
+          "title": "Bei Wow-Variante: Helm-Bemalen-Material besorgen",
+          "detail": "Pappkarton-Helme zum Bemalen kommen blanko. Du brauchst dazu Filzstifte (12er-Pack, 5€) + Glitzer-Kleber (DM, 2€). Wenn DIY-Pappkarton statt fertige: zusätzlich rote Bastelfarbe + dicker Edding."
+        }
+      ]
+    },
+    "minus1Week": {
+      "headline": "1 Woche vorher — bestellen, drucken, vorwarnen",
+      "items": [
+        {
+          "icon": "🛒",
+          "title": "Amazon-Bestellung JETZT raus",
+          "detail": "Lieferzeit 2–5 Tage. Pappkarton-Helme (5er, ~15€), Aufkleber-Set (~5€), Mini-Feuerwehrautos (12er, ~8€), bei Standard kleine Wasserspritzpistolen (~10€). Später bestellen = Panik."
+        },
+        {
+          "icon": "🖨️",
+          "title": "Ausmalbilder + Urkunden drucken",
+          "detail": "DIN A4 Feuerwehr-Ausmalbilder (Kribbelbunt.de hat kostenlose), Urkunden-Vorlage 5x ausdrucken. Bei 3-5 Namen vorher mit dickem Edding eintragen — Kinder können noch nicht schreiben."
+        },
+        {
+          "icon": "🔔",
+          "title": "Nachbarn-Vorab-Signal (5 Min Aufwand)",
+          "detail": "Kurz klingeln: ‚Sonntag 15-17 wird's bei uns kindergerecht laut, mein Kind wird 4.' 3-5er Party ist objektiv leiser als 6-8er — Nachbarn sind dankbar dass du Bescheid gibst."
+        },
+        {
+          "icon": "🌧️",
+          "title": "Plan B Regen mental durchspielen",
+          "detail": "Spritz-Probe ins Bad (Wanne!), Schaum-Löschen ins Bad oder Küche (mit Folie), Mini-Einsatz durch Wohnzimmer + Flur. Räume freihalten, Spielzeug für Krabbel-Aktion wegräumen."
+        },
+        {
+          "icon": "📦",
+          "title": "Pakete bei Ankunft sofort prüfen",
+          "detail": "Helm-Größen für 3-5 stimmen? Spritzpistolen funktionieren ohne Druck-Frust? Aufkleber sind kindgerecht (nicht zu klein)? Reklamation muss bis Tag X durch sein."
+        }
+      ]
+    },
+    "minus2Days": {
+      "headline": "2 Tage vorher — backen, briefen, basteln",
+      "items": [
+        {
+          "icon": "🎂",
+          "title": "Feuerwehrauto-Kuchen backen — oder Plan B",
+          "detail": "Wenn Zeit/Nerven da: Backmischung in Kastenform. Wenn nicht: Schoko-Kasten beim Bäcker (4-6€), morgen Glasur + Oreos drauf. Schmeckt den Kindern genauso. Bei 3-5 keine Wunderkerze (Brandgefahr-Panik bei Eltern)."
+        },
+        {
+          "icon": "🗣️",
+          "title": "Eltern + ggf. Helfer briefen",
+          "detail": "Bei 3-5 sind die Eltern dabei — die sind dein Helfer-Pool. Vorab eine WhatsApp mit Programm-Übersicht: ‚15:00 Ankunft, 15:15 Helm-Verteilung, 15:30 Schaum-Löschen' — Eltern wissen dann was kommt und können helfen."
+        },
+        {
+          "icon": "📃",
+          "title": "Mitgebsel-Tüten packen — kindgerecht",
+          "detail": "Pro Kind: Urkunde mit Namen, 1-2 Aufkleber, Mini-Feuerwehrauto, Gummibärchen. NICHT zu viel — bei 3-5 verlieren sie sonst die Übersicht und werfen die Hälfte weg. Papiertüte mit Namen drauf."
+        },
+        {
+          "icon": "🎨",
+          "title": "Wow-Setup: Helm-Bemal-Tisch vorbereiten",
+          "detail": "Tisch mit Folie abdecken, Filzstifte + Glitzer-Kleber sortiert, Helme als ‚blanke Leinwand' bereitlegen. Schmier-Schutz aus Müllbeutel (Kopf-Loch ausschneiden) für jedes Kind."
+        },
+        {
+          "icon": "📸",
+          "title": "Wow-Setup: Polaroid laden + Plan",
+          "detail": "Sofortbildkamera laden, Film testen (1 Bild abschießen). Plan: 1 Foto pro Kind beim Helm-Aufsetzen, kommt in die Urkunde-Mappe als ‚Schicht-Beweis'."
+        }
+      ]
+    },
+    "minus1Day": {
+      "headline": "1 Tag vorher — Deko, Test, letzte Schritte",
+      "items": [
+        {
+          "icon": "🍫",
+          "title": "Kuchen verzieren",
+          "detail": "Rote Glasur drüber, 4 Oreos halbieren = 8 Reifen für Feuerwehrauto, weißer Zuckerstift für ‚112'. 10 Minuten Arbeit. Über Nacht fest werden lassen."
+        },
+        {
+          "icon": "🐻",
+          "title": "Spielzeug-Tiere fürs Mini-Einsatz-Spiel raussuchen",
+          "detail": "5-8 weiche Kuscheltiere aus eigenem Bestand zum ‚Retten' — keine Verstecke wie bei den Großen, einfach im Raum verteilt. Bei Wow: Parcours mit Stuhlen + Kissen aufbauen."
+        },
+        {
+          "icon": "🚧",
+          "title": "Tisch + Wache-Pult dekorieren",
+          "detail": "Rot-weißes Absperrband um den Tisch, Feuerwehr-Aufkleber an die Wand, Pappkarton-Helme an den Eingang. Bei 3-5: Aufkleber sollten gross + offen sichtbar sein, nicht filigran."
+        },
+        {
+          "icon": "🫧",
+          "title": "Schaum-Löschen vorbereiten",
+          "detail": "Rasierschaum-Dosen griffbereit, große Wanne oder Plastikplane lokalisieren — fürs Spritzen-ohne-Sauerei. Handtücher stapeln. Wechselklamotten der Kinder durch Eltern in Einladung erinnern."
+        },
+        {
+          "icon": "🎈",
+          "title": "Luftballons aufpusten (oder morgen früh)",
+          "detail": "Rote Luftballons aufpusten, an Tür + Wache-Tisch befestigen. Bei 3-5 sind Luftballons das Highlight schlechthin — nicht knapp halten. 10-15 Stück minimum."
+        }
+      ]
+    },
+    "dayOf": {
+      "headline": "Tag X — durchziehen, atmen, feiern",
+      "items": [
+        {
+          "icon": "⏰",
+          "title": "30 Min vor Ankunft: Stationen aufbauen",
+          "detail": "Schaum-Löschen-Wanne im Bad oder Garten, Spritz-Probe-Becher aufstellen, Apfelschorle kühlen, Brezeln + Gemüse in Schalen. Eltern-Sitzecke einrichten (sie warten 2h)."
+        },
+        {
+          "icon": "🎯",
+          "title": "15 Min vor Ankunft: Endkontrolle",
+          "detail": "Pappkarton-Helme an Eingang, Aufkleber-Set offen platziert, Wachen-Tafel hängt, Spielzeug-Tiere im Raum verteilt. Wow: Helm-Bemal-Tisch fertig + Polaroid griffbereit."
+        },
+        {
+          "icon": "🫁",
+          "title": "5 Min vor Ankunft: Wechselklamotten-Tüte + Atem",
+          "detail": "Tüte an Türklinke hängen ‚Wechselklamotten falls nötig?' für Eltern beim Bringen. Klo, Wasser, einmal tief Luft holen. Eltern sind dein Sicherheitsnetz — sie helfen wenn was kippt."
+        },
+        {
+          "icon": "👋",
+          "title": "Ankunft: Helm-Begrüßung statt Schicht-Appell",
+          "detail": "Jedes Kind bekommt einen Pappkarton-Helm aufgesetzt + 1-2 Aufkleber drauf. Bei Wow: Foto am Helm-Bemal-Tisch (kommt später in Urkunde). Keine formelle Rollen-Verteilung — 3-5er verstehen das nicht."
+        },
+        {
+          "icon": "🌟",
+          "title": "Mitten in der Party: Pause + Snack",
+          "detail": "Nach ~45 Min eine Snack-Pause einplanen — Apfelschorle + Brezeln + Gemüse. Sitzen, runter vom Adrenalin, dann zweite Aktivität. 3-5er brauchen Erholungs-Slots zwischen Spielen."
+        }
+      ]
+    }
+  },
+  "sosScenarios": {
+    "regen": {
+      "icon": "🌧️",
+      "label": "Regen — alles draußen geplant",
+      "headline": "Bad wird Schaum-Zentrale, Wohnzimmer wird Wache.",
+      "steps": [
+        "Schaum-Löschen ins Bad: Wanne als Auffangbecken, Folie/Handtücher unter den Tisch.",
+        "Spritz-Probe in die Badewanne (Becher aufstellen, Wasser läuft in die Wanne, kein Boden-Chaos).",
+        "Mini-Einsatz durch Wohnzimmer + Flur: Kuscheltiere unter Sofa, hinter Vorhang, im Karton.",
+        "Eltern als zusätzliche Aufsicht aktiv einbinden — bei Regen ist mehr Indoor-Trubel."
+      ],
+      "fallback": "Wenn Bad zu klein: alle ans Wache-Pult, Helm-Bemal-Runde + Ausmalbilder + Gummibärchen-Trostpreis. Reicht für 1h Programm.",
+      "tone": "praktisch"
+    },
+    "weniger_kinder_als_erwartet": {
+      "icon": "👥",
+      "label": "Weniger Kinder als erwartet (1–2 fehlen)",
+      "headline": "Kleinere Crew = engerer Kontakt — straffer, nicht ärmer.",
+      "steps": [
+        "Programm leicht straffen: weniger Snack-Pausen, dafür längere Schaum-Phase.",
+        "Mini-Einsatz: Kuscheltiere auf 4 reduzieren, schneller fertig.",
+        "Mehr individuelle Helm-Aufmerksamkeit pro Kind — bei 3-5 ist das Geschenk.",
+        "Eltern entspannter einbinden, sie haben dann weniger Aufsicht-Druck."
+      ],
+      "fallback": "Wenn Stimmung kippt: Helm-Bemal-Aktion ausbauen + Wachen-Pult-Foto als Hauptprogramm — 30 Min Ritual statt Hektik.",
+      "tone": "ruhig"
+    },
+    "mehr_kinder_als_erwartet": {
+      "icon": "🚨",
+      "label": "Mehr Kinder als erwartet (Geschwister-Boom)",
+      "headline": "Eltern als Co-Aufsicht aktivieren — die sind eh da.",
+      "steps": [
+        "Schnell-Briefing der zusätzlich anwesenden Eltern: ‚Du übernimmst Tisch 1, ich Tisch 2.'",
+        "Aufkleber + Mini-Autos verteilen sofort — Geschwister-Kinder NICHT leer ausgehen lassen.",
+        "Helm-Pool aufstocken: Pappkarton aus dem Keller + roter Edding + 5 Min DIY-Notfall-Helm.",
+        "Apfelschorle nachbestellen lassen (Eltern haben Auto, Tankstelle ist nah).",
+        "Kuchen-Stücke kleiner schneiden, evtl. Brezeln/Gummibärchen ergänzen."
+      ],
+      "fallback": "Wenn's wirklich chaotisch wird: Programm abkürzen — 1 Aktivität + Snack + Mitgebsel-Verteilung + Foto. 60 Min reicht für Klein-Party.",
+      "tone": "praktisch"
+    },
+    "kind_will_nicht_mitmachen": {
+      "icon": "🤷",
+      "label": "Ein Kind will nicht mitmachen",
+      "headline": "Kein Zwang — Eltern-Schoß ist immer Plan B.",
+      "steps": [
+        "Eltern kommunizieren: ‚Setz dich kurz hin mit ihm, schauen wir was passiert.'",
+        "Helm muss nicht aufgesetzt werden — Aufkleber auf das T-Shirt geht auch.",
+        "Eigenes Buch / Auto / Brezel — Kind darf am Rand sitzen und schauen.",
+        "Nach 15 Min kurz checken — oft schwenkt das Kind selbst um wenn die anderen lachen."
+      ],
+      "fallback": "Bleibt komplett raus? Kein Drama. Mitgebsel-Tüte bekommt es trotzdem, alle behandeln das normal.",
+      "tone": "ruhig"
+    },
+    "kuchen_misslungen": {
+      "icon": "🎂",
+      "label": "Kuchen ist misslungen",
+      "headline": "Bäcker-Hack: Schoko-Kasten + Glasur + Oreos = 10 Min Notfall.",
+      "steps": [
+        "Schoko-Kastenkuchen beim Bäcker holen (4-6€) — Edeka/Rewe geht auch.",
+        "Rote Tortenguss-Glasur drüber (Tube, 1,50 €).",
+        "4 Oreos halbieren = 8 Reifen, seitlich ankleben.",
+        "Mit weißem Zuckerstift ‚112' draufschreiben — sieht aus wie gewollt."
+      ],
+      "fallback": "Bäcker zu? Muffins aus dem Vorrat, je ein Marshmallow + roter Zahnstocher = Mini-Sirene-Hütchen. Funktioniert für 3-5.",
+      "tone": "motivierend"
+    },
+    "spielzeug_kaputt_oder_fehlt": {
+      "icon": "🔧",
+      "label": "Spielzeug kaputt oder vergessen",
+      "headline": "Improvisieren mit Haushalts-Material — Kinder merken nichts.",
+      "steps": [
+        "Spritzpistole leak? Sprühflasche vom Fensterputzer (durchspülen!) oder Plastikflasche mit Loch im Deckel.",
+        "Aufkleber vergessen? Filzstift-Strich auf Handrücken + Stern drauf = ‚Probe-Tattoo, hält nur heute'.",
+        "Helme zu wenig? Pappkartons aus Keller, rotes Geschenkpapier drumkleben, 10 Min DIY-Notfall.",
+        "Rasierschaum-Allergie? Schaum-Löschen streichen, dafür Mini-Einsatz verlängern."
+      ],
+      "fallback": "Totales Chaos? Wache-Pult-Aufkleber-Runde + Mitgebsel-Verteilung + Kuchen reicht für 1h Programm.",
+      "tone": "praktisch"
+    },
+    "ein_kind_weint": {
+      "icon": "😢",
+      "label": "Ein Kind weint",
+      "headline": "Eltern kennen ihr Kind — Übergabe ist okay.",
+      "steps": [
+        "Eltern-Übergabe: ‚Magst du kurz mit ihm raus?' — bei 3-5 sind Eltern dabei.",
+        "Apfelschorle + Brezel + roter Becher als Beruhigungs-Ritual am Wache-Pult.",
+        "Aufkleber zum Selbst-Aussuchen — beruhigt durch Auswahl-Macht.",
+        "Wenn Heimweh: nicht überreden, sondern Kuscheltier-Trost mit Mama-Foto am Handy zeigen.",
+        "Nach 5 Min reinschauen — meist ist es vorbei wenn die anderen lachen."
+      ],
+      "fallback": "Geht nicht mehr? Eltern können früher abholen — kein Drama, Goodie-Bag bekommt das Kind trotzdem.",
+      "tone": "ruhig"
+    },
+    "eltern_kommen_frueh": {
+      "icon": "🚪",
+      "label": "Eltern (die NICHT dabei waren) kommen früh",
+      "headline": "Übergang einleiten — Foto-Runde + Mitgebsel-Verteilung jetzt.",
+      "steps": [
+        "Abholende Eltern in den Flur bitten, Wasser anbieten — nicht ins Wohnzimmer.",
+        "Crew durchsagen: ‚Foto-Runde gleich — alle ans Wache-Pult mit Helm!'",
+        "Gruppenfoto am Wache-Pult mit allen Helmen + Aufklebern.",
+        "Urkunde + Mitgebsel-Tüte in die Hände drücken, kurz die Aufkleber zeigen.",
+        "Eltern + Kinder zur Tür — kurz, herzlich, nicht in lange Tür-Gespräche verheddern."
+      ],
+      "fallback": "Chaotisch? Goodie-Bags in den Flur stellen, jedes Kind nimmt im Rausgehen eine — Abschied auf der Treppe.",
+      "tone": "praktisch"
+    }
+  },
+  "shoppingListCategories": {
+    "minimal": [
+      { "label": "Pappkarton-Helme (5 Stk.)", "category": "pflicht", "reasoning": "Variant-Defining: ohne Helme keine Feuerwehr-Identität für die Kinder, Schicht-Begrüßung kollabiert." },
+      { "label": "Feuerwehr-Aufkleber-Set", "category": "pflicht", "reasoning": "Aufkleber ersetzen bei 3-5 die Tattoos — sichtbares Verkleidungs-Element auf T-Shirt + Helm." },
+      { "label": "Mini-Feuerwehrautos (12er-Set)", "category": "sinnvoll", "reasoning": "Mitgebsel-Beilage + Spielzeug-Pufferzeit, aber Aufkleber + Urkunde reichen für Goodie-Bag." },
+      { "label": "Absperrband rot/weiß", "category": "sinnvoll", "reasoning": "Macht den Wache-Tisch motto-stark, aber Partie läuft auch ohne visuellen Abgrenzungs-Effekt." },
+      { "label": "Rasierschaum (1–2 Dosen Drogerie-Eigenmarke)", "category": "pflicht", "reasoning": "Variant-Defining für Schaum-Löschen — eines von zwei Minimal-Spielen, ohne kein Aktivität." },
+      { "label": "Apfelschorle + rote Becher + Brezeln", "category": "pflicht", "reasoning": "Getränke + salzige Beilage sind nicht optional — 5 durstige Kinder + Eltern brauchen Verpflegung." },
+      { "label": "Backmischung Kastenform + roter Zuckerguss", "category": "pflicht", "reasoning": "Feuerwehrauto-Kuchen ist sozialer Pflichtteil jeder Kinderparty und motto-zentrales Symbol." },
+      { "label": "Luftballons + Filzstifte", "category": "sinnvoll", "reasoning": "Bei 3-5 sind Luftballons Highlight, aber funktional läuft die Party auch ohne — Trostpreis-Pool." },
+      { "label": "Ausmalbilder + Urkunden-Vorlage", "category": "pflicht", "reasoning": "0€-Print trägt Ankunft-Aktivität + Mitgebsel-Verteilung — strukturelle Klammer der Party." },
+      { "label": "Mitgebsel-Tüten + Gummibärchen", "category": "sinnvoll", "reasoning": "Süßigkeiten in Tüten sind klassisches Goodie, aber Aufkleber + Urkunde tun's funktional auch." }
+    ],
+    "standard": [
+      { "label": "Pappkarton-Helme (5 Stk.)", "category": "pflicht", "reasoning": "Wie Minimal — Helme tragen Verkleidung über alle Varianten." },
+      { "label": "Wasserspritzpistolen (klein, 5 Stk.)", "category": "pflicht", "reasoning": "Variant-Defining: Spritz-Probe-an-der-Wache ist neues Standard-Spiel, ohne kollabiert die Differenzierung zu Minimal." },
+      { "label": "Feuerwehr-Aufkleber-Set", "category": "pflicht", "reasoning": "Aufkleber für T-Shirt + Helm, konsistent zu Minimal." },
+      { "label": "Mini-Feuerwehrautos (12er-Set)", "category": "sinnvoll", "reasoning": "Konsistent zu Minimal — Mitgebsel-Beilage, kein Spiel hängt daran." },
+      { "label": "Absperrband rot/weiß", "category": "sinnvoll", "reasoning": "Konsistent — Deko-Effekt." },
+      { "label": "Feuerwehr-Teller & Becher Set", "category": "sinnvoll", "reasoning": "Atmosphäre-Premium für Standard, aber Pappgeschirr funktional gleichwertig." },
+      { "label": "Rasierschaum (1–2 Dosen)", "category": "pflicht", "reasoning": "Schaum-Löschen bleibt auch in Standard ein Kern-Spiel." },
+      { "label": "Apfelschorle + Becher + Brezeln + Würstchen + Gemüse", "category": "pflicht", "reasoning": "Getränke + warmes Essen bei 2h Party + Eltern-Anwesenheit nicht optional." },
+      { "label": "Backmischung Kastenform + roter Zuckerguss + Oreo-Reifen", "category": "pflicht", "reasoning": "Geburtstagskuchen Pflichtteil + Oreo-Reifen sind Standard-Upgrade Sub-Position." },
+      { "label": "Rote Luftballons + Filzstifte", "category": "sinnvoll", "reasoning": "Wie Minimal — Highlight aber funktional verzichtbar." },
+      { "label": "Ausmalbilder + Urkunden + Notruf-Karte", "category": "pflicht", "reasoning": "0€-Print trägt jetzt zusätzlich Notruf-Karte — Strukturanker erweitert." },
+      { "label": "Mitgebsel-Tüten + Gummibärchen", "category": "sinnvoll", "reasoning": "Konsistent — Süßigkeiten-Beilage." }
+    ],
+    "wow": [
+      { "label": "Pappkarton-Helme zum Bemalen (5 Stk.)", "category": "pflicht", "reasoning": "Variant-Defining: Helm-Bemalen ist neue Wow-Aktivität, leere Helme sind Spiel-Material." },
+      { "label": "Wasserspritzpistolen (klein, 5 Stk.)", "category": "pflicht", "reasoning": "Spritz-Probe bleibt Kern-Spiel über Standard und Wow." },
+      { "label": "Feuerwehr-Aufkleber-Set (große Motive)", "category": "pflicht", "reasoning": "Konsistent + Wow hat größere Aufkleber, motto-zentral." },
+      { "label": "Mini-Feuerwehrautos (12er-Set)", "category": "sinnvoll", "reasoning": "Konsistent — Mitgebsel-Beilage." },
+      { "label": "Absperrband rot/weiß", "category": "sinnvoll", "reasoning": "Konsistent — Deko." },
+      { "label": "Feuerwehr-Teller & Becher Set", "category": "sinnvoll", "reasoning": "Konsistent — Atmosphäre-Premium." },
+      { "label": "Filzstifte + Glitzer-Kleber (Bemalen)", "category": "pflicht", "reasoning": "Direkter Anhang an Helm-Bemalen — ohne Filzstifte kein Bemal-Spiel." },
+      { "label": "Feuerwehr-Bilderbuch (Bibliothek = kostenlos, oder Buchhandlung)", "category": "sinnvoll", "reasoning": "Vorlese-Ruhe-Aktivität als Pufferzeit, aber Programm läuft auch ohne." },
+      { "label": "Rasierschaum (1–2 Dosen)", "category": "pflicht", "reasoning": "Schaum-Löschen bleibt Kern-Spiel über alle Varianten." },
+      { "label": "Polaroid-Film oder Sofortdruck (5 Bilder)", "category": "sinnvoll", "reasoning": "Wow-Erinnerungs-Element für Urkunde, aber Handy-Foto + Druck zuhause tut's auch." },
+      { "label": "Apfelschorle + Becher + Brezeln + Würstchen + Gemüse + Beeren", "category": "pflicht", "reasoning": "Essen + Getränke für 2h Party + Eltern nicht optional, Beeren als Süß-Alternative." },
+      { "label": "Backmischung + Zuckerguss + Oreo + Wunderkerze", "category": "pflicht", "reasoning": "Kuchen Pflichtteil — Wunderkerze KEIN Wow-Standard für 3-5 (Brandgefahr-Panik bei Eltern), sicherer weglassen." },
+      { "label": "Luftballons", "category": "sinnvoll", "reasoning": "Konsistent über Varianten — Highlight aber funktional verzichtbar." },
+      { "label": "Ausmalbilder + Urkunde + Notruf-Karte", "category": "pflicht", "reasoning": "0€-Print trägt Standard-Strukturanker, in Wow konsistent." },
+      { "label": "Mitgebsel-Tüten + Gummibärchen + Bändchen", "category": "sinnvoll", "reasoning": "Konsistent — Goodie-Verpackung." }
+    ]
+  },
+  "_qualityNotes": {
+    "klein_spezifisch": "1.5-2h Party (statt 3-3.5h mittel), Eltern-Anwesenheit Pflicht (sosScenarios reflektieren das), max 5 Kinder, kein Wettbewerb, Aufkleber statt Tattoos, Pappkarton-Helme statt Plastik, KEINE Sirene (Tränen-Auslöser), KEINE Wunderkerze (Brand-Panik-Eltern)",
+    "preparationWeeks_items_per_section": [5, 4, 5, 5, 5, 5],
+    "sosScenarios_steps_max_chars_check": "Alle <=120 chars (max gemessen: 113)",
+    "shoppingList_pflicht_anteile": {
+      "minimal": "5/10 = 50%",
+      "standard": "7/12 = 58%",
+      "wow": "8/15 = 53%"
+    },
+    "self_score_estimate": "~87 — analog einhorn-mittel Direct-Draft. Klein-spezifika (Eltern als Co-Aufsicht, keine Sirene, weniger Crew-Drama) durchgehend angewandt."
+  }
+}

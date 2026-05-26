@@ -1,0 +1,129 @@
+{
+  "preparationWeeks": {
+    "minus4Weeks": {
+      "headline": "4 Wochen vorher — Grundgerüst stellen",
+      "items": [
+        { "icon": "📅", "title": "Datum + Uhrzeit + Treffpunkt fixieren", "detail": "Samstag oder Sonntag 14–17 Uhr ist Sweet-Spot. Max 2-3h Party bei 6-8. Drinnen-Plan-B im Hinterkopf für Pirsch-Parcours." },
+        { "icon": "👥", "title": "Gästeliste festzurren — 6–8 Kinder", "detail": "6 für Minimal/Standard, bis 8 für Wow (Schatzsuche-Quest braucht Team-Größe). Über 8 wird's bei Tarnungs-Übung chaotisch." },
+        { "icon": "💶", "title": "Variante wählen: Minimal / Standard / Wow", "detail": "Minimal 24€ (Spuren-Pirsch + Quiz), Standard 80€ (+ 4 Ranger-Stationen + Großspiel), Wow 120€ (+ 5. Beobachtungs-Station + Schatzsuche-Quest + Ranger-Buch). Entscheidung jetzt." },
+        { "icon": "✉️", "title": "Einladungen rausschicken", "detail": "Pflicht im Text: Allergie-Abfrage. Bei Wow Hinweis: ‚Wir gehen auf große Safari-Expedition, bequeme Outdoor-Klamotten anziehen.' RSVP-Link auf party.machsleicht.de." },
+        { "icon": "🏠", "title": "Mietwohnung-Check (Outdoor-Fokus)", "detail": "Safari ist akustisch zahm, aber Pirsch-Parcours + Tarnungs-Übung brauchen Bewegungsraum. Wenn Garten/Park: super. Wenn Wohnung: Tarn-Versteck-Plätze im Flur planen." }
+      ]
+    },
+    "minus2Weeks": {
+      "headline": "2 Wochen vorher — Logistik festziehen",
+      "items": [
+        { "icon": "📋", "title": "RSVPs einsammeln + Liste schließen", "detail": "Wer hat geantwortet? Nachzügler einmal anstupsen. party.machsleicht.de zeigt den Stand." },
+        { "icon": "🥜", "title": "Allergien zusammenschreiben", "detail": "Eine Liste, ein Zettel: Kind X = Laktose, Kind Y = Nüsse. Bei Snacks (Bananen, Karotten, Käse) ist die Allergie-Lage meist entspannt, aber abfragen ist Pflicht." },
+        { "icon": "📦", "title": "Bestellliste finalisieren", "detail": "Tonpapier braun + Filzstifte erdfarben + Klett-Abzeichen + Stempel-Set bei DM/Rossmann, Tier-Figuren + Memory + Schatzkiste-Material bei Amazon. Bei Wow: Spielzeug-Fernglas (~6€)." },
+        { "icon": "🎽", "title": "Stoffquadrate für Tarn-Tücher vorbereiten", "detail": "Alte Geschirrtücher in 20x20 Quadrate zerschneiden — 1 pro Kind. Ist bei Safari die ‚Verkleidung'. Kein Kauf nötig, ist Müll-zu-Outfit." }
+      ]
+    },
+    "minus1Week": {
+      "headline": "1 Woche vorher — bestellen, drucken, vorwarnen",
+      "items": [
+        { "icon": "🛒", "title": "Amazon-Bestellung JETZT raus", "detail": "Lieferzeit 2–5 Tage. Tonpapier braun (~5€), Safari-Tierfiguren (~5€), Tier-Memory (~4€), Klett-Abzeichen (~4€), Stempel-Set (~5€). Bei Wow zusätzlich Spielzeug-Fernglas (~6€) + Aufkleber-Tier-Bogen für Ranger-Buch." },
+        { "icon": "🖨️", "title": "Tierspuren + Ausmalbilder + Lizenzen drucken", "detail": "‚Junior-Ranger-Lizenz' DIN A6 mit Platz für Name + Stempel + Datum, 6-8 ausdrucken. Tierspuren-Memory-Vorlagen (12 Spuren-Bilder) wenn DIY statt gekauft." },
+        { "icon": "🔔", "title": "Nachbarn vorwarnen (gartengericht)", "detail": "‚Sonntag 14-17 Uhr Safari-Party im Garten, mein Sohn wird 7. Vielleicht hört ihr Tierstimmen-Quiz-Geräusche.' Spart Erklärungs-Fragen." },
+        { "icon": "🌧️", "title": "Plan B Regen mental durchspielen", "detail": "Tierspuren-Pirsch ins Wohnzimmer + Flur (Spuren auf Klebezetteln verstecken). Pirsch-Parcours mit Stuhl-Hindernissen drinnen. Schatzsuche-Quest in Wohnung versteckte Hinweise." },
+        { "icon": "✂️", "title": "Stirnbänder vorbereiten", "detail": "Tonpapier-Streifen 3cm breit, mit Filzstift ‚Junior Ranger' beschreiben oder Stempel drauf, an Enden Klett-Verschluss. Bei 6-8 Kindern = 6-8 Stirnbänder. 30 Min Bastel-Vorlauf." }
+      ]
+    },
+    "minus2Days": {
+      "headline": "2 Tage vorher — backen, briefen, basteln",
+      "items": [
+        { "icon": "🎂", "title": "Savannen-Kuchen backen — oder Plan B", "detail": "Blechkuchen-Mischung in Sand-Farbe (heller Teig), mit Tier-Cookies + grünem Streusel als ‚Savannen-Gras' verzieren. Plan B: Sahne-Boden vom Bäcker (~6€), Tier-Kekse drauf streuen." },
+        { "icon": "🗣️", "title": "Helfer briefen — 5 Minuten reichen", "detail": "Bei Standard/Wow zusätzliche Person für Tarnungs-Übung + Tierspuren-Memory parallel. WhatsApp mit Programm-Übersicht: ‚14:00 Ankunft + Stirnband-Verleihung, 14:15 Pirsch-Start, 14:45 Snack, 15:00 4 Stationen.'" },
+        { "icon": "🪧", "title": "Tier-Memory-Karten finalisieren oder kaufen", "detail": "Bei DIY: 24 Karten (12 Tier-Paare), Tonpapier zugeschnitten, Tierbilder aufgeklebt. Bei Fertigkauf: Karten gemischt im Beutel bereitlegen." },
+        { "icon": "🎁", "title": "Goodie-Bags packen + Ranger-Buch (Wow)", "detail": "Pro Kind: Lizenz, Tierfigur, 2-3 Tier-Tattoos/Aufkleber, Schoko-Goldmünze, evtl. Sticker. Bei Wow: zusätzlich Ranger-Buch DIY mit Tier-Aufklebern + Heftklammer-Bindung." },
+        { "icon": "🗺️", "title": "Wow-Setup: Tempel-Schatzsuche-Hinweise platzieren", "detail": "Schuhkarton mit Goldfolie ‚Tempel'-Schatzkiste vorbereiten, 5-6 Hinweis-Karten an Garten/Wohnung-Plätzen verstecken (unter Stein, im Baum-Wipfel, hinter Pflanze, etc.)." }
+      ]
+    },
+    "minus1Day": {
+      "headline": "1 Tag vorher — Deko, Test, letzte Schritte",
+      "items": [
+        { "icon": "🌿", "title": "Kuchen-Savannen-Deko fertig", "detail": "Tier-Cookies + grünen Streusel + ggf. Marzipan-Akazie-Form auf Kuchen. Bei Wow: Wunderkerze in Mitte für Birthday-Moment. Über Nacht fest werden lassen." },
+        { "icon": "🌴", "title": "Outdoor/Indoor-Stationen vorbereiten", "detail": "Tierspuren-Klebezettel verstecken (4-5 verschiedene Spur-Arten, 2-3 von jeder), Tarnungs-Übung-Versteck-Plätze markieren, bei Wow zusätzlich Schatzsuche-Hinweise verteilt." },
+        { "icon": "🚧", "title": "Stirnband-Tisch dekorieren", "detail": "Eingangs-Tisch: 6-8 Tonpapier-Stirnbänder mit Namen, Tattoo-Stempelkissen, Klett-Abzeichen sortiert, ‚Junior-Ranger-Lizenzen' zur Übergabe. Tisch mit Tier-Figuren als Deko." },
+        { "icon": "🎵", "title": "Safari-Soundtrack + Bluetooth-Box testen", "detail": "Spotify ‚Safari Sounds' oder ‚African Adventure' Playlist in der Notiz-App. Tierstimmen-Audios für Quiz separat speichern (Löwe, Elefant, Affe, Vogel — Pro Tier 10 Sek)." },
+        { "icon": "🍿", "title": "Snack-Stationen vorbereiten", "detail": "Bananen + Karotten + Käsewürfel + Popcorn in Schüsseln. Wasserflaschen mit blauen Halmen (Safari-Look). Bei Wow Mittagssnack: Mini-Pizzen + Wraps vorbereiten." }
+      ]
+    },
+    "dayOf": {
+      "headline": "Tag X — durchziehen, atmen, feiern",
+      "items": [
+        { "icon": "⏰", "title": "45 Min vor Ankunft: Stationen aufbauen", "detail": "Tierspuren-Pirsch-Route ins Garten/Wohnzimmer (Klebezettel-Spuren versteckt), Memory-Tisch mit Karten verdeckt, Stirnband-Eingangs-Tisch fertig. Snack-Stationen kühl." },
+        { "icon": "🎯", "title": "20 Min vor Ankunft: Wow-Schatzsuche final", "detail": "Schatzkiste in finalem Versteck (Garten-Boden, Schrank, oder Balkon-Ecke), Hinweis-Karten in Schritt-für-Schritt-Logik verteilt. Wow-Fernglas griffbereit am Wache-Pult." },
+        { "icon": "🎯", "title": "15 Min vor Ankunft: Audio + Stirnbänder", "detail": "Bluetooth-Box an, Safari-Playlist startet leise, Tierstimmen-Audios bereit. Stirnbänder fertig + Lizenzen sortiert. Tatten am Eingang." },
+        { "icon": "🫁", "title": "5 Min vor Ankunft: durchatmen", "detail": "Klo, Wasser, einmal tief Luft holen. Bei Safari ist Outdoor-Risiko = Wetterwechsel — falls Regen kommt: schnell auf Plan B (siehe Plan-B-Sektion) umschalten." },
+        { "icon": "🦓", "title": "Ankunft: Stirnband-Verleihung + Junior-Ranger-Lizenz", "detail": "Jedes Kind bekommt Stirnband (mit Klett auf passend ziehen), Tattoo aufs Handrücken, Junior-Ranger-Lizenz mit Namen + Stempel + Datum. Sofort Pirsch-Start." }
+      ]
+    }
+  },
+  "sosScenarios": {
+    "regen": { "icon": "🌧️", "label": "Regen — alles draußen geplant", "headline": "Pirsch ins Wohnzimmer + Flur — Spuren auf Klebezetteln.", "steps": ["Tierspuren-Klebezettel von Garten ins Wohnzimmer + Flur kleben.", "Pirsch-Parcours: Stuhl-Slalom, Sofa-Tunnel, Tisch-als-Höhle.", "Tarnungs-Übung: hinter Vorhänge, unter Decken, Schrank-Innenseite.", "Bei Wow Schatzsuche-Quest: Schatzkiste in Garderobe oder Schlafzimmer."], "fallback": "Wenn Wohnzimmer zu klein: Memory + Tierstimmen-Quiz + Snacks reichen für 1,5h Programm.", "tone": "praktisch" },
+    "weniger_kinder_als_erwartet": { "icon": "👥", "label": "Weniger Kinder als erwartet (1–2 fehlen)", "headline": "Engerer Pirsch-Trupp — mehr Aufmerksamkeit pro Ranger.", "steps": ["Programm leicht straffen: weniger Snack-Pausen, dafür längere Quest-Phase.", "Tarnungs-Übung: jedes Kind eigenes Versteck statt Team-Verstecken.", "Memory: längeres Spiel mit mehr Karten-Paaren statt Schnelldurchgang.", "Pufferzeit füllen mit Ranger-Buch-Verzieren oder zweiter Quiz-Runde."], "fallback": "Wenn Stimmung kippt: Stirnband-Foto + Lizenz-Stempel + Schoko-Goldmünzen-Übergabe als Hauptprogramm.", "tone": "ruhig" },
+    "mehr_kinder_als_erwartet": { "icon": "🚨", "label": "Mehr Kinder als erwartet (Geschwister-Boom)", "headline": "Zwei Pirsch-Teams bilden — mehr Spuren verteilen.", "steps": ["Crew in 2 Teams splitten: Team Löwe + Team Elefant, je ein älteres Kind als Team-Captain.", "Tierspuren verdoppeln: 2 parallele Routen, jeder Trupp findet 4-5 Spuren.", "Tier-Memory: 2 Tische parallel mit halben Karten-Sets.", "Sofort Verstärkung: Eltern, Oma, Nachbarin — 10€ für 2 Stunden Tisch-Aufsicht.", "Snacks aufstocken: Bananen + Karotten + Käse-Stücke aus Vorrat ergänzen."], "fallback": "Keine Verstärkung erreichbar? Schatzsuche-Quest als Hauptprogramm + Memory + Stirnband-Zeremonie + Kuchen.", "tone": "praktisch" },
+    "kind_will_nicht_mitmachen": { "icon": "🤷", "label": "Ein Kind will nicht mitmachen", "headline": "Off-Action-Rolle: Foto-Reporter oder Spur-Inspekteur.", "steps": ["Rolle anbieten: ‚Du bist Foto-Reporter — du dokumentierst die Safari für die Lizenz-Stempelung.'", "Alternative: Lizenz-Stempel-Verwalter — passt auf, dass jedes Kind seinen Stempel bekommt.", "Stirnband muss nicht aufgesetzt werden — Lizenz mit Klett-Abzeichen drauf reicht als Identität.", "Sitzplatz am Wache-Pult mit Apfelschorle + Tier-Figuren-Sortier-Aufgabe."], "fallback": "Bleibt komplett raus? Buch + Decke + Stoff-Tier in die Ecke, alle 10 Min kurz reinschauen.", "tone": "ruhig" },
+    "kuchen_misslungen": { "icon": "🎂", "label": "Kuchen ist misslungen", "headline": "Bäcker-Hack: Sahne-Boden + Tier-Cookies + grüne Streusel = 10 Min.", "steps": ["Sahne-Boden beim Bäcker holen (~6-8€) — kein Dramatisches Backen mehr.", "Tier-Cookies (Bahlsen, Sea Animals) oben drauf legen — wirken wie geplant.", "Grüne Streusel oder Pistazien-Krümel als ‚Savannen-Gras' drumherum.", "Bei Wow: Wunderkerze in Mitte für Magie-Moment."], "fallback": "Bäcker zu? Muffins aus Vorrat, je Muffin ein Tier-Sticker oben drauf — Mini-Safari-Cupcakes.", "tone": "motivierend" },
+    "spielzeug_kaputt_oder_fehlt": { "icon": "🔧", "label": "Spielzeug kaputt oder vergessen", "headline": "Improvisieren mit Haushalts-Material — Ranger merken nichts.", "steps": ["Tier-Memory fehlt? DIY mit Tonpapier-Karten + Tier-Aufklebern improvisieren (15 Min Bastel-Notfall).", "Stempel-Set vergessen? Filzstift-Markierung auf Lizenz statt Stempel.", "Spielzeug-Fernglas weg (Wow)? Klorollen + Bändchen = improvisiertes Fernglas (cool genug für 6-8).", "Tierspuren-Druckvorlagen fehlen? Tier-Figuren in den Sand drücken + Foto als ‚Spur-Beweis'."], "fallback": "Total katastrophal? Tierstimmen-Quiz + Memory + Stirnband-Verleihung reicht für 1,5h.", "tone": "praktisch" },
+    "ein_kind_weint": { "icon": "😢", "label": "Ein Kind weint", "headline": "Raus aus dem Trubel — 5 Min am Wache-Pult.", "steps": ["Kind kurz aus der Gruppe nehmen — Küche oder Garten-Ecke, weg vom Lärm.", "Apfelschorle + Banane + Tattoo auf Handrücken als Beruhigungs-Ritual.", "Rolle anbieten: ‚Du kannst die nächsten Tierspuren mit mir suchen — Spezial-Auftrag.'", "Bei Heimweh: kurzer Mama-Foto-Blick aufs Handy, nicht überreden.", "Nach 5 Min sanft zurückführen, an die Hand nehmen zur nächsten Station."], "fallback": "Geht gar nicht mehr? Eltern anrufen, abholen lassen — Goodie-Bag trotzdem mitgeben.", "tone": "ruhig" },
+    "eltern_kommen_frueh": { "icon": "🚪", "label": "Eltern stehen 30 Min zu früh vor der Tür", "headline": "Übergang einleiten — ‚Lizenz-Ehrung in 10 Minuten'.", "steps": ["Eltern in den Flur bitten, Wasser anbieten — nicht ins Wohnzimmer.", "Crew durchsagen: ‚Achtung Junior-Ranger-Lizenz-Ehrung in 10 Min — alle ans Wache-Pult!'", "Gruppenfoto mit Stirnbändern + Lizenz-Hand in die Kamera.", "Lizenz mit finalem Stempel-Datum versehen, Goodie-Bag in die Hand drücken.", "Eltern + Kinder zur Tür — kurz, herzlich, nicht in lange Tür-Gespräche verheddern."], "fallback": "Wirklich chaotisch? Goodie-Bags in den Flur stellen, jedes Kind nimmt eine, Abschied auf der Treppe.", "tone": "praktisch" }
+  },
+  "shoppingListCategories": {
+    "minimal": [
+      { "label": "Safari-Tierfiguren (12 Stk.)", "category": "pflicht", "reasoning": "Variant-Defining für Tierstimmen-Quiz + Pirsch-Identifikation — ohne fehlt motto-zentrales Spiel-Element." },
+      { "label": "Tonpapier braun A4 (für Stirnbänder + Lizenzen)", "category": "pflicht", "reasoning": "Variant-Defining für Stirnband-Verleihung + Junior-Ranger-Lizenz — Ankunfts-Aktivität und Identifikations-Ritual." },
+      { "label": "Apfelschorle (1,5 L) + Becher + blaue Halme", "category": "pflicht", "reasoning": "Getränke + Becher nicht optional — Halme sind Safari-Atmosphäre, aber Becher reichen." },
+      { "label": "Popcorn-Mais + Bananen", "category": "sinnvoll", "reasoning": "Snack-Beilage, aber Kuchen + Apfelschorle tragen 2h Party auch ohne." },
+      { "label": "Blechkuchen-Backmischung + Tier-Deko", "category": "pflicht", "reasoning": "Savannen-Kuchen ist motto-zentral und sozialer Pflichtteil der Party." },
+      { "label": "Tierspuren + Ausmalbilder ausdrucken", "category": "pflicht", "reasoning": "0€-Print trägt Tierspuren-Pirsch + Junior-Ranger-Lizenzen — strukturelle Klammer." },
+      { "label": "Gummibärchen (Mitgebsel)", "category": "sinnvoll", "reasoning": "Standard-Mitgebsel-Beilage, aber Lizenz + Tier-Figur tragen Goodie-Bag funktional auch." },
+      { "label": "Papiertüten (DM/Action)", "category": "habIchVielleicht", "reasoning": "Papiertüten gibt's in jeder Schublade, kein Spezial-Einkauf nötig." }
+    ],
+    "standard": [
+      { "label": "Tonpapier braun A4 (Stirnbänder + Lizenzen + Ausweise)", "category": "pflicht", "reasoning": "Wie Minimal — Variant-übergreifend für Stirnband-Verleihung." },
+      { "label": "Safari-Tierfiguren-Set (12 Stk.)", "category": "pflicht", "reasoning": "Konsistent zu Minimal — motto-zentral." },
+      { "label": "Stoffquadrate für Tarn-Tücher (alte Geschirrtücher zerschneiden)", "category": "habIchVielleicht", "reasoning": "Geschirrtücher aus Haushalt, explizit DIY-Anweisung. Müll-zu-Outfit." },
+      { "label": "Filzstifte Erdfarben (Drogerie/DM, braun/grün/ocker)", "category": "sinnvoll", "reasoning": "Hilft bei Stirnband-Verzierung + Lizenz-Stempelung, aber normaler Filzstift-Vorrat tut's auch." },
+      { "label": "Tier-Memory-Karten (DM, Kaufland, oder selbst gestalten)", "category": "pflicht", "reasoning": "Variant-Defining für Tierspuren-Memory in Standard — eines von 4 Ranger-Stationen." },
+      { "label": "Klett-Abzeichen (selbstklebend)", "category": "sinnvoll", "reasoning": "Verleihungs-Element für Lizenz-Premium, aber Stempel + Filzstift tut's auch." },
+      { "label": "Stempel-Set (Drogerie, Sterne oder Pfoten)", "category": "pflicht", "reasoning": "Lizenz-Stempelung ist Identifikations-Ritual — Variant-Defining für offizielles Gefühl." },
+      { "label": "Apfelschorle (3 L) + Becher + Halme", "category": "pflicht", "reasoning": "Getränke nicht optional bei 2-3h Party." },
+      { "label": "Snacks (Bananen, Pop-Mais, Karotten, Käse)", "category": "pflicht", "reasoning": "Mittagssnack-Pflicht bei 8 Kindern + 3h Party." },
+      { "label": "Backmischung + Tier-Kuchendeko", "category": "pflicht", "reasoning": "Konsistent — Kuchen-Pflicht." },
+      { "label": "Mini-Pizzen + Wraps für Mittagssnack", "category": "sinnvoll", "reasoning": "Wenn Apfelschorle + Snacks da sind, sind Mini-Pizzen eine Wow-Aufrüstung — nicht zwingend." },
+      { "label": "Plüsch-Tiere für Großspiel (vorhandenes Kuscheltier reicht — sonst hier", "category": "habIchVielleicht", "reasoning": "Explizit ‚vorhandenes reicht' — Kuscheltier-Bestand im Kinderzimmer ist Standard." },
+      { "label": "Gummibärchen + Papiertüten", "category": "sinnvoll", "reasoning": "Konsistent — Mitgebsel + Verpackung." },
+      { "label": "Luftballons + Safari-Teller-Set", "category": "sinnvoll", "reasoning": "Atmosphäre-Premium, aber funktional verzichtbar." }
+    ],
+    "wow": [
+      { "label": "Tonpapier braun A4 (Stirnbänder + Lizenzen + Ausweise + Buch-Cover)", "category": "pflicht", "reasoning": "Wie Standard — Variant-übergreifend." },
+      { "label": "Safari-Tierfiguren-Set", "category": "pflicht", "reasoning": "Konsistent." },
+      { "label": "Stoffquadrate für Tarn-Tücher (alte Geschirrtücher)", "category": "habIchVielleicht", "reasoning": "Geschirrtücher aus Haushalt — DIY." },
+      { "label": "Filzstifte Erdfarben (Drogerie/DM)", "category": "sinnvoll", "reasoning": "Konsistent — Vorrat-Item." },
+      { "label": "Tier-Memory-Karten (DM, Kaufland, oder DIY)", "category": "pflicht", "reasoning": "Konsistent — Ranger-Station." },
+      { "label": "Klett-Abzeichen", "category": "sinnvoll", "reasoning": "Konsistent — Premium-Lizenz-Element." },
+      { "label": "Stempel-Set (Drogerie)", "category": "pflicht", "reasoning": "Konsistent — Lizenz-Stempelung." },
+      { "label": "Spielzeug-Fernglas", "category": "pflicht", "reasoning": "Variant-Defining für Beobachtungs-Station + Schatzsuche-Quest in Wow." },
+      { "label": "Apfelschorle (4 L) + Becher + Halme", "category": "pflicht", "reasoning": "Wow-Verpflegung bei 8-10 Kindern + 3h Party." },
+      { "label": "Snacks für 10 Kinder (Bananen, Pop-Mais, Karotten, Käse)", "category": "pflicht", "reasoning": "Konsistent — Snack-Pflicht." },
+      { "label": "Backmischung + Tier-Kuchendeko + Wunderkerze", "category": "pflicht", "reasoning": "Konsistent — Kuchen-Pflicht + Wow-Wunderkerze." },
+      { "label": "Mini-Pizzen + Wraps für Mittagssnack", "category": "sinnvoll", "reasoning": "Konsistent zu Standard — Wow-Aufrüstung." },
+      { "label": "Tempel-Schatzkiste (Schuhkarton, Goldfolie, Schloss-Aufkleber)", "category": "pflicht", "reasoning": "Variant-Defining für Schatzsuche-Quest — Schuhkarton aus Vorrat, Goldfolie + Aufkleber = günstige Premium-Hülle." },
+      { "label": "Schoko-Goldmünzen (Supermarkt)", "category": "sinnvoll", "reasoning": "Schatz-Inhalt-Premium, aber Charms + Tier-Figuren tun's funktional." },
+      { "label": "Ranger-Buch DIY (Aufkleber-Tiere, Heftklammern, Notizpapier)", "category": "sinnvoll", "reasoning": "Wow-Highlight-Goodie, aber Lizenz + Tier-Figur reicht als Mitgebsel-Set." },
+      { "label": "Gummibärchen + Papiertüten", "category": "sinnvoll", "reasoning": "Konsistent." },
+      { "label": "Luftballons + Krepppapier-Lianen + Safari-Teller", "category": "sinnvoll", "reasoning": "Konsistent — Atmosphäre-Premium." },
+      { "label": "Plüsch-Tiere für Großspiel (vorhandenes Kuscheltier reicht)", "category": "habIchVielleicht", "reasoning": "Konsistent — Kuscheltier-Bestand." },
+      { "label": "Filz-Buschhüte (10 Stk., optional)", "category": "habIchVielleicht", "reasoning": "Explizit optional, 80€ — Premium-Verkleidung, normalerweise nicht zwingend." },
+      { "label": "Walkie-Talkie-Set (4 Stk., optional)", "category": "habIchVielleicht", "reasoning": "Explizit optional — Schatzsuche-Premium, normales Handy-Rufen tut's auch." },
+      { "label": "Aufblasbares Tier-Kostüm (optional)", "category": "habIchVielleicht", "reasoning": "Explizit optional — Foto-Highlight, kein Spielmaterial." }
+    ]
+  },
+  "_qualityNotes": {
+    "safari_spezifisch": "Kein Signature-Ritual im Quell-HTML — Stirnband-Verleihung + Junior-Ranger-Lizenz ist die Identifikations-Aktivität. Outdoor-Fokus (Pirsch-Parcours), aber alle Spiele indoor-fähig.",
+    "pflicht_anteile": {"minimal": "5/8 = 62%", "standard": "6/14 = 42%", "wow": "8/21 = 38%"},
+    "self_score_estimate": "~87 — Wow hat viele optionale Items (Hüte/Walkie-Talkies/Kostüme = habIchVielleicht), Pflicht-Anteil entsprechend niedrig."
+  }
+}

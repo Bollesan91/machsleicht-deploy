@@ -1,0 +1,509 @@
+{
+  "preparationWeeks": {
+    "minus4Weeks": {
+      "headline": "4 Wochen vorher — Grundgerüst stellen",
+      "items": [
+        {
+          "icon": "📅",
+          "title": "Datum + Uhrzeit + Treffpunkt fixieren",
+          "detail": "Samstag 14–17 Uhr oder 15–18 Uhr — 3-4h sind bei 9-12 realistisch und gewünscht. Treffpunkt entweder Haustür oder ‚Wache' (vorher dekoriert). Drinnen-Plan-B im Hinterkopf für Stationen-Wettbewerb."
+        },
+        {
+          "icon": "👥",
+          "title": "Gästeliste festzurren — 7–8 Kinder",
+          "detail": "7-8 ist die Sweet-Spot für 9-12: zwei Teams beim Wettbewerb möglich, kein Wartezeit-Stau. Mehr als 8 wird's bei Brandermittlung-Vernehmungen chaotisch."
+        },
+        {
+          "icon": "👨‍👩",
+          "title": "Eltern-Politik kommunizieren",
+          "detail": "In Wow: ‚Eltern setzen ab, kommen um XX:XX wieder.' In Standard: ‚Eltern können absetzen oder bleiben.' 9-12 wollen ‚echte' Party ohne Eltern — das ist Teil des Reizes."
+        },
+        {
+          "icon": "💶",
+          "title": "Variante wählen: Minimal / Standard / Wow",
+          "detail": "Minimal 106€ (Stationen + Mini-Brandermittlung), Standard 136€ (+ Theorie-Briefing + Vernehmung), Wow 196€ (+ Notruf-Sim + Escape-Room-Brandermittlung + UV-Lampe + Polaroid). Entscheidung jetzt."
+        },
+        {
+          "icon": "✉️",
+          "title": "Einladungen rausschicken — kindgerecht",
+          "detail": "Bei 9-12 kann das Kind selbst Einladungen verteilen. Pflicht im Text: Allergie-Abfrage (Pizza-Beläge!). Bei Wow Hinweis: ‚Eltern setzen ab, Abholung XX:XX.' RSVP-Link auf party.machsleicht.de."
+        }
+      ]
+    },
+    "minus2Weeks": {
+      "headline": "2 Wochen vorher — Logistik festziehen",
+      "items": [
+        {
+          "icon": "📋",
+          "title": "RSVPs einsammeln + Liste schließen",
+          "detail": "Bei 9-12 antworten Eltern meist schneller — Kindergeburtstag ist Routine. Bis zur Frist gut. party.machsleicht.de zeigt den Stand."
+        },
+        {
+          "icon": "🍕",
+          "title": "Pizza-Plan + Allergien-Check",
+          "detail": "Bei 8 Kindern: 4 Pizzen reichen (vegetarisch, Margherita, Salami, Funghi je 1). Liefer-Service vorab buchen für genaue Anlieferungs-Zeit. Allergien: Käse, Gluten, Nüsse — Liste am Party-Tag griffbereit."
+        },
+        {
+          "icon": "📝",
+          "title": "Brandermittlung-Plot ausarbeiten (Standard/Wow)",
+          "detail": "4-6 Verdächtigen-Karten + Spuren + Auflösung. Wenn unsicher: Internet-Vorlage googeln (‚Brandermittlung Kindergeburtstag Skript') + anpassen. Bei Wow: Escape-Room-Story mit 5-6 Phasen, Pässe + Codes."
+        },
+        {
+          "icon": "📦",
+          "title": "Bestellliste finalisieren",
+          "detail": "Plastik-Helme (8 Stk., 30-40€) + Tattoo-Set + Wasserspritzen + Klemmbretter bei Amazon, Lupen + Augenbinden separat (3-8 Stk je nach Variante), UV-Lampe bei Wow. Pizza beim Bring-Service vorab."
+        }
+      ]
+    },
+    "minus1Week": {
+      "headline": "1 Woche vorher — bestellen, drucken, vorwarnen",
+      "items": [
+        {
+          "icon": "🛒",
+          "title": "Amazon-Bestellung JETZT raus",
+          "detail": "Lieferzeit 2–5 Tage. Plastik-Helme (8 Stk., ~40€), Tattoo-Set (~5€), Wasserspritzpistolen (~10€), Klemmbretter (~10€). Bei Wow zusätzlich UV-Taschenlampe (~10€) + Crew-Pins (~12€) + Polaroid-Film (~15€)."
+        },
+        {
+          "icon": "🖨️",
+          "title": "Brandermittlung-Materialien drucken",
+          "detail": "Verdächtigen-Karten (4-6 für Standard, 6 für Wow), Fall-Akte mit Phasen, Notruf-Skripte, Wachen-Tafel-Plakat. DIN A4, alles auf gutes Papier — bei 9-12 zählt Detail-Treue."
+        },
+        {
+          "icon": "🔔",
+          "title": "Nachbarn vorwarnen (Sirene-Hinweis)",
+          "detail": "‚Sonntag 14-17 Uhr wird's bei uns lauter, mein Sohn wird 10.' Bei Wow zusätzlich: ‚Wir machen Notruf-Simulation — bitte nicht erschrecken wenn Sie 112-Rufe hören.' Spart Erklärungs-Notfälle."
+        },
+        {
+          "icon": "🌧️",
+          "title": "Plan B Regen mental durchspielen",
+          "detail": "Stationen-Wettbewerb ins Wohnzimmer + Flur + Bad: Atemschutz-Station (Augenbinden) ist drinnen sowieso besser. Brandermittlung sowieso drinnen. Räume freihalten diese Woche."
+        },
+        {
+          "icon": "📦",
+          "title": "Pakete bei Ankunft sofort öffnen",
+          "detail": "Helm-Größen checken (9-12 brauchen größere), Spritzpistolen funktionieren, UV-Lampe leuchtet stark genug, Polaroid-Film griffbereit. Reklamation muss bis Tag X durch sein."
+        }
+      ]
+    },
+    "minus2Days": {
+      "headline": "2 Tage vorher — backen, briefen, basteln",
+      "items": [
+        {
+          "icon": "🎂",
+          "title": "Feuerwehrauto-Kuchen backen — oder Plan B",
+          "detail": "Wenn Zeit/Nerven da: Backmischung in Kastenform. Wenn nicht: Schoko-Kasten beim Bäcker (4-6€), morgen Glasur + Oreos + Wunderkerze. Bei 9-12 ist Wunderkerze OK — keine Brand-Panik wie bei den Kleinen."
+        },
+        {
+          "icon": "🗣️",
+          "title": "Brandermittlung-Plot final durchspielen",
+          "detail": "Plot kurz aufsagen: ‚Verdächtige: Hausmeister, Köchin, Nachbar. Beweise: Streichholz, Fußabdruck, Notiz. Auflösung: Köchin (Pfanne war heiß).' Wenn du stockst, stocken die Kinder mit."
+        },
+        {
+          "icon": "🪧",
+          "title": "Wachen-Tafel + Wertungs-Tafel fertigstellen",
+          "detail": "DIN A3 für jede: ‚FEUERWACHE [Name]' oben, Wertungs-Tafel mit Team-Spalten + Stationen-Punkten. Mit dickem Edding — Kinder müssen's vom anderen Raumende lesen können."
+        },
+        {
+          "icon": "🎁",
+          "title": "Goodie-Bags packen — kindgerecht für 9-12",
+          "detail": "Pro Kind: Diplom-Rolle, Mini-Lupe (von Wow-Vorrat), 3-5 Tattoos, evtl. Mini-Notruf-Karte als Erinnerung, kleine Süßigkeiten-Beilage. KEIN Gummibärchen-Berg — 9-12 schätzt Detail-Qualität über Menge."
+        },
+        {
+          "icon": "🚒",
+          "title": "Wow-Setup: Escape-Room-Phase platzieren",
+          "detail": "5-6 Phasen mit Codes/Hinweisen verstecken. Phase 1: Hinweis auf Fenster, Phase 2: Code in Schublade, Phase 3: UV-Hinweis hinter Vorhang, etc. Auflösungs-Reihenfolge auf Skript-Karte fixieren."
+        }
+      ]
+    },
+    "minus1Day": {
+      "headline": "1 Tag vorher — Deko, Test, letzte Schritte",
+      "items": [
+        {
+          "icon": "🍫",
+          "title": "Kuchen verzieren",
+          "detail": "Rote Glasur drüber, Oreos halbieren = Reifen, weißer Zuckerstift für ‚112'. Bei Wow: Wunderkerze in den Kuchen für ‚Happy Birthday'-Moment. 10 Minuten Arbeit, über Nacht fest werden lassen."
+        },
+        {
+          "icon": "🕵️",
+          "title": "Brandermittlung-Spuren platzieren",
+          "detail": "Streichholzschachtel auf Fensterbank, Fußspur-Schablone im Flur, angekokeltes Papier am Tisch, Notiz unter Stuhl. Bei Wow: UV-Hinweise an Phasen-Stationen verstecken (Schrank-Innenseite, hinter Buchrücken)."
+        },
+        {
+          "icon": "📋",
+          "title": "Stationen + Team-Setup vorbereiten",
+          "detail": "3-4 Stationen platzieren (Spritzen, Knoten, Atemschutz, Erste-Hilfe). Klemmbretter mit Wertungs-Vorlagen pro Team. Stoppuhren bereitlegen (Handy reicht). Augenbinden für Atemschutz-Station."
+        },
+        {
+          "icon": "🔊",
+          "title": "Sirenen-Sound + Bluetooth-Box testen",
+          "detail": "Box laden, Sound abspielen, Lautstärke einstellen. Bei Wow Notruf-Simulation: zusätzlich Telefon-Klingel-Sound für die ‚112-Anruf'-Szene. Bei 9-12 ist Audio-Qualität wichtig — sie merken den Unterschied."
+        },
+        {
+          "icon": "📸",
+          "title": "Wow-Setup: Polaroid + UV-Lampe final testen",
+          "detail": "Polaroid mit 1 Test-Bild abschießen. UV-Lampe im dunklen Bad ausprobieren — leuchtet die UV-Schrift auf den Karten sichtbar? Wenn nicht: stärkere UV-Stifte nachkaufen."
+        }
+      ]
+    },
+    "dayOf": {
+      "headline": "Tag X — durchziehen, atmen, feiern",
+      "items": [
+        {
+          "icon": "⏰",
+          "title": "60 Min vor Ankunft: Stationen aufbauen",
+          "detail": "4 Stationen platzieren (Spritzen, Knoten, Atemschutz, Erste-Hilfe), Pizza bei Lieferdienst final-bestätigen, Cola + Apfelschorle in Kühlschrank, Pizza-Schneider raus. Helfer ist da oder kommt jetzt."
+        },
+        {
+          "icon": "🎯",
+          "title": "30 Min vor Ankunft: Brandermittlung final",
+          "detail": "Spuren-Setup checken (Streichholz, Fußspur, Notiz auf Plätzen), Wertungs-Tafel hängt, Klemmbretter bereit. Wow: UV-Hinweise platziert, Polaroid geladen, Escape-Room-Phasen logisch verbunden."
+        },
+        {
+          "icon": "🎯",
+          "title": "15 Min vor Ankunft: Endkontrolle Audio + Sirene",
+          "detail": "Bluetooth-Box an, Sirenen-Sound im Display offen, bei Wow Notruf-Klingelton bereit. Pizza-Lieferung bestätigt (sonst Push-Nachricht). Tattoo-Stempelkissen am Eingangs-Tisch."
+        },
+        {
+          "icon": "🫁",
+          "title": "5 Min vor Ankunft: durchatmen",
+          "detail": "Klo, Wasser, einmal tief Luft holen. Bei 9-12 wirst du die Party brauchen-tragen — sie sind selbstständig genug. Handy auf lautlos außer für Eltern-Anrufe."
+        },
+        {
+          "icon": "👥",
+          "title": "Ankunft: Schicht-Appell + Team-Zuteilung",
+          "detail": "Helm + Tattoo verteilen, Schicht-Appell-Spruch (alle 1× gemeinsam), dann sofort Team-Zuteilung für Wettbewerb. Wertungs-Tafel zeigen. Bei Wow: Crew-Pins als ‚Schicht-Beförderung' nach erstem Spiel."
+        }
+      ]
+    }
+  },
+  "sosScenarios": {
+    "regen": {
+      "icon": "🌧️",
+      "label": "Regen — alles draußen geplant",
+      "headline": "Brandermittlung war eh drinnen — Stationen ins Wohnzimmer.",
+      "steps": [
+        "Stationen-Wettbewerb ins Wohnzimmer + Flur: 4 Ecken = 4 Stationen, Möbel an die Wand.",
+        "Atemschutz-Station (Augenbinden) ist drinnen sogar besser sichtbar.",
+        "Spritzen-Station ins Bad oder auf den Balkon-Erker.",
+        "Brandermittlung sowieso drinnen — kein Anpassungs-Aufwand."
+      ],
+      "fallback": "Wenn Wohnzimmer zu klein: Stationen halbieren (2 statt 4), dafür längere Brandermittlung-Phase. Rest in die Mitgebsel-Verteilung umlenken.",
+      "tone": "praktisch"
+    },
+    "weniger_kinder_als_erwartet": {
+      "icon": "👥",
+      "label": "Weniger Kinder als erwartet (2 fehlen)",
+      "headline": "Teams kompakter — kein Wartestau, mehr Aktion pro Kind.",
+      "steps": [
+        "Stationen-Wettbewerb auf 3 statt 4 Stationen kürzen, dafür 2 Durchgänge mit Zeitmessung.",
+        "Brandermittlung: weniger Verdächtige (3 statt 4), schneller zur Auflösung.",
+        "Pizza-Mengen anpassen: 3 Pizzen statt 4, falls noch möglich Pizzabote anrufen.",
+        "Pufferzeit füllen mit zweiter Brandermittlung-Runde oder Notruf-Simulation."
+      ],
+      "fallback": "Wenn Stimmung kippt: Crew-Foto + Diplom-Zeremonie ausbauen, 20 Min Ritual statt Hektik.",
+      "tone": "ruhig"
+    },
+    "mehr_kinder_als_erwartet": {
+      "icon": "🚨",
+      "label": "Mehr Kinder als erwartet (Geschwister-Boom)",
+      "headline": "Dritten Team bilden — Wettbewerb wird interessanter.",
+      "steps": [
+        "Crew in 3 Teams splitten statt 2 — pro Team 2-3 Kinder, ältere als Team-Captain.",
+        "Stationen-Rotation: jetzt 3 Teams × 4 Stationen, mehr Wettbewerbs-Drama.",
+        "Pizza nachbestellen lassen (Liefer-Service nochmal anrufen), Cola aus Vorrat aufstocken.",
+        "Helme + Tattoos + Klemmbretter aufstocken: 1-2 Extra-Helme aus Pappkarton-Notfall.",
+        "Brandermittlung-Phasen: 1-2 zusätzliche Verdächtige improvisieren."
+      ],
+      "fallback": "Keine Verstärkung erreichbar? Brandermittlung als Hauptprogramm strecken (45 Min statt 20), Stationen halbieren.",
+      "tone": "praktisch"
+    },
+    "kind_will_nicht_mitmachen": {
+      "icon": "🤷",
+      "label": "Ein Kind will nicht mitmachen",
+      "headline": "Off-Action-Rolle anbieten — bei 9-12 als ‚Beobachter-Position'.",
+      "steps": [
+        "Rolle anbieten: ‚Du bist Wachen-Schreiber — du führst die Wertungs-Tafel.'",
+        "Alternative: Foto-Reporter mit Handy oder Polaroid (Wow), Skript-Halter bei Brandermittlung.",
+        "Tattoo nicht? Auf Dienstausweis kleben, am Klemmbrett befestigen — sieht offizieller aus.",
+        "Sitzplatz mit Cola + Notruf-Skript — Beobachter mit Auftrag, kein Außenseiter."
+      ],
+      "fallback": "Bleibt komplett raus? Buch + Decke + Cola in die ruhige Ecke. Bei 9-12 oft nach 30 Min selbst Einsteigen — die anderen sind cool, das zieht.",
+      "tone": "ruhig"
+    },
+    "kuchen_misslungen": {
+      "icon": "🎂",
+      "label": "Kuchen ist misslungen",
+      "headline": "Bäcker-Hack: Schoko-Kasten + Glasur + Oreos = Notfall in 10 Min.",
+      "steps": [
+        "Schoko-Kastenkuchen beim nächsten Bäcker oder Edeka-Kuchenecke (4–6 €).",
+        "Rote Tortenguss-Glasur drüber — Tube, 1,50 €.",
+        "4 Oreos halbieren = 8 Reifen, seitlich ankleben, weißer Zuckerstift für ‚112'.",
+        "Wunderkerze obendrauf für Wow-Happy-Birthday-Moment, fertig."
+      ],
+      "fallback": "Bäcker zu? Stückkuchen vom Discounter, in der Mitte Wunderkerze, je ein Mini-Marshmallow + Zahnstocher als Sirene-Spitze. Bei 9-12 funktioniert humor: ‚Tarn-Modus, Feuerwehr-Geheimoperation.'",
+      "tone": "motivierend"
+    },
+    "spielzeug_kaputt_oder_fehlt": {
+      "icon": "🔧",
+      "label": "Spielzeug kaputt oder vergessen",
+      "headline": "Improvisieren — bei 9-12 wird's eh als Challenge gefeiert.",
+      "steps": [
+        "Spritzpistole leak? Sprühflasche vom Fensterputzer (durchspülen!) — wird als ‚High-Tech-Spritze' verkauft.",
+        "Tattoos vergessen? Filzstift-Strich + Stern = ‚Probe-Tattoo, hält nur heute' — funktioniert bei 9-12 nur wenn humorvoll.",
+        "UV-Lampe leer? Hinweise mit Bunt-Marker normal sichtbar machen, ‚UV war nur Effekt'.",
+        "Polaroid kaputt? Handy-Foto + sofortdruck später als Email-Anhang."
+      ],
+      "fallback": "Total katastrophal? Brandermittlung + Diplom-Zeremonie als Hauptprogramm strecken — bei 9-12 reicht das.",
+      "tone": "praktisch"
+    },
+    "ein_kind_weint": {
+      "icon": "😢",
+      "label": "Ein Kind weint",
+      "headline": "Bei 9-12 ist Weinen selten — meist Streit oder Verletzung.",
+      "steps": [
+        "Kind aus Gruppe nehmen, kurz fragen was los ist — bei 9-12 kommunizieren sie meistens.",
+        "Bei Streit: anderes Kind dazuholen, kurz Konflikt klären (2 Min Mediation reicht oft).",
+        "Bei Verletzung: Erste-Hilfe-Set aus Standard/Wow nutzen, Eltern anrufen wenn ernst.",
+        "Apfelschorle/Cola + 5 Min raus mit Spiel-Pause.",
+        "Wenn nichts hilft: Eltern anrufen, kurz absprechen."
+      ],
+      "fallback": "Geht nicht mehr? Eltern abholen lassen — kein Drama. Goodie-Bag mitgeben, Crew-Foto noch machen wenn möglich.",
+      "tone": "ruhig"
+    },
+    "eltern_kommen_frueh": {
+      "icon": "🚪",
+      "label": "Eltern stehen 30 Min zu früh vor der Tür",
+      "headline": "Übergang einleiten — ‚Schicht-Ende in 10 Min, Zeremonie jetzt.'",
+      "steps": [
+        "Eltern in den Flur bitten, Wasser anbieten — nicht ins Wohnzimmer, sonst kippt die Wow-Stimmung.",
+        "Crew durchsagen: ‚Achtung, Zeremonie in 10 Min — alle ans Wache-Pult!'",
+        "Gruppenfoto + Wertungs-Tafel-Ergebnis verkünden + Diplom-Verteilung.",
+        "Bei Wow: Polaroid-Verteilung + Crew-Pin-Übergabe + Brandermittlung-Auflösung.",
+        "Mitgebsel + Eltern + Kinder zur Tür — kurz, herzlich, keine Tür-Gespräche."
+      ],
+      "fallback": "Wirklich chaotisch? Mitgebsel in den Flur stellen, jedes Kind nimmt im Rausgehen eine, Abschied auf der Treppe.",
+      "tone": "praktisch"
+    }
+  },
+  "shoppingListCategories": {
+    "minimal": [
+      {
+        "label": "Plastik-Helme (7 Stk.)",
+        "category": "pflicht",
+        "reasoning": "Variant-Defining: ohne Helme keine Schicht-Appell-Wirkung, motto-zentral für 9-12."
+      },
+      {
+        "label": "Wasserspritzpistolen (6er-Set)",
+        "category": "pflicht",
+        "reasoning": "Variant-Defining für Spritzen-Station im Stationen-Wettbewerb."
+      },
+      {
+        "label": "Lupen für Brandermittlung (3 Stk.)",
+        "category": "pflicht",
+        "reasoning": "Variant-Defining für Mini-Brandermittlung — ohne Lupen kein Spurensuch-Spiel."
+      },
+      {
+        "label": "Feuerwehr-Tattoo-Set",
+        "category": "pflicht",
+        "reasoning": "Schicht-Appell-Tattoo trägt Identifikations-Ritual über alle Varianten."
+      },
+      {
+        "label": "Absperrband rot/weiß",
+        "category": "sinnvoll",
+        "reasoning": "Macht den Wache-Tisch motto-stark, aber Party läuft auch ohne visuellen Abgrenzungs-Effekt."
+      },
+      {
+        "label": "Klemmbretter (3 Stk.) + Plakate Wachen-/Wertungs-Tafel",
+        "category": "sinnvoll",
+        "reasoning": "Wertungs-Element bleibt zentral, aber Wand-Plakat tut das funktional ebenso (Klemmbrett ist Premium-Wertungs-Form, nicht zwingend)."
+      },
+      {
+        "label": "Seile + Knoten-Karten",
+        "category": "pflicht",
+        "reasoning": "Knoten-Station ist Variant-Defining für Stationen-Wettbewerb (3er-Rotation)."
+      },
+      {
+        "label": "Pizza + Apfelschorle + Cola + Brezeln + Chips",
+        "category": "pflicht",
+        "reasoning": "Pizza-Party ist 9-12-Standard, ohne sind die Kinder enttäuscht."
+      },
+      {
+        "label": "Backmischung + Zuckerguss + Oreo + Wunderkerze",
+        "category": "pflicht",
+        "reasoning": "Feuerwehrauto-Kuchen Pflichtteil + Wunderkerze ist 9-12-Standard."
+      },
+      {
+        "label": "Luftballons (optional, ~5 Stück)",
+        "category": "habIchVielleicht",
+        "reasoning": "Explizit optional — bei 9-12 sind Ballons schon weniger zentral als bei Kleinen."
+      },
+      {
+        "label": "Diplom + Dienstausweise + Verdächtigen-Karten + Fall-Akte",
+        "category": "pflicht",
+        "reasoning": "0€-Print trägt Schicht-Appell + Brandermittlung + Zeremonie — strukturelle Klammer."
+      },
+      {
+        "label": "Mitgebsel-Tüten + Bändchen + Gummibärchen",
+        "category": "sinnvoll",
+        "reasoning": "Goodie-Verpackung, aber 9-12 schätzt Detail über Menge — Diplom-Rolle allein reicht funktional."
+      }
+    ],
+    "standard": [
+      {
+        "label": "Plastik-Helme (8 Stk.)",
+        "category": "pflicht",
+        "reasoning": "Wie Minimal — Variant-übergreifend."
+      },
+      {
+        "label": "Wasserspritzpistolen",
+        "category": "pflicht",
+        "reasoning": "Konsistent — Spritzen-Station."
+      },
+      {
+        "label": "Lupen (4 Stk., reichen für Mitgebsel)",
+        "category": "sinnvoll",
+        "reasoning": "Vernehmungs-Brandermittlung kann mit 1-2 Demo-Lupen statt 4 individuellen ablaufen — Mitgebsel-Verteilung am Ende reicht für die Erinnerung."
+      },
+      {
+        "label": "Feuerwehr-Tattoo-Set",
+        "category": "pflicht",
+        "reasoning": "Konsistent — Schicht-Appell-Tattoo."
+      },
+      {
+        "label": "Absperrband",
+        "category": "sinnvoll",
+        "reasoning": "Konsistent — Deko-Effekt."
+      },
+      {
+        "label": "Augenbinden (4 Stk.)",
+        "category": "pflicht",
+        "reasoning": "Variant-Defining für Atemschutz-Station (4er-Rotation in Standard)."
+      },
+      {
+        "label": "Klemmbretter (4 Stk.) + Plakate",
+        "category": "sinnvoll",
+        "reasoning": "Wertungs-Element bleibt zentral, aber Wand-Plakat tut das funktional ebenso (Klemmbrett ist Premium-Wertungs-Form, nicht zwingend)."
+      },
+      {
+        "label": "Seile + Knoten-Karten",
+        "category": "pflicht",
+        "reasoning": "Konsistent — Knoten-Station."
+      },
+      {
+        "label": "Pizza + Apfelschorle + Cola + Brezeln + Chips + Gummibärchen",
+        "category": "pflicht",
+        "reasoning": "Konsistent — Standard-Pizza-Party."
+      },
+      {
+        "label": "Backmischung + Zuckerguss + Oreo + Wunderkerze",
+        "category": "pflicht",
+        "reasoning": "Konsistent — Kuchen-Pflicht."
+      },
+      {
+        "label": "Diplom + Dienstausweise + Verdächtigen-Karten + Fall-Akte + Skripte",
+        "category": "pflicht",
+        "reasoning": "0€-Print trägt jetzt zusätzlich Theorie-Briefing-Skripte + Vernehmung."
+      },
+      {
+        "label": "Mitgebsel-Tüten + Bändchen",
+        "category": "sinnvoll",
+        "reasoning": "Konsistent — Goodie-Verpackung."
+      }
+    ],
+    "wow": [
+      {
+        "label": "Plastik-Helme (8 Stk.)",
+        "category": "pflicht",
+        "reasoning": "Wie Standard — Variant-übergreifend."
+      },
+      {
+        "label": "Crew-Pins (8 Stk.)",
+        "category": "sinnvoll",
+        "reasoning": "Wow-Schicht-Beförderung Premium-Element, aber Tattoos + Helme tragen Identifikation funktional."
+      },
+      {
+        "label": "Wasserspritzpistolen",
+        "category": "pflicht",
+        "reasoning": "Konsistent — Spritzen-Station."
+      },
+      {
+        "label": "Lupen (8 Stk., reichen für Mitgebsel)",
+        "category": "pflicht",
+        "reasoning": "Vollwertige Escape-Room-Brandermittlung braucht Lupen pro Kind."
+      },
+      {
+        "label": "Feuerwehr-Tattoo-Set",
+        "category": "pflicht",
+        "reasoning": "Konsistent."
+      },
+      {
+        "label": "Absperrband",
+        "category": "sinnvoll",
+        "reasoning": "Konsistent."
+      },
+      {
+        "label": "Augenbinden (4 Stk.)",
+        "category": "pflicht",
+        "reasoning": "Atemschutz-Station erweitert, Wow-Stationen-Wettbewerb."
+      },
+      {
+        "label": "UV-Taschenlampe (Brandermittlung)",
+        "category": "pflicht",
+        "reasoning": "Variant-Defining für vollwertige Escape-Room-Brandermittlung — UV-Hinweise sind zentral."
+      },
+      {
+        "label": "Klemmbretter + Plakate",
+        "category": "sinnvoll",
+        "reasoning": "Wertungs-Element bleibt zentral, aber Wand-Plakat tut das funktional ebenso (Klemmbrett ist Premium-Wertungs-Form, nicht zwingend)."
+      },
+      {
+        "label": "Seile + Knoten-Karten",
+        "category": "pflicht",
+        "reasoning": "Konsistent."
+      },
+      {
+        "label": "Polaroid-Film oder Sofortdruck (8 Bilder)",
+        "category": "sinnvoll",
+        "reasoning": "Wow-Erinnerungs-Element, aber Crew-Foto mit Handy + Druck zuhause tut's auch."
+      },
+      {
+        "label": "Pizza + Apfelschorle + Cola + Brezeln + Chips + Gummibärchen + Sandwich",
+        "category": "pflicht",
+        "reasoning": "Wow-Verpflegung für 3-4h Party + 8 Kinder nicht optional."
+      },
+      {
+        "label": "Backmischung + Zuckerguss + Wunderkerze",
+        "category": "pflicht",
+        "reasoning": "Konsistent — Kuchen-Pflicht."
+      },
+      {
+        "label": "Diplom + 6 Verdächtigen-Karten + 6-Phasen-Fall-Akte + Skripte + Notruf-Szenarien",
+        "category": "pflicht",
+        "reasoning": "0€-Print trägt jetzt Escape-Room + Notruf-Simulation — Strukturanker stark erweitert."
+      },
+      {
+        "label": "Mitgebsel-Tüten + Bändchen",
+        "category": "sinnvoll",
+        "reasoning": "Konsistent — Goodie-Verpackung."
+      }
+    ]
+  },
+  "_qualityNotes": {
+    "gross_spezifisch": "3-4h Party, Eltern absetzen in Wow, 7-8 Kinder, echter Wettbewerb mit Zeitmessung, Pizza statt Brezeln, Cola erlaubt, Wunderkerze OK, Escape-Room-Brandermittlung in Wow, Notruf-Simulation als Wow-Bonus.",
+    "preparationWeeks_items_per_section": [
+      5,
+      4,
+      5,
+      5,
+      5,
+      5
+    ],
+    "sosScenarios_steps_max_chars_check": "max 119",
+    "shoppingList_pflicht_anteile": {
+      "minimal": "9/12 = 75%? need recheck",
+      "standard": "10/12 = 83%? need recheck",
+      "wow": "11/15 = 73%? need recheck"
+    },
+    "self_score_estimate": "~85 — gross hat hohe Pflicht-Anteile weil viele Items Variant-Defining sind. Reviewer wird wahrscheinlich Crew-Pins/Polaroid downgraden, was Wow auf <70% bringt."
+  }
+}

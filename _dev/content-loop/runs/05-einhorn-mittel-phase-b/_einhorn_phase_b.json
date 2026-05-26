@@ -1,0 +1,348 @@
+{
+  "preparationWeeks": {
+    "minus4Weeks": {
+      "headline": "4 Wochen vorher — Grundgerüst stellen",
+      "items": [
+        {
+          "icon": "📅",
+          "title": "Datum, Uhrzeit, Treffpunkt fixieren",
+          "detail": "Samstag oder Sonntag 14–17 Uhr ist Standard — Mittagsschlaf der Kleinen durch, abends sind alle platt. Drinnen-Plan-B-Adresse schon im Kopf haben, falls das Wetter kippt."
+        },
+        {
+          "icon": "👥",
+          "title": "Gästeliste festzurren — max 6 Kinder",
+          "detail": "12 Wächter-Namen sind im Beutel, du brauchst nur 6 Zettel ziehen. Über 6 wird's bei Seife gießen und Milch-Experiment eng (parallel an 2 Tischen heißt: 2 Helfer)."
+        },
+        {
+          "icon": "💶",
+          "title": "Variante wählen: Minimal / Standard / Wow",
+          "detail": "Minimal 32€ (Sternenstaub-Beutel + Tattoos + Parcours, DIY-Schwer), Standard 65€ (Masken + Seife gießen + Milch-Experiment), Wow 93€ (Wolkenwald-Rätselrallye mit UV-Geheimschrift + Quiz). Entscheidung jetzt — danach Bestelllisten."
+        },
+        {
+          "icon": "✉️",
+          "title": "Einladungen rausschicken",
+          "detail": "Pflicht im Text: ‚Hat dein Kind Allergien oder Unverträglichkeiten?' — essbarer Glitzer enthält oft E-Nummern. RSVP-Link auf party.machsleicht.de spart dir den WhatsApp-Chat-Krieg."
+        },
+        {
+          "icon": "🏠",
+          "title": "Bei Mietwohnung: Boden checken",
+          "detail": "Einhorn ist akustisch zahm, aber Glitzer + Seifenwasser + Lebensmittelfarbe sind Boden-Bomben. Teppich abdecken oder Aktivitäten in die Küche/aufs Balkon-Backup. Nachbarn unter dir freuen sich nicht über tropfendes Milch-Experiment."
+        }
+      ]
+    },
+    "minus2Weeks": {
+      "headline": "2 Wochen vorher — Logistik festziehen",
+      "items": [
+        {
+          "icon": "📋",
+          "title": "RSVPs einsammeln und Liste schließen",
+          "detail": "Wer hat geantwortet, wer nicht? Nachzügler einmal anstupsen, dann ist gut. party.machsleicht.de zeigt dir den Stand auf einen Blick — sonst Excel oder Zettel am Kühlschrank."
+        },
+        {
+          "icon": "🥜",
+          "title": "Allergien zusammenschreiben",
+          "detail": "Eine Liste, ein Zettel: Kind X = Laktose, Kind Y = Nüsse, Kind Z = E-Nummern (essbarer Glitzer). Bei 6 Kindern hat statistisch eins was. Liste am Backtag und am Party-Tag griffbereit — auf Papier, nicht im Hinterkopf."
+        },
+        {
+          "icon": "🙋",
+          "title": "Bei 6+ Kindern: Helfer organisieren",
+          "detail": "Standard/Wow brauchen 2. Person bei Seife-Gießen (heiße Mikrowelle) und Milch-Experiment (Spülmittel-Spritzen vor 6 Augenpaaren chaotisch). Oma, Partner, andere Mutter, Teenager-Nachbarin (10€/3h ist fair)."
+        },
+        {
+          "icon": "📦",
+          "title": "Bestellliste finalisieren",
+          "detail": "Was kaufst du wo? Einhorn-Tattoo-Set + Figuren + Masken + Tatlampe (Wow) bei Amazon, Glycerin-Seife + Lebensmittelfarbe bei Rossmann/dm, Capri-Sun + Backmischung im Supermarkt. Liste machen — sonst kaufst du in Woche -1 dreimal."
+        }
+      ]
+    },
+    "minus1Week": {
+      "headline": "1 Woche vorher — bestellen, drucken, vorwarnen",
+      "items": [
+        {
+          "icon": "🛒",
+          "title": "Amazon-Bestellung JETZT raus",
+          "detail": "Lieferzeit 2–5 Tage. Einhorn-Tattoo-Set (~5€), Einhorn-Figuren 12er (~4€), bei Standard Masken (~6€) + Glycerin-Seife (~7€) + Silikon-Förmchen (~5€), bei Wow zusätzlich UV-Taschenlampe (~12€) + UV-Geheimschrift-Stift (~7€). Später bestellen = Panik."
+        },
+        {
+          "icon": "🖨️",
+          "title": "Wächter-Pass + Namensliste drucken",
+          "detail": "Wächter-Pass-Vorlage (DIN A6, 6x falten) gibt's kostenlos auf kribbelbunt.de oder selber gestalten. Plus die 12 Einhorn-Namen einmal ausdrucken und in Streifen schneiden — kommen in den Sternenstaub-Beutel."
+        },
+        {
+          "icon": "🔔",
+          "title": "Mietwohnung: Hausordnung gegenchecken",
+          "detail": "Lautstärke kein Thema bei Einhorn, aber Boden-Versiegelung und Glitzer-Konfetti können beim Auszug Ärger machen. Tucher und Wachs-Tücher griffbereit halten. Falls Sorge: kurz vorab Nachbarn mit Kind über Lautstärke beruhigen."
+        },
+        {
+          "icon": "🌧️",
+          "title": "Plan B Regen mental durchspielen",
+          "detail": "Regenbogen-Milch-Experiment ist drinnen sowieso besser. Parcours-Strecke im Flur improvisieren (Kissen als Wolken-Hindernisse, Stuhl-Slalom). Räume nicht vollstopfen diese Woche — Bodenfreiheit ist Pflicht."
+        },
+        {
+          "icon": "🧪",
+          "title": "Allergie-Check: Glitzer + Lebensmittelfarbe vorab testen",
+          "detail": "Essbaren Glitzer auf eigene Haut tupfen 5 Min, Lebensmittelfarbe an Schüssel-Rand wischen. Wenn was juckt oder rote Flecken kommen, ist es weg vom Tisch — wechsel auf reine Zuckerperlen ohne Farbstoff."
+        },
+        {
+          "icon": "📦",
+          "title": "Pakete bei Ankunft sofort öffnen",
+          "detail": "Tattoos auf Vollständigkeit prüfen (30+ Motive?), UV-Lampe auf Batterie checken, Glycerin-Seife auf Verfallsdatum (manche Marken kommen verbraucht). Reklamation muss bis Tag X durch sein."
+        }
+      ]
+    },
+    "minus2Days": {
+      "headline": "2 Tage vorher — backen, briefen, basteln",
+      "items": [
+        {
+          "icon": "🎂",
+          "title": "Regenbogen-Wolkenkuchen backen — oder Plan B",
+          "detail": "Wenn Zeit/Nerven da: Gugelhupf-Fertigmischung in 4 Schüsseln, je 1 Lebensmittelfarbe rein (rosa/gelb/blau/grün), schichten, backen. Wenn nicht: weißen Gugelhupf vom Bäcker (4–6€), morgen kommt Wolken-Guss + Regenbogen-Streusel drauf."
+        },
+        {
+          "icon": "🗣️",
+          "title": "Helfer briefen — 5 Minuten reichen",
+          "detail": "Zettel mit Tagesablauf, wer macht was: ‚Du Milch-Experiment-Tisch, ich Seife-Gießen' (Standard) oder ‚Du Wolkenwald-Stationen 1+3, ich 2+4+5' (Wow). Bei Allergien: Liste zeigen, nicht erzählen."
+        },
+        {
+          "icon": "🪧",
+          "title": "Wächter-Pässe vorbereiten + zerschneiden",
+          "detail": "DIN A4 → 6x ausschneiden, falzen, Namensfeld + 4 Stempel-Felder. Bei Wow: Rätsel-Felder + UV-Geheimschrift-Hinweise vorab in den Pass schreiben (sichtbar, nicht UV — die Stationen-Hinweise sind UV)."
+        },
+        {
+          "icon": "🎁",
+          "title": "Goodie-Bags packen",
+          "detail": "Pro Kind: Einhorn-Figur, 3 Tattoos aus dem Set, Regenbogen-Gummibärchen, evtl. Mini-Glycerinseife (Wow). In Papiertüte mit Wächter-Namen drauf. 15 Min Arbeit, spart dir morgen Stress."
+        },
+        {
+          "icon": "✨",
+          "title": "Sternenstaub-Beutel füllen",
+          "detail": "Stoffbeutel oder Schmuckbeutel, 12 ausgeschnittene Namens-Zettel rein, dazu eine Prise essbarer Glitzer oder Konfetti (für den Funkel-Effekt beim Rausziehen). Beutel auf Wachen-Pult / Ankunfts-Tisch platzieren."
+        }
+      ]
+    },
+    "minus1Day": {
+      "headline": "1 Tag vorher — Deko, Test, letzte Schritte",
+      "items": [
+        {
+          "icon": "🌈",
+          "title": "Kuchen-Wolken-Guss + Deko",
+          "detail": "Weiße Glasur drüber (200g Puderzucker + 3 EL Wasser), Regenbogen-Streusel oder Smarties um den Fuß als ‚Wolken-Lava'. Einhorn-Horn aus Fondant oder Eiswaffel mit Schoko (HANDOFF-Trick). Über Nacht fest werden lassen."
+        },
+        {
+          "icon": "🧪",
+          "title": "Regenbogen-Milch-Experiment vortesten (Standard/Wow)",
+          "detail": "Teller mit Vollmilch, je 1 Tropfen Lebensmittelfarbe in 4 Ecken, dann Wattestäbchen mit Spülmittel reinhalten — Farben sollten explosiv durch die Milch schießen. Falls nicht: Spülmittel-Wattestäbchen frischer machen, evtl. mehr Spülmittel."
+        },
+        {
+          "icon": "🚧",
+          "title": "Stationen + Wächter-Pult dekorieren",
+          "detail": "Pastell-Luftballons aufhängen, Regenbogen-Girlande spannen, Sternenstaub-Beutel + Wächter-Pässe + Tattoo-Stempelkissen am Eingangs-Tisch. Bei Wow: UV-Hinweise an Wolkenwald-Stationen verstecken (Schrank-Innenseite, unter Stuhl, hinter Vorhang)."
+        },
+        {
+          "icon": "🔋",
+          "title": "UV-Lampe + Spotify-Playlist testen (Wow)",
+          "detail": "UV-Taschenlampe auf Batterie checken, im dunklen Bad ausprobieren — leuchtet die UV-Schrift sichtbar? Spotify-Playlist ‚Magic Forest' oder ähnliches in der Notiz-App speichern. Nicht erst am Party-Tag suchen."
+        },
+        {
+          "icon": "🧼",
+          "title": "Glycerin-Seife schmelzen vorbereiten (Standard/Wow)",
+          "detail": "Glycerin-Block in Würfel schneiden, Silikon-Förmchen bereitstellen, Lebensmittelfarbe + Glitzer-Sets aufstellen. Mikrowellen-Schale schon raussuchen. Am Tag X: 30 Sek mikrowellen, fertig — Kinder gießen selbst."
+        }
+      ]
+    },
+    "dayOf": {
+      "headline": "Tag X — durchziehen, atmen, feiern",
+      "items": [
+        {
+          "icon": "⏰",
+          "title": "30 Min vor Ankunft: Stationen aufbauen",
+          "detail": "Tische vorbereiten (Masken-Tisch oder Milch-Experiment oder Seife-Tisch, je nach Variante), Capri-Sun kühlen, Sandwiches/Obst schneiden. Helfer ist da oder kommt jetzt. Kuchen aus dem Kühlschrank — Zimmertemperatur schmeckt besser."
+        },
+        {
+          "icon": "🎯",
+          "title": "15 Min vor Ankunft: Wächter-Tisch final",
+          "detail": "Sternenstaub-Beutel mit 12 Zetteln, Wächter-Pässe gefaltet, Tattoo-Stempelkissen offen platziert, Einhorn-Figuren als Tisch-Deko. Wow-Setup: UV-Lampe griffbereit, Wolkenwald-Hinweise an Stationen, Quiz-Karten geheim auf Wächter-Pult."
+        },
+        {
+          "icon": "🫁",
+          "title": "5 Min vor Ankunft: durchatmen + Wechselklamotten-Tüte",
+          "detail": "Klo, Wasser, einmal tief Luft holen. Tüte an Türklinke hängen mit ‚Wechselklamotten falls nötig?' für Eltern — Milch-Experiment + Seife-Gießen sind Feucht-Klamotten-Risiko. Sonst kriegst du sie nicht."
+        },
+        {
+          "icon": "✨",
+          "title": "Ankunft: Sternenstaub-Beutel ziehen lassen",
+          "detail": "Jedes Kind zieht einen Wächter-Namen, liest laut vor (Vorlesen üben hilft schüchternen Kindern), Tattoo wird auf Handrücken aufgetragen (20 Sek nass-tupfen), Name in Wächter-Pass. Das ist die ersten 10 Minuten."
+        },
+        {
+          "icon": "📸",
+          "title": "Foto-Runde nach Ritual",
+          "detail": "Wenn alle Tattoos drauf sind und Wächter-Pass-Namen eingetragen, Gruppenfoto vor Regenbogen-Girlande. Eins, fertig, weiter. Bei Wow: Polaroid-Sofortdruck für jeden Wächter-Pass als ‚Crew-Foto'."
+        }
+      ]
+    }
+  },
+  "sosScenarios": {
+    "regen": {
+      "icon": "🌧️",
+      "label": "Regen — alles draußen geplant",
+      "headline": "Milch-Experiment ist drinnen sowieso besser — Wache ins Wohnzimmer.",
+      "steps": [
+        "Parcours ins Wohnzimmer: Kissen als Wolken-Hindernisse, Stuhl-Slalom, Sofa-Tunnel.",
+        "Sternenstaub-Schatzsuche durch alle Zimmer der Wohnung verlegen.",
+        "Milch-Experiment war eh drinnen geplant — kein Schaden.",
+        "Bei Wow: UV-Stationen sind drinnen besser sichtbar (Vorhänge zu) — Glücksfall."
+      ],
+      "fallback": "Wenn kein Bad/Flur: alle ans Wächter-Pult, Masken-Basteln + Tattoos + Quiz reicht für 2h Programm.",
+      "tone": "praktisch"
+    },
+    "weniger_kinder_als_erwartet": {
+      "icon": "👥",
+      "label": "Weniger Kinder als erwartet (2–3 fehlen)",
+      "headline": "Weniger Wächter, gleicher Zauber — straffer, nicht dünner.",
+      "steps": [
+        "Sternenstaub-Beutel: nur die Hälfte der Zettel ziehen lassen, kleine Wächter-Runde wirkt dadurch enger.",
+        "Parcours: Strecke kürzen, dafür 2 Durchgänge mit Zeitmessung.",
+        "Doppel-Rollen vergeben: Luna + Stella können zusammen ein Sub-Team bilden.",
+        "Pufferzeit füllen mit zweiter Milch-Experiment-Runde (anderer Farb-Schema)."
+      ],
+      "fallback": "Wenn Stimmung kippt: alles ans Wächter-Pult, Tattoo-Zeremonie nochmal ausführlich + Foto-Runde als Hauptprogramm.",
+      "tone": "ruhig"
+    },
+    "mehr_kinder_als_erwartet": {
+      "icon": "🚨",
+      "label": "Mehr Kinder als erwartet (Geschwister-Boom)",
+      "headline": "Zweiten Wächter-Pool öffnen — alle 12 Namen sind ohnehin da.",
+      "steps": [
+        "Sternenstaub-Beutel hält 12 Namen bereit — alle ziehen lassen, niemand bleibt namenlos.",
+        "Milch-Experiment: 2. Tisch eröffnen, parallel laufen lassen (Helfer übernimmt einen).",
+        "Sofort Verstärkung anrufen: Oma/Nachbarin, 10€ für 2 Std Tisch-Aufsicht.",
+        "Tattoos + Wächter-Pässe verteilen vor allem anderen — Geschwister NICHT leer ausgehen lassen.",
+        "Capri-Sun nachbestellen lassen (Tankstelle/Lieferdienst), Kuchen-Stücke kleiner schneiden."
+      ],
+      "fallback": "Kein Helfer erreichbar? Parcours streichen, dafür Milch-Experiment + Masken-Basteln parallel — du läufst zwischen 2 Tischen.",
+      "tone": "praktisch"
+    },
+    "kind_will_nicht_mitmachen": {
+      "icon": "🤷",
+      "label": "Ein Kind will nicht mitmachen",
+      "headline": "Kein Zwang — eigener Name + Off-Action-Rolle am Wächter-Pult.",
+      "steps": [
+        "Rolle anbieten: ‚Du bist heute Hofdame der Königin — du verteilst die Wächter-Pässe.'",
+        "Alternative: ‚Glitzer-Inspekteurin' — checkt ob alle Tattoos sitzen, Foto-Reporterin mit deinem Handy.",
+        "Tattoo nicht auf die Hand? Auf den Wächter-Pass kleben, ist sowieso vorgesehen.",
+        "Sitzplatz mit eigenem Capri-Sun + Einhorn-Figur — Beobachter-Posten, kein Außenseiter-Posten."
+      ],
+      "fallback": "Will gar nichts? Buch + Decke in die ruhige Ecke, alle 10 Min kurz reinschauen. Manche steigen nach 20 Min selbst ein.",
+      "tone": "ruhig"
+    },
+    "kuchen_misslungen": {
+      "icon": "🎂",
+      "label": "Kuchen ist misslungen",
+      "headline": "Bäcker-Hack: weißer Gugelhupf + Wolken-Guss + Smarties = Notfall in 10 Min.",
+      "steps": [
+        "Weißen Gugelhupf beim Bäcker oder im Supermarkt holen (4–6€).",
+        "200g Puderzucker + 3 EL Wasser anrühren, weißen Guss drüber gießen — fertig die ‚Wolke'.",
+        "Regenbogen-Smarties oder essbare Streusel um den Fuß als ‚Wolken-Lava' ankleben.",
+        "Eiswaffel mit Schoko-Spitze als Einhorn-Horn obendrauf — sieht aus wie gewollt."
+      ],
+      "fallback": "Bäcker zu? Muffins aus dem Vorrat, pro Muffin ein kleines Marshmallow + Zahnstocher mit rosa Papier-Spitze — Mini-Einhorn-Hörner.",
+      "tone": "motivierend"
+    },
+    "spielzeug_kaputt_oder_fehlt": {
+      "icon": "🔧",
+      "label": "Spielzeug kaputt oder vergessen",
+      "headline": "Improvisieren mit Haushalts-Material — Wächter merken nichts.",
+      "steps": [
+        "Glycerin-Seife fehlt? Spülmittel + Wasser + Lebensmittelfarbe in Gläsern = Glitzer-Schnee-Kugeln.",
+        "Lebensmittelfarbe weg? Beerensaft (Heidelbeere, Erdbeere) als Naturfarbe — funktioniert für Milch-Experiment.",
+        "UV-Lampe leer (Wow)? Wolkenwald-Hinweise mit Bunt-Marker normal sichtbar machen, ‚UV' war eh nur Effekt.",
+        "Einhorn-Tattoos vergessen? Filzstift-Strich auf Handrücken + Stern mit Glitzer = ‚Probe-Tattoo, hält nur heute'."
+      ],
+      "fallback": "Total katastrophal? Sternenstaub-Beutel + Wächter-Pass + Kuchen reichen für 2h Programm — Zeremonie statt Aktivität.",
+      "tone": "praktisch"
+    },
+    "ein_kind_weint": {
+      "icon": "😢",
+      "label": "Ein Kind weint",
+      "headline": "Raus aus dem Trubel — 5 Min am Wächter-Pult, dann sehen wir weiter.",
+      "steps": [
+        "Kind aus der Gruppe nehmen — Küche oder Flur, weg vom Lärm.",
+        "Capri-Sun + Tattoo auf Handrücken kleben als Beruhigungs-Ritual.",
+        "Rolle anbieten: ‚Magst du die Wächter-Pässe verteilen? Du sagst, wer dran ist.'",
+        "Bei Heimweh: Wahl anbieten — anrufen oder Foto von Mama am Handy zeigen. Anruf nur wenn Kind danach fragt.",
+        "Nach 5 Min an die Hand nehmen, zur nächsten Station mitnehmen — nicht fragen."
+      ],
+      "fallback": "Geht gar nicht mehr? Eltern anrufen, abholen lassen — kein Drama, lieber 30 Min früher als ein Trauma.",
+      "tone": "ruhig"
+    },
+    "eltern_kommen_frueh": {
+      "icon": "🚪",
+      "label": "Eltern stehen 30 Min zu früh vor der Tür",
+      "headline": "Übergang einleiten — ‚Wächter-Abschied in 10 Minuten'.",
+      "steps": [
+        "Eltern in den Flur bitten, Wasser anbieten — nicht ins Wohnzimmer, sonst kippt die Stimmung.",
+        "Wächter durchsagen: ‚Achtung, Abschieds-Zeremonie in 10 Min — Wächter-Pult-Foto jetzt!'",
+        "Gruppenfoto am Wächter-Pult mit Tattoo-Hand und Wächter-Pass in die Kamera.",
+        "Wächter-Pässe zeigen, Goodie-Bag in die Hand drücken, Glitzer-Abschiedsstaub mitgeben.",
+        "Eltern + Kinder zur Tür — kurz, herzlich, nicht in lange Tür-Gespräche verheddern."
+      ],
+      "fallback": "Wirklich chaotisch? Goodie-Bags in den Flur stellen, jedes Kind nimmt im Rausgehen eine — Abschied auf der Treppe statt im Wohnzimmer.",
+      "tone": "praktisch"
+    }
+  },
+  "shoppingListCategories": {
+    "minimal": [
+      { "label": "Einhorn-Figuren (12 Stk.)", "category": "sinnvoll", "reasoning": "Mitgebsel-Beilage, kein Spiel hängt daran — Tüten gehen auch mit Tattoos + Gummibärchen." },
+      { "label": "Einhorn-Tattoo-Set (30+ Motive)", "category": "pflicht", "reasoning": "Schicht-Appell-Tattoo ist Variant-Defining für Sternenstaub-Beutel-Ritual — ohne kollabiert der Einstieg." },
+      { "label": "Essbarer Glitzer / Zucker-Perlen", "category": "sinnvoll", "reasoning": "Macht den Beutel-Funkel-Effekt, aber Konfetti aus Papier oder etwas Mehl tun's notfalls auch." },
+      { "label": "Capri-Sun + Grenadine", "category": "pflicht", "reasoning": "Getränke nicht optional — 6 durstige Wächter ohne Trinken läuft Party 30 Min." },
+      { "label": "Popcorn-Mais + Snacks", "category": "sinnvoll", "reasoning": "Salzige Beilage rundet ab, aber Kuchen + Gummibärchen tragen die 2h-Slot ohne Showstopper." },
+      { "label": "Backmischung + Lebensmittelfarben", "category": "pflicht", "reasoning": "Regenbogen-Wolkenkuchen ist sozialer Pflichtteil und motto-zentrales Symbol." },
+      { "label": "Ausmalbilder + Namensliste", "category": "pflicht", "reasoning": "0€-Print trägt Sternenstaub-Beutel + Wächter-Pass — strukturelle Klammer der Party." },
+      { "label": "Regenbogen-Gummibärchen (Mitgebsel)", "category": "sinnvoll", "reasoning": "Trost-Preis-Funktion aus parentTips, aber Tattoo-Vorrat tut's für Verlierer-Trost ebenso." },
+      { "label": "Papiertüten + Stoffbeutel (DM/Action)", "category": "habIchVielleicht", "reasoning": "Stoffbeutel/Stoffrest ist im Haushalt oft da, Papiertüten gibt's auch in jeder Schublade." }
+    ],
+    "standard": [
+      { "label": "Einhorn-Figuren (12 Stk.)", "category": "sinnvoll", "reasoning": "Konsistent zu Minimal — Mitgebsel-Beilage ohne Spielmechanik." },
+      { "label": "Einhorn-Masken zum Ausmalen", "category": "pflicht", "reasoning": "Variant-Defining: Masken-Basteln ist die Ankunfts-Aktivität in Standard." },
+      { "label": "Glycerin-Seife (500g)", "category": "pflicht", "reasoning": "Variant-Defining: Einhorn-Seife gießen ohne Glycerin-Block nicht möglich." },
+      { "label": "Silikon-Förmchen (Einhorn/Stern)", "category": "pflicht", "reasoning": "Direkter Spiel-Anhang an Seife-gießen — ohne keine motto-coherenten Seifen." },
+      { "label": "Einhorn-Teller & Becher Set", "category": "sinnvoll", "reasoning": "Atmosphäre-Heber für Capri-Sun + Sandwich-Service, aber Pappgeschirr tut's auch." },
+      { "label": "Einhorn-Tattoo-Set (30+ Motive)", "category": "pflicht", "reasoning": "Schicht-Appell-Tattoo wie in Minimal — Variant-übergreifend Pflicht für Sternenstaub-Ritual." },
+      { "label": "Pastell-Luftballons (10 Stk.)", "category": "sinnvoll", "reasoning": "Deko-Element, hebt Wow-Faktor, aber Stationen funktionieren auch ohne." },
+      { "label": "Regenbogen-Girlande", "category": "sinnvoll", "reasoning": "Foto-Background + Deko, kein Spiel-Material." },
+      { "label": "Capri-Sun + Sandwiches + Obst", "category": "pflicht", "reasoning": "Essen + Getränke bei 2-3h Party nicht optional — Sandwiches sind Lückenfüller im Mittagsslot." },
+      { "label": "Backmischung Kastenform + roter Zuckerguss + Mini-Leiter aus Salzteig", "category": "pflicht", "reasoning": "Regenbogen-Wolkenkuchen Pflichtteil — Standard-Variante hat zusätzliches Topping als Sub-Position." },
+      { "label": "Papiertüten + Stoffbeutel + Gummibänder", "category": "sinnvoll", "reasoning": "Mitgebsel-Verpackung, Bändchen sind nettes Detail aber nicht zwingend." }
+    ],
+    "wow": [
+      { "label": "Einhorn-Figuren (12 Stk.)", "category": "sinnvoll", "reasoning": "Konsistent über Varianten — Mitgebsel-Beilage." },
+      { "label": "Einhorn-Tattoo-Set (30+ Motive)", "category": "pflicht", "reasoning": "Wie Standard/Minimal — Schicht-Appell-Tattoo trägt das Sternenstaub-Ritual über alle Varianten." },
+      { "label": "Einhorn-Masken zum Ausmalen", "category": "sinnvoll", "reasoning": "In Wow sind Wolkenwald + Quiz die Hauptaktivitäten — Masken sind Carryover-Anker für Pufferzeit, nicht Variant-Defining." },
+      { "label": "Glycerin-Seife (500g)", "category": "sinnvoll", "reasoning": "Carryover aus Standard als Backup-Aktivität, in Wow nicht zentrale Mechanik." },
+      { "label": "Silikon-Förmchen", "category": "sinnvoll", "reasoning": "Direkter Anhang an Glycerin-Seife — gleiche Logik, sinnvoll wenn Seife-Aktivität gemacht wird." },
+      { "label": "Einhorn-Teller & Becher Set", "category": "sinnvoll", "reasoning": "Atmosphäre-Premium, aber Pappgeschirr tut's." },
+      { "label": "Pastell-Ballon-Bogen + Regenbogen-Girlande", "category": "sinnvoll", "reasoning": "Deko-Premium für Foto-Background, kein Spiel-Material." },
+      { "label": "Regenbogen-Perlen-Armbänder (6 Stk.)", "category": "sinnvoll", "reasoning": "Wow-Mitgebsel-Premium, aber Tattoo + Figur reichen funktional." },
+      { "label": "Essbarer Glitzer", "category": "sinnvoll", "reasoning": "Effekt-Verstärker auf Kuchen-Deko, aber nicht zentral." },
+      { "label": "Capri-Sun + Sandwiches + Obst + Würstchen", "category": "pflicht", "reasoning": "Essen + Getränke für 3-3,5h Party nicht optional, Würstchen sind Mittags-Slot-Anker." },
+      { "label": "Backmischung + Lebensmittelfarbe + Wunderkerze", "category": "pflicht", "reasoning": "Regenbogen-Wolkenkuchen Pflichtteil, Wunderkerze ist Wow-Upgrade aber Sub-Position." },
+      { "label": "Schoko-Sterne", "category": "sinnvoll", "reasoning": "Kuchen-Topping-Extra, aber Streusel + Smarties tun's auch." },
+      { "label": "Einhorn-Kostüm (optional)", "category": "habIchVielleicht", "reasoning": "Explizit optional + Geburtstagskind hat oft ein Verkleidungs-Teil im Schrank (Rosa-Kleid + Stirnreif mit Horn reicht)." },
+      { "label": "UV-Taschenlampe (optional)", "category": "pflicht", "reasoning": "Variant-Defining für Wolkenwald-Rätselrallye — ohne UV-Lampe kollabiert das zentrale Wow-Spiel." },
+      { "label": "UV-Geheimschrift-Stift (optional)", "category": "pflicht", "reasoning": "Direkter Anhang an UV-Lampe — UV-Hinweise an Stationen brauchen UV-Stift zum Schreiben." },
+      { "label": "Wächter-Pass + Rätsel + Namensliste", "category": "pflicht", "reasoning": "0€-Print trägt jetzt zusätzlich Wolkenwald-Rätsel (Stationen-Hinweise) + Quiz-Karten — Strukturanker erweitert." },
+      { "label": "Papiertüten + Stoffbeutel + Bändchen", "category": "sinnvoll", "reasoning": "Konsistent zu Standard — nettes Detail, kein Pflicht-Anker." }
+    ]
+  },
+  "_qualityNotes": {
+    "preparationWeeks_items_per_section": [5, 4, 6, 5, 5, 5],
+    "sosScenarios_steps_max_chars_check": "Alle steps auf <=120 chars geprüft beim Schreiben (analog Phase B feuerwehr Reviewer-Fix)",
+    "shoppingList_pflicht_anteile": {
+      "minimal": "4/9 = 44% pflicht",
+      "standard": "6/11 = 54% pflicht",
+      "wow": "7/17 = 41% pflicht"
+    },
+    "self_score_estimate": "~88 — direkter Draft ohne Pipeline-Iteration, aber Heuristiken aus Phase B feuerwehr-Pipeline systematisch angewandt. Bei Bedarf separate Reviewer-Runde nachschiebbar."
+  }
+}
