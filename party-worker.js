@@ -1629,6 +1629,29 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     <span class="badge" style="background:${color}15;color:${color};margin-top:8px">\u{1F511} Editor-Ansicht</span>
   </div>
 
+  ${(()=>{
+    const daysToParty = party.date ? Math.ceil((new Date(party.date).getTime() - Date.now()) / 86400000) : null;
+    const dayLabel = daysToParty === null ? null : daysToParty < 0 ? `vor ${Math.abs(daysToParty)} Tagen` : daysToParty === 0 ? "Heute!" : daysToParty === 1 ? "Morgen!" : daysToParty <= 7 ? `in ${daysToParty} Tagen` : `in ${daysToParty} Tagen`;
+    const dayColor = daysToParty === null ? "var(--m)" : daysToParty < 0 ? "#888" : daysToParty <= 1 ? "#C62828" : daysToParty <= 7 ? "#E65100" : color;
+    const allergenList = allergies.length ? allergies.map(g=>`${esc(g.name)}: ${esc(g.allergies)}`).join("\\n") : "";
+    return `<div class="card fade-up" style="background:${color}08;border-left:4px solid ${color}">
+    <h2 style="font-size:15px;color:${color};margin-bottom:14px">\u{1F4CA} Status-Übersicht</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px">
+      <div style="text-align:center;padding:10px 4px;background:#fff;border-radius:10px"><div style="font-size:24px;font-weight:800;color:#2E7D32">${ja.length}</div><div style="font-size:11px;color:var(--m)">dabei</div></div>
+      <div style="text-align:center;padding:10px 4px;background:#fff;border-radius:10px"><div style="font-size:24px;font-weight:800;color:#E65100">${vielleicht.length}</div><div style="font-size:11px;color:var(--m)">vielleicht</div></div>
+      <div style="text-align:center;padding:10px 4px;background:#fff;border-radius:10px"><div style="font-size:24px;font-weight:800;color:#C62828">${nein.length}</div><div style="font-size:11px;color:var(--m)">abgesagt</div></div>
+      <div style="text-align:center;padding:10px 4px;background:#fff;border-radius:10px"><div style="font-size:24px;font-weight:800;color:${dayColor}">${daysToParty===null?"—":daysToParty<0?"⏳":daysToParty}</div><div style="font-size:11px;color:var(--m)">${dayLabel||"Datum offen"}</div></div>
+    </div>
+    ${allergies.length?`<div style="background:#FFF3E0;border-left:3px solid #E65100;padding:10px 12px;border-radius:6px;margin-bottom:12px"><p style="font-size:12px;font-weight:700;color:#E65100;margin-bottom:4px">⚠️ ${allergies.length} ${allergies.length===1?"Kind hat":"Kinder haben"} Allergie-Hinweise:</p><pre style="font-size:12px;color:#5D4037;margin:0;white-space:pre-wrap;font-family:inherit">${esc(allergenList)}</pre></div>`:""}
+    ${party.guests.length === 0 ? `<p style="font-size:13px;color:var(--m);text-align:center;padding:8px 0">Noch keine Antworten — teile den Gäste-Link, um Zusagen zu sammeln.</p>` : ""}
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <button class="btn btn-outline btn-sm" onclick="copyGuestLink()" style="flex:1;min-width:140px">\u{1F4CB} Link kopieren</button>
+      <button class="btn btn-outline btn-sm" onclick="shareWA()" style="flex:1;min-width:140px">\u{1F4AC} WhatsApp teilen</button>
+      <a href="${esc(guestUrl)}" target="_blank" class="btn btn-outline btn-sm" style="flex:1;min-width:140px;text-align:center;text-decoration:none">\u{1F441}️ Gäste-Ansicht</a>
+    </div>
+  </div>`;
+  })()}
+
   <div class="card fade-up">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
       <h2 style="font-size:15px;color:${color};margin:0">\u{1F4CB} Party-Details</h2>
@@ -1727,6 +1750,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   (async function(){try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo)document.getElementById("heroPhotoEd").innerHTML='<img src="'+d.photo+'" class="hero-photo">';}catch{}})();
   function shareWA(){const t="${esc(party.mottoEmoji||"\u{1F389}")} ${name?name+"s ":""}${motto||"Geburtstag"}!\\n\\nAlle Infos & Zusage hier:\\n${esc(guestUrl)}";window.open("https://wa.me/?text="+encodeURIComponent(t));}
   function copyLink(){navigator.clipboard.writeText("${esc(guestUrl)}").then(()=>{const b=event.target;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Link kopieren",2000);});}
+  function copyGuestLink(){navigator.clipboard.writeText("${esc(guestUrl)}").then(()=>{const b=event.target;const o=b.textContent;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent=o,2000);});}
   async function saveEdit(){
     const btn=document.getElementById("saveBtn");btn.textContent="\u23F3 Speichern...";btn.disabled=true;
     const editToken=new URLSearchParams(location.search).get("edit");
