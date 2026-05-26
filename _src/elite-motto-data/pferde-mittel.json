@@ -1,0 +1,323 @@
+{
+  "_meta": {"version": "1.0.0", "lastUpdated": "2026-05-26", "qualityNote": "v1 — Phase-B-Skelett. Template-Anker: feuerwehr-mittel. Helfer-v3-Iteration noch ausstehend."},
+  "motto": "pferde",
+  "ageGroup": "mittel",
+  "ageRange": [6, 8],
+  "title": "🐴 Pferde-Kindergeburtstag — 6–8 Jahre",
+  "metaDescription": "Pferde-Kindergeburtstag für 6-8-Jährige: 3 fertige Reiterhof-Konzepte mit Reiter-Lizenz, Hindernis-Parcours, Pony-Quiz, Pferde-Pflege-Station und Karotten-Schatzsuche.",
+  "introParagraph": "Dein Kind wird 6, 7 oder 8 und liebt Pferde? Mit 6-8 Jahren geht es nicht mehr nur ums Streicheln — die Kinder wollen ECHTES Reiter-Wissen, eine eigene Reiter-Lizenz und einen richtigen Hindernis-Parcours. Hier sind drei fertige Konzepte mit Stationen-System, Quiz und Wettkampf-Elementen, die ohne echten Reitstall funktionieren.",
+  "ageInsight": {
+    "headline": "Was 6–8-Jährige am Pferde-Motto fasziniert",
+    "whyMottoFitsHeadline": "Pferd = echtes Wissen + Pflege-Verantwortung + Reiter-Identität",
+    "whyMottoFits": "Mit 6-8 wollen Kinder nicht mehr nur spielen — sie wollen WISSEN. Welche Pferderasse ist das? Was frisst ein Pferd? Wie pflegt man Mähne und Hufe? Eine Pferde-Party in diesem Alter bedient genau das. Sie bekommen eine echte 'Reiter-Lizenz' (mit Quiz!), pflegen Plüsch-Ponys richtig und durchlaufen einen Hindernis-Parcours wie auf einem Turnier. Identifikation: 'Ich bin Reiter, ich weiß wie das geht.'",
+    "traits": [
+      {"topic": "Aufmerksamkeit", "detail": "20-30 Min. pro Station mit klarem Lernziel. Quiz, Parcours, Pflege — alle mit Punkten/Stempeln/Lizenz-Eintrag. Nach 30 Min Wechsel."},
+      {"topic": "Wissensdurst", "detail": "6-8 wollen Fakten lernen. Pferderassen, Pferdeteile, Pflegeregeln. Plan-Inhalt: einfache aber ECHTE Pferde-Information, nicht bloßes Spielen."},
+      {"topic": "Wettbewerb (sanft)", "detail": "Stations-Quiz mit Punkten ist OK. Aber: Keine harten Sieger/Verlierer-Logiken. Alle bekommen eine Reiter-Lizenz, aber wer am gründlichsten arbeitet, bekommt einen Bonus-Stempel."},
+      {"topic": "Selbstständigkeit", "detail": "Kinder können selbst Schleifen binden, Pony pflegen, Quiz-Antworten geben. Erwachsene leiten, aber Kinder machen es selbst."},
+      {"topic": "Bewegung", "detail": "Hindernis-Parcours mit Steckenpferden, Hufeisen-Werfen mit Wettkampf-Logik. Bewegung und Konzentration im Wechsel."},
+      {"topic": "Sicherheit", "detail": "Echtes Pony erstmals möglich AB 7 JAHREN — und nur mit erfahrenen Pony-Führern. Bei 6-Jährigen besser Plüsch + Steckenpferd. Bei echtem Pony: Helm Pflicht, niemals allein."},
+      {"topic": "Gruppendynamik", "detail": "2-3er-Teams für Pflege-Stationen funktionieren gut. Bei Wettkampf-Spielen: max 2 Min pro Kind, sonst kippt es."}
+    ]
+  },
+  "signatureRitual": {
+    "name": "Die Reiter-Lizenz-Zeremonie",
+    "subtitle": "Eröffnet die Party mit Schwur, endet mit Lizenz-Übergabe",
+    "introText": "Bei 6-8-Jährigen funktioniert nicht mehr nur Pony-Streicheln — sie wollen eine ECHTE Aufgabe und ein Ziel. Die Reiter-Lizenz ist genau das: Beim Ankommen werden alle zu Reiter-Anwärtern ernannt (mit Lizenz-Karte, Stempel-Heft). Während der Party sammeln sie Stempel an Stationen (Pony-Pflege, Quiz, Parcours). Am Ende, wenn alle Stempel da sind, gibts die Reiter-Lizenz feierlich übergeben.",
+    "setupSteps": [
+      {"n": 1, "name": "Reiter-Anwärter-Karte", "content": "Pro Kind ein Lizenz-Heft (DIN A6, gefaltet) mit Name, Foto-Platz, 5 Stempel-Feldern für die Stationen."},
+      {"n": 2, "name": "Stempel-Material", "content": "5 verschiedene Stempel (oder Aufkleber) für die 5 Stationen: Pflege, Quiz, Parcours, Karotten, Mähnen-Flechten."},
+      {"n": 3, "name": "Reiter-Schwur", "content": "Ein Spruch, den alle gemeinsam sprechen: 'Ich pflege mein Pony, ich reite sicher, ich helfe meinem Team.'"},
+      {"n": 4, "name": "Stationen-Karte", "content": "Eine 'Stallplan'-Karte (A3) mit Stationen verteilt — visualisiert den Weg durch die Party."},
+      {"n": 5, "name": "Lizenz-Urkunde vorbereiten", "content": "Final-Urkunde: 'Reiter-Lizenz Klasse 1' mit Namen + Datum + Bonus-Stempel-Stelle. Pro Kind eine."}
+    ],
+    "rolesList": [
+      {"name": "Stall-Meister", "description": "Pflegt die Plüsch-Ponys"},
+      {"name": "Hufeisen-Champion", "description": "Hufeisen-Werfen Profi"},
+      {"name": "Quiz-Spezialist", "description": "Pferdewissen-Star"},
+      {"name": "Karten-Hüter", "description": "Karotten-Schatzsuche-Leiter"},
+      {"name": "Schweif-Künstler", "description": "Mähnen-Flechten Profi"},
+      {"name": "Fütter-Beauftragter", "description": "Verteilt Snacks gerecht"}
+    ],
+    "optOutNote": "Kein Kind muss eine Rolle nehmen. Wer nur dabei sein will, bekommt trotzdem alle Stempel — kein Quiz-Zwang.",
+    "materialNote": "Lizenz-Hefte, Stempel, Stallplan-Karte, Final-Urkunden an einem festen 'Stall-Tisch' sammeln."
+  },
+  "variants": [
+    {
+      "id": "minimal",
+      "label": "Minimal — 2 Stunden, kompakter Reiterhof-Tag",
+      "headline": "🐴 Minimal — 2 Stunden Reiterhof-Tag",
+      "intro": "Sparvariante: 2 Stunden, 6 Kinder, 3 Stationen (Pflege, Quiz, Parcours). Plüsch-Ponys + Steckenpferde — kein echter Reitstall nötig.",
+      "timeWindow": "14:00–16:00, 6 Kinder",
+      "schedule": [
+        {"time": "14:00", "title": "Ankunft + Lizenz-Vergabe", "description": "Reiter-Anwärter-Hefte verteilen, Reiter-Schwur. 15 Min."},
+        {"time": "14:15", "title": "Station 1: Pony-Pflege", "description": "Plüsch-Pony bürsten, Schleifen binden — Stempel 1. 25 Min."},
+        {"time": "14:40", "title": "Station 2: Pferde-Quiz", "description": "Quiz-Karten beantworten: Was frisst ein Pferd? Welche Rasse? — Stempel 2. 20 Min."},
+        {"time": "15:00", "title": "Pferde-Snack-Pause", "description": "Karotten-Sticks, Apfelschnitze, Hafer-Müsli. 20 Min."},
+        {"time": "15:20", "title": "Station 3: Hindernis-Parcours", "description": "Steckenpferd-Parcours mit 4 Stationen — Stempel 3. 25 Min."},
+        {"time": "15:45", "title": "Lizenz-Verleihung + Foto", "description": "Feierliche Übergabe der Reiter-Lizenz. 15 Min."}
+      ],
+      "games": [
+        {
+          "name": "🐎 Pony-Pflege-Station",
+          "duration": 25,
+          "minAge": 6,
+          "outdoor": false,
+          "indoor": true,
+          "material": "6 Plüsch-Ponys, Bürsten, Filz-Schleifen, Wolle 3 Farben, Pflege-Checkliste auf Karte (was tut man wann?)",
+          "safetyRule": "Wolle ohne Drahtkern, Bürsten ohne harte Borsten.",
+          "steps": [
+            {"n": 1, "name": "Pflege-Checkliste lesen", "content": "'1. Bürsten, 2. Mähne kämmen, 3. Schleife anbringen, 4. Karotte geben'"},
+            {"n": 2, "name": "Pferd aussuchen + Pflege", "content": "Jedes Kind pflegt sein Pony nach Checkliste."},
+            {"n": 3, "name": "Stempel für Lizenz", "content": "Wenn alle Pflege-Schritte gemacht: Stempel 1 ins Lizenz-Heft."}
+          ]
+        },
+        {
+          "name": "🧠 Pferde-Quiz",
+          "duration": 20,
+          "minAge": 6,
+          "outdoor": false,
+          "indoor": true,
+          "material": "12 Quiz-Karten mit Bildern (Pferderasse, Pflegefrage, Hufeisen, Pferdeteile), Antwortbogen pro Kind",
+          "safetyRule": "Sitz-Spiel, keine Sicherheit nötig.",
+          "steps": [
+            {"n": 1, "name": "Quiz-Karten zeigen", "content": "Du zeigst Karte, alle Kinder antworten gleichzeitig oder auf Antwortbogen."},
+            {"n": 2, "name": "Antworten besprechen", "content": "Bei falscher Antwort: erklären und nochmal versuchen lassen."},
+            {"n": 3, "name": "Stempel für Lizenz", "content": "Bei 8 von 12 richtig: Stempel 2. Sonst: 'Reiter-Lehrling kommt durch' (alle bekommen Stempel)."}
+          ]
+        },
+        {
+          "name": "🏇 Hindernis-Parcours mit Steckenpferd",
+          "duration": 25,
+          "minAge": 6,
+          "outdoor": true,
+          "indoor": true,
+          "material": "6 Steckenpferde, 4 Hindernisse (Sprung-Stange 15 cm, Slalom-Markierungen, Tunnel-Kissen, Wassergraben-Stoff), Stoppuhr",
+          "safetyRule": "Sprung-Stange max 15 cm hoch. Bei Stolperfall: weicher Boden. Eltern-Helfer am Tunnel.",
+          "steps": [
+            {"n": 1, "name": "Parcours erklären", "content": "Du zeigt den Weg vor — alle Hindernisse einmal."},
+            {"n": 2, "name": "Reihum reiten", "content": "Jedes Kind reitet den Parcours mit Steckenpferd. Eltern-Helfer zählt Zeit (zur Info, kein Sieg)."},
+            {"n": 3, "name": "Stempel für Lizenz", "content": "Alle bekommen Stempel 3, egal Zeit."}
+          ]
+        }
+      ],
+      "food": "🥕 Karotten-Sticks (1,5 Schalen)\n🍎 Apfelschnitze + Birnen\n🥣 Hafer-Müsli in Kornsäckchen (6 Stk)\n🥤 Pferde-Schorle (2 L)\n🎂 Hufeisen-Kuchen\n🥨 Salzstangen",
+      "decoration": "🐴 'Reiterhof Sonnenblume'-Schild\n🌾 Stroh-Bunde\n🐎 6 Plüsch-Ponys + Stallplan-Karte\n🏇 Stations-Schilder (Stempel-Stellen)\n🌻 Sonnenblumen\n🪣 Karotten-Eimer",
+      "giveaways": "📜 Reiter-Lizenz Klasse 1 mit Namen\n🐴 Eigenes geschmücktes Plüsch-Pony (das vom Kind dekorierte)\n🎀 Filz-Schleifen-Set\n🥕 Karotten-Tüte\n📓 Pferde-Sticker-Block",
+      "shoppingList": [
+        {"emoji": "🐴", "label": "6 Plüsch-Ponys", "url": null, "priceEur": 18, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Pflege-Station-Kern."},
+        {"emoji": "🐎", "label": "Steckenpferde (6er)", "url": null, "priceEur": 18, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Parcours-Tool."},
+        {"emoji": "📜", "label": "Lizenz-Hefte + Stempel + Urkunden", "url": null, "priceEur": 10, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Stempel-System Pflicht."},
+        {"emoji": "🃏", "label": "Quiz-Karten (Pferde-Bilder)", "url": null, "priceEur": 5, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Quiz-Material."},
+        {"emoji": "🎀", "label": "Wolle + Filz-Schleifen", "url": null, "priceEur": 8, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Mähnen-Pflege."},
+        {"emoji": "🪣", "label": "Parcours-Material (Stangen, Tunnel)", "url": null, "priceEur": 5, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Hindernis-Parcours."},
+        {"emoji": "🥕", "label": "Snacks + Karotten", "url": null, "priceEur": 10, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Pferdethema."},
+        {"emoji": "🎂", "label": "Hufeisen-Kuchen-Material", "url": null, "priceEur": 6, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Kuchen."}
+      ],
+      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
+    },
+    {
+      "id": "standard",
+      "label": "Standard — 3 Stunden, voller Reiter-Lizenz-Tag",
+      "headline": "🐎 Standard — 3 Stunden Reiter-Lizenz-Tag",
+      "intro": "Allrounder für 6–8 Kinder: 5 Stationen (Pflege, Quiz, Parcours, Mähnen, Karotten), Lizenz-Heft mit Stempeln, finale Lizenz-Verleihung. 3 Stunden mit Action, Quiz und Pause.",
+      "timeWindow": "14:00–17:00, 8 Kinder",
+      "schedule": [
+        {"time": "14:00", "title": "Ankunft + Lizenz-Vergabe", "description": "Lizenz-Heft, Reiter-Schwur, Stallplan. 15 Min."},
+        {"time": "14:15", "title": "Station 1: Pony-Pflege", "description": "25 Min — Stempel 1."},
+        {"time": "14:40", "title": "Station 2: Pferde-Quiz", "description": "20 Min — Stempel 2."},
+        {"time": "15:00", "title": "Pferde-Snack-Pause", "description": "25 Min."},
+        {"time": "15:25", "title": "Station 3: Hindernis-Parcours", "description": "25 Min — Stempel 3."},
+        {"time": "15:50", "title": "Station 4: Mähnen-Flechten-Wettbewerb", "description": "20 Min — Stempel 4."},
+        {"time": "16:10", "title": "Station 5: Karotten-Schatzsuche", "description": "25 Min — Stempel 5."},
+        {"time": "16:35", "title": "Lizenz-Verleihung + Foto", "description": "Feierliche Übergabe. Gruppenfoto. 25 Min."}
+      ],
+      "games": [
+        {
+          "name": "🎀 Mähnen-Flechten-Wettbewerb",
+          "duration": 20,
+          "minAge": 6,
+          "outdoor": false,
+          "indoor": true,
+          "material": "Pro Kind: Wolle 3 Farben, Filz-Schleifen, Klebepads, Spiegel zum Anschauen",
+          "safetyRule": "Wolle ohne Drahtkern, Klebepads statt Sekundenkleber.",
+          "steps": [
+            {"n": 1, "name": "Styling wählen", "content": "Klassischer Zopf, Schleifen-Pferdeschwanz, Wilde Mähne — wähl dein Styling."},
+            {"n": 2, "name": "Pony stylen", "content": "Wolle einarbeiten, Schleifen anbringen, optional Glitzer."},
+            {"n": 3, "name": "Stolze Vorstellung", "content": "Jedes Kind zeigt sein gestyltes Pony — alle applaudieren. Stempel 4."}
+          ]
+        },
+        {
+          "name": "🗺️ Karotten-Schatzsuche",
+          "duration": 25,
+          "minAge": 6,
+          "outdoor": true,
+          "indoor": true,
+          "material": "20-25 Karotten (echte oder Filz), Schatzkarte mit Stationen (DIN A5), Reiter-Suchteams",
+          "safetyRule": "Echte Karotten gewaschen, Verstecke nicht zu hoch.",
+          "steps": [
+            {"n": 1, "name": "Hintergrund", "content": "'Die Ponys haben Hunger! 25 Karotten sind verschollen — verteilt durchs Haus.'"},
+            {"n": 2, "name": "Schatzkarte studieren", "content": "Jede 2er-Mannschaft bekommt eine Karte mit Hinweisen wo Karotten sein könnten."},
+            {"n": 3, "name": "Suchen + sammeln", "content": "Alle Teams suchen gleichzeitig. Jedes Kind sammelt min. 2-3 Karotten."},
+            {"n": 4, "name": "Stempel für Lizenz", "content": "Alle bekommen Stempel 5 + dürfen Karotten mit nach Hause nehmen."}
+          ]
+        }
+      ],
+      "food": "🥕 Karotten-Sticks (2,5 Schalen)\n🍎 Apfelschnitze + Birnen\n🥣 Hafer-Müsli (8 Stk)\n🥤 Pferde-Schorle (3 L)\n🎂 Hufeisen-Kuchen\n🥨 Salzstangen + Brezeln\n🧀 Käsewürfel\n🍕 'Pony-Pizza' (Mini-Pizzen mit Karotten-Topping)",
+      "decoration": "🐴 'Reiterhof Sonnenblume'-Schild\n🌾 Stroh-Bunde\n🐎 8 Plüsch-Ponys\n🏇 5 Stationen-Schilder\n🌻 Sonnenblumen-Wand\n🪣 Karotten-Eimer\n📋 Großer Stallplan",
+      "giveaways": "📜 Reiter-Lizenz Klasse 1\n🐴 Plüsch-Pony zum Mitnehmen\n🎀 Mähnen-Schleifen-Set\n🥕 Karotten-Tüte\n📓 Pferde-Sticker-Block",
+      "shoppingList": [
+        {"emoji": "🐴", "label": "8 Plüsch-Ponys", "url": null, "priceEur": 28, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Pflege + Mitgebsel."},
+        {"emoji": "🐎", "label": "Steckenpferde (8er)", "url": null, "priceEur": 24, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Parcours."},
+        {"emoji": "📜", "label": "Lizenz-Hefte + 5 Stempel", "url": null, "priceEur": 14, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Stempel-System Standard."},
+        {"emoji": "🃏", "label": "Quiz-Karten + Antwortbogen", "url": null, "priceEur": 6, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Quiz-Material."},
+        {"emoji": "🎀", "label": "Wolle + Schleifen", "url": null, "priceEur": 12, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Mähnen-Flechten."},
+        {"emoji": "🪣", "label": "Parcours-Material", "url": null, "priceEur": 8, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Hindernisse."},
+        {"emoji": "🥕", "label": "Snacks + Karotten (25 Stk)", "url": null, "priceEur": 15, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Pferdethema + Schatzsuche."},
+        {"emoji": "🎂", "label": "Kuchen-Material", "url": null, "priceEur": 8, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Hufeisen-Kuchen."}
+      ],
+      "costContext": "Geschätzte Kosten (Standard, 8 Kinder)"
+    },
+    {
+      "id": "wow",
+      "label": "Wow — 4 Stunden, Reiterhof-Turnier (oder Schlafparty-Anschluss)",
+      "headline": "🎉 Wow — 4 Stunden Reiterhof-Turnier",
+      "intro": "Großes Programm für 8-10 Kinder: 6 Stationen, finale Reiter-Olympiade, Pony-Bingo, optional Schlafparty-Anschluss mit Pferde-Film. Echte Reiter-Lizenz Klasse 1+2 zu erringen.",
+      "timeWindow": "14:00–18:00, 10 Kinder",
+      "schedule": [
+        {"time": "14:00", "title": "Empfang + Lizenz-Anmeldung", "description": "Lizenz-Heft, Foto fürs Heft, Schwur. 20 Min."},
+        {"time": "14:20", "title": "Station 1: Pony-Pflege", "description": "30 Min — Stempel 1."},
+        {"time": "14:50", "title": "Station 2: Pferde-Quiz (große Version)", "description": "30 Min — Stempel 2."},
+        {"time": "15:20", "title": "Snack-Pause", "description": "25 Min."},
+        {"time": "15:45", "title": "Station 3: Hindernis-Parcours mit Zeitmessung", "description": "30 Min — Stempel 3."},
+        {"time": "16:15", "title": "Station 4: Mähnen-Frisuren-Werkstatt", "description": "25 Min — Stempel 4."},
+        {"time": "16:40", "title": "Station 5: Karotten-Schatzsuche XL", "description": "30 Min — Stempel 5."},
+        {"time": "17:10", "title": "Reiter-Olympiade: Hufeisen-Werfen Finale", "description": "25 Min — Stempel 6."},
+        {"time": "17:35", "title": "Lizenz-Verleihung + Reiter-Olympiade-Sieger", "description": "Feierliche Übergabe + Pferde-Film optional. 25 Min."}
+      ],
+      "games": [
+        {
+          "name": "🏆 Reiter-Olympiade: Hufeisen-Wurf-Finale",
+          "duration": 25,
+          "minAge": 6,
+          "outdoor": true,
+          "indoor": true,
+          "material": "10 Wurfsäckchen, 3 Pflöcke (verschiedene Entfernungen), Wertungstafel, Mini-Pokale (Wow-Highlight)",
+          "safetyRule": "Wurfdistanz max 3 m, Stoff-Säckchen.",
+          "steps": [
+            {"n": 1, "name": "3 Wurf-Distanzen", "content": "Pflock 1: 1m. Pflock 2: 2m. Pflock 3: 3m."},
+            {"n": 2, "name": "Jeder 3 Würfe pro Distanz", "content": "Trefferwertung: nahe 1 Punkt, mittel 3 Punkte, weit 5 Punkte."},
+            {"n": 3, "name": "Olympiade-Pokal", "content": "Top 3 Kinder bekommen Mini-Pokale. ABER: alle bekommen Stempel 6."}
+          ]
+        }
+      ],
+      "food": "🎂 Carrot-Cake (Wow-Hauptkuchen)\n🥕 Karotten-Sticks (3 Schalen)\n🍎 Apfelschnitze + Birnen + Trauben\n🥣 Hafer-Müsli + Reiter-Riegel\n🥤 Pferde-Schorle (4 L)\n🍕 Pony-Pizzen\n🥨 Salzstangen + Käse",
+      "decoration": "🐴 Großes 'Reiterhof'-Banner\n🌾 Stroh-Bunde + Heuballen\n🐎 10 Plüsch-Ponys\n🏇 6 Stations-Schilder\n🌻 Sonnenblumen + Reiterhof-Atmosphäre\n🪣 Karotten-Eimer\n🏆 Pokal-Wand",
+      "giveaways": "📜 Große Reiter-Lizenz Klasse 1+2 mit Foto\n🐴 Plüsch-Pony + Reiter-Heft\n🎀 Mähnen-Frisuren-Set\n🌟 Reiter-Pin\n🥕 Karotten-Tüte\n📓 Pferde-Sticker-Block + Reiter-Stift",
+      "shoppingList": [
+        {"emoji": "🐴", "label": "10 Plüsch-Ponys", "url": null, "priceEur": 38, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Pflege + Mitgebsel."},
+        {"emoji": "🐎", "label": "Steckenpferde (10er)", "url": null, "priceEur": 30, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Parcours."},
+        {"emoji": "📜", "label": "Lizenz-Hefte + 6 Stempel + Pokale", "url": null, "priceEur": 22, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Stempel-System + Olympiade."},
+        {"emoji": "🃏", "label": "Quiz-Karten Großversion", "url": null, "priceEur": 8, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Quiz."},
+        {"emoji": "🎀", "label": "Wolle 4 Farben + Glitzer-Stifte", "url": null, "priceEur": 18, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Mähnen-Werkstatt."},
+        {"emoji": "🪣", "label": "Parcours-Material (Wow)", "url": null, "priceEur": 12, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Mehr Hindernisse."},
+        {"emoji": "🥕", "label": "Snacks + Karotten (35 Stk)", "url": null, "priceEur": 18, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Buffet + Schatzsuche."},
+        {"emoji": "🎂", "label": "Carrot-Cake-Zutaten", "url": null, "priceEur": 12, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Wow-Kuchen."}
+      ],
+      "costContext": "Geschätzte Kosten (Wow, 10 Kinder)"
+    }
+  ],
+  "cakeRecipe": {
+    "name": "Karotten-Kuchen für junge Reiter",
+    "intro": "Pferde-thematisch: Carrot Cake mit Hufeisen aus weißem Zuckerguss. Saftig, gesund, perfekt zum Thema.",
+    "steps": [
+      {"n": 1, "content": "Karotten-Rührteig: 200 g geriebene Karotten, 200 g Mehl, 150 g Zucker, 100 g Butter, 3 Eier, 1 Pck. Backpulver, 1 TL Zimt."},
+      {"n": 2, "content": "Teig in Kastenform geben."},
+      {"n": 3, "content": "Bei 175°C ca. 50 Min backen."},
+      {"n": 4, "content": "Komplett auskühlen lassen."},
+      {"n": 5, "content": "Weißen Zuckerguss anrühren. Hufeisen-Form aufzeichnen (U-Form)."},
+      {"n": 6, "content": "Optional: orange Marzipan-Möhrchen daneben legen."}
+    ],
+    "meta": {"aufwand": "70 Min inkl. Backen", "kosten": "ca. 7-9 €", "allergiker": "Bei Ei-Allergie: vegan, bei Nuss-Allergie: Walnüsse weglassen."}
+  },
+  "parentTips": {
+    "structured": [
+      {"topic": "🥜 Allergien VOR der Party abfragen", "detail": "Carrot Cake kann Nüsse enthalten. Müsli, Pizza — alle gängigen Allergene möglich."},
+      {"topic": "🐴 Echtes Pony ab 7 Jahre, mit Profi", "detail": "Bei 6-Jährigen besser Plüsch + Steckenpferd. Bei 7-8 echtes Pony möglich, aber NUR mit erfahrenen Pony-Führern und Helm-Pflicht."},
+      {"topic": "🎀 Wolle ohne Drahtkern", "detail": "Beim Mähnen-Flechten kein Filzdraht oder Bastel-Draht — Verletzungsgefahr."},
+      {"topic": "👥 Ab 8 Kindern zweite Hand", "detail": "Bei 8+ Kindern eine zweite erwachsene Begleitung für Stationen-Wechsel."},
+      {"topic": "📋 Plan B bei Regen", "detail": "Alle Stationen funktionieren drinnen. Parcours im Flur/Wohnzimmer."},
+      {"topic": "⏱️ Stations-Wechsel klar markieren", "detail": "Bei 30 Min pro Station: Hochzählen lassen oder Klingel benutzen — sonst bleiben Kinder zu lang oder zu kurz."},
+      {"topic": "📱 Partyseite statt WhatsApp-Chaos", "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite."}
+    ],
+    "educationalValue": "Bei der Pferde-Party in 6-8 lernen die Kinder ECHTES Wissen: Pferderassen, Pflege-Reihenfolge, Hufeisen-Geschichte, Sicherheit am Pferd. Plus: Selbstständigkeit (eigene Station, eigenes Lizenz-Heft) und Teamwork (Karotten-Schatzsuche in 2er-Teams). Die Reiter-Lizenz als Stempel-System trainiert Verantwortung und Stolz aufs eigene Können."
+  },
+  "invitationTemplate": "🐴 Reiterhof-Einladung: 'Achtung Reiter-Anwärter! [Name] wird [Alter] und lädt zur Reiter-Lizenz-Prüfung ein! Wann: [Datum, Uhrzeit]. Wo: [Adresse]. Mitbringen: gute Laune und ein eigenes Plüsch-Pony (falls vorhanden)! Bitte bis [Datum] melden. Yeehaw! 🐎'",
+  "faq": [
+    {
+      "q": "Brauche ich echte Pferde?",
+      "a": "Nein. Plüsch-Ponys + Steckenpferde reichen aus. Echte Ponys ab 7 Jahre + nur mit erfahrenen Pony-Führern (Helm-Pflicht)."
+    },
+    {
+      "q": "Wie lange dauert das Quiz wirklich?",
+      "a": "Bei 12 Karten + Besprechung ca. 20 Minuten. Bei größerer Gruppe (10) eher 25-30. Nicht hetzen, Lernen ist Kern."
+    },
+    {
+      "q": "Was wenn ein Kind das Quiz nicht versteht?",
+      "a": "Sehr einfache Fragen wählen: 'Was frisst ein Pferd?' (Apfel, Karotte). Bei schwereren: gemeinsame Antwort, niemand bleibt zurück."
+    },
+    {
+      "q": "Reicht 1 Sprung-Stange im Parcours?",
+      "a": "Bei 6-Jährigen ja. Bei 8-Jährigen 2-3 Sprung-Stangen mit zunehmender Höhe (max 20 cm — über Steckenpferd-Höhe lässt sich nicht 'springen')."
+    },
+    {
+      "q": "Wie schwer macht man das Pferde-Quiz?",
+      "a": "Einfache Bilder + 2-3 Antwortmöglichkeiten. Beispiel: 'Welches Tier ist das?' Bild: Pony. Optionen: Hund, Pony, Katze. Mit 8 Jahren auch: 'Welche Mähnenfarbe hat ein Apfelschimmel?' (weiß-grau)."
+    },
+    {
+      "q": "Funktioniert das auch in einer kleinen Wohnung?",
+      "a": "Ja. Stationen in verschiedenen Räumen: Pflege im Wohnzimmer, Quiz am Esstisch, Parcours im Flur. Schatzsuche durch Wohnung."
+    }
+  ],
+  "preparationWeeks": {
+    "minus4Weeks": {"headline": "4 Wochen vorher", "items": [
+      {"icon": "📅", "title": "Datum + Uhrzeit", "detail": "Sa/So 14-17 Uhr typisch für 6-8."},
+      {"icon": "🔢", "title": "Gästezahl", "detail": "6-10 Kinder optimal."},
+      {"icon": "💌", "title": "Einladungen", "detail": "Mit Allergie-Abfrage."},
+      {"icon": "🏠", "title": "Ort + Plan B Regen", "detail": "Wohnung-Layout für Stationen planen."}
+    ]},
+    "minus2Weeks": {"headline": "2 Wochen vorher", "items": [
+      {"icon": "📞", "title": "RSVP", "detail": "Endgültige Liste."},
+      {"icon": "🥜", "title": "Allergien", "detail": "Notieren."},
+      {"icon": "🛒", "title": "Material bestellen", "detail": "Amazon-Bestellung raus für Stempel, Lizenz-Druck, Plüsch."}
+    ]},
+    "minus1Week": {"headline": "1 Woche vorher", "items": [
+      {"icon": "📜", "title": "Lizenz-Hefte drucken", "detail": "Mit Namen + 5-6 Stempel-Feldern."},
+      {"icon": "🃏", "title": "Quiz-Karten malen", "detail": "12 Bilder + Antworten."},
+      {"icon": "🛒", "title": "Stempel testen", "detail": "Stempel ausprobieren."}
+    ]},
+    "minus2Days": {"headline": "2 Tage vorher", "items": [
+      {"icon": "🎂", "title": "Carrot Cake backen", "detail": "Komplett auskühlen."},
+      {"icon": "🥕", "title": "Karotten zuschneiden", "detail": "Für Schatzsuche + Snack."},
+      {"icon": "🎒", "title": "Stations-Material bündeln", "detail": "5 Stationen vorbereiten."}
+    ]},
+    "minus1Day": {"headline": "1 Tag vorher", "items": [
+      {"icon": "🎂", "title": "Kuchen verzieren", "detail": "Hufeisen mit Zuckerguss."},
+      {"icon": "🏇", "title": "Parcours-Layout testen", "detail": "Im Wohnzimmer aufbauen."},
+      {"icon": "🧸", "title": "Plüsch-Ponys arrangieren", "detail": "Stallplan-Karte mit Stations-Logos."}
+    ]},
+    "dayOf": {"headline": "Am Party-Tag", "items": [
+      {"icon": "🐴", "title": "Stationen aufbauen", "detail": "5 Stationen klar getrennt."},
+      {"icon": "🍽️", "title": "Buffet bereit", "detail": "Snacks, Schorle, Kuchen."},
+      {"icon": "😮‍💨", "title": "Durchatmen", "detail": "Plan einmal durchgehen."}
+    ]}
+  },
+  "sosScenarios": {
+    "regen": {"icon": "🌧️", "label": "Regen", "headline": "Parcours drinnen — durch Wohnung-Flur."},
+    "weniger_kinder_als_erwartet": {"icon": "👥", "label": "Weniger Kinder", "headline": "Engere Stationen — mehr Zeit pro Kind."},
+    "mehr_kinder_als_erwartet": {"icon": "🚨", "label": "Mehr Kinder", "headline": "2 Stationen parallel laufen lassen."},
+    "kind_will_nicht_mitmachen": {"icon": "🤷", "label": "Kind verweigert", "headline": "'Quiz-Beobachter'-Rolle — bekommt am Ende Lizenz wie alle."},
+    "kuchen_misslungen": {"icon": "🎂", "label": "Kuchen misslungen", "headline": "Bäcker-Kuchen + Hufeisen drauf — passt."},
+    "echtes_pony_nicht_möglich": {"icon": "🐎", "label": "Echtes Pony abgesagt", "headline": "Programm fortsetzen — Plüsch + Steckenpferd."}
+  }
+}

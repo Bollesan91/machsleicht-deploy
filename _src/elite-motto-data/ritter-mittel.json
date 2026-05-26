@@ -1,0 +1,340 @@
+{
+  "_meta": {"version": "1.0.0", "lastUpdated": "2026-05-26", "qualityNote": "v1 — Phase-B-Skelett. Template-Anker: feuerwehr-mittel + pferde-mittel. Helfer-v3-Iteration noch ausstehend."},
+  "motto": "ritter",
+  "ageGroup": "mittel",
+  "ageRange": [6, 8],
+  "title": "⚔️ Ritter-Kindergeburtstag — 6–8 Jahre",
+  "metaDescription": "Ritter-Kindergeburtstag für 6-8-Jährige: 3 fertige Burg-Konzepte mit Knappen-Ausbildung, Wappen-Werkstatt, Schwert-Parcours, Burgen-Quiz und Drachen-Schatzsuche. Mit Knappen-Brief.",
+  "introParagraph": "Dein Kind wird 6, 7 oder 8 und will Ritter werden? Mit 6-8 Jahren reicht kein einfaches Schwert-Schwingen mehr — die Kinder wollen ECHTE Ritter-Ausbildung mit Wappen-Design, Burgen-Quiz und einem ehrenhaften Knappen-Brief am Ende. Hier sind drei fertige Konzepte mit Stationen-System, Mittelalter-Wissen und sicherem Schwert-Training mit Pool-Nudeln.",
+  "ageInsight": {
+    "headline": "Was 6–8-Jährige am Ritter-Motto fasziniert",
+    "whyMottoFitsHeadline": "Ritter = klare Werte + echte Ausbildung + sichtbarer Rang-Aufstieg",
+    "whyMottoFits": "Mit 6-8 wollen Kinder nicht mehr nur kämpfen — sie wollen DAZUGEHÖREN. Eine Ritter-Party in diesem Alter bedient das perfekt: Sie werden zu 'Knappen' ernannt, lernen Wappen-Design, durchlaufen Schwert-Übungen, bestehen das Burgen-Quiz und werden am Ende zum 'Ritter ohne Furcht' geschlagen. Identifikation: 'Ich bin Ritter, ich habe die Prüfungen bestanden.' Wertvoll: Mittelalter-Wissen wird beiläufig gelernt.",
+    "traits": [
+      {"topic": "Aufmerksamkeit", "detail": "20-30 Min. pro Station mit klarem Ausbildungs-Ziel. Wappen-Werkstatt, Quiz, Schwert-Parcours — alle mit Knappen-Stempeln. Nach 30 Min Wechsel."},
+      {"topic": "Wissensdurst", "detail": "6-8 wollen Fakten lernen. Burgen-Teile (Bergfried, Zinnen, Burggraben), Ritter-Werte (Treue, Mut, Ehre), Mittelalter-Berufe. Einfache aber ECHTE Information."},
+      {"topic": "Wettbewerb (sanft)", "detail": "Schwert-Parcours mit Punkten ist OK. Aber: Keine Sieger/Verlierer-Logik beim Kampf. Alle bekommen Knappen-Brief, wer am gründlichsten arbeitet, bekommt Ritter-Schlag-Bonus."},
+      {"topic": "Selbstständigkeit", "detail": "Kinder können selbst Wappen entwerfen, Quiz beantworten, Schwert-Übungen durchlaufen. Erwachsene leiten, aber Kinder gestalten selbst."},
+      {"topic": "Bewegung", "detail": "Schwert-Parcours mit Pool-Nudeln, Drachen-Schatzsuche, Burg-Erstürmung. Bewegung und Konzentration im Wechsel."},
+      {"topic": "Sicherheit", "detail": "Schwerter NUR aus Pool-Nudel (weiche Schaumstoff-Schwimm-Nudeln, 40-50 cm) oder dickem Karton. Niemals Holz/Plastik. Schwertkampf-Regel: 'Nur Schild trifft Schild, Schwert nur am Strohballen üben.'"},
+      {"topic": "Gruppendynamik", "detail": "2-3er-Teams für Wappen-Werkstatt funktionieren gut. Bei Schwert-Übungen: Reihum max 2 Min pro Kind, sonst kippt es."}
+    ]
+  },
+  "signatureRitual": {
+    "name": "Die Knappen-Ausbildung mit Schwert-Schlag",
+    "subtitle": "Eröffnet die Party mit Knappen-Ernennung, endet mit Ritter-Schwert-Schlag",
+    "introText": "Bei 6-8-Jährigen funktioniert kein einfacher Ritter-Eid mehr — sie wollen eine ECHTE Aufgabe und Aufstieg. Die Knappen-Ausbildung ist genau das: Beim Ankommen werden alle zu Knappen ernannt (mit Knappen-Brief, Stempel-Heft). Während der Party sammeln sie Stempel an Stationen (Wappen, Quiz, Schwert, Drache, Burg). Am Ende, wenn alle Stempel da sind, bekommt jedes Kind den feierlichen Ritter-Schwert-Schlag auf die Schulter und den Ritter-Brief.",
+    "setupSteps": [
+      {"n": 1, "name": "Knappen-Brief", "content": "Pro Kind ein Knappen-Heft (DIN A6, gefaltet) mit Name, Wappen-Platz, 5 Stempel-Feldern für die Stationen."},
+      {"n": 2, "name": "Stempel-Material", "content": "5 verschiedene Stempel (oder Mittelalter-Wappen-Aufkleber) für die 5 Stationen: Wappen, Quiz, Schwert, Drache, Burg."},
+      {"n": 3, "name": "Knappen-Schwur", "content": "Ein Spruch, den alle gemeinsam sprechen: 'Ich bin treu, ich bin mutig, ich helfe den Schwachen. So sei es.'"},
+      {"n": 4, "name": "Burg-Karte", "content": "Eine 'Burg-Lageplan'-Karte (A3) mit Stationen verteilt — visualisiert den Weg durch die Burg (Wappensaal, Bibliothek, Übungshof, Drachenhöhle, Bergfried)."},
+      {"n": 5, "name": "Ritter-Brief vorbereiten", "content": "Final-Urkunde: 'Ritter-Brief — Ehrenhaft geschlagen' mit Namen + Datum + 'Ritter ohne Furcht und Tadel'. Pro Kind eine."}
+    ],
+    "rolesList": [
+      {"name": "Wappen-Meister", "description": "Hilft beim Wappen-Entwurf"},
+      {"name": "Schwert-Champion", "description": "Führt durch den Schwert-Parcours"},
+      {"name": "Burgen-Gelehrte:r", "description": "Quiz-Wissen-Star"},
+      {"name": "Drachen-Jäger", "description": "Drachen-Schatzsuche-Leiter"},
+      {"name": "Burg-Wächter", "description": "Bewacht das Tor, kontrolliert Einlass"},
+      {"name": "Hofnarr", "description": "Erzählt Witze + macht Stimmung"}
+    ],
+    "optOutNote": "Kein Kind muss eine Rolle nehmen. Wer nur zuschauen will, bekommt trotzdem alle Stempel — Quiz-Pflicht entfällt.",
+    "materialNote": "Knappen-Hefte, Stempel, Burg-Lageplan, Ritter-Briefe an einem festen 'Burg-Tisch' sammeln."
+  },
+  "variants": [
+    {
+      "id": "minimal",
+      "label": "Minimal — 2 Stunden, kompakter Knappen-Tag",
+      "headline": "⚔️ Minimal — 2 Stunden Knappen-Tag",
+      "intro": "Sparvariante: 2 Stunden, 6 Kinder, 3 Stationen (Wappen-Werkstatt, Burgen-Quiz, Schwert-Parcours). Pool-Nudel-Schwerter + Pappschilde — keine echte Rüstung nötig.",
+      "timeWindow": "14:00–16:00, 6 Kinder",
+      "schedule": [
+        {"time": "14:00", "title": "Ankunft + Knappen-Ernennung", "description": "Knappen-Briefe verteilen, Knappen-Schwur. 15 Min."},
+        {"time": "14:15", "title": "Station 1: Wappen-Werkstatt", "description": "Eigenes Wappen auf Pappschild gestalten — Stempel 1. 25 Min."},
+        {"time": "14:40", "title": "Station 2: Burgen-Quiz", "description": "Quiz-Karten beantworten: Was ist ein Bergfried? Welche Ritter-Werte? — Stempel 2. 20 Min."},
+        {"time": "15:00", "title": "Ritter-Snack-Pause", "description": "Ritter-Spieße, Kerker-Brote, Met-Schorle. 20 Min."},
+        {"time": "15:20", "title": "Station 3: Schwert-Parcours", "description": "Pool-Nudel-Schwert-Übungen am Strohballen + Slalom — Stempel 3. 25 Min."},
+        {"time": "15:45", "title": "Ritter-Schlag + Foto", "description": "Feierlicher Ritter-Schwert-Schlag. Ritter-Brief. 15 Min."}
+      ],
+      "games": [
+        {
+          "name": "🛡️ Wappen-Werkstatt",
+          "duration": 25,
+          "minAge": 6,
+          "outdoor": false,
+          "indoor": true,
+          "material": "6 Pappschilde (DIN A3, oval mit Henkel), Wachsmalstifte, Filzstifte, Wappen-Vorlagen-Karten (Tiere, Symbole, Farben), Gold-/Silber-Stifte",
+          "safetyRule": "Stifte ohne giftige Inhalte. Vor Beginn aufmalen lassen, dann Farbe.",
+          "steps": [
+            {"n": 1, "name": "Wappen-Inspiration", "content": "Zeig 5 echte Ritter-Wappen-Beispiele (Löwe, Adler, Schwert, Stern, Rose). Erkläre: 'Das Wappen sagt: Wer bist du?'"},
+            {"n": 2, "name": "Wappen entwerfen", "content": "Jedes Kind entwirft eigenes Wappen mit max 2 Symbolen + 2 Farben."},
+            {"n": 3, "name": "Wappen vorstellen", "content": "Jedes Kind erklärt sein Wappen kurz: 'Mein Wappen zeigt einen Löwen, weil ich mutig bin.'"},
+            {"n": 4, "name": "Stempel für Knappen-Brief", "content": "Alle bekommen Stempel 1."}
+          ]
+        },
+        {
+          "name": "🏰 Burgen-Quiz",
+          "duration": 20,
+          "minAge": 6,
+          "outdoor": false,
+          "indoor": true,
+          "material": "12 Quiz-Karten mit Bildern (Burgteile, Ritter-Werte, Mittelalter-Berufe, Tiere), Antwortbogen pro Kind",
+          "safetyRule": "Sitz-Spiel, keine Sicherheit nötig.",
+          "steps": [
+            {"n": 1, "name": "Quiz-Karten zeigen", "content": "Du zeigst Karte, alle Kinder antworten gleichzeitig oder auf Antwortbogen. Beispiel: 'Welcher Turm ist der höchste in der Burg?' (Bergfried)"},
+            {"n": 2, "name": "Antworten besprechen", "content": "Bei falscher Antwort: erklären und nochmal versuchen lassen. Wissen vermitteln, nicht prüfen."},
+            {"n": 3, "name": "Stempel für Knappen-Brief", "content": "Bei 8 von 12 richtig: Stempel 2. Sonst: 'Knappen-Wissen wächst noch' (alle bekommen Stempel)."}
+          ]
+        },
+        {
+          "name": "⚔️ Schwert-Parcours",
+          "duration": 25,
+          "minAge": 6,
+          "outdoor": true,
+          "indoor": true,
+          "material": "6 Pool-Nudel-Schwerter (50 cm, weich), 2 Strohballen (oder Pappkartons) als Übungsziele, 5 Slalom-Markierungen, Stoppuhr",
+          "safetyRule": "Schwerter nur am Strohballen / Kissen-Hindernis — nicht aufs Kind. Schwert-Höhe max Schulter-Höhe.",
+          "steps": [
+            {"n": 1, "name": "Parcours erklären", "content": "Du zeigt den Weg vor — 1) Slalom mit Schwert hochhalten, 2) Schwert-Schlag aufs Strohballen, 3) Königs-Salut."},
+            {"n": 2, "name": "Reihum üben", "content": "Jedes Kind durchläuft den Parcours. Eltern-Helfer zählt Zeit (zur Info, kein Sieg)."},
+            {"n": 3, "name": "Stempel für Knappen-Brief", "content": "Alle bekommen Stempel 3, egal Zeit."}
+          ]
+        }
+      ],
+      "food": "🍖 Ritter-Spieße (Käse-Schinken-Spieße)\n🥖 Kerker-Brote (Stockbrot vom Buffet)\n🍇 Ritter-Trauben + Apfelschnitze\n🥤 Met-Schorle (Apfelschorle in Tonbechern, 2 L)\n🎂 Schild-Kuchen (mit Wappen aus Zuckerguss)\n🥨 Salzstangen",
+      "decoration": "🏰 'Burg Eichenfels'-Schild\n🛡️ 6 vorgefertigte Wappenschilde an Wänden\n⚔️ Pool-Nudel-Schwerter am Eingang\n🐉 Pappkarton-Drache als Deko\n🕯️ LED-Kerzen (Burg-Atmosphäre)\n🎭 Mittelalter-Musik im Hintergrund",
+      "giveaways": "📜 Ritter-Brief mit Namen + Wappen\n🛡️ Eigenes gestaltetes Wappenschild (Pappschild)\n⚔️ Pool-Nudel-Schwert (Schaumstoff)\n👑 Mini-Krone aus Pappkarton\n🍪 Burg-Kekse",
+      "shoppingList": [
+        {"emoji": "🛡️", "label": "6 Pappschilde + Wappenfarben", "url": null, "priceEur": 15, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Wappen-Werkstatt-Kern."},
+        {"emoji": "⚔️", "label": "Pool-Nudel-Schwerter (6er)", "url": null, "priceEur": 12, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Schwert-Parcours sicher."},
+        {"emoji": "📜", "label": "Knappen-Hefte + Stempel + Ritter-Briefe", "url": null, "priceEur": 10, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Stempel-System Pflicht."},
+        {"emoji": "🃏", "label": "Quiz-Karten (Burgen-Bilder)", "url": null, "priceEur": 5, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Quiz-Material."},
+        {"emoji": "🌾", "label": "Strohballen / Kartons", "url": null, "priceEur": 6, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Schwert-Übungsziel."},
+        {"emoji": "👑", "label": "Mini-Kronen + Mittelalter-Deko", "url": null, "priceEur": 8, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Atmosphäre."},
+        {"emoji": "🍖", "label": "Snacks + Spieße", "url": null, "priceEur": 10, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Ritter-Buffet."},
+        {"emoji": "🎂", "label": "Schild-Kuchen-Material", "url": null, "priceEur": 6, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Kuchen."}
+      ],
+      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
+    },
+    {
+      "id": "standard",
+      "label": "Standard — 3 Stunden, voller Knappen-Ausbildungs-Tag",
+      "headline": "🏰 Standard — 3 Stunden Knappen-Ausbildung",
+      "intro": "Allrounder für 6–8 Kinder: 5 Stationen (Wappen, Quiz, Schwert, Drache, Burg), Knappen-Brief mit Stempeln, finaler Ritter-Schlag. 3 Stunden mit Wissen, Übung und Burg-Atmosphäre.",
+      "timeWindow": "14:00–17:00, 8 Kinder",
+      "schedule": [
+        {"time": "14:00", "title": "Ankunft + Knappen-Ernennung", "description": "Knappen-Brief, Schwur, Burg-Lageplan. 15 Min."},
+        {"time": "14:15", "title": "Station 1: Wappen-Werkstatt", "description": "25 Min — Stempel 1."},
+        {"time": "14:40", "title": "Station 2: Burgen-Quiz", "description": "20 Min — Stempel 2."},
+        {"time": "15:00", "title": "Ritter-Snack-Pause", "description": "25 Min."},
+        {"time": "15:25", "title": "Station 3: Schwert-Parcours", "description": "25 Min — Stempel 3."},
+        {"time": "15:50", "title": "Station 4: Drachen-Schatzsuche", "description": "25 Min — Stempel 4."},
+        {"time": "16:15", "title": "Station 5: Burg-Erstürmung (Team-Spiel)", "description": "20 Min — Stempel 5."},
+        {"time": "16:35", "title": "Ritter-Schlag + Foto", "description": "Feierlicher Schwert-Schlag, Ritter-Brief, Gruppenfoto. 25 Min."}
+      ],
+      "games": [
+        {
+          "name": "🐉 Drachen-Schatzsuche",
+          "duration": 25,
+          "minAge": 6,
+          "outdoor": true,
+          "indoor": true,
+          "material": "Pappkarton-Drache (groß, an Wand befestigt), 'Drachen-Schatz'-Box mit Gold-Münzen (Schokoladentaler), Schatzkarte mit Hinweisen, Ritter-Suchteams",
+          "safetyRule": "Schokoladentaler ohne Erdnüsse. Verstecke nicht zu hoch oder gefährlich.",
+          "steps": [
+            {"n": 1, "name": "Hintergrund-Geschichte", "content": "'Der Drache hat den Burgschatz gestohlen! Findet ihn, ihr tapferen Knappen!'"},
+            {"n": 2, "name": "Schatzkarte studieren", "content": "Jede 2er-Mannschaft bekommt eine Karte mit Hinweisen ('Wo der Hofnarr lacht', 'Beim Bergfried hoch oben')."},
+            {"n": 3, "name": "Suchen + finden", "content": "Alle Teams suchen gleichzeitig. Gold-Münzen verteilt in der ganzen Wohnung."},
+            {"n": 4, "name": "Stempel für Knappen-Brief", "content": "Alle bekommen Stempel 4 + dürfen Gold-Münzen behalten."}
+          ]
+        },
+        {
+          "name": "🏰 Burg-Erstürmung (Team-Spiel)",
+          "duration": 20,
+          "minAge": 6,
+          "outdoor": true,
+          "indoor": true,
+          "material": "Kissen-Burg (10 Kissen aufgestapelt) als 'gegnerische Burg', 6 weiche Stoffbälle als 'Belagerungs-Kugeln', Schaumstoff-Schwerter",
+          "safetyRule": "Stoffbälle weich, kein Werfen aufs Gesicht. Burg-Höhe max 1 Meter.",
+          "steps": [
+            {"n": 1, "name": "Burg aufbauen", "content": "Kissen-Burg in der Mitte des Zimmers. 'Diese Burg muss erstürmt werden!'"},
+            {"n": 2, "name": "Belagerung", "content": "Kinder werfen Stoffbälle auf die Burg, bis alle Kissen umfallen. Team-Spiel — alle helfen."},
+            {"n": 3, "name": "Erstürmung", "content": "Wenn die Burg fällt: alle dürfen 'rein' (Kissen-Spaß)."},
+            {"n": 4, "name": "Stempel für Knappen-Brief", "content": "Alle bekommen Stempel 5 (Team-Sieg)."}
+          ]
+        }
+      ],
+      "food": "🍖 Ritter-Spieße (2 Schalen)\n🥖 Kerker-Brote (Stockbrot)\n🍇 Trauben + Apfelschnitze\n🥤 Met-Schorle (3 L Apfel-/Trauben-Schorle in Tonbechern)\n🎂 Schild-Kuchen mit Wappen\n🥨 Salzstangen + Brezeln\n🧀 Käsewürfel (Ritter-Vorrat)\n🌭 Mini-Würstchen (Burg-Speise)",
+      "decoration": "🏰 'Burg Eichenfels'-Banner\n🛡️ 8 Wappenschilde an Wänden\n⚔️ Schwert-Wand\n🐉 Großer Pappkarton-Drache\n🕯️ LED-Kerzen + Kronleuchter-Imitat\n🎭 Mittelalter-Musik\n👑 5 Stationen-Schilder",
+      "giveaways": "📜 Großer Ritter-Brief\n🛡️ Eigenes Wappenschild\n⚔️ Pool-Nudel-Schwert\n👑 Krone aus Goldkarton\n🪙 Schokoladentaler-Tüte\n🍪 Burg-Kekse",
+      "shoppingList": [
+        {"emoji": "🛡️", "label": "8 Pappschilde + Bastel-Material", "url": null, "priceEur": 22, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Wappen + Mitgebsel."},
+        {"emoji": "⚔️", "label": "Pool-Nudel-Schwerter (8er)", "url": null, "priceEur": 16, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Schwert-Parcours."},
+        {"emoji": "📜", "label": "Knappen-Hefte + 5 Stempel", "url": null, "priceEur": 14, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Stempel-System Standard."},
+        {"emoji": "🃏", "label": "Quiz-Karten + Antwortbogen", "url": null, "priceEur": 6, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Quiz-Material."},
+        {"emoji": "🐉", "label": "Pappkarton-Drache + Gold-Münzen", "url": null, "priceEur": 12, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Drachen-Schatzsuche."},
+        {"emoji": "🌾", "label": "Strohballen + Stoffbälle", "url": null, "priceEur": 10, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Schwert + Burg-Erstürmung."},
+        {"emoji": "🍖", "label": "Buffet + Ritter-Spieße", "url": null, "priceEur": 18, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Ritter-Buffet."},
+        {"emoji": "🎂", "label": "Schild-Kuchen-Material", "url": null, "priceEur": 8, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Kuchen."}
+      ],
+      "costContext": "Geschätzte Kosten (Standard, 8 Kinder)"
+    },
+    {
+      "id": "wow",
+      "label": "Wow — 4 Stunden, Ritter-Olympiade (oder Schlafparty-Anschluss)",
+      "headline": "🎉 Wow — 4 Stunden Ritter-Olympiade",
+      "intro": "Großes Programm für 8-10 Kinder: 6 Stationen, finale Ritter-Olympiade mit Schwert-Schlag-Wettbewerb, Bogenschießen-Light (Saugnapf-Pfeile), optional Schlafparty-Anschluss mit Ritter-Film. Ritter-Brief Klasse 1+2 zu erringen.",
+      "timeWindow": "14:00–18:00, 10 Kinder",
+      "schedule": [
+        {"time": "14:00", "title": "Empfang + Knappen-Anmeldung", "description": "Knappen-Brief, Foto fürs Heft, Schwur. 20 Min."},
+        {"time": "14:20", "title": "Station 1: Wappen-Werkstatt XL", "description": "30 Min — Stempel 1."},
+        {"time": "14:50", "title": "Station 2: Burgen-Quiz (große Version)", "description": "30 Min — Stempel 2."},
+        {"time": "15:20", "title": "Ritter-Snack-Pause", "description": "25 Min."},
+        {"time": "15:45", "title": "Station 3: Schwert-Parcours mit Zeitmessung", "description": "30 Min — Stempel 3."},
+        {"time": "16:15", "title": "Station 4: Bogenschießen-Light (Saugnapf)", "description": "25 Min — Stempel 4."},
+        {"time": "16:40", "title": "Station 5: Drachen-Schatzsuche XL", "description": "30 Min — Stempel 5."},
+        {"time": "17:10", "title": "Ritter-Olympiade: Schwert-Schlag-Finale", "description": "25 Min — Stempel 6."},
+        {"time": "17:35", "title": "Ritter-Schlag + Olympiade-Sieger", "description": "Feierlicher Schlag + Ritter-Film optional. 25 Min."}
+      ],
+      "games": [
+        {
+          "name": "🏆 Ritter-Olympiade: Schwert-Schlag-Finale",
+          "duration": 25,
+          "minAge": 6,
+          "outdoor": true,
+          "indoor": true,
+          "material": "10 Pool-Nudel-Schwerter, 3 Strohballen (verschiedene Entfernungen + Höhen), Wertungstafel, Mini-Pokale (Wow-Highlight)",
+          "safetyRule": "Schwerter nur am Strohballen. Übung pro Kind max 2 Min. Schutzbrille optional.",
+          "steps": [
+            {"n": 1, "name": "3 Übungs-Distanzen", "content": "Strohballen 1: 1m (leicht). 2: 2m mit Bewegung (mittel). 3: 3m mit Sprung (schwer)."},
+            {"n": 2, "name": "Jeder 3 Schläge pro Distanz", "content": "Trefferwertung: leicht 1 Punkt, mittel 3 Punkte, schwer 5 Punkte."},
+            {"n": 3, "name": "Olympiade-Pokal", "content": "Top 3 Kinder bekommen Mini-Pokale. ABER: alle bekommen Stempel 6."}
+          ]
+        },
+        {
+          "name": "🏹 Bogenschießen-Light (Saugnapf-Pfeile)",
+          "duration": 25,
+          "minAge": 6,
+          "outdoor": true,
+          "indoor": true,
+          "material": "2-3 Spielzeug-Bögen mit Saugnapf-Pfeilen (KEINE echten Pfeile), Zielscheibe (Pappkarton mit Ringen), Schutzbrille pro Kind",
+          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand zur Zielscheibe.",
+          "steps": [
+            {"n": 1, "name": "Bogen-Technik erklären", "content": "Vor dem Spiel: 'Bogen NIE auf Menschen, immer nur auf die Zielscheibe!' Demonstrieren."},
+            {"n": 2, "name": "3 Schüsse pro Kind", "content": "Jedes Kind kommt nacheinander dran. Bogen halten, zielen, schießen — Saugnapf bleibt am Karton kleben."},
+            {"n": 3, "name": "Stempel für Knappen-Brief", "content": "Alle bekommen Stempel 4 — egal ob getroffen."}
+          ]
+        }
+      ],
+      "food": "🎂 Großer Ritter-Schild-Kuchen mit Marzipan-Wappen\n🍖 Ritter-Spieße (3 Schalen)\n🥖 Stockbrot vom Lagerfeuer (oder Pfannen-Imitat)\n🍇 Trauben + Apfel + Birne\n🥤 Met-Schorle (4 L)\n🌭 Ritter-Würstchen\n🥨 Salzstangen + Brezeln + Käse",
+      "decoration": "🏰 Großes 'Burg Eichenfels'-Banner\n🛡️ Wappen-Wand mit 10 Schilden\n⚔️ Schwert-Wand + Bogenschießen-Bereich\n🐉 Großer Pappkarton-Drache (lebensgroß)\n🕯️ LED-Kerzen + Fackeln (LED!)\n🎭 Mittelalter-Musik + Kronleuchter-Imitat\n👑 6 Stationen-Schilder\n🏆 Pokal-Wand",
+      "giveaways": "📜 Großer Ritter-Brief Klasse 1+2 mit Foto\n🛡️ Eigenes Wappenschild + Ritter-Heft\n⚔️ Pool-Nudel-Schwert\n👑 Goldkarton-Krone\n🌟 Ritter-Pin (Bronze/Silber/Gold je nach Olympiade)\n🪙 Schokoladentaler-Tüte\n🍪 Burg-Kekse + Ritter-Stift",
+      "shoppingList": [
+        {"emoji": "🛡️", "label": "10 Pappschilde + Premium-Bastel", "url": null, "priceEur": 32, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Wappen + Mitgebsel."},
+        {"emoji": "⚔️", "label": "Pool-Nudel-Schwerter (10er)", "url": null, "priceEur": 22, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Parcours + Olympiade."},
+        {"emoji": "📜", "label": "Knappen-Hefte + 6 Stempel + Pokale + Pins", "url": null, "priceEur": 24, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Stempel-System + Olympiade."},
+        {"emoji": "🏹", "label": "2 Bogen + Saugnapf-Pfeile + Schutzbrille", "url": null, "priceEur": 25, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Bogenschießen-Station."},
+        {"emoji": "🐉", "label": "Großer Pappkarton-Drache + 100 Gold-Münzen", "url": null, "priceEur": 18, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Drachen-Schatzsuche XL."},
+        {"emoji": "🌾", "label": "3 Strohballen + Premium-Stoffbälle", "url": null, "priceEur": 14, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Schwert-Olympiade."},
+        {"emoji": "🍖", "label": "Buffet XL + Mittelalter-Speisen", "url": null, "priceEur": 22, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Wow-Buffet."},
+        {"emoji": "🎂", "label": "Großer Schild-Kuchen + Marzipan", "url": null, "priceEur": 12, "hasAffiliate": false, "category": "pflicht", "categoryReasoning": "Wow-Kuchen."}
+      ],
+      "costContext": "Geschätzte Kosten (Wow, 10 Kinder)"
+    }
+  ],
+  "cakeRecipe": {
+    "name": "Ritter-Schild-Kuchen mit Wappen",
+    "intro": "Ritter-thematisch: Großer Schoko-Rührkuchen in Schild-Form (Oval) mit weißem Zuckerguss und Marzipan-Wappen drauf. Saftig, dunkel, mittelalterlich.",
+    "steps": [
+      {"n": 1, "content": "Schoko-Rührteig: 250 g Mehl, 200 g Zucker, 150 g Butter, 3 Eier, 50 g Kakao, 1 Pck. Backpulver, 100 ml Milch."},
+      {"n": 2, "content": "Teig in ovaler Form (oder Springform, später schneiden) verteilen."},
+      {"n": 3, "content": "Bei 175°C ca. 45 Min backen."},
+      {"n": 4, "content": "Komplett auskühlen lassen."},
+      {"n": 5, "content": "Form zuschneiden: Oval mit unten leicht spitz (Schild-Form). Reste sind Knabber-Material."},
+      {"n": 6, "content": "Weißen Zuckerguss aufstreichen. Marzipan-Wappen (Löwe/Adler/Stern) aus rotem/blauen Marzipan ausschneiden und auflegen."},
+      {"n": 7, "content": "Optional: Schoko-Pralinen rund um den Rand als 'Nieten' setzen."}
+    ],
+    "meta": {"aufwand": "75 Min inkl. Backen", "kosten": "ca. 9-11 €", "allergiker": "Bei Ei-Allergie: vegan ersetzen. Bei Nuss-Allergie: Marzipan vorsichtig wählen (manchmal Spuren von Mandeln, Marzipan IST aber Mandelmasse — Vorsicht bei echten Nuss-Allergien!)."}
+  },
+  "parentTips": {
+    "structured": [
+      {"topic": "🥜 Allergien VOR der Party abfragen", "detail": "Marzipan im Kuchen = Mandeln. Spieße können Nüsse enthalten. Allergien klären."},
+      {"topic": "⚔️ Schwerter NUR aus Pool-Nudel", "detail": "Niemals Holz/Plastik/Karton mit harten Kanten. Pool-Nudel-Schwert (Schaumstoff-Schwimm-Nudel) ist sicher."},
+      {"topic": "🏹 Bogenschießen: Saugnapf-Pfeile + Schutzbrille", "detail": "Wenn Bogenschießen geplant: AUSSCHLIESSLICH Spielzeug-Bogen mit Saugnapf-Pfeilen, Schutzbrille Pflicht, 3 m Sicherheitsabstand."},
+      {"topic": "👥 Ab 8 Kindern zweite Hand", "detail": "Bei 8+ Kindern eine zweite erwachsene Begleitung für Stationen-Wechsel."},
+      {"topic": "📋 Plan B bei Regen", "detail": "Alle Stationen funktionieren drinnen. Bogenschießen im langen Flur, Strohballen im Wohnzimmer."},
+      {"topic": "🕯️ LED-Kerzen statt Echtflammen", "detail": "Für die Burg-Atmosphäre nur LED. Niemals echte Kerzen / Fackeln bei einer Kinderparty."},
+      {"topic": "📱 Partyseite statt WhatsApp-Chaos", "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite."}
+    ],
+    "educationalValue": "Bei der Ritter-Party in 6-8 lernen die Kinder ECHTES Wissen: Burgen-Architektur (Bergfried, Zinnen, Burggraben), Ritter-Werte (Treue, Mut, Ehre, Hilfe für Schwächere), Mittelalter-Berufe (Knappe, Hofnarr, Burgwächter, Schmied). Plus: Selbstständigkeit (eigenes Wappen-Design, eigener Knappen-Brief) und Teamwork (Burg-Erstürmung als Gruppen-Spiel, Drachen-Schatzsuche in 2er-Teams). Der Knappen-Brief mit Stempeln trainiert Verantwortung, der Ritter-Schlag am Ende ist ein Stolz-Moment, der lange bleibt."
+  },
+  "invitationTemplate": "🏰 Burg-Einladung: 'Hört, hört, tapfere Knappen! [Name] wird [Alter] und lädt zur Ritter-Ausbildung auf Burg Eichenfels ein! Wann: [Datum, Uhrzeit]. Wo: [Adresse]. Mitbringen: Mut, gute Laune und ein eigenes Wappen-Tier im Kopf! Bitte bis [Datum] melden. So sei es! ⚔️'",
+  "faq": [
+    {
+      "q": "Sind Pool-Nudel-Schwerter wirklich sicher?",
+      "a": "Ja. Pool-Nudel = weiche Schaumstoff-Schwimm-Nudel (40-50 cm). Kann nicht ernsthaft verletzen, selbst bei vollem Schlag. Wichtig: niemals Schläge ins Gesicht, immer am Strohballen üben."
+    },
+    {
+      "q": "Wie lange dauert das Burgen-Quiz wirklich?",
+      "a": "Bei 12 Karten + Besprechung ca. 20 Minuten. Bei größerer Gruppe (10) eher 25-30 Min. Nicht hetzen, Wissen ist Kern."
+    },
+    {
+      "q": "Was wenn ein Kind beim Schwert-Parcours nicht mitmachen will?",
+      "a": "Burg-Wächter-Rolle anbieten: Das Kind passt aufs Schwert auf, hält Stoppuhr, gibt Stempel. Bekommt am Ende trotzdem Ritter-Brief."
+    },
+    {
+      "q": "Reicht ein Strohballen?",
+      "a": "Bei 6 Kindern ja (Standard-Übungsziel). Bei 8-10 besser 2 Strohballen, sonst Wartezeit zu lang."
+    },
+    {
+      "q": "Wie schwer macht man das Burgen-Quiz?",
+      "a": "Einfache Bilder + 2-3 Antwortmöglichkeiten. Beispiel: 'Welcher Burgteil schützt vor Feinden?' Bild: Burggraben. Optionen: Garten, Burggraben, Küche. Mit 8 Jahren auch: 'Welche Ritter-Tugend bedeutet, immer die Wahrheit zu sagen?' (Ehre)."
+    },
+    {
+      "q": "Funktioniert das auch in einer kleinen Wohnung?",
+      "a": "Ja. Stationen in verschiedenen Räumen: Wappen im Wohnzimmer, Quiz am Esstisch, Schwert im Flur (lang!), Drachen-Schatzsuche durch ganze Wohnung. Bei wenig Platz: Stationen nacheinander statt parallel."
+    }
+  ],
+  "preparationWeeks": {
+    "minus4Weeks": {"headline": "4 Wochen vorher", "items": [
+      {"icon": "📅", "title": "Datum + Uhrzeit", "detail": "Sa/So 14-17 Uhr typisch für 6-8."},
+      {"icon": "🔢", "title": "Gästezahl", "detail": "6-10 Kinder optimal."},
+      {"icon": "💌", "title": "Einladungen", "detail": "Mit Allergie-Abfrage + Wappen-Vorschlag."},
+      {"icon": "🏠", "title": "Ort + Plan B Regen", "detail": "Wohnung-Layout für 5 Stationen planen."}
+    ]},
+    "minus2Weeks": {"headline": "2 Wochen vorher", "items": [
+      {"icon": "📞", "title": "RSVP", "detail": "Endgültige Liste."},
+      {"icon": "🥜", "title": "Allergien", "detail": "Notieren — Marzipan-Kuchen-Hinweis!"},
+      {"icon": "🛒", "title": "Material bestellen", "detail": "Amazon-Bestellung raus für Schilde, Pool-Nudeln, Schwerter, Stempel."}
+    ]},
+    "minus1Week": {"headline": "1 Woche vorher", "items": [
+      {"icon": "📜", "title": "Knappen-Briefe drucken", "detail": "Mit Namen + 5-6 Stempel-Feldern."},
+      {"icon": "🃏", "title": "Quiz-Karten malen", "detail": "12 Bilder + Antworten."},
+      {"icon": "🎯", "title": "Strohballen besorgen", "detail": "Aus Bauernladen oder durch Pappkartons ersetzen."}
+    ]},
+    "minus2Days": {"headline": "2 Tage vorher", "items": [
+      {"icon": "🎂", "title": "Schild-Kuchen backen", "detail": "Komplett auskühlen."},
+      {"icon": "🐉", "title": "Pappkarton-Drache basteln", "detail": "Großer Karton, bemalen, an Wand kleben."},
+      {"icon": "🎒", "title": "Stations-Material bündeln", "detail": "5 Stationen vorbereiten."}
+    ]},
+    "minus1Day": {"headline": "1 Tag vorher", "items": [
+      {"icon": "🎂", "title": "Kuchen verzieren", "detail": "Wappen aus Marzipan auflegen."},
+      {"icon": "⚔️", "title": "Schwert-Parcours testen", "detail": "Im Flur aufbauen, Wege markieren."},
+      {"icon": "🛡️", "title": "Wappenschilde vorbereiten", "detail": "Pappschilde ausschneiden, Henkel anbringen."}
+    ]},
+    "dayOf": {"headline": "Am Party-Tag", "items": [
+      {"icon": "🏰", "title": "Stationen aufbauen", "detail": "5 Stationen klar getrennt."},
+      {"icon": "🍽️", "title": "Buffet bereit", "detail": "Ritter-Spieße, Stockbrot, Schorle."},
+      {"icon": "😮‍💨", "title": "Durchatmen", "detail": "Knappen-Plan einmal durchgehen."}
+    ]}
+  },
+  "sosScenarios": {
+    "regen": {"icon": "🌧️", "label": "Regen", "headline": "Alles geht drinnen — Schwert-Parcours in den Flur."},
+    "weniger_kinder_als_erwartet": {"icon": "👥", "label": "Weniger Kinder", "headline": "Engere Stationen — mehr Zeit pro Kind und mehr Wappen-Detail."},
+    "mehr_kinder_als_erwartet": {"icon": "🚨", "label": "Mehr Kinder", "headline": "2 Stationen parallel laufen lassen + zweite Hand organisieren."},
+    "kind_will_nicht_mitmachen": {"icon": "🤷", "label": "Kind verweigert", "headline": "'Burg-Wächter'-Rolle — passt auf, gibt Stempel. Bekommt am Ende Ritter-Brief."},
+    "kuchen_misslungen": {"icon": "🎂", "label": "Kuchen misslungen", "headline": "Bäcker-Kuchen + Wappen drauf — passt."},
+    "schwert_kampft_zu_wild": {"icon": "⚔️", "label": "Schwert-Kampf zu wild", "headline": "Sofort 'Burg-Wächter-Pause' — alle Schwerter ablegen, 5 Min Sitz-Aktivität (Quiz)."}
+  }
+}
