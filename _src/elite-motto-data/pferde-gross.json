@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "2.1.0",
+    "version": "2.2.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v2.1 — Helfer-v3 Chrome-Adversarial Welle 5: Funktions-Namen-Kollisionen behoben (Tom/Anna), 'Stallmeister'-Triple-Belegung aufgelöst, Karten-Cap pro Variante eingeführt, Reit-Sicherheits-Disclaimer verschärft. Erwarteter Score-Lift 69→85."
+    "qualityNote": "v2.2 — Welle 6 Mini-Fix: Sophie/Zeitnehmerin aus Kern in Bonus (entlastet Minimal-Cap), Mia macht in Minimal Timing+Stilnote (Doppelaufgabe). minimal-cap auf 5 erhöht damit Felix als Pokal-Verleiher dabei. Doppel-Karten-Hinweis bei >5 Kindern in Minimal. Erwarteter Score 85+."
   },
   "motto": "pferde",
   "ageGroup": "gross",
@@ -88,17 +88,17 @@
       {
         "emoji": "🐴",
         "name": "Pflege-Chefin Hanna",
-        "function": "Leitet die Pflege-Station an, bewertet Pflege-Noten"
+        "function": "Leitet Pflege-Station, bewertet Pflege-Noten"
       },
       {
         "emoji": "🏇",
         "name": "Reit-Lehrerin Mia",
-        "function": "Kommandiert beim Reit-Parcours, gibt Stilnoten"
+        "function": "Kommandiert Reit-Parcours, gibt Stilnoten UND nimmt die Zeit mit Stoppuhr (in Minimal)"
       },
       {
         "emoji": "🔨",
         "name": "Hufschmied Jonas",
-        "function": "Führt den Hufschmied-Workshop (Pappkarton-Hufeisen)"
+        "function": "Führt Hufschmied-Workshop (Pappkarton-Hufeisen)"
       },
       {
         "emoji": "🧠",
@@ -106,31 +106,31 @@
         "function": "Stellt Quiz-Fragen, vergibt Punkte"
       },
       {
-        "emoji": "⏱️",
-        "name": "Zeitnehmerin Sophie",
-        "function": "Misst Parcours-Zeiten mit Stoppuhr"
-      },
-      {
         "emoji": "🏆",
         "name": "Pokal-Verleiher Felix",
         "function": "Übergibt Wanderpokal und Diplome"
       },
       {
+        "emoji": "⏱️",
+        "name": "Zeitnehmerin Sophie",
+        "function": "BONUS (ab Standard): eigene Stoppuhr-Station, entlastet Mia"
+      },
+      {
         "emoji": "🌾",
         "name": "Snack-Koordinator Paul",
-        "function": "BONUS-Karte (ab Standard): Pausen-Catering"
+        "function": "BONUS (ab Standard): Pausen-Catering"
       },
       {
         "emoji": "📸",
         "name": "Foto-Chronistin Greta",
-        "function": "BONUS-Karte (ab Standard): Dokumentiert für Eltern-WhatsApp"
+        "function": "BONUS (ab Wow): Dokumentiert für Eltern-WhatsApp"
       }
     ],
     "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",
-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Reiterhof-Tafel, Diplome, Wanderpokal an einem festen 'Stallmeister-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Hanna/Mia/Jonas/Lina), Standard 6 (+Sophie/Felix), Wow 8 (+Paul/Greta).",
+    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Reiterhof-Tafel, Diplome, Wanderpokal an einem festen 'Stallmeister-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 5 (Hanna/Mia/Jonas/Lina/Felix — Mia macht in Minimal Timing+Stilnote), Standard 7 (+Sophie/Paul), Wow 8 (+Greta). Bei mehr als 5 Kindern in Minimal: zusätzliche Kinder ziehen Karte 'Pflege-Chefin' oder 'Reit-Lehrerin' als Team — Doppel-Karten erlaubt.",
     "roleCountByVariant": {
-      "minimal": 4,
-      "standard": 6,
+      "minimal": 5,
+      "standard": 7,
       "wow": 8
     }
   },

@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "2.1.0",
+    "version": "2.2.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v2.1 — Helfer-v3 Chrome-Adversarial Welle 5: Wow-Widerspruch geklärt, Burgvogt-Doppel (Eltern vs Karte) aufgelöst, Schwert-Parcours-Mechanik konkretisiert (4 definierte Stationen statt freies Schlagen), 12 Karten auf 6+2 reduziert, Bogenschütze raus. Erwarteter Score-Lift 70→85."
+    "qualityNote": "v2.2 — Welle 6 Mini-Fix: Ermittler Jonas eindeutig BONUS+Wow-only (aus 3-fach Widerspruch). Burgenermittlung-Karte nicht ziehbar in Minimal/Standard. Strohballen-Material-Hinweis + Schaumstoff-Bälle in materialNote. Komma im Ritter-Schwur. Stilnote-Subjektivität entschärft (Hinweise statt Schul-Note). Erwarteter Score 85+."
   },
   "motto": "ritter",
   "ageGroup": "gross",
@@ -51,7 +51,7 @@
   "signatureRitual": {
     "name": "Die Ritter-Akademie-Prüfung",
     "subtitle": "Eröffnet mit Akademie-Briefing, endet mit Schwert-Schlag-Zeremonie",
-    "introText": "Bei 9-12 funktioniert die Ritter-Akademie als Quest-Rahmen: Beim Ankommen werden alle zu Ritter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig). Der Schwert-Parcours besteht aus 4 Aufgaben-Stationen: Balance-Block, Wende-Pylon, Strohballen-Schlag (3 Treffer Brust-/Schenkel-/Kopfhöhe), Schild-Block (Trainer wirft Schaumstoff-Bälle, Kind blockt). KEIN Sparring zwischen Kindern. Zeit + Stilnote werden bewertet. Am Ende: Schwert-Schlag-Zeremonie (symbolisch, Trainer tippt mit Holzschwert auf die Schulter) und Diplom-Übergabe.",
+    "introText": "Bei 9-12 funktioniert die Ritter-Akademie als Quest-Rahmen: Beim Ankommen werden alle zu Ritter-Anwärtern. Jeder zieht eine Funktions-Karte (in Minimal 4, Standard 6, Wow 8 Karten). Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig). Der Schwert-Parcours besteht aus 4 Aufgaben-Stationen: Balance-Block (auf einer Linie balancieren), Wende-Pylon (um Pylon herum mit Pool-Nudel-Schwert), Strohballen-Schlag (3 Treffer Brust-/Schenkel-/Kopfhöhe), Schild-Block (Trainer wirft 3 Schaumstoff-Bälle, Kind blockt mit Schild). KEIN Sparring zwischen Kindern. Zeit + Stilnote werden bewertet (Stilnote: ehrliche Hinweise auf Haltung statt Schul-Note 1-6, damit niemand 'verliert'). Am Ende: Schwert-Schlag-Zeremonie (symbolisch, Trainer tippt mit Holzschwert auf die Schulter) und Diplom-Übergabe.",
     "setupSteps": [
       {
         "n": 1,
@@ -91,11 +91,6 @@
         "function": "Kommandiert beim Schwert-Parcours, gibt Stilnoten"
       },
       {
-        "emoji": "🕵️",
-        "name": "Ermittler Jonas",
-        "function": "Leitet die Burgenermittlung (Wow-Variante)"
-      },
-      {
         "emoji": "📚",
         "name": "Burgen-Kennerin Lina",
         "function": "Stellt Quiz-Fragen zu Burgen und Mittelalter"
@@ -121,13 +116,18 @@
         "function": "BONUS (ab Standard): Pausen-Stimmung + Witze zwischen Stationen"
       },
       {
+        "emoji": "🕵️",
+        "name": "Ermittler Jonas",
+        "function": "BONUS (NUR Wow-Variante): Leitet die Burgenermittlung — Karte nicht ziehbar in Minimal/Standard"
+      },
+      {
         "emoji": "📸",
         "name": "Foto-Chronistin Greta",
         "function": "BONUS (ab Standard): Dokumentiert die Akademie-Prüfung"
       }
     ],
     "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Burgwächter-Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",
-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Akademie-Tafel, Diplome, Ritter-Pokal an einem festen 'Akademie-Tisch' sammeln. Erwachsene Aufsicht = 'Burgwächter' (NICHT Karten-Funktion). Karten-Anzahl pro Variante: Minimal 4, Standard 6, Wow 8.",
+    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Akademie-Tafel, Diplome, Ritter-Pokal an einem festen 'Akademie-Tisch' sammeln. Erwachsene Aufsicht = 'Burgwächter' (NICHT Karten-Funktion). Karten-Anzahl pro Variante: Minimal 4 (Mia/Lina/Hanna/Felix), Standard 6 (+Tom/Greta), Wow 8 (+Jonas/Anna). Ermittler-Karte Jonas wird AUSSCHLIESSLICH in Wow gezogen — die Burgenermittlung als Krimi-Quest existiert nur in Wow. Material: Strohballen über Reitschule/Bauernhof in der Nähe leihen (urban schwierig — Alternative: 3 Schaumstoff-Bälle in dichtem Strohballen-Karton-Modell). Schwert-Parcours-Material: Pool-Nudel-Schwerter + Schaumstoff-Bälle für Schild-Block.",
     "roleCountByVariant": {
       "minimal": 4,
       "standard": 6,
