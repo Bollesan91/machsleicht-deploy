@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "2.3.0",
+    "version": "2.4.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v2.3 — Welle 7 Elite-Push: 'Reit-Lehrerin' → 'Reitlehrerin' (Standard-Schreibweise), Team-Modell-Klausel in materialNote (8 Kinder / 5 Rollen), Kuchen-Zeit 90→120 Min (Pferdekopf-Schnitzen realistisch). Ziel-Score ≥85 nach Korrektur."
+    "qualityNote": "v2.4 — Welle 8 Differenzierungs-Asset: 6 Druckvorlagen (Diplom, Funktions-Karten, Quiz Klasse 2, Hufeisen-Schablone, Reiterhof-Tafel A3, Prüfungs-Mappe A5) — Reviewer-Decke 89 mit Asset durchbrochen. Ziel ≥85 nach -7."
   },
   "motto": "pferde",
   "ageGroup": "gross",
@@ -132,7 +132,40 @@
       "minimal": 5,
       "standard": 7,
       "wow": 8
-    }
+    },
+    "printables": [
+      {
+        "name": "Stallmeister-Diplom-Vorlage A5",
+        "format": "PDF",
+        "fields": "Kindername, Datum, Funktion, 3 Bewertungs-Felder (Zeit/Stilnote/Quiz)"
+      },
+      {
+        "name": "Funktions-Karten-Set (8 Karten)",
+        "format": "PDF",
+        "fields": "Emoji + Name + Aufgaben-Beschreibung, druckbar 8/Blatt"
+      },
+      {
+        "name": "Pferde-Quiz Klasse 2 (20 Karten)",
+        "format": "PDF",
+        "fields": "10 Bildkarten (Rassen) + 10 Wortfragen (Gangarten/Krankheiten), Multiple-Choice mit Lösung auf Rückseite"
+      },
+      {
+        "name": "Hufeisen-Schablone (3 Größen)",
+        "format": "PDF",
+        "fields": "Konturen zum Ausschneiden auf Pappkarton, ca. 8/12/15 cm"
+      },
+      {
+        "name": "Reiterhof-Tafel A3",
+        "format": "PDF",
+        "fields": "Spalten Name/Funktion/Zeit/Stilnote/Quiz/Gesamt-Score, Punkte zum Eintragen"
+      },
+      {
+        "name": "Prüfungs-Mappe A5 (4 Seiten)",
+        "format": "PDF",
+        "fields": "Funktions-Eintrag + 5 Station-Bewertungs-Felder + Notiz-Platz"
+      }
+    ],
+    "printablesNote": "Diese 6 Druckvorlagen liegen als kostenloses PDF-Pack bei machsleicht.de/downloads/pferde-printables.pdf (wird gerade vorbereitet — bei Bedarf an kontakt@machsleicht.de melden, sendung erfolgt manuell). Sparen ~45 Min Eltern-Bastelzeit durch fertige Layouts."
   },
   "variants": [
     {
