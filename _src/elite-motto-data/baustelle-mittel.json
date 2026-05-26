@@ -213,7 +213,16 @@
               "name": "Stempel für Lizenz",
               "content": "Bei 10 von 15 richtig: Stempel 1. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
-          ]
+          ],
+          "loudness": "leise",
+          "effort": "leicht",
+          "prepText": "15 Werkzeug-Quiz-Karten (in Word selbst gestalten oder fertigem Set kaufen). Pro Karte: Werkzeug-Bild + 2-3 Antwort-Optionen. Antwortbögen pro Kind. 15 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
+          "ageAdjust6": "Für 6-Jährige: 12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
+          "ageAdjust8": "Für 8-Jährige: 15 Karten mit schwierigeren Fragen (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
+          "indoorTip": "Am Esstisch im Kreis — Quiz-Karten gut sichtbar hochhalten. Smartphone-Foto der Karten als Backup.",
+          "outdoorTip": null,
+          "whyItWorksTitle": "Warum Werkzeug-Quiz bei 6-8 Bauarbeiter-Identität schafft",
+          "whyItWorks": "6-8 wollen ihr Werkzeug-Wissen zeigen — Quiz ist die freundlichste Form davon. Sie gehen mit konkretem Wissen heim (\"ich kenne die Wasserwaage\"). Wichtig: keine Trickfragen, immer Erklärung warum die Antwort stimmt."
         },
         {
           "name": "🧱 Bauklotz-Wettbewerb",
@@ -244,7 +253,16 @@
               "name": "Stempel für Lizenz",
               "content": "Sieger bekommt Bonus-Stempel + Turm-Foto. Alle anderen Stempel 2."
             }
-          ]
+          ],
+          "loudness": "mittel",
+          "effort": "leicht",
+          "prepText": "60-80 mittelgroße Bauklötze (Holz oder Schaumstoff, KEINE LEGO — werden instabil bei Höhe), Stoppuhr, Maßband, Wertungstafel für Höhe-in-cm + Statik-Stabilität. 10 Min Vorlauf.",
+          "ageAdjust6": "Für 6-Jährige: 3-Minuten-Bauen, Höhe in cm gemessen — kein \"Stapel-fällt-um-Drama\". Stempel für jedes Kind.",
+          "ageAdjust8": "Für 8-Jährige: 5-Minuten-Bauen, Wertung kombiniert Höhe + Statik-Test (sanftes Wackeln am Tisch). Top-3 bekommen Bonus-Stempel.",
+          "indoorTip": "Im Wohnzimmer auf Teppich (weicher Fall) — 1m Sicherheits-Abstand zwischen Bautischen.",
+          "outdoorTip": "Im Garten auf Rasen — Wind beachten. Stoppuhr-Position vom Bau-Bereich entfernt (Distraktion).",
+          "whyItWorksTitle": "Warum Bauklotz-Wettbewerb der Maurer-Höhepunkt ist",
+          "whyItWorks": "6-8 wollen ihr Bau-Talent in echtem Wettbewerb zeigen. Höhe + Statik als Wertung kombiniert Kreativität mit \"ingenieursmäßigem\" Denken. Wichtig: Holz/Schaumstoff statt Lego — Lego-Türme kippen bei Höhe + erzeugen Frust."
         },
         {
           "name": "🔩 Schrauben-Schatzsuche XL",
@@ -275,7 +293,16 @@
               "name": "Stempel für Lizenz",
               "content": "Alle bekommen Stempel 3 + dürfen Schrauben mitnehmen."
             }
-          ]
+          ],
+          "loudness": "mittel",
+          "effort": "mittel",
+          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/gross) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "ageAdjust6": "Bei 3-Jährigen: 10 Schrauben offensichtlich versteckt (in Sand mit Spitzen nach oben, sichtbar). Alle finden gleichzeitig, niemand \"verliert\".",
+          "ageAdjust8": "Für 5-Jährige: 15-20 Schrauben mit etwas Versteck-Logik (\"unter dem Bagger\", \"neben dem Eimer\"). Stempel für jedes Kind.",
+          "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
+          "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
+          "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
+          "whyItWorks": "Sand-Schatzsuche kombiniert sensorisches Spiel mit Schatz-Geschichte. Plastik-Schrauben sind sichtbarer Erfolg (\"Schau, ich habe drei!\") — mit Plastik-Werkzeug-Gürtel zu sammeln verstärkt die Bauarbeiter-Identität."
         }
       ],
       "food": "🍪 Bagger-Kekse XL (mit Schoko-Krümel-Sand)\n🥕 Karotten-Schrauben (1,5 Schalen)\n🍎 Apfelschnitze + Birnen\n🥤 Apfelschorle (2 L)\n🎂 Bauarbeiter-Kuchen (mit Hammer + Bagger drauf)\n🥨 Salzstangen + Brezeln",
@@ -449,7 +476,16 @@
               "name": "Stempel für Lizenz",
               "content": "Stempel 4 für alle. Bilder zum Trocknen wegstellen."
             }
-          ]
+          ],
+          "loudness": "leise",
+          "effort": "mittel",
+          "prepText": "6-8 Pappkarton-Stücke (DIN A2, \"Mauer-Bild\") + Acrylfarben (washable) + Pinsel in 3 Größen + Schablonen (Werkzeug-Formen, Baustellen-Szene) + Schürzen. Wachstuch-Unterlage am Esstisch. 15 Min Vorlauf.",
+          "ageAdjust6": "Für 6-Jährige: 3 Schablonen-Optionen + 4 Farben. Eigenes Bauarbeiter-Logo zeichnen.",
+          "ageAdjust8": "Für 8-Jährige: detailliertere Baustellen-Szene mit Bagger + Kran + Maurer-Figur. Bonus-Stempel für Kreativität.",
+          "indoorTip": "Am Esstisch — Trocken-Bereich für fertige Bilder klar markiert. Pinsel-Wasser-Becher pro Kind.",
+          "outdoorTip": "Im Garten am Pavillon (Wind/Sonne) — Glitzer-Stifte vermeiden draußen.",
+          "whyItWorksTitle": "Warum Maler-Station bei 6-8 Identität verstärkt",
+          "whyItWorks": "Eigenes Bauarbeiter-Logo oder Bauarbeiter-Selbstporträt ist Foto-würdiger Stolz-Moment. Mitnehm-Stück mit eigener kreativer Note — Eltern sehen am Abend ein echtes Werk, nicht nur \"war schön\"."
         },
         {
           "name": "📐 Architekt-Aufgabe: Bauplan + Bau",
@@ -480,7 +516,16 @@
               "name": "Stempel für Lizenz",
               "content": "Alle, deren Bau dem Plan entspricht, bekommen Stempel 5."
             }
-          ]
+          ],
+          "loudness": "mittel",
+          "effort": "mittel",
+          "prepText": "8 Bauplan-Karten (vorgezeichnete einfache Pläne: Plan A \"Einfamilienhaus\" 5 Klötze 2 Stockwerke, Plan B \"Brücke\" 6 Klötze 1 Spann, Plan C \"Burg\" 8 Klötze 4 Türme). 60 Bauklötze + Maßband + kleine Wasserwaage (Plastik). 20 Min Vorlauf.",
+          "ageAdjust6": "Für 6-Jährige: nur Plan A (einfach), 5-Klötze-Haus. Architektin Hanna zeigt vor.",
+          "ageAdjust8": "Für 8-Jährige: alle 3 Pläne zur Wahl, Wasserwaage darf genutzt werden für Stabilitäts-Check.",
+          "indoorTip": "Am Esstisch oder auf Boden-Decke — Bauplan-Karte sichtbar neben Bau-Stelle. Maßband + Wasserwaage griffbereit.",
+          "outdoorTip": "Im Garten auf glatter Fläche — Bauplan-Karte mit Stein beschwert (Wind).",
+          "whyItWorksTitle": "Warum Architekt-Phase bei 6-8 Plan-Denken trainiert",
+          "whyItWorks": "6-8 lernen Plan→Umsetzung: erst Plan lesen, dann nachbauen. Das ist erstes konstruktives Denken jenseits von freiem Spielen. Wer fertig ist, wird stolz-präsentieren — Architektur-Identität."
         }
       ],
       "food": "🍪 Bagger-Kekse XL (3 Varianten)\n🥕 Karotten-Schrauben (2,5 Schalen)\n🍎 Apfelschnitze + Birnen + Trauben\n🥤 Apfelschorle (3 L)\n🎂 Bauarbeiter-Kuchen Standard mit Bagger + Kran drauf\n🥨 Salzstangen + Brezeln + Käse + Wurst\n🌭 Mini-Würstchen ('Bauarbeiter-Mittag')\n🍕 Mini-Pizzen ('Baustellen-Snack')",
@@ -668,7 +713,16 @@
               "name": "Olympiade-Sieger",
               "content": "Top 3 Kinder bekommen Mini-Pokale. ABER: alle bekommen Stempel 6."
             }
-          ]
+          ],
+          "loudness": "laut",
+          "effort": "mittel",
+          "prepText": "1-2 Mini-Schubkarren (Plastik, max 30x60 cm), 8-10 leichte Schaumstoff-Bauklötze als Ladung, Strecke 5-8 m mit Klebeband markiert (Kurve max 2m Radius). Stoppuhr + Mini-Pokale (3 Stk) für Wow-Highlight. 10 Min Vorlauf.",
+          "ageAdjust6": "Bei 3-Jährigen: kein Wettkampf, Erwachsene schiebt mit. Strecke max 3 m gerade. Schubkarren-Tempo: gehen, nicht rennen — Schubkarre kippt sonst.",
+          "ageAdjust8": "Für 5-Jährige: Strecke 5 m mit leichter Kurve, Stoppuhr läuft \"zur Info\". Bauklötze-Transport-Wettbewerb-Element optional, alle bekommen Pokal.",
+          "indoorTip": "Im langen Flur (mind. 6m) — Möbel-Sicherheits-Abstand 1m. Schubkarren-Tempo: gehen, nicht rennen. Bei Sturz: weicher Boden Pflicht.",
+          "outdoorTip": "Im Garten oder auf Hofeinfahrt — größere Strecke, mehr Sicherheits-Zone, schöne Olympiade-Atmosphäre mit Mini-Pokal-Übergabe.",
+          "whyItWorksTitle": "Warum Schubkarren-Lauf Wow-Höhepunkt ist",
+          "whyItWorks": "Schubkarren = \"echtes Bauarbeiter-Werkzeug\" für 3-5. Olympiade-Format mit Mini-Pokalen schafft Foto-würdiges Ende. Wichtig: Sicherheits-Tempo strikt durchsetzen (gehen, nicht rennen), sonst Schubkarre kippt + Verletzungsgefahr."
         }
       ],
       "food": "🎂 Großer Bauarbeiter-Kuchen XL (mit Bagger + Kran + Maurer-Figur)\n🍪 Bagger-Kekse (3 Sorten + Werkzeug-Kekse)\n🥕 Karotten-Schrauben XL (3 Schalen)\n🍎 Apfel + Birne + Trauben\n🥤 Apfelschorle + Brause (4 L)\n🥨 Salzstangen + Brezeln + Käse + Wurst\n🌭 Mini-Würstchen + 'Bauarbeiter-Brotzeit'\n🍕 Mini-Pizzen + Bauarbeiter-Brötchen\n🍬 Schoko-Schrauben (Gummibärchen-Schrauben)",
@@ -1028,32 +1082,115 @@
     "regen": {
       "icon": "🌧️",
       "label": "Regen",
-      "headline": "Sand-Station auf große Plane in Wohnzimmer/Küche. Alle anderen Stationen drinnen."
+      "headline": "Sand-Station auf große Plane in Wohnzimmer/Küche. Alle anderen Stationen drinnen.",
+      "steps": [
+        "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
+        "Sand-Station auf Plane im Wohnzimmer + alte Decken drunter.",
+        "Stations-Rotation in 4 Ecken: jede Ecke = eine Station.",
+        "Bauklotz-Wettbewerb-Strecke verkürzen wenn Flur kürzer als 6m."
+      ],
+      "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen, Bauklotz + Quiz + Memory + Maler reichen.",
+      "tone": "praktisch"
     },
     "weniger_kinder_als_erwartet": {
       "icon": "👥",
       "label": "Weniger Kinder",
-      "headline": "Engere Stationen — mehr Zeit pro Kind."
+      "headline": "Engere Stationen — mehr Zeit pro Kind.",
+      "steps": [
+        "Stations-Dauer hochfahren: 25 Min statt 20.",
+        "Material vor-portioniert lassen, übriges in Mitgebsel-Tüten.",
+        "Bei Schubkarren-Lauf: einzeln statt 2er-Teams.",
+        "Foto-Phase verlängern."
+      ],
+      "fallback": "Bei nur 3-4 Kindern: Stations-Wechsel komplett weglassen, durchgehende Bauarbeiter-Story.",
+      "tone": "praktisch"
     },
     "mehr_kinder_als_erwartet": {
       "icon": "🚨",
       "label": "Mehr Kinder",
-      "headline": "2 Stationen parallel laufen lassen, zweite Hand."
+      "headline": "2 Stationen parallel laufen lassen, zweite Hand.",
+      "steps": [
+        "Sofort 2. Erwachsene/n holen.",
+        "Stationen in 2 Reihen aufteilen — 2 parallele Stations-Sets.",
+        "Material verdoppeln wenn möglich.",
+        "Snack-Pause früher."
+      ],
+      "fallback": "Wenn nichts hilft: eine Station als Bonus-Spiel deklarieren.",
+      "tone": "praktisch"
     },
     "kind_will_nicht_mitmachen": {
       "icon": "🤷",
       "label": "Kind verweigert",
-      "headline": "'Bauleiter-Beobachter'-Rolle — bekommt am Ende Lizenz wie alle."
+      "headline": "'Bauleiter-Beobachter'-Rolle — bekommt am Ende Lizenz wie alle.",
+      "steps": [
+        "Nicht drängen — \"Polier-Beobachter\"-Rolle: Stoppuhr halten, Stempel verteilen.",
+        "Eine Lieblings-Aufgabe identifizieren (Bagger-fahren, Helm-aufsetzen).",
+        "Eltern (falls da) kurz einbeziehen.",
+        "Am Ende: Diplom für ALLE."
+      ],
+      "fallback": "Wenn Kind dauerhaft verweigert: nicht zwingen. Belohnung am Ende bleibt.",
+      "tone": "einfühlsam"
     },
     "kuchen_misslungen": {
       "icon": "🎂",
       "label": "Kuchen misslungen",
-      "headline": "Bäcker-Kuchen + Krümel-Sand + Bagger drauf — passt."
+      "headline": "Bäcker-Kuchen + Krümel-Sand + Bagger drauf — passt.",
+      "steps": [
+        "Atmen — kein Drama.",
+        "Bäcker-Schoko-Kasten kaufen (5-8 €), mit Krümel-Sand + Plastik-Bagger drauf.",
+        "Nichts mehr da: Mini-Muffins beim Discounter mit Bauarbeiter-Aufklebern.",
+        "NICHT vor Kindern entschuldigen."
+      ],
+      "fallback": "Last-Minute: Eis aus Gefrierer mit Streuseln. Bei Kindern fast immer der Star.",
+      "tone": "humorvoll"
     },
     "schrauben_verloren": {
       "icon": "🔩",
       "label": "Schrauben verloren",
-      "headline": "Mehr Schrauben verstecken, Suchzeit reduzieren."
+      "headline": "Mehr Schrauben verstecken, Suchzeit reduzieren.",
+      "steps": [
+        "Ruhe bewahren, Pause einlegen.",
+        "Material neu sortieren.",
+        "Eltern als Helfer aktivieren.",
+        "Notfalls Programm kürzen."
+      ],
+      "fallback": "Im Notfall: Programm auf Spaß-Kern reduzieren.",
+      "tone": "pragmatisch"
     }
+  },
+  "bonusGames": {
+    "intro": "Bonus-Spiele für die Bauarbeiter-Lizenz-Phase — Plan B bei Material-Ausfall oder als 5. Station.",
+    "items": [
+      {
+        "name": "🃏 Werkzeug-Pantomime",
+        "duration": 12,
+        "minAge": 6,
+        "loudness": "mittel",
+        "indoor": true,
+        "outdoor": true,
+        "material": "Karten mit Werkzeug-Namen (Hammer, Säge, Bohrer, Wasserwaage etc.)",
+        "anleitung": "Kind zieht Karte und stellt Werkzeug pantomimisch dar, andere raten. Pro 5 Karten Stempel-Bonus."
+      },
+      {
+        "name": "🎵 Bauarbeiter-Lied-Quiz",
+        "duration": 10,
+        "minAge": 6,
+        "loudness": "mittel",
+        "indoor": true,
+        "outdoor": false,
+        "material": "Smartphone mit 8 Baustellen/Bagger-Liedern (z.B. Kinder-Bob-der-Baumeister, Bagger-Songs)",
+        "anleitung": "Lied-Schnipsel 15 Sek abspielen, Kinder erraten Titel. Bonus-Stempel für Lieder-Wissen."
+      },
+      {
+        "name": "📐 Architekten-Skizzen-Battle",
+        "duration": 15,
+        "minAge": 7,
+        "loudness": "leise",
+        "indoor": true,
+        "outdoor": false,
+        "material": "Pro Kind 1 Pappschild + Bleistift + Beispiel-Karten (Haus/Brücke/Burg)",
+        "anleitung": "Jedes Kind zeichnet einen einfachen Bauplan. Architektin Hanna gibt Stilnote. Bonus-Stempel für klare Bemaßung."
+      }
+    ]
   }
 }

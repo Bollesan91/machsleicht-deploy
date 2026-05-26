@@ -222,7 +222,16 @@
               "name": "Bauplan-Präsentation + Stilnote",
               "content": "Jedes Kind erklärt seinen Plan. Architektin gibt Stilnote (Sauberkeit, Vollständigkeit, Statik-Plausibilität)."
             }
-          ]
+          ],
+          "loudness": "leise",
+          "effort": "hoch",
+          "prepText": "8 Pappschilde (A3) + Lineale + Bleistifte + Radiergummi + Wachsmalstifte + Beispiel-Bauplan-Karten (3 konkrete Pläne: Plan A \"Einfamilienhaus 2 Stockwerke à 4 Räume 20×15 cm\", Plan B \"Brücke mit 3 Bogen 30×8 cm\", Plan C \"Burg-Komplex 4 Türme 25×25 cm\") + Statik-Regel-Karte. 20-25 Min Vorlauf.",
+          "ageAdjust6": "NICHT für 6 — Bauplan-Werkstatt ist 9-12-Niveau mit Lineal + Bleistift-Zeichnung. Bei Mischgruppe: einfachere Variante aus mittel.",
+          "ageAdjust8": "Falls 8-Jährige dabei (selten in 9-12-Party): Plan A vereinfacht zeichnen, weniger Bemaßung.",
+          "indoorTip": "Am Esstisch mit Wachstuch — Bauplan-Karten + Statik-Regel-Karte sichtbar als Referenz. Bleistifte mit weicher Spitze.",
+          "outdoorTip": "Im Garten am Klapptisch — Bauplan-Karten mit Stein beschwert (Wind). Lineal stabil halten.",
+          "whyItWorksTitle": "Warum Bauplan-Werkstatt 9-12 fordert",
+          "whyItWorks": "9-12 wollen echtes Konstruktions-Denken: Plan zeichnen, Bemaßung verstehen, Räume planen. Mit Bauplan-Beispielen + Lineal entsteht ein \"echter\" Plan mit Architektin-Stolz. Das gehört zur Mathe/Geometrie-Welt der Schule und macht es greifbar."
         },
         {
           "name": "🏆 Bauklotz-Wettbewerb mit Statik-Wertung",
@@ -253,7 +262,16 @@
               "name": "Punktevergabe",
               "content": "Höhe (1 Pkt pro 5 cm) + Statik (1-10) = Gesamt-Score. Sieger bekommt Bonus für Bauleiter-Pokal."
             }
-          ]
+          ],
+          "loudness": "mittel",
+          "effort": "leicht",
+          "prepText": "60-80 mittelgroße Bauklötze (Holz oder Schaumstoff, KEINE LEGO — werden instabil bei Höhe), Stoppuhr, Maßband, Wertungstafel für Höhe-in-cm + Statik-Stabilität. 10 Min Vorlauf.",
+          "ageAdjust6": "Für 6-Jährige: 3-Minuten-Bauen, Höhe in cm gemessen — kein \"Stapel-fällt-um-Drama\". Stempel für jedes Kind.",
+          "ageAdjust8": "Für 8-Jährige: 5-Minuten-Bauen, Wertung kombiniert Höhe + Statik-Test (sanftes Wackeln am Tisch). Top-3 bekommen Bonus-Stempel.",
+          "indoorTip": "Im Wohnzimmer auf Teppich (weicher Fall) — 1m Sicherheits-Abstand zwischen Bautischen.",
+          "outdoorTip": "Im Garten auf Rasen — Wind beachten. Stoppuhr-Position vom Bau-Bereich entfernt (Distraktion).",
+          "whyItWorksTitle": "Warum Bauklotz-Wettbewerb der Maurer-Höhepunkt ist",
+          "whyItWorks": "6-8 wollen ihr Bau-Talent in echtem Wettbewerb zeigen. Höhe + Statik als Wertung kombiniert Kreativität mit \"ingenieursmäßigem\" Denken. Wichtig: Holz/Schaumstoff statt Lego — Lego-Türme kippen bei Höhe + erzeugen Frust."
         },
         {
           "name": "🕵️ Sabotage-Ermittlung",
@@ -289,7 +307,16 @@
               "name": "Auflösung",
               "content": "Team mit korrekter Lösung gewinnt. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."
             }
-          ]
+          ],
+          "loudness": "leise",
+          "effort": "mittel",
+          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi-Tabelle (klar markiert welche Spur zu welchem passt, welche red-herring ist). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
+          "ageAdjust6": "NICHT für 6 — Sabotage-Krimi ist 9-12-Niveau.",
+          "ageAdjust8": "NICHT für 8 — siehe oben.",
+          "indoorTip": "Spuren in 3-4 Räumen verstecken (Küche, Bad, Wohnzimmer, Flur) — nicht Schlafzimmer. Verdächtigen-Wand zentral.",
+          "outdoorTip": "Im Garten ungeeignet — Krimi-Story braucht Indoor-Räume mit verschiedenen \"Tatorten\".",
+          "whyItWorksTitle": "Warum Sabotage-Ermittlung 9-12 fesselt",
+          "whyItWorks": "9-12 sind im Detektiv-Modus (Drei-Fragezeichen, Sherlock). Sabotage-Krimi mit echten Spuren + Verdächtigen-Befragung simuliert diese Welt. KRITISCH: Alibi-Tabelle muss konsistent sein — eine Spur passt eindeutig zu EINEM Täter, andere Spuren sind Red-Herrings die zu Alibis passen."
         }
       ],
       "food": "🍕 Bauarbeiter-Pizza (3 große)\n🥖 Stockbrot 'Maurer-Brot'\n🥕 Karotten-Schrauben + Trauben + Apfelschnitze\n🥤 Apfelschorle (4 L)\n🎂 Baustellen-Kuchen XL (Schoko-Rührkuchen mit Krümel-Sand, Bagger + Kran drauf)\n🥨 Brezeln + Salzstangen + Käse + Wurst\n🍬 Schoko-Schrauben (Gummibärchen-Schrauben)",
@@ -472,7 +499,16 @@
               "name": "Stempel für Lizenz",
               "content": "Bei 7/10: Stempel. Sonst: 'Material-Lehrling' (alle bekommen Stempel)."
             }
-          ]
+          ],
+          "loudness": "leise",
+          "effort": "mittel",
+          "prepText": "10 Stoff-Beutel (oder Sock-Variante) mit verschiedenen Bau-Materialien aus dem Haushalt (Stein, Holz, Metall-Schraube, Beton-Stück, Ziegel-Splitter, Sand, Kies, Glas-Stein-Imitat, Kunststoff, Gips-Stück) + Beschriftungs-Bögen pro Kind. Materialien müssen glatt geschliffen sein. 15 Min Vorlauf.",
+          "ageAdjust6": "NICHT für 6 — Material-Wissen ist 9-12-Niveau.",
+          "ageAdjust8": "NICHT für 8 — siehe oben.",
+          "indoorTip": "Am Esstisch mit Wachstuch — Beutel auf Tablett, jedes Kind erfühlt einzeln. Antwortbogen daneben.",
+          "outdoorTip": "Im Garten am Klapptisch — keine Sonne (Materialien wärmen sich auf, Erkennung wird ungenau).",
+          "whyItWorksTitle": "Warum sensorische Material-Erkennung Wissen vertieft",
+          "whyItWorks": "9-12 lernen über Tasten: Stein vs Beton vs Ziegel haben unterschiedliche Texturen. Material-Erkennung ist erstes konstruktives Material-Verständnis — was Bauarbeiter wirklich tun."
         }
       ],
       "food": "🍕 Bauarbeiter-Pizza XL (4 große, davon 1 Veggie)\n🥖 Stockbrot 'Maurer-Brot'\n🥕 Karotten-Schrauben + Trauben + Apfel + Birne\n🥤 Apfelschorle + Brause (5 L)\n🎂 Baustellen-Kuchen Standard (mit Bagger + Kran)\n🥨 Brezeln + Salzstangen + Käse + Wurst + Schinken\n🌭 Bauarbeiter-Würstchen\n🍕 Mini-Pizzen extra\n🍬 Schoko-Schrauben",
@@ -660,7 +696,16 @@
               "name": "Olympiade-Sieger",
               "content": "Bestes Team bekommt Brücken-Pokal-Bonus + Statik-Star-Pin Gold."
             }
-          ]
+          ],
+          "loudness": "mittel",
+          "effort": "hoch",
+          "prepText": "150 Holz-Bauklötze oder Kapla-Holzleisten + Klebepads + 2 Stützen (Bücher-Stapel im Abstand 30 cm) + Gewichts-Set (Sandsäckchen 50g/100g/200g/300g) + Stoppuhr. SICHERHEIT: Gesicht/Hände in 1m Abstand zur Brücke beim Last-Test. Sandsäckchen MIT Hand kontrolliert auflegen, niemals fallen lassen. 25 Min Vorlauf.",
+          "ageAdjust6": "NICHT für 6 — Brücken-Last-Test ist 9-12-Niveau mit Sicherheits-Anforderung.",
+          "ageAdjust8": "NICHT für 8 — siehe oben.",
+          "indoorTip": "Im Wohnzimmer auf festem Tisch — Sicherheits-Zone von 1m für Last-Test markieren. Sandsäckchen auf Tisch-Ablage griffbereit.",
+          "outdoorTip": "Im Garten am Klapptisch — Wind beachten (Brücke wackelt). Sandsäckchen-Lager auf Stuhl daneben.",
+          "whyItWorksTitle": "Warum Brücken-Last-Test der Tiefbau-Höhepunkt ist",
+          "whyItWorks": "9-12 verstehen Statik in Aktion: Brücken-Form (Bogen, Dreieck) entscheidet Last-Tragfähigkeit. Last-Test mit Sandsäckchen zeigt physikalische Realität — das ist Tiefbau-Engineering für Kinder."
         },
         {
           "name": "🏆 Bau-Olympiade-Finale: Schubkarren + Klotz-Stapel",
@@ -691,7 +736,16 @@
               "name": "Olympiade-Sieger + Bauleiter-Pokal",
               "content": "Top 3 Pokale + Bauleiter-Pokal für bestes Gesamt-Team."
             }
-          ]
+          ],
+          "loudness": "laut",
+          "effort": "mittel",
+          "prepText": "3 Mini-Schubkarren + 40 Bauklötze + 3 Markierungen (Start, Stapel-Punkt, Ziel) + Stoppuhr + Mini-Pokale (Top 3) + Bauleiter-Pokal für bestes Team. 20 Min Vorlauf — Sicherheits-Briefing inkl. Sandsäckchen-Last-Test wenn kombiniert.",
+          "ageAdjust6": "NICHT für 6 — Olympiade-Finale ist 9-12-Niveau.",
+          "ageAdjust8": "8-Jährige als Wow-Erweiterung mit reduzierter Wertung. Schubkarren-Strecke 6m statt 10m.",
+          "indoorTip": "Im langen Flur (10m) — Sicherheits-Zone 1m für Zuschauer. Stapel-Punkt + Last-Test-Bereich separat.",
+          "outdoorTip": "Im Garten oder Hofeinfahrt — beste Olympiade-Atmosphäre mit Wertungs-Tafel sichtbar.",
+          "whyItWorksTitle": "Warum Olympiade-Finale Wow-Niveau setzt",
+          "whyItWorks": "9-12 wollen den Olympische-Spiele-Moment — Schubkarren-Lauf + Klotz-Stapel + Brücken-Last = Multi-Skill-Wettbewerb. Bauleiter-Pokal geht 1 Jahr zum Sieger-Team, schafft Stolz-Identität als bester Bauleiter."
         }
       ],
       "food": "🎂 Großer Baustellen-Kuchen XXL (mit Bagger + Kran + Kipper + Maurer-Marzipan-Figur)\n🍕 Bauarbeiter-Pizza-Lieferung (5 große, davon 2 Veggie)\n🥖 Stockbrot 'Maurer-Brot'\n🥕 Karotten-Schrauben XL\n🍇 Trauben + Apfel + Birne + Melone\n🥤 Apfelschorle + Bauarbeiter-Brause + Eistee (6 L)\n🥨 Brezeln + Salzstangen + Käse + Wurst + Schinken + Salami-Spieße\n🌭 Bauarbeiter-Würstchen XL\n🍕 Mini-Pizzen Vorrat\n🍬 Schoko-Schrauben + Marzipan-Bagger",
@@ -1086,42 +1140,141 @@
     "regen": {
       "icon": "🌧️",
       "label": "Regen",
-      "headline": "Alle Stationen drinnen, Sand-Spielzeug auf Plane in Küche."
+      "headline": "Alle Stationen drinnen, Sand-Spielzeug auf Plane in Küche.",
+      "steps": [
+        "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
+        "Sand-Station auf Plane im Wohnzimmer + alte Decken drunter.",
+        "Stations-Rotation in 4 Ecken: jede Ecke = eine Station.",
+        "Bauklotz-Wettbewerb-Strecke verkürzen wenn Flur kürzer als 6m."
+      ],
+      "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen, Bauklotz + Quiz + Memory + Maler reichen.",
+      "tone": "praktisch"
     },
     "weniger_kinder_als_erwartet": {
       "icon": "👥",
       "label": "Weniger Kinder",
-      "headline": "Mehr Stations-Zeit, Sabotage mit 4 Verdächtigen statt 6."
+      "headline": "Mehr Stations-Zeit, Sabotage mit 4 Verdächtigen statt 6.",
+      "steps": [
+        "Stations-Dauer hochfahren: 25 Min statt 20.",
+        "Material vor-portioniert lassen, übriges in Mitgebsel-Tüten.",
+        "Bei Schubkarren-Lauf: einzeln statt 2er-Teams.",
+        "Foto-Phase verlängern."
+      ],
+      "fallback": "Bei nur 3-4 Kindern: Stations-Wechsel komplett weglassen, durchgehende Bauarbeiter-Story.",
+      "tone": "praktisch"
     },
     "mehr_kinder_als_erwartet": {
       "icon": "🚨",
       "label": "Mehr Kinder",
-      "headline": "2 Stationen parallel, zweite Hand organisieren, Sabotage in 3er-Teams."
+      "headline": "2 Stationen parallel, zweite Hand organisieren, Sabotage in 3er-Teams.",
+      "steps": [
+        "Sofort 2. Erwachsene/n holen.",
+        "Stationen in 2 Reihen aufteilen — 2 parallele Stations-Sets.",
+        "Material verdoppeln wenn möglich.",
+        "Snack-Pause früher."
+      ],
+      "fallback": "Wenn nichts hilft: eine Station als Bonus-Spiel deklarieren.",
+      "tone": "praktisch"
     },
     "sabotage_zu_kompliziert": {
       "icon": "🕵️",
       "label": "Sabotage zu kompliziert",
-      "headline": "Zusatz-Hinweis-Karten verteilen, eine Spur direkt zuordnen, Auflösung etwas früher öffnen."
+      "headline": "Zusatz-Hinweis-Karten verteilen, eine Spur direkt zuordnen, Auflösung etwas früher öffnen.",
+      "steps": [
+        "Ruhe bewahren, Pause einlegen.",
+        "Material neu sortieren.",
+        "Eltern als Helfer aktivieren.",
+        "Notfalls Programm kürzen."
+      ],
+      "fallback": "Im Notfall: Programm auf Spaß-Kern reduzieren.",
+      "tone": "pragmatisch"
     },
     "kind_will_nicht_mitmachen": {
       "icon": "🤷",
       "label": "Kind verweigert",
-      "headline": "'Polier-Beobachter'-Funktion — bewertet als Schiedsrichter mit, bekommt Diplom."
+      "headline": "'Polier-Beobachter'-Funktion — bewertet als Schiedsrichter mit, bekommt Diplom.",
+      "steps": [
+        "Nicht drängen — \"Polier-Beobachter\"-Rolle: Stoppuhr halten, Stempel verteilen.",
+        "Eine Lieblings-Aufgabe identifizieren (Bagger-fahren, Helm-aufsetzen).",
+        "Eltern (falls da) kurz einbeziehen.",
+        "Am Ende: Diplom für ALLE."
+      ],
+      "fallback": "Wenn Kind dauerhaft verweigert: nicht zwingen. Belohnung am Ende bleibt.",
+      "tone": "einfühlsam"
     },
     "kuchen_misslungen": {
       "icon": "🎂",
       "label": "Kuchen misslungen",
-      "headline": "Bäcker-Kuchen + Krümel-Sand + Bagger drauf — passt."
+      "headline": "Bäcker-Kuchen + Krümel-Sand + Bagger drauf — passt.",
+      "steps": [
+        "Atmen — kein Drama.",
+        "Bäcker-Schoko-Kasten kaufen (5-8 €), mit Krümel-Sand + Plastik-Bagger drauf.",
+        "Nichts mehr da: Mini-Muffins beim Discounter mit Bauarbeiter-Aufklebern.",
+        "NICHT vor Kindern entschuldigen."
+      ],
+      "fallback": "Last-Minute: Eis aus Gefrierer mit Streuseln. Bei Kindern fast immer der Star.",
+      "tone": "humorvoll"
     },
     "baustellen_besuch_abgesagt": {
       "icon": "🏗️",
       "label": "Baustellen-Besuch abgesagt",
-      "headline": "Olympiade als Ersatz-Highlight, Baustellen-Video als zusätzlicher Programm-Block."
+      "headline": "Olympiade als Ersatz-Highlight, Baustellen-Video als zusätzlicher Programm-Block.",
+      "steps": [
+        "Ruhe bewahren, Pause einlegen.",
+        "Material neu sortieren.",
+        "Eltern als Helfer aktivieren.",
+        "Notfalls Programm kürzen."
+      ],
+      "fallback": "Im Notfall: Programm auf Spaß-Kern reduzieren.",
+      "tone": "pragmatisch"
     },
     "brücke_bricht_zu_schnell": {
       "icon": "🌉",
       "label": "Brücke bricht zu schnell",
-      "headline": "Mehr Bauklötze freigeben, Stützen näher zusammen rücken."
+      "headline": "Mehr Bauklötze freigeben, Stützen näher zusammen rücken.",
+      "steps": [
+        "Ruhe bewahren, Pause einlegen.",
+        "Material neu sortieren.",
+        "Eltern als Helfer aktivieren.",
+        "Notfalls Programm kürzen."
+      ],
+      "fallback": "Im Notfall: Programm auf Spaß-Kern reduzieren.",
+      "tone": "pragmatisch"
     }
+  },
+  "bonusGames": {
+    "intro": "Bonus-Spiele für die Architekten-Prüfung — als 6. Station, Plan B oder Schlafparty-Anschluss.",
+    "items": [
+      {
+        "name": "🎬 Bau-Doku-Quiz",
+        "duration": 20,
+        "minAge": 9,
+        "loudness": "leise",
+        "indoor": true,
+        "outdoor": false,
+        "material": "12 Quiz-Karten zu Bauarbeiter-Berufen + bekannten Baustellen (Brandenburger Tor, Berliner Schloss, Tunnelbau Schweiz)",
+        "anleitung": "Filmtitel + Bauwerk erraten. Bonus-Stempel für Bauleiter-Akademie."
+      },
+      {
+        "name": "🔬 Material-Pantomime",
+        "duration": 12,
+        "minAge": 9,
+        "loudness": "mittel",
+        "indoor": true,
+        "outdoor": false,
+        "material": "Karten mit Materialien (Stein, Holz, Stahl, Beton, Glas, Kunststoff, Sand, Kies, Ziegel)",
+        "anleitung": "Kind zieht Karte und stellt Material durch Bewegung dar (Stein: schwer-gleichgewichtig, Glas: vorsichtig-zerbrechlich). Bonus-Stempel."
+      },
+      {
+        "name": "🏆 Bauleiter-Wandersieg-Tafel",
+        "duration": 10,
+        "minAge": 9,
+        "loudness": "mittel",
+        "indoor": true,
+        "outdoor": false,
+        "material": "Große Baustellen-Tafel + Filzstifte, Stempel-System",
+        "anleitung": "Am Ende: jedes Kind trägt Lieblings-Disziplin + Highlight auf die Wander-Tafel ein. Foto fürs Gruppen-Album. Identitäts-Anker."
+      }
+    ]
   }
 }
