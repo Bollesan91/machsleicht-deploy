@@ -257,7 +257,132 @@
           "indoorTip": "Am Esstisch oder im Kreis am Boden — keine besondere Anpassung nötig. Quiz-Karten gut sichtbar hochhalten.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Quiz bei 6-12 funktioniert",
-          "whyItWorks": "Kinder ab 6 wollen ihr Wissen zeigen — Quiz ist die freundlichste Form davon. Vorteile: jeder kann mitmachen (niemand wird ausgeschlossen wegen Motorik), Tempo selbst bestimmbar, und es ist eine echte Sitz-Pause zwischen Action-Phasen. Wichtig: keine Trickfragen, keine Tempo-Druck."
+          "whyItWorks": "Kinder ab 6 wollen ihr Wissen zeigen — Quiz ist die freundlichste Form davon. Vorteile: jeder kann mitmachen (niemand wird ausgeschlossen wegen Motorik), Tempo selbst bestimmbar, und es ist eine echte Sitz-Pause zwischen Action-Phasen. Wichtig: keine Trickfragen, keine Tempo-Druck.",
+          "quizCards": [
+            {
+              "kategorie": "Burgenteile",
+              "frage": "Welcher Turm ist der zentrale Wehrturm einer Burg, in den sich die Bewohner bei Angriff zurückzogen?",
+              "optionen": [
+                "Bergfried",
+                "Kirchturm",
+                "Wachturm"
+              ],
+              "antwort": "Bergfried",
+              "note": "Funktion, nicht Höhe!"
+            },
+            {
+              "kategorie": "Burgenteile",
+              "frage": "Was ist ein Burggraben?",
+              "optionen": [
+                "Ein Garten",
+                "Ein wassergefüllter Schutz-Graben um die Burg",
+                "Ein Keller"
+              ],
+              "antwort": "Ein wassergefüllter Schutz-Graben um die Burg"
+            },
+            {
+              "kategorie": "Burgenteile",
+              "frage": "Was sind Zinnen?",
+              "optionen": [
+                "Spitze Zacken oben auf der Burgmauer",
+                "Türen",
+                "Fenster"
+              ],
+              "antwort": "Spitze Zacken oben auf der Burgmauer",
+              "note": "Zum Schutz beim Bogenschießen — Zacke = Deckung, Lücke = Schießfenster."
+            },
+            {
+              "kategorie": "Burgenteile",
+              "frage": "Wie heißt die große Halle in der Burg?",
+              "optionen": [
+                "Rittersaal",
+                "Schlafzimmer",
+                "Küche"
+              ],
+              "antwort": "Rittersaal"
+            },
+            {
+              "kategorie": "Tugenden",
+              "frage": "Welche Ritter-Tugend bedeutet, immer zu seinem Lehnsherrn zu halten?",
+              "optionen": [
+                "Treue",
+                "Mut",
+                "Schnelligkeit"
+              ],
+              "antwort": "Treue"
+            },
+            {
+              "kategorie": "Tugenden",
+              "frage": "Welche Tugend bedeutet, niemals zu lügen?",
+              "optionen": [
+                "Ehre",
+                "Stärke",
+                "Schönheit"
+              ],
+              "antwort": "Ehre"
+            },
+            {
+              "kategorie": "Tugenden",
+              "frage": "Wie nennt man die Ritter-Tugend, in der Gefahr nicht wegzulaufen?",
+              "optionen": [
+                "Tapferkeit",
+                "Demut",
+                "Geduld"
+              ],
+              "antwort": "Tapferkeit"
+            },
+            {
+              "kategorie": "Tugenden",
+              "frage": "Welche Tugend bedeutet, nicht zu prahlen?",
+              "optionen": [
+                "Demut",
+                "Stolz",
+                "Ehrgeiz"
+              ],
+              "antwort": "Demut"
+            },
+            {
+              "kategorie": "Berufe",
+              "frage": "Wer war der Auszubildende des Ritters?",
+              "optionen": [
+                "Knappe",
+                "Lehrling",
+                "Schüler"
+              ],
+              "antwort": "Knappe",
+              "note": "Vom 7. bis 21. Lebensjahr — Vorstufe zum Ritter."
+            },
+            {
+              "kategorie": "Berufe",
+              "frage": "Wer machte am Hof Witze und Musik?",
+              "optionen": [
+                "Hofnarr",
+                "Burgvogt",
+                "Stallbursche"
+              ],
+              "antwort": "Hofnarr"
+            },
+            {
+              "kategorie": "Berufe",
+              "frage": "Wer kümmerte sich um die Verwaltung der Burg?",
+              "optionen": [
+                "Burgvogt",
+                "König",
+                "Bischof"
+              ],
+              "antwort": "Burgvogt"
+            },
+            {
+              "kategorie": "Berufe",
+              "frage": "Wer fertigte die Hufeisen und Waffen?",
+              "optionen": [
+                "Schmied",
+                "Bäcker",
+                "Müller"
+              ],
+              "antwort": "Schmied"
+            }
+          ]
         },
         {
           "name": "⚔️ Schwert-Parcours",

@@ -282,7 +282,219 @@
           "indoorTip": "Am Esstisch oder im Kreis am Boden — keine besondere Anpassung nötig. Quiz-Karten gut sichtbar hochhalten.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Quiz bei 6-12 funktioniert",
-          "whyItWorks": "Kinder ab 6 wollen ihr Wissen zeigen — Quiz ist die freundlichste Form davon. Vorteile: jeder kann mitmachen (niemand wird ausgeschlossen wegen Motorik), Tempo selbst bestimmbar, und es ist eine echte Sitz-Pause zwischen Action-Phasen. Wichtig: keine Trickfragen, keine Tempo-Druck."
+          "whyItWorks": "Kinder ab 6 wollen ihr Wissen zeigen — Quiz ist die freundlichste Form davon. Vorteile: jeder kann mitmachen (niemand wird ausgeschlossen wegen Motorik), Tempo selbst bestimmbar, und es ist eine echte Sitz-Pause zwischen Action-Phasen. Wichtig: keine Trickfragen, keine Tempo-Druck.",
+          "quizCards": [
+            {
+              "kategorie": "Rassen",
+              "frage": "Welches Kennzeichen hat die Friesen-Rasse?",
+              "optionen": [
+                "Tüpfel-Muster",
+                "Reines Schwarz mit langer Mähne",
+                "Brauner Stern"
+              ],
+              "antwort": "Reines Schwarz mit langer Mähne"
+            },
+            {
+              "kategorie": "Rassen",
+              "frage": "Was unterscheidet ein Vollblut von einem Warmblut?",
+              "optionen": [
+                "Vollblut ist größer",
+                "Vollblut hat reine Abstammung (z.B. Engl. Vollblut), Warmblut ist Misch-Zucht",
+                "Vollblut frisst mehr"
+              ],
+              "antwort": "Vollblut hat reine Abstammung (z.B. Engl. Vollblut), Warmblut ist Misch-Zucht"
+            },
+            {
+              "kategorie": "Rassen",
+              "frage": "Aus welchem Land stammt der Haflinger?",
+              "optionen": [
+                "Deutschland",
+                "Österreich/Südtirol",
+                "Spanien"
+              ],
+              "antwort": "Österreich/Südtirol",
+              "note": "Aus der Region um Hafling, daher Haflinger."
+            },
+            {
+              "kategorie": "Rassen",
+              "frage": "Bis zu welcher Stockmaß-Grenze gilt ein Pferd als Pony?",
+              "optionen": [
+                "Bis 1,30 m",
+                "Bis 1,48 m",
+                "Bis 1,80 m"
+              ],
+              "antwort": "Bis 1,48 m",
+              "note": "FN-Definition: Stockmaß bis 148 cm = Pony."
+            },
+            {
+              "kategorie": "Rassen",
+              "frage": "Welche Pferderasse gilt als die älteste der Welt?",
+              "optionen": [
+                "Friese",
+                "Araber",
+                "Shire Horse"
+              ],
+              "antwort": "Araber",
+              "note": "Vorfahren der Araber gehen mind. 4500 Jahre zurück."
+            },
+            {
+              "kategorie": "Gangarten",
+              "frage": "Welche Gangart ist ein Drei-Takt mit Schwebephase?",
+              "optionen": [
+                "Schritt",
+                "Trab",
+                "Galopp"
+              ],
+              "antwort": "Galopp"
+            },
+            {
+              "kategorie": "Gangarten",
+              "frage": "Wie viele Takte hat der Trab?",
+              "optionen": [
+                "Einen",
+                "Zwei",
+                "Vier"
+              ],
+              "antwort": "Zwei"
+            },
+            {
+              "kategorie": "Gangarten",
+              "frage": "Welche Gangart ist die langsamste der drei Grundgangarten?",
+              "optionen": [
+                "Schritt",
+                "Trab",
+                "Galopp"
+              ],
+              "antwort": "Schritt"
+            },
+            {
+              "kategorie": "Gangarten",
+              "frage": "Wie viele Hufe berühren den Boden gleichzeitig im Schritt?",
+              "optionen": [
+                "Einer",
+                "Zwei oder drei",
+                "Alle vier"
+              ],
+              "antwort": "Zwei oder drei",
+              "note": "Schritt ist Vier-Takt mit überlappenden Fußfolge."
+            },
+            {
+              "kategorie": "Gangarten",
+              "frage": "Wie nennt man die schnelle Variante des Galopps?",
+              "optionen": [
+                "Renngalopp",
+                "Sprung-Galopp",
+                "Vierertakt"
+              ],
+              "antwort": "Renngalopp"
+            },
+            {
+              "kategorie": "Pflege",
+              "frage": "Wann wird ein Pferd geputzt?",
+              "optionen": [
+                "Nur vorm Reiten",
+                "Nur nach dem Reiten",
+                "Vor UND nach dem Reiten"
+              ],
+              "antwort": "Vor UND nach dem Reiten",
+              "note": "Vor Reiten: Sattellage frei. Nach Reiten: Schweiß raus."
+            },
+            {
+              "kategorie": "Pflege",
+              "frage": "Wie oft muss ein Pferd neu beschlagen werden?",
+              "optionen": [
+                "Alle 2 Wochen",
+                "Alle 6-8 Wochen",
+                "Einmal im Jahr"
+              ],
+              "antwort": "Alle 6-8 Wochen"
+            },
+            {
+              "kategorie": "Pflege",
+              "frage": "Welches Werkzeug entfernt Steine aus dem Huf?",
+              "optionen": [
+                "Bürste",
+                "Hufkratzer",
+                "Schwamm"
+              ],
+              "antwort": "Hufkratzer"
+            },
+            {
+              "kategorie": "Pflege",
+              "frage": "In welcher Reihenfolge füttert man ein Pferd?",
+              "optionen": [
+                "Erst Kraftfutter, dann Heu",
+                "Erst Heu, dann Kraftfutter",
+                "Reihenfolge egal"
+              ],
+              "antwort": "Erst Heu, dann Kraftfutter",
+              "note": "Heu beruhigt den Magen, Kraftfutter danach besser verträglich."
+            },
+            {
+              "kategorie": "Pflege",
+              "frage": "Wie groß muss eine Pferde-Box mindestens sein?",
+              "optionen": [
+                "Mind. 2 m²",
+                "Mind. 9 m²",
+                "Mind. 25 m²"
+              ],
+              "antwort": "Mind. 9 m²",
+              "note": "Tierschutz-Mindestmaß für ein Großpferd."
+            },
+            {
+              "kategorie": "Krankheiten",
+              "frage": "Was tun bei Hufrehe?",
+              "optionen": [
+                "Pferd ausreiten",
+                "Sofort Tierarzt",
+                "Mehr Kraftfutter geben"
+              ],
+              "antwort": "Sofort Tierarzt",
+              "note": "Hufrehe ist Notfall, ohne Behandlung droht dauerhafter Schaden."
+            },
+            {
+              "kategorie": "Krankheiten",
+              "frage": "Welche Pflanze ist akute Weide-Bedrohung für Pferde?",
+              "optionen": [
+                "Klee",
+                "Jakobskreuzkraut",
+                "Löwenzahn"
+              ],
+              "antwort": "Jakobskreuzkraut"
+            },
+            {
+              "kategorie": "Krankheiten",
+              "frage": "Welche andere Pflanze ist für Pferde giftig?",
+              "optionen": [
+                "Eibe",
+                "Birke",
+                "Fichte"
+              ],
+              "antwort": "Eibe",
+              "note": "Auch Goldregen, Bergahorn-Samen, Herbstzeitlose."
+            },
+            {
+              "kategorie": "Sicherheit",
+              "frage": "Welche Impfung MUSS jedes Pferd haben?",
+              "optionen": [
+                "Grippe",
+                "Tetanus",
+                "Beides"
+              ],
+              "antwort": "Beides",
+              "note": "Tetanus + Influenza sind Grundimmunisierung."
+            },
+            {
+              "kategorie": "Sicherheit",
+              "frage": "Was tut man als erstes nach einem Sturz vom Pferd?",
+              "optionen": [
+                "Sofort wieder aufsteigen",
+                "Pferd einfangen, dann Check ob Verletzungen",
+                "Pferd weglaufen lassen"
+              ],
+              "antwort": "Pferd einfangen, dann Check ob Verletzungen"
+            }
+          ]
         },
         {
           "name": "🔨 Hufschmied-Workshop",

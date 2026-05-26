@@ -252,7 +252,134 @@
           "indoorTip": "Am Esstisch oder im Kreis am Boden — keine besondere Anpassung nötig. Quiz-Karten gut sichtbar hochhalten.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Quiz bei 6-12 funktioniert",
-          "whyItWorks": "Kinder ab 6 wollen ihr Wissen zeigen — Quiz ist die freundlichste Form davon. Vorteile: jeder kann mitmachen (niemand wird ausgeschlossen wegen Motorik), Tempo selbst bestimmbar, und es ist eine echte Sitz-Pause zwischen Action-Phasen. Wichtig: keine Trickfragen, keine Tempo-Druck."
+          "whyItWorks": "Kinder ab 6 wollen ihr Wissen zeigen — Quiz ist die freundlichste Form davon. Vorteile: jeder kann mitmachen (niemand wird ausgeschlossen wegen Motorik), Tempo selbst bestimmbar, und es ist eine echte Sitz-Pause zwischen Action-Phasen. Wichtig: keine Trickfragen, keine Tempo-Druck.",
+          "quizCards": [
+            {
+              "kategorie": "Rassen",
+              "frage": "Welches Tier ist das?",
+              "optionen": [
+                "Hund",
+                "Pony",
+                "Katze"
+              ],
+              "antwort": "Pony",
+              "note": "Bild zeigen."
+            },
+            {
+              "kategorie": "Rassen",
+              "frage": "Welche Farbe hat ein Rappe?",
+              "optionen": [
+                "Weiß",
+                "Schwarz",
+                "Braun"
+              ],
+              "antwort": "Schwarz"
+            },
+            {
+              "kategorie": "Rassen",
+              "frage": "Wie nennt man das Pferde-Baby?",
+              "optionen": [
+                "Welpe",
+                "Fohlen",
+                "Küken"
+              ],
+              "antwort": "Fohlen"
+            },
+            {
+              "kategorie": "Rassen",
+              "frage": "Welche Pferderasse hat schwarze, lockige Mähne? (Bild zeigen)",
+              "optionen": [
+                "Friese",
+                "Haflinger",
+                "Schimmel"
+              ],
+              "antwort": "Friese",
+              "note": "Friese ist die populärste schwarze Rasse, gute Identifikationsfrage."
+            },
+            {
+              "kategorie": "Pflege",
+              "frage": "Was frisst ein Pferd am liebsten als Snack?",
+              "optionen": [
+                "Karotten",
+                "Schokolade",
+                "Fisch"
+              ],
+              "antwort": "Karotten"
+            },
+            {
+              "kategorie": "Pflege",
+              "frage": "Wie heißt der Stand des Pferdes im Stall?",
+              "optionen": [
+                "Box",
+                "Schrank",
+                "Höhle"
+              ],
+              "antwort": "Box"
+            },
+            {
+              "kategorie": "Pflege",
+              "frage": "Womit putzt man das Fell eines Pferdes?",
+              "optionen": [
+                "Mit einem Handtuch",
+                "Mit einer Bürste",
+                "Mit einem Schwamm"
+              ],
+              "antwort": "Mit einer Bürste"
+            },
+            {
+              "kategorie": "Pflege",
+              "frage": "Wie heißt der Stiefel, den Reiter tragen?",
+              "optionen": [
+                "Sneaker",
+                "Reitstiefel",
+                "Sandale"
+              ],
+              "antwort": "Reitstiefel"
+            },
+            {
+              "kategorie": "Sicherheit",
+              "frage": "Was tragen Reiter auf dem Kopf?",
+              "optionen": [
+                "Hut",
+                "Helm",
+                "Mütze"
+              ],
+              "antwort": "Helm",
+              "note": "Helm-Pflicht ohne Ausnahme — zentrale Sicherheits-Botschaft."
+            },
+            {
+              "kategorie": "Sicherheit",
+              "frage": "Wie nähert man sich einem Pferd richtig?",
+              "optionen": [
+                "Von hinten rufen",
+                "Vorne ruhig zugehen",
+                "Plötzlich überraschen"
+              ],
+              "antwort": "Vorne ruhig zugehen",
+              "note": "Pferde haben hinten einen Blind-Bereich, Schreck = Hufschlag-Gefahr."
+            },
+            {
+              "kategorie": "Sicherheit",
+              "frage": "Was darf das Pony NIEMALS essen?",
+              "optionen": [
+                "Karotten",
+                "Schokolade",
+                "Heu"
+              ],
+              "antwort": "Schokolade",
+              "note": "Kakao ist für Pferde giftig."
+            },
+            {
+              "kategorie": "Sicherheit",
+              "frage": "Welches Geräusch macht ein Pferd, wenn es zufrieden ist?",
+              "optionen": [
+                "Bellen",
+                "Wiehern",
+                "Brüllen"
+              ],
+              "antwort": "Wiehern"
+            }
+          ]
         },
         {
           "name": "🏇 Hindernis-Parcours mit Steckenpferd",

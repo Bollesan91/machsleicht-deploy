@@ -318,6 +318,314 @@
           "outdoorTip": "Im Garten am besten — keine Möbel-Schäden, mehr Strecke. Bei Regen problemlos indoor verlegbar.",
           "whyItWorksTitle": "Warum Bewegungs-Spiele bei Kindergeburtstagen funktionieren",
           "whyItWorks": "Bewegung baut aufgestaute Energie ab (besonders nach Anreise + Snack), schafft sichtbare Erfolge (Zeit, Treffer), und macht den Tag fotografierbar. Wichtig: Action-Phasen müssen mit ruhigen Sitz-Phasen abwechseln, sonst kippt die Stimmung in Streit oder Erschöpfung."
+        },
+        {
+          "name": "📜 Mittelalter-Quiz Klasse 2",
+          "duration": 30,
+          "minAge": 9,
+          "outdoor": false,
+          "indoor": true,
+          "material": "25 Quiz-Karten in 5 Kategorien (Burgenteile, Burgentypen, Tugenden, Heraldik, Berufe), Antwortbogen pro Kind, Quiz-Buzzer optional",
+          "safetyRule": "Sitz-Spiel, keine Sicherheit nötig.",
+          "loudness": "leise",
+          "effort": "leicht",
+          "prepText": "Quiz-Karten vor der Party drucken und schneiden — am besten in Word mit Bildern (frei nutzbare Wikipedia-Bilder). Antwortbögen pro Kind vorbereiten. 15-20 Min Vorlauf.",
+          "ageAdjust6": "NICHT für 6 — Klasse 2 ist 9-12. Für jüngere die Burgen-Quiz-Karten (12 Stück) der Mittel-Variante nutzen.",
+          "ageAdjust8": "Auch hier zu schwer — Burgen-Quiz aus ritter-mittel ist passender.",
+          "indoorTip": "Am Esstisch oder im Kreis am Boden — Quiz-Karten gut sichtbar hochhalten.",
+          "outdoorTip": null,
+          "whyItWorksTitle": "Warum Quiz Klasse 2 bei 9-12 funktioniert",
+          "whyItWorks": "9-12-Jährige haben echtes Mittelalter-Wissen aus Schule + Filmen. Sie wollen es zeigen, fordern Fakten-Tiefe (Tinkturregel, Burgentypen, Tugenden in Mittelhochdeutsch). Wichtig: kein Trick, immer Erklärung warum die Antwort stimmt.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Quiz-Regeln",
+              "content": "5 Kategorien à 5 Karten. Jede richtige Antwort 1 Punkt, Bonus-Karten 2 Punkte. Antwortbogen ausfüllen."
+            },
+            {
+              "n": 2,
+              "name": "Runde 1: Burgenteile",
+              "content": "6 Karten zu Bergfried, Burggraben, Zinnen, Wehrgang, Zwinger, Palas. Funktion erklären, nicht nur Begriff abfragen."
+            },
+            {
+              "n": 3,
+              "name": "Runde 2: Burgentypen",
+              "content": "5 Karten: Höhenburg, Wasserburg, Niederungsburg + Untertypen Spornburg/Gipfelburg."
+            },
+            {
+              "n": 4,
+              "name": "Runde 3: Tugenden",
+              "content": "5 Karten mit mittelhochdeutschen Begriffen: triuwe, manheit, mâze, milte, staete."
+            },
+            {
+              "n": 5,
+              "name": "Runde 4: Heraldik",
+              "content": "5 Karten: Tinkturregel, Metalle, Tier-Symbole, Devise."
+            },
+            {
+              "n": 6,
+              "name": "Runde 5: Berufe",
+              "content": "4 Karten: Knappe, Bogner, Burgvogt, Stallbursche."
+            },
+            {
+              "n": 7,
+              "name": "Bewertung",
+              "content": "Punkte addieren, Quiz-Sieger bekommt Ritter-Akademie-Quiz-Pin als Bonus. Alle bekommen Stempel ins Knappen-Heft."
+            }
+          ],
+          "quizCards": [
+            {
+              "kategorie": "Burgenteile",
+              "frage": "Welche Funktion hat der Bergfried?",
+              "optionen": [
+                "Zentraler Wehrturm, letzter Rückzugsort",
+                "Wohnung des Königs",
+                "Zugang zum Garten"
+              ],
+              "antwort": "Zentraler Wehrturm, letzter Rückzugsort",
+              "note": "NICHT zwingend der höchste Turm — die Funktion definiert ihn."
+            },
+            {
+              "kategorie": "Burgenteile",
+              "frage": "Wie heißt der Hof zwischen Außen- und Innenmauer einer Burg?",
+              "optionen": [
+                "Zwinger",
+                "Garten",
+                "Burgkeller"
+              ],
+              "antwort": "Zwinger"
+            },
+            {
+              "kategorie": "Burgenteile",
+              "frage": "Was ist ein Palas?",
+              "optionen": [
+                "Hauptwohngebäude der Burgherren",
+                "Pferdestall",
+                "Versteck"
+              ],
+              "antwort": "Hauptwohngebäude der Burgherren"
+            },
+            {
+              "kategorie": "Burgenteile",
+              "frage": "Was ist ein Wehrgang?",
+              "optionen": [
+                "Begehbarer Gang oben auf der Burgmauer",
+                "Geheimer Tunnel",
+                "Schlafzimmer"
+              ],
+              "antwort": "Begehbarer Gang oben auf der Burgmauer"
+            },
+            {
+              "kategorie": "Burgenteile",
+              "frage": "Was ist eine Schießscharte?",
+              "optionen": [
+                "Schmaler Schlitz in der Burgmauer zum Bogenschießen",
+                "Tür",
+                "Fenster"
+              ],
+              "antwort": "Schmaler Schlitz in der Burgmauer zum Bogenschießen"
+            },
+            {
+              "kategorie": "Burgenteile",
+              "frage": "Was war die Zugbrücke?",
+              "optionen": [
+                "Brücke über den Burggraben, die hochgezogen werden konnte",
+                "Eine Schaukel",
+                "Ein Aufzug"
+              ],
+              "antwort": "Brücke über den Burggraben, die hochgezogen werden konnte"
+            },
+            {
+              "kategorie": "Burgentypen",
+              "frage": "Welche Burg liegt auf einem Berg?",
+              "optionen": [
+                "Höhenburg",
+                "Wasserburg",
+                "Niederungsburg"
+              ],
+              "antwort": "Höhenburg"
+            },
+            {
+              "kategorie": "Burgentypen",
+              "frage": "Was ist eine Wasserburg?",
+              "optionen": [
+                "Burg, die von Wasser umgeben ist",
+                "Burg am Meer",
+                "Schwimmende Burg"
+              ],
+              "antwort": "Burg, die von Wasser umgeben ist"
+            },
+            {
+              "kategorie": "Burgentypen",
+              "frage": "Eine Spornburg ist eine Unterkategorie welcher Burg?",
+              "optionen": [
+                "Höhenburg",
+                "Wasserburg",
+                "Niederungsburg"
+              ],
+              "antwort": "Höhenburg"
+            },
+            {
+              "kategorie": "Burgentypen",
+              "frage": "Welche Burg liegt in der Ebene?",
+              "optionen": [
+                "Höhenburg",
+                "Niederungsburg",
+                "Spornburg"
+              ],
+              "antwort": "Niederungsburg"
+            },
+            {
+              "kategorie": "Burgentypen",
+              "frage": "Welche Burg liegt auf einem freistehenden Felsen mit Rundum-Sicht?",
+              "optionen": [
+                "Spornburg",
+                "Gipfelburg",
+                "Wasserburg"
+              ],
+              "antwort": "Gipfelburg"
+            },
+            {
+              "kategorie": "Tugenden",
+              "frage": "Welche Ritter-Tugend bedeutet, dem Lehnsherrn die Treue zu halten?",
+              "optionen": [
+                "Treue (triuwe)",
+                "Mut",
+                "Wachsamkeit"
+              ],
+              "antwort": "Treue (triuwe)"
+            },
+            {
+              "kategorie": "Tugenden",
+              "frage": "Welche Tugend bedeutet Mäßigung?",
+              "optionen": [
+                "mâze",
+                "manheit",
+                "staete"
+              ],
+              "antwort": "mâze"
+            },
+            {
+              "kategorie": "Tugenden",
+              "frage": "Welche Tugend bedeutet Tapferkeit?",
+              "optionen": [
+                "êre",
+                "manheit",
+                "milte"
+              ],
+              "antwort": "manheit"
+            },
+            {
+              "kategorie": "Tugenden",
+              "frage": "Welche Tugend bedeutet Freigebigkeit, Schenken?",
+              "optionen": [
+                "milte",
+                "mâze",
+                "zuht"
+              ],
+              "antwort": "milte"
+            },
+            {
+              "kategorie": "Tugenden",
+              "frage": "Welche Tugend bedeutet Beständigkeit?",
+              "optionen": [
+                "staete",
+                "êre",
+                "zuht"
+              ],
+              "antwort": "staete"
+            },
+            {
+              "kategorie": "Heraldik",
+              "frage": "Was ist die Tinkturregel der Heraldik?",
+              "optionen": [
+                "Metall nie auf Metall, Farbe nie auf Farbe",
+                "Immer 4 Farben",
+                "Tier nur in Gold"
+              ],
+              "antwort": "Metall nie auf Metall, Farbe nie auf Farbe"
+            },
+            {
+              "kategorie": "Heraldik",
+              "frage": "Welche Metalle gibt es in der Heraldik?",
+              "optionen": [
+                "Gold + Silber",
+                "Eisen + Bronze",
+                "Blei + Zinn"
+              ],
+              "antwort": "Gold + Silber"
+            },
+            {
+              "kategorie": "Heraldik",
+              "frage": "Was symbolisiert ein Löwe im Wappen?",
+              "optionen": [
+                "Mut + Stärke",
+                "Schnelligkeit",
+                "Weisheit"
+              ],
+              "antwort": "Mut + Stärke"
+            },
+            {
+              "kategorie": "Heraldik",
+              "frage": "Was symbolisiert ein Adler im Wappen?",
+              "optionen": [
+                "Weisheit + Macht",
+                "Mut",
+                "Treue"
+              ],
+              "antwort": "Weisheit + Macht"
+            },
+            {
+              "kategorie": "Heraldik",
+              "frage": "Was ist eine Devise im Wappen?",
+              "optionen": [
+                "Ein Spruchband mit Familien-Motto",
+                "Ein Schwert",
+                "Ein Tier"
+              ],
+              "antwort": "Ein Spruchband mit Familien-Motto"
+            },
+            {
+              "kategorie": "Berufe",
+              "frage": "Wer fertigte Pfeile und Bogen?",
+              "optionen": [
+                "Bogner",
+                "Schmied",
+                "Maurer"
+              ],
+              "antwort": "Bogner"
+            },
+            {
+              "kategorie": "Berufe",
+              "frage": "Was war ein Knappe?",
+              "optionen": [
+                "Ritter-Auszubildender (7-21 Jahre)",
+                "Bauer",
+                "Diener"
+              ],
+              "antwort": "Ritter-Auszubildender (7-21 Jahre)"
+            },
+            {
+              "kategorie": "Berufe",
+              "frage": "Wer war der Verwalter einer Burg?",
+              "optionen": [
+                "Burgvogt",
+                "König",
+                "Hofnarr"
+              ],
+              "antwort": "Burgvogt"
+            },
+            {
+              "kategorie": "Berufe",
+              "frage": "Wer betreute die Pferde des Ritters?",
+              "optionen": [
+                "Stallbursche",
+                "Bogner",
+                "Bäcker"
+              ],
+              "antwort": "Stallbursche"
+            }
+          ]
         }
       ],
       "food": "🍕 Ritter-Pizza (3 große mit Mittelalter-Topping)\n🥖 Stockbrot vom Buffet (Brotmix in Stäbchen-Form)\n🍇 Trauben + Apfelschnitze + Birnen\n🥤 Met-Schorle (Apfelschorle/Traubenschorle in Tonbechern, 4 L)\n🎂 Burg-Kuchen (Schoko-Rührkuchen mit Burg-Türmen)\n🥨 Brezeln + Salzstangen + Käse + Wurst-Spieße\n🍬 Schokoladentaler",
