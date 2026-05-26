@@ -37,6 +37,51 @@ function affiliateUrl(urlStr, env) {
   return urlStr;
 }
 
+// P1-Security: Open-Redirect-Mitigation. Whitelist erlaubter Wunsch-Shop-Domains.
+// Wunsch-URLs ausserhalb dieser Liste werden NICHT via /go/ redirected
+// (Schutz gegen Phishing-Vektor: boese Partyseite mit Phishing-Link).
+// Erweiterung der 8 Affiliate-Shops um typische Eltern-/Spielwaren-Shops.
+// Erweitertes Pattern ([a-z0-9-]+\.)? erlaubt Subdomains (m./mobile./www./shop./etc.)
+// aber blockt durch $-Anker Suffix-Bypasses wie amazon.de.evil.com.
+// awin1.com bewusst NICHT in Liste — wird intern von affiliateUrl() generiert, sollte
+// niemals User-Input sein. Falls jemand awin1.com?ued=phish.com einträgt: blockiert.
+const SAFE_WISH_DOMAINS = [
+  // Affiliate-Shops (Mobile-Subdomains erlaubt)
+  /^([a-z0-9-]+\.)?amazon\.(de|com|fr|at|it|es|nl|pl|se)$/i,
+  /^([a-z0-9-]+\.)?mytoys\.de$/i,
+  /^([a-z0-9-]+\.)?thalia\.de$/i,
+  /^([a-z0-9-]+\.)?otto\.de$/i,
+  /^([a-z0-9-]+\.)?jako-o\.de$/i,
+  /^([a-z0-9-]+\.)?tausendkind\.de$/i,
+  /^([a-z0-9-]+\.)?smythstoys\.com$/i,
+  /^([a-z0-9-]+\.)?lego\.com$/i,
+  // Non-Affiliate, aber vertrauenswürdige Shops (Mobile-Subdomains erlaubt)
+  /^([a-z0-9-]+\.)?ebay\.de$/i,
+  /^([a-z0-9-]+\.)?weltbild\.de$/i,
+  /^([a-z0-9-]+\.)?mueller\.de$/i,
+  /^([a-z0-9-]+\.)?dm\.de$/i,
+  /^([a-z0-9-]+\.)?rossmann\.de$/i,
+  /^([a-z0-9-]+\.)?buecher\.de$/i,
+  /^([a-z0-9-]+\.)?spielwaren\.de$/i,
+  /^([a-z0-9-]+\.)?spiele-max\.de$/i,
+  /^([a-z0-9-]+\.)?etsy\.com$/i,
+  /^([a-z0-9-]+\.)?kaufland\.de$/i,
+  /^([a-z0-9-]+\.)?bauer-spielwaren\.de$/i,
+  /^([a-z0-9-]+\.)?ostheimer\.de$/i,
+  /^([a-z0-9-]+\.)?selecta\.de$/i,
+  /^([a-z0-9-]+\.)?haba\.de$/i,
+  /^([a-z0-9-]+\.)?ravensburger\.de$/i,
+  /^([a-z0-9-]+\.)?schleich-s\.com$/i,
+];
+function isAllowedWishDomain(urlStr) {
+  if (!urlStr || typeof urlStr !== "string") return false;
+  try {
+    const u = new URL(urlStr);
+    if (u.protocol !== "http:" && u.protocol !== "https:") return false;
+    return SAFE_WISH_DOMAINS.some(re => re.test(u.hostname));
+  } catch { return false; }
+}
+
 function shopLabel(urlStr) {
   if (!urlStr) return "";
   if (/amazon\.de/i.test(urlStr)) return "bei Amazon";
@@ -408,6 +453,11 @@ export default {
       // P0-Security: Defense-in-Depth — auch beim Redirect nochmal Protokoll prüfen,
       // falls alter KV-State noch unsanitierte URLs enthält
       if (!isSafeUrl(wish.url)) return Response.redirect("https://machsleicht.de",302);
+      // P1-Security: Open-Redirect-Mitigation. Unbekannte Wunsch-Domain -> zurück zur Partyseite
+      // (Schutz gegen Phishing-Vektor: boese Partyseite mit fremdem Link-Target).
+      if (!isAllowedWishDomain(wish.url)) {
+        return Response.redirect(`https://party.machsleicht.de/${partyId}`, 302);
+      }
       return Response.redirect(affiliateUrl(wish.url,env),302);
     }
 
