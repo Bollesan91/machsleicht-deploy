@@ -1,0 +1,1279 @@
+{
+  "_meta": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-05-26",
+    "qualityNote": "v2 — Helfer-v3-Welle 1A+1B+1C+1D+1E abgeschlossen. Adversarial-Review-Scores: Pferde 87/100, Ritter 88/100 (Welle 3V). Beide Mottos ≥85 Ziel erreicht."
+  },
+  "motto": "pferde",
+  "ageGroup": "klein",
+  "ageRange": [
+    3,
+    5
+  ],
+  "title": "🐴 Pferde-Kindergeburtstag — 3–5 Jahre",
+  "metaDescription": "Pferde-Kindergeburtstag für 3-5-Jährige als Ponyhof-Tag: 3 fertige Konzepte mit Plüsch-Ponys, Hufeisen-Werfen, Pferde-Schleifen und Reiter-Taufe. Kostenlos.",
+  "introParagraph": "Dein Kind wird 3, 4 oder 5 und liebt Pferde — auch wenn es noch nie auf einem gesessen hat? Hier sind drei fertige Ponyhof-Konzepte, die ohne Reitstall funktionieren. Wichtig vorab: 3-5-Jährige brauchen kein echtes Pferd. Was funktioniert, sind Plüsch-Ponys streicheln, füttern (mit Karotten-Snacks), Schwanz flechten und der große Moment: die Reiter-Taufe.",
+  "ageInsight": {
+    "headline": "Was 3–5-Jährige am Pferde-Motto fesselt",
+    "whyMottoFitsHeadline": "Pferd = sanfte Größe, weiches Fell, klare Aufgabe",
+    "whyMottoFits": "Pferde lösen bei kleinen Kindern eine besondere Faszination aus: groß, aber sanft. Weich, aber kraftvoll. Mit ihrer langen Mähne und dem Schweif bieten sie SO VIEL zum Anfassen, Kämmen und Schmücken. Für 3-5-Jährige ist die Magie: Sie können dem Pferd eine Aufgabe geben (füttern, putzen, schmücken) und das Pferd lässt es zu — Plüsch-Pony sei Dank. Es ist eine Welt, in der das Kind 'große Verantwortung' übernehmen darf, ohne echte Gefahr.",
+    "traits": [
+      {
+        "topic": "Aufmerksamkeit",
+        "detail": "10–15 Minuten pro Aktion, dann kippt es. Kurze Pferde-Pflege-Runden mit klarem Ergebnis — Schleife gebunden, Schwanz gekämmt, Hufeisen geworfen — funktionieren besser als lange Ablaufpläne."
+      },
+      {
+        "topic": "Sensorik & Berühren",
+        "detail": "3-5-Jährige LIEBEN das Anfassen weicher Materialien. Plüsch-Ponys, Wolle für die Mähne, Filz-Schleifen — alles taktil und beruhigend. Tipp: einen großen Plüsch-Pony als Mittelpunkt-Pferd auf dem Boden, alle Kinder können gleichzeitig daran arbeiten."
+      },
+      {
+        "topic": "Magisches Denken",
+        "detail": "Das Plüsch-Pony 'frisst' wirklich die Karotte, wenn das Kind sie ihm hinhält. Es 'wiehert' (du machst die Stimme). Diese Magie macht das Motto so stark — kein echtes Tier nötig."
+      },
+      {
+        "topic": "Bewegung",
+        "detail": "Galoppieren auf Steckenpferden, Hufeisen-Werfen, Hindernisparcours mit Sprung-Stangen (10 cm hoch, nicht höher). Aber: nach 10 Min wieder ruhige Phase, sonst überdreht."
+      },
+      {
+        "topic": "Schmecken & Rituale",
+        "detail": "Karotten-Sticks als 'Pferdefutter', Apfelschnitze, Hafer-Müsli — alles Pferde-thematisch und sinnvoll. Beim Schmücken: ein Karotten-Snack als 'Belohnung' für das Pony. Die Kinder lernen: Pferd füttern, Pferd belohnen."
+      },
+      {
+        "topic": "Angst-Schwelle",
+        "detail": "Echte Pferde sind oft zu groß für 3-Jährige — Stiefel-Tritt, Schnauben kann erschrecken. Bei dieser Variante geht es um Plüsch und Spielzeug-Ponys, NIEMALS echte Tiere ohne Profi-Führung. Wenn ein Ponyhof in der Nähe ist: geführtes Sitzen (Profi hält das Pony) ist ab 3-4 Jahren möglich, selbstständiges Reiten erst ab 7-8. Helm-Pflicht bei jedem echten Pony-Kontakt."
+      },
+      {
+        "topic": "Eltern-Nähe",
+        "detail": "Viele 3-Jährige bleiben gern am Eltern-Bein, besonders bei lauteren Spielen wie Hufeisen-Werfen. Plan begleitende Eltern als 'Stall-Helfer' direkt mit ein."
+      }
+    ]
+  },
+  "signatureRitual": {
+    "name": "Die kleine Reiter-Taufe",
+    "subtitle": "Eröffnet die Party + Reiter-Urkunde am Ende",
+    "introText": "Bei 3-5-Jährigen funktioniert keine komplizierte Reitstunde, kein Dressur-Programm. Was funktioniert: zwei winzige rituelle Momente. Beim Ankommen bekommt jedes Kind eine Reiter-Mütze (Bandana oder Cowboyhut aus Pappe) und sein eigenes Steckenpferd — und spricht den Reiter-Schwur nach. Am Ende, wenn alle Aufgaben gemeistert sind, bekommt jedes Kind die Reiter-Urkunde. Dazwischen liegen die Pony-Aufgaben.",
+    "setupSteps": [
+      {
+        "n": 1,
+        "name": "Reiter-Mützen + Steckenpferde",
+        "content": "Pro Kind ein einfacher Pappkarton-Cowboyhut (oder Bandana) und ein Steckenpferd (Sockenpony auf Stock geht auch). Beide am besten schon mit dem Reiter-Namen beschriften — 'Lillys Stürmer', 'Max' Donner', etc."
+      },
+      {
+        "n": 2,
+        "name": "Reiter-Schwur",
+        "content": "Ein einziger kurzer Satz, den alle gleichzeitig nachsprechen: 'Ich pflege mein Pony und reite immer langsam!' Groß auf eine Karte schreiben."
+      },
+      {
+        "n": 3,
+        "name": "Eltern-Helfer",
+        "content": "Bei 3-5 brauchen viele Kinder Eltern-Nähe. Lass begleitende Eltern direkt hinter ihrem Kind stehen beim Hut-Aufsetzen — sie sind die 'Stall-Helfer'."
+      },
+      {
+        "n": 4,
+        "name": "Urkunden vorbereiten",
+        "content": "Eine Reiter-Urkunde pro Kind, mit Platz für den Pony-Namen. Trag die Namen vorher selbst ein."
+      },
+      {
+        "n": 5,
+        "name": "Pferdchen-Streichel-Ecke",
+        "content": "Vor Ankunft eine Ecke mit Plüsch-Pferden + Bürsten + Schleifen einrichten. Hier können die Kinder ihre Pflege-Rolle ausleben."
+      }
+    ],
+    "rolesList": [
+      {
+        "emoji": "🐴",
+        "name": "Lilly (Stall-Meister)",
+        "function": "Sorgt für ordentliches Futter und Wasser"
+      },
+      {
+        "emoji": "🎀",
+        "name": "Max (Mähnen-Stylist)",
+        "function": "Flechtet und kämmt die Pony-Mähnen"
+      },
+      {
+        "emoji": "🥕",
+        "name": "Mia (Karotten-Verteiler)",
+        "function": "Belohnt die Ponys mit Snacks"
+      },
+      {
+        "emoji": "🧲",
+        "name": "Tom (Hufeisen-Werfer)",
+        "function": "Trainiert das Hufeisen-Wurf-Spiel"
+      },
+      {
+        "emoji": "🤠",
+        "name": "Hanna (Reiter-Lehrling)",
+        "function": "Übt das langsame Reiten am Steckenpferd"
+      },
+      {
+        "emoji": "📸",
+        "name": "Jonas (Pony-Foto-Reporter)",
+        "function": "Macht Fotos vom Stall (optional)"
+      },
+      {
+        "emoji": "🌾",
+        "name": "Lina (Heu-Sammler)",
+        "function": "Sammelt das Pferdefutter ein"
+      },
+      {
+        "emoji": "🌟",
+        "name": "Paul (Pony-Streichler)",
+        "function": "Streichelt die Plüsch-Ponys liebevoll"
+      },
+      {
+        "emoji": "🚪",
+        "name": "Anna (Stalltür-Klopfer)",
+        "function": "Klopft an, wenn jemand neues kommt"
+      },
+      {
+        "emoji": "👑",
+        "name": "Felix (Reiter-Krönchen-Hüter)",
+        "function": "Verteilt die Reiter-Hüte"
+      },
+      {
+        "emoji": "🍎",
+        "name": "Sofie (Apfel-Reicher)",
+        "function": "Reicht die Apfel-Snacks an die Ponys"
+      },
+      {
+        "emoji": "🎈",
+        "name": "David (Sonnenblumen-Wächter)",
+        "function": "Passt auf die Reiterhof-Deko auf"
+      }
+    ],
+    "optOutNote": "Kein Kind muss eine Rolle nehmen und niemand muss den Schwur allein sprechen. Wer nur dabei sein will, ist trotzdem vollwertiger Reiter — Hut, Steckenpferd und Urkunde bekommt jedes Kind.",
+    "materialNote": "Reiter-Hüte/Bandanas, Schwur-Karte, blanko Urkunden, Steckenpferde, Plüsch-Ponys und Bürsten an einem festen 'Stall-Tisch' sammeln. So ist der Start in 5 Minuten gemacht und am Ende nichts gesucht."
+  },
+  "variants": [
+    {
+      "id": "minimal",
+      "label": "Minimal — 90 Min., ein Pony-Tag mit wenig Aufwand",
+      "headline": "🐴 Minimal — 90 Minuten Ponyhof-Spielzeit",
+      "intro": "Die ehrliche Sparvariante: 90 Minuten, 6 Kinder, ein durchgehender Pony-Tag mit Streicheln, Hufeisen-Werfen und Pflege. Kein Aufwand mit dressierten Pferden — alles drinnen mit Plüsch + Bastelei. Pappkarton-Hüte kannst du am Vortag schneiden.",
+      "timeWindow": "15:00–16:30, 6 Kinder",
+      "schedule": [
+        {
+          "time": "15:00",
+          "title": "Ankunft + Reiter werden",
+          "description": "Jedes Kind bekommt Reiter-Hut/Bandana und Steckenpferd. Reiter-Schwur wird gemeinsam gesprochen."
+        },
+        {
+          "time": "15:10",
+          "title": "Pony-Streichel-Runde",
+          "description": "Im Kreis sitzen, Plüsch-Ponys wandern reihum. Jedes Kind streichelt, bürstet kurz und gibt es weiter."
+        },
+        {
+          "time": "15:25",
+          "title": "Hufeisen-Werfen",
+          "description": "Plüsch-Hufeisen (oder Tau-Ringe) auf einen Holzpflock werfen — 3 Versuche pro Kind."
+        },
+        {
+          "time": "15:45",
+          "title": "Pony-Snack-Pause",
+          "description": "Karotten-Sticks, Apfelschnitze, Hafer-Müsli — alles thematisch und gesund."
+        },
+        {
+          "time": "16:10",
+          "title": "Schleife für mein Pony",
+          "description": "Jedes Kind bastelt eine Filz-Schleife für sein Plüsch-Pony — mit eigenem Namen."
+        },
+        {
+          "time": "16:25",
+          "title": "Reiter-Urkunde + Foto",
+          "description": "Feierliche Urkunden-Übergabe. Gruppenfoto mit allen Plüsch-Ponys."
+        }
+      ],
+      "games": [
+        {
+          "name": "🐴 Pony-Streichel-Runde",
+          "duration": 15,
+          "minAge": 3,
+          "outdoor": false,
+          "indoor": true,
+          "material": "6 Plüsch-Ponys (verschiedene Größen), Bürsten (Haarbürsten genügen), Filz-Schleifen oder Wollbänder",
+          "safetyRule": "Plüschtiere ohne lose Kleinteile (Augen, Knöpfe), keine Reizfasern. Bei jüngeren Kindern darauf achten dass keiner an den Knöpfen lutscht.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Im Kreis sitzen",
+              "content": "Alle Kinder im Kreis auf den Boden. Plüsch-Ponys werden auf eine Decke in der Mitte gelegt."
+            },
+            {
+              "n": 2,
+              "name": "Pony aussuchen",
+              "content": "Jedes Kind darf sich ein Pony nehmen und ihm einen Namen geben — du schreibst auf eine Karte mit."
+            },
+            {
+              "n": 3,
+              "name": "Streicheln und bürsten",
+              "content": "Jedes Kind streichelt und bürstet sein Pony 2-3 Minuten. Du erzählst dazu was: 'Das Pony freut sich, wenn du am Hals bürstest.'"
+            },
+            {
+              "n": 4,
+              "name": "Pony reichen",
+              "content": "Auf dein Signal wandert das Pony einmal weiter. Jedes Kind lernt die anderen Ponys kennen."
+            }
+          ],
+          "loudness": "leise",
+          "effort": "hoch",
+          "prepText": "6-8 Plüsch-Ponys in einem Kreis-Setup vorbereiten (auf Decke oder Stuhl-Stuhl-Reihe). Bürsten, Filz-Schleifen pro Pony bereitstellen. 10 Min Vorlauf — diese Phase ist die Ruhe-Insel des Tages.",
+          "ageAdjust6": "Bei 3-Jährigen: Erwachsene hält das Pony, Kind streichelt nur. Pflege-Aufgabe (Bürsten) ist optional, niemand muss \"richtig\" bürsten.",
+          "ageAdjust8": "Streichel-Runde nicht primär für 8-Jährige — die wollen schon richtige Pflege. Falls Mischgruppe: ältere Kinder bekommen die \"Pony-Lehrer\"-Rolle und zeigen jüngeren wie man bürstet.",
+          "indoorTip": "Im Kreis auf dem Wohnzimmerteppich — Ponys in der Mitte. Eltern sitzen am Rand als Stall-Helfer für ruhige Stimmung.",
+          "outdoorTip": "Auf einer großen Picknick-Decke im Garten — schöne Foto-Kulisse mit Sonnenblumen-Hintergrund.",
+          "whyItWorksTitle": "Warum Plüsch-Pony-Streicheln 3-5-Jährige begeistert",
+          "whyItWorks": "Das Plüsch-Pony wird zur eigenen Verantwortung — das Kind übernimmt eine Tier-Pflegerinnen-Rolle ohne echtes Tier-Risiko. Diese Magie funktioniert besonders bei 3-5, weil sie sich identifizieren (\"mein Pony\"), aber das Plüsch-Tier nicht erschrickt oder beißt. Beruhigender Moment zwischen aktiveren Spielen."
+        },
+        {
+          "name": "🌾 Hufeisen-Werfen",
+          "duration": 20,
+          "minAge": 3,
+          "outdoor": true,
+          "indoor": true,
+          "material": "6 Plüsch-Hufeisen (oder Wurfringe), 1 Holzpflock (40 cm hoch) oder Stuhl-Lehne als Ziel, optional kleine Punkte-Tafel",
+          "safetyRule": "Wurfringe aus Stoff oder weichem Plastik — nichts Hartes. Wurfdistanz max 2 Meter. Niemand steht hinter dem Pflock.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Pflock aufstellen",
+              "content": "Holzpflock 2 Meter entfernt aufstellen (drinnen: Stuhllehne)."
+            },
+            {
+              "n": 2,
+              "name": "Reihum 3 Würfe",
+              "content": "Jedes Kind wirft 3 Hufeisen Richtung Pflock. Du oder Stall-Helfer zählt die Treffer."
+            },
+            {
+              "n": 3,
+              "name": "Karotten-Belohnung",
+              "content": "Wer trifft, bekommt eine Karotte 'für sein Pony' — und darf sie selber essen. Wer nicht trifft, bekommt auch eine Karotte. (Bei 3-5: alle gewinnen)."
+            }
+          ],
+          "loudness": "mittel",
+          "effort": "mittel",
+          "prepText": "6-10 Wurf-Hufeisen (Stoff-Säckchen sicherer als echte) + 3 Pflöcke in verschiedenen Distanzen (1m, 2m, 3m) vorbereiten. Wertungstafel für Trefferpunkte. 10-15 Min Vorlauf.",
+          "ageAdjust6": "Für 3-Jährige: 1 Pflock, 1 Meter Abstand, alle 3 Würfe ohne Punkte-Druck. Jedes Kind bekommt einen Treffer-Klatscher.",
+          "ageAdjust8": "Für 5-Jährige: 2 Pflöcke, 1-2 Meter, Punkte werden notiert aber Sieger-Bonus klein. Stempel für alle.",
+          "indoorTip": "In Wohnzimmer-Ecke mit weicher Stoff-Säckchen-Hufeisen — keine Möbel-Schäden. Pflock auf rutsch-fester Matte.",
+          "outdoorTip": "Im Garten am besten — mehr Strecke, größere Sicherheits-Zone. Stoff-Säckchen-Hufeisen wind-resistent.",
+          "whyItWorksTitle": "Warum Hufeisen-Werfen klassischer Reiter-Spaß ist",
+          "whyItWorks": "Hufeisen-Werfen ist seit Jahrhunderten Reiterhof-Tradition — geübt bei Pferdewettbewerben und Reiter-Festen. Funktioniert in jedem Alter (Distanz anpassen), Stempel-Bonus für Treffer macht es zum echten Wettkampf."
+        }
+      ],
+      "food": "🥕 Karotten-Sticks (1 Schale, Karotten dünn geschnitten)\n🍎 Apfelschnitze (1 Schale)\n🥣 Hafer-Müsli (in Kornsäckchen, 6 Stk)\n🥤 Pferde-Schorle (Apfelsaft, 1,5 L)\n🎂 Hufeisen-Kuchen (Kastenkuchen in Hufeisen-Form)\n🥨 Salzstangen (1 Päckchen)",
+      "decoration": "🐴 'Reiterhof'-Schild am Eingang\n🌾 Stroh-Bund (Spielstroh aus Pappe oder Krepp)\n🐎 Plüsch-Ponys verteilt\n🏇 Hufeisen-Girlande aus Papier\n🌻 Sonnenblumen (Plastik oder echt) — Ponyhof-Look",
+      "giveaways": "🏅 Reiter-Urkunde mit Namen\n🐴 Eigene Filz-Schleife vom Pony\n🥕 Tüte mit Karotten-Sticks\n🎀 Optional: Mini-Steckenpferd\n📓 Reiter-Stickerset",
+      "shoppingList": [
+        {
+          "emoji": "🐴",
+          "label": "6 Plüsch-Ponys (Sparset)",
+          "url": "https://www.amazon.de/s?k=pl%C3%BCsch+pony+klein+kinder&tag=machsleicht-21",
+          "priceEur": 18,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Kernbestandteil — die Pferde-Magie funktioniert nur über die Plüsch-Ponys, jedes Kind sollte 'sein' Pony haben."
+        },
+        {
+          "emoji": "🤠",
+          "label": "Cowboyhüte / Pappkarton-Hüte (6er)",
+          "url": null,
+          "priceEur": 6,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Reiter-Identität durch Hut. Pappkarton DIY ist günstig — aber gekauft sieht es professioneller aus."
+        },
+        {
+          "emoji": "🐎",
+          "label": "Steckenpferde (6er)",
+          "url": "https://www.amazon.de/s?k=steckenpferd+kinder&tag=machsleicht-21",
+          "priceEur": 18,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Für die Reiter-Aktivität und als Mitgebsel. Sockenpony als DIY-Alternative geht auch."
+        },
+        {
+          "emoji": "🌾",
+          "label": "Plüsch-Hufeisen oder Wurfringe",
+          "url": "https://www.amazon.de/s?k=hufeisen+gl%C3%BCcksbringer&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Für das Hufeisen-Werfen-Spiel. Stoff-Ringe sind kindersicher."
+        },
+        {
+          "emoji": "🎀",
+          "label": "Filz-Schleifen + Wollbänder",
+          "url": null,
+          "priceEur": 5,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Für das Pony-Schmücken und als Mitgebsel."
+        },
+        {
+          "emoji": "📜",
+          "label": "Reiter-Urkunden (Druck)",
+          "url": null,
+          "priceEur": 3,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Das emotionale Highlight am Ende."
+        },
+        {
+          "emoji": "🥕",
+          "label": "Karotten-Sticks + Snacks",
+          "url": null,
+          "priceEur": 8,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Pferdethema durchs Essen — kostengünstig und gesund."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Hufeisen-Kuchen (Kastenkuchen + Glasur)",
+          "url": "https://www.amazon.de/s?k=hufeisen+gl%C3%BCcksbringer&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Thematischer Kuchen, einfach gemacht."
+        }
+      ],
+      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
+      "estimatedCostEur": 68,
+      "savingsTip": {
+        "title": "💡 Warum kostet „Minimal\" 68 €?",
+        "body": "Plüsch-Ponys (~18 €) + Steckenpferde (~18 €) sind ~50% des Budgets — der Rest sind Hüte/Bandanas, Bürsten, Schleifen, Snacks. Spar-Trick: Steckenpferde aus dem Klassen-Chat ausleihen statt kaufen → spart 10-15 €. Hüte aus Pappkarton + Wachskreide selbst basteln statt fertige Cowboyhüte (~5 € statt 12 €)."
+      }
+    },
+    {
+      "id": "standard",
+      "label": "Standard — 2,5 Stunden, vier Pferde-Stationen",
+      "headline": "🐎 Standard — 2,5 Stunden Ponyhof-Tag",
+      "intro": "Der Allrounder für 6–8 Kinder: Pferde-Streichelrunde + Schweif-Flechten + Hufeisen-Werfen + Hindernis-Parcours mit Steckenpferden. Genug Abwechslung für 2,5 Stunden mit Bewegung und Ruhe-Phasen.",
+      "timeWindow": "14:30–17:00, 8 Kinder",
+      "schedule": [
+        {
+          "time": "14:30",
+          "title": "Ankunft + Reiter werden",
+          "description": "Reiter-Hut, Steckenpferd, Reiter-Schwur. Wer früh da ist, darf schon Plüsch-Ponys streicheln."
+        },
+        {
+          "time": "14:45",
+          "title": "Pony-Streichel-Runde",
+          "description": "Alle Plüsch-Ponys werden vorgestellt, jedes Kind sucht sich eines aus."
+        },
+        {
+          "time": "15:10",
+          "title": "Mähnen-Flechten + Schleife",
+          "description": "Wolle einflechten, Filz-Schleife anbringen — die eigene Mähne fürs Pony."
+        },
+        {
+          "time": "15:35",
+          "title": "Pony-Snack-Pause",
+          "description": "Karotten, Äpfel, Müsli, Schorle — Pferde-Mahl."
+        },
+        {
+          "time": "16:00",
+          "title": "Hufeisen-Werfen",
+          "description": "Wurfringe Richtung Pflock. 2 Teams, jeder 3 Würfe."
+        },
+        {
+          "time": "16:25",
+          "title": "Steckenpferd-Parcours",
+          "description": "Mit Steckenpferden durch einen Hindernislauf — über Sprung-Stangen (10 cm), durch Tunnel, ums Sofa."
+        },
+        {
+          "time": "16:50",
+          "title": "Reiter-Urkunde + Foto",
+          "description": "Jeder kommt einzeln, bekommt Urkunde mit Pony-Name. Gruppenfoto mit allen Ponys."
+        }
+      ],
+      "games": [
+        {
+          "name": "🎀 Mähnen-Flechten + Pony-Schleife",
+          "duration": 25,
+          "minAge": 3,
+          "outdoor": false,
+          "indoor": true,
+          "material": "Pro Plüsch-Pony: Wollstränge in 2 Farben, Filz-Schleifen oder Stoffbänder, Klebepads, kleine Schere (NUR Erwachsene benutzen)",
+          "safetyRule": "Schere wird VOM ERWACHSENEN bedient, nicht von 3-5-Jährigen. Wolle ohne Funktionsdraht.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Mähnen-Wolle aussuchen",
+              "content": "Jedes Kind sucht 2 Wollfarben aus (z.B. weiß + braun)."
+            },
+            {
+              "n": 2,
+              "name": "Wolle einarbeiten",
+              "content": "Du oder Helfer befestigt die Wolle an der Plüsch-Mähne. Kind sucht sich Stellen aus."
+            },
+            {
+              "n": 3,
+              "name": "Schleife anbringen",
+              "content": "Filz-Schleife mit Klebepad an der Mähne, dem Hals oder am Schweif befestigen."
+            },
+            {
+              "n": 4,
+              "name": "Foto vom Werk",
+              "content": "Jedes Kind hält sein geschmücktes Pony hoch — Foto fürs Mitgebsel."
+            }
+          ],
+          "loudness": "leise",
+          "effort": "hoch",
+          "prepText": "6 Plüsch-Ponys + Wolle in 3-4 Farben + Filz-Schleifen + Klebepunkte vorbereiten. Wolle ohne Drahtkern (Verletzungsgefahr) — Klebepunkte statt Nadel und Faden. 15 Min Vorlauf.",
+          "ageAdjust6": "Bei 3-Jährigen: Eltern flechten vor, Kind klebt nur Schleifen. Wolle-Stränge sind vor-zugeschnitten (kein Schere-Stress).",
+          "ageAdjust8": "Für 5-Jährige: einfache Wickel-Technik (Wolle einmal um Mähne), eine Schleife pro Pony. Frisuren-Ergebnis wird gewürdigt, nicht bewertet.",
+          "indoorTip": "Am niedrigen Tisch — Kinder sitzen auf dem Boden. Spiegel daneben damit Kind die Pony-Frisur stolz anschauen kann.",
+          "outdoorTip": "Im Garten an einem Klapptisch, aber: Wolle bei Wind festkleben oder in Box arbeiten.",
+          "whyItWorksTitle": "Warum Mähnen-Flechten 3-5 lange beschäftigt",
+          "whyItWorks": "Feinmotorisch herausfordernd genug für Konzentration (10-15 Min), aber niedrige Frustrations-Schwelle (Klebepunkt statt Knoten). Plus: das Ergebnis nimmt jedes Kind mit nach Hause — das eigene gestylte Pony."
+        },
+        {
+          "name": "🌾 Hufeisen-Werfen (Team-Version)",
+          "duration": 25,
+          "minAge": 3,
+          "outdoor": true,
+          "indoor": true,
+          "material": "8 Plüsch-Hufeisen / Wurfringe, 2 Holzpflöcke (für 2 Teams)",
+          "safetyRule": "Stoff/Plastik-Ringe, max 2 Meter Wurfweite, klare Wurfreihenfolge.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "2 Teams bilden",
+              "content": "Team Rote Mähne und Team Blaue Mähne. Jedes Team kriegt ein eigenes Hufeisen-Set."
+            },
+            {
+              "n": 2,
+              "name": "Reihum werfen",
+              "content": "Jedes Kind macht 3 Würfe Richtung 'sein' Team-Pflock. Erwachsene zählen Treffer."
+            },
+            {
+              "n": 3,
+              "name": "Team-Belohnung",
+              "content": "Beide Teams bekommen Karotten 'fürs Pony' (= zum Essen)."
+            }
+          ],
+          "loudness": "mittel",
+          "effort": "mittel",
+          "prepText": "6-10 Wurf-Hufeisen (Stoff-Säckchen sicherer als echte) + 3 Pflöcke in verschiedenen Distanzen (1m, 2m, 3m) vorbereiten. Wertungstafel für Trefferpunkte. 10-15 Min Vorlauf.",
+          "ageAdjust6": "Für 3-Jährige: 1 Pflock, 1 Meter Abstand, alle 3 Würfe ohne Punkte-Druck. Jedes Kind bekommt einen Treffer-Klatscher.",
+          "ageAdjust8": "Für 5-Jährige: 2 Pflöcke, 1-2 Meter, Punkte werden notiert aber Sieger-Bonus klein. Stempel für alle.",
+          "indoorTip": "In Wohnzimmer-Ecke mit weicher Stoff-Säckchen-Hufeisen — keine Möbel-Schäden. Pflock auf rutsch-fester Matte.",
+          "outdoorTip": "Im Garten am besten — mehr Strecke, größere Sicherheits-Zone. Stoff-Säckchen-Hufeisen wind-resistent.",
+          "whyItWorksTitle": "Warum Hufeisen-Werfen klassischer Reiter-Spaß ist",
+          "whyItWorks": "Hufeisen-Werfen ist seit Jahrhunderten Reiterhof-Tradition — geübt bei Pferdewettbewerben und Reiter-Festen. Funktioniert in jedem Alter (Distanz anpassen), Stempel-Bonus für Treffer macht es zum echten Wettkampf."
+        },
+        {
+          "name": "🏇 Steckenpferd-Parcours",
+          "duration": 20,
+          "minAge": 4,
+          "outdoor": true,
+          "indoor": true,
+          "material": "8 Steckenpferde, 3-4 Sprung-Stangen (10 cm hoch — Pappröhren), Plastik-Tunnel oder Kissen-Tunnel, Stoff-Markierungen für Slalom",
+          "safetyRule": "Sprung-Stangen NICHT höher als 10 cm. Kein Drängeln am Tunnel — einzelne Durchgänge. Eltern-Helfer am Tunnel.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Parcours erklären",
+              "content": "Du zeigst den Weg vor: Slalom durch Stoff-Markierungen, über Sprung-Stangen 'galoppieren', durch Tunnel."
+            },
+            {
+              "n": 2,
+              "name": "Reihum reiten",
+              "content": "Jedes Kind reitet einmal den ganzen Parcours mit dem Steckenpferd."
+            },
+            {
+              "n": 3,
+              "name": "Belohnung",
+              "content": "Am Ziel 'frisst' das Steckenpferd eine Apfelscheibe (Kind isst sie). Applaus für alle."
+            }
+          ],
+          "loudness": "laut",
+          "effort": "mittel",
+          "prepText": "6 Steckenpferde + 4-6 Hindernisse (Slalom-Markierungen mit Klebeband, niedrige Sprung-Stange aus Besenstiel auf Konservendosen, Tunnel-Kissen, Wassergraben-Stoff). 15-20 Min Vorlauf für sicheren Aufbau.",
+          "ageAdjust6": "Bei 3-Jährigen: max 3 Hindernisse, Sprung-Höhe max 10 cm, kein Tempo-Druck. Erwachsene begleitet jedes Kind durch den Parcours.",
+          "ageAdjust8": "Bei 5-Jährigen: 5 Hindernisse, Sprung 15-20 cm. Stoppuhr optional als Bonus-Element.",
+          "indoorTip": "Im langen Flur perfekt — Hindernisse aus Stuhlbeinen + Decken + Bücher-Stapeln. Wassergraben durch blaue Decke ersetzen.",
+          "outdoorTip": "Im Garten als Reiter-Parcours-Highlight mit echtem Stroh als Wassergraben-Imitat. Keine Möbel-Schäden.",
+          "whyItWorksTitle": "Warum Steckenpferd-Parcours auch ohne echtes Pferd zieht",
+          "whyItWorks": "3-5-Jährige verlieben sich in das Steckenpferd-Reiten — sie sind selbst Pferd und Reiter zugleich. Der Parcours strukturiert die Aktivität und gibt Erfolgs-Momente (geschafft! durch!)."
+        },
+        {
+          "name": "🐴 Großer Pony-Streichel-Kreis (Eröffnung)",
+          "duration": 20,
+          "minAge": 3,
+          "outdoor": false,
+          "indoor": true,
+          "material": "8 Plüsch-Ponys verschiedener Größen, weiche Bürsten, Decke als 'Stall-Boden'",
+          "safetyRule": "Plüschtiere ohne Kleinteile, Bürsten ohne harte Borsten.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Ponys verteilen",
+              "content": "Alle Plüsch-Ponys auf Decke in der Mitte. Kreis bilden."
+            },
+            {
+              "n": 2,
+              "name": "Pony aussuchen + Namen geben",
+              "content": "Jedes Kind wählt sein Pony, gibt einen Namen. Du schreibst auf einer 'Stall-Liste' mit."
+            },
+            {
+              "n": 3,
+              "name": "Streicheln, bürsten",
+              "content": "5 Minuten Pflege-Zeit. Du erzählst Pony-Anekdoten dazu."
+            }
+          ],
+          "loudness": "leise",
+          "effort": "hoch",
+          "prepText": "1 großes Plüsch-Pony (50+ cm) als Mittelpunkt — oder 2 mittlere. Kinder-Kreis vorab geübt (Stuhl-Stellung). 5 Min Vorlauf — kurzes Eröffnungs-Ritual, nicht Haupt-Phase.",
+          "ageAdjust6": "Bei 3-Jährigen: Eltern sitzen DAHINTER, nicht im Kreis — sonst werden Kinder unsicher. Pony wird reihum weitergegeben, jedes Kind hat 30 Sek-1 Min Streichel-Zeit.",
+          "ageAdjust8": "Mit Mischgruppe 3-5: das größere Kind hilft dem kleineren das Pony \"richtig\" zu streicheln. Identifikation als Helfer.",
+          "indoorTip": "Im Wohnzimmer-Sofa-Halbkreis — alle sehen das Pony. Musik (sanfte Pferdehof-Playlist) im Hintergrund verstärkt Atmosphäre.",
+          "outdoorTip": "Im Garten auf Decken im Kreis — Sonnenblumen oder Stroh-Bunde als Reiterhof-Kulisse.",
+          "whyItWorksTitle": "Warum dieses Eröffnungs-Ritual den Tag setzt",
+          "whyItWorks": "Der erste Stations-Moment definiert die Stimmung. Ein gemeinsamer ruhiger Streichel-Kreis signalisiert: heute geht es um Pferde und Sanftheit. Funktioniert besser als hyperaktive Begrüßung, weil Kinder nach Anreise oft schon übererregt sind."
+        }
+      ],
+      "food": "🥕 Karotten-Sticks (2 Schalen)\n🍎 Apfelschnitze (2 Schalen)\n🥣 Hafer-Müsli in Kornsäckchen (8 Stk)\n🥤 Pferde-Schorle (3 L)\n🎂 Hufeisen-Kuchen (Kastenkuchen)\n🥨 Salzstangen + Brezeln\n🧀 Käsewürfel",
+      "decoration": "🐴 'Reiterhof'-Schild am Eingang (Pappe + Edding)\n🌾 Stroh-Bunde aus Krepp\n🐎 8 Plüsch-Ponys auf 'Stall'-Decke\n🏇 Hufeisen-Girlande\n🌻 Sonnenblumen-Pflaster\n🪣 Eimer mit Karotten (Deko + Snacks)",
+      "giveaways": "🏅 Reiter-Urkunde mit Pony-Namen\n🐴 Eigenes geschmücktes Plüsch-Pony (das vom Kind dekorierte Pony zum Mitnehmen — bei 8 Plüsch-Ponys budget einplanen)\n🎀 Filz-Schleifen-Set\n🥕 Karotten-Tüte\n📓 Pferde-Sticker-Block",
+      "shoppingList": [
+        {
+          "emoji": "🐴",
+          "label": "8 Plüsch-Ponys (mittel-Set)",
+          "url": "https://www.amazon.de/s?k=pl%C3%BCsch+pony+klein+kinder&tag=machsleicht-21",
+          "priceEur": 28,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Kern der Party + Mitgebsel. Optional günstiger 6-Set + 2 als Deko."
+        },
+        {
+          "emoji": "🤠",
+          "label": "Cowboyhüte (8er)",
+          "url": null,
+          "priceEur": 12,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Reiter-Identität pro Kind."
+        },
+        {
+          "emoji": "🐎",
+          "label": "Steckenpferde (8er)",
+          "url": "https://www.amazon.de/s?k=steckenpferd+kinder&tag=machsleicht-21",
+          "priceEur": 24,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Für Parcours + Mitgebsel."
+        },
+        {
+          "emoji": "🌾",
+          "label": "Hufeisen / Wurfringe (8er)",
+          "url": "https://www.amazon.de/s?k=hufeisen+gl%C3%BCcksbringer&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Wurfspiel."
+        },
+        {
+          "emoji": "🎀",
+          "label": "Wolle + Filz-Schleifen + Klebepads",
+          "url": null,
+          "priceEur": 12,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Mähnen-Schmücken."
+        },
+        {
+          "emoji": "📜",
+          "label": "Reiter-Urkunden (Druck)",
+          "url": null,
+          "priceEur": 4,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Highlight am Ende."
+        },
+        {
+          "emoji": "🥕",
+          "label": "Karotten/Äpfel + Snacks",
+          "url": null,
+          "priceEur": 12,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Pferdethema durchs Essen."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Hufeisen-Kuchen-Material",
+          "url": "https://www.amazon.de/s?k=hufeisen+gl%C3%BCcksbringer&tag=machsleicht-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Thematischer Kuchen."
+        },
+        {
+          "emoji": "🪣",
+          "label": "Sprung-Stangen + Tunnel (Pappe)",
+          "url": null,
+          "priceEur": 5,
+          "hasAffiliate": false,
+          "category": "optional",
+          "categoryReasoning": "Für Parcours."
+        }
+      ],
+      "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
+      "estimatedCostEur": 111,
+      "savingsTip": {
+        "title": "💡 Spar-Trick — Plüsch-Ponys leihen statt kaufen",
+        "body": "Wenn die Kinder die Ponys behalten dürfen (~6 €/Stück → ~36 € für 6): Kauf. Wenn nur für die Party: Leih-Plüsch aus dem Klassen-Chat zusammensammeln spart 25 €. Hufeisen-Wurfsäckchen selbst nähen statt fertig kaufen (Stoffreste + Reis) → spart 6-8 €. Ergebnis: Standard liegt bei ~85 € statt 111 €."
+      }
+    },
+    {
+      "id": "wow",
+      "label": "Wow — 3 Stunden, der ganze Reiterhof-Tag (eher 4-5 Jahre)",
+      "headline": "🎉 Wow — 3 Stunden voller Ponyhof-Tag",
+      "intro": "Für den großen Bahnhof mit 8–10 Kindern: ein durchgehender Reiterhof-Tag mit Cowboy-Verkleidung, Mähnen-Frisuren-Werkstatt, Pony-Reiter-Quiz, Hindernis-Parcours und Schatzsuche nach versteckten Karotten. Mehr Aufwand, aber legendäres Ergebnis.",
+      "timeWindow": "14:00–17:00, 8–10 Kinder",
+      "schedule": [
+        {
+          "time": "14:00",
+          "title": "Reiterhof-Empfang + Verkleidung",
+          "description": "Cowboy-Hut, Bandana, Reiter-Schleife. Jedes Kind wird fotografiert für die Reiter-Akte."
+        },
+        {
+          "time": "14:20",
+          "title": "Pony-Streichel-Runde + Namen geben",
+          "description": "Alle Plüsch-Ponys vorgestellt. Jedes Kind benennt sein Pony und beschriftet sein Namensschild."
+        },
+        {
+          "time": "14:45",
+          "title": "Mähnen-Frisuren-Werkstatt",
+          "description": "Wolle einflechten, Schleifen, Glitzer (essbar) anbringen. Jedes Pony bekommt sein Styling."
+        },
+        {
+          "time": "15:10",
+          "title": "Pony-Quiz",
+          "description": "Bild-Quiz: 'Welches Tier ist das?' (Pferd, Pony, Esel, Maultier), 'Was frisst ein Pferd am liebsten?' Spielerisch."
+        },
+        {
+          "time": "15:25",
+          "title": "Pony-Snack-Pause",
+          "description": "Großes Reiterhof-Buffet — Karotten, Äpfel, Müsli, Karotten-Kuchen, Schorle."
+        },
+        {
+          "time": "15:55",
+          "title": "Steckenpferd-Parcours mit Bändern",
+          "description": "Erweiterter Parcours, dazu fängt jeder Reiter unterwegs ein Band ein — Sieger-Reiter mit den meisten Bändern."
+        },
+        {
+          "time": "16:20",
+          "title": "Karotten-Schatzsuche",
+          "description": "Du versteckst 20 Karotten in der Wohnung/Garten — alle suchen gemeinsam, jeder darf eine Karotte mitnehmen."
+        },
+        {
+          "time": "16:50",
+          "title": "Große Reiter-Zeremonie + Foto",
+          "description": "Feierliche Übergabe: Reiter-Urkunde, Reiter-Pin, Foto mit allen Plüsch-Ponys."
+        }
+      ],
+      "games": [
+        {
+          "name": "🎀 Mähnen-Frisuren-Werkstatt (Wow-Erweiterung)",
+          "duration": 25,
+          "minAge": 4,
+          "outdoor": false,
+          "indoor": true,
+          "material": "Pro Pony: Wolle 3 Farben, Filz-Schleifen, kleine Spangen, essbarer Glitzer (für Bürsten), Spiegel zum Anschauen",
+          "safetyRule": "Glitzer essbar (für den Fall dass das Kind dran leckt). Spangen ohne scharfe Kanten.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Styling-Idee",
+              "content": "Du zeigst 3 Stylings: Zopf, Schleifen-Pferdeschwanz, Wilde Mähne. Kind sucht sich eins aus."
+            },
+            {
+              "n": 2,
+              "name": "Mähne flechten",
+              "content": "Mit Eltern-Helfer wird die Wolle eingearbeitet. Das Kind hilft, hält fest."
+            },
+            {
+              "n": 3,
+              "name": "Glitzer und Schleifen",
+              "content": "Final wird Glitzer aufgepinselt, Schleifen geknotet. Das Pony bekommt einen Namen-Klipp."
+            }
+          ],
+          "loudness": "leise",
+          "effort": "hoch",
+          "prepText": "8-10 Plüsch-Ponys + Wolle in 6+ Farben + Glitzer-Stifte + Sticker-Sets + Spiegel pro 2-Kinder-Team + Frisur-Karten zur Inspiration. 25 Min Vorlauf — diese Wow-Station braucht viel Material.",
+          "ageAdjust6": "Bei 3-Jährigen: nicht für die Wow-Variante gedacht — bei Mischgruppe nur als Beobachter dazu setzen, ältere zeigen.",
+          "ageAdjust8": "Für 5-Jährige als Premium-Aktivität: 3 Frisur-Optionen anbieten (Schweif-Locken, klassischer Zopf, wilde Mähne), Kind wählt. Spiegel-Vorführung am Ende.",
+          "indoorTip": "Mehrere Stationen-Tische im Wohnzimmer + Esszimmer — jede Station 2 Ponys. Catwalk-Linie mit Klebeband für Vorführung.",
+          "outdoorTip": "Im Garten unter Pavillon — Glitzer-Stifte und Wolle dürfen nicht im Wind verloren gehen.",
+          "whyItWorksTitle": "Warum eine Frisuren-Werkstatt der Wow-Anker ist",
+          "whyItWorks": "Wow-Erlebnis bei Pferdefans = Premium-Pflege-Phase mit echten Frisur-Optionen. Foto-würdiges Ergebnis, Stolz-Moment beim Catwalk-Vorführen. Wirkt wie eine echte Reiterhof-Vorbereitung auf ein Turnier."
+        },
+        {
+          "name": "🧠 Pony-Quiz",
+          "duration": 15,
+          "minAge": 3,
+          "outdoor": false,
+          "indoor": true,
+          "material": "10 Bild-Karten (Pferd, Pony, Esel, Maultier, Zebra, Karotte, Hafer, Apfel, Bürste, Sattel), Quiz-Tafel",
+          "safetyRule": "Keine speziellen Hinweise — ist ein Sitz-Spiel.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Bild zeigen",
+              "content": "Du zeigst eine Bild-Karte. 'Was ist das?'"
+            },
+            {
+              "n": 2,
+              "name": "Gemeinsam raten",
+              "content": "Alle rufen die Antwort gleichzeitig. Du gibst Tipps für 3-Jährige, die noch nicht alles erkennen."
+            },
+            {
+              "n": 3,
+              "name": "Karotte als Punkt",
+              "content": "Pro richtige Antwort: alle bekommen ein 'Karotten-Sticker' aufs Reiter-Heft."
+            }
+          ],
+          "loudness": "leise",
+          "effort": "leicht",
+          "prepText": "8-10 Quiz-Karten mit großen Pferde-Bildern (in Word selbst gemacht oder gekauft) + Smartphone für Foto-Antworten (optional). 5 Min Vorlauf — Sitz-Spiel mit Vorbereitungsaufwand niedrig.",
+          "ageAdjust6": "Für 3-Jährige: 5-6 Bilder mit eindeutigen Antworten (\"Welches Tier ist das?\"). Gemeinsam beantworten, keine Punkte-Wertung.",
+          "ageAdjust8": "Für 5-Jährige: 8-10 Karten, Bild + Wahl aus 2-3 Antworten. Antwortbogen optional. Stempel für jedes Kind.",
+          "indoorTip": "Im Kreis auf dem Boden mit Karten gut sichtbar hochhalten. Antworten gemeinsam, keine Einzel-Belohnung.",
+          "outdoorTip": null,
+          "whyItWorksTitle": "Warum Pony-Quiz bei 3-5 sanfte Lern-Phase ist",
+          "whyItWorks": "3-5-Jährige lieben Bilder-Quiz weil sie etwas WISSEN und zeigen können. Pferd erkennen, Karotte erkennen — niedrige Hürde, hohe Erfolgs-Quote. Beruhigende Sitz-Phase zwischen Aktiv-Spielen."
+        },
+        {
+          "name": "🗺️ Karotten-Schatzsuche",
+          "duration": 30,
+          "minAge": 3,
+          "outdoor": true,
+          "indoor": true,
+          "material": "20 Karotten (echte oder aus Filz), Verstecke in der Wohnung/Garten, optional eine 'Schatzkarte' für 4-5-Jährige",
+          "safetyRule": "Echte Karotten gewaschen und ungiftig. Verstecke nicht zu hoch oder hinter schweren Möbeln.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Karotten verstecken",
+              "content": "Vor Beginn: 20 Karotten in 'Pony-freundlichen' Verstecken platzieren (auf Sofa, hinter Vorhang, im Garten an Blumentopf)."
+            },
+            {
+              "n": 2,
+              "name": "Geschichte erzählen",
+              "content": "'Die Ponys haben Hunger! 20 Karotten sind verloren gegangen. Helft mit, sie zu finden!'"
+            },
+            {
+              "n": 3,
+              "name": "Gemeinsam suchen",
+              "content": "Alle Kinder suchen zusammen, du leitest mit warm/kalt-Tipps. Niemand 'gewinnt', alle finden."
+            },
+            {
+              "n": 4,
+              "name": "Karotten-Belohnung",
+              "content": "Jedes Kind nimmt eine Karotte mit nach Hause + isst eine vor Ort."
+            }
+          ],
+          "loudness": "mittel",
+          "effort": "mittel",
+          "prepText": "20-30 Karotten (echte oder Filz) in verschiedenen Räumen verstecken — vorab durch 2 Erwachsene platziert, Zettel mit Verstecken zur Sicherheit. Schatzkarten mit Hinweisen + Sammel-Eimer. 20 Min Vorlauf.",
+          "ageAdjust6": "Für 3-Jährige: 10-15 Karotten, Verstecke offensichtlicher (Augenhöhe, niemand muss bücken). Erwachsene zeigt mit. Alle finden gemeinsam, niemand \"verliert\".",
+          "ageAdjust8": "Für 5-Jährige: 15-20 Karotten, leichte Verschachtelung der Verstecke (Hinweis-Karten helfen). Stempel für jedes Kind.",
+          "indoorTip": "Karotten in verschiedenen Räumen verstecken (Wohnzimmer + Flur + Bad — nicht Schlafzimmer). Karte mit erlaubten Räumen markiert.",
+          "outdoorTip": "Im Garten — Karotten in Sträuchern, unter Blumentopfen, an Geräten. Nicht im Boden vergraben (Erde-Schmutz).",
+          "whyItWorksTitle": "Warum Karotten-Schatzsuche Reiterhof-Stimmung perfekt einfängt",
+          "whyItWorks": "Karotten = Pferde-Snack-Symbol, Schatzsuche = klassisches Kinder-Spiel. Kombination funktioniert auf jedem Reiterhof-Niveau. Wichtig: Verstecke nicht zu kniffelig (Frust) und nicht zu offensichtlich (alle finden in 2 Min)."
+        }
+      ],
+      "food": "🎂 Karotten-Kuchen (Carrot Cake — Pferde-thematisch!)\n🥕 Karotten-Sticks (3 Schalen)\n🍎 Apfelschnitze + Birnen\n🥣 Hafer-Müsli + Reiter-Riegel\n🥤 Pferde-Schorle (4 L)\n🥨 Salzstangen + Brezeln\n🧀 Käse-Würfel",
+      "decoration": "🐴 Großes 'Reiterhof Sonnenblume'-Schild\n🌾 Mehrere Stroh-Bunde\n🐎 10 Plüsch-Ponys verteilt\n🏇 Hufeisen-Girlande + Banner\n🌻 Sonnenblumen-Wand (Papier)\n🪣 Eimer mit Karotten\n🎀 Reiter-Flagge",
+      "giveaways": "🏅 Große Reiter-Urkunde mit Foto\n🐴 Pony zum Mitnehmen + Reiter-Akte\n🎀 Mähnen-Schleifen-Set\n🌟 Reiter-Pin\n🥕 Karotten-Tüte (echt)\n📓 Pferde-Sticker-Block + Reiter-Stift",
+      "shoppingList": [
+        {
+          "emoji": "🐴",
+          "label": "10 Plüsch-Ponys (Wow-Set)",
+          "url": "https://www.amazon.de/s?k=pl%C3%BCsch+pony+klein+kinder&tag=machsleicht-21",
+          "priceEur": 38,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Pro Kind 1 Pony, mit Mitnahme."
+        },
+        {
+          "emoji": "🤠",
+          "label": "Cowboy-Hüte + Bandanas (10er)",
+          "url": null,
+          "priceEur": 18,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Wow-Verkleidung."
+        },
+        {
+          "emoji": "🐎",
+          "label": "Steckenpferde (10er)",
+          "url": "https://www.amazon.de/s?k=steckenpferd+kinder&tag=machsleicht-21",
+          "priceEur": 30,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Parcours + Mitgebsel."
+        },
+        {
+          "emoji": "🎀",
+          "label": "Wolle 3 Farben + essbarer Glitzer",
+          "url": null,
+          "priceEur": 15,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Mähnen-Frisuren-Werkstatt."
+        },
+        {
+          "emoji": "🌾",
+          "label": "Hufeisen + Wurfringe (10er)",
+          "url": "https://www.amazon.de/s?k=hufeisen+gl%C3%BCcksbringer&tag=machsleicht-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Wurfspiel."
+        },
+        {
+          "emoji": "📜",
+          "label": "Reiter-Urkunden + Reiter-Akten",
+          "url": null,
+          "priceEur": 6,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Highlight."
+        },
+        {
+          "emoji": "🥕",
+          "label": "Karotten (20 + Snacks)",
+          "url": null,
+          "priceEur": 12,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Pferdethema + Schatzsuche."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Carrot-Cake-Zutaten",
+          "url": "https://www.amazon.de/s?k=carrot+cake+backmischung&tag=machsleicht-21",
+          "priceEur": 10,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Highlight-Kuchen."
+        },
+        {
+          "emoji": "🪣",
+          "label": "Parcours-Hindernisse",
+          "url": null,
+          "priceEur": 8,
+          "hasAffiliate": false,
+          "category": "optional",
+          "categoryReasoning": "Wow-Parcours."
+        },
+        {
+          "emoji": "🌟",
+          "label": "Reiter-Pins (10er)",
+          "url": null,
+          "priceEur": 6,
+          "hasAffiliate": false,
+          "category": "optional",
+          "categoryReasoning": "Mitgebsel-Detail."
+        }
+      ],
+      "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",
+      "estimatedCostEur": 151,
+      "savingsTip": {
+        "title": "💡 Spar-Trick — wenn 151 € zu viel ist",
+        "body": "Kostbarstes Posten ist die Ponyhof-Atmosphäre: Stroh + 6 Plüsch + Steckenpferde + Hüte zusammen ~85 €. Spar-Tricks: Stroh-Bunde durch beige Decken ersetzen (~−12 €), Plüsch-Ponys ausleihen statt kaufen (~−25 €), Foto-Polaroid durch Handy-Foto-Sofortdruck später (~−8 €). Damit liegt Wow bei ~105-115 € statt 151 €."
+      }
+    }
+  ],
+  "cakeRecipe": {
+    "name": "Karotten-Kuchen für kleine Reiter",
+    "intro": "Pferde-thematischer Kuchen für 3-5: ein einfacher Karotten-Kuchen (Carrot Cake) mit kleinem Hufeisen aus weißem Zuckerguss obendrauf. Sieht aus wie das Reiter-Symbol, schmeckt nach saftigem Möhrenkuchen — und passt perfekt zum Thema.",
+    "steps": [
+      {
+        "n": 1,
+        "content": "Karotten-Rührteig anrühren: 200 g geriebene Karotten, 200 g Mehl, 150 g Zucker, 100 g Butter, 3 Eier, 1 Pck. Backpulver, 1 TL Zimt, etwas Vanille."
+      },
+      {
+        "n": 2,
+        "content": "Teig in eine gefettete Kastenform geben."
+      },
+      {
+        "n": 3,
+        "content": "Bei 175°C ca. 50-55 Minuten backen (Stäbchenprobe)."
+      },
+      {
+        "n": 4,
+        "content": "Komplett auskühlen lassen."
+      },
+      {
+        "n": 5,
+        "content": "Aus Puderzucker und wenig Wasser einen dicken weißen Zuckerguss anrühren. Mit dem Guss ein Hufeisen auf den Kuchen malen (U-Form)."
+      },
+      {
+        "n": 6,
+        "content": "Optional: ein paar Möhrchen aus orangenem Marzipan oder Karotten-Scheiben dekorativ daneben legen."
+      }
+    ],
+    "meta": {
+      "aufwand": "60 Min. inkl. Backen + 10 Min. Deko",
+      "kosten": "ca. 6-8 €",
+      "allergiker": "Bei Ei-Allergie: vegan-Karotten-Kuchen-Rezept. Möhren immer waschen. Bei Nuss-Frei: keine Nüsse im Teig (manche Rezepte enthalten Walnüsse)."
+    },
+    "tips": [
+      {
+        "title": "🎂 Keine Lust zu backen?",
+        "body": "Fertigen Karotten-Kuchen vom Bäcker, Hufeisen aus Zuckerguss draufmalen — niemand merkt's. 3 Minuten Arbeit."
+      },
+      {
+        "title": "🐴 Pinterest-Inspiration ohne Pinterest-Aufwand",
+        "body": "Wenn du im Netz nach \"Pferdekuchen Kindergeburtstag\" suchst, stößt du auf 3-stündige Marzipan-Pferdekopf-Projekte mit Goldnüsschen-Augen. Vergiss das. Ein Karotten-Kuchen mit Hufeisen aus weißem Zuckerguss (U-Form, 5 Min Deko) wird von 3-Jährigen genauso gefeiert — und du hast keine Tränen-Anfälle wenn die Mähne nicht hält."
+      }
+    ]
+  },
+  "parentTips": {
+    "structured": [
+      {
+        "topic": "🥜 Allergien VOR der Party abfragen",
+        "detail": "Karotten-Kuchen kann Nüsse enthalten. Müsli kann Gluten/Laktose haben. In der Einladung kurz abfragen, Alternativen bereithalten (zuckerfreies Müsli, glutenfreier Karotten-Kuchen)."
+      },
+      {
+        "topic": "🐴 Echte Pferde NICHT für 3-Jährige",
+        "detail": "Bei 3-Jährigen niemals echte Pferde/Ponys einplanen — auch nicht den 'kleinen Reitstall in der Nähe'. Schnauben, plötzliche Bewegungen erschrecken. Echtes Reiten frühestens 5 Jahre, mit erfahrenen Pony-Führern."
+      },
+      {
+        "topic": "🎀 Filz-Schleifen statt komplexe Bastelei",
+        "detail": "3-Jährige können noch nicht binden/knoten. Klebepad-Schleifen statt geknüpfter Schleifen. Du oder Helfer fixiert."
+      },
+      {
+        "topic": "👥 Ab 8 Kindern zweite Hand dazu",
+        "detail": "Bei 8+ Kindern brauchst du eine zweite erwachsene Begleitung — vor allem für die Parcours-Stationen und das Hufeisen-Werfen."
+      },
+      {
+        "topic": "📋 Plan B bei Regen",
+        "detail": "Alle Spiele funktionieren komplett drinnen. Pferde-Streichelrunde im Wohnzimmer, Hufeisen-Werfen vor der Sofalehne, Parcours durch den Flur."
+      },
+      {
+        "topic": "⏱️ Tempo niedrig halten",
+        "detail": "Nach 10-15 Minuten pro Aktivität kippt die Aufmerksamkeit. Plan ruhige Streichelrunden zwischen den bewegten Spielen."
+      },
+      {
+        "topic": "📱 Partyseite statt WhatsApp-Chaos",
+        "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite. Kostenlos."
+      }
+    ],
+    "educationalValue": "Die Kinder üben bei der Pferde-Party ganz nebenbei: Empathie für Tiere (auch Plüsch — wer Plüsch pflegt, übt sanftes Verhalten), Feinmotorik (Schleifen binden, Mähne flechten), Belohnungs-Logik (Karotte für gutes Pony), Bewegungs-Koordination (Steckenpferd-Parcours) und visuelles Lernen (Pony-Quiz). Plus: Reiter-Identität als Selbstwert-Booster — 'Ich bin ein Reiter' ist ein starker Spruch für ein 3-Jähriges."
+  },
+  "invitationTemplate": "🐴 Reiterhof-Einladung per WhatsApp: '[Name] wird [Alter] und lädt zum Ponyhof-Tag ein! Wann: [Datum, Uhrzeit]. Wo: [Adresse]. Mitbringen: Schmutzfeste Kleidung und ein Plüsch-Pony wenn vorhanden! Bitte bis [Datum] melden. Yeehaw! 🐎'",
+  "faq": [
+    {
+      "q": "Brauche ich ein echtes Pony oder Pferd?",
+      "a": "Nein. Für 3-5-Jährige ist ein echtes Pferd oft zu groß, schnaubt zu laut, kann erschrecken. Plüsch-Ponys + Steckenpferde sind die kindgerechte Variante. Geführtes Pony-Sitzen (Profi führt das Pony, Kind sitzt nur drauf) ist auf Reiterhöfen ab 3-4 Jahren möglich. Selbstständiges Reiten erst ab 7-8 Jahren — Helm-Pflicht bei jedem Pony-Kontakt."
+    },
+    {
+      "q": "Wo bekomme ich 6-10 Plüsch-Ponys her?",
+      "a": "Sparset über Amazon (Suchbegriff 'Plüsch-Pony Set'), Second-Hand-Plattformen wie eBay-Kleinanzeigen, oder ausleihen bei anderen Eltern (Klassen-Chat). Tipp: 6 als Mitgebsel + 2 als Deko mietweise/geborgt."
+    },
+    {
+      "q": "Wie passen 8 Steckenpferde in mein Wohnzimmer?",
+      "a": "Steckenpferd-Parcours funktioniert auch in einem Raum — Slalom mit Markierungen, Sprung über 2 Pappröhren-Stangen (10 cm), Tunnel aus Kissen. Brauchen nicht viel Platz. Beim Reiten bleiben alle im Gehen, nicht rennen."
+    },
+    {
+      "q": "Was tun, wenn ein Kind sich vor Hufeisen-Werfen scheut?",
+      "a": "Kein Zwang. Manche 3-Jährige werfen ungern oder vorm Zielen. Plan B: Karotten-Geben an das große Plüsch-Pony — gleicher pädagogischer Wert (Hand-Auge-Koordination, sanfte Belohnung)."
+    },
+    {
+      "q": "Ist Carrot Cake nicht zu erwachsen für 3-5?",
+      "a": "Im Gegenteil — der süße Geschmack + die geriebene Karotte (kaum spürbar) kommen super an. Falls dein Kind ihn nicht mag: Hufeisen-Glasur auf einen normalen Marmorkuchen geht genauso."
+    },
+    {
+      "q": "Was, wenn ein Kind das geschmückte Pony beim Streit verliert?",
+      "a": "Bei 8 Plüsch-Ponys + 8 Kindern: jedes Pony hat einen Namensschild. Streit selten, weil alle ihres pflegen. Falls doch: 'Jedes Pony braucht Pause' als Schlichter-Regel, dann neue Runde."
+    }
+  ],
+  "preparationWeeks": {
+    "minus4Weeks": {
+      "headline": "4 Wochen vorher — Grundgerüst",
+      "items": [
+        {
+          "icon": "📅",
+          "title": "Datum, Uhrzeit, Treffpunkt fixieren",
+          "detail": "Nachmittag (14-16 Uhr) ist bei 3-5 am besten — nicht in Mittagsschlaf-Zeit. Variante (Minimal/Standard/Wow) festlegen."
+        },
+        {
+          "icon": "🔢",
+          "title": "Gästezahl festlegen",
+          "detail": "Faustregel für 3-5: maximal so viele wie das Geburtstagskind alt ist, plus 1-2. Ab 8 Kindern zweite Begleitung."
+        },
+        {
+          "icon": "💌",
+          "title": "Einladungen rausgeben",
+          "detail": "Reiterhof-Einladung mit Datum, Treffpunkt, Abholzeit, RSVP und Allergie-Abfrage. Bitte um schmutzfeste Kleidung."
+        },
+        {
+          "icon": "🏠",
+          "title": "Ort + Wetter-Plan B",
+          "detail": "Drinnen, draußen oder beides? Schon jetzt überlegen, wie Parcours bei Regen ins Wohnzimmer passt."
+        },
+        {
+          "icon": "🧑‍🤝‍🧑",
+          "title": "Zweite Hand anfragen",
+          "detail": "Bei Standard/Wow ein abholendes Elternteil als Stall-Helfer fragen."
+        }
+      ]
+    },
+    "minus2Weeks": {
+      "headline": "2 Wochen vorher — Logistik",
+      "items": [
+        {
+          "icon": "📞",
+          "title": "RSVP nachhalten",
+          "detail": "Endgültige Kinderzahl festlegen."
+        },
+        {
+          "icon": "🥜",
+          "title": "Allergien sammeln",
+          "detail": "Müsli, Karotten-Kuchen — Notizen machen."
+        },
+        {
+          "icon": "🛒",
+          "title": "Einkaufsliste finalisieren",
+          "detail": "Plüsch-Ponys, Steckenpferde, Hufeisen, Hüte, Wolle — passend zur Variante."
+        },
+        {
+          "icon": "🐴",
+          "title": "Plüsch-Ponys suchen",
+          "detail": "Amazon/eBay/Borgen klären. 1-2 Wochen Vorlauf für Lieferung."
+        }
+      ]
+    },
+    "minus1Week": {
+      "headline": "1 Woche vorher — bestellen & drucken",
+      "items": [
+        {
+          "icon": "🛒",
+          "title": "Amazon-Bestellung raus",
+          "detail": "Lieferzeit 2-5 Tage. Plüsch-Ponys, Steckenpferde, Cowboy-Hüte, Hufeisen-Set."
+        },
+        {
+          "icon": "📜",
+          "title": "Reiter-Urkunden drucken",
+          "detail": "Pro Kind eine Urkunde mit Namen. Stempel/Aufkleber für Diplom-Übergabe."
+        },
+        {
+          "icon": "🎀",
+          "title": "Filz-Schleifen vorbereiten",
+          "detail": "Schleifen schon zugeschnitten und beschriftet — am Tag X einfach anbringen."
+        },
+        {
+          "icon": "🃏",
+          "title": "Quiz-Karten malen (Wow)",
+          "detail": "10 Bild-Karten für das Pony-Quiz vorbereiten."
+        }
+      ]
+    },
+    "minus2Days": {
+      "headline": "2 Tage vorher — backen + vorbereiten",
+      "items": [
+        {
+          "icon": "🎂",
+          "title": "Karotten-Kuchen backen",
+          "detail": "Carrot Cake oder Hufeisen-Kastenkuchen. Komplett auskühlen lassen. Deko erst kurz vorher."
+        },
+        {
+          "icon": "🥕",
+          "title": "Karotten-Sticks zuschneiden",
+          "detail": "Karotten gewaschen, kindgerecht geschnitten."
+        },
+        {
+          "icon": "🎒",
+          "title": "Material-Sets bündeln",
+          "detail": "Pro Kind: Hut, Steckenpferd, Schleife, Karotten-Tüte bündeln."
+        }
+      ]
+    },
+    "minus1Day": {
+      "headline": "1 Tag vorher — Deko + Tests",
+      "items": [
+        {
+          "icon": "🎂",
+          "title": "Kuchen verzieren",
+          "detail": "Hufeisen aus Zuckerguss auf den Kuchen malen. Optional Möhrchen-Deko."
+        },
+        {
+          "icon": "🐴",
+          "title": "Plüsch-Ponys vorbereiten",
+          "detail": "Auf Decke arrangieren, Namensschilder bereitlegen."
+        },
+        {
+          "icon": "🪣",
+          "title": "Hufeisen-Pflock aufstellen",
+          "detail": "Im Wohnzimmer oder Garten — Wurfdistanz testen."
+        },
+        {
+          "icon": "📸",
+          "title": "Foto-Ecke aufbauen",
+          "detail": "'Reiterhof'-Schild für Gruppenfoto-Hintergrund vorbereiten."
+        }
+      ]
+    },
+    "dayOf": {
+      "headline": "Am Party-Tag — Aufbau + Empfang",
+      "items": [
+        {
+          "icon": "🐴",
+          "title": "Pony-Stall einrichten",
+          "detail": "Plüsch-Ponys auf Decke in der Mitte des Wohnzimmers. Bürsten, Schleifen, Wolle bereit."
+        },
+        {
+          "icon": "🤠",
+          "title": "Empfangs-Station",
+          "detail": "Cowboy-Hüte, Steckenpferde, Reiter-Schwur-Karte griffbereit am Eingang."
+        },
+        {
+          "icon": "🍽️",
+          "title": "Buffet vorbereiten",
+          "detail": "Karotten, Äpfel, Müsli am Tisch. Schorle in Kannen."
+        },
+        {
+          "icon": "😮‍💨",
+          "title": "Kurz durchatmen",
+          "detail": "10 Minuten vor Ankunft hinsetzen. Die Kinder feiern Plüsch-Ponys, nicht Perfektion."
+        }
+      ]
+    }
+  },
+  "sosScenarios": {
+    "regen": {
+      "icon": "🌧️",
+      "label": "Regen — Parcours war draußen geplant",
+      "headline": "Alles drinnen — Parcours durchs Wohnzimmer.",
+      "steps": [
+        "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen — Möbel an die Wand für mehr Platz.",
+        "Stations-Rotation in 4 Ecken: jede Ecke = eine Station, klare Markierungen mit Klebeband am Boden.",
+        "Wenn Sand/Wasser geplant war: Plane oder alte Decke als Unterlage, Putztuch griffbereit.",
+        "Aktivierungs-Spiele kürzer (10 Min statt 20) damit Bewegungsdrang nicht eskaliert."
+      ],
+      "fallback": "Kein Platz im Wohnzimmer? Kinderzimmer + Flur kombinieren. Notfall: Spiele auf den Esstisch verlegen (Bastel-Stationen, Quiz).",
+      "tone": "praktisch"
+    },
+    "weniger_kinder_als_erwartet": {
+      "icon": "👥",
+      "label": "Weniger Kinder als geplant",
+      "headline": "Engerer Pony-Stall — mehr Streicheln und Schmücken-Zeit pro Kind.",
+      "steps": [
+        "Stations-Dauer hochfahren: 25 Min statt 20 — jedes Kind hat mehr Zeit.",
+        "Material vor-portioniert lassen, NICHT reduzieren — übriges Material gehört in Mitgebsel-Tüten.",
+        "Bei Wettkampf-Spielen: 2er-Teams in 1er-Stationen umbauen, damit niemand allein steht.",
+        "Foto-Phase verlängern — kleinere Gruppe = stärkere Foto-Aufmerksamkeit pro Kind."
+      ],
+      "fallback": "Bei nur 3-4 Kindern: Stations-Wechsel komplett weglassen, durchgehende Story als Spiel-Bogen.",
+      "tone": "praktisch"
+    },
+    "mehr_kinder_als_erwartet": {
+      "icon": "🚨",
+      "label": "Mehr Kinder als geplant",
+      "headline": "Zwei Reiter-Crews bilden — Streichelrunde + Hufeisen-Werfen parallel.",
+      "steps": [
+        "Sofort eine zweite Erwachsene/n als Helfer holen (Nachbar, anderes Eltern-Paar).",
+        "Stationen in 2-Reihen aufteilen: 2 Stationen laufen parallel, halbiert die Wartezeit.",
+        "Material verdoppeln wenn möglich (mehr Becher, mehr Bürsten) — Bestand checken.",
+        "Snack-Pause früher einplanen — Hunger kombiniert mit Überstimulation = Streit.",
+        "Mitgebsel-Tüten ggf. simpler füllen, damit die Stückzahl reicht."
+      ],
+      "fallback": "Wenn nichts hilft: eine Station als Bonus-Spiel deklarieren, statt die Stations-Rotation zu starten. Reduziert Logistik-Stress.",
+      "tone": "praktisch"
+    },
+    "kind_will_nicht_mitmachen": {
+      "icon": "🤷",
+      "label": "Ein Kind will nicht mitmachen",
+      "headline": "Stall-Beobachter-Rolle — kein Druck, jedes Kind bekommt Urkunde.",
+      "steps": [
+        "Nicht drängen — anbieten als \"Beobachter/Schiedsrichter\": Stoppuhr halten, Stempel verteilen, mitnotieren.",
+        "Eine Lieblings-Aufgabe identifizieren (Karotten verteilen, Helm aufsetzen) — kleine Rolle reaktiviert.",
+        "Eltern (falls noch da) kurz einbeziehen, dann Distanz schaffen — meist klappt es nach 15-20 Min Beobachtung.",
+        "Am Ende: Diplom/Lizenz/Brief bekommen ALLE — auch der Beobachter. Sonst geht ein Kind als \"Verlierer\" heim."
+      ],
+      "fallback": "Wenn ein Kind dauerhaft verweigert: nicht zwingen. Manchmal sind solche Tage einfach so. Belohnung am Ende bleibt.",
+      "tone": "einfühlsam"
+    },
+    "kuchen_misslungen": {
+      "icon": "🎂",
+      "label": "Karotten-Kuchen misslungen",
+      "headline": "Bäcker-Kuchen + Hufeisen drauf — niemand merkts.",
+      "steps": [
+        "Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.",
+        "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss / Pappschild als Wappen / Bagger drauf).",
+        "Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als \"Mini-Versionen\" verteilen.",
+        "Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt."
+      ],
+      "fallback": "Last-Minute-Rettung: Eis aus dem Gefrierer mit Streuseln und Soße — das ist bei Kindern fast immer der heimliche Star.",
+      "tone": "humorvoll"
+    },
+    "echtes_pony_zu_unruhig": {
+      "icon": "🐎",
+      "label": "Echtes Pony (falls Wow + Ponyhof) zu unruhig",
+      "headline": "Plüsch-Pony-Programm fortsetzen, echtes Pony überspringen — kein Drama.",
+      "steps": [
+        "Wenn ein gebuchtes Pony am Tag selbst unruhig wirkt: NICHT auf das Pony setzen, auch wenn Kinder enttäuscht sind. Pony-Profi entscheidet.",
+        "Alternative: Pony-Pflege am Boden (Bürsten, Schleifen) bleibt möglich, ohne dass jemand draufsitzt.",
+        "Plüsch-Pony als Stand-In: jedes Kind bekommt ein Plüsch-Pony zum Mit-Pflegen und Foto-Moment.",
+        "Kommunikation: ehrlich erklären \"das Pony braucht heute Ruhe, wir spielen anders\" — Kinder verstehen das."
+      ],
+      "fallback": "Wenn überhaupt nichts geht: Reiterhof-Besuch absagen und stattdessen Stallmeister-Olympiade mit Hufeisen-Werfen verlängern. Diplom bleibt.",
+      "tone": "pragmatisch"
+    },
+    "material_kaputt_fehlt": {
+      "icon": "🔧",
+      "label": "Material kaputt oder fehlt",
+      "headline": "Improvisieren — Steckenpferd als Bohnenstange + Sockenkopf.",
+      "steps": [
+        "Inventur am Vortag — wer hat was im Haushalt? Plüsch, Stifte, Pappkartons aus Bestand.",
+        "Klassen-Chat oder Nachbarschaft fragen: oft hat jemand Material zum Ausleihen (1h vor Party).",
+        "Spontaner Ersatz: alte Pizza-Kartons werden Pappschilde, Wäscheständer wird Slalom-Markierung.",
+        "Wenn nichts da: Spiel kürzer oder weglassen — lieber 4 saubere Spiele als 6 chaotische."
+      ],
+      "fallback": "Bei totalem Material-Ausfall: eine kreative Bastel-Phase mit Stiften + Pappe als Kern-Aktivität. Funktioniert immer.",
+      "tone": "pragmatisch"
+    }
+  },
+  "bonusGames": {
+    "intro": "Diese Bonus-Spiele kannst du zusätzlich einbauen oder als Plan B nutzen wenn ein Haupt-Spiel ausfällt — alle 3-5-tauglich.",
+    "items": [
+      {
+        "name": "🌾 Heu-Wettrennen",
+        "duration": 10,
+        "minAge": 3,
+        "loudness": "mittel",
+        "indoor": true,
+        "outdoor": true,
+        "material": "6 kleine Stroh-/Heu-Bündchen aus Filz (oder echte Stroh-Reste), 2 Eimer als Ziel",
+        "anleitung": "Kinder transportieren Heu-Bündchen vom Stall (Box) zum Pony-Eimer (Ziel). Reihum, kein Wettkampf. Wer alle Bündchen verteilt hat, bekommt einen Stempel."
+      },
+      {
+        "name": "🐴 Pony-Hör-Memory",
+        "duration": 10,
+        "minAge": 4,
+        "loudness": "leise",
+        "indoor": true,
+        "outdoor": false,
+        "material": "6 Karten mit Pferdebildern, Erwachsene macht Pferdegeräusche (wiehern, schnauben, trab-trab)",
+        "anleitung": "Erwachsene macht ein Geräusch, Kinder zeigen die passende Karte. Lerneffekt: Pferd-Geräusche unterscheiden. Schöne Sitzphase zwischen Action-Spielen."
+      },
+      {
+        "name": "🥕 Karotten-Sortier-Spiel",
+        "duration": 8,
+        "minAge": 3,
+        "loudness": "leise",
+        "indoor": true,
+        "outdoor": true,
+        "material": "Karotten in 3 Größen (groß/mittel/klein) gemischt, 3 Eimer",
+        "anleitung": "Kinder sortieren die Karotten nach Größe in die richtigen Eimer. Bei 3-Jährigen: gemeinsam, kein Wettkampf. Bei 5-Jährigen: Stoppuhr für extra Stempel."
+      }
+    ]
+  }
+}

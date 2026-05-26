@@ -1,0 +1,1301 @@
+{
+  "_meta": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-05-26",
+    "qualityNote": "v2 — Helfer-v3-Welle 1A+1B+1C+1D+1E abgeschlossen. Adversarial-Review-Scores: Pferde 87/100, Ritter 88/100 (Welle 3V). Beide Mottos ≥85 Ziel erreicht."
+  },
+  "motto": "ritter",
+  "ageGroup": "klein",
+  "ageRange": [
+    3,
+    5
+  ],
+  "title": "⚔️ Ritter-Kindergeburtstag — 3–5 Jahre",
+  "metaDescription": "Ritter-Kindergeburtstag für 3-5-Jährige als kleiner Burg-Tag: 3 fertige Konzepte mit Schild-Bemalen, weichen Pool-Nudel-Schwertern, Drachen-Wurf und Königs-Krönung. Kostenlos.",
+  "introParagraph": "Dein Kind wird 3, 4 oder 5 und will Ritter sein? Hier sind drei fertige Burg-Konzepte, die ohne harte Schwerter funktionieren. Wichtig vorab: 3-5-Jährige brauchen keine echte Burg. Was funktioniert: Wappen-Schilder bemalen, mit Pool-Nudel-Schwertern sanft kämpfen, einen Stoff-Drachen besiegen und am Ende zur Königin/zum König gekrönt werden.",
+  "ageInsight": {
+    "headline": "Was 3–5-Jährige am Ritter-Motto fesselt",
+    "whyMottoFitsHeadline": "Ritter = klare Rolle, sichtbares Symbol, einfache Aufgabe",
+    "whyMottoFits": "Ritter sind für 3-5-Jährige perfekt: Sie haben eine eindeutige Identität (Schwert + Schild = ICH BIN RITTER), einfache moralische Aufgaben (Drache besiegen = Schutz), und eine sichtbare Krönung am Ende. Anders als bei Detektiv oder Schatzsuche braucht es kein Rätsel-Lösen. Es ist pure Rollenspiel-Identität mit Action-Pausen und Ruhe-Pausen.",
+    "traits": [
+      {
+        "topic": "Aufmerksamkeit",
+        "detail": "10–15 Minuten pro Aktion. Burg-Bauen aus Kissen funktioniert lange (sensorisch), aktive Spiele wie Schwertkampf nur 5-10 Min, dann ruhige Phase."
+      },
+      {
+        "topic": "Magisches Denken",
+        "detail": "Der Stoff-Drache 'lebt' wirklich für sie. Wenn du als 'König' sprichst, ist die Krönung ein magischer Moment. Diese Magie macht das Motto so stark."
+      },
+      {
+        "topic": "Rollen-Identität",
+        "detail": "Mit Schwert + Schild bekommt das Kind sofort eine Rolle. Bei 3-5 ist diese visuelle Identität wichtiger als die Hintergrund-Geschichte."
+      },
+      {
+        "topic": "Bewegung",
+        "detail": "Schwertkampf auf Pool-Nudel-Basis = sicher und aktiv. Drachen-Wurf, Burg-Erstürmung. Aber: kurze Aktiv-Phasen, dann Sitz-Aktivität (Schild bemalen)."
+      },
+      {
+        "topic": "Sicherheit",
+        "detail": "Schwerter NUR aus Pool-Nudel (weiche Schaumstoff-Schwimm-Nudeln) oder Karton. Niemals Holz/Plastik mit harten Kanten. Schwertkampf-Regel: 'Nur Schild trifft Schild, nie Körper'."
+      },
+      {
+        "topic": "Sieger-Logik",
+        "detail": "Bei 3-5 sollte niemand 'verlieren'. Alle besiegen den Drachen gemeinsam, alle werden gekrönt. Wettkampf zerstört die Stimmung."
+      },
+      {
+        "topic": "Eltern-Nähe",
+        "detail": "Bei lauteren Spielen (Schwertkampf, Drachen-Wurf) bleiben viele 3-Jährige gern in der Nähe der Eltern. Plan Eltern als 'Burg-Wächter' direkt mit ein."
+      }
+    ]
+  },
+  "signatureRitual": {
+    "name": "Die kleine Ritter-Krönung",
+    "subtitle": "Eröffnet die Party + Königs-Krönung am Ende",
+    "introText": "Bei 3-5-Jährigen funktioniert kein langer Ritter-Eid mit Schwur auf Ehre und Pflicht. Was funktioniert: zwei winzige rituelle Momente. Beim Ankommen wird jedes Kind zum 'Ritter-Lehrling' ernannt — mit Wappen-Schild und Pool-Nudel-Schwert. Am Ende, nach dem Drachen-Sieg, wird jeder zum König/zur Königin gekrönt. Dazwischen liegen die Burg-Spiele.",
+    "setupSteps": [
+      {
+        "n": 1,
+        "name": "Schilde + Schwerter",
+        "content": "Pro Kind ein vorgeschnittener Pappkarton-Schild (DIN A3, oval mit Henkel) und ein Pool-Nudel-Schwert (40 cm). Beide am besten schon mit dem Ritter-Namen beschriften."
+      },
+      {
+        "n": 2,
+        "name": "Lehrlings-Ernennung",
+        "content": "Ein kurzer Spruch, den alle gleichzeitig nachsprechen: 'Ich bin Ritter-Lehrling und beschütze die Burg!' Groß auf eine Wappen-Karte schreiben."
+      },
+      {
+        "n": 3,
+        "name": "Eltern-Helfer",
+        "content": "Bei 3-5 brauchen viele Kinder Eltern-Nähe. Lass begleitende Eltern direkt hinter ihrem Kind stehen — sie sind die 'Burg-Wächter'."
+      },
+      {
+        "n": 4,
+        "name": "Kronen vorbereiten",
+        "content": "Eine Krone pro Kind (Pappkarton mit Goldfolie, Hand-grosse Form). Erst am Ende aufsetzen."
+      },
+      {
+        "n": 5,
+        "name": "Burg-Wachen-Ecke",
+        "content": "Vor Ankunft eine Ecke mit Schilden, Schwertern, Drachen-Plüsch + Burg-Kissen einrichten. Hier kann das Rollenspiel sofort starten."
+      }
+    ],
+    "rolesList": [
+      {
+        "emoji": "🛡️",
+        "name": "Lilly (Burg-Wächter)",
+        "function": "Bewacht das Tor mit dem Schild"
+      },
+      {
+        "emoji": "🐉",
+        "name": "Max (Drachen-Jäger)",
+        "function": "Führt den Drachen-Wurf an"
+      },
+      {
+        "emoji": "🤡",
+        "name": "Tom (Hofnarr)",
+        "function": "Erzählt witzige Burg-Geschichten"
+      },
+      {
+        "emoji": "🐎",
+        "name": "Mia (Pferdeknecht)",
+        "function": "Pflegt die Plüsch-Rosse (Steckenpferde)"
+      },
+      {
+        "emoji": "🎨",
+        "name": "Felix (Wappen-Maler)",
+        "function": "Hilft beim Schild-Schmücken"
+      },
+      {
+        "emoji": "📜",
+        "name": "Anna (Königs-Bote)",
+        "function": "Sammelt Nachrichten von Raum zu Raum"
+      },
+      {
+        "emoji": "⚔️",
+        "name": "Paul (Pool-Nudel-Trainer)",
+        "function": "Hilft beim sicheren Schwert-Üben"
+      },
+      {
+        "emoji": "👑",
+        "name": "Hanna (Kronen-Bändiger)",
+        "function": "Verteilt die Kronen am Ende"
+      },
+      {
+        "emoji": "🔔",
+        "name": "Jonas (Burg-Glocken-Läuter)",
+        "function": "Läutet vor jedem Spiel-Start"
+      },
+      {
+        "emoji": "🥨",
+        "name": "Sofie (Brezel-Verteiler)",
+        "function": "Bringt Brezeln vom Buffet"
+      },
+      {
+        "emoji": "🎈",
+        "name": "Lina (Drachen-Anpfeifer)",
+        "function": "Macht Drachen-Geräusche fürs Spiel"
+      },
+      {
+        "emoji": "📸",
+        "name": "David (Burg-Foto-Maker)",
+        "function": "Macht Fotos mit dem Wappenschild"
+      }
+    ],
+    "optOutNote": "Kein Kind muss eine Rolle nehmen und niemand muss den Spruch allein sprechen. Wer nur dabei sein will, ist trotzdem vollwertiger Ritter — Schild, Schwert und Krone bekommt jedes Kind.",
+    "materialNote": "Schilde, Schwerter, Lehrlings-Spruch-Karte, Kronen und Drachen-Plüsch an einem festen 'Burg-Tisch' sammeln. So ist der Start in 5 Minuten gemacht."
+  },
+  "variants": [
+    {
+      "id": "minimal",
+      "label": "Minimal — 90 Min., ein Burg-Tag mit wenig Aufwand",
+      "headline": "⚔️ Minimal — 90 Minuten Burg-Spielzeit",
+      "intro": "Die ehrliche Sparvariante: 90 Minuten, 6 Kinder, ein durchgehender Burg-Tag mit Schild-Bemalen, Drachen-Wurf und Krönung. Pappkarton-Schilde kannst du am Vortag schneiden — Pool-Nudeln gibts im Sommer überall.",
+      "timeWindow": "15:00–16:30, 6 Kinder",
+      "schedule": [
+        {
+          "time": "15:00",
+          "title": "Ankunft + Ritter werden",
+          "description": "Schild bekommen, Pool-Nudel-Schwert, Lehrlings-Spruch."
+        },
+        {
+          "time": "15:10",
+          "title": "Wappen-Schmücken",
+          "description": "Schild mit Stickern, Filzstiften, Goldfolie schmücken. Jeder findet sein Wappen."
+        },
+        {
+          "time": "15:35",
+          "title": "Drachen-Wurf",
+          "description": "Plüsch-Drache (großer Stoff-Drache) als Ziel — Wurfsäckchen treffen den Drachen, alle gemeinsam."
+        },
+        {
+          "time": "15:50",
+          "title": "Burg-Snack-Pause",
+          "description": "'Ritter-Brote' (Toast in Schwert-Form), Apfelschnitze, Schorle."
+        },
+        {
+          "time": "16:10",
+          "title": "Kleine Burg-Erstürmung",
+          "description": "Kissen-Burg aufstellen, alle Ritter besiegen sie gemeinsam (sanft)."
+        },
+        {
+          "time": "16:25",
+          "title": "Königs-Krönung + Foto",
+          "description": "Jedes Kind wird gekrönt, Foto mit Schild und Krone."
+        }
+      ],
+      "games": [
+        {
+          "name": "🛡️ Wappen-Schmücken",
+          "duration": 25,
+          "minAge": 3,
+          "outdoor": false,
+          "indoor": true,
+          "material": "6 vorgeschnittene Pappkarton-Schilde (DIN A3, oval), Sticker (Sterne, Drachen, Kronen), Filzstifte, Goldfolie-Aufkleber, Klebepads",
+          "safetyRule": "Keine Schere für Kinder — Schilde sind vorgeschnitten. Kein Sekundenkleber, nur Klebepads.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Schild aussuchen",
+              "content": "Jedes Kind nimmt ein vorbereitetes Schild + schreibt seinen Ritter-Namen darauf."
+            },
+            {
+              "n": 2,
+              "name": "Wappen wählen",
+              "content": "Sticker/Goldfolie aussuchen — Drache, Krone, Stern, Schwert. Klebepads anbringen."
+            },
+            {
+              "n": 3,
+              "name": "Filzstifte verzieren",
+              "content": "Rahmen + Muster malen — mit dicken Filzstiften, leichter zu halten."
+            },
+            {
+              "n": 4,
+              "name": "Foto vom fertigen Schild",
+              "content": "Jedes Kind hält stolz sein Schild hoch."
+            }
+          ],
+          "loudness": "leise",
+          "effort": "hoch",
+          "prepText": "6-8 Pappkarton-Schilde (oval, A3) + Sticker-Bögen mit Wappen-Symbolen (Löwe, Stern, Schwert, Adler) + Wachsmalstifte + große Filzstifte + Klebepunkte. 10 Min Vorlauf — Tisch-Setup mit Material pro Kind in Bündeln.",
+          "ageAdjust6": "Bei 3-Jährigen: Aufkleber + Wachsmalstifte (keine Filzstifte — Klamotten-Schutz!). Vorlagen-Schilde, kein Frei-Design.",
+          "ageAdjust8": "Bei 5-Jährigen: Filzstifte für Details, eigenes Wappen-Konzept (1 Tier + 2 Farben). Erste Heraldik-Idee einführen.",
+          "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Schilde flach. Trocken-Bereich für fertige Werke auf der Seite.",
+          "outdoorTip": "Im Garten am Klapptisch — Wind kann Sticker wegfliegen. Pavillon-Schatten für Klebe-Material.",
+          "whyItWorksTitle": "Warum eigenes Wappen schmücken 3-5-Jährige stolz macht",
+          "whyItWorks": "Das eigene Wappen ist der erste Ritter-Identitäts-Anker — mein Wappen, mein Schild, ich bin Ritter. 3-5-Jährige tragen ihre Werke mit Stolz heim, zeigen es Eltern und Großeltern. Mitnehm-Stück."
+        },
+        {
+          "name": "🐉 Drachen-Wurf (Gemeinsam-Besiegen)",
+          "duration": 15,
+          "minAge": 3,
+          "outdoor": true,
+          "indoor": true,
+          "material": "1 großer Plüsch-Drache (50 cm) oder Drachen-Bild auf Pappe, 6 weiche Wurfsäckchen, optional eine 'Burg-Mauer' aus Stuhllehnen",
+          "safetyRule": "Wurfsäckchen mit Reiskörnchen oder Bohnen (Stoff-Säckchen, keine harten Bälle). Wurfdistanz max 2 m. Niemand steht neben dem Drachen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Drachen vorstellen",
+              "content": "'Der Drache hat die Burg-Schätze versteckt! Wir müssen ihn besiegen, gemeinsam.'"
+            },
+            {
+              "n": 2,
+              "name": "Wurfsäckchen",
+              "content": "Jeder bekommt 1 Säckchen. Reihum 1 Wurf. Alle Ritter dürfen mehrere Runden."
+            },
+            {
+              "n": 3,
+              "name": "Drachen 'fällt'",
+              "content": "Du legst den Drachen flach hin nach 5-6 Treffern. 'Sieg!' alle jubeln."
+            }
+          ],
+          "loudness": "laut",
+          "effort": "mittel",
+          "prepText": "1 großer Plüsch-Drache oder Pappkarton-Drache (Tisch-Größe) + 6 weiche Stoffbälle als \"Drachen-Eier\" oder Wurfsäckchen + Sicherheits-Markierung auf dem Boden. 10 Min Vorlauf.",
+          "ageAdjust6": "Bei 3-Jährigen: weiche Stoff-Bälle ohne harte Kerne, Wurf-Distanz 1 m, alle dürfen werfen (keine Reihenfolge). Drache \"fällt\" am Ende symbolisch um.",
+          "ageAdjust8": "Bei 5-Jährigen: Wurf-Distanz 1,5-2 m, Reihenfolge nach Knappen-Karte. Drache wird gemeinsam besiegt — kein einzelner Sieger.",
+          "indoorTip": "Im Wohnzimmer ideal — Drache an Wand befestigt oder auf Stuhl positioniert. Möbel-Sicherheits-Zone von 1 m um die Wurf-Stelle freihalten.",
+          "outdoorTip": "Im Garten am Pavillon oder an Spielgerüst. Pappkarton-Drache wind-resistent fixieren.",
+          "whyItWorksTitle": "Warum Drachen-Wurf 3-5-Jährige fesselt",
+          "whyItWorks": "Das gemeinsame Besiegen des Drachen ist der archetypische Ritter-Moment — kein Wettkampf, sondern Team-Sieg. 3-5-Jährige lieben den Moment, wenn der Drache \"stirbt\" (umfällt) und alle gemeinsam Helden sind."
+        }
+      ],
+      "food": "🍞 Ritter-Brote (Toast in Schwert-Form geschnitten, 6 Stk.)\n🍎 Apfelschnitze (1 Schale)\n🥨 Brezeln (Burg-Snack)\n🥕 Karotten-Sticks (Drachenzähne)\n🥤 'Ritter-Schorle' (Apfelsaft, 1,5 L)\n🎂 Burg-Kuchen (Kastenkuchen mit Türmchen aus Waffeln)",
+      "decoration": "🏰 'Burgtor'-Schild am Eingang\n⚔️ Pappkarton-Schwerter an der Wand\n🐉 Großer Plüsch-Drache auf dem Tisch\n👑 Krone-Girlande\n🛡️ Wappen-Banner (Pappkarton)",
+      "giveaways": "👑 Ritter-Krone (selbstgebastelt)\n🛡️ Eigenes Wappen-Schild\n⚔️ Pool-Nudel-Schwert\n🍫 'Burg-Schatz'-Tüte (Schoko-Münzen)",
+      "shoppingList": [
+        {
+          "emoji": "🛡️",
+          "label": "Pappkarton + Goldfolie (Schilde)",
+          "url": null,
+          "priceEur": 8,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Kern-Identität — Schild macht den Ritter."
+        },
+        {
+          "emoji": "⚔️",
+          "label": "Pool-Nudeln 6er (Schwerter)",
+          "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht-21",
+          "priceEur": 12,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Weiche Schwerter — Sicherheit + Spielspaß."
+        },
+        {
+          "emoji": "👑",
+          "label": "Pappkarton-Kronen + Goldfolie",
+          "url": null,
+          "priceEur": 6,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Krönung am Ende."
+        },
+        {
+          "emoji": "🐉",
+          "label": "Großer Plüsch-Drache",
+          "url": null,
+          "priceEur": 18,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Drachen-Wurf-Highlight. Eventuell second hand."
+        },
+        {
+          "emoji": "🎨",
+          "label": "Sticker + Filzstifte + Klebepads",
+          "url": null,
+          "priceEur": 8,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Wappen-Schmücken."
+        },
+        {
+          "emoji": "🥨",
+          "label": "Wurfsäckchen 6er (oder DIY mit Reis)",
+          "url": null,
+          "priceEur": 4,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Drachen-Wurf-Material."
+        },
+        {
+          "emoji": "🥕",
+          "label": "Snacks + Drachenzähne (Karotten)",
+          "url": null,
+          "priceEur": 8,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Burg-Thema im Essen."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Burg-Kuchen-Material",
+          "url": null,
+          "priceEur": 6,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Thematischer Kuchen mit Türmchen."
+        }
+      ],
+      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
+      "estimatedCostEur": 70,
+      "savingsTip": {
+        "title": "💡 Warum kostet „Minimal\" 70 €?",
+        "body": "Pool-Nudel-Schwerter (~12 € für 6) + Pappkarton-Schilde (~15 € fertig oder kostenlos selbst) + Wappen-Bastel-Material sind der Kern. Spar-Trick: Schilde aus alten Pizza-Kartons (Amazon-Boxen!) selbst schneiden und nur Stifte kaufen → spart 12 €. Damit liegt Minimal bei ~55-60 € statt 70 €."
+      }
+    },
+    {
+      "id": "standard",
+      "label": "Standard — 2,5 Stunden, vier Burg-Stationen",
+      "headline": "🏰 Standard — 2,5 Stunden Burg-Tag",
+      "intro": "Der Allrounder für 6–8 Kinder: Wappen-Schmücken + Schwert-Übung am Polster + Drachen-Wurf + Burg-Erstürmung + finale Krönung. Genug Action, dazwischen Ruhe-Phasen.",
+      "timeWindow": "14:30–17:00, 8 Kinder",
+      "schedule": [
+        {
+          "time": "14:30",
+          "title": "Ankunft + Ritter werden",
+          "description": "Schild, Pool-Nudel-Schwert, Lehrlings-Spruch."
+        },
+        {
+          "time": "14:45",
+          "title": "Wappen-Schmücken",
+          "description": "Jeder gestaltet sein Schild — Sticker, Goldfolie, Filzstifte."
+        },
+        {
+          "time": "15:15",
+          "title": "Schwert-Übung am Polster",
+          "description": "Sicheres Schwertkampf-Training: Schwert trifft Polster (kein Körper)."
+        },
+        {
+          "time": "15:35",
+          "title": "Burg-Snack-Pause",
+          "description": "Ritter-Brote, Drachen-Zähne (Karotten), Schorle, Burg-Kuchen."
+        },
+        {
+          "time": "16:05",
+          "title": "Drachen-Wurf",
+          "description": "Plüsch-Drache als Ziel, 2 Teams treffen ihn gemeinsam."
+        },
+        {
+          "time": "16:25",
+          "title": "Burg-Erstürmung",
+          "description": "Kissen-Burg gemeinsam erobern (sanft, kein Drängeln)."
+        },
+        {
+          "time": "16:45",
+          "title": "Königs-Krönung + Foto",
+          "description": "Jeder wird einzeln gekrönt, Gruppenfoto."
+        }
+      ],
+      "games": [
+        {
+          "name": "🛡️ Wappen-Schmücken (Ausführlich)",
+          "duration": 30,
+          "minAge": 3,
+          "outdoor": false,
+          "indoor": true,
+          "material": "8 vorgeschnittene Schilde, Goldfolie-Sticker, Filzstifte, Glitzer-Stifte, Klebepads, kleine Drachen-Sticker",
+          "safetyRule": "Keine Schere für Kinder, kein Sekundenkleber.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Schild + Name",
+              "content": "Jeder schreibt seinen Ritter-Namen aufs Schild."
+            },
+            {
+              "n": 2,
+              "name": "Wappen wählen",
+              "content": "Drache, Krone, Stern, Burg — Symbol aussuchen."
+            },
+            {
+              "n": 3,
+              "name": "Goldfolie + Glitzer",
+              "content": "Goldfolie als Rahmen, Glitzer-Stift für Sterne."
+            },
+            {
+              "n": 4,
+              "name": "Stolz präsentieren",
+              "content": "Jeder zeigt sein Schild den anderen."
+            }
+          ],
+          "loudness": "leise",
+          "effort": "hoch",
+          "prepText": "6-8 Pappkarton-Schilde (oval, A3) + Sticker-Bögen mit Wappen-Symbolen (Löwe, Stern, Schwert, Adler) + Wachsmalstifte + große Filzstifte + Klebepunkte. 10 Min Vorlauf — Tisch-Setup mit Material pro Kind in Bündeln.",
+          "ageAdjust6": "Bei 3-Jährigen: Aufkleber + Wachsmalstifte (keine Filzstifte — Klamotten-Schutz!). Vorlagen-Schilde, kein Frei-Design.",
+          "ageAdjust8": "Bei 5-Jährigen: Filzstifte für Details, eigenes Wappen-Konzept (1 Tier + 2 Farben). Erste Heraldik-Idee einführen.",
+          "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Schilde flach. Trocken-Bereich für fertige Werke auf der Seite.",
+          "outdoorTip": "Im Garten am Klapptisch — Wind kann Sticker wegfliegen. Pavillon-Schatten für Klebe-Material.",
+          "whyItWorksTitle": "Warum eigenes Wappen schmücken 3-5-Jährige stolz macht",
+          "whyItWorks": "Das eigene Wappen ist der erste Ritter-Identitäts-Anker — mein Wappen, mein Schild, ich bin Ritter. 3-5-Jährige tragen ihre Werke mit Stolz heim, zeigen es Eltern und Großeltern. Mitnehm-Stück."
+        },
+        {
+          "name": "⚔️ Schwert-Übung am Polster",
+          "duration": 20,
+          "minAge": 4,
+          "outdoor": true,
+          "indoor": true,
+          "material": "8 Pool-Nudel-Schwerter (40 cm), 2-3 Sofa-Kissen oder Polster als Übungsziele, optional Schwert-Anleitungsfilm aus Pappe",
+          "safetyRule": "REGEL #1: Schwert trifft nur Polster, NIE Körper. Eltern-Helfer beobachten. Max 3 Min pro Kind, dann nächster.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Regel erklären",
+              "content": "'Wir treffen nur das Polster, nie das andere Kind. Wer das Kind trifft, übt zur Strafe Crunches am Boden.' (lustig, nicht streng)"
+            },
+            {
+              "n": 2,
+              "name": "Vor-Demo",
+              "content": "Du zeigst die Schwert-Bewegung: Hieb von oben, Hieb seitlich, Stoß. Sanft."
+            },
+            {
+              "n": 3,
+              "name": "Reihum üben",
+              "content": "Jeder kämpft 2 Min gegen das Polster. Du oder Helfer applaudiert."
+            },
+            {
+              "n": 4,
+              "name": "Eltern-Helfer als 'Gegner'",
+              "content": "Optional: Eltern hält das Polster vor sich, Kind kämpft gegen das Polster, Eltern reagiert dramatisch ('Ich bin getroffen!')."
+            }
+          ],
+          "loudness": "mittel",
+          "effort": "mittel",
+          "prepText": "6 Pool-Nudel-Schwerter (40 cm für 3-5) + 1-2 große Polster (Bett-Polster oder Sofa-Kissen) als Ziel + Sicherheits-Markierung 1 m um das Polster. 10 Min Vorlauf — Regel-Erklärung vor Beginn essenziell.",
+          "ageAdjust6": "Bei 3-Jährigen: kürzeste Pool-Nudel (30-40 cm), nur \"Schlag aufs Polster\" als einzige Bewegung. Niemand schlägt auf Kinder.",
+          "ageAdjust8": "Bei 5-Jährigen: Pool-Nudel 40-50 cm, 2-Schritt-Übung (Hieb + Rück-Schlag aufs Polster). Trotzdem nie Kind gegen Kind.",
+          "indoorTip": "Im Wohnzimmer mit Polster auf Sofa befestigt — Sicherheits-Abstand zu Möbel-Kanten 1 m.",
+          "outdoorTip": "Im Garten am Pavillon-Pfosten oder gegen Strohballen — sicherer als drinnen, mehr Bewegungs-Freiheit.",
+          "whyItWorksTitle": "Warum Pool-Nudel-Schwert-Übung sicher und spannend ist",
+          "whyItWorks": "Pool-Nudel-Schwert sieht aus wie echtes Schwert, ist aber komplett sicher. 3-5-Jährige fühlen sich als echte Ritter, Eltern müssen nicht zittern. Polster-Ziel verhindert Frust (man trifft IMMER)."
+        },
+        {
+          "name": "🐉 Drachen-Wurf (Team-Version)",
+          "duration": 20,
+          "minAge": 3,
+          "outdoor": true,
+          "indoor": true,
+          "material": "1 großer Plüsch-Drache, 8 Wurfsäckchen, optional eine 'Burg-Mauer' aus Stuhllehnen",
+          "safetyRule": "Säckchen ohne harte Inhalte. Wurfdistanz 2-3 m. Niemand steht neben dem Drachen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "2 Teams bilden",
+              "content": "Team Rote Wappen, Team Blaue Wappen."
+            },
+            {
+              "n": 2,
+              "name": "Reihum werfen",
+              "content": "Jeder Ritter wirft 3 Säckchen Richtung Drache."
+            },
+            {
+              "n": 3,
+              "name": "Sieg gemeinsam",
+              "content": "Nach allen Würfen: 'Der Drache ist besiegt!' Alle jubeln, der Drache fällt."
+            }
+          ],
+          "loudness": "laut",
+          "effort": "mittel",
+          "prepText": "1 großer Plüsch-Drache oder Pappkarton-Drache (Tisch-Größe) + 6 weiche Stoffbälle als \"Drachen-Eier\" oder Wurfsäckchen + Sicherheits-Markierung auf dem Boden. 10 Min Vorlauf.",
+          "ageAdjust6": "Bei 3-Jährigen: weiche Stoff-Bälle ohne harte Kerne, Wurf-Distanz 1 m, alle dürfen werfen (keine Reihenfolge). Drache \"fällt\" am Ende symbolisch um.",
+          "ageAdjust8": "Bei 5-Jährigen: Wurf-Distanz 1,5-2 m, Reihenfolge nach Knappen-Karte. Drache wird gemeinsam besiegt — kein einzelner Sieger.",
+          "indoorTip": "Im Wohnzimmer ideal — Drache an Wand befestigt oder auf Stuhl positioniert. Möbel-Sicherheits-Zone von 1 m um die Wurf-Stelle freihalten.",
+          "outdoorTip": "Im Garten am Pavillon oder an Spielgerüst. Pappkarton-Drache wind-resistent fixieren.",
+          "whyItWorksTitle": "Warum Drachen-Wurf 3-5-Jährige fesselt",
+          "whyItWorks": "Das gemeinsame Besiegen des Drachen ist der archetypische Ritter-Moment — kein Wettkampf, sondern Team-Sieg. 3-5-Jährige lieben den Moment, wenn der Drache \"stirbt\" (umfällt) und alle gemeinsam Helden sind."
+        },
+        {
+          "name": "🏰 Burg-Erstürmung",
+          "duration": 20,
+          "minAge": 3,
+          "outdoor": true,
+          "indoor": true,
+          "material": "8-10 Sofa-Kissen oder Polster für 'Burg-Mauer' (1m hoch, 2m breit), kleine Schaumstoff-Bälle oder Tennisbälle weich",
+          "safetyRule": "Kissen-Burg max 1m hoch — nicht zu Klettern verleiten. Bei Sturz: Burg fällt sanft.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Burg aufbauen",
+              "content": "Du baust mit Helfer eine Kissen-Burg im Wohnzimmer. Davor 2m Abstand."
+            },
+            {
+              "n": 2,
+              "name": "Ritter angreifen",
+              "content": "Alle Kinder gemeinsam: rennen los, werfen Kissen-Bälle an die Burg, brechen Mauer durch."
+            },
+            {
+              "n": 3,
+              "name": "Sieg-Tanz",
+              "content": "Wenn Burg eingefallen: alle springen darüber, lachen, 'Sieg!'"
+            }
+          ],
+          "loudness": "laut",
+          "effort": "mittel",
+          "prepText": "1 Kissen-Burg-Konstruktion (8-12 Kissen aufgestapelt zu Mauern und Türmen) + 6-8 weiche Stoffbälle als \"Belagerungs-Kugeln\". Sicherheits-Markierung auf dem Boden 1,5 m von der Burg. 15 Min Vorlauf für Burg-Aufbau.",
+          "ageAdjust6": "Bei 3-Jährigen: Kissen-Burg niedriger (max 80 cm), weichste Bälle ohne Schaumkern. Belagerung in 2 Wellen, alle gleichzeitig werfen.",
+          "ageAdjust8": "Bei 5-Jährigen: Burg höher (1 m), Belagerung in 3 Wellen mit Pause dazwischen für taktische Diskussion (\"wo gehen wir hin?\").",
+          "indoorTip": "Im Wohnzimmer mit großer Stoff-Decke unter der Burg — Kissen fallen weich. Möbel verschieben für 2 m Spielzone.",
+          "outdoorTip": "Im Garten am besten — wenn die Burg fällt, fallen Kissen ins Gras, kein Geräusch-Stress.",
+          "whyItWorksTitle": "Warum Burg-Erstürmung der Ritter-Moment ist",
+          "whyItWorks": "Burg-Erstürmung ist der epische Ritter-Höhepunkt — Team-Sieg, sichtbarer Erfolg (Burg fällt zusammen), und der Stolz-Moment \"wir haben sie erobert\". Für 3-5-Jährige sicherer Übergang zu Wettkampf-Elementen."
+        }
+      ],
+      "food": "🍞 Ritter-Brote (Toast in Schwert-Form, 12 Stk.)\n🍎 Apfelschnitze + Birnen\n🥕 Drachen-Zähne (Karotten)\n🥨 Burg-Brezeln (1 Päckchen)\n🥤 Ritter-Schorle (3 L)\n🎂 Burg-Kuchen mit Türmchen",
+      "decoration": "🏰 'Burgtor'-Schild + Banner\n⚔️ Pappkarton-Schwerter an Wand\n🐉 Plüsch-Drache + Drachen-Bild\n👑 Krone-Girlande\n🛡️ Wappen-Banner\n🪵 Stroh-Bunde (Krepp)",
+      "giveaways": "👑 Eigene Ritter-Krone\n🛡️ Selbst-gemaltes Schild\n⚔️ Pool-Nudel-Schwert (zum Mitnehmen)\n🍫 Burg-Schatz-Tüte\n📓 Ritter-Sticker-Block",
+      "shoppingList": [
+        {
+          "emoji": "🛡️",
+          "label": "Pappkarton + Folien (8 Schilde)",
+          "url": null,
+          "priceEur": 12,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "8 Kinder, 8 Schilde."
+        },
+        {
+          "emoji": "⚔️",
+          "label": "Pool-Nudeln (8 Schwerter)",
+          "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht-21",
+          "priceEur": 16,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Schwerter, sicher."
+        },
+        {
+          "emoji": "👑",
+          "label": "Kronen (8er + Goldfolie)",
+          "url": null,
+          "priceEur": 10,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Krönungs-Ritual."
+        },
+        {
+          "emoji": "🐉",
+          "label": "Plüsch-Drache + Drachen-Bild",
+          "url": null,
+          "priceEur": 20,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Drachen-Spiel-Zentrum."
+        },
+        {
+          "emoji": "🎨",
+          "label": "Bastel-Set (Sticker, Filzstifte, Glitzer)",
+          "url": null,
+          "priceEur": 12,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Wappen-Schmücken."
+        },
+        {
+          "emoji": "🥨",
+          "label": "Wurfsäckchen + Schaum-Bälle",
+          "url": null,
+          "priceEur": 6,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Drachen-Wurf + Burg-Erstürmung."
+        },
+        {
+          "emoji": "🥕",
+          "label": "Snacks + Drachen-Zähne",
+          "url": null,
+          "priceEur": 12,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Burg-Thema."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Burg-Kuchen-Material",
+          "url": null,
+          "priceEur": 8,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Mit Waffel-Türmen."
+        },
+        {
+          "emoji": "🛏️",
+          "label": "Sofa-Kissen / Polster (eigene OK)",
+          "url": null,
+          "priceEur": 0,
+          "hasAffiliate": false,
+          "category": "optional",
+          "categoryReasoning": "Aus dem Haushalt."
+        }
+      ],
+      "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
+      "estimatedCostEur": 96,
+      "savingsTip": {
+        "title": "💡 Spar-Trick — Schilde selbst aus Pappkarton",
+        "body": "Gekaufte Pappschilde (8 Stk ~22 €) vs selbst geschnittene aus Pizza-Kartons (kostenlos). Pool-Nudel-Schwerter sind unverzichtbar — nicht durch Holz ersetzen. Knappen-Hefte zuhause am PC drucken statt drucken lassen → spart 8-10 €. Damit liegt Standard bei ~75-80 € statt 96 €."
+      }
+    },
+    {
+      "id": "wow",
+      "label": "Wow — 3 Stunden, der ganze Burg-Tag (eher 4-5 Jahre)",
+      "headline": "🎉 Wow — 3 Stunden voller Burg-Tag",
+      "intro": "Für den großen Bahnhof mit 8–10 Kindern: ein durchgehender Burg-Tag mit Komplett-Verkleidung, Wappen-Werkstatt, Schwert-Akademie, Drachen-Wurf-Turnier, Burg-Erstürmung und finaler Großer Krönungs-Zeremonie. Mehr Aufwand — Wow-Effekt garantiert.",
+      "timeWindow": "14:00–17:00, 8–10 Kinder",
+      "schedule": [
+        {
+          "time": "14:00",
+          "title": "Burg-Empfang + Verkleidung",
+          "description": "Schild, Schwert, Lehrlings-Cape (Stoff). Jedes Kind fotografiert für Ritter-Akte."
+        },
+        {
+          "time": "14:20",
+          "title": "Wappen-Werkstatt",
+          "description": "Schild ausführlich gestalten — Goldfolie, Glitzer, eigener Schlachtruf."
+        },
+        {
+          "time": "14:50",
+          "title": "Schwert-Akademie",
+          "description": "Schwert-Übung am Polster, Hieb-Lehre, sicheres Üben."
+        },
+        {
+          "time": "15:15",
+          "title": "Burg-Snack-Pause",
+          "description": "Großes Buffet — Ritter-Brote, Drachen-Zähne, Burg-Kuchen, Schorle."
+        },
+        {
+          "time": "15:45",
+          "title": "Drachen-Wurf-Turnier",
+          "description": "Mehrere Runden, alle gewinnen — der Drache fällt."
+        },
+        {
+          "time": "16:10",
+          "title": "Große Burg-Erstürmung",
+          "description": "Mit Eltern-Helfern: Sturm-Lauf, Mauer-Fall, alle gleichzeitig."
+        },
+        {
+          "time": "16:35",
+          "title": "Königs-Zeremonie + Schwur",
+          "description": "Feierliche Krönung jedes Kindes mit 'Ich bin König/Königin' + Pose-Foto."
+        },
+        {
+          "time": "16:55",
+          "title": "Abschluss + Mitgebsel",
+          "description": "Burg-Tüten + Foto-Karten verteilen."
+        }
+      ],
+      "games": [
+        {
+          "name": "⚔️ Schwert-Akademie (Wow-Erweiterung)",
+          "duration": 25,
+          "minAge": 4,
+          "outdoor": true,
+          "indoor": true,
+          "material": "10 Pool-Nudel-Schwerter, 3 Polster-Ziele, Burg-Wache-Anleitung (Pappkarton)",
+          "safetyRule": "Schwert trifft NUR Polster. Bei reinen 3-Jährigen weglassen oder stark vereinfachen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Vor-Demo der Bewegung",
+              "content": "Du zeigst: Hieb von oben, Hieb seitlich, Stoß. Jede Bewegung 3x."
+            },
+            {
+              "n": 2,
+              "name": "Lehrlings-Pose",
+              "content": "Jeder Ritter steht in Stellung (Schwert hoch, Schild vor)."
+            },
+            {
+              "n": 3,
+              "name": "Übungs-Runden",
+              "content": "Reihum 1 Min am Polster üben. Eltern als 'Gegner' mit Polster."
+            },
+            {
+              "n": 4,
+              "name": "Ritterschlag",
+              "content": "Du oder König schlägt jedem Ritter auf die Schulter — 'Du bist ein guter Ritter!'"
+            }
+          ],
+          "loudness": "mittel",
+          "effort": "mittel",
+          "prepText": "8 Pool-Nudel-Schwerter (40-50 cm) + 3 Polster + 1-2 Strohballen-Ersatz (Pappkartons mit Stoffumhüllung) + Stempel für Knappen-Ernennung. 15 Min Vorlauf für Akademie-Ablauf.",
+          "ageAdjust6": "Nicht primär für 6 — Akademie-Format ist klein-wow Phase. Bei Mischgruppe: nur Schwert-Übung-Variante, keine Akademie-Lektion.",
+          "ageAdjust8": "Bei 5-Jährigen als Wow-Erweiterung: 3 Akademie-Lektionen (Hieb / Block / Salut), Schwert-Knappen-Ernennung am Ende.",
+          "indoorTip": "Im Wohnzimmer als Ritter-Akademie mit klarer Stationen-Aufstellung. Polster + Strohballen an verschiedenen Punkten.",
+          "outdoorTip": "Im Garten als \"Burgvorhof\" — Strohballen für Hieb-Übung, Pavillon als Akademie-Tor.",
+          "whyItWorksTitle": "Warum eine Schwert-Akademie als Wow-Phase trägt",
+          "whyItWorks": "Schwert-Akademie schafft eine echte Lern-Phase mit klaren Lektionen (Hieb, Block, Salut). Bei 5-Jährigen mit Eltern-Begleitung großartig, weil Ritter-Eltern als \"Akademie-Lehrer\" mitspielen."
+        },
+        {
+          "name": "🐉 Drachen-Wurf-Turnier",
+          "duration": 25,
+          "minAge": 3,
+          "outdoor": true,
+          "indoor": true,
+          "material": "1 großer Plüsch-Drache (60 cm), 12 Wurfsäckchen, kleine Belohnungen (Sticker oder Schoko-Münzen)",
+          "safetyRule": "Säckchen weich, Wurfdistanz 2-3 m.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Drachen-Geschichte",
+              "content": "'Der Drache hat den Burg-Schatz versteckt. Wir müssen ihn besiegen, dann finden wir den Schatz!'"
+            },
+            {
+              "n": 2,
+              "name": "Reihum + Turnier",
+              "content": "Jeder hat 3 Würfe pro Runde, 3 Runden insgesamt. Alle Treffer zählen für Team-Sieg."
+            },
+            {
+              "n": 3,
+              "name": "Drachen fällt",
+              "content": "Nach allen Runden: Drache 'gibt auf', fällt um. Schatz-Tüten kommen zum Vorschein."
+            }
+          ],
+          "loudness": "laut",
+          "effort": "mittel",
+          "prepText": "1 großer Plüsch-Drache oder Pappkarton-Drache (Tisch-Größe) + 6 weiche Stoffbälle als \"Drachen-Eier\" oder Wurfsäckchen + Sicherheits-Markierung auf dem Boden. 10 Min Vorlauf.",
+          "ageAdjust6": "Bei 3-Jährigen: weiche Stoff-Bälle ohne harte Kerne, Wurf-Distanz 1 m, alle dürfen werfen (keine Reihenfolge). Drache \"fällt\" am Ende symbolisch um.",
+          "ageAdjust8": "Bei 5-Jährigen: Wurf-Distanz 1,5-2 m, Reihenfolge nach Knappen-Karte. Drache wird gemeinsam besiegt — kein einzelner Sieger.",
+          "indoorTip": "Im Wohnzimmer ideal — Drache an Wand befestigt oder auf Stuhl positioniert. Möbel-Sicherheits-Zone von 1 m um die Wurf-Stelle freihalten.",
+          "outdoorTip": "Im Garten am Pavillon oder an Spielgerüst. Pappkarton-Drache wind-resistent fixieren.",
+          "whyItWorksTitle": "Warum Drachen-Wurf 3-5-Jährige fesselt",
+          "whyItWorks": "Das gemeinsame Besiegen des Drachen ist der archetypische Ritter-Moment — kein Wettkampf, sondern Team-Sieg. 3-5-Jährige lieben den Moment, wenn der Drache \"stirbt\" (umfällt) und alle gemeinsam Helden sind."
+        },
+        {
+          "name": "🏰 Burg-Erstürmung (Wow-Version)",
+          "duration": 25,
+          "minAge": 3,
+          "outdoor": true,
+          "indoor": true,
+          "material": "Große Kissen-Burg (1m hoch), 10 weiche Schaum-Bälle, Eltern-Helfer als Burg-Verteidiger",
+          "safetyRule": "Burg fällt sanft. Kein Klettern. Eltern stehen bereit, nichts fällt auf Kinder.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Burg vorbereiten",
+              "content": "Du baust mit Eltern-Helfer eine massive Kissen-Burg."
+            },
+            {
+              "n": 2,
+              "name": "Ritter sammeln",
+              "content": "Alle Kinder mit Schild + Schwert in Reihe."
+            },
+            {
+              "n": 3,
+              "name": "Sturm-Lauf",
+              "content": "Auf Signal: alle rennen, werfen Bälle, drücken Burg um."
+            },
+            {
+              "n": 4,
+              "name": "Sieg gemeinsam",
+              "content": "Burg gefallen, alle Ritter umarmen sich — 'Wir haben die Burg eingenommen!'"
+            }
+          ],
+          "loudness": "laut",
+          "effort": "mittel",
+          "prepText": "1 Kissen-Burg-Konstruktion (8-12 Kissen aufgestapelt zu Mauern und Türmen) + 6-8 weiche Stoffbälle als \"Belagerungs-Kugeln\". Sicherheits-Markierung auf dem Boden 1,5 m von der Burg. 15 Min Vorlauf für Burg-Aufbau.",
+          "ageAdjust6": "Bei 3-Jährigen: Kissen-Burg niedriger (max 80 cm), weichste Bälle ohne Schaumkern. Belagerung in 2 Wellen, alle gleichzeitig werfen.",
+          "ageAdjust8": "Bei 5-Jährigen: Burg höher (1 m), Belagerung in 3 Wellen mit Pause dazwischen für taktische Diskussion (\"wo gehen wir hin?\").",
+          "indoorTip": "Im Wohnzimmer mit großer Stoff-Decke unter der Burg — Kissen fallen weich. Möbel verschieben für 2 m Spielzone.",
+          "outdoorTip": "Im Garten am besten — wenn die Burg fällt, fallen Kissen ins Gras, kein Geräusch-Stress.",
+          "whyItWorksTitle": "Warum Burg-Erstürmung der Ritter-Moment ist",
+          "whyItWorks": "Burg-Erstürmung ist der epische Ritter-Höhepunkt — Team-Sieg, sichtbarer Erfolg (Burg fällt zusammen), und der Stolz-Moment \"wir haben sie erobert\". Für 3-5-Jährige sicherer Übergang zu Wettkampf-Elementen."
+        }
+      ],
+      "food": "🎂 Burg-Kuchen mit Türmen (Hauptkuchen, Wow-Highlight)\n🍞 Ritter-Brote (15 Stk., Schwert-Form)\n🥕 Drachen-Zähne (3 Schalen)\n🍎 Apfelschnitze + Trauben\n🥨 Burg-Brezeln\n🥤 Ritter-Schorle (4 L)\n🍫 Schoko-Münzen als 'Burg-Schatz'",
+      "decoration": "🏰 Großes 'Burgtor'-Schild + Banner\n⚔️ Pappkarton-Schwerter an Wand\n🐉 2 Plüsch-Drachen\n👑 Krone-Girlande\n🛡️ 8 Wappen-Banner\n🪵 Stroh-Bunde\n🎌 Ritter-Flaggen",
+      "giveaways": "👑 Große Ritter-Krone\n🛡️ Selbst-gemaltes Schild\n⚔️ Pool-Nudel-Schwert\n🌟 Ritter-Pin\n🍫 Burg-Schatz-Tüte\n📓 Ritter-Sticker-Block + Ritter-Stift",
+      "shoppingList": [
+        {
+          "emoji": "🛡️",
+          "label": "Pappkarton + Folien (10 Schilde)",
+          "url": null,
+          "priceEur": 16,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Pro Kind 1 Schild."
+        },
+        {
+          "emoji": "⚔️",
+          "label": "Pool-Nudeln (10 Schwerter)",
+          "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht-21",
+          "priceEur": 20,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Schwerter sicher."
+        },
+        {
+          "emoji": "👑",
+          "label": "Pappkarton-Kronen (10er)",
+          "url": null,
+          "priceEur": 12,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Krönung."
+        },
+        {
+          "emoji": "🐉",
+          "label": "2 Plüsch-Drachen + Bilder",
+          "url": null,
+          "priceEur": 30,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Wow-Effekt."
+        },
+        {
+          "emoji": "🎨",
+          "label": "Bastel-Set (Sticker, Filzstifte, Glitzer)",
+          "url": null,
+          "priceEur": 15,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Wappen-Werkstatt."
+        },
+        {
+          "emoji": "🥨",
+          "label": "Wurfsäckchen + Schaum-Bälle (12er)",
+          "url": null,
+          "priceEur": 8,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Drachen-Wurf + Burg-Erstürmung."
+        },
+        {
+          "emoji": "🥕",
+          "label": "Snacks + Drachen-Zähne",
+          "url": null,
+          "priceEur": 15,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Buffet-Größe."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Burg-Kuchen-Material + Waffel-Türme",
+          "url": null,
+          "priceEur": 10,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Wow-Kuchen."
+        },
+        {
+          "emoji": "👕",
+          "label": "Lehrlings-Cape (Stoff, 10er DIY)",
+          "url": null,
+          "priceEur": 12,
+          "hasAffiliate": false,
+          "category": "optional",
+          "categoryReasoning": "Wow-Verkleidung."
+        },
+        {
+          "emoji": "🌟",
+          "label": "Ritter-Pins (10er)",
+          "url": null,
+          "priceEur": 6,
+          "hasAffiliate": false,
+          "category": "optional",
+          "categoryReasoning": "Mitgebsel-Detail."
+        }
+      ],
+      "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",
+      "estimatedCostEur": 144,
+      "savingsTip": {
+        "title": "💡 Spar-Trick — wenn 144 € zu viel ist",
+        "body": "Wow-Treiber: LED-Fackeln (~15 €) + Krone-Stoff für Eltern-Ritter-Verkleidung + Schoko-Münzen (~12 € als \"Burgschatz\" für Drachen-Wurf-Turnier) + Burg-Kuchen-XL-Material. Spar-Tricks: LED-Fackeln gebraucht aus Vorjahr (~−12 €), Wappenschilde selbst aus Pizza-Kartons (~−15 €), Schoko-Münzen in Bulk-Beutel statt einzeln (~−5 €). Damit liegt Wow bei ~110-120 € statt 144 €."
+      }
+    }
+  ],
+  "cakeRecipe": {
+    "name": "Burg-Kuchen mit Türmen",
+    "intro": "Burg-thematischer Kuchen: ein einfacher Kastenkuchen mit kleinen Waffel-Türmchen darauf und einem Schwert aus Zuckerguss als Highlight. Sieht aus wie eine Mini-Burg, schmeckt nach saftigem Geburtstagskuchen.",
+    "steps": [
+      {
+        "n": 1,
+        "content": "Marmor-Rührteig anrühren (250 g Mehl, 200 g Butter, 150 g Zucker, 4 Eier, 1 Pck. Backpulver). Hälfte mit 2 EL Kakao dunkel färben."
+      },
+      {
+        "n": 2,
+        "content": "Hellen und dunklen Teig abwechselnd in eine Kastenform geben. Mit Gabel einmal spiralig durchziehen."
+      },
+      {
+        "n": 3,
+        "content": "Bei 175 °C ca. 50–55 Minuten backen (Stäbchenprobe)."
+      },
+      {
+        "n": 4,
+        "content": "Komplett auskühlen lassen. Mit Schokoglasur überziehen — das ist die 'Burgmauer'."
+      },
+      {
+        "n": 5,
+        "content": "Aus Eistüten oder Waffel-Hörnchen 4 'Türme' auf den Kuchen stellen — als Burg-Ecken."
+      },
+      {
+        "n": 6,
+        "content": "Aus Puderzucker einen weißen Zuckerguss anrühren. Damit ein Schwert (oder Kreuz) auf die Burg-Front zeichnen."
+      },
+      {
+        "n": 7,
+        "content": "Optional: Mini-Marzipan-Ritter draufsetzen, oder Goldfolie-Kronen aus Esspapier."
+      }
+    ],
+    "meta": {
+      "aufwand": "60 Min. inkl. Backen + 15 Min. Deko",
+      "kosten": "ca. 7-9 €",
+      "allergiker": "Fertigmischungen oft allergenärmer. Waffel-Türme können Gluten/Soja enthalten — bei Allergikern auf glutenfreie Eistüten ausweichen."
+    },
+    "tips": [
+      {
+        "title": "🎂 Keine Lust zu backen?",
+        "body": "Bäcker-Kastenkuchen + Schokoglasur drüber + Waffel-Türme aufsetzen = 5 Min. Niemand merkt's."
+      },
+      {
+        "title": "⚔️ Pinterest-Falle vermeiden",
+        "body": "Pinterest zeigt 4-stündige Fondant-Burg-Türme mit beweglichen Zugbrücken. Für 3-5 Jahre ist das Overkill — sie wollen den Kuchen essen, nicht bestaunen. Ein einfacher Kastenkuchen mit 4 umgekehrten Eishörnchen als Türme reicht voll. Sieht trotzdem nach Burg aus."
+      }
+    ]
+  },
+  "parentTips": {
+    "structured": [
+      {
+        "topic": "🥜 Allergien VOR der Party abfragen",
+        "detail": "Schokokuchen, Waffeln, Brezeln — alle gängigen Allergene möglich. Frage nach und plane glutenfreie/laktosefreie Alternativen."
+      },
+      {
+        "topic": "⚔️ Schwert-Sicherheit ist alles",
+        "detail": "POOL-NUDEL ist die einzige sichere Schwert-Option für 3-5. KEIN Holz, KEIN Plastik mit Kanten. Regel: Schwert trifft nur Polster/Schild, nie Körper. Bei Verstoß: Pause."
+      },
+      {
+        "topic": "🐉 Niemand verliert",
+        "detail": "Bei 3-5 keinen einzelnen 'Sieger' bestimmen. Drache wird gemeinsam besiegt, Burg gemeinsam erstürmt, alle gemeinsam gekrönt. Wettkampf zerstört die Stimmung."
+      },
+      {
+        "topic": "👥 Ab 8 Kindern zweite Hand",
+        "detail": "Bei 8+ Kindern brauchst du eine zweite erwachsene Begleitung — vor allem für Schwert-Akademie und Burg-Erstürmung."
+      },
+      {
+        "topic": "📋 Plan B bei Regen",
+        "detail": "Alle Spiele funktionieren komplett drinnen. Wappen-Schmücken am Tisch, Schwert-Übung im Flur, Burg-Erstürmung im Wohnzimmer."
+      },
+      {
+        "topic": "⏱️ Aktion-Pause-Wechsel",
+        "detail": "Nach 10 Min Bewegung: 15 Min Sitz-Aktivität (Schild bemalen, Snack-Pause). Sonst überdreht."
+      },
+      {
+        "topic": "🕯️ NIEMALS echte Flammen",
+        "detail": "Mittelalter-Atmosphäre nur mit LED-Kerzen + LED-Fackeln. Echte Kerzen oder Fackeln sind bei einer 3-5-Kinderparty fahrlässig — Pappschilde, Stoff-Drache, Strohballen sind brennbar. Akku-LED-Fackeln gibt es ab 3 € pro Stück."
+      },
+      {
+        "topic": "🪑 Nachbarn vorwarnen bei Mietwohnung",
+        "detail": "Burg-Erstürmung mit Pool-Nudel-Schwert-Klatschen wird LAUT. Bei Mietshaus: Nachbarn vorher kurz informieren und ggf. ein Stück Kuchen vorbeibringen. Spart Beschwerden."
+      },
+      {
+        "topic": "📱 Partyseite statt WhatsApp-Chaos",
+        "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite. Kostenlos."
+      }
+    ],
+    "educationalValue": "Bei der Ritter-Party üben Kinder ganz nebenbei: Rolle annehmen und stolz sein (Ritter-Identität als Selbstwert), sanfte Bewegung (Schwertkampf-Regeln = Selbstkontrolle), Teamwork (gemeinsamer Drachen-Sieg, gemeinsame Burg-Erstürmung) und Selbstvertrauen (jeder wird gekrönt). Plus: die Wappen-Bastelei trainiert Feinmotorik und Farbsinn."
+  },
+  "invitationTemplate": "⚔️ Burg-Einladung per WhatsApp: 'Hört, hört! [Name] wird [Alter] und lädt zum Burg-Tag! Wann: [Datum, Uhrzeit]. Wo: [Adresse]. Mitbringen: Mut und Helm-Stimmung. Schild, Schwert und Krone gibts vor Ort! Bitte bis [Datum] melden. Für Burg und Krone! ⚔️'",
+  "faq": [
+    {
+      "q": "Brauche ich echte Burg-Materialien oder Verkleidungen?",
+      "a": "Nein. Pappkarton-Schilde + Pool-Nudel-Schwerter sind die kindgerechte (und sicherere) Variante. Echte Plastik-Schwerter sind oft zu hart und können verletzen."
+    },
+    {
+      "q": "Ist Schwertkampf nicht zu wild für 3-5?",
+      "a": "Mit Pool-Nudeln und der Regel 'Schwert trifft nur Polster' ist es völlig sicher und lustig. 3-Jährige sollten beobachten oder am Polster üben — nicht gegeneinander."
+    },
+    {
+      "q": "Was wenn ein Kind Angst vor dem Drachen hat?",
+      "a": "Ein großer Plüsch-Drache erschreckt kaum — er liegt einfach da. Falls doch: zur 'Drachen-Freund'-Rolle umfunktionieren ('Wir helfen dem Drachen, sein Schatz-Versteck zu finden')."
+    },
+    {
+      "q": "Wie macht man eine Pappkarton-Krone?",
+      "a": "Streifen aus festem Pappkarton (ca. 8 cm hoch x 50 cm lang), mit Zackenmuster oben, Goldfolie aufkleben, am Kopf des Kindes zusammentackern (mit weichem Tacker, NICHT von Kind selbst). 10 Min Vorbereitung pro Krone."
+    },
+    {
+      "q": "Ist Burg-Erstürmung nicht zu wild für 3-Jährige?",
+      "a": "Nicht wenn die Burg max 1m hoch ist (Kissen!) und niemand klettert. Es ist sanftes Umwerfen, kein Klettern. Bei sehr ängstlichen 3-Jährigen: 'Mauer-Klatscher' als Alternative — Burg wird mit Händen umgeworfen, ohne Bälle."
+    },
+    {
+      "q": "Was, wenn ein Kind nicht gekrönt werden will?",
+      "a": "Krone in die Hand legen, nicht aufsetzen. Manche 3-Jährige mögen keinen Kopfschmuck. Mit Krone in der Hand ist es trotzdem 'Krönung'."
+    }
+  ],
+  "preparationWeeks": {
+    "minus4Weeks": {
+      "headline": "4 Wochen vorher — Grundgerüst",
+      "items": [
+        {
+          "icon": "📅",
+          "title": "Datum + Uhrzeit + Treffpunkt fixieren",
+          "detail": "Nachmittag (14-16 Uhr) ist bei 3-5 am besten. Variante festlegen."
+        },
+        {
+          "icon": "🔢",
+          "title": "Gästezahl festlegen",
+          "detail": "Faustregel für 3-5: maximal so viele Kinder wie das Geburtstagskind alt ist + 1-2. Ab 8 Kindern zweite Begleitung."
+        },
+        {
+          "icon": "💌",
+          "title": "Einladungen rausgeben",
+          "detail": "Burg-Einladung mit Datum, Treffpunkt, Abholzeit, RSVP, Allergie-Abfrage."
+        },
+        {
+          "icon": "🏠",
+          "title": "Ort + Wetter-Plan B",
+          "detail": "Drinnen, draußen, beides? Schwert-Übung braucht Platz."
+        },
+        {
+          "icon": "🧑‍🤝‍🧑",
+          "title": "Zweite Hand anfragen",
+          "detail": "Bei Standard/Wow ein abholendes Elternteil als Burg-Wächter."
+        }
+      ]
+    },
+    "minus2Weeks": {
+      "headline": "2 Wochen vorher — Logistik",
+      "items": [
+        {
+          "icon": "📞",
+          "title": "RSVP nachhalten",
+          "detail": "Endgültige Kinderzahl festlegen."
+        },
+        {
+          "icon": "🥜",
+          "title": "Allergien sammeln",
+          "detail": "Schokokuchen, Waffeln — Allergene checken."
+        },
+        {
+          "icon": "🛒",
+          "title": "Einkaufsliste finalisieren",
+          "detail": "Pappkarton, Pool-Nudeln, Plüsch-Drache, Sticker."
+        },
+        {
+          "icon": "⚔️",
+          "title": "Pool-Nudeln im Sommer kaufen",
+          "detail": "Saisonal — im Frühling/Sommer leicht zu finden, im Winter teurer/seltener."
+        }
+      ]
+    },
+    "minus1Week": {
+      "headline": "1 Woche vorher — bestellen & basteln",
+      "items": [
+        {
+          "icon": "🛒",
+          "title": "Amazon-Bestellung raus",
+          "detail": "Plüsch-Drache, Wurfsäckchen, Bastel-Set."
+        },
+        {
+          "icon": "🛡️",
+          "title": "Schilde + Kronen zuschneiden",
+          "detail": "Pappkarton-Schilde vorgeschnitten, Kronen-Streifen fertig. Alle Namens-Stellen markieren."
+        },
+        {
+          "icon": "⚔️",
+          "title": "Pool-Nudeln auf 40cm schneiden",
+          "detail": "Pool-Nudeln halbieren — gibt 2 Schwerter pro Nudel."
+        },
+        {
+          "icon": "📜",
+          "title": "Lehrlings-Sprüche drucken",
+          "detail": "Karte mit Spruch + Wappen für die Eröffnung."
+        }
+      ]
+    },
+    "minus2Days": {
+      "headline": "2 Tage vorher — backen + vorbereiten",
+      "items": [
+        {
+          "icon": "🎂",
+          "title": "Burg-Kuchen backen",
+          "detail": "Kastenkuchen oder Marmorkuchen. Komplett auskühlen lassen."
+        },
+        {
+          "icon": "🥕",
+          "title": "Drachen-Zähne (Karotten) zuschneiden",
+          "detail": "Karotten in Spitzen-Form."
+        },
+        {
+          "icon": "🎒",
+          "title": "Material-Sets bündeln",
+          "detail": "Pro Kind: Schild, Schwert, Krone, Wurfsäckchen bündeln."
+        }
+      ]
+    },
+    "minus1Day": {
+      "headline": "1 Tag vorher — Deko + finalisieren",
+      "items": [
+        {
+          "icon": "🎂",
+          "title": "Kuchen verzieren",
+          "detail": "Schokoglasur + Waffel-Türme + Zuckerguss-Schwert."
+        },
+        {
+          "icon": "🐉",
+          "title": "Plüsch-Drache positionieren",
+          "detail": "Auf Tisch oder Boden in der Mitte — sichtbar als Spiel-Zentrum."
+        },
+        {
+          "icon": "🪣",
+          "title": "Burg-Material bereitlegen",
+          "detail": "Sofa-Kissen, Polster, Schaumstoff-Bälle griffbereit."
+        },
+        {
+          "icon": "📸",
+          "title": "Foto-Ecke",
+          "detail": "'Burg'-Banner für Gruppenfoto vorbereiten."
+        }
+      ]
+    },
+    "dayOf": {
+      "headline": "Am Party-Tag — Aufbau + Empfang",
+      "items": [
+        {
+          "icon": "🏰",
+          "title": "Burg-Stationen aufbauen",
+          "detail": "Wappen-Werkstatt am Tisch, Schwert-Akademie im Flur, Drache in der Mitte."
+        },
+        {
+          "icon": "🛡️",
+          "title": "Empfangs-Station",
+          "detail": "Schilde, Schwerter, Lehrlings-Sprüche griffbereit am Eingang."
+        },
+        {
+          "icon": "🍽️",
+          "title": "Buffet vorbereiten",
+          "detail": "Ritter-Brote, Karotten, Schorle bereit."
+        },
+        {
+          "icon": "😮‍💨",
+          "title": "Kurz durchatmen",
+          "detail": "10 Minuten vor Ankunft hinsetzen. Die Kinder feiern Rolle + Aktivität, nicht Perfektion."
+        }
+      ]
+    }
+  },
+  "sosScenarios": {
+    "regen": {
+      "icon": "🌧️",
+      "label": "Regen — Burg-Erstürmung war draußen geplant",
+      "headline": "Alles drinnen — Kissen-Burg im Wohnzimmer.",
+      "steps": [
+        "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen — Möbel an die Wand für mehr Platz.",
+        "Stations-Rotation in 4 Ecken: jede Ecke = eine Station, klare Markierungen mit Klebeband am Boden.",
+        "Wenn Sand/Wasser geplant war: Plane oder alte Decke als Unterlage, Putztuch griffbereit.",
+        "Aktivierungs-Spiele kürzer (10 Min statt 20) damit Bewegungsdrang nicht eskaliert."
+      ],
+      "fallback": "Kein Platz im Wohnzimmer? Kinderzimmer + Flur kombinieren. Notfall: Spiele auf den Esstisch verlegen (Bastel-Stationen, Quiz).",
+      "tone": "praktisch"
+    },
+    "weniger_kinder_als_erwartet": {
+      "icon": "👥",
+      "label": "Weniger Kinder als geplant",
+      "headline": "Engere Burg-Crew — mehr Schwert-Akademie-Zeit pro Kind.",
+      "steps": [
+        "Stations-Dauer hochfahren: 25 Min statt 20 — jedes Kind hat mehr Zeit.",
+        "Material vor-portioniert lassen, NICHT reduzieren — übriges Material gehört in Mitgebsel-Tüten.",
+        "Bei Wettkampf-Spielen: 2er-Teams in 1er-Stationen umbauen, damit niemand allein steht.",
+        "Foto-Phase verlängern — kleinere Gruppe = stärkere Foto-Aufmerksamkeit pro Kind."
+      ],
+      "fallback": "Bei nur 3-4 Kindern: Stations-Wechsel komplett weglassen, durchgehende Story als Spiel-Bogen.",
+      "tone": "praktisch"
+    },
+    "mehr_kinder_als_erwartet": {
+      "icon": "🚨",
+      "label": "Mehr Kinder als geplant",
+      "headline": "Zwei Ritter-Crews bilden — Wappen-Werkstatt + Drachen-Wurf parallel.",
+      "steps": [
+        "Sofort eine zweite Erwachsene/n als Helfer holen (Nachbar, anderes Eltern-Paar).",
+        "Stationen in 2-Reihen aufteilen: 2 Stationen laufen parallel, halbiert die Wartezeit.",
+        "Material verdoppeln wenn möglich (mehr Becher, mehr Bürsten) — Bestand checken.",
+        "Snack-Pause früher einplanen — Hunger kombiniert mit Überstimulation = Streit.",
+        "Mitgebsel-Tüten ggf. simpler füllen, damit die Stückzahl reicht."
+      ],
+      "fallback": "Wenn nichts hilft: eine Station als Bonus-Spiel deklarieren, statt die Stations-Rotation zu starten. Reduziert Logistik-Stress.",
+      "tone": "praktisch"
+    },
+    "kind_will_nicht_mitmachen": {
+      "icon": "🤷",
+      "label": "Ein Kind will nicht mitmachen",
+      "headline": "Hofnarr-Rolle ohne Druck — bekommt am Ende trotzdem Krone.",
+      "steps": [
+        "Nicht drängen — anbieten als \"Beobachter/Schiedsrichter\": Stoppuhr halten, Stempel verteilen, mitnotieren.",
+        "Eine Lieblings-Aufgabe identifizieren (Karotten verteilen, Helm aufsetzen) — kleine Rolle reaktiviert.",
+        "Eltern (falls noch da) kurz einbeziehen, dann Distanz schaffen — meist klappt es nach 15-20 Min Beobachtung.",
+        "Am Ende: Diplom/Lizenz/Brief bekommen ALLE — auch der Beobachter. Sonst geht ein Kind als \"Verlierer\" heim."
+      ],
+      "fallback": "Wenn ein Kind dauerhaft verweigert: nicht zwingen. Manchmal sind solche Tage einfach so. Belohnung am Ende bleibt.",
+      "tone": "einfühlsam"
+    },
+    "kuchen_misslungen": {
+      "icon": "🎂",
+      "label": "Burg-Kuchen misslungen",
+      "headline": "Bäcker-Kuchen + Waffel-Türme drauf — niemand merkts.",
+      "steps": [
+        "Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.",
+        "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss / Pappschild als Wappen / Bagger drauf).",
+        "Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als \"Mini-Versionen\" verteilen.",
+        "Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt."
+      ],
+      "fallback": "Last-Minute-Rettung: Eis aus dem Gefrierer mit Streuseln und Soße — das ist bei Kindern fast immer der heimliche Star.",
+      "tone": "humorvoll"
+    },
+    "kind_angst_vor_drachen": {
+      "icon": "🐉",
+      "label": "Kind hat Angst vor Drachen",
+      "headline": "'Drachen-Freund'-Variante: Drache wird beschützt, nicht besiegt.",
+      "steps": [
+        "Ruhig bleiben — die meisten Probleme lassen sich mit 5 Min Pause + Plan B lösen.",
+        "Material und Kinder neu sortieren — manchmal hilft schon Stations-Wechsel.",
+        "Eltern (falls verfügbar) als Helfer aktivieren, ohne Drama.",
+        "Notfalls Programm kürzen — lieber sauber endende Party als chaotisches Durchziehen."
+      ],
+      "fallback": "Wenn nichts hilft: Programm beenden und auf den Spaß-Kern reduzieren (Geschenk-Öffnen, Foto).",
+      "tone": "pragmatisch"
+    },
+    "material_kaputt_fehlt": {
+      "icon": "🔧",
+      "label": "Material kaputt oder fehlt",
+      "headline": "Improvisieren — Pappkarton-Schwert als Backup.",
+      "steps": [
+        "Inventur am Vortag — wer hat was im Haushalt? Plüsch, Stifte, Pappkartons aus Bestand.",
+        "Klassen-Chat oder Nachbarschaft fragen: oft hat jemand Material zum Ausleihen (1h vor Party).",
+        "Spontaner Ersatz: alte Pizza-Kartons werden Pappschilde, Wäscheständer wird Slalom-Markierung.",
+        "Wenn nichts da: Spiel kürzer oder weglassen — lieber 4 saubere Spiele als 6 chaotische."
+      ],
+      "fallback": "Bei totalem Material-Ausfall: eine kreative Bastel-Phase mit Stiften + Pappe als Kern-Aktivität. Funktioniert immer.",
+      "tone": "pragmatisch"
+    }
+  },
+  "bonusGames": {
+    "intro": "Bonus-Spiele für die kleine Ritter-Krönung — alle 3-5-tauglich, ergänzen die Standard-Stationen.",
+    "items": [
+      {
+        "name": "👑 Königs-Standbild",
+        "duration": 8,
+        "minAge": 3,
+        "loudness": "mittel",
+        "indoor": true,
+        "outdoor": true,
+        "material": "Musik (Mittelalter-Playlist oder beliebige Kinderlieder)",
+        "anleitung": "Wie \"Reise nach Jerusalem\" aber Stand-Version: Musik läuft, Kinder tanzen wie Ritter. Stopp → erstarren als Statue. Wer wackelt, wird zum König gekrönt (Krone aus Pappkarton)."
+      },
+      {
+        "name": "🛡️ Schild-Aufkleben",
+        "duration": 10,
+        "minAge": 3,
+        "loudness": "leise",
+        "indoor": true,
+        "outdoor": false,
+        "material": "Pro Kind 1 großer Sticker-Bogen mit Wappen-Symbolen (Löwe, Stern, Schwert) + ein vorgemaltes Pappschild",
+        "anleitung": "Jedes Kind klebt 3-5 Aufkleber auf sein Pappschild. Reine Bastel-Phase, sehr beruhigend zwischen Action-Spielen."
+      },
+      {
+        "name": "🐉 Drachen-Brüll-Wettbewerb",
+        "duration": 5,
+        "minAge": 3,
+        "loudness": "laut",
+        "indoor": true,
+        "outdoor": true,
+        "material": "Nichts",
+        "anleitung": "Wer brüllt am drachen-ähnlichsten? Reihum, alle bekommen Applaus. Sehr kurzes Stimm-Energie-Ventil zwischen Sitz-Phasen."
+      }
+    ]
+  }
+}

@@ -165,3 +165,49 @@ Nach jedem nicht-trivialen Output (z.B. AUDIT.md, größere Code-Diffs, Strategi
 4. **Re-bewerten** — neue Version selbst challengen, bis Self-Assessment ≥ 8/10
 
 Nicht inflationär — nur wenn der Output „Living-Wahrheit" werden soll (Audit, Architektur, Master-Strategie). Code-Diffs reichen normalerweise mit einem Self-Pass.
+
+## Helfer-v3 Regeln (verbindlich, eingeführt 2026-05-26)
+
+Helfer-v3 ist das Adversarial-Review-Pattern mit Anti-Sycophancy-Korrektur (Subagent-Scores systematisch -7 Pkt zu hoch).
+
+### Pflicht-Anwendung
+
+Bei JEDEM inhaltlichen Output (Phase-B-JSONs, Hub-/Age-/Schatz-Pages, Worker-Code, Hub-HTML, neue Mottos) — vor commit/deploy.
+
+### KRITISCHE EINSCHRÄNKUNG (eingeführt 2026-05-26 nach Welle-1A-Regress)
+
+**Sub-Agents (Agent-Tool, TaskCreate) sind EXPLIZIT VERBOTEN für:**
+1. **Reviewen** — Adversarial-Reviews, Re-Verifies, Score-Vergaben, Sicherheits-Audits
+2. **Rewriten** — Content-Generation, HTML-Page-Generation aus Templates, JSON-Massen-Edits, Code-Fixes
+
+**Begründung:** Welle 1A (party-worker.js) wurde via Python-Skript durch Sub-Agent angeblich korrekt gefixt — war aber fundamental kaputt (json(x, request) statt json(x, 200, request)). Sub-Agents geben oft "looks-OK"-Status ohne den End-to-End-Effekt zu prüfen. Score-Inflation von +7 Pkt ist symptomatisch.
+
+**Stattdessen erlaubt für Review:**
+- **Chrome-MCP live** — direkt auf machsleicht.de oder localhost-Preview navigieren, JS-Tool für DOM-Inspektion, JSON-LD-Validierung, h1/meta-Checks
+- **WebFetch** — Live-Page mit Markdown-Extract und harter Q&A-Liste
+- **Lokales Grep + Read durch Haupt-Claude** — eigene Augen, keine Delegation
+
+**Stattdessen erlaubt für Rewrite:**
+- **Haupt-Claude direkt** — Edit/Write-Tools, file-by-file, mit Verify-Reads
+- **Heredoc-Skripte ausgeführt durch Bash-Tool** — wenn das Skript klein und nachvollziehbar ist, Haupt-Claude schreibt es selbst und führt es aus
+- **NICHT** ein Agent der "machst-du-mal-das-Skript-und-führs-aus" delegiert
+
+### Welche Sub-Agent-Nutzung bleibt erlaubt
+
+- **Read-only Exploration** (Explore-Agent für "wo ist X definiert" / "welche Files referenzieren Y") — keine inhaltliche Bewertung
+- **Codebase-Search** — Suchen nach Patterns ohne Rewrite
+- **Plan-Agent** — Architektur-Plan, OHNE direkte Code-Generierung
+
+### Score-Korrektur
+
+Selbst bei Chrome-MCP-Reviews: eigene Bewertung kritisch hinterfragen. Wenn Output sich "fertig" anfühlt nach Runde 1 — vermutlich falsch. Erst nach 3 echten Verbesserungsrunden ehrliche Score-Vergabe ≥85.
+
+### Anti-Sycophancy-Indikatoren
+
+Score wahrscheinlich zu hoch wenn:
+- Score >90 nach erster Runde
+- Reviewer findet "alles greift sauber"
+- Keine konkreten Zeilennummern bei "Findings"
+- Findings sind allgemein ("könnte besser sein") statt spezifisch ("Line 285 hat Bug X")
+
+Bei diesen Indikatoren: Score um -7 bis -15 Pkt nach unten korrigieren und erneut prüfen.
