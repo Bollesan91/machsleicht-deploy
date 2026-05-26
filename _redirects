@@ -140,11 +140,50 @@
 /e/*  /.netlify/functions/serve-invite  200
 /kindergeburtstag/detektiv-4-jahre  /kindergeburtstag/detektiv-3-5-jahre  301!
 
-# Legacy-Mottos (physisch geloescht, alle URLs auf Master umleiten)
-/kindergeburtstag/baustelle*  /kindergeburtstag  301!
-/kindergeburtstag/pferde*     /kindergeburtstag  301!
-/kindergeburtstag/ritter*     /kindergeburtstag  301!
+# Zirkus-Motto geloescht — alle URLs auf Master umleiten
 /kindergeburtstag/zirkus*     /kindergeburtstag  301!
+
+# Neue Mottos (Pferde/Ritter/Baustelle): Age-Group-URLs auf Hub-Page weiterleiten
+# Hub-Page selbst (/pferde, /ritter, /baustelle) sind als HTML vorhanden — KEINE Wildcards!
+/kindergeburtstag/pferde-3-jahre    /kindergeburtstag/pferde  301!
+/kindergeburtstag/pferde-4-jahre    /kindergeburtstag/pferde  301!
+/kindergeburtstag/pferde-5-jahre    /kindergeburtstag/pferde  301!
+/kindergeburtstag/pferde-3-5-jahre  /kindergeburtstag/pferde  301!
+/kindergeburtstag/pferde-6-jahre    /kindergeburtstag/pferde  301!
+/kindergeburtstag/pferde-7-jahre    /kindergeburtstag/pferde  301!
+/kindergeburtstag/pferde-8-jahre    /kindergeburtstag/pferde  301!
+/kindergeburtstag/pferde-6-8-jahre  /kindergeburtstag/pferde  301!
+/kindergeburtstag/pferde-9-jahre    /kindergeburtstag/pferde  301!
+/kindergeburtstag/pferde-10-jahre   /kindergeburtstag/pferde  301!
+/kindergeburtstag/pferde-11-jahre   /kindergeburtstag/pferde  301!
+/kindergeburtstag/pferde-12-jahre   /kindergeburtstag/pferde  301!
+/kindergeburtstag/pferde-9-12-jahre /kindergeburtstag/pferde  301!
+/kindergeburtstag/ritter-3-jahre    /kindergeburtstag/ritter  301!
+/kindergeburtstag/ritter-4-jahre    /kindergeburtstag/ritter  301!
+/kindergeburtstag/ritter-5-jahre    /kindergeburtstag/ritter  301!
+/kindergeburtstag/ritter-3-5-jahre  /kindergeburtstag/ritter  301!
+/kindergeburtstag/ritter-6-jahre    /kindergeburtstag/ritter  301!
+/kindergeburtstag/ritter-7-jahre    /kindergeburtstag/ritter  301!
+/kindergeburtstag/ritter-8-jahre    /kindergeburtstag/ritter  301!
+/kindergeburtstag/ritter-6-8-jahre  /kindergeburtstag/ritter  301!
+/kindergeburtstag/ritter-9-jahre    /kindergeburtstag/ritter  301!
+/kindergeburtstag/ritter-10-jahre   /kindergeburtstag/ritter  301!
+/kindergeburtstag/ritter-11-jahre   /kindergeburtstag/ritter  301!
+/kindergeburtstag/ritter-12-jahre   /kindergeburtstag/ritter  301!
+/kindergeburtstag/ritter-9-12-jahre /kindergeburtstag/ritter  301!
+/kindergeburtstag/baustelle-3-jahre    /kindergeburtstag/baustelle  301!
+/kindergeburtstag/baustelle-4-jahre    /kindergeburtstag/baustelle  301!
+/kindergeburtstag/baustelle-5-jahre    /kindergeburtstag/baustelle  301!
+/kindergeburtstag/baustelle-3-5-jahre  /kindergeburtstag/baustelle  301!
+/kindergeburtstag/baustelle-6-jahre    /kindergeburtstag/baustelle  301!
+/kindergeburtstag/baustelle-7-jahre    /kindergeburtstag/baustelle  301!
+/kindergeburtstag/baustelle-8-jahre    /kindergeburtstag/baustelle  301!
+/kindergeburtstag/baustelle-6-8-jahre  /kindergeburtstag/baustelle  301!
+/kindergeburtstag/baustelle-9-jahre    /kindergeburtstag/baustelle  301!
+/kindergeburtstag/baustelle-10-jahre   /kindergeburtstag/baustelle  301!
+/kindergeburtstag/baustelle-11-jahre   /kindergeburtstag/baustelle  301!
+/kindergeburtstag/baustelle-12-jahre   /kindergeburtstag/baustelle  301!
+/kindergeburtstag/baustelle-9-12-jahre /kindergeburtstag/baustelle  301!
 /schnitzeljagd  /kindergeburtstag?modus=schatzsuche#planer  301
 /schnitzeljagd-aufgaben  /schnitzeljagd-aufgaben.html  200
 /schnitzeljagd-draussen  /schnitzeljagd-draussen.html  200
