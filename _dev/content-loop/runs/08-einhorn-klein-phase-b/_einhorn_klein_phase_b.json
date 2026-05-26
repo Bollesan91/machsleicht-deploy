@@ -1,0 +1,118 @@
+{
+  "preparationWeeks": {
+    "minus4Weeks": {
+      "headline": "4 Wochen vorher — Grundgerüst stellen",
+      "items": [
+        { "icon": "📅", "title": "Datum + Uhrzeit + Treffpunkt fixieren", "detail": "Samstag oder Sonntag 15–16:30 Uhr (klein) bis 17 Uhr (Standard/Wow). Max 1,5–2h für 3-5-Jährige, nicht länger. Drinnen-Plan-B mental haben." },
+        { "icon": "👥", "title": "Gästeliste festzurren — max 5 Kinder", "detail": "5 ist die richtige Zahl für 3-5 Einhorn: alle ziehen einen Namen, niemand wartet zu lange. Mehr als 5 wird's bei Glitzer-Kleber-Tisch chaotisch." },
+        { "icon": "👨‍👩‍👧", "title": "Eltern-Pflicht in die Einladung", "detail": "Bei 3-5 sind Eltern keine Optionalität: ‚Ein Elternteil bleibt bitte mit dem Kind dabei.' Bei Tüll-Röckchen-Wow zusätzlich: ‚Bequeme Klamotten drunter — wir tanzen.'" },
+        { "icon": "💶", "title": "Variante wählen: Minimal / Standard / Wow", "detail": "Minimal 27€ (Horn basteln + Tanz), Standard 46€ (+ Milch-Experiment + Sternenstaub suchen), Wow 75€ (+ Tüll-Röckchen + Zauberstab basteln + Seifenblasen). Entscheidung jetzt." },
+        { "icon": "🏠", "title": "Mietwohnung-Check (Glitzer-Risiko)", "detail": "Einhorn 3-5 ist akustisch zahm, aber Glitzer-Kleber + Lebensmittelfarbe ist Boden-Bombe Nr. 1. Folie/Tischdecke unterlegen, Wachs-Tücher griffbereit." }
+      ]
+    },
+    "minus2Weeks": {
+      "headline": "2 Wochen vorher — Logistik festziehen",
+      "items": [
+        { "icon": "📋", "title": "RSVPs einsammeln + Liste schließen", "detail": "Bei 3-5 sind Eltern oft Last-Minute. Nachzügler einmal anstupsen, dann ist gut. party.machsleicht.de zeigt den Stand auf einen Blick." },
+        { "icon": "🥜", "title": "Allergien + Windeln vorab klären", "detail": "Bei 3-Jährigen ist Windel noch Thema — Eltern fragen ob Wechsel zuhause oder mitbringen. Allergien: Glitzer (E-Nummern!), Lebensmittelfarbe, Erdbeeren." },
+        { "icon": "🙋", "title": "Bei 5+ Kindern: Eltern als Co-Aufsicht aktivieren", "detail": "Standard/Wow brauchen 2 Erwachsene parallel — du am Glitzer-Tisch, ein Elternteil am Horn-Bastel-Tisch. Briefe einen vorab telefonisch." },
+        { "icon": "📦", "title": "Bestellliste finalisieren", "detail": "Einhorn-Tattoo-Set + Figuren + Tüll-Röckchen (Wow) bei Amazon, Glitzer-Kleber + Lebensmittelfarbe + Pappteller bei Rossmann/dm, Backmischung + Erdbeeren im Supermarkt." }
+      ]
+    },
+    "minus1Week": {
+      "headline": "1 Woche vorher — bestellen, drucken, vorwarnen",
+      "items": [
+        { "icon": "🛒", "title": "Amazon-Bestellung JETZT raus", "detail": "Lieferzeit 2–5 Tage. Einhorn-Tattoo-Set (~5€), Einhorn-Figuren 12er (~4€), Glitzer-Kleber-Set (~4€), bei Wow Tüll-Röckchen 5er (~10€) + Holz-Bastelstäbe + Glitzerpappe (~5€)." },
+        { "icon": "🖨️", "title": "Ausmalbilder + Namensliste drucken", "detail": "DIN A4 Einhorn-Ausmalbilder (kostenlos auf kribbelbunt.de oder canva), 12 Sternenstaub-Namens-Zettel auf Papier ausdrucken und falten — bei 3-5 KEINE Schrift drauf, du liest vor." },
+        { "icon": "🔔", "title": "Mietwohnung: Boden-Schutz vorbereiten", "detail": "Folie oder Wachs-Tücher unter Bastel-Tisch, Müllbeutel als Schmier-Schutz für jedes Kind raussuchen. Lautstärke kein Thema bei 3-5er Einhorn-Party." },
+        { "icon": "🧪", "title": "Glitzer-Kleber + Lebensmittelfarbe Allergie-Vortest", "detail": "Mini-Punkt auf eigene Haut auftragen, 5 Min warten. Wenn juckt → weg vom Tisch, Marker statt Glitzer. Lebensmittelfarbe an Schüssel testen." },
+        { "icon": "📦", "title": "Pakete bei Ankunft sofort prüfen", "detail": "Tattoo-Vollständigkeit (30+ Motive?), Tüll-Röckchen-Größen für 3-5 (sollten passen), Glitzerpappe-Glitzergrad. Reklamation muss bis Tag X durch sein." }
+      ]
+    },
+    "minus2Days": {
+      "headline": "2 Tage vorher — backen, briefen, basteln",
+      "items": [
+        { "icon": "🎂", "title": "Regenbogen-Wolkenkuchen backen — oder Plan B", "detail": "Wenn Zeit/Nerven: Gugelhupf-Mischung in 4 Schüsseln + Lebensmittelfarben. Wenn nicht: weißen Gugelhupf vom Bäcker (4–6€), morgen Glasur + Streusel. Kein Drama." },
+        { "icon": "🗣️", "title": "Eltern + Helfer briefen — 5 Min reichen", "detail": "WhatsApp mit Programm: ‚15:00 Ankunft + Sternenstaub-Beutel, 15:15 Horn-Basteln, 15:45 Snack-Pause, 16:00 Tanzen.' Eltern wissen dann was kommt + helfen automatisch." },
+        { "icon": "📃", "title": "Mitgebsel-Tüten packen — kindgerecht", "detail": "Pro Kind: Einhorn-Figur, 2-3 Tattoos, Gummibärchen, ggf. Mini-Ausmalbild. NICHT zu viel — bei 3-5 verlieren sie sonst die Übersicht." },
+        { "icon": "✨", "title": "Sternenstaub-Beutel füllen", "detail": "Stoffbeutel oder Papiertüte, 12 ausgeschnittene Namens-Zettel rein, Glitzer-Konfetti dazu (für den Funkel-Effekt beim Rausziehen). Auf Wache-Pult platzieren." },
+        { "icon": "🪄", "title": "Wow-Setup: Zauberstab-Bastel-Tisch vorbereiten", "detail": "Holz-Bastelstäbe + Glitzerpappe in Sternform vorschneiden + Bänder bereitlegen. Pro Kind 1 Stab, 2 Sterne, 2 Bänder. Bei 3-5 schneidest du vor, die Kinder kleben nur." }
+      ]
+    },
+    "minus1Day": {
+      "headline": "1 Tag vorher — Deko, Test, letzte Schritte",
+      "items": [
+        { "icon": "🌈", "title": "Kuchen-Wolken-Guss + Deko", "detail": "Weiße Glasur drüber (200g Puderzucker + 3 EL Wasser), essbare Streusel obendrauf als ‚Wolken-Lava'. Einhorn-Horn aus Eiswaffel mit Goldglasur (bei 3-5 KEIN Fondant — Erstickungsgefahr)." },
+        { "icon": "🧪", "title": "Regenbogen-Milch-Experiment vortesten (Standard/Wow)", "detail": "Teller mit Vollmilch, je 1 Tropfen Lebensmittelfarbe in 4 Ecken, Wattestäbchen mit Spülmittel reinhalten — Farben explodieren. Bei 3-5 mehr Spülmittel = sichereres Spektakel." },
+        { "icon": "🚧", "title": "Tisch + Eingangs-Tisch dekorieren", "detail": "Pastell-Luftballons aufpusten (Bei 3-5 das Highlight!), Regenbogen-Girlande spannen, Sternenstaub-Beutel + Tattoo-Stempelkissen am Eingang. Müllbeutel-Schmier-Schutz griffbereit." },
+        { "icon": "🎵", "title": "Musik-Playlist + Bluetooth-Box testen", "detail": "Spotify ‚Einhorn Kindergeburtstag' oder ‚Kinder Disney Songs' Playlist in der Notiz-App. Bluetooth-Box laden, Sound testen. Bei 3-5 reicht ein kontinuierlicher Soundtrack." },
+        { "icon": "💧", "title": "Glitzer-Kleber-Stationen aufbauen", "detail": "Bei Standard/Wow: pro 2 Kinder einen Tisch mit Glitzer-Kleber + Bastelpappe + Schmier-Schutz. Tische auf Folie. Klamotten-Wechsel-Tüte an Tür hängen ‚Wechselklamotten bereit?'" }
+      ]
+    },
+    "dayOf": {
+      "headline": "Tag X — durchziehen, atmen, feiern",
+      "items": [
+        { "icon": "⏰", "title": "30 Min vor Ankunft: Stationen aufbauen", "detail": "Horn-Bastel-Tisch mit Glitzer-Kleber + Pappe, Apfelschorle in Kühlschrank, Obst schneiden, Sternenstaub-Beutel-Eingangs-Tisch fertig. Eltern-Sitzecke einrichten." },
+        { "icon": "🎯", "title": "15 Min vor Ankunft: Endkontrolle", "detail": "Sternenstaub-Beutel mit 12 Zetteln, Tattoo-Stempelkissen offen, Pastell-Ballons hängen, Spotify-Playlist bereit. Wow: Tüll-Röckchen sortiert nach Größe, Zauberstab-Bastel-Tisch fertig." },
+        { "icon": "🫁", "title": "5 Min vor Ankunft: durchatmen + Wechselklamotten-Tüte", "detail": "Klo, Wasser, einmal tief Luft holen. Tüte an Türklinke hängen — Glitzer + Milch-Experiment ist Klamotten-Risiko. Eltern sind dein Sicherheitsnetz." },
+        { "icon": "✨", "title": "Ankunft: Sternenstaub-Beutel ziehen lassen", "detail": "Jedes Kind zieht einen Zettel, DU liest den Namen vor (sie können noch nicht lesen): ‚Du bist jetzt Luna Mondsilber!' — Tattoo auf Handrücken, Schmier-Schutz-Müllbeutel überziehen." },
+        { "icon": "🍓", "title": "Mitten in der Party: Snack-Pause", "detail": "Nach ~30 Min Pause einplanen — Apfelschorle + Erdbeeren + Popcorn. Sitzen, runter vom Adrenalin, dann zweite Aktivität. 3-5er brauchen Erholungs-Slots." }
+      ]
+    }
+  },
+  "sosScenarios": {
+    "regen": { "icon": "🌧️", "label": "Regen — alles draußen geplant", "headline": "Milch-Experiment ist drinnen sowieso besser — Stuhl-Kreis statt Garten.", "steps": ["Glitzer-Bastel-Tisch + Tanzen sind drinnen sowieso geplant — kein Anpassungs-Aufwand.", "Bei Wow Zauberstab-Basteln: Klare Tisch-Ordnung, Schmier-Schutz hochfahren.", "Bei Wow Seifenblasenmaschine: bei Regen ins Bad/Küche verlegen.", "Eltern als zusätzliche Aufsicht bei Indoor-Trubel aktiv einbinden."], "fallback": "Wenn Wohnzimmer zu klein: Programm abkürzen — Sternenstaub-Ritual + Horn-Basteln + Snack reicht für 1h.", "tone": "praktisch" },
+    "weniger_kinder_als_erwartet": { "icon": "👥", "label": "Weniger Kinder als erwartet (1–2 fehlen)", "headline": "Kleinere Crew = engerer Kontakt — straffer, nicht ärmer.", "steps": ["Programm leicht straffen: weniger Snack-Pausen, dafür längere Bastel-Phase.", "Sternenstaub-Beutel: weniger Namen ziehen lassen — bleibt magisch.", "Pufferzeit füllen mit zweiter Glitzer-Bastel-Runde oder Tanz-Wettbewerb.", "Mehr individuelle Aufmerksamkeit pro Kind — bei 3-5 ist das Geschenk."], "fallback": "Wenn Stimmung kippt: alles auf Tanzen umlegen + Fotoshooting mit Tüll-Röckchen — Spaß-Maximum, kein Hektik.", "tone": "ruhig" },
+    "mehr_kinder_als_erwartet": { "icon": "🚨", "label": "Mehr Kinder als erwartet (Geschwister-Boom)", "headline": "Eltern als Co-Aufsicht aktivieren — die sind eh da.", "steps": ["Schnell-Briefing der zusätzlich anwesenden Eltern: ‚Du übernimmst Tisch 1, ich Tisch 2.'", "Tattoos + Figuren verteilen sofort — Geschwister-Kinder NICHT leer ausgehen lassen.", "Bastel-Material aufstocken: Pappe + Filzstifte aus dem Haushalt als Notreserve.", "Apfelschorle/Obst nachbestellen lassen (Eltern haben Auto)."], "fallback": "Chaotisch? Programm abkürzen — 1 Bastel-Aktion + Snack + Mitgebsel-Verteilung + Fotos. 60 Min reicht für 3-5er-Party.", "tone": "praktisch" },
+    "kind_will_nicht_mitmachen": { "icon": "🤷", "label": "Ein Kind will nicht mitmachen", "headline": "Bei 3-5 ist Eltern-Schoß immer Plan B.", "steps": ["Eltern kommunizieren: ‚Setz dich kurz hin, schauen wir was passiert.'", "Tattoo muss nicht auf Hand — Aufkleber auf T-Shirt oder Sternchen-Zettel mitgeben.", "Eigenes Ausmalbild + Buntstifte am Rand — Kind kann dabei sein ohne mitmachen.", "Nach 15 Min kurz checken — oft schwenkt das Kind selbst um wenn die anderen lachen."], "fallback": "Bleibt komplett raus? Kein Drama. Mitgebsel-Tüte bekommt es trotzdem, alle behandeln das normal.", "tone": "ruhig" },
+    "kuchen_misslungen": { "icon": "🎂", "label": "Kuchen ist misslungen", "headline": "Bäcker-Hack: weißer Gugelhupf + Glasur + Streusel = 10 Min Notfall.", "steps": ["Weißen Gugelhupf beim Bäcker oder Supermarkt holen (4-6€).", "200g Puderzucker + 3 EL Wasser anrühren, weißen Guss drüber.", "Regenbogen-Streusel oder Smarties als ‚Wolken-Lava' um den Fuß.", "Eiswaffel mit Goldglasur als Einhorn-Horn obendrauf — sieht aus wie gewollt."], "fallback": "Bäcker zu? Muffins aus dem Vorrat, je ein Mini-Marshmallow + Zahnstocher mit rosa Papier = Mini-Einhorn-Hörner.", "tone": "motivierend" },
+    "spielzeug_kaputt_oder_fehlt": { "icon": "🔧", "label": "Spielzeug kaputt oder vergessen", "headline": "Improvisieren mit Haushalts-Material — Kinder merken nichts.", "steps": ["Glitzer-Kleber fehlt? Flüssigkleber + Glitzer aus dem Vorrat mischen.", "Tattoos vergessen? Filzstift-Stern auf Handrücken + Glitzer drauf = ‚Probe-Tattoo'.", "Tüll-Röckchen zu klein? Tuch um die Hüfte binden + Bändchen drum = Improvisations-Röckchen.", "Lebensmittelfarbe weg? Beerensaft (Heidelbeere, Erdbeere) als Naturfarbe für Milch-Experiment."], "fallback": "Katastrophal? Sternenstaub-Ritual + Tanzen + Kuchen reichen für 1h Programm — Zeremonie statt Aktivität.", "tone": "praktisch" },
+    "ein_kind_weint": { "icon": "😢", "label": "Ein Kind weint", "headline": "Eltern kennen ihr Kind — Übergabe ist okay.", "steps": ["Eltern-Übergabe: ‚Magst du kurz mit ihr raus?' — bei 3-5 sind Eltern dabei.", "Apfelschorle + Erdbeere als Beruhigungs-Ritual am Wache-Pult.", "Stern-Sticker zum Selbst-Aussuchen — beruhigt durch Auswahl-Macht.", "Wenn Heimweh: Mama-Foto am Handy zeigen, nicht überreden.", "Nach 5 Min reinschauen — meist ist es vorbei wenn die anderen lachen."], "fallback": "Geht nicht mehr? Eltern können früher abholen — kein Drama, Goodie-Bag trotzdem.", "tone": "ruhig" },
+    "eltern_kommen_frueh": { "icon": "🚪", "label": "Eltern (die NICHT dabei waren) kommen früh", "headline": "Übergang einleiten — Foto-Runde + Mitgebsel jetzt.", "steps": ["Abholende Eltern in den Flur bitten, Wasser anbieten.", "Crew durchsagen: ‚Foto-Runde gleich — alle vor die Regenbogen-Girlande!'", "Gruppenfoto mit Tüll-Röckchen + Zauberstäben (Wow) oder Tattoos zeigen (Min/Std).", "Mitgebsel-Tüte in die Hand drücken, Glitzer-Konfetti zum Abschied.", "Eltern + Kinder zur Tür — kurz, herzlich, nicht in lange Tür-Gespräche."], "fallback": "Chaotisch? Mitgebsel in den Flur stellen, jedes Kind nimmt eine, Abschied auf der Treppe.", "tone": "praktisch" }
+  },
+  "shoppingListCategories": {
+    "minimal": [
+      { "label": "Einhorn-Figuren (12 Stk.)", "category": "sinnvoll", "reasoning": "Mitgebsel-Beilage, kein Spiel hängt daran — Tattoos + Gummibärchen reichen funktional." },
+      { "label": "Einhorn-Tattoo-Set (30+ Motive)", "category": "pflicht", "reasoning": "Schicht-Appell-Tattoo ist Variant-Defining für Sternenstaub-Ritual — ohne kein Wiedererkennungs-Element." },
+      { "label": "Glitzer-Kleber (6 Farben)", "category": "pflicht", "reasoning": "Variant-Defining für Einhorn-Horn-Basteln — eines von zwei Minimal-Spielen." },
+      { "label": "Pappteller (weiß, 20 Stk.)", "category": "sinnvoll", "reasoning": "Bastel-Untergrund für Glitzer-Aktion, aber Folie + DIN-A4 tut's funktional auch." },
+      { "label": "Apfelschorle + Grenadine", "category": "pflicht", "reasoning": "Getränke nicht optional — 5 durstige Kinder + Eltern brauchen Verpflegung." },
+      { "label": "Erdbeeren + Popcorn", "category": "sinnvoll", "reasoning": "Snack-Pause-Beilage, aber Kuchen + Gummibärchen tragen die 1,5h auch ohne." },
+      { "label": "Backmischung + Lebensmittelfarben", "category": "pflicht", "reasoning": "Regenbogen-Wolkenkuchen ist motto-zentral, Pflichtteil jeder Kinderparty." },
+      { "label": "Papiertüten + Gummibärchen", "category": "sinnvoll", "reasoning": "Goodie-Verpackung, Tüten gehen auch aus Haushalt." }
+    ],
+    "standard": [
+      { "label": "Einhorn-Figuren (12 Stk.)", "category": "sinnvoll", "reasoning": "Konsistent zu Minimal." },
+      { "label": "Einhorn-Tattoo-Set (30+ Motive)", "category": "pflicht", "reasoning": "Schicht-Appell-Tattoo Variant-übergreifend." },
+      { "label": "Glitzer-Kleber Set", "category": "pflicht", "reasoning": "Horn-Basteln bleibt zentral, Glitzer-Kleber ist Materialbasis." },
+      { "label": "Essbarer Glitzer / Zucker-Perlen", "category": "sinnvoll", "reasoning": "Bestreuung auf Kuchen, aber normale Streusel tun's auch." },
+      { "label": "Einhorn-Teller & Becher Set", "category": "sinnvoll", "reasoning": "Atmosphäre-Heber, Pappgeschirr-Standard funktional gleichwertig." },
+      { "label": "Pastell-Luftballons + Regenbogen-Girlande", "category": "sinnvoll", "reasoning": "Deko-Premium, aber Stationen funktional ohne." },
+      { "label": "Apfelschorle + Grenadine + Obst + Gemüse", "category": "pflicht", "reasoning": "Getränke + gesunde Beilage bei 2h Party nicht optional." },
+      { "label": "Backmischung + Lebensmittelfarbe + Deko", "category": "pflicht", "reasoning": "Kuchen-Pflichtteil." },
+      { "label": "Papiertüten + Gummibärchen + Ausmalbilder", "category": "sinnvoll", "reasoning": "Goodie-Verpackung + Pufferzeit-Aktivität, aber funktional verzichtbar." }
+    ],
+    "wow": [
+      { "label": "Einhorn-Figuren (12 Stk.)", "category": "sinnvoll", "reasoning": "Konsistent." },
+      { "label": "Einhorn-Tattoo-Set (30+ Motive)", "category": "pflicht", "reasoning": "Konsistent — Schicht-Appell-Tattoo." },
+      { "label": "Glitzer-Kleber Set", "category": "sinnvoll", "reasoning": "In Wow ist Zauberstab-Basteln das neue Bastel-Spiel (mit Glitzerpappe), Glitzer-Kleber zur Pufferzeit." },
+      { "label": "Tüll-Röckchen (5 Stk.)", "category": "pflicht", "reasoning": "Variant-Defining für Wow-Verkleidungs-Element + Tanz-Foto-Moment." },
+      { "label": "Holz-Bastelstäbe + Glitzerpappe + Bänder", "category": "pflicht", "reasoning": "Variant-Defining für Zauberstab-Basteln in Wow." },
+      { "label": "Bunte Bälle (50 Stk.)", "category": "habIchVielleicht", "reasoning": "Optional-Erweiterung für Tanz oder Bällebad-Improvisation, im Haushalt oft als Bällebad-Bestand da." },
+      { "label": "Einhorn-Folienballon", "category": "sinnvoll", "reasoning": "Highlight-Deko-Element, aber Pastell-Ballons + Girlande reichen funktional." },
+      { "label": "Einhorn-Teller & Becher Set", "category": "sinnvoll", "reasoning": "Konsistent — Atmosphäre-Premium." },
+      { "label": "Essbarer Glitzer", "category": "sinnvoll", "reasoning": "Streusel-Premium für Kuchen, normale Streusel tun's auch." },
+      { "label": "Pastell-Luftballons + Girlande + Krepppapier", "category": "sinnvoll", "reasoning": "Deko-Premium, Stationen funktional ohne." },
+      { "label": "Apfelschorle + Obst + Gemüse + Keksteig", "category": "pflicht", "reasoning": "Wow-Verpflegung für 2,5h Party nicht optional." },
+      { "label": "Backmischung + Lebensmittelfarbe + Deko", "category": "pflicht", "reasoning": "Kuchen-Pflichtteil." },
+      { "label": "Seifenblasenmaschine (optional)", "category": "habIchVielleicht", "reasoning": "Explizit optional — Highlight-Effekt aber Programm läuft auch ohne." },
+      { "label": "Einhorn-Kuscheltier „Luna\" (optional)", "category": "habIchVielleicht", "reasoning": "Optional Geschenk fürs Geburtstagskind, hat oft schon ein Einhorn-Kuscheltier." },
+      { "label": "Papiertüten + Gummibärchen + Ausmalbilder", "category": "sinnvoll", "reasoning": "Konsistent — Goodie-Verpackung." }
+    ]
+  },
+  "_qualityNotes": {
+    "klein_spezifisch": "1,5-2h Party, Eltern-Pflicht, 5 Kinder, Glitzer-Allergie-Test wichtig (E-Nummern), KEIN Fondant (Erstickungsgefahr), Vorlesen statt Lesen, mehr Bastel-Fokus.",
+    "pflicht_anteile": {"minimal": "4/8 = 50%", "standard": "4/9 = 44%", "wow": "5/15 = 33%"},
+    "self_score_estimate": "~87"
+  }
+}

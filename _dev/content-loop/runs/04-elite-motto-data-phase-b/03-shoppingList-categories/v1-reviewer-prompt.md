@@ -1,0 +1,117 @@
+Du bist **Reviewer-Chat B** in einer 3-Chat-Pipeline (Writer / Reviewer / Adversarial) für `_src/elite-motto-data/feuerwehr-mittel.json` Phase B (Feuerwehr 6-8).
+
+Writer-Chat A hat v1 für **`shoppingList[].category` (40 Items × pflicht/sinnvoll/habIchVielleicht, P3-17 Gruppen-Liste)** geschrieben. Deine Aufgabe: liefere konkretes, kritisches Review.
+
+## Was zu reviewen ist (v1)
+
+Schaue mir die Listen an. Hier v1:
+json{
+  "minimal": [
+    { "label": "💧 Wasserspritzpistolen (6er-Set) — 10€", "category": "pflicht", "reasoning": "Zentrales Spielmaterial für Zielspritzen — ohne fällt eines von zwei Minimal-Spielen aus." },
+    { "label": "💫 Feuerwehr-Tattoo-Set (30+ Motive) — 5€", "category": "pflicht", "reasoning": "Verwandelt 6 Kinder in Feuerwehrleute — ohne Helme der einzige sichtbare Verkleidungs-Anker." },
+    { "label": "🚒 Mini-Feuerwehrautos (12er-Set) — 8€", "category": "sinnvoll", "reasoning": "Schönes Mitgebsel, aber kein Spiel hängt daran — Tüten gehen auch mit Tattoos + Süßigkeiten." },
+    { "label": "🚧 Absperrband rot/weiß (50 m) — 6€", "category": "sinnvoll", "reasoning": "Deko-Effekt sehr gut, aber Party läuft auch ohne sichtbare Einsatzstellen-Inszenierung." },
+    { "label": "🫧 Rasierschaum (2 Dosen Drogerie-Eigenmarke) — 3€", "category": "pflicht", "reasoning": "Material für Schaum-Löscheinsatz — zweites von zwei Minimal-Spielen, ohne kein Schaum-Spiel." },
+    { "label": "🥤 Apfelschorle + rote Becher — 5€", "category": "pflicht", "reasoning": "Getränke sind nicht optional — 6 durstige Kinder ohne Trinken funktioniert nicht." },
+    { "label": "🍿 Popcorn-Mais + Snacks — 5€", "category": "pflicht", "reasoning": "Salziges Pendant zum Kuchen — 2h Party braucht mehr als nur Süßes." },
+    { "label": "🎂 Backmischung Kastenform + roter Zuckerguss — 6€", "category": "pflicht", "reasoning": "Geburtstagskuchen ist sozialer Pflichtteil jeder Kinderparty, nicht verhandelbar." },
+    { "label": "📄 Ausmalbilder + Dienstausweis-Vorlage + Diplom — 0€", "category": "pflicht", "reasoning": "Kostet 0€ und trägt Schicht-Appell + Mitgebsel — strukturelle Klammer der Party." },
+    { "label": "🛍️ Papiertüten + Pappkarton-Helm (Bastelladen/DM) — 5€", "category": "sinnvoll", "reasoning": "Mitgebsel kann auch in alten Tüten verschwinden, Pappkarton-Helm ist Bastel-Bonus." }
+  ],
+  "standard": [
+    { "label": "💧 Wasserspritzpistolen (6er-Set) — 10€", "category": "pflicht", "reasoning": "Wie Minimal — zentrales Spiel-Material für Zielspritzen-Station." },
+    { "label": "⛑️ Feuerwehr-Helme Plastik (6 Stk.) — 25€", "category": "pflicht", "reasoning": "In Standard das Variant-Defining Upgrade vs. Minimal — ohne Helme keine echte Standard-Optik." },
+    { "label": "🚒 Mini-Feuerwehrautos (12er-Set) — 8€", "category": "sinnvoll", "reasoning": "Mitgebsel-Beilage, kein Spielmechanik dahinter — kann durch Tattoos+Süßes ersetzt werden." },
+    { "label": "💫 Feuerwehr-Tattoo-Set (30+ Motive) — 5€", "category": "pflicht", "reasoning": "Trägt Schicht-Appell-Inszenierung, in jeder Variante das günstigste Verkleidungs-Element." },
+    { "label": "🚧 Absperrband rot/weiß (50 m) — 6€", "category": "sinnvoll", "reasoning": "Stationen werden visuell klarer abgegrenzt, aber funktional läuft alles auch ohne." },
+    { "label": "🩹 Erste-Hilfe-Spielset für Station 4 — 10€", "category": "pflicht", "reasoning": "Station 4 ist Variant-Defining für Standard — ohne Material fällt eine Ausbildungs-Station weg." },
+    { "label": "🪢 Seilstücke + Knoten-Karte — 3€", "category": "pflicht", "reasoning": "Knoten-Station gehört zum Standard-Ausbildungs-Konzept — 3€-Item ohne sinnvollen Ersatz." },
+    { "label": "🫧 Rasierschaum (2 Dosen) — 3€", "category": "pflicht", "reasoning": "Schaum-Löscheinsatz bleibt auch in Standard ein Kern-Spiel." },
+    { "label": "🥤 Apfelschorle + rote Becher + Würstchen + Mini-Pizzen — 14€", "category": "pflicht", "reasoning": "Getränke + warmes Essen sind bei 2-3h Party nicht optional." },
+    { "label": "🎂 Backmischung Kastenform + roter Zuckerguss + Mini-Leiter aus Salzteig — 8€", "category": "pflicht", "reasoning": "Geburtstagskuchen plus thematisches Topping — Pflichtteil der Party." },
+    { "label": "🎈 Rote Luftballons + Plakat (Wachen-Tafel) — 4€", "category": "sinnvoll", "reasoning": "Wachen-Tafel-Plakat hebt Atmosphäre, aber Stationen funktionieren auch ohne." },
+    { "label": "📄 Diplom-Vorlage + Dienstausweise + Knoten-Karte — 0€", "category": "pflicht", "reasoning": "0€-Print trägt Schicht-Appell, Stationen und Abschluss-Zeremonie — strukturell tragend." },
+    { "label": "🛍️ Mitgebsel-Tüten + Bändchen für Diplom-Rollen — 3€", "category": "sinnvoll", "reasoning": "Diplom kann auch flach mitgegeben werden, Bändchen ist nettes Detail aber nicht zwingend." }
+  ],
+  "wow": [
+    { "label": "🌫️ Nebelmaschine + Wasserfluid — 30€", "category": "sinnvoll", "reasoning": "Variant-Defining Effekt für Wow — aber Atmosphäre-Bonus, kein Spiel hängt mechanisch dran." },
+    { "label": "⛑️ Feuerwehr-Helme Plastik (6 Stk.) — 25€", "category": "pflicht", "reasoning": "Wie Standard — Helme tragen Verkleidungs-Effekt für alle 6 Kinder." },
+    { "label": "💧 Wasserspritzpistolen (6er-Set) — 10€", "category": "pflicht", "reasoning": "Zielspritzen bleibt auch in Wow ein Kern-Spiel." },
+    { "label": "📌 Crew-Pins (6 Stk.) — 10€", "category": "sinnvoll", "reasoning": "Hebt Schicht-Appell auf Premium-Level, aber Tattoos leisten ähnliches für 5€." },
+    { "label": "🚒 Mini-Feuerwehrautos (12er-Set) — 8€", "category": "sinnvoll", "reasoning": "Konsistent zu Standard/Minimal — Mitgebsel-Beilage ohne Spielmechanik." },
+    { "label": "🚧 Absperrband rot/weiß (50 m) — 6€", "category": "sinnvoll", "reasoning": "Konsistent — Deko-Effekt, kein funktionaler Pflichtanker." },
+    { "label": "💫 Feuerwehr-Tattoo-Set (30+ Motive) — 5€", "category": "sinnvoll", "reasoning": "In Wow durch Crew-Pins + Helme bereits doppelt abgedeckt — hier nur noch Beilage." },
+    { "label": "🩹 Erste-Hilfe-Spielset für Station 4 — 10€", "category": "pflicht", "reasoning": "Ausbildungs-Station bleibt auch in Wow Bestandteil der Kern-Choreografie." },
+    { "label": "🔍 Lupe für Brandermittlung — 3€", "category": "pflicht", "reasoning": "Brandermittlung ist das Variant-Defining Wow-Spiel — ohne Lupe kollabiert das Konzept." },
+    { "label": "🪢 Seile + Augenbinden (für Knoten + Atemschutz-Station) — 6€", "category": "pflicht", "reasoning": "Trägt zwei Wow-Stationen (Knoten + Atemschutz) — 6€ für hohen Spiel-Output." },
+    { "label": "🫧 Rasierschaum (2 Dosen) — 3€", "category": "pflicht", "reasoning": "Schaum-Löscheinsatz bleibt Kern-Spiel über alle Varianten hinweg." },
+    { "label": "📸 Polaroid-Film oder Sofortdruck (Rossmann/dm) — 5€", "category": "sinnvoll", "reasoning": "Verstärkt Brandermittlung-Inszenierung, aber Fall-Akte funktioniert auch ohne Bilder." },
+    { "label": "🥤 Apfelschorle + Becher + Würstchen + Mini-Pizzen + Brezeln — 16€", "category": "pflicht", "reasoning": "Getränke + Essen für 2-3h Party nicht optional." },
+    { "label": "🎂 Backmischung + Zuckerguss + Wunderkerze — 9€", "category": "pflicht", "reasoning": "Geburtstagskuchen Pflichtteil — Wunderkerze ist Wow-Upgrade aber Sub-Position des Pflicht-Items." },
+    { "label": "🎈 Luftballons + Plakate (Wachen-Tafel + Ehrentafel) — 5€", "category": "sinnvoll", "reasoning": "Konsistent zu Standard — Atmosphäre-Heber, kein Stations-Pflicht-Material." },
+    { "label": "📄 Diplom + Dienstausweise + Verdächtigen-Karten + Fall-Akte — 0€", "category": "pflicht", "reasoning": "0€-Print trägt jetzt zusätzlich Brandermittlung (Verdächtigen-Karten + Fall-Akte) — Strukturanker." },
+    { "label": "🛍️ Mitgebsel-Tüten + Bändchen — 3€", "category": "sinnvoll", "reasoning": "Konsistent zu Standard — nettes Detail, kein Pflicht-Anker." }
+  ]
+}
+
+Self-Assessment
+Score-Estimat: ~86. Stärken: Pflicht-Anteile bleiben unter 70%, Variant-Konsistenz bei wiederkehrenden Items (Mini-Autos, Absperrband, Tüten durchgehend sinnvoll), Bolle-Heuristik weitgehend gefolgt — habe aber bewusst abgewichen bei: (a) Popcorn/Snacks als pflicht statt sinnvoll (Salzig-Pendant zu Kuchen, sonst 2h nur Süßes); (b) Tattoo-Set in Wow auf sinnvoll runtergestuft, weil Crew-Pins + Helme die Verkleidungs-Funktion bereits doppelt abdecken — Variant-Konsistenz hier gegen Bolle-Heuristik geopfert mit Begründung.
+Schwäche: Mini-Feuerwehrautos sind grenzwertig — habe pauschal sinnvoll gesetzt, aber für Minimal ohne Helme könnten sie als zweites Mitgebsel-Identifikations-Stück fast pflicht sein. Reviewer wird hier vermutlich challengen.
+Pflicht-Anteile: Min 60% (6/10), Std 62% (8/13), Wow 53% (9/17) — Wow ist am saubersten differenziert, Standard ist hart an der 70%-Grenze.
+
+---
+
+## Score-Rubrik (verwende diese, jede Dimension Score 0–30/20/20/15/15 (sum 100))
+
+| Dimension | Punkte | Was zählt |
+|---|---|---|
+| Klassifikations-Logik | 30 | Pflicht/Sinnvoll/habIchVielleicht-Regeln konsistent angewandt |
+| Bolle-Heuristik-Treue | 20 | HANDOFF-Startpunkt eingehalten; Abweichungen begründet |
+| Variant-Konsistenz | 20 | Gleiche Items über Varianten haben Logik (gleich oder begründet anders) |
+| Reasoning-Substanz | 15 | Begründungen konkret, kein "ist halt so" |
+| Pflicht-Inflation-Check | 15 | <70% Pflicht-Anteil pro Variante |
+
+**Akzeptanz-Threshold:** Final-Score ≥ 85.
+
+## Anti-Patterns (markiere, falls in v1 vorhanden)
+
+- "Sicherheit ist Pflicht" → bedeutet nichts
+- "Wegen Atmosphäre" → leer, gib konkrete Funktion
+- Affiliate-Items pauschal als pflicht behandeln → UNABHÄNGIG vom Affilate-Status
+- Pflicht-Inflation: Pflicht-Anteil pro Variante MUSS < 70% sein
+
+## Stream-spezifische Schwächen, die du PRÜFEN sollst (KRITISCH)
+
+- **Pflicht-Inflation:** Validation-Tool hat **Minimal 70%, Standard 69%, Wow 52%** Pflicht-Anteil gemessen — Minimal ist GENAU auf der 70%-Grenze, Standard knapp drunter. Welche Items in Minimal+Standard sollten realistisch auf "sinnvoll" downgegradet werden?
+- **Variant-Konsistenz:** Items wie "Wasserspritzpistolen", "Mini-Feuerwehrautos", "Absperrband" kommen in ALLEN 3 Varianten vor. Haben sie konsistente Kategorien? Wo nicht — ist die Abweichung begründet?
+- **Self-Assessment-Konsistenz:** Writer behauptet Pflicht-Anteile Min 60% / Std 62% / Wow 53%. Validation sagt 70/69/52%. Writer hat sich verzählt oder nutzt andere Definition. Aufmerksam machen.
+- **Heuristik-Anker:** Apfelschorle = Pflicht (HANDOFF: ja), Nebelmaschine = Sinnvoll (HANDOFF: ja, weil nur in Wow). Wird das respektiert?
+
+
+## Dein Output (Format strikt einhalten)
+
+```
+## Score-Card v1
+
+| Dimension | Punkte | Begründung (max 1 Satz) |
+|---|---|---|
+| ... | XX/XX | ... |
+
+**Gesamt-Score v1:** XX/100
+
+## Konkrete Verbesserungen für v2 (priorisiert, 4-8 Punkte)
+
+1. **[Schlüssel/Sektion]** — Was ist konkret schwach + wie genau fixen. NICHT generisch wie "mehr Konkretheit", sondern: "minus2Days/Helfer-Briefing — `5-Minuten-Erklärung` ist vage. Schreib stattdessen: 'Zeig dem Helfer die Stationen-Karte am Küchentisch, sag wer welche Station übernimmt, gib Notruf-Nummer für den Notfall.'"
+
+2. **[...]** — ...
+
+## Ausdrückliches Lob (1-3 Punkte was richtig stark ist)
+
+- ...
+
+## Sycophancy-Check
+
+Wenn v1 schon ≥ 90 ist und du Schwierigkeiten hast Schwächen zu finden — sag das ehrlich, statt zu konfabulieren. Writer-Pushback gegen erfundene "Verbesserungen" ist erlaubt.
+```
+
+Direkt los, ohne Vorrede. Reviewer muss die Score-Card als ERSTES bringen — Writer sieht oben sofort den Score-Estimat.

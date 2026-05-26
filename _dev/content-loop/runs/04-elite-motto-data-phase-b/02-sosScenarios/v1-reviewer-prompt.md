@@ -1,0 +1,174 @@
+Du bist **Reviewer-Chat B** in einer 3-Chat-Pipeline (Writer / Reviewer / Adversarial) für `_src/elite-motto-data/feuerwehr-mittel.json` Phase B (Feuerwehr 6-8).
+
+Writer-Chat A hat v1 für **`sosScenarios` (8 Panik-Szenarien für Party-Pannen, P3-18 SOS-Button)** geschrieben. Deine Aufgabe: liefere konkretes, kritisches Review.
+
+## Was zu reviewen ist (v1)
+
+json{
+  "regen": {
+    "icon": "🌧️",
+    "label": "Regen — alles draußen geplant",
+    "headline": "Einsatz nach drinnen verlegen — die Wohnung ist jetzt die Wache.",
+    "steps": [
+      "Zielspritzen ins Bad: Wanne als Auffangbecken, Becherpyramiden auf den Wannenrand.",
+      "Stationen-Rotation ins Wohnzimmer + Flur: 4 Ecken = 4 Stationen, Möbel an die Wand.",
+      "Einsatz-Alarm durch alle Zimmer: Kuscheltiere in Schlaf-, Kinder- und Küchenversteck.",
+      "Handtuch-Stapel an die Badtür legen, fertig. Crew rein, los."
+    ],
+    "fallback": "Keine Badewanne? Dusche reicht. Spritze nach unten, Becher auf den Duschboden — Kinder lieben's genauso.",
+    "tone": "praktisch"
+  },
+  "weniger_kinder_als_erwartet": {
+    "icon": "👥",
+    "label": "Weniger Kinder als erwartet (2–3 fehlen)",
+    "headline": "Weniger Crew, gleicher Einsatz — straffer, nicht ärmer.",
+    "steps": [
+      "Kuscheltiere für Einsatz-Alarm auf 5–6 reduzieren, Verstecke näher legen.",
+      "Stationen-Rotation auf 3 statt 4 Stationen kürzen — z.B. Zielspritzen + Schlauch-Rollen + Sani-Verband.",
+      "Rollen-Verteilung anpassen: Doppelrollen vergeben, Max·Wachleiter und Lina·Funkerin können kombiniert werden.",
+      "Pufferzeit füllen mit zweiter Runde Zielspritzen oder freier Spielzeit am Wachen-Pult."
+    ],
+    "fallback": "Wenn's stockt: Tattoos & Crew-Pins-Verteilung nochmal feiern lassen, Foto-Session am Pumpenwagen-Tisch.",
+    "tone": "ruhig"
+  },
+  "mehr_kinder_als_erwartet": {
+    "icon": "🚨",
+    "label": "Mehr Kinder als erwartet (Geschwister-Boom)",
+    "headline": "Zweiten Trupp bilden — Wache hat ab jetzt zwei Schichten parallel.",
+    "steps": [
+      "Crew in 2 Trupps splitten: Trupp Rot + Trupp Blau, je ein älteres Kind als Trupp-Führer.",
+      "Einsatz-Alarm verdoppeln: 2 parallele Routen, je 4–5 Kuscheltiere pro Trupp.",
+      "Sofort Verstärkung anrufen: Oma, Nachbarin, anderer Elternteil — 10 € für 2 Stunden Stationsaufsicht.",
+      "Tattoos & Helme verteilen vor allem anderen — Geschwister-Kinder NICHT leer ausgehen lassen.",
+      "Kuchen-Stücke halbieren, Apfelschorle nachbestellen lassen (Lieferdienst oder Tankstelle nebenan)."
+    ],
+    "fallback": "Kein Helfer erreichbar? Stationen-Rotation auf eine große Gruppen-Aktion umstellen: Alle zusammen Einsatz-Alarm, du als einzige Aufsicht.",
+    "tone": "praktisch"
+  },
+  "kind_will_nicht_mitmachen": {
+    "icon": "🤷",
+    "label": "Ein Kind will nicht mitmachen",
+    "headline": "Kein Zwang. Off-Action-Rolle anbieten — am Wachen-Pult ist auch ein Platz.",
+    "steps": [
+      "Rolle anbieten: „Du bist heute Hannah·Disponentin — du sagst, wer wo hinmuss.\"",
+      "Alternative: Lea·Wachen-Tafel-Schreiberin oder Noah·Foto-Reporter mit deinem Handy.",
+      "Tattoo nicht auf die Hand? Aufs Dienstausweis-Kärtchen kleben, am Band um den Hals.",
+      "Sitzplatz am Wachen-Pult mit eigener Apfelschorle — Beobachter-Posten, kein Außenseiter-Posten."
+    ],
+    "fallback": "Will gar nichts? Okay. Buch + Decke in die ruhige Ecke, alle 10 Min kurz reinschauen. Manche Kinder steigen nach 20 Min von selbst ein.",
+    "tone": "ruhig"
+  },
+  "kuchen_misslungen": {
+    "icon": "🎂",
+    "label": "Kuchen ist misslungen",
+    "headline": "Bäcker-Hack: Schoko-Kasten + rote Glasur + Oreos = Notfall-Kuchen in 10 Min.",
+    "steps": [
+      "Schoko-Kastenkuchen beim nächsten Bäcker holen (oder Edeka/Rewe-Kuchenecke).",
+      "Rote Tortenguss-Glasur drüber (Tube, 1,50 €) — Feuerwehr-Rot, Volltreffer.",
+      "4 Oreos seitlich ankleben als Reifen, weiße Zuckerstift-„112\" auf die Oberseite.",
+      "8 Kerzen rein, Licht aus, Sirenen-Sound vom Handy, fertig — sieht aus wie gewollt."
+    ],
+    "fallback": "Bäcker zu? Muffins aus dem Vorrat, je ein Mini-Marshmallow + Zahnstocher mit roter Papierfahne reinstecken — Mini-Feuerwehr-Hütchen.",
+    "tone": "motivierend"
+  },
+  "spielzeug_kaputt_oder_fehlt": {
+    "icon": "🔧",
+    "label": "Spielzeug kaputt oder vergessen",
+    "headline": "Improvisieren mit Haushalts-Material — Crew merkt nichts.",
+    "steps": [
+      "Spritzpistole leak? Sprühflasche vom Fensterputzer (durchspülen!) oder Plastikflasche mit Loch im Deckel.",
+      "Tattoo-Set vergessen? Filzstift-Strich auf Handrücken + Krone mit Sternchen = „Probe-Tattoo, hält nur heute\".",
+      "Sirenen-Sound geht nicht? YouTube „Feuerwehrsirene 1 Stunde\" am Handy, Lautsprecher voll auf.",
+      "Helme zu wenig? Pappkartons aus dem Keller, rot anmalen oder rotes Geschenkpapier drumkleben."
+    ],
+    "fallback": "Total katastrophal? Stationen-Rotation streichen, dafür Einsatz-Alarm zweimal — Kuscheltiere reichen immer.",
+    "tone": "praktisch"
+  },
+  "ein_kind_weint": {
+    "icon": "😢",
+    "label": "Ein Kind weint",
+    "headline": "Raus aus dem Trubel — 5 Min Pause am Wachen-Pult, dann sehen wir weiter.",
+    "steps": [
+      "Kind kurz aus der Gruppe nehmen — Küche oder Flur, weg vom Lärm.",
+      "Apfelschorle im roten Becher + Tattoo auf den Handrücken kleben als Beruhigungs-Ritual.",
+      "Rolle anbieten: „Magst du die Wachen-Tafel führen? Du schreibst, wer dran ist.\"",
+      "Wenn's Heimweh ist: kurzer Anruf bei Mama/Papa — meistens reicht das, dann geht's weiter.",
+      "Nach 5 Min sanft zurückführen, an die Hand nehmen zur nächsten Station — nicht fragen, einfach mitnehmen."
+    ],
+    "fallback": "Geht gar nicht mehr? Eltern anrufen, abholen lassen — kein Drama, lieber 30 Min früher als ein Trauma.",
+    "tone": "ruhig"
+  },
+  "eltern_kommen_frueh": {
+    "icon": "🚪",
+    "label": "Eltern stehen 30 Min zu früh vor der Tür",
+    "headline": "Übergang einleiten — „Schichtende in 10 Minuten\", offiziell und ruhig.",
+    "steps": [
+      "Eltern in den Flur bitten, Apfelschorle/Wasser anbieten — nicht ins Wohnzimmer, sonst kippt die Stimmung.",
+      "Crew durchsagen: „Achtung Schichtende in 10 Minuten — Wachen-Pult-Foto jetzt!\"",
+      "Gruppenfoto am Wachen-Pult mit allen Helmen + Tattoo-Hand in die Kamera.",
+      "Wachen-Tafel zeigen, Crew-Pins als Abschiedsgeschenk in die Hände drücken, Mitgebsel-Tüte raus.",
+      "Eltern + Kinder zur Tür — kurz, herzlich, nicht in lange Tür-Gespräche verheddern."
+    ],
+    "fallback": "Wenn's wirklich chaotisch wird: Mitgebsel-Tüten in den Flur stellen, jedes Kind nimmt im Rausgehen eine — Abschied auf der Treppe statt im Wohnzimmer.",
+    "tone": "praktisch"
+  }
+}
+Self-Assessment: Jedes Szenario ist Feuerwehr-spezifisch verankert (Rollen aus rolesList, Sprache aus dem Motto, konkrete Materialien wie roter Becher / Tattoo / Wachen-Pult). Sprache ist durchgängig Imperativ, Sätze unter 120 Zeichen, jeder Schritt sofort ausführbar. Schwächste Stelle vermutlich kuchen_misslungen (sehr nah am Quell-Anker, wenig Eigen-Ergänzung) und spielzeug_kaputt_oder_fehlt (etwas generischer als die anderen, weil das Szenario selbst breit ist). Score-Estimat: ~87.
+
+---
+
+## Score-Rubrik (verwende diese, jede Dimension Score 0–30/25/20/15/10 (sum 100))
+
+| Dimension | Punkte | Was zählt |
+|---|---|---|
+| Substanz | 30 | Konkrete Handlungen, keine Beruhigungs-Plattitüden |
+| Motto-Kohärenz | 25 | Rollen / Sprache / Material aus Feuerwehr-Universum |
+| Crisis-Tauglichkeit | 20 | In 30 Sek lesbar und ausführbar, im Stress |
+| Sprint-Tauglichkeit | 15 | Schema strikt, 8 Szenarien, alle 6 Felder pro Szenario |
+| Mama-um-22:30-Test | 10 | Versteht müde Mutter ohne Vorwissen |
+
+**Akzeptanz-Threshold:** Final-Score ≥ 85.
+
+## Anti-Patterns (markiere, falls in v1 vorhanden)
+
+- "Bleiben Sie ruhig" → leer, keine Anweisung
+- "Beruhigen Sie das Kind" → kein Handlungs-Schritt
+- "Improvisieren Sie kreativ" → no shit
+- Lange Erklärungen WARUM etwas wichtig ist → kein Krisen-Modus
+- Pathos statt Praktisch ("Wir wissen, dass das stressig ist...")
+
+## Stream-spezifische Schwächen, die du PRÜFEN sollst
+
+- **Crisis-Mode-Sprache:** sind `steps` wirklich Imperativ-Sätze max 120 Zeichen? Oder ratgeberhafte Erklärungen?
+- **Motto-Kohärenz pro Szenario:** Stechen Rollen (Disponentin, Wachen-Tafel-Schreiberin) und Material (Tattoo, Wachen-Pult) konkret durch ALLE 8 Szenarien oder nur in 2-3?
+- **headline-Qualität:** der "erste Atemzug" muss SOFORT beruhigen + Richtung geben. Wo ist eine headline schwach formuliert?
+- **fallback-Substanz:** Sind die fallbacks echte Plan-C-Alternativen oder leere `""` wo sie nicht sein dürften?
+
+
+## Dein Output (Format strikt einhalten)
+
+```
+## Score-Card v1
+
+| Dimension | Punkte | Begründung (max 1 Satz) |
+|---|---|---|
+| ... | XX/XX | ... |
+
+**Gesamt-Score v1:** XX/100
+
+## Konkrete Verbesserungen für v2 (priorisiert, 4-8 Punkte)
+
+1. **[Schlüssel/Sektion]** — Was ist konkret schwach + wie genau fixen. NICHT generisch wie "mehr Konkretheit", sondern: "minus2Days/Helfer-Briefing — `5-Minuten-Erklärung` ist vage. Schreib stattdessen: 'Zeig dem Helfer die Stationen-Karte am Küchentisch, sag wer welche Station übernimmt, gib Notruf-Nummer für den Notfall.'"
+
+2. **[...]** — ...
+
+## Ausdrückliches Lob (1-3 Punkte was richtig stark ist)
+
+- ...
+
+## Sycophancy-Check
+
+Wenn v1 schon ≥ 90 ist und du Schwierigkeiten hast Schwächen zu finden — sag das ehrlich, statt zu konfabulieren. Writer-Pushback gegen erfundene "Verbesserungen" ist erlaubt.
+```
+
+Direkt los, ohne Vorrede. Reviewer muss die Score-Card als ERSTES bringen — Writer sieht oben sofort den Score-Estimat.

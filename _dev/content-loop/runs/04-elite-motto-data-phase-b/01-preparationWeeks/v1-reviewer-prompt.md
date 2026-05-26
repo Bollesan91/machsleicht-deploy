@@ -1,0 +1,253 @@
+Du bist **Reviewer-Chat B** in einer 3-Chat-Pipeline (Writer / Reviewer / Adversarial) für `_src/elite-motto-data/feuerwehr-mittel.json` Phase B (Feuerwehr 6-8).
+
+Writer-Chat A hat v1 für **`preparationWeeks` (datums-getriebener Wochenplan, 6 Sektionen, P3-16 Vorbereitungskarte)** geschrieben. Deine Aufgabe: liefere konkretes, kritisches Review.
+
+## Was zu reviewen ist (v1)
+
+json{
+  "minus4Weeks": {
+    "headline": "4 Wochen vorher — Grundgerüst stellen",
+    "items": [
+      {
+        "icon": "📅",
+        "title": "Datum, Uhrzeit, Treffpunkt fixieren",
+        "detail": "Samstag oder Sonntag 14–17 Uhr funktioniert für Feuerwehr am besten — Mittagsschlaf der Kleinen ist durch, abends sind alle platt. Treffpunkt ins Hirn: Haustür, Hof, Park? Drinnen-Plan-B-Adresse schon im Kopf haben."
+      },
+      {
+        "icon": "👥",
+        "title": "Gästeliste festzurren — max 6 Kinder",
+        "detail": "Über 6 wird's bei Feuerwehr unübersichtlich (4 Stationen parallel, Sirene, Schaum). Wer in Mietwohnung wohnt: lieber 5 als 7 — die Nachbarn danken's dir später."
+      },
+      {
+        "icon": "💶",
+        "title": "Variante wählen: Minimal / Standard / Wow",
+        "detail": "Minimal 53€ (DIY-Helme, Klorollen, Rasierschaum), Standard 99€ (Plastik-Helme + Erste-Hilfe-Set), Wow 159€ (Nebelmaschine + Polaroid + Brandermittlung). Entscheidung jetzt — danach Bestelllisten."
+      },
+      {
+        "icon": "✉️",
+        "title": "Einladungen rausschicken",
+        "detail": "Pflicht im Text: ‚Hat dein Kind Allergien oder Unverträglichkeiten?' Bei Wow zusätzlich: ‚Asthma? Wir nutzen eine Nebelmaschine (Wasserbasis).' RSVP-Link auf party.machsleicht.de spart dir den WhatsApp-Chat-Krieg."
+      },
+      {
+        "icon": "🏠",
+        "title": "Bei Mietwohnung: Nachbarn-Status checken",
+        "detail": "Wer wohnt drüber, drunter, nebenan? Wer ist sonntags zuhause? Mental notieren, wem du in Woche -1 Bescheid sagst. Sirene + 6 spritzende Kinder ist objektiv laut."
+      }
+    ]
+  },
+  "minus2Weeks": {
+    "headline": "2 Wochen vorher — Logistik festziehen",
+    "items": [
+      {
+        "icon": "📋",
+        "title": "RSVPs einsammeln und Liste schließen",
+        "detail": "Wer hat geantwortet, wer nicht? Nachzügler einmal anstupsen, dann ist gut. party.machsleicht.de zeigt dir den Stand auf einen Blick — sonst Excel oder Zettel am Kühlschrank."
+      },
+      {
+        "icon": "🥜",
+        "title": "Allergien zusammenschreiben",
+        "detail": "Eine Liste, ein Zettel: Kind X = Laktose, Kind Y = Nüsse, Kind Z = Gluten. Bei 6 Kindern hat statistisch eins was. Liste am Backtag und am Party-Tag griffbereit — nicht im Hinterkopf, auf Papier."
+      },
+      {
+        "icon": "🙋",
+        "title": "Bei 6+ Kindern: Helfer organisieren",
+        "detail": "Oma, Partner, andere Mutter, Teenager-Nachbarin (10€ für 3h ist fair). Eine zweite Person bedient bei Einsatz-Alarm die Nebelmaschine, während du die Crew durchs Treppenhaus führst. Ohne Helfer = Stationen-Chaos."
+      },
+      {
+        "icon": "📦",
+        "title": "Bestellliste finalisieren",
+        "detail": "Was kaufst du wo? Helme + Wasserspritzen + Tattoo-Set bei Amazon, Rasierschaum + Apfelschorle im Supermarkt, Backmischung bei Rewe. Liste machen, sonst kaufst du in Woche -1 dreimal ein."
+      },
+      {
+        "icon": "✂️",
+        "title": "Bei DIY-Helmen (Minimal): Bastel-Material besorgen",
+        "detail": "Pappkartons (Amazon-Lieferkartons reichen), rote Bastelfarbe, schwarzer Edding, Klebeband. Vorlage googeln (‚Feuerwehrhelm Bastelvorlage Pappkarton'). Pro Helm 20 Minuten — bei 6 Kindern = 2h. Plan ein."
+      }
+    ]
+  },
+  "minus1Week": {
+    "headline": "1 Woche vorher — bestellen, drucken, vorwarnen",
+    "items": [
+      {
+        "icon": "🛒",
+        "title": "Amazon-Bestellung JETZT raus",
+        "detail": "Lieferzeit 2–5 Tage. Tattoo-Stempelkissen-Set (~10€), Wasserspritzpistolen (6er-Pack ~12€), bei Standard Plastik-Helme (~25€), bei Wow Nebelmaschine (~30€) + Polaroid-Sofortbildkamera. Später bestellen = Panik."
+      },
+      {
+        "icon": "🖨️",
+        "title": "Dienstausweise + Diplome drucken",
+        "detail": "Vorlagen gibt's kostenlos bei kribbelbunt.de oder ähnlich. DIN A4, 6x ausdrucken, Namen handschriftlich eintragen — sieht offizieller aus als perfekt am PC. Diplome rollen + Schleife dran."
+      },
+      {
+        "icon": "🔔",
+        "title": "Mietwohnung: Nachbarn vorwarnen",
+        "detail": "Kurz klingeln, kurz lächeln: ‚Sonntag 14–17 Uhr wird's bei uns lauter, mein Sohn wird 7.' Fertig. Nachbarn, die's vorher wissen, beschweren sich nicht — die, die's nicht wissen, schon."
+      },
+      {
+        "icon": "🌧️",
+        "title": "Plan B Regen mental durchspielen",
+        "detail": "Wohnzimmer + Flur + Bad sind die Ersatz-Locations. Zielspritzen in die Badewanne, Stationen ins Wohnzimmer, Einsatz-Alarm durch die ganze Wohnung. Räume nicht vollstopfen diese Woche — Platz freihalten."
+      },
+      {
+        "icon": "🎵",
+        "title": "Sirenen-Sound vorbereiten",
+        "detail": "YouTube ‚Feuerwehr Sirene 30 Sekunden' suchen, Link in Notizen-App speichern oder runterladen. Bluetooth-Box laden. Nicht erst am Party-Tag suchen, sonst spielst du Hubschrauber statt Sirene."
+      }
+    ]
+  },
+  "minus2Days": {
+    "headline": "2 Tage vorher — backen, briefen, basteln",
+    "items": [
+      {
+        "icon": "🎂",
+        "title": "Kuchen backen — oder Plan B aktivieren",
+        "detail": "Wenn Zeit/Nerven da: Backmischung durchziehen. Wenn nicht: Schoko-Kasten beim Bäcker holen (4–6€), morgen kommt Glasur drauf. Kein Drama. Schmeckt den Kindern genauso gut."
+      },
+      {
+        "icon": "🗣️",
+        "title": "Helfer briefen — 5 Minuten reichen",
+        "detail": "Zettel mit 4 Stationen, wer macht was: ‚Du Schaum-Löscheinsatz, ich Zielspritzen, du Knoten, ich Erste Hilfe.' Bei Einsatz-Alarm: Wer Nebelmaschine, wer Crew. Klare Rollen = kein Chaos."
+      },
+      {
+        "icon": "🪧",
+        "title": "Wachen-Tafel-Plakat fertigstellen",
+        "detail": "DIN A3 oder Tapetenrest. ‚FEUERWACHE [Geburtstagskind]' oben, darunter Platz für Stempel/Tattoos der Kinder beim Eintreffen. Mit dickem Edding, nicht filigran — die Kinder sollen's lesen, nicht die Jury."
+      },
+      {
+        "icon": "🎁",
+        "title": "Goodie-Bags packen",
+        "detail": "Pro Kind: Diplom-Rolle, Mini-Feuerwehrauto (1€-Shop, 6er-Pack), 3 Tattoos aus dem Set, evtl. Lolli. In Papiertüte mit Namen drauf. 15 Minuten Arbeit, spart dir morgen Stress."
+      },
+      {
+        "icon": "🚒",
+        "title": "Wow-Setup: Brandermittlung vorbereiten",
+        "detail": "Verdächtigen-Karten (4–5 Stück) ausdrucken, Spuren-Beweise basteln: angekokeltes Papier, ‚Streichholzschachtel' mit Notiz, Fußabdruck-Schablone. Plot kurz aufschreiben, sonst stockst du beim Erklären."
+      }
+    ]
+  },
+  "minus1Day": {
+    "headline": "1 Tag vorher — Deko, Test, letzte Schritte",
+    "items": [
+      {
+        "icon": "🍫",
+        "title": "Kuchen verzieren",
+        "detail": "Rote Glasur drüber (Tube aus Supermarkt reicht), 4 Oreos halbieren = 8 Reifen für ‚Feuerwehrauto', weißer Zuckerstift für ‚112'. 10 Minuten. Über Nacht fest werden lassen."
+      },
+      {
+        "icon": "🧸",
+        "title": "Kuscheltiere fürs Einsatz-Alarm-Spiel verstecken",
+        "detail": "6–8 Plüschtiere in Wohnung/Garten verstecken (unter Sofa, hinter Vorhang, im Karton). Bei Wow: zusätzlich Brandermittlung-Beweise platzieren — Streichholzschachtel auf Fensterbank, ‚Fußspur' im Flur."
+      },
+      {
+        "icon": "🚧",
+        "title": "Tisch + Wachen-Pult dekorieren",
+        "detail": "Rot-weißes Absperrband (Amazon, 2€) um den Tisch, Helm-Box am Eingang (Pappkarton + ‚HELME' draufschreiben), Tattoo-Stempelkissen offen platzieren, Wachen-Tafel an die Wand."
+      },
+      {
+        "icon": "🔊",
+        "title": "Sirenen-Sound + Bluetooth-Box testen",
+        "detail": "Box laden, Sound abspielen, Lautstärke einstellen. Funktioniert die Verbindung? Reicht der Akku 3 Stunden? Lieber jetzt rausfinden als morgen vor 6 wartenden Kindern."
+      },
+      {
+        "icon": "🫧",
+        "title": "Schaum-Löscheinsatz vorbereiten",
+        "detail": "2 Dosen Rasierschaum bereitstellen (günstige Marke, je 1€), große Wanne oder Plastikplane lokalisieren — fürs Spritzen-ohne-Sauerei. Handtücher stapeln. Wechselklamotten der Kinder einplanen (an Eltern in Einladung erinnern)."
+      }
+    ]
+  },
+  "dayOf": {
+    "headline": "Tag X — durchziehen, atmen, feiern",
+    "items": [
+      {
+        "icon": "🍞",
+        "title": "Frühstück light für dich",
+        "detail": "Brot, Kaffee, fertig. Magen voll = Adrenalin macht dir übel. Adrenalin trägt dich durch. Wasserflasche griffbereit, du wirst trinken vergessen."
+      },
+      {
+        "icon": "⏰",
+        "title": "30 Min vor Ankunft: Stationen aufbauen",
+        "detail": "4 Stationen platzieren (Zielspritzen, Schaum, Knoten, Erste Hilfe), Apfelschorle in Kühlschrank, Würstchen ins warme Wasser. Helfer ist da oder kommt jetzt. Kuchen aus dem Kühlschrank — Zimmertemperatur schmeckt besser."
+      },
+      {
+        "icon": "🎯",
+        "title": "15 Min vor Ankunft: Endkontrolle",
+        "detail": "Bluetooth-Box an, Sirenen-Sound im Display offen, Tattoo-Stempelkissen aufgeklappt, Helme an Helm-Box. Wachen-Tafel hängt. Wow-Setup: Nebelmaschine seit 10 Minuten vorgewärmt."
+      },
+      {
+        "icon": "🫁",
+        "title": "5 Min vor Ankunft: durchatmen",
+        "detail": "Klo, Wasser, einmal tief Luft holen. Handy auf lautlos außer für späte Eltern-Anrufe. Du hast 4 Wochen vorbereitet — jetzt läuft's. Wenn was schiefgeht, lacht morgen keiner mehr drüber, weil's niemand merken wird."
+      },
+      {
+        "icon": "💨",
+        "title": "Wow-Variante: Nebelmaschine vorwärmen",
+        "detail": "Nebelmaschinen brauchen 8–10 Minuten zum Aufheizen, sonst kommt beim ersten Knopfdruck nix. Anschalten wenn die ersten Kinder klingeln — bis zum Einsatz-Alarm (meist nach 45 Min) ist sie warm."
+      },
+      {
+        "icon": "📸",
+        "title": "Erste Foto-Runde nach 20 Minuten",
+        "detail": "Wenn alle Helme aufhaben und Tattoos drauf sind, kurz Gruppenfoto vor Wachen-Tafel. Eins, fertig, weiter. Bei Wow: Polaroid für jedes Kind — kommt später in die Goodie-Bag als ‚Crew-Ausweis'."
+      }
+    ]
+  }
+}
+
+Self-Assessment (Score-Estimat ~87):
+Substanz und Motto-Kohärenz sind solide — Amazon-Lieferzeiten, konkrete Preise, Feuerwehr-Vokabular (Wachen-Tafel, Schaum-Löscheinsatz, Einsatz-Alarm, Brandermittlung) ziehen sich durch. Mama-um-22:30-Test sollte klappen, weil jeder Eintrag in <15 Sekunden lesbar ist und sofort eine Handlung auslöst.
+Schwäche, die ich selbst sehe: minus4Weeks hat 5 Items, aber das Variante-wählen-Item ist eher Meta-Entscheidung als Vorbereitung — Reviewer wird vermutlich fragen, ob das nicht in eine separate UI-Komponente gehört. Außerdem: dayOf hat 6 Items (Maximum), könnte für müde Mutter zu lang wirken — eventuell auf 5 kürzen und Foto-Runde in den Hauptablauf integrieren statt als Vorbereitungspunkt.
+
+---
+
+## Score-Rubrik (verwende diese, jede Dimension Score 0–30/25/20/15/10 (sum 100))
+
+| Dimension | Punkte | Was zählt |
+|---|---|---|
+| Substanz | 30 | Konkrete Items, keine Plattitüden |
+| Motto-Kohärenz | 25 | Feuerwehr-Sprache, Wachen-Tafel, Tattoo-Stempelkissen, Sirene |
+| Datums-/Material-Realismus | 20 | Amazon-Lieferzeiten, Backzeiten, Helfer-Timing realistisch |
+| Sprint-Tauglichkeit | 15 | Schema strikt, keine "siehe oben"-Verweise |
+| Mama-um-22:30-Test | 10 | Versteht müde Mutter ohne Vorwissen, in 30 Sek |
+
+**Akzeptanz-Threshold:** Final-Score ≥ 85.
+
+## Anti-Patterns (markiere, falls in v1 vorhanden)
+
+- Generische Eltern-Tipps ("Achten Sie auf Sicherheit", "Vergessen Sie nicht...")
+- Hilfsverb-Geschwätz ("Es ist empfehlenswert, dass...", "Sollte beachtet werden")
+- Pinterest-Aufwand-Eskalation ("handgenähte Stoff-Wachen-Tafel")
+- Truismen ("Einladungen sollten frühzeitig versendet werden") → no shit
+
+## Stream-spezifische Schwächen, die du PRÜFEN sollst
+
+- **Schema-Validation:** v1 hat 5-6 items pro Sektion (Range 3-6 erlaubt). Sind die Items wirklich distinkt oder sind 2 davon Redundanz?
+- **Variant-Konsistenz:** Wird die Wow/Standard/Minimal-Differenzierung sinnvoll auf die Vorbereitungs-Timeline gemappt (z.B. Nebelmaschine nur in -1W wenn Wow gebucht)?
+- **Bolle-Ton:** Lakonisch + konkret + nicht-belehrend. Wo rutscht v1 in Ratgeber-Modus?
+
+
+## Dein Output (Format strikt einhalten)
+
+```
+## Score-Card v1
+
+| Dimension | Punkte | Begründung (max 1 Satz) |
+|---|---|---|
+| ... | XX/XX | ... |
+
+**Gesamt-Score v1:** XX/100
+
+## Konkrete Verbesserungen für v2 (priorisiert, 4-8 Punkte)
+
+1. **[Schlüssel/Sektion]** — Was ist konkret schwach + wie genau fixen. NICHT generisch wie "mehr Konkretheit", sondern: "minus2Days/Helfer-Briefing — `5-Minuten-Erklärung` ist vage. Schreib stattdessen: 'Zeig dem Helfer die Stationen-Karte am Küchentisch, sag wer welche Station übernimmt, gib Notruf-Nummer für den Notfall.'"
+
+2. **[...]** — ...
+
+## Ausdrückliches Lob (1-3 Punkte was richtig stark ist)
+
+- ...
+
+## Sycophancy-Check
+
+Wenn v1 schon ≥ 90 ist und du Schwierigkeiten hast Schwächen zu finden — sag das ehrlich, statt zu konfabulieren. Writer-Pushback gegen erfundene "Verbesserungen" ist erlaubt.
+```
+
+Direkt los, ohne Vorrede. Reviewer muss die Score-Card als ERSTES bringen — Writer sieht oben sofort den Score-Estimat.
