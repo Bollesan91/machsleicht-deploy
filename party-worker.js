@@ -282,17 +282,17 @@ export default {
       if (body.photoRound && isSafePhoto(body.photoRound)) {
         await env.PARTY.put(`photoRound:${id}`, body.photoRound, {expirationTtl:ttl});
       }
-      return json({id, editToken, url:`https://party.machsleicht.de/${id}`, editUrl:`https://party.machsleicht.de/${id}?edit=${editToken}`});
+      return json({id, editToken, url:`https://party.machsleicht.de/${id}`, editUrl:`https://party.machsleicht.de/${id}?edit=${editToken}`}, request);
     }
 
     // GET /api/party/:id
     if (path.match(/^\/api\/party\/[a-z0-9]+$/) && request.method === "GET") {
       const id = path.split("/")[3];
       const raw = await env.PARTY.get(`party:${id}`);
-      if (!raw) return json({error:"Party nicht gefunden"},404);
+      if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = JSON.parse(raw);
       const edit = url.searchParams.get("edit");
-      if (edit === party.editToken) return json(party);
+      if (edit === party.editToken) return json(party, request);
       const {editToken,email,...safe} = party;
       safe.wishes = (safe.wishes||[]).map(w=>{
         const cb = w.claimedBy||[];
@@ -301,17 +301,17 @@ export default {
       });
       safe.guestCount = safe.guests.filter(g=>g.status==="ja").length;
       safe.guests = undefined;
-      return json(safe);
+      return json(safe, request);
     }
 
     // PUT /api/party/:id
     if (path.match(/^\/api\/party\/[a-z0-9]+$/) && request.method === "PUT") {
       const id = path.split("/")[3];
       const raw = await env.PARTY.get(`party:${id}`);
-      if (!raw) return json({error:"Party nicht gefunden"},404);
+      if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = JSON.parse(raw);
       const body = await request.json();
-      if (body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403);
+      if (body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
       ["childName","age","motto","mottoEmoji","mottoColor","date","time","endTime","address","notes","askAllergies","askPickup","paypalMe","email"].forEach(f=>{if(body[f]!==undefined)party[f]=body[f];});
       if (Array.isArray(body.wishes)) {
         party.wishes = body.wishes.slice(0,MAX_WISHES).map(w=>({
@@ -325,44 +325,51 @@ export default {
       if (body.photoRound===null) await env.PARTY.delete(`photoRound:${id}`);
       else if (body.photoRound && isSafePhoto(body.photoRound)) await env.PARTY.put(`photoRound:${id}`,body.photoRound,{expirationTtl:ttl});
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:ttl});
-      return json({ok:true});
+      return json({ok:true}, request);
     }
 
     // DELETE /api/party/:id — DSGVO Self-Service-Lösch-Endpoint
-    // Auth: editToken (kommt als Body bei DELETE, da DELETE-Body unsupported in fetch von manchen Clients)
-    // Löscht: party + photo + photoRound aus KV
+    // Auth: editToken NUR via Body (Query würde in Cloudflare-Logs persistieren).
+    // Löscht: party + photo + photoRound + doi-Token (falls vorhanden) aus KV.
     if (path.match(/^\/api\/party\/[a-z0-9]+$/) && request.method === "DELETE") {
       const id = path.split("/")[3];
+      // P0-Security: Token NUR aus Body — Query-Parameter wäre in CF-Logs persistiert
+      let providedToken = null;
+      try {
+        const body = await request.json();
+        providedToken = body && body.editToken;
+      } catch { /* no body */ }
+      if (!providedToken) return json({error:"Token fehlt"},400,request);
       const raw = await env.PARTY.get(`party:${id}`);
-      if (!raw) return json({error:"Party nicht gefunden"},404);
-      const party = JSON.parse(raw);
-      // Token aus Query-Parameter ?token=... ODER aus Body (beide Patterns supported)
-      let providedToken = url.searchParams.get("token");
-      if (!providedToken) {
-        try {
-          const body = await request.json();
-          providedToken = body && body.editToken;
-        } catch { /* no body */ }
+      if (!raw) return json({error:"Party nicht gefunden"},404,request);
+      // Defensive: robust gegen kaputtes JSON
+      let party = null;
+      try { party = JSON.parse(raw); } catch { party = null; }
+      if (!party) {
+        await env.PARTY.delete(`party:${id}`);
+        await env.PARTY.delete(`photo:${id}`);
+        await env.PARTY.delete(`photoRound:${id}`);
+        return json({ok:true, deleted:true, message:"Party (corrupted) und Foto-Daten gelöscht.", note:"Token-Check übersprungen weil party-JSON nicht parse-bar war."}, 200, request);
       }
-      if (providedToken !== party.editToken) return json({error:"Nicht berechtigt"},403);
-      // KV-Cleanup: party + beide photo-Keys + DOI-Token falls vorhanden
+      if (providedToken !== party.editToken) return json({error:"Nicht berechtigt"},403,request);
       await env.PARTY.delete(`party:${id}`);
       await env.PARTY.delete(`photo:${id}`);
       await env.PARTY.delete(`photoRound:${id}`);
-      return json({ok:true, deleted:true, message:"Party und alle zugehörigen Daten wurden gelöscht."});
+      if (party.doiToken) await env.PARTY.delete(`doi:${party.doiToken}`);
+      return json({ok:true, deleted:true, message:"Party und alle zugehörigen Daten wurden gelöscht."}, 200, request);
     }
 
-    // POST /api/party/:id/rsvp
+// POST /api/party/:id/rsvp
     if (path.match(/^\/api\/party\/[a-z0-9]+\/rsvp$/) && request.method === "POST") {
       const id = path.split("/")[3];
       const raw = await env.PARTY.get(`party:${id}`);
-      if (!raw) return json({error:"Party nicht gefunden"},404);
+      if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = JSON.parse(raw);
       const body = await request.json();
       const name = (body.name||"").trim().slice(0,50);
-      if (!name) return json({error:"Name fehlt"},400);
+      if (!name) return json({error:"Name fehlt"},400, request);
       if (party.guests.length>=MAX_GUESTS && !party.guests.find(g=>g.name.toLowerCase()===name.toLowerCase()))
-        return json({error:"Maximale Gästezahl erreicht"},400);
+        return json({error:"Maximale Gästezahl erreicht"},400, request);
       const guest = {
         name, status:["ja","nein","vielleicht"].includes(body.status)?body.status:"ja",
         allergies:(body.allergies||"").slice(0,200), pickupTime:(body.pickupTime||"").slice(0,10),
@@ -371,7 +378,7 @@ export default {
       const existing = party.guests.findIndex(g=>g.name.toLowerCase()===name.toLowerCase());
       if (existing>=0) party.guests[existing]=guest; else party.guests.push(guest);
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
-      return json({ok:true,guestCount:party.guests.filter(g=>g.status==="ja").length});
+      return json({ok:true,guestCount:party.guests.filter(g=>g.status==="ja").length}, request);
     }
 
     // POST /api/party/:id/wish/:wid/claim
@@ -379,11 +386,11 @@ export default {
       const parts = path.split("/");
       const id=parts[3], wishId=parts[5];
       const raw = await env.PARTY.get(`party:${id}`);
-      if (!raw) return json({error:"Party nicht gefunden"},404);
+      if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = JSON.parse(raw);
       const body = await request.json();
       const guestName = (body.name||"").trim();
-      if (!guestName) return json({error:"Name fehlt"},400);
+      if (!guestName) return json({error:"Name fehlt"},400, request);
       // amount nur bei sharedGift relevant; 0 < amount < 9999
       let amount = null;
       if (body.amount !== undefined && body.amount !== null && body.amount !== "") {
@@ -391,11 +398,11 @@ export default {
         if (!isNaN(a) && a > 0 && a < 9999) amount = Math.round(a*100)/100;
       }
       const wish = (party.wishes||[]).find(w=>w.id===wishId);
-      if (!wish) return json({error:"Wunsch nicht gefunden"},404);
+      if (!wish) return json({error:"Wunsch nicht gefunden"},404, request);
       // Helfer: aus gemischtem Array (Strings + Objects) nur Namen extrahieren
       const getName = (entry) => typeof entry === "string" ? entry : (entry && entry.name) || "";
       if (!wish.sharedGift && wish.claimedBy.length>0 && !wish.claimedBy.find(n=>getName(n).toLowerCase()===guestName.toLowerCase()))
-        return json({error:"Bereits vergeben"},400);
+        return json({error:"Bereits vergeben"},400, request);
       const idx = wish.claimedBy.findIndex(n=>getName(n).toLowerCase()===guestName.toLowerCase());
       if (idx>=0) {
         wish.claimedBy.splice(idx,1);
@@ -405,23 +412,23 @@ export default {
         else wish.claimedBy.push(guestName);
       }
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
-      return json({ok:true,claimedBy:wish.claimedBy,claimedCount:wish.claimedBy.length});
+      return json({ok:true,claimedBy:wish.claimedBy,claimedCount:wish.claimedBy.length}, request);
     }
 
     // GET /api/photo/:id
     if (path.match(/^\/api\/photo\/[a-z0-9]+$/) && request.method === "GET") {
       const id = path.split("/")[3];
       const photo = await env.PARTY.get(`photo:${id}`);
-      if (!photo) return json({error:"Kein Foto"},404);
-      return json({photo});
+      if (!photo) return json({error:"Kein Foto"},404, request);
+      return json({photo}, request);
     }
 
     // GET /api/photoRound/:id
     if (path.match(/^\/api\/photoRound\/[a-z0-9]+$/) && request.method === "GET") {
       const id = path.split("/")[3];
       const photo = await env.PARTY.get(`photoRound:${id}`);
-      if (!photo) return json({error:"Kein Foto"},404);
-      return json({photo});
+      if (!photo) return json({error:"Kein Foto"},404, request);
+      return json({photo}, request);
     }
 
     // POST /api/party/:id/send-edit-link
@@ -429,17 +436,17 @@ export default {
       // Origin-Check (CORS-Hardening): nur von machsleicht.de/party.machsleicht.de
       const origin = request.headers.get("Origin") || "";
       if (origin && !/^https:\/\/(www\.|party\.)?machsleicht\.de$/.test(origin)) {
-        return json({error:"Nicht autorisiert"},403);
+        return json({error:"Nicht autorisiert"},403, request);
       }
 
       const id = path.split("/")[3];
       const raw = await env.PARTY.get(`party:${id}`);
-      if (!raw) return json({error:"Party nicht gefunden"},404);
+      if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = JSON.parse(raw);
       const body = await request.json();
-      if (body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403);
+      if (body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
       const email = (body.email||"").trim().slice(0,200);
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({error:"Ung\u00FCltige E-Mail"},400);
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({error:"Ung\u00FCltige E-Mail"},400, request);
       const newsletterOptIn = body.newsletterOptIn === true;
 
       // Save email to party
@@ -447,7 +454,7 @@ export default {
       await env.PARTY.put(`party:${id}`, JSON.stringify(party), {expirationTtl: calcTTL(party.date)});
 
       // Send email via Resend
-      if (!env.RESEND_API_KEY) return json({error:"E-Mail-Versand nicht konfiguriert"},500);
+      if (!env.RESEND_API_KEY) return json({error:"E-Mail-Versand nicht konfiguriert"},500, request);
       const childName = party.childName || "Kind";
       const editUrl = `https://party.machsleicht.de/${id}?edit=${party.editToken}`;
       const guestUrl = `https://party.machsleicht.de/${id}`;
@@ -467,6 +474,9 @@ export default {
           origin,
           source: "partyseite-creator"
         };
+      // P0-DSGVO: doiToken in party tracken für späteren Lösch-Cleanup
+      party.doiToken = doiToken;
+      await env.PARTY.put(`party:${id}`, JSON.stringify(party), {expirationTtl: calcTTL(party.date)});
         await env.PARTY.put(`doi:${doiToken}`, JSON.stringify(doiEntry), {expirationTtl: 7*24*60*60});
         confirmUrl = `https://party.machsleicht.de/api/newsletter-confirm?token=${doiToken}`;
       }
@@ -506,15 +516,15 @@ export default {
         });
         if (!res.ok) {
           const err = await res.text();
-          return json({error:"E-Mail konnte nicht gesendet werden"},500);
+          return json({error:"E-Mail konnte nicht gesendet werden"},500, request);
         }
         // Mail erfolgreich raus — Newsletter-Bestätigungs-Button ist drin, falls Opt-In.
         if (newsletterOptIn) doiSent = true;
       } catch(e) {
-        return json({error:"E-Mail-Versand fehlgeschlagen"},500);
+        return json({error:"E-Mail-Versand fehlgeschlagen"},500, request);
       }
 
-      return json({ok:true, doiMailSent:doiSent});
+      return json({ok:true, doiMailSent:doiSent}, request);
     }
 
     // Affiliate Redirect /go/:partyId/:wishId
@@ -1630,7 +1640,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   </div>
 
   ${(()=>{
-    const daysToParty = party.date ? Math.ceil((new Date(party.date).getTime() - Date.now()) / 86400000) : null;
+    const __dateMs = party.date ? new Date(party.date).getTime() : NaN; const daysToParty = isNaN(__dateMs) ? null : Math.ceil((__dateMs - Date.now()) / 86400000);
     const dayLabel = daysToParty === null ? null : daysToParty < 0 ? `vor ${Math.abs(daysToParty)} Tagen` : daysToParty === 0 ? "Heute!" : daysToParty === 1 ? "Morgen!" : daysToParty <= 7 ? `in ${daysToParty} Tagen` : `in ${daysToParty} Tagen`;
     const dayColor = daysToParty === null ? "var(--m)" : daysToParty < 0 ? "#888" : daysToParty <= 1 ? "#C62828" : daysToParty <= 7 ? "#E65100" : color;
     const allergenList = allergies.length ? allergies.map(g=>`${esc(g.name)}: ${esc(g.allergies)}`).join("\\n") : "";
@@ -1779,7 +1789,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     if(btn){btn.textContent="⏳ Lösche...";btn.disabled=true;}
     const editToken=new URLSearchParams(location.search).get("edit");
     try{
-      const r=await fetch(location.origin+"/api/party/${party.id}?token="+encodeURIComponent(editToken),{method:"DELETE"});
+      const r=await fetch(location.origin+"/api/party/${party.id}",{method:"DELETE",headers:{"Content-Type":"application/json"},body:JSON.stringify({editToken:editToken})});
       if(!r.ok){const d=await r.json();throw new Error(d.error||"Lösch-Fehler");}
       alert("Party wurde gelöscht. Du wirst zur Startseite weitergeleitet.");
       location.href="https://machsleicht.de/";
