@@ -357,6 +357,25 @@ window.plausible.init=function(){};window.plausible.q=[];
 <div id="root"></div>
 </div>
 <script>
+// P0-Sanitize-Schutz: invalid localStorage-Werte aus alten Motto-States (harry-potter/frozen/etc.) bereinigen
+// VOR Bundle-Load, sonst crasht App() mit "Cannot read properties of undefined (reading 'emoji')"
+(function(){
+  var VALID_MOTTOS=['feuerwehr','einhorn','safari','dino','piraten','weltraum','detektiv','meerjungfrau','feen','dschungel','pferde','ritter','baustelle'];
+  function safeParse(v){try{return JSON.parse(v);}catch(e){return undefined;}}
+  function cleanKey(key, validator){
+    var raw=localStorage.getItem(key);
+    if(raw===null)return;
+    var v=safeParse(raw);
+    if(v===undefined){localStorage.removeItem(key);return;} // malformed JSON
+    if(validator && !validator(v))localStorage.removeItem(key); // invalid value
+  }
+  cleanKey('ml_mottoId', function(v){return v===null || (typeof v==='string' && VALID_MOTTOS.indexOf(v)>=0);});
+  cleanKey('ml_szThemeId', function(v){return v===null || (typeof v==='string' && VALID_MOTTOS.indexOf(v)>=0 || v==='generic');});
+  cleanKey('ml_sz_themeId', function(v){return v===null || (typeof v==='string' && VALID_MOTTOS.indexOf(v)>=0 || v==='generic');});
+  cleanKey('ml_age_filter', function(){return false;}); // legacy key, always remove
+  cleanKey('ml_age', function(v){return typeof v==='number' && v>=3 && v<=12;});
+  cleanKey('ml_guests', function(v){return typeof v==='number' && v>=1 && v<=30;});
+})();
 // Motto CTA click handler — store selected motto for React
 document.querySelectorAll('[data-motto]').forEach(function(el){
   el.addEventListener('click',function(){window.__selectedMotto=el.getAttribute('data-motto');});
