@@ -313,12 +313,16 @@ export default {
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = JSON.parse(raw);
       const body = await request.json();
-      if (body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
+      // P0-Security Welle 1E: Legacy-Party ohne editToken darf NICHT editierbar sein.
+      // Sonst Auth-Bypass: body.editToken=undefined gegen party.editToken=undefined → match.
+      if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
       ["childName","age","motto","mottoEmoji","mottoColor","date","time","endTime","address","notes","askAllergies","askPickup","paypalMe","email"].forEach(f=>{if(body[f]!==undefined)party[f]=body[f];});
       if (Array.isArray(body.wishes)) {
         party.wishes = body.wishes.slice(0,MAX_WISHES).map(w=>({
           id:w.id||generateId(6),title:(w.title||"").slice(0,100),url:normalizeWishUrl(w.url),
-          price:(w.price||"").slice(0,20),sharedGift:!!w.sharedGift,claimedBy:w.claimedBy||[]
+          // P0-Security Welle 1E: claimedBy MUSS Array sein. Sonst Type-Confusion bei späterem
+          // claim-Call: String-length-Check umgeht Auth bei sharedGift-Wünschen.
+          price:(w.price||"").slice(0,20),sharedGift:!!w.sharedGift,claimedBy:Array.isArray(w.claimedBy)?w.claimedBy:[]
         }));
       }
       const ttl = calcTTL(party.date);
@@ -451,6 +455,8 @@ export default {
       const body = await request.json();
       if (body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
       const email = (body.email||"").trim().slice(0,200);
+      // P0-Security Welle 1E: Control-Chars (NUL, CR, LF, Tab) in Email blocken \u2014 Resend-Header-Injection-Risk.
+      if (/[\x00-\x1F\x7F]/.test(email)) return json({error:"Ung\u00FCltige E-Mail"},400, request);
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({error:"Ung\u00FCltige E-Mail"},400, request);
       const newsletterOptIn = body.newsletterOptIn === true;
 
@@ -618,7 +624,9 @@ export default {
           confirmedIp: request.headers.get("cf-connecting-ip") || "",
           confirmedUa: (request.headers.get("user-agent") || "").slice(0,200)
         };
-        await env.PARTY.put(`consent:${emailHash}`, JSON.stringify(consentRecord));
+        // P0-DSGVO Welle 1E: 3-Jahres-TTL für Consent-Audit (Art-7-Nachweispflicht erfüllt,
+        // aber NICHT ewig — Art-17 Recht-auf-Löschung soll nach 3 Jahren greifen).
+        await env.PARTY.put(`consent:${emailHash}`, JSON.stringify(consentRecord), {expirationTtl: 3*365*24*60*60});
       } catch(e) {
         console.log("Consent audit-trail write error:", e.message);
       }
