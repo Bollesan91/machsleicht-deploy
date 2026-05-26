@@ -1097,5 +1097,40 @@
       "fallback": "Wenn nichts hilft: Programm beenden und auf den Spaß-Kern reduzieren (Geschenk-Öffnen, Foto).",
       "tone": "pragmatisch"
     }
+  },
+  "bonusGames": {
+    "intro": "Bonus-Spiele für die Stallmeister-Prüfung — als 6. Station, Plan B bei Material-Ausfall, oder Schlafparty-Anschluss.",
+    "items": [
+      {
+        "name": "🎬 Pferdefilm-Quiz",
+        "duration": 20,
+        "minAge": 9,
+        "loudness": "leise",
+        "indoor": true,
+        "outdoor": false,
+        "material": "10 Quiz-Karten zu Pferdefilmen (Black Beauty, Spirit, Ostwind, Black Stallion etc.), Antwortbogen",
+        "anleitung": "Filmtitel + Hauptfigur-Pferd erraten. \"Wie heißt Lillys Pferd in Bibi & Tina?\" (Sabrina). Bonus-Stempel für Stallmeister-Lizenz."
+      },
+      {
+        "name": "🔬 Pferde-Diagnose-Spiel",
+        "duration": 18,
+        "minAge": 10,
+        "loudness": "leise",
+        "indoor": true,
+        "outdoor": false,
+        "material": "5 Krankheits-Beschreibung-Karten (Hufrehe-Symptome, Kolik-Anzeichen, Mauke, Sommerekzem, Husten), Antwortbogen",
+        "anleitung": "Diagnostikerin Anna liest Symptome vor, Kinder benennen die Krankheit + erste Maßnahme. Echtes Wissen für Pferde-Freaks."
+      },
+      {
+        "name": "🏆 Reiter-Wandersieg-Tafel",
+        "duration": 10,
+        "minAge": 9,
+        "loudness": "mittel",
+        "indoor": true,
+        "outdoor": false,
+        "material": "Große Stallmeister-Tafel + Filzstifte, Stempel-System",
+        "anleitung": "Am Ende: jedes Kind trägt seine Lieblings-Disziplin + Highlight auf die Wander-Tafel ein. Foto fürs Gruppen-Album. Identitäts-Anker."
+      }
+    ]
   }
 }

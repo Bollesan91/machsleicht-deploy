@@ -1159,5 +1159,40 @@
       "fallback": "Wenn nichts hilft: Programm beenden und auf den Spaß-Kern reduzieren (Geschenk-Öffnen, Foto).",
       "tone": "pragmatisch"
     }
+  },
+  "bonusGames": {
+    "intro": "Bonus-Spiele für die Ritter-Akademie — als 6. Station, Plan B oder Schlafparty-Anschluss mit Ritterfilm.",
+    "items": [
+      {
+        "name": "🎬 Ritterfilm-Quiz",
+        "duration": 20,
+        "minAge": 9,
+        "loudness": "leise",
+        "indoor": true,
+        "outdoor": false,
+        "material": "12 Filmplakat-Karten (Excalibur, König Artus, Der Patriot, Game of Thrones-Stills [Standbild ohne Gewalt], Robin Hood), Antwortbogen",
+        "anleitung": "Filmtitel + Hauptfigur erraten. Bei Game of Thrones: nur kindgerechte Charaktere (Jon Snow, Daenerys). Bonus-Stempel für Ritter-Akademie."
+      },
+      {
+        "name": "🔐 Code-Knacker mit Heraldik",
+        "duration": 18,
+        "minAge": 10,
+        "loudness": "leise",
+        "indoor": true,
+        "outdoor": false,
+        "material": "5 verschlüsselte Nachrichten (Wappen-Symbol = Buchstabe), Entschlüsselungs-Schlüssel als Karte",
+        "anleitung": "Detektiv-Element: Nachrichten in heraldischer \"Sprache\" entschlüsseln. Beispiel: 🦁=A, 🦅=B, ⚔=C... Code lautet \"EHRE\" oder \"TREUE\". Bonus-Stempel."
+      },
+      {
+        "name": "🏛️ Burg-Architektur-Bau",
+        "duration": 25,
+        "minAge": 9,
+        "loudness": "mittel",
+        "indoor": true,
+        "outdoor": false,
+        "material": "60-80 Bauklötze (Lego oder Holz), Bauplan-Skizzen (Höhenburg, Wasserburg, Spornburg)",
+        "anleitung": "2er-Teams bauen nach Bauplan eine Mini-Burg. Tiefbau-Ingenieur bewertet Statik + Plan-Treue. Bonus-Stempel + Foto fürs Akademie-Album."
+      }
+    ]
   }
 }

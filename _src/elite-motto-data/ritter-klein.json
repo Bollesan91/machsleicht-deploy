@@ -82,62 +82,62 @@
     "rolesList": [
       {
         "emoji": "🛡️",
-        "name": "Burg-Wächter",
+        "name": "Lilly (Burg-Wächter)",
         "function": "Bewacht das Tor mit dem Schild"
       },
       {
         "emoji": "🐉",
-        "name": "Drachen-Jäger",
+        "name": "Max (Drachen-Jäger)",
         "function": "Führt den Drachen-Wurf an"
       },
       {
         "emoji": "🤡",
-        "name": "Hofnarr",
+        "name": "Tom (Hofnarr)",
         "function": "Erzählt witzige Burg-Geschichten"
       },
       {
         "emoji": "🐎",
-        "name": "Pferdeknecht",
+        "name": "Mia (Pferdeknecht)",
         "function": "Pflegt die Plüsch-Rosse (Steckenpferde)"
       },
       {
         "emoji": "🎨",
-        "name": "Wappen-Maler",
+        "name": "Felix (Wappen-Maler)",
         "function": "Hilft beim Schild-Schmücken"
       },
       {
         "emoji": "📜",
-        "name": "Königs-Bote",
+        "name": "Anna (Königs-Bote)",
         "function": "Sammelt Nachrichten von Raum zu Raum"
       },
       {
         "emoji": "⚔️",
-        "name": "Pool-Nudel-Trainer",
+        "name": "Paul (Pool-Nudel-Trainer)",
         "function": "Hilft beim sicheren Schwert-Üben"
       },
       {
         "emoji": "👑",
-        "name": "Kronen-Bändiger",
+        "name": "Hanna (Kronen-Bändiger)",
         "function": "Verteilt die Kronen am Ende"
       },
       {
         "emoji": "🔔",
-        "name": "Burg-Glocken-Läuter",
+        "name": "Jonas (Burg-Glocken-Läuter)",
         "function": "Läutet vor jedem Spiel-Start"
       },
       {
         "emoji": "🥨",
-        "name": "Brezel-Verteiler",
+        "name": "Sofie (Brezel-Verteiler)",
         "function": "Bringt Brezeln vom Buffet"
       },
       {
         "emoji": "🎈",
-        "name": "Drachen-Anpfeifer",
+        "name": "Lina (Drachen-Anpfeifer)",
         "function": "Macht Drachen-Geräusche fürs Spiel"
       },
       {
         "emoji": "📸",
-        "name": "Burg-Foto-Maker",
+        "name": "David (Burg-Foto-Maker)",
         "function": "Macht Fotos mit dem Wappenschild"
       }
     ],
@@ -1262,5 +1262,40 @@
       "fallback": "Bei totalem Material-Ausfall: eine kreative Bastel-Phase mit Stiften + Pappe als Kern-Aktivität. Funktioniert immer.",
       "tone": "pragmatisch"
     }
+  },
+  "bonusGames": {
+    "intro": "Bonus-Spiele für die kleine Ritter-Krönung — alle 3-5-tauglich, ergänzen die Standard-Stationen.",
+    "items": [
+      {
+        "name": "👑 Königs-Standbild",
+        "duration": 8,
+        "minAge": 3,
+        "loudness": "mittel",
+        "indoor": true,
+        "outdoor": true,
+        "material": "Musik (Mittelalter-Playlist oder beliebige Kinderlieder)",
+        "anleitung": "Wie \"Reise nach Jerusalem\" aber Stand-Version: Musik läuft, Kinder tanzen wie Ritter. Stopp → erstarren als Statue. Wer wackelt, wird zum König gekrönt (Krone aus Pappkarton)."
+      },
+      {
+        "name": "🛡️ Schild-Aufkleben",
+        "duration": 10,
+        "minAge": 3,
+        "loudness": "leise",
+        "indoor": true,
+        "outdoor": false,
+        "material": "Pro Kind 1 großer Sticker-Bogen mit Wappen-Symbolen (Löwe, Stern, Schwert) + ein vorgemaltes Pappschild",
+        "anleitung": "Jedes Kind klebt 3-5 Aufkleber auf sein Pappschild. Reine Bastel-Phase, sehr beruhigend zwischen Action-Spielen."
+      },
+      {
+        "name": "🐉 Drachen-Brüll-Wettbewerb",
+        "duration": 5,
+        "minAge": 3,
+        "loudness": "laut",
+        "indoor": true,
+        "outdoor": true,
+        "material": "Nichts",
+        "anleitung": "Wer brüllt am drachen-ähnlichsten? Reihum, alle bekommen Applaus. Sehr kurzes Stimm-Energie-Ventil zwischen Sitz-Phasen."
+      }
+    ]
   }
 }

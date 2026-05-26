@@ -82,62 +82,62 @@
     "rolesList": [
       {
         "emoji": "🛡️",
-        "name": "Wappen-Meister",
+        "name": "Wappen-Meister Max",
         "function": "Hilft beim Wappen-Entwurf"
       },
       {
         "emoji": "⚔️",
-        "name": "Schwert-Champion",
+        "name": "Schwert-Champion Mia",
         "function": "Führt durch den Schwert-Parcours"
       },
       {
         "emoji": "📚",
-        "name": "Burgen-Gelehrte:r",
+        "name": "Burgen-Gelehrte Lina",
         "function": "Quiz-Wissen-Star"
       },
       {
         "emoji": "🐉",
-        "name": "Drachen-Jäger",
+        "name": "Drachen-Jäger Tom",
         "function": "Drachen-Schatzsuche-Leiter"
       },
       {
         "emoji": "🏰",
-        "name": "Burg-Wächter",
+        "name": "Burg-Wächter Hanna",
         "function": "Bewacht das Tor, kontrolliert Einlass"
       },
       {
         "emoji": "🤡",
-        "name": "Hofnarr",
+        "name": "Hofnarr Felix",
         "function": "Erzählt Witze + macht Stimmung"
       },
       {
         "emoji": "📋",
-        "name": "Burg-Lageplan-Hüter",
+        "name": "Burg-Lageplan-Hüter Paul",
         "function": "Erklärt die Stations-Karte"
       },
       {
         "emoji": "🎀",
-        "name": "Heroldin",
+        "name": "Heroldin Sofie",
         "function": "Proklamiert Sieger des Schwert-Parcours"
       },
       {
         "emoji": "⏱️",
-        "name": "Stunden-Glocken-Läuter",
+        "name": "Stunden-Glocken-Läuter Jonas",
         "function": "Wechsel-Signal alle 25 Min"
       },
       {
         "emoji": "📜",
-        "name": "Schwur-Karten-Hüter",
+        "name": "Schwur-Karten-Hüter Anna",
         "function": "Bewacht die Knappen-Schwur-Karte"
       },
       {
         "emoji": "🥨",
-        "name": "Stockbrot-Bäcker",
+        "name": "Stockbrot-Bäcker David",
         "function": "Bereitet das Mittelalter-Brot vor"
       },
       {
         "emoji": "📸",
-        "name": "Ritter-Fotograph",
+        "name": "Ritter-Fotograph Lilly",
         "function": "Hält die Schwert-Schlag-Zeremonie fest"
       }
     ],
@@ -1119,5 +1119,40 @@
       "fallback": "Wenn die Stimmung gekippt ist: Schwert-Parcours für heute beendet, stattdessen Wappen-Werkstatt verlängern. Kinder akzeptieren das.",
       "tone": "klar"
     }
+  },
+  "bonusGames": {
+    "intro": "Bonus-Spiele für die Knappen-Ausbildung — als 5. Station, Plan B oder Schlafparty-Anschluss.",
+    "items": [
+      {
+        "name": "🎵 Mittelalter-Lied-Quiz",
+        "duration": 12,
+        "minAge": 6,
+        "loudness": "mittel",
+        "indoor": true,
+        "outdoor": false,
+        "material": "Smartphone mit 8 Lied-Schnipseln (Mittelalter-Playlist 30 Sek pro Lied)",
+        "anleitung": "Lied abspielen, Kinder erraten den Titel oder Mittelalter-Stimmung (Tafel, Schlacht, Tanz). Bonus-Stempel für Knappen-Brief."
+      },
+      {
+        "name": "📜 Ritter-Eid-Schreibwerkstatt",
+        "duration": 15,
+        "minAge": 7,
+        "loudness": "leise",
+        "indoor": true,
+        "outdoor": false,
+        "material": "Pergamentpapier (oder Backpapier braun gefärbt), Kalligrafie-Stifte oder dicke Filzstifte",
+        "anleitung": "Jedes Kind schreibt seinen eigenen Ritter-Eid in 3 Sätzen: \"Ich bin treu zu... Ich kämpfe für... Ich helfe...\" Heroldin liest am Ende stolz vor. Identitäts-Anker."
+      },
+      {
+        "name": "⚔️ Schwertkampf-Choreografie",
+        "duration": 10,
+        "minAge": 6,
+        "loudness": "laut",
+        "indoor": true,
+        "outdoor": true,
+        "material": "6 Pool-Nudel-Schwerter, 2 Strohballen oder Pappkartons",
+        "anleitung": "2er-Teams üben eine Mini-Choreografie: 3 Bewegungen am Stroh-Ballen (Hieb-Rück-Schlag-Salut). Heroldin gibt Stilnote, alle bekommen Stempel."
+      }
+    ]
   }
 }

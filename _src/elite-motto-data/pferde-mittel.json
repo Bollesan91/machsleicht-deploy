@@ -82,62 +82,62 @@
     "rolesList": [
       {
         "emoji": "🐴",
-        "name": "Stall-Meister",
+        "name": "Stall-Meister Max",
         "function": "Pflegt die Plüsch-Ponys"
       },
       {
         "emoji": "🧲",
-        "name": "Hufeisen-Champion",
+        "name": "Hufeisen-Champion Lina",
         "function": "Hufeisen-Werfen Profi"
       },
       {
         "emoji": "🧠",
-        "name": "Quiz-Spezialist",
+        "name": "Quiz-Spezialist Tom",
         "function": "Pferdewissen-Star"
       },
       {
         "emoji": "🗺️",
-        "name": "Karten-Hüter",
+        "name": "Karten-Hüter Mia",
         "function": "Karotten-Schatzsuche-Leiter"
       },
       {
         "emoji": "🎀",
-        "name": "Schweif-Künstler",
+        "name": "Schweif-Künstler Sofie",
         "function": "Mähnen-Flechten Profi"
       },
       {
         "emoji": "🥕",
-        "name": "Fütter-Beauftragter",
+        "name": "Fütter-Beauftragter Paul",
         "function": "Verteilt Snacks gerecht"
       },
       {
         "emoji": "🌾",
-        "name": "Heu-Manager",
+        "name": "Heu-Manager Felix",
         "function": "Verwaltet das Pferde-Lager"
       },
       {
         "emoji": "⏱️",
-        "name": "Zeit-Nehmer",
+        "name": "Zeit-Nehmer Jonas",
         "function": "Hält die Stoppuhr beim Parcours"
       },
       {
         "emoji": "📋",
-        "name": "Stallplan-Hüter",
+        "name": "Stallplan-Hüter Anna",
         "function": "Kennt jede Stations-Position"
       },
       {
         "emoji": "🏆",
-        "name": "Lizenz-Verleiher",
+        "name": "Lizenz-Verleiher David",
         "function": "Übergibt die Reiter-Lizenz feierlich"
       },
       {
         "emoji": "📸",
-        "name": "Reiter-Fotograph",
+        "name": "Reiter-Fotograph Hanna",
         "function": "Dokumentiert die Stationen-Erfolge"
       },
       {
         "emoji": "🍎",
-        "name": "Apfel-Belohnung",
+        "name": "Apfel-Belohnung Lilly",
         "function": "Verteilt Apfel-Snacks als Belohnung"
       }
     ],
@@ -1070,5 +1070,40 @@
       "fallback": "Wenn das Geburtstagskind besonders enttäuscht: am nächsten Wochenende einen echten Reiterhof-Besuch nachholen, dann ist es ein \"extra Tag\".",
       "tone": "einfühlsam"
     }
+  },
+  "bonusGames": {
+    "intro": "Bonus-Spiele für die Stationen-Rotation — Plan B bei Material-Ausfall oder als 5. Station bei größerer Gruppe.",
+    "items": [
+      {
+        "name": "🐎 Pferderassen-Memory",
+        "duration": 15,
+        "minAge": 6,
+        "loudness": "leise",
+        "indoor": true,
+        "outdoor": false,
+        "material": "14 Memory-Karten (7 Paare: Friese, Haflinger, Araber, Shetland-Pony, Tinker, Quarter-Horse, Lipizzaner)",
+        "anleitung": "Klassisches Memory mit Pferderassen — Paare suchen, Rassen-Namen merken. Wer ein Paar findet, sagt den Rassennamen laut. Stempel für Quiz-Lizenz."
+      },
+      {
+        "name": "⏱️ Stallpflege-Speedrun",
+        "duration": 12,
+        "minAge": 6,
+        "loudness": "mittel",
+        "indoor": true,
+        "outdoor": true,
+        "material": "3 Plüsch-Ponys + Pflege-Checkliste (Bürsten → Mähne → Schleife → Karotte) + Stoppuhr",
+        "anleitung": "2er-Teams: Wer absolviert die Pflege-Checkliste am schnellsten und sauber? Tierärztin Hanna bewertet Sauberkeit, Zeit zählt zur Wertung."
+      },
+      {
+        "name": "🎀 Schleifen-Wett-Knoten",
+        "duration": 10,
+        "minAge": 7,
+        "loudness": "leise",
+        "indoor": true,
+        "outdoor": false,
+        "material": "Pro Kind 1 Pony-Mähne aus Wolle + 3 Filz-Schleifen",
+        "anleitung": "Wer knotet die schönsten 3 Schleifen in die Mähne? Heroldin gibt Stilnote für Kreativität + Sauberkeit. Bonus-Stempel für Top-3."
+      }
+    ]
   }
 }

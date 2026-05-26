@@ -82,62 +82,62 @@
     "rolesList": [
       {
         "emoji": "🐴",
-        "name": "Stall-Meister",
+        "name": "Lilly (Stall-Meister)",
         "function": "Sorgt für ordentliches Futter und Wasser"
       },
       {
         "emoji": "🎀",
-        "name": "Mähnen-Stylist",
+        "name": "Max (Mähnen-Stylist)",
         "function": "Flechtet und kämmt die Pony-Mähnen"
       },
       {
         "emoji": "🥕",
-        "name": "Karotten-Verteiler",
+        "name": "Mia (Karotten-Verteiler)",
         "function": "Belohnt die Ponys mit Snacks"
       },
       {
         "emoji": "🧲",
-        "name": "Hufeisen-Werfer",
+        "name": "Tom (Hufeisen-Werfer)",
         "function": "Trainiert das Hufeisen-Wurf-Spiel"
       },
       {
         "emoji": "🤠",
-        "name": "Reiter-Lehrling",
+        "name": "Hanna (Reiter-Lehrling)",
         "function": "Übt das langsame Reiten am Steckenpferd"
       },
       {
         "emoji": "📸",
-        "name": "Pony-Foto-Reporter",
+        "name": "Jonas (Pony-Foto-Reporter)",
         "function": "Macht Fotos vom Stall (optional)"
       },
       {
         "emoji": "🌾",
-        "name": "Heu-Sammler",
+        "name": "Lina (Heu-Sammler)",
         "function": "Sammelt das Pferdefutter ein"
       },
       {
         "emoji": "🌟",
-        "name": "Pony-Streichler",
+        "name": "Paul (Pony-Streichler)",
         "function": "Streichelt die Plüsch-Ponys liebevoll"
       },
       {
         "emoji": "🚪",
-        "name": "Stalltür-Klopfer",
+        "name": "Anna (Stalltür-Klopfer)",
         "function": "Klopft an, wenn jemand neues kommt"
       },
       {
         "emoji": "👑",
-        "name": "Reiter-Krönchen-Hüter",
+        "name": "Felix (Reiter-Krönchen-Hüter)",
         "function": "Verteilt die Reiter-Hüte"
       },
       {
         "emoji": "🍎",
-        "name": "Apfel-Reicher",
+        "name": "Sofie (Apfel-Reicher)",
         "function": "Reicht die Apfel-Snacks an die Ponys"
       },
       {
         "emoji": "🎈",
-        "name": "Sonnenblumen-Wächter",
+        "name": "David (Sonnenblumen-Wächter)",
         "function": "Passt auf die Reiterhof-Deko auf"
       }
     ],
@@ -1240,5 +1240,40 @@
       "fallback": "Bei totalem Material-Ausfall: eine kreative Bastel-Phase mit Stiften + Pappe als Kern-Aktivität. Funktioniert immer.",
       "tone": "pragmatisch"
     }
+  },
+  "bonusGames": {
+    "intro": "Diese Bonus-Spiele kannst du zusätzlich einbauen oder als Plan B nutzen wenn ein Haupt-Spiel ausfällt — alle 3-5-tauglich.",
+    "items": [
+      {
+        "name": "🌾 Heu-Wettrennen",
+        "duration": 10,
+        "minAge": 3,
+        "loudness": "mittel",
+        "indoor": true,
+        "outdoor": true,
+        "material": "6 kleine Stroh-/Heu-Bündchen aus Filz (oder echte Stroh-Reste), 2 Eimer als Ziel",
+        "anleitung": "Kinder transportieren Heu-Bündchen vom Stall (Box) zum Pony-Eimer (Ziel). Reihum, kein Wettkampf. Wer alle Bündchen verteilt hat, bekommt einen Stempel."
+      },
+      {
+        "name": "🐴 Pony-Hör-Memory",
+        "duration": 10,
+        "minAge": 4,
+        "loudness": "leise",
+        "indoor": true,
+        "outdoor": false,
+        "material": "6 Karten mit Pferdebildern, Erwachsene macht Pferdegeräusche (wiehern, schnauben, trab-trab)",
+        "anleitung": "Erwachsene macht ein Geräusch, Kinder zeigen die passende Karte. Lerneffekt: Pferd-Geräusche unterscheiden. Schöne Sitzphase zwischen Action-Spielen."
+      },
+      {
+        "name": "🥕 Karotten-Sortier-Spiel",
+        "duration": 8,
+        "minAge": 3,
+        "loudness": "leise",
+        "indoor": true,
+        "outdoor": true,
+        "material": "Karotten in 3 Größen (groß/mittel/klein) gemischt, 3 Eimer",
+        "anleitung": "Kinder sortieren die Karotten nach Größe in die richtigen Eimer. Bei 3-Jährigen: gemeinsam, kein Wettkampf. Bei 5-Jährigen: Stoppuhr für extra Stempel."
+      }
+    ]
   }
 }
