@@ -213,7 +213,16 @@
               "name": "Foto vom fertigen Schild",
               "content": "Jedes Kind hält stolz sein Schild hoch."
             }
-          ]
+          ],
+          "loudness": "leise",
+          "effort": "hoch",
+          "prepText": "Material pro Kind in einzelnen Bündeln vorportionieren (Pappkarton, Stifte, Wolle) — sonst gibt es 10 Min Streit ums Material. Schürzen oder alte T-Shirts bereitstellen. 20-30 Min Vorlauf.",
+          "ageAdjust6": "Vorgefertigte Vorlagen + große Aufkleber statt Frei-Design. Jedes Kind kann sein Werk fertigstellen, kein Druck zu Perfektion.",
+          "ageAdjust8": "Eigene Konzept-Phase (5 Min Plan zeichnen) + freies Gestalten. Wer fertig ist, kann mit zusätzlichen Details weitermachen.",
+          "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Farben, Klebepunkte, Stifte griffbereit. Trocken-Bereich planen (auf der Seite, niemand stolpert drüber).",
+          "outdoorTip": "Im Garten an einem Klapptisch — Sonne + Schatten je nach Material (Klebe mag keine Sonne). Wind-Schutz bei kleinen Teilen.",
+          "whyItWorksTitle": "Warum Bastelei der heimliche Höhepunkt ist",
+          "whyItWorks": "Bastel-Stationen schaffen echte Mitnehm-Stücke (das eigene Wappen, der gemalte Schild) und sind die ruhigste Phase einer Party. Eltern lieben es, weil das Kind danach ein Foto-würdiges Werk hat. Kinder lieben es, weil sie etwas Eigenes machen statt nur konsumieren."
         },
         {
           "name": "🐉 Drachen-Wurf (Gemeinsam-Besiegen)",
@@ -239,7 +248,16 @@
               "name": "Drachen 'fällt'",
               "content": "Du legst den Drachen flach hin nach 5-6 Treffern. 'Sieg!' alle jubeln."
             }
-          ]
+          ],
+          "loudness": "laut",
+          "effort": "mittel",
+          "prepText": "Strecke/Hindernisse vor der Party aufbauen — 15-20 Min Vorlauf. Bei Mietswohnung: lange Strecke im Flur testen, Sturzgefahr-Stellen mit weichem Boden (Decken) entschärfen.",
+          "ageAdjust6": "Hindernisse leichter, Stoppuhr ohne Druck, alle bekommen einen Stempel/Punkt — kein hartes Sieger-System.",
+          "ageAdjust8": "Hindernisse anspruchsvoller, Zeitmessung + Stilnote für echten Wettkampf, Top-3 mit Mini-Pokal oder Bonus-Stempel.",
+          "indoorTip": "Funktioniert im langen Flur oder Wohnzimmer — Hindernisse aus Bestand: Sofakissen, Bücher-Stapel, Wäscheständer als Slalom-Markierung.",
+          "outdoorTip": "Im Garten am besten — keine Möbel-Schäden, mehr Strecke. Bei Regen problemlos indoor verlegbar.",
+          "whyItWorksTitle": "Warum Bewegungs-Spiele bei Kindergeburtstagen funktionieren",
+          "whyItWorks": "Bewegung baut aufgestaute Energie ab (besonders nach Anreise + Snack), schafft sichtbare Erfolge (Zeit, Treffer), und macht den Tag fotografierbar. Wichtig: Action-Phasen müssen mit ruhigen Sitz-Phasen abwechseln, sonst kippt die Stimmung in Streit oder Erschöpfung."
         }
       ],
       "food": "🍞 Ritter-Brote (Toast in Schwert-Form geschnitten, 6 Stk.)\n🍎 Apfelschnitze (1 Schale)\n🥨 Brezeln (Burg-Snack)\n🥕 Karotten-Sticks (Drachenzähne)\n🥤 'Ritter-Schorle' (Apfelsaft, 1,5 L)\n🎂 Burg-Kuchen (Kastenkuchen mit Türmchen aus Waffeln)",
@@ -399,7 +417,16 @@
               "name": "Stolz präsentieren",
               "content": "Jeder zeigt sein Schild den anderen."
             }
-          ]
+          ],
+          "loudness": "leise",
+          "effort": "hoch",
+          "prepText": "Material pro Kind in einzelnen Bündeln vorportionieren (Pappkarton, Stifte, Wolle) — sonst gibt es 10 Min Streit ums Material. Schürzen oder alte T-Shirts bereitstellen. 20-30 Min Vorlauf.",
+          "ageAdjust6": "Vorgefertigte Vorlagen + große Aufkleber statt Frei-Design. Jedes Kind kann sein Werk fertigstellen, kein Druck zu Perfektion.",
+          "ageAdjust8": "Eigene Konzept-Phase (5 Min Plan zeichnen) + freies Gestalten. Wer fertig ist, kann mit zusätzlichen Details weitermachen.",
+          "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Farben, Klebepunkte, Stifte griffbereit. Trocken-Bereich planen (auf der Seite, niemand stolpert drüber).",
+          "outdoorTip": "Im Garten an einem Klapptisch — Sonne + Schatten je nach Material (Klebe mag keine Sonne). Wind-Schutz bei kleinen Teilen.",
+          "whyItWorksTitle": "Warum Bastelei der heimliche Höhepunkt ist",
+          "whyItWorks": "Bastel-Stationen schaffen echte Mitnehm-Stücke (das eigene Wappen, der gemalte Schild) und sind die ruhigste Phase einer Party. Eltern lieben es, weil das Kind danach ein Foto-würdiges Werk hat. Kinder lieben es, weil sie etwas Eigenes machen statt nur konsumieren."
         },
         {
           "name": "⚔️ Schwert-Übung am Polster",
@@ -430,7 +457,16 @@
               "name": "Eltern-Helfer als 'Gegner'",
               "content": "Optional: Eltern hält das Polster vor sich, Kind kämpft gegen das Polster, Eltern reagiert dramatisch ('Ich bin getroffen!')."
             }
-          ]
+          ],
+          "loudness": "mittel",
+          "effort": "mittel",
+          "prepText": "Material pro Station vorbereiten und vorab durchspielen (15 Min Vorlauf). Klare Anweisung wer-macht-was vor Start des Spiels — sonst Chaos.",
+          "ageAdjust6": "Vereinfacht: weniger Schritte, mehr Eltern-Begleitung, kein Zeitdruck. Alle bekommen Stempel/Belohnung.",
+          "ageAdjust8": "Volle Komplexität: eigene Strategie-Wahl, Wettkampf-Element, Bonus-Stempel für saubere Lösung.",
+          "indoorTip": "In gut belichteten Raum, kein zu volles Möbel. Material auf einer großen Stoff-Decke sammeln damit nichts verloren geht.",
+          "outdoorTip": "Im Garten mit klar markierter Spiel-Zone. Sand/Erde-Material erst hier, nicht ins Haus zurücktragen.",
+          "whyItWorksTitle": "Warum diese Station-Mischung trägt",
+          "whyItWorks": "Mixed-Stations kombinieren mehrere Elemente (Bewegung + Kreativität + Wettkampf), was die Aufmerksamkeit länger hält als Mono-Spiele. Wichtig: klare Sub-Phasen, sonst werden Kinder zerstreut."
         },
         {
           "name": "🐉 Drachen-Wurf (Team-Version)",
@@ -456,7 +492,16 @@
               "name": "Sieg gemeinsam",
               "content": "Nach allen Würfen: 'Der Drache ist besiegt!' Alle jubeln, der Drache fällt."
             }
-          ]
+          ],
+          "loudness": "laut",
+          "effort": "mittel",
+          "prepText": "Strecke/Hindernisse vor der Party aufbauen — 15-20 Min Vorlauf. Bei Mietswohnung: lange Strecke im Flur testen, Sturzgefahr-Stellen mit weichem Boden (Decken) entschärfen.",
+          "ageAdjust6": "Hindernisse leichter, Stoppuhr ohne Druck, alle bekommen einen Stempel/Punkt — kein hartes Sieger-System.",
+          "ageAdjust8": "Hindernisse anspruchsvoller, Zeitmessung + Stilnote für echten Wettkampf, Top-3 mit Mini-Pokal oder Bonus-Stempel.",
+          "indoorTip": "Funktioniert im langen Flur oder Wohnzimmer — Hindernisse aus Bestand: Sofakissen, Bücher-Stapel, Wäscheständer als Slalom-Markierung.",
+          "outdoorTip": "Im Garten am besten — keine Möbel-Schäden, mehr Strecke. Bei Regen problemlos indoor verlegbar.",
+          "whyItWorksTitle": "Warum Bewegungs-Spiele bei Kindergeburtstagen funktionieren",
+          "whyItWorks": "Bewegung baut aufgestaute Energie ab (besonders nach Anreise + Snack), schafft sichtbare Erfolge (Zeit, Treffer), und macht den Tag fotografierbar. Wichtig: Action-Phasen müssen mit ruhigen Sitz-Phasen abwechseln, sonst kippt die Stimmung in Streit oder Erschöpfung."
         },
         {
           "name": "🏰 Burg-Erstürmung",
@@ -482,7 +527,16 @@
               "name": "Sieg-Tanz",
               "content": "Wenn Burg eingefallen: alle springen darüber, lachen, 'Sieg!'"
             }
-          ]
+          ],
+          "loudness": "laut",
+          "effort": "mittel",
+          "prepText": "Strecke/Hindernisse vor der Party aufbauen — 15-20 Min Vorlauf. Bei Mietswohnung: lange Strecke im Flur testen, Sturzgefahr-Stellen mit weichem Boden (Decken) entschärfen.",
+          "ageAdjust6": "Hindernisse leichter, Stoppuhr ohne Druck, alle bekommen einen Stempel/Punkt — kein hartes Sieger-System.",
+          "ageAdjust8": "Hindernisse anspruchsvoller, Zeitmessung + Stilnote für echten Wettkampf, Top-3 mit Mini-Pokal oder Bonus-Stempel.",
+          "indoorTip": "Funktioniert im langen Flur oder Wohnzimmer — Hindernisse aus Bestand: Sofakissen, Bücher-Stapel, Wäscheständer als Slalom-Markierung.",
+          "outdoorTip": "Im Garten am besten — keine Möbel-Schäden, mehr Strecke. Bei Regen problemlos indoor verlegbar.",
+          "whyItWorksTitle": "Warum Bewegungs-Spiele bei Kindergeburtstagen funktionieren",
+          "whyItWorks": "Bewegung baut aufgestaute Energie ab (besonders nach Anreise + Snack), schafft sichtbare Erfolge (Zeit, Treffer), und macht den Tag fotografierbar. Wichtig: Action-Phasen müssen mit ruhigen Sitz-Phasen abwechseln, sonst kippt die Stimmung in Streit oder Erschöpfung."
         }
       ],
       "food": "🍞 Ritter-Brote (Toast in Schwert-Form, 12 Stk.)\n🍎 Apfelschnitze + Birnen\n🥕 Drachen-Zähne (Karotten)\n🥨 Burg-Brezeln (1 Päckchen)\n🥤 Ritter-Schorle (3 L)\n🎂 Burg-Kuchen mit Türmchen",
@@ -656,7 +710,16 @@
               "name": "Ritterschlag",
               "content": "Du oder König schlägt jedem Ritter auf die Schulter — 'Du bist ein guter Ritter!'"
             }
-          ]
+          ],
+          "loudness": "mittel",
+          "effort": "mittel",
+          "prepText": "Material pro Station vorbereiten und vorab durchspielen (15 Min Vorlauf). Klare Anweisung wer-macht-was vor Start des Spiels — sonst Chaos.",
+          "ageAdjust6": "Vereinfacht: weniger Schritte, mehr Eltern-Begleitung, kein Zeitdruck. Alle bekommen Stempel/Belohnung.",
+          "ageAdjust8": "Volle Komplexität: eigene Strategie-Wahl, Wettkampf-Element, Bonus-Stempel für saubere Lösung.",
+          "indoorTip": "In gut belichteten Raum, kein zu volles Möbel. Material auf einer großen Stoff-Decke sammeln damit nichts verloren geht.",
+          "outdoorTip": "Im Garten mit klar markierter Spiel-Zone. Sand/Erde-Material erst hier, nicht ins Haus zurücktragen.",
+          "whyItWorksTitle": "Warum diese Station-Mischung trägt",
+          "whyItWorks": "Mixed-Stations kombinieren mehrere Elemente (Bewegung + Kreativität + Wettkampf), was die Aufmerksamkeit länger hält als Mono-Spiele. Wichtig: klare Sub-Phasen, sonst werden Kinder zerstreut."
         },
         {
           "name": "🐉 Drachen-Wurf-Turnier",
@@ -682,7 +745,16 @@
               "name": "Drachen fällt",
               "content": "Nach allen Runden: Drache 'gibt auf', fällt um. Schatz-Tüten kommen zum Vorschein."
             }
-          ]
+          ],
+          "loudness": "laut",
+          "effort": "mittel",
+          "prepText": "Strecke/Hindernisse vor der Party aufbauen — 15-20 Min Vorlauf. Bei Mietswohnung: lange Strecke im Flur testen, Sturzgefahr-Stellen mit weichem Boden (Decken) entschärfen.",
+          "ageAdjust6": "Hindernisse leichter, Stoppuhr ohne Druck, alle bekommen einen Stempel/Punkt — kein hartes Sieger-System.",
+          "ageAdjust8": "Hindernisse anspruchsvoller, Zeitmessung + Stilnote für echten Wettkampf, Top-3 mit Mini-Pokal oder Bonus-Stempel.",
+          "indoorTip": "Funktioniert im langen Flur oder Wohnzimmer — Hindernisse aus Bestand: Sofakissen, Bücher-Stapel, Wäscheständer als Slalom-Markierung.",
+          "outdoorTip": "Im Garten am besten — keine Möbel-Schäden, mehr Strecke. Bei Regen problemlos indoor verlegbar.",
+          "whyItWorksTitle": "Warum Bewegungs-Spiele bei Kindergeburtstagen funktionieren",
+          "whyItWorks": "Bewegung baut aufgestaute Energie ab (besonders nach Anreise + Snack), schafft sichtbare Erfolge (Zeit, Treffer), und macht den Tag fotografierbar. Wichtig: Action-Phasen müssen mit ruhigen Sitz-Phasen abwechseln, sonst kippt die Stimmung in Streit oder Erschöpfung."
         },
         {
           "name": "🏰 Burg-Erstürmung (Wow-Version)",
@@ -713,7 +785,16 @@
               "name": "Sieg gemeinsam",
               "content": "Burg gefallen, alle Ritter umarmen sich — 'Wir haben die Burg eingenommen!'"
             }
-          ]
+          ],
+          "loudness": "laut",
+          "effort": "mittel",
+          "prepText": "Strecke/Hindernisse vor der Party aufbauen — 15-20 Min Vorlauf. Bei Mietswohnung: lange Strecke im Flur testen, Sturzgefahr-Stellen mit weichem Boden (Decken) entschärfen.",
+          "ageAdjust6": "Hindernisse leichter, Stoppuhr ohne Druck, alle bekommen einen Stempel/Punkt — kein hartes Sieger-System.",
+          "ageAdjust8": "Hindernisse anspruchsvoller, Zeitmessung + Stilnote für echten Wettkampf, Top-3 mit Mini-Pokal oder Bonus-Stempel.",
+          "indoorTip": "Funktioniert im langen Flur oder Wohnzimmer — Hindernisse aus Bestand: Sofakissen, Bücher-Stapel, Wäscheständer als Slalom-Markierung.",
+          "outdoorTip": "Im Garten am besten — keine Möbel-Schäden, mehr Strecke. Bei Regen problemlos indoor verlegbar.",
+          "whyItWorksTitle": "Warum Bewegungs-Spiele bei Kindergeburtstagen funktionieren",
+          "whyItWorks": "Bewegung baut aufgestaute Energie ab (besonders nach Anreise + Snack), schafft sichtbare Erfolge (Zeit, Treffer), und macht den Tag fotografierbar. Wichtig: Action-Phasen müssen mit ruhigen Sitz-Phasen abwechseln, sonst kippt die Stimmung in Streit oder Erschöpfung."
         }
       ],
       "food": "🎂 Burg-Kuchen mit Türmen (Hauptkuchen, Wow-Highlight)\n🍞 Ritter-Brote (15 Stk., Schwert-Form)\n🥕 Drachen-Zähne (3 Schalen)\n🍎 Apfelschnitze + Trauben\n🥨 Burg-Brezeln\n🥤 Ritter-Schorle (4 L)\n🍫 Schoko-Münzen als 'Burg-Schatz'",

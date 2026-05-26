@@ -228,7 +228,16 @@
               "name": "Auflösung",
               "content": "Team mit korrekter Lösung gewinnt. Lösung: Es war der Küchenmeister (alle 3 Spuren passen). Bonus-Punkte zur Stallmeister-Tafel."
             }
-          ]
+          ],
+          "loudness": "mittel",
+          "effort": "mittel",
+          "prepText": "Versteckte Gegenstände vor der Party platzieren — am besten von 2 Erwachsenen, damit niemand \"vergessen hat wo\" sagen muss. Zettel mit Verstecken zur Sicherheit. 15-20 Min Vorlauf, am besten am Morgen.",
+          "ageAdjust6": "Verstecke offensichtlicher (Augenhöhe, klare Hinweise), Suchzeit kürzer (10 Min). Alle finden in 2er-Teams gleichzeitig — kein Wettrennen.",
+          "ageAdjust8": "Verstecke kniffliger (höher/tiefer, mit verschachtelter Logik), Suchzeit länger (20-25 Min). Punkte/Stempel für schnellste Teams.",
+          "indoorTip": "Verstecke in verschiedenen Räumen aufteilen (Wohnzimmer + Flur + Bad), nicht in Schlafzimmern. Karte mit erlaubten Räumen sichtbar machen.",
+          "outdoorTip": "Im Garten — Verstecke in Sträuchern, unter Steinen (geprüft!), an Bäumen. Nicht zu hoch (keine Kletter-Verletzungen).",
+          "whyItWorksTitle": "Warum Schatzsuchen jede Party retten",
+          "whyItWorks": "Schatzsuchen schaffen klare Story-Phasen (Auftrag → Suche → Lösung) und sind altersgemäß skalierbar. Kinder mögen den Detektiv-Aspekt + die Belohnung. Wichtig: nicht zu viele Verstecke (Frustration) und nicht zu wenige (alle finden alles in 2 Min)."
         },
         {
           "name": "🛡️ Wappen-Design-Werkstatt (Heraldisch korrekt)",
@@ -259,7 +268,16 @@
               "name": "Wappen-Präsentation + Stilnote",
               "content": "Jedes Kind erklärt sein Wappen: 'Mein Wappen zeigt einen Adler auf Gold mit der Devise: WAHRHEIT IST MEIN PFAD.' Burgvogtin gibt Stilnote (Sauberkeit, Konzept, Heraldik-Treue)."
             }
-          ]
+          ],
+          "loudness": "leise",
+          "effort": "hoch",
+          "prepText": "Material pro Kind in einzelnen Bündeln vorportionieren (Pappkarton, Stifte, Wolle) — sonst gibt es 10 Min Streit ums Material. Schürzen oder alte T-Shirts bereitstellen. 20-30 Min Vorlauf.",
+          "ageAdjust6": "Vorgefertigte Vorlagen + große Aufkleber statt Frei-Design. Jedes Kind kann sein Werk fertigstellen, kein Druck zu Perfektion.",
+          "ageAdjust8": "Eigene Konzept-Phase (5 Min Plan zeichnen) + freies Gestalten. Wer fertig ist, kann mit zusätzlichen Details weitermachen.",
+          "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Farben, Klebepunkte, Stifte griffbereit. Trocken-Bereich planen (auf der Seite, niemand stolpert drüber).",
+          "outdoorTip": "Im Garten an einem Klapptisch — Sonne + Schatten je nach Material (Klebe mag keine Sonne). Wind-Schutz bei kleinen Teilen.",
+          "whyItWorksTitle": "Warum Bastelei der heimliche Höhepunkt ist",
+          "whyItWorks": "Bastel-Stationen schaffen echte Mitnehm-Stücke (das eigene Wappen, der gemalte Schild) und sind die ruhigste Phase einer Party. Eltern lieben es, weil das Kind danach ein Foto-würdiges Werk hat. Kinder lieben es, weil sie etwas Eigenes machen statt nur konsumieren."
         },
         {
           "name": "🏆 Schwert-Parcours mit Zeit + Stilnote",
@@ -290,7 +308,16 @@
               "name": "Bestes Team",
               "content": "Top 3 Gesamt-Wertung bekommen Bonus-Punkte für Ritter-Pokal."
             }
-          ]
+          ],
+          "loudness": "laut",
+          "effort": "mittel",
+          "prepText": "Strecke/Hindernisse vor der Party aufbauen — 15-20 Min Vorlauf. Bei Mietswohnung: lange Strecke im Flur testen, Sturzgefahr-Stellen mit weichem Boden (Decken) entschärfen.",
+          "ageAdjust6": "Hindernisse leichter, Stoppuhr ohne Druck, alle bekommen einen Stempel/Punkt — kein hartes Sieger-System.",
+          "ageAdjust8": "Hindernisse anspruchsvoller, Zeitmessung + Stilnote für echten Wettkampf, Top-3 mit Mini-Pokal oder Bonus-Stempel.",
+          "indoorTip": "Funktioniert im langen Flur oder Wohnzimmer — Hindernisse aus Bestand: Sofakissen, Bücher-Stapel, Wäscheständer als Slalom-Markierung.",
+          "outdoorTip": "Im Garten am besten — keine Möbel-Schäden, mehr Strecke. Bei Regen problemlos indoor verlegbar.",
+          "whyItWorksTitle": "Warum Bewegungs-Spiele bei Kindergeburtstagen funktionieren",
+          "whyItWorks": "Bewegung baut aufgestaute Energie ab (besonders nach Anreise + Snack), schafft sichtbare Erfolge (Zeit, Treffer), und macht den Tag fotografierbar. Wichtig: Action-Phasen müssen mit ruhigen Sitz-Phasen abwechseln, sonst kippt die Stimmung in Streit oder Erschöpfung."
         }
       ],
       "food": "🍕 Ritter-Pizza (3 große mit Mittelalter-Topping)\n🥖 Stockbrot vom Buffet (Brotmix in Stäbchen-Form)\n🍇 Trauben + Apfelschnitze + Birnen\n🥤 Met-Schorle (Apfelschorle/Traubenschorle in Tonbechern, 4 L)\n🎂 Burg-Kuchen (Schoko-Rührkuchen mit Burg-Türmen)\n🥨 Brezeln + Salzstangen + Käse + Wurst-Spieße\n🍬 Schokoladentaler",
@@ -455,7 +482,16 @@
               "name": "Wertung in Akademie-Tafel",
               "content": "Bogenschießen-Sieger bekommt Pin, alle Punkte zählen zum Ritter-Pokal."
             }
-          ]
+          ],
+          "loudness": "laut",
+          "effort": "mittel",
+          "prepText": "Strecke/Hindernisse vor der Party aufbauen — 15-20 Min Vorlauf. Bei Mietswohnung: lange Strecke im Flur testen, Sturzgefahr-Stellen mit weichem Boden (Decken) entschärfen.",
+          "ageAdjust6": "Hindernisse leichter, Stoppuhr ohne Druck, alle bekommen einen Stempel/Punkt — kein hartes Sieger-System.",
+          "ageAdjust8": "Hindernisse anspruchsvoller, Zeitmessung + Stilnote für echten Wettkampf, Top-3 mit Mini-Pokal oder Bonus-Stempel.",
+          "indoorTip": "Funktioniert im langen Flur oder Wohnzimmer — Hindernisse aus Bestand: Sofakissen, Bücher-Stapel, Wäscheständer als Slalom-Markierung.",
+          "outdoorTip": "Im Garten am besten — keine Möbel-Schäden, mehr Strecke. Bei Regen problemlos indoor verlegbar.",
+          "whyItWorksTitle": "Warum Bewegungs-Spiele bei Kindergeburtstagen funktionieren",
+          "whyItWorks": "Bewegung baut aufgestaute Energie ab (besonders nach Anreise + Snack), schafft sichtbare Erfolge (Zeit, Treffer), und macht den Tag fotografierbar. Wichtig: Action-Phasen müssen mit ruhigen Sitz-Phasen abwechseln, sonst kippt die Stimmung in Streit oder Erschöpfung."
         }
       ],
       "food": "🍕 Ritter-Pizza XL (4 große, davon 1 Veggie)\n🥖 Stockbrot vom 'Lagerfeuer' (Pfanne mit Brotmix)\n🍇 Trauben + Apfel + Birne + Melone\n🥤 Met-Schorle + Apfelschorle (5 L)\n🎂 Burg-Kuchen Standard mit Marzipan-Wappen\n🥨 Brezeln + Salzstangen + Käsewürfel + Wurst-Spieße\n🌭 Mittelalter-Würstchen\n🍕 Mini-Pizzen extra\n🍬 Schokoladentaler + Ritter-Riegel",
@@ -639,7 +675,16 @@
               "name": "Auflösung-Showdown",
               "content": "Jedes Team präsentiert seinen Tipp. Ermittler Jonas öffnet Auflösung-Brief: 'Es war die Hofdame Cornelia — Eifersucht, der Trank kam aus ihrer Apotheke.' Bonus-Punkte für korrektes Team."
             }
-          ]
+          ],
+          "loudness": "mittel",
+          "effort": "mittel",
+          "prepText": "Versteckte Gegenstände vor der Party platzieren — am besten von 2 Erwachsenen, damit niemand \"vergessen hat wo\" sagen muss. Zettel mit Verstecken zur Sicherheit. 15-20 Min Vorlauf, am besten am Morgen.",
+          "ageAdjust6": "Verstecke offensichtlicher (Augenhöhe, klare Hinweise), Suchzeit kürzer (10 Min). Alle finden in 2er-Teams gleichzeitig — kein Wettrennen.",
+          "ageAdjust8": "Verstecke kniffliger (höher/tiefer, mit verschachtelter Logik), Suchzeit länger (20-25 Min). Punkte/Stempel für schnellste Teams.",
+          "indoorTip": "Verstecke in verschiedenen Räumen aufteilen (Wohnzimmer + Flur + Bad), nicht in Schlafzimmern. Karte mit erlaubten Räumen sichtbar machen.",
+          "outdoorTip": "Im Garten — Verstecke in Sträuchern, unter Steinen (geprüft!), an Bäumen. Nicht zu hoch (keine Kletter-Verletzungen).",
+          "whyItWorksTitle": "Warum Schatzsuchen jede Party retten",
+          "whyItWorks": "Schatzsuchen schaffen klare Story-Phasen (Auftrag → Suche → Lösung) und sind altersgemäß skalierbar. Kinder mögen den Detektiv-Aspekt + die Belohnung. Wichtig: nicht zu viele Verstecke (Frustration) und nicht zu wenige (alle finden alles in 2 Min)."
         },
         {
           "name": "🏆 Ritter-Olympiade: Schwert-Schlag-Finale",
@@ -670,7 +715,16 @@
               "name": "Olympiade-Sieger + Wanderpokal",
               "content": "Top 3 bekommen Mini-Pokale. Bestes Team bekommt Ritter-Pokal (geht 1 Jahr zum Sieger)."
             }
-          ]
+          ],
+          "loudness": "laut",
+          "effort": "mittel",
+          "prepText": "Strecke/Hindernisse vor der Party aufbauen — 15-20 Min Vorlauf. Bei Mietswohnung: lange Strecke im Flur testen, Sturzgefahr-Stellen mit weichem Boden (Decken) entschärfen.",
+          "ageAdjust6": "Hindernisse leichter, Stoppuhr ohne Druck, alle bekommen einen Stempel/Punkt — kein hartes Sieger-System.",
+          "ageAdjust8": "Hindernisse anspruchsvoller, Zeitmessung + Stilnote für echten Wettkampf, Top-3 mit Mini-Pokal oder Bonus-Stempel.",
+          "indoorTip": "Funktioniert im langen Flur oder Wohnzimmer — Hindernisse aus Bestand: Sofakissen, Bücher-Stapel, Wäscheständer als Slalom-Markierung.",
+          "outdoorTip": "Im Garten am besten — keine Möbel-Schäden, mehr Strecke. Bei Regen problemlos indoor verlegbar.",
+          "whyItWorksTitle": "Warum Bewegungs-Spiele bei Kindergeburtstagen funktionieren",
+          "whyItWorks": "Bewegung baut aufgestaute Energie ab (besonders nach Anreise + Snack), schafft sichtbare Erfolge (Zeit, Treffer), und macht den Tag fotografierbar. Wichtig: Action-Phasen müssen mit ruhigen Sitz-Phasen abwechseln, sonst kippt die Stimmung in Streit oder Erschöpfung."
         }
       ],
       "food": "🎂 Burg-Kuchen XXL mit 4 Türmen + Marzipan-Drache (Wow-Hauptkuchen)\n🍕 Ritter-Pizza Lieferung (5 große, davon 2 Veggie)\n🥖 Stockbrot von der 'Feuerstelle'\n🍇 Trauben + Apfel + Birne + Melone + Ananas\n🥤 Met-Schorle + Apfelschorle (6 L) + Ritter-Punsch (alkoholfrei)\n🥨 Brezeln + Salzstangen + Käse + Wurst-Spieße + Schinken\n🌭 Mittelalter-Würstchen XL\n🍕 Mini-Pizzen Vorrat\n🍬 Schokoladentaler + Marzipan-Ritter",

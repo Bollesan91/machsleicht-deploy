@@ -223,7 +223,16 @@
               "name": "Bestes Team",
               "content": "Top 3 Gesamt-Wertung erhalten Bonus-Punkte für Wanderpokal."
             }
-          ]
+          ],
+          "loudness": "laut",
+          "effort": "mittel",
+          "prepText": "Strecke/Hindernisse vor der Party aufbauen — 15-20 Min Vorlauf. Bei Mietswohnung: lange Strecke im Flur testen, Sturzgefahr-Stellen mit weichem Boden (Decken) entschärfen.",
+          "ageAdjust6": "Hindernisse leichter, Stoppuhr ohne Druck, alle bekommen einen Stempel/Punkt — kein hartes Sieger-System.",
+          "ageAdjust8": "Hindernisse anspruchsvoller, Zeitmessung + Stilnote für echten Wettkampf, Top-3 mit Mini-Pokal oder Bonus-Stempel.",
+          "indoorTip": "Funktioniert im langen Flur oder Wohnzimmer — Hindernisse aus Bestand: Sofakissen, Bücher-Stapel, Wäscheständer als Slalom-Markierung.",
+          "outdoorTip": "Im Garten am besten — keine Möbel-Schäden, mehr Strecke. Bei Regen problemlos indoor verlegbar.",
+          "whyItWorksTitle": "Warum Bewegungs-Spiele bei Kindergeburtstagen funktionieren",
+          "whyItWorks": "Bewegung baut aufgestaute Energie ab (besonders nach Anreise + Snack), schafft sichtbare Erfolge (Zeit, Treffer), und macht den Tag fotografierbar. Wichtig: Action-Phasen müssen mit ruhigen Sitz-Phasen abwechseln, sonst kippt die Stimmung in Streit oder Erschöpfung."
         },
         {
           "name": "🧠 Pferde-Quiz Klasse 2",
@@ -264,7 +273,16 @@
               "name": "Bewertung",
               "content": "Punkte addieren, Quiz-Sieger bekommt Stallmeister-Quiz-Pin."
             }
-          ]
+          ],
+          "loudness": "leise",
+          "effort": "leicht",
+          "prepText": "Quiz-Karten vor der Party drucken und schneiden — am besten in Word mit Bildern (frei nutzbare Wikipedia-Bilder). Antwortbögen pro Kind vorbereiten. 15-20 Min Vorlauf.",
+          "ageAdjust6": "Wenige Karten (8-10), Bilder eindeutig, 2-3 Antwortmöglichkeiten pro Frage. Gemeinsam beantworten statt einzeln ausfüllen — niemand soll als \"Verlierer\" da stehen.",
+          "ageAdjust8": "Mehr Karten (12-15), Mix aus Bildern und Text-Fragen. Antwortbogen-Einzelarbeit + Auflösung gemeinsam. Bonus-Stempel für Top-Quiz-Score.",
+          "indoorTip": "Am Esstisch oder im Kreis am Boden — keine besondere Anpassung nötig. Quiz-Karten gut sichtbar hochhalten.",
+          "outdoorTip": null,
+          "whyItWorksTitle": "Warum Quiz bei 6-12 funktioniert",
+          "whyItWorks": "Kinder ab 6 wollen ihr Wissen zeigen — Quiz ist die freundlichste Form davon. Vorteile: jeder kann mitmachen (niemand wird ausgeschlossen wegen Motorik), Tempo selbst bestimmbar, und es ist eine echte Sitz-Pause zwischen Action-Phasen. Wichtig: keine Trickfragen, keine Tempo-Druck."
         },
         {
           "name": "🔨 Hufschmied-Workshop",
@@ -295,7 +313,16 @@
               "name": "Wertung",
               "content": "Tierärztin Hanna bewertet Sauberkeit, Kreativität. Note in Mappe."
             }
-          ]
+          ],
+          "loudness": "leise",
+          "effort": "hoch",
+          "prepText": "Material pro Kind in einzelnen Bündeln vorportionieren (Pappkarton, Stifte, Wolle) — sonst gibt es 10 Min Streit ums Material. Schürzen oder alte T-Shirts bereitstellen. 20-30 Min Vorlauf.",
+          "ageAdjust6": "Vorgefertigte Vorlagen + große Aufkleber statt Frei-Design. Jedes Kind kann sein Werk fertigstellen, kein Druck zu Perfektion.",
+          "ageAdjust8": "Eigene Konzept-Phase (5 Min Plan zeichnen) + freies Gestalten. Wer fertig ist, kann mit zusätzlichen Details weitermachen.",
+          "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Farben, Klebepunkte, Stifte griffbereit. Trocken-Bereich planen (auf der Seite, niemand stolpert drüber).",
+          "outdoorTip": "Im Garten an einem Klapptisch — Sonne + Schatten je nach Material (Klebe mag keine Sonne). Wind-Schutz bei kleinen Teilen.",
+          "whyItWorksTitle": "Warum Bastelei der heimliche Höhepunkt ist",
+          "whyItWorks": "Bastel-Stationen schaffen echte Mitnehm-Stücke (das eigene Wappen, der gemalte Schild) und sind die ruhigste Phase einer Party. Eltern lieben es, weil das Kind danach ein Foto-würdiges Werk hat. Kinder lieben es, weil sie etwas Eigenes machen statt nur konsumieren."
         }
       ],
       "food": "🍕 Echte Pizza (3 große mit Karotten-Topping)\n🥕 Karotten-Sticks (3 Schalen)\n🍎 Apfelschnitze + Trauben + Birnen\n🥤 Apfelschorle in Tonbechern (4 L)\n🎂 Pferdekopf-Kuchen (Schoko-Rührkuchen)\n🥨 Brezeln + Salzstangen + Käse + Wurst\n🍬 Gummi-Pferdchen",
@@ -451,7 +478,16 @@
               "name": "Catwalk + Bewertung",
               "content": "Jedes Kind präsentiert sein gestyltes Pferd. Wettkampf-Richterin gibt Stilnote (Kreativität, Sauberkeit, Konzept-Treue)."
             }
-          ]
+          ],
+          "loudness": "leise",
+          "effort": "hoch",
+          "prepText": "Material pro Kind in einzelnen Bündeln vorportionieren (Pappkarton, Stifte, Wolle) — sonst gibt es 10 Min Streit ums Material. Schürzen oder alte T-Shirts bereitstellen. 20-30 Min Vorlauf.",
+          "ageAdjust6": "Vorgefertigte Vorlagen + große Aufkleber statt Frei-Design. Jedes Kind kann sein Werk fertigstellen, kein Druck zu Perfektion.",
+          "ageAdjust8": "Eigene Konzept-Phase (5 Min Plan zeichnen) + freies Gestalten. Wer fertig ist, kann mit zusätzlichen Details weitermachen.",
+          "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Farben, Klebepunkte, Stifte griffbereit. Trocken-Bereich planen (auf der Seite, niemand stolpert drüber).",
+          "outdoorTip": "Im Garten an einem Klapptisch — Sonne + Schatten je nach Material (Klebe mag keine Sonne). Wind-Schutz bei kleinen Teilen.",
+          "whyItWorksTitle": "Warum Bastelei der heimliche Höhepunkt ist",
+          "whyItWorks": "Bastel-Stationen schaffen echte Mitnehm-Stücke (das eigene Wappen, der gemalte Schild) und sind die ruhigste Phase einer Party. Eltern lieben es, weil das Kind danach ein Foto-würdiges Werk hat. Kinder lieben es, weil sie etwas Eigenes machen statt nur konsumieren."
         }
       ],
       "food": "🍕 Echte Pizza (4 große)\n🥕 Karotten-Sticks XL\n🍎 Trauben + Apfelschnitze + Birnen\n🥤 Apfelschorle (5 L)\n🎂 Pferdekopf-Kuchen Standard\n🥨 Brezeln + Salzstangen + Käsewürfel + Wurst\n🍕 Mini-Pizzen extra (für Hunger zwischendurch)\n🍬 Gummi-Pferdchen + Reiter-Riegel",
@@ -621,7 +657,16 @@
               "name": "Olympiade-Sieger",
               "content": "Top 3 bekommen Mini-Pokale. Bestes Team bekommt Wanderpokal (geht 1 Jahr zum Sieger)."
             }
-          ]
+          ],
+          "loudness": "laut",
+          "effort": "mittel",
+          "prepText": "Strecke/Hindernisse vor der Party aufbauen — 15-20 Min Vorlauf. Bei Mietswohnung: lange Strecke im Flur testen, Sturzgefahr-Stellen mit weichem Boden (Decken) entschärfen.",
+          "ageAdjust6": "Hindernisse leichter, Stoppuhr ohne Druck, alle bekommen einen Stempel/Punkt — kein hartes Sieger-System.",
+          "ageAdjust8": "Hindernisse anspruchsvoller, Zeitmessung + Stilnote für echten Wettkampf, Top-3 mit Mini-Pokal oder Bonus-Stempel.",
+          "indoorTip": "Funktioniert im langen Flur oder Wohnzimmer — Hindernisse aus Bestand: Sofakissen, Bücher-Stapel, Wäscheständer als Slalom-Markierung.",
+          "outdoorTip": "Im Garten am besten — keine Möbel-Schäden, mehr Strecke. Bei Regen problemlos indoor verlegbar.",
+          "whyItWorksTitle": "Warum Bewegungs-Spiele bei Kindergeburtstagen funktionieren",
+          "whyItWorks": "Bewegung baut aufgestaute Energie ab (besonders nach Anreise + Snack), schafft sichtbare Erfolge (Zeit, Treffer), und macht den Tag fotografierbar. Wichtig: Action-Phasen müssen mit ruhigen Sitz-Phasen abwechseln, sonst kippt die Stimmung in Streit oder Erschöpfung."
         }
       ],
       "food": "🎂 Pferdekopf-Kuchen XL (Wow-Hauptkuchen, mit Marzipan-Mähne)\n🍕 Echte Pizza (5 große, davon 2 Veggie)\n🥕 Karotten-Sticks XL (4 Schalen)\n🍎 Trauben + Apfelschnitze + Birnen + Melone\n🥤 Apfelschorle + Pferde-Punsch (alkoholfrei) (6 L)\n🥨 Brezeln + Salzstangen + Käse + Wurst\n🍕 Mini-Pizzen + Pferde-Cookies\n🍬 Gummi-Pferdchen + Reiter-Riegel + Schokoladentaler",

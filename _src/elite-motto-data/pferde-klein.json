@@ -213,7 +213,16 @@
               "name": "Pony reichen",
               "content": "Auf dein Signal wandert das Pony einmal weiter. Jedes Kind lernt die anderen Ponys kennen."
             }
-          ]
+          ],
+          "loudness": "leise",
+          "effort": "hoch",
+          "prepText": "Material pro Kind in einzelnen Bündeln vorportionieren (Pappkarton, Stifte, Wolle) — sonst gibt es 10 Min Streit ums Material. Schürzen oder alte T-Shirts bereitstellen. 20-30 Min Vorlauf.",
+          "ageAdjust6": "Vorgefertigte Vorlagen + große Aufkleber statt Frei-Design. Jedes Kind kann sein Werk fertigstellen, kein Druck zu Perfektion.",
+          "ageAdjust8": "Eigene Konzept-Phase (5 Min Plan zeichnen) + freies Gestalten. Wer fertig ist, kann mit zusätzlichen Details weitermachen.",
+          "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Farben, Klebepunkte, Stifte griffbereit. Trocken-Bereich planen (auf der Seite, niemand stolpert drüber).",
+          "outdoorTip": "Im Garten an einem Klapptisch — Sonne + Schatten je nach Material (Klebe mag keine Sonne). Wind-Schutz bei kleinen Teilen.",
+          "whyItWorksTitle": "Warum Bastelei der heimliche Höhepunkt ist",
+          "whyItWorks": "Bastel-Stationen schaffen echte Mitnehm-Stücke (das eigene Wappen, der gemalte Schild) und sind die ruhigste Phase einer Party. Eltern lieben es, weil das Kind danach ein Foto-würdiges Werk hat. Kinder lieben es, weil sie etwas Eigenes machen statt nur konsumieren."
         },
         {
           "name": "🌾 Hufeisen-Werfen",
@@ -239,7 +248,16 @@
               "name": "Karotten-Belohnung",
               "content": "Wer trifft, bekommt eine Karotte 'für sein Pony' — und darf sie selber essen. Wer nicht trifft, bekommt auch eine Karotte. (Bei 3-5: alle gewinnen)."
             }
-          ]
+          ],
+          "loudness": "mittel",
+          "effort": "mittel",
+          "prepText": "Material pro Station vorbereiten und vorab durchspielen (15 Min Vorlauf). Klare Anweisung wer-macht-was vor Start des Spiels — sonst Chaos.",
+          "ageAdjust6": "Vereinfacht: weniger Schritte, mehr Eltern-Begleitung, kein Zeitdruck. Alle bekommen Stempel/Belohnung.",
+          "ageAdjust8": "Volle Komplexität: eigene Strategie-Wahl, Wettkampf-Element, Bonus-Stempel für saubere Lösung.",
+          "indoorTip": "In gut belichteten Raum, kein zu volles Möbel. Material auf einer großen Stoff-Decke sammeln damit nichts verloren geht.",
+          "outdoorTip": "Im Garten mit klar markierter Spiel-Zone. Sand/Erde-Material erst hier, nicht ins Haus zurücktragen.",
+          "whyItWorksTitle": "Warum diese Station-Mischung trägt",
+          "whyItWorks": "Mixed-Stations kombinieren mehrere Elemente (Bewegung + Kreativität + Wettkampf), was die Aufmerksamkeit länger hält als Mono-Spiele. Wichtig: klare Sub-Phasen, sonst werden Kinder zerstreut."
         }
       ],
       "food": "🥕 Karotten-Sticks (1 Schale, Karotten dünn geschnitten)\n🍎 Apfelschnitze (1 Schale)\n🥣 Hafer-Müsli (in Kornsäckchen, 6 Stk)\n🥤 Pferde-Schorle (Apfelsaft, 1,5 L)\n🎂 Hufeisen-Kuchen (Kastenkuchen in Hufeisen-Form)\n🥨 Salzstangen (1 Päckchen)",
@@ -399,7 +417,16 @@
               "name": "Foto vom Werk",
               "content": "Jedes Kind hält sein geschmücktes Pony hoch — Foto fürs Mitgebsel."
             }
-          ]
+          ],
+          "loudness": "leise",
+          "effort": "hoch",
+          "prepText": "Material pro Kind in einzelnen Bündeln vorportionieren (Pappkarton, Stifte, Wolle) — sonst gibt es 10 Min Streit ums Material. Schürzen oder alte T-Shirts bereitstellen. 20-30 Min Vorlauf.",
+          "ageAdjust6": "Vorgefertigte Vorlagen + große Aufkleber statt Frei-Design. Jedes Kind kann sein Werk fertigstellen, kein Druck zu Perfektion.",
+          "ageAdjust8": "Eigene Konzept-Phase (5 Min Plan zeichnen) + freies Gestalten. Wer fertig ist, kann mit zusätzlichen Details weitermachen.",
+          "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Farben, Klebepunkte, Stifte griffbereit. Trocken-Bereich planen (auf der Seite, niemand stolpert drüber).",
+          "outdoorTip": "Im Garten an einem Klapptisch — Sonne + Schatten je nach Material (Klebe mag keine Sonne). Wind-Schutz bei kleinen Teilen.",
+          "whyItWorksTitle": "Warum Bastelei der heimliche Höhepunkt ist",
+          "whyItWorks": "Bastel-Stationen schaffen echte Mitnehm-Stücke (das eigene Wappen, der gemalte Schild) und sind die ruhigste Phase einer Party. Eltern lieben es, weil das Kind danach ein Foto-würdiges Werk hat. Kinder lieben es, weil sie etwas Eigenes machen statt nur konsumieren."
         },
         {
           "name": "🌾 Hufeisen-Werfen (Team-Version)",
@@ -425,7 +452,16 @@
               "name": "Team-Belohnung",
               "content": "Beide Teams bekommen Karotten 'fürs Pony' (= zum Essen)."
             }
-          ]
+          ],
+          "loudness": "mittel",
+          "effort": "mittel",
+          "prepText": "Material pro Station vorbereiten und vorab durchspielen (15 Min Vorlauf). Klare Anweisung wer-macht-was vor Start des Spiels — sonst Chaos.",
+          "ageAdjust6": "Vereinfacht: weniger Schritte, mehr Eltern-Begleitung, kein Zeitdruck. Alle bekommen Stempel/Belohnung.",
+          "ageAdjust8": "Volle Komplexität: eigene Strategie-Wahl, Wettkampf-Element, Bonus-Stempel für saubere Lösung.",
+          "indoorTip": "In gut belichteten Raum, kein zu volles Möbel. Material auf einer großen Stoff-Decke sammeln damit nichts verloren geht.",
+          "outdoorTip": "Im Garten mit klar markierter Spiel-Zone. Sand/Erde-Material erst hier, nicht ins Haus zurücktragen.",
+          "whyItWorksTitle": "Warum diese Station-Mischung trägt",
+          "whyItWorks": "Mixed-Stations kombinieren mehrere Elemente (Bewegung + Kreativität + Wettkampf), was die Aufmerksamkeit länger hält als Mono-Spiele. Wichtig: klare Sub-Phasen, sonst werden Kinder zerstreut."
         },
         {
           "name": "🏇 Steckenpferd-Parcours",
@@ -451,7 +487,16 @@
               "name": "Belohnung",
               "content": "Am Ziel 'frisst' das Steckenpferd eine Apfelscheibe (Kind isst sie). Applaus für alle."
             }
-          ]
+          ],
+          "loudness": "laut",
+          "effort": "mittel",
+          "prepText": "Strecke/Hindernisse vor der Party aufbauen — 15-20 Min Vorlauf. Bei Mietswohnung: lange Strecke im Flur testen, Sturzgefahr-Stellen mit weichem Boden (Decken) entschärfen.",
+          "ageAdjust6": "Hindernisse leichter, Stoppuhr ohne Druck, alle bekommen einen Stempel/Punkt — kein hartes Sieger-System.",
+          "ageAdjust8": "Hindernisse anspruchsvoller, Zeitmessung + Stilnote für echten Wettkampf, Top-3 mit Mini-Pokal oder Bonus-Stempel.",
+          "indoorTip": "Funktioniert im langen Flur oder Wohnzimmer — Hindernisse aus Bestand: Sofakissen, Bücher-Stapel, Wäscheständer als Slalom-Markierung.",
+          "outdoorTip": "Im Garten am besten — keine Möbel-Schäden, mehr Strecke. Bei Regen problemlos indoor verlegbar.",
+          "whyItWorksTitle": "Warum Bewegungs-Spiele bei Kindergeburtstagen funktionieren",
+          "whyItWorks": "Bewegung baut aufgestaute Energie ab (besonders nach Anreise + Snack), schafft sichtbare Erfolge (Zeit, Treffer), und macht den Tag fotografierbar. Wichtig: Action-Phasen müssen mit ruhigen Sitz-Phasen abwechseln, sonst kippt die Stimmung in Streit oder Erschöpfung."
         },
         {
           "name": "🐴 Großer Pony-Streichel-Kreis (Eröffnung)",
@@ -477,7 +522,16 @@
               "name": "Streicheln, bürsten",
               "content": "5 Minuten Pflege-Zeit. Du erzählst Pony-Anekdoten dazu."
             }
-          ]
+          ],
+          "loudness": "leise",
+          "effort": "hoch",
+          "prepText": "Material pro Kind in einzelnen Bündeln vorportionieren (Pappkarton, Stifte, Wolle) — sonst gibt es 10 Min Streit ums Material. Schürzen oder alte T-Shirts bereitstellen. 20-30 Min Vorlauf.",
+          "ageAdjust6": "Vorgefertigte Vorlagen + große Aufkleber statt Frei-Design. Jedes Kind kann sein Werk fertigstellen, kein Druck zu Perfektion.",
+          "ageAdjust8": "Eigene Konzept-Phase (5 Min Plan zeichnen) + freies Gestalten. Wer fertig ist, kann mit zusätzlichen Details weitermachen.",
+          "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Farben, Klebepunkte, Stifte griffbereit. Trocken-Bereich planen (auf der Seite, niemand stolpert drüber).",
+          "outdoorTip": "Im Garten an einem Klapptisch — Sonne + Schatten je nach Material (Klebe mag keine Sonne). Wind-Schutz bei kleinen Teilen.",
+          "whyItWorksTitle": "Warum Bastelei der heimliche Höhepunkt ist",
+          "whyItWorks": "Bastel-Stationen schaffen echte Mitnehm-Stücke (das eigene Wappen, der gemalte Schild) und sind die ruhigste Phase einer Party. Eltern lieben es, weil das Kind danach ein Foto-würdiges Werk hat. Kinder lieben es, weil sie etwas Eigenes machen statt nur konsumieren."
         }
       ],
       "food": "🥕 Karotten-Sticks (2 Schalen)\n🍎 Apfelschnitze (2 Schalen)\n🥣 Hafer-Müsli in Kornsäckchen (8 Stk)\n🥤 Pferde-Schorle (3 L)\n🎂 Hufeisen-Kuchen (Kastenkuchen)\n🥨 Salzstangen + Brezeln\n🧀 Käsewürfel",
@@ -646,7 +700,16 @@
               "name": "Glitzer und Schleifen",
               "content": "Final wird Glitzer aufgepinselt, Schleifen geknotet. Das Pony bekommt einen Namen-Klipp."
             }
-          ]
+          ],
+          "loudness": "leise",
+          "effort": "hoch",
+          "prepText": "Material pro Kind in einzelnen Bündeln vorportionieren (Pappkarton, Stifte, Wolle) — sonst gibt es 10 Min Streit ums Material. Schürzen oder alte T-Shirts bereitstellen. 20-30 Min Vorlauf.",
+          "ageAdjust6": "Vorgefertigte Vorlagen + große Aufkleber statt Frei-Design. Jedes Kind kann sein Werk fertigstellen, kein Druck zu Perfektion.",
+          "ageAdjust8": "Eigene Konzept-Phase (5 Min Plan zeichnen) + freies Gestalten. Wer fertig ist, kann mit zusätzlichen Details weitermachen.",
+          "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Farben, Klebepunkte, Stifte griffbereit. Trocken-Bereich planen (auf der Seite, niemand stolpert drüber).",
+          "outdoorTip": "Im Garten an einem Klapptisch — Sonne + Schatten je nach Material (Klebe mag keine Sonne). Wind-Schutz bei kleinen Teilen.",
+          "whyItWorksTitle": "Warum Bastelei der heimliche Höhepunkt ist",
+          "whyItWorks": "Bastel-Stationen schaffen echte Mitnehm-Stücke (das eigene Wappen, der gemalte Schild) und sind die ruhigste Phase einer Party. Eltern lieben es, weil das Kind danach ein Foto-würdiges Werk hat. Kinder lieben es, weil sie etwas Eigenes machen statt nur konsumieren."
         },
         {
           "name": "🧠 Pony-Quiz",
@@ -672,7 +735,16 @@
               "name": "Karotte als Punkt",
               "content": "Pro richtige Antwort: alle bekommen ein 'Karotten-Sticker' aufs Reiter-Heft."
             }
-          ]
+          ],
+          "loudness": "leise",
+          "effort": "leicht",
+          "prepText": "Quiz-Karten vor der Party drucken und schneiden — am besten in Word mit Bildern (frei nutzbare Wikipedia-Bilder). Antwortbögen pro Kind vorbereiten. 15-20 Min Vorlauf.",
+          "ageAdjust6": "Wenige Karten (8-10), Bilder eindeutig, 2-3 Antwortmöglichkeiten pro Frage. Gemeinsam beantworten statt einzeln ausfüllen — niemand soll als \"Verlierer\" da stehen.",
+          "ageAdjust8": "Mehr Karten (12-15), Mix aus Bildern und Text-Fragen. Antwortbogen-Einzelarbeit + Auflösung gemeinsam. Bonus-Stempel für Top-Quiz-Score.",
+          "indoorTip": "Am Esstisch oder im Kreis am Boden — keine besondere Anpassung nötig. Quiz-Karten gut sichtbar hochhalten.",
+          "outdoorTip": null,
+          "whyItWorksTitle": "Warum Quiz bei 6-12 funktioniert",
+          "whyItWorks": "Kinder ab 6 wollen ihr Wissen zeigen — Quiz ist die freundlichste Form davon. Vorteile: jeder kann mitmachen (niemand wird ausgeschlossen wegen Motorik), Tempo selbst bestimmbar, und es ist eine echte Sitz-Pause zwischen Action-Phasen. Wichtig: keine Trickfragen, keine Tempo-Druck."
         },
         {
           "name": "🗺️ Karotten-Schatzsuche",
@@ -703,7 +775,16 @@
               "name": "Karotten-Belohnung",
               "content": "Jedes Kind nimmt eine Karotte mit nach Hause + isst eine vor Ort."
             }
-          ]
+          ],
+          "loudness": "mittel",
+          "effort": "mittel",
+          "prepText": "Versteckte Gegenstände vor der Party platzieren — am besten von 2 Erwachsenen, damit niemand \"vergessen hat wo\" sagen muss. Zettel mit Verstecken zur Sicherheit. 15-20 Min Vorlauf, am besten am Morgen.",
+          "ageAdjust6": "Verstecke offensichtlicher (Augenhöhe, klare Hinweise), Suchzeit kürzer (10 Min). Alle finden in 2er-Teams gleichzeitig — kein Wettrennen.",
+          "ageAdjust8": "Verstecke kniffliger (höher/tiefer, mit verschachtelter Logik), Suchzeit länger (20-25 Min). Punkte/Stempel für schnellste Teams.",
+          "indoorTip": "Verstecke in verschiedenen Räumen aufteilen (Wohnzimmer + Flur + Bad), nicht in Schlafzimmern. Karte mit erlaubten Räumen sichtbar machen.",
+          "outdoorTip": "Im Garten — Verstecke in Sträuchern, unter Steinen (geprüft!), an Bäumen. Nicht zu hoch (keine Kletter-Verletzungen).",
+          "whyItWorksTitle": "Warum Schatzsuchen jede Party retten",
+          "whyItWorks": "Schatzsuchen schaffen klare Story-Phasen (Auftrag → Suche → Lösung) und sind altersgemäß skalierbar. Kinder mögen den Detektiv-Aspekt + die Belohnung. Wichtig: nicht zu viele Verstecke (Frustration) und nicht zu wenige (alle finden alles in 2 Min)."
         }
       ],
       "food": "🎂 Karotten-Kuchen (Carrot Cake — Pferde-thematisch!)\n🥕 Karotten-Sticks (3 Schalen)\n🍎 Apfelschnitze + Birnen\n🥣 Hafer-Müsli + Reiter-Riegel\n🥤 Pferde-Schorle (4 L)\n🥨 Salzstangen + Brezeln\n🧀 Käse-Würfel",
