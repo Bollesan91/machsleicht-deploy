@@ -282,7 +282,7 @@ export default {
       if (body.photoRound && isSafePhoto(body.photoRound)) {
         await env.PARTY.put(`photoRound:${id}`, body.photoRound, {expirationTtl:ttl});
       }
-      return json({id, editToken, url:`https://party.machsleicht.de/${id}`, editUrl:`https://party.machsleicht.de/${id}?edit=${editToken}`}, request);
+      return json({id, editToken, url:`https://party.machsleicht.de/${id}`, editUrl:`https://party.machsleicht.de/${id}?edit=${editToken}`}, 200, request);
     }
 
     // GET /api/party/:id
@@ -292,8 +292,10 @@ export default {
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = JSON.parse(raw);
       const edit = url.searchParams.get("edit");
-      if (edit === party.editToken) return json(party, request);
-      const {editToken,email,...safe} = party;
+      if (edit === party.editToken) return json(party, 200, request);
+      // P0-Security Welle 1C: doiToken aus Public-GET strippen — sonst kann jeder Gast
+      // /api/newsletter-confirm?token=... triggern und fremde E-Mails ungewollt bestätigen.
+      const {editToken,email,doiToken,...safe} = party;
       safe.wishes = (safe.wishes||[]).map(w=>{
         const cb = w.claimedBy||[];
         const claimedAmountTotal = cb.reduce((s,e)=>s+(typeof e==="object" && e && typeof e.amount==="number" ? e.amount : 0),0);
@@ -301,7 +303,7 @@ export default {
       });
       safe.guestCount = safe.guests.filter(g=>g.status==="ja").length;
       safe.guests = undefined;
-      return json(safe, request);
+      return json(safe, 200, request);
     }
 
     // PUT /api/party/:id
@@ -325,7 +327,7 @@ export default {
       if (body.photoRound===null) await env.PARTY.delete(`photoRound:${id}`);
       else if (body.photoRound && isSafePhoto(body.photoRound)) await env.PARTY.put(`photoRound:${id}`,body.photoRound,{expirationTtl:ttl});
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:ttl});
-      return json({ok:true}, request);
+      return json({ok:true}, 200, request);
     }
 
     // DELETE /api/party/:id — DSGVO Self-Service-Lösch-Endpoint
@@ -346,10 +348,11 @@ export default {
       let party = null;
       try { party = JSON.parse(raw); } catch { party = null; }
       if (!party) {
-        await env.PARTY.delete(`party:${id}`);
-        await env.PARTY.delete(`photo:${id}`);
-        await env.PARTY.delete(`photoRound:${id}`);
-        return json({ok:true, deleted:true, message:"Party (corrupted) und Foto-Daten gelöscht.", note:"Token-Check übersprungen weil party-JSON nicht parse-bar war."}, 200, request);
+        // P0-Security Welle 1C: KEIN Lösch ohne Token-Check.
+        // Corrupted JSON darf nicht als Backdoor missbraucht werden (Attack-Vector:
+        // KV-Race forcen, dann auth-frei löschen). Statt löschen → 500-Fehler,
+        // erfordert Admin-Intervention via Cloudflare-Dashboard.
+        return json({error:"Party-Daten korrupt (JSON-Parse fehlgeschlagen) — bitte kontaktiere kontakt@machsleicht.de"}, 500, request);
       }
       if (providedToken !== party.editToken) return json({error:"Nicht berechtigt"},403,request);
       await env.PARTY.delete(`party:${id}`);
@@ -412,7 +415,7 @@ export default {
         else wish.claimedBy.push(guestName);
       }
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
-      return json({ok:true,claimedBy:wish.claimedBy,claimedCount:wish.claimedBy.length}, request);
+      return json({ok:true,claimedBy:wish.claimedBy,claimedCount:wish.claimedBy.length}, 200, request);
     }
 
     // GET /api/photo/:id
@@ -420,7 +423,7 @@ export default {
       const id = path.split("/")[3];
       const photo = await env.PARTY.get(`photo:${id}`);
       if (!photo) return json({error:"Kein Foto"},404, request);
-      return json({photo}, request);
+      return json({photo}, 200, request);
     }
 
     // GET /api/photoRound/:id
@@ -428,14 +431,16 @@ export default {
       const id = path.split("/")[3];
       const photo = await env.PARTY.get(`photoRound:${id}`);
       if (!photo) return json({error:"Kein Foto"},404, request);
-      return json({photo}, request);
+      return json({photo}, 200, request);
     }
 
     // POST /api/party/:id/send-edit-link
     if (path.match(/^\/api\/party\/[a-z0-9]+\/send-edit-link$/) && request.method === "POST") {
-      // Origin-Check (CORS-Hardening): nur von machsleicht.de/party.machsleicht.de
+      // Origin-Check (CORS-Hardening): nur von machsleicht.de/party.machsleicht.de.
+      // P0-Security Welle 1C: empty Origin auch ablehnen (Server-to-Server-Bypass via
+      // curl wäre Email-Spam-Vector — Angreifer könnte beliebige Edit-Mails triggern).
       const origin = request.headers.get("Origin") || "";
-      if (origin && !/^https:\/\/(www\.|party\.)?machsleicht\.de$/.test(origin)) {
+      if (!origin || !/^https:\/\/(www\.|party\.)?machsleicht\.de$/.test(origin)) {
         return json({error:"Nicht autorisiert"},403, request);
       }
 
@@ -463,6 +468,12 @@ export default {
       //    damit der Bestätigungs-Button direkt in der Edit-Link-Mail landet.
       let confirmUrl = "";
       if (newsletterOptIn) {
+        // P0-Security Welle 1C: Verwaisten alten doiToken zuerst löschen (Race-Condition-Schutz).
+        // Sonst akkumulieren bei wiederholten send-edit-link-Calls verwaiste doi-Einträge im KV,
+        // die nicht mehr über die party referenziert sind.
+        if (party.doiToken) {
+          await env.PARTY.delete(`doi:${party.doiToken}`);
+        }
         const doiToken = generateToken();
         const ip = request.headers.get("cf-connecting-ip") || "";
         const ua = (request.headers.get("user-agent") || "").slice(0,200);
@@ -474,9 +485,9 @@ export default {
           origin,
           source: "partyseite-creator"
         };
-      // P0-DSGVO: doiToken in party tracken für späteren Lösch-Cleanup
-      party.doiToken = doiToken;
-      await env.PARTY.put(`party:${id}`, JSON.stringify(party), {expirationTtl: calcTTL(party.date)});
+        // P0-DSGVO: doiToken in party tracken für späteren Lösch-Cleanup
+        party.doiToken = doiToken;
+        await env.PARTY.put(`party:${id}`, JSON.stringify(party), {expirationTtl: calcTTL(party.date)});
         await env.PARTY.put(`doi:${doiToken}`, JSON.stringify(doiEntry), {expirationTtl: 7*24*60*60});
         confirmUrl = `https://party.machsleicht.de/api/newsletter-confirm?token=${doiToken}`;
       }
@@ -524,7 +535,7 @@ export default {
         return json({error:"E-Mail-Versand fehlgeschlagen"},500, request);
       }
 
-      return json({ok:true, doiMailSent:doiSent}, request);
+      return json({ok:true, doiMailSent:doiSent}, 200, request);
     }
 
     // Affiliate Redirect /go/:partyId/:wishId
@@ -580,8 +591,10 @@ export default {
             body: JSON.stringify({email: entry.email, unsubscribed: false})
           });
           // 200/201 = ok, 409 = schon vorhanden → auch ok
+          // P0-DSGVO Welle 1C: Status loggen, aber NICHT resp.text() (kann Email enthalten,
+          // CF-Worker-Logs sind 7 Tage retained — vermeidet PII-Leak in Logs).
           if (!resp.ok && resp.status !== 409) {
-            console.log("Resend audience add error:", await resp.text());
+            console.log("Resend audience add error status:", resp.status);
           }
         } catch(e) {
           console.log("Resend audience add exception:", e.message);
