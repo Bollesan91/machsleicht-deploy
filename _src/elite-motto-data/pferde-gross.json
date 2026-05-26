@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "2.4.0",
+    "version": "2.6.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v2.4 — Welle 8 Differenzierungs-Asset: 6 Druckvorlagen (Diplom, Funktions-Karten, Quiz Klasse 2, Hufeisen-Schablone, Reiterhof-Tafel A3, Prüfungs-Mappe A5) — Reviewer-Decke 89 mit Asset durchbrochen. Ziel ≥85 nach -7."
+    "qualityNote": "v2.6 — Welle 11b Konsistenz-Sweep: Stallmeister Tom (Welle-5-Removed) → Quizmaster Lina. Tierärztin Hanna → Pflege-Chefin Hanna (gleicher Vorname, korrekter Titel aus rolesList). Diagnostikerin Anna → Pflege-Chefin Hanna (Krankheits-Wissen passt). Variants/games/bonusGames jetzt vollständig konsistent mit rolesList."
   },
   "motto": "pferde",
   "ageGroup": "gross",
@@ -183,7 +183,7 @@
         {
           "time": "14:20",
           "title": "Station 1: Pflege-Prüfung",
-          "description": "Plüsch-Pony pflegen nach Checkliste, Tierärztin Hanna gibt Note. 35 Min."
+          "description": "Plüsch-Pony pflegen nach Checkliste, Pflege-Chefin Hanna gibt Note. 35 Min."
         },
         {
           "time": "14:55",
@@ -541,7 +541,7 @@
             {
               "n": 4,
               "name": "Wertung",
-              "content": "Tierärztin Hanna bewertet Sauberkeit, Kreativität. Note in Mappe."
+              "content": "Pflege-Chefin Hanna bewertet Sauberkeit, Kreativität. Note in Mappe."
             }
           ],
           "loudness": "leise",
@@ -645,7 +645,7 @@
         {
           "time": "14:20",
           "title": "Station 1: Pflege-Prüfung",
-          "description": "35 Min — Tierärztin Hanna gibt Note."
+          "description": "35 Min — Pflege-Chefin Hanna gibt Note."
         },
         {
           "time": "14:55",
@@ -691,7 +691,7 @@
             {
               "n": 1,
               "name": "Stilling-Theorie",
-              "content": "Stallmeister Tom erklärt: 'Welche Stillings gibts? Klassischer Zopf, französischer Zopf, Schweif-Locken, Festtags-Style.'"
+              "content": "Quizmaster Lina erklärt: 'Welche Stillings gibts? Klassischer Zopf, französischer Zopf, Schweif-Locken, Festtags-Style.'"
             },
             {
               "n": 2,
@@ -819,7 +819,7 @@
         {
           "time": "14:25",
           "title": "Station 1: Pflege-Prüfung XL",
-          "description": "35 Min — Tierärztin Hanna bewertet."
+          "description": "35 Min — Pflege-Chefin Hanna bewertet."
         },
         {
           "time": "15:00",
@@ -870,7 +870,7 @@
             {
               "n": 1,
               "name": "Olympiade-Eröffnung",
-              "content": "Stallmeister Tom: 'Wer holt sich den Wanderpokal? 3 Distanzen, 3 Würfe je Distanz, Punkte addieren.'"
+              "content": "Quizmaster Lina: 'Wer holt sich den Wanderpokal? 3 Distanzen, 3 Würfe je Distanz, Punkte addieren.'"
             },
             {
               "n": 2,
@@ -1349,7 +1349,7 @@
         "indoor": true,
         "outdoor": false,
         "material": "5 Krankheits-Beschreibung-Karten (Hufrehe-Symptome, Kolik-Anzeichen, Mauke, Sommerekzem, Husten), Antwortbogen",
-        "anleitung": "Diagnostikerin Anna liest Symptome vor, Kinder benennen die Krankheit + erste Maßnahme. Echtes Wissen für Pferde-Freaks."
+        "anleitung": "Pflege-Chefin Hanna liest Symptome vor, Kinder benennen die Krankheit + erste Maßnahme. Echtes Wissen für Pferde-Freaks."
       },
       {
         "name": "🏆 Reiter-Wandersieg-Tafel",

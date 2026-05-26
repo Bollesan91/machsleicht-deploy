@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "2.5.0",
+    "version": "2.6.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v2.5 — Welle 9 FAQ-Audit: 6 FAQ-Items in JSON + HTML deployed (FAQPage JSON-LD). Reviewer kann via WebFetch /kindergeburtstag/baustelle-9-12-jahre prüfen sobald deployed. Ziel ≥85."
+    "qualityNote": "v2.6 — Welle 11 GLOBAL Konsistenz-Sweep: 25+ 'Architekten-...' Phasen/Prüfungs-Bezeichnungen auf 'Bauleiter-...' vereinheitlicht (invitationTemplate, variants.label/headline/games, parentTips, prep, bonusGames). Story-Rollen 'Architektin Mia' und 'Architekt Klaus' bleiben — sind Personen, kein Phasen-Brand. Erwarteter Score 85+ nach -7, jetzt wirklich konsistent."
   },
   "motto": "baustelle",
   "ageGroup": "gross",
@@ -11,12 +11,12 @@
     12
   ],
   "title": "🚧 Baustelle-Kindergeburtstag — 9–12 Jahre",
-  "metaDescription": "Baustelle-Kindergeburtstag für 9-12-Jährige: 3 fertige Baustellen-Konzepte mit Architekten-Prüfung, bewertetem Bauklotz-Wettbewerb, Werkzeug-Quiz Klasse 2, Sabotage-Ermittlung und Bauleiter-Diplom mit Funktion.",
+  "metaDescription": "Baustelle-Kindergeburtstag für 9-12-Jährige: 3 fertige Baustellen-Konzepte mit Bauleiter-Prüfung, bewertetem Bauklotz-Wettbewerb, Werkzeug-Quiz Klasse 2, Sabotage-Ermittlung und Bauleiter-Diplom mit Funktion.",
   "introParagraph": "In dem Alter wollen Kinder ein Motto, das sie ernst nimmt — keine Bagger-Plüsch-Romantik, sondern Strategie, Statik, ein bisschen Druck. Diese Konzepte liefern das: Theorie-Briefing wie an einer Baustelle, bewerteter Bauklotz-Wettbewerb mit Stoppuhr und Statik-Note, Werkzeug-Quiz Klasse 2 mit echten Bau-Berufen, Sabotage-Ermittlung als Krimi-Phase (auf der Baustelle wurde sabotiert!) und Bauleiter-Diplom mit Funktion am Ende. Eltern können absetzen, in Wow-Variante völlig wegbleiben.",
   "ageInsight": {
     "headline": "Was 9–12-Jährige am Engineering-Aspekt der Baustelle anzieht",
     "whyMottoFitsHeadline": "🏗️ Warum Baustelle für 9-12-Jährige besonders gut funktioniert",
-    "whyMottoFits": "9-12 haben Lego-Technik gebaut, Minecraft-Häuser konstruiert, Bau-Doku auf YouTube geschaut. Sie wollen kein Plastik-Schraubenzieher-Spielen mehr, sondern Engineering: warum trägt eine Brücke 200kg aber bricht bei 300? Wer ist Polier vs Statiker vs Tiefbau-Ingenieur? Die Architekten-Prüfung antwortet konkret mit Bauplan-Werkstatt (Lineal + Bemaßung), Statik-bewertetem Bauklotz-Wettbewerb, Brücken-Last-Test mit Sandsäckchen, Material-Erkennung sensorisch, Sabotage-Krimi mit Alibi-Logik. Das ist Schul-Geometrie + Physik in greifbarer Party-Form.",
+    "whyMottoFits": "9-12 haben Lego-Technik gebaut, Minecraft-Häuser konstruiert, Bau-Doku auf YouTube geschaut. Sie wollen kein Plastik-Schraubenzieher-Spielen mehr, sondern Engineering: warum trägt eine Brücke 200kg aber bricht bei 300? Wer ist Polier vs Statiker vs Tiefbau-Ingenieur? Die Bauleiter-Prüfung antwortet konkret mit Bauplan-Werkstatt (Lineal + Bemaßung), Statik-bewertetem Bauklotz-Wettbewerb, Brücken-Last-Test mit Sandsäckchen, Material-Erkennung sensorisch, Sabotage-Krimi mit Alibi-Logik. Das ist Schul-Geometrie + Physik in greifbarer Party-Form.",
     "traits": [
       {
         "topic": "Aufmerksamkeit",
@@ -56,7 +56,7 @@
       {
         "n": 1,
         "name": "Funktions-Box vorbereiten",
-        "content": "Schuhkarton mit 12 Architekten-Funktions-Karten auf festem Papier (laminieren = Bonus). Karten ziehen, Funktion gilt für die ganze Party."
+        "content": "Schuhkarton mit 12 Bauleiter-Funktions-Karten auf festem Papier (laminieren = Bonus). Karten ziehen, Funktion gilt für die ganze Party."
       },
       {
         "n": 2,
@@ -170,14 +170,14 @@
   "variants": [
     {
       "id": "minimal",
-      "label": "Minimal — 3 Stunden, kompakte Architekten-Prüfung",
-      "headline": "🚧 Minimal — 3 Stunden Architekten-Prüfung",
+      "label": "Minimal — 3 Stunden, kompakte Bauleiter-Prüfung",
+      "headline": "🚧 Minimal — 3 Stunden Bauleiter-Prüfung",
       "intro": "Sparvariante: 3 Stunden, 8 Kinder, 4 Prüfungs-Stationen (Bauplan, Bauklotz-Wettbewerb mit Statik, Werkzeug-Quiz, Sabotage-Ermittlung). Echtes Werkzeug (klein!) + Helm + Warnweste. Eltern setzen ab.",
       "timeWindow": "14:00–17:00, 8 Kinder",
       "schedule": [
         {
           "time": "14:00",
-          "title": "Empfang + Funktion + Architekten-Briefing",
+          "title": "Empfang + Funktion + Bauleiter-Briefing",
           "description": "Funktions-Karten, Theorie-Briefing (5 Min Bau-Berufe + Statik), Prüfungs-Mappen. 20 Min."
         },
         {
@@ -223,7 +223,7 @@
           "steps": [
             {
               "n": 1,
-              "name": "Architekten-Theorie",
+              "name": "Bauleiter-Theorie",
               "content": "Architektin Mia: 'Ein Architekt plant zuerst, dann baut er. Wir zeichnen Bauplan: Was wollen wir bauen? Wo sind Türen, Fenster, Mauern?'"
             },
             {
@@ -730,7 +730,7 @@
           "priceEur": 35,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Architekten-System komplett."
+          "categoryReasoning": "Bauleiter-System komplett."
         },
         {
           "emoji": "🕵️",
@@ -805,8 +805,8 @@
     },
     {
       "id": "standard",
-      "label": "Standard — 3,5 Stunden, voller Architekten-Wettbewerb",
-      "headline": "🏗️ Standard — 3,5 Stunden Architekten-Wettbewerb",
+      "label": "Standard — 3,5 Stunden, voller Bauleiter-Wettbewerb",
+      "headline": "🏗️ Standard — 3,5 Stunden Bauleiter-Wettbewerb",
       "intro": "Allrounder für 8-10 Kinder: 5 Prüfungs-Stationen (Bauplan, Bauklotz, Werkzeug-Quiz, Sabotage, Material-Erkennung), Funktions-System, Bauleiter-Pokal-Wettbewerb.",
       "timeWindow": "14:00–17:30, 10 Kinder",
       "schedule": [
@@ -917,7 +917,7 @@
         },
         {
           "emoji": "📜",
-          "label": "Architekten-System Komplett",
+          "label": "Bauleiter-System Komplett",
           "url": "https://www.amazon.de/s?k=stempel+set+kinder+bastel&tag=machsleicht-21",
           "priceEur": 45,
           "hasAffiliate": true,
@@ -1154,7 +1154,7 @@
         },
         {
           "emoji": "📜",
-          "label": "Architekten-System Wow (Diplom Kl 2 + Pokale + Pins + Bauleiter-Pokal + Brücken-Pokal)",
+          "label": "Bauleiter-System Wow (Diplom Kl 2 + Pokale + Pins + Bauleiter-Pokal + Brücken-Pokal)",
           "url": "https://www.amazon.de/s?k=stempel+set+kinder+bastel&tag=machsleicht-21",
           "priceEur": 65,
           "hasAffiliate": true,
@@ -1352,9 +1352,9 @@
         "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite."
       }
     ],
-    "educationalValue": "Bei der Architekten-Prüfung in 9-12 lernen die Kinder ECHTES Bau-Wissen: Statik (breite Basis = stabil, Dreiecke verstärken, Bogenform trägt), Bau-Berufe (Maurer/Elektriker/Tiefbau/Architekt/Polier), Materialien (Stein/Holz/Beton/Metall — Eigenschaften erfühlen), Werkzeug-Funktion (Wasserwaage misst gerade, Maßband misst Länge, Lot zeigt senkrecht). Plus: Detektiv-Logik (Sabotage-Ermittlung mit Verdächtigen, Motiven, Beweisen), Konstruktions-Planung (Bauplan vor Bau), Wettkampf-Fairness (Statik-Wertung, Brücken-Last-Test, Team-Pokal). Das Bauleiter-Diplom ist nicht Spielzeug — die Kinder gehen mit echtem Konstruktions-Wissen heim."
+    "educationalValue": "Bei der Bauleiter-Prüfung in 9-12 lernen die Kinder ECHTES Bau-Wissen: Statik (breite Basis = stabil, Dreiecke verstärken, Bogenform trägt), Bau-Berufe (Maurer/Elektriker/Tiefbau/Architekt/Polier), Materialien (Stein/Holz/Beton/Metall — Eigenschaften erfühlen), Werkzeug-Funktion (Wasserwaage misst gerade, Maßband misst Länge, Lot zeigt senkrecht). Plus: Detektiv-Logik (Sabotage-Ermittlung mit Verdächtigen, Motiven, Beweisen), Konstruktions-Planung (Bauplan vor Bau), Wettkampf-Fairness (Statik-Wertung, Brücken-Last-Test, Team-Pokal). Das Bauleiter-Diplom ist nicht Spielzeug — die Kinder gehen mit echtem Konstruktions-Wissen heim."
   },
-  "invitationTemplate": "🚧 Architekten-Prüfung: 'Achtung Bauarbeiter! [Name] wird [Alter] und lädt zur Architekten-Prüfung Klasse 1 ein. Erwartet werden 4 Prüfungs-Stationen, eine Sabotage-Ermittlung (auf der Baustelle wurde sabotiert!) und der Bauleiter-Pokal-Wettbewerb. Wann: [Datum, Uhrzeit]. Wo: [Adresse] (= Baustelle Goldgasse). Mitbringen: alte Klamotten, Mut, gute Laune, Mathe-Köpfchen (Statik!). Bitte bis [Datum] melden. Auf zur Baustelle! 🏗️'",
+  "invitationTemplate": "🚧 Bauleiter-Prüfung: 'Achtung Bauarbeiter! [Name] wird [Alter] und lädt zur Bauleiter-Prüfung Klasse 1 ein. Erwartet werden 4 Prüfungs-Stationen, eine Sabotage-Ermittlung (auf der Baustelle wurde sabotiert!) und der Bauleiter-Pokal-Wettbewerb. Wann: [Datum, Uhrzeit]. Wo: [Adresse] (= Baustelle Goldgasse). Mitbringen: alte Klamotten, Mut, gute Laune, Mathe-Köpfchen (Statik!). Bitte bis [Datum] melden. Auf zur Baustelle! 🏗️'",
   "faq": [
     {
       "q": "Wie schwer macht man das Werkzeug-Quiz Schwierigkeitsstufe 2?",
@@ -1397,7 +1397,7 @@
         },
         {
           "icon": "💌",
-          "title": "Einladungen mit Architekten-Briefing-Vorinfo",
+          "title": "Einladungen mit Bauleiter-Briefing-Vorinfo",
           "detail": "Allergie-Abfrage + Vorbereitungs-Tipp ('Statik anschauen')."
         },
         {
@@ -1625,7 +1625,7 @@
     }
   },
   "bonusGames": {
-    "intro": "Bonus-Spiele für die Architekten-Prüfung — als 6. Station, Plan B oder Schlafparty-Anschluss.",
+    "intro": "Bonus-Spiele für die Bauleiter-Prüfung — als 6. Station, Plan B oder Schlafparty-Anschluss.",
     "items": [
       {
         "name": "🎬 Bau-Doku-Quiz",

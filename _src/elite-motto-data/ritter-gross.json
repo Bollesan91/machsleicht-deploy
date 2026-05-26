@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "2.5.0",
+    "version": "2.6.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v2.5 — Welle 9 Wow-Zeit-Präzision: 4:00h ODER 4:30h klargestellt (je nach Krimi-Integration). Ziel ≥85."
+    "qualityNote": "v2.6 — Welle 11b Konsistenz-Sweep: 'Burgvogtin' (Story-Person, in Welle 5 aus rolesList entfernt) → 'Wappen-Heroldin Hanna' (passt zur Wappen-Bewertung). 'Stallmeister-Tafel' (Cross-Motto-Leak von Pferde) → 'Akademie-Tafel' (korrektes Brand). Variants/games jetzt vollständig konsistent."
   },
   "motto": "ritter",
   "ageGroup": "gross",
@@ -44,7 +44,7 @@
       },
       {
         "topic": "Eltern",
-        "detail": "Eltern können in Minimal absetzen + telefonisch erreichbar bleiben. In Standard/Wow wollen Kinder die Party meist ganz ohne eigene Eltern — 1-2 fremde Erwachsene als Aufsicht (als 'Burgwächter' getarnt, NICHT als Karten-Funktion) übernehmen die Aufsicht. Wichtig: NICHT mit der ziehbaren Kinder-Karte 'Burgvogtin' verwechseln."
+        "detail": "Eltern können in Minimal absetzen + telefonisch erreichbar bleiben. In Standard/Wow wollen Kinder die Party meist ganz ohne eigene Eltern — 1-2 fremde Erwachsene als Aufsicht (als 'Burgwächter' getarnt, NICHT als Karten-Funktion) übernehmen die Aufsicht. Wichtig: NICHT mit der ziehbaren Kinder-Karte 'Wappen-Heroldin' verwechseln."
       }
     ]
   },
@@ -183,7 +183,7 @@
         {
           "time": "14:20",
           "title": "Station 1: Wappen-Design-Werkstatt",
-          "description": "Eigenes Wappen heraldisch korrekt entwerfen, Burgvogtin gibt Stilnote. 35 Min."
+          "description": "Eigenes Wappen heraldisch korrekt entwerfen, Wappen-Heroldin Hanna gibt Stilnote. 35 Min."
         },
         {
           "time": "14:55",
@@ -244,7 +244,7 @@
             {
               "n": 5,
               "name": "Auflösung",
-              "content": "Team mit korrekter Lösung gewinnt. Lösung: Es war der Küchenmeister (alle 3 Spuren passen). Bonus-Punkte zur Stallmeister-Tafel."
+              "content": "Team mit korrekter Lösung gewinnt. Lösung: Es war der Küchenmeister (alle 3 Spuren passen). Bonus-Punkte zur Akademie-Tafel."
             }
           ],
           "loudness": "mittel",
@@ -284,7 +284,7 @@
             {
               "n": 4,
               "name": "Wappen-Präsentation + Stilnote",
-              "content": "Jedes Kind erklärt sein Wappen: 'Mein Wappen zeigt einen Adler auf Gold mit der Devise: WAHRHEIT IST MEIN PFAD.' Burgvogtin gibt Stilnote (Sauberkeit, Konzept, Heraldik-Treue)."
+              "content": "Jedes Kind erklärt sein Wappen: 'Mein Wappen zeigt einen Adler auf Gold mit der Devise: WAHRHEIT IST MEIN PFAD.' Wappen-Heroldin Hanna gibt Stilnote (Sauberkeit, Konzept, Heraldik-Treue)."
             }
           ],
           "loudness": "leise",
@@ -745,7 +745,7 @@
         {
           "time": "14:20",
           "title": "Station 1: Wappen-Design XL",
-          "description": "35 Min — Burgvogtin bewertet."
+          "description": "35 Min — Wappen-Heroldin Hanna bewertet."
         },
         {
           "time": "14:55",
