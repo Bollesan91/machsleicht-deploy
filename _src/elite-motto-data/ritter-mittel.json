@@ -275,18 +275,18 @@
         {
           "emoji": "🛡️",
           "label": "6 Pappschilde + Wappenfarben",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=ritter+schild+pappe+kinder+bastelset&tag=machsleicht-21",
           "priceEur": 15,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wappen-Werkstatt-Kern."
         },
         {
           "emoji": "⚔️",
           "label": "Pool-Nudel-Schwerter (6er)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht-21",
           "priceEur": 12,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schwert-Parcours sicher."
         },
@@ -311,9 +311,9 @@
         {
           "emoji": "🌾",
           "label": "Strohballen / Kartons",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=stroh+ballen+klein+deko&tag=machsleicht-21",
           "priceEur": 6,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schwert-Übungsziel."
         },
@@ -471,18 +471,18 @@
         {
           "emoji": "🛡️",
           "label": "8 Pappschilde + Bastel-Material",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=ritter+schild+pappe+kinder+bastelset&tag=machsleicht-21",
           "priceEur": 22,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wappen + Mitgebsel."
         },
         {
           "emoji": "⚔️",
           "label": "Pool-Nudel-Schwerter (8er)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht-21",
           "priceEur": 16,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schwert-Parcours."
         },
@@ -516,9 +516,9 @@
         {
           "emoji": "🌾",
           "label": "Strohballen + Stoffbälle",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=stroh+ballen+klein+deko&tag=machsleicht-21",
           "priceEur": 10,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schwert + Burg-Erstürmung."
         },
@@ -662,18 +662,18 @@
         {
           "emoji": "🛡️",
           "label": "10 Pappschilde + Premium-Bastel",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=ritter+schild+pappe+kinder+bastelset&tag=machsleicht-21",
           "priceEur": 32,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wappen + Mitgebsel."
         },
         {
           "emoji": "⚔️",
           "label": "Pool-Nudel-Schwerter (10er)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht-21",
           "priceEur": 22,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Parcours + Olympiade."
         },
@@ -689,9 +689,9 @@
         {
           "emoji": "🏹",
           "label": "2 Bogen + Saugnapf-Pfeile + Schutzbrille",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=pfeil+bogen+kinder+saugnapf&tag=machsleicht-21",
           "priceEur": 25,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Bogenschießen-Station."
         },
@@ -707,9 +707,9 @@
         {
           "emoji": "🌾",
           "label": "3 Strohballen + Premium-Stoffbälle",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=stroh+ballen+klein+deko&tag=machsleicht-21",
           "priceEur": 14,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schwert-Olympiade."
         },
@@ -777,7 +777,17 @@
       "aufwand": "75 Min inkl. Backen",
       "kosten": "ca. 9-11 €",
       "allergiker": "Bei Ei-Allergie: vegan ersetzen. Bei Nuss-Allergie: Marzipan vorsichtig wählen (manchmal Spuren von Mandeln, Marzipan IST aber Mandelmasse — Vorsicht bei echten Nuss-Allergien!)."
-    }
+    },
+    "tips": [
+      {
+        "title": "🎂 Keine Lust zu backen?",
+        "body": "Fertigen Schoko-Kuchen beim Bäcker kaufen, ovale Schild-Form mit Brotmesser zuschneiden, weißen Zuckerguss drauf. Marzipan-Wappen (rot/blau ausgestochen, 5 €) auflegen. Sieht aus wie selbstgemacht, spart 1h Backzeit."
+      },
+      {
+        "title": "🏰 Pinterest-Inspiration ohne Pinterest-Aufwand",
+        "body": "Pinterest hat 3-stündige Burg-Kuchen mit Fondant-Mauerwerk und beweglichen Zugbrücken. Für 6-8 Jahre reicht: einfacher Schild-Kuchen (ovaler Form-Zuschnitt) + Marzipan-Wappen. 30 Min Deko, gleiche Wirkung."
+      }
+    ]
   },
   "parentTips": {
     "structured": [

@@ -258,9 +258,9 @@
         {
           "emoji": "⚔️",
           "label": "Pool-Nudeln 6er (Schwerter)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht-21",
           "priceEur": 12,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Weiche Schwerter — Sicherheit + Spielspaß."
         },
@@ -501,9 +501,9 @@
         {
           "emoji": "⚔️",
           "label": "Pool-Nudeln (8 Schwerter)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht-21",
           "priceEur": 16,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schwerter, sicher."
         },
@@ -732,9 +732,9 @@
         {
           "emoji": "⚔️",
           "label": "Pool-Nudeln (10 Schwerter)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht-21",
           "priceEur": 20,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schwerter sicher."
         },
@@ -861,6 +861,10 @@
       {
         "title": "🎂 Keine Lust zu backen?",
         "body": "Bäcker-Kastenkuchen + Schokoglasur drüber + Waffel-Türme aufsetzen = 5 Min. Niemand merkt's."
+      },
+      {
+        "title": "⚔️ Pinterest-Falle vermeiden",
+        "body": "Pinterest zeigt 4-stündige Fondant-Burg-Türme mit beweglichen Zugbrücken. Für 3-5 Jahre ist das Overkill — sie wollen den Kuchen essen, nicht bestaunen. Ein einfacher Kastenkuchen mit 4 umgekehrten Eishörnchen als Türme reicht voll. Sieht trotzdem nach Burg aus."
       }
     ]
   },

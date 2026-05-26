@@ -249,9 +249,9 @@
         {
           "emoji": "🐴",
           "label": "6 Plüsch-Ponys (Sparset)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=pl%C3%BCsch+pony+klein+kinder&tag=machsleicht-21",
           "priceEur": 18,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Kernbestandteil — die Pferde-Magie funktioniert nur über die Plüsch-Ponys, jedes Kind sollte 'sein' Pony haben."
         },
@@ -267,18 +267,18 @@
         {
           "emoji": "🐎",
           "label": "Steckenpferde (6er)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=steckenpferd+kinder&tag=machsleicht-21",
           "priceEur": 18,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Für die Reiter-Aktivität und als Mitgebsel. Sockenpony als DIY-Alternative geht auch."
         },
         {
           "emoji": "🌾",
           "label": "Plüsch-Hufeisen oder Wurfringe",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=hufeisen+gl%C3%BCcksbringer&tag=machsleicht-21",
           "priceEur": 4,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Für das Hufeisen-Werfen-Spiel. Stoff-Ringe sind kindersicher."
         },
@@ -312,9 +312,9 @@
         {
           "emoji": "🎂",
           "label": "Hufeisen-Kuchen (Kastenkuchen + Glasur)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=hufeisen+gl%C3%BCcksbringer&tag=machsleicht-21",
           "priceEur": 6,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Thematischer Kuchen, einfach gemacht."
         }
@@ -487,9 +487,9 @@
         {
           "emoji": "🐴",
           "label": "8 Plüsch-Ponys (mittel-Set)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=pl%C3%BCsch+pony+klein+kinder&tag=machsleicht-21",
           "priceEur": 28,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Kern der Party + Mitgebsel. Optional günstiger 6-Set + 2 als Deko."
         },
@@ -505,18 +505,18 @@
         {
           "emoji": "🐎",
           "label": "Steckenpferde (8er)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=steckenpferd+kinder&tag=machsleicht-21",
           "priceEur": 24,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Für Parcours + Mitgebsel."
         },
         {
           "emoji": "🌾",
           "label": "Hufeisen / Wurfringe (8er)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=hufeisen+gl%C3%BCcksbringer&tag=machsleicht-21",
           "priceEur": 6,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wurfspiel."
         },
@@ -550,9 +550,9 @@
         {
           "emoji": "🎂",
           "label": "Hufeisen-Kuchen-Material",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=hufeisen+gl%C3%BCcksbringer&tag=machsleicht-21",
           "priceEur": 8,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Thematischer Kuchen."
         },
@@ -713,9 +713,9 @@
         {
           "emoji": "🐴",
           "label": "10 Plüsch-Ponys (Wow-Set)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=pl%C3%BCsch+pony+klein+kinder&tag=machsleicht-21",
           "priceEur": 38,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Pro Kind 1 Pony, mit Mitnahme."
         },
@@ -731,9 +731,9 @@
         {
           "emoji": "🐎",
           "label": "Steckenpferde (10er)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=steckenpferd+kinder&tag=machsleicht-21",
           "priceEur": 30,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Parcours + Mitgebsel."
         },
@@ -749,9 +749,9 @@
         {
           "emoji": "🌾",
           "label": "Hufeisen + Wurfringe (10er)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=hufeisen+gl%C3%BCcksbringer&tag=machsleicht-21",
           "priceEur": 8,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wurfspiel."
         },
@@ -776,9 +776,9 @@
         {
           "emoji": "🎂",
           "label": "Carrot-Cake-Zutaten",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=carrot+cake+backmischung&tag=machsleicht-21",
           "priceEur": 10,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Highlight-Kuchen."
         },
@@ -847,6 +847,10 @@
       {
         "title": "🎂 Keine Lust zu backen?",
         "body": "Fertigen Karotten-Kuchen vom Bäcker, Hufeisen aus Zuckerguss draufmalen — niemand merkt's. 3 Minuten Arbeit."
+      },
+      {
+        "title": "🐴 Pinterest-Inspiration ohne Pinterest-Aufwand",
+        "body": "Wenn du im Netz nach \"Pferdekuchen Kindergeburtstag\" suchst, stößt du auf 3-stündige Marzipan-Pferdekopf-Projekte mit Goldnüsschen-Augen. Vergiss das. Ein Karotten-Kuchen mit Hufeisen aus weißem Zuckerguss (U-Form, 5 Min Deko) wird von 3-Jährigen genauso gefeiert — und du hast keine Tränen-Anfälle wenn die Mähne nicht hält."
       }
     ]
   },

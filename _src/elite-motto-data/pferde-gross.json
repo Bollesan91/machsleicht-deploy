@@ -305,9 +305,9 @@
         {
           "emoji": "🐎",
           "label": "Steckenpferde (8er) + Hindernisse Premium",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=steckenpferd+kinder&tag=machsleicht-21",
           "priceEur": 35,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Reit-Parcours-Hauptelement."
         },
@@ -323,9 +323,9 @@
         {
           "emoji": "🃏",
           "label": "Quiz-Karten Klasse 2 (20 Karten mit Bildern)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=quiz+karten+pferde+kinder&tag=machsleicht-21",
           "priceEur": 12,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Pferde-Quiz Klasse 2."
         },
@@ -341,9 +341,9 @@
         {
           "emoji": "🥕",
           "label": "Plüsch-Ponys (4) + Bürsten + Pflege-Set",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=pl%C3%BCsch+pony+klein+kinder&tag=machsleicht-21",
           "priceEur": 22,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Pflege-Station."
         },
@@ -461,9 +461,9 @@
         {
           "emoji": "🐎",
           "label": "Steckenpferde (10) + Hindernis-Premium-Set",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=steckenpferd+kinder&tag=machsleicht-21",
           "priceEur": 50,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Reit-Parcours XL."
         },
@@ -479,9 +479,9 @@
         {
           "emoji": "🃏",
           "label": "Quiz-Karten Klasse 2 (20 Karten mit Bildern + Bonus)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=quiz+karten+pferde+kinder&tag=machsleicht-21",
           "priceEur": 15,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Pferde-Quiz."
         },
@@ -631,9 +631,9 @@
         {
           "emoji": "🐎",
           "label": "Steckenpferde (10) + Hindernis-Wow-Set",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=steckenpferd+kinder&tag=machsleicht-21",
           "priceEur": 65,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Reit-Parcours Wow."
         },
@@ -649,9 +649,9 @@
         {
           "emoji": "🃏",
           "label": "Quiz-Karten Klasse 2 Großversion (25 + Bonus)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=quiz+karten+pferde+kinder&tag=machsleicht-21",
           "priceEur": 18,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Pferde-Quiz XL."
         },
@@ -755,7 +755,17 @@
       "aufwand": "90 Min inkl. Backen + Verzieren",
       "kosten": "ca. 12-15 €",
       "allergiker": "Bei Ei-Allergie: vegan ersetzen. Marzipan = Mandeln (Vorsicht bei Nuss-Allergie!). Bei Lactose: pflanzliche Milch."
-    }
+    },
+    "tips": [
+      {
+        "title": "🎂 Keine Lust zu backen?",
+        "body": "Bäcker-Bestellung: rechteckigen Schoko-Kuchen (8-12 €) holen, Pferdekopf-Schablone aus Pappe darüberlegen und mit Brotmesser zuschneiden. Mit Schoko-Ganache überziehen, Marzipan-Mähne (5 €) drauflegen. Spart 1-2h Backzeit, 9-12-Jährige merken den Unterschied nicht."
+      },
+      {
+        "title": "🐎 Pinterest-Aufwand vs Wirkung",
+        "body": "Marzipan-Mähne mit einzeln-gefransten Strähnen sieht im Pinterest-Foto spektakulär aus — bei einer Stallmeister-Party mit 10 Kindern wird sie in 4 Sek. zerschnitten. Statt 2h Marzipan-Frisur: 1 große Marzipan-Decke + 4 vertikale Linien für Mähnen-Andeutung. Wirkung 90%, Aufwand 30%."
+      }
+    ]
   },
   "parentTips": {
     "structured": [

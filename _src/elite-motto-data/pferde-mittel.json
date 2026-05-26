@@ -270,36 +270,36 @@
         {
           "emoji": "🐴",
           "label": "6 Plüsch-Ponys",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=pl%C3%BCsch+pony+klein+kinder&tag=machsleicht-21",
           "priceEur": 18,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Pflege-Station-Kern."
         },
         {
           "emoji": "🐎",
           "label": "Steckenpferde (6er)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=steckenpferd+kinder&tag=machsleicht-21",
           "priceEur": 18,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Parcours-Tool."
         },
         {
           "emoji": "📜",
           "label": "Lizenz-Hefte + Stempel + Urkunden",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=lizenz+heft+kinder+blanko&tag=machsleicht-21",
           "priceEur": 10,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Stempel-System Pflicht."
         },
         {
           "emoji": "🃏",
           "label": "Quiz-Karten (Pferde-Bilder)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=quiz+karten+pferde+kinder&tag=machsleicht-21",
           "priceEur": 5,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Quiz-Material."
         },
@@ -333,9 +333,9 @@
         {
           "emoji": "🎂",
           "label": "Hufeisen-Kuchen-Material",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=hufeisen+gl%C3%BCcksbringer&tag=machsleicht-21",
           "priceEur": 6,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Kuchen."
         }
@@ -461,36 +461,36 @@
         {
           "emoji": "🐴",
           "label": "8 Plüsch-Ponys",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=pl%C3%BCsch+pony+klein+kinder&tag=machsleicht-21",
           "priceEur": 28,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Pflege + Mitgebsel."
         },
         {
           "emoji": "🐎",
           "label": "Steckenpferde (8er)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=steckenpferd+kinder&tag=machsleicht-21",
           "priceEur": 24,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Parcours."
         },
         {
           "emoji": "📜",
           "label": "Lizenz-Hefte + 5 Stempel",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=lizenz+heft+kinder+blanko&tag=machsleicht-21",
           "priceEur": 14,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Stempel-System Standard."
         },
         {
           "emoji": "🃏",
           "label": "Quiz-Karten + Antwortbogen",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=quiz+karten+pferde+kinder&tag=machsleicht-21",
           "priceEur": 6,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Quiz-Material."
         },
@@ -626,36 +626,36 @@
         {
           "emoji": "🐴",
           "label": "10 Plüsch-Ponys",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=pl%C3%BCsch+pony+klein+kinder&tag=machsleicht-21",
           "priceEur": 38,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Pflege + Mitgebsel."
         },
         {
           "emoji": "🐎",
           "label": "Steckenpferde (10er)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=steckenpferd+kinder&tag=machsleicht-21",
           "priceEur": 30,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Parcours."
         },
         {
           "emoji": "📜",
           "label": "Lizenz-Hefte + 6 Stempel + Pokale",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=lizenz+heft+kinder+blanko&tag=machsleicht-21",
           "priceEur": 22,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Stempel-System + Olympiade."
         },
         {
           "emoji": "🃏",
           "label": "Quiz-Karten Großversion",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=quiz+karten+pferde+kinder&tag=machsleicht-21",
           "priceEur": 8,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Quiz."
         },
@@ -689,9 +689,9 @@
         {
           "emoji": "🎂",
           "label": "Carrot-Cake-Zutaten",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=carrot+cake+backmischung&tag=machsleicht-21",
           "priceEur": 12,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wow-Kuchen."
         }
@@ -737,7 +737,17 @@
       "aufwand": "70 Min inkl. Backen",
       "kosten": "ca. 7-9 €",
       "allergiker": "Bei Ei-Allergie: vegan, bei Nuss-Allergie: Walnüsse weglassen."
-    }
+    },
+    "tips": [
+      {
+        "title": "🎂 Keine Lust zu backen?",
+        "body": "Fertigen Karotten-Kuchen oder Schoko-Kasten beim Bäcker kaufen, weißen Zuckerguss in Hufeisen-Form auftragen (U-Form, 3 Min). Optional Marzipan-Möhrchen oder Goldnüsschen drauf. Sieht aus wie selbstgemacht, kostet 8-10 € statt 2h Backzeit."
+      },
+      {
+        "title": "🐴 Pinterest-Falle vermeiden",
+        "body": "Pinterest zeigt 4-stündige Marzipan-Pferdekopf-Projekte mit zugeschnittener Mähne und Goldnüsschen-Augen. Vergiss das für 6-8 Jahre — sie wollen einen Kuchen den sie ESSEN, nicht bewundern. Hufeisen-Form auf Carrot-Cake reicht voll aus."
+      }
+    ]
   },
   "parentTips": {
     "structured": [

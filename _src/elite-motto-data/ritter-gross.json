@@ -300,18 +300,18 @@
         {
           "emoji": "🛡️",
           "label": "8 Pappschilde + Heraldik-Bastel-Premium",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=ritter+schild+pappe+kinder+bastelset&tag=machsleicht-21",
           "priceEur": 28,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wappen-Werkstatt."
         },
         {
           "emoji": "⚔️",
           "label": "Pool-Nudel-Schwerter (8) + 2 Strohballen + Hindernisse",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht-21",
           "priceEur": 30,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schwert-Parcours."
         },
@@ -465,18 +465,18 @@
         {
           "emoji": "🛡️",
           "label": "10 Pappschilde + Heraldik-Premium",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=ritter+schild+pappe+kinder+bastelset&tag=machsleicht-21",
           "priceEur": 35,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wappen."
         },
         {
           "emoji": "⚔️",
           "label": "Pool-Nudel-Schwerter (10) + Strohballen + Hindernis-Premium",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht-21",
           "priceEur": 40,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Parcours."
         },
@@ -510,9 +510,9 @@
         {
           "emoji": "🏹",
           "label": "3 Bogen + Saugnapf-Pfeile + 10 Schutzbrillen + Zielscheiben",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=pfeil+bogen+kinder+saugnapf&tag=machsleicht-21",
           "priceEur": 35,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Bogenschießen."
         },
@@ -689,9 +689,9 @@
         {
           "emoji": "⚔️",
           "label": "Pool-Nudel-Schwerter Premium + 3 Strohballen + Hindernis-Wow",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht-21",
           "priceEur": 55,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Parcours + Olympiade."
         },
@@ -725,9 +725,9 @@
         {
           "emoji": "🏹",
           "label": "3 Bogen Premium + Saugnapf-Pfeile + 10 Schutzbrillen + 2 Ziele",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=pfeil+bogen+kinder+saugnapf&tag=machsleicht-21",
           "priceEur": 45,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Bogenschießen-Meisterschaft."
         },
@@ -804,7 +804,17 @@
       "aufwand": "100 Min inkl. Backen + Verzieren",
       "kosten": "ca. 14-18 €",
       "allergiker": "Marzipan = Mandeln (Nuss-Allergie!). Bei Lactose: pflanzliche Milch. Bei Gluten: glutenfreies Mehl."
-    }
+    },
+    "tips": [
+      {
+        "title": "🎂 Keine Lust zu backen?",
+        "body": "Bäcker-Bestellung: großen rechteckigen Schoko-Kuchen (12-15 €) holen, 4 Eishörnchen (umgekehrt) auf die Ecken setzen als Türme. Marzipan-Wappen mittig draufkleben. Wow-Effekt erreicht in 10 Min."
+      },
+      {
+        "title": "🏰 Marzipan-Drache — wann es sich lohnt",
+        "body": "Marzipan-Drache obendrauf ist Wow-Wert, aber 30 Min Aufwand. Lohnt nur, wenn das Geburtstagskind WIRKLICH auf Drachen steht (sonst wird er übersehen). Alternative: Schoko-Drops als Burggraben-Streusel rundherum — 5 Min, fast gleicher Wow-Effekt."
+      }
+    ]
   },
   "parentTips": {
     "structured": [
