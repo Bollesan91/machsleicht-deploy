@@ -6,7 +6,30 @@
 //   AWIN_PUBLISHER_ID (z.B. "123456")
 // ═══════════════════════════════════════════════════════════════
 
-const CORS = { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS", "Access-Control-Allow-Headers": "Content-Type" };
+// P0-Security: CORS Origin-Whitelist (statt Wildcard *).
+// Erlaubt: machsleicht.de + party.machsleicht.de Subdomains + localhost für Dev.
+const CORS_ALLOWED_ORIGINS = [
+  "https://machsleicht.de",
+  "https://www.machsleicht.de",
+  "https://party.machsleicht.de",
+  "http://localhost:3000",
+  "http://localhost:5173",
+  "http://localhost:8080",
+  "http://127.0.0.1:3000",
+];
+function corsHeaders(request) {
+  const origin = request.headers.get("origin") || "";
+  const allowed = CORS_ALLOWED_ORIGINS.includes(origin) ? origin : CORS_ALLOWED_ORIGINS[0];
+  return {
+    "Access-Control-Allow-Origin": allowed,
+    "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Vary": "Origin",
+  };
+}
+// Backwards-compat — Legacy-CORS-Konstante mit Wildcard, NUR für Helpers ohne request-Context.
+// Sobald alle Aufrufer corsHeaders(request) nutzen, kann CORS entfernt werden.
+const CORS = { "Access-Control-Allow-Origin": "https://machsleicht.de", "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS", "Access-Control-Allow-Headers": "Content-Type", "Vary": "Origin" };
 const MAX_GUESTS = 30;
 const MAX_WISHES = 20;
 const MAX_PHOTO_BYTES = 500000;
@@ -144,8 +167,9 @@ function autoMottoColor(motto) {
 }
 
 // ── Helpers ─────────────────────────────────────────────
-function json(data, status = 200) {
-  return new Response(JSON.stringify(data), { status, headers: { ...CORS, "Content-Type": "application/json" } });
+function json(data, status = 200, request = null) {
+  const cors = request ? corsHeaders(request) : CORS;
+  return new Response(JSON.stringify(data), { status, headers: { ...cors, "Content-Type": "application/json" } });
 }
 function generateId(len = 8) {
   const chars = "abcdefghjkmnpqrstuvwxyz23456789";
@@ -188,6 +212,34 @@ function isSafeUrl(s) {
   return typeof s === "string" && (s.startsWith("https://") || s.startsWith("http://"));
 }
 
+// P1-Security: Foto-Upload-Härtung. Base64-Image-Format-Whitelist + Magic-Bytes-Check.
+// Erlaubt: data:image/(jpeg|jpg|png|webp);base64,...
+// Blockiert: SVG (XSS-Risiko via <script> im SVG), PDF, GIF (animiert + alte CVEs), willkürliche Base64.
+// Returns: true wenn safe, false sonst.
+function isSafePhoto(b64) {
+  if (!b64 || typeof b64 !== "string") return false;
+  if (b64.length > MAX_PHOTO_BYTES * 1.37) return false; // Längen-Check (1.37 = Base64-Overhead)
+  // Format-Prefix: data:image/jpeg|jpg|png|webp;base64,
+  const m = b64.match(/^data:image\/(jpeg|jpg|png|webp);base64,([A-Za-z0-9+/=]+)$/);
+  if (!m) return false;
+  const payload = m[2];
+  if (payload.length < 100) return false; // Min-Sanity (< 75 Bytes Bild ist unrealistisch)
+  // Magic-Bytes-Check via Base64-Anfangs-Decode (erste 6 Bytes reichen)
+  try {
+    const head = atob(payload.slice(0, 12)); // ~8-9 decoded Bytes
+    const codes = [head.charCodeAt(0), head.charCodeAt(1), head.charCodeAt(2), head.charCodeAt(3)];
+    // JPEG: FF D8 FF
+    if (codes[0] === 0xFF && codes[1] === 0xD8 && codes[2] === 0xFF) return true;
+    // PNG: 89 50 4E 47
+    if (codes[0] === 0x89 && codes[1] === 0x50 && codes[2] === 0x4E && codes[3] === 0x47) return true;
+    // WebP: starts with "RIFF" (52 49 46 46)
+    if (codes[0] === 0x52 && codes[1] === 0x49 && codes[2] === 0x46 && codes[3] === 0x46) return true;
+    return false; // Anderes Magic = ablehnen
+  } catch {
+    return false; // Base64-Decode-Fehler
+  }
+}
+
 // ═══════════════════════════════════════════════════════════════
 // MAIN ROUTER
 // ═══════════════════════════════════════════════════════════════
@@ -195,7 +247,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const path = url.pathname;
-    if (request.method === "OPTIONS") return new Response(null, { headers: CORS });
+    if (request.method === "OPTIONS") return new Response(null, { headers: corsHeaders(request) });
 
     // POST /api/create
     if (path === "/api/create" && request.method === "POST") {
@@ -224,10 +276,10 @@ export default {
       };
       const ttl = calcTTL(party.date);
       await env.PARTY.put(`party:${id}`, JSON.stringify(party), {expirationTtl:ttl});
-      if (body.photo && body.photo.length <= MAX_PHOTO_BYTES*1.37) {
+      if (body.photo && isSafePhoto(body.photo)) {
         await env.PARTY.put(`photo:${id}`, body.photo, {expirationTtl:ttl});
       }
-      if (body.photoRound && body.photoRound.length <= MAX_PHOTO_BYTES*1.37) {
+      if (body.photoRound && isSafePhoto(body.photoRound)) {
         await env.PARTY.put(`photoRound:${id}`, body.photoRound, {expirationTtl:ttl});
       }
       return json({id, editToken, url:`https://party.machsleicht.de/${id}`, editUrl:`https://party.machsleicht.de/${id}?edit=${editToken}`});
@@ -269,9 +321,9 @@ export default {
       }
       const ttl = calcTTL(party.date);
       if (body.photo===null) await env.PARTY.delete(`photo:${id}`);
-      else if (body.photo && body.photo.length<=MAX_PHOTO_BYTES*1.37) await env.PARTY.put(`photo:${id}`,body.photo,{expirationTtl:ttl});
+      else if (body.photo && isSafePhoto(body.photo)) await env.PARTY.put(`photo:${id}`,body.photo,{expirationTtl:ttl});
       if (body.photoRound===null) await env.PARTY.delete(`photoRound:${id}`);
-      else if (body.photoRound && body.photoRound.length<=MAX_PHOTO_BYTES*1.37) await env.PARTY.put(`photoRound:${id}`,body.photoRound,{expirationTtl:ttl});
+      else if (body.photoRound && isSafePhoto(body.photoRound)) await env.PARTY.put(`photoRound:${id}`,body.photoRound,{expirationTtl:ttl});
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:ttl});
       return json({ok:true});
     }
