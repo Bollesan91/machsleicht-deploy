@@ -251,13 +251,13 @@
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "Material pro Station vorbereiten und vorab durchspielen (15 Min Vorlauf). Klare Anweisung wer-macht-was vor Start des Spiels — sonst Chaos.",
-          "ageAdjust6": "Vereinfacht: weniger Schritte, mehr Eltern-Begleitung, kein Zeitdruck. Alle bekommen Stempel/Belohnung.",
-          "ageAdjust8": "Volle Komplexität: eigene Strategie-Wahl, Wettkampf-Element, Bonus-Stempel für saubere Lösung.",
-          "indoorTip": "In gut belichteten Raum, kein zu volles Möbel. Material auf einer großen Stoff-Decke sammeln damit nichts verloren geht.",
-          "outdoorTip": "Im Garten mit klar markierter Spiel-Zone. Sand/Erde-Material erst hier, nicht ins Haus zurücktragen.",
-          "whyItWorksTitle": "Warum diese Station-Mischung trägt",
-          "whyItWorks": "Mixed-Stations kombinieren mehrere Elemente (Bewegung + Kreativität + Wettkampf), was die Aufmerksamkeit länger hält als Mono-Spiele. Wichtig: klare Sub-Phasen, sonst werden Kinder zerstreut."
+          "prepText": "6-10 Wurf-Hufeisen (Stoff-Säckchen sicherer als echte) + 3 Pflöcke in verschiedenen Distanzen (1m, 2m, 3m) vorbereiten. Wertungstafel für Trefferpunkte. 10-15 Min Vorlauf.",
+          "ageAdjust6": "Für 3-Jährige: 1 Pflock, 1 Meter Abstand, alle 3 Würfe ohne Punkte-Druck. Jedes Kind bekommt einen Treffer-Klatscher.",
+          "ageAdjust8": "Für 5-Jährige: 2 Pflöcke, 1-2 Meter, Punkte werden notiert aber Sieger-Bonus klein. Stempel für alle.",
+          "indoorTip": "In Wohnzimmer-Ecke mit weicher Stoff-Säckchen-Hufeisen — keine Möbel-Schäden. Pflock auf rutsch-fester Matte.",
+          "outdoorTip": "Im Garten am besten — mehr Strecke, größere Sicherheits-Zone. Stoff-Säckchen-Hufeisen wind-resistent.",
+          "whyItWorksTitle": "Warum Hufeisen-Werfen klassischer Reiter-Spaß ist",
+          "whyItWorks": "Hufeisen-Werfen ist seit Jahrhunderten Reiterhof-Tradition — geübt bei Pferdewettbewerben und Reiter-Festen. Funktioniert in jedem Alter (Distanz anpassen), Stempel-Bonus für Treffer macht es zum echten Wettkampf."
         }
       ],
       "food": "🥕 Karotten-Sticks (1 Schale, Karotten dünn geschnitten)\n🍎 Apfelschnitze (1 Schale)\n🥣 Hafer-Müsli (in Kornsäckchen, 6 Stk)\n🥤 Pferde-Schorle (Apfelsaft, 1,5 L)\n🎂 Hufeisen-Kuchen (Kastenkuchen in Hufeisen-Form)\n🥨 Salzstangen (1 Päckchen)",
@@ -455,13 +455,13 @@
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "Material pro Station vorbereiten und vorab durchspielen (15 Min Vorlauf). Klare Anweisung wer-macht-was vor Start des Spiels — sonst Chaos.",
-          "ageAdjust6": "Vereinfacht: weniger Schritte, mehr Eltern-Begleitung, kein Zeitdruck. Alle bekommen Stempel/Belohnung.",
-          "ageAdjust8": "Volle Komplexität: eigene Strategie-Wahl, Wettkampf-Element, Bonus-Stempel für saubere Lösung.",
-          "indoorTip": "In gut belichteten Raum, kein zu volles Möbel. Material auf einer großen Stoff-Decke sammeln damit nichts verloren geht.",
-          "outdoorTip": "Im Garten mit klar markierter Spiel-Zone. Sand/Erde-Material erst hier, nicht ins Haus zurücktragen.",
-          "whyItWorksTitle": "Warum diese Station-Mischung trägt",
-          "whyItWorks": "Mixed-Stations kombinieren mehrere Elemente (Bewegung + Kreativität + Wettkampf), was die Aufmerksamkeit länger hält als Mono-Spiele. Wichtig: klare Sub-Phasen, sonst werden Kinder zerstreut."
+          "prepText": "6-10 Wurf-Hufeisen (Stoff-Säckchen sicherer als echte) + 3 Pflöcke in verschiedenen Distanzen (1m, 2m, 3m) vorbereiten. Wertungstafel für Trefferpunkte. 10-15 Min Vorlauf.",
+          "ageAdjust6": "Für 3-Jährige: 1 Pflock, 1 Meter Abstand, alle 3 Würfe ohne Punkte-Druck. Jedes Kind bekommt einen Treffer-Klatscher.",
+          "ageAdjust8": "Für 5-Jährige: 2 Pflöcke, 1-2 Meter, Punkte werden notiert aber Sieger-Bonus klein. Stempel für alle.",
+          "indoorTip": "In Wohnzimmer-Ecke mit weicher Stoff-Säckchen-Hufeisen — keine Möbel-Schäden. Pflock auf rutsch-fester Matte.",
+          "outdoorTip": "Im Garten am besten — mehr Strecke, größere Sicherheits-Zone. Stoff-Säckchen-Hufeisen wind-resistent.",
+          "whyItWorksTitle": "Warum Hufeisen-Werfen klassischer Reiter-Spaß ist",
+          "whyItWorks": "Hufeisen-Werfen ist seit Jahrhunderten Reiterhof-Tradition — geübt bei Pferdewettbewerben und Reiter-Festen. Funktioniert in jedem Alter (Distanz anpassen), Stempel-Bonus für Treffer macht es zum echten Wettkampf."
         },
         {
           "name": "🏇 Steckenpferd-Parcours",
@@ -490,13 +490,13 @@
           ],
           "loudness": "laut",
           "effort": "mittel",
-          "prepText": "Strecke/Hindernisse vor der Party aufbauen — 15-20 Min Vorlauf. Bei Mietswohnung: lange Strecke im Flur testen, Sturzgefahr-Stellen mit weichem Boden (Decken) entschärfen.",
-          "ageAdjust6": "Hindernisse leichter, Stoppuhr ohne Druck, alle bekommen einen Stempel/Punkt — kein hartes Sieger-System.",
-          "ageAdjust8": "Hindernisse anspruchsvoller, Zeitmessung + Stilnote für echten Wettkampf, Top-3 mit Mini-Pokal oder Bonus-Stempel.",
-          "indoorTip": "Funktioniert im langen Flur oder Wohnzimmer — Hindernisse aus Bestand: Sofakissen, Bücher-Stapel, Wäscheständer als Slalom-Markierung.",
-          "outdoorTip": "Im Garten am besten — keine Möbel-Schäden, mehr Strecke. Bei Regen problemlos indoor verlegbar.",
-          "whyItWorksTitle": "Warum Bewegungs-Spiele bei Kindergeburtstagen funktionieren",
-          "whyItWorks": "Bewegung baut aufgestaute Energie ab (besonders nach Anreise + Snack), schafft sichtbare Erfolge (Zeit, Treffer), und macht den Tag fotografierbar. Wichtig: Action-Phasen müssen mit ruhigen Sitz-Phasen abwechseln, sonst kippt die Stimmung in Streit oder Erschöpfung."
+          "prepText": "6 Steckenpferde + 4-6 Hindernisse (Slalom-Markierungen mit Klebeband, niedrige Sprung-Stange aus Besenstiel auf Konservendosen, Tunnel-Kissen, Wassergraben-Stoff). 15-20 Min Vorlauf für sicheren Aufbau.",
+          "ageAdjust6": "Bei 3-Jährigen: max 3 Hindernisse, Sprung-Höhe max 10 cm, kein Tempo-Druck. Erwachsene begleitet jedes Kind durch den Parcours.",
+          "ageAdjust8": "Bei 5-Jährigen: 5 Hindernisse, Sprung 15-20 cm. Stoppuhr optional als Bonus-Element.",
+          "indoorTip": "Im langen Flur perfekt — Hindernisse aus Stuhlbeinen + Decken + Bücher-Stapeln. Wassergraben durch blaue Decke ersetzen.",
+          "outdoorTip": "Im Garten als Reiter-Parcours-Highlight mit echtem Stroh als Wassergraben-Imitat. Keine Möbel-Schäden.",
+          "whyItWorksTitle": "Warum Steckenpferd-Parcours auch ohne echtes Pferd zieht",
+          "whyItWorks": "3-5-Jährige verlieben sich in das Steckenpferd-Reiten — sie sind selbst Pferd und Reiter zugleich. Der Parcours strukturiert die Aktivität und gibt Erfolgs-Momente (geschafft! durch!)."
         },
         {
           "name": "🐴 Großer Pony-Streichel-Kreis (Eröffnung)",
@@ -738,13 +738,13 @@
           ],
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "Quiz-Karten vor der Party drucken und schneiden — am besten in Word mit Bildern (frei nutzbare Wikipedia-Bilder). Antwortbögen pro Kind vorbereiten. 15-20 Min Vorlauf.",
-          "ageAdjust6": "Wenige Karten (8-10), Bilder eindeutig, 2-3 Antwortmöglichkeiten pro Frage. Gemeinsam beantworten statt einzeln ausfüllen — niemand soll als \"Verlierer\" da stehen.",
-          "ageAdjust8": "Mehr Karten (12-15), Mix aus Bildern und Text-Fragen. Antwortbogen-Einzelarbeit + Auflösung gemeinsam. Bonus-Stempel für Top-Quiz-Score.",
-          "indoorTip": "Am Esstisch oder im Kreis am Boden — keine besondere Anpassung nötig. Quiz-Karten gut sichtbar hochhalten.",
+          "prepText": "8-10 Quiz-Karten mit großen Pferde-Bildern (in Word selbst gemacht oder gekauft) + Smartphone für Foto-Antworten (optional). 5 Min Vorlauf — Sitz-Spiel mit Vorbereitungsaufwand niedrig.",
+          "ageAdjust6": "Für 3-Jährige: 5-6 Bilder mit eindeutigen Antworten (\"Welches Tier ist das?\"). Gemeinsam beantworten, keine Punkte-Wertung.",
+          "ageAdjust8": "Für 5-Jährige: 8-10 Karten, Bild + Wahl aus 2-3 Antworten. Antwortbogen optional. Stempel für jedes Kind.",
+          "indoorTip": "Im Kreis auf dem Boden mit Karten gut sichtbar hochhalten. Antworten gemeinsam, keine Einzel-Belohnung.",
           "outdoorTip": null,
-          "whyItWorksTitle": "Warum Quiz bei 6-12 funktioniert",
-          "whyItWorks": "Kinder ab 6 wollen ihr Wissen zeigen — Quiz ist die freundlichste Form davon. Vorteile: jeder kann mitmachen (niemand wird ausgeschlossen wegen Motorik), Tempo selbst bestimmbar, und es ist eine echte Sitz-Pause zwischen Action-Phasen. Wichtig: keine Trickfragen, keine Tempo-Druck."
+          "whyItWorksTitle": "Warum Pony-Quiz bei 3-5 sanfte Lern-Phase ist",
+          "whyItWorks": "3-5-Jährige lieben Bilder-Quiz weil sie etwas WISSEN und zeigen können. Pferd erkennen, Karotte erkennen — niedrige Hürde, hohe Erfolgs-Quote. Beruhigende Sitz-Phase zwischen Aktiv-Spielen."
         },
         {
           "name": "🗺️ Karotten-Schatzsuche",
@@ -778,13 +778,13 @@
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "Versteckte Gegenstände vor der Party platzieren — am besten von 2 Erwachsenen, damit niemand \"vergessen hat wo\" sagen muss. Zettel mit Verstecken zur Sicherheit. 15-20 Min Vorlauf, am besten am Morgen.",
-          "ageAdjust6": "Verstecke offensichtlicher (Augenhöhe, klare Hinweise), Suchzeit kürzer (10 Min). Alle finden in 2er-Teams gleichzeitig — kein Wettrennen.",
-          "ageAdjust8": "Verstecke kniffliger (höher/tiefer, mit verschachtelter Logik), Suchzeit länger (20-25 Min). Punkte/Stempel für schnellste Teams.",
-          "indoorTip": "Verstecke in verschiedenen Räumen aufteilen (Wohnzimmer + Flur + Bad), nicht in Schlafzimmern. Karte mit erlaubten Räumen sichtbar machen.",
-          "outdoorTip": "Im Garten — Verstecke in Sträuchern, unter Steinen (geprüft!), an Bäumen. Nicht zu hoch (keine Kletter-Verletzungen).",
-          "whyItWorksTitle": "Warum Schatzsuchen jede Party retten",
-          "whyItWorks": "Schatzsuchen schaffen klare Story-Phasen (Auftrag → Suche → Lösung) und sind altersgemäß skalierbar. Kinder mögen den Detektiv-Aspekt + die Belohnung. Wichtig: nicht zu viele Verstecke (Frustration) und nicht zu wenige (alle finden alles in 2 Min)."
+          "prepText": "20-30 Karotten (echte oder Filz) in verschiedenen Räumen verstecken — vorab durch 2 Erwachsene platziert, Zettel mit Verstecken zur Sicherheit. Schatzkarten mit Hinweisen + Sammel-Eimer. 20 Min Vorlauf.",
+          "ageAdjust6": "Für 6-Jährige: 20 Karotten, Verstecke offensichtlicher (Augenhöhe, klare Hinweise auf der Karte). 2er-Teams suchen gemeinsam.",
+          "ageAdjust8": "Für 8-Jährige: 30 Karotten, kniffligere Verstecke (höher/tiefer mit Logik). Zeitwertung + Stempel-Bonus.",
+          "indoorTip": "Karotten in verschiedenen Räumen verstecken (Wohnzimmer + Flur + Bad — nicht Schlafzimmer). Karte mit erlaubten Räumen markiert.",
+          "outdoorTip": "Im Garten — Karotten in Sträuchern, unter Blumentopfen, an Geräten. Nicht im Boden vergraben (Erde-Schmutz).",
+          "whyItWorksTitle": "Warum Karotten-Schatzsuche Reiterhof-Stimmung perfekt einfängt",
+          "whyItWorks": "Karotten = Pferde-Snack-Symbol, Schatzsuche = klassisches Kinder-Spiel. Kombination funktioniert auf jedem Reiterhof-Niveau. Wichtig: Verstecke nicht zu kniffelig (Frust) und nicht zu offensichtlich (alle finden in 2 Min)."
         }
       ],
       "food": "🎂 Karotten-Kuchen (Carrot Cake — Pferde-thematisch!)\n🥕 Karotten-Sticks (3 Schalen)\n🍎 Apfelschnitze + Birnen\n🥣 Hafer-Müsli + Reiter-Riegel\n🥤 Pferde-Schorle (4 L)\n🥨 Salzstangen + Brezeln\n🧀 Käse-Würfel",
