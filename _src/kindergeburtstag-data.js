@@ -1760,6 +1760,16 @@ var GENERIC = [
         },
       },
     },
+    {
+      id: "meerjungfrau",
+      name: "Meerjungfrau-Welt",
+      emoji: "\u{1F9DC}‍♀️",
+      color: "#26C6DA",
+      cat: "generic",
+      spiele: { klein: [], mittel: [], gross: [] },
+      snacks: { klein: [], mittel: [], gross: [] },
+      kuchen: { klein: {}, mittel: {}, gross: {} },
+    },
 ];
 
 var LICENSE = [

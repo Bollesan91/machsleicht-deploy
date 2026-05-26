@@ -1,0 +1,1488 @@
+{
+  "_meta": {
+    "source_file": "kindergeburtstag/dschungel.html",
+    "extracted": "2026-05-22",
+    "schema_version": "1.0",
+    "purpose": "Dschungel 3-5 (klein) — Phase-B Elite-Slot (analog Safari-klein)",
+    "phase_b_complete": "2026-05-22"
+  },
+  "motto": "dschungel",
+  "ageGroup": "klein",
+  "ageRange": [
+    3,
+    5
+  ],
+  "title": "🌴 Dschungel-Kindergeburtstag 3-5 Jahre — komplett geplant",
+  "metaDescription": "Dschungel-Kindergeburtstag für 3-5-Jährige als Forscher-Expedition: 3 fertige Konzepte mit Zeitplan, Lianen-Schwingen, Tier-Spuren, Trommeln und Forscher-Ernennung. Ohne Wettkampf, mit Plüsch-Affe und Forscher-Stirnband. Kostenlos.",
+  "introParagraph": "Dein Kind wird 3, 4 oder 5 und liebt Affen, Tiger und alles, was im Dschungel raschelt? Hier sind drei fertige Konzepte für die Dschungel-Expedition — von 90 Minuten Mini-Forscher-Tour bis zur entspannten 2-Stunden-Variante mit Lianen-Pfad und Tier-Fühlbox. Kein Rennen, keine Verlierer: Jedes Kind wird zum Dschungel-Forscher ernannt, beobachtet Tiere, liest Spuren und bekommt am Ende sein Forscher-Stirnband, Lupe und Notizbuch. Eltern bleiben mit dabei — bei 3- bis 5-Jährigen gehört das zum Plan, nicht zum Notnagel.",
+  "signatureRitual": {
+    "name": "Die Dschungel-Forscher-Ernennung",
+    "subtitle": "Eröffnet die Party + Forscher-Pass-Übergabe am Ende",
+    "introText": "Bei 3-5 funktioniert keine lange Zeremonie und kein Eid — das Stillstehen kippt nach 30 Sekunden. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener gemeinsam mit dem Kind macht. Beim Ankommen bekommt jedes Kind ein Forscher-Stirnband mit grünem Blatt-Aufnäher und einen Forscher-Namen — aus „Gast“ wird „Forscher Mia, die heute im Dschungel die Tiere beobachtet“. Dazu drückt man dem Kind eine kleine Holz-Lupe in die Hand: „Das ist deine Forscher-Lupe — damit kannst du die Spuren ganz genau sehen.“ Am Ende, statt einem Sieger-Moment, bekommt JEDES Kind seinen Forscher-Pass (kleines Heft mit Tier-Stempeln) plus ein Notizbuch — alle gleich, kein Ranking. Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende.",
+    "setupSteps": [
+      {
+        "title": "Forscher-Stirnbänder mit Namen vorbereiten",
+        "content": "Pro Kind ein Stirnband aus grünem oder braunem Tonpapier (ca. 5 cm × 55 cm) mit einem aufgeklebten Blatt-Sticker oder einer Pappel-Feder. Schreib den Forscher-Namen schon drauf oder nutze ein Klett-Schild. Beim Aufsetzen sagst du: „Du bist jetzt Forscher Mia. Du beobachtest heute die Dschungel-Tiere.“ Das Aufsetzen durch dich ist der Moment — nicht das Kind setzt es sich selbst auf."
+      },
+      {
+        "title": "Forscher-Lupen bereitlegen",
+        "content": "Eine kleine Kunststoff-Lupe pro Kind, am Eingang in einer Holzkiste. Die Lupen sind das physische Werkzeug, das den Forscher-Status sichtbar macht. Bruchsicher und ohne scharfe Kanten — bei 3-Jährigen lieber die runde Variante ohne Spitze."
+      },
+      {
+        "title": "Mini-Notizbücher beschriften",
+        "content": "Ein kleines DIN-A6-Heftchen pro Kind, vorne den Namen drauf („Forscher-Notizbuch von Mia“). Innen leere Seiten oder vorgemalte Tier-Silhouetten zum Ausmalen. 3-Jährige malen nur Striche rein, 5-Jährige kritzeln „Tier-Beobachtungen“ — beides ist richtig."
+      },
+      {
+        "title": "Forscher-Pässe drucken (eine pro Kind, identisch)",
+        "content": "Ein schlichter, gefalteter DIN-A5-Pass „Dschungel-Forscher-Pass für [Name]“ mit 6-8 Tier-Feldern zum Abstempeln. Bewusst alle gleich — kein „1. Forscher“. Namen vorab eintragen. Stempel-Felder werden im Laufe der Party an den Tier-Stationen abgehakt."
+      },
+      {
+        "title": "Abschluss-Moment planen (vor dem Abholen)",
+        "content": "Letzte 5 Minuten ruhig: alle Kinder im Halbkreis, du gehst herum, übergibst Forscher-Pass + Notizbuch + Plüsch-Affe (Mitgebsel) und sagst jedem Kind seinen Forscher-Namen. Foto-Moment für die Eltern — sanfter Ausklang statt Chaos-Ende."
+      },
+      "Türkise Bach-Decke ausrollen (Karton-Tape oder Tischdecke 1,5 m × 80 cm) — als visuelles Setting-Element + Spielfeld für den Bach-Beobachter (zählt Holztiere/Schwammtiere die durchschwimmen). Material: 1 türkise Decke + 5 kleine Tier-Schwammis."
+    ],
+    "rolesList": [
+      {
+        "emoji": "🐒",
+        "name": "Affen-Beobachter",
+        "function": "Kümmert sich um den Plüsch-Affen am Lianen-Pfad — passt auf, dass er sicher von Liane zu Liane kommt."
+      },
+      {
+        "emoji": "🐅",
+        "name": "Tiger-Spurenleser",
+        "function": "Hilft beim Lesen der Tiger-Spuren — zeigt den anderen, wo die nächste Pfote ist."
+      },
+      {
+        "emoji": "🦋",
+        "name": "Schmetterlings-Späher",
+        "function": "Sucht die versteckten Papp-Schmetterlinge im Raum und meldet jeden Fund."
+      },
+      {
+        "emoji": "🦥",
+        "name": "Faultier-Freund",
+        "function": "Begleitet das langsame Plüsch-Faultier und sorgt dafür, dass keiner es überholt — perfekt für ruhige Kinder."
+      },
+      {
+        "emoji": "🐸",
+        "name": "Frosch-Späher",
+        "function": "Hüpft als Erster zur nächsten Station und gibt das Frosch-Quak-Signal („wir sind da!“)."
+      },
+      {
+        "emoji": "🐍",
+        "name": "Schlangen-Wächter",
+        "function": "Passt auf die Stoff-Schlange in der Fühlbox auf — sie ist freundlich, kein Grusel-Tier."
+      },
+      {
+        "emoji": "🦜",
+        "name": "Tukan-Rufer",
+        "function": "Macht den Dschungel-Ruf, wenn ein neues Spiel startet — der laute, aber freundliche Helfer."
+      },
+      {
+        "emoji": "🐢",
+        "name": "Bach-Beobachter",
+        "function": "Bewacht die türkise Wasser-Decke (den „Bach“) und zählt die kleinen Holztiere, die hindurchschwimmen."
+      }
+    ],
+    "optOutNote": "Kein Kind muss eine Forscher-Rolle übernehmen, das Stirnband tragen oder die Lupe halten — bei 3-5 ist das normal. Zwing kein Kind in eine Rolle. Leg Stirnband + Lupe daneben, sag „kannst du später aufsetzen, wenn du magst“ und mach weiter. Oft kommt das Kind nach 10 Minuten von selbst dazu, sobald es sieht, dass es Spaß macht. Forscher-Pass, Notizbuch und Plüsch-Affe bekommt am Ende JEDES Kind — auch das, das die ganze Party im Eltern-Schoß sitzen geblieben ist.",
+    "materialNote": "Pflicht: ein Forscher-Stirnband pro Kind (mit Namen, grün/braun) und ein Forscher-Pass pro Kind. Schön dazu: Mini-Lupe und Mini-Notizbuch — das sind die haptischen Forscher-Werkzeuge, die Kinder lieben. Lupen-Sets findest du in der shoppingList der jeweiligen Variante; Pass und Notizbuch druckst/heftest du selbst. Bewusst KEINE Ausweise wie bei den Größeren — der Forscher-Pass mit Stempel-Feldern ist der richtige, verständliche Stolz-Moment für 3-5."
+  },
+  "ageInsight": {
+    "headline": "Was 3-5-Jährige ausmacht — und was das für die Dschungel-Party heißt",
+    "traits": [
+      {
+        "topic": "Aufmerksamkeit",
+        "detail": "10-15 Minuten pro Aktion, dann kippt es. Kurze Lianen-Runden, schnelle Erfolge, Plüsch-Affe zum Anfassen statt langer Erklärungen über Regenwald."
+      },
+      {
+        "topic": "Regeln",
+        "detail": "Eine Regel pro Spiel, vorgemacht statt erklärt. 'Wir hangeln vorsichtig' versteht ein 3-Jähriger nur, wenn du es ihm zeigst — nicht über Ansagen."
+      },
+      {
+        "topic": "Kein Wettbewerb",
+        "detail": "Wer schneller / höher / weiter gibt's bei 3-5 nicht. Jedes Kind schwingt einmal an der Liane, jedes Kind findet einen Schmetterling, jedes Kind bekommt den Forscher-Pass. Sonst weint die Hälfte."
+      },
+      {
+        "topic": "Motorik",
+        "detail": "Krabbeln, schwingen, fühlen — grobmotorisch ja, Basteln mit Schere nein. Stirnbänder vorbereiten, Kinder nur aufkleben lassen."
+      },
+      {
+        "topic": "Sensorik",
+        "detail": "Stoff-Lianen, raschelnde Blätter, weiche Fellsorten in der Fühlbox — die Sinne sind in dem Alter offen. Plane gezielt Material zum Anfassen ein, nicht nur zum Anschauen."
+      },
+      {
+        "topic": "Dauer",
+        "detail": "90 Min. bei Minimal, 2 Std. bei Standard/Wow ist das Maximum. Nach 2 Std. kippt selbst die fröhlichste Forscher-Truppe in Müdigkeit, Streit oder Heimweh."
+      },
+      {
+        "topic": "Essen",
+        "detail": "Fingerfood, das wie Dschungel-Snack aussieht: Bananen-'Boote', Trauben-'Beeren', Gurken-'Blätter', Cracker-'Steine'. Nichts Heißes, nichts mit Nüssen ungefragt."
+      },
+      {
+        "topic": "Eltern",
+        "detail": "Bleiben dabei — Trennungsangst ist mit 3 normal. Plane Eltern als Trostkontakt und zweite Hand ein, nicht als Störfaktor."
+      }
+    ],
+    "whyMottoFitsHeadline": "Warum Dschungel für 3-5 funktioniert",
+    "whyMottoFits": "Tiere sind das große Thema, das jedes Kind in dem Alter kennt und liebt — und der Dschungel bringt die buntesten Stars (Affen, Tukane, Schmetterlinge) ohne Vorwissen. Der Forscher-Frame dreht die Party weg vom Wettbewerb hin zum Entdecken: Spuren lesen, Schmetterlinge finden, leise zum Faultier schleichen. Das passt exakt zum Beobachter-Drang der Altersgruppe und kommt komplett ohne Verlierer aus. Sensorisch ist Dschungel ein Fest — Stoff-Lianen, Bambus-Stäbe, Plüsch-Fellbox. Akustisch je nach Trommel-Anteil leise bis mittel — gut für die Mietwohnung."
+  },
+  "variants": [
+    {
+      "id": "minimal",
+      "label": "Minimal — 90 Minuten, ein Spiel, wenig Aufwand",
+      "headline": "🌿 Minimal — 90 Minuten Mini-Forscher-Tour",
+      "intro": "Die ehrliche Sparvariante: 90 Minuten, 6 Kinder, ein Hauptspiel (die Tier-Spuren-Tour) plus Tier-Fühlbox als ruhiger Lückenfüller. Forscher-Stirnbänder als Ankunfts-Aktion, Plüsch-Affe-Übergabe und Forscher-Pass zum Schluss. Reicht völlig für 3-Jährige — mehr wäre eher zu viel.",
+      "timeWindow": "15:00-16:30, 6 Kinder",
+      "schedule": [
+        {
+          "time": "15:00",
+          "title": "Ankunft + Forscher werden",
+          "description": "Jedes Kind bekommt sein Forscher-Stirnband, seinen Namen und eine Mini-Lupe. Eltern dürfen bleiben."
+        },
+        {
+          "time": "15:15",
+          "title": "Tier-Fühlbox",
+          "description": "Einstieg im Sitzkreis. Kinder fühlen blind nach Plüsch-Tieren in der Box und raten — keine Hektik."
+        },
+        {
+          "time": "15:30",
+          "title": "Tier-Spuren-Tour",
+          "description": "Das Hauptspiel: leise den Tiger-Spuren folgen, den verlorenen Plüsch-Affen finden und ins Dschungel-Camp bringen."
+        },
+        {
+          "time": "15:55",
+          "title": "Bananen-Rätsel",
+          "description": "Ruhiges Such-Spiel zum Runterkommen. Jedes Kind findet eine versteckte Papp-Banane und legt sie in den Affen-Korb."
+        },
+        {
+          "time": "16:10",
+          "title": "Dschungel-Kuchen + Forscher-Pass",
+          "description": "Schokokuchen mit grünem Dschungel-Buttercreme, dann Pass-Übergabe: jeder Forscher kommt einzeln dran."
+        },
+        {
+          "time": "16:30",
+          "title": "Abholung",
+          "description": "Mitgebsel-Tüte an der Tür, fertig. Lieber 90 Min. glücklich als 3 Stunden eskaliert."
+        }
+      ],
+      "games": [
+        {
+          "name": "🐅 Tier-Spuren-Tour",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "20 Min.",
+          "minAge": 3,
+          "loudness": "leise",
+          "effort": "leicht",
+          "material": "12-15 Tiger-Pfotenabdrücke aus orange/braunem Tonpapier (DIN A4, schwarzer Edding für die Streifen). Tesa. Am Endpunkt: 1 Plüsch-Affe oder eine Box mit kleinen Dschungel-Tieren als 'Fund'. Pfoten selbst zeichnen reicht — Kinder merken den Unterschied nicht.",
+          "prepText": "Vorher legst du eine Spur durch Wohnung oder Garten — z.B. Pfoten an die Wand kleben (Augenhöhe Kind, nicht zu hoch) in eine Richtung. Am Endpunkt versteckt sich der 'verlaufene' Plüsch-Affe unter einer grünen Decke oder hinter einem Stuhl.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Einstimmen",
+              "content": "Du flüsterst: 'Ein Affe hat sich im Dschungel verlaufen — wir folgen seinen Tiger-Freund-Spuren, der hat ihn zuletzt gesehen.'"
+            },
+            {
+              "n": 2,
+              "name": "Losschleichen",
+              "content": "Alle gehen gemeinsam los, leise wie eine Forscher-Truppe. Du gehst voraus und zeigst die erste Pfote."
+            },
+            {
+              "n": 3,
+              "name": "Spur folgen",
+              "content": "Kinder suchen die nächste Pfote mit ihrer Lupe, du bestätigst jedes Finden ('Da! Eine Spur!'). Tempo langsam halten."
+            },
+            {
+              "n": 4,
+              "name": "Affe finden",
+              "content": "Am Endpunkt liegt der Plüsch-Affe. Alle dürfen ihn streicheln, niemand reißt ihn weg — jeder kommt dran."
+            },
+            {
+              "n": 5,
+              "name": "Heimbringen",
+              "content": "Der Affe wird gemeinsam ins 'Dschungel-Camp' (Decken-Ecke) gebracht. Tour fertig, alle haben geholfen."
+            }
+          ],
+          "safetyRule": "Pfoten nicht zu hoch kleben — keine Stühle als Kletterhilfe. Endpunkt kindersicher (keine scharfen Kanten hinterm Versteck, keine Steckdosen in Reichweite). Lupen sind aus weichem Kunststoff, kein Glas.",
+          "ageAdjust3": "Spur kurz halten (10-12 Pfoten), Endpunkt sichtbar verstecken (unter Sofadecke). Du gehst die ganze Zeit voraus, lobst jedes Finden.",
+          "ageAdjust5": "Spur länger, 2 Tier-Arten parallel (Tiger + Affe), 2 Endpunkte. 5-Jährige dürfen abwechselnd 'Spur-Führer' sein und voran-pirschen.",
+          "indoorTip": "In 60-75 m² geht die Spur nicht über 2-3 Räume — dann ehrlich anders: ein Raum mit verschachtelten Verstecken (um Sofa, hinter Vorhang, unter Tisch, am Regal vorbei). Wirkt für 3-5 wie eine echte Dschungel-Reise.",
+          "outdoorTip": "Im Garten oder Park die Spur um Bäume und Büsche legen — die Kinder pirschen durchs 'Dickicht'. Stoff-Lianen aus grünen Tüchern an niedrige Äste hängen erhöht den Dschungel-Faktor.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Schleichen mit Lupe ist ein Spiel mit eingebauter Lautstärke-Bremse. Kein Wettbewerb, alle finden gemeinsam — kein Kind geht leer aus. Der Plüsch-Fund ist greifbar, kein abstraktes Ziel. Die Lupe macht aus dem Suchen ein Werkzeug-Spiel — Kinder lieben Werkzeug."
+        },
+        {
+          "name": "🐍 Tier-Fühlbox",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "10 Min.",
+          "minAge": 3,
+          "loudness": "leise",
+          "effort": "leicht",
+          "material": "Ein Karton mit Loch oben (etwa Schuhkarton-Größe) oder eine Stoff-Tasche. Drin: 5-6 Plüsch-Tiere mit eindeutigen Texturen (weicher Affe, kuschliger Tiger, leicht raue Stoff-Schlange, glatter Plüsch-Frosch, Plüsch-Schmetterling mit Flügel-Stoff). Optional ein Bambus-Stab als 'Forscher-Werkzeug'.",
+          "prepText": "Such 5-6 Plüsch-Tiere raus, die sich klar unterschiedlich anfühlen. Loch im Karton so groß, dass eine Kinderhand reinpasst, aber nicht der ganze Arm. Keine spitzen Plüschtier-Augen (Knopf-Augen statt Plastik-Spikes).",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Erklären",
+              "content": "Du sagst: 'Im Dschungel kann man die Tiere oft nur fühlen, nicht sehen — sie sind versteckt. Wir probieren das jetzt aus.'"
+            },
+            {
+              "n": 2,
+              "name": "Fühlen",
+              "content": "Jedes Kind greift einmal in die Box, fühlt ein Tier (ohne rauszuziehen!) und rät was es ist. Du moderierst, alle anderen warten."
+            },
+            {
+              "n": 3,
+              "name": "Aufdecken",
+              "content": "Nach dem Raten zieht das Kind das Tier raus. Alle freuen sich, ob richtig oder nicht — Hauptsache es ist ein Tier."
+            },
+            {
+              "n": 4,
+              "name": "Weiter",
+              "content": "Nächstes Kind. 6 Runden reichen, dann kippt die Aufmerksamkeit. Geübtere Tiere wieder reinlegen für die nächste Runde."
+            }
+          ],
+          "safetyRule": "Pflicht: Plüsch-Tiere mit Knopf-Augen oder gestickten Augen (keine harten Plastik-Augen, die in Mund/Auge stechen können). Karton-Kanten mit Tape abkleben. Wenn ein Kind nicht fühlen will: Kind darf zuschauen, Druck-Verbot.",
+          "ageAdjust3": "Nur 3-4 sehr eindeutige Tiere (Affe groß und weich, Schlange länglich, Frosch glatt), du hilfst beim Reingreifen wenn Kind unsicher.",
+          "ageAdjust5": "5-Jährige dürfen 2 Tiere gleichzeitig fühlen und vergleichen. Wer mag, beschreibt das Tier in Worten ('weich, klein, hat Flügel') bevor es geraten wird.",
+          "indoorTip": "Perfekt als ruhiger Lückenfüller drinnen — kein Platz nötig, alle sitzen im Kreis um die Box.",
+          "outdoorTip": "Draußen die Box auf eine Decke stellen, Kinder drumherum sitzen lassen. Im Sommer schattige Stelle wählen, damit kein Kind in der Sonne wartet.",
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        }
+      ],
+      "food": "🎂 Dschungel-Schokokuchen (Rührteig mit grüner Buttercreme + bunten Esspapier-Schmetterlingen). 🍌 Affen-Snack-Teller: Bananen-Boote (halbiert, mit Trauben gespickt), Gurken-'Blätter', Trauben-'Beeren', Cracker-'Steine'. 🥤 Apfelschorle in Trinkbechern. Nichts Heißes, keine ungefragten Nüsse.",
+      "decoration": "🌴 Ein paar grüne Tücher oder Zimmerpflanzen als 'Dschungel'-Ecke, ein türkises Tuch als 'Bach' am Boden. 🐒 Plüsch- und Plastiktiere verteilt (Affe, Tiger, Tukan, Frosch). Mehr braucht es bei Minimal nicht — die Kinder bringen die Fantasie mit.",
+      "giveaways": "🐒 Pro Kind ein Mini-Plüsch-Affe oder Plastik-Dschungeltier + Forscher-Pass mit Stempeln + Mini-Lupe (darf mit) + Forscher-Notizbuch in einer einfachen Papiertüte. Optional ein Tier-Sticker.",
+      "shoppingList": [
+        {
+          "emoji": "🌴",
+          "label": "Dschungel-Tierfiguren (12er-Set Plastik)",
+          "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+kinder&tag=machsleicht-21",
+          "priceEur": 7,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Trägt Tour, Fühlbox und Mitgebsel zugleich — das motto-zentrale Material. Ohne fehlt das Spiel-Element."
+        },
+        {
+          "emoji": "🐒",
+          "label": "Großer Plüsch-Affe (der 'Fund')",
+          "url": "https://www.amazon.de/s?k=pl%C3%BCsch+affe&tag=machsleicht-21",
+          "priceEur": 9,
+          "hasAffiliate": true,
+          "category": "habIchVielleicht",
+          "categoryReasoning": "Jeder größere Plüsch-Affe aus dem Kinderzimmer tut es. Nur kaufen, wenn nichts Passendes da ist."
+        },
+        {
+          "emoji": "🟫",
+          "label": "Orange/braunes Tonpapier (für Tiger-Spuren)",
+          "url": "https://www.amazon.de/s?k=tonpapier+orange+braun+a4&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Basis der Spuren-Tour. Alternativ vorhandenes Bastelpapier — aber irgendein Papier muss her."
+        },
+        {
+          "emoji": "🎨",
+          "label": "Grünes Tonpapier-Set (Forscher-Stirnbänder)",
+          "url": "https://www.amazon.de/s?k=tonpapier+gr%C3%BCn+a4+set&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Stirnband = Verwandlung zum Dschungel-Forscher, der Anker der ganzen Party. Pflicht."
+        },
+        {
+          "emoji": "🔍",
+          "label": "Mini-Lupen (6er-Set, Forscher-Werkzeug + Mitgebsel)",
+          "url": "https://www.amazon.de/s?k=kinder+lupe+set+6&tag=machsleicht-21",
+          "priceEur": 7,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Lupe ist das zentrale Forscher-Werkzeug und trägt die Tier-Spuren-Tour. Ohne Lupe kein Forscher-Frame. Pflicht."
+        },
+        {
+          "emoji": "✏️",
+          "label": "Dicke Filzstifte (Kinder)",
+          "url": "https://www.amazon.de/s?k=dicke+filzstifte+kinder&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "habIchVielleicht",
+          "categoryReasoning": "Haben die meisten Familien mit Kleinkind im Haus. Nur nachkaufen, wenn nicht vorhanden."
+        },
+        {
+          "emoji": "🔖",
+          "label": "Dschungel-Aufkleber (Blätter, Tiere)",
+          "url": "https://www.amazon.de/s?k=dschungel+sticker+kinder+set&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Macht Stirnband + Pass + Mitgebsel hübsch, ist aber ersetzbar durch Selbstgemaltes."
+        },
+        {
+          "emoji": "📜",
+          "label": "Forscher-Pass-Vorlage / Tonpapier A4",
+          "url": "https://www.amazon.de/s?k=tonpapier+wei%C3%9F+a4&tag=machsleicht-21",
+          "priceEur": 3,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Pass bekommt jeder Forscher — wirkt stark, geht aber auch auf normalem Druckerpapier."
+        },
+        {
+          "emoji": "🥤",
+          "label": "Apfelschorle (1,5 l)",
+          "url": null,
+          "priceEur": 2,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Getränk für 6 Kinder. Kein Affiliate, aber klar Pflicht — daran sieht man, dass Affiliate kein Kategorie-Proxy ist."
+        },
+        {
+          "emoji": "🍌",
+          "label": "Bananen, Trauben, Gurke, Cracker (Affen-Snack)",
+          "url": null,
+          "priceEur": 5,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Das Essen. Pflicht, kommt aus dem Supermarkt, kein Link nötig."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Kuchen-Zutaten (Schokokuchen + grüne Buttercreme + Esspapier-Schmetterlinge)",
+          "url": null,
+          "priceEur": 6,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Dschungel-Kuchen-Basis. Mehl/Eier/Butter hat man teils, grüne Lebensmittelfarbe + Esspapier-Schmetterlinge meist nicht — als Pflicht eingeplant."
+        }
+      ],
+      "estimatedCostEur": 36,
+      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
+      "savingsTip": {
+        "title": "Plüsch und Stifte hast du wahrscheinlich schon",
+        "body": "Plüsch-Tiere, Filzstifte und Bastelpapier sind in den meisten Familien mit Kleinkind vorhanden. Wer hier aus dem Bestand schöpft, drückt die 36 € locker auf 22-28 €. Die Tiger-Spuren zeichnest du in 5 Min. selbst — Kinder merken den Unterschied zu gekauften Schablonen nicht. Bambus-Stäbe statt gekauften Lianen-Sets: schick einen Erwachsenen in den Wald oder nimm Besenstiele mit grünem Krepp umwickelt."
+      }
+    },
+    {
+      "id": "standard",
+      "label": "Standard — 2 Stunden mit Stationen und Lianen-Pfad",
+      "headline": "🐒 Standard — die entspannte Forscher-Expedition",
+      "intro": "Zwei Stunden, 6 Kinder, mehr Abwechslung: Forscher-Stirnband-Basteln zum Ankommen, Tier-Spuren-Tour, Lianen-Schwingen und Affen-Hangeln als Stationen-Mix. Genug Programm, dass keine Langeweile aufkommt, aber ohne Bastel-Marathon für die Eltern. Das ist die Variante für die meisten Familien.",
+      "timeWindow": "14:00-16:00, 6 Kinder",
+      "schedule": [
+        {
+          "time": "14:00",
+          "title": "Ankunft + Forscher-Stirnband-Basteln",
+          "description": "Jedes Kind bastelt/verziert sein grünes Stirnband und bekommt seinen Forscher-Namen + Lupe. Ruhiger Einstieg."
+        },
+        {
+          "time": "14:20",
+          "title": "Tier-Fühlbox",
+          "description": "Im Kreis: Tiere blind fühlen und raten. Bringt die Gruppe ohne Rennen in den Dschungel-Modus."
+        },
+        {
+          "time": "14:35",
+          "title": "Tier-Spuren-Tour",
+          "description": "Leise den Tiger-Spuren folgen, den verlorenen Plüsch-Affen finden und ins Dschungel-Camp bringen."
+        },
+        {
+          "time": "15:00",
+          "title": "Kuchen-Pause",
+          "description": "Dschungel-Schokokuchen + Affen-Snack-Teller. Pause zum Durchatmen, danach wieder los."
+        },
+        {
+          "time": "15:25",
+          "title": "Lianen-Schwingen + Affen-Hangeln",
+          "description": "Das aktive Highlight: Stoff-Liane in der Türöffnung, Hangel-Parcours mit Decken/Kissen. Jedes Kind schwingt einmal."
+        },
+        {
+          "time": "15:45",
+          "title": "Bananen-Rätsel + Forscher-Pass",
+          "description": "Ruhiges Such-Spiel (Papp-Bananen finden), dann Pass-Übergabe einzeln an jeden Forscher."
+        },
+        {
+          "time": "16:00",
+          "title": "Abholung",
+          "description": "Mitgebsel-Tüte an der Tür. 2 Std. sind das Maximum — danach kippt die Stimmung."
+        }
+      ],
+      "games": [
+        {
+          "name": "🎨 Forscher-Stirnband-Basteln (mit Blatt-Stickern)",
+          "indoor": true,
+          "outdoor": false,
+          "duration": "15 Min.",
+          "minAge": 3,
+          "loudness": "leise",
+          "effort": "mittel",
+          "material": "Vorgeschnittene Stirnband-Streifen (grünes/braunes Tonpapier, je ~5 cm × 55 cm). Blatt-Aufkleber, Tukan-Federn (Krepppapier-Streifen), dicke Filzstifte, Klebepunkte. Tacker NUR in Erwachsenenhand.",
+          "prepText": "Stirnbänder komplett vorbereiten: Länge passend zugeschnitten, optional schon ein großer Blatt-Sticker drauf. Kinder dürfen nur noch verzieren und aufkleben lassen — Schere und Tacker bleiben bei dir.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Aussuchen",
+              "content": "Jedes Kind sucht sich seine Farbe aus (grün oder braun) und 2-3 Blatt-/Feder-Aufkleber."
+            },
+            {
+              "n": 2,
+              "name": "Verzieren",
+              "content": "Aufkleber drauf, mit dicken Stiften anmalen, optional eine kleine Tukan-Feder festkleben. Kein Anspruch an Schönheit — Hauptsache es macht Spaß."
+            },
+            {
+              "n": 3,
+              "name": "Anpassen",
+              "content": "Du tackerst/klebst das Band auf Kopfgröße. Ab jetzt ist jedes Kind ein Dschungel-Forscher."
+            }
+          ],
+          "safetyRule": "Schere und Tacker ausschließlich Erwachsenenhand. Keine Kleinteile, die in den Mund wandern (kleine Wackelaugen erst ab 4-5 und mit Aufsicht). Keine Federn aus echtem Material — nur Krepppapier-'Federn' wegen Allergie-Risiko und Verschluck-Gefahr.",
+          "ageAdjust3": "Komplett fertige Bänder, Kind klebt nur 2-3 große Aufkleber drauf. Anpassen machst du.",
+          "ageAdjust5": "5-Jährige dürfen mit dicken Stiften selbst Muster malen, größere Aufkleber platzieren und ihren Namen vorne aufkleben.",
+          "indoorTip": "Reines Tisch-Spiel, ideal als ruhiger Einstieg direkt nach der Ankunft. Wachstuch drunter spart Putzaufwand.",
+          "outdoorTip": null,
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Das Stirnband macht aus dem Gast einen Dschungel-Forscher — die Verwandlung, die das ganze Rollenspiel trägt. Vorgeschnitten heißt: kein Frust, kein Schere-Chaos, jedes Kind ist in 5 Min. fertig."
+        },
+        {
+          "name": "🐅 Tier-Spuren-Tour",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "20 Min.",
+          "minAge": 3,
+          "loudness": "leise",
+          "effort": "leicht",
+          "material": "12-15 Tiger-Pfotenabdrücke aus orange/braunem Tonpapier (DIN A4, schwarzer Edding für die Streifen). Tesa. Am Endpunkt: 1 Plüsch-Affe oder eine Box mit kleinen Dschungel-Tieren als 'Fund'. Pfoten selbst zeichnen reicht — Kinder merken den Unterschied nicht.",
+          "prepText": "Vorher legst du eine Spur durch Wohnung oder Garten — z.B. Pfoten an die Wand kleben (Augenhöhe Kind, nicht zu hoch) in eine Richtung. Am Endpunkt versteckt sich der 'verlaufene' Plüsch-Affe unter einer grünen Decke oder hinter einem Stuhl.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Einstimmen",
+              "content": "Du flüsterst: 'Ein Affe hat sich im Dschungel verlaufen — wir folgen seinen Tiger-Freund-Spuren, der hat ihn zuletzt gesehen.'"
+            },
+            {
+              "n": 2,
+              "name": "Losschleichen",
+              "content": "Alle gehen gemeinsam los, leise wie eine Forscher-Truppe. Du gehst voraus und zeigst die erste Pfote."
+            },
+            {
+              "n": 3,
+              "name": "Spur folgen",
+              "content": "Kinder suchen die nächste Pfote mit ihrer Lupe, du bestätigst jedes Finden ('Da! Eine Spur!'). Tempo langsam halten."
+            },
+            {
+              "n": 4,
+              "name": "Affe finden",
+              "content": "Am Endpunkt liegt der Plüsch-Affe. Alle dürfen ihn streicheln, niemand reißt ihn weg — jeder kommt dran."
+            },
+            {
+              "n": 5,
+              "name": "Heimbringen",
+              "content": "Der Affe wird gemeinsam ins 'Dschungel-Camp' (Decken-Ecke) gebracht. Tour fertig, alle haben geholfen."
+            }
+          ],
+          "safetyRule": "Pfoten nicht zu hoch kleben — keine Stühle als Kletterhilfe. Endpunkt kindersicher (keine scharfen Kanten hinterm Versteck, keine Steckdosen in Reichweite). Lupen sind aus weichem Kunststoff, kein Glas.",
+          "ageAdjust3": "Spur kurz halten (10-12 Pfoten), Endpunkt sichtbar verstecken (unter Sofadecke). Du gehst die ganze Zeit voraus, lobst jedes Finden.",
+          "ageAdjust5": "Spur länger, 2 Tier-Arten parallel (Tiger + Affe), 2 Endpunkte. 5-Jährige dürfen abwechselnd 'Spur-Führer' sein und voran-pirschen.",
+          "indoorTip": "In 60-75 m² geht die Spur nicht über 2-3 Räume — dann ehrlich anders: ein Raum mit verschachtelten Verstecken. Wirkt für 3-5 wie eine echte Dschungel-Reise.",
+          "outdoorTip": "Im Garten die Spur um Bäume und Büsche legen — die Kinder pirschen durchs 'Dickicht'.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Schleichen mit Lupe ist ein Spiel mit eingebauter Lautstärke-Bremse. Kein Wettbewerb, alle finden gemeinsam — kein Kind geht leer aus. Der Plüsch-Fund ist greifbar, kein abstraktes Ziel."
+        },
+        {
+          "name": "🌿 Lianen-Schwingen + Affen-Hangeln",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "15 Min.",
+          "minAge": 3,
+          "loudness": "halblaut",
+          "effort": "mittel",
+          "material": "Eine stabile Stoff-Liane: ein dickes Bettlaken oder Stoff-Strang aus alten T-Shirts geflochten, in der Türöffnung an einem dicken Knoten oder über einem Türrahmen-Reck (max. 30-40 cm vom Boden!). Optional 4-5 Sitzkissen oder Decken auf dem Boden als 'Liana-Inseln' für das Affen-Hangeln (Boden-Parcours, NICHT klettern!). Eine türkise Decke als 'Bach' zum drüberhüpfen.",
+          "prepText": "WICHTIG: Bei 3-5 wird NICHT geklettert. Die Stoff-Liane hängt so niedrig, dass die Füße nahezu den Boden berühren — das Schwingen findet im Stehen statt, max. 20 cm Bodenabstand. Lege Sitzkissen/Decken als 'Inseln' auf den Boden, dazwischen die türkise Bach-Decke. Kinder hangeln von Insel zu Insel im Stehen oder Krabbeln, NICHT über Möbel.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Erklären",
+              "content": "Du machst vor: 'Affen schwingen sich an Lianen entlang und springen von Insel zu Insel. Erst zeige ich's, dann probiert jeder einmal — ganz langsam.'"
+            },
+            {
+              "n": 2,
+              "name": "Schwingen",
+              "content": "Jedes Kind greift die Stoff-Liane und schwingt einmal sanft vor und zurück (du hältst dabei am Knoten/Stoff, kein freies Schwingen!). Die Liane darf nicht weiter als Schulterhöhe vom Kind gehen."
+            },
+            {
+              "n": 3,
+              "name": "Hangeln",
+              "content": "Nacheinander von Insel zu Insel (Sitzkissen) — über die Bach-Decke springen oder krabbeln. Jeder hat seine Runde, kein Wettrennen."
+            },
+            {
+              "n": 4,
+              "name": "Wiederholen",
+              "content": "Wer mag, geht eine zweite Runde. Wer fertig ist, setzt sich an den Rand und macht den Tukan-Ruf für die anderen."
+            }
+          ],
+          "safetyRule": "Pflicht: Stoff-Liane max. 30-40 cm Bodenabstand (Füße müssen den Boden fast berühren). Erwachsener hält IMMER am Knoten/oberen Stoff-Ende, kein freies Schwingen. Bei 3-Jährigen: NUR Hangel-Parcours, kein Schwingen ohne erwachsene Hand am Stoff. Keine Stühle/Möbel als Sprung-Inseln. Boden ringsum frei von harten Kanten (Glastisch wegschieben). Maximal ein Kind gleichzeitig an der Liane.",
+          "ageAdjust3": "KEIN Schwingen, nur Hangel-Parcours: von Sitzkissen zu Sitzkissen krabbeln, die Liane nur kurz anfassen und einen lauten 'Affen-Schrei' machen (Quatsch-Moment, kein echtes Schwingen). Du hältst dauerhaft die Hand am Kind.",
+          "ageAdjust5": "5-Jährige dürfen sanft schwingen (du sicherst am Knoten). Hangel-Parcours mit 5-6 Inseln, türkise Bach-Decke breiter. Optional: Affen-Geräusche dabei machen.",
+          "indoorTip": "Türöffnung mit stabilem Türrahmen-Reck (Kinder-Reck) ideal. In Mietwohnung: keine Schraub-Hooks in die Decke, sondern Stoff-Liane über einen Türrahmen-Reck oder festen Querbalken. Sitzkissen-Parcours geht in jedem Wohnzimmer.",
+          "outdoorTip": "Im Garten ein dickes Seil an einen niedrigen Ast (max. 50 cm Bodenabstand!) — Erwachsener prüft Ast-Stabilität VORAB. Inseln als Kissen oder Strohballen.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Affen-Hangeln ist DER Dschungel-Moment, den jedes Kind erwartet. Im Sitz-Inseln-Format ohne Klettern bleibt es altersgerecht und sicher — kein Sturz-Risiko, trotzdem das große Schwingen-Gefühl. Der laute Affen-Schrei beim Festhalten an der Liane ist der Lacher der Party."
+        },
+        {
+          "name": "🍌 Bananen-Rätsel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "10 Min.",
+          "minAge": 3,
+          "loudness": "leise",
+          "effort": "leicht",
+          "material": "6-8 ausgeschnittene Papp-Bananen (gelbes Tonpapier, einfache Form, DIN A5). Optional ein Affen-Korb oder Eimer mit grünem Tuch ('Affen-Höhle'). Kein Trick, einfache Such-Aufgabe.",
+          "prepText": "Verstecke die Papp-Bananen im Raum auf Kinder-Augenhöhe (nicht hinter Möbel, die umgekippt werden müssen). Optional je eine Banane in Sichtweite für 3-Jährige, andere etwas versteckter. Den Affen-Korb sichtbar in der Mitte aufstellen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "'Der Affe hat seine Bananen verloren — überall im Dschungel. Wir Forscher helfen ihm beim Sammeln.'"
+            },
+            {
+              "n": 2,
+              "name": "Suchen",
+              "content": "Kinder suchen die Papp-Bananen. Jedes Kind, das eine findet, bringt sie zum Affen-Korb. Tempo egal, kein Wettrennen."
+            },
+            {
+              "n": 3,
+              "name": "Sammeln",
+              "content": "Du zählst laut mit, wenn eine reinkommt ('Drei Bananen! Vier!'). Alle freuen sich gemeinsam, niemand schaut, wer wie viele hat."
+            },
+            {
+              "n": 4,
+              "name": "Belohnung",
+              "content": "Wenn alle Bananen drin sind: 'Der Affe ist glücklich!' Du übergibst dem Plüsch-Affen die volle Schale, Kinder dürfen ihn streicheln."
+            }
+          ],
+          "safetyRule": "Verstecke auf Kinder-Augenhöhe. Keine Bananen hinter schweren Möbeln verstecken, die ein Kind umkippen könnte. Keine Bananen im Bad/Küche (Steckdosen, scharfe Kanten). Maximal 8-10 Verstecke — sonst wird's zu lange.",
+          "ageAdjust3": "Bananen sichtbar liegen lassen (kein wirkliches Verstecken), nur 4-5 Stück. Du zeigst diskret, wo eine liegt, wenn ein Kind keine findet — niemand geht leer aus.",
+          "ageAdjust5": "Bananen tatsächlich verstecken (hinter Vorhang, unter Kissen). 5-Jährige dürfen nach dem Sammeln selbst eine 'Lieblings-Banane' aussuchen und sie behalten als Mitgebsel.",
+          "indoorTip": "Funktioniert in jedem Raum, kein Bewegungs-Platz nötig. Gut als ruhiges Spiel nach dem aktiven Lianen-Schwingen.",
+          "outdoorTip": "Bananen draußen mit Doppelklebeband an Bäume oder Büsche kleben (auf Kinder-Augenhöhe). Bei Wind: schwerere Bananen aus Pappkarton statt Tonpapier.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Suchen ist Urspiel, das jedes Kind kann. Der Affen-Frame macht es zum gemeinsamen Helfen, kein Wettkampf. Jedes Kind findet mindestens eine — du steuerst diskret, wer als nächstes 'zufällig' an einer Banane vorbeikommt."
+        }
+      ],
+      "food": "🎂 Dschungel-Schokokuchen (Rührteig mit grüner Buttercreme + bunten Esspapier-Schmetterlingen). 🍌 Affen-Snack-Teller mit Bananen-Booten, Trauben-'Beeren', Gurken-'Blättern', Käse-Würfeln, Cracker-'Steinen'. 🍪 Dschungel-Kekse (Schmetterlings- oder Affen-Ausstecher). 🥤 Apfelschorle. Allergien vorher abfragen, ein nuss-/laktosefreier Teller bereit.",
+      "decoration": "🌴 Dschungel-Ecke mit grünen Tüchern, Zimmerpflanzen und verteilten Plüsch-/Plastiktieren. 🌊 Türkise Decke als 'Bach' am Boden. 🐾 Tiger-Pfotenspuren am Boden als Deko-Pfad. 🎈 Ein paar grüne und türkise Luftballons. Tischdecke in Blatt-Optik oder einfarbig grün. Optional ein paar Bambus-Stäbe (oder Besenstiele mit grünem Krepp umwickelt) in einer Ecke als 'Dickicht'.",
+      "giveaways": "🐒 Mini-Plüsch-Affe oder Plastik-Dschungeltier + selbstgebasteltes Forscher-Stirnband (darf mit nach Hause) + Forscher-Pass mit Stempeln + Forscher-Notizbuch + Mini-Lupe + Dschungel-Sticker, alles in einer Dschungel-Papiertüte.",
+      "shoppingList": [
+        {
+          "emoji": "🌴",
+          "label": "Dschungel-Tierfiguren (12er-Set)",
+          "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+kinder&tag=machsleicht-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Trägt Tour, Fühlbox, Stationen und Mitgebsel — das zentrale Spiel-Material."
+        },
+        {
+          "emoji": "🎨",
+          "label": "Tonkarton-Set grün/braun (Stirnbänder)",
+          "url": "https://www.amazon.de/s?k=tonkarton+gr%C3%BCn+braun+a4+set&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Forscher-Stirnband-Basteln ist hier eigene Station + Mitgebsel. Pflicht."
+        },
+        {
+          "emoji": "🔍",
+          "label": "Mini-Lupen (6er-Set)",
+          "url": "https://www.amazon.de/s?k=kinder+lupe+set+6&tag=machsleicht-21",
+          "priceEur": 7,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Lupe ist Forscher-Werkzeug und trägt die Tier-Spuren-Tour. Pflicht."
+        },
+        {
+          "emoji": "🔖",
+          "label": "Dschungel-Aufkleber (Blätter, Tiere)",
+          "url": "https://www.amazon.de/s?k=dschungel+sticker+kinder+set&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Macht Stirnbänder, Pass und Tüten hübsch, lässt sich aber durch Aufmalen ersetzen."
+        },
+        {
+          "emoji": "🟫",
+          "label": "Tonpapier orange/braun (Tiger-Spuren)",
+          "url": "https://www.amazon.de/s?k=tonpapier+orange+a4&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Spuren-Tour-Basis. Irgendein Papier muss her, dieses ist passend."
+        },
+        {
+          "emoji": "✏️",
+          "label": "Dicke Filzstifte",
+          "url": "https://www.amazon.de/s?k=dicke+filzstifte+kinder&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "habIchVielleicht",
+          "categoryReasoning": "Meist im Haushalt mit Kleinkind vorhanden. Nur nachkaufen, wenn nicht da."
+        },
+        {
+          "emoji": "📜",
+          "label": "Forscher-Pässe + weißes Tonpapier",
+          "url": "https://www.amazon.de/s?k=tonpapier+wei%C3%9F+a4&tag=machsleicht-21",
+          "priceEur": 3,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Pass bekommt jeder Forscher — geht auch auf Druckerpapier, dieses wirkt nur wertiger."
+        },
+        {
+          "emoji": "📓",
+          "label": "Mini-Notizbücher A6 (6er-Set, Mitgebsel)",
+          "url": "https://www.amazon.de/s?k=mini+notizbuch+a6+set+6&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Schönes Mitgebsel mit Forscher-Bezug, aber kein Spiel hängt zwingend daran. Sinnvoll, nicht Pflicht."
+        },
+        {
+          "emoji": "🌿",
+          "label": "Stoff-Liane oder altes Bettlaken (Lianen-Schwingen)",
+          "url": "https://www.amazon.de/s?k=stoff+liane+kinder+spiel&tag=machsleicht-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "habIchVielleicht",
+          "categoryReasoning": "Ein dickes Bettlaken oder geflochtenes Stoff-Stück aus alten T-Shirts tut es genauso. Nur kaufen, wenn nichts da ist."
+        },
+        {
+          "emoji": "🎈",
+          "label": "Luftballons grün/türkis (Deko)",
+          "url": "https://www.amazon.de/s?k=luftballons+gr%C3%BCn+t%C3%BCrkis&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "habIchVielleicht",
+          "categoryReasoning": "Reine Deko, oft noch von früher da. Verzichtbar."
+        },
+        {
+          "emoji": "🥤",
+          "label": "Apfelschorle (2 l)",
+          "url": null,
+          "priceEur": 3,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Getränk für 6 Kinder. Pflicht trotz fehlendem Affiliate-Link."
+        },
+        {
+          "emoji": "🍌",
+          "label": "Affen-Snack-Teller (Bananen, Gurke, Trauben, Käse, Cracker)",
+          "url": null,
+          "priceEur": 8,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Das Essen für 6 Kinder. Pflicht, aus dem Supermarkt."
+        },
+        {
+          "emoji": "🍪",
+          "label": "Schmetterling-Ausstecher + Teig-Zutaten",
+          "url": null,
+          "priceEur": 6,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Dschungel-Kekse sind ein nettes Extra, kein Muss. Ausstecher hat man teils."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Kuchen-Zutaten + grüne Buttercreme + Esspapier-Schmetterlinge",
+          "url": null,
+          "priceEur": 6,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Dschungel-Schokokuchen. Grüne Lebensmittelfarbe + Esspapier-Schmetterlinge meist nicht vorrätig — eingeplant."
+        }
+      ],
+      "estimatedCostEur": 56,
+      "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
+      "savingsTip": {
+        "title": "Stoff-Liane improvisieren + Deko aus dem Garten",
+        "body": "Bettlaken zu Stoff-Liane geflochten kostet nichts, sieht aber aus wie gekauft. Für die Dschungel-Ecke reichen Zimmerpflanzen + ein paar Bambus-Stäbe vom Spaziergang (oder Besenstiele mit grünem Krepp). Mini-Notizbücher kannst du weglassen, wenn das Budget knapp ist — der Forscher-Pass trägt auch ohne sie. So landest du eher bei 42-46 €."
+      }
+    },
+    {
+      "id": "wow",
+      "label": "Wow — 2 Stunden mit Dschungel-Pfad und Mini-Expedition",
+      "headline": "✨ Wow — die Dschungel-Expedition mit Foto-Ecke",
+      "intro": "Baut komplett auf Standard auf: gleiche Forscher-Expedition, gleiche Tier-Spuren-Tour — plus eine Mini-Expedition zum geheimen Dschungel-Schatz und eine DIY-Foto-Ecke mit Bambus-Wand. Für 8 Kinder ausgelegt. Wichtig: Wow ist nicht für jede Familie ehrlich. Wer das stemmen will, sollte die Bedingungen unten erst checken.",
+      "timeWindow": "14:00-16:00, 8 Kinder",
+      "schedule": [
+        {
+          "time": "14:00",
+          "title": "Ankunft + Forscher-Stirnband-Basteln",
+          "description": "Stirnbänder verzieren, Forscher-Namen vergeben, Lupen verteilen. Foto-Ecke schon aufgebaut für erste Bilder."
+        },
+        {
+          "time": "14:20",
+          "title": "Tier-Fühlbox + Dschungel-Trommeln",
+          "description": "Erst im Kreis fühlen (ruhig), dann kurzer Trommel-Moment mit Holzlöffeln auf Topfdeckeln. Bei 8 Kindern in 2 kleine Gruppen, sonst zu wuselig."
+        },
+        {
+          "time": "14:35",
+          "title": "Tier-Spuren-Tour",
+          "description": "Leise den Tiger-Spuren folgen. Bei 8 Kindern 2 Spuren parallel oder eine längere Spur in 2 Wellen."
+        },
+        {
+          "time": "15:00",
+          "title": "Kuchen-Pause",
+          "description": "Dschungel-Schokokuchen + Affen-Snack-Teller. Foto-Ecke offen für Eltern-Schnappschüsse."
+        },
+        {
+          "time": "15:20",
+          "title": "Mini-Expedition zum Dschungel-Schatz",
+          "description": "Das Highlight: von Tier-Station zu Tier-Station (Affe, Tiger, Tukan, Faultier) zum gemeinsamen Dschungel-Schatz."
+        },
+        {
+          "time": "15:45",
+          "title": "Lianen-Schwingen + Forscher-Pass",
+          "description": "Kurze Lianen-Runde, dann Pass-Übergabe einzeln. Jeder Forscher kommt dran."
+        },
+        {
+          "time": "16:00",
+          "title": "Abholung",
+          "description": "Mitgebsel + Foto-Ausdruck. Schluss bei 2 Std., auch wenn's gerade läuft."
+        }
+      ],
+      "games": [
+        {
+          "name": "🎨 Forscher-Stirnband-Basteln (mit Blatt-Stickern)",
+          "indoor": true,
+          "outdoor": false,
+          "duration": "15 Min.",
+          "minAge": 3,
+          "loudness": "leise",
+          "effort": "mittel",
+          "material": "Vorgeschnittene Stirnband-Streifen (grünes/braunes Tonpapier, je ~5 cm × 55 cm). Blatt-Aufkleber, Tukan-Federn (Krepppapier-Streifen), dicke Filzstifte, Klebepunkte. Tacker NUR in Erwachsenenhand.",
+          "prepText": "Stirnbänder komplett vorbereiten: Länge passend zugeschnitten, optional schon ein großer Blatt-Sticker drauf. Kinder dürfen nur noch verzieren und aufkleben lassen — Schere und Tacker bleiben bei dir.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Aussuchen",
+              "content": "Jedes Kind sucht sich seine Farbe aus (grün oder braun) und 2-3 Blatt-/Feder-Aufkleber."
+            },
+            {
+              "n": 2,
+              "name": "Verzieren",
+              "content": "Aufkleber drauf, mit dicken Stiften anmalen, optional eine kleine Tukan-Feder festkleben. Kein Anspruch an Schönheit — Hauptsache es macht Spaß."
+            },
+            {
+              "n": 3,
+              "name": "Anpassen",
+              "content": "Du tackerst/klebst das Band auf Kopfgröße. Ab jetzt ist jedes Kind ein Dschungel-Forscher."
+            }
+          ],
+          "safetyRule": "Schere und Tacker ausschließlich Erwachsenenhand. Keine Kleinteile, die in den Mund wandern (kleine Wackelaugen erst ab 4-5 und mit Aufsicht). Keine echten Federn — nur Krepppapier-'Federn' wegen Allergie und Verschluck-Gefahr.",
+          "ageAdjust3": "Komplett fertige Bänder, Kind klebt nur 2-3 große Aufkleber drauf. Anpassen machst du.",
+          "ageAdjust5": "5-Jährige dürfen mit dicken Stiften selbst Muster malen, größere Aufkleber platzieren und ihren Namen vorne aufkleben.",
+          "indoorTip": "Reines Tisch-Spiel, ideal als ruhiger Einstieg direkt nach der Ankunft. Wachstuch drunter spart Putzaufwand.",
+          "outdoorTip": null,
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Das Stirnband macht aus dem Gast einen Dschungel-Forscher — die Verwandlung, die das ganze Rollenspiel trägt. Vorgeschnitten heißt: kein Frust, kein Schere-Chaos, jedes Kind ist in 5 Min. fertig."
+        },
+        {
+          "name": "🥁 Dschungel-Trommeln",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "10 Min.",
+          "minAge": 3,
+          "loudness": "laut",
+          "effort": "leicht",
+          "material": "6-8 Topfdeckel oder umgedrehte Plastik-Schüsseln + Holzlöffel als Trommelstöcke. Optional eine kleine Spielzeug-Trommel oder ein Bongo, falls vorhanden. Eine Audio-Quelle mit Dschungel-Beat (kurzer, ruhiger Loop, kein wildes Drumming).",
+          "prepText": "Sammle 6-8 Trommel-Stationen: Topfdeckel + Holzlöffel pro Kind. Stelle sie im Kreis auf einer Decke auf — jedes Kind hat seinen Platz. Audio-Quelle bereit mit langsamen, ruhigen Dschungel-Beats (kein metallisches Schlagzeug).",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Erklären",
+              "content": "Du sagst: 'Im Dschungel sprechen die Forscher mit Trommeln. Wir trommeln jetzt zusammen — erst langsam, dann zusammen mit dem Beat.'"
+            },
+            {
+              "n": 2,
+              "name": "Anfangen",
+              "content": "Jedes Kind nimmt 1-2 Löffel + einen Topfdeckel. Erstmal nur ausprobieren: leise klopfen, dann lauter — du machst vor."
+            },
+            {
+              "n": 3,
+              "name": "Mit Beat",
+              "content": "Du startest die Audio-Quelle. Kinder trommeln mit, niemand muss im Takt sein. Lautstärke nach 1-2 Min. drosseln, sonst wird's zu wild."
+            },
+            {
+              "n": 4,
+              "name": "Stoppen",
+              "content": "Audio aus, 'Trommel-Pause'. Alle legen die Löffel hin — kurze Stille gehört zum Trommeln dazu, sonst kein Stopp-Signal."
+            }
+          ],
+          "safetyRule": "Pflicht: KEINE Glas- oder Porzellan-Deckel (Bruchgefahr). Nur Plastik- oder Metall-Topfdeckel mit unbeschädigtem Rand. Holzlöffel ohne Splitter. Reizoffene/geräuschempfindliche Kinder dürfen Pause machen und nur zuschauen — Lautstärke nicht erzwingen. Max. 5 Minuten Trommel-Phase, dann Stille einfordern.",
+          "ageAdjust3": "Nur 5 Min. Trommeln, du hältst Tempo niedrig und stoppst, wenn ein Kind die Hände auf die Ohren legt. Optional weichere Trommelstöcke (Holzlöffel mit Stoff umwickelt).",
+          "ageAdjust5": "5-Jährige dürfen abwechselnd 'Trommel-Chef' sein und ein einfaches Muster (langsam-langsam-schnell-schnell) vorgeben, das die anderen nachtrommeln.",
+          "indoorTip": "Drinnen besser auf 5 Min. begrenzen — die Nachbarn freuen sich. Topfdeckel auf Sitzkissen legen dämpft den harten Schlag.",
+          "outdoorTip": "Draußen ruhig 10 Min. trommeln — niemand stört sich. Im Garten Trommeln im Kreis aufstellen, Kinder dürfen rumlaufen wenn sie wollen.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Trommeln ist das einzige laute Spiel in diesem Setup — als kurzer Ausgleich zwischen den ruhigen Stationen perfekt. Jedes Kind kann es sofort, kein Können nötig. Der Stopp-Moment ist genauso wichtig wie das Trommeln selbst — Kinder lernen, dass Stille auch Musik ist."
+        },
+        {
+          "name": "🐅 Tier-Spuren-Tour",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "20 Min.",
+          "minAge": 3,
+          "loudness": "leise",
+          "effort": "leicht",
+          "material": "12-15 Tiger-Pfotenabdrücke aus orange/braunem Tonpapier (DIN A4, schwarzer Edding für die Streifen). Tesa. Am Endpunkt: 1 Plüsch-Affe oder eine Box mit kleinen Dschungel-Tieren als 'Fund'.",
+          "prepText": "Vorher legst du eine Spur durch Wohnung oder Garten — z.B. Pfoten an die Wand kleben (Augenhöhe Kind, nicht zu hoch) in eine Richtung. Am Endpunkt versteckt sich der 'verlaufene' Plüsch-Affe unter einer grünen Decke oder hinter einem Stuhl.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Einstimmen",
+              "content": "Du flüsterst: 'Ein Affe hat sich im Dschungel verlaufen — wir folgen seinen Tiger-Freund-Spuren, der hat ihn zuletzt gesehen.'"
+            },
+            {
+              "n": 2,
+              "name": "Losschleichen",
+              "content": "Alle gehen gemeinsam los, leise wie eine Forscher-Truppe. Du gehst voraus und zeigst die erste Pfote."
+            },
+            {
+              "n": 3,
+              "name": "Spur folgen",
+              "content": "Kinder suchen die nächste Pfote mit ihrer Lupe, du bestätigst jedes Finden ('Da! Eine Spur!')."
+            },
+            {
+              "n": 4,
+              "name": "Affe finden",
+              "content": "Am Endpunkt liegt der Plüsch-Affe. Alle dürfen ihn streicheln, niemand reißt ihn weg — jeder kommt dran."
+            },
+            {
+              "n": 5,
+              "name": "Heimbringen",
+              "content": "Der Affe wird gemeinsam ins 'Dschungel-Camp' gebracht. Tour fertig, alle haben geholfen."
+            }
+          ],
+          "safetyRule": "Pfoten nicht zu hoch kleben — keine Stühle als Kletterhilfe. Endpunkt kindersicher (keine scharfen Kanten hinterm Versteck). Lupen aus weichem Kunststoff, kein Glas.",
+          "ageAdjust3": "Spur kurz halten (10-12 Pfoten), Endpunkt sichtbar verstecken (unter Sofadecke). Du gehst die ganze Zeit voraus.",
+          "ageAdjust5": "Spur länger, 2 Tier-Arten parallel (Tiger + Affe), 2 Endpunkte. 5-Jährige dürfen abwechselnd 'Spur-Führer' sein.",
+          "indoorTip": "Bei 8 Kindern in 2 Wellen pirschen — sonst Gedrängel an der Spur.",
+          "outdoorTip": "Im Garten die Spur um Bäume und Büsche legen — die Kinder pirschen durchs 'Dickicht'.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Schleichen mit Lupe ist ein Spiel mit eingebauter Lautstärke-Bremse. Kein Wettbewerb, alle finden gemeinsam — kein Kind geht leer aus."
+        },
+        {
+          "name": "🗺️ Mini-Expedition: Der Dschungel-Schatz",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "20 Min.",
+          "minAge": 3,
+          "loudness": "halblaut",
+          "effort": "mittel",
+          "material": "4 sehr einfache 'Tier-Stationen' (Plüsch-Affe, Plüsch-Tiger, Papp-Tukan, Plüsch-Faultier mit kleinen Aufgaben). Eine Schatzkiste/Korb mit Bambus-Tuch-Deckel und den Mitgebsel-Tüten oder einem gemeinsamen 'Dschungel-Schatz' (Sticker, Mini-Tiere, Schoko-Bananen). Optional eine gemalte Dschungel-Karte mit 4 Markern.",
+          "prepText": "Verstecke die Schatzkiste am Endpunkt (Garderobe, Schlafzimmer, hinter dem Baum). Leg 4 Stationen aus: an jeder wartet ein Tier mit einer Mini-Aufgabe ('Gib dem Affen ein High-Five', 'Mach den Tiger-Schmaus mit der Schmink-Stift-Schnurrhaar', 'Ruf wie der Tukan', 'Schleich zum Faultier ohne Geräusch').",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "'Im Dschungel wartet ein Schatz — aber nur Forscher, die allen Tieren unterwegs eine kleine Aufgabe lösen, finden ihn.'"
+            },
+            {
+              "n": 2,
+              "name": "Stationen",
+              "content": "Gemeinsam von Tier zu Tier. Jede Mini-Aufgabe schafft die Gruppe zusammen, kein Kind muss allein ran."
+            },
+            {
+              "n": 3,
+              "name": "Finden",
+              "content": "Am Endpunkt steht die Schatzkiste mit Bambus-Tuch-Deckel. Alle öffnen sie gemeinsam — drin ist für jeden was."
+            },
+            {
+              "n": 4,
+              "name": "Teilen",
+              "content": "Jedes Kind nimmt sich ein Teil. Du moderierst, damit das Teilen fair und ohne Gedrängel läuft."
+            }
+          ],
+          "safetyRule": "Keine Stationen an Treppen, Balkonen oder offenen Fenstern. Schatzkiste so verstecken, dass niemand klettern muss. Bambus-Stäbe in der Deko: keine spitzen Enden, mit Krepppapier abgeklebt oder abgeschmirgelt.",
+          "ageAdjust3": "Nur 3 Stationen, alles gemeinsam, du führst die Gruppe. Schatzkiste sichtbar nah verstecken. Aufgaben minimal (High-Five geht immer).",
+          "ageAdjust5": "4 Stationen, 5-Jährige dürfen die Dschungel-Karte 'lesen' und die Richtung zeigen. Aufgaben minimal anspruchsvoller (Tier-Geräusch nachmachen).",
+          "indoorTip": "In kleiner Wohnung Stationen über 2 Räume + Flur verteilen, Türen zu. Reicht völlig für die Spannung.",
+          "outdoorTip": "Draußen Stationen um den Garten verteilen — Schatzkiste hinterm Busch oder unterm Gartentisch.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Eine echte Schatzsuche überfordert 3-5 schnell. Diese Mini-Expedition arbeitet ohne Rätsel, ohne Lesen, ohne Verlieren — gemeinsames Helfen führt zum Schatz, den alle teilen. Das ist das Wow ohne den Stress."
+        },
+        {
+          "name": "🌿 Lianen-Schwingen + Affen-Hangeln",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "15 Min.",
+          "minAge": 3,
+          "loudness": "halblaut",
+          "effort": "mittel",
+          "material": "Eine stabile Stoff-Liane: ein dickes Bettlaken oder Stoff-Strang aus alten T-Shirts geflochten, in der Türöffnung an einem dicken Knoten oder über einem Türrahmen-Reck (max. 30-40 cm vom Boden!). 4-5 Sitzkissen oder Decken auf dem Boden als 'Liana-Inseln'. Eine türkise Decke als 'Bach' zum drüberhüpfen.",
+          "prepText": "WICHTIG: Bei 3-5 wird NICHT geklettert. Die Stoff-Liane hängt so niedrig, dass die Füße nahezu den Boden berühren. Lege Sitzkissen/Decken als 'Inseln' auf den Boden, dazwischen die türkise Bach-Decke. Kinder hangeln von Insel zu Insel im Stehen oder Krabbeln, NICHT über Möbel.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Erklären",
+              "content": "Du machst vor: 'Affen schwingen sich an Lianen entlang und springen von Insel zu Insel. Erst zeige ich's, dann probiert jeder einmal — ganz langsam.'"
+            },
+            {
+              "n": 2,
+              "name": "Schwingen",
+              "content": "Jedes Kind greift die Stoff-Liane und schwingt einmal sanft vor und zurück (du hältst dabei am Knoten/Stoff, kein freies Schwingen!). Die Liane darf nicht weiter als Schulterhöhe vom Kind gehen."
+            },
+            {
+              "n": 3,
+              "name": "Hangeln",
+              "content": "Nacheinander von Insel zu Insel (Sitzkissen) — über die Bach-Decke springen oder krabbeln. Jeder hat seine Runde, kein Wettrennen."
+            },
+            {
+              "n": 4,
+              "name": "Wiederholen",
+              "content": "Wer mag, geht eine zweite Runde. Wer fertig ist, setzt sich an den Rand und macht den Tukan-Ruf für die anderen."
+            }
+          ],
+          "safetyRule": "Pflicht: Stoff-Liane max. 30-40 cm Bodenabstand (Füße müssen den Boden fast berühren). Erwachsener hält IMMER am Knoten/oberen Stoff-Ende, kein freies Schwingen. Bei 3-Jährigen: NUR Hangel-Parcours, kein Schwingen ohne erwachsene Hand am Stoff. Keine Stühle/Möbel als Sprung-Inseln. Boden ringsum frei von harten Kanten. Maximal ein Kind gleichzeitig an der Liane. WICHTIG bei 8 Kindern Wow-Variante: Die Liane ist eine betreute Einzelstation — eine Person sichert dauerhaft am Knoten, eine zweite beschäftigt die wartenden Kinder an einer Parallel-Station (z.B. Bananen-Korb sortieren). NIEMALS 8 Kinder gleichzeitig an einer Liane mit nur einer Aufsichtsperson.",
+          "ageAdjust3": "KEIN Schwingen, nur Hangel-Parcours: von Sitzkissen zu Sitzkissen krabbeln, die Liane nur kurz anfassen und 'Affen-Schrei' machen (Quatsch-Moment, kein echtes Schwingen). Du hältst dauerhaft die Hand am Kind.",
+          "ageAdjust5": "5-Jährige dürfen sanft schwingen (du sicherst am Knoten). Hangel-Parcours mit 5-6 Inseln, türkise Bach-Decke breiter.",
+          "indoorTip": "Türöffnung mit stabilem Türrahmen-Reck (Kinder-Reck) ideal. In Mietwohnung: keine Schraub-Hooks in die Decke, sondern Stoff-Liane über einen Türrahmen-Reck oder festen Querbalken.",
+          "outdoorTip": "Im Garten ein dickes Seil an einen niedrigen Ast (max. 50 cm Bodenabstand!) — Erwachsener prüft Ast-Stabilität VORAB.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Affen-Hangeln ist DER Dschungel-Moment, den jedes Kind erwartet. Im Sitz-Inseln-Format ohne Klettern bleibt es altersgerecht und sicher."
+        }
+      ],
+      "food": "🎂 Dschungel-Schokokuchen mit grüner Buttercreme + Esspapier-Schmetterlingen + ein zweiter Affen-Kuchen oder Bananen-Muffins. 🍌 Großer Affen-Snack-Teller (Bananen, Gurke, Paprika, Trauben, Käse, Cracker). 🍪 Schmetterling-Kekse. 🥥 Kokos-Stücke (optional). 🥤 Apfelschorle + Wasser. Allergie-Teller separat.",
+      "decoration": "🌴 Dschungel-Ecke + DIY-Foto-Ecke: vor einer freien Wand 2-3 große Grünpflanzen, ein paar Bambus-Stäbe vertikal aufgestellt, Plüsch-Tiere am Boden, optional ein gemaltes Dschungel-Plakat. 🌊 Türkise 'Bach'-Decke am Boden mit kleinen Plastik-Schmetterlingen drauf. 🐾 Tiger-Pfotenspuren-Pfad. 🎈 Grüne und türkise Ballons. Tischdecke in Blatt-Optik.",
+      "giveaways": "🐒 Forscher-Stirnband + Mini-Plüsch-Affe + Forscher-Pass mit Stempeln + Mini-Notizbuch + Mini-Lupe + Foto-Ausdruck vom Foto-Eck + Dschungel-Sticker, in einer Dschungel-Tüte. Das volle Forscher-Paket zum Mitnehmen.",
+      "shoppingList": [
+        {
+          "emoji": "🌴",
+          "label": "Dschungel-Tierfiguren (24er-Set)",
+          "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+24&tag=machsleicht-21",
+          "priceEur": 11,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Für 8 Kinder + Stationen + Mitgebsel brauchst du mehr Tiere. Zentrales Material."
+        },
+        {
+          "emoji": "🎨",
+          "label": "Tonkarton-Set grün/braun (Stirnbänder, 8 Kinder)",
+          "url": "https://www.amazon.de/s?k=tonkarton+gr%C3%BCn+braun+a4+set&tag=machsleicht-21",
+          "priceEur": 7,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Forscher-Stirnband-Basteln für 8 Kinder. Pflicht."
+        },
+        {
+          "emoji": "🔍",
+          "label": "Mini-Lupen (8er-Set)",
+          "url": "https://www.amazon.de/s?k=kinder+lupe+set+8&tag=machsleicht-21",
+          "priceEur": 9,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Forscher-Werkzeug + Mitgebsel + zentral für Tier-Spuren-Tour. Pflicht."
+        },
+        {
+          "emoji": "🔖",
+          "label": "Dschungel-Aufkleber-Set (groß)",
+          "url": "https://www.amazon.de/s?k=dschungel+sticker+kinder+set&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Verziert Stirnbänder, Tüten und Foto-Ecke. Ersetzbar durch Aufmalen."
+        },
+        {
+          "emoji": "🟫",
+          "label": "Tonpapier orange/braun (Tiger-Spuren)",
+          "url": "https://www.amazon.de/s?k=tonpapier+orange+a4&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Spuren-Tour für 8 Kinder, ggf. 2 Spuren. Pflicht."
+        },
+        {
+          "emoji": "🪴",
+          "label": "2-3 Kunst-Grünpflanzen (Foto-Ecke)",
+          "url": "https://www.amazon.de/s?k=kunstpflanze+gr%C3%BCn+deko&tag=machsleicht-21",
+          "priceEur": 12,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Macht die Foto-Ecke zum Wow-Faktor, aber Zimmerpflanzen tun es auch. Sinnvoll, nicht Pflicht."
+        },
+        {
+          "emoji": "🎋",
+          "label": "Bambus-Stäbe (4er-Set, Foto-Ecke + Dickicht)",
+          "url": "https://www.amazon.de/s?k=bambus+st%C3%A4be+deko+set&tag=machsleicht-21",
+          "priceEur": 9,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Bambus macht die Wow-Foto-Ecke echt-dschungelig. Besenstiele mit grünem Krepp tun's auch — daher sinnvoll, nicht Pflicht."
+        },
+        {
+          "emoji": "📦",
+          "label": "Schatzkiste / Deko-Korb",
+          "url": "https://www.amazon.de/s?k=schatzkiste+kinder+holz&tag=machsleicht-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "habIchVielleicht",
+          "categoryReasoning": "Jeder hübsche Korb oder Karton tut es. Nur kaufen, wenn nichts da ist."
+        },
+        {
+          "emoji": "📓",
+          "label": "Mini-Notizbücher A6 (8er-Set)",
+          "url": "https://www.amazon.de/s?k=mini+notizbuch+a6+set+8&tag=machsleicht-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Mitgebsel + passt zum Forscher-Frame. Kein Spiel hängt zwingend daran."
+        },
+        {
+          "emoji": "📜",
+          "label": "Forscher-Pässe + Tonpapier weiß",
+          "url": "https://www.amazon.de/s?k=tonpapier+wei%C3%9F+a4&tag=machsleicht-21",
+          "priceEur": 3,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Pass für jeden Forscher. Geht auch auf Druckerpapier."
+        },
+        {
+          "emoji": "🖨️",
+          "label": "Foto-Sofortdruck / Drogerie-Ausdruck",
+          "url": null,
+          "priceEur": 6,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Foto-Ausdruck als Mitgebsel — der WhatsApp-Status-Moment. Per Handy + Drogerie machbar, kein Affiliate."
+        },
+        {
+          "emoji": "🎈",
+          "label": "Luftballons grün/türkis + Deko",
+          "url": "https://www.amazon.de/s?k=luftballons+gr%C3%BCn+t%C3%BCrkis&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "habIchVielleicht",
+          "categoryReasoning": "Reine Deko, oft vorhanden. Verzichtbar."
+        },
+        {
+          "emoji": "🥤",
+          "label": "Apfelschorle + Wasser (3 l)",
+          "url": null,
+          "priceEur": 4,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Getränke für 8 Kinder. Pflicht trotz fehlendem Link."
+        },
+        {
+          "emoji": "🍌",
+          "label": "Großer Affen-Snack-Teller (8 Kinder)",
+          "url": null,
+          "priceEur": 12,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Essen für 8 Kinder. Pflicht, Supermarkt."
+        },
+        {
+          "emoji": "🍪",
+          "label": "Schmetterling-Kekse + Ausstecher",
+          "url": null,
+          "priceEur": 6,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Nettes Extra, kein Muss. Ausstecher teils vorhanden."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Kuchen-Zutaten (2 Kuchen + grüne Buttercreme + Esspapier-Schmetterlinge)",
+          "url": null,
+          "priceEur": 9,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Dschungel-Schokokuchen + Zweitkuchen/Muffins für 8 Kinder. Pflicht."
+        }
+      ],
+      "estimatedCostEur": 80,
+      "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Highlight-Produkte)",
+      "savingsTip": {
+        "title": "Wow ist nicht für jede Familie ehrlich",
+        "body": "Wow braucht: 80 m²+ Wohnfläche ODER Garten, eine zweite erwachsene Hand (Partner, Oma, befreundete Mama) und mindestens ein 5-jähriges Geburtstagskind. Mit 3-Jährigen + Solo-Moderation: Standard nehmen, nicht Wow. Wer Wow trotzdem will, spricht vorher mit der zweiten Hand ab, wer Stationen führt und wer Trostkontakt für überreizte Kinder ist. Foto-Ecke aus Zimmerpflanzen + Bettlaken statt Kauf-Deko spart 10-15 €. Bambus-Stäbe durch Besenstiele mit grünem Krepp ersetzen spart weitere 9 €. Optional gibt's ein aufblasbares Affen-Kostüm (~35-50 €) fürs Geburtstagskind — aber nur für ein 5-jähriges Kind, das das Kostüm vorher kennt und mag, sonst erschreckt die Pumpe und das Tragen überfordert. Nicht im 80-€-Budget enthalten."
+      }
+    }
+  ],
+  "cakeRecipe": {
+    "intro": "Der Dschungel-Schokokuchen ist ein simpler Schoko-Rührteig mit einem grünen Buttercreme-'Dschungel' obendrauf und bunten Esspapier-Schmetterlingen als Krönung. Sieht nach viel aus, ist aber Rührteig + Spritzbeutel — kein Fondant-Drama. Wenn Backen heute nicht drin ist: steht unten der Plan B.",
+    "steps": [
+      {
+        "n": 1,
+        "content": "Schoko-Rührteig anrühren (250 g Mehl, 200 g Butter, 150 g Zucker, 4 Eier, 1 Pck. Backpulver, 3 EL Kakao, Vanille). In eine 24er-Springform."
+      },
+      {
+        "n": 2,
+        "content": "Bei 175 °C ca. 40-45 Min. backen. Stäbchenprobe. Komplett auskühlen lassen, sonst schmilzt die Buttercreme."
+      },
+      {
+        "n": 3,
+        "content": "Buttercreme anrühren: 200 g weiche Butter + 250 g Puderzucker + 1-2 TL grüne Lebensmittelfarbe (Gel ist besser als flüssig). Cremig schlagen, bis sie ein sattes Dschungel-Grün hat."
+      },
+      {
+        "n": 4,
+        "content": "Buttercreme in einen Spritzbeutel mit Stern-Tülle füllen. Auf den Kuchen Tupfer für Tupfer aufspritzen, wild und durcheinander — das soll wie ein Dschungel-Blätterdach aussehen, nicht wie eine Hochzeitstorte."
+      },
+      {
+        "n": 5,
+        "content": "Esspapier-Schmetterlinge (gibt's bunt im Backshop oder online) zwischen die Buttercreme-Tupfer stecken. 6-10 Stück verteilt, je bunter desto besser."
+      },
+      {
+        "n": 6,
+        "content": "Kalt stellen bis zur Party. Vor dem Servieren in Tortenstücke schneiden — der Dschungel 'teilt sich' an alle Forscher."
+      }
+    ],
+    "meta": {
+      "aufwand": "mittel (Rührteig + 20 Min. Buttercreme + Schmetterlinge)",
+      "kosten": "ca. 6-9 €",
+      "allergiker": "Bei Nuss-/Mandel-Allergie unproblematisch — keine Nüsse im Rezept. Glutenfreies Mehl möglich. Esspapier-Schmetterlinge sind meist vegan und allergenarm — Zutaten-Check auf Packung. Buttercreme ohne Laktose: vegane Margarine + Puderzucker."
+    },
+    "tips": [
+      {
+        "title": "Keine Lust oder Zeit zu backen?",
+        "body": "Fertigen Schokokuchen vom Bäcker oder aus dem Supermarkt kaufen und nur die grüne Buttercreme + Schmetterlinge draufsetzen. 15 Min. Arbeit, niemand merkt es. Bei 3-5-Jährigen zählt der Dschungel-Effekt, nicht die Backleistung."
+      },
+      {
+        "title": "Nicht vom Pinterest-Foto stressen lassen",
+        "body": "Die perfekt symmetrische Dschungel-Torte mit Buttercreme-Palmen ist Deko-Profi-Arbeit. Dein Dschungel-Kuchen darf wild aussehen — die Kinder feiern die Schmetterlinge trotzdem. Lieber ein ehrlicher Wackel-Dschungel als ein Nervenzusammenbruch um Mitternacht."
+      },
+      {
+        "title": "Buttercreme zu weich? Kurz in den Kühlschrank.",
+        "body": "Wenn die Buttercreme beim Spritzen zerläuft: 10 Min. in den Kühlschrank, dann nochmal. Wenn sie zu fest ist: 5 Min. Raumtemperatur. Die Konsistenz ist das einzige, was Übung braucht — der Rest ist Wildheit."
+      }
+    ]
+  },
+  "parentTips": {
+    "structured": [
+      {
+        "topic": "🥜 Allergien VOR der Party abfragen",
+        "detail": "In der Einladung fragen. Esspapier-Schmetterlinge auf dem Kuchen, Käse im Snack-Teller, Kokos optional — alles potenzielle Stolperer. Ein nuss-/laktosefreier Teller bereit, dann ist niemand außen vor."
+      },
+      {
+        "topic": "🌧️ Plan B bei Regen steht immer",
+        "detail": "Dschungel ist drinnen wie draußen spielbar. Tier-Spuren-Tour und Lianen-Schwingen gehen im Wohnzimmer + Flur — Spuren auf Klebezettel, Stoff-Liane im Türrahmen. Garten ist schön, aber kein Muss."
+      },
+      {
+        "topic": "👥 Ab 7-8 Kindern: zweite Hand dazu",
+        "detail": "Bei 6 schaffst du es solo. Ab 7-8 (Wow) brauchst du Partner, Oma oder eine befreundete Mama — eine führt die Station, eine ist Trostkontakt für überreizte Kinder."
+      },
+      {
+        "topic": "🔇 Eltern bleiben — ist Teil des Plans",
+        "detail": "Bei 3-5 ist Trennungsangst normal. Eltern als Trostanker einplanen, nicht wegschicken. Ein Eltern-Schoß ist der beste Plan B, wenn ein Kind nicht mehr mag."
+      },
+      {
+        "topic": "⏱️ Nach 90-120 Min. ist Schluss",
+        "detail": "Auch wenn's gerade läuft: nach spätestens 2 Stunden kippt die Forscher-Truppe in Müdigkeit, Streit oder Heimweh. Lieber glücklich aufhören als überreizt eskalieren."
+      },
+      {
+        "topic": "🐒 Kein Wettbewerb, nie Verlierer",
+        "detail": "Bei dieser Altersgruppe keine Gewinner/Verlierer-Spiele. Jedes Kind findet eine Banane, schwingt einmal, bekommt den Forscher-Pass. Der Pass bekommt jeder Forscher — das schafft jedes Kind."
+      },
+      {
+        "topic": "🌿 Lianen-Sicherheit zuerst",
+        "detail": "Bei 3-5 wird NICHT geklettert. Die Stoff-Liane hängt so niedrig, dass die Füße den Boden fast berühren. Bei 3-Jährigen NUR Hangel-Parcours, kein freies Schwingen. Du sicherst immer am Knoten."
+      }
+    ],
+    "educationalValue": "Die Kinder üben ganz nebenbei: leise sein und beobachten (Tier-Spuren-Tour mit Lupe), grobmotorische Koordination (Lianen-Schwingen, Hangel-Parcours), sensorische Wahrnehmung (Tier-Fühlbox, Stoff-Lianen), gemeinsam ein Ziel erreichen (Mini-Expedition) und mit Verkleidung in eine Rolle schlüpfen (Forscher-Stirnband). Der Forscher-Frame macht aus Geburtstags-Trubel ein Entdecker-Spiel — das ist genau der Beobachter- und Bewegungs-Entwicklungsschritt, der mit 3-5 ansteht."
+  },
+  "invitationTemplate": "Lust auf passende Dschungel-Einladungen? Der Einladungs-Generator auf machsleicht baut dir Forscher-Karten mit Datum, Treffpunkt, RSVP-Link und Allergie-Abfrage in 2 Minuten. (Cross-Sell-Hinweis, kein echtes Template — CTA gehört ins Planer-Cockpit.)",
+  "faq": [
+    {
+      "q": "Funktioniert Dschungel auch in einer kleinen Wohnung?",
+      "a": "Ja. Tier-Spuren-Tour und Bananen-Rätsel gehen in 60-75 m² mit verschachtelten Verstecken in einem Raum — Spur um Sofa, hinter Vorhang, unter Tisch. Lianen-Schwingen braucht eine Türöffnung mit Türrahmen-Reck (Kinder-Reck) — das passt in jede Mietwohnung. Türen zu, dann wirkt es nach mehr Dschungel."
+    },
+    {
+      "q": "Wie viele Kinder sind ideal?",
+      "a": "6 für Minimal und Standard, bis 8 für Wow. Mehr als 8 wird mit dem Eltern-bleiben-Konzept zu wuselig — du hast plötzlich zu viele Erwachsene und Kinder im Raum."
+    },
+    {
+      "q": "Was kostet die Party?",
+      "a": "Zwischen 36 € (Minimal, 6 Kinder) und 80 € (Wow, 8 Kinder, ohne Highlight-Produkte). Standard liegt bei ca. 56 € für 6 Kinder. Wer aus dem Bestand schöpft (Plüsch, Bambus aus dem Wald, Bettlaken-Liane), kommt darunter."
+    },
+    {
+      "q": "Ist die Wow-Variante für 3-Jährige geeignet?",
+      "a": "Eher nicht. Wow braucht 80 m²+ oder Garten, eine zweite erwachsene Hand und mindestens ein 5-jähriges Geburtstagskind. Mit reinen 3-Jährigen und Solo-Moderation lieber Standard nehmen — Lianen-Schwingen wird sonst zu hektisch."
+    },
+    {
+      "q": "Ist Lianen-Schwingen wirklich sicher für 3-Jährige?",
+      "a": "Ja, wenn du die Regeln einhältst: Stoff-Liane max. 30-40 cm Bodenabstand, Erwachsener hält IMMER am Knoten, bei 3-Jährigen NUR Hangel-Parcours mit Sitzkissen-Inseln, kein freies Schwingen. Keine Stühle als Sprung-Inseln, keine harten Kanten ringsum. Maximal ein Kind gleichzeitig an der Liane."
+    },
+    {
+      "q": "Funktioniert Dschungel auch für Mädchen-Geburtstage?",
+      "a": "Selbstverständlich. Der Forscher-Frame ist komplett geschlechtsneutral — Schmetterlinge, Tukane und Faultiere sind genauso bunt wie Tiger und Affen. Die meisten Geburtstagskinder in diesem Alter wollen einfach Tiere sehen, egal welches Geschlecht."
+    }
+  ],
+  "preparationWeeks": {
+    "minus4Weeks": {
+      "headline": "4 Wochen vorher — Grundgerüst stellen",
+      "items": [
+        {
+          "icon": "📅",
+          "title": "Datum + Uhrzeit + Treffpunkt fixieren",
+          "detail": "Nachmittag (14-16 Uhr) ist bei 3-5 am besten — nicht in den Mittagsschlaf legen. Drinnen-Plan-B für die Tier-Spuren-Tour im Hinterkopf behalten."
+        },
+        {
+          "icon": "👥",
+          "title": "Gästeliste festzurren",
+          "detail": "6 Kinder für Minimal/Standard, bis 8 für Wow. Faustregel 3-5: nicht mehr Gäste als das Kind alt ist plus zwei. Über 8 wird's wuselig."
+        },
+        {
+          "icon": "💶",
+          "title": "Variante wählen: Minimal / Standard / Wow",
+          "detail": "Minimal 36€ (90 Min., Tour + Fühlbox), Standard 56€ (2 Std. + Lianen-Schwingen + Bananen-Rätsel), Wow 80€ (+ Mini-Expedition + Foto-Ecke, braucht Platz + zweite Hand). Jetzt entscheiden."
+        },
+        {
+          "icon": "✉️",
+          "title": "Einladungen rausschicken",
+          "detail": "Pflicht im Text: Allergie-Abfrage. Hinweis, dass Eltern gern bleiben dürfen — bei 3-5 oft nötig. RSVP-Link auf party.machsleicht.de."
+        },
+        {
+          "icon": "🏠",
+          "title": "Raum-Check (Tier-Spuren + Lianen-Schwingen)",
+          "detail": "In 60-75 m² die Tour nicht über mehrere Räume planen, sondern ein Raum mit verschachtelten Verstecken. Türrahmen-Reck für die Stoff-Liane: stabil und in Erwachsenen-Höhe montierbar? Garten/Park ist Bonus, kein Muss."
+        }
+      ]
+    },
+    "minus2Weeks": {
+      "headline": "2 Wochen vorher — RSVP einsammeln, Plan schärfen",
+      "items": [
+        {
+          "icon": "📞",
+          "title": "RSVP nachhalten",
+          "detail": "Wer nicht geantwortet hat, kurz anschreiben. Endgültige Kinderzahl bestimmt Stirnband-Anzahl, Snack-Teller-Menge und Mitgebsel."
+        },
+        {
+          "icon": "🥜",
+          "title": "Allergien notieren",
+          "detail": "Rückmeldungen sammeln. Esspapier-Schmetterlinge (Zutaten-Check), Käse (Laktose), Kokos (selten), Gluten. Pro Allergie eine Alternative auf dem Teller einplanen."
+        },
+        {
+          "icon": "🤝",
+          "title": "Bei Wow: zweite Hand fix zusagen lassen",
+          "detail": "Partner, Oma oder befreundete Mama verbindlich einplanen. Klären, wer Lianen-Station sichert und wer Trostkontakt ist. Ohne zweite Hand: auf Standard runter."
+        },
+        {
+          "icon": "🐒",
+          "title": "Spiel-Reihenfolge durchgehen",
+          "detail": "Schedule der gewählten Variante einmal laut durchdenken. Wo ist die ruhige Phase (Fühlbox), wo die aktive (Lianen + Trommeln)? Aktiv vor dem Kuchen, ruhig danach."
+        }
+      ]
+    },
+    "minus1Week": {
+      "headline": "1 Woche vorher — bestellen und drucken",
+      "items": [
+        {
+          "icon": "🛒",
+          "title": "Amazon-Bestellung JETZT raus",
+          "detail": "Lieferzeit 2-5 Tage. Tierfiguren, Tonkarton, Lupen, Aufkleber, bei Wow Kunstpflanzen + Bambus + Notizbücher. Später bestellen = Panik in der Festwoche."
+        },
+        {
+          "icon": "🖨️",
+          "title": "Forscher-Pässe + ggf. Dschungel-Karte drucken",
+          "detail": "Pass pro Kind ('Dschungel-Forscher-Pass für [Name]'). Namen mit dickem Edding vorab eintragen — 3-5-Jährige können noch nicht lesen, der Name wird vorgelesen. Falls Wow: Dschungel-Karte für die Mini-Expedition malen/drucken."
+        },
+        {
+          "icon": "🎨",
+          "title": "Forscher-Stirnbänder vorschneiden",
+          "detail": "Streifen zuschneiden, optional schon ein Blatt-Sticker drauf. Kinder dürfen am Tag nur noch verzieren — Schere bleibt bei dir. Spart am Festtag Stress und Tränen."
+        },
+        {
+          "icon": "🐾",
+          "title": "Tiger-Pfotenspuren basteln",
+          "detail": "12-15 Pfoten aus orangefarbenem Tonpapier ausschneiden mit schwarzen Tiger-Streifen drauf (Edding). 15 Min. Arbeit, hält für Tour + Deko-Pfad."
+        },
+        {
+          "icon": "🌿",
+          "title": "Stoff-Liane vorbereiten oder bestellen",
+          "detail": "Bettlaken zu einer dicken Liane drehen/flechten und am Knoten testen — hält dein Türrahmen-Reck das Kindergewicht? Bei Bedarf einen 2-Meter-Stoffstrang aus alten T-Shirts flechten. Vorab einen Erwachsenen drauf-testen-lassen."
+        }
+      ]
+    },
+    "minus2Days": {
+      "headline": "2 Tage vorher — backen und vorbereiten",
+      "items": [
+        {
+          "icon": "🎂",
+          "title": "Dschungel-Schokokuchen backen",
+          "detail": "Schoko-Rührteig in der Springform, komplett auskühlen lassen. Buttercreme + Esspapier-Schmetterlinge erst morgen — sonst werden die Schmetterlinge weich."
+        },
+        {
+          "icon": "🛍️",
+          "title": "Lebensmittel einkaufen",
+          "detail": "Apfelschorle, Bananen, Gurke, Trauben, Käse, Cracker für den Affen-Snack-Teller, ggf. Kokos-Stücke. Allergiker-Alternativen nicht vergessen."
+        },
+        {
+          "icon": "📦",
+          "title": "Lieferung prüfen + Vollständigkeit checken",
+          "detail": "Ist alles da? Genug Tierfiguren, Stirnband-Material für alle Kinder, Lupen, Aufkleber, bei Wow Bambus + Notizbücher? Fehlendes jetzt noch nachkaufen-fähig."
+        }
+      ]
+    },
+    "minus1Day": {
+      "headline": "1 Tag vorher — verzieren und packen",
+      "items": [
+        {
+          "icon": "🐒",
+          "title": "Kuchen verzieren",
+          "detail": "Grüne Buttercreme cremig schlagen und mit Spritzbeutel wild auf den Schokokuchen tupfen. 6-10 Esspapier-Schmetterlinge zwischen die Tupfer stecken. 20 Min. Kalt stellen."
+        },
+        {
+          "icon": "🎁",
+          "title": "Mitgebsel-Tüten packen",
+          "detail": "Pro Kind: Mini-Plüsch-Affe, Forscher-Pass, Lupe, bei Standard/Wow Notizbuch + Sticker. Eine Tüte mehr packen als Kinder kommen — falls ein Geschwister mitkommt."
+        },
+        {
+          "icon": "🌴",
+          "title": "Dschungel-Ecke + ggf. Foto-Ecke aufbauen",
+          "detail": "Grüne Tücher/Pflanzen, türkise Bach-Decke, Plüsch-Tiere arrangieren. Bei Wow Foto-Ecke an freier Wand mit Bambus-Stäben und Kunstpflanzen aufstellen. Tiger-Pfotenspuren-Pfad legen."
+        },
+        {
+          "icon": "🌿",
+          "title": "Stoff-Liane am Türrahmen-Reck montieren + testen",
+          "detail": "Liane am Knoten festmachen, Bodenabstand prüfen (30-40 cm!). Erwachsener hängt sich kurz dran — hält? Sitz-Inseln aus Sitzkissen schon mal in Position legen."
+        }
+      ]
+    },
+    "dayOf": {
+      "headline": "Am Party-Tag — Spuren legen und durchatmen",
+      "items": [
+        {
+          "icon": "🐾",
+          "title": "Tiger-Spur legen",
+          "detail": "Pfoten an die Wand (Augenhöhe Kind) oder Boden, Plüsch-Affe am Endpunkt verstecken. Bei Wow Schatz-Stationen + Schatzkiste platzieren."
+        },
+        {
+          "icon": "🍽️",
+          "title": "Tisch decken + Affen-Snack-Teller anrichten",
+          "detail": "Affen-Snack-Teller hübsch anrichten (Bananen-Boote mit Trauben gespickt, Gurken-Blätter). Getränke kalt stellen. Allergiker-Teller separat markieren."
+        },
+        {
+          "icon": "🎨",
+          "title": "Bastel-Station vorbereiten",
+          "detail": "Stirnbänder, Aufkleber und dicke Stifte auf den Tisch. Wachstuch drunter. Schere und Tacker griffbereit, aber außer Kinder-Reichweite."
+        },
+        {
+          "icon": "🥁",
+          "title": "Trommel-Station + Audio bereit (nur Wow)",
+          "detail": "Topfdeckel + Holzlöffel im Kreis auf einer Decke aufbauen. Audio-Quelle mit Dschungel-Beat testen — Lautstärke moderat einstellen, sonst Schreck-Moment."
+        },
+        {
+          "icon": "🧘",
+          "title": "Tief durchatmen",
+          "detail": "Alles steht. Es muss nicht perfekt sein — die Kinder feiern den schiefen Dschungel-Kuchen genauso. Eltern als zweite Hand kurz briefen, dann los."
+        }
+      ]
+    }
+  },
+  "sosScenarios": {
+    "regen": {
+      "icon": "🌧️",
+      "label": "Regen — alles drinnen",
+      "headline": "Tier-Spuren-Tour ins Wohnzimmer + Flur, Lianen-Schwingen im Türrahmen.",
+      "steps": [
+        "Tiger-Pfotenspuren mit Tesa/Klebezettel an Wände in Wohnzimmer + Flur kleben (Augenhöhe Kind).",
+        "Tour-Parcours: um Sofa, hinter Vorhang, unter Tisch, am Regal vorbei zum Plüsch-Affen.",
+        "Stoff-Liane am Türrahmen-Reck — Lianen-Schwingen funktioniert drinnen sogar besser (kontrollierter).",
+        "Bei Wow Schatzkiste in Garderobe oder Schlafzimmer verstecken, Tier-Stationen über 2 Räume."
+      ],
+      "fallback": "Zu wenig Platz? Tier-Fühlbox + Bananen-Rätsel + Stirnband-Basteln + Kuchen reichen für 1,5 Std. Programm.",
+      "tone": "praktisch"
+    },
+    "mehr_kinder": {
+      "icon": "👥",
+      "label": "Mehr Kinder gekommen als geplant",
+      "headline": "Zwei kleine Forscher-Trupps bilden, zweite Hand schnappen.",
+      "steps": [
+        "Bei 8+ Kindern in 2 Gruppen teilen — eine pirscht, eine bastelt am Stirnband, dann tauschen.",
+        "Zweite erwachsene Hand jetzt unbedingt einspannen (anwesende Eltern fragen — bei 3-5 sind eh welche da).",
+        "Tier-Spuren-Tour in 2 Wellen laufen lassen statt alle gleichzeitig — sonst Gedrängel an der Spur.",
+        "Stirnbänder + Mitgebsel knapp? Geschwister-Plüschtiere aus dem Bestand, niemand geht leer aus."
+      ],
+      "fallback": "Material reicht nicht für alle? Stirnbänder gemeinsam improvisieren (Aufkleber aufs T-Shirt) — Hauptsache jeder ist Forscher.",
+      "tone": "praktisch"
+    },
+    "weniger_kinder": {
+      "icon": "👤",
+      "label": "Weniger Kinder gekommen als geplant",
+      "headline": "Kein Problem — kleinere Forscher-Truppe, mehr Ruhe.",
+      "steps": [
+        "Spiele laufen mit 3-4 Kindern genauso. Tier-Spuren und Lianen-Schwingen werden sogar entspannter.",
+        "Übrige Stirnbänder + Mitgebsel: ein extra Forscher kann das Geburtstagskind sein — keine Reste-Diskussion.",
+        "Mehr Zeit pro Kind beim Lianen-Schwingen und der Pass-Übergabe. Jeder kommt ausführlicher dran.",
+        "Übriges Essen einfach kleiner anrichten — Reste gehen in den Familien-Kühlschrank."
+      ],
+      "fallback": "Bei nur 2-3 Kindern: Stationen weglassen, dafür länger pirschen und mehr Bananen verstecken. Intimer, kein Minus.",
+      "tone": "ruhig"
+    },
+    "kind_weint": {
+      "icon": "😢",
+      "label": "Ein Kind weint",
+      "headline": "Raus aus dem Trubel, runterkommen, kein Publikum.",
+      "steps": [
+        "Kind kurz aus der Gruppe nehmen — ruhige Ecke, Eltern dazu, kein Publikum.",
+        "Ablenken mit etwas Greifbarem: 'Magst du dem Faultier helfen? Der braucht jemand Ruhigen.'",
+        "Wasser/Cracker anbieten — oft ist es Müdigkeit, Hunger oder Reizüberflutung, kein echtes Drama.",
+        "Nach 5 Min. zurück anbieten, aber nicht drängen. Eltern-Schoß bleibt offen."
+      ],
+      "fallback": "Bleibt es untröstlich? Tempo der ganzen Gruppe drosseln — oft ist die Party einfach zu schnell für die Kleinen.",
+      "tone": "ruhig"
+    },
+    "allergie": {
+      "icon": "🥜",
+      "label": "Allergie-Vorfall (oder spät gemeldete Allergie)",
+      "headline": "Sofort separieren, Eltern fragen, Notfall-Plan parat.",
+      "steps": [
+        "Bei akutem Vorfall: Kind sofort aus der Essens-Situation nehmen, Eltern verständigen (Eltern sind ja da bei 3-5).",
+        "Bei spät gemeldeter Allergie (Eltern bringen das Kind, sagen 'übrigens, Nuss-Allergie'): allergenes Essen sofort vom Tisch räumen oder klar markieren ('NICHT FÜR ALLE').",
+        "Allergie-Teller separat aufstellen: Obst pur, ungewürzte Cracker, Apfelschorle pur. Esspapier-Schmetterlinge vom Kuchen abnehmen für das betroffene Kind.",
+        "Im Verdachtsfall (Hautausschlag, Atemnot): 112 anrufen. Bei bekannter Allergie: vorgegebenes Notfallmedikament (Eltern haben oft Adrenalin-Pen) — Eltern geben, nicht du."
+      ],
+      "fallback": "Unklare Situation? Lieber vorsichtig sein: Kind nichts mehr essen lassen, Eltern entscheiden, Hausarzt-Nummer parat.",
+      "tone": "ernsthaft"
+    },
+    "kuchen_misslungen": {
+      "icon": "🎂",
+      "label": "Kuchen misslungen",
+      "headline": "Bäcker-Schokokuchen + grüne Buttercreme + Schmetterlinge drauf, niemand merkt's.",
+      "steps": [
+        "Fertigen Schokokuchen oder Marmorkuchen vom Bäcker/Supermarkt holen (oder schon vorrätig).",
+        "Grüne Buttercreme schnell anrühren (200 g weiche Butter + 250 g Puderzucker + grüne Lebensmittelfarbe) — 5 Min. Arbeit.",
+        "Buttercreme mit Spritzbeutel oder Löffel wild draufschmieren, 6-10 Esspapier-Schmetterlinge reinstecken — fertig ist der Dschungel.",
+        "Bei 3-5-Jährigen zählt das grüne Buttercreme-Wirrwarr mit Schmetterlingen, nicht die Backleistung. Wirklich."
+      ],
+      "fallback": "Keine Zeit für Buttercreme? Muffins mit grünem Zuckerguss + Schmetterling-Aufstecker tun es auch — die Kinder lieben Muffins ohnehin.",
+      "tone": "entlastend"
+    },
+    "ein_kind_weg": {
+      "icon": "👀",
+      "label": "Ein Kind ist plötzlich weg",
+      "headline": "Ruhig bleiben — Bad/Garderobe/Schlafzimmer zuerst, dann nach draußen.",
+      "steps": [
+        "Erstmal durchatmen — bei 3-5 verschwindet das Kind meistens nur kurz ins Bad oder zur Garderobe (Mantel kuscheln).",
+        "Alle anderen Kinder bei der zweiten Hand parken (Eltern sind eh da). Du gehst suchen: Bad, Garderobe, Schlafzimmer, dann Kinderzimmer.",
+        "Wenn das Kind im Garten/Park-Setting verschwindet: SOFORT alle Anwesenden mobilisieren, jemand bleibt am Treffpunkt, andere suchen radial. Eltern des betroffenen Kindes anrufen.",
+        "Im Notfall (Kind nicht in 5 Min. auffindbar): 110. Lieber zu früh als zu spät — bei 3-5 zählt jede Minute."
+      ],
+      "fallback": "Sicherheits-Check VORAB: Wohnungstür immer abgeschlossen, Balkontür zu, Treppe abgesichert. Im Garten Tor zu. Dann passiert das gar nicht erst.",
+      "tone": "ernsthaft"
+    },
+    "geraete_kaputt": {
+      "icon": "🔧",
+      "label": "Material kaputt oder fehlt",
+      "headline": "Improvisieren — bei Dschungel geht fast alles aus dem Haushalt.",
+      "steps": [
+        "Plüsch-Affe kaputt/fehlt? Jedes Kuscheltier aus dem Kinderzimmer wird zum 'verlaufenen Tier'.",
+        "Stoff-Liane reißt? Bettlaken neu falten und mit dickem Knoten am Türrahmen-Reck festbinden — hält wieder.",
+        "Tiger-Pfotenspuren zerrissen? Schnell neue mit Edding auf Papier zeichnen — Kinder merken den Unterschied nicht.",
+        "Lupe kaputt? Brille/Kindergarten-Karton-Lupe basteln (Karton mit Kreis-Loch, Frischhaltefolie drüber — sieht aus wie Lupe).",
+        "Schatzkiste fehlt? Jeder Korb, Karton oder Wäschekorb mit grünem Tuch drüber tut es."
+      ],
+      "fallback": "Ganze Station fällt aus? Einfach mehr pirschen oder Bananen verstecken — die zwei Kernspiele tragen die Party allein.",
+      "tone": "praktisch"
+    }
+  }
+}

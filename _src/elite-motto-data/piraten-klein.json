@@ -1,0 +1,1440 @@
+{
+  "_meta": {
+    "source_file": "kindergeburtstag/piraten-3-5-jahre.html",
+    "extracted": "2026-05-21",
+    "schema_version": "1.0",
+    "purpose": "Phase-B Elite-Motto-Data für Planer-Frisur-Sprint. Piraten 3-5, Pattern safari-klein (Score 97): signatureRitual + ageInsight + 3 Varianten mit Game-steps + cakeRecipe + parentTips + faq + preparationWeeks + sosScenarios."
+  },
+  "motto": "piraten",
+  "ageGroup": "klein",
+  "ageRange": [
+    3,
+    5
+  ],
+  "title": "🏴‍☠️ Piraten-Kindergeburtstag — 3–5 Jahre",
+  "metaDescription": "Piraten-Kindergeburtstag für 3-5-Jaehrige als gemeinsame Schatzsuche — ohne Saebel, ohne Wettkampf, alle finden den Schatz zusammen. Drei fertige Varianten von 35 bis 80 Euro, mit Schatzspur, Goldmuenzen-Tauchen und Piratenschiff-Kuchen.",
+  "introParagraph": "Dein Kind wird 3, 4 oder 5 und will Pirat sein? Dann braucht es keine Saebel-Schlacht und kein Seeungeheuer — das ist in dem Alter eher gruselig als spannend. Was funktioniert: eine Augenklappe, eine Schatzkarte und am Ende eine Kiste voll Goldmuenzen, die alle gemeinsam finden. Hier sind drei fertige Varianten — Minimal (90 Min., ~35 €), Standard (2 Std., ~55 €) und Wow (2 Std. mit Bastel-Highlight, ~80 €). Du bleibst die ganze Zeit dabei, und genau so ist es gedacht: Bei 3-5 ist der Erwachsene der Kompass, nicht der Aufpasser.",
+  "signatureRitual": {
+    "name": "Das kleine Piraten-Versprechen",
+    "subtitle": "Eroeffnet die Party + Schatzkisten-Uebergabe am Ende",
+    "introText": "Bei 3-5 funktioniert kein Schwur und keine Mannschafts-Hierarchie — 'Anwaerter', 'Kapitaen in Ausbildung' oder Raenge sind zu abstrakt und sortieren Kinder in Gewinner und Verlierer. Stattdessen ein einfaches Bild: Jedes Kind bekommt eine Augenklappe (oder ein Stirnband mit Piraten-Totenkopf) und wird damit zum Mini-Piraten. Das Versprechen ist kurz, koerperlich und ohne Worte zu lernen — alle legen eine Hand auf die Schatzkarte und 'spueren', dass sie jetzt eine Crew sind. Am Ende kommt das Bild zurück: Die Schatzkiste wird nicht verteilt, sondern gemeinsam geoeffnet, und jedes Kind nimmt sich seine Goldmuenze selbst. Anfang und Ende klammern den Nachmittag — das gibt 3-5-Jaehrigen Halt, ohne dass sie irgendetwas leisten muessen.",
+    "setupSteps": [
+      {
+        "title": "Augenklappen mit Namen vorbereiten",
+        "content": "Pro Kind eine Augenklappe (gibt's guenstig im 12er-Set) und ein Namens-Sticker drauf oder daneben. Wer naehen mag, macht aus Filz ein Stirnband mit aufgeklebtem Totenkopf — das rutscht bei 3-Jaehrigen weniger als eine Klappe. Wichtig: Die Klappe darf locker sitzen, kein Gummiband stramm uebers Auge. Manche 3-Jaehrige wollen die Klappe nur in der Hand halten — voellig okay."
+      },
+      {
+        "title": "Schatzkarte als Crew-Anker auslegen",
+        "content": "Eine grosse Schatzkarte (DIN A3, selbst gemalt oder gedruckt) liegt zum Start in der Mitte auf dem Boden. Sie ist das gemeinsame Ding, auf das alle die Hand legen. Auf der Karte ist der Weg des Nachmittags grob eingezeichnet — ein Kreuz markiert den Schatz. Kinder lieben es, spaeter 'ihren' Weg auf der Karte wiederzufinden."
+      },
+      {
+        "title": "Schatzkiste fuellen und verstecken",
+        "content": "Ein Schuhkarton, mit Goldfolie oder brauner Farbe beklebt, ist die Schatzkiste. Fuellung: Schoko-Goldmuenzen (eine pro Kind plus Reserve), kleine Mitgebsel. Verstecken: bei Minimal nur am Ende des Raums, bei Wow am Ziel der Schatzspur. Nicht zu gut verstecken — 3-Jaehrige verlieren nach 5 Minuten Suchen die Lust."
+      },
+      {
+        "title": "Versprechen einsprechen — kurz und ohne Auswendiglernen",
+        "content": "Alle stehen im Kreis um die Schatzkarte, jedes Kind legt eine Hand drauf. Du sprichst einen kurzen Satz vor, den die Kinder NICHT nachsprechen muessen: 'Wir sind eine Crew. Wir suchen den Schatz zusammen. Und wir teilen ihn.' Dann setzt jeder seine Augenklappe auf (oder haelt sie hoch) — fertig. Dauer: unter einer Minute. Das ist Absicht."
+      }
+    ],
+    "rolesList": [
+      {
+        "emoji": "🗺️",
+        "name": "Karten-Pirat",
+        "function": "Darf die grosse Schatzkarte tragen und zeigen, wo das Kreuz ist. Bei jeder Station kurz hinhalten."
+      },
+      {
+        "emoji": "🧭",
+        "name": "Kompass-Pirat",
+        "function": "Haelt den (Spielzeug-)Kompass und 'zeigt' die Richtung an — in Wahrheit zeigt ein Erwachsener mit."
+      },
+      {
+        "emoji": "🪙",
+        "name": "Goldmuenzen-Pirat",
+        "function": "Sammelt gefundene Goldmuenzen in einem Beutel ein — wird am Ende gerecht auf alle verteilt."
+      },
+      {
+        "emoji": "🔍",
+        "name": "Spaeh-Pirat",
+        "function": "Darf als Erstes ums Eck schauen, ob die naechste Spur kommt. Gut für vorsichtige Kinder."
+      },
+      {
+        "emoji": "🧵",
+        "name": "Knoten-Pirat",
+        "function": "Haelt das dicke Seil, an dem sich die Crew durch enge Stellen 'festhaelt'. Macht aus Warten ein Spiel."
+      },
+      {
+        "emoji": "🏴‍☠️",
+        "name": "Flaggen-Pirat",
+        "function": "Traegt die Piratenflagge (Stoff am Stock) voran. Beliebte Rolle, gut für das Geburtstagskind."
+      },
+      {
+        "emoji": "🚢",
+        "name": "Steuer-Pirat",
+        "function": "Darf 'das Schiff steuern' — bei Lauf-Spielen vorne stehen und die Richtung ansagen."
+      },
+      {
+        "emoji": "🥜",
+        "name": "Proviant-Pirat",
+        "function": "Hilft beim Decken des Tisches und verteilt die 'Schiffszwieback'-Kekse. Holt zoegerliche Kinder ins Geschehen."
+      }
+    ],
+    "optOutNote": "Kein Kind muss eine Rolle uebernehmen, und niemand muss die Augenklappe tragen. Manche 3-Jaehrige finden die Klappe doof oder bekommen Angst, wenn ein Auge bedeckt ist — dann reicht das Stirnband oder gar nichts. Wer nicht in den Kreis will, schaut von Mamas Schoss aus zu und ist trotzdem Teil der Crew. Rollen sind ein Angebot, kein Pflicht-Programm. Bei den Spielen gewinnt niemand und verliert niemand — der Schatz gehoert am Ende allen.",
+    "materialNote": "Pflicht: eine Augenklappe pro Kind (mit Namen) und eine Schatzkisten-Urkunde zum Mitnehmen. Sinnvoll: ein Piraten-Hut oder Bandana pro Kind und eine grosse Schatzkarte (DIN A3). Die Schatzkiste ist ein beklebter Schuhkarton — nichts muss gekauft werden. Ritual-Schatz = Plastik-Goldmuenzen (essen-unabhaengig, keine Aspiration). Schoko-Goldmuenzen NUR am Esstisch unter Aufsicht servieren, NICHT im Such-Spiel der 3-Jaehrigen: eine pro Kind plus drei Reserve, falls eine zerbroeselt."
+  },
+  "ageInsight": {
+    "headline": "Was 3-5-Jaehrige ausmacht — und was das für die Piraten-Party heisst",
+    "traits": [
+      {
+        "topic": "Aufmerksamkeit",
+        "detail": "10-15 Minuten pro Aktion, dann kippt die Stimmung. Kurze Schatzspur, schnelle Erfolge, oft den Takt wechseln — lieber drei Mini-Etappen als eine lange Suche."
+      },
+      {
+        "topic": "Wettbewerb",
+        "detail": "3-5 verlieren noch nicht gern und verstehen Regeln nur halb. Darum: keine Sieger, keine Punkte. Alle finden den Schatz GEMEINSAM, das Gold wird geteilt. Konkurrenz fuehrt in dem Alter direkt zu Traenen."
+      },
+      {
+        "topic": "Angst & Gruseliges",
+        "detail": "Skelett-Piraten, Geister, dunkle Hoehlen, Saebel-Kaempfe — alles zu viel. Was bei 8-Jaehrigen spannend ist, ist bei 3-Jaehrigen ein Grund zu weinen. Piraten bleiben hier freundliche Schatzsucher."
+      },
+      {
+        "topic": "Naehe zu Erwachsenen",
+        "detail": "Bei 3-5 bleiben die Eltern dabei — keine Absetz-Party. Fremde Wohnung, Kostuem, viele Kinder: Das ist genug Aufregung. Ein vertrauter Erwachsener pro ein, zwei Kindern macht den Unterschied."
+      },
+      {
+        "topic": "Feinmotorik",
+        "detail": "Schere und Stift gehen, aber grob. Goldmuenzen aufsammeln, Stempel auf die Schatzkarte druecken, dicke Knoten anfassen — ja. Filigranes Basteln — nein, das frustriert."
+      },
+      {
+        "topic": "Rollenspiel",
+        "detail": "Mit 3 faengt das So-tun-als-ob an, mit 5 ist es voll da. 'Wir sind Piraten und suchen den Schatz' tragen Kinder erstaunlich weit — wenn ein Erwachsener das Spiel mitspielt und nicht nur zusieht."
+      },
+      {
+        "topic": "Hunger & Pausen",
+        "detail": "Nach spaetestens 45 Minuten Aktion kommt der Kuchen, sonst Meltdown. Der Essens-Slot ist kein Lueckenfueller, sondern fester Anker im Ablauf — plan ihn frueh ein."
+      },
+      {
+        "name": "Schluck- & Erstickungsgefahr",
+        "detail": "3-Jaehrige nehmen alles in den Mund. Mini-Dinos/-Tiere mindestens 3 cm, keine runden harten Suessigkeiten (Schoko-Goldmuenzen, Gummibaerchen) als Such-/Spielobjekte. Bei Schoko-Goldmuenzen am Esstisch: Folie abziehen, Aufsicht. Klopapierrollen-Test als Pflicht-Check."
+      }
+    ],
+    "whyMottoFitsHeadline": "Warum Piraten für 3-5 funktionieren",
+    "whyMottoFits": "Piraten sind eines der ersten grossen Fantasie-Themen, das Kinder ab 3 von selbst aufgreifen — Augenklappe, Schatz, 'Land in Sicht'. Das Gute daran: Die Kern-Idee ist eine Suche, und Suchen koennen schon Dreijaehrige. Eine Schatzspur durch die Wohnung ist ein klares Ziel mit eingebautem Happy End. Anders als bei aelteren Kindern braucht es hier keine Raetsel, keine Schiffs-Schlacht und keine Story mit Wendung — es reicht: Karte, Spur, Kiste, Gold. Genau diese Schlichtheit macht Piraten zum dankbarsten Motto für die kleinste Altersgruppe."
+  },
+  "variants": [
+    {
+      "id": "minimal",
+      "label": "Minimal — 90 Min., minimaler Aufwand",
+      "headline": "🏴‍☠️ Minimal — 90 Minuten Mini-Schatzsuche",
+      "intro": "Die ehrliche Sparvariante: 90 Minuten, 6 Kinder, eine Schatzsuche plus ein kurzes Bewegungsspiel und Kuchen. Kein Bastel-Stress, kaum Material. Genau das Richtige, wenn du das erste Mal feierst oder dir der Aufwand reicht, der reinpasst — mehr braucht ein Dreijaehriger nicht.",
+      "timeWindow": "15:00–16:30, 6 Kinder",
+      "schedule": [
+        {
+          "time": "15:00",
+          "title": "Ankunft + Mini-Piraten werden",
+          "description": "Jedes Kind bekommt eine Augenklappe (oder Stirnband) mit Namen. Kurzes Piraten-Versprechen im Kreis um die Schatzkarte."
+        },
+        {
+          "time": "15:10",
+          "title": "Kompass-Schiff",
+          "description": "Bewegungsspiel zum Ankommen — Energie raus, alle warm. Niemand scheidet aus."
+        },
+        {
+          "time": "15:25",
+          "title": "Die grosse Schatzspur",
+          "description": "Hauptspiel: die Crew folgt der Spur durch Wohnung oder Garten zur Schatzkiste und oeffnet sie gemeinsam."
+        },
+        {
+          "time": "15:45",
+          "title": "Piratenschiff-Kuchen",
+          "description": "Kuchen-Slot nach der ersten Aktion — satt werden, durchatmen. 'Piraten-Grog' (Apfelschorle) dazu."
+        },
+        {
+          "time": "16:10",
+          "title": "Goldmuenzen teilen + Urkunden",
+          "description": "Jedes Kind nimmt sich gleich viele Goldmuenzen, bekommt die Schatzkisten-Urkunde und sein Mitgebsel."
+        },
+        {
+          "time": "16:30",
+          "title": "Tschuess, Crew",
+          "description": "Klares Ende: gemeinsamer Abschluss, Eltern holen ab. Lieber aufhoeren, wenn es am schoensten ist."
+        }
+      ],
+      "games": [
+        {
+          "name": "🧭 Kompass-Schiff (Richtungs-Spiel)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "10 Min.",
+          "minAge": 3,
+          "loudness": "laut",
+          "effort": "leicht",
+          "material": "Genug freie Flaeche, optional ein Spielzeug-Kompass und ein Stofftuch als 'Flagge'.",
+          "prepText": "Eine freie Flaeche schaffen — Wohnzimmer, Flur oder Garten. Du bist der 'Kapitaen', die Kinder sind das Schiff, das deinen Richtungen folgt.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Kommandos lernen",
+              "content": "Du erklaerst: 'Kompass Norden' = alle gehen nach vorne, 'Land in Sicht' = alle bleiben stehen, 'Sturm' = alle wackeln."
+            },
+            {
+              "n": 2,
+              "name": "Langsam starten",
+              "content": "Erst nur zwei Kommandos, damit auch die Dreijaehrigen mitkommen. Du machst alles vor."
+            },
+            {
+              "n": 3,
+              "name": "Schneller werden",
+              "content": "Wenn es laeuft, Kommandos schneller wechseln — das Durcheinander ist genau der Spass. Niemand scheidet aus."
+            },
+            {
+              "n": 4,
+              "name": "Anlegen",
+              "content": "Zum Schluss: 'Wir legen an' — alle setzen sich auf den Boden. Guter Uebergang zum Kuchen oder naechsten Spiel."
+            }
+          ],
+          "safetyRule": "Vorher Stolperfallen wegraeumen (Spielzeug, Kabel, Teppichkanten). Bei 'Sturm' nicht zu wild — sonst stossen Kinder zusammen. Genug Abstand zwischen den 'Schiffen'.",
+          "ageAdjust3": "Nur zwei, drei Kommandos. Tempo langsam. Ein Erwachsener macht jede Bewegung mit, damit die Kleinen folgen koennen.",
+          "ageAdjust5": "Mehr Kommandos ('Anker werfen' = hinhocken, 'Mast hoch' = Arme strecken). 5-Jaehrige lieben es, wenn ein Kind selbst Kapitaen sein darf.",
+          "indoorTip": "Funktioniert auch auf kleiner Flaeche — dann eher Bewegungen auf der Stelle (wackeln, hocken, Arme hoch) statt Laufen.",
+          "outdoorTip": "Im Garten mit Laufen nach allen Seiten — da darf das 'Schiff' richtig Fahrt aufnehmen.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Ein Bewegungsspiel ohne Ausscheiden gibt den Kindern Energie-Auslass ohne Verlierer. Auf einfache Kommandos zu reagieren macht Spass und schult nebenbei das Zuhoeren. Perfekt als 'Wackel-Pause' zwischen ruhigeren Stationen."
+        },
+        {
+          "name": "🗺️ Die grosse Schatzspur",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "15 Min.",
+          "minAge": 3,
+          "loudness": "halblaut",
+          "effort": "leicht",
+          "material": "8-12 Goldmuenzen oder Pfeil-Markierungen (aus Papier), eine grosse Schatzkarte, die beklebte Schatzkiste mit Goldmuenzen drin.",
+          "prepText": "Vorher legst du eine Spur durch Wohnung oder Garten — Goldmuenzen oder Papier-Pfeile als Wegmarken. Die Spur endet bei der versteckten Schatzkiste. Nicht zu lang und nicht zu gut versteckt: 3-Jaehrige verlieren nach 5 Minuten die Geduld.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Karte zeigen",
+              "content": "Du zeigst die grosse Schatzkarte: 'Hier ist das Kreuz — da liegt der Schatz. Findet ihr den Weg?'"
+            },
+            {
+              "n": 2,
+              "name": "Erste Marke finden",
+              "content": "Die Crew sucht die erste Goldmuenze/den ersten Pfeil. Ein Erwachsener hilft mit Blicken, nicht mit Worten."
+            },
+            {
+              "n": 3,
+              "name": "Spur folgen",
+              "content": "Von Marke zu Marke geht es weiter — jedes Kind darf mal die naechste zuerst entdecken, damit niemand zu kurz kommt."
+            },
+            {
+              "n": 4,
+              "name": "Kiste finden",
+              "content": "Am Ende der Spur liegt die Schatzkiste. Alle suchen kurz, dann darf das Geburtstagskind sie 'finden' und herausholen."
+            },
+            {
+              "n": 5,
+              "name": "Gemeinsam oeffnen",
+              "content": "Die Kiste wird im Kreis geoeffnet, jedes Kind nimmt sich eine Goldmuenze — gleich viele für alle."
+            }
+          ],
+          "safetyRule": "Schoko-Goldmuenzen sind bei 3-Jaehrigen Erstickungsrisiko (klein, rund, hart, Folie). Für Tauchspiel/Suchspiel: Plastik-Muenzen statt Schoko-Muenzen. Schoko-Muenzen nur zum Essen unter Sicht-Aufsicht; Folien sofort wegsammeln.",
+          "ageAdjust3": "Spur kurz halten (6-8 Marken), Endpunkt sichtbar verstecken. Ein Erwachsener geht voran und 'sucht mit'.",
+          "ageAdjust5": "Spur laenger, zwei, drei Etappen mit Mini-Aufgabe dazwischen ('Klatscht dreimal, dann geht's weiter'). Karte selbst halten lassen.",
+          "indoorTip": "In 60-75 m2 geht die Spur ueber 2-3 Raeume — ums Sofa, durch den Flur, in die Garderobe. Reicht voellig.",
+          "outdoorTip": "Im Garten oder Park die Spur um Baeume und Buesche legen — das 'Suchen' wird automatisch spannender. Bei Wind die Papier-Pfeile beschweren.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Eine Suche hat ein klares Ziel und ein eingebautes Happy End — das verstehen schon Dreijaehrige. Weil alle gemeinsam suchen und das Gold geteilt wird, gibt es keine Verlierer und keine Traenen. Das ist das Herzstueck jeder Piraten-Party für die Kleinen."
+        }
+      ],
+      "food": "🎂 Piratenschiff-Kuchen (Kastenkuchen mit Papier-Segel) — reicht für 6 Kinder. 🥛 'Piraten-Grog' (Apfelschorle in Karaffen). 🍎 Obst-Haeppchen (bei 3-4-Jaehrigen ohne Spiess) als 'Schatz-Haeppchen'. Schlicht und satt machend — mehr ist bei 90 Minuten nicht noetig.",
+      "decoration": "🏴‍☠️ Ein, zwei blaue Tücher als 'Meer' und die grosse Schatzkarte in der Mitte. Mehr braucht es nicht — Kinder achten auf die Spiele, nicht die Deko.",
+      "giveaways": "🪙 Pro Kind ein paar Schoko-Goldmuenzen + die Schatzkisten-Urkunde. Optional ein Mini-Mitgebsel. Klein halten — das Erlebnis ist das Geschenk.",
+      "shoppingList": [
+        {
+          "emoji": "👁️",
+          "label": "Augenklappen (12er-Set)",
+          "url": "https://www.amazon.de/s?k=augenklappe+pirat+kinder+set&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Das zentrale Kostuem-Teil und gleichzeitig Mitgebsel — macht aus jedem Kind sofort einen Mini-Piraten."
+        },
+        {
+          "emoji": "🪙",
+          "label": "Schoko-Goldmuenzen (Beutel)",
+          "url": "https://www.amazon.de/s?k=schoko+goldmuenzen+kinder&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Der eigentliche Schatz — ohne Gold keine Schatzsuche. Eine pro Kind plus Reserve einplanen."
+        },
+        {
+          "emoji": "🖨️",
+          "label": "Schatzkisten-Urkunde (Druckvorlage/Block)",
+          "url": "https://www.amazon.de/s?k=piraten+urkunde+kinder&tag=machsleicht-21",
+          "priceEur": 3,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Das Ende-Ritual zum Mitnehmen — gibt der Party einen Abschluss und dem Kind ein Andenken."
+        },
+        {
+          "emoji": "🥛",
+          "label": "Apfelschorle / Saft für 'Piraten-Grog'",
+          "url": "https://www.amazon.de/s?k=apfelschorle+kinder&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Getraenk für 6 Kinder — als 'Grog' getauft kostet es nichts extra und macht Stimmung."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Zutaten Kastenkuchen (Mehl, Butter, Eier, Zucker)",
+          "url": "https://www.amazon.de/s?k=backzutaten+kastenkuchen&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Basis für den Piratenschiff-Kuchen — meist teilweise im Haus, daher guenstig."
+        },
+        {
+          "emoji": "📦",
+          "label": "Tonkarton / Goldfolie für Schatzkiste",
+          "url": "https://www.amazon.de/s?k=tonkarton+goldfolie+bastel&tag=machsleicht-21",
+          "priceEur": 3,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Macht aus einem Schuhkarton die Schatzkiste. Reste reichen — wer Bastelmaterial hat, braucht nichts kaufen."
+        },
+        {
+          "emoji": "🏴‍☠️",
+          "label": "Piratenhuete oder Bandanas (6er-Set)",
+          "url": "https://www.amazon.de/s?k=piraten+hut+kinder+set&tag=machsleicht-21",
+          "priceEur": 7,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Verstaerkt das Kostuem für Kinder, die keine Augenklappe moegen — nicht zwingend, aber stimmungsvoll."
+        },
+        {
+          "emoji": "🧻",
+          "label": "Piraten-Servietten + Pappteller",
+          "url": "https://www.amazon.de/s?k=piraten+servietten+pappteller&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Tischdeko mit wenig Aufwand — macht aus dem Esstisch das Piratenschiff. Optional."
+        },
+        {
+          "emoji": "📸",
+          "label": "Spielzeug-Kompass",
+          "url": "https://www.amazon.de/s?k=spielzeug+kompass+kinder&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "habIchVielleicht",
+          "categoryReasoning": "Nettes Requisit für das Kompass-Spiel — oft schon in der Spielkiste. Tut's auch ohne."
+        },
+        {
+          "emoji": "🧵",
+          "label": "Dickes Seil / Springseil",
+          "url": "https://www.amazon.de/s?k=springseil+kinder+dick&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "habIchVielleicht",
+          "categoryReasoning": "Für das Crew-am-Tau-Spiel — ein vorhandenes Springseil oder Waescheleine reicht voellig."
+        }
+      ],
+      "estimatedCostEur": 35,
+      "costContext": "Geschaetzte Kosten (Minimal, 6 Kinder)",
+      "savingsTip": {
+        "title": "Schuhkarton, Stifte und Seil hast du wahrscheinlich schon",
+        "body": "Schatzkiste aus dem Schuhkarton, Schatzkarte selbst gemalt, Seil aus der Spielkiste — wer aus dem Bestand schoepft, druckt die 35 € locker auf 20-25 €. Die Augenklappen und Goldmuenzen sind die einzigen echten Pflicht-Kaeufe. Kinder merken den Unterschied zwischen gekaufter und gemalter Karte ueberhaupt nicht."
+      }
+    },
+    {
+      "id": "standard",
+      "label": "Standard — 2 Std., Sweet Spot",
+      "headline": "🏴‍☠️ Standard — 2 Stunden, vier Stationen",
+      "intro": "Die ausgewogene Variante: 2 Stunden, 6 Kinder, vier Stationen + 1 Reserve-Spiel (Schatzinsel-Huepfen als optionaler Puffer wenn Tempo es zulaesst) mit Kuchen-Pause in der Mitte. Genug Programm, dass keine Langeweile aufkommt, aber kein Stress beim Vorbereiten. Das ist der Sweet Spot für die meisten Familien — abwechslungsreich, aber machbar.",
+      "timeWindow": "15:00–17:00, 6 Kinder",
+      "schedule": [
+        {
+          "time": "15:00",
+          "title": "Ankunft + Mini-Piraten werden",
+          "description": "Augenklappen mit Namen, kurzes Piraten-Versprechen um die Schatzkarte. Ankommen lassen, niemanden draengen."
+        },
+        {
+          "time": "15:15",
+          "title": "Kompass-Schiff",
+          "description": "Bewegungsspiel zum Warmwerden — alle in Fahrt, Energie raus."
+        },
+        {
+          "time": "15:30",
+          "title": "Goldmuenzen-Tauchen",
+          "description": "Ruhigere Station: die Crew birgt das ins Meer gefallene Gold und sammelt es in der Kiste."
+        },
+        {
+          "time": "15:50",
+          "title": "Piratenschiff-Kuchen",
+          "description": "Fester Kuchen-Slot nach 45 Minuten Aktion — satt werden, bevor die Stimmung kippt."
+        },
+        {
+          "time": "16:15",
+          "title": "Die grosse Schatzspur",
+          "description": "Das Highlight: gemeinsam der Spur folgen, die Schatzkiste finden und im Kreis oeffnen."
+        },
+        {
+          "time": "16:40",
+          "title": "Crew am Tau",
+          "description": "Letztes ruhiges Spiel als Ausklang — alle am Seil 'zurück zum Hafen'."
+        },
+        {
+          "time": "16:55",
+          "title": "Gold teilen, Urkunden, Tschuess",
+          "description": "Goldmuenzen gerecht aufteilen, Urkunde und Mitgebsel verteilen, klarer Abschluss."
+        }
+      ],
+      "games": [
+        {
+          "name": "🧭 Kompass-Schiff (Richtungs-Spiel)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "10 Min.",
+          "minAge": 3,
+          "loudness": "laut",
+          "effort": "leicht",
+          "material": "Genug freie Flaeche, optional ein Spielzeug-Kompass und ein Stofftuch als 'Flagge'.",
+          "prepText": "Eine freie Flaeche schaffen — Wohnzimmer, Flur oder Garten. Du bist der 'Kapitaen', die Kinder sind das Schiff, das deinen Richtungen folgt.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Kommandos lernen",
+              "content": "Du erklaerst: 'Kompass Norden' = alle gehen nach vorne, 'Land in Sicht' = alle bleiben stehen, 'Sturm' = alle wackeln."
+            },
+            {
+              "n": 2,
+              "name": "Langsam starten",
+              "content": "Erst nur zwei Kommandos, damit auch die Dreijaehrigen mitkommen. Du machst alles vor."
+            },
+            {
+              "n": 3,
+              "name": "Schneller werden",
+              "content": "Wenn es laeuft, Kommandos schneller wechseln — das Durcheinander ist genau der Spass. Niemand scheidet aus."
+            },
+            {
+              "n": 4,
+              "name": "Anlegen",
+              "content": "Zum Schluss: 'Wir legen an' — alle setzen sich auf den Boden. Guter Uebergang zum Kuchen oder naechsten Spiel."
+            }
+          ],
+          "safetyRule": "Vorher Stolperfallen wegraeumen (Spielzeug, Kabel, Teppichkanten). Bei 'Sturm' nicht zu wild — sonst stossen Kinder zusammen. Genug Abstand zwischen den 'Schiffen'.",
+          "ageAdjust3": "Nur zwei, drei Kommandos. Tempo langsam. Ein Erwachsener macht jede Bewegung mit, damit die Kleinen folgen koennen.",
+          "ageAdjust5": "Mehr Kommandos ('Anker werfen' = hinhocken, 'Mast hoch' = Arme strecken). 5-Jaehrige lieben es, wenn ein Kind selbst Kapitaen sein darf.",
+          "indoorTip": "Funktioniert auch auf kleiner Flaeche — dann eher Bewegungen auf der Stelle (wackeln, hocken, Arme hoch) statt Laufen.",
+          "outdoorTip": "Im Garten mit Laufen nach allen Seiten — da darf das 'Schiff' richtig Fahrt aufnehmen.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Ein Bewegungsspiel ohne Ausscheiden gibt den Kindern Energie-Auslass ohne Verlierer. Auf einfache Kommandos zu reagieren macht Spass und schult nebenbei das Zuhoeren. Perfekt als 'Wackel-Pause' zwischen ruhigeren Stationen."
+        },
+        {
+          "name": "🪙 Goldmuenzen-Tauchen",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "10 Min.",
+          "minAge": 3,
+          "loudness": "halblaut",
+          "effort": "leicht",
+          "material": "Grosse Schuessel oder Wanne, Wasser oder trockene Fuellung (Sand, zerknuelltes Papier, getrocknete Erbsen), Schoko-Goldmuenzen in Folie oder Plastik-Muenzen, Handtuecher.",
+          "prepText": "TROCKENE Variante als Default (Tüchern auf dem Boden, Muenzen darunter): sicher für 3-Jaehrige. Eine grosse Schuessel mit lauwarmem Wasser fuellen (oder trocken mit Sand/Papier, falls Wasser zu viel Chaos macht). Goldmuenzen reinwerfen. Handtuecher danebenlegen — es wird nass.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Schatz im Meer",
+              "content": "Du erzaehlst: 'Das Gold ist ins Meer gefallen — wer hilft, es wieder rauszuholen?'"
+            },
+            {
+              "n": 2,
+              "name": "Reihum tauchen",
+              "content": "Ein Kind nach dem anderen 'taucht' mit der Hand und holt eine Muenze raus. Kurze Wartezeit, damit keiner draengelt."
+            },
+            {
+              "n": 3,
+              "name": "In die Kiste",
+              "content": "Jede gefundene Muenze wandert in die gemeinsame Schatzkiste — nicht in die eigene Tasche."
+            },
+            {
+              "n": 4,
+              "name": "Bis leer",
+              "content": "Weiter, bis alle Muenzen geborgen sind. Dann darf jedes Kind sich gleich viele aus der Kiste nehmen."
+            }
+          ],
+          "safetyRule": "Bei Wasser: kleine Kinder nie unbeaufsichtigt an der Schuessel. Boden mit Handtuch auslegen — Rutschgefahr durch Spritzer. Schoko-Muenzen danach essen, Plastik-Muenzen nicht in den Mund.",
+          "ageAdjust3": "Trockene Variante (Sand/Papier) ist für Dreijaehrige sauberer und stressfreier. Grosse, leicht greifbare Muenzen nehmen.",
+          "ageAdjust5": "Mit Wasser und mehr Muenzen — 5-Jaehrige finden das Planschen super. Eine kleine 'Schatzkarte' dazu, auf der abgehakt wird, wie viel schon geborgen ist.",
+          "indoorTip": "Im Bad oder in der Kueche spielen, wo der Boden wischbar ist. Ein altes Handtuch unter die Schuessel.",
+          "outdoorTip": "Im Garten ist das ideal — da darf gespritzt werden. An warmen Tagen ein echtes Highlight.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Tauchen und Greifen ist sinnlich und braucht keine Regeln — perfekt für 3-5. Weil jede Muenze in die gemeinsame Kiste geht und am Ende geteilt wird, bleibt es kooperativ. Der Wasser-Effekt macht aus einer simplen Greif-Aufgabe ein kleines Abenteuer."
+        },
+        {
+          "name": "🗺️ Die grosse Schatzspur",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "15 Min.",
+          "minAge": 3,
+          "loudness": "halblaut",
+          "effort": "leicht",
+          "material": "8-12 Goldmuenzen oder Pfeil-Markierungen (aus Papier), eine grosse Schatzkarte, die beklebte Schatzkiste mit Goldmuenzen drin.",
+          "prepText": "Vorher legst du eine Spur durch Wohnung oder Garten — Goldmuenzen oder Papier-Pfeile als Wegmarken. Die Spur endet bei der versteckten Schatzkiste. Nicht zu lang und nicht zu gut versteckt: 3-Jaehrige verlieren nach 5 Minuten die Geduld.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Karte zeigen",
+              "content": "Du zeigst die grosse Schatzkarte: 'Hier ist das Kreuz — da liegt der Schatz. Findet ihr den Weg?'"
+            },
+            {
+              "n": 2,
+              "name": "Erste Marke finden",
+              "content": "Die Crew sucht die erste Goldmuenze/den ersten Pfeil. Ein Erwachsener hilft mit Blicken, nicht mit Worten."
+            },
+            {
+              "n": 3,
+              "name": "Spur folgen",
+              "content": "Von Marke zu Marke geht es weiter — jedes Kind darf mal die naechste zuerst entdecken, damit niemand zu kurz kommt."
+            },
+            {
+              "n": 4,
+              "name": "Kiste finden",
+              "content": "Am Ende der Spur liegt die Schatzkiste. Alle suchen kurz, dann darf das Geburtstagskind sie 'finden' und herausholen."
+            },
+            {
+              "n": 5,
+              "name": "Gemeinsam oeffnen",
+              "content": "Die Kiste wird im Kreis geoeffnet, jedes Kind nimmt sich eine Goldmuenze — gleich viele für alle."
+            }
+          ],
+          "safetyRule": "Schoko-Goldmuenzen sind bei 3-Jaehrigen Erstickungsrisiko (klein, rund, hart, Folie). Für Tauchspiel/Suchspiel: Plastik-Muenzen statt Schoko-Muenzen. Schoko-Muenzen nur zum Essen unter Sicht-Aufsicht; Folien sofort wegsammeln.",
+          "ageAdjust3": "Spur kurz halten (6-8 Marken), Endpunkt sichtbar verstecken. Ein Erwachsener geht voran und 'sucht mit'.",
+          "ageAdjust5": "Spur laenger, zwei, drei Etappen mit Mini-Aufgabe dazwischen ('Klatscht dreimal, dann geht's weiter'). Karte selbst halten lassen.",
+          "indoorTip": "In 60-75 m2 geht die Spur ueber 2-3 Raeume — ums Sofa, durch den Flur, in die Garderobe. Reicht voellig.",
+          "outdoorTip": "Im Garten oder Park die Spur um Baeume und Buesche legen — das 'Suchen' wird automatisch spannender. Bei Wind die Papier-Pfeile beschweren.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Eine Suche hat ein klares Ziel und ein eingebautes Happy End — das verstehen schon Dreijaehrige. Weil alle gemeinsam suchen und das Gold geteilt wird, gibt es keine Verlierer und keine Traenen. Das ist das Herzstueck jeder Piraten-Party für die Kleinen."
+        },
+        {
+          "name": "🧵 Crew am Tau (Festhalte-Spiel)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "8 Min.",
+          "minAge": 3,
+          "loudness": "halblaut",
+          "effort": "leicht",
+          "material": "Ein dickes Seil oder Springseil (2-3 m), an dem sich alle festhalten koennen.",
+          "prepText": "Ein dickes Seil bereitlegen. Es wird zur 'Schiffs-Leine', an der sich die ganze Crew durch die Wohnung oder den Garten bewegt — gut, um Kinder von A nach B zu fuehren, ohne dass sie auseinanderlaufen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Anseilen",
+              "content": "Jedes Kind haelt das Seil mit einer Hand: 'Damit keiner ueber Bord geht, halten wir uns alle am Tau.'"
+            },
+            {
+              "n": 2,
+              "name": "Losfahren",
+              "content": "Du fuehrst die Crew langsam durch den Raum — 'um die Klippe', 'durch den Sturm', zur naechsten Station."
+            },
+            {
+              "n": 3,
+              "name": "Wellen machen",
+              "content": "Zwischendurch das Seil leicht auf und ab wackeln — 'Wellen!' — alle wackeln mit. Kurzer Spass-Moment."
+            }
+          ],
+          "safetyRule": "Seil nie um Hals oder Handgelenk wickeln — nur lose festhalten. Langsam fuehren, nicht ziehen. Bei Sturz Seil sofort loslassen lassen.",
+          "ageAdjust3": "Kurze Strecke, sehr langsam. Erwachsener vorne UND hinten, damit kein Kind den Anschluss verliert.",
+          "ageAdjust5": "Laengere 'Reise' mit kleinen Stationen unterwegs. Ein Kind darf abwechselnd 'Kapitaen' an der Spitze sein.",
+          "indoorTip": "Ideal als Uebergang zwischen zwei Raeumen — macht aus 'wir gehen jetzt rueber' ein Spiel statt Gewusel.",
+          "outdoorTip": "Im Garten ueber 'Wellen' (Huegel) und 'um Klippen' (Baeume) — wird zur kleinen Schiffsreise.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Das Tau loest das Klassik-Problem jeder Kleinkind-Party: Wie bringe ich sechs Dreijaehrige gemeinsam von A nach B, ohne dass drei abbiegen? Aus Logistik wird ein Spiel. Und das gemeinsame Festhalten gibt unsicheren Kindern Halt — woertlich."
+        },
+        {
+          "name": "🏝️ Schatzinsel-Huepfen (Boden-ist-Meer)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "8 Min.",
+          "minAge": 3,
+          "loudness": "halblaut",
+          "effort": "leicht",
+          "material": "5-7 grosse Kissen, Decken oder Teppichfliesen als 'Inseln'. Optional ein blaues Tuch als 'Meer' rundherum.",
+          "prepText": "Kissen oder Teppichfliesen als 'Inseln' im Raum auslegen — gerade so weit auseinander, dass ein Dreijaehriger gut von einer zur naechsten kommt. Der Boden dazwischen ist 'Meer'. Wer ins Meer faellt, wird vom Erwachsenen wieder 'rausgefischt' — niemand scheidet aus.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Inseln verteilen",
+              "content": "Die Kissen oder Decken so legen, dass auch der kleinste Pirat ohne Sprung von Insel zu Insel kommt — Schritte reichen, kein Hechtsprung noetig."
+            },
+            {
+              "n": 2,
+              "name": "Spielregel erzaehlen",
+              "content": "Du sagst: 'Achtung Crew, das Schiff sinkt — schnell auf die Inseln! Der Boden ist Meer, da schwimmen Haie.' Kurze Geschichte, klare Regel."
+            },
+            {
+              "n": 3,
+              "name": "Wandern zwischen Inseln",
+              "content": "Die Kinder wandern reihum von Insel zu Insel. Du gibst Kommandos: 'Alle auf die rote Insel!' — kleines Sortierspiel, das die Gruppe lenkt."
+            },
+            {
+              "n": 4,
+              "name": "Rettung im Meer",
+              "content": "Wer aus Versehen ins 'Meer' tritt, wird laut 'gerettet' — ein Erwachsener hebt das Kind kurz auf die naechste Insel. Kein Verlierer, sondern eine Mini-Show."
+            }
+          ],
+          "safetyRule": "Inseln mit Anti-Rutsch-Unterlage oder rutschfest auf Teppich auslegen — sonst schiessen Kissen unter den Fuessen weg. Genug Abstand zwischen den Inseln, damit Kinder nicht zusammenstossen. Keine Tisch- oder Stuhlkanten in Reichweite.",
+          "ageAdjust3": "Inseln dicht nebeneinander, fast wie ein Pfad — ein Schritt reicht. Erwachsener begleitet jedes Kind beim ersten Durchgang.",
+          "ageAdjust5": "Inseln weiter auseinander, kleine Spruenge erlaubt. Mit Musik dazu — Stopp = jeder muss auf einer Insel stehen, sonst ins Meer.",
+          "indoorTip": "Wohnzimmer-Klassiker — Sofakissen funktionieren am besten. Vorher Glastisch oder zerbrechliche Deko aus dem Weg raeumen.",
+          "outdoorTip": "Im Garten Hula-Hoop-Reifen oder Picknickdecken als Inseln. Bei Wind die Decken mit Steinen beschweren.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Boden-ist-Lava-Spiele sind ein 3-5-Klassiker, der in der Piraten-Welt von selbst Sinn macht: Inseln und Meer brauchen keine Erklaerung. Es ist Bewegung mit klarer Geschichte, ohne Wettbewerb und ohne Ausscheiden — und die 'Rettung' aus dem Meer ist für Dreijaehrige der Lieblings-Moment."
+        }
+      ],
+      "food": "🎂 Piratenschiff-Kuchen. 🥛 'Piraten-Grog' (Apfelschorle). 🍪 'Schiffszwieback' (einfache Butterkekse). 🍎 Obst-Haeppchen (bei 3-4-Jaehrigen ohne Spiess). 🧀 Kaese-Würfel als 'Proviant'. Eine Handvoll herzhafter Snacks neben dem Kuchen — gut, weil 2 Stunden mit nur Kuchen zu suess werden.",
+      "decoration": "🏴‍☠️ Blaue Tücher als Meer, ein, zwei Piratenflaggen, Schatzkarte in der Mitte und Piraten-Servietten auf dem Tisch. Stimmungsvoll, aber in 20 Minuten aufgebaut.",
+      "giveaways": "🪙 Mitgebsel-Tuete pro Kind: Goldmuenzen, Mini-Spielzeug, Schatzkisten-Urkunde. Wer mag, legt die Augenklappe als Andenken dazu.",
+      "shoppingList": [
+        {
+          "emoji": "👁️",
+          "label": "Augenklappen (12er-Set)",
+          "url": "https://www.amazon.de/s?k=augenklappe+pirat+kinder+set&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Das zentrale Kostuem-Teil und gleichzeitig Mitgebsel — macht aus jedem Kind sofort einen Mini-Piraten."
+        },
+        {
+          "emoji": "🪙",
+          "label": "Schoko-Goldmuenzen (Beutel)",
+          "url": "https://www.amazon.de/s?k=schoko+goldmuenzen+kinder&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Der eigentliche Schatz — ohne Gold keine Schatzsuche. Eine pro Kind plus Reserve einplanen."
+        },
+        {
+          "emoji": "🖨️",
+          "label": "Schatzkisten-Urkunde (Druckvorlage/Block)",
+          "url": "https://www.amazon.de/s?k=piraten+urkunde+kinder&tag=machsleicht-21",
+          "priceEur": 3,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Das Ende-Ritual zum Mitnehmen — gibt der Party einen Abschluss und dem Kind ein Andenken."
+        },
+        {
+          "emoji": "🥛",
+          "label": "Apfelschorle / Saft für 'Piraten-Grog'",
+          "url": "https://www.amazon.de/s?k=apfelschorle+kinder&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Getraenk für 6 Kinder — als 'Grog' getauft kostet es nichts extra und macht Stimmung."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Zutaten Kastenkuchen (Mehl, Butter, Eier, Zucker)",
+          "url": "https://www.amazon.de/s?k=backzutaten+kastenkuchen&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Basis für den Piratenschiff-Kuchen — meist teilweise im Haus, daher guenstig."
+        },
+        {
+          "emoji": "📦",
+          "label": "Tonkarton / Goldfolie für Schatzkiste",
+          "url": "https://www.amazon.de/s?k=tonkarton+goldfolie+bastel&tag=machsleicht-21",
+          "priceEur": 3,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Macht aus einem Schuhkarton die Schatzkiste. Reste reichen — wer Bastelmaterial hat, braucht nichts kaufen."
+        },
+        {
+          "emoji": "🏴‍☠️",
+          "label": "Piratenhuete oder Bandanas (6er-Set)",
+          "url": "https://www.amazon.de/s?k=piraten+hut+kinder+set&tag=machsleicht-21",
+          "priceEur": 7,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Verstaerkt das Kostuem für Kinder, die keine Augenklappe moegen — nicht zwingend, aber stimmungsvoll."
+        },
+        {
+          "emoji": "🧻",
+          "label": "Piraten-Servietten + Pappteller",
+          "url": "https://www.amazon.de/s?k=piraten+servietten+pappteller&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Tischdeko mit wenig Aufwand — macht aus dem Esstisch das Piratenschiff. Optional."
+        },
+        {
+          "emoji": "🗺️",
+          "label": "Papier für Schatzkarten + Stempel-Set",
+          "url": "https://www.amazon.de/s?k=kinder+stempel+set+bastel&tag=machsleicht-21",
+          "priceEur": 7,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Für die Bastel-Station Schatzkarten. Stempel sind wiederverwendbar — lohnt sich auch für spaeter."
+        },
+        {
+          "emoji": "🍬",
+          "label": "Mitgebsel-Kleinkram (Mini-Spielzeug)",
+          "url": "https://www.amazon.de/s?k=mitgebsel+kinder+piraten&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Fuellt die Mitgebsel-Tueten neben den Goldmuenzen. Klein halten — bei 3-5 zaehlt nicht die Menge."
+        },
+        {
+          "emoji": "📸",
+          "label": "Spielzeug-Kompass",
+          "url": "https://www.amazon.de/s?k=spielzeug+kompass+kinder&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "habIchVielleicht",
+          "categoryReasoning": "Nettes Requisit für das Kompass-Spiel — oft schon in der Spielkiste. Tut's auch ohne."
+        },
+        {
+          "emoji": "🧵",
+          "label": "Dickes Seil / Springseil",
+          "url": "https://www.amazon.de/s?k=springseil+kinder+dick&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "habIchVielleicht",
+          "categoryReasoning": "Für das Crew-am-Tau-Spiel — ein vorhandenes Springseil oder Waescheleine reicht voellig."
+        }
+      ],
+      "estimatedCostEur": 55,
+      "costContext": "Geschaetzte Kosten (Standard, 6 Kinder)",
+      "savingsTip": {
+        "title": "Snacks und Deko aus dem Vorrat",
+        "body": "Butterkekse, Kaese und Obst sind meist im Haus — die musst du nicht extra als 'Piraten-Proviant' kaufen, nur umtaufen. Servietten und Flaggen kann man wiederverwenden oder aus Papier selbst basteln. So bleiben von den 55 € realistisch 40-45 € uebrig für Augenklappen, Gold und Kuchen."
+      }
+    },
+    {
+      "id": "wow",
+      "label": "Wow — 2 Std., Bastel-Highlight",
+      "headline": "🏴‍☠️ Wow — 2 Stunden mit eigener Schatzkarte",
+      "intro": "Die Variante mit dem Extra: Jedes Kind bastelt seine eigene Schatzkarte und nimmt sie mit nach Hause. Dazu die volle Schatzsuche, mehr Deko und ein liebevoll gedeckter Tisch. Mehr Vorbereitung, aber das Bastel-Highlight bleibt den Kindern im Kopf — und du hast ein selbstgemachtes Mitgebsel ohne Plastik-Kram.",
+      "timeWindow": "15:00–17:00, 6 Kinder",
+      "schedule": [
+        {
+          "time": "15:00",
+          "title": "Ankunft + Mini-Piraten werden",
+          "description": "Augenklappen mit Namen, Piraten-Versprechen um die grosse Schatzkarte. Liebevoll geschmueckter Empfang."
+        },
+        {
+          "time": "15:15",
+          "title": "Kompass-Schiff",
+          "description": "Bewegungsspiel zum Ankommen — Energie raus, bevor es ans Basteln geht."
+        },
+        {
+          "time": "15:30",
+          "title": "Schatzkarte stempeln & gestalten",
+          "description": "Das Wow-Highlight: jedes Kind gestaltet seine eigene Karte mit Stempeln und Stiften. Ruhige, konzentrierte Phase."
+        },
+        {
+          "time": "15:55",
+          "title": "Piratenschiff-Kuchen",
+          "description": "Kuchen-Slot nach Bewegung und Basteln — jetzt brauchen alle eine Pause und was im Bauch."
+        },
+        {
+          "time": "16:20",
+          "title": "Die grosse Schatzspur",
+          "description": "Die Crew folgt der Spur — mit ihren selbstgebastelten Karten in der Hand — zur Schatzkiste."
+        },
+        {
+          "time": "16:45",
+          "title": "Gold teilen + Urkunden",
+          "description": "Schatzkiste gemeinsam oeffnen, Gold gerecht teilen, Urkunde und die eigene Karte einpacken."
+        },
+        {
+          "time": "17:00",
+          "title": "Tschuess, Crew",
+          "description": "Klarer Abschluss — jedes Kind geht mit eigener Schatzkarte, Gold und Urkunde nach Hause."
+        }
+      ],
+      "games": [
+        {
+          "name": "🧭 Kompass-Schiff (Richtungs-Spiel)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "10 Min.",
+          "minAge": 3,
+          "loudness": "laut",
+          "effort": "leicht",
+          "material": "Genug freie Flaeche, optional ein Spielzeug-Kompass und ein Stofftuch als 'Flagge'.",
+          "prepText": "Eine freie Flaeche schaffen — Wohnzimmer, Flur oder Garten. Du bist der 'Kapitaen', die Kinder sind das Schiff, das deinen Richtungen folgt.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Kommandos lernen",
+              "content": "Du erklaerst: 'Kompass Norden' = alle gehen nach vorne, 'Land in Sicht' = alle bleiben stehen, 'Sturm' = alle wackeln."
+            },
+            {
+              "n": 2,
+              "name": "Langsam starten",
+              "content": "Erst nur zwei Kommandos, damit auch die Dreijaehrigen mitkommen. Du machst alles vor."
+            },
+            {
+              "n": 3,
+              "name": "Schneller werden",
+              "content": "Wenn es laeuft, Kommandos schneller wechseln — das Durcheinander ist genau der Spass. Niemand scheidet aus."
+            },
+            {
+              "n": 4,
+              "name": "Anlegen",
+              "content": "Zum Schluss: 'Wir legen an' — alle setzen sich auf den Boden. Guter Uebergang zum Kuchen oder naechsten Spiel."
+            }
+          ],
+          "safetyRule": "Vorher Stolperfallen wegraeumen (Spielzeug, Kabel, Teppichkanten). Bei 'Sturm' nicht zu wild — sonst stossen Kinder zusammen. Genug Abstand zwischen den 'Schiffen'.",
+          "ageAdjust3": "Nur zwei, drei Kommandos. Tempo langsam. Ein Erwachsener macht jede Bewegung mit, damit die Kleinen folgen koennen.",
+          "ageAdjust5": "Mehr Kommandos ('Anker werfen' = hinhocken, 'Mast hoch' = Arme strecken). 5-Jaehrige lieben es, wenn ein Kind selbst Kapitaen sein darf.",
+          "indoorTip": "Funktioniert auch auf kleiner Flaeche — dann eher Bewegungen auf der Stelle (wackeln, hocken, Arme hoch) statt Laufen.",
+          "outdoorTip": "Im Garten mit Laufen nach allen Seiten — da darf das 'Schiff' richtig Fahrt aufnehmen.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Ein Bewegungsspiel ohne Ausscheiden gibt den Kindern Energie-Auslass ohne Verlierer. Auf einfache Kommandos zu reagieren macht Spass und schult nebenbei das Zuhoeren. Perfekt als 'Wackel-Pause' zwischen ruhigeren Stationen."
+        },
+        {
+          "name": "🗺️ Schatzkarte stempeln & gestalten",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "15 Min.",
+          "minAge": 3,
+          "loudness": "leise",
+          "effort": "mittel",
+          "material": "Pro Kind ein Blatt (festes Papier, hellbraun oder weiss), Stempel oder Stempelkissen (Fuesse, Sterne, Kreuz), dicke Wachsmalstifte, optional ein nasser Teebeutel zum 'Antik'-Tupfen.",
+          "prepText": "Pro Kind ein Blatt Papier bereitlegen. Stempel und Stifte in die Mitte. Wer den 'alte Karte'-Look will, tupft die Blaetter vorher leicht mit kaltem Tee an und laesst sie trocknen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Karte verteilen",
+              "content": "Jedes Kind bekommt ein Blatt: 'Das ist deine eigene Schatzkarte — du darfst sie machen, wie du willst.'"
+            },
+            {
+              "n": 2,
+              "name": "Kreuz setzen",
+              "content": "Erstes gemeinsames Element: Alle malen oder stempeln ein Kreuz — 'da liegt dein Schatz'."
+            },
+            {
+              "n": 3,
+              "name": "Frei gestalten",
+              "content": "Stempeln, malen, kritzeln — Insel, Welle, Palme, egal. Es gibt kein Richtig oder Falsch, jede Karte ist gut."
+            },
+            {
+              "n": 4,
+              "name": "Mitnehmen",
+              "content": "Die fertige Karte ist ein Mitgebsel — darf mit nach Hause. Wer mag, schreibt den Namen drauf."
+            }
+          ],
+          "safetyRule": "Stempelkissen auf abwischbarer Unterlage. Wachsmalstifte statt Filzer (gehen leichter aus der Kleidung). Tee nur kalt verwenden — nie heiss in Kinderhaende.",
+          "ageAdjust3": "Grosse Stempel und dicke Stifte. Erwarte Kritzeln, nicht 'Karte' — das ist voellig richtig. Erwachsener stempelt das Kreuz vor.",
+          "ageAdjust5": "Mehr Details: Weg einzeichnen, Stationen markieren, kleine Symbole. 5-Jaehrige erzaehlen gern eine Geschichte zu ihrer Karte.",
+          "indoorTip": "Am Tisch mit Wachstuch-Unterlage — ruhige Bastel-Station, gut nach einem lauten Bewegungsspiel.",
+          "outdoorTip": "Bei gutem Wetter draussen am Gartentisch — dann fliegen aber leichte Blaetter, also beschweren.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Eine eigene Karte zu gestalten gibt jedem Kind etwas Persoenliches in die Hand — ohne Wettbewerb, ohne Vergleich. Das Stempeln und Malen ist eine ruhige Phase, die nach Bewegungsspielen die Stimmung beruhigt. Und sie nimmt am Ende ein selbstgemachtes Mitgebsel mit nach Hause."
+        },
+        {
+          "name": "🗺️ Die grosse Schatzspur",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "15 Min.",
+          "minAge": 3,
+          "loudness": "halblaut",
+          "effort": "leicht",
+          "material": "8-12 Goldmuenzen oder Pfeil-Markierungen (aus Papier), eine grosse Schatzkarte, die beklebte Schatzkiste mit Goldmuenzen drin.",
+          "prepText": "Vorher legst du eine Spur durch Wohnung oder Garten — Goldmuenzen oder Papier-Pfeile als Wegmarken. Die Spur endet bei der versteckten Schatzkiste. Nicht zu lang und nicht zu gut versteckt: 3-Jaehrige verlieren nach 5 Minuten die Geduld.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Karte zeigen",
+              "content": "Du zeigst die grosse Schatzkarte: 'Hier ist das Kreuz — da liegt der Schatz. Findet ihr den Weg?'"
+            },
+            {
+              "n": 2,
+              "name": "Erste Marke finden",
+              "content": "Die Crew sucht die erste Goldmuenze/den ersten Pfeil. Ein Erwachsener hilft mit Blicken, nicht mit Worten."
+            },
+            {
+              "n": 3,
+              "name": "Spur folgen",
+              "content": "Von Marke zu Marke geht es weiter — jedes Kind darf mal die naechste zuerst entdecken, damit niemand zu kurz kommt."
+            },
+            {
+              "n": 4,
+              "name": "Kiste finden",
+              "content": "Am Ende der Spur liegt die Schatzkiste. Alle suchen kurz, dann darf das Geburtstagskind sie 'finden' und herausholen."
+            },
+            {
+              "n": 5,
+              "name": "Gemeinsam oeffnen",
+              "content": "Die Kiste wird im Kreis geoeffnet, jedes Kind nimmt sich eine Goldmuenze — gleich viele für alle."
+            }
+          ],
+          "safetyRule": "Schoko-Goldmuenzen sind bei 3-Jaehrigen Erstickungsrisiko (klein, rund, hart, Folie). Für Tauchspiel/Suchspiel: Plastik-Muenzen statt Schoko-Muenzen. Schoko-Muenzen nur zum Essen unter Sicht-Aufsicht; Folien sofort wegsammeln.",
+          "ageAdjust3": "Spur kurz halten (6-8 Marken), Endpunkt sichtbar verstecken. Ein Erwachsener geht voran und 'sucht mit'.",
+          "ageAdjust5": "Spur laenger, zwei, drei Etappen mit Mini-Aufgabe dazwischen ('Klatscht dreimal, dann geht's weiter'). Karte selbst halten lassen.",
+          "indoorTip": "In 60-75 m2 geht die Spur ueber 2-3 Raeume — ums Sofa, durch den Flur, in die Garderobe. Reicht voellig.",
+          "outdoorTip": "Im Garten oder Park die Spur um Baeume und Buesche legen — das 'Suchen' wird automatisch spannender. Bei Wind die Papier-Pfeile beschweren.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Eine Suche hat ein klares Ziel und ein eingebautes Happy End — das verstehen schon Dreijaehrige. Weil alle gemeinsam suchen und das Gold geteilt wird, gibt es keine Verlierer und keine Traenen. Das ist das Herzstueck jeder Piraten-Party für die Kleinen."
+        },
+        {
+          "name": "💃 Piraten-Tanz (Stopp-Tanz mit Kissen-Inseln)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "8 Min.",
+          "minAge": 3,
+          "loudness": "laut",
+          "effort": "leicht",
+          "material": "Eine Musikquelle (Handy, Bluetooth-Box) mit ein, zwei froehlichen Liedern; 5-6 grosse Kissen oder kleine Decken als 'Inseln'.",
+          "prepText": "Eine Playlist mit kindgerechten Sea-Shanty- oder froehlichen Tanz-Liedern bereitlegen (ohne markenspezifische Film-Soundtracks). Kissen verteilt im Raum auslegen — sie sind die rettenden 'Inseln'. Eine Stelle freilassen, an der ihr gut zusammen tanzen koennt.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Musik an, alle tanzen",
+              "content": "Die Crew tanzt frei zur Musik — wackeln, klatschen, im Kreis huepfen. Du tanzt mit, das senkt die Hemmschwelle bei zoegerlichen Kindern."
+            },
+            {
+              "n": 2,
+              "name": "Stopp — auf die Insel!",
+              "content": "Plötzlich die Musik anhalten und 'Land in Sicht!' rufen. Jedes Kind springt auf eine Insel — auch zu zweit auf einem Kissen ist okay."
+            },
+            {
+              "n": 3,
+              "name": "Niemand ins Meer",
+              "content": "Kein Kind scheidet aus. Wer es nicht rechtzeitig schafft, wird vom 'Schiff gerettet' und kommt mit auf die naechste Insel. Lacher garantiert."
+            },
+            {
+              "n": 4,
+              "name": "Inseln schrumpfen",
+              "content": "Mit jeder Runde ein Kissen weniger — alle muessen enger zusammenruecken. Kein Wettkampf, sondern ein Wir-Spiel. Endet, wenn alle auf einer einzigen 'Insel' kleben."
+            }
+          ],
+          "safetyRule": "Kissen muessen rutschfest liegen — bei glattem Boden Anti-Rutsch-Unterlage oder auf Teppich spielen. Kein wildes Springen aus dem Stand, eher Schritte und Hocken. Glastische und scharfe Kanten vorher abdecken oder wegruecken.",
+          "ageAdjust3": "Inseln gross und nah beieinander, langsame Musik. Bei 'Stopp' nicht hetzen — Dreijaehrige brauchen zwei, drei Sekunden Reaktionszeit.",
+          "ageAdjust5": "Schnellere Lieder, mehr Inseln-schrumpfen-Runden. Fuenfjaehrige lieben es, wenn ein Kind die Musik selbst stoppen darf.",
+          "indoorTip": "Wohnzimmer-Tanzflaeche mit Kissen drumherum. Lautstaerke moderat halten — Nachbarn freuen sich nicht ueber stundenlangen Sea-Shanty.",
+          "outdoorTip": "Im Garten mit Picknickdecken als Inseln. Bluetooth-Box auf den Gartentisch — und die Crew tanzt unter freiem Himmel, was den Klang-Eindruck verdoppelt.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Stopp-Tanz ist ein 3-5-Klassiker, der mit Piraten-Geschichte einen frischen Rahmen bekommt — aus 'Stopp' wird 'Land in Sicht'. Die Inseln-schrumpfen-Mechanik baut Naehe statt Wettbewerb auf: Am Ende kleben alle freudig zusammen, statt dass einer als Verlierer ausscheidet. Perfekt als laute Abschluss-Welle vor dem Schatz-Teilen."
+        }
+      ],
+      "food": "🎂 Piratenschiff-Kuchen auf 'Meer'-Platte (blauer Tonkarton). 🥛 'Piraten-Grog'. 🍪 'Schiffszwieback'. 🍌 'Schwertfisch-Haeppchen (Obst einzeln serviert, NICHT auf Spiessen bei 3-Jaehrigen)' (Obst auf Holzspiessen). 🧀 Kaese-Anker (Kaese mit Ausstecher). Liebevoll angerichtet — bei Wow ist das Auge mit am Tisch.",
+      "decoration": "🏴‍☠️ Volle Deko: blaues 'Meer' aus Tüchern, mehrere Piratenflaggen, Schatzkarte gross an der Wand, Piraten-Servietten und ggf. ein paar aufgehaengte Goldmuenzen-Girlanden. Macht aus dem Raum ein Schiff.",
+      "giveaways": "🗺️ Jedes Kind nimmt seine selbstgebastelte Schatzkarte mit — das beste Mitgebsel, weil selbst gemacht. Dazu Goldmuenzen, Urkunde und die Augenklappe.",
+      "shoppingList": [
+        {
+          "emoji": "👁️",
+          "label": "Augenklappen (12er-Set)",
+          "url": "https://www.amazon.de/s?k=augenklappe+pirat+kinder+set&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Das zentrale Kostuem-Teil und gleichzeitig Mitgebsel — macht aus jedem Kind sofort einen Mini-Piraten."
+        },
+        {
+          "emoji": "🪙",
+          "label": "Schoko-Goldmuenzen (Beutel)",
+          "url": "https://www.amazon.de/s?k=schoko+goldmuenzen+kinder&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Der eigentliche Schatz — ohne Gold keine Schatzsuche. Eine pro Kind plus Reserve einplanen."
+        },
+        {
+          "emoji": "🖨️",
+          "label": "Schatzkisten-Urkunde (Druckvorlage/Block)",
+          "url": "https://www.amazon.de/s?k=piraten+urkunde+kinder&tag=machsleicht-21",
+          "priceEur": 3,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Das Ende-Ritual zum Mitnehmen — gibt der Party einen Abschluss und dem Kind ein Andenken."
+        },
+        {
+          "emoji": "🥛",
+          "label": "Apfelschorle / Saft für 'Piraten-Grog'",
+          "url": "https://www.amazon.de/s?k=apfelschorle+kinder&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Getraenk für 6 Kinder — als 'Grog' getauft kostet es nichts extra und macht Stimmung."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Zutaten Kastenkuchen (Mehl, Butter, Eier, Zucker)",
+          "url": "https://www.amazon.de/s?k=backzutaten+kastenkuchen&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Basis für den Piratenschiff-Kuchen — meist teilweise im Haus, daher guenstig."
+        },
+        {
+          "emoji": "📦",
+          "label": "Tonkarton / Goldfolie für Schatzkiste",
+          "url": "https://www.amazon.de/s?k=tonkarton+goldfolie+bastel&tag=machsleicht-21",
+          "priceEur": 3,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Macht aus einem Schuhkarton die Schatzkiste. Reste reichen — wer Bastelmaterial hat, braucht nichts kaufen."
+        },
+        {
+          "emoji": "🏴‍☠️",
+          "label": "Piratenhuete oder Bandanas (6er-Set)",
+          "url": "https://www.amazon.de/s?k=piraten+hut+kinder+set&tag=machsleicht-21",
+          "priceEur": 7,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Verstaerkt das Kostuem für Kinder, die keine Augenklappe moegen — nicht zwingend, aber stimmungsvoll."
+        },
+        {
+          "emoji": "🧻",
+          "label": "Piraten-Servietten + Pappteller",
+          "url": "https://www.amazon.de/s?k=piraten+servietten+pappteller&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Tischdeko mit wenig Aufwand — macht aus dem Esstisch das Piratenschiff. Optional."
+        },
+        {
+          "emoji": "🗺️",
+          "label": "Bastel-Set Schatzkarten (Stempel, Papier, Stifte)",
+          "url": "https://www.amazon.de/s?k=schatzkarte+bastelset+kinder&tag=machsleicht-21",
+          "priceEur": 12,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Das Wow-Highlight: jedes Kind gestaltet eine eigene Karte. Gute Investition, da Material uebrig bleibt."
+        },
+        {
+          "emoji": "🏴‍☠️",
+          "label": "Piratenflaggen + Deko-Set",
+          "url": "https://www.amazon.de/s?k=piraten+deko+flaggen+set&tag=machsleicht-21",
+          "priceEur": 9,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Verwandelt den Raum ins Schiff — für die Wow-Variante, bei der Atmosphaere zaehlt."
+        },
+        {
+          "emoji": "🪝",
+          "label": "Holz-Schatzkiste (statt Schuhkarton)",
+          "url": "https://www.amazon.de/s?k=schatzkiste+holz+kinder&tag=machsleicht-21",
+          "priceEur": 13,
+          "hasAffiliate": true,
+          "category": "habIchVielleicht",
+          "categoryReasoning": "Echte kleine Holzkiste als Highlight — schoen, aber ein beklebter Schuhkarton tut es genauso. Nur für Wow-Budget."
+        },
+        {
+          "emoji": "📸",
+          "label": "Spielzeug-Kompass",
+          "url": "https://www.amazon.de/s?k=spielzeug+kompass+kinder&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "habIchVielleicht",
+          "categoryReasoning": "Nettes Requisit für das Kompass-Spiel — oft schon in der Spielkiste. Tut's auch ohne."
+        },
+        {
+          "emoji": "🧵",
+          "label": "Dickes Seil / Springseil",
+          "url": "https://www.amazon.de/s?k=springseil+kinder+dick&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "habIchVielleicht",
+          "categoryReasoning": "Für das Crew-am-Tau-Spiel — ein vorhandenes Springseil oder Waescheleine reicht voellig."
+        }
+      ],
+      "estimatedCostEur": 80,
+      "costContext": "Geschaetzte Kosten (Wow, 6 Kinder)",
+      "savingsTip": {
+        "title": "Bastel-Material lohnt sich ueber die Party hinaus",
+        "body": "Das Stempel-Set und die Stifte sind nicht nur für den Geburtstag — die liegen danach in der Bastelkiste und werden weiterbenutzt. Wer eine echte Holz-Schatzkiste streicht und stattdessen den beklebten Schuhkarton nimmt, spart die teuerste Einzelposition. Realistisch landen die 80 € dann bei 60-65 €, ohne dass die Party aermer wirkt."
+      }
+    }
+  ],
+  "cakeRecipe": {
+    "intro": "Der Piratenschiff-Kuchen ist ein simpler Kastenkuchen, der mit zwei Holzspiessen und einem Papier-Segel zum Schiff wird — kein Schnitzen, kein Fondant. Wer mag, steckt eine kleine Piratenflagge obendrauf. Die ganze Deko dauert keine 15 Minuten und sieht trotzdem nach Schiff aus. Funktioniert auch mit gekauftem Kastenkuchen, wenn die Zeit knapp ist.",
+    "steps": [
+      {
+        "n": 1,
+        "content": "Ruehrteig anruehren (250 g Mehl, 200 g Butter, 150 g Zucker, 4 Eier, 1 Pck. Backpulver, 1 Schuss Milch) und in eine gefettete Kastenform fuellen."
+      },
+      {
+        "n": 2,
+        "content": "Bei 175 Grad ca. 45-50 Minuten backen (Staebchenprobe). Komplett auskuehlen lassen — warmer Kuchen reisst beim Verzieren."
+      },
+      {
+        "n": 3,
+        "content": "Den Kasten der Laenge nach leicht schraeg anschneiden, sodass vorne ein 'Bug' entsteht. Die abgeschnittene Ecke nicht wegwerfen — als Aufbau hinten draufsetzen."
+      },
+      {
+        "n": 4,
+        "content": "Mit dunkler Kuvertuere oder Schoko-Glasur ueberziehen — das ist die 'Schiffswand'. Wer mag, streut bunte Streusel als Bullaugen drauf."
+      },
+      {
+        "n": 5,
+        "content": "Zwei Holzspiesse als Maste einstecken. Aus weissem oder buntem Papier zwei Segel ausschneiden (Dreieck/Rechteck), auf die Spiesse faedeln."
+      },
+      {
+        "n": 6,
+        "content": "Eine kleine Piratenflagge (Papier mit Totenkopf) an die Mast-Spitze kleben. Fertig ist das Schiff — schwimmt auf einer 'Meer'-Platte aus blauem Tonkarton besonders gut."
+      }
+    ],
+    "meta": {
+      "aufwand": "mittel (Kastenkuchen + 15 Min. Deko)",
+      "kosten": "ca. 5-7 €",
+      "allergiker": "Glasur durch Puderzucker-Wasser-Guss ersetzen. Für eifrei/milchfrei einen veganen Kastenkuchen vom Discounter nehmen — die Schiffs-Deko funktioniert auf jedem Kasten."
+    },
+    "tips": [
+      {
+        "title": "Keine Lust oder Zeit zu backen?",
+        "body": "Fertigen Marmor- oder Zitronenkuchen vom Baecker oder Supermarkt kaufen, mit Schoko-Guss bestreichen und Maste + Segel reinstecken. Kein Kind merkt, dass der Kasten gekauft war — das Segel macht das Schiff, nicht der Teig."
+      },
+      {
+        "title": "Muffins statt Schiff",
+        "body": "Wer es noch einfacher will: 12 Muffins backen, in jeden ein Mini-Papierfaehnchen mit Totenkopf stecken. Jedes Kind bekommt sein eigenes 'Schiffchen' — weniger Schneiderei, weniger Streit ums groesste Stück."
+      }
+    ]
+  },
+  "parentTips": {
+    "structured": [
+      {
+        "topic": "🥜 Allergien VOR der Party abfragen",
+        "detail": "In der Einladung fragen. Schoko-Goldmuenzen koennen Spuren von Nuessen enthalten, der Kuchen Ei und Milch. Lieber einmal zu viel fragen, als am Tag improvisieren. Allergiker-Teller separat markieren und ausser Reichweite der anderen Naschereien stellen."
+      },
+      {
+        "topic": "👁️ Augenklappe ist optional",
+        "detail": "Manche 3-Jaehrige bekommen Panik, wenn ein Auge bedeckt ist — das ist normal und kein Drama. Stirnband, Bandana oder gar kein Kostuem sind genauso piratisch. Niemals einem weinenden Kind die Klappe aufzwingen."
+      },
+      {
+        "topic": "⏱️ Kuchen-Slot nach 45 Minuten",
+        "detail": "Plan den Kuchen fest nach der ersten Spielphase ein, nicht erst wenn die Stimmung schon kippt. Hungrige 3-5-Jaehrige werden schnell quengelig — ein voller Bauch rettet die zweite Haelfte der Party."
+      },
+      {
+        "topic": "👥 Ein Erwachsener pro ein bis zwei Kinder",
+        "detail": "Bei 6 Kindern reichen die Eltern, die ohnehin dableiben. Plan keine Party, bei der du allein 8 Dreijaehrige hueten musst — das geht schief. Aufgaben vorher verteilen: Wer fuehrt die Spur, wer macht Fotos, wer troestet."
+      },
+      {
+        "topic": "🪙 Goldmuenzen gerecht teilen",
+        "detail": "Vor der Party abzaehlen: gleich viele Muenzen pro Kind, plus Reserve. Wenn ein Kind beim Suchen mehr findet, am Ende sichtbar gleichmaessig aufteilen. Ungerechte Beute ist bei 3-5 der haeufigste Traenen-Ausloeser."
+      },
+      {
+        "topic": "📵 Kurz halten, frueh enden",
+        "detail": "90 Minuten bis 2 Stunden sind genug. Lieber aufhoeren, wenn es am schoensten ist, als eine Stunde zu lang. Ein klares Ende-Ritual (Schatz teilen, Urkunde, Tschuess) gibt allen das Signal — sonst zerfasert die Party."
+      },
+      {
+        "topic": "Holzspiess-Sicherheit",
+        "detail": "Bei 3-4-Jaehrigen Obst von Holzspiessen ABZIEHEN und einzeln servieren. Holzspiesse nur für Aeltere oder unter Aufsicht. Beim Kuchen vor dem Anschneiden die Holzspieß-Maste der Piraten-Deko ZIEHEN."
+      }
+    ],
+    "educationalValue": "Die Kinder ueben ganz nebenbei: gemeinsam ein Ziel verfolgen, aufeinander warten und am Ende teilen. Eine Schatzsuche ohne Sieger zeigt 3-5-Jaehrigen, dass ein Erfolg schoener wird, wenn ihn alle haben — das ist die erste Erfahrung von Kooperation statt Konkurrenz. Dazu kommt ein Stück Selbstwirksamkeit: 'Ich habe den Schatz mitgefunden' ist für ein Dreijaehriges ein echtes Erfolgserlebnis. Und das Rollenspiel — jemand anders sein, in eine Geschichte eintauchen — trainiert Fantasie und Sprache, ohne dass es nach Lernen aussieht."
+  },
+  "invitationTemplate": "Lust auf passende Piraten-Einladungen? Der Einladungs-Generator von machsleicht baut dir in zwei Minuten eine fertige Karte mit Schatzkarten-Optik, Datum und Uhrzeit — zum Ausdrucken oder als WhatsApp-Bild. Schreib das Motto 'Piraten' rein, waehl das Alter 3-5, fertig.",
+  "faq": [
+    {
+      "q": "Funktioniert Piraten auch in einer kleinen Wohnung?",
+      "a": "Ja. Die Schatzspur braucht keinen Garten — sie geht ums Sofa, hinter den Vorhang, in den Flur. Bei 60-75 m2 legst du die Spur ueber zwei, drei Raeume und versteckst die Kiste in der Garderobe oder im Schlafzimmer. Piraten ist akustisch eher ruhig: Suchen, schleichen, fluestern — das geht drinnen gut."
+    },
+    {
+      "q": "Ist das nicht zu gruselig für 3-Jaehrige?",
+      "a": "Nicht, wenn du die freundliche Version spielst. Lass Skelette, Geister und Saebel-Kaempfe komplett weg. Hier sind Piraten freundliche Schatzsucher mit Augenklappe und Karte — das ist für Dreijaehrige nicht gruseliger als eine Schnitzeljagd."
+    },
+    {
+      "q": "Was, wenn ein Kind die Augenklappe nicht aufsetzen will?",
+      "a": "Dann laesst es sie weg. Ein Auge zu bedecken ist für manche Kinder unangenehm. Stirnband, Bandana oder einfach ein Piratenhut tun es genauso. Niemand wird zu einem Kostuem-Teil gezwungen — Pirat ist man durch Mitmachen, nicht durch die Klappe."
+    },
+    {
+      "q": "Wie verhindere ich Streit ums Gold?",
+      "a": "Vorher gleich viele Goldmuenzen pro Kind abzaehlen und am Ende sichtbar gerecht aufteilen — nicht 'wer findet, behaelt'. Der Schatz gehoert der ganzen Crew. So gibt es keine Gewinner und Verlierer und keine Traenen am Buffet."
+    },
+    {
+      "q": "Reicht eine Schatzsuche für 90 Minuten?",
+      "a": "Knapp — darum die Minimal-Variante mit zwei kurzen Spielen plus Kuchen. Bei 3-5 fuellt sich die Zeit schneller als gedacht: Ankommen, Augenklappen, ein Spiel, Kuchen, zweites Spiel, Schatz teilen, und schon sind 90 Minuten um."
+    }
+  ],
+  "preparationWeeks": {
+    "minus4Weeks": {
+      "headline": "4 Wochen vorher — Grundgeruest stellen",
+      "items": [
+        {
+          "icon": "📅",
+          "title": "Datum + Uhrzeit + Treffpunkt fixieren",
+          "detail": "Nachmittag (14-16 Uhr) ist bei 3-5 am besten — nicht in den Mittagsschlaf legen. 90 Min. bis 2 Std. ansetzen, nicht laenger."
+        },
+        {
+          "icon": "✉️",
+          "title": "Einladungen rausschicken",
+          "detail": "Mit Schatzkarten-Optik, Datum, Uhrzeit und Abhol-Zeit. Allergien direkt mit abfragen. Bei 3-5: Eltern bleiben dabei, das in der Einladung erwaehnen."
+        },
+        {
+          "icon": "👥",
+          "title": "Kinderzahl ehrlich planen",
+          "detail": "Faustregel 3-5: so viele Gaeste wie das Kind Jahre alt ist, plus ein, zwei. Sechs Kinder sind ein guter Schnitt — mehr wird bei dem Alter schnell Chaos."
+        },
+        {
+          "icon": "🏴‍☠️",
+          "title": "Variante waehlen",
+          "detail": "Minimal, Standard oder Wow — ehrlich nach Budget und eigener Energie entscheiden. Wow braucht einen Bastel-Slot und mehr Vorlauf."
+        },
+        {
+          "icon": "💰",
+          "title": "Budget grob abstecken",
+          "detail": "35 / 55 / 80 € sind Richtwerte für 6 Kinder. Aus dem Bestand schoepfen (Schuhkarton, Stoffreste, Stifte) druckt jede Variante deutlich."
+        }
+      ]
+    },
+    "minus2Weeks": {
+      "headline": "2 Wochen vorher — RSVP einsammeln, Plan schaerfen",
+      "items": [
+        {
+          "icon": "📞",
+          "title": "RSVP nachhalten",
+          "detail": "Wer nicht geantwortet hat, kurz anschreiben. Endgueltige Kinderzahl festzurren — daran haengen Goldmuenzen, Augenklappen und Mitgebsel."
+        },
+        {
+          "icon": "🗺️",
+          "title": "Schatzspur-Weg durchdenken",
+          "detail": "Ueberleg, wo die Spur langgeht und wo die Kiste hinkommt. Bei Regen einen Indoor-Plan B mitdenken — alles in der Wohnung machbar."
+        },
+        {
+          "icon": "🛒",
+          "title": "Einkaufsliste finalisieren",
+          "detail": "Augenklappen, Goldmuenzen, Bastelmaterial, Lebensmittel. Pruefen, was schon da ist (Schuhkarton, Tonkarton, Stifte)."
+        },
+        {
+          "icon": "🎨",
+          "title": "Bei Wow: Bastel-Material testen",
+          "detail": "Wenn Schatzkarten gebastelt werden: einmal selbst durchspielen. Bei 3-5 muss alles grob und schnell gehen — zu Filigranes streichen."
+        }
+      ]
+    },
+    "minus1Week": {
+      "headline": "1 Woche vorher — bestellen und drucken",
+      "items": [
+        {
+          "icon": "🛒",
+          "title": "Amazon-Bestellung JETZT raus",
+          "detail": "Lieferzeit 2-5 Tage. Augenklappen, Goldmuenzen-Schokolade, Piratenhuete, ggf. Tonkarton und Schatzkarten-Vorlage."
+        },
+        {
+          "icon": "🖨️",
+          "title": "Urkunden + Schatzkarte drucken",
+          "detail": "Schatzkisten-Urkunde pro Kind und eine grosse DIN-A3-Schatzkarte. Wer keinen Drucker hat: im Copyshop oder von Hand malen."
+        },
+        {
+          "icon": "📦",
+          "title": "Mitgebsel-Tueten packen",
+          "detail": "Pro Kind eine kleine Tuete: Goldmuenzen, Mini-Mitgebsel, Urkunde. Vorab packen spart am Party-Tag Nerven."
+        },
+        {
+          "icon": "📸",
+          "title": "Foto-Plan klaeren",
+          "detail": "Wer macht Fotos? Bei 3-5 fragt man Eltern lieber vorher, ob ihr Kind aufs Gruppenbild darf — DSGVO und Hoeflichkeit."
+        }
+      ]
+    },
+    "minus2Days": {
+      "headline": "2 Tage vorher — backen und vorbereiten",
+      "items": [
+        {
+          "icon": "🎂",
+          "title": "Piratenschiff-Kuchen backen",
+          "detail": "Kastenkuchen backen, komplett auskuehlen lassen. Segel und Flagge aus Papier schon ausschneiden — das spart am Tag Zeit."
+        },
+        {
+          "icon": "📦",
+          "title": "Schatzkiste basteln",
+          "detail": "Schuhkarton mit Goldfolie oder brauner Farbe bekleben. Trocknen lassen. Goldmuenzen abzaehlen und bereitlegen (eine pro Kind plus Reserve)."
+        },
+        {
+          "icon": "👁️",
+          "title": "Augenklappen beschriften",
+          "detail": "Namens-Sticker auf die Klappen oder Stirnbaender. Geordnet hinlegen, damit am Tag jedes Kind seine bekommt."
+        }
+      ]
+    },
+    "minus1Day": {
+      "headline": "1 Tag vorher — verzieren und packen",
+      "items": [
+        {
+          "icon": "🚢",
+          "title": "Kuchen verzieren",
+          "detail": "Glasur drauf, Maste und Segel einstecken, Flagge ankleben. Ueber Nacht kuehl stellen — morgen ist keine Zeit mehr dafuer."
+        },
+        {
+          "icon": "🗺️",
+          "title": "Schatzkarte und Spur fertig machen",
+          "detail": "Karte fertig malen/drucken, Weg einzeichnen, Kreuz markieren. Spur-Material (Goldmuenzen, Markierungen) bereitlegen."
+        },
+        {
+          "icon": "🥛",
+          "title": "Getraenke kalt stellen",
+          "detail": "Apfelschorle ('Piraten-Grog') in Karaffen vorbereiten. Becher und Servietten rausstellen."
+        },
+        {
+          "icon": "✅",
+          "title": "Material-Check",
+          "detail": "Augenklappen, Urkunden, Schatzkiste, Goldmuenzen, Karte, Kuchen, Getraenke, Mitgebsel — einmal alles durchgehen und an einen Platz legen."
+        }
+      ]
+    },
+    "dayOf": {
+      "headline": "Am Party-Tag — Spur legen und durchatmen",
+      "items": [
+        {
+          "icon": "🗺️",
+          "title": "Schatzspur legen",
+          "detail": "Markierungen/Goldmuenzen entlang des Wegs platzieren, Schatzkiste am Endpunkt verstecken. Bei Wow die Bastel-Station vorbereiten."
+        },
+        {
+          "icon": "🍽️",
+          "title": "Tisch decken + Naschereien anrichten",
+          "detail": "Piraten-Snacks hinstellen ('Schiffszwieback'-Kekse, Obst-Spiesse). Allergiker-Teller separat markieren. Getraenke kalt halten."
+        },
+        {
+          "icon": "🏴‍☠️",
+          "title": "Deko aufhaengen",
+          "detail": "Piratenflaggen, blaue Tücher als 'Meer', Schatzkarte in die Mitte. Muss nicht perfekt sein — Kinder achten auf die Spiele, nicht die Deko."
+        },
+        {
+          "icon": "😌",
+          "title": "Durchatmen vor der Klingel",
+          "detail": "15 Minuten vor Ankunft alles auf Position, dann kurz hinsetzen. Ruhige Eltern = ruhige Party. Der Plan steht — jetzt darf improvisiert werden."
+        }
+      ]
+    }
+  },
+  "sosScenarios": {
+    "regen": {
+      "icon": "🌧️",
+      "label": "Regen — alles drinnen",
+      "headline": "Schatzspur ins Wohnzimmer + Flur, Markierungen mit Klebezetteln.",
+      "steps": [
+        "Goldmuenzen/Papier-Pfeile mit Tesa an Waende und Boden in Wohnzimmer + Flur kleben (Augenhoehe Kind).",
+        "Spur-Parcours: um Sofa, hinter Vorhang, durch den Flur, in die Garderobe zur Schatzkiste.",
+        "Kompass-Schiff drinnen als Wackel-Variante: Bewegungen auf der Stelle statt Laufen.",
+        "Bei Wow die Bastel-Station an den Tisch verlegen — die war ohnehin drinnen geplant."
+      ],
+      "fallback": "Zu wenig Platz? Augenklappen-Versprechen + Goldmuenzen-Tauchen (trocken) + Schatzkarte basteln + Kuchen fuellen 1,5 Std. locker.",
+      "tone": "praktisch"
+    },
+    "weniger_kinder_als_erwartet": {
+      "icon": "👥",
+      "label": "Weniger Kinder als gedacht",
+      "headline": "Kein Problem — kleine Crew, mehr Naehe.",
+      "steps": [
+        "Schatzspur kuerzer legen — mit 3 Kindern reicht eine kompaktere Runde.",
+        "Goldmuenzen einfach durch weniger teilen, der Rest bleibt Reserve oder wandert in die Tueten.",
+        "Mehr Zeit pro Kind: jedes darf eine Rolle uebernehmen und oefter 'die naechste Marke' finden.",
+        "Tisch enger decken — eine kleine Crew an einem Tisch ist gemuetlicher als ein leerer grosser."
+      ],
+      "fallback": "Mit 2-3 Kindern wird die Party ruhiger und intensiver — das ist kein Verlust, sondern oft die schoenere Variante für 3-Jaehrige.",
+      "tone": "beruhigend"
+    },
+    "mehr_kinder_als_erwartet": {
+      "icon": "👪",
+      "label": "Mehr Kinder als geplant",
+      "headline": "Crew aufteilen, Goldmuenzen strecken.",
+      "steps": [
+        "Goldmuenzen-Reserve und Kuchen-Stück checken — zur Not Muffins als Backup oder Kuchen kleiner schneiden.",
+        "Bei der Schatzspur in zwei Mini-Crews aufteilen, jede mit einem Erwachsenen — sonst Gedraenge.",
+        "Augenklappen/Urkunden nachzaehlen — lieber ein, zwei Reserve-Sets vorhalten.",
+        "Mehr Erwachsene einspannen: ein Begleiter pro 2-3 Kinder ist bei 3-5 Pflicht, nicht Luxus."
+      ],
+      "fallback": "Ploetzlich 9 statt 6? Spiele bleiben gleich, nur die Aufsicht muss mit. Ruf eine Mutter an, ob sie noch eine Stunde bleibt.",
+      "tone": "praktisch"
+    },
+    "kind_will_nicht_mitmachen": {
+      "icon": "🥹",
+      "label": "Ein Kind will nicht mitmachen",
+      "headline": "Zuschauen ist auch Mitmachen — kein Zwang.",
+      "steps": [
+        "Das Kind darf von Mamas/Papas Schoss aus zusehen — es ist trotzdem Teil der Crew.",
+        "Eine ruhige Rolle anbieten: Goldmuenzen-Pirat (sammelt ein) oder Karten-Pirat (haelt die Karte).",
+        "Keine Augenklappe aufzwingen — Stirnband, Hut oder gar nichts tut es genauso.",
+        "Oft taut das Kind nach 10-15 Minuten von selbst auf, wenn der Druck weg ist."
+      ],
+      "fallback": "Manche Kinder brauchen die halbe Party zum Ankommen — das ist normal. Nicht locken, nicht draengen, einfach Tuer offen lassen.",
+      "tone": "beruhigend"
+    },
+    "kuchen_misslungen": {
+      "icon": "🎂",
+      "label": "Der Kuchen ist misslungen",
+      "headline": "Segel rettet alles — Schiff schlaegt Schoenheit.",
+      "steps": [
+        "Eingefallen oder schief? Mit Schoko-Glasur ueberziehen, die kaschiert fast jeden Schaden.",
+        "Maste und Papier-Segel reinstecken — das Schiff macht das Segel, nicht der Teig.",
+        "Ganz daneben? Muffins backen oder kaufen, Mini-Faehnchen rein, jedes Kind kriegt sein Schiffchen.",
+        "Notfall: Kuchen vom Baecker holen, Segel drauf — kein Dreijaehriger merkt den Unterschied."
+      ],
+      "fallback": "Kein Kind bewertet die Krume. Sobald ein Segel und eine Totenkopf-Flagge draufstecken, ist es 'das Piratenschiff' — fertig.",
+      "tone": "praktisch"
+    },
+    "spielzeug_kaputt": {
+      "icon": "🧸",
+      "label": "Material/Spielzeug geht kaputt",
+      "headline": "Improvisieren — Piraten brauchen wenig.",
+      "steps": [
+        "Augenklappe gerissen? Stirnband aus einem Stoffstreifen knoten oder einfach weglassen.",
+        "Schatzkiste kaputt? Jeder Karton tut es, zur Not eine Schuessel mit Tuch drueber.",
+        "Kompass verloren? Du zeigst mit dem Finger die Richtung — die Kinder glauben dem Spiel sowieso mehr als dem Geraet.",
+        "Seil fehlt? Eine Reihe Kinder haelt sich an den Schultern fest — 'Polonaise-Schiff'."
+      ],
+      "fallback": "Das ganze Motto laeuft auf Fantasie, nicht auf Ausstattung. Was fehlt, ersetzt ein Erwachsener mit 'Stellt euch vor...'.",
+      "tone": "praktisch"
+    },
+    "ein_kind_weint": {
+      "icon": "😭",
+      "label": "Ein Kind weint",
+      "headline": "Raus aus dem Trubel, kurz andocken.",
+      "steps": [
+        "Kind aus der Gruppe nehmen, in eine ruhige Ecke — Reizueberflutung ist bei 3-5 der haeufigste Grund.",
+        "Eltern dazu (sie sind ja da) — ein vertrauter Schoss wirkt schneller als jedes Trostwort.",
+        "Eine Goldmuenze oder ein 'wichtiger Auftrag' (Kiste bewachen) holt manche zurück ins Spiel.",
+        "Wenn nichts hilft: Pause ist okay. Das Kind muss nicht jede Minute mitmachen."
+      ],
+      "fallback": "Traenen gehoeren bei Kleinkind-Partys dazu und sind selten ein Drama. Ruhig bleiben, das Kind beruhigt sich meist in Minuten.",
+      "tone": "beruhigend"
+    },
+    "eltern_kommen_frueh": {
+      "icon": "⏰",
+      "label": "Eltern kommen zu frueh zum Abholen",
+      "headline": "Abschluss vorziehen statt durchhetzen.",
+      "steps": [
+        "Wenn die ersten Eltern da sind: das Ende-Ritual vorziehen — Gold teilen, Urkunden, Tschuess.",
+        "Restspiel kuerzen statt streichen — lieber die Schatzspur straffen als eine Station weglassen.",
+        "Mitgebsel-Tueten griffbereit halten, damit beim Abholen nichts vergessen wird.",
+        "Frueh-Eltern kurz einspannen — beim Jacken-Suchen oder Aufraeumen hilft jede Hand."
+      ],
+      "fallback": "Bei 3-5 ist ein frueher Abschluss kein Problem — die Aufmerksamkeit war ohnehin am Limit. Ein klares Ende ist besser als ein zaehes.",
+      "tone": "praktisch"
+    },
+    "sommer_hitze": {
+      "icon": "☀️",
+      "label": "Hitze ueber 28 Grad — Garten faellt aus",
+      "headline": "Schatten, Wasser, Spielen nach drinnen verlegen.",
+      "steps": [
+        "Schatzspur in die kuehleren Raeume (Flur, Schlafzimmer) verlegen — Wohnzimmer-Sonne meiden.",
+        "Goldmuenzen-Tauchen mit lauwarmem (nicht eiskaltem) Wasser draussen im Schatten — wirkt wie Mini-Pool und kuehlt nebenbei.",
+        "Trinkpause alle 30 Minuten fest einplanen, nicht nur 'wenn jemand fragt'. Wasser oder stark verduennte Schorle, keine Eiswuerfel an Kleinkinder.",
+        "Sonnencreme der Eltern bei Ankunft sichtbar an einen Sammelplatz legen — du bist nicht der Sonnenschutz-Manager für 6 Kinder."
+      ],
+      "fallback": "Wird es ueber 30 Grad: Schatzsuche stark kuerzen, mehr Sitz-Aktionen (Kuchen, Schatzkarte ausmalen, Geschichte vorlesen). Eltern dabei sein lassen statt Abholen, das gibt zusaetzliche Augen.",
+      "tone": "praktisch"
+    },
+    "drei_jaehriger_panik": {
+      "icon": "😨",
+      "label": "Dreijaehriger hat Angst vor 'Piraten'",
+      "headline": "Aus Angst raus, in vertrautes Spiel rein.",
+      "steps": [
+        "Augenklappe weglassen — manche Dreijaehrige finden ein bedecktes Auge bedrohlich. Bandana oder gar nichts tut es genauso.",
+        "Saebel, Skelette, dunkle Stimme komplett rausnehmen. 'Wir sind freundliche Schatzsucher' ist die einzige Story-Linie hier.",
+        "Mit dem Kind an der Schatzkarte starten — eine reine Such-Geschichte ist viel weniger gruselig als 'Piraten kommen!'",
+        "Eltern dranlassen — bei dem Alter ist es voellig okay, wenn das Kind die erste Stunde von Mamas Schoss aus zuschaut."
+      ],
+      "fallback": "Bleibt es aengstlich: 'Piraten' nicht mehr aussprechen, das Spiel als 'Schatzsuche' weiterlaufen lassen. Das Wort macht oft den Unterschied, nicht das Spiel selbst.",
+      "tone": "beruhigend"
+    }
+  }
+}

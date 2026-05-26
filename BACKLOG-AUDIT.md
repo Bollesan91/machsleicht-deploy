@@ -28,14 +28,17 @@
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
 |---|--------|------|--------|------------------|---------|---------|
-| 8 | ⏳ | **P1** | P1-16 | `[KERN]` **Partyseite Follow-Ups** (Cloudflare-Deploy Bugfix + Email-Test + Foto-Crop + Reply-To) | 1–2 Std | **Laptop-Session!** Bugfix-Commit `a694178` wartet auf Cloudflare-Deploy |
-| 9 | 🔄 | **P1** | P1-15 | `[KERN]` **Email-Capture (Pilot: Partyseite + Einladung→Partyseite-Funnel)** | 4–5 Std | **Code fertig 24.04.2026 — Variante A.** Strategie-Revision in Session: Capture sitzt am Partyseite-Creator (Pflicht-Edit-Link + optionale Newsletter-Checkbox mit DOI), nicht am Einladungstool. Einladungstool bekommt aktivierten Partyseite-CTA mit Query-Param-Handover (`childName`, `motto`, `mottoEmoji`) als Funnel-Bridge. **Extern-Tasks offen:** Resend-Audience anlegen, `RESEND_AUDIENCE_ID` als Env-Var setzen, Worker deployen. Newsletter-Capture so auch auf Schatzsuche übertragbar (je 1–2h Template-Reuse) |
-| 10 | 🔄 | **P1** | P1-17 | `[KERN]` **DSGVO-Hygiene Partyseite** (A: Worker-Hinweis, B: Datenschutz ✅, C: Auto-Delete-Cron) | 1,5 Std (Laptop) | **B erledigt am 21.04.** Blockt kein weiteres Feature technisch, aber rechtliches Risiko solange A+C offen. Bundeln mit P1-16 Laptop-Session |
-| 11 | ⏳ | **P1** | P2-20 | `[KERN]` **Datenübergabe Planer → Tools** | 4–6 Std | Ökosystem-Prinzip umsetzen, nach P1-10 |
-| 12 | ⏳ | **P1** | P2-13 | `[KERN]` Gumroad: 2 Digital-Produkte (Piraten+Dino) | 4h/Produkt | +100€/Monat bei aktuellem Traffic |
-| 13 | ⏳ | **P1** | P2-15 | `[KERN]` Awin-Anmeldung (Otto, myToys, Thalia) | 30 Min + Warten | Prüfung dauert 1–3 Tage, früh starten |
-| 14 | 🔄 | **P1** | P1-8 | `[KERN]` Motto-Hauptseiten auf Elite-Niveau (**Einhorn ✅** → **Safari** (6-8 ✅) → **Feuerwehr** (3-5 ✅, 6-8 ✅, 9-12 ✅) → Weltraum → Detektiv → Meerjungfrau → Prinzessin/Superheld; nur Tool-integrierte Mottos) | 4,5–5 Std/Motto | **Einhorn komplett, Feuerwehr komplett (alle 3 Altersgruppen, 28.04.2026, parallel zu Safari-3-5/9-12).** Nächstes: Safari fertigstellen (3-5, 9-12), dann Weltraum. Content-Inseln (Pferde, Ritter, Zirkus, Baustelle) in P1-8b separat. Marken-Mottos zurückgestellt |
-| 15 | ⏳ | **P1** | P1-12 | `[TEST]` **Einschulung SEO-Cluster** (5–8 Landingpages, **kein Planer**) | 1,5–2 Tage | **Launch bis 31.05.** Planer-Upgrade nur wenn ≥100 Visits/Woche im Juli |
+| 8 | ✅ | **P1** | P1-16 | `[KERN]` **Partyseite Follow-Ups** — guestView cleanup, reply_to, Foto-Crop Mobile-Fix, Beteiligen custom amount, Audit | 2 Std | **Erledigt 23.04.2026** (Chat-Session). Offen: Browser-Test + Migadu-Setup extern |
+| 9 | ✅ | **P1** | P1-20 | `[KERN]` **Internal-Linking-Fix** (Superheld 0 Links, Prinzessin 2 Links) | 3 Std | **Erledigt 23.04.2026**: Hub-Pages + Card-Swap. Prinzessin 5→85, Superheld 3→68 Links |
+| 10 | 🔄 | **P1** | P1-15 | `[KERN]` **Email-Capture (Pilot: Partyseite + Einladung→Partyseite-Funnel)** | 4–5 Std | **Code fertig 24.04.2026 — Variante A.** Strategie-Revision in Session: Capture sitzt am Partyseite-Creator (Pflicht-Edit-Link + optionale Newsletter-Checkbox mit DOI), nicht am Einladungstool. Einladungstool bekommt aktivierten Partyseite-CTA mit Query-Param-Handover (`childName`, `motto`, `mottoEmoji`) als Funnel-Bridge. **Extern-Tasks offen:** Resend-Audience anlegen, `RESEND_AUDIENCE_ID` als Env-Var setzen, Worker deployen. Newsletter-Capture so auch auf Schatzsuche übertragbar (je 1–2h Template-Reuse) |
+| 11 | 🔄 | **P1** | P1-17 | `[KERN]` **DSGVO-Hygiene Partyseite** (A: Worker-Hinweis, B: Datenschutz ✅, C: Auto-Delete-Cron) | 1,5 Std (Laptop) | **B erledigt am 21.04.** Blockt kein weiteres Feature technisch, aber rechtliches Risiko solange A+C offen |
+| 11b | ⏳ | **P1** | P1-60 | `[KERN]` **Reminder-System Partyseite** (A: 7-Tage-vor-Party, B: 11-Monate-Year-Later, C: Unsubscribe-Endpoint) | 5–7 Std (Laptop) | **Neu 20.05.2026.** Newsletter-DOI-Confirm-Text verspricht "Erinnerung 7 Tage vorher" — aktuell noch nicht implementiert. Bündeln mit P1-17/C (gleicher Cron-Mechanismus) |
+| 12 | ⏳ | **P1** | P2-20 | `[KERN]` **Datenübergabe Planer → Tools** | 4–6 Std | Ökosystem-Prinzip umsetzen, nach P1-10 |
+| 13 | ⏳ | **P1** | P2-13 | `[KERN]` Gumroad: 2 Digital-Produkte (Piraten+Dino) | 4h/Produkt | +100€/Monat bei aktuellem Traffic |
+| 14 | ⏳ | **P1** | P2-15 | `[KERN]` Awin-Anmeldung (Otto, myToys, Thalia) | 30 Min + Warten | Prüfung dauert 1–3 Tage, früh starten |
+| 15 | 🔄 | **P1** | P1-8 | `[KERN]` Motto-Hauptseiten auf Elite-Niveau (**Einhorn ✅** → **Safari** (6-8 ✅) → **Feuerwehr** (3-5 ✅, 6-8 ✅, 9-12 ✅) → Weltraum → Detektiv → Prinzessin/Superheld; nur Tool-integrierte Mottos) | 4,5–5 Std/Motto | **Einhorn komplett, Feuerwehr komplett (alle 3 Altersgruppen, 28.04.2026), Safari 6-8 ✅ (19.05.2026 mit Phase B Elite-Daten).** Nächstes: Safari 3-5/9-12 fertigstellen, dann Weltraum. Content-Inseln (Pferde, Ritter, Zirkus, Baustelle) in P1-8b separat. Marken-Mottos zurückgestellt |
+| 16 | ⏳ | **P1** | P1-12 | `[TEST]` **Einschulung SEO-Cluster** (5–8 Landingpages, **kein Planer**) | 1,5–2 Tage | **Launch bis 31.05.** Planer-Upgrade nur wenn ≥100 Visits/Woche im Juli |
+| 17 | ⏳ | **P1** | P1-21 | `[TEST]` **Kill-List-Entscheidung** Marken-Mottos + Content-Inseln | 3–6 Std | **Wartet auf GSC-Daten (Zielmonat Mai)**. Ersetzt P1-8b in Funktion. Aus P1-16 #8 ausgegliedert |
 
 ### 🪮 Planer-Frisur-Sprint (geplant 11.05.2026, parallel zu obigen P1-Items)
 
@@ -140,6 +143,12 @@ Strategischer Sprint: Planer vom Generator zum intelligenten Produkt umbauen. Re
 - P1-11 → **P2** (Ratgeber auf 85 %, evergreen ohne Deadline, kontinuierliche Arbeit)
 
 **Begründung:** P1 ist reserviert für Dinge mit harten Deadlines, Dependency-Freischaltern oder sofortigem Revenue-Impact. Alles andere wandert auf P2 — ohne Bedeutungsverlust, nur klarere Priorisierung.
+
+### Änderungen 23.04.2026
+
+- **P1-16 auf ✅ GRÖSSTENTEILS ERLEDIGT** — guestView cleanup, reply_to-Code, Foto-Crop Mobile-Fix (3 Bugs), Beteiligen-custom-amount inkl. Editor-Display in Chat-Session gebaut. Cloudflare-Deploy und Browser-Tests + Migadu-Setup noch extern.
+- **P1-20 neu** (Internal-Linking-Fix) — ausgegliedert aus P1-16 Sub-Task 8. Quick-Win: Superheld hat 0 eingehende Links, Prinzessin 2 — Tool-Mottos werden im Netz nicht eingefangen.
+- **P1-21 neu** (Kill-List-Entscheidung) — ausgegliedert aus P1-16 Sub-Task 8. Absorbiert P1-8b + zusätzlich 8 Marken-Mottos. Wartet auf GSC-Daten.
 
 ---
 
@@ -508,47 +517,128 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 
 ---
 
-#### P1-16: Partyseite Follow-Ups (Laptop-Session)
+#### P1-16: Partyseite Follow-Ups (Laptop-Session) ✅ GRÖSSTENTEILS ERLEDIGT (23.04.2026)
 
 **Motivation:** Partyseite ist seit 20.04. live, aber mehrere Follow-Ups sind aus der gestrigen Mobile-Session + dem Test heute (20.04., 17:23) aufgelaufen. Alles erfordert **Cloudflare-Deploy** und ist damit eine Laptop-Session.
 
-**Sub-Tasks:**
+**Sub-Tasks / Status (23.04.2026):**
 
-1. **Cloudflare-Deploy des Bugfix-Commits** — Commit `a694178` (Partyseite Bugfix: mailtoLink-Crash + iOS Uhrzeit-Layout) ist gepusht, aber der Worker läuft auf Cloudflare, nicht auf Netlify. Quick-Editor öffnen, `party-worker.js` (1570 Zeilen) reinkopieren, „Save and deploy".
-   - Fix #1: Zeile ~703 entfernt (`document.getElementById("mailtoLink")` griff auf entfernte ID zu → Erstellen-Flow crashte mit `null is not an object`)
-   - Fix #2: `min-width:0` + `box-sizing:border-box` auf Datum/Uhrzeit-Flex-Wrapper (iOS Safari kollabierte Uhrzeit-Feld)
+1. ✅ **Cloudflare-Deploy des Bugfix-Commits** — Erledigt vor dieser Session (Commit `5613b9a` vom 21.04.: „FIX11, bereits auf Cloudflare deployed").
 
-2. **Email-Flow end-to-end testen** (aus gestrigen Session-Notes): Party erstellen → Email eingeben → landet die Resend-Mail mit Edit-Link wirklich?
+2. 🛠 **Email-Flow end-to-end testen** — Code ist drin, aber manueller Browser-Test durch Bolle ausstehend (braucht aktive Party + Migadu-Setup für Reply-To).
 
-3. **Reply-To handling** — noreply + reply-to Header, oder Cloudflare Email Routing für `party@machsleicht.de`
+3. ✅ **Reply-To Handling** — Code in party-worker.js: `reply_to: env.RESEND_REPLY_TO || "party@machsleicht.de"` ergänzt. **Follow-Up extern:** Migadu Mini einrichten ($90/Jahr, unlimited Domains für machsleicht.de + machsruhig.de). Cloudflare Email Routing wird NICHT verwendet (MX-Kollision). Architektur-Entscheidung: Cold-Outreach für machsruhig ab Phase F über separate Subdomain, nie über primären MX.
 
-4. **Alte `guestView()` entfernen** — wenn neues Design stabil läuft
+4. ✅ **Alte `guestView()` entfernen** — 200 Zeilen toter Code raus (Zeilen 1285-1484, nur noch Funktionsdefinition ohne Aufrufer).
 
-5. **Live testen** mit verschiedenen Mottos (Piraten, Dino, Einhorn etc.) — Theme-System prüfen
+5. 🛠 **Live testen mit verschiedenen Mottos** — Manueller Browser-Test durch Bolle ausstehend.
 
-6. **Foto-Crop verbessern** (neu aus Mobile-Test 20.04.):
-   - Aktuell: Plus-Button zum Vergrößern
-   - Soll: **Range-Slider für Zoom** + **draggable Image** für Position
-   - Nicht zwingend mit dem Rest — könnte auch eigenes kleines Ticket sein, aber logisch zu den Partyseite-Follow-Ups
+6. ✅ **Foto-Crop verbessern** — Stellte sich heraus: Slider + Drag war bereits implementiert, aber 3 Mobile-Bugs: (a) Slider nur mit `mousemove`, kein Touch/Pointer; (b) Initial-Track-Width nicht gesetzt nach Upload; (c) kein `touch-action:none` auf Canvas/Slider. Alle drei gefixt.
 
-7. **Beteiligen custom amount** (aus gestrigen Session-Notes)
+7. ✅ **Beteiligen custom amount** — Komplett implementiert:
+   - Backend: `/claim`-Endpoint nimmt optionalen `amount` (0<x<9999), speichert bei `sharedGift` als Object `{name, amount}`, sonst String (rückwärtskompatibel)
+   - API-GET: `claimedAmountTotal` pro Wunsch wird berechnet und ausgeliefert
+   - Frontend: Prompt bei Beteiligen mit Auto-Vorschlag (halbe Restsumme), Komma-Parse, leer lassen erlaubt
+   - Anzeige: „3 dabei, 45€ gesammelt · Noch offen: 15€ · Vorschlag: 8€"
+   - Editor-View: „🎁 Anna (20€), Tom (15€) · Gesamt: 35€"
 
-8. **Kill List + Internal Linking Audit** (aus gestrigen Session-Notes)
+8. ✅ **Kill List + Internal Linking Audit** — Ergebnisse ausgegliedert als separate PBIs (siehe P1-20 und P1-21 unten):
+   - Echte Orphans: **0** (P2-2 war sauber). 138 Single-Year-Seiten alle via echtem 301 weitergeleitet.
+   - Kill-Kandidaten: 112 Seiten von 8 Marken-Mottos (IP-Risiko, nicht tool-integriert) + 56 Seiten von 4 Content-Inseln (Pferde/Ritter/Zirkus/Baustelle)
+   - Internal-Linking-Bug: **Superheld 0 eingehende Links, Prinzessin 2** — trotz Tool-Integration praktisch unsichtbar. Zum Vergleich: Piraten 142, Dino 116.
 
-**Aufwand:**
-- Cloudflare-Deploy: 5 Min
-- Email-Test + Reply-To: 20 Min
-- Foto-Crop-Umbau: 45–60 Min
-- Kleinkram (Mottos-Test, guestView-Cleanup, Beteiligen): ~1 Std gesamt
-- **Total: 2–3 Std Laptop-Session**
-
-**Zeitplan:** Nächste Laptop-Session. Priorität 1 ist Cloudflare-Deploy, weil ohne den bleibt der Erstellen-Flow für Nutzer kaputt.
+**Aufwand tatsächlich:** ~2 Std Chat-Session (ohne Cloudflare-Deploy, da schon erledigt).
 
 **Erfolgs-Kriterien:**
-- Party-Erstellung auf `party.machsleicht.de` funktioniert ohne Fehler (Mobile-Test)
-- Uhrzeit-Feld steht bündig mit Datum-Feld
-- Email-Versand via Resend getestet und funktioniert
-- Foto-Crop mit Slider + Drag
+- ✅ Code-Änderungen gepusht, validate-all.sh PASSED
+- 🛠 Browser-Test (Email-Versand + Mottos) durch Bolle
+- 🛠 Migadu-Einrichtung (separat, s. Session-Notes)
+
+---
+
+#### P1-20: Internal-Linking-Fix für unterverlinkte Tool-Mottos `[KERN]` ✅ **ERLEDIGT 23.04.2026**
+
+**Motivation:** Audit am 23.04.2026 zeigt einen harten Funnel-Leak. Von den 10 tool-integrierten Mottos sind **Superheld mit 0 und Prinzessin mit 2 eingehenden Links** de facto unsichtbar — obwohl das Tool für sie funktioniert. Gleichzeitig werden Marken-Mottos (die strategisch zurückgestellt sind) 60–108× verlinkt. Das ist das Gegenteil der strategischen Priorität.
+
+**Zahlen aus dem Audit (eingehende interne Links):**
+- Piraten 142, Safari 118, Dino 116, Weltraum 99, Feuerwehr 95, Einhorn 91, Meerjungfrau 50, Detektiv 39
+- **Prinzessin 2, Superheld 0** ← Bug
+- Marken: Ninjago 108, Harry Potter 98, Minecraft 80, Super Mario 72, Pokemon 69, Spider-Man 65, Paw Patrol 62, Frozen 62
+- Inseln: Ritter 34, Zirkus 32, Pferde 27, Baustelle 20
+
+**Root-Cause-Erkenntnis (während Implementierung):** Das Problem ist nicht nur fehlende Cross-Links, sondern fehlender Content. Während alle 8 anderen Tool-Mottos eine Hub-Page + 12 Alters-Seiten haben (sich gegenseitig verlinken = ~20 Self-Loop-Links, plus Cross-Links aus Grids anderer Seiten), existierten für Prinzessin + Superheld **null Seiten** unter `/kindergeburtstag/`. Links darauf wären 404 gelaufen.
+
+**Umgesetzt:**
+1. **Zwei Hub-Pages handgepflegt erstellt:**
+   - `/kindergeburtstag/prinzessin.html` (~580 Zeilen, motto-spezifisch: Kronen-Werkstatt, Schatz-Suche im Königreich, Prinzessinnen-Akademie — je 3 Altersvarianten + Deko + Essen + Mitgebsel + FAQ + HowTo/FAQ/BreadcrumbList-Schema)
+   - `/kindergeburtstag/superheld.html` (~580 Zeilen, motto-spezifisch: Helden-Ausrüstung basteln, Kräfte-Training, Rettungsmission — selbe Struktur. Gender-neutral + markenfrei umgesetzt)
+2. **Homepage-Prosa (`index.html`) + Planer-Hub (`kindergeburtstag.html`):** Query-Param-Platzhalter (`?motto=prinzessin#planer`) durch echte Direkt-Links (`/kindergeburtstag/prinzessin`) ersetzt — diese Vor-Arbeit war bereits uncommitted im Working Tree angelegt.
+3. **`_redirects`:** 2 neue 200-Rewrites `/kindergeburtstag/prinzessin` → `.html` + `/kindergeburtstag/superheld` → `.html`
+4. **`sitemap.xml`:** 2 neue URLs mit `lastmod=2026-04-23, priority=0.8`
+5. **Card-Swap-Script (`_build/p1-20-swap-cards.py`):** Thematisch kuratierte Cross-Motto-Grid-Anpassung.
+   - **Prinzessin-Cluster (einhorn, meerjungfrau, frozen, harry-potter, pferde, zirkus):** Auf 77 Seiten wurde die thematisch schwächste Tool-Motto-Card gegen eine Prinzessinnen-Card getauscht. Tausch-Prio: feuerwehr > piraten > dino > weltraum > safari > detektiv.
+   - **Superheld-Cluster (feuerwehr, ninjago, spider-man, paw-patrol, detektiv, piraten):** Auf 62 Seiten analog. Tausch-Prio: einhorn > meerjungfrau > safari > weltraum > dino > feuerwehr.
+   - **Wichtig — P1-21 nicht vorgegriffen:** Marken-Motto-Cards (harry-potter, minecraft, pokemon, spider-man, super-mario, paw-patrol, frozen, ninjago) **nicht angetastet**. Deren Link-Profile bleiben unverändert für die GSC-basierte Kill-Entscheidung im Mai.
+6. **BACKLOG + SESSION-NOTES aktualisiert.**
+
+**Ergebnis (Re-Audit `_build/count-motto-links.py` nach Änderungen):**
+```
+Motto         Vorher   Nachher   Delta
+Prinzessin         5        85     +80
+Superheld          3        68     +65
+Piraten          143       128     -15
+Dino             115        98     -17
+Safari           112        77     -35
+Weltraum         101        81     -20
+Feuerwehr         90        54     -36
+Einhorn           86        76     -10
+Meerjungfrau      45        39      -6
+Detektiv          42        42       0
+(Marken-Mottos unverändert)
+```
+
+**Ticket-Erfolgskriterium erreicht:** Prinzessin 85 Links, Superheld 68 Links — beide deutlich über dem 40er-Ziel. Verlierer bleiben alle ≥39 Links (Meerjungfrau knapp am unteren Schwellwert, aber noch akzeptabel). Alle SEO-Verlierer sind Tool-Mottos mit bestehenden 13-Seiten-Suites, die genug Masse haben.
+
+**Validation:** `validate-all.sh` PASSED nach allen Änderungen.
+
+**Limits / bekannte Kompromisse:**
+- Neue Hub-Pages sind schlank (3 Spielideen × 3 Altersgruppen statt 5 × 3 wie bei Meerjungfrau). Bewusste Entscheidung: Content-Substanz pro Spielidee höher, HCU-Risiko geringer. Erweiterung möglich, wenn GSC-Daten Traffic zeigen.
+- Keine Alters-Unterseiten angelegt (analog zu Meerjungfrau-Pattern 12 Alters-Seiten je Motto). Warum nicht: Ohne GSC-Daten-Validierung wäre das 15–20h Content-Arbeit ohne Nutzen-Nachweis. Entscheidung: nach Mai-GSC-Review.
+- Ninjago + Spider-Man-Seiten haben in den Cross-Motto-Grids keine tauschbaren Fallback-Mottos (nur Marken-Mottos + Tool-Mottos, die nicht zu Superheld-Cluster passen) → 21 Seiten aus Superheld-Cluster nicht angetastet. Akzeptabel: Zielzahl 40 ist auch ohne diese erreicht.
+
+**Folgetickets:**
+- P1-21 (Kill-List Mai): Wenn Marken-Mottos (harry-potter 100, ninjago 109, etc.) gekillt werden, fallen weitere ~100+ Links auf Tool-Mottos frei, die dann in Cross-Motto-Grids auftauchen könnten. Prinzessin/Superheld sind bereits gut positioniert, damit sie von dieser Kill-Welle profitieren.
+- P1-8 Elite-Motto-Seiten: Nach GSC-Review kann entschieden werden, ob Prinzessin/Superheld Alters-Unterseiten brauchen (analog zu Safari/Weltraum-Elite-Ausbau).
+
+---
+
+#### P1-21: Kill-List-Entscheidung Marken-Mottos + Content-Inseln `[TEST]`
+
+**Motivation:** Audit am 23.04.2026 zeigt 168 strategisch fragwürdige Seiten: 8 Marken-Mottos mit IP-Risiko (Paw Patrol, Pokemon, Minecraft, Frozen, Super Mario, Spider-Man, Harry Potter, Ninjago = 112 Seiten) und 4 Content-Inseln ohne Tool-Integration (Pferde, Ritter, Zirkus, Baustelle = 56 Seiten). Keine davon ist tool-integriert. Aber: einige Marken-Mottos sind stark verlinkt (Ninjago 108, Harry Potter 98) — Kill würde Link-Beben auslösen.
+
+**Nicht-Ziel:** Nicht jetzt killen. Ohne GSC-Traffic-Daten ist das Blind-Flug.
+
+**Scope:**
+1. **GSC-Daten abwarten (4 Wochen ab Search Console-Setup, P0-1 war 19.04. → Zielmonat Mai):**
+   - Pro Motto: Impressions, Clicks, Durchschnitts-Position
+   - Cutoff-Schwelle definieren (z.B. <50 Clicks/Monat = Kill-Kandidat)
+2. **Pro Kandidat 3-Wege-Entscheidung:**
+   - (a) **Kill**: 301 auf nächstgelegenes Tool-Motto (z.B. Paw Patrol → Feuerwehr, Frozen → Einhorn) + interne Links entfernen
+   - (b) **Integrieren**: Tool-Unterstützung bauen, aufwerten — nur wenn Traffic signifikant
+   - (c) **Behalten als „Fan-Seite"**: Sitemap-Eintrag, aber aus Navigations-Pfaden raus, klar als Content gekennzeichnet (kein Tool-Pfad)
+3. **Ausführung:** Pro Entscheidung Implementierung inkl. Canonical-Checks und _redirects-Update.
+
+**IP-Risiko-Caveat:** Marken-Mottos sind rechtlich heikel. Bei Kill gewinnt man Rechtssicherheit. Bei Behalten → Disclaimer-Text verschärfen und prüfen, ob Content wirklich rein informationell ist (keine Markenname-Verwendung im Title als kommerzielles Angebot).
+
+**Aufwand:**
+- Daten-Review: 1 Std
+- Pro Kandidat Entscheidung: 5 Min × 12 = 1 Std
+- Kill-Implementierung: 30 Min pro gekilltem Motto
+- **Total: 3–6 Std** je nach Entscheidungen
+
+**Erfolgs-Kriterien:**
+- Dokumentierte Kill/Integrate/Behalten-Entscheidung pro Motto in STRATEGIE.md
+- Bei Kills: saubere 301-Ketten, kein Orphan, kein toter interner Link
 
 ---
 
@@ -1148,6 +1238,59 @@ Bolle hat nach einer Lösung gefragt, die Amazon & Co. trotz X-Frame-Options wir
 
 ---
 
+#### P1-60: Reminder-System Partyseite (Pre-Party + Year-Later)  `[KERN]`
+
+**Motivation:** Mit der Newsletter-Opt-In-Checkbox vom 20.05.2026 (Cockpit + Worker-DOI) versprechen wir auf der DOI-Erfolgsseite zwei Reminder, die noch nicht gebaut sind:
+1. **Pre-Party-Reminder:** "7 Tage vor der Party" — Tipps + Countdown. Versprechen aus DOI-Confirm-Text.
+2. **Year-Later-Reminder:** "Mattis wird bald 7 — Zeit für die nächste Planung" — Retention-Loop 11 Monate nach Party-Datum.
+
+Versprechen einlösen + Retention-Hebel aktivieren.
+
+**Sub-Tasks:**
+
+**A) Pre-Party-Reminder (2–3h)**
+- Cloudflare Cron Trigger in `wrangler.toml`: täglich 04:00 UTC
+- Worker scant `party:*`-Keys, filtert nach `party.email && party.date - 7d == today`
+- Resend-Mail mit Motto-Emoji, Countdown ("noch 7 Tage!"), 2–3 Last-Minute-Tipps, Edit-Link für letzte Anpassungen
+- Idempotenz: KV-Marker `reminded:pre:<id>` schreiben, damit nicht doppelt
+- Opt-Out-Link in jeder Mail (delete `party.email` → keine weiteren Reminder)
+
+**B) Year-Later-Reminder (3–5h)**
+- **Datenproblem:** `calcTTL(party.date)` löscht aktuell die Partydaten ~30 Tage nach Party-Tag (siehe P1-17/C). Für 11-Monats-Reminder brauchen wir Long-Lived-Daten.
+- **Lösung:** Separater Long-Lived-Key `recurring:<emailHash>` mit Minimal-Inhalt (E-Mail, childName, party.date, motto). Wird beim Create geschrieben, wenn `newsletterOptIn === true`. TTL 2 Jahre. Kein Foto, keine Adresse, keine Gäste — Datenminimierung.
+- Cron-Trigger (gleicher wie A) scant zusätzlich `recurring:*`-Keys, filtert nach `party.date + 11 Monate == today`
+- Mail-Template: "Mattis wird bald 7 — willst du dieses Jahr wieder mit machsleicht planen?" + CTA zum Planer mit `?motto=…&alter=…` Pre-Fill
+- Idempotenz: `reminded:year:<emailHash>` Marker
+- Opt-Out: delete `recurring:<emailHash>`
+- Datenschutzerklärung §10/§11 ergänzen: Long-Lived-Reminder-Daten 24 Monate, Löschung auf Anfrage
+
+**Sub-Task C) Unsubscribe-Endpoint (gemeinsam für A+B, ~30 Min)**
+- `GET /api/unsubscribe?token=…` — Token = HMAC(email + secret)
+- Löscht `recurring:*`, setzt `party.email = ""`, löscht Resend-Audience-Kontakt
+- Confirmation-Page
+
+**Aufwand total:** 5–7h. Eigener kleiner Sprint, am besten gebündelt mit P1-17/C (gleicher Cron-Mechanismus).
+
+**Blocker:**
+- Cloudflare-Deploy nötig (Laptop-Session)
+- `RESEND_API_KEY` muss reminder-fähig sein (sollte schon sein)
+
+**Erfolgs-Kriterien:**
+- A: Test-Party mit Datum +8d → Mail kommt am +1d-Lauf, `reminded:pre:` Marker da
+- B: Test-Party mit Datum -334d → Mail kommt, CTA-Link führt zum Planer mit Pre-Fill
+- Opt-Out aus Mail → kein Reminder mehr, `recurring:*` Key weg
+
+**Risiko:**
+- Spam-Empfinden bei Year-Later (11 Monate später, User hat machsleicht vergessen) — wording wichtig, klarer Opt-Out
+- Datenschutz: Long-Lived-Daten brauchen sauberen §10-Eintrag und 24-Monats-Hardlimit
+
+**Referenz:**
+- Commit `accbbe1` (20.05.2026): Newsletter-Checkbox im Cockpit-Form, DOI-Versprechen ausgelöst
+- party-worker.js Zeile 397+ (existierender DOI-Confirm-Endpoint)
+
+
+---
+
 ## 🪮 PLANER-FRISUR-SPRINT (P3-12 bis P3-21, neu 11.05.2026)
 
 **Strategischer Rahmen:** Sprint, der den Planer vom Generator zum **intelligenten Produkt** umbaut. Ziel: bestes Kindergeburtstags-Tool am deutschen Markt. Konkurrenz-Recherche 11.05.2026 ergeben: **es gibt aktuell keinen interaktiven Planer in den Top-10 Google-Ergebnissen** — alles Blogs, Ratgeber, Affiliate-Listen. Die einzige Tool-Konkurrenz (Eysoldt-Partyplaner-App, Actionbound) ist generisch oder Schatzsuche-only. machsleicht spielt bereits jenseits dieser Liga, hat aber Lücken im sichtbaren Mitdenken und in der Begleit-Dimension.
@@ -1184,6 +1327,8 @@ Bolle hat nach einer Lösung gefragt, die Amazon & Co. trotz X-Frame-Options wir
 
 ### P3-13: Cockpit-Header im Plan-View
 
+> **Status: ✅ DONE (2026-05-19)** — Cockpit-Header (EliteCockpitHeader: ageInsight + signatureRitual). Commit `10fa964` / draft. Browser-Smoke-Test offen.
+
 **Mentaler Reframe: aus „hier ist dein Plan" wird „hier ist dein Stand".**
 
 Nach Plan-Generierung erscheint oben im Plan-View eine kompakte Cockpit-Box statt dem aktuellen Motto-Badge:
@@ -1218,6 +1363,8 @@ function getPlanState(plan) {
 ---
 
 ### P3-14: Machbarkeits-Box mit Klartext + Constraint-Solver-Fundament
+
+> **Status: ✅ DONE (2026-05-19)** — Constraint-Solver (EliteGamesFilter: Aufwand/Lautstärke + auto indoor/outdoor). Commit `10fa964` / draft. Browser-Smoke-Test offen.
 
 **Aus deskriptivem `calcScore()` wird handlungsleitende `analyzeFeasibility()`.**
 
@@ -1271,6 +1418,8 @@ Wir haben angepasst:
 
 ### P3-16: Vorbereitungskarte (datums-getriebene Wochenplan-Ansicht)
 
+> **Status: ✅ DONE (2026-05-19)** — Vorbereitungskarte (VorbereitungsKarte: 6 collapsible Sektionen). Commit `10fa964` / draft. Browser-Smoke-Test offen.
+
 **Strukturell der wichtigste neue Ergebnis-Block. Macht aus Snapshot → Begleiter.**
 
 Sobald Datum eingegeben (P3-15), erscheint im Plan-View ein neuer Abschnitt unter dem Zeitplan:
@@ -1310,6 +1459,8 @@ Am Partytag morgens
 ---
 
 ### P3-17: Drei-Gruppen-Einkaufsliste + „Was hab ich zuhause"-Inventar
+
+> **Status: ✅ DONE (2026-05-19)** — Drei-Gruppen-Einkaufsliste (EliteShoppingList: pflicht/sinnvoll/habIchVielleicht). Commit `10fa964` / draft. Browser-Smoke-Test offen.
 
 **Einkaufsliste neu strukturieren — von einer Liste zu drei Gruppen plus Inventar-Check.**
 
@@ -1351,6 +1502,8 @@ Schon zuhause?
 ---
 
 ### P3-18: SOS-Button im Plan-View
+
+> **Status: ✅ DONE (2026-05-19)** — SOS-Button (SOSButton: Floating FAB + Bottom-Sheet mit 8 Szenarien). Commit `10fa964` / draft. Browser-Smoke-Test offen.
 
 **Sichtbarer, jederzeit erreichbarer Notfall-Knopf während der Party.**
 

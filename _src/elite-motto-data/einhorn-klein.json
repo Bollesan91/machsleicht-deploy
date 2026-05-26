@@ -1,0 +1,1112 @@
+{
+  "_meta": {
+    "source_file": "kindergeburtstag/einhorn-3-5-jahre.html",
+    "extracted": "2026-05-19",
+    "schema_version": "1.0",
+    "purpose": "Einhorn 3-5 (klein) — Phase C #4 Elite-Slot, H2-Ritual-Template",
+    "phase_b_complete": "2026-05-19",
+    "phase_b_method": "Direct draft — einhorn-klein-spezifika (1,5-2h, Eltern-Pflicht, Glitzer-Allergie-Test, kein Fondant) durchgehend angewandt."
+  },
+  "motto": "einhorn",
+  "ageGroup": "klein",
+  "ageRange": [
+    3,
+    5
+  ],
+  "title": "🦄 Einhorn-Kindergeburtstag — 3–5 Jahre",
+  "metaDescription": "Einhorn-Kindergeburtstag für 3–5 Jahre: 3 fertige Party-Konzepte mit Zeitplan, 6 Spielen mit Anleitung, Einkaufsliste und Kosten pro Kind. Komplett kostenlos.",
+  "introParagraph": "3 fertige Party-Konzepte: Minimal (1,5 Std.) · Standard (2 Std.) · Wow (2,5 Std.)\n\nMinutengenaue Zeitpläne, 6 altersgerechte Spiele mit kompletter Anleitung, Einkaufslisten mit Preisen und Kosten pro Kind. Für 3–5 Jahre: weniger Programm, mehr Staunen.\n\n[🦄 Einhorn-Geburtstag planen →](/kindergeburtstag?motto=einhorn&alter=4#planer)",
+  "ageInsight": {
+    "headline": "Was du über 3–5-Jährige wissen musst — Einhorn-Party 3-5",
+    "traits": [
+      {
+        "topic": "Kurze Aufmerksamkeit",
+        "detail": "3-Jährige halten 5–10 Minuten durch, 5-Jährige maximal 15. Jedes Spiel muss sofort verständlich sein — keine langen Regelerklärungen."
+      },
+      {
+        "topic": "Weniger ist mehr",
+        "detail": "2 Spiele + Kuchen reichen für eine perfekte Party. Lieber ein Spiel zu wenig als eines zu viel — überstimulierte Kleinkinder weinen, und dann weinen alle."
+      },
+      {
+        "topic": "Kein Wettkampf",
+        "detail": "In diesem Alter gibt es keine Gewinner und Verlierer. Kein „wer ist schneller\", kein „wer hat mehr gefunden\". Jedes Kind soll Erfolge erleben, nicht Niederlagen. Staunen statt Siegen."
+      },
+      {
+        "topic": "Motorik beachten",
+        "detail": "3-Jährige schneiden noch nicht mit der Schere, kleben unsauber, können kaum stillsitzen. 5-Jährige basteln schon geschickt. Bastel-Aktivitäten müssen für beide klappen — einfache Materialien, grobe Bewegungen, kein Filigranwerk."
+      },
+      {
+        "topic": "Kurze Party",
+        "detail": "1,5 bis 2 Stunden sind perfekt. Nach 2 Stunden sind die meisten 3-Jährigen erschöpft, egal wie toll die Party ist. Die Wow-Variante mit 2,5 Stunden funktioniert nur bei 5-Jährigen gut."
+      },
+      {
+        "topic": "Essen = einfach",
+        "detail": "Kinder in diesem Alter essen wenig auf Partys — zu aufgeregt. Kleine Portionen, Fingerfood, nichts was man mit Besteck essen muss. Kuchen wird angebissen, der Rest wandert in die Mitgebsel-Tüte."
+      },
+      {
+        "topic": "Eltern bleiben da",
+        "detail": "Bei 3–4-Jährigen bleiben die Eltern. Das ist kein Bug, das ist ein Feature: mehr Hände zum Helfen, weniger Verantwortung für dich. Bei 5-Jährigen können manche Eltern gehen — aber kläre das vorher."
+      }
+    ],
+    "whyMottoFits": "Einhorn ist DAS Motto für diese Altersgruppe: Glitzer, Farben, Magie — alles, was kleine Kinder lieben. Es braucht keine komplexe Geschichte und keine schwierigen Spiele. Ein Einhorn-Tattoo auf der Hand, ein bisschen Sternenstaub, rosa Limo — und die Kinder sind im Einhorn-Himmel. Kein anderes Motto funktioniert so mühelos bei 3-Jährigen UND 5-Jährigen gleichzeitig.",
+    "whyMottoFitsHeadline": "🦄 Warum Einhorn für 3–5-Jährige perfekt funktioniert"
+  },
+  "signatureRitual": {
+    "name": "Das Sternenstaub-Ritual",
+    "subtitle": "Für alle 3 Varianten",
+    "introText": "Jedes Kind bekommt beim Reinkommen seinen eigenen Einhorn-Namen Du bastelst vorher einen „Sternenstaub-Beutel\": Stoffbeutel (oder Papiertüte) mit Glitzer drin, darin gefaltete Zettel mit 12 Einhorn-Namen. Jedes Kind greift rein, zieht einen Namen und heißt ab jetzt so. Dann bekommt es ein Einhorn-Tattoo auf den Handrücken.",
+    "setupSteps": [],
+    "rolesList": [
+      {
+        "emoji": "🌙",
+        "name": "Luna Mondsilber",
+        "function": null
+      },
+      {
+        "emoji": "⭐",
+        "name": "Stella Sternenglanz",
+        "function": null
+      },
+      {
+        "emoji": "🌈",
+        "name": "Rosalie Regenbogen",
+        "function": null
+      },
+      {
+        "emoji": "🧚",
+        "name": "Finja Feenstaub",
+        "function": null
+      },
+      {
+        "emoji": "💛",
+        "name": "Goldie Glitzerherz",
+        "function": null
+      },
+      {
+        "emoji": "☀️",
+        "name": "Sunny Sonnenschein",
+        "function": null
+      },
+      {
+        "emoji": "☁️",
+        "name": "Lila Wolkentanz",
+        "function": null
+      },
+      {
+        "emoji": "🌸",
+        "name": "Flora Blütenwind",
+        "function": null
+      },
+      {
+        "emoji": "💎",
+        "name": "Perla Perlenschimmer",
+        "function": null
+      },
+      {
+        "emoji": "❄️",
+        "name": "Nelly Nordlicht",
+        "function": null
+      },
+      {
+        "emoji": "🌹",
+        "name": "Ruby Rosenfunkel",
+        "function": null
+      },
+      {
+        "emoji": "🌅",
+        "name": "Mila Morgentau",
+        "function": null
+      }
+    ],
+    "optOutNote": "💡 Für 3-Jährige: Du liest den Namen vor und sagst „Du bist jetzt Luna Mondsilber!\" — sie können den Zettel noch nicht selbst lesen. Das macht es sogar magischer.",
+    "materialNote": "⚠️ Vor der Party: Glitzer-Kleber, Tattoo und Schminkfarbe an kleiner Hautstelle (Innenseite Unterarm) eines Kindes 1 Tag vorher testen. Bei Rötung → nur Sticker und Klettband-Verzierungen statt Tattoo/Glitzer/Schminke."
+  },
+  "variants": [
+    {
+      "id": "minimal",
+      "label": "Minimal — 1,5 Stunden, minimaler Aufwand",
+      "headline": "⚡ Minimal — 1,5 Stunden, stressfrei",
+      "intro": "Das ehrliche Konzept für Eltern, die nicht 3 Tage vorbereiten wollen. 2 Spiele, Kuchen, fertig. Kinder in diesem Alter brauchen nicht mehr — sie brauchen weniger. Funktioniert auch alleine ohne Helfer.",
+      "timeWindow": "15:00–16:30, 5 Kinder",
+      "schedule": [
+        {
+          "time": "15:00",
+          "title": "✨ Sternenstaub-Beutel & Einhorn-Tattoo",
+          "description": "Kinder kommen an, ziehen ihren Einhorn-Namen. Jedes Kind bekommt ein [Einhorn-Tattoo*](https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht-21) auf den Handrücken. Eltern helfen beim Anpressen. Freies Spielen bis alle da sind."
+        },
+        {
+          "time": "15:15",
+          "title": "🦄 Einhorn-Horn basteln",
+          "description": "Jedes Kind bastelt sein eigenes Einhorn-Horn aus Pappteller + Glitzer. 20 Min. — danach aufsetzen und als Einhorn durch den Raum galoppieren."
+        },
+        {
+          "time": "15:40",
+          "title": "🌈 Regenbogen-Tanz",
+          "description": "Musik an → tanzen. Musik aus → einfrieren! Wer wackelt, bekommt einen „Zauberstaub-Kuss\" (Glitzer-Aufkleber). Kein Ausscheiden — alle tanzen immer weiter. 15 Min."
+        },
+        {
+          "time": "16:00",
+          "title": "🎂 Kuchen & Einhorn-Saft",
+          "description": "Regenbogen-Wolkenkuchen mit Zuckerhorn. „Einhorn-Saft\" (Apfelschorle mit 2 Tropfen Grenadine → wird rosa). Happy Birthday singen. 20 Min."
+        },
+        {
+          "time": "16:20",
+          "title": "🎁 Mitgebsel & Abholung",
+          "description": "Horn + Tattoo + 1 Einhorn-Figur + Süßes in Tüte. Eltern kommen. Fertig.\n\n💡 Warum nur 1,5 Stunden?\nWeil 3–4-Jährige nach 90 Minuten durch sind. Wirklich. Die Aufmerksamkeit kippt, die Stimmung kippt, und dann stehst du mit 5 weinenden Kindern da. Kurz und gut schlägt lang und chaotisch — immer."
+        }
+      ],
+      "games": [
+        {
+          "name": "🦄 Einhorn-Horn basteln",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 20,
+          "minAge": 3,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "1 Pappteller pro Kind (weiß), Schere (du schneidest vor!), Klebeband/Tacker, Glitzer-Kleber oder Glitzer + Klebestift, bunte Sticker, Gummiband oder Haarreif zum Befestigen",
+          "prepText": "Pappteller einmal falten → Kegel-Form rollen → mit Tacker fixieren. Das ist das Horn. Jedes Kind darf sein Horn mit Glitzer-Kleber und Stickern verzieren. Mit Gummiband am Kopf befestigen oder auf einen Haarreif kleben.\n\nVorbereitung: Hörner vorher schon zur Kegel-Form rollen und tackern — 3-Jährige können das nicht selbst. Sie kleben nur die Deko drauf.\n\nTipp: Tisch vorher mit alter Zeitung abdecken. Glitzer geht nie wieder raus — akzeptiere das jetzt.",
+          "steps": [],
+          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband. Glitzer + Glitzer-Kleber vorher 1 Tag an Innenseite Unterarm testen (Allergie-Vortest); bei Rötung Sticker statt Glitzer.",
+          "indoorTip": "Tisch mit alter Zeitung oder Wachstuch abdecken, Müllbeutel als Bastel-Schürze pro Kind — Glitzer-Kleber landet überall.",
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null,
+          "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+        },
+        {
+          "name": "🌈 Regenbogen-Tanz",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": "laut",
+          "effort": "leicht",
+          "material": "Bluetooth-Lautsprecher oder Handy, fröhliche Kindermusik (Spotify: „Kindergeburtstag Party\"), bunte Tücher zum Schwenken (optional, je 1 pro Kind)",
+          "prepText": "Musik an → alle tanzen, hüpfen, galoppieren wie Einhörner. Musik aus → alle frieren ein wie Eisskulpturen! Wer sich bewegt, bekommt einen Glitzer-Aufkleber auf die Hand — das ist eine Belohnung, kein Rauswerfen.\n\nVariante „Regenbogen-Farben\": Rufe eine Farbe, alle müssen etwas in dieser Farbe im Raum berühren und weiter tanzen.\n\nTipp: Bunte Tücher zum Schwenken machen es 10x magischer. 6 Stück kosten ~3 € bei Action.",
+          "steps": [],
+          "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Glitzer-Aufkleber sind klein — nur auf Hand/Arm aufbringen, nicht zum Naschen liegen lassen.",
+          "indoorTip": "Wohnzimmer-Möbel zur Seite schieben, Teppich rollt sich beim Galoppieren auf — kurz fixieren.",
+          "outdoorTip": "Auf Wiese mit Tüchern in Regenbogenfarben besonders magisch — Wind macht die Tücher zum Flügel.",
+          "whyItWorksTitle": null,
+          "whyItWorks": null,
+          "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+        }
+      ],
+      "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Saft\"6 Trinkpäckchen\n🍓Obst-Teller200 g Erdbeeren\n🍿Popcorn150 g\n\n💡 „Einhorn-Saft\"?\nApfelschorle oder klare Limo, 2 Tropfen Grenadine oder Johannisbeersaft rein → wird sofort rosa. „Einhorn-Saft\" aufs Etikett schreiben. 3-Jährige glauben das sofort. Kostet nix extra, macht den ganzen Unterschied.",
+      "giveaways": "🦄 1 kleine Einhorn-Figur (~0,30 €, aus dem 12er-Set)\n✨ Eigenes Einhorn-Horn (selbst gebastelt)\n🍭 1 Lolli oder kleine Tüte Gummibärchen\n\nIn rosa oder weiße Papiertüte (10 Stk. ~1–2 € bei DM/Action) mit „Einhorn-Geschenke für ___\" beschriften. Kosten: ~1,50 € pro Kind.",
+      "shoppingList": [
+        {
+          "emoji": "🦄",
+          "label": "Einhorn-Figuren (12 Stk.)",
+          "url": "https://www.amazon.de/s?k=mini+einhorn+figuren+set+kinder&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Mitgebsel-Beilage, kein Spiel hängt daran — Tattoos + Gummibärchen reichen funktional."
+        },
+        {
+          "emoji": "💫",
+          "label": "Einhorn-Tattoo-Set (30+ Motive)",
+          "url": "https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Schicht-Appell-Tattoo ist Variant-Defining für Sternenstaub-Ritual — ohne kein Wiedererkennungs-Element."
+        },
+        {
+          "emoji": "✨",
+          "label": "Glitzer-Kleber (6 Farben)",
+          "url": "https://www.amazon.de/s?k=glitzer+kleber+kinder+set&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Variant-Defining für Einhorn-Horn-Basteln — eines von zwei Minimal-Spielen."
+        },
+        {
+          "emoji": "📄",
+          "label": "Pappteller (weiß, 20 Stk.)",
+          "url": null,
+          "priceEur": 2,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Bastel-Untergrund für Glitzer-Aktion, aber Folie + DIN-A4 tut's funktional auch."
+        },
+        {
+          "emoji": "🧃",
+          "label": "Apfelschorle + Grenadine",
+          "url": null,
+          "priceEur": 4,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Getränke nicht optional — 5 durstige Kinder + Eltern brauchen Verpflegung."
+        },
+        {
+          "emoji": "🍓",
+          "label": "Erdbeeren + Popcorn",
+          "url": null,
+          "priceEur": 4,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Snack-Pause-Beilage, aber Kuchen + Gummibärchen tragen die 1,5h auch ohne."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Backmischung + Lebensmittelfarben",
+          "url": null,
+          "priceEur": 5,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Regenbogen-Wolkenkuchen ist motto-zentral, Pflichtteil jeder Kinderparty."
+        },
+        {
+          "emoji": "🛍️",
+          "label": "Papiertüten + Gummibärchen",
+          "url": null,
+          "priceEur": 3,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Goodie-Verpackung, Tüten gehen auch aus Haushalt."
+        }
+      ],
+      "estimatedCostEur": 27,
+      "costContext": "Geschätzte Kosten (Minimal, 5 Kinder)"
+    },
+    {
+      "id": "standard",
+      "label": "Standard — 2 Stunden, vollständige Schicht",
+      "headline": "🎯 Standard — 2 Stunden, rund und gut",
+      "intro": "Der Sweet Spot für 3–5-Jährige: genug Programm ohne Überforderung. 4 Aktivitäten, Kuchen, Deko. Die Party, an die sich die Kinder erinnern — und die Eltern nicht bereuen.",
+      "timeWindow": "15:00–17:00, 5 Kinder",
+      "schedule": [
+        {
+          "time": "15:00",
+          "title": "✨ Sternenstaub-Beutel, Tattoo & freies Spielen",
+          "description": "Jedes Kind zieht seinen Einhorn-Namen, bekommt das Tattoo. Dann freies Spielen mit bereitliegenden Einhorn-Ausmalbildern und Stiften, bis alle da sind."
+        },
+        {
+          "time": "15:15",
+          "title": "🦄 Einhorn-Horn basteln",
+          "description": "Pappteller-Horn mit Glitzer-Kleber und Stickern. 20 Min. Wenn fertig: aufsetzen und 1 Runde als Einhorn-Herde durch den Raum galoppieren."
+        },
+        {
+          "time": "15:40",
+          "title": "🌈 Regenbogen-Milch-Experiment",
+          "description": "DER Wow-Moment. Farben „explodieren\" in der Milch. 15 Min. — die Kinder staunen, wollen es nochmal sehen. Du machst es 3x."
+        },
+        {
+          "time": "16:00",
+          "title": "🎂 Kuchen, Einhorn-Saft & Obst",
+          "description": "Regenbogen-Wolkenkuchen. Happy Birthday singen. Rosa Einhorn-Saft. 25 Min."
+        },
+        {
+          "time": "16:25",
+          "title": "✨ Sternenstaub suchen",
+          "description": "Glitzer-Reis-Wanne mit versteckten Einhorn-Figuren. Jedes Kind darf mit dem Löffel graben. Ruhige Phase nach dem Kuchen. 15 Min."
+        },
+        {
+          "time": "16:40",
+          "title": "🌈 Regenbogen-Tanz",
+          "description": "Zum Auspowern nach dem Zucker. Tanzen, Einfrieren, Farben-Rufen. 15 Min."
+        },
+        {
+          "time": "16:55",
+          "title": "🎁 Mitgebsel & Abholung",
+          "description": "Horn + Einhorn-Figur + Tattoo + Süßes in Tüte. Fertig.\n\n💡 Rhythmus-Regel für Kleinkinder:\nRuhig → Aktiv → Ruhig → Aktiv → Ruhig. Basteln (ruhig) → Milch-Experiment (staunen) → Kuchen (Pause) → Sternenstaub suchen (ruhig) → Tanzen (laut). So kippt die Stimmung nie. Wenn ein Kind trotzdem aussteigt: lass es. Ausmalbilder bereithalten als „sichere Insel\"."
+        }
+      ],
+      "games": [
+        {
+          "name": "🦄 Einhorn-Horn basteln",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 20,
+          "minAge": 3,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "1 Pappteller pro Kind (weiß), Tacker, Glitzer-Kleber, bunte Sticker, Gummiband/Haarreif",
+          "prepText": "Pappteller vorher zur Kegel-Form rollen und tackern. Kinder verzieren mit Glitzer-Kleber und Stickern. Am Kopf befestigen → „Du bist jetzt ein echtes Einhorn!\"",
+          "steps": [],
+          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null,
+          "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+        },
+        {
+          "name": "🌈 Regenbogen-Milch-Experiment",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "1 flacher weißer Teller, 1 Tasse Vollmilch, Lebensmittelfarben (4 Farben, ~2 € im Supermarkt), Spülmittel, 1 Wattestäbchen pro Kind",
+          "prepText": "Milch in den Teller gießen. Kinder tropfen je eine Farbe rein (du hilfst!). Dann: Wattestäbchen in Spülmittel tunken und in die Milch stippen — Farben „explodieren\" in Regenbogen-Spiralen! Sieht aus wie Magie.\n\nTipp: Milch danach einfach wegschütten (nicht trinken — Spülmittel!). Kosten: quasi 0 €, Effekt: riesig. 3–4 Runden sind normal — danach ist der Effekt weg (Milch gesättigt), frischer Teller hilft.",
+          "steps": [],
+          "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Lebensmittelfarbe + Spülmittel — KEIN Trinken, Hände waschen vor Snacks. Teller-Standort kippsicher (Tablett mit Rand drunter).",
+          "indoorTip": "Auf Wachstuch oder Tablett platzieren — Milch + Spülmittel-Spritzer sind unausweichlich.",
+          "outdoorTip": null,
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Spülmittel zerstört die Oberflächenspannung der Milch. Das Fett „flieht\" und nimmt die Farben mit.",
+          "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+        },
+        {
+          "name": "✨ Sternenstaub suchen",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "1 große Plastikwanne, 2 kg Reis mit essbarem Glitzer gemischt, 8 kleine Einhorn-Figuren, 1 Löffel pro Kind",
+          "prepText": "Reis mit Glitzer in die Wanne. Einhorn-Figuren im Reis vergraben. Jedes Kind bekommt einen Löffel und gräbt vorsichtig. Wer ein Einhorn findet, darf es behalten.\n\nWichtig: Immer mehr Figuren als Kinder (bei 5 Kindern → 8 Figuren). So findet jedes Kind mindestens eins — kein Frust.\n\nTipp: Dieses Spiel beruhigt nach dem Kuchen-Zucker-Hoch. Perfekter Rhythmus-Wechsel.",
+          "steps": [],
+          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
+          "indoorTip": "Wanne in die Badewanne oder auf eine alte Tischdecke — Reis-Körner gehen sonst tagelang aus dem Teppich.",
+          "outdoorTip": "Auf der Terrasse oder Wiese großzügig — verstreuter Reis ist Vogelfutter.",
+          "whyItWorksTitle": null,
+          "whyItWorks": null,
+          "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+        },
+        {
+          "name": "🌈 Regenbogen-Tanz",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": "laut",
+          "effort": "leicht",
+          "material": "Bluetooth-Box/Handy, fröhliche Kindermusik, bunte Tücher zum Schwenken (optional)",
+          "prepText": "Musik an → tanzen wie Einhörner (galoppieren!). Musik aus → einfrieren! Wer sich bewegt, bekommt einen Glitzer-Aufkleber. Kein Ausscheiden — alle tanzen weiter.",
+          "steps": [],
+          "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr).",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null,
+          "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+        }
+      ],
+      "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Saft\"8 Trinkpäckchen\n🍓Rosa Obst-TellerErdbeeren, Himbeeren\n🥒Gemüse-SticksGurke, Möhre\n🍿Popcorn200 g",
+      "decoration": "🎈 Pastell-Luftballons (rosa/lila)10 Stk. ~3 €\n🌈 Regenbogen-Girlande1 Stk. ~4 €\n🦄 Einhorn-Pappteller & BecherSet ~6 €\n☁️ Wolken aus Watte an der DeckeKostenlosWatte-Bälle mit Faden aufhängen, 15 Min.\n\n💡 Kleinkinder-Deko-Trick:\nWenige große Deko-Teile wirken stärker als viele kleine. Ein Einhorn-Ballon aus Folie (DM, ~3 €) + 5 Pastell-Ballons reichen. Kinder in diesem Alter sehen die Ballons und sind glücklich. Den Rest checken sie nicht.",
+      "giveaways": "🦄 1 Einhorn-Figur aus der Schatzsuche (selbst gefunden — emotionaler Wert)\n✨ Eigenes Einhorn-Horn (selbst gebastelt)\n🖍️ 2 Einhorn-Ausmalbilder zum Mitnehmen\n🍭 1 kleine Tüte Gummibärchen\n\nIn rosa Papiertüte mit Einhorn-Name beschriften. Kosten: ~2 € pro Kind.",
+      "shoppingList": [
+        {
+          "emoji": "🦄",
+          "label": "Einhorn-Figuren (12 Stk.)",
+          "url": "https://www.amazon.de/s?k=mini+einhorn+figuren+set+kinder&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Konsistent zu Minimal."
+        },
+        {
+          "emoji": "💫",
+          "label": "Einhorn-Tattoo-Set (30+ Motive)",
+          "url": "https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Schicht-Appell-Tattoo Variant-übergreifend."
+        },
+        {
+          "emoji": "✨",
+          "label": "Glitzer-Kleber Set",
+          "url": "https://www.amazon.de/s?k=glitzer+kleber+kinder+set&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Horn-Basteln bleibt zentral, Glitzer-Kleber ist Materialbasis."
+        },
+        {
+          "emoji": "✨",
+          "label": "Essbarer Glitzer / Zucker-Perlen",
+          "url": "https://www.amazon.de/s?k=essbarer+glitzer+zucker+perlen&tag=machsleicht-21",
+          "priceEur": 3,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Bestreuung auf Kuchen, aber normale Streusel tun's auch."
+        },
+        {
+          "emoji": "🦄",
+          "label": "Einhorn-Teller & Becher Set",
+          "url": "https://www.amazon.de/s?k=einhorn+teller+becher+kindergeburtstag&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Atmosphäre-Heber, Pappgeschirr-Standard funktional gleichwertig."
+        },
+        {
+          "emoji": "🎈",
+          "label": "Pastell-Luftballons + Regenbogen-Girlande",
+          "url": null,
+          "priceEur": 7,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Deko-Premium, aber Stationen funktional ohne."
+        },
+        {
+          "emoji": "🧃",
+          "label": "Apfelschorle + Grenadine + Obst + Gemüse",
+          "url": null,
+          "priceEur": 8,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Getränke + gesunde Beilage bei 2h Party nicht optional."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Backmischung + Lebensmittelfarbe + Deko",
+          "url": null,
+          "priceEur": 6,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Kuchen-Pflichtteil."
+        },
+        {
+          "emoji": "🛍️",
+          "label": "Papiertüten + Gummibärchen + Ausmalbilder",
+          "url": null,
+          "priceEur": 3,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Goodie-Verpackung + Pufferzeit-Aktivität, aber funktional verzichtbar."
+        }
+      ],
+      "estimatedCostEur": 46,
+      "costContext": "Geschätzte Kosten (Standard, 5 Kinder)"
+    },
+    {
+      "id": "wow",
+      "label": "Wow — 2,5 Stunden, die volle Schicht",
+      "headline": "✨ Wow — 2,5 Stunden, die volle Magie",
+      "intro": "Die Kinder erleben eine „Regenbogen-Zauber-Reise\" — eine zusammenhängende Geschichte in 5 Kapiteln. Jede Station baut auf der vorherigen auf: zuerst werden sie zu Einhörnern (Verkleidung), dann lernen sie Regenbogen-Magie (Milch-Experiment), füttern ihr Einhorn (Ballwurf), suchen den verlorenen Sternenstaub (Schatzsuche) und basteln sich ihren eigenen Zauberstab für den großen Abschluss-Tanz. Aufwand mittel, Erinnerung riesig.",
+      "timeWindow": "14:30–17:00, 5 Kinder",
+      "schedule": [
+        {
+          "time": "14:30",
+          "title": "📖 Kapitel 1: Die Verwandlung",
+          "description": "Jedes Kind zieht seinen Einhorn-Namen aus dem Sternenstaub-Beutel, bekommt das Tattoo. Dann: Einhorn-Horn basteln (Pappteller + Glitzer) UND Tüll-Röckchen überziehen (~2 € pro Kind bei Action/Tedi). Du erzählst die Luna-Geschichte. „Jetzt seid ihr echte Einhörner — und Luna braucht eure Hilfe!\" 20 Min."
+        },
+        {
+          "time": "14:55",
+          "title": "📖 Kapitel 2: Regenbogen-Magie lernen",
+          "description": "„Bevor ihr Luna helfen könnt, müsst ihr Regenbogen-Magie lernen!\" → Regenbogen-Milch-Experiment. Alle sitzen im Kreis, du machst es vor. Farben explodieren. „Seht ihr? IHR habt gerade einen Regenbogen gemacht!\" 3 Runden. 15 Min."
+        },
+        {
+          "time": "15:15",
+          "title": "📖 Kapitel 3: Luna füttern",
+          "description": "„Luna ist hungrig von der langen Reise! Helft ihr, sie zu füttern!\" → Bälle in den Einhorn-Karton werfen. Bei jedem Treffer jubeln: „Luna sagt Danke!\" Kein Punkte zählen — einfach Spaß. 15 Min."
+        },
+        {
+          "time": "15:35",
+          "title": "🎂 Pause: Kuchen, Einhorn-Saft & Snacks",
+          "description": "„Auch Einhörner brauchen eine Pause!\" Regenbogen-Wolkenkuchen mit Zuckerhorn. Rosa Einhorn-Saft. Stern-Kekse. 25 Min."
+        },
+        {
+          "time": "16:00",
+          "title": "📖 Kapitel 4: Den Sternenstaub finden",
+          "description": "„Luna flüstert mir gerade zu — der Sternenstaub ist irgendwo hier versteckt!\" → Glitzer-Reis-Wanne. Kinder graben die Einhorn-Figuren aus. „Ihr habt Lunas Sternenstaub gefunden!\" 15 Min."
+        },
+        {
+          "time": "16:20",
+          "title": "📖 Kapitel 5: Den Zauberstab bauen",
+          "description": "„Mit dem Sternenstaub können wir jetzt echte Zauberstäbe bauen!\" → Holzstab + Glitzerpappe-Stern + bunte Bänder. 15 Min. — „Euer Zauberstab ist fertig. Jetzt kommt der große Moment!\""
+        },
+        {
+          "time": "16:40",
+          "title": "🌈 Finale: Der Regenbogen-Zauber-Tanz",
+          "description": "Alle tanzen mit Zauberstäben und Tüchern. „Schwingt eure Stäbe — Luna kann wieder Regenbögen malen!\" Der große, magische Abschluss. 10 Min. Danach kurz runterkommen mit Ausmalbildern."
+        },
+        {
+          "time": "16:50",
+          "title": "🎁 Mitgebsel & Abholung",
+          "description": "Horn + Zauberstab + Einhorn-Figur + Tüll-Rock + Süßes in Tüte. Die Kinder gehen als verkleidete Einhörner nach Hause — sie haben Luna gerettet.\n\n💡 Warum eine Geschichte?\n3–5-Jährige leben in Geschichten. Wenn du sagst „Jetzt spielen wir ein Spiel\", machen sie mit. Wenn du sagst „Luna braucht eure Hilfe!\", rennen sie los. Die Geschichte verwandelt 6 einzelne Aktivitäten in ein zusammenhängendes Abenteuer — und du musst dir keine Übergänge ausdenken, weil die Story sie liefert.\n\n💡 Für 2,5 Stunden brauchst du einen Helfer.\nBei 5 Kleinkindern über 2,5 Stunden brauchst du eine zweite Person — Oma, andere Mama, Teenager-Nachbarin (10 € für 2,5 Std.). Einer erzählt die Geschichte und betreut die Kinder, einer bereitet die nächste Station vor. Alleine wird es stressig."
+        }
+      ],
+      "games": [
+        {
+          "name": "🎯 Einhorn füttern",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": "laut",
+          "effort": "leicht",
+          "material": "1 großer Pappkarton, Filzstifte (Einhorn-Gesicht malen), Cutter/Schere (Maul ausschneiden), 8–10 bunte Bälle (Bällebad-Bälle ~5 € bei Action, oder Sockenbälle)",
+          "prepText": "Auf den Karton ein Einhorn-Gesicht malen mit großem offenem Maul (ca. 20 cm Durchmesser ausschneiden). Karton an die Wand lehnen oder auf einen Stuhl stellen. Kinder werfen bunte Bälle ins Maul.",
+          "steps": [],
+          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null,
+          "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+        },
+        {
+          "name": "🪄 Einhorn-Zauberstab basteln",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": "ruhig",
+          "effort": "mittel",
+          "material": "1 Holzstab pro Kind (30 cm, Bastelstäbe ~3 € für 10 Stk.), 1 Stern aus Glitzerpappe (vorher ausschneiden!), Klebeband/Heißklebe, bunte Bänder (Geschenkband, ~2 €), Glitzer-Kleber",
+          "prepText": "Du schneidest vorher die Sterne aus Glitzerpappe aus und klebst sie mit Heißklebe oben auf die Stäbe. Kinder dürfen bunte Bänder dran knoten (du hilfst) und den Stab mit Glitzer-Kleber verzieren. Fertig ist der Zauberstab.",
+          "steps": [],
+          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null,
+          "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+        }
+      ],
+      "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Saft\"10 Trinkpäckchen\n⭐Stern-Kekse15 Stk. (Ausstecher)\n🍓Rosa Obst-TellerErdbeeren, Himbeeren\n🥒Gemüse-SticksGurke, Möhre\n🍿Popcorn200 g\n🍭Gummibärchen1 Tüte (200 g)\n\n💡 Stern-Kekse ohne Backen:\nFertigen Butterkeks-Teig (Kühlregal, ~2 €) ausrollen, mit Stern-Ausstecher ausstechen, 10 Min. backen, rosa Glasur drüber (Puderzucker + 1 Tropfen Lebensmittelfarbe). 15 Kekse in 20 Minuten. Oder: einfach fertige Butterkekse kaufen und mit rosa Glasur bestreichen — schmeckt den Kindern genauso.",
+      "decoration": "🎈 Pastell-Luftballons (rosa/lila/türkis)15 Stk. ~4 €\n🦄 Einhorn-Folienballon1 Stk. ~3 €\n🌈 Regenbogen-Girlande~4 €\n🦄 Einhorn-Pappteller & BecherSet ~6 €\n☁️ Watte-Wolken an der DeckeKostenlos, 15 Min.\n✨ Krepppapier-Regenbogen am Türrahmen~2 €6 Streifen in Regenbogenfarben am Türrahmen\n🔊 Einhorn-Musik leise im HintergrundKostenlosYouTube: „Unicorn Music for Kids\"\n\n🦄 Wow-Bonus: Regenbogen-Tür\n6 Streifen Krepppapier (rot, orange, gelb, grün, blau, lila) oben am Türrahmen befestigen, bis zum Boden hängen lassen. Die Kinder „laufen durch den Regenbogen\" wenn sie reinkommen. Kostet 2 €, dauert 5 Minuten, und die Kinder rasten beim Reinkommen sofort aus. DER erste Eindruck.\n\n🦄 Wow-Bonus: Seifenblasen-Regen beim Finale\nDer Moment, an den sich die Kinder in 3 Jahren noch erinnern: Während des Regenbogen-Zauber-Tanzes eine [Seifenblasenmaschine*](https://www.amazon.de/s?k=seifenblasenmaschine+kinder+batterie&tag=machsleicht-21) (~12 €) anmachen. Die Kinder tanzen mit Zauberstäben, tragen ihre Einhorn-Hörner und Tüll-Röckchen, und plötzlich fliegen hunderte Seifenblasen durch den Raum. 3–5-Jährige rasten komplett aus. DAS wird das Foto des Tages. Funktioniert drinnen und draußen. Batteriebetrieben, aufstellen und vergessen.\n\n✨ Wow-Bonus: Luna als Kuscheltier-Überraschung\nEin [großes Einhorn-Kuscheltier*](https://www.amazon.de/s?k=einhorn+kuscheltier+gro%C3%9F+rosa&tag=machsleicht-21) (~15–20 €) als „Luna\" auf einen Stuhl setzen, mit einer kleinen Krone und einem selbstgeschriebenen Brief: „Liebe Einhörner, bitte helft mir, meinen Sternenstaub wiederzufinden!\" Die Kinder haben ab sofort eine sichtbare Hauptfigur für die ganze Geschichte. Beim Sternenstaub-Finden die Figuren „zu Luna bringen\". Beim Finale Luna in die Mitte stellen. Am Ende bleibt Luna beim Geburtstagskind — als persönliches Geschenk.",
+      "giveaways": "🦄 1 Einhorn-Figur (selbst gefunden)\n✨ Eigenes Einhorn-Horn (selbst gebastelt)\n🪄 Einhorn-Zauberstab (selbst gebastelt)\n👗 Tüll-Röckchen (dürfen sie anbehalten)\n🖍️ 2 Einhorn-Ausmalbilder\n🍭 1 Tüte Gummibärchen\n\nIn rosa Papiertüte mit Einhorn-Name. Kosten: ~4 € pro Kind (inkl. Tüll-Rock).",
+      "shoppingList": [
+        {
+          "emoji": "🦄",
+          "label": "Einhorn-Figuren (12 Stk.)",
+          "url": "https://www.amazon.de/s?k=mini+einhorn+figuren+set+kinder&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Konsistent."
+        },
+        {
+          "emoji": "💫",
+          "label": "Einhorn-Tattoo-Set (30+ Motive)",
+          "url": "https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Konsistent — Schicht-Appell-Tattoo."
+        },
+        {
+          "emoji": "✨",
+          "label": "Glitzer-Kleber Set",
+          "url": "https://www.amazon.de/s?k=glitzer+kleber+kinder+set&tag=machsleicht-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "In Wow ist Zauberstab-Basteln das neue Bastel-Spiel (mit Glitzerpappe), Glitzer-Kleber zur Pufferzeit."
+        },
+        {
+          "emoji": "👗",
+          "label": "Tüll-Röckchen (5 Stk.)",
+          "url": "https://www.amazon.de/s?k=t%C3%BCll+rock+kinder+rosa+party&tag=machsleicht-21",
+          "priceEur": 10,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Variant-Defining für Wow-Verkleidungs-Element + Tanz-Foto-Moment."
+        },
+        {
+          "emoji": "🪄",
+          "label": "Holz-Bastelstäbe + Glitzerpappe + Bänder",
+          "url": null,
+          "priceEur": 5,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Variant-Defining für Zauberstab-Basteln in Wow."
+        },
+        {
+          "emoji": "🎯",
+          "label": "Bunte Bälle (50 Stk.)",
+          "url": "https://www.amazon.de/s?k=b%C3%A4llebad+b%C3%A4lle+bunt+50+st%C3%BCck&tag=machsleicht-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "habIchVielleicht",
+          "categoryReasoning": "Optional-Erweiterung für Tanz oder Bällebad-Improvisation, im Haushalt oft als Bällebad-Bestand da."
+        },
+        {
+          "emoji": "🦄",
+          "label": "Einhorn-Folienballon",
+          "url": "https://www.amazon.de/s?k=einhorn+folienballon+gro%C3%9F&tag=machsleicht-21",
+          "priceEur": 3,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Highlight-Deko-Element, aber Pastell-Ballons + Girlande reichen funktional."
+        },
+        {
+          "emoji": "🦄",
+          "label": "Einhorn-Teller & Becher Set",
+          "url": "https://www.amazon.de/s?k=einhorn+teller+becher+kindergeburtstag&tag=machsleicht-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Konsistent — Atmosphäre-Premium."
+        },
+        {
+          "emoji": "✨",
+          "label": "Essbarer Glitzer",
+          "url": "https://www.amazon.de/s?k=essbarer+glitzer+kinder&tag=machsleicht-21",
+          "priceEur": 3,
+          "hasAffiliate": true,
+          "category": "sinnvoll",
+          "categoryReasoning": "Streusel-Premium für Kuchen, normale Streusel tun's auch."
+        },
+        {
+          "emoji": "🎈",
+          "label": "Pastell-Luftballons + Girlande + Krepppapier",
+          "url": null,
+          "priceEur": 8,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Deko-Premium, Stationen funktional ohne."
+        },
+        {
+          "emoji": "🧃",
+          "label": "Apfelschorle + Obst + Gemüse + Keksteig",
+          "url": null,
+          "priceEur": 10,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Wow-Verpflegung für 2,5h Party nicht optional."
+        },
+        {
+          "emoji": "🎂",
+          "label": "Backmischung + Lebensmittelfarbe + Deko",
+          "url": null,
+          "priceEur": 6,
+          "hasAffiliate": false,
+          "category": "pflicht",
+          "categoryReasoning": "Kuchen-Pflichtteil."
+        },
+        {
+          "emoji": "🫧",
+          "label": "Seifenblasenmaschine (optional)",
+          "url": "https://www.amazon.de/s?k=seifenblasenmaschine+kinder+batterie&tag=machsleicht-21",
+          "priceEur": 12,
+          "hasAffiliate": true,
+          "category": "habIchVielleicht",
+          "categoryReasoning": "Explizit optional — Highlight-Effekt aber Programm läuft auch ohne."
+        },
+        {
+          "emoji": "🦄",
+          "label": "Einhorn-Kuscheltier „Luna\" (optional)",
+          "url": "https://www.amazon.de/s?k=einhorn+kuscheltier+gro%C3%9F+rosa&tag=machsleicht-21",
+          "priceEur": 18,
+          "hasAffiliate": true,
+          "category": "habIchVielleicht",
+          "categoryReasoning": "Optional Geschenk fürs Geburtstagskind, hat oft schon ein Einhorn-Kuscheltier."
+        },
+        {
+          "emoji": "🛍️",
+          "label": "Papiertüten + Gummibärchen + Ausmalbilder",
+          "url": null,
+          "priceEur": 3,
+          "hasAffiliate": false,
+          "category": "sinnvoll",
+          "categoryReasoning": "Konsistent — Goodie-Verpackung."
+        }
+      ],
+      "estimatedCostEur": 90,
+      "costContext": "Pflichtteil ~65 €, mit allen Sinnvoll-Extras ~105 €. Die niedrigere Schätzung 75 € geht von Standard-Auswahl ohne alle Wow-Add-ons aus."
+    }
+  ],
+  "cakeRecipe": {
+    "intro": "Geht mit jedem Gugelhupf. Das Besondere ist die Deko — nicht das Backen.",
+    "steps": [
+      {
+        "n": 1,
+        "content": "Gugelhupf backen — Fertigmischung reicht völlig (Dr. Oetker, Kathi). Kein Mensch schmeckt den Unterschied, und du hast genug Stress mit 5 Kleinkindern."
+      },
+      {
+        "n": 2,
+        "content": "Teig vor dem Backen in 4 Schüsseln teilen. Jede mit einer Lebensmittelfarbe einfärben (rosa, gelb, grün, lila). Nacheinander in die Form schichten → Regenbogen-Überraschung beim Anschnitt."
+      },
+      {
+        "n": 3,
+        "content": "Komplett abkühlen lassen. Ungeduld = Glasur-Desaster."
+      },
+      {
+        "n": 4,
+        "content": "Mit weißer „Wolken-Glasur\" überziehen: 200 g Puderzucker + 3 EL Wasser, cremig rühren."
+      },
+      {
+        "n": 5,
+        "content": "Einhorn-Horn oben drauf: fertiges Zuckerhorn aus der Backabteilung (DM, ~2 €) oder Fondant-Kegel formen."
+      },
+      {
+        "n": 6,
+        "content": "Regenbogen-Streusel oder bunte Schoko-Linsen drumherum. Essbarer Glitzer drüber = magisch."
+      }
+    ],
+    "meta": {
+      "aufwand": "60 Min. inkl. Backen und Deko",
+      "kosten": "~6 €",
+      "allergiker": "Fertigmischungen checken (Packung). Beim Milch-Experiment: nicht trinken lassen (Spülmittel!)"
+    },
+    "tips": [
+      {
+        "title": "🦄 Kein Bock auf Fondant? Zwei Wege zum Einhorn-Horn",
+        "body": "Weg 1 (einfach): Fertiges Zuckerhorn aus der Backabteilung (DM, Rewe, ~2 €). Aufsetzen, fertig. Weg 2 (improvisiert): Spitztüte aus Backpapier rollen, mit Puderzucker bestreuen. Kinder checken den Unterschied nicht — versprochen."
+      },
+      {
+        "title": "🎂 Keine Lust zu backen?",
+        "body": "Fertigen Kuchen beim Bäcker, weiße Glasur drüber, Zuckerhorn oben drauf, Streusel drumherum. 5 Minuten, sieht perfekt aus. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.\""
+      },
+      {
+        "title": "🧁 Kleinkinder-Alternative: Einhorn-Muffins",
+        "body": "Für 3-Jährige sind Muffins oft praktischer als ein großer Kuchen — jedes Kind bekommt seinen eigenen, kein Schneiden, weniger Krümel. Fertig-Muffins aus dem Supermarkt, rosa Glasur drüber, je 1 Einhorn-Oblate oder Zuckerstreusel oben drauf. 10 Minuten Aufwand, null Backskills nötig. Bonus: Kinder in diesem Alter finden „mein eigener Muffin\" spannender als ein Stück vom großen Kuchen."
+      }
+    ]
+  },
+  "parentTips": {
+    "structured": [
+      {
+        "topic": "🚨 Allergien & Windeln vorher klären",
+        "detail": "Bei 5 Kindern hat mindestens eins eine Unverträglichkeit. In die Einladung: „Hat dein Kind Allergien?\" Bei 3-Jährigen zusätzlich: „Braucht dein Kind noch Windeln?\" Stell sicher, dass du welche da hast (oder bitte die Eltern mitzubringen)."
+      },
+      {
+        "topic": "👶 3-Jährige ≠ 5-Jährige",
+        "detail": "Der Unterschied ist riesig. 3-Jährige brauchen ständig einen Erwachsenen in der Nähe, können keine Regeln befolgen und weinen schnell. 5-Jährige spielen selbstständig, verstehen Anleitungen und können 15 Minuten konzentriert basteln. Plane für die Jüngsten — die Älteren langweilen sich nicht, aber Überforderte weinen."
+      },
+      {
+        "topic": "📋 Plan B: Ausmalbilder",
+        "detail": "Druck 10 Einhorn-Ausmalbilder aus (Pinterest: „unicorn coloring pages free\", kostenlos). Wenn ein Kind nicht mitmachen will, ein Spiel zu wild ist, oder du 5 Minuten zwischen zwei Stationen brauchst: Ausmalbilder + Stifte = sichere Insel. Funktioniert immer.\n\n⏰ Eltern bleiben bei 3-Jährigen\nUnter 4 Jahren bleiben die Eltern. Schreib es in die Einladung: „Wir freuen uns, wenn du dabei bleibst!\" Das ist kein Nachteil — mehr Hände beim Basteln, beim Aufräumen, und wenn ein Kind weint. Ab 5 Jahren können die meisten Kinder 2 Stunden ohne ihre Eltern sein."
+      },
+      {
+        "topic": "🌧️ Plan B bei Regen",
+        "detail": "Alle Spiele auf dieser Seite funktionieren drinnen — das ist Absicht. Regenbogen-Milch sowieso, Sternenstaub-Wanne passt ins Bad, Regenbogen-Tanz geht im Wohnzimmer (Möbel zur Seite). Nur der Einhorn-füttern-Karton braucht etwas Platz. Tipp: Flur + Wohnzimmer zusammen reichen für 5 Kleinkinder. Du brauchst keinen Garten."
+      },
+      {
+        "topic": "👕 Wechselklamotten bereithalten",
+        "detail": "3-Jährige kleckern. Glitzer-Kleber, Einhorn-Saft, Kuchen — irgendwas landet auf dem Pulli. Schreib in die Einladung: „Bitte Wechsel-Shirt mitbringen.\" Und leg für dein eigenes Kind eins bereit. Spart dir die WhatsApp-Nachricht „Sorry, das Shirt hat jetzt Glitzer drauf\" an die andere Mama."
+      },
+      {
+        "topic": "🐉 Geschlechts-Inklusion: Auch für Jungs",
+        "detail": "Falls Jungs in der Gruppe sind und „Einhorn ist Mädchenkram\" sagen: lass das Geburtstagskind antworten, nicht du. Reframen funktioniert sofort — „Regenbogen-Zauber-Party\" statt „Einhorn-Party\" auf die Einladung. Alternativ Drachen-/Magier-Anker einbauen: Horn aus Pappteller heißt jetzt „Drachen-Horn\", Sternenstaub-Wanne ist „Drachen-Schatzkammer\". Beim Tanz galoppieren ALLE Kinder als magische Wesen — Einhorn, Drachen oder Pegasus, je nach Geschmack. Inhalte bleiben identisch."
+      },
+      {
+        "topic": "📱 Partyseite statt WhatsApp-Chaos",
+        "detail": "Erstelle eine [Partyseite auf party.machsleicht.de](https://party.machsleicht.de) mit Datum, Uhrzeit, Adresse und Allergien-Abfrage. Einen Link verschicken statt 10 Nachrichten beantworten. Kostet nichts.\n\n⏰ Nicht nach 15 Uhr anfangen\n3–5-Jährige sind nachmittags fitter als morgens (nach dem Mittagsschlaf). Aber nach 16 Uhr wird's schwierig — müde Kleinkinder sind schlecht gelaunte Kleinkinder. Ideal: 15:00 Start, 16:30 oder 17:00 Ende. Freitagnachmittag funktioniert meistens am besten."
+      }
+    ],
+    "educationalValue": null
+  },
+  "invitationTemplate": "Eine Einhorn-Einladung, die schon vor der Party für Vorfreude sorgt. Auf machsleicht in 3 Minuten erstellen — mit Foto, Datum, Treffpunkt. Digital verschicken oder als PDF ausdrucken.\n[🦄 Einhorn-Einladung erstellen →](/einladung/erstellen?motto=einhorn)\n\n[📱 Per WhatsApp teilen](https://wa.me/?text=%F0%9F%A6%84%20Einhorn-Kindergeburtstag%20f%C3%BCr%203%E2%80%935-J%C3%A4hrige%20planen%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Zeitplan%2C%20Spielen%20und%20Einkaufsliste%3A%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Feinhorn-3-5-jahre)",
+  "faq": [
+    {
+      "q": "Wie lange sollte ein Einhorn-Geburtstag für 3–5-Jährige dauern?",
+      "a": "1,5 bis 2 Stunden sind perfekt. Weniger ist mehr in diesem Alter — nach 2 Stunden sind die meisten Kinder durch. Die Minimal-Variante (90 Minuten) funktioniert hervorragend, besonders bei überwiegend 3-Jährigen. Die Wow-Variante (2,5 Stunden) nur mit Helfer und eher für 4–5-Jährige."
+    },
+    {
+      "q": "Wie viele Kinder einladen bei 3–5-Jährigen?",
+      "a": "3–5 Kinder sind ideal. In diesem Alter kann es schnell chaotisch werden — weniger Kinder = weniger Stress = bessere Party. Die Faustregel „Alter + 1\" passt hier gut: Bei einem 4-Jährigen also 5 Gäste. Alle Mengenangaben auf dieser Seite sind für 5 Kinder berechnet."
+    },
+    {
+      "q": "Was kostet ein Einhorn-Geburtstag für 3–5-Jährige?",
+      "a": "Zwischen 27 € (Minimal) und 75 € (Wow) für 5 Kinder. Die Standard-Variante liegt bei ca. 46 € und bietet das beste Verhältnis aus Aufwand und Ergebnis. Kleinkinder brauchen weniger aufwendige Materialien als ältere Kinder — einfaches Bastelmaterial, Reis mit Glitzer und Ausmalbilder machen sie genauso glücklich."
+    },
+    {
+      "q": "Müssen die Eltern der Gäste dabei bleiben?",
+      "a": "Bei 3-Jährigen: ja, unbedingt. Die Kinder kennen dich vielleicht nicht gut, und sie brauchen ihre Bezugsperson in der Nähe. Bei 4–5-Jährigen können die meisten Kinder 1,5–2 Stunden ohne ihre Eltern bleiben — aber schreib in die Einladung, dass sie erreichbar sein müssen. Tipp: Eltern, die bleiben, können beim Basteln helfen."
+    },
+    {
+      "q": "Funktioniert das Einhorn-Motto auch für Jungs?",
+      "a": "Ja — besonders in diesem Alter. 3–5-Jährige haben noch keine starren Geschlechter-Vorstellungen. Regenbogen-Milch, Sternenstaub suchen und Bälle werfen begeistern jedes Kind. Wenn du willst, nenn es „Regenbogen-Zauber-Party\" statt „Einhorn-Party\" — gleicher Inhalt, neutralerer Name. Drachen-Variante: Einhorn-Horn → Drachen-Horn aus Pappteller, Sternenstaub-Wanne → Drachen-Schatzkammer. Sind die gleichen Spiele, andere Story-Verpackung."
+    },
+    {
+      "q": "Wie gehe ich mit Glitzer-Allergien und empfindlicher Kinderhaut um?",
+      "a": "1 Tag vorher Allergie-Vortest: Glitzer-Kleber, Tattoo und ggf. Schminkfarbe an kleiner Hautstelle (Innenseite Unterarm) eines Kindes 5 Min. auftragen. Bei Rötung → nur Sticker und Klettband-Verzierungen statt Tattoo/Glitzer/Schminke. Essbaren Glitzer nimmst du immer mit E-Nummer-Check (Packung lesen) — bei Zucker-Unverträglichkeit gibt es Zucker-freie Alternativen (Bio-Backabteilung). Wer kein Tattoo mag: Tattoo auf den Wächter-Zettel oder auf das T-Shirt-Schild kleben — niemand wird ausgeschlossen."
+    }
+  ],
+  "preparationWeeks": {
+    "minus4Weeks": {
+      "headline": "4 Wochen vorher — Grundgerüst stellen",
+      "items": [
+        {
+          "icon": "📅",
+          "title": "Datum + Uhrzeit + Treffpunkt fixieren",
+          "detail": "Samstag oder Sonntag 15–16:30 Uhr (klein) bis 17 Uhr (Standard/Wow). Max 1,5–2h für 3-5-Jährige, nicht länger. Drinnen-Plan-B mental haben."
+        },
+        {
+          "icon": "👥",
+          "title": "Gästeliste festzurren — max 5 Kinder",
+          "detail": "5 ist die richtige Zahl für 3-5 Einhorn: alle ziehen einen Namen, niemand wartet zu lange. Mehr als 5 wird's bei Glitzer-Kleber-Tisch chaotisch."
+        },
+        {
+          "icon": "👨‍👩‍👧",
+          "title": "Eltern-Pflicht in die Einladung",
+          "detail": "Bei 3-5 sind Eltern keine Optionalität: ‚Ein Elternteil bleibt bitte mit dem Kind dabei.' Bei Tüll-Röckchen-Wow zusätzlich: ‚Bequeme Klamotten drunter — wir tanzen.'"
+        },
+        {
+          "icon": "💶",
+          "title": "Variante wählen: Minimal / Standard / Wow",
+          "detail": "Minimal 27€ (Horn basteln + Tanz), Standard 46€ (+ Milch-Experiment + Sternenstaub suchen), Wow 75€ (+ Tüll-Röckchen + Zauberstab basteln + Seifenblasen). Entscheidung jetzt."
+        },
+        {
+          "icon": "🏠",
+          "title": "Mietwohnung-Check (Glitzer-Risiko)",
+          "detail": "Einhorn 3-5 ist akustisch zahm, aber Glitzer-Kleber + Lebensmittelfarbe ist Boden-Bombe Nr. 1. Folie/Tischdecke unterlegen, Wachs-Tücher griffbereit."
+        }
+      ]
+    },
+    "minus2Weeks": {
+      "headline": "2 Wochen vorher — Logistik festziehen",
+      "items": [
+        {
+          "icon": "📋",
+          "title": "RSVPs einsammeln + Liste schließen",
+          "detail": "Bei 3-5 sind Eltern oft Last-Minute. Nachzügler einmal anstupsen, dann ist gut. party.machsleicht.de zeigt den Stand auf einen Blick."
+        },
+        {
+          "icon": "🥜",
+          "title": "Allergien + Windeln vorab klären",
+          "detail": "Bei 3-Jährigen ist Windel noch Thema — Eltern fragen ob Wechsel zuhause oder mitbringen. Allergien: Glitzer (E-Nummern!), Lebensmittelfarbe, Erdbeeren."
+        },
+        {
+          "icon": "🙋",
+          "title": "Bei 5+ Kindern: Eltern als Co-Aufsicht aktivieren",
+          "detail": "Standard/Wow brauchen 2 Erwachsene parallel — du am Glitzer-Tisch, ein Elternteil am Horn-Bastel-Tisch. Briefe einen vorab telefonisch."
+        },
+        {
+          "icon": "📦",
+          "title": "Bestellliste finalisieren",
+          "detail": "Einhorn-Tattoo-Set + Figuren + Tüll-Röckchen (Wow) bei Amazon, Glitzer-Kleber + Lebensmittelfarbe + Pappteller bei Rossmann/dm, Backmischung + Erdbeeren im Supermarkt."
+        }
+      ]
+    },
+    "minus1Week": {
+      "headline": "1 Woche vorher — bestellen, drucken, vorwarnen",
+      "items": [
+        {
+          "icon": "🛒",
+          "title": "Amazon-Bestellung JETZT raus",
+          "detail": "Lieferzeit 2–5 Tage. Einhorn-Tattoo-Set (~5€), Einhorn-Figuren 12er (~4€), Glitzer-Kleber-Set (~4€), bei Wow Tüll-Röckchen 5er (~10€) + Holz-Bastelstäbe + Glitzerpappe (~5€)."
+        },
+        {
+          "icon": "🖨️",
+          "title": "Ausmalbilder + Namensliste drucken",
+          "detail": "DIN A4 Einhorn-Ausmalbilder (kostenlos auf kribbelbunt.de oder canva), 12 Sternenstaub-Namens-Zettel auf Papier ausdrucken und falten — bei 3-5 KEINE Schrift drauf, du liest vor."
+        },
+        {
+          "icon": "🔔",
+          "title": "Mietwohnung: Boden-Schutz vorbereiten",
+          "detail": "Folie oder Wachs-Tücher unter Bastel-Tisch, Müllbeutel als Schmier-Schutz für jedes Kind raussuchen. Lautstärke kein Thema bei 3-5er Einhorn-Party."
+        },
+        {
+          "icon": "🧪",
+          "title": "Glitzer-Kleber + Lebensmittelfarbe Allergie-Vortest",
+          "detail": "Mini-Punkt auf eigene Haut auftragen, 5 Min warten. Wenn juckt → weg vom Tisch, Marker statt Glitzer. Lebensmittelfarbe an Schüssel testen."
+        },
+        {
+          "icon": "📦",
+          "title": "Pakete bei Ankunft sofort prüfen",
+          "detail": "Tattoo-Vollständigkeit (30+ Motive?), Tüll-Röckchen-Größen für 3-5 (sollten passen), Glitzerpappe-Glitzergrad. Reklamation muss bis Tag X durch sein."
+        }
+      ]
+    },
+    "minus2Days": {
+      "headline": "2 Tage vorher — backen, briefen, basteln",
+      "items": [
+        {
+          "icon": "🎂",
+          "title": "Regenbogen-Wolkenkuchen backen — oder Plan B",
+          "detail": "Wenn Zeit/Nerven: Gugelhupf-Mischung in 4 Schüsseln + Lebensmittelfarben. Wenn nicht: weißen Gugelhupf vom Bäcker (4–6€), morgen Glasur + Streusel. Kein Drama."
+        },
+        {
+          "icon": "🗣️",
+          "title": "Eltern + Helfer briefen — 5 Min reichen",
+          "detail": "WhatsApp mit Programm: ‚15:00 Ankunft + Sternenstaub-Beutel, 15:15 Horn-Basteln, 15:45 Snack-Pause, 16:00 Tanzen.' Eltern wissen dann was kommt + helfen automatisch."
+        },
+        {
+          "icon": "📃",
+          "title": "Mitgebsel-Tüten packen — kindgerecht",
+          "detail": "Pro Kind: Einhorn-Figur, 2-3 Tattoos, Gummibärchen, ggf. Mini-Ausmalbild. NICHT zu viel — bei 3-5 verlieren sie sonst die Übersicht."
+        },
+        {
+          "icon": "✨",
+          "title": "Sternenstaub-Beutel füllen",
+          "detail": "Stoffbeutel oder Papiertüte, 12 ausgeschnittene Namens-Zettel rein, Glitzer-Konfetti dazu (für den Funkel-Effekt beim Rausziehen). Auf Wache-Pult platzieren."
+        },
+        {
+          "icon": "🪄",
+          "title": "Wow-Setup: Zauberstab-Bastel-Tisch vorbereiten",
+          "detail": "Holz-Bastelstäbe + Glitzerpappe in Sternform vorschneiden + Bänder bereitlegen. Pro Kind 1 Stab, 2 Sterne, 2 Bänder. Bei 3-5 schneidest du vor, die Kinder kleben nur."
+        }
+      ]
+    },
+    "minus1Day": {
+      "headline": "1 Tag vorher — Deko, Test, letzte Schritte",
+      "items": [
+        {
+          "icon": "🌈",
+          "title": "Kuchen-Wolken-Guss + Deko",
+          "detail": "Weiße Glasur drüber (200g Puderzucker + 3 EL Wasser), essbare Streusel obendrauf als ‚Wolken-Lava'. Einhorn-Horn aus Eiswaffel mit Goldglasur (bei 3-5 KEIN Fondant — Erstickungsgefahr)."
+        },
+        {
+          "icon": "🧪",
+          "title": "Regenbogen-Milch-Experiment vortesten (Standard/Wow)",
+          "detail": "Teller mit Vollmilch, je 1 Tropfen Lebensmittelfarbe in 4 Ecken, Wattestäbchen mit Spülmittel reinhalten — Farben explodieren. Bei 3-5 mehr Spülmittel = sichereres Spektakel."
+        },
+        {
+          "icon": "🚧",
+          "title": "Tisch + Eingangs-Tisch dekorieren",
+          "detail": "Pastell-Luftballons aufpusten (Bei 3-5 das Highlight!), Regenbogen-Girlande spannen, Sternenstaub-Beutel + Tattoo-Stempelkissen am Eingang. Müllbeutel-Schmier-Schutz griffbereit."
+        },
+        {
+          "icon": "🎵",
+          "title": "Musik-Playlist + Bluetooth-Box testen",
+          "detail": "Spotify ‚Einhorn Kindergeburtstag' oder ‚Kinder Party Songs' Playlist in der Notiz-App. Bluetooth-Box laden, Sound testen. Bei 3-5 reicht ein kontinuierlicher Soundtrack."
+        },
+        {
+          "icon": "💧",
+          "title": "Glitzer-Kleber-Stationen aufbauen",
+          "detail": "Bei Standard/Wow: pro 2 Kinder einen Tisch mit Glitzer-Kleber + Bastelpappe + Schmier-Schutz. Tische auf Folie. Klamotten-Wechsel-Tüte an Tür hängen ‚Wechselklamotten bereit?'"
+        }
+      ]
+    },
+    "dayOf": {
+      "headline": "Tag X — durchziehen, atmen, feiern",
+      "items": [
+        {
+          "icon": "⏰",
+          "title": "30 Min vor Ankunft: Stationen aufbauen",
+          "detail": "Horn-Bastel-Tisch mit Glitzer-Kleber + Pappe, Apfelschorle in Kühlschrank, Obst schneiden, Sternenstaub-Beutel-Eingangs-Tisch fertig. Eltern-Sitzecke einrichten."
+        },
+        {
+          "icon": "🎯",
+          "title": "15 Min vor Ankunft: Endkontrolle",
+          "detail": "Sternenstaub-Beutel mit 12 Zetteln, Tattoo-Stempelkissen offen, Pastell-Ballons hängen, Spotify-Playlist bereit. Wow: Tüll-Röckchen sortiert nach Größe, Zauberstab-Bastel-Tisch fertig."
+        },
+        {
+          "icon": "🫁",
+          "title": "5 Min vor Ankunft: durchatmen + Wechselklamotten-Tüte",
+          "detail": "Klo, Wasser, einmal tief Luft holen. Tüte an Türklinke hängen — Glitzer + Milch-Experiment ist Klamotten-Risiko. Eltern sind dein Sicherheitsnetz."
+        },
+        {
+          "icon": "✨",
+          "title": "Ankunft: Sternenstaub-Beutel ziehen lassen",
+          "detail": "Jedes Kind zieht einen Zettel, DU liest den Namen vor (sie können noch nicht lesen): ‚Du bist jetzt Luna Mondsilber!' — Tattoo auf Handrücken, Schmier-Schutz-Müllbeutel überziehen."
+        },
+        {
+          "icon": "🍓",
+          "title": "Mitten in der Party: Snack-Pause",
+          "detail": "Nach ~30 Min Pause einplanen — Apfelschorle + Erdbeeren + Popcorn. Sitzen, runter vom Adrenalin, dann zweite Aktivität. 3-5er brauchen Erholungs-Slots."
+        }
+      ]
+    }
+  },
+  "sosScenarios": {
+    "regen": {
+      "icon": "🌧️",
+      "label": "Regen — alles draußen geplant",
+      "headline": "Milch-Experiment ist drinnen sowieso besser — Stuhl-Kreis statt Garten.",
+      "steps": [
+        "Glitzer-Bastel-Tisch + Tanzen sind drinnen sowieso geplant — kein Anpassungs-Aufwand.",
+        "Bei Wow Zauberstab-Basteln: Klare Tisch-Ordnung, Schmier-Schutz hochfahren.",
+        "Bei Wow Seifenblasenmaschine: bei Regen ins Bad/Küche verlegen.",
+        "Eltern als zusätzliche Aufsicht bei Indoor-Trubel aktiv einbinden."
+      ],
+      "fallback": "Wenn Wohnzimmer zu klein: Programm abkürzen — Sternenstaub-Ritual + Horn-Basteln + Snack reicht für 1h.",
+      "tone": "praktisch"
+    },
+    "weniger_kinder_als_erwartet": {
+      "icon": "👥",
+      "label": "Weniger Kinder als erwartet (1–2 fehlen)",
+      "headline": "Kleinere Crew = engerer Kontakt — straffer, nicht ärmer.",
+      "steps": [
+        "Programm leicht straffen: weniger Snack-Pausen, dafür längere Bastel-Phase.",
+        "Sternenstaub-Beutel: weniger Namen ziehen lassen — bleibt magisch.",
+        "Pufferzeit füllen mit zweiter Glitzer-Bastel-Runde oder Tanz-Wettbewerb.",
+        "Mehr individuelle Aufmerksamkeit pro Kind — bei 3-5 ist das Geschenk."
+      ],
+      "fallback": "Wenn Stimmung kippt: alles auf Tanzen umlegen + Fotoshooting mit Tüll-Röckchen — Spaß-Maximum, kein Hektik.",
+      "tone": "ruhig"
+    },
+    "mehr_kinder_als_erwartet": {
+      "icon": "🚨",
+      "label": "Mehr Kinder als erwartet (Geschwister-Boom)",
+      "headline": "Eltern als Co-Aufsicht aktivieren — die sind eh da.",
+      "steps": [
+        "Schnell-Briefing der zusätzlich anwesenden Eltern: ‚Du übernimmst Tisch 1, ich Tisch 2.'",
+        "Tattoos + Figuren verteilen sofort — Geschwister-Kinder NICHT leer ausgehen lassen.",
+        "Bastel-Material aufstocken: Pappe + Filzstifte aus dem Haushalt als Notreserve.",
+        "Apfelschorle/Obst nachbestellen lassen (Eltern haben Auto)."
+      ],
+      "fallback": "Chaotisch? Programm abkürzen — 1 Bastel-Aktion + Snack + Mitgebsel-Verteilung + Fotos. 60 Min reicht für 3-5er-Party.",
+      "tone": "praktisch"
+    },
+    "kind_will_nicht_mitmachen": {
+      "icon": "🤷",
+      "label": "Ein Kind will nicht mitmachen",
+      "headline": "Bei 3-5 ist Eltern-Schoß immer Plan B.",
+      "steps": [
+        "Eltern kommunizieren: ‚Setz dich kurz hin, schauen wir was passiert.'",
+        "Tattoo muss nicht auf Hand — Aufkleber auf T-Shirt oder Sternchen-Zettel mitgeben.",
+        "Eigenes Ausmalbild + Buntstifte am Rand — Kind kann dabei sein ohne mitmachen.",
+        "Nach 15 Min kurz checken — oft schwenkt das Kind selbst um wenn die anderen lachen."
+      ],
+      "fallback": "Bleibt komplett raus? Kein Drama. Mitgebsel-Tüte bekommt es trotzdem, alle behandeln das normal.",
+      "tone": "ruhig"
+    },
+    "kuchen_misslungen": {
+      "icon": "🎂",
+      "label": "Kuchen ist misslungen",
+      "headline": "Bäcker-Hack: weißer Gugelhupf + Glasur + Streusel = 10 Min Notfall.",
+      "steps": [
+        "Weißen Gugelhupf beim Bäcker oder Supermarkt holen (4-6€).",
+        "200g Puderzucker + 3 EL Wasser anrühren, weißen Guss drüber.",
+        "Regenbogen-Streusel oder bunte Schoko-Linsen als ‚Wolken-Lava' um den Fuß.",
+        "Eiswaffel mit Goldglasur als Einhorn-Horn obendrauf — sieht aus wie gewollt."
+      ],
+      "fallback": "Bäcker zu? Muffins aus dem Vorrat, je ein Mini-Marshmallow + Zahnstocher mit rosa Papier = Mini-Einhorn-Hörner.",
+      "tone": "motivierend"
+    },
+    "spielzeug_kaputt_oder_fehlt": {
+      "icon": "🔧",
+      "label": "Spielzeug kaputt oder vergessen",
+      "headline": "Improvisieren mit Haushalts-Material — Kinder merken nichts.",
+      "steps": [
+        "Glitzer-Kleber fehlt? Flüssigkleber + Glitzer aus dem Vorrat mischen.",
+        "Tattoos vergessen? Filzstift-Stern auf Handrücken + Glitzer drauf = ‚Probe-Tattoo'.",
+        "Tüll-Röckchen zu klein? Tuch um die Hüfte binden + Bändchen drum = Improvisations-Röckchen.",
+        "Lebensmittelfarbe weg? Beerensaft (Heidelbeere, Erdbeere) als Naturfarbe für Milch-Experiment."
+      ],
+      "fallback": "Katastrophal? Sternenstaub-Ritual + Tanzen + Kuchen reichen für 1h Programm — Zeremonie statt Aktivität.",
+      "tone": "praktisch"
+    },
+    "ein_kind_weint": {
+      "icon": "😢",
+      "label": "Ein Kind weint",
+      "headline": "Eltern kennen ihr Kind — Übergabe ist okay.",
+      "steps": [
+        "Eltern-Übergabe: ‚Magst du kurz mit ihr raus?' — bei 3-5 sind Eltern dabei.",
+        "Apfelschorle + Erdbeere als Beruhigungs-Ritual am Wache-Pult.",
+        "Stern-Sticker zum Selbst-Aussuchen — beruhigt durch Auswahl-Macht.",
+        "Wenn Heimweh: Mama-Foto am Handy zeigen, nicht überreden.",
+        "Nach 5 Min reinschauen — meist ist es vorbei wenn die anderen lachen."
+      ],
+      "fallback": "Geht nicht mehr? Eltern können früher abholen — kein Drama, Goodie-Bag trotzdem.",
+      "tone": "ruhig"
+    },
+    "eltern_kommen_frueh": {
+      "icon": "🚪",
+      "label": "Eltern (die NICHT dabei waren) kommen früh",
+      "headline": "Übergang einleiten — Foto-Runde + Mitgebsel jetzt.",
+      "steps": [
+        "Abholende Eltern in den Flur bitten, Wasser anbieten.",
+        "Crew durchsagen: ‚Foto-Runde gleich — alle vor die Regenbogen-Girlande!'",
+        "Gruppenfoto mit Tüll-Röckchen + Zauberstäben (Wow) oder Tattoos zeigen (Min/Std).",
+        "Mitgebsel-Tüte in die Hand drücken, Glitzer-Konfetti zum Abschied.",
+        "Eltern + Kinder zur Tür — kurz, herzlich, nicht in lange Tür-Gespräche."
+      ],
+      "fallback": "Chaotisch? Mitgebsel in den Flur stellen, jedes Kind nimmt eine, Abschied auf der Treppe.",
+      "tone": "praktisch"
+    }
+  }
+}

@@ -143,10 +143,10 @@
       label: 'Meerjungfrau',
       emoji: '\u{1F9DC}‍♀️',
       color: '#4DD0E1',
-      modules: ['invitation'],
+      modules: ['planner', 'invitation'],
       licenseRisk: 'none',
       treasureUrl: null,
-      plannerUrl: null,
+      plannerUrl: '/kindergeburtstag/meerjungfrau',
       invitationUrl: '/einladung/meerjungfrau'
     }
   };
