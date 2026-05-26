@@ -11,11 +11,7 @@
 /kindergeburtstag/einhorn  /kindergeburtstag/einhorn.html  200
 /kindergeburtstag/feuerwehr  /kindergeburtstag/feuerwehr.html  200
 /kindergeburtstag/meerjungfrau  /kindergeburtstag/meerjungfrau.html  200
-/kindergeburtstag/pferde  /kindergeburtstag  301!
 /kindergeburtstag/detektiv  /kindergeburtstag/detektiv.html  200
-/kindergeburtstag/zirkus  /kindergeburtstag  301!
-/kindergeburtstag/baustelle  /kindergeburtstag  301!
-/kindergeburtstag/ritter  /kindergeburtstag  301!
 /kindergeburtstag/3-5-jahre  /kindergeburtstag/3-5-jahre.html  200
 /kindergeburtstag/6-8-jahre  /kindergeburtstag/6-8-jahre.html  200
 /kindergeburtstag/9-12-jahre  /kindergeburtstag/9-12-jahre.html  200
@@ -98,16 +94,6 @@
 /kindergeburtstag/meerjungfrau-10-jahre  /kindergeburtstag/meerjungfrau-9-12-jahre  301!
 /kindergeburtstag/meerjungfrau-11-jahre  /kindergeburtstag/meerjungfrau-9-12-jahre  301!
 /kindergeburtstag/meerjungfrau-12-jahre  /kindergeburtstag/meerjungfrau-9-12-jahre  301!
-/kindergeburtstag/pferde-3-jahre  /kindergeburtstag  301!
-/kindergeburtstag/pferde-4-jahre  /kindergeburtstag  301!
-/kindergeburtstag/pferde-5-jahre  /kindergeburtstag  301!
-/kindergeburtstag/pferde-6-jahre  /kindergeburtstag  301!
-/kindergeburtstag/pferde-7-jahre  /kindergeburtstag  301!
-/kindergeburtstag/pferde-8-jahre  /kindergeburtstag  301!
-/kindergeburtstag/pferde-9-jahre  /kindergeburtstag  301!
-/kindergeburtstag/pferde-10-jahre  /kindergeburtstag  301!
-/kindergeburtstag/pferde-11-jahre  /kindergeburtstag  301!
-/kindergeburtstag/pferde-12-jahre  /kindergeburtstag  301!
 /kindergeburtstag/detektiv-5-jahre  /kindergeburtstag/detektiv-3-5-jahre  301!
 /kindergeburtstag/detektiv-6-jahre  /kindergeburtstag/detektiv-6-8-jahre  301!
 /kindergeburtstag/detektiv-7-jahre  /kindergeburtstag/detektiv-6-8-jahre  301!
@@ -116,30 +102,6 @@
 /kindergeburtstag/detektiv-10-jahre  /kindergeburtstag/detektiv-9-12-jahre  301!
 /kindergeburtstag/detektiv-11-jahre  /kindergeburtstag/detektiv-9-12-jahre  301!
 /kindergeburtstag/detektiv-12-jahre  /kindergeburtstag/detektiv-9-12-jahre  301!
-/kindergeburtstag/zirkus-3-jahre  /kindergeburtstag  301!
-/kindergeburtstag/zirkus-4-jahre  /kindergeburtstag  301!
-/kindergeburtstag/zirkus-5-jahre  /kindergeburtstag  301!
-/kindergeburtstag/zirkus-6-jahre  /kindergeburtstag  301!
-/kindergeburtstag/zirkus-7-jahre  /kindergeburtstag  301!
-/kindergeburtstag/zirkus-8-jahre  /kindergeburtstag  301!
-/kindergeburtstag/zirkus-9-jahre  /kindergeburtstag  301!
-/kindergeburtstag/zirkus-10-jahre  /kindergeburtstag  301!
-/kindergeburtstag/baustelle-3-jahre  /kindergeburtstag  301!
-/kindergeburtstag/baustelle-4-jahre  /kindergeburtstag  301!
-/kindergeburtstag/baustelle-5-jahre  /kindergeburtstag  301!
-/kindergeburtstag/baustelle-6-jahre  /kindergeburtstag  301!
-/kindergeburtstag/baustelle-7-jahre  /kindergeburtstag  301!
-/kindergeburtstag/baustelle-8-jahre  /kindergeburtstag  301!
-/kindergeburtstag/ritter-3-jahre  /kindergeburtstag  301!
-/kindergeburtstag/ritter-4-jahre  /kindergeburtstag  301!
-/kindergeburtstag/ritter-5-jahre  /kindergeburtstag  301!
-/kindergeburtstag/ritter-6-jahre  /kindergeburtstag  301!
-/kindergeburtstag/ritter-7-jahre  /kindergeburtstag  301!
-/kindergeburtstag/ritter-8-jahre  /kindergeburtstag  301!
-/kindergeburtstag/ritter-9-jahre  /kindergeburtstag  301!
-/kindergeburtstag/ritter-10-jahre  /kindergeburtstag  301!
-/kindergeburtstag/ritter-11-jahre  /kindergeburtstag  301!
-/kindergeburtstag/ritter-12-jahre  /kindergeburtstag  301!
 /homepage  /  301
 /kindergeburtstag  /kindergeburtstag.html  200
 /einschulung  /einschulung.html  200
@@ -177,14 +139,13 @@
 
 # ══ PIRATEN-EINLADUNG: dynamische Kurzlinks via Netlify Function ══
 /e/*  /.netlify/functions/serve-invite  200
-/kindergeburtstag/baustelle-9-jahre  /kindergeburtstag  301!
-/kindergeburtstag/baustelle-10-jahre  /kindergeburtstag  301!
-/kindergeburtstag/baustelle-11-jahre  /kindergeburtstag  301!
-/kindergeburtstag/baustelle-12-jahre  /kindergeburtstag  301!
-/kindergeburtstag/baustelle-9-12-jahre  /kindergeburtstag  301!
 /kindergeburtstag/detektiv-4-jahre  /kindergeburtstag/detektiv-3-5-jahre  301!
-/kindergeburtstag/zirkus-11-jahre  /kindergeburtstag  301!
-/kindergeburtstag/zirkus-12-jahre  /kindergeburtstag  301!
+
+# Legacy-Mottos (physisch geloescht, alle URLs auf Master umleiten)
+/kindergeburtstag/baustelle*  /kindergeburtstag  301!
+/kindergeburtstag/pferde*     /kindergeburtstag  301!
+/kindergeburtstag/ritter*     /kindergeburtstag  301!
+/kindergeburtstag/zirkus*     /kindergeburtstag  301!
 /schnitzeljagd  /kindergeburtstag?modus=schatzsuche#planer  301
 /schnitzeljagd-aufgaben  /schnitzeljagd-aufgaben.html  200
 /schnitzeljagd-draussen  /schnitzeljagd-draussen.html  200
