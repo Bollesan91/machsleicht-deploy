@@ -2,7 +2,7 @@
   "_meta": {
     "version": "2.0.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v2 — Helfer-v3-Welle 1A+1B in Bearbeitung (Schema-Parität + Affiliate-Aktivierung). Initial-Review-Score 68/100. Weitere Wellen folgen."
+    "qualityNote": "v2 — Helfer-v3-Welle 1A+1B+1C+1D abgeschlossen. Re-Verify-Score 81/100 nach 1C, erwartet 85+ nach 1D. Cross-File-Kontamination behoben, SOS-Spezifik, Stallplan-Typo-Fix, Quiz-Karten-Mismatch-Fix."
   },
   "motto": "baustelle",
   "ageGroup": "mittel",
@@ -421,12 +421,12 @@
           "loudness": "mittel",
           "effort": "mittel",
           "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/gross) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
-          "ageAdjust6": "Bei 3-Jährigen: 10 Schrauben offensichtlich versteckt (in Sand mit Spitzen nach oben, sichtbar). Alle finden gleichzeitig, niemand \"verliert\".",
-          "ageAdjust8": "Für 5-Jährige: 15-20 Schrauben mit etwas Versteck-Logik (\"unter dem Bagger\", \"neben dem Eimer\"). Stempel für jedes Kind.",
+          "ageAdjust6": "Bei 6-Jährigen: 15 Schrauben mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
+          "ageAdjust8": "Bei 8-Jährigen: 20 Schrauben mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
           "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
           "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
-          "whyItWorks": "Sand-Schatzsuche kombiniert sensorisches Spiel mit Schatz-Geschichte. Plastik-Schrauben sind sichtbarer Erfolg (\"Schau, ich habe drei!\") — mit Plastik-Werkzeug-Gürtel zu sammeln verstärkt die Bauarbeiter-Identität."
+          "whyItWorks": "6-8 wollen Schatz-Logik: Hinweise interpretieren, strategisch suchen. Stempel pro 5 Schrauben — kombiniert sensorisches Suchen mit Belohnungs-System. Schrauben-Quote wird transparent kommuniziert (jedes Kind kennt sein Lizenz-Heft-Stempel-Stand)."
         }
       ],
       "food": "🍪 Bagger-Kekse XL (mit Schoko-Krümel-Sand)\n🥕 Karotten-Schrauben (1,5 Schalen)\n🍎 Apfelschnitze + Birnen\n🥤 Apfelschorle (2 L)\n🎂 Bauarbeiter-Kuchen (mit Hammer + Bagger drauf)\n🥨 Salzstangen + Brezeln",
@@ -841,12 +841,12 @@
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "1-2 Mini-Schubkarren (Plastik, max 30x60 cm), 8-10 leichte Schaumstoff-Bauklötze als Ladung, Strecke 5-8 m mit Klebeband markiert (Kurve max 2m Radius). Stoppuhr + Mini-Pokale (3 Stk) für Wow-Highlight. 10 Min Vorlauf.",
-          "ageAdjust6": "Bei 3-Jährigen: kein Wettkampf, Erwachsene schiebt mit. Strecke max 3 m gerade. Schubkarren-Tempo: gehen, nicht rennen — Schubkarre kippt sonst.",
-          "ageAdjust8": "Für 5-Jährige: Strecke 5 m mit leichter Kurve, Stoppuhr läuft \"zur Info\". Bauklötze-Transport-Wettbewerb-Element optional, alle bekommen Pokal.",
+          "ageAdjust6": "Bei 6-Jährigen: 2er-Teams, Strecke 5m, Tempo \"gehen\". Bauklötze max 5 pro Lauf — keine Höhe-Wertung.",
+          "ageAdjust8": "Bei 8-Jährigen: 2er-Teams, Strecke 8m, Lauf-Tempo möglich bei Kurven gehen. 10 Bauklötze pro Lauf, am Stapel-Punkt stapeln (Höhe + Stabilität wertet).",
           "indoorTip": "Im langen Flur (mind. 6m) — Möbel-Sicherheits-Abstand 1m. Schubkarren-Tempo: gehen, nicht rennen. Bei Sturz: weicher Boden Pflicht.",
           "outdoorTip": "Im Garten oder auf Hofeinfahrt — größere Strecke, mehr Sicherheits-Zone, schöne Olympiade-Atmosphäre mit Mini-Pokal-Übergabe.",
           "whyItWorksTitle": "Warum Schubkarren-Lauf Wow-Höhepunkt ist",
-          "whyItWorks": "Schubkarren = \"echtes Bauarbeiter-Werkzeug\" für 3-5. Olympiade-Format mit Mini-Pokalen schafft Foto-würdiges Ende. Wichtig: Sicherheits-Tempo strikt durchsetzen (gehen, nicht rennen), sonst Schubkarre kippt + Verletzungsgefahr."
+          "whyItWorks": "Olympiade-Format kombiniert Schubkarren-Lauf (Geschicklichkeit) mit Klotz-Stapel (Bau-Können) — Doppel-Skill-Test wie eine echte Bauarbeiter-Prüfung mit Lizenz-Klasse-1-Bestätigung. Wanderpokal geht 1 Jahr zum Sieger-Team."
         }
       ],
       "food": "🎂 Großer Bauarbeiter-Kuchen XL (mit Bagger + Kran + Maurer-Figur)\n🍪 Bagger-Kekse (3 Sorten + Werkzeug-Kekse)\n🥕 Karotten-Schrauben XL (3 Schalen)\n🍎 Apfel + Birne + Trauben\n🥤 Apfelschorle + Brause (4 L)\n🥨 Salzstangen + Brezeln + Käse + Wurst\n🌭 Mini-Würstchen + 'Bauarbeiter-Brotzeit'\n🍕 Mini-Pizzen + Bauarbeiter-Brötchen\n🍬 Schoko-Schrauben (Gummibärchen-Schrauben)",
@@ -1273,12 +1273,12 @@
       "label": "Schrauben verloren",
       "headline": "Mehr Schrauben verstecken, Suchzeit reduzieren.",
       "steps": [
-        "Ruhe bewahren, Pause einlegen.",
-        "Material neu sortieren.",
-        "Eltern als Helfer aktivieren.",
-        "Notfalls Programm kürzen."
+        "Reserve-Beutel mit 5-10 Plastik-Schrauben aus Material-Box holen.",
+        "Bei Total-Verlust: Stempel-Aufkleber als \"Ersatz-Schraube\" verteilen — Lizenz-Eintrag bleibt erhalten.",
+        "Sand-Schatzsuche durch Werkzeug-Memory ersetzen (Material immer bereit).",
+        "Erklärung an Kinder: \"Bauarbeiter improvisieren — wir auch.\""
       ],
-      "fallback": "Im Notfall: Programm auf Spaß-Kern reduzieren.",
+      "fallback": "Wenn nichts da: Werkzeug-Quiz-Karten als Schatz verteilen — Kinder finden statt Schrauben jetzt Werkzeug-Karten.",
       "tone": "pragmatisch"
     }
   },

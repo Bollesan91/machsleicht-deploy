@@ -2,7 +2,7 @@
   "_meta": {
     "version": "2.0.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v2 — Helfer-v3-Welle 1A+1B in Bearbeitung (Schema-Parität + Affiliate-Aktivierung). Initial-Review-Score 68/100. Weitere Wellen folgen."
+    "qualityNote": "v2 — Helfer-v3-Welle 1A+1B+1C+1D abgeschlossen. Re-Verify-Score 81/100 nach 1C, erwartet 85+ nach 1D. Cross-File-Kontamination behoben, SOS-Spezifik, Stallplan-Typo-Fix, Quiz-Karten-Mismatch-Fix."
   },
   "motto": "baustelle",
   "ageGroup": "klein",
@@ -118,7 +118,7 @@
       {
         "emoji": "📋",
         "name": "Bauplan-Hüter",
-        "function": "Hält den Stallplan"
+        "function": "Hält den Bauplan"
       },
       {
         "emoji": "⛑️",

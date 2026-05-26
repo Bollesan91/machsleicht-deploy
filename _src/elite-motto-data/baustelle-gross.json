@@ -2,7 +2,7 @@
   "_meta": {
     "version": "2.0.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v2 — Helfer-v3-Welle 1A+1B in Bearbeitung (Schema-Parität + Affiliate-Aktivierung). Initial-Review-Score 68/100. Weitere Wellen folgen."
+    "qualityNote": "v2 — Helfer-v3-Welle 1A+1B+1C+1D abgeschlossen. Re-Verify-Score 81/100 nach 1C, erwartet 85+ nach 1D. Cross-File-Kontamination behoben, SOS-Spezifik, Stallplan-Typo-Fix, Quiz-Karten-Mismatch-Fix."
   },
   "motto": "baustelle",
   "ageGroup": "gross",
@@ -266,12 +266,12 @@
           "loudness": "mittel",
           "effort": "leicht",
           "prepText": "60-80 mittelgroße Bauklötze (Holz oder Schaumstoff, KEINE LEGO — werden instabil bei Höhe), Stoppuhr, Maßband, Wertungstafel für Höhe-in-cm + Statik-Stabilität. 10 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: 3-Minuten-Bauen, Höhe in cm gemessen — kein \"Stapel-fällt-um-Drama\". Stempel für jedes Kind.",
-          "ageAdjust8": "Für 8-Jährige: 5-Minuten-Bauen, Wertung kombiniert Höhe + Statik-Test (sanftes Wackeln am Tisch). Top-3 bekommen Bonus-Stempel.",
+          "ageAdjust6": "NICHT für 6 — Statik-Wertung ist 9-12-Niveau. Bei Mischgruppe: einfacheren Bauklotz-Wettbewerb aus mittel-Variante nehmen.",
+          "ageAdjust8": "8-Jährige als Wow-Erweiterung: einfachere Statik-Regel (\"breite Basis\"), Höhe-Wertung in cm. Top-3 mit Mini-Pokal.",
           "indoorTip": "Im Wohnzimmer auf Teppich (weicher Fall) — 1m Sicherheits-Abstand zwischen Bautischen.",
           "outdoorTip": "Im Garten auf Rasen — Wind beachten. Stoppuhr-Position vom Bau-Bereich entfernt (Distraktion).",
           "whyItWorksTitle": "Warum Bauklotz-Wettbewerb der Maurer-Höhepunkt ist",
-          "whyItWorks": "6-8 wollen ihr Bau-Talent in echtem Wettbewerb zeigen. Höhe + Statik als Wertung kombiniert Kreativität mit \"ingenieursmäßigem\" Denken. Wichtig: Holz/Schaumstoff statt Lego — Lego-Türme kippen bei Höhe + erzeugen Frust."
+          "whyItWorks": "9-12 wollen Bau-Wettkampf mit Engineering-Element. Höhe (in cm) UND Statik-Note (Wackeltest oder Lüfter) gibt Doppel-Wertung. Holz/Kapla statt Lego ist Pflicht: Holz-Klötze sind real konstruktiv (was Bauarbeiter wirklich nutzen)."
         },
         {
           "name": "🕵️ Sabotage-Ermittlung",
@@ -403,7 +403,7 @@
             {
               "n": 3,
               "name": "Runde 2: Bau-Berufe",
-              "content": "5 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
+              "content": "6 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
             },
             {
               "n": 4,
@@ -716,9 +716,9 @@
         {
           "emoji": "🕵️",
           "label": "Sabotage-Ermittlungs-Set (4 Verdächtige + 3 Spuren + Lupen)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=lupe+ermittler+kinder+detektiv&tag=machsleicht-21",
           "priceEur": 18,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Krimi-Quest."
         },
@@ -899,18 +899,18 @@
         {
           "emoji": "📜",
           "label": "Architekten-System Komplett",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=stempel+set+kinder+bastel&tag=machsleicht-21",
           "priceEur": 45,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Standard-System."
         },
         {
           "emoji": "🕵️",
           "label": "Sabotage-Set XL (5 Verdächtige + 4 Spuren)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=lupe+ermittler+kinder+detektiv&tag=machsleicht-21",
           "priceEur": 25,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Krimi XL."
         },
@@ -1136,18 +1136,18 @@
         {
           "emoji": "📜",
           "label": "Architekten-System Wow (Diplom Kl 2 + Pokale + Pins + Bauleiter-Pokal + Brücken-Pokal)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=stempel+set+kinder+bastel&tag=machsleicht-21",
           "priceEur": 65,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wow-System."
         },
         {
           "emoji": "🕵️",
           "label": "Sabotage XXL (6 Verdächtige + 5 Spuren + Verhör-Karten)",
-          "url": null,
+          "url": "https://www.amazon.de/s?k=lupe+ermittler+kinder+detektiv&tag=machsleicht-21",
           "priceEur": 35,
-          "hasAffiliate": false,
+          "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Krimi XXL."
         },
@@ -1544,12 +1544,12 @@
       "label": "Sabotage zu kompliziert",
       "headline": "Zusatz-Hinweis-Karten verteilen, eine Spur direkt zuordnen, Auflösung etwas früher öffnen.",
       "steps": [
-        "Ruhe bewahren, Pause einlegen.",
-        "Material neu sortieren.",
-        "Eltern als Helfer aktivieren.",
-        "Notfalls Programm kürzen."
+        "Polier-Tipp-Karte vorbereiten (verweist auf Schuh-Größen-Hinweis bei Frank).",
+        "Bei totalem Stillstand: eine Verdächtigen-Karte laut vorlesen, Motiv betonen.",
+        "Spurensuch-Zeit von 25 Min auf 15 Min kürzen, schneller zum Auflösungs-Moment.",
+        "Auflösung gemeinsam mit Polier Jonas durchgehen: \"Welche Spur passt zu Frank? Schuh-Größe 44!\""
       ],
-      "fallback": "Im Notfall: Programm auf Spaß-Kern reduzieren.",
+      "fallback": "Wenn Kinder völlig blockiert sind: Auflösungs-Brief vorzeitig öffnen, gemeinsam die Logik nachvollziehen — Lern-Moment statt Frust.",
       "tone": "pragmatisch"
     },
     "kind_will_nicht_mitmachen": {
@@ -1583,26 +1583,26 @@
       "label": "Baustellen-Besuch abgesagt",
       "headline": "Olympiade als Ersatz-Highlight, Baustellen-Video als zusätzlicher Programm-Block.",
       "steps": [
-        "Ruhe bewahren, Pause einlegen.",
-        "Material neu sortieren.",
-        "Eltern als Helfer aktivieren.",
-        "Notfalls Programm kürzen."
+        "Baustellen-Video als Ersatz vorbereiten (z.B. YouTube \"Bau-Doku Hochhaus\").",
+        "Mini-Baustellen-Begehung in der eigenen Wohnung simulieren (Bauplan-Werkstatt-Werke als \"Modelle\").",
+        "Architektin Sophia erklärt: \"Wir machen unsere eigene Baustelle hier — die echte ist nicht weg, nur verschoben.\"",
+        "Bei Geld-Erstattung: Familie bekommt zurück + nachverlegter Besuch als Familien-Event."
       ],
-      "fallback": "Im Notfall: Programm auf Spaß-Kern reduzieren.",
-      "tone": "pragmatisch"
+      "fallback": "Wenn Wow-Element fehlt: Olympiade-Phase verlängern, Mini-Pokale aufwerten, Foto-Phase mit \"Bauleiter-Diplom\" verlängern.",
+      "tone": "einfühlsam"
     },
     "brücke_bricht_zu_schnell": {
       "icon": "🌉",
       "label": "Brücke bricht zu schnell",
       "headline": "Mehr Bauklötze freigeben, Stützen näher zusammen rücken.",
       "steps": [
-        "Ruhe bewahren, Pause einlegen.",
-        "Material neu sortieren.",
-        "Eltern als Helfer aktivieren.",
-        "Notfalls Programm kürzen."
+        "Sicherheits-Stopp: alle 1m zurücktreten, Sandsäckchen vom Boden aufheben.",
+        "Statiker-Lern-Moment: \"Warum ist die Brücke gebrochen? Schwach an dieser Stelle.\" Konstruktions-Fehler gemeinsam analysieren.",
+        "Brücken-Klötze sortieren, neue Brücke bauen mit Bogen-Form oder Dreieck-Verstärkung.",
+        "Last-Test wiederholen, diesmal Sandsäckchen LANGSAM auflegen (kontrolliertes Tempo)."
       ],
-      "fallback": "Im Notfall: Programm auf Spaß-Kern reduzieren.",
-      "tone": "pragmatisch"
+      "fallback": "Wenn 2 Brücken brechen: Brücken-Phase beenden, mit Statik-Quiz fortfahren — \"warum brechen Brücken?\" als Lernspiel.",
+      "tone": "klar"
     }
   },
   "bonusGames": {
