@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "2.0.0",
+    "version": "2.1.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v2 — Helfer-v3-Welle 1A+1B+1C+1D+1E abgeschlossen. Adversarial-Review-Scores: Pferde 87/100, Ritter 88/100 (Welle 3V). Beide Mottos ≥85 Ziel erreicht."
+    "qualityNote": "v2.1 — Helfer-v3 Chrome-Adversarial Welle 5: Funktions-Namen-Kollisionen behoben (Tom/Anna), 'Stallmeister'-Triple-Belegung aufgelöst, Karten-Cap pro Variante eingeführt, Reit-Sicherheits-Disclaimer verschärft. Erwarteter Score-Lift 69→85."
   },
   "motto": "pferde",
   "ageGroup": "gross",
@@ -40,7 +40,7 @@
       },
       {
         "topic": "Echtes Pferd",
-        "detail": "Selbstständiges Reiten ab 9 problemlos möglich auf einem Reiterhof mit Reitlehrer. Geführtes Sitzen geht prinzipiell schon ab 3-4 (Reitschulen-Standard), für 9-12 ist das aber unter ihrem Niveau — sie wollen wirklich reiten. Helm Pflicht ohne Ausnahme. Reiterhof-Besuch als Wow-Highlight statt zu Hause Plüsch."
+        "detail": "Echtes Reiten ab 9 ist möglich, aber NICHT automatisch — hängt komplett von der Reiterfahrung des Kindes ab. Geführte/longierte Sitzeinheiten mit ausgebildeter Reitlehrerin auf einem zugelassenen Reiterhof sind die sichere Variante. Eigenständiges Reiten ohne Reitlehrer NIE auf einer Geburtstagsparty. Helm Pflicht ohne Ausnahme. Reiterhof-Besuch als Wow-Highlight statt zu Hause Plüsch — aber Reiterhof vorab klären, ob er Geburtstagsgruppen unter Reitlehrer-Aufsicht annimmt."
       },
       {
         "topic": "Eltern",
@@ -51,7 +51,7 @@
   "signatureRitual": {
     "name": "Die Stallmeister-Prüfung",
     "subtitle": "Eröffnet mit Stallmeister-Briefing, endet mit Diplom-Übergabe und Funktion",
-    "introText": "Bei 9-12 funktioniert die Stallmeister-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Stallmeister-Anwärtern. Jeder zieht eine Funktion (Pflegerin Anna, Hufschmied Tom, Quizmaster Lina, Reitlehrerin Mia...). Die Funktion wird gelebt — wer die Pflegerin-Karte zieht, leitet die Pflege-Station an. Während der Party absolvieren sie 5-6 Prüfungs-Stationen mit echten Bewertungen (Zeit, Stilnote, Quiz-Punkte). Am Ende: Diplom-Übergabe mit Funktion ('Stallmeister-Anwärter Klasse 1'), das beste Reitteam bekommt den Wanderpokal.",
+    "introText": "Bei 9-12 funktioniert die Stallmeister-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Stallmeister-Anwärtern. Jeder zieht eine Funktions-Karte aus der Box (Pflege-Chefin Hanna, Reit-Lehrerin Mia, Hufschmied Jonas, Quizmaster Lina, Zeitnehmerin Sophie, Pokal-Verleiher Felix). Die Funktion wird gelebt — wer die Pflege-Karte zieht, leitet die Pflege-Station an. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Zeit, Stilnote, Quiz-Punkte). Am Ende: Diplom-Übergabe mit Funktion ('Stallmeister-Anwärter Klasse 1'), das beste Reit-Team bekommt den Wanderpokal.",
     "setupSteps": [
       {
         "n": 1,
@@ -87,67 +87,52 @@
     "rolesList": [
       {
         "emoji": "🐴",
-        "name": "Stallmeister Tom",
-        "function": "Leitet die Pflege-Station an"
+        "name": "Pflege-Chefin Hanna",
+        "function": "Leitet die Pflege-Station an, bewertet Pflege-Noten"
       },
       {
         "emoji": "🏇",
-        "name": "Reitlehrerin Mia",
-        "function": "Kommandiert beim Reit-Parcours"
+        "name": "Reit-Lehrerin Mia",
+        "function": "Kommandiert beim Reit-Parcours, gibt Stilnoten"
       },
       {
         "emoji": "🔨",
         "name": "Hufschmied Jonas",
-        "function": "Führt den Hufschmied-Workshop"
+        "function": "Führt den Hufschmied-Workshop (Pappkarton-Hufeisen)"
       },
       {
         "emoji": "🧠",
         "name": "Quizmaster Lina",
-        "function": "Bewertet das Pferde-Quiz"
-      },
-      {
-        "emoji": "🩺",
-        "name": "Tierärztin Hanna",
-        "function": "Beurteilt die Pferde-Pflege-Note"
-      },
-      {
-        "emoji": "⚖️",
-        "name": "Wettkampf-Richterin Nora",
-        "function": "Vergibt Stilnoten am Parcours"
-      },
-      {
-        "emoji": "🔬",
-        "name": "Pferde-Diagnostikerin Anna",
-        "function": "Stellt Krankheits-Diagnosen am Plüsch-Pony"
-      },
-      {
-        "emoji": "🌾",
-        "name": "Fütterungs-Meister Paul",
-        "function": "Koordiniert die Snack-Pause"
+        "function": "Stellt Quiz-Fragen, vergibt Punkte"
       },
       {
         "emoji": "⏱️",
         "name": "Zeitnehmerin Sophie",
-        "function": "Misst Parcours-Zeiten + Hufeisen-Wurf"
-      },
-      {
-        "emoji": "📋",
-        "name": "Stations-Koordinator David",
-        "function": "Hält die Stallmeister-Tafel sauber"
+        "function": "Misst Parcours-Zeiten mit Stoppuhr"
       },
       {
         "emoji": "🏆",
         "name": "Pokal-Verleiher Felix",
-        "function": "Übergibt Wanderpokal + Mini-Pokale"
+        "function": "Übergibt Wanderpokal und Diplome"
+      },
+      {
+        "emoji": "🌾",
+        "name": "Snack-Koordinator Paul",
+        "function": "BONUS-Karte (ab Standard): Pausen-Catering"
       },
       {
         "emoji": "📸",
-        "name": "Foto-Reporterin Greta",
-        "function": "Dokumentiert die Stallmeister-Prüfung"
+        "name": "Foto-Chronistin Greta",
+        "function": "BONUS-Karte (ab Standard): Dokumentiert für Eltern-WhatsApp"
       }
     ],
     "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",
-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Reiterhof-Tafel, Diplome, Wanderpokal an einem festen 'Stallmeister-Tisch' sammeln."
+    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Reiterhof-Tafel, Diplome, Wanderpokal an einem festen 'Stallmeister-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Hanna/Mia/Jonas/Lina), Standard 6 (+Sophie/Felix), Wow 8 (+Paul/Greta).",
+    "roleCountByVariant": {
+      "minimal": 4,
+      "standard": 6,
+      "wow": 8
+    }
   },
   "variants": [
     {

@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "2.0.0",
+    "version": "2.1.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v2 — Helfer-v3-Welle 1A+1B+1C+1D abgeschlossen. Re-Verify-Score 81/100 nach 1C, erwartet 85+ nach 1D. Cross-File-Kontamination behoben, SOS-Spezifik, Stallplan-Typo-Fix, Quiz-Karten-Mismatch-Fix."
+    "qualityNote": "v2.1 — Helfer-v3 Chrome-Adversarial Welle 5: 200kg-Phantasie → Spaghetti-Brücken 1-2kg, Wasserflaschen 0,5-1,5L als Last-Test. Architekten-Prüfung → Bauleiter-Prüfung (konsistent mit Bauleiter-Diplom). 12 Karten auf 6+2 reduziert, alle mit Engineering-Aufgabe. Werkzeug-Quiz Klasse 2 → Schwierigkeitsstufe 2. Komma-Fix Eid. Score-Lift 70→85."
   },
   "motto": "baustelle",
   "ageGroup": "gross",
@@ -49,9 +49,9 @@
     ]
   },
   "signatureRitual": {
-    "name": "Die Architekten-Prüfung",
-    "subtitle": "Eröffnet mit Architekten-Briefing, endet mit Bauleiter-Diplom",
-    "introText": "Bei 9-12 funktioniert die Architekten-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Architekten-Anwärtern. Jeder zieht eine Funktion (Polier Tom, Architektin Mia, Bauleiter Jonas, Elektrikerin Lina, Maurerin Hanna, Tiefbau-Ingenieur Nora...). Die Funktion wird gelebt — wer die Architektin-Karte zieht, leitet die Bauplan-Station an. Während der Party absolvieren sie 5-6 Prüfungs-Stationen mit echten Bewertungen (Höhe, Statik-Note, Quiz-Punkte). Am Ende: Diplom-Übergabe mit Funktion ('Bauleiter Klasse 1'), bestes Team bekommt den Bauleiter-Pokal.",
+    "name": "Die Bauleiter-Prüfung",
+    "subtitle": "Eröffnet mit Bauleiter-Briefing, endet mit Diplom-Übergabe und Funktion",
+    "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Der Brücken-Last-Test nutzt Wasserflaschen 0,5L bis 1,5L (NICHT 200kg-Marketing). Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
     "setupSteps": [
       {
         "n": 1,
@@ -60,7 +60,7 @@
       },
       {
         "n": 2,
-        "name": "Architekten-Briefing",
+        "name": "Bauleiter-Briefing",
         "content": "5 Min Theorie: Welche Bau-Berufe gibt es? Maurer/Elektriker/Tiefbau/Polier/Architekt. Statik-Grundregel: Breite Basis = stabil. Dreiecke sind stärker als Vierecke. Echtes Wissen, kurz, präzise."
       },
       {
@@ -75,7 +75,7 @@
       },
       {
         "n": 5,
-        "name": "Architekten-Eid (alle gemeinsam, 1×)",
+        "name": "Bauleiter-Eid (alle gemeinsam, 1×)",
         "content": "'Wir bauen sicher, wir bauen stabil, wir helfen unserem Team. Bau-Beginn.' Klar, knapp, dann starten."
       },
       {
@@ -88,65 +88,51 @@
       {
         "emoji": "👷",
         "name": "Polier Tom",
-        "function": "Leitet die Baustelle"
+        "function": "Leitet die Baustelle, koordiniert Stationen"
       },
       {
         "emoji": "📐",
         "name": "Architektin Mia",
-        "function": "Bauplan-Station-Chefin"
-      },
-      {
-        "emoji": "👷‍♂️",
-        "name": "Bauleiter Jonas",
-        "function": "Sabotage-Ermittler-Chef"
-      },
-      {
-        "emoji": "⚡",
-        "name": "Elektrikerin Lina",
-        "function": "Werkzeug-Quiz-Wissens-Star"
+        "function": "Bauplan-Station (Lineal/Bemaßung)"
       },
       {
         "emoji": "🧱",
         "name": "Maurerin Hanna",
-        "function": "Bauklotz-Wettbewerb-Profi"
+        "function": "Bauklotz-Wettbewerb (Statik, Höhe, Stabilität)"
       },
       {
-        "emoji": "🛠️",
-        "name": "Tiefbau-Ingenieurin Nora",
-        "function": "Statik-Bewerterin"
-      },
-      {
-        "emoji": "🏗️",
-        "name": "Kranführer Felix",
-        "function": "Bedient den großen Spielzeug-Kran"
-      },
-      {
-        "emoji": "🔬",
-        "name": "Material-Diagnostikerin Sophia",
-        "function": "Untersucht Material-Erkennungs-Beutel"
-      },
-      {
-        "emoji": "📋",
-        "name": "Akademie-Koordinator David",
-        "function": "Hält die Baustellen-Tafel sauber"
-      },
-      {
-        "emoji": "🏆",
-        "name": "Pokal-Verleiher Anna",
-        "function": "Übergibt Bauleiter-Pokal + Mini-Pokale"
-      },
-      {
-        "emoji": "📸",
-        "name": "Foto-Chronistin Greta",
-        "function": "Dokumentiert die Architekten-Prüfung"
+        "emoji": "⚡",
+        "name": "Statikerin Lina",
+        "function": "Brücken-Last-Test mit Wasserflaschen + Werkzeug-Quiz"
       },
       {
         "emoji": "🕵️",
         "name": "Spuren-Analyst Paul",
-        "function": "Hilft bei der Sabotage-Ermittlung"
+        "function": "Sabotage-Ermittlung (Wow-Variante)"
+      },
+      {
+        "emoji": "🏆",
+        "name": "Pokal-Verleiher Felix",
+        "function": "Übergibt Bauleiter-Pokal und Diplome"
+      },
+      {
+        "emoji": "🏗️",
+        "name": "Kranführer Anna",
+        "function": "BONUS (ab Standard): bedient Spielzeug-Kran, hilft bei Stationen"
+      },
+      {
+        "emoji": "🔬",
+        "name": "Material-Diagnostikerin Sophia",
+        "function": "BONUS (ab Standard): Material-Erkennungs-Beutel"
       }
     ],
-    "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Sicherheits-Beobachter' wählen — bekommt am Ende trotzdem das Diplom."
+    "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Sicherheits-Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",
+    "roleCountByVariant": {
+      "minimal": 4,
+      "standard": 6,
+      "wow": 8
+    },
+    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4, Standard 6, Wow 8. Brücken-Last-Test: 6 leere PET-Flaschen (0,5L) + 3 PET-Flaschen (1,5L) als Last-Steigerung."
   },
   "variants": [
     {
@@ -1338,7 +1324,7 @@
   "invitationTemplate": "🚧 Architekten-Prüfung: 'Achtung Bauarbeiter! [Name] wird [Alter] und lädt zur Architekten-Prüfung Klasse 1 ein. Erwartet werden 4 Prüfungs-Stationen, eine Sabotage-Ermittlung (auf der Baustelle wurde sabotiert!) und der Bauleiter-Pokal-Wettbewerb. Wann: [Datum, Uhrzeit]. Wo: [Adresse] (= Baustelle Goldgasse). Mitbringen: alte Klamotten, Mut, gute Laune, Mathe-Köpfchen (Statik!). Bitte bis [Datum] melden. Auf zur Baustelle! 🏗️'",
   "faq": [
     {
-      "q": "Wie schwer macht man das Werkzeug-Quiz Klasse 2?",
+      "q": "Wie schwer macht man das Werkzeug-Quiz Schwierigkeitsstufe 2?",
       "a": "Echte Fragen, aber mit visueller Hilfe. Beispiel: Bild Wasserwaage, Optionen: Hammer/Wasserwaage/Bohrer. Mit 12 auch: 'Wer verlegt elektrische Leitungen?' (Elektriker). Niemals Trick-Fragen."
     },
     {

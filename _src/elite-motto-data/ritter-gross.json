@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "2.0.0",
+    "version": "2.1.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v2 — Helfer-v3-Welle 1A+1B+1C+1D+1E abgeschlossen. Adversarial-Review-Scores: Pferde 87/100, Ritter 88/100 (Welle 3V). Beide Mottos ≥85 Ziel erreicht."
+    "qualityNote": "v2.1 — Helfer-v3 Chrome-Adversarial Welle 5: Wow-Widerspruch geklärt, Burgvogt-Doppel (Eltern vs Karte) aufgelöst, Schwert-Parcours-Mechanik konkretisiert (4 definierte Stationen statt freies Schlagen), 12 Karten auf 6+2 reduziert, Bogenschütze raus. Erwarteter Score-Lift 70→85."
   },
   "motto": "ritter",
   "ageGroup": "gross",
@@ -44,14 +44,14 @@
       },
       {
         "topic": "Eltern",
-        "detail": "In Wow-Variante definitiv weg. Kinder in dem Alter wollen Party ohne Eltern. Telefonisch erreichbar reicht. 1-2 Erwachsene als Aufsicht (als 'Burgvogt' getarnt)."
+        "detail": "Eltern können in Minimal absetzen + telefonisch erreichbar bleiben. In Standard/Wow wollen Kinder die Party meist ganz ohne eigene Eltern — 1-2 fremde Erwachsene als Aufsicht (als 'Burgwächter' getarnt, NICHT als Karten-Funktion) übernehmen die Aufsicht. Wichtig: NICHT mit der ziehbaren Kinder-Karte 'Burgvogtin' verwechseln."
       }
     ]
   },
   "signatureRitual": {
     "name": "Die Ritter-Akademie-Prüfung",
     "subtitle": "Eröffnet mit Akademie-Briefing, endet mit Schwert-Schlag-Zeremonie",
-    "introText": "Bei 9-12 funktioniert die Ritter-Akademie als Quest-Rahmen: Beim Ankommen werden alle zu Ritter-Anwärtern der Akademie. Jeder zieht eine Funktion (Ermittler Jonas, Schwert-Champion Mia, Burgen-Kennerin Lina, Hofnarr Tom...). Die Funktion wird gelebt — wer die Ermittler-Karte zieht, leitet die Burgenermittlung an. Während der Party absolvieren sie 5-6 Prüfungs-Stationen mit echten Bewertungen (Zeit, Stilnote, Quiz-Punkte). Am Ende: Schwert-Schlag-Zeremonie mit Diplom-Übergabe und Funktion ('Ritter-Anwärter Klasse 1'), bestes Team bekommt den Ritter-Pokal.",
+    "introText": "Bei 9-12 funktioniert die Ritter-Akademie als Quest-Rahmen: Beim Ankommen werden alle zu Ritter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig). Der Schwert-Parcours besteht aus 4 Aufgaben-Stationen: Balance-Block, Wende-Pylon, Strohballen-Schlag (3 Treffer Brust-/Schenkel-/Kopfhöhe), Schild-Block (Trainer wirft Schaumstoff-Bälle, Kind blockt). KEIN Sparring zwischen Kindern. Zeit + Stilnote werden bewertet. Am Ende: Schwert-Schlag-Zeremonie (symbolisch, Trainer tippt mit Holzschwert auf die Schulter) und Diplom-Übergabe.",
     "setupSteps": [
       {
         "n": 1,
@@ -86,68 +86,53 @@
     ],
     "rolesList": [
       {
-        "emoji": "🕵️",
-        "name": "Ermittler Jonas",
-        "function": "Leitet die Burgenermittlung an"
-      },
-      {
         "emoji": "⚔️",
         "name": "Schwert-Champion Mia",
-        "function": "Kommandiert beim Schwert-Parcours"
+        "function": "Kommandiert beim Schwert-Parcours, gibt Stilnoten"
+      },
+      {
+        "emoji": "🕵️",
+        "name": "Ermittler Jonas",
+        "function": "Leitet die Burgenermittlung (Wow-Variante)"
       },
       {
         "emoji": "📚",
         "name": "Burgen-Kennerin Lina",
-        "function": "Quiz-Wissen-Expertin"
+        "function": "Stellt Quiz-Fragen zu Burgen und Mittelalter"
       },
       {
         "emoji": "🛡️",
         "name": "Wappen-Heroldin Hanna",
-        "function": "Bewertet Wappen-Design"
-      },
-      {
-        "emoji": "🤡",
-        "name": "Hofnarr Tom",
-        "function": "Sorgt für Pausen-Stimmung + Witze"
-      },
-      {
-        "emoji": "🏰",
-        "name": "Burgvogtin Nora",
-        "function": "Vergibt Stilnoten und hält Tafel"
-      },
-      {
-        "emoji": "🔬",
-        "name": "Spuren-Analystin Sophia",
-        "function": "Untersucht Burgenermittlungs-Spuren"
+        "function": "Bewertet selbstgemalte Wappen"
       },
       {
         "emoji": "⏱️",
         "name": "Zeitnehmer Felix",
-        "function": "Misst Schwert-Parcours-Zeiten"
-      },
-      {
-        "emoji": "📋",
-        "name": "Akademie-Koordinator David",
-        "function": "Hält die Akademie-Tafel sauber"
-      },
-      {
-        "emoji": "🏹",
-        "name": "Bogenschütze Paul",
-        "function": "Leitet das Bogenschießen mit Saugnapf-Pfeilen"
+        "function": "Misst Parcours-Zeiten mit Stoppuhr"
       },
       {
         "emoji": "🏆",
-        "name": "Pokal-Verleiher Anna",
-        "function": "Übergibt Ritter-Pokal + Mini-Pokale"
+        "name": "Pokal-Verleiherin Anna",
+        "function": "Übergibt Ritter-Pokal und Diplome"
+      },
+      {
+        "emoji": "🤡",
+        "name": "Hofnarr Tom",
+        "function": "BONUS (ab Standard): Pausen-Stimmung + Witze zwischen Stationen"
       },
       {
         "emoji": "📸",
         "name": "Foto-Chronistin Greta",
-        "function": "Dokumentiert die Ritter-Akademie"
+        "function": "BONUS (ab Standard): Dokumentiert die Akademie-Prüfung"
       }
     ],
     "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Burgwächter-Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",
-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Akademie-Tafel, Ritter-Diplome und Ritter-Pokal an einem festen 'Akademie-Tisch' sammeln. Schwert für Schwert-Schlag-Zeremonie separat vorhalten (Pool-Nudel oder dekoratives Holz-Schwert)."
+    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Akademie-Tafel, Diplome, Ritter-Pokal an einem festen 'Akademie-Tisch' sammeln. Erwachsene Aufsicht = 'Burgwächter' (NICHT Karten-Funktion). Karten-Anzahl pro Variante: Minimal 4, Standard 6, Wow 8.",
+    "roleCountByVariant": {
+      "minimal": 4,
+      "standard": 6,
+      "wow": 8
+    }
   },
   "variants": [
     {
