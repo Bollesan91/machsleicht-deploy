@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "2.4.0",
+    "version": "2.5.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v2.4 — Welle 8 Mini-Mini-Fix + Differenzierungs-Asset: 1,5L-Zwischenschritt im Brücken-Last-Test (lückenlose Last-Kurve). 6 Druckvorlagen ergänzt (Diplom, Funktions-Karten, Bauplan-Skizzen, Werkzeug-Quiz, Beweis-Wand, Baustellen-Tafel). Ziel ≥85 nach -7."
+    "qualityNote": "v2.5 — Welle 9 FAQ-Audit: 6 FAQ-Items in JSON + HTML deployed (FAQPage JSON-LD). Reviewer kann via WebFetch /kindergeburtstag/baustelle-9-12-jahre prüfen sobald deployed. Ziel ≥85."
   },
   "motto": "baustelle",
   "ageGroup": "gross",

@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "2.4.0",
+    "version": "2.5.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v2.4 — Welle 8 Math-Fix + Differenzierungs-Asset: Slot-Mathe ehrlich durchgerechnet (Minimal 3:00h, Standard 3:30h, Wow 4:00h — Übergänge in 30 Min/Station enthalten, kein Doppel-Zählen). 6 Druckvorlagen ergänzt. Ziel ≥85 nach -7."
+    "qualityNote": "v2.5 — Welle 9 Wow-Zeit-Präzision: 4:00h ODER 4:30h klargestellt (je nach Krimi-Integration). Ziel ≥85."
   },
   "motto": "ritter",
   "ageGroup": "gross",
@@ -51,7 +51,7 @@
   "signatureRitual": {
     "name": "Die Ritter-Akademie-Prüfung",
     "subtitle": "Eröffnet mit Akademie-Briefing, endet mit Schwert-Schlag-Zeremonie",
-    "introText": "Bei 9-12 funktioniert die Ritter-Akademie als Quest-Rahmen: Beim Ankommen werden alle zu Ritter-Anwärtern. Jeder zieht eine Funktions-Karte (in Minimal 4, Standard 6, Wow 8 Karten). Während der Party absolvieren sie 4-6 Prüfungs-Stationen. KONKRETE ZEIT-MATHE: Minimal 4 Stationen × 30 Min (5 Min Briefing + 15 Min Aktion + 5 Min Bewertung + 5 Min Übergang) = 120 Min + 60 Min (Empfang/Snack/Diplom-Zeremonie) = 3:00h Gesamt. Standard 5 × 30 Min = 150 + 60 = 3:30h. Wow 6 × 30 Min + Krimi-Quest = 4:00h. ALLE Übergänge sind in den 30 Min/Station enthalten — kein Doppel-Zählen. Der Schwert-Parcours besteht aus 4 Aufgaben-Stationen: Balance-Block (auf einer Linie balancieren), Wende-Pylon (um Pylon herum mit Pool-Nudel-Schwert), Strohballen-Schlag (3 Treffer Brust-/Schenkel-/Kopfhöhe), Schild-Block (Trainer wirft 3 Schaumstoff-Bälle, Kind blockt mit Schild). KEIN Sparring zwischen Kindern. Zeit + Stilnote werden bewertet (Stilnote: ehrliche Hinweise auf Haltung statt Schul-Note 1-6, damit niemand 'verliert'). Am Ende: Schwert-Schlag-Zeremonie (symbolisch, Trainer tippt mit Holzschwert auf die Schulter) und Diplom-Übergabe.",
+    "introText": "Bei 9-12 funktioniert die Ritter-Akademie als Quest-Rahmen: Beim Ankommen werden alle zu Ritter-Anwärtern. Jeder zieht eine Funktions-Karte (in Minimal 4, Standard 6, Wow 8 Karten). Während der Party absolvieren sie 4-6 Prüfungs-Stationen. KONKRETE ZEIT-MATHE: Minimal 4 Stationen × 30 Min (5 Min Briefing + 15 Min Aktion + 5 Min Bewertung + 5 Min Übergang) = 120 Min + 60 Min (Empfang/Snack/Diplom-Zeremonie) = 3:00h Gesamt. Standard 5 × 30 Min = 150 + 60 = 3:30h. Wow 6 × 30 Min + Krimi-Quest (zusätzliche 30 Min eigene Phase) = 4:30h. Wenn Krimi-Quest in eine der 6 Stationen integriert wird (als Station 6), bleibt es bei 4:00h.. ALLE Übergänge sind in den 30 Min/Station enthalten — kein Doppel-Zählen. Der Schwert-Parcours besteht aus 4 Aufgaben-Stationen: Balance-Block (auf einer Linie balancieren), Wende-Pylon (um Pylon herum mit Pool-Nudel-Schwert), Strohballen-Schlag (3 Treffer Brust-/Schenkel-/Kopfhöhe), Schild-Block (Trainer wirft 3 Schaumstoff-Bälle, Kind blockt mit Schild). KEIN Sparring zwischen Kindern. Zeit + Stilnote werden bewertet (Stilnote: ehrliche Hinweise auf Haltung statt Schul-Note 1-6, damit niemand 'verliert'). Am Ende: Schwert-Schlag-Zeremonie (symbolisch, Trainer tippt mit Holzschwert auf die Schulter) und Diplom-Übergabe.",
     "setupSteps": [
       {
         "n": 1,
