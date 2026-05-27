@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>So funktioniert machsleicht – 5 Frames</title>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rot:#e11d18;--rot-tief:#9e1109;--rot-hell:#ff4a3d;
+    --gelb:#ffc233;--gelb-tief:#e8a200;
+    --kohle:#1a1411;--creme:#fbf1df;--papier:#fffaf1;--linie:#efe1c9;
+    --dunkel:#1A0A00;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Nunito',sans-serif;color:var(--kohle);min-height:100vh;
+    padding:30px 16px 50px;-webkit-font-smoothing:antialiased;
+    background:
+      radial-gradient(circle at 12% 5%, #fce3c0 0%, transparent 38%),
+      radial-gradient(circle at 90% 98%, #f8d7d2 0%, transparent 38%),
+      var(--creme);
+  }
+  .kicker{text-align:center;font-weight:900;letter-spacing:.18em;text-transform:uppercase;font-size:.66rem;color:var(--rot);margin-bottom:7px}
+  h1.head{font-family:'Lilita One',cursive;font-weight:400;text-align:center;font-size:clamp(1.7rem,6vw,2.5rem);line-height:1.02}
+  .sub{text-align:center;color:#83715b;font-weight:700;max-width:480px;margin:8px auto 32px;font-size:.9rem;line-height:1.5}
+  .sub b{color:var(--kohle)}
+
+  .funnel{display:flex;flex-direction:column;align-items:center;gap:6px;max-width:420px;margin:0 auto}
+  .step-label{display:flex;align-items:center;gap:9px;font-family:'Lilita One',cursive;font-size:1.05rem;color:var(--rot-tief);margin-top:14px}
+  .step-num{background:var(--rot);color:#fff;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:1rem;box-shadow:0 3px 0 var(--rot-tief)}
+  .step-note{font-size:.78rem;color:#a08d77;font-weight:800;text-align:center;max-width:340px;line-height:1.4;margin-bottom:8px}
+
+  /* Phone */
+  .phone{background:#111;border-radius:32px;padding:8px;box-shadow:0 0 0 2px #2a2a2a,10px 12px 0 rgba(26,20,17,.16);width:285px}
+  .screen{background:#fff;border-radius:26px;overflow:hidden;position:relative;aspect-ratio:9/17}
+  .notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:70px;height:15px;background:#111;border-radius:0 0 10px 10px;z-index:3}
+  .statusbar{display:flex;justify-content:space-between;align-items:center;padding:7px 18px 4px;font-size:.62rem;font-weight:800;color:var(--kohle)}
+
+  /* Arrow between frames */
+  .arrow{font-family:'Lilita One',cursive;color:var(--rot);font-size:1.6rem;line-height:1;margin:6px 0 -2px;transform:rotate(90deg)}
+
+  /* ---------- FRAME 1: PLANER ---------- */
+  .f1 .statusbar{background:#fff}
+  .f1-hero{background:linear-gradient(170deg,#fff1d6,#ffd9a8);padding:18px 16px 14px;text-align:center}
+  .f1-logo{font-family:'Lilita One',cursive;font-size:.95rem;color:var(--rot);margin-bottom:10px}
+  .f1-eyebrow{font-weight:900;font-size:.58rem;color:var(--gelb-tief);letter-spacing:.16em;text-transform:uppercase}
+  .f1-h{font-family:'Lilita One',cursive;font-size:1.15rem;line-height:1.05;margin-top:4px;color:var(--kohle)}
+  .f1-h .em{color:var(--rot)}
+  .f1-feat{font-size:.7rem;font-weight:700;color:#5e4f3d;margin-top:8px;line-height:1.5}
+  .f1-cta{background:var(--rot);color:#fff;font-family:'Lilita One',cursive;font-size:.92rem;padding:11px 16px;border-radius:14px;margin:14px auto 6px;display:inline-block;box-shadow:0 4px 0 var(--rot-tief)}
+  .f1-chips{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;margin-top:8px;padding:0 10px}
+  .f1-chip{background:rgba(255,255,255,.7);font-size:.6rem;font-weight:800;color:#7a5e35;padding:3px 8px;border-radius:10px}
+  .f1-alt{font-size:.65rem;color:#94826d;text-align:center;margin-top:14px;font-weight:700}
+  .f1-alt b{color:var(--kohle)}
+
+  .f1-preview{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin:14px 8px 0}
+  .f1-preview div{background:rgba(255,255,255,.7);border-radius:8px;padding:6px 4px;font-size:.55rem;font-weight:800;color:#5e4f3d;text-align:center;line-height:1.25}
+  .f1-preview div .em{display:block;font-size:.9rem;margin-bottom:1px;font-weight:400}
+  .f1-rating{text-align:center;margin-top:12px;font-size:.6rem;color:#7a5e35;font-weight:800}
+  .f1-rating b{color:var(--rot);font-family:'Lilita One',cursive;font-weight:400;font-size:.8rem}
+
+  /* ---------- FRAME 2: SCHATZSUCHE ---------- */
+  .f2 .statusbar{background:#fff}
+  .f2-hero{background:linear-gradient(160deg,#3a8b3a,#1f5c1f);color:#fff;padding:16px 14px 14px;text-align:center}
+  .f2-back{position:absolute;top:30px;left:10px;color:#fff;font-size:.9rem;font-weight:900}
+  .f2-hero h3{font-family:'Lilita One',cursive;font-weight:400;font-size:1rem;margin-top:2px;line-height:1.1}
+  .f2-hero p{font-size:.66rem;font-weight:800;opacity:.92;margin-top:4px}
+  .f2-list{padding:10px 14px 6px}
+  .f2-list h4{font-family:'Lilita One',cursive;font-weight:400;font-size:.85rem;color:var(--kohle);margin-bottom:8px}
+  .f2-stn{display:flex;gap:9px;align-items:center;padding:7px 0;border-bottom:1px solid #eaeaea;font-size:.72rem;font-weight:700;color:#3e342a}
+  .f2-stn:last-child{border-bottom:none}
+  .f2-stn .n{background:#3a8b3a;color:#fff;width:21px;height:21px;border-radius:50%;display:grid;place-items:center;font-size:.65rem;font-weight:900;flex:none}
+  .f2-bottom{background:#fff8e0;padding:7px 12px;border-top:2px dotted var(--linie)}
+  .f2-bottom p{font-size:.62rem;font-weight:800;color:#7a5e35;text-align:center;line-height:1.4}
+
+  /* ---------- FRAME 3: EINLADUNG-BILD ---------- */
+  .f3 .screen{background:var(--papier);aspect-ratio:9/14}
+  .f3-haz{height:11px;background:repeating-linear-gradient(45deg,var(--gelb) 0 11px,var(--kohle) 11px 22px)}
+  .f3-body{padding:14px 14px 6px;text-align:center;position:relative;border-bottom:2px dotted var(--linie)}
+  .f3-badge{position:absolute;top:8px;right:10px;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 35% 30%, var(--rot-hell), var(--rot-tief));border:2px solid var(--kohle);color:#fff;display:grid;place-items:center}
+  .f3-badge b{font-family:'Lilita One',cursive;font-size:.95rem}
+  .f3-badge span{font-size:.35rem;font-weight:900;letter-spacing:.06em;display:block;margin-top:-2px}
+  .f3-truck{width:90px;display:block;margin:2px auto}
+  .f3-eyebrow{font-weight:900;font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gelb-tief)}
+  .f3-who{font-family:'Lilita One',cursive;font-size:1.35rem;color:var(--rot);line-height:.95;margin-top:2px}
+  .f3-theme{font-family:'Lilita One',cursive;font-size:.7rem;background:var(--kohle);color:var(--gelb);display:inline-block;padding:2px 9px;border-radius:14px;margin:6px 0 8px}
+  .f3-deets{font-size:.65rem;font-weight:800;line-height:1.6;color:#43382e}
+  .f3-rsvp{font-size:.55rem;color:#94826d;font-weight:800;padding:6px 0 8px}
+  .f3-burn{background:var(--kohle);padding:7px;text-align:center}
+  .f3-burn .url{font-family:'Lilita One',cursive;color:var(--gelb);font-size:.7rem}
+  .f3-burn .brand{font-size:.46rem;color:#bdab97;font-weight:800;letter-spacing:.04em;margin-top:1px}
+
+  /* ---------- FRAME 4: PARTYSEITE ---------- */
+  .f4 .statusbar{background:var(--rot);color:#fff}
+  .f4-hero{background:linear-gradient(165deg,var(--rot-hell),var(--rot-tief));color:#fff;padding:11px 14px 13px;text-align:center}
+  .f4-hero h3{font-family:'Lilita One',cursive;font-weight:400;font-size:1rem;margin-top:2px}
+  .f4-hero p{font-size:.62rem;opacity:.92;font-weight:800;margin-top:2px}
+  .f4-info{display:flex;background:var(--gelb)}
+  .f4-info div{flex:1;text-align:center;padding:6px 3px;font-size:.6rem;font-weight:900;color:var(--kohle)}
+  .f4-info div+div{border-left:1px solid rgba(26,20,17,.12)}
+  .f4-info div span{display:block;font-size:.45rem;font-weight:800;color:#7a5e12;letter-spacing:.06em;text-transform:uppercase}
+  .f4-sec{padding:8px 12px 4px}
+  .f4-sec h4{font-family:'Lilita One',cursive;font-weight:400;font-size:.8rem;color:var(--kohle);margin-bottom:6px;display:flex;align-items:center;gap:5px}
+  .f4-chips{display:flex;flex-wrap:wrap;gap:4px}
+  .f4-chip{font-size:.55rem;font-weight:800;padding:3px 7px;border-radius:10px;background:#dcf1d6;color:#2f7029}
+  .f4-gift{display:flex;align-items:center;gap:7px;padding:5px 6px;border:1.5px solid var(--linie);border-radius:9px;margin-bottom:5px;background:#fffdf8}
+  .f4-gift .pic{width:26px;height:26px;border-radius:6px;background:linear-gradient(140deg,#fff1dd,#ffe4c4);display:grid;place-items:center;font-size:.92rem;flex:none}
+  .f4-gift .meta{flex:1;min-width:0}
+  .f4-gift .meta b{font-size:.6rem;display:block;color:var(--kohle);line-height:1.15}
+  .f4-gift .stars{font-size:.42rem;color:var(--gelb-tief);letter-spacing:.5px}
+  .f4-gift .pr{font-size:.52rem;color:#8a7a68;font-weight:800}
+  .f4-gift .buy{background:var(--rot);color:#fff;font-weight:900;font-size:.5rem;border:none;padding:4px 6px;border-radius:6px;flex:none}
+
+  /* ---------- FRAME 5: DANKE ---------- */
+  .f5 .statusbar{background:#fff}
+  .f5-hero{background:linear-gradient(160deg,#ffe9bc,#ffd6a3);padding:18px 14px 14px;text-align:center;position:relative;overflow:hidden}
+  .f5-hero::before{content:"🎉🎊✨🎂";position:absolute;top:-6px;left:-4px;right:-4px;font-size:1.3rem;opacity:.45;letter-spacing:20px}
+  .f5-hero::after{content:"🎈🎁🎉✨";position:absolute;bottom:-2px;left:-4px;right:-4px;font-size:1.1rem;opacity:.35;letter-spacing:18px}
+  .f5-h{font-family:'Lilita One',cursive;font-weight:400;font-size:1.35rem;color:var(--rot);margin-top:6px;position:relative}
+  .f5-sub{font-size:.7rem;font-weight:800;color:#7a5e35;margin-top:2px;position:relative}
+  .f5-sec{padding:10px 12px 4px}
+  .f5-sec h4{font-family:'Lilita One',cursive;font-weight:400;font-size:.78rem;color:var(--kohle);margin-bottom:6px;display:flex;align-items:center;gap:5px}
+  .f5-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+  .f5-tile{aspect-ratio:1;background:linear-gradient(140deg,#fff1dd,#ffe4c4);border:1.5px solid var(--linie);border-radius:7px;display:grid;place-items:center;font-size:1.2rem}
+  .f5-cta{background:var(--rot);color:#fff;font-family:'Lilita One',cursive;font-size:.78rem;padding:8px 12px;border-radius:11px;display:block;width:fit-content;margin:9px auto 5px;box-shadow:0 3px 0 var(--rot-tief)}
+  .f5-loop{font-size:.58rem;color:#94826d;text-align:center;font-weight:800;padding:0 14px 8px;line-height:1.4}
+  .wip-stamp{position:absolute;top:7px;right:7px;background:#ff4a3d;color:#fff;font-size:.5rem;font-weight:900;padding:3px 6px;border-radius:6px;letter-spacing:.04em;transform:rotate(8deg);z-index:5}
+
+
+  /* ---------- Partyseite-Orange-Override (matcht party-worker.js #D4812A) ---------- */
+  .f4 .statusbar{background:#D4812A;color:#fff}
+  .f4-hero{background:linear-gradient(165deg,#E89B47,#A45E15) !important}
+  .f4-info{background:#F5C97D !important}
+  .f4-info div span{color:#7a4810 !important}
+  .f4-gift .buy{background:#D4812A !important;box-shadow:0 3px 0 #A45E15 !important}
+
+  /* Footer brand strip */
+  .foot{margin-top:30px;text-align:center;font-family:'Lilita One',cursive;color:var(--rot);font-size:1rem;letter-spacing:.04em}
+  .foot .sub2{font-family:'Nunito';font-size:.72rem;color:#83715b;margin-top:4px;font-weight:700}
+</style>
+</head>
+<body>
+
+  <div class="kicker">So funktioniert machsleicht</div>
+  <h1 class="head">Vom Stress zur fertigen Party<br>in <span style="color:var(--rot)">5 Schritten</span></h1>
+  <p class="sub">Ein Tool, ein Bogen — vom ersten Klick bis nach der Party.</p>
+
+  <div class="funnel">
+
+    <!-- FRAME 1: PLANER -->
+    <div class="step-label"><span class="step-num">1</span>Der Planer</div>
+    <div class="step-note">Eltern öffnen machsleicht, geben Alter + Gästezahl ein</div>
+    <div class="phone f1">
+      <div class="screen">
+        <div class="notch"></div>
+        <div class="statusbar"><span>14:32</span><span>📶 🔋 84%</span></div>
+        <div class="f1-hero">
+          <div class="f1-logo">🎂 machsleicht</div>
+          <div class="f1-eyebrow">Der Kindergeburtstags-Planer</div>
+          <div class="f1-h">Kindergeburtstag planen <span class="em">in 10 Minuten</span></div>
+          <div class="f1-feat">Motto · Zeitplan · Spiele · Einkaufsliste · Budget</div>
+          <div class="f1-cta">🎂 Loslegen →</div>
+          <div class="f1-chips">
+            <span class="f1-chip">Kostenlos</span>
+            <span class="f1-chip">Ohne Anmeldung</span>
+            <span class="f1-chip">9 Mottos</span>
+          </div>
+          <div class="f1-alt">Oder: <b>Schatzsuche</b> · <b>Einladung</b></div>
+          <div class="f1-preview">
+            <div><span class="em">📋</span>Zeitplan</div>
+            <div><span class="em">🎮</span>Spiele</div>
+            <div><span class="em">🛒</span>Liste</div>
+            <div><span class="em">💰</span>Budget</div>
+          </div>
+          <div class="f1-rating">★★★★★ <b>4.9</b> · von Eltern für Eltern</div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow">➜</div>
+
+    <!-- FRAME 2: SCHATZSUCHE -->
+    <div class="step-label"><span class="step-num">2</span>Die Schatzsuche</div>
+    <div class="step-note">Im Planer enthalten — passend zum Motto, fertige Stationen</div>
+    <div class="phone f2">
+      <div class="screen">
+        <div class="notch"></div>
+        <div class="statusbar"><span>14:35</span><span>📶 🔋 83%</span></div>
+        <div class="f2-hero">
+          <span class="f2-back">‹</span>
+          <div style="font-size:1.4rem">🚒</div>
+          <h3>Feuerwehr-<br>Rettungsmission</h3>
+          <p>Schnitzeljagd &amp; Schatzsuche</p>
+        </div>
+        <div class="f2-list">
+          <h4>Die 5 Stationen</h4>
+          <div class="f2-stn"><span class="n">1</span>Feuerwehrhelm basteln</div>
+          <div class="f2-stn"><span class="n">2</span>Feuer löschen (Wasserbomben)</div>
+          <div class="f2-stn"><span class="n">3</span>Rettungseinsatz – Kuscheltiere retten</div>
+          <div class="f2-stn"><span class="n">4</span>Tatü-Tata-Tanz (Stopp-Spiel)</div>
+          <div class="f2-stn"><span class="n">5</span>Schatzkiste &amp; Junior-Urkunde 🏅</div>
+        </div>
+        <div class="f2-bottom"><p>Druckfertig · alle Materialien gelistet</p></div>
+      </div>
+    </div>
+
+    <div class="arrow">➜</div>
+
+    <!-- FRAME 3: EINLADUNGS-BILD -->
+    <div class="step-label"><span class="step-num">3</span>Die Einladung</div>
+    <div class="step-note">Fertiges Bild — wird durch WhatsApp geteilt</div>
+    <div class="phone f3">
+      <div class="screen">
+        <div class="f3-haz"></div>
+        <div class="f3-body">
+          <div class="f3-badge"><div><b>6</b><span>JAHRE</span></div></div>
+          <svg class="f3-truck" viewBox="0 0 230 132" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="115" cy="120" rx="96" ry="6" fill="rgba(26,20,17,.10)"/>
+            <g stroke="#c9ccd1" stroke-width="3" stroke-linecap="round">
+              <line x1="40" y1="40" x2="150" y2="40"/><line x1="44" y1="46" x2="146" y2="46"/>
+              <line x1="56" y1="40" x2="56" y2="46"/><line x1="76" y1="40" x2="76" y2="46"/>
+              <line x1="96" y1="40" x2="96" y2="46"/><line x1="116" y1="40" x2="116" y2="46"/>
+              <line x1="136" y1="40" x2="136" y2="46"/>
+            </g>
+            <rect x="20" y="50" width="150" height="48" rx="7" fill="#e11d18"/>
+            <rect x="20" y="78" width="150" height="20" rx="6" fill="#9e1109"/>
+            <rect x="166" y="58" width="46" height="40" rx="7" fill="#e11d18"/>
+            <path d="M174 64 h26 a4 4 0 0 1 4 4 v12 h-34 v-12 a4 4 0 0 1 4 -4 z" fill="#bfe7f7"/>
+            <rect x="22" y="72" width="148" height="4" fill="#ffc233"/>
+            <circle cx="150" cy="48" r="11" fill="rgba(255,74,61,.35)"/>
+            <rect x="142" y="44" width="16" height="9" rx="3" fill="#ff4a3d"/>
+            <circle cx="58" cy="100" r="17" fill="#1a1411"/><circle cx="58" cy="100" r="7" fill="#c9ccd1"/>
+            <circle cx="150" cy="100" r="17" fill="#1a1411"/><circle cx="150" cy="100" r="7" fill="#c9ccd1"/>
+          </svg>
+          <div class="f3-eyebrow">Du bist eingeladen!</div>
+          <div class="f3-who">MAX WIRD 6</div>
+          <div class="f3-theme">🚒 Feuerwehr-Party</div>
+          <div class="f3-deets">
+            <div>📅 Sa, 21. Juni · 15 Uhr</div>
+            <div>📍 Gerätehaus-Spielplatz</div>
+          </div>
+          <div class="f3-rsvp">🚨 Bitte bis 15.06. Bescheid geben</div>
+        </div>
+        <div class="f3-burn">
+          <div class="url">🔗 party.machsleicht.de/max</div>
+          <div class="brand">ERSTELLT MIT MACHSLEICHT.DE</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow">➜</div>
+
+    <!-- FRAME 4: PARTYSEITE -->
+    <div class="step-label"><span class="step-num">4</span>Die Partyseite</div>
+    <div class="step-note">Gäste landen hier · Wunschliste = Geschenke + Affiliate</div>
+    <div class="phone f4">
+      <div class="screen">
+        <div class="notch"></div>
+        <div class="statusbar"><span>14:38</span><span>📶 🔋 82%</span></div>
+        <div class="f4-hero">
+          <div style="font-size:1.3rem">🚒</div>
+          <h3>Max' Feuerwehr-Party</h3>
+          <p>Samstag, 21. Juni · 15:00 Uhr</p>
+        </div>
+        <div class="f4-info">
+          <div><span>Wann</span>21.06.</div>
+          <div><span>Wo</span>Spielplatz</div>
+          <div><span>Ende</span>18 h</div>
+        </div>
+        <div class="f4-sec">
+          <h4>👋 Wer kommt?</h4>
+          <div class="f4-chips">
+            <span class="f4-chip">Emma ✓</span>
+            <span class="f4-chip">Ben ✓</span>
+            <span class="f4-chip">Lina ✓</span>
+          </div>
+        </div>
+        <div class="f4-sec">
+          <h4>🎁 Wunschliste</h4>
+          <div style="font-size:.52rem;font-weight:700;color:#94826d;margin:-3px 0 5px">Verhindert Doppelgeschenke · Gäste reservieren</div>
+          <div class="f4-gift">
+            <div class="pic">⛑️</div>
+            <div class="meta"><b>Feuerwehrhelm</b><div class="stars">★★★★★</div><div class="pr">19,99 €</div></div>
+            <button class="buy">Ansehen</button>
+          </div>
+          <div class="f4-gift" style="opacity:.55">
+            <div class="pic">🚒</div>
+            <div class="meta"><b>Feuerwehrauto mit Leiter</b><div class="stars" style="color:#2f7029">✓ Reserviert von Ben</div><div class="pr">34,99 €</div></div>
+            <button class="buy">Ansehen</button>
+          </div>
+          <div class="f4-gift">
+            <div class="pic">👕</div>
+            <div class="meta"><b>T-Shirt Gr. 116</b><div class="stars">★★★★★</div><div class="pr">14,99 €</div></div>
+            <button class="buy">Ansehen</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow">➜</div>
+
+    <!-- FRAME 5: DANKE -->
+    <div class="step-label"><span class="step-num">5</span>Nach der Party</div>
+    <div class="step-note">Danke-Seite mit Fotos · Loop zurück zum Planer</div>
+    <div class="phone f5">
+      <div class="screen">
+        <div class="notch"></div>
+        <div class="wip-stamp">KONZEPT</div>
+        <div class="statusbar"><span>17:12</span><span>📶 🔋 67%</span></div>
+        <div class="f5-hero">
+          <div style="font-size:1.5rem;position:relative">🎉</div>
+          <div class="f5-h">Danke!</div>
+          <div class="f5-sub">Maxs Party war ein voller Erfolg</div>
+        </div>
+        <div class="f5-sec">
+          <h4>📸 Fotos vom Tag</h4>
+          <div class="f5-grid">
+            <div class="f5-tile">🎂</div>
+            <div class="f5-tile">🚒</div>
+            <div class="f5-tile">🧒</div>
+            <div class="f5-tile">🎁</div>
+            <div class="f5-tile">🍰</div>
+            <div class="f5-tile">➕</div>
+          </div>
+        </div>
+        <a class="f5-cta">🎂 Eigene Party planen →</a>
+        <div class="f5-loop">Gäste-Eltern landen wieder im Planer</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="foot">machsleicht.de<div class="sub2">Stress raus, Party rein.</div></div>
+
+</body>
+</html>

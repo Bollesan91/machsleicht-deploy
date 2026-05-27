@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>machsleicht — Pinterest-Pin</title>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rot:#e11d18;--rot-tief:#9e1109;--gelb:#ffc233;--gelb-tief:#e8a200;
+    --kohle:#1a1411;--creme:#fbf1df;--orange:#D4812A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{margin:0;padding:0;font-family:'Nunito',sans-serif;color:var(--kohle);background:#000}
+  .pin{
+    width:500px;height:750px;position:relative;overflow:hidden;
+    background:
+      radial-gradient(circle at 50% 20%,#3a1808 0%,#1A0A00 60%),
+      #0a0500;
+    color:#fff;display:flex;flex-direction:column;
+  }
+  /* TITLE */
+     .pin-title{padding:14px 24px 10px;text-align:center;border-bottom:1px solid rgba(255,170,80,.18);background:linear-gradient(180deg,rgba(255,140,40,.08),transparent)}
+  .pin-title .kicker{font-size:.7rem;font-weight:900;letter-spacing:.25em;color:#ffb84a;margin-bottom:6px}
+    .pin-title h1{font-family:'Lilita One',cursive;font-weight:400;font-size:1.78rem;line-height:1;color:#fff8e0}
+  .pin-title h1 em{color:#ff9100;font-style:normal}
+  .pin-title h1 em::after{content:" 🔥"}
+  .pin-title p{font-size:.8rem;font-weight:800;color:#e8c98a;margin-top:6px}
+
+  /* HERO: Runner-Chase */
+    .pin-hero{position:relative;flex:1;padding:10px 16px;display:flex;gap:14px;align-items:center}
+  .pin-hero .game{
+    width:54%;aspect-ratio:9/16;position:relative;border-radius:20px;overflow:hidden;
+    background:radial-gradient(ellipse at 50% 65%,#C62828 0%,#B71C1C 35%,#1A0A00 90%);
+    border:2px solid rgba(255,170,80,.3);box-shadow:0 8px 24px rgba(0,0,0,.5),0 0 30px rgba(255,100,30,.2)
+  }
+  .pin-hero .game::before{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:22%;
+    background:linear-gradient(180deg,#3E2723,#1B1210);
+  }
+  .fire{position:absolute;font-size:1.1rem;transform:translate(-50%,-50%);filter:drop-shadow(0 0 10px rgba(255,120,40,.7));pointer-events:none}
+  .fire.out{opacity:.3;filter:none;font-size:.9rem}
+  .spark{position:absolute;color:#ffd084;font-weight:900;text-shadow:0 0 8px #ff9100;pointer-events:none;transform:translate(-50%,-50%)}
+  .runner{
+    position:absolute;left:55%;top:52%;width:46%;
+    transform:translate(-50%,-50%) rotate(-10deg);
+    filter:drop-shadow(0 5px 10px rgba(255,77,0,.55)) drop-shadow(0 0 22px rgba(255,150,40,.5));
+    z-index:5
+  }
+  .tap{position:absolute;left:48%;top:60%;font-size:1.5rem;filter:drop-shadow(0 3px 4px rgba(0,0,0,.7));z-index:6}
+  .gobadge{position:absolute;top:7%;right:7%;background:#ffc233;color:#1A0A00;font-family:'Lilita One',cursive;font-size:1.15rem;padding:5px 13px;border-radius:9px;letter-spacing:.08em;transform:rotate(8deg);box-shadow:0 4px 0 #b88800,0 0 16px rgba(255,194,51,.7);z-index:6}
+  .trail{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:3}
+  .hud{position:absolute;left:8px;right:8px;bottom:8px;background:rgba(13,5,0,.85);border-radius:8px;padding:7px 10px;z-index:7;backdrop-filter:blur(6px)}
+  .hud-row{display:flex;justify-content:space-between;align-items:center;font-size:.6rem;font-weight:800;color:#f0c98a}
+  .hud b{font-family:'Lilita One',cursive;font-weight:400;color:#ffc233;font-size:.85rem}
+  .bar{margin-top:4px;height:4px;background:rgba(255,255,255,.12);border-radius:4px;overflow:hidden}
+  .barfill{height:100%;width:67%;background:linear-gradient(90deg,#ffc233,#ff4a3d);border-radius:4px;box-shadow:0 0 6px rgba(255,140,40,.7)}
+
+  /* HERO right-side claim */
+  .pin-hero .claim{flex:1}
+  .claim .icon{font-size:1.8rem;margin-bottom:6px}
+  .claim h2{font-family:'Lilita One',cursive;font-weight:400;font-size:1.55rem;line-height:1.05;color:#fff8e0;margin-bottom:8px}
+  .claim h2 .em{color:#ff9100}
+  .claim p{font-size:.85rem;font-weight:700;color:#e8c98a;line-height:1.45}
+  .claim p+p{margin-top:8px}
+  .claim .pill{display:inline-block;background:rgba(255,194,51,.2);color:#ffc233;font-size:.62rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:11px;margin-top:10px;border:1px solid rgba(255,194,51,.4)}
+
+  /* STRIP: andere 4 Frames als mini */
+    .pin-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:8px 18px 0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.4))}
+  .mini{background:rgba(255,255,255,.06);border:1px solid rgba(255,170,80,.18);border-radius:10px;padding:6px 6px;text-align:center;color:#fff;backdrop-filter:blur(4px)}
+  .mini .num{display:inline-block;background:#ff9100;color:#1A0A00;font-family:'Lilita One',cursive;width:18px;height:18px;border-radius:50%;line-height:18px;font-size:.72rem;margin-bottom:5px}
+  .mini .ic{font-size:1.15rem;margin-bottom:2px}
+  .mini b{font-family:'Lilita One',cursive;font-weight:400;font-size:.75rem;display:block;color:#fff8e0}
+  .mini span{font-size:.55rem;font-weight:800;color:#d6b48a;display:block;margin-top:1px;line-height:1.2}
+
+  /* FOOTER */
+    .pin-footer{padding:10px 24px 12px;text-align:center;background:linear-gradient(180deg,transparent,#0a0500)}
+    .pin-footer .logo{font-family:'Lilita One',cursive;font-size:1.4rem;color:#ff9100;letter-spacing:.01em}
+  .pin-footer .url{font-size:.75rem;font-weight:800;color:#e8c98a;margin-top:1px}
+  .pin-footer .tag{font-size:.65rem;font-weight:700;color:#a98864;margin-top:5px}
+</style>
+</head>
+<body>
+
+  <div class="pin">
+
+    <div class="pin-title">
+      <div class="kicker">DER KINDERGEBURTSTAG-PLANER</div>
+      <h1>Eine Einladung,<br>die man <em>fangen muss</em></h1>
+      <p>Komplette Feuerwehr-Party in 10 Minuten · 5 Schritte</p>
+    </div>
+
+    <div class="pin-hero">
+
+      <div class="game">
+        <!-- Restliche Brände -->
+        <div class="fire out" style="left:18%;top:48%">💨</div>
+        <div class="fire" style="left:78%;top:46%">🔥</div>
+        <div class="fire out" style="left:44%;top:56%">💨</div>
+        <div class="fire" style="left:88%;top:53%">🔥</div>
+        <div class="fire out" style="left:28%;top:68%">💨</div>
+        <div class="fire out" style="left:60%;top:72%">💨</div>
+        <div class="fire" style="left:88%;top:65%">🔥</div>
+        <!-- Trail -->
+        <svg class="trail" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M88,66 Q72,58 50,55" stroke="#ffd084" stroke-width=".9" fill="none" opacity=".55" stroke-linecap="round"/>
+          <path d="M82,72 Q65,66 48,62" stroke="#ff9100" stroke-width=".7" fill="none" opacity=".4" stroke-linecap="round"/>
+        </svg>
+        <span class="spark" style="left:65%;top:58%;font-size:.7rem">✦</span>
+        <span class="spark" style="left:72%;top:55%;font-size:.5rem">·</span>
+        <span class="spark" style="left:80%;top:60%;font-size:.6rem">✦</span>
+        <!-- Echter Runner -->
+        <img class="runner" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTMwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEzMCI+CiAgPGVsbGlwc2UgY3g9IjUwIiBjeT0iMTI0IiByeD0iMjAiIHJ5PSI1IiBmaWxsPSJyZ2JhKDAsMCwwLC4xNSkiLz4KICA8cmVjdCB4PSIzNCIgeT0iOTAiIHdpZHRoPSI5IiBoZWlnaHQ9IjIwIiByeD0iNC41IiBmaWxsPSIjRTY1MTAwIi8+CiAgPGVsbGlwc2UgY3g9IjM3IiBjeT0iMTEyIiByeD0iOCIgcnk9IjQiIGZpbGw9IiNCRjM2MEMiLz4KICA8cmVjdCB4PSI1NyIgeT0iOTAiIHdpZHRoPSI5IiBoZWlnaHQ9IjIwIiByeD0iNC41IiBmaWxsPSIjRTY1MTAwIi8+CiAgPGVsbGlwc2UgY3g9IjYzIiBjeT0iMTEyIiByeD0iOCIgcnk9IjQiIGZpbGw9IiNCRjM2MEMiLz4KICA8ZWxsaXBzZSBjeD0iNTAiIGN5PSI3MiIgcng9IjIwIiByeT0iMjIiIGZpbGw9IiNGRjZEMDAiLz4KICA8ZWxsaXBzZSBjeD0iNTAiIGN5PSI3NSIgcng9IjEzIiByeT0iMTUiIGZpbGw9IiNGRjkxMDAiLz4KICA8cGF0aCBkPSJNNDIgNTggUTQ0IDQ4IDUwIDUyIFE1NiA0OCA1OCA1OCIgZmlsbD0iI0ZGQUIwMCIgb3BhY2l0eT0iLjYiLz4KICA8cmVjdCB4PSIyNiIgeT0iNjIiIHdpZHRoPSI3IiBoZWlnaHQ9IjE4IiByeD0iMy41IiBmaWxsPSIjRkY2RDAwIiB0cmFuc2Zvcm09InJvdGF0ZSgtMTUgMjkgNjIpIi8+CiAgPGNpcmNsZSBjeD0iMjUiIGN5PSI4MCIgcj0iNCIgZmlsbD0iI0ZGQUIwMCIvPgogIDxjaXJjbGUgY3g9IjE4IiBjeT0iNzQiIHI9IjYiIGZpbGw9IiNGRkQ2MDAiIG9wYWNpdHk9Ii43Ii8+CiAgPHBhdGggZD0iTTE0IDc0IFExOCA2NCAyMiA3NCBRMTggNjggMTQgNzRaIiBmaWxsPSIjRkY2RDAwIiBvcGFjaXR5PSIuOCIvPgogIDxyZWN0IHg9IjY3IiB5PSI2MiIgd2lkdGg9IjciIGhlaWdodD0iMTgiIHJ4PSIzLjUiIGZpbGw9IiNGRjZEMDAiIHRyYW5zZm9ybT0icm90YXRlKDE1IDcxIDYyKSIvPgogIDxjaXJjbGUgY3g9Ijc1IiBjeT0iODAiIHI9IjQiIGZpbGw9IiNGRkFCMDAiLz4KICA8cmVjdCB4PSI3MyIgeT0iNzIiIHdpZHRoPSI2IiBoZWlnaHQ9IjgiIHJ4PSIxIiBmaWxsPSIjQzYyODI4Ii8+CiAgPGNpcmNsZSBjeD0iNzYiIGN5PSI3MCIgcj0iMyIgZmlsbD0iI0ZGRDYwMCIvPgogIDxlbGxpcHNlIGN4PSI1MCIgY3k9IjM4IiByeD0iMjQiIHJ5PSIyMiIgZmlsbD0iI0ZGNkQwMCIvPgogIDxlbGxpcHNlIGN4PSI0MiIgY3k9IjI4IiByeD0iMTAiIHJ5PSI4IiBmaWxsPSIjRkY5MTAwIiBvcGFjaXR5PSIuNCIvPgogIDxwYXRoIGQ9Ik0zOCAxNiBRNDIgNCA0NiAxNiIgZmlsbD0iI0ZGQUIwMCIvPgogIDxwYXRoIGQ9Ik00MCAxOCBRNDMgOCA0NiAxOCIgZmlsbD0iI0ZGRDYwMCIgb3BhY2l0eT0iLjYiLz4KICA8cGF0aCBkPSJNNTQgMTYgUTU4IDQgNjIgMTYiIGZpbGw9IiNGRkFCMDAiLz4KICA8cGF0aCBkPSJNNTYgMTggUTU5IDggNjIgMTgiIGZpbGw9IiNGRkQ2MDAiIG9wYWNpdHk9Ii42Ii8+CiAgPGVsbGlwc2UgY3g9IjM4IiBjeT0iMzYiIHJ4PSI5IiByeT0iOCIgZmlsbD0id2hpdGUiLz4KICA8ZWxsaXBzZSBjeD0iMzgiIGN5PSIzNiIgcng9IjkiIHJ5PSI4IiBzdHJva2U9IiNCRjM2MEMiIHN0cm9rZS13aWR0aD0iLjYiIGZpbGw9IndoaXRlIi8+CiAgPGNpcmNsZSBjeD0iNDAiIGN5PSIzNyIgcj0iNSIgZmlsbD0iIzFCMUIxQiIvPgogIDxjaXJjbGUgY3g9IjQyIiBjeT0iMzUiIHI9IjIuNSIgZmlsbD0id2hpdGUiLz4KICA8Y2lyY2xlIGN4PSIzOCIgY3k9IjM5IiByPSIxIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iLjUiLz4KICA8ZWxsaXBzZSBjeD0iNjIiIGN5PSIzNiIgcng9IjkiIHJ5PSI4IiBmaWxsPSJ3aGl0ZSIvPgogIDxlbGxpcHNlIGN4PSI2MiIgY3k9IjM2IiByeD0iOSIgcnk9IjgiIHN0cm9rZT0iI0JGMzYwQyIgc3Ryb2tlLXdpZHRoPSIuNiIgZmlsbD0id2hpdGUiLz4KICA8Y2lyY2xlIGN4PSI2MCIgY3k9IjM3IiByPSI1IiBmaWxsPSIjMUIxQjFCIi8+CiAgPGNpcmNsZSBjeD0iNTgiIGN5PSIzNSIgcj0iMi41IiBmaWxsPSJ3aGl0ZSIvPgogIDxjaXJjbGUgY3g9IjYyIiBjeT0iMzkiIHI9IjEiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuNSIvPgogIDxwYXRoIGQ9Ik00NCA0OCBRNTAgNTQgNTYgNDgiIHN0cm9rZT0iI0JGMzYwQyIgc3Ryb2tlLXdpZHRoPSIxLjUiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxlbGxpcHNlIGN4PSIzMCIgY3k9IjQyIiByeD0iNSIgcnk9IjIuNSIgZmlsbD0iI0ZGM0QwMCIgb3BhY2l0eT0iLjE1Ii8+CiAgPGVsbGlwc2UgY3g9IjcwIiBjeT0iNDIiIHJ4PSI1IiByeT0iMi41IiBmaWxsPSIjRkYzRDAwIiBvcGFjaXR5PSIuMTUiLz4KPC9zdmc+Cg==" alt="Funken-Runner">
+        <div class="tap">👆</div>
+        <div class="gobadge">GO!</div>
+        <div class="hud">
+          <div class="hud-row"><span>🚒 Brände gelöscht</span><b>6 / 9</b></div>
+          <div class="bar"><div class="barfill"></div></div>
+        </div>
+      </div>
+
+      <div class="claim">
+        <div class="icon">🎮</div>
+        <h2>Die Einladung wird zum <span class="em">Mini-Spiel</span>.</h2>
+        <p>Gäste löschen 9 Brände. Dann entwischt der <b>Funken-Runner</b> mit der Party-Info — sie müssen ihn fangen.</p>
+        <span class="pill">Kein langweiliges Bild mehr</span>
+      </div>
+
+    </div>
+
+    <div class="pin-strip">
+      <div class="mini"><div class="num">1</div><div class="ic">🎂</div><b>Planer</b><span>10 Minuten</span></div>
+      <div class="mini"><div class="num">2</div><div class="ic">🗺️</div><b>Schatzsuche</b><span>5 Stationen</span></div>
+      <div class="mini"><div class="num">4</div><div class="ic">🎁</div><b>Partyseite</b><span>+ Wunschliste</span></div>
+      <div class="mini"><div class="num">5</div><div class="ic">🎉</div><b>Danke</b><span>nach der Party</span></div>
+    </div>
+
+    <div class="pin-footer">
+      <div class="logo">machsleicht.de</div>
+      <div class="url">/einladung/feuerwehr</div>
+      <div class="tag">Kostenlos · Ohne Anmeldung · 9 Mottos</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
