@@ -170,6 +170,39 @@
       treasureUrl: '/schatzsuche/feen',
       plannerUrl: '/kindergeburtstag/feen',
       invitationUrl: null
+    },
+    pferde: {
+      slug: 'pferde',
+      label: 'Pferde',
+      emoji: '\u{1F434}',
+      color: '#8D6E63',
+      modules: ['planner', 'treasure'],
+      licenseRisk: 'none',
+      treasureUrl: '/schatzsuche/pferde',
+      plannerUrl: '/kindergeburtstag/pferde',
+      invitationUrl: null
+    },
+    ritter: {
+      slug: 'ritter',
+      label: 'Ritter',
+      emoji: '⚔️',
+      color: '#607D8B',
+      modules: ['planner', 'treasure'],
+      licenseRisk: 'none',
+      treasureUrl: '/schatzsuche/ritter',
+      plannerUrl: '/kindergeburtstag/ritter',
+      invitationUrl: null
+    },
+    baustelle: {
+      slug: 'baustelle',
+      label: 'Baustelle',
+      emoji: '\u{1F3D7}️',
+      color: '#FFA726',
+      modules: ['planner', 'treasure'],
+      licenseRisk: 'none',
+      treasureUrl: '/schatzsuche/baustelle',
+      plannerUrl: '/kindergeburtstag/baustelle',
+      invitationUrl: null
     }
   };
 

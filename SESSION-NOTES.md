@@ -1,6 +1,33 @@
-# Session-Notiz — 27.05.2026 (Email-Marathon + Einladungs-Privacy-Fix + Deploy)
+# Session-Notiz — 27.05.2026 (Email-Marathon + Privacy-Fix + Ahrefs-Setup + Deploy)
 
 **Branch:** `draft` → `main` (Ende deploy)
+
+## Ahrefs Webmaster Tools Setup + Site-Audit-Discovery
+
+**Setup 27.05.:** Ahrefs WMT als kostenlose SEO-Datenquelle eingerichtet (Alternative zu Premium-Plan $129/Mo, ~70% gleiche Wirkung für eigene Domain).
+
+**Site-Audit Ergebnis nach Re-Crawl:**
+- **Health Score 79 (Good)** — initial 63 wegen Crawl-Timing-504er, durch Re-Crawl bestätigt: war Artefakt von gestern Nacht's Netlify-Deploys + Cloudflare-Origin-Timeout
+- Echte Hygiene-Issues identifiziert: 38 Meta-Descs zu lang, 17 Canonical-Chains, 11 Redirects in Sitemap, 24+30 interne Redirects, 5 Title-Length-Issues
+- → AQ5-Sprint im Backlog formell angelegt (6-10 Std Cleanup)
+
+**504-Investigation:** Live-Tests via WebFetch bestätigten: alle 61 als 5XX gemeldeten Pages funktionieren tatsächlich problemlos. URL-Parameter-Varianten (`?motto=X&alter=Y`) sind kein Cache-Hit bei Cloudflare → jede Variante = Origin-Request zu Netlify → bei High-Volume-Bot-Crawl Rate-Limit. AQ5-Bonus-Tasks: Cloudflare „Allow Verified Bots" + robots.txt URL-Param-Disallow.
+
+## Ahrefs Web Analytics: Pilot-Rollout
+
+Snippet als 2. Tracking-Layer neben Umami installiert auf 4 Top-Pages: `index.html`, `kindergeburtstag/piraten.html`, `kindergeburtstag/detektiv.html`, `schatzsuche.html`. Vollroll auf alle ~150 HTML-Files als AQ6 nach 48h Daten-Validation.
+
+**Strategischer Wert:** Ahrefs konsolidiert Site Audit + Backlinks + Keyword-Ranks + jetzt auch Traffic-Daten in einem Dashboard — wird Welle-Alpha-Tracking deutlich vereinfachen.
+
+## Chrome-MCP Live-Review (vor Ahrefs)
+
+Independent Review aller heutigen Code-Änderungen per Chrome-MCP. Findings:
+- ✅ Amazon-Tag `machsleicht21-21` auf allen 6 Stichproben-Pages (Piraten, Dschungel, Feuerwehr-6-8, Feen) korrekt
+- ✅ Einladungs-Default-Name `Mia` auf 3 Stichproben (Feuerwehr, Dino, Einhorn) — kein Emilia mehr
+- ✅ Planer ohne Charaktere-Toggle, alle Phase-3-Mottos (Dschungel, Feen) im Picker
+- ⚠️ **Bug entdeckt:** Planer zeigt nur 10/13 Mottos. Pferde + Ritter + Baustelle fehlen im GENERIC-Array (`_src/kindergeburtstag-data.js`). → AQ4 im Backlog (3-6h Sprint, am besten im Planer-Frisur-Sprint S5 mit reingenommen).
+
+## Einladungs-Apps: Privacy-/Branding-Quick-Fix
 
 ## Einladungs-Apps: Privacy-/Branding-Quick-Fix
 
