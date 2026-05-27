@@ -120,6 +120,7 @@ Strategischer Sprint: Planer vom Generator zum intelligenten Produkt umbauen. Re
 | G4 | ⏳ | **P3** | P5-18 | `[KERN]` **Schema.org Product/BreadcrumbList überall** auf Shop-Seiten (FAQ-Markup als Convenience, NICHT als CTR-Hack — Google zeigt FAQ-Rich-Results 2026 fast nur noch für gov/health) | 1 Tag |
 | G5 | ⏳ | **P4** | P5-19 | `[ZUKUNFT]` **White-Label B2B** (Indoor-Spielplätze, Bauernhof-Cafés): 39–149€/Monat je Partner, RSVP + Slots + Zusatzleistungen + Geschenkoptionen | 4–8 Wochen Pilot |
 | G6 | ⏳ | **P4** | P5-20 | `[ZUKUNFT]` **Mini-Video-Teaser für Einladungen** (anymator-Konkurrenz: 0€ mit Branding / 2.99€ ohne Logo). Viraler Hook gegen statische JPG-Einladungen. | 2–3 Wochen |
+| G7 | ⏳ | **P3** | P6-1 | `[KERN]` **Einladungs-Architektur SEO-Refactor** — Aktueller Stand kritisch: `/einladung/<motto>/` ist 1800-Zeilen-React-App ohne SEO-Content + hardcoded Demo-Name "Mia" (vorher "Emilia"). Soll-Architektur: (a) `/einladung` Top-Hub mit Ratgeber-Anteil, (b) `/einladung/<motto>` als SEO-Hub (Hero+Preview+FAQ+Verlinkung zu Varianten), (c) Apps wandern unter `/einladung/<motto>/whatsapp`, (d) NEU `/einladung/<motto>/druck` Print-PDF, (e) NEU `/einladung/<motto>/vorlagen` Text-Vorlagen. Robots: Hubs `index,follow`, Apps `noindex`. Print-Variante als Premium-Pricing-Spur in Welle Beta integrierbar. | 2–3 Tage Architektur + 1 Tag pro Motto Refactor |
 
 #### Was aus den Reviews EXPLIZIT gestrichen wurde
 

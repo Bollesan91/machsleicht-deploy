@@ -1,6 +1,18 @@
-# Session-Notiz — 27.05.2026 (Email-Infrastruktur-Marathon: Migadu + SPF/DKIM + Worker-Vars)
+# Session-Notiz — 27.05.2026 (Email-Marathon + Einladungs-Privacy-Fix + Deploy)
 
-**Branch:** `draft` (Ende ohne Deploy — Doku + party-worker.js, Netlify nicht betroffen)
+**Branch:** `draft` → `main` (Ende deploy)
+
+## Einladungs-Apps: Privacy-/Branding-Quick-Fix
+
+Befund: 9 von 10 `/einladung/<motto>/`-Apps hatten **`childName = "Emilia"`** hardcoded als Default. Nur Piraten hatte `"Mattis"`.
+
+**Risiko:** Wenn „Emilia" Bolle's Tochter ist → Privacy-Issue (echter Name in 9 deployed Files). Plus: inkonsistentes Branding (9× Emilia + 1× Mattis), und User landen bei `/einladung/feuerwehr` direkt auf einer Demo-App mit „Emilia"-Daten — verwirrend.
+
+**Fix:** Sed-Replace `Emilia` → `Mia` in 9 Files (dino, einhorn, safari, feuerwehr, detektiv, superheld, prinzessin, meerjungfrau, weltraum). Piraten bleibt `"Mattis"`. Beide Stellen pro File: Default-Param + URL-Param-Fallback.
+
+**Großer Refactor im Backlog (P6-1):** Die eigentliche Architektur-Schwäche ist dass `/einladung/<motto>/` direkt eine 1800-Zeilen-React-App ist, keine SEO-Hub-Page. Soll-Struktur: Top-Hub → Motto-SEO-Hubs → 3 Varianten je Motto (WhatsApp-App + Print-PDF + Text-Vorlagen). Robots-Splitting (Hubs index, Apps noindex). 2-3 Tage Arbeit. In Welle Gamma G7 (P5-Pricing-Sprint) integriert.
+
+---
 
 ## Was wurde gemacht — Email-Stack komplett saubergezogen
 
