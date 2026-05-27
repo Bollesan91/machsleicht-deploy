@@ -104,7 +104,7 @@ Strategischer Sprint: Planer vom Generator zum intelligenten Produkt umbauen. Re
 | B2 | ⏳ | **P2** | P5-11 | `[KERN]` **5 weitere Komplettpakete** durch die Pipeline: detektiv-9-12, weltraum-9-12, dino-6-8, einhorn-3-5, meerjungfrau-6-8 (basiert auf Top-Money-Pages-Analyse, jeweils ~3–6h Design) | 15–30 Std |
 | B3 | ⏳ | **P2** | P5-12 | `[KERN]` **Partyseite Plus** als bezahltes Add-on (4.90–9.90€ einmalig): QR-Code auf Print-Einladung, automatische Erinnerungs-Mails (7d/1d/3h vor Party), Wunschliste, Allergie-Abfrage. Worker-Erweiterung. | 5–7 Tage |
 | B4 | ⏳ | **P2** | P5-13 | `[KERN]` **Top-30 Money-Pages 7-Baustein-Standardisierung** (Hero, Preview, Zeit/Material, Ablauf, Einkauf, Proof, FAQ). Erst 5 Motto-Hubs der Welle-Beta-Pakete, dann inkrementell die anderen. | 30–60 Min/Page |
-| B5 | ⏳ | **P2** | P5-14 | `[KERN]` **Affiliate-Komplettkorb-Box** pro Motto (kuratierte Einkaufsbox: Deko + Mitgebsel + Bastel + Druckpapier; Amazon-PartnerNet `machsleicht-21`; später Awin Otto/myToys) | 15–30 Min/Motto |
+| B5 | ⏳ | **P2** | P5-14 | `[KERN]` **Affiliate-Komplettkorb-Box** pro Motto (kuratierte Einkaufsbox: Deko + Mitgebsel + Bastel + Druckpapier; Amazon-PartnerNet `machsleicht21-21`; später Awin Otto/myToys) | 15–30 Min/Motto |
 
 **Welle-Beta-Aufwand:** ~25–40 Arbeitstage = 6–10 Wochen bei 6–8h/Woche.
 
@@ -197,7 +197,7 @@ Strategischer Sprint: Planer vom Generator zum intelligenten Produkt umbauen. Re
 | ✅ | P2-11 | Interne Links broken/zirkulär auf Ratgeber-Seiten |
 | ✅ | P2-14 | Affiliate-Sweep auf 16 Ratgeber-Seiten |
 | ✅ | P2-18 | Vergleichs-Tabellen statt Einzel-Affiliate-Links |
-| ✅ | P3-2 | Amazon Affiliate Tag setzen (**machsleicht-21 konsolidiert, 796 Vorkommen sauber**) |
+| ⚠️ | P3-2 | Amazon Affiliate Tag setzen (**Fix 16.04. ging FALSCH** — `machsleicht-21` war falsch, korrekt ist `machsleicht21-21`. Am 26.05.2026 zurückgedreht, 2234 Vorkommen) |
 | ✅ | P0-5 | GitHub Token rotieren (neuer PAT ohne Ablaufdatum) |
 | ✅ | P0-1 | GSC eingerichtet + bereinigte Sitemap (223 URLs) eingereicht |
 | ✅ | P1-10 | Cloudflare Worker deployed (party.machsleicht.de live) |
@@ -264,8 +264,9 @@ Strategischer Sprint: Planer vom Generator zum intelligenten Produkt umbauen. Re
 - 14 Ratgeber-Seiten linken jetzt auf `#planer`.
 
 ### P3-2: Amazon Affiliate Tag — FIXED (16.04.2026)
-- **Vorher:** 566× falscher Tag `machsleicht21-21` + 230× richtiger `machsleicht-21`
-- **Nachher:** 796× einheitlich `machsleicht-21` verteilt auf 16 Dateien
+- **Vorher (16.04.):** 566× Tag `machsleicht21-21` + 230× Tag `machsleicht-21`
+- **Nachher (16.04.):** 796× einheitlich `machsleicht-21` verteilt auf 16 Dateien
+- **⚠️ KORREKTUR 26.05.2026:** Der Fix vom 16.04. ging in die FALSCHE Richtung. Per Amazon-PartnerNet-Screenshot verifiziert: korrekte Tracking-ID ist `machsleicht21-21`, nicht `machsleicht-21`. Am 26.05. erneut gefixt: 2234 Vorkommen zurückgedreht auf `machsleicht21-21`. Affiliate-Klicks zwischen 16.04. und 26.05.2026 waren UNTRACKED (kein Revenue).
 - Source-Files (_src/kindergeburtstag.jsx + data.js) auch gefixt, damit künftige Builds nicht regressieren.
 
 ### Deep SEO Ratgeber-Seiten (nicht-numerierter Sprint) — FIXED
@@ -394,7 +395,7 @@ Strategischer Sprint: Planer vom Generator zum intelligenten Produkt umbauen. Re
   1. Cloudflare Worker anlegen, `party-worker.js` deployen
   2. KV Namespace "PARTY" erstellen und binden
   3. DNS: `party.machsleicht.de` → Worker
-  4. Environment-Variables: `AMAZON_TAG=machsleicht-21`, `AWIN_PUBLISHER_ID` (optional)
+  4. Environment-Variables: `AMAZON_TAG=machsleicht21-21`, `AWIN_PUBLISHER_ID` (optional)
   5. Rätsel-nach-Maß-Endpoint freischalten
 - **Aufwand:** 1 Laptop-Session, max 2h.
 - **Revenue-Effekt:** +100–200€/Monat sofort.
@@ -550,7 +551,7 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 **Tech-Checkliste:**
 - [ ] `geschenkeberater.jsx` — Form: Alter-Dropdown, Geschlecht-Buttons, Interessen-Tags (Dino, Sport, Kunst, Tech, Bücher...), Budget-Slider
 - [ ] Claude-API-Call: "Schlage 7 Geschenke für {geschlecht}, {alter} Jahre, mag {interessen}, Budget {budget}. Für jedes: Name, Amazon-Suchbegriff, Preis-Schätzung, 1 Satz Warum."
-- [ ] Response-Parsing: Bau Amazon-Search-URLs mit `tag=machsleicht-21`
+- [ ] Response-Parsing: Bau Amazon-Search-URLs mit `tag=machsleicht21-21`
 - [ ] 6 statische Landingpages mit editorial Top-10-Listen (nicht KI-generiert — manuell kuratiert für Qualität)
 - [ ] Top-10-Listen: jedes Produkt mit Screenshot, Bewertung, Preis, Pro/Contra, Affiliate-Link
 - [ ] Vergleichstabellen ähnlich wie bei Test-Sites

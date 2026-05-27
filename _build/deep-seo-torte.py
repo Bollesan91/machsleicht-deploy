@@ -2,7 +2,7 @@
 """Deep SEO: kindergeburtstag-torte-einfach.html
 - Recipe-Schema für den Hauptkandidaten (Backmischung+Smarties)
 - FAQPage
-- Affiliate-Links zu Zutaten/Werkzeug (Amazon tag=machsleicht-21)
+- Affiliate-Links zu Zutaten/Werkzeug (Amazon tag=machsleicht21-21)
 """
 import re
 from pathlib import Path

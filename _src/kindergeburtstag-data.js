@@ -1,8 +1,8 @@
 var SZ_THEMES = [{id:"piraten",name:"Piraten-Schatzsuche",emoji:"\u{1F3F4}\u200D\u2620\uFE0F",color:"#5D4037",intro:{klein:"K\xE4pt'n Krake hat seinen Schatz versteckt! {name}, hilf ihm, die Schatzkarte zu lesen und den Schatz zu finden!",mittel:"K\xE4pt'n Rotbart hat seinen Goldschatz auf einer geheimen Insel vergraben. {name}, folgt den Hinweisen und l\xF6st die R\xE4tsel, bevor die Flut kommt!",gross:"Das Logbuch der verschollenen 'Black Pearl' wurde gefunden. {name}, darin stecken verschl\xFCsselte Koordinaten zu einem legend\xE4ren Schatz. K\xF6nnt ihr den Code knacken?"},stations:{klein:[{name:"Flaschenpost finden",desc:"Eine echte Flasche mit einer Nachricht liegt versteckt. Darin steht der erste Hinweis als Bild (Pfeil zum n\xE4chsten Ort).",dauer:5,typ:"suchen",hint:"Flasche gut sichtbar verstecken. Nachricht als einfaches Bild mit Pfeil."},{name:"Schiff beladen",desc:"Einen Eimer mit B\xE4llen f\xFCllen \u2014 aber nur mit einer Hand! Die andere h\xE4lt das 'Steuer' (einen Stock). Wer hat am schnellsten 5 B\xE4lle im Eimer?",dauer:8,typ:"geschick",hint:"Tennisb\xE4lle oder Socken-Kn\xE4uel. Eimer = das Schiff."},{name:"Piraten-Verkleidung",desc:"An dieser Station liegen Piratenh\xFCte (Zeitungspapier), Augenklappen (schwarzes Papier + Gummi) und Fernrohre (Klopapierrollen). Jedes Kind bastelt seine Verkleidung.",dauer:10,typ:"basteln",hint:"Alles vorbereiten und auslegen. Kinder lieben es, sich zu verkleiden."},{name:"Schatz im Sand",desc:"In einer Wanne mit Sand (oder Reis) sind Goldm\xFCnzen (Schoko-Taler) versteckt. Jedes Kind darf 3 M\xFCnzen finden und behalten.",dauer:5,typ:"suchen",hint:"Gro\xDFe flache Wanne. 3\u20135 M\xFCnzen pro Kind verstecken."},{name:"Schatzkiste \xF6ffnen!",desc:"Die letzte Station! Eine Kiste (Schuhkarton, verziert) mit dem Schatz: S\xFC\xDFigkeiten + kleine Spielzeuge f\xFCr alle.",dauer:5,typ:"finale",hint:"Kiste mit Goldpapier bekleben. Der Wow-Moment!"}],mittel:[{name:"Flaschenpost entschl\xFCsseln",desc:"Die Flaschenpost enth\xE4lt eine Nachricht in Spiegelschrift. Kinder m\xFCssen sie vor einen Spiegel halten (oder r\xFCckw\xE4rts lesen) um den ersten Hinweis zu bekommen.",dauer:5,typ:"r\xE4tseln",hint:"Text r\xFCckw\xE4rts schreiben oder ausdrucken. Kleinen Spiegel bereitlegen."},{name:"Seeungeheuer besiegen",desc:"Dosenwerfen! 6 Becher \xFCbereinander gestapelt = das Seeungeheuer. Jedes Kind hat 3 W\xFCrfe mit Sockenb\xE4llen. Alle umwerfen = Hinweis zum n\xE4chsten Ort.",dauer:8,typ:"action",hint:"Becher mit Seeungeheuer-Gesichtern bemalen. Aus 2m Entfernung werfen."},{name:"Knotenkunde",desc:"Drei verschiedene Knoten an einem Seil lernen: einfacher Knoten, Schleife, Achterknoten. Wer alle drei schafft, bekommt den n\xE4chsten Hinweis.",dauer:10,typ:"geschick",hint:"Vorher \xFCben! Anleitung ausdrucken und daneben legen."},{name:"Schatzkarten-Puzzle",desc:"Die Schatzkarte wurde in 6 Teile zerrissen! Die Teile sind im Garten/Raum verteilt. Zusammenpuzzlen ergibt den Ort des Schatzes.",dauer:10,typ:"suchen",hint:"A4-Karte in 6 Teile schneiden. Auf der R\xFCckseite nummerieren falls es zu schwer ist."},{name:"Schatz ausgraben!",desc:"Am Ort aus der Karte graben die Kinder den Schatz aus (eingegraben oder unter Bl\xE4ttern/Kissen versteckt).",dauer:5,typ:"finale",hint:"Schatzkiste leicht bedecken, nicht zu tief vergraben."}],gross:[{name:"Logbuch entschl\xFCsseln",desc:"Die erste Seite des Logbuchs ist in einer Caesar-Verschl\xFCsselung geschrieben (jeder Buchstabe um 3 verschoben). Enth\xE4lt die Koordinaten zur n\xE4chsten Station.",dauer:8,typ:"r\xE4tseln",hint:"Alphabet-Tabelle als Hilfe bereitlegen. A=D, B=E etc."},{name:"Navigations-Challenge",desc:"Mit einem echten Kompass (oder Handy) m\xFCssen die Kinder eine bestimmte Richtung laufen und die Schritte z\xE4hlen. Am Ziel: n\xE4chster Hinweis.",dauer:8,typ:"action",hint:"Kompass-App reicht. '30 Schritte Richtung Nord-Ost' etc."},{name:"Seemanns-Pr\xFCfung",desc:"5 Aufgaben: Knoten binden, Entfernung sch\xE4tzen, Windrichtung bestimmen, 3 Sternbilder nennen, Flaggen-Alphabet (1 Wort) entschl\xFCsseln.",dauer:12,typ:"r\xE4tseln",hint:"Flaggen-Alphabet ausdrucken. Rest m\xFCndlich abfragen."},{name:"Fluch des K\xE4pt'ns",desc:"Ein Kreuzwortr\xE4tsel mit Piraten-Begriffen. Die markierten Buchstaben ergeben das L\xF6sungswort = den Ort des Schatzes.",dauer:10,typ:"r\xE4tseln",hint:"Kreuzwortr\xE4tsel vorher erstellen. 8\u201310 Begriffe reichen."},{name:"Der Schatz der Black Pearl",desc:"Am L\xF6sungsort: eine verschlossene Truhe mit Zahlenschloss. Die Kombination ergibt sich aus den gesammelten Zahlen aller Stationen.",dauer:5,typ:"finale",hint:"Zahlenschloss kaufen (\u20AC3). An jeder Station eine Zahl als Bonus verstecken."}]},material:{klein:["Flasche + Nachricht","Eimer + 15 B\xE4lle/Socken","Zeitungspapier + Scheren + Gummib\xE4nder + Klopapierrollen","Wanne + Sand/Reis + Schoko-Goldm\xFCnzen","Schatzkiste (Schuhkarton) + Schatz"],mittel:["Flasche + Spiegelschrift-Nachricht + Spiegel","6 Becher + 3 Sockenb\xE4lle","Seil (2m) + Knoten-Anleitung","Schatzkarte (A4, in 6 Teile geschnitten)","Schatzkiste + Schatz"],gross:["Logbuch (Bl\xE4tter, Tee-gef\xE4rbt) + Caesar-Tabelle","Kompass oder Handy","Flaggen-Alphabet Ausdruck + 5 Aufgaben","Kreuzwortr\xE4tsel Ausdruck","Zahlenschloss + Schatztruhe + Schatz"]},schatz:["Schoko-Goldm\xFCnzen","Kleine Spielzeuge","Tattoos","Sticker","Piraten-Augenklappen"]},{id:"dschungel",name:"Dschungel-Expedition",emoji:"\u{1F412}",color:"#2E7D32",intro:{klein:"Die Tiere im Dschungel brauchen eure Hilfe! {name}, findet alle versteckten Tierbabys und bringt sie sicher zur\xFCck.",mittel:"Forscherin Dr. Flora hat ihren Rucksack im Dschungel verloren \u2014 darin: die Karte zum geheimen Wasserfall. {name}, folgt den Tierspuren!",gross:"Ein seltenes Tier wurde im Dschungel gesichtet. {name}, euer Auftrag als Expeditionsteam: Findet es, dokumentiert es, und bringt eine Probe zur\xFCck \u2014 bevor der Sturm kommt."},stations:{klein:[{name:"Tierspuren folgen",desc:"Pfotenabdr\xFCcke aus Papier liegen auf dem Boden und f\xFChren zur n\xE4chsten Station. Welches Tier war das?",dauer:5,typ:"suchen",hint:"Pfotenabdr\xFCcke vorher aus Tonpapier ausschneiden und auslegen."},{name:"Tierbabys retten",desc:"Kuscheltiere sind im 'Dschungel' (B\xFCsche, unter Kissen) versteckt. Jedes Kind rettet ein Tierbaby und bringt es ins 'Camp' (Decke auf dem Boden).",dauer:8,typ:"suchen",hint:"5\u20138 kleine Kuscheltiere verteilen."},{name:"Dschungel-Parcours",desc:"Unter Seilen durchkriechen (Lianen!), \xFCber Kissen springen (Steine im Fluss!), durch einen Tunnel krabbeln (H\xF6hle!).",dauer:10,typ:"action",hint:"Seile zwischen St\xFChle spannen. Kissen in einer Reihe. Tunnel = Decke \xFCber 2 St\xFChle."},{name:"Tier-Ger\xE4usche raten",desc:"Handy spielt Tierger\xE4usche ab. Wer err\xE4t das Tier, bekommt einen Sticker. 8 Ger\xE4usche = 8 Runden.",dauer:8,typ:"r\xE4tseln",hint:"YouTube: 'Tierger\xE4usche f\xFCr Kinder'. Vorher testen ob es laut genug ist."},{name:"Der geheime Wasserfall",desc:"Am Ende wartet der 'Wasserfall' (blaues Tuch \xFCber einem Stuhl). Dahinter: der Schatz!",dauer:5,typ:"finale",hint:"Blaues Tuch/Laken. Schatzkiste dahinter verstecken."}],mittel:[{name:"Spurenlesen",desc:"Verschiedene 'Tierspuren' (Abdr\xFCcke aus Kartoffeldruck oder Ausdrucke) f\xFChren in verschiedene Richtungen. Nur die richtigen Spuren (L\xF6we!) f\xFChren zur n\xE4chsten Station.",dauer:8,typ:"suchen",hint:"3 verschiedene Spuren auslegen, nur eine ist richtig. Falsche f\xFChren zu Sackgassen."},{name:"Lianenschwingen",desc:"Ein Seil an einem Ast/Ger\xFCst. Kinder schwingen dar\xFCber wie Tarzan und landen auf der 'sicheren Insel' (Matte/Kissen). Dabei einen Ball halten ohne ihn fallen zu lassen.",dauer:8,typ:"action",hint:"Seil sicher befestigen! Weiche Landung sicherstellen."},{name:"Tier-Steckbrief erstellen",desc:"Jedes Kind bekommt ein Foto eines Dschungeltiers und muss einen Steckbrief ausf\xFCllen: Name, Futter, Gr\xF6\xDFe, Ger\xE4usch, Besonderheit.",dauer:10,typ:"r\xE4tseln",hint:"Steckbrief-Vorlage ausdrucken. Tier-Fotos: L\xF6we, Affe, Papagei, Schlange, Elefant."},{name:"Dschungel-Staffel",desc:"Zwei Teams! Hindernisparcours mit Ball auf L\xF6ffel + unter Seilen durch + Slalom um B\xE4ume/St\xFChle. Schnellstes Team gewinnt.",dauer:10,typ:"action",hint:"Parcours vorher aufbauen und testen."},{name:"Dr. Floras Rucksack",desc:"Der Rucksack h\xE4ngt am 'Wasserfall'. Darin: die Schatzkarte + Belohnungen f\xFCr alle Expeditionsteilnehmer.",dauer:5,typ:"finale",hint:"Alter Rucksack + Karte + Mitgebsel-T\xFCten."}],gross:[{name:"GPS-Koordinaten entschl\xFCsseln",desc:"Verschl\xFCsselte Koordinaten: Mathe-Aufgaben l\xF6sen ergibt die Zahlen. Diese zeigen den n\xE4chsten Punkt auf einer selbstgezeichneten Karte.",dauer:8,typ:"r\xE4tseln",hint:"Karte vom Garten/Park vorher zeichnen mit Koordinatensystem."},{name:"Tier-Bestimmung",desc:"An 5 Stellen: Fotos von Tierspuren, Federn, Fell-Muster. Teams bestimmen welches Tier es ist und notieren den Anfangsbuchstaben. Die Buchstaben ergeben ein L\xF6sungswort.",dauer:10,typ:"r\xE4tseln",hint:"Bilder ausdrucken. L\xF6sung vorher festlegen (z.B. FLORA)."},{name:"\xDCberlebens-Challenge",desc:"3 Aufgaben: Wasser filtern (Sand + Kies + Tuch in Flasche), Kompass lesen, essbare vs. giftige Pflanzen unterscheiden (Bildkarten).",dauer:12,typ:"geschick",hint:"Wasser-Filter vorher testen! Pflanzenkarten ausdrucken."},{name:"Br\xFCckenbau",desc:"Mit St\xF6cken, Seilen und Brettern eine Br\xFCcke bauen die ein Kuscheltier tragen kann. Teamwork! Zeitlimit: 10 Minuten.",dauer:12,typ:"teamwork",hint:"Material bereitlegen. Kein 'richtiges' Ergebnis n\xF6tig, Kreativit\xE4t z\xE4hlt."},{name:"Die seltene Entdeckung",desc:"Am Zielort: eine 'seltene Pflanze' (gebastelt) + Forschungsurkunde + Schatz f\xFCr das Team.",dauer:5,typ:"finale",hint:"Urkunde vorher drucken: 'Offizielle Dschungel-Forscher*in'."}]},material:{klein:["Pfotenabdr\xFCcke aus Papier","5\u20138 Kuscheltiere","Seile + Kissen + Decke (Tunnel)","Handy mit Tierger\xE4uschen + Sticker","Blaues Tuch + Schatzkiste"],mittel:["3 Sorten Tierspuren-Ausdrucke","Seil + Matte","Steckbrief-Vorlage + Tier-Fotos","L\xF6ffel + B\xE4lle + Seile + Pylonen","Rucksack + Schatzkarte + Mitgebsel"],gross:["Garten-Karte + Mathe-Aufgaben","Tierspuren-Fotos + Stift + Zettel","Filter-Material (Flasche, Sand, Kies, Tuch) + Pflanzen-Bildkarten","St\xF6cke + Seile + kleine Bretter","Urkunde + Schatz"]},schatz:["Tier-Figuren","Dschungel-Sticker","Lupen","Fernglas-Spielzeug","Schoko-Goldm\xFCnzen"]},{id:"weltraum",name:"Weltraum-Mission",emoji:"\u{1F680}",color:"#283593",intro:{klein:"Astronaut Astro hat seine Sterne verloren! {name}, helft ihm, alle 5 Sterne wiederzufinden und zur\xFCck zur Rakete zu bringen!",mittel:"Mission Control an alle Astronauten: {name}, auf dem Planeten Zyx-7 wurde ein geheimnisvoller Kristall entdeckt. Eure Mission: Findet ihn, bevor die Aliens es tun!",gross:"Eine Notnachricht von der Raumstation Alpha: Der Reaktor f\xE4llt aus. {name}, euer Team muss 5 Ersatzteile auf verschiedenen Planeten einsammeln, bevor die Zeit abl\xE4uft."},stations:{klein:[{name:"Sterne sammeln",desc:"Leucht-Sterne (oder Sterne aus Goldpapier) sind im Raum verteilt. Jedes Kind sammelt so viele wie m\xF6glich in 2 Minuten.",dauer:5,typ:"suchen",hint:"20\u201330 Sterne verteilen. Eimer pro Kind zum Sammeln."},{name:"Rakete starten",desc:"Countdown von 10 runterz\xE4hlen, dann alle zusammen hochspringen! Wer am h\xF6chsten springt, 'fliegt zum Mond'. 3 Runden.",dauer:5,typ:"action",hint:"Laut mitz\xE4hlen. Kinder lieben Countdowns!"},{name:"Alien-Schleim",desc:"Jedes Kind mischt seinen eigenen Glitzer-Schleim aus Bastelkleber + Kontaktlinsen-L\xF6sung + Glitzer. Zum Mitnehmen!",dauer:10,typ:"basteln",hint:"Bastelkleber, Kontaktlinsen-L\xF6sung (mit Bors\xE4ure), Glitzer. Unterlage nicht vergessen!"},{name:"Planetensuche",desc:"Bunte B\xE4lle (= Planeten) sind versteckt. Jeder Planet hat einen Buchstaben drauf. Die Buchstaben ergeben ein Wort: STERN.",dauer:8,typ:"suchen",hint:"5 verschiedenfarbige B\xE4lle mit S-T-E-R-N beschriften."},{name:"Zur\xFCck zur Rakete!",desc:"Die Rakete (gro\xDFer Karton, bemalt) enth\xE4lt den Schatz. Alle steigen ein und 'fliegen nach Hause'!",dauer:5,typ:"finale",hint:"Gro\xDFen Karton als Rakete bemalen. Schatzkiste reinlegen."}],mittel:[{name:"Geheime Botschaft von Mission Control",desc:"Eine Nachricht in UV-Schrift (unsichtbarer Stift). Nur mit UV-Lampe lesbar! Enth\xE4lt die Koordinaten zum ersten Planeten.",dauer:5,typ:"r\xE4tseln",hint:"UV-Stift + UV-Lampe (gibt's g\xFCnstig bei Amazon). Alternativ: Zitronensaft + F\xF6hn."},{name:"Meteoriten-Slalom",desc:"Kinder laufen mit einem Ball auf dem L\xF6ffel durch einen Slalom (= Meteoriten-Feld). Ball fallen lassen = zur\xFCck zum Start!",dauer:8,typ:"action",hint:"Pylonen oder Flaschen als Slalom. Tischtennisball auf Essl\xF6ffel."},{name:"Alien-Kommunikation",desc:"Eine Nachricht in Alien-Schrift (Symbole statt Buchstaben). \xDCbersetzungstabelle liegt bereit. Die \xFCbersetzte Nachricht verr\xE4t den n\xE4chsten Ort.",dauer:10,typ:"r\xE4tseln",hint:"Einfache Symbole erfinden: Stern=A, Mond=B, Sonne=C etc. Tabelle ausdrucken."},{name:"Mondlandung",desc:"Watte-B\xE4lle von einer Markierung aus in einen Eimer werfen (= auf dem Mond landen). Jedes Kind hat 5 Versuche. Mindestens 2 m\xFCssen landen.",dauer:8,typ:"geschick",hint:"3m Entfernung. Watte-B\xE4lle oder zusammengekn\xFClltes Papier."},{name:"Kristall von Zyx-7",desc:"Am letzten Planeten: ein leuchtender Kristall (Lampe in Alufolie) + Schatzkiste f\xFCr alle.",dauer:5,typ:"finale",hint:"LED-Teelicht in Alufolie einwickeln = leuchtender Kristall. Cool im Dunkeln!"}],gross:[{name:"Verschl\xFCsselter Funkspruch",desc:"Bin\xE4rcode! Eine Nachricht in 0 und 1. \xDCbersetzungstabelle (A=00001, B=00010...) liegt bereit. Die Nachricht verr\xE4t den n\xE4chsten Planeten.",dauer:10,typ:"r\xE4tseln",hint:"Kurze Nachricht in Bin\xE4r. Oder einfacher: Morsecode. Tabelle ausdrucken."},{name:"Reparatur unter Zeitdruck",desc:"5 'Bauteile' (Legosteine/Puzzle-Teile) sind in 5 verschiedenen Verstecken. Alle finden und das Modell zusammenbauen \u2014 in unter 10 Minuten.",dauer:10,typ:"teamwork",hint:"Timer laufen lassen! Verstecke nicht zu schwer."},{name:"Schwerelosigkeits-Challenge",desc:"Aufgaben mit verbundenen Augen oder in Zeitlupe (= Schwerelosigkeit): Ball fangen, Turm stapeln, Wasser einschenken.",dauer:10,typ:"geschick",hint:"Augenbinde. Plastikbecher f\xFCr Turm. Platz f\xFCr Wasserkleckse."},{name:"Alien-Quiz",desc:"20 Fragen \xFCber Weltraum, Planeten, Mond. Multiple Choice. Teams buzzern mit K\xFCchengl\xF6ckchen. Jede richtige Antwort = ein Zahlenteil f\xFCr den Code.",dauer:10,typ:"r\xE4tseln",hint:"Fragen vorher googeln. 'Welcher Planet hat Ringe?' etc."},{name:"Reaktor-Neustart",desc:"Die gesammelten Zahlen ergeben den Code f\xFCrs Zahlenschloss der Schatztruhe. Code eingeben = Mission erfolgreich!",dauer:5,typ:"finale",hint:"3-stelliges Zahlenschloss. Pro Station eine Ziffer als Bonus vergeben."}]},material:{klein:["30 Sterne (Goldpapier/Leucht-Sterne)","Freier Platz zum Springen","Bastelkleber + Kontaktlinsen-L\xF6sung + Glitzer","5 bunte B\xE4lle mit Buchstaben","Gro\xDFer Karton (Rakete) + Schatz"],mittel:["UV-Stift + UV-Lampe","L\xF6ffel + Tischtennisb\xE4lle + Pylonen","Alien-Alphabet Ausdruck","Watte-B\xE4lle + Eimer","LED-Teelicht + Alufolie + Schatzkiste"],gross:["Bin\xE4r-/Morsecode-Tabelle + Nachricht","5 Legosteine/Puzzle-Teile + Timer","Augenbinde + Becher + Wasser","20 Quiz-Fragen + K\xFCchengl\xF6ckchen","Zahlenschloss + Schatztruhe"]},schatz:["Leucht-Sterne","Weltraum-Tattoos","Glitzer-Schleim","Astronauten-Sticker","Mondstein (bemalter Kiesel)"]},{id:"detektiv",name:"Detektiv-Fall",emoji:"\u{1F50D}",color:"#455A64",intro:{klein:"Oh nein! Teddys Honig ist verschwunden! {name}, wer hat ihn gestohlen? Folgt den Spuren und findet den Dieb!",mittel:"Im Museum ist ein wertvolles Gem\xE4lde verschwunden. {name}, nur ihr \u2014 die besten Detektive der Stadt \u2014 k\xF6nnt den Fall l\xF6sen!",gross:"Ein anonymer Hinweis: 'In 60 Minuten passiert etwas im Rathaus.' {name}, findet heraus WER, WAS und WARUM \u2014 bevor es zu sp\xE4t ist."},stations:{klein:[{name:"Spuren am Tatort",desc:"Fu\xDFspuren aus Papier auf dem Boden folgen. Sie f\xFChren von der leeren Honigglas-Stelle zur n\xE4chsten Station.",dauer:5,typ:"suchen",hint:"Gro\xDFe Fu\xDFspuren aus Tonpapier ausschneiden."},{name:"Zeugen befragen",desc:"Kuscheltiere sitzen im Kreis. Bei jedem liegt ein Zettel mit einem Hinweis (als Bild). Kinder sammeln alle Hinweise.",dauer:8,typ:"suchen",hint:"4\u20135 Kuscheltiere mit je einem Bild-Hinweis (z.B. 'braunes Fell', 'mag Honig')."},{name:"Fingerabdr\xFCcke nehmen",desc:"Jedes Kind dr\xFCckt seinen Finger auf ein Stempelkissen und dann aufs Papier. Vergleich mit den 'Tatort-Abdr\xFCcken'. Detektivarbeit!",dauer:8,typ:"basteln",hint:"Stempelkissen + wei\xDFes Papier + Lupe."},{name:"Verd\xE4chtige finden",desc:"3 Verd\xE4chtige (Bilder): Fuchs, B\xE4r, Hase. Die gesammelten Hinweise passen auf den B\xE4ren! Er war's!",dauer:5,typ:"r\xE4tseln",hint:"3 Tier-Bilder aufh\xE4ngen. Hinweise zeigen eindeutig auf den B\xE4ren."},{name:"Fall gel\xF6st!",desc:"Der B\xE4r gibt den Honig zur\xFCck (Gummib\xE4rchen f\xFCr alle!) und alle bekommen einen Detektiv-Ausweis.",dauer:5,typ:"finale",hint:"Detektiv-Ausweise vorher basteln/drucken. Gummib\xE4rchen als 'Honig'."}],mittel:[{name:"Tatort untersuchen",desc:"Am 'Tatort' (Tisch mit Deko) liegen 5 Beweist\xFCcke. Kinder notieren alles auf ihrem Detektiv-Notizbuch und machen 'Fotos' (zeichnen).",dauer:8,typ:"r\xE4tseln",hint:"Beweist\xFCcke: Faden, Knopf, Schuh-Abdruck, Haare, Zettel-Fetzen."},{name:"Geheimschrift lesen",desc:"Ein Hinweis in Zitronensaft geschrieben. F\xF6hn dr\xFCber = die Schrift erscheint! Verr\xE4t den n\xE4chsten Ort.",dauer:8,typ:"r\xE4tseln",hint:"Zitronensaft + Wattest\xE4bchen + F\xF6hn. Vorher testen!"},{name:"Zeugen-Verh\xF6r",desc:"3 'Zeugen' (Steckbriefe an der Wand). Jeder sagt etwas anderes. Wer l\xFCgt? Die Kinder vergleichen die Aussagen und finden den Widerspruch.",dauer:10,typ:"r\xE4tseln",hint:"3 kurze Aussagen schreiben, 1 widerspricht den anderen."},{name:"Verfolgungsjagd",desc:"Dem Dieb auf der Spur! Hindernis-Parcours durch den Garten/Raum: unter Seilen durch, \xFCber Kissen, um B\xE4ume. Am Ende: der letzte Hinweis.",dauer:8,typ:"action",hint:"Parcours vorher aufbauen."},{name:"Fall gel\xF6st!",desc:"Alle Hinweise zusammensetzen = der T\xE4ter wird entlarvt! Belohnung: Detektiv-Urkunde + Schatz.",dauer:5,typ:"finale",hint:"Urkunde drucken: 'Meisterdetektiv*in [Name]'."}],gross:[{name:"Tatort-Analyse",desc:"CSI-Style: Beweist\xFCcke untersuchen, Fotos zuordnen, Zeitstrahl erstellen. Alles dokumentieren im Ermittler-Dossier.",dauer:10,typ:"r\xE4tseln",hint:"Dossier-Vorlage drucken. Beweisfotos ausdrucken."},{name:"Verschl\xFCsselte Nachricht",desc:"Pigpen-Chiffre oder Freimaurer-Code. \xDCbersetzungstabelle liegt bereit. Die Nachricht enth\xE4lt einen Namen.",dauer:10,typ:"r\xE4tseln",hint:"Pigpen-Alphabet ausdrucken. Kurze Nachricht (5\u20138 W\xF6rter)."},{name:"Alibi-Check",desc:"5 Verd\xE4chtige mit je einem Alibi. Zeitstrahl + Ortsangaben vergleichen. Nur bei einem stimmt das Alibi NICHT.",dauer:10,typ:"r\xE4tseln",hint:"5 Steckbriefe mit Alibis. Einer hat eine L\xFCcke/Widerspruch."},{name:"Beweis sichern",desc:"UV-Lampe enth\xFCllt versteckte Nachrichten an den W\xE4nden/M\xF6beln. Die Nachrichten ergeben zusammen den Tatort.",dauer:8,typ:"suchen",hint:"UV-Stift auf wei\xDFe Zettel an 5 Stellen. UV-Lampe zum Lesen."},{name:"Verhaftung!",desc:"Der T\xE4ter wird entlarvt! Alle Beweise pr\xE4sentieren. Belohnung: Meisterdetektiv-Zertifikat + Schatz.",dauer:5,typ:"finale",hint:"Zertifikat drucken. Kleines Schloss als Symbol."}]},material:{klein:["Fu\xDFspuren aus Papier","4\u20135 Kuscheltiere + Bild-Hinweise","Stempelkissen + Papier + Lupe","3 Verd\xE4chtigen-Bilder","Detektiv-Ausweise + Gummib\xE4rchen"],mittel:["5 Beweist\xFCcke + Notizbuch","Zitronensaft + Wattest\xE4bchen + F\xF6hn","3 Zeugen-Steckbriefe","Seile + Kissen (Parcours)","Detektiv-Urkunde + Schatz"],gross:["Dossier-Vorlage + Beweis-Fotos","Pigpen-Alphabet + verschl\xFCsselte Nachricht","5 Verd\xE4chtigen-Steckbriefe mit Alibis","UV-Stift + UV-Lampe + 5 versteckte Nachrichten","Zertifikat + Schloss-Symbol + Schatz"]},schatz:["Mini-Lupen","Detektiv-Sticker","Geheim-Stifte (UV)","Notizbl\xF6cke","Fingerabdruck-Set"]},{id:"dino",name:"Dino-Zeitreise",emoji:"\u{1F995}",color:"#795548",intro:{klein:"Die Dinosaurier-Eier sind \xFCberall im Garten verteilt! {name}, findet sie alle, bevor der T-Rex aufwacht!",mittel:"Professor Dinos Zeitmaschine hat euch in die Urzeit geschickt! {name}, sammelt 5 Fossilien um die Maschine wieder zu starten.",gross:"Ihr seid Pal\xE4ontologen auf einer Ausgrabung. {name}, ein komplettes Dino-Skelett liegt unter der Erde \u2014 aber in 5 verschiedenen Schichten. Grabt systematisch!"},stations:{klein:[{name:"Dino-Eier finden",desc:"Bunte Eier (Plastik-Eier oder bemalte Steine) im Garten/Raum versteckt. Jedes Kind sucht 3 Eier.",dauer:8,typ:"suchen",hint:"15\u201320 Eier verteilen. In jedem Ei eine kleine \xDCberraschung."},{name:"Vulkan-Experiment",desc:"Mini-Vulkan: Flasche + Essig + Natron + Sp\xFCli + rote Lebensmittelfarbe. Die Kinder gie\xDFen zusammen \u2014 BOOM! Lava!",dauer:8,typ:"basteln",hint:"Flasche in Sand-/Erd-H\xFCgel stellen. Auffangschale unterdrunter!"},{name:"Dino-Stampfen",desc:"Musik an = stampfen wie ein T-Rex! Musik aus = einfrieren wie ein Fossil. Wer sich bewegt ist raus.",dauer:8,typ:"action",hint:"Dino-Musik oder normale Kindermusik. Laut stampfen ermutigen!"},{name:"Fu\xDFspuren zuordnen",desc:"4 verschiedene Dino-Fu\xDFspuren auf dem Boden. Bilder von 4 Dinos daneben. Welcher Fu\xDF passt zu welchem Dino?",dauer:5,typ:"r\xE4tseln",hint:"Gro\xDFe Fu\xDFspuren aus Pappe. Einfache Zuordnung."},{name:"T-Rex aufwecken!",desc:"Der T-Rex (Kuscheltier/Figur) bewacht die Schatzkiste. Alle zusammen br\xFCllen so laut sie k\xF6nnen \u2014 dann 'erschreckt' er sich und gibt den Schatz frei!",dauer:5,typ:"finale",hint:"Dramatisch spielen! Kinder lieben gemeinsames Br\xFCllen."}],mittel:[{name:"Fossilien-Ausgrabung",desc:"In einer Wanne mit Sand: eingegrabene 'Fossilien' (Muscheln, Steine, Knochen aus Salzteig). Mit Pinsel freilegen wie echte Forscher.",dauer:10,typ:"basteln",hint:"Salzteig-Knochen vorher backen (1 Tag). Pinsel + Wanne + Sand."},{name:"Dino-Quiz: 1, 2 oder 3",desc:"Fragen \xFCber Dinos mit 3 Antworten. Kinder rennen zur Zahl die sie f\xFCr richtig halten. 'Ob ihr wirklich richtig steht...'",dauer:10,typ:"r\xE4tseln",hint:"10 Fragen vorbereiten. Zahlen auf A4 ausdrucken und am Boden verteilen."},{name:"Vulkan-Wettbewerb",desc:"2 Teams bauen je einen Vulkan (Sand + Flasche). Dann: wessen Lava sprudelt h\xF6her/schneller?",dauer:10,typ:"teamwork",hint:"2 Sets: Flaschen, Sand, Essig, Natron, Sp\xFCli, Lebensmittelfarbe."},{name:"Zeitmaschinen-Code",desc:"An jeder vorherigen Station gab es eine Zahl. Alle Zahlen zusammen = Code um die Zeitmaschine zu starten.",dauer:5,typ:"r\xE4tseln",hint:"An jeder Station eine gut sichtbare Zahl anbringen."},{name:"Zur\xFCck in die Gegenwart!",desc:"Code eingeben, 'Zeitmaschine starten' (Countdown), Schatzkiste \xF6ffnen. Alle sind wieder da!",dauer:5,typ:"finale",hint:"Countdown gemeinsam runterz\xE4hlen. Schatz = Dino-Spielzeug + S\xFC\xDFes."}],gross:[{name:"Systematische Ausgrabung",desc:"Planquadrate im Garten/Sandkasten. Jedes Team gr\xE4bt ein Quadrat und dokumentiert jeden Fund mit Koordinaten auf einer Karte.",dauer:12,typ:"teamwork",hint:"Schnur + Pfl\xF6cke f\xFCr Planquadrate. Dokumentations-Vorlage drucken."},{name:"Fossil-Bestimmung",desc:"5 'Fossilien' bestimmen: Name, Alter, Pflanzenfresser/Fleischfresser. Lexikon liegt bereit. Buchstaben der richtigen Antworten = L\xF6sungswort.",dauer:10,typ:"r\xE4tseln",hint:"Dino-Lexikon ausleihen oder Infoblatt drucken."},{name:"Evolution-Timeline",desc:"10 Dino-Karten in die richtige zeitliche Reihenfolge bringen. Trias \u2192 Jura \u2192 Kreide. Bonus: Welcher lebte am l\xE4ngsten?",dauer:8,typ:"r\xE4tseln",hint:"Karten mit Dino-Namen + Zeitraum. L\xF6sung auf der R\xFCckseite."},{name:"Dino-Escape",desc:"Der Meteor kommt! 5 R\xE4tsel in 15 Minuten l\xF6sen um die 'Rettungskapsel' zu \xF6ffnen: Mathe, Logik, Dino-Wissen, Puzzle, Geheimschrift.",dauer:15,typ:"r\xE4tseln",hint:"Timer laufen lassen! 5 Umschl\xE4ge mit je einem R\xE4tsel."},{name:"Museum er\xF6ffnen",desc:"Alle Funde auslegen, beschriften und ein 'Mini-Museum' er\xF6ffnen. Feierliche Er\xF6ffnung + Schatz.",dauer:5,typ:"finale",hint:"Tisch als Vitrine. Kinder stellen ihre Funde aus."}]},material:{klein:["15\u201320 Plastik-Eier oder bemalte Steine","Flasche + Essig + Natron + Sp\xFCli + Lebensmittelfarbe","Musikbox","4 Dino-Fu\xDFspuren + 4 Dino-Bilder","Dino-Figur + Schatzkiste"],mittel:["Wanne + Sand + Salzteig-Fossilien + Pinsel","10 Quiz-Fragen + Zahlen 1-2-3","2\xD7 Flasche + Sand + Vulkan-Material","Zahlen an Stationen","Schatz + Countdown"],gross:["Schnur + Pfl\xF6cke + Dokumentations-Vorlage","5 Fossilien-Bilder + Dino-Lexikon","10 Dino-Zeitkarten","5 R\xE4tsel-Umschl\xE4ge + Timer","Tisch + Beschriftungskarten + Schatz"]},schatz:["Mini-Dinos","Fossilien-Sticker","Dino-Stempel","Ausgrabungs-Sets","Dino-Tattoos"]},{id:"feen",name:"Feenzauber im Wald",emoji:"\u{1F9DA}",color:"#AB47BC",intro:{klein:"Die kleine Fee Lila hat ihren Zauberstab verloren! {name}, ohne ihn kann sie nicht mehr zaubern. Helft ihr, ihn zu finden!",mittel:"Das Feenreich ist in Gefahr! Der b\xF6se Troll hat alle Regenbogenfarben gestohlen. {name}, sammelt die Farben an 5 Stationen zur\xFCck!",gross:"{name}, ihr wurdet in die Feenakademie eingeladen. Um aufgenommen zu werden, m\xFCsst ihr 5 magische Pr\xFCfungen bestehen."},stations:{klein:[{name:"Feenstaub sammeln",desc:"Glitzersteine (bunte Glassteine) im Gras/Raum versteckt. Jedes Kind sammelt Feenstaub in einen kleinen Beutel.",dauer:8,typ:"suchen",hint:"Bunte Deko-Steine aus dem Bastelladen. 5\u20138 pro Kind."},{name:"Zauberstab basteln",desc:"Holzstab + Glitzer + B\xE4nder + Sternform aus Pappe = eigener Zauberstab! Jedes Kind gestaltet seinen.",dauer:10,typ:"basteln",hint:"Holzspie\xDFe (Spitze abschneiden!), Glitzerkleber, bunte B\xE4nder, Sterne aus Goldpappe."},{name:"Blumen-Tanz",desc:"Tanzen wie Blumen im Wind: bei leiser Musik sanft wiegen, bei lauter Musik wild tanzen, bei Stopp als Blume 'einfrieren'.",dauer:8,typ:"action",hint:"Verschiedene Tempi. Kinder sanft mitmachen lassen."},{name:"Regenbogen-Puzzle",desc:"7 bunte Streifen (Regenbogenfarben) sind versteckt. In der richtigen Reihenfolge zusammenlegen = Hinweis zum Zauberstab.",dauer:8,typ:"suchen",hint:"Streifen aus Tonpapier. Auf der R\xFCckseite: ein Pfeil zum Versteck."},{name:"Zauberstab gefunden!",desc:"Der Zauberstab (glitzernder Stock) liegt an der letzten Station. Fee Lila (Puppe/Bild) bedankt sich mit einem Schatz!",dauer:5,typ:"finale",hint:"Glitzer-Stock vorbereiten. Puppe als Fee Lila verkleiden."}],mittel:[{name:"Magische Zutat: Feenstaub",desc:"Bunte Perlen in Farbe ROT im Geb\xFCsch/Raum finden. Nur die roten z\xE4hlen! Wer die meisten findet, f\xFChrt zum n\xE4chsten Ort.",dauer:8,typ:"suchen",hint:"Verschiedenfarbige Perlen verteilen, aber nur rote sammeln."},{name:"Magische Zutat: Troll-Schleim besiegen",desc:"Schleim (aus Bastelkleber) herstellen und darin eine versteckte Perle in Farbe ORANGE finden. Matschig aber magisch!",dauer:10,typ:"basteln",hint:"Schleim-Set vorbereiten. Orange Perle vor dem Mischen reinlegen."},{name:"Magische Zutat: Regenbogen-Wasser",desc:"3 Gl\xE4ser mit gef\xE4rbtem Wasser (rot, gelb, blau). Mischen um GR\xDCN, ORANGE und LILA herzustellen. Farbenlehre!",dauer:8,typ:"r\xE4tseln",hint:"Lebensmittelfarbe + Wasser. Kinder lernen spielerisch Farbmischung."},{name:"Magische Zutat: Sternen-R\xE4tsel",desc:"5 Sterne mit je einem Buchstaben. In der richtigen Reihenfolge = Zauberwort. Zauberwort laut rufen = n\xE4chster Hinweis.",dauer:5,typ:"r\xE4tseln",hint:"Sterne aus Goldpappe mit Buchstaben. L\xF6sungswort: MAGIE."},{name:"Regenbogen wiederhergestellt!",desc:"Alle Farben gesammelt! Der Regenbogen erscheint (buntes Tuch/Band) und darunter liegt der Feenschatz.",dauer:5,typ:"finale",hint:"Buntes Tuch \xFCber einen Bogen spannen. Schatzkiste darunter."}],gross:[{name:"Feen-Aufnahmepr\xFCfung 1: Wissen",desc:"10 Fragen \xFCber Natur, Pflanzen, Tiere, Jahreszeiten. Jede richtige Antwort = ein Buchstabe des Zauberspruchs.",dauer:10,typ:"r\xE4tseln",hint:"Fragen \xFCber echte Natur: Welcher Baum verliert keine Bl\xE4tter? etc."},{name:"Feen-Aufnahmepr\xFCfung 2: Geschick",desc:"Hindernisparcours durch den 'Zauberwald': unter B\xE4ndern durch, \xFCber Steine balancieren, Ringe auf St\xE4be werfen.",dauer:10,typ:"action",hint:"B\xE4nder + Steine + Ringe + St\xE4be. Parcours im Garten."},{name:"Feen-Aufnahmepr\xFCfung 3: Kreativit\xE4t",desc:"In 10 Minuten: ein Feenhaus aus Naturmaterialien bauen. St\xF6cke, Bl\xE4tter, Moos, Steine. Wer baut das Sch\xF6nste?",dauer:12,typ:"basteln",hint:"Naturmaterialien vorher sammeln oder sammeln lassen."},{name:"Feen-Aufnahmepr\xFCfung 4: Zaubertrank",desc:"Nach 'Rezept' (Anleitung) einen Zaubertrank mischen: Limonade + Brausepulver + Lebensmittelfarbe = sprudelnder Trank! Trinken erlaubt.",dauer:8,typ:"basteln",hint:"Sprite/Wasser + Brausepulver + Lebensmittelfarbe. Becher pro Kind."},{name:"Feierliche Aufnahme",desc:"Alle Pr\xFCfungen bestanden! Feierliche Aufnahme in die Feenakademie: Urkunde + Feenstab + Schatz.",dauer:5,typ:"finale",hint:"Urkunde drucken. Feierlich vorlesen!"}]},material:{klein:["Bunte Glassteine + kleine Beutel","Holzst\xE4be + Glitzer + B\xE4nder + Sterne","Musikbox","7 bunte Papierstreifen","Glitzer-Stock + Fee-Puppe + Schatz"],mittel:["Bunte Perlen (v.a. rote)","Bastelkleber + Kontaktlinsen-L\xF6sung + orange Perle","Lebensmittelfarbe + 3 Gl\xE4ser + Wasser","5 Goldsterne mit Buchstaben","Buntes Tuch + Schatzkiste"],gross:["10 Natur-Quizfragen","B\xE4nder + Steine + Ringe + St\xE4be","Naturmaterialien (St\xF6cke, Bl\xE4tter, Moos)","Limonade + Brausepulver + Lebensmittelfarbe + Becher","Urkunde + Feenstab + Schatz"]},schatz:["Glitzer-Steine","Schmetterlings-Sticker","Perlen-Armb\xE4nder","Feenstab","Blumen-Tattoos"]},{id:"safari",name:"Safari-Schatzsuche",emoji:"\u{1F981}",color:"#D4A574",intro:{klein:"Im Safari-Park sind die Tierbabys ausgebüxt! {name}, helft Ranger Rudi, alle 5 Tierbabys wiederzufinden!",mittel:"Rangerin Ava hat eine geheimnisvolle Spur entdeckt — sie führt zum legendären Goldenen Löwen. {name}, folgt den Tierspuren durch die Savanne!",gross:"Euer Expeditionsteam wurde gerufen: In der Savanne ist ein seltenes Tier gesichtet worden. {name}, dokumentiert die Spur, sammelt Beweise und findet es — bevor die Sonne untergeht."},stations:{klein:[{name:"Tierspuren folgen",desc:"Pfotenabdrücke aus Tonpapier liegen auf dem Boden. Die Kinder folgen den Spuren von Station zu Station.",dauer:5,typ:"suchen",hint:"Große Pfotenabdrücke in Pfeilrichtung auslegen. Gut sichtbar!"},{name:"Tierbabys retten",desc:"Kuscheltiere (Löwe, Elefant, Giraffe, Zebra, Affe) sind im Garten/Raum versteckt. Jedes Kind rettet ein Tierbaby.",dauer:8,typ:"suchen",hint:"5–8 Kuscheltiere nicht zu schwer verstecken."},{name:"Safari-Fernglas basteln",desc:"Zwei Klopapierrollen zusammenkleben und bunt bemalen = Safari-Fernglas! Jedes Kind bastelt sein eigenes.",dauer:10,typ:"basteln",hint:"Rollen, Kleber, Stifte, Schnur zum Umhängen vorbereiten."},{name:"Tier-Geräusche raten",desc:"Handy spielt Tiergeräusche ab. Wer das Tier errät, bekommt einen Sticker. 8 Runden.",dauer:8,typ:"rätseln",hint:"YouTube: 'Safari Tiergeräusche'. Vorher Lautstärke testen."},{name:"Ranger-Belohnung",desc:"Alle Tierbabys gerettet! Ranger Rudi (Bild/Puppe) bedankt sich mit einer Schatzkiste voller Überraschungen.",dauer:5,typ:"finale",hint:"Schatzkiste mit Tierfiguren + Süßes. Urkunde 'Junior-Ranger'."}],mittel:[{name:"Geheime Safari-Karte",desc:"Eine Karte mit Tiersilhouetten statt Ortsnamen. Kinder müssen die Tiere erkennen und den richtigen Weg finden.",dauer:8,typ:"rätseln",hint:"Karte vorher zeichnen. Einfache Silhouetten: Elefant, Löwe, Giraffe."},{name:"Wasserloch-Challenge",desc:"Einen Ball auf einem Löffel durch einen Slalom balancieren — ohne ins 'Krokodil-Wasser' zu fallen! Wer schafft es?",dauer:8,typ:"geschick",hint:"Pylonen als Slalom. Tischtennisball auf Esslöffel."},{name:"Tier-Steckbrief",desc:"Jedes Kind bekommt ein Tierfoto und füllt einen Steckbrief aus: Name, Futter, Lebensraum, Besonderheit.",dauer:10,typ:"rätseln",hint:"Steckbrief-Vorlage drucken. 5 verschiedene Tier-Fotos."},{name:"Savanne-Staffel",desc:"Zwei Teams im Wettlauf: Ball auf Löffel + durch Tunnel + Slalom. Schnellstes Team bekommt den nächsten Hinweis.",dauer:10,typ:"action",hint:"Parcours vorher aufbauen und testen."},{name:"Der Goldene Löwe",desc:"Am Ende der Spur: eine goldene Löwenfigur (Spielzeug in Goldfolie) bewacht die Schatzkiste.",dauer:5,typ:"finale",hint:"Löwenfigur in Alufolie/Goldpapier wickeln. Dramatisch inszenieren!"}],gross:[{name:"Koordinaten entschlüsseln",desc:"Verschlüsselte GPS-Koordinaten: Mathe-Aufgaben lösen ergibt Zahlen, die auf einer selbstgezeichneten Karte den nächsten Punkt zeigen.",dauer:8,typ:"rätseln",hint:"Karte vom Gelände zeichnen. 5 Koordinaten-Aufgaben."},{name:"Tier-Bestimmung",desc:"An 5 Stellen: Fotos von Spuren, Federn, Fellmustern. Teams bestimmen das Tier und notieren den Anfangsbuchstaben = Lösungswort.",dauer:10,typ:"rätseln",hint:"Bilder ausdrucken. Lösung vorher festlegen (z.B. SAFARI)."},{name:"Überlebens-Training",desc:"3 Aufgaben: Wasser filtern (Sand+Kies+Tuch), Entfernung schätzen, essbare vs. giftige Pflanzen erkennen (Bildkarten).",dauer:12,typ:"geschick",hint:"Filter vorher testen! Pflanzen-Bildkarten vorbereiten."},{name:"Safari-Quiz-Duell",desc:"20 Fragen über Tiere, Savanne, Natur. Teams buzzern mit Küchenglöckchen. Jede richtige Antwort = ein Code-Teil.",dauer:10,typ:"rätseln",hint:"Fragen vorher recherchieren. 'Wie schnell rennt ein Gepard?' etc."},{name:"Expedition erfolgreich!",desc:"Der Code öffnet die Schatztruhe (Zahlenschloss). Alle Beweise zusammen = seltenes Tier identifiziert + Schatz!",dauer:5,typ:"finale",hint:"3-stelliges Zahlenschloss. Pro Station eine Ziffer vergeben."}]},material:{klein:["Pfotenabdrücke aus Tonpapier","5–8 Kuscheltiere","Klopapierrollen + Kleber + Stifte + Schnur","Handy mit Tiergeräuschen + Sticker","Schatzkiste + Junior-Ranger-Urkunde"],mittel:["Selbstgezeichnete Safari-Karte","Löffel + Tischtennisbälle + Pylonen","Steckbrief-Vorlage + Tier-Fotos","Parcours-Material (Tunnel, Pylonen)","Goldene Löwenfigur + Schatzkiste"],gross:["Gelände-Karte + Mathe-Aufgaben","Tierspuren-Fotos + Stift + Zettel","Filter-Material + Pflanzen-Bildkarten","20 Quiz-Fragen + Küchenglöckchen","Zahlenschloss + Schatztruhe"]},schatz:["Mini-Tierfiguren","Safari-Sticker","Tier-Tattoos","Fernglas-Spielzeug","Schoko-Goldmünzen"]},{id:"einhorn",name:"Einhorn-Schatzsuche",emoji:"\u{1F984}",color:"#EC407A",intro:{klein:"Das kleine Einhorn Sternchen hat seine Regenbogenfarben verloren! {name}, helft ihm, alle Farben wiederzufinden!",mittel:"Im Einhorn-Königreich ist der magische Kristall verschwunden. {name}, ohne ihn verblasst der Regenbogen! Folgt den Glitzerspuren und rettet die Magie!",gross:"Ihr wurdet zur geheimen Einhorn-Akademie eingeladen. {name}, um aufgenommen zu werden, müsst ihr 5 magische Prüfungen bestehen und den Regenbogen-Kristall finden."},stations:{klein:[{name:"Regenbogen-Spur folgen",desc:"Bunte Papierstreifen in Regenbogenfarben liegen auf dem Boden und bilden einen Weg. Die Kinder galoppieren wie Einhörner von Farbe zu Farbe.",dauer:5,typ:"suchen",hint:"Tonpapier in 7 Farben, als Spur auf den Boden legen. Galoppieren vormachen!"},{name:"Einhorn-Verkleidung",desc:"Jedes Kind bastelt sein Einhorn-Horn (Partyhut mit Alufolie) und eine bunte Mähne (Krepppapierstreifen an Haarreif).",dauer:10,typ:"basteln",hint:"Partyhüte, Alufolie, Haarreife, Krepppapier in Regenbogenfarben, Kleber."},{name:"Hufeisenwerfen",desc:"Ringe (aus Pappe ausgeschnitten) auf einen Stock werfen — wie ein echtes Hufeisen-Spiel! 3 Versuche pro Kind.",dauer:8,typ:"geschick",hint:"Ringe aus Pappe (20cm Durchmesser), Stock im Boden oder in Eimer mit Sand."},{name:"Regenbogen malen",desc:"Jedes Kind malt seinen eigenen Regenbogen auf eine große Karte. Die fertigen Bilder zusammenlegen = ein Riesen-Regenbogen!",dauer:8,typ:"basteln",hint:"Große Papierbögen, Wasserfarben oder dicke Buntstifte. Boden mit Folie schützen."},{name:"Sternchens Schatz!",desc:"Am Ende des Regenbogens wartet das Einhorn Sternchen (Kuscheltier) mit einer glitzernden Schatzkiste!",dauer:5,typ:"finale",hint:"Schatzkiste mit Glitzerpapier bekleben. Kuscheltier-Einhorn daneben."}],mittel:[{name:"Geheime Regenbogen-Botschaft",desc:"Eine Nachricht mit weißem Wachsmalstift auf weißem Papier — mit Wasserfarben drübermalen und die Botschaft erscheint!",dauer:8,typ:"rätseln",hint:"Vorher Nachricht mit weißem Wachsstift schreiben. Wasserfarben + Pinsel bereitlegen."},{name:"Einhorn-Rennen",desc:"Mit einem Partyhut als Horn auf dem Kopf durch einen Slalom galoppieren — ohne dass das Horn runterfällt! Staffel in 2 Teams.",dauer:10,typ:"action",hint:"Partyhüte + Pylonen. Strecke nicht zu lang, dafür lustig!"},{name:"Kristallhöhle",desc:"In einem abgedunkelten Raum mit einer Taschenlampe versteckte Kristalle (bunte Glassteine in Alufolie) finden. Die Kristalle glitzern im Licht!",dauer:10,typ:"suchen",hint:"Raum abdunkeln. 15–20 Steine in Alufolie an verschiedenen Stellen. Taschenlampe pro Kind."},{name:"Regenbogen-Code",desc:"7 Umschläge in Regenbogenfarben, jeder enthält einen Buchstaben. In der richtigen Farbreihenfolge (Rot→Violett) ergeben sie das Lösungswort.",dauer:8,typ:"rätseln",hint:"7 bunte Umschläge, darin je ein Buchstabe. Lösungswort: KRISTALL oder EINHORN."},{name:"Der magische Kristall",desc:"Das Lösungswort laut rufen — und der magische Kristall (LED-Teelicht in bunter Folie) leuchtet auf! Darunter: die Schatzkiste.",dauer:5,typ:"finale",hint:"LED-Teelicht in Cellophan-Folie = leuchtender Kristall."}],gross:[{name:"Verschlüsselte Sternenkarte",desc:"Eine Karte mit Symbolen statt Ortsnamen. Übersetzungstabelle (Stern=A, Mond=B, Herz=C) liegt bereit. Die Nachricht verrät den nächsten Ort.",dauer:10,typ:"rätseln",hint:"Symbole erfinden, Tabelle ausdrucken. 5–8 Wörter verschlüsseln."},{name:"Einhorn-Triathlon",desc:"3 Disziplinen: Hufeisenwerfen (Ringe auf Stab), Hindernis-Galopp (Slalom mit Horn), Regenbogen-Staffel (7 bunte Bälle der Reihe nach einsammeln).",dauer:12,typ:"action",hint:"Ringe + Stab, Partyhüte + Pylonen, 7 bunte Bälle in Eimer."},{name:"Regenbogen-Experiment",desc:"Naturwissenschaft trifft Magie! Milch + Lebensmittelfarbe + Spülmittel = explodierende Regenbogen-Muster. Jedes Kind macht sein eigenes.",dauer:10,typ:"basteln",hint:"Flache Teller, Vollmilch, Lebensmittelfarbe (3 Farben), Spülmittel + Wattestäbchen."},{name:"Kristall-Code knacken",desc:"An jeder Station gab es eine Zahl. Alle Zahlen zusammen = Code für das magische Zahlenschloss der Schatztruhe.",dauer:5,typ:"rätseln",hint:"Pro Station eine gut sichtbare Zahl. 3-stelliger Code."},{name:"Aufnahme ins Einhorn-Reich",desc:"Code eingeben, Schatztruhe öffnen! Feierliche Aufnahme mit Urkunde + Einhorn-Schatz für alle.",dauer:5,typ:"finale",hint:"Urkunde 'Offizielle Einhorn-Hüterin'. Zahlenschloss kaufen (3€)."}]},material:{klein:["Tonpapier in 7 Regenbogenfarben","Partyhüte + Alufolie + Haarreife + Krepppapier","Pappringe + Stock im Eimer","Große Papierbögen + Wasserfarben","Einhorn-Kuscheltier + Glitzer-Schatzkiste"],mittel:["Weißer Wachsstift + Wasserfarben + Pinsel","Partyhüte + Pylonen","Glassteine + Alufolie + Taschenlampen + dunkler Raum","7 bunte Umschläge + Buchstaben","LED-Teelicht + bunte Folie + Schatzkiste"],gross:["Symbol-Alphabet + verschlüsselte Karte","Ringe + Stab + Partyhüte + bunte Bälle","Milch + Lebensmittelfarbe + Spülmittel + flache Teller","Zahlen an Stationen","Zahlenschloss + Urkunde + Schatztruhe"]},schatz:["Mini-Einhorn-Figuren","Regenbogen-Haargummis","Glitzer-Tattoos","Einhorn-Sticker","Bunte Glassteine"]},{id:"feuerwehr",name:"Feuerwehr-Rettungsmission",emoji:"\u{1F692}",color:"#D32F2F",intro:{klein:"Oh nein, im Spielzeugland brennt es! {name}, zieht eure Feuerwehrhelme an und löscht alle Feuer!",mittel:"Notruf in der Feuerwache! {name}, ein geheimnisvolles Feuer bedroht die Stadt. Euer Team muss 5 Einsätze meistern, um den Brandstifter zu finden!",gross:"Alarm in der Zentrale: Mehrere Brandherde in der Stadt! {name}, euer Löschzug muss unter Zeitdruck 5 Einsatzorte abarbeiten, Beweise sichern und den Fall lösen."},stations:{klein:[{name:"Feuerwehrhelm basteln",desc:"Aus rotem Tonpapier und einem Pappteller wird ein Feuerwehrhelm gebastelt. Jedes Kind bekommt eine Nummer drauf.",dauer:10,typ:"basteln",hint:"Rotes Tonpapier, Pappteller, Kleber, Marker für Nummern. Vorlage vorzeichnen."},{name:"Feuer löschen!",desc:"'Flammen' (rote/orange Pappkegel) stehen auf dem Boden. Mit nassen Schwämmen umwerfen = Feuer gelöscht!",dauer:8,typ:"action",hint:"Rote Becher oder Kegel als Flammen. Nasse Schwämme, Eimer mit Wasser."},{name:"Rettungseinsatz",desc:"Kuscheltiere sind in 'brennenden Häusern' (unter Decken/hinter Kissen) eingesperrt. Jedes Kind rettet ein Tier und bringt es ins Krankenhaus (Decke).",dauer:8,typ:"suchen",hint:"5–8 Kuscheltiere verstecken. Nicht zu schwer!"},{name:"Tatü-Tata-Tanz",desc:"Musik an = tanzen! Wenn die Sirene ertönt (Trillerpfeife) = alle auf den Boden legen! Wer zu langsam ist, scheidet aus.",dauer:8,typ:"action",hint:"Trillerpfeife oder Sirenen-Sound vom Handy. Laut und lustig!"},{name:"Große Belohnung!",desc:"Alle Feuer gelöscht! Feuerwehrhauptmann (Bild/Puppe) überreicht die Feuerwehr-Schatzkiste + Urkunde 'Junior-Feuerwehr'.",dauer:5,typ:"finale",hint:"Schatzkiste rot anmalen. Urkunden vordrucken."}],mittel:[{name:"Notruf entschlüsseln",desc:"Ein Notruf kam rein — aber verschlüsselt! Die Buchstaben sind vertauscht (Anagramm). Kinder lösen das Wort-Rätsel und finden den ersten Einsatzort.",dauer:8,typ:"rätseln",hint:"Einfaches Anagramm: UEREF → FEUER. Buchstaben auf Karten."},{name:"Lösch-Staffel",desc:"Zwei Teams! Wasser mit Becher von Eimer A nach Eimer B transportieren — ohne zu verschütten! Welches Team füllt schneller?",dauer:10,typ:"action",hint:"2 große Eimer + kleine Becher. Handtücher für Spritzer!"},{name:"Hindernis-Training",desc:"Feuerwehr-Parcours: unter Seilen durchrobben (Rauch!), über Kissen klettern (Trümmer!), Ball in Eimer werfen (Wasserstrahl!).",dauer:10,typ:"action",hint:"Seile, Kissen, Bälle, Eimer. Parcours vorher aufbauen."},{name:"Brandursache finden",desc:"Am 'Tatort' liegen 5 Hinweise (Streichholz, Kabel, Zeitung, Kerze, Lupe). Kinder kombinieren: Welcher Hinweis passt zum Brand?",dauer:8,typ:"rätseln",hint:"Gegenstände sammeln/basteln. Lösung: die kaputte Kerze."},{name:"Fall gelöst!",desc:"Der Brandstifter ist entlarvt (die umgefallene Kerze!). Feuerwehr-Urkunde + Schatzkiste für das ganze Team.",dauer:5,typ:"finale",hint:"Urkunde drucken: 'Feuerwehr-Ermittler*in'. Medaillen aus Pappe."}],gross:[{name:"Verschlüsselter Funkspruch",desc:"Eine Nachricht in Morsecode. Übersetzungstabelle liegt bereit. Die Nachricht enthält den ersten Einsatzort.",dauer:10,typ:"rätseln",hint:"Kurze Nachricht in Morsecode. Tabelle ausdrucken."},{name:"Rettungstraining",desc:"3 Stationen: Seil-Klettern (waagerecht), Verletzte transportieren (Kuscheltier auf Trage aus Stöcken + Decke), Zielwerfen mit Wasserspritze.",dauer:12,typ:"action",hint:"Seil am Boden oder zwischen Bäumen, Stöcke + Decke als Trage, Wasserspritze + Zielscheibe."},{name:"Erste-Hilfe-Quiz",desc:"15 Fragen zu Brandschutz und Erster Hilfe. Teams buzzern. Pro richtige Antwort ein Code-Teil für die letzte Station.",dauer:10,typ:"rätseln",hint:"Fragen vorher recherchieren: Notrufnummer, Verhalten bei Brand, stabile Seitenlage."},{name:"Brandermittlung",desc:"UV-Stift-Hinweise an 5 Orten im Raum. Mit UV-Lampe finden und zusammensetzen = der Brandort + Ursache.",dauer:10,typ:"suchen",hint:"UV-Stift + UV-Lampe. Hinweise an Wänden/Möbeln."},{name:"Einsatz abgeschlossen!",desc:"Alle Codes zusammen = Kombination fürs Zahlenschloss der Einsatz-Truhe. Mission erfolgreich!",dauer:5,typ:"finale",hint:"3-stelliges Zahlenschloss. Pro Station eine Ziffer."}]},material:{klein:["Rotes Tonpapier + Pappteller + Marker","Rote Becher/Kegel + nasse Schwämme + Eimer","5–8 Kuscheltiere + Decken","Trillerpfeife oder Sirenen-Sound + Musikbox","Rote Schatzkiste + Junior-Feuerwehr-Urkunde"],mittel:["Buchstaben-Karten für Anagramm","2 Eimer + Becher + Handtücher","Seile + Kissen + Bälle + Eimer (Parcours)","5 Hinweis-Gegenstände (Streichholz, Kabel etc.)","Urkunde + Pappe-Medaillen + Schatzkiste"],gross:["Morsecode-Tabelle + verschlüsselte Nachricht","Seil + Stöcke + Decke + Wasserspritze + Zielscheibe","15 Quiz-Fragen + Küchenglöckchen","UV-Stift + UV-Lampe + 5 versteckte Hinweise","Zahlenschloss + Einsatz-Truhe + Schatz"]},schatz:["Mini-Feuerwehrautos","Feuerwehr-Sticker","Feuerwehr-Abzeichen (Pappe)","Trillerpfeifen","Gummibärchen-Tüten"]}];
 
-var SZ_SHOP_ITEMS = {piraten:[{name:"Schatztruhe (Holz, klein)",cat:"pflicht",url:"https://www.amazon.de/s?k=schatztruhe+holz+kinder&tag=machsleicht-21"},{name:"Goldm\xFCnzen 100 Stk.",cat:"pflicht",url:"https://www.amazon.de/s?k=goldm%C3%BCnzen+piraten+kinder&tag=machsleicht-21"},{name:"Zahlenschloss 3-stellig",cat:"sinnvoll",url:"https://www.amazon.de/s?k=zahlenschloss+3+stellig&tag=machsleicht-21"},{name:"Piraten-Augenklappen 12 Stk.",cat:"sinnvoll",url:"https://www.amazon.de/s?k=piraten+augenklappen+kinder&tag=machsleicht-21"},{name:"Fernrohr Kinder",cat:"sinnvoll",url:"https://www.amazon.de/s?k=fernrohr+kinder+piraten&tag=machsleicht-21"},{name:"Klopapierrollen / Zeitungspapier",cat:"pflicht",url:null}],dschungel:[{name:"Tierfiguren-Set 12 Stk.",cat:"pflicht",url:"https://www.amazon.de/s?k=tierfiguren+set+kinder+dschungel&tag=machsleicht-21"},{name:"Lupe Kinder",cat:"sinnvoll",url:"https://www.amazon.de/s?k=lupe+kinder&tag=machsleicht-21"},{name:"Fernglas Kinder",cat:"sinnvoll",url:"https://www.amazon.de/s?k=fernglas+kinder&tag=machsleicht-21"},{name:"Seil 5m",cat:"pflicht",url:"https://www.amazon.de/s?k=seil+kinder+parcours&tag=machsleicht-21"},{name:"Matte / Kissen",cat:"pflicht",url:null}],weltraum:[{name:"Glow-in-the-Dark Sterne",cat:"sinnvoll",url:"https://www.amazon.de/s?k=leuchtsterne+kinder+zimmer&tag=machsleicht-21"},{name:"Alien-Schleim Set",cat:"pflicht",url:"https://www.amazon.de/s?k=schleim+set+kinder+glitzer&tag=machsleicht-21"},{name:"Zahlenschloss 3-stellig",cat:"sinnvoll",url:"https://www.amazon.de/s?k=zahlenschloss+3+stellig&tag=machsleicht-21"},{name:"Styroporb\xE4lle (Planeten)",cat:"pflicht",url:"https://www.amazon.de/s?k=styroporkugeln+set+basteln&tag=machsleicht-21"},{name:"Taschenlampe / UV-Lampe",cat:"sinnvoll",url:"https://www.amazon.de/s?k=uv+taschenlampe+kinder&tag=machsleicht-21"}],detektiv:[{name:"Fingerabdruck-Set Kinder",cat:"pflicht",url:"https://www.amazon.de/s?k=fingerabdruck+set+kinder+detektiv&tag=machsleicht-21"},{name:"Lupe Kinder",cat:"pflicht",url:"https://www.amazon.de/s?k=lupe+kinder+detektiv&tag=machsleicht-21"},{name:"Geheimstift UV",cat:"sinnvoll",url:"https://www.amazon.de/s?k=geheimstift+uv+kinder&tag=machsleicht-21"},{name:"Notizbuch klein",cat:"pflicht",url:"https://www.amazon.de/s?k=notizbuch+klein+kinder&tag=machsleicht-21"},{name:"Zitronensaft / Wattest\xE4bchen",cat:"pflicht",url:null}],dino:[{name:"Dino-Ausgrabungsset",cat:"pflicht",url:"https://www.amazon.de/s?k=dino+ausgrabungsset+kinder&tag=machsleicht-21"},{name:"Vulkan-Experiment Set",cat:"sinnvoll",url:"https://www.amazon.de/s?k=vulkan+experiment+kinder&tag=machsleicht-21"},{name:"Dino-Figuren Set",cat:"pflicht",url:"https://www.amazon.de/s?k=dinosaurier+figuren+set+kinder&tag=machsleicht-21"},{name:"Pinsel Set (Ausgrabung)",cat:"pflicht",url:"https://www.amazon.de/s?k=pinsel+set+kinder+basteln&tag=machsleicht-21"},{name:"Sand / Salzteig",cat:"pflicht",url:null}],feen:[{name:"Glitzer-Set",cat:"pflicht",url:"https://www.amazon.de/s?k=glitzer+set+kinder+basteln&tag=machsleicht-21"},{name:"Zauberstab-Bastelset",cat:"pflicht",url:"https://www.amazon.de/s?k=zauberstab+basteln+kinder&tag=machsleicht-21"},{name:"Perlen Armb\xE4nder Set",cat:"sinnvoll",url:"https://www.amazon.de/s?k=perlen+armband+set+kinder&tag=machsleicht-21"},{name:"Lebensmittelfarbe",cat:"sinnvoll",url:"https://www.amazon.de/s?k=lebensmittelfarbe+set&tag=machsleicht-21"},{name:"Naturmaterialien (St\xF6cke, Bl\xE4tter)",cat:"pflicht",url:null}],safari:[{name:"Tierfiguren-Set 12 Stk.",cat:"pflicht",url:"https://www.amazon.de/s?k=tierfiguren+set+kinder+safari&tag=machsleicht-21"},{name:"Fernglas Kinder",cat:"sinnvoll",url:"https://www.amazon.de/s?k=fernglas+kinder&tag=machsleicht-21"},{name:"Lupe Kinder",cat:"sinnvoll",url:"https://www.amazon.de/s?k=lupe+kinder&tag=machsleicht-21"},{name:"Zahlenschloss 3-stellig",cat:"sinnvoll",url:"https://www.amazon.de/s?k=zahlenschloss+3+stellig&tag=machsleicht-21"},{name:"Klopapierrollen / Stifte",cat:"pflicht",url:null}],einhorn:[{name:"Glitzer-Set Kinder",cat:"pflicht",url:"https://www.amazon.de/s?k=glitzer+set+kinder+basteln&tag=machsleicht-21"},{name:"Einhorn-Figuren Set",cat:"sinnvoll",url:"https://www.amazon.de/s?k=einhorn+figuren+set+kinder&tag=machsleicht-21"},{name:"Schleim-Set Glitzer",cat:"sinnvoll",url:"https://www.amazon.de/s?k=schleim+set+kinder+glitzer&tag=machsleicht-21"},{name:"Zahlenschloss 3-stellig",cat:"sinnvoll",url:"https://www.amazon.de/s?k=zahlenschloss+3+stellig&tag=machsleicht-21"},{name:"Holzstäbe + Bänder (Zauberstab)",cat:"pflicht",url:null}],feuerwehr:[{name:"Feuerwehrhelme Kinder 8 Stk.",cat:"sinnvoll",url:"https://www.amazon.de/s?k=feuerwehrhelm+kinder+party&tag=machsleicht-21"},{name:"Mini-Feuerwehrautos 8 Stk.",cat:"pflicht",url:"https://www.amazon.de/s?k=mini+feuerwehrauto+kinder+set&tag=machsleicht-21"},{name:"UV-Stift + UV-Lampe",cat:"sinnvoll",url:"https://www.amazon.de/s?k=uv+stift+uv+lampe+kinder&tag=machsleicht-21"},{name:"Zahlenschloss 3-stellig",cat:"sinnvoll",url:"https://www.amazon.de/s?k=zahlenschloss+3+stellig&tag=machsleicht-21"},{name:"Rotes Tonpapier + Schwämme",cat:"pflicht",url:null}]};
+var SZ_SHOP_ITEMS = {piraten:[{name:"Schatztruhe (Holz, klein)",cat:"pflicht",url:"https://www.amazon.de/s?k=schatztruhe+holz+kinder&tag=machsleicht21-21"},{name:"Goldm\xFCnzen 100 Stk.",cat:"pflicht",url:"https://www.amazon.de/s?k=goldm%C3%BCnzen+piraten+kinder&tag=machsleicht21-21"},{name:"Zahlenschloss 3-stellig",cat:"sinnvoll",url:"https://www.amazon.de/s?k=zahlenschloss+3+stellig&tag=machsleicht21-21"},{name:"Piraten-Augenklappen 12 Stk.",cat:"sinnvoll",url:"https://www.amazon.de/s?k=piraten+augenklappen+kinder&tag=machsleicht21-21"},{name:"Fernrohr Kinder",cat:"sinnvoll",url:"https://www.amazon.de/s?k=fernrohr+kinder+piraten&tag=machsleicht21-21"},{name:"Klopapierrollen / Zeitungspapier",cat:"pflicht",url:null}],dschungel:[{name:"Tierfiguren-Set 12 Stk.",cat:"pflicht",url:"https://www.amazon.de/s?k=tierfiguren+set+kinder+dschungel&tag=machsleicht21-21"},{name:"Lupe Kinder",cat:"sinnvoll",url:"https://www.amazon.de/s?k=lupe+kinder&tag=machsleicht21-21"},{name:"Fernglas Kinder",cat:"sinnvoll",url:"https://www.amazon.de/s?k=fernglas+kinder&tag=machsleicht21-21"},{name:"Seil 5m",cat:"pflicht",url:"https://www.amazon.de/s?k=seil+kinder+parcours&tag=machsleicht21-21"},{name:"Matte / Kissen",cat:"pflicht",url:null}],weltraum:[{name:"Glow-in-the-Dark Sterne",cat:"sinnvoll",url:"https://www.amazon.de/s?k=leuchtsterne+kinder+zimmer&tag=machsleicht21-21"},{name:"Alien-Schleim Set",cat:"pflicht",url:"https://www.amazon.de/s?k=schleim+set+kinder+glitzer&tag=machsleicht21-21"},{name:"Zahlenschloss 3-stellig",cat:"sinnvoll",url:"https://www.amazon.de/s?k=zahlenschloss+3+stellig&tag=machsleicht21-21"},{name:"Styroporb\xE4lle (Planeten)",cat:"pflicht",url:"https://www.amazon.de/s?k=styroporkugeln+set+basteln&tag=machsleicht21-21"},{name:"Taschenlampe / UV-Lampe",cat:"sinnvoll",url:"https://www.amazon.de/s?k=uv+taschenlampe+kinder&tag=machsleicht21-21"}],detektiv:[{name:"Fingerabdruck-Set Kinder",cat:"pflicht",url:"https://www.amazon.de/s?k=fingerabdruck+set+kinder+detektiv&tag=machsleicht21-21"},{name:"Lupe Kinder",cat:"pflicht",url:"https://www.amazon.de/s?k=lupe+kinder+detektiv&tag=machsleicht21-21"},{name:"Geheimstift UV",cat:"sinnvoll",url:"https://www.amazon.de/s?k=geheimstift+uv+kinder&tag=machsleicht21-21"},{name:"Notizbuch klein",cat:"pflicht",url:"https://www.amazon.de/s?k=notizbuch+klein+kinder&tag=machsleicht21-21"},{name:"Zitronensaft / Wattest\xE4bchen",cat:"pflicht",url:null}],dino:[{name:"Dino-Ausgrabungsset",cat:"pflicht",url:"https://www.amazon.de/s?k=dino+ausgrabungsset+kinder&tag=machsleicht21-21"},{name:"Vulkan-Experiment Set",cat:"sinnvoll",url:"https://www.amazon.de/s?k=vulkan+experiment+kinder&tag=machsleicht21-21"},{name:"Dino-Figuren Set",cat:"pflicht",url:"https://www.amazon.de/s?k=dinosaurier+figuren+set+kinder&tag=machsleicht21-21"},{name:"Pinsel Set (Ausgrabung)",cat:"pflicht",url:"https://www.amazon.de/s?k=pinsel+set+kinder+basteln&tag=machsleicht21-21"},{name:"Sand / Salzteig",cat:"pflicht",url:null}],feen:[{name:"Glitzer-Set",cat:"pflicht",url:"https://www.amazon.de/s?k=glitzer+set+kinder+basteln&tag=machsleicht21-21"},{name:"Zauberstab-Bastelset",cat:"pflicht",url:"https://www.amazon.de/s?k=zauberstab+basteln+kinder&tag=machsleicht21-21"},{name:"Perlen Armb\xE4nder Set",cat:"sinnvoll",url:"https://www.amazon.de/s?k=perlen+armband+set+kinder&tag=machsleicht21-21"},{name:"Lebensmittelfarbe",cat:"sinnvoll",url:"https://www.amazon.de/s?k=lebensmittelfarbe+set&tag=machsleicht21-21"},{name:"Naturmaterialien (St\xF6cke, Bl\xE4tter)",cat:"pflicht",url:null}],safari:[{name:"Tierfiguren-Set 12 Stk.",cat:"pflicht",url:"https://www.amazon.de/s?k=tierfiguren+set+kinder+safari&tag=machsleicht21-21"},{name:"Fernglas Kinder",cat:"sinnvoll",url:"https://www.amazon.de/s?k=fernglas+kinder&tag=machsleicht21-21"},{name:"Lupe Kinder",cat:"sinnvoll",url:"https://www.amazon.de/s?k=lupe+kinder&tag=machsleicht21-21"},{name:"Zahlenschloss 3-stellig",cat:"sinnvoll",url:"https://www.amazon.de/s?k=zahlenschloss+3+stellig&tag=machsleicht21-21"},{name:"Klopapierrollen / Stifte",cat:"pflicht",url:null}],einhorn:[{name:"Glitzer-Set Kinder",cat:"pflicht",url:"https://www.amazon.de/s?k=glitzer+set+kinder+basteln&tag=machsleicht21-21"},{name:"Einhorn-Figuren Set",cat:"sinnvoll",url:"https://www.amazon.de/s?k=einhorn+figuren+set+kinder&tag=machsleicht21-21"},{name:"Schleim-Set Glitzer",cat:"sinnvoll",url:"https://www.amazon.de/s?k=schleim+set+kinder+glitzer&tag=machsleicht21-21"},{name:"Zahlenschloss 3-stellig",cat:"sinnvoll",url:"https://www.amazon.de/s?k=zahlenschloss+3+stellig&tag=machsleicht21-21"},{name:"Holzstäbe + Bänder (Zauberstab)",cat:"pflicht",url:null}],feuerwehr:[{name:"Feuerwehrhelme Kinder 8 Stk.",cat:"sinnvoll",url:"https://www.amazon.de/s?k=feuerwehrhelm+kinder+party&tag=machsleicht21-21"},{name:"Mini-Feuerwehrautos 8 Stk.",cat:"pflicht",url:"https://www.amazon.de/s?k=mini+feuerwehrauto+kinder+set&tag=machsleicht21-21"},{name:"UV-Stift + UV-Lampe",cat:"sinnvoll",url:"https://www.amazon.de/s?k=uv+stift+uv+lampe+kinder&tag=machsleicht21-21"},{name:"Zahlenschloss 3-stellig",cat:"sinnvoll",url:"https://www.amazon.de/s?k=zahlenschloss+3+stellig&tag=machsleicht21-21"},{name:"Rotes Tonpapier + Schwämme",cat:"pflicht",url:null}]};
 
-var SZ_SCHATZ_LINKS = {Goldm\u00FCnzen:"https://www.amazon.de/s?k=goldm%C3%BCnzen+piraten+kinder&tag=machsleicht-21","Mini-Kompass":"https://www.amazon.de/s?k=mini+kompass+kinder&tag=machsleicht-21","Dino-Figuren":"https://www.amazon.de/s?k=dinosaurier+figuren+mini&tag=machsleicht-21",Edelsteine:"https://www.amazon.de/s?k=edelsteine+kinder+schatzsuche&tag=machsleicht-21",Seifenblasen:"https://www.amazon.de/s?k=seifenblasen+kinder+set&tag=machsleicht-21",Sticker:"https://www.amazon.de/s?k=sticker+kinder+set&tag=machsleicht-21",Tattoos:"https://www.amazon.de/s?k=kinder+tattoos+set&tag=machsleicht-21",Schl\u00FCsselanh\u00E4nger:"https://www.amazon.de/s?k=schl%C3%BCsselanh%C3%A4nger+kinder&tag=machsleicht-21",Leuchtsterne:"https://www.amazon.de/s?k=leuchtsterne+kinder&tag=machsleicht-21",Lupe:"https://www.amazon.de/s?k=lupe+kinder&tag=machsleicht-21",Fernrohr:"https://www.amazon.de/s?k=fernrohr+kinder&tag=machsleicht-21",Zauberstab:"https://www.amazon.de/s?k=zauberstab+kinder&tag=machsleicht-21",Glitzer:"https://www.amazon.de/s?k=glitzer+set+kinder&tag=machsleicht-21",Fernglas:"https://www.amazon.de/s?k=fernglas+kinder&tag=machsleicht-21"};
+var SZ_SCHATZ_LINKS = {Goldm\u00FCnzen:"https://www.amazon.de/s?k=goldm%C3%BCnzen+piraten+kinder&tag=machsleicht21-21","Mini-Kompass":"https://www.amazon.de/s?k=mini+kompass+kinder&tag=machsleicht21-21","Dino-Figuren":"https://www.amazon.de/s?k=dinosaurier+figuren+mini&tag=machsleicht21-21",Edelsteine:"https://www.amazon.de/s?k=edelsteine+kinder+schatzsuche&tag=machsleicht21-21",Seifenblasen:"https://www.amazon.de/s?k=seifenblasen+kinder+set&tag=machsleicht21-21",Sticker:"https://www.amazon.de/s?k=sticker+kinder+set&tag=machsleicht21-21",Tattoos:"https://www.amazon.de/s?k=kinder+tattoos+set&tag=machsleicht21-21",Schl\u00FCsselanh\u00E4nger:"https://www.amazon.de/s?k=schl%C3%BCsselanh%C3%A4nger+kinder&tag=machsleicht21-21",Leuchtsterne:"https://www.amazon.de/s?k=leuchtsterne+kinder&tag=machsleicht21-21",Lupe:"https://www.amazon.de/s?k=lupe+kinder&tag=machsleicht21-21",Fernrohr:"https://www.amazon.de/s?k=fernrohr+kinder&tag=machsleicht21-21",Zauberstab:"https://www.amazon.de/s?k=zauberstab+kinder&tag=machsleicht21-21",Glitzer:"https://www.amazon.de/s?k=glitzer+set+kinder&tag=machsleicht21-21",Fernglas:"https://www.amazon.de/s?k=fernglas+kinder&tag=machsleicht21-21"};
 
 var SZ_TYP_EMOJI = {suchen:"\u{1F50D}",r\u00E4tseln:"\u{1F9E9}",action:"\u{1F3C3}",basteln:"\u2702\uFE0F",geschick:"\u{1F3AF}",teamwork:"\u{1F91D}",finale:"\u{1F381}"};
 
@@ -118,7 +118,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F981}",
-          url: "https://www.amazon.de/s?k=safari+kindergeburtstag+teller+becher&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=safari+kindergeburtstag+teller+becher&tag=machsleicht21-21",
         },
         {
           name: "Dschungel-Luftballons 15 Stk.",
@@ -126,7 +126,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=dschungel+luftballons+kindergeburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=dschungel+luftballons+kindergeburtstag&tag=machsleicht21-21",
         },
         {
           name: "Tiermasken zum Basteln 12 Stk.",
@@ -134,7 +134,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F3AD}",
-          url: "https://www.amazon.de/s?k=tiermasken+basteln+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=tiermasken+basteln+kinder&tag=machsleicht21-21",
         },
       ],
       dekoMin: [
@@ -144,7 +144,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F33F}",
-          url: "https://www.amazon.de/s?k=gr%C3%BCne+tischdecke+party&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=gr%C3%BCne+tischdecke+party&tag=machsleicht21-21",
         },
         {
           name: "Gr\xFCne Luftballons 10 Stk.",
@@ -152,7 +152,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=gr%C3%BCne+luftballons&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=gr%C3%BCne+luftballons&tag=machsleicht21-21",
         },
       ],
       mitgebsel: [
@@ -162,7 +162,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F992}",
-          url: "https://www.amazon.de/s?k=mini+tierfiguren+set+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=mini+tierfiguren+set+kinder&tag=machsleicht21-21",
         },
         {
           name: "Tier-Tattoos 50 Stk.",
@@ -170,7 +170,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F43E}",
-          url: "https://www.amazon.de/s?k=tier+tattoos+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=tier+tattoos+kinder&tag=machsleicht21-21",
         },
         {
           name: "Papiert\xFCten Safari 12 Stk.",
@@ -178,7 +178,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F6CD}\uFE0F",
-          url: "https://www.amazon.de/s?k=papiert%C3%BCten+safari+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=papiert%C3%BCten+safari+kinder&tag=machsleicht21-21",
         },
       ],
       kuchen: {
@@ -187,21 +187,21 @@ var GENERIC = [
           desc: "Runder Kuchen mit Smarties-Tiergesicht",
           rezept:
             "R\xFChrteig backen (200g Butter, 200g Zucker, 4 Eier, 300g Mehl, 1 Pck. Backpulver \u2014 35 Min. bei 175\xB0C, Springform). Abk\xFChlen. Helle Glasur drauf. Mit Smarties ein Tiergesicht legen (L\xF6we: orange Smarties als M\xE4hne im Kreis, braune als Augen und Nase).",
-          url: "https://www.amazon.de/s?k=tierform+backform+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=tierform+backform+kinder&tag=machsleicht21-21",
         },
         mittel: {
           name: "Zebra-Kuchen",
           desc: "Marmorkuchen mit Wow-Effekt beim Anschneiden",
           rezept:
             "Hellen R\xFChrteig anr\xFChren (250g Butter, 250g Zucker, 4 Eier, 350g Mehl, 200ml Milch). H\xE4lfte in zweite Sch\xFCssel, 3 EL Kakao unterr\xFChren. Abwechselnd je 2 EL hellen und dunklen Teig in die Mitte der Springform geben (nicht r\xFChren!). 45 Min. bei 170\xB0C. Ergibt perfekte Zebra-Streifen.",
-          url: "https://www.amazon.de/s?k=springform+backform+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=springform+backform+kinder&tag=machsleicht21-21",
         },
         gross: {
           name: "Dschungel-Torte",
           desc: "Schoko-Kuchen mit Gummitier-Deko",
           rezept:
             "Schokoladen-R\xFChrteig backen (s. Grundrezept + 50g Kakao). 2 B\xF6den \xFCbereinander mit Schoko-Buttercreme. Au\xDFen mit Schoko-Glasur bestreichen. Gr\xFCne Gummib\xE4rchen und Mini-Tierfiguren als Deko platzieren. Brezelstangen als B\xE4ume reinstecken.",
-          url: "https://www.amazon.de/s?k=safari+tortendeko+kinder+geburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=safari+tortendeko+kinder+geburtstag&tag=machsleicht21-21",
         },
       },
     },
@@ -307,7 +307,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F3F4}\u200D\u2620\uFE0F",
-          url: "https://www.amazon.de/s?k=piraten+kindergeburtstag+teller+becher&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=piraten+kindergeburtstag+teller+becher&tag=machsleicht21-21",
         },
         {
           name: "Totenkopf-Luftballons 15 Stk.",
@@ -315,7 +315,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u2620\uFE0F",
-          url: "https://www.amazon.de/s?k=piraten+luftballons+kindergeburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=piraten+luftballons+kindergeburtstag&tag=machsleicht21-21",
         },
         {
           name: "Piraten-Girlande 2m",
@@ -323,7 +323,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F3F4}",
-          url: "https://www.amazon.de/s?k=piraten+girlande+geburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=piraten+girlande+geburtstag&tag=machsleicht21-21",
         },
       ],
       dekoMin: [
@@ -333,7 +333,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=rote+schwarze+luftballons&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=rote+schwarze+luftballons&tag=machsleicht21-21",
         },
       ],
       mitgebsel: [
@@ -343,7 +343,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1FA99}",
-          url: "https://www.amazon.de/s?k=goldm%C3%BCnzen+piraten+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=goldm%C3%BCnzen+piraten+kinder&tag=machsleicht21-21",
         },
         {
           name: "Piraten-Sticker 100 Stk.",
@@ -351,7 +351,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F3F7}\uFE0F",
-          url: "https://www.amazon.de/s?k=piraten+sticker+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=piraten+sticker+kinder&tag=machsleicht21-21",
         },
         {
           name: "Papiert\xFCten Piraten 12 Stk.",
@@ -359,7 +359,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F6CD}\uFE0F",
-          url: "https://www.amazon.de/s?k=papiert%C3%BCten+piraten+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=papiert%C3%BCten+piraten+kinder&tag=machsleicht21-21",
         },
       ],
       kuchen: {
@@ -368,21 +368,21 @@ var GENERIC = [
           desc: "Schoko-Muffins mit Mini-Piratenflaggen",
           rezept:
             "Schoko-Muffins backen (Fertigmischung oder: 200g Mehl, 150g Zucker, 50g Kakao, 100ml \xD6l, 200ml Milch, 2 Eier, 1 TL Backpulver \u2014 20 Min. bei 180\xB0C). Schoko-Glasur drauf. Piratenflaggen-Picker reinstecken (kaufen oder aus Zahnstochern + Papier basteln).",
-          url: "https://www.amazon.de/s?k=piraten+muffin+deko+picker+kindergeburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=piraten+muffin+deko+picker+kindergeburtstag&tag=machsleicht21-21",
         },
         mittel: {
           name: "Piratenschiff-Kuchen",
           desc: "Kastenkuchen als Schiff mit Papier-Segeln",
           rezept:
             "Kastenkuchen backen (250g Butter, 250g Zucker, 4 Eier, 350g Mehl, 1 Pck. Backpulver \u2014 Kastenform, 50 Min. bei 170\xB0C). Schoko-Glasur als Schiffsrumpf. 2\u20133 Schaschlikspie\xDFe als Masten reinstecken. Segel aus wei\xDFem Papier drankleben. Totenkopf-F\xE4hnchen oben drauf. Goldm\xFCnzen drumherum.",
-          url: "https://www.amazon.de/s?k=piraten+tortendeko+kinder+geburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=piraten+tortendeko+kinder+geburtstag&tag=machsleicht21-21",
         },
         gross: {
           name: "Schatzkisten-Kuchen",
           desc: "Eckiger Kuchen als Schatzkiste mit Goldm\xFCnzen",
           rezept:
             "Kastenform-Kuchen backen und quer halbieren (= Boden + Deckel). Unteren Teil aush\xF6hlen, mit Schoko-Goldm\xFCnzen f\xFCllen. Oberen Teil schr\xE4g als offenen Deckel anlehnen. Alles mit brauner Schoko-Glasur bestreichen. Goldm\xFCnzen rausquellen lassen.",
-          url: "https://www.amazon.de/s?k=goldm%C3%BCnzen+schokolade+piraten+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=goldm%C3%BCnzen+schokolade+piraten+kinder&tag=machsleicht21-21",
         },
       },
     },
@@ -487,7 +487,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F680}",
-          url: "https://www.amazon.de/s?k=weltraum+kindergeburtstag+teller+becher&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=weltraum+kindergeburtstag+teller+becher&tag=machsleicht21-21",
         },
         {
           name: "Planeten-Luftballons 12 Stk.",
@@ -495,7 +495,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1FA90}",
-          url: "https://www.amazon.de/s?k=planeten+luftballons+kindergeburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=planeten+luftballons+kindergeburtstag&tag=machsleicht21-21",
         },
         {
           name: "Sternenhimmel-Lichterkette",
@@ -512,7 +512,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=dunkelblaue+silberne+luftballons&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=dunkelblaue+silberne+luftballons&tag=machsleicht21-21",
         },
         {
           name: "Sterne aus Alufolie (DIY)",
@@ -529,7 +529,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u2B50",
-          url: "https://www.amazon.de/s?k=leucht+sterne+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=leucht+sterne+kinder&tag=machsleicht21-21",
         },
         {
           name: "Weltraum-Tattoos 40 Stk.",
@@ -537,7 +537,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1FA90}",
-          url: "https://www.amazon.de/s?k=weltraum+tattoos+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=weltraum+tattoos+kinder&tag=machsleicht21-21",
         },
         {
           name: "T\xFCten Weltraum 12 Stk.",
@@ -545,7 +545,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F6CD}\uFE0F",
-          url: "https://www.amazon.de/s?k=weltraum+t%C3%BCten+kindergeburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=weltraum+t%C3%BCten+kindergeburtstag&tag=machsleicht21-21",
         },
       ],
       kuchen: {
@@ -554,21 +554,21 @@ var GENERIC = [
           desc: "Muffins mit Eiswaffel-Spitze als Rakete",
           rezept:
             "Muffins backen (Grundrezept oder Fertigmischung). Blaue oder silberne Glasur drauf (Puderzucker + Lebensmittelfarbe). Spitze Eiswaffel (z.B. H\xF6rnchen) umgedreht obendrauf = Raketenspitze. Bunte Streusel als Sterne. Optional: Smarties am Fu\xDF als Flammen.",
-          url: "https://www.amazon.de/s?k=muffin+set+weltraum+kindergeburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=muffin+set+weltraum+kindergeburtstag&tag=machsleicht21-21",
         },
         mittel: {
           name: "Raketen-Kuchen",
           desc: "Kastenform-Kuchen als Rakete mit Smarties-Flammen",
           rezept:
             "Kastenkuchen backen (Grundrezept). Oben spitz zuschneiden (Reste naschen!). Mit silberner/wei\xDFer Glasur \xFCberziehen. Rote, orange und gelbe Smarties am unteren Ende als Flammen. Runde Fenster aus blauen Smarties. Tipp: Alufolie um das untere Ende als D\xFCsen.",
-          url: "https://www.amazon.de/s?k=weltraum+tortendeko+kinder+geburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=weltraum+tortendeko+kinder+geburtstag&tag=machsleicht21-21",
         },
         gross: {
           name: "Galaxie-Kuchen",
           desc: "Dunkler Kuchen mit bunten Galaxie-Wirbeln",
           rezept:
             "Schokoladen-Kuchen backen (Springform). Dunkle Schoko-Glasur drauf. Solange die Glasur noch feucht ist: blaue, lila und wei\xDFe Lebensmittelfarbe in Tropfen aufbringen und mit Zahnstocher zu Spiralen ziehen. Essbare Silber-Sternchen dr\xFCberstreuen. Sieht aus wie eine echte Galaxie!",
-          url: "https://www.amazon.de/s?k=lebensmittelfarbe+set+galaxie+kuchen&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=lebensmittelfarbe+set+galaxie+kuchen&tag=machsleicht21-21",
         },
       },
     },
@@ -673,7 +673,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F995}",
-          url: "https://www.amazon.de/s?k=dino+kindergeburtstag+teller+becher&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=dino+kindergeburtstag+teller+becher&tag=machsleicht21-21",
         },
         {
           name: "Dino-Luftballons 12 Stk.",
@@ -681,7 +681,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=dino+luftballons+kindergeburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=dino+luftballons+kindergeburtstag&tag=machsleicht21-21",
         },
         {
           name: "Dino-Girlande",
@@ -689,7 +689,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F996}",
-          url: "https://www.amazon.de/s?k=dino+girlande+kindergeburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=dino+girlande+kindergeburtstag&tag=machsleicht21-21",
         },
       ],
       dekoMin: [
@@ -699,7 +699,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=gr%C3%BCne+luftballons&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=gr%C3%BCne+luftballons&tag=machsleicht21-21",
         },
         {
           name: "Dino-Figuren als Tischdeko (leihen)",
@@ -716,7 +716,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F995}",
-          url: "https://www.amazon.de/s?k=mini+dino+figuren+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=mini+dino+figuren+kinder&tag=machsleicht21-21",
         },
         {
           name: "Dino-Stempel Set",
@@ -724,7 +724,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F43E}",
-          url: "https://www.amazon.de/s?k=dino+stempel+set+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=dino+stempel+set+kinder&tag=machsleicht21-21",
         },
         {
           name: "Papiert\xFCten Dino 12 Stk.",
@@ -732,7 +732,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F6CD}\uFE0F",
-          url: "https://www.amazon.de/s?k=papiert%C3%BCten+dino+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=papiert%C3%BCten+dino+kinder&tag=machsleicht21-21",
         },
       ],
       kuchen: {
@@ -741,21 +741,21 @@ var GENERIC = [
           desc: "Schoko-Muffins mit Mini-Dino obendrauf",
           rezept:
             "Schoko-Muffins backen (Grundrezept). Gr\xFCne Glasur drauf (Puderzucker + gr\xFCne Lebensmittelfarbe). Kleine Plastik-Dinos obendrauf setzen (vorher kaufen). Alternative: Dino-Kekse ausstechen und auf die Muffins stecken.",
-          url: "https://www.amazon.de/s?k=mini+dino+figuren+tortendeko+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=mini+dino+figuren+tortendeko+kinder&tag=machsleicht21-21",
         },
         mittel: {
           name: "Vulkan-Kuchen",
           desc: "Gugelhupf mit Smarties-Lava und Dino-Figur",
           rezept:
             "Marmor-Gugelhupf backen (Grundrezept). Abk\xFChlen lassen. Mit Schoko-Glasur den oberen Rand bestreichen. Rote, orange und gelbe Smarties als Lava von oben herunterlaufen lassen. Gr\xFCne Gummib\xE4rchen drumherum als B\xE4ume. Dino-Figur obendrauf.",
-          url: "https://www.amazon.de/s?k=dino+tortendeko+kindergeburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=dino+tortendeko+kindergeburtstag&tag=machsleicht21-21",
         },
         gross: {
           name: "Fossilien-Kuchen",
           desc: "Schoko-Kuchen mit wei\xDFen Schoko-Knochen",
           rezept:
             "Schokoladen-Kuchen backen (Springform). Dunkle Schoko-Glasur drauf. Knochen aus wei\xDFer Schokolade: wei\xDFe Schoko schmelzen, in Knochenform auf Backpapier spritzen (oder Knochenform-Silikonform nutzen). Aush\xE4rten lassen. Auf den Kuchen legen. Puderzucker als Sand dar\xFCber st\xE4uben.",
-          url: "https://www.amazon.de/s?k=knochen+silikonform+schokolade+backen&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=knochen+silikonform+schokolade+backen&tag=machsleicht21-21",
         },
       },
     },
@@ -861,7 +861,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F984}",
-          url: "https://www.amazon.de/s?k=einhorn+kindergeburtstag+teller+becher&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=einhorn+kindergeburtstag+teller+becher&tag=machsleicht21-21",
         },
         {
           name: "Regenbogen-Luftballons 15 Stk.",
@@ -869,7 +869,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F308}",
-          url: "https://www.amazon.de/s?k=regenbogen+luftballons+kindergeburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=regenbogen+luftballons+kindergeburtstag&tag=machsleicht21-21",
         },
         {
           name: "Glitzer-Tischdecke",
@@ -877,7 +877,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u2728",
-          url: "https://www.amazon.de/s?k=glitzer+tischdecke+kindergeburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=glitzer+tischdecke+kindergeburtstag&tag=machsleicht21-21",
         },
       ],
       dekoMin: [
@@ -887,7 +887,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=rosa+lila+luftballons&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=rosa+lila+luftballons&tag=machsleicht21-21",
         },
       ],
       mitgebsel: [
@@ -897,7 +897,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F3F7}\uFE0F",
-          url: "https://www.amazon.de/s?k=einhorn+sticker+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=einhorn+sticker+kinder&tag=machsleicht21-21",
         },
         {
           name: "Glitzer-Haargummis 24 Stk.",
@@ -905,7 +905,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F4AB}",
-          url: "https://www.amazon.de/s?k=glitzer+haargummis+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=glitzer+haargummis+kinder&tag=machsleicht21-21",
         },
         {
           name: "Papiert\xFCten Einhorn 12 Stk.",
@@ -913,7 +913,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F6CD}\uFE0F",
-          url: "https://www.amazon.de/s?k=papiert%C3%BCten+einhorn+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=papiert%C3%BCten+einhorn+kinder&tag=machsleicht21-21",
         },
       ],
       kuchen: {
@@ -922,21 +922,21 @@ var GENERIC = [
           desc: "Muffins mit bunten Streuseln und Einhorn-Topper",
           rezept:
             "Vanilla-Muffins backen (Grundrezept). Wei\xDFe Glasur drauf. Mit Regenbogen-Streuseln bestreuen. Einhorn-Papier-Topper reinstecken (kaufen oder aus Pappe basteln). Super einfach, riesen Effekt!",
-          url: "https://www.amazon.de/s?k=einhorn+muffin+topper+regenbogen+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=einhorn+muffin+topper+regenbogen+kinder&tag=machsleicht21-21",
         },
         mittel: {
           name: "Regenbogen-Kuchen",
           desc: "4 bunte Farbschichten \u2014 Wow-Effekt beim Anschneiden!",
           rezept:
             "Hellen R\xFChrteig anr\xFChren (4-fache Menge Grundrezept). In 4 Teile aufteilen: rot, gelb, gr\xFCn, blau einf\xE4rben. Nacheinander in Springform schichten: blau unten, gr\xFCn, gelb, rot oben. 40 Min. bei 170\xB0C. Wei\xDFe Glasur drauf. Beim Anschneiden sieht man alle 4 Farben \u2014 alle sagen Wow!",
-          url: "https://www.amazon.de/s?k=lebensmittelfarbe+set+gel+regenbogen+kuchen&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=lebensmittelfarbe+set+gel+regenbogen+kuchen&tag=machsleicht21-21",
         },
         gross: {
           name: "Einhorn-Torte",
           desc: "Fondant-Horn, Ohren und essbare Glitzer-Deko",
           rezept:
             "2 runde B\xF6den backen, mit Buttercreme f\xFCllen und au\xDFen einstreichen. Fondant-Horn: gelben Fondant zu einer Spirale drehen und an Schaschlikspie\xDF befestigen. Ohren aus Fondant ausschneiden. Oben reinstecken. Essbare Glitzer-Sterne und Bl\xFCten platzieren. Rosa Buttercreme-M\xE4hne mit Spritzt\xFClle.",
-          url: "https://www.amazon.de/s?k=einhorn+fondant+set+tortendeko+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=einhorn+fondant+set+tortendeko+kinder&tag=machsleicht21-21",
         },
       },
     },
@@ -1042,7 +1042,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F692}",
-          url: "https://www.amazon.de/s?k=feuerwehr+kindergeburtstag+teller+becher&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=feuerwehr+kindergeburtstag+teller+becher&tag=machsleicht21-21",
         },
         {
           name: "Rote Luftballons 15 Stk.",
@@ -1050,7 +1050,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=rote+luftballons+kindergeburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=rote+luftballons+kindergeburtstag&tag=machsleicht21-21",
         },
         {
           name: "Absperrband 10m",
@@ -1058,7 +1058,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F6A7}",
-          url: "https://www.amazon.de/s?k=absperrband+kindergeburtstag+feuerwehr&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=absperrband+kindergeburtstag+feuerwehr&tag=machsleicht21-21",
         },
       ],
       dekoMin: [
@@ -1068,7 +1068,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=rote+luftballons&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=rote+luftballons&tag=machsleicht21-21",
         },
       ],
       mitgebsel: [
@@ -1078,7 +1078,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F692}",
-          url: "https://www.amazon.de/s?k=mini+feuerwehrautos+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=mini+feuerwehrautos+kinder&tag=machsleicht21-21",
         },
         {
           name: "Feuerwehr-Sticker 80 Stk.",
@@ -1086,7 +1086,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F3F7}\uFE0F",
-          url: "https://www.amazon.de/s?k=feuerwehr+sticker+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=feuerwehr+sticker+kinder&tag=machsleicht21-21",
         },
         {
           name: "Papiert\xFCten rot 12 Stk.",
@@ -1094,7 +1094,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F6CD}\uFE0F",
-          url: "https://www.amazon.de/s?k=papiert%C3%BCten+rot+kindergeburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=papiert%C3%BCten+rot+kindergeburtstag&tag=machsleicht21-21",
         },
       ],
       kuchen: {
@@ -1103,21 +1103,21 @@ var GENERIC = [
           desc: "Rote Glasur mit Mini-Feuerwehr obendrauf",
           rezept:
             "Vanilla-Muffins backen. Rote Glasur drauf (Puderzucker + rote Lebensmittelfarbe). Mini-Feuerwehrauto-Figur oder Feuerwehr-Picker obendrauf. Gelbe Streusel als Funken. Fertig in 30 Minuten!",
-          url: "https://www.amazon.de/s?k=feuerwehr+muffin+deko+picker+kindergeburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=feuerwehr+muffin+deko+picker+kindergeburtstag&tag=machsleicht21-21",
         },
         mittel: {
           name: "Feuerwehr-Kuchen",
           desc: "Kastenform mit roter Glasur und Gummib\xE4rchen-Leiter",
           rezept:
             "Kastenkuchen backen. Rote Glasur drauf (= Feuerwehrauto). Aus Mikado-Stangen oder Brezelstangen eine Leiter legen. Fenster aus wei\xDFem Fondant oder Oblaten. R\xE4der aus Oreo-Keksen. Blaulicht aus blauem Gummib\xE4rchen obendrauf.",
-          url: "https://www.amazon.de/s?k=feuerwehr+tortendeko+kinder+geburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=feuerwehr+tortendeko+kinder+geburtstag&tag=machsleicht21-21",
         },
         gross: {
           name: "Feuerwache-Torte",
           desc: "Eckiger Kuchen mit Fondant-Toren und Spielzeug-Fahrzeug",
           rezept:
             "Eckigen Kuchen backen (Blechkuchen, quadratisch zuschneiden). Rote Fondant-Verkleidung. Tore aus grauem Fondant ausschneiden und anlegen. Echtes Spielzeug-Feuerwehrauto vor die Tore stellen. 112 aus Fondant-Zahlen obendrauf. Flammen aus Zuckerguss am Rand.",
-          url: "https://www.amazon.de/s?k=fondant+set+rot+tortendeko+geburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=fondant+set+rot+tortendeko+geburtstag&tag=machsleicht21-21",
         },
       },
     },
@@ -1223,7 +1223,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F50D}",
-          url: "https://www.amazon.de/s?k=detektiv+kindergeburtstag+teller+becher&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=detektiv+kindergeburtstag+teller+becher&tag=machsleicht21-21",
         },
         {
           name: "Absperrband 10m",
@@ -1231,7 +1231,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F6A7}",
-          url: "https://www.amazon.de/s?k=absperrband+party+deko&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=absperrband+party+deko&tag=machsleicht21-21",
         },
         {
           name: "Detektiv-Girlande",
@@ -1239,7 +1239,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F389}",
-          url: "https://www.amazon.de/s?k=detektiv+girlande+kindergeburtstag&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=detektiv+girlande+kindergeburtstag&tag=machsleicht21-21",
         },
       ],
       dekoMin: [
@@ -1249,7 +1249,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=schwarze+wei%C3%9Fe+luftballons&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=schwarze+wei%C3%9Fe+luftballons&tag=machsleicht21-21",
         },
         {
           name: "Fußspuren aus Tonpapier (DIY)",
@@ -1265,7 +1265,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F50E}",
-          url: "https://www.amazon.de/s?k=lupen+kinder+set+detektiv&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=lupen+kinder+set+detektiv&tag=machsleicht21-21",
         },
         {
           name: "Detektiv-Sticker 100 Stk.",
@@ -1273,7 +1273,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{2B50}",
-          url: "https://www.amazon.de/s?k=detektiv+sticker+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=detektiv+sticker+kinder&tag=machsleicht21-21",
         },
         {
           name: "Geheim-Stifte UV 8 Stk.",
@@ -1281,7 +1281,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F58A}",
-          url: "https://www.amazon.de/s?k=geheimstift+uv+kinder+set&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=geheimstift+uv+kinder+set&tag=machsleicht21-21",
         },
       ],
       mitgebsel: [
@@ -1291,7 +1291,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F50D}",
-          url: "https://www.amazon.de/s?k=mini+lupen+kinder+set&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=mini+lupen+kinder+set&tag=machsleicht21-21",
         },
         {
           name: "Detektiv-Ausweise (DIY)",
@@ -1307,7 +1307,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F381}",
-          url: "https://www.amazon.de/s?k=papiert%C3%BCten+schwarz+mitgebsel&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=papiert%C3%BCten+schwarz+mitgebsel&tag=machsleicht21-21",
         },
       ],
       kuchen: {
@@ -1316,21 +1316,21 @@ var GENERIC = [
           desc: "Schoko-Muffins mit Lupen-Deko aus Brezelstange + rundem Fruchtgummi",
           rezept:
             "Schoko-Muffins backen (200g Mehl, 30g Kakao, 150g Zucker, 100ml Öl, 2 Eier, 150ml Milch, 1 TL Backpulver — 20 Min. bei 180°C). Schoko-Glasur drauf. Pro Muffin: Brezelstange als Griff + runder Fruchtgummi-Ring oben drauf = Lupe.",
-          url: "https://www.amazon.de/s?k=muffin+backform+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=muffin+backform+kinder&tag=machsleicht21-21",
         },
         mittel: {
           name: "Tatort-Kuchen",
           desc: "Schoko-Kuchen mit Kreideumriss-Deko aus weißer Glasur",
           rezept:
             "Schoko-Rührkuchen backen (Springform, 40 Min. bei 170°C). Dunkle Schoko-Glasur drüber. Mit weißer Zuckerschrift einen 'Kreideumriss' (Männchen-Silhouette) draufmalen. Fußspuren aus weißem Fondant daneben. Gelbes Absperrband aus Fruchtleder um den Rand.",
-          url: "https://www.amazon.de/s?k=fondant+set+kinder+kuchen&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=fondant+set+kinder+kuchen&tag=machsleicht21-21",
         },
         gross: {
           name: "Escape-Kuchen mit Geheimfach",
           desc: "Zweistöckiger Kuchen mit versteckter Süßigkeit in der Mitte",
           rezept:
             "2 Rührteig-Böden backen (je 25 Min.). Aus dem unteren Boden ein Loch schneiden (Glas als Ausstecher). Mit Smarties/Gummibärchen füllen. Oberen Boden drauf = Deckel. Schoko-Glasur über alles. 'TOP SECRET' mit Zuckerschrift drauf. Beim Anschneiden fallen die Süßigkeiten raus — Überraschung!",
-          url: "https://www.amazon.de/s?k=zuckerschrift+set+kuchen+deko&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=zuckerschrift+set+kuchen+deko&tag=machsleicht21-21",
         },
       },
     },
@@ -1436,7 +1436,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F412}",
-          url: "https://www.amazon.de/s?k=dschungel+kindergeburtstag+teller+becher&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=dschungel+kindergeburtstag+teller+becher&tag=machsleicht21-21",
         },
         {
           name: "Tropische Blätter-Girlande",
@@ -1444,7 +1444,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F33F}",
-          url: "https://www.amazon.de/s?k=tropische+bl%C3%A4tter+girlande+deko&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=tropische+bl%C3%A4tter+girlande+deko&tag=machsleicht21-21",
         },
         {
           name: "Dschungel-Luftballons 15 Stk.",
@@ -1452,7 +1452,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=dschungel+luftballons+kinder+party&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=dschungel+luftballons+kinder+party&tag=machsleicht21-21",
         },
       ],
       dekoMin: [
@@ -1462,7 +1462,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F33F}",
-          url: "https://www.amazon.de/s?k=gr%C3%BCne+tischdecke+party&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=gr%C3%BCne+tischdecke+party&tag=machsleicht21-21",
         },
         {
           name: "Grüne+braune Luftballons 10 Stk.",
@@ -1470,7 +1470,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=gr%C3%BCne+braune+luftballons&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=gr%C3%BCne+braune+luftballons&tag=machsleicht21-21",
         },
         {
           name: "Lianen aus Krepppapier (DIY)",
@@ -1478,7 +1478,7 @@ var GENERIC = [
           eco: !0,
           bbl: "diy",
           emoji: "\u{1F331}",
-          url: "https://www.amazon.de/s?k=krepppapier+gr%C3%BCn&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=krepppapier+gr%C3%BCn&tag=machsleicht21-21",
         },
         {
           name: "Affen-Sticker 80 Stk.",
@@ -1486,7 +1486,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F412}",
-          url: "https://www.amazon.de/s?k=affen+sticker+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=affen+sticker+kinder&tag=machsleicht21-21",
         },
         {
           name: "Tierfiguren Dschungel 12 Stk.",
@@ -1494,7 +1494,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F981}",
-          url: "https://www.amazon.de/s?k=dschungel+tierfiguren+set+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=dschungel+tierfiguren+set+kinder&tag=machsleicht21-21",
         },
       ],
       mitgebsel: [
@@ -1504,7 +1504,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F52D}",
-          url: "https://www.amazon.de/s?k=mini+fernglas+kinder+set&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=mini+fernglas+kinder+set&tag=machsleicht21-21",
         },
         {
           name: "Dschungel-Tattoos 50 Stk.",
@@ -1512,7 +1512,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F43E}",
-          url: "https://www.amazon.de/s?k=dschungel+tattoos+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=dschungel+tattoos+kinder&tag=machsleicht21-21",
         },
         {
           name: "Papiertüten grün 12 Stk.",
@@ -1520,7 +1520,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F381}",
-          url: "https://www.amazon.de/s?k=papiert%C3%BCten+gr%C3%BCn+mitgebsel&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=papiert%C3%BCten+gr%C3%BCn+mitgebsel&tag=machsleicht21-21",
         },
       ],
       kuchen: {
@@ -1529,21 +1529,21 @@ var GENERIC = [
           desc: "Schoko-Muffins mit Bananengesicht aus gelber Glasur + Schoko-Augen",
           rezept:
             "Schoko-Muffins backen (Grundrezept). Gelbe Zuckerglasur (Puderzucker + Zitronensaft + gelbe Lebensmittelfarbe) als Gesicht aufspritzen. Schoko-Drops als Augen, halbes Smartie als Nase. Halbe Waffelröllchen seitlich als Ohren reinstecken.",
-          url: "https://www.amazon.de/s?k=muffin+backform+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=muffin+backform+kinder&tag=machsleicht21-21",
         },
         mittel: {
           name: "Schlangen-Kuchen",
           desc: "Langer Kuchen in S-Form — eine bunte Dschungel-Schlange!",
           rezept:
             "Rührkuchen in Kastenform backen. Abkühlen, schräg halbieren und S-förmig zusammensetzen (mit Buttercreme kleben). Grüne Glasur (Puderzucker + Lebensmittelfarbe) drüber. Smarties als Schuppen. Zunge aus rotem Fruchtleder. Augen aus weißem Fondant + Schoko-Drops.",
-          url: "https://www.amazon.de/s?k=lebensmittelfarbe+gr%C3%BCn+backen&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=lebensmittelfarbe+gr%C3%BCn+backen&tag=machsleicht21-21",
         },
         gross: {
           name: "Wasserfall-Kuchen",
           desc: "Schoko-Kuchen mit blauer Glasur als Wasserfall + grüne Deko",
           rezept:
             "Hohen Rührkuchen backen (Kastenform, 45 Min.). Aufrecht hinstellen. Weiße Glasur als Basis. Blaue Zuckerglasur von oben langsam runterlaufen lassen = Wasserfall-Effekt. Grüne Gummibärchen und Brezeln als Dschungel-Pflanzen um den Fuß. Optional: kleinen Teich aus blauem Wackelpudding vor den Kuchen.",
-          url: "https://www.amazon.de/s?k=lebensmittelfarbe+blau+backen&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=lebensmittelfarbe+blau+backen&tag=machsleicht21-21",
         },
       },
     },
@@ -1649,7 +1649,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F9DA}",
-          url: "https://www.amazon.de/s?k=feen+kindergeburtstag+teller+becher&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=feen+kindergeburtstag+teller+becher&tag=machsleicht21-21",
         },
         {
           name: "Schmetterlings-Girlande",
@@ -1657,7 +1657,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F98B}",
-          url: "https://www.amazon.de/s?k=schmetterling+girlande+deko+party&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=schmetterling+girlande+deko+party&tag=machsleicht21-21",
         },
         {
           name: "Blumen-Luftballons 15 Stk.",
@@ -1665,7 +1665,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=blumen+luftballons+kinder+party&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=blumen+luftballons+kinder+party&tag=machsleicht21-21",
         },
       ],
       dekoMin: [
@@ -1675,7 +1675,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{1F388}",
-          url: "https://www.amazon.de/s?k=rosa+lila+luftballons&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=rosa+lila+luftballons&tag=machsleicht21-21",
         },
         {
           name: "Tüll-Tischdecke rosa",
@@ -1683,7 +1683,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{2728}",
-          url: "https://www.amazon.de/s?k=t%C3%BCll+tischdecke+rosa+party&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=t%C3%BCll+tischdecke+rosa+party&tag=machsleicht21-21",
         },
         {
           name: "Papierblumen basteln (DIY)",
@@ -1699,7 +1699,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F98B}",
-          url: "https://www.amazon.de/s?k=schmetterling+sticker+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=schmetterling+sticker+kinder&tag=machsleicht21-21",
         },
         {
           name: "LED-Lichterkette warmweiß 3m",
@@ -1707,7 +1707,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{2728}",
-          url: "https://www.amazon.de/s?k=lichterkette+warmwei%C3%9F+batterie+3m&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=lichterkette+warmwei%C3%9F+batterie+3m&tag=machsleicht21-21",
         },
       ],
       mitgebsel: [
@@ -1717,7 +1717,7 @@ var GENERIC = [
           eco: !1,
           bbl: "buy",
           emoji: "\u{2728}",
-          url: "https://www.amazon.de/s?k=feenstab+kinder+set&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=feenstab+kinder+set&tag=machsleicht21-21",
         },
         {
           name: "Schmetterlings-Tattoos 50 Stk.",
@@ -1725,7 +1725,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F98B}",
-          url: "https://www.amazon.de/s?k=schmetterling+tattoos+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=schmetterling+tattoos+kinder&tag=machsleicht21-21",
         },
         {
           name: "Organza-Beutel lila 12 Stk.",
@@ -1733,7 +1733,7 @@ var GENERIC = [
           eco: !0,
           bbl: "buy",
           emoji: "\u{1F381}",
-          url: "https://www.amazon.de/s?k=organza+beutel+lila+klein&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=organza+beutel+lila+klein&tag=machsleicht21-21",
         },
       ],
       kuchen: {
@@ -1742,21 +1742,21 @@ var GENERIC = [
           desc: "Muffins mit grüner Glasur und Blumen aus Gummibärchen + Smarties",
           rezept:
             "Vanille-Muffins backen (Grundrezept). Grüne Zuckerglasur drauf (= Wiese). Pro Muffin: Gummibärchen-Blüte (5 bunte Bärchen im Kreis, gelbes Smartie in die Mitte). Grüne Esspapier-Streifen als Grashalme.",
-          url: "https://www.amazon.de/s?k=muffin+backform+kinder&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=muffin+backform+kinder&tag=machsleicht21-21",
         },
         mittel: {
           name: "Pilz-Kuchen",
           desc: "Runder Kuchen = Pilzhut, bedeckt mit roten Smarties und weißen Tupfen",
           rezept:
             "Rührkuchen in einer Schüssel backen (= Halbkugel/Pilzhut). Auf einen kleinen zylindrischen Kuchen setzen (= Stiel, aus Kastenform geschnitten). Rote Glasur auf den Hut, weiße Fondant-Punkte drauf = Fliegenpilz! Grünes Esspapier als Gras um den Stiel.",
-          url: "https://www.amazon.de/s?k=fondant+wei%C3%9F+kuchen+deko&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=fondant+wei%C3%9F+kuchen+deko&tag=machsleicht21-21",
         },
         gross: {
           name: "Feenwald-Torte",
           desc: "Zweistöckige grüne Torte mit Pilzen aus Marshmallows + echten Blüten",
           rezept:
             "2 Rührkuchen-Böden backen. Übereinander mit Vanille-Buttercreme. Außen grüne Glasur = Moos. Pilze: Marshmallow auf Brezelstange, Spitze in rote Glasur tauchen + weiße Schoko-Tropfen = Fliegenpilze. Essbare Blüten oder Fondant-Blumen auf die Torte setzen. Puderzucker als Feenstaub drübersieben.",
-          url: "https://www.amazon.de/s?k=essbare+bl%C3%BCten+torte+deko&tag=machsleicht-21",
+          url: "https://www.amazon.de/s?k=essbare+bl%C3%BCten+torte+deko&tag=machsleicht21-21",
         },
       },
     },

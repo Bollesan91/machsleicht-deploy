@@ -283,7 +283,7 @@ Total ~30 Events. Vollständige Liste in [_dev/docs/RELEASE-GATE.md §7](_dev/do
 | Partyseite (Worker + KV) | Cloudflare Workers | `party.machsleicht.de` |
 | Analytics | Umami Cloud | `cloud.umami.is` |
 | Email-Versand | Resend | API `api.resend.com` |
-| Affiliate | Amazon PartnerNet (Tag `machsleicht-21`) + Awin | n/a |
+| Affiliate | Amazon PartnerNet (Tag `machsleicht21-21`, verifiziert per PartnerNet-Screenshot 26.05.2026) + Awin | n/a |
 
 **DNS-Setup für `party.machsleicht.de`:** vermutlich Cloudflare Workers Custom Domain (CNAME). **Nicht im Repo dokumentiert** — wenn Domain-Routing gewechselt wird, muss man im Cloudflare-Dashboard nachschauen.
 

@@ -175,7 +175,7 @@ Der komplette Bogen: **Einladung → Party-Vorbereitung → Partytag → Nachber
 ### Aktueller Stand (16.04.2026, Abend-Session)
 - Traffic: ~80 Besucher/Tag (~2.400/Monat)
 - Revenue: noch praktisch null. Blocker war falsch gesetzter Amazon-Tag.
-- **Heute gefixt (live):** Amazon-Affiliate-Tag `machsleicht-21` auf 796 Vorkommen einheitlich — 566 falsche Tags korrigiert. Damit laufen alle bestehenden Affiliate-Links jetzt erstmals korrekt getaggt. Erste Klicks werden ab jetzt trackbar.
+- **Heute gefixt (live):** Amazon-Affiliate-Tag `machsleicht-21` auf 796 Vorkommen einheitlich — 566 falsche Tags korrigiert. Damit laufen alle bestehenden Affiliate-Links jetzt erstmals korrekt getaggt. Erste Klicks werden ab jetzt trackbar. ⚠️ **KORREKTUR 26.05.2026:** Dieser Fix vom 16.04. ging in die FALSCHE Richtung — korrekte Tracking-ID ist `machsleicht21-21` (per PartnerNet-Screenshot verifiziert), nicht `machsleicht-21`. 2234 Vorkommen am 26.05. zurückgedreht. Affiliate-Klicks zwischen 16.04. und 26.05. waren UNTRACKED.
 - **Heute gefixt (live):** 8 Ratgeber-Seiten mit FAQPage/HowTo-Schema + 2 schwächste Ratgeber-Seiten (torte-einfach, spiele-drinnen) auf 85%+ gehoben inkl. Affiliate-Boxen und Planer-CTAs.
 - **Heute pending:** Cloudflare-Worker-Deploy (Rätsel nach Maß + Partyseite) steht an — nächste Laptop-Session.
 - **Monetarisierungs-Tuning bei 80 Visitors/Tag ist Mikrooptimierung. Der echte Hebel heißt Traffic.**
@@ -258,7 +258,7 @@ Der Planer bleibt kostenlos (Haupt-Funnel). Einzelne Features als Micro-Payments
 **Erwarteter Lift:** Aktuell ~0€ → **50–200€/Monat** ohne neue Seiten. Aufwand: 4–6h Batch-Sprint.
 
 **Affiliate-Link-Status:**
-- Amazon PartnerNet: ✅ live, Tag **`machsleicht-21`** (verifiziert 16.04.2026)
+- Amazon PartnerNet: ✅ live, Tag **`machsleicht21-21`** (per PartnerNet-Screenshot verifiziert 26.05.2026; vorherige Doku-Behauptung `machsleicht-21` war falsch, im Code korrigiert)
 - Awin (Otto, myToys, Thalia, Jako-o, tausendkind, LEGO): ⏳ Anmeldung steht aus
 - Smyths Toys: im Worker vorbereitet
 

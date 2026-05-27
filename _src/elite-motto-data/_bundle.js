@@ -81,7 +81,7 @@ var ELITE_MOTTO_DATA = {
       ],
       "rolesList": [],
       "optOutNote": "Helm aufsetzen geht oft nicht beim ersten Versuch. Helm hinlegen, später nochmal anbieten. Wer nicht will, behält den eigenen Namen und macht trotzdem mit. Aufkleber auf einen Bogen Papier statt auf die Hand kleben, falls Hautempfindlichkeit. Kein Kind wird gedrängt.",
-      "materialNote": "5 Pappkarton-Helme (Bastelladen, ~3 €/Stück), [Feuerwehr-Aufkleber-Set](https://www.amazon.de/s?k=feuerwehr+aufkleber+kinder+sticker&tag=machsleicht-21)* (~5 €), Schuhkarton als Schicht-Box."
+      "materialNote": "5 Pappkarton-Helme (Bastelladen, ~3 €/Stück), [Feuerwehr-Aufkleber-Set](https://www.amazon.de/s?k=feuerwehr+aufkleber+kinder+sticker&tag=machsleicht21-21)* (~5 €), Schuhkarton als Schicht-Box."
     },
     "variants": [
       {
@@ -165,7 +165,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⛑️",
             "label": "Pappkarton-Helme (5 Stk.)",
-            "url": "https://www.amazon.de/s?k=feuerwehr+helm+kinder+pappe&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feuerwehr+helm+kinder+pappe&tag=machsleicht21-21",
             "priceEur": 15,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -174,7 +174,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💫",
             "label": "Feuerwehr-Aufkleber-Set",
-            "url": "https://www.amazon.de/s?k=feuerwehr+aufkleber+kinder+sticker&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feuerwehr+aufkleber+kinder+sticker&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -183,7 +183,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🚒",
             "label": "Mini-Feuerwehrautos (12er-Set)",
-            "url": "https://www.amazon.de/s?k=mini+feuerwehrauto+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+feuerwehrauto+kinder+set&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -192,7 +192,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🚧",
             "label": "Absperrband rot/weiß",
-            "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -391,7 +391,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⛑️",
             "label": "Pappkarton-Helme (5 Stk.)",
-            "url": "https://www.amazon.de/s?k=feuerwehr+helm+kinder+pappe&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feuerwehr+helm+kinder+pappe&tag=machsleicht21-21",
             "priceEur": 15,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -400,7 +400,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💧",
             "label": "Wasserspritzpistolen (klein, 5 Stk.)",
-            "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+klein&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+klein&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -409,7 +409,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💫",
             "label": "Feuerwehr-Aufkleber-Set",
-            "url": "https://www.amazon.de/s?k=feuerwehr+aufkleber+kinder+sticker&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feuerwehr+aufkleber+kinder+sticker&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -418,7 +418,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🚒",
             "label": "Mini-Feuerwehrautos (12er-Set)",
-            "url": "https://www.amazon.de/s?k=mini+feuerwehrauto+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+feuerwehrauto+kinder+set&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -427,7 +427,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🚧",
             "label": "Absperrband rot/weiß",
-            "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -552,7 +552,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 3,
             "loudness": null,
             "effort": "leicht",
-            "material": "5 weiße/unbedruckte [Pappkarton-Helme zum Bemalen](https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht-21)* (~4 €/Stück), dicke Filzstifte (rot, blau, gelb, schwarz), [große Feuerwehr-Aufkleber](https://www.amazon.de/s?k=feuerwehr+sticker+kinder+gross&tag=machsleicht-21)* (~5 €), optional Glitzer-Kleber, alte Tischdecke unterlegen, Eltern-Hilfe!",
+            "material": "5 weiße/unbedruckte [Pappkarton-Helme zum Bemalen](https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht21-21)* (~4 €/Stück), dicke Filzstifte (rot, blau, gelb, schwarz), [große Feuerwehr-Aufkleber](https://www.amazon.de/s?k=feuerwehr+sticker+kinder+gross&tag=machsleicht21-21)* (~5 €), optional Glitzer-Kleber, alte Tischdecke unterlegen, Eltern-Hilfe!",
             "prepText": "Ankunfts-Aktivität: Helme + Stifte liegen schon auf dem Tisch. Jedes Kind nimmt einen Helm und bemalt ihn — rote Streifen, „112\" drauf, Aufkleber von Schlauchsymbolen oder Hand-Signal \"Notruf!\" + leiser Spruch. Glitzer, was sie wollen. Keine Vorgabe, keine Bewertung.\n\nEltern dürfen helfen — gerade bei 3-Jährigen, die Mühe mit Filzstift-Druck haben. Kein Helm muss „gut\" werden — der Wert ist, dass es ihrer ist.",
             "steps": [],
             "safetyRule": null,
@@ -648,7 +648,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⛑️",
             "label": "Pappkarton-Helme zum Bemalen (5 Stk.)",
-            "url": "https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht21-21",
             "priceEur": 20,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -657,7 +657,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💧",
             "label": "Wasserspritzpistolen (klein, 5 Stk.)",
-            "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+klein&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+klein&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -666,7 +666,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💫",
             "label": "Feuerwehr-Aufkleber-Set (große Motive)",
-            "url": "https://www.amazon.de/s?k=feuerwehr+sticker+kinder+gross&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feuerwehr+sticker+kinder+gross&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -675,7 +675,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🚒",
             "label": "Mini-Feuerwehrautos (12er-Set)",
-            "url": "https://www.amazon.de/s?k=mini+feuerwehrauto+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+feuerwehrauto+kinder+set&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -684,7 +684,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🚧",
             "label": "Absperrband rot/weiß",
-            "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -1395,7 +1395,7 @@ var ELITE_MOTTO_DATA = {
         }
       ],
       "optOutNote": "Kein Zwang. Eigener Name behalten — passt. Tattoo verweigern (Hautempfindlichkeit, Abneigung): aufs Dienstausweis-Kärtchen kleben statt auf die Hand. Niemand wird ausgeschlossen, niemand wird gedrängt.",
-      "materialNote": "[Feuerwehr-Tattoo-Set](https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht-21)* (~5 € für 30+ Motive), Schuhkarton oder [Pappkarton-Helm](https://www.amazon.de/s?k=feuerwehr+helm+kinder+pappe&tag=machsleicht-21)* (~3 €), die Namensliste oben einfach ausdrucken und zerschneiden."
+      "materialNote": "[Feuerwehr-Tattoo-Set](https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht21-21)* (~5 € für 30+ Motive), Schuhkarton oder [Pappkarton-Helm](https://www.amazon.de/s?k=feuerwehr+helm+kinder+pappe&tag=machsleicht21-21)* (~3 €), die Namensliste oben einfach ausdrucken und zerschneiden."
     },
     "variants": [
       {
@@ -1478,7 +1478,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💧",
             "label": "Wasserspritzpistolen (6er-Set)",
-            "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+set&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -1487,7 +1487,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💫",
             "label": "Feuerwehr-Tattoo-Set (30+ Motive)",
-            "url": "https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -1496,7 +1496,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🚒",
             "label": "Mini-Feuerwehrautos (12er-Set)",
-            "url": "https://www.amazon.de/s?k=mini+feuerwehrauto+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+feuerwehrauto+kinder+set&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -1505,7 +1505,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🚧",
             "label": "Absperrband rot/weiß (50 m)",
-            "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -1737,7 +1737,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💧",
             "label": "Wasserspritzpistolen (6er-Set)",
-            "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+set&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -1746,7 +1746,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⛑️",
             "label": "Feuerwehr-Helme Plastik (6 Stk.)",
-            "url": "https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht21-21",
             "priceEur": 25,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -1755,7 +1755,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🚒",
             "label": "Mini-Feuerwehrautos (12er-Set)",
-            "url": "https://www.amazon.de/s?k=mini+feuerwehrauto+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+feuerwehrauto+kinder+set&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -1764,7 +1764,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💫",
             "label": "Feuerwehr-Tattoo-Set (30+ Motive)",
-            "url": "https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -1773,7 +1773,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🚧",
             "label": "Absperrband rot/weiß (50 m)",
-            "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -1782,7 +1782,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🩹",
             "label": "Erste-Hilfe-Spielset für Station 4",
-            "url": "https://www.amazon.de/s?k=erste+hilfe+set+kinder+spielzeug&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=erste+hilfe+set+kinder+spielzeug&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -2097,7 +2097,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌫️",
             "label": "Nebelmaschine + Wasserfluid",
-            "url": "https://www.amazon.de/s?k=nebelmaschine+klein+party&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=nebelmaschine+klein+party&tag=machsleicht21-21",
             "priceEur": 30,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -2106,7 +2106,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⛑️",
             "label": "Feuerwehr-Helme Plastik (6 Stk.)",
-            "url": "https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht21-21",
             "priceEur": 25,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -2115,7 +2115,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💧",
             "label": "Wasserspritzpistolen (6er-Set)",
-            "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+set&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -2124,7 +2124,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📌",
             "label": "Crew-Pins (6 Stk.)",
-            "url": "https://www.amazon.de/s?k=feuerwehr+anstecker+pin+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feuerwehr+anstecker+pin+kinder&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -2133,7 +2133,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🚒",
             "label": "Mini-Feuerwehrautos (12er-Set)",
-            "url": "https://www.amazon.de/s?k=mini+feuerwehrauto+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+feuerwehrauto+kinder+set&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -2142,7 +2142,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🚧",
             "label": "Absperrband rot/weiß (50 m)",
-            "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -2151,7 +2151,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💫",
             "label": "Feuerwehr-Tattoo-Set (30+ Motive)",
-            "url": "https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -2160,7 +2160,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🩹",
             "label": "Erste-Hilfe-Spielset für Station 4",
-            "url": "https://www.amazon.de/s?k=erste+hilfe+set+kinder+spielzeug&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=erste+hilfe+set+kinder+spielzeug&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -2169,7 +2169,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔍",
             "label": "Lupe für Brandermittlung",
-            "url": "https://www.amazon.de/s?k=lupe+kinder+detektiv&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=lupe+kinder+detektiv&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -2807,7 +2807,7 @@ var ELITE_MOTTO_DATA = {
       "setupSteps": [
         {
           "title": "Helm-Box vorbereiten",
-          "content": "alter Schuhkarton oder [Plastik-Helm](https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht-21)* (~5 €), darin die 12 Dienstausweise auf festem Papier (laminieren ist Bonus, ~2 € Laminier-Folien)."
+          "content": "alter Schuhkarton oder [Plastik-Helm](https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht21-21)* (~5 €), darin die 12 Dienstausweise auf festem Papier (laminieren ist Bonus, ~2 € Laminier-Folien)."
         },
         {
           "title": "Kind kommt an",
@@ -2889,7 +2889,7 @@ var ELITE_MOTTO_DATA = {
         }
       ],
       "optOutNote": "In dem Alter selten Thema. Falls doch (Hautempfindlichkeit fürs Tattoo, oder „ich will keine Disponentin sein, ich will Brandermittler\"): tauschen ist erlaubt, einmal pro Crew. Eigener Name behalten geht auch. Aber wer eine Funktion zieht, übernimmt sie — das ist die Verbindlichkeit, die das Motto trägt.",
-      "materialNote": "[Feuerwehr-Tattoo-Set](https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht-21)* (~5 €), [Plastik-Helme](https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht-21)* (5–8 €/Stück, sehen wertig aus), die 12 Dienstausweise ausdrucken (kostenlos), Wachen-Tafel-Plakat (~1 €).",
+      "materialNote": "[Feuerwehr-Tattoo-Set](https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht21-21)* (~5 €), [Plastik-Helme](https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht21-21)* (5–8 €/Stück, sehen wertig aus), die 12 Dienstausweise ausdrucken (kostenlos), Wachen-Tafel-Plakat (~1 €).",
       "scoringFormula": "Stationen-Punkte (max 10/Station Team) + Brandermittlung-Bonus (max 15 Team) + Funktion-Bonus (5/Person). Sieger-Trupp: Goldhelm-Sticker. Verlierer: Silber-Schlauch-Sticker. Jedes Kind: Urkunde mit individuellem Funktion-Lob."
     },
     "variants": [
@@ -2999,7 +2999,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⛑️",
             "label": "Plastik-Helme (7 Stk.)",
-            "url": "https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht21-21",
             "priceEur": 30,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -3008,7 +3008,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💧",
             "label": "Wasserspritzpistolen (6er-Set)",
-            "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+set&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -3017,7 +3017,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔍",
             "label": "Lupen für Brandermittlung (3 Stk.)",
-            "url": "https://www.amazon.de/s?k=lupe+kinder+detektiv&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=lupe+kinder+detektiv&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -3026,7 +3026,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💫",
             "label": "Feuerwehr-Tattoo-Set",
-            "url": "https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -3035,7 +3035,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🚧",
             "label": "Absperrband rot/weiß",
-            "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -3237,7 +3237,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⛑️",
             "label": "Plastik-Helme (8 Stk.)",
-            "url": "https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht21-21",
             "priceEur": 40,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -3246,7 +3246,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💧",
             "label": "Wasserspritzpistolen",
-            "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+set&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -3255,7 +3255,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔍",
             "label": "Lupen (4 Stk., reichen für Mitgebsel)",
-            "url": "https://www.amazon.de/s?k=lupe+kinder+detektiv&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=lupe+kinder+detektiv&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -3264,7 +3264,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💫",
             "label": "Feuerwehr-Tattoo-Set",
-            "url": "https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -3273,7 +3273,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🚧",
             "label": "Absperrband",
-            "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -3282,7 +3282,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "👁️",
             "label": "Augenbinden (4 Stk.)",
-            "url": "https://www.amazon.de/s?k=augenbinde+schlafmaske+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=augenbinde+schlafmaske+set&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -3501,7 +3501,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 9,
             "loudness": null,
             "effort": "leicht",
-            "material": "Diplome (DIN A4), [Crew-Pins](https://www.amazon.de/s?k=feuerwehr+anstecker+pin+kinder&tag=machsleicht-21)* (~10 € für 8 Stück), 1 Polaroid pro Kind (vom Schicht-Appell), Plakat „Ehrentafel — Crew-Schicht vom DD.MM.YYYY\", Pinnwand-Nadeln, Bändchen für Diplom-Rollen",
+            "material": "Diplome (DIN A4), [Crew-Pins](https://www.amazon.de/s?k=feuerwehr+anstecker+pin+kinder&tag=machsleicht21-21)* (~10 € für 8 Stück), 1 Polaroid pro Kind (vom Schicht-Appell), Plakat „Ehrentafel — Crew-Schicht vom DD.MM.YYYY\", Pinnwand-Nadeln, Bändchen für Diplom-Rollen",
             "prepText": "Wie Standard, aber mit 3 Erweiterungen:",
             "steps": [],
             "safetyRule": null,
@@ -3520,7 +3520,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⛑️",
             "label": "Plastik-Helme (8 Stk.)",
-            "url": "https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feuerwehr+helm+kinder+plastik&tag=machsleicht21-21",
             "priceEur": 40,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -3529,7 +3529,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📌",
             "label": "Crew-Pins (8 Stk.)",
-            "url": "https://www.amazon.de/s?k=feuerwehr+anstecker+pin+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feuerwehr+anstecker+pin+kinder&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -3538,7 +3538,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💧",
             "label": "Wasserspritzpistolen",
-            "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=wasserspritzpistole+kinder+set&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -3547,7 +3547,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔍",
             "label": "Lupen (8 Stk., reichen für Mitgebsel)",
-            "url": "https://www.amazon.de/s?k=lupe+kinder+detektiv&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=lupe+kinder+detektiv&tag=machsleicht21-21",
             "priceEur": 24,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -3556,7 +3556,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💫",
             "label": "Feuerwehr-Tattoo-Set",
-            "url": "https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feuerwehr+tattoos+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -3565,7 +3565,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🚧",
             "label": "Absperrband",
-            "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=absperrband+rot+weiss&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -3574,7 +3574,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "👁️",
             "label": "Augenbinden (4 Stk.)",
-            "url": "https://www.amazon.de/s?k=augenbinde+schlafmaske+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=augenbinde+schlafmaske+set&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -3583,7 +3583,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔦",
             "label": "UV-Taschenlampe (Brandermittlung)",
-            "url": "https://www.amazon.de/s?k=uv+taschenlampe+klein&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=uv+taschenlampe+klein&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -4300,7 +4300,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:00",
             "title": "✨ Sternenstaub-Beutel & Einhorn-Tattoo",
-            "description": "Kinder kommen an, ziehen ihren Einhorn-Namen. Jedes Kind bekommt ein [Einhorn-Tattoo*](https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht-21) auf den Handrücken. Eltern helfen beim Anpressen. Freies Spielen bis alle da sind."
+            "description": "Kinder kommen an, ziehen ihren Einhorn-Namen. Jedes Kind bekommt ein [Einhorn-Tattoo*](https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht21-21) auf den Handrücken. Eltern helfen beim Anpressen. Freies Spielen bis alle da sind."
           },
           {
             "time": "15:15",
@@ -4369,7 +4369,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦄",
             "label": "Einhorn-Figuren (12 Stk.)",
-            "url": "https://www.amazon.de/s?k=mini+einhorn+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+einhorn+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -4378,7 +4378,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💫",
             "label": "Einhorn-Tattoo-Set (30+ Motive)",
-            "url": "https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -4387,7 +4387,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✨",
             "label": "Glitzer-Kleber (6 Farben)",
-            "url": "https://www.amazon.de/s?k=glitzer+kleber+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=glitzer+kleber+kinder+set&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -4570,7 +4570,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦄",
             "label": "Einhorn-Figuren (12 Stk.)",
-            "url": "https://www.amazon.de/s?k=mini+einhorn+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+einhorn+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -4579,7 +4579,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💫",
             "label": "Einhorn-Tattoo-Set (30+ Motive)",
-            "url": "https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -4588,7 +4588,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✨",
             "label": "Glitzer-Kleber Set",
-            "url": "https://www.amazon.de/s?k=glitzer+kleber+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=glitzer+kleber+kinder+set&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -4597,7 +4597,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✨",
             "label": "Essbarer Glitzer / Zucker-Perlen",
-            "url": "https://www.amazon.de/s?k=essbarer+glitzer+zucker+perlen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=essbarer+glitzer+zucker+perlen&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -4606,7 +4606,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦄",
             "label": "Einhorn-Teller & Becher Set",
-            "url": "https://www.amazon.de/s?k=einhorn+teller+becher+kindergeburtstag&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=einhorn+teller+becher+kindergeburtstag&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -4741,13 +4741,13 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Saft\"10 Trinkpäckchen\n⭐Stern-Kekse15 Stk. (Ausstecher)\n🍓Rosa Obst-TellerErdbeeren, Himbeeren\n🥒Gemüse-SticksGurke, Möhre\n🍿Popcorn200 g\n🍭Gummibärchen1 Tüte (200 g)\n\n💡 Stern-Kekse ohne Backen:\nFertigen Butterkeks-Teig (Kühlregal, ~2 €) ausrollen, mit Stern-Ausstecher ausstechen, 10 Min. backen, rosa Glasur drüber (Puderzucker + 1 Tropfen Lebensmittelfarbe). 15 Kekse in 20 Minuten. Oder: einfach fertige Butterkekse kaufen und mit rosa Glasur bestreichen — schmeckt den Kindern genauso.",
-        "decoration": "🎈 Pastell-Luftballons (rosa/lila/türkis)15 Stk. ~4 €\n🦄 Einhorn-Folienballon1 Stk. ~3 €\n🌈 Regenbogen-Girlande~4 €\n🦄 Einhorn-Pappteller & BecherSet ~6 €\n☁️ Watte-Wolken an der DeckeKostenlos, 15 Min.\n✨ Krepppapier-Regenbogen am Türrahmen~2 €6 Streifen in Regenbogenfarben am Türrahmen\n🔊 Einhorn-Musik leise im HintergrundKostenlosYouTube: „Unicorn Music for Kids\"\n\n🦄 Wow-Bonus: Regenbogen-Tür\n6 Streifen Krepppapier (rot, orange, gelb, grün, blau, lila) oben am Türrahmen befestigen, bis zum Boden hängen lassen. Die Kinder „laufen durch den Regenbogen\" wenn sie reinkommen. Kostet 2 €, dauert 5 Minuten, und die Kinder rasten beim Reinkommen sofort aus. DER erste Eindruck.\n\n🦄 Wow-Bonus: Seifenblasen-Regen beim Finale\nDer Moment, an den sich die Kinder in 3 Jahren noch erinnern: Während des Regenbogen-Zauber-Tanzes eine [Seifenblasenmaschine*](https://www.amazon.de/s?k=seifenblasenmaschine+kinder+batterie&tag=machsleicht-21) (~12 €) anmachen. Die Kinder tanzen mit Zauberstäben, tragen ihre Einhorn-Hörner und Tüll-Röckchen, und plötzlich fliegen hunderte Seifenblasen durch den Raum. 3–5-Jährige rasten komplett aus. DAS wird das Foto des Tages. Funktioniert drinnen und draußen. Batteriebetrieben, aufstellen und vergessen.\n\n✨ Wow-Bonus: Luna als Kuscheltier-Überraschung\nEin [großes Einhorn-Kuscheltier*](https://www.amazon.de/s?k=einhorn+kuscheltier+gro%C3%9F+rosa&tag=machsleicht-21) (~15–20 €) als „Luna\" auf einen Stuhl setzen, mit einer kleinen Krone und einem selbstgeschriebenen Brief: „Liebe Einhörner, bitte helft mir, meinen Sternenstaub wiederzufinden!\" Die Kinder haben ab sofort eine sichtbare Hauptfigur für die ganze Geschichte. Beim Sternenstaub-Finden die Figuren „zu Luna bringen\". Beim Finale Luna in die Mitte stellen. Am Ende bleibt Luna beim Geburtstagskind — als persönliches Geschenk.",
+        "decoration": "🎈 Pastell-Luftballons (rosa/lila/türkis)15 Stk. ~4 €\n🦄 Einhorn-Folienballon1 Stk. ~3 €\n🌈 Regenbogen-Girlande~4 €\n🦄 Einhorn-Pappteller & BecherSet ~6 €\n☁️ Watte-Wolken an der DeckeKostenlos, 15 Min.\n✨ Krepppapier-Regenbogen am Türrahmen~2 €6 Streifen in Regenbogenfarben am Türrahmen\n🔊 Einhorn-Musik leise im HintergrundKostenlosYouTube: „Unicorn Music for Kids\"\n\n🦄 Wow-Bonus: Regenbogen-Tür\n6 Streifen Krepppapier (rot, orange, gelb, grün, blau, lila) oben am Türrahmen befestigen, bis zum Boden hängen lassen. Die Kinder „laufen durch den Regenbogen\" wenn sie reinkommen. Kostet 2 €, dauert 5 Minuten, und die Kinder rasten beim Reinkommen sofort aus. DER erste Eindruck.\n\n🦄 Wow-Bonus: Seifenblasen-Regen beim Finale\nDer Moment, an den sich die Kinder in 3 Jahren noch erinnern: Während des Regenbogen-Zauber-Tanzes eine [Seifenblasenmaschine*](https://www.amazon.de/s?k=seifenblasenmaschine+kinder+batterie&tag=machsleicht21-21) (~12 €) anmachen. Die Kinder tanzen mit Zauberstäben, tragen ihre Einhorn-Hörner und Tüll-Röckchen, und plötzlich fliegen hunderte Seifenblasen durch den Raum. 3–5-Jährige rasten komplett aus. DAS wird das Foto des Tages. Funktioniert drinnen und draußen. Batteriebetrieben, aufstellen und vergessen.\n\n✨ Wow-Bonus: Luna als Kuscheltier-Überraschung\nEin [großes Einhorn-Kuscheltier*](https://www.amazon.de/s?k=einhorn+kuscheltier+gro%C3%9F+rosa&tag=machsleicht21-21) (~15–20 €) als „Luna\" auf einen Stuhl setzen, mit einer kleinen Krone und einem selbstgeschriebenen Brief: „Liebe Einhörner, bitte helft mir, meinen Sternenstaub wiederzufinden!\" Die Kinder haben ab sofort eine sichtbare Hauptfigur für die ganze Geschichte. Beim Sternenstaub-Finden die Figuren „zu Luna bringen\". Beim Finale Luna in die Mitte stellen. Am Ende bleibt Luna beim Geburtstagskind — als persönliches Geschenk.",
         "giveaways": "🦄 1 Einhorn-Figur (selbst gefunden)\n✨ Eigenes Einhorn-Horn (selbst gebastelt)\n🪄 Einhorn-Zauberstab (selbst gebastelt)\n👗 Tüll-Röckchen (dürfen sie anbehalten)\n🖍️ 2 Einhorn-Ausmalbilder\n🍭 1 Tüte Gummibärchen\n\nIn rosa Papiertüte mit Einhorn-Name. Kosten: ~4 € pro Kind (inkl. Tüll-Rock).",
         "shoppingList": [
           {
             "emoji": "🦄",
             "label": "Einhorn-Figuren (12 Stk.)",
-            "url": "https://www.amazon.de/s?k=mini+einhorn+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+einhorn+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -4756,7 +4756,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💫",
             "label": "Einhorn-Tattoo-Set (30+ Motive)",
-            "url": "https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -4765,7 +4765,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✨",
             "label": "Glitzer-Kleber Set",
-            "url": "https://www.amazon.de/s?k=glitzer+kleber+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=glitzer+kleber+kinder+set&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -4774,7 +4774,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "👗",
             "label": "Tüll-Röckchen (5 Stk.)",
-            "url": "https://www.amazon.de/s?k=t%C3%BCll+rock+kinder+rosa+party&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=t%C3%BCll+rock+kinder+rosa+party&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -4792,7 +4792,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎯",
             "label": "Bunte Bälle (50 Stk.)",
-            "url": "https://www.amazon.de/s?k=b%C3%A4llebad+b%C3%A4lle+bunt+50+st%C3%BCck&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=b%C3%A4llebad+b%C3%A4lle+bunt+50+st%C3%BCck&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -4801,7 +4801,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦄",
             "label": "Einhorn-Folienballon",
-            "url": "https://www.amazon.de/s?k=einhorn+folienballon+gro%C3%9F&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=einhorn+folienballon+gro%C3%9F&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -4810,7 +4810,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦄",
             "label": "Einhorn-Teller & Becher Set",
-            "url": "https://www.amazon.de/s?k=einhorn+teller+becher+kindergeburtstag&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=einhorn+teller+becher+kindergeburtstag&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -4819,7 +4819,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✨",
             "label": "Essbarer Glitzer",
-            "url": "https://www.amazon.de/s?k=essbarer+glitzer+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=essbarer+glitzer+kinder&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -4855,7 +4855,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🫧",
             "label": "Seifenblasenmaschine (optional)",
-            "url": "https://www.amazon.de/s?k=seifenblasenmaschine+kinder+batterie&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=seifenblasenmaschine+kinder+batterie&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -4864,7 +4864,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦄",
             "label": "Einhorn-Kuscheltier „Luna\" (optional)",
-            "url": "https://www.amazon.de/s?k=einhorn+kuscheltier+gro%C3%9F+rosa&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=einhorn+kuscheltier+gro%C3%9F+rosa&tag=machsleicht21-21",
             "priceEur": 18,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -5416,7 +5416,7 @@ var ELITE_MOTTO_DATA = {
         }
       ],
       "optOutNote": "Kein Zwang. Wer den eigenen Namen behalten möchte — passt auch. Wer kein Tattoo will (Haut-Empfindlichkeit, persönliche Abneigung): Tattoo auf den Wächter-Pass kleben statt auf die Hand. Niemand wird ausgeschlossen.",
-      "materialNote": "[Einhorn-Tattoo-Set](https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht-21)* (~5 € für 30+ Motive), Stoffbeutel (Stoffrest oder ~2 €), die Namensliste oben einfach ausdrucken und zerschneiden."
+      "materialNote": "[Einhorn-Tattoo-Set](https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht21-21)* (~5 € für 30+ Motive), Stoffbeutel (Stoffrest oder ~2 €), die Namensliste oben einfach ausdrucken und zerschneiden."
     },
     "variants": [
       {
@@ -5499,7 +5499,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦄",
             "label": "Einhorn-Figuren (12 Stk.)",
-            "url": "https://www.amazon.de/s?k=mini+einhorn+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+einhorn+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -5508,7 +5508,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💫",
             "label": "Einhorn-Tattoo-Set (30+ Motive)",
-            "url": "https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -5517,7 +5517,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✨",
             "label": "Essbarer Glitzer / Zucker-Perlen",
-            "url": "https://www.amazon.de/s?k=essbarer+glitzer+zucker+perlen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=essbarer+glitzer+zucker+perlen&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -5591,7 +5591,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:00",
             "title": "Sternenstaub-Beutel & Einhorn-Masken basteln",
-            "description": "Beim Reinkommen zieht jedes Kind seinen Einhorn-Namen aus dem Sternenstaub-Beutel + bekommt ein Einhorn-Tattoo auf den Handrücken (siehe Ritual-Block oben). Danach basteln sie ihre Maske: [Einhorn-Masken zum Ausmalen*](https://www.amazon.de/s?k=einhorn+masken+kinder+ausmalen&tag=machsleicht-21) (~6 €, 10 Stk.) + Gummibänder + Filzstifte in Regenbogenfarben. Fertige Maske aufsetzen → „Luna Mondsilber, du bist bereit für deine erste Prüfung.\""
+            "description": "Beim Reinkommen zieht jedes Kind seinen Einhorn-Namen aus dem Sternenstaub-Beutel + bekommt ein Einhorn-Tattoo auf den Handrücken (siehe Ritual-Block oben). Danach basteln sie ihre Maske: [Einhorn-Masken zum Ausmalen*](https://www.amazon.de/s?k=einhorn+masken+kinder+ausmalen&tag=machsleicht21-21) (~6 €, 10 Stk.) + Gummibänder + Filzstifte in Regenbogenfarben. Fertige Maske aufsetzen → „Luna Mondsilber, du bist bereit für deine erste Prüfung.\""
           },
           {
             "time": "14:30",
@@ -5633,7 +5633,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 5,
             "loudness": "ruhig",
             "effort": "leicht",
-            "material": "[Einhorn-Masken zum Ausmalen*](https://www.amazon.de/s?k=einhorn+masken+kinder+ausmalen&tag=machsleicht-21) (~6 € für 10 Stk.), Gummibänder (meist dabei), Filzstifte in Regenbogenfarben",
+            "material": "[Einhorn-Masken zum Ausmalen*](https://www.amazon.de/s?k=einhorn+masken+kinder+ausmalen&tag=machsleicht21-21) (~6 € für 10 Stk.), Gummibänder (meist dabei), Filzstifte in Regenbogenfarben",
             "prepText": "Perfekte Ankunfts-Aktivität: Masken liegen schon auf dem Tisch, wenn die Kinder reinkommen. Jedes Kind malt seine Maske in Regenbogenfarben an, während auf die anderen gewartet wird. Gummiband dran, aufsetzen — fertig.",
             "steps": [],
             "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen.",
@@ -5728,7 +5728,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦄",
             "label": "Einhorn-Figuren (12 Stk.)",
-            "url": "https://www.amazon.de/s?k=mini+einhorn+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+einhorn+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -5737,7 +5737,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎭",
             "label": "Einhorn-Masken zum Ausmalen",
-            "url": "https://www.amazon.de/s?k=einhorn+masken+kinder+ausmalen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=einhorn+masken+kinder+ausmalen&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -5746,7 +5746,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧼",
             "label": "Glycerin-Seife (500g)",
-            "url": "https://www.amazon.de/s?k=glycerin+seife+gie%C3%9Fen+rohling&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=glycerin+seife+gie%C3%9Fen+rohling&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -5755,7 +5755,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Silikon-Förmchen (Einhorn/Stern)",
-            "url": "https://www.amazon.de/s?k=silikon+f%C3%B6rmchen+einhorn+stern&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=silikon+f%C3%B6rmchen+einhorn+stern&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -5764,7 +5764,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦄",
             "label": "Einhorn-Teller & Becher Set",
-            "url": "https://www.amazon.de/s?k=einhorn+teller+becher+kindergeburtstag&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=einhorn+teller+becher+kindergeburtstag&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -5773,7 +5773,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💫",
             "label": "Einhorn-Tattoo-Set (30+ Motive)",
-            "url": "https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -5959,13 +5959,13 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "food": "🎂Regenbogen-Kuchen1 Gugelhupf + Wunderkerze\n💧„Einhorn-Tränen\"14 Saftpäckchen\n☁️Wolken-Sandwiches12 Stück (Toast mit Wolken-Form)\n🍓Rosa Obst-TellerErdbeeren, Melone, Trauben\n🍿Popcorn300 g (rosa gefärbt)\n⭐Schoko-Sterne1 Netz (Schatz)\n🍭Regenbogen-Gummibärchen1 Tüte (200 g)\n\n💡 Wolken-Sandwiches:\nMit einem Wolken-Ausstecher (oder einfach großer runder Ausstecher) Toast-Scheiben ausstechen. Frischkäse drauf, oben zweite Wolke drüber. Sieht sofort zauberhaft aus, schmeckt den Kindern, und 12 Stück sind in 15 Minuten gemacht.",
-        "decoration": "🦄 Einhorn-Teller & BecherSet ~8 €\n🎈 Pastell-Ballon-Bogen~15 € (30 Stk.)\n🌈 Regenbogen-Girlande~4 €\n☁️ Watte-Wolken an der DeckeKostenlos, 20 Min.\n✨ Glitzer-Tischläufer~3 € Krepppapier\n🪧 „Regenbogen-Akademie\"-SchildKostenlosPappe + Edding + Glitzer, am Eingang\n🔊 Einhorn-MusikKostenlosYouTube: „Unicorn Music for Kids\" leise im Hintergrund\n🦄 Einhörner mit Blumenkränzchen~4 € FigurenSpielzeug-Einhörner mit Mini-Blumenkränzen auf den Tisch\n\n🦄 Wow-Bonus: Aufblasbares Einhorn-Kostüm für Mama oder Papa\nDer absolute Überraschungs-Hit: ein [aufblasbares Einhorn-Kostüm*](https://www.amazon.de/s?k=aufblasbares+einhorn+kost%C3%BCm+erwachsene&tag=machsleicht-21) (~35–50 €). Du öffnest die Tür als riesiges Einhorn — die Kinder rasten aus. Funktioniert als „Luna, die Direktorin der Regenbogen-Akademie\", als Überraschungsgast beim Kuchen oder als „Wächter-Prüferin\" für die Urkundenverleihung. Wird DAS Foto des Tages. Die Kinder erzählen noch Wochen davon.\n\n🌙 Optional: Die Mondlicht-Botschaft (UV-Schwarzlicht-Moment)\nDas Element, das eine Einhorn-Party wirklich magisch macht — wenn du das Drumherum bauen kannst. Mit einer [UV-Taschenlampe*](https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht-21) (~12 €) und einem [UV-Geheimschrift-Stift*](https://www.amazon.de/s?k=uv+geheimschrift+stift+unsichtbar&tag=machsleicht-21) (~7 €) schreibst du vorher eine unsichtbare Botschaft auf weißes Papier — z.B. das Lösungswort der Rätselrallye oder den Versteck-Ort der Sternenstaub-Kiste.\n\nWenn die Kinder an diese Station kommen: Badezimmer oder Flur verdunkeln (Handtuch über das Fenster reicht), UV-Lampe an, Papier drunter — die Buchstaben leuchten plötzlich auf. Die Kinder sind komplett still. Das ist der Moment, an den sie sich in 5 Jahren noch erinnern.\n\nWann einbauen: Als „Prüfung 3b\" zwischen Rätselrallye und Schatzsuche — 5 Min. reichen. Was du brauchst: UV-Lampe, UV-Stift, weißes Papier, verdunkelbarer Raum, etwas Nerven für die Vorbereitung. Warum optional: Nicht jedes Zuhause lässt sich leicht verdunkeln, und die Botschaft will sorgfältig vorbereitet sein. Wenn der Rest der Wow-Variante schon ausreicht, lass es weg — es ist die Kirsche, nicht der Kuchen.",
+        "decoration": "🦄 Einhorn-Teller & BecherSet ~8 €\n🎈 Pastell-Ballon-Bogen~15 € (30 Stk.)\n🌈 Regenbogen-Girlande~4 €\n☁️ Watte-Wolken an der DeckeKostenlos, 20 Min.\n✨ Glitzer-Tischläufer~3 € Krepppapier\n🪧 „Regenbogen-Akademie\"-SchildKostenlosPappe + Edding + Glitzer, am Eingang\n🔊 Einhorn-MusikKostenlosYouTube: „Unicorn Music for Kids\" leise im Hintergrund\n🦄 Einhörner mit Blumenkränzchen~4 € FigurenSpielzeug-Einhörner mit Mini-Blumenkränzen auf den Tisch\n\n🦄 Wow-Bonus: Aufblasbares Einhorn-Kostüm für Mama oder Papa\nDer absolute Überraschungs-Hit: ein [aufblasbares Einhorn-Kostüm*](https://www.amazon.de/s?k=aufblasbares+einhorn+kost%C3%BCm+erwachsene&tag=machsleicht21-21) (~35–50 €). Du öffnest die Tür als riesiges Einhorn — die Kinder rasten aus. Funktioniert als „Luna, die Direktorin der Regenbogen-Akademie\", als Überraschungsgast beim Kuchen oder als „Wächter-Prüferin\" für die Urkundenverleihung. Wird DAS Foto des Tages. Die Kinder erzählen noch Wochen davon.\n\n🌙 Optional: Die Mondlicht-Botschaft (UV-Schwarzlicht-Moment)\nDas Element, das eine Einhorn-Party wirklich magisch macht — wenn du das Drumherum bauen kannst. Mit einer [UV-Taschenlampe*](https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht21-21) (~12 €) und einem [UV-Geheimschrift-Stift*](https://www.amazon.de/s?k=uv+geheimschrift+stift+unsichtbar&tag=machsleicht21-21) (~7 €) schreibst du vorher eine unsichtbare Botschaft auf weißes Papier — z.B. das Lösungswort der Rätselrallye oder den Versteck-Ort der Sternenstaub-Kiste.\n\nWenn die Kinder an diese Station kommen: Badezimmer oder Flur verdunkeln (Handtuch über das Fenster reicht), UV-Lampe an, Papier drunter — die Buchstaben leuchten plötzlich auf. Die Kinder sind komplett still. Das ist der Moment, an den sie sich in 5 Jahren noch erinnern.\n\nWann einbauen: Als „Prüfung 3b\" zwischen Rätselrallye und Schatzsuche — 5 Min. reichen. Was du brauchst: UV-Lampe, UV-Stift, weißes Papier, verdunkelbarer Raum, etwas Nerven für die Vorbereitung. Warum optional: Nicht jedes Zuhause lässt sich leicht verdunkeln, und die Botschaft will sorgfältig vorbereitet sein. Wenn der Rest der Wow-Variante schon ausreicht, lass es weg — es ist die Kirsche, nicht der Kuchen.",
         "giveaways": "🪪 Wächter-Pass (mit Foto und Urkunde)\n🧼 Selbst gegossene Einhorn-Seife\n🦄 Einhorn-Figur aus der Schatzsuche\n💍 Regenbogen-Perlen-Armband (aus der Rätselrallye)\n⭐ Schoko-Sterne\n\nIn rosa Papiertüte (10 Stk. ~1–2 € bei DM/Action) mit „Regenbogen-Akademie · Luna ___\". Kosten: ~4,50 € pro Kind.",
         "shoppingList": [
           {
             "emoji": "🦄",
             "label": "Einhorn-Figuren (12 Stk.)",
-            "url": "https://www.amazon.de/s?k=mini+einhorn+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+einhorn+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -5974,7 +5974,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💫",
             "label": "Einhorn-Tattoo-Set (30+ Motive)",
-            "url": "https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -5983,7 +5983,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎭",
             "label": "Einhorn-Masken zum Ausmalen",
-            "url": "https://www.amazon.de/s?k=einhorn+masken+kinder+ausmalen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=einhorn+masken+kinder+ausmalen&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -5992,7 +5992,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧼",
             "label": "Glycerin-Seife (500g)",
-            "url": "https://www.amazon.de/s?k=glycerin+seife+gie%C3%9Fen+rohling&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=glycerin+seife+gie%C3%9Fen+rohling&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -6001,7 +6001,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Silikon-Förmchen",
-            "url": "https://www.amazon.de/s?k=silikon+f%C3%B6rmchen+einhorn+stern&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=silikon+f%C3%B6rmchen+einhorn+stern&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -6010,7 +6010,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦄",
             "label": "Einhorn-Teller & Becher Set",
-            "url": "https://www.amazon.de/s?k=einhorn+teller+becher+kindergeburtstag&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=einhorn+teller+becher+kindergeburtstag&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -6028,7 +6028,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💍",
             "label": "Regenbogen-Perlen-Armbänder (6 Stk.)",
-            "url": "https://www.amazon.de/s?k=regenbogen+perlen+kinder+armband&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=regenbogen+perlen+kinder+armband&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -6037,7 +6037,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✨",
             "label": "Essbarer Glitzer",
-            "url": "https://www.amazon.de/s?k=essbarer+glitzer+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=essbarer+glitzer+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -6064,7 +6064,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Schoko-Sterne",
-            "url": "https://www.amazon.de/s?k=schokoladen+sterne+goldfolie&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schokoladen+sterne+goldfolie&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -6073,7 +6073,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦄",
             "label": "Einhorn-Kostüm (optional)",
-            "url": "https://www.amazon.de/s?k=aufblasbares+einhorn+kost%C3%BCm+erwachsene&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=aufblasbares+einhorn+kost%C3%BCm+erwachsene&tag=machsleicht21-21",
             "priceEur": 40,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -6082,7 +6082,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌙",
             "label": "UV-Taschenlampe (optional)",
-            "url": "https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -6091,7 +6091,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🖊️",
             "label": "UV-Geheimschrift-Stift (optional)",
-            "url": "https://www.amazon.de/s?k=uv+geheimschrift+stift+unsichtbar&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=uv+geheimschrift+stift+unsichtbar&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -6726,7 +6726,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 8,
             "loudness": "ruhig",
             "effort": "leicht",
-            "material": "[Perlen-Set mit Buchstaben*](https://www.amazon.de/s?k=perlen+set+kinder+buchstaben+armband&tag=machsleicht-21) (~10–12 €, reicht für 8+ Armbänder), Elastikband (0,8 mm, im Set meist dabei), [Einhorn-Charms*](https://www.amazon.de/s?k=einhorn+anh%C3%A4nger+charm+silber&tag=machsleicht-21) (~6 € für 20 Stk.), Schere, Klebeband (zum Fixieren beim Auffädeln)",
+            "material": "[Perlen-Set mit Buchstaben*](https://www.amazon.de/s?k=perlen+set+kinder+buchstaben+armband&tag=machsleicht21-21) (~10–12 €, reicht für 8+ Armbänder), Elastikband (0,8 mm, im Set meist dabei), [Einhorn-Charms*](https://www.amazon.de/s?k=einhorn+anh%C3%A4nger+charm+silber&tag=machsleicht21-21) (~6 € für 20 Stk.), Schere, Klebeband (zum Fixieren beim Auffädeln)",
             "prepText": "Jedes Kind macht sein eigenes Armband: Buchstaben-Perlen für den eigenen Namen oder den Code-Namen, dazwischen bunte Perlen in Regenbogenfarben, am Ende einen Einhorn-Charm dran.\n\nTipp: Elastikband-Ende mit Klebeband am Tisch fixieren, dann rutschen die Perlen nicht runter. Doppelknoten am Ende, Tropfen Kleber drauf — hält ewig.\n\nVorteil: Dieses Spiel ist selbstlaufend. Hinstellen, Material erklären, zurücklehnen. Die Kinder reden, lachen, basteln — und du hast 40 Minuten Ruhe.",
             "steps": [],
             "safetyRule": null,
@@ -6745,7 +6745,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💎",
             "label": "Perlen-Set mit Buchstaben",
-            "url": "https://www.amazon.de/s?k=perlen+set+kinder+buchstaben+armband&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=perlen+set+kinder+buchstaben+armband&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -6754,7 +6754,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦄",
             "label": "Einhorn-Charms (20 Stk.)",
-            "url": "https://www.amazon.de/s?k=einhorn+anh%C3%A4nger+charm+silber&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=einhorn+anh%C3%A4nger+charm+silber&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -6763,7 +6763,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✨",
             "label": "Metallic-Tattoos (Gold/Silber)",
-            "url": "https://www.amazon.de/s?k=metallic+tattoos+gold+silber+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=metallic+tattoos+gold+silber+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -6941,7 +6941,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 9,
             "loudness": "laut",
             "effort": "hoch",
-            "material": "5 Umschläge mit Rätseln, 1 Zahlenschloss (Fahrradschloss, ~5 € oder vorhandenes), 1 Schatztruhe (Schuhkarton, bemalt/beklebt), Inhalt: Süßigkeiten + Einhorn-Charms, optional: [UV-Taschenlampe*](https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht-21) (~12 €) + [UV-Stift*](https://www.amazon.de/s?k=uv+geheimschrift+stift+unsichtbar&tag=machsleicht-21) (~7 €)",
+            "material": "5 Umschläge mit Rätseln, 1 Zahlenschloss (Fahrradschloss, ~5 € oder vorhandenes), 1 Schatztruhe (Schuhkarton, bemalt/beklebt), Inhalt: Süßigkeiten + Einhorn-Charms, optional: [UV-Taschenlampe*](https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht21-21) (~12 €) + [UV-Stift*](https://www.amazon.de/s?k=uv+geheimschrift+stift+unsichtbar&tag=machsleicht21-21) (~7 €)",
             "prepText": "2 Teams (4 vs. 4, per Los). Jedes Team bekommt die gleichen 5 Rätsel, aber in unterschiedlicher Reihenfolge. Wer zuerst den 4-stelligen Code für das Zahlenschloss knackt, öffnet die Schatztruhe. Der Code ist 4-7-1-5 (stell dein Zahlenschloss vorher darauf ein). Die 4 Ziffern werden über 4 Rätsel ermittelt + 1 Puzzle zeigt den Versteck-Ort.\n\nVorbereitung (30 Min.): Rätsel abschreiben oder ausdrucken, in Umschläge stecken, nummerieren. UV-Botschaft schreiben. Foto ausdrucken und zerschneiden. Zahlenschloss auf 4-7-1-5 einstellen. Truhe (beklebter Schuhkarton) mit Süßigkeiten + Charms füllen und im Raum vom Puzzle-Foto verstecken.\n\nTipp: 25 Min. Timer auf dem Handy stellen. Wenn nach 20 Min. kein Team fertig ist, Hinweise geben. Am Ende wird der Schatz geteilt — kein Team verliert.",
             "steps": [
               {
@@ -6985,7 +6985,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 8,
             "loudness": "ruhig",
             "effort": "leicht",
-            "material": "[Perlen-Set mit Buchstaben*](https://www.amazon.de/s?k=perlen+set+kinder+buchstaben+armband&tag=machsleicht-21) (~10–12 €, reicht für 8+ Armbänder), Elastikband (0,8 mm, im Set meist dabei), [Einhorn-Charms*](https://www.amazon.de/s?k=einhorn+anh%C3%A4nger+charm+silber&tag=machsleicht-21) (~6 € für 20 Stk.), Schere, Klebeband",
+            "material": "[Perlen-Set mit Buchstaben*](https://www.amazon.de/s?k=perlen+set+kinder+buchstaben+armband&tag=machsleicht21-21) (~10–12 €, reicht für 8+ Armbänder), Elastikband (0,8 mm, im Set meist dabei), [Einhorn-Charms*](https://www.amazon.de/s?k=einhorn+anh%C3%A4nger+charm+silber&tag=machsleicht21-21) (~6 € für 20 Stk.), Schere, Klebeband",
             "prepText": "Jedes Kind macht sein eigenes Armband: Buchstaben-Perlen für den Code-Namen oder echten Namen, dazwischen bunte Perlen in Galaxy-Farben (Dunkelblau, Lila, Türkis), am Ende einen Einhorn-Charm.",
             "steps": [],
             "safetyRule": null,
@@ -7004,7 +7004,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💎",
             "label": "Perlen-Set mit Buchstaben",
-            "url": "https://www.amazon.de/s?k=perlen+set+kinder+buchstaben+armband&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=perlen+set+kinder+buchstaben+armband&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -7013,7 +7013,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦄",
             "label": "Einhorn-Charms (20 Stk.)",
-            "url": "https://www.amazon.de/s?k=einhorn+anh%C3%A4nger+charm+silber&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=einhorn+anh%C3%A4nger+charm+silber&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -7022,7 +7022,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✨",
             "label": "Metallic-Tattoos",
-            "url": "https://www.amazon.de/s?k=metallic+tattoos+gold+silber+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=metallic+tattoos+gold+silber+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -7031,7 +7031,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔦",
             "label": "UV-Taschenlampe (optional)",
-            "url": "https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -7040,7 +7040,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🖊️",
             "label": "UV-Stift (optional)",
-            "url": "https://www.amazon.de/s?k=uv+geheimschrift+stift+unsichtbar&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=uv+geheimschrift+stift+unsichtbar&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -7058,7 +7058,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎈",
             "label": "Metallic-Ballons + Lichterkette",
-            "url": "https://www.amazon.de/s?k=iridescent+ballons+metallic+schimmer&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=iridescent+ballons+metallic+schimmer&tag=machsleicht21-21",
             "priceEur": 11,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -7157,7 +7157,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 9,
             "loudness": "laut",
             "effort": "leicht",
-            "material": "2 Handys (von Kindern oder Eltern), optional: [Mini-Stativ*](https://www.amazon.de/s?k=handy+stativ+klein+tischstativ&tag=machsleicht-21) (~8 €), Requisiten (Einhorn-Hörner, Zauberstäbe, Tücher als Umhänge)",
+            "material": "2 Handys (von Kindern oder Eltern), optional: [Mini-Stativ*](https://www.amazon.de/s?k=handy+stativ+klein+tischstativ&tag=machsleicht21-21) (~8 €), Requisiten (Einhorn-Hörner, Zauberstäbe, Tücher als Umhänge)",
             "prepText": "2 Teams (4 vs. 4). Jedes Team hat 10 Minuten zum Planen: Wer spielt wen? Was ist die Story? Dann 15 Minuten drehen — maximal 60 Sekunden Film. Am Ende schauen sich alle gemeinsam beide Filme an.\n\nStory-Vorgabe (optional): „Drehbuch: Ein Schüler der Akademie entdeckt ein Geheimnis. Zeigt, was passiert.\" — reicht als Impuls, den Rest machen die Kinder selbst.\n\nTipp: DAS wird die Aktivität, die sie am coolsten finden. Jedes Kind bekommt den Film per AirDrop/WhatsApp geschickt — die Erinnerung schlechthin. Kostet nix extra.",
             "steps": [],
             "safetyRule": "Handy-Datenschutz: Vorher mit Eltern klären, dass Kinder gefilmt werden + Film im Familien-Chat geteilt wird. Bei Eltern-Bedenken: Kind nur als „Kamera-Operator\" einsetzen, nicht vor Linse. Filme NUR im Privat-Chat teilen, nicht in Social Media posten.",
@@ -7189,13 +7189,13 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "food": "🎂Galaxy-Kuchen1 Springform + Wunderkerze\n🍕Pizza-Brötchen24 Stück\n💧Limo / Wasser5 Flaschen\n🍓Obst & GemüseErdbeeren, Trauben, Gurke\n🍿Popcorn400 g\n🍭Süßigkeiten-Mix2 Tüten\n🥤„Zaubertrank\" (Fanta+Sprite)Bowle-Schüssel\n\n💡 „Zaubertrank\"-Bowle:\nFanta + Sprite mischen, blaue Lebensmittelfarbe rein → wird türkis. Eiswürfel mit Lebensmittelfarbe einfrieren (lila) → während der Party schmilzt das lila Eis in der türkisen Bowle und die Farbe ändert sich langsam. „Der Trank der Akademie verändert sich im Laufe des Tages.\" Die Kinder checken den Trick, finden ihn aber trotzdem cool.",
-        "decoration": "🎈 Iridescent / Metallic-Ballons15 Stk. ~6 €\n🌈 LED-Lichterkette (Regenbogen)~6 €\n✨ Metallic-Sterne + Monde an der Decke~5 €\n🪧 „Akademie der Vergessenen Magie\"-SchildKostenlosPappe + Edding + Goldfolie, am Eingang\n🕯️ LED-Kerzen (Teelichter)10 Stk. ~4 €Fantasy-Atmosphäre, keine echten Kerzen\n🔊 Fantasy-PlaylistKostenlosSpotify: „Fantasy Instrumental\" oder „Zauberschule Ambience\"\n📜 Pergament-Rollen als Tischdeko~3 €Teebeutel-Papier, eingerollt, mit Band\n\n✨ Wow-Bonus: Nebel-Maschine\nDer ultimative Atmosphäre-Hack: Eine kleine [Nebelmaschine*](https://www.amazon.de/s?k=nebelmaschine+klein+party+400w&tag=machsleicht-21) (~25–35 €) im Flur beim Reinkommen. Die Kinder öffnen die Tür, Nebel wallt ihnen entgegen, LED-Lichterketten schimmern durch den Dunst — „Willkommen in der Akademie.\" Das werden sie niemals vergessen. Funktioniert auch bei der Urkunden-Zeremonie. Einmal gekauft, für jede Party und Halloween wiederverwendbar.\n\n🔮 Wow-Bonus: Kristall-Zucht als Langzeit-Souvenir\nEin [Kristall-Zucht-Set*](https://www.amazon.de/s?k=kristall+z%C3%BCchten+kinder+set&tag=machsleicht-21) (~10–15 € für 8 Kinder) als zusätzliches Mitgebsel: Jedes Kind nimmt ein kleines Glas mit „Kristall-Samen\" (Alaun-Lösung + Lebensmittelfarbe) mit nach Hause. In 3–5 Tagen wachsen echte Kristalle. Das Mitgebsel, das 3 Tage nach der Party nochmal für Staunen sorgt — und an dem die Kinder sehen: „Das war echte Chemie auf der Party.\"",
+        "decoration": "🎈 Iridescent / Metallic-Ballons15 Stk. ~6 €\n🌈 LED-Lichterkette (Regenbogen)~6 €\n✨ Metallic-Sterne + Monde an der Decke~5 €\n🪧 „Akademie der Vergessenen Magie\"-SchildKostenlosPappe + Edding + Goldfolie, am Eingang\n🕯️ LED-Kerzen (Teelichter)10 Stk. ~4 €Fantasy-Atmosphäre, keine echten Kerzen\n🔊 Fantasy-PlaylistKostenlosSpotify: „Fantasy Instrumental\" oder „Zauberschule Ambience\"\n📜 Pergament-Rollen als Tischdeko~3 €Teebeutel-Papier, eingerollt, mit Band\n\n✨ Wow-Bonus: Nebel-Maschine\nDer ultimative Atmosphäre-Hack: Eine kleine [Nebelmaschine*](https://www.amazon.de/s?k=nebelmaschine+klein+party+400w&tag=machsleicht21-21) (~25–35 €) im Flur beim Reinkommen. Die Kinder öffnen die Tür, Nebel wallt ihnen entgegen, LED-Lichterketten schimmern durch den Dunst — „Willkommen in der Akademie.\" Das werden sie niemals vergessen. Funktioniert auch bei der Urkunden-Zeremonie. Einmal gekauft, für jede Party und Halloween wiederverwendbar.\n\n🔮 Wow-Bonus: Kristall-Zucht als Langzeit-Souvenir\nEin [Kristall-Zucht-Set*](https://www.amazon.de/s?k=kristall+z%C3%BCchten+kinder+set&tag=machsleicht21-21) (~10–15 € für 8 Kinder) als zusätzliches Mitgebsel: Jedes Kind nimmt ein kleines Glas mit „Kristall-Samen\" (Alaun-Lösung + Lebensmittelfarbe) mit nach Hause. In 3–5 Tagen wachsen echte Kristalle. Das Mitgebsel, das 3 Tage nach der Party nochmal für Staunen sorgt — und an dem die Kinder sehen: „Das war echte Chemie auf der Party.\"",
         "giveaways": "📜 Meister-Urkunde (mit Code-Name und Wachssiegel)\n💎 Selbst gemachtes Amulett-Armband\n🦄 Einhorn-Charm\n🔮 Kristall-Zucht-Glas (wächst zu Hause weiter)\n🍭 Süßigkeiten aus der Schatztruhe\n\nIn Kraftpapier-Tüten mit Code-Name und „Akademie\"-Stempel. Kosten: ~5 € pro Kind.",
         "shoppingList": [
           {
             "emoji": "💎",
             "label": "Perlen-Set mit Buchstaben",
-            "url": "https://www.amazon.de/s?k=perlen+set+kinder+buchstaben+armband&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=perlen+set+kinder+buchstaben+armband&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -7204,7 +7204,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦄",
             "label": "Einhorn-Charms (20 Stk.)",
-            "url": "https://www.amazon.de/s?k=einhorn+anh%C3%A4nger+charm+silber&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=einhorn+anh%C3%A4nger+charm+silber&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -7213,7 +7213,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✨",
             "label": "Metallic-Tattoos",
-            "url": "https://www.amazon.de/s?k=metallic+tattoos+gold+silber+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=metallic+tattoos+gold+silber+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -7222,7 +7222,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔦",
             "label": "UV-Taschenlampe",
-            "url": "https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -7231,7 +7231,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🖊️",
             "label": "UV-Stift",
-            "url": "https://www.amazon.de/s?k=uv+geheimschrift+stift+unsichtbar&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=uv+geheimschrift+stift+unsichtbar&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -7240,7 +7240,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔮",
             "label": "Kristall-Zucht-Set",
-            "url": "https://www.amazon.de/s?k=kristall+z%C3%BCchten+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=kristall+z%C3%BCchten+kinder+set&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -7249,7 +7249,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌫️",
             "label": "Nebelmaschine (optional)",
-            "url": "https://www.amazon.de/s?k=nebelmaschine+klein+party+400w&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=nebelmaschine+klein+party+400w&tag=machsleicht21-21",
             "priceEur": 30,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -8000,7 +8000,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦁",
             "label": "Safari-Tierfiguren (12er-Set)",
-            "url": "https://www.amazon.de/s?k=safari+tier+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=safari+tier+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -8009,7 +8009,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧸",
             "label": "Großer Plüsch-Löwe (der 'Fund')",
-            "url": "https://www.amazon.de/s?k=pl%C3%BCsch+l%C3%B6we&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=pl%C3%BCsch+l%C3%B6we&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -8018,7 +8018,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🟫",
             "label": "Braunes Tonpapier (für Pfotenspuren)",
-            "url": "https://www.amazon.de/s?k=tonpapier+braun+a4&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonpapier+braun+a4&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -8027,7 +8027,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎨",
             "label": "Tonkarton-Streifen für Stirnbänder",
-            "url": "https://www.amazon.de/s?k=tonkarton+bunt+a4&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonkarton+bunt+a4&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -8036,7 +8036,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✏️",
             "label": "Dicke Filzstifte (Kinder)",
-            "url": "https://www.amazon.de/s?k=dicke+filzstifte+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dicke+filzstifte+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -8045,7 +8045,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔖",
             "label": "Tier-Aufkleber-Set",
-            "url": "https://www.amazon.de/s?k=tier+sticker+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tier+sticker+kinder+set&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -8054,7 +8054,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📜",
             "label": "Urkunden-Vorlage / Tonpapier A4",
-            "url": "https://www.amazon.de/s?k=tonpapier+wei%C3%9F+a4&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonpapier+wei%C3%9F+a4&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -8302,7 +8302,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦁",
             "label": "Safari-Tierfiguren (12er-Set)",
-            "url": "https://www.amazon.de/s?k=safari+tier+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=safari+tier+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -8311,7 +8311,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎨",
             "label": "Tonkarton-Set bunt (Stirnbänder)",
-            "url": "https://www.amazon.de/s?k=tonkarton+bunt+a4+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonkarton+bunt+a4+set&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -8320,7 +8320,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔖",
             "label": "Tier-Aufkleber-Set (groß)",
-            "url": "https://www.amazon.de/s?k=tier+sticker+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tier+sticker+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -8329,7 +8329,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🟫",
             "label": "Tonpapier braun (Pfotenspuren)",
-            "url": "https://www.amazon.de/s?k=tonpapier+braun+a4&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonpapier+braun+a4&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -8338,7 +8338,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✏️",
             "label": "Dicke Filzstifte",
-            "url": "https://www.amazon.de/s?k=dicke+filzstifte+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dicke+filzstifte+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -8347,7 +8347,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📜",
             "label": "Urkunden + weißes Tonpapier",
-            "url": "https://www.amazon.de/s?k=tonpapier+wei%C3%9F+a4&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonpapier+wei%C3%9F+a4&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -8356,7 +8356,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔍",
             "label": "Mini-Lupen (6er-Set, Mitgebsel)",
-            "url": "https://www.amazon.de/s?k=kinder+lupe+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=kinder+lupe+set&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -8365,7 +8365,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎈",
             "label": "Luftballons grün/braun (Deko)",
-            "url": "https://www.amazon.de/s?k=luftballons+gr%C3%BCn+braun&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=luftballons+gr%C3%BCn+braun&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -8707,7 +8707,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦁",
             "label": "Safari-Tierfiguren (24er-Set)",
-            "url": "https://www.amazon.de/s?k=safari+tier+figuren+set+24&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=safari+tier+figuren+set+24&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -8716,7 +8716,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎨",
             "label": "Tonkarton-Set bunt (Stirnbänder, 8 Kinder)",
-            "url": "https://www.amazon.de/s?k=tonkarton+bunt+a4+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonkarton+bunt+a4+set&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -8725,7 +8725,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔖",
             "label": "Tier-Aufkleber-Set (groß)",
-            "url": "https://www.amazon.de/s?k=tier+sticker+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tier+sticker+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -8734,7 +8734,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🟫",
             "label": "Tonpapier braun (Pfotenspuren)",
-            "url": "https://www.amazon.de/s?k=tonpapier+braun+a4&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonpapier+braun+a4&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -8743,7 +8743,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪴",
             "label": "2-3 Kunst-Grünpflanzen (Foto-Ecke)",
-            "url": "https://www.amazon.de/s?k=kunstpflanze+gr%C3%BCn+deko&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=kunstpflanze+gr%C3%BCn+deko&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -8752,7 +8752,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📦",
             "label": "Schatzkiste / Deko-Karton",
-            "url": "https://www.amazon.de/s?k=schatzkiste+kinder+holz&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schatzkiste+kinder+holz&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -8761,7 +8761,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔍",
             "label": "Mini-Lupen (8er-Set)",
-            "url": "https://www.amazon.de/s?k=kinder+lupe+set+8&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=kinder+lupe+set+8&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -8770,7 +8770,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📜",
             "label": "Urkunden + Tonpapier weiß",
-            "url": "https://www.amazon.de/s?k=tonpapier+wei%C3%9F+a4&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonpapier+wei%C3%9F+a4&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -8788,7 +8788,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎈",
             "label": "Luftballons grün/braun + Deko",
-            "url": "https://www.amazon.de/s?k=luftballons+gr%C3%BCn+braun&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=luftballons+gr%C3%BCn+braun&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -9432,7 +9432,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦓",
             "label": "Safari-Tierfiguren (12 Stk.)",
-            "url": "https://www.amazon.de/s?k=safari+tier+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=safari+tier+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -9786,7 +9786,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦓",
             "label": "Safari-Tierfiguren-Set (12 Stk.)",
-            "url": "https://www.amazon.de/s?k=safari+tier+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=safari+tier+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -9822,7 +9822,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Klett-Abzeichen (selbstklebend)",
-            "url": "https://www.amazon.de/s?k=klett+abzeichen+aufkleber+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=klett+abzeichen+aufkleber+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -9876,7 +9876,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦁",
             "label": "Plüsch-Tiere fürs Großspiel (vorhandenes Kuscheltier reicht — sonst günstig im Set)",
-            "url": "https://www.amazon.de/s?k=plüsch+löwe+klein&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=plüsch+löwe+klein&tag=machsleicht21-21",
             "priceEur": 0,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -10046,7 +10046,7 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "food": "🎂Savannen-Kuchen1 Blechkuchen + 1 kleiner\n🥤\"Wasserloch\"4 L Apfelschorle\n🍕Mini-Pizzen15 Stück\n🌯Wraps \"Anaconda\"10 Stück\n🍌Affen-Bananen10 Stk.\n🥕Karotten + Käse-Würfel\"Giraffen-Snack\"\n🍿Pop-Mais (Savannen-Kino)400 g\n🍫Schoko-GoldmünzenSchatzkisten-Inhalt",
-        "decoration": "🦁 Safari-Teller & BecherSet ~10 €\n🎈 Luftballons grün/braun/ocker20 Stk. ~5 €\n🪧 Safari-Girlande~4 €\n🌿 Krepppapier-Lianen~3 € KrepppapierVon der Decke hängen = Dschungel-Look\n🌿 Grünpflanzen aus dem WohnzimmerKostenlosIn den Partyraum stellen — Reservat-Atmosphäre sofort da\n🪧 \"Ranger-Station Reservat\"-SchildKostenlosPappe + Edding, am Eingang aufstellen\n🦶 Tierspuren-PfadKostenlosPfotenabdrücke aus Tonpapier, vom Eingang bis zum Partyraum\n🔊 Savannen-SoundsKostenlosYouTube \"Safari Sounds 2 Stunden\" leise im Hintergrund\n📦 Tempel-Schatzkiste~5 €Schuhkarton + Goldfolie + Vorhängeschloss-Aufkleber\n\n🦖 Optional: Aufblasbares Kostüm als Überraschungs-Auftritt\nEine Variante für die Eröffnung: ein [aufblasbares Tier-Kostüm*](https://www.amazon.de/s?k=aufblasbares+kostüm+kinder+tier&tag=machsleicht-21) (~30 €) für das Geburtstagskind oder ein Elternteil. Geburtstagskind eröffnet die Tür im Kostüm, oder Mama/Papa taucht als Überraschungsgast beim Mission-Briefing auf. Funktioniert besonders, wenn du eh ein lustiges Foto für den Familien-Status willst — der Auftritt wird zum Eis-Brecher der Party. Nicht nötig, aber wirkungsvoll. Separat kalkuliert weil optional.",
+        "decoration": "🦁 Safari-Teller & BecherSet ~10 €\n🎈 Luftballons grün/braun/ocker20 Stk. ~5 €\n🪧 Safari-Girlande~4 €\n🌿 Krepppapier-Lianen~3 € KrepppapierVon der Decke hängen = Dschungel-Look\n🌿 Grünpflanzen aus dem WohnzimmerKostenlosIn den Partyraum stellen — Reservat-Atmosphäre sofort da\n🪧 \"Ranger-Station Reservat\"-SchildKostenlosPappe + Edding, am Eingang aufstellen\n🦶 Tierspuren-PfadKostenlosPfotenabdrücke aus Tonpapier, vom Eingang bis zum Partyraum\n🔊 Savannen-SoundsKostenlosYouTube \"Safari Sounds 2 Stunden\" leise im Hintergrund\n📦 Tempel-Schatzkiste~5 €Schuhkarton + Goldfolie + Vorhängeschloss-Aufkleber\n\n🦖 Optional: Aufblasbares Kostüm als Überraschungs-Auftritt\nEine Variante für die Eröffnung: ein [aufblasbares Tier-Kostüm*](https://www.amazon.de/s?k=aufblasbares+kostüm+kinder+tier&tag=machsleicht21-21) (~30 €) für das Geburtstagskind oder ein Elternteil. Geburtstagskind eröffnet die Tür im Kostüm, oder Mama/Papa taucht als Überraschungsgast beim Mission-Briefing auf. Funktioniert besonders, wenn du eh ein lustiges Foto für den Familien-Status willst — der Auftritt wird zum Eis-Brecher der Party. Nicht nötig, aber wirkungsvoll. Separat kalkuliert weil optional.",
         "giveaways": "🎩 Filz-Buschhut (Wow-Highlight, geht direkt vom Kopf nach Hause)\n🏅 Junior-Ranger-Lizenz (Urkunde mit Foto-Slot)\n🪪 Ranger-Ausweis im Scheckkartenformat (laminiert)\n📓 Ranger-Buch (DIY-Notizbuch mit Foto-Slot vorne, Tier-Aufklebern innen)\n⭐ Klett-Abzeichen am Stirnband\n🎽 Selbst gestaltetes Tarn-Tuch (von der Tarnungs-Station)\n🦁 Mini-Tierfigur aus dem Reservat\n🍫 Schoko-Goldmünzen aus der Schatzkiste\n🍬 Tüte Gummibärchen (\"Wegzehrung\")\n\nAlles in braune Papiertüte, beschriftet mit \"Ausrüstung für Ranger ___\". Kosten: ~10 € pro Kind (inklusive Filz-Buschhut). Lizenz, Ausweis und Buschhut nehmen die Kinder mit nach Hause — Eltern fotografieren sie, Kinder zeigen sie wochenlang, Buschhut wird wochenlang getragen.",
         "shoppingList": [
           {
@@ -10061,7 +10061,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦓",
             "label": "Safari-Tierfiguren-Set",
-            "url": "https://www.amazon.de/s?k=safari+tier+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=safari+tier+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -10097,7 +10097,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Klett-Abzeichen",
-            "url": "https://www.amazon.de/s?k=klett+abzeichen+aufkleber+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=klett+abzeichen+aufkleber+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -10115,7 +10115,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔭",
             "label": "Spielzeug-Fernglas",
-            "url": "https://www.amazon.de/s?k=fernglas+kinder+spielzeug&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=fernglas+kinder+spielzeug&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -10214,7 +10214,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎩",
             "label": "Filz-Buschhüte (10 Stk., optional Wow-Highlight)",
-            "url": "https://www.amazon.de/s?k=safari+hut+kinder+filz&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=safari+hut+kinder+filz&tag=machsleicht21-21",
             "priceEur": 80,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -10223,7 +10223,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📻",
             "label": "Walkie-Talkie-Set (4 Stk., optional)",
-            "url": "https://www.amazon.de/s?k=walkie+talkie+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=walkie+talkie+kinder+set&tag=machsleicht21-21",
             "priceEur": 25,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -10232,7 +10232,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦖",
             "label": "Aufblasbares Tier-Kostüm (optional)",
-            "url": "https://www.amazon.de/s?k=aufblasbares+kostüm+kinder+tier&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=aufblasbares+kostüm+kinder+tier&tag=machsleicht21-21",
             "priceEur": 30,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -11075,7 +11075,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Klett-Abzeichen 3 Farben (Spezialisierungs-Patches)",
-            "url": "https://www.amazon.de/dp/B08KLETTPATCH?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B08KLETTPATCH?tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -11084,7 +11084,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦓",
             "label": "Safari-Tierfiguren (12 Stk.)",
-            "url": "https://www.amazon.de/dp/B07SAFARIFIG?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B07SAFARIFIG?tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -11477,7 +11477,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Klett-Abzeichen 3 Farben (Spezialisierungs-Patches)",
-            "url": "https://www.amazon.de/dp/B08KLETTPATCH?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B08KLETTPATCH?tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -11486,7 +11486,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔭",
             "label": "Spielzeug-Fernglas (für Späher)",
-            "url": "https://www.amazon.de/dp/B07FERNGLAS?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B07FERNGLAS?tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -11495,7 +11495,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦓",
             "label": "Safari-Tierfiguren-Set",
-            "url": "https://www.amazon.de/dp/B07SAFARIFIG?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B07SAFARIFIG?tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -11504,7 +11504,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪧",
             "label": "Safari-Girlande + Luftballons grün/braun/ocker",
-            "url": "https://www.amazon.de/dp/B08SAFARIDEKO?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B08SAFARIDEKO?tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -11809,7 +11809,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧣",
             "label": "Bandanas (10 Stk., für Tarnungs-Werkstatt)",
-            "url": "https://www.amazon.de/dp/B08BANDANA10?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B08BANDANA10?tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -11827,7 +11827,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Klett-Abzeichen 3 Farben",
-            "url": "https://www.amazon.de/dp/B08KLETTPATCH?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B08KLETTPATCH?tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -11836,7 +11836,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔭",
             "label": "Spielzeug-Fernglas (für Späher)",
-            "url": "https://www.amazon.de/dp/B07FERNGLAS?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B07FERNGLAS?tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -11854,7 +11854,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎩",
             "label": "Filz-Buschhüte (Wow-Highlight)",
-            "url": "https://www.amazon.de/dp/B08BUSCHHUT?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B08BUSCHHUT?tag=machsleicht21-21",
             "priceEur": 100,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -11872,7 +11872,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔦",
             "label": "Stirnlampen-Set (5 Stk., nur bei Schlafparty)",
-            "url": "https://www.amazon.de/dp/B08STIRNLAMP?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B08STIRNLAMP?tag=machsleicht21-21",
             "priceEur": 15,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -12433,7 +12433,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦕",
             "label": "Mini-Dinos Set (12–24 Stück)",
-            "url": "https://www.amazon.de/s?k=mini+dino+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+dino+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -12442,7 +12442,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🥚",
             "label": "Plastik-Eier bunt (20 Stk.)",
-            "url": "https://www.amazon.de/s?k=plastik+eier+bunt+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=plastik+eier+bunt+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -12488,7 +12488,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:00",
             "title": "Ankommen & Dino-Stempel-Station",
-            "description": "Jedes Kind bekommt ein weißes Blatt und [Dino-Stempel*](https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht-21) + Stempelkissen. Frei drauflos stempeln, mit Stiften ergänzen. Hält die Ersten 10–15 Min. beschäftigt und produziert gleichzeitig ein „Kunstwerk“ zum Mitnehmen."
+            "description": "Jedes Kind bekommt ein weißes Blatt und [Dino-Stempel*](https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht21-21) + Stempelkissen. Frei drauflos stempeln, mit Stiften ergänzen. Hält die Ersten 10–15 Min. beschäftigt und produziert gleichzeitig ein „Kunstwerk“ zum Mitnehmen."
           },
           {
             "time": "15:15",
@@ -12513,7 +12513,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "16:05",
             "title": "🏗️ Dino-Ausgrabung",
-            "description": "Große Wanne mit Sand oder Reis. Darin versteckt: [Dino-Figuren*](https://www.amazon.de/s?k=dinosaurier+figuren+set+kinder&tag=machsleicht-21) + Muscheln + bunte Steine. Kinder graben mit Löffeln und Pinseln. Wer einen Dino findet, darf ihn behalten. 15 Min. — das ist das ruhige Spiel nach dem Toben."
+            "description": "Große Wanne mit Sand oder Reis. Darin versteckt: [Dino-Figuren*](https://www.amazon.de/s?k=dinosaurier+figuren+set+kinder&tag=machsleicht21-21) + Muscheln + bunte Steine. Kinder graben mit Löffeln und Pinseln. Wer einen Dino findet, darf ihn behalten. 15 Min. — das ist das ruhige Spiel nach dem Toben."
           },
           {
             "time": "16:20",
@@ -12630,7 +12630,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦕",
             "label": "Dino-Figuren Set (12+ Stück)",
-            "url": "https://www.amazon.de/s?k=dinosaurier+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dinosaurier+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -12639,7 +12639,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🥚",
             "label": "Plastik-Eier (20 Stk.)",
-            "url": "https://www.amazon.de/s?k=plastik+eier+bunt+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=plastik+eier+bunt+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -12648,7 +12648,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🏗️",
             "label": "Sand/Reis für Ausgrabung",
-            "url": "https://www.amazon.de/s?k=spielsand+kinder+wanne&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=spielsand+kinder+wanne&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -12657,7 +12657,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✏️",
             "label": "Dino-Stempel Set",
-            "url": "https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -12703,7 +12703,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:00",
             "title": "Ankommen & Dino-Tattoos",
-            "description": "Jedes Kind bekommt ein [Dino-Tattoo*](https://www.amazon.de/s?k=dino+tattoos+kinder&tag=machsleicht-21) auf den Arm. Dazu Dino-Stempel-Station und Ausmalbilder. Die Verwandlung zum Dino-Forscher beginnt. 15 Min."
+            "description": "Jedes Kind bekommt ein [Dino-Tattoo*](https://www.amazon.de/s?k=dino+tattoos+kinder&tag=machsleicht21-21) auf den Arm. Dazu Dino-Stempel-Station und Ausmalbilder. Die Verwandlung zum Dino-Forscher beginnt. 15 Min."
           },
           {
             "time": "15:15",
@@ -12875,7 +12875,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦕",
             "label": "Dino-Figuren Set (12+ Stück)",
-            "url": "https://www.amazon.de/s?k=dinosaurier+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dinosaurier+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -12884,7 +12884,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🥚",
             "label": "Plastik-Eier (20–25 Stk.)",
-            "url": "https://www.amazon.de/s?k=plastik+eier+bunt+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=plastik+eier+bunt+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -12893,7 +12893,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🏗️",
             "label": "Sand/Reis für Ausgrabung",
-            "url": "https://www.amazon.de/s?k=spielsand+kinder+wanne&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=spielsand+kinder+wanne&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -12902,7 +12902,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✏️",
             "label": "Dino-Stempel Set",
-            "url": "https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -12911,7 +12911,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🖼️",
             "label": "Dino-Tattoos",
-            "url": "https://www.amazon.de/s?k=dino+tattoos+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dino+tattoos+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -13454,7 +13454,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦕",
             "label": "Dino-Figuren (12 Stk.)",
-            "url": "https://www.amazon.de/s?k=mini+dino+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+dino+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -13528,7 +13528,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:00",
             "title": "Ankommen & Dino-Masken basteln",
-            "description": "[Dino-Masken zum Ausmalen*](https://www.amazon.de/s?k=dino+masken+kinder+ausmalen&tag=machsleicht-21) (~6 €, 10 Stk.) bereitlagen + Gummibänder + Buntstifte. Wenn die Maske fertig ist, stellt sich jedes Kind als sein Dino vor: \"Ich bin der gefährliche T-Rex Max!\""
+            "description": "[Dino-Masken zum Ausmalen*](https://www.amazon.de/s?k=dino+masken+kinder+ausmalen&tag=machsleicht21-21) (~6 €, 10 Stk.) bereitlagen + Gummibänder + Buntstifte. Wenn die Maske fertig ist, stellt sich jedes Kind als sein Dino vor: \"Ich bin der gefährliche T-Rex Max!\""
           },
           {
             "time": "14:30",
@@ -13674,7 +13674,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦕",
             "label": "Dino-Figuren (12 Stk.)",
-            "url": "https://www.amazon.de/s?k=mini+dino+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+dino+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -13683,7 +13683,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎭",
             "label": "Dino-Masken zum Ausmalen",
-            "url": "https://www.amazon.de/s?k=dino+masken+kinder+ausmalen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dino+masken+kinder+ausmalen&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -13701,7 +13701,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦕",
             "label": "Dino-Teller & Becher Set",
-            "url": "https://www.amazon.de/s?k=dino+teller+becher+kindergeburtstag&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dino+teller+becher+kindergeburtstag&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -13766,7 +13766,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:00",
             "title": "Ankommen & Forscherpass ausfüllen",
-            "description": "Jedes Kind bekommt einen Forscherpass (→ [Druckvorlage](/kindergeburtstag/dino-forscherpass), 1 A4 falten = A5-Büchlein). Name eintragen, Foto einkleben, mit [Dino-Stempel*](https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht-21) abstempeln. Ab jetzt sind alle \"Dino-Forscher\". Auf dickem Papier drucken (160g+, DM ~3€/50 Blatt)."
+            "description": "Jedes Kind bekommt einen Forscherpass (→ [Druckvorlage](/kindergeburtstag/dino-forscherpass), 1 A4 falten = A5-Büchlein). Name eintragen, Foto einkleben, mit [Dino-Stempel*](https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht21-21) abstempeln. Ab jetzt sind alle \"Dino-Forscher\". Auf dickem Papier drucken (160g+, DM ~3€/50 Blatt)."
           },
           {
             "time": "14:25",
@@ -13909,13 +13909,13 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃\"Dino-Pipi\"14 Saftpaeckchen\n🌋Kartoffelbrei-Vulkan1 kg Kartoffeln\n🌭Mini-Würstchen16 Stück\n🥕Gemüse-Sticks4 Karotten, 2 Gurken\n🍿Popcorn300 g\n🍫Schoko-Goldmünzen1 Netz (Schatz)\n\n💡 Kartoffelbrei-Vulkan:\nKartoffelbrei auf den Teller häufeln, oben eine Mulde formen, Ketchup reingießen = Lava. Die Kinder lieben es. Funktioniert auch mit Würstchen als \"Baumstämme\" drumherum.",
-        "decoration": "🦕 Dino-Teller & BecherSet ~8 €\n🎈 Grüne Luftballons10 Stk. ~3 €\n🪧 Dino-Girlande1 Stk. ~4 €\n🦶 Fußspuren-PfadKostenlos, 15 Min.\n🌿 Krepppapier-Lianen~2 € KrepppapierVon der Decke hängen = Dschungel\n🪧 \"Dino-Expedition\"-SchildKostenlosPappe + Edding, am Eingang\n🔊 Dschungel-SoundsKostenlosYouTube: \"Jungle Ambience\" leise im Hintergrund\n🦕 Dinos mit Partyhüten~3 € FigurenSpielzeug-Dinos mit Mini-Hüten auf den Tisch\n\n🦖 Wow-Bonus: Dino-Kostüm für Mama oder Papa\nDer absolute Überraschungs-Hit: ein [aufblasbares T-Rex-Kostüm*](https://www.amazon.de/s?k=aufblasbares+dino+kostüm+erwachsene&tag=machsleicht-21) (~35–50 €). Du öffnest die Tür als riesiger Dinosaurier — die Kinder rasten aus. Funktioniert als Spielleiter für die Forscher-Ausbildung, als Überraschungsgast beim Kuchen oder beim Parcours als \"jagendes Raubtier\". Wird DAS Foto des Tages. Die Kinder erzählen noch Wochen davon.",
+        "decoration": "🦕 Dino-Teller & BecherSet ~8 €\n🎈 Grüne Luftballons10 Stk. ~3 €\n🪧 Dino-Girlande1 Stk. ~4 €\n🦶 Fußspuren-PfadKostenlos, 15 Min.\n🌿 Krepppapier-Lianen~2 € KrepppapierVon der Decke hängen = Dschungel\n🪧 \"Dino-Expedition\"-SchildKostenlosPappe + Edding, am Eingang\n🔊 Dschungel-SoundsKostenlosYouTube: \"Jungle Ambience\" leise im Hintergrund\n🦕 Dinos mit Partyhüten~3 € FigurenSpielzeug-Dinos mit Mini-Hüten auf den Tisch\n\n🦖 Wow-Bonus: Dino-Kostüm für Mama oder Papa\nDer absolute Überraschungs-Hit: ein [aufblasbares T-Rex-Kostüm*](https://www.amazon.de/s?k=aufblasbares+dino+kostüm+erwachsene&tag=machsleicht21-21) (~35–50 €). Du öffnest die Tür als riesiger Dinosaurier — die Kinder rasten aus. Funktioniert als Spielleiter für die Forscher-Ausbildung, als Überraschungsgast beim Kuchen oder beim Parcours als \"jagendes Raubtier\". Wird DAS Foto des Tages. Die Kinder erzählen noch Wochen davon.",
         "giveaways": "🪪 Forscherpass (mit Foto und Urkunde)\n🪨 Selbst gegossenes Fossil\n🦕 Dino-Figur aus der Ausgrabung\n🔍 Lupe aus der Schatzsuche\n🍫 Schoko-Goldmünzen\n\nIn braune Papiertüte (10 Stk. ~1 € bei DM/Action) mit \"Forschungsergebnisse von ___\". Kosten: ~4 € pro Kind.",
         "shoppingList": [
           {
             "emoji": "🦕",
             "label": "Dino-Figuren (12 Stk.)",
-            "url": "https://www.amazon.de/s?k=mini+dino+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+dino+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -13924,7 +13924,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎭",
             "label": "Dino-Masken zum Ausmalen",
-            "url": "https://www.amazon.de/s?k=dino+masken+kinder+ausmalen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dino+masken+kinder+ausmalen&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -13942,7 +13942,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦕",
             "label": "Dino-Teller & Becher Set",
-            "url": "https://www.amazon.de/s?k=dino+teller+becher+kindergeburtstag&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dino+teller+becher+kindergeburtstag&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -13960,7 +13960,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔍",
             "label": "Lupen-Set (6 Stk.)",
-            "url": "https://www.amazon.de/s?k=lupen+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=lupen+set+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -13969,7 +13969,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦕",
             "label": "Dino-Stempel (für Forscherpass)",
-            "url": "https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -14014,7 +14014,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🍫",
             "label": "Schoko-Goldmünzen",
-            "url": "https://www.amazon.de/s?k=goldmünzen+schokolade&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=goldmünzen+schokolade&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -14023,7 +14023,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦖",
             "label": "T-Rex-Kostüm (optional)",
-            "url": "https://www.amazon.de/s?k=aufblasbares+dino+kostüm+erwachsene&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=aufblasbares+dino+kostüm+erwachsene&tag=machsleicht21-21",
             "priceEur": 40,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -14590,7 +14590,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦕",
             "label": "Dino-Figuren Set",
-            "url": "https://www.amazon.de/s?k=dinosaurier+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dinosaurier+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -14645,7 +14645,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:00",
             "title": "Ankommen & Forscherpass ausfüllen",
-            "description": "Jedes Kind bekommt einen [Forscherpass](/kindergeburtstag/dino-forscherpass) (Druckvorlage, A4 falten = A5-Büchlein). Name eintragen, mit [Dino-Stempel*](https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht-21) abstempeln. Ab jetzt sind alle „Dino-Forscher“. 15 Min."
+            "description": "Jedes Kind bekommt einen [Forscherpass](/kindergeburtstag/dino-forscherpass) (Druckvorlage, A4 falten = A5-Büchlein). Name eintragen, mit [Dino-Stempel*](https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht21-21) abstempeln. Ab jetzt sind alle „Dino-Forscher“. 15 Min."
           },
           {
             "time": "14:15",
@@ -14788,7 +14788,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦕",
             "label": "Dino-Figuren Set (12+ Stk.)",
-            "url": "https://www.amazon.de/s?k=dinosaurier+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dinosaurier+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -14797,7 +14797,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✒️",
             "label": "Dino-Stempel (für Forscherpass)",
-            "url": "https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -14806,7 +14806,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🏗️",
             "label": "Ausgrabungs-Zubehör (Pinsel, Sand)",
-            "url": "https://www.amazon.de/s?k=dino+ausgrabungsset+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dino+ausgrabungsset+kinder&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -14901,7 +14901,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "16:35",
             "title": "🎁 Freispiel & Abholung",
-            "description": "Dino-Doku (YouTube), freies Spiel. Abholung ab 17:00.\n\n💡 Das Zahlenschloss macht den Unterschied\nEin 5-stelliges [Zahlenschloss*](https://www.amazon.de/s?k=zahlenschloss+5+stellig&tag=machsleicht-21) (~4 €) verwandelt eine normale Party in einen Escape Room. Jede Station gibt eine Ziffer. Die Kinder sammeln, kombinieren, probieren — und wenn die Truhe aufgeht, ist der Jubel RIESIG."
+            "description": "Dino-Doku (YouTube), freies Spiel. Abholung ab 17:00.\n\n💡 Das Zahlenschloss macht den Unterschied\nEin 5-stelliges [Zahlenschloss*](https://www.amazon.de/s?k=zahlenschloss+5+stellig&tag=machsleicht21-21) (~4 €) verwandelt eine normale Party in einen Escape Room. Jede Station gibt eine Ziffer. Die Kinder sammeln, kombinieren, probieren — und wenn die Truhe aufgeht, ist der Jubel RIESIG."
           }
         ],
         "games": [
@@ -14966,7 +14966,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦕",
             "label": "Dino-Figuren Set",
-            "url": "https://www.amazon.de/s?k=dinosaurier+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dinosaurier+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -14975,7 +14975,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✒️",
             "label": "Dino-Stempel",
-            "url": "https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -14984,7 +14984,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🏗️",
             "label": "Ausgrabungs-Zubehör",
-            "url": "https://www.amazon.de/s?k=dino+ausgrabungsset+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dino+ausgrabungsset+kinder&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -14993,7 +14993,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔒",
             "label": "Zahlenschloss 5-stellig",
-            "url": "https://www.amazon.de/s?k=zahlenschloss+5+stellig&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=zahlenschloss+5+stellig&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -15002,7 +15002,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔍",
             "label": "Mini-Lupen (8 Stk.)",
-            "url": "https://www.amazon.de/s?k=mini+lupe+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+lupe+kinder&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -15936,7 +15936,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "👁️",
             "label": "Augenklappen (12er-Set)",
-            "url": "https://www.amazon.de/s?k=augenklappe+pirat+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=augenklappe+pirat+kinder+set&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -15945,7 +15945,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪙",
             "label": "Schoko-Goldmuenzen (Beutel)",
-            "url": "https://www.amazon.de/s?k=schoko+goldmuenzen+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schoko+goldmuenzen+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -15954,7 +15954,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🖨️",
             "label": "Schatzkisten-Urkunde (Druckvorlage/Block)",
-            "url": "https://www.amazon.de/s?k=piraten+urkunde+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=piraten+urkunde+kinder&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -15963,7 +15963,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🥛",
             "label": "Apfelschorle / Saft für 'Piraten-Grog'",
-            "url": "https://www.amazon.de/s?k=apfelschorle+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=apfelschorle+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": false,
             "category": "pflicht",
@@ -15972,7 +15972,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎂",
             "label": "Zutaten Kastenkuchen (Mehl, Butter, Eier, Zucker)",
-            "url": "https://www.amazon.de/s?k=backzutaten+kastenkuchen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=backzutaten+kastenkuchen&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": false,
             "category": "pflicht",
@@ -15981,7 +15981,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📦",
             "label": "Tonkarton / Goldfolie für Schatzkiste",
-            "url": "https://www.amazon.de/s?k=tonkarton+goldfolie+bastel&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonkarton+goldfolie+bastel&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -15990,7 +15990,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🏴‍☠️",
             "label": "Piratenhuete oder Bandanas (6er-Set)",
-            "url": "https://www.amazon.de/s?k=piraten+hut+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=piraten+hut+kinder+set&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -15999,7 +15999,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧻",
             "label": "Piraten-Servietten + Pappteller",
-            "url": "https://www.amazon.de/s?k=piraten+servietten+pappteller&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=piraten+servietten+pappteller&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -16008,7 +16008,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📸",
             "label": "Spielzeug-Kompass",
-            "url": "https://www.amazon.de/s?k=spielzeug+kompass+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=spielzeug+kompass+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -16017,7 +16017,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧵",
             "label": "Dickes Seil / Springseil",
-            "url": "https://www.amazon.de/s?k=springseil+kinder+dick&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=springseil+kinder+dick&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -16283,7 +16283,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "👁️",
             "label": "Augenklappen (12er-Set)",
-            "url": "https://www.amazon.de/s?k=augenklappe+pirat+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=augenklappe+pirat+kinder+set&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -16292,7 +16292,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪙",
             "label": "Schoko-Goldmuenzen (Beutel)",
-            "url": "https://www.amazon.de/s?k=schoko+goldmuenzen+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schoko+goldmuenzen+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -16301,7 +16301,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🖨️",
             "label": "Schatzkisten-Urkunde (Druckvorlage/Block)",
-            "url": "https://www.amazon.de/s?k=piraten+urkunde+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=piraten+urkunde+kinder&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -16310,7 +16310,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🥛",
             "label": "Apfelschorle / Saft für 'Piraten-Grog'",
-            "url": "https://www.amazon.de/s?k=apfelschorle+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=apfelschorle+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": false,
             "category": "pflicht",
@@ -16319,7 +16319,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎂",
             "label": "Zutaten Kastenkuchen (Mehl, Butter, Eier, Zucker)",
-            "url": "https://www.amazon.de/s?k=backzutaten+kastenkuchen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=backzutaten+kastenkuchen&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": false,
             "category": "pflicht",
@@ -16328,7 +16328,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📦",
             "label": "Tonkarton / Goldfolie für Schatzkiste",
-            "url": "https://www.amazon.de/s?k=tonkarton+goldfolie+bastel&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonkarton+goldfolie+bastel&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -16337,7 +16337,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🏴‍☠️",
             "label": "Piratenhuete oder Bandanas (6er-Set)",
-            "url": "https://www.amazon.de/s?k=piraten+hut+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=piraten+hut+kinder+set&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -16346,7 +16346,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧻",
             "label": "Piraten-Servietten + Pappteller",
-            "url": "https://www.amazon.de/s?k=piraten+servietten+pappteller&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=piraten+servietten+pappteller&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -16355,7 +16355,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🗺️",
             "label": "Papier für Schatzkarten + Stempel-Set",
-            "url": "https://www.amazon.de/s?k=kinder+stempel+set+bastel&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=kinder+stempel+set+bastel&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -16364,7 +16364,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🍬",
             "label": "Mitgebsel-Kleinkram (Mini-Spielzeug)",
-            "url": "https://www.amazon.de/s?k=mitgebsel+kinder+piraten&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mitgebsel+kinder+piraten&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -16373,7 +16373,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📸",
             "label": "Spielzeug-Kompass",
-            "url": "https://www.amazon.de/s?k=spielzeug+kompass+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=spielzeug+kompass+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -16382,7 +16382,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧵",
             "label": "Dickes Seil / Springseil",
-            "url": "https://www.amazon.de/s?k=springseil+kinder+dick&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=springseil+kinder+dick&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -16613,7 +16613,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "👁️",
             "label": "Augenklappen (12er-Set)",
-            "url": "https://www.amazon.de/s?k=augenklappe+pirat+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=augenklappe+pirat+kinder+set&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -16622,7 +16622,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪙",
             "label": "Schoko-Goldmuenzen (Beutel)",
-            "url": "https://www.amazon.de/s?k=schoko+goldmuenzen+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schoko+goldmuenzen+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -16631,7 +16631,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🖨️",
             "label": "Schatzkisten-Urkunde (Druckvorlage/Block)",
-            "url": "https://www.amazon.de/s?k=piraten+urkunde+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=piraten+urkunde+kinder&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -16640,7 +16640,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🥛",
             "label": "Apfelschorle / Saft für 'Piraten-Grog'",
-            "url": "https://www.amazon.de/s?k=apfelschorle+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=apfelschorle+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": false,
             "category": "pflicht",
@@ -16649,7 +16649,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎂",
             "label": "Zutaten Kastenkuchen (Mehl, Butter, Eier, Zucker)",
-            "url": "https://www.amazon.de/s?k=backzutaten+kastenkuchen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=backzutaten+kastenkuchen&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": false,
             "category": "pflicht",
@@ -16658,7 +16658,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📦",
             "label": "Tonkarton / Goldfolie für Schatzkiste",
-            "url": "https://www.amazon.de/s?k=tonkarton+goldfolie+bastel&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonkarton+goldfolie+bastel&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -16667,7 +16667,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🏴‍☠️",
             "label": "Piratenhuete oder Bandanas (6er-Set)",
-            "url": "https://www.amazon.de/s?k=piraten+hut+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=piraten+hut+kinder+set&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -16676,7 +16676,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧻",
             "label": "Piraten-Servietten + Pappteller",
-            "url": "https://www.amazon.de/s?k=piraten+servietten+pappteller&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=piraten+servietten+pappteller&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -16685,7 +16685,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🗺️",
             "label": "Bastel-Set Schatzkarten (Stempel, Papier, Stifte)",
-            "url": "https://www.amazon.de/s?k=schatzkarte+bastelset+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schatzkarte+bastelset+kinder&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -16694,7 +16694,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🏴‍☠️",
             "label": "Piratenflaggen + Deko-Set",
-            "url": "https://www.amazon.de/s?k=piraten+deko+flaggen+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=piraten+deko+flaggen+set&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -16703,7 +16703,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪝",
             "label": "Holz-Schatzkiste (statt Schuhkarton)",
-            "url": "https://www.amazon.de/s?k=schatzkiste+holz+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schatzkiste+holz+kinder&tag=machsleicht21-21",
             "priceEur": 13,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -16712,7 +16712,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📸",
             "label": "Spielzeug-Kompass",
-            "url": "https://www.amazon.de/s?k=spielzeug+kompass+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=spielzeug+kompass+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -16721,7 +16721,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧵",
             "label": "Dickes Seil / Springseil",
-            "url": "https://www.amazon.de/s?k=springseil+kinder+dick&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=springseil+kinder+dick&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -17213,12 +17213,12 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:00",
             "title": "Ankommen & Piraten-Verkleidung",
-            "description": "Jedes Kind bekommt eine [Augenklappe*](https://www.amazon.de/s?k=piraten+augenklappen+kinder&tag=machsleicht-21) und ein Piraten-Bandana. 2 Minuten Aufwand, riesiger Effekt — ab jetzt sind alle Piraten. 15 Min. Ankommen."
+            "description": "Jedes Kind bekommt eine [Augenklappe*](https://www.amazon.de/s?k=piraten+augenklappen+kinder&tag=machsleicht21-21) und ein Piraten-Bandana. 2 Minuten Aufwand, riesiger Effekt — ab jetzt sind alle Piraten. 15 Min. Ankommen."
           },
           {
             "time": "14:15",
             "title": "🗺️ Schatzsuche",
-            "description": "5 Stationen im Garten/Wohnung. An jeder Station ein Zettel mit einem Hinweis zum nächsten Ort. Am Ende: die [Schatztruhe*](https://www.amazon.de/s?k=schatztruhe+holz+kinder&tag=machsleicht-21) mit [Goldmünzen*](https://www.amazon.de/s?k=goldm%C3%BCnzen+piraten+kinder&tag=machsleicht-21) + Süßigkeiten. 25 Min."
+            "description": "5 Stationen im Garten/Wohnung. An jeder Station ein Zettel mit einem Hinweis zum nächsten Ort. Am Ende: die [Schatztruhe*](https://www.amazon.de/s?k=schatztruhe+holz+kinder&tag=machsleicht21-21) mit [Goldmünzen*](https://www.amazon.de/s?k=goldm%C3%BCnzen+piraten+kinder&tag=machsleicht21-21) + Süßigkeiten. 25 Min."
           },
           {
             "time": "14:40",
@@ -17330,7 +17330,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪙",
             "label": "Goldmünzen 100 Stk.",
-            "url": "https://www.amazon.de/s?k=goldm%C3%BCnzen+piraten+kinder&amp;tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=goldm%C3%BCnzen+piraten+kinder&amp;tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -17339,7 +17339,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧑‍🎤",
             "label": "Augenklappen 12 Stk.",
-            "url": "https://www.amazon.de/s?k=piraten+augenklappen+kinder&amp;tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=piraten+augenklappen+kinder&amp;tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -17348,7 +17348,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📦",
             "label": "Schatztruhe (Holz, klein)",
-            "url": "https://www.amazon.de/s?k=schatztruhe+holz+kinder&amp;tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schatztruhe+holz+kinder&amp;tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -17472,7 +17472,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 6,
             "loudness": null,
             "effort": null,
-            "material": "7 Zettel mit Rätseln, Schatztruhe, [Zahlenschloss 3-stellig*](https://www.amazon.de/s?k=zahlenschloss+3+stellig&tag=machsleicht-21) (~3 €), Goldmünzen + Süßigkeiten",
+            "material": "7 Zettel mit Rätseln, Schatztruhe, [Zahlenschloss 3-stellig*](https://www.amazon.de/s?k=zahlenschloss+3+stellig&tag=machsleicht21-21) (~3 €), Goldmünzen + Süßigkeiten",
             "prepText": "",
             "steps": [
               {
@@ -17652,7 +17652,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪙",
             "label": "Goldmünzen 100 Stk.",
-            "url": "https://www.amazon.de/s?k=goldm%C3%BCnzen+piraten+kinder&amp;tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=goldm%C3%BCnzen+piraten+kinder&amp;tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -17661,7 +17661,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧑‍🎤",
             "label": "Augenklappen 12 Stk.",
-            "url": "https://www.amazon.de/s?k=piraten+augenklappen+kinder&amp;tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=piraten+augenklappen+kinder&amp;tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -17670,7 +17670,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📦",
             "label": "Schatztruhe",
-            "url": "https://www.amazon.de/s?k=schatztruhe+holz+kinder&amp;tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schatztruhe+holz+kinder&amp;tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -17679,7 +17679,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔒",
             "label": "Zahlenschloss 3-stellig",
-            "url": "https://www.amazon.de/s?k=zahlenschloss+3+stellig&amp;tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=zahlenschloss+3+stellig&amp;tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -17688,7 +17688,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔭",
             "label": "Fernrohre 6 Stk.",
-            "url": "https://www.amazon.de/s?k=fernrohr+kinder+piraten&amp;tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=fernrohr+kinder+piraten&amp;tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -17734,7 +17734,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:00",
             "title": "Ankommen & Piraten-Verkleidung",
-            "description": "Augenklappe, Bandana, [Piraten-Tattoos*](https://www.amazon.de/s?k=piraten+tattoos+kinder&tag=machsleicht-21). Jedes Kind bekommt ein [Fernrohr*](https://www.amazon.de/s?k=fernrohr+kinder+piraten&tag=machsleicht-21). Ab jetzt sind alle Piraten der Crew „Schwarzer Hai“. 15 Min."
+            "description": "Augenklappe, Bandana, [Piraten-Tattoos*](https://www.amazon.de/s?k=piraten+tattoos+kinder&tag=machsleicht21-21). Jedes Kind bekommt ein [Fernrohr*](https://www.amazon.de/s?k=fernrohr+kinder+piraten&tag=machsleicht21-21). Ab jetzt sind alle Piraten der Crew „Schwarzer Hai“. 15 Min."
           },
           {
             "time": "14:15",
@@ -17769,7 +17769,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "16:25",
             "title": "🎁 Freispiel & Abholung",
-            "description": "Ruhige Ausklang-Phase mit Hörspiel (kindgerechtes Seefahrer-Abenteuer) oder freiem Spiel auf dem Teppich. Abholung ab 17:00.\n\n🎯 Der geheime Wow-Faktor\nEin [Piratenkostüm*](https://www.amazon.de/s?k=piraten+kost%C3%BCm+erwachsene&tag=machsleicht-21) für dich (~20–35 €). Du begrüßt die Kinder als „Käpt'n“ — mit Hut, Augenklappe und rauem Piraten-Akzent. Die Kinder finden das GENIAL und der ganze Tag hat einen Erzähler. Alternativ günstiger: Nur [Piratenhut*](https://www.amazon.de/s?k=piraten+hut+erwachsene&tag=machsleicht-21) + Augenklappe + Akzent reicht völlig."
+            "description": "Ruhige Ausklang-Phase mit Hörspiel (kindgerechtes Seefahrer-Abenteuer) oder freiem Spiel auf dem Teppich. Abholung ab 17:00.\n\n🎯 Der geheime Wow-Faktor\nEin [Piratenkostüm*](https://www.amazon.de/s?k=piraten+kost%C3%BCm+erwachsene&tag=machsleicht21-21) für dich (~20–35 €). Du begrüßt die Kinder als „Käpt'n“ — mit Hut, Augenklappe und rauem Piraten-Akzent. Die Kinder finden das GENIAL und der ganze Tag hat einen Erzähler. Alternativ günstiger: Nur [Piratenhut*](https://www.amazon.de/s?k=piraten+hut+erwachsene&tag=machsleicht21-21) + Augenklappe + Akzent reicht völlig."
           }
         ],
         "games": [
@@ -17866,7 +17866,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪙",
             "label": "Goldmünzen 100 Stk.",
-            "url": "https://www.amazon.de/s?k=goldm%C3%BCnzen+piraten+kinder&amp;tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=goldm%C3%BCnzen+piraten+kinder&amp;tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -17875,7 +17875,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧑‍🎤",
             "label": "Augenklappen 12 Stk.",
-            "url": "https://www.amazon.de/s?k=piraten+augenklappen+kinder&amp;tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=piraten+augenklappen+kinder&amp;tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -17884,7 +17884,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📦",
             "label": "Schatztruhe",
-            "url": "https://www.amazon.de/s?k=schatztruhe+holz+kinder&amp;tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schatztruhe+holz+kinder&amp;tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -17893,7 +17893,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔒",
             "label": "Zahlenschloss",
-            "url": "https://www.amazon.de/s?k=zahlenschloss+3+stellig&amp;tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=zahlenschloss+3+stellig&amp;tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -17902,7 +17902,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔭",
             "label": "Fernrohre 6 Stk.",
-            "url": "https://www.amazon.de/s?k=fernrohr+kinder+piraten&amp;tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=fernrohr+kinder+piraten&amp;tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -17911,7 +17911,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🏴‍☠️",
             "label": "Piraten-Tattoos",
-            "url": "https://www.amazon.de/s?k=piraten+tattoos+kinder&amp;tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=piraten+tattoos+kinder&amp;tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -20098,7 +20098,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪐",
             "label": "Tonpapier-Set bunt (A4, 130 Blatt)",
-            "url": "https://www.amazon.de/s?k=tonpapier+bunt+a4+bastelpapier&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonpapier+bunt+a4+bastelpapier&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -20107,7 +20107,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🥤",
             "label": "Apfelschorle (6er-Pack)",
-            "url": "https://www.amazon.de/s?k=apfelschorle+kinder+6er&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=apfelschorle+kinder+6er&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -20125,7 +20125,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🖍️",
             "label": "Buntstifte / Filzstifte dick",
-            "url": "https://www.amazon.de/s?k=buntstifte+dick+kinder+kleinkind&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=buntstifte+dick+kinder+kleinkind&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -20152,7 +20152,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎀",
             "label": "Krepppapier rot/orange",
-            "url": "https://www.amazon.de/s?k=krepppapier+rot+orange&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=krepppapier+rot+orange&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -20161,7 +20161,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Stern-Stickerset",
-            "url": "https://www.amazon.de/s?k=sterne+sticker+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=sterne+sticker+kinder+set&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -20170,7 +20170,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎈",
             "label": "Silberne Luftballons",
-            "url": "https://www.amazon.de/s?k=luftballons+silber+metallic&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=luftballons+silber+metallic&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -20445,7 +20445,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪐",
             "label": "Tonpapier-Set bunt (A4, 130 Blatt)",
-            "url": "https://www.amazon.de/s?k=tonpapier+bunt+a4+bastelpapier&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonpapier+bunt+a4+bastelpapier&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -20454,7 +20454,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🥤",
             "label": "Apfelschorle (2x6er-Pack (oder 1,5L-Flasche))",
-            "url": "https://www.amazon.de/s?k=apfelschorle+kinder+6er&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=apfelschorle+kinder+6er&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -20472,7 +20472,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🖍️",
             "label": "Buntstifte / Filzstifte dick",
-            "url": "https://www.amazon.de/s?k=buntstifte+dick+kinder+kleinkind&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=buntstifte+dick+kinder+kleinkind&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -20499,7 +20499,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎀",
             "label": "Krepppapier rot/orange",
-            "url": "https://www.amazon.de/s?k=krepppapier+rot+orange&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=krepppapier+rot+orange&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -20508,7 +20508,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Stern-Stickerset",
-            "url": "https://www.amazon.de/s?k=sterne+sticker+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=sterne+sticker+kinder+set&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -20517,7 +20517,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎈",
             "label": "Silberne Luftballons",
-            "url": "https://www.amazon.de/s?k=luftballons+silber+metallic&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=luftballons+silber+metallic&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -20535,7 +20535,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌑",
             "label": "Mond-Krater-Backform (Gugelhupf)",
-            "url": "https://www.amazon.de/s?k=gugelhupf+backform+silikon&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=gugelhupf+backform+silikon&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -20544,7 +20544,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪐",
             "label": "Planeten-Poster / Weltraum-Tuch",
-            "url": "https://www.amazon.de/s?k=weltraum+poster+kinderzimmer+sterne&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=weltraum+poster+kinderzimmer+sterne&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -20810,7 +20810,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪐",
             "label": "Tonpapier-Set bunt (A4, 130 Blatt)",
-            "url": "https://www.amazon.de/s?k=tonpapier+bunt+a4+bastelpapier&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonpapier+bunt+a4+bastelpapier&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -20819,7 +20819,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🥤",
             "label": "Apfelschorle (2x6er-Pack (oder 1,5L-Flasche))",
-            "url": "https://www.amazon.de/s?k=apfelschorle+kinder+6er&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=apfelschorle+kinder+6er&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -20837,7 +20837,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🖍️",
             "label": "Buntstifte / Filzstifte dick",
-            "url": "https://www.amazon.de/s?k=buntstifte+dick+kinder+kleinkind&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=buntstifte+dick+kinder+kleinkind&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -20864,7 +20864,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎀",
             "label": "Krepppapier rot/orange",
-            "url": "https://www.amazon.de/s?k=krepppapier+rot+orange&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=krepppapier+rot+orange&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -20873,7 +20873,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Stern-Stickerset",
-            "url": "https://www.amazon.de/s?k=sterne+sticker+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=sterne+sticker+kinder+set&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -20882,7 +20882,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎈",
             "label": "Silberne Luftballons",
-            "url": "https://www.amazon.de/s?k=luftballons+silber+metallic&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=luftballons+silber+metallic&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -20900,7 +20900,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌑",
             "label": "Mond-Krater-Backform (Gugelhupf)",
-            "url": "https://www.amazon.de/s?k=gugelhupf+backform+silikon&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=gugelhupf+backform+silikon&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -20909,7 +20909,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪐",
             "label": "Planeten-Poster / Weltraum-Tuch",
-            "url": "https://www.amazon.de/s?k=weltraum+poster+kinderzimmer+sterne&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=weltraum+poster+kinderzimmer+sterne&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -20918,7 +20918,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🚀",
             "label": "Astronauten-Stirnband-Set / Helm-Bastelset",
-            "url": "https://www.amazon.de/s?k=astronaut+helm+bastelset+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=astronaut+helm+bastelset+kinder&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -20927,7 +20927,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✨",
             "label": "Stern-Projektor (Nachtlicht)",
-            "url": "https://www.amazon.de/s?k=sternenhimmel+projektor+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=sternenhimmel+projektor+kinder&tag=machsleicht21-21",
             "priceEur": 16,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -20936,7 +20936,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎈",
             "label": "Aufblasbarer Astronaut (Deko-Figur)",
-            "url": "https://www.amazon.de/s?k=aufblasbar+astronaut+deko&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=aufblasbar+astronaut+deko&tag=machsleicht21-21",
             "priceEur": 14,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -21633,7 +21633,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪐",
             "label": "Planeten-Sticker oder Sonnensystem-Poster",
-            "url": "https://www.amazon.de/s?k=weltraum+sticker+planeten+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=weltraum+sticker+planeten+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -22063,7 +22063,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧪",
             "label": "Brausetabletten oder Natron + Essig + Filmdosen",
-            "url": "https://www.amazon.de/s?k=filmdosen+leer+experiment&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=filmdosen+leer+experiment&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -22090,7 +22090,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪐",
             "label": "Planeten-Sticker + Leucht-Sterne",
-            "url": "https://www.amazon.de/s?k=leuchtsterne+planeten+sticker+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=leuchtsterne+planeten+sticker+kinder&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -22295,7 +22295,7 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "food": "🎂Raketen-Kuchen1 Blechkuchen + 1 kleiner\n🥤\"Energie-Drink\"5 L Apfelschorle\n🍕Mond-Pizzen (Backstation)10-12 Stück\n🌯Wraps \"Kometen\"10 Stück\n🌟Stern-Kekse10 Stk.\n🥕Möhren + Käse-Würfel\"Mond-Sticks\"\n🍿Meteoriten-Popcorn (Kino)400 g\n🍫Schoko-SterneRaumstation-Inhalt",
-        "decoration": "🌟 Weltraum-Teller & BecherSet ~10 €\n🎈 Luftballons schwarz/silber/blau20 Stk. ~5 €\n🪧 Weltraum-Girlande~4 €\n🪐 Planeten aus Styroporkugeln~5 € StyroporAufhängen oder auf den Tisch — komplettes Sonnensystem\n🌙 LED-Lichterkette als Sterne~3 €Von der Decke hängen = Sternenhimmel\n🛰️ \"Kontroll-Zentrum\"-SchildKostenlosPappe + Edding, am Eingang aufstellen\n🚀 Papier-Raketen-PfadKostenlosKleine Raketen aus Tonpapier, vom Eingang bis zum Partyraum\n🔊 Weltraum-SoundsKostenlosYouTube \"Space Ambient Sounds\" leise im Hintergrund\n📦 Raumstation-Karton~3 €Schuhkarton + Alufolie + Stern-Aufkleber\n\n🚀 Optional: Aufblasbares Astronauten-Kostüm als Überraschungs-Auftritt\nEine Variante für die Eröffnung: ein [aufblasbares Astronauten- oder Alien-Kostüm*](https://www.amazon.de/s?k=aufblasbares+kostüm+kinder+astronaut&tag=machsleicht-21) (~30 €) für das Geburtstagskind oder ein Elternteil. Geburtstagskind eröffnet die Tür im Kostüm, oder Mama/Papa taucht als Überraschungs-Alien beim Mission-Briefing auf. Funktioniert besonders, wenn du eh ein lustiges Foto willst — der Auftritt wird zum Eis-Brecher der Party. Nicht nötig, aber wirkungsvoll. Separat kalkuliert, weil optional.",
+        "decoration": "🌟 Weltraum-Teller & BecherSet ~10 €\n🎈 Luftballons schwarz/silber/blau20 Stk. ~5 €\n🪧 Weltraum-Girlande~4 €\n🪐 Planeten aus Styroporkugeln~5 € StyroporAufhängen oder auf den Tisch — komplettes Sonnensystem\n🌙 LED-Lichterkette als Sterne~3 €Von der Decke hängen = Sternenhimmel\n🛰️ \"Kontroll-Zentrum\"-SchildKostenlosPappe + Edding, am Eingang aufstellen\n🚀 Papier-Raketen-PfadKostenlosKleine Raketen aus Tonpapier, vom Eingang bis zum Partyraum\n🔊 Weltraum-SoundsKostenlosYouTube \"Space Ambient Sounds\" leise im Hintergrund\n📦 Raumstation-Karton~3 €Schuhkarton + Alufolie + Stern-Aufkleber\n\n🚀 Optional: Aufblasbares Astronauten-Kostüm als Überraschungs-Auftritt\nEine Variante für die Eröffnung: ein [aufblasbares Astronauten- oder Alien-Kostüm*](https://www.amazon.de/s?k=aufblasbares+kostüm+kinder+astronaut&tag=machsleicht21-21) (~30 €) für das Geburtstagskind oder ein Elternteil. Geburtstagskind eröffnet die Tür im Kostüm, oder Mama/Papa taucht als Überraschungs-Alien beim Mission-Briefing auf. Funktioniert besonders, wenn du eh ein lustiges Foto willst — der Auftritt wird zum Eis-Brecher der Party. Nicht nötig, aber wirkungsvoll. Separat kalkuliert, weil optional.",
         "giveaways": "🪪 Astronauten-Ausweis im Scheckkartenformat (laminiert, Wow-Highlight)\n🏅 Astronauten-Lizenz (Urkunde mit Foto-Slot)\n🚀 Selbst gebaute Papier-Rakete\n📓 Astronauten-Logbuch (DIY-Notizbuch mit Foto-Slot vorne, Planeten-Stickern innen)\n🌟 Beutel Leucht-Sterne\n🪐 Planeten-Sticker-Bogen\n🍫 Schoko-Sterne aus der Raumstation\n🍬 Tüte Gummibärchen (\"Proviant\")\n\nAlles in schwarze/silberne Papiertüte, beschriftet mit \"Ausrüstung für Astronaut ___\". Kosten: ~8 € pro Kind. Lizenz, Ausweis und Logbuch nehmen die Kinder mit nach Hause — Eltern fotografieren sie, Kinder zeigen sie wochenlang.",
         "shoppingList": [
           {
@@ -22319,7 +22319,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧪",
             "label": "Brausetabletten/Natron + Essig + Filmdosen",
-            "url": "https://www.amazon.de/s?k=filmdosen+leer+experiment&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=filmdosen+leer+experiment&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -22346,7 +22346,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪐",
             "label": "Planeten-Sticker + Leucht-Sterne (großzügig)",
-            "url": "https://www.amazon.de/s?k=leuchtsterne+planeten+sticker+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=leuchtsterne+planeten+sticker+kinder&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -22427,7 +22427,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📻",
             "label": "Walkie-Talkie-Set (4 Stk., optional)",
-            "url": "https://www.amazon.de/s?k=walkie+talkie+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=walkie+talkie+kinder+set&tag=machsleicht21-21",
             "priceEur": 25,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -22436,7 +22436,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔭",
             "label": "Kinder-Teleskop / Stern-Projektor (optional)",
-            "url": "https://www.amazon.de/s?k=stern+projektor+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=stern+projektor+kinder&tag=machsleicht21-21",
             "priceEur": 30,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -22445,7 +22445,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🚀",
             "label": "Aufblasbares Astronauten-Kostüm (optional)",
-            "url": "https://www.amazon.de/s?k=aufblasbares+kostüm+kinder+astronaut&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=aufblasbares+kostüm+kinder+astronaut&tag=machsleicht21-21",
             "priceEur": 30,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -23242,7 +23242,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧷",
             "label": "Klett-Patch-Set Pilot/Wissenschaftler/Mechaniker",
-            "url": "https://www.amazon.de/s?k=crew+aufnaeher+patch+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=crew+aufnaeher+patch+set&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -23251,7 +23251,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🖋️",
             "label": "Stempel „Sorgfalt-Spezialist“ + Stempelkissen",
-            "url": "https://www.amazon.de/s?k=stempel+individuell+text&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=stempel+individuell+text&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -23269,7 +23269,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌟",
             "label": "Sternen-/Planeten-Poster als Hintergrund-Deko",
-            "url": "https://www.amazon.de/s?k=sternenkarte+poster&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=sternenkarte+poster&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -23739,7 +23739,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🗺️",
             "label": "Sternenkarte (Druck/Plakat) + Planeten-Kartenset",
-            "url": "https://www.amazon.de/s?k=planeten+karten+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=planeten+karten+kinder&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -23748,7 +23748,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧷",
             "label": "Klett-Patch-Set (3 Spezialisierungen)",
-            "url": "https://www.amazon.de/s?k=crew+aufnaeher+patch+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=crew+aufnaeher+patch+set&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -23757,7 +23757,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🖋️",
             "label": "Sorgfalt-Spezialist-Stempel",
-            "url": "https://www.amazon.de/s?k=stempel+individuell+text&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=stempel+individuell+text&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -23766,7 +23766,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📻",
             "label": "Walkie-Talkie-Set (2 Stück)",
-            "url": "https://www.amazon.de/s?k=walkie+talkie+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=walkie+talkie+kinder&tag=machsleicht21-21",
             "priceEur": 18,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -23775,7 +23775,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔧",
             "label": "Spielzeug-Werkzeug / Steck-Bauteil fürs Triebwerk",
-            "url": "https://www.amazon.de/s?k=kinder+werkzeug+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=kinder+werkzeug+set&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -23802,7 +23802,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎁",
             "label": "Mitgebsel für die Versorgungs-Kapsel",
-            "url": "https://www.amazon.de/s?k=mitgebsel+weltraum&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mitgebsel+weltraum&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -23811,7 +23811,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌟",
             "label": "Sternen-/Galaxie-Deko (Servietten, Folie)",
-            "url": "https://www.amazon.de/s?k=weltraum+party+deko&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=weltraum+party+deko&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -24056,7 +24056,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🗺️",
             "label": "Sternenkarte + Planeten-Kartenset",
-            "url": "https://www.amazon.de/s?k=planeten+karten+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=planeten+karten+kinder&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -24065,7 +24065,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔦",
             "label": "Stirnlampen mit Rotlicht (pro Kind)",
-            "url": "https://www.amazon.de/s?k=stirnlampe+rotlicht+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=stirnlampe+rotlicht+kinder&tag=machsleicht21-21",
             "priceEur": 28,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -24074,7 +24074,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧷",
             "label": "Klett-Patch-Set (3 Spezialisierungen)",
-            "url": "https://www.amazon.de/s?k=crew+aufnaeher+patch+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=crew+aufnaeher+patch+set&tag=machsleicht21-21",
             "priceEur": 11,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -24083,7 +24083,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🖋️",
             "label": "Sorgfalt-Spezialist-Stempel",
-            "url": "https://www.amazon.de/s?k=stempel+individuell+text&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=stempel+individuell+text&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -24092,7 +24092,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📻",
             "label": "Walkie-Talkie-Set (2–4 Stück)",
-            "url": "https://www.amazon.de/s?k=walkie+talkie+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=walkie+talkie+kinder&tag=machsleicht21-21",
             "priceEur": 24,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -24101,7 +24101,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔧",
             "label": "Spielzeug-Werkzeug / Steck-Triebwerk",
-            "url": "https://www.amazon.de/s?k=kinder+werkzeug+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=kinder+werkzeug+set&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -24110,7 +24110,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔭",
             "label": "Fernglas für Mond/Planeten-Beobachtung",
-            "url": "https://www.amazon.de/s?k=fernglas+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=fernglas+kinder&tag=machsleicht21-21",
             "priceEur": 25,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -24119,7 +24119,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌟",
             "label": "Sternenprojektor (Plan B bei Bewölkung)",
-            "url": "https://www.amazon.de/s?k=sternenprojektor&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=sternenprojektor&tag=machsleicht21-21",
             "priceEur": 22,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -24128,7 +24128,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🛸",
             "label": "Mars-Rover-Spielzeug (für jüngere Geschwister)",
-            "url": "https://www.amazon.de/s?k=mars+rover+spielzeug&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mars+rover+spielzeug&tag=machsleicht21-21",
             "priceEur": 18,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -24137,7 +24137,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎁",
             "label": "Sonden-Inhalt / Mitgebsel",
-            "url": "https://www.amazon.de/s?k=mitgebsel+weltraum&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mitgebsel+weltraum&tag=machsleicht21-21",
             "priceEur": 16,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -24146,7 +24146,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌟",
             "label": "Weltraum-Deko (Folie, Servietten, Luftballons)",
-            "url": "https://www.amazon.de/s?k=weltraum+party+deko&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=weltraum+party+deko&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -27770,7 +27770,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔍",
             "label": "Mini-Lupen (6 Stk., für Spurensuche + Mitgebsel)",
-            "url": "https://www.amazon.de/dp/B07LUPEN6?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B07LUPEN6?tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -27779,7 +27779,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Klett-Abzeichen 3 Farben (Spezialisierungs-Patches)",
-            "url": "https://www.amazon.de/dp/B08KLETTPATCH?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B08KLETTPATCH?tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -28353,7 +28353,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🚧",
             "label": "Absperrband schwarz-gelb (Tatort-Deko + Markierungen)",
-            "url": "https://www.amazon.de/dp/B07ABSPERR?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B07ABSPERR?tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -28362,7 +28362,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔍",
             "label": "Lupen-Set (8 Stk., Spurensuche + Mitgebsel)",
-            "url": "https://www.amazon.de/dp/B07LUPEN8?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B07LUPEN8?tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -28371,7 +28371,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Klett-Abzeichen 3 Farben (Spezialisierungs-Patches)",
-            "url": "https://www.amazon.de/dp/B08KLETTPATCH?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B08KLETTPATCH?tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -28380,7 +28380,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🖊️",
             "label": "UV-Geheimstifte (für Geheimschrift + Mitgebsel)",
-            "url": "https://www.amazon.de/dp/B07UVSTIFT?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B07UVSTIFT?tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -28690,7 +28690,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🚧",
             "label": "Absperrband schwarz-gelb (Tatort-Frame)",
-            "url": "https://www.amazon.de/dp/B07ABSPERR?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B07ABSPERR?tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -28699,7 +28699,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🖊️",
             "label": "UV-Stifte mit Lampe (10er-Set, für Werkstatt + Mitgebsel)",
-            "url": "https://www.amazon.de/dp/B07UVSET10?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B07UVSET10?tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -28708,7 +28708,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔍",
             "label": "Lupen-Set (10 Stk., Spurensuche + Mitgebsel)",
-            "url": "https://www.amazon.de/dp/B07LUPEN10?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B07LUPEN10?tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -28717,7 +28717,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Klett-Abzeichen 3 Farben",
-            "url": "https://www.amazon.de/dp/B08KLETTPATCH?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B08KLETTPATCH?tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -28735,7 +28735,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎩",
             "label": "Detektiv-Hüte oder Trenchcoat-Accessoires (Wow-Highlight)",
-            "url": "https://www.amazon.de/dp/B07DETEKTHUT?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B07DETEKTHUT?tag=machsleicht21-21",
             "priceEur": 90,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -28753,7 +28753,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔦",
             "label": "UV-Taschenlampen-Set (5 Stk., nur bei Schlafparty)",
-            "url": "https://www.amazon.de/dp/B08UVLAMP5?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B08UVLAMP5?tag=machsleicht21-21",
             "priceEur": 15,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -29294,7 +29294,7 @@ var ELITE_MOTTO_DATA = {
         }
       ],
       "optOutNote": "Manche Kinder wollen kein Stirnband, keine Rolle oder einfach nur zuschauen — das ist bei 3-5 voellig normal und kein Problem. Zwing kein Kind in eine Rolle. Leg das Stirnband daneben, sag „du kannst es spaeter aufsetzen, wenn du magst“ und mach weiter. Oft kommt das Kind nach 10 Minuten von selbst dazu, wenn es sieht, dass es Spass macht. Die Start-Muschel und die Urkunde bekommt JEDES Kind am Ende — auch das, das nicht mitgespielt hat. Kein Kind geht ohne Perlen-Beutel nach Hause.",
-      "materialNote": "Für das Ritual brauchst du nur drei Dinge: Tonpapier-Stirnbaender mit Muschel-Stickern (👉 amazon.de/s?k=muschel+sticker+basteln&tag=machsleicht-21, ~5 €), kleine Deko-Muscheln im Set (👉 amazon.de/s?k=deko+muscheln+set&tag=machsleicht-21, ~6 €) und Perlen-Schokolade für die Beutel (👉 amazon.de/s?k=schokoladen+perlen&tag=machsleicht-21, ~4 €). Stirnbaender kannst du auch komplett selbst aus Tonpapier-Resten basteln — ein aufgemalter Muschel-Kringel reicht den Kleinen voellig. Die Meerprinz-Variante für Jungen: statt Muschel ein Wellen-Sticker oder eine kleine Krone."
+      "materialNote": "Für das Ritual brauchst du nur drei Dinge: Tonpapier-Stirnbaender mit Muschel-Stickern (👉 amazon.de/s?k=muschel+sticker+basteln&tag=machsleicht21-21, ~5 €), kleine Deko-Muscheln im Set (👉 amazon.de/s?k=deko+muscheln+set&tag=machsleicht21-21, ~6 €) und Perlen-Schokolade für die Beutel (👉 amazon.de/s?k=schokoladen+perlen&tag=machsleicht21-21, ~4 €). Stirnbaender kannst du auch komplett selbst aus Tonpapier-Resten basteln — ein aufgemalter Muschel-Kringel reicht den Kleinen voellig. Die Meerprinz-Variante für Jungen: statt Muschel ein Wellen-Sticker oder eine kleine Krone."
     },
     "ageInsight": {
       "headline": "Warum 3–5-Jaehrige eine ruhige Unterwasser-Welt brauchen — keine Tiefsee",
@@ -29494,7 +29494,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🐚",
             "label": "Deko-Muscheln (Set)",
-            "url": "https://www.amazon.de/s?k=deko+muscheln+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=deko+muscheln+set&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -29503,7 +29503,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📜",
             "label": "Tonpapier / Tonkarton (bunt)",
-            "url": "https://www.amazon.de/s?k=tonpapier+bunt+bastel&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonpapier+bunt+bastel&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -29512,7 +29512,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✨",
             "label": "Muschel- + Glitzer-Sticker",
-            "url": "https://www.amazon.de/s?k=muschel+sticker+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=muschel+sticker+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -29521,7 +29521,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🍬",
             "label": "Schokoladen-Perlen",
-            "url": "https://www.amazon.de/s?k=schokoladen+perlen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schokoladen+perlen&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -29530,7 +29530,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔵",
             "label": "Blaue Lebensmittelfarbe",
-            "url": "https://www.amazon.de/s?k=blaue+lebensmittelfarbe&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=blaue+lebensmittelfarbe&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -29539,7 +29539,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🐟",
             "label": "Gummi-Fische (Fruchtgummi)",
-            "url": "https://www.amazon.de/s?k=gummi+fische+fruchtgummi&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=gummi+fische+fruchtgummi&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -29548,7 +29548,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎈",
             "label": "Luftballons blau/tuerkis",
-            "url": "https://www.amazon.de/s?k=luftballons+blau+tuerkis&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=luftballons+blau+tuerkis&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -29557,7 +29557,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧵",
             "label": "Wattekugeln (als Perlen)",
-            "url": "https://www.amazon.de/s?k=wattekugeln+gross+bastel&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=wattekugeln+gross+bastel&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -29841,7 +29841,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🐚",
             "label": "Deko-Muscheln (Set)",
-            "url": "https://www.amazon.de/s?k=deko+muscheln+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=deko+muscheln+set&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -29850,7 +29850,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📜",
             "label": "Tonpapier / Tonkarton (bunt)",
-            "url": "https://www.amazon.de/s?k=tonpapier+bunt+bastel&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonpapier+bunt+bastel&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -29859,7 +29859,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✨",
             "label": "Muschel- + Glitzer-Sticker",
-            "url": "https://www.amazon.de/s?k=muschel+sticker+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=muschel+sticker+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -29868,7 +29868,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🍬",
             "label": "Schokoladen-Perlen",
-            "url": "https://www.amazon.de/s?k=schokoladen+perlen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schokoladen+perlen&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -29877,7 +29877,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧵",
             "label": "Bunte Plastik-Perlen (gross)",
-            "url": "https://www.amazon.de/s?k=perlen+gross+kinder+bastel&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=perlen+gross+kinder+bastel&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -29886,7 +29886,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🟢",
             "label": "Gruenes Krepp-Papier (Algen)",
-            "url": "https://www.amazon.de/s?k=krepp+papier+gruen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=krepp+papier+gruen&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -29895,7 +29895,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔵",
             "label": "Blaues Krepp-Papier (Wellen)",
-            "url": "https://www.amazon.de/s?k=krepp+papier+blau&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=krepp+papier+blau&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -29904,7 +29904,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎈",
             "label": "Luftballons blau/tuerkis",
-            "url": "https://www.amazon.de/s?k=luftballons+blau+tuerkis&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=luftballons+blau+tuerkis&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -29913,7 +29913,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔵",
             "label": "Blaue Lebensmittelfarbe",
-            "url": "https://www.amazon.de/s?k=blaue+lebensmittelfarbe&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=blaue+lebensmittelfarbe&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -29922,7 +29922,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🐟",
             "label": "Gummi-Fische (Fruchtgummi)",
-            "url": "https://www.amazon.de/s?k=gummi+fische+fruchtgummi&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=gummi+fische+fruchtgummi&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -29931,7 +29931,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧶",
             "label": "Klebestifte (Set)",
-            "url": "https://www.amazon.de/s?k=klebestifte+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=klebestifte+kinder+set&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -30269,7 +30269,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🐚",
             "label": "Deko-Muscheln (gross. Set)",
-            "url": "https://www.amazon.de/s?k=deko+muscheln+gross+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=deko+muscheln+gross+set&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -30278,7 +30278,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📜",
             "label": "Tonpapier / Tonkarton (bunt)",
-            "url": "https://www.amazon.de/s?k=tonpapier+bunt+bastel&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonpapier+bunt+bastel&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -30287,7 +30287,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✨",
             "label": "Muschel- + Glitzer-Sticker",
-            "url": "https://www.amazon.de/s?k=muschel+sticker+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=muschel+sticker+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -30296,7 +30296,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🍬",
             "label": "Schokoladen-Perlen",
-            "url": "https://www.amazon.de/s?k=schokoladen+perlen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schokoladen+perlen&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -30305,7 +30305,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧵",
             "label": "Bunte Plastik-Perlen (gross)",
-            "url": "https://www.amazon.de/s?k=perlen+gross+kinder+bastel&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=perlen+gross+kinder+bastel&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -30314,7 +30314,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🟢",
             "label": "Gruenes Krepp-Papier (Algen)",
-            "url": "https://www.amazon.de/s?k=krepp+papier+gruen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=krepp+papier+gruen&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -30323,7 +30323,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔵",
             "label": "Blaues Krepp-Papier (Wellen)",
-            "url": "https://www.amazon.de/s?k=krepp+papier+blau&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=krepp+papier+blau&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -30332,7 +30332,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💡",
             "label": "LED-Lichterkette (warmweiss)",
-            "url": "https://www.amazon.de/s?k=led+lichterkette+batterie&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=led+lichterkette+batterie&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -30341,7 +30341,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎈",
             "label": "Luftballons blau/tuerkis (Set)",
-            "url": "https://www.amazon.de/s?k=luftballons+blau+tuerkis+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=luftballons+blau+tuerkis+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -30350,7 +30350,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔵",
             "label": "Blaue Lebensmittelfarbe",
-            "url": "https://www.amazon.de/s?k=blaue+lebensmittelfarbe&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=blaue+lebensmittelfarbe&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -30359,7 +30359,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🐟",
             "label": "Gummi-Fische (Fruchtgummi)",
-            "url": "https://www.amazon.de/s?k=gummi+fische+fruchtgummi&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=gummi+fische+fruchtgummi&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -30368,7 +30368,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧶",
             "label": "Klebestifte (Set)",
-            "url": "https://www.amazon.de/s?k=klebestifte+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=klebestifte+kinder+set&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -30967,7 +30967,7 @@ var ELITE_MOTTO_DATA = {
         }
       ],
       "optOutNote": "Kein Zwang. Wer den eigenen Namen behalten will — passt. Wer keine Rolle vor der Gruppe vorlesen mag, bekommt sie still zugeflüstert. Und kein Kind muss „die Meerjungfrau\" sein: alle Rollen sind Crew-Jobs, für Jungen wie Mädchen gleichermaßen. Niemand wird ausgeschlossen.",
-      "materialNote": "[Muschel- & Perlen-Set](https://www.amazon.de/s?k=muscheln+perlen+bastel+kinder+set&tag=machsleicht-21)* (~6 € für Crew-Ketten), ein Stoffbeutel oder eine kleine Kiste (Vorrat oder ~2 €), die Crew-Namen oben einfach ausdrucken und zerschneiden. Die Crew-Karten passen auf eine DIN-A4-Seite (6× ausschneiden)."
+      "materialNote": "[Muschel- & Perlen-Set](https://www.amazon.de/s?k=muscheln+perlen+bastel+kinder+set&tag=machsleicht21-21)* (~6 € für Crew-Ketten), ein Stoffbeutel oder eine kleine Kiste (Vorrat oder ~2 €), die Crew-Namen oben einfach ausdrucken und zerschneiden. Die Crew-Karten passen auf eine DIN-A4-Seite (6× ausschneiden)."
     },
     "variants": [
       {
@@ -31097,7 +31097,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦪",
             "label": "Muschel- & Perlen-Set",
-            "url": "https://www.amazon.de/s?k=muscheln+perlen+bastel+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=muscheln+perlen+bastel+kinder&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -31106,7 +31106,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧵",
             "label": "Bastelschnur / Lederband",
-            "url": "https://www.amazon.de/s?k=bastelschnur+kinder+schmuck&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=bastelschnur+kinder+schmuck&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -31115,7 +31115,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🍬",
             "label": "Gummi-Fische / Meerestiere",
-            "url": "https://www.amazon.de/s?k=haribo+fische+gummibaerchen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=haribo+fische+gummibaerchen&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -31124,7 +31124,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🥤",
             "label": "Apfelschorle / Saftpäckchen",
-            "url": "https://www.amazon.de/s?k=capri+sun+12er&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=capri+sun+12er&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -31396,7 +31396,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦪",
             "label": "Muschel- & Perlen-Set",
-            "url": "https://www.amazon.de/s?k=muscheln+perlen+bastel+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=muscheln+perlen+bastel+kinder&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -31405,7 +31405,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧵",
             "label": "Bastelschnur / Lederband",
-            "url": "https://www.amazon.de/s?k=bastelschnur+kinder+schmuck&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=bastelschnur+kinder+schmuck&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -31414,7 +31414,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🍬",
             "label": "Gummi-Fische / Meerestiere",
-            "url": "https://www.amazon.de/s?k=haribo+fische+gummibaerchen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=haribo+fische+gummibaerchen&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -31423,7 +31423,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🥤",
             "label": "Apfelschorle / Saftpäckchen",
-            "url": "https://www.amazon.de/s?k=capri+sun+12er&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=capri+sun+12er&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -31432,7 +31432,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎨",
             "label": "Lebensmittelfarbe blau + Backpulver",
-            "url": "https://www.amazon.de/s?k=lebensmittelfarbe+blau+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=lebensmittelfarbe+blau+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -31441,7 +31441,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🐠",
             "label": "Mini-Meerestier-Figuren (12 Stk.)",
-            "url": "https://www.amazon.de/s?k=meerestiere+figuren+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=meerestiere+figuren+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -31450,7 +31450,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎈",
             "label": "Deko-Set blau/türkis (Ballons/Girlande)",
-            "url": "https://www.amazon.de/s?k=meerjungfrau+deko+set+kindergeburtstag&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=meerjungfrau+deko+set+kindergeburtstag&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "optional",
@@ -31459,7 +31459,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪙",
             "label": "Schoko-Goldmünzen",
-            "url": "https://www.amazon.de/s?k=schoko+goldmuenzen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schoko+goldmuenzen&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -31621,7 +31621,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦪",
             "label": "Muschel- & Perlen-Set",
-            "url": "https://www.amazon.de/s?k=muscheln+perlen+bastel+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=muscheln+perlen+bastel+kinder&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -31630,7 +31630,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧵",
             "label": "Bastelschnur / Lederband",
-            "url": "https://www.amazon.de/s?k=bastelschnur+kinder+schmuck&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=bastelschnur+kinder+schmuck&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -31639,7 +31639,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🍬",
             "label": "Gummi-Fische / Meerestiere",
-            "url": "https://www.amazon.de/s?k=haribo+fische+gummibaerchen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=haribo+fische+gummibaerchen&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -31648,7 +31648,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🥤",
             "label": "Apfelschorle / Saftpäckchen",
-            "url": "https://www.amazon.de/s?k=capri+sun+12er&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=capri+sun+12er&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -31657,7 +31657,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎨",
             "label": "Lebensmittelfarbe blau + Backpulver",
-            "url": "https://www.amazon.de/s?k=lebensmittelfarbe+blau+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=lebensmittelfarbe+blau+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -31666,7 +31666,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🐠",
             "label": "Mini-Meerestier-Figuren (12 Stk.)",
-            "url": "https://www.amazon.de/s?k=meerestiere+figuren+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=meerestiere+figuren+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -31675,7 +31675,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎈",
             "label": "Deko-Set blau/türkis (Ballons/Girlande)",
-            "url": "https://www.amazon.de/s?k=meerjungfrau+deko+set+kindergeburtstag&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=meerjungfrau+deko+set+kindergeburtstag&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "optional",
@@ -31684,7 +31684,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪙",
             "label": "Schoko-Goldmünzen",
-            "url": "https://www.amazon.de/s?k=schoko+goldmuenzen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schoko+goldmuenzen&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -31693,7 +31693,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔦",
             "label": "UV-Taschenlampe + Geheimschrift-Stift",
-            "url": "https://www.amazon.de/s?k=uv+lampe+geheimschrift+stift+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=uv+lampe+geheimschrift+stift+set&tag=machsleicht21-21",
             "priceEur": 14,
             "hasAffiliate": true,
             "category": "optional",
@@ -31702,7 +31702,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📦",
             "label": "Schatztruhe (Holz/Pappe)",
-            "url": "https://www.amazon.de/s?k=schatztruhe+kinder+holz&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schatztruhe+kinder+holz&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
             "category": "optional",
@@ -31711,7 +31711,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧁",
             "label": "Muffin-Deko-Set (Zucker-Muscheln etc.)",
-            "url": "https://www.amazon.de/s?k=kuchen+deko+meer+zucker&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=kuchen+deko+meer+zucker&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -32501,7 +32501,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Klett-Abzeichen 3 Farben (Spezialisierungs-Patches)",
-            "url": "https://www.amazon.de/dp/B08KLETTPATCH?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B08KLETTPATCH?tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -32510,7 +32510,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🐚",
             "label": "Deko-Muscheln + Glasperlen-Set",
-            "url": "https://www.amazon.de/s?k=muscheln+perlen+bastel+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=muscheln+perlen+bastel+set&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -32907,7 +32907,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Klett-Abzeichen 3 Farben (Spezialisierungs-Patches)",
-            "url": "https://www.amazon.de/dp/B08KLETTPATCH?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B08KLETTPATCH?tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -32916,7 +32916,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🤿",
             "label": "Spielzeug-Tauch-Maske (für Perlentaucher-Foto)",
-            "url": "https://www.amazon.de/s?k=tauchmaske+kinder+spielzeug&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tauchmaske+kinder+spielzeug&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -32925,7 +32925,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🐚",
             "label": "Muschel- + Perlen-Bastel-Set",
-            "url": "https://www.amazon.de/s?k=muscheln+perlen+bastel+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=muscheln+perlen+bastel+set&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -32934,7 +32934,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪧",
             "label": "Atlantis-Girlande + Luftballons blau/türkis/perlweiß",
-            "url": "https://www.amazon.de/s?k=meerjungfrau+girlande+luftballons&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=meerjungfrau+girlande+luftballons&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -33244,7 +33244,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧣",
             "label": "Bandanas (10 Stk., für Tauch-Anzug-Werkstatt)",
-            "url": "https://www.amazon.de/s?k=bandanas+10er+set+weiss+hellblau&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=bandanas+10er+set+weiss+hellblau&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -33262,7 +33262,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Klett-Abzeichen 3 Farben",
-            "url": "https://www.amazon.de/dp/B08KLETTPATCH?tag=machsleicht-21",
+            "url": "https://www.amazon.de/dp/B08KLETTPATCH?tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -33271,7 +33271,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🤿",
             "label": "Spielzeug-Tauch-Maske (für Perlentaucher-Foto)",
-            "url": "https://www.amazon.de/s?k=tauchmaske+kinder+spielzeug&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tauchmaske+kinder+spielzeug&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -33289,7 +33289,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎩",
             "label": "Mini-Tauchermasken-Mitgebsel (Wow-Highlight, 10 Stk.)",
-            "url": "https://www.amazon.de/s?k=tauchmaske+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tauchmaske+kinder+set&tag=machsleicht21-21",
             "priceEur": 80,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -33307,7 +33307,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔦",
             "label": "Stirnlampen-Set (5 Stk., nur bei Schlafparty)",
-            "url": "https://www.amazon.de/s?k=stirnlampe+kinder+set+5&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=stirnlampe+kinder+set+5&tag=machsleicht21-21",
             "priceEur": 15,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -34148,7 +34148,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌴",
             "label": "Dschungel-Tierfiguren (12er-Set Plastik)",
-            "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -34157,7 +34157,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🐒",
             "label": "Großer Plüsch-Affe (der 'Fund')",
-            "url": "https://www.amazon.de/s?k=pl%C3%BCsch+affe&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=pl%C3%BCsch+affe&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -34166,7 +34166,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🟫",
             "label": "Orange/braunes Tonpapier (für Tiger-Spuren)",
-            "url": "https://www.amazon.de/s?k=tonpapier+orange+braun+a4&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonpapier+orange+braun+a4&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -34175,7 +34175,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎨",
             "label": "Grünes Tonpapier-Set (Forscher-Stirnbänder)",
-            "url": "https://www.amazon.de/s?k=tonpapier+gr%C3%BCn+a4+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonpapier+gr%C3%BCn+a4+set&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -34184,7 +34184,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔍",
             "label": "Mini-Lupen (6er-Set, Forscher-Werkzeug + Mitgebsel)",
-            "url": "https://www.amazon.de/s?k=kinder+lupe+set+6&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=kinder+lupe+set+6&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -34193,7 +34193,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✏️",
             "label": "Dicke Filzstifte (Kinder)",
-            "url": "https://www.amazon.de/s?k=dicke+filzstifte+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dicke+filzstifte+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -34202,7 +34202,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔖",
             "label": "Dschungel-Aufkleber (Blätter, Tiere)",
-            "url": "https://www.amazon.de/s?k=dschungel+sticker+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dschungel+sticker+kinder+set&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -34211,7 +34211,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📜",
             "label": "Forscher-Pass-Vorlage / Tonpapier A4",
-            "url": "https://www.amazon.de/s?k=tonpapier+wei%C3%9F+a4&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonpapier+wei%C3%9F+a4&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -34464,7 +34464,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌴",
             "label": "Dschungel-Tierfiguren (12er-Set)",
-            "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -34473,7 +34473,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎨",
             "label": "Tonkarton-Set grün/braun (Stirnbänder)",
-            "url": "https://www.amazon.de/s?k=tonkarton+gr%C3%BCn+braun+a4+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonkarton+gr%C3%BCn+braun+a4+set&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -34482,7 +34482,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔍",
             "label": "Mini-Lupen (6er-Set)",
-            "url": "https://www.amazon.de/s?k=kinder+lupe+set+6&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=kinder+lupe+set+6&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -34491,7 +34491,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔖",
             "label": "Dschungel-Aufkleber (Blätter, Tiere)",
-            "url": "https://www.amazon.de/s?k=dschungel+sticker+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dschungel+sticker+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -34500,7 +34500,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🟫",
             "label": "Tonpapier orange/braun (Tiger-Spuren)",
-            "url": "https://www.amazon.de/s?k=tonpapier+orange+a4&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonpapier+orange+a4&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -34509,7 +34509,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✏️",
             "label": "Dicke Filzstifte",
-            "url": "https://www.amazon.de/s?k=dicke+filzstifte+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dicke+filzstifte+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -34518,7 +34518,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📜",
             "label": "Forscher-Pässe + weißes Tonpapier",
-            "url": "https://www.amazon.de/s?k=tonpapier+wei%C3%9F+a4&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonpapier+wei%C3%9F+a4&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -34527,7 +34527,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📓",
             "label": "Mini-Notizbücher A6 (6er-Set, Mitgebsel)",
-            "url": "https://www.amazon.de/s?k=mini+notizbuch+a6+set+6&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+notizbuch+a6+set+6&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -34536,7 +34536,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌿",
             "label": "Stoff-Liane oder altes Bettlaken (Lianen-Schwingen)",
-            "url": "https://www.amazon.de/s?k=stoff+liane+kinder+spiel&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=stoff+liane+kinder+spiel&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -34545,7 +34545,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎈",
             "label": "Luftballons grün/türkis (Deko)",
-            "url": "https://www.amazon.de/s?k=luftballons+gr%C3%BCn+t%C3%BCrkis&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=luftballons+gr%C3%BCn+t%C3%BCrkis&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -34847,7 +34847,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌴",
             "label": "Dschungel-Tierfiguren (24er-Set)",
-            "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+24&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+24&tag=machsleicht21-21",
             "priceEur": 11,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -34856,7 +34856,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎨",
             "label": "Tonkarton-Set grün/braun (Stirnbänder, 8 Kinder)",
-            "url": "https://www.amazon.de/s?k=tonkarton+gr%C3%BCn+braun+a4+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonkarton+gr%C3%BCn+braun+a4+set&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -34865,7 +34865,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔍",
             "label": "Mini-Lupen (8er-Set)",
-            "url": "https://www.amazon.de/s?k=kinder+lupe+set+8&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=kinder+lupe+set+8&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -34874,7 +34874,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔖",
             "label": "Dschungel-Aufkleber-Set (groß)",
-            "url": "https://www.amazon.de/s?k=dschungel+sticker+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dschungel+sticker+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -34883,7 +34883,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🟫",
             "label": "Tonpapier orange/braun (Tiger-Spuren)",
-            "url": "https://www.amazon.de/s?k=tonpapier+orange+a4&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonpapier+orange+a4&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -34892,7 +34892,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪴",
             "label": "2-3 Kunst-Grünpflanzen (Foto-Ecke)",
-            "url": "https://www.amazon.de/s?k=kunstpflanze+gr%C3%BCn+deko&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=kunstpflanze+gr%C3%BCn+deko&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -34901,7 +34901,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎋",
             "label": "Bambus-Stäbe (4er-Set, Foto-Ecke + Dickicht)",
-            "url": "https://www.amazon.de/s?k=bambus+st%C3%A4be+deko+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=bambus+st%C3%A4be+deko+set&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -34910,7 +34910,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📦",
             "label": "Schatzkiste / Deko-Korb",
-            "url": "https://www.amazon.de/s?k=schatzkiste+kinder+holz&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schatzkiste+kinder+holz&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -34919,7 +34919,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📓",
             "label": "Mini-Notizbücher A6 (8er-Set)",
-            "url": "https://www.amazon.de/s?k=mini+notizbuch+a6+set+8&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+notizbuch+a6+set+8&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -34928,7 +34928,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📜",
             "label": "Forscher-Pässe + Tonpapier weiß",
-            "url": "https://www.amazon.de/s?k=tonpapier+wei%C3%9F+a4&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=tonpapier+wei%C3%9F+a4&tag=machsleicht21-21",
             "priceEur": 3,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -34946,7 +34946,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎈",
             "label": "Luftballons grün/türkis + Deko",
-            "url": "https://www.amazon.de/s?k=luftballons+gr%C3%BCn+t%C3%BCrkis&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=luftballons+gr%C3%BCn+t%C3%BCrkis&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -35497,7 +35497,7 @@ var ELITE_MOTTO_DATA = {
         }
       ],
       "optOutNote": "Kein Kind muss eine Crew-Rolle übernehmen. Wer nur als allgemeiner Forscher mitlaufen will, ist normales Crew-Mitglied — Lizenz und Stirnband bekommt es trotzdem. Die Sonderrollen sind Angebot, kein Zwang. Bei Hautempfindlichkeit: Tattoo auf die Lizenz statt auf den Handrücken kleben.",
-      "materialNote": "Tonpapier grün + Filzstifte (~5 €), [Forscher-Stirnband-Set oder DIY](https://www.amazon.de/s?k=forscher+stirnband+kinder&tag=machsleicht-21)* (~6 € für 10 Stk.), Rollen-Zettel zum Selbstausdrucken aus der Vorlage. Forschungs-Lizenzen DIN A6 selbst drucken — Vorlage liegt im Druck-Bereich. Optional: [Dschungel-Tattoo-Bogen](https://www.amazon.de/s?k=dschungel+tattoos+kinder+set&tag=machsleicht-21)* (~5 €) für 30+ Affen-/Tukan-/Tiger-Motive."
+      "materialNote": "Tonpapier grün + Filzstifte (~5 €), [Forscher-Stirnband-Set oder DIY](https://www.amazon.de/s?k=forscher+stirnband+kinder&tag=machsleicht21-21)* (~6 € für 10 Stk.), Rollen-Zettel zum Selbstausdrucken aus der Vorlage. Forschungs-Lizenzen DIN A6 selbst drucken — Vorlage liegt im Druck-Bereich. Optional: [Dschungel-Tattoo-Bogen](https://www.amazon.de/s?k=dschungel+tattoos+kinder+set&tag=machsleicht21-21)* (~5 €) für 30+ Affen-/Tukan-/Tiger-Motive."
     },
     "variants": [
       {
@@ -35631,7 +35631,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🐒",
             "label": "Dschungeltier-Figuren (12 Stk.)",
-            "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -36015,7 +36015,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🐒",
             "label": "Dschungeltier-Figuren-Set (12 Stk.)",
-            "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -36042,7 +36042,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Klett-Abzeichen (Tiger-/Affen-/Tukan-Motive, selbstklebend)",
-            "url": "https://www.amazon.de/s?k=klett+abzeichen+tier+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=klett+abzeichen+tier+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -36105,7 +36105,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🐅",
             "label": "Plüsch-Tiger als Schatz-Wächter (vorhandenes Kuscheltier reicht — sonst",
-            "url": "https://www.amazon.de/s?k=pl%C3%BCsch+tiger+klein&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=pl%C3%BCsch+tiger+klein&tag=machsleicht21-21",
             "priceEur": 0,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -36274,7 +36274,7 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "food": "🎂Schoko-Vulkankuchen mit Wunderkerze1 Gugelhupf + 1 kleiner\n🥤\"Dschungel-Wasser\"4 L Apfelschorle\n🍕Tropen-Mini-Pizzen15 Stück\n🌯Schlangen-Wraps10 Stück\n🍌Affen-Bananen10 Stk.\n🥕Tukan-Schnabel-Sticks + Käse-Würfel\"Forscher-Snack\"\n🍿Pop-Mais (Dschungel-Kino)400 g\n🍫Schoko-Goldmünzen mit Tiger-MotivSchatzkisten-Inhalt",
-        "decoration": "🌴 Dschungel-Teller & BecherSet ~10 €\n🎈 Luftballons grün/gelb/braun20 Stk. ~5 €\n🪧 Dschungel-Girlande~4 €\n🌿 Krepppapier-Lianen~5 € KrepppapierVon der Decke hängen = Tropenwald-Look\n🌿 Grünpflanzen aus dem WohnzimmerKostenlosIn den Partyraum stellen — Tropen-Atmosphäre sofort da\n🪧 \"Forscher-Camp\"-SchildKostenlosPappe + Edding, am Eingang aufstellen\n🐾 Tierspuren-PfadKostenlosTierspuren aus Tonpapier, vom Eingang bis zum Partyraum\n🔊 Dschungel-SoundsKostenlosYouTube \"Dschungel-Sounds 2 Stunden\" leise im Hintergrund\n📦 Tiger-Schatzkiste~5 €Schuhkarton + Goldfolie + Tiger-Aufkleber\n\n🐅 Optional: Aufblasbares Kostüm als Überraschungs-Auftritt\nEine Variante für die Eröffnung: ein [aufblasbares Tier-Kostüm*](https://www.amazon.de/s?k=aufblasbares+kost%C3%BCm+kinder+tier&tag=machsleicht-21) (~30 €) für das Geburtstagskind oder ein Elternteil. Geburtstagskind eröffnet die Tür im Kostüm, oder Mama/Papa taucht als Überraschungsgast beim Mission-Briefing auf. Funktioniert besonders, wenn du eh ein lustiges Foto für den Familien-Status willst — der Auftritt wird zum Eis-Brecher der Party. Nicht nötig, aber wirkungsvoll. Separat kalkuliert, weil optional.",
+        "decoration": "🌴 Dschungel-Teller & BecherSet ~10 €\n🎈 Luftballons grün/gelb/braun20 Stk. ~5 €\n🪧 Dschungel-Girlande~4 €\n🌿 Krepppapier-Lianen~5 € KrepppapierVon der Decke hängen = Tropenwald-Look\n🌿 Grünpflanzen aus dem WohnzimmerKostenlosIn den Partyraum stellen — Tropen-Atmosphäre sofort da\n🪧 \"Forscher-Camp\"-SchildKostenlosPappe + Edding, am Eingang aufstellen\n🐾 Tierspuren-PfadKostenlosTierspuren aus Tonpapier, vom Eingang bis zum Partyraum\n🔊 Dschungel-SoundsKostenlosYouTube \"Dschungel-Sounds 2 Stunden\" leise im Hintergrund\n📦 Tiger-Schatzkiste~5 €Schuhkarton + Goldfolie + Tiger-Aufkleber\n\n🐅 Optional: Aufblasbares Kostüm als Überraschungs-Auftritt\nEine Variante für die Eröffnung: ein [aufblasbares Tier-Kostüm*](https://www.amazon.de/s?k=aufblasbares+kost%C3%BCm+kinder+tier&tag=machsleicht21-21) (~30 €) für das Geburtstagskind oder ein Elternteil. Geburtstagskind eröffnet die Tür im Kostüm, oder Mama/Papa taucht als Überraschungsgast beim Mission-Briefing auf. Funktioniert besonders, wenn du eh ein lustiges Foto für den Familien-Status willst — der Auftritt wird zum Eis-Brecher der Party. Nicht nötig, aber wirkungsvoll. Separat kalkuliert, weil optional.",
         "giveaways": "🎩 Filz-Forscherhut (Wow-Highlight, geht direkt vom Kopf nach Hause)\n🏅 Dschungel-Forschungs-Lizenz (Urkunde mit Foto-Slot + Crew-Rolle)\n🪪 Forscher-Ausweis im Scheckkartenformat (laminiert)\n📓 Forscher-Heft (DIY-Notizbuch mit Foto-Slot vorne, Tier-Aufklebern innen, TIGER-Banderolen-Erinnerung)\n⭐ Klett-Abzeichen am Stirnband (Tiger-, Affen- oder Tukan-Motiv)\n🎽 Selbst gestaltetes Tarn-Tuch (von der Tarn-Station)\n🐒 Mini-Dschungeltier-Figur aus dem Camp\n🍫 Schoko-Goldmünzen mit Tiger-Motiv aus der Schatzkiste\n🍬 Tüte Gummibärchen (\"Wegzehrung\")\n\nAlles in grüne Papiertüte, beschriftet mit \"Ausrüstung für Forscher ___\". Kosten: ~10 € pro Kind (inklusive Filz-Forscherhut). Lizenz, Ausweis und Forscherhut nehmen die Kinder mit nach Hause — Eltern fotografieren sie, Kinder zeigen sie wochenlang, Forscherhut wird wochenlang getragen.",
         "shoppingList": [
           {
@@ -36289,7 +36289,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🐒",
             "label": "Dschungeltier-Figuren-Set",
-            "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dschungel+tier+figuren+set+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -36325,7 +36325,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Klett-Abzeichen (Tiger-/Affen-/Tukan-Motive)",
-            "url": "https://www.amazon.de/s?k=klett+abzeichen+tier+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=klett+abzeichen+tier+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -36433,7 +36433,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎩",
             "label": "Filz-Forscherhüte (10 Stk., optional)",
-            "url": "https://www.amazon.de/s?k=safari+hut+kinder+filz&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=safari+hut+kinder+filz&tag=machsleicht21-21",
             "priceEur": 80,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -36442,7 +36442,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📻",
             "label": "Walkie-Talkie-Set (4 Stk., optional)",
-            "url": "https://www.amazon.de/s?k=walkie+talkie+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=walkie+talkie+kinder+set&tag=machsleicht21-21",
             "priceEur": 25,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -36451,7 +36451,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🐅",
             "label": "Aufblasbares Tier-Kostüm (optional)",
-            "url": "https://www.amazon.de/s?k=aufblasbares+kost%C3%BCm+kinder+tier&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=aufblasbares+kost%C3%BCm+kinder+tier&tag=machsleicht21-21",
             "priceEur": 30,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -37243,7 +37243,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Klett-Abzeichen 3-5 Farben (Spezialisierungs-Patches)",
-            "url": "https://www.amazon.de/s?k=klett+abzeichen+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=klett+abzeichen+kinder+set&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -37252,7 +37252,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪶",
             "label": "Deko-Federn + Holz-Perlen-Set",
-            "url": "https://www.amazon.de/s?k=federn+deko+bastel+holzperlen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=federn+deko+bastel+holzperlen&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -37725,7 +37725,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Klett-Abzeichen 5 Farben (Spezialisierungs-Patches)",
-            "url": "https://www.amazon.de/s?k=klett+abzeichen+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=klett+abzeichen+kinder+set&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -37734,7 +37734,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔭",
             "label": "Spielzeug-Fernglas (für Ethologe-Beobachtung)",
-            "url": "https://www.amazon.de/s?k=fernglas+kinder+spielzeug&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=fernglas+kinder+spielzeug&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -37743,7 +37743,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪶",
             "label": "Deko-Federn + Holz-Perlen-Set",
-            "url": "https://www.amazon.de/s?k=federn+deko+bastel+holzperlen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=federn+deko+bastel+holzperlen&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -37752,7 +37752,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪧",
             "label": "Tropen-Girlande + Luftballons grün/braun/gelb",
-            "url": "https://www.amazon.de/s?k=dschungel+girlande+luftballons&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=dschungel+girlande+luftballons&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -38151,7 +38151,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧪",
             "label": "Gips-Pulver + Joghurt-Becher + Schutzbrillen/Masken",
-            "url": "https://www.amazon.de/s?k=modellgips+1kg+bastel&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=modellgips+1kg+bastel&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -38160,7 +38160,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧣",
             "label": "Bandanas (10 Stk., für Forscher-Mitgebsel)",
-            "url": "https://www.amazon.de/s?k=bandanas+10er+set+gruen+braun&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=bandanas+10er+set+gruen+braun&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -38178,7 +38178,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "⭐",
             "label": "Klett-Abzeichen 5 Farben",
-            "url": "https://www.amazon.de/s?k=klett+abzeichen+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=klett+abzeichen+kinder+set&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -38187,7 +38187,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔭",
             "label": "Spielzeug-Fernglas (für Ethologe-Beobachtung)",
-            "url": "https://www.amazon.de/s?k=fernglas+kinder+spielzeug&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=fernglas+kinder+spielzeug&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -38196,7 +38196,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔬",
             "label": "Mini-Lupen-Set 10 Stk. (Wow-Highlight-Mitgebsel)",
-            "url": "https://www.amazon.de/s?k=lupe+kinder+set+10&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=lupe+kinder+set+10&tag=machsleicht21-21",
             "priceEur": 15,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -38205,7 +38205,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💡",
             "label": "UV-Taschenlampe + Bettlaken (für Nacht-Insekten-Lichtfalle)",
-            "url": "https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -38214,7 +38214,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔦",
             "label": "Stirnlampen-Set (5 Stk., nur bei Schlafparty)",
-            "url": "https://www.amazon.de/s?k=stirnlampe+kinder+set+5&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=stirnlampe+kinder+set+5&tag=machsleicht21-21",
             "priceEur": 15,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -39056,7 +39056,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦋",
             "label": "Tüllflügel-Set (5-6 Stk., rosa/lila/Wald-Wächter-grün)",
-            "url": "https://www.amazon.de/s?k=t%C3%BCllfl%C3%BCgel+kinder+set+rosa&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=t%C3%BCllfl%C3%BCgel+kinder+set+rosa&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -39065,7 +39065,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌸",
             "label": "Blüten-Tattoo-Set (30+ Motive)",
-            "url": "https://www.amazon.de/s?k=bl%C3%BCten+tattoos+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=bl%C3%BCten+tattoos+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -39074,7 +39074,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💎",
             "label": "Kieselstein-Set + Acrylstifte (Posca-Style)",
-            "url": "https://www.amazon.de/s?k=kieselsteine+bemalen+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=kieselsteine+bemalen+set+kinder&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -39083,7 +39083,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦋",
             "label": "Bunte Tüllbälle (12 Stk.) ODER Krepppapier (DIY)",
-            "url": "https://www.amazon.de/s?k=t%C3%BCllb%C3%A4lle+bunt+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=t%C3%BCllb%C3%A4lle+bunt+set+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -39101,7 +39101,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✨",
             "label": "Essbarer Glitzer (Backabteilung)",
-            "url": "https://www.amazon.de/s?k=essbarer+glitzer+kuchen+rosa&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=essbarer+glitzer+kuchen+rosa&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -39279,7 +39279,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦋",
             "label": "Tüllflügel-Set (5-6 Stk. mit Wald-Wächter-Variante)",
-            "url": "https://www.amazon.de/s?k=t%C3%BCllfl%C3%BCgel+kinder+set+rosa&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=t%C3%BCllfl%C3%BCgel+kinder+set+rosa&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -39288,7 +39288,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌸",
             "label": "Filz-Blüten vorgestanzt (50+ Stk.) + Tonpapier",
-            "url": "https://www.amazon.de/s?k=filz+bl%C3%BCten+vorgestanzt+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=filz+bl%C3%BCten+vorgestanzt+set&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -39297,7 +39297,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💎",
             "label": "Kieselstein-Set + Posca-Stifte",
-            "url": "https://www.amazon.de/s?k=kieselsteine+bemalen+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=kieselsteine+bemalen+set+kinder&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -39306,7 +39306,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✨",
             "label": "Essbarer Glitzer (groß, für Reis-Wanne + Kuchen)",
-            "url": "https://www.amazon.de/s?k=essbarer+glitzer+gro%C3%9F+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=essbarer+glitzer+gro%C3%9F+set&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -39315,7 +39315,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦋",
             "label": "Mini-Schmetterlinge + Marienkäfer (Figuren-Set)",
-            "url": "https://www.amazon.de/s?k=mini+schmetterlinge+figuren+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+schmetterlinge+figuren+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -39333,7 +39333,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦋",
             "label": "Chiffon-Schleier (6er-Set, bunt)",
-            "url": "https://www.amazon.de/s?k=chiffon+schleier+kinder+bunt&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=chiffon+schleier+kinder+bunt&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -39342,7 +39342,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦋",
             "label": "Schmetterlings-Teller & Becher Set",
-            "url": "https://www.amazon.de/s?k=schmetterling+teller+becher+kindergeburtstag&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schmetterling+teller+becher+kindergeburtstag&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -39428,7 +39428,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "16:30",
             "title": "🦋 Finale: Der Blüten-Reigen mit Seifenblasen",
-            "description": "Alle tanzen mit Schleiern und Feenflügel-Stäbchen. „Schwingt eure Stäbe — die Königin schickt euch Seifenblasen als Dank!\" Du startest die [Seifenblasenmaschine*](https://www.amazon.de/s?k=seifenblasenmaschine+kinder+batterie&tag=machsleicht-21) — Kinder rasten aus. Der große, magische Abschluss. 15 Min. Danach kurz runterkommen mit Ausmalbildern."
+            "description": "Alle tanzen mit Schleiern und Feenflügel-Stäbchen. „Schwingt eure Stäbe — die Königin schickt euch Seifenblasen als Dank!\" Du startest die [Seifenblasenmaschine*](https://www.amazon.de/s?k=seifenblasenmaschine+kinder+batterie&tag=machsleicht21-21) — Kinder rasten aus. Der große, magische Abschluss. 15 Min. Danach kurz runterkommen mit Ausmalbildern."
           },
           {
             "time": "16:50",
@@ -39519,13 +39519,13 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "food": "🎂 Vanille-Kuchen mit rosa Buttercreme + essbaren Blüten + Glitzer (1 Gugelhupf)\n💧 Blüten-Limo (10 Trinkpäckchen + Blütenblatt)\n🍪 Stiefmütterchen-Kekse (fertig + selber dekoriert, 15 Stk.)\n🍓 Rosa Obst-Teller (Erdbeeren, Himbeeren, rosa Trauben)\n🥒 Gemüse-Sticks (Gurke, Möhre, Paprika)\n🥨 Brezel-Sticks (200 g)\n🍭 Gummibärchen (1 Tüte 200 g)\n\n💡 Stiefmütterchen-Kekse ohne Backen:\nFertige Butterkekse (~2 €) mit rosa Glasur bestreichen (Puderzucker + 1 Tropfen Lebensmittelfarbe), 1 essbares Stiefmütterchen oder Gänseblümchen obendrauf. 15 Kekse in 15 Minuten. Sieht aus wie aus dem Feenwald-Café.",
-        "decoration": "🎈 Pastell-Luftballons (rosa/lila/grün/weiß) — 15 Stk. ~4 €\n🦋 Schmetterlings-Folienballon — 1 Stk. ~3 €\n🌿 Grüne Krepppapier-„Efeu\"-Girlande — ~3 €\n🦋 Schmetterlings-Pappteller & Becher — Set ~6 €\n🌸 Seidenblüten an Faden von der Decke — Kostenlos (Bestand oder ~3 €)\n🍄 Pappmaché-Pilze auf dem Tisch — ~5 € im Set\n🔊 Wald-Sounds leise im Hintergrund — Kostenlos (YouTube: „Forest Sounds for Kids\" oder „Magical Forest Music\")\n\n🧚 Wow-Bonus: Der Feenwald-Eingang\n6 Streifen grünes Krepppapier (Hell- und Dunkelgrün) oben am Türrahmen befestigen, bis zum Boden hängen lassen. Die Kinder „treten durch das Blätterdach in den Feenwald\" wenn sie reinkommen. Kostet 2 €, dauert 5 Minuten, und die Kinder rasten beim Reinkommen sofort aus. DER erste Eindruck.\n\n🦋 Wow-Bonus: Seifenblasen-Regen beim Finale\nDer Moment, an den sich die Kinder in 3 Jahren noch erinnern: Während des Blüten-Reigens eine [Seifenblasenmaschine*](https://www.amazon.de/s?k=seifenblasenmaschine+kinder+batterie&tag=machsleicht-21) (~12 €) anmachen. Die Kinder tanzen mit Stäbchen, tragen ihre Flügel und Blumenkränze, und plötzlich fliegen hunderte Seifenblasen durch den Raum. DAS wird das Foto des Tages. Funktioniert drinnen und draußen.\n\n✨ Wow-Bonus: Lichterketten-Feenwald\nBatterie-betriebene Mini-LED-Lichterketten (~5 € bei Action) in Bücherregale, an Vorhänge, um die Krepppapier-Efeu-Girlande wickeln. Tageslicht abdunkeln. Sieht aus wie ein echter Zauber-Wald. Kinder fragen tagelang, ob sie nochmal in den Feenwald dürfen.",
+        "decoration": "🎈 Pastell-Luftballons (rosa/lila/grün/weiß) — 15 Stk. ~4 €\n🦋 Schmetterlings-Folienballon — 1 Stk. ~3 €\n🌿 Grüne Krepppapier-„Efeu\"-Girlande — ~3 €\n🦋 Schmetterlings-Pappteller & Becher — Set ~6 €\n🌸 Seidenblüten an Faden von der Decke — Kostenlos (Bestand oder ~3 €)\n🍄 Pappmaché-Pilze auf dem Tisch — ~5 € im Set\n🔊 Wald-Sounds leise im Hintergrund — Kostenlos (YouTube: „Forest Sounds for Kids\" oder „Magical Forest Music\")\n\n🧚 Wow-Bonus: Der Feenwald-Eingang\n6 Streifen grünes Krepppapier (Hell- und Dunkelgrün) oben am Türrahmen befestigen, bis zum Boden hängen lassen. Die Kinder „treten durch das Blätterdach in den Feenwald\" wenn sie reinkommen. Kostet 2 €, dauert 5 Minuten, und die Kinder rasten beim Reinkommen sofort aus. DER erste Eindruck.\n\n🦋 Wow-Bonus: Seifenblasen-Regen beim Finale\nDer Moment, an den sich die Kinder in 3 Jahren noch erinnern: Während des Blüten-Reigens eine [Seifenblasenmaschine*](https://www.amazon.de/s?k=seifenblasenmaschine+kinder+batterie&tag=machsleicht21-21) (~12 €) anmachen. Die Kinder tanzen mit Stäbchen, tragen ihre Flügel und Blumenkränze, und plötzlich fliegen hunderte Seifenblasen durch den Raum. DAS wird das Foto des Tages. Funktioniert drinnen und draußen.\n\n✨ Wow-Bonus: Lichterketten-Feenwald\nBatterie-betriebene Mini-LED-Lichterketten (~5 € bei Action) in Bücherregale, an Vorhänge, um die Krepppapier-Efeu-Girlande wickeln. Tageslicht abdunkeln. Sieht aus wie ein echter Zauber-Wald. Kinder fragen tagelang, ob sie nochmal in den Feenwald dürfen.",
         "giveaways": "🦋 Tüllflügel / Wald-Wächter-Flügel (dürfen sie anbehalten)\n🌸 Blumenkranz (selbst gebastelt)\n💎 2-3 magische Steine (selbst bemalt)\n🦋 2 Mini-Schmetterlinge + Marienkäfer (selbst gefunden)\n🪄 Feenflügel-Stäbchen (selbst gebastelt)\n🖍️ 2 Blüten-Ausmalbilder\n🍭 1 Tüte Gummibärchen\n\nIn rosa oder grüne Papiertüte mit Blütennamen. Kosten: ~4 € pro Kind (inkl. Stäbchen-Bastel-Material).",
         "shoppingList": [
           {
             "emoji": "🦋",
             "label": "Tüllflügel-Set (5-6 Stk. inkl. Wald-Wächter-Variante)",
-            "url": "https://www.amazon.de/s?k=t%C3%BCllfl%C3%BCgel+kinder+set+rosa&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=t%C3%BCllfl%C3%BCgel+kinder+set+rosa&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -39534,7 +39534,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌸",
             "label": "Filz-Blüten vorgestanzt + Tonpapier-Stirnbänder",
-            "url": "https://www.amazon.de/s?k=filz+bl%C3%BCten+vorgestanzt+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=filz+bl%C3%BCten+vorgestanzt+set&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -39543,7 +39543,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💎",
             "label": "Kieselstein-Set + Posca-Stifte",
-            "url": "https://www.amazon.de/s?k=kieselsteine+bemalen+set+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=kieselsteine+bemalen+set+kinder&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -39552,7 +39552,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "✨",
             "label": "Essbarer Glitzer (groß, für Reis-Wanne + Kuchen)",
-            "url": "https://www.amazon.de/s?k=essbarer+glitzer+gro%C3%9F+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=essbarer+glitzer+gro%C3%9F+set&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -39561,7 +39561,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦋",
             "label": "Mini-Schmetterlinge + Marienkäfer-Figuren",
-            "url": "https://www.amazon.de/s?k=mini+schmetterlinge+figuren+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+schmetterlinge+figuren+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -39588,7 +39588,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦋",
             "label": "Chiffon-Schleier (6er-Set, bunt)",
-            "url": "https://www.amazon.de/s?k=chiffon+schleier+kinder+bunt&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=chiffon+schleier+kinder+bunt&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -39597,7 +39597,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🦋",
             "label": "Schmetterlings-Folienballon + Pappteller-Set",
-            "url": "https://www.amazon.de/s?k=schmetterling+teller+becher+kindergeburtstag&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schmetterling+teller+becher+kindergeburtstag&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -39606,7 +39606,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🍄",
             "label": "Pappmaché-Pilze + Seidenblüten + Lichterketten",
-            "url": "https://www.amazon.de/s?k=papp+pilze+deko+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=papp+pilze+deko+kinder&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -39642,7 +39642,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🫧",
             "label": "Seifenblasenmaschine (optional)",
-            "url": "https://www.amazon.de/s?k=seifenblasenmaschine+kinder+batterie&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=seifenblasenmaschine+kinder+batterie&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -40200,7 +40200,7 @@ var ELITE_MOTTO_DATA = {
         }
       ],
       "optOutNote": "Kein Zwang. Wer den eigenen Namen behalten möchte — passt auch. Wer keine Flügel will (Empfindlichkeit auf dem Rücken, persönliche Abneigung): Nur Diadem oder Waldkrone reicht völlig. Wer weder Fee noch Wächter sein will: „Pflanzenforscher der Akademie\" ist die dritte Rolle — bekommt ein Notizbuch statt Krone und darf an jeder Quest-Station die Pflanze in einem Buch nachschlagen. Niemand wird ausgeschlossen.",
-      "materialNote": "[Blüten-Stirnreif-Set*](https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht-21) (~6 € für 6 Stück), Karton + Eichenlaub für Waldkronen (Bastelladen ~3 €, oder echtes Laub sammeln), Stoffbeutel (Stoffrest oder ~2 €), die Namensliste oben einfach ausdrucken und zerschneiden."
+      "materialNote": "[Blüten-Stirnreif-Set*](https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht21-21) (~6 € für 6 Stück), Karton + Eichenlaub für Waldkronen (Bastelladen ~3 €, oder echtes Laub sammeln), Stoffbeutel (Stoffrest oder ~2 €), die Namensliste oben einfach ausdrucken und zerschneiden."
     },
     "variants": [
       {
@@ -40321,7 +40321,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌸",
             "label": "Blumenkranz-Stirnreif (6 Stk., Feen-Variante)",
-            "url": "https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -40348,7 +40348,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎁",
             "label": "Talismane für Schatzkiste (Glassteine, Eicheln)",
-            "url": "https://www.amazon.de/s?k=glassteine+deko+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=glassteine+deko+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -40473,7 +40473,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 6,
             "loudness": "ruhig",
             "effort": "leicht",
-            "material": "[Blüten-Stirnreif-Set*](https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht-21) (~6 € für 6 Stk.), Karton-Kronen für Waldwächter (selbst zugeschnitten oder Bastelladen), Stoffblüten (~3 € Tüte), Eichenlaub (gesammelt oder Plastik), Klebepunkte oder Tesa (KEIN Heißkleber bei 6-Jährigen — Verbrennungsgefahr)",
+            "material": "[Blüten-Stirnreif-Set*](https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht21-21) (~6 € für 6 Stk.), Karton-Kronen für Waldwächter (selbst zugeschnitten oder Bastelladen), Stoffblüten (~3 € Tüte), Eichenlaub (gesammelt oder Plastik), Klebepunkte oder Tesa (KEIN Heißkleber bei 6-Jährigen — Verbrennungsgefahr)",
             "prepText": "Perfekte Ankunfts-Aktivität: Stirnreife und Waldkronen-Rohlinge liegen schon auf dem Tisch, wenn die Kinder reinkommen. Jedes Kind wählt Rolle und verziert seine Kopfbedeckung — Feen kleben Blüten, Wächter kleben Eichenlaub und Federn. Fertig aufsetzen.",
             "steps": [
               {
@@ -40623,7 +40623,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌸",
             "label": "Blüten-Stirnreif-Set (6 Stk.)",
-            "url": "https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -40641,7 +40641,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌷",
             "label": "Stoffblüten (große Tüte)",
-            "url": "https://www.amazon.de/s?k=stoffblueten+basteln+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=stoffblueten+basteln+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -40659,7 +40659,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🗡️",
             "label": "Schaumstoff-Stäbe (6 Stk., Schwertkampf)",
-            "url": "https://www.amazon.de/s?k=schaumstoff+schwert+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schaumstoff+schwert+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -40668,7 +40668,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎭",
             "label": "Tüllschleier (6 Stk., Elfen-Tanz)",
-            "url": "https://www.amazon.de/s?k=t%C3%BCllschleier+kinder+tanzen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=t%C3%BCllschleier+kinder+tanzen&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -40686,7 +40686,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎁",
             "label": "Talismane (Glassteine, Eicheln)",
-            "url": "https://www.amazon.de/s?k=glassteine+deko+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=glassteine+deko+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -40695,7 +40695,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧚",
             "label": "Feen/Wald-Teller & Becher Set",
-            "url": "https://www.amazon.de/s?k=feen+teller+becher+kindergeburtstag&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feen+teller+becher+kindergeburtstag&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -40905,13 +40905,13 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "food": "🎂 Blüten-Kuchen 1 Gugelhupf + Wunderkerze\n💧 „Waldfrüchte-Punsch\" 14 Becher\n🍞 Waldwesen-Sandwiches 12 Stück (Blüten-/Pilz-Ausstecher)\n🍓 Waldfrüchte-Teller Erdbeeren, Trauben, Heidelbeeren, Brombeeren\n🍿 Popcorn 300 g (grün gefärbt = Mooskugeln)\n🍯 Honig-Brötchen 8 Stück\n🍫 Schoko-Blätter 1 Packung (Schatz)\n🍭 Blüten-Gummibärchen 1 Tüte (200 g)\n\n💡 Waldwesen-Sandwiches:\nMit Blüten-Ausstecher (oder einfach großer runder Ausstecher) Toast-Scheiben ausstechen. Frischkäse drauf, oben zweite Blüte drüber. Sieht sofort zauberhaft aus, schmeckt den Kindern, und 12 Stück sind in 15 Minuten gemacht.",
-        "decoration": "🧚 Feen/Wald-Teller & Becher Set ~8 €\n🎈 Pastell-Ballon-Bogen ~15 € (30 Stk., grün/rosa/lila)\n🌿 Eichenlaub-Girlande ~4 €\n🍃 Tüllstoff über Decke ~5 €, 20 Min.\n✨ Glitzer-Tischläufer ~3 € Krepppapier (für Feen-Seite)\n🌳 „Zauberbaum-Akademie\"-Schild Kostenlos Pappe + Edding + Eichenlaub, am Eingang\n🔊 Feenwald-Musik Kostenlos YouTube/Spotify: „Magic Forest Music\" oder „Celtic Music\" leise im Hintergrund\n🌸 Blumen in kleinen Vasen ~5 € (echte Schnittblumen vom Supermarkt)\n\n🧚 Wow-Bonus: Aufblasbares Feen-Flügel-Kostüm für Mama oder Papa\nDer absolute Überraschungs-Hit: ein [Feen-Flügel-Kostüm Erwachsene*](https://www.amazon.de/s?k=feen+fl%C3%BCgel+erwachsene+kost%C3%BCm&tag=machsleicht-21) (~25–35 €). Du öffnest die Tür als riesige Zauberbaum-Hüterin — die Kinder rasten aus. Funktioniert als „Lyra, die Hüterin der Zauberbaum-Akademie\", als Überraschungsgast beim Kuchen oder als „Wächter-Prüferin\" für die Urkundenverleihung. Wird DAS Foto des Tages. Die Kinder erzählen noch Wochen davon. Geschlechts-neutrale Alternative: Robin-Hood-Kostüm für die Waldwächter-Hüter-Rolle.\n\n🍄 Optional: Die Pilz-Lichter-Inszenierung (LED-Lichterketten-Moment)\nDas Element, das eine Feen-Party wirklich magisch macht — wenn du das Drumherum bauen kannst. Mit warmweißen [LED-Lichterketten*](https://www.amazon.de/s?k=led+lichterkette+warmwei%C3%9F+batterie&tag=machsleicht-21) (~10 € für 3 Sets) wickelst du Eichenlaub-Girlanden und Tüllstoffe ein. Wenn die Kinder nach dem Kuchen rein kommen, schaltest du Hauptlicht aus — der Raum leuchtet plötzlich wie ein Feenwald in der Dämmerung. Die Kinder sind komplett still für 5 Sekunden.\n\nWann einbauen: Beim Übergang zu Prüfung 5 (Elfen-Tanz/Schwertkampf) — Licht aus, Musik leiser, Lichterketten an. Was du brauchst: 3 Sets LED-Lichterketten (batteriebetrieben für Flexibilität), Tüllstoff oder Eichenlaub-Girlanden zum Einwickeln, abdunkelbarer Raum. Warum optional: Nicht jedes Zuhause lässt sich leicht verdunkeln, und die Lichterketten wollen sorgfältig vorbereitet sein. Wenn der Rest der Wow-Variante schon ausreicht, lass es weg — es ist die Kirsche, nicht der Kuchen.",
+        "decoration": "🧚 Feen/Wald-Teller & Becher Set ~8 €\n🎈 Pastell-Ballon-Bogen ~15 € (30 Stk., grün/rosa/lila)\n🌿 Eichenlaub-Girlande ~4 €\n🍃 Tüllstoff über Decke ~5 €, 20 Min.\n✨ Glitzer-Tischläufer ~3 € Krepppapier (für Feen-Seite)\n🌳 „Zauberbaum-Akademie\"-Schild Kostenlos Pappe + Edding + Eichenlaub, am Eingang\n🔊 Feenwald-Musik Kostenlos YouTube/Spotify: „Magic Forest Music\" oder „Celtic Music\" leise im Hintergrund\n🌸 Blumen in kleinen Vasen ~5 € (echte Schnittblumen vom Supermarkt)\n\n🧚 Wow-Bonus: Aufblasbares Feen-Flügel-Kostüm für Mama oder Papa\nDer absolute Überraschungs-Hit: ein [Feen-Flügel-Kostüm Erwachsene*](https://www.amazon.de/s?k=feen+fl%C3%BCgel+erwachsene+kost%C3%BCm&tag=machsleicht21-21) (~25–35 €). Du öffnest die Tür als riesige Zauberbaum-Hüterin — die Kinder rasten aus. Funktioniert als „Lyra, die Hüterin der Zauberbaum-Akademie\", als Überraschungsgast beim Kuchen oder als „Wächter-Prüferin\" für die Urkundenverleihung. Wird DAS Foto des Tages. Die Kinder erzählen noch Wochen davon. Geschlechts-neutrale Alternative: Robin-Hood-Kostüm für die Waldwächter-Hüter-Rolle.\n\n🍄 Optional: Die Pilz-Lichter-Inszenierung (LED-Lichterketten-Moment)\nDas Element, das eine Feen-Party wirklich magisch macht — wenn du das Drumherum bauen kannst. Mit warmweißen [LED-Lichterketten*](https://www.amazon.de/s?k=led+lichterkette+warmwei%C3%9F+batterie&tag=machsleicht21-21) (~10 € für 3 Sets) wickelst du Eichenlaub-Girlanden und Tüllstoffe ein. Wenn die Kinder nach dem Kuchen rein kommen, schaltest du Hauptlicht aus — der Raum leuchtet plötzlich wie ein Feenwald in der Dämmerung. Die Kinder sind komplett still für 5 Sekunden.\n\nWann einbauen: Beim Übergang zu Prüfung 5 (Elfen-Tanz/Schwertkampf) — Licht aus, Musik leiser, Lichterketten an. Was du brauchst: 3 Sets LED-Lichterketten (batteriebetrieben für Flexibilität), Tüllstoff oder Eichenlaub-Girlanden zum Einwickeln, abdunkelbarer Raum. Warum optional: Nicht jedes Zuhause lässt sich leicht verdunkeln, und die Lichterketten wollen sorgfältig vorbereitet sein. Wenn der Rest der Wow-Variante schon ausreicht, lass es weg — es ist die Kirsche, nicht der Kuchen.",
         "giveaways": "🪪 Quest-Pass (mit Foto und Urkunde)\n🌺 Blumenkranz / 🍂 Eichenlaub-Armband (selbst gebastelt)\n🌿 Talisman aus der Pflanzen-Quest\n💍 Geocaching-Mini-Cache-Inhalt (selbst gefunden)\n🦋 Schmetterling-Bildkarte\n🌸 Stirnreif / 🍃 Waldkrone\n🍫 Schoko-Blätter\n\nIn grüne Papiertüte (10 Stk. ~1–2 € bei DM/Action) mit „Zauberbaum-Akademie · Lyra ___\". Kosten: ~5 € pro Kind.",
         "shoppingList": [
           {
             "emoji": "🌸",
             "label": "Blüten-Stirnreif-Set (6 Stk.)",
-            "url": "https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -40929,7 +40929,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌷",
             "label": "Stoffblüten (große Tüte)",
-            "url": "https://www.amazon.de/s?k=stoffblueten+basteln+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=stoffblueten+basteln+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -40947,7 +40947,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🗡️",
             "label": "Schaumstoff-Stäbe (6 Stk.)",
-            "url": "https://www.amazon.de/s?k=schaumstoff+schwert+kinder+set&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schaumstoff+schwert+kinder+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -40956,7 +40956,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎭",
             "label": "Tüllschleier (6 Stk.)",
-            "url": "https://www.amazon.de/s?k=t%C3%BCllschleier+kinder+tanzen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=t%C3%BCllschleier+kinder+tanzen&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -40965,7 +40965,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "📦",
             "label": "Geocaching-Cache-Behälter (5 Stk.)",
-            "url": "https://www.amazon.de/s?k=geocaching+container+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=geocaching+container+kinder&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -40983,7 +40983,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🎁",
             "label": "Talismane (Glassteine, Eicheln, Blüten-Anhänger)",
-            "url": "https://www.amazon.de/s?k=glassteine+deko+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=glassteine+deko+kinder&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -40992,7 +40992,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧚",
             "label": "Feen/Wald-Teller & Becher Set",
-            "url": "https://www.amazon.de/s?k=feen+teller+becher+kindergeburtstag&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feen+teller+becher+kindergeburtstag&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -41028,7 +41028,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🍫",
             "label": "Schoko-Blätter / Schoko-Marienkäfer",
-            "url": "https://www.amazon.de/s?k=schokolade+bl%C3%A4tter+pralinen&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=schokolade+bl%C3%A4tter+pralinen&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -41037,7 +41037,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧚",
             "label": "Feen-Flügel-Kostüm Erwachsene (optional)",
-            "url": "https://www.amazon.de/s?k=feen+fl%C3%BCgel+erwachsene+kost%C3%BCm&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=feen+fl%C3%BCgel+erwachsene+kost%C3%BCm&tag=machsleicht21-21",
             "priceEur": 30,
             "hasAffiliate": true,
             "category": "habIchVielleicht",
@@ -41046,7 +41046,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💡",
             "label": "LED-Lichterketten warmweiß (3 Sets, optional)",
-            "url": "https://www.amazon.de/s?k=led+lichterkette+warmwei%C3%9F+batterie&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=led+lichterkette+warmwei%C3%9F+batterie&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -41817,7 +41817,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪵",
             "label": "Birken-Holzscheiben mit Loch (12 Stk.) — für Wurzel-Pakt-Ringe",
-            "url": "https://www.amazon.de/s?k=birken+holzscheiben+anhaenger+basteln&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=birken+holzscheiben+anhaenger+basteln&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -41826,7 +41826,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔥",
             "label": "Pyrographie-Stift (Brand-Stift) — einmalig",
-            "url": "https://www.amazon.de/s?k=pyrographie+stift+brennpeter+basteln&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=pyrographie+stift+brennpeter+basteln&tag=machsleicht21-21",
             "priceEur": 14,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -41844,7 +41844,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔒",
             "label": "5-Buchstaben-Letter-Lock (Wort-Schloss)",
-            "url": "https://www.amazon.de/s?k=letter+lock+5+buchstaben+wort+schloss&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=letter+lock+5+buchstaben+wort+schloss&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -42109,7 +42109,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪵",
             "label": "Birken-Holzscheiben mit Loch (12 Stk.)",
-            "url": "https://www.amazon.de/s?k=birken+holzscheiben+anhaenger+basteln&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=birken+holzscheiben+anhaenger+basteln&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -42118,7 +42118,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔥",
             "label": "Pyrographie-Stift",
-            "url": "https://www.amazon.de/s?k=pyrographie+stift+brennpeter+basteln&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=pyrographie+stift+brennpeter+basteln&tag=machsleicht21-21",
             "priceEur": 14,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -42136,7 +42136,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔒",
             "label": "5-Buchstaben-Letter-Lock",
-            "url": "https://www.amazon.de/s?k=letter+lock+5+buchstaben+wort+schloss&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=letter+lock+5+buchstaben+wort+schloss&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -42145,7 +42145,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔦",
             "label": "UV-Taschenlampe (LED)",
-            "url": "https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -42190,7 +42190,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🕯️",
             "label": "LED-Teelichter „Glühwürmchen\" (15 Stk.)",
-            "url": "https://www.amazon.de/s?k=led+teelichter+glühwürmchen+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=led+teelichter+glühwürmchen+kinder&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -42478,7 +42478,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🪵",
             "label": "Birken-Holzscheiben mit Loch (15 Stk.)",
-            "url": "https://www.amazon.de/s?k=birken+holzscheiben+anhaenger+basteln&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=birken+holzscheiben+anhaenger+basteln&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -42487,7 +42487,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔥",
             "label": "Pyrographie-Stift",
-            "url": "https://www.amazon.de/s?k=pyrographie+stift+brennpeter+basteln&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=pyrographie+stift+brennpeter+basteln&tag=machsleicht21-21",
             "priceEur": 14,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -42505,7 +42505,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔒",
             "label": "5-Buchstaben-Letter-Lock",
-            "url": "https://www.amazon.de/s?k=letter+lock+5+buchstaben+wort+schloss&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=letter+lock+5+buchstaben+wort+schloss&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -42514,7 +42514,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🔦",
             "label": "UV-Taschenlampe (2 Stück)",
-            "url": "https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=uv+taschenlampe+schwarzlicht+led&tag=machsleicht21-21",
             "priceEur": 20,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -42523,7 +42523,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "💡",
             "label": "LED-Lichterkette (5 m, batteriebetrieben)",
-            "url": "https://www.amazon.de/s?k=led+lichterkette+batterie+5+meter+warmweiss&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=led+lichterkette+batterie+5+meter+warmweiss&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
             "category": "pflicht",
@@ -42532,7 +42532,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🧭",
             "label": "Mini-Kompass (10 Stk., Hüter-Werkzeug-Mitgebsel)",
-            "url": "https://www.amazon.de/s?k=mini+kompass+kinder+karabiner&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=mini+kompass+kinder+karabiner&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
             "category": "sinnvoll",
@@ -42577,7 +42577,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🕯️",
             "label": "LED-Teelichter „Glühwürmchen\" (20 Stk.)",
-            "url": "https://www.amazon.de/s?k=led+teelichter+glühwürmchen+kinder&tag=machsleicht-21",
+            "url": "https://www.amazon.de/s?k=led+teelichter+glühwürmchen+kinder&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
             "category": "sinnvoll",
