@@ -28,7 +28,7 @@
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Kontext |
 |---|--------|------|--------|------------------|---------|---------|
-| 8 | ✅ | **P1** | P1-16 | `[KERN]` **Partyseite Follow-Ups** — guestView cleanup, reply_to, Foto-Crop Mobile-Fix, Beteiligen custom amount, Audit | 2 Std | **Erledigt 23.04.2026** (Chat-Session). Offen: Browser-Test + Migadu-Setup extern |
+| 8 | ✅ | **P1** | P1-16 | `[KERN]` **Partyseite Follow-Ups** — guestView cleanup, reply_to, Foto-Crop Mobile-Fix, Beteiligen custom amount, Audit | 2 Std | **Erledigt 23.04.2026** (Chat-Session). Migadu-Setup für beide Domains (machsleicht + machsruhig) am 26.05.2026 abgeschlossen. |
 | 9 | ✅ | **P1** | P1-20 | `[KERN]` **Internal-Linking-Fix** (Superheld 0 Links, Prinzessin 2 Links) | 3 Std | **Erledigt 23.04.2026**: Hub-Pages + Card-Swap. Prinzessin 5→85, Superheld 3→68 Links |
 | 10 | 🔄 | **P1** | P1-15 | `[KERN]` **Email-Capture (Pilot: Partyseite + Einladung→Partyseite-Funnel)** | 4–5 Std | **Code fertig 24.04.2026 — Variante A.** Strategie-Revision in Session: Capture sitzt am Partyseite-Creator (Pflicht-Edit-Link + optionale Newsletter-Checkbox mit DOI), nicht am Einladungstool. Einladungstool bekommt aktivierten Partyseite-CTA mit Query-Param-Handover (`childName`, `motto`, `mottoEmoji`) als Funnel-Bridge. **Extern-Tasks offen:** Resend-Audience anlegen, `RESEND_AUDIENCE_ID` als Env-Var setzen, Worker deployen. Newsletter-Capture so auch auf Schatzsuche übertragbar (je 1–2h Template-Reuse) |
 | 11 | 🔄 | **P1** | P1-17 | `[KERN]` **DSGVO-Hygiene Partyseite** (A: Worker-Hinweis, B: Datenschutz ✅, C: Auto-Delete-Cron) | 1,5 Std (Laptop) | **B erledigt am 21.04.** Blockt kein weiteres Feature technisch, aber rechtliches Risiko solange A+C offen |
@@ -225,7 +225,7 @@ Strategischer Sprint: Planer vom Generator zum intelligenten Produkt umbauen. Re
 
 ### Änderungen 23.04.2026
 
-- **P1-16 auf ✅ GRÖSSTENTEILS ERLEDIGT** — guestView cleanup, reply_to-Code, Foto-Crop Mobile-Fix (3 Bugs), Beteiligen-custom-amount inkl. Editor-Display in Chat-Session gebaut. Cloudflare-Deploy und Browser-Tests + Migadu-Setup noch extern.
+- **P1-16 auf ✅ VOLLSTÄNDIG ERLEDIGT** — guestView cleanup, reply_to-Code, Foto-Crop Mobile-Fix (3 Bugs), Beteiligen-custom-amount inkl. Editor-Display in Chat-Session gebaut. Cloudflare-Deploy live. Migadu-Setup für machsleicht.de + machsruhig.de am 26.05.2026 abgeschlossen.
 - **P1-20 neu** (Internal-Linking-Fix) — ausgegliedert aus P1-16 Sub-Task 8. Quick-Win: Superheld hat 0 eingehende Links, Prinzessin 2 — Tool-Mottos werden im Netz nicht eingefangen.
 - **P1-21 neu** (Kill-List-Entscheidung) — ausgegliedert aus P1-16 Sub-Task 8. Absorbiert P1-8b + zusätzlich 8 Marken-Mottos. Wartet auf GSC-Daten.
 
@@ -605,9 +605,9 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 
 1. ✅ **Cloudflare-Deploy des Bugfix-Commits** — Erledigt vor dieser Session (Commit `5613b9a` vom 21.04.: „FIX11, bereits auf Cloudflare deployed").
 
-2. 🛠 **Email-Flow end-to-end testen** — Code ist drin, aber manueller Browser-Test durch Bolle ausstehend (braucht aktive Party + Migadu-Setup für Reply-To).
+2. 🛠 **Email-Flow end-to-end testen** — Code ist drin, manueller Browser-Test durch Bolle ausstehend (braucht aktive Party). Migadu-Setup steht jetzt (26.05.2026).
 
-3. ✅ **Reply-To Handling** — Code in party-worker.js: `reply_to: env.RESEND_REPLY_TO || "party@machsleicht.de"` ergänzt. **Follow-Up extern:** Migadu Mini einrichten ($90/Jahr, unlimited Domains für machsleicht.de + machsruhig.de). Cloudflare Email Routing wird NICHT verwendet (MX-Kollision). Architektur-Entscheidung: Cold-Outreach für machsruhig ab Phase F über separate Subdomain, nie über primären MX.
+3. ✅ **Reply-To Handling + Migadu-Setup** — Code in party-worker.js: `reply_to: env.RESEND_REPLY_TO || "party@machsleicht.de"` ergänzt. **Migadu Micro live seit 26./27.05.2026** ($19/Jahr, almost-unlimited Domains, beide Domains aktiv: machsleicht.de + machsruhig.de). Plan-Wahl Micro statt Mini: $71/Jahr gespart, Solo-Setup braucht keine Multi-Admin/API-Features. Cloudflare Email Routing wurde NICHT verwendet (MX-Kollision). Architektur-Entscheidung: Cold-Outreach für machsruhig ab Phase F über separate Subdomain, nie über primären MX.
 
 4. ✅ **Alte `guestView()` entfernen** — 200 Zeilen toter Code raus (Zeilen 1285-1484, nur noch Funktionsdefinition ohne Aufrufer).
 
@@ -632,7 +632,7 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 **Erfolgs-Kriterien:**
 - ✅ Code-Änderungen gepusht, validate-all.sh PASSED
 - 🛠 Browser-Test (Email-Versand + Mottos) durch Bolle
-- 🛠 Migadu-Einrichtung (separat, s. Session-Notes)
+- ✅ Migadu-Einrichtung für machsleicht + machsruhig (erledigt 26.05.2026)
 
 ---
 
