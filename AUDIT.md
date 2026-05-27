@@ -327,7 +327,7 @@ Aktuell verwendet (`party-worker.js`-Grep):
 - `AMAZON_TAG` — Z.16 (Affiliate)
 - `AWIN_PUBLISHER_ID` — Z.30 (Affiliate)
 - `RESEND_API_KEY` — Z.337, 383, 446 (Mail + Audience)
-- `RESEND_FROM` — Z.387 (default fallback: `mach's leicht <party@machsleicht.de>`)
+- `RESEND_FROM` — Z.527 (default fallback: `mach's leicht <kontakt@machsleicht.de>`)
 - `RESEND_AUDIENCE_ID` — Z.443 (Newsletter-Audience für DOI-Flow)
 
 → **P1-49** (S, 30 Min): `_dev/docs/ENV-VARS.md` als Inventar dieser Variablen mit Quellen.

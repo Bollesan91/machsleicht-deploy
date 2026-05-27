@@ -607,7 +607,7 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 
 2. 🛠 **Email-Flow end-to-end testen** — Code ist drin, manueller Browser-Test durch Bolle ausstehend (braucht aktive Party). Migadu-Setup steht jetzt (26.05.2026).
 
-3. ✅ **Reply-To Handling + Migadu-Setup** — Code in party-worker.js: `reply_to: env.RESEND_REPLY_TO || "party@machsleicht.de"` ergänzt. **Migadu Micro live seit 26./27.05.2026** ($19/Jahr, almost-unlimited Domains, beide Domains aktiv: machsleicht.de + machsruhig.de). Plan-Wahl Micro statt Mini: $71/Jahr gespart, Solo-Setup braucht keine Multi-Admin/API-Features. Cloudflare Email Routing wurde NICHT verwendet (MX-Kollision). Architektur-Entscheidung: Cold-Outreach für machsruhig ab Phase F über separate Subdomain, nie über primären MX.
+3. ✅ **Reply-To Handling + Migadu-Setup** — Code in party-worker.js: Defaults von `party@machsleicht.de` auf `kontakt@machsleicht.de` umgestellt (27.05.2026 — party@ existiert nicht, war Bug). **Migadu Micro live seit 26./27.05.2026** ($19/Jahr, almost-unlimited Domains, beide Domains aktiv: machsleicht.de + machsruhig.de). Plan-Wahl Micro statt Mini: $71/Jahr gespart, Solo-Setup braucht keine Multi-Admin/API-Features. Cloudflare Email Routing wurde NICHT verwendet (MX-Kollision). Architektur-Entscheidung: Cold-Outreach für machsruhig ab Phase F über separate Subdomain, nie über primären MX. **Externe Action bleibt offen:** Cloudflare-Dashboard Env-Vars `RESEND_FROM`/`RESEND_REPLY_TO` auf `kontakt@machsleicht.de` setzen, Worker re-deployen.
 
 4. ✅ **Alte `guestView()` entfernen** — 200 Zeilen toter Code raus (Zeilen 1285-1484, nur noch Funktionsdefinition ohne Aufrufer).
 
