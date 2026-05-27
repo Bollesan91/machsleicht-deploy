@@ -263,7 +263,7 @@ P1-20-Commit sagte „Validator-Stufe 8 erweitern → prüft Registry = ItemList
 
 - **mlTrack:** `navigator.sendBeacon('/api/event', ...)` (Netlify Function) — eigener Logging-Endpoint
 - **Umami:** `cloud.umami.is/script.js`, data-website-id `72b5eb12-…`
-- **Plausible-Shim:** `window.plausible()` → `umami.track()` (Legacy-Kompatibilität)
+- **Plausible-Shim:** `window.plausible(name, {props})` → `umami.track(name, props)` — **kein Plausible mehr aktiv, der Shim ist intentioneller Provider-Abstraktions-Wrapper** (siehe `.claude/CLAUDE.md` Tech-Stack). Tracking-Code-Konvention: neue Calls verwenden weiter `plausible(...)`, niemals direkt `umami.track(...)`, damit Provider-Wechsel ein One-Liner bleibt.
 
 ### 7.2 Events nach Sprint 1
 
@@ -327,7 +327,7 @@ Aktuell verwendet (`party-worker.js`-Grep):
 - `AMAZON_TAG` — Z.16 (Affiliate)
 - `AWIN_PUBLISHER_ID` — Z.30 (Affiliate)
 - `RESEND_API_KEY` — Z.337, 383, 446 (Mail + Audience)
-- `RESEND_FROM` — Z.387 (default fallback: `mach's leicht <party@machsleicht.de>`)
+- `RESEND_FROM` — Z.527 (default fallback: `mach's leicht <kontakt@machsleicht.de>`)
 - `RESEND_AUDIENCE_ID` — Z.443 (Newsletter-Audience für DOI-Flow)
 
 → **P1-49** (S, 30 Min): `_dev/docs/ENV-VARS.md` als Inventar dieser Variablen mit Quellen.

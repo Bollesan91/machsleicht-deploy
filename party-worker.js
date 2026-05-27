@@ -2,7 +2,7 @@
 // party.machsleicht.de — Cloudflare Worker + KV (v2)
 // KV Namespace binding: PARTY
 // Environment Variables:
-//   AMAZON_TAG        (z.B. "machsleicht-21")
+//   AMAZON_TAG        (z.B. "machsleicht21-21")
 //   AWIN_PUBLISHER_ID (z.B. "123456")
 // ═══════════════════════════════════════════════════════════════
 
@@ -524,8 +524,8 @@ export default {
           method: "POST",
           headers: {"Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json"},
           body: JSON.stringify({
-            from: env.RESEND_FROM || "mach's leicht <party@machsleicht.de>",
-            reply_to: env.RESEND_REPLY_TO || "party@machsleicht.de",
+            from: env.RESEND_FROM || "mach's leicht <kontakt@machsleicht.de>",
+            reply_to: env.RESEND_REPLY_TO || "kontakt@machsleicht.de",
             to: [email],
             subject: `Dein Edit-Link: ${childName}s Partyseite`,
             html: emailHtml

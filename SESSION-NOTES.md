@@ -1,3 +1,95 @@
+# Session-Notiz — 27.05.2026 (Email-Marathon + Einladungs-Privacy-Fix + Deploy)
+
+**Branch:** `draft` → `main` (Ende deploy)
+
+## Einladungs-Apps: Privacy-/Branding-Quick-Fix
+
+Befund: 9 von 10 `/einladung/<motto>/`-Apps hatten **`childName = "Emilia"`** hardcoded als Default. Nur Piraten hatte `"Mattis"`.
+
+**Risiko:** Wenn „Emilia" Bolle's Tochter ist → Privacy-Issue (echter Name in 9 deployed Files). Plus: inkonsistentes Branding (9× Emilia + 1× Mattis), und User landen bei `/einladung/feuerwehr` direkt auf einer Demo-App mit „Emilia"-Daten — verwirrend.
+
+**Fix:** Sed-Replace `Emilia` → `Mia` in 9 Files (dino, einhorn, safari, feuerwehr, detektiv, superheld, prinzessin, meerjungfrau, weltraum). Piraten bleibt `"Mattis"`. Beide Stellen pro File: Default-Param + URL-Param-Fallback.
+
+**Großer Refactor im Backlog (P6-1):** Die eigentliche Architektur-Schwäche ist dass `/einladung/<motto>/` direkt eine 1800-Zeilen-React-App ist, keine SEO-Hub-Page. Soll-Struktur: Top-Hub → Motto-SEO-Hubs → 3 Varianten je Motto (WhatsApp-App + Print-PDF + Text-Vorlagen). Robots-Splitting (Hubs index, Apps noindex). 2-3 Tage Arbeit. In Welle Gamma G7 (P5-Pricing-Sprint) integriert.
+
+---
+
+## Was wurde gemacht — Email-Stack komplett saubergezogen
+
+### Migadu Micro Subscription live (beide Domains)
+- Trial war am 8. Mai abgelaufen → 19 Tage Service suspended → alle Replies auf `kontakt@...` gebounced
+- 27.05. Micro-Plan ($19/Jahr) bezahlt → Service sofort reaktiviert
+- Beide Domains aktiv: `machsleicht.de` + `machsruhig.de`
+- Plan-Begründung Micro statt Mini: $71/Jahr gespart, Solo-Setup braucht weder Multi-Admin noch API-Access
+
+### Email-Architektur klargestellt
+- **Migadu = Routing-Layer, nicht primäres Postfach**
+- Mails an `kontakt@machsleicht.de` → Migadu empfängt → forwarded zu `christian.bollweg@advergy.de` (M365)
+- Storage in Migadu bleibt ~0 GB
+- Reply-Workflow: über Migadu-Webmail (`webmail.migadu.com`) damit FROM-Header korrekt ist
+- **Resend = Outbound-API**, sendet Worker-Mails. Migadu hat damit nichts zu tun.
+
+### Falsche Email-Adresse `party@machsleicht.de` ausgemustert
+- 1+ Monat war `party@...` als Reply-To überall hardcoded — Adresse hat NIE existiert
+- Eltern-Replies verschwanden ins Nichts
+- Fix: `party-worker.js` Default auf `kontakt@machsleicht.de` + Doku 4 Stellen synced + OPEN-DECISIONS resolved
+
+### SPF-Record für machsleicht.de erweitert (CRITICAL FIX)
+- Vorher: `v=spf1 include:spf.migadu.com -all` — Resend nicht autorisiert
+- Nachher: `v=spf1 include:_spf.resend.com include:spf.migadu.com -all`
+- Edit in Cloudflare DNS, ~5 Min Propagation, durch Google DNS verifiziert
+- Worker-Mails (Edit-Link, Newsletter-DOI) sollten ab jetzt deutlich weniger im Spam landen
+
+### Cloudflare Worker Env-Vars korrigiert
+- `RESEND_API_KEY` war als **Plaintext** statt **Secret** gesetzt — rotiert + neuer Key als Secret-Type
+- `RESEND_FROM` von `party@...` auf `kontakt@machsleicht.de` korrigiert
+- `RESEND_REPLY_TO` neu angelegt (war komplett ungesetzt)
+- `AMAZON_TAG` von `machsleicht-21` auf `machsleicht21-21` korrigiert (selbe Falsch-ID wie heute Nacht im HTML-Code)
+- Worker re-deployed via Save-Button
+
+### machsruhig.de Pre-Launch-Email-Setup ins Backlog
+- machsruhig hat strikteres DMARC (`p=quarantine/reject` aktiv) als machsleicht
+- Aktuell: Resend für machsruhig.de **nicht** verifiziert → keine Sends möglich
+- Vor Launch (P3-6): Resend-Domain-Verification + DKIM-CNAMEs + SPF-Erweiterung Pflicht
+- Im BACKLOG-AUDIT als Pflicht-Schritt unter P3-6 dokumentiert
+
+## Kritische Lessons aus dieser Session
+
+1. **Provider-Dashboards sind Source-of-Truth, nicht Code-Doku.** Der Amazon-Tag-Fix vom 16.04. war falsch dokumentiert als „korrigiert", weil ohne Screenshot des PartnerNet-Dashboards verifiziert. Dasselbe Pattern hätte sich heute beim SPF-/Resend-Setup wiederholen können — wurde durch echte mxtoolbox-Verifikation vermieden.
+
+2. **API-Keys als Plaintext = Sicherheitsrisiko.** Cloudflare bietet Plaintext UND Secret als Variable-Type. Bei API-Keys IMMER Secret wählen. Plaintext zeigt den Key im Dashboard offen, jeder mit Read-Access sieht ihn.
+
+3. **Email-Setup = mindestens 5 DNS-Komponenten gleichzeitig prüfen.** MX, SPF, DKIM-Resend, DKIM-Migadu, DMARC. Jeder einzelne kann der Spoiler sein. Migadu-Dashboard zeigt nur den eigenen Status, nicht ob Resend-Setup parallel sauber ist.
+
+4. **`p=quarantine` bei DMARC ist nur sicher wenn alle Sending-Pfade verifiziert sind.** machsruhig.de hat das (gut), aber das heißt zukünftige Mail-Setups dort MÜSSEN vor erstem Send vollständig SPF+DKIM-konfiguriert sein.
+
+## Commits diese Session (lokal auf draft)
+
+- `52ab6fe` Doku: Migadu Micro live für beide Domains
+- `a8a7ace` FIX: kontakt@ statt party@ (Worker + Doku)
+- `4a13870` BACKLOG: machsruhig-Launch Pre-Email-Setup-Note
+- + finaler party-worker.js Header-Comment-Update + diese SESSION-NOTES
+
+## Was Bolle extern erledigt hat (Cloudflare/Migadu/Resend)
+
+- ✅ Migadu Micro Subscription bezahlt
+- ✅ Cloudflare DNS SPF-Record erweitert
+- ✅ Resend-API-Key rotiert (alter `re_9G31o...` revoked)
+- ✅ Neuer Resend-Key in Cloudflare als **Secret** gesetzt
+- ✅ Worker-Env-Vars: AMAZON_TAG fixed, RESEND_FROM fixed, RESEND_REPLY_TO neu
+- ✅ Worker re-deployed
+- ✅ Mailbox-Passwort für kontakt@machsleicht.de gesetzt (für Webmail)
+
+## Was noch offen — niedrige Prio
+
+1. **DMARC-Policy für machsleicht.de** von `p=none` auf `p=quarantine` hochziehen — erst nach 7-14 Tagen sauberem Email-Flow, wenn DMARC-Reports zeigen dass keine echten Mails versehentlich blockiert werden
+2. **PAT-Widerruf** auf [github.com/settings/tokens](https://github.com/settings/tokens) — Token war mehrfach im Session-Chat
+3. **machsruhig.de** bei tatsächlichem Launch: Pre-Email-Setup nach Backlog-Liste
+4. **Amazon SES auf `send.machsleicht.de`** Subdomain — Legacy? Aktiv? In nächster Session klären
+5. **wrangler.toml + wrangler-Deploy-Workflow** statt manuelles Cloudflare-Dashboard-Editing — sauber als technische Verbesserung in nächste Refactor-Session
+
+---
+
 # Session-Notiz — 26.05.2026 (Letzter Akt: Amazon-Tracking-ID Critical Fix + Deploy)
 
 **Branch:** `draft` → `main` (Ende deploy)

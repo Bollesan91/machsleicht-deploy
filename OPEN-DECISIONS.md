@@ -28,6 +28,6 @@ Wenn diese Datei keine OFFENEN Einträge hat, läuft der Autoloop sauber durch. 
 
 **Claude's Vorschlag:** A, weil separate Adresse für Party-Kontext sinnvoll ist und Cloudflare Email Routing kostenlos ist.
 
-**Status:** OFFEN
+**Status:** RESOLVED 27.05.2026 — Entscheidung für Option B (`kontakt@machsleicht.de` direkt). Migadu Micro übernimmt das Routing (NICHT Cloudflare Email Routing — MX-Kollision). party-worker.js Defaults von `party@...` auf `kontakt@...` umgestellt. Cloudflare Worker Env-Vars `RESEND_FROM`/`RESEND_REPLY_TO` sollten ebenfalls auf `kontakt@machsleicht.de` aktualisiert werden (manuell im Cloudflare-Dashboard).
 
 ---
