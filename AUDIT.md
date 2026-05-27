@@ -263,7 +263,7 @@ P1-20-Commit sagte „Validator-Stufe 8 erweitern → prüft Registry = ItemList
 
 - **mlTrack:** `navigator.sendBeacon('/api/event', ...)` (Netlify Function) — eigener Logging-Endpoint
 - **Umami:** `cloud.umami.is/script.js`, data-website-id `72b5eb12-…`
-- **Plausible-Shim:** `window.plausible()` → `umami.track()` (Legacy-Kompatibilität)
+- **Plausible-Shim:** `window.plausible(name, {props})` → `umami.track(name, props)` — **kein Plausible mehr aktiv, der Shim ist intentioneller Provider-Abstraktions-Wrapper** (siehe `.claude/CLAUDE.md` Tech-Stack). Tracking-Code-Konvention: neue Calls verwenden weiter `plausible(...)`, niemals direkt `umami.track(...)`, damit Provider-Wechsel ein One-Liner bleibt.
 
 ### 7.2 Events nach Sprint 1
 

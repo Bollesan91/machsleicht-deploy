@@ -9,7 +9,7 @@
 - **Email (Transactional + Marketing): Resend** — laeuft bereits im Cloudflare Worker fuer Edit-Link-Mails, API-Key als `RESEND_API_KEY` im Worker-Secret. Fuer Newsletter: Resend Audiences + Broadcasts. Double-Opt-In wird **selbst gebaut** im Worker (Resend hat kein built-in DOI). Kein MailerLite, kein ConvertKit, kein anderer Email-Tool-Silo. Begruendung: ein Tool, gemeinsame Sender-Reputation, ein API-Key, kein zweiter AV-Vertrag.
 - **Hosting Partyseite + Raetsel:** Cloudflare Workers (`party-worker.js`), KV fuer State, eigene Subdomain `party.machsleicht.de`
 - **Hosting Hauptseite:** Netlify (statisch + React-Hydrate)
-- **Analytics:** Plausible (DSGVO-konform)
+- **Analytics:** Umami (Cloud, DSGVO-konform, ohne Cookies; Website-ID `72b5eb12-dfde-4333-9bc7-0c2880864df2` auf `cloud.umami.is`). **Code-Konvention:** Tracking-Calls verwenden den `plausible(name, {props: {...}})`-API-Wrapper, der intern auf `umami.track(name, {...})` mappt (Provider-Abstraktion in jedem HTML-Snippet). Wenn neuer Tracking-Code geschrieben wird: weiter `plausible(...)` aufrufen, NICHT direkt `umami.track`. So bleibt Provider-Wechsel = 1 Zeile Shim-Edit statt 30 Call-Sites. Kein Google Analytics, kein gtag, kein Fathom.
 - **Affiliates:** Amazon PartnerNet (Tag **`machsleicht21-21`** — verifiziert per PartnerNet-Screenshot 26.05.2026; vorher fälschlich als `machsleicht-21` dokumentiert und im Code, 2234 Vorkommen wurden korrigiert), Awin (in Anmeldung)
 
 ## Git-Workflow (ÜBERSTEUERT den generischen git-sync Skill)
