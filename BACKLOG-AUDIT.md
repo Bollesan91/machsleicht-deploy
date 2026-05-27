@@ -91,8 +91,9 @@ Strategischer Sprint: Planer vom Generator zum intelligenten Produkt umbauen. Re
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand |
 |---|--------|------|--------|------------------|---------|
 | AQ1 | ⏳ | **P1** | P5-Q1 | `[KERN]` **Redirect-Audit für Lizenz-URLs** (Harry Potter, Ninjago etc.) — beide AI-Audits flaggten Redirects auf generischen Planer. Verifizieren ob noch live, dann: 404 mit Vorschlägen statt Redirect, oder vollständige Entfernung aus Sitemap | 1–2 Std |
-| AQ2 | ⏳ | **P1** | P5-Q2 | `[KERN]` **theme-registry.js Konsistenz-Fix** — pferde, ritter, baustelle fehlen in der Registry (heute Vormittag deployed, aber nie registriert). Dieselben Felder wie dschungel/feen anlegen. | 15 Min |
+| AQ2 | ✅ | **P1** | P5-Q2 | `[KERN]` **theme-registry.js Konsistenz-Fix** — pferde, ritter, baustelle in Registry nachgepflegt. Erledigt 27.05.2026 (Commit `82dfd53`, lokal auf draft). | 15 Min |
 | AQ3 | ✅ | **P1** | P5-Q3 | `[KERN]` **GSC-Workflow standardisiert** — Memory-File `feedback_gsc_sitemap_reminder.md` eingeführt 26.05.2026. Nach jedem Deploy der sitemap.xml ändert: Sitemap re-submit + URL-Indexierung beantragen (max 10/Tag). | dauerhaft |
+| AQ4 | ⏳ | **P2** | P5-Q4 | `[KERN]` **Planer-Daten-Sync für pferde/ritter/baustelle** — Hub-Pages + Schatzsuche live + Theme-Registry aktuell, ABER `GENERIC`-Array in `_src/kindergeburtstag-data.js` enthält die 3 Mottos NICHT. Planer-Picker zeigt deshalb nur 10/13 Mottos. Phase-B-JSONs existieren in `_src/elite-motto-data/`, müssen ins GENERIC-Format (212 Zeilen/Motto) konvertiert werden. **Realistischer Aufwand:** 1-2 Std pro Motto = 3-6 Std total für volle Konvertierung; Minimal-Stub (Picker erscheint, dünner Plan-Output) wäre 30-60 Min/Motto = 1.5-3 Std. Idealerweise im Planer-Frisur-Sprint S5 (3-Gruppen-Einkaufsliste) mit reingenommen, da dort eh GENERIC-Datenstruktur angefasst wird. **Discovery aus Chrome-MCP-Review 27.05.2026.** | 3-6 Std |
 
 #### Welle Beta (4–6 Wochen) — NUR wenn Welle Alpha erfolgreich verkauft hat
 
