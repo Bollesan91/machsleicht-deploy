@@ -2,7 +2,7 @@
 // party.machsleicht.de — Cloudflare Worker + KV (v2)
 // KV Namespace binding: PARTY
 // Environment Variables:
-//   AMAZON_TAG        (z.B. "machsleicht-21")
+//   AMAZON_TAG        (z.B. "machsleicht21-21")
 //   AWIN_PUBLISHER_ID (z.B. "123456")
 // ═══════════════════════════════════════════════════════════════
 
