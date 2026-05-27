@@ -10,7 +10,7 @@
 - **Hosting Partyseite + Raetsel:** Cloudflare Workers (`party-worker.js`), KV fuer State, eigene Subdomain `party.machsleicht.de`
 - **Hosting Hauptseite:** Netlify (statisch + React-Hydrate)
 - **Analytics:** Plausible (DSGVO-konform)
-- **Affiliates:** Amazon PartnerNet (Tag `machsleicht-21`), Awin (in Anmeldung)
+- **Affiliates:** Amazon PartnerNet (Tag **`machsleicht21-21`** — verifiziert per PartnerNet-Screenshot 26.05.2026; vorher fälschlich als `machsleicht-21` dokumentiert und im Code, 2234 Vorkommen wurden korrigiert), Awin (in Anmeldung)
 
 ## Git-Workflow (ÜBERSTEUERT den generischen git-sync Skill)
 

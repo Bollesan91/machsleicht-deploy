@@ -1,6 +1,6 @@
 # machsleicht.de — Backlog
 
-**Letzte Aktualisierung:** 22.04.2026 (Portfolio-Labels eingeführt, React-Homepage an SEO-Fallback angeglichen, P1-12 umformuliert)
+**Letzte Aktualisierung:** 26.05.2026 (Premium-Monetisierung Sprint Welle Alpha–Gamma eingefügt nach 2 externen AI-Audits; Welle Alpha 3-Wochen PoC mit 1 SKU)
 **Status-Check:** Repository-weit durchgeführt, gegen Live-Stand abgeglichen. 8 PBIs auf ✅ gesetzt.
 **Zweck:** Einzige Quelle für alle offenen und erledigten PBIs. Strategie-Kontext steht in `STRATEGIE.md`.
 
@@ -58,6 +58,85 @@ Strategischer Sprint: Planer vom Generator zum intelligenten Produkt umbauen. Re
 | S9 | ⏳ | **P2** | P3-21 | `[KERN]` **Live-Party-Navigator** (Tool führt am Tag durch Party) | 5–7 Tage | Größter Wurf. Voraussetzung: alles davor |
 
 **Sprint-Aufwand S0–S7:** ~7–9 Arbeitstage = 6–8 Wochen bei 6–8h/Woche. Tier 2 (S8+S9) zusätzlich 7–14 Tage.
+
+
+### 💰 PREMIUM-MONETISIERUNG SPRINT (geplant ab 27.05.2026, Welle Alpha → Beta → Gamma)
+
+**Quelle:** Zwei unabhängige externe AI-Audits am 26.05.2026, konvergent auf 8 Kernpunkten (Premium-PDF als erster Hebel, Hero schärfen, standardisierte Page-Blueprints, Redirect-/Index-Bereinigung, Partyseite-Plus, Affiliate-Komplettkorb, Schema.org Product statt FAQ, 6 Pilot-Mottos statt alle 13).
+
+**Strategie:** „Gratis planen, bezahlt umsetzen". Marktvalidierung: ABC-Schnitzeljagd 9–15€, AusgefuXt 15€, Schatzsuche.shop 10.99–20.90€, anymator 2.99€. Preislogik 7.90€ (Notfall) / 9.90–14.90€ (Komplettpaket) / 19.90€ (Pro) ist marktfähig.
+
+**KRITISCHE Vorbedingung:** Bolle designt Printables selbst (Confirmed 26.05.2026, ~3–6h/Motto Design-Zeit). Kein externer Designer im MVP.
+
+#### Welle Alpha (3 Wochen) — Validierung mit EINEM SKU
+
+**Erfolgskriterium:** 3 Käufe in den ersten 3 Wochen nach Go-Live. Wenn nicht erreicht: Hypothese überdenken, NICHT mehr Mottos draufbauen.
+
+| # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Woche |
+|---|--------|------|--------|------------------|---------|-------|
+| A1 | ⏳ | **P1** | P5-1 | `[KERN]` **Hero-Rewrite Homepage** (FUNNEL-AXIOM v2: „Plan gratis, Drucke fertig dazu" statt „kostenlos in 10 Minuten"; Pinterest-Chaos-/Last-Minute-Frame) | 2–3 Std | W1 |
+| A2 | ⏳ | **P1** | P5-2 | `[KERN]` **3 Kaufbox-Pattern** auf `piraten-6-8-jahre.html` als Pilot (Sofort-startklar / Nur-noch-kaufen / Premium-ohne-Stress); ohne aktiven Checkout, nur Klick-Tracking als Demand-Probe | 2 Std | W1 |
+| A3 | ⏳ | **P1** | P5-3 | `[KERN]` **Pricing-Page-Konzept** entscheiden (`/preise` Single-Page vs. Inline-Boxen pro Motto; 3-Tier-Ladder definieren) | 1 Std | W1 |
+| A4 | ⏳ | **P1** | P5-4 | `[KERN]` **Payment-Provider auswählen + einrichten** (Stripe Payment Link Empfehlung — schnellste Time-to-Money, kein Custom-Checkout nötig; Lemon Squeezy Alternative mit DACH-MwSt-Handling) | 4–6 Std | W1 |
+| A5 | ⏳ | **P1** | P5-5 | `[KERN]` **Komplettpaket „Piraten 6–8 Standard" designen** — 6 Druckseiten: Einladung, 8 Namensschilder, 6 Schatzhinweise, Urkunde, Einkaufsliste, Mitgebsel-Kärtchen. Statisch designt, KEIN Generator. Tool: Canva oder Figma oder Adobe Express. | 4–6 Std | W2 |
+| A6 | ⏳ | **P1** | P5-6 | `[KERN]` **Produktseite `/shop/piraten-6-8-komplettpaket`** mit PDF-Preview (6 Screenshots der Druckseiten, kein Playwright nötig im PoC), Lieferumfang-Liste, FAQ, Schema.org Product+Offer markiert | 3–4 Std | W3 |
+| A7 | ⏳ | **P1** | P5-7 | `[KERN]` **Checkout-Flow live** (Stripe-Button → Erfolgsseite → automatischer Download-Link per Email; signierter Link mit Ablaufzeit) | 2–3 Std | W3 |
+| A8 | ⏳ | **P1** | P5-8 | `[KERN]` **Plausible/Umami Conversion-Tracking** (Goal: `purchase`, `add_to_cart`, `pricing_view`, `pdf_preview_open`) | 1 Std | W3 |
+| A9 | ⏳ | **P1** | P5-9 | `[KERN]` **GO LIVE** + 3-Wochen-Demand-Check (Erfolgsdefinition: ≥ 3 bezahlte Käufe; KPI-Bericht nach Tag 21) | — | W3 Ende |
+
+**Welle-Alpha-Aufwand:** ~20–28 Std. Bei 6–8h/Woche realistisch 3–4 Wochen.
+
+#### Welle Alpha-Quick-Wins (parallel, kein Blocker für A1-A9)
+
+| # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand |
+|---|--------|------|--------|------------------|---------|
+| AQ1 | ⏳ | **P1** | P5-Q1 | `[KERN]` **Redirect-Audit für Lizenz-URLs** (Harry Potter, Ninjago etc.) — beide AI-Audits flaggten Redirects auf generischen Planer. Verifizieren ob noch live, dann: 404 mit Vorschlägen statt Redirect, oder vollständige Entfernung aus Sitemap | 1–2 Std |
+| AQ2 | ⏳ | **P1** | P5-Q2 | `[KERN]` **theme-registry.js Konsistenz-Fix** — pferde, ritter, baustelle fehlen in der Registry (heute Vormittag deployed, aber nie registriert). Dieselben Felder wie dschungel/feen anlegen. | 15 Min |
+| AQ3 | ✅ | **P1** | P5-Q3 | `[KERN]` **GSC-Workflow standardisiert** — Memory-File `feedback_gsc_sitemap_reminder.md` eingeführt 26.05.2026. Nach jedem Deploy der sitemap.xml ändert: Sitemap re-submit + URL-Indexierung beantragen (max 10/Tag). | dauerhaft |
+
+#### Welle Beta (4–6 Wochen) — NUR wenn Welle Alpha erfolgreich verkauft hat
+
+**Trigger:** ≥ 3 Käufe in 3 Wochen. Wenn nicht erreicht → Welle Beta wird NICHT gestartet, stattdessen Welle-Alpha-Hypothese überarbeitet.
+
+| # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand |
+|---|--------|------|--------|------------------|---------|
+| B1 | ⏳ | **P2** | P5-10 | `[KERN]` **JSON→HTML→PDF Playwright-Pipeline** (build-time auf Netlify oder lokales Build-Script). Schema-Validation mit Zod. Output: PDF + PNG-Previews versioniert. | 3–5 Tage |
+| B2 | ⏳ | **P2** | P5-11 | `[KERN]` **5 weitere Komplettpakete** durch die Pipeline: detektiv-9-12, weltraum-9-12, dino-6-8, einhorn-3-5, meerjungfrau-6-8 (basiert auf Top-Money-Pages-Analyse, jeweils ~3–6h Design) | 15–30 Std |
+| B3 | ⏳ | **P2** | P5-12 | `[KERN]` **Partyseite Plus** als bezahltes Add-on (4.90–9.90€ einmalig): QR-Code auf Print-Einladung, automatische Erinnerungs-Mails (7d/1d/3h vor Party), Wunschliste, Allergie-Abfrage. Worker-Erweiterung. | 5–7 Tage |
+| B4 | ⏳ | **P2** | P5-13 | `[KERN]` **Top-30 Money-Pages 7-Baustein-Standardisierung** (Hero, Preview, Zeit/Material, Ablauf, Einkauf, Proof, FAQ). Erst 5 Motto-Hubs der Welle-Beta-Pakete, dann inkrementell die anderen. | 30–60 Min/Page |
+| B5 | ⏳ | **P2** | P5-14 | `[KERN]` **Affiliate-Komplettkorb-Box** pro Motto (kuratierte Einkaufsbox: Deko + Mitgebsel + Bastel + Druckpapier; Amazon-PartnerNet `machsleicht21-21`; später Awin Otto/myToys) | 15–30 Min/Motto |
+
+**Welle-Beta-Aufwand:** ~25–40 Arbeitstage = 6–10 Wochen bei 6–8h/Woche.
+
+#### Welle Gamma (3+ Monate) — NUR wenn Welle Beta skaliert
+
+**Trigger:** Welle-Beta-Pakete generieren ≥ 30 Käufe/Monat insgesamt.
+
+| # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand |
+|---|--------|------|--------|------------------|---------|
+| G1 | ⏳ | **P3** | P5-15 | `[KERN]` **Pro-Schatzsuche** (19.90–24.90€): alle Komplettpaket-Inhalte + Story-Audio-Voiceover (KI-generiert, gecacht) + Indoor/Outdoor-Variante + 3 Schwierigkeitsstufen + Teamkarten + Bonusrätsel | 2 Wochen pro Motto |
+| G2 | ⏳ | **P3** | P5-16 | `[KERN]` **Bundle-Logik** Komplettparty (24.90–34.90€): Motto-Paket + Partyseite-Plus + Affiliate-Korb-Discount + Bonusdrucke. AOV-Steigerung. | 3–5 Tage |
+| G3 | ⏳ | **P3** | P5-17 | `[KERN]` **48h-Notfall-PDF** (7.90€): 1 Notfall-Zeitplan, Discounter-Einkaufsliste, 3 Sofortspiele, Einladungstext, einfache Schatzsuche, Druckcheckliste. Impulskauf-Produkt. | 1 Woche |
+| G4 | ⏳ | **P3** | P5-18 | `[KERN]` **Schema.org Product/BreadcrumbList überall** auf Shop-Seiten (FAQ-Markup als Convenience, NICHT als CTR-Hack — Google zeigt FAQ-Rich-Results 2026 fast nur noch für gov/health) | 1 Tag |
+| G5 | ⏳ | **P4** | P5-19 | `[ZUKUNFT]` **White-Label B2B** (Indoor-Spielplätze, Bauernhof-Cafés): 39–149€/Monat je Partner, RSVP + Slots + Zusatzleistungen + Geschenkoptionen | 4–8 Wochen Pilot |
+| G6 | ⏳ | **P4** | P5-20 | `[ZUKUNFT]` **Mini-Video-Teaser für Einladungen** (anymator-Konkurrenz: 0€ mit Branding / 2.99€ ohne Logo). Viraler Hook gegen statische JPG-Einladungen. | 2–3 Wochen |
+
+#### Was aus den Reviews EXPLIZIT gestrichen wurde
+
+- **Programmatische Massen-SEO** (Motto×Alter×Franchise) → beide Reviews + Google's Helpful-Content-Guidance: scaled content abuse Risiko, vermeiden
+- **„Altershubs 6/7/8 Jahre"** als Review-Vorschlag → wurde in Welle 33-A bewusst entfernt (172→95 URLs), wird NICHT zurückgebaut
+- **Lemon Squeezy als „bereits aktiv"** → war Review-Halluzination, Lemon Squeezy ist optional A4-Provider-Kandidat, nicht aktiv
+- **„9 Mottos / 81 Spielideen"** in Review-Tabellen → veraltet, aktueller Stand: 13 Mottos, > 150 Spielideen
+
+#### A/B-Tests die nach Welle Alpha sinnvoll wären (Welle Beta Begleitung)
+
+| Test | Variante A | Variante B | Primäre KPI |
+|---|---|---|---|
+| Hero-Mechanik Home | „Kostenlos in 10 Minuten" | „Plan gratis, Drucke fertig dazu" | Tool-Start-Rate |
+| Pricing Anchor | „14,90 €" | „14,90 € statt 19,90 €" Durchstreichpreis | Checkout-Conversion |
+| Produktseite | Textliste Lieferumfang | 6-seitige PDF-Preview-Stack | Add-to-cart |
+| CTA-Anzahl Hero | 1 CTA | 3 CTAs | Tool-Start-Rate |
+| Funnel-Reihenfolge | Tools nebeneinander | Plan → Einladung+Schatz → Partyseite | Multi-Tool-Nutzung |
 
 
 ### Mittelfristig (Mai–Juli)
@@ -118,7 +197,7 @@ Strategischer Sprint: Planer vom Generator zum intelligenten Produkt umbauen. Re
 | ✅ | P2-11 | Interne Links broken/zirkulär auf Ratgeber-Seiten |
 | ✅ | P2-14 | Affiliate-Sweep auf 16 Ratgeber-Seiten |
 | ✅ | P2-18 | Vergleichs-Tabellen statt Einzel-Affiliate-Links |
-| ✅ | P3-2 | Amazon Affiliate Tag setzen (**machsleicht-21 konsolidiert, 796 Vorkommen sauber**) |
+| ⚠️ | P3-2 | Amazon Affiliate Tag setzen (**Fix 16.04. ging FALSCH** — `machsleicht-21` war falsch, korrekt ist `machsleicht21-21`. Am 26.05.2026 zurückgedreht, 2234 Vorkommen) |
 | ✅ | P0-5 | GitHub Token rotieren (neuer PAT ohne Ablaufdatum) |
 | ✅ | P0-1 | GSC eingerichtet + bereinigte Sitemap (223 URLs) eingereicht |
 | ✅ | P1-10 | Cloudflare Worker deployed (party.machsleicht.de live) |
@@ -185,8 +264,9 @@ Strategischer Sprint: Planer vom Generator zum intelligenten Produkt umbauen. Re
 - 14 Ratgeber-Seiten linken jetzt auf `#planer`.
 
 ### P3-2: Amazon Affiliate Tag — FIXED (16.04.2026)
-- **Vorher:** 566× falscher Tag `machsleicht21-21` + 230× richtiger `machsleicht-21`
-- **Nachher:** 796× einheitlich `machsleicht-21` verteilt auf 16 Dateien
+- **Vorher (16.04.):** 566× Tag `machsleicht21-21` + 230× Tag `machsleicht-21`
+- **Nachher (16.04.):** 796× einheitlich `machsleicht-21` verteilt auf 16 Dateien
+- **⚠️ KORREKTUR 26.05.2026:** Der Fix vom 16.04. ging in die FALSCHE Richtung. Per Amazon-PartnerNet-Screenshot verifiziert: korrekte Tracking-ID ist `machsleicht21-21`, nicht `machsleicht-21`. Am 26.05. erneut gefixt: 2234 Vorkommen zurückgedreht auf `machsleicht21-21`. Affiliate-Klicks zwischen 16.04. und 26.05.2026 waren UNTRACKED (kein Revenue).
 - Source-Files (_src/kindergeburtstag.jsx + data.js) auch gefixt, damit künftige Builds nicht regressieren.
 
 ### Deep SEO Ratgeber-Seiten (nicht-numerierter Sprint) — FIXED
@@ -315,7 +395,7 @@ Strategischer Sprint: Planer vom Generator zum intelligenten Produkt umbauen. Re
   1. Cloudflare Worker anlegen, `party-worker.js` deployen
   2. KV Namespace "PARTY" erstellen und binden
   3. DNS: `party.machsleicht.de` → Worker
-  4. Environment-Variables: `AMAZON_TAG=machsleicht-21`, `AWIN_PUBLISHER_ID` (optional)
+  4. Environment-Variables: `AMAZON_TAG=machsleicht21-21`, `AWIN_PUBLISHER_ID` (optional)
   5. Rätsel-nach-Maß-Endpoint freischalten
 - **Aufwand:** 1 Laptop-Session, max 2h.
 - **Revenue-Effekt:** +100–200€/Monat sofort.
@@ -471,7 +551,7 @@ Audit-Ranking nach Zufriedenheits-Score (schlechteste zuerst):
 **Tech-Checkliste:**
 - [ ] `geschenkeberater.jsx` — Form: Alter-Dropdown, Geschlecht-Buttons, Interessen-Tags (Dino, Sport, Kunst, Tech, Bücher...), Budget-Slider
 - [ ] Claude-API-Call: "Schlage 7 Geschenke für {geschlecht}, {alter} Jahre, mag {interessen}, Budget {budget}. Für jedes: Name, Amazon-Suchbegriff, Preis-Schätzung, 1 Satz Warum."
-- [ ] Response-Parsing: Bau Amazon-Search-URLs mit `tag=machsleicht-21`
+- [ ] Response-Parsing: Bau Amazon-Search-URLs mit `tag=machsleicht21-21`
 - [ ] 6 statische Landingpages mit editorial Top-10-Listen (nicht KI-generiert — manuell kuratiert für Qualität)
 - [ ] Top-10-Listen: jedes Produkt mit Screenshot, Bewertung, Preis, Pro/Contra, Affiliate-Link
 - [ ] Vergleichstabellen ähnlich wie bei Test-Sites

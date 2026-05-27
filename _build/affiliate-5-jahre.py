@@ -23,21 +23,21 @@ block = '''  <div class="u-compare-wrapper" data-affiliate-block="p2-14">
       <div class="u-compare-name">Bastel-Set für Kleinkinder (Schere-fertig)</div>
       <div class="u-compare-price">ca. 15-25 €</div>
       <div class="u-compare-note">Altersgerecht, schon vorgeschnitten. Kinder basteln selbst, Eltern haben Ruhe.</div>
-      <a href="https://www.amazon.de/s?k=bastelset+kinder+5+jahre&tag=machsleicht-21" class="u-compare-cta" rel="noopener sponsored" target="_blank">Bei Amazon ansehen *</a>
+      <a href="https://www.amazon.de/s?k=bastelset+kinder+5+jahre&tag=machsleicht21-21" class="u-compare-cta" rel="noopener sponsored" target="_blank">Bei Amazon ansehen *</a>
     </div>
     <div class="u-compare-card">
       <div class="u-compare-emoji">🎪</div>
       <div class="u-compare-name">Clown-Hüte-Set 8 Stück</div>
       <div class="u-compare-price">ca. 10-15 €</div>
       <div class="u-compare-note">Kostüm-Party im Kleinen. 5-Jährige lieben Verkleidung. Ein Klassiker.</div>
-      <a href="https://www.amazon.de/s?k=kostüm+kinder+5+jahre+set&tag=machsleicht-21" class="u-compare-cta" rel="noopener sponsored" target="_blank">Bei Amazon ansehen *</a>
+      <a href="https://www.amazon.de/s?k=kostüm+kinder+5+jahre+set&tag=machsleicht21-21" class="u-compare-cta" rel="noopener sponsored" target="_blank">Bei Amazon ansehen *</a>
     </div>
     <div class="u-compare-card">
       <div class="u-compare-emoji">🎵</div>
       <div class="u-compare-name">Kinder-Musik-Instrumente-Set</div>
       <div class="u-compare-price">ca. 20-30 €</div>
       <div class="u-compare-note">Rhythmik-Spiele, laute Band-Runde. Funktioniert als Gruppenspiel für alle.</div>
-      <a href="https://www.amazon.de/s?k=kinder+musikinstrumente+set&tag=machsleicht-21" class="u-compare-cta" rel="noopener sponsored" target="_blank">Bei Amazon ansehen *</a>
+      <a href="https://www.amazon.de/s?k=kinder+musikinstrumente+set&tag=machsleicht21-21" class="u-compare-cta" rel="noopener sponsored" target="_blank">Bei Amazon ansehen *</a>
     </div>
     </div>
     <div class="u-compare-disclaimer">* Affiliate-Links. Für dich ändert sich der Preis nicht.</div>

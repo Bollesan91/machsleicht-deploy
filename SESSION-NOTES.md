@@ -1,3 +1,39 @@
+# Session-Notiz — 26.05.2026 (Letzter Akt: Amazon-Tracking-ID Critical Fix + Deploy)
+
+**Branch:** `draft` → `main` (Ende deploy)
+
+## Was wurde gemacht
+
+### 🚨 CRITICAL: Amazon-Tracking-ID Fix (Commit 52823dc)
+
+User hat heute Nacht beim Infrastruktur-Audit den Amazon-PartnerNet-Dashboard-Screenshot gezeigt:
+- **StoreID: `machsleicht21-21`** (per Screenshot verifiziert)
+- Code hatte überall `tag=machsleicht-21` durch einen Fix vom 16.04.2026
+- **Der Fix vom 16.04. ging in die FALSCHE Richtung** — ursprünglich gemischt 566×`machsleicht21-21` + 230×`machsleicht-21`, "konsolidiert" wurde fälschlich auf den FALSCHEN Tag
+
+**Impact:**
+- 2234 Affiliate-Links in 95 Live-Files seit 16.04.–26.05.2026 (40 Tage) **untracked**
+- Keine Provisionsverbuchung in diesem Zeitraum
+- Bei ~80 Visitors/Tag und ~3% CTR-Annahme auf Affiliate-Boxen = realistisch 0–10€ verloren, aber alle Klick-Daten sind weg
+
+**Fix (Commit 52823dc):**
+- Mass-Replace via sed: `find ... -exec sed -i 's/tag=machsleicht-21/tag=machsleicht21-21/g'`
+- 2234 Vorkommen in HTML, JS, JSX, CSS + 4 Python-Build-Scripts in `_build/`
+- Doku-Korrektur in STRATEGIE.md, AUDIT.md, BACKLOG-AUDIT.md, .claude/CLAUDE.md
+- Historische 16.04.-Doku-Einträge mit Korrektur-Hinweis ergänzt (nicht überschrieben — Audit-Spur erhalten)
+
+**Verify-Check:**
+- `grep tag=machsleicht-21 --include="*.html" --include="*.js" .` → **0 Treffer**
+- `grep tag=machsleicht21-21 --include="*.html" --include="*.js" .` → **2234 Treffer**
+
+### Lehre: Self-Audit-Methodik hat hier nicht gegriffen
+
+Der 16.04.-Fix wurde mit "566 falsche Tags korrigiert" dokumentiert ohne die EINFACHSTE Verifikation: einen Blick ins PartnerNet-Dashboard. Self-Audit-Methodik braucht für externe APIs/Accounts den Loop: **erst Quelle prüfen, dann Code anpassen** — nicht andersrum.
+
+→ **Action für nächste Sessions:** Bei jedem Infrastruktur-Fix (Tracking-IDs, API-Keys, Webhook-URLs, Affiliate-Tags) MUSS vor dem Code-Commit ein Screenshot des Provider-Dashboards in der Session geteilt werden. Doku alleine reicht nicht.
+
+---
+
 # Session-Notiz — 26.05.2026 (Spät-Nacht: Phase 3 Wave 1 + Planer-Cleanup + Schatzsuche-Hub-Fix + Deploy)
 
 **Branch:** `draft` → `main` (Ende deploy)
