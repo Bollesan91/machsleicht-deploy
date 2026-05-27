@@ -1,6 +1,34 @@
-# Session-Notiz — 27.05.2026 (Email-Marathon + Privacy-Fix + Ahrefs-Setup + Funnel-Demo + Deploy)
+# Session-Notiz — 27.05.2026 (Email-Marathon + Privacy-Fix + Ahrefs-Setup + Funnel-Demo 5-Frame + Pinterest + Deploy)
 
 **Branch:** `draft` → `main` (Ende deploy)
+
+## Funnel-Demo Feuerwehr — Ausbau auf 5-Frame-Story + Pinterest-Pin
+
+Erweiterung der heute schon eingecheckten Funnel-Demo. Aus dem 2-Block-Mockup ist eine 5-Frame-Story geworden, plus ein dediziertes Pinterest-Asset.
+
+**Drei neue Dateien in `_dev/marketing/funnel-demos/feuerwehr/`:**
+- `funnel-5frame-v2.html/.png` — empfohlene Hauptvariante. 5 Frames: Planer → Schatzsuche → **Einladungsspiel mit Funken-Runner** (Chase-Phase, Glut-Rot-Palette) → Partyseite → Danke
+- `funnel-5frame-v1.html/.png` — Variante mit statischem Einladungs-Bild statt Spiel in Frame 3
+- `funnel-pinterest.html/.png` — 2:3-Format (1500×2250), Runner als Hero, „Eine Einladung, die man fangen muss"
+
+**Aus dem echten Code gegroundet (kein Erfinden):**
+- Hero-Copy aus `index.html`
+- 5 echte Schatzsuche-Stationen aus `schatzsuche/feuerwehr.html` (Feuerwehrhelm basteln · Feuer löschen · Rettungseinsatz · Tatü-Tata-Tanz · Schatzkiste & Junior-Urkunde)
+- Spielmechanik aus `einladung/feuerwehr/index.html`: dunkler `#1A0A00`-Hintergrund, 9 Brand-Positionen aus dem `ITEMS`-Array, Glut-Rot aus `SKY[2]`, **Runner-SVG direkt aus der `RUNNER_IMG`-Konstante**
+- Partyseiten-Farbe `#D4812A` und Wunschlisten-Text „Verhindert Doppelgeschenke" aus `party-worker.js`
+
+**Erfunden (markiert):** Frame 5 „Danke" mit KONZEPT-Stempel; Wunschlisten-Items als Platzhalter; „Reserviert von Ben" als plausibles Beispiel.
+
+**Erkenntnis aus der Code-Aufklärung:** Das Einladungsspiel hat eine **Chase-Phase mit Runner** (oranger Funken-Geist als Charakter, der wegläuft) — das ist der eigentliche Differenzierer, nicht das Brand-Tappen. In den Marketing-Visuals jetzt zentral platziert.
+
+**Distribution-Plan (offen):**
+1. Primär: Embed oben auf `schatzsuche/<motto>.html`-Seiten als „So funktioniert's"
+2. Sekundär: Pinterest-Pin pro Motto (Pinterest ist motto-getrieben — DACH-Eltern suchen „Feuerwehr-Geburtstag Ideen")
+3. Tertiär: Motto-SEO-Hubs nach P6-1-Refactor
+
+**Architektur für Ausrollung auf 9 Mottos:** parametrisiertes Template + Motto-Daten + Batch-Render — selbes Muster wie `_src/generate-schatzsuche-pages.py`. Feuerwehr wird Goldstandard. Pro Motto ~30 min Daten-Extraktion + Batch.
+
+**Status:** weiterhin Design-auf-Papier, nicht Bau-jetzt. Bei 0 Planer-Traffic kein Hebel. Funnel-Axiom unverändert.
 
 ## Funnel-Demo Feuerwehr (Mockup-Asset, _dev only)
 
