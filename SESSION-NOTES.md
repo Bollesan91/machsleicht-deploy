@@ -1,6 +1,23 @@
-# Session-Notiz — 27.05.2026 (Email-Marathon + Privacy-Fix + Ahrefs-Setup + Deploy)
+# Session-Notiz — 27.05.2026 (Email-Marathon + Privacy-Fix + Ahrefs-Setup + Funnel-Demo + Deploy)
 
 **Branch:** `draft` → `main` (Ende deploy)
+
+## Funnel-Demo Feuerwehr (Mockup-Asset, _dev only)
+
+Im Rahmen einer Konversation über Einladungen entstand ein annotiertes Doppel-Mockup (Einladung-Bild + Partyseite mit Wunschliste) für das Motto Feuerwehr. Ursprünglich didaktisch gedacht (um zu zeigen, dass die Einladung im Grunde ein Render der Partyseiten-Hero ist), versehentlich brauchbar als Marketing-Asset.
+
+**Abgelegt:** `_dev/marketing/funnel-demos/feuerwehr/` (HTML + PNG + README). Liegt unter `.netlifyignore` → nicht öffentlich serviert.
+
+**Mögliche Verwendung (offen, nicht entschieden):**
+- „So funktioniert's"-Sektion auf der Landingpage
+- Pinterest-Story-Pin für organische Akquise
+- Onboarding-Screens / App-Store-Style-Screenshots
+
+**Erkenntnis aus dem Prozess:** Einladung und Partyseite sind nicht zwei Artefakte — die „Einladung als Bild" ist ein automatisch gerenderter Snapshot der Partyseiten-Hero. Ein Datenstand, ein Look. Der „Einladungs-Generator" ist eine Render-Funktion auf der Partyseite, kein zweites Tool.
+
+**Status:** Design-auf-Papier, nicht Bau-jetzt. Bei 0 Planer-Traffic kein Hebel. Funnel-Axiom bleibt unverändert (Hero = „Kindergeburtstag planen", Einladung sekundär). Auto-Render als Produktfeature kommt frühestens in Welle Gamma G7 (P6-1 Einladungs-Refactor).
+
+**Hinweis Amazon-Tag:** HTML enthält `machsleicht21-21` (korrekt, nicht `machsleicht-21`).
 
 ## Ahrefs Webmaster Tools Setup + Site-Audit-Discovery
 
