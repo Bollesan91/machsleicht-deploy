@@ -1,55 +1,47 @@
-# Funnel-Demos Feuerwehr
+# Tool-Karten für die Startseite
 
-Marketing-Assets, die den vollständigen machsleicht-Funnel für das Motto Feuerwehr visualisieren. Alles aus dem echten Code gegroundet (Stationen, Spielmechanik, Worker-Farben, Runner-SVG).
+**Target-Layout für `index.html`:** Eine 4-Karten-Sektion „So funktioniert machsleicht", die die vier Kern-Tools mit *echten Tool-Screenshots* präsentiert. Ersetzt die früheren Mockup-Iterationen (Funnel-Demos, 5-Frame, Pinterest-Pin — alle gelöscht aus diesem Ordner).
 
 ## Dateien
 
-### Aktueller Stand — 5-Frame-Story
-
-| Datei | Beschreibung | Use-Case |
-|-------|--------------|----------|
-| `funnel-5frame-v2.html/.png` | **Empfohlen.** 5 Frames: Planer → Schatzsuche → Einladungs-**Spiel** mit Funken-Runner → Partyseite → Danke | Landingpage-Embed, Social, „So funktioniert's"-Section |
-| `funnel-5frame-v1.html/.png` | Wie v2, aber Frame 3 = statisches Einladungs-Poster (kein Spiel) | Alternative für Kontexte, wo das Spiel-Konzept verwirrt |
-| `funnel-pinterest.html/.png` | **2:3-Format** (1500×2250) für Pinterest-Pin. Runner-Chase als Hero + 4-Step-Strip | Pinterest-Distribution |
-
-### Frühere Iteration
-
-| Datei | Status |
+| Datei | Inhalt |
 |-------|--------|
-| `feuerwehr-funnel-demo.html/.png` | Erste 2-Block-Variante (Einladung + Partyseite). Didaktisch korrekt aber konzeptuell überholt — die zwei sind kein eigenes Tool sondern eine Render-Funktion der Partyseite. |
+| `tools-cards.html` | Drop-in-Sektion mit 4 Karten · Phone-Frames · Themen-Akzenten · CTAs |
+| `tools-cards-mockup.png` | Render der Sektion mit aktuellen Platzhalter-Screenshots |
+| `current-captures/01-planer-PLATZHALTER.png` | Live-Capture des Planer-Hero (FALSCHE STELLE — nicht der Wow-Moment) |
+| `current-captures/02-schatzsuche-PLATZHALTER.png` | Live-Capture der Schatzsuche-Builder-Landing (FALSCHE STELLE — nicht der Wow-Moment) |
+| `current-captures/03-einladung-spiel-PLATZHALTER.png` | Live-Capture des Spiel-Initialscreens (OK, aber Chase-Phase wäre besser) |
 
-## Was aus dem echten Code stammt
+## ⚠️ Status: Layout fix, Screenshots noch falsch
 
-- **Hero-Copy Frame 1:** „Kindergeburtstag planen — kostenlos in 10 Minuten" aus `index.html`
-- **Schatzsuche-Stationen Frame 2:** echte 5 aus `schatzsuche/feuerwehr.html`
-- **Spielmechanik Frame 3:** dunkler Hintergrund `#1A0A00`, 9 Brand-Positionen aus dem `ITEMS`-Array, Glut-Rot-Palette aus dem `SKY[2]`-Eintrag, Runner-SVG direkt aus der `RUNNER_IMG`-Konstante in `einladung/feuerwehr/index.html`
-- **Partyseite Frame 4:** Worker-Farbe `#D4812A`, Wunschlisten-Subtitle „Verhindert Doppelgeschenke" aus `party-worker.js`
+Die Karten-Sektion ist visuell und strukturell wie sie auf der Startseite landen soll. **Was fehlt:** die richtigen Screenshots der „Wow-Momente" pro Tool — Bolle bestimmt sie, weil er weiß, wo die Magie sichtbar wird:
 
-## Was erfunden ist
+- **Karte 1 Planer:** zeigt aktuell die Eingabe-Maske. Zielzustand wäre vermutlich der *fertige Plan-Output* (Zeitablauf + Spiele + Einkaufsliste sichtbar).
+- **Karte 2 Schatzsuche:** zeigt die Builder-Landing. Zielzustand wäre die *interaktive Schatzkarte* mit Emoji-Deko und Stations-Markern.
+- **Karte 3 Einladungs-Spiel:** zeigt den Spiel-Start mit 9 Bränden. Funktioniert als Hook — aber die *Chase-Phase mit dem Funken-Runner* wäre der stärkere Wow-Moment.
+- **Karte 4 Partyseite:** Platzhalter („Screenshot folgt"). Wird vom Cloudflare-Worker generiert, lokales Capture braucht Worker-Setup (wrangler) oder Demo-URL.
 
-- **Danke-Frame 5:** Konzept-Mockup. Feature existiert nicht. PNG zeigt „KONZEPT"-Stempel zur Markierung.
-- **Wunschlisten-Items** in Frame 4: Platzhalter (Helm/Auto/T-Shirt), keine echten Amazon-Produkte verlinkt.
-- **„Reserviert von Ben"** in Frame 4: plausibles Beispiel, nicht real.
+**Sobald Bolle die richtigen Screenshots liefert** (entweder als Datei-Upload oder per Anleitung „auf Page X klicke Y, warte bis Z"), tausche ich die Platzhalter aus und render die Sektion neu.
 
-## Status / Use
+## Verworfener Pfad (gelöscht aus diesem Ordner, in Git-Historie nachlesbar)
 
-**Design-auf-Papier, nicht Bau-jetzt.** Bei 0 Planer-Traffic öffnet niemand die Partyseite. Das Asset hilft erst, wenn der Planer SEO-Traffic zieht. Funnel-Axiom unverändert: Hero = „Kindergeburtstag planen", Einladung sekundär.
+Frühere Iterationen waren:
+1. **2-Block-Mockup** (Einladung + Partyseite nebeneinander) — didaktisch korrekt aber redundant: die zwei sind kein separates Tool, sondern dieselbe Sache aus zwei Blickwinkeln.
+2. **5-Frame-Story** (Planer → Schatzsuche → Einladungsspiel → Partyseite → Danke) — designerisch attraktiv, aber die UI war von mir gestaltet und nicht aus den echten Tools. Risiko Vertrauensbruch.
+3. **Pinterest-Pin** mit Runner-Hero — schöne Optik, aber dasselbe Problem: Mockup-UI statt echte Screenshots.
 
-## Geplante Distribution (offen, nicht entschieden)
+**Erkenntnis:** Marketing-Assets, die wie Screenshots *aussehen* aber Designs *sind*, riskieren einen Bruch zwischen Werbeversprechen und tatsächlichem Tool-Erlebnis. Nur echte Tool-Screenshots, eingerahmt in Phone-Frames, sind deploy-würdig.
 
-1. **Primär:** Embed oben auf `schatzsuche/feuerwehr.html` als „Komplette Mission auf einen Blick"
-2. **Sekundär:** Pinterest-Pin → motto-spezifisch (Pinterest ist motto-getrieben)
-3. **Tertiär:** Motto-SEO-Hub später (P6-1 Einladungs-Refactor)
+## Distribution-Plan (unverändert)
 
-## Ausrollung auf 9 Mottos
+1. **Primär:** Drop-in als neue Sektion in `index.html`, ersetzt/ergänzt die bestehenden Tool-Sektionen
+2. **Sekundär:** einzelne Karten als eigenständige Visuals für Social/Pinterest pro Motto
+3. **Tertiär:** Motto-SEO-Hubs (P6-1) nutzen dasselbe Karten-Pattern
 
-Architektur soll parametrisiert werden: ein HTML-Template + 9 Motto-Daten-Objekte (Farben, SVG, Stationen, Spiel-Render, Wunschliste) → 9 PNGs via Batch-Render. Selbes Muster wie `_src/generate-schatzsuche-pages.py`. Feuerwehr ist der Goldstandard, daraus wird das Template extrahiert.
+## Technisches
 
-Pro weiteres Motto realistisch ~30 min Daten-Extraktion + Batch-Render. Nicht ein Nachmittag, sondern eine kleine Sprint-Aufgabe — und nur sinnvoll, wenn der Planer Traffic zieht.
-
-## Tags / Tech
-
-- Render via headless Chromium 131, deviceScaleFactor 3 (für Schärfe)
-- Fonts (Lilita One + Nunito) als base64 ins HTML eingebettet (Google Fonts im Render-Container geblockt)
-- Hochformat-Infographics: 1410×~10.000 px, Pinterest: 1500×2250 px (2:3)
+- Render via headless Chromium 131, deviceScaleFactor 3
+- Fonts: Lilita One (Headlines) + Nunito (Body), als base64 ins HTML eingebettet
+- Phone-Frame: 240px breit, `aspect-ratio:9/19.5`, `object-position:top` für sauberen Crop
+- Karten-Akzent-Farben: Orange/Grün/Rot/Orange (Planer/Schatzsuche/Einladung/Partyseite)
 - Liegt unter `.netlifyignore` → nicht öffentlich serviert
