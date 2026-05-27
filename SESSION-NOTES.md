@@ -1,51 +1,29 @@
-# Session-Notiz — 27.05.2026 (Email-Marathon + Privacy-Fix + Ahrefs-Setup + Funnel-Demo 5-Frame + Pinterest + Deploy)
+# Session-Notiz — 27.05.2026 (Email-Marathon + Privacy-Fix + Ahrefs-Setup + Funnel-Demo Pivot + Deploy)
 
 **Branch:** `draft` → `main` (Ende deploy)
 
-## Funnel-Demo Feuerwehr — Ausbau auf 5-Frame-Story + Pinterest-Pin
+## Funnel-Demo Feuerwehr — Pivot zu Tool-Karten mit echten Screenshots
 
-Erweiterung der heute schon eingecheckten Funnel-Demo. Aus dem 2-Block-Mockup ist eine 5-Frame-Story geworden, plus ein dediziertes Pinterest-Asset.
+Nach drei Iterationen (2-Block / 5-Frame / Pinterest-Pin) **Pivot zum eigentlich richtigen Ansatz:** eine 4-Karten-Sektion mit *echten Tool-Screenshots* für die Startseite.
 
-**Drei neue Dateien in `_dev/marketing/funnel-demos/feuerwehr/`:**
-- `funnel-5frame-v2.html/.png` — empfohlene Hauptvariante. 5 Frames: Planer → Schatzsuche → **Einladungsspiel mit Funken-Runner** (Chase-Phase, Glut-Rot-Palette) → Partyseite → Danke
-- `funnel-5frame-v1.html/.png` — Variante mit statischem Einladungs-Bild statt Spiel in Frame 3
-- `funnel-pinterest.html/.png` — 2:3-Format (1500×2250), Runner als Hero, „Eine Einladung, die man fangen muss"
+**Erkenntnis:** Alle bisherigen Mockups waren von mir gestaltete UI, die *wie* Screenshots aussehen — das birgt Vertrauensbruch wenn der Nutzer auf der Startseite das Versprechen sieht und im echten Tool eine andere Optik findet. Nur Live-Captures der echten Tools sind deploy-würdig.
 
-**Aus dem echten Code gegroundet (kein Erfinden):**
-- Hero-Copy aus `index.html`
-- 5 echte Schatzsuche-Stationen aus `schatzsuche/feuerwehr.html` (Feuerwehrhelm basteln · Feuer löschen · Rettungseinsatz · Tatü-Tata-Tanz · Schatzkiste & Junior-Urkunde)
-- Spielmechanik aus `einladung/feuerwehr/index.html`: dunkler `#1A0A00`-Hintergrund, 9 Brand-Positionen aus dem `ITEMS`-Array, Glut-Rot aus `SKY[2]`, **Runner-SVG direkt aus der `RUNNER_IMG`-Konstante**
-- Partyseiten-Farbe `#D4812A` und Wunschlisten-Text „Verhindert Doppelgeschenke" aus `party-worker.js`
+**Was im Repo ist (`_dev/marketing/funnel-demos/feuerwehr/`):**
+- `tools-cards.html/.png` — Target-Layout der 4-Karten-Sektion (Planer / Schatzsuche / Einladungs-Spiel / Partyseite)
+- `current-captures/` — drei echte Live-Captures als **Platzhalter** (klar markiert: PLATZHALTER im Dateinamen)
+- Alte Mockup-Files gelöscht: 2-Block, 5-Frame v1/v2, Pinterest-Pin
 
-**Erfunden (markiert):** Frame 5 „Danke" mit KONZEPT-Stempel; Wunschlisten-Items als Platzhalter; „Reserviert von Ben" als plausibles Beispiel.
+**Capture-Stand:**
+- Planer: Hero-Page captured (FALSCH — soll der fertige Plan-Output sein)
+- Schatzsuche: Builder-Landing (FALSCH — soll die interaktive Schatzkarte sein)
+- Einladungs-Spiel: Spiel-Initialscreen mit 9 Bränden (OK — Chase-Phase wäre besser)
+- Partyseite: Platzhalter-Block im Layout, Capture pending (Worker-Setup oder Demo-URL nötig)
 
-**Erkenntnis aus der Code-Aufklärung:** Das Einladungsspiel hat eine **Chase-Phase mit Runner** (oranger Funken-Geist als Charakter, der wegläuft) — das ist der eigentliche Differenzierer, nicht das Brand-Tappen. In den Marketing-Visuals jetzt zentral platziert.
+**Nächster Schritt:** Bolle bestimmt die richtigen „Wow-Momente" pro Tool (entweder per Screenshot-Upload oder Anleitung), dann werden die Platzhalter ausgetauscht und Sektion neu gerendert.
 
-**Distribution-Plan (offen):**
-1. Primär: Embed oben auf `schatzsuche/<motto>.html`-Seiten als „So funktioniert's"
-2. Sekundär: Pinterest-Pin pro Motto (Pinterest ist motto-getrieben — DACH-Eltern suchen „Feuerwehr-Geburtstag Ideen")
-3. Tertiär: Motto-SEO-Hubs nach P6-1-Refactor
+**Status:** Target-Layout steht, Screenshots noch Platzhalter — explizit so in README + Dateinamen markiert. Nicht für öffentliche Verwendung bis Wow-Momente da sind.
 
-**Architektur für Ausrollung auf 9 Mottos:** parametrisiertes Template + Motto-Daten + Batch-Render — selbes Muster wie `_src/generate-schatzsuche-pages.py`. Feuerwehr wird Goldstandard. Pro Motto ~30 min Daten-Extraktion + Batch.
-
-**Status:** weiterhin Design-auf-Papier, nicht Bau-jetzt. Bei 0 Planer-Traffic kein Hebel. Funnel-Axiom unverändert.
-
-## Funnel-Demo Feuerwehr (Mockup-Asset, _dev only)
-
-Im Rahmen einer Konversation über Einladungen entstand ein annotiertes Doppel-Mockup (Einladung-Bild + Partyseite mit Wunschliste) für das Motto Feuerwehr. Ursprünglich didaktisch gedacht (um zu zeigen, dass die Einladung im Grunde ein Render der Partyseiten-Hero ist), versehentlich brauchbar als Marketing-Asset.
-
-**Abgelegt:** `_dev/marketing/funnel-demos/feuerwehr/` (HTML + PNG + README). Liegt unter `.netlifyignore` → nicht öffentlich serviert.
-
-**Mögliche Verwendung (offen, nicht entschieden):**
-- „So funktioniert's"-Sektion auf der Landingpage
-- Pinterest-Story-Pin für organische Akquise
-- Onboarding-Screens / App-Store-Style-Screenshots
-
-**Erkenntnis aus dem Prozess:** Einladung und Partyseite sind nicht zwei Artefakte — die „Einladung als Bild" ist ein automatisch gerenderter Snapshot der Partyseiten-Hero. Ein Datenstand, ein Look. Der „Einladungs-Generator" ist eine Render-Funktion auf der Partyseite, kein zweites Tool.
-
-**Status:** Design-auf-Papier, nicht Bau-jetzt. Bei 0 Planer-Traffic kein Hebel. Funnel-Axiom bleibt unverändert (Hero = „Kindergeburtstag planen", Einladung sekundär). Auto-Render als Produktfeature kommt frühestens in Welle Gamma G7 (P6-1 Einladungs-Refactor).
-
-**Hinweis Amazon-Tag:** HTML enthält `machsleicht21-21` (korrekt, nicht `machsleicht-21`).
+**Funnel-Axiom unverändert:** Hero = „Kindergeburtstag planen", Tool-Karten-Sektion ist Conversion-Beweis darunter, nicht neuer Hero.
 
 ## Ahrefs Webmaster Tools Setup + Site-Audit-Discovery
 
