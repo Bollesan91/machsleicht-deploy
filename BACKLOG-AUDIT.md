@@ -163,7 +163,7 @@ Strategischer Sprint: Planer vom Generator zum intelligenten Produkt umbauen. Re
 |---|--------|------|--------|------------------|---------|---------|
 | 27 | ⏳ | **P1** | P1-13 | `[ZUKUNFT]` **Adventskalender-Builder** (24 KI-Türchen) | 3–4 Tage | **Launch bis 31.08.** |
 | 28 | ⏳ | **P1** | P1-14 | `[ZUKUNFT]` **KI-Geschenkeberater** | 2–3 Tage | **Launch bis 30.09.** |
-| 29 | ⏳ | **P3** | P3-6 | `[ZUKUNFT]` **machsruhig.de launchen** | 2–3 Wochen Sprint | Eigener Sprint, separates Doc |
+| 29 | ⏳ | **P3** | P3-6 | `[ZUKUNFT]` **machsruhig.de launchen** | 2–3 Wochen Sprint | Eigener Sprint, separates Doc. **Pre-Launch Email-Setup PFLICHT:** (a) Resend-Domain-Verification für machsruhig.de in Resend-Dashboard, (b) DKIM-CNAMEs ins Cloudflare DNS, (c) SPF-Eintrag erweitern auf `v=spf1 include:_spf.resend.com include:spf.migadu.com -all`. DMARC ist auf machsruhig schon `quarantine/reject` aktiv — heißt Mails von Resend werden GARANTIERT blockiert wenn (a)-(c) nicht alle erledigt sind. Verifikation per mxtoolbox vor Mail-Versand. |
 
 ### Später (Q4 2026 und Q1 2027)
 
