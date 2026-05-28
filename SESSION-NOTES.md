@@ -1,5 +1,31 @@
 # Session-Notiz — 28.05.2026 (Cloudflare Cache-Fix + Broken-Link-Cleanup + GSC Tag 1 + Deploy)
 
+> ## 🚨 OFFEN BEI NÄCHSTEM „Start leicht" — DEPLOY-PUSH PENDING
+>
+> **Stand 28.05.2026 abends:** `Ende deploy` wurde lokal vorbereitet, **aber NICHT gepusht** (GitHub-PAT-Cache leer, User entschied Option C = nur lokal, Push beim nächsten Start).
+>
+> **Was ist lokal fertig:**
+> - Commit `4e5f0ca` auf `draft` (SESSION-NOTES Post-Deploy, dieser Eintrag inkl. Trust-Zahl-Drift-Finding)
+> - **~36 Commits auf `draft` seit `de1af3d`** (Phase 2/3, Mottos-Sprint, Security, Cache-Fix, Broken-Link-Sweep, Email-Infra, Amazon-Tag-Fix, Funnel-Demo-Pivot, Ahrefs-Setup, GSC-Plan, theme-registry-Erweiterung, Einladung-Default-Mia)
+>
+> **Push-Sequenz die noch fehlt (Terminal-Workflow, weil PAT-Cache in Cowork-Sandbox leer war):**
+> ```powershell
+> cd "C:\Users\Bolle\OneDrive - ADVERGY GmbH\Dokumente\Claude\Projects\machsleicht\machsleicht-deploy"
+> git push origin draft
+> git checkout main
+> git pull origin main
+> git merge --no-ff draft -m "Merge draft -> main: Phase 2/3 + Mottos-Sprint + Security + Cache-Fix + Email-Infra + Broken-Link-Sweep (28.05.2026)"
+> git push origin main
+> git checkout draft
+> git log --oneline -3 main   # Verifikation Merge-Commit oben
+> ```
+>
+> **PFLICHT-NACHSCHRITT (nach erfolgreichem main-Push):** Cloudflare Cache-Purge auf [dash.cloudflare.com](https://dash.cloudflare.com) → `machsleicht.de` → Caching → Configuration → „Purge Everything". Sonst zeigen User bis zu 2h alte Version (Edge-Cache-Rule seit 28.05.).
+>
+> **Trust-Zahl-Drift (Task #25) bleibt nach Deploy weiter offen** — Homepage zeigt 9× „9 Mottos / 81 Spielideen", real: 10 (Einladung) bzw. 13 (mit pferde/ritter/baustelle Planner). Bolle entscheidet ob 10 oder 13.
+
+---
+
 **Branch:** `draft` → `main` (Ende deploy)
 
 ## Cloudflare Cache-Rule: Strukturelles 5xx-Problem gelöst
