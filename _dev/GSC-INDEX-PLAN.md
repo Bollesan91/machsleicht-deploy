@@ -35,13 +35,17 @@
 - [x] `https://machsleicht.de/kindergeburtstag/pferde` 🐴 (NEU Mottos-Sprint)
 - [x] `https://machsleicht.de/kindergeburtstag/ritter` ⚔️ (NEU Mottos-Sprint)
 
-→ 10 URLs durch. ⚠️ **GSC zeigte bei ritter „5xx Serverfehler"** beim Indexierungs-Versuch — Indikator für intermittierende Origin-Überlastung (Cloudflare cached HTML nicht, jeder Request geht zum Netlify-Origin). **Vor Tag 2 fixen:** Cloudflare Cache Rule für HTML aktivieren. Reality-Check am 04.06. (7 Tage später) zeigt wie viele tatsächlich indexiert.
+→ 10 URLs durch + **1 Bonus** (`/kindergeburtstag/baustelle`) wurde mit drangehängt = **11 URLs heute insgesamt**. GSC-Tageskontingent danach erschöpft.
+
+⚠️ **GSC zeigte bei ritter „5xx Serverfehler"** beim Indexierungs-Versuch — Indikator für intermittierende Origin-Überlastung. **GELÖST am 28.05.:** Cloudflare HTML-Cache-Rule aktiviert (`cf-cache-status: HIT` für 2. Request verifiziert per curl). Ab jetzt sollten Indexierungs-Versuche stabile 200er bekommen. Reality-Check am 04.06. (7 Tage später) zeigt wie viele tatsächlich indexiert.
 
 ---
 
-## ⏰ Tag 2 — Do 28.05.2026 — Rest Mottos-Sprint + Pferde/Ritter Age-Pages
+## ⏰ Tag 2 — Fr 29.05.2026 — Rest Mottos-Sprint + Pferde/Ritter Age-Pages
 
-- [ ] `https://machsleicht.de/kindergeburtstag/baustelle` 🏗️
+**Stand 28.05.:** baustelle-Hub ist heute schon mit durchgegangen (über Tageslimit) — siehe Tag-1-Bonus unten.
+
+- [x] `https://machsleicht.de/kindergeburtstag/baustelle` 🏗️ — **erledigt 28.05. (Bonus nach Tag-1-Limit)**
 - [ ] `https://machsleicht.de/kindergeburtstag/pferde-3-5-jahre`
 - [ ] `https://machsleicht.de/kindergeburtstag/pferde-6-8-jahre`
 - [ ] `https://machsleicht.de/kindergeburtstag/pferde-9-12-jahre`
@@ -52,7 +56,7 @@
 - [ ] `https://machsleicht.de/kindergeburtstag/baustelle-6-8-jahre`
 - [ ] `https://machsleicht.de/kindergeburtstag/baustelle-9-12-jahre`
 
-→ 10 URLs. Nach diesem Tag sind ALLE neuen Mottos der letzten 2 Tage in GSC angefragt.
+→ 9 verbleibende URLs für morgen. Nach diesem Tag sind ALLE neuen Mottos der letzten 2 Tage in GSC angefragt.
 
 ---
 
