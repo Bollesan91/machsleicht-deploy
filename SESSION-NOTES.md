@@ -1,6 +1,29 @@
-# Session-Notiz — 27.05.2026 (Email-Marathon + Privacy-Fix + Ahrefs-Setup + Deploy)
+# Session-Notiz — 27.05.2026 (Email-Marathon + Privacy-Fix + Ahrefs-Setup + Funnel-Demo Pivot + Deploy)
 
 **Branch:** `draft` → `main` (Ende deploy)
+
+## Funnel-Demo Feuerwehr — Pivot zu Tool-Karten mit echten Screenshots
+
+Nach drei Iterationen (2-Block / 5-Frame / Pinterest-Pin) **Pivot zum eigentlich richtigen Ansatz:** eine 4-Karten-Sektion mit *echten Tool-Screenshots* für die Startseite.
+
+**Erkenntnis:** Alle bisherigen Mockups waren von mir gestaltete UI, die *wie* Screenshots aussehen — das birgt Vertrauensbruch wenn der Nutzer auf der Startseite das Versprechen sieht und im echten Tool eine andere Optik findet. Nur Live-Captures der echten Tools sind deploy-würdig.
+
+**Was im Repo ist (`_dev/marketing/funnel-demos/feuerwehr/`):**
+- `tools-cards.html/.png` — Target-Layout der 4-Karten-Sektion (Planer / Schatzsuche / Einladungs-Spiel / Partyseite)
+- `current-captures/` — drei echte Live-Captures als **Platzhalter** (klar markiert: PLATZHALTER im Dateinamen)
+- Alte Mockup-Files gelöscht: 2-Block, 5-Frame v1/v2, Pinterest-Pin
+
+**Capture-Stand:**
+- Planer: Hero-Page captured (FALSCH — soll der fertige Plan-Output sein)
+- Schatzsuche: Builder-Landing (FALSCH — soll die interaktive Schatzkarte sein)
+- Einladungs-Spiel: Spiel-Initialscreen mit 9 Bränden (OK — Chase-Phase wäre besser)
+- Partyseite: Platzhalter-Block im Layout, Capture pending (Worker-Setup oder Demo-URL nötig)
+
+**Nächster Schritt:** Bolle bestimmt die richtigen „Wow-Momente" pro Tool (entweder per Screenshot-Upload oder Anleitung), dann werden die Platzhalter ausgetauscht und Sektion neu gerendert.
+
+**Status:** Target-Layout steht, Screenshots noch Platzhalter — explizit so in README + Dateinamen markiert. Nicht für öffentliche Verwendung bis Wow-Momente da sind.
+
+**Funnel-Axiom unverändert:** Hero = „Kindergeburtstag planen", Tool-Karten-Sektion ist Conversion-Beweis darunter, nicht neuer Hero.
 
 ## Ahrefs Webmaster Tools Setup + Site-Audit-Discovery
 
