@@ -442,3 +442,41 @@ User-Frage "ist alles homogen gelöst?" deckte auf:
 - Reality-Check 7 Tage nach Deploy (Task #19)
 - Welle 33 Phase 2/3 (8 Light-Pages auf Elite + 14 Elite-Pages nachrüsten)
 - party-worker.js auf Cloudflare deployen (Task #15) — Phase-B Worker-Side-Logic ist die andere Seite vom Security-Sprint
+
+---
+
+## Post-Deploy Live-Verifikation 28.05.2026 (Chrome-MCP)
+
+Nach „Ende deploy" verifizierte Live-Site `https://machsleicht.de/`:
+
+| Check | Ergebnis |
+|---|---|
+| HTTP-Status | ✅ 200 |
+| Cloudflare Cache | ✅ `cf-cache-status: HIT`, age=43s — **Cache-Rule wirkt** (Edge-Cache aktiv, keine 5xx mehr für Bots erwartbar) |
+| Umami + plausible()-Shim | ✅ beide aktiv |
+| Halloween-Link entfernt | ✅ weg |
+| /ratgeber-Link entfernt | ✅ weg |
+| H1 + Title | ✅ "Kindergeburtstag planen — kostenlos in 10 Minuten" |
+
+**Befund Trust-Zahl-Drift (neuer Task #25):** Homepage zeigt 9× „9 Mottos" / „81 Spielideen" / „9 Motto-Welten" — Real-Stand: 10 Einladungs-Mottos mit Page + 3 (pferde/ritter/baustelle) mit Planner-Page (im theme-registry seit heute, GENERIC-Array pending Task #21). CLAUDE.md PBI-Impact-Check Punkt #4 verletzt — Zahlen-Konsistenz über Hero, Meta-Desc, Schema.org `featureList`, Trust-Zeile, Footer, SEO-Fallback nötig.
+
+**Empfehlung:** Konservativ 10 (alle live mit Einladungs- und Schatzsuche-Page) oder 13 (inkl. neu integrierten Planner-Mottos). Entscheidung user-pending.
+
+## Ende deploy 28.05.2026 — Deploy-Workflow
+
+Merge-Block: ~150 Commits seit 21.05.2026 auf main:
+- Phase 2 Wave 1+2 (feuerwehr/weltraum/piraten 8 Light→Elite)
+- Phase 3 Wave 1 (dschungel + feen 2 Hubs + 6 Age-Pages)
+- Mottos-Sprint Welle 2-11 (pferde/ritter/baustelle ELITE)
+- Helfer-v3 Security Welle 1A-1E (5 Critical Fixes party-worker)
+- Amazon-Tracking-ID Critical Fix (machsleicht-21 → machsleicht21-21)
+- Email-Infrastruktur (Migadu Micro + Resend kontakt@ + SPF/DKIM)
+- Cloudflare HTML-Cache-Rule (5xx-Problem strukturell gelöst)
+- /ratgeber + Halloween + Polizei + bagger-baustelle + Zirkus Broken-Links gefixt
+- 8 Einladungs-Apps Default-Name Emilia → Mia (Privacy)
+- theme-registry: pferde + ritter + baustelle
+- Funnel-Demo Feuerwehr Pivot zu Tool-Karten
+- Ahrefs WMT + Web Analytics Pilot
+
+**PFLICHT-NACHSCHRITT:** Cloudflare Cache-Purge nach Netlify-Build-Done (CLAUDE.md §Cache-Purge).
+
