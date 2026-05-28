@@ -2035,7 +2035,7 @@ function App() {
       {/* Footer */}
       <footer style={{ maxWidth: 700, margin: "40px auto 0", padding: "16px 16px", textAlign: "center", borderTop: "1px solid var(--l)" }}>
         <p style={{ fontSize: 12, color: "var(--m)" }}>
-          © 2026 machsleicht.de · <a href="/schatzsuche" style={{ color: "var(--m)", textDecoration: "none" }}>Schatzsuche</a> · <a href="/ratgeber" style={{ color: "var(--m)", textDecoration: "none" }}>Ratgeber</a> · <a href="/impressum" style={{ color: "var(--m)", textDecoration: "none" }}>Impressum</a> · <a href="/datenschutz" style={{ color: "var(--m)", textDecoration: "none" }}>Datenschutz</a> · <a href="/transparenz" style={{ color: "var(--m)", textDecoration: "none" }}>Transparenz</a>
+          © 2026 machsleicht.de · <a href="/schatzsuche" style={{ color: "var(--m)", textDecoration: "none" }}>Schatzsuche</a> · <a href="/impressum" style={{ color: "var(--m)", textDecoration: "none" }}>Impressum</a> · <a href="/datenschutz" style={{ color: "var(--m)", textDecoration: "none" }}>Datenschutz</a> · <a href="/transparenz" style={{ color: "var(--m)", textDecoration: "none" }}>Transparenz</a>
         </p>
       </footer>
     </>
