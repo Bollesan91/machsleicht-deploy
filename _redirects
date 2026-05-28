@@ -1,3 +1,7 @@
+# /ratgeber Page existiert nicht (war nur im Planer-Footer verlinkt) — 301 zur Übersichts-Checkliste
+/ratgeber  /kindergeburtstag-checkliste  301!
+/ratgeber/*  /kindergeburtstag-checkliste  301!
+
 /spielkarten  /spielkarten.html  200
 /impressum  /impressum.html  200
 /datenschutz  /datenschutz.html  200

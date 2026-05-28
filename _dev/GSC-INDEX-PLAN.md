@@ -1,8 +1,184 @@
-# GSC-Indexierungs-Plan — 7-Tage-Staffel
+# GSC-Indexierungs-Plan — Refresh 27.05.2026
 
-**Erstellt:** 22.05.2026 nach erstem Tageskontingent erschöpft.
-**Ziel:** Top-50 SEO-Champions in GSC manuell zur Indexierung bringen.
-**Limit:** GSC erlaubt ~10-12 "Indexierung beantragen" pro Tag pro Property.
+**Letzte Aktualisierung:** 27.05.2026 nach Email-Marathon + Phase 3 + Ahrefs-Audit-Discovery.
+**Ziel:** ~10-15 URLs/Tag manuell zur Indexierung bringen — Fokus auf brandneue Pages + Top-Money-Pages.
+**Limit:** GSC erlaubt ~10-12 „Indexierung beantragen" pro Tag pro Property. Niemals limit erzwingen.
+
+## Wie nutzen
+
+1. Öffne https://search.google.com/search-console
+2. Property `machsleicht.de` wählen
+3. Pro URL: oben Suchleiste → URL einfügen → „URL prüfen"
+4. Warten (~30 Sek auf „URL ist auf Google nicht verfügbar" oder „URL ist auf Google verfügbar")
+5. Klick **„Indexierung beantragen"**
+6. Warten (~1-2 Min „Live-URL testen abgeschlossen")
+7. Bestätigen → Häkchen unten in die Tabelle setzen
+
+**Realistisch:** ~5-10% der angefragten URLs werden in 24h indexiert, 30-50% in 7 Tagen. Wenn nach 7 Tagen ein URL noch in „Gecrawlt — nicht indexiert" steht → das Problem ist nicht GSC-Awareness sondern fehlende Backlinks. Dann nicht nochmal indexieren beantragen, sondern Backlink-Sprint priorisieren.
+
+---
+
+## ✅ Tag 1 — Do 28.05.2026 — Brandneue Phase-3 + Mottos-Sprint
+
+**Prio:** Diese Pages wurden in den letzten 36h gepusht. Google kennt sie noch nicht. Maximaler Impact pro Indexierungs-Antrag.
+
+**Erledigt am 28.05.2026:**
+
+- [x] `https://machsleicht.de/kindergeburtstag/dschungel` 🌴 (NEU Phase 3)
+- [x] `https://machsleicht.de/kindergeburtstag/dschungel-3-5-jahre`
+- [x] `https://machsleicht.de/kindergeburtstag/dschungel-6-8-jahre`
+- [x] `https://machsleicht.de/kindergeburtstag/dschungel-9-12-jahre`
+- [x] `https://machsleicht.de/kindergeburtstag/feen` 🧚 (NEU Phase 3)
+- [x] `https://machsleicht.de/kindergeburtstag/feen-3-5-jahre`
+- [x] `https://machsleicht.de/kindergeburtstag/feen-6-8-jahre`
+- [x] `https://machsleicht.de/kindergeburtstag/feen-9-12-jahre`
+- [x] `https://machsleicht.de/kindergeburtstag/pferde` 🐴 (NEU Mottos-Sprint)
+- [x] `https://machsleicht.de/kindergeburtstag/ritter` ⚔️ (NEU Mottos-Sprint)
+
+→ 10 URLs durch + **1 Bonus** (`/kindergeburtstag/baustelle`) wurde mit drangehängt = **11 URLs heute insgesamt**. GSC-Tageskontingent danach erschöpft.
+
+⚠️ **GSC zeigte bei ritter „5xx Serverfehler"** beim Indexierungs-Versuch — Indikator für intermittierende Origin-Überlastung. **GELÖST am 28.05.:** Cloudflare HTML-Cache-Rule aktiviert (`cf-cache-status: HIT` für 2. Request verifiziert per curl). Ab jetzt sollten Indexierungs-Versuche stabile 200er bekommen. Reality-Check am 04.06. (7 Tage später) zeigt wie viele tatsächlich indexiert.
+
+---
+
+## ⏰ Tag 2 — Fr 29.05.2026 — Rest Mottos-Sprint + Pferde/Ritter Age-Pages
+
+**Stand 28.05.:** baustelle-Hub ist heute schon mit durchgegangen (über Tageslimit) — siehe Tag-1-Bonus unten.
+
+- [x] `https://machsleicht.de/kindergeburtstag/baustelle` 🏗️ — **erledigt 28.05. (Bonus nach Tag-1-Limit)**
+- [ ] `https://machsleicht.de/kindergeburtstag/pferde-3-5-jahre`
+- [ ] `https://machsleicht.de/kindergeburtstag/pferde-6-8-jahre`
+- [ ] `https://machsleicht.de/kindergeburtstag/pferde-9-12-jahre`
+- [ ] `https://machsleicht.de/kindergeburtstag/ritter-3-5-jahre`
+- [ ] `https://machsleicht.de/kindergeburtstag/ritter-6-8-jahre`
+- [ ] `https://machsleicht.de/kindergeburtstag/ritter-9-12-jahre`
+- [ ] `https://machsleicht.de/kindergeburtstag/baustelle-3-5-jahre`
+- [ ] `https://machsleicht.de/kindergeburtstag/baustelle-6-8-jahre`
+- [ ] `https://machsleicht.de/kindergeburtstag/baustelle-9-12-jahre`
+
+→ 9 verbleibende URLs für morgen. Nach diesem Tag sind ALLE neuen Mottos der letzten 2 Tage in GSC angefragt.
+
+---
+
+## ⏰ Tag 3 — Fr 29.05.2026 — Neue Schatzsuche-Pages + Phase-2-Pages
+
+- [ ] `https://machsleicht.de/schatzsuche/dschungel` (NEU)
+- [ ] `https://machsleicht.de/schatzsuche/feen` (NEU)
+- [ ] `https://machsleicht.de/schatzsuche/pferde` (NEU)
+- [ ] `https://machsleicht.de/schatzsuche/ritter` (NEU)
+- [ ] `https://machsleicht.de/schatzsuche/baustelle` (NEU)
+- [ ] `https://machsleicht.de/kindergeburtstag/feuerwehr-3-5-jahre` (Phase 2 Light→Elite)
+- [ ] `https://machsleicht.de/kindergeburtstag/feuerwehr-6-8-jahre`
+- [ ] `https://machsleicht.de/kindergeburtstag/feuerwehr-9-12-jahre`
+- [ ] `https://machsleicht.de/kindergeburtstag/weltraum-3-5-jahre` (Phase 2)
+- [ ] `https://machsleicht.de/kindergeburtstag/piraten-3-5-jahre` (Phase 2)
+
+→ 10 URLs. Alle Phase-2/3-Pages in 3 Tagen durch.
+
+---
+
+## ⏰ Tag 4 — Sa 30.05.2026 — Rest Phase-2-Pages + Bestehende Hubs (Refresh)
+
+- [ ] `https://machsleicht.de/kindergeburtstag/weltraum-6-8-jahre`
+- [ ] `https://machsleicht.de/kindergeburtstag/weltraum-9-12-jahre`
+- [ ] `https://machsleicht.de/kindergeburtstag/piraten-9-12-jahre`
+- [ ] `https://machsleicht.de/kindergeburtstag` (Planer-Hub, Re-Refresh)
+- [ ] `https://machsleicht.de/schatzsuche` (Schatzsuche-Hub, refreshed mit 13 Themen)
+- [ ] `https://machsleicht.de/kindergeburtstag/piraten` (Hub-Refresh)
+- [ ] `https://machsleicht.de/kindergeburtstag/dino` (Hub-Refresh)
+- [ ] `https://machsleicht.de/kindergeburtstag/einhorn` (Hub-Refresh)
+- [ ] `https://machsleicht.de/kindergeburtstag/feuerwehr` (Hub-Refresh)
+- [ ] `https://machsleicht.de/kindergeburtstag/safari` (Hub-Refresh)
+
+→ 10 URLs.
+
+---
+
+## ⏰ Tag 5 — So 31.05.2026 — Rest Hubs + Saison/Ratgeber
+
+- [ ] `https://machsleicht.de/kindergeburtstag/weltraum`
+- [ ] `https://machsleicht.de/kindergeburtstag/detektiv`
+- [ ] `https://machsleicht.de/kindergeburtstag/meerjungfrau`
+- [ ] `https://machsleicht.de/kindergeburtstag/superheld`
+- [ ] `https://machsleicht.de/kindergeburtstag/prinzessin`
+- [ ] `https://machsleicht.de/` (Homepage)
+- [ ] `https://machsleicht.de/einladung` (Hub)
+- [ ] `https://machsleicht.de/einladung/erstellen`
+- [ ] `https://machsleicht.de/kindergeburtstag-checkliste`
+- [ ] `https://machsleicht.de/kindergeburtstag-spiele-draussen`
+
+→ 10 URLs.
+
+---
+
+## ⏰ Tag 6 — Mo 01.06.2026 — Long-Tail Ratgeber
+
+- [ ] `https://machsleicht.de/kindergeburtstag-spiele-drinnen`
+- [ ] `https://machsleicht.de/kindergeburtstag-drinnen`
+- [ ] `https://machsleicht.de/kindergeburtstag-draussen`
+- [ ] `https://machsleicht.de/kindergeburtstag-essen`
+- [ ] `https://machsleicht.de/kindergeburtstag-kosten`
+- [ ] `https://machsleicht.de/kindergeburtstag-mitgebsel`
+- [ ] `https://machsleicht.de/kindergeburtstag-bei-regen`
+- [ ] `https://machsleicht.de/kindergeburtstag-zuhause`
+- [ ] `https://machsleicht.de/kindergeburtstag-last-minute`
+- [ ] `https://machsleicht.de/kindergeburtstag-wenig-aufwand`
+
+→ 10 URLs.
+
+---
+
+## ⏰ Tag 7 — Di 02.06.2026 — Re-Check + Lückenschluss
+
+**ERST in GSC checken:** welche Anfragen aus Tag 1-6 sind tatsächlich indexiert? Pages → Indexed-Tab vs. „Crawled - not indexed".
+
+Wenn < 20% nach 6 Tagen indexiert → Problem ist NICHT GSC-Aufmerksamkeit sondern fehlende Backlinks. Dann Backlink-Sprint (AQ8 im Backlog) priorisieren statt weiter Indexierung beantragen.
+
+Rest-Pages für letzten Schwung:
+- [ ] `https://machsleicht.de/einladung/piraten`
+- [ ] `https://machsleicht.de/einladung/dino`
+- [ ] `https://machsleicht.de/einladung/einhorn`
+- [ ] `https://machsleicht.de/einladung/feuerwehr`
+- [ ] `https://machsleicht.de/einladung/detektiv`
+- [ ] `https://machsleicht.de/kindergeburtstag-einladung-text`
+- [ ] `https://machsleicht.de/kindergeburtstag-torte-einfach`
+- [ ] `https://machsleicht.de/kindergeburtstag-zeitplan`
+- [ ] `https://machsleicht.de/kindergeburtstag-7-jahre`
+- [ ] `https://machsleicht.de/kindergeburtstag-5-jahre`
+
+---
+
+## 📊 Reality-Check nach 7 Tagen (03.06.2026)
+
+In GSC nachsehen:
+1. **Indexierungs-Quote:** angefragt vs. tatsächlich indexiert (Ziel: ≥ 30%)
+2. **„Gecrawlt — nicht indexiert"** Liste: das sind die Pages die Google's Quality-Algorithmus als „nicht wertvoll genug" einstuft → braucht externe Authority/Backlinks (AQ8)
+3. **Erste organische Sessions** in Plausible/Umami + Ahrefs Web Analytics — ab wann kommt Traffic auf neue Pages?
+
+**Indikator-Tabelle:**
+
+| Indexierungs-Quote nach 7 Tagen | Implikation |
+|---|---|
+| ≥ 50% | Sehr gut. Content + Tech-SEO funktionieren. Weiter mit Content-Skalierung |
+| 30-50% | OK. Backlink-Sprint langsam einplanen für noch nicht indexierte Pages |
+| 20-30% | Backlinks fehlen klar. AQ8 priorisieren |
+| < 20% | Quality-Problem ODER Site-Authority zu niedrig. Strategie überdenken: weniger Content-Volumen, mehr Authority-Building |
+
+---
+
+## Tipps
+
+- **Tageskontingent nicht ausreizen** — manchmal lässt GSC nur 8 statt 12 zu. Wenn Limit kommt: morgen weitermachen, nicht erzwingen.
+- **Reihenfolge nach Score** — wichtigste URLs (neue Pages) zuerst. Wenn Limit früh kommt, sind die kritischen schon durch.
+- **Sitemap nicht doppelt einreichen** — Google crawlt sie automatisch alle paar Tage.
+- **URL-Prüfung ohne „Indexierung beantragen"** zeigt dir, ob Google die Page bereits kennt, ob sie crawlbar ist, ob Canonical/Robots stimmt — gute Debugging-Quelle.
+- **Nach 7 Tagen NICHT denselben URL nochmal anfragen** wenn er noch nicht indexiert ist — bringt nichts, kann sogar negativ bewertet werden (Spam-Signal).
+
+---
+
+# 📜 ARCHIV: Alter Plan vom 22.05.2026
+
+*Vom ersten Tageskontingent. Tag 1 wurde abgehakt, Tage 2-7 wahrscheinlich nicht durchgezogen — durch heute-Nacht's Phase-3-Push überholt. Hier zum Nachvollziehen behalten.*
 
 ## Wie nutzen
 

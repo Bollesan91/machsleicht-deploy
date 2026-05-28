@@ -1,6 +1,72 @@
-# Session-Notiz — 27.05.2026 (Email-Marathon + Privacy-Fix + Ahrefs-Setup + Funnel-Demo Pivot + Deploy)
+# Session-Notiz — 28.05.2026 (Cloudflare Cache-Fix + Broken-Link-Cleanup + GSC Tag 1 + Deploy)
 
 **Branch:** `draft` → `main` (Ende deploy)
+
+## Cloudflare Cache-Rule: Strukturelles 5xx-Problem gelöst
+
+**Diagnose 28.05.2026:** Google's GSC zeigte `/kindergeburtstag/ritter` als „Serverfehler (5xx)" beim Indexierungs-Versuch. Live-curl-Tests gegen alle User-Agents (Browser, Googlebot, AhrefsBot): **200 OK aber `cache-status: fwd=miss`** für JEDEN Request → Cloudflare cached HTML nicht (Default-Verhalten + Netlify's `Cache-Control: max-age=0`) → bei Bot-Crawls Netlify-Origin überlastet → intermittierende 5xx.
+
+**Erklärt rückwirkend:**
+- Warum nur 1 Page in Google indexiert (laut Ahrefs-Audit)
+- Warum Ahrefs initial 61 5xx sah
+- Warum Site-Authority nicht wuchs trotz Content-Tiefe
+
+**Fix:** Cloudflare Cache Rule aktiviert:
+- Eligible for cache: ON
+- Edge TTL: 2h (Ignore cache-control header)
+- Browser TTL: 2h (Free-Tier-Minimum)
+- Serve stale content while revalidating: ON
+- Verifiziert per curl: `cf-cache-status: HIT` bei 2. Request für ritter, dschungel, feen
+
+**Pflicht-Folgeregel** in `.claude/CLAUDE.md`: Cloudflare Cache nach jedem `Ende deploy` purgen (sonst 2h alte Version live).
+
+## Broken-Link-Sweep (Ahrefs-Discovery 28.05.)
+
+5 echte broken Links identifiziert + gefixt:
+
+1. **`/ratgeber`** — verlinkt in Planer-Footer (JSX + compiled JS), Page existiert nicht
+   - Fix: Footer-Link entfernt + 301-Redirect `/ratgeber*` → `/kindergeburtstag-checkliste`
+   - Wirkung: 83 Pages mit broken Link weg
+
+2. **`/halloween-kinder-zuhause`** — verlinkt in Homepage Tool-Liste (`js/index.js`)
+   - Fix: Link entfernt (kein Halloween-Fokus)
+
+3. **`/kindergeburtstag/polizei-3-5-jahre`** — verlinkt in feuerwehr-3-5-jahre.html
+   - Fix: Polizei-Button entfernt (kein Motto im System)
+
+4. **`/kindergeburtstag/bagger-baustelle-3-5-jahre`** — gleiche Page
+   - Fix: Auf existierendes `/baustelle-3-5-jahre` umgelinkt
+
+5. **`/kindergeburtstag/zirkus`** — verlinkt in safari-3-5-jahre.html
+   - Fix: Auf existierendes `/dschungel` umgelinkt
+
+**5xx-Falschalarm-Erkenntnis:** Von 5 Ahrefs-gemeldeten 5xx-URLs waren 3 in Wahrheit 301-Redirects (alte Crawl-Daten vor Cache-Fix). Beim nächsten Re-Crawl sollten Falschalarme verschwinden.
+
+## GSC Manual-Indexing Tag 1 — 11 URLs
+
+Erste GSC-URL-Indexing-Runde nach Cache-Fix:
+- 8 Phase-3-Pages (dschungel × 4, feen × 4)
+- 2 Mottos-Sprint Hubs (pferde, ritter)
+- 1 Bonus (baustelle) bevor Tageskontingent erschöpft
+- Reality-Check 04.06.2026 (7 Tage später): wie viele tatsächlich indexiert?
+
+## Ahrefs Webmaster Tools etabliert + Web Analytics Pilot
+
+- **WMT eingerichtet** als kostenlose SEO-Datenquelle (Alternative zu Premium $129/Mo)
+- **Site-Audit:** Health Score 79 (Good) nach Re-Crawl
+- **Web Analytics Pilot** auf 4 Top-Pages (Homepage, Piraten, Detektiv, Schatzsuche-Hub). Vollroll als AQ6.
+
+## Backlink-Strategie geklärt
+
+LinkBroker.de + ähnliche Plattformen → **abgelehnt** (Penalty-Risiko, geringer ROI bei machsleicht's Größe).
+Premium-Sponsored-Posts (Mopo, Forbes via Broker) → **erst nach Welle-Alpha-Validation** (€500-15.000 pro Post nicht wirtschaftlich solange Conversion-Funnel unvalidiert).
+Stattdessen kostenlos: HARO + Tool-Verzeichnisse + Pinterest + organisches Eltern-Blog-Outreach → AQ8 im Backlog.
+
+## Strategischer Konsens: P6-1 Einladungs-Refactor erledigt /einladung/*-5xx automatisch
+
+Die 3 verbleibenden /einladung/*-5xx-Falschalarme verschwinden durch P6-1 (Apps → SEO-Hubs + noindex). Heute keine Einzel-Fixes nötig.
+
+---
 
 ## Funnel-Demo Feuerwehr — Pivot zu Tool-Karten mit echten Screenshots
 

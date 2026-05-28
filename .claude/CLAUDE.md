@@ -22,7 +22,22 @@ Arbeitsbranch: `draft` | Deploy-Branch: `main`
 **Terminal (Desktop Claude Code, Mobile Termux/SSH):**
 - **"Start leicht"** → `git checkout draft && git pull` + SESSION-NOTES.md lesen + Briefing
 - **"Ende"** → `git add -A && git commit && git push` auf `draft` (KEIN Deploy, Netlify buildet `draft` nicht)
-- **"Ende deploy"** → commit auf `draft` → `git checkout main && git merge draft && git push` (löst Netlify-Deploy aus)
+- **"Ende deploy"** → commit auf `draft` → `git checkout main && git merge draft && git push` (löst Netlify-Deploy aus). **PFLICHT-NACHSCHRITT:** Cloudflare Cache purgen — sonst sehen User bis zu 2h die alte Version (Cache-Rule seit 28.05.2026: Edge TTL 2h für HTML).
+
+### ⚠️ NEU 28.05.2026 — Cloudflare Cache-Purge PFLICHT nach jedem Netlify-Deploy
+
+Nach jedem erfolgreichen `Ende deploy` (Push auf `main` → Netlify-Build durch):
+
+1. **[dash.cloudflare.com](https://dash.cloudflare.com)** → Domain `machsleicht.de`
+2. Linker Sidebar: **Caching → Configuration**
+3. Button **„Purge Everything"** klicken → bestätigen
+4. Cloudflare leert kompletten Edge-Cache, nächste Requests holen frisch von Netlify
+
+**Warum:** Cloudflare Cache-Rule (eingerichtet 28.05.2026) cached HTML 2h auf Edge + 2h im Browser. Ohne Purge nach Deploy zeigt CF bis zu 2h die alte Version. Browser-Caches expired automatisch nach 2h, da können wir nichts machen — der Edge-Cache aber wird durch Purge sofort geleert.
+
+**Begründung der Cache-Rule:** Ohne Cache cached Cloudflare HTML nicht (Default-Verhalten + Netlify-Headers sagen no-cache). Jeder Request geht direkt zum Netlify-Origin → bei parallelen Crawls (Google-Bot, Ahrefs) Rate-Limit → intermittierende 5xx → Google indexiert kaputt. Mit Cache-Rule: Origin-Hit nur 1× pro 2h pro URL → keine 5xx mehr für Crawler.
+
+Diagnose-Befund 28.05.2026: Google GSC zeigte für `/kindergeburtstag/ritter` „Serverfehler (5xx)" — Live-curl-Tests bestätigten danach 200 OK aber `fwd=miss`-Cache-Header. Cache-Rule implementiert + verifiziert (`cf-cache-status: HIT` für 2. Request).
 
 **Cowork (Desktop-App, Agent-Mode):**
 
