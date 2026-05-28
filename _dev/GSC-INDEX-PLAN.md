@@ -18,22 +18,24 @@
 
 ---
 
-## 🔥 Tag 1 — Mi 27.05.2026 (HEUTE) — Brandneue Phase-3 + Mottos-Sprint
+## ✅ Tag 1 — Do 28.05.2026 — Brandneue Phase-3 + Mottos-Sprint
 
 **Prio:** Diese Pages wurden in den letzten 36h gepusht. Google kennt sie noch nicht. Maximaler Impact pro Indexierungs-Antrag.
 
-- [ ] `https://machsleicht.de/kindergeburtstag/dschungel` 🌴 (NEU Phase 3)
-- [ ] `https://machsleicht.de/kindergeburtstag/dschungel-3-5-jahre`
-- [ ] `https://machsleicht.de/kindergeburtstag/dschungel-6-8-jahre`
-- [ ] `https://machsleicht.de/kindergeburtstag/dschungel-9-12-jahre`
-- [ ] `https://machsleicht.de/kindergeburtstag/feen` 🧚 (NEU Phase 3)
-- [ ] `https://machsleicht.de/kindergeburtstag/feen-3-5-jahre`
-- [ ] `https://machsleicht.de/kindergeburtstag/feen-6-8-jahre`
-- [ ] `https://machsleicht.de/kindergeburtstag/feen-9-12-jahre`
-- [ ] `https://machsleicht.de/kindergeburtstag/pferde` 🐴 (NEU Mottos-Sprint)
-- [ ] `https://machsleicht.de/kindergeburtstag/ritter` ⚔️ (NEU Mottos-Sprint)
+**Erledigt am 28.05.2026:**
 
-→ 10 URLs. Bei Reststeckte: `/kindergeburtstag/baustelle` morgen vorn dran.
+- [x] `https://machsleicht.de/kindergeburtstag/dschungel` 🌴 (NEU Phase 3)
+- [x] `https://machsleicht.de/kindergeburtstag/dschungel-3-5-jahre`
+- [x] `https://machsleicht.de/kindergeburtstag/dschungel-6-8-jahre`
+- [x] `https://machsleicht.de/kindergeburtstag/dschungel-9-12-jahre`
+- [x] `https://machsleicht.de/kindergeburtstag/feen` 🧚 (NEU Phase 3)
+- [x] `https://machsleicht.de/kindergeburtstag/feen-3-5-jahre`
+- [x] `https://machsleicht.de/kindergeburtstag/feen-6-8-jahre`
+- [x] `https://machsleicht.de/kindergeburtstag/feen-9-12-jahre`
+- [x] `https://machsleicht.de/kindergeburtstag/pferde` 🐴 (NEU Mottos-Sprint)
+- [x] `https://machsleicht.de/kindergeburtstag/ritter` ⚔️ (NEU Mottos-Sprint)
+
+→ 10 URLs durch. ⚠️ **GSC zeigte bei ritter „5xx Serverfehler"** beim Indexierungs-Versuch — Indikator für intermittierende Origin-Überlastung (Cloudflare cached HTML nicht, jeder Request geht zum Netlify-Origin). **Vor Tag 2 fixen:** Cloudflare Cache Rule für HTML aktivieren. Reality-Check am 04.06. (7 Tage später) zeigt wie viele tatsächlich indexiert.
 
 ---
 
