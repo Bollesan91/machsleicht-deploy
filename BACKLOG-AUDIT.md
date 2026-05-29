@@ -134,6 +134,49 @@ Strategischer Sprint: Planer vom Generator zum intelligenten Produkt umbauen. Re
 - **Lemon Squeezy als „bereits aktiv"** → war Review-Halluzination, Lemon Squeezy ist optional A4-Provider-Kandidat, nicht aktiv
 - **„9 Mottos / 81 Spielideen"** in Review-Tabellen → veraltet, aktueller Stand: 13 Mottos, > 150 Spielideen
 
+---
+
+### 🎯 P7 — Funnel-First Re-Architecture (NEU, Sprint nach Welle Alpha)
+
+**Quelle:** Bolles Funnel-First-Vision (28.05.2026 abends) + Helfer-v3-Review-Befund 29.05.2026: 4 verschiedene Motto-Listen auf live drift (Planer 10 mit Dschungel/Feen, Einladung 10 mit Superheld/Prinzessin, Schatzsuche 12 mit Pferde/Ritter/Baustelle, Partyseite 10 mit Eigenes-Option) → das Tooling ist konzeptuell separate Inseln. Wizard-Vision löst dies durch eine Plan-Preview-First-Architektur mit 6 Stages.
+
+**Validierung:** 4 Prototyp-Iterationen (v1 → v5) in `_dev/prototypes/wizard-v5-live-aligned.html` — End-to-End klickbar mit 15 Mottos, Auto-Save, Magic-Link-Resume, Custom-Timeline-Entries, Einladungs-Live-Editor, Partyseite-Konfigurator, Conversion-Block. Konzept-Doc: `_dev/handoff/2026-05-29-wizard-funnel-plan.md`.
+
+**Architektur-Entscheidungen (D1-D8 aus Konzept-Doc):**
+
+| ID | Entscheidung | Status |
+|---|---|---|
+| **D1** Wizard-Sequenz | 6 Stages: Motto → Alter → Plan-Preview+Wizard → Einladung-Editor → Partyseite-Editor → Fertig+Conversion. Plan-Preview-First (Beispiel-Plan VOR Wizard-Fragen) | ✅ ENTSCHIEDEN via v5-Prototyp |
+| **D2** Tech-Architektur | **Hybrid:** Wizard auf `/wizard` als neue Default-Funnel-Route von Homepage; bestehende Tools (`/kindergeburtstag`, `/einladung/erstellen`, `/schatzsuche`, `party.machsleicht.de`) bleiben als Power-User-Routes + SEO-Hub-Entries | 📋 ENTSCHIEDEN — Begründung: keine Migration-Risiko für 4.700 bestehende User, SEO-Hubs bleiben Entry-Points, neue User kommen via Hero-CTA in Wizard |
+| **D3** State-Persistenz | localStorage default + Magic-Link-Email als optionaler Save-Later (nur wenn User Email eingibt) — Hybrid wie Prototyp | ✅ ENTSCHIEDEN |
+| **D4** Smart-Defaults | Datum nächster Samstag in 4 Wochen, Gäste 6, Ort zuhause, Spiele 5 vorausgewählt (alters-passend), Einladungs-Typ Mini-Spiel default | ✅ ENTSCHIEDEN |
+| **D5** Multi-Touch-Monetisierung | Welle Alpha: nur 1 SKU (Komplettpaket €14,90) — Mini-SKUs Basic/Pro erst Welle Beta nach ≥3 Käufen Validation | 📋 ENTSCHIEDEN — verschoben auf Beta |
+| **D6** Print-Pipeline | Welle Alpha: statisch in Canva designed (1-2 Tage pro Motto, 5-7 Killer-Seiten Pilot). Welle Beta: dynamisch via Playwright HTML→PDF mit Wizard-State eingesetzt | ✅ ENTSCHIEDEN |
+| **D7** Migration | P6-1 Einladungs-Refactor wird Teil von P7-1c (Einladung-Stage). P3-S4/S5/S6/S7 (Vorbereitungskarte/Einkaufsliste/SOS/KI-Rätsel) werden Plan-Stage-Module statt einzelne Pages | ✅ ENTSCHIEDEN |
+| **D8** Welle-Alpha-Relation | **Parallel** — Welle Alpha A1-A9 Pilot auf Piraten-6-8 MIT Wizard-Variante gleichzeitig bauen. „Plan-Preview-First + 1 SKU" zugleich validieren | ✅ ENTSCHIEDEN |
+
+#### P7-0 Pre-Requisite (BLOCKER) — Motto-Single-Source-of-Truth
+
+| # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand |
+|---|--------|------|--------|------------------|---------|
+| 7-0 | ⏳ | **P1** | P7-0 | `[KERN]` **Master-Motto-Liste konsolidieren** — Aktuell drift live: Planer 10, Einladung 10, Schatzsuche 12, Partyseite 10 mit Überschneidungen. NEUE `js/theme-registry.js` als Single Source of Truth — alle 4 Tools importieren von dort. Vereinigungsmenge live = 13 Mottos: Piraten, Detektiv, Einhorn, Safari, Feuerwehr, Weltraum, Superheld, Prinzessin, Meerjungfrau, Dino, Dschungel, Feen, Pferde, Ritter, Baustelle (15 wenn Pferde/Ritter/Baustelle vollendet, Status Task #21). Bei Inkonsistenz: jedes Tool legt Whitelist-Filter über (z.B. „Wunschliste-Premium nur für Mottos mit fertiger Schatzsuche") | 4–6 Std |
+
+#### P7-1 bis P7-6 Wizard-Implementation (nach P7-0)
+
+| # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand |
+|---|--------|------|--------|------------------|---------|
+| 7-1 | ⏳ | **P1** | P7-1 | `[KERN]` **`/wizard` Route + Stage 1+2** (Motto-Picker + Alter-Picker) — basierend auf v5-Prototyp. React-App parallel zu Planer. Mottos aus P7-0-theme-registry | 3–5 Tage |
+| 7-2 | ⏳ | **P1** | P7-2 | `[KERN]` **Stage 3 Plan-Preview + 5-Frage-Wizard** (Name/Datum+Uhrzeit/Gäste/Ort/Spiele-Multi) + Custom-Timeline-Entries. Plan-Preview rendert live je Smart-Defaults dann Wizard-State | 4–6 Tage |
+| 7-3 | ⏳ | **P1** | P7-3 | `[KERN]` **Stage 4 Einladung-Editor inline** im Wizard-Flow — 3 Typen (Mini-Spiel/Karte/Print) · Foto-Upload max 500KB · WhatsApp-Nummer für RSVP · Live-Phone-Preview · echte wa.me/mailto-URLs · Versand-Tracking | 3–4 Tage (ersetzt Teile von P6-1) |
+| 7-4 | ⏳ | **P2** | P7-4 | `[KERN]` **Stage 5 Partyseite-Editor** als Wrapper um Cloudflare-Worker — URL-Builder, Feature-Toggles (RSVP/Photos/Wish/Chat), Aktivierungs-Flow. Worker bekommt Wizard-State-Bridge | 2–3 Tage |
+| 7-5 | ⏳ | **P1** | P7-5 | `[KERN]` **Stage 6 Conversion + Save-Later** — 3 Karten (Plan online/PDF light/Komplettpaket €14,90), Stripe-Checkout-Integration (verbindet sich mit Welle Alpha P5-4), Magic-Link-Email via Resend-Worker | 2 Tage |
+| 7-6 | ⏳ | **P2** | P7-6 | `[KERN]` **Async-Persistenz** — localStorage default, Magic-Link-API für Cross-Device-Resume (Worker-KV), Resume-Banner-UI | 2–3 Tage |
+| 7-7 | ⏳ | **P2** | P7-7 | `[KERN]` **Homepage-Hero auf Wizard** umstellen — neuer Primary-CTA „Plan in 60 Sek starten →" zu `/wizard`, Planer-Link als Sekundär-Pfad sichtbar | 1 Tag |
+
+**Welle-7-Gesamt-Aufwand:** ~18–25 Tage = 4–6 Wochen bei 5 Std/Tag · parallel zu Welle Alpha · Validation-Gate identisch zu Welle Alpha (≥3 Käufe in 3 Wochen)
+
+**Killer-Risiko:** Wenn P7 baut aber niemand kauft, haben wir 4 Wochen in Architektur investiert ohne Demand-Beweis. **Deshalb D8 = parallel:** Welle Alpha läuft mit Bestand-Planer-+ Wizard-Variante als A/B-Test. Wenn Wizard nicht konvertiert, ist P7 ein Cut-Kandidat.
+
 #### A/B-Tests die nach Welle Alpha sinnvoll wären (Welle Beta Begleitung)
 
 | Test | Variante A | Variante B | Primäre KPI |

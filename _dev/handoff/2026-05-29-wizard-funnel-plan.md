@@ -2,7 +2,26 @@
 
 **Zweck:** Bolles „Funnel-First Vision" (8.5–9/10, formuliert 28.05. abends) in einen umsetzbaren Plan überführen. Sobald wir hier eine 9/10-Konzept-Form haben, kondensiert es zu **P7-1 Funnel-First Re-Architecture** in `BACKLOG-AUDIT.md` + `STRATEGIE.md` §0.
 
-**Status:** In Arbeit — 8 Entscheidungspunkte offen, wir gehen Punkt für Punkt durch.
+**Status:** ✅ **KONZEPT FERTIG 29.05.2026** — alle 8 Entscheidungen getroffen, kondensiert in `BACKLOG-AUDIT.md` als **P7-0 + P7-1 bis P7-7** (Welle 7 Funnel-First Re-Architecture).
+
+**Validierungs-Pfad:** 5 Prototyp-Iterationen (v1-v5) in `_dev/prototypes/`:
+- v1: Single-Motto Piraten Plan-Preview-First (Konzept-Beweis)
+- v2: Full-Tour mit Motto/Alter-Picker + Outcome-Browser-Frames
+- v3: Full-Funnel mit Async-Save + Custom-Timeline + Einladung-Editor + Partyseite-Editor (6 Stages)
+- v4: Self-Audit-Fixes (12 Mottos + echte URLs + Konflikt-Warnung + Mobile-Toggle)
+- v5: **Helfer-v3-Live-Aligned** (15 Mottos = Live-Union, Foto-Upload, WhatsApp-RSVP, Social-Proof, Notfallplan-CTA, Dark-Mode-Mini-Spiel, Auto-Slug)
+
+**Helfer-v3-Erkenntnis 29.05.:** Live-Walk via Chrome-MCP zeigte **4 verschiedene Motto-Listen-Drift** (Planer/Einladung/Schatzsuche/Partyseite). Wizard-Vision löst dies — aber bevor Wizard gebaut wird, muss **P7-0** (Master-Motto-Liste in `js/theme-registry.js`) als Pre-Requisite laufen.
+
+**Nächste konkrete Schritte:**
+1. P7-0 Motto-Source-Konsolidierung (4–6 Std) — IMMEDIATE BLOCKER
+2. Welle Alpha A1-A9 (Piraten-Pilot mit Bestand-Planer + Wizard-Variante als A/B)
+3. P7-1 Stage 1+2 Implementation
+4. Validation-Gate identisch Welle Alpha: ≥3 Käufe in 3 Wochen
+
+---
+
+## Original-Analyse (29.05. morgens, vor Validierung)
 
 ---
 
