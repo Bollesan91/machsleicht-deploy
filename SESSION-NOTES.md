@@ -1,8 +1,76 @@
+# Session-Notiz — 29.05.2026 (P7 Wizard-Architektur entschieden + MVP live + A1 Hero-Rewrite)
+
+## 🚀 Heute deployed (29.05.2026 abends)
+
+### Welle 7 Foundation (P7-0)
+- **theme-registry.js erweitert** um WIZARD_OVERRIDES (15 Mottos × accent/accent2/persona/darkAccent/wizardReady/inviteTpl)
+- **Helper-Funktionen** `getWizardTheme(slug)` + `wizardReadySlugs()` für Wizard-Konsumenten
+- **Bestehende Tools (Planer/Einladung/Worker)** bleiben unverändert — eigene Datenquellen gültig
+- **9 Mottos wizardReady=true** (Daten komplett), 6 wizardReady=false (noch nachzuziehen: feuerwehr/prinzessin/meerjungfrau/superheld + 2 weitere)
+
+### P7-1 Wizard-MVP (LIVE auf /wizard.html)
+- **_src/wizard.jsx (337 Zeilen)** + **wizard.html** + **build-wizard.sh** + **js/wizard.js (16KB compiled)**
+- **Stage 1 Motto-Picker:** 15 Mottos aus theme-registry, wizardReady-sortiert + „Eigenes Motto…"-Karte
+- **Stage 2 Alter-Picker:** 3 Karten (3-5, 6-8, 9-12) mit motto-spezifischer Accent-Farbe
+- **Stage 3 Bridge:** BirthdayProject.create() seeded mit theme + child.age, 2 Sek Auto-Redirect zu `/kindergeburtstag?motto=X&age=Y`
+- **noindex,nofollow** bis P7-7 Launch — nur Beta-Test
+- **E2E getestet** via Preview-Server: Click Piraten → 6-8 → BirthdayProject.get() liefert {source:'wizard', theme.slug:'piraten', child.age:7}
+
+### Task #25 Trust-Zahl-Sync
+- **index.html:** 9 Stellen „9 Mottos / 9 Themen" → 13 (Schema.org description, featureList, FAQPage-Answers, Trust-Zeile)
+- **js/index.js:** „9 Mottos" → 13, „81 Spiele" → 150+, „9 Themen" → 13, „9 Motto-Welten" → 13, „81 Spielideen" → 150+
+- **Echter Live-Stand:** 15 Mottos in Registry, 13 mit Planer+Schatzsuche live, 2 nur mit Einladung (superheld, prinzessin)
+
+### Welle Alpha A1 — Hero-Rewrite Funnel-Axiom v2
+- **Headline:** „kostenlos in 10 Minuten" → **„in 60 Sekunden statt 60 Minuten"** (Wettbewerbs-Argument vs Pinterest)
+- **Sub-Headline:** **„Plan, Einladung, Schatzsuche und Partyseite — in einem Flow"** (kommuniziert Wizard-Vision ohne Premium-Hype)
+- **Sub-Trust:** **„Plan online gratis · Drucke optional · In 60 Sekunden fertig"** (Pre-Sell-Hint für Premium-PDF ohne harten Promise)
+- **Tail-Trust:** **„13 Mottos · 150+ Spielideen"** (aktualisiert vom alten „9 Mottos / 81 Spiele")
+- **NICHT** Wizard-CTA im Hero — Wizard ist noindex, Hero bleibt auf /kindergeburtstag fokussiert
+
+## 🎯 Heute strategisch entschieden — Welle 7 D1-D8
+
+Alle 8 Architektur-Entscheidungen für Wizard-Funnel via 5-Prototyp-Iteration (v1-v5) + Helfer-v3-Live-Audit:
+- **D1 Wizard-Sequenz:** 6 Stages Plan-Preview-First ✅
+- **D2 Tech-Architektur:** Hybrid /wizard parallel zu bestehenden Tools ✅
+- **D3 State:** localStorage + optional Magic-Link ✅
+- **D4 Smart-Defaults:** Samstag in 4 Wochen, 6 Gäste, zuhause, 5 Spiele ✅
+- **D5 Multi-Touch:** 1 SKU Welle Alpha, Mini-SKUs erst Beta ✅
+- **D6 Print-Pipeline:** Welle Alpha Canva statisch, Beta Playwright dynamisch ✅
+- **D7 Migration:** P6-1 wird Teil von P7-1c, P3-S4-S7 werden Plan-Stage-Module ✅
+- **D8 Welle-Alpha-Relation:** Parallel A/B Bestand-Planer + Wizard-Variante ✅
+
+Backlog updated: **Welle 7 mit P7-0 + P7-1 bis P7-7 Tickets** in BACKLOG-AUDIT.md.
+
+## 📊 Helfer-v3 Live-Audit-Befunde (29.05. morgens)
+
+| Befund | Wirkung |
+|---|---|
+| **4 verschiedene Motto-Listen drift live** (Planer 10, Einladung 10, Schatzsuche 12, Partyseite 10) | Wizard löst dies via theme-registry als Single Source of Truth |
+| **birthday-project.js existiert schon** mit perfektem Wizard-State-Schema | P7-Aufwand sinkt von 4 Wochen auf ~10 Tage (Komponenten-Reuse) |
+| **Schatzsuche-Generator ist im Planer integriert**, nicht eigener Tool | Wizard nutzt SchnitzeljagdBlock-Component reuse |
+| **Lemon Squeezy Checkout-Code da, SKUs leer** | Stripe-Setup ist nur Konfiguration, kein neuer Code |
+
+## 🔬 Wizard-Prototyp-Iteration (heute komplett)
+
+5 v-Versionen in `_dev/prototypes/`:
+- v1: Single-Motto Piraten Plan-Preview-First Konzept-Beweis
+- v2: Full-Tour mit Motto/Alter-Picker + Outcome-Browser-Frames
+- v3: Full-Funnel mit Async-Save + Custom-Timeline + Einladung-Editor + Partyseite-Editor (6 Stages)
+- v4: Self-Audit-Fixes (12 Mottos voll + echte URLs + Konflikt-Warnung + Mobile-Toggle)
+- v5: Helfer-v3-Live-Aligned (15 Mottos = Live-Union, Foto-Upload, WhatsApp-RSVP, Social-Proof, Notfallplan-CTA)
+
+Konzept-Doc: `_dev/handoff/2026-05-29-wizard-funnel-plan.md` (Status: ✅ Konzept fertig)
+
+---
+
+## Vorheriger Eintrag
+
 # Session-Notiz — 28.05.2026 (Cloudflare Cache-Fix + Broken-Link-Cleanup + GSC Tag 1 + Deploy)
 
-> ## ✅ Deploy 28.05. erledigt (Erkenntnis am 29.05. morgens)
+> ## ℹ️ Historisch (verworfen — Deploy 29.05. ersetzt diesen Stand komplett)
 >
-> **Mein Reminder-Banner vom 28.05. abends war falsch:** Es behauptete „Deploy-Push pending", weil meine lokale Sicht auf `origin/main` stale war (`de1af3d` von 21.05.). Tatsächlich wurde der Merge `2c1a2e9 Merge draft → main: Cache-Rule-Fix + Broken-Links + GSC Tag 1 (28.05.2026)` doch noch ausgelöst (vermutlich Terminal-Push außerhalb der Cowork-Session). Live-Verifikation 29.05.:
+> Banner vom 28.05. abends war stale-fetch-Artefakt — Merge `2c1a2e9 Cache-Rule-Fix + Broken-Links + GSC Tag 1 (28.05.2026)` lief eigentlich durch. Live-Verifikation 29.05. morgens bestätigte:
 > - ✅ Homepage 200 OK, `cf-cache-status: HIT`, Cache-Rule wirkt
 > - ✅ `/kindergeburtstag/ritter` 200 OK (kein 5xx mehr) — Hauptziel der Cache-Rule erreicht
 > - ✅ `/halloween-kinder-zuhause` 404 (korrekt entfernt)
