@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://machsleicht.de/wizard">
+<title>Kindergeburtstag-Wizard — kompletter Plan in 5 Minuten · machsleicht.de</title>
+<meta name="description" content="Geführter Wizard: Motto wählen, Alter wählen, fertig ist der komplette Plan mit Schatzsuche, Einladung und Partyseite. Kostenlos, ohne Anmeldung, in 5 Minuten startklar.">
+<meta name="theme-color" content="#FFF8F0">
+<!-- Wizard ist Beta — robots noindex bis P7-7 Launch -->
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;-webkit-font-smoothing:antialiased}
+  body{background:#FFF8F0;color:#1a1a1a;font-family:'DM Sans',system-ui,sans-serif;line-height:1.5}
+  em{font-style:normal}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+  @media (max-width:680px){
+    #wizard-root .nav{padding:10px 14px}
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
+</head>
+<body>
+<div id="wizard-root">
+  <!-- SEO-Fallback (sichtbar fuer Crawler, ueberschrieben durch React-Hydrate) -->
+  <noscript>
+    <div style="max-width:600px;margin:40px auto;padding:20px;text-align:center;font-family:system-ui">
+      <h1>Kindergeburtstag-Wizard</h1>
+      <p>Dieser Wizard braucht JavaScript. <a href="/kindergeburtstag">Zum klassischen Planer →</a></p>
+    </div>
+  </noscript>
+</div>
+<!-- Foundation: theme-registry + birthday-project -->
+<script src="/js/theme-registry.js"></script>
+<script src="/js/birthday-project.js"></script>
+<!-- Wizard React-App -->
+<script src="/js/wizard.js"></script>
+</body>
+</html>
