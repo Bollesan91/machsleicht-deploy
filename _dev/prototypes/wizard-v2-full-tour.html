@@ -1,0 +1,1067 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Wizard-Prototyp v2 (Full Tour) — machsleicht</title>
+<!--
+  PROTOTYP v2 — End-to-End-Tour mit Motto-Auswahl, Alter, Wizard und Browser-Frame-Previews.
+  Konzept: _dev/handoff/2026-05-29-wizard-funnel-plan.md
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0;font-family:'Nunito',system-ui,sans-serif;background:#FFF8F0;color:#1A1A1A;line-height:1.5;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:'Lilita One',cursive;font-weight:400;letter-spacing:.4px;line-height:1.15;margin:0}
+
+  /* ===== Stage System ===== */
+  .stage{display:none;min-height:100vh}
+  .stage.active{display:block;animation:fadeUp .35s ease-out}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+  /* ===== Top-Nav ===== */
+  .topnav{background:#fff;border-bottom:1px solid #F0E6D8;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:30}
+  .topnav__brand{font-family:'Lilita One';font-size:18px;color:#1A1A1A;text-decoration:none;display:flex;align-items:center;gap:8px}
+  .topnav__brand em{font-style:normal;color:#FF6F00}
+  .topnav__back{background:none;border:none;color:#666;font-family:'Nunito';font-weight:700;font-size:13px;cursor:pointer;display:flex;align-items:center;gap:4px;padding:6px 10px;border-radius:8px;transition:background .15s}
+  .topnav__back:hover{background:#FFF3E6;color:#FF6F00}
+  .topnav__progress{display:flex;align-items:center;gap:6px;font-size:12px;color:#999;font-weight:700}
+  .topnav__dot{width:8px;height:8px;border-radius:50%;background:#E6D4BD;transition:background .25s}
+  .topnav__dot.done{background:#FF6F00}
+  .topnav__dot.active{background:#FF6F00;box-shadow:0 0 0 4px #FFE0C2}
+
+  /* ===== Stage 1: Motto-Picker ===== */
+  .pick{max-width:1080px;margin:0 auto;padding:48px 20px 80px}
+  .pick__head{text-align:center;margin-bottom:36px}
+  .pick__head h1{font-size:clamp(30px,4.5vw,46px)}
+  .pick__head h1 em{font-style:normal;color:#FF6F00}
+  .pick__head p{color:#666;font-size:17px;max-width:560px;margin:14px auto 0}
+
+  .mottos{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+  .motto-card{background:#fff;border:2px solid #F0E6D8;border-radius:16px;padding:20px 16px;cursor:pointer;transition:all .2s;text-align:center;position:relative;overflow:hidden}
+  .motto-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.08);border-color:#FF6F00}
+  .motto-card.selected{border-color:#FF6F00;background:linear-gradient(180deg,#FFF3E6,#fff);box-shadow:0 8px 24px rgba(255,111,0,.18)}
+  .motto-card__emoji{font-size:48px;line-height:1;margin-bottom:8px;display:block}
+  .motto-card__name{font-family:'Lilita One';font-size:17px;color:#1A1A1A}
+  .motto-card__ages{display:block;margin-top:6px;font-size:11px;color:#FF6F00;font-weight:800;letter-spacing:.4px;text-transform:uppercase}
+  .motto-card__badge{position:absolute;top:8px;right:8px;background:#1E3A5F;color:#FFD700;font-size:10px;font-weight:800;padding:3px 7px;border-radius:8px;letter-spacing:.4px;text-transform:uppercase}
+
+  /* ===== Stage 2: Age-Picker ===== */
+  .age-pick{max-width:880px;margin:0 auto;padding:48px 20px 80px}
+  .age-pick__head{text-align:center;margin-bottom:36px}
+  .age-pick__head h1{font-size:clamp(28px,4.2vw,42px)}
+  .age-pick__head p{color:#666;font-size:17px;margin-top:12px}
+  .age-pick__chosen{display:inline-flex;align-items:center;gap:8px;background:#FFF3E6;border:1px solid #FF6F00;color:#E64A00;padding:8px 16px;border-radius:999px;font-weight:800;font-size:14px;margin-bottom:12px}
+  .ages{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .age-card{background:#fff;border:2px solid #F0E6D8;border-radius:18px;padding:28px 22px;cursor:pointer;transition:all .2s;position:relative}
+  .age-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.08);border-color:#FF6F00}
+  .age-card__range{font-family:'Lilita One';font-size:42px;color:#FF6F00;line-height:1}
+  .age-card__range small{font-size:18px;color:#1A1A1A;font-family:'Lilita One'}
+  .age-card__title{font-family:'Lilita One';font-size:18px;margin-top:6px}
+  .age-card__desc{color:#555;font-size:14px;margin-top:8px}
+  .age-card__features{margin:14px 0 0;padding-left:18px;font-size:13px;color:#666}
+  .age-card__features li{padding:1px 0}
+
+  /* ===== Stage 3: Plan-Preview (reused from v1, refined) ===== */
+  .sticky-cta{position:sticky;top:55px;z-index:25;background:linear-gradient(180deg,#FF6F00,#E64A00);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;box-shadow:0 4px 16px rgba(255,111,0,.3);transition:transform .25s}
+  .sticky-cta.hidden{transform:translateY(-100%)}
+  .sticky-cta__label{font-weight:800;font-size:15px}
+  .sticky-cta__label small{display:block;font-weight:400;opacity:.9;font-size:12px;margin-top:2px}
+  .sticky-cta button{background:#fff;color:#E64A00;border:none;padding:11px 22px;border-radius:999px;font-family:'Nunito';font-weight:800;font-size:14px;cursor:pointer;transition:transform .15s;box-shadow:0 2px 8px rgba(0,0,0,.15);white-space:nowrap}
+  .sticky-cta button:hover{transform:scale(1.04)}
+
+  .plan-hero{padding:36px 20px 24px;text-align:center;max-width:920px;margin:0 auto}
+  .plan-hero__badge{display:inline-block;background:#1E3A5F;color:#FFD700;padding:6px 14px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;margin-bottom:16px}
+  .plan-hero h1{font-size:clamp(28px,4.5vw,42px)}
+  .plan-hero h1 em{font-style:normal;color:#FF6F00}
+  .plan-hero p{font-size:17px;color:#555;max-width:560px;margin:12px auto 0}
+
+  .plan{max-width:920px;margin:0 auto;padding:0 20px 60px}
+  .plan__header{background:linear-gradient(135deg,#1E3A5F,#2A4D7C);color:#fff;padding:28px 26px;border-radius:18px 18px 0 0;display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:space-between}
+  .plan__header-text{flex:1;min-width:240px}
+  .plan__title{font-family:'Lilita One';font-size:26px;line-height:1.2}
+  .plan__title .plan__name{color:#FFD700;transition:all .3s}
+  .plan__meta{margin-top:6px;font-size:14px;opacity:.85;display:flex;flex-wrap:wrap;gap:6px 18px}
+  .plan__meta span::before{content:'· ';opacity:.5}
+  .plan__meta span:first-child::before{content:''}
+  .plan__edit-btn{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:10px 16px;border-radius:999px;font-family:'Nunito';font-weight:700;font-size:13px;cursor:pointer;transition:all .15s}
+  .plan__edit-btn:hover{background:rgba(255,255,255,.25)}
+  .plan__body{background:#fff;border-radius:0 0 18px 18px;padding:8px;box-shadow:0 12px 40px rgba(0,0,0,.06)}
+
+  .mod{padding:22px 24px;border-bottom:1px solid #F0E6D8}
+  .mod:last-child{border-bottom:none}
+  .mod__head{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+  .mod__icon{font-size:22px}
+  .mod__title{font-family:'Lilita One';font-size:18px;flex:1}
+  .mod__edit{background:#FFF3E6;border:none;color:#E64A00;padding:6px 12px;border-radius:999px;font-family:'Nunito';font-weight:700;font-size:12px;cursor:pointer;transition:all .15s}
+  .mod__edit:hover{background:#FFE0C2}
+
+  .timeline{position:relative;padding-left:24px}
+  .timeline::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:#FF6F00;border-radius:2px}
+  .timeline__row{position:relative;padding:8px 0 8px 14px;display:grid;grid-template-columns:60px 1fr;gap:14px;align-items:start}
+  .timeline__row::before{content:'';position:absolute;left:-19px;top:14px;width:10px;height:10px;border-radius:50%;background:#FF6F00;box-shadow:0 0 0 3px #FFF3E6}
+  .timeline__time{font-weight:800;color:#1E3A5F;font-size:14px}
+  .timeline__what{font-size:14px;color:#333}
+  .timeline__what em{color:#1E3A5F;font-weight:700;font-style:normal}
+
+  .games-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+  .game-tag{background:#FFF8F0;border:1px solid #F0E6D8;border-radius:10px;padding:12px;font-size:13px;line-height:1.3}
+  .game-tag__name{font-weight:800;display:flex;align-items:center;gap:6px;color:#1E3A5F}
+  .game-tag__desc{color:#666;margin-top:4px;font-size:12px}
+
+  .schatz{background:linear-gradient(135deg,#FFF8F0,#FFEDD2);padding:18px;border-radius:12px;border:1px dashed #FF6F00}
+  .schatz__list{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+  .schatz__list li{display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:start;font-size:14px}
+  .schatz__num{width:28px;height:28px;background:#FF6F00;color:#fff;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px}
+  .schatz__name{font-weight:700}
+
+  .shopping{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+  .shopping__col h4{font-family:'Nunito';font-weight:800;font-size:13px;text-transform:uppercase;color:#1E3A5F;margin:0 0 8px;letter-spacing:.5px}
+  .shopping__col ul{margin:0;padding-left:18px;font-size:13px;color:#333}
+  .shopping__col li b{color:#FF6F00;font-weight:800}
+
+  /* ===== Stage 4: Outcome-Previews ===== */
+  .outcome{max-width:1100px;margin:0 auto;padding:40px 20px 60px}
+  .outcome__head{text-align:center;margin-bottom:30px}
+  .outcome__head h1{font-size:clamp(28px,4.2vw,40px)}
+  .outcome__head h1 em{font-style:normal;color:#FF6F00}
+  .outcome__head p{color:#666;font-size:17px;max-width:580px;margin:12px auto 0}
+
+  .previews{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-bottom:48px}
+  .preview{background:#fff;border-radius:16px;padding:22px;border:1px solid #F0E6D8;box-shadow:0 6px 20px rgba(0,0,0,.04)}
+  .preview__head{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .preview__icon{font-size:24px}
+  .preview__title{font-family:'Lilita One';font-size:17px;flex:1}
+  .preview__badge{background:#FFF3E6;color:#E64A00;font-size:11px;font-weight:800;padding:3px 8px;border-radius:6px;letter-spacing:.4px;text-transform:uppercase}
+  .preview__badge.premium{background:#FF6F00;color:#fff}
+
+  /* Browser-Frame */
+  .browser{background:#F0E6D8;border-radius:12px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(0,0,0,.05)}
+  .browser__bar{background:#E6D4BD;padding:8px 12px;display:flex;align-items:center;gap:6px}
+  .browser__dot{width:9px;height:9px;border-radius:50%;background:#FAA;}
+  .browser__dot:nth-child(2){background:#FC0}
+  .browser__dot:nth-child(3){background:#7C7}
+  .browser__url{flex:1;margin-left:8px;background:#fff;padding:4px 10px;border-radius:6px;font-size:11px;color:#666;font-family:'Nunito';font-weight:600;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .browser__content{background:#fff;padding:14px;min-height:200px}
+
+  /* Phone-Frame */
+  .phone{background:#1A1A1A;border-radius:24px;padding:8px;width:fit-content;margin:0 auto;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+  .phone__screen{background:#fff;border-radius:18px;width:200px;height:380px;overflow:hidden;position:relative}
+  .phone__notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:60px;height:18px;background:#1A1A1A;border-radius:0 0 12px 12px;z-index:2}
+
+  /* PDF-Stack */
+  .pdf-stack{position:relative;width:fit-content;margin:0 auto;padding-top:18px;padding-right:18px}
+  .pdf-sheet{width:160px;height:220px;background:#fff;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.12);position:relative;border:1px solid #E0E0E0;overflow:hidden}
+  .pdf-sheet--back{position:absolute;top:0;right:0;transform:rotate(8deg);background:linear-gradient(180deg,#FFF8F0,#fff)}
+  .pdf-sheet--mid{position:absolute;top:9px;right:9px;transform:rotate(4deg)}
+  .pdf-sheet__content{padding:14px;font-size:9px;line-height:1.3;color:#333}
+  .pdf-sheet__content h5{font-family:'Lilita One';font-size:13px;color:#FF6F00;margin-bottom:6px}
+  .pdf-sheet__content .urkunde-title{font-family:'Lilita One';font-size:11px;text-align:center;margin-bottom:4px;color:#1E3A5F}
+  .pdf-sheet__content .urkunde-name{font-family:'Lilita One';font-size:14px;text-align:center;color:#FF6F00;border-bottom:1px solid #ddd;padding:6px 0;margin:4px 8px}
+
+  /* Mini-Spiel-Preview */
+  .minispiel-preview{padding:18px 12px;text-align:center;background:linear-gradient(180deg,#1E3A5F,#2A4D7C);color:#fff;border-radius:14px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+  .minispiel-preview__title{font-family:'Lilita One';font-size:13px;color:#FFD700;margin-bottom:8px}
+  .minispiel-preview__game{flex:1;display:grid;place-items:center;margin:8px 0;font-size:42px;animation:wiggle 1.5s infinite}
+  @keyframes wiggle{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+  .minispiel-preview__cta{background:#FF6F00;color:#fff;padding:8px;border-radius:999px;font-size:11px;font-weight:800}
+
+  /* Schatzkarte-Preview */
+  .schatzkarte{background:#FFF8E1;padding:14px;border-radius:8px;font-size:11px;color:#5C3E13;background-image:radial-gradient(circle at 20% 30%, #FFD7A0 0, transparent 30%),radial-gradient(circle at 70% 60%, #FFD7A0 0, transparent 25%);text-align:center}
+  .schatzkarte__title{font-family:'Lilita One';font-size:13px;color:#5C3E13;margin-bottom:8px}
+  .schatzkarte__map{font-size:42px;margin:6px 0;letter-spacing:6px}
+  .schatzkarte__stations{font-size:10px;text-align:left;margin-top:6px;padding-left:12px}
+
+  /* Partyseite-Preview */
+  .partyseite-preview{font-family:'Nunito';font-size:10px;color:#333}
+  .partyseite-preview h3{font-family:'Lilita One';font-size:14px;color:#FF6F00;margin-bottom:6px}
+  .partyseite-preview .rsvp-row{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed #eee;font-size:10px}
+  .partyseite-preview .rsvp-row span:last-child{font-weight:800;color:#0F7B3F}
+
+  /* ===== Checkout ===== */
+  .checkout{max-width:1100px;margin:0 auto;padding:0 20px 40px}
+  .checkout__title{text-align:center;font-family:'Lilita One';font-size:26px;margin-bottom:8px}
+  .checkout__sub{text-align:center;color:#666;margin:0 0 24px}
+  .checkout__cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .checkout-card{background:#fff;border:2px solid #F0E6D8;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px;position:relative;transition:transform .15s,box-shadow .15s}
+  .checkout-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
+  .checkout-card--premium{border-color:#FF6F00;background:linear-gradient(180deg,#FFF8F0,#fff)}
+  .checkout-card--premium::after{content:'Bestseller';position:absolute;top:-12px;right:14px;background:#FF6F00;color:#fff;padding:4px 12px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase}
+  .checkout-card__icon{font-size:32px;line-height:1}
+  .checkout-card__title{font-family:'Lilita One';font-size:18px}
+  .checkout-card__price{font-family:'Lilita One';font-size:24px;color:#FF6F00}
+  .checkout-card--free .checkout-card__price{color:#1E3A5F}
+  .checkout-card__features{margin:6px 0 0;padding-left:18px;font-size:13px;color:#444;flex:1}
+  .checkout-card__btn{margin-top:14px;background:#1E3A5F;color:#fff;border:none;padding:13px;border-radius:999px;font-family:'Nunito';font-weight:800;font-size:14px;cursor:pointer;transition:transform .15s}
+  .checkout-card--premium .checkout-card__btn{background:#FF6F00}
+  .checkout-card__btn:hover{transform:scale(1.02)}
+
+  /* Partyseite Hook */
+  .partyseite-hook{max-width:1100px;margin:24px auto 60px;padding:24px 20px;text-align:center;background:#fff;border:1px dashed #C8B9A6;border-radius:14px}
+  .partyseite-hook h3{font-family:'Lilita One';font-size:18px;margin-bottom:6px}
+  .partyseite-hook p{color:#666;font-size:14px;margin:0 0 14px}
+  .partyseite-hook a{display:inline-block;color:#1E3A5F;font-weight:800;text-decoration:none;border-bottom:2px solid #1E3A5F;padding-bottom:1px}
+
+  /* ===== Wizard Drawer ===== */
+  .drawer{position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);background:#fff;box-shadow:-12px 0 40px rgba(0,0,0,.15);transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:100;display:flex;flex-direction:column}
+  .drawer.open{transform:translateX(0)}
+  .drawer__head{padding:22px 24px 12px;border-bottom:1px solid #F0E6D8;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .drawer__step{font-family:'Lilita One';font-size:14px;color:#FF6F00;letter-spacing:.5px}
+  .drawer__close{background:none;border:none;font-size:28px;color:#999;cursor:pointer;line-height:1;padding:0;width:32px;height:32px;display:grid;place-items:center;border-radius:8px;transition:background .15s}
+  .drawer__close:hover{background:#FFF3E6;color:#FF6F00}
+  .drawer__progress{padding:6px 24px 0;display:flex;gap:5px}
+  .drawer__progress span{flex:1;height:4px;background:#F0E6D8;border-radius:2px;transition:background .25s}
+  .drawer__progress span.done{background:#FF6F00}
+  .drawer__progress span.active{background:linear-gradient(90deg,#FF6F00 50%,#F0E6D8 50%)}
+
+  .drawer__body{flex:1;overflow-y:auto;padding:26px 26px}
+  .question{display:none}
+  .question.active{display:block;animation:fadeIn .3s ease-out}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  .question h3{font-family:'Lilita One';font-size:22px;line-height:1.25;margin-bottom:6px}
+  .question p.help{color:#666;font-size:13px;margin:0 0 22px}
+  .question input[type=text],.question input[type=date],.question input[type=time]{width:100%;padding:14px 16px;font-family:'Nunito';font-size:17px;font-weight:600;border:2px solid #F0E6D8;border-radius:12px;background:#FFF8F0;color:#1A1A1A;outline:none;transition:border-color .15s}
+  .question input:focus{border-color:#FF6F00;background:#fff}
+  .question .row-2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .question .row-2 label{font-size:12px;color:#666;font-weight:700;margin-bottom:4px;display:block}
+  .question .slider-wrap{padding:6px 0}
+  .question .slider-value{font-family:'Lilita One';font-size:46px;color:#FF6F00;text-align:center;margin-bottom:6px}
+  .question input[type=range]{width:100%;accent-color:#FF6F00;height:6px}
+  .question .slider-labels{display:flex;justify-content:space-between;font-size:12px;color:#999;margin-top:4px}
+
+  .options{display:grid;gap:8px}
+  .option{display:flex;align-items:center;gap:12px;padding:12px 14px;background:#FFF8F0;border:2px solid #F0E6D8;border-radius:12px;cursor:pointer;transition:all .15s}
+  .option:hover{border-color:#FF6F00;background:#fff}
+  .option.selected{border-color:#FF6F00;background:#FFF3E6}
+  .option__icon{font-size:22px}
+  .option__label{font-weight:700;flex:1;font-size:14px}
+  .option__hint{display:block;font-weight:400;font-size:11px;color:#666;margin-top:2px}
+
+  /* Multi-Select Spiele */
+  .multi-info{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:13px;color:#666}
+  .multi-info b{color:#FF6F00;font-weight:800;font-size:15px}
+  .multi-grid{display:grid;gap:6px}
+  .multi-item{display:flex;align-items:center;gap:10px;padding:10px 12px;background:#FFF8F0;border:2px solid #F0E6D8;border-radius:10px;cursor:pointer;transition:all .15s;font-size:13px}
+  .multi-item:hover{background:#fff;border-color:#FF6F00}
+  .multi-item.selected{background:#FFF3E6;border-color:#FF6F00}
+  .multi-item input{display:none}
+  .multi-item__check{width:20px;height:20px;border:2px solid #C8B9A6;border-radius:6px;display:grid;place-items:center;color:#fff;font-size:13px;font-weight:800;transition:all .15s}
+  .multi-item.selected .multi-item__check{background:#FF6F00;border-color:#FF6F00}
+  .multi-item__name{flex:1;font-weight:700}
+  .multi-item__emoji{font-size:18px}
+
+  /* Einladungs-Typ */
+  .invite-types{display:grid;gap:10px}
+  .invite-type{padding:14px;background:#FFF8F0;border:2px solid #F0E6D8;border-radius:12px;cursor:pointer;transition:all .15s;display:flex;gap:12px;align-items:flex-start}
+  .invite-type:hover{border-color:#FF6F00;background:#fff}
+  .invite-type.selected{border-color:#FF6F00;background:#FFF3E6}
+  .invite-type__icon{font-size:28px;line-height:1}
+  .invite-type__body{flex:1}
+  .invite-type__title{font-family:'Nunito';font-weight:800;font-size:15px}
+  .invite-type__desc{font-size:12px;color:#666;margin-top:2px}
+  .invite-type__price{font-size:11px;color:#FF6F00;font-weight:800;margin-top:4px;letter-spacing:.4px;text-transform:uppercase}
+
+  .drawer__foot{padding:18px 26px;border-top:1px solid #F0E6D8;display:flex;gap:10px;background:#fff}
+  .drawer__btn{flex:1;border:none;padding:13px;border-radius:999px;font-family:'Nunito';font-weight:800;font-size:14px;cursor:pointer;transition:transform .15s}
+  .drawer__btn--prim{background:#FF6F00;color:#fff;flex:2}
+  .drawer__btn--prim:hover{transform:scale(1.02)}
+  .drawer__btn--sec{background:#F0E6D8;color:#666}
+  .drawer__btn--sec:hover{background:#E6D4BD}
+
+  /* Overlay */
+  .overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .25s;z-index:99}
+  .overlay.show{opacity:1;pointer-events:auto}
+
+  /* Demo-Badge */
+  .demo-badge{position:fixed;bottom:20px;left:20px;background:#1E3A5F;color:#fff;padding:10px 16px;border-radius:999px;font-size:12px;font-weight:700;z-index:200;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+  .demo-badge small{display:block;font-weight:400;opacity:.8;margin-top:2px}
+
+  @media (max-width:680px){
+    .topnav{padding:12px 14px}
+    .pick,.age-pick{padding:28px 16px 60px}
+    .sticky-cta{padding:12px 16px;gap:10px}
+    .sticky-cta__label{font-size:13px}
+    .sticky-cta__label small{display:none}
+    .sticky-cta button{padding:10px 16px;font-size:13px}
+    .plan-hero{padding:24px 18px 16px}
+    .plan__header{padding:22px 20px}
+    .mod{padding:18px 18px}
+    .drawer{width:100%;border-radius:24px 24px 0 0;height:90vh;top:auto;bottom:0;transform:translateY(100%)}
+    .drawer.open{transform:translateY(0)}
+    .demo-badge{bottom:10px;left:10px;right:10px;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== TOP NAV ===== -->
+<nav class="topnav">
+  <a class="topnav__brand" href="#" onclick="goStage(1);return false">mach's <em>leicht</em></a>
+  <div class="topnav__progress">
+    <span class="topnav__dot active" id="navDot1"></span>
+    <span class="topnav__dot" id="navDot2"></span>
+    <span class="topnav__dot" id="navDot3"></span>
+    <span class="topnav__dot" id="navDot4"></span>
+  </div>
+  <button class="topnav__back" id="navBack" onclick="goBack()" style="display:none">← Zurück</button>
+</nav>
+
+<!-- ===== STAGE 1: MOTTO-PICKER ===== -->
+<section class="stage active" id="stage1">
+  <div class="pick">
+    <header class="pick__head">
+      <h1>Welches <em>Motto</em> soll's werden?</h1>
+      <p>Such ein Motto aus — wir bauen drum herum den kompletten Plan. Geht in 4 Schritten und kostet nichts.</p>
+    </header>
+    <div class="mottos" id="mottosGrid"></div>
+  </div>
+</section>
+
+<!-- ===== STAGE 2: ALTER-PICKER ===== -->
+<section class="stage" id="stage2">
+  <div class="age-pick">
+    <header class="age-pick__head">
+      <div class="age-pick__chosen"><span id="chosenMottoEmoji">🏴‍☠️</span> <span id="chosenMottoName">Piraten</span> · ausgewählt</div>
+      <h1>Wie alt wird das Geburtstagskind?</h1>
+      <p>Spiele, Rätsel und Texte werden alters-angepasst.</p>
+    </header>
+    <div class="ages" id="agesGrid"></div>
+  </div>
+</section>
+
+<!-- ===== STAGE 3: PLAN PREVIEW ===== -->
+<section class="stage" id="stage3">
+  <div class="sticky-cta" id="stickyCta">
+    <div class="sticky-cta__label">
+      Plan für DEIN Kind anpassen
+      <small>4 Fragen · ca. 60 Sekunden · kein Login</small>
+    </div>
+    <button onclick="openWizard()">Anpassen →</button>
+  </div>
+
+  <section class="plan-hero">
+    <span class="plan-hero__badge"><span id="planBadgeEmoji">🏴‍☠️</span> <span id="planBadgeName">Piraten</span> · <span id="planBadgeAge">6–8 Jahre</span></span>
+    <h1>So sieht ein <em>fertiger Plan</em> aus — schau dir an, was du bekommst</h1>
+    <p>Schon befüllt mit sinnvollen Standard-Werten. Du brauchst nur Namen, Datum und Gäste-Anzahl reinzugeben, dann ist alles personalisiert.</p>
+  </section>
+
+  <div class="plan">
+    <header class="plan__header">
+      <div class="plan__header-text">
+        <h2 class="plan__title"><span class="plan__name" id="planName1">Lukas</span>' <span id="planMottoName">Piraten</span>-Geburtstag</h2>
+        <div class="plan__meta">
+          <span id="planDate1">Sa, 21.06.2026, 14:00 Uhr</span>
+          <span><span id="planGuests1">6</span> Gäste</span>
+          <span id="planLocation1">zuhause</span>
+        </div>
+      </div>
+      <button class="plan__edit-btn" onclick="openWizard()">✏️ Plan anpassen</button>
+    </header>
+
+    <div class="plan__body" id="planBody">
+      <!-- Wird per JS gerendert basierend auf Motto/Alter -->
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:0 20px 60px">
+    <button onclick="finishPreview()" style="background:#FF6F00;color:#fff;border:none;padding:16px 32px;border-radius:999px;font-family:'Nunito';font-weight:800;font-size:16px;cursor:pointer;box-shadow:0 6px 20px rgba(255,111,0,.3);transition:transform .15s">Plan-Output ansehen →</button>
+    <p style="color:#999;font-size:12px;margin-top:10px">(Im echten Flow erscheint dieser CTA nach den Wizard-Fragen)</p>
+  </div>
+</section>
+
+<!-- ===== STAGE 4: OUTCOME-PREVIEWS ===== -->
+<section class="stage" id="stage4">
+  <div class="outcome">
+    <header class="outcome__head">
+      <h1>🎉 Dein Plan ist <em>fertig</em></h1>
+      <p>Schau dir an, wie deine Materialien aussehen werden — und entscheide unten, was du davon brauchst.</p>
+    </header>
+
+    <div class="previews">
+
+      <!-- Preview 1: Plan online -->
+      <div class="preview">
+        <header class="preview__head">
+          <span class="preview__icon">📋</span>
+          <h3 class="preview__title">Plan im Browser</h3>
+          <span class="preview__badge">Frei</span>
+        </header>
+        <div class="browser">
+          <div class="browser__bar"><span class="browser__dot"></span><span class="browser__dot"></span><span class="browser__dot"></span><div class="browser__url">machsleicht.de/plan/abc123</div></div>
+          <div class="browser__content" style="padding:10px">
+            <div style="background:linear-gradient(135deg,#1E3A5F,#2A4D7C);color:#FFD700;padding:10px;border-radius:8px;font-family:'Lilita One';font-size:13px"><span id="pvPlanName">Lukas</span>' <span id="pvPlanMotto">Piraten</span>-Plan</div>
+            <div style="font-size:10px;color:#666;margin-top:6px">Sa 21.06. · 6 Gäste · 14–17 Uhr</div>
+            <div style="margin-top:8px;font-size:10px"><b style="color:#FF6F00">⏰ Tagesplan</b><br>14:00 Ankommen + Schminke<br>14:35 Walk the Plank<br>15:00 Schatzsuche<br>15:45 Kuchen…</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preview 2: Einladungs-Spiel -->
+      <div class="preview">
+        <header class="preview__head">
+          <span class="preview__icon">🎮</span>
+          <h3 class="preview__title">Einladung: Mini-Spiel</h3>
+          <span class="preview__badge" id="pvInviteBadge">Frei</span>
+        </header>
+        <div class="phone">
+          <div class="phone__screen">
+            <div class="phone__notch"></div>
+            <div class="minispiel-preview" id="pvMinispiel">
+              <div>
+                <div class="minispiel-preview__title">🏴‍☠️ Ahoi!</div>
+                <div style="font-size:9px;color:#fff;opacity:.8">Captain Lukas lädt dich ein</div>
+              </div>
+              <div class="minispiel-preview__game">⚓</div>
+              <div>
+                <div style="font-size:9px;margin-bottom:6px">Tippe den Anker an, um den Schatz zu finden!</div>
+                <div class="minispiel-preview__cta">Spielen →</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:11px;color:#666;text-align:center;margin-top:10px">WhatsApp-Link, Kind tippt, sieht Datum + Ort als „Schatz"</p>
+      </div>
+
+      <!-- Preview 3: Schatzsuche -->
+      <div class="preview">
+        <header class="preview__head">
+          <span class="preview__icon">🗺️</span>
+          <h3 class="preview__title">Schatzkarte</h3>
+          <span class="preview__badge">Frei</span>
+        </header>
+        <div class="browser">
+          <div class="browser__bar"><span class="browser__dot"></span><span class="browser__dot"></span><span class="browser__dot"></span><div class="browser__url">machsleicht.de/schatz/lukas-piraten</div></div>
+          <div class="browser__content" style="padding:6px">
+            <div class="schatzkarte">
+              <div class="schatzkarte__title">🏴‍☠️ Schatzkarte</div>
+              <div class="schatzkarte__map">🌴🏠🌳⛵</div>
+              <div class="schatzkarte__stations">
+                ① Captain's Cabin<br>② Krähennest<br>③ Korallenriff<br>④ Sturmwarnung<br>⑤ <b>DER SCHATZ</b>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:11px;color:#666;text-align:center;margin-top:10px">Online lesen oder als PDF (Premium)</p>
+      </div>
+
+      <!-- Preview 4: Premium-PDF -->
+      <div class="preview">
+        <header class="preview__head">
+          <span class="preview__icon">📦</span>
+          <h3 class="preview__title">Komplettpaket-PDF</h3>
+          <span class="preview__badge premium">Premium</span>
+        </header>
+        <div class="pdf-stack">
+          <div class="pdf-sheet pdf-sheet--back"><div class="pdf-sheet__content"><div class="urkunde-title">URKUNDE</div><div class="urkunde-name">Mia</div><div style="font-size:8px;text-align:center;color:#666">Mutigste Piratin der Crew</div></div></div>
+          <div class="pdf-sheet pdf-sheet--mid"><div class="pdf-sheet__content"><h5>Tagesplan</h5><div style="font-size:8px">14:00 Ankommen<br>14:35 Walk Plank<br>15:00 Schatzsuche</div></div></div>
+          <div class="pdf-sheet"><div class="pdf-sheet__content"><h5>Spiel-Karte A6</h5><div style="font-size:8px"><b>Walk the Plank</b><br>3 Min · Material: Holzleiste<br>So geht's: Kinder gehen über…</div></div></div>
+        </div>
+        <p style="font-size:11px;color:#666;text-align:center;margin-top:14px">15+ druckfertige Seiten · 8 Urkunden mit Namen · Etiketten · Spielanleitungen</p>
+      </div>
+
+      <!-- Preview 5: Partyseite -->
+      <div class="preview">
+        <header class="preview__head">
+          <span class="preview__icon">🎊</span>
+          <h3 class="preview__title">Partyseite + RSVP</h3>
+          <span class="preview__badge">Frei</span>
+        </header>
+        <div class="browser">
+          <div class="browser__bar"><span class="browser__dot"></span><span class="browser__dot"></span><span class="browser__dot"></span><div class="browser__url">party.machsleicht.de/lukas7</div></div>
+          <div class="browser__content">
+            <div class="partyseite-preview">
+              <h3>🏴‍☠️ <span id="pvPartyName">Lukas</span>' Crew-Treffen</h3>
+              <div style="font-size:10px;color:#666">Sa 21.06.2026 · 14:00 Uhr</div>
+              <div style="margin:10px 0;font-size:10px"><b>Zusagen:</b></div>
+              <div class="rsvp-row"><span>Mia 🦜</span><span>JA</span></div>
+              <div class="rsvp-row"><span>Tim ⚓</span><span>JA</span></div>
+              <div class="rsvp-row"><span>Lara 🏴‍☠️</span><span>JA</span></div>
+              <div class="rsvp-row"><span>Ben 🦈</span><span>JA</span></div>
+              <div style="margin-top:10px;text-align:center;background:#FF6F00;color:#fff;padding:6px;border-radius:6px;font-size:10px;font-weight:800">+ Du bist dabei?</div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:11px;color:#666;text-align:center;margin-top:10px">Eigene URL · RSVP-Liste · Foto-Galerie · komplett kostenlos</p>
+      </div>
+
+      <!-- Preview 6: Day-of-Plan A4 -->
+      <div class="preview">
+        <header class="preview__head">
+          <span class="preview__icon">📌</span>
+          <h3 class="preview__title">A4 für den Kühlschrank</h3>
+          <span class="preview__badge premium">Premium</span>
+        </header>
+        <div style="background:#fff;border:1px solid #ddd;border-radius:8px;padding:14px;font-size:10px;line-height:1.4;box-shadow:0 4px 12px rgba(0,0,0,.05)">
+          <div style="font-family:'Lilita One';font-size:14px;color:#FF6F00;text-align:center;margin-bottom:8px">🏴‍☠️ MIA · 7 JAHRE · SA 21.06.</div>
+          <div style="border-top:2px dashed #FF6F00;padding-top:8px"><b>14:00</b> Ankommen + Schminke<br><b>14:35</b> Walk the Plank<br><b>15:00</b> 🗺️ SCHATZSUCHE (45 Min)<br><b>15:45</b> Kuchen + Kaffee<br><b>16:15</b> Kanonenkugeln<br><b>16:40</b> Mitgebsel + Tschüss</div>
+          <div style="margin-top:8px;border-top:1px solid #eee;padding-top:6px;font-size:9px;color:#666"><b>SOS-Tipps:</b> Weint → Sticker-Box · Streit → Stopptanz</div>
+        </div>
+        <p style="font-size:11px;color:#666;text-align:center;margin-top:10px">A4-Print für während der Party — keine App auf dem Tag</p>
+      </div>
+
+    </div>
+
+    <section class="checkout">
+      <h2 class="checkout__title">🎉 Was nimmst du mit?</h2>
+      <p class="checkout__sub">Alle Optionen ohne Account. Du entscheidest, wie viel du brauchst.</p>
+      <div class="checkout__cards">
+
+        <div class="checkout-card checkout-card--free">
+          <div class="checkout-card__icon">📋</div>
+          <h3 class="checkout-card__title">Plan online speichern</h3>
+          <div class="checkout-card__price">Kostenlos</div>
+          <ul class="checkout-card__features">
+            <li>Magic-Link per E-Mail</li>
+            <li>Plan jederzeit weiter anpassen</li>
+            <li>Spiele + Schatzsuche online lesen</li>
+            <li>Mini-Spiel-Einladung verschicken</li>
+          </ul>
+          <button class="checkout-card__btn">E-Mail-Link senden</button>
+        </div>
+
+        <div class="checkout-card checkout-card--free">
+          <div class="checkout-card__icon">📥</div>
+          <h3 class="checkout-card__title">Plan-PDF light</h3>
+          <div class="checkout-card__price">Kostenlos</div>
+          <ul class="checkout-card__features">
+            <li>1 A4 Tagesplan zum Drucken</li>
+            <li>Spiele-Anleitungen als Text</li>
+            <li>Einkaufsliste mit Häkchen</li>
+            <li>Schatzkarte (1 Seite)</li>
+          </ul>
+          <button class="checkout-card__btn">PDF runterladen</button>
+        </div>
+
+        <div class="checkout-card checkout-card--premium">
+          <div class="checkout-card__icon">📦</div>
+          <h3 class="checkout-card__title">Komplettpaket Print</h3>
+          <div class="checkout-card__price">€14,90</div>
+          <ul class="checkout-card__features">
+            <li><b>15+ druckfertige Seiten</b></li>
+            <li>8 Urkunden mit Namen vorgedruckt</li>
+            <li>5 Spiel-Karten A6 zum Vorlesen</li>
+            <li>Komplette Schatzsuche + Rätsel</li>
+            <li>8 Mitgebsel-Etiketten</li>
+            <li>Druck-Einladungs-Karten 8×</li>
+          </ul>
+          <button class="checkout-card__btn">Komplettpaket kaufen</button>
+        </div>
+
+      </div>
+    </section>
+
+    <aside class="partyseite-hook">
+      <h3>🎊 Online-Einladung mit RSVP einrichten?</h3>
+      <p>Eigene Party-URL + Zusagen-Liste + Foto-Galerie für nach der Party. Separater Flow, immer kostenlos.</p>
+      <a href="#">Partyseite einrichten →</a>
+    </aside>
+
+    <div style="text-align:center;padding:0 20px 60px">
+      <button onclick="goStage(1)" style="background:none;border:1px dashed #C8B9A6;color:#666;padding:12px 24px;border-radius:999px;font-family:'Nunito';font-weight:700;font-size:13px;cursor:pointer">↺ Tour nochmal starten</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WIZARD DRAWER ===== -->
+<div class="overlay" id="overlay" onclick="closeWizard()"></div>
+
+<aside class="drawer" id="drawer" role="dialog">
+  <header class="drawer__head">
+    <div>
+      <div class="drawer__step">Frage <span id="stepNum">1</span> von 6</div>
+    </div>
+    <button class="drawer__close" onclick="closeWizard()">×</button>
+  </header>
+  <div class="drawer__progress">
+    <span id="p1" class="active"></span>
+    <span id="p2"></span>
+    <span id="p3"></span>
+    <span id="p4"></span>
+    <span id="p5"></span>
+    <span id="p6"></span>
+  </div>
+
+  <div class="drawer__body">
+
+    <div class="question active" data-step="1">
+      <h3>Wie heißt das Geburtstagskind?</h3>
+      <p class="help">Wird in Plan + Einladung + Urkunden + Materialien personalisiert.</p>
+      <input type="text" id="qName" placeholder="z.B. Mia" autocomplete="off" oninput="liveUpdateName()">
+    </div>
+
+    <div class="question" data-step="2">
+      <h3>Wann ist der Geburtstag?</h3>
+      <p class="help">Datum + Uhrzeit — die Tagesplan-Zeiten skalieren entsprechend.</p>
+      <div class="row-2">
+        <div><label>Datum</label><input type="date" id="qDate" oninput="liveUpdateDate()"></div>
+        <div><label>Start-Uhrzeit</label><input type="time" id="qTime" value="14:00" oninput="liveUpdateTime()"></div>
+      </div>
+    </div>
+
+    <div class="question" data-step="3">
+      <h3>Wie viele Gäste kommen?</h3>
+      <p class="help">Wir skalieren Einkaufslisten-Mengen + Anzahl Urkunden/Etiketten.</p>
+      <div class="slider-wrap">
+        <div class="slider-value"><span id="qGuestsLabel">6</span> Kinder</div>
+        <input type="range" id="qGuests" min="4" max="12" value="6" oninput="liveUpdateGuests()">
+        <div class="slider-labels"><span>4</span><span>8</span><span>12</span></div>
+      </div>
+    </div>
+
+    <div class="question" data-step="4">
+      <h3>Wo feiert ihr?</h3>
+      <p class="help">Beeinflusst Schatzsuche-Stationen und Spiele-Vorschläge.</p>
+      <div class="options" id="qLocationOpts">
+        <label class="option selected" data-loc="zuhause"><span class="option__icon">🏠</span><span class="option__label">Bei uns zuhause<small class="option__hint">Schatzsuche im Garten + Spiele drinnen</small></span></label>
+        <label class="option" data-loc="drinnen"><span class="option__icon">🛋️</span><span class="option__label">Nur drinnen<small class="option__hint">Schatzsuche durch alle Räume</small></span></label>
+        <label class="option" data-loc="park"><span class="option__icon">🌳</span><span class="option__label">Park / draußen<small class="option__hint">Größere Stationen, Backup-Plan dabei</small></span></label>
+        <label class="option" data-loc="halle"><span class="option__icon">🏟️</span><span class="option__label">Indoor-Spielplatz / Halle<small class="option__hint">Plan auf 2h gekürzt</small></span></label>
+      </div>
+    </div>
+
+    <div class="question" data-step="5">
+      <h3>Welche Spiele sollen rein?</h3>
+      <p class="help">Wähl 4–7 aus — wir hängen sie als zeitlich passende Slots in den Tagesplan.</p>
+      <div class="multi-info">Ausgewählt: <b><span id="multiCount">5</span></b> · empfohlen 4–7</div>
+      <div class="multi-grid" id="qGamesMulti"></div>
+    </div>
+
+    <div class="question" data-step="6">
+      <h3>Wie willst du einladen?</h3>
+      <p class="help">3 Wege, alle möglich — du kannst auch mehrere kombinieren.</p>
+      <div class="invite-types" id="qInviteTypes">
+        <label class="invite-type selected" data-invite="minispiel">
+          <span class="invite-type__icon">🎮</span>
+          <div class="invite-type__body">
+            <div class="invite-type__title">Digitales Mini-Spiel</div>
+            <div class="invite-type__desc">WhatsApp-Link, Kind tippt, sieht Datum + Ort als „Schatz". Viral-Hit auf Pausenhof.</div>
+            <div class="invite-type__price">Kostenlos</div>
+          </div>
+        </label>
+        <label class="invite-type" data-invite="karte">
+          <span class="invite-type__icon">📨</span>
+          <div class="invite-type__body">
+            <div class="invite-type__title">Digitale Einladungskarte</div>
+            <div class="invite-type__desc">Klassische JPG-Karte mit Foto + Name + Datum. Per WhatsApp/Email schicken.</div>
+            <div class="invite-type__price">Kostenlos</div>
+          </div>
+        </label>
+        <label class="invite-type" data-invite="print">
+          <span class="invite-type__icon">🖨️</span>
+          <div class="invite-type__body">
+            <div class="invite-type__title">Druck-Karte (Print)</div>
+            <div class="invite-type__desc">8 vorgedruckte Karten mit Namen, ausschneiden + verteilen. Sieht persönlich aus.</div>
+            <div class="invite-type__price">Im Komplettpaket €14,90</div>
+          </div>
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="drawer__foot">
+    <button class="drawer__btn drawer__btn--sec" id="btnBack" onclick="stepBack()" style="display:none">Zurück</button>
+    <button class="drawer__btn drawer__btn--prim" id="btnNext" onclick="stepNext()">Weiter →</button>
+  </footer>
+</aside>
+
+<!-- Demo Badge -->
+<div class="demo-badge">
+  🧪 Prototyp v2 · Full Tour
+  <small>Schritt <span id="demoStage">1</span>/4 · klicken um durchzugehen</small>
+</div>
+
+<script>
+  // ===== MOTTOS DATA =====
+  const MOTTOS = [
+    {id:'piraten', emoji:'🏴‍☠️', name:'Piraten', accent:'#1E3A5F', accent2:'#FFD700', games:[
+      {emoji:'🪜',name:'Walk the Plank',desc:'Balance auf Brett'},
+      {emoji:'⚓',name:'Kanonenkugeln',desc:'Bälle in Eimer werfen'},
+      {emoji:'🏴‍☠️',name:'Schatz im Sand',desc:'Mit Sieb buddeln'},
+      {emoji:'🦜',name:'Papagei sagt',desc:'Simon-Says auf Piratisch'},
+      {emoji:'🚩',name:'Flaggenraub',desc:'Klassik mit Twist'},
+      {emoji:'🗡️',name:'Schwertkampf',desc:'Schaumstoff-Säbel'},
+      {emoji:'💎',name:'Edelsteinsuche',desc:'Im Wasserglas'},
+      {emoji:'🪢',name:'Knoten-Wettbewerb',desc:'Wer ist Captain?'},
+      {emoji:'🍾',name:'Flaschenpost',desc:'Geheimschrift entschlüsseln'},
+      {emoji:'🦈',name:'Hai-Tag',desc:'Verstecken-Variante'}
+    ], stations:['Captain\'s Cabin','Krähennest','Korallenriff','Sturmwarnung','DER SCHATZ']},
+    {id:'detektiv', emoji:'🕵️', name:'Detektiv', accent:'#3D4751', accent2:'#F4B400', badge:'Beliebt'},
+    {id:'einhorn', emoji:'🦄', name:'Einhorn', accent:'#E91E8C', accent2:'#FFCDF1'},
+    {id:'safari', emoji:'🦁', name:'Safari', accent:'#8D5524', accent2:'#FFE0B2'},
+    {id:'feuerwehr', emoji:'🚒', name:'Feuerwehr', accent:'#D32F2F', accent2:'#FFCDD2'},
+    {id:'weltraum', emoji:'🚀', name:'Weltraum', accent:'#1A237E', accent2:'#B3E5FC'},
+    {id:'prinzessin', emoji:'👑', name:'Prinzessin', accent:'#C51162', accent2:'#FCE4EC'},
+    {id:'meerjungfrau', emoji:'🧜‍♀️', name:'Meerjungfrau', accent:'#0288D1', accent2:'#B3E5FC'},
+    {id:'dino', emoji:'🦖', name:'Dinos', accent:'#388E3C', accent2:'#C8E6C9'},
+    {id:'pferde', emoji:'🐴', name:'Pferde', accent:'#8D6E63', accent2:'#D7CCC8', badge:'Neu'},
+    {id:'ritter', emoji:'⚔️', name:'Ritter', accent:'#607D8B', accent2:'#CFD8DC', badge:'Neu'},
+    {id:'baustelle', emoji:'🚧', name:'Baustelle', accent:'#FFA726', accent2:'#FFE0B2', badge:'Neu'}
+  ];
+
+  const ALL_GAMES_BY_AGE = {
+    '3-5': ['Walk the Plank','Schatz im Sand','Papagei sagt','Edelsteinsuche','Hai-Tag'],
+    '6-8': ['Walk the Plank','Kanonenkugeln','Schatz im Sand','Papagei sagt','Flaggenraub','Schwertkampf','Knoten-Wettbewerb'],
+    '9-12': ['Kanonenkugeln','Flaggenraub','Schwertkampf','Knoten-Wettbewerb','Flaschenpost','Hai-Tag','Edelsteinsuche']
+  };
+
+  // ===== STATE =====
+  const state = {
+    stage: 1,
+    motto: null,
+    age: null,
+    name: 'Lukas',
+    date: defaultDate(),
+    time: '14:00',
+    guests: 6,
+    location: 'zuhause',
+    games: [],
+    inviteType: 'minispiel',
+    step: 1
+  };
+
+  function defaultDate(){
+    const d = new Date();
+    const dow = d.getDay();
+    const untilSat = (6 - dow + 7) % 7 || 7;
+    d.setDate(d.getDate() + untilSat + 21);
+    return d.toISOString().slice(0,10);
+  }
+
+  // ===== RENDER MOTTO PICKER =====
+  function renderMottos(){
+    const grid = document.getElementById('mottosGrid');
+    grid.innerHTML = MOTTOS.map(m => `
+      <div class="motto-card" onclick="pickMotto('${m.id}')">
+        ${m.badge ? `<span class="motto-card__badge">${m.badge}</span>` : ''}
+        <span class="motto-card__emoji">${m.emoji}</span>
+        <div class="motto-card__name">${m.name}</div>
+        <span class="motto-card__ages">3–12 Jahre</span>
+      </div>
+    `).join('');
+  }
+
+  function pickMotto(id){
+    state.motto = MOTTOS.find(m => m.id === id);
+    document.getElementById('chosenMottoEmoji').textContent = state.motto.emoji;
+    document.getElementById('chosenMottoName').textContent = state.motto.name;
+    renderAges();
+    goStage(2);
+  }
+
+  // ===== RENDER AGE PICKER =====
+  function renderAges(){
+    const grid = document.getElementById('agesGrid');
+    const ageData = [
+      {key:'3-5', range:'3-5', title:'Kindergartenkinder', desc:'Kurze Spiele, viel Mitmachen, einfache Schatzsuche-Reime', features:['Tagesplan 14:00–16:30','5 einfache Spiele','3 Schatzsuche-Stationen']},
+      {key:'6-8', range:'6-8', title:'Vorschule + 1. Klasse', desc:'Aktiv, kompetitiv — perfekte Zielgruppe', features:['Tagesplan 14:00–17:00','7 Spiele zur Auswahl','5 Schatzsuche-Stationen']},
+      {key:'9-12', range:'9-12', title:'Grundschulkinder', desc:'Anspruchsvollere Rätsel, komplexere Spiele', features:['Tagesplan 14:00–18:00','9 Spiele zur Auswahl','7 Stationen + Geheimschrift']}
+    ];
+    grid.innerHTML = ageData.map(a => `
+      <div class="age-card" onclick="pickAge('${a.key}')">
+        <div class="age-card__range">${a.range}<small> Jahre</small></div>
+        <div class="age-card__title">${a.title}</div>
+        <div class="age-card__desc">${a.desc}</div>
+        <ul class="age-card__features">${a.features.map(f => `<li>${f}</li>`).join('')}</ul>
+      </div>
+    `).join('');
+  }
+
+  function pickAge(age){
+    state.age = age;
+    // Pre-set games based on motto + age
+    if(state.motto && state.motto.games){
+      const ageGameNames = ALL_GAMES_BY_AGE[age] || [];
+      state.games = state.motto.games.filter(g => ageGameNames.includes(g.name)).slice(0,5).map(g => g.name);
+    } else {
+      state.games = ['Spiel 1','Spiel 2','Spiel 3','Spiel 4','Spiel 5'];
+    }
+    renderPlanPreview();
+    goStage(3);
+  }
+
+  // ===== RENDER PLAN PREVIEW (Stage 3) =====
+  function renderPlanPreview(){
+    document.getElementById('planBadgeEmoji').textContent = state.motto.emoji;
+    document.getElementById('planBadgeName').textContent = state.motto.name;
+    document.getElementById('planBadgeAge').textContent = state.age + ' Jahre';
+    document.getElementById('planMottoName').textContent = state.motto.name;
+
+    const body = document.getElementById('planBody');
+    const gamesData = (state.motto.games || []).filter(g => state.games.includes(g.name));
+    const stations = state.motto.stations || ['Station 1','Station 2','Station 3','Station 4','DER SCHATZ'];
+
+    // Timeline based on age
+    const timeline = buildTimeline(state.age, state.motto.name);
+    const timelineHtml = timeline.map(row => `<div class="timeline__row"><div class="timeline__time">${row.time}</div><div class="timeline__what"><em>${row.title}</em>${row.desc ? '<br>'+row.desc : ''}</div></div>`).join('');
+
+    body.innerHTML = `
+      <article class="mod">
+        <header class="mod__head">
+          <span class="mod__icon">🗓️</span>
+          <h3 class="mod__title">Tagesplan · ${timeline[0].time}–${timeline[timeline.length-1].time.replace(':00',':45')}</h3>
+        </header>
+        <div class="timeline">${timelineHtml}</div>
+      </article>
+
+      <article class="mod">
+        <header class="mod__head">
+          <span class="mod__icon">🎮</span>
+          <h3 class="mod__title">Spiele · <span id="planGamesCount">${state.games.length}</span> ausgewählt</h3>
+          <button class="mod__edit" onclick="openWizard(5)">✏️ Spiele tauschen</button>
+        </header>
+        <div class="games-grid">${gamesData.map(g => `<div class="game-tag"><div class="game-tag__name">${g.emoji} ${g.name}</div><div class="game-tag__desc">${g.desc}</div></div>`).join('')}</div>
+      </article>
+
+      <article class="mod">
+        <header class="mod__head">
+          <span class="mod__icon">🗺️</span>
+          <h3 class="mod__title">Schatzsuche · ${stations.length} Stationen</h3>
+        </header>
+        <div class="schatz">
+          <ul class="schatz__list">${stations.map((s,i) => `<li><div class="schatz__num">${i+1}</div><div><div class="schatz__name">${i === stations.length-1 ? '🏴‍☠️ '+s : s}</div></div></li>`).join('')}</ul>
+        </div>
+      </article>
+
+      <article class="mod">
+        <header class="mod__head">
+          <span class="mod__icon">🛒</span>
+          <h3 class="mod__title">Einkaufsliste · für <span id="shopGuests">${state.guests}</span> Gäste</h3>
+        </header>
+        <div class="shopping">
+          <div class="shopping__col"><h4>Discounter</h4><ul><li><b id="shopCroiss">${state.guests}</b>× Mini-Croissants</li><li><b>${(state.guests*0.25).toFixed(1)} l</b> Saftschorle</li><li>Schoko-Münzen <b>200g</b></li><li>Kuchen-Zutaten</li></ul></div>
+          <div class="shopping__col"><h4>Drogerie</h4><ul><li><b id="shopAcc">${state.guests+2}</b>× Mitgebsel-Tüten</li><li><b>${state.guests+2}</b>× Kostüm-Accessoire</li><li>Kerzen</li></ul></div>
+          <div class="shopping__col"><h4>Bastelladen</h4><ul><li><b>1</b>× Schatzkiste</li><li>Karton für Karten</li></ul></div>
+        </div>
+      </article>
+
+      <article class="mod">
+        <header class="mod__head">
+          <span class="mod__icon">💌</span>
+          <h3 class="mod__title">Einladung · <span id="inviteTypeLabel">Mini-Spiel</span></h3>
+          <button class="mod__edit" onclick="openWizard(6)">✏️ Typ wechseln</button>
+        </header>
+        <div style="background:${state.motto.accent || '#1E3A5F'};color:#fff;padding:18px;border-radius:12px;position:relative;font-size:13px;line-height:1.55">
+          Hey, kleiner ${state.motto.name === 'Piraten' ? 'Pirat' : state.motto.name === 'Detektiv' ? 'Detektiv' : 'Held'}! ${state.motto.emoji}<br><br>
+          <span style="color:${state.motto.accent2 || '#FFD700'};font-weight:800" id="inviteName">${state.name}</span> wird ${state.age === '3-5' ? '4-5' : state.age === '6-8' ? '7-8' : '10'} und feiert ${state.motto.name}-Geburtstag — du bist eingeladen!<br><br>
+          🗓️ <b id="inviteDate">${formatDateLong(state.date)}</b> ab <b id="inviteTime">${state.time}</b> Uhr<br>
+          📍 Bei uns zuhause
+        </div>
+      </article>
+    `;
+
+    // Update header
+    document.getElementById('planName1').textContent = state.name;
+    document.getElementById('planDate1').textContent = formatDateShort(state.date) + ', ' + state.time + ' Uhr';
+    document.getElementById('planGuests1').textContent = state.guests;
+    document.getElementById('planLocation1').textContent = locationLabel(state.location);
+
+    // Update previews on Stage 4
+    document.getElementById('pvPlanName').textContent = state.name;
+    document.getElementById('pvPlanMotto').textContent = state.motto.name;
+    document.getElementById('pvPartyName').textContent = state.name;
+  }
+
+  function buildTimeline(age, mottoName){
+    const startHour = parseInt(state.time.split(':')[0]);
+    const startMin = parseInt(state.time.split(':')[1]);
+    let t = startHour * 60 + startMin;
+    function fmt(min){ return String(Math.floor(min/60)).padStart(2,'0') + ':' + String(min%60).padStart(2,'0') }
+    const isShort = age === '3-5';
+    const items = [
+      {min:0, title:'Ankommen + Kostüm', desc:'Schminke, Fotos, Aufwärm-Spiel'},
+      {min:20, title:'Crew-Versammlung', desc:`Captain ${state.name} begrüßt + ${mottoName}-Eid`},
+      {min:35, title:`Spiel: ${(state.motto.games || [{name:'Spiel 1'}])[0].name}`, desc:'15 Min · Material steht bereit'},
+      {min:60, title:'🗺️ Schatzsuche', desc:isShort ? '3 Stationen, ~30 Min' : '5 Stationen, ~45 Min'},
+      {min:isShort ? 90 : 105, title:'Kuchen + Kaffee', desc:'Eltern-Pause'},
+      ...(isShort ? [] : [{min:135, title:`Spiel: ${(state.motto.games || [{name:'Spiel 2'}])[1] ? (state.motto.games || [{name:'Spiel 2'}])[1].name : 'Spiel 2'}`, desc:'15 Min'}]),
+      {min:isShort ? 150 : 160, title:'Mitgebsel + Verabschiedung', desc:'Urkunden + Schatzbeutel'}
+    ];
+    return items.map(i => ({time: fmt(t + i.min), title: i.title, desc: i.desc}));
+  }
+
+  function formatDateShort(s){ const d = new Date(s); return d.toLocaleDateString('de-DE',{weekday:'short', day:'2-digit', month:'2-digit', year:'numeric'}); }
+  function formatDateLong(s){ const d = new Date(s); return d.toLocaleDateString('de-DE',{weekday:'long', day:'numeric', month:'long'}); }
+  function locationLabel(l){ return {zuhause:'zuhause', drinnen:'drinnen', park:'im Park', halle:'in der Halle'}[l] || l; }
+
+  // ===== STAGE NAVIGATION =====
+  function goStage(n){
+    document.querySelectorAll('.stage').forEach(s => s.classList.remove('active'));
+    document.getElementById('stage'+n).classList.add('active');
+    state.stage = n;
+    // Update dots
+    for(let i=1; i<=4; i++){
+      const dot = document.getElementById('navDot'+i);
+      dot.classList.remove('done','active');
+      if(i < n) dot.classList.add('done');
+      else if(i === n) dot.classList.add('active');
+    }
+    document.getElementById('navBack').style.display = n > 1 ? 'block' : 'none';
+    document.getElementById('demoStage').textContent = n;
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  function goBack(){
+    if(state.stage > 1) goStage(state.stage - 1);
+  }
+
+  function finishPreview(){
+    goStage(4);
+  }
+
+  // ===== WIZARD =====
+  function openWizard(jumpTo){
+    document.getElementById('drawer').classList.add('open');
+    document.getElementById('overlay').classList.add('show');
+    document.body.style.overflow = 'hidden';
+    setStep(jumpTo || 1);
+    // Pre-fill inputs
+    document.getElementById('qName').value = state.name === 'Lukas' ? '' : state.name;
+    document.getElementById('qDate').value = state.date;
+    document.getElementById('qTime').value = state.time;
+    document.getElementById('qGuests').value = state.guests;
+    document.getElementById('qGuestsLabel').textContent = state.guests;
+    renderGamesMulti();
+  }
+
+  function closeWizard(){
+    document.getElementById('drawer').classList.remove('open');
+    document.getElementById('overlay').classList.remove('show');
+    document.body.style.overflow = '';
+    renderPlanPreview();
+  }
+
+  function setStep(n){
+    state.step = n;
+    document.getElementById('stepNum').textContent = n;
+    document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
+    const target = document.querySelector(`.question[data-step="${n}"]`);
+    if(target) target.classList.add('active');
+    for(let i=1; i<=6; i++){
+      const el = document.getElementById('p'+i);
+      el.classList.remove('done','active');
+      if(i < n) el.classList.add('done');
+      else if(i === n) el.classList.add('active');
+    }
+    document.getElementById('btnBack').style.display = n > 1 ? 'inline-block' : 'none';
+    document.getElementById('btnNext').textContent = n === 6 ? '✓ Plan ansehen' : 'Weiter →';
+  }
+
+  function stepNext(){
+    if(state.step < 6) setStep(state.step + 1);
+    else {
+      closeWizard();
+      setTimeout(() => goStage(4), 300);
+    }
+  }
+  function stepBack(){
+    if(state.step > 1) setStep(state.step - 1);
+  }
+
+  function liveUpdateName(){
+    const v = document.getElementById('qName').value.trim() || 'Lukas';
+    state.name = v;
+    document.getElementById('planName1').textContent = v;
+    const invName = document.getElementById('inviteName');
+    if(invName) invName.textContent = v;
+  }
+  function liveUpdateDate(){
+    const v = document.getElementById('qDate').value;
+    if(!v) return;
+    state.date = v;
+    document.getElementById('planDate1').textContent = formatDateShort(v) + ', ' + state.time + ' Uhr';
+    const invDate = document.getElementById('inviteDate');
+    if(invDate) invDate.textContent = formatDateLong(v);
+  }
+  function liveUpdateTime(){
+    state.time = document.getElementById('qTime').value;
+    document.getElementById('planDate1').textContent = formatDateShort(state.date) + ', ' + state.time + ' Uhr';
+    const invTime = document.getElementById('inviteTime');
+    if(invTime) invTime.textContent = state.time;
+  }
+  function liveUpdateGuests(){
+    const v = +document.getElementById('qGuests').value;
+    state.guests = v;
+    document.getElementById('qGuestsLabel').textContent = v;
+    document.getElementById('planGuests1').textContent = v;
+    const shopG = document.getElementById('shopGuests');
+    if(shopG) shopG.textContent = v;
+    const shopC = document.getElementById('shopCroiss');
+    if(shopC) shopC.textContent = v;
+    const shopA = document.getElementById('shopAcc');
+    if(shopA) shopA.textContent = v+2;
+  }
+  document.querySelectorAll('#qLocationOpts .option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      document.querySelectorAll('#qLocationOpts .option').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      state.location = opt.dataset.loc;
+      document.getElementById('planLocation1').textContent = locationLabel(state.location);
+    });
+  });
+
+  // ===== Spiele Multi =====
+  function renderGamesMulti(){
+    const grid = document.getElementById('qGamesMulti');
+    if(!state.motto || !state.motto.games){ grid.innerHTML = '<p style="color:#999">(Spiele werden nach Motto-Auswahl geladen)</p>'; return; }
+    grid.innerHTML = state.motto.games.map(g => {
+      const sel = state.games.includes(g.name);
+      return `<label class="multi-item ${sel ? 'selected' : ''}" data-game="${g.name}">
+        <span class="multi-item__check">${sel ? '✓' : ''}</span>
+        <span class="multi-item__emoji">${g.emoji}</span>
+        <span class="multi-item__name">${g.name}</span>
+      </label>`;
+    }).join('');
+    grid.querySelectorAll('.multi-item').forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        const name = item.dataset.game;
+        if(state.games.includes(name)) state.games = state.games.filter(n => n !== name);
+        else state.games.push(name);
+        renderGamesMulti();
+        document.getElementById('multiCount').textContent = state.games.length;
+      });
+    });
+    document.getElementById('multiCount').textContent = state.games.length;
+  }
+
+  // ===== Invite Type =====
+  document.querySelectorAll('#qInviteTypes .invite-type').forEach(t => {
+    t.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelectorAll('#qInviteTypes .invite-type').forEach(o => o.classList.remove('selected'));
+      t.classList.add('selected');
+      state.inviteType = t.dataset.invite;
+      const label = {minispiel:'Mini-Spiel', karte:'Digitale Karte', print:'Druck-Karten'}[state.inviteType];
+      const el = document.getElementById('inviteTypeLabel');
+      if(el) el.textContent = label;
+      // Update preview badge
+      const pvBadge = document.getElementById('pvInviteBadge');
+      if(pvBadge) {
+        pvBadge.textContent = state.inviteType === 'print' ? 'Premium' : 'Frei';
+        pvBadge.className = 'preview__badge' + (state.inviteType === 'print' ? ' premium' : '');
+      }
+    });
+  });
+
+  // ===== Sticky scroll =====
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const sc = window.scrollY;
+    const cta = document.getElementById('stickyCta');
+    if(cta){
+      if(sc > 300 && sc > lastScroll) cta.classList.add('hidden');
+      else cta.classList.remove('hidden');
+    }
+    lastScroll = sc;
+  });
+
+  // ===== Init =====
+  renderMottos();
+</script>
+
+</body>
+</html>
