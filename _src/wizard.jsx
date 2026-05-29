@@ -218,42 +218,9 @@ function Stage2Age({ motto, onPick }) {
   );
 }
 
-// === STAGE 3: BRIDGE TO PLANNER ===
-function Stage3Bridge({ motto, age, onProceed }) {
-  const wt = motto ? (TH_H.getWizardTheme ? TH_H.getWizardTheme(motto.slug) : null) : null;
-  const accent = (wt && wt.accent) || (motto && motto.color) || '#FF6F00';
-
-  useEffect(() => {
-    // Auto-redirect nach 2 Sek
-    const timer = setTimeout(onProceed, 2000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  return (
-    <div style={{maxWidth:680, margin:'0 auto', padding:'80px 20px', textAlign:'center'}}>
-      <div style={{fontSize:64, marginBottom:18, animation:'pulse 1.5s infinite'}}>{motto?.emoji}</div>
-      <h1 style={{
-        fontFamily:"'Fraunces', Georgia, serif", fontSize:'clamp(26px,4vw,36px)',
-        fontWeight:800, margin:'0 0 12px'
-      }}>
-        Plan für <span style={{color:accent}}>{motto?.label}</span> · {age?.range} Jahre wird vorbereitet…
-      </h1>
-      <p style={{color:'#666', fontSize:16, margin:'12px 0 28px'}}>
-        Wir holen jetzt die altersgerechten Spiele, Schatzsuche und Einkaufsliste aus dem Planer. Einen Moment.
-      </p>
-      <div style={{
-        display:'inline-block', background:accent, color:'#fff',
-        padding:'14px 28px', borderRadius:999, fontWeight:800, fontSize:14,
-        boxShadow:`0 4px 12px ${accent}40`, cursor:'pointer'
-      }} onClick={onProceed}>
-        Plan jetzt sofort öffnen →
-      </div>
-      <p style={{color:'#999', fontSize:12, marginTop:18}}>
-        Bringt dich auf den machsleicht-Planer mit Motto + Alter schon ausgewählt.
-      </p>
-    </div>
-  );
-}
+// (Stage 3 ENTFERNT — direkter Redirect aus Stage 2 nach Alter-Klick.
+//  Auto-Redirect via setTimeout war in manchen Browsers/Sandboxes unzuverlaessig,
+//  jetzt User-Geste-getriggerter location.assign() statt.)
 
 // === MAIN APP ===
 function WizardApp() {
@@ -291,7 +258,7 @@ function WizardApp() {
 
   function pickAge(a) {
     setAge(a);
-    // BirthdayProject seeden
+    // BirthdayProject seeden (fuer Cross-Tool-Persistenz)
     if (BP && BP.isAvailable() && motto) {
       try {
         BP.create({
@@ -306,19 +273,27 @@ function WizardApp() {
         });
       } catch (e) {}
     }
-    setStage(3);
-    window.scrollTo({top:0, behavior:'smooth'});
+    // FIX 29.05.2026: Planer liest 'ml_age' aus localStorage, nicht aus URL-Param.
+    // Direkt setzen bevor Redirect, damit Planer auf korrektem Alter startet.
+    try {
+      if (motto && motto.slug && !motto.slug.startsWith('__custom_')) {
+        localStorage.setItem('ml_mottoId', JSON.stringify(motto.slug));
+      }
+      localStorage.setItem('ml_age', JSON.stringify(a.plannerAge));
+    } catch (e) {}
+    // Direkter Redirect — kein Stage 3 Zwischenschritt mehr (Auto-Redirect war unzuverlaessig).
+    proceedToPlanner(motto, a);
   }
 
-  function proceedToPlanner() {
-    // Redirect zum bestehenden Planer mit URL-Params
+  function proceedToPlanner(m, a) {
     const params = new URLSearchParams();
-    if (motto && motto.slug && !motto.slug.startsWith('__custom_')) {
-      params.set('motto', motto.slug);
+    if (m && m.slug && !m.slug.startsWith('__custom_')) {
+      params.set('motto', m.slug);
     }
-    if (age) params.set('age', String(age.plannerAge));
+    if (a) params.set('age', String(a.plannerAge));
     const url = '/kindergeburtstag?' + params.toString();
-    window.location.href = url;
+    // location.assign statt href= — funktioniert zuverlaessiger bei Sandboxes
+    window.location.assign(url);
   }
 
   function brandClick() {
@@ -343,7 +318,6 @@ function WizardApp() {
       <TopNav stage={stage} onBrandClick={brandClick} onLaterClick={saveLaterClick}/>
       {stage === 1 && <Stage1Motto onPick={pickMotto}/>}
       {stage === 2 && <Stage2Age motto={motto} onPick={pickAge}/>}
-      {stage === 3 && <Stage3Bridge motto={motto} age={age} onProceed={proceedToPlanner}/>}
       {/* Demo-Badge (entfernen wenn deployed) */}
       <div style={{
         position:'fixed', bottom:20, left:20, background:'#1E3A5F', color:'#fff',
