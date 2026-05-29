@@ -21,6 +21,32 @@
 - **js/index.js:** „9 Mottos" → 13, „81 Spiele" → 150+, „9 Themen" → 13, „9 Motto-Welten" → 13, „81 Spielideen" → 150+
 - **Echter Live-Stand:** 15 Mottos in Registry, 13 mit Planer+Schatzsuche live, 2 nur mit Einladung (superheld, prinzessin)
 
+### 🔄 PIVOT 29.05. abends — v5-Prototyp wird Live-Wizard (statt MVP-Stage-1+2)
+
+**Bolles Feedback nach Live-Test:** „aber das wollen wir doch gar nicht?! ich will doch in den planer einladungsflow" + „du hattest doch schon den geilen prototyp...was sollen wir damit?"
+
+**Erkenntnis:** Heute morgens hatte ich gedacht der v5-Prototyp sei nur Konzept-Mockup ohne echte Daten — und ein P7-1-MVP mit Stage 1+2 + Redirect zum bestehenden Planer gebaut. Das war Over-Engineering. v5 hat self-contained alle 6 Stages voll funktional.
+
+**Pivot:**
+- `_dev/prototypes/wizard-v5-live-aligned.html` → kopiert zu `wizard.html` (Repo-Root)
+- Title + Description + Canonical + Umami + Favicon ergänzt
+- Demo-Badge entfernt
+- noindex,nofollow bleibt bis Backend-Hooks aktiviert
+- Alter MVP (`/_src/wizard.jsx`, `/_src/build-wizard.sh`, `/js/wizard.js`) bleibt als Archiv im Repo, wird aber nicht mehr referenziert
+
+**v5 hat live (alles funktional):**
+- Stage 1+2: 15 Mottos × games × stations × personas × invite-templates
+- Stage 3: Plan-Preview-First + 5-Frage-Wizard + Custom-Timeline-Entries + Sub-Editoren
+- Stage 4: Einladung-Editor mit Foto-Upload + WhatsApp-Nummer + Live-Phone-Preview + 3 Typen (Mini-Spiel/Karte/Print)
+- Stage 5: Partyseite-Editor mit 4 Toggles + Browser-Preview + URL-Builder
+- Stage 6: Conversion + 3 Karten (Free / PDF light / Premium €14,90) + Magic-Link
+
+**Was NICHT live ist (Backend-Hooks kommen iterativ):**
+- Stripe-Real-Checkout (kommt mit Welle Alpha P5-4)
+- Email-Real-Versand für Magic-Link (Resend-Worker-Endpoint)
+- Server-Foto-Upload (heute: base64 in localStorage)
+- BirthdayProject-Cross-Tool-Sync (heute: eigener localStorage state)
+
 ### Welle Alpha A1 — Hero-Rewrite Funnel-Axiom v2
 - **Headline:** „kostenlos in 10 Minuten" → **„in 60 Sekunden statt 60 Minuten"** (Wettbewerbs-Argument vs Pinterest)
 - **Sub-Headline:** **„Plan, Einladung, Schatzsuche und Partyseite — in einem Flow"** (kommuniziert Wizard-Vision ohne Premium-Hype)
