@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Wizard-Prototyp — Piraten 6-8 · machsleicht</title>
+<!--
+  PROTOTYP — nicht für Produktion. Liegt unter _dev/prototypes/, ausgeschlossen via .netlifyignore.
+  Zweck: Demonstration der "Plan-Preview-First"-Wizard-Architektur für P7-1 Funnel-Refactor.
+  Konzept-Doc: _dev/handoff/2026-05-29-wizard-funnel-plan.md
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0;font-family:'Nunito',system-ui,sans-serif;background:#FFF8F0;color:#1A1A1A;line-height:1.5;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Lilita One',cursive;font-weight:400;letter-spacing:.5px;line-height:1.15;margin:0}
+
+  /* ===== Sticky CTA Bar ===== */
+  .sticky-cta{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#FF6F00,#E64A00);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;box-shadow:0 4px 16px rgba(255,111,0,.3);transition:transform .25s}
+  .sticky-cta.hidden{transform:translateY(-100%)}
+  .sticky-cta__label{font-weight:800;font-size:15px}
+  .sticky-cta__label small{display:block;font-weight:400;opacity:.9;font-size:12px;margin-top:2px}
+  .sticky-cta button{background:#fff;color:#E64A00;border:none;padding:11px 22px;border-radius:999px;font-family:'Nunito';font-weight:800;font-size:14px;cursor:pointer;transition:transform .15s;box-shadow:0 2px 8px rgba(0,0,0,.15);white-space:nowrap}
+  .sticky-cta button:hover{transform:scale(1.04)}
+  .sticky-cta button:active{transform:scale(.98)}
+
+  /* ===== Hero ===== */
+  .hero{padding:48px 20px 32px;text-align:center;max-width:920px;margin:0 auto}
+  .hero__badge{display:inline-block;background:#1E3A5F;color:#FFD700;padding:6px 14px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;margin-bottom:18px}
+  .hero h1{font-size:clamp(34px,5vw,52px);color:#1A1A1A}
+  .hero h1 em{font-style:normal;color:#FF6F00}
+  .hero p.lead{font-size:18px;color:#555;margin-top:14px;max-width:600px;margin-left:auto;margin-right:auto}
+
+  /* ===== Plan-Preview Container ===== */
+  .plan{max-width:920px;margin:0 auto;padding:0 20px 80px}
+  .plan__header{background:linear-gradient(135deg,#1E3A5F,#2A4D7C);color:#fff;padding:28px 26px;border-radius:18px 18px 0 0;display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:space-between}
+  .plan__header-text{flex:1;min-width:240px}
+  .plan__title{font-family:'Lilita One';font-size:26px;line-height:1.2}
+  .plan__title .plan__name{color:#FFD700;transition:all .3s}
+  .plan__meta{margin-top:6px;font-size:14px;opacity:.85;display:flex;flex-wrap:wrap;gap:6px 18px}
+  .plan__meta span::before{content:'· ';opacity:.5}
+  .plan__meta span:first-child::before{content:''}
+  .plan__edit-btn{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:10px 16px;border-radius:999px;font-family:'Nunito';font-weight:700;font-size:13px;cursor:pointer;transition:all .15s}
+  .plan__edit-btn:hover{background:rgba(255,255,255,.25)}
+
+  .plan__body{background:#fff;border-radius:0 0 18px 18px;padding:8px;box-shadow:0 12px 40px rgba(0,0,0,.06)}
+
+  /* ===== Module Cards ===== */
+  .mod{padding:22px 24px;border-bottom:1px solid #F0E6D8}
+  .mod:last-child{border-bottom:none}
+  .mod__head{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .mod__icon{font-size:22px}
+  .mod__title{font-family:'Lilita One';font-size:18px;flex:1}
+  .mod__edit{background:#FFF3E6;border:none;color:#E64A00;padding:6px 12px;border-radius:999px;font-family:'Nunito';font-weight:700;font-size:12px;cursor:pointer;display:flex;align-items:center;gap:4px;transition:all .15s}
+  .mod__edit:hover{background:#FFE0C2}
+  .mod__edit svg{width:13px;height:13px}
+
+  /* Tagesplan */
+  .timeline{position:relative;padding-left:24px}
+  .timeline::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:#FF6F00;border-radius:2px}
+  .timeline__row{position:relative;padding:8px 0 8px 14px;display:grid;grid-template-columns:60px 1fr;gap:14px;align-items:start}
+  .timeline__row::before{content:'';position:absolute;left:-19px;top:14px;width:10px;height:10px;border-radius:50%;background:#FF6F00;box-shadow:0 0 0 3px #FFF3E6}
+  .timeline__time{font-weight:800;color:#1E3A5F;font-size:14px}
+  .timeline__what{font-size:14px;color:#333}
+  .timeline__what em{color:#1E3A5F;font-weight:700;font-style:normal}
+
+  /* Spiele */
+  .games{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+  .game{background:#FFF8F0;border:1px solid #F0E6D8;border-radius:10px;padding:12px;font-size:13px;line-height:1.3}
+  .game__name{font-weight:800;display:flex;align-items:center;gap:6px;color:#1E3A5F}
+  .game__desc{color:#666;margin-top:4px;font-size:12px}
+
+  /* Schatzsuche */
+  .schatz{background:linear-gradient(135deg,#FFF8F0,#FFEDD2);padding:18px;border-radius:12px;border:1px dashed #FF6F00}
+  .schatz__list{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+  .schatz__list li{display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:start;font-size:14px}
+  .schatz__num{width:28px;height:28px;background:#FF6F00;color:#fff;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px}
+  .schatz__name{font-weight:700;color:#1A1A1A}
+  .schatz__hint{color:#666;font-size:12px;margin-top:1px}
+
+  /* Einkaufsliste */
+  .shopping{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+  .shopping__col{}
+  .shopping__col h4{font-family:'Nunito';font-weight:800;font-size:13px;text-transform:uppercase;color:#1E3A5F;margin:0 0 8px;letter-spacing:.5px}
+  .shopping__col ul{margin:0;padding-left:18px;font-size:13px;color:#333}
+  .shopping__col li{padding:2px 0}
+  .shopping__col li b{color:#FF6F00;font-weight:800}
+
+  /* Einladung */
+  .invite{background:#1E3A5F;color:#fff;padding:20px;border-radius:12px;font-family:'Nunito';font-size:14px;line-height:1.55;position:relative}
+  .invite::before{content:'🏴‍☠️';position:absolute;top:-12px;left:18px;background:#fff;padding:2px 6px;border-radius:6px;font-size:18px}
+  .invite__name{color:#FFD700;font-weight:800}
+
+  /* ===== Conversion Block ===== */
+  .checkout{max-width:920px;margin:48px auto 0;padding:0 20px}
+  .checkout__title{text-align:center;font-family:'Lilita One';font-size:26px;margin-bottom:8px}
+  .checkout__sub{text-align:center;color:#666;margin:0 0 24px}
+  .checkout__cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .checkout-card{background:#fff;border:2px solid #F0E6D8;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px;position:relative;transition:transform .15s,box-shadow .15s}
+  .checkout-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
+  .checkout-card--premium{border-color:#FF6F00;background:linear-gradient(180deg,#FFF8F0,#fff)}
+  .checkout-card--premium::after{content:'Bestseller';position:absolute;top:-12px;right:14px;background:#FF6F00;color:#fff;padding:4px 12px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase}
+  .checkout-card__icon{font-size:32px;line-height:1}
+  .checkout-card__title{font-family:'Lilita One';font-size:18px}
+  .checkout-card__price{font-family:'Lilita One';font-size:24px;color:#FF6F00}
+  .checkout-card--free .checkout-card__price{color:#1E3A5F}
+  .checkout-card__features{margin:6px 0 0;padding-left:18px;font-size:13px;color:#444;flex:1}
+  .checkout-card__features li{padding:2px 0}
+  .checkout-card__btn{margin-top:14px;background:#1E3A5F;color:#fff;border:none;padding:13px;border-radius:999px;font-family:'Nunito';font-weight:800;font-size:14px;cursor:pointer;transition:transform .15s}
+  .checkout-card--premium .checkout-card__btn{background:#FF6F00}
+  .checkout-card__btn:hover{transform:scale(1.02)}
+
+  /* Partyseite Hook */
+  .partyseite-hook{max-width:920px;margin:36px auto 80px;padding:24px 20px;text-align:center;background:#fff;border:1px dashed #C8B9A6;border-radius:14px}
+  .partyseite-hook h3{font-family:'Lilita One';font-size:18px;margin-bottom:6px}
+  .partyseite-hook p{color:#666;font-size:14px;margin:0 0 14px}
+  .partyseite-hook a{display:inline-block;color:#1E3A5F;font-weight:800;text-decoration:none;border-bottom:2px solid #1E3A5F;padding-bottom:1px}
+
+  /* ===== Wizard Drawer ===== */
+  .drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:#fff;box-shadow:-12px 0 40px rgba(0,0,0,.15);transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:100;display:flex;flex-direction:column}
+  .drawer.open{transform:translateX(0)}
+  .drawer__head{padding:22px 24px 12px;border-bottom:1px solid #F0E6D8;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .drawer__step{font-family:'Lilita One';font-size:14px;color:#FF6F00;letter-spacing:.5px}
+  .drawer__close{background:none;border:none;font-size:28px;color:#999;cursor:pointer;line-height:1;padding:0;width:32px;height:32px;display:grid;place-items:center;border-radius:8px;transition:background .15s}
+  .drawer__close:hover{background:#FFF3E6;color:#FF6F00}
+  .drawer__progress{padding:6px 24px 0;display:flex;gap:6px}
+  .drawer__progress span{flex:1;height:4px;background:#F0E6D8;border-radius:2px;overflow:hidden}
+  .drawer__progress span.done{background:#FF6F00}
+  .drawer__progress span.active{background:linear-gradient(90deg,#FF6F00 50%,#F0E6D8 50%)}
+
+  .drawer__body{flex:1;overflow-y:auto;padding:30px 28px}
+  .question{display:none}
+  .question.active{display:block;animation:fadeIn .3s ease-out}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  .question h3{font-family:'Lilita One';font-size:24px;line-height:1.25;margin-bottom:6px}
+  .question p.help{color:#666;font-size:14px;margin:0 0 24px}
+  .question input[type=text],.question input[type=date]{width:100%;padding:16px 18px;font-family:'Nunito';font-size:18px;font-weight:600;border:2px solid #F0E6D8;border-radius:12px;background:#FFF8F0;color:#1A1A1A;outline:none;transition:border-color .15s}
+  .question input:focus{border-color:#FF6F00;background:#fff}
+  .question .slider-wrap{padding:8px 0}
+  .question .slider-value{font-family:'Lilita One';font-size:48px;color:#FF6F00;text-align:center;margin-bottom:8px}
+  .question input[type=range]{width:100%;accent-color:#FF6F00;height:6px}
+  .question .slider-labels{display:flex;justify-content:space-between;font-size:12px;color:#999;margin-top:4px}
+  .question .options{display:grid;gap:10px}
+  .option{display:flex;align-items:center;gap:12px;padding:14px 16px;background:#FFF8F0;border:2px solid #F0E6D8;border-radius:12px;cursor:pointer;transition:all .15s}
+  .option:hover{border-color:#FF6F00;background:#fff}
+  .option.selected{border-color:#FF6F00;background:#FFF3E6}
+  .option__icon{font-size:24px}
+  .option__label{font-weight:700;flex:1}
+  .option__hint{display:block;font-weight:400;font-size:12px;color:#666;margin-top:2px}
+
+  .drawer__foot{padding:20px 28px;border-top:1px solid #F0E6D8;display:flex;gap:10px}
+  .drawer__btn{flex:1;border:none;padding:14px;border-radius:999px;font-family:'Nunito';font-weight:800;font-size:14px;cursor:pointer;transition:transform .15s}
+  .drawer__btn--prim{background:#FF6F00;color:#fff;flex:2}
+  .drawer__btn--prim:hover{transform:scale(1.02)}
+  .drawer__btn--sec{background:#F0E6D8;color:#666}
+  .drawer__btn--sec:hover{background:#E6D4BD}
+
+  /* Overlay */
+  .overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .25s;z-index:99}
+  .overlay.show{opacity:1;pointer-events:auto}
+
+  /* Demo-Badge */
+  .demo-badge{position:fixed;bottom:20px;left:20px;background:#1E3A5F;color:#fff;padding:10px 16px;border-radius:999px;font-size:12px;font-weight:700;z-index:200;box-shadow:0 4px 12px rgba(0,0,0,.2);max-width:300px}
+  .demo-badge small{display:block;font-weight:400;opacity:.8;margin-top:2px}
+
+  /* Sub-Editor Expansion */
+  .mod__editor{display:none;margin-top:14px;padding:14px;background:#FFF8F0;border-radius:10px;font-size:13px;color:#555}
+  .mod__editor.open{display:block;animation:fadeIn .2s}
+  .mod__editor h5{margin:0 0 8px;font-family:'Nunito';font-weight:800;font-size:12px;text-transform:uppercase;color:#1E3A5F;letter-spacing:.5px}
+  .mod__editor .game-toggle{display:flex;align-items:center;gap:8px;padding:6px 0}
+  .mod__editor .game-toggle input{accent-color:#FF6F00;width:16px;height:16px}
+
+  /* Mobile */
+  @media (max-width:680px){
+    .sticky-cta{padding:12px 16px;gap:10px}
+    .sticky-cta__label{font-size:13px}
+    .sticky-cta__label small{display:none}
+    .sticky-cta button{padding:10px 16px;font-size:13px}
+    .hero{padding:32px 18px 24px}
+    .plan__header{padding:22px 20px}
+    .mod{padding:18px 18px}
+    .drawer{width:100%;border-radius:24px 24px 0 0;height:88vh;top:auto;bottom:0;transform:translateY(100%);box-shadow:0 -12px 40px rgba(0,0,0,.2)}
+    .drawer.open{transform:translateY(0)}
+    .demo-badge{bottom:10px;left:10px;right:10px;max-width:none;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== STICKY CTA ===== -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta__label">
+    Plan für DEIN Kind anpassen
+    <small>30 Sekunden · 4 Fragen · kein Login</small>
+  </div>
+  <button onclick="openWizard()">Anpassen →</button>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <span class="hero__badge">🏴‍☠️ Piraten · 6–8 Jahre</span>
+  <h1>So sieht ein <em>fertiger Piraten-Plan</em> aus — schau dir an, was du gleich bekommst</h1>
+  <p class="lead">Komplett ausgearbeitet mit Tagesplan, Spielen, Schatzsuche, Einkaufsliste und Einladung. Personalisierung dauert 30 Sekunden — der Plan unten ist schon befüllt mit sinnvollen Standard-Werten.</p>
+</section>
+
+<!-- ===== PLAN PREVIEW ===== -->
+<div class="plan">
+  <header class="plan__header">
+    <div class="plan__header-text">
+      <h2 class="plan__title"><span class="plan__name" id="planName">Lukas</span>' Piraten-Geburtstag</h2>
+      <div class="plan__meta">
+        <span id="planDate">Sa, 21.06.2026</span>
+        <span><span id="planGuests">6</span> Gäste</span>
+        <span id="planLocation">zuhause</span>
+      </div>
+    </div>
+    <button class="plan__edit-btn" onclick="openWizard()">✏️ Plan anpassen</button>
+  </header>
+
+  <div class="plan__body">
+
+    <!-- Tagesplan -->
+    <article class="mod">
+      <header class="mod__head">
+        <span class="mod__icon">🗓️</span>
+        <h3 class="mod__title">Tagesplan · 14:00–17:00</h3>
+      </header>
+      <div class="timeline">
+        <div class="timeline__row"><div class="timeline__time">14:00</div><div class="timeline__what"><em>Ankommen + Piraten-Schminke</em><br>Tattoos kleben, Augenklappen verteilen, Fotos machen</div></div>
+        <div class="timeline__row"><div class="timeline__time">14:20</div><div class="timeline__what"><em>Crew-Versammlung</em><br>Captain <span class="plan__name" id="planName2">Lukas</span> begrüßt seine Crew + Piraten-Eid sprechen</div></div>
+        <div class="timeline__row"><div class="timeline__time">14:35</div><div class="timeline__what"><em>Spiel: Walk the Plank</em><br>Balance-Spiel auf Holzleiste</div></div>
+        <div class="timeline__row"><div class="timeline__time">15:00</div><div class="timeline__what"><em>🗺️ Schatzsuche</em><br>5 Stationen im Garten, ~45 Min</div></div>
+        <div class="timeline__row"><div class="timeline__time">15:45</div><div class="timeline__what"><em>Kuchen + Kaffee-Pause</em><br>Schoko-Kuchen mit Schatzkiste-Deko</div></div>
+        <div class="timeline__row"><div class="timeline__time">16:15</div><div class="timeline__what"><em>Spiel: Kanonenkugeln</em><br>Bälle in Eimer werfen, Team gegen Team</div></div>
+        <div class="timeline__row"><div class="timeline__time">16:40</div><div class="timeline__what"><em>Mitgebsel + Verabschiedung</em><br>Urkunden + Schatzbeutel verteilen</div></div>
+      </div>
+    </article>
+
+    <!-- Spiele -->
+    <article class="mod">
+      <header class="mod__head">
+        <span class="mod__icon">🎮</span>
+        <h3 class="mod__title">Spiele · 5 vorausgewählt</h3>
+        <button class="mod__edit" onclick="toggleEditor('games')">✏️ Anpassen</button>
+      </header>
+      <div class="games" id="gamesList">
+        <div class="game"><div class="game__name">🪜 Walk the Plank</div><div class="game__desc">Balance auf Brett, wer fällt ist „über Bord"</div></div>
+        <div class="game"><div class="game__name">⚓ Kanonenkugeln</div><div class="game__desc">Bälle in Eimer, Team A vs B</div></div>
+        <div class="game"><div class="game__name">🏴‍☠️ Schatz im Sand</div><div class="game__desc">Mit Sieb buddeln, wer findet Münzen?</div></div>
+        <div class="game"><div class="game__name">🦜 Papagei sagt</div><div class="game__desc">Simon-Says auf Piratisch</div></div>
+        <div class="game"><div class="game__name">🚩 Flaggenraub</div><div class="game__desc">Klassik, mit Piraten-Twist</div></div>
+      </div>
+      <div class="mod__editor" id="editor-games">
+        <h5>Weitere 7 Spiele zur Auswahl</h5>
+        <label class="game-toggle"><input type="checkbox"> 🗡️ Schwertkampf mit Schaumstoff-Säbeln</label>
+        <label class="game-toggle"><input type="checkbox"> 💎 Edelsteinsuche im Wasserglas</label>
+        <label class="game-toggle"><input type="checkbox"> 🪢 Knoten-Knot-Wettbewerb</label>
+        <label class="game-toggle"><input type="checkbox"> 🎭 Pirat verkleidet sich (Wer bin ich?)</label>
+        <label class="game-toggle"><input type="checkbox"> 🍾 Flaschenpost-Geheimschrift</label>
+        <label class="game-toggle"><input type="checkbox"> 🦈 Hai-Tag (Verstecken-Variante)</label>
+        <label class="game-toggle"><input type="checkbox"> 🪙 Münzenlauf (Löffel + Schoko-Taler)</label>
+      </div>
+    </article>
+
+    <!-- Schatzsuche -->
+    <article class="mod">
+      <header class="mod__head">
+        <span class="mod__icon">🗺️</span>
+        <h3 class="mod__title">Schatzsuche · 5 Stationen</h3>
+        <button class="mod__edit" onclick="toggleEditor('schatz')">✏️ Anpassen</button>
+      </header>
+      <div class="schatz">
+        <ul class="schatz__list">
+          <li><div class="schatz__num">1</div><div><div class="schatz__name">„Captain's Cabin"</div><div class="schatz__hint">Hinweis-Karte im Briefkasten — führt zur Schaukel</div></div></li>
+          <li><div class="schatz__num">2</div><div><div class="schatz__name">„Krähennest"</div><div class="schatz__hint">Schaukel-Sitz hat Rätsel — Antwort: SANDKASTEN</div></div></li>
+          <li><div class="schatz__num">3</div><div><div class="schatz__name">„Korallenriff"</div><div class="schatz__hint">Sandkasten: vergrabener Beutel mit Karte zur Hecke</div></div></li>
+          <li><div class="schatz__num">4</div><div><div class="schatz__name">„Sturmwarnung"</div><div class="schatz__hint">Geheimschrift entziffern — Lösung: GROßER BAUM</div></div></li>
+          <li><div class="schatz__num">5</div><div><div class="schatz__name">🏴‍☠️ DER SCHATZ</div><div class="schatz__hint">Unter dem Baum: Schatzkiste mit Münzen + Mitgebsel</div></div></li>
+        </ul>
+      </div>
+      <div class="mod__editor" id="editor-schatz">
+        <h5>Anpassen</h5>
+        <p>Stationen-Anzahl ändern, eigene Verstecke eintragen, Rätsel-Stil wählen (Reim/Zahl/Geheimschrift).</p>
+      </div>
+    </article>
+
+    <!-- Einkaufsliste -->
+    <article class="mod">
+      <header class="mod__head">
+        <span class="mod__icon">🛒</span>
+        <h3 class="mod__title">Einkaufsliste · für <span id="planGuests2">6</span> Gäste</h3>
+      </header>
+      <div class="shopping">
+        <div class="shopping__col">
+          <h4>Discounter</h4>
+          <ul>
+            <li><b>6</b>× Mini-Croissants</li>
+            <li><b>1,5 l</b> Saftschorle</li>
+            <li>Schoko-Münzen <b>200g</b></li>
+            <li>Kuchen-Zutaten (siehe Rezept)</li>
+            <li>Würstchen <b>10 St.</b></li>
+          </ul>
+        </div>
+        <div class="shopping__col">
+          <h4>Drogerie</h4>
+          <ul>
+            <li><b>8</b>× Augenklappen</li>
+            <li><b>8</b>× Pirat-Tattoos</li>
+            <li><b>8</b>× Mitgebsel-Tüten</li>
+            <li>Kerzen Geburtstagszahl</li>
+          </ul>
+        </div>
+        <div class="shopping__col">
+          <h4>Bastelladen</h4>
+          <ul>
+            <li><b>1</b>× Schatzkiste (Holz)</li>
+            <li>Karton für Karten</li>
+            <li>Goldene Folie</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- Einladung -->
+    <article class="mod">
+      <header class="mod__head">
+        <span class="mod__icon">💌</span>
+        <h3 class="mod__title">Einladung · Standard-Text</h3>
+        <button class="mod__edit" onclick="toggleEditor('invite')">✏️ Anpassen</button>
+      </header>
+      <div class="invite">
+        Ahoi, kleiner Pirat! 🏴‍☠️<br><br>
+        <span class="invite__name" id="planName3">Lukas</span> wird 7 Jahre alt und feiert seinen Geburtstag als Piraten-Captain — und du bist Teil seiner Crew!<br><br>
+        🗓️ Wann: <b id="planDate2">Samstag, 21. Juni</b> ab 14 Uhr<br>
+        📍 Wo: Bei uns zuhause<br>
+        🎯 Was: Schatzsuche, Spiele, Kuchen<br><br>
+        Komm in deinem besten Piraten-Outfit! Antwort bitte bis <b>14. Juni</b>.
+      </div>
+      <div class="mod__editor" id="editor-invite">
+        <h5>Anpassen</h5>
+        <p>Text frei editieren · WhatsApp-Mini-Spiel als Einladung verschicken (kostenlos) · Druck-Karten mit Foto (Premium)</p>
+      </div>
+    </article>
+
+  </div>
+</div>
+
+<!-- ===== CHECKOUT BLOCK ===== -->
+<section class="checkout">
+  <h2 class="checkout__title">🎉 Dein Plan ist fertig — was möchtest du jetzt?</h2>
+  <p class="checkout__sub">Alle Optionen ohne Account. Du entscheidest, wie viel du brauchst.</p>
+  <div class="checkout__cards">
+
+    <div class="checkout-card checkout-card--free">
+      <div class="checkout-card__icon">📋</div>
+      <h3 class="checkout-card__title">Plan online speichern</h3>
+      <div class="checkout-card__price">Kostenlos</div>
+      <ul class="checkout-card__features">
+        <li>Magic-Link per E-Mail</li>
+        <li>Plan jederzeit weiter anpassen</li>
+        <li>Spiele + Schatzsuche online lesen</li>
+      </ul>
+      <button class="checkout-card__btn">E-Mail-Link senden</button>
+    </div>
+
+    <div class="checkout-card checkout-card--free">
+      <div class="checkout-card__icon">📥</div>
+      <h3 class="checkout-card__title">Plan-PDF light</h3>
+      <div class="checkout-card__price">Kostenlos</div>
+      <ul class="checkout-card__features">
+        <li>1 A4 Tagesplan zum Drucken</li>
+        <li>Spiele-Anleitungen als Text</li>
+        <li>Einkaufsliste mit Häkchen</li>
+      </ul>
+      <button class="checkout-card__btn">PDF runterladen</button>
+    </div>
+
+    <div class="checkout-card checkout-card--premium">
+      <div class="checkout-card__icon">📦</div>
+      <h3 class="checkout-card__title">Komplettpaket Print</h3>
+      <div class="checkout-card__price">€14,90</div>
+      <ul class="checkout-card__features">
+        <li><b>15+ druckfertige Seiten</b></li>
+        <li>8 Urkunden mit Namen vorgedruckt</li>
+        <li>5 Spiel-Karten A6 zum Vorlesen</li>
+        <li>Komplette Schatzsuche + Rätsel-Karten</li>
+        <li>8 Mitgebsel-Etiketten Piraten-Design</li>
+        <li>Druck-Einladungs-Karten</li>
+      </ul>
+      <button class="checkout-card__btn">Komplettpaket kaufen</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Partyseite Hook (separat) -->
+<aside class="partyseite-hook">
+  <h3>🎊 Brauchst du eine Online-Einladung mit RSVP?</h3>
+  <p>Cloudflare-Worker mit eigener Party-URL, RSVP-Liste, Foto-Galerie für nach der Party. Eigener Flow, kostenlos.</p>
+  <a href="#">Zur Partyseite-Einrichtung →</a>
+</aside>
+
+<!-- ===== WIZARD DRAWER ===== -->
+<div class="overlay" id="overlay" onclick="closeWizard()"></div>
+
+<aside class="drawer" id="drawer" role="dialog" aria-label="Plan-Wizard">
+  <header class="drawer__head">
+    <div>
+      <div class="drawer__step">Frage <span id="stepNum">1</span> von 4</div>
+    </div>
+    <button class="drawer__close" onclick="closeWizard()" aria-label="Schließen">×</button>
+  </header>
+  <div class="drawer__progress">
+    <span id="p1" class="active"></span>
+    <span id="p2"></span>
+    <span id="p3"></span>
+    <span id="p4"></span>
+  </div>
+
+  <div class="drawer__body">
+    <!-- Frage 1: Name -->
+    <div class="question active" data-step="1">
+      <h3>Wie heißt das Geburtstagskind?</h3>
+      <p class="help">Wir personalisieren deinen Plan + alle Materialien.</p>
+      <input type="text" id="qName" placeholder="z.B. Mia" autocomplete="off" oninput="liveUpdateName()">
+    </div>
+
+    <!-- Frage 2: Datum -->
+    <div class="question" data-step="2">
+      <h3>Wann ist der Geburtstag?</h3>
+      <p class="help">Wir setzen Einladungs-Datum + Vorbereitungs-Timing.</p>
+      <input type="date" id="qDate" oninput="liveUpdateDate()">
+    </div>
+
+    <!-- Frage 3: Gäste -->
+    <div class="question" data-step="3">
+      <h3>Wie viele Gäste kommen?</h3>
+      <p class="help">Wir skalieren Einkaufsliste + Anzahl Urkunden/Etiketten.</p>
+      <div class="slider-wrap">
+        <div class="slider-value"><span id="qGuestsLabel">6</span> Kinder</div>
+        <input type="range" id="qGuests" min="4" max="12" value="6" oninput="liveUpdateGuests()">
+        <div class="slider-labels"><span>4</span><span>8</span><span>12</span></div>
+      </div>
+    </div>
+
+    <!-- Frage 4: Ort -->
+    <div class="question" data-step="4">
+      <h3>Wo feiert ihr?</h3>
+      <p class="help">Beeinflusst Schatzsuche-Stationen und Spiele-Vorschläge.</p>
+      <div class="options" id="qLocationOpts">
+        <label class="option selected" data-loc="zuhause"><span class="option__icon">🏠</span><span class="option__label">Bei uns zuhause<small class="option__hint">Schatzsuche im Garten, Spiele drinnen + draußen</small></span></label>
+        <label class="option" data-loc="drinnen"><span class="option__icon">🛋️</span><span class="option__label">Nur drinnen<small class="option__hint">Schatzsuche durch alle Räume</small></span></label>
+        <label class="option" data-loc="park"><span class="option__icon">🌳</span><span class="option__label">Park / draußen<small class="option__hint">Größere Stationen, Wetter-Backup-Plan dabei</small></span></label>
+        <label class="option" data-loc="halle"><span class="option__icon">🏟️</span><span class="option__label">Indoor-Spielplatz / Halle<small class="option__hint">Plan auf 2h gekürzt, Mitgebsel + Kuchen zuhause</small></span></label>
+      </div>
+    </div>
+  </div>
+
+  <footer class="drawer__foot">
+    <button class="drawer__btn drawer__btn--sec" id="btnBack" onclick="stepBack()" style="display:none">Zurück</button>
+    <button class="drawer__btn drawer__btn--prim" id="btnNext" onclick="stepNext()">Weiter →</button>
+  </footer>
+</aside>
+
+<!-- Demo Badge -->
+<div class="demo-badge">
+  🧪 Prototyp v1 · Piraten 6–8
+  <small>Klick „Anpassen" → live Plan-Update</small>
+</div>
+
+<script>
+  // ===== State =====
+  const state = {
+    step: 1,
+    name: 'Lukas',
+    date: '2026-06-21',
+    guests: 6,
+    location: 'zuhause'
+  };
+
+  // Smart-Default Datum: nächster Samstag in 4 Wochen
+  function defaultDate(){
+    const d = new Date();
+    const dayOfWeek = d.getDay();
+    const daysUntilSat = (6 - dayOfWeek + 7) % 7 || 7;
+    d.setDate(d.getDate() + daysUntilSat + 21);
+    return d.toISOString().slice(0,10);
+  }
+  state.date = defaultDate();
+
+  // ===== Drawer Open/Close =====
+  function openWizard(){
+    document.getElementById('drawer').classList.add('open');
+    document.getElementById('overlay').classList.add('show');
+    document.body.style.overflow = 'hidden';
+    setStep(state.step);
+    // Pre-fill inputs
+    document.getElementById('qName').value = state.name === 'Lukas' ? '' : state.name;
+    document.getElementById('qDate').value = state.date;
+    document.getElementById('qGuests').value = state.guests;
+    document.getElementById('qGuestsLabel').textContent = state.guests;
+  }
+  function closeWizard(){
+    document.getElementById('drawer').classList.remove('open');
+    document.getElementById('overlay').classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  // ===== Steps =====
+  function setStep(n){
+    state.step = n;
+    document.getElementById('stepNum').textContent = n;
+    document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
+    document.querySelector(`.question[data-step="${n}"]`).classList.add('active');
+    // Progress dots
+    for(let i=1; i<=4; i++){
+      const el = document.getElementById('p'+i);
+      el.classList.remove('done','active');
+      if(i < n) el.classList.add('done');
+      else if(i === n) el.classList.add('active');
+    }
+    // Back-button
+    document.getElementById('btnBack').style.display = n > 1 ? 'inline-block' : 'none';
+    // Last-step → "Plan ansehen" statt "Weiter"
+    document.getElementById('btnNext').textContent = n === 4 ? '✓ Plan ansehen' : 'Weiter →';
+  }
+  function stepNext(){
+    if(state.step < 4) setStep(state.step + 1);
+    else {
+      // Final: close + scroll to checkout
+      closeWizard();
+      setTimeout(() => {
+        document.querySelector('.checkout').scrollIntoView({behavior:'smooth', block:'start'});
+        flashSuccess();
+      }, 300);
+    }
+  }
+  function stepBack(){
+    if(state.step > 1) setStep(state.step - 1);
+  }
+
+  // ===== Live Updates =====
+  function liveUpdateName(){
+    const v = document.getElementById('qName').value.trim() || 'Lukas';
+    state.name = v;
+    document.querySelectorAll('#planName, #planName2, #planName3').forEach(el => {
+      el.textContent = v;
+      el.style.animation = 'none';
+      el.offsetHeight;
+      el.style.animation = 'fadeIn .25s ease-out';
+    });
+  }
+  function liveUpdateDate(){
+    const v = document.getElementById('qDate').value;
+    if(!v) return;
+    state.date = v;
+    const d = new Date(v);
+    const formatted = d.toLocaleDateString('de-DE',{weekday:'short', day:'numeric', month:'long'});
+    const short = d.toLocaleDateString('de-DE',{weekday:'short', day:'2-digit', month:'2-digit', year:'numeric'});
+    document.getElementById('planDate').textContent = short;
+    document.getElementById('planDate2').textContent = formatted;
+  }
+  function liveUpdateGuests(){
+    const v = +document.getElementById('qGuests').value;
+    state.guests = v;
+    document.getElementById('qGuestsLabel').textContent = v;
+    document.getElementById('planGuests').textContent = v;
+    document.getElementById('planGuests2').textContent = v;
+  }
+  // Location options
+  document.querySelectorAll('#qLocationOpts .option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      document.querySelectorAll('#qLocationOpts .option').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      const loc = opt.dataset.loc;
+      state.location = loc;
+      const labels = {zuhause:'zuhause', drinnen:'drinnen', park:'im Park', halle:'in der Halle'};
+      document.getElementById('planLocation').textContent = labels[loc];
+    });
+  });
+
+  // ===== Sub-Editor Toggle =====
+  function toggleEditor(name){
+    const el = document.getElementById('editor-' + name);
+    el.classList.toggle('open');
+  }
+
+  // ===== Sticky CTA Hide on scroll up =====
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const s = window.scrollY;
+    const sticky = document.getElementById('stickyCta');
+    if(s > 200 && s > lastScroll) sticky.classList.add('hidden');
+    else sticky.classList.remove('hidden');
+    lastScroll = s;
+  });
+
+  // ===== Visual Confirm on Plan-Done =====
+  function flashSuccess(){
+    const header = document.querySelector('.plan__header');
+    header.style.transition = 'background .3s';
+    const original = header.style.background;
+    header.style.background = 'linear-gradient(135deg,#0F7B3F,#1E9C5C)';
+    setTimeout(() => { header.style.background = ''; }, 800);
+  }
+
+  // ===== Init: set default date in preview =====
+  liveUpdateDate.call({}, document.getElementById('qDate').value = state.date);
+  setTimeout(liveUpdateDate, 100);
+</script>
+
+</body>
+</html>
