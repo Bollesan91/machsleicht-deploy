@@ -62,7 +62,11 @@
       {"@type": "Question", "name": "Was kostet ein Prinzessin-Geburtstag für 6–8 Jahre?",
         "acceptedAnswer": {"@type": "Answer", "text": "Realistisch 20–40 € pro Kind. Standard mit Themen-Kuchen, Plastik-Diadem und Edelstein-Schatz: 25–30 €/Kind. Wow mit Foto-Box, Plüsch-Tier und Märchen-Code-Heft-Druck: 35–40 €/Kind."}},
       {"@type": "Question", "name": "Funktioniert das auch für Jungs (Prinz-Variante)?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Ja. Wer „Prinz" sagt, kann Schwert + Mantel statt Krone bekommen. Geschlechtsneutrale Variante: „Schloss-Mitglieder" mit eigenen Hof-Rollen (Prinz, Hofdame, Ritter, Kammerdiener). Allen Spaß!"}}
+        "acceptedAnswer": {"@type": "Answer", "text": "Ja. Wer „Prinz" sagt, kann Schwert + Mantel statt Krone bekommen. Geschlechtsneutrale Variante: „Schloss-Mitglieder" mit eigenen Hof-Rollen (Prinz, Hofdame, Ritter, Kammerdiener). Allen Spaß!"}},
+      {"@type": "Question", "name": "Was wenn ein Kind nicht tanzen will?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Kein Druck. Schloss-Tanz hat eine „Hof-Musik-Pause"-Rolle: wer nicht tanzen will, wird zur „Hof-Jury" und bewertet die Tänzer. Das ist genau so cool. Wichtig: vorher klar machen, dass keine Pflicht zum Mitmachen besteht."}},
+      {"@type": "Question", "name": "Wie schwer ist der Märchen-Code für 6-8 Jährige?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Symbol-Codes (🌹=A, ⭐=B) sind perfekt — sie können lesen und Symbole zuordnen. Pro Station 3-4 Buchstaben = 30 Sek bis 1 Min Lösungszeit pro Team. Insgesamt 15-20 Min für 3 Stationen. Wenn Team länger braucht, eine Station überspringen."}}
     ]
   }
   </script>
@@ -139,6 +143,18 @@
   .related .card{background:#fff;text-align:center;padding:14px 8px;margin:0;border:1px solid var(--l);font-size:13px;font-weight:700}
   footer{text-align:center;margin-top:40px;padding:16px 0;border-top:1px solid var(--l);font-size:12px;color:var(--m)}
   footer a{font-size:12px;color:var(--m);font-weight:400}
+  .variant-tabs{display:flex;gap:0;margin:20px 0 0;border-bottom:2px solid var(--l);overflow-x:auto}
+  .variant-tab{flex:1;min-width:90px;padding:12px 8px;text-align:center;font-weight:700;font-size:14px;cursor:pointer;border:none;border-bottom:3px solid transparent;color:var(--m);transition:all 0.2s;background:none;font-family:var(--f)}
+  .variant-tab:hover{color:var(--d)}
+  .variant-tab.active{color:var(--a);border-bottom-color:var(--a)}
+  .variant-panel{display:none;padding:20px 0}
+  .variant-panel.active{display:block;animation:fadeIn 0.3s}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+  .variant-summary{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:12px 16px;background:linear-gradient(135deg,#FCE4EC,#F8BBD0);border-radius:8px;margin-bottom:14px;font-size:13px;font-weight:700}
+  .variant-summary span{display:inline-flex;align-items:center;gap:4px}
+  .ritual-card{background:linear-gradient(135deg,#FFF8E1,#FFE082);border:1px solid #FFCC80;border-radius:14px;padding:20px;margin:20px 0}
+  .ritual-card h4{color:#B71C1C;margin-bottom:6px;font-size:16px}
+  .ritual-card p{font-size:14px;line-height:1.7;color:#5D4037}
   @media(max-width:480px){main{padding:16px 12px 80px}}
   @media print{.no-print,.cta,footer,[style*="position: fixed"],[style*="sticky"]{display:none!important}body{background:#fff!important;color:#000!important;font-size:12pt}a{color:#000!important;text-decoration:none!important}.print-only{display:block!important}}
   </style>
@@ -170,6 +186,11 @@
     <p style="margin-bottom:0"><strong>Wichtig:</strong> Story-Tragen, Team-Bildung (Rosen-Hof vs. Sternen-Hof), Foto-Stationen für Eltern.</p>
   </div>
 
+  <div class="ritual-card">
+    <h4>👑 Die Hofdamen-Akademie-Einberufung</h4>
+    <p>6–8-Jährige lieben Schloss-Immersion. Zwei rituelle Momente tragen den Tag: <strong>Beim Ankommen</strong> erfolgt die Hofdamen-Akademie-Einberufung mit Brief der Königin-Mutter (Wachs-Siegel, vorgelesen vom Geburtstagskind-Elternteil). Jedes Kind bekommt eine Hof-Identität (Name + Wappen) und ein Plastik-Diadem. <strong>Am Ende</strong> erfolgt die Krönungs-Zeremonie mit Foto und Diadem-Urkunde. Diese 2 Bookend-Momente machen den Unterschied zwischen „Verkleiden mit Diadem" und „echte Schloss-Mystery".</p>
+  </div>
+
   <div class="quickinfo">
     <div class="quickinfo-item"><div class="lbl">Dauer</div><div class="val">2,5 Std</div></div>
     <div class="quickinfo-item"><div class="lbl">Kinder</div><div class="val">6–10</div></div>
@@ -177,57 +198,82 @@
     <div class="quickinfo-item"><div class="lbl">Kosten</div><div class="val">20–30 €/Kind</div></div>
   </div>
 
-  <h2>Zeitplan (2,5 Stunden)</h2>
-  <div class="card">
-    <div class="timeline-row">
-      <div class="timeline-time">14:00</div>
-      <div>
-        <div class="timeline-what">Königlicher Empfang</div>
-        <div class="timeline-detail">Brief der Königin vorlesen: „Die goldene Krone ist gestohlen!" Jedes Kind bekommt ein Plastik-Diadem + Mantel + Hofnamen. Hofknicks-Übung.</div>
-      </div>
+  <h2>3 Konzepte zur Auswahl</h2>
+  <p>Drei fertige Konzepte für 6–8 Jährige — von Standard 2,5 Std bis Schloss-Olympia 3,5 Std mit 3 Hof-Teams.</p>
+
+  <div class="variant-tabs no-print">
+    <button class="variant-tab active" onclick="showVariant(this,'std')">Standard · 2,5 Std</button>
+    <button class="variant-tab" onclick="showVariant(this,'wow')">Mystery-Wow · 3 Std</button>
+    <button class="variant-tab" onclick="showVariant(this,'olympia')">Schloss-Olympia · 3,5 Std</button>
+  </div>
+
+  <div id="variant-std" class="variant-panel active">
+    <div class="variant-summary">
+      <span>⏱️ 2,5 Stunden</span>
+      <span>👥 6–8 Kinder</span>
+      <span>💰 ~25 €/Kind</span>
+      <span>🎯 Klassiker</span>
     </div>
-    <div class="timeline-row">
-      <div class="timeline-time">14:20</div>
-      <div>
-        <div class="timeline-what">Schloss-Ball-Choreo</div>
-        <div class="timeline-detail">Einfache Walzer-Schritte lernen: Vor-Zurück-Drehung. 3 Min Übung, dann zu Musik. Endet mit großem Schloss-Tanz.</div>
-      </div>
+    <h3>Der vollwertige Schloss-Tag</h3>
+    <p>Der Klassiker mit Krone-Diadem, Schloss-Tanz, Märchen-Code, Edelstein-Wettkampf, Königliches Quiz.</p>
+
+    <div class="card">
+      <div class="timeline-row"><div class="timeline-time">14:00</div><div><div class="timeline-what">Akademie-Einberufung</div><div class="timeline-detail">Brief der Königin-Mutter vorlesen, Hof-Identität wählen, Diadem aufsetzen.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:20</div><div><div class="timeline-what">Schloss-Ball-Choreo</div><div class="timeline-detail">5 Min Walzer-Schritte üben, dann tanzen.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:40</div><div><div class="timeline-what">Märchen-Code knacken</div><div class="timeline-detail">3 Stationen Symbol-Code, Team-Wettrennen.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">15:10</div><div><div class="timeline-what">🍰 Königlicher Tee</div><div class="timeline-detail">Schloss-Kuchen, Stern-Sandwiches, Bonbons-Tee.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">15:40</div><div><div class="timeline-what">Edelstein-Wettkampf</div><div class="timeline-detail">Sortieren nach Farben, schnellstes Team Schloss-Pokal.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">16:00</div><div><div class="timeline-what">Königliches Quiz</div><div class="timeline-detail">8 Märchen-Trivia mit Mini-Preisen.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">16:15</div><div><div class="timeline-what">Krönungs-Zeremonie + Foto</div><div class="timeline-detail">Krone gefunden, Diadem-Urkunde mit Foto, Mitgebsel.</div></div></div>
     </div>
-    <div class="timeline-row">
-      <div class="timeline-time">14:40</div>
-      <div>
-        <div class="timeline-what">Märchen-Code knacken</div>
-        <div class="timeline-detail">Drei Stationen mit Symbol-Codes (🌹=A, ⭐=B, 💎=C). Jedes Team entschlüsselt 1 Wort. Lösung führt zum nächsten Hinweis: „SCHATZKAMMER-VERSTECK".</div>
-      </div>
+    <div class="cost-bar"><div class="cost-label">Total Standard (8 Kinder)</div><div class="cost-value">~200 € · 25 €/Kind</div></div>
+  </div>
+
+  <div id="variant-wow" class="variant-panel">
+    <div class="variant-summary">
+      <span>⏱️ 3 Stunden</span>
+      <span>👥 8–10 Kinder</span>
+      <span>💰 ~30 €/Kind</span>
+      <span>🔦 UV-Schwarzlicht</span>
     </div>
-    <div class="timeline-row">
-      <div class="timeline-time">15:10</div>
-      <div>
-        <div class="timeline-what">🍰 Königlicher Tee</div>
-        <div class="timeline-detail">Schloss-Kuchen mit rosa Glasur, Mini-Sandwiches, Bonbons-Tee, Stern-Kekse. Foto-Pause mit Hofknicks.</div>
-      </div>
+    <h3>Die geheime Schloss-Mystery</h3>
+    <p>Wow-Variante: UV-Schwarzlicht-Geheimschrift, 4-Stage-Code, Beweis-Analyse (3 Hof-Verdächtige), Foto-Wand.</p>
+
+    <div class="card">
+      <div class="timeline-row"><div class="timeline-time">14:00</div><div><div class="timeline-what">Mystery-Briefing mit UV-Brief</div><div class="timeline-detail">Brief mit UV-versteckter Botschaft — Schwarzlicht enthüllt die Mystery.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:25</div><div><div class="timeline-what">Hofdamen-Einberufung + Diadem-Walzer</div><div class="timeline-detail">Diadem-Übergabe, Mini-Walzer-Choreo, Foto-Pose.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:50</div><div><div class="timeline-what">Stage 1+2: Symbol + Caesar-Code</div><div class="timeline-detail">Zwei verkettete Stufen, Wettrennen Rosen-Hof vs. Sternen-Hof.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">15:20</div><div><div class="timeline-what">Stage 3: UV-Geheimschrift</div><div class="timeline-detail">Schwarzlicht-Suche im ganzen Schloss — Wow-Moment.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">15:40</div><div><div class="timeline-what">🍰 Royal-Schmaus + Foto-Wand</div><div class="timeline-detail">Schloss-Kuchen + 3 Foto-Story-Posen vor rosa-goldenem Hintergrund.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">16:10</div><div><div class="timeline-what">Beweis-Analyse + Hof-Verhör</div><div class="timeline-detail">5 Indizien, 3 Plüsch-Verdächtige (Hof-Köchin, Page, Gärtner) — Schuldigen finden.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">16:40</div><div><div class="timeline-what">Krönung + Senior-Lizenz</div><div class="timeline-detail">Krone gefunden, Senior-Prinzessin-Lizenz mit 3 Foto-Bildern.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">17:00</div><div><div class="timeline-what">Mitgebsel + Abschied</div><div class="timeline-detail">UV-Stift im Mitgebsel zum Weitermachen.</div></div></div>
     </div>
-    <div class="timeline-row">
-      <div class="timeline-time">15:40</div>
-      <div>
-        <div class="timeline-what">Edelstein-Wettkampf</div>
-        <div class="timeline-detail">Edelsteine (gemischt nach Farben) müssen sortiert werden — schnellstes Team in 2 Min gewinnt Schloss-Pokal. Wettkampf-Modus.</div>
-      </div>
+    <div class="cost-bar"><div class="cost-label">Total Wow (8 Kinder)</div><div class="cost-value">~240 € · 30 €/Kind</div></div>
+  </div>
+
+  <div id="variant-olympia" class="variant-panel">
+    <div class="variant-summary">
+      <span>⏱️ 3,5 Stunden</span>
+      <span>👥 9–12 Kinder</span>
+      <span>💰 ~35 €/Kind</span>
+      <span>🏆 3 Hof-Teams</span>
     </div>
-    <div class="timeline-row">
-      <div class="timeline-time">16:00</div>
-      <div>
-        <div class="timeline-what">Königliches Quiz</div>
-        <div class="timeline-detail">8 Märchen-Trivia-Fragen ohne Lizenz: „Welche Blume ist im Schloss-Garten verboten?", „Wer küsst den Frosch?". Team mit meisten Punkten gewinnt.</div>
-      </div>
+    <h3>Die Schloss-Olympiade</h3>
+    <p>Für viele Kinder: 3 Höfe (Rosen-Hof, Sternen-Hof, Mond-Hof) im Mehr-Disziplinen-Wettkampf mit Bronze/Silber/Gold-Diademen.</p>
+
+    <div class="card">
+      <div class="timeline-row"><div class="timeline-time">14:00</div><div><div class="timeline-what">Olympia-Eröffnung</div><div class="timeline-detail">3 Teams mit Wappen + Banner. Königlicher Eid zu klassischer Musik.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:25</div><div><div class="timeline-what">Disziplin 1: Tanz-Battle</div><div class="timeline-detail">Best-of-3 Walzer-Choreo, Jury-Wertung.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:50</div><div><div class="timeline-what">Disziplin 2: Code-Schnelligkeit</div><div class="timeline-detail">Symbol-Code-Wettrennen, schnellstes Team gewinnt.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">15:15</div><div><div class="timeline-what">🍰 Royal-Schmaus + Foto-Wand</div><div class="timeline-detail">Schloss-Kuchen, Sandwich-Sterne, Team-Fotos.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">15:50</div><div><div class="timeline-what">Disziplin 3: Edelstein-Stafette</div><div class="timeline-detail">Team-Stafette mit Sortier-Aufgabe.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">16:20</div><div><div class="timeline-what">Disziplin 4: Märchen-Quiz</div><div class="timeline-detail">10 Quiz-Fragen, schnellster Buzzer.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">16:40</div><div><div class="timeline-what">Disziplin 5: Schloss-Mystery-Final</div><div class="timeline-detail">Krone-Versteck im Team-Wettrennen.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">17:00</div><div><div class="timeline-what">Sieger-Krönung + Mitgebsel</div><div class="timeline-detail">Bronze/Silber/Gold-Diademe pro Team, Mitgebsel, Foto.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">17:25</div><div><div class="timeline-what">Olympia-Abschluss</div><div class="timeline-detail">Königliche Hymne + große Foto-Pose.</div></div></div>
     </div>
-    <div class="timeline-row">
-      <div class="timeline-time">16:15</div>
-      <div>
-        <div class="timeline-what">Krone gefunden + Krönung</div>
-        <div class="timeline-detail">Schatzkammer-Versteck enthüllen, Krone gefunden! Jedes Kind wird offiziell „gekrönt", bekommt Diadem-Urkunde mit Foto + Mitgebsel-Tüte.</div>
-      </div>
-    </div>
+    <div class="cost-bar"><div class="cost-label">Total Olympia (12 Kinder)</div><div class="cost-value">~420 € · 35 €/Kind</div></div>
   </div>
 
   <h2>Die 5 Spielideen im Detail</h2>
@@ -390,6 +436,13 @@ Mit königlichem Gruß 👸🤴</div>
 
 </main>
 <script>
+function showVariant(tabEl, name){
+  document.querySelectorAll('.variant-tab').forEach(function(t){t.classList.remove('active')});
+  document.querySelectorAll('.variant-panel').forEach(function(p){p.classList.remove('active')});
+  tabEl.classList.add('active');
+  document.getElementById('variant-'+name).classList.add('active');
+  if(window.plausible) window.plausible('variant-tab', {props:{page:location.pathname, variant:name}});
+}
 (function(){
   var p = window.plausible || function(){};
   document.querySelectorAll('.cta, [data-cta="action"]').forEach(function(el){
