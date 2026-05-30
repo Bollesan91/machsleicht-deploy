@@ -1,3 +1,60 @@
+# Session-Notiz — 30.05.2026 nachts (Helfer-v3 Wellen 3-6 prinzessin+piraten ELITE 90+91)
+
+## 🚀 Deploy 30.05.2026 nachts (Merge-Commit 7317a12 auf main)
+
+Branch-Trick Chrome-MCP Multi-Chat-Reviewer (echte Code-Verifikation, Drift-Korrektur -13) brachte beide Hubs auf ELITE:
+
+| Page | W2 | W3 | W4 | W5 | Status |
+|---|---|---|---|---|---|
+| **piraten** | 60 | 88 | — | **91/100** ✅ | Welle 5 byte-verifiziert |
+| **prinzessin** | 60 | 78 | 86 | **90/100** ✅ + 3 Mini-Nits W6 | Welle 5 byte-verifiziert |
+
+### Behobene Blocker (12+ über alle Wellen)
+- Age-Filter JS komplett kaputt (alte Inline-Style-Selektoren) → `.u-grid-cards, .u-grid-3` mit Label-Regex
+- Fake-Statistik "4.700 Geburtstage" + "35%" + "8%" → ehrliche Formulierung "Komplett-Konzept für 3–12 Jahre"
+- Breadcrumb DOM↔JSON-LD inkonsistent → Start auf "/", Label "Kindergeburtstag"
+- piraten Markdown `**` wörtlich sichtbar → `<strong>` HTML + Plain-Text JSON-LD
+- piraten Lagertha (Schildmaid ≠ Piratin, Sage) → raus
+- piraten "Tote Männer" Quelle (≠ Treasure Island 1883) → 16./17. Jh. + Popularisierung
+- piraten Zitronensaft-Chemie (Bananen-Polyphenoloxidase falsch) → Karamellisierung/Pyrolyse + Bügeleisen
+- piraten 32-Strich-Kompass widersprüchlich → 8 Haupt-Striche (32 als Marinekompass-Kontext)
+- piraten Null Sicherheits-Hinweise → 6-Punkt-Sicherheits-Sektion (Schneiden/Brand/Planke/Klettern/Blind-Parcours/CE+Allergie)
+- piraten Grammatik Logbuch → "in das eigene Piraten-Logbuch"
+- prinzessin Plausible-Script statt Umami → Umami + Shim
+- prinzessin "Mottoreiche-Geburtstage" Typo → "gemischte"
+- prinzessin Kleinteile-Erstickungsgefahr 3-5 → ⚠-Boxes (Klebeperlen + Glasperlen + EN-71-Schwelle)
+- prinzessin HowTo `supply` fehlte → 8-teiliges HowToSupply-Array
+- prinzessin Draht-Tiara Sicherheit (9-12) → Drahtenden + Bastel-Brille
+- prinzessin Louis XIV Qualifier → "souveräner europäischer Monarchen"
+- beide HowTo-Steps konkretisiert (Platzhalter → 5 spezifische Schritte)
+- beide URL-Konsistenz: alle Schatzsuche-CTAs `/kindergeburtstag?motto=X&modus=schatzsuche#planer`, Einladung `/einladung/erstellen/?thema=X`
+
+### Konsistenz-Check (Pflicht nach Bolle's Mandat)
+- ✅ FAQ-Count DOM↔JSON-LD Sync (6/6 in beiden)
+- ✅ og-piraten.png + og-prinzessin.png existieren (og-prinzessin als Platzhalter aus og-frozen.png)
+- ✅ URL-Konsistenz hergestellt (alle Schatzsuche/Einladung-CTAs einheitlich)
+- ✅ Altersschwelle EN-71-konsistent (alle "unter 3 Jahre")
+
+### Methodik-Bestätigung Helfer-v3 + Branch-Trick
+- Self-Score-Drift war diesmal **-25** (60 statt 85) — Anti-Sycophancy-Pattern brutal bestätigt
+- Welle 5 byte-verifiziert: prinzessin 90, piraten 91 (drift-korrigiert -13)
+- Branch-Trick (raw.githubusercontent.com/.../draft/...?cb=welleX) liefert frischen Code an Reviewer
+- Multi-Chat claude.ai mit aktivierter Websuche fetcht raw URLs verlässlich
+
+### NACHSCHRITTE PFLICHT
+1. **Cloudflare-Cache-Purge** ([dash.cloudflare.com](https://dash.cloudflare.com) → machsleicht.de → Caching → Purge Everything) — sonst bis 2h alte Welle-2-Version
+2. **GSC URL-Inspection** für die 2 Pages (Re-Crawl):
+   - `https://machsleicht.de/kindergeburtstag/prinzessin`
+   - `https://machsleicht.de/kindergeburtstag/piraten`
+3. **og-prinzessin.png dediziertes Asset** generieren (aktuell Platzhalter aus og-frozen.png)
+4. **`?modus=schatzsuche`-Param** Verarbeitung im Planer-JS live testen
+5. **Ahrefs Analytics** in Datenschutzerklärung dokumentieren
+
+### Nächster Sprint
+- Welle 3-6 für die anderen 13 Hubs (dino, safari, einhorn, meerjungfrau, weltraum, feuerwehr, dschungel, feen, detektiv, superheld, pferde, ritter, baustelle) — gleiche Methodik
+
+---
+
 # Session-Notiz — 30.05.2026 abends (Helfer-v3 Welle 2/1A Re-Verify-Fixes für 4 Hubs)
 
 ## 🚀 Heute deployed (30.05.2026 abends — Welle 2/1A real-fixes via WebFetch-Reviewer)
