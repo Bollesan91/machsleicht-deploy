@@ -62,7 +62,11 @@
       {"@type": "Question", "name": "Was kostet ein Superheld-Geburtstag für 3-5 Jahre?",
         "acceptedAnswer": {"@type": "Answer", "text": "Realistisch 15-35 € pro Kind. Minimal (6 Kinder): ca. 15 €/Kind mit Bastel-Umhängen und Süßigkeiten. Standard mit gekauften Helden-Masken und Themen-Kuchen: 20-25 €/Kind. Wow mit Foto-Box und Helden-Mitgebsel-Sets: 30-35 €/Kind."}},
       {"@type": "Question", "name": "Brauche ich Lizenzfiguren wie Spider-Man oder Superman?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Nein, im Gegenteil — wir empfehlen GENERISCHE Superhelden (eigener Name + Logo aus Tonpapier). Das senkt Kosten und Lizenz-Risiko. Kinder erfinden gerne eigene Helden-Identitäten („Captain Wolke", „Power-Lina"). Macht den Tag persönlicher als kommerzielle Charaktere."}}
+        "acceptedAnswer": {"@type": "Answer", "text": "Nein, im Gegenteil — wir empfehlen GENERISCHE Superhelden (eigener Name + Logo aus Tonpapier). Das senkt Kosten und Lizenz-Risiko. Kinder erfinden gerne eigene Helden-Identitäten („Captain Wolke", „Power-Lina"). Macht den Tag persönlicher als kommerzielle Charaktere."}},
+      {"@type": "Question", "name": "Was wenn ein Kind plötzlich kein Held mehr sein will?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Häufig bei 3-Jährigen — Reizüberflutung. Sofort eine ruhige „Helden-Pause" anbieten: Decke + Bilderbuch im Nebenraum. Nach 5-10 Min kommt die Lust meist zurück. Keine Pflicht zur Teilnahme bei einzelnen Spielen — der Tag soll Spaß machen, kein Performance-Druck."}},
+      {"@type": "Question", "name": "Wie verhindere ich Streit ums Bösewicht-Plüsch?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Klar machen vorher: Der Bösewicht-Plüsch geht reihum, jedes Kind ist 1 Min „Bösewicht" und 4 Min „Held". Stoppuhr/Timer (Eltern-Handy) visuell zeigen. So weiß jeder, wann es seine Runde ist und es entsteht weniger Streit."}}
     ]
   }
   </script>
@@ -138,6 +142,18 @@
   .related .card{background:#fff;text-align:center;padding:14px 8px;margin:0;border:1px solid var(--l);font-size:13px;font-weight:700}
   footer{text-align:center;margin-top:40px;padding:16px 0;border-top:1px solid var(--l);font-size:12px;color:var(--m)}
   footer a{font-size:12px;color:var(--m);font-weight:400}
+  .variant-tabs{display:flex;gap:0;margin:20px 0 0;border-bottom:2px solid var(--l);overflow-x:auto}
+  .variant-tab{flex:1;min-width:90px;padding:12px 8px;text-align:center;font-weight:700;font-size:14px;cursor:pointer;border:none;border-bottom:3px solid transparent;color:var(--m);transition:all 0.2s;background:none;font-family:var(--f)}
+  .variant-tab:hover{color:var(--d)}
+  .variant-tab.active{color:var(--a);border-bottom-color:var(--a)}
+  .variant-panel{display:none;padding:20px 0}
+  .variant-panel.active{display:block;animation:fadeIn 0.3s}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+  .variant-summary{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:12px 16px;background:linear-gradient(135deg,#E3F2FD,#BBDEFB);border-radius:8px;margin-bottom:14px;font-size:13px;font-weight:700}
+  .variant-summary span{display:inline-flex;align-items:center;gap:4px}
+  .ritual-card{background:linear-gradient(135deg,#FFF3E0,#FFE082);border:1px solid #FFCC80;border-radius:14px;padding:20px;margin:20px 0}
+  .ritual-card h4{color:#E65100;margin-bottom:6px;font-size:16px}
+  .ritual-card p{font-size:14px;line-height:1.7;color:#5D4037}
   @media(max-width:480px){main{padding:16px 12px 80px}}
   @media print{.no-print,.cta,footer,[style*="position: fixed"],[style*="sticky"]{display:none!important}body{background:#fff!important;color:#000!important;font-size:12pt}a{color:#000!important;text-decoration:none!important}.print-only{display:block!important}}
   </style>
@@ -169,6 +185,11 @@
     <p style="margin-bottom:0"><strong>Vermeiden:</strong> Komplizierte Regeln, Wettkampf-Druck, Echtfiguren-Lizenzen (zu viel Erwartung).</p>
   </div>
 
+  <div class="ritual-card">
+    <h4>🦸 Die kleine Helden-Ernennung</h4>
+    <p>Bei 3–5-Jährigen funktioniert kein langer Helden-Eid. Was funktioniert: zwei winzige Rituelle Momente. Beim Ankommen wird jedes Kind zum „Junior-Helden" ernannt — mit Umhang um die Schultern, Maske auf, einem Buchstaben-Sticker für die Helden-Insignie. Am Ende bekommt jedes Kind eine Helden-Lizenz mit Foto und seiner Helden-Pose. Diese 2 Momente werden Erinnerung — alles dazwischen ist Action.</p>
+  </div>
+
   <div class="quickinfo">
     <div class="quickinfo-item"><div class="lbl">Dauer</div><div class="val">2 Std</div></div>
     <div class="quickinfo-item"><div class="lbl">Kinder</div><div class="val">5–7</div></div>
@@ -176,50 +197,78 @@
     <div class="quickinfo-item"><div class="lbl">Kosten</div><div class="val">15–25 €/Kind</div></div>
   </div>
 
-  <h2>Zeitplan (2 Stunden)</h2>
-  <div class="card">
-    <div class="timeline-row">
-      <div class="timeline-time">14:00</div>
-      <div>
-        <div class="timeline-what">Ankommen + Helden-Verwandlung</div>
-        <div class="timeline-detail">Jedes Kind bekommt einen Umhang (Geschirrtuch mit Klettband) und eine Augenmaske aus Tonpapier. Eigenen Helden-Namen erfinden („Wer bist du?"). Foto-Moment.</div>
-      </div>
+  <h2>3 Konzepte zur Auswahl</h2>
+  <p>Drei fertige Konzepte — von Minimal-90-Min bis Wow-3-Std. Jedes mit eigenem Zeitplan, eigenen Spielen und realistischem Kosten-Rahmen für 6 Kinder.</p>
+
+  <div class="variant-tabs no-print">
+    <button class="variant-tab active" onclick="showVariant(this,'min')">Minimal · 90 Min</button>
+    <button class="variant-tab" onclick="showVariant(this,'std')">Standard · 2 Std</button>
+    <button class="variant-tab" onclick="showVariant(this,'wow')">Wow · 3 Std</button>
+  </div>
+
+  <div id="variant-min" class="variant-panel active">
+    <div class="variant-summary">
+      <span>⏱️ 90 Minuten</span>
+      <span>👥 5–6 Kinder</span>
+      <span>💰 ~15 €/Kind</span>
+      <span>🏠 Indoor reicht</span>
     </div>
-    <div class="timeline-row">
-      <div class="timeline-time">14:20</div>
-      <div>
-        <div class="timeline-what">Helden-Pose-Stop-Tanz</div>
-        <div class="timeline-detail">Musik läuft, alle tanzen frei — Stopp: jeder muss eine Helden-Pose halten. Wer wackelt, scheidet aus (oder bei sehr Kleinen: nichts, alle dürfen weitertanzen).</div>
-      </div>
+    <h3>Der kompakte Helden-Nachmittag</h3>
+    <p>Für 3-Jährige oder kleine Crew (5–6 Kinder). Fokus: Umhang basteln, 2 Action-Spiele, Helden-Kuchen, Abschluss-Pose. Kein Stress, viele Pausen.</p>
+
+    <div class="card">
+      <div class="timeline-row"><div class="timeline-time">14:00</div><div><div class="timeline-what">Ankommen + Umhang-Basteln</div><div class="timeline-detail">Geschirrtuch + Klettband + Logo-Sticker. Eltern helfen beim Anlegen. Foto-Moment.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:20</div><div><div class="timeline-what">Helden-Pose-Stop-Tanz</div><div class="timeline-detail">5 Min Bewegung — Kinder lieben es Posen zu halten.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:35</div><div><div class="timeline-what">Schurken-Tag (vereinfacht)</div><div class="timeline-detail">Klassisches Fangen, Plüsch-Bösewicht reihum. 10 Min.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:55</div><div><div class="timeline-what">🍰 Helden-Kuchen + Pause</div><div class="timeline-detail">15 Min Schmaus. Wichtigste Pause-Phase.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">15:15</div><div><div class="timeline-what">Mitgebsel-Tüte + Helden-Lizenz</div><div class="timeline-detail">Personalisierte Junior-Helden-Lizenz mit Foto, Mitgebsel-Tüte. Eltern holen ab.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">15:30</div><div><div class="timeline-what">Tschüss-Pose</div><div class="timeline-detail">Letzte gemeinsame Helden-Pose, dann Verabschiedung.</div></div></div>
     </div>
-    <div class="timeline-row">
-      <div class="timeline-time">14:35</div>
-      <div>
-        <div class="timeline-what">Helden-Parcours</div>
-        <div class="timeline-detail">Kissen-Berge umrunden, unter Wollfäden („Lasern") durchkrabbeln, Schaumstoff-Hantel hochstemmen. Jede Station 30 Sek.</div>
-      </div>
+    <div class="cost-bar"><div class="cost-label">Total Minimal (6 Kinder)</div><div class="cost-value">~90 € · 15 €/Kind</div></div>
+  </div>
+
+  <div id="variant-std" class="variant-panel">
+    <div class="variant-summary">
+      <span>⏱️ 2 Stunden</span>
+      <span>👥 6–8 Kinder</span>
+      <span>💰 ~20 €/Kind</span>
+      <span>🏠 Indoor/Outdoor</span>
     </div>
-    <div class="timeline-row">
-      <div class="timeline-time">15:00</div>
-      <div>
-        <div class="timeline-what">🍰 Power-Schmaus</div>
-        <div class="timeline-detail">Helden-Kuchen anschneiden, Kraft-Riegel-Häppchen, blauer Helden-Punsch (Apfelschorle + ein Tropfen Lebensmittelfarbe). Eltern-Pause.</div>
-      </div>
+    <h3>Der vollwertige Helden-Tag</h3>
+    <p>Das was die meisten Eltern wollen: 5 Spiele, Helden-Parcours, Schatzsuche-light, Foto-Station. Standard-Niveau, immer noch entspannt.</p>
+
+    <div class="card">
+      <div class="timeline-row"><div class="timeline-time">14:00</div><div><div class="timeline-what">Ankommen + Helden-Verwandlung</div><div class="timeline-detail">Umhang + Maske + Helden-Namen finden („Wer bist du?"). Foto-Moment.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:20</div><div><div class="timeline-what">Helden-Pose-Stop-Tanz</div><div class="timeline-detail">Musik läuft, alle tanzen, Stopp = Pose halten.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:35</div><div><div class="timeline-what">Helden-Parcours</div><div class="timeline-detail">3 Stationen: Kissen-Berg, Laser-Wollfaden, Schaumstoff-Hantel.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">15:00</div><div><div class="timeline-what">🍰 Power-Schmaus</div><div class="timeline-detail">Helden-Kuchen, Kraft-Riegel, blauer Punsch.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">15:30</div><div><div class="timeline-what">Schurken-Tag</div><div class="timeline-detail">Plüsch-Bösewicht versteckt, fangen, dann Bösewicht-Übergabe alle 5 Min.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">15:50</div><div><div class="timeline-what">Schatzsuche light (3 Stationen)</div><div class="timeline-detail">Bild-Hinweise zur Mitgebsel-Schatzkiste.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">16:00</div><div><div class="timeline-what">Helden-Urkunden + Foto-Moment</div><div class="timeline-detail">Personalisierte Helden-Lizenzen mit Foto, Mitgebsel-Tüte. Eltern holen ab.</div></div></div>
     </div>
-    <div class="timeline-row">
-      <div class="timeline-time">15:30</div>
-      <div>
-        <div class="timeline-what">Schurken-Tag</div>
-        <div class="timeline-detail">Ein Plüsch-Bösewicht wird versteckt. Wer ihn fängt, wird selbst kurz zum Bösewicht (5 Min) und versucht zu fangen. Klassisch Fangen mit Helden-Pose-Pause.</div>
-      </div>
+    <div class="cost-bar"><div class="cost-label">Total Standard (6 Kinder)</div><div class="cost-value">~120 € · 20 €/Kind</div></div>
+  </div>
+
+  <div id="variant-wow" class="variant-panel">
+    <div class="variant-summary">
+      <span>⏱️ 3 Stunden</span>
+      <span>👥 6–10 Kinder</span>
+      <span>💰 ~30 €/Kind</span>
+      <span>🌳 Garten ideal</span>
     </div>
-    <div class="timeline-row">
-      <div class="timeline-time">15:50</div>
-      <div>
-        <div class="timeline-what">Helden-Urkunden + Mitgebsel</div>
-        <div class="timeline-detail">Personalisierte Junior-Helden-Urkunde mit Foto, Mitgebsel-Tüte (Maske + Süßigkeiten + Mini-Comic). Eltern holen ab.</div>
-      </div>
+    <h3>Die Helden-Olympiade</h3>
+    <p>Für 4–5-Jährige mit Energie. 6 Spiele, Helden-Parcours, Foto-Box, Sieger-Pokal, Wow-Mitgebsel. Mehr Vorbereitung, mehr Erinnerung.</p>
+
+    <div class="card">
+      <div class="timeline-row"><div class="timeline-time">14:00</div><div><div class="timeline-what">Königliche Ankunft + Helden-Verwandlung</div><div class="timeline-detail">Roter Teppich, Umhang + Maske + Helden-Logo-Aufkleber. Erstes Foto am Helden-Hintergrund.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:25</div><div><div class="timeline-what">Helden-Pose-Battle</div><div class="timeline-detail">Eltern als Jury, 3 Runden, Sieger pro Runde bekommt Sticker.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:50</div><div><div class="timeline-what">Helden-Parcours (5 Stationen)</div><div class="timeline-detail">Kissen-Berge, Laser-Wollfäden, Hantel, Ziel-Werfen, Schurken-Pantomime. Auf Zeit pro Kind.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">15:20</div><div><div class="timeline-what">🍰 Power-Schmaus + Foto-Station</div><div class="timeline-detail">Pizza-Mini, Helden-Kuchen, Pose-Fotos vor Hintergrund.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">16:00</div><div><div class="timeline-what">Schurken-Verhör (Plüsch)</div><div class="timeline-detail">Eltern als Bösewicht-Stimme, Kinder verhören, Plüsch „gesteht".</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">16:25</div><div><div class="timeline-what">Welt-Rettung-Schatzsuche</div><div class="timeline-detail">5 Stationen mit Bild-Hinweisen zur Schatzkiste mit Pokal + Mitgebsel.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">16:50</div><div><div class="timeline-what">Krönung + Helden-Lizenzen</div><div class="timeline-detail">Sieger-Pokal-Übergabe, Lizenz mit 3 Foto-Story-Bildern.</div></div></div>
     </div>
+    <div class="cost-bar"><div class="cost-label">Total Wow (6 Kinder)</div><div class="cost-value">~180 € · 30 €/Kind</div></div>
   </div>
 
   <h2>Die 5 Spielideen im Detail</h2>
@@ -371,6 +420,13 @@ Bitte Bescheid geben bis [RSVP-Datum]: [Telefon/WhatsApp]</div>
 
 </main>
 <script>
+function showVariant(tabEl, name){
+  document.querySelectorAll('.variant-tab').forEach(function(t){t.classList.remove('active')});
+  document.querySelectorAll('.variant-panel').forEach(function(p){p.classList.remove('active')});
+  tabEl.classList.add('active');
+  document.getElementById('variant-'+name).classList.add('active');
+  if(window.plausible) window.plausible('variant-tab', {props:{page:location.pathname, variant:name}});
+}
 (function(){
   var p = window.plausible || function(){};
   document.querySelectorAll('.cta, [data-cta="action"]').forEach(function(el){
