@@ -62,7 +62,11 @@
       {"@type": "Question", "name": "Was kostet ein Superheld-Geburtstag für 9–12 Jahre?",
         "acceptedAnswer": {"@type": "Answer", "text": "Realistisch 30–55 € pro Kind. Standard mit gekauften Helden-T-Shirts und Schwarzlicht-Lampe: 35 €/Kind. Wow mit Foto-Box-Druck, UV-Stift-Sets als Mitgebsel und Pizza-Lieferung: 45–55 €/Kind."}},
       {"@type": "Question", "name": "Funktioniert das ohne Lizenz-Helden wie Marvel/DC?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Sogar besser. In dem Alter sind die Kinder kreativ genug, eigene Helden zu erfinden („CyberHawk", „Nova-Storm"). Plus: keine Diskussionen über „mein Held ist besser" — alle sind gleichwertig kreativ. Eltern-Pluspunkt: keine Marvel-Merch-Wünsche danach."}}
+        "acceptedAnswer": {"@type": "Answer", "text": "Sogar besser. In dem Alter sind die Kinder kreativ genug, eigene Helden zu erfinden („CyberHawk", „Nova-Storm"). Plus: keine Diskussionen über „mein Held ist besser" — alle sind gleichwertig kreativ. Eltern-Pluspunkt: keine Marvel-Merch-Wünsche danach."}},
+      {"@type": "Question", "name": "Wie lange dauert die Mission insgesamt?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Drei Varianten zur Auswahl: Wow 3h Strategie-Mission (klassisch), Insta-Mission 3,5h mit Foto-Story-Box-Focus (für Social-Media-affine Teens), Cosplay-Olympia 4h mit 3-Team-Wettkampf und Kostüm-Battle. Je länger, je mehr Pause-Slots und Pizza-Phase einplanen."}},
+      {"@type": "Question", "name": "Brauche ich Schwarzlicht und UV-Stift wirklich?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Für Wow-Variante ja — das ist der größte Aha-Moment. Schwarzlicht-Lampe + UV-Stift kosten zusammen ~15 € auf Amazon und sind danach noch für andere Spiele nutzbar. Insta-Mission braucht stattdessen Polaroid-Drucker (40 €), Cosplay-Olympia weder noch — da reichen Schminkfarben und Schaumstoff-Requisiten."}}
     ]
   }
   </script>
@@ -133,6 +137,16 @@
   .mitgebsel-item span.emoji{font-size:20px}
   .copy-block{background:#fff;border:1px dashed var(--l);border-radius:8px;padding:16px 20px;margin:12px 0;font-size:14px;line-height:1.6;white-space:pre-wrap;color:var(--d)}
   .code-stage{background:#0D2A4A;color:#FFD600;font-family:monospace;font-size:14px;padding:14px 18px;border-radius:8px;margin:10px 0;font-weight:700;line-height:1.8}
+  .ritual-card{background:linear-gradient(135deg,#FFF8E1,#FFE082);border:2px solid #FFB300;border-radius:14px;padding:18px 22px;margin:20px 0;position:relative}
+  .ritual-card::before{content:'⚡';position:absolute;top:-12px;left:18px;background:#FFB300;color:#fff;font-size:18px;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900}
+  .ritual-card h4{color:#E65100;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-weight:800}
+  .ritual-card p{font-size:14px;color:#5D4037;margin-bottom:0;line-height:1.6}
+  .variant-tabs{display:flex;gap:0;margin:20px 0 0;border-bottom:2px solid var(--l);overflow-x:auto}
+  .variant-tab{flex:1;min-width:90px;padding:12px 8px;text-align:center;font-weight:700;font-size:14px;cursor:pointer;border:none;border-bottom:3px solid transparent;color:var(--m);transition:all 0.2s;background:none;font-family:var(--f)}
+  .variant-tab.active{color:var(--a);border-bottom-color:var(--a)}
+  .variant-panel{display:none;padding:20px 0}
+  .variant-panel.active{display:block;animation:fadeIn 0.3s}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
   .related{background:var(--bg);border:1px solid var(--l);border-radius:14px;padding:16px;margin-top:24px}
   .related .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
   .related a{text-decoration:none;color:var(--d)}
@@ -163,6 +177,11 @@
 
   <a href="/kindergeburtstag?motto=superheld&alter=11#planer" class="cta" data-cta="action">🎂 Plan für dein Kind anpassen →</a>
 
+  <div class="ritual-card">
+    <h4>Eröffnungs-Ritual · Senior-Helden-Akademie</h4>
+    <p>Eltern stehen mit gefälschtem „Hauptquartier-Brief" und Tatort-Foto an der Tür. Jedes Kind unterschreibt einen Geheimhaltungs-Eid, erhält Bändchen + Helden-Codename. Dann Strategie-Briefing am runden Tisch: „Diese Mission ist NICHT für Anfänger." 9–12-Jährige lieben den Ernst — also ernst durchziehen, kein Augenzwinkern.</p>
+  </div>
+
   <div class="age-intro">
     <h3>Was funktioniert in diesem Alter</h3>
     <p style="margin-bottom:6px"><strong>Aufmerksamkeit:</strong> 25–30 Min pro Aktivität ohne Stress.</p>
@@ -174,10 +193,73 @@
     <div class="quickinfo-item"><div class="lbl">Dauer</div><div class="val">3 Std</div></div>
     <div class="quickinfo-item"><div class="lbl">Kinder</div><div class="val">6–12</div></div>
     <div class="quickinfo-item"><div class="lbl">Vorbereitung</div><div class="val">3–4 Std</div></div>
-    <div class="quickinfo-item"><div class="lbl">Kosten</div><div class="val">30–45 €/Kind</div></div>
+    <div class="quickinfo-item"><div class="lbl">Kosten</div><div class="val">30–55 €/Kind</div></div>
   </div>
 
-  <h2>Zeitplan (3 Stunden)</h2>
+  <h2>3 Mission-Varianten</h2>
+  <p>Wähle die Mission-Dichte passend zum Kind: solider Wow-Mission, Foto-Story für Social-Media-Teens, oder volle Cosplay-Olympia mit 3 Teams.</p>
+  <div class="variant-tabs">
+    <button class="variant-tab active" onclick="showVariant(this,'wow')">Wow 3h</button>
+    <button class="variant-tab" onclick="showVariant(this,'insta')">Insta-Mission 3,5h</button>
+    <button class="variant-tab" onclick="showVariant(this,'olympia')">Cosplay-Olympia 4h</button>
+  </div>
+
+  <div id="variant-wow" class="variant-panel active">
+    <div class="cost-bar">
+      <div class="cost-label">Wow-Mission · 3h · 2 Teams</div>
+      <div class="cost-value">~ 35 €/Kind</div>
+    </div>
+    <h3>Mission-Flow</h3>
+    <ul style="font-size:14px;color:var(--m);line-height:1.8;padding-left:20px">
+      <li><strong>0:00</strong> Senior-Akademie-Briefing + Helden-Codename</li>
+      <li><strong>0:20</strong> 3-Stage-Code (Symbol → Caesar → UV)</li>
+      <li><strong>1:20</strong> Pizza-Pause + Power-Schmaus</li>
+      <li><strong>1:50</strong> Beweis-Analyse + Plüsch-Bösewicht-Verhör</li>
+      <li><strong>2:20</strong> Foto-Story-Box (3 Szenen pro Team)</li>
+      <li><strong>2:45</strong> Tresor-Code knacken + Helden-Lizenz</li>
+    </ul>
+    <h3>Was dabei ist</h3>
+    <p style="font-size:14px;color:var(--m)">Schwarzlicht-Lampe + UV-Stift (15 €), Mini-Tresor (15 €), Plüsch-Bösewichte (10 €), Print-Material (5 €), Pizza-Lieferung + Kuchen (8 €/Kind), 1 UV-Stift als Mitgebsel (3 €/Kind).</p>
+  </div>
+
+  <div id="variant-insta" class="variant-panel">
+    <div class="cost-bar">
+      <div class="cost-label">Insta-Mission · 3,5h · 2 Teams · Foto-Focus</div>
+      <div class="cost-value">~ 45 €/Kind</div>
+    </div>
+    <h3>Mission-Flow</h3>
+    <ul style="font-size:14px;color:var(--m);line-height:1.8;padding-left:20px">
+      <li><strong>0:00</strong> Hauptquartier-Briefing + Story-Board-Verteilung</li>
+      <li><strong>0:25</strong> 3-Stage-Code Mission (parallel Story-Foto pro Stage)</li>
+      <li><strong>1:30</strong> Foto-Story-Box Mega-Edition (8 Szenen, Polaroid-Druck on-site)</li>
+      <li><strong>2:15</strong> Pizza + Story-Board-Layout (Kinder collagieren ihre Story)</li>
+      <li><strong>2:50</strong> Bösewicht-Verhör als Filming-Set (Eltern als Regie)</li>
+      <li><strong>3:20</strong> Final-Tresor + Story-Premiere-Show auf Beamer/TV</li>
+    </ul>
+    <h3>Was extra dazukommt</h3>
+    <p style="font-size:14px;color:var(--m)">Polaroid-Drucker (40 €), Helden-Hintergrund-Tapete in 3 Designs (12 €), Schaumstoff-Mega-Requisiten (15 €), Story-Board-Karton pro Kind (3 €/Kind). Story-Board als Mitgebsel ersetzt Print-Heft.</p>
+  </div>
+
+  <div id="variant-olympia" class="variant-panel">
+    <div class="cost-bar">
+      <div class="cost-label">Cosplay-Olympia · 4h · 3 Teams · Wettkampf</div>
+      <div class="cost-value">~ 55 €/Kind</div>
+    </div>
+    <h3>Mission-Flow</h3>
+    <ul style="font-size:14px;color:var(--m);line-height:1.8;padding-left:20px">
+      <li><strong>0:00</strong> Akademie-Aufnahme + Kostüm-Anpassung (Schminkfarben + Stoff-Capes)</li>
+      <li><strong>0:30</strong> Helden-Battle-Show (Pose + Catchphrase pro Team, Jury bewertet)</li>
+      <li><strong>1:00</strong> Disziplin 1: Code-Knack-Wettkampf (jedes Team eigener Stage-Pfad)</li>
+      <li><strong>1:45</strong> Pizza-Lieferung + Strategie-Halbzeit</li>
+      <li><strong>2:15</strong> Disziplin 2: Hindernis-Parcours mit Schurken-Stationen</li>
+      <li><strong>2:50</strong> Disziplin 3: Beweis-Analyse-Speed-Round (Team-Battle)</li>
+      <li><strong>3:30</strong> Final: Tresor-Showdown + Sieger-Krönung mit Medaillen</li>
+    </ul>
+    <h3>Was extra dazukommt</h3>
+    <p style="font-size:14px;color:var(--m)">Schminkfarben-Sets (18 €), Stoff-Capes als Mitgebsel (5 €/Kind), Helden-Medaillen (15 €), Hindernis-Material (Pylonen, Schaumstoff-Schurken-Plüsch, 25 €), Foto-Wand mit Olympia-Logo (10 €). Akzeptiert auch 9-12 Kinder.</p>
+  </div>
+
+  <h2>Zeitplan Wow-Variante (3 Stunden)</h2>
   <div class="card">
     <div class="timeline-row">
       <div class="timeline-time">14:00</div>
@@ -358,6 +440,11 @@ Mission start. Over and out. 🦸‍♂️🦸‍♀️</div>
   <div class="tip"><strong>4. Caesar-Code vorher testen:</strong> Verschiebung +3 oder +5 — selbst durchrechnen, ob Lösungswort sinnvoll ist. Sonst Frust.</div>
   <div class="tip"><strong>5. Pizza-Lieferung:</strong> Einfacher als selber backen für 8+ Kinder. Pro Kind 2 Stücke reichen, plus Salat-Beilage für die Eltern.</div>
 
+  <div class="ritual-card">
+    <h4>Schluss-Ritual · Senior-Helden-Lizenz-Übergabe</h4>
+    <p>Am Ende: Alle Kinder stehen im Kreis, der Geburtstags-Held ruft jeden Codename auf, dann Übergabe der gerahmten Senior-Helden-Lizenz mit Polaroid-Foto. Drei-fache Pose-Salut + gemeinsamer Foto-Shot mit Kraftserum-Flasche. Eltern als Foto-Crew. Für Insta-Mission läuft parallel die Story-Premiere auf dem TV. Macht das Ende verbindlich — kein „und tschüss".</p>
+  </div>
+
   <h2>Kosten-Übersicht</h2>
   <div class="cost-bar">
     <div class="cost-label">Pro Kind (Standard, 8 Kinder)</div>
@@ -398,6 +485,13 @@ Mission start. Over and out. 🦸‍♂️🦸‍♀️</div>
 
 </main>
 <script>
+function showVariant(tabEl, name){
+  document.querySelectorAll('.variant-tab').forEach(function(t){t.classList.remove('active')});
+  document.querySelectorAll('.variant-panel').forEach(function(p){p.classList.remove('active')});
+  tabEl.classList.add('active');
+  document.getElementById('variant-'+name).classList.add('active');
+  if(window.plausible) window.plausible('variant-tab', {props:{page:location.pathname, variant:name}});
+}
 (function(){
   var p = window.plausible || function(){};
   document.querySelectorAll('.cta, [data-cta="action"]').forEach(function(el){
