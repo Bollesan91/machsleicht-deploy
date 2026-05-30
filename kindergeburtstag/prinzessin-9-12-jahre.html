@@ -62,7 +62,11 @@
       {"@type": "Question", "name": "Was kostet ein Prinzessin-Geburtstag für 9–12 Jahre?",
         "acceptedAnswer": {"@type": "Answer", "text": "Realistisch 30–55 € pro Kind. Standard mit Themen-Kuchen, Diadem und Foto-Print: 35 €/Kind. Wow mit Foto-Box-Print, Tresor mit Code-Schloss und Schloss-Theater-Requisiten: 45–55 €/Kind."}},
       {"@type": "Question", "name": "Geht das auch für Jungen oder gemischt?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Absolut. „Schloss-Mystery" oder „Hof-Intrige" als Variante — Prinzen, Ritter, Hofdamen mit eigenen Rollen. Mystery-Story funktioniert geschlechtsneutral. Tipp: vorher Rollen verteilen (Detektiv-Prinz, Geheim-Hofdame), keine Pflicht-Diademe."}}
+        "acceptedAnswer": {"@type": "Answer", "text": "Absolut. „Schloss-Mystery" oder „Hof-Intrige" als Variante — Prinzen, Ritter, Hofdamen mit eigenen Rollen. Mystery-Story funktioniert geschlechtsneutral. Tipp: vorher Rollen verteilen (Detektiv-Prinz, Geheim-Hofdame), keine Pflicht-Diademe."}},
+      {"@type": "Question", "name": "Wie lange dauert die Mystery insgesamt?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Drei Varianten: Wow 3h Mystery (klassisch, 2 Hof-Teams), Schloss-Theater 3,5h mit szenischer Aufführung am Ende, Königshof-Olympia 4h mit 3 Hof-Teams (Rosen/Sternen/Mond) im Wettkampf. Je länger, je mehr Pause-Slots und Schloss-Mahl-Phase einplanen."}},
+      {"@type": "Question", "name": "Funktioniert Schloss-Theater bei eher schüchternen Kindern?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Ja, weil Rollen klar verteilt sind und niemand „spontan improvisieren" muss. Jedes Kind bekommt eine Schloss-Rolle mit 3 Sätzen vorgeschrieben (Königin, Hofdame, Verdächtige, Erzählerin). Eltern als Souffleure. Ergebnis ist eine 5-Min-Mini-Aufführung — keine 30 Min Improvisation."}}
     ]
   }
   </script>
@@ -133,6 +137,16 @@
   .mitgebsel-item span.emoji{font-size:20px}
   .copy-block{background:#fff;border:1px dashed var(--l);border-radius:8px;padding:16px 20px;margin:12px 0;font-size:14px;line-height:1.6;white-space:pre-wrap;color:var(--d)}
   .code-stage{background:#4A0E27;color:#F8BBD0;font-family:monospace;font-size:14px;padding:14px 18px;border-radius:8px;margin:10px 0;font-weight:700;line-height:1.8}
+  .ritual-card{background:linear-gradient(135deg,#FFF8E1,#FFE082);border:2px solid #FFB300;border-radius:14px;padding:18px 22px;margin:20px 0;position:relative}
+  .ritual-card::before{content:'👑';position:absolute;top:-12px;left:18px;background:#FFB300;color:#fff;font-size:16px;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900}
+  .ritual-card h4{color:#AD1457;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-weight:800}
+  .ritual-card p{font-size:14px;color:#5D4037;margin-bottom:0;line-height:1.6}
+  .variant-tabs{display:flex;gap:0;margin:20px 0 0;border-bottom:2px solid var(--l);overflow-x:auto}
+  .variant-tab{flex:1;min-width:90px;padding:12px 8px;text-align:center;font-weight:700;font-size:14px;cursor:pointer;border:none;border-bottom:3px solid transparent;color:var(--m);transition:all 0.2s;background:none;font-family:var(--f)}
+  .variant-tab.active{color:var(--a);border-bottom-color:var(--a)}
+  .variant-panel{display:none;padding:20px 0}
+  .variant-panel.active{display:block;animation:fadeIn 0.3s}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
   .related{background:var(--bg);border:1px solid var(--l);border-radius:14px;padding:16px;margin-top:24px}
   .related .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
   .related a{text-decoration:none;color:var(--d)}
@@ -163,6 +177,11 @@
 
   <a href="/kindergeburtstag?motto=prinzessin&alter=11#planer" class="cta" data-cta="action">🎂 Plan für dein Kind anpassen →</a>
 
+  <div class="ritual-card">
+    <h4>Eröffnungs-Ritual · Senior-Hof-Akademie</h4>
+    <p>Eltern empfangen mit Wachs-Siegel-Brief der „Königin-Mutter" und einem feierlichen „Hof-Eid": Jedes Kind schwört Verschwiegenheit, erhält ein Hof-Bändchen + Codename („Lady Rosendorn", „Prinz Sternenfels"). Dann Hof-Briefing am runden Tisch mit Schloss-Plan und Liste der 3 Verdächtigen. 9–12-Jährige lieben den Ernst — kein Augenzwinkern, voll im Schloss-Setting bleiben.</p>
+  </div>
+
   <div class="age-intro">
     <h3>Was funktioniert in diesem Alter</h3>
     <p style="margin-bottom:6px"><strong>Aufmerksamkeit:</strong> 25–30 Min pro Aktivität ohne Stress.</p>
@@ -174,10 +193,75 @@
     <div class="quickinfo-item"><div class="lbl">Dauer</div><div class="val">3 Std</div></div>
     <div class="quickinfo-item"><div class="lbl">Kinder</div><div class="val">6–12</div></div>
     <div class="quickinfo-item"><div class="lbl">Vorbereitung</div><div class="val">3–4 Std</div></div>
-    <div class="quickinfo-item"><div class="lbl">Kosten</div><div class="val">30–45 €/Kind</div></div>
+    <div class="quickinfo-item"><div class="lbl">Kosten</div><div class="val">30–55 €/Kind</div></div>
   </div>
 
-  <h2>Zeitplan (3 Stunden)</h2>
+  <h2>3 Mystery-Varianten</h2>
+  <p>Wähle das Mystery-Format passend zum Kind: solider Schloss-Mystery-Krimi, szenisches Theater-Format zum Auftreten, oder volle Königshof-Olympia mit 3 Höfen.</p>
+  <div class="variant-tabs">
+    <button class="variant-tab active" onclick="showVariant(this,'wow')">Wow 3h</button>
+    <button class="variant-tab" onclick="showVariant(this,'theater')">Schloss-Theater 3,5h</button>
+    <button class="variant-tab" onclick="showVariant(this,'olympia')">Königshof-Olympia 4h</button>
+  </div>
+
+  <div id="variant-wow" class="variant-panel active">
+    <div class="cost-bar">
+      <div class="cost-label">Wow-Mystery · 3h · 2 Hof-Teams</div>
+      <div class="cost-value">~ 35 €/Kind</div>
+    </div>
+    <h3>Mystery-Flow</h3>
+    <ul style="font-size:14px;color:var(--m);line-height:1.8;padding-left:20px">
+      <li><strong>0:00</strong> Senior-Hof-Akademie-Briefing + Codename</li>
+      <li><strong>0:20</strong> 3-Stage-Code (Märchen-Symbol → Caesar → UV)</li>
+      <li><strong>1:20</strong> Schloss-Mahl + Royal-Schmaus-Pause</li>
+      <li><strong>1:50</strong> Erbsen-unter-Matratzen-Test</li>
+      <li><strong>2:10</strong> Beweis-Analyse + Verdächtigen-Verhör</li>
+      <li><strong>2:35</strong> Foto-Story-Box (3 Hof-Szenen pro Team)</li>
+      <li><strong>2:50</strong> Tresor-Code knacken + Krönungs-Lizenz</li>
+    </ul>
+    <h3>Was dabei ist</h3>
+    <p style="font-size:14px;color:var(--m)">Schwarzlicht-Lampe + UV-Stift (15 €), Mini-Tresor (15 €), Plüsch-Verdächtige (12 €), Print-Material (5 €), Pizza-Lieferung + Schloss-Kuchen (8 €/Kind), 1 UV-Stift als Mitgebsel (3 €/Kind).</p>
+  </div>
+
+  <div id="variant-theater" class="variant-panel">
+    <div class="cost-bar">
+      <div class="cost-label">Schloss-Theater · 3,5h · 2 Höfe + Mini-Aufführung</div>
+      <div class="cost-value">~ 45 €/Kind</div>
+    </div>
+    <h3>Mystery-Flow</h3>
+    <ul style="font-size:14px;color:var(--m);line-height:1.8;padding-left:20px">
+      <li><strong>0:00</strong> Rollen-Verteilung (Königin, Hofdamen, Verdächtige, Erzählerin)</li>
+      <li><strong>0:25</strong> Hof-Kostüme + Probelauf der Rollen-Sätze (jede Rolle hat 3 Sätze)</li>
+      <li><strong>1:00</strong> Stage-1+2-Codes mit Hof-Inszenierung</li>
+      <li><strong>1:45</strong> Schloss-Mahl + Kostüm-Adjustierung</li>
+      <li><strong>2:15</strong> Erbsen-Test als Theater-Szene mit Königin-Urteil</li>
+      <li><strong>2:45</strong> Schluss-Probe + Polaroid-Foto-Session</li>
+      <li><strong>3:15</strong> Aufführung der 5-Min-Mini-Theater-Szene vor Eltern</li>
+    </ul>
+    <h3>Was extra dazukommt</h3>
+    <p style="font-size:14px;color:var(--m)">Hof-Kostümierung-Box (Stoff-Mäntel, Diademe, Goldborte 25 €), Polaroid-Drucker (40 €), Rollen-Skript-Drucke pro Kind (3 €/Kind), Schloss-Hintergrund in zwei Versionen für Theater (15 €). Theater-Video als Eltern-WhatsApp-Souvenir.</p>
+  </div>
+
+  <div id="variant-olympia" class="variant-panel">
+    <div class="cost-bar">
+      <div class="cost-label">Königshof-Olympia · 4h · 3 Höfe · Wettkampf</div>
+      <div class="cost-value">~ 55 €/Kind</div>
+    </div>
+    <h3>Mystery-Flow</h3>
+    <ul style="font-size:14px;color:var(--m);line-height:1.8;padding-left:20px">
+      <li><strong>0:00</strong> Hof-Aufnahme + Hof-Wahl (Rosen-, Sternen-, Mond-Hof)</li>
+      <li><strong>0:30</strong> Krönungs-Battle (Hof-Pose + Hof-Spruch, Jury bewertet)</li>
+      <li><strong>1:00</strong> Disziplin 1: Code-Knack-Race (jeder Hof eigener Stage-Pfad)</li>
+      <li><strong>1:45</strong> Schloss-Mahl + Strategie-Halbzeit</li>
+      <li><strong>2:15</strong> Disziplin 2: Hof-Parcours mit Schloss-Etikette-Aufgaben</li>
+      <li><strong>2:50</strong> Disziplin 3: Beweis-Analyse-Speed-Round (Hof-Battle)</li>
+      <li><strong>3:30</strong> Final: Tresor-Showdown + Sieger-Krönung mit Medaillen</li>
+    </ul>
+    <h3>Was extra dazukommt</h3>
+    <p style="font-size:14px;color:var(--m)">Schminkfarben + Hof-Farben-Schminke (18 €), Stoff-Hof-Bänder (Rosen-Rot, Sternen-Gold, Mond-Silber, 5 €/Kind), Hof-Medaillen (15 €), Parcours-Material (Pylonen, Hof-Etikette-Karten, 20 €), Foto-Wand mit Olympia-Schloss-Logo (10 €). Akzeptiert auch 9-12 Kinder mit 3 ausgeglichenen Höfen.</p>
+  </div>
+
+  <h2>Zeitplan Wow-Variante (3 Stunden)</h2>
   <div class="card">
     <div class="timeline-row">
       <div class="timeline-time">14:00</div>
@@ -358,6 +442,11 @@ Mit königlichem Gruß 👑✨</div>
   <div class="tip"><strong>4. Disney-Erwartung managen:</strong> Klar machen vor Einladung — es ist keine Cinderella-Kostüm-Party, sondern eine Schloss-Mystery. Eltern wissen Bescheid bei Anmeldung.</div>
   <div class="tip"><strong>5. Caesar-Code vorher testen:</strong> Verschiebung +3 — selbst durchrechnen, ob Lösungswort sinnvoll ist. Sonst Frust.</div>
 
+  <div class="ritual-card">
+    <h4>Schluss-Ritual · Senior-Krönungs-Zeremonie</h4>
+    <p>Am Ende: Alle Kinder stehen im Halbkreis im Schloss-Saal, das Geburtstagskind als „Hof-Herrscherin" ruft jeden Codename mit Hof-Titel auf, dann Übergabe der gerahmten Senior-Prinzessin-Lizenz mit Polaroid-Foto. Drei-fache Hof-Verbeugung + gemeinsames Foto mit gefundener Krone. Eltern als Hof-Foto-Crew. Für Theater-Variante läuft parallel die Aufzeichnung der Mini-Theater-Szene. Macht das Ende verbindlich — kein „und tschüss".</p>
+  </div>
+
   <h2>Kosten-Übersicht</h2>
   <div class="cost-bar">
     <div class="cost-label">Pro Kind (Standard, 8 Kinder)</div>
@@ -398,6 +487,13 @@ Mit königlichem Gruß 👑✨</div>
 
 </main>
 <script>
+function showVariant(tabEl, name){
+  document.querySelectorAll('.variant-tab').forEach(function(t){t.classList.remove('active')});
+  document.querySelectorAll('.variant-panel').forEach(function(p){p.classList.remove('active')});
+  tabEl.classList.add('active');
+  document.getElementById('variant-'+name).classList.add('active');
+  if(window.plausible) window.plausible('variant-tab', {props:{page:location.pathname, variant:name}});
+}
 (function(){
   var p = window.plausible || function(){};
   document.querySelectorAll('.cta, [data-cta="action"]').forEach(function(el){
