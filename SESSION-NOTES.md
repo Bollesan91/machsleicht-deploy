@@ -1,3 +1,60 @@
+# Session-Notiz — 30.05.2026 abends (Helfer-v3 Welle 2/1A Re-Verify-Fixes für 4 Hubs)
+
+## 🚀 Heute deployed (30.05.2026 abends — Welle 2/1A real-fixes via WebFetch-Reviewer)
+
+### Hintergrund
+Unabhängiger Reviewer (WebFetch) hat heute Self-Score ~85 auf 72 korrigiert für prinzessin, piraten, dino, safari — Drift -13 (bestätigt Anti-Sycophancy-Pattern, Memory rule: -7 zu hoch, hier sogar -13). Daraufhin echte Fixes statt Score-Massage.
+
+### 4 Hub-Pages real-gefixt (alle in einem Commit)
+
+**prinzessin.html — Welle 2 + 2b**
+- Marie Antoinette 1793 RAUS (irrelevant für Kindergeburtstag)
+- Queen Elizabeth II präzisiert (70 Jahre 1952-2022, plus Ludwig XIV 72 Jahre als längste verbürgte)
+- Headline "3 Spielideen" → "4 Spielideen" (konsistent zu 4 Cards)
+- totalTime PT10M → PT60M
+- Jungen-Variante "Königshof-Akademie" in 9-12-Spiel explizit
+- Neuschwanstein: "Baubeginn 1869 (fertiggestellt 1886)" — präziser
+- Statistik-Wording: "Aus unseren Planer-Daten (über 4.700 Geburtstage seit 2024)..."
+
+**piraten.html — Welle 2 + 2b**
+- Zitronensaft: "organische Säure und Zucker im Saft oxidieren beim Erhitzen" (chemisch korrekt statt "Säure brennt")
+- Jolly Roger: "früheste Belege um 1700 (genaue Herkunft historisch umstritten)" — Hedging
+- Vorbereitungszeit: "60-90 Min reine Bastel-Vorbereitung am Vortag + 2-3 Tage Vorbeschaffung"
+- Gruppengröße: "6-10 Kinder ideal; bei 11+ besser zwei parallele Schatzsuchen"
+- totalTime PT10M → PT60M
+- Statistik-Wording analog prinzessin
+
+**dino.html — Welle 1A real-fixes**
+- Mary Anning korrekte Biographie: "(1799-1847) fand 1811 als 12-Jährige ihr erstes Ichthyosaurus-Skelett, später Plesiosaurus (1823) und Pterodactyl (1828) — Pionierin der Paläontologie"
+- Chicxulub framing: "Chicxulub-Asteroid (Yucatan, vor 66 Mio. Jahren, primärer Auslöser) plus Deccan-Trapps-Vulkanismus (Indien, parallel laufender Sekundärstressor)"
+- Archaeopteryx: "Vögel sind moderne Theropoden-Dinosaurier"
+- Vulkan-Experiment Sicherheits-Box: Schwimmbrille für vordere Reihe, Lüften (CO₂), Essig-Verwechslungsgefahr, Gips-Splitterschutz, Eis-Erfrierungs-Hinweis (~30 Sek max)
+- Statistik-Wording angepasst
+
+**safari.html — Welle 1A real-fixes**
+- Gepard: 110 km/h → 120-130 km/h (Sprintspitze stimmt)
+- Nilpferd-Frage: "im direkten Kontakt am gefährlichsten? (~500 Todesfälle/Jahr)"
+- Joy Adamson präzisiert als "Löwin-Elsa-Wildlife-Schützerin" (statt vage "Forscherin")
+- Wangari Maathai ergänzt (Friedensnobelpreis 2004)
+- Dian Fossey: "getötet 1985 in Ruanda" — präziser
+- Statistik-Wording angepasst
+
+### Methodik-Lektion
+Multi-Chat-Reviewer-Tab via Chrome-MCP scheiterte heute mehrfach (claude.ai-Eingabe verstreut, Tabs zeigten Splash-Screen leer). WebFetch funktionierte trotz 15-Min-Cache (mit explizitem `?cb=ts`-Param + manueller curl-Verifikation).
+
+**Branch-Trick (Memory `helfer_v3_sycophancy_pattern.md`):** Push auf draft → merge auf main → raw.githubusercontent.com/.../main/...?cb=welleX umgeht Cloudflare-Cache (2h TTL) + erlaubt Cache-Bust pro Welle.
+
+### Nächste Schritte (offen)
+- Welle 2 Re-Verify mit Chrome-MCP Multi-Chat oder WebFetch für dino+safari nach Deploy
+- 11 weitere Hubs durch unabhängigen Reviewer (einhorn, weltraum, dschungel, feen, superheld, feuerwehr, meerjungfrau, detektiv, ritter*, baustelle*, pferde*) (*) bereits Gold-Standard
+- Nach erfolgreicher Verify: Welle 2 für die anderen 8
+
+### PFLICHT-NACHSCHRITTE NACH MERGE
+1. **Cloudflare Cache-Purge** (dash.cloudflare.com → machsleicht.de → Caching → Purge Everything) — 2h Edge-Cache leeren
+2. **GSC Sitemap-Re-Submit** — falls sitemap.xml betroffen war (heute nur HTML-Page-Edits, daher nicht zwingend, aber URL-Inspection für 4 geänderte Pages empfohlen)
+
+---
+
 # Session-Notiz — 30.05.2026 (Chrome-Helfer-v3 Welle 1A für 12 Hubs + Sprint-1 Altersgruppen + 5 Einladungs-Apps)
 
 ## 🚀 Heute deployed (30.05.2026)
