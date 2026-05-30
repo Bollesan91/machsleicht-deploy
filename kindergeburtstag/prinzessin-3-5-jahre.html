@@ -62,7 +62,11 @@
       {"@type": "Question", "name": "Was kostet ein Prinzessin-Geburtstag für 3-5 Jahre?",
         "acceptedAnswer": {"@type": "Answer", "text": "Realistisch 15-30 € pro Kind. Minimal (6 Kinder): ca. 15 €/Kind mit Bastel-Kronen und Tüten-Süßigkeiten. Standard mit Themen-Kuchen und Plastik-Diadem: 20-25 €/Kind. Wow mit Foto-Box und großer Schatzkiste: 25-30 €/Kind."}},
       {"@type": "Question", "name": "Brauche ich Disney-Lizenzen wie Elsa oder Cinderella?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Im Gegenteil — generisches Schloss-Fest. Kinder erfinden selbst „Prinzessin Lina" oder „Königin Mia". Das ist nicht nur lizenz-sicher (kein Disney-Risiko), sondern auch persönlicher. Verschiedene Kostüm-Farben (lila, rosa, gold) statt fixed Disney-Kostüme."}}
+        "acceptedAnswer": {"@type": "Answer", "text": "Im Gegenteil — generisches Schloss-Fest. Kinder erfinden selbst „Prinzessin Lina" oder „Königin Mia". Das ist nicht nur lizenz-sicher (kein Disney-Risiko), sondern auch persönlicher. Verschiedene Kostüm-Farben (lila, rosa, gold) statt fixed Disney-Kostüme."}},
+      {"@type": "Question", "name": "Was wenn ein Kind die Krone nicht aufsetzen will?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Kein Druck. Manche 3-Jährige mögen nichts auf dem Kopf. Alternative: Krone am Mantel ankleben (Sticker-Stelle). Hauptsache, das Kind fühlt sich nicht ausgeschlossen. Bei manchen reicht eine Hand-bemalte Wange mit Stern oder Herz als „Hof-Zeichen"."}},
+      {"@type": "Question", "name": "Wie verhindere ich Streit ums Plüschfrosch-Küssen?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Klare Reihenfolge vorher: Geburtstagskind beginnt, dann reihum. Stoppuhr (Eltern-Handy) visuell zeigen — 30 Sek pro Kind. Plüschfrosch hat genug „Küsse" für alle, niemand kommt zu kurz. Hygiene-Hinweis: Kuss auf den Kopf (nicht Mund) ist Standard."}}
     ]
   }
   </script>
@@ -138,6 +142,18 @@
   .related .card{background:#fff;text-align:center;padding:14px 8px;margin:0;border:1px solid var(--l);font-size:13px;font-weight:700}
   footer{text-align:center;margin-top:40px;padding:16px 0;border-top:1px solid var(--l);font-size:12px;color:var(--m)}
   footer a{font-size:12px;color:var(--m);font-weight:400}
+  .variant-tabs{display:flex;gap:0;margin:20px 0 0;border-bottom:2px solid var(--l);overflow-x:auto}
+  .variant-tab{flex:1;min-width:90px;padding:12px 8px;text-align:center;font-weight:700;font-size:14px;cursor:pointer;border:none;border-bottom:3px solid transparent;color:var(--m);transition:all 0.2s;background:none;font-family:var(--f)}
+  .variant-tab:hover{color:var(--d)}
+  .variant-tab.active{color:var(--a);border-bottom-color:var(--a)}
+  .variant-panel{display:none;padding:20px 0}
+  .variant-panel.active{display:block;animation:fadeIn 0.3s}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+  .variant-summary{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:12px 16px;background:linear-gradient(135deg,#FCE4EC,#F8BBD0);border-radius:8px;margin-bottom:14px;font-size:13px;font-weight:700}
+  .variant-summary span{display:inline-flex;align-items:center;gap:4px}
+  .ritual-card{background:linear-gradient(135deg,#FFF8E1,#FFE082);border:1px solid #FFCC80;border-radius:14px;padding:20px;margin:20px 0}
+  .ritual-card h4{color:#B71C1C;margin-bottom:6px;font-size:16px}
+  .ritual-card p{font-size:14px;line-height:1.7;color:#5D4037}
   @media(max-width:480px){main{padding:16px 12px 80px}}
   @media print{.no-print,.cta,footer,[style*="position: fixed"],[style*="sticky"]{display:none!important}body{background:#fff!important;color:#000!important;font-size:12pt}a{color:#000!important;text-decoration:none!important}.print-only{display:block!important}}
   </style>
@@ -169,6 +185,11 @@
     <p style="margin-bottom:0"><strong>Vermeiden:</strong> Komplizierte Regeln, viele Wartezeiten, Lizenz-Disney-Charakter (zu viel Erwartung an Outfit).</p>
   </div>
 
+  <div class="ritual-card">
+    <h4>👑 Die kleine Krönung</h4>
+    <p>Bei 3–5-Jährigen funktioniert kein langer Königlicher Eid. Was funktioniert: zwei winzige Rituelle Momente. Beim Ankommen wird jedes Kind zur „kleinen Hoheit" ernannt — Mantel über die Schultern, Hofknicks geübt, ein Stern-Sticker als Hof-Insignie. Am Ende der Party steht die Krönungs-Zeremonie: jedes Kind bekommt seine selbst gebastelte Krone aufgesetzt und eine Prinzessin/Prinz-Urkunde mit Foto. Diese 2 Momente sind die Erinnerung — alles dazwischen ist Spaß.</p>
+  </div>
+
   <div class="quickinfo">
     <div class="quickinfo-item"><div class="lbl">Dauer</div><div class="val">2 Std</div></div>
     <div class="quickinfo-item"><div class="lbl">Kinder</div><div class="val">5–7</div></div>
@@ -176,57 +197,79 @@
     <div class="quickinfo-item"><div class="lbl">Kosten</div><div class="val">15–25 €/Kind</div></div>
   </div>
 
-  <h2>Zeitplan (2 Stunden)</h2>
-  <div class="card">
-    <div class="timeline-row">
-      <div class="timeline-time">14:00</div>
-      <div>
-        <div class="timeline-what">Ankommen + Schloss-Begrüßung</div>
-        <div class="timeline-detail">Jedes Kind bekommt einen Plüsch-Mantel (großes Geschirrtuch mit Sicherheits-Klettband) und wird als „Eure Hoheit" begrüßt. Hofknicks-Übung. Foto-Moment.</div>
-      </div>
+  <h2>3 Konzepte zur Auswahl</h2>
+  <p>Drei fertige Konzepte — von Minimal-90-Min bis Wow-3-Std. Jedes mit eigenem Zeitplan, eigenen Spielen und realistischem Kosten-Rahmen für 6 Kinder.</p>
+
+  <div class="variant-tabs no-print">
+    <button class="variant-tab active" onclick="showVariant(this,'min')">Minimal · 90 Min</button>
+    <button class="variant-tab" onclick="showVariant(this,'std')">Standard · 2 Std</button>
+    <button class="variant-tab" onclick="showVariant(this,'wow')">Wow · 3 Std</button>
+  </div>
+
+  <div id="variant-min" class="variant-panel active">
+    <div class="variant-summary">
+      <span>⏱️ 90 Minuten</span>
+      <span>👥 5–6 Kinder</span>
+      <span>💰 ~15 €/Kind</span>
+      <span>🏠 Indoor reicht</span>
     </div>
-    <div class="timeline-row">
-      <div class="timeline-time">14:15</div>
-      <div>
-        <div class="timeline-what">👑 Krone basteln</div>
-        <div class="timeline-detail">Goldkarton-Streifen + Goldsticker als Juwelen. Jedes Kind bastelt eigene Krone und behält sie als Mitgebsel. Hilfe von Eltern beim Zusammenkleben.</div>
-      </div>
+    <h3>Das kompakte Schloss-Stündchen</h3>
+    <p>Für 3-Jährige oder kleine Crew (5–6 Kinder). Fokus: Krone basteln, 2 ruhige Spiele, Tee, Mitgebsel. Keine Überreizung.</p>
+
+    <div class="card">
+      <div class="timeline-row"><div class="timeline-time">14:00</div><div><div class="timeline-what">Ankommen + Hof-Empfang</div><div class="timeline-detail">Mantel anlegen, Hof-Name vergeben, Stern-Sticker als Insignie. Hofknicks-Übung. Foto-Moment.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:15</div><div><div class="timeline-what">👑 Krone basteln</div><div class="timeline-detail">Goldkarton + Goldsticker. 20 Min Bastel-Phase, behalten.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:35</div><div><div class="timeline-what">Edelstein-Suche im Wohnzimmer</div><div class="timeline-detail">10 Plastik-Edelsteine zwischen Deko verstecken. Jedes Kind 5.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:50</div><div><div class="timeline-what">🍰 Königlicher Tee</div><div class="timeline-detail">Schloss-Kuchen, kleine Sandwiches, Bonbons-Tee. 20 Min Pause.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">15:10</div><div><div class="timeline-what">Krönungs-Zeremonie + Mitgebsel</div><div class="timeline-detail">Jedes Kind wird mit eigener Krone gekrönt, Urkunde + Mitgebsel-Tüte.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">15:30</div><div><div class="timeline-what">Hofknicks-Abschied</div><div class="timeline-detail">Letzter Hofknicks, Foto, Eltern holen ab.</div></div></div>
     </div>
-    <div class="timeline-row">
-      <div class="timeline-time">14:35</div>
-      <div>
-        <div class="timeline-what">Schloss-Ball-Tanz</div>
-        <div class="timeline-detail">Walzer-Musik läuft, alle tanzen frei mit Hofknicks bei Musik-Stop. Wer wackelt scheidet bei großen Kindern aus — bei 3-Jährigen nicht.</div>
-      </div>
+    <div class="cost-bar"><div class="cost-label">Total Minimal (6 Kinder)</div><div class="cost-value">~90 € · 15 €/Kind</div></div>
+  </div>
+
+  <div id="variant-std" class="variant-panel">
+    <div class="variant-summary">
+      <span>⏱️ 2 Stunden</span>
+      <span>👥 6–8 Kinder</span>
+      <span>💰 ~20 €/Kind</span>
+      <span>🏠 Indoor/Outdoor</span>
     </div>
-    <div class="timeline-row">
-      <div class="timeline-time">14:55</div>
-      <div>
-        <div class="timeline-what">Edelstein-Suche im Rosengarten</div>
-        <div class="timeline-detail">Bunte Plastik-Edelsteine (groß!) zwischen Blumen-Deko verstecken. Jedes Kind sammelt 5. Schatztüte zum Sammeln.</div>
-      </div>
+    <h3>Der vollwertige Schloss-Tag</h3>
+    <p>Standard-Niveau: Krone basteln, Schloss-Tanz, Edelstein-Suche, Frosch-Küssen, Schatzkiste. Klassisch und beliebt.</p>
+
+    <div class="card">
+      <div class="timeline-row"><div class="timeline-time">14:00</div><div><div class="timeline-what">Ankommen + Schloss-Begrüßung</div><div class="timeline-detail">Mantel, Hofname, Hofknicks-Übung.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:15</div><div><div class="timeline-what">👑 Krone basteln</div><div class="timeline-detail">Goldkarton + Goldsticker. 20 Min.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:35</div><div><div class="timeline-what">Schloss-Ball-Tanz</div><div class="timeline-detail">Walzer-Musik, Stop-Tanz mit Hofknicks.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:55</div><div><div class="timeline-what">Edelstein-Suche im Rosengarten</div><div class="timeline-detail">Plastik-Edelsteine zwischen Pflanzen, jedes Kind 5.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">15:15</div><div><div class="timeline-what">🍰 Königlicher Tee</div><div class="timeline-detail">Schloss-Kuchen, Sandwiches, Bonbons-Tee.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">15:40</div><div><div class="timeline-what">Frosch-Küssen-Verzauberung</div><div class="timeline-detail">Plüschfrosch reihum, Lippen-Sticker, „verwandelt" sich.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">15:55</div><div><div class="timeline-what">Goldenes Kästchen + Krönung</div><div class="timeline-detail">Schatzkiste, Krönung, Urkunde mit Foto, Mitgebsel.</div></div></div>
     </div>
-    <div class="timeline-row">
-      <div class="timeline-time">15:15</div>
-      <div>
-        <div class="timeline-what">🍰 Königlicher Tee</div>
-        <div class="timeline-detail">Schloss-Kuchen (rosa Glasur + Goldsterne), Bonbons-Tee (Apfelschorle in kleinen Tassen), Hof-Sandwiches mit ausgestochenen Stern-Formen.</div>
-      </div>
+    <div class="cost-bar"><div class="cost-label">Total Standard (6 Kinder)</div><div class="cost-value">~120 € · 20 €/Kind</div></div>
+  </div>
+
+  <div id="variant-wow" class="variant-panel">
+    <div class="variant-summary">
+      <span>⏱️ 3 Stunden</span>
+      <span>👥 6–10 Kinder</span>
+      <span>💰 ~30 €/Kind</span>
+      <span>🌳 Garten ideal</span>
     </div>
-    <div class="timeline-row">
-      <div class="timeline-time">15:40</div>
-      <div>
-        <div class="timeline-what">Frosch-Küssen-Verzauberung</div>
-        <div class="timeline-detail">Ein Plüschfrosch wird reihum geküsst (auf den Kopf, nicht den Mund — Hygiene). Mit Kuss-Aufkleber „verwandelt" er sich in einen Prinz-Plüsch. Lustig.</div>
-      </div>
+    <h3>Die Königliche Hofgala</h3>
+    <p>Für 4–5-Jährige mit Energie. Krone basteln, Schloss-Tanz, Edelstein-Wettbewerb, Frosch-Verzauberung, Foto-Box, Sieger-Tiara.</p>
+
+    <div class="card">
+      <div class="timeline-row"><div class="timeline-time">14:00</div><div><div class="timeline-what">Königlicher Empfang am roten Teppich</div><div class="timeline-detail">Roter Teppich, Mantel mit Logo, Hof-Foto an Schloss-Hintergrund.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:25</div><div><div class="timeline-what">👑 Krone basteln (Premium)</div><div class="timeline-detail">Goldkarton + Glitzersteine + Federn. 25 Min.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">14:50</div><div><div class="timeline-what">Schloss-Ball mit Mini-Walzer</div><div class="timeline-detail">5 Min Walzer-Schritte üben, dann tanzen.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">15:15</div><div><div class="timeline-what">🍰 Royal-Schmaus + Foto-Station</div><div class="timeline-detail">Schloss-Kuchen, Pizza-Mini, Sandwich-Sterne. Hof-Posen-Fotos.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">15:55</div><div><div class="timeline-what">Edelstein-Wettbewerb</div><div class="timeline-detail">Sortieren nach Farben, schnellstes Kind gewinnt Mini-Tiara.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">16:15</div><div><div class="timeline-what">Frosch-Verzauberung + Märchen-Quiz</div><div class="timeline-detail">Frosch-Küssen, dann 5 Märchen-Quiz-Fragen mit Mini-Preisen.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">16:35</div><div><div class="timeline-what">Großes Schatzkasten-Finale</div><div class="timeline-detail">Schatzkiste mit Mitgebsel, große Krönungs-Zeremonie, Foto.</div></div></div>
+      <div class="timeline-row"><div class="timeline-time">16:55</div><div><div class="timeline-what">Königlicher Abschied</div><div class="timeline-detail">Hofknicks, Urkunden mit 3 Story-Fotos, Eltern holen ab.</div></div></div>
     </div>
-    <div class="timeline-row">
-      <div class="timeline-time">15:55</div>
-      <div>
-        <div class="timeline-what">Goldenes Kästchen + Mitgebsel</div>
-        <div class="timeline-detail">Schatzkiste finden (versteckt im Garten oder Wohnzimmer), Prinzessin-Urkunde mit Foto, Mitgebsel-Tüte mit Krone, Edelsteinen, Süßigkeiten.</div>
-      </div>
-    </div>
+    <div class="cost-bar"><div class="cost-label">Total Wow (6 Kinder)</div><div class="cost-value">~180 € · 30 €/Kind</div></div>
   </div>
 
   <h2>Die 5 Spielideen im Detail</h2>
@@ -385,6 +428,13 @@ Mit königlichem Gruß 👸</div>
 
 </main>
 <script>
+function showVariant(tabEl, name){
+  document.querySelectorAll('.variant-tab').forEach(function(t){t.classList.remove('active')});
+  document.querySelectorAll('.variant-panel').forEach(function(p){p.classList.remove('active')});
+  tabEl.classList.add('active');
+  document.getElementById('variant-'+name).classList.add('active');
+  if(window.plausible) window.plausible('variant-tab', {props:{page:location.pathname, variant:name}});
+}
 (function(){
   var p = window.plausible || function(){};
   document.querySelectorAll('.cta, [data-cta="action"]').forEach(function(el){
