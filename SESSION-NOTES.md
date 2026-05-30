@@ -1,3 +1,38 @@
+# Session-Notiz — 30.05.2026 (Chrome-Helfer-v3 Welle 1A für 12 Hubs + Sprint-1 Altersgruppen + 5 Einladungs-Apps)
+
+## 🚀 Heute deployed (30.05.2026)
+
+### Chrome-Helfer-v3 Welle 1A — 12 Motto-Hubs nach Pferde-Vorbild
+
+Alle Mottos außer Pferde/Ritter/Baustelle (bereits Welle-10-Final ≥85) bekamen Welle 1A:
+- **detektiv** (1A+1C) ~85 — df8f8f2 + e165256
+- **dino** ~83 — ba10b0d
+- **safari** ~83 — 8c1acbb
+- **einhorn** ~83 — aa79dce
+- **meerjungfrau** ~85 — cfc5a08
+- **prinzessin** (1A+1C 4. Spielidee) ~85 — 772f170 + 71e6f8e
+- **superheld** ~83 — 249ee09
+- **feuerwehr** ~83 — cbe5b12
+- **weltraum** ~83 — 6efaea3
+- **piraten** (1A+1C 6-8 Wissen) ~84 — 70bf855 + f4121b6
+- **dschungel** ~83 — bc3fd38
+- **feen** ~85 — 538a53e
+
+**Pattern pro Page:** Trust-Zahl auf 15, Inklusivitäts-Sprache (Forscher:innen / Ranger:innen / Astronaut:innen), Story-Anker-Stempel-System (XYZ-Pass + Diplom), 9-12 echtes Fakt-Wissen (Tereschkowa 1963, Anne Bonny 1720, Marie Antoinette 1793, Brüllaffen 5km, DIN 13049, etc.), FAQ 4→6 (Vorbereitungszeit + Inklusivitäts-Statistik).
+
+### Sprint-1 Altersgruppen-Pages (9 Cycles)
+Variant-Tabs + Ritual-Card-Bookend für superheld/prinzessin/meerjungfrau × 3 Altersgruppen — 9702a76 bis 3cc0ed2.
+
+### Punkt-Fixes (ce9cf21)
+Code-Tafel-Lösungen (NHOOHU→KELLER, URVH→ROSE), Cost-Bar-Aufschlüsselung pro Variant, Polaroid-Spar-Alternative.
+
+### P1 + P3 (b5554d5 + 185abe4)
+- 5 Bronze-Pages mit FAQ+HowTo-Schema versorgt (dschungel/feen/feuerwehr/piraten/weltraum-9-12)
+- 5 Silber-Pages FAQ 4→6 erweitert (dino × 3, einhorn-6-8, piraten-6-8)
+
+### P5: 5 fehlende Einladungs-Apps neu (8a41f2c, e638e8e, 08c8059, 947695d, d6c6e0d)
+baustelle/dschungel/feen/pferde/ritter aus passenden Templates abgeleitet, Story-Strings angepasst (Bagger-Frechdachs, Affe mit Karte, Fee mit Zauberstab, Pony, Drache). SVG-Charaktere noch original — Folge-Iteration nötig.
+
 # Session-Notiz — 29.05.2026 (P7 Wizard-Architektur entschieden + MVP live + A1 Hero-Rewrite)
 
 ## 🚀 Heute deployed (29.05.2026 abends)
@@ -20,6 +55,32 @@
 - **index.html:** 9 Stellen „9 Mottos / 9 Themen" → 13 (Schema.org description, featureList, FAQPage-Answers, Trust-Zeile)
 - **js/index.js:** „9 Mottos" → 13, „81 Spiele" → 150+, „9 Themen" → 13, „9 Motto-Welten" → 13, „81 Spielideen" → 150+
 - **Echter Live-Stand:** 15 Mottos in Registry, 13 mit Planer+Schatzsuche live, 2 nur mit Einladung (superheld, prinzessin)
+
+### 🔄 PIVOT 29.05. abends — v5-Prototyp wird Live-Wizard (statt MVP-Stage-1+2)
+
+**Bolles Feedback nach Live-Test:** „aber das wollen wir doch gar nicht?! ich will doch in den planer einladungsflow" + „du hattest doch schon den geilen prototyp...was sollen wir damit?"
+
+**Erkenntnis:** Heute morgens hatte ich gedacht der v5-Prototyp sei nur Konzept-Mockup ohne echte Daten — und ein P7-1-MVP mit Stage 1+2 + Redirect zum bestehenden Planer gebaut. Das war Over-Engineering. v5 hat self-contained alle 6 Stages voll funktional.
+
+**Pivot:**
+- `_dev/prototypes/wizard-v5-live-aligned.html` → kopiert zu `wizard.html` (Repo-Root)
+- Title + Description + Canonical + Umami + Favicon ergänzt
+- Demo-Badge entfernt
+- noindex,nofollow bleibt bis Backend-Hooks aktiviert
+- Alter MVP (`/_src/wizard.jsx`, `/_src/build-wizard.sh`, `/js/wizard.js`) bleibt als Archiv im Repo, wird aber nicht mehr referenziert
+
+**v5 hat live (alles funktional):**
+- Stage 1+2: 15 Mottos × games × stations × personas × invite-templates
+- Stage 3: Plan-Preview-First + 5-Frage-Wizard + Custom-Timeline-Entries + Sub-Editoren
+- Stage 4: Einladung-Editor mit Foto-Upload + WhatsApp-Nummer + Live-Phone-Preview + 3 Typen (Mini-Spiel/Karte/Print)
+- Stage 5: Partyseite-Editor mit 4 Toggles + Browser-Preview + URL-Builder
+- Stage 6: Conversion + 3 Karten (Free / PDF light / Premium €14,90) + Magic-Link
+
+**Was NICHT live ist (Backend-Hooks kommen iterativ):**
+- Stripe-Real-Checkout (kommt mit Welle Alpha P5-4)
+- Email-Real-Versand für Magic-Link (Resend-Worker-Endpoint)
+- Server-Foto-Upload (heute: base64 in localStorage)
+- BirthdayProject-Cross-Tool-Sync (heute: eigener localStorage state)
 
 ### Welle Alpha A1 — Hero-Rewrite Funnel-Axiom v2
 - **Headline:** „kostenlos in 10 Minuten" → **„in 60 Sekunden statt 60 Minuten"** (Wettbewerbs-Argument vs Pinterest)
