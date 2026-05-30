@@ -1,3 +1,38 @@
+# Session-Notiz — 30.05.2026 (Chrome-Helfer-v3 Welle 1A für 12 Hubs + Sprint-1 Altersgruppen + 5 Einladungs-Apps)
+
+## 🚀 Heute deployed (30.05.2026)
+
+### Chrome-Helfer-v3 Welle 1A — 12 Motto-Hubs nach Pferde-Vorbild
+
+Alle Mottos außer Pferde/Ritter/Baustelle (bereits Welle-10-Final ≥85) bekamen Welle 1A:
+- **detektiv** (1A+1C) ~85 — df8f8f2 + e165256
+- **dino** ~83 — ba10b0d
+- **safari** ~83 — 8c1acbb
+- **einhorn** ~83 — aa79dce
+- **meerjungfrau** ~85 — cfc5a08
+- **prinzessin** (1A+1C 4. Spielidee) ~85 — 772f170 + 71e6f8e
+- **superheld** ~83 — 249ee09
+- **feuerwehr** ~83 — cbe5b12
+- **weltraum** ~83 — 6efaea3
+- **piraten** (1A+1C 6-8 Wissen) ~84 — 70bf855 + f4121b6
+- **dschungel** ~83 — bc3fd38
+- **feen** ~85 — 538a53e
+
+**Pattern pro Page:** Trust-Zahl auf 15, Inklusivitäts-Sprache (Forscher:innen / Ranger:innen / Astronaut:innen), Story-Anker-Stempel-System (XYZ-Pass + Diplom), 9-12 echtes Fakt-Wissen (Tereschkowa 1963, Anne Bonny 1720, Marie Antoinette 1793, Brüllaffen 5km, DIN 13049, etc.), FAQ 4→6 (Vorbereitungszeit + Inklusivitäts-Statistik).
+
+### Sprint-1 Altersgruppen-Pages (9 Cycles)
+Variant-Tabs + Ritual-Card-Bookend für superheld/prinzessin/meerjungfrau × 3 Altersgruppen — 9702a76 bis 3cc0ed2.
+
+### Punkt-Fixes (ce9cf21)
+Code-Tafel-Lösungen (NHOOHU→KELLER, URVH→ROSE), Cost-Bar-Aufschlüsselung pro Variant, Polaroid-Spar-Alternative.
+
+### P1 + P3 (b5554d5 + 185abe4)
+- 5 Bronze-Pages mit FAQ+HowTo-Schema versorgt (dschungel/feen/feuerwehr/piraten/weltraum-9-12)
+- 5 Silber-Pages FAQ 4→6 erweitert (dino × 3, einhorn-6-8, piraten-6-8)
+
+### P5: 5 fehlende Einladungs-Apps neu (8a41f2c, e638e8e, 08c8059, 947695d, d6c6e0d)
+baustelle/dschungel/feen/pferde/ritter aus passenden Templates abgeleitet, Story-Strings angepasst (Bagger-Frechdachs, Affe mit Karte, Fee mit Zauberstab, Pony, Drache). SVG-Charaktere noch original — Folge-Iteration nötig.
+
 # Session-Notiz — 29.05.2026 (P7 Wizard-Architektur entschieden + MVP live + A1 Hero-Rewrite)
 
 ## 🚀 Heute deployed (29.05.2026 abends)
