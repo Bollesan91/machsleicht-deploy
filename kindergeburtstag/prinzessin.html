@@ -57,7 +57,17 @@
       "name": "machsleicht Kindergeburtstag-Planer"
     }
   ],
-  "totalTime": "PT60M"
+  "supply": [
+    {"@type": "HowToSupply", "name": "Goldkarton & Goldpapier (Kronen, Diplome)"},
+    {"@type": "HowToSupply", "name": "Glassteine, Klebeperlen, Plastik-Edelsteine (ab 4 cm für unter 4 Jahre)"},
+    {"@type": "HowToSupply", "name": "Tüll & Samtbänder (Tischdeko, Thron)"},
+    {"@type": "HowToSupply", "name": "LED-Teelichter (statt echte Kerzen, Brandschutz)"},
+    {"@type": "HowToSupply", "name": "Holzstäbe + Sterne + Bänder (Zauberstäbe)"},
+    {"@type": "HowToSupply", "name": "Silberdraht (Tiaras 9–12, Enden umbiegen)"},
+    {"@type": "HowToSupply", "name": "Samtschatuelchen für Juwelen-Sammler"},
+    {"@type": "HowToSupply", "name": "Schaumstoff-Schwerter & -Schilde (Königshof-Akademie / Jungen-Variante)"}
+  ],
+  "totalTime": "PT75M"
 }
   </script>
   <script type="application/ld+json">
@@ -239,7 +249,7 @@ window.plausible.init=function(){};window.plausible.q=[];
               <div class="u-card">
                 <p class="u-card-label">3–5 Jahre</p>
                 <p class="u-card-title">Glitzer-Krönchen</p>
-                <p class="u-card-text">Fertige Krönchen aus Goldkarton (vorgeschnitten) mit Klebeperlen, bunten Juwelen zum Aufkleben und Glitzer-Streifen verzieren. In 15 Minuten trägt jedes Kind seine eigene Krone. Tipp: Vorher den Kopfumfang messen und mit Tacker schließen.</p>
+                <p class="u-card-text">Fertige Krönchen aus Goldkarton (vorgeschnitten) mit Klebeperlen, bunten Juwelen zum Aufkleben und Glitzer-Streifen verzieren. In 15 Minuten trägt jedes Kind seine eigene Krone. Tipp: Vorher den Kopfumfang messen und mit Tacker schließen. <em style="display:block;margin-top:.4rem;color:#C46A1D;font-style:normal">⚠ Kleinteile: Klebeperlen/Juwelen nur unter Aufsicht. Nicht für Kinder, die noch alles in den Mund nehmen (typisch unter 3 Jahre).</em></p>
               </div>
               <div class="u-card">
                 <p class="u-card-label">6–8 Jahre</p>
@@ -260,7 +270,7 @@ window.plausible.init=function(){};window.plausible.q=[];
               <div class="u-card">
                 <p class="u-card-label">3–5 Jahre</p>
                 <p class="u-card-title">Juwelen-Jagd</p>
-                <p class="u-card-text">Bunte Glasperlen und Plastik-Edelsteine in der Wohnung verstecken. Jedes Kind bekommt eine kleine Samtschatulle und sammelt fünf Juwelen. Wer fünf hat, darf sie der Königin (Mama) zur Belohnung bringen und bekommt einen Orden.</p>
+                <p class="u-card-text">Bunte Glasperlen und Plastik-Edelsteine in der Wohnung verstecken. Jedes Kind bekommt eine kleine Samtschatulle und sammelt fünf Juwelen. Wer fünf hat, darf sie der Königin (Mama) zur Belohnung bringen und bekommt einen Orden. <em style="display:block;margin-top:.4rem;color:#C46A1D;font-style:normal">⚠ Kleinteile: Glasperlen/Edelsteine sind verschluckbar. Nur unter Aufsicht, nicht für Kinder, die noch alles in den Mund nehmen (typisch unter 3 Jahre). Größere Steine (ab 4 cm) wählen für gemischte Gruppen mit Geschwistern.</em></p>
               </div>
               <div class="u-card">
                 <p class="u-card-label">6–8 Jahre</p>
@@ -505,7 +515,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   // wrapper, each direct child .u-card is one age. Reads the .u-card-label text
   // ("3–5 Jahre", "6–8 Jahre", "9–12 Jahre") and maps it deterministically.
   var ageMap = {young: /3.{1,3}5/, mid: /6.{1,3}8/, old: /9.{1,4}12/};
-  document.querySelectorAll('.u-grid-cards').forEach(function(grid){
+  document.querySelectorAll('.u-grid-cards, .u-grid-3').forEach(function(grid){
     Array.prototype.forEach.call(grid.children, function(card){
       if(!card.classList || !card.classList.contains('u-card')) return;
       var labelEl = card.querySelector('.u-card-label');
