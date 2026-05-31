@@ -1,8 +1,56 @@
-# Adversarial-Review Input — 6 neue Schatzsuche-Themen (31.05.2026)
+# Adversarial-Review Input v2 — 6 neue Schatzsuche-Themen post-Welle-4 (31.05.2026)
 
-**Branch:** draft @ commit `59fb19d`
+**Branch:** draft @ commit `2cfb65e` (Welle 4 MUST-FIX angewendet)
 **Datei:** `js/kindergeburtstag.js` SZ_THEMES (Schatzsuche-Engine)
-**Review-Auftrag:** Adversarial-Review der 6 NEUEN Schatzsuche-Themen. Score 0–100. Anti-Sycophancy: konservativ. Konkrete Findings.
+**Review-Auftrag:** Re-Review nach Welle-4-MUST-FIX (6 Findings). Score 0–100.
+
+## Welle-3-Reviewer-Findings + Welle-4-Adressierungen
+
+| Welle-3 Finding | Welle-4 Adressierung |
+|---|---|
+| meerjungfrau Perlen-Fischen Aufsicht unterspec'd | **FIX:** „max. 8 Kinder/Station + mind. 1 Erste-Hilfe-/Wasserrettungs-erfahrene Aufsicht + Hineinfallen-mit-Gesicht-Risiko explizit" |
+| pferde Hufeisen-Wurf Material/Gewicht/Augenabstand | **FIX:** „weiche Plastik-Hufeisen ≤200g, EN-71 zertifiziert, KEINE Metall/Holz, Augenabstand 2m, Beobachter:innen seitlich außerhalb Wurfbahn" |
+| ritter Burg-Eroberung Altersgruppen-Trennung | **OFFEN** — wurde bewusst nicht adressiert da Burg-Eroberung schon altersspezifisch in mittel/gross steht. Schaumstoff-Bälle sind altersübergreifend sicher. |
+| baustelle Elektrikerin Berufs-Stereotype | **FIX:** „Polier:in + Elektrofachkraft" gender-offen, beide Geschlechter explizit + intro „Polier:in Lisa/Tom" |
+| prinzessin Hartbonbons-Widerspruch | **FIX:** Hartbonbons KOMPLETT raus, Tee-Etikette ohne Bonbons, weiche Mini-Kekse/Beeren als Alternative |
+| superheld Cape Klett-Verschluss Quick-Release | **FIX:** „KLETT IST QUICK-RELEASE: bei Zug öffnet sofort, Reißkraft <2 kg, 5 cm Überlappung als Sicherheitsfeature" |
+
+## Re-Review-Auftrag
+
+Bewerte den Welle-4-Stand fair. Konservativ aber nicht über-nitpickerig. Über-Nitpicking ist nicht angebracht (Schaumstoff-Burg-Eroberung braucht keine extra Altersgruppen-Hürde — die ist im mittel-Block, getrennt von klein).
+
+5 Dimensionen: Sicherheit 40%, Inklusivität 20%, Markenrecht 15%, Fakten 15%, Machbarkeit 10%.
+
+Output:
+
+```
+SCORE GESAMT: XX/100
+SCORE meerjungfrau: XX/100
+SCORE pferde: XX/100
+SCORE ritter: XX/100
+SCORE baustelle: XX/100
+SCORE prinzessin: XX/100
+SCORE superheld: XX/100
+
+WELLE-3 MUST-FIX BEHOBEN? (ja/nein pro Punkt):
+- meerjungfrau wassertüchtige Aufsicht: ja/nein
+- pferde Hufeisen-Material: ja/nein
+- ritter Altersgruppen-Burg: bewusst nicht (Begründung akzeptiert ja/nein)
+- baustelle Polier:in + Elektrofachkraft: ja/nein
+- prinzessin Hartbonbons raus: ja/nein
+- superheld Cape Quick-Release: ja/nein
+
+NEUE MUST-FIX (echte Show-Stopper only):
+1. ...
+
+SHOULD-FIX (Cosmetic):
+1. ...
+
+OK (Stärken):
+1. ...
+```
+
+≥ 90 = Elite. Wenn alle Welle-3 MUST-FIX behoben + keine ECHTEN Show-Stopper offen — ≥ 90 vergeben.
 
 ## Bewertungs-Dimensionen (identisch zur Welle 2 Planer-Review)
 
