@@ -1825,7 +1825,7 @@ var GENERIC = [
             name: "Tiefsee-Mission",
             desc: "Wettkampf-Olympiade: 5 Disziplinen mit Tiefsee-Theme.",
             material: "Stationen-Material (Perlen-Fischen + Sand-Graben + Tuch-Wellen-Sprint + Quiz + Knotenkunde), Stoppuhr, Punktekarten",
-            anleitung: "1. 5 Stationen mit Tiefsee-Bezug. 2. Quiz: Welcher Tiefsee-Fisch leuchtet (Anglerfisch), Wie tief ist der Marianengraben (~10.994 m), Wer war Sylvia Earle (Meeresbiologin, *1935)? 3. Punkte addieren, Top-3 bekommen Mini-Pokale.",
+            anleitung: "1. 5 Stationen mit Tiefsee-Bezug. 2. Quiz: Welcher Tiefsee-Fisch leuchtet (Anglerfisch), Wie tief ist der Marianengraben (~10.994 m), Wer ist Sylvia Earle (geb. 1935, US-amerikanische Ozeanographin und Pionierin der Tiefseeforschung, Aquanautin und Gründerin von Mission Blue)? 3. Punkte addieren, Top-3 bekommen Mini-Pokale.",
             dauer: 30,
           },
           {
@@ -2275,7 +2275,7 @@ var GENERIC = [
           {
             name: "Elite-Hofschule",
             desc: "7 Stationen — frei wählbar (kein Gender-Split): Wissens-Quiz, Walzer, Tee-Zeremonie, Schwertkampf, Abschluss-Rede.",
-            material: "Quiz-Karten, Walzer-Musik (3/4-Takt), Tee-Set, Schaumstoff-Schwerter, Pergament-Rollen + Gold-Sticker (KEIN Heißwachs!), Sticker-Siegel statt Siegelwachs",
+            material: "Quiz-Karten, Walzer-Musik (3/4-Takt), Tee-Set, Schaumstoff-Schwerter, Pergament-Rollen, Versiegelungs-Alternativen (Auswahl): a) Gold-Sticker (5-Cent-große runde Gold-Folien-Aufkleber), b) Kaltleim + Siegel-Stempel (Kaltleim auf Pergament auftragen, Stempel rein-drücken vor Trocknung), c) Gold-Stift-Initialen + Heißkleber-Punkt durch Erwachsene auf separater Unterlage. ⚠ KEIN echtes Heißwachs/Siegelwachs (Verbrennungs-Risiko + widerspricht der LED-Linie)",
             anleitung: "1. 7 Stationen, alle frei wählbar. 2. Wissens-Quiz mit präzisen Fakten: a) Kaiserin Elisabeth (Spitzname Sissi, 1837–1898, Kaiserin von Österreich, ermordet 1898 in Genf); b) Queen Elizabeth II regierte 1952–2022 = 70 Jahre, längste Regentschaft eines britischen Monarchen; c) Ludwig XIV (Sonnenkönig, 1643–1715 = 72 Jahre, längste verbürgte Regentschaft eines souveränen europäischen Monarchen); d) Neuschwanstein (Baubeginn 1869 unter Ludwig II.). 3. Wiener Walzer 3/4-Takt. 4. Tee-Zeremonie. 5. Schaumstoff-Schwertkampf. 6. ⚠ KEIN echtes Heißwachs/Siegelwachs — Gold-Sticker als Siegel-Ersatz.",
             dauer: 35,
           },
