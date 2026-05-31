@@ -1793,9 +1793,9 @@ var GENERIC = [
         mittel: [
           {
             name: "Sand & Schätze",
-            desc: "Im DIN-EN-71-3 Spielsand verborgene Holz-Schätze ausgraben — wie Tiefsee-Archäologin.",
-            material: "DIN-EN-71-3 Spielsand in flacher Wanne (KEIN Quarzsand mit Feinanteil), 10 versteckte Holz-Schätze (Holzperlen ≥4 cm, Holz-Anhänger), Pinsel + Kinder-Schaufeln",
-            anleitung: "1. Schätze im Sand vergraben. 2. Kinder graben mit Pinsel + Schaufel (wie Archäolog:innen). 3. Gefundene Schätze in Stoffbeutel. 4. ⚠ Nur DIN-EN-71-3 Spielsand, kein Quarzsand-Feinanteil (Lungen-Risiko).",
+            desc: "Im zertifizierten Spielsand verborgene Holz-Schätze ausgraben — wie Tiefsee-Archäologin.",
+            material: "Zertifizierter Spielsand mit DIN-EN-71-3-Konformitätsangabe auf der Verpackung (im Baumarkt: Hagebau/Hornbach/OBI/Bauhaus als „TÜV-geprüfter Spielsand\" oder „EN-71 Spielsand\"; KEIN Quarzsand, KEIN unzertifizierter Baustellen-/Maurer-Sand), 10 versteckte Holz-Schätze (Holzperlen ≥4 cm, Holz-Anhänger), Pinsel + Kinder-Schaufeln, flache Wanne",
+            anleitung: "1. Vor Kauf: Verpackung auf DIN-EN-71-3-Kennzeichnung prüfen (Konformitätserklärung verpflichtend, bei Markenherstellern Standard). 2. Schätze im Sand vergraben. 3. Kinder graben mit Pinsel + Schaufel (wie Archäolog:innen). 4. Gefundene Schätze in Stoffbeutel. 5. ⚠ Hände nach dem Spiel waschen, KEIN Sand essen — Quarzsand mit Feinanteil hat Lungen-Risiko, nur EN-71-Konformität schützt.",
             dauer: 20,
           },
           {
@@ -2261,8 +2261,8 @@ var GENERIC = [
           {
             name: "Königliche Schmuck-Manufaktur",
             desc: "Tiara aus Draht (Erwachsene schneiden! Bastel-Brille!) + Schmuck-Set.",
-            material: "Silberdraht ab 0,8 mm, Glasperlen (ab 9 J), Bastel-Brille für ALLE in Reichweite, Seitenschneider, Tuch/Becher zum Schneiden",
-            anleitung: "1. Drahtschneiden AUSSCHLIESSLICH durch Erwachsene. 2. Alle in Reichweite tragen Bastel-Brille. 3. Drahtenden im Tuch/Becher schneiden (Geschoss-Risiko). 4. Danach Enden nach innen umbiegen. 5. Tiara + Ohrstecker + Armreif + Brosche basteln = Schmuck-Set. 6. ⚠ Glaselemente erst ab 9, nicht für jüngere Geschwister im Raum lassen.",
+            material: "Silberdraht ab 0,8 mm, Glasperlen (NUR ab 9 J — in separater, klar etikettierter Box GLAS-AB-9J gelagert), Bastel-Brille für ALLE in Reichweite, Seitenschneider, Tuch/Becher zum Schneiden, Aufräum-Box für Glas",
+            anleitung: "1. Vor Spiel-Start: Glas-Box prüfen (etikettiert GLAS-AB-9J), separates Bastel-Tisch-Areal für Glas-Arbeiten markieren. 2. Drahtschneiden AUSSCHLIESSLICH durch Erwachsene. 3. Alle in Reichweite tragen Bastel-Brille. 4. Drahtenden im Tuch/Becher schneiden (Geschoss-Risiko). 5. Danach Enden nach innen umbiegen. 6. Tiara + Ohrstecker + Armreif + Brosche basteln = Schmuck-Set. 7. ⚠ Nach Spielende SOFORT Glas-Box wieder schließen + verstauen (NICHT auf Tisch liegen lassen). 8. Bei jüngeren Geschwistern im Raum: gar KEIN Glas, nur Plastik-Edelsteine ≥4 cm als Ersatz.",
             dauer: 30,
           },
           {
@@ -2357,7 +2357,7 @@ var GENERIC = [
             name: "Helden-Bootcamp",
             desc: "5 Stationen: Krafttraining altersgerecht, Slalom, Ziel-Werfen, Geheim-Code, Tugend-Quiz.",
             material: "Yoga-Matten, Hütchen für Slalom, Schaumstoffbälle + Ziel, Code-Karten, Quiz-Karten",
-            anleitung: "1. Krafttraining altersgerecht: **6-7 J: Wand-Liegestütz** (stehend gegen Wand drücken, KEINE Boden-Liegestütz wegen Wirbelsäulen-Risiko bei wachsenden Kindern), **ab 8 J: Knie-Liegestütz** (Knie aufm Boden, gerader Rücken), 5 Wiederholungen. 2. Hütchen-Slalom. 3. Ziel-Werfen (3 Bälle). 4. Geheim-Code knacken. 5. Tugend-Quiz: Was tun Held:innen? (helfen, ehrlich sein, mutig sein). 6. Stempel pro Station — am Ende Held:innen-Lizenz.",
+            anleitung: "1. Krafttraining altersgerecht — ERWACHSENE führt Übung VOR und prüft Haltung: **6-7 J: Wand-Liegestütz** (stehend Hände auf Schulterhöhe an Wand, leicht zurückbeugen + drücken; Erwachsene:r prüft: Rücken gerade, KEIN Hohlkreuz, Schulterblätter nicht hochziehen, KEINE Boden-Liegestütz wegen Wirbelsäulen-Risiko bei wachsenden Kindern), **ab 8 J: Knie-Liegestütz** (Knie auf Matte, Hüfte-Schulter in einer Linie, Bauch anspannen; Erwachsene:r korrigiert: Po nicht hoch, Kopf gerade, langsam runter), 5 Wiederholungen. Bei Schmerz oder unsicherer Ausführung: Übung pausieren, KEIN Druck. 2. Hütchen-Slalom. 3. Ziel-Werfen (3 Bälle). 4. Geheim-Code knacken. 5. Tugend-Quiz: Was tun Held:innen? (helfen, ehrlich sein, mutig sein). 6. Stempel pro Station — am Ende Held:innen-Lizenz.",
             dauer: 25,
           },
           {
