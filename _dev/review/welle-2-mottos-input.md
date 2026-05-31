@@ -1,151 +1,81 @@
-# Adversarial-Review Input — Welle 2 Planer-Mottos (31.05.2026)
+# Adversarial-Review Input — Welle 2 Planer-Mottos v2 (31.05.2026)
 
-**Branch:** draft @ commit `5ff79c6`
+**Branch:** draft (post-Welle-3-MUST-FIX)
 **Datei:** `js/kindergeburtstag.js` (GENERIC-Array Erweiterungen)
-**Review-Auftrag:** Adversarial-Review der 3 neuen/ersetzten Planer-Mottos im machsleicht-Tool. Score 0–100. Anti-Sycophancy-Modus: konservativ scoren. Stark unter 90, wenn Mängel da. Konkrete Zeilen-Findings mit Begründung.
+**Review-Auftrag:** Re-Review der 3 Mottos nach Welle-3-MUST-FIX. Anti-Sycophancy: konservativ scoren. Score 0–100.
 
-## Review-Dimensionen
+## Vorherige Welle-2-Reviewer-Findings (alle adressiert)
 
-1. **Kindersicherheit** (40 % Gewicht):
-   - EN-71-Kleinteilezylinder ~3,17 cm — alle Materialien für 3-5 J ≥4 cm?
-   - Brandschutz: KEINE echten Flammen / Heißwachs / Brand-Kante (LED-Linie)?
-   - Drahtarbeiten (Tiara): Erwachsenen-only + Bastel-Brille + im Tuch/Becher schneiden?
-   - Allergene (Marzipan, Mandeln, Nüsse) gekennzeichnet?
-   - Glas/Murmeln/Pailletten für 3-5 J ausgeschlossen?
-   - DIN-EN-71-3 Spielsand (kein Quarzsand mit Feinanteil)?
-   - Bogenschießen ab 6 mit Schutzbrille + 1:1 Aufsicht?
-   - Pool-Nudel-Schwertkampf mit Pflicht-Regeln (kein Kopf, kein Knie, Brusthöhe max)?
+| Welle-2-MUST-FIX | Welle-3-Adressierung |
+|---|---|
+| meerjungfrau Perlen-Fischen: Wasserschüssel-Tiefe + Aufsicht | **FIX:** „max. 5 cm Wasserhöhe!" + „AUFSICHT-RATIO 1:3 bei 3-Jährigen, Armreichweite-Pflicht" |
+| prinzessin Glitzer-Krönchen: Tacker-Sicherheit | **FIX:** „Tacker AUSSCHLIESSLICH durch Erwachsene (Quetsch-/Klammer-Risiko)" |
+| prinzessin Kronen-Atelier: Glassteine-Altersmechanik | **FIX:** Material-Trennung nach Altersgruppen-Check vor Spielstart, Glas nur bei homogener 6+ ohne jüngere Geschwister |
+| prinzessin Elite-Hofschule: Fakten-Präzision | **FIX:** Sissi (1837–1898 + Ermordung Genf), Queen Elizabeth II (1952–2022 = 70 Jahre exakt), Ludwig XIV (1643–1715 = 72 Jahre exakt) |
+| superheld Helden-Starter-Set: 4-J-Mindestalter + Cape-Risiko | **FIX:** „MINDESTALTER 4 Jahre", Klett-Verschluss statt Hals-Knoten, Strangulationsgefahr-Hinweis, Verfangen-Risiko bei Möbeln/Treppe |
+| superheld Helden-Bootcamp: Liegestütz-Wirbelsäulen-Risiko | **FIX:** Wand-Liegestütz für 6-7 J, Knie-Liegestütz erst ab 8 J |
+| meerjungfrau Riff-Expedition: Marianengraben-Redundanz | **FIX:** Tiefe nur 1× als Faktum, andere Rätsel diversifiziert (Symbiose, Druck, Plankton, Strandfunde, Strömungen) |
 
-2. **Inklusivität** (20 % Gewicht):
-   - prinzessin / superheld: keine Gender-Splits (Mädchen=Etikette, Jungen=Schwert)?
-   - Hofstaat / Held:innen-Rollen frei wählbar?
-   - Gendering konsequent (Ritter:innen, Stallmeister:innen, Polier:innen)?
+## Re-Review-Dimensionen (identisch zur Welle 2)
 
-3. **Markenrechts-Sauberkeit** (15 % Gewicht):
-   - prinzessin: keine Disney-Charaktere (Cinderella, Belle, Elsa, etc.)?
-   - superheld: keine Marvel/DC-Charaktere (Spiderman, Avengers, Batman, etc.)?
-   - Generic Story-Frames (historische Personen, eigene Helden-Identität)?
+1. Kindersicherheit (40 %): EN-71, Brandschutz, Cape-Strangulation, Wirbelsäule, Wasser-Aufsicht, Tacker
+2. Inklusivität (20 %): keine Gender-Splits, Hofstaat/Heldenrollen frei wählbar
+3. Markenrecht (15 %): keine Disney/Marvel/DC-IP
+4. Faktische Korrektheit (15 %): Monarchen-Daten, Marianengraben, Sylvia Earle
+5. Praktische Machbarkeit (10 %): Material, Dauer, Anleitung
 
-4. **Faktische Korrektheit** (15 % Gewicht):
-   - Sissi 1837-1898 korrekt?
-   - Queen Elizabeth II 70 Jahre Regentschaft (1952-2022) korrekt?
-   - Ludwig XIV Sonnenkönig 72 Jahre korrekt?
-   - Neuschwanstein ab 1869 korrekt?
-   - Marianengraben ~10.994 m korrekt?
-   - Sylvia Earle Meeresbiologin *1935 korrekt?
+## Die 3 Mottos (Welle-3-Stand)
 
-5. **Praktische Machbarkeit / Spielqualität** (10 % Gewicht):
-   - Material-Listen realistisch?
-   - Dauer-Angaben plausibel?
-   - Anleitungen Schritt-für-Schritt klar?
-   - Altersgerechtigkeit der Spiele zu Klein/Mittel/Gross?
+### Motto 1 — meerjungfrau
 
----
+**klein:**
+- Bunte Muschel-Jagd: Großperlen ≥4 cm, KEIN Glas, EN-71-Begründung
+- Perlen-Fischen: **max. 5 cm Wasserhöhe + Aufsicht-Ratio 1:3 + Armreichweite-Pflicht**
+- Tuch-Wellen: blaues Tuch + Stoffbälle als Fische
 
-## Motto 1 — meerjungfrau (Stub 0/0/0 → 3/3/3 ersetzt)
+**mittel:**
+- Sand & Schätze: DIN-EN-71-3 Spielsand explizit, KEIN Quarzsand
+- Team-Tauch-Challenge: Strohhalm + Großperlen, Mund-Aufsicht
+- Ozean-Stopp: Tanz zu Unterwasser-Musik
 
-```js
-{
-  id: "meerjungfrau",
-  name: "Meerjungfrau-Welt",
-  emoji: "🧜‍♀️",
-  color: "#26C6DA",
-  cat: "generic",
-  spiele: {
-    klein: [
-      {
-        name: "Bunte Muschel-Jagd",
-        desc: "Große Muscheln und Holz-Perlen ≥4 cm im Raum verstecken — Schatztaucher:innen sammeln.",
-        material: "Große Plastik-Muscheln und Holz-/Filz-Perlen ≥4 cm (KEIN Glas, KEINE Mini-Pailletten), Stoff-Beutel pro Kind",
-        anleitung: "1. Muscheln + Holzperlen im Raum/Garten verstecken (sichtbar genug für 3-Jährige). 2. Jedes Kind bekommt einen Beutel und sammelt 5 Stück. 3. Wer 5 hat, bekommt einen Meerjungfrau-Stempel. 4. ⚠ Großteile ≥4 cm verbindlich für 3-5 J, Erstickungsgefahr-Schwelle EN-71 ~3,17 cm.",
-        dauer: 15,
-      },
-      {
-        name: "Perlen-Fischen",
-        desc: "Mit Sieb große Holz-/Filz-Perlen aus einer Wasserschüssel angeln.",
-        material: "Große Holzperlen + Filz-Perlen ≥4 cm in Weiß/Blau (KEINE Glas-/Plastik-Murmeln für 3-5), 1 Wasserschüssel, 1 Plastik-Sieb pro Kind, Handtücher",
-        anleitung: "1. Wasserschüssel mit 30-40 Großperlen füllen. 2. Jedes Kind 'fischt' mit Sieb 5 Perlen in 30 Sekunden. 3. Top-Fischer bekommt Perlentaucher:in-Stempel. 4. ⚠ KEINE Glas- oder kleine Plastik-Murmeln für 3-5 J.",
-        dauer: 10,
-      },
-      {
-        name: "Tuch-Wellen",
-        desc: "Großes blaues Tuch hoch und runter bewegen — Stoffbälle als Fische darüber rollen.",
-        material: "Großes blaues Tuch (Bettlaken), 8-10 Stoffbälle/Schaumstoffbälle als 'Fische'",
-        anleitung: "1. Alle stehen im Kreis und halten Bettlaken am Rand. 2. Tuch hoch und runter bewegen = Meereswellen. 3. Stoffbälle drauflegen — sie 'schwimmen' wie Fische. 4. Wer schafft es, Fische über die Welle in die Hände eines anderen zu rollen? Toller Kreis-Moment.",
-        dauer: 10,
-      },
-    ],
-    mittel: [
-      { name: "Sand & Schätze", desc: "Im DIN-EN-71-3 Spielsand verborgene Holz-Schätze ausgraben — wie Tiefsee-Archäologin.", material: "DIN-EN-71-3 Spielsand in flacher Wanne (KEIN Quarzsand mit Feinanteil), 10 versteckte Holz-Schätze (Holzperlen ≥4 cm, Holz-Anhänger), Pinsel + Kinder-Schaufeln", anleitung: "1. Schätze im Sand vergraben. 2. Kinder graben mit Pinsel + Schaufel (wie Archäolog:innen). 3. Gefundene Schätze in Stoffbeutel. 4. ⚠ Nur DIN-EN-71-3 Spielsand, kein Quarzsand-Feinanteil (Lungen-Risiko).", dauer: 20 },
-      { name: "Team-Tauch-Challenge", desc: "2 Teams stafetteln: Holz-Perlen mit Strohhalm in Becher transportieren.", material: "Großperlen (Holz, ≥4 cm), Trinkhalme (dick), 2 leere Becher als Ziel, Stoppuhr", anleitung: "1. 2 Teams bilden. 2. Jedes Kind transportiert 1 Perle mit Strohhalm (saugen!) von A nach B. 3. Übergabe per Strohhalm an nächstes Team-Mitglied. 4. Welches Team hat in 3 Min. mehr Perlen drüben? 5. ⚠ Strohhalm darf nicht in Mund gerammt werden — Aufsicht.", dauer: 20 },
-      { name: "Ozean-Stopp", desc: "Tanzen zu Meeres-Musik — bei Stopp Statue bleiben.", material: "Bluetooth-Box, Meeres-/Unterwasser-Sounds, evtl. blaue Tücher", anleitung: "1. Musik anschalten. 2. Kinder tanzen wie Meerjungfrauen/Schwimmer. 3. Bei Stopp: Statue bleiben. 4. Wer wackelt, scheidet aus. 5. Sieger:in wird Wellen-Champion. 6. 5-7 Runden.", dauer: 15 },
-    ],
-    gross: [
-      { name: "Riff-Expedition (Schatzsuche)", desc: "6 Stationen-Schatzsuche mit Ozean-Rätseln — vom Marianengraben bis zum Korallenriff.", anleitung: "Rätsel-Themen: Marianengraben ~10.994 m tief, Korallenriff-Symbiose, Tiefsee-Druck. Team-Arbeit — Top-3 bekommen Tiefsee-Forscher:innen-Stempel.", dauer: 30 },
-      { name: "Tiefsee-Mission", desc: "Wettkampf-Olympiade: 5 Disziplinen mit Tiefsee-Theme.", anleitung: "Quiz: Welcher Tiefsee-Fisch leuchtet (Anglerfisch), Wie tief ist der Marianengraben (~10.994 m), Wer war Sylvia Earle (Meeresbiologin, *1935)? Punkte addieren, Top-3 bekommen Mini-Pokale.", dauer: 30 },
-      { name: "Choreo der Tiefsee", desc: "Eigene Tanz-Choreografie zu Unterwasser-Musik einstudieren und vorführen.", dauer: 25 },
-    ],
-  }
-}
-```
+**gross:**
+- Riff-Expedition: **Marianengraben nur 1× als Faktum, weitere Rätsel diversifiziert** (Symbiose, Druck, Plankton, Strandfunde, Strömungen)
+- Tiefsee-Mission: 5 Disziplinen + Quiz (Anglerfisch, Marianengraben Tiefe einmal, Sylvia Earle *1935 Meeresbiologin)
+- Choreo der Tiefsee: Team-Tanz-Choreografie
 
-## Motto 2 — prinzessin (NEU: generic Reskin "Königreich & Hofstaat")
+### Motto 2 — prinzessin (generic Reskin „Königreich & Hofstaat")
 
-```js
-{
-  id: "prinzessin",
-  name: "Königreich & Hofstaat",
-  emoji: "👑",
-  color: "#E91E63",
-  cat: "generic",
-  spiele: {
-    klein: [
-      { name: "Glitzer-Krönchen-Werkstatt", material: "Goldkarton-Krönchen, Großperlen ≥4 cm aus Holz/Filz (KEIN Glas, KEINE Pailletten), Glitzer-Streifen, Tacker", anleitung: "⚠ Für 3-5 J nur Großteile ≥4 cm — EN-71-Kleinteilezylinder ~3,17 cm Schwelle.", dauer: 15 },
-      { name: "Juwelen-Jagd (≥4 cm)", material: "Plastik-Edelsteine + Holzperlen ≥4 cm (KEINE Glasperlen, KEINE Murmeln für 3-5)", anleitung: "⚠ Glaselemente erst ab 6 J + nur in homogener Altersgruppe.", dauer: 15 },
-      { name: "Höfische Aufgaben (inklusiv)", anleitung: "Aufgaben frei wählbar (kein Gender-Split). Höfische Verbeugung, Blumen-Hofgarten, sanfter Königinnen-Tanz. Pro Aufgabe 1 Stempel — am Ende Krönung.", dauer: 15 },
-    ],
-    mittel: [
-      { name: "Kronen-Atelier", anleitung: "Krone aus Schablone selbst zuschneiden. Federn, kleine Blumen, Glassteine (ab 6 J!). Glaselemente ab 6 OK.", dauer: 25 },
-      { name: "Schatzkarte zur Schlossruine", anleitung: "Karte mit Kaffeebeutel betupfen + leicht am Rand reiben (KEINE Brand-Kante — Brandschutz konsistent LED-Linie).", dauer: 25 },
-      { name: "5 Königliche Prüfungen", anleitung: "Tisch-Etikette, Buch-Balance, Erbsen-Prinzessin, Märchen-Pantomime, Rosen-Memory. Urkunde und Krönung für alle.", dauer: 25 },
-    ],
-    gross: [
-      { name: "Königliche Schmuck-Manufaktur (Tiara)", material: "Silberdraht ab 0,8 mm, Glasperlen (ab 9 J), Bastel-Brille für ALLE in Reichweite, Seitenschneider, Tuch/Becher zum Schneiden", anleitung: "1. Drahtschneiden AUSSCHLIESSLICH durch Erwachsene. 2. Alle in Reichweite tragen Bastel-Brille. 3. Drahtenden im Tuch/Becher schneiden (Geschoss-Risiko). 4. Danach Enden nach innen umbiegen. ⚠ Glaselemente erst ab 9, nicht für jüngere Geschwister im Raum lassen.", dauer: 30 },
-      { name: "Hofgeheimnis (Krimi)", anleitung: "Hofdame, Stallmeister, Hofnarr, Ritter:in, Burgfräulein — alle Rollen offen für alle (kein Gender-Split).", dauer: 35 },
-      { name: "Elite-Hofschule", material: "Schaumstoff-Schwerter, Pergament-Rollen + Gold-Sticker (KEIN Heißwachs!), Sticker-Siegel statt Siegelwachs", anleitung: "7 Stationen, alle frei wählbar. Wissens-Quiz: Sissi (1837-1898), Queen Elizabeth II 70 Jahre Regentschaft, Ludwig XIV 72 Jahre, Neuschwanstein ab 1869. Wiener Walzer 3/4-Takt. ⚠ KEIN echtes Heißwachs/Siegelwachs — Gold-Sticker als Siegel-Ersatz.", dauer: 35 },
-    ],
-  }
-}
-```
+**klein:**
+- Glitzer-Krönchen-Werkstatt: Großperlen ≥4 cm, **Tacker AUSSCHLIESSLICH durch Erwachsene (Quetsch-Risiko)**, EN-71 Begründung
+- Juwelen-Jagd (≥4 cm): KEIN Glas/Murmeln für 3-5, Glas erst ab 6 in homogener Altersgruppe
+- Höfische Aufgaben (inklusiv): Verbeugung, Hofgarten, Königinnen-Tanz, kein Gender-Split
 
-## Motto 3 — superheld (NEU: generic Reskin "Held:innen-Akademie")
+**mittel:**
+- Kronen-Atelier: **Altersgruppen-Check vor Spielstart** — wenn Geschwister <6 im Raum: nur ≥4 cm, KEIN Glas; wenn homogen 6+: Glas zusätzlich erlaubt mit separates Schälchen + Aufsicht; Glas nach Spielende sofort einsammeln
+- Schatzkarte: Kaffee-/Tee-Färbung, KEINE Brand-Kante
+- 5 Königliche Prüfungen: Tisch-Etikette, Buch-Balance, Erbsen-Prinzessin, Pantomime, Memory
 
-```js
-{
-  id: "superheld",
-  name: "Held:innen-Akademie",
-  emoji: "🦸",
-  color: "#1976D2",
-  cat: "generic",
-  spiele: {
-    klein: [  // 4-5 Jahre (NICHT 3-5)
-      { name: "Helden-Starter-Set basteln", material: "Bettlaken oder Stoffe für Capes, Filz-Augenmasken vorgeschnitten, Gummiband, Stifte, große Sticker ≥4 cm", anleitung: "Jedes Kind wählt eigene Held:innen-Identität (Name, Superkraft). Cape um Schulter knoten (NICHT um Hals — Strangulationsgefahr). ⚠ Sticker ≥4 cm, keine Kleinteile für 4-5 J.", dauer: 20 },
-      { name: "Helden-Grundausbildung", anleitung: "Tunnel (Decke über Stühle), niedriger Sprung (max. 10 cm!), Ziel-Werfen mit Schaumstoffbällen. Held:innen-Urkunde am Ende.", dauer: 20 },
-      { name: "Mission: Kuchen retten", anleitung: "Story-Mission — 'Schurke hat Kuchen entführt!' 3 große Bildhinweise nacheinander. Held:innen retten den Tag.", dauer: 15 },
-    ],
-    mittel: [
-      { name: "Helden-Design-Studio", anleitung: "Logo-Skizze + Cape selbst designen + bemalen mit Stoff-Stiften. Helden-Name + Superkraft.", dauer: 25 },
-      { name: "Helden-Bootcamp", anleitung: "5 Stationen: Liegestütz (5 für Klein-Mittel, 10 für Mittel-Gross), Slalom, Ziel-Werfen, Geheim-Code, Tugend-Quiz (Was tun Held:innen? helfen, ehrlich sein, mutig sein).", dauer: 25 },
-      { name: "Fall: Die verschwundene Stadt", anleitung: "Mini-Krimi. 5 Hinweise + 3 Verdächtige (Erwachsene als Schauspielende).", dauer: 30 },
-    ],
-    gross: [
-      { name: "Heldenidentität-Kit (volles Set)", anleitung: "Cape + Augenmaske + Helden-Pass (Name, Superkraft, Schwäche, Tugend-Versprechen) + Origin-Story in 5 Sätzen.", dauer: 35 },
-      { name: "Elite-Helden-Akademie", anleitung: "8 Stationen: Krafttraining (Liegestütz/Plank), Code-Knack (Caesar-Verschlüsselung), Geschicklichkeit, Tugend-Quiz, Pose-Foto. Top-3 bekommen Bronze/Silber/Gold-Akademie-Urkunde.", dauer: 35 },
-      { name: "Operation: Nemesis", anleitung: "Komplexer Krimi mit 6 Hinweisen + Zahlenschloss + Schatzkiste. Team das knackt, rettet die Stadt.", dauer: 40 },
-    ],
-  }
-}
-```
+**gross:**
+- Königliche Schmuck-Manufaktur (Tiara): Drahtschneiden NUR Erwachsene, ALLE in Reichweite mit Bastel-Brille, im Tuch/Becher schneiden, Glas erst ab 9
+- Hofgeheimnis (Krimi): Rollen offen für alle, kein Gender-Split
+- Elite-Hofschule: 7 Stationen frei wählbar, **Fakten präzise**: Kaiserin Elisabeth (Sissi, 1837–1898 ermordet Genf), Queen Elizabeth II (1952–2022 = 70 Jahre), Ludwig XIV (Sonnenkönig, 1643–1715 = 72 Jahre), Neuschwanstein 1869. KEIN Heißwachs/Siegelwachs.
+
+### Motto 3 — superheld (generic Reskin „Held:innen-Akademie")
+
+**klein (4–5 Jahre):**
+- Helden-Starter-Set: **MINDESTALTER 4 Jahre**, Cape mit **Klett-Verschluss vorne (NICHT um Hals — Strangulationsgefahr)**, Gummi-Maske mit 2 Finger Abstand, große Sticker ≥4 cm, Cape abnehmen bei Verfangen-Risiko (Möbel/Treppe)
+- Helden-Grundausbildung: Tunnel, niedriger Sprung max. 10 cm, Ziel-Werfen
+- Mission: Kuchen retten: Story-Mission mit 3 großen Bildhinweisen
+
+**mittel:**
+- Helden-Design-Studio: Logo + Cape designen
+- Helden-Bootcamp: **Wand-Liegestütz für 6-7 J (KEINE Boden-Liegestütz — Wirbelsäulen-Risiko), Knie-Liegestütz erst ab 8 J**, Slalom, Ziel-Werfen, Geheim-Code, Tugend-Quiz
+- Fall: Die verschwundene Stadt: Mini-Krimi
+
+**gross:**
+- Heldenidentität-Kit: Cape + Maske + Helden-Pass + Origin-Story
+- Elite-Helden-Akademie: 8 Stationen, Krafttraining altersgerecht, Code-Knack, Geschicklichkeit, Tugend-Quiz, Pose-Foto
+- Operation: Nemesis: 6 Hinweise + Zahlenschloss
 
 ---
 
@@ -157,9 +87,17 @@ SCORE meerjungfrau: XX/100
 SCORE prinzessin: XX/100
 SCORE superheld: XX/100
 
-MUST-FIX (≥ 90 nicht erreicht ohne diese):
-1. [Motto] [Zeile/Spiel] — [konkretes Finding] — [Reasoning]
-2. ...
+WELLE-2 MUST-FIX BEHOBEN? (ja/nein pro Punkt)
+- meerjungfrau Wasserschüssel: ja/nein
+- prinzessin Tacker: ja/nein
+- prinzessin Glassteine-Altersmechanik: ja/nein
+- prinzessin Sissi/Elizabeth/Ludwig Fakten: ja/nein
+- superheld 4J-Mindestalter + Cape-Strangulation: ja/nein
+- superheld Wand-Liegestütz: ja/nein
+- meerjungfrau Marianengraben-Redundanz: ja/nein
+
+NEUE MUST-FIX (≥ 90 nicht erreicht ohne diese, falls vorhanden):
+1. ...
 
 SHOULD-FIX (Score-Lift):
 1. ...
@@ -168,4 +106,4 @@ OK (Stärken):
 1. ...
 ```
 
-Konservativ scoren. Score ≥ 90 nur wenn keine Sicherheits-/Inklusivitäts-/Faktenmängel.
+Konservativ: ≥ 90 = Elite. Falls Welle-2-MUST-FIX nicht vollständig behoben oder neue Sicherheitsmängel — Score < 90.

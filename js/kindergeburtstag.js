@@ -1777,9 +1777,9 @@ var GENERIC = [
           },
           {
             name: "Perlen-Fischen",
-            desc: "Mit Sieb große Holz-/Filz-Perlen aus einer Wasserschüssel angeln.",
-            material: "Große Holzperlen + Filz-Perlen ≥4 cm in Weiß/Blau (KEINE Glas-/Plastik-Murmeln für 3-5), 1 Wasserschüssel, 1 Plastik-Sieb pro Kind, Handtücher",
-            anleitung: "1. Wasserschüssel mit 30-40 Großperlen füllen. 2. Jedes Kind 'fischt' mit Sieb 5 Perlen in 30 Sekunden. 3. Top-Fischer bekommt Perlentaucher:in-Stempel. 4. ⚠ KEINE Glas- oder kleine Plastik-Murmeln für 3-5 J.",
+            desc: "Mit Sieb große Holz-/Filz-Perlen aus einer flachen Wasserschüssel angeln.",
+            material: "Große Holzperlen + Filz-Perlen ≥4 cm in Weiß/Blau (KEINE Glas-/Plastik-Murmeln für 3-5), 1 flache Schüssel (max. 5 cm Wasserhöhe!), 1 Plastik-Sieb pro Kind, Handtücher",
+            anleitung: "1. Flache Schüssel (max. 5 cm Wasserhöhe!) mit 30-40 Großperlen füllen. 2. ⚠ AUFSICHT-RATIO 1:3 bei 3-Jährigen, 1 Erwachsene:r immer in Armreichweite (Wasser + Kleinkind = nie unbeaufsichtigt, auch wenig Wasser kann gefährlich werden). 3. Jedes Kind 'fischt' mit Sieb 5 Perlen in 30 Sekunden. 4. Top-Fischer bekommt Perlentaucher:in-Stempel. 5. ⚠ KEINE Glas- oder kleine Plastik-Murmeln für 3-5 J.",
             dauer: 10,
           },
           {
@@ -1816,9 +1816,9 @@ var GENERIC = [
         gross: [
           {
             name: "Riff-Expedition (Schatzsuche)",
-            desc: "6 Stationen-Schatzsuche mit Ozean-Rätseln — vom Marianengraben bis zum Korallenriff.",
+            desc: "6 Stationen-Schatzsuche mit Ozean-Rätseln — Korallenriff-Symbiose, Tiefsee-Druck, Plankton-Ketten.",
             material: "6 Rätsel-Karten, Schatzkiste, Stoff-Beutel pro Kind, ggf. UV-Stift + UV-Lampe",
-            anleitung: "1. 6 Rätsel-Stationen aufbauen mit Ozean-Fakten: Marianengraben ~10.994 m tief, Korallenriff-Symbiose, Tiefsee-Druck. 2. Pro Rätsel ein Hinweis auf nächste Station. 3. Letzte Station = Schatzkiste mit Mitgebseln. 4. Team-Arbeit — Top-3 bekommen Tiefsee-Forscher:innen-Stempel.",
+            anleitung: "1. 6 Rätsel-Stationen aufbauen mit unterschiedlichen Ozean-Themen: Korallenriff-Symbiose, Tiefsee-Druck-Physik, Plankton-Nahrungskette, Strandfunde, Strömungen, Tiefenrekord-Faktbox (Marianengraben — Tiefe nur 1× als Faktum nennen, nicht in jedem Rätsel). 2. Pro Rätsel ein Hinweis auf nächste Station. 3. Letzte Station = Schatzkiste mit Mitgebseln. 4. Team-Arbeit — Top-3 bekommen Tiefsee-Forscher:innen-Stempel.",
             dauer: 30,
           },
           {
@@ -2215,8 +2215,8 @@ var GENERIC = [
           {
             name: "Glitzer-Krönchen-Werkstatt",
             desc: "Fertige Krönchen aus Goldkarton mit Großperlen ≥4 cm und Glitzer-Streifen verzieren.",
-            material: "Goldkarton-Krönchen (vorgeschnitten), Großperlen ≥4 cm aus Holz/Filz (KEIN Glas, KEINE Pailletten), Glitzer-Streifen, Tacker",
-            anleitung: "1. Jedes Kind bekommt ein Krönchen. 2. Mit Großperlen + Glitzer verzieren. 3. Kopfumfang messen, mit Tacker schließen. 4. ⚠ Für 3-5 J nur Großteile ≥4 cm — EN-71-Kleinteilezylinder ~3,17 cm Schwelle.",
+            material: "Goldkarton-Krönchen (vorgeschnitten), Großperlen ≥4 cm aus Holz/Filz (KEIN Glas, KEINE Pailletten), Glitzer-Streifen, Tacker (Erwachsenen-Werkzeug!)",
+            anleitung: "1. Jedes Kind bekommt ein Krönchen. 2. Mit Großperlen + Glitzer verzieren. 3. Kopfumfang messen — Tacker zum Schließen AUSSCHLIESSLICH durch Erwachsene (Quetsch-/Klammer-Risiko an Kinderfingern). 4. ⚠ Für 3-5 J nur Großteile ≥4 cm — EN-71-Kleinteilezylinder ~3,17 cm Schwelle, 4 cm konservativer Puffer.",
             dauer: 15,
           },
           {
@@ -2237,9 +2237,9 @@ var GENERIC = [
         mittel: [
           {
             name: "Kronen-Atelier",
-            desc: "Eigene Krone selbst zuschneiden, mit Federn und Glassteinen ab 6 verzieren.",
-            material: "Goldkarton-Schablonen, Schere, Federn, Glassteine (ab 6 J!), Goldstift für Namen, Klebstoff",
-            anleitung: "1. Krone aus Schablone selbst zuschneiden. 2. Mit Federn, kleinen Blumen und Glassteinen verzieren. 3. Optional Name in Goldstift einprägen. 4. Dazu Zauberstab aus Holzstab, Sternen, Bändern basteln. 5. Glaselemente ab 6 OK.",
+            desc: "Eigene Krone selbst zuschneiden + verzieren — Material altersgerecht trennen.",
+            material: "Goldkarton-Schablonen, Schere (Kinder-Bastel-Scheren), Federn, Goldstift für Namen, Klebstoff. **Wenn Gruppe homogen 6+ ohne jüngere Geschwister:** zusätzlich Glassteine (separates Schälchen, Aufsicht-Pflicht). **Wenn jüngere Geschwister im Raum sind:** stattdessen große Plastik-Edelsteine ≥4 cm",
+            anleitung: "1. Vor Spiel-Start: Altersgruppe checken — sind Kinder unter 6 im Raum (Geschwister!)? Wenn ja: NUR ≥4 cm Großteile, KEIN Glas. 2. Krone aus Schablone selbst zuschneiden. 3. Mit Federn, kleinen Blumen und altersgerechten Verziersteinen verzieren. 4. Optional Name in Goldstift einprägen. 5. Dazu Zauberstab aus Holzstab, Sternen, Bändern basteln. 6. Glas-Material nach Spielende sofort wieder einsammeln + sicher verstauen.",
             dauer: 25,
           },
           {
@@ -2276,7 +2276,7 @@ var GENERIC = [
             name: "Elite-Hofschule",
             desc: "7 Stationen — frei wählbar (kein Gender-Split): Wissens-Quiz, Walzer, Tee-Zeremonie, Schwertkampf, Abschluss-Rede.",
             material: "Quiz-Karten, Walzer-Musik (3/4-Takt), Tee-Set, Schaumstoff-Schwerter, Pergament-Rollen + Gold-Sticker (KEIN Heißwachs!), Sticker-Siegel statt Siegelwachs",
-            anleitung: "1. 7 Stationen, alle frei wählbar. 2. Wissens-Quiz: Sissi (1837-1898), Queen Elizabeth II 70 Jahre Regentschaft, Ludwig XIV 72 Jahre, Neuschwanstein ab 1869. 3. Wiener Walzer 3/4-Takt. 4. Tee-Zeremonie. 5. Schaumstoff-Schwertkampf. 6. ⚠ KEIN echtes Heißwachs/Siegelwachs — Gold-Sticker als Siegel-Ersatz.",
+            anleitung: "1. 7 Stationen, alle frei wählbar. 2. Wissens-Quiz mit präzisen Fakten: a) Kaiserin Elisabeth (Spitzname Sissi, 1837–1898, Kaiserin von Österreich, ermordet 1898 in Genf); b) Queen Elizabeth II regierte 1952–2022 = 70 Jahre, längste Regentschaft eines britischen Monarchen; c) Ludwig XIV (Sonnenkönig, 1643–1715 = 72 Jahre, längste verbürgte Regentschaft eines souveränen europäischen Monarchen); d) Neuschwanstein (Baubeginn 1869 unter Ludwig II.). 3. Wiener Walzer 3/4-Takt. 4. Tee-Zeremonie. 5. Schaumstoff-Schwertkampf. 6. ⚠ KEIN echtes Heißwachs/Siegelwachs — Gold-Sticker als Siegel-Ersatz.",
             dauer: 35,
           },
         ],
@@ -2325,9 +2325,9 @@ var GENERIC = [
         klein: [
           {
             name: "Helden-Starter-Set basteln",
-            desc: "Cape aus Bettlaken/Tuch + Augenmaske aus Filz basteln — eigene Held:innen-Identität wählen.",
-            material: "Bettlaken oder Stoffe für Capes (1 pro Kind), Filz-Augenmasken vorgeschnitten, Gummiband, Stifte, große Sticker ≥4 cm",
-            anleitung: "1. Jedes Kind wählt eigene Held:innen-Identität (Name, Superkraft). 2. Cape aus Stoff um die Schulter knoten. 3. Augenmaske basteln + Gummi anbringen. 4. Mit großen Stickern Symbol auf Cape kleben. 5. ⚠ Sticker ≥4 cm, keine Kleinteile für 4-5 J.",
+            desc: "Cape aus Bettlaken/Tuch + Augenmaske aus Filz — Mindestalter 4 Jahre wegen Cape-Strangulationsgefahr.",
+            material: "Bettlaken oder Stoffe für Capes (1 pro Kind, mit Klett-Verschluss vorne!), Filz-Augenmasken vorgeschnitten, Gummiband, Stifte, große Sticker ≥4 cm",
+            anleitung: "1. ⚠ MINDESTALTER 4 Jahre — KEIN Cape für unter 3-Jährige (Strangulationsgefahr). 2. Cape mit Klett-Verschluss (NICHT um Hals knoten — Strangulations-Risiko, sondern Klett vorne). 3. Jedes Kind wählt eigene Held:innen-Identität (Name, Superkraft). 4. Augenmaske basteln + Gummi anbringen (Gummi nicht zu eng, 2 Finger Abstand). 5. Mit großen Stickern Symbol auf Cape kleben. 6. ⚠ Sticker ≥4 cm, keine Kleinteile für 4-5 J. Cape darf beim Spielen NICHT hängen bleiben — bei Verfangen-Gefahr (Möbel, Treppe) Cape abnehmen.",
             dauer: 20,
           },
           {
@@ -2355,9 +2355,9 @@ var GENERIC = [
           },
           {
             name: "Helden-Bootcamp",
-            desc: "5 Stationen: Liegestütz, Slalom, Ziel-Werfen, Geheim-Code, Tugend-Quiz.",
+            desc: "5 Stationen: Krafttraining altersgerecht, Slalom, Ziel-Werfen, Geheim-Code, Tugend-Quiz.",
             material: "Yoga-Matten, Hütchen für Slalom, Schaumstoffbälle + Ziel, Code-Karten, Quiz-Karten",
-            anleitung: "1. Liegestütz-Station: 5 für Klein-Mittel, 10 für Mittel-Gross. 2. Hütchen-Slalom. 3. Ziel-Werfen (3 Bälle). 4. Geheim-Code knacken. 5. Tugend-Quiz: Was tun Held:innen? (helfen, ehrlich sein, mutig sein). 6. Stempel pro Station — am Ende Held:innen-Lizenz.",
+            anleitung: "1. Krafttraining altersgerecht: **6-7 J: Wand-Liegestütz** (stehend gegen Wand drücken, KEINE Boden-Liegestütz wegen Wirbelsäulen-Risiko bei wachsenden Kindern), **ab 8 J: Knie-Liegestütz** (Knie aufm Boden, gerader Rücken), 5 Wiederholungen. 2. Hütchen-Slalom. 3. Ziel-Werfen (3 Bälle). 4. Geheim-Code knacken. 5. Tugend-Quiz: Was tun Held:innen? (helfen, ehrlich sein, mutig sein). 6. Stempel pro Station — am Ende Held:innen-Lizenz.",
             dauer: 25,
           },
           {
