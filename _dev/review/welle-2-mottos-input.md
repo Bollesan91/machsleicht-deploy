@@ -1,8 +1,16 @@
-# Adversarial-Review Input — Welle 2 Planer-Mottos v2 (31.05.2026)
+# Adversarial-Review Input — Welle 2 Planer-Mottos v3 (31.05.2026, Welle 4 Stand)
 
-**Branch:** draft (post-Welle-3-MUST-FIX)
+**Branch:** draft (post-Welle-4-MUST-FIX)
 **Datei:** `js/kindergeburtstag.js` (GENERIC-Array Erweiterungen)
-**Review-Auftrag:** Re-Review der 3 Mottos nach Welle-3-MUST-FIX. Anti-Sycophancy: konservativ scoren. Score 0–100.
+**Review-Auftrag:** Re-Review der 3 Mottos nach Welle-4-MUST-FIX. Anti-Sycophancy: konservativ scoren. Score 0–100.
+
+## Welle-3-Reviewer-Findings (alle in Welle 4 adressiert)
+
+| Welle-3-MUST-FIX | Welle-4-Adressierung |
+|---|---|
+| meerjungfrau Sand & Schätze: DIN-EN-71-3 Bezugsquelle unklar | **FIX:** „Im Baumarkt: Hagebau/Hornbach/OBI/Bauhaus als TÜV-geprüfter Spielsand oder EN-71 Spielsand; Verpackung auf DIN-EN-71-3-Kennzeichnung prüfen" |
+| prinzessin Schmuck-Manufaktur: Glas-Lagerseparation | **FIX:** „in separater, klar etikettierter Box GLAS-AB-9J gelagert + separates Bastel-Tisch-Areal markieren + nach Spielende SOFORT wieder verstauen + bei Geschwistern <9 im Raum: gar KEIN Glas, Plastik-Ersatz" |
+| superheld Helden-Bootcamp: Erwachsenen-Qualifikation für Liegestütz-Korrektur | **FIX:** „Erwachsene:r führt VOR und prüft Haltung: Rücken gerade, KEIN Hohlkreuz, Schulterblätter nicht hochziehen, Bauch anspannen, Po nicht hoch, Kopf gerade; bei Schmerz oder unsicherer Ausführung: pausieren, KEIN Druck" |
 
 ## Vorherige Welle-2-Reviewer-Findings (alle adressiert)
 
