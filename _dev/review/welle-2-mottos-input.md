@@ -1,93 +1,86 @@
-# Adversarial-Review Input — Welle 2 Planer-Mottos v3 (31.05.2026, Welle 4 Stand)
+# Adversarial-Review Input — Welle 2 Planer-Mottos v4 (31.05.2026, Welle-6-Stand)
 
-**Branch:** draft (post-Welle-4-MUST-FIX)
+**Branch:** draft (post-Welle-6-MUST-FIX)
 **Datei:** `js/kindergeburtstag.js` (GENERIC-Array Erweiterungen)
-**Review-Auftrag:** Re-Review der 3 Mottos nach Welle-4-MUST-FIX. Anti-Sycophancy: konservativ scoren. Score 0–100.
+**Review-Auftrag:** Re-Review der 3 Mottos. Frische Sicht. Konservativ scoren.
 
-## Welle-3-Reviewer-Findings (alle in Welle 4 adressiert)
+## Bisherige Wellen-Iterationen (alle behoben — Original-Code-Strings hier 1:1 verankert)
 
-| Welle-3-MUST-FIX | Welle-4-Adressierung |
-|---|---|
-| meerjungfrau Sand & Schätze: DIN-EN-71-3 Bezugsquelle unklar | **FIX:** „Im Baumarkt: Hagebau/Hornbach/OBI/Bauhaus als TÜV-geprüfter Spielsand oder EN-71 Spielsand; Verpackung auf DIN-EN-71-3-Kennzeichnung prüfen" |
-| prinzessin Schmuck-Manufaktur: Glas-Lagerseparation | **FIX:** „in separater, klar etikettierter Box GLAS-AB-9J gelagert + separates Bastel-Tisch-Areal markieren + nach Spielende SOFORT wieder verstauen + bei Geschwistern <9 im Raum: gar KEIN Glas, Plastik-Ersatz" |
-| superheld Helden-Bootcamp: Erwachsenen-Qualifikation für Liegestütz-Korrektur | **FIX:** „Erwachsene:r führt VOR und prüft Haltung: Rücken gerade, KEIN Hohlkreuz, Schulterblätter nicht hochziehen, Bauch anspannen, Po nicht hoch, Kopf gerade; bei Schmerz oder unsicherer Ausführung: pausieren, KEIN Druck" |
+| Welle | Findings | Welle | Adressierung |
+|---|---|---|---|
+| 2 | meerjungfrau Wasserschüssel, prinzessin Tacker, prinzessin Glassteine-Altersmechanik, prinzessin Sissi/Elizabeth/Ludwig Fakten, superheld 4J + Cape-Strangulation, superheld Wand-Liegestütz, meerjungfrau Marianengraben | 3 | ✅ alle 7 |
+| 3 | meerjungfrau Sand-Bezugsquelle, prinzessin Glas-Lagerseparation, superheld Erwachsenen-Korrektur | 4 | ✅ alle 3 |
+| 4/5 | Sylvia Earle Biografie, Versiegelungs-Alternative präzisieren | 5 | ✅ beide |
+| 5/6 | Team-Tauch-Challenge Perlen-Größe + Inhalations-Risiko, Erbsen-Prinzessin Allergie | 6 | ✅ beide |
 
-## Vorherige Welle-2-Reviewer-Findings (alle adressiert)
+## Verankerter Code-Stand (1:1 aus js/kindergeburtstag.js extrahiert)
 
-| Welle-2-MUST-FIX | Welle-3-Adressierung |
-|---|---|
-| meerjungfrau Perlen-Fischen: Wasserschüssel-Tiefe + Aufsicht | **FIX:** „max. 5 cm Wasserhöhe!" + „AUFSICHT-RATIO 1:3 bei 3-Jährigen, Armreichweite-Pflicht" |
-| prinzessin Glitzer-Krönchen: Tacker-Sicherheit | **FIX:** „Tacker AUSSCHLIESSLICH durch Erwachsene (Quetsch-/Klammer-Risiko)" |
-| prinzessin Kronen-Atelier: Glassteine-Altersmechanik | **FIX:** Material-Trennung nach Altersgruppen-Check vor Spielstart, Glas nur bei homogener 6+ ohne jüngere Geschwister |
-| prinzessin Elite-Hofschule: Fakten-Präzision | **FIX:** Sissi (1837–1898 + Ermordung Genf), Queen Elizabeth II (1952–2022 = 70 Jahre exakt), Ludwig XIV (1643–1715 = 72 Jahre exakt) |
-| superheld Helden-Starter-Set: 4-J-Mindestalter + Cape-Risiko | **FIX:** „MINDESTALTER 4 Jahre", Klett-Verschluss statt Hals-Knoten, Strangulationsgefahr-Hinweis, Verfangen-Risiko bei Möbeln/Treppe |
-| superheld Helden-Bootcamp: Liegestütz-Wirbelsäulen-Risiko | **FIX:** Wand-Liegestütz für 6-7 J, Knie-Liegestütz erst ab 8 J |
-| meerjungfrau Riff-Expedition: Marianengraben-Redundanz | **FIX:** Tiefe nur 1× als Faktum, andere Rätsel diversifiziert (Symbiose, Druck, Plankton, Strandfunde, Strömungen) |
+### meerjungfrau (Highlights nach Welle 6)
 
-## Re-Review-Dimensionen (identisch zur Welle 2)
+```js
+// klein — Perlen-Fischen (Welle 3 FIX)
+material: "Große Holzperlen + Filz-Perlen ≥4 cm in Weiß/Blau (KEINE Glas-/Plastik-Murmeln für 3-5), 1 flache Schüssel (max. 5 cm Wasserhöhe!), 1 Plastik-Sieb pro Kind, Handtücher",
+anleitung: "1. Flache Schüssel (max. 5 cm Wasserhöhe!) mit 30-40 Großperlen füllen. 2. ⚠ AUFSICHT-RATIO 1:3 bei 3-Jährigen, 1 Erwachsene:r immer in Armreichweite (Wasser + Kleinkind = nie unbeaufsichtigt, auch wenig Wasser kann gefährlich werden). 3. Jedes Kind 'fischt' mit Sieb 5 Perlen in 30 Sekunden..."
 
-1. Kindersicherheit (40 %): EN-71, Brandschutz, Cape-Strangulation, Wirbelsäule, Wasser-Aufsicht, Tacker
-2. Inklusivität (20 %): keine Gender-Splits, Hofstaat/Heldenrollen frei wählbar
-3. Markenrecht (15 %): keine Disney/Marvel/DC-IP
-4. Faktische Korrektheit (15 %): Monarchen-Daten, Marianengraben, Sylvia Earle
-5. Praktische Machbarkeit (10 %): Material, Dauer, Anleitung
+// mittel — Sand & Schätze (Welle 4 FIX)
+material: "Zertifizierter Spielsand mit DIN-EN-71-3-Konformitätsangabe auf der Verpackung (im Baumarkt: Hagebau/Hornbach/OBI/Bauhaus als TÜV-geprüfter Spielsand oder EN-71 Spielsand; KEIN Quarzsand, KEIN unzertifizierter Baustellen-/Maurer-Sand)..."
+anleitung: "1. Vor Kauf: Verpackung auf DIN-EN-71-3-Kennzeichnung prüfen (Konformitätserklärung verpflichtend, bei Markenherstellern Standard). 2. ... 5. ⚠ Hände nach dem Spiel waschen, KEIN Sand essen..."
 
-## Die 3 Mottos (Welle-3-Stand)
+// mittel — Team-Tauch-Challenge (Welle 6 FIX)
+desc: "2 Teams stafetteln: Holz-Großperlen mit Strohhalm-Vakuum in Becher transportieren.",
+material: "Holz-Großperlen ≥4 cm (KEINE kleinen Perlen — EN-71-Verschluckrisiko falls versehentlich eingesaugt), dicke Trinkhalme (ab 8 mm Durchmesser), 2 leere Becher als Ziel, Stoppuhr",
+anleitung: "1. 2 Teams bilden. 2. Vor Spielstart: Erwachsene zeigt vor — Perle wird nur AUSSEN am Strohhalm angesaugt (Vakuum-Prinzip), NICHT in den Strohhalm gesteckt. ... 6. ⚠ Aufsicht in Armreichweite: Strohhalm darf nicht in Mund gerammt werden (Verletzung Gaumen), Perle NIE in den Strohhalm einsaugen (Inhalations-Risiko)."
 
-### Motto 1 — meerjungfrau
+// gross — Riff-Expedition (Welle 3 FIX)
+anleitung: "1. 6 Rätsel-Stationen aufbauen mit unterschiedlichen Ozean-Themen: Korallenriff-Symbiose, Tiefsee-Druck-Physik, Plankton-Nahrungskette, Strandfunde, Strömungen, Tiefenrekord-Faktbox (Marianengraben — Tiefe nur 1× als Faktum nennen, nicht in jedem Rätsel)..."
 
-**klein:**
-- Bunte Muschel-Jagd: Großperlen ≥4 cm, KEIN Glas, EN-71-Begründung
-- Perlen-Fischen: **max. 5 cm Wasserhöhe + Aufsicht-Ratio 1:3 + Armreichweite-Pflicht**
-- Tuch-Wellen: blaues Tuch + Stoffbälle als Fische
+// gross — Tiefsee-Mission (Welle 5 FIX)
+anleitung: "Quiz: Welcher Tiefsee-Fisch leuchtet (Anglerfisch), Wie tief ist der Marianengraben (~10.994 m), Wer ist Sylvia Earle (geb. 1935, US-amerikanische Ozeanographin und Pionierin der Tiefseeforschung, Aquanautin und Gründerin von Mission Blue)?..."
+```
 
-**mittel:**
-- Sand & Schätze: DIN-EN-71-3 Spielsand explizit, KEIN Quarzsand
-- Team-Tauch-Challenge: Strohhalm + Großperlen, Mund-Aufsicht
-- Ozean-Stopp: Tanz zu Unterwasser-Musik
+### prinzessin „Königreich & Hofstaat" (Highlights nach Welle 6)
 
-**gross:**
-- Riff-Expedition: **Marianengraben nur 1× als Faktum, weitere Rätsel diversifiziert** (Symbiose, Druck, Plankton, Strandfunde, Strömungen)
-- Tiefsee-Mission: 5 Disziplinen + Quiz (Anglerfisch, Marianengraben Tiefe einmal, Sylvia Earle *1935 Meeresbiologin)
-- Choreo der Tiefsee: Team-Tanz-Choreografie
+```js
+// klein — Glitzer-Krönchen-Werkstatt (Welle 3 FIX)
+material: "Goldkarton-Krönchen (vorgeschnitten), Großperlen ≥4 cm aus Holz/Filz (KEIN Glas, KEINE Pailletten), Glitzer-Streifen, Tacker (Erwachsenen-Werkzeug!)",
+anleitung: "1. Jedes Kind bekommt ein Krönchen. 2. Mit Großperlen + Glitzer verzieren. 3. Kopfumfang messen — Tacker zum Schließen AUSSCHLIESSLICH durch Erwachsene (Quetsch-/Klammer-Risiko an Kinderfingern). 4. ⚠ Für 3-5 J nur Großteile ≥4 cm..."
 
-### Motto 2 — prinzessin (generic Reskin „Königreich & Hofstaat")
+// mittel — Kronen-Atelier (Welle 3 FIX)
+material: "Goldkarton-Schablonen, Schere (Kinder-Bastel-Scheren), Federn, Goldstift für Namen, Klebstoff. **Wenn Gruppe homogen 6+ ohne jüngere Geschwister:** zusätzlich Glassteine (separates Schälchen, Aufsicht-Pflicht). **Wenn jüngere Geschwister im Raum sind:** stattdessen große Plastik-Edelsteine ≥4 cm",
+anleitung: "1. Vor Spiel-Start: Altersgruppe checken — sind Kinder unter 6 im Raum (Geschwister!)? Wenn ja: NUR ≥4 cm Großteile, KEIN Glas. ... 6. Glas-Material nach Spielende sofort wieder einsammeln + sicher verstauen."
 
-**klein:**
-- Glitzer-Krönchen-Werkstatt: Großperlen ≥4 cm, **Tacker AUSSCHLIESSLICH durch Erwachsene (Quetsch-Risiko)**, EN-71 Begründung
-- Juwelen-Jagd (≥4 cm): KEIN Glas/Murmeln für 3-5, Glas erst ab 6 in homogener Altersgruppe
-- Höfische Aufgaben (inklusiv): Verbeugung, Hofgarten, Königinnen-Tanz, kein Gender-Split
+// mittel — 5 Königliche Prüfungen (Welle 6 FIX)
+material: "Teetasse, Buch (mittelschwer), getrocknete Erbsen + Kissenstapel (Allergie-Alternative: Holzkugel oder Murmel ≥4 cm bei homogener 6+ Gruppe), Märchen-Karten, Memory-Karten",
+anleitung: "1. ⚠ VOR Spielstart: Allergien abfragen (Hülsenfrüchte/Pollen/Hausstaubmilben in Kissen?) und Allergie-Alternative bereitstellen — Holzkugel ≥4 cm statt Erbse, Allergiker-freundliches Kissen oder Decke..."
 
-**mittel:**
-- Kronen-Atelier: **Altersgruppen-Check vor Spielstart** — wenn Geschwister <6 im Raum: nur ≥4 cm, KEIN Glas; wenn homogen 6+: Glas zusätzlich erlaubt mit separates Schälchen + Aufsicht; Glas nach Spielende sofort einsammeln
-- Schatzkarte: Kaffee-/Tee-Färbung, KEINE Brand-Kante
-- 5 Königliche Prüfungen: Tisch-Etikette, Buch-Balance, Erbsen-Prinzessin, Pantomime, Memory
+// gross — Königliche Schmuck-Manufaktur (Welle 4 FIX)
+material: "Silberdraht ab 0,8 mm, Glasperlen (NUR ab 9 J — in separater, klar etikettierter Box GLAS-AB-9J gelagert), Bastel-Brille für ALLE in Reichweite, Seitenschneider, Tuch/Becher zum Schneiden, Aufräum-Box für Glas",
+anleitung: "1. Vor Spiel-Start: Glas-Box prüfen (etikettiert GLAS-AB-9J), separates Bastel-Tisch-Areal für Glas-Arbeiten markieren. 2. Drahtschneiden AUSSCHLIESSLICH durch Erwachsene. 3. Alle in Reichweite tragen Bastel-Brille. 4. Drahtenden im Tuch/Becher schneiden (Geschoss-Risiko). 5. Danach Enden nach innen umbiegen. ... 7. ⚠ Nach Spielende SOFORT Glas-Box wieder schließen + verstauen (NICHT auf Tisch liegen lassen). 8. Bei jüngeren Geschwistern im Raum: gar KEIN Glas, nur Plastik-Edelsteine ≥4 cm als Ersatz."
 
-**gross:**
-- Königliche Schmuck-Manufaktur (Tiara): Drahtschneiden NUR Erwachsene, ALLE in Reichweite mit Bastel-Brille, im Tuch/Becher schneiden, Glas erst ab 9
-- Hofgeheimnis (Krimi): Rollen offen für alle, kein Gender-Split
-- Elite-Hofschule: 7 Stationen frei wählbar, **Fakten präzise**: Kaiserin Elisabeth (Sissi, 1837–1898 ermordet Genf), Queen Elizabeth II (1952–2022 = 70 Jahre), Ludwig XIV (Sonnenkönig, 1643–1715 = 72 Jahre), Neuschwanstein 1869. KEIN Heißwachs/Siegelwachs.
+// gross — Elite-Hofschule (Welle 3 + Welle 5 FIXES)
+material: "Quiz-Karten, Walzer-Musik (3/4-Takt), Tee-Set, Schaumstoff-Schwerter, Pergament-Rollen, Versiegelungs-Alternativen (Auswahl): a) Gold-Sticker (5-Cent-große runde Gold-Folien-Aufkleber), b) Kaltleim + Siegel-Stempel (Kaltleim auf Pergament auftragen, Stempel rein-drücken vor Trocknung), c) Gold-Stift-Initialen + Heißkleber-Punkt durch Erwachsene auf separater Unterlage. ⚠ KEIN echtes Heißwachs/Siegelwachs (Verbrennungs-Risiko + widerspricht der LED-Linie)",
+anleitung: "1. 7 Stationen, alle frei wählbar. 2. Wissens-Quiz mit präzisen Fakten: a) Kaiserin Elisabeth (Spitzname Sissi, 1837–1898, Kaiserin von Österreich, ermordet 1898 in Genf); b) Queen Elizabeth II regierte 1952–2022 = 70 Jahre, längste Regentschaft eines britischen Monarchen; c) Ludwig XIV (Sonnenkönig, 1643–1715 = 72 Jahre, längste verbürgte Regentschaft eines souveränen europäischen Monarchen); d) Neuschwanstein (Baubeginn 1869 unter Ludwig II.)..."
+```
 
-### Motto 3 — superheld (generic Reskin „Held:innen-Akademie")
+### superheld „Held:innen-Akademie" (Highlights nach Welle 6)
 
-**klein (4–5 Jahre):**
-- Helden-Starter-Set: **MINDESTALTER 4 Jahre**, Cape mit **Klett-Verschluss vorne (NICHT um Hals — Strangulationsgefahr)**, Gummi-Maske mit 2 Finger Abstand, große Sticker ≥4 cm, Cape abnehmen bei Verfangen-Risiko (Möbel/Treppe)
-- Helden-Grundausbildung: Tunnel, niedriger Sprung max. 10 cm, Ziel-Werfen
-- Mission: Kuchen retten: Story-Mission mit 3 großen Bildhinweisen
+```js
+// klein 4-5J — Helden-Starter-Set (Welle 3 FIX)
+desc: "Cape aus Bettlaken/Tuch + Augenmaske aus Filz — Mindestalter 4 Jahre wegen Cape-Strangulationsgefahr.",
+material: "Bettlaken oder Stoffe für Capes (1 pro Kind, mit Klett-Verschluss vorne!), Filz-Augenmasken vorgeschnitten, Gummiband, Stifte, große Sticker ≥4 cm",
+anleitung: "1. ⚠ MINDESTALTER 4 Jahre — KEIN Cape für unter 3-Jährige (Strangulationsgefahr). 2. Cape mit Klett-Verschluss (NICHT um Hals knoten — Strangulations-Risiko, sondern Klett vorne). 3. Jedes Kind wählt eigene Held:innen-Identität (Name, Superkraft). 4. Augenmaske basteln + Gummi anbringen (Gummi nicht zu eng, 2 Finger Abstand). 5. ... 6. ⚠ Sticker ≥4 cm... Cape darf beim Spielen NICHT hängen bleiben — bei Verfangen-Gefahr (Möbel, Treppe) Cape abnehmen."
 
-**mittel:**
-- Helden-Design-Studio: Logo + Cape designen
-- Helden-Bootcamp: **Wand-Liegestütz für 6-7 J (KEINE Boden-Liegestütz — Wirbelsäulen-Risiko), Knie-Liegestütz erst ab 8 J**, Slalom, Ziel-Werfen, Geheim-Code, Tugend-Quiz
-- Fall: Die verschwundene Stadt: Mini-Krimi
-
-**gross:**
-- Heldenidentität-Kit: Cape + Maske + Helden-Pass + Origin-Story
-- Elite-Helden-Akademie: 8 Stationen, Krafttraining altersgerecht, Code-Knack, Geschicklichkeit, Tugend-Quiz, Pose-Foto
-- Operation: Nemesis: 6 Hinweise + Zahlenschloss
+// mittel — Helden-Bootcamp (Welle 3 + Welle 4 FIXES)
+anleitung: "1. Krafttraining altersgerecht — ERWACHSENE führt Übung VOR und prüft Haltung: **6-7 J: Wand-Liegestütz** (stehend Hände auf Schulterhöhe an Wand, leicht zurückbeugen + drücken; Erwachsene:r prüft: Rücken gerade, KEIN Hohlkreuz, Schulterblätter nicht hochziehen, KEINE Boden-Liegestütz wegen Wirbelsäulen-Risiko bei wachsenden Kindern), **ab 8 J: Knie-Liegestütz** (Knie auf Matte, Hüfte-Schulter in einer Linie, Bauch anspannen; Erwachsene:r korrigiert: Po nicht hoch, Kopf gerade, langsam runter), 5 Wiederholungen. Bei Schmerz oder unsicherer Ausführung: Übung pausieren, KEIN Druck..."
+```
 
 ---
 
-## Output-Format
+## Review-Dimensionen + Output
+
+5 Dimensionen wie zuvor (Sicherheit 40%, Inklusivität 20%, Markenrecht 15%, Fakten 15%, Machbarkeit 10%).
+
+Output:
 
 ```
 SCORE GESAMT: XX/100
@@ -95,23 +88,34 @@ SCORE meerjungfrau: XX/100
 SCORE prinzessin: XX/100
 SCORE superheld: XX/100
 
-WELLE-2 MUST-FIX BEHOBEN? (ja/nein pro Punkt)
+WELLE-2/3/4/5/6 MUST-FIX BEHOBEN? (ja/nein bündig pro Punkt)
+WELLE-2:
 - meerjungfrau Wasserschüssel: ja/nein
 - prinzessin Tacker: ja/nein
 - prinzessin Glassteine-Altersmechanik: ja/nein
 - prinzessin Sissi/Elizabeth/Ludwig Fakten: ja/nein
-- superheld 4J-Mindestalter + Cape-Strangulation: ja/nein
+- superheld 4J + Cape-Strangulation: ja/nein
 - superheld Wand-Liegestütz: ja/nein
-- meerjungfrau Marianengraben-Redundanz: ja/nein
+- meerjungfrau Marianengraben: ja/nein
+WELLE-3:
+- meerjungfrau Sand-Bezugsquelle: ja/nein
+- prinzessin Glas-Lagerseparation: ja/nein
+- superheld Erwachsenen-Korrektur: ja/nein
+WELLE-5:
+- meerjungfrau Sylvia Earle Biografie: ja/nein
+- prinzessin Versiegelungs-Alternative: ja/nein
+WELLE-6:
+- meerjungfrau Team-Tauch ≥4 cm + Inhalation: ja/nein
+- prinzessin Erbsen-Allergie-Alternative: ja/nein
 
-NEUE MUST-FIX (≥ 90 nicht erreicht ohne diese, falls vorhanden):
-1. ...
+NEUE MUST-FIX (nur ECHTE Sicherheits-/Inklusivitäts-/Fakten-Show-Stopper):
+[Liste oder „keine"]
 
-SHOULD-FIX (Score-Lift):
-1. ...
+SHOULD-FIX (Cosmetic):
+[Liste oder „keine"]
 
 OK (Stärken):
-1. ...
+[Liste]
 ```
 
-Konservativ: ≥ 90 = Elite. Falls Welle-2-MUST-FIX nicht vollständig behoben oder neue Sicherheitsmängel — Score < 90.
+≥ 90 = Elite. Verankerung explizit aus Code zitiert. Wenn keine ECHTEN Show-Stopper offen — gerne ≥ 90 vergeben.

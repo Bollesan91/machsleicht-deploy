@@ -1800,9 +1800,9 @@ var GENERIC = [
           },
           {
             name: "Team-Tauch-Challenge",
-            desc: "2 Teams stafetteln: Holz-Perlen mit Strohhalm in Becher transportieren.",
-            material: "Großperlen (Holz, ≥4 cm), Trinkhalme (dick), 2 leere Becher als Ziel, Stoppuhr",
-            anleitung: "1. 2 Teams bilden. 2. Jedes Kind transportiert 1 Perle mit Strohhalm (saugen!) von A nach B. 3. Übergabe per Strohhalm an nächstes Team-Mitglied. 4. Welches Team hat in 3 Min. mehr Perlen drüben? 5. ⚠ Strohhalm darf nicht in Mund gerammt werden — Aufsicht.",
+            desc: "2 Teams stafetteln: Holz-Großperlen mit Strohhalm-Vakuum in Becher transportieren.",
+            material: "Holz-Großperlen ≥4 cm (KEINE kleinen Perlen — EN-71-Verschluckrisiko falls versehentlich eingesaugt), dicke Trinkhalme (ab 8 mm Durchmesser), 2 leere Becher als Ziel, Stoppuhr",
+            anleitung: "1. 2 Teams bilden. 2. Vor Spielstart: Erwachsene zeigt vor — Perle wird nur AUSSEN am Strohhalm angesaugt (Vakuum-Prinzip), NICHT in den Strohhalm gesteckt. 3. Jedes Kind transportiert 1 Perle mit Strohhalm-Vakuum von A nach B. 4. Übergabe an nächstes Team-Mitglied. 5. Welches Team hat in 3 Min. mehr Perlen drüben? 6. ⚠ Aufsicht in Armreichweite: Strohhalm darf nicht in Mund gerammt werden (Verletzung Gaumen), Perle NIE in den Strohhalm einsaugen (Inhalations-Risiko).",
             dauer: 20,
           },
           {
@@ -2251,9 +2251,9 @@ var GENERIC = [
           },
           {
             name: "5 Königliche Prüfungen",
-            desc: "Tisch-Etikette, Buch-Balance, Erbsen-Prinzessin, Märchen-Pantomime, Rosen-Memory.",
-            material: "Teetasse, Buch (mittelschwer), Erbsen + Kissenstapel, Märchen-Karten, Memory-Karten",
-            anleitung: "1. Etikette-Quiz: Wie hält man die Teetasse? 2. Buch auf dem Kopf tragen, 3 Schritte. 3. Erbse unter Kissen ertasten. 4. Märchen pantomimisch raten. 5. Rosen-Memory. 6. Urkunde und Krönung für alle.",
+            desc: "Tisch-Etikette, Buch-Balance, Erbsen-Prinzessin (mit Erbsen-Alternative für Allergien), Märchen-Pantomime, Rosen-Memory.",
+            material: "Teetasse, Buch (mittelschwer), getrocknete Erbsen + Kissenstapel (Allergie-Alternative: Holzkugel oder Murmel ≥4 cm bei homogener 6+ Gruppe), Märchen-Karten, Memory-Karten",
+            anleitung: "1. ⚠ VOR Spielstart: Allergien abfragen (Hülsenfrüchte/Pollen/Hausstaubmilben in Kissen?) und Allergie-Alternative bereitstellen — Holzkugel ≥4 cm statt Erbse, Allergiker-freundliches Kissen oder Decke. 2. Etikette-Quiz: Wie hält man die Teetasse? 3. Buch auf dem Kopf tragen, 3 Schritte. 4. Erbse (oder Allergie-Alternative) unter Kissen ertasten. 5. Märchen pantomimisch raten. 6. Rosen-Memory. 7. Urkunde und Krönung für alle.",
             dauer: 25,
           },
         ],
