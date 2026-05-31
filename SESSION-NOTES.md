@@ -1,6 +1,25 @@
-# Session-Notiz — 31.05.2026 abends (Welle 2 Phase 3 detektiv + prinzessin MUST-FIX → main)
+# Session-Notiz — 31.05.2026 abends (Welle 2 Phase 3 + Funnel-Fix P1-21 → main)
 
-## 🚀 Deploy 31.05.2026 abends (Phase 3 — detektiv + prinzessin MUST-FIX)
+## 🚀 Deploy 31.05.2026 abends Teil 2 (P1-21 — Planer-Funnel pferde+ritter+baustelle)
+
+Direkter Funnel-Bruch behoben: Hub-Pages pferde + ritter + baustelle waren seit Welle 1 (30.05.2026) live, aber im Planer-Array `ALL_MOTTOS` nicht enthalten. Sticky-Bar-Klick vom Hub auf `?motto=pferde#planer` → `ALL_MOTTOS.find(...)` returns undefined → Planer-Default-State, User-Erwartung gebrochen.
+
+### Fix umgesetzt
+
+- **`js/kindergeburtstag.js`**: 3 vollständige Motto-Einträge ins `GENERIC`-Array eingefügt (vor `];` Z. 1773). Jeweils 3 Spiele × 3 Altersgruppen, Deko (3 items + dekoMin), Mitgebsel (3 items), Kuchen (klein/mittel/gross je 1 Rezept). Inhalte aus den frisch deployten Hub-Pages abgeleitet (Pool-Nudel-Pferde-Parcours, Wappen-Malen-Heraldikregel, LKW-Parcours-Sicherheits-Linie, ≥4 cm Großteile-Konsistenz).
+- **`kindergeburtstag.html` ItemList Schema**: 10 → 13 Mottos (pferde + ritter + baustelle + dschungel + feen waren auch schon nicht in ItemList, jetzt alle drin). `numberOfItems` + `description` synchron.
+- **Syntax-Check**: `new Function(code)` parsed clean, `ALL_MOTTOS.length === 13`, alle 3 Mottos via `find(id===)` lookup-bar mit `3/3/3` Spiele.
+
+### prinzessin + superheld bewusst nicht im Planer-Array (Architektur-Inkonsistenz dokumentiert)
+
+LICENSE-Array ist seit 29.04.2026 leer („Lizenz-Mottos wurden aus dem Tool entfernt — Markenrechts-Risiko"). prinzessin + superheld Hub-Pages bestehen weiter und linken via Sticky-Bar auf `/kindergeburtstag?motto=prinzessin|superheld#planer`, der Planer kennt sie aber nicht → Default-State. **Architektur-Entscheidung nötig** (separates PBI):
+1. **Option A — Hub-Sticky-Bars umstellen**: prinzessin/superheld Hub-Sticky-Bar nur noch auf Schatzsuche-Modus (`?modus=schatzsuche`), nicht Planer.
+2. **Option B — Markenrechts-Reskin**: „königliche Welt" / „Held:innen-Akademie" als generische Reskins ins GENERIC.
+3. **Option C — Hub-Pages aus Index nehmen**: prinzessin/superheld als Hub-Pages depublizieren, nur Schatzsuche-Seiten lassen.
+
+Aktueller Stand (Workaround): Planer fällt für `?motto=prinzessin|superheld` auf Default zurück, Hub-Page-Sicht-Indizierung bleibt unangetastet. ItemList listet bewusst nur die 13 Planer-Mottos.
+
+## 🚀 Deploy 31.05.2026 abends Teil 1 (Phase 3 — detektiv + prinzessin MUST-FIX)
 
 Letzte Anti-Sycophancy-Welle des Hub-Sweeps. Anti-Sycophancy fresh-tab-Reviewer hat detektiv mit 84 und prinzessin mit 80 zurückgegeben — beide unter Elite-Schwelle 90. Nur die MUST-FIX wurden umgesetzt (keine Punktezahl-Optimierung über 90 hinaus), entsprechend Bolle's Vorgabe „Mach Ende nach der Welle mit diesen Mottos. Nur noch Must fixes."
 
