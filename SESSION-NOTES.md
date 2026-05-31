@@ -1,6 +1,41 @@
-# Session-Notiz — 31.05.2026 abends (Welle 2 Phase 3 + Funnel-Fix P1-21 → main)
+# Session-Notiz — 31.05.2026 spätabends (Welle 2 Phase 3 + P1-21 + P1-21-WELLE-2: Planer-Vollständigkeit)
 
-## 🚀 Deploy 31.05.2026 abends Teil 2 (P1-21 — Planer-Funnel pferde+ritter+baustelle)
+## 🔄 IN REVIEW: P1-21 Welle 2 — meerjungfrau befüllt + prinzessin/superheld als generic Reskins + Trust-Zahlen 13→15
+
+**Status:** Edits gemacht, committed auf draft, Branch-Trick-Reviewer läuft (frischer claude.ai-Tab mit SHA-pinned URL). Main-Merge erst nach Score ≥ 90.
+
+### User-Entscheidungen (Auto-Mode-Klarstellung)
+
+1. **meerjungfrau-Stub** → Vollständig nachpflegen (Großperlen ≥4 cm, Riff-Expedition, Tiefsee-Mission etc.) ✅ umgesetzt
+2. **prinzessin + superheld** → Markenrechts-Reskin als generic Mottos im Planer (kein Disney/Marvel) ✅ umgesetzt:
+   - prinzessin → "Königreich & Hofstaat" (Hofknicks, Tee-Etikette, Wiener Walzer 3/4-Takt, Sissi-Quiz) — alle Stationen frei wählbar, kein Gender-Split, KEIN Heißwachs, KEIN Glas für 3-5 J, Drahttiara nur Erwachsene
+   - superheld → "Held:innen-Akademie" (eigene Identität wählen, Cape-Design, Helden-Bootcamp, Operation: Nemesis, Tugend-Versprechen) — generic ohne Marvel-IP
+3. **Trust-Zahlen** → Auf 15 (Hub-Wahrheit) ✅ umgesetzt: index.html (6 Stellen) + kindergeburtstag.html ItemList + schatzsuche/superheld + schatzsuche/prinzessin + ueber-uns.html
+
+### Drei Wahrheiten konsolidiert
+
+| Ebene | Anzahl | Status |
+|---|---|---|
+| Hub-Pages | 15 | alle Welle-2-Sweep durchlaufen |
+| **Planer-Mottos (GENERIC)** | **15** | alle mit 3/3/3 Spielen, Deko, Mitgebsel, Kuchen (verifiziert via `new Function()` + `find(id===)`) |
+| Schatzsuche-Themen | 13 (excl. prinzessin/superheld in SZ_THEMES) | separates PBI |
+| Einladung-Apps | 10 (Einladung-Tool nicht angefasst) | separates PBI |
+
+### Markenrechts-Hinweis
+
+Die generic Reskins „Königreich & Hofstaat" und „Held:innen-Akademie" enthalten **keine Disney/Marvel-IP**:
+- Keine Disney-Prinzessinnen-Namen (Cinderella, Belle, Elsa etc.)
+- Keine Marvel/DC-Held:innen-Namen (Spiderman, Avengers etc.)
+- Stattdessen: historische Persönlichkeiten (Sissi, Queen Elizabeth, Ludwig XIV) + eigene Held:innen-Identität die das Kind selbst entwirft
+
+### Anti-Sycophancy-Pattern strikt eingehalten
+
+- Edit-Schritt durch Haupt-Claude (kein Sub-Agent)
+- Branch-Trick mit SHA-pinned `raw.githubusercontent.com`-URL
+- Reviewer in NEUEM claude.ai-Tab (Helfer-v3-Anti-Sycophancy)
+- Score-Vergabe konservativ: ≥ 90 als Elite-Schwelle, sonst MUST-FIX-Welle
+
+## 🚀 Deploy 31.05.2026 abends Teil 2 (P1-21 — Planer-Funnel pferde+ritter+baustelle) [✅ MAIN]
 
 Direkter Funnel-Bruch behoben: Hub-Pages pferde + ritter + baustelle waren seit Welle 1 (30.05.2026) live, aber im Planer-Array `ALL_MOTTOS` nicht enthalten. Sticky-Bar-Klick vom Hub auf `?motto=pferde#planer` → `ALL_MOTTOS.find(...)` returns undefined → Planer-Default-State, User-Erwartung gebrochen.
 
