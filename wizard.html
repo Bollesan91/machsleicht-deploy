@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex,nofollow">
+<meta name="robots" content="index,follow">
 <title>Kindergeburtstag-Wizard — kompletter Plan in 5 Minuten · machsleicht.de</title>
 <meta name="description" content="Gefuehrter Wizard: Motto waehlen, Alter waehlen, fertig ist der komplette Plan mit Schatzsuche, Einladung und Partyseite. Kostenlos, ohne Anmeldung, in 5 Minuten startklar.">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -445,7 +445,7 @@
       <p>Such ein Motto aus — wir bauen drum herum den kompletten Plan, die Einladung, die Schatzsuche und die Partyseite. Alles in einem Flow, du kannst jederzeit pausieren und später weitermachen.</p>
       <div class="social-proof">
         <span class="social-proof__star">⭐⭐⭐⭐⭐</span>
-        <strong>Über 4.700 Geburtstage</strong> mit machsleicht geplant · kostenlos · ohne Anmeldung
+        <strong>Kompletter Plan in 5 Minuten</strong> · kostenlos · ohne Anmeldung
       </div>
     </header>
     <div class="mottos" id="mottosGrid"></div>
@@ -786,7 +786,7 @@
 <span id="demoStage" style="display:none">1</span>
 
 <script>
-  // ===== DATA — 12 MOTTOS VOLL =====
+  // ===== DATA — 15 MOTTOS VOLL =====
   const MOTTOS = [
     {id:'piraten', emoji:'🏴‍☠️', name:'Piraten', accent:'#1E3A5F', accent2:'#FFD700', persona:'Pirat',
       games:[{emoji:'🪜',name:'Walk the Plank',desc:'Balance auf Brett'},{emoji:'⚓',name:'Kanonenkugeln',desc:'Bälle in Eimer'},{emoji:'🏴‍☠️',name:'Schatz im Sand',desc:'Mit Sieb buddeln'},{emoji:'🦜',name:'Papagei sagt',desc:'Simon-Says'},{emoji:'🚩',name:'Flaggenraub',desc:'Klassik'},{emoji:'🗡️',name:'Schwertkampf',desc:'Schaumstoff-Säbel'},{emoji:'💎',name:'Edelsteinsuche',desc:'Im Wasserglas'},{emoji:'🪢',name:'Knoten-Wettbewerb',desc:'Wer kann am meisten?'},{emoji:'🍾',name:'Flaschenpost',desc:'Geheimschrift'},{emoji:'🦈',name:'Hai-Tag',desc:'Verstecken-Variante'}],
@@ -837,7 +837,7 @@
       stations:['Bauwagen','Materialhaufen','Kran','Bauplan','DIE FUNDAMENTSTEIN-KISTE'],
       invite:{title:'🚧 Baustelle!',body:'wird {age} — du bist im Bautrupp dabei!'}},
     {id:'superheld', emoji:'🦸', name:'Superheld', accent:'#1565C0', accent2:'#FFD600', persona:'Superheld',
-      games:[{emoji:'💥',name:'Bösewicht-Tag',desc:'Klassik mit Heldenmove'},{emoji:'🦹',name:'Kostüm-Stafette',desc:'Schnell verwandeln'},{emoji:'🎯',name:'Laser-Parcours',desc:'Wollfäden umgehen'},{emoji:'🎭',name:'Helden-Pantomime',desc:'Welche Superkraft?'},{emoji:'🛡️',name:'Schild-Werfen',desc:'Frisbee-Treffer'},{emoji:'💪',name:'Krafttraining',desc:'Mini-Hindernis-Parcours'},{emoji:'🦸‍♀️',name:'Helden-Quiz',desc:'Marvel/DC-Trivia'},{emoji:'🔍',name:'Schurken-Suche',desc:'Plüsch-Bösewichte finden'},{emoji:'🏃',name:'Helden-Stafette',desc:'Mit Umhang sprinten'},{emoji:'⚡',name:'Blitz-Reaktion',desc:'Schnelligkeits-Test'}],
+      games:[{emoji:'💥',name:'Bösewicht-Tag',desc:'Klassik mit Heldenmove'},{emoji:'🦹',name:'Kostüm-Stafette',desc:'Schnell verwandeln'},{emoji:'🎯',name:'Laser-Parcours',desc:'Wollfäden umgehen'},{emoji:'🎭',name:'Helden-Pantomime',desc:'Welche Superkraft?'},{emoji:'🛡️',name:'Schild-Werfen',desc:'Frisbee-Treffer'},{emoji:'💪',name:'Krafttraining',desc:'Mini-Hindernis-Parcours'},{emoji:'🦸‍♀️',name:'Tugend-Quiz',desc:'Was tun Held:innen?'},{emoji:'🔍',name:'Schurken-Suche',desc:'Plüsch-Bösewichte finden'},{emoji:'🏃',name:'Helden-Stafette',desc:'Mit Umhang sprinten'},{emoji:'⚡',name:'Blitz-Reaktion',desc:'Schnelligkeits-Test'}],
       stations:['Helden-Quartier','Geheim-Versteck','Bösewicht-Labor','Stadt-Bedrohung','DIE WELT-RETTUNG'],
       invite:{title:'🦸 Super-Mission!',body:'wird {age} — die Welt braucht deine Hilfe als Superheld!'}},
     {id:'dschungel', emoji:'🐒', name:'Dschungel', accent:'#33691E', accent2:'#DCEDC8', persona:'Dschungel-Forscher',
@@ -1511,7 +1511,8 @@
     const email = document.getElementById('modalEmail').value.trim();
     if(!email || !email.includes('@')){ alert('Bitte gültige Email eingeben'); return; }
     closeSaveLater();
-    showFlash(`📧 Link an ${email} verschickt`);
+    // localStorage speichert eh automatisch — Magic-Link via Resend-Worker kommt im naechsten Sprint
+    showFlash(`💾 Lokal gespeichert · Magic-Link via Email folgt im naechsten Update`);
   }
 
   // ===== FLASH =====
