@@ -1,4 +1,30 @@
-# Session-Notiz — 31.05.2026 spätabends (Welle 2 Phase 3 + P1-21 + P1-21-WELLE-2: Planer-Vollständigkeit)
+# Session-Notiz — 31.05.2026 spätnachts (Welle 2 Phase 3 + P1-21 Planer + SZ_THEMES Vollständigkeit)
+
+## 🚀 Deploy 31.05.2026 Teil 4 (SZ_THEMES 9 → 15, Score 88/100)
+
+Schatzsuche-Engine SZ_THEMES um 6 fehlende Themen ergänzt (meerjungfrau, pferde, ritter, baustelle, prinzessin = „Königreich-Schatzsuche", superheld = „Held:innen-Schatzsuche") — kein Disney/Marvel.
+
+### Welle-Trace SZ_THEMES (Branch-Trick, frische Reviewer-Sessions)
+
+| Welle | Score | Adressiert |
+|---|---|---|
+| Initial | 72 | 6 MUST-FIX (Wasser-Aufsicht, Hufeisen-Material, Polier:in-Stereotype, Hartbonbons-Widerspruch, Cape-QuickRelease, Burg-Eroberung-Begründung) |
+| 5 (final) | **88** | 4 weitere (rutschfeste Unterlage + Sicherheits-Tape, Wurfzone-Markierung 1.5/2/2.5m, Tinkturregel-Karten-Vorlage, Elektriker:in Anna/Leon mit Namen) — ritter bei **90** ✅ |
+
+15 Themen × 5 Stations × 3 Altersgruppen = **225 Schatzsuche-Stationen** vorgehalten.
+
+### Code-Mechanik
+- Helper-Skript `_dev/scripts/add-sz-themes.js` schreibt Themen via Regex-Match in minified line 1 (JS-valid via JSON-Subset)
+- `_dev/review/sz-themes-input.md` als verankertes Review-Input mit allen 6 Themes-Highlights
+- node --check verifiziert nach jedem Iterations-Schritt
+
+### Trust-Zahlen Schatzsuche Sync 13 → 15
+- index.html (3 Stellen: description, featureList, FAQ Schatzsuche-Sektion)
+- schatzsuche.html h2 + 2 neue Motto-Tiles (Königreich + Held:innen)
+- schatzsuche/prinzessin + schatzsuche/superheld „Alle X Themen"
+- Stationen 135 → 225
+
+
 
 ## 🔄 IN REVIEW: P1-21 Welle 2 — meerjungfrau befüllt + prinzessin/superheld als generic Reskins + Trust-Zahlen 13→15
 
