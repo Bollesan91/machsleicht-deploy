@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Superhelden-Kindergeburtstag — Spiele, Deko, Ablauf (3–12 Jahre)</title>
+  <title>Superhelden-Kindergeburtstag — Spiele, Deko, Ablauf (4–12 Jahre)</title>
   <meta name="description" content="Superhelden-Kindergeburtstag planen: 3 Spielideen pro Alter, Action-Deko, Heldenkuchen &amp; Material-Checkliste. Vom Kräfte-Training bis zur Rettungsmission — komplett organisiert.">
   <meta property="og:title" content="🦸 Superhelden-Kindergeburtstag — Spiele &amp; Ablauf">
   <meta property="og:description" content="Superhelden-Kindergeburtstag planen: 3 Spielideen pro Alter, Action-Deko, Heldenkuchen &amp; Material-Checkliste. Vom Kräfte-Training bis zur Rettungsmission — komplett organisiert.">
@@ -226,7 +226,8 @@ window.plausible.init=function(){};window.plausible.q=[];
 
     <div class="age-selector">
       <button class="age-pill active" data-filter="all">Alle Altersgruppen</button>
-          <button class="age-pill" data-filter="young">3–5 Jahre</button>
+          <button class="age-pill" data-filter="young">4–5 Jahre</button>
+          <!-- Note: age-filter "young" matches "4-5" via regex /3-5|4-5/ via filter JS, ensure JS pattern covers both -->
           <button class="age-pill" data-filter="mid">6–8 Jahre</button>
           <button class="age-pill" data-filter="old">9–12 Jahre</button>
     </div>
@@ -237,7 +238,7 @@ window.plausible.init=function(){};window.plausible.q=[];
             <p class="u-clr-d u-mb12">Kein Superheld ohne Cape, Maske und Logo — die eigene Ausrüstung wird am Anfang der Party erstellt und geht später als Mitgebsel mit nach Hause.</p>
             <div class="u-grid-cards">
               <div class="u-card">
-                <p class="u-card-label">3–5 Jahre</p>
+                <p class="u-card-label">4–5 Jahre</p>
                 <p class="u-card-title">Helden-Starter-Set</p>
                 <p class="u-card-text">Vorgeschnittene Filz-Capes mit Klettband zum Umbinden, dazu Augenmasken aus Moosgummi zum Anmalen. Jedes Kind wählt ein Klebe-Logo (Stern, Blitz, Herz, Mond) für Brust und Cape. Fertig in 15 Minuten.</p>
               </div>
@@ -258,7 +259,7 @@ window.plausible.init=function(){};window.plausible.q=[];
             <p class="u-clr-d u-mb12">Echte Superhelden müssen ihre Kräfte trainieren — Parcours mit Kraft, Geschicklichkeit, Schnelligkeit und Geheimdienst-Fähigkeiten.</p>
             <div class="u-grid-cards">
               <div class="u-card">
-                <p class="u-card-label">3–5 Jahre</p>
+                <p class="u-card-label">4–5 Jahre</p>
                 <p class="u-card-title">Helden-Grundausbildung</p>
                 <p class="u-card-text">Vier einfache Stationen: Laser-Parcours (durch Wollfäden im Türrahmen laufen), Krafttest (leichte Kissen stemmen), Zielwurf (Bälle in Wäschekorb werfen) und Fliegen-Üben (Hüpfen durch Reifen). Am Ende: Superhelden-Stempel auf die Hand.</p>
               </div>
@@ -279,7 +280,7 @@ window.plausible.init=function(){};window.plausible.q=[];
             <p class="u-clr-d u-mb12">Ein Bösewicht hat etwas Wichtiges gestohlen (den Geburtstagskuchen, die Schatztruhe, die Stadt). Die Superhelden-Truppe muss die Spur aufnehmen und die Rettung planen.</p>
             <div class="u-grid-cards">
               <div class="u-card">
-                <p class="u-card-label">3–5 Jahre</p>
+                <p class="u-card-label">4–5 Jahre</p>
                 <p class="u-card-title">Mission: Kuchen retten</p>
                 <p class="u-card-text">Der Bösewicht hat den Geburtstagskuchen versteckt! Vier einfache Hinweise (Bilder statt Text) führen von Raum zu Raum. An jeder Station ein kleines Spiel: Bösewicht-Figur werfen, Kraft zeigen, Rufen (laut!). Am Ende: der Kuchen steht da mit Kerzen.</p>
               </div>
@@ -510,7 +511,7 @@ window.plausible.init=function(){};window.plausible.q=[];
 <script>
 (function(){
   // Tag age cards — utility-class refactor compatible
-  var ageMap = {young: /3.{1,3}5/, mid: /6.{1,3}8/, old: /9.{1,4}12/};
+  var ageMap = {young: /[34].{1,3}5/, mid: /6.{1,3}8/, old: /9.{1,4}12/};
   document.querySelectorAll('.u-grid-cards, .u-grid-3').forEach(function(grid){
     Array.prototype.forEach.call(grid.children, function(card){
       if(!card.classList || !card.classList.contains('u-card')) return;
