@@ -145,9 +145,38 @@
   .timeline-form__warn.show{display:block}
 
   .games-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
-  .game-tag{background:#FFF8F0;border:1px solid #F0E6D8;border-radius:10px;padding:12px;font-size:13px;line-height:1.3}
+  .game-tag{background:#FFF8F0;border:1px solid #F0E6D8;border-radius:10px;padding:12px;font-size:13px;line-height:1.3;cursor:pointer;transition:all .15s;position:relative}
+  .game-tag:hover{background:#fff;border-color:var(--accent,#FF6F00);transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
   .game-tag__name{font-weight:800;display:flex;align-items:center;gap:6px;color:var(--accent,#1E3A5F)}
   .game-tag__desc{color:#666;margin-top:4px;font-size:12px}
+  .game-tag__info{position:absolute;top:8px;right:10px;font-size:11px;color:var(--accent,#FF6F00);opacity:.5;transition:opacity .15s;font-weight:700}
+  .game-tag:hover .game-tag__info{opacity:1}
+
+  /* GAME-DETAIL DRAWER (Frame zum Klicken) */
+  .game-drawer{position:fixed;top:0;right:0;bottom:0;width:min(480px,100%);background:#fff;box-shadow:-12px 0 40px rgba(0,0,0,.15);transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:110;display:flex;flex-direction:column}
+  .game-drawer.open{transform:translateX(0)}
+  .game-drawer__head{padding:22px 24px 14px;border-bottom:1px solid #F0E6D8;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+  .game-drawer__head-left{flex:1}
+  .game-drawer__emoji{font-size:36px;line-height:1;display:block;margin-bottom:6px}
+  .game-drawer__title{font-family:'Lilita One';font-size:22px;line-height:1.2;color:#1A1A1A}
+  .game-drawer__meta{display:inline-flex;align-items:center;gap:6px;background:var(--accent-bg,#FFF3E6);color:var(--accent-dark,#E64A00);padding:4px 12px;border-radius:999px;font-size:12px;font-weight:800;margin-top:8px}
+  .game-drawer__close{background:none;border:none;font-size:28px;color:#999;cursor:pointer;line-height:1;padding:0;width:32px;height:32px;display:grid;place-items:center;border-radius:8px;flex-shrink:0}
+  .game-drawer__close:hover{background:var(--accent-bg,#FFF3E6);color:var(--accent,#FF6F00)}
+  .game-drawer__body{flex:1;overflow-y:auto;padding:24px}
+  .gd-section{margin-bottom:22px}
+  .gd-section:last-child{margin-bottom:0}
+  .gd-section h4{font-family:'Lilita One';font-size:14px;color:var(--accent,#FF6F00);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+  .gd-section p{font-size:14px;color:#1A1A1A;line-height:1.55}
+  .gd-section ul{margin:0;padding-left:20px;font-size:14px;color:#1A1A1A;line-height:1.65}
+  .gd-section li{margin-bottom:4px}
+  .gd-cta{display:block;background:var(--accent,#FF6F00);color:#fff;text-decoration:none;text-align:center;padding:14px;border-radius:12px;font-weight:800;font-size:14px;margin-top:24px;transition:transform .15s}
+  .gd-cta:hover{transform:scale(1.02)}
+  .gd-safety{background:#FFF7E0;border-left:3px solid #F4B400;padding:10px 14px;border-radius:8px;font-size:13px;color:#7A5500;margin-top:8px}
+  .gd-pending{background:#F0F7FF;border-left:3px solid #1E3A5F;padding:12px 16px;border-radius:8px;font-size:13px;color:#1E3A5F;line-height:1.5}
+  @media (max-width:768px){
+    .game-drawer{width:100%;border-radius:24px 24px 0 0;height:88vh;top:auto;bottom:0;transform:translateY(100%)}
+    .game-drawer.open{transform:translateY(0)}
+  }
 
   .schatz{background:linear-gradient(135deg,#FFF8F0,var(--accent-bg2,#FFEDD2));padding:18px;border-radius:12px;border:1px dashed var(--accent,#FF6F00)}
   .schatz__list{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:8px}
@@ -785,11 +814,62 @@
 <!-- Demo-Badge fuer Live entfernt — Stage-Tracker als hidden behalten weil JS-Referenz -->
 <span id="demoStage" style="display:none">1</span>
 
+<!-- GAME-DETAIL DRAWER (Click auf Spiel-Karte oeffnet Detail-Frame) -->
+<aside class="game-drawer" id="gameDrawer" role="dialog" aria-label="Spiel-Details">
+  <header class="game-drawer__head">
+    <div class="game-drawer__head-left">
+      <span class="game-drawer__emoji" id="gdEmoji">🎮</span>
+      <h3 class="game-drawer__title" id="gdTitle">Spiel-Details</h3>
+      <span class="game-drawer__meta" id="gdMeta">⏱ Dauer flexibel</span>
+    </div>
+    <button class="game-drawer__close" onclick="closeGameDetail()" aria-label="Schließen">×</button>
+  </header>
+  <div class="game-drawer__body" id="gdBody">
+    <!-- Wird dynamisch befüllt -->
+  </div>
+</aside>
+
 <script>
   // ===== DATA — 15 MOTTOS VOLL =====
   const MOTTOS = [
     {id:'piraten', emoji:'🏴‍☠️', name:'Piraten', accent:'#1E3A5F', accent2:'#FFD700', persona:'Pirat',
-      games:[{emoji:'🪜',name:'Walk the Plank',desc:'Balance auf Brett'},{emoji:'⚓',name:'Kanonenkugeln',desc:'Bälle in Eimer'},{emoji:'🏴‍☠️',name:'Schatz im Sand',desc:'Mit Sieb buddeln'},{emoji:'🦜',name:'Papagei sagt',desc:'Simon-Says'},{emoji:'🚩',name:'Flaggenraub',desc:'Klassik'},{emoji:'🗡️',name:'Schwertkampf',desc:'Schaumstoff-Säbel'},{emoji:'💎',name:'Edelsteinsuche',desc:'Im Wasserglas'},{emoji:'🪢',name:'Knoten-Wettbewerb',desc:'Wer kann am meisten?'},{emoji:'🍾',name:'Flaschenpost',desc:'Geheimschrift'},{emoji:'🦈',name:'Hai-Tag',desc:'Verstecken-Variante'}],
+      games:[
+        {emoji:'🪜',name:'Walk the Plank',desc:'Balance auf Brett',dauer:10,
+          material:['Kreppband (3m Linie auf Boden)','Esslöffel + Tischtennisball pro Kind','Eimer als Ziel'],
+          brief:'Kreppband-Linie auf Boden kleben (3m). Ball auf Löffel legen, über die Planke balancieren ohne Verlust. Fällt der Ball: zurück zum Start. Schnellster Pirat gewinnt.',
+          safety:'Für 3-Jährige: Ball + Löffel mit Hand festhalten erlaubt'},
+        {emoji:'⚓',name:'Kanonenkugeln',desc:'Bälle in Eimer',dauer:8,
+          material:['Tennisbälle oder Sockenknäuel (5-8 Stück pro Kind)','3 Eimer in 2/3/4m Entfernung','Krepp-Linie als Wurflinie'],
+          brief:'Jedes Kind hat 5 "Kanonenkugeln". Werfe sie aus 2m Entfernung in den Eimer. Naher Eimer = 1 Punkt, mittlerer = 2, fernster = 3. Wer hat nach 3 Runden die meisten Punkte?'},
+        {emoji:'🏴‍☠️',name:'Schatz im Sand',desc:'Mit Sieb buddeln',dauer:10,
+          material:['Flache Wanne mit DIN-EN-71-3 Spielsand (Hagebau/OBI Marke prüfen!)','Schoko-Goldmünzen (3-5 pro Kind)','Plastik-Sieb + Eimerchen pro Kind'],
+          brief:'Münzen vorher im Sand vergraben. Kinder dürfen mit Sieb buddeln und ihre Goldmünzen behalten. 3-5 pro Kind ist die richtige Menge.',
+          safety:'Nur zertifizierter Spielsand (KEIN Quarzsand mit Feinanteil — Lungen-Risiko). Hände nach Spiel waschen.'},
+        {emoji:'🦜',name:'Papagei sagt',desc:'Simon-Says als Piraten-Variante',dauer:8,
+          material:['Keine — nur Stimme + Kreativität'],
+          brief:'Wie Simon-Says, aber mit "Papagei sagt": "Papagei sagt schwimm wie ein Hai!" → alle machen mit. Wenn "Papagei sagt" fehlt, NICHT mitmachen. Wer fälschlich mitmacht, scheidet aus. Letzter Pirat gewinnt.'},
+        {emoji:'🚩',name:'Flaggenraub',desc:'Klassisches Outdoor-Spiel',dauer:15,
+          material:['2 Stofftücher als Flaggen','Krepp/Hütchen zur Markierung der Spielzonen','Markierung Hauptquartier pro Team'],
+          brief:'2 Teams, jedes verteidigt eine Flagge. Wer die gegnerische Flagge stiehlt + sicher zurück bringt = Sieg. In der gegnerischen Hälfte abgeklatscht = ins Gefängnis. Klassiker.',
+          safety:'Sanftes Abklatschen Pflicht. Bei zu wildem Spielen: Schiedsrichter-Erwachsene:r dazu.'},
+        {emoji:'🗡️',name:'Schwertkampf',desc:'Pool-Nudel-Duelle (sicher!)',dauer:12,
+          material:['Pool-Nudeln (1 pro Kind, in 80 cm Stücke geschnitten)','Optional Pappschilde'],
+          brief:'Pflicht-Regeln VOR dem Spiel: kein Schlag auf Kopf/Gesicht/Knie, max. Brusthöhe. Jeweils 2 Kinder duellieren 30 Sekunden, dann Wechsel.',
+          safety:'PFLICHT: 1:1 Aufsicht durch Erwachsene. Pool-Nudel = sicherstes Übungsschwert — KEIN Spielzeug-Pass für Holz/Plastik-Schwerter!'},
+        {emoji:'💎',name:'Edelsteinsuche',desc:'Im Wasserglas angeln',dauer:8,
+          material:['Bunte Glas-/Plastik-Edelsteine ≥4 cm','Flache Wasserschüssel (max. 5 cm tief!)','Plastik-Sieb + kleine Beutel'],
+          brief:'Schüssel mit Großperlen und Edelsteinen füllen. Jedes Kind fischt 5 "Edelsteine" mit Sieb. Top-Fischer:in bekommt Captain-Stempel.',
+          safety:'Wasserhöhe MAX 5 cm + Erwachsene in Armreichweite. Für 3-5 J: NUR Großteile ≥4 cm, KEIN Glas, KEINE Murmeln (EN-71 Kleinteilezylinder).'},
+        {emoji:'🪢',name:'Knoten-Wettbewerb',desc:'Wer bindet die meisten?',dauer:10,
+          material:['Dicke Schnüre/Seile (40-60 cm pro Kind)','Knoten-Anleitung ausgedruckt','Stoppuhr'],
+          brief:'3 Knoten lernen: einfacher Knoten, Schleife, Achterknoten. Wer in 3 Min alle drei beherrscht, bekommt Crew-Mitglied-Stempel. Anleitung daneben legen.'},
+        {emoji:'🍾',name:'Flaschenpost',desc:'Geheimschrift entschlüsseln',dauer:12,
+          material:['1-2 leere Plastik-Flaschen','Selbstgeschriebene Nachricht in Spiegelschrift','Kleiner Spiegel zum Entschlüsseln'],
+          brief:'Nachricht rückwärts schreiben (z.B. "Schatz unter der Couch" → "hcuoC red retnu ztahcS"), in Flasche stecken. Verstecken. Kinder finden + entschlüsseln mit Spiegel.'},
+        {emoji:'🦈',name:'Hai-Tag',desc:'Verstecken-Variante',dauer:10,
+          material:['Markierung "Schiff" (Decke/Kissen) als sicherer Bereich','Hai-Maske oder rotes Tuch als Hai-Erkennung'],
+          brief:'Ein Kind ist "Hai", alle anderen Piraten. Schiff (Decke) = Safe-Zone (max. 5 Sek). Wer Schiff verlässt, kann gefangen werden = wird selbst Hai. Letzter Pirat gewinnt.'}
+      ],
       stations:['Captain\'s Cabin','Krähennest','Korallenriff','Sturmwarnung','DER SCHATZ'],
       invite:{title:'Ahoi, kleiner Pirat!',body:'wird {age} und feiert seinen Geburtstag als Piraten-Captain. Du bist Teil seiner Crew!'}},
     {id:'detektiv', emoji:'🕵️', name:'Detektiv', accent:'#3D4751', accent2:'#F4B400', persona:'Detektiv', badge:'Beliebt',
@@ -1092,7 +1172,7 @@
           <h3 class="mod__title">Spiele · ${state.games.length} ausgewählt</h3>
           <button class="mod__edit" onclick="openWizard(5)">✏️ Spiele tauschen</button>
         </header>
-        <div class="games-grid">${gamesData.map(g => `<div class="game-tag"><div class="game-tag__name">${g.emoji} ${g.name}</div><div class="game-tag__desc">${g.desc}</div></div>`).join('')}</div>
+        <div class="games-grid">${gamesData.map(g => `<div class="game-tag" onclick="openGameDetail('${g.name.replace(/'/g, "\\'")}')"><span class="game-tag__info">Details ›</span><div class="game-tag__name">${g.emoji} ${g.name}</div><div class="game-tag__desc">${g.desc}</div></div>`).join('')}</div>
       </article>
 
       <article class="mod">
@@ -1534,6 +1614,55 @@
       else cta.classList.remove('hidden');
     }
     lastScroll = sc;
+  });
+
+  // ===== GAME-DETAIL DRAWER (Click auf Spiel-Karte) =====
+  function openGameDetail(gameName){
+    const motto = state.motto || MOTTOS[0];
+    if(!motto) return;
+    const g = (motto.games || []).find(x => x.name === gameName);
+    if(!g){ console.warn('Game not found:', gameName); return; }
+
+    document.getElementById('gdEmoji').textContent = g.emoji;
+    document.getElementById('gdTitle').textContent = g.name;
+    document.getElementById('gdMeta').innerHTML = g.dauer ? `⏱ ${g.dauer} Min` : '⏱ Dauer flexibel';
+
+    const plannerUrl = `/kindergeburtstag?motto=${motto.id}#planer`;
+    let body = '';
+
+    if(g.material || g.brief){
+      if(g.material){
+        const items = Array.isArray(g.material)
+          ? g.material.map(m => `<li>${m}</li>`).join('')
+          : `<li>${g.material}</li>`;
+        body += `<div class="gd-section"><h4>🛒 Material</h4><ul>${items}</ul></div>`;
+      }
+      if(g.brief){
+        body += `<div class="gd-section"><h4>📖 Kurz-Anleitung</h4><p>${g.brief}</p></div>`;
+      }
+      if(g.safety){
+        body += `<div class="gd-section"><div class="gd-safety">⚠ ${g.safety}</div></div>`;
+      }
+    } else {
+      body += `<div class="gd-section"><div class="gd-pending">Material und Schritt-für-Schritt-Anleitung gibt es bereits im <strong>Kindergeburtstag-Planer</strong> mit voller Sicherheits-Information (Kleinteile-Schwelle, Allergie-Checks, Aufsicht-Ratio).</div></div>`;
+    }
+
+    body += `<a class="gd-cta" href="${plannerUrl}" target="_blank">📋 Voll-Anleitung im Planer öffnen →</a>`;
+
+    document.getElementById('gdBody').innerHTML = body;
+    document.getElementById('gameDrawer').classList.add('open');
+  }
+
+  function closeGameDetail(){
+    document.getElementById('gameDrawer').classList.remove('open');
+  }
+
+  // ESC schliesst Game-Drawer
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      const drawer = document.getElementById('gameDrawer');
+      if(drawer && drawer.classList.contains('open')) closeGameDetail();
+    }
   });
 
   // ===== Init =====
