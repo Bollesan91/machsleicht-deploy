@@ -11,7 +11,8 @@
 ## Gruppengröße-Skalierung
 - **4–6:** zwei Wurfstationen im Abstand ~3 m (Kinder teilen sich auf → halbe Wartezeit); eine Wurfrunde dauert nur ~30 Sek.
 - **7–10:** zwei Stationen, zwei Teams gleichzeitig; Team-Punkte werden addiert.
-- **11+:** Faustregel ~1 Station pro 6 Kinder (12 → 2, 18 → 3) ODER als eine Station in einer Stationen-Rotation auf ~5 Min/Welle getaktet.
+- **11+:** Faustregel ~1 Station pro 6 Kinder (12 → 2, 18 → 3) ODER als eine Station in einer Stationen-Rotation; bei >15 Kindern ~5–7 Min/Welle rechnen (nicht fix 5), damit langsamere Werfer:innen den Zug nicht bremsen.
+- **Kleiner Raum (<~12 m²):** nur eine Station, Runden nacheinander statt parallel.
 
 ## Material
 - „Kanonenkugeln" = **ausschließlich weiche Wurfobjekte:** geprüfte Schaumstoffbälle ab ~5 cm Ø ODER Sockenknäuel. **Keine harten Bälle (kein Tennis-, Gummi-, Flummiball) — Augenverletzungs-Risiko, auch outdoor.** Für 3–5 nur Sockenknäuel/Schaumstoff. 5–8 Stück pro Kind/Runde.
@@ -28,6 +29,9 @@
 4. **Sicherheits-Ablauf laut ansagen:** nur auf die Schiffe werfen, nie auf Personen/Köpfe. Nach „Feuer einstellen!" legen alle ab — **erst dann** gibt ein:e erwachsene:r Sammler:in per Blickkontakt die Wurfzone frei zum Einsammeln. Niemand läuft während des Werfens nach vorn.
 5. **Siegbedingung:** Punkte zählen. Jede:r, der/die trifft, ist Kanonier:in-Crew + Stempel; im Team-Modus gewinnt das Team mit der höheren Summe — kein Einzel-Aussieb, niemand fliegt raus.
 6. Schwierigkeit justieren über Distanz und Eimergröße.
+7. **Abschluss-Ritual (Immersion):** „Schatz-Kasse öffnen!" — die Crew verteilt die Schoko-Goldmünzen (ab 6 J) mit lautem Piraten-Geschrei. Gibt dem Spiel eine Story-Klammer statt einfach aufzuhören.
+
+**Wartezeit überbrücken:** Wer nicht dran ist, lädt „Nachschub" (sammelt Kugeln in die Munitionskiste) oder übt den Crew-Schlachtruf — kein Leerlauf.
 
 ## Sicherheit (Basis)
 **Nur weiche Wurfobjekte (Schaum ab ~5 cm / Sockenknäuel) — nichts Hartes.** Eiserne Regel: nur auf die Ziele werfen, nie auf Menschen, nie Richtung Gesicht. Wurfzone mit Hütchen markiert und während des Werfens frei. Sammeln nur auf Sammler:in-Signal. Parallele Stationen ≥3 m seitlich auseinander, alle werfen in dieselbe Richtung (nicht gegeneinander). Indoor: ~2 m Abstand zu Fenstern/Regalen. Für 3–5: nur Sockenknäuel, enge Aufsicht.
