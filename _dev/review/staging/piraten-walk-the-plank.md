@@ -2,10 +2,11 @@
 
 **Name:** Walk the Plank
 **Einzeiler:** Über die schmale Planke balancieren — den goldenen Schatz auf dem Löffel, vorbei am sichtbaren Hai-Wasser zur Schatzkiste.
-**Getaggte Alter:** 3–5, 6–8, 9–12 (bestAge 6–8)
+**Getaggte Alter:** 3–5, 6–8, 9–12 (bestAge **3–5**)
+**Scope:** Für **2–5 ein eigenständiges Komplettspiel** (Balance + Tragen + „alle schaffen's" ist in dem Alter genau richtig). Für **6–12 ein Baustein im „Piraten-Parcours"** (eine Station neben Kanonenkugeln, Seil-Balance etc.) — dort NICHT als Standalone-Highlight gedacht. → Bitte alters-relativ und scope-gerecht bewerten.
 **Typ:** aktiv / Geschick
 **Spieleranzahl:** min. 1, ideal 4–10, solo-fähig
-**Dauer:** Basis 6–8: **10–15 Min** · Variante 9–12 (erhöht + Augenbinden-Mutprobe, zwei Durchgänge): **20–25 Min** · **Eltern-Vorbereitung:** 5–7 Min · **Abbau:** 3–5 Min · **Indoor + Outdoor**
+**Dauer:** Basis 6–8: **10–15 Min** · Variante 9–12 (erhöht + Augenbinden-Mutprobe, zwei Durchgänge): **20–25 Min** · **Eltern-Vorbereitung:** 5–7 Min (nur Tapen; mit Props/Holz-Look-Papier +3–5 Min) · **Abbau:** ~10 Min (Tape zeitnah abziehen) · **Indoor + Outdoor**
 
 ## Quickstart (TL;DR)
 Zwei Klebeband-Linien als schmale Planke kleben → jedes Kind balanciert den Goldschatz auf dem Löffel rüber → in die Schatzkiste. Tritt es ins „Hai-Wasser" oder fällt der Ball: zurück zum Start, **niemand fliegt raus**. Details unten.
@@ -18,7 +19,7 @@ Zwei Klebeband-Linien als schmale Planke kleben → jedes Kind balanciert den Go
 - **11+:** Faustregel ~1 Bahn pro 6 Kinder (12 → 2, 18 → 3) ODER 3-Wellen-Modus à ~5 Min; als Stationen-Rotation auf ~5 Min/Welle takten. Hochskalieren kostet auch Aufsicht (s. Material/Sicherheit), nicht nur Klebeband.
 
 ## Material
-- Kreppband, 1 Rolle, für ZWEI parallele Linien = schmale Planke. **Bahnbreite altersabhängig:** 3–5 = 20–30 cm · 6–8 = 15–18 cm · 9–12 = 10–12 cm. Länge 3 m (Kompakt ab 2 m).
+- Kreppband (normal) für ZWEI parallele Linien = schmale Planke + **blaues Kreppband** beidseits als Hai-Wasser + brauner Packpapier-Streifen für den Holz-Look = der kleine Pflicht-Einkauf neben dem Haushaltskram. **Bahnbreite altersabhängig:** 3–5 = 20–30 cm · 6–8 = 15–18 cm · 9–12 = 10–12 cm. Länge 3 m (Kompakt ab 2 m).
 - **Material-Menge je Modus:** Staffel (7–10): 1 Löffel + 1 Ball **pro Kind** → für 10 Kinder ein **Plastiklöffel-Set + 10 Schaumbälle** vorab besorgen (hat kein Haushalt spontan da). Parallel/Rotation: 1 Löffel + 1 Ball **pro gleichzeitig laufender Bahn** (z. B. 3 Bahnen = 3 Sets).
 - 1 Löffel als Schwierigkeits-Hebel: 3–5 großer Servier-/Esslöffel (leicht) · 6–8 Esslöffel · 9–12 Teelöffel (schwer). Plastik/Holz — **kein Metall** (Sturzrisiko).
 - „Goldschatz"-Ball: am besten **fertig goldfarbener Schaumball ≥5 cm** (sieht nach Gold aus, kein Anmalen, rollt nicht weg) — für 3–5 Pflicht-Größe ≥5 cm: KEIN 4,5-cm-Ball (0,5 mm über der 44,5-mm-Klein-Ball-Schablone ist innerhalb der Kauftoleranz, kein echter Puffer). Ab 6 J alternativ gelber Tischtennisball (40 mm) indoor, outdoor Schaum-/Flummiball ≥4,5 cm (Wind). **Mixed-Age:** sind U6-Geschwister anwesend, 40-mm-Bälle außer deren Reichweite halten; für die Kleinen nur Bälle ≥5 cm.

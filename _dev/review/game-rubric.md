@@ -90,6 +90,25 @@ Diese Datei ist Living-Wahrheit. Bei Änderung: hier pflegen, nicht in Chat-Verl
 | 7 | **Wow-/Erinnerungs-/Foto-Effekt** | 9 | bleibt im Gedächtnis |
 | 8 | **Tagesplan-Fit** | 8 | Dauer realistisch + Energie-Level + Indoor/Outdoor + Wetter-Plan-B + Chaos-Ansage |
 
+### Alters-relative Bewertung (eingeführt 01.06.2026 — KRITISCH)
+
+Spaß, Wow und Schwierigkeit werden **gegen die getaggte Altersgruppe** bewertet, NICHT gegen einen universellen Maßstab. Ein Eierlauf für 3-Jährige darf nicht für „wenig Novelty" abgewertet werden — für Kleinkinder ist Einfachheit das Ziel.
+
+| Dimension | 2–5 (Maßstab) | 6–8 | 9–12 (Maßstab) |
+|---|---|---|---|
+| **Spaß** | Mitmach-Faktor, Sensorik, „jedes Kind schafft's", Wiederholung macht Freude | Mischung | Challenge, Wettkampf, Strategie, Überraschung |
+| **Wow/Foto** | niedlich/Verkleidung/Mitmach-Moment reicht — **kein Spektakel verlangen** | mittel | Spektakel, Mut, Foto-Beat |
+| **Schwierigkeit** | leicht = richtig | — | anspruchsvoll = richtig |
+
+**Regel:** Novelty/Wettkampf/Spektakel sind für 2–5 **kein Bewertungskriterium** und dürfen nicht abgezogen werden. Die K.O.-Gates (Sicherheit/Fakten/Inklusion) bleiben absolut, alters-unabhängig.
+
+### Spiel-Scope (eingeführt 01.06.2026)
+
+Jedes Spiel wird gegen seinen **Scope** bewertet, nicht als müsste es immer ein Standalone-Showstopper sein:
+- **`scope: 'standalone'`** — eigenständiges Komplettspiel für die getaggte Altersgruppe.
+- **`scope: 'baustein'`** — Station/Baustein in einem größeren Spiel (z.B. Piraten-Parcours). Wird NICHT auf Standalone-Wow geprüft, sondern auf „funktioniert als Modul + fügt sich ein".
+- Ein Spiel kann beides sein (z.B. Walk the Plank: standalone für 2–5, Baustein im Parcours für 6–12) — dann beide Linsen getrennt anlegen.
+
 ### Score-Bänder & gestuftes Gate (eingeführt 01.06.2026)
 
 Nicht jedes Spiel kann ein Wow-Showstopper sein — manche sind solide Staples. Deshalb **zwei Gates je nach Spiel-Klasse**:
@@ -110,7 +129,7 @@ Nicht jedes Spiel kann ein Wow-Showstopper sein — manche sind solide Staples. 
 ## 5. Helfer-v3 — Reviewer-Regeln (HART)
 1. **Unabhängig & extern + STARKES Modell** — **Kein Sub-Agent** (CLAUDE.md Hard-Rule nach Welle-1A-Regress). Kanal: **frischer claude.ai-Tab via Chrome-MCP mit starkem Modell (Opus 4.8 High)** — das ist der einzige gate-entscheidende Kanal. **WebFetch ist VERBOTEN für Gate-Entscheidungen** (nutzt ein kleines/schnelles Modell → milderer Gutachter → Score-Inflation; das untergräbt den Sinn von Helfer-v3). Lokales Grep/Read durch Haupt-Claude nur ergänzend.
 2. **Branch-Trick (Pflicht):** Spiel-Spec in Staging-File (`_dev/review/staging/`) → `commit + push` auf `draft` → der claude.ai-Reviewer-Tab bekommt die **SHA-gepinnte** `https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/<SHA>/<pfad>`-URL (SHA, nicht Branch-Name — CDN-Cache). Reviewer liest den **kanonischen Artefakt aus Git**.
-3. **Reviewer kennt KEINE Score-Targets** — kein Gate (85/90), keine Klasse (Staple/Signature), kein „sollte bestehen". Nur Rubrik-Dimensionen + K.O.-Gates + Anti-Sycophancy-Auftrag. Das Gate wendet der Orchestrator (Haupt-Claude) **danach geheim** an.
+3. **Reviewer kennt KEINE Score-Targets** — kein Gate (85/90), keine Klasse (Staple/Signature), kein „sollte bestehen". Nur Rubrik-Dimensionen + K.O.-Gates + Anti-Sycophancy-Auftrag. Das Gate wendet der Orchestrator (Haupt-Claude) **danach geheim** an. ABER: Ziel-Altersgruppe + Scope (standalone/baustein) MÜSSEN dem Reviewer mitgegeben werden, mit der Anweisung **alters-relativ** zu werten (für 2–5 Einfachheit nicht als Novelty-Defizit abziehen; Baustein nicht auf Standalone-Wow prüfen).
 4. **Bewertet EIN Spiel isoliert** — Punkte pro Dimension mit Begründung, keine Bauch-Gesamtzahl.
 5. **Konkret** — jedes Finding mit Stelle (z.B. „Anleitung Schritt 3 fehlt die Wurfdistanz").
 6. **Skeptiker-Default** — fühlt sich's „fertig" an oder Score >90 sofort → −7 korrigieren und nochmal.
