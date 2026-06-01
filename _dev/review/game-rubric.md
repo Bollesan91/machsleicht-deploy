@@ -108,8 +108,8 @@ Nicht jedes Spiel kann ein Wow-Showstopper sein — manche sind solide Staples. 
 ---
 
 ## 5. Helfer-v3 — Reviewer-Regeln (HART)
-1. **Unabhängig & extern** — **Kein Sub-Agent** (CLAUDE.md Hard-Rule nach Welle-1A-Regress). Kanal: **WebFetch** (Default, skaliert) oder frischer claude.ai-Tab.
-2. **Branch-Trick (Pflicht):** Spiel-Spec in Staging-File (`_dev/review/staging/`) → `commit + push` auf `draft` → Reviewer bekommt die **SHA-gepinnte** `https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/<SHA>/<pfad>`-URL. SHA, nicht Branch-Name (CDN-Cache). Reviewer liest den **kanonischen Artefakt aus Git**, nicht gepasteten Text.
+1. **Unabhängig & extern + STARKES Modell** — **Kein Sub-Agent** (CLAUDE.md Hard-Rule nach Welle-1A-Regress). Kanal: **frischer claude.ai-Tab via Chrome-MCP mit starkem Modell (Opus 4.8 High)** — das ist der einzige gate-entscheidende Kanal. **WebFetch ist VERBOTEN für Gate-Entscheidungen** (nutzt ein kleines/schnelles Modell → milderer Gutachter → Score-Inflation; das untergräbt den Sinn von Helfer-v3). Lokales Grep/Read durch Haupt-Claude nur ergänzend.
+2. **Branch-Trick (Pflicht):** Spiel-Spec in Staging-File (`_dev/review/staging/`) → `commit + push` auf `draft` → der claude.ai-Reviewer-Tab bekommt die **SHA-gepinnte** `https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/<SHA>/<pfad>`-URL (SHA, nicht Branch-Name — CDN-Cache). Reviewer liest den **kanonischen Artefakt aus Git**.
 3. **Reviewer kennt KEINE Score-Targets** — kein Gate (85/90), keine Klasse (Staple/Signature), kein „sollte bestehen". Nur Rubrik-Dimensionen + K.O.-Gates + Anti-Sycophancy-Auftrag. Das Gate wendet der Orchestrator (Haupt-Claude) **danach geheim** an.
 4. **Bewertet EIN Spiel isoliert** — Punkte pro Dimension mit Begründung, keine Bauch-Gesamtzahl.
 5. **Konkret** — jedes Finding mit Stelle (z.B. „Anleitung Schritt 3 fehlt die Wurfdistanz").
@@ -126,10 +126,10 @@ Nicht jedes Spiel kann ein Wow-Showstopper sein — manche sind solide Staples. 
 4. **Nur MUST-FIX abarbeiten** — kein Punkte-Schinden über 90 hinaus.
 5. **Ein Spiel nach dem anderen** — ≥90-Gate, dann Eintrag in `js/motto-data.js`.
 
-## 7. Workflow pro Spiel (Branch-Trick + WebFetch)
+## 7. Workflow pro Spiel (Branch-Trick + Chrome-MCP-Reviewer)
 1. **Writer** (Haupt-Claude) schreibt Spiel-Spec → Staging-File `_dev/review/staging/<motto>-<game>.md` (nur Spec, KEINE Rubrik/Gate).
 2. `git add … && commit && push origin draft` (draft baut nicht auf Netlify → kostenlos).
-3. SHA holen (`git rev-parse HEAD`), **WebFetch** auf SHA-URL mit Reviewer-Prompt (ohne Target/Klasse).
+3. SHA holen (`git rev-parse HEAD`), **frischer claude.ai-Tab (Chrome-MCP, Opus 4.8 High)** bekommt die SHA-URL + Reviewer-Prompt (ohne Target/Klasse). KEIN WebFetch.
 4. Review lesen → MUST-FIX einarbeiten → Staging-File updaten → zurück zu 2.
 5. **Zwei aufeinanderfolgende frische Reviews ≥ Gate** → Spiel ist durch → in `js/motto-data.js` (`score`, `class` setzen).
 Variant-Spiel: jede getaggte Alters-Stufe einzeln auf Safety + Schwierigkeit prüfen.
