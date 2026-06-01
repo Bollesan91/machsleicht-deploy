@@ -78,17 +78,20 @@ Diese Datei ist Living-Wahrheit. Bei Änderung: hier pflegen, nicht in Chat-Verl
 - **G2 Faktencheck** — keine falsche Behauptung (Historie, Quiz-Antworten).
 - **G3 Inklusivität** — kein Gender-Split, kein demütigendes Früh-Aus, bei dem ein Kind lange am Rand sitzt.
 
-### Bewertete Dimensionen (Σ 100)
+### Bewertete Dimensionen (Σ 100) — Spaß ist König (überarbeitet 01.06.2026)
+**Leitsatz: Vor allem soll das Spiel SPAß machen.** Spaß ist die größte Dimension. Der Foto-/Wow-Effekt ist KEINE eigene gewichtete Dimension mehr (er hat zu oft fröhliche, sichere Spiele runtergezogen) — er ist jetzt ein **Bonus** (unten). Wir lassen uns vom Foto-Moment NICHT davon abhalten, ein geiles, spaßiges Spiel aufzunehmen.
+
 | # | Dimension | Pkt | Enthält |
 |---|---|---|---|
-| 1 | **Sicherheit & Altersgerechtigkeit** | 15 | entwicklungsgerecht: Motorik, Aufmerksamkeit, Lese-Fähigkeit |
-| 2 | **Machbarkeit zuhause** | 15 | Material leicht beschaffbar + Kosten + Aufbau + Eltern-Vorbereitungszeit |
-| 3 | **Anleitungs-Klarheit & Vollständigkeit** | 15 | kann ein Fremder es ohne Rückfragen nachmachen? Keine Lücken |
-| 4 | **Spaßfaktor & Engagement** | 15 | wenig Leerlauf, alle Kinder aktiv |
+| 1 | **Spaß & Engagement** | **22** | DER Kern: begeistertes Mitmachen, wenig Leerlauf, Lacher, „nochmal!" — alters-relativ |
+| 2 | **Sicherheit & Altersgerechtigkeit** | 15 | entwicklungsgerecht: Motorik, Aufmerksamkeit, Lese-Fähigkeit |
+| 3 | **Machbarkeit zuhause** | 15 | Material leicht beschaffbar + Kosten + Aufbau + Eltern-Vorbereitungszeit |
+| 4 | **Anleitungs-Klarheit & Vollständigkeit** | 15 | kann ein Fremder es ohne Rückfragen nachmachen? Keine Lücken |
 | 5 | **Gruppengröße-Skalierbarkeit** | 12 | explizit 4 / 8 / 12+ geregelt |
 | 6 | **Motto-Immersion & roter Faden** | 11 | echt themenstark — nicht „Memory mit Sticker" |
-| 7 | **Wow-/Erinnerungs-/Foto-Effekt** | 9 | bleibt im Gedächtnis |
-| 8 | **Tagesplan-Fit** | 8 | Dauer realistisch + Energie-Level + Indoor/Outdoor + Wetter-Plan-B + Chaos-Ansage |
+| 7 | **Tagesplan-Fit** | 10 | Dauer realistisch + Energie-Level + Indoor/Outdoor + Wetter-Plan-B + Chaos-Ansage |
+
+**Foto-/Wow-BONUS: 0 bis +3 (additiv, NIE Abzug).** Besonderer Foto-/Wow-Moment → +1 bis +3 obendrauf (kann ein gutes Spiel über die Gate-Linie heben). Fehlt er → passiert NICHTS; ein Spiel besteht ohne Foto-Moment voll, solange es Spaß macht. Score bei 100 gedeckelt.
 
 ### Alters-relative Bewertung (eingeführt 01.06.2026 — KRITISCH)
 
@@ -97,7 +100,7 @@ Spaß, Wow und Schwierigkeit werden **gegen die getaggte Altersgruppe** bewertet
 | Dimension | 2–5 (Maßstab) | 6–8 | 9–12 (Maßstab) |
 |---|---|---|---|
 | **Spaß** | Mitmach-Faktor, Sensorik, „jedes Kind schafft's", Wiederholung macht Freude | Mischung | Challenge, Wettkampf, Strategie, Überraschung |
-| **Wow/Foto** | niedlich/Verkleidung/Mitmach-Moment reicht — **kein Spektakel verlangen** | mittel | Spektakel, Mut, Foto-Beat |
+| **Wow/Foto (nur BONUS)** | praktisch nie relevant — Kleinkind-Spaß braucht kein Foto-Spektakel | optional | optionaler Bonus-Beat, nie Pflicht |
 | **Schwierigkeit** | leicht = richtig | — | anspruchsvoll = richtig |
 
 **Regel:** Novelty/Wettkampf/Spektakel sind für 2–5 **kein Bewertungskriterium** und dürfen nicht abgezogen werden. Die K.O.-Gates (Sicherheit/Fakten/Inklusion) bleiben absolut, alters-unabhängig.

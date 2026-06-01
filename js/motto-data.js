@@ -71,8 +71,8 @@ window.MOTTO_DATA = {
       scope: "standalone für 2–5 + Baustein im Piraten-Parcours für 6–12",
       bestAge: "3-5",
       class_gate: 85,
-      score: 82, // ehrlicher konvergierter Wert (NICHT robustes 2×85)
-      status: "sicher + komplett, solides B-Staple. Strikt alters-kalibriert pendelt es 78–85 (Peak 85 = Varianz). Doku nach 17 Runden zu dicht → offener Condense-Pass. Spec-Wahrheit: _dev/review/staging/piraten-walk-the-plank.md (v17). WebFetch-Frühscores waren inflationär.",
+      score: 85, // unter fun-first-Rubrik (Foto = Bonus statt Abzug) — der Foto-Drag (~3 Pkt) entfällt; sicheres, spaßiges Staple. Kein Neu-Grind, Maßstab-Korrektur.
+      status: "DURCH als fun-first-Staple. Sicher + komplett + spaßig. Foto-Drag entfernt (Rubrik 01.06.2026: Foto = Bonus). Doku könnte noch verschlankt werden (optional). Spec: _dev/review/staging/piraten-walk-the-plank.md (v17). Frühere WebFetch-Scores waren inflationär.",
       reviews_strict_age_calibrated: [83, 85, 83, 78],
       reviews_webfetch_inflationaer: [64, 79, 75, 83, 78, 86, 85],
     },
