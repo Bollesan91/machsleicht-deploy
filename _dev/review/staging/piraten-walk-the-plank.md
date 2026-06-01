@@ -9,8 +9,8 @@
 
 ## Gruppengröße-Skalierung
 - **4–6:** 2–3 Bahnen parallel (Material reicht pro Kind) — kaum Wartezeit. Jede:r hat eine eigene Bahn ODER es rotieren 2 Kinder pro Bahn.
-- **7–10:** zwei Planken im Wettlauf, zwei Teams. Pro Team eine Bahn, abwechselnd.
-- **11+:** **pro ~12 Kinder mindestens 2 Planken parallel** ODER 3-Wellen-Modus (alle machen Versuch 1, dann alle Versuch 2, dann 3) à ~5 Min — niemals eine Bahn für 12 Kinder nacheinander (= Schlange). Wenn als eine Station in einer Stationen-Rotation: Planken-Station auf ~5 Min/Welle takten und mit der Gesamt-Rotation abstimmen (Beispiel: 12 Kinder, 3 Stationen → je ~5 Min, 2 Planken in der Planken-Station, damit 4 Kinder gleichzeitig laufen).
+- **7–10:** zwei Planken, zwei Teams. Beide Teams laufen **gleichzeitig** auf je einer Bahn als Staffel: sobald ein Kind abgeliefert hat, startet das nächste seines Teams. Gewinn: das Team, dessen Crew **zuerst komplett + sauber** abgeliefert hat (kein Einzel-Ranking).
+- **11+:** **Faustregel: pro ~6 Kinder eine Planke** (12 → 2, 18 → 3 Bahnen parallel) ODER 3-Wellen-Modus (alle machen Versuch 1, dann alle Versuch 2, dann 3) à ~5 Min — niemals eine Bahn für 12 Kinder nacheinander (= Schlange). Wenn als eine Station in einer Stationen-Rotation: Planken-Station auf ~5 Min/Welle takten und mit der Gesamt-Rotation abstimmen (Beispiel: 12 Kinder, 3 Stationen → je ~5 Min, 2 Planken in der Planken-Station, damit 4 Kinder gleichzeitig laufen).
 
 ## Material
 - Kreppband, 1 Rolle, für ZWEI parallele Linien. **Bahnbreite altersabhängig:** 3–5 = 20–30 cm · 6–8 = 15–18 cm · 9–12 = 10–12 cm. Länge 3 m.
@@ -23,6 +23,7 @@
 - Belohnung **nur ab 6 J:** Schoko-Goldmünzen — NACH dem Lauf, nicht auf dem Löffel. Für 3–5 ist der Stempel/Aufkleber die Crew-Bestätigung (keine Münze).
 
 ## Anleitung (Basis 6–8)
+0. **Optionaler Start (10 Sek, hebt die Immersion):** kurze Crew-Vereidigung — „Wer den Goldschatz über die Planke bringt, ohne ihn an die Haie zu verlieren, gehört zur Crew!"
 1. Zwei parallele Kreppband-Linien (15–18 cm Abstand, 3 m) auf den Boden kleben — der Streifen dazwischen ist die Planke über dem Hai-Wasser. Beidseits blaues Tuch/Kreppstreifen als Wasser legen.
 2. Jedes Kind bekommt einen Esslöffel mit seinem Goldschatz (Ball) drauf.
 3. Auf „Leinen los!" **ruhig über die Planke gehen** (kein Rennen — Hektik kostet den Schatz) und ihn in die Schatzkiste fallen lassen.
@@ -31,7 +32,7 @@
 6. Schwierigkeit justieren über Löffelgröße (kleiner = schwerer) und Bahnbreite (schmaler = schwerer).
 
 ## Sicherheit (Basis)
-Ebener, rutschfester Boden. Indoor mit Schuhen oder Anti-Rutsch-Socken (Strümpfe rutschen auf Kreppband). Plastik-/Holzlöffel, kein Metall. Für 3–5: enge Aufsicht + ausschließlich Schaumball ≥4,5 cm, keine Münze auf dem Löffel. Hautfreundliche Stempeltinte. Erhöhte Planke nur ab 6 J (siehe Varianten), dann **max. ~10 cm über dem Boden** (rutschfeste Matte ist Pflicht) + Erwachsene:r als Spotter in Armreichweite daneben.
+Ebener, rutschfester Boden. Indoor mit Schuhen oder Anti-Rutsch-Socken (Strümpfe rutschen auf Kreppband). Outdoor nur auf trockenem, ebenem Untergrund — feuchtes Gras/Matsch ist rutschig (dann Matte/Teppichfliesen drunter oder ins Haus verlegen). Plastik-/Holzlöffel, kein Metall. Für 3–5: enge Aufsicht + ausschließlich Schaumball ≥4,5 cm, keine Münze auf dem Löffel. Hautfreundliche Stempeltinte. Erhöhte Planke nur ab 6 J (siehe Varianten), dann **max. ~10 cm über dem Boden** (rutschfeste Matte ist Pflicht) + Erwachsene:r als Spotter in Armreichweite daneben.
 
 ## Inklusion
 Kinder mit Bewegungs-/Koordinationseinschränkung: breitere Bahn + Festhalten jederzeit erlaubt (auch ≥6) ODER als Schiri/Schatzmeister:in einbinden — niemand ist in den Wettlauf-Modi struktureller „Team-Verlierer".
