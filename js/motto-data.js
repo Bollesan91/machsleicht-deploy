@@ -67,9 +67,14 @@ window.MOTTO_DATA = {
         },
       },
       source: "wizard+generic+hub",
+      class: "staple",
+      scope: "standalone für 2–5 + Baustein im Piraten-Parcours für 6–12",
+      bestAge: "3-5",
       class_gate: 85,
-      score: 85,
-      reviews: [64, 79, 75, 83, 78, 86, 85],
+      score: 82, // ehrlicher konvergierter Wert (NICHT robustes 2×85)
+      status: "sicher + komplett, solides B-Staple. Strikt alters-kalibriert pendelt es 78–85 (Peak 85 = Varianz). Doku nach 17 Runden zu dicht → offener Condense-Pass. Spec-Wahrheit: _dev/review/staging/piraten-walk-the-plank.md (v17). WebFetch-Frühscores waren inflationär.",
+      reviews_strict_age_calibrated: [83, 85, 83, 78],
+      reviews_webfetch_inflationaer: [64, 79, 75, 83, 78, 86, 85],
     },
     {
       id: "kanonenkugeln",
