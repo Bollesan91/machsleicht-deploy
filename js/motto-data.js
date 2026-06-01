@@ -71,5 +71,66 @@ window.MOTTO_DATA = {
       score: 85,
       reviews: [64, 79, 75, 83, 78, 86, 85],
     },
+    {
+      id: "kanonenkugeln",
+      motto: "piraten",
+      class: "staple",
+      emoji: "⚓",
+      name: "Kanonenkugeln",
+      desc: "Feindliche Schiffe versenken — wirf die Kanonenkugeln in die Fässer; je weiter das Ziel, desto mehr Beute",
+      ages: ["3-5", "6-8", "9-12"],
+      bestAge: "6-8",
+      type: "wettkampf",
+      players: { min: 1, ideal: "4–10", max: null, solo: true },
+      groupScaling:
+        "4–6: zwei Wurfstationen im Abstand ~3 m (halbe Wartezeit) · " +
+        "7–10: zwei Stationen, zwei Teams gleichzeitig, Team-Summen vergleichen · " +
+        "11+: ~1 Station pro 6 Kinder; konkret z.B. 12 = 2 Stationen à 6, 3 Runden à ~1,5 Min; 18 = 3 Stationen ODER 3er-Gruppen-Rotation à ~2 Min. Bei <12 m² nur eine Station, Runden nacheinander.",
+      dauer: "8–12",
+      prep: 5,
+      teardown: 3,
+      indoor: "both",
+      space: "min. ~3 m Tiefe × 4 m Breite; Fenster/Regale ~2 m seitlich frei (Wand hinter den Eimern ok).",
+      material: [
+        "Kanonenkugeln: AUSSCHLIESSLICH weiche Wurfobjekte — Schaumstoffbälle ab ~5 cm ODER Sockenknäuel. KEINE harten Bälle (kein Tennis-/Gummi-/Flummiball, Augenrisiko). Für 3-5 nur Sockenknäuel. 5–8 Stück pro Kind/Runde (10 Kinder × 2 Runden ≈ 100 Knäuel — 3 Sammelkörbe hinter den Eimern, 1 Sammler:in lädt nach jeder Runde nach).",
+        "3 Ziele (Eimer/Wäschekorb/Karton) — für 3-5 große weite Öffnungen, für 9-12 kleiner. Abstände altersabhängig: 3-5 = 1/1,5/2 m · 6-8 = 2/3/4 m · 9-12 = 3/4/5 m.",
+        "Wurflinie aus Kreppband + 2 Hütchen als Wurfzonen-Begrenzung.",
+        "Pirate-Look (Standard): schwarzes Tuch/Tonpapier-Totenkopf an jeden Eimer = feindliches Schiff. Optional Augenklappe/Bandana.",
+        "Punkte-Tafel + Stift. Stempel + hautfreundliches Kissen ODER Crew-Aufkleber. Belohnung ab 6 J: Schoko-Goldmünzen nach dem Spiel.",
+      ],
+      anleitung: [
+        "0. Optional (10 Sek): „Feindschiffe voraus — Kanonen laden, Kanonier:innen!\" Ein Erwachsene:r spielt den Kapitän/Schiri.",
+        "1. 3 Ziel-Eimer (mit Totenkopf-Tuch) in 2/3/4 m aufstellen, Wurflinie + Hütchen kleben.",
+        "2. Jedes Kind bekommt 5 Kanonenkugeln, stellt sich hinter die Wurflinie.",
+        "3. Werfen — nur auf die Schiffe. Naher Eimer 1 Pkt, mittel 2, fern 3. Pro Runde alle 5 Kugeln; je nach Zeit 2–3 Runden. Team-Modus: jedes Kind max. 15 Pkt/Runde, Team-Summen vergleichen (Bsp. Team A 12 / Team B 9 → A gewinnt).",
+        "4. Sicherheits-Ablauf laut ansagen: nur auf die Schiffe, nie auf Personen/Köpfe. Nach „Feuer einstellen!\" legen alle ab — erst auf Sammler:in-Signal (Blickkontakt) wird die Wurfzone zum Einsammeln frei.",
+        "5. Siegbedingung: Punkte zählen; jede:r Treffer:in ist Kanonier:in-Crew + Stempel; Team-Modus = höhere Summe gewinnt, kein Einzel-Aussieb, niemand fliegt raus.",
+        "6. Schwierigkeit über Distanz + Eimergröße.",
+        "7. Abschluss-Ritual: Kapitän ruft „Schatz-Kasse öffnen!\", alle „Arrr!\", Münzen werden verteilt (ab 6 J).",
+      ],
+      safety:
+        "Nur weiche Wurfobjekte (Schaum ab ~5 cm / Sockenknäuel) — nichts Hartes. Eiserne Regel: nur auf Ziele werfen, nie auf Menschen/Gesicht. Wurfzone (Hütchen) während des Werfens frei; Sammeln nur auf Signal. Parallele Stationen ≥3 m seitlich, alle werfen in dieselbe Richtung. Indoor ~2 m Abstand zu Fenstern/Regalen. Für 3-5: nur Sockenknäuel, enge Aufsicht.",
+      inclusion:
+        "Wurfdistanz frei wählbar (näher treten erlaubt), sitzend möglich. Kein Rauswurf, kein Einzel-Ranking nötig — wer mitmacht, ist Crew.",
+      mess: "gering-mittel — Kugeln rollen weg (Sammelzone hinter den Eimern, Ball-Sammler:in pro Station). Wartende laden Nachschub oder üben den Crew-Schlachtruf.",
+      variants: {
+        "3-5": {
+          name: "Kleine Kanoniere",
+          desc: "Große Körbe, kurze Distanz, kein Punktedruck",
+          detail:
+            "Große Wäschekörbe, Distanz 1–2 m, nur Sockenknäuel; jedes Kind tritt so nah es mag. Keine Siegbedingung, kein Zählen — jeder Treffer wird laut bejubelt. Der Stempel ist Teilnahme-Diplom (alle bekommen ihn), kein Leistungs-Abzeichen.",
+        },
+        "9-12": {
+          name: "Scharfschütz:innen",
+          desc: "Kleinere Ziele, weitere Distanz, Bonus-Schiff",
+          detail:
+            "Ziele kleiner, Distanz 3/4/5 m, Bonus-Ziel „Kapitänsschiff\" (kleiner Eimer, 5 Punkte). Team-Modus auf Zeit oder mit begrenzter Kugelzahl; Profi-Option: ein Wurf mit der schwächeren Hand zählt doppelt.",
+        },
+      },
+      source: "wizard+hub",
+      class_gate: 85,
+      score: 89,
+      reviews: [70, 89, 89],
+    },
   ],
 };
