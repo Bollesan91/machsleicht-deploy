@@ -132,5 +132,64 @@ window.MOTTO_DATA = {
       score: 89,
       reviews: [70, 89, 89],
     },
+    {
+      id: "schatz-im-sand",
+      motto: "piraten",
+      class: "staple",
+      emoji: "🏴‍☠️",
+      name: "Schatz im Sand",
+      desc: "Mit Sieb und Schaufel den vergrabenen Piratenschatz aus dem Sand buddeln — jede:r findet sein Gold",
+      ages: ["3-5", "6-8", "9-12"],
+      bestAge: "6-8",
+      type: "ruhig",
+      players: { min: 1, ideal: "3–8", max: null, solo: true },
+      groupScaling:
+        "3–6: eine große flache Wanne, alle buddeln am Rand verteilt · " +
+        "7–10: zwei Wannen ODER Stationen-Rotation (5–6/Welle à ~5 Min), Wartende malen Schatzkarte/Muschel-Memory · " +
+        "11+: ~6 Buddel-Plätze pro Wanne → 1 Wanne pro 6 Kinder. Sandfläche ist der Engpass.",
+      dauer: "8–12",
+      prep: 10,
+      teardown: "15–30 (Sand verteilt sich)",
+      indoor: "outdoor bevorzugt, indoor mit Plane",
+      material: [
+        "Flache Wanne (min. ~60×40 cm, Tischhöhe für sitzendes Spielen) / Sandkasten.",
+        "Zertifizierter Spielsand nach DIN EN 71-3 (gewaschen) — KEIN Bausand/Quarzsand mit Feinanteil (Staub-/Lungenrisiko). Sandhöhe ~10 cm. Outdoor-Sand vor Nutzung sichtbar auf Fremdstoffe/Schimmel prüfen.",
+        "Schätze: für 3-5 ausschließlich Großteile ≥4,5 cm (Holz-/Filz-Münzen, große Plastik-Edelsteine, Gummifiguren) — KEINE kleinen Schoko-Münzen im Sand (Verschluck + sandiges Schoko). Pro Kind 3–5. Optional mit Piraten-Namen beschriften ('Goldkrone von Blackbeard').",
+        "Pro Kind Sieb + Sammel-Eimer; 1–2 Schaufeln. Wasser/Seife/Handtuch. Stempel/Crew-Aufkleber. Schoko-Belohnung separat, erst nach Händewaschen, ab 6 J.",
+        "Optional: Schatzkarte mit 'X', Totenkopf-Fähnchen markiert die Buddel-Zone.",
+      ],
+      anleitung: [
+        "0. Optional: „Die alte Schatzkarte sagt — hier ist das Piratengold vergraben! Grabt es aus, Crew!\"",
+        "1. Vorab: Schätze gleichmäßig vergraben (3–5/Kind), Buddel-Zone mit Fähnchen markieren.",
+        "2. Jedes Kind bekommt Sieb + Eimer und einen Platz am Wannenrand.",
+        "3. Auf „Schatzsuche — los!\" buddeln und sieben, Funde in den eigenen Eimer.",
+        "4. Faire Verteilung (Schiri aktiv): nach ~5–6 Min jeden Eimer prüfen; Kinder mit 0–1 Stücken → Schiri deutet auf eine vorab markierte leichte Stelle, Kind gräbt dort. Kinder mit vollem Eimer werden „Schatzmeister:in\" und helfen — niemand geht leer aus.",
+        "5. Siegbedingung: keine — alle Gräber sind Crew + Stempel.",
+        "6. Abschluss: Gruppenfoto mit Sieben + Eimern, DANN Hände waschen (Seife) — erst danach Snacks/essbare Belohnung.",
+      ],
+      safety:
+        "Nur zertifizierter Spielsand (DIN EN 71-3), kein Quarz-/Bausand (Feinstaub). Nicht pusten, kein Sand werfen. Hände nach dem Spiel mit Seife waschen, vor jedem Essen; nicht in Augen/Mund fassen. Für 3-5: enge Aufsicht ~1:4 (für 6er-Gruppe mind. 1 Betreuer:in + 1 Assistenz), ständiger Sichtkontakt; Sand an Mund/Lippen → sofort unterbrechen + ausspülen; nur Großteile ≥4,5 cm. Sand in den Augen: mit klarem Wasser spülen. Allergie/Outdoor: Sand auf Fremdstoffe prüfen.",
+      inclusion:
+        "Ruhiges, nicht-kompetitives Buddeln — gut für Kinder, die wilde Spiele meiden. Sitzend/Rollstuhl an Tisch-Wanne möglich. Kein Tempo, kein Rauswurf, jede:r findet.",
+      mess: "HOCH (Sand). Outdoor bevorzugt. Indoor: große Plane/Bettlaken unter die Wanne, Besen/Handfeger/Staubsauger bereit; Abbau realistisch 15–30 Min (Plane an Ecken zusammenfassen). Schürzen/alte Kleidung.",
+      variants: {
+        "3-5": {
+          name: "Kleine Schatzgräber",
+          desc: "Flach/teils sichtbar vergraben, schnelles Erfolgserlebnis",
+          detail:
+            "Schätze flach und teils sichtbar vergraben, nur Großteile ≥4,5 cm, große Siebe, enge Aufsicht ~1:4. Kein Zählen — jedes gefundene Stück wird bejubelt.",
+        },
+        "9-12": {
+          name: "Karten-Expedition",
+          desc: "Schatzkarte mit Himmelsrichtungen + Teams",
+          detail:
+            "Schätze tiefer vergraben. Schatzkarte mit Himmelsrichtungs-Icons führt zu den ergiebigsten Stellen; Buddel-Zone in 4 Felder (N/O/S/W) teilen, jedes Team gräbt sein Feld, optional kurzes Zeitlimit. Edelsteine eintauschbar gegen eine „Schatzgräber:in-Urkunde\".",
+        },
+      },
+      source: "wizard+generic+hub",
+      class_gate: 85,
+      score: 91,
+      reviews: [88, 91],
+    },
   ],
 };
