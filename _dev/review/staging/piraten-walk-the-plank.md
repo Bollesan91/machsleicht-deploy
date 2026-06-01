@@ -12,6 +12,19 @@
 Zwei Klebeband-Linien als schmale Planke kleben → jedes Kind balanciert den Goldschatz auf dem Löffel rüber → in die Schatzkiste. Tritt es ins „Hai-Wasser" oder fällt der Ball: zurück zum Start, **niemand fliegt raus**. Details unten.
 **Aufsichts-Bedarf (vorab einplanen):** ab 7 Kindern im Wettlauf **1 Schiri pro Bahn**; bei erhöhter Planke (9–12) **1 Spotter pro Bahn**. **Platz:** pro Bahn ~3 m × 1 m frei; **kleine Wohnung → 1 Bahn / Wellen-Modus** als Default.
 
+## Standard-Konfiguration auf einen Blick (das Default-Rezept)
+Wähl EINE Zeile nach Alter — die Details darunter sind nur Feintuning:
+
+| Alter | Setup (Default) | Löffel | Ball | Modus |
+|---|---|---|---|---|
+| **2–5** | breite Bahn 20–30 cm, flach | großer Servierlöffel | Schaumball ≥5 cm | „Deck-Abenteuer": festhalten erlaubt, kein Tempo, alle gewinnen |
+| **6–8** | Bahn 15–18 cm, flach | Esslöffel | Schaumball ≥5 cm | Basis: 3 Fehlversuche, dann festhalten |
+| **9–12** | Bahn 10–12 cm, erhöht ~10 cm + Matte + Spotter/Bahn | Teelöffel | Schaumball ≥5 cm | „Bootcamp" + Augenbinden-Mutprobe (flach) |
+
+**Aufsicht (entscheidet, ob der Modus geht):** Wettlauf ab 7 Kindern → **1 Schiri/Bahn** · erhöhte Planke → **1 Spotter/Bahn** · Augenbinde → **1 Begleitung**. Keine 2. Aufsichtsperson? → flach + nicht-kompetitiv bleiben.
+
+**Vorab besorgen (Party-Morgen ist zu spät):** 1 Schaumball ≥5 cm **pro Kind** (Staffel) + Plastiklöffel-Set + Kreppband (normal + blau) + Packpapier. **Tape-Test:** Kreppband auf Parkett/lackiertem Boden vorher an verdeckter Stelle testen (kann Lack lösen).
+
 ## Gruppengröße-Skalierung
 - **Solo:** gegen die eigene Bestzeit ODER Ziel „so viele Schätze wie möglich in 3 Min ohne Sturz" — Richtwert 3–5: **2**, 6–8: **4**, 9–12: **6**.
 - **4–6:** 2–3 Bahnen parallel, **nicht-kompetitiv** (kein Wettlauf) — jede:r läuft für sich, hier gilt die Ehrenregel (Kinder melden Fußfehler selbst). Kaum Wartezeit.
@@ -22,7 +35,7 @@ Zwei Klebeband-Linien als schmale Planke kleben → jedes Kind balanciert den Go
 - Kreppband (normal) für ZWEI parallele Linien = schmale Planke + **blaues Kreppband** beidseits als Hai-Wasser + brauner Packpapier-Streifen für den Holz-Look = der kleine Pflicht-Einkauf neben dem Haushaltskram. **Bahnbreite altersabhängig:** 3–5 = 20–30 cm · 6–8 = 15–18 cm · 9–12 = 10–12 cm. Länge 3 m (Kompakt ab 2 m).
 - **Material-Menge je Modus:** Staffel (7–10): 1 Löffel + 1 Ball **pro Kind** → für 10 Kinder ein **Plastiklöffel-Set + 10 Schaumbälle** vorab besorgen (hat kein Haushalt spontan da). Parallel/Rotation: 1 Löffel + 1 Ball **pro gleichzeitig laufender Bahn** (z. B. 3 Bahnen = 3 Sets).
 - 1 Löffel als Schwierigkeits-Hebel: 3–5 großer Servier-/Esslöffel (leicht) · 6–8 Esslöffel · 9–12 Teelöffel (schwer). Plastik/Holz — **kein Metall** (Sturzrisiko).
-- „Goldschatz"-Ball: am besten **fertig goldfarbener Schaumball ≥5 cm** (sieht nach Gold aus, kein Anmalen, rollt nicht weg) — für 3–5 Pflicht-Größe ≥5 cm: KEIN 4,5-cm-Ball (0,5 mm über der 44,5-mm-Klein-Ball-Schablone ist innerhalb der Kauftoleranz, kein echter Puffer). Ab 6 J alternativ gelber Tischtennisball (40 mm) indoor, outdoor Schaum-/Flummiball ≥4,5 cm (Wind). **Mixed-Age:** sind U6-Geschwister anwesend, 40-mm-Bälle außer deren Reichweite halten; für die Kleinen nur Bälle ≥5 cm.
+- „Goldschatz"-Ball: **fertig goldfarbener Schaumball ≥5 cm** (sieht nach Gold aus, kein Anmalen, rollt nicht weg). **Beschaffung:** Suchbegriff „Schaumstoffball/Softball ~6 cm gold/gelb"; **Fallback** falls nicht in Gold auffindbar: irgendein Soft-/Schaumball ≥5 cm + lose Goldfolie umwickeln ODER einfach gelb — Hauptsache ≥5 cm. Für 3–5 ist ≥5 cm Pflicht: KEIN 4,5-cm-Ball (0,5 mm über der 44,5-mm-Klein-Ball-Schablone = kein Puffer). Der gelbe Tischtennisball (40 mm) ist NUR ok, wenn **kein** Kind unter 6 auf der Party ist — **sobald ein U6-Kind dabei ist: 40 mm komplett weglassen, ≥5 cm für alle** („außer Reichweite halten" ist auf einer Party keine verlässliche Kontrolle).
 - 1 niedriger Eimer/Schatzkiste auf **Hüft- bis Löffelhöhe** des Kindes (nicht knie-hoch — sonst Bücken).
 - **Standard-Look (gehört dazu, nicht „optional"):** Hai-Wasser beidseits der Planke = **aufgeklebtes blaues Kreppband** (indoor; KEIN loses Tuch — das verrutscht/rutscht auf Hartboden, und die Kinder treten beim Fehler genau dorthin) bzw. Kreide (nur outdoor). Holzplanken-Look für ~0 €: brauner Pack-/Tonpapier-Streifen **nur auf die beiden Seitenränder** kleben — die Lauffläche bleibt pures, glattes Tape (Papier in der Mitte wölbt sich auf = Stolperkante). **Empfohlener Foto-Standard (nicht nur Kür):** Papp-Flossen als Haie + Bandana/Augenklappe pro Kind; ab 6 J zusätzlich die erhöhte Planke (siehe Variante) — das ist der eigentliche Wow-/Foto-Moment.
 - Default-Belohnung = Stempel/Aufkleber (allergiefrei) für alle. Schoko-Goldmünzen optional, nur ab 6 J, NACH dem Lauf, nie auf dem Löffel, nur ohne bekannte Allergien (vorher Eltern fragen).
