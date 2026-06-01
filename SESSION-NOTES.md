@@ -1,3 +1,84 @@
+# Session-Notiz — 01.06.2026 früh (Wizard-Quick-Wins + Spiel-Detail-Frame + STRATEGISCHER PIVOT)
+
+## 🎯 STRATEGISCHER PIVOT (01.06.2026 nachts): Wizard wird der neue Planer
+
+**Bolle's Entscheidung:** Wizard zieht 1:1 auf `/kindergeburtstag` um — alter Planer wird abgelöst.
+
+### Architektur-Entscheidungen (Bolle 01.06.2026)
+1. **Schatzsuche im Wizard:** Als Wizard-Modus integriert (Stage-1-Auswahl „Kompletter Plan" oder „Nur Schatzsuche"). SZ_THEMES als Datenquelle. /schatzsuche-Hub-Pages bleiben SEO-Traffic-Quelle, linken in Wizard.
+2. **Alter Planer:** Komplett ersetzen durch Wizard-Swap auf `/kindergeburtstag` (1:1 Deploy). „kindergeburtstag-URL ist sexy" — bleibt.
+3. **URL-Strategie:** Wizard zieht ein auf `/kindergeburtstag`. Hub-Sticky-Bars (alle 15) funktionieren ohne Edit weiter, SEO-Backlinks unverändert.
+
+### Curation-Methodik (Bolle's Vorgabe)
+**Nicht per Skript** (verliert Curation). **Motto-für-Motto handgemacht.**
+
+Pro Motto:
+1. Sammle ALLE Spielinhalte aus 4 Quellen: GENERIC + Hub-Page + SZ_THEMES + Wizard-MOTTOS
+2. Dedupliziere
+3. Curation gemeinsam: Vibe-Check (catchier Name), Sicherheits-Check (≥4cm, EN-71, Pflicht-Regeln), Variety-Check
+4. In Wizard packen mit voller material/anleitung/dauer/safety
+5. Adversarial-Reviewer (Helfer-v3, Score ≥ 90)
+
+### Migration-Roadmap (P8-X)
+
+| Phase | Was | Aufwand |
+|---|---|---|
+| **0** ✅ erledigt | Spiele-Quellen-Audit: 135 Spiele + 225 Stations + 45 Kuchen voll gepflegt; Snacks-Lücke | (gemacht) |
+| **1** | Pro-Motto-Curation (15 Mottos × ~50 Min) | **~12.5h** Curation-Arbeit |
+| **2** | Live-Preview + Mission-Property (Plan v2 — Sidebar rechts Desktop, Sticky-Banner Mobile) | 3.5h |
+| **3** | Material/Kuchen/Deko/Mitgebsel-Module in Wizard portieren | 3h |
+| **4** | Schatzsuche als Wizard-Modus | 2h |
+| **4.5** | Snacks-Recherche-Lücke schließen (15 × 3 Altersgruppen) | 1.5h |
+| **5** | Funktionalitäts-Parität-Audit | 30 Min |
+| **6** | URL-Swap: wizard.html → kindergeburtstag.html (Netlify-Config) | 30 Min |
+| **Total** | | **~16-18h aktive Bauzeit, 4-5 Sessions** |
+
+### Pilot piraten (01.06.2026 nachts gestartet)
+- 4 Quellen gesammelt: 9 GENERIC + 15 Hub-Page + 15 SZ_THEMES + 10 Wizard = ~50 Konzepte total
+- Realistischer Aufwand pro Motto: 45-60 Min (statt initialer Schätzung 30-45 Min)
+- Curation-Tabelle steht im SESSION-NOTES — wird Pilot für die anderen 14 Mottos
+
+### Nächste Session
+- Pilot piraten durchziehen: Master-Liste curatieren → in Wizard packen → Adversarial-Reviewer
+- Dann detektiv (Beliebt-Badge) als 2. Welle
+- Iterativ alle 15 Mottos
+
+---
+
+## 🚀 Deploy 01.06.2026 nachts (Wizard Spiel-Detail-Frame + Showcase piraten, Score Self-Audit 7/10)
+
+**Commit:** `9ca8892` (Merge draft → main)
+
+### Was deployt wurde
+- **Spiel-Detail-Frame** im Wizard: Click auf jede Spiel-Karte öffnet Drawer (rechts Desktop, Bottom-Sheet Mobile) mit Material-Bullets + Kurz-Anleitung + Dauer-Badge + Safety-Hinweis + CTA „Voll-Anleitung im Planer öffnen"
+- **piraten als Showcase:** alle 10 Spiele voll gepflegt (Walk the Plank, Schwertkampf mit Pflicht-Regeln, Schatz im Sand mit DIN-EN-71-3, Edelsteinsuche ≥4cm-Großperlen-Pflicht)
+- **14 Mottos:** Fallback „Material und Anleitung im Planer" mit Direct-Link CTA → wird durch P8-X Migration-Sprint ersetzt
+- **ESC** schließt Drawer
+
+### Bewerter-Pitch (extern) integriert
+Bolle hat externen Bewerter konsultiert — Kern: „vom Setup-Formular zum Erlebnis-Generator". 7 Gamechanger identifiziert. Brutal priorisiert:
+1. **Live Party Preview** (Sidebar während Wizard läuft) — UX-Hebel #1
+2. **Geheimwort als roter Faden** (Einladung → Partyseite → Schatzsuche) — Wow-Hebel
+
+Anti-Sycophancy-Filter (Claude):
+- Geheimwort ohne Bridge zu Planer-Schatzsuche-Tool = reine Kosmetik
+- Mit Bridge = echter Funnel-Hebel (Drop-off-Reduktion)
+- Aktuell **kein** Bridge gebaut — wäre eigener Sprint
+
+Plan v2 für Live-Preview (gestern Nacht beschrieben): Sidebar rechts Desktop / Sticky-Banner Mobile + Mission-Property pro Motto + Stage-Wechsel-Animation + Stage-6-Morph + State-Sync vollständig. ~3.5h.
+
+### Self-Audit Score: 7/10 (Plan v1)
+- Mission-Story fehlt
+- Animation generic
+- Stage-6 Übergang abrupt
+- Mobile Glanz-Garnitur
+- State-Sync unterspezifiziert
+- Datenpflege „kommt später" Cop-Out
+
+→ Plan v2 mit Mission integriert würde 8.5/10 erreichen.
+
+---
+
 # Session-Notiz — 31.05.2026 spätnachts (Welle 2 Phase 3 + P1-21 Planer + SZ_THEMES Vollständigkeit)
 
 ## 🚀 Deploy 31.05.2026 Teil 4 (SZ_THEMES 9 → 15, Score 88/100)
