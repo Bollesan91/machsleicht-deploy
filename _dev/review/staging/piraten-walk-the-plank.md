@@ -50,7 +50,7 @@ Wähl EINE Zeile nach Alter — die Details darunter sind nur Feintuning:
 6. Schwierigkeit über Löffelgröße + Bahnbreite justieren.
 
 ## Sicherheit (Basis)
-Ebener, rutschfester Boden. Indoor mit Schuhen oder Anti-Rutsch-Socken (Strümpfe rutschen auf Kreppband). Outdoor nur trocken/eben (feuchtes Gras rutschig → Matte drunter oder reinverlegen). Plastik-/Holzlöffel, kein Metall. Für 3–5: enge Aufsicht + ausschließlich Ball ≥5 cm, keine Münze auf dem Löffel. Hautfreundliche Stempeltinte. Erhöhte Planke nur ab 6 J (Variante), max. ~10 cm, rutschfeste Yoga-/Antirutschmatte Pflicht + **pro erhöhter Bahn ein:e Spotter:in** in Armreichweite.
+Ebener, rutschfester Boden. Indoor mit Schuhen oder Anti-Rutsch-Socken (Strümpfe rutschen auf Kreppband). Outdoor nur trocken/eben (feuchtes Gras rutschig → Matte drunter oder reinverlegen). Plastik-/Holzlöffel, kein Metall. Für 3–5: enge Aufsicht + ausschließlich Ball ≥5 cm, keine Münze auf dem Löffel. Hautfreundliche Stempeltinte. Erhöhte Planke nur ab 6 J (Variante), max. ~10 cm, rutschfeste Yoga-/Antirutschmatte Pflicht + **pro erhöhter Bahn ein:e Spotter:in** in Armreichweite. **Parallele Bahnen ≥1 m auseinander** (ein seitlicher Sturz darf nicht in die Nachbarbahn gehen). **Im Staffel-Tempo räumt der/die Schiri einen heruntergefallenen Ball/Löffel sofort aus der Laufzone, bevor das nächste Kind startet** (sonst Stolperfalle unter Druck).
 
 ## Inklusion
 Kinder mit Bewegungs-/Koordinationseinschränkung: breitere Bahn + Festhalten jederzeit erlaubt (auch ≥6) ODER als Schiri/Schatzmeister:in einbinden — niemand ist in den Wettlauf-Modi struktureller „Team-Verlierer".
