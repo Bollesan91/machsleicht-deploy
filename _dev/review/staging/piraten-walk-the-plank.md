@@ -5,42 +5,42 @@
 **Getaggte Alter:** 3–5, 6–8, 9–12 (bestAge 6–8)
 **Typ:** aktiv / Geschick
 **Spieleranzahl:** min. 1, ideal 4–10, solo-fähig
-**Dauer:** 10–15 Min · **Eltern-Vorbereitung:** 5–7 Min (vorab aufbauen) · **Indoor + Outdoor**
+**Dauer:** 10–15 Min · **Eltern-Vorbereitung:** 5–7 Min (vorab aufbauen) · **Abbau:** 3–5 Min · **Indoor + Outdoor**
 
 ## Gruppengröße-Skalierung
-- **4–6:** 2–3 Bahnen parallel (Material reicht pro Kind) — kaum Wartezeit
-- **7–10:** zwei Planken im Wettlauf, zwei Teams
-- **11+:** Planke als eine Station in einer Stationen-Rotation (mehrere Spiele gleichzeitig) — nie als Solo-Spiel für 12 Kinder (= Schlange)
+- **4–6:** 2–3 Bahnen parallel (Material reicht pro Kind) — kaum Wartezeit. Jede:r hat eine eigene Bahn ODER es rotieren 2 Kinder pro Bahn.
+- **7–10:** zwei Planken im Wettlauf, zwei Teams. Pro Team eine Bahn, abwechselnd.
+- **11+:** **pro ~12 Kinder mindestens 2 Planken parallel** ODER 3-Wellen-Modus (alle machen Versuch 1, dann alle Versuch 2, dann 3) à ~5 Min — niemals eine Bahn für 12 Kinder nacheinander (= Schlange). Wenn als eine Station in einer Stationen-Rotation: Planken-Station auf ~5 Min/Welle takten und mit der Gesamt-Rotation abstimmen (Beispiel: 12 Kinder, 3 Stationen → je ~5 Min, 2 Planken in der Planken-Station, damit 4 Kinder gleichzeitig laufen).
 
 ## Material
 - Kreppband, 1 Rolle, für ZWEI parallele Linien. **Bahnbreite altersabhängig:** 3–5 = 20–30 cm · 6–8 = 15–18 cm · 9–12 = 10–12 cm. Länge 3 m.
 - 1 Löffel pro Kind, **Größe als Schwierigkeits-Hebel:** 3–5 = großer Servier-/Esslöffel (leicht) · 6–8 = Esslöffel · 9–12 = Teelöffel (schwer). Plastik oder Holz — **kein Metall** (Sturzrisiko).
-- 1 „Goldschatz"-Ball pro Kind: 3–5 = weicher Schaumball ≥4,5 cm (über EN-71-Klein-Ball-Schablone 44,5 mm); 6–8/9–12 = fertig gelber Tischtennisball 40 mm (indoor) bzw. Schaum-/Flummiball ≥4,5 cm (outdoor, gegen Wind). **Nicht selbst anmalen** (Haftung schlecht).
-- 1 Eimer oder Schatzkiste als Ziel.
+- 1 „Goldschatz"-Ball pro Kind. Empfehlung: **weicher Schaumball ≥4,5 cm für alle Alter** (rollt auf glattem Boden nicht weg, EN-71-konform für 3–5 über der 44,5-mm-Klein-Ball-Schablone). Ein fertig gelber Tischtennisball (40 mm) ist ab 6 J indoor ok, rollt aber auf glattem Boden leicht weg; outdoor wegen Wind ungeeignet → dort Schaum-/Flummiball ≥4,5 cm. **Nicht selbst anmalen** (Haftung schlecht).
+- 1 niedriger Eimer oder Schatzkiste als Ziel — **auf oder knapp unter Löffelhöhe des Kindes** (knie- bis hüfthoch), damit der Schatz ohne Bücken hineinfällt.
 - **Hai-Wasser sichtbar machen:** indoor blaues Tuch oder Kreppstreifen beidseits der Planke; outdoor auch mit Kreide aufmalbar. **Kreide nur outdoor** (indoor Rückstand/Rutschgefahr). Optional: Papp-Flossen.
-- Piraten-Stempel + **hautfreundliches/abwaschbares** Stempelkissen ODER Crew-Aufkleber (für die Crew-Bestätigung).
-- Optional für Foto/Immersion: Augenklappe/Bandana pro Kind, oder bemaltes Pappbrett als „echte" Planke.
-- Belohnung **nur ab 6 J:** Schoko-Goldmünzen — NACH dem Lauf, nicht auf dem Löffel.
+- Piraten-Stempel + **hautfreundliches/abwaschbares** Stempelkissen ODER Crew-Aufkleber (allergiearm). Fallback ohne Stempelkissen: Filzstift-Punkt auf den Handrücken oder ein Aufkleber.
+- Optional für Foto/Immersion: Augenklappe/Bandana pro Kind. **Für echten Foto-Wow:** ein stabiles Holzbrett (~20–30 cm breit, 2–3 cm dick) statt der Klebeband-Bahn (Kosten +~15 €, Aufbau +3 Min, flach am Boden) — der echte „Planken"-Look.
+- Belohnung **nur ab 6 J:** Schoko-Goldmünzen — NACH dem Lauf, nicht auf dem Löffel. Für 3–5 ist der Stempel/Aufkleber die Crew-Bestätigung (keine Münze).
 
 ## Anleitung (Basis 6–8)
 1. Zwei parallele Kreppband-Linien (15–18 cm Abstand, 3 m) auf den Boden kleben — der Streifen dazwischen ist die Planke über dem Hai-Wasser. Beidseits blaues Tuch/Kreppstreifen als Wasser legen.
 2. Jedes Kind bekommt einen Esslöffel mit seinem Goldschatz (Ball) drauf.
-3. Auf „Leinen los!" über die Planke balancieren und den Schatz in die Schatzkiste fallen lassen.
-4. Fällt der Ball ODER tritt **ein Fuß seitlich ins Hai-Wasser** (= neben die Planke; Linie berühren ist ok, drübertreten nicht): Der Lauf zählt nicht. Das Kind hebt seinen Ball auf und **startet neu vom Anfang — KEINE Elimination, niemand scheidet aus.** Nach 3 Fehlversuchen darf der Ball festgehalten werden. (Staffel-Modus: Ersatzbälle in der Startzone bereitlegen, damit kein Stau entsteht.)
-5. **Siegbedingung:** Wer den Schatz sicher abliefert, ist vollwertiges Crew-Mitglied + Stempel + (ab 6 J) eine Schoko-Goldmünze. Es „gewinnen" alle Lieferer.
+3. Auf „Leinen los!" **ruhig über die Planke gehen** (kein Rennen — Hektik kostet den Schatz) und ihn in die Schatzkiste fallen lassen.
+4. Fällt der Ball ODER tritt **ein Fuß seitlich ins Hai-Wasser** (= neben die Planke; Linie berühren ist ok, mit dem ganzen Fuß drübertreten nicht): Der Lauf zählt nicht. Das Kind hebt seinen Ball auf und **startet neu vom Anfang — KEINE Elimination, niemand scheidet aus.** **Jedes Kind hat pro Lauf 3 Fehlversuche** (jede:r zählt für sich; bei mehreren Bahnen führt der/die Schiri eine kurze Strichliste). Danach darf der Ball festgehalten werden.
+5. **Siegbedingung:** Wer den Schatz sicher abliefert, ist vollwertiges Crew-Mitglied + Stempel + (ab 6 J) eine Schoko-Goldmünze. Es „gewinnen" alle Lieferer. Im Wettlauf-Modus (7–10) gewinnt das Team mit der schnellsten *sauberen* Gesamtrunde — kein Einzel-Ranking.
 6. Schwierigkeit justieren über Löffelgröße (kleiner = schwerer) und Bahnbreite (schmaler = schwerer).
 
 ## Sicherheit (Basis)
-Ebener, rutschfester Boden. Indoor mit Schuhen oder Anti-Rutsch-Socken (Strümpfe rutschen auf Kreppband). Plastik-/Holzlöffel, kein Metall. Für 3–5: enge Aufsicht + ausschließlich Schaumball ≥4,5 cm, keine Münze auf dem Löffel. Hautfreundliche Stempeltinte. Erhöhte Planke nur ab 6 J (siehe Varianten), dann max. knöchelhoch + rutschfeste Matte + Erwachsene:r als Spotter daneben.
+Ebener, rutschfester Boden. Indoor mit Schuhen oder Anti-Rutsch-Socken (Strümpfe rutschen auf Kreppband). Plastik-/Holzlöffel, kein Metall. Für 3–5: enge Aufsicht + ausschließlich Schaumball ≥4,5 cm, keine Münze auf dem Löffel. Hautfreundliche Stempeltinte. Erhöhte Planke nur ab 6 J (siehe Varianten), dann **max. ~10 cm über dem Boden** (rutschfeste Matte ist Pflicht) + Erwachsene:r als Spotter in Armreichweite daneben.
 
 ## Inklusion
 Kinder mit Bewegungs-/Koordinationseinschränkung: breitere Bahn + Festhalten jederzeit erlaubt (auch ≥6) ODER als Schiri/Schatzmeister:in einbinden — niemand ist in den Wettlauf-Modi struktureller „Team-Verlierer".
 
 ## Chaos-Ansage
-Gering bis mittel — Bälle rollen/springen weit. Tipp: abgegrenzte Sammelzone + ein:e Ball-Sammler:in, oder weiche Bälle.
+Gering bis mittel — Bälle rollen/springen weit. Tipp: abgegrenzte Sammelzone + ein:e Ball-Sammler:in, oder weiche Bälle. **Abbau:** Kreppband langsam abziehen (nicht reißen); Rückstände mit warmem Wasser/Tuch lösen; Outdoor-Kreide nass abwischen.
 
 ## Variante 3–5 „Deck-Abenteuer" (ehrlich ein Lauf-/Erlebnisspiel, kein Geschick-Anspruch)
-Breite Bahn 20–30 cm oder flaches Brett am Boden; Schaumball ≥4,5 cm; großer Servierlöffel; Ball + Löffel dürfen jederzeit festgehalten werden; kein Tempo, kein Rauswurf, mehrere Bahnen parallel, jedes Kind kommt ans Ziel.
+Breite Bahn 20–30 cm oder flaches Brett am Boden; Schaumball ≥4,5 cm; großer Servierlöffel; Ball + Löffel dürfen jederzeit festgehalten werden; kein Tempo, kein Rauswurf, mehrere Bahnen parallel, jedes Kind kommt ans Ziel und bekommt den Crew-Stempel.
 
 ## Variante 9–12 „Piraten-Bootcamp"
-Schmale Bahn 10–12 cm; Teelöffel (schwer); leicht erhöht auf einer **stabilen, durchgehenden** Unterlage (eine niedrige breite Bank oder ein stabiles Brett, max. knöchelhoch — KEINE Hocker-Reihe mit Lücken, keine Bücherstapel) + rutschfeste Matte + Erwachsene:r als Spotter; zwei Bahnen im Wettlauf auf Zeit, schnellste saubere Runde gewinnt fürs Team; Profi-Stufe: zweiter Durchgang mit verbundenen Augen, ein Crew-Mitglied ruft die Richtung (Teamwork-Foto). Augenbinde NUR auf flacher Strecke, nie auf der erhöhten Planke.
+Schmale Bahn 10–12 cm; Teelöffel (schwer); leicht erhöht (max. ~10 cm) auf einer **stabilen, durchgehenden** Unterlage (eine niedrige breite Bank oder ein stabiles Brett — KEINE Hocker-Reihe mit Lücken, keine Bücherstapel) + rutschfeste Matte (Pflicht) + Erwachsene:r als Spotter; zwei Bahnen im Wettlauf auf Zeit, schnellste saubere Runde gewinnt fürs Team; Profi-Stufe: zweiter Durchgang mit verbundenen Augen, ein Crew-Mitglied ruft die Richtung (Teamwork-Foto). **Augenbinde ausschließlich im flachen Basis-Setup, NIE auf der erhöhten Bootcamp-Planke.**
