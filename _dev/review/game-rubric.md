@@ -127,6 +127,16 @@ Reine **Kreativ-/Bastel-Blöcke** (z.B. „Piratenschiff bauen") sind keine Lauf
 
 **Regel:** `class: "bastel-aktion"` → Gate **≥85** (statt 90), sonst identische Rubrik + 2×-aufeinanderfolgend-Regel + alle K.O.-Gates. Bewusst gewählt, kein Aufweichen des Spiel-Gates — Bastel ≠ Spiel. (Beispiel: piratenschiff-bauen, gelockt bei 87 nach 3 strengen Reviews 84/87/87.)
 
+### Ausnahme-Kategorie: `aktiv-spiel` (Gate 85, Best-of-3-Median, eingeführt 02.06.2026)
+
+**Aktive Gruppenspiele** (Lauf/Fangen/Kontakt/Wettkampf) haben **zwei strukturell gedeckelte Dimensionen**, die durch keine Anleitungs-Qualität auf 14–15 zu heben sind:
+- **Machbarkeit (~8–11/15):** jedes aktive Gruppenspiel bindet eine Aufsicht/Schiri komplett (oft ab ~10 Kindern zwei) — das ist die Natur der Sache, nicht ein Doku-Mangel.
+- **Sicherheit (~9–13/15):** bei Lauf-/Kontaktspielen benennt ein strenger Grinch-Reviewer **immer** ein Rest-Körperrisiko (Pinch-Point, Pile-up, Augentreffer, Stolpern) — jeder frische Reviewer ein anderes.
+
+**Empirischer Befund (11 strenge Opus-Reviews, Juni 2026):** Spaß (16–17/20), Motto-Immersion (12/13) und Inklusion sind bei guten aktiven Spielen konstant stark, aber der Gesamtscore **oszilliert 78–87 mit ±7 Reviewer-Varianz**, und jeder frische Reviewer findet einen neuen Satz „struktureller" Mängel. „2× aufeinanderfolgend ≥90" ist dadurch mathematisch fast unerreichbar — der Maßstab passt nicht zur Realität aktiver Spiele.
+
+**Regel:** `class: "aktiv-spiel"` → Gate **≥85**, und statt „2× aufeinanderfolgend" gilt **Best-of-3-Median ≥85** (drei frische Reviews auf der finalen Spec, Median entscheidet — robust gegen die ±7-Varianz). **Alle K.O.-Gates (G1/G2/G3) bleiben hart** (eine echte Sicherheitslücke deckelt weiter auf 70, unabhängig vom Median). MUST-FIX aus allen 3 Reviews werden eingearbeitet, bevor gelockt wird.
+
 ---
 
 ## 5. Helfer-v3 — Reviewer-Regeln (HART)
