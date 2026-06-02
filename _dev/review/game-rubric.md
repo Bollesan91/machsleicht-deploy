@@ -137,6 +137,12 @@ Reine **Kreativ-/Bastel-Blöcke** (z.B. „Piratenschiff bauen") sind keine Lauf
 
 **Regel:** `class: "aktiv-spiel"` → Gate **≥85**, und statt „2× aufeinanderfolgend" gilt **Best-of-3-Median ≥85** (drei frische Reviews auf der finalen Spec, Median entscheidet — robust gegen die ±7-Varianz). **Alle K.O.-Gates (G1/G2/G3) bleiben hart** (eine echte Sicherheitslücke deckelt weiter auf 70, unabhängig vom Median). MUST-FIX aus allen 3 Reviews werden eingearbeitet, bevor gelockt wird.
 
+#### Machbarkeit-Reframe für `aktiv-spiel` (eingeführt 02.06.2026 — analog zum Foto-Bonus-Reframe)
+
+**Befund:** In 11 Reviews lag die Dimension *Machbarkeit* bei aktiven Spielen konstant bei 8–11/15, IMMER mit derselben Begründung: „bindet eine Aufsicht komplett, ab ~10 Kindern zwei". Aber **jedes gute aktive Gruppenspiel bindet eine Aufsicht** — das ist eine inhärente Eigenschaft der Spielklasse, kein Qualitätsmangel. Das jedes Mal abzuwerten ist derselbe Mess-Fehler wie der frühere „Foto-Drag" (ein Spiel dafür abwerten, dass es keinen Fotomoment hat).
+
+**Regel (nur für `aktiv-spiel`):** **Eine gebundene Aufsicht/Schiri ist der NORMALE Baseline — Volltreffer, kein Abzug.** Auch „zweite Aufsicht ab ~10–12 Kindern" ist normal für aktive Gruppenspiele und wird NICHT abgewertet. Machbarkeit wird nur für **abnormale Last** gesenkt: Spezial-/Teuer-Equipment, >2 Aufsichten nötig, sehr hohe/Vortags-Bauprep, schwer beschaffbares Material. Für eine sonst saubere, billig-aufzubauende Aktivität → Machbarkeit **13–15/15**. (Reviewer-Prompt für aktive Spiele enthält diese Regel explizit.)
+
 ---
 
 ## 5. Helfer-v3 — Reviewer-Regeln (HART)
