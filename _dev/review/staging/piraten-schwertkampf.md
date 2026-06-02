@@ -4,8 +4,8 @@
 **Einzeiler:** Zwei Crews, eine Schatztruhe: Die Wächter:innen verteidigen das Gold mit weichen Schaum-Säbeln, die Räuber:innen schmuggeln es heraus — alle gleichzeitig im Getümmel, fair und sicher.
 **Getaggte Alter:** 6–8, 9–12 (bestAge 6–8; **für 3–5 nur die sanfte „Nudel-Tipp"-Variante**, s. unten)
 **Scope:** Eigenständiges Komplettspiel; Signature (motto-prägend). Alters-relativ bewerten.
-**Typ:** aktiv / Team-Wettkampf · **Spieler:** 4–14 (ideal 6–12) · **Dauer:** 18–22 Min (3–4 Runden inkl. Rollentausch + Reset) · **Vorbereitung: ehrlich 10–15 Min** (Nudeln schneiden, Kreis + Reling markieren, Teams + Kodex) · **Indoor (Platz) + Outdoor**
-**Wann am Tag:** Hocharousal-Spiel — **mittig im Programm, NICHT direkt vor Kuchen oder Abreise**; danach ein ruhiges Spiel (z.B. „Papagei sagt") als Cooldown. **Ein:e Erwachsene:r ist durchgehend als Käpt'n/Schiri gebunden** (für Solo-Eltern einplanen).
+**Typ:** aktiv / Team-Wettkampf · **Spieler:** 4–14 (ideal 6–12) · **Dauer:** 18–22 Min (3–4 Runden inkl. Rollentausch + Reset) · **Vorbereitung:** **Vortag:** Säbel aus 2–3 Pool-Nudeln zuschneiden + auf harte Reste prüfen. **Am Tag selbst: ehrlich 10–15 Min** (Kreis + Reling markieren, Teams + Kodex). · **Indoor (Platz) + Outdoor**
+**Wann am Tag:** Hocharousal-Spiel — **mittig im Programm, NICHT direkt vor Kuchen oder Abreise**; danach ein ruhiges Spiel (z.B. „Papagei sagt") als Cooldown. **Ein:e Erwachsene:r ist durchgehend als Käpt'n/Schiri gebunden, ab ~10 Kindern zwei Aufsichten** (für Solo-Eltern einplanen).
 
 ## Quickstart
 In der Mitte steht die **Schatztruhe** mit Goldmünzen, ringsum ein „Bann-Kreis". Die Crew teilt sich in **Wächter:innen** (verteidigen mit Schaum-Säbeln, dürfen NICHT in den Kreis) und **Räuber:innen** (versuchen Münzen zu schnappen und über die „Reling" rauszubringen). Wird ein:e Räuber:in sanft am Arm/Rücken **abgetippt**, legt er/sie eine evtl. getragene Münze ab und läuft zum Start zurück („zurück aufs Beiboot"). **Alle sind gleichzeitig aktiv** — kein Zuschauen, kein Ausscheiden. Nach jeder Runde werden die Rollen getauscht. Ein:e Erwachsene:r ist Käpt'n/Schiri.
@@ -25,12 +25,12 @@ In der Mitte steht die **Schatztruhe** mit Goldmünzen, ringsum ein „Bann-Krei
 0. **Ehrenkodex laut + gemeinsam ansagen (Pflicht!):** „Säbel nur sanft **antippen**, **nur unterhalb der Schulter** (Arm, Bauch, Rücken) — **NIE Kopf, Gesicht, Hals, kein Stechen Richtung Person, kein Schlagen mit Kraft**. Augen-Vorsicht für alle. Kein Festhalten/Reißen. Wer den Kodex bricht, setzt 30 Sek als ‚Landgang' aus."
 1. Aufbau wie oben; Crew in zwei gleich große Teams; Wächter:innen kriegen Säbel. (Ungerade Zahl: ein Kind ist „Erste:r Maat" = Schiri-Hilfe/Münzenzähler:in und rotiert in der nächsten Runde rein.)
 2. Auf „**Entert das Gold, Seeräuber!**" geht's gleichzeitig los. **Jede:r Räuber:in trägt maximal EINE Münze pro Lauf** und bringt sie über die Reling.
-3. **Tipp-Schiedsspruch (wichtig im Getümmel):** Wer trifft, ruft den Treffer laut aus („**Geentert!**") — die abgetippte Person befolgt es **auf Ehre** sofort, der/die Schiri korrigiert nur im Streitfall (eine Person kann 6–12 Kinder nicht lückenlos sehen). **Abgetippt:** Räuber:in legt die getragene Münze **am nächsten Kreisrand** ab (NICHT mitten im Lauf-Korridor) und läuft zum Beiboot-Start zurück, dann wieder rein. **Der/die Schiri sammelt bei jedem Runden-Reset verstreute Münzen an den Kreisrand zurück** — so liegt nie Gold unter rennenden Füßen. **Kein Ausscheiden.**
+3. **Tipp-Schiedsspruch (einfach + streitarm):** Wer trifft, ruft „**Geentert!**" — die getroffene Person **hebt sofort eine Hand und geht langsam zum Beiboot-Start zurück** (klares, sichtbares Signal statt Diskussion). **Der Schiri-Pfiff ist die letzte Instanz**; wer wiederholt streitet/ignoriert, macht die 30-Sek-„Landgang"-Pause. So muss niemand 6–12 Kinder lückenlos beobachten. **Abgetippt:** Räuber:in legt die getragene Münze **am nächsten Kreisrand** ab (NICHT mitten im Lauf-Korridor) und läuft zum Beiboot-Start zurück, dann wieder rein. **Der/die Schiri sammelt bei jedem Runden-Reset verstreute Münzen an den Kreisrand zurück** — so liegt nie Gold unter rennenden Füßen. **Kein Ausscheiden.**
 4. **Wertung (klar):** Jede Münze hinter der Reling = **1 Räuber-Punkt** (zählt dauerhaft, kommt ins „Beiboot-Lager"). Eine Runde dauert **2–3 Min** (Schiri stoppt); Münzen, die dann noch in/am Kreis liegen = **Wächter-Punkte**.
 5. **Rollentausch + Ehrung:** Teams tauschen Wächter/Räuber, so läuft/ficht jede:r beides. Nach 3–4 Runden wird das punktbeste Team „Crew des Tages" geehrt, **das Geburtstagskind wird „Käpt'ns-Klinge" — kein Kind verliert** (alle kriegen den Klingen-Stempel).
 
 ## Variante 3–5 „Nudel-Tipp" (kein Gegeneinander)
-Kein Räuben/Verteidigen gegeneinander. Stattdessen: weiche Nudel, die Kinder „tippen" gemeinsam Seifenblasen/Luftballons in der Luft an oder fechten gegen einen Erwachsenen-„Bösewicht", der sich tollpatschig besiegen lässt und das Gold „freiwillig" hergibt. **Kein Körperkontakt zwischen Kindern.** Münzen = große Holzscheiben/Bälle (≥5 cm).
+Kein Räuben/Verteidigen gegeneinander. Stattdessen: weiche Nudel, die Kinder „tippen" gemeinsam Seifenblasen/Luftballons in der Luft an oder fechten gegen einen Erwachsenen-„Bösewicht", der sich tollpatschig besiegen lässt und das Gold „freiwillig" hergibt. **Kein Körperkontakt zwischen Kindern.** Münzen = große flache Holzscheiben (≥5 cm).
 
 ## Variante 9–12 „Festung"
 Zwei Bann-Kreise/zwei Truhen, beide Teams sind gleichzeitig Wächter UND Räuber des jeweils anderen Schatzes (Capture-the-Flag-Logik). Optional „Stil-Punkte" für besonders faire/elegante Säbel-Moves. Schiri pro Feldhälfte.
@@ -39,8 +39,8 @@ Zwei Bann-Kreise/zwei Truhen, beide Teams sind gleichzeitig Wächter UND Räuber
 - **Ausschließlich weiche Pool-Nudeln, max. 60 cm** — niemals harte Schwerter/Stöcke. Säbel vorher auf harte Teile/Reste prüfen.
 - **Nur sanftes, seitliches Antippen/Wischen, nur unterhalb der Schulter** (Arm/Bauch/Rücken). **Verbot: Kopf, Gesicht, Hals, jedes Stoßen/Vorwärts-Stechen Richtung Person, volle Kraft.** Augen-Vorsicht für **alle** (nicht nur Brillenträger:innen → Sportbrille/abnehmen). Am Anfang am Erwachsenen demonstrieren; Schiri ruft „Alle einfrieren!" bei jeder Stoß-/Aufwärtsbewegung.
 - **1 Erwachsene:r als Käpt'n/Schiri durchgehend dabei**; bei Gedränge sofort „Alle einfrieren!". Bei zu wildem Spiel Stopp + Kodex wiederholen.
-- **Anti-Kollision:** Räuber:innen laufen, Wächter:innen tippen — nicht gegeneinander rennen; Tempo bewusst moderat.
-- **Münzen ausschließlich Objekte ≥5 cm** (Holzscheiben/Bälle), nichts Verschluckbares, keine Nüsse (Allergen); keine Schoko im Laufen.
+- **Anti-Kollision + Augenschutz (harte Regel):** **Wächter:innen bewegen sich nur im Schritt-/Standtempo** (sie tippen nur, NUR Räuber:innen laufen) — so kein Zusammenprall Laufen-gegen-Fechten. **Ab ~10 Kindern ist eine zweite Aufsicht Pflicht** (eine Person kann das Getümmel nicht allein überblicken).
+- **Münzen ausschließlich flache, nicht-rollende Holzscheiben ≥5 cm** (keine Bälle — rollen unter Füße), nichts Verschluckbares, keine Nüsse (Allergen); keine Schoko im Laufen.
 - Feld weg von Möbelkanten/Glas, rutschfester Boden, genug Platz.
 - Nicht für 3–5 als echtes Gegeneinander (Impulskontrolle) — dort nur die Nudel-Tipp-Variante.
 
