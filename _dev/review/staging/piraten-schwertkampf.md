@@ -1,5 +1,7 @@
 # Spiel-Spec zur Begutachtung — Motto Piraten
 
+<!-- STATUS 02.06.2026: NICHT gelockt. aktiv-spiel, Best-of-3-Median unter reframter Rubrik (40cm-Säbel-Safety-Fix, Machbarkeit-Reframe) = [82, 83, 86] → Median 83, knapp unter Gate 85. Grund: Säbel-Kontaktspiel → Sicherheit strukturell ~11–13 gedeckelt (Schaum-Säbel nah am Gesicht = immer ein nennbares Restrisiko; ein früherer Review gab sogar Sicherheits-K.O.). Offene Entscheidung (Bolle): (a) shelven, (b) ein gezielter Push auf Klarheit/Sicherheit, oder (c) zu Nicht-Kontakt-Format umbauen. Bis dahin bleibt es hier in Staging, NICHT in motto-data.js. -->
+
 **Name:** Säbel-Schatzraub (Schaum-Säbel-Teamspiel)
 **Einzeiler:** Zwei Crews, ein Schatz: Die Wächter:innen verteidigen das Gold mit weichen Schaum-Säbeln, die Räuber:innen schmuggeln es heraus — alle gleichzeitig im Getümmel, fair und sicher.
 **Getaggte Alter:** 6–8, 9–12 (bestAge 6–8; **für 3–5 nur die sanfte „Nudel-Tipp"-Variante**, s. unten)

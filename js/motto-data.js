@@ -289,5 +289,71 @@ window.MOTTO_DATA = {
       reviews_strict_fun_first: [84, 87, 87], // R1 84, R2 84+3, R3 84+3 → Plateau. Bewusst als Bastel-Aktion (kein Spiel-Gate) bei 87 gelockt: Machbarkeit 11/15 ist bei DIY-Karton-Bau strukturell gedeckelt, nicht wegformulierbar.
       status: "DURCH als Bastel-Aktion (eigene Kategorie ≥85, entschieden 02.06.2026). 3 strenge Opus-Reviews (Branch-Trick, target-blind): 84/87/87, Plateau durch struktureller Machbarkeits-Deckel. Spec: _dev/review/staging/piraten-piratenschiff-bauen.md.",
     },
+    {
+      id: "hai-tag",
+      motto: "piraten",
+      class: "aktiv-spiel", // Lauf-/Fangspiel; Gate 85 + Best-of-3-Median (strukturelle Machbarkeits-/Sicherheits-Deckel, s. Rubrik). Machbarkeit-Reframe angewandt.
+      scope: "eigenständiges Komplettspiel; alters-relativ",
+      emoji: "🦈",
+      name: "Hai-Tag",
+      desc: "Goldmünzen von der Schatzinsel aufs Schiff retten — vorbei am Hai. Erwischt = du treibst über Bord, bis ein Kamerad dich rettet; hilft keiner, wirst du selbst zum Hai",
+      ages: ["3-5", "6-8", "9-12"],
+      bestAge: "6-8",
+      type: "aktiv",
+      players: { min: 6, ideal: "8–12", max: 15, solo: false },
+      groupScaling:
+        "Start-Hai-Zahl ~1 pro 5 Kinder (6–8→1, 9–12→2, 13–15→3) · " +
+        "gestaffelter Start (2–3 Farb-Wellen) gegen Gedränge · " +
+        "ab ~12 Vollversion (Kanone+Ziel-Zahl) = Zwei-Personen-Spiel; allein nur Fangen+Retten · " +
+        "16+ zwei Felder parallel (je 1 Hai + 1 Aufsicht) · unter 6 nur Mini-Variante · Platz ~4 m²/Kind",
+      dauer: "10–14",
+      prep: 5,
+      teardown: 2,
+      indoor: "outdoor bevorzugt, Indoor-Fallback (Gehen statt Rennen, kleineres Feld)",
+      space: "~6×6 m bei 8 Kindern, ~8×8 m bei 15 (Faustregel ~4 m²/Kind)",
+      material: [
+        "„Schiff\" (Safe-Zone am Rand): Decke/Reifen/Kreppband-Kreis.",
+        "„Treib-Zone\": markierter Streifen an einem Feldrand mit festem Münz-Sammelpunkt, wo über-Bord-Kinder knien.",
+        "„Schatzinsel\" in der Mitte: Reifen/Tuch + Goldmünzen (Schoko ab 6 J / Holz-Plastik-Großteile ≥4,5 cm für Kleine), genau 1 pro Kind auslegen.",
+        "„Kanonen-Insel\": zweiter kleiner Reifen/Teppichfliese am Feldrand. Optional: Hai-Stirnband, blaues Tuch als Hai-Wasser.",
+      ],
+      anleitung: [
+        "Gestaffelt einführen: R1 nur Fangen+Retten (OHNE Hai-Umwandlung, gefangen = nach Zählen-bis-5 selbst auf); R2 mit Umwandlung + Kanonen-Insel; R3+ zusätzlich Ziel-Zahl.",
+        "1. Feld abstecken: Schiff am Rand, Schatzinsel Mitte, Hai-Wasser dazwischen, Treib-Zone + Kanonen-Insel an den Rändern.",
+        "2. Start-Hai-Zahl ~1 pro 5 Kinder. Sanftes Abklatschen (Schulter/Rücken) = erwischt — kein Schubsen/Festhalten/Reißen.",
+        "3. Gestaffelter Start (Farb-Wellen): rennen zur Insel, eine Münze schnappen, aufs Schiff bringen. Im Wasser darf der Hai abklatschen.",
+        "4. Mann über Bord: in die Treib-Zone, Münze am Sammelpunkt ablegen, knien. Freier Pirat tippt an = gerettet. Geschützt bis zur echten Rettungschance (Hai darf nicht lauern, ~2 m Abstand). Ab R2: ungerettet + erneut getippt → wird Hai.",
+        "5. Kanonen-Insel (ab R2): „Feuer!\" friert alle Haie 5 Sek ein (1×/Kind/Runde, danach Insel verlassen).",
+        "6. Münz-Regel: getragene Münzen immer an den Treib-Zonen-Sammelpunkt (nie im Korridor); Schiri legt sie beim Reset zurück auf die Insel. Aufs Schiff = dauerhaft gerettet.",
+        "7. Einheitliche 5-Sek-Regel (Safe-Zone + Freeze), Erwachsene:r zählt laut. Keine weiteren Timer.",
+        "8. Siegbedingung (ab R3): Ziel-Zahl = Hälfte der ausgelegten Münzen aufgerundet.",
+        "9. Rundenende (ohne Live-Zählen, was zuerst eintritt): feste ~3 Min ODER Ziel-Zahl erreicht ODER sichtbar mehr Haie als Piraten. Neue Runde, neue Start-Hai(e). Kein Ausscheiden.",
+      ],
+      safety:
+        "Ebener, hindernisfreier Boden, klare Grenzen weg von Möbelkanten/Straße. Nur sanftes Abklatschen (vorher ansagen, am Hai demonstrieren) — kein Reißen/Schubsen. Kniende sitzen am Feldrand in der Treib-Zone, NICHT im Lauf-Korridor (vorher ansagen, nicht drüberlaufen). Indoor nur mit genug Fläche + rutschfestem Boden. Pausen + Wasser bei Hitze. Schoko-Münzen nur sammeln, erst NACH dem Spiel essen (Erstickungsrisiko).",
+      inclusion:
+        "Kein Ausscheiden (über Bord = Rettung möglich, sonst Rollenwechsel). Bewegungseinschränkung: aktive Schlüsselrolle „Schatzmeister:in\" (gibt Münzen frei) ODER „Kanonier:in\" auf der Kanonen-Insel. Geschlechtsneutral.",
+      mess: "gering — Münzen + Markierungen. Outdoor bevorzugt; Indoor rutschfest + Möbelkanten sichern.",
+      variants: {
+        "3-5": {
+          name: "Stapf-Hai",
+          desc: "Langsamer Geh-Hai, nur Fangen + Retten, kein Eskalations-/Endgame-Teil",
+          detail:
+            "Kleines Feld, langsamer „Stapf-Hai\" (Gehen statt Rennen), großzügige Safe-Zonen, tollpatschiger Erwachsenen-Hai. Nur R1-Regeln; gefangen = nach Zählen-bis-5 selbst aufstehen (keine Umwandlung); keine Kanone, keine Ziel-Zahl.",
+        },
+        "9-12": {
+          name: "Hai-Rudel",
+          desc: "Größeres Feld, kooperierende Haie, strengerer Kanonen-Cooldown",
+          detail:
+            "Größeres Feld, nur kurze/wandernde Safe-Zone, „Hai-Rudel\"-Taktik (Haie kooperieren), Kanonen-Insel-Cooldown 1× pro Spiel statt pro Runde.",
+        },
+      },
+      source: "wizard+generic+hub",
+      class_gate: 85,
+      score: 85,
+      foto_bonus: 2,
+      reviews_aktiv_bestof3: [84, 85, 88], // reframte Rubrik (Machbarkeit-Baseline), target-blind Opus, JS-Paste; Median 85
+      status: "DURCH als aktiv-spiel (Gate 85, Best-of-3-Median, entschieden 02.06.2026). Finale Spec nach 4 Fix-Runden; reframte Rubrik 84/85/88 → Median 85. Spec: _dev/review/staging/piraten-hai-tag.md.",
+    },
   ],
 };
