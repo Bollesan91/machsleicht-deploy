@@ -83,12 +83,12 @@ Diese Datei ist Living-Wahrheit. Bei Änderung: hier pflegen, nicht in Chat-Verl
 
 | # | Dimension | Pkt | Enthält |
 |---|---|---|---|
-| 1 | **Spaß & Engagement** | **22** | DER Kern: begeistertes Mitmachen, wenig Leerlauf, Lacher, „nochmal!" — alters-relativ |
+| 1 | **Spaß & Engagement** | **20** | DER Kern: begeistertes Mitmachen, wenig Leerlauf, Lacher, „nochmal!" — alters-relativ |
 | 2 | **Sicherheit & Altersgerechtigkeit** | 15 | entwicklungsgerecht: Motorik, Aufmerksamkeit, Lese-Fähigkeit |
 | 3 | **Machbarkeit zuhause** | 15 | Material leicht beschaffbar + Kosten + Aufbau + Eltern-Vorbereitungszeit |
 | 4 | **Anleitungs-Klarheit & Vollständigkeit** | 15 | kann ein Fremder es ohne Rückfragen nachmachen? Keine Lücken |
-| 5 | **Gruppengröße-Skalierbarkeit** | 12 | explizit 4 / 8 / 12+ geregelt |
-| 6 | **Motto-Immersion & roter Faden** | 11 | echt themenstark — nicht „Memory mit Sticker" |
+| 5 | **Motto-Immersion & roter Faden** | 13 | echt themenstark, in die Mechanik gewoben — nicht „Memory mit Sticker" |
+| 6 | **Gruppengröße-Skalierbarkeit** | 12 | explizit 4 / 8 / 12+ geregelt |
 | 7 | **Tagesplan-Fit** | 10 | Dauer realistisch + Energie-Level + Indoor/Outdoor + Wetter-Plan-B + Chaos-Ansage |
 
 **Foto-/Wow-BONUS: 0 bis +3 (additiv, NIE Abzug).** Besonderer Foto-/Wow-Moment → +1 bis +3 obendrauf (kann ein gutes Spiel über die Gate-Linie heben). Fehlt er → passiert NICHTS; ein Spiel besteht ohne Foto-Moment voll, solange es Spaß macht. Score bei 100 gedeckelt.
@@ -112,19 +112,13 @@ Jedes Spiel wird gegen seinen **Scope** bewertet, nicht als müsste es immer ein
 - **`scope: 'baustein'`** — Station/Baustein in einem größeren Spiel (z.B. Piraten-Parcours). Wird NICHT auf Standalone-Wow geprüft, sondern auf „funktioniert als Modul + fügt sich ein".
 - Ein Spiel kann beides sein (z.B. Walk the Plank: standalone für 2–5, Baustein im Parcours für 6–12) — dann beide Linsen getrennt anlegen.
 
-### Score-Bänder & gestuftes Gate (eingeführt 01.06.2026)
+### Gate: ≥90 für ALLE Spiele (aktualisiert 01.06.2026)
 
-Nicht jedes Spiel kann ein Wow-Showstopper sein — manche sind solide Staples. Deshalb **zwei Gates je nach Spiel-Klasse**:
+**Einheitliches Gate: ≥90.** Kein Spiel kommt in `motto-data.js`, bevor es nicht **zwei aufeinanderfolgende frische Reviews ≥90** hat. Spaß-first-Gewichtung + Foto-Bonus (0..+3) machen 90 für ein wirklich geiles, sauberes Spiel erreichbar — der Foto-Bonus ist oft der Hebel von „solide ~87" auf „elite 90+".
 
-| Klasse | Gate | Was es ist | Beispiele |
-|---|---|---|---|
-| **Signature** | **≥90** | motto-prägend, hoher Wow/Immersions-Anspruch | Schwertkampf, Schatz im Sand, Flaschenpost-Geheimschrift |
-| **Staple** | **≥85** | solides Standard-Spiel, Mechanik vor Spektakel | Eierlauf/Walk the Plank, Memory, Pantomime, Staffel, Stille Post |
-
-**Klassifizierung beim Writer-Pass:** Spiel als `class: 'signature'` oder `class: 'staple'` taggen. Im Zweifel Staple (≥85). Ein Staple, das 90 reißt, ist ein Bonus — aber 85 genügt.
-
-- **Score < Gate** = MUST-FIX-Welle, erneut reviewen.
-- **Gate gerissen (G1/G2/G3)** = max. 70, egal welche Klasse.
+- **Score < 90** = MUST-FIX-Welle, erneut reviewen.
+- **Gate gerissen (G1/G2/G3 Sicherheit/Fakten/Inklusion)** = max. 70.
+- `class`/`scope` weiterhin taggen (für alters-/scope-relative Bewertung), aber die **Schwelle ist für alle 90**.
 - Grinch-Reviewer-Varianz beachten: der Score schwankt zwischen frischen Reviewern (±5). Wenn zwei aufeinanderfolgende frische Reviews ≥ Gate liegen → durch.
 
 ---
