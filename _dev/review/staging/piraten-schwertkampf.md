@@ -1,7 +1,7 @@
 # Spiel-Spec zur Begutachtung — Motto Piraten
 
 **Name:** Säbel-Schatzraub (Schaum-Säbel-Teamspiel)
-**Einzeiler:** Zwei Crews, eine Schatztruhe: Die Wächter:innen verteidigen das Gold mit weichen Schaum-Säbeln, die Räuber:innen schmuggeln es heraus — alle gleichzeitig im Getümmel, fair und sicher.
+**Einzeiler:** Zwei Crews, ein Schatz: Die Wächter:innen verteidigen das Gold mit weichen Schaum-Säbeln, die Räuber:innen schmuggeln es heraus — alle gleichzeitig im Getümmel, fair und sicher.
 **Getaggte Alter:** 6–8, 9–12 (bestAge 6–8; **für 3–5 nur die sanfte „Nudel-Tipp"-Variante**, s. unten)
 **Scope:** Eigenständiges Komplettspiel; Signature (motto-prägend). Alters-relativ bewerten.
 **Typ:** aktiv / Team-Wettkampf · **Spieler:** 4–14 (ideal 6–12) · **Dauer:** 18–22 Min (3–4 Runden inkl. Rollentausch + Reset) · **Vorbereitung:** **Vortag:** Säbel aus 2–3 Pool-Nudeln zuschneiden + auf harte Reste prüfen. **Am Tag selbst: ehrlich 10–15 Min** (Kreis + Reling markieren, Teams + Kodex). · **Indoor (Platz) + Outdoor**
@@ -13,7 +13,7 @@ Im „Bann-Kreis" liegt das Gold — **nicht zentral auf einem Haufen, sondern i
 ## Material
 - **1 Pool-Nudel pro Wächter-Kind** (Schaumstoff, in ~**60 cm** Stücke) als Säbel — **nichts Härteres** (kein Holz/Plastik, kein Stock). **Wiederverwendbar + günstig:** aus 2–3 Standard-Pool-Nudeln werden alle Säbel geschnitten (keine Einmal-Anschaffung pro Kind). Räuber:innen tragen keine Säbel (Hände frei zum Münzen-Greifen).
 - **3–4 kleine Schatz-Depots** (flache Schalen/Teller/kleine Kartons) gleichmäßig am Kreisrand verteilt + 10–20 „Goldmünzen". **Nur flache, nicht-rollende Objekte ≥5 cm:** Holzscheiben Ø **≥5 cm** oder große flache Holzklötze. **Keine Bälle** (rollen unter rennende Füße = Sturzgefahr), **keine Korken/Nüsse** (zu klein + Allergen).
-- Kreppband/Seil für **Bann-Kreis** (ca. 1,5 m Radius um die Truhe) und die **„Reling"** (Ziellinie, **4–5 m vom Kreis entfernt**).
+- Kreppband/Seil für **Bann-Kreis** (ca. 1,5 m Radius um die Mitte) und die **„Reling"** (Ziellinie, **4–5 m vom Kreis entfernt**).
 - Optional (Foto-/Wow-Bonus): Augenklappe/Bandana/Dreispitz pro Kind, „Klingenmeister:in"-Stempel/Urkunde für alle.
 
 ## Feld-Aufbau (3 Zonen)
@@ -33,7 +33,7 @@ Im „Bann-Kreis" liegt das Gold — **nicht zentral auf einem Haufen, sondern i
 Kein Räuben/Verteidigen gegeneinander. Stattdessen: weiche Nudel, die Kinder „tippen" gemeinsam Seifenblasen/Luftballons in der Luft an oder fechten gegen einen Erwachsenen-„Bösewicht", der sich tollpatschig besiegen lässt und das Gold „freiwillig" hergibt. **Kein Körperkontakt zwischen Kindern.** Münzen = große flache Holzscheiben (≥5 cm).
 
 ## Variante 9–12 „Festung"
-Zwei Bann-Kreise/zwei Truhen, beide Teams sind gleichzeitig Wächter UND Räuber des jeweils anderen Schatzes (Capture-the-Flag-Logik). Optional „Stil-Punkte" für besonders faire/elegante Säbel-Moves. Schiri pro Feldhälfte.
+Zwei Bann-Kreise mit eigenen Depots, beide Teams sind gleichzeitig Wächter UND Räuber des jeweils anderen Schatzes (Capture-the-Flag-Logik). Optional „Stil-Punkte" für besonders faire/elegante Säbel-Moves. Schiri pro Feldhälfte.
 
 ## Sicherheit (KRITISCH)
 - **Ausschließlich weiche Pool-Nudeln, max. 60 cm** — niemals harte Schwerter/Stöcke. Säbel vorher auf harte Teile/Reste prüfen.
@@ -49,10 +49,10 @@ Zwei Bann-Kreise/zwei Truhen, beide Teams sind gleichzeitig Wächter UND Räuber
 - Nicht für 3–5 als echtes Gegeneinander (Impulskontrolle) — dort nur die Nudel-Tipp-Variante.
 
 ## Inklusion
-Kein Ausscheiden — abgetippt = nur kurz zurücklaufen, sofort wieder dabei. Rollentausch sorgt dafür, dass jede:r mal verteidigt und mal läuft. Kind mit Bewegungseinschränkung: als **Truhen-Wächter:in direkt an der Truhe** (sitzend, tippt nahende Räuber:innen ab) oder als Schiri/Münzenzähler:in mit echter Rolle. Wer nicht „kämpfen" mag: Räuber:in ohne Säbel-Kontakt (nur laufen/schmuggeln) oder Crew-Anfeuern + Urkunden. Geschlechtsneutral („Seeräuber:innen").
+Kein Ausscheiden — abgetippt = nur kurz zurücklaufen, sofort wieder dabei. Rollentausch sorgt dafür, dass jede:r mal verteidigt und mal läuft. Kind mit Bewegungseinschränkung: als **Depot-Wächter:in direkt an einem Schatz-Depot** (sitzend, tippt nahende Räuber:innen ab) oder als Schiri/Münzenzähler:in mit echter Rolle. Wer nicht „kämpfen" mag: Räuber:in ohne Säbel-Kontakt (nur laufen/schmuggeln) oder Crew-Anfeuern + Urkunden. Geschlechtsneutral („Seeräuber:innen").
 
 ## Gruppengröße
 4–14 gut: zwei Teams, alle gleichzeitig aktiv (kein Warten, weil niemand nur zuschaut). 6–12 ideal. Ungerade Zahl: das Extra-Kind ist „Erste:r Maat" und rotiert rein. Bei 14+ zweite Truhe/zweites Feld mit eigenem Schiri, oder die „Festung"-Variante. Solo/2–3 funktioniert nicht (braucht zwei Teams).
 
 ## Foto-Bonus (Bonus)
-Getümmel um die Schatztruhe — Wächter:innen mit gekreuzten Schaum-Säbeln, Räuber:in schnappt sich das Gold — dynamisches, ikonisches Piraten-Foto. Mit Bandana/Augenklappe ein echter Wow-Moment.
+Getümmel um die Schatz-Depots — Wächter:innen mit gekreuzten Schaum-Säbeln, Räuber:in schnappt sich das Gold — dynamisches, ikonisches Piraten-Foto. Mit Bandana/Augenklappe ein echter Wow-Moment.
