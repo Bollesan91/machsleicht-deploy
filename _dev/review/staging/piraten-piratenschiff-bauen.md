@@ -4,7 +4,7 @@
 **Einzeiler:** Die Crew baut aus Kartons ihr eigenes Piratenschiff — das danach Foto-Kulisse und Basis für die ganze Party wird.
 **Getaggte Alter:** 3–5, 6–8, 9–12 (bestAge 6–8)
 **Scope:** Eigenständiges Komplettspiel (Bastel-/Bau-Block); Signature. Alters-relativ bewerten.
-**Typ:** kreativ / Team · **Spieler:** 3–12 · **Dauer:** 20–30 Min Bauzeit · **Eltern-Vorbereitung: ehrlich 15–25 Min, ungeübt eher 30–40 Min** (Bullaugen/Tür schneiden + 2–3 Kartons zum Rumpf kleben, am Vortag erledigen!) · **Indoor + Outdoor**
+**Typ:** kreativ / Team · **Dauer (je Variante):** 6–8: **20–30 Min** Bauzeit · 3–5 (Kissen-Floß): **~10–15 Min** · 9–12 (Wettbewerb): **~20 Min** · **Spieler:** 3–12 · **Eltern-Vorbereitung: ehrlich 15–25 Min, ungeübt eher 30–40 Min** (Bullaugen/Tür schneiden + 2–3 Kartons zum Rumpf kleben, am Vortag erledigen!) · **Indoor + Outdoor**
 **Wann am Tag:** **Früh einplanen** — direkt nach Ankommen/Aufwärmen, vor den Bewegungsspielen. So steht das Schiff als Kulisse/Safe-Zone für alle Folge-Spiele bereit.
 **Hinweis Begehbarkeit:** Das Schiff ist **Kulisse zum Reinstellen/Reinsteigen fürs Foto/Spielen — NICHT zum Draufstehen/Klettern** (Karton trägt kein Kind), immer mit Erwachsene:r dabei.
 
@@ -13,13 +13,13 @@ Aus 2–3 großen Umzugskartons baut die Crew gemeinsam ein begehbares Piratensc
 
 ## So sieht das fertige Schiff aus (Rumpf-Bauanleitung)
 **Ziel-Bild:** Ein offener Karton-Rumpf, in den die Kinder hineinsteigen können — vorne ein Bug (Spitze), hinten ein Heck, an den Seiten niedrige „Reling"-Wände, vorn am Bug die Flagge.
-- **Rumpf = der größte Karton**, Deckel-Klappen oben ganz auf/abgeschnitten (offene Wanne zum Reinsteigen). Eine Seite mit einer ausgeschnittenen „Tür" zum Einsteigen.
+- **Rumpf = der größte Karton** (Richtmaß für 4–8 Kinder zum Reinstellen: **mind. ~60×40×40 cm**, gern größer), Deckel-Klappen oben ganz auf/abgeschnitten (offene Wanne zum Reinsteigen). Eine Seite mit einer ausgeschnittenen „Tür" zum Einsteigen.
+- **Zwei Kartons stabil verbinden:** Längsseiten **ca. 10 cm überlappen lassen** und an der Überlappung **innen UND außen je 2× quer mit Paketband** abkleben (nicht nur eine Klebenaht) — so hält die Verbindung auch beim Reinsteigen.
 - **Bug (Spitze):** einen zweiten Karton an einer Schmalseite ankleben und die zwei vorderen Ecken nach innen knicken/tapen, sodass eine grobe Spitze entsteht — oder einfach quadratisch lassen (reicht völlig).
 - **Reling:** falls die Seitenwände zu hoch sind, oben einkürzen (Erwachsene), damit Kinder bequem rein-/rausschauen.
-- Mehrere Kartons werden Längsseite an Längsseite mit Paketband verbunden (innen UND außen abkleben = stabil).
 
 ## Material
-- 2–3 große Umzugskartons (kostenlos aus Umzügen/Supermarkt), reichlich **Kreppband + Paketband** (Standard-Befestigung, **kein Heißkleber nötig**).
+- 2–3 große Umzugskartons (kostenlos aus Umzügen/Supermarkt — **rechtzeitig 1–2 Wochen vorher sammeln**, oder Fallback: Umzugskartons aus dem Baumarkt ~2 €/Stück, damit das Spiel nie an fehlenden Kartons scheitert), reichlich **Kreppband + Paketband** (Standard-Befestigung, **kein Heißkleber nötig**).
 - Buntstifte/Wachsmalstifte/abwaschbare Farbe + Pinsel, altes Bettlaken (Segel), Pappreste (Steuerrad/Flagge), schwarzer Stift/Tonpapier (Jolly Roger), Pappteller (Bullaugen).
 - **Eltern-Werkzeug:** Schere/Cutter NUR für Erwachsene (Bullaugen/Schlitze/Tür vorschneiden).
 - Optional (Foto-/Wow-Bonus): Augenklappen/Bandanas für die Crew aufs Foto.
@@ -29,14 +29,14 @@ Aus 2–3 großen Umzugskartons baut die Crew gemeinsam ein begehbares Piratensc
 1. **Vorab am Vortag (Erwachsene):** Rumpf nach obiger Anleitung grob zusammenbauen, Bullaugen-Löcher + „Tür" vorschneiden (Kinder schneiden NIE). Auf der Party stehen Rumpf + Material bereit.
 2. **Feste Bau-Stationen verteilen — jedes Kind ist aktiv (gegen Leerlauf):**
    - **Maler-Crew:** Planken, Wellen, Kanonen auf den Rumpf malen.
-   - **Bullaugen-Crew:** Papptelle-Bullaugen anmalen und (mit Paketband/Kleber) aufkleben.
+   - **Bullaugen-Crew:** Pappteller-Bullaugen anmalen und (mit Paketband/Kleber) aufkleben.
    - **Takel-Crew:** Steuerrad aus Pappe ausschneiden (vorgeschnitten) + bemalen, Flagge/Jolly Roger gestalten.
    - **Namens-Crew:** Schiffsnamen-Schild malen + Crew-Schlachtruf einüben, Augenklappen/Bandanas basteln.
    Wer fertig ist, wechselt zur nächsten Station — so steht nie ein Kind herum.
 3. **Mast (Erwachsene, kippsicher) — optional:** **Default = gar kein Mast**, Segel einfach an die hintere Rumpfwand kleben (am sichersten). Wer einen Mast will: nur eine **stumpfe, weiche Stange (Pappröhre/Pool-Nudel), fest unter Schulterhöhe der Kinder**, in einen mit Büchern/Wasserflasche **beschwerten Karton** gesteckt. **Nie eine harte/spitze Stange, nie über Kinderköpfen.**
 4. **Segel + Deko (alle gemeinsam):** Bettlaken-Segel an Rückwand/Mast binden; Steuerrad + Flagge mit **Paketband** befestigen (Kinder dürfen tapen). Kein Heißkleber.
 5. Gemeinsam aufrichten und taufen: **das Geburtstagskind wählt den Schiffsnamen** (oder kurze Crew-Abstimmung), „Ich taufe dich …!".
-6. **🚢 Jungfernfahrt-Finale (3 Min, der Höhepunkt):** Die ganze Crew steigt ein/stellt sich ans Schiff, ein Erwachsene:r ist Käpt'n und ruft eine Mini-Story: „Sturm voraus — alle ducken!" · „Rudern, Matrosen!" · „Ausschau halten — Land in Sicht!" · „Schatz an Bord — alle ‚Arrr!'". Endet mit dem **Crew-Foto auf dem fertigen Schiff**. Macht aus dem Bauen ein Erlebnis mit Höhepunkt — und das Schiff bleibt danach Kulisse/Safe-Zone für Folge-Spiele (z.B. Hai-Tag).
+6. **🚢 Jungfernfahrt-Finale (3 Min, der Höhepunkt):** Die Crew steigt ein/stellt sich ans Schiff — **bei größeren Gruppen nacheinander einsteigen lassen oder die Hälfte stellt sich außen ans Schiff (nicht alle gleichzeitig durch die „Tür" drängeln)**. Ein Erwachsene:r ist Käpt'n und ruft eine Mini-Story: „Sturm voraus — alle ducken!" · „Rudern, Matrosen!" · „Ausschau halten — Land in Sicht!" · „Schatz an Bord — alle ‚Arrr!'". Endet mit dem **Crew-Foto auf dem fertigen Schiff**. Macht aus dem Bauen ein Erlebnis mit Höhepunkt — und das Schiff bleibt danach Kulisse/Safe-Zone für Folge-Spiele (z.B. Hai-Tag).
 
 ## Variante 3–5 „Kissen-Floß"
 Kein Schneiden/Kleben nötig: Kissen + Decken zu einem „Floß" stapeln, **eine weiche Fahne (Pool-Nudel/Pappröhre mit Tuch, keine harte Stange) flach reinlegen oder an die Wand**, ein paar Aufkleber/Mal-Elemente. Hauptsache mitmachen; jedes Kind legt ein Teil dazu.
