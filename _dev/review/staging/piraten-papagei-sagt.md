@@ -27,7 +27,7 @@ Keins. Optional (Bonus): eine Papageien-Handpuppe oder ein buntes Tuch auf der S
 - **9–12:** Tempo hoch, doppelte Finten, optional Mehrschritt-Befehle („… dreh dich UND krächze").
 
 ## Sicherheit
-Genug Abstand zwischen den Kindern (Arme ausstrecken = Mindestabstand), damit Bewegungen nicht kollidieren. Keine Sprung-/Wurf-Befehle auf hartem/engem Boden. Sonst risikoarm (kein Material, kein Tempo-Zwang).
+Genug Abstand zwischen den Kindern (Arme ausstrecken = Mindestabstand), damit Bewegungen nicht kollidieren. **Alle Befehle sind Pantomime an Ort und Stelle** — kein echtes Klettern/Balancieren auf Möbeln, kein Springen aus Höhe („Mast hoch"/„Planke" = nur Bewegung andeuten). „Tot wie ein Fisch" = stehend einfrieren (nicht auf harten Boden legen). Sonst risikoarm (kein Material, kein Tempo-Zwang).
 
 ## Inklusion
 Kein Ausscheiden, keine Wartezeit — jedes Kind ist durchgehend dabei. Bewegungen frei interpretierbar (auch im Sitzen/Rollstuhl möglich: Arm-/Kopf-Varianten ansagen). Geschlechtsneutral.
