@@ -14,9 +14,12 @@ Keins. Optional (Bonus): eine Papageien-Handpuppe oder ein buntes Tuch auf der S
 
 ## Anleitung
 1. Alle stehen verteilt, der Papagei vorne. Kurz erklären: „Nur bei ‚Papagei sagt' machen wir mit!"
-2. Befehle rufen, piratig: „Papagei sagt: schwimm wie ein Hai!" · „… stampf wie ein Pirat!" · „… zieh die Segel hoch!" · „… mach dich klein wie eine Muschel!"
+2. Befehle rufen, piratig. **Ablesbare Befehls-Liste (12):** „Papagei sagt: schwimm wie ein Hai!" · „… stampf wie ein Pirat!" · „… zieh die Segel hoch!" · „… mach dich klein wie eine Muschel!" · „… rudere ein Boot!" · „… schau durchs Fernrohr!" · „… balanciere auf der Planke!" · „… brüll wie ein Seeräuber: Arrr!" · „… grab nach dem Schatz!" · „… klettere den Mast hoch!" · „… wackel wie eine Qualle!" · „… stell dich tot wie ein Fisch!"
 3. **Statt Rauswurf:** Wer ohne „Papagei sagt" mitmacht (oder wer bei „Papagei sagt" nicht mitmacht), macht eine kurze lustige Mini-Aufgabe — einmal laut „Krääh!" rufen — und ist **sofort wieder dabei**. Kein Ausscheiden, keine Wartebank.
 4. Tempo langsam steigern; ab und zu das Geburtstagskind Papagei sein lassen.
+5. **Ende:** nach 5–10 Min oder wenn die Energie kippt — der Papagei ruft „Landgang!" = Spiel vorbei, alle an Land.
+
+**Mixed-Age:** Bei gemischten Altern auf dem Niveau der Jüngsten spielen (einfache Befehle, moderates Tempo); Ältere als „Co-Papageien" einbinden, die mit-ansagen — so sind sie gefordert ohne die Kleinen zu frustrieren.
 
 ## Alters-Anpassung
 - **3–5:** langsam, einfache Bewegungen, viel Lob, „Papagei sagt" fast immer dabei (Erfolg garantiert).
