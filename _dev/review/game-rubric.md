@@ -143,6 +143,8 @@ Reine **Kreativ-/Bastel-Blöcke** (z.B. „Piratenschiff bauen") sind keine Lauf
 
 **Regel (nur für `aktiv-spiel`):** **Eine gebundene Aufsicht/Schiri ist der NORMALE Baseline — Volltreffer, kein Abzug.** Auch „zweite Aufsicht ab ~10–12 Kindern" ist normal für aktive Gruppenspiele und wird NICHT abgewertet. Machbarkeit wird nur für **abnormale Last** gesenkt: Spezial-/Teuer-Equipment, >2 Aufsichten nötig, sehr hohe/Vortags-Bauprep, schwer beschaffbares Material. Für eine sonst saubere, billig-aufzubauende Aktivität → Machbarkeit **13–15/15**. (Reviewer-Prompt für aktive Spiele enthält diese Regel explizit.)
 
+**Gestrichene Spiel-Klasse (02.06.2026): Säbel-/Waffen-KONTAKT gegen Person.** „Schwertkampf/Säbel-Schatzraub" wurde gestrichen — als Schaum-Säbel-Kontaktspiel ist die Dimension Sicherheit strukturell ~11–13/15 gedeckelt (Säbel nah am Gesicht = immer nennbares Augen-Restrisiko, ein Review gab sogar Sicherheits-K.O.); Best-of-3-Median lag bei 83 trotz Reframe + 40cm-Safety-Fix. Plus Haftungsrisiko für eine Kindergeburtstag-SSOT. **Nicht erneut anlegen.** Piraten hat genug starke Spiele ohne Waffen-Kontakt.
+
 ---
 
 ## 5. Helfer-v3 — Reviewer-Regeln (HART)
