@@ -1,45 +1,47 @@
 # Spiel-Spec zur Begutachtung — Motto Piraten
 
-**Name:** Schwertkampf (Säbel-Duell mit Pool-Nudeln)
-**Einzeiler:** Zwei Seeräuber:innen duellieren sich mit weichen Schaumstoff-Säbeln — fair, sicher, mit echten Piraten-Ehrenregeln.
+**Name:** Säbel-Schatzraub (Schaum-Säbel-Teamspiel)
+**Einzeiler:** Zwei Crews, eine Schatztruhe: Die Wächter:innen verteidigen das Gold mit weichen Schaum-Säbeln, die Räuber:innen schmuggeln es heraus — alle gleichzeitig im Getümmel, fair und sicher.
 **Getaggte Alter:** 6–8, 9–12 (bestAge 6–8; **für 3–5 nur die sanfte „Nudel-Tipp"-Variante**, s. unten)
 **Scope:** Eigenständiges Komplettspiel; Signature (motto-prägend). Alters-relativ bewerten.
-**Typ:** aktiv / Wettkampf · **Spieler:** 4–12 · **Dauer:** 10–15 Min · **Vorbereitung:** 5 Min · **Indoor (Platz) + Outdoor**
+**Typ:** aktiv / Team-Wettkampf · **Spieler:** 4–14 (ideal 6–12) · **Dauer:** 12–18 Min (3–4 Runden) · **Vorbereitung:** 5 Min · **Indoor (Platz) + Outdoor**
 
 ## Quickstart
-Jedes Kind bekommt eine **Pool-Nudel als Säbel**. Immer **zwei Kinder duellieren 30 Sek** in einem markierten Ring, der Rest ist johlende Crew. Punkte gibt's für **saubere Treffer NUR auf Arme/Beine/Rumpf** (nie Kopf/Hals). Ein:e Erwachsene:r ist Schiedsrichter. **Kein Ausscheiden** — alle duellieren mehrfach (Jeder-gegen-jeden / kleines Turnier).
+In der Mitte steht die **Schatztruhe** mit Goldmünzen, ringsum ein „Bann-Kreis". Die Crew teilt sich in **Wächter:innen** (verteidigen mit Schaum-Säbeln, dürfen NICHT in den Kreis) und **Räuber:innen** (versuchen Münzen zu schnappen und über die „Reling" rauszubringen). Wird ein:e Räuber:in sanft am Arm/Rücken **abgetippt**, muss er/sie eine evtl. getragene Münze ablegen und zum Start zurück („zurück aufs Beiboot"). **Alle sind gleichzeitig aktiv** — kein Zuschauen, kein Ausscheiden. Nach jeder Runde werden die Rollen getauscht. Ein:e Erwachsene:r ist Käpt'n/Schiri.
 
 ## Material
-- **1 Pool-Nudel pro Kind** (Schaumstoff, in ~80 cm Stücke geschnitten) als Säbel — **nichts Härteres** (kein Holz-/Plastikschwert, kein Stock).
-- Kreppband/Seil für den Duell-Ring (ca. 2×2 m).
-- Optional (Foto-/Wow-Bonus): Augenklappe/Bandana/Dreispitz pro Kind, „Klingenmeister:in"-Urkunde oder -Stempel für alle Teilnehmenden.
+- **1 Pool-Nudel pro Wächter-Kind** (Schaumstoff, in ~80 cm Stücke) als Säbel — **nichts Härteres** (kein Holz/Plastik, kein Stock). Räuber:innen tragen keine Säbel (Hände frei zum Münzen-Greifen).
+- 1 Karton/Eimer als **Schatztruhe** + 10–20 „Goldmünzen" (Korken, Walnüsse, Holzscheiben, ≥4,5 cm — nichts Verschluckbares).
+- Kreppband/Seil für **Bann-Kreis** (ca. 1,5 m Radius um die Truhe) und die **„Reling"** (Ziellinie, wohin die Münzen gebracht werden).
+- Optional (Foto-/Wow-Bonus): Augenklappe/Bandana/Dreispitz pro Kind, „Klingenmeister:in"-Stempel/Urkunde für alle.
 
 ## Anleitung (Basis 6–8)
-0. **Ehrenkodex laut + gemeinsam ansagen (Pflicht!):** „Nur auf Arme, Beine, Bauch — NIE Kopf, Gesicht, Hals. Kein Stechen, kein Schlagen mit voller Kraft. Wer den Kodex bricht, setzt eine Runde aus."
-1. Duell-Ring markieren, alle bekommen ihren Schaum-Säbel, kurz „Grundhaltung" zeigen.
-2. Zwei Kinder treten an, auf „En Garde, Seeräuber!" duellieren sie **30 Sekunden** (Schiri stoppt).
-3. **Wertung:** sauberer, sanfter Treffer auf Arm/Bein/Rumpf = 1 Punkt; Schiri zählt laut. Tempo bewusst moderat (Geschick vor Kraft).
-4. Nach 30 Sek Wechsel — das nächste Paar. **Jeder-gegen-jeden** (oder kleines Turnier mit Trostduellen, damit niemand nach einem Duell „raus" ist).
-5. Am Ende sind alle „Crew-Klingen", das Geburtstagskind wird „Käpt'ns-Klinge". Urkunde/Stempel für alle.
+0. **Ehrenkodex laut + gemeinsam ansagen (Pflicht!):** „Säbel nur sanft **antippen** an Arm, Schulter, Rücken — NIE Kopf, Gesicht, Hals. Kein Schlagen mit Kraft, kein Stechen, kein Festhalten/Reißen. Wer den Kodex bricht, setzt 30 Sek als ‚Landgang' aus."
+1. Aufbau: Truhe in die Mitte, Bann-Kreis drum, Reling (Ziellinie) ein paar Meter entfernt markieren. Crew in zwei gleich große Teams teilen; Wächter:innen kriegen Säbel.
+2. **Regeln:** Wächter:innen bleiben **außerhalb** des Bann-Kreises (sie dürfen nicht selbst zur Truhe) und tippen Räuber:innen sanft ab. Räuber:innen dürfen in den Kreis, nehmen **eine** Münze pro Lauf und bringen sie zur Reling.
+3. Auf „**Entert das Gold, Seeräuber!**" geht's los — alle gleichzeitig. Abgetippte Räuber:innen legen ihre Münze dort ab, wo sie sind (eine andere kann sie aufheben) und laufen zum Beiboot-Start zurück, dann wieder rein. **Kein Ausscheiden.**
+4. Eine Runde dauert **2–3 Min** (Schiri stoppt) oder bis die Hälfte der Münzen draußen ist. Münzen an der Reling zählen = Räuber-Punkte; Münzen, die in der Truhe bleiben = Wächter-Punkte.
+5. **Rollentausch:** Teams tauschen Wächter/Räuber. So fechten/laufen alle, jede:r ist mal Verteidiger:in und mal Schmuggler:in. Nach 3–4 Runden gewinnt — egal — beide sind „Crew des Tages", das Geburtstagskind wird „Käpt'ns-Klinge".
 
-## Variante 3–5 „Nudel-Tipp" (kein echtes Duell)
-Kein Gegeneinander-Fechten. Stattdessen: weiche Nudel, Kinder „tippen" gemeinsam Seifenblasen/Luftballons in der Luft an oder fechten gegen einen Erwachsenen-„Bösewicht", der sich tollpatschig besiegen lässt. Kein Körperkontakt zwischen Kindern.
+## Variante 3–5 „Nudel-Tipp" (kein Gegeneinander)
+Kein Räuben/Verteidigen gegeneinander. Stattdessen: weiche Nudel, die Kinder „tippen" gemeinsam Seifenblasen/Luftballons in der Luft an oder fechten gegen einen Erwachsenen-„Bösewicht", der sich tollpatschig besiegen lässt und das Gold „freiwillig" hergibt. **Kein Körperkontakt zwischen Kindern.**
 
-## Variante 9–12 „Turnier"
-Kleines Bracket mit Trostrunde (jeder mind. 2 Duelle), Best-of-3 à 20 Sek, Schiri pro Ring. Optional „Stil-Punkte" für faire/elegante Moves statt nur Treffer.
+## Variante 9–12 „Festung"
+Zwei Bann-Kreise/zwei Truhen, beide Teams sind gleichzeitig Wächter UND Räuber des jeweils anderen Schatzes (Capture-the-Flag-Logik). Optional „Stil-Punkte" für besonders faire/elegante Säbel-Moves. Schiri pro Feldhälfte.
 
 ## Sicherheit (KRITISCH)
 - **Ausschließlich weiche Pool-Nudeln** — niemals harte Schwerter/Stöcke. Säbel vorher auf harte Teile/Reste prüfen.
-- **1 Erwachsene:r als Schiedsrichter pro Ring, durchgehend dabei.** Nur 2 Kinder gleichzeitig im Ring, Rest außerhalb.
-- **Pflicht-Zonen:** Treffer nur Arme/Beine/Rumpf. **Verbot: Kopf, Gesicht, Hals, kein Stechen, keine volle Kraft.** Bei Brillenträger:innen Sportbrille/abnehmen + extra Vorsicht.
-- Ring weg von Möbelkanten/Glas; rutschfester Boden. Bei zu wildem Spiel sofort Stopp, Kodex wiederholen.
-- Nicht für 3–5 als echtes Duell (Impulskontrolle) — dort nur die Nudel-Tipp-Variante.
+- **Nur sanftes Antippen** (kein Schlagen, kein Stechen, keine volle Kraft), **Treffer nur Arm/Schulter/Rücken** — Verbot: Kopf, Gesicht, Hals. Am Anfang am Erwachsenen demonstrieren.
+- **1 Erwachsene:r als Käpt'n/Schiri durchgehend dabei**; bei Gedränge sofort „Alle einfrieren!". Bei zu wildem Spiel Stopp + Kodex wiederholen.
+- **Anti-Kollision:** Räuber:innen laufen, Wächter:innen tippen — nicht gegeneinander rennen; Tempo bewusst moderat. Brillenträger:innen Sportbrille/abnehmen + extra Vorsicht.
+- Feld weg von Möbelkanten/Glas, rutschfester Boden, genug Platz. Goldmünzen nur Greif-Objekte ≥4,5 cm (nichts Verschluckbares); keine Schoko im Laufen.
+- Nicht für 3–5 als echtes Gegeneinander (Impulskontrolle) — dort nur die Nudel-Tipp-Variante.
 
 ## Inklusion
-Kein Ausscheiden (jeder duelliert mehrfach, Trostrunden). Kind mit Bewegungseinschränkung: sitzend duellieren (nur Arm-Reichweite) ODER als Schiri/Punktezähler:in mit echter Rolle. Geschlechtsneutral („Seeräuber:innen"). Wer nicht kämpfen mag: Crew-Anfeuern + Urkunden-Verteilung.
+Kein Ausscheiden — abgetippt = nur kurz zurücklaufen, sofort wieder dabei. Rollentausch sorgt dafür, dass jede:r mal verteidigt und mal läuft. Kind mit Bewegungseinschränkung: als **Truhen-Wächter:in direkt an der Truhe** (sitzend, tippt nahende Räuber:innen ab) oder als Schiri/Münzenzähler:in mit echter Rolle. Wer nicht „kämpfen" mag: Räuber:in ohne Säbel-Kontakt (nur laufen/schmuggeln) oder Crew-Anfeuern + Urkunden. Geschlechtsneutral („Seeräuber:innen").
 
 ## Gruppengröße
-4–12 gut: ein Ring, Paare nacheinander (Wartezeit kurz, weil die Crew aktiv anfeuert/wertet). Bei 12+ zwei Ringe mit je einem Schiri.
+4–14 gut: zwei Teams, alle gleichzeitig aktiv (kein Warten, weil niemand nur zuschaut). 6–12 ideal. Bei 14+ zweite Truhe/zweites Feld mit eigenem Schiri, oder die „Festung"-Variante. Solo/2–3 funktioniert nicht (braucht zwei Teams).
 
 ## Foto-Bonus (Bonus)
-Duell-Pose mit Schaum-Säbeln + Bandana/Augenklappe = ikonisches, dynamisches Piraten-Foto. Mit Verkleidung ein echter Wow-Moment.
+Getümmel um die Schatztruhe — Wächter:innen mit gekreuzten Schaum-Säbeln, Räuber:in schnappt sich das Gold — dynamisches, ikonisches Piraten-Foto. Mit Bandana/Augenklappe ein echter Wow-Moment.

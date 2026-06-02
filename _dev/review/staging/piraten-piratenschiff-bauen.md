@@ -20,8 +20,10 @@ Aus 2–3 großen Umzugskartons baut die Crew gemeinsam ein begehbares Piratensc
 0. „Jede Crew braucht ein Schiff — lasst es uns bauen, Matrosen!"
 1. **Vorab (Erwachsene):** Bullaugen + eine „Tür" grob in die Kartons schneiden, Kartons zum Rumpf zusammenkleben (Kinder schneiden NICHT).
 2. Aufgaben verteilen: bemalen (Planken, Wellen), Bullaugen umranden, Segel/Bettlaken anbringen, Steuerrad + Flagge basteln, Schiffsnamen aufmalen. **Gegen Leerlauf (Schnell-Fertige):** Augenklappen/Bandanas basteln, ein Schiffsnamen-Schild malen, den Crew-Schlachtruf einüben — so hat jedes Kind durchgehend was zu tun.
-3. **Struktur (Erwachsene):** Mast = ein Besenstiel/eine Stange, in einer Karton-Ecke mit Paketband fixiert; Segel = Bettlaken oben + unten an den Mast knoten/tackern; Steuerrad + Flagge mit Paketband/Heißkleber (nur Erwachsene) am Rumpf befestigen. Dann gemeinsam aufrichten und taufen: **das Geburtstagskind wählt den Schiffsnamen** (oder kurze Crew-Abstimmung — kein Streit), „Ich taufe dich …!".
-4. **Abschluss + Foto:** ganze Crew steigt ein/stellt sich ans Schiff → Gruppenfoto. Das Schiff bleibt als Kulisse/Safe-Zone für Folge-Spiele (z.B. Hai-Tag).
+3. **Mast (Erwachsene, kippsicher):** Den Mast NIEDRIG halten (max. Schulterhöhe der Kinder, nie auf Augenhöhe) — Stange in einen **mit Büchern/einer Wasserflasche beschwerten Karton** stecken (nicht nur Paketband), oder ganz weglassen und das Segel an die Rückwand kleben. **Kein Mast über Kinderköpfen.**
+4. **Segel + Deko (Erwachsene):** Bettlaken-Segel an Mast/Rückwand binden; Steuerrad + Flagge mit Paketband befestigen. **Heißkleber nur durch Erwachsene, Kinder dabei auf Abstand, erst anfassen wenn kalt** — oder ganz mit Paketband arbeiten.
+5. Gemeinsam aufrichten und taufen: **das Geburtstagskind wählt den Schiffsnamen** (oder kurze Crew-Abstimmung), „Ich taufe dich …!".
+6. **🚢 Jungfernfahrt-Finale (3 Min, der Höhepunkt):** Die ganze Crew steigt ein/stellt sich ans Schiff, ein Erwachsene:r ist Käpt'n und ruft eine Mini-Story: „Sturm voraus — alle ducken!" · „Rudern, Matrosen!" · „Ausschau halten — Land in Sicht!" · „Schatz an Bord — alle ‚Arrr!'". Endet mit dem **Crew-Foto auf dem fertigen Schiff**. Macht aus dem Bauen ein Erlebnis mit Höhepunkt — und das Schiff bleibt danach Kulisse/Safe-Zone für Folge-Spiele (z.B. Hai-Tag).
 
 ## Variante 3–5 „Kissen-Floß"
 Kein Schneiden/Kleben nötig: Kissen + Decken zu einem „Floß" stapeln, Besenstiel-Fahne rein, ein paar Aufkleber/Mal-Elemente. Hauptsache mitmachen; jedes Kind legt ein Teil dazu.
