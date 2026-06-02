@@ -4,7 +4,8 @@
 **Einzeiler:** Die Crew baut aus Kartons ihr eigenes Piratenschiff — das danach Foto-Kulisse und Basis für die ganze Party wird.
 **Getaggte Alter:** 3–5, 6–8, 9–12 (bestAge 6–8)
 **Scope:** Eigenständiges Komplettspiel (Bastel-/Bau-Block); Signature. Alters-relativ bewerten.
-**Typ:** kreativ / Team · **Spieler:** 3–12 · **Dauer:** 20–30 Min · **Vorbereitung:** 5 Min · **Indoor + Outdoor**
+**Typ:** kreativ / Team · **Spieler:** 3–12 · **Dauer:** 20–30 Min Bauzeit · **Eltern-Vorbereitung: ehrlich 15–25 Min** (Bullaugen/Tür schneiden + 2–3 Kartons zum Rumpf kleben, am Vortag erledigen!) · **Indoor + Outdoor**
+**Hinweis Begehbarkeit:** Das Schiff ist **Kulisse zum Reinsteigen fürs Foto/Spielen — NICHT zum Draufstehen/Klettern** (Karton trägt kein Kind), immer mit Erwachsene:r dabei.
 
 ## Quickstart
 Aus 2–3 großen Umzugskartons baut die Crew gemeinsam ein begehbares Piratenschiff: Bullaugen, Segel aus einem Bettlaken, Steuerrad aus Pappe, Flagge. Jedes Kind hat eine Aufgabe (malen, bekleben, Namen ausdenken). Am Ende: **Crew-Foto auf dem fertigen Schiff** — und das Schiff bleibt Kulisse/Basis für die nächsten Spiele.
@@ -18,8 +19,8 @@ Aus 2–3 großen Umzugskartons baut die Crew gemeinsam ein begehbares Piratensc
 ## Anleitung (Basis 6–8)
 0. „Jede Crew braucht ein Schiff — lasst es uns bauen, Matrosen!"
 1. **Vorab (Erwachsene):** Bullaugen + eine „Tür" grob in die Kartons schneiden, Kartons zum Rumpf zusammenkleben (Kinder schneiden NICHT).
-2. Aufgaben verteilen: bemalen (Planken, Wellen), Bullaugen umranden, Segel/Bettlaken anbringen, Steuerrad + Flagge basteln, Schiffsnamen ausdenken + aufmalen.
-3. Gemeinsam aufrichten, Segel hoch, Flagge drauf. Schiff taufen („Ich taufe dich …!").
+2. Aufgaben verteilen: bemalen (Planken, Wellen), Bullaugen umranden, Segel/Bettlaken anbringen, Steuerrad + Flagge basteln, Schiffsnamen aufmalen. **Gegen Leerlauf (Schnell-Fertige):** Augenklappen/Bandanas basteln, ein Schiffsnamen-Schild malen, den Crew-Schlachtruf einüben — so hat jedes Kind durchgehend was zu tun.
+3. **Struktur (Erwachsene):** Mast = ein Besenstiel/eine Stange, in einer Karton-Ecke mit Paketband fixiert; Segel = Bettlaken oben + unten an den Mast knoten/tackern; Steuerrad + Flagge mit Paketband/Heißkleber (nur Erwachsene) am Rumpf befestigen. Dann gemeinsam aufrichten und taufen: **das Geburtstagskind wählt den Schiffsnamen** (oder kurze Crew-Abstimmung — kein Streit), „Ich taufe dich …!".
 4. **Abschluss + Foto:** ganze Crew steigt ein/stellt sich ans Schiff → Gruppenfoto. Das Schiff bleibt als Kulisse/Safe-Zone für Folge-Spiele (z.B. Hai-Tag).
 
 ## Variante 3–5 „Kissen-Floß"
@@ -35,7 +36,7 @@ Zwei Teams, gleiches Material, 20 Min: wer baut das coolste/stabilste Schiff? Ju
 Viele Rollen → jedes Kind findet eine Aufgabe (malen, kleben, Namen erfinden, Segel halten). Kind mit Einschränkung: Sitz-Aufgaben (bemalen, Flagge designen). Kein Tempo, kein Rauswurf, kein „falsch". Geschlechtsneutral.
 
 ## Gruppengröße
-3–12 an 1–2 Schiffen. Bei vielen Kindern parallele Bau-Teams (je 1 Erwachsene:r fürs Schneiden). Solo/2 geht (kleineres Schiff), lebt aber vom Team.
+Ideal **4–8 an einem Schiff** (genug Aufgaben, kein Gedränge). **>8 → parallele Bau-Teams NUR wenn ein zweiter Erwachsener da ist** (jedes Team braucht eine:n fürs Schneiden) — sonst ein Schiff und Rollen rotieren. Solo/2 geht (kleineres Schiff), lebt aber vom Team.
 
 ## Foto-Bonus (Bonus)
 **Stark:** das selbstgebaute Schiff IST die Foto-Kulisse — ganze Crew mit Augenklappen drauf = das Erinnerungsfoto der Party. Hoher, natürlicher Wow-/Foto-Wert ohne Zusatzaufwand.
