@@ -121,6 +121,12 @@ Jedes Spiel wird gegen seinen **Scope** bewertet, nicht als müsste es immer ein
 - `class`/`scope` weiterhin taggen (für alters-/scope-relative Bewertung), aber die **Schwelle ist für alle 90**.
 - Grinch-Reviewer-Varianz beachten: der Score schwankt zwischen frischen Reviewern (±5). Wenn zwei aufeinanderfolgende frische Reviews ≥ Gate liegen → durch.
 
+### Ausnahme-Kategorie: `bastel-aktion` (Gate 85, eingeführt 02.06.2026)
+
+Reine **Kreativ-/Bastel-Blöcke** (z.B. „Piratenschiff bauen") sind keine Lauf-/Wettkampf-Spiele und haben einen **strukturellen Machbarkeits-Deckel**: DIY-Bau ist objektiv aufwändig (Material besorgen, Vortags-Prep, Erwachsenen-Bindung), das drückt die Dimension *Machbarkeit* dauerhaft auf ~11/15 — unabhängig davon, wie ehrlich/gut die Anleitung ist. Solche Spiele plateauen empirisch bei ~87 und erreichen 2×≥90 praktisch nie.
+
+**Regel:** `class: "bastel-aktion"` → Gate **≥85** (statt 90), sonst identische Rubrik + 2×-aufeinanderfolgend-Regel + alle K.O.-Gates. Bewusst gewählt, kein Aufweichen des Spiel-Gates — Bastel ≠ Spiel. (Beispiel: piratenschiff-bauen, gelockt bei 87 nach 3 strengen Reviews 84/87/87.)
+
 ---
 
 ## 5. Helfer-v3 — Reviewer-Regeln (HART)

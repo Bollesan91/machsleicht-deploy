@@ -228,5 +228,66 @@ window.MOTTO_DATA = {
       foto_bonus: 1,
       reviews_strict_fun_first: [89, 87], // v1 88+1, v2 86+1 → zwei aufeinanderfolgende ≥85
     },
+    {
+      id: "piratenschiff-bauen",
+      motto: "piraten",
+      class: "bastel-aktion", // Kreativ-/Bastel-Block, KEIN Lauf-/Wettkampf-Spiel → eigene Kategorie, vom ≥90-Spiel-Gate ausgenommen (Gate 85). Machbarkeit ist bei DIY-Karton-Bau strukturell gedeckelt.
+      scope: "eigenständiger Bastel-Block + danach Foto-Kulisse/Safe-Zone-Basis für Folge-Spiele",
+      emoji: "⛵",
+      name: "Piratenschiff bauen",
+      desc: "Die Crew baut aus Kartons ihr eigenes begehbares Piratenschiff — danach Foto-Kulisse und Basis für die ganze Party",
+      ages: ["3-5", "6-8", "9-12"],
+      bestAge: "6-8",
+      type: "kreativ",
+      players: { min: 3, ideal: "4–8", max: 12, solo: true },
+      groupScaling:
+        "4–8 ideal an einem Schiff (feste Bau-Stationen: Maler-/Bullaugen-/Takel-/Namens-Crew) · " +
+        ">8: zwei parallele Bau-Teams (braucht zweite Aufsicht — Schneiden ist am Vortag erledigt) ODER ein größeres Schiff mit mehr Stationen, so wartet auch bei 10–12 niemand · " +
+        "Solo/2 geht (kleineres Schiff), lebt aber vom Team.",
+      dauer: "20–30 (6-8); 3-5 Kissen-Floß ~10–15; 9-12 Wettbewerb ~20",
+      prep: "15–25 (ungeübt 30–40), am Vortag: Rumpf bauen + Bullaugen/Tür schneiden",
+      teardown: "5–10 (flach falten, Papiertonne)",
+      indoor: "both",
+      material: [
+        "2–3 große Umzugskartons (kostenlos sammeln 1–2 Wochen vorher, oder Baumarkt ~2 €/Stück als Fallback), reichlich Kreppband + Paketband. KEIN Heißkleber nötig.",
+        "Buntstifte/Wachsmalstifte/abwaschbare Farbe + Pinsel, altes Bettlaken (Segel), Pappreste (Steuerrad/Flagge), schwarzer Stift/Tonpapier (Jolly Roger), Pappteller (Bullaugen).",
+        "Eltern-Werkzeug: Schere/Cutter NUR für Erwachsene (Bullaugen/Schlitze/Tür vorschneiden).",
+        "Optional (Foto-/Wow-Bonus): Augenklappen/Bandanas für die Crew aufs Foto.",
+      ],
+      anleitung: [
+        "0. „Jede Crew braucht ein Schiff — lasst es uns bauen, Matrosen!“",
+        "1. Vortag (Erwachsene): Rumpf zusammenbauen (größter Karton = Wanne zum Reinsteigen, mind. ~60×40×40 cm; zwei Kartons mit ~10 cm Überlappung innen+außen je 2× quer tapen), Bullaugen + Tür vorschneiden; untere Tür-Kante niedrig+breit schneiden und separat umkleben (Stolperstelle).",
+        "2. Feste Bau-Stationen, jedes Kind aktiv: Maler-Crew (Planken/Wellen), Bullaugen-Crew (Pappteller aufkleben), Takel-Crew (Steuerrad + Flagge), Namens-Crew (Schiffsname + Schlachtruf + Augenklappen). Wer fertig ist, wechselt die Station.",
+        "3. Mast optional (Default = keiner, Segel an Rückwand): wenn, dann nur stumpfe weiche Stange (Pappröhre/Pool-Nudel) fest unter Schulterhöhe in einem beschwerten Karton — nie hart/spitz, nie über Kinderköpfen.",
+        "4. Segel + Deko gemeinsam mit Paketband (Kinder dürfen tapen). Farbe antrocknen lassen.",
+        "5. Aufrichten + taufen: Geburtstagskind wählt den Schiffsnamen, „Ich taufe dich …!“.",
+        "6. 🚢 Jungfernfahrt-Finale (3 Min): Crew steigt ein (bei großen Gruppen nacheinander / Hälfte außen), Käpt'n ruft Mini-Story (Sturm-ducken / rudern / Ausschau / Schatz-Arrr) → Crew-Foto auf dem Schiff.",
+      ],
+      safety:
+        "Schneiden/Cutter ausschließlich Erwachsene — Kinder kleben/malen/tapen. Schnittkanten innen umkleben. Abwaschbare/lösungsmittelfreie Farben. KEIN Heißkleber (Paketband reicht). Schiff auf Teppich/rutschfeste Unterlage (Karton schiebt auf Laminat weg). NICHT draufklettern/-stehen (Karton trägt nicht) — Kulisse, kein Klettergerüst; vorab ansagen. Stolperfallen (Bänder) sichern.",
+      inclusion:
+        "Viele Stationen → jedes Kind findet eine aktive Aufgabe (malen, kleben, tapen, Name, Segel halten). Sitz-Aufgaben mit echtem Output (Steuerrad, Flagge). Kein Tempo, kein Rauswurf, kein „falsch“. Geschlechtsneutral.",
+      mess: "mittel (Farbe/Pappe). Tisch/Boden mit Decke/Folie schützen; danach Schiff flach falten → Papiertonne (Wohnung: vorab einplanen).",
+      variants: {
+        "3-5": {
+          name: "Kissen-Floß (auch Universal-Fallback ohne Vorbereitung)",
+          desc: "Kein Schneiden/Kleben — Kissen/Decken-Floß mit Mini-Struktur",
+          detail:
+            "Kissen + Decken zu einem Floß stapeln, weiche Fahne flach reinlegen. 3 Reihum-Aufgaben (Kissen dazulegen / Decken-Segel hochhalten / Wellen aufmalen) + 1-Min-Finale (alle rudern + „Arrr!“ + Foto). Auch der Fallback, wenn die Bau-Vorbereitung nicht geklappt hat.",
+        },
+        "9-12": {
+          name: "Konstruktions-Wettbewerb",
+          desc: "Zwei Teams bauen um die Wette, kein Verlierer",
+          detail:
+            "Zwei Teams, gleiches Material, 20 Min: Jury (Erwachsene + Geburtstagskind) wertet Stabilität/Design/Teamwork — kein Verlierer, beide Schiffe bleiben Kulisse, jedes Team kriegt einen „Werft-Orden“. Nur mit zweiter Aufsicht.",
+        },
+      },
+      source: "wizard+generic+hub",
+      class_gate: 85,
+      score: 87,
+      foto_bonus: 3,
+      reviews_strict_fun_first: [84, 87, 87], // R1 84, R2 84+3, R3 84+3 → Plateau. Bewusst als Bastel-Aktion (kein Spiel-Gate) bei 87 gelockt: Machbarkeit 11/15 ist bei DIY-Karton-Bau strukturell gedeckelt, nicht wegformulierbar.
+      status: "DURCH als Bastel-Aktion (eigene Kategorie ≥85, entschieden 02.06.2026). 3 strenge Opus-Reviews (Branch-Trick, target-blind): 84/87/87, Plateau durch struktureller Machbarkeits-Deckel. Spec: _dev/review/staging/piraten-piratenschiff-bauen.md.",
+    },
   ],
 };
