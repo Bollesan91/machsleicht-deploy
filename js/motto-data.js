@@ -97,7 +97,7 @@ window.MOTTO_DATA = {
       indoor: "both",
       space: "min. ~3 m Tiefe × 4 m Breite; Fenster/Regale ~2 m seitlich frei (Wand hinter den Eimern ok).",
       material: [
-        "Kanonenkugeln: AUSSCHLIESSLICH weiche Wurfobjekte — Schaumstoffbälle ab ~5 cm ODER Sockenknäuel. KEINE harten Bälle (kein Tennis-/Gummi-/Flummiball, Augenrisiko). Für 3-5 nur Sockenknäuel. 5–8 Stück pro Kind/Runde (10 Kinder × 2 Runden ≈ 100 Knäuel — 3 Sammelkörbe hinter den Eimern, 1 Sammler:in lädt nach jeder Runde nach).",
+        "Kanonenkugeln: AUSSCHLIESSLICH weiche Wurfobjekte — Schaumstoffbälle ab ~5 cm ODER Sockenknäuel. KEINE harten Bälle (kein Tennis-/Gummi-/Flummiball, Augenrisiko). Für 3-5 nur Sockenknäuel. geteilter Pool statt pro Kind: ~15–20 Kugeln gesamt reichen (jedes Kind wirft 5 pro Wurf-Runde, der/die Sammler:in bringt sie nach jeder Welle zurück) — du musst NICHT 80+ Knäuel basteln. Sammelkorb hinter den Eimern.",
         "3 Ziele (Eimer/Wäschekorb/Karton) — für 3-5 große weite Öffnungen, für 9-12 kleiner. Abstände altersabhängig: 3-5 = 1/1,5/2 m · 6-8 = 2/3/4 m · 9-12 = 3/4/5 m.",
         "Wurflinie aus Kreppband + 2 Hütchen als Wurfzonen-Begrenzung.",
         "Pirate-Look (Standard): schwarzes Tuch/Tonpapier-Totenkopf an jeden Eimer = feindliches Schiff. Optional Augenklappe/Bandana.",
@@ -114,16 +114,16 @@ window.MOTTO_DATA = {
         "7. Abschluss-Ritual: Kapitän ruft „Schatz-Kasse öffnen!\", alle „Arrr!\", Münzen werden verteilt (ab 6 J).",
       ],
       safety:
-        "Nur weiche Wurfobjekte (Schaum ab ~5 cm / Sockenknäuel) — nichts Hartes. Eiserne Regel: nur auf Ziele werfen, nie auf Menschen/Gesicht. Wurfzone (Hütchen) während des Werfens frei; Sammeln nur auf Signal. Parallele Stationen ≥3 m seitlich, alle werfen in dieselbe Richtung. Indoor ~2 m Abstand zu Fenstern/Regalen. Für 3-5: nur Sockenknäuel, enge Aufsicht.",
+        "Nur weiche Wurfobjekte (Schaum ab ~5 cm / Sockenknäuel) — nichts Hartes. Eiserne Regel: nur auf Ziele werfen, nie auf Menschen/Gesicht. Wurfzone (Hütchen) während des Werfens frei; Sammeln nur auf Signal, niemand läuft während des Werfens nach vorn. Parallele Stationen ≥3 m seitlich, alle werfen in dieselbe Richtung — niemals über Kreuz/aufeinander zu (keine Crossfire-Geometrie), getrennte Sammelzonen. Indoor ~2 m Abstand zu Fenstern/Regalen. Für 3-5: nur Sockenknäuel, enge Aufsicht.",
       inclusion:
         "Wurfdistanz frei wählbar (näher treten erlaubt), sitzend möglich. Kein Rauswurf, kein Einzel-Ranking nötig — wer mitmacht, ist Crew.",
-      mess: "gering-mittel — Kugeln rollen weg (Sammelzone hinter den Eimern, Ball-Sammler:in pro Station). Wartende laden Nachschub oder üben den Crew-Schlachtruf.",
+      mess: "gering-mittel — Kugeln rollen weg (Sammelzone hinter den Eimern, Ball-Sammler:in pro Station). Wartende bleiben HINTER der Wurflinie (Schlachtruf üben/anfeuern/bereits eingesammelte Kugeln sortieren) — Kugeln nur in der Sammel-Phase auf Signal holen, nie während des Werfens nach vorn.",
       variants: {
         "3-5": {
           name: "Kleine Kanoniere",
           desc: "Große Körbe, kurze Distanz, kein Punktedruck",
           detail:
-            "Große Wäschekörbe, Distanz 1–2 m, nur Sockenknäuel; jedes Kind tritt so nah es mag. Keine Siegbedingung, kein Zählen — jeder Treffer wird laut bejubelt. Der Stempel ist Teilnahme-Diplom (alle bekommen ihn), kein Leistungs-Abzeichen.",
+            "Große Wäschekörbe, Distanz 1/1,5/2 m (wie Material), nur Sockenknäuel; jedes Kind darf näher treten. Keine Siegbedingung, kein Zählen — jeder Treffer wird laut bejubelt. Der Stempel ist Teilnahme-Diplom (alle bekommen ihn), kein Leistungs-Abzeichen.",
         },
         "9-12": {
           name: "Scharfschütz:innen",
@@ -134,8 +134,10 @@ window.MOTTO_DATA = {
       },
       source: "wizard+hub",
       class_gate: 85,
-      score: 89,
-      reviews: [70, 89, 89],
+      score: 83,
+      reviews_strict_bestof3: [85, 83, 83], // strikt-verifiziert 03.06.2026 (Opus, JS-Paste, target-blind, Machbarkeit-Reframe). Median 83. Behoben: Sicherheits-K.O. (Wartende-sammeln-Widerspruch), Distanz-Widerspruch, Pool-Logistik, Crossfire.
+      reviews_webfetch_inflationaer: [70, 89, 89], // VERWORFEN — WebFetch +6 inflationaer (89 vs ehrlich 83)
+      status: "Behalten bei ehrlichem Score 83 (unter Gate 85, bewusst akzeptiert 03.06.2026): solides Wurf-Wettkampf-Spiel, Spass-Cap 15/20 („Eimer treffen“ ohne Eskalation), sicher + variety-wert. Spec: _dev/review/staging/piraten-kanonenkugeln.md.",
     },
     {
       id: "schatz-im-sand",
@@ -173,7 +175,7 @@ window.MOTTO_DATA = {
         "6. Abschluss: Gruppenfoto mit Sieben + Eimern, DANN Hände waschen (Seife) — erst danach Snacks/essbare Belohnung.",
       ],
       safety:
-        "Nur zertifizierter Spielsand (DIN EN 71-3), kein Quarz-/Bausand (Feinstaub). Nicht pusten, kein Sand werfen. Hände nach dem Spiel mit Seife waschen, vor jedem Essen; nicht in Augen/Mund fassen. Für 3-5: enge Aufsicht ~1:4 (für 6er-Gruppe mind. 1 Betreuer:in + 1 Assistenz), ständiger Sichtkontakt; Sand an Mund/Lippen → sofort unterbrechen + ausspülen; nur Großteile ≥4,5 cm. Sand in den Augen: mit klarem Wasser spülen. Allergie/Outdoor: Sand auf Fremdstoffe prüfen.",
+        "Nur zertifizierter Spielsand (DIN EN 71-3), kein Quarz-/Bausand (Feinstaub). Nicht pusten, kein Sand werfen. Hände nach dem Spiel mit Seife waschen, vor jedem Essen; nicht in Augen/Mund fassen. Für 3-5: enge Aufsicht ~1:4 (für 6er-Gruppe mind. 1 Betreuer:in + 1 Assistenz), ständiger Sichtkontakt; Sand an Mund/Lippen → sofort unterbrechen + ausspülen; nur Großteile ≥4,5 cm. Sand in den Augen: mit klarem Wasser spülen. Vorhandener Outdoor-Sandkasten: vor Nutzung auf Tierkot prüfen (Katzenkot → Toxoplasmose/Spulwurm) — wenn nicht durchgehend abgedeckt, lieber eigene Wanne mit frischem DIN-Sand; sonst oberflächlich sieben + vorher abdecken.",
       inclusion:
         "Ruhiges, nicht-kompetitives Buddeln — gut für Kinder, die wilde Spiele meiden. Sitzend/Rollstuhl an Tisch-Wanne möglich. Kein Tempo, kein Rauswurf, jede:r findet.",
       mess: "HOCH (Sand). Outdoor bevorzugt. Indoor: große Plane/Bettlaken unter die Wanne, Besen/Handfeger/Staubsauger bereit; Abbau realistisch 15–30 Min (Plane an Ecken zusammenfassen). Schürzen/alte Kleidung.",
@@ -193,8 +195,10 @@ window.MOTTO_DATA = {
       },
       source: "wizard+generic+hub",
       class_gate: 85,
-      score: 91,
-      reviews: [88, 91],
+      score: 79,
+      reviews_strict_bestof3: [79, 79, 79], // strikt-verifiziert 03.06.2026 (Opus, JS-Paste, target-blind). Median 79, sehr konstant. Behoben: Sandkasten-Kontaminations-Check (Toxoplasmose).
+      reviews_webfetch_inflationaer: [88, 91], // VERWORFEN — WebFetch +12 inflationaer (91 vs ehrlich 79)
+      status: "Behalten bei ehrlichem Score 79 (unter Gate 85, bewusst akzeptiert 03.06.2026): ruhiges Sensorik-Spiel, by design kein Spass-Peak (Spass 14/20) — DER Ruhe-Block, perfekt fuer 3–5 (dort ~18/20), lauwarm fuer 9–12. Sicher + variety-wert. Spec: _dev/review/staging/piraten-schatz-im-sand.md.",
     },
     {
       id: "papagei-sagt",
