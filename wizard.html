@@ -1230,7 +1230,7 @@
           <h3 class="mod__title">Schatzsuche · ${stations.length} Stationen</h3>
         </header>
         <div class="schatz">
-          <ul class="schatz__list">${stations.map((s,i) => `<li><div class="schatz__num">${i+1}</div><div><div class="schatz__name">${i === stations.length-1 ? state.motto.emoji+' '+s : s}</div></div></li>`).join('')}</ul>
+          <ul class="schatz__list">${stations.map((s,i) => `<li><div class="schatz__num">${i+1}</div><div><div class="schatz__name">${i === stations.length-1 ? esc(state.motto.emoji)+' '+s : s}</div></div></li>`).join('')}</ul>
         </div>
       </article>
 
@@ -1241,7 +1241,7 @@
         </header>
         <div class="shopping">
           <div class="shopping__col"><h4>Discounter</h4><ul><li><b>${state.guests}</b>× Mini-Croissants</li><li><b>${(state.guests*0.25).toFixed(1)} l</b> Saftschorle</li><li>Süßigkeiten <b>200g</b></li><li>Kuchen-Zutaten</li></ul></div>
-          <div class="shopping__col"><h4>Drogerie</h4><ul><li><b>${state.guests+2}</b>× Mitgebsel-Tüten</li><li><b>${state.guests+2}</b>× ${state.motto.persona}-Accessoires</li><li>Kerzen</li></ul></div>
+          <div class="shopping__col"><h4>Drogerie</h4><ul><li><b>${state.guests+2}</b>× Mitgebsel-Tüten</li><li><b>${state.guests+2}</b>× ${esc(state.motto.persona)}-Accessoires</li><li>Kerzen</li></ul></div>
           <div class="shopping__col"><h4>Bastelladen</h4><ul><li><b>1</b>× Themen-Box</li><li>Karton, Folie</li></ul></div>
         </div>
       </article>
@@ -1485,9 +1485,9 @@
       c.innerHTML = `
         <div class="invite-preview-minispiel" style="background:transparent">
           ${photoHtml}
-          <div class="invite-preview-minispiel__title">${motto.emoji} ${eTitle}</div>
+          <div class="invite-preview-minispiel__title">${esc(motto.emoji)} ${eTitle}</div>
           <div class="invite-preview-minispiel__name">${eName} lädt dich ein</div>
-          <div class="invite-preview-minispiel__game">${motto.emoji}</div>
+          <div class="invite-preview-minispiel__game">${esc(motto.emoji)}</div>
           <div style="font-size:11px;color:#fff;opacity:.9;margin-bottom:6px">Tippe um den Schatz zu finden!</div>
           <div class="invite-preview-minispiel__cta">▶ Spielen</div>
         </div>`;
@@ -1511,7 +1511,7 @@
       c.style.background = '#FFF8F0';
       c.innerHTML = `
         <div class="invite-preview-print">
-          <div class="invite-preview-print__title">${motto.emoji} ${eTitle}</div>
+          <div class="invite-preview-print__title">${esc(motto.emoji)} ${eTitle}</div>
           <div class="invite-preview-print__divider"></div>
           <div class="invite-preview-print__line"><b>${eName}</b> wird ${ageNum()}!</div>
           <div class="invite-preview-print__line" style="font-size:10px;color:#666;margin:6px 0">${eBody}</div>
@@ -1581,7 +1581,7 @@
     const c = document.getElementById('psPreviewContent');
     const motto = state.motto || MOTTOS[0];
     let html = `<div class="ps-preview">
-      <h2>${motto.emoji} ${esc(state.name)}' ${motto.persona === 'Pirat' ? 'Crew-Treffen' : esc(motto.name) + '-Party'}</h2>
+      <h2>${esc(motto.emoji)} ${esc(state.name)}' ${motto.persona === 'Pirat' ? 'Crew-Treffen' : esc(motto.name) + '-Party'}</h2>
       <div class="ps-preview__meta">${formatDateLong(state.date)} · ${state.time} Uhr · zuhause</div>`;
     if(state.partyseite.rsvp){
       html += `<div class="ps-preview__section">
