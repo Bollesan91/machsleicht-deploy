@@ -1036,10 +1036,20 @@
     if(saveTimer) clearTimeout(saveTimer);
     saveTimer = setTimeout(() => {
       state.lastSaved = Date.now();
-      try { localStorage.setItem(STATE_KEY, JSON.stringify(state)); } catch(e){}
       const el = document.getElementById('saveIndicator');
+      let ok = true;
+      try {
+        localStorage.setItem(STATE_KEY, JSON.stringify(state));
+      } catch(e){
+        ok = false;
+        // Quota gesprengt (meist großes Foto) — Retry OHNE Foto, damit der Plan trotzdem persistiert
+        try { localStorage.setItem(STATE_KEY, JSON.stringify({...state, invite:{...state.invite, photo:null}})); ok = 'nophoto'; } catch(e2){}
+      }
+      if(!el) return;
       el.classList.add('visible');
-      setTimeout(() => el.classList.remove('visible'), 1500);
+      if(ok === true){ el.textContent = 'Gespeichert ✓'; el.style.color=''; setTimeout(() => el.classList.remove('visible'), 1500); }
+      else if(ok === 'nophoto'){ el.textContent = 'Gespeichert (Foto zu groß — nicht gesichert)'; el.style.color='#B26A00'; setTimeout(() => { el.classList.remove('visible'); el.style.color=''; el.textContent='Gespeichert'; }, 4000); }
+      else { el.textContent = '⚠ Speicher voll — nicht gespeichert'; el.style.color='#D32F2F'; setTimeout(() => { el.classList.remove('visible'); el.style.color=''; el.textContent='Gespeichert'; }, 4000); }
     }, 600);
   }
 
@@ -1271,10 +1281,10 @@
     const span = (end != null && (end - start) >= 30) ? (end - start) : naturalSpan;  // ungültig/zu kurz → Natur-Dauer
     const scale = span / naturalSpan;
 
-    const base = baseItems.map((i,bi) => { const off = Math.round(i.min*scale); return {time:fmt(start+off), title:i.title, desc:i.desc, custom:false, sortKey:start+off+bi*0.01}; });
+    const base = baseItems.map((i,bi) => { const off = Math.round(i.min*scale); return {time:fmt(start+off), title:esc(i.title), desc:esc(i.desc), custom:false, sortKey:start+off+bi*0.01}; });
     const customs = (state.customEntries || []).map((c, idx) => {
       const [h,m] = c.time.split(':').map(Number);
-      return {time:c.time, title:c.title, desc:'', dur:c.dur, custom:true, customIdx:idx, sortKey:h*60+m+0.005};
+      return {time:c.time, title:esc(c.title), desc:'', dur:c.dur, custom:true, customIdx:idx, sortKey:h*60+m+0.005};
     });
     return [...base, ...customs].sort((a,b) => a.sortKey - b.sortKey);
   }
@@ -1465,6 +1475,8 @@
     if(!c) return;
     const dateStr = formatDateLong(state.date);
     const motto = state.motto || MOTTOS[0];
+    // K1-Fix: User-Inputs vor innerHTML escapen (Plain-Text-/URL-Sinks unten bleiben roh)
+    const eName = esc(state.name), eTitle = esc(state.invite.title), eBody = esc(state.invite.body), eDeadline = esc(state.invite.deadline);
 
     if(state.invite.type === 'minispiel'){
       // F8: Dark-Mode wie Live-Einladung (dunkelblau-violetter Hintergrund, Gold-Akzent)
@@ -1473,8 +1485,8 @@
       c.innerHTML = `
         <div class="invite-preview-minispiel" style="background:transparent">
           ${photoHtml}
-          <div class="invite-preview-minispiel__title">${motto.emoji} ${state.invite.title}</div>
-          <div class="invite-preview-minispiel__name">${state.name} lädt dich ein</div>
+          <div class="invite-preview-minispiel__title">${motto.emoji} ${eTitle}</div>
+          <div class="invite-preview-minispiel__name">${eName} lädt dich ein</div>
           <div class="invite-preview-minispiel__game">${motto.emoji}</div>
           <div style="font-size:11px;color:#fff;opacity:.9;margin-bottom:6px">Tippe um den Schatz zu finden!</div>
           <div class="invite-preview-minispiel__cta">▶ Spielen</div>
@@ -1486,26 +1498,26 @@
         <div class="invite-preview-karte">
           ${photoBlock}
           <div class="invite-preview-karte__pre">DU BIST EINGELADEN</div>
-          <div class="invite-preview-karte__name">${state.name}</div>
-          <div class="invite-preview-karte__title">${state.invite.body}</div>
+          <div class="invite-preview-karte__name">${eName}</div>
+          <div class="invite-preview-karte__title">${eBody}</div>
           <div class="invite-preview-karte__details">
             <b>📅</b> ${dateStr}<br>
             <b>🕑</b> ${state.time} Uhr<br>
             <b>📍</b> Bei uns zuhause<br><br>
-            <span style="font-size:11px">${state.invite.deadline}</span>
+            <span style="font-size:11px">${eDeadline}</span>
           </div>
         </div>`;
     } else {
       c.style.background = '#FFF8F0';
       c.innerHTML = `
         <div class="invite-preview-print">
-          <div class="invite-preview-print__title">${motto.emoji} ${state.invite.title}</div>
+          <div class="invite-preview-print__title">${motto.emoji} ${eTitle}</div>
           <div class="invite-preview-print__divider"></div>
-          <div class="invite-preview-print__line"><b>${state.name}</b> wird ${ageNum()}!</div>
-          <div class="invite-preview-print__line" style="font-size:10px;color:#666;margin:6px 0">${state.invite.body}</div>
+          <div class="invite-preview-print__line"><b>${eName}</b> wird ${ageNum()}!</div>
+          <div class="invite-preview-print__line" style="font-size:10px;color:#666;margin:6px 0">${eBody}</div>
           <div class="invite-preview-print__divider"></div>
           <div class="invite-preview-print__line">📅 ${dateStr}<br>🕑 ${state.time} Uhr<br>📍 Bei uns zuhause</div>
-          <div class="invite-preview-print__line" style="font-size:9px;color:#888;margin-top:8px">${state.invite.deadline}</div>
+          <div class="invite-preview-print__line" style="font-size:9px;color:#888;margin-top:8px">${eDeadline}</div>
           <div style="margin-top:10px;font-size:8px;color:#999">~ 1 von 8 Karten · A6 ~</div>
         </div>`;
     }
@@ -1569,7 +1581,7 @@
     const c = document.getElementById('psPreviewContent');
     const motto = state.motto || MOTTOS[0];
     let html = `<div class="ps-preview">
-      <h2>${motto.emoji} ${state.name}' ${motto.persona === 'Pirat' ? 'Crew-Treffen' : motto.name + '-Party'}</h2>
+      <h2>${motto.emoji} ${esc(state.name)}' ${motto.persona === 'Pirat' ? 'Crew-Treffen' : esc(motto.name) + '-Party'}</h2>
       <div class="ps-preview__meta">${formatDateLong(state.date)} · ${state.time} Uhr · zuhause</div>`;
     if(state.partyseite.rsvp){
       html += `<div class="ps-preview__section">
