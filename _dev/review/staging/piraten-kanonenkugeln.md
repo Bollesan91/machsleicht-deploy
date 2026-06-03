@@ -15,7 +15,7 @@
 - **Kleiner Raum (<~12 m²):** nur eine Station, Runden nacheinander statt parallel.
 
 ## Material
-- „Kanonenkugeln" = **ausschließlich weiche Wurfobjekte:** geprüfte Schaumstoffbälle ab ~5 cm Ø ODER Sockenknäuel. **Keine harten Bälle (kein Tennis-, Gummi-, Flummiball) — Augenverletzungs-Risiko, auch outdoor.** Für 3–5 nur Sockenknäuel/Schaumstoff. 5–8 Stück pro Kind/Runde.
+- „Kanonenkugeln" = **ausschließlich weiche Wurfobjekte:** geprüfte Schaumstoffbälle ab ~5 cm Ø ODER Sockenknäuel. **Keine harten Bälle (kein Tennis-, Gummi-, Flummiball) — Augenverletzungs-Risiko, auch outdoor.** Für 3–5 nur Sockenknäuel/Schaumstoff. **Geteilter Pool statt pro Kind: ~15–20 Kugeln gesamt reichen** (jedes Kind wirft 5 pro Wurf-Runde; der/die Sammler:in bringt sie nach jeder Welle zurück) — du musst NICHT 80 Knäuel basteln.
 - 3 Ziele in einer Reihe: Eimer, Wäschekörbe oder Kartons. **Für 3–5 große, weite Öffnungen** (Wäschekorb), für 9–12 kleiner. Abstände altersabhängig von der Wurflinie: 3–5 = 1 / 1,5 / 2 m · 6–8 = 2 / 3 / 4 m · 9–12 = 3 / 4 / 5 m.
 - Wurflinie aus Kreppband; 2 Hütchen/Marker als Begrenzung der Wurfzone.
 - **Pirate-Look (Standard, nicht optional):** schwarzes Tuch oder Tonpapier-Totenkopf über/an jeden Eimer = „feindliches Schiff". Cent-Material, macht aus Eimern Schiffe. Zusätzlich optional: Augenklappe/Bandana.
@@ -31,10 +31,10 @@
 6. Schwierigkeit justieren über Distanz und Eimergröße.
 7. **Abschluss-Ritual (Immersion):** „Schatz-Kasse öffnen!" — die Crew verteilt die Schoko-Goldmünzen (ab 6 J) mit lautem Piraten-Geschrei. Gibt dem Spiel eine Story-Klammer statt einfach aufzuhören.
 
-**Wartezeit überbrücken:** Wer nicht dran ist, lädt „Nachschub" (sammelt Kugeln in die Munitionskiste) oder übt den Crew-Schlachtruf — kein Leerlauf.
+**Wartezeit überbrücken (zonensicher!):** Wer nicht dran ist, bleibt **hinter der Wurflinie** — übt den Crew-Schlachtruf, feuert die Werfer:innen an oder sortiert die bereits (in der Sammel-Phase) zurückgebrachten Kugeln am Wartebereich in die Munitionskiste. **Kugeln werden ausschließlich in der Sammel-Phase auf Schiri-Signal eingesammelt — niemand läuft während des Werfens nach vorn** (s. Sicherheit). Kein Leerlauf, kein Betreten der Wurfzone.
 
 ## Sicherheit (Basis)
-**Nur weiche Wurfobjekte (Schaum ab ~5 cm / Sockenknäuel) — nichts Hartes.** Eiserne Regel: nur auf die Ziele werfen, nie auf Menschen, nie Richtung Gesicht. Wurfzone mit Hütchen markiert und während des Werfens frei. Sammeln nur auf Sammler:in-Signal. Parallele Stationen ≥3 m seitlich auseinander, alle werfen in dieselbe Richtung (nicht gegeneinander). Indoor: ~2 m Abstand zu Fenstern/Regalen. Für 3–5: nur Sockenknäuel, enge Aufsicht.
+**Nur weiche Wurfobjekte (Schaum ab ~5 cm / Sockenknäuel) — nichts Hartes.** Eiserne Regel: nur auf die Ziele werfen, nie auf Menschen, nie Richtung Gesicht. Wurfzone mit Hütchen markiert und während des Werfens frei. Sammeln nur auf Sammler:in-Signal. Parallele Stationen ≥3 m seitlich auseinander, **alle werfen in dieselbe Richtung, niemals über Kreuz oder aufeinander zu** (keine Crossfire-Geometrie); Sammler:in-Zone jeder Station getrennt. Indoor: ~2 m Abstand zu Fenstern/Regalen. Für 3–5: nur Sockenknäuel, enge Aufsicht.
 
 ## Inklusion
 Wurfdistanz pro Kind frei wählbar (näher treten erlaubt), sitzend möglich. Kein Rauswurf, kein Einzel-Ranking nötig — wer mitmacht, ist Crew.
@@ -43,7 +43,7 @@ Wurfdistanz pro Kind frei wählbar (näher treten erlaubt), sitzend möglich. Ke
 Gering-mittel — Kugeln rollen weg. Tipp: Sammelzone hinter den Eimern, ein:e Ball-Sammler:in pro Station.
 
 ## Variante 3–5 „Kleine Kanoniere"
-Große Wäschekörbe, kurze Distanz 1–2 m, nur Sockenknäuel; jedes Kind darf so nah treten, wie es mag. **Keine Siegbedingung, kein Punktezählen** — jeder Treffer wird bejubelt, alle Kinder sind gleichwertig Crew und bekommen den Stempel.
+Große Wäschekörbe, Distanz **1 / 1,5 / 2 m** (wie im Material), nur Sockenknäuel; jedes Kind darf näher treten, wie es mag. **Keine Siegbedingung, kein Punktezählen** — jeder Treffer wird bejubelt, alle Kinder sind gleichwertig Crew und bekommen den Stempel.
 
 ## Variante 9–12 „Scharfschütz:innen"
 Kleinere Ziele, weitere Distanz (3 / 4 / 5 m), zusätzliches Bonus-Ziel „Kapitänsschiff" (kleiner Eimer, 5 Punkte). Team-Modus auf Zeit oder mit begrenzter Kugelzahl; Profi-Option: ein Wurf mit der schwächeren Hand zählt doppelt.
