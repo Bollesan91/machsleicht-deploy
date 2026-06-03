@@ -1,6 +1,6 @@
-# /ratgeber Page existiert nicht (war nur im Planer-Footer verlinkt) — 301 zur Übersichts-Checkliste
+# /ratgeber: Verzeichnis existiert nicht. Index → relevante Checkliste (301). Subpages waren nur tote Lizenz-Guides (frozen/harry-potter/... -fuer-eltern) → 410 Gone (GSC-Recovery 03.06.2026, P0-GSC).
 /ratgeber  /kindergeburtstag-checkliste  301!
-/ratgeber/*  /kindergeburtstag-checkliste  301!
+/ratgeber/*  /410.html  410
 
 /spielkarten  /spielkarten.html  200
 /impressum  /impressum.html  200
@@ -223,13 +223,5 @@
 /pokemon-guide  /410.html  410
 /spider-man-guide  /410.html  410
 /super-mario-guide  /410.html  410
-/ratgeber  /kindergeburtstag  301
-/ratgeber/frozen*  /kindergeburtstag  301
-/ratgeber/harry-potter*  /kindergeburtstag  301
-/ratgeber/minecraft*  /kindergeburtstag  301
-/ratgeber/ninjago*  /kindergeburtstag  301
-/ratgeber/paw-patrol*  /kindergeburtstag  301
-/ratgeber/pokemon*  /kindergeburtstag  301
-/ratgeber/spider-man*  /kindergeburtstag  301
-/ratgeber/super-mario*  /kindergeburtstag  301
+# (Toter /ratgeber-Lizenz-Block entfernt 03.06.2026 — war geschattet von Zeile 3; /ratgeber/* → 410 oben)
 /ueber-uns  /ueber-uns.html  200
