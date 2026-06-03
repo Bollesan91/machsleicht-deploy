@@ -1,3 +1,19 @@
+# Session-Notiz — 03.06.2026 (GSC-De-Index Root-Cause + 410-Fix DEPLOYED + Piraten-Spiel-Kuratierung)
+
+## 🚨 GSC-Massen-De-Indexing diagnostiziert + erster Fix deployed
+- **Befund:** Indexiert 308 (8.4.) → **1 heute**, 350 „nicht indexiert". GSC-Grund **„Gecrawlt – zurzeit nicht indexiert" (310)**. **Ursache = Google-Site-Quality-Abwertung wegen Phase-1-Dünn-Content-Masse** (Lizenzmarken × Einzelalter). **KEIN technischer Defekt** (Origin <0,7s, Cache HIT, robots/Canonical/Sitemap sauber, PSI 98/87). Ahrefs-„504/Slow-Page" = Crawler-Artefakte (Umami-Beacon-Render-Timeout).
+- **Aktueller Content ist GUT:** 37 Alters-Gruppen-Seiten = 6–8k Wörter, 0% Template-Dup → behalten. 48 Unique-Ratgeber + Planer.
+- **DEPLOYED (Ende deploy 03.06., main 5e15e81):** P0-GSC — 25 Lizenz-/Zirkus-Legacy-Redirects von `301→/kindergeburtstag` (Soft-404-Muster) auf **`410 Gone`** umgestellt + `410.html`. Netlify-Origin liefert 410 (cache-bust-verifiziert). **⚠️ OFFEN: Cloudflare „Purge Everything" durch Bolle** (Edge serviert noch gecachte 301), DANN GSC: Sitemap neu einreichen + Flaggschiff-Seiten Index-anfragen. Voll-Diagnose: `_dev/handoff/2026-06-03-gsc-deindex-rootcause.md` · Ticket P0-GSC. Recovery = 2–4 Monate.
+- **Mini-Follow-ups offen:** `/einladung`-Sitemap listet 12 redirecting URLs + Canonical-auf-Redirect; gstatic-Preconnect (Mobile-LCP); `/ratgeber/{lizenz}*` (tot, → checkliste, optional 410).
+
+## 🎮 Piraten-Spiel-Kuratierung (js/motto-data.js = neue SSOT)
+- **6 Spiele gelockt:** walk-the-plank(85), kanonenkugeln(89*), schatz-im-sand(91*), papagei-sagt(87), **piratenschiff-bauen(87, class bastel-aktion)**, **hai-tag(85, class aktiv-spiel, Best-of-3-Median 84/85/88)**. *(* = kanonenkugeln+schatz-im-sand noch WebFetch-Scores, strikt-re-verify offen.)*
+- **Schwertkampf GESTRICHEN** (Säbel-Kontakt strukturell sicherheits-gedeckelt, Median 83 + Haftung; in Rubrik als gestrichene Klasse vermerkt).
+- **Rubrik erweitert** (`_dev/review/game-rubric.md`): Kategorien `bastel-aktion` (Gate 85) + `aktiv-spiel` (Gate 85, Best-of-3-Median) + **Machbarkeit-Reframe** (gebundene Aufsicht = Baseline, kein Abzug — analog Foto-Reframe). Review-Methodik: JS-Paste in frische Opus-Tabs (keine Screenshots, kein GitHub-Push nötig).
+- **Offen:** kanonenkugeln+schatz-im-sand strikt-verify; restliche Piraten-Spiele + 14 andere Mottos.
+
+---
+
 # Session-Notiz — 01.06.2026 früh (Wizard-Quick-Wins + Spiel-Detail-Frame + STRATEGISCHER PIVOT)
 
 ## 🎯 STRATEGISCHER PIVOT (01.06.2026 nachts): Wizard wird der neue Planer
