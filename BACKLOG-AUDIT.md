@@ -16,6 +16,7 @@
 
 | # | Status | Prio | Ticket | Kurzbeschreibung | Aufwand | Warum jetzt |
 |---|--------|------|--------|------------------|---------|-------------|
+| 0 | ⏳ | **P0** | P0-GSC | `[KERN]` **GSC-De-Indexing Recovery** — Legacy-Redirects (Soft-404-Muster: hunderte Thin-/Lizenz-URLs 301→/kindergeburtstag) auf **410 Gone** umstellen; `/einladung`-Sitemap+Canonical-auf-Redirect fixen; danach Sitemap neu einreichen + Flaggschiff-Seiten Index-anfragen + GSC-Validierung neu. **Ursache = Google-Site-Quality-Abwertung wegen Phase-1-Dünn-Content-Masse (308→1 indexiert seit April), KEIN Server-/noindex-Defekt; aktuelle 126 Seiten sind unique+gut.** Detail+Belege: `_dev/handoff/2026-06-03-gsc-deindex-rootcause.md` | 3–5 Std + 2–4 Mon Geduld | Massen-De-Index seit April, Validierung 30.05 fehlgeschlagen — höchste Prio |
 | 1 | ✅ | **P0** | P0-5 (ex P1-5) | **GitHub Token rotieren** | 5 Min | Erledigt 19.04.2026 |
 | 2 | ✅ | **P0** | P0-1 | Google Search Console einrichten + Sitemap einreichen | 20 Min | Erledigt 19.04.2026 |
 | 3 | ✅ | **P1** | P1-10 | **Cloudflare Worker deployen** (Rätsel nach Maß + Partyseite) | 2 Std (Laptop) | Erledigt 19.04.2026 |
