@@ -2,6 +2,8 @@
 
 Stand: 2026-05-12. Verbindlich vor jedem Patch. Self-audit-validiert.
 
+> ⚠️ **AKTIVES KRITISCHES ISSUE (2026-06-03): GSC-Massen-De-Indexing 308→1.** Grund „Gecrawlt – zurzeit nicht indexiert" = **Google-Site-Quality-Abwertung wegen Phase-1-Dünn-Content-Masse** (Lizenzmarken × Einzelalter), NICHT technischer Defekt (Origin/Cache/robots/Canonical sind live sauber, PSI 98/87). Aktuelle 126 Seiten sind unique+gut. Größter fixbarer Hebel: Legacy-URLs redirecten als Soft-404-Muster alle stumpf auf `/kindergeburtstag` → auf **410 Gone** umstellen. Recovery = 2–4 Monate Reputations-Wiederaufbau. **Voll-Diagnose + Plan: `_dev/handoff/2026-06-03-gsc-deindex-rootcause.md` · Ticket P0-GSC.**
+
 ## Verwandte Dokumente
 
 | Doku | Zweck | Pflege-Frequenz |

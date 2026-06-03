@@ -159,8 +159,8 @@
 /e/*  /.netlify/functions/serve-invite  200
 /kindergeburtstag/detektiv-4-jahre  /kindergeburtstag/detektiv-3-5-jahre  301!
 
-# Zirkus-Motto geloescht — alle URLs auf Master umleiten
-/kindergeburtstag/zirkus*     /kindergeburtstag  301!
+# Zirkus-Motto geloescht — 410 GONE (umgestellt 03.06.2026, GSC-Recovery P0-GSC; vorher 301->Master = Soft-404)
+/kindergeburtstag/zirkus*     /410.html  410
 
 # Neue Mottos (Pferde/Ritter/Baustelle): Age-Group-URLs auf Hub-Page weiterleiten
 # Hub-Page selbst (/pferde, /ritter, /baustelle) sind als HTML vorhanden — KEINE Wildcards!
@@ -202,26 +202,27 @@
 /kindergeburtstag/dino-forscherpass  /kindergeburtstag/dino-forscherpass.html  200
 /kindergeburtstag/dino-quiz  /kindergeburtstag/dino-quiz.html  200
 
-# === Lizenz-Mottos: 301 auf Hauptseite (Cut 30.04.2026) ===
+# === Lizenz-Mottos: 410 GONE (Cut 30.04.2026; auf 410 umgestellt 03.06.2026, GSC-Recovery P0-GSC) ===
 # Frozen, Harry Potter, Minecraft, Ninjago, Paw Patrol, Pokémon, Spider-Man, Super Mario
-# Strategische Entscheidung: keine Lizenz-Mottos im Tool, Reduktion auf 7 Voll-Mottos.
-# Begründung in STRATEGIE.md.
-/kindergeburtstag/frozen*  /kindergeburtstag  301
-/kindergeburtstag/harry-potter*  /kindergeburtstag  301
-/kindergeburtstag/minecraft*  /kindergeburtstag  301
-/kindergeburtstag/ninjago*  /kindergeburtstag  301
-/kindergeburtstag/paw-patrol*  /kindergeburtstag  301
-/kindergeburtstag/pokemon*  /kindergeburtstag  301
-/kindergeburtstag/spider-man*  /kindergeburtstag  301
-/kindergeburtstag/super-mario*  /kindergeburtstag  301
-/frozen-guide  /kindergeburtstag  301
-/harry-potter-guide  /kindergeburtstag  301
-/minecraft-guide  /kindergeburtstag  301
-/ninjago-guide  /kindergeburtstag  301
-/paw-patrol-guide  /kindergeburtstag  301
-/pokemon-guide  /kindergeburtstag  301
-/spider-man-guide  /kindergeburtstag  301
-/super-mario-guide  /kindergeburtstag  301
+# Strategische Entscheidung: keine Lizenz-Mottos. Vorher 301->/kindergeburtstag = Soft-404-Muster,
+# das Google misstrauisch machte (Massen-De-Index). 410 = sauberes "endgueltig weg"-Signal.
+# Begründung in STRATEGIE.md + _dev/handoff/2026-06-03-gsc-deindex-rootcause.md.
+/kindergeburtstag/frozen*  /410.html  410
+/kindergeburtstag/harry-potter*  /410.html  410
+/kindergeburtstag/minecraft*  /410.html  410
+/kindergeburtstag/ninjago*  /410.html  410
+/kindergeburtstag/paw-patrol*  /410.html  410
+/kindergeburtstag/pokemon*  /410.html  410
+/kindergeburtstag/spider-man*  /410.html  410
+/kindergeburtstag/super-mario*  /410.html  410
+/frozen-guide  /410.html  410
+/harry-potter-guide  /410.html  410
+/minecraft-guide  /410.html  410
+/ninjago-guide  /410.html  410
+/paw-patrol-guide  /410.html  410
+/pokemon-guide  /410.html  410
+/spider-man-guide  /410.html  410
+/super-mario-guide  /410.html  410
 /ratgeber  /kindergeburtstag  301
 /ratgeber/frozen*  /kindergeburtstag  301
 /ratgeber/harry-potter*  /kindergeburtstag  301
