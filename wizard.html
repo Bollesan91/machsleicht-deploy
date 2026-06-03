@@ -766,9 +766,10 @@
     <div class="question" data-step="2">
       <h3>Wann ist der Geburtstag?</h3>
       <p class="help">Datum + Uhrzeit — die Tagesplan-Zeiten skalieren entsprechend.</p>
-      <div class="row-2">
-        <div><label>Datum</label><input type="date" id="qDate" oninput="liveUpdateDate()"></div>
+      <div><label>Datum</label><input type="date" id="qDate" oninput="liveUpdateDate()"></div>
+      <div class="row-2" style="margin-top:10px">
         <div><label>Start-Uhrzeit</label><input type="time" id="qTime" value="14:00" oninput="liveUpdateTime()"></div>
+        <div><label>End-Uhrzeit</label><input type="time" id="qEndTime" value="16:30" oninput="liveUpdateEndTime()"></div>
       </div>
     </div>
     <div class="question" data-step="3">
@@ -986,6 +987,7 @@
     name: 'Lukas',
     date: defaultDate(),
     time: '14:00',
+    endTime: '16:30',
     guests: 6,
     location: 'zuhause',
     games: [],
@@ -1181,7 +1183,7 @@
       <article class="mod">
         <header class="mod__head">
           <span class="mod__icon">🗓️</span>
-          <h3 class="mod__title">Tagesplan · ${timeline[0].time}–${timeline[timeline.length-1].time}</h3>
+          <h3 class="mod__title">Tagesplan · ${timeline[0].time}–${state.endTime || timeline[timeline.length-1].time}</h3>
         </header>
         <div class="timeline">${timelineHtml}</div>
         <button class="timeline-add" onclick="toggleTimelineForm()">
@@ -1244,7 +1246,7 @@
   function buildTimeline(){
     const startHour = parseInt(state.time.split(':')[0]);
     const startMin = parseInt(state.time.split(':')[1]);
-    let t = startHour * 60 + startMin;
+    const start = startHour * 60 + startMin;
     const isShort = state.age === '3-5';
     const mottoName = state.motto?.name || 'Piraten';
     const persona = state.motto?.persona || 'Pirat';
@@ -1255,13 +1257,21 @@
     const baseItems = [
       {min:0, title:`Ankommen + ${emoji} Kostüm`, desc:'Schminke, Fotos, Aufwärm-Spiel'},
       {min:20, title:`${persona}-Versammlung`, desc:`${state.name} begrüßt + ${mottoName}-Eid`},
-      {min:35, title:`Spiel: ${firstGame}`, desc:'15 Min · Material steht bereit'},
-      {min:60, title:'🗺️ Schatzsuche', desc:isShort ? '3 Stationen, ~30 Min' : '5 Stationen, ~45 Min'},
+      {min:35, title:`Spiel: ${firstGame}`, desc:'Material steht bereit'},
+      {min:60, title:'🗺️ Schatzsuche', desc:isShort ? '3 Stationen' : '5 Stationen'},
       {min:isShort ? 90 : 105, title:'Kuchen + Kaffee', desc:'Eltern-Pause'},
-      ...(isShort ? [] : [{min:135, title:`Spiel: ${secondGame}`, desc:'15 Min'}]),
+      ...(isShort ? [] : [{min:135, title:`Spiel: ${secondGame}`, desc:''}]),
       {min:isShort ? 150 : 160, title:'Mitgebsel + Verabschiedung', desc:'Urkunden + Schatzbeutel'}
     ];
-    const base = baseItems.map((i,bi) => ({time:fmt(t+i.min), title:i.title, desc:i.desc, custom:false, sortKey:t+i.min+bi*0.01}));
+
+    // Auto-Skalierung: Basis-Programm proportional ins Fenster [Start, Endzeit] stauchen/strecken
+    const naturalSpan = baseItems[baseItems.length-1].min || 1;
+    let end = null;
+    if(state.endTime && /^\d\d?:\d\d$/.test(state.endTime)){ const [eh,em]=state.endTime.split(':').map(Number); end = eh*60+em; }
+    const span = (end != null && (end - start) >= 30) ? (end - start) : naturalSpan;  // ungültig/zu kurz → Natur-Dauer
+    const scale = span / naturalSpan;
+
+    const base = baseItems.map((i,bi) => { const off = Math.round(i.min*scale); return {time:fmt(start+off), title:i.title, desc:i.desc, custom:false, sortKey:start+off+bi*0.01}; });
     const customs = (state.customEntries || []).map((c, idx) => {
       const [h,m] = c.time.split(':').map(Number);
       return {time:c.time, title:c.title, desc:'', dur:c.dur, custom:true, customIdx:idx, sortKey:h*60+m+0.005};
@@ -1344,6 +1354,7 @@
     document.getElementById('qName').value = state.name === 'Lukas' ? '' : state.name;
     document.getElementById('qDate').value = state.date;
     document.getElementById('qTime').value = state.time;
+    { const e = document.getElementById('qEndTime'); if(e) e.value = state.endTime || '16:30'; }
     document.getElementById('qGuests').value = state.guests;
     document.getElementById('qGuestsLabel').textContent = state.guests;
     document.querySelectorAll('#qLocationOpts .option').forEach(o => o.classList.toggle('selected', o.dataset.loc === state.location));
@@ -1386,7 +1397,8 @@
     autoSave();
   }
   function liveUpdateDate(){ const v = document.getElementById('qDate').value; if(!v) return; state.date = v; document.getElementById('planDate1').textContent = formatDateShort(v) + ', ' + state.time + ' Uhr'; autoSave() }
-  function liveUpdateTime(){ state.time = document.getElementById('qTime').value; document.getElementById('planDate1').textContent = formatDateShort(state.date) + ', ' + state.time + ' Uhr'; autoSave() }
+  function liveUpdateTime(){ state.time = document.getElementById('qTime').value; document.getElementById('planDate1').textContent = formatDateShort(state.date) + ', ' + state.time + ' Uhr'; if(state.motto) renderPlanPreview(); autoSave() }
+  function liveUpdateEndTime(){ state.endTime = document.getElementById('qEndTime').value; if(state.motto) renderPlanPreview(); autoSave() }
   function liveUpdateGuests(){ const v = +document.getElementById('qGuests').value; state.guests = v; document.getElementById('qGuestsLabel').textContent = v; document.getElementById('planGuests1').textContent = v; autoSave() }
 
   document.querySelectorAll('#qLocationOpts .option').forEach(opt => {
