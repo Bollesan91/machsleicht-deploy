@@ -2,6 +2,10 @@
 /ratgeber  /kindergeburtstag-checkliste  301!
 /ratgeber/*  /410.html  410
 
+# Wizard → Kindergeburtstag-Hub (Swap 04.06.2026: Wizard-Tool ist jetzt /kindergeburtstag, alte React-Seite ersetzt)
+/wizard       /kindergeburtstag  301
+/wizard.html  /kindergeburtstag  301
+
 /spielkarten  /spielkarten.html  200
 /impressum  /impressum.html  200
 /datenschutz  /datenschutz.html  200
