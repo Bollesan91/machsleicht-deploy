@@ -598,6 +598,11 @@
   .etips{list-style:none;padding:0;margin:0}
   .etips li{padding:7px 0;border-bottom:1px solid #F3ECE3;font-size:13px;line-height:1.5;color:#444}
   .etips li:last-child{border-bottom:none}
+  .sz-map{display:flex;align-items:center;flex-wrap:wrap;gap:4px;padding:14px;background:#FBF6EE;border:1px dashed #C8B9A6;border-radius:12px;margin:0 0 14px}
+  .sz-dot{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--accent,#FF6F00);color:#fff;font-weight:800;font-size:13px;font-family:'Nunito';flex:none}
+  .sz-line{width:18px;height:2px;background:#C8B9A6;flex:none}
+  .sz-x{font-size:22px;flex:none;margin-left:2px}
+  .sz-hint{color:#0F7B3F;background:#F0FBF4;padding:6px 14px;margin:8px 0 0!important;border-radius:0 0 8px 8px}
 </style>
 </head>
 <body>
@@ -1560,15 +1565,41 @@
     if(v) state.eliteVariant = v.id;   // Tab-Highlight-Konsistenz: tatsaechlich gewaehlte Variante zurueckschreiben
     return v;
   }
+  // ===== SCHATZSUCHE-MODUL (Phase 4) — /data/schatzsuche.json, 15 Themen x klein/mittel/gross =====
+  let _schatzCache;
+  async function getSchatz(){
+    if(_schatzCache !== undefined) return _schatzCache;
+    try{ const r = await fetch('/data/schatzsuche.json'); _schatzCache = r.ok ? await r.json() : null; }
+    catch(e){ _schatzCache = undefined; return null; }   // transienter Fehler -> nicht cachen
+    return _schatzCache;
+  }
+  function buildSchatzHtml(theme, age){
+    if(!theme) return '';
+    const size = eliteGroup(age);
+    const stations = (theme.stations && theme.stations[size]) || [];
+    if(!stations.length) return '';
+    const intro = (theme.intro && theme.intro[size]) || '';
+    const route = stations.map((s,k)=>`<span class="sz-dot">${k+1}</span>`).join('<span class="sz-line"></span>')
+      + '<span class="sz-line"></span><span class="sz-x">'+esc(theme.emoji||'🏴‍☠️')+'</span>';
+    const list = stations.map((s,k)=>
+      `<details class="egame"><summary><b>${k+1}.</b> ${esc(s.name||'')} <span class="egame__meta">${s.dauer?esc(String(s.dauer))+' Min':''}${s.typ?' · '+esc(s.typ):''}</span></summary>`
+      + (s.desc?`<p>${esc(s.desc)}</p>`:'')
+      + (s.hint?`<p class="sz-hint">🧩 Rätsel-Tipp: ${esc(s.hint)}</p>`:'')
+      + `</details>`).join('');
+    return `<article class="mod"><header class="mod__head"><span class="mod__icon">🗺️</span><h3 class="mod__title">Schatzsuche · ${esc(theme.name||'')} · ${stations.length} Stationen</h3></header>`
+      + (intro?`<p class="evar-intro">${esc(intro)}</p>`:'')
+      + `<div class="sz-map" aria-hidden="true">${route}</div>${list}</article>`;
+  }
   function setEliteVariant(v){ state.eliteVariant = v; renderElitePlan(); autoSave(); }
   async function renderElitePlan(){
     if(!state.motto) return;
     const reqMotto = state.motto.id, reqAge = state.age || '6-8';   // Bug A: Identitaet vor await capturen
-    const d = await getElite(reqMotto, reqAge);
+    const [d, allSchatz] = await Promise.all([getElite(reqMotto, reqAge), getSchatz()]);
     if(!state.motto || state.motto.id !== reqMotto || (state.age||'6-8') !== reqAge) return; // Motto/Alter waehrend Fetch gewechselt -> spaeten Render verwerfen
     if(!d) return; // kein Elite-Datensatz -> bestehendes Fallback-Rendering bleibt stehen
     const v = currentVariant(d); if(!v) return;
     const body = document.getElementById('planBody'); if(!body) return;
+    const schatzHtml = buildSchatzHtml((allSchatz||[]).find(t => t.id === reqMotto), reqAge);
 
     const vtabs = (d.variants || []).map(x =>
       `<button class="evar ${x.id === v.id ? 'evar--on' : ''}" onclick="setEliteVariant('${escA(x.id)}')">${esc((x.label||x.id).split('—')[0].trim())}</button>`
@@ -1607,6 +1638,7 @@
       ${v.intro ? `<p class="evar-intro">${esc(v.intro)}</p>` : ''}
       <article class="mod"><header class="mod__head"><span class="mod__icon">🗓️</span><h3 class="mod__title">Tagesplan${v.timeWindow?' · '+esc(v.timeWindow):''}</h3></header><div class="timeline">${sched}</div></article>
       <article class="mod"><header class="mod__head"><span class="mod__icon">🎮</span><h3 class="mod__title">Spiele · ${(v.games||[]).length} mit Anleitung</h3></header>${games}</article>
+      ${schatzHtml}
       <article class="mod"><header class="mod__head"><span class="mod__icon">🛒</span><h3 class="mod__title">Einkaufsliste${v.costContext?' · '+esc(v.costContext):''}</h3></header><ul class="eshop">${shop}</ul></article>
       ${cake}${tips}${faq}
     `;
