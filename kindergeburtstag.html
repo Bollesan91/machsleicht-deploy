@@ -1569,9 +1569,12 @@
   let _schatzCache;
   async function getSchatz(){
     if(_schatzCache !== undefined) return _schatzCache;
-    try{ const r = await fetch('/data/schatzsuche.json'); _schatzCache = r.ok ? await r.json() : null; }
-    catch(e){ _schatzCache = undefined; return null; }   // transienter Fehler -> nicht cachen
-    return _schatzCache;
+    try{
+      const r = await fetch('/data/schatzsuche.json');
+      if(!r.ok) return null;                 // BUG-1: 4xx/5xx (fetch wirft hier NICHT) -> nicht cachen, Retry erlauben
+      _schatzCache = await r.json();         // nur erfolgreichen, validen Datensatz cachen
+      return _schatzCache;
+    }catch(e){ return null; }                // Netz-/Parse-Fehler -> nicht cachen
   }
   function buildSchatzHtml(theme, age){
     if(!theme) return '';
