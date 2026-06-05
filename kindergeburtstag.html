@@ -573,6 +573,30 @@
   .seo-base__schedule strong,.seo-base__cost strong{color:#1E3A5F}
   .seo-base a{color:#C2410C}
   .seo-base a:hover{color:#9A3412}
+  /* ELITE-RENDERER (Phase 2) */
+  .evar-row{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+  .evar{flex:1;min-width:90px;padding:10px 12px;border:2px solid #F0E6D8;background:#fff;border-radius:12px;font-family:'Nunito';font-weight:800;font-size:13px;color:#666;cursor:pointer;transition:all .15s}
+  .evar:hover{border-color:#FF6F00;color:#E64A00}
+  .evar--on{background:var(--accent,#FF6F00);border-color:var(--accent,#FF6F00);color:#fff}
+  .evar-intro{font-size:13px;color:#666;margin:0 0 14px;line-height:1.55}
+  .egame{border:1px solid #F0E6D8;border-radius:10px;margin-bottom:8px;background:#FFFCF8;overflow:hidden}
+  .egame>summary{padding:11px 14px;cursor:pointer;font-weight:800;font-size:14px;color:var(--accent,#1E3A5F);list-style:none}
+  .egame>summary::-webkit-details-marker{display:none}
+  .egame[open]>summary{border-bottom:1px solid #F0E6D8}
+  .egame__meta{font-weight:600;font-size:11px;color:#999}
+  .egame p,.egame ol{font-size:13px;line-height:1.55;color:#444;margin:8px 14px}
+  .egame ol{padding-left:20px}
+  .egame__safe{color:#B45309;background:#FFFBEB;padding:6px 14px;margin:8px 0 0!important}
+  .egame__why{color:#0F7B3F}
+  .eshop{list-style:none;padding:0;margin:0}
+  .eshop li{padding:8px 0;border-bottom:1px solid #F3ECE3;font-size:14px;color:#444}
+  .eshop li:last-child{border-bottom:none}
+  .eshop a{color:#C2410C;font-weight:700;text-decoration:none}
+  .eshop a:hover{text-decoration:underline}
+  .eshop__price{color:#0F7B3F;font-weight:800;font-size:13px}
+  .etips{list-style:none;padding:0;margin:0}
+  .etips li{padding:7px 0;border-bottom:1px solid #F3ECE3;font-size:13px;line-height:1.5;color:#444}
+  .etips li:last-child{border-bottom:none}
 </style>
 </head>
 <body>
@@ -1513,6 +1537,72 @@
     document.getElementById('planDate1').textContent = formatDateShort(state.date) + ', ' + state.time + ' Uhr';
     document.getElementById('planGuests1').textContent = state.guests;
     document.getElementById('planLocation1').textContent = locationLabel(state.location);
+    renderElitePlan(); // Elite-Content (Varianten minimal/standard/wow + Affiliate-Einkaufsliste) async drueberlegen, wenn vorhanden
+  }
+
+  // ===== ELITE-CONTENT-RENDERER (Phase 2) — laedt /data/motto/<motto>-<group>.json =====
+  const _eliteCache = {};
+  function eliteGroup(age){ return ({'3-5':'klein','6-8':'mittel','9-12':'gross'})[age] || 'mittel'; }
+  async function getElite(id, age){
+    const key = id + '-' + eliteGroup(age);
+    if(key in _eliteCache) return _eliteCache[key];
+    try{
+      const r = await fetch('/data/motto/' + key + '.json');
+      if(!r.ok){ _eliteCache[key] = null; return null; }
+      const d = await r.json(); _eliteCache[key] = d; return d;
+    }catch(e){ _eliteCache[key] = null; return null; }
+  }
+  function currentVariant(d){
+    const vs = d.variants || [];
+    return vs.find(v => v.id === (state.eliteVariant || 'standard')) || vs[0] || null;
+  }
+  function setEliteVariant(v){ state.eliteVariant = v; renderElitePlan(); }
+  async function renderElitePlan(){
+    if(!state.motto) return;
+    const d = await getElite(state.motto.id, state.age || '6-8');
+    if(!d) return; // kein Elite-Datensatz -> bestehendes Fallback-Rendering bleibt stehen
+    const v = currentVariant(d); if(!v) return;
+    const body = document.getElementById('planBody'); if(!body) return;
+
+    const vtabs = (d.variants || []).map(x =>
+      `<button class="evar ${x.id === v.id ? 'evar--on' : ''}" onclick="setEliteVariant('${esc(x.id)}')">${esc((x.label||x.id).split('—')[0].trim())}</button>`
+    ).join('');
+
+    const sched = (v.schedule || []).map(s =>
+      `<div class="timeline__row"><div class="timeline__time">${esc(s.time||'')}</div><div class="timeline__what"><em>${esc(s.title||'')}</em>${s.description ? '<br>'+esc(s.description) : ''}</div></div>`
+    ).join('');
+
+    const games = (v.games || []).map(g => {
+      const steps = (g.steps || []).map(st => `<li>${esc(st.content || st.name || st)}</li>`).join('');
+      return `<details class="egame"><summary>${esc(g.name||'')} <span class="egame__meta">${g.duration?g.duration+' Min':''}${g.loudness?' · '+esc(g.loudness):''}</span></summary>
+        ${g.material ? `<p><b>Material:</b> ${esc(g.material)}</p>` : ''}
+        ${g.prepText ? `<p><b>Vorbereitung:</b> ${esc(g.prepText)}</p>` : ''}
+        ${steps ? `<ol>${steps}</ol>` : ''}
+        ${g.safetyRule ? `<p class="egame__safe">⚠️ ${esc(g.safetyRule)}</p>` : ''}
+        ${g.whyItWorks ? `<p class="egame__why"><b>${esc(g.whyItWorksTitle||'Warum es wirkt')}:</b> ${esc(g.whyItWorks)}</p>` : ''}
+      </details>`;
+    }).join('');
+
+    const shop = (v.shoppingList || []).map(s => {
+      const label = `${s.emoji ? esc(s.emoji)+' ' : ''}${esc(s.label||'')}`;
+      const price = s.priceEur ? ` <span class="eshop__price">${esc(String(s.priceEur))} €</span>` : '';
+      return s.url
+        ? `<li><a href="${esc(s.url)}" target="_blank" rel="sponsored noopener">${label}</a>${price}</li>`
+        : `<li>${label}${price}</li>`;
+    }).join('');
+
+    const cake = d.cakeRecipe ? `<article class="mod"><header class="mod__head"><span class="mod__icon">🎂</span><h3 class="mod__title">Kuchen</h3></header>${d.cakeRecipe.intro?`<p>${esc(d.cakeRecipe.intro)}</p>`:''}<ol>${(d.cakeRecipe.steps||[]).map(st=>`<li>${esc(st.content||'')}</li>`).join('')}</ol></article>` : '';
+    const tips = (d.parentTips && d.parentTips.structured) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">💡</span><h3 class="mod__title">Eltern-Tipps</h3></header><ul class="etips">${d.parentTips.structured.map(t=>`<li><b>${esc(t.topic||'')}</b> ${esc(t.detail||'')}</li>`).join('')}</ul></article>` : '';
+    const faq = (d.faq && d.faq.length) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">❓</span><h3 class="mod__title">Häufige Fragen</h3></header>${d.faq.map(f=>`<details class="egame"><summary>${esc(f.q||'')}</summary><p>${esc(f.a||'')}</p></details>`).join('')}</article>` : '';
+
+    body.innerHTML = `
+      <div class="evar-row" role="tablist" aria-label="Aufwand-Variante">${vtabs}</div>
+      ${v.intro ? `<p class="evar-intro">${esc(v.intro)}</p>` : ''}
+      <article class="mod"><header class="mod__head"><span class="mod__icon">🗓️</span><h3 class="mod__title">Tagesplan${v.timeWindow?' · '+esc(v.timeWindow):''}</h3></header><div class="timeline">${sched}</div></article>
+      <article class="mod"><header class="mod__head"><span class="mod__icon">🎮</span><h3 class="mod__title">Spiele · ${(v.games||[]).length} mit Anleitung</h3></header>${games}</article>
+      <article class="mod"><header class="mod__head"><span class="mod__icon">🛒</span><h3 class="mod__title">Einkaufsliste${v.costContext?' · '+esc(v.costContext):''}</h3></header><ul class="eshop">${shop}</ul></article>
+      ${cake}${tips}${faq}
+    `;
   }
 
   function buildTimeline(){
