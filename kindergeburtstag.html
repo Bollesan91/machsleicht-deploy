@@ -124,8 +124,10 @@
   html,body{margin:0;padding:0;font-family:'Nunito',system-ui,sans-serif;background:#FFF8F0;color:#1A1A1A;line-height:1.5;-webkit-font-smoothing:antialiased}
   h1,h2,h3,h4{font-family:'Lilita One',cursive;font-weight:400;letter-spacing:.4px;line-height:1.15;margin:0}
 
-  .stage{display:none;min-height:100vh}
-  .stage.active{display:block;animation:fadeUp .35s ease-out}
+  /* Scroll-Funnel: Stages gestapelt + immer im DOM (crawlbar), Navigation per Scroll statt Toggle */
+  .stage{display:block;scroll-margin-top:64px;padding-bottom:8px}
+  .stage + .stage{border-top:1px solid #F0E6D8}
+  .stage.active{animation:fadeUp .35s ease-out}
   @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
   /* TOP NAV */
@@ -1727,26 +1729,27 @@
 
   // ===== STAGE NAV =====
   function goStage(n){
-    document.querySelectorAll('.stage').forEach(s => s.classList.remove('active'));
-    document.getElementById('stage'+n).classList.add('active');
     state.stage = n;
+    document.querySelectorAll('.stage').forEach(s => s.classList.remove('active'));
+    const el = document.getElementById('stage'+n);
+    if(el) el.classList.add('active');
     for(let i=1; i<=6; i++){
       const dot = document.getElementById('navDot'+i);
+      if(!dot) continue;
       dot.classList.remove('done','active');
       if(i < n) dot.classList.add('done');
       else if(i === n) dot.classList.add('active');
     }
-    document.getElementById('demoStage').textContent = n;
+    const ds = document.getElementById('demoStage'); if(ds) ds.textContent = n;
     if(n === 4) renderInvitePreview();
     if(n === 5) renderPartyseitePreview();
     if(n === 6) renderDoneSummary();
     autoSave();
-    window.scrollTo({top:0,behavior:'smooth'});
+    if(el) el.scrollIntoView({behavior:'smooth', block:'start'});  // Scroll-Funnel: zum Abschnitt scrollen statt toggeln
   }
   function jumpStage(n){
-    if(n === 1) return goStage(1);
-    if(n === 2 && state.motto) return goStage(2);
-    if(n >= 3 && state.motto && state.age) return goStage(n);
+    // Scroll-Funnel: alle Abschnitte sind im DOM -> Progress-Punkt scrollt direkt hin
+    return goStage(n);
   }
 
   // ===== WIZARD =====
@@ -2167,6 +2170,19 @@
   // ===== Init =====
   renderMottos();
   maybeShowResumeBanner();
+  // Scroll-Funnel: Default-Auswahl + alle Sektionen beim Laden rendern (nie leer, voll crawlbar)
+  (function initFunnel(){
+    try{
+      if(!state.motto){ state.motto = MOTTOS.find(m => m.id === 'piraten') || MOTTOS[0]; }
+      if(!state.age){ state.age = '6-8'; }
+      applyAccent(state.motto);
+      if(typeof renderAges === 'function') renderAges();
+      renderPlanPreview();                                  // Plan + Elite-Content + Schatzsuche (async drueber)
+      try{ renderInvitePreview(); }catch(e){}
+      try{ renderPartyseitePreview(); }catch(e){}
+      try{ renderDoneSummary(); }catch(e){}
+    }catch(e){ /* Default-Render darf den Wizard nie blockieren */ }
+  })();
 </script>
 
 </body>
