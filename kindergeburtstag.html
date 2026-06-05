@@ -574,6 +574,7 @@
   .seo-base a{color:#C2410C}
   .seo-base a:hover{color:#9A3412}
   /* ELITE-RENDERER (Phase 2) */
+  .evar-label{font-family:'Nunito';font-weight:800;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#8a7a68;margin:0 0 6px}
   .evar-row{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
   .evar{flex:1;min-width:90px;padding:10px 12px;border:2px solid #F0E6D8;background:#fff;border-radius:12px;font-family:'Nunito';font-weight:800;font-size:13px;color:#666;cursor:pointer;transition:all .15s}
   .evar:hover{border-color:#FF6F00;color:#E64A00}
@@ -1281,6 +1282,7 @@
     invite: { type:'minispiel', title:'', body:'', deadline:'Bitte Bescheid geben bis 14.06.', sent:0, photo:null, whatsapp:'' },
     partyseite: { slug:'lukas7', rsvp:true, photos:true, wish:false, chat:false, active:false },
     step: 1,
+    eliteVariant: 'standard',
     lastSaved: null
   };
 
@@ -1556,7 +1558,7 @@
     const vs = d.variants || [];
     return vs.find(v => v.id === (state.eliteVariant || 'standard')) || vs[0] || null;
   }
-  function setEliteVariant(v){ state.eliteVariant = v; renderElitePlan(); }
+  function setEliteVariant(v){ state.eliteVariant = v; renderElitePlan(); autoSave(); }
   async function renderElitePlan(){
     if(!state.motto) return;
     const d = await getElite(state.motto.id, state.age || '6-8');
@@ -1596,6 +1598,7 @@
     const faq = (d.faq && d.faq.length) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">❓</span><h3 class="mod__title">Häufige Fragen</h3></header>${d.faq.map(f=>`<details class="egame"><summary>${esc(f.q||'')}</summary><p>${esc(f.a||'')}</p></details>`).join('')}</article>` : '';
 
     body.innerHTML = `
+      <div class="evar-label">Aufwand wählen:</div>
       <div class="evar-row" role="tablist" aria-label="Aufwand-Variante">${vtabs}</div>
       ${v.intro ? `<p class="evar-intro">${esc(v.intro)}</p>` : ''}
       <article class="mod"><header class="mod__head"><span class="mod__icon">🗓️</span><h3 class="mod__title">Tagesplan${v.timeWindow?' · '+esc(v.timeWindow):''}</h3></header><div class="timeline">${sched}</div></article>
