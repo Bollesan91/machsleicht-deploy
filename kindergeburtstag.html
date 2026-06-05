@@ -1550,24 +1550,28 @@
     if(key in _eliteCache) return _eliteCache[key];
     try{
       const r = await fetch('/data/motto/' + key + '.json');
-      if(!r.ok){ _eliteCache[key] = null; return null; }
+      if(!r.ok){ _eliteCache[key] = null; return null; }   // echtes 404/fehlt -> dauerhaft negativ cachen
       const d = await r.json(); _eliteCache[key] = d; return d;
-    }catch(e){ _eliteCache[key] = null; return null; }
+    }catch(e){ return null; }   // Bug B: transienter Netz-/Parse-Fehler -> NICHT cachen, naechster Versuch darf erneut laden
   }
   function currentVariant(d){
     const vs = d.variants || [];
-    return vs.find(v => v.id === (state.eliteVariant || 'standard')) || vs[0] || null;
+    const v = vs.find(x => x.id === (state.eliteVariant || 'standard')) || vs[0] || null;
+    if(v) state.eliteVariant = v.id;   // Tab-Highlight-Konsistenz: tatsaechlich gewaehlte Variante zurueckschreiben
+    return v;
   }
   function setEliteVariant(v){ state.eliteVariant = v; renderElitePlan(); autoSave(); }
   async function renderElitePlan(){
     if(!state.motto) return;
-    const d = await getElite(state.motto.id, state.age || '6-8');
+    const reqMotto = state.motto.id, reqAge = state.age || '6-8';   // Bug A: Identitaet vor await capturen
+    const d = await getElite(reqMotto, reqAge);
+    if(!state.motto || state.motto.id !== reqMotto || (state.age||'6-8') !== reqAge) return; // Motto/Alter waehrend Fetch gewechselt -> spaeten Render verwerfen
     if(!d) return; // kein Elite-Datensatz -> bestehendes Fallback-Rendering bleibt stehen
     const v = currentVariant(d); if(!v) return;
     const body = document.getElementById('planBody'); if(!body) return;
 
     const vtabs = (d.variants || []).map(x =>
-      `<button class="evar ${x.id === v.id ? 'evar--on' : ''}" onclick="setEliteVariant('${esc(x.id)}')">${esc((x.label||x.id).split('—')[0].trim())}</button>`
+      `<button class="evar ${x.id === v.id ? 'evar--on' : ''}" onclick="setEliteVariant('${escA(x.id)}')">${esc((x.label||x.id).split('—')[0].trim())}</button>`
     ).join('');
 
     const sched = (v.schedule || []).map(s =>
@@ -1589,7 +1593,7 @@
       const label = `${s.emoji ? esc(s.emoji)+' ' : ''}${esc(s.label||'')}`;
       const price = s.priceEur ? ` <span class="eshop__price">${esc(String(s.priceEur))} €</span>` : '';
       return s.url
-        ? `<li><a href="${esc(s.url)}" target="_blank" rel="sponsored noopener">${label}</a>${price}</li>`
+        ? `<li><a href="${escA(s.url)}" target="_blank" rel="sponsored noopener">${label}</a>${price}</li>`
         : `<li>${label}${price}</li>`;
     }).join('');
 
@@ -2040,6 +2044,7 @@
   // ===== GAME-DETAIL DRAWER (Click auf Spiel-Karte) =====
   let gdCurrentGame = null;  // Name des aktuell im Drawer gezeigten Spiels (für „In den Plan")
   const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const escA = s => esc(s).replace(/"/g,'&quot;').replace(/'/g,'&#39;'); // Attribut-Kontext (href etc.)
 
   function openGameDetail(gameName){
     const motto = state.motto || MOTTOS[0];
