@@ -128,6 +128,9 @@
   .stage{display:block;scroll-margin-top:64px;padding-bottom:8px}
   .stage + .stage{border-top:1px solid #F0E6D8}
   .stage.active{animation:fadeUp .35s ease-out}
+  #stage6{display:none}                 /* Done/Abschluss erst zeigen, wenn der Flow erreicht ist (kein Conversion-Endstate fuer Erstbesucher) */
+  #stage6.revealed{display:block}
+  #planBody{min-height:480px}           /* CLS: Platz fuer den (ggf. async nachgerenderten) Plan reservieren */
   @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
   /* TOP NAV */
@@ -1733,6 +1736,7 @@
     document.querySelectorAll('.stage').forEach(s => s.classList.remove('active'));
     const el = document.getElementById('stage'+n);
     if(el) el.classList.add('active');
+    if(el && n === 6) el.classList.add('revealed');   // Done/Abschluss erst jetzt sichtbar machen
     for(let i=1; i<=6; i++){
       const dot = document.getElementById('navDot'+i);
       if(!dot) continue;
@@ -2178,10 +2182,10 @@
       applyAccent(state.motto);
       if(typeof renderAges === 'function') renderAges();
       renderPlanPreview();                                  // Plan + Elite-Content + Schatzsuche (async drueber)
-      try{ renderInvitePreview(); }catch(e){}
-      try{ renderPartyseitePreview(); }catch(e){}
-      try{ renderDoneSummary(); }catch(e){}
-    }catch(e){ /* Default-Render darf den Wizard nie blockieren */ }
+      try{ renderInvitePreview(); }catch(e){ console.warn('initFunnel: renderInvitePreview', e); }
+      try{ renderPartyseitePreview(); }catch(e){ console.warn('initFunnel: renderPartyseitePreview', e); }
+      try{ renderDoneSummary(); }catch(e){ console.warn('initFunnel: renderDoneSummary', e); }
+    }catch(e){ console.warn('initFunnel failed', e); }       // Default-Render darf den Wizard nie blockieren, aber meldet sich
   })();
 </script>
 
