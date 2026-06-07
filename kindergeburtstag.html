@@ -690,8 +690,9 @@
         <label class="eckdaten__f">Ende
           <input type="time" id="iqEndTime" oninput="document.getElementById('qEndTime').value=this.value; liveUpdateEndTime();">
         </label>
-        <label class="eckdaten__f eckdaten__f--wide">Gäste: <b id="iqGuestsLabel">6</b> Kinder
-          <input type="range" id="iqGuests" min="4" max="12" value="6" oninput="document.getElementById('iqGuestsLabel').textContent=this.value; document.getElementById('qGuests').value=this.value; liveUpdateGuests();">
+        <label class="eckdaten__f">Gäste (Kinder)
+          <input type="number" id="iqGuests" min="2" max="20" step="1" value="6" inputmode="numeric" oninput="let v=Math.max(2,Math.min(20,+this.value||6)); document.getElementById('iqGuestsLabel').textContent=v; document.getElementById('qGuests').value=Math.min(12,v); state.guests=v; document.getElementById('planGuests1').textContent=v; autoSave();">
+          <b id="iqGuestsLabel" style="display:none">6</b>
         </label>
       </div>
       <div class="eckdaten__loc" id="iqLocation">
@@ -987,7 +988,7 @@
     <p>Für 3–5 Jahre kürzt du auf rund 2 Stunden und streichst eine Spielrunde; für 9–12 Jahre darf die Hauptaktion länger und kniffliger werden. Eine ausführliche Vorlage steht in unserem <a href="/kindergeburtstag-zeitplan">Zeitplan für 2, 2,5 und 3 Stunden</a>, Ideen für drinnen in den <a href="/kindergeburtstag-spiele-drinnen">Spielen für drinnen</a>.</p>
 
     <h2>Kompletter Beispiel-Plan: Piraten-Geburtstag für 6–8 Jahre</h2>
-    <p>Damit „fertiger Plan" konkret wird — hier zwei erprobte Piraten-Spiele mit vollständiger Anleitung und die passende Einkaufsliste. Im Planer oben bekommst du das für jedes der 15 Mottos und jede Altersstufe automatisch zusammengestellt.</p>
+    <p>Ein <strong>Beispiel</strong>, damit „fertiger Plan" konkret wird — hier zwei erprobte Piraten-Spiele mit Anleitung und die passende Einkaufsliste. Im Planer oben bekommst du das für jedes der 15 Mottos und jede Altersstufe automatisch zusammengestellt. Den <strong>vollständigen</strong> Piraten-Plan für 6–8 Jahre — mit allen Spielen, Deko, Kuchen und Druckvorlagen — findest du auf der ausführlichen <a href="/kindergeburtstag/piraten-6-8-jahre">Piraten-Kindergeburtstag-Seite (6–8 Jahre)</a>.</p>
 
     <h3>Spiel 1: Kanonenkugeln (aktiv, ca. 10 Minuten)</h3>
     <p><strong>Material:</strong> 15–20 weiche Wurfobjekte (Schaumstoffbälle ab 5 cm oder Sockenknäuel), 3 Eimer oder Wäschekörbe, Kreppband für die Wurflinie.</p>
