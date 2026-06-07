@@ -1524,7 +1524,7 @@
     const timelineHtml = timeline.map(row => `
       <div class="timeline__row ${row.custom ? 'timeline__row--custom' : ''}">
         <div class="timeline__time">${row.time}</div>
-        <div class="timeline__what"><em>${row.title}</em>${row.desc ? '<br>'+row.desc : ''}${row.dur ? `<span class="timeline__dur">${row.dur} Min</span>` : ''}</div>
+        <div class="timeline__what"><em>${esc(row.title)}</em>${row.desc ? '<br>'+esc(row.desc) : ''}${row.dur ? `<span class="timeline__dur">${row.dur} Min</span>` : ''}</div>
         <button class="timeline__del" onclick="deleteCustomEntry(${row.custom ? row.customIdx : -1})" title="Entfernen">×</button>
       </div>`).join('');
 
