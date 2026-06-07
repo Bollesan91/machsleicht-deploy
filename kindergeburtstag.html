@@ -131,6 +131,19 @@
   #stage6{display:none}                 /* Done/Abschluss erst zeigen, wenn der Flow erreicht ist (kein Conversion-Endstate fuer Erstbesucher) */
   #stage6.revealed{display:block}
   #planBody{min-height:480px}           /* CLS: Platz fuer den (ggf. async nachgerenderten) Plan reservieren */
+  /* Inline-Eckdaten (Scroll-Funnel) */
+  .eckdaten{max-width:920px;margin:18px auto 0;padding:18px 20px;background:#FFFCF8;border:1px solid #F0E6D8;border-radius:14px}
+  .eckdaten__h{font-family:'Lilita One',cursive;font-size:16px;color:#1E3A5F;margin:0 0 14px}
+  .eckdaten__h span{font-family:'Nunito';font-weight:600;font-size:12px;color:#999}
+  .eckdaten__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+  .eckdaten__f{display:flex;flex-direction:column;gap:5px;font-family:'Nunito';font-weight:700;font-size:12px;color:#5A6473}
+  .eckdaten__f--wide{grid-column:1/-1}
+  .eckdaten__f input[type=text],.eckdaten__f input[type=date],.eckdaten__f input[type=time]{padding:9px 11px;border:1px solid #E6D9C8;border-radius:8px;font-family:'Nunito';font-size:14px;color:#1A1A1A;background:#fff}
+  .eckdaten__f input[type=range]{width:100%}
+  .eckdaten__loc{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .eckdaten__loc button{padding:9px 14px;border:1px solid #E6D9C8;background:#fff;border-radius:999px;font-family:'Nunito';font-weight:700;font-size:13px;color:#5A6473;cursor:pointer;transition:all .15s}
+  .eckdaten__loc button:hover{border-color:var(--accent,#FF6F00)}
+  .eckdaten__loc button.on{background:var(--accent,#FF6F00);border-color:var(--accent,#FF6F00);color:#fff}
   @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
   /* TOP NAV */
@@ -660,6 +673,34 @@
       <p>Spiele, Rätsel und Texte werden alters-angepasst.</p>
     </header>
     <div class="ages" id="agesGrid"></div>
+
+    <!-- Inline-Eckdaten (Scroll-Funnel): Eingaben direkt im Flow statt im Drawer-Popup; spiegeln in die Drawer-Inputs + nutzen die bestehenden liveUpdate-Handler -->
+    <div class="eckdaten" id="eckdaten">
+      <h3 class="eckdaten__h">Deine Eckdaten <span>— passen den Plan live an</span></h3>
+      <div class="eckdaten__grid">
+        <label class="eckdaten__f">Name des Kindes
+          <input type="text" id="iqName" placeholder="z.B. Mia" oninput="document.getElementById('qName').value=this.value; liveUpdateName();">
+        </label>
+        <label class="eckdaten__f">Datum
+          <input type="date" id="iqDate" oninput="document.getElementById('qDate').value=this.value; liveUpdateDate();">
+        </label>
+        <label class="eckdaten__f">Beginn
+          <input type="time" id="iqTime" oninput="document.getElementById('qTime').value=this.value; liveUpdateTime();">
+        </label>
+        <label class="eckdaten__f">Ende
+          <input type="time" id="iqEndTime" oninput="document.getElementById('qEndTime').value=this.value; liveUpdateEndTime();">
+        </label>
+        <label class="eckdaten__f eckdaten__f--wide">Gäste: <b id="iqGuestsLabel">6</b> Kinder
+          <input type="range" id="iqGuests" min="4" max="12" value="6" oninput="document.getElementById('iqGuestsLabel').textContent=this.value; document.getElementById('qGuests').value=this.value; liveUpdateGuests();">
+        </label>
+      </div>
+      <div class="eckdaten__loc" id="iqLocation">
+        <button type="button" data-loc="zuhause" onclick="pickLocationInline('zuhause')">🏠 Zuhause</button>
+        <button type="button" data-loc="drinnen" onclick="pickLocationInline('drinnen')">🛋️ Drinnen</button>
+        <button type="button" data-loc="park" onclick="pickLocationInline('park')">🌳 Park</button>
+        <button type="button" data-loc="halle" onclick="pickLocationInline('halle')">🏟️ Halle</button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1810,7 +1851,25 @@
   function liveUpdateDate(){ const v = document.getElementById('qDate').value; if(!v) return; state.date = v; document.getElementById('planDate1').textContent = formatDateShort(v) + ', ' + state.time + ' Uhr'; autoSave() }
   function liveUpdateTime(){ state.time = document.getElementById('qTime').value; document.getElementById('planDate1').textContent = formatDateShort(state.date) + ', ' + state.time + ' Uhr'; if(state.motto) renderPlanPreview(); autoSave() }
   function liveUpdateEndTime(){ state.endTime = document.getElementById('qEndTime').value; if(state.motto) renderPlanPreview(); autoSave() }
-  function liveUpdateGuests(){ const v = +document.getElementById('qGuests').value; state.guests = v; document.getElementById('qGuestsLabel').textContent = v; document.getElementById('planGuests1').textContent = v; autoSave() }
+  function liveUpdateGuests(){ const v = +document.getElementById('qGuests').value; state.guests = v; document.getElementById('qGuestsLabel').textContent = v; document.getElementById('planGuests1').textContent = v; const il=document.getElementById('iqGuestsLabel'); if(il) il.textContent = v; autoSave() }
+  // Inline-Eckdaten (Scroll-Funnel)
+  function pickLocationInline(loc){
+    state.location = loc;
+    document.querySelectorAll('#qLocationOpts .option').forEach(o => o.classList.toggle('selected', o.dataset.loc === loc));
+    document.querySelectorAll('#iqLocation button').forEach(b => b.classList.toggle('on', b.dataset.loc === loc));
+    if(state.motto) renderPlanPreview();
+    autoSave();
+  }
+  function syncEckdaten(){
+    const set=(id,v)=>{ const e=document.getElementById(id); if(e!=null) e.value=v; };
+    set('iqName', state.name==='Lukas' ? '' : state.name);
+    set('iqDate', state.date);
+    set('iqTime', state.time);
+    set('iqEndTime', state.endTime||'16:30');
+    set('iqGuests', state.guests);
+    const gl=document.getElementById('iqGuestsLabel'); if(gl) gl.textContent = state.guests;
+    document.querySelectorAll('#iqLocation button').forEach(b => b.classList.toggle('on', b.dataset.loc===state.location));
+  }
 
   document.querySelectorAll('#qLocationOpts .option').forEach(opt => {
     opt.addEventListener('click', () => {
@@ -2181,6 +2240,7 @@
       if(!state.age){ state.age = '6-8'; }
       applyAccent(state.motto);
       if(typeof renderAges === 'function') renderAges();
+      if(typeof syncEckdaten === 'function') syncEckdaten();   // Inline-Eckdaten aus State befuellen
       renderPlanPreview();                                  // Plan + Elite-Content + Schatzsuche (async drueber)
       try{ renderInvitePreview(); }catch(e){ console.warn('initFunnel: renderInvitePreview', e); }
       try{ renderPartyseitePreview(); }catch(e){ console.warn('initFunnel: renderPartyseitePreview', e); }
