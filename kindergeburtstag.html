@@ -124,8 +124,26 @@
   html,body{margin:0;padding:0;font-family:'Nunito',system-ui,sans-serif;background:#FFF8F0;color:#1A1A1A;line-height:1.5;-webkit-font-smoothing:antialiased}
   h1,h2,h3,h4{font-family:'Lilita One',cursive;font-weight:400;letter-spacing:.4px;line-height:1.15;margin:0}
 
-  .stage{display:none;min-height:100vh}
-  .stage.active{display:block;animation:fadeUp .35s ease-out}
+  /* Scroll-Funnel: Stages gestapelt + immer im DOM (crawlbar), Navigation per Scroll statt Toggle */
+  .stage{display:block;scroll-margin-top:64px;padding-bottom:8px}
+  .stage + .stage{border-top:1px solid #F0E6D8}
+  .stage.active{animation:fadeUp .35s ease-out}
+  #stage6{display:none}                 /* Done/Abschluss erst zeigen, wenn der Flow erreicht ist (kein Conversion-Endstate fuer Erstbesucher) */
+  #stage6.revealed{display:block}
+  #planBody{min-height:480px}           /* CLS: Platz fuer den (ggf. async nachgerenderten) Plan reservieren */
+  /* Inline-Eckdaten (Scroll-Funnel) */
+  .eckdaten{max-width:920px;margin:18px auto 0;padding:18px 20px;background:#FFFCF8;border:1px solid #F0E6D8;border-radius:14px}
+  .eckdaten__h{font-family:'Lilita One',cursive;font-size:16px;color:#1E3A5F;margin:0 0 14px}
+  .eckdaten__h span{font-family:'Nunito';font-weight:600;font-size:12px;color:#999}
+  .eckdaten__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+  .eckdaten__f{display:flex;flex-direction:column;gap:5px;font-family:'Nunito';font-weight:700;font-size:12px;color:#5A6473}
+  .eckdaten__f--wide{grid-column:1/-1}
+  .eckdaten__f input[type=text],.eckdaten__f input[type=date],.eckdaten__f input[type=time]{padding:9px 11px;border:1px solid #E6D9C8;border-radius:8px;font-family:'Nunito';font-size:14px;color:#1A1A1A;background:#fff}
+  .eckdaten__f input[type=range]{width:100%}
+  .eckdaten__loc{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .eckdaten__loc button{padding:9px 14px;border:1px solid #E6D9C8;background:#fff;border-radius:999px;font-family:'Nunito';font-weight:700;font-size:13px;color:#5A6473;cursor:pointer;transition:all .15s}
+  .eckdaten__loc button:hover{border-color:var(--accent,#FF6F00)}
+  .eckdaten__loc button.on{background:var(--accent,#FF6F00);border-color:var(--accent,#FF6F00);color:#fff}
   @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
   /* TOP NAV */
@@ -573,6 +591,36 @@
   .seo-base__schedule strong,.seo-base__cost strong{color:#1E3A5F}
   .seo-base a{color:#C2410C}
   .seo-base a:hover{color:#9A3412}
+  /* ELITE-RENDERER (Phase 2) */
+  .evar-label{font-family:'Nunito';font-weight:800;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#8a7a68;margin:0 0 6px}
+  .evar-row{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+  .evar{flex:1;min-width:90px;padding:10px 12px;border:2px solid #F0E6D8;background:#fff;border-radius:12px;font-family:'Nunito';font-weight:800;font-size:13px;color:#666;cursor:pointer;transition:all .15s}
+  .evar:hover{border-color:#FF6F00;color:#E64A00}
+  .evar--on{background:var(--accent,#FF6F00);border-color:var(--accent,#FF6F00);color:#fff}
+  .evar-intro{font-size:13px;color:#666;margin:0 0 14px;line-height:1.55}
+  .egame{border:1px solid #F0E6D8;border-radius:10px;margin-bottom:8px;background:#FFFCF8;overflow:hidden}
+  .egame>summary{padding:11px 14px;cursor:pointer;font-weight:800;font-size:14px;color:var(--accent,#1E3A5F);list-style:none}
+  .egame>summary::-webkit-details-marker{display:none}
+  .egame[open]>summary{border-bottom:1px solid #F0E6D8}
+  .egame__meta{font-weight:600;font-size:11px;color:#999}
+  .egame p,.egame ol{font-size:13px;line-height:1.55;color:#444;margin:8px 14px}
+  .egame ol{padding-left:20px}
+  .egame__safe{color:#B45309;background:#FFFBEB;padding:6px 14px;margin:8px 0 0!important}
+  .egame__why{color:#0F7B3F}
+  .eshop{list-style:none;padding:0;margin:0}
+  .eshop li{padding:8px 0;border-bottom:1px solid #F3ECE3;font-size:14px;color:#444}
+  .eshop li:last-child{border-bottom:none}
+  .eshop a{color:#C2410C;font-weight:700;text-decoration:none}
+  .eshop a:hover{text-decoration:underline}
+  .eshop__price{color:#0F7B3F;font-weight:800;font-size:13px}
+  .etips{list-style:none;padding:0;margin:0}
+  .etips li{padding:7px 0;border-bottom:1px solid #F3ECE3;font-size:13px;line-height:1.5;color:#444}
+  .etips li:last-child{border-bottom:none}
+  .sz-map{display:flex;align-items:center;flex-wrap:wrap;gap:4px;padding:14px;background:#FBF6EE;border:1px dashed #C8B9A6;border-radius:12px;margin:0 0 14px}
+  .sz-dot{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--accent,#FF6F00);color:#fff;font-weight:800;font-size:13px;font-family:'Nunito';flex:none}
+  .sz-line{width:18px;height:2px;background:#C8B9A6;flex:none}
+  .sz-x{font-size:22px;flex:none;margin-left:2px}
+  .sz-hint{color:#0F7B3F;background:#F0FBF4;padding:6px 14px;margin:8px 0 0!important;border-radius:0 0 8px 8px}
 </style>
 </head>
 <body>
@@ -625,6 +673,35 @@
       <p>Spiele, Rätsel und Texte werden alters-angepasst.</p>
     </header>
     <div class="ages" id="agesGrid"></div>
+
+    <!-- Inline-Eckdaten (Scroll-Funnel): Eingaben direkt im Flow statt im Drawer-Popup; spiegeln in die Drawer-Inputs + nutzen die bestehenden liveUpdate-Handler -->
+    <div class="eckdaten" id="eckdaten">
+      <h3 class="eckdaten__h">Deine Eckdaten <span>— passen den Plan live an</span></h3>
+      <div class="eckdaten__grid">
+        <label class="eckdaten__f">Name des Kindes
+          <input type="text" id="iqName" placeholder="z.B. Mia" oninput="document.getElementById('qName').value=this.value; liveUpdateName();">
+        </label>
+        <label class="eckdaten__f">Datum
+          <input type="date" id="iqDate" oninput="document.getElementById('qDate').value=this.value; liveUpdateDate();">
+        </label>
+        <label class="eckdaten__f">Beginn
+          <input type="time" id="iqTime" oninput="document.getElementById('qTime').value=this.value; liveUpdateTime();">
+        </label>
+        <label class="eckdaten__f">Ende
+          <input type="time" id="iqEndTime" oninput="document.getElementById('qEndTime').value=this.value; liveUpdateEndTime();">
+        </label>
+        <label class="eckdaten__f">Gäste (Kinder)
+          <input type="number" id="iqGuests" min="2" max="20" step="1" value="6" inputmode="numeric" oninput="let v=Math.max(2,Math.min(20,+this.value||6)); document.getElementById('iqGuestsLabel').textContent=v; document.getElementById('qGuests').value=Math.min(12,v); state.guests=v; document.getElementById('planGuests1').textContent=v; autoSave();">
+          <b id="iqGuestsLabel" style="display:none">6</b>
+        </label>
+      </div>
+      <div class="eckdaten__loc" id="iqLocation">
+        <button type="button" data-loc="zuhause" onclick="pickLocationInline('zuhause')">🏠 Zuhause</button>
+        <button type="button" data-loc="drinnen" onclick="pickLocationInline('drinnen')">🛋️ Drinnen</button>
+        <button type="button" data-loc="park" onclick="pickLocationInline('park')">🌳 Park</button>
+        <button type="button" data-loc="halle" onclick="pickLocationInline('halle')">🏟️ Halle</button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -911,7 +988,7 @@
     <p>Für 3–5 Jahre kürzt du auf rund 2 Stunden und streichst eine Spielrunde; für 9–12 Jahre darf die Hauptaktion länger und kniffliger werden. Eine ausführliche Vorlage steht in unserem <a href="/kindergeburtstag-zeitplan">Zeitplan für 2, 2,5 und 3 Stunden</a>, Ideen für drinnen in den <a href="/kindergeburtstag-spiele-drinnen">Spielen für drinnen</a>.</p>
 
     <h2>Kompletter Beispiel-Plan: Piraten-Geburtstag für 6–8 Jahre</h2>
-    <p>Damit „fertiger Plan" konkret wird — hier zwei erprobte Piraten-Spiele mit vollständiger Anleitung und die passende Einkaufsliste. Im Planer oben bekommst du das für jedes der 15 Mottos und jede Altersstufe automatisch zusammengestellt.</p>
+    <p>Ein <strong>Beispiel</strong>, damit „fertiger Plan" konkret wird — hier zwei erprobte Piraten-Spiele mit Anleitung und die passende Einkaufsliste. Im Planer oben bekommst du das für jedes der 15 Mottos und jede Altersstufe automatisch zusammengestellt. Den <strong>vollständigen</strong> Piraten-Plan für 6–8 Jahre — mit allen Spielen, Deko, Kuchen und Druckvorlagen — findest du auf der ausführlichen <a href="/kindergeburtstag/piraten-6-8-jahre">Piraten-Kindergeburtstag-Seite (6–8 Jahre)</a>.</p>
 
     <h3>Spiel 1: Kanonenkugeln (aktiv, ca. 10 Minuten)</h3>
     <p><strong>Material:</strong> 15–20 weiche Wurfobjekte (Schaumstoffbälle ab 5 cm oder Sockenknäuel), 3 Eimer oder Wäschekörbe, Kreppband für die Wurflinie.</p>
@@ -1257,6 +1334,7 @@
     invite: { type:'minispiel', title:'', body:'', deadline:'Bitte Bescheid geben bis 14.06.', sent:0, photo:null, whatsapp:'' },
     partyseite: { slug:'lukas7', rsvp:true, photos:true, wish:false, chat:false, active:false },
     step: 1,
+    eliteVariant: 'standard',
     lastSaved: null
   };
 
@@ -1447,7 +1525,7 @@
     const timelineHtml = timeline.map(row => `
       <div class="timeline__row ${row.custom ? 'timeline__row--custom' : ''}">
         <div class="timeline__time">${row.time}</div>
-        <div class="timeline__what"><em>${row.title}</em>${row.desc ? '<br>'+row.desc : ''}${row.dur ? `<span class="timeline__dur">${row.dur} Min</span>` : ''}</div>
+        <div class="timeline__what"><em>${esc(row.title)}</em>${row.desc ? '<br>'+esc(row.desc) : ''}${row.dur ? `<span class="timeline__dur">${row.dur} Min</span>` : ''}</div>
         <button class="timeline__del" onclick="deleteCustomEntry(${row.custom ? row.customIdx : -1})" title="Entfernen">×</button>
       </div>`).join('');
 
@@ -1513,6 +1591,107 @@
     document.getElementById('planDate1').textContent = formatDateShort(state.date) + ', ' + state.time + ' Uhr';
     document.getElementById('planGuests1').textContent = state.guests;
     document.getElementById('planLocation1').textContent = locationLabel(state.location);
+    renderElitePlan(); // Elite-Content (Varianten minimal/standard/wow + Affiliate-Einkaufsliste) async drueberlegen, wenn vorhanden
+  }
+
+  // ===== ELITE-CONTENT-RENDERER (Phase 2) — laedt /data/motto/<motto>-<group>.json =====
+  const _eliteCache = {};
+  function eliteGroup(age){ return ({'3-5':'klein','6-8':'mittel','9-12':'gross'})[age] || 'mittel'; }
+  async function getElite(id, age){
+    const key = id + '-' + eliteGroup(age);
+    if(key in _eliteCache) return _eliteCache[key];
+    try{
+      const r = await fetch('/data/motto/' + key + '.json');
+      if(!r.ok){ _eliteCache[key] = null; return null; }   // echtes 404/fehlt -> dauerhaft negativ cachen
+      const d = await r.json(); _eliteCache[key] = d; return d;
+    }catch(e){ return null; }   // Bug B: transienter Netz-/Parse-Fehler -> NICHT cachen, naechster Versuch darf erneut laden
+  }
+  function currentVariant(d){
+    const vs = d.variants || [];
+    const v = vs.find(x => x.id === (state.eliteVariant || 'standard')) || vs[0] || null;
+    if(v) state.eliteVariant = v.id;   // Tab-Highlight-Konsistenz: tatsaechlich gewaehlte Variante zurueckschreiben
+    return v;
+  }
+  // ===== SCHATZSUCHE-MODUL (Phase 4) — /data/schatzsuche.json, 15 Themen x klein/mittel/gross =====
+  let _schatzCache;
+  async function getSchatz(){
+    if(_schatzCache !== undefined) return _schatzCache;
+    try{
+      const r = await fetch('/data/schatzsuche.json');
+      if(!r.ok) return null;                 // BUG-1: 4xx/5xx (fetch wirft hier NICHT) -> nicht cachen, Retry erlauben
+      _schatzCache = await r.json();         // nur erfolgreichen, validen Datensatz cachen
+      return _schatzCache;
+    }catch(e){ return null; }                // Netz-/Parse-Fehler -> nicht cachen
+  }
+  function buildSchatzHtml(theme, age){
+    if(!theme) return '';
+    const size = eliteGroup(age);
+    const stations = (theme.stations && theme.stations[size]) || [];
+    if(!stations.length) return '';
+    const intro = (theme.intro && theme.intro[size]) || '';
+    const route = stations.map((s,k)=>`<span class="sz-dot">${k+1}</span>`).join('<span class="sz-line"></span>')
+      + '<span class="sz-line"></span><span class="sz-x">'+esc(theme.emoji||'🏴‍☠️')+'</span>';
+    const list = stations.map((s,k)=>
+      `<details class="egame"><summary><b>${k+1}.</b> ${esc(s.name||'')} <span class="egame__meta">${s.dauer?esc(String(s.dauer))+' Min':''}${s.typ?' · '+esc(s.typ):''}</span></summary>`
+      + (s.desc?`<p>${esc(s.desc)}</p>`:'')
+      + (s.hint?`<p class="sz-hint">🧩 Rätsel-Tipp: ${esc(s.hint)}</p>`:'')
+      + `</details>`).join('');
+    return `<article class="mod"><header class="mod__head"><span class="mod__icon">🗺️</span><h3 class="mod__title">Schatzsuche · ${esc(theme.name||'')} · ${stations.length} Stationen</h3></header>`
+      + (intro?`<p class="evar-intro">${esc(intro)}</p>`:'')
+      + `<div class="sz-map" aria-hidden="true">${route}</div>${list}</article>`;
+  }
+  function setEliteVariant(v){ state.eliteVariant = v; renderElitePlan(); autoSave(); }
+  async function renderElitePlan(){
+    if(!state.motto) return;
+    const reqMotto = state.motto.id, reqAge = state.age || '6-8';   // Bug A: Identitaet vor await capturen
+    const [d, allSchatz] = await Promise.all([getElite(reqMotto, reqAge), getSchatz()]);
+    if(!state.motto || state.motto.id !== reqMotto || (state.age||'6-8') !== reqAge) return; // Motto/Alter waehrend Fetch gewechselt -> spaeten Render verwerfen
+    if(!d) return; // kein Elite-Datensatz -> bestehendes Fallback-Rendering bleibt stehen
+    const v = currentVariant(d); if(!v) return;
+    const body = document.getElementById('planBody'); if(!body) return;
+    const schatzHtml = buildSchatzHtml((allSchatz||[]).find(t => t.id === reqMotto), reqAge);
+
+    const vtabs = (d.variants || []).map(x =>
+      `<button class="evar ${x.id === v.id ? 'evar--on' : ''}" onclick="setEliteVariant('${escA(x.id)}')">${esc((x.label||x.id).split('—')[0].trim())}</button>`
+    ).join('');
+
+    const sched = (v.schedule || []).map(s =>
+      `<div class="timeline__row"><div class="timeline__time">${esc(s.time||'')}</div><div class="timeline__what"><em>${esc(s.title||'')}</em>${s.description ? '<br>'+esc(s.description) : ''}</div></div>`
+    ).join('');
+
+    const games = (v.games || []).map(g => {
+      const steps = (g.steps || []).map(st => `<li>${esc(st.content || st.name || st)}</li>`).join('');
+      return `<details class="egame"><summary>${esc(g.name||'')} <span class="egame__meta">${g.duration?g.duration+' Min':''}${g.loudness?' · '+esc(g.loudness):''}</span></summary>
+        ${g.material ? `<p><b>Material:</b> ${esc(g.material)}</p>` : ''}
+        ${g.prepText ? `<p><b>Vorbereitung:</b> ${esc(g.prepText)}</p>` : ''}
+        ${steps ? `<ol>${steps}</ol>` : ''}
+        ${g.safetyRule ? `<p class="egame__safe">⚠️ ${esc(g.safetyRule)}</p>` : ''}
+        ${g.whyItWorks ? `<p class="egame__why"><b>${esc(g.whyItWorksTitle||'Warum es wirkt')}:</b> ${esc(g.whyItWorks)}</p>` : ''}
+      </details>`;
+    }).join('');
+
+    const shop = (v.shoppingList || []).map(s => {
+      const label = `${s.emoji ? esc(s.emoji)+' ' : ''}${esc(s.label||'')}`;
+      const price = s.priceEur ? ` <span class="eshop__price">${esc(String(s.priceEur))} €</span>` : '';
+      return s.url
+        ? `<li><a href="${escA(s.url)}" target="_blank" rel="sponsored noopener">${label}</a>${price}</li>`
+        : `<li>${label}${price}</li>`;
+    }).join('');
+
+    const cake = d.cakeRecipe ? `<article class="mod"><header class="mod__head"><span class="mod__icon">🎂</span><h3 class="mod__title">Kuchen</h3></header>${d.cakeRecipe.intro?`<p>${esc(d.cakeRecipe.intro)}</p>`:''}<ol>${(d.cakeRecipe.steps||[]).map(st=>`<li>${esc(st.content||'')}</li>`).join('')}</ol></article>` : '';
+    const tips = (d.parentTips && d.parentTips.structured) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">💡</span><h3 class="mod__title">Eltern-Tipps</h3></header><ul class="etips">${d.parentTips.structured.map(t=>`<li><b>${esc(t.topic||'')}</b> ${esc(t.detail||'')}</li>`).join('')}</ul></article>` : '';
+    const faq = (d.faq && d.faq.length) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">❓</span><h3 class="mod__title">Häufige Fragen</h3></header>${d.faq.map(f=>`<details class="egame"><summary>${esc(f.q||'')}</summary><p>${esc(f.a||'')}</p></details>`).join('')}</article>` : '';
+
+    body.innerHTML = `
+      <div class="evar-label">Aufwand wählen:</div>
+      <div class="evar-row" role="tablist" aria-label="Aufwand-Variante">${vtabs}</div>
+      ${v.intro ? `<p class="evar-intro">${esc(v.intro)}</p>` : ''}
+      <article class="mod"><header class="mod__head"><span class="mod__icon">🗓️</span><h3 class="mod__title">Tagesplan${v.timeWindow?' · '+esc(v.timeWindow):''}</h3></header><div class="timeline">${sched}</div></article>
+      <article class="mod"><header class="mod__head"><span class="mod__icon">🎮</span><h3 class="mod__title">Spiele · ${(v.games||[]).length} mit Anleitung</h3></header>${games}</article>
+      ${schatzHtml}
+      <article class="mod"><header class="mod__head"><span class="mod__icon">🛒</span><h3 class="mod__title">Einkaufsliste${v.costContext?' · '+esc(v.costContext):''}</h3></header><ul class="eshop">${shop}</ul></article>
+      ${cake}${tips}${faq}
+    `;
   }
 
   function buildTimeline(){
@@ -1595,26 +1774,28 @@
 
   // ===== STAGE NAV =====
   function goStage(n){
-    document.querySelectorAll('.stage').forEach(s => s.classList.remove('active'));
-    document.getElementById('stage'+n).classList.add('active');
     state.stage = n;
+    document.querySelectorAll('.stage').forEach(s => s.classList.remove('active'));
+    const el = document.getElementById('stage'+n);
+    if(el) el.classList.add('active');
+    if(el && n === 6) el.classList.add('revealed');   // Done/Abschluss erst jetzt sichtbar machen
     for(let i=1; i<=6; i++){
       const dot = document.getElementById('navDot'+i);
+      if(!dot) continue;
       dot.classList.remove('done','active');
       if(i < n) dot.classList.add('done');
       else if(i === n) dot.classList.add('active');
     }
-    document.getElementById('demoStage').textContent = n;
+    const ds = document.getElementById('demoStage'); if(ds) ds.textContent = n;
     if(n === 4) renderInvitePreview();
     if(n === 5) renderPartyseitePreview();
     if(n === 6) renderDoneSummary();
     autoSave();
-    window.scrollTo({top:0,behavior:'smooth'});
+    if(el) el.scrollIntoView({behavior:'smooth', block:'start'});  // Scroll-Funnel: zum Abschnitt scrollen statt toggeln
   }
   function jumpStage(n){
-    if(n === 1) return goStage(1);
-    if(n === 2 && state.motto) return goStage(2);
-    if(n >= 3 && state.motto && state.age) return goStage(n);
+    // Scroll-Funnel: alle Abschnitte sind im DOM -> Progress-Punkt scrollt direkt hin
+    return goStage(n);
   }
 
   // ===== WIZARD =====
@@ -1671,7 +1852,25 @@
   function liveUpdateDate(){ const v = document.getElementById('qDate').value; if(!v) return; state.date = v; document.getElementById('planDate1').textContent = formatDateShort(v) + ', ' + state.time + ' Uhr'; autoSave() }
   function liveUpdateTime(){ state.time = document.getElementById('qTime').value; document.getElementById('planDate1').textContent = formatDateShort(state.date) + ', ' + state.time + ' Uhr'; if(state.motto) renderPlanPreview(); autoSave() }
   function liveUpdateEndTime(){ state.endTime = document.getElementById('qEndTime').value; if(state.motto) renderPlanPreview(); autoSave() }
-  function liveUpdateGuests(){ const v = +document.getElementById('qGuests').value; state.guests = v; document.getElementById('qGuestsLabel').textContent = v; document.getElementById('planGuests1').textContent = v; autoSave() }
+  function liveUpdateGuests(){ const v = +document.getElementById('qGuests').value; state.guests = v; document.getElementById('qGuestsLabel').textContent = v; document.getElementById('planGuests1').textContent = v; const il=document.getElementById('iqGuestsLabel'); if(il) il.textContent = v; autoSave() }
+  // Inline-Eckdaten (Scroll-Funnel)
+  function pickLocationInline(loc){
+    state.location = loc;
+    document.querySelectorAll('#qLocationOpts .option').forEach(o => o.classList.toggle('selected', o.dataset.loc === loc));
+    document.querySelectorAll('#iqLocation button').forEach(b => b.classList.toggle('on', b.dataset.loc === loc));
+    if(state.motto) renderPlanPreview();
+    autoSave();
+  }
+  function syncEckdaten(){
+    const set=(id,v)=>{ const e=document.getElementById(id); if(e!=null) e.value=v; };
+    set('iqName', state.name==='Lukas' ? '' : state.name);
+    set('iqDate', state.date);
+    set('iqTime', state.time);
+    set('iqEndTime', state.endTime||'16:30');
+    set('iqGuests', state.guests);
+    const gl=document.getElementById('iqGuestsLabel'); if(gl) gl.textContent = state.guests;
+    document.querySelectorAll('#iqLocation button').forEach(b => b.classList.toggle('on', b.dataset.loc===state.location));
+  }
 
   document.querySelectorAll('#qLocationOpts .option').forEach(opt => {
     opt.addEventListener('click', () => {
@@ -1947,6 +2146,7 @@
   // ===== GAME-DETAIL DRAWER (Click auf Spiel-Karte) =====
   let gdCurrentGame = null;  // Name des aktuell im Drawer gezeigten Spiels (für „In den Plan")
   const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const escA = s => esc(s).replace(/"/g,'&quot;').replace(/'/g,'&#39;'); // Attribut-Kontext (href etc.)
 
   function openGameDetail(gameName){
     const motto = state.motto || MOTTOS[0];
@@ -2034,6 +2234,20 @@
   // ===== Init =====
   renderMottos();
   maybeShowResumeBanner();
+  // Scroll-Funnel: Default-Auswahl + alle Sektionen beim Laden rendern (nie leer, voll crawlbar)
+  (function initFunnel(){
+    try{
+      if(!state.motto){ state.motto = MOTTOS.find(m => m.id === 'piraten') || MOTTOS[0]; }
+      if(!state.age){ state.age = '6-8'; }
+      applyAccent(state.motto);
+      if(typeof renderAges === 'function') renderAges();
+      if(typeof syncEckdaten === 'function') syncEckdaten();   // Inline-Eckdaten aus State befuellen
+      renderPlanPreview();                                  // Plan + Elite-Content + Schatzsuche (async drueber)
+      try{ renderInvitePreview(); }catch(e){ console.warn('initFunnel: renderInvitePreview', e); }
+      try{ renderPartyseitePreview(); }catch(e){ console.warn('initFunnel: renderPartyseitePreview', e); }
+      try{ renderDoneSummary(); }catch(e){ console.warn('initFunnel: renderDoneSummary', e); }
+    }catch(e){ console.warn('initFunnel failed', e); }       // Default-Render darf den Wizard nie blockieren, aber meldet sich
+  })();
 </script>
 
 </body>
