@@ -388,7 +388,7 @@ export default {
       const existing = party.guests.findIndex(g=>g.name.toLowerCase()===name.toLowerCase());
       if (existing>=0) party.guests[existing]=guest; else party.guests.push(guest);
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
-      return json({ok:true,guestCount:party.guests.filter(g=>g.status==="ja").length}, request);
+      return json({ok:true,guestCount:party.guests.filter(g=>g.status==="ja").length}, 200, request);
     }
 
     // POST /api/party/:id/wish/:wid/claim
