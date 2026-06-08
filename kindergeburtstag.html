@@ -2034,8 +2034,8 @@ window.plausible.init=function(){};window.plausible.q=[];
           <div class="invite-preview-karte__name">${eName}</div>
           <div class="invite-preview-karte__title">${eBody}</div>
           <div class="invite-preview-karte__details">
-            <b>📅</b> ${dateStr}<br>
-            <b>🕑</b> ${state.time} Uhr<br>
+            <b>📅</b> ${esc(dateStr)}<br>
+            <b>🕑</b> ${esc(state.time)} Uhr<br>
             <b>📍</b> Bei uns zuhause<br><br>
             <span style="font-size:11px">${eDeadline}</span>
           </div>
@@ -2049,7 +2049,7 @@ window.plausible.init=function(){};window.plausible.q=[];
           <div class="invite-preview-print__line"><b>${eName}</b> wird ${ageNum()}!</div>
           <div class="invite-preview-print__line" style="font-size:10px;color:#666;margin:6px 0">${eBody}</div>
           <div class="invite-preview-print__divider"></div>
-          <div class="invite-preview-print__line">📅 ${dateStr}<br>🕑 ${state.time} Uhr<br>📍 Bei uns zuhause</div>
+          <div class="invite-preview-print__line">📅 ${esc(dateStr)}<br>🕑 ${esc(state.time)} Uhr<br>📍 Bei uns zuhause</div>
           <div class="invite-preview-print__line" style="font-size:9px;color:#888;margin-top:8px">${eDeadline}</div>
           <div style="margin-top:10px;font-size:8px;color:#999">~ 1 von 8 Karten · A6 ~</div>
         </div>`;
@@ -2096,7 +2096,8 @@ window.plausible.init=function(){};window.plausible.q=[];
   // ===== STAGE 5: PARTYSEITE =====
   function toggleFeature(f){
     state.partyseite[f] = !state.partyseite[f];
-    const el = {rsvp:'psRsvp',photos:'psPhotos',wish:'psWish',chat:'psChat'}[f];
+    const el = {rsvp:'psRsvp',wish:'psWish'}[f];
+    if(!el) return;
     document.getElementById(el).classList.toggle('on', state.partyseite[f]);
     renderPartyseitePreview();
     autoSave();
@@ -2108,7 +2109,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     const motto = state.motto || MOTTOS[0];
     let html = `<div class="ps-preview">
       <h2>${esc(motto.emoji)} ${esc(state.name)}' ${motto.persona === 'Pirat' ? 'Crew-Treffen' : esc(motto.name) + '-Party'}</h2>
-      <div class="ps-preview__meta">${formatDateLong(state.date)} · ${state.time} Uhr${(typeof locationLabel==='function'&&locationLabel(state.location))?' · '+locationLabel(state.location):''}</div>`;
+      <div class="ps-preview__meta">${esc(formatDateLong(state.date))} · ${esc(state.time)} Uhr${(typeof locationLabel==='function'&&locationLabel(state.location))?' · '+esc(locationLabel(state.location)):''}</div>`;
     if(state.partyseite.rsvp){
       html += `<div class="ps-preview__section">
         <h4>👥 Zusagen <span style="font-weight:400;font-size:11px;color:#999">(Beispiel-Ansicht)</span></h4>
@@ -2121,12 +2122,6 @@ window.plausible.init=function(){};window.plausible.q=[];
         <div class="ps-rsvp-cta">+ Du bist dabei?</div>
       </div>`;
     }
-    if(state.partyseite.photos){
-      html += `<div class="ps-preview__section">
-        <h4>📸 Foto-Galerie</h4>
-        <div class="ps-photo-grid"><div>📷</div><div>📷</div><div>📷</div><div>+</div></div>
-      </div>`;
-    }
     if(state.partyseite.wish){
       html += `<div class="ps-preview__section">
         <h4>🎁 Wunschliste</h4>
@@ -2136,12 +2131,8 @@ window.plausible.init=function(){};window.plausible.q=[];
         </div>
       </div>`;
     }
-    if(state.partyseite.chat){
-      html += `<div class="ps-preview__section">
-        <h4>💬 Eltern-Chat</h4>
-        <div style="font-size:11px;color:#666;background:#F0F0F0;padding:8px;border-radius:6px">Anna: „Kann jemand Lukas mitnehmen?" · vor 2h</div>
-      </div>`;
-    }
+    // F9: Eltern-Chat & Foto-Galerie entfernt — der Worker (Gaesteseite) hat diese Features nicht,
+    // die Preview darf kein nicht-existentes Feature versprechen.
     html += '</div>';
     c.innerHTML = html;
     autoSave();
@@ -2171,7 +2162,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       if(!data.url || !data.editUrl) throw new Error('Unvollstaendige Antwort vom Server');
       state.partyseite.active = true; state.partyseite.url = data.url; state.partyseite.editUrl = data.editUrl;
       if(urlEl) urlEl.innerHTML = '<a href="' + escA(data.url) + '" target="_blank" rel="noopener" style="color:var(--accent,#1E3A5F);font-weight:800">' + esc(data.url) + '</a> · <a href="' + escA(data.editUrl) + '" target="_blank" rel="noopener" style="font-size:12px">Edit-Link — gut aufheben!</a>';
-      try{ if(window.plausible) plausible('party_created', {props:{motto: ((motto.id||'').indexOf('custom')===0?'custom':(motto.id||''))}}); }catch(e){}
+      try{ if(window.plausible) plausible('party_created', {props:{motto: ((motto.id||'').indexOf('custom')===0?'custom':(motto.id||'')), source:'wizard'}}); }catch(e){}
       autoSave();
     }catch(err){
       if(urlEl) urlEl.textContent = '';

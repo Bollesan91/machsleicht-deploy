@@ -179,7 +179,10 @@ function generateToken() {
   return Array.from(crypto.getRandomValues(new Uint8Array(24))).map(b => b.toString(16).padStart(2, "0")).join("");
 }
 function calcTTL(partyDate) {
-  const base = partyDate ? new Date(partyDate) : new Date();
+  // F3: ungueltiges/kaputtes Datum (z.B. "muell") -> new Date(...).getTime()===NaN -> TTL NaN
+  // -> KV put mit expirationTtl:NaN wirft / Party ohne Ablauf. Fallback: 90 Tage ab jetzt.
+  let base = partyDate ? new Date(partyDate) : new Date();
+  if (isNaN(base.getTime())) base = new Date();
   const expiry = new Date(base.getTime() + 90 * 24 * 60 * 60 * 1000);
   return Math.max(Math.floor((expiry.getTime() - Date.now()) / 1000), 86400);
 }
@@ -420,7 +423,7 @@ export default {
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = JSON.parse(raw);
       const body = await request.json();
-      const guestName = (body.name||"").trim();
+      const guestName = (body.name||"").trim().slice(0,50); // F4: Laengen-Limit gegen KV-Bloat/XSS-Payload
       if (!guestName) return json({error:"Name fehlt"},400, request);
       // amount nur bei sharedGift relevant; 0 < amount < 9999
       let amount = null;
@@ -438,6 +441,8 @@ export default {
       if (idx>=0) {
         wish.claimedBy.splice(idx,1);
       } else {
+        // F4: Anzahl-Cap gegen KV-Value-Bloat (anonym beschreibbarer Endpoint)
+        if (wish.claimedBy.length >= 100) return json({error:"Liste voll"},400, request);
         // sharedGift + amount → Object, sonst String wie bisher
         if (wish.sharedGift && amount !== null) wish.claimedBy.push({name:guestName, amount});
         else wish.claimedBy.push(guestName);
@@ -801,7 +806,7 @@ function creatorPage() {
         <button type="button" class="motto-chip" id="customMottoBtn" onclick="toggleCustomMotto()">\u{270F}\u{FE0F} Eigenes...</button>
       </div>
       <div id="customMottoRow" style="display:none;gap:8px">
-        <input type="text" id="mottoEmojiCustom" style="width:56px;text-align:center;font-size:22px" placeholder="\u{1F389}" maxlength="4" oninput="clearChipSelection()">
+        <input type="text" id="mottoEmojiCustom" style="width:56px;text-align:center;font-size:22px" placeholder="\u{1F389}" maxlength="8" oninput="clearChipSelection()">
         <input type="text" id="mottoCustom" placeholder="z.B. Ritter-Party" style="flex:1" maxlength="60" oninput="clearChipSelection()">
       </div>
       <input type="hidden" id="mottoEmoji" value="">
@@ -1097,6 +1102,8 @@ async function createParty(){
     document.getElementById("codeHint").textContent=childName;
     [1,2,3].forEach(i=>document.getElementById("step"+i).classList.add("hidden"));
     document.getElementById("result").classList.remove("hidden");
+    // F8: Conversion-Tracking auch auf dem Creator-Pfad (war nur im Wizard) -> beide Pfade vergleichbar
+    try{ if(window.plausible) plausible("party_created",{props:{motto:(document.getElementById("motto").value||"").slice(0,40),source:"creator"}}); }catch(e){}
     window._pd={...data,childName,motto:document.getElementById("motto").value};
     window.scrollTo({top:0,behavior:"smooth"});
   }catch(e){alert("Fehler: "+e.message);btn.textContent="\u{1F389} Erstellen";btn.disabled=false;}
@@ -1201,8 +1208,9 @@ function partyPage(party, isEditor, photoRoundB64, isPreview) {
   }
 
   // Editor keeps existing layout
-  const ogTitle = name ? `${name} wird ${esc(age)}! ${emoji}` : "Kindergeburtstag! \u{1F389}";
-  const ogDesc = motto ? `${motto} \u2014 Zu-/Absage, Infos & Wunschliste` : "Alle Party-Infos auf einer Seite";
+  // OG-Strings aus ROHwerten bauen \u2014 baseHead esc()'t title+description genau einmal (sonst &amp;amp;)
+  const ogTitle = party.childName ? `${party.childName} wird ${age}! ${party.mottoEmoji||"\u{1F389}"}` : "Kindergeburtstag! \u{1F389}";
+  const ogDesc = party.motto ? `${party.motto} \u2014 Zu-/Absage, Infos & Wunschliste` : "Alle Party-Infos auf einer Seite";
   return `${baseHead(ogTitle+" \u2014 mach\u2019s leicht", ogDesc, color, ogUrl)}
 <body>
 <div class="container">
@@ -1230,7 +1238,8 @@ function guestPageFull(party, photoRoundB64, isPreview) {
   const totalWishes = hasWishes ? party.wishes.length : 0;
   const claimedWishes = hasWishes ? party.wishes.filter(w => (!w.sharedGift && (w.claimedBy||[]).length > 0)).length : 0;
   const ogTitle = "Du bist eingeladen! \u{1F389}";
-  const ogDesc = motto ? `${motto} \u2014 Zu-/Absage, Infos & Wunschliste` : "Alle Party-Infos auf einer Seite";
+  // ROHwert \u2014 wird unten via esc(ogDesc) genau einmal escaped (sonst &amp;amp;)
+  const ogDesc = party.motto ? `${party.motto} \u2014 Zu-/Absage, Infos & Wunschliste` : "Alle Party-Infos auf einer Seite";
   const ogUrl = `https://party.machsleicht.de/${id}`;
 
   // Game URL
@@ -1783,7 +1792,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   async function deleteWish(wid){
     if(!confirm("Wunsch wirklich l\u00F6schen?"))return;
     const editToken=new URLSearchParams(location.search).get("edit");
-    const currentWishes=${JSON.stringify((party.wishes||[]).map(w=>({id:w.id,title:w.title,url:w.url,price:w.price,sharedGift:w.sharedGift,claimedBy:w.claimedBy})))};
+    const currentWishes=${JSON.stringify((party.wishes||[]).map(w=>({id:w.id,title:w.title,url:w.url,price:w.price,sharedGift:w.sharedGift,claimedBy:w.claimedBy}))).replace(/</g,"\\u003c").replace(/>/g,"\\u003e").replace(/&/g,"\\u0026")};
     const updated=currentWishes.filter(w=>w.id!==wid);
     try{
       await fetch(location.origin+"/api/party/${party.id}",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({editToken,wishes:updated})});
