@@ -189,7 +189,10 @@ function esc(str) {
 }
 function escJson(str) {
   if (!str) return "";
-  return String(str).replace(/\\/g,"\\\\").replace(/"/g,'\\"').replace(/\n/g,"\\n").replace(/\r/g,"\\r");
+  // C1-Security: zusaetzlich < und > als \uXXXX escapen. In JS-String-Kontexten (var CNL="...")
+  // verhindert das den </script>-Ausbruch (Stored-XSS auf der oeffentlichen Gaesteseite); der JS-Wert
+  // bleibt korrekt (< === '<'). In ICS-Text nur kosmetisch bei seltenem < im Namen.
+  return String(str).replace(/\\/g,"\\\\").replace(/"/g,'\\"').replace(/\n/g,"\\n").replace(/\r/g,"\\r").replace(/</g,"\\u003C").replace(/>/g,"\\u003E");
 }
 // P0-Security: Wunsch-URL-Validation. Verhindert javascript:/data:/vbscript:/file:-Protokoll-Injection.
 // Whitelist: nur http:/https:. Längenlimit 500. Bei invalid → "" (= kein Link).
