@@ -1571,15 +1571,15 @@
         <div class="games-grid">${gamesData.map(g => `<div class="game-tag" onclick="openGameDetail('${g.name.replace(/'/g, "\\'")}')"><span class="game-tag__info">Details ›</span><div class="game-tag__name">${g.emoji} ${g.name}</div><div class="game-tag__desc">${g.desc}</div></div>`).join('')}</div>
       </article>
 
-      <article class="mod">
-        <header class="mod__head">
+      <details class="mod sz-mod" id="sz-anchor"${window.__entryModus === 'schatzsuche' ? ' open' : ''}>
+        <summary class="mod__head">
           <span class="mod__icon">🗺️</span>
           <h3 class="mod__title">Schatzsuche · ${stations.length} Stationen</h3>
-        </header>
+        </summary>
         <div class="schatz">
           <ul class="schatz__list">${stations.map((s,i) => `<li><div class="schatz__num">${i+1}</div><div><div class="schatz__name">${i === stations.length-1 ? esc(state.motto.emoji)+' '+s : s}</div></div></li>`).join('')}</ul>
         </div>
-      </article>
+      </details>
 
       <article class="mod">
         <header class="mod__head">
@@ -1598,7 +1598,9 @@
     document.getElementById('planDate1').textContent = formatDateShort(state.date) + ', ' + state.time + ' Uhr';
     document.getElementById('planGuests1').textContent = state.guests;
     document.getElementById('planLocation1').textContent = locationLabel(state.location);
-    renderElitePlan(); // Elite-Content (Varianten minimal/standard/wow + Affiliate-Einkaufsliste) async drueberlegen, wenn vorhanden
+    // Elite-Content async drueberlegen; Schatzsuche-Scroll ERST nachdem renderElitePlan fertig ist (sonst wird der Scroll-Anker
+    // mitten im Smooth-Scroll durch das Elite-innerHTML ersetzt). Funktioniert fuer beide Pfade: Elite-Render ODER Fallback (early return).
+    renderElitePlan().then(maybeScrollSchatz).catch(maybeScrollSchatz);
   }
 
   // ===== ELITE-CONTENT-RENDERER (Phase 2) — laedt /data/motto/<motto>-<group>.json =====
@@ -1630,6 +1632,19 @@
       return _schatzCache;
     }catch(e){ return null; }                // Netz-/Parse-Fehler -> nicht cachen
   }
+  // Schatzsuche-Funnel-Eintritt (?modus=schatzsuche): einmalig zur Schatzsuche-Sektion fuehren, egal ob Elite- oder Fallback-Plan
+  function maybeScrollSchatz(){
+    if(window.__entryModus !== 'schatzsuche' || window.__szScrolled) return;
+    if(!document.getElementById('sz-anchor')) return;
+    window.__szScrolled = true;
+    // goStage(Start-Stage) loest beim Init einen SMOOTH-Scroll zur Start-Stage aus, der einen frueheren Schatzsuche-Scroll
+    // ueberschreibt. Darum: instant (nicht smooth, sonst vom Elite-Re-Render abgebrochen) + verzoegert + einmal nachsetzen,
+    // damit der Schatzsuche-Scroll nach der goStage-Animation gewinnt.
+    [500, 950].forEach(function(ms){ setTimeout(function(){
+      const el = document.getElementById('sz-anchor');
+      if(el){ try{ el.scrollIntoView({block:'start'}); }catch(e){ el.scrollIntoView(); } }
+    }, ms); });
+  }
   function buildSchatzHtml(theme, age){
     if(!theme) return '';
     const size = eliteGroup(age);
@@ -1655,7 +1670,15 @@
     const reqMotto = state.motto.id, reqAge = state.age || '6-8';   // Bug A: Identitaet vor await capturen
     const [d, allSchatz] = await Promise.all([getElite(reqMotto, reqAge), getSchatz()]);
     if(!state.motto || state.motto.id !== reqMotto || (state.age||'6-8') !== reqAge) return; // Motto/Alter waehrend Fetch gewechselt -> spaeten Render verwerfen
-    if(!d) return; // kein Elite-Datensatz -> bestehendes Fallback-Rendering bleibt stehen
+    if(!d){
+      // Kein Elite-Plan (z.B. prinzessin/superheld), aber Schatzsuche-Daten existieren: generische Fallback-Schatzsuche
+      // ('Station 1..DER SCHATZ') durch die echten Stationen + Raetsel aus schatzsuche.json ersetzen.
+      const _theme = (allSchatz||[]).find(t => t.id === reqMotto);
+      const _rich = _theme ? buildSchatzHtml(_theme, reqAge) : '';
+      const _old = document.getElementById('sz-anchor');
+      if(_rich && _old) _old.outerHTML = _rich;
+      return; // restliches Fallback-Rendering (Plan/Spiele/Einkauf) bleibt stehen
+    }
     const v = currentVariant(d); if(!v) return;
     const body = document.getElementById('planBody'); if(!body) return;
     const schatzHtml = buildSchatzHtml((allSchatz||[]).find(t => t.id === reqMotto), reqAge);
@@ -1701,11 +1724,6 @@
       <article class="mod"><header class="mod__head"><span class="mod__icon">🛒</span><h3 class="mod__title">Einkaufsliste${v.costContext?' · '+esc(v.costContext):''}</h3></header><ul class="eshop">${shop}</ul></article>
       ${cake}${tips}${faq}
     `;
-    // Schatzsuche-Funnel-Eintritt (?modus=schatzsuche): einmalig zur Schatzsuche-Sektion fuehren, sobald sie gerendert ist
-    if(window.__entryModus === 'schatzsuche' && !window.__szScrolled){
-      const anchor = document.getElementById('sz-anchor');
-      if(anchor){ window.__szScrolled = true; try{ anchor.scrollIntoView({behavior:'smooth', block:'start'}); }catch(e){ anchor.scrollIntoView(); } }
-    }
   }
 
   function buildTimeline(){
@@ -1954,7 +1972,14 @@
     const eName = esc(state.name), eTitle = esc(state.invite.title), eBody = esc(state.invite.body), eDeadline = esc(state.invite.deadline);
     // B: Einladungs-Handoff ans echte Tool (/einladung/erstellen) mit vorausgefuellten Daten (Datenuebergabe statt In-Page-Fake)
     const _ho = document.getElementById('inviteHandoff');
-    if(_ho){ _ho.href = '/einladung/erstellen?' + new URLSearchParams({ motto:(motto.id||''), name:(state.name||''), datum:(state.date||''), uhrzeit:(state.time||''), ort:(state.location||''), source:'cockpit' }).toString(); }
+    if(_ho){
+      // Einladung-Generator (create-invite.mjs) kennt nur diese 10 Voll-Mottos; alles andere macht der Server still zu 'piraten'.
+      // Darum Motto nur uebergeben wenn unterstuetzt — sonst weglassen, User waehlt im Generator (Name/Datum/Ort bleiben vorausgefuellt).
+      const EINLADUNG_MOTTOS = new Set(['piraten','dino','safari','weltraum','detektiv','superheld','prinzessin','einhorn','meerjungfrau','feuerwehr']);
+      const hoParams = { name:(state.name||''), datum:(state.date?formatDateLong(state.date):''), uhrzeit:(state.time||''), ort:locationLabel(state.location||''), source:'cockpit' };
+      if(EINLADUNG_MOTTOS.has(motto.id)) hoParams.motto = motto.id;
+      _ho.href = '/einladung/erstellen?' + new URLSearchParams(hoParams).toString();
+    }
 
     if(state.invite.type === 'minispiel'){
       // F8: Dark-Mode wie Live-Einladung (dunkelblau-violetter Hintergrund, Gold-Akzent)
