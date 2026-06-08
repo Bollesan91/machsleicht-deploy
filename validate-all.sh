@@ -205,13 +205,15 @@ for m in "${EINLADUNG_MOTTOS[@]}"; do
     red "Fehlendes Einladungs-Motto: /einladung/$m/index.html (Partyseiten-Vorschau liefert 404!)"
   fi
 done
-# Hub muss vorhanden sein und darf KEIN Canonical auf /einladung/piraten haben (sonst wär's die alte Piraten-Seite)
+# Hub muss vorhanden sein und Canonical auf die echte 200-URL mit Trailing-Slash zeigen
+# (GSC-Recovery 03.06.2026: alle /einladung-Canonicals auf Trailing-Slash gezogen, sonst Canonical -> 301).
+# Darf KEIN Canonical auf /einladung/piraten haben (sonst wär's die alte Piraten-Seite).
 if [ -f "$REPO/einladung/index.html" ]; then
   HUB_CAN=$(grep -aoP 'rel="canonical" href="\K[^"]+' "$REPO/einladung/index.html" 2>/dev/null | head -1)
-  if [ "$HUB_CAN" = "https://machsleicht.de/einladung" ]; then
-    green "/einladung/index.html (Hub mit korrektem Canonical)"
+  if [ "$HUB_CAN" = "https://machsleicht.de/einladung/" ]; then
+    green "/einladung/index.html (Hub mit korrektem Canonical, Trailing-Slash)"
   else
-    red "/einladung/index.html Canonical falsch: '$HUB_CAN' (erwartet: https://machsleicht.de/einladung)"
+    red "/einladung/index.html Canonical falsch: '$HUB_CAN' (erwartet: https://machsleicht.de/einladung/)"
   fi
 fi
 # serve-invite.mjs darf keine Piraten-Sonderregel mehr enthalten
