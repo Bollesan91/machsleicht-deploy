@@ -319,7 +319,22 @@ export default {
       // P0-Security Welle 1E: Legacy-Party ohne editToken darf NICHT editierbar sein.
       // Sonst Auth-Bypass: body.editToken=undefined gegen party.editToken=undefined → match.
       if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
-      ["childName","age","motto","mottoEmoji","mottoColor","date","time","endTime","address","notes","askAllergies","askPickup","paypalMe","email"].forEach(f=>{if(body[f]!==undefined)party[f]=body[f];});
+      // P0-Security: PUT muss DIESELBE Sanitization wie /api/create anwenden — sonst umgeht ein editToken-Inhaber
+      // saemtliche create-Limits (Stored-XSS via age/notes/childName etc. auf der oeffentlichen Gaesteseite, Gutachter-HIGH).
+      if(body.childName!==undefined) party.childName = (body.childName||"").trim().slice(0,50);
+      if(body.age!==undefined) party.age = Math.min(Math.max(parseInt(body.age)||0,0),18)||null;
+      if(body.motto!==undefined) party.motto = (body.motto||"").slice(0,60);
+      if(body.mottoEmoji!==undefined) party.mottoEmoji = (body.mottoEmoji||"🎉").slice(0,4);
+      if(body.mottoColor!==undefined) party.mottoColor = /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A";
+      if(body.date!==undefined) party.date = (body.date||"").slice(0,40);
+      if(body.time!==undefined) party.time = (body.time||"").slice(0,20);
+      if(body.endTime!==undefined) party.endTime = (body.endTime||"").slice(0,20);
+      if(body.address!==undefined) party.address = (body.address||"").slice(0,200);
+      if(body.notes!==undefined) party.notes = (body.notes||"").slice(0,500);
+      if(body.askAllergies!==undefined) party.askAllergies = body.askAllergies!==false;
+      if(body.askPickup!==undefined) party.askPickup = body.askPickup!==false;
+      if(body.paypalMe!==undefined) party.paypalMe = (body.paypalMe||"").slice(0,100);
+      if(body.email!==undefined) party.email = (body.email||"").slice(0,120);
       if (Array.isArray(body.wishes)) {
         party.wishes = body.wishes.slice(0,MAX_WISHES).map(w=>({
           id:w.id||generateId(6),title:(w.title||"").slice(0,100),url:normalizeWishUrl(w.url),
@@ -1179,7 +1194,7 @@ function partyPage(party, isEditor, photoRoundB64, isPreview) {
   }
 
   // Editor keeps existing layout
-  const ogTitle = name ? `${name} wird ${age}! ${emoji}` : "Kindergeburtstag! \u{1F389}";
+  const ogTitle = name ? `${name} wird ${esc(age)}! ${emoji}` : "Kindergeburtstag! \u{1F389}";
   const ogDesc = motto ? `${motto} \u2014 Zu-/Absage, Infos & Wunschliste` : "Alle Party-Infos auf einer Seite";
   return `${baseHead(ogTitle+" \u2014 mach\u2019s leicht", ogDesc, color, ogUrl)}
 <body>
@@ -1365,7 +1380,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
   <div class="hero-logo"><b>mach's</b> leicht</div>
   <div class="hero-photo-wrap" id="heroPhoto" style="display:none"></div>
   <div class="hero-emoji">${emoji}</div>
-  <h1><span class="hname">${name}</span> wird ${age}!</h1>
+  <h1><span class="hname">${name}</span> wird ${esc(age)}!</h1>
   ${motto?`<div class="hero-motto">${motto}</div>`:""}
   <div class="hero-sub">Du bist eingeladen!</div>
   ${party.date && daysLeft > 0 ?`<div class="countdown"><span class="countdown-label">Noch</span><span class="countdown-num">${daysLeft}</span><span class="countdown-label">Tage!</span></div>`:""}
@@ -1698,7 +1713,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     </div>
     <div id="editForm" class="hidden">
       <div class="field"><label>Name</label><input type="text" id="edName" value="${esc(party.childName)}"></div>
-      <div class="field"><label>Alter</label><input type="number" id="edAge" value="${party.age||""}"></div>
+      <div class="field"><label>Alter</label><input type="number" id="edAge" value="${esc(party.age||"")}"></div>
       <div class="field"><label>Motto</label><input type="text" id="edMotto" value="${esc(party.motto)}"></div>
       <div style="display:flex;gap:8px" class="field">
         <div style="flex:1"><label>Datum</label><input type="date" id="edDate" value="${esc(party.date)}"></div>
