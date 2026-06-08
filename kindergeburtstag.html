@@ -954,14 +954,14 @@ window.plausible.init=function(){};window.plausible.q=[];
         <h3 class="checkout-card__title">Plan-PDF light</h3>
         <div class="checkout-card__price">Kostenlos</div>
         <ul class="checkout-card__features"><li>1 A4 Tagesplan</li><li>Spiele-Anleitungen</li><li>Einkaufsliste</li><li>Schatzkarte</li></ul>
-        <button class="checkout-card__btn">PDF runterladen</button>
+        <button class="checkout-card__btn" onclick="showFlash('📥 PDF-Export kommt im nächsten Update — dein Plan ist online gespeichert und jederzeit abrufbar.')">PDF runterladen</button>
       </div>
       <div class="checkout-card checkout-card--premium">
         <div class="checkout-card__icon">📦</div>
         <h3 class="checkout-card__title">Komplettpaket Print</h3>
         <div class="checkout-card__price">€14,90</div>
         <ul class="checkout-card__features"><li><b>15+ druckfertige Seiten</b></li><li>8 Urkunden mit Namen</li><li>5 Spiel-Karten A6 zum Vorlesen</li><li>Komplette Schatzsuche + Rätsel</li><li>8 Mitgebsel-Etiketten</li><li>Druck-Einladungs-Karten 8×</li></ul>
-        <button class="checkout-card__btn">Komplettpaket kaufen</button>
+        <button class="checkout-card__btn" onclick="showFlash('📦 Das Druck-Komplettpaket ist in Vorbereitung. Trag dich über „E-Mail-Link senden“ ein — wir sagen Bescheid, sobald es da ist.')">Komplettpaket kaufen</button>
       </div>
     </div>
   </div>
@@ -1470,8 +1470,12 @@ window.plausible.init=function(){};window.plausible.q=[];
     const name = prompt('Wie soll dein Motto heißen?', 'Pferde-Hof');
     if(!name) return;
     const emoji = prompt('Welches Emoji passt?', '🎉') || '🎉';
-    // Custom motto auf Basis Piraten-Template aber neuer Name/Emoji
-    state.motto = { ...MOTTOS[0], id:'custom-'+Date.now(), name:name.trim(), emoji, persona:name.trim().replace(/-.*/,''), badge:'Eigenes' };
+    // Custom motto: Mechanik vom Piraten-Template, aber themen-NEUTRALE Texte (F8) — sonst zeigt ein
+    // "Pferde-Hof"-Custom Piraten-Stationen ("Krähennest") + "...als Piraten-Captain" im Einladungstext.
+    // (Bekannte Restgrenze: Spiel-Namen kommen weiter aus dem Piraten-Set, bis es ein Custom-Content-Modell gibt.)
+    state.motto = { ...MOTTOS[0], id:'custom-'+Date.now(), name:name.trim(), emoji, persona:name.trim().replace(/-.*/,''), badge:'Eigenes',
+      stations:['Erste Station','Zweite Station','Dritte Station','Vierte Station','Das große Finale 🎉'],
+      invite:{ type:'minispiel', title:'Du bist eingeladen!', body:'wird {age} und feiert einen tollen Geburtstag — du bist eingeladen!' } };
     applyAccent(state.motto);
     document.getElementById('chosenMottoEmoji').textContent = state.motto.emoji;
     document.getElementById('chosenMottoName').textContent = state.motto.name;
@@ -2234,7 +2238,10 @@ window.plausible.init=function(){};window.plausible.q=[];
   const escA = s => esc(s).replace(/"/g,'&quot;').replace(/'/g,'&#39;'); // Attribut-Kontext (href etc.)
   // Markdown-Links [Text](https://...) in Elite-JSON-Texten zu echten Affiliate-Links rendern statt roh anzuzeigen
   // (sonst sieht der Nutzer die nackte amazon-URL inkl. tag=). Erst esc (XSS), dann nur das [..](http..)-Muster ersetzen.
-  const mdLink = s => esc(s==null?'':String(s)).replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="sponsored noopener">$1</a>');
+  const mdLink = s => esc(s==null?'':String(s)).replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, (m,txt,url) => {
+    const spon = /(amazon\.|amzn\.|awin1?\.|[?&]tag=)/i.test(url) ? 'sponsored ' : '';   // Q1: rel=sponsored nur fuer echte Affiliate-Links
+    return '<a href="'+url+'" target="_blank" rel="'+spon+'noopener">'+txt+'</a>';
+  });
 
   function openGameDetail(gameName){
     const motto = state.motto || MOTTOS[0];
