@@ -703,7 +703,7 @@ window.plausible.init=function(){};window.plausible.q=[];
           <input type="time" id="iqEndTime" oninput="document.getElementById('qEndTime').value=this.value; liveUpdateEndTime();">
         </label>
         <label class="eckdaten__f">Gäste (Kinder)
-          <input type="number" id="iqGuests" min="2" max="20" step="1" value="6" inputmode="numeric" oninput="let v=Math.max(2,Math.min(20,+this.value||6)); document.getElementById('iqGuestsLabel').textContent=v; document.getElementById('qGuests').value=Math.min(12,v); state.guests=v; document.getElementById('planGuests1').textContent=v; autoSave();">
+          <input type="number" id="iqGuests" min="2" max="20" step="1" value="6" inputmode="numeric" oninput="let v=Math.max(2,Math.min(20,+this.value||6)); document.getElementById('iqGuestsLabel').textContent=v; document.getElementById('qGuests').value=v; state.guests=v; document.getElementById('planGuests1').textContent=v; autoSave();">
           <b id="iqGuestsLabel" style="display:none">6</b>
         </label>
       </div>
@@ -763,7 +763,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         <p>3 Wege — du kannst auch mehrere kombinieren. Live-Preview rechts updated mit jedem Tippen.</p>
       </header>
 
-      <button class="preview-toggle" onclick="togglePreview()">
+      <button class="preview-toggle" onclick="togglePreview(event)">
         <span>📱 Vorschau ansehen</span>
         <span class="preview-toggle__icon">▼</span>
       </button>
@@ -811,7 +811,7 @@ window.plausible.init=function(){};window.plausible.q=[];
           <div class="send-block__url-text" id="inviteUrl">machsleicht.de/p/lukas-7</div>
           <button class="send-block__copy" onclick="copyInviteUrl()">Kopieren</button>
         </div>
-        <a class="send-block__btn send-block__btn--email" id="inviteHandoff" href="/einladung/erstellen?source=cockpit" style="margin-bottom:10px;text-decoration:none">📨 Einladung jetzt erstellen →</a>
+        <a class="send-block__btn send-block__btn--email" id="inviteHandoff" href="/einladung/erstellen?source=cockpit" style="margin-bottom:10px;text-decoration:none" onclick="try{if(window.plausible)plausible('invite_handoff_click',{props:{motto:((state.motto&&state.motto.id)||'').indexOf('custom')===0?'custom':((state.motto&&state.motto.id)||'')}})}catch(e){}">📨 Einladung jetzt erstellen →</a>
         <div class="send-block__actions">
           <a class="send-block__btn send-block__btn--wa" id="whatsappBtn" href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
           <a class="send-block__btn send-block__btn--email" id="emailBtn" href="#">📧 Per Email</a>
@@ -849,7 +849,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         <p>Eine eigene URL, RSVP-Liste, Foto-Galerie nach der Party. Kostenlos, läuft auf Cloudflare Workers.</p>
       </header>
 
-      <button class="preview-toggle" onclick="togglePreview()">
+      <button class="preview-toggle" onclick="togglePreview(event)">
         <span>🌐 Vorschau ansehen</span>
         <span class="preview-toggle__icon">▼</span>
       </button>
@@ -1129,7 +1129,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       <p class="help">Wir skalieren Einkaufslisten-Mengen + Anzahl Urkunden/Etiketten.</p>
       <div class="slider-wrap">
         <div class="slider-value"><span id="qGuestsLabel">6</span> Kinder</div>
-        <input type="range" id="qGuests" min="4" max="12" value="6" oninput="liveUpdateGuests()">
+        <input type="range" id="qGuests" min="2" max="20" value="6" oninput="liveUpdateGuests()">
         <div class="slider-labels"><span>4</span><span>8</span><span>12</span></div>
       </div>
     </div>
@@ -1516,7 +1516,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     state.age = age;
     const ageGames = gamesForAge(state.motto, age);
     state.games = ageGames.slice(0,5).map(g => g.name);
-    state.invite.body = `${state.name} wird ${ageNum()} ${state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name).split(' ').slice(1).join(' ')}`;
+    // C3-Fix: identisches Muster wie pickMotto (kein doppeltes "wird {age}", kein slice-Hack der bei Nicht-"wird"-Mottos Grammatik zerstoert)
+    state.invite.body = `${state.name} ${state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name)}`;
     renderPlanPreview();
     autoSave();
     goStage(3);
@@ -1799,6 +1800,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     const title = document.getElementById('cusTitle').value.trim();
     const dur = parseInt(document.getElementById('cusDur').value);
     if(!title){ alert('Bitte einen Titel eingeben'); return; }
+    if(!time || !/^\d{1,2}:\d{2}$/.test(time)){ alert('Bitte eine gültige Uhrzeit angeben'); return; }   // C6: leere Zeit -> NaN-Sortierung verhindern
     state.customEntries.push({time, title, dur});
     document.getElementById('cusTitle').value = '';
     document.getElementById('timelineForm').classList.remove('open');
@@ -1831,6 +1833,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(n === 5) renderPartyseitePreview();
     if(n === 6) renderDoneSummary();
     autoSave();
+    // T1: Funnel-Tracking der Stage-Progression (Drop-off sichtbar machen). Motto low-cardinality (custom-* -> 'custom').
+    try{ if(window.plausible){ const mid=(state.motto&&state.motto.id||'').indexOf('custom')===0?'custom':(state.motto&&state.motto.id||''); plausible('wizard_stage', {props:{stage:String(n), motto:mid}}); } }catch(e){}
     if(el) el.scrollIntoView({behavior:'smooth', block:'start'});  // Scroll-Funnel: zum Abschnitt scrollen statt toggeln
   }
   function jumpStage(n){
@@ -2158,7 +2162,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       if(!data.url || !data.editUrl) throw new Error('Unvollstaendige Antwort vom Server');
       state.partyseite.active = true; state.partyseite.url = data.url; state.partyseite.editUrl = data.editUrl;
       if(urlEl) urlEl.innerHTML = '<a href="' + escA(data.url) + '" target="_blank" rel="noopener" style="color:var(--accent,#1E3A5F);font-weight:800">' + esc(data.url) + '</a> · <a href="' + escA(data.editUrl) + '" target="_blank" rel="noopener" style="font-size:12px">Edit-Link — gut aufheben!</a>';
-      try{ if(window.plausible) plausible('party_created', {props:{motto: motto.id}}); }catch(e){}
+      try{ if(window.plausible) plausible('party_created', {props:{motto: ((motto.id||'').indexOf('custom')===0?'custom':(motto.id||''))}}); }catch(e){}
       autoSave();
     }catch(err){
       if(urlEl) urlEl.textContent = '';
@@ -2170,11 +2174,12 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
 
   // ===== Mobile Preview Toggle =====
-  function togglePreview(){
+  function togglePreview(ev){
+    ev = ev || window.event;   // C5: kein Verlass auf globales event (Firefox/strict)
     const wrap = state.stage === 4 ? document.getElementById('phoneWrap') : document.getElementById('psWrap');
-    const btn = event.currentTarget;
+    const btn = ev && ev.currentTarget ? ev.currentTarget : null;
     if(wrap) wrap.classList.toggle('open');
-    btn.classList.toggle('open');
+    if(btn) btn.classList.toggle('open');
   }
 
   // ===== STAGE 6 =====
