@@ -271,6 +271,15 @@ function icsEscape(s) {
   return String(s == null ? "" : s).replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\r\n|\r|\n/g, "\\n");
 }
 
+// H2: korruptes KV-JSON darf nicht jeden Read-Pfad mit uncaught throw (500/1101 ohne CORS) abreissen.
+// Gibt null zurueck -> Handler antwortet sauber statt zu crashen (und die Party bleibt loeschbar).
+function safeParse(raw) { try { return JSON.parse(raw); } catch (e) { return null; } }
+// M1: Nicht-JSON-Body soll 400 geben, nicht 500. Gibt null bei kaputtem Body.
+async function safeReqJson(req) { try { return await req.json(); } catch (e) { return null; } }
+
+// M4: nur echtes ISO-Datum (YYYY-MM-DD) akzeptieren — sonst "Invalid Date"/kaputtes ICS-DTSTART.
+function validDate(d) { return /^\d{4}-\d{2}-\d{2}$/.test(d || "") ? d : ""; }
+
 // ═══════════════════════════════════════════════════════════════
 // MAIN ROUTER
 // ═══════════════════════════════════════════════════════════════
@@ -282,7 +291,7 @@ export default {
 
     // POST /api/create
     if (path === "/api/create" && request.method === "POST") {
-      const body = await request.json();
+      const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       const id = generateId();
       const editToken = generateToken();
       const party = {
@@ -293,7 +302,7 @@ export default {
         mottoId: (body.mottoId||"").slice(0,40), // sauberer Theme-Kontrakt: kanonische ID statt Freitext-Name (getTheme matcht damit exakt, Custom faellt sauber auf Default)
         mottoEmoji: firstEmoji(body.mottoEmoji),
         mottoColor: /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A",
-        date: body.date||"", time: body.time||"", endTime: body.endTime||"",
+        date: validDate(body.date), time: body.time||"", endTime: body.endTime||"",
         address: (body.address||"").slice(0,200),
         notes: (body.notes||"").slice(0,500),
         askAllergies: body.askAllergies!==false,
@@ -322,7 +331,7 @@ export default {
       const id = path.split("/")[3];
       const raw = await env.PARTY.get(`party:${id}`);
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
-      const party = JSON.parse(raw);
+      const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
       const edit = url.searchParams.get("edit");
       if (edit === party.editToken) return json(party, 200, request);
       // P0-Security Welle 1C: doiToken aus Public-GET strippen — sonst kann jeder Gast
@@ -344,8 +353,8 @@ export default {
       const id = path.split("/")[3];
       const raw = await env.PARTY.get(`party:${id}`);
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
-      const party = JSON.parse(raw);
-      const body = await request.json();
+      const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
+      const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       // P0-Security Welle 1E: Legacy-Party ohne editToken darf NICHT editierbar sein.
       // Sonst Auth-Bypass: body.editToken=undefined gegen party.editToken=undefined → match.
       if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
@@ -357,7 +366,7 @@ export default {
       if(body.mottoId!==undefined) party.mottoId = (body.mottoId||"").slice(0,40);
       if(body.mottoEmoji!==undefined) party.mottoEmoji = firstEmoji(body.mottoEmoji);
       if(body.mottoColor!==undefined) party.mottoColor = /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A";
-      if(body.date!==undefined) party.date = (body.date||"").slice(0,40);
+      if(body.date!==undefined) party.date = validDate(body.date);
       if(body.time!==undefined) party.time = (body.time||"").slice(0,20);
       if(body.endTime!==undefined) party.endTime = (body.endTime||"").slice(0,20);
       if(body.address!==undefined) party.address = (body.address||"").slice(0,200);
@@ -391,7 +400,7 @@ export default {
       // P0-Security: Token NUR aus Body — Query-Parameter wäre in CF-Logs persistiert
       let providedToken = null;
       try {
-        const body = await request.json();
+        const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
         providedToken = body && body.editToken;
       } catch { /* no body */ }
       if (!providedToken) return json({error:"Token fehlt"},400,request);
@@ -420,8 +429,8 @@ export default {
       const id = path.split("/")[3];
       const raw = await env.PARTY.get(`party:${id}`);
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
-      const party = JSON.parse(raw);
-      const body = await request.json();
+      const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
+      const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       const name = (body.name||"").trim().slice(0,50);
       if (!name) return json({error:"Name fehlt"},400, request);
       if (!Array.isArray(party.guests)) party.guests = []; // L7: Legacy-Party ohne guests-Feld nicht crashen
@@ -444,8 +453,8 @@ export default {
       const id=parts[3], wishId=parts[5];
       const raw = await env.PARTY.get(`party:${id}`);
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
-      const party = JSON.parse(raw);
-      const body = await request.json();
+      const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
+      const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       const guestName = (body.name||"").trim().slice(0,50); // F4: Laengen-Limit gegen KV-Bloat/XSS-Payload
       if (!guestName) return json({error:"Name fehlt"},400, request);
       // amount nur bei sharedGift relevant; 0 < amount < 9999
@@ -503,8 +512,8 @@ export default {
       const id = path.split("/")[3];
       const raw = await env.PARTY.get(`party:${id}`);
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
-      const party = JSON.parse(raw);
-      const body = await request.json();
+      const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
+      const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       // Legacy-Token-Guard (konsistent mit PUT/DELETE): tokenloser Alt-Eintrag -> undefined!==undefined=false waere Auth-Bypass (Mail-Spam-Vektor).
       if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
       const email = (body.email||"").trim().slice(0,200);
@@ -603,7 +612,7 @@ export default {
       const partyId=parts[2], wishId=parts[3];
       const raw = await env.PARTY.get(`party:${partyId}`);
       if (!raw) return Response.redirect("https://machsleicht.de",302);
-      const party = JSON.parse(raw);
+      const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
       const wish = (party.wishes||[]).find(w=>w.id===wishId);
       if (!wish||!wish.url) return Response.redirect("https://machsleicht.de",302);
       // P0-Security: Defense-in-Depth — auch beim Redirect nochmal Protokoll prüfen,
@@ -697,7 +706,7 @@ export default {
       const id = path.slice(1);
       const raw = await env.PARTY.get(`party:${id}`);
       if (!raw) return new Response(notFoundPage(),{status:404,headers:{"Content-Type":"text/html;charset=utf-8"}});
-      const party = JSON.parse(raw);
+      const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
       const isEditor = url.searchParams.get("edit")===party.editToken;
       const isPreview = isEditor && url.searchParams.get("preview")==="1";
       let photoRoundB64 = "";
@@ -1269,7 +1278,7 @@ function guestPageFull(party, photoRoundB64, isPreview) {
   // Game URL
   const GAME_MOTTOS = ["piraten","dino","safari","weltraum","detektiv","superheld","prinzessin","einhorn","meerjungfrau","feuerwehr"];
   const mottoLC = (party.motto||"").toLowerCase();
-  const gameMottoId = GAME_MOTTOS.find(m => mottoLC.includes(m));
+  const gameMottoId = GAME_MOTTOS.find(m => (party.mottoId||"")===m) || GAME_MOTTOS.find(m => mottoLC.includes(m)); // M2: erst exakte mottoId, dann Freitext-Fallback
   const gameUrl = gameMottoId ? `https://machsleicht.de/einladung/${gameMottoId}/?name=${encodeURIComponent(party.childName)}&date=${encodeURIComponent(party.date||"")}&time=${encodeURIComponent(party.time||"")}&ort=${encodeURIComponent(party.address||"")}&tel=${encodeURIComponent("")}${photoRoundB64?"&foto="+encodeURIComponent(photoRoundB64):""}` : "";
 
   // Countdown days
