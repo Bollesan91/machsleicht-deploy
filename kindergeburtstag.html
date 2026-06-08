@@ -621,6 +621,12 @@
   .sz-line{width:18px;height:2px;background:#C8B9A6;flex:none}
   .sz-x{font-size:22px;flex:none;margin-left:2px}
   .sz-hint{color:#0F7B3F;background:#F0FBF4;padding:6px 14px;margin:8px 0 0!important;border-radius:0 0 8px 8px}
+  /* Schatzsuche sekundaer: einklappbar, damit Stage 3 nicht zugekleistert wird und der Weg zu Einladung/Partyseite frei bleibt */
+  .sz-mod>summary{cursor:pointer;list-style:none}
+  .sz-mod>summary::-webkit-details-marker{display:none}
+  .sz-mod>summary::after{content:'▾';color:var(--accent,#FF6F00);font-size:14px;line-height:1;transition:transform .2s;flex:none}
+  .sz-mod[open]>summary::after{transform:rotate(180deg)}
+  .sz-mod:not([open])>summary{margin-bottom:0}
 </style>
 </head>
 <body>
@@ -1637,9 +1643,11 @@
       + (s.desc?`<p>${esc(s.desc)}</p>`:'')
       + (s.hint?`<p class="sz-hint">🧩 Rätsel-Tipp: ${esc(s.hint)}</p>`:'')
       + `</details>`).join('');
-    return `<article class="mod" id="sz-anchor"><header class="mod__head"><span class="mod__icon">🗺️</span><h3 class="mod__title">Schatzsuche · ${esc(theme.name||'')} · ${stations.length} Stationen</h3></header>`
+    // Sekundaer-Modul: standardmaessig eingeklappt; offen nur bei gezieltem Schatzsuche-Eintritt (?modus=schatzsuche)
+    const openAttr = (typeof window !== 'undefined' && window.__entryModus === 'schatzsuche') ? ' open' : '';
+    return `<details class="mod sz-mod" id="sz-anchor"${openAttr}><summary class="mod__head"><span class="mod__icon">🗺️</span><h3 class="mod__title">Schatzsuche · ${esc(theme.name||'')} · ${stations.length} Stationen</h3></summary>`
       + (intro?`<p class="evar-intro">${esc(intro)}</p>`:'')
-      + `<div class="sz-map" aria-hidden="true">${route}</div>${list}</article>`;
+      + `<div class="sz-map" aria-hidden="true">${route}</div>${list}</details>`;
   }
   function setEliteVariant(v){ state.eliteVariant = v; renderElitePlan(); autoSave(); }
   async function renderElitePlan(){
