@@ -412,7 +412,10 @@ const MOTTO_CONFIG = {
     banner.innerHTML = '✨ Aus deinem Geburtstags-Plan — wir haben Motto' + (params.get('name') ? ' und Name' : '') + ' vorausgefüllt';
     const card = document.querySelector('.card');
     if (card) card.insertBefore(banner, card.firstChild);
-    if (window.umami) { try { umami.track('invitation_from_cockpit', {motto: m || ''}); } catch(e) {} }
+    // Umami wird via defer geladen -> zur Parse-Zeit dieser IIFE noch nicht da (Event ginge verloren).
+    // Erst nach DOMContentLoaded feuern (deferred Scripts sind dann ausgefuehrt).
+    var fireCockpit = function(){ if (window.plausible) { try { plausible('invitation_from_cockpit', {props:{motto: m || ''}}); } catch(e) {} } };
+    if (window.umami) fireCockpit(); else window.addEventListener('DOMContentLoaded', fireCockpit);
   }
   if (m && MOTTO_CONFIG[m]) {
     const btn = document.querySelector('[data-motto="' + m + '"]');

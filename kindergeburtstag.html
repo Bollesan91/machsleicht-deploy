@@ -1677,7 +1677,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     // Sekundaer-Modul: standardmaessig eingeklappt; offen nur bei gezieltem Schatzsuche-Eintritt (?modus=schatzsuche)
     const openAttr = (typeof window !== 'undefined' && window.__entryModus === 'schatzsuche') ? ' open' : '';
     return `<details class="mod sz-mod" id="sz-anchor"${openAttr}><summary class="mod__head"><span class="mod__icon">🗺️</span><h3 class="mod__title">Schatzsuche · ${esc(theme.name||'')} · ${stations.length} Stationen</h3></summary>`
-      + (intro?`<p class="evar-intro">${esc(intro)}</p>`:'')
+      + (intro?`<p class="evar-intro">${esc(intro.replace(/\{name\}/g, state.name||'das Geburtstagskind'))}</p>`:'')
       + `<div class="sz-map" aria-hidden="true">${route}</div>${list}</details>`;
   }
   function setEliteVariant(v){ state.eliteVariant = v; renderElitePlan(); autoSave(); }

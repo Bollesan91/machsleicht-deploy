@@ -118,18 +118,19 @@ function shopLabel(urlStr) {
   return "ansehen";
 }
 
+// Nur eigene/generische Mottos — lizenzierte Marken (Frozen, Harry Potter, Minecraft,
+// Paw Patrol, Pokemon, Spider-Man, Super Mario, Ninjago, Halloween) entfernt:
+// per Substring-Match aktiv erreichbar -> Seite haette lizenzierte Marken aktiv gethemed.
 const MOTTO_COLORS = {
-  "piraten":"#8B4513","einhorn":"#E040A0","dino":"#4CAF50","feuerwehr":"#D32F2F",
+  "piraten":"#1E3A5F","einhorn":"#E040A0","dino":"#4CAF50","feuerwehr":"#D32F2F",
   "weltraum":"#1565C0","meerjungfrau":"#00ACC1","prinzessin":"#E91E63","safari":"#F57F17",
   "detektiv":"#37474F","ritter":"#795548","superheld":"#D32F2F","zirkus":"#FF6F00",
-  "baustelle":"#F57F17","frozen":"#4FC3F7","harry potter":"#7B1FA2","minecraft":"#4CAF50",
-  "ninjago":"#D32F2F","paw patrol":"#1976D2","pokemon":"#FFC107","spider-man":"#D32F2F",
-  "super mario":"#D32F2F","halloween":"#E65100",
+  "baustelle":"#F57F17","pferde":"#A1724E","dschungel":"#33691E","feen":"#9C27B0",
 };
 
 // ── Theme System (full palette per motto) ──────────────
 const THEMES = {
-  piraten:      {a:"#5C6BC0",d:"#1A237E",m:"#3949AB",l:"#C5CAE9",bg:"#E8EAF6",h1:"#283593",h2:"#3F51B5",h3:"#7986CB"},
+  piraten:      {a:"#1E3A5F",d:"#0A1A2F",m:"#16304D",l:"#B8C7D9",bg:"#EAF0F6",h1:"#0A1A2F",h2:"#1E3A5F",h3:"#4A6886"},
   dino:         {a:"#4CAF50",d:"#1B5E20",m:"#558B2F",l:"#C5E1A5",bg:"#F1F8E9",h1:"#2E7D32",h2:"#4CAF50",h3:"#81C784"},
   safari:       {a:"#F57F17",d:"#4E3419",m:"#8D6E35",l:"#FFE0B2",bg:"#FFF8E1",h1:"#E65100",h2:"#F57F17",h3:"#FFB74D"},
   weltraum:     {a:"#1565C0",d:"#0D1B2A",m:"#1B3A5C",l:"#BBDEFB",bg:"#E3F2FD",h1:"#0D47A1",h2:"#1565C0",h3:"#64B5F6"},
@@ -142,9 +143,9 @@ const THEMES = {
   ritter:       {a:"#795548",d:"#3E2723",m:"#5D4037",l:"#D7CCC8",bg:"#EFEBE9",h1:"#4E342E",h2:"#6D4C41",h3:"#A1887F"},
   zirkus:       {a:"#FF6F00",d:"#4A2800",m:"#E65100",l:"#FFE0B2",bg:"#FFF3E0",h1:"#E65100",h2:"#FF6F00",h3:"#FFB74D"},
   baustelle:    {a:"#F57F17",d:"#4A3000",m:"#F9A825",l:"#FFF9C4",bg:"#FFFDE7",h1:"#F57F17",h2:"#FBC02D",h3:"#FFF176"},
-  frozen:       {a:"#4FC3F7",d:"#01579B",m:"#0288D1",l:"#B3E5FC",bg:"#E1F5FE",h1:"#0277BD",h2:"#039BE5",h3:"#4FC3F7"},
-  minecraft:    {a:"#4CAF50",d:"#1B5E20",m:"#388E3C",l:"#C8E6C9",bg:"#E8F5E9",h1:"#2E7D32",h2:"#43A047",h3:"#81C784"},
-  halloween:    {a:"#E65100",d:"#1A0A00",m:"#BF360C",l:"#FFE0B2",bg:"#FFF3E0",h1:"#BF360C",h2:"#E65100",h3:"#FF8A65"},
+  pferde:       {a:"#A1724E",d:"#3E2415",m:"#7A5230",l:"#E6D2BE",bg:"#FBF3EA",h1:"#5C3A20",h2:"#A1724E",h3:"#C99A6E"},
+  dschungel:    {a:"#33691E",d:"#1B2E0A",m:"#558B2F",l:"#DCEDC8",bg:"#F1F8E9",h1:"#1B2E0A",h2:"#33691E",h3:"#7CB342"},
+  feen:         {a:"#9C27B0",d:"#38006B",m:"#7B1FA2",l:"#E1BEE7",bg:"#F5EEF8",h1:"#4A148C",h2:"#9C27B0",h3:"#CE93D8"},
 };
 const DEFAULT_THEME = {a:"#D4812A",d:"#2D2319",m:"#8B7D6B",l:"#EDE6DE",bg:"#FFFCF7",h1:"#A0522D",h2:"#D4812A",h3:"#E8A960"};
 
@@ -238,18 +239,29 @@ function isSafePhoto(b64) {
   if (payload.length < 100) return false; // Min-Sanity (< 75 Bytes Bild ist unrealistisch)
   // Magic-Bytes-Check via Base64-Anfangs-Decode (erste 6 Bytes reichen)
   try {
-    const head = atob(payload.slice(0, 12)); // ~8-9 decoded Bytes
+    const head = atob(payload.slice(0, 16)); // ~12 decoded Bytes (genug fuer WEBP-Marker bei Offset 8)
     const codes = [head.charCodeAt(0), head.charCodeAt(1), head.charCodeAt(2), head.charCodeAt(3)];
     // JPEG: FF D8 FF
     if (codes[0] === 0xFF && codes[1] === 0xD8 && codes[2] === 0xFF) return true;
     // PNG: 89 50 4E 47
     if (codes[0] === 0x89 && codes[1] === 0x50 && codes[2] === 0x4E && codes[3] === 0x47) return true;
-    // WebP: starts with "RIFF" (52 49 46 46)
-    if (codes[0] === 0x52 && codes[1] === 0x49 && codes[2] === 0x46 && codes[3] === 0x46) return true;
+    // WebP: "RIFF"(0-3) + "WEBP"(8-11) — RIFF allein wuerde auch AVI/WAV durchlassen
+    if (codes[0] === 0x52 && codes[1] === 0x49 && codes[2] === 0x46 && codes[3] === 0x46
+        && head.charCodeAt(8) === 0x57 && head.charCodeAt(9) === 0x45 && head.charCodeAt(10) === 0x42 && head.charCodeAt(11) === 0x50) return true;
     return false; // Anderes Magic = ablehnen
   } catch {
     return false; // Base64-Decode-Fehler
   }
+}
+
+// paypalMe gegen Stored-XSS haerten: nur echte paypal.me-Handles, kanonisch normalisiert.
+// Der Gaeste-Sink (loadWishes: <a href="...">) konkateniert paypalMe roh -> ohne diese
+// Validierung kann paypalMe='"><img src=x onerror=...>' XSS im Browser jedes Gastes ausloesen.
+function sanitizePaypal(v) {
+  v = (v || "").trim().slice(0, 100);
+  if (!v) return "";
+  const m = v.match(/^(?:https?:\/\/)?(?:www\.)?paypal\.me\/([A-Za-z0-9_.\-]{1,80})\/?$/i);
+  return m ? "https://paypal.me/" + m[1] : "";
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -284,7 +296,7 @@ export default {
           price:(w.price||"").slice(0,20), sharedGift:!!w.sharedGift, claimedBy:[]
         })).filter(w=>w.title),
         guests: [],
-        paypalMe: (body.paypalMe||"").slice(0,100),
+        paypalMe: sanitizePaypal(body.paypalMe),
         created: new Date().toISOString(),
       };
       const ttl = calcTTL(party.date);
@@ -315,6 +327,7 @@ export default {
         return {...w, claimedBy:undefined, claimedCount:cb.length, claimedAmountTotal, isFull:!w.sharedGift && cb.length>0};
       });
       safe.guestCount = safe.guests.filter(g=>g.status==="ja").length;
+      safe.paypalMe = sanitizePaypal(safe.paypalMe); // Legacy-Parties auch beim Lesen haerten (Gaeste-Sink)
       safe.guests = undefined;
       return json(safe, 200, request);
     }
@@ -344,7 +357,7 @@ export default {
       if(body.notes!==undefined) party.notes = (body.notes||"").slice(0,500);
       if(body.askAllergies!==undefined) party.askAllergies = body.askAllergies!==false;
       if(body.askPickup!==undefined) party.askPickup = body.askPickup!==false;
-      if(body.paypalMe!==undefined) party.paypalMe = (body.paypalMe||"").slice(0,100);
+      if(body.paypalMe!==undefined) party.paypalMe = sanitizePaypal(body.paypalMe);
       if(body.email!==undefined) party.email = (body.email||"").slice(0,120);
       if (Array.isArray(body.wishes)) {
         party.wishes = body.wishes.slice(0,MAX_WISHES).map(w=>({
@@ -1548,7 +1561,7 @@ function pickStatus(s,el){
 async function sendRsvp(){
   var rn=document.getElementById("rsvpName").value.trim();
   if(!rn){alert("Bitte Namen eingeben");return;}
-  if(!selectedStatus){alert("Bitte Zu- oder Absage w\\x27hlen");return;}
+  if(!selectedStatus){alert("Bitte Zu- oder Absage w\\u00E4hlen");return;}
   var btn=document.getElementById("rsvpBtn");btn.textContent="\\u23F3 Wird gesendet...";btn.disabled=true;
   var body={name:rn,status:selectedStatus};
   var al=document.getElementById("rsvpAllergies");if(al)body.allergies=al.value;
@@ -1560,7 +1573,7 @@ async function sendRsvp(){
     localStorage.setItem("rsvp_"+PID,JSON.stringify({name:rn,status:selectedStatus}));
     guestName=rn;
     var form=document.getElementById("rsvpFields");form.classList.add("slide-hidden");
-    var msgs={ja:["\\u{1F389}","Wir freuen uns auf euch!",""+rn+" ist dabei!"],vielleicht:["\\u{1F914}","Alles klar!","Wir hoffen ihr k\\x27nnt kommen!"],nein:["\\u{1F622}","Schade!","Vielleicht beim n\\x27chsten Mal."]};
+    var msgs={ja:["\\u{1F389}","Wir freuen uns auf euch!",""+rn+" ist dabei!"],vielleicht:["\\u{1F914}","Alles klar!","Wir hoffen ihr k\\u00F6nnt kommen!"],nein:["\\u{1F622}","Schade!","Vielleicht beim n\\u00E4chsten Mal."]};
     var m=msgs[selectedStatus];
     setTimeout(function(){
       var suc=document.getElementById("rsvpSuccess");
@@ -1815,7 +1828,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
 
   <script>
   (async function(){try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo)document.getElementById("heroPhotoEd").innerHTML='<img src="'+d.photo+'" class="hero-photo">';}catch{}})();
-  function shareWA(){const t="${esc(party.mottoEmoji||"\u{1F389}")} ${name?name+"s ":""}${motto||"Geburtstag"}!\\n\\nAlle Infos & Zusage hier:\\n${esc(guestUrl)}";window.open("https://wa.me/?text="+encodeURIComponent(t));}
+  function shareWA(){const t="${escJson(party.mottoEmoji||"\u{1F389}")} ${party.childName?escJson(party.childName)+"s ":""}${escJson(party.motto)||"Geburtstag"}!\\n\\nAlle Infos & Zusage hier:\\n${escJson(guestUrl)}";window.open("https://wa.me/?text="+encodeURIComponent(t));}
   function copyLink(){navigator.clipboard.writeText("${esc(guestUrl)}").then(()=>{const b=event.target;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Link kopieren",2000);});}
   function copyGuestLink(){navigator.clipboard.writeText("${esc(guestUrl)}").then(()=>{const b=event.target;const o=b.textContent;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent=o,2000);});}
   async function saveEdit(){
@@ -1834,7 +1847,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     }catch(e){alert("Fehler: "+e.message);btn.textContent="\u{1F4BE} Speichern";btn.disabled=false;}
   }
   function confirmDelete(){
-    const childName="${esc(name||"diese Party")}";
+    const childName="${escJson(party.childName||"diese Party")}";
     const confirmed=confirm("Wirklich löschen?\\n\\nDie Party \""+childName+"\" und alle zugehörigen Daten (Gäste, Allergien, Fotos, Wünsche) werden ENDGÜLTIG gelöscht.\\n\\nDiese Aktion kann nicht rückgängig gemacht werden.\\n\\nWeiter?");
     if(!confirmed)return;
     const second=confirm("Letzte Bestätigung — wirklich endgültig löschen?");
