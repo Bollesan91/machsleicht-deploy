@@ -110,6 +110,12 @@
 }
 </script>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
+<script>
+// Shim: plausible()-Aufrufe auf umami.track() mappen (Provider-Abstraktion, Konvention CLAUDE.md).
+// OHNE diesen Shim feuerte if(window.plausible) plausible('party_created',...) NIE -> Funnel-Conversion blind.
+window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};
+window.plausible.init=function(){};window.plausible.q=[];
+</script>
 <!--
   Wizard v5 Live-Aligned als /wizard.html deployed (30.05.2026 nach Bolles Entscheidung).
   Vorher: Stage-1+2-MVP + Redirect zum bestehenden Planer — verworfen weil unvollstaendig.
@@ -1600,7 +1606,7 @@
     document.getElementById('planLocation1').textContent = locationLabel(state.location);
     // Elite-Content async drueberlegen; Schatzsuche-Scroll ERST nachdem renderElitePlan fertig ist (sonst wird der Scroll-Anker
     // mitten im Smooth-Scroll durch das Elite-innerHTML ersetzt). Funktioniert fuer beide Pfade: Elite-Render ODER Fallback (early return).
-    renderElitePlan().then(maybeScrollSchatz).catch(maybeScrollSchatz);
+    renderElitePlan().catch(()=>{});   // Schatzsuche-Scroll passiert jetzt IN renderElitePlan nach dem Stale-Guard (H2)
   }
 
   // ===== ELITE-CONTENT-RENDERER (Phase 2) — laedt /data/motto/<motto>-<group>.json =====
@@ -1677,6 +1683,7 @@
       const _rich = _theme ? buildSchatzHtml(_theme, reqAge) : '';
       const _old = document.getElementById('sz-anchor');
       if(_rich && _old) _old.outerHTML = _rich;
+      maybeScrollSchatz();   // nur NACH Stale-Guard -> abgebrochene (stale) Renders armen den Scroll-Latch nicht (H2)
       return; // restliches Fallback-Rendering (Plan/Spiele/Einkauf) bleibt stehen
     }
     const v = currentVariant(d); if(!v) return;
@@ -1724,6 +1731,7 @@
       <article class="mod"><header class="mod__head"><span class="mod__icon">🛒</span><h3 class="mod__title">Einkaufsliste${v.costContext?' · '+esc(v.costContext):''}</h3></header><ul class="eshop">${shop}</ul></article>
       ${cake}${tips}${faq}
     `;
+    maybeScrollSchatz();   // nur NACH Stale-Guard -> Elite-Pfad armt Scroll-Latch nur beim gewinnenden Render (H2)
   }
 
   function buildTimeline(){
@@ -2125,6 +2133,10 @@
   }
   async function activatePartyseite(){
     // C: ECHTER Worker-Call (Port aus altem Planer) — POST /api/create, kein Fake mehr
+    // M1: Re-Entrancy/Doppelklick-Schutz — sonst zweiter POST = zweite Partyseite mit eigenem editToken
+    if(window.__partyCreating || (state.partyseite && state.partyseite.active)) return;
+    window.__partyCreating = true;
+    const psBtn = document.querySelector('[onclick*="activatePartyseite"]'); if(psBtn) psBtn.disabled = true;
     const motto = state.motto || MOTTOS[0];
     const name = (state.name || '').trim() || 'Geburtstagskind';
     const statusEl = document.getElementById('psStatus');
@@ -2134,7 +2146,7 @@
     const payload = {
       childName: name, age: ageNum(),
       motto: motto.name, mottoEmoji: motto.emoji, mottoColor: motto.accent || '#D4812A',
-      date: state.date || '', time: state.time || '', endTime: state.endTime || '', address: '',
+      date: state.date || '', time: state.time || '', endTime: state.endTime || '', address: locationLabel(state.location || ''),
       notes: motto.name + '-Geburtstag', askAllergies: true, askPickup: true, wishes: []
     };
     try{
@@ -2149,6 +2161,9 @@
     }catch(err){
       if(urlEl) urlEl.textContent = '';
       if(statusEl) statusEl.innerHTML = '⚠️ Konnte Partyseite nicht erstellen (' + esc(err.message || 'Verbindung') + '). Bitte nochmal versuchen.';
+      if(psBtn) psBtn.disabled = false;   // M1: bei Fehler Retry erlauben (bei Erfolg bleibt Button aus, active-Guard greift)
+    }finally{
+      window.__partyCreating = false;
     }
   }
 
