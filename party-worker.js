@@ -187,6 +187,12 @@ function esc(str) {
   if (!str) return "";
   return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
 }
+// Erstes Grapheme-Cluster (ein vollstaendiges Emoji). slice(0,4) zerschnitt ZWJ-Emojis (🏴‍☠️=5 Units, 🧜‍♀️) -> kaputtes Hero-Emoji.
+function firstEmoji(s){
+  s = (s==null ? "" : String(s)) || "🎉";
+  try { const r = new Intl.Segmenter(undefined,{granularity:"grapheme"}).segment(s)[Symbol.iterator]().next(); return r.done ? "🎉" : r.value.segment; }
+  catch(e){ return s.slice(0,8); }
+}
 function escJson(str) {
   if (!str) return "";
   // C1-Security: zusaetzlich < und > als \uXXXX escapen. In JS-String-Kontexten (var CNL="...")
@@ -262,7 +268,7 @@ export default {
         childName: (body.childName || "").trim().slice(0,50),
         age: Math.min(Math.max(parseInt(body.age)||0,0),18)||null,
         motto: (body.motto||"").slice(0,60),
-        mottoEmoji: (body.mottoEmoji||"🎉").slice(0,4),
+        mottoEmoji: firstEmoji(body.mottoEmoji),
         mottoColor: /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A",
         date: body.date||"", time: body.time||"", endTime: body.endTime||"",
         address: (body.address||"").slice(0,200),
@@ -324,7 +330,7 @@ export default {
       if(body.childName!==undefined) party.childName = (body.childName||"").trim().slice(0,50);
       if(body.age!==undefined) party.age = Math.min(Math.max(parseInt(body.age)||0,0),18)||null;
       if(body.motto!==undefined) party.motto = (body.motto||"").slice(0,60);
-      if(body.mottoEmoji!==undefined) party.mottoEmoji = (body.mottoEmoji||"🎉").slice(0,4);
+      if(body.mottoEmoji!==undefined) party.mottoEmoji = firstEmoji(body.mottoEmoji);
       if(body.mottoColor!==undefined) party.mottoColor = /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A";
       if(body.date!==undefined) party.date = (body.date||"").slice(0,40);
       if(body.time!==undefined) party.time = (body.time||"").slice(0,20);
@@ -471,7 +477,8 @@ export default {
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = JSON.parse(raw);
       const body = await request.json();
-      if (body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
+      // Legacy-Token-Guard (konsistent mit PUT/DELETE): tokenloser Alt-Eintrag -> undefined!==undefined=false waere Auth-Bypass (Mail-Spam-Vektor).
+      if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
       const email = (body.email||"").trim().slice(0,200);
       // P0-Security Welle 1E: Control-Chars (NUL, CR, LF, Tab) in Email blocken \u2014 Resend-Header-Injection-Risk.
       if (/[\x00-\x1F\x7F]/.test(email)) return json({error:"Ung\u00FCltige E-Mail"},400, request);
