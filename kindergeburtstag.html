@@ -2237,6 +2237,15 @@
   // Scroll-Funnel: Default-Auswahl + alle Sektionen beim Laden rendern (nie leer, voll crawlbar)
   (function initFunnel(){
     try{
+      // Funnel-Eintritt: eingehende URL-Params (Handoff von Motto-Seiten etc.) — ?motto/?alter/?gaeste/?modus/?thema
+      try{
+        const p = new URLSearchParams(window.location.search);
+        const m = p.get('motto') || window.__selectedMotto;
+        if(m){ const hit = MOTTOS.find(x => x.id === m); if(hit) state.motto = hit; }
+        const a = p.get('alter'); if(a){ const v = parseInt(a,10); if(v>=3 && v<=12) state.age = v<=5 ? '3-5' : (v<=8 ? '6-8' : '9-12'); }
+        const g = p.get('gaeste'); if(g){ const v = parseInt(g,10); if(v>=2 && v<=20) state.guests = v; }
+        window.__entryModus = p.get('modus') || '';   // 'schatzsuche' -> nach Render zur Schatzsuche scrollen
+      }catch(ep){ console.warn('param-in', ep); }
       if(!state.motto){ state.motto = MOTTOS.find(m => m.id === 'piraten') || MOTTOS[0]; }
       if(!state.age){ state.age = '6-8'; }
       applyAccent(state.motto);
