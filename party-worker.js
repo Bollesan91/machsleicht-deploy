@@ -118,18 +118,19 @@ function shopLabel(urlStr) {
   return "ansehen";
 }
 
+// Nur eigene/generische Mottos — lizenzierte Marken (Frozen, Harry Potter, Minecraft,
+// Paw Patrol, Pokemon, Spider-Man, Super Mario, Ninjago, Halloween) entfernt:
+// per Substring-Match aktiv erreichbar -> Seite haette lizenzierte Marken aktiv gethemed.
 const MOTTO_COLORS = {
-  "piraten":"#8B4513","einhorn":"#E040A0","dino":"#4CAF50","feuerwehr":"#D32F2F",
+  "piraten":"#1E3A5F","einhorn":"#E040A0","dino":"#4CAF50","feuerwehr":"#D32F2F",
   "weltraum":"#1565C0","meerjungfrau":"#00ACC1","prinzessin":"#E91E63","safari":"#F57F17",
   "detektiv":"#37474F","ritter":"#795548","superheld":"#D32F2F","zirkus":"#FF6F00",
-  "baustelle":"#F57F17","frozen":"#4FC3F7","harry potter":"#7B1FA2","minecraft":"#4CAF50",
-  "ninjago":"#D32F2F","paw patrol":"#1976D2","pokemon":"#FFC107","spider-man":"#D32F2F",
-  "super mario":"#D32F2F","halloween":"#E65100",
+  "baustelle":"#F57F17","pferde":"#A1724E","dschungel":"#33691E","feen":"#9C27B0",
 };
 
 // ── Theme System (full palette per motto) ──────────────
 const THEMES = {
-  piraten:      {a:"#5C6BC0",d:"#1A237E",m:"#3949AB",l:"#C5CAE9",bg:"#E8EAF6",h1:"#283593",h2:"#3F51B5",h3:"#7986CB"},
+  piraten:      {a:"#1E3A5F",d:"#0A1A2F",m:"#16304D",l:"#B8C7D9",bg:"#EAF0F6",h1:"#0A1A2F",h2:"#1E3A5F",h3:"#4A6886"},
   dino:         {a:"#4CAF50",d:"#1B5E20",m:"#558B2F",l:"#C5E1A5",bg:"#F1F8E9",h1:"#2E7D32",h2:"#4CAF50",h3:"#81C784"},
   safari:       {a:"#F57F17",d:"#4E3419",m:"#8D6E35",l:"#FFE0B2",bg:"#FFF8E1",h1:"#E65100",h2:"#F57F17",h3:"#FFB74D"},
   weltraum:     {a:"#1565C0",d:"#0D1B2A",m:"#1B3A5C",l:"#BBDEFB",bg:"#E3F2FD",h1:"#0D47A1",h2:"#1565C0",h3:"#64B5F6"},
@@ -142,9 +143,9 @@ const THEMES = {
   ritter:       {a:"#795548",d:"#3E2723",m:"#5D4037",l:"#D7CCC8",bg:"#EFEBE9",h1:"#4E342E",h2:"#6D4C41",h3:"#A1887F"},
   zirkus:       {a:"#FF6F00",d:"#4A2800",m:"#E65100",l:"#FFE0B2",bg:"#FFF3E0",h1:"#E65100",h2:"#FF6F00",h3:"#FFB74D"},
   baustelle:    {a:"#F57F17",d:"#4A3000",m:"#F9A825",l:"#FFF9C4",bg:"#FFFDE7",h1:"#F57F17",h2:"#FBC02D",h3:"#FFF176"},
-  frozen:       {a:"#4FC3F7",d:"#01579B",m:"#0288D1",l:"#B3E5FC",bg:"#E1F5FE",h1:"#0277BD",h2:"#039BE5",h3:"#4FC3F7"},
-  minecraft:    {a:"#4CAF50",d:"#1B5E20",m:"#388E3C",l:"#C8E6C9",bg:"#E8F5E9",h1:"#2E7D32",h2:"#43A047",h3:"#81C784"},
-  halloween:    {a:"#E65100",d:"#1A0A00",m:"#BF360C",l:"#FFE0B2",bg:"#FFF3E0",h1:"#BF360C",h2:"#E65100",h3:"#FF8A65"},
+  pferde:       {a:"#A1724E",d:"#3E2415",m:"#7A5230",l:"#E6D2BE",bg:"#FBF3EA",h1:"#5C3A20",h2:"#A1724E",h3:"#C99A6E"},
+  dschungel:    {a:"#33691E",d:"#1B2E0A",m:"#558B2F",l:"#DCEDC8",bg:"#F1F8E9",h1:"#1B2E0A",h2:"#33691E",h3:"#7CB342"},
+  feen:         {a:"#9C27B0",d:"#38006B",m:"#7B1FA2",l:"#E1BEE7",bg:"#F5EEF8",h1:"#4A148C",h2:"#9C27B0",h3:"#CE93D8"},
 };
 const DEFAULT_THEME = {a:"#D4812A",d:"#2D2319",m:"#8B7D6B",l:"#EDE6DE",bg:"#FFFCF7",h1:"#A0522D",h2:"#D4812A",h3:"#E8A960"};
 
@@ -179,7 +180,10 @@ function generateToken() {
   return Array.from(crypto.getRandomValues(new Uint8Array(24))).map(b => b.toString(16).padStart(2, "0")).join("");
 }
 function calcTTL(partyDate) {
-  const base = partyDate ? new Date(partyDate) : new Date();
+  // F3: ungueltiges/kaputtes Datum (z.B. "muell") -> new Date(...).getTime()===NaN -> TTL NaN
+  // -> KV put mit expirationTtl:NaN wirft / Party ohne Ablauf. Fallback: 90 Tage ab jetzt.
+  let base = partyDate ? new Date(partyDate) : new Date();
+  if (isNaN(base.getTime())) base = new Date();
   const expiry = new Date(base.getTime() + 90 * 24 * 60 * 60 * 1000);
   return Math.max(Math.floor((expiry.getTime() - Date.now()) / 1000), 86400);
 }
@@ -187,9 +191,18 @@ function esc(str) {
   if (!str) return "";
   return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
 }
+// Erstes Grapheme-Cluster (ein vollstaendiges Emoji). slice(0,4) zerschnitt ZWJ-Emojis (🏴‍☠️=5 Units, 🧜‍♀️) -> kaputtes Hero-Emoji.
+function firstEmoji(s){
+  s = (s==null ? "" : String(s)) || "🎉";
+  try { const r = new Intl.Segmenter(undefined,{granularity:"grapheme"}).segment(s)[Symbol.iterator]().next(); return r.done ? "🎉" : r.value.segment; }
+  catch(e){ return s.slice(0,8); }
+}
 function escJson(str) {
   if (!str) return "";
-  return String(str).replace(/\\/g,"\\\\").replace(/"/g,'\\"').replace(/\n/g,"\\n").replace(/\r/g,"\\r");
+  // C1-Security: zusaetzlich < und > als \uXXXX escapen. In JS-String-Kontexten (var CNL="...")
+  // verhindert das den </script>-Ausbruch (Stored-XSS auf der oeffentlichen Gaesteseite); der JS-Wert
+  // bleibt korrekt (< === '<'). In ICS-Text nur kosmetisch bei seltenem < im Namen.
+  return String(str).replace(/\\/g,"\\\\").replace(/"/g,'\\"').replace(/\n/g,"\\n").replace(/\r/g,"\\r").replace(/</g,"\\u003C").replace(/>/g,"\\u003E");
 }
 // P0-Security: Wunsch-URL-Validation. Verhindert javascript:/data:/vbscript:/file:-Protokoll-Injection.
 // Whitelist: nur http:/https:. Längenlimit 500. Bei invalid → "" (= kein Link).
@@ -226,18 +239,29 @@ function isSafePhoto(b64) {
   if (payload.length < 100) return false; // Min-Sanity (< 75 Bytes Bild ist unrealistisch)
   // Magic-Bytes-Check via Base64-Anfangs-Decode (erste 6 Bytes reichen)
   try {
-    const head = atob(payload.slice(0, 12)); // ~8-9 decoded Bytes
+    const head = atob(payload.slice(0, 16)); // ~12 decoded Bytes (genug fuer WEBP-Marker bei Offset 8)
     const codes = [head.charCodeAt(0), head.charCodeAt(1), head.charCodeAt(2), head.charCodeAt(3)];
     // JPEG: FF D8 FF
     if (codes[0] === 0xFF && codes[1] === 0xD8 && codes[2] === 0xFF) return true;
     // PNG: 89 50 4E 47
     if (codes[0] === 0x89 && codes[1] === 0x50 && codes[2] === 0x4E && codes[3] === 0x47) return true;
-    // WebP: starts with "RIFF" (52 49 46 46)
-    if (codes[0] === 0x52 && codes[1] === 0x49 && codes[2] === 0x46 && codes[3] === 0x46) return true;
+    // WebP: "RIFF"(0-3) + "WEBP"(8-11) — RIFF allein wuerde auch AVI/WAV durchlassen
+    if (codes[0] === 0x52 && codes[1] === 0x49 && codes[2] === 0x46 && codes[3] === 0x46
+        && head.charCodeAt(8) === 0x57 && head.charCodeAt(9) === 0x45 && head.charCodeAt(10) === 0x42 && head.charCodeAt(11) === 0x50) return true;
     return false; // Anderes Magic = ablehnen
   } catch {
     return false; // Base64-Decode-Fehler
   }
+}
+
+// paypalMe gegen Stored-XSS haerten: nur echte paypal.me-Handles, kanonisch normalisiert.
+// Der Gaeste-Sink (loadWishes: <a href="...">) konkateniert paypalMe roh -> ohne diese
+// Validierung kann paypalMe='"><img src=x onerror=...>' XSS im Browser jedes Gastes ausloesen.
+function sanitizePaypal(v) {
+  v = (v || "").trim().slice(0, 100);
+  if (!v) return "";
+  const m = v.match(/^(?:https?:\/\/)?(?:www\.)?paypal\.me\/([A-Za-z0-9_.\-]{1,80})\/?$/i);
+  return m ? "https://paypal.me/" + m[1] : "";
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -259,7 +283,8 @@ export default {
         childName: (body.childName || "").trim().slice(0,50),
         age: Math.min(Math.max(parseInt(body.age)||0,0),18)||null,
         motto: (body.motto||"").slice(0,60),
-        mottoEmoji: (body.mottoEmoji||"🎉").slice(0,4),
+        mottoId: (body.mottoId||"").slice(0,40), // sauberer Theme-Kontrakt: kanonische ID statt Freitext-Name (getTheme matcht damit exakt, Custom faellt sauber auf Default)
+        mottoEmoji: firstEmoji(body.mottoEmoji),
         mottoColor: /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A",
         date: body.date||"", time: body.time||"", endTime: body.endTime||"",
         address: (body.address||"").slice(0,200),
@@ -271,7 +296,7 @@ export default {
           price:(w.price||"").slice(0,20), sharedGift:!!w.sharedGift, claimedBy:[]
         })).filter(w=>w.title),
         guests: [],
-        paypalMe: (body.paypalMe||"").slice(0,100),
+        paypalMe: sanitizePaypal(body.paypalMe),
         created: new Date().toISOString(),
       };
       const ttl = calcTTL(party.date);
@@ -302,6 +327,7 @@ export default {
         return {...w, claimedBy:undefined, claimedCount:cb.length, claimedAmountTotal, isFull:!w.sharedGift && cb.length>0};
       });
       safe.guestCount = safe.guests.filter(g=>g.status==="ja").length;
+      safe.paypalMe = sanitizePaypal(safe.paypalMe); // Legacy-Parties auch beim Lesen haerten (Gaeste-Sink)
       safe.guests = undefined;
       return json(safe, 200, request);
     }
@@ -316,7 +342,23 @@ export default {
       // P0-Security Welle 1E: Legacy-Party ohne editToken darf NICHT editierbar sein.
       // Sonst Auth-Bypass: body.editToken=undefined gegen party.editToken=undefined → match.
       if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
-      ["childName","age","motto","mottoEmoji","mottoColor","date","time","endTime","address","notes","askAllergies","askPickup","paypalMe","email"].forEach(f=>{if(body[f]!==undefined)party[f]=body[f];});
+      // P0-Security: PUT muss DIESELBE Sanitization wie /api/create anwenden — sonst umgeht ein editToken-Inhaber
+      // saemtliche create-Limits (Stored-XSS via age/notes/childName etc. auf der oeffentlichen Gaesteseite, Gutachter-HIGH).
+      if(body.childName!==undefined) party.childName = (body.childName||"").trim().slice(0,50);
+      if(body.age!==undefined) party.age = Math.min(Math.max(parseInt(body.age)||0,0),18)||null;
+      if(body.motto!==undefined) party.motto = (body.motto||"").slice(0,60);
+      if(body.mottoId!==undefined) party.mottoId = (body.mottoId||"").slice(0,40);
+      if(body.mottoEmoji!==undefined) party.mottoEmoji = firstEmoji(body.mottoEmoji);
+      if(body.mottoColor!==undefined) party.mottoColor = /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A";
+      if(body.date!==undefined) party.date = (body.date||"").slice(0,40);
+      if(body.time!==undefined) party.time = (body.time||"").slice(0,20);
+      if(body.endTime!==undefined) party.endTime = (body.endTime||"").slice(0,20);
+      if(body.address!==undefined) party.address = (body.address||"").slice(0,200);
+      if(body.notes!==undefined) party.notes = (body.notes||"").slice(0,500);
+      if(body.askAllergies!==undefined) party.askAllergies = body.askAllergies!==false;
+      if(body.askPickup!==undefined) party.askPickup = body.askPickup!==false;
+      if(body.paypalMe!==undefined) party.paypalMe = sanitizePaypal(body.paypalMe);
+      if(body.email!==undefined) party.email = (body.email||"").slice(0,120);
       if (Array.isArray(body.wishes)) {
         party.wishes = body.wishes.slice(0,MAX_WISHES).map(w=>({
           id:w.id||generateId(6),title:(w.title||"").slice(0,100),url:normalizeWishUrl(w.url),
@@ -385,7 +427,7 @@ export default {
       const existing = party.guests.findIndex(g=>g.name.toLowerCase()===name.toLowerCase());
       if (existing>=0) party.guests[existing]=guest; else party.guests.push(guest);
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
-      return json({ok:true,guestCount:party.guests.filter(g=>g.status==="ja").length}, request);
+      return json({ok:true,guestCount:party.guests.filter(g=>g.status==="ja").length}, 200, request);
     }
 
     // POST /api/party/:id/wish/:wid/claim
@@ -396,7 +438,7 @@ export default {
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = JSON.parse(raw);
       const body = await request.json();
-      const guestName = (body.name||"").trim();
+      const guestName = (body.name||"").trim().slice(0,50); // F4: Laengen-Limit gegen KV-Bloat/XSS-Payload
       if (!guestName) return json({error:"Name fehlt"},400, request);
       // amount nur bei sharedGift relevant; 0 < amount < 9999
       let amount = null;
@@ -414,6 +456,8 @@ export default {
       if (idx>=0) {
         wish.claimedBy.splice(idx,1);
       } else {
+        // F4: Anzahl-Cap gegen KV-Value-Bloat (anonym beschreibbarer Endpoint)
+        if (wish.claimedBy.length >= 100) return json({error:"Liste voll"},400, request);
         // sharedGift + amount → Object, sonst String wie bisher
         if (wish.sharedGift && amount !== null) wish.claimedBy.push({name:guestName, amount});
         else wish.claimedBy.push(guestName);
@@ -453,7 +497,8 @@ export default {
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = JSON.parse(raw);
       const body = await request.json();
-      if (body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
+      // Legacy-Token-Guard (konsistent mit PUT/DELETE): tokenloser Alt-Eintrag -> undefined!==undefined=false waere Auth-Bypass (Mail-Spam-Vektor).
+      if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
       const email = (body.email||"").trim().slice(0,200);
       // P0-Security Welle 1E: Control-Chars (NUL, CR, LF, Tab) in Email blocken \u2014 Resend-Header-Injection-Risk.
       if (/[\x00-\x1F\x7F]/.test(email)) return json({error:"Ung\u00FCltige E-Mail"},400, request);
@@ -776,7 +821,7 @@ function creatorPage() {
         <button type="button" class="motto-chip" id="customMottoBtn" onclick="toggleCustomMotto()">\u{270F}\u{FE0F} Eigenes...</button>
       </div>
       <div id="customMottoRow" style="display:none;gap:8px">
-        <input type="text" id="mottoEmojiCustom" style="width:56px;text-align:center;font-size:22px" placeholder="\u{1F389}" maxlength="4" oninput="clearChipSelection()">
+        <input type="text" id="mottoEmojiCustom" style="width:56px;text-align:center;font-size:22px" placeholder="\u{1F389}" maxlength="8" oninput="clearChipSelection()">
         <input type="text" id="mottoCustom" placeholder="z.B. Ritter-Party" style="flex:1" maxlength="60" oninput="clearChipSelection()">
       </div>
       <input type="hidden" id="mottoEmoji" value="">
@@ -1072,6 +1117,8 @@ async function createParty(){
     document.getElementById("codeHint").textContent=childName;
     [1,2,3].forEach(i=>document.getElementById("step"+i).classList.add("hidden"));
     document.getElementById("result").classList.remove("hidden");
+    // F8: Conversion-Tracking auch auf dem Creator-Pfad (war nur im Wizard) -> beide Pfade vergleichbar
+    try{ if(window.plausible) plausible("party_created",{props:{motto:(document.getElementById("motto").value||"").slice(0,40),source:"creator"}}); }catch(e){}
     window._pd={...data,childName,motto:document.getElementById("motto").value};
     window.scrollTo({top:0,behavior:"smooth"});
   }catch(e){alert("Fehler: "+e.message);btn.textContent="\u{1F389} Erstellen";btn.disabled=false;}
@@ -1176,8 +1223,9 @@ function partyPage(party, isEditor, photoRoundB64, isPreview) {
   }
 
   // Editor keeps existing layout
-  const ogTitle = name ? `${name} wird ${age}! ${emoji}` : "Kindergeburtstag! \u{1F389}";
-  const ogDesc = motto ? `${motto} \u2014 Zu-/Absage, Infos & Wunschliste` : "Alle Party-Infos auf einer Seite";
+  // OG-Strings aus ROHwerten bauen \u2014 baseHead esc()'t title+description genau einmal (sonst &amp;amp;)
+  const ogTitle = party.childName ? `${party.childName} wird ${age}! ${party.mottoEmoji||"\u{1F389}"}` : "Kindergeburtstag! \u{1F389}";
+  const ogDesc = party.motto ? `${party.motto} \u2014 Zu-/Absage, Infos & Wunschliste` : "Alle Party-Infos auf einer Seite";
   return `${baseHead(ogTitle+" \u2014 mach\u2019s leicht", ogDesc, color, ogUrl)}
 <body>
 <div class="container">
@@ -1192,20 +1240,21 @@ function partyPage(party, isEditor, photoRoundB64, isPreview) {
 // GUEST PAGE — FULL THEMED (new design)
 // ═══════════════════════════════════════════════════════════════
 function guestPageFull(party, photoRoundB64, isPreview) {
-  const t = getTheme(party.motto);
+  const t = getTheme(party.mottoId || party.motto); // mottoId (kanonische ID) bevorzugt; Fallback Freitext-Name fuer Legacy-Parties
   const name = esc(party.childName);
   const age = party.age || "";
   const motto = esc(party.motto);
   const emoji = esc(party.mottoEmoji || "\u{1F389}");
   const id = party.id;
-  const nameLC = escJson(party.childName.toLowerCase().trim());
+  const nameLC = escJson((party.childName||"").toLowerCase().trim()); // Null-Guard: Legacy/fremd-geschriebene Party ohne childName crasht sonst die ganze Gaesteseite
   const dateStr = party.date ? new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long",year:"numeric"}) : "";
   const hasWishes = party.wishes && party.wishes.length > 0;
   const freeWishes = hasWishes ? party.wishes.filter(w => !w.sharedGift && (w.claimedBy||[]).length > 0 ? 0 : 1).length : 0;
   const totalWishes = hasWishes ? party.wishes.length : 0;
   const claimedWishes = hasWishes ? party.wishes.filter(w => (!w.sharedGift && (w.claimedBy||[]).length > 0)).length : 0;
   const ogTitle = "Du bist eingeladen! \u{1F389}";
-  const ogDesc = motto ? `${motto} \u2014 Zu-/Absage, Infos & Wunschliste` : "Alle Party-Infos auf einer Seite";
+  // ROHwert \u2014 wird unten via esc(ogDesc) genau einmal escaped (sonst &amp;amp;)
+  const ogDesc = party.motto ? `${party.motto} \u2014 Zu-/Absage, Infos & Wunschliste` : "Alle Party-Infos auf einer Seite";
   const ogUrl = `https://party.machsleicht.de/${id}`;
 
   // Game URL
@@ -1362,7 +1411,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
   <div class="hero-logo"><b>mach's</b> leicht</div>
   <div class="hero-photo-wrap" id="heroPhoto" style="display:none"></div>
   <div class="hero-emoji">${emoji}</div>
-  <h1><span class="hname">${name}</span> wird ${age}!</h1>
+  <h1><span class="hname">${name}</span> wird ${esc(age)}!</h1>
   ${motto?`<div class="hero-motto">${motto}</div>`:""}
   <div class="hero-sub">Du bist eingeladen!</div>
   ${party.date && daysLeft > 0 ?`<div class="countdown"><span class="countdown-label">Noch</span><span class="countdown-num">${daysLeft}</span><span class="countdown-label">Tage!</span></div>`:""}
@@ -1512,7 +1561,7 @@ function pickStatus(s,el){
 async function sendRsvp(){
   var rn=document.getElementById("rsvpName").value.trim();
   if(!rn){alert("Bitte Namen eingeben");return;}
-  if(!selectedStatus){alert("Bitte Zu- oder Absage w\\x27hlen");return;}
+  if(!selectedStatus){alert("Bitte Zu- oder Absage w\\u00E4hlen");return;}
   var btn=document.getElementById("rsvpBtn");btn.textContent="\\u23F3 Wird gesendet...";btn.disabled=true;
   var body={name:rn,status:selectedStatus};
   var al=document.getElementById("rsvpAllergies");if(al)body.allergies=al.value;
@@ -1524,7 +1573,7 @@ async function sendRsvp(){
     localStorage.setItem("rsvp_"+PID,JSON.stringify({name:rn,status:selectedStatus}));
     guestName=rn;
     var form=document.getElementById("rsvpFields");form.classList.add("slide-hidden");
-    var msgs={ja:["\\u{1F389}","Wir freuen uns auf euch!",""+rn+" ist dabei!"],vielleicht:["\\u{1F914}","Alles klar!","Wir hoffen ihr k\\x27nnt kommen!"],nein:["\\u{1F622}","Schade!","Vielleicht beim n\\x27chsten Mal."]};
+    var msgs={ja:["\\u{1F389}","Wir freuen uns auf euch!",""+rn+" ist dabei!"],vielleicht:["\\u{1F914}","Alles klar!","Wir hoffen ihr k\\u00F6nnt kommen!"],nein:["\\u{1F622}","Schade!","Vielleicht beim n\\u00E4chsten Mal."]};
     var m=msgs[selectedStatus];
     setTimeout(function(){
       var suc=document.getElementById("rsvpSuccess");
@@ -1695,7 +1744,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     </div>
     <div id="editForm" class="hidden">
       <div class="field"><label>Name</label><input type="text" id="edName" value="${esc(party.childName)}"></div>
-      <div class="field"><label>Alter</label><input type="number" id="edAge" value="${party.age||""}"></div>
+      <div class="field"><label>Alter</label><input type="number" id="edAge" value="${esc(party.age||"")}"></div>
       <div class="field"><label>Motto</label><input type="text" id="edMotto" value="${esc(party.motto)}"></div>
       <div style="display:flex;gap:8px" class="field">
         <div style="flex:1"><label>Datum</label><input type="date" id="edDate" value="${esc(party.date)}"></div>
@@ -1758,7 +1807,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   async function deleteWish(wid){
     if(!confirm("Wunsch wirklich l\u00F6schen?"))return;
     const editToken=new URLSearchParams(location.search).get("edit");
-    const currentWishes=${JSON.stringify((party.wishes||[]).map(w=>({id:w.id,title:w.title,url:w.url,price:w.price,sharedGift:w.sharedGift,claimedBy:w.claimedBy})))};
+    const currentWishes=${JSON.stringify((party.wishes||[]).map(w=>({id:w.id,title:w.title,url:w.url,price:w.price,sharedGift:w.sharedGift,claimedBy:w.claimedBy}))).replace(/</g,"\\u003c").replace(/>/g,"\\u003e").replace(/&/g,"\\u0026")};
     const updated=currentWishes.filter(w=>w.id!==wid);
     try{
       await fetch(location.origin+"/api/party/${party.id}",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({editToken,wishes:updated})});
@@ -1779,7 +1828,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
 
   <script>
   (async function(){try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo)document.getElementById("heroPhotoEd").innerHTML='<img src="'+d.photo+'" class="hero-photo">';}catch{}})();
-  function shareWA(){const t="${esc(party.mottoEmoji||"\u{1F389}")} ${name?name+"s ":""}${motto||"Geburtstag"}!\\n\\nAlle Infos & Zusage hier:\\n${esc(guestUrl)}";window.open("https://wa.me/?text="+encodeURIComponent(t));}
+  function shareWA(){const t="${escJson(party.mottoEmoji||"\u{1F389}")} ${party.childName?escJson(party.childName)+"s ":""}${escJson(party.motto)||"Geburtstag"}!\\n\\nAlle Infos & Zusage hier:\\n${escJson(guestUrl)}";window.open("https://wa.me/?text="+encodeURIComponent(t));}
   function copyLink(){navigator.clipboard.writeText("${esc(guestUrl)}").then(()=>{const b=event.target;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Link kopieren",2000);});}
   function copyGuestLink(){navigator.clipboard.writeText("${esc(guestUrl)}").then(()=>{const b=event.target;const o=b.textContent;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent=o,2000);});}
   async function saveEdit(){
@@ -1798,7 +1847,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     }catch(e){alert("Fehler: "+e.message);btn.textContent="\u{1F4BE} Speichern";btn.disabled=false;}
   }
   function confirmDelete(){
-    const childName="${esc(name||"diese Party")}";
+    const childName="${escJson(party.childName||"diese Party")}";
     const confirmed=confirm("Wirklich löschen?\\n\\nDie Party \""+childName+"\" und alle zugehörigen Daten (Gäste, Allergien, Fotos, Wünsche) werden ENDGÜLTIG gelöscht.\\n\\nDiese Aktion kann nicht rückgängig gemacht werden.\\n\\nWeiter?");
     if(!confirmed)return;
     const second=confirm("Letzte Bestätigung — wirklich endgültig löschen?");

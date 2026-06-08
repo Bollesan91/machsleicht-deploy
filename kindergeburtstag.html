@@ -110,6 +110,12 @@
 }
 </script>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
+<script>
+// Shim: plausible()-Aufrufe auf umami.track() mappen (Provider-Abstraktion, Konvention CLAUDE.md).
+// OHNE diesen Shim feuerte if(window.plausible) plausible('party_created',...) NIE -> Funnel-Conversion blind.
+window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};
+window.plausible.init=function(){};window.plausible.q=[];
+</script>
 <!--
   Wizard v5 Live-Aligned als /wizard.html deployed (30.05.2026 nach Bolles Entscheidung).
   Vorher: Stage-1+2-MVP + Redirect zum bestehenden Planer — verworfen weil unvollstaendig.
@@ -621,6 +627,12 @@
   .sz-line{width:18px;height:2px;background:#C8B9A6;flex:none}
   .sz-x{font-size:22px;flex:none;margin-left:2px}
   .sz-hint{color:#0F7B3F;background:#F0FBF4;padding:6px 14px;margin:8px 0 0!important;border-radius:0 0 8px 8px}
+  /* Schatzsuche sekundaer: einklappbar, damit Stage 3 nicht zugekleistert wird und der Weg zu Einladung/Partyseite frei bleibt */
+  .sz-mod>summary{cursor:pointer;list-style:none}
+  .sz-mod>summary::-webkit-details-marker{display:none}
+  .sz-mod>summary::after{content:'▾';color:var(--accent,#FF6F00);font-size:14px;line-height:1;transition:transform .2s;flex:none}
+  .sz-mod[open]>summary::after{transform:rotate(180deg)}
+  .sz-mod:not([open])>summary{margin-bottom:0}
 </style>
 </head>
 <body>
@@ -691,8 +703,11 @@
           <input type="time" id="iqEndTime" oninput="document.getElementById('qEndTime').value=this.value; liveUpdateEndTime();">
         </label>
         <label class="eckdaten__f">Gäste (Kinder)
-          <input type="number" id="iqGuests" min="2" max="20" step="1" value="6" inputmode="numeric" oninput="let v=Math.max(2,Math.min(20,+this.value||6)); document.getElementById('iqGuestsLabel').textContent=v; document.getElementById('qGuests').value=Math.min(12,v); state.guests=v; document.getElementById('planGuests1').textContent=v; autoSave();">
+          <input type="number" id="iqGuests" min="2" max="20" step="1" value="6" inputmode="numeric" oninput="let v=Math.max(2,Math.min(20,+this.value||6)); document.getElementById('iqGuestsLabel').textContent=v; document.getElementById('qGuests').value=v; state.guests=v; document.getElementById('planGuests1').textContent=v; autoSave();">
           <b id="iqGuestsLabel" style="display:none">6</b>
+        </label>
+        <label class="eckdaten__f">Wird wie alt? (Jahre)
+          <input type="number" id="iqExactAge" min="1" max="14" step="1" placeholder="z.B. 7" inputmode="numeric" oninput="setExactAge(this.value)">
         </label>
       </div>
       <div class="eckdaten__loc" id="iqLocation">
@@ -751,7 +766,7 @@
         <p>3 Wege — du kannst auch mehrere kombinieren. Live-Preview rechts updated mit jedem Tippen.</p>
       </header>
 
-      <button class="preview-toggle" onclick="togglePreview()">
+      <button class="preview-toggle" onclick="togglePreview(event)">
         <span>📱 Vorschau ansehen</span>
         <span class="preview-toggle__icon">▼</span>
       </button>
@@ -794,17 +809,13 @@
 
       <div class="send-block">
         <h4>📨 Verschicken</h4>
-        <p>Ein Link, alle Gäste laden, RSVP-Liste auf deiner Partyseite.</p>
-        <div class="send-block__url">
-          <div class="send-block__url-text" id="inviteUrl">machsleicht.de/p/lukas-7</div>
-          <button class="send-block__copy" onclick="copyInviteUrl()">Kopieren</button>
-        </div>
+        <p>Erstelle die echte Einladungsseite mit eigenem Link — oder teile schon jetzt den fertigen Einladungstext.</p>
+        <a class="send-block__btn send-block__btn--email" id="inviteHandoff" href="/einladung/erstellen?source=cockpit" style="margin-bottom:10px;text-decoration:none" onclick="try{if(window.plausible)plausible('invite_handoff_click',{props:{motto:((state.motto&&state.motto.id)||'').indexOf('custom')===0?'custom':((state.motto&&state.motto.id)||'')}})}catch(e){}">📨 Einladung jetzt erstellen →</a>
         <div class="send-block__actions">
-          <a class="send-block__btn send-block__btn--wa" id="whatsappBtn" href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
-          <a class="send-block__btn send-block__btn--email" id="emailBtn" href="#">📧 Per Email</a>
-          <button class="send-block__btn" onclick="copyInviteUrl(true)">🔗 Link kopieren</button>
+          <a class="send-block__btn send-block__btn--wa" id="whatsappBtn" href="#" target="_blank" rel="noopener">💬 Text per WhatsApp</a>
+          <a class="send-block__btn send-block__btn--email" id="emailBtn" href="#">📧 Text per Email</a>
+          <button class="send-block__btn" onclick="copyInviteUrl()">📋 Text kopieren</button>
         </div>
-        <div class="send-status" id="sendStatus" style="display:none">Versendet an <span id="sentCount">0</span> Gäste · <span id="rsvpCount">0</span> Zusagen</div>
       </div>
     </div>
 
@@ -836,7 +847,7 @@
         <p>Eine eigene URL, RSVP-Liste, Foto-Galerie nach der Party. Kostenlos, läuft auf Cloudflare Workers.</p>
       </header>
 
-      <button class="preview-toggle" onclick="togglePreview()">
+      <button class="preview-toggle" onclick="togglePreview(event)">
         <span>🌐 Vorschau ansehen</span>
         <span class="preview-toggle__icon">▼</span>
       </button>
@@ -846,7 +857,7 @@
         <span class="url-builder__prefix">party.machsleicht.de/</span>
         <input type="text" id="psSlug" value="lukas7" oninput="renderPartyseitePreview()">
       </div>
-      <p style="font-size:11px;color:#999;margin-top:6px">Diese URL kannst du deinen Gästen geben.</p>
+      <p style="font-size:11px;color:#999;margin-top:6px">Nur eine Vorschau — beim Aktivieren bekommst du deine echte, eindeutige Adresse, die du den Gästen gibst.</p>
 
       <div class="editor__sub" style="margin-top:24px">Features</div>
 
@@ -860,26 +871,10 @@
 
       <div class="toggle-row">
         <div class="toggle-row__info">
-          <div class="toggle-row__title">📷 Foto-Galerie</div>
-          <div class="toggle-row__desc">Eltern teilen Fotos nach der Party</div>
-        </div>
-        <div class="toggle on" id="psPhotos" onclick="toggleFeature('photos')"></div>
-      </div>
-
-      <div class="toggle-row">
-        <div class="toggle-row__info">
           <div class="toggle-row__title">🎁 Wunschliste</div>
           <div class="toggle-row__desc">Gäste reservieren Geschenke, keine Dopplungen</div>
         </div>
         <div class="toggle" id="psWish" onclick="toggleFeature('wish')"></div>
-      </div>
-
-      <div class="toggle-row">
-        <div class="toggle-row__info">
-          <div class="toggle-row__title">💬 Gäste-Chat</div>
-          <div class="toggle-row__desc">Eltern können untereinander absprechen</div>
-        </div>
-        <div class="toggle" id="psChat" onclick="toggleFeature('chat')"></div>
       </div>
 
       <div class="send-block" style="margin-top:24px">
@@ -941,14 +936,14 @@
         <h3 class="checkout-card__title">Plan-PDF light</h3>
         <div class="checkout-card__price">Kostenlos</div>
         <ul class="checkout-card__features"><li>1 A4 Tagesplan</li><li>Spiele-Anleitungen</li><li>Einkaufsliste</li><li>Schatzkarte</li></ul>
-        <button class="checkout-card__btn">PDF runterladen</button>
+        <button class="checkout-card__btn" onclick="showFlash('📥 PDF-Export kommt im nächsten Update — dein Plan ist online gespeichert und jederzeit abrufbar.')">PDF runterladen</button>
       </div>
       <div class="checkout-card checkout-card--premium">
         <div class="checkout-card__icon">📦</div>
         <h3 class="checkout-card__title">Komplettpaket Print</h3>
         <div class="checkout-card__price">€14,90</div>
         <ul class="checkout-card__features"><li><b>15+ druckfertige Seiten</b></li><li>8 Urkunden mit Namen</li><li>5 Spiel-Karten A6 zum Vorlesen</li><li>Komplette Schatzsuche + Rätsel</li><li>8 Mitgebsel-Etiketten</li><li>Druck-Einladungs-Karten 8×</li></ul>
-        <button class="checkout-card__btn">Komplettpaket kaufen</button>
+        <button class="checkout-card__btn" onclick="showFlash('📦 Das Druck-Komplettpaket ist in Vorbereitung. Trag dich über „E-Mail-Link senden“ ein — wir sagen Bescheid, sobald es da ist.')">Komplettpaket kaufen</button>
       </div>
     </div>
   </div>
@@ -1116,7 +1111,7 @@
       <p class="help">Wir skalieren Einkaufslisten-Mengen + Anzahl Urkunden/Etiketten.</p>
       <div class="slider-wrap">
         <div class="slider-value"><span id="qGuestsLabel">6</span> Kinder</div>
-        <input type="range" id="qGuests" min="4" max="12" value="6" oninput="liveUpdateGuests()">
+        <input type="range" id="qGuests" min="2" max="20" value="6" oninput="liveUpdateGuests()">
         <div class="slider-labels"><span>4</span><span>8</span><span>12</span></div>
       </div>
     </div>
@@ -1328,11 +1323,12 @@
     time: '14:00',
     endTime: '16:30',
     guests: 6,
+    exactAge: null,   // F5: echtes Alter fuer Einladung/Partyseite (state.age bleibt die AltersGRUPPE fuer Plan/Spiele)
     location: 'zuhause',
     games: [],
     customEntries: [],
     invite: { type:'minispiel', title:'', body:'', deadline:'Bitte Bescheid geben bis 14.06.', sent:0, photo:null, whatsapp:'' },
-    partyseite: { slug:'lukas7', rsvp:true, photos:true, wish:false, chat:false, active:false },
+    partyseite: { slug:'lukas7', rsvp:true, photos:false, wish:false, chat:false, active:false },   // photos/chat raus (F4: kein Worker-Backend)
     step: 1,
     eliteVariant: 'standard',
     lastSaved: null
@@ -1347,7 +1343,17 @@
   }
 
   // Compute age-number for invite text (null-safe — C5 Fix)
-  function ageNum(){ if(!state.age) return '7'; return state.age === '3-5' ? '5' : state.age === '6-8' ? '7' : '10' }
+  // F5: echtes Alter bevorzugen (Gaesteseite/Einladung sollen kein geratenes Alter zeigen); sonst Gruppen-Mitte als Fallback.
+  function ageNum(){ if(state.exactAge) return String(state.exactAge); if(!state.age) return '7'; return state.age === '3-5' ? '5' : state.age === '6-8' ? '7' : '10' }
+  function setExactAge(v){
+    const n = parseInt(v,10);
+    state.exactAge = (n>=1 && n<=14) ? n : null;
+    if(state.exactAge){ state.age = n<=5 ? '3-5' : (n<=8 ? '6-8' : '9-12'); }   // AltersGRUPPE konsistent ableiten
+    if(state.motto){ state.invite.body = `${state.name} ${state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name)}`; const be=document.getElementById('iBody'); if(be) be.value = state.invite.body; }
+    try{ renderPlanPreview(); }catch(e){}
+    try{ renderInvitePreview(); }catch(e){}
+    autoSave();
+  }
 
   // ===== ACCENT COLOR APPLY =====
   function applyAccent(motto){
@@ -1406,8 +1412,11 @@
   function maybeShowResumeBanner(){
     const saved = loadSavedState();
     if(!saved) return;
-    document.getElementById('resumeWho').textContent = `${saved.name}'s ${saved.motto.name}-Plan`;
-    const mins = Math.round((Date.now() - saved.lastSaved) / 60000);
+    // U5: gegen altes/teilweises localStorage-Schema absichern (motto als String/fehlend -> kein "undefined's undefined")
+    const _mn = (saved.motto && saved.motto.name) ? saved.motto.name : 'Geburtstags';
+    const _nm = saved.name || 'Dein';
+    document.getElementById('resumeWho').textContent = `${_nm}'s ${_mn}-Plan`;
+    const mins = saved.lastSaved ? Math.round((Date.now() - saved.lastSaved) / 60000) : 0;
     document.getElementById('resumeWhen').textContent = mins < 1 ? 'wenigen Sekunden' : mins < 60 ? `${mins} Min` : `${Math.round(mins/60)} h`;
     document.getElementById('resumeBanner').classList.add('show');
     applyAccent(saved.motto);
@@ -1415,11 +1424,20 @@
   function resumeWork(){
     const saved = loadSavedState();
     if(!saved) return;
-    state = saved;
+    try{
+      // Merge ueber die Defaults statt komplettem Ersatz: alte Saves ohne partyseite/invite wuerden sonst
+      // renderPartyseitePreview/renderInvitePreview bricken (Gutachter-Befund). Sub-Objekte einzeln mergen.
+      const def = state;
+      state = Object.assign({}, def, saved);
+      state.invite = Object.assign({}, def.invite, saved.invite || {});
+      state.partyseite = Object.assign({}, def.partyseite, saved.partyseite || {});
+      // Motto an die aktuelle MOTTOS-Referenz binden (Content-/Spiele-Updates), Fallback auf gespeichertes Objekt.
+      if(saved.motto && saved.motto.id){ const live = MOTTOS.find(m => m.id === saved.motto.id); if(live) state.motto = live; }
+    }catch(e){ console.warn('resumeWork merge failed', e); state = saved; }
     document.getElementById('resumeBanner').classList.remove('show');
     applyAccent(state.motto);
     renderPlanPreview();
-    goStage(state.stage);
+    goStage(state.stage || 1);
   }
   function discardResume(){
     document.getElementById('resumeBanner').classList.remove('show');
@@ -1457,12 +1475,16 @@
     const name = prompt('Wie soll dein Motto heißen?', 'Pferde-Hof');
     if(!name) return;
     const emoji = prompt('Welches Emoji passt?', '🎉') || '🎉';
-    // Custom motto auf Basis Piraten-Template aber neuer Name/Emoji
-    state.motto = { ...MOTTOS[0], id:'custom-'+Date.now(), name:name.trim(), emoji, persona:name.trim().replace(/-.*/,''), badge:'Eigenes' };
+    // Custom motto: Mechanik vom Piraten-Template, aber themen-NEUTRALE Texte (F8) — sonst zeigt ein
+    // "Pferde-Hof"-Custom Piraten-Stationen ("Krähennest") + "...als Piraten-Captain" im Einladungstext.
+    // (Bekannte Restgrenze: Spiel-Namen kommen weiter aus dem Piraten-Set, bis es ein Custom-Content-Modell gibt.)
+    state.motto = { ...MOTTOS[0], id:'custom-'+Date.now(), name:name.trim(), emoji, persona:name.trim().replace(/-.*/,''), badge:'Eigenes',
+      stations:['Erste Station','Zweite Station','Dritte Station','Vierte Station','Das große Finale 🎉'],
+      invite:{ type:'minispiel', title:'Du bist eingeladen!', body:'wird {age} und feiert einen tollen Geburtstag — du bist eingeladen!' } };
     applyAccent(state.motto);
     document.getElementById('chosenMottoEmoji').textContent = state.motto.emoji;
     document.getElementById('chosenMottoName').textContent = state.motto.name;
-    state.invite.title = `${emoji} Ahoi, kleiner ${state.motto.persona}!`;
+    state.invite.title = `${emoji} Du bist eingeladen!`;
     state.invite.body = `${state.name} wird ${ageNum()} und feiert ${state.motto.name}-Geburtstag!`;
     renderAges();
     autoSave();
@@ -1503,7 +1525,8 @@
     state.age = age;
     const ageGames = gamesForAge(state.motto, age);
     state.games = ageGames.slice(0,5).map(g => g.name);
-    state.invite.body = `${state.name} wird ${ageNum()} ${state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name).split(' ').slice(1).join(' ')}`;
+    // C3-Fix: identisches Muster wie pickMotto (kein doppeltes "wird {age}", kein slice-Hack der bei Nicht-"wird"-Mottos Grammatik zerstoert)
+    state.invite.body = `${state.name} ${state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name)}`;
     renderPlanPreview();
     autoSave();
     goStage(3);
@@ -1564,15 +1587,15 @@
         <div class="games-grid">${gamesData.map(g => `<div class="game-tag" onclick="openGameDetail('${g.name.replace(/'/g, "\\'")}')"><span class="game-tag__info">Details ›</span><div class="game-tag__name">${g.emoji} ${g.name}</div><div class="game-tag__desc">${g.desc}</div></div>`).join('')}</div>
       </article>
 
-      <article class="mod">
-        <header class="mod__head">
+      <details class="mod sz-mod" id="sz-anchor"${window.__entryModus === 'schatzsuche' ? ' open' : ''}>
+        <summary class="mod__head">
           <span class="mod__icon">🗺️</span>
           <h3 class="mod__title">Schatzsuche · ${stations.length} Stationen</h3>
-        </header>
+        </summary>
         <div class="schatz">
           <ul class="schatz__list">${stations.map((s,i) => `<li><div class="schatz__num">${i+1}</div><div><div class="schatz__name">${i === stations.length-1 ? esc(state.motto.emoji)+' '+s : s}</div></div></li>`).join('')}</ul>
         </div>
-      </article>
+      </details>
 
       <article class="mod">
         <header class="mod__head">
@@ -1591,7 +1614,9 @@
     document.getElementById('planDate1').textContent = formatDateShort(state.date) + ', ' + state.time + ' Uhr';
     document.getElementById('planGuests1').textContent = state.guests;
     document.getElementById('planLocation1').textContent = locationLabel(state.location);
-    renderElitePlan(); // Elite-Content (Varianten minimal/standard/wow + Affiliate-Einkaufsliste) async drueberlegen, wenn vorhanden
+    // Elite-Content async drueberlegen; Schatzsuche-Scroll ERST nachdem renderElitePlan fertig ist (sonst wird der Scroll-Anker
+    // mitten im Smooth-Scroll durch das Elite-innerHTML ersetzt). Funktioniert fuer beide Pfade: Elite-Render ODER Fallback (early return).
+    renderElitePlan().catch(()=>{});   // Schatzsuche-Scroll passiert jetzt IN renderElitePlan nach dem Stale-Guard (H2)
   }
 
   // ===== ELITE-CONTENT-RENDERER (Phase 2) — laedt /data/motto/<motto>-<group>.json =====
@@ -1623,6 +1648,19 @@
       return _schatzCache;
     }catch(e){ return null; }                // Netz-/Parse-Fehler -> nicht cachen
   }
+  // Schatzsuche-Funnel-Eintritt (?modus=schatzsuche): einmalig zur Schatzsuche-Sektion fuehren, egal ob Elite- oder Fallback-Plan
+  function maybeScrollSchatz(){
+    if(window.__entryModus !== 'schatzsuche' || window.__szScrolled) return;
+    if(!document.getElementById('sz-anchor')) return;
+    window.__szScrolled = true;
+    // goStage(Start-Stage) loest beim Init einen SMOOTH-Scroll zur Start-Stage aus, der einen frueheren Schatzsuche-Scroll
+    // ueberschreibt. Darum: instant (nicht smooth, sonst vom Elite-Re-Render abgebrochen) + verzoegert + einmal nachsetzen,
+    // damit der Schatzsuche-Scroll nach der goStage-Animation gewinnt.
+    [500, 950].forEach(function(ms){ setTimeout(function(){
+      const el = document.getElementById('sz-anchor');
+      if(el){ try{ el.scrollIntoView({block:'start'}); }catch(e){ el.scrollIntoView(); } }
+    }, ms); });
+  }
   function buildSchatzHtml(theme, age){
     if(!theme) return '';
     const size = eliteGroup(age);
@@ -1633,12 +1671,14 @@
       + '<span class="sz-line"></span><span class="sz-x">'+esc(theme.emoji||'🏴‍☠️')+'</span>';
     const list = stations.map((s,k)=>
       `<details class="egame"><summary><b>${k+1}.</b> ${esc(s.name||'')} <span class="egame__meta">${s.dauer?esc(String(s.dauer))+' Min':''}${s.typ?' · '+esc(s.typ):''}</span></summary>`
-      + (s.desc?`<p>${esc(s.desc)}</p>`:'')
-      + (s.hint?`<p class="sz-hint">🧩 Rätsel-Tipp: ${esc(s.hint)}</p>`:'')
+      + (s.desc?`<p>${mdLink(s.desc)}</p>`:'')
+      + (s.hint?`<p class="sz-hint">🧩 Rätsel-Tipp: ${mdLink(s.hint)}</p>`:'')
       + `</details>`).join('');
-    return `<article class="mod"><header class="mod__head"><span class="mod__icon">🗺️</span><h3 class="mod__title">Schatzsuche · ${esc(theme.name||'')} · ${stations.length} Stationen</h3></header>`
-      + (intro?`<p class="evar-intro">${esc(intro)}</p>`:'')
-      + `<div class="sz-map" aria-hidden="true">${route}</div>${list}</article>`;
+    // Sekundaer-Modul: standardmaessig eingeklappt; offen nur bei gezieltem Schatzsuche-Eintritt (?modus=schatzsuche)
+    const openAttr = (typeof window !== 'undefined' && window.__entryModus === 'schatzsuche') ? ' open' : '';
+    return `<details class="mod sz-mod" id="sz-anchor"${openAttr}><summary class="mod__head"><span class="mod__icon">🗺️</span><h3 class="mod__title">Schatzsuche · ${esc(theme.name||'')} · ${stations.length} Stationen</h3></summary>`
+      + (intro?`<p class="evar-intro">${esc(intro.replace(/\{name\}/g, state.name||'das Geburtstagskind'))}</p>`:'')
+      + `<div class="sz-map" aria-hidden="true">${route}</div>${list}</details>`;
   }
   function setEliteVariant(v){ state.eliteVariant = v; renderElitePlan(); autoSave(); }
   async function renderElitePlan(){
@@ -1646,7 +1686,16 @@
     const reqMotto = state.motto.id, reqAge = state.age || '6-8';   // Bug A: Identitaet vor await capturen
     const [d, allSchatz] = await Promise.all([getElite(reqMotto, reqAge), getSchatz()]);
     if(!state.motto || state.motto.id !== reqMotto || (state.age||'6-8') !== reqAge) return; // Motto/Alter waehrend Fetch gewechselt -> spaeten Render verwerfen
-    if(!d) return; // kein Elite-Datensatz -> bestehendes Fallback-Rendering bleibt stehen
+    if(!d){
+      // Kein Elite-Plan (z.B. prinzessin/superheld), aber Schatzsuche-Daten existieren: generische Fallback-Schatzsuche
+      // ('Station 1..DER SCHATZ') durch die echten Stationen + Raetsel aus schatzsuche.json ersetzen.
+      const _theme = (allSchatz||[]).find(t => t.id === reqMotto);
+      const _rich = _theme ? buildSchatzHtml(_theme, reqAge) : '';
+      const _old = document.getElementById('sz-anchor');
+      if(_rich && _old) _old.outerHTML = _rich;
+      maybeScrollSchatz();   // nur NACH Stale-Guard -> abgebrochene (stale) Renders armen den Scroll-Latch nicht (H2)
+      return; // restliches Fallback-Rendering (Plan/Spiele/Einkauf) bleibt stehen
+    }
     const v = currentVariant(d); if(!v) return;
     const body = document.getElementById('planBody'); if(!body) return;
     const schatzHtml = buildSchatzHtml((allSchatz||[]).find(t => t.id === reqMotto), reqAge);
@@ -1656,14 +1705,14 @@
     ).join('');
 
     const sched = (v.schedule || []).map(s =>
-      `<div class="timeline__row"><div class="timeline__time">${esc(s.time||'')}</div><div class="timeline__what"><em>${esc(s.title||'')}</em>${s.description ? '<br>'+esc(s.description) : ''}</div></div>`
+      `<div class="timeline__row"><div class="timeline__time">${esc(s.time||'')}</div><div class="timeline__what"><em>${esc(s.title||'')}</em>${s.description ? '<br>'+mdLink(s.description) : ''}</div></div>`
     ).join('');
 
     const games = (v.games || []).map(g => {
-      const steps = (g.steps || []).map(st => `<li>${esc(st.content || st.name || st)}</li>`).join('');
+      const steps = (g.steps || []).map(st => `<li>${mdLink(st.content || st.name || st)}</li>`).join('');
       return `<details class="egame"><summary>${esc(g.name||'')} <span class="egame__meta">${g.duration?g.duration+' Min':''}${g.loudness?' · '+esc(g.loudness):''}</span></summary>
-        ${g.material ? `<p><b>Material:</b> ${esc(g.material)}</p>` : ''}
-        ${g.prepText ? `<p><b>Vorbereitung:</b> ${esc(g.prepText)}</p>` : ''}
+        ${g.material ? `<p><b>Material:</b> ${mdLink(g.material)}</p>` : ''}
+        ${g.prepText ? `<p><b>Vorbereitung:</b> ${mdLink(g.prepText)}</p>` : ''}
         ${steps ? `<ol>${steps}</ol>` : ''}
         ${g.safetyRule ? `<p class="egame__safe">⚠️ ${esc(g.safetyRule)}</p>` : ''}
         ${g.whyItWorks ? `<p class="egame__why"><b>${esc(g.whyItWorksTitle||'Warum es wirkt')}:</b> ${esc(g.whyItWorks)}</p>` : ''}
@@ -1678,20 +1727,21 @@
         : `<li>${label}${price}</li>`;
     }).join('');
 
-    const cake = d.cakeRecipe ? `<article class="mod"><header class="mod__head"><span class="mod__icon">🎂</span><h3 class="mod__title">Kuchen</h3></header>${d.cakeRecipe.intro?`<p>${esc(d.cakeRecipe.intro)}</p>`:''}<ol>${(d.cakeRecipe.steps||[]).map(st=>`<li>${esc(st.content||'')}</li>`).join('')}</ol></article>` : '';
-    const tips = (d.parentTips && d.parentTips.structured) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">💡</span><h3 class="mod__title">Eltern-Tipps</h3></header><ul class="etips">${d.parentTips.structured.map(t=>`<li><b>${esc(t.topic||'')}</b> ${esc(t.detail||'')}</li>`).join('')}</ul></article>` : '';
-    const faq = (d.faq && d.faq.length) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">❓</span><h3 class="mod__title">Häufige Fragen</h3></header>${d.faq.map(f=>`<details class="egame"><summary>${esc(f.q||'')}</summary><p>${esc(f.a||'')}</p></details>`).join('')}</article>` : '';
+    const cake = d.cakeRecipe ? `<article class="mod"><header class="mod__head"><span class="mod__icon">🎂</span><h3 class="mod__title">Kuchen</h3></header>${d.cakeRecipe.intro?`<p>${mdLink(d.cakeRecipe.intro)}</p>`:''}<ol>${(d.cakeRecipe.steps||[]).map(st=>`<li>${mdLink(st.content||'')}</li>`).join('')}</ol></article>` : '';
+    const tips = (d.parentTips && d.parentTips.structured) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">💡</span><h3 class="mod__title">Eltern-Tipps</h3></header><ul class="etips">${d.parentTips.structured.map(t=>`<li><b>${esc(t.topic||'')}</b> ${mdLink(t.detail||'')}</li>`).join('')}</ul></article>` : '';
+    const faq = (d.faq && d.faq.length) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">❓</span><h3 class="mod__title">Häufige Fragen</h3></header>${d.faq.map(f=>`<details class="egame"><summary>${esc(f.q||'')}</summary><p>${mdLink(f.a||'')}</p></details>`).join('')}</article>` : '';
 
     body.innerHTML = `
       <div class="evar-label">Aufwand wählen:</div>
       <div class="evar-row" role="tablist" aria-label="Aufwand-Variante">${vtabs}</div>
-      ${v.intro ? `<p class="evar-intro">${esc(v.intro)}</p>` : ''}
+      ${v.intro ? `<p class="evar-intro">${mdLink(v.intro)}</p>` : ''}
       <article class="mod"><header class="mod__head"><span class="mod__icon">🗓️</span><h3 class="mod__title">Tagesplan${v.timeWindow?' · '+esc(v.timeWindow):''}</h3></header><div class="timeline">${sched}</div></article>
       <article class="mod"><header class="mod__head"><span class="mod__icon">🎮</span><h3 class="mod__title">Spiele · ${(v.games||[]).length} mit Anleitung</h3></header>${games}</article>
       ${schatzHtml}
       <article class="mod"><header class="mod__head"><span class="mod__icon">🛒</span><h3 class="mod__title">Einkaufsliste${v.costContext?' · '+esc(v.costContext):''}</h3></header><ul class="eshop">${shop}</ul></article>
       ${cake}${tips}${faq}
     `;
+    maybeScrollSchatz();   // nur NACH Stale-Guard -> Elite-Pfad armt Scroll-Latch nur beim gewinnenden Render (H2)
   }
 
   function buildTimeline(){
@@ -1759,6 +1809,7 @@
     const title = document.getElementById('cusTitle').value.trim();
     const dur = parseInt(document.getElementById('cusDur').value);
     if(!title){ alert('Bitte einen Titel eingeben'); return; }
+    if(!time || !/^\d{1,2}:\d{2}$/.test(time)){ alert('Bitte eine gültige Uhrzeit angeben'); return; }   // C6: leere Zeit -> NaN-Sortierung verhindern
     state.customEntries.push({time, title, dur});
     document.getElementById('cusTitle').value = '';
     document.getElementById('timelineForm').classList.remove('open');
@@ -1791,6 +1842,8 @@
     if(n === 5) renderPartyseitePreview();
     if(n === 6) renderDoneSummary();
     autoSave();
+    // T1: Funnel-Tracking NUR bei Vorwaerts-Progression zu einer neuen Stage (Rueckwaerts-Navigation verzerrt sonst den Drop-off).
+    try{ if(window.plausible && n > (state._maxStage||1)){ state._maxStage = n; const mid=(state.motto&&state.motto.id||'').indexOf('custom')===0?'custom':(state.motto&&state.motto.id||''); plausible('wizard_stage', {props:{stage:String(n), motto:mid}}); } }catch(e){}
     if(el) el.scrollIntoView({behavior:'smooth', block:'start'});  // Scroll-Funnel: zum Abschnitt scrollen statt toggeln
   }
   function jumpStage(n){
@@ -1938,6 +1991,25 @@
     const motto = state.motto || MOTTOS[0];
     // K1-Fix: User-Inputs vor innerHTML escapen (Plain-Text-/URL-Sinks unten bleiben roh)
     const eName = esc(state.name), eTitle = esc(state.invite.title), eBody = esc(state.invite.body), eDeadline = esc(state.invite.deadline);
+    // B: Einladungs-Handoff ans echte Tool (/einladung/erstellen) mit vorausgefuellten Daten (Datenuebergabe statt In-Page-Fake)
+    const _ho = document.getElementById('inviteHandoff');
+    if(_ho){
+      // Einladung-Generator (create-invite.mjs) kennt nur diese 10 Voll-Mottos; alles andere macht der Server still zu 'piraten'.
+      // Darum Motto nur uebergeben wenn unterstuetzt — sonst weglassen, User waehlt im Generator (Name/Datum/Ort bleiben vorausgefuellt).
+      const EINLADUNG_MOTTOS = new Set(['piraten','dino','safari','weltraum','detektiv','superheld','prinzessin','einhorn','meerjungfrau','feuerwehr']);
+      if(EINLADUNG_MOTTOS.has(motto.id)){
+        // ort/address NICHT vorbefuellen: state.location ist nur Typ (keine echte Adresse) -> Maps-Link-Bruch (F1/F2). Leer lassen.
+        const hoParams = { name:(state.name||''), datum:(state.date?formatDateLong(state.date):''), uhrzeit:(state.time||''), source:'cockpit', motto: motto.id };
+        _ho.href = '/einladung/erstellen?' + new URLSearchParams(hoParams).toString();
+        _ho.style.pointerEvents=''; _ho.style.opacity=''; _ho.removeAttribute('aria-disabled');
+        _ho.innerHTML = '📨 Einladung jetzt erstellen →';
+      } else {
+        // Kein Voll-Motto (pferde/ritter/baustelle/dschungel/feen/custom): der Generator wuerde still 'piraten' draus machen.
+        // Darum CTA deaktivieren statt ein falsches Versprechen zu geben (Gutachter D1/HIGH).
+        _ho.removeAttribute('href'); _ho.style.pointerEvents='none'; _ho.style.opacity='.55'; _ho.setAttribute('aria-disabled','true');
+        _ho.innerHTML = '📨 Für dieses Motto gibt es noch keine eigene Einladungsseite — teile den Text oben';
+      }
+    }
 
     if(state.invite.type === 'minispiel'){
       // F8: Dark-Mode wie Live-Einladung (dunkelblau-violetter Hintergrund, Gold-Akzent)
@@ -1962,8 +2034,8 @@
           <div class="invite-preview-karte__name">${eName}</div>
           <div class="invite-preview-karte__title">${eBody}</div>
           <div class="invite-preview-karte__details">
-            <b>📅</b> ${dateStr}<br>
-            <b>🕑</b> ${state.time} Uhr<br>
+            <b>📅</b> ${esc(dateStr)}<br>
+            <b>🕑</b> ${esc(state.time)} Uhr<br>
             <b>📍</b> Bei uns zuhause<br><br>
             <span style="font-size:11px">${eDeadline}</span>
           </div>
@@ -1977,17 +2049,17 @@
           <div class="invite-preview-print__line"><b>${eName}</b> wird ${ageNum()}!</div>
           <div class="invite-preview-print__line" style="font-size:10px;color:#666;margin:6px 0">${eBody}</div>
           <div class="invite-preview-print__divider"></div>
-          <div class="invite-preview-print__line">📅 ${dateStr}<br>🕑 ${state.time} Uhr<br>📍 Bei uns zuhause</div>
+          <div class="invite-preview-print__line">📅 ${esc(dateStr)}<br>🕑 ${esc(state.time)} Uhr<br>📍 Bei uns zuhause</div>
           <div class="invite-preview-print__line" style="font-size:9px;color:#888;margin-top:8px">${eDeadline}</div>
           <div style="margin-top:10px;font-size:8px;color:#999">~ 1 von 8 Karten · A6 ~</div>
         </div>`;
     }
-    const url = `machsleicht.de/p/${state.name.toLowerCase().replace(/\s/g,'-')}-${ageNum()}`;
-    document.getElementById('inviteUrl').textContent = url;
-
-    // ECHTE WhatsApp + mailto URLs — mit WhatsApp-Nummer für RSVP wenn gesetzt (F6)
+    // Kein Fake-Link mehr (es gibt keine /p/-Route): geteilt wird der Einladungs-TEXT.
+    // Der echte, teilbare Link entsteht ueber "Einladung jetzt erstellen" (/einladung/erstellen -> /e/<slug>).
     const rsvpLine = state.invite.whatsapp ? `\n📲 Zusagen direkt an: ${state.invite.whatsapp}\n` : '\n';
-    const msgText = `${motto.emoji} ${state.invite.title}\n\n${state.invite.body}\n\n📅 ${dateStr}\n🕑 ${state.time} Uhr\n📍 Bei uns zuhause\n${rsvpLine}${state.invite.deadline}\n\nDetails: https://${url}`;
+    const ortLabel = (typeof locationLabel === 'function') ? locationLabel(state.location||'') : '';
+    const msgText = `${motto.emoji} ${state.invite.title}\n\n${state.invite.body}\n\n📅 ${dateStr}\n🕑 ${state.time} Uhr${ortLabel?`\n📍 ${ortLabel}`:''}\n${rsvpLine}${state.invite.deadline}`;
+    window.__inviteShareText = msgText;
     const encoded = encodeURIComponent(msgText);
     document.getElementById('whatsappBtn').href = `https://wa.me/?text=${encoded}`;
     document.getElementById('emailBtn').href = `mailto:?subject=${encodeURIComponent(state.invite.title)}&body=${encoded}`;
@@ -2010,28 +2082,22 @@
     reader.readAsDataURL(file);
   }
 
-  function copyInviteUrl(showStatus){
-    const url = 'https://' + document.getElementById('inviteUrl').textContent;
+  function copyInviteUrl(){
+    // Kopiert den Einladungs-TEXT (kein toter /p/-Link mehr). Keine erfundenen Versand-/Zusagen-Zahlen.
+    const text = window.__inviteShareText || '';
     if(navigator.clipboard){
-      navigator.clipboard.writeText(url).then(() => showFlash('Link kopiert ✓'));
+      navigator.clipboard.writeText(text).then(() => showFlash('Einladungstext kopiert ✓'));
     } else {
-      // Fallback
-      const ta = document.createElement('textarea'); ta.value = url; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
-      showFlash('Link kopiert ✓');
-    }
-    if(showStatus !== false){
-      state.invite.sent = state.guests;
-      document.getElementById('sendStatus').style.display = 'flex';
-      document.getElementById('sentCount').textContent = state.guests;
-      document.getElementById('rsvpCount').textContent = Math.floor(state.guests * 0.7);
-      autoSave();
+      const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+      showFlash('Einladungstext kopiert ✓');
     }
   }
 
   // ===== STAGE 5: PARTYSEITE =====
   function toggleFeature(f){
     state.partyseite[f] = !state.partyseite[f];
-    const el = {rsvp:'psRsvp',photos:'psPhotos',wish:'psWish',chat:'psChat'}[f];
+    const el = {rsvp:'psRsvp',wish:'psWish'}[f];
+    if(!el) return;
     document.getElementById(el).classList.toggle('on', state.partyseite[f]);
     renderPartyseitePreview();
     autoSave();
@@ -2043,10 +2109,10 @@
     const motto = state.motto || MOTTOS[0];
     let html = `<div class="ps-preview">
       <h2>${esc(motto.emoji)} ${esc(state.name)}' ${motto.persona === 'Pirat' ? 'Crew-Treffen' : esc(motto.name) + '-Party'}</h2>
-      <div class="ps-preview__meta">${formatDateLong(state.date)} · ${state.time} Uhr · zuhause</div>`;
+      <div class="ps-preview__meta">${esc(formatDateLong(state.date))} · ${esc(state.time)} Uhr${(typeof locationLabel==='function'&&locationLabel(state.location))?' · '+esc(locationLabel(state.location)):''}</div>`;
     if(state.partyseite.rsvp){
       html += `<div class="ps-preview__section">
-        <h4>👥 Zusagen (${Math.floor(state.guests*0.6)}/${state.guests})</h4>
+        <h4>👥 Zusagen <span style="font-weight:400;font-size:11px;color:#999">(Beispiel-Ansicht)</span></h4>
         <div class="ps-rsvp">
           <div class="ps-rsvp__row"><span>Mia 🦜</span><b>JA</b></div>
           <div class="ps-rsvp__row"><span>Tim ⚓</span><b>JA</b></div>
@@ -2056,45 +2122,64 @@
         <div class="ps-rsvp-cta">+ Du bist dabei?</div>
       </div>`;
     }
-    if(state.partyseite.photos){
-      html += `<div class="ps-preview__section">
-        <h4>📸 Foto-Galerie</h4>
-        <div class="ps-photo-grid"><div>📷</div><div>📷</div><div>📷</div><div>+</div></div>
-      </div>`;
-    }
     if(state.partyseite.wish){
       html += `<div class="ps-preview__section">
         <h4>🎁 Wunschliste</h4>
         <div class="ps-wish">
-          <div class="ps-wish__item"><span style="flex:1">Lego Pirate Ship</span><span style="color:#999;font-size:10px">offen</span></div>
-          <div class="ps-wish__item"><span style="flex:1">Buch „Käpt'n Sharky"</span><span style="color:#0F7B3F;font-size:10px;font-weight:800">Mia 🎁</span></div>
+          <div class="ps-wish__item"><span style="flex:1">Großes Bastelset</span><span style="color:#999;font-size:10px">offen</span></div>
+          <div class="ps-wish__item"><span style="flex:1">Lieblings-Bilderbuch</span><span style="color:#0F7B3F;font-size:10px;font-weight:800">Mia 🎁</span></div>
         </div>
       </div>`;
     }
-    if(state.partyseite.chat){
-      html += `<div class="ps-preview__section">
-        <h4>💬 Eltern-Chat</h4>
-        <div style="font-size:11px;color:#666;background:#F0F0F0;padding:8px;border-radius:6px">Anna: „Kann jemand Lukas mitnehmen?" · vor 2h</div>
-      </div>`;
-    }
+    // F9: Eltern-Chat & Foto-Galerie entfernt — der Worker (Gaesteseite) hat diese Features nicht,
+    // die Preview darf kein nicht-existentes Feature versprechen.
     html += '</div>';
     c.innerHTML = html;
     autoSave();
   }
-  function activatePartyseite(){
-    state.partyseite.active = true;
-    document.getElementById('psStatus').style.display = 'flex';
-    document.getElementById('psStatusUrl').textContent = `party.machsleicht.de/${state.partyseite.slug}`;
-    showFlash('🚀 Partyseite ist live!');
-    autoSave();
+  async function activatePartyseite(){
+    // C: ECHTER Worker-Call (Port aus altem Planer) — POST /api/create, kein Fake mehr
+    // M1: Re-Entrancy/Doppelklick-Schutz — sonst zweiter POST = zweite Partyseite mit eigenem editToken
+    if(window.__partyCreating || (state.partyseite && state.partyseite.active)) return;
+    window.__partyCreating = true;
+    const psBtn = document.querySelector('[onclick*="activatePartyseite"]'); if(psBtn) psBtn.disabled = true;
+    const motto = state.motto || MOTTOS[0];
+    const name = (state.name || '').trim() || 'Geburtstagskind';
+    const statusEl = document.getElementById('psStatus');
+    const urlEl = document.getElementById('psStatusUrl');
+    if(statusEl) statusEl.style.display = 'flex';
+    if(urlEl) urlEl.textContent = 'erstelle Partyseite …';
+    const payload = {
+      childName: name, age: ageNum(),
+      motto: motto.name, mottoId: (motto.id||''), mottoEmoji: motto.emoji, mottoColor: motto.accent || '#D4812A',
+      date: state.date || '', time: state.time || '', endTime: state.endTime || '', address: '',
+      notes: motto.name + '-Geburtstag', askAllergies: true, askPickup: true, wishes: []
+    };
+    try{
+      const res = await fetch('https://party.machsleicht.de/api/create', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+      if(!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      if(!data.url || !data.editUrl) throw new Error('Unvollstaendige Antwort vom Server');
+      state.partyseite.active = true; state.partyseite.url = data.url; state.partyseite.editUrl = data.editUrl;
+      if(urlEl) urlEl.innerHTML = '<a href="' + escA(data.url) + '" target="_blank" rel="noopener" style="color:var(--accent,#1E3A5F);font-weight:800">' + esc(data.url) + '</a> · <a href="' + escA(data.editUrl) + '" target="_blank" rel="noopener" style="font-size:12px">Edit-Link — gut aufheben!</a>';
+      try{ if(window.plausible) plausible('party_created', {props:{motto: ((motto.id||'').indexOf('custom')===0?'custom':(motto.id||'')), source:'wizard'}}); }catch(e){}
+      autoSave();
+    }catch(err){
+      if(urlEl) urlEl.textContent = '';
+      if(statusEl) statusEl.innerHTML = '⚠️ Konnte Partyseite nicht erstellen (' + esc(err.message || 'Verbindung') + '). Bitte nochmal versuchen.';
+      if(psBtn) psBtn.disabled = false;   // M1: bei Fehler Retry erlauben (bei Erfolg bleibt Button aus, active-Guard greift)
+    }finally{
+      window.__partyCreating = false;
+    }
   }
 
   // ===== Mobile Preview Toggle =====
-  function togglePreview(){
+  function togglePreview(ev){
+    ev = ev || window.event;   // C5: kein Verlass auf globales event (Firefox/strict)
     const wrap = state.stage === 4 ? document.getElementById('phoneWrap') : document.getElementById('psWrap');
-    const btn = event.currentTarget;
+    const btn = ev && ev.currentTarget ? ev.currentTarget : null;
     if(wrap) wrap.classList.toggle('open');
-    btn.classList.toggle('open');
+    if(btn) btn.classList.toggle('open');
   }
 
   // ===== STAGE 6 =====
@@ -2147,6 +2232,12 @@
   let gdCurrentGame = null;  // Name des aktuell im Drawer gezeigten Spiels (für „In den Plan")
   const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   const escA = s => esc(s).replace(/"/g,'&quot;').replace(/'/g,'&#39;'); // Attribut-Kontext (href etc.)
+  // Markdown-Links [Text](https://...) in Elite-JSON-Texten zu echten Affiliate-Links rendern statt roh anzuzeigen
+  // (sonst sieht der Nutzer die nackte amazon-URL inkl. tag=). Erst esc (XSS), dann nur das [..](http..)-Muster ersetzen.
+  const mdLink = s => esc(s==null?'':String(s)).replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, (m,txt,url) => {
+    const spon = /(amazon\.|amzn\.|awin1?\.|[?&]tag=)/i.test(url) ? 'sponsored ' : '';   // Q1: rel=sponsored nur fuer echte Affiliate-Links
+    return '<a href="'+url.replace(/"/g,'&quot;')+'" target="_blank" rel="'+spon+'noopener">'+txt+'</a>';   // " im href escapen (Attribut-Ausbruch)
+  });
 
   function openGameDetail(gameName){
     const motto = state.motto || MOTTOS[0];
@@ -2237,8 +2328,24 @@
   // Scroll-Funnel: Default-Auswahl + alle Sektionen beim Laden rendern (nie leer, voll crawlbar)
   (function initFunnel(){
     try{
+      // Funnel-Eintritt: eingehende URL-Params (Handoff von Motto-Seiten etc.) — ?motto/?alter/?gaeste/?modus/?thema
+      try{
+        const p = new URLSearchParams(window.location.search);
+        // ?motto (Planer/Motto-Seiten) ODER ?thema (Schatzsuche-SEO-Seiten /schatzsuche/<motto>) — beide docken auf dieselbe Motto-Auswahl
+        const m = p.get('motto') || p.get('thema') || window.__selectedMotto;
+        if(m){ const hit = MOTTOS.find(x => x.id === m); if(hit) state.motto = hit; }
+        const a = p.get('alter'); if(a){ const v = parseInt(a,10); if(v>=3 && v<=12) state.age = v<=5 ? '3-5' : (v<=8 ? '6-8' : '9-12'); }
+        const g = p.get('gaeste'); if(g){ const v = parseInt(g,10); if(v>=2 && v<=20) state.guests = v; }
+        window.__entryModus = p.get('modus') || '';   // 'schatzsuche' -> nach Render zur Schatzsuche scrollen
+      }catch(ep){ console.warn('param-in', ep); }
       if(!state.motto){ state.motto = MOTTOS.find(m => m.id === 'piraten') || MOTTOS[0]; }
       if(!state.age){ state.age = '6-8'; }
+      // Deep-Link-Eintritt (?motto/?thema von SEO-Seiten) seedet die Einladung aus dem Motto-Template,
+      // sonst zeigt renderInvitePreview() eine leere Vorschau am Haupt-Einstieg. Nicht ueberschreiben, wenn schon gesetzt (Resume).
+      if(state.motto && state.motto.invite && !state.invite.title && !state.invite.body){
+        state.invite.title = state.motto.invite.title || '';
+        state.invite.body = `${state.name} ${(state.motto.invite.body||'').replace('{age}', ageNum()).replace('{name}', state.name)}`.trim();
+      }
       applyAccent(state.motto);
       if(typeof renderAges === 'function') renderAges();
       if(typeof syncEckdaten === 'function') syncEckdaten();   // Inline-Eckdaten aus State befuellen
