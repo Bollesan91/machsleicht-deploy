@@ -1637,7 +1637,7 @@
       + (s.desc?`<p>${esc(s.desc)}</p>`:'')
       + (s.hint?`<p class="sz-hint">🧩 Rätsel-Tipp: ${esc(s.hint)}</p>`:'')
       + `</details>`).join('');
-    return `<article class="mod"><header class="mod__head"><span class="mod__icon">🗺️</span><h3 class="mod__title">Schatzsuche · ${esc(theme.name||'')} · ${stations.length} Stationen</h3></header>`
+    return `<article class="mod" id="sz-anchor"><header class="mod__head"><span class="mod__icon">🗺️</span><h3 class="mod__title">Schatzsuche · ${esc(theme.name||'')} · ${stations.length} Stationen</h3></header>`
       + (intro?`<p class="evar-intro">${esc(intro)}</p>`:'')
       + `<div class="sz-map" aria-hidden="true">${route}</div>${list}</article>`;
   }
@@ -1693,6 +1693,11 @@
       <article class="mod"><header class="mod__head"><span class="mod__icon">🛒</span><h3 class="mod__title">Einkaufsliste${v.costContext?' · '+esc(v.costContext):''}</h3></header><ul class="eshop">${shop}</ul></article>
       ${cake}${tips}${faq}
     `;
+    // Schatzsuche-Funnel-Eintritt (?modus=schatzsuche): einmalig zur Schatzsuche-Sektion fuehren, sobald sie gerendert ist
+    if(window.__entryModus === 'schatzsuche' && !window.__szScrolled){
+      const anchor = document.getElementById('sz-anchor');
+      if(anchor){ window.__szScrolled = true; try{ anchor.scrollIntoView({behavior:'smooth', block:'start'}); }catch(e){ anchor.scrollIntoView(); } }
+    }
   }
 
   function buildTimeline(){
@@ -2265,7 +2270,8 @@
       // Funnel-Eintritt: eingehende URL-Params (Handoff von Motto-Seiten etc.) — ?motto/?alter/?gaeste/?modus/?thema
       try{
         const p = new URLSearchParams(window.location.search);
-        const m = p.get('motto') || window.__selectedMotto;
+        // ?motto (Planer/Motto-Seiten) ODER ?thema (Schatzsuche-SEO-Seiten /schatzsuche/<motto>) — beide docken auf dieselbe Motto-Auswahl
+        const m = p.get('motto') || p.get('thema') || window.__selectedMotto;
         if(m){ const hit = MOTTOS.find(x => x.id === m); if(hit) state.motto = hit; }
         const a = p.get('alter'); if(a){ const v = parseInt(a,10); if(v>=3 && v<=12) state.age = v<=5 ? '3-5' : (v<=8 ? '6-8' : '9-12'); }
         const g = p.get('gaeste'); if(g){ const v = parseInt(g,10); if(v>=2 && v<=20) state.guests = v; }
