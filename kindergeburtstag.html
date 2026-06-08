@@ -706,6 +706,9 @@ window.plausible.init=function(){};window.plausible.q=[];
           <input type="number" id="iqGuests" min="2" max="20" step="1" value="6" inputmode="numeric" oninput="let v=Math.max(2,Math.min(20,+this.value||6)); document.getElementById('iqGuestsLabel').textContent=v; document.getElementById('qGuests').value=v; state.guests=v; document.getElementById('planGuests1').textContent=v; autoSave();">
           <b id="iqGuestsLabel" style="display:none">6</b>
         </label>
+        <label class="eckdaten__f">Wird wie alt? (Jahre)
+          <input type="number" id="iqExactAge" min="1" max="14" step="1" placeholder="z.B. 7" inputmode="numeric" oninput="setExactAge(this.value)">
+        </label>
       </div>
       <div class="eckdaten__loc" id="iqLocation">
         <button type="button" data-loc="zuhause" onclick="pickLocationInline('zuhause')">🏠 Zuhause</button>
@@ -859,7 +862,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         <span class="url-builder__prefix">party.machsleicht.de/</span>
         <input type="text" id="psSlug" value="lukas7" oninput="renderPartyseitePreview()">
       </div>
-      <p style="font-size:11px;color:#999;margin-top:6px">Diese URL kannst du deinen Gästen geben.</p>
+      <p style="font-size:11px;color:#999;margin-top:6px">Nur eine Vorschau — beim Aktivieren bekommst du deine echte, eindeutige Adresse, die du den Gästen gibst.</p>
 
       <div class="editor__sub" style="margin-top:24px">Features</div>
 
@@ -873,26 +876,10 @@ window.plausible.init=function(){};window.plausible.q=[];
 
       <div class="toggle-row">
         <div class="toggle-row__info">
-          <div class="toggle-row__title">📷 Foto-Galerie</div>
-          <div class="toggle-row__desc">Eltern teilen Fotos nach der Party</div>
-        </div>
-        <div class="toggle on" id="psPhotos" onclick="toggleFeature('photos')"></div>
-      </div>
-
-      <div class="toggle-row">
-        <div class="toggle-row__info">
           <div class="toggle-row__title">🎁 Wunschliste</div>
           <div class="toggle-row__desc">Gäste reservieren Geschenke, keine Dopplungen</div>
         </div>
         <div class="toggle" id="psWish" onclick="toggleFeature('wish')"></div>
-      </div>
-
-      <div class="toggle-row">
-        <div class="toggle-row__info">
-          <div class="toggle-row__title">💬 Gäste-Chat</div>
-          <div class="toggle-row__desc">Eltern können untereinander absprechen</div>
-        </div>
-        <div class="toggle" id="psChat" onclick="toggleFeature('chat')"></div>
       </div>
 
       <div class="send-block" style="margin-top:24px">
@@ -1341,11 +1328,12 @@ window.plausible.init=function(){};window.plausible.q=[];
     time: '14:00',
     endTime: '16:30',
     guests: 6,
+    exactAge: null,   // F5: echtes Alter fuer Einladung/Partyseite (state.age bleibt die AltersGRUPPE fuer Plan/Spiele)
     location: 'zuhause',
     games: [],
     customEntries: [],
     invite: { type:'minispiel', title:'', body:'', deadline:'Bitte Bescheid geben bis 14.06.', sent:0, photo:null, whatsapp:'' },
-    partyseite: { slug:'lukas7', rsvp:true, photos:true, wish:false, chat:false, active:false },
+    partyseite: { slug:'lukas7', rsvp:true, photos:false, wish:false, chat:false, active:false },   // photos/chat raus (F4: kein Worker-Backend)
     step: 1,
     eliteVariant: 'standard',
     lastSaved: null
@@ -1360,7 +1348,17 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
 
   // Compute age-number for invite text (null-safe — C5 Fix)
-  function ageNum(){ if(!state.age) return '7'; return state.age === '3-5' ? '5' : state.age === '6-8' ? '7' : '10' }
+  // F5: echtes Alter bevorzugen (Gaesteseite/Einladung sollen kein geratenes Alter zeigen); sonst Gruppen-Mitte als Fallback.
+  function ageNum(){ if(state.exactAge) return String(state.exactAge); if(!state.age) return '7'; return state.age === '3-5' ? '5' : state.age === '6-8' ? '7' : '10' }
+  function setExactAge(v){
+    const n = parseInt(v,10);
+    state.exactAge = (n>=1 && n<=14) ? n : null;
+    if(state.exactAge){ state.age = n<=5 ? '3-5' : (n<=8 ? '6-8' : '9-12'); }   // AltersGRUPPE konsistent ableiten
+    if(state.motto){ state.invite.body = `${state.name} ${state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name)}`; const be=document.getElementById('iBody'); if(be) be.value = state.invite.body; }
+    try{ renderPlanPreview(); }catch(e){}
+    try{ renderInvitePreview(); }catch(e){}
+    autoSave();
+  }
 
   // ===== ACCENT COLOR APPLY =====
   function applyAccent(motto){
