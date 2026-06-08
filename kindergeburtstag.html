@@ -799,6 +799,7 @@
           <div class="send-block__url-text" id="inviteUrl">machsleicht.de/p/lukas-7</div>
           <button class="send-block__copy" onclick="copyInviteUrl()">Kopieren</button>
         </div>
+        <a class="send-block__btn send-block__btn--email" id="inviteHandoff" href="/einladung/erstellen?source=cockpit" style="margin-bottom:10px;text-decoration:none">📨 Einladung jetzt erstellen →</a>
         <div class="send-block__actions">
           <a class="send-block__btn send-block__btn--wa" id="whatsappBtn" href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
           <a class="send-block__btn send-block__btn--email" id="emailBtn" href="#">📧 Per Email</a>
@@ -1938,6 +1939,9 @@
     const motto = state.motto || MOTTOS[0];
     // K1-Fix: User-Inputs vor innerHTML escapen (Plain-Text-/URL-Sinks unten bleiben roh)
     const eName = esc(state.name), eTitle = esc(state.invite.title), eBody = esc(state.invite.body), eDeadline = esc(state.invite.deadline);
+    // B: Einladungs-Handoff ans echte Tool (/einladung/erstellen) mit vorausgefuellten Daten (Datenuebergabe statt In-Page-Fake)
+    const _ho = document.getElementById('inviteHandoff');
+    if(_ho){ _ho.href = '/einladung/erstellen?' + new URLSearchParams({ motto:(motto.id||''), name:(state.name||''), datum:(state.date||''), uhrzeit:(state.time||''), ort:(state.location||''), source:'cockpit' }).toString(); }
 
     if(state.invite.type === 'minispiel'){
       // F8: Dark-Mode wie Live-Einladung (dunkelblau-violetter Hintergrund, Gold-Akzent)
@@ -2081,12 +2085,33 @@
     c.innerHTML = html;
     autoSave();
   }
-  function activatePartyseite(){
-    state.partyseite.active = true;
-    document.getElementById('psStatus').style.display = 'flex';
-    document.getElementById('psStatusUrl').textContent = `party.machsleicht.de/${state.partyseite.slug}`;
-    showFlash('🚀 Partyseite ist live!');
-    autoSave();
+  async function activatePartyseite(){
+    // C: ECHTER Worker-Call (Port aus altem Planer) — POST /api/create, kein Fake mehr
+    const motto = state.motto || MOTTOS[0];
+    const name = (state.name || '').trim() || 'Geburtstagskind';
+    const statusEl = document.getElementById('psStatus');
+    const urlEl = document.getElementById('psStatusUrl');
+    if(statusEl) statusEl.style.display = 'flex';
+    if(urlEl) urlEl.textContent = 'erstelle Partyseite …';
+    const payload = {
+      childName: name, age: ageNum(),
+      motto: motto.name, mottoEmoji: motto.emoji, mottoColor: motto.accent || '#D4812A',
+      date: state.date || '', time: state.time || '', endTime: state.endTime || '', address: '',
+      notes: motto.name + '-Geburtstag', askAllergies: true, askPickup: true, wishes: []
+    };
+    try{
+      const res = await fetch('https://party.machsleicht.de/api/create', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+      if(!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      if(!data.url || !data.editUrl) throw new Error('Unvollstaendige Antwort vom Server');
+      state.partyseite.active = true; state.partyseite.url = data.url; state.partyseite.editUrl = data.editUrl;
+      if(urlEl) urlEl.innerHTML = '<a href="' + escA(data.url) + '" target="_blank" rel="noopener" style="color:var(--accent,#1E3A5F);font-weight:800">' + esc(data.url) + '</a> · <a href="' + escA(data.editUrl) + '" target="_blank" rel="noopener" style="font-size:12px">Edit-Link — gut aufheben!</a>';
+      try{ if(window.plausible) plausible('party_created', {props:{motto: motto.id}}); }catch(e){}
+      autoSave();
+    }catch(err){
+      if(urlEl) urlEl.textContent = '';
+      if(statusEl) statusEl.innerHTML = '⚠️ Konnte Partyseite nicht erstellen (' + esc(err.message || 'Verbindung') + '). Bitte nochmal versuchen.';
+    }
   }
 
   // ===== Mobile Preview Toggle =====
