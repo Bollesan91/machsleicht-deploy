@@ -809,18 +809,13 @@ window.plausible.init=function(){};window.plausible.q=[];
 
       <div class="send-block">
         <h4>📨 Verschicken</h4>
-        <p>Ein Link, alle Gäste laden, RSVP-Liste auf deiner Partyseite.</p>
-        <div class="send-block__url">
-          <div class="send-block__url-text" id="inviteUrl">machsleicht.de/p/lukas-7</div>
-          <button class="send-block__copy" onclick="copyInviteUrl()">Kopieren</button>
-        </div>
+        <p>Erstelle die echte Einladungsseite mit eigenem Link — oder teile schon jetzt den fertigen Einladungstext.</p>
         <a class="send-block__btn send-block__btn--email" id="inviteHandoff" href="/einladung/erstellen?source=cockpit" style="margin-bottom:10px;text-decoration:none" onclick="try{if(window.plausible)plausible('invite_handoff_click',{props:{motto:((state.motto&&state.motto.id)||'').indexOf('custom')===0?'custom':((state.motto&&state.motto.id)||'')}})}catch(e){}">📨 Einladung jetzt erstellen →</a>
         <div class="send-block__actions">
-          <a class="send-block__btn send-block__btn--wa" id="whatsappBtn" href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
-          <a class="send-block__btn send-block__btn--email" id="emailBtn" href="#">📧 Per Email</a>
-          <button class="send-block__btn" onclick="copyInviteUrl(true)">🔗 Link kopieren</button>
+          <a class="send-block__btn send-block__btn--wa" id="whatsappBtn" href="#" target="_blank" rel="noopener">💬 Text per WhatsApp</a>
+          <a class="send-block__btn send-block__btn--email" id="emailBtn" href="#">📧 Text per Email</a>
+          <button class="send-block__btn" onclick="copyInviteUrl()">📋 Text kopieren</button>
         </div>
-        <div class="send-status" id="sendStatus" style="display:none">Versendet an <span id="sentCount">0</span> Gäste · <span id="rsvpCount">0</span> Zusagen</div>
       </div>
     </div>
 
@@ -1838,8 +1833,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(n === 5) renderPartyseitePreview();
     if(n === 6) renderDoneSummary();
     autoSave();
-    // T1: Funnel-Tracking der Stage-Progression (Drop-off sichtbar machen). Motto low-cardinality (custom-* -> 'custom').
-    try{ if(window.plausible){ const mid=(state.motto&&state.motto.id||'').indexOf('custom')===0?'custom':(state.motto&&state.motto.id||''); plausible('wizard_stage', {props:{stage:String(n), motto:mid}}); } }catch(e){}
+    // T1: Funnel-Tracking NUR bei Vorwaerts-Progression zu einer neuen Stage (Rueckwaerts-Navigation verzerrt sonst den Drop-off).
+    try{ if(window.plausible && n > (state._maxStage||1)){ state._maxStage = n; const mid=(state.motto&&state.motto.id||'').indexOf('custom')===0?'custom':(state.motto&&state.motto.id||''); plausible('wizard_stage', {props:{stage:String(n), motto:mid}}); } }catch(e){}
     if(el) el.scrollIntoView({behavior:'smooth', block:'start'});  // Scroll-Funnel: zum Abschnitt scrollen statt toggeln
   }
   function jumpStage(n){
@@ -2043,12 +2038,12 @@ window.plausible.init=function(){};window.plausible.q=[];
           <div style="margin-top:10px;font-size:8px;color:#999">~ 1 von 8 Karten · A6 ~</div>
         </div>`;
     }
-    const url = `machsleicht.de/p/${state.name.toLowerCase().replace(/\s/g,'-')}-${ageNum()}`;
-    document.getElementById('inviteUrl').textContent = url;
-
-    // ECHTE WhatsApp + mailto URLs — mit WhatsApp-Nummer für RSVP wenn gesetzt (F6)
+    // Kein Fake-Link mehr (es gibt keine /p/-Route): geteilt wird der Einladungs-TEXT.
+    // Der echte, teilbare Link entsteht ueber "Einladung jetzt erstellen" (/einladung/erstellen -> /e/<slug>).
     const rsvpLine = state.invite.whatsapp ? `\n📲 Zusagen direkt an: ${state.invite.whatsapp}\n` : '\n';
-    const msgText = `${motto.emoji} ${state.invite.title}\n\n${state.invite.body}\n\n📅 ${dateStr}\n🕑 ${state.time} Uhr\n📍 Bei uns zuhause\n${rsvpLine}${state.invite.deadline}\n\nDetails: https://${url}`;
+    const ortLabel = (typeof locationLabel === 'function') ? locationLabel(state.location||'') : '';
+    const msgText = `${motto.emoji} ${state.invite.title}\n\n${state.invite.body}\n\n📅 ${dateStr}\n🕑 ${state.time} Uhr${ortLabel?`\n📍 ${ortLabel}`:''}\n${rsvpLine}${state.invite.deadline}`;
+    window.__inviteShareText = msgText;
     const encoded = encodeURIComponent(msgText);
     document.getElementById('whatsappBtn').href = `https://wa.me/?text=${encoded}`;
     document.getElementById('emailBtn').href = `mailto:?subject=${encodeURIComponent(state.invite.title)}&body=${encoded}`;
@@ -2071,21 +2066,14 @@ window.plausible.init=function(){};window.plausible.q=[];
     reader.readAsDataURL(file);
   }
 
-  function copyInviteUrl(showStatus){
-    const url = 'https://' + document.getElementById('inviteUrl').textContent;
+  function copyInviteUrl(){
+    // Kopiert den Einladungs-TEXT (kein toter /p/-Link mehr). Keine erfundenen Versand-/Zusagen-Zahlen.
+    const text = window.__inviteShareText || '';
     if(navigator.clipboard){
-      navigator.clipboard.writeText(url).then(() => showFlash('Link kopiert ✓'));
+      navigator.clipboard.writeText(text).then(() => showFlash('Einladungstext kopiert ✓'));
     } else {
-      // Fallback
-      const ta = document.createElement('textarea'); ta.value = url; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
-      showFlash('Link kopiert ✓');
-    }
-    if(showStatus !== false){
-      state.invite.sent = state.guests;
-      document.getElementById('sendStatus').style.display = 'flex';
-      document.getElementById('sentCount').textContent = state.guests;
-      document.getElementById('rsvpCount').textContent = Math.floor(state.guests * 0.7);
-      autoSave();
+      const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+      showFlash('Einladungstext kopiert ✓');
     }
   }
 
@@ -2104,10 +2092,10 @@ window.plausible.init=function(){};window.plausible.q=[];
     const motto = state.motto || MOTTOS[0];
     let html = `<div class="ps-preview">
       <h2>${esc(motto.emoji)} ${esc(state.name)}' ${motto.persona === 'Pirat' ? 'Crew-Treffen' : esc(motto.name) + '-Party'}</h2>
-      <div class="ps-preview__meta">${formatDateLong(state.date)} · ${state.time} Uhr · zuhause</div>`;
+      <div class="ps-preview__meta">${formatDateLong(state.date)} · ${state.time} Uhr${(typeof locationLabel==='function'&&locationLabel(state.location))?' · '+locationLabel(state.location):''}</div>`;
     if(state.partyseite.rsvp){
       html += `<div class="ps-preview__section">
-        <h4>👥 Zusagen (${Math.floor(state.guests*0.6)}/${state.guests})</h4>
+        <h4>👥 Zusagen <span style="font-weight:400;font-size:11px;color:#999">(Beispiel-Ansicht)</span></h4>
         <div class="ps-rsvp">
           <div class="ps-rsvp__row"><span>Mia 🦜</span><b>JA</b></div>
           <div class="ps-rsvp__row"><span>Tim ⚓</span><b>JA</b></div>
@@ -2241,7 +2229,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   // (sonst sieht der Nutzer die nackte amazon-URL inkl. tag=). Erst esc (XSS), dann nur das [..](http..)-Muster ersetzen.
   const mdLink = s => esc(s==null?'':String(s)).replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, (m,txt,url) => {
     const spon = /(amazon\.|amzn\.|awin1?\.|[?&]tag=)/i.test(url) ? 'sponsored ' : '';   // Q1: rel=sponsored nur fuer echte Affiliate-Links
-    return '<a href="'+url+'" target="_blank" rel="'+spon+'noopener">'+txt+'</a>';
+    return '<a href="'+url.replace(/"/g,'&quot;')+'" target="_blank" rel="'+spon+'noopener">'+txt+'</a>';   // " im href escapen (Attribut-Ausbruch)
   });
 
   function openGameDetail(gameName){
