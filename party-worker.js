@@ -271,6 +271,7 @@ export default {
         childName: (body.childName || "").trim().slice(0,50),
         age: Math.min(Math.max(parseInt(body.age)||0,0),18)||null,
         motto: (body.motto||"").slice(0,60),
+        mottoId: (body.mottoId||"").slice(0,40), // sauberer Theme-Kontrakt: kanonische ID statt Freitext-Name (getTheme matcht damit exakt, Custom faellt sauber auf Default)
         mottoEmoji: firstEmoji(body.mottoEmoji),
         mottoColor: /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A",
         date: body.date||"", time: body.time||"", endTime: body.endTime||"",
@@ -333,6 +334,7 @@ export default {
       if(body.childName!==undefined) party.childName = (body.childName||"").trim().slice(0,50);
       if(body.age!==undefined) party.age = Math.min(Math.max(parseInt(body.age)||0,0),18)||null;
       if(body.motto!==undefined) party.motto = (body.motto||"").slice(0,60);
+      if(body.mottoId!==undefined) party.mottoId = (body.mottoId||"").slice(0,40);
       if(body.mottoEmoji!==undefined) party.mottoEmoji = firstEmoji(body.mottoEmoji);
       if(body.mottoColor!==undefined) party.mottoColor = /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A";
       if(body.date!==undefined) party.date = (body.date||"").slice(0,40);
@@ -1225,13 +1227,13 @@ function partyPage(party, isEditor, photoRoundB64, isPreview) {
 // GUEST PAGE — FULL THEMED (new design)
 // ═══════════════════════════════════════════════════════════════
 function guestPageFull(party, photoRoundB64, isPreview) {
-  const t = getTheme(party.motto);
+  const t = getTheme(party.mottoId || party.motto); // mottoId (kanonische ID) bevorzugt; Fallback Freitext-Name fuer Legacy-Parties
   const name = esc(party.childName);
   const age = party.age || "";
   const motto = esc(party.motto);
   const emoji = esc(party.mottoEmoji || "\u{1F389}");
   const id = party.id;
-  const nameLC = escJson(party.childName.toLowerCase().trim());
+  const nameLC = escJson((party.childName||"").toLowerCase().trim()); // Null-Guard: Legacy/fremd-geschriebene Party ohne childName crasht sonst die ganze Gaesteseite
   const dateStr = party.date ? new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long",year:"numeric"}) : "";
   const hasWishes = party.wishes && party.wishes.length > 0;
   const freeWishes = hasWishes ? party.wishes.filter(w => !w.sharedGift && (w.claimedBy||[]).length > 0 ? 0 : 1).length : 0;
