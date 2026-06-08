@@ -1661,8 +1661,8 @@ window.plausible.init=function(){};window.plausible.q=[];
       + '<span class="sz-line"></span><span class="sz-x">'+esc(theme.emoji||'🏴‍☠️')+'</span>';
     const list = stations.map((s,k)=>
       `<details class="egame"><summary><b>${k+1}.</b> ${esc(s.name||'')} <span class="egame__meta">${s.dauer?esc(String(s.dauer))+' Min':''}${s.typ?' · '+esc(s.typ):''}</span></summary>`
-      + (s.desc?`<p>${esc(s.desc)}</p>`:'')
-      + (s.hint?`<p class="sz-hint">🧩 Rätsel-Tipp: ${esc(s.hint)}</p>`:'')
+      + (s.desc?`<p>${mdLink(s.desc)}</p>`:'')
+      + (s.hint?`<p class="sz-hint">🧩 Rätsel-Tipp: ${mdLink(s.hint)}</p>`:'')
       + `</details>`).join('');
     // Sekundaer-Modul: standardmaessig eingeklappt; offen nur bei gezieltem Schatzsuche-Eintritt (?modus=schatzsuche)
     const openAttr = (typeof window !== 'undefined' && window.__entryModus === 'schatzsuche') ? ' open' : '';
@@ -1695,14 +1695,14 @@ window.plausible.init=function(){};window.plausible.q=[];
     ).join('');
 
     const sched = (v.schedule || []).map(s =>
-      `<div class="timeline__row"><div class="timeline__time">${esc(s.time||'')}</div><div class="timeline__what"><em>${esc(s.title||'')}</em>${s.description ? '<br>'+esc(s.description) : ''}</div></div>`
+      `<div class="timeline__row"><div class="timeline__time">${esc(s.time||'')}</div><div class="timeline__what"><em>${esc(s.title||'')}</em>${s.description ? '<br>'+mdLink(s.description) : ''}</div></div>`
     ).join('');
 
     const games = (v.games || []).map(g => {
-      const steps = (g.steps || []).map(st => `<li>${esc(st.content || st.name || st)}</li>`).join('');
+      const steps = (g.steps || []).map(st => `<li>${mdLink(st.content || st.name || st)}</li>`).join('');
       return `<details class="egame"><summary>${esc(g.name||'')} <span class="egame__meta">${g.duration?g.duration+' Min':''}${g.loudness?' · '+esc(g.loudness):''}</span></summary>
-        ${g.material ? `<p><b>Material:</b> ${esc(g.material)}</p>` : ''}
-        ${g.prepText ? `<p><b>Vorbereitung:</b> ${esc(g.prepText)}</p>` : ''}
+        ${g.material ? `<p><b>Material:</b> ${mdLink(g.material)}</p>` : ''}
+        ${g.prepText ? `<p><b>Vorbereitung:</b> ${mdLink(g.prepText)}</p>` : ''}
         ${steps ? `<ol>${steps}</ol>` : ''}
         ${g.safetyRule ? `<p class="egame__safe">⚠️ ${esc(g.safetyRule)}</p>` : ''}
         ${g.whyItWorks ? `<p class="egame__why"><b>${esc(g.whyItWorksTitle||'Warum es wirkt')}:</b> ${esc(g.whyItWorks)}</p>` : ''}
@@ -1717,14 +1717,14 @@ window.plausible.init=function(){};window.plausible.q=[];
         : `<li>${label}${price}</li>`;
     }).join('');
 
-    const cake = d.cakeRecipe ? `<article class="mod"><header class="mod__head"><span class="mod__icon">🎂</span><h3 class="mod__title">Kuchen</h3></header>${d.cakeRecipe.intro?`<p>${esc(d.cakeRecipe.intro)}</p>`:''}<ol>${(d.cakeRecipe.steps||[]).map(st=>`<li>${esc(st.content||'')}</li>`).join('')}</ol></article>` : '';
-    const tips = (d.parentTips && d.parentTips.structured) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">💡</span><h3 class="mod__title">Eltern-Tipps</h3></header><ul class="etips">${d.parentTips.structured.map(t=>`<li><b>${esc(t.topic||'')}</b> ${esc(t.detail||'')}</li>`).join('')}</ul></article>` : '';
-    const faq = (d.faq && d.faq.length) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">❓</span><h3 class="mod__title">Häufige Fragen</h3></header>${d.faq.map(f=>`<details class="egame"><summary>${esc(f.q||'')}</summary><p>${esc(f.a||'')}</p></details>`).join('')}</article>` : '';
+    const cake = d.cakeRecipe ? `<article class="mod"><header class="mod__head"><span class="mod__icon">🎂</span><h3 class="mod__title">Kuchen</h3></header>${d.cakeRecipe.intro?`<p>${mdLink(d.cakeRecipe.intro)}</p>`:''}<ol>${(d.cakeRecipe.steps||[]).map(st=>`<li>${mdLink(st.content||'')}</li>`).join('')}</ol></article>` : '';
+    const tips = (d.parentTips && d.parentTips.structured) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">💡</span><h3 class="mod__title">Eltern-Tipps</h3></header><ul class="etips">${d.parentTips.structured.map(t=>`<li><b>${esc(t.topic||'')}</b> ${mdLink(t.detail||'')}</li>`).join('')}</ul></article>` : '';
+    const faq = (d.faq && d.faq.length) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">❓</span><h3 class="mod__title">Häufige Fragen</h3></header>${d.faq.map(f=>`<details class="egame"><summary>${esc(f.q||'')}</summary><p>${mdLink(f.a||'')}</p></details>`).join('')}</article>` : '';
 
     body.innerHTML = `
       <div class="evar-label">Aufwand wählen:</div>
       <div class="evar-row" role="tablist" aria-label="Aufwand-Variante">${vtabs}</div>
-      ${v.intro ? `<p class="evar-intro">${esc(v.intro)}</p>` : ''}
+      ${v.intro ? `<p class="evar-intro">${mdLink(v.intro)}</p>` : ''}
       <article class="mod"><header class="mod__head"><span class="mod__icon">🗓️</span><h3 class="mod__title">Tagesplan${v.timeWindow?' · '+esc(v.timeWindow):''}</h3></header><div class="timeline">${sched}</div></article>
       <article class="mod"><header class="mod__head"><span class="mod__icon">🎮</span><h3 class="mod__title">Spiele · ${(v.games||[]).length} mit Anleitung</h3></header>${games}</article>
       ${schatzHtml}
@@ -2225,6 +2225,9 @@ window.plausible.init=function(){};window.plausible.q=[];
   let gdCurrentGame = null;  // Name des aktuell im Drawer gezeigten Spiels (für „In den Plan")
   const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   const escA = s => esc(s).replace(/"/g,'&quot;').replace(/'/g,'&#39;'); // Attribut-Kontext (href etc.)
+  // Markdown-Links [Text](https://...) in Elite-JSON-Texten zu echten Affiliate-Links rendern statt roh anzuzeigen
+  // (sonst sieht der Nutzer die nackte amazon-URL inkl. tag=). Erst esc (XSS), dann nur das [..](http..)-Muster ersetzen.
+  const mdLink = s => esc(s==null?'':String(s)).replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="sponsored noopener">$1</a>');
 
   function openGameDetail(gameName){
     const motto = state.motto || MOTTOS[0];
