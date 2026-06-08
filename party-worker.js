@@ -264,6 +264,13 @@ function sanitizePaypal(v) {
   return m ? "https://paypal.me/" + m[1] : "";
 }
 
+// RFC-5545 TEXT-Escaping fuer .ics-Werte (SUMMARY/LOCATION/DESCRIPTION):
+// Backslash, Semikolon, Komma escapen; echte Newlines -> literal \n (sonst bricht eine
+// mehrzeilige Adresse die Kalenderdatei / Property-Injection). escJson taugt dafuer NICHT.
+function icsEscape(s) {
+  return String(s == null ? "" : s).replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\r\n|\r|\n/g, "\\n");
+}
+
 // ═══════════════════════════════════════════════════════════════
 // MAIN ROUTER
 // ═══════════════════════════════════════════════════════════════
@@ -417,6 +424,7 @@ export default {
       const body = await request.json();
       const name = (body.name||"").trim().slice(0,50);
       if (!name) return json({error:"Name fehlt"},400, request);
+      if (!Array.isArray(party.guests)) party.guests = []; // L7: Legacy-Party ohne guests-Feld nicht crashen
       if (party.guests.length>=MAX_GUESTS && !party.guests.find(g=>g.name.toLowerCase()===name.toLowerCase()))
         return json({error:"Maximale Gästezahl erreicht"},400, request);
       const guest = {
@@ -712,7 +720,7 @@ function baseHead(title, description, color = "#D4812A", ogUrl = "") {
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>${esc(title)}</title>
 ${description?`<meta name="description" content="${esc(description)}">`:""}
@@ -1104,6 +1112,7 @@ async function createParty(){
     const body={childName,age:parseInt(document.getElementById("age").value)||null,
       motto:document.getElementById("motto").value,mottoEmoji:document.getElementById("mottoEmoji").value||"\u{1F389}",
       mottoColor:new URLSearchParams(location.search).get("mottoColor")||autoColor(document.getElementById("motto").value),
+      mottoId:new URLSearchParams(location.search).get("mottoId")||"",
       date:document.getElementById("date").value,time:document.getElementById("time").value,
       endTime:document.getElementById("endTime").value,address:document.getElementById("address").value,
       notes:document.getElementById("notes").value,askAllergies:document.getElementById("askAllergies").checked,
@@ -1270,7 +1279,7 @@ function guestPageFull(party, photoRoundB64, isPreview) {
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>${esc(ogTitle)} \u2014 mach\u2019s leicht</title>
 <meta property="og:title" content="${esc(ogTitle)}">
@@ -1543,7 +1552,7 @@ function checkCode(){
 document.getElementById("codeInput").addEventListener("keydown",function(e){if(e.key==="Enter")checkCode();});
 
 // ── PHOTO ──
-async function loadPhoto(){try{var r=await fetch(location.origin+"/api/photo/"+PID);if(!r.ok)return;var d=await r.json();if(d.photo){var el=document.getElementById("heroPhoto");el.innerHTML='<img src="'+d.photo+'" alt="">';el.style.display="block";}}catch(e){}}
+async function loadPhoto(){try{var r=await fetch(location.origin+"/api/photo/"+PID);if(!r.ok)return;var d=await r.json();if(d.photo){var el=document.getElementById("heroPhoto");var im=document.createElement("img");im.src=d.photo;im.alt="";el.textContent="";el.appendChild(im);el.style.display="block";}}catch(e){}}
 
 // ── GUEST COUNT ──
 async function loadGuestCount(){try{var r=await fetch(location.origin+"/api/party/"+PID);if(!r.ok)return;var d=await r.json();var c=d.guestCount||0;if(c>0){var el=document.getElementById("guestCounter");el.classList.remove("hidden");var dots=document.getElementById("guestDots");var letters="ABCDEFGHIJKLM";var show=Math.min(c,4);for(var i=0;i<show;i++){var dot=document.createElement("div");dot.className="guest-dot";dot.textContent=i<3?letters[i]:"+"+(c-3);dots.appendChild(dot);}document.getElementById("guestCounterText").textContent="Schon "+c+" "+(c===1?"Kind":"Kinder")+" dabei!";}}catch(e){}}
@@ -1591,12 +1600,12 @@ async function sendRsvp(){
 function downloadIcs(){
   var date="${escJson(party.date)}",time="${escJson(party.time||"12:00")}",endTime="${escJson(party.endTime||"")}";
   var d=date.replace(/-/g,""),ti=time.replace(/:/g,"")+"00";
-  var et=endTime?endTime.replace(/:/g,"")+"00":(parseInt(time)+3+"").padStart(2,"0")+"0000";
+  var et=endTime?endTime.replace(/:/g,"")+"00":(((parseInt(time)+3)%24)+"").padStart(2,"0")+"0000";
   var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//machsleicht//party//DE","BEGIN:VEVENT",
     "DTSTART:"+d+"T"+ti,"DTEND:"+d+"T"+et,
-    "SUMMARY:${escJson(party.childName?party.childName+"s Geburtstag":"Kindergeburtstag")}",
-    "LOCATION:${escJson(party.address||"")}",
-    "DESCRIPTION:${escJson(party.motto||"Kindergeburtstag")}",
+    "SUMMARY:"+${JSON.stringify(icsEscape(party.childName?party.childName+"s Geburtstag":"Kindergeburtstag"))},
+    "LOCATION:"+${JSON.stringify(icsEscape(party.address||""))},
+    "DESCRIPTION:"+${JSON.stringify(icsEscape(party.motto||"Kindergeburtstag"))},
     "END:VEVENT","END:VCALENDAR"].join("\\r\\n");
   var blob=new Blob([ics],{type:"text/calendar"});
   var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="party.ics";a.click();
@@ -1694,6 +1703,7 @@ ${isPreview ? "loadPhoto();loadWishes();loadGuestCount();" : ""}
 // EDITOR VIEW
 // ═══════════════════════════════════════════════════════════════
 function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
+  if (!Array.isArray(party.guests)) party.guests = []; // L7: Legacy-Party ohne guests-Feld nicht crashen
   const ja = party.guests.filter(g=>g.status==="ja");
   const vielleicht = party.guests.filter(g=>g.status==="vielleicht");
   const nein = party.guests.filter(g=>g.status==="nein");
@@ -1713,7 +1723,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     const __dateMs = party.date ? new Date(party.date).getTime() : NaN; const daysToParty = isNaN(__dateMs) ? null : Math.ceil((__dateMs - Date.now()) / 86400000);
     const dayLabel = daysToParty === null ? null : daysToParty < 0 ? `vor ${Math.abs(daysToParty)} Tagen` : daysToParty === 0 ? "Heute!" : daysToParty === 1 ? "Morgen!" : daysToParty <= 7 ? `in ${daysToParty} Tagen` : `in ${daysToParty} Tagen`;
     const dayColor = daysToParty === null ? "var(--m)" : daysToParty < 0 ? "#888" : daysToParty <= 1 ? "#C62828" : daysToParty <= 7 ? "#E65100" : color;
-    const allergenList = allergies.length ? allergies.map(g=>`${esc(g.name)}: ${esc(g.allergies)}`).join("\\n") : "";
+    const allergenList = allergies.length ? allergies.map(g=>`${esc(g.name)}: ${esc(g.allergies)}`).join("\n") : "";
     return `<div class="card fade-up" style="background:${color}08;border-left:4px solid ${color}">
     <h2 style="font-size:15px;color:${color};margin-bottom:14px">\u{1F4CA} Status-Übersicht</h2>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px">
@@ -1827,7 +1837,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   </div>
 
   <script>
-  (async function(){try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo)document.getElementById("heroPhotoEd").innerHTML='<img src="'+d.photo+'" class="hero-photo">';}catch{}})();
+  (async function(){try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo){const el=document.getElementById("heroPhotoEd");const im=document.createElement("img");im.src=d.photo;im.className="hero-photo";el.textContent="";el.appendChild(im);}}catch{}})();
   function shareWA(){const t="${escJson(party.mottoEmoji||"\u{1F389}")} ${party.childName?escJson(party.childName)+"s ":""}${escJson(party.motto)||"Geburtstag"}!\\n\\nAlle Infos & Zusage hier:\\n${escJson(guestUrl)}";window.open("https://wa.me/?text="+encodeURIComponent(t));}
   function copyLink(){navigator.clipboard.writeText("${esc(guestUrl)}").then(()=>{const b=event.target;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Link kopieren",2000);});}
   function copyGuestLink(){navigator.clipboard.writeText("${esc(guestUrl)}").then(()=>{const b=event.target;const o=b.textContent;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent=o,2000);});}
