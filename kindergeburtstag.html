@@ -1419,8 +1419,11 @@ window.plausible.init=function(){};window.plausible.q=[];
   function maybeShowResumeBanner(){
     const saved = loadSavedState();
     if(!saved) return;
-    document.getElementById('resumeWho').textContent = `${saved.name}'s ${saved.motto.name}-Plan`;
-    const mins = Math.round((Date.now() - saved.lastSaved) / 60000);
+    // U5: gegen altes/teilweises localStorage-Schema absichern (motto als String/fehlend -> kein "undefined's undefined")
+    const _mn = (saved.motto && saved.motto.name) ? saved.motto.name : 'Geburtstags';
+    const _nm = saved.name || 'Dein';
+    document.getElementById('resumeWho').textContent = `${_nm}'s ${_mn}-Plan`;
+    const mins = saved.lastSaved ? Math.round((Date.now() - saved.lastSaved) / 60000) : 0;
     document.getElementById('resumeWhen').textContent = mins < 1 ? 'wenigen Sekunden' : mins < 60 ? `${mins} Min` : `${Math.round(mins/60)} h`;
     document.getElementById('resumeBanner').classList.add('show');
     applyAccent(saved.motto);
