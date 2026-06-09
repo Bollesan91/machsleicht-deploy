@@ -1350,7 +1350,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   function setExactAge(v){
     const n = parseInt(v,10);
     state.exactAge = (n>=1 && n<=14) ? n : null;
-    if(state.exactAge){ state.age = n<=5 ? '3-5' : (n<=8 ? '6-8' : '9-12'); }   // AltersGRUPPE konsistent ableiten
+    if(state.exactAge){ state.age = n<=5 ? '3-5' : (n<=8 ? '6-8' : '9-12'); showPlanBtn(); }   // AltersGRUPPE ableiten + Reveal freischalten (Exact-Age-Pfad strandete sonst -> kein sichtbarer "Plan ansehen"-Button)
     if(state.motto){ state.invite.body = `${state.name} ${state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name)}`; const be=document.getElementById('iBody'); if(be) be.value = state.invite.body; }
     try{ renderPlanPreview(); }catch(e){}
     try{ renderInvitePreview(); }catch(e){}
@@ -1527,6 +1527,13 @@ window.plausible.init=function(){};window.plausible.q=[];
     `).join('');
   }
 
+  // Reveal des "Plan ansehen"-Buttons: an eine bewusste Alterswahl gekoppelt (Karte ODER Zahlenfeld), NICHT an ein einzelnes Event.
+  // Aus pickAge UND setExactAge gerufen -> kein Eintrittspfad strandet. Bewusst NICHT aus syncEckdaten/initFunnel (dort ist state.age
+  // per initFunnel-Default '6-8' -> sonst Virgin-Vorschau des Buttons).
+  function showPlanBtn(){
+    const btn = document.getElementById('toPlanBtn'); if(btn) btn.style.display='';
+    try{ document.querySelectorAll('#agesGrid .age-card').forEach(c=>{ c.style.outline = (c.dataset.age===state.age) ? '3px solid var(--accent,#1E3A5F)' : ''; }); }catch(e){}
+  }
   function pickAge(age){
     state.age = age;
     const ageGames = gamesForAge(state.motto, age);
@@ -1536,8 +1543,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     renderPlanPreview();
     autoSave();
     // Aha-Bypass: NICHT auto-advancen. Erst Eckdaten (v.a. Name) erfassen lassen, damit der Plan personalisiert ist ("Mias …" statt "dein Kind"), dann expliziter Klick.
-    try{ document.querySelectorAll('#agesGrid .age-card').forEach(c=>{ c.style.outline = (c.dataset.age===age) ? '3px solid var(--accent,#1E3A5F)' : ''; }); }catch(e){}
-    const btn = document.getElementById('toPlanBtn'); if(btn) btn.style.display='';
+    showPlanBtn();
     const ek = document.getElementById('eckdaten'); if(ek) ek.scrollIntoView({behavior:'smooth', block:'start'});
     const nm = document.getElementById('iqName'); if(nm && !nm.value) setTimeout(()=>{try{nm.focus()}catch(e){}}, 450);
   }
