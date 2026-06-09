@@ -917,8 +917,8 @@ function creatorPage() {
       <div style="flex:1;min-width:0"><label>Start<span class="req">*</span></label><input type="time" id="time"></div>
       <div style="flex:1;min-width:0"><label>Ende ca.</label><input type="time" id="endTime"></div>
     </div>
-    <div class="field"><label>Adresse<span class="req">*</span></label><textarea id="address" rows="2" placeholder="Stra\u00DFe, PLZ Ort" maxlength="200"></textarea><p style="font-size:12px;color:#1E7B34;margin:6px 0 0">\u{1F512} Sehen nur G\u00E4ste, die zugesagt haben \u2014 nicht jeder mit dem Link.</p></div>
-    <div class="field"><label>Hinweise f\u00FCr Eltern (optional)</label><textarea id="notes" rows="3" placeholder="z.B. Bitte Matschsachen mitbringen!" maxlength="500"></textarea></div>
+    <div class="field"><label>Adresse<span class="req">*</span></label><textarea id="address" rows="2" placeholder="Stra\u00DFe, PLZ Ort" maxlength="200"></textarea><p style="font-size:12px;color:#1E7B34;margin:6px 0 0">\u{1F512} Nicht \u00F6ffentlich sichtbar \u2014 erscheint erst, nachdem ein Gast zugesagt hat.</p></div>
+    <div class="field"><label>Hinweise f\u00FCr Eltern (optional)</label><textarea id="notes" rows="3" placeholder="z.B. Bitte Matschsachen mitbringen!" maxlength="500"></textarea><p style="font-size:12px;color:#888;margin:6px 0 0">Tipp: Keine Adresse hier eintragen \u2014 dieses Feld ist \u00F6ffentlich. Nutze daf\u00FCr das Adressfeld oben (erst nach Zusage sichtbar).</p></div>
     <div style="margin-bottom:14px">
       <label style="margin-bottom:8px">Was sollen G\u00E4ste angeben?</label>
       <div class="toggle"><input type="checkbox" id="askAllergies" checked><span style="font-size:14px">Allergien / Unvertr\u00E4glichkeiten</span></div>
@@ -1558,6 +1558,12 @@ function revealAddr(addr,addrIcs){
   var lnk=document.getElementById("addrLink");
   if(lnk&&!lnk.firstChild){var a=document.createElement("a");a.href="https://maps.google.com/?q="+encodeURIComponent(addr);a.target="_blank";a.rel="noopener";a.className="info-link";a.textContent="→ Google Maps";lnk.appendChild(a);}
 }
+function hideAddr(){  // Wechsel ja->nein/vielleicht: bereits enthuellte Adresse wieder verbergen (sonst bleibt sie bis Reload sichtbar).
+  REVEALED_ADDR="";REVEALED_ADDR_ICS="";
+  var lbl=document.getElementById("addrLabel");
+  if(lbl){lbl.style.fontStyle="italic";lbl.style.color="var(--m)";lbl.style.whiteSpace="";lbl.textContent="\u{1F512} Adresse erscheint nach deiner Zusage";}
+  var lnk=document.getElementById("addrLink");if(lnk){while(lnk.firstChild)lnk.removeChild(lnk.firstChild);}
+}
 
 // ── CONFETTI ENGINE ──
 var confettiColors=["${t.a}","${t.h3}","#FFC107","#FF5722","#E91E63","#2196F3","#9C27B0","#FFEB3B"];
@@ -1624,7 +1630,7 @@ async function sendRsvp(){
     if(!r.ok){var d=await r.json();throw new Error(d.error);}
     var okData={};try{okData=await r.json();}catch(e){}
     localStorage.setItem("rsvp_"+PID,JSON.stringify({name:rn,status:selectedStatus,address:okData.address||"",addressIcs:okData.addressIcs||""}));
-    if(okData.address)revealAddr(okData.address,okData.addressIcs);  // Adresse erst nach Zusage sichtbar
+    if(okData.address)revealAddr(okData.address,okData.addressIcs);else hideAddr();  // Adresse erst nach Zusage sichtbar; bei Wechsel auf nein/vielleicht wieder verbergen
     guestName=rn;
     var form=document.getElementById("rsvpFields");form.classList.add("slide-hidden");
     var msgs={ja:["\\u{1F389}","Wir freuen uns auf euch!",""+rn+" ist dabei!"],vielleicht:["\\u{1F914}","Alles klar!","Wir hoffen ihr k\\u00F6nnt kommen!"],nein:["\\u{1F622}","Schade!","Vielleicht beim n\\u00E4chsten Mal."]};
@@ -1650,9 +1656,9 @@ function downloadIcs(){
   else { var _tp=(time||"12:00").split(":"); var _eh=((parseInt(_tp[0],10)||12)+3)%24; et=String(_eh).padStart(2,"0")+((_tp[1]||"00")+"").padStart(2,"0")+"00"; }  // +3h Fallback OHNE Start-Minuten zu verwerfen (09:30 -> 12:30, nicht 12:00)
   var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//machsleicht//party//DE","BEGIN:VEVENT",
     "DTSTART:"+d+"T"+ti,"DTEND:"+d+"T"+et,
-    "SUMMARY:"+${JSON.stringify(icsEscape(party.childName?party.childName+"s Geburtstag":"Kindergeburtstag"))},
+    "SUMMARY:"+${JSON.stringify(icsEscape(party.childName?party.childName+"s Geburtstag":"Kindergeburtstag")).replace(/</g,"\\u003C").replace(/>/g,"\\u003E")},
     "LOCATION:"+REVEALED_ADDR_ICS,
-    "DESCRIPTION:"+${JSON.stringify(icsEscape(party.motto||"Kindergeburtstag"))},
+    "DESCRIPTION:"+${JSON.stringify(icsEscape(party.motto||"Kindergeburtstag")).replace(/</g,"\\u003C").replace(/>/g,"\\u003E")},
     "END:VEVENT","END:VCALENDAR"].join("\\r\\n");
   var blob=new Blob([ics],{type:"text/calendar"});
   var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="party.ics";a.click();
