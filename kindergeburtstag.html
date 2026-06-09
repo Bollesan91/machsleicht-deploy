@@ -1667,18 +1667,23 @@ window.plausible.init=function(){};window.plausible.q=[];
     const stations = (theme.stations && theme.stations[size]) || [];
     if(!stations.length) return '';
     const intro = (theme.intro && theme.intro[size]) || '';
+    const material = (theme.material && theme.material[size]) || [];   // M5: kuratierte Einkaufsliste war toter Content
+    const schatz = Array.isArray(theme.schatz) ? theme.schatz : [];     // M5: Schatz-Ideen war toter Content
     const route = stations.map((s,k)=>`<span class="sz-dot">${k+1}</span>`).join('<span class="sz-line"></span>')
       + '<span class="sz-line"></span><span class="sz-x">'+esc(theme.emoji||'🏴‍☠️')+'</span>';
     const list = stations.map((s,k)=>
       `<details class="egame"><summary><b>${k+1}.</b> ${esc(s.name||'')} <span class="egame__meta">${s.dauer?esc(String(s.dauer))+' Min':''}${s.typ?' · '+esc(s.typ):''}</span></summary>`
       + (s.desc?`<p>${mdLink(s.desc)}</p>`:'')
-      + (s.hint?`<p class="sz-hint">🧩 Rätsel-Tipp: ${mdLink(s.hint)}</p>`:'')
+      + (s.hint?`<p class="sz-hint">🧩 Tipp: ${mdLink(s.hint)}</p>`:'')
       + `</details>`).join('');
     // Sekundaer-Modul: standardmaessig eingeklappt; offen nur bei gezieltem Schatzsuche-Eintritt (?modus=schatzsuche)
     const openAttr = (typeof window !== 'undefined' && window.__entryModus === 'schatzsuche') ? ' open' : '';
     return `<details class="mod sz-mod" id="sz-anchor"${openAttr}><summary class="mod__head"><span class="mod__icon">🗺️</span><h3 class="mod__title">Schatzsuche · ${esc(theme.name||'')} · ${stations.length} Stationen</h3></summary>`
       + (intro?`<p class="evar-intro">${esc(intro.replace(/\{name\}/g, state.name||'das Geburtstagskind'))}</p>`:'')
-      + `<div class="sz-map" aria-hidden="true">${route}</div>${list}</details>`;
+      + `<div class="sz-map" aria-hidden="true">${route}</div>${list}`
+      + (material.length?`<div style="margin-top:12px"><h4 style="font-size:12px;font-weight:800;color:var(--accent,#1E3A5F);margin:0 0 6px">🛒 Material zum Vorbereiten</h4><ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.6">${material.map(m=>`<li>${esc(m)}</li>`).join('')}</ul></div>`:'')
+      + (schatz.length?`<div style="margin-top:10px"><h4 style="font-size:12px;font-weight:800;color:var(--accent,#1E3A5F);margin:0 0 4px">🎁 Schatz-Ideen für die Kiste</h4><p style="margin:0;font-size:13px;color:#555">${schatz.map(x=>esc(x)).join(' · ')}</p></div>`:'')
+      + `</details>`;
   }
   function setEliteVariant(v){ state.eliteVariant = v; renderElitePlan(); autoSave(); }
   async function renderElitePlan(){

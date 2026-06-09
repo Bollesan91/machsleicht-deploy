@@ -264,6 +264,22 @@ function sanitizePaypal(v) {
   return m ? "https://paypal.me/" + m[1] : "";
 }
 
+// RFC-5545 TEXT-Escaping fuer .ics-Werte (SUMMARY/LOCATION/DESCRIPTION):
+// Backslash, Semikolon, Komma escapen; echte Newlines -> literal \n (sonst bricht eine
+// mehrzeilige Adresse die Kalenderdatei / Property-Injection). escJson taugt dafuer NICHT.
+function icsEscape(s) {
+  return String(s == null ? "" : s).replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\r\n|\r|\n/g, "\\n");
+}
+
+// H2: korruptes KV-JSON darf nicht jeden Read-Pfad mit uncaught throw (500/1101 ohne CORS) abreissen.
+// Gibt null zurueck -> Handler antwortet sauber statt zu crashen (und die Party bleibt loeschbar).
+function safeParse(raw) { try { return JSON.parse(raw); } catch (e) { return null; } }
+// M1: Nicht-JSON-Body soll 400 geben, nicht 500. Gibt null bei kaputtem Body.
+async function safeReqJson(req) { try { return await req.json(); } catch (e) { return null; } }
+
+// M4: nur echtes ISO-Datum (YYYY-MM-DD) akzeptieren — sonst "Invalid Date"/kaputtes ICS-DTSTART.
+function validDate(d) { return /^\d{4}-\d{2}-\d{2}$/.test(d || "") ? d : ""; }
+
 // ═══════════════════════════════════════════════════════════════
 // MAIN ROUTER
 // ═══════════════════════════════════════════════════════════════
@@ -275,7 +291,7 @@ export default {
 
     // POST /api/create
     if (path === "/api/create" && request.method === "POST") {
-      const body = await request.json();
+      const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       const id = generateId();
       const editToken = generateToken();
       const party = {
@@ -286,7 +302,7 @@ export default {
         mottoId: (body.mottoId||"").slice(0,40), // sauberer Theme-Kontrakt: kanonische ID statt Freitext-Name (getTheme matcht damit exakt, Custom faellt sauber auf Default)
         mottoEmoji: firstEmoji(body.mottoEmoji),
         mottoColor: /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A",
-        date: body.date||"", time: body.time||"", endTime: body.endTime||"",
+        date: validDate(body.date), time: body.time||"", endTime: body.endTime||"",
         address: (body.address||"").slice(0,200),
         notes: (body.notes||"").slice(0,500),
         askAllergies: body.askAllergies!==false,
@@ -315,7 +331,7 @@ export default {
       const id = path.split("/")[3];
       const raw = await env.PARTY.get(`party:${id}`);
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
-      const party = JSON.parse(raw);
+      const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
       const edit = url.searchParams.get("edit");
       if (edit === party.editToken) return json(party, 200, request);
       // P0-Security Welle 1C: doiToken aus Public-GET strippen — sonst kann jeder Gast
@@ -337,8 +353,8 @@ export default {
       const id = path.split("/")[3];
       const raw = await env.PARTY.get(`party:${id}`);
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
-      const party = JSON.parse(raw);
-      const body = await request.json();
+      const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
+      const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       // P0-Security Welle 1E: Legacy-Party ohne editToken darf NICHT editierbar sein.
       // Sonst Auth-Bypass: body.editToken=undefined gegen party.editToken=undefined → match.
       if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
@@ -350,7 +366,7 @@ export default {
       if(body.mottoId!==undefined) party.mottoId = (body.mottoId||"").slice(0,40);
       if(body.mottoEmoji!==undefined) party.mottoEmoji = firstEmoji(body.mottoEmoji);
       if(body.mottoColor!==undefined) party.mottoColor = /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A";
-      if(body.date!==undefined) party.date = (body.date||"").slice(0,40);
+      if(body.date!==undefined) party.date = validDate(body.date);
       if(body.time!==undefined) party.time = (body.time||"").slice(0,20);
       if(body.endTime!==undefined) party.endTime = (body.endTime||"").slice(0,20);
       if(body.address!==undefined) party.address = (body.address||"").slice(0,200);
@@ -384,7 +400,7 @@ export default {
       // P0-Security: Token NUR aus Body — Query-Parameter wäre in CF-Logs persistiert
       let providedToken = null;
       try {
-        const body = await request.json();
+        const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
         providedToken = body && body.editToken;
       } catch { /* no body */ }
       if (!providedToken) return json({error:"Token fehlt"},400,request);
@@ -413,10 +429,11 @@ export default {
       const id = path.split("/")[3];
       const raw = await env.PARTY.get(`party:${id}`);
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
-      const party = JSON.parse(raw);
-      const body = await request.json();
+      const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
+      const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       const name = (body.name||"").trim().slice(0,50);
       if (!name) return json({error:"Name fehlt"},400, request);
+      if (!Array.isArray(party.guests)) party.guests = []; // L7: Legacy-Party ohne guests-Feld nicht crashen
       if (party.guests.length>=MAX_GUESTS && !party.guests.find(g=>g.name.toLowerCase()===name.toLowerCase()))
         return json({error:"Maximale Gästezahl erreicht"},400, request);
       const guest = {
@@ -436,8 +453,8 @@ export default {
       const id=parts[3], wishId=parts[5];
       const raw = await env.PARTY.get(`party:${id}`);
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
-      const party = JSON.parse(raw);
-      const body = await request.json();
+      const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
+      const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       const guestName = (body.name||"").trim().slice(0,50); // F4: Laengen-Limit gegen KV-Bloat/XSS-Payload
       if (!guestName) return json({error:"Name fehlt"},400, request);
       // amount nur bei sharedGift relevant; 0 < amount < 9999
@@ -495,8 +512,8 @@ export default {
       const id = path.split("/")[3];
       const raw = await env.PARTY.get(`party:${id}`);
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
-      const party = JSON.parse(raw);
-      const body = await request.json();
+      const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
+      const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       // Legacy-Token-Guard (konsistent mit PUT/DELETE): tokenloser Alt-Eintrag -> undefined!==undefined=false waere Auth-Bypass (Mail-Spam-Vektor).
       if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
       const email = (body.email||"").trim().slice(0,200);
@@ -595,7 +612,7 @@ export default {
       const partyId=parts[2], wishId=parts[3];
       const raw = await env.PARTY.get(`party:${partyId}`);
       if (!raw) return Response.redirect("https://machsleicht.de",302);
-      const party = JSON.parse(raw);
+      const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
       const wish = (party.wishes||[]).find(w=>w.id===wishId);
       if (!wish||!wish.url) return Response.redirect("https://machsleicht.de",302);
       // P0-Security: Defense-in-Depth — auch beim Redirect nochmal Protokoll prüfen,
@@ -689,7 +706,7 @@ export default {
       const id = path.slice(1);
       const raw = await env.PARTY.get(`party:${id}`);
       if (!raw) return new Response(notFoundPage(),{status:404,headers:{"Content-Type":"text/html;charset=utf-8"}});
-      const party = JSON.parse(raw);
+      const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
       const isEditor = url.searchParams.get("edit")===party.editToken;
       const isPreview = isEditor && url.searchParams.get("preview")==="1";
       let photoRoundB64 = "";
@@ -712,7 +729,7 @@ function baseHead(title, description, color = "#D4812A", ogUrl = "") {
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>${esc(title)}</title>
 ${description?`<meta name="description" content="${esc(description)}">`:""}
@@ -1104,6 +1121,7 @@ async function createParty(){
     const body={childName,age:parseInt(document.getElementById("age").value)||null,
       motto:document.getElementById("motto").value,mottoEmoji:document.getElementById("mottoEmoji").value||"\u{1F389}",
       mottoColor:new URLSearchParams(location.search).get("mottoColor")||autoColor(document.getElementById("motto").value),
+      mottoId:new URLSearchParams(location.search).get("mottoId")||"",
       date:document.getElementById("date").value,time:document.getElementById("time").value,
       endTime:document.getElementById("endTime").value,address:document.getElementById("address").value,
       notes:document.getElementById("notes").value,askAllergies:document.getElementById("askAllergies").checked,
@@ -1260,7 +1278,7 @@ function guestPageFull(party, photoRoundB64, isPreview) {
   // Game URL
   const GAME_MOTTOS = ["piraten","dino","safari","weltraum","detektiv","superheld","prinzessin","einhorn","meerjungfrau","feuerwehr"];
   const mottoLC = (party.motto||"").toLowerCase();
-  const gameMottoId = GAME_MOTTOS.find(m => mottoLC.includes(m));
+  const gameMottoId = GAME_MOTTOS.find(m => (party.mottoId||"")===m) || GAME_MOTTOS.find(m => mottoLC.includes(m)); // M2: erst exakte mottoId, dann Freitext-Fallback
   const gameUrl = gameMottoId ? `https://machsleicht.de/einladung/${gameMottoId}/?name=${encodeURIComponent(party.childName)}&date=${encodeURIComponent(party.date||"")}&time=${encodeURIComponent(party.time||"")}&ort=${encodeURIComponent(party.address||"")}&tel=${encodeURIComponent("")}${photoRoundB64?"&foto="+encodeURIComponent(photoRoundB64):""}` : "";
 
   // Countdown days
@@ -1270,7 +1288,7 @@ function guestPageFull(party, photoRoundB64, isPreview) {
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>${esc(ogTitle)} \u2014 mach\u2019s leicht</title>
 <meta property="og:title" content="${esc(ogTitle)}">
@@ -1543,7 +1561,7 @@ function checkCode(){
 document.getElementById("codeInput").addEventListener("keydown",function(e){if(e.key==="Enter")checkCode();});
 
 // ── PHOTO ──
-async function loadPhoto(){try{var r=await fetch(location.origin+"/api/photo/"+PID);if(!r.ok)return;var d=await r.json();if(d.photo){var el=document.getElementById("heroPhoto");el.innerHTML='<img src="'+d.photo+'" alt="">';el.style.display="block";}}catch(e){}}
+async function loadPhoto(){try{var r=await fetch(location.origin+"/api/photo/"+PID);if(!r.ok)return;var d=await r.json();if(d.photo){var el=document.getElementById("heroPhoto");var im=document.createElement("img");im.src=d.photo;im.alt="";el.textContent="";el.appendChild(im);el.style.display="block";}}catch(e){}}
 
 // ── GUEST COUNT ──
 async function loadGuestCount(){try{var r=await fetch(location.origin+"/api/party/"+PID);if(!r.ok)return;var d=await r.json();var c=d.guestCount||0;if(c>0){var el=document.getElementById("guestCounter");el.classList.remove("hidden");var dots=document.getElementById("guestDots");var letters="ABCDEFGHIJKLM";var show=Math.min(c,4);for(var i=0;i<show;i++){var dot=document.createElement("div");dot.className="guest-dot";dot.textContent=i<3?letters[i]:"+"+(c-3);dots.appendChild(dot);}document.getElementById("guestCounterText").textContent="Schon "+c+" "+(c===1?"Kind":"Kinder")+" dabei!";}}catch(e){}}
@@ -1591,12 +1609,12 @@ async function sendRsvp(){
 function downloadIcs(){
   var date="${escJson(party.date)}",time="${escJson(party.time||"12:00")}",endTime="${escJson(party.endTime||"")}";
   var d=date.replace(/-/g,""),ti=time.replace(/:/g,"")+"00";
-  var et=endTime?endTime.replace(/:/g,"")+"00":(parseInt(time)+3+"").padStart(2,"0")+"0000";
+  var et=endTime?endTime.replace(/:/g,"")+"00":(((parseInt(time)+3)%24)+"").padStart(2,"0")+"0000";
   var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//machsleicht//party//DE","BEGIN:VEVENT",
     "DTSTART:"+d+"T"+ti,"DTEND:"+d+"T"+et,
-    "SUMMARY:${escJson(party.childName?party.childName+"s Geburtstag":"Kindergeburtstag")}",
-    "LOCATION:${escJson(party.address||"")}",
-    "DESCRIPTION:${escJson(party.motto||"Kindergeburtstag")}",
+    "SUMMARY:"+${JSON.stringify(icsEscape(party.childName?party.childName+"s Geburtstag":"Kindergeburtstag"))},
+    "LOCATION:"+${JSON.stringify(icsEscape(party.address||""))},
+    "DESCRIPTION:"+${JSON.stringify(icsEscape(party.motto||"Kindergeburtstag"))},
     "END:VEVENT","END:VCALENDAR"].join("\\r\\n");
   var blob=new Blob([ics],{type:"text/calendar"});
   var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="party.ics";a.click();
@@ -1694,6 +1712,7 @@ ${isPreview ? "loadPhoto();loadWishes();loadGuestCount();" : ""}
 // EDITOR VIEW
 // ═══════════════════════════════════════════════════════════════
 function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
+  if (!Array.isArray(party.guests)) party.guests = []; // L7: Legacy-Party ohne guests-Feld nicht crashen
   const ja = party.guests.filter(g=>g.status==="ja");
   const vielleicht = party.guests.filter(g=>g.status==="vielleicht");
   const nein = party.guests.filter(g=>g.status==="nein");
@@ -1713,7 +1732,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     const __dateMs = party.date ? new Date(party.date).getTime() : NaN; const daysToParty = isNaN(__dateMs) ? null : Math.ceil((__dateMs - Date.now()) / 86400000);
     const dayLabel = daysToParty === null ? null : daysToParty < 0 ? `vor ${Math.abs(daysToParty)} Tagen` : daysToParty === 0 ? "Heute!" : daysToParty === 1 ? "Morgen!" : daysToParty <= 7 ? `in ${daysToParty} Tagen` : `in ${daysToParty} Tagen`;
     const dayColor = daysToParty === null ? "var(--m)" : daysToParty < 0 ? "#888" : daysToParty <= 1 ? "#C62828" : daysToParty <= 7 ? "#E65100" : color;
-    const allergenList = allergies.length ? allergies.map(g=>`${esc(g.name)}: ${esc(g.allergies)}`).join("\\n") : "";
+    const allergenList = allergies.length ? allergies.map(g=>`${esc(g.name)}: ${esc(g.allergies)}`).join("\n") : "";
     return `<div class="card fade-up" style="background:${color}08;border-left:4px solid ${color}">
     <h2 style="font-size:15px;color:${color};margin-bottom:14px">\u{1F4CA} Status-Übersicht</h2>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px">
@@ -1827,7 +1846,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   </div>
 
   <script>
-  (async function(){try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo)document.getElementById("heroPhotoEd").innerHTML='<img src="'+d.photo+'" class="hero-photo">';}catch{}})();
+  (async function(){try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo){const el=document.getElementById("heroPhotoEd");const im=document.createElement("img");im.src=d.photo;im.className="hero-photo";el.textContent="";el.appendChild(im);}}catch{}})();
   function shareWA(){const t="${escJson(party.mottoEmoji||"\u{1F389}")} ${party.childName?escJson(party.childName)+"s ":""}${escJson(party.motto)||"Geburtstag"}!\\n\\nAlle Infos & Zusage hier:\\n${escJson(guestUrl)}";window.open("https://wa.me/?text="+encodeURIComponent(t));}
   function copyLink(){navigator.clipboard.writeText("${esc(guestUrl)}").then(()=>{const b=event.target;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Link kopieren",2000);});}
   function copyGuestLink(){navigator.clipboard.writeText("${esc(guestUrl)}").then(()=>{const b=event.target;const o=b.textContent;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent=o,2000);});}

@@ -501,6 +501,9 @@ async function handleSubmit(e) {
     // Foto-Link separat (zu lang für WhatsApp-Share)
     if (result.foto) {
       generatedFotoUrl = generatedUrl + '?f=' + encodeURIComponent(result.foto);
+    } else if (result.fotoDropped) {
+      // M7: Foto war zu gross und wurde verworfen -> nicht still schlucken, sondern dem Nutzer sagen.
+      try { showToast ? showToast('Das Foto war zu groß und wurde weggelassen — die Einladung wurde ohne Foto erstellt.') : alert('Das Foto war zu groß und wurde weggelassen — die Einladung wurde ohne Foto erstellt.'); } catch(e) {}
     }
     document.getElementById('resultLink').textContent = generatedUrl;
     // Kern-Conversion tracken (Gutachter-HIGH: Einladung-erstellt war ungetrackt -> Funnel blind)
@@ -513,6 +516,7 @@ async function handleSubmit(e) {
       const partyParams = new URLSearchParams();
       if (data.name) partyParams.set('childName', data.name);
       if (cfg.label) partyParams.set('motto', cfg.label);
+      if (selectedMotto) partyParams.set('mottoId', selectedMotto); // M1: kanonische ID mitgeben -> Worker-getTheme matcht exakt statt per Label-Substring
       if (cfg.emoji) partyParams.set('mottoEmoji', cfg.emoji);
       const partyLinkEl = document.getElementById('partyLink');
       if (partyLinkEl) {
