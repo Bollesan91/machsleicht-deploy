@@ -798,7 +798,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       <div class="editor__sub">Anpassen</div>
       <div class="editor__field"><label>Überschrift</label><input type="text" id="iTitle" oninput="renderInvitePreview()"></div>
       <div class="editor__field"><label>Aufruf-Text</label><textarea id="iBody" oninput="renderInvitePreview()"></textarea></div>
-      <div class="editor__field"><label>RSVP-Frist</label><input type="text" id="iDeadline" value="Bitte Bescheid geben bis 14.06." oninput="renderInvitePreview()"></div>
+      <div class="editor__field"><label>Antwort-Frist</label><input type="text" id="iDeadline" value="Bitte Bescheid geben bis 14.06." oninput="renderInvitePreview()"></div>
 
       <div class="editor__sub">Foto vom Geburtstagskind <small style="font-weight:400;color:#999;font-size:11px">(optional · im Mini-Spiel als Überraschung enthüllt)</small></div>
       <div class="photo-upload" id="photoUploadArea">
@@ -836,7 +836,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   </div>
 
   <div class="stage-advance">
-    <p class="stage-advance__hint">Wenn die Einladung steht — als nächstes die Partyseite mit RSVP, Foto-Galerie und Wunschliste.</p>
+    <p class="stage-advance__hint">Wenn die Einladung steht — als nächstes die Partyseite mit Gästeliste, Foto-Galerie und Wunschliste.</p>
     <button class="stage-advance__btn" onclick="goStage(5)">Weiter zur Partyseite →</button>
     <button class="stage-advance__skip" onclick="goStage(6)">Partyseite überspringen</button>
   </div>
@@ -849,7 +849,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     <div class="editor__pane">
       <header class="editor__head">
         <h1>Deine <em>Partyseite</em> einrichten</h1>
-        <p>Eine eigene URL, RSVP-Liste, Foto-Galerie nach der Party. Kostenlos, läuft auf Cloudflare Workers.</p>
+        <p>Eine eigene URL, Gästeliste, Foto-Galerie nach der Party. Kostenlos, läuft auf Cloudflare Workers.</p>
       </header>
 
       <button class="preview-toggle" onclick="togglePreview(event)">
@@ -864,11 +864,15 @@ window.plausible.init=function(){};window.plausible.q=[];
       </div>
       <p style="font-size:11px;color:#999;margin-top:6px">Nur eine Vorschau — beim Aktivieren bekommst du deine echte, eindeutige Adresse, die du den Gästen gibst.</p>
 
+      <div class="editor__sub" style="margin-top:24px">Party-Adresse <span style="font-weight:400;color:#999">(optional)</span></div>
+      <input type="text" id="psAddress" placeholder="Straße, PLZ Ort" maxlength="200" value="" oninput="state.adresse=this.value.slice(0,200);autoSave()" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8c9b3;border-radius:10px;font-size:15px">
+      <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Sehen nur Gäste, die zugesagt haben — nicht jeder mit dem Link. Leer lassen, wenn du die Adresse lieber persönlich schickst.</p>
+
       <div class="editor__sub" style="margin-top:24px">Features</div>
 
       <div class="toggle-row">
         <div class="toggle-row__info">
-          <div class="toggle-row__title">📋 RSVP-Liste</div>
+          <div class="toggle-row__title">📋 Gästeliste</div>
           <div class="toggle-row__desc">Gäste klicken Zu/Ab, du siehst wer kommt</div>
         </div>
         <div class="toggle on" id="psRsvp" onclick="toggleFeature('rsvp')"></div>
@@ -1335,6 +1339,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     guests: 6,
     exactAge: null,   // F5: echtes Alter fuer Einladung/Partyseite (state.age bleibt die AltersGRUPPE fuer Plan/Spiele)
     location: 'zuhause',
+    adresse: '',      // Echte Party-Adresse (optional). Wird auf der Partyseite NUR Gaesten gezeigt, die zugesagt haben (Worker-Gating).
     games: [],
     customEntries: [],
     invite: { type:'minispiel', title:'', body:'', deadline:'Bitte Bescheid geben bis 14.06.', sent:0, photo:null, whatsapp:'' },
@@ -2202,6 +2207,8 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
   function renderPartyseitePreview(){
     state.partyseite.slug = document.getElementById('psSlug')?.value || state.partyseite.slug;
+    // Adressfeld aus State hydrieren (Resume/Rueckkehr zu Stage 5), ohne den getippten Wert zu ueberschreiben.
+    try{ const _pa=document.getElementById('psAddress'); if(_pa && document.activeElement!==_pa && (state.adresse||'')!==_pa.value) _pa.value = state.adresse || ''; }catch(e){}
     document.getElementById('psPreviewUrl').textContent = `party.machsleicht.de/${state.partyseite.slug}`;
     const c = document.getElementById('psPreviewContent');
     const motto = state.motto || MOTTOS[0];
@@ -2253,7 +2260,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     const payload = {
       childName: name, age: ageNum(),
       motto: motto.name, mottoId: (motto.id||''), mottoEmoji: motto.emoji, mottoColor: motto.accent || '#D4812A',
-      date: state.date || '', time: state.time || '', endTime: state.endTime || '', address: '',
+      date: state.date || '', time: state.time || '', endTime: state.endTime || '', address: (state.adresse || '').slice(0,200),
       notes: motto.name + '-Geburtstag', askAllergies: true, askPickup: true, wishes: [], ref: state.ref || ''
     };
     try{
