@@ -138,7 +138,6 @@ window.plausible.init=function(){};window.plausible.q=[];
      Sonst sieht ein Erstbesucher den fertigen Plan gratis & un-personalisiert beim Scrollen -> der "Reveal" waere wirkungslos. */
   #stage3,#stage4,#stage5,#stage6{display:none}
   #stage3.revealed,#stage4.revealed,#stage5.revealed,#stage6.revealed{display:block}
-  #stage6.revealed{display:block}
   #planBody{min-height:480px}           /* CLS: Platz fuer den (ggf. async nachgerenderten) Plan reservieren */
   /* Inline-Eckdaten (Scroll-Funnel) */
   .eckdaten{max-width:920px;margin:18px auto 0;padding:18px 20px;background:#FFFCF8;border:1px solid #F0E6D8;border-radius:14px}
@@ -718,7 +717,8 @@ window.plausible.init=function(){};window.plausible.q=[];
         <button type="button" data-loc="park" onclick="pickLocationInline('park')">🌳 Park</button>
         <button type="button" data-loc="halle" onclick="pickLocationInline('halle')">🏟️ Halle</button>
       </div>
-      <button id="toPlanBtn" class="stage-advance__btn" style="display:none;margin-top:16px;width:100%" onclick="try{renderPlanPreview()}catch(e){}; goStage(3)">Fertigen Plan ansehen →</button>
+      <button id="toPlanBtn" class="stage-advance__btn" style="display:none;margin-top:16px;width:100%" onclick="revealPlan()">Fertigen Plan ansehen →</button>
+      <div id="nameReqHint" style="display:none;margin-top:8px;font-size:13px;color:#C0392B">Trag noch den Namen des Geburtstagskindes ein – dann wird der Plan persönlich. ✏️</div>
     </div>
   </div>
 </section>
@@ -1538,6 +1538,18 @@ window.plausible.init=function(){};window.plausible.q=[];
     const nm = document.getElementById('iqName'); if(nm && !nm.value) setTimeout(()=>{try{nm.focus()}catch(e){}}, 450);
   }
 
+  // Pflicht-Gate: Der personalisierte Plan-Reveal gibt es nur MIT Namen (sonst waere die Belohnung generisch -> Aha entwertet).
+  function revealPlan(){
+    if(!state.name || !state.name.trim()){
+      const hint = document.getElementById('nameReqHint'); if(hint) hint.style.display='';
+      const nm = document.getElementById('iqName');
+      if(nm){ const ek = document.getElementById('eckdaten'); if(ek) ek.scrollIntoView({behavior:'smooth', block:'start'}); setTimeout(()=>{try{nm.focus()}catch(e){}}, 350); }
+      return;   // KEIN goStage(3) ohne Namen
+    }
+    try{ renderPlanPreview(); }catch(e){}
+    goStage(3);
+  }
+
   // ===== PLAN PREVIEW =====
   function renderPlanPreview(){
     if(!state.motto) return;
@@ -1841,7 +1853,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     const el = document.getElementById('stage'+n);
     if(el) el.classList.add('active');
     // Progressive Reveal: Stage 3-6 freischalten, sobald der Flow sie erreicht (kumulativ -> Zurueck-Scrollen zeigt fruehere Abschnitte wieder).
-    for(let r=3; r<=n; r++){ const rs = document.getElementById('stage'+r); if(rs) rs.classList.add('revealed'); }
+    for(let r=3; r<=n; r++){ const rs = document.getElementById('stage'+r); if(rs && !rs.classList.contains('revealed')){ rs.classList.add('revealed'); if(r !== n){ if(r===4){ try{renderInvitePreview()}catch(e){} } else if(r===5){ try{renderPartyseitePreview()}catch(e){} } } } }
     for(let i=1; i<=6; i++){
       const dot = document.getElementById('navDot'+i);
       if(!dot) continue;
@@ -1910,6 +1922,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   function liveUpdateName(){
     state.name = document.getElementById('qName').value.trim();
     document.getElementById('planName1').textContent = state.name || 'dein Kind';
+    if(state.name){ const h = document.getElementById('nameReqHint'); if(h) h.style.display='none'; }
     // F3: Auto-Slug aus Name+Age (Live-Konvention: name-age)
     const newSlug = state.name.toLowerCase().replace(/[^a-z0-9]/g,'') + ageNum();
     if(state.partyseite.slug.match(/^lukas7$|^lukas\d+$|^[a-z]+\d+$/) || !state.partyseite.active){
@@ -2366,15 +2379,20 @@ window.plausible.init=function(){};window.plausible.q=[];
       if(typeof renderAges === 'function') renderAges();
       if(typeof syncEckdaten === 'function') syncEckdaten();   // Inline-Eckdaten aus State befuellen
       if(window.__hasEntryParam){
-        // Deep-Link (SEO-/Motto-/Schatzsuche-Seite mit ?motto/?thema/?alter): Nutzer hat Intent mitgebracht
-        // -> Plan rendern und Stage 3 freischalten, damit er sein angeteasertes Thema sofort sieht.
-        renderPlanPreview();                                  // Plan + Elite-Content + Schatzsuche (async drueber)
-        try{ renderInvitePreview(); }catch(e){ console.warn('initFunnel: renderInvitePreview', e); }
-        try{ renderPartyseitePreview(); }catch(e){ console.warn('initFunnel: renderPartyseitePreview', e); }
-        try{ renderDoneSummary(); }catch(e){ console.warn('initFunnel: renderDoneSummary', e); }
-        try{ goStage(3); }catch(e){ console.warn('initFunnel: goStage', e); }   // revealt Stage 3 + scrollt hin
+        // Deep-Link (SEO-/Motto-/Schatzsuche-Seite mit ?motto/?thema/?alter): Motto/Alter mitgebracht.
+        // Plan-Inhalt vorbereiten (in noch verstecktem Stage 3), aber NICHT auto-revealen: erst den Namen abfragen,
+        // damit auch der SEO-Einstieg einen PERSONALISIERTEN Plan bekommt (sonst "dein Kind" + plan_ready feuert nie).
+        renderPlanPreview();
+        try{
+          if(state.age){
+            const btn = document.getElementById('toPlanBtn'); if(btn) btn.style.display='';
+            document.querySelectorAll('#agesGrid .age-card').forEach(c=>{ c.style.outline = (c.dataset.age===state.age) ? '3px solid var(--accent,#1E3A5F)' : ''; });
+          }
+          goStage(2);                                          // auf Eckdaten/Stage 2 landen (Motto/Alter vorbelegt), Reveal erst nach Name
+          const nm = document.getElementById('iqName'); if(nm && !nm.value) setTimeout(()=>{try{nm.focus()}catch(e){}}, 450);
+        }catch(e){ console.warn('initFunnel deep-link', e); }
       }
-      // Virgin-State (kein Param): KEIN Vorab-Render/Reveal von Stage 3-5. Der Plan ist die Belohnung fuer Motto+Alter+"Plan ansehen".
+      // Virgin-State (kein Param): KEIN Vorab-Render/Reveal von Stage 3-5. Der Plan ist die Belohnung fuer Motto+Alter+Name+"Plan ansehen".
       // Folge-Stages werden on-demand in goStage() gerendert (renderInvitePreview@n=4, renderPartyseitePreview@n=5, renderDoneSummary@n=6).
     }catch(e){ console.warn('initFunnel failed', e); }       // Default-Render darf den Wizard nie blockieren, aber meldet sich
   })();
