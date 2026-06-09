@@ -134,7 +134,10 @@ window.plausible.init=function(){};window.plausible.q=[];
   .stage{display:block;scroll-margin-top:64px;padding-bottom:8px}
   .stage + .stage{border-top:1px solid #F0E6D8}
   .stage.active{animation:fadeUp .35s ease-out}
-  #stage6{display:none}                 /* Done/Abschluss erst zeigen, wenn der Flow erreicht ist (kein Conversion-Endstate fuer Erstbesucher) */
+  /* Aha-Reveal: Plan (Stage 3) + Folge-Stages erst freischalten, wenn der Nutzer Motto+Alter waehlt und klickt.
+     Sonst sieht ein Erstbesucher den fertigen Plan gratis & un-personalisiert beim Scrollen -> der "Reveal" waere wirkungslos. */
+  #stage3,#stage4,#stage5,#stage6{display:none}
+  #stage3.revealed,#stage4.revealed,#stage5.revealed,#stage6.revealed{display:block}
   #stage6.revealed{display:block}
   #planBody{min-height:480px}           /* CLS: Platz fuer den (ggf. async nachgerenderten) Plan reservieren */
   /* Inline-Eckdaten (Scroll-Funnel) */
@@ -161,6 +164,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   .topnav__dot{width:7px;height:7px;border-radius:50%;background:#E6D4BD;transition:all .25s;cursor:pointer}
   .topnav__dot.done{background:#FF6F00}
   .topnav__dot.active{background:#FF6F00;box-shadow:0 0 0 3px #FFE0C2;width:9px;height:9px}
+  .topnav__dot.locked{opacity:.3;pointer-events:none;cursor:default}  /* noch nicht freigeschaltete Stage: kein Voraus-Springen */
   .topnav__save{display:flex;align-items:center;gap:6px;color:#0F7B3F;font-size:12px;font-weight:700;opacity:0;transition:opacity .3s}
   .topnav__save.visible{opacity:1}
   .topnav__save::before{content:'✓';font-size:14px}
@@ -175,7 +179,6 @@ window.plausible.init=function(){};window.plausible.q=[];
   .pick__head h1 em{font-style:normal;color:#FF6F00}
   .pick__head p{color:#666;font-size:17px;max-width:580px;margin:14px auto 0}
   .social-proof{display:inline-flex;align-items:center;gap:8px;background:#F0FDF4;border:1px solid #C8E6C9;color:#1A1A1A;padding:10px 16px;border-radius:999px;font-size:13px;margin-top:18px;font-weight:600}
-  .social-proof__star{color:#FFC107;font-size:11px;letter-spacing:1px}
   .motto-card--custom{border-style:dashed !important;background:#FFF8F0 !important}
   .motto-card--custom:hover{background:#FFF3E6 !important}
   .notfall-cta{display:inline-flex;align-items:center;gap:8px;background:#FFF3E0;border:1px solid #FFCC80;color:#E64A00;padding:10px 18px;border-radius:999px;font-size:13px;font-weight:700;cursor:pointer;margin-top:14px;transition:all .15s}
@@ -638,7 +641,7 @@ window.plausible.init=function(){};window.plausible.q=[];
 <body>
 
 <div class="resume-banner" id="resumeBanner">
-  👋 Du hattest schon angefangen: <b id="resumeWho">Lukas' Piraten-Plan</b> · zuletzt bearbeitet vor <span id="resumeWhen">5 Min</span>
+  👋 Du hattest schon angefangen: <b id="resumeWho">dein gespeicherter Plan</b> · zuletzt bearbeitet vor <span id="resumeWhen">5 Min</span>
   <button onclick="resumeWork()">Weitermachen</button>
   <button class="sec" onclick="discardResume()">Neu starten</button>
 </div>
@@ -649,10 +652,10 @@ window.plausible.init=function(){};window.plausible.q=[];
     <div class="topnav__progress">
       <span class="topnav__dot active" id="navDot1" onclick="jumpStage(1)" title="Motto"></span>
       <span class="topnav__dot" id="navDot2" onclick="jumpStage(2)" title="Alter"></span>
-      <span class="topnav__dot" id="navDot3" onclick="jumpStage(3)" title="Plan"></span>
-      <span class="topnav__dot" id="navDot4" onclick="jumpStage(4)" title="Einladung"></span>
-      <span class="topnav__dot" id="navDot5" onclick="jumpStage(5)" title="Partyseite"></span>
-      <span class="topnav__dot" id="navDot6" onclick="jumpStage(6)" title="Fertig"></span>
+      <span class="topnav__dot locked" id="navDot3" onclick="jumpStage(3)" title="Plan"></span>
+      <span class="topnav__dot locked" id="navDot4" onclick="jumpStage(4)" title="Einladung"></span>
+      <span class="topnav__dot locked" id="navDot5" onclick="jumpStage(5)" title="Partyseite"></span>
+      <span class="topnav__dot locked" id="navDot6" onclick="jumpStage(6)" title="Fertig"></span>
     </div>
     <div class="topnav__save" id="saveIndicator">Gespeichert</div>
   </div>
@@ -736,7 +739,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   <div class="plan">
     <header class="plan__header">
       <div class="plan__header-text">
-        <h2 class="plan__title"><span class="plan__name" id="planName1">Lukas</span>' <span id="planMottoName">Piraten</span>-Geburtstag</h2>
+        <h2 class="plan__title"><span class="plan__name" id="planName1">dein Kind</span>' <span id="planMottoName">Piraten</span>-Geburtstag</h2>
         <div class="plan__meta">
           <span id="planDate1">Sa, 21.06.2026, 14:00 Uhr</span>
           <span><span id="planGuests1">6</span> Gäste</span>
@@ -751,7 +754,6 @@ window.plausible.init=function(){};window.plausible.q=[];
   <div class="stage-advance">
     <p class="stage-advance__hint">Der Plan steht. Als nächstes erstellen wir die Einladung.</p>
     <button class="stage-advance__btn" onclick="goStage(4)">Weiter zur Einladung →</button>
-    <button class="stage-advance__skip" onclick="goStage(6)">Plan jetzt schon abschließen</button>
     <div style="margin-top:18px"><button class="notfall-cta" onclick="try{if(window.plausible)plausible('notfall_cta_click')}catch(e){}; location.href='/kindergeburtstag-last-minute'">🚨 Geburtstag ist schon morgen? → Last-Minute-Plan in 48 Stunden</button></div>
   </div>
 </section>
@@ -914,7 +916,7 @@ window.plausible.init=function(){};window.plausible.q=[];
 
     <div class="done-summary">
       <div class="done-summary__item"><span class="done-summary__icon" id="sumMottoEmoji">🏴‍☠️</span><div class="done-summary__label">Motto</div><div class="done-summary__value" id="sumMotto">Piraten</div></div>
-      <div class="done-summary__item"><span class="done-summary__icon">👶</span><div class="done-summary__label">Geburtstagskind</div><div class="done-summary__value" id="sumName">Lukas</div></div>
+      <div class="done-summary__item"><span class="done-summary__icon">👶</span><div class="done-summary__label">Geburtstagskind</div><div class="done-summary__value" id="sumName">dein Kind</div></div>
       <div class="done-summary__item"><span class="done-summary__icon">📅</span><div class="done-summary__label">Datum</div><div class="done-summary__value" id="sumDate">21.06.2026</div></div>
       <div class="done-summary__item"><span class="done-summary__icon">👥</span><div class="done-summary__label">Gäste</div><div class="done-summary__value" id="sumGuests">6 Kinder</div></div>
       <div class="done-summary__item"><span class="done-summary__icon">🎮</span><div class="done-summary__label">Spiele</div><div class="done-summary__value" id="sumGames">5 ausgewählt</div></div>
@@ -1838,16 +1840,19 @@ window.plausible.init=function(){};window.plausible.q=[];
     document.querySelectorAll('.stage').forEach(s => s.classList.remove('active'));
     const el = document.getElementById('stage'+n);
     if(el) el.classList.add('active');
-    if(el && n === 6) el.classList.add('revealed');   // Done/Abschluss erst jetzt sichtbar machen
+    // Progressive Reveal: Stage 3-6 freischalten, sobald der Flow sie erreicht (kumulativ -> Zurueck-Scrollen zeigt fruehere Abschnitte wieder).
+    for(let r=3; r<=n; r++){ const rs = document.getElementById('stage'+r); if(rs) rs.classList.add('revealed'); }
     for(let i=1; i<=6; i++){
       const dot = document.getElementById('navDot'+i);
       if(!dot) continue;
-      dot.classList.remove('done','active');
+      dot.classList.remove('done','active','locked');
       if(i < n) dot.classList.add('done');
       else if(i === n) dot.classList.add('active');
+      else { const s = document.getElementById('stage'+i); if(i >= 3 && !(s && s.classList.contains('revealed'))) dot.classList.add('locked'); }
     }
     const ds = document.getElementById('demoStage'); if(ds) ds.textContent = n;
-    if(n === 3 && !state._planReadyFired){ state._planReadyFired = true; try{ if(window.plausible){ const _mid=(state.motto&&state.motto.id||'').indexOf('custom')===0?'custom':(state.motto&&state.motto.id||''); plausible('plan_ready', {props:{motto:_mid, personalized: !!(state.name&&state.name.trim())}}); } }catch(e){} }
+    // plan_ready = ECHTER personalisierter Aha (Name gesetzt). Deep-Link/Nav-Sprung/Resume/Zurueck ohne Name zaehlen NICHT (sonst luegt die North-Star-Zahl).
+    if(n === 3 && !state._planReadyFired && state.name && state.name.trim()){ state._planReadyFired = true; try{ if(window.plausible){ const _mid=(state.motto&&state.motto.id||'').indexOf('custom')===0?'custom':(state.motto&&state.motto.id||''); plausible('plan_ready', {props:{motto:_mid, personalized:true}}); } }catch(e){} }
     if(n === 4) renderInvitePreview();
     if(n === 5) renderPartyseitePreview();
     if(n === 6) renderDoneSummary();
@@ -1857,7 +1862,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(el) el.scrollIntoView({behavior:'smooth', block:'start'});  // Scroll-Funnel: zum Abschnitt scrollen statt toggeln
   }
   function jumpStage(n){
-    // Scroll-Funnel: alle Abschnitte sind im DOM -> Progress-Punkt scrollt direkt hin
+    // Nur zu bereits freigeschalteten Abschnitten springen — kein Voraus-Springen im Funnel (Stage 1/2 immer offen).
+    if(n >= 3){ const t = document.getElementById('stage'+n); if(!(t && t.classList.contains('revealed'))) return; }
     return goStage(n);
   }
 
@@ -2343,9 +2349,9 @@ window.plausible.init=function(){};window.plausible.q=[];
         const p = new URLSearchParams(window.location.search);
         // ?motto (Planer/Motto-Seiten) ODER ?thema (Schatzsuche-SEO-Seiten /schatzsuche/<motto>) — beide docken auf dieselbe Motto-Auswahl
         const m = p.get('motto') || p.get('thema') || window.__selectedMotto;
-        if(m){ const hit = MOTTOS.find(x => x.id === m); if(hit) state.motto = hit; }
-        const a = p.get('alter'); if(a){ const v = parseInt(a,10); if(v>=3 && v<=12) state.age = v<=5 ? '3-5' : (v<=8 ? '6-8' : '9-12'); }
-        const g = p.get('gaeste'); if(g){ const v = parseInt(g,10); if(v>=2 && v<=20) state.guests = v; }
+        if(m){ const hit = MOTTOS.find(x => x.id === m); if(hit){ state.motto = hit; window.__hasEntryParam = true; } }
+        const a = p.get('alter'); if(a){ const v = parseInt(a,10); if(v>=3 && v<=12){ state.age = v<=5 ? '3-5' : (v<=8 ? '6-8' : '9-12'); window.__hasEntryParam = true; } }
+        const g = p.get('gaeste'); if(g){ const v = parseInt(g,10); if(v>=2 && v<=20){ state.guests = v; window.__hasEntryParam = true; } }
         window.__entryModus = p.get('modus') || '';   // 'schatzsuche' -> nach Render zur Schatzsuche scrollen
       }catch(ep){ console.warn('param-in', ep); }
       if(!state.motto){ state.motto = MOTTOS.find(m => m.id === 'piraten') || MOTTOS[0]; }
@@ -2359,10 +2365,17 @@ window.plausible.init=function(){};window.plausible.q=[];
       applyAccent(state.motto);
       if(typeof renderAges === 'function') renderAges();
       if(typeof syncEckdaten === 'function') syncEckdaten();   // Inline-Eckdaten aus State befuellen
-      renderPlanPreview();                                  // Plan + Elite-Content + Schatzsuche (async drueber)
-      try{ renderInvitePreview(); }catch(e){ console.warn('initFunnel: renderInvitePreview', e); }
-      try{ renderPartyseitePreview(); }catch(e){ console.warn('initFunnel: renderPartyseitePreview', e); }
-      try{ renderDoneSummary(); }catch(e){ console.warn('initFunnel: renderDoneSummary', e); }
+      if(window.__hasEntryParam){
+        // Deep-Link (SEO-/Motto-/Schatzsuche-Seite mit ?motto/?thema/?alter): Nutzer hat Intent mitgebracht
+        // -> Plan rendern und Stage 3 freischalten, damit er sein angeteasertes Thema sofort sieht.
+        renderPlanPreview();                                  // Plan + Elite-Content + Schatzsuche (async drueber)
+        try{ renderInvitePreview(); }catch(e){ console.warn('initFunnel: renderInvitePreview', e); }
+        try{ renderPartyseitePreview(); }catch(e){ console.warn('initFunnel: renderPartyseitePreview', e); }
+        try{ renderDoneSummary(); }catch(e){ console.warn('initFunnel: renderDoneSummary', e); }
+        try{ goStage(3); }catch(e){ console.warn('initFunnel: goStage', e); }   // revealt Stage 3 + scrollt hin
+      }
+      // Virgin-State (kein Param): KEIN Vorab-Render/Reveal von Stage 3-5. Der Plan ist die Belohnung fuer Motto+Alter+"Plan ansehen".
+      // Folge-Stages werden on-demand in goStage() gerendert (renderInvitePreview@n=4, renderPartyseitePreview@n=5, renderDoneSummary@n=6).
     }catch(e){ console.warn('initFunnel failed', e); }       // Default-Render darf den Wizard nie blockieren, aber meldet sich
   })();
 </script>
