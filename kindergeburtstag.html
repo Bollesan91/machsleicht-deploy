@@ -691,7 +691,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     <div class="eckdaten" id="eckdaten">
       <h3 class="eckdaten__h">Deine Eckdaten <span>— passen den Plan live an</span></h3>
       <div class="eckdaten__grid">
-        <label class="eckdaten__f">Name des Kindes
+        <label class="eckdaten__f">Name des Kindes <span style="color:#C0392B">*</span> <small style="font-weight:400;color:#7a7a7a">— nur das brauchen wir für deinen Plan</small>
           <input type="text" id="iqName" placeholder="z.B. Mia" oninput="document.getElementById('qName').value=this.value; liveUpdateName();">
         </label>
         <label class="eckdaten__f">Datum
@@ -717,7 +717,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         <button type="button" data-loc="park" onclick="pickLocationInline('park')">🌳 Park</button>
         <button type="button" data-loc="halle" onclick="pickLocationInline('halle')">🏟️ Halle</button>
       </div>
-      <button id="toPlanBtn" class="stage-advance__btn" style="display:none;margin-top:16px;width:100%" onclick="revealPlan()">Fertigen Plan ansehen →</button>
+      <button id="toPlanBtn" class="stage-advance__btn" disabled style="display:none;margin-top:16px;width:100%;opacity:.45;cursor:not-allowed" onclick="revealPlan()">Erst Namen eintragen ✏️</button>
       <div id="nameReqHint" style="display:none;margin-top:8px;font-size:13px;color:#C0392B">Trag noch den Namen des Geburtstagskindes ein – dann wird der Plan persönlich. ✏️</div>
     </div>
   </div>
@@ -1922,7 +1922,12 @@ window.plausible.init=function(){};window.plausible.q=[];
   function liveUpdateName(){
     state.name = document.getElementById('qName').value.trim();
     document.getElementById('planName1').textContent = state.name || 'dein Kind';
-    if(state.name){ const h = document.getElementById('nameReqHint'); if(h) h.style.display='none'; }
+    // Proaktives Gate: "Plan ansehen" erst klickbar, wenn der Name steht (ersetzt den reaktiven Fehlklick-Hinweis).
+    const _tpb = document.getElementById('toPlanBtn');
+    if(_tpb){
+      if(state.name){ _tpb.disabled=false; _tpb.style.opacity=''; _tpb.style.cursor=''; _tpb.textContent='Fertigen Plan ansehen →'; const h=document.getElementById('nameReqHint'); if(h) h.style.display='none'; }
+      else { _tpb.disabled=true; _tpb.style.opacity='.45'; _tpb.style.cursor='not-allowed'; _tpb.textContent='Erst Namen eintragen ✏️'; }
+    }
     // F3: Auto-Slug aus Name+Age (Live-Konvention: name-age)
     const newSlug = state.name.toLowerCase().replace(/[^a-z0-9]/g,'') + ageNum();
     if(state.partyseite.slug.match(/^lukas7$|^lukas\d+$|^[a-z]+\d+$/) || !state.partyseite.active){
