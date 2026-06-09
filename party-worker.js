@@ -346,7 +346,7 @@ export default {
       if (edit === party.editToken) return json(party, 200, request);
       // P0-Security Welle 1C: doiToken aus Public-GET strippen — sonst kann jeder Gast
       // /api/newsletter-confirm?token=... triggern und fremde E-Mails ungewollt bestätigen.
-      const {editToken,email,doiToken,ref,...safe} = party;   // ref (virale Attribution) ist intern -> nicht im Public-GET leaken
+      const {editToken,email,doiToken,ref,address,...safe} = party;   // ref (virale Attribution) + address (nur fuer Zusager, kommt aus rsvp-Antwort) intern -> nicht im Public-GET leaken
       safe.wishes = (safe.wishes||[]).map(w=>{
         const cb = w.claimedBy||[];
         const claimedAmountTotal = cb.reduce((s,e)=>s+(typeof e==="object" && e && typeof e.amount==="number" ? e.amount : 0),0);
@@ -456,7 +456,9 @@ export default {
       const existing = party.guests.findIndex(g=>g.name.toLowerCase()===name.toLowerCase());
       if (existing>=0) party.guests[existing]=guest; else party.guests.push(guest);
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
-      return json({ok:true,guestCount:party.guests.filter(g=>g.status==="ja").length}, 200, request);
+      // Adress-Gating: Adresse NUR an Zusager ("ja") ausliefern. addressIcs = server-escaped fuer Kalender-LOCATION (kein fragiles Client-Escaping).
+      const _revealAddr = (guest.status==="ja" && party.address) ? String(party.address) : "";
+      return json({ok:true,guestCount:party.guests.filter(g=>g.status==="ja").length, address:_revealAddr, addressIcs: _revealAddr ? icsEscape(_revealAddr) : ""}, 200, request);
     }
 
     // POST /api/party/:id/wish/:wid/claim
@@ -915,8 +917,8 @@ function creatorPage() {
       <div style="flex:1;min-width:0"><label>Start<span class="req">*</span></label><input type="time" id="time"></div>
       <div style="flex:1;min-width:0"><label>Ende ca.</label><input type="time" id="endTime"></div>
     </div>
-    <div class="field"><label>Adresse<span class="req">*</span></label><textarea id="address" rows="2" placeholder="Stra\u00DFe, PLZ Ort" maxlength="200"></textarea></div>
-    <div class="field"><label>Hinweise f\u00FCr Eltern (optional)</label><textarea id="notes" rows="3" placeholder="z.B. Bitte Matschsachen mitbringen!" maxlength="500"></textarea></div>
+    <div class="field"><label>Adresse<span class="req">*</span></label><textarea id="address" rows="2" placeholder="Stra\u00DFe, PLZ Ort" maxlength="200"></textarea><p style="font-size:12px;color:#1E7B34;margin:6px 0 0">\u{1F512} Nicht \u00F6ffentlich sichtbar \u2014 erscheint erst, nachdem ein Gast zugesagt hat.</p></div>
+    <div class="field"><label>Hinweise f\u00FCr Eltern (optional)</label><textarea id="notes" rows="3" placeholder="z.B. Bitte Matschsachen mitbringen!" maxlength="500"></textarea><p style="font-size:12px;color:#888;margin:6px 0 0">Tipp: Keine Adresse hier eintragen \u2014 dieses Feld ist \u00F6ffentlich. Nutze daf\u00FCr das Adressfeld oben (erst nach Zusage sichtbar).</p></div>
     <div style="margin-bottom:14px">
       <label style="margin-bottom:8px">Was sollen G\u00E4ste angeben?</label>
       <div class="toggle"><input type="checkbox" id="askAllergies" checked><span style="font-size:14px">Allergien / Unvertr\u00E4glichkeiten</span></div>
@@ -1293,7 +1295,8 @@ function guestPageFull(party, photoRoundB64, isPreview) {
   const GAME_MOTTOS = ["piraten","dino","safari","weltraum","detektiv","superheld","prinzessin","einhorn","meerjungfrau","feuerwehr"];
   const mottoLC = (party.motto||"").toLowerCase();
   const gameMottoId = GAME_MOTTOS.find(m => (party.mottoId||"")===m) || GAME_MOTTOS.find(m => mottoLC.includes(m)); // M2: erst exakte mottoId, dann Freitext-Fallback
-  const gameUrl = gameMottoId ? `https://machsleicht.de/einladung/${gameMottoId}/?name=${encodeURIComponent(party.childName)}&date=${encodeURIComponent(party.date||"")}&time=${encodeURIComponent(party.time||"")}&ort=${encodeURIComponent(party.address||"")}&tel=${encodeURIComponent("")}${photoRoundB64?"&foto="+encodeURIComponent(photoRoundB64):""}` : "";
+  // Adress-Gating: ort NICHT in die Spiel-URL (sichtbar im iframe-src = Leak vor Zusage). Adresse gibt es erst nach RSVP-"ja".
+  const gameUrl = gameMottoId ? `https://machsleicht.de/einladung/${gameMottoId}/?name=${encodeURIComponent(party.childName)}&date=${encodeURIComponent(party.date||"")}&time=${encodeURIComponent(party.time||"")}&ort=&tel=${encodeURIComponent("")}${photoRoundB64?"&foto="+encodeURIComponent(photoRoundB64):""}` : "";
 
   // Countdown days
   const daysLeft = party.date ? Math.max(0, Math.ceil((new Date(party.date+"T00:00:00") - new Date()) / 86400000)) : 0;
@@ -1473,7 +1476,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
   <div class="card fade-up fade-up-d1">
     <div class="card-title">${emoji} Party-Details</div>
     ${party.date?`<div class="info-row"><div class="info-icon">\u{1F4C5}</div><div><div class="info-label">${esc(dateStr)}</div>${party.time?`<div class="info-sub">${esc(party.time)} Uhr${party.endTime?" \u2014 "+esc(party.endTime)+" Uhr":""}</div>`:""}</div></div>`:""}
-    ${party.address?`<div class="info-row"><div class="info-icon">\u{1F4CD}</div><div><div class="info-label" style="white-space:pre-line">${esc(party.address)}</div><a href="https://maps.google.com/?q=${encodeURIComponent(party.address)}" target="_blank" rel="noopener" class="info-link">\u2192 Google Maps</a></div></div>`:""}
+    ${party.address?`<div class="info-row" id="addrRow"><div class="info-icon">\u{1F4CD}</div><div><div class="info-label" id="addrLabel" style="color:var(--m);font-style:italic">\u{1F512} Adresse erscheint nach deiner Zusage</div><div id="addrLink"></div></div></div>`:""}
     ${party.notes?`<div class="info-row"><div class="info-icon">\u{1F4AC}</div><div><div class="info-sub" style="white-space:pre-line">${esc(party.notes)}</div></div></div>`:""}
   </div>
 
@@ -1545,6 +1548,22 @@ ${!isPreview?`<div style="max-width:560px;margin:30px auto 8px;padding:22px 20px
 <script>
 var PID="${id}",CNL="${nameLC}";
 var selectedStatus=null,guestName="";
+// Adress-Gating (Client): Adresse ist NICHT im Seitenquelltext. Wird erst nach RSVP-"ja" aus der Server-Antwort gesetzt.
+var REVEALED_ADDR="",REVEALED_ADDR_ICS="";
+function revealAddr(addr,addrIcs){
+  if(!addr)return;
+  REVEALED_ADDR=addr;REVEALED_ADDR_ICS=addrIcs||"";
+  var lbl=document.getElementById("addrLabel");
+  if(lbl){lbl.style.fontStyle="normal";lbl.style.color="var(--d)";lbl.style.whiteSpace="pre-line";lbl.textContent=addr;}  // textContent = kein XSS
+  var lnk=document.getElementById("addrLink");
+  if(lnk&&!lnk.firstChild){var a=document.createElement("a");a.href="https://maps.google.com/?q="+encodeURIComponent(addr);a.target="_blank";a.rel="noopener";a.className="info-link";a.textContent="→ Google Maps";lnk.appendChild(a);}
+}
+function hideAddr(){  // Wechsel ja->nein/vielleicht: bereits enthuellte Adresse wieder verbergen (sonst bleibt sie bis Reload sichtbar).
+  REVEALED_ADDR="";REVEALED_ADDR_ICS="";
+  var lbl=document.getElementById("addrLabel");
+  if(lbl){lbl.style.fontStyle="italic";lbl.style.color="var(--m)";lbl.style.whiteSpace="";lbl.textContent="\u{1F512} Adresse erscheint nach deiner Zusage";}
+  var lnk=document.getElementById("addrLink");if(lnk){while(lnk.firstChild)lnk.removeChild(lnk.firstChild);}
+}
 
 // ── CONFETTI ENGINE ──
 var confettiColors=["${t.a}","${t.h3}","#FFC107","#FF5722","#E91E63","#2196F3","#9C27B0","#FFEB3B"];
@@ -1588,7 +1607,7 @@ async function loadPhoto(){try{var r=await fetch(location.origin+"/api/photo/"+P
 async function loadGuestCount(){try{var r=await fetch(location.origin+"/api/party/"+PID);if(!r.ok)return;var d=await r.json();var c=d.guestCount||0;if(c>0){var el=document.getElementById("guestCounter");el.classList.remove("hidden");var dots=document.getElementById("guestDots");var letters="ABCDEFGHIJKLM";var show=Math.min(c,4);for(var i=0;i<show;i++){var dot=document.createElement("div");dot.className="guest-dot";dot.textContent=i<3?letters[i]:"+"+(c-3);dots.appendChild(dot);}document.getElementById("guestCounterText").textContent="Schon "+c+" "+(c===1?"Kind":"Kinder")+" dabei!";}}catch(e){}}
 
 // ── PREV RSVP ──
-function checkPrev(){try{var p=localStorage.getItem("rsvp_"+PID);if(p){var d=JSON.parse(p);document.getElementById("prevName").textContent=d.name;document.getElementById("alreadyRsvp").classList.remove("hidden");document.getElementById("rsvpFields").classList.add("hidden");document.getElementById("rsvpName").value=d.name;guestName=d.name;}}catch(e){}}
+function checkPrev(){try{var p=localStorage.getItem("rsvp_"+PID);if(p){var d=JSON.parse(p);document.getElementById("prevName").textContent=d.name;document.getElementById("alreadyRsvp").classList.remove("hidden");document.getElementById("rsvpFields").classList.add("hidden");document.getElementById("rsvpName").value=d.name;guestName=d.name;if(d.status==="ja"&&d.address)revealAddr(d.address,d.addressIcs);}}catch(e){}}
 
 // ── RSVP ──
 function pickStatus(s,el){
@@ -1609,7 +1628,9 @@ async function sendRsvp(){
   try{
     var r=await fetch(location.origin+"/api/party/"+PID+"/rsvp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
     if(!r.ok){var d=await r.json();throw new Error(d.error);}
-    localStorage.setItem("rsvp_"+PID,JSON.stringify({name:rn,status:selectedStatus}));
+    var okData={};try{okData=await r.json();}catch(e){}
+    localStorage.setItem("rsvp_"+PID,JSON.stringify({name:rn,status:selectedStatus,address:okData.address||"",addressIcs:okData.addressIcs||""}));
+    if(okData.address)revealAddr(okData.address,okData.addressIcs);else hideAddr();  // Adresse erst nach Zusage sichtbar; bei Wechsel auf nein/vielleicht wieder verbergen
     guestName=rn;
     var form=document.getElementById("rsvpFields");form.classList.add("slide-hidden");
     var msgs={ja:["\\u{1F389}","Wir freuen uns auf euch!",""+rn+" ist dabei!"],vielleicht:["\\u{1F914}","Alles klar!","Wir hoffen ihr k\\u00F6nnt kommen!"],nein:["\\u{1F622}","Schade!","Vielleicht beim n\\u00E4chsten Mal."]};
@@ -1618,7 +1639,7 @@ async function sendRsvp(){
       var suc=document.getElementById("rsvpSuccess");
       document.getElementById("rsvpSuccess").querySelector(".rsvp-success-emoji").textContent=m[0];
       document.getElementById("rsvpMsg").textContent=m[1];
-      document.getElementById("rsvpSub").textContent=m[2];
+      document.getElementById("rsvpSub").textContent=m[2]+(okData.address?" \\u{1F4CD} Die Adresse steht jetzt oben bei den Party-Details.":"");
       suc.classList.add("show");
       if(selectedStatus==="ja")launchConfetti(2500);
     },400);
@@ -1635,9 +1656,9 @@ function downloadIcs(){
   else { var _tp=(time||"12:00").split(":"); var _eh=((parseInt(_tp[0],10)||12)+3)%24; et=String(_eh).padStart(2,"0")+((_tp[1]||"00")+"").padStart(2,"0")+"00"; }  // +3h Fallback OHNE Start-Minuten zu verwerfen (09:30 -> 12:30, nicht 12:00)
   var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//machsleicht//party//DE","BEGIN:VEVENT",
     "DTSTART:"+d+"T"+ti,"DTEND:"+d+"T"+et,
-    "SUMMARY:"+${JSON.stringify(icsEscape(party.childName?party.childName+"s Geburtstag":"Kindergeburtstag"))},
-    "LOCATION:"+${JSON.stringify(icsEscape(party.address||""))},
-    "DESCRIPTION:"+${JSON.stringify(icsEscape(party.motto||"Kindergeburtstag"))},
+    "SUMMARY:"+${JSON.stringify(icsEscape(party.childName?party.childName+"s Geburtstag":"Kindergeburtstag")).replace(/</g,"\\u003C").replace(/>/g,"\\u003E")},
+    "LOCATION:"+REVEALED_ADDR_ICS,
+    "DESCRIPTION:"+${JSON.stringify(icsEscape(party.motto||"Kindergeburtstag")).replace(/</g,"\\u003C").replace(/>/g,"\\u003E")},
     "END:VEVENT","END:VCALENDAR"].join("\\r\\n");
   var blob=new Blob([ics],{type:"text/calendar"});
   var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="party.ics";a.click();
@@ -1804,7 +1825,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   </div>
 
   <div class="card fade-up">
-    <h2 style="font-size:15px;color:${color};margin-bottom:12px">\u{1F4CA} Zusagen</h2>
+    <h2 style="font-size:15px;color:${color};margin-bottom:12px">\u{1F465} Gästeliste</h2>
     <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
       <span class="badge success">\u2705 ${ja.length} dabei</span>
       ${vielleicht.length?`<span class="badge" style="background:#FFF3E0;color:#E65100">\u{1F914} ${vielleicht.length} vielleicht</span>`:""}
