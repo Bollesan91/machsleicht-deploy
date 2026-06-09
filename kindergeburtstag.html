@@ -1533,6 +1533,12 @@ window.plausible.init=function(){};window.plausible.q=[];
   function showPlanBtn(){
     const btn = document.getElementById('toPlanBtn'); if(btn) btn.style.display='';
     try{ document.querySelectorAll('#agesGrid .age-card').forEach(c=>{ c.style.outline = (c.dataset.age===state.age) ? '3px solid var(--accent,#1E3A5F)' : ''; }); }catch(e){}
+    // Proaktiver Pflicht-Cue im Moment, in dem der Button erscheint (egal ueber welchen Alters-Pfad): fehlt der Name -> Hinweis zeigen + Fokus.
+    // (Ohne das blieb der nameReqHint toter Code, weil der disabled Button kein onclick/revealPlan feuert.)
+    if(!state.name || !state.name.trim()){
+      const h = document.getElementById('nameReqHint'); if(h) h.style.display='';
+      const nm = document.getElementById('iqName'); if(nm && !nm.value) setTimeout(()=>{try{nm.focus()}catch(e){}}, 300);
+    }
   }
   function pickAge(age){
     state.age = age;
@@ -2387,7 +2393,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         // ?motto (Planer/Motto-Seiten) ODER ?thema (Schatzsuche-SEO-Seiten /schatzsuche/<motto>) — beide docken auf dieselbe Motto-Auswahl
         const m = p.get('motto') || p.get('thema') || window.__selectedMotto;
         if(m){ const hit = MOTTOS.find(x => x.id === m); if(hit){ state.motto = hit; window.__hasEntryParam = true; } }
-        const a = p.get('alter'); if(a){ const v = parseInt(a,10); if(v>=3 && v<=12){ state.age = v<=5 ? '3-5' : (v<=8 ? '6-8' : '9-12'); window.__hasEntryParam = true; } }
+        const a = p.get('alter'); if(a){ const v = parseInt(a,10); if(v>=3 && v<=12){ state.age = v<=5 ? '3-5' : (v<=8 ? '6-8' : '9-12'); window.__hasEntryParam = true; window.__hasEntryAge = true; } }
         const g = p.get('gaeste'); if(g){ const v = parseInt(g,10); if(v>=2 && v<=20){ state.guests = v; window.__hasEntryParam = true; } }
         window.__entryModus = p.get('modus') || '';   // 'schatzsuche' -> nach Render zur Schatzsuche scrollen
       }catch(ep){ console.warn('param-in', ep); }
@@ -2408,12 +2414,10 @@ window.plausible.init=function(){};window.plausible.q=[];
         // damit auch der SEO-Einstieg einen PERSONALISIERTEN Plan bekommt (sonst "dein Kind" + plan_ready feuert nie).
         renderPlanPreview();
         try{
-          if(state.age){
-            const btn = document.getElementById('toPlanBtn'); if(btn) btn.style.display='';
-            document.querySelectorAll('#agesGrid .age-card').forEach(c=>{ c.style.outline = (c.dataset.age===state.age) ? '3px solid var(--accent,#1E3A5F)' : ''; });
-          }
-          goStage(2);                                          // auf Eckdaten/Stage 2 landen (Motto/Alter vorbelegt), Reveal erst nach Name
-          const nm = document.getElementById('iqName'); if(nm && !nm.value) setTimeout(()=>{try{nm.focus()}catch(e){}}, 450);
+          // Button NUR zeigen, wenn das Alter wirklich per ?alter kam (nicht beim '6-8'-Default) -> respektiert die "keine-Vorschau-auf-geratenem-Alter"-Invariante.
+          // showPlanBtn() zeigt Button + Outline + (mangels Name) den Pflicht-Cue/Fokus. Bei ?motto-only landet der Nutzer nur auf Stage 2 und waehlt das Alter selbst.
+          if(window.__hasEntryAge){ showPlanBtn(); }
+          goStage(2);                                          // auf Eckdaten/Stage 2 landen (Motto vorbelegt), Reveal erst nach Name
         }catch(e){ console.warn('initFunnel deep-link', e); }
       }
       // Virgin-State (kein Param): KEIN Vorab-Render/Reveal von Stage 3-5. Der Plan ist die Belohnung fuer Motto+Alter+Name+"Plan ansehen".
