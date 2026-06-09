@@ -314,6 +314,7 @@ export default {
         guests: [],
         paypalMe: sanitizePaypal(body.paypalMe),
         created: new Date().toISOString(),
+        ref: /^[a-z0-9]{6,12}$/.test(body.ref||"") ? body.ref : null,  // Virale Attribution (Gast->Host): ID der Party, die diesen neuen Host geseedet hat
       };
       const ttl = calcTTL(party.date);
       await env.PARTY.put(`party:${id}`, JSON.stringify(party), {expirationTtl:ttl});
@@ -336,7 +337,7 @@ export default {
       if (edit === party.editToken) return json(party, 200, request);
       // P0-Security Welle 1C: doiToken aus Public-GET strippen — sonst kann jeder Gast
       // /api/newsletter-confirm?token=... triggern und fremde E-Mails ungewollt bestätigen.
-      const {editToken,email,doiToken,...safe} = party;
+      const {editToken,email,doiToken,ref,...safe} = party;   // ref (virale Attribution) ist intern -> nicht im Public-GET leaken
       safe.wishes = (safe.wishes||[]).map(w=>{
         const cb = w.claimedBy||[];
         const claimedAmountTotal = cb.reduce((s,e)=>s+(typeof e==="object" && e && typeof e.amount==="number" ? e.amount : 0),0);
@@ -1514,6 +1515,13 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
   ${party.date?`<div style="text-align:center;margin:8px 0"><a href="javascript:downloadIcs()" class="cal-btn">\u{1F4C5} Termin im Kalender speichern</a></div>`:""}
 
 </div>
+
+${!isPreview?`<div style="max-width:560px;margin:30px auto 8px;padding:22px 20px;border-radius:16px;background:#FFF6EC;border:1px solid #F0DEC8;text-align:center">
+  <div style="font-size:26px;line-height:1;margin-bottom:6px">\u{1F388}</div>
+  <div style="font-weight:800;font-size:17px;color:#1E3A5F;margin-bottom:4px">Planst du auch bald einen Geburtstag?</div>
+  <p style="font-size:14px;color:#555;margin:0 0 14px;line-height:1.45">Erstelle so eine Partyseite + den kompletten Plan \u2014 kostenlos, in 5 Minuten, ohne Anmeldung.</p>
+  <a href="https://machsleicht.de/kindergeburtstag.html?ref=${esc(id)}" target="_blank" rel="noopener" style="display:inline-block;background:#FF6F00;color:#fff;font-weight:800;padding:13px 26px;border-radius:12px;text-decoration:none">Eigene Partyseite erstellen \u2192</a>
+</div>`:""}
 
 <div class="footer"><a href="https://machsleicht.de">machsleicht.de</a> \u00B7 <a href="https://machsleicht.de/impressum">Impressum</a> \u00B7 <a href="https://machsleicht.de/datenschutz">Datenschutz</a></div>
 
