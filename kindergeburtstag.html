@@ -1439,6 +1439,10 @@ window.plausible.init=function(){};window.plausible.q=[];
     document.getElementById('resumeBanner').classList.remove('show');
     applyAccent(state.motto);
     renderPlanPreview();
+    // Restore-Pfad: Eckdaten + Name-Gate aus dem gespeicherten State setzen (sonst strandet der "Plan ansehen"-Button:
+    // unsichtbar bzw. disabled trotz vorhandenem Namen). Button sichtbar machen, da der Nutzer seinen Flow fortsetzt.
+    try{ syncEckdaten(); }catch(e){}
+    try{ const tpb=document.getElementById('toPlanBtn'); if(tpb) tpb.style.display=''; }catch(e){}
     goStage(state.stage || 1);
   }
   function discardResume(){
@@ -1919,15 +1923,18 @@ window.plausible.init=function(){};window.plausible.q=[];
   function stepNext(){ if(state.step < 5) setStep(state.step + 1); else closeWizard(); }
   function stepBack(){ if(state.step > 1) setStep(state.step - 1) }
 
+  // Nebeneffektfreies Name-Gate (KEIN autoSave/Slug -> sicher aus syncEckdaten/initFunnel aufrufbar ohne den Save zu clobbern):
+  // Button-Enabled folgt state.name.
+  function syncPlanGate(){
+    const tpb = document.getElementById('toPlanBtn');
+    if(!tpb) return;
+    if(state.name && state.name.trim()){ tpb.disabled=false; tpb.style.opacity=''; tpb.style.cursor=''; tpb.textContent='Fertigen Plan ansehen →'; const h=document.getElementById('nameReqHint'); if(h) h.style.display='none'; }
+    else { tpb.disabled=true; tpb.style.opacity='.45'; tpb.style.cursor='not-allowed'; tpb.textContent='Erst Namen eintragen ✏️'; }
+  }
   function liveUpdateName(){
     state.name = document.getElementById('qName').value.trim();
     document.getElementById('planName1').textContent = state.name || 'dein Kind';
-    // Proaktives Gate: "Plan ansehen" erst klickbar, wenn der Name steht (ersetzt den reaktiven Fehlklick-Hinweis).
-    const _tpb = document.getElementById('toPlanBtn');
-    if(_tpb){
-      if(state.name){ _tpb.disabled=false; _tpb.style.opacity=''; _tpb.style.cursor=''; _tpb.textContent='Fertigen Plan ansehen →'; const h=document.getElementById('nameReqHint'); if(h) h.style.display='none'; }
-      else { _tpb.disabled=true; _tpb.style.opacity='.45'; _tpb.style.cursor='not-allowed'; _tpb.textContent='Erst Namen eintragen ✏️'; }
-    }
+    syncPlanGate();   // Button-Enabled-State aktualisieren (zustandsgekoppelt)
     // F3: Auto-Slug aus Name+Age (Live-Konvention: name-age)
     const newSlug = state.name.toLowerCase().replace(/[^a-z0-9]/g,'') + ageNum();
     if(state.partyseite.slug.match(/^lukas7$|^lukas\d+$|^[a-z]+\d+$/) || !state.partyseite.active){
@@ -1950,13 +1957,19 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
   function syncEckdaten(){
     const set=(id,v)=>{ const e=document.getElementById(id); if(e!=null) e.value=v; };
-    set('iqName', state.name==='Lukas' ? '' : state.name);
+    const nm = state.name==='Lukas' ? '' : (state.name||'');
+    set('iqName', nm);
+    set('qName', nm);   // Drawer-Spiegel mitziehen, damit das Name-Gate (liest qName) auch bei Restore/Deep-Link stimmt
     set('iqDate', state.date);
     set('iqTime', state.time);
     set('iqEndTime', state.endTime||'16:30');
     set('iqGuests', state.guests);
     const gl=document.getElementById('iqGuestsLabel'); if(gl) gl.textContent = state.guests;
     document.querySelectorAll('#iqLocation button').forEach(b => b.classList.toggle('on', b.dataset.loc===state.location));
+    // Gate ZUSTANDSGEKOPPELT statt nur keystroke: Button-Enabled folgt state.name (nicht nur dem oninput-Event).
+    // Schliesst das Stranden bei Restore/Deep-Link (Button war sonst disabled trotz vorhandenem Namen). Sichtbarkeit bleibt
+    // bewusst an pickAge/Deep-Link/resumeWork gekoppelt (NICHT an state.age, da das per Default '6-8' ist -> sonst Virgin-Vorschau).
+    try{ if(typeof syncPlanGate==='function') syncPlanGate(); }catch(e){}
   }
 
   document.querySelectorAll('#qLocationOpts .option').forEach(opt => {
