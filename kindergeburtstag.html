@@ -668,7 +668,6 @@ window.plausible.init=function(){};window.plausible.q=[];
       <h1>Kindergeburtstag planen — welches <em>Motto</em> soll's werden?</h1>
       <p>Such ein Motto aus — wir bauen drum herum den kompletten Plan, die Einladung, die Schatzsuche und die Partyseite. Alles in einem Flow, du kannst jederzeit pausieren und später weitermachen.</p>
       <div class="social-proof">
-        <span class="social-proof__star">⭐⭐⭐⭐⭐</span>
         <strong>Kompletter Plan in 5 Minuten</strong> · kostenlos · ohne Anmeldung
       </div>
     </header>
@@ -716,6 +715,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         <button type="button" data-loc="park" onclick="pickLocationInline('park')">🌳 Park</button>
         <button type="button" data-loc="halle" onclick="pickLocationInline('halle')">🏟️ Halle</button>
       </div>
+      <button id="toPlanBtn" class="stage-advance__btn" style="display:none;margin-top:16px;width:100%" onclick="try{renderPlanPreview()}catch(e){}; goStage(3)">Fertigen Plan ansehen →</button>
     </div>
   </div>
 </section>
@@ -752,7 +752,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     <p class="stage-advance__hint">Der Plan steht. Als nächstes erstellen wir die Einladung.</p>
     <button class="stage-advance__btn" onclick="goStage(4)">Weiter zur Einladung →</button>
     <button class="stage-advance__skip" onclick="goStage(6)">Plan jetzt schon abschließen</button>
-    <div style="margin-top:18px"><button class="notfall-cta" onclick="alert('Notfall-Modus: Plan auf 90 Min gekürzt, nur 3 Spiele, kein Schatzsuche-Setup. Tagesplan + Einkaufsliste sofort startklar.')">🚨 Notfallplan in 2 Minuten — Geburtstag ist morgen</button></div>
+    <div style="margin-top:18px"><button class="notfall-cta" onclick="try{if(window.plausible)plausible('notfall_cta_click')}catch(e){}; location.href='/kindergeburtstag-last-minute'">🚨 Geburtstag ist schon morgen? → Last-Minute-Plan in 48 Stunden</button></div>
   </div>
 </section>
 
@@ -1318,7 +1318,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     stage: 1,
     motto: null,
     age: null,
-    name: 'Lukas',
+    name: '',
     date: defaultDate(),
     time: '14:00',
     endTime: '16:30',
@@ -1512,7 +1512,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       {key:'9-12', range:'9-12', title:'Grundschulkinder', desc:'Anspruchsvollere Rätsel', features:['Tagesplan 14:00–18:00','9 Spiele zur Auswahl','7 Stationen + Geheimschrift']}
     ];
     grid.innerHTML = ageData.map(a => `
-      <div class="age-card" onclick="pickAge('${a.key}')">
+      <div class="age-card" data-age="${a.key}" onclick="pickAge('${a.key}')">
         <div class="age-card__range">${a.range}<small> Jahre</small></div>
         <div class="age-card__title">${a.title}</div>
         <div class="age-card__desc">${a.desc}</div>
@@ -1529,7 +1529,11 @@ window.plausible.init=function(){};window.plausible.q=[];
     state.invite.body = `${state.name} ${state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name)}`;
     renderPlanPreview();
     autoSave();
-    goStage(3);
+    // Aha-Bypass: NICHT auto-advancen. Erst Eckdaten (v.a. Name) erfassen lassen, damit der Plan personalisiert ist ("Mias …" statt "dein Kind"), dann expliziter Klick.
+    try{ document.querySelectorAll('#agesGrid .age-card').forEach(c=>{ c.style.outline = (c.dataset.age===age) ? '3px solid var(--accent,#1E3A5F)' : ''; }); }catch(e){}
+    const btn = document.getElementById('toPlanBtn'); if(btn) btn.style.display='';
+    const ek = document.getElementById('eckdaten'); if(ek) ek.scrollIntoView({behavior:'smooth', block:'start'});
+    const nm = document.getElementById('iqName'); if(nm && !nm.value) setTimeout(()=>{try{nm.focus()}catch(e){}}, 450);
   }
 
   // ===== PLAN PREVIEW =====
@@ -1610,7 +1614,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       </article>
     `;
 
-    document.getElementById('planName1').textContent = state.name;
+    document.getElementById('planName1').textContent = state.name || 'dein Kind';
     document.getElementById('planDate1').textContent = formatDateShort(state.date) + ', ' + state.time + ' Uhr';
     document.getElementById('planGuests1').textContent = state.guests;
     document.getElementById('planLocation1').textContent = locationLabel(state.location);
@@ -1843,6 +1847,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       else if(i === n) dot.classList.add('active');
     }
     const ds = document.getElementById('demoStage'); if(ds) ds.textContent = n;
+    if(n === 3 && !state._planReadyFired){ state._planReadyFired = true; try{ if(window.plausible){ const _mid=(state.motto&&state.motto.id||'').indexOf('custom')===0?'custom':(state.motto&&state.motto.id||''); plausible('plan_ready', {props:{motto:_mid, personalized: !!(state.name&&state.name.trim())}}); } }catch(e){} }
     if(n === 4) renderInvitePreview();
     if(n === 5) renderPartyseitePreview();
     if(n === 6) renderDoneSummary();
@@ -1897,8 +1902,8 @@ window.plausible.init=function(){};window.plausible.q=[];
   function stepBack(){ if(state.step > 1) setStep(state.step - 1) }
 
   function liveUpdateName(){
-    state.name = document.getElementById('qName').value.trim() || 'Lukas';
-    document.getElementById('planName1').textContent = state.name;
+    state.name = document.getElementById('qName').value.trim();
+    document.getElementById('planName1').textContent = state.name || 'dein Kind';
     // F3: Auto-Slug aus Name+Age (Live-Konvention: name-age)
     const newSlug = state.name.toLowerCase().replace(/[^a-z0-9]/g,'') + ageNum();
     if(state.partyseite.slug.match(/^lukas7$|^lukas\d+$|^[a-z]+\d+$/) || !state.partyseite.active){
