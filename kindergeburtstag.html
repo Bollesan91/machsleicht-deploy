@@ -717,7 +717,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         <button type="button" data-loc="park" onclick="pickLocationInline('park')">🌳 Park</button>
         <button type="button" data-loc="halle" onclick="pickLocationInline('halle')">🏟️ Halle</button>
       </div>
-      <button id="toPlanBtn" class="stage-advance__btn" disabled style="display:none;margin-top:16px;width:100%;opacity:.45;cursor:not-allowed" onclick="revealPlan()">Erst Namen eintragen ✏️</button>
+      <button id="toPlanBtn" class="stage-advance__btn" style="display:none;margin-top:16px;width:100%;opacity:.6" onclick="revealPlan()">Erst Namen eintragen ✏️</button>
       <div id="nameReqHint" style="display:none;margin-top:8px;font-size:13px;color:#C0392B">Trag noch den Namen des Geburtstagskindes ein – dann wird der Plan persönlich. ✏️</div>
     </div>
   </div>
@@ -1940,8 +1940,10 @@ window.plausible.init=function(){};window.plausible.q=[];
   function syncPlanGate(){
     const tpb = document.getElementById('toPlanBtn');
     if(!tpb) return;
-    if(state.name && state.name.trim()){ tpb.disabled=false; tpb.style.opacity=''; tpb.style.cursor=''; tpb.textContent='Fertigen Plan ansehen →'; const h=document.getElementById('nameReqHint'); if(h) h.style.display='none'; }
-    else { tpb.disabled=true; tpb.style.opacity='.45'; tpb.style.cursor='not-allowed'; tpb.textContent='Erst Namen eintragen ✏️'; }
+    // KEIN disabled (Anti-Pattern: toter Button ohne Klick-Feedback). Button bleibt klickbar; revealPlan() ist das Verhaltens-Gate
+    // (zeigt Hint, scrollt zu #eckdaten, fokussiert iqName bei leerem Namen). Hier nur visueller Zustand + Label.
+    if(state.name && state.name.trim()){ tpb.style.opacity=''; tpb.style.cursor=''; tpb.textContent='Fertigen Plan ansehen →'; const h=document.getElementById('nameReqHint'); if(h) h.style.display='none'; }
+    else { tpb.style.opacity='.6'; tpb.style.cursor='pointer'; tpb.textContent='Erst Namen eintragen ✏️'; }
   }
   function liveUpdateName(){
     state.name = document.getElementById('qName').value.trim();
