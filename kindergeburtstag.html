@@ -1102,15 +1102,15 @@ window.plausible.init=function(){};window.plausible.q=[];
     <div class="question active" data-step="1">
       <h3>Wie heißt das Geburtstagskind?</h3>
       <p class="help">Wird in Plan + Einladung + Materialien personalisiert.</p>
-      <input type="text" id="qName" placeholder="z.B. Mia" autocomplete="off" oninput="liveUpdateName()">
+      <input type="text" id="qName" placeholder="z.B. Mia" autocomplete="off" aria-label="Name des Geburtstagskindes" oninput="liveUpdateName()">
     </div>
     <div class="question" data-step="2">
       <h3>Wann ist der Geburtstag?</h3>
       <p class="help">Datum + Uhrzeit — die Tagesplan-Zeiten skalieren entsprechend.</p>
-      <div><label>Datum</label><input type="date" id="qDate" oninput="liveUpdateDate()"></div>
+      <div><label>Datum</label><input type="date" id="qDate" aria-label="Datum" oninput="liveUpdateDate()"></div>
       <div class="row-2" style="margin-top:10px">
-        <div><label>Start-Uhrzeit</label><input type="time" id="qTime" value="14:00" oninput="liveUpdateTime()"></div>
-        <div><label>End-Uhrzeit</label><input type="time" id="qEndTime" value="16:30" oninput="liveUpdateEndTime()"></div>
+        <div><label>Start-Uhrzeit</label><input type="time" id="qTime" value="14:00" aria-label="Start-Uhrzeit" oninput="liveUpdateTime()"></div>
+        <div><label>End-Uhrzeit</label><input type="time" id="qEndTime" value="16:30" aria-label="End-Uhrzeit" oninput="liveUpdateEndTime()"></div>
       </div>
     </div>
     <div class="question" data-step="3">
@@ -1118,7 +1118,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       <p class="help">Wir skalieren Einkaufslisten-Mengen + Anzahl Urkunden/Etiketten.</p>
       <div class="slider-wrap">
         <div class="slider-value"><span id="qGuestsLabel">6</span> Kinder</div>
-        <input type="range" id="qGuests" min="2" max="20" value="6" oninput="liveUpdateGuests()">
+        <input type="range" id="qGuests" min="2" max="20" value="6" aria-label="Anzahl Gäste" oninput="liveUpdateGuests()">
         <div class="slider-labels"><span>4</span><span>8</span><span>12</span></div>
       </div>
     </div>
@@ -1470,10 +1470,11 @@ window.plausible.init=function(){};window.plausible.q=[];
   // Native Elemente (button/a/input) handeln sich selbst -> ausgeschlossen, kein Doppel-Trigger.
   document.addEventListener('keydown', function(e){
     if(e.key !== 'Enter' && e.key !== ' ' && e.key !== 'Spacebar') return;
-    const el = (e.target && e.target.closest) ? e.target.closest('[role="button"][onclick]') : null;
+    const t = e.target;
+    // Ist das fokussierte Element selbst ein natives Control, NICHT eingreifen (es handelt Enter/Space nativ). Guard auf e.target, nicht el.
+    if(t && (t.tagName==='BUTTON'||t.tagName==='A'||t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.tagName==='SELECT')) return;
+    const el = (t && t.closest) ? t.closest('[role="button"][onclick]') : null;
     if(!el) return;
-    const tag = el.tagName;
-    if(tag==='BUTTON'||tag==='A'||tag==='INPUT'||tag==='TEXTAREA'||tag==='SELECT') return;
     e.preventDefault();   // Space-Scroll verhindern
     el.click();
   });
