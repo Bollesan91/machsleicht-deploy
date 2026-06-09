@@ -2244,7 +2244,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       const data = await res.json();
       if(!data.url || !data.editUrl) throw new Error('Unvollstaendige Antwort vom Server');
       state.partyseite.active = true; state.partyseite.url = data.url; state.partyseite.editUrl = data.editUrl;
-      try{ if(window.plausible) plausible('party_created', {props:{motto: ((motto.id||'').indexOf('custom')===0?'custom':(motto.id||'')), source:'wizard'}}); }catch(e){}
+      try{ if(window.plausible) plausible('party_created', {props:{motto: ((motto.id||'').indexOf('custom')===0?'custom':(motto.id||'')), source:'wizard', referred: state.ref ? '1' : '0'}}); }catch(e){}
       // Share-Loop (Host -> Gaeste): Status + 1-Klick-Share aus dem ECHTEN data.url aufbauen — gleiche Funktion wie der Resume-Restore (Single Source).
       try{ showPartyShare(data.url, data.editUrl); }catch(e){ console.warn('share-block', e); }
       autoSave();

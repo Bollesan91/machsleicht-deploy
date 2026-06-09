@@ -337,7 +337,7 @@ export default {
       if (edit === party.editToken) return json(party, 200, request);
       // P0-Security Welle 1C: doiToken aus Public-GET strippen — sonst kann jeder Gast
       // /api/newsletter-confirm?token=... triggern und fremde E-Mails ungewollt bestätigen.
-      const {editToken,email,doiToken,...safe} = party;
+      const {editToken,email,doiToken,ref,...safe} = party;   // ref (virale Attribution) ist intern -> nicht im Public-GET leaken
       safe.wishes = (safe.wishes||[]).map(w=>{
         const cb = w.claimedBy||[];
         const claimedAmountTotal = cb.reduce((s,e)=>s+(typeof e==="object" && e && typeof e.amount==="number" ? e.amount : 0),0);
