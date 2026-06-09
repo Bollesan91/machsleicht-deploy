@@ -160,7 +160,10 @@ window.plausible.init=function(){};window.plausible.q=[];
   .topnav__brand em{font-style:normal;color:#FF6F00}
   .topnav__center{display:flex;align-items:center;gap:14px;flex:1;justify-content:center}
   .topnav__progress{display:flex;align-items:center;gap:5px}
-  .topnav__dot{width:7px;height:7px;border-radius:50%;background:#E6D4BD;transition:all .25s;cursor:pointer}
+  .topnav__dot{position:relative;width:7px;height:7px;border-radius:50%;background:#E6D4BD;transition:all .25s;cursor:pointer}
+  .topnav__dot::before{content:"";position:absolute;inset:-9px}  /* ~25px Tap-Target (WCAG 2.5.8) ohne Layout-Shift */
+  .topnav__dot:focus-visible{outline:2px solid var(--accent,#FF6F00);outline-offset:4px}
+  .motto-card:focus-visible,.age-card:focus-visible{outline:3px solid var(--accent,#1E3A5F);outline-offset:2px}  /* sichtbarer Tastatur-Fokus statt Browser-Default */
   .topnav__dot.done{background:#FF6F00}
   .topnav__dot.active{background:#FF6F00;box-shadow:0 0 0 3px #FFE0C2;width:9px;height:9px}
   .topnav__dot.locked{opacity:.3;pointer-events:none;cursor:default}  /* noch nicht freigeschaltete Stage: kein Voraus-Springen */
@@ -649,12 +652,12 @@ window.plausible.init=function(){};window.plausible.q=[];
   <a class="topnav__brand" href="#" onclick="event.preventDefault();brandClick()">mach's <em>leicht</em></a>
   <div class="topnav__center">
     <div class="topnav__progress">
-      <span class="topnav__dot active" id="navDot1" onclick="jumpStage(1)" title="Motto"></span>
-      <span class="topnav__dot" id="navDot2" onclick="jumpStage(2)" title="Alter"></span>
-      <span class="topnav__dot locked" id="navDot3" onclick="jumpStage(3)" title="Plan"></span>
-      <span class="topnav__dot locked" id="navDot4" onclick="jumpStage(4)" title="Einladung"></span>
-      <span class="topnav__dot locked" id="navDot5" onclick="jumpStage(5)" title="Partyseite"></span>
-      <span class="topnav__dot locked" id="navDot6" onclick="jumpStage(6)" title="Fertig"></span>
+      <span class="topnav__dot active" id="navDot1" role="button" tabindex="0" aria-label="Schritt 1: Motto" onclick="jumpStage(1)" title="Motto"></span>
+      <span class="topnav__dot" id="navDot2" role="button" tabindex="0" aria-label="Schritt 2: Alter" onclick="jumpStage(2)" title="Alter"></span>
+      <span class="topnav__dot locked" id="navDot3" role="button" tabindex="-1" aria-label="Schritt 3: Plan" onclick="jumpStage(3)" title="Plan"></span>
+      <span class="topnav__dot locked" id="navDot4" role="button" tabindex="-1" aria-label="Schritt 4: Einladung" onclick="jumpStage(4)" title="Einladung"></span>
+      <span class="topnav__dot locked" id="navDot5" role="button" tabindex="-1" aria-label="Schritt 5: Partyseite" onclick="jumpStage(5)" title="Partyseite"></span>
+      <span class="topnav__dot locked" id="navDot6" role="button" tabindex="-1" aria-label="Schritt 6: Fertig" onclick="jumpStage(6)" title="Fertig"></span>
     </div>
     <div class="topnav__save" id="saveIndicator">Gespeichert</div>
   </div>
@@ -1892,9 +1895,11 @@ window.plausible.init=function(){};window.plausible.q=[];
       const dot = document.getElementById('navDot'+i);
       if(!dot) continue;
       dot.classList.remove('done','active','locked');
+      let _locked = false;
       if(i < n) dot.classList.add('done');
       else if(i === n) dot.classList.add('active');
-      else { const s = document.getElementById('stage'+i); if(i >= 3 && !(s && s.classList.contains('revealed'))) dot.classList.add('locked'); }
+      else { const s = document.getElementById('stage'+i); if(i >= 3 && !(s && s.classList.contains('revealed'))){ dot.classList.add('locked'); _locked = true; } }
+      dot.setAttribute('tabindex', _locked ? '-1' : '0');   // A11y: gelockte Dots aus der Tab-Reihenfolge nehmen
     }
     const ds = document.getElementById('demoStage'); if(ds) ds.textContent = n;
     // plan_ready = ECHTER personalisierter Aha (Name gesetzt). Deep-Link/Nav-Sprung/Resume/Zurueck ohne Name zaehlen NICHT (sonst luegt die North-Star-Zahl).
