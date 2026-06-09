@@ -292,6 +292,15 @@ export default {
     // POST /api/create
     if (path === "/api/create" && request.method === "POST") {
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
+      // Abuse-Schutz: IP-basiertes Rate-Limit (KV-Counter, 1h-Fenster) gegen Spam-Erstellung -> KV-Muell/Kosten.
+      // Eventual-consistent (KV nicht atomar) -> reicht als Spam-Drossel; bei fehlender IP (lokal/Test) ueberspringen.
+      const _ip = request.headers.get("cf-connecting-ip") || "";
+      if (_ip) {
+        const _rlKey = "rl:create:" + _ip;
+        const _cnt = parseInt(await env.PARTY.get(_rlKey) || "0", 10) || 0;
+        if (_cnt >= 8) return json({error:"Zu viele Partyseiten in kurzer Zeit. Bitte spaeter nochmal."}, 429, request);
+        await env.PARTY.put(_rlKey, String(_cnt + 1), {expirationTtl: 3600});
+      }
       const id = generateId();
       const editToken = generateToken();
       const party = {
@@ -432,6 +441,8 @@ export default {
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
+      // Abuse-Drossel (anonymer Schreib-Endpoint): IP-Counter gemeinsam mit wish/claim, 30/h gegen Flood/KV-Bloat.
+      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte spaeter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
       const name = (body.name||"").trim().slice(0,50);
       if (!name) return json({error:"Name fehlt"},400, request);
       if (!Array.isArray(party.guests)) party.guests = []; // L7: Legacy-Party ohne guests-Feld nicht crashen
@@ -456,6 +467,8 @@ export default {
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
+      // Abuse-Drossel (anonymer Schreib-Endpoint): IP-Counter gemeinsam mit rsvp, 30/h gegen Flood/KV-Bloat.
+      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte spaeter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
       const guestName = (body.name||"").trim().slice(0,50); // F4: Laengen-Limit gegen KV-Bloat/XSS-Payload
       if (!guestName) return json({error:"Name fehlt"},400, request);
       // amount nur bei sharedGift relevant; 0 < amount < 9999
@@ -1617,7 +1630,9 @@ async function sendRsvp(){
 function downloadIcs(){
   var date="${escJson(party.date)}",time="${escJson(party.time||"12:00")}",endTime="${escJson(party.endTime||"")}";
   var d=date.replace(/-/g,""),ti=time.replace(/:/g,"")+"00";
-  var et=endTime?endTime.replace(/:/g,"")+"00":(((parseInt(time)+3)%24)+"").padStart(2,"0")+"0000";
+  var et;
+  if(endTime){ et=endTime.replace(/:/g,"")+"00"; }
+  else { var _tp=(time||"12:00").split(":"); var _eh=((parseInt(_tp[0],10)||12)+3)%24; et=String(_eh).padStart(2,"0")+((_tp[1]||"00")+"").padStart(2,"0")+"00"; }  // +3h Fallback OHNE Start-Minuten zu verwerfen (09:30 -> 12:30, nicht 12:00)
   var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//machsleicht//party//DE","BEGIN:VEVENT",
     "DTSTART:"+d+"T"+ti,"DTEND:"+d+"T"+et,
     "SUMMARY:"+${JSON.stringify(icsEscape(party.childName?party.childName+"s Geburtstag":"Kindergeburtstag"))},

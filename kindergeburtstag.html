@@ -160,7 +160,10 @@ window.plausible.init=function(){};window.plausible.q=[];
   .topnav__brand em{font-style:normal;color:#FF6F00}
   .topnav__center{display:flex;align-items:center;gap:14px;flex:1;justify-content:center}
   .topnav__progress{display:flex;align-items:center;gap:5px}
-  .topnav__dot{width:7px;height:7px;border-radius:50%;background:#E6D4BD;transition:all .25s;cursor:pointer}
+  .topnav__dot{position:relative;width:7px;height:7px;border-radius:50%;background:#E6D4BD;transition:all .25s;cursor:pointer}
+  .topnav__dot::before{content:"";position:absolute;inset:-9px}  /* ~25px Tap-Target (WCAG 2.5.8) ohne Layout-Shift */
+  .topnav__dot:focus-visible{outline:2px solid var(--accent,#FF6F00);outline-offset:4px}
+  .motto-card:focus-visible,.age-card:focus-visible{outline:3px solid var(--accent,#1E3A5F);outline-offset:2px}  /* sichtbarer Tastatur-Fokus statt Browser-Default */
   .topnav__dot.done{background:#FF6F00}
   .topnav__dot.active{background:#FF6F00;box-shadow:0 0 0 3px #FFE0C2;width:9px;height:9px}
   .topnav__dot.locked{opacity:.3;pointer-events:none;cursor:default}  /* noch nicht freigeschaltete Stage: kein Voraus-Springen */
@@ -649,12 +652,12 @@ window.plausible.init=function(){};window.plausible.q=[];
   <a class="topnav__brand" href="#" onclick="event.preventDefault();brandClick()">mach's <em>leicht</em></a>
   <div class="topnav__center">
     <div class="topnav__progress">
-      <span class="topnav__dot active" id="navDot1" onclick="jumpStage(1)" title="Motto"></span>
-      <span class="topnav__dot" id="navDot2" onclick="jumpStage(2)" title="Alter"></span>
-      <span class="topnav__dot locked" id="navDot3" onclick="jumpStage(3)" title="Plan"></span>
-      <span class="topnav__dot locked" id="navDot4" onclick="jumpStage(4)" title="Einladung"></span>
-      <span class="topnav__dot locked" id="navDot5" onclick="jumpStage(5)" title="Partyseite"></span>
-      <span class="topnav__dot locked" id="navDot6" onclick="jumpStage(6)" title="Fertig"></span>
+      <span class="topnav__dot active" id="navDot1" role="button" tabindex="0" aria-label="Schritt 1: Motto" onclick="jumpStage(1)" title="Motto"></span>
+      <span class="topnav__dot" id="navDot2" role="button" tabindex="0" aria-label="Schritt 2: Alter" onclick="jumpStage(2)" title="Alter"></span>
+      <span class="topnav__dot locked" id="navDot3" role="button" tabindex="-1" aria-label="Schritt 3: Plan" onclick="jumpStage(3)" title="Plan"></span>
+      <span class="topnav__dot locked" id="navDot4" role="button" tabindex="-1" aria-label="Schritt 4: Einladung" onclick="jumpStage(4)" title="Einladung"></span>
+      <span class="topnav__dot locked" id="navDot5" role="button" tabindex="-1" aria-label="Schritt 5: Partyseite" onclick="jumpStage(5)" title="Partyseite"></span>
+      <span class="topnav__dot locked" id="navDot6" role="button" tabindex="-1" aria-label="Schritt 6: Fertig" onclick="jumpStage(6)" title="Fertig"></span>
     </div>
     <div class="topnav__save" id="saveIndicator">Gespeichert</div>
   </div>
@@ -1102,15 +1105,15 @@ window.plausible.init=function(){};window.plausible.q=[];
     <div class="question active" data-step="1">
       <h3>Wie heißt das Geburtstagskind?</h3>
       <p class="help">Wird in Plan + Einladung + Materialien personalisiert.</p>
-      <input type="text" id="qName" placeholder="z.B. Mia" autocomplete="off" oninput="liveUpdateName()">
+      <input type="text" id="qName" placeholder="z.B. Mia" autocomplete="off" aria-label="Name des Geburtstagskindes" oninput="liveUpdateName()">
     </div>
     <div class="question" data-step="2">
       <h3>Wann ist der Geburtstag?</h3>
       <p class="help">Datum + Uhrzeit — die Tagesplan-Zeiten skalieren entsprechend.</p>
-      <div><label>Datum</label><input type="date" id="qDate" oninput="liveUpdateDate()"></div>
+      <div><label>Datum</label><input type="date" id="qDate" aria-label="Datum" oninput="liveUpdateDate()"></div>
       <div class="row-2" style="margin-top:10px">
-        <div><label>Start-Uhrzeit</label><input type="time" id="qTime" value="14:00" oninput="liveUpdateTime()"></div>
-        <div><label>End-Uhrzeit</label><input type="time" id="qEndTime" value="16:30" oninput="liveUpdateEndTime()"></div>
+        <div><label>Start-Uhrzeit</label><input type="time" id="qTime" value="14:00" aria-label="Start-Uhrzeit" oninput="liveUpdateTime()"></div>
+        <div><label>End-Uhrzeit</label><input type="time" id="qEndTime" value="16:30" aria-label="End-Uhrzeit" oninput="liveUpdateEndTime()"></div>
       </div>
     </div>
     <div class="question" data-step="3">
@@ -1118,7 +1121,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       <p class="help">Wir skalieren Einkaufslisten-Mengen + Anzahl Urkunden/Etiketten.</p>
       <div class="slider-wrap">
         <div class="slider-value"><span id="qGuestsLabel">6</span> Kinder</div>
-        <input type="range" id="qGuests" min="2" max="20" value="6" oninput="liveUpdateGuests()">
+        <input type="range" id="qGuests" min="2" max="20" value="6" aria-label="Anzahl Gäste" oninput="liveUpdateGuests()">
         <div class="slider-labels"><span>4</span><span>8</span><span>12</span></div>
       </div>
     </div>
@@ -1466,17 +1469,29 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
 
   // ===== MOTTO PICKER =====
+  // A11y: klickbare Karten (role=button: Motto/Alter) per Tastatur aktivierbar machen (Enter/Space). Delegiert, einmalig.
+  // Native Elemente (button/a/input) handeln sich selbst -> ausgeschlossen, kein Doppel-Trigger.
+  document.addEventListener('keydown', function(e){
+    if(e.key !== 'Enter' && e.key !== ' ' && e.key !== 'Spacebar') return;
+    const t = e.target;
+    // Ist das fokussierte Element selbst ein natives Control, NICHT eingreifen (es handelt Enter/Space nativ). Guard auf e.target, nicht el.
+    if(t && (t.tagName==='BUTTON'||t.tagName==='A'||t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.tagName==='SELECT')) return;
+    const el = (t && t.closest) ? t.closest('[role="button"][onclick]') : null;
+    if(!el) return;
+    e.preventDefault();   // Space-Scroll verhindern
+    el.click();
+  });
   function renderMottos(){
     const grid = document.getElementById('mottosGrid');
     grid.innerHTML = MOTTOS.map(m => `
-      <div class="motto-card" style="--accent:${m.accent};--accent-light:${lighten(m.accent,15)}" onclick="pickMotto('${m.id}')">
+      <div class="motto-card" role="button" tabindex="0" aria-label="Motto ${m.name}" style="--accent:${m.accent};--accent-light:${lighten(m.accent,15)}" onclick="pickMotto('${m.id}')">
         ${m.badge ? `<span class="motto-card__badge" style="background:${m.accent}">${m.badge}</span>` : ''}
         <span class="motto-card__emoji">${m.emoji}</span>
         <div class="motto-card__name">${m.name}</div>
         <span class="motto-card__ages">3–12 Jahre</span>
       </div>
     `).join('') + `
-      <div class="motto-card motto-card--custom" style="--accent:#666" onclick="pickCustomMotto()">
+      <div class="motto-card motto-card--custom" role="button" tabindex="0" aria-label="Eigenes Motto eintragen" style="--accent:#666" onclick="pickCustomMotto()">
         <span class="motto-card__emoji">✏️</span>
         <div class="motto-card__name">Eigenes…</div>
         <span class="motto-card__ages">Selbst eintragen</span>
@@ -1523,7 +1538,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       {key:'9-12', range:'9-12', title:'Grundschulkinder', desc:'Anspruchsvollere Rätsel', features:['Tagesplan 14:00–18:00','9 Spiele zur Auswahl','7 Stationen + Geheimschrift']}
     ];
     grid.innerHTML = ageData.map(a => `
-      <div class="age-card" data-age="${a.key}" onclick="pickAge('${a.key}')">
+      <div class="age-card" data-age="${a.key}" role="button" tabindex="0" aria-label="Altersgruppe ${a.range} Jahre" onclick="pickAge('${a.key}')">
         <div class="age-card__range">${a.range}<small> Jahre</small></div>
         <div class="age-card__title">${a.title}</div>
         <div class="age-card__desc">${a.desc}</div>
@@ -1880,9 +1895,11 @@ window.plausible.init=function(){};window.plausible.q=[];
       const dot = document.getElementById('navDot'+i);
       if(!dot) continue;
       dot.classList.remove('done','active','locked');
+      let _locked = false;
       if(i < n) dot.classList.add('done');
       else if(i === n) dot.classList.add('active');
-      else { const s = document.getElementById('stage'+i); if(i >= 3 && !(s && s.classList.contains('revealed'))) dot.classList.add('locked'); }
+      else { const s = document.getElementById('stage'+i); if(i >= 3 && !(s && s.classList.contains('revealed'))){ dot.classList.add('locked'); _locked = true; } }
+      dot.setAttribute('tabindex', _locked ? '-1' : '0');   // A11y: gelockte Dots aus der Tab-Reihenfolge nehmen
     }
     const ds = document.getElementById('demoStage'); if(ds) ds.textContent = n;
     // plan_ready = ECHTER personalisierter Aha (Name gesetzt). Deep-Link/Nav-Sprung/Resume/Zurueck ohne Name zaehlen NICHT (sonst luegt die North-Star-Zahl).
