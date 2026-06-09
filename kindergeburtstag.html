@@ -2168,6 +2168,20 @@ window.plausible.init=function(){};window.plausible.q=[];
     renderPartyseitePreview();
     autoSave();
   }
+  // Share-Loop: psStatus-URL + Share-Block (WhatsApp/Copy) aus dem State (re)konstruieren. Single Source fuer activate UND Resume/Stage-Rueckkehr.
+  function showPartyShare(url, editUrl){
+    if(!url) return;
+    const statusEl = document.getElementById('psStatus'); const urlEl = document.getElementById('psStatusUrl');
+    if(statusEl) statusEl.style.display = 'flex';
+    if(urlEl) urlEl.innerHTML = '<a href="' + escA(url) + '" target="_blank" rel="noopener" style="color:var(--accent,#1E3A5F);font-weight:800">' + esc(url) + '</a>' + (editUrl ? (' · <a href="' + escA(editUrl) + '" target="_blank" rel="noopener" style="font-size:12px">Edit-Link — gut aufheben!</a>') : '');
+    const motto = state.motto || MOTTOS[0];
+    const name = (state.name || '').trim() || 'Geburtstagskind';
+    const dStr = state.date ? (formatDateShort(state.date) + (state.time ? (', ' + state.time + ' Uhr') : '')) : '';
+    const shareMsg = motto.emoji + ' ' + name + ' feiert ' + motto.name + '-Geburtstag!' + (dStr ? ('\n📅 ' + dStr) : '') + '\n\nAlle Infos + bitte kurz zu-/absagen (Allergien & Abholung) direkt hier:\n' + url;
+    window.__partyShareUrl = url; window.__partyShareText = shareMsg;
+    const waEl = document.getElementById('psShareWa'); if(waEl) waEl.href = 'https://wa.me/?text=' + encodeURIComponent(shareMsg);
+    const sb = document.getElementById('psShareBlock'); if(sb) sb.style.display = '';
+  }
   function renderPartyseitePreview(){
     state.partyseite.slug = document.getElementById('psSlug')?.value || state.partyseite.slug;
     document.getElementById('psPreviewUrl').textContent = `party.machsleicht.de/${state.partyseite.slug}`;
@@ -2201,6 +2215,9 @@ window.plausible.init=function(){};window.plausible.q=[];
     // die Preview darf kein nicht-existentes Feature versprechen.
     html += '</div>';
     c.innerHTML = html;
+    // Bereits aktive Partyseite (z.B. nach Reload/Resume oder Rueckkehr zu Stage 5): Share-Block + Status wiederherstellen,
+    // sonst stirbt der Share-Moment beim Reload (haeufigster realer Teilen-Zeitpunkt = "spaeter an die Eltern schicken").
+    if(state.partyseite && state.partyseite.active && state.partyseite.url){ try{ showPartyShare(state.partyseite.url, state.partyseite.editUrl); }catch(e){ console.warn('restore share', e); } }
     autoSave();
   }
   async function activatePartyseite(){
@@ -2227,16 +2244,9 @@ window.plausible.init=function(){};window.plausible.q=[];
       const data = await res.json();
       if(!data.url || !data.editUrl) throw new Error('Unvollstaendige Antwort vom Server');
       state.partyseite.active = true; state.partyseite.url = data.url; state.partyseite.editUrl = data.editUrl;
-      if(urlEl) urlEl.innerHTML = '<a href="' + escA(data.url) + '" target="_blank" rel="noopener" style="color:var(--accent,#1E3A5F);font-weight:800">' + esc(data.url) + '</a> · <a href="' + escA(data.editUrl) + '" target="_blank" rel="noopener" style="font-size:12px">Edit-Link — gut aufheben!</a>';
       try{ if(window.plausible) plausible('party_created', {props:{motto: ((motto.id||'').indexOf('custom')===0?'custom':(motto.id||'')), source:'wizard'}}); }catch(e){}
-      // Share-Loop (Host -> Gaeste): den ECHTEN Partyseiten-Link 1-Klick-teilbar machen -> Host seedet die Eltern-Gruppe.
-      try{
-        const dStr = state.date ? (formatDateShort(state.date) + (state.time ? (', ' + state.time + ' Uhr') : '')) : '';
-        const shareMsg = motto.emoji + ' ' + name + ' feiert ' + motto.name + '-Geburtstag!' + (dStr ? ('\n📅 ' + dStr) : '') + '\n\nAlle Infos + bitte kurz zu-/absagen (Allergien & Abholung) direkt hier:\n' + data.url;
-        window.__partyShareUrl = data.url; window.__partyShareText = shareMsg;
-        const waEl = document.getElementById('psShareWa'); if(waEl) waEl.href = 'https://wa.me/?text=' + encodeURIComponent(shareMsg);
-        const sb = document.getElementById('psShareBlock'); if(sb) sb.style.display = '';
-      }catch(e){ console.warn('share-block', e); }
+      // Share-Loop (Host -> Gaeste): Status + 1-Klick-Share aus dem ECHTEN data.url aufbauen — gleiche Funktion wie der Resume-Restore (Single Source).
+      try{ showPartyShare(data.url, data.editUrl); }catch(e){ console.warn('share-block', e); }
       autoSave();
     }catch(err){
       if(urlEl) urlEl.textContent = '';
@@ -2254,7 +2264,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     const done = ()=>{ const b=document.getElementById('psShareCopy'); if(b){ const t=b.textContent; b.textContent='✅ Kopiert!'; setTimeout(()=>{ try{ b.textContent=t; }catch(e){} }, 1600); } try{ if(window.plausible) plausible('party_share_click', {props:{channel:'copy'}}); }catch(e){} };
     try{
       if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(url).then(done).catch(()=>done()); }
-      else { const ta=document.createElement('textarea'); ta.value=url; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); done(); }
+      else { const ta=document.createElement('textarea'); ta.value=url; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); let ok=false; try{ ok=document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); if(ok){ done(); } else { const b=document.getElementById('psShareCopy'); if(b){ const t=b.textContent; b.textContent='Bitte Link manuell kopieren'; setTimeout(()=>{ try{ b.textContent=t; }catch(e){} }, 2000); } } }
     }catch(e){ console.warn('copyPartyUrl', e); }
   }
 
