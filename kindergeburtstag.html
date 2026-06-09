@@ -1466,17 +1466,28 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
 
   // ===== MOTTO PICKER =====
+  // A11y: klickbare Karten (role=button: Motto/Alter) per Tastatur aktivierbar machen (Enter/Space). Delegiert, einmalig.
+  // Native Elemente (button/a/input) handeln sich selbst -> ausgeschlossen, kein Doppel-Trigger.
+  document.addEventListener('keydown', function(e){
+    if(e.key !== 'Enter' && e.key !== ' ' && e.key !== 'Spacebar') return;
+    const el = (e.target && e.target.closest) ? e.target.closest('[role="button"][onclick]') : null;
+    if(!el) return;
+    const tag = el.tagName;
+    if(tag==='BUTTON'||tag==='A'||tag==='INPUT'||tag==='TEXTAREA'||tag==='SELECT') return;
+    e.preventDefault();   // Space-Scroll verhindern
+    el.click();
+  });
   function renderMottos(){
     const grid = document.getElementById('mottosGrid');
     grid.innerHTML = MOTTOS.map(m => `
-      <div class="motto-card" style="--accent:${m.accent};--accent-light:${lighten(m.accent,15)}" onclick="pickMotto('${m.id}')">
+      <div class="motto-card" role="button" tabindex="0" aria-label="Motto ${m.name}" style="--accent:${m.accent};--accent-light:${lighten(m.accent,15)}" onclick="pickMotto('${m.id}')">
         ${m.badge ? `<span class="motto-card__badge" style="background:${m.accent}">${m.badge}</span>` : ''}
         <span class="motto-card__emoji">${m.emoji}</span>
         <div class="motto-card__name">${m.name}</div>
         <span class="motto-card__ages">3–12 Jahre</span>
       </div>
     `).join('') + `
-      <div class="motto-card motto-card--custom" style="--accent:#666" onclick="pickCustomMotto()">
+      <div class="motto-card motto-card--custom" role="button" tabindex="0" aria-label="Eigenes Motto eintragen" style="--accent:#666" onclick="pickCustomMotto()">
         <span class="motto-card__emoji">✏️</span>
         <div class="motto-card__name">Eigenes…</div>
         <span class="motto-card__ages">Selbst eintragen</span>
@@ -1523,7 +1534,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       {key:'9-12', range:'9-12', title:'Grundschulkinder', desc:'Anspruchsvollere Rätsel', features:['Tagesplan 14:00–18:00','9 Spiele zur Auswahl','7 Stationen + Geheimschrift']}
     ];
     grid.innerHTML = ageData.map(a => `
-      <div class="age-card" data-age="${a.key}" onclick="pickAge('${a.key}')">
+      <div class="age-card" data-age="${a.key}" role="button" tabindex="0" aria-label="Altersgruppe ${a.range} Jahre" onclick="pickAge('${a.key}')">
         <div class="age-card__range">${a.range}<small> Jahre</small></div>
         <div class="age-card__title">${a.title}</div>
         <div class="age-card__desc">${a.desc}</div>

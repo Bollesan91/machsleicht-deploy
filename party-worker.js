@@ -292,6 +292,15 @@ export default {
     // POST /api/create
     if (path === "/api/create" && request.method === "POST") {
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
+      // Abuse-Schutz: IP-basiertes Rate-Limit (KV-Counter, 1h-Fenster) gegen Spam-Erstellung -> KV-Muell/Kosten.
+      // Eventual-consistent (KV nicht atomar) -> reicht als Spam-Drossel; bei fehlender IP (lokal/Test) ueberspringen.
+      const _ip = request.headers.get("cf-connecting-ip") || "";
+      if (_ip) {
+        const _rlKey = "rl:create:" + _ip;
+        const _cnt = parseInt(await env.PARTY.get(_rlKey) || "0", 10) || 0;
+        if (_cnt >= 8) return json({error:"Zu viele Partyseiten in kurzer Zeit. Bitte spaeter nochmal."}, 429, request);
+        await env.PARTY.put(_rlKey, String(_cnt + 1), {expirationTtl: 3600});
+      }
       const id = generateId();
       const editToken = generateToken();
       const party = {
