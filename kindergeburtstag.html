@@ -1538,11 +1538,11 @@ window.plausible.init=function(){};window.plausible.q=[];
   function showPlanBtn(){
     const btn = document.getElementById('toPlanBtn'); if(btn) btn.style.display='';
     try{ document.querySelectorAll('#agesGrid .age-card').forEach(c=>{ c.style.outline = (c.dataset.age===state.age) ? '3px solid var(--accent,#1E3A5F)' : ''; }); }catch(e){}
-    // Proaktiver Pflicht-Cue im Moment, in dem der Button erscheint (egal ueber welchen Alters-Pfad): fehlt der Name -> Hinweis zeigen + Fokus.
-    // (Ohne das blieb der nameReqHint toter Code, weil der disabled Button kein onclick/revealPlan feuert.)
+    // Proaktiver Pflicht-Cue: nameReqHint zeigen, sobald der Button erscheint. KEIN Auto-Fokus hier — sonst zieht es den Blick ins
+    // Namefeld, bevor der Nutzer den gerade erschienenen Button registriert (Reveal-Signal), erzeugt einen Fokus-Race mit
+    // pickAge/revealPlan, und auf Mobile verdeckt das Keyboard den CTA. Fokus passiert gezielt nur in revealPlan (Korrektur bei Klick ohne Name).
     if(!state.name || !state.name.trim()){
       const h = document.getElementById('nameReqHint'); if(h) h.style.display='';
-      const nm = document.getElementById('iqName'); if(nm && !nm.value) setTimeout(()=>{try{nm.focus()}catch(e){}}, 300);
     }
   }
   function pickAge(age){
@@ -1555,8 +1555,9 @@ window.plausible.init=function(){};window.plausible.q=[];
     autoSave();
     // Aha-Bypass: NICHT auto-advancen. Erst Eckdaten (v.a. Name) erfassen lassen, damit der Plan personalisiert ist ("Mias …" statt "dein Kind"), dann expliziter Klick.
     showPlanBtn();
+    // Zum Eckdaten-Block scrollen (Name/Datum erfassen), aber NICHT auto-fokussieren: vermeidet Fokus-Race + Mobile-Keyboard,
+    // das den gerade enthuellten "Plan ansehen"-Button verdeckt. Pflichtfeld-Markierung (*) + Hinweis leiten zum Namen.
     const ek = document.getElementById('eckdaten'); if(ek) ek.scrollIntoView({behavior:'smooth', block:'start'});
-    const nm = document.getElementById('iqName'); if(nm && !nm.value) setTimeout(()=>{try{nm.focus()}catch(e){}}, 450);
   }
 
   // Pflicht-Gate: Der personalisierte Plan-Reveal gibt es nur MIT Namen (sonst waere die Belohnung generisch -> Aha entwertet).
