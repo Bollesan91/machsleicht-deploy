@@ -5,9 +5,14 @@
 2. **Site-weiter Rename RSVP→Gästeliste/Zusagen** — `ddc9967` + Funnel/Worker/36 Motto-JSONs. Funnel-Toggle „Gästeliste", Host-Dashboard „👥 Gästeliste", 32 SEO-Landingpages + Homepage-JSON-LD. „RSVP versteht kein Mensch" (Bolle).
 3. **Quality-Lektorat + 4700-Fix + Trust-Modul** — `459991e`. drinnen+spiele-drinnen: Vulgärsprache/Denglisch/Grammatik/Schema-Drift raus (4 Helfer-v3-Runden 76→80→82→alle Blocker gefixt). `schatzsuche.html` „Über 4.700 Geburtstage geplant" (erfunden) → „15 Themen · 3 Altersstufen · druckfertige Schatzkarte — Material hast du meist zuhause". Trust-Modul im Wizard-Eckdaten: „Privat & ohne Konto … erst wenn du eine Partyseite oder Einladung erstellst, verlässt es dein Gerät" (code-verifiziert: localStorage, nur /api/create + Einladungs-Handoff senden).
 
-## ⚠️ OFFEN — kritisch, bei Bolle
-- **🔴 Worker-Cloudflare-Deploy** (Bolle „morgen am Desktop"). `party-worker.js` ist code-only — Netlify deployt ihn NICHT. **Bis dahin Leak-Lücke:** der alte Worker rendert vom neuen Funnel gesendete Adressen ÖFFENTLICH (Risiko von Bolle bewusst akzeptiert). Worker-Deploy schließt auch ICS-XSS-Fix + Gast→Host-CTA + ref-Attribution + rsvp/claim-Rate-Limit. **Tipp: erst Worker, dann ist die Lücke sofort zu.**
-- **🔴 Cloudflare Cache Purge** pflicht nach den Deploys (sonst alte HTML).
+## ✅ NACHGEZOGEN 10.06.2026 früh (am Rechner)
+- **Worker-Deploy ERLEDIGT** via `wrangler deploy` (Version `14964ffc`). Setup: `wrangler.toml` (commit `95d811c`, secret-frei, `keep_vars=true` + KV `PARTY`=`92b9c66fe812421aa9e7a2522ae1b7f1`, Worker-Name `party-machsleicht`, compat `2026-04-07`). **Künftige Worker-Deploys = `CLOUDFLARE_API_TOKEN=... wrangler deploy`** (Einzeiler). CF-Token war „Edit Workers"-scoped, in Chat geteilt → ggf. rotieren/sicher ablegen.
+- **Leak-Lücke ZU + Gating live-verifiziert** (Test-Party end-to-end, danach gelöscht): öffentliche Seite=Platzhalter, Public-GET-JSON=address gestrippt, RSVP „ja"→Adresse geliefert, RSVP „nein"→leer. Route+KV intakt (nichts gebrochen).
+- **Cache-Purge = NICHT nötig** für Content-Deploys: Setup nutzt `max-age=7200, must-revalidate` → Cloudflare revalidiert selbst gegen Origin; neue Inhalte waren schon live (Cf-Cache-Status MISS/EXPIRED, empirisch geprüft). Manueller Purge nur Sonderfall (z.B. GSC-410 am 03.06). Cache-Purge-Permission bewusst NICHT in den Token genommen.
+- **⚠️ `RESEND_API_KEY` liegt als plain_text-Var** (nicht Secret) im Worker — sichtbar in Settings. Auf Secret umstellen + rotieren.
+- **Nit:** workers.dev-Preview-URL (`party-machsleicht.cbollweg.workers.dev`) wurde beim Deploy aktiviert (war evtl. schon an). Optional via `preview_urls = false` + redeploy abschalten.
+
+## ⚠️ OFFEN — bei Bolle
 - **🔴 PAT widerrufen** — `github_pat_11CATQ…` mehrfach im Chat geteilt → verbrannt.
 - **🔴 Tracker/Consent-Entscheidung offen:** `schatzsuche.html` lädt Ahrefs (Pilot 27.05.) **+** Umami **pre-consent** auf einer „Privat"-Funnel-Seite → Helfer-v3: Verstoß gegen eigene „CDN-before-consent"-Disziplin. Bolle's Pilot — Entscheidung: bis Consent zurückhalten oder lassen?
 
