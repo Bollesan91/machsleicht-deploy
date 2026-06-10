@@ -37,10 +37,16 @@ export default async (req) => {
       tel: data.tel
     });
 
-    // Foto: aus Query-Param (neue Links) oder aus altem Slug-Payload
-    const foto = url.searchParams.get("f") || url.searchParams.get("foto") || raw.foto;
-    if (foto) {
-      params.set("foto", foto);
+    // Foto: neue Links nutzen ?fid (kurze ID -> server-seitig im Worker-KV gespeichert).
+    // Aeltere Links/Payloads nutzen base64 direkt (?f / ?foto / raw.foto) -> backward-compat.
+    const fid = url.searchParams.get("fid");
+    if (fid && /^[a-z0-9]{1,16}$/.test(fid)) {
+      params.set("foto", "https://party.machsleicht.de/api/invimg/" + fid);
+    } else {
+      const foto = url.searchParams.get("f") || url.searchParams.get("foto") || raw.foto;
+      if (foto) {
+        params.set("foto", foto);
+      }
     }
 
     const VALID_MOTTOS = ["piraten", "dino", "safari", "weltraum", "detektiv", "superheld", "prinzessin", "einhorn", "meerjungfrau", "feuerwehr"];

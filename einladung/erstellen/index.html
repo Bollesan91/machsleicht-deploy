@@ -334,12 +334,15 @@ function _redraw() {
   ctx.drawImage(_srcCanvas, 0, 0);
   ctx.restore();
 
-  // Export: direkt vom cropCanvas → 80x80
-  var OUT = 120;
+  // Export: gross & scharf (400px, q0.82). Foto wird server-seitig (KV) gespeichert,
+  // nicht mehr in die URL gequetscht -> keine ~6KB-Grenze mehr, Bild bleibt scharf.
+  var OUT = 400;
   var out = document.createElement('canvas');
   out.width = OUT; out.height = OUT;
-  out.getContext('2d').drawImage(cc, 0, 0, CROP_SZ, CROP_SZ, 0, 0, OUT, OUT);
-  fotoBase64 = out.toDataURL('image/jpeg', 0.4).split(',')[1];
+  var octx = out.getContext('2d');
+  octx.imageSmoothingEnabled = true; octx.imageSmoothingQuality = 'high';
+  octx.drawImage(cc, 0, 0, CROP_SZ, CROP_SZ, 0, 0, OUT, OUT);
+  fotoBase64 = out.toDataURL('image/jpeg', 0.82).split(',')[1];
 }
 
 function _clampCrop() {
@@ -482,13 +485,25 @@ async function handleSubmit(e) {
     tel: document.getElementById('tel').value.trim().replace(/[^0-9+]/g, ''),
     motto: selectedMotto
   };
-  if (fotoBase64) data.foto = fotoBase64;
+  // Foto NICHT mehr in die create-invite-URL packen — wird separat server-seitig im Worker-KV gespeichert.
 
   // Telefonnummer normalisieren: 0170... -> 49170...
   if (data.tel.startsWith('0')) data.tel = '49' + data.tel.slice(1);
   if (data.tel.startsWith('+')) data.tel = data.tel.slice(1);
 
   try {
+    // Foto zuerst server-seitig speichern -> kurze ID (statt base64-in-URL, das die ~6KB-URL-Grenze sprengte).
+    let fid = null;
+    if (fotoBase64) {
+      try {
+        const fr = await fetch('https://party.machsleicht.de/api/invphoto', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ photo: fotoBase64 })
+        });
+        if (fr.ok) { const fj = await fr.json(); fid = (fj && fj.id) || null; }
+      } catch(e) { /* Upload fehlgeschlagen -> Einladung ohne Foto, Hinweis unten */ }
+    }
+
     const res = await fetch('/.netlify/functions/create-invite', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -498,12 +513,12 @@ async function handleSubmit(e) {
     if (!res.ok) throw new Error(result.error || 'Fehler');
 
     generatedUrl = window.location.origin + '/e/' + result.slug;
-    // Foto-Link separat (zu lang für WhatsApp-Share)
-    if (result.foto) {
-      generatedFotoUrl = generatedUrl + '?f=' + encodeURIComponent(result.foto);
-    } else if (result.fotoDropped) {
-      // M7: Foto war zu gross und wurde verworfen -> nicht still schlucken, sondern dem Nutzer sagen.
-      try { showToast ? showToast('Das Foto war zu groß und wurde weggelassen — die Einladung wurde ohne Foto erstellt.') : alert('Das Foto war zu groß und wurde weggelassen — die Einladung wurde ohne Foto erstellt.'); } catch(e) {}
+    // Foto-Link separat: kurze ID statt base64 -> kein WhatsApp-/URL-Limit mehr, Foto in jeder Qualitaet.
+    if (fid) {
+      generatedFotoUrl = generatedUrl + '?fid=' + encodeURIComponent(fid);
+    } else if (fotoBase64) {
+      // Foto war da, aber Upload schlug fehl -> nicht still schlucken.
+      try { showToast ? showToast('Das Foto konnte nicht gespeichert werden — die Einladung wurde ohne Foto erstellt.') : alert('Das Foto konnte nicht gespeichert werden — die Einladung wurde ohne Foto erstellt.'); } catch(e) {}
     }
     document.getElementById('resultLink').textContent = generatedUrl;
     // Kern-Conversion tracken (Gutachter-HIGH: Einladung-erstellt war ungetrackt -> Funnel blind)
