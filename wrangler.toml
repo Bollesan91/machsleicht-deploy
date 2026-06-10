@@ -1,0 +1,13 @@
+name = "party-machsleicht"
+main = "party-worker.js"
+compatibility_date = "2026-04-07"
+# keep_vars: behaelt alle im Cloudflare-Dashboard gesetzten Vars + Secrets
+# (AMAZON_TAG, RESEND_API_KEY, RESEND_FROM, RESEND_REPLY_TO, RESEND_AUDIENCE_ID).
+keep_vars = true
+
+[observability]
+enabled = true
+
+[[kv_namespaces]]
+binding = "PARTY"
+id = "92b9c66fe812421aa9e7a2522ae1b7f1"
