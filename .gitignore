@@ -15,3 +15,4 @@ dev-server.bat
 # Claude-Test-Reste
 .claude/cowork-test.txt
 .claude/test-write.txt
+.wrangler/

@@ -51,9 +51,12 @@ export default async (req) => {
 
     const VALID_MOTTOS = ["piraten", "dino", "safari", "weltraum", "detektiv", "superheld", "prinzessin", "einhorn", "meerjungfrau", "feuerwehr"];
     const motto = data.motto && VALID_MOTTOS.includes(data.motto) ? data.motto : "piraten";
-    // Einheitliches URL-Schema: /einladung/<motto>/ fuer alle Mottos (inkl. Piraten).
-    // Piraten-Sonderfall entfaellt seit Migration nach /einladung/piraten/.
-    const basePath = `/einladung/${motto}/`;
+    // SEO-Refactor P6-1: bei migrierten Mottos liegt die Gast-App unter /whatsapp/,
+    // /einladung/<motto>/ ist dort der SEO-Hub. Nicht-migrierte Mottos: App weiter auf /.
+    const MIGRATED = ["piraten"];
+    const basePath = MIGRATED.includes(motto)
+      ? `/einladung/${motto}/whatsapp/`
+      : `/einladung/${motto}/`;
 
     return new Response(null, {
       status: 302,
