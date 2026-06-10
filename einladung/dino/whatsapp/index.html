@@ -356,18 +356,18 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
 const { useState, useEffect, useRef, useCallback } = React;
 const RUNNER_IMG = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTMwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEzMCI+CiAgPCEtLSBTaGFkb3cgLS0+CiAgPGVsbGlwc2UgY3g9IjUwIiBjeT0iMTIyIiByeD0iMjYiIHJ5PSI2IiBmaWxsPSJyZ2JhKDAsMCwwLC4xMikiLz4KICA8IS0tIExlZnQgbGVnIChzaG9ydCwgc3R1YmJ5LCBjdXRlKSAtLT4KICA8cmVjdCB4PSIzMCIgeT0iODgiIHdpZHRoPSIxMyIgaGVpZ2h0PSIxOCIgcng9IjYuNSIgZmlsbD0iIzgxQzc4NCIvPgogIDwhLS0gTGVmdCBmb290IChyb3VuZCBsaXR0bGUgZm9vdCkgLS0+CiAgPGVsbGlwc2UgY3g9IjM0IiBjeT0iMTA4IiByeD0iMTEiIHJ5PSI1IiBmaWxsPSIjODFDNzg0Ii8+CiAgPGNpcmNsZSBjeD0iMjciIGN5PSIxMDciIHI9IjMiIGZpbGw9IiM2NkJCNkEiLz4KICA8Y2lyY2xlIGN4PSIzNCIgY3k9IjExMCIgcj0iMyIgZmlsbD0iIzY2QkI2QSIvPgogIDxjaXJjbGUgY3g9IjQxIiBjeT0iMTA3IiByPSIzIiBmaWxsPSIjNjZCQjZBIi8+CiAgPCEtLSBSaWdodCBsZWcgKHNob3J0LCBzdHViYnksIGN1dGUpIC0tPgogIDxyZWN0IHg9IjU3IiB5PSI4OCIgd2lkdGg9IjEzIiBoZWlnaHQ9IjE4IiByeD0iNi41IiBmaWxsPSIjODFDNzg0Ii8+CiAgPCEtLSBSaWdodCBmb290IChyb3VuZCBsaXR0bGUgZm9vdCkgLS0+CiAgPGVsbGlwc2UgY3g9IjY2IiBjeT0iMTA4IiByeD0iMTEiIHJ5PSI1IiBmaWxsPSIjODFDNzg0Ii8+CiAgPGNpcmNsZSBjeD0iNTkiIGN5PSIxMDciIHI9IjMiIGZpbGw9IiM2NkJCNkEiLz4KICA8Y2lyY2xlIGN4PSI2NiIgY3k9IjExMCIgcj0iMyIgZmlsbD0iIzY2QkI2QSIvPgogIDxjaXJjbGUgY3g9IjczIiBjeT0iMTA3IiByPSIzIiBmaWxsPSIjNjZCQjZBIi8+CiAgPCEtLSBFZ2cgYm9keSAoUk9VTkRFUiAtIGFsbW9zdCBjaXJjdWxhcikgLS0+CiAgPGVsbGlwc2UgY3g9IjUwIiBjeT0iNDgiIHJ4PSIzOCIgcnk9IjQyIiBmaWxsPSIjRkZGOEUxIi8+CiAgPGVsbGlwc2UgY3g9IjUwIiBjeT0iNDgiIHJ4PSIzOCIgcnk9IjQyIiBzdHJva2U9IiNFOEQ1QjgiIHN0cm9rZS13aWR0aD0iMS4yIiBmaWxsPSJub25lIi8+CiAgPCEtLSBFZ2cgaGlnaGxpZ2h0IChzaGlueSkgLS0+CiAgPGVsbGlwc2UgY3g9IjQwIiBjeT0iMzIiIHJ4PSIxMiIgcnk9IjE2IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iLjE1Ii8+CiAgPCEtLSBFZ2cgc3BlY2tsZXMgLS0+CiAgPGNpcmNsZSBjeD0iMzAiIGN5PSIzOCIgcj0iMyIgZmlsbD0iI0U4RDVBMyIgb3BhY2l0eT0iLjI1Ii8+CiAgPGNpcmNsZSBjeD0iNjYiIGN5PSIzMiIgcj0iMi41IiBmaWxsPSIjRThENUEzIiBvcGFjaXR5PSIuMjUiLz4KICA8Y2lyY2xlIGN4PSIzOCIgY3k9IjY4IiByPSIzIiBmaWxsPSIjRThENUEzIiBvcGFjaXR5PSIuMiIvPgogIDxjaXJjbGUgY3g9IjY0IiBjeT0iNjIiIHI9IjIuNSIgZmlsbD0iI0U4RDVBMyIgb3BhY2l0eT0iLjIiLz4KICA8IS0tIEdlbnRsZSBjcmFja3MgKGZld2VyLCBzb2Z0ZXIpIC0tPgogIDxwYXRoIGQ9Ik0zNiAyOCBMNDIgNDAgTDM4IDUwIiBzdHJva2U9IiNDOUE4ODIiIHN0cm9rZS13aWR0aD0iMS41IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8cGF0aCBkPSJNNjAgMjUgTDU1IDM4IEw2MCA0NiIgc3Ryb2tlPSIjQzlBODgyIiBzdHJva2Utd2lkdGg9IjEuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPCEtLSBCSUcgY3V0ZSBleWVzIChzcGFya2x5LCBmcmllbmRseSkgLS0+CiAgPGVsbGlwc2UgY3g9IjM4IiBjeT0iMzQiIHJ4PSIxMCIgcnk9IjkuNSIgZmlsbD0id2hpdGUiLz4KICA8ZWxsaXBzZSBjeD0iMzgiIGN5PSIzNCIgcng9IjEwIiByeT0iOS41IiBzdHJva2U9IiNBMTg4N0YiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0id2hpdGUiLz4KICA8Y2lyY2xlIGN4PSI0MCIgY3k9IjM1IiByPSI1LjUiIGZpbGw9IiMyRTdEMzIiLz4KICA8Y2lyY2xlIGN4PSI0MSIgY3k9IjMzIiByPSIyLjgiIGZpbGw9IndoaXRlIi8+CiAgPGNpcmNsZSBjeD0iMzgiIGN5PSIzNyIgcj0iMS4yIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iLjYiLz4KICA8ZWxsaXBzZSBjeD0iNjAiIGN5PSIzNCIgcng9IjEwIiByeT0iOS41IiBmaWxsPSJ3aGl0ZSIvPgogIDxlbGxpcHNlIGN4PSI2MCIgY3k9IjM0IiByeD0iMTAiIHJ5PSI5LjUiIHN0cm9rZT0iI0ExODg3RiIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJ3aGl0ZSIvPgogIDxjaXJjbGUgY3g9IjU4IiBjeT0iMzUiIHI9IjUuNSIgZmlsbD0iIzJFN0QzMiIvPgogIDxjaXJjbGUgY3g9IjU3IiBjeT0iMzMiIHI9IjIuOCIgZmlsbD0id2hpdGUiLz4KICA8Y2lyY2xlIGN4PSI2MCIgY3k9IjM3IiByPSIxLjIiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuNiIvPgogIDwhLS0gSGFwcHkvc3VycHJpc2VkIGV5ZWJyb3dzIChyYWlzZWQsIGZyaWVuZGx5KSAtLT4KICA8cGF0aCBkPSJNMzAgMjUgUTM0IDIxIDQyIDI0IiBzdHJva2U9IiM4RDZFNjMiIHN0cm9rZS13aWR0aD0iMS44IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8cGF0aCBkPSJNNTYgMjQgUTY0IDIxIDY4IDI1IiBzdHJva2U9IiM4RDZFNjMiIHN0cm9rZS13aWR0aD0iMS44IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8IS0tIExpdHRsZSBzdXJwcmlzZWQgIm8iIG1vdXRoIChjdXRlLCBub3QgcGFuaWNrZWQpIC0tPgogIDxlbGxpcHNlIGN4PSI0OSIgY3k9IjUwIiByeD0iNCIgcnk9IjMuNSIgZmlsbD0iI0ExODg3RiIvPgogIDxlbGxpcHNlIGN4PSI0OSIgY3k9IjQ5LjUiIHJ4PSIyLjUiIHJ5PSIyIiBmaWxsPSIjRUY5QTlBIi8+CiAgPCEtLSBCbHVzaCBjaGVla3MgKGthd2FpaSBzdHlsZSkgLS0+CiAgPGVsbGlwc2UgY3g9IjI2IiBjeT0iNDIiIHJ4PSI2IiByeT0iMy41IiBmaWxsPSIjRjQ4RkIxIiBvcGFjaXR5PSIuMiIvPgogIDxlbGxpcHNlIGN4PSI3MiIgY3k9IjQyIiByeD0iNiIgcnk9IjMuNSIgZmlsbD0iI0Y0OEZCMSIgb3BhY2l0eT0iLjIiLz4KICA8IS0tIFNpbmdsZSB0aW55IHN3ZWF0IGRyb3AgKGp1c3Qgb25lLCBzbWFsbCkgLS0+CiAgPHBhdGggZD0iTTcyIDIyIFE3NCAxOCA3MiAxNCIgc3Ryb2tlPSIjOTBDQUY5IiBzdHJva2Utd2lkdGg9IjEuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGNpcmNsZSBjeD0iNzIiIGN5PSIxMyIgcj0iMS44IiBmaWxsPSIjOTBDQUY5Ii8+Cjwvc3ZnPgo=";
 const ITEMS = [
-  { id: "nest1", x: 18, y: 48, cover: "\u{1F95A}" },
-  { id: "nest2", x: 72, y: 46, cover: "\u{1F95A}" },
-  { id: "nest3", x: 45, y: 56, cover: "\u{1F95A}" },
-  { id: "nest4", x: 82, y: 54, cover: "\u{1F95A}" },
-  { id: "nest5", x: 28, y: 68, cover: "\u{1F95A}" },
-  { id: "nest6", x: 62, y: 72, cover: "\u{1F95A}" },
-  { id: "nest7", x: 10, y: 60, cover: "\u{1F95A}" },
-  { id: "nest8", x: 88, y: 64, cover: "\u{1F95A}" },
-  { id: "nest9", x: 42, y: 84, cover: "\u{1F95A}" }
+  { id: "nest1", x: 18, y: 48, cover: "🥚" },
+  { id: "nest2", x: 72, y: 46, cover: "🌾" },
+  { id: "nest3", x: 45, y: 56, cover: "🌿" },
+  { id: "nest4", x: 82, y: 54, cover: "🥚" },
+  { id: "nest5", x: 28, y: 68, cover: "🦴" },
+  { id: "nest6", x: 62, y: 72, cover: "🌴" },
+  { id: "nest7", x: 10, y: 60, cover: "🥚" },
+  { id: "nest8", x: 88, y: 64, cover: "🍃" },
+  { id: "nest9", x: 42, y: 84, cover: "🥚" }
 ];
 const TAPS_TO_CRACK = 3;
-const CRACK_RESULTS = { 3: "dino1", 5: "dino2", 8: "runaway" };
+const CRACK_RESULTS = { 2: "dino1", 4: "dino2", 6: "runaway" };
 const SKY = [
   // 0 Funde: tropischer Tag
   { sky1: "#64B5F6", sky2: "#4DB6AC", sky3: "#388E3C", ground1: "#8D6E63", ground2: "#795548", sun: "#FFD54F", sunGlow: "rgba(255,200,0,.3)", cloudOp: 0.5 },
@@ -500,6 +500,7 @@ function DinoEier({
     const px = (e.clientX || 0) - r.left;
     const py = (e.clientY || 0) - r.top;
     runnerState.current.caught = true;
+    if (navigator.vibrate) { try { navigator.vibrate([30, 40, 90]); } catch (e) {} }
     if (runnerRaf.current) cancelAnimationFrame(runnerRaf.current);
     setRunner((prev) => ({ ...prev, caught: true }));
     setFound((p) => [...p, "dino3"]);
@@ -615,6 +616,7 @@ function DinoEier({
     setCrackedCount(newCrackedCount);
     setCracked((prev) => /* @__PURE__ */ new Set([...prev, item.id]));
     const result = CRACK_RESULTS[newCrackedCount];
+    if (result && navigator.vibrate) { try { navigator.vibrate(result === "runaway" ? [40, 60, 40] : 60); } catch (e) {} }
     if (result === "dino1") {
       setResults((prev) => ({ ...prev, [item.id]: "dino1" }));
       setFound((prev) => [...prev, "dino1"]);
@@ -905,7 +907,7 @@ function DinoEier({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between"
-  } }, /* @__PURE__ */ React.createElement("span", { style: { color: "#66BB6A", fontSize: 13, fontWeight: 700, textShadow: "0 1px 4px rgba(0,0,0,.5)" } }, runner && !runner.caught ? "\u{1F3C3} Schnapp das Ei!" : crackedCount >= 6 && found.length < 3 ? "\u{1F95A} Eins wackelt verd\xE4chtig..." : "\u{1F95A} " + childName + "s Dino-Expedition"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8 } }, dots)), /* @__PURE__ */ React.createElement("div", { style: {
+  } }, /* @__PURE__ */ React.createElement("span", { style: { color: "#66BB6A", fontSize: 13, fontWeight: 700, textShadow: "0 1px 4px rgba(0,0,0,.5)" } }, runner && !runner.caught ? "\u{1F3C3} Schnapp das Ei!" : crackedCount >= 4 && found.length < 3 ? "\u{1F95A} Eins wackelt verd\xE4chtig..." : "\u{1F95A} " + childName + "s Dino-Expedition"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8 } }, dots)), /* @__PURE__ */ React.createElement("div", { style: {
     position: "absolute",
     top: 52,
     right: 12,
@@ -1106,7 +1108,7 @@ function DinoEier({
         transform: done ? "scale(.7)" : crackLevel === 2 ? "scale(1.05)" : "scale(1)",
         position: "relative",
         animation: done && (result === "dino1" || result === "dino2") ? "babyWalk 2.5s ease-in-out infinite" : "none"
-      } }, done ? result === "dino1" ? "\u{1F995}" : result === "dino2" ? "\u{1F996}" : result === "stone" ? "\u{1FAA8}" : result === "runaway" ? "\u{1F573}\uFE0F" : "\u{1FAA8}" : "\u{1F95A}", crackMarks),
+      } }, done ? result === "dino1" ? "\u{1F995}" : result === "dino2" ? "\u{1F996}" : result === "stone" ? "\u{1FAA8}" : result === "runaway" ? "\u{1F573}\uFE0F" : "\u{1FAA8}" : item.cover, crackMarks),
       tapIndicator
     );
   }), effects.map((fx) => {

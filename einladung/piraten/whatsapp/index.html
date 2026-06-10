@@ -633,6 +633,7 @@ function PiratenInsel({
     const px = (e.clientX || 0) - r.left;
     const py = (e.clientY || 0) - r.top;
     thiefState.current.caught = true;
+    if (navigator.vibrate) { try { navigator.vibrate([30, 40, 90]); } catch (e) {} }
     if (thiefRaf.current) cancelAnimationFrame(thiefRaf.current);
     setThief(prev => ({ ...prev, caught: true }));
     setFound(p => [...p, "treasure"]);
@@ -786,6 +787,7 @@ function PiratenInsel({
     const nextTap = tapCount + 1;
     setTapCount(nextTap);
     const hitType = HIT_CLICKS[nextTap];
+    if (hitType && navigator.vibrate) { try { navigator.vibrate(hitType === "treasure" ? [40, 60, 40] : 60); } catch (e) {} }
     if (hitType !== "treasure") {
       // Normales Reveal — nur bei Nicht-Schatz-Items
       const next = new Set([...revealed, item.id]);
@@ -823,7 +825,7 @@ function PiratenInsel({
     setPressProgress(0);
     setThief(null);
     setChasePhase("idle");
-    if (thiefInterval.current) clearInterval(thiefInterval.current);
+    if (thiefRaf.current) cancelAnimationFrame(thiefRaf.current);
   };
 
   /* ── SKY based on found count ── */

@@ -1,3 +1,25 @@
+# Session-Notiz — 10.06.2026 spätabends (Spiele-Uplift nach Bolles „Template-Spiel"-Stopp — Gutachten 60→70, Go-live-Gate erfüllt)
+
+## 🎮 Game-Design-Gutachten (Fable 5 Hoch, am echten App-Code Piraten vs. Template)
+Bolles Stopp („alle Mottos zeigen nur ein Template-Spiel — Katastrophe") führte zu Code-Forensik: **13 Apps 84–91 % skelett-identisch mit dino** (reine Skins), Piraten 56 % (eigenes Spiel). Gutachten: Piraten 68/100 (inkl. restart()-Crash-Fund!), Template 60/100, Urteil „okay, nicht peinlich — Risiko sind Demo-Hopper auf den Hubs". **Schlimmer: die 5 neuen Mottos waren rohe Klone mit FALSCHEN Assets** — baustelle zeigte 🔥-Cover + 🚒/🏅-Funde + Feuerteufelchen-Sprite (Feuerwehr!), pferde/feen 🌈-Cover + 🦄-Assets (Einhorn!), dschungel 🦁/🐘-Funde (Safari), ritter ⚡-Funde + 🦹-Schurke statt Drache.
+
+## ✅ Uplift umgesetzt (alle 14 + piraten, ~250 Patches via geprüfte Skripte in `.wrangler/uplift*.js`)
+1. **Cover-Varianz:** Render nutzte `item.cover` gar nicht (hardcoded Emoji!) → auf item.cover umgestellt + kuratierte 9er-Sets je Motto (Theme-Objekt dominant + Umgebung). Fixt zugleich die falschen baustelle/pferde-Skins.
+2. **Pacing:** CRACK_RESULTS {3,5,8}→{2,4,6} (erste Belohnung nach 6 statt 9 Taps), Hint-Schwelle ≥6→≥4. **Live durchgespielt:** Fund bei Crack 2 + 4, ALARM-Cinematic bei 6 ✓. (Piraten bleibt bewusst auf {3,5,8} — eigene Long-Press-Dramaturgie.)
+3. **navigator.vibrate** bei Fund/Runaway/Fang (guarded; iOS unterstützt es nicht — bekannt).
+4. **Entklonung komplett:** Funde/HUD-Dots/Intro-Legenden/RSVP-Dots/Header/Won-Screens/FX je Motto korrekt (baustelle 🚜/⛑️/🦡, dschungel 🐸/🐍, feen 🌺/✨/🧚, pferde 🐴/🥕/🐎, ritter ⚔️/🛡️/🐉). Runner-Sprites: feen erbt Prinzessin-Fee-SVG; baustelle/pferde/ritter = Emoji-SVG-Sprites (🦡/🐎/🐉, Canvas-Pixel-Probe ✓).
+5. **Piraten-Bugfix:** restart()-Crash (thiefInterval→cancelAnimationFrame(thiefRaf)).
+6. **Gate-Punkte aus Re-Verdikt:** Cover/Niete-Kollisionen entschärft (dino 🪨→🌾, safari/dschungel empty-Reveal 🌿→💨), Emoji-14-Tofu getauscht (🪺🪻🪸🫧 → 🍃🌻🦀💧 für Alt-Geräte), feen-CTA auf /schatzsuche/feen. Tracking-Props + postMessage in allen 14 verifiziert korrekt.
+
+**Re-Verdikt: Template 60 → 70/100, „SEO-Hubs live nehmen: Ja"** (Traffic=0, jede Woche Warten kostet nur Indexierungszeit). Fast-Follow-Backlog: Event-Sounds (WebAudio, ~3-4h, größter offener Hebel), Hit-Randomisierung, Badge-Rollout, per-Motto-Mechaniken erst nach Umami-Daten.
+
+## ⚠️ Bolle-Punkte vor/nach Deploy
+- **iPhone-Test (5 Min):** Demo baustelle/pferde/ritter auf echtem iOS öffnen — sitzen die Emoji-Sprites (🦡/🐎/🐉) mittig in der Schatten-Ellipse? (Apple-Emoji-Baseline weicht ab; einziger Punkt, den kein Skript prüfen kann.)
+- GitHub-Token: weiterhin **Contents: Read and write** nötig (Push blockiert).
+- og-Images superheld/dschungel/feen fehlen weiterhin (og-home-Fallback).
+
+---
+
 # Session-Notiz — 10.06.2026 abends (P6-1 KOMPLETT: Rollout auf alle 15 Mottos, auf draft — Deploy blockiert an GitHub-Token)
 
 ## 🏁 P6-1/G7 Voll-Rollout: 14 weitere Mottos nach Piraten-Muster (Helfer-v3 final: A 93 / B 91 / C 90 / D 92)

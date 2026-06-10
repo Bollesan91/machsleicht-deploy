@@ -351,18 +351,18 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
 const { useState, useEffect, useRef, useCallback } = React;
 const RUNNER_IMG = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTMwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEzMCI+CiAgPCEtLSBTaGFkb3cgLS0+CiAgPGVsbGlwc2UgY3g9IjUwIiBjeT0iMTI0IiByeD0iMjIiIHJ5PSI1IiBmaWxsPSJyZ2JhKDAsMCwwLC4xMikiLz4KICA8IS0tIFRhaWwgKGN1cmx5LCBiZWhpbmQgYm9keSkgLS0+CiAgPHBhdGggZD0iTTcyIDY1IFE4OCA1MCA4NSAzNSBRODIgMjUgNzUgMzAiIHN0cm9rZT0iIzhENkU2MyIgc3Ryb2tlLXdpZHRoPSI0IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8IS0tIExlZnQgbGVnIC0tPgogIDxyZWN0IHg9IjMyIiB5PSI4OCIgd2lkdGg9IjExIiBoZWlnaHQ9IjIwIiByeD0iNS41IiBmaWxsPSIjQTE4ODdGIi8+CiAgPCEtLSBMZWZ0IGZvb3QgLS0+CiAgPGVsbGlwc2UgY3g9IjM2IiBjeT0iMTEwIiByeD0iOSIgcnk9IjQuNSIgZmlsbD0iIzhENkU2MyIvPgogIDwhLS0gUmlnaHQgbGVnIC0tPgogIDxyZWN0IHg9IjU3IiB5PSI4OCIgd2lkdGg9IjExIiBoZWlnaHQ9IjIwIiByeD0iNS41IiBmaWxsPSIjQTE4ODdGIi8+CiAgPCEtLSBSaWdodCBmb290IC0tPgogIDxlbGxpcHNlIGN4PSI2NCIgY3k9IjExMCIgcng9IjkiIHJ5PSI0LjUiIGZpbGw9IiM4RDZFNjMiLz4KICA8IS0tIEJvZHkgLS0+CiAgPGVsbGlwc2UgY3g9IjUwIiBjeT0iNjgiIHJ4PSIyNCIgcnk9IjI2IiBmaWxsPSIjQTE4ODdGIi8+CiAgPCEtLSBCZWxseSBwYXRjaCAtLT4KICA8ZWxsaXBzZSBjeD0iNTAiIGN5PSI3MiIgcng9IjE2IiByeT0iMTgiIGZpbGw9IiNEN0NDQzgiLz4KICA8IS0tIExlZnQgYXJtIC0tPgogIDxyZWN0IHg9IjIyIiB5PSI1OCIgd2lkdGg9IjkiIGhlaWdodD0iMjIiIHJ4PSI0LjUiIGZpbGw9IiNBMTg4N0YiIHRyYW5zZm9ybT0icm90YXRlKC0xMiAyNiA1OCkiLz4KICA8IS0tIExlZnQgaGFuZCAtLT4KICA8Y2lyY2xlIGN4PSIyNCIgY3k9IjgwIiByPSI1IiBmaWxsPSIjOEQ2RTYzIi8+CiAgPCEtLSBSaWdodCBhcm0gLS0+CiAgPHJlY3QgeD0iNjkiIHk9IjU4IiB3aWR0aD0iOSIgaGVpZ2h0PSIyMiIgcng9IjQuNSIgZmlsbD0iI0ExODg3RiIgdHJhbnNmb3JtPSJyb3RhdGUoMTIgNzQgNTgpIi8+CiAgPCEtLSBSaWdodCBoYW5kIC0tPgogIDxjaXJjbGUgY3g9Ijc2IiBjeT0iODAiIHI9IjUiIGZpbGw9IiM4RDZFNjMiLz4KICA8IS0tIENhbWVyYSBhcm91bmQgbmVjayAtLT4KICA8cmVjdCB4PSIzOCIgeT0iNzYiIHdpZHRoPSIyNCIgaGVpZ2h0PSIxNiIgcng9IjMiIGZpbGw9IiM0NTVBNjQiLz4KICA8cmVjdCB4PSI0MCIgeT0iNzgiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxMiIgcng9IjIiIGZpbGw9IiMzNzQ3NEYiLz4KICA8Y2lyY2xlIGN4PSI1MCIgY3k9Ijg0IiByPSI1IiBmaWxsPSIjMjYzMjM4Ii8+CiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI4NCIgcj0iMyIgZmlsbD0iIzU0NkU3QSIvPgogIDxjaXJjbGUgY3g9IjUxIiBjeT0iODMiIHI9IjEuMiIgZmlsbD0id2hpdGUiIG9wYWNpdHk9Ii41Ii8+CiAgPCEtLSBDYW1lcmEgZmxhc2ggLS0+CiAgPHJlY3QgeD0iNTUiIHk9Ijc0IiB3aWR0aD0iNSIgaGVpZ2h0PSI0IiByeD0iMSIgZmlsbD0iIzc4OTA5QyIvPgogIDwhLS0gQ2FtZXJhIHN0cmFwIC0tPgogIDxwYXRoIGQ9Ik0zOCA4MCBRMzAgNjAgMzYgNDgiIHN0cm9rZT0iIzM3NDc0RiIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIi8+CiAgPHBhdGggZD0iTTYyIDgwIFE3MCA2MCA2NCA0OCIgc3Ryb2tlPSIjMzc0NzRGIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz4KICA8IS0tIEhlYWQgLS0+CiAgPGVsbGlwc2UgY3g9IjUwIiBjeT0iMzYiIHJ4PSIyMiIgcnk9IjIwIiBmaWxsPSIjQTE4ODdGIi8+CiAgPCEtLSBGYWNlIHBhdGNoIC0tPgogIDxlbGxpcHNlIGN4PSI1MCIgY3k9IjQwIiByeD0iMTYiIHJ5PSIxNCIgZmlsbD0iI0Q3Q0NDOCIvPgogIDwhLS0gTGVmdCBlYXIgLS0+CiAgPGNpcmNsZSBjeD0iMjgiIGN5PSIzMCIgcj0iOSIgZmlsbD0iI0ExODg3RiIvPgogIDxjaXJjbGUgY3g9IjI4IiBjeT0iMzAiIHI9IjUuNSIgZmlsbD0iI0Y0OEZCMSIgb3BhY2l0eT0iLjM1Ii8+CiAgPCEtLSBSaWdodCBlYXIgLS0+CiAgPGNpcmNsZSBjeD0iNzIiIGN5PSIzMCIgcj0iOSIgZmlsbD0iI0ExODg3RiIvPgogIDxjaXJjbGUgY3g9IjcyIiBjeT0iMzAiIHI9IjUuNSIgZmlsbD0iI0Y0OEZCMSIgb3BhY2l0eT0iLjM1Ii8+CiAgPCEtLSBCaWcgY3V0ZSBleWVzIC0tPgogIDxlbGxpcHNlIGN4PSI0MCIgY3k9IjM0IiByeD0iOCIgcnk9IjcuNSIgZmlsbD0id2hpdGUiLz4KICA8ZWxsaXBzZSBjeD0iNDAiIGN5PSIzNCIgcng9IjgiIHJ5PSI3LjUiIHN0cm9rZT0iIzZENEM0MSIgc3Ryb2tlLXdpZHRoPSIuOCIgZmlsbD0id2hpdGUiLz4KICA8Y2lyY2xlIGN4PSI0MiIgY3k9IjM1IiByPSI0LjUiIGZpbGw9IiM0RTM0MkUiLz4KICA8Y2lyY2xlIGN4PSI0MyIgY3k9IjMzLjUiIHI9IjIuMiIgZmlsbD0id2hpdGUiLz4KICA8Y2lyY2xlIGN4PSI0MCIgY3k9IjM3IiByPSIxIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iLjUiLz4KICA8ZWxsaXBzZSBjeD0iNjAiIGN5PSIzNCIgcng9IjgiIHJ5PSI3LjUiIGZpbGw9IndoaXRlIi8+CiAgPGVsbGlwc2UgY3g9IjYwIiBjeT0iMzQiIHJ4PSI4IiByeT0iNy41IiBzdHJva2U9IiM2RDRDNDEiIHN0cm9rZS13aWR0aD0iLjgiIGZpbGw9IndoaXRlIi8+CiAgPGNpcmNsZSBjeD0iNTgiIGN5PSIzNSIgcj0iNC41IiBmaWxsPSIjNEUzNDJFIi8+CiAgPGNpcmNsZSBjeD0iNTciIGN5PSIzMy41IiByPSIyLjIiIGZpbGw9IndoaXRlIi8+CiAgPGNpcmNsZSBjeD0iNjAiIGN5PSIzNyIgcj0iMSIgZmlsbD0id2hpdGUiIG9wYWNpdHk9Ii41Ii8+CiAgPCEtLSBDaGVla3kgcmFpc2VkIGV5ZWJyb3dzIC0tPgogIDxwYXRoIGQ9Ik0zMyAyNyBRMzcgMjMgNDUgMjYiIHN0cm9rZT0iIzZENEM0MSIgc3Ryb2tlLXdpZHRoPSIxLjUiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxwYXRoIGQ9Ik01NSAyNiBRNjMgMjMgNjcgMjciIHN0cm9rZT0iIzZENEM0MSIgc3Ryb2tlLXdpZHRoPSIxLjUiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDwhLS0gQmlnIGNoZWVreSBncmluIC0tPgogIDxwYXRoIGQ9Ik00MCA0NCBRNTAgNTIgNjAgNDQiIHN0cm9rZT0iIzZENEM0MSIgc3Ryb2tlLXdpZHRoPSIxLjgiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDwhLS0gTm9zZSAtLT4KICA8ZWxsaXBzZSBjeD0iNTAiIGN5PSI0MCIgcng9IjMiIHJ5PSIyIiBmaWxsPSIjOEQ2RTYzIi8+CiAgPCEtLSBCbHVzaCBjaGVla3MgLS0+CiAgPGVsbGlwc2UgY3g9IjMyIiBjeT0iNDAiIHJ4PSI0LjUiIHJ5PSIyLjUiIGZpbGw9IiNGNDhGQjEiIG9wYWNpdHk9Ii4xOCIvPgogIDxlbGxpcHNlIGN4PSI2OCIgY3k9IjQwIiByeD0iNC41IiByeT0iMi41IiBmaWxsPSIjRjQ4RkIxIiBvcGFjaXR5PSIuMTgiLz4KPC9zdmc+Cg==";
 const ITEMS = [
-  { id: "bush1", x: 15, y: 50, cover: "\u{1F33F}" },
-  { id: "bush2", x: 75, y: 48, cover: "\u{1F33F}" },
-  { id: "bush3", x: 42, y: 58, cover: "\u{1F33F}" },
-  { id: "bush4", x: 85, y: 56, cover: "\u{1F33F}" },
-  { id: "bush5", x: 25, y: 70, cover: "\u{1F33F}" },
-  { id: "bush6", x: 60, y: 74, cover: "\u{1F33F}" },
-  { id: "bush7", x: 8, y: 62, cover: "\u{1F33F}" },
-  { id: "bush8", x: 90, y: 66, cover: "\u{1F33F}" },
-  { id: "bush9", x: 48, y: 86, cover: "\u{1F33F}" }
+  { id: "bush1", x: 15, y: 50, cover: "🌿" },
+  { id: "bush2", x: 75, y: 48, cover: "🪨" },
+  { id: "bush3", x: 42, y: 58, cover: "🌳" },
+  { id: "bush4", x: 85, y: 56, cover: "🌿" },
+  { id: "bush5", x: 25, y: 70, cover: "🌾" },
+  { id: "bush6", x: 60, y: 74, cover: "🐾" },
+  { id: "bush7", x: 8, y: 62, cover: "🌿" },
+  { id: "bush8", x: 90, y: 66, cover: "🪵" },
+  { id: "bush9", x: 48, y: 86, cover: "🌴" }
 ];
 const TAPS_TO_CRACK = 3;
-const CRACK_RESULTS = { 3: "animal1", 5: "animal2", 8: "runaway" };
+const CRACK_RESULTS = { 2: "animal1", 4: "animal2", 6: "runaway" };
 const SKY = [
   // 0 Funde: Savanne Morgen
   { sky1: "#87CEEB", sky2: "#F0E68C", sky3: "#C8A96E", ground1: "#C8A96E", ground2: "#B8956A", sun: "#FFD54F", sunGlow: "rgba(255,200,0,.3)", cloudOp: 0.4 },
@@ -495,6 +495,7 @@ function SafariFoto({
     const px = (e.clientX || 0) - r.left;
     const py = (e.clientY || 0) - r.top;
     runnerState.current.caught = true;
+    if (navigator.vibrate) { try { navigator.vibrate([30, 40, 90]); } catch (e) {} }
     if (runnerRaf.current) cancelAnimationFrame(runnerRaf.current);
     setRunner((prev) => ({ ...prev, caught: true }));
     setFound((p) => [...p, "animal3"]);
@@ -610,6 +611,7 @@ function SafariFoto({
     setSearchedCount(newSearchedCount);
     setSearched((prev) => /* @__PURE__ */ new Set([...prev, item.id]));
     const result = CRACK_RESULTS[newSearchedCount];
+    if (result && navigator.vibrate) { try { navigator.vibrate(result === "runaway" ? [40, 60, 40] : 60); } catch (e) {} }
     if (result === "animal1") {
       setResults((prev) => ({ ...prev, [item.id]: "animal1" }));
       setFound((prev) => [...prev, "animal1"]);
@@ -883,7 +885,7 @@ function SafariFoto({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between"
-  } }, /* @__PURE__ */ React.createElement("span", { style: { color: "#FFB74D", fontSize: 13, fontWeight: 700, textShadow: "0 1px 4px rgba(0,0,0,.5)" } }, runner && !runner.caught ? "\u{1F3C3} Fang den Affen!" : searchedCount >= 6 && found.length < 3 ? "\u{1F33F} Ein Busch raschelt verd\xE4chtig..." : "\u{1F4F7} " + childName + "s Foto-Safari"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8 } }, dots)), /* @__PURE__ */ React.createElement("div", { style: {
+  } }, /* @__PURE__ */ React.createElement("span", { style: { color: "#FFB74D", fontSize: 13, fontWeight: 700, textShadow: "0 1px 4px rgba(0,0,0,.5)" } }, runner && !runner.caught ? "\u{1F3C3} Fang den Affen!" : searchedCount >= 4 && found.length < 3 ? "\u{1F33F} Ein Busch raschelt verd\xE4chtig..." : "\u{1F4F7} " + childName + "s Foto-Safari"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8 } }, dots)), /* @__PURE__ */ React.createElement("div", { style: {
     position: "absolute",
     top: 52,
     right: 12,
@@ -1041,7 +1043,7 @@ function SafariFoto({
         transform: done ? "scale(.7)" : rustleLevel === 2 ? "scale(1.1)" : "scale(1)",
         position: "relative",
         animation: done && (result === "animal1" || result === "animal2") ? "animalIdle 2.5s ease-in-out infinite" : "none"
-      } }, done ? result === "animal1" ? "\u{1F981}" : result === "animal2" ? "\u{1F418}" : result === "empty" ? "\u{1F33F}" : result === "runaway" ? "\u{1F573}\uFE0F" : "\u{1F33F}" : "\u{1F33F}"),
+      } }, done ? result === "animal1" ? "\u{1F981}" : result === "animal2" ? "\u{1F418}" : result === "empty" ? "💨" : result === "runaway" ? "\u{1F573}\uFE0F" : "\u{1F33F}" : item.cover),
       tapIndicator
     );
   }), effects.map((fx) => {
