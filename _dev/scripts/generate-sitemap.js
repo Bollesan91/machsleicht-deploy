@@ -53,7 +53,8 @@ function findHtmlFiles(dir, base = '') {
       if (IGNORE_DIRS.includes(entry.name) || entry.name.startsWith('.')) continue;
       results.push(...findHtmlFiles(fullPath, relPath));
     } else if (entry.name.endsWith('.html') && !IGNORE_FILES.includes(entry.name)) {
-      results.push(relPath);
+      // Windows-Fix: path.join liefert Backslashes -> URLs brauchen Forward-Slashes
+      results.push(relPath.split(path.sep).join('/'));
     }
   }
   return results;
@@ -92,9 +93,10 @@ function fileToUrl(filePath, redirects) {
   // Fallback: .html entfernen
   let url = '/' + filePath.replace(/\.html$/, '');
 
-  // index.html → Ordner-URL
+  // index.html → Ordner-URL mit Trailing-Slash (konsistent mit Canonicals, s. GSC-Fix 08.06.2026)
   if (url.endsWith('/index')) {
-    url = url.replace(/\/index$/, '') || '/';
+    url = url.replace(/\/index$/, '/');
+    if (url === '/') return '/';
   }
 
   // homepage.html → überspringen (Duplikat von index)
