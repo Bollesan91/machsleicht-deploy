@@ -10,7 +10,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="robots" content="noindex">
 <title>Einladung erstellen | machsleicht.de</title>
-<meta name="description" content="Erstelle eine individuelle Einladung f&uuml;r den Kindergeburtstag — 10 Mottos von Piraten bis Einhorn. Kostenlos, direkt im Browser, per WhatsApp verschicken.">
+<meta name="description" content="Erstelle eine individuelle Einladung f&uuml;r den Kindergeburtstag — 15 Mottos von Piraten bis Ritter. Kostenlos, direkt im Browser, per WhatsApp verschicken.">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -201,6 +201,11 @@ window.plausible.init=function(){};window.plausible.q=[];
         <button type="button" class="motto-btn" data-motto="einhorn" onclick="selectMotto(this)"><span class="motto-emoji">🦄</span>Einhorn</button>
         <button type="button" class="motto-btn" data-motto="meerjungfrau" onclick="selectMotto(this)"><span class="motto-emoji">🧜‍♀️</span>Meerjungfrau</button>
         <button type="button" class="motto-btn" data-motto="feuerwehr" onclick="selectMotto(this)"><span class="motto-emoji">🚒</span>Feuerwehr</button>
+        <button type="button" class="motto-btn" data-motto="baustelle" onclick="selectMotto(this)"><span class="motto-emoji">🚧</span>Baustelle</button>
+        <button type="button" class="motto-btn" data-motto="dschungel" onclick="selectMotto(this)"><span class="motto-emoji">🌴</span>Dschungel</button>
+        <button type="button" class="motto-btn" data-motto="feen" onclick="selectMotto(this)"><span class="motto-emoji">🧚</span>Feen</button>
+        <button type="button" class="motto-btn" data-motto="pferde" onclick="selectMotto(this)"><span class="motto-emoji">🐴</span>Pferde</button>
+        <button type="button" class="motto-btn" data-motto="ritter" onclick="selectMotto(this)"><span class="motto-emoji">⚔️</span>Ritter</button>
       </div>
     </div>
     <div class="field">
@@ -399,7 +404,12 @@ const MOTTO_CONFIG = {
   prinzessin:   { emoji: '\u{1F451}',                     label: 'Prinzessin',   color: '#F48FB1' },
   einhorn:      { emoji: '\u{1F984}',                     label: 'Einhorn',      color: '#E1BEE7' },
   meerjungfrau: { emoji: '\u{1F9DC}\u200D\u2640\uFE0F',  label: 'Meerjungfrau', color: '#4DD0E1' },
-  feuerwehr:    { emoji: '\u{1F692}',                     label: 'Feuerwehr',    color: '#FF7043' }
+  feuerwehr:    { emoji: '\u{1F692}',                     label: 'Feuerwehr',    color: '#FF7043' },
+  baustelle:    { emoji: '\u{1F6A7}',                     label: 'Baustelle',    color: '#FFB300' },
+  dschungel:    { emoji: '\u{1F334}',                     label: 'Dschungel',    color: '#81C784' },
+  feen:         { emoji: '\u{1F9DA}',                     label: 'Feen',         color: '#F8BBD0' },
+  pferde:       { emoji: '\u{1F434}',                     label: 'Pferde',       color: '#A1887F' },
+  ritter:       { emoji: '\u2694\uFE0F',                  label: 'Ritter',       color: '#90A4AE' }
 };
 
 // URL-Parameter auslesen: ?motto=dino → Dino vorauswählen
@@ -407,7 +417,7 @@ const MOTTO_CONFIG = {
 // P1-28: ?source=cockpit zeigt "Aus deinem Plan"-Banner
 (function initFromParams() {
   const params = new URLSearchParams(window.location.search);
-  const m = params.get('motto');
+  const m = params.get('motto') || params.get('thema'); // Hub-Pages linken historisch mit ?thema=, Age-Pages mit ?motto=
   const source = params.get('source');
   if (source === 'cockpit') {
     const banner = document.createElement('div');

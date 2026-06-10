@@ -1,3 +1,29 @@
+# Session-Notiz — 10.06.2026 abends (P6-1 KOMPLETT: Rollout auf alle 15 Mottos, auf draft — Deploy blockiert an GitHub-Token)
+
+## 🏁 P6-1/G7 Voll-Rollout: 14 weitere Mottos nach Piraten-Muster (Helfer-v3 final: A 93 / B 91 / C 90 / D 92)
+
+**Bolle-Ansage: „wir haben 15 mottos — mach weiter."** Umgesetzt in 4 Wellen (A: dino/einhorn/safari, B: feuerwehr/detektiv/superheld, C: prinzessin/meerjungfrau/weltraum, D: baustelle/dschungel/feen/pferde/ritter):
+
+1. **Generator gebaut:** `_dev/scripts/einladung-hub-gen/generate.js` + kuratierte Daten-Files `wave-a..d.js` (Template = Piraten-Pilot; FAQ wird aus EINEM Array sichtbar + als JSON-LD gerendert → Drift konstruktiv unmöglich). Spiel-Beschreibungen je Motto gegen App-Strings extrahiert + verifiziert (alle 14 Foto-Pointen per Grep bestätigt: `fotoUrl ? childName + " hat das X geklaut!"`).
+2. **Alle 14 Apps → `/whatsapp/`** (git mv, noindex), SEO-Hub + `vorlagen/`-Seite je Motto generiert. Sitemap: +28 URLs (15 Hubs + 15 Vorlagen + Top-Hub = 31 einladung-URLs).
+3. **Creator + Functions 10→15:** `erstellen` (5 neue Motto-Buttons + MOTTO_CONFIG), `create-invite.mjs` + `serve-invite.mjs` VALID_MOTTOS auf 15; serve-invite leitet ALLE Mottos auf `/whatsapp/` (MIGRATED-Liste entfällt). **braucht Netlify-Deploy (functions), KEIN Worker-Deploy.**
+4. **Top-Hub `/einladung/`:** 15 Karten, alle „10 Mottos"-Claims → 15 (Title/Desc/OG/JSON-LD/hasPart/Lead), Smartphone→Handy.
+5. **Pre-existing Funnel-Bug gefixt:** ~30 Motto-Hub-CTAs übergeben `?thema=`, erstellen las nur `?motto=` → Preselect lief leer. Jetzt `motto || thema` (verifiziert: ?thema=pferde → Pferde-Preselect).
+6. **Sitemap-Generator Windows-Bug gefixt** (`29e97ef`): Backslash-URLs + Trailing-Slash für Ordner-URLs. ABER: Generator stempelt lastmod=heute auf alles + sortiert um → für Deploys weiterhin kuratierte Sitemap, Generator-lastmod-Design = Backlog-Punkt.
+
+**Helfer-v3 (frischer Tab, Fable 5 Hoch — neue Bolle-Ansage 10.06.):** W1: A 74 / B 79 / C 76 / D 73 (Hauptbefund: 7/14 Gereimt-Vorlagen mit Reim-/Grammatikfehlern; „Schatzsuche"-Erwähnung bei pferde/ritter ohne Tool-Seite; 1 False-Positive einhorn-Zauberstab gegen App-Code widerlegt). Fix-W2 (61 Edits) → A 93 / C 90, B 80 / D 82 (3 von Fixes neu erzeugte Fehler gefunden). Fix-W3 (11 Edits) → **final A 93 / B 91 / C 90 / D 92, „den Rest kann man shippen"**. SYS-Klärungen dokumentiert: {Abholzeit}/{Name der Eltern}/{Kind-Name} sind bewusst freie Platzhalter (kein Parser existiert); „2 Minuten"-Claim = etablierter Site-Claim; Liftoff = wörtlicher App-RSVP-Text.
+
+**Offen/Nits:** og-Images fehlen für superheld/dschungel/feen (og-home-Fallback, Asset-Task Bolle). Worker-`gameUrl` kann jetzt direkt auf `/whatsapp/` (spart Redirect-Hop, braucht wrangler-Deploy — separater Schritt). Generator-lastmod-Design.
+
+## 📋 Nach Deploy PFLICHT (sitemap.xml stark geändert!)
+- **GSC: Sitemap re-submit + Indexierung für die neuen Hub-/Vorlagen-URLs anfragen** (max 10/Tag — priorisiere piraten/dino/einhorn/feuerwehr/ritter).
+- Funnel-Smoke: Test-Einladung mit neuem Motto (z. B. ritter) erstellen, /e/-Link öffnen → muss auf `/whatsapp/` landen.
+
+## 🔴 Deploy-Blocker (Stand Session-Ende)
+GitHub-Push 403: Browser-OAuth lief erst als falscher Account „Bollesan", nach Switch als Bollesan91 → Token hat nur **Read**. Bolle muss am PAT **Contents: Read and write** für `machsleicht-deploy` setzen, dann push draft + merge main.
+
+---
+
 # Session-Notiz — 10.06.2026 nachmittags (P6-1 Einladungs-SEO-Refactor: Pilot Piraten, auf draft — NICHT deployed)
 
 ## 🏗️ P6-1/G7 Pilot Piraten umgesetzt (Helfer-v3: Hub 95/100, Vorlagen 96/100, keine Blocker)
