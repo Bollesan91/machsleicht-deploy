@@ -527,6 +527,11 @@ export default {
       if (!photo || photo.length > MAX_PHOTO_BYTES) return json({error:"Foto fehlt oder zu gross"},400,request);
       // Nur reines base64 (kein data:-Prefix, keine Steuerzeichen) -> kein Payload-Injection beim Image-Serve.
       if (!/^[A-Za-z0-9+/]+={0,2}$/.test(photo)) return json({error:"Ungueltiges Bildformat"},400,request);
+      // Nur echte JPEGs: base64 von FF D8 FF (JPEG-SOI) beginnt immer mit "/9j/". Verhindert,
+      // dass der offene Endpoint als Hoster fuer beliebige Dateitypen unter unserer Domain missbraucht wird.
+      if (!photo.startsWith("/9j/")) return json({error:"Nur JPEG erlaubt"},400,request);
+      // base64 muss dekodierbar sein (len % 4 != 1), sonst wirft atob beim Serve -> 500.
+      if (photo.replace(/=+$/,"").length % 4 === 1) return json({error:"Ungueltiges Bildformat"},400,request);
       const id = generateId(10);
       await env.PARTY.put(`invphoto:${id}`, photo, {expirationTtl: 7776000}); // 90 Tage (wie Party-TTL-Maximum)
       return json({id}, 200, request);
@@ -537,9 +542,12 @@ export default {
       const id = path.split("/")[3];
       const b64 = await env.PARTY.get(`invphoto:${id}`);
       if (!b64) return new Response("Not found", {status:404});
-      const bytes = Uint8Array.from(atob(b64), c => c.charCodeAt(0));
+      let bytes;
+      try { bytes = Uint8Array.from(atob(b64), c => c.charCodeAt(0)); }
+      catch(e) { return new Response("Not found", {status:404}); } // korruptes/altes KV-Item -> kein 500
       return new Response(bytes, {status:200, headers:{
         "Content-Type": "image/jpeg",
+        "X-Content-Type-Options": "nosniff", // kein MIME-Sniffing -> Bytes werden nie als HTML/Script interpretiert
         "Cache-Control": "public, max-age=31536000, immutable",
         "Access-Control-Allow-Origin": "*"
       }});
