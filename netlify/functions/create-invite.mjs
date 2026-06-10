@@ -10,7 +10,7 @@ export default async (req) => {
       return new Response(JSON.stringify({ error: "Alle Felder ausfuellen" }), { status: 400, headers: { "Content-Type": "application/json" } });
     }
 
-    const VALID_MOTTOS = ["piraten", "dino", "safari", "weltraum", "detektiv", "superheld", "prinzessin", "einhorn", "meerjungfrau", "feuerwehr"];
+    const VALID_MOTTOS = ["piraten", "dino", "safari", "weltraum", "detektiv", "superheld", "prinzessin", "einhorn", "meerjungfrau", "feuerwehr", "baustelle", "dschungel", "feen", "pferde", "ritter"];
     const safeMotto = VALID_MOTTOS.includes(motto) ? motto : "piraten";
 
     // M7: Laengen begrenzen — sonst sprengt die base64-URL die WhatsApp-/Browser-Limits (~2000 Z.) und der Link bricht still.

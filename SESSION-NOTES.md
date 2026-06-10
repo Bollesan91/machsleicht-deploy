@@ -1,3 +1,84 @@
+# Session-Notiz — 10.06.2026 spätabends (Spiele-Uplift nach Bolles „Template-Spiel"-Stopp — Gutachten 60→70, Go-live-Gate erfüllt)
+
+## 🎮 Game-Design-Gutachten (Fable 5 Hoch, am echten App-Code Piraten vs. Template)
+Bolles Stopp („alle Mottos zeigen nur ein Template-Spiel — Katastrophe") führte zu Code-Forensik: **13 Apps 84–91 % skelett-identisch mit dino** (reine Skins), Piraten 56 % (eigenes Spiel). Gutachten: Piraten 68/100 (inkl. restart()-Crash-Fund!), Template 60/100, Urteil „okay, nicht peinlich — Risiko sind Demo-Hopper auf den Hubs". **Schlimmer: die 5 neuen Mottos waren rohe Klone mit FALSCHEN Assets** — baustelle zeigte 🔥-Cover + 🚒/🏅-Funde + Feuerteufelchen-Sprite (Feuerwehr!), pferde/feen 🌈-Cover + 🦄-Assets (Einhorn!), dschungel 🦁/🐘-Funde (Safari), ritter ⚡-Funde + 🦹-Schurke statt Drache.
+
+## ✅ Uplift umgesetzt (alle 14 + piraten, ~250 Patches via geprüfte Skripte in `.wrangler/uplift*.js`)
+1. **Cover-Varianz:** Render nutzte `item.cover` gar nicht (hardcoded Emoji!) → auf item.cover umgestellt + kuratierte 9er-Sets je Motto (Theme-Objekt dominant + Umgebung). Fixt zugleich die falschen baustelle/pferde-Skins.
+2. **Pacing:** CRACK_RESULTS {3,5,8}→{2,4,6} (erste Belohnung nach 6 statt 9 Taps), Hint-Schwelle ≥6→≥4. **Live durchgespielt:** Fund bei Crack 2 + 4, ALARM-Cinematic bei 6 ✓. (Piraten bleibt bewusst auf {3,5,8} — eigene Long-Press-Dramaturgie.)
+3. **navigator.vibrate** bei Fund/Runaway/Fang (guarded; iOS unterstützt es nicht — bekannt).
+4. **Entklonung komplett:** Funde/HUD-Dots/Intro-Legenden/RSVP-Dots/Header/Won-Screens/FX je Motto korrekt (baustelle 🚜/⛑️/🦡, dschungel 🐸/🐍, feen 🌺/✨/🧚, pferde 🐴/🥕/🐎, ritter ⚔️/🛡️/🐉). Runner-Sprites: feen erbt Prinzessin-Fee-SVG; baustelle/pferde/ritter = Emoji-SVG-Sprites (🦡/🐎/🐉, Canvas-Pixel-Probe ✓).
+5. **Piraten-Bugfix:** restart()-Crash (thiefInterval→cancelAnimationFrame(thiefRaf)).
+6. **Gate-Punkte aus Re-Verdikt:** Cover/Niete-Kollisionen entschärft (dino 🪨→🌾, safari/dschungel empty-Reveal 🌿→💨), Emoji-14-Tofu getauscht (🪺🪻🪸🫧 → 🍃🌻🦀💧 für Alt-Geräte), feen-CTA auf /schatzsuche/feen. Tracking-Props + postMessage in allen 14 verifiziert korrekt.
+
+**Re-Verdikt: Template 60 → 70/100, „SEO-Hubs live nehmen: Ja"** (Traffic=0, jede Woche Warten kostet nur Indexierungszeit). Fast-Follow-Backlog: Event-Sounds (WebAudio, ~3-4h, größter offener Hebel), Hit-Randomisierung, Badge-Rollout, per-Motto-Mechaniken erst nach Umami-Daten.
+
+## ⚠️ Bolle-Punkte vor/nach Deploy
+- **iPhone-Test (5 Min):** Demo baustelle/pferde/ritter auf echtem iOS öffnen — sitzen die Emoji-Sprites (🦡/🐎/🐉) mittig in der Schatten-Ellipse? (Apple-Emoji-Baseline weicht ab; einziger Punkt, den kein Skript prüfen kann.)
+- GitHub-Token: weiterhin **Contents: Read and write** nötig (Push blockiert).
+- og-Images superheld/dschungel/feen fehlen weiterhin (og-home-Fallback).
+
+---
+
+# Session-Notiz — 10.06.2026 abends (P6-1 KOMPLETT: Rollout auf alle 15 Mottos, auf draft — Deploy blockiert an GitHub-Token)
+
+## 🏁 P6-1/G7 Voll-Rollout: 14 weitere Mottos nach Piraten-Muster (Helfer-v3 final: A 93 / B 91 / C 90 / D 92)
+
+**Bolle-Ansage: „wir haben 15 mottos — mach weiter."** Umgesetzt in 4 Wellen (A: dino/einhorn/safari, B: feuerwehr/detektiv/superheld, C: prinzessin/meerjungfrau/weltraum, D: baustelle/dschungel/feen/pferde/ritter):
+
+1. **Generator gebaut:** `_dev/scripts/einladung-hub-gen/generate.js` + kuratierte Daten-Files `wave-a..d.js` (Template = Piraten-Pilot; FAQ wird aus EINEM Array sichtbar + als JSON-LD gerendert → Drift konstruktiv unmöglich). Spiel-Beschreibungen je Motto gegen App-Strings extrahiert + verifiziert (alle 14 Foto-Pointen per Grep bestätigt: `fotoUrl ? childName + " hat das X geklaut!"`).
+2. **Alle 14 Apps → `/whatsapp/`** (git mv, noindex), SEO-Hub + `vorlagen/`-Seite je Motto generiert. Sitemap: +28 URLs (15 Hubs + 15 Vorlagen + Top-Hub = 31 einladung-URLs).
+3. **Creator + Functions 10→15:** `erstellen` (5 neue Motto-Buttons + MOTTO_CONFIG), `create-invite.mjs` + `serve-invite.mjs` VALID_MOTTOS auf 15; serve-invite leitet ALLE Mottos auf `/whatsapp/` (MIGRATED-Liste entfällt). **braucht Netlify-Deploy (functions), KEIN Worker-Deploy.**
+4. **Top-Hub `/einladung/`:** 15 Karten, alle „10 Mottos"-Claims → 15 (Title/Desc/OG/JSON-LD/hasPart/Lead), Smartphone→Handy.
+5. **Pre-existing Funnel-Bug gefixt:** ~30 Motto-Hub-CTAs übergeben `?thema=`, erstellen las nur `?motto=` → Preselect lief leer. Jetzt `motto || thema` (verifiziert: ?thema=pferde → Pferde-Preselect).
+6. **Sitemap-Generator Windows-Bug gefixt** (`29e97ef`): Backslash-URLs + Trailing-Slash für Ordner-URLs. ABER: Generator stempelt lastmod=heute auf alles + sortiert um → für Deploys weiterhin kuratierte Sitemap, Generator-lastmod-Design = Backlog-Punkt.
+
+**Helfer-v3 (frischer Tab, Fable 5 Hoch — neue Bolle-Ansage 10.06.):** W1: A 74 / B 79 / C 76 / D 73 (Hauptbefund: 7/14 Gereimt-Vorlagen mit Reim-/Grammatikfehlern; „Schatzsuche"-Erwähnung bei pferde/ritter ohne Tool-Seite; 1 False-Positive einhorn-Zauberstab gegen App-Code widerlegt). Fix-W2 (61 Edits) → A 93 / C 90, B 80 / D 82 (3 von Fixes neu erzeugte Fehler gefunden). Fix-W3 (11 Edits) → **final A 93 / B 91 / C 90 / D 92, „den Rest kann man shippen"**. SYS-Klärungen dokumentiert: {Abholzeit}/{Name der Eltern}/{Kind-Name} sind bewusst freie Platzhalter (kein Parser existiert); „2 Minuten"-Claim = etablierter Site-Claim; Liftoff = wörtlicher App-RSVP-Text.
+
+**Offen/Nits:** og-Images fehlen für superheld/dschungel/feen (og-home-Fallback, Asset-Task Bolle). Worker-`gameUrl` kann jetzt direkt auf `/whatsapp/` (spart Redirect-Hop, braucht wrangler-Deploy — separater Schritt). Generator-lastmod-Design.
+
+## 📋 Nach Deploy PFLICHT (sitemap.xml stark geändert!)
+- **GSC: Sitemap re-submit + Indexierung für die neuen Hub-/Vorlagen-URLs anfragen** (max 10/Tag — priorisiere piraten/dino/einhorn/feuerwehr/ritter).
+- Funnel-Smoke: Test-Einladung mit neuem Motto (z. B. ritter) erstellen, /e/-Link öffnen → muss auf `/whatsapp/` landen.
+
+## 🔴 Deploy-Blocker (Stand Session-Ende)
+GitHub-Push 403: Browser-OAuth lief erst als falscher Account „Bollesan", nach Switch als Bollesan91 → Token hat nur **Read**. Bolle muss am PAT **Contents: Read and write** für `machsleicht-deploy` setzen, dann push draft + merge main.
+
+---
+
+# Session-Notiz — 10.06.2026 nachmittags (P6-1 Einladungs-SEO-Refactor: Pilot Piraten, auf draft — NICHT deployed)
+
+## 🏗️ P6-1/G7 Pilot Piraten umgesetzt (Helfer-v3: Hub 95/100, Vorlagen 96/100, keine Blocker)
+
+**Architektur-Umbau gemäß G7-Spec (Bolle 08.06.):**
+1. **Stop-the-bleeding site-weit:** Alle 16 `/einladung/<motto>/`-App-Shells + `/einladung/erstellen/` auf `noindex` (Canonical raus — Konflikt-Signal bei noindex). Sitemap: 10 App-URLs + erstellen entfernt. `/einladung/` + `/einladung/piraten/` (+ neu `vorlagen/`) bleiben drin, lastmod 2026-06-10.
+2. **Gast-App umgezogen:** `einladung/piraten/index.html` → `einladung/piraten/whatsapp/` (git mv, noindex). `serve-invite.mjs`: `MIGRATED=["piraten"]` → /e/-Kurzlinks landen auf `/whatsapp/`; nicht-migrierte Mottos unverändert.
+3. **Neuer SEO-Hub `/einladung/piraten/`** (index,follow): Hero + Demo-CTA, So-funktioniert's, Spiel-Beschreibung (faktentreu gegen Code verifiziert), Vorlagen-Teaser, Privat-Block (90-Tage-Foto-TTL aus party-worker.js:536 verifiziert), FAQ + wortgleiches FAQPage-JSON-LD, BreadcrumbList, 4 interne Linkcards.
+4. **NEU `/einladung/piraten/vorlagen/`:** 7 Einladungstexte (kurz/lang/gereimt/WhatsApp/Kita-Sie-Form/Last-Minute/Verkleidung) mit Copy-Buttons + Umami-Event `vorlage-copy`, Checkliste, CTA-Box. Verlinkt von Hub + `kindergeburtstag-einladung-text.html` (nach Vorlage 7).
+5. **Top-Hub `/einladung/`:** „Zum Ausdrucken"-Overpromise raus (→ Link Einladungstexte), neue Ratgeber-Sektion (Wann verschicken / Was rein muss / Vorlagen-Links).
+
+**⚠️ Kritischer Eigenfund (vor Review):** party-worker `gameUrl` (Z.1337) bettet das Spiel als iframe mit **absichtlich leeren `ort=`/`tel=`** ein (Adress-Gating). Hub-Forwarding-Script deshalb auf **Präsenz-Check `p.has()`** statt truthy — sonst hätte das Partyseiten-iframe den Hub statt des Spiels gezeigt. End-to-end verifiziert (leere Params → App rendert). **Langfristig:** Wenn alle Mottos migriert sind, Worker-gameUrl direkt auf `/whatsapp/` stellen (spart Redirect-Hop, braucht Worker-Deploy).
+
+**Helfer-v3 (frischer claude.ai-Tab, Opus 4.8 Hoch, 2 Wellen):** W1: 80/84 — KRITISCH „jede Karte mit eigenem Mini-Spiel" → gegen Code verifiziert WAHR (10/10 Mottos eigene Komponente: DinoEier, EinhornZauber, SafariFoto, FeuerwehrEinsatz, DetektivMission, SuperheldenMission, PrinzessinBall, MeerjungfrauAbenteuer, WeltraumExpedition, PiratenInsel). Gefixt: „für jedes Motto"-Overclaim, Breadcrumb-Trailing-Slashes, t1/t5 „von→um {Uhrzeit}", „eure→deine". W2: **95/96, „beide Seiten live-fähig"**.
+
+**Verifiziert lokal (Preview-Server):** Hub rendert, Alt-Param-Links forwarden zur App (inkl. iframe-Fall), Demo ohne Params = Mattis, JSON-LD parsen, `node --check serve-invite.mjs` OK, validate-all.sh nur pre-existing Fails (JS-Pfad-Bug + „10 Mottos"-index.html, beide per stash-Test als pre-existing bestätigt).
+
+## 📋 Nach Deploy („Ende deploy") PFLICHT
+- **GSC:** sitemap.xml geändert → Sitemap re-submit + `/einladung/piraten/` + `/einladung/piraten/vorlagen/` Indexierung anfragen.
+- Funnel-/e/-Kurzlinks-Smoke: 1 Test-Einladung erstellen, /e/-Link öffnen → muss auf `/whatsapp/` landen.
+
+## 🧭 Nächste Schritte P6-1
+- Restliche 9 Mottos nach Piraten-Muster (Hub + whatsapp-Move + ggf. vorlagen), je ~1 Tag lt. Ticket. Bei jedem: `MIGRATED`-Array in serve-invite.mjs erweitern + Sitemap.
+- 5 Orphan-Mottos (baustelle/dschungel/feen/pferde/ritter): Entscheidung Hub bauen vs. App abschalten (sind weiter noindex, nicht in Sitemap).
+
+---
+
+# Session-Notiz — 10.06.2026 mittags (Einladungs-Foto serverseitig — DEPLOYED, aus Commits rekonstruiert)
+
+**Deployed auf main (`d504f00`, Helfer-v3 85/100):** Einladungs-Foto server-seitig in KV statt base64-in-URL (POST `/api/invphoto`, GET `/api/invimg/:id`, 90-Tage-TTL, Rate-Limit) + Piraten-Einladungsseite repariert + Funnel-Footer (Impressum/Datenschutz/Transparenz — rechtliche Pflicht, fehlte). Härtung nach Review 68→85 (`cf9fa49`). serve-invite: `?fid` → Worker-KV-Foto-URL, base64-Fallback für Alt-Links. *(Notiz nachgetragen 10.06. abends — Session hatte SESSION-NOTES nicht aktualisiert.)*
+
+---
+
 # Session-Notiz — 09.06.2026 (Gästeliste + Adresse-nach-Zusage Feature, site-weiter RSVP-Rename, Quality-Lektorat, Strategie-Audit-Triage)
 
 ## 🚀 DEPLOYED diese Session (main)

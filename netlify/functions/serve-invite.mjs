@@ -49,11 +49,11 @@ export default async (req) => {
       }
     }
 
-    const VALID_MOTTOS = ["piraten", "dino", "safari", "weltraum", "detektiv", "superheld", "prinzessin", "einhorn", "meerjungfrau", "feuerwehr"];
+    const VALID_MOTTOS = ["piraten", "dino", "safari", "weltraum", "detektiv", "superheld", "prinzessin", "einhorn", "meerjungfrau", "feuerwehr", "baustelle", "dschungel", "feen", "pferde", "ritter"];
     const motto = data.motto && VALID_MOTTOS.includes(data.motto) ? data.motto : "piraten";
-    // Einheitliches URL-Schema: /einladung/<motto>/ fuer alle Mottos (inkl. Piraten).
-    // Piraten-Sonderfall entfaellt seit Migration nach /einladung/piraten/.
-    const basePath = `/einladung/${motto}/`;
+    // SEO-Refactor P6-1 (komplett seit 10.06.2026): Gast-App liegt bei allen Mottos
+    // unter /whatsapp/, /einladung/<motto>/ ist der SEO-Hub.
+    const basePath = `/einladung/${motto}/whatsapp/`;
 
     return new Response(null, {
       status: 302,
