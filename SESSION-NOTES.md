@@ -1,3 +1,41 @@
+# Session-Notiz — 09.06.2026 (Gästeliste + Adresse-nach-Zusage Feature, site-weiter RSVP-Rename, Quality-Lektorat, Strategie-Audit-Triage)
+
+## 🚀 DEPLOYED diese Session (main)
+1. **Adresse-nach-Zusage-Feature** (Partyseite) — `aed4ac1`. Party-Adresse erscheint auf der öffentlichen Worker-Partyseite **nur nach RSVP-„ja"** (vorher öffentlich). Funnel: optionales `#psAddress`→`state.adresse`→`/api/create`. Worker: Adresse nicht ins öffentliche HTML gebacken (info-row=Platzhalter, ICS-LOCATION via Client-Var, gameUrl-ort leer, address aus public-GET gestrippt); rsvp-Handler liefert `address`+`addressIcs` nur bei `status==="ja"`; `revealAddr()`/`hideAddr()` client; localStorage+checkPrev Reload-Persistenz. **P0 Stored-XSS** in ICS SUMMARY/DESCRIPTION (childName/motto `</script>`-Breakout) mitgefixt (`<>`→`</>`). **Helfer-v3: 63→90/100, go-live ja.** Copy ehrlich („nicht öffentlich sichtbar, erscheint nach Zusage" — kein Auth-Overpromise; rsvp-Endpoint hat keine Per-Gast-Auth → bewusst).
+2. **Site-weiter Rename RSVP→Gästeliste/Zusagen** — `ddc9967` + Funnel/Worker/36 Motto-JSONs. Funnel-Toggle „Gästeliste", Host-Dashboard „👥 Gästeliste", 32 SEO-Landingpages + Homepage-JSON-LD. „RSVP versteht kein Mensch" (Bolle).
+3. **Quality-Lektorat + 4700-Fix + Trust-Modul** — `459991e`. drinnen+spiele-drinnen: Vulgärsprache/Denglisch/Grammatik/Schema-Drift raus (4 Helfer-v3-Runden 76→80→82→alle Blocker gefixt). `schatzsuche.html` „Über 4.700 Geburtstage geplant" (erfunden) → „15 Themen · 3 Altersstufen · druckfertige Schatzkarte — Material hast du meist zuhause". Trust-Modul im Wizard-Eckdaten: „Privat & ohne Konto … erst wenn du eine Partyseite oder Einladung erstellst, verlässt es dein Gerät" (code-verifiziert: localStorage, nur /api/create + Einladungs-Handoff senden).
+
+## ✅ NACHGEZOGEN 10.06.2026 früh (am Rechner)
+- **Worker-Deploy ERLEDIGT** via `wrangler deploy` (Version `14964ffc`). Setup: `wrangler.toml` (commit `95d811c`, secret-frei, `keep_vars=true` + KV `PARTY`=`92b9c66fe812421aa9e7a2522ae1b7f1`, Worker-Name `party-machsleicht`, compat `2026-04-07`). **Künftige Worker-Deploys = `CLOUDFLARE_API_TOKEN=... wrangler deploy`** (Einzeiler). CF-Token war „Edit Workers"-scoped, in Chat geteilt → ggf. rotieren/sicher ablegen.
+- **Leak-Lücke ZU + Gating live-verifiziert** (Test-Party end-to-end, danach gelöscht): öffentliche Seite=Platzhalter, Public-GET-JSON=address gestrippt, RSVP „ja"→Adresse geliefert, RSVP „nein"→leer. Route+KV intakt (nichts gebrochen).
+- **Cache-Purge = NICHT nötig** für Content-Deploys: Setup nutzt `max-age=7200, must-revalidate` → Cloudflare revalidiert selbst gegen Origin; neue Inhalte waren schon live (Cf-Cache-Status MISS/EXPIRED, empirisch geprüft). Manueller Purge nur Sonderfall (z.B. GSC-410 am 03.06). Cache-Purge-Permission bewusst NICHT in den Token genommen.
+- **⚠️ `RESEND_API_KEY` liegt als plain_text-Var** (nicht Secret) im Worker — sichtbar in Settings. Auf Secret umstellen + rotieren.
+- **Nit:** workers.dev-Preview-URL (`party-machsleicht.cbollweg.workers.dev`) wurde beim Deploy aktiviert (war evtl. schon an). Optional via `preview_urls = false` + redeploy abschalten.
+
+## ⚠️ OFFEN — bei Bolle
+- **🔴 PAT widerrufen** — `github_pat_11CATQ…` mehrfach im Chat geteilt → verbrannt.
+- **🔴 Tracker/Consent-Entscheidung offen:** `schatzsuche.html` lädt Ahrefs (Pilot 27.05.) **+** Umami **pre-consent** auf einer „Privat"-Funnel-Seite → Helfer-v3: Verstoß gegen eigene „CDN-before-consent"-Disziplin. Bolle's Pilot — Entscheidung: bis Consent zurückhalten oder lassen?
+
+## 📋 Background-Tasks (chips gesetzt)
+- **DSGVO:** Kindername landet via Einladungs-Handoff (`?name=` in URL) in Umami-Analytics → auf Hash-Fragment umstellen ODER Analytics-Query-Param-Stripping.
+- **create `time`/`endTime` validieren** wie PUT (`.slice(0,20)`) — Low, nur ICS-Datenqualität.
+- **Fast-Follow-Lektorat** (nicht go-live-blockend): `Setup/Level/Rating`-Labels in Spielblöcken, `Pivots/Backup/Play-Pause` im JSON-LD, Anführungszeichen-Stil zwischen Seiten, Copy-Block-Doppelbinding (drinnen).
+
+## 🧭 Strategie-Audit-Triage (externes Audit, verifiziert gegen echten Code)
+- **Markenrisiko GEGENSTANDSLOS:** Harry Potter/Ninjago/Frozen-Seiten existieren NICHT — alle Mottos schon generisch (baustelle/detektiv/dino/…/superheld/weltraum). Audit las alte Snippets.
+- **Interne Verlinkung schon erledigt:** Planer extensionslos (`/kindergeburtstag`, teils `?motto=…#planer`) auf 132/134 Motto-Seiten + allen Ratgeber-Seiten verlinkt. Nur 2 Dino-Print-Tools ohne Link (bewusst).
+- **Mojibake = 0** (Audit-„kaputte Emojis" war Terminal-Artefakt). **„2014 Eltern"** = False-Positive (Doku-Jahreszahl).
+- **Wizard NICHT umgebaut** (Bolle's klare Ansage — „Wann ist die Feier?"-Reorder verworfen, Kern bleibt wie gehärtet).
+- Strategie-Großbaustellen (Homepage-1-CTA, Monetarisierung, Print-Vorschau) = Bolle's Produktentscheidung, nicht angefasst.
+
+## ⚠ Methodik-Lessons (diese Session)
+- **Helfer-v3 fing 2 von MIR eingebaute Regressionen** ab vor Live: `Q:→Frage:`-replace_all verschluckte das Leerzeichen (`Frage:Ist…` 5×); Foto-Booth-„Fix" war nur die Überschrift (Body+Schema 11× weiter „Foto-Booth/Props"). → **replace_all sorgfältig: Trailing-Space, Vollständigkeit über Body+JSON-LD, nicht nur H3.** Genau der Wert des unabhängigen Gates.
+- **Verifikation gegen echten Code** rettete vor stundenlangem Audit-Rauschen (s. Triage oben).
+- claude.ai Default-Modell sprang auf **„Fable 5"** — für Gate-Konsistenz zurück auf **Opus 4.8 Hoch** gestellt.
+- **Session-Notes diese Session schleifen lassen** (User-Reminder 09.06.) — wieder aufgenommen.
+
+---
+
 # Session-Notiz — 03.06.2026 (GSC-De-Index Root-Cause + 410-Fix DEPLOYED + Piraten-Spiel-Kuratierung)
 
 ## 🚨 GSC-Massen-De-Indexing diagnostiziert + erster Fix deployed
