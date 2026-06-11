@@ -1,3 +1,16 @@
+# Session-Notiz — 11.06.2026, Teil 2 (Bolles „1.": eigene Spiel-Mechaniken — Pilot Feuerwehr-Rubbeln + Randomisierung, auf draft)
+
+## 🔥 Pilot Feuerwehr: Lösch-Rubbel-Mechanik (statt 3x-Tippen-Fiktionsbruch)
+Finger über die Flamme reiben → alle ~60px (Throttle 140ms) eine Lösch-Stufe, Flamme **schrumpft** sichtbar (scale 1→.82→.6→gelöscht), 💧-FX statt ✨, `touchAction:"none"` gegen pointercancel beim Reiben (Seite ist eh overflow:hidden). Tippen bleibt als Fallback (pointerdown = 1 Stufe). Texte: „☝ Rubbel die Feuer aus — einfach drüberreiben!" (Intro+HUD), Hub-gameP1 in wave-b.js mitgezogen + regeneriert. **Live durchgespielt im Preview:** Rubbel-Sequenz löscht Flammen, Schrumpfen verifiziert, Löschzug-Fund, keine Konsolen-Fehler.
+
+## 🎲 Treffer-Randomisierung (alle 14 Template-Apps)
+CRACK_RESULTS fix {2,4,6} → randomisiert {2-3, 4-5, 6-7} pro Aufruf (IIFE) — Replay-Wert, Gutachter-Maßnahme #5. Hint-Banner (≥4) und 9-Spot-Limit (max 7) verifiziert kompatibel.
+
+## ⚠️ Review-Status
+Helfer-v3-Kurzreview der Mechanik wurde an frischen claude.ai-Tab (Fable 5 Hoch) GESENDET — **Antwort ungelesen: claude.ai-Session wurde mitten im Vorgang ausgeloggt** (Login durch Claude verboten). Chat-ID: `2436d839-0771-44dc-8248-ca6e2e0c55e5`. **Vor dem main-Merge: Bolle loggt claude.ai ein → Verdikt lesen → ggf. Fixes.** Nichts davon ist live.
+
+---
+
 # Session-Notiz — 11.06.2026 (Fast-Follow: Event-Sounds + Worker-gameUrl — auf draft, wartet auf Bolles Doppel-Go)
 
 ## 🔊 WebAudio-Event-Sounds (alle 15 Gast-Apps, Commit auf draft)

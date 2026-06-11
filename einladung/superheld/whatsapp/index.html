@@ -362,7 +362,7 @@ const ITEMS = [
   { id: "crate9", x: 42, y: 86, cover: "🗄️" }
 ];
 const TAPS_TO_CRACK = 3;
-const CRACK_RESULTS = { 2: "find1", 4: "find2", 6: "runaway" };
+const CRACK_RESULTS = (() => { const a = 2 + Math.floor(Math.random() * 2), b = a + 2, c = b + 2; return { [a]: "find1", [b]: "find2", [c]: "runaway" }; })();
 const BUILDINGS = [
   { w: 9, h: 40, windows: 2 },
   { w: 10, h: 65, windows: 4 },

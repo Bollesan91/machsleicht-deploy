@@ -362,7 +362,7 @@ const ITEMS = [
   { id: "fire9", x: 42, y: 86, cover: "🪨" }
 ];
 const TAPS_TO_CRACK = 3;
-const CRACK_RESULTS = { 2: "find1", 4: "find2", 6: "runaway" };
+const CRACK_RESULTS = (() => { const a = 2 + Math.floor(Math.random() * 2), b = a + 2, c = b + 2; return { [a]: "find1", [b]: "find2", [c]: "runaway" }; })();
 const SKY = [
   // 0: Rauch-Grau
   { sky1: "#37474F", sky2: "#455A64", sky3: "#263238", ground1: "#3E2723", ground2: "#1B1210", sun: "#BDBDBD", sunGlow: "rgba(189,189,189,.15)", cloudOp: 0.25 },

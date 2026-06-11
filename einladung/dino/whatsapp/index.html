@@ -367,7 +367,7 @@ const ITEMS = [
   { id: "nest9", x: 42, y: 84, cover: "🥚" }
 ];
 const TAPS_TO_CRACK = 3;
-const CRACK_RESULTS = { 2: "dino1", 4: "dino2", 6: "runaway" };
+const CRACK_RESULTS = (() => { const a = 2 + Math.floor(Math.random() * 2), b = a + 2, c = b + 2; return { [a]: "dino1", [b]: "dino2", [c]: "runaway" }; })();
 const SKY = [
   // 0 Funde: tropischer Tag
   { sky1: "#64B5F6", sky2: "#4DB6AC", sky3: "#388E3C", ground1: "#8D6E63", ground2: "#795548", sun: "#FFD54F", sunGlow: "rgba(255,200,0,.3)", cloudOp: 0.5 },
