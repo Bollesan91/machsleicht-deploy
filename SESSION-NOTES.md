@@ -1,3 +1,26 @@
+# Session-Notiz — 11.06.2026, Teil 2 (Bolles „1.": eigene Spiel-Mechaniken — Pilot Feuerwehr-Rubbeln + Randomisierung, auf draft)
+
+## 🔥 Pilot Feuerwehr: Lösch-Rubbel-Mechanik (statt 3x-Tippen-Fiktionsbruch)
+Finger über die Flamme reiben → alle ~60px (Throttle 140ms) eine Lösch-Stufe, Flamme **schrumpft** sichtbar (scale 1→.82→.6→gelöscht), 💧-FX statt ✨, `touchAction:"none"` gegen pointercancel beim Reiben (Seite ist eh overflow:hidden). Tippen bleibt als Fallback (pointerdown = 1 Stufe). Texte: „☝ Rubbel die Feuer aus — einfach drüberreiben!" (Intro+HUD), Hub-gameP1 in wave-b.js mitgezogen + regeneriert. **Live durchgespielt im Preview:** Rubbel-Sequenz löscht Flammen, Schrumpfen verifiziert, Löschzug-Fund, keine Konsolen-Fehler.
+
+## 🎲 Treffer-Randomisierung (alle 14 Template-Apps)
+CRACK_RESULTS fix {2,4,6} → randomisiert {2-3, 4-5, 6-7} pro Aufruf (IIFE) — Replay-Wert, Gutachter-Maßnahme #5. Hint-Banner (≥4) und 9-Spot-Limit (max 7) verifiziert kompatibel.
+
+## ⚠️ Review-Status
+Helfer-v3-Kurzreview der Mechanik wurde an frischen claude.ai-Tab (Fable 5 Hoch) GESENDET — **Antwort ungelesen: claude.ai-Session wurde mitten im Vorgang ausgeloggt** (Login durch Claude verboten). Chat-ID: `2436d839-0771-44dc-8248-ca6e2e0c55e5`. **Vor dem main-Merge: Bolle loggt claude.ai ein → Verdikt lesen → ggf. Fixes.** Nichts davon ist live.
+
+---
+
+# Session-Notiz — 11.06.2026 (Fast-Follow: Event-Sounds + Worker-gameUrl — auf draft, wartet auf Bolles Doppel-Go)
+
+## 🔊 WebAudio-Event-Sounds (alle 15 Gast-Apps, Commit auf draft)
+Tap-Pop (1 Osz.), Fund-Chime (3), Niete (1, leise), Alarm-Sting (3, square), Fang-Fanfare (4) — geroutet durch den bestehenden Master-Gain: **stumm bis der Gast den 🔇-Button aktiv einschaltet** (Opt-in bleibt). Lautstärken defensiv (0.04–0.11, Musiknoten-Niveau). Piraten: Fund+Fang (kein Tap-Pop — Long-Press hat eigenes Feedback). **Preview-verifiziert per Oszillator-Spy:** Tap→1, Tap→1, Crack→Fund-Chime exakt 3 Oszillatoren, empty→1, keine Konsolen-Fehler. **Klang-QA braucht Ohren → Bolles Go vor Merge auf main; hörbar erst nach Deploy (Demo öffnen, 🔊 einschalten).**
+
+## 🔧 party-worker gameUrl (Commit auf draft, wrangler-Deploy wartet auf Go)
+`gameUrl` → `/einladung/<motto>/whatsapp/` (spart Hub-Forwarding-Hop im Partyseiten-iframe) + GAME_MOTTOS 10→15 (Partyseiten mit baustelle/dschungel/feen/pferde/ritter betten jetzt auch das Spiel ein). `node --check` OK. wrangler ist eingeloggt (OAuth cbollweg@gmx.de) — Deploy-Befehl: `npx wrangler deploy` (Classifier verlangt explizites Bolle-Go).
+
+---
+
 # Session-Notiz — 10.06.2026 spätabends (Spiele-Uplift nach Bolles „Template-Spiel"-Stopp — Gutachten 60→70, Go-live-Gate erfüllt)
 
 ## 🎮 Game-Design-Gutachten (Fable 5 Hoch, am echten App-Code Piraten vs. Template)

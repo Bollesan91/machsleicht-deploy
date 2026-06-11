@@ -362,7 +362,8 @@ const ITEMS = [
   { id: "bush9", x: 48, y: 86, cover: "🌿" }
 ];
 const TAPS_TO_CRACK = 3;
-const CRACK_RESULTS = { 2: "animal1", 4: "animal2", 6: "runaway" };
+const _rollResults = () => { const a = 2 + Math.floor(Math.random() * 2), b = a + 2, c = b + 2; return { [a]: "animal1", [b]: "animal2", [c]: "runaway" }; };
+let CRACK_RESULTS = _rollResults();
 const SKY = [
   // 0 Funde: Savanne Morgen
   { sky1: "#87CEEB", sky2: "#F0E68C", sky3: "#C8A96E", ground1: "#C8A96E", ground2: "#B8956A", sun: "#FFD54F", sunGlow: "rgba(255,200,0,.3)", cloudOp: 0.4 },
@@ -496,6 +497,7 @@ function DschungelExpedition({
     const py = (e.clientY || 0) - r.top;
     runnerState.current.caught = true;
     if (navigator.vibrate) { try { navigator.vibrate([30, 40, 90]); } catch (e) {} }
+    playSfx("catch");
     if (runnerRaf.current) cancelAnimationFrame(runnerRaf.current);
     setRunner((prev) => ({ ...prev, caught: true }));
     setFound((p) => [...p, "animal3"]);
@@ -586,6 +588,29 @@ function DschungelExpedition({
     if (!musicStartedRef.current) startMusic();
     setMuted((m) => !m);
   };
+  const playSfx = useCallback((kind) => {
+    const ctx = audioCtxRef.current;
+    const master = gainRef.current;
+    if (!ctx || !master || ctx.state !== "running") return;
+    const t0 = ctx.currentTime;
+    const note = (freq, start, dur, type, vol) => {
+      const o = ctx.createOscillator();
+      const g = ctx.createGain();
+      o.type = type;
+      o.frequency.value = freq;
+      g.gain.setValueAtTime(vol, t0 + start);
+      g.gain.exponentialRampToValueAtTime(0.001, t0 + start + dur);
+      o.connect(g);
+      g.connect(master);
+      o.start(t0 + start);
+      o.stop(t0 + start + dur);
+    };
+    if (kind === "tap") { note(440, 0, 0.07, "triangle", 0.07); }
+    else if (kind === "find") { note(523, 0, 0.1, "sine", 0.09); note(659, 0.09, 0.1, "sine", 0.09); note(784, 0.18, 0.2, "sine", 0.1); }
+    else if (kind === "empty") { note(247, 0, 0.12, "sine", 0.04); }
+    else if (kind === "alarm") { note(392, 0, 0.11, "square", 0.05); note(311, 0.13, 0.11, "square", 0.05); note(392, 0.26, 0.11, "square", 0.05); }
+    else if (kind === "catch") { note(523, 0, 0.09, "sine", 0.09); note(659, 0.09, 0.09, "sine", 0.09); note(784, 0.18, 0.09, "sine", 0.09); note(1047, 0.27, 0.3, "sine", 0.11); }
+  }, []);
   const addFx = useCallback((type, x, y, emoji) => {
     const id = Date.now() + Math.random();
     setEffects((p) => [...p, { id, type, x, y, emoji }]);
@@ -604,6 +629,7 @@ function DschungelExpedition({
     setRustleId(item.id);
     setTimeout(() => setRustleId(null), 400);
     if (currentTaps < TAPS_TO_CRACK) {
+      playSfx("tap");
       addFx("tap", px, py, currentTaps === 1 ? "\u{1F343}" : "\u2728");
       return;
     }
@@ -612,6 +638,7 @@ function DschungelExpedition({
     setSearched((prev) => /* @__PURE__ */ new Set([...prev, item.id]));
     const result = CRACK_RESULTS[newSearchedCount];
     if (result && navigator.vibrate) { try { navigator.vibrate(result === "runaway" ? [40, 60, 40] : 60); } catch (e) {} }
+    playSfx(result === "runaway" ? "alarm" : result ? "find" : "empty");
     if (result === "animal1") {
       setResults((prev) => ({ ...prev, [item.id]: "animal1" }));
       setFound((prev) => [...prev, "animal1"]);
@@ -632,6 +659,7 @@ function DschungelExpedition({
     }
   }, [phase, searched, bushTaps, searchedCount, chasePhase, addFx, spawnRunner]);
   const restart = () => {
+    CRACK_RESULTS = _rollResults();
     setBushTaps({});
     setSearched(/* @__PURE__ */ new Set());
     setFound([]);
