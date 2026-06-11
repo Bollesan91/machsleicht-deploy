@@ -1,3 +1,13 @@
+# Session-Notiz — 11.06.2026 (Fast-Follow: Event-Sounds + Worker-gameUrl — auf draft, wartet auf Bolles Doppel-Go)
+
+## 🔊 WebAudio-Event-Sounds (alle 15 Gast-Apps, Commit auf draft)
+Tap-Pop (1 Osz.), Fund-Chime (3), Niete (1, leise), Alarm-Sting (3, square), Fang-Fanfare (4) — geroutet durch den bestehenden Master-Gain: **stumm bis der Gast den 🔇-Button aktiv einschaltet** (Opt-in bleibt). Lautstärken defensiv (0.04–0.11, Musiknoten-Niveau). Piraten: Fund+Fang (kein Tap-Pop — Long-Press hat eigenes Feedback). **Preview-verifiziert per Oszillator-Spy:** Tap→1, Tap→1, Crack→Fund-Chime exakt 3 Oszillatoren, empty→1, keine Konsolen-Fehler. **Klang-QA braucht Ohren → Bolles Go vor Merge auf main; hörbar erst nach Deploy (Demo öffnen, 🔊 einschalten).**
+
+## 🔧 party-worker gameUrl (Commit auf draft, wrangler-Deploy wartet auf Go)
+`gameUrl` → `/einladung/<motto>/whatsapp/` (spart Hub-Forwarding-Hop im Partyseiten-iframe) + GAME_MOTTOS 10→15 (Partyseiten mit baustelle/dschungel/feen/pferde/ritter betten jetzt auch das Spiel ein). `node --check` OK. wrangler ist eingeloggt (OAuth cbollweg@gmx.de) — Deploy-Befehl: `npx wrangler deploy` (Classifier verlangt explizites Bolle-Go).
+
+---
+
 # Session-Notiz — 10.06.2026 spätabends (Spiele-Uplift nach Bolles „Template-Spiel"-Stopp — Gutachten 60→70, Go-live-Gate erfüllt)
 
 ## 🎮 Game-Design-Gutachten (Fable 5 Hoch, am echten App-Code Piraten vs. Template)
