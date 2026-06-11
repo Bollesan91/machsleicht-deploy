@@ -20,7 +20,7 @@ module.exports = [
     metaDesc: 'Feuerwehr-Einladung für den Kindergeburtstag: digital per WhatsApp, mit Mini-Spiel als Löscheinsatz. Kostenlos, ohne Anmeldung, in 2 Minuten fertig. Plus Einladungstexte zum Abschreiben.',
     ogDesc: 'Digitale Feuerwehr-Einladung mit Mini-Spiel: Gäste löschen den Einsatz und sagen direkt per WhatsApp zu. Kostenlos, ohne Anmeldung.',
     gameShort: 'Feuerwehr-Spiel',
-    gameP1: 'Die Einladung beginnt nicht mit Datum und Uhrzeit, sondern mitten im Einsatz: Deine Gäste rubbeln die Flammen aus — Finger aufs Feuer und reiben, Stufe für Stufe schrumpft es, und darunter kommen Fundstücke wie Löschzug und Medaille zum Vorschein. Doch kurz vor dem Ziel klaut ein freches Feuerteufelchen den Schlauch! Erst wer es einfängt, schließt den Einsatz ab. Dahinter stecken die Party-Infos: wer einlädt, wann, wo.',
+    gameP1: 'Die Einladung beginnt nicht mit Datum und Uhrzeit, sondern mitten im Einsatz: Deine Gäste rubbeln die Flammen aus — Finger aufs Feuer und reiben, Stufe für Stufe schrumpft die Flamme, und darunter kommen Fundstücke wie Löschzug und Medaille zum Vorschein. Doch kurz vor dem Ziel klaut ein freches Feuerteufelchen den Schlauch! Erst wer es einfängt, schließt den Einsatz ab. Dahinter stecken die Party-Infos: wer einlädt, wann, wo.',
     gameP2: 'Das Ganze dauert eine knappe Minute und funktioniert in jedem Handy-Browser — ohne App, ohne Download. Wenn du beim Erstellen ein Foto hochlädst, gibt es eine Extra-Pointe: Dann ist es das Geburtstagskind selbst, das mit dem Schlauch davonflitzt und geschnappt werden muss.',
     quote: 'Alarm, Alarm! Feuerwehrkind {Name} wird {Alter} und braucht Verstärkung für den großen Einsatz …',
     faq: [

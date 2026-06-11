@@ -362,7 +362,8 @@ const ITEMS = [
   { id: "bush9", x: 48, y: 86, cover: "🌴" }
 ];
 const TAPS_TO_CRACK = 3;
-const CRACK_RESULTS = (() => { const a = 2 + Math.floor(Math.random() * 2), b = a + 2, c = b + 2; return { [a]: "animal1", [b]: "animal2", [c]: "runaway" }; })();
+const _rollResults = () => { const a = 2 + Math.floor(Math.random() * 2), b = a + 2, c = b + 2; return { [a]: "animal1", [b]: "animal2", [c]: "runaway" }; };
+let CRACK_RESULTS = _rollResults();
 const SKY = [
   // 0 Funde: Savanne Morgen
   { sky1: "#87CEEB", sky2: "#F0E68C", sky3: "#C8A96E", ground1: "#C8A96E", ground2: "#B8956A", sun: "#FFD54F", sunGlow: "rgba(255,200,0,.3)", cloudOp: 0.4 },
@@ -658,6 +659,7 @@ function SafariFoto({
     }
   }, [phase, searched, bushTaps, searchedCount, chasePhase, addFx, spawnRunner]);
   const restart = () => {
+    CRACK_RESULTS = _rollResults();
     setBushTaps({});
     setSearched(/* @__PURE__ */ new Set());
     setFound([]);

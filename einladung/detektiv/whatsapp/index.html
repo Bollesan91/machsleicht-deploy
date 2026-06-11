@@ -362,7 +362,8 @@ const ITEMS = [
   { id: "clue9", x: 42, y: 86, cover: "📚" }
 ];
 const TAPS_TO_CRACK = 3;
-const CRACK_RESULTS = (() => { const a = 2 + Math.floor(Math.random() * 2), b = a + 2, c = b + 2; return { [a]: "find1", [b]: "find2", [c]: "runaway" }; })();
+const _rollResults = () => { const a = 2 + Math.floor(Math.random() * 2), b = a + 2, c = b + 2; return { [a]: "find1", [b]: "find2", [c]: "runaway" }; };
+let CRACK_RESULTS = _rollResults();
 const SKY = [
   // 0: Nebel-Grau
   { sky1: "#2C3E50", sky2: "#34495E", sky3: "#1C2833", ground1: "#2C3E50", ground2: "#1B2631", sun: "#BDC3C7", sunGlow: "rgba(189,195,199,.2)", cloudOp: 0.2 },
@@ -656,6 +657,7 @@ function DetektivMission({
     }
   }, [phase, searched, clueTaps, searchedCount, chasePhase, addFx, spawnRunner]);
   const restart = () => {
+    CRACK_RESULTS = _rollResults();
     setClueTaps({});
     setSearched(/* @__PURE__ */ new Set());
     setFound([]);

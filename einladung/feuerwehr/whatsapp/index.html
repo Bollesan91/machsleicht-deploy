@@ -362,7 +362,8 @@ const ITEMS = [
   { id: "fire9", x: 42, y: 86, cover: "🔥" }
 ];
 const TAPS_TO_CRACK = 3;
-const CRACK_RESULTS = (() => { const a = 2 + Math.floor(Math.random() * 2), b = a + 2, c = b + 2; return { [a]: "find1", [b]: "find2", [c]: "runaway" }; })();
+const _rollResults = () => { const a = 2 + Math.floor(Math.random() * 2), b = a + 2, c = b + 2; return { [a]: "find1", [b]: "find2", [c]: "runaway" }; };
+let CRACK_RESULTS = _rollResults();
 const SKY = [
   // 0: Rauch-Grau
   { sky1: "#37474F", sky2: "#455A64", sky3: "#263238", ground1: "#3E2723", ground2: "#1B1210", sun: "#BDBDBD", sunGlow: "rgba(189,189,189,.15)", cloudOp: 0.25 },
@@ -655,20 +656,28 @@ function FeuerwehrEinsatz({
       setTimeout(() => setDustPuff(null), 1200);
     }
   }, [phase, searched, fireTaps, searchedCount, chasePhase, addFx, spawnRunner]);
-  // Loesch-Rubbeln: Finger ueber der Flamme reiben -> alle ~60px eine Loesch-Stufe (Tap bleibt als Fallback)
-  const rubRef = useRef({ id: null, x: 0, y: 0, acc: 0, lastT: 0 });
+  // Loesch-Rubbeln: Finger ueber der Flamme reiben -> alle ~60px eine Loesch-Stufe (Tap bleibt als Fallback).
+  // Review-Fixes: pointerId-Bindung (Multi-Touch), Reset bei up/cancel (Stale-Delta), Capture im down-Handler.
+  const rubRef = useRef({ id: null, pid: null, x: 0, y: 0, acc: 0, lastT: 0 });
+  const rubStart = useCallback((item, e) => {
+    const rb = rubRef.current;
+    rb.id = item.id; rb.pid = e.pointerId; rb.x = e.clientX; rb.y = e.clientY; rb.acc = 0;
+    try { e.currentTarget.setPointerCapture(e.pointerId); } catch (err) {}
+  }, []);
+  const rubEnd = useCallback(() => { const rb = rubRef.current; rb.id = null; rb.pid = null; rb.acc = 0; }, []);
   const rubFire = useCallback((item, e) => {
     if (phase !== "play" || searched.has(item.id)) return;
     if (chasePhase !== "idle") return;
-    if (e.pointerType === "mouse" && e.buttons === 0) return;
+    if (e.buttons === 0 && e.pointerType !== "touch") return;
     const rb = rubRef.current;
-    if (rb.id !== item.id) { rb.id = item.id; rb.x = e.clientX; rb.y = e.clientY; rb.acc = 0; return; }
+    if (rb.id !== item.id || rb.pid !== e.pointerId || !e.isPrimary) return;
     rb.acc += Math.abs(e.clientX - rb.x) + Math.abs(e.clientY - rb.y);
     rb.x = e.clientX; rb.y = e.clientY;
     const now = Date.now();
     if (rb.acc >= 60 && now - rb.lastT > 140) { rb.acc = 0; rb.lastT = now; tapFire(item, e); }
   }, [phase, searched, chasePhase, tapFire]);
   const restart = () => {
+    CRACK_RESULTS = _rollResults();
     setFireTaps({});
     setSearched(/* @__PURE__ */ new Set());
     setFound([]);
@@ -865,8 +874,16 @@ function FeuerwehrEinsatz({
     const isDust = dustPuff === item.id;
     const hideIfChase = (chasePhase === "cinematic" || runner && !runner.caught) && !done;
     const tapIndicator = !done && taps > 0 ? /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", bottom: -22, left: "50%", transform: "translateX(-50%)", display: "flex", gap: 3 } }, [0, 1, 2].map((i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { width: 8, height: 8, borderRadius: "50%", background: i < taps ? "#FF3D00" : "rgba(255,255,255,.15)", transition: "background .2s", boxShadow: i < taps ? "0 0 6px rgba(255,61,0,.5)" : "none" } }))) : null;
-    return /* @__PURE__ */ React.createElement("div", { key: item.id, onPointerDown: (e) => !done && tapFire(item, e), onPointerMove: (e) => !done && rubFire(item, e), style: {
+    return /* @__PURE__ */ React.createElement("div", { key: item.id, onPointerDown: (e) => { if (!done) { rubStart(item, e); tapFire(item, e); } }, onPointerMove: (e) => !done && rubFire(item, e), onPointerUp: rubEnd, onPointerCancel: rubEnd, onLostPointerCapture: rubEnd, style: {
       touchAction: "none",
+      userSelect: "none",
+      WebkitUserSelect: "none",
+      WebkitTouchCallout: "none",
+      minWidth: 56,
+      minHeight: 56,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
       position: "absolute",
       left: `${item.x}%`,
       top: `${item.y}%`,

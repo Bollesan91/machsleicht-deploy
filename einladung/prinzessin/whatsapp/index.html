@@ -362,7 +362,8 @@ const ITEMS = [
   { id: "jewel9", x: 42, y: 86, cover: "🌹" }
 ];
 const TAPS_TO_CRACK = 3;
-const CRACK_RESULTS = (() => { const a = 2 + Math.floor(Math.random() * 2), b = a + 2, c = b + 2; return { [a]: "find1", [b]: "find2", [c]: "runaway" }; })();
+const _rollResults = () => { const a = 2 + Math.floor(Math.random() * 2), b = a + 2, c = b + 2; return { [a]: "find1", [b]: "find2", [c]: "runaway" }; };
+let CRACK_RESULTS = _rollResults();
 const SKY = [
   // 0: Morgen-Rosa
   { sky1: "#F8BBD0", sky2: "#F48FB1", sky3: "#CE93D8", ground1: "#E1BEE7", ground2: "#9C27B0", sun: "#FFF176", sunGlow: "rgba(255,241,118,.35)", cloudOp: 0.2 },
@@ -656,6 +657,7 @@ function PrinzessinBall({
     }
   }, [phase, searched, jewelTaps, searchedCount, chasePhase, addFx, spawnRunner]);
   const restart = () => {
+    CRACK_RESULTS = _rollResults();
     setJewelTaps({});
     setSearched(/* @__PURE__ */ new Set());
     setFound([]);
