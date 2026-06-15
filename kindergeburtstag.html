@@ -844,7 +844,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         <div class="editor__field"><label>Überschrift</label><input type="text" id="iTitle" oninput="renderInvitePreview()"></div>
         <div class="editor__field"><label>Aufruf-Text</label><textarea id="iBody" oninput="renderInvitePreview()"></textarea></div>
         <div class="editor__field"><label>Antwort-Frist</label><input type="text" id="iDeadline" placeholder="Bitte Bescheid geben bis …" oninput="renderInvitePreview()"></div>
-        <div class="editor__field"><label>WhatsApp-Nummer für Zusagen <small style="font-weight:400;color:#999;font-size:11px">(optional)</small></label><input type="tel" id="iWhatsApp" placeholder="+49 170 1234567" oninput="state.invite.whatsapp = this.value; autoSave()"></div>
+        <div class="editor__field"><label>WhatsApp-Nummer für Zusagen <small style="font-weight:400;color:#999;font-size:11px">(optional)</small></label><input type="tel" id="iWhatsApp" placeholder="+49 170 1234567" oninput="state.invite.whatsapp = this.value; renderInvitePreview(); autoSave()"></div>
         <div class="send-block__actions">
           <a class="send-block__btn send-block__btn--wa" id="whatsappBtn" href="#" target="_blank" rel="noopener">💬 Text per WhatsApp</a>
           <a class="send-block__btn send-block__btn--email" id="emailBtn" href="#">📧 Text per Email</a>
@@ -895,8 +895,8 @@ window.plausible.init=function(){};window.plausible.q=[];
         <div class="checkout-card__icon">📋</div>
         <h3 class="checkout-card__title">Online speichern</h3>
         <div class="checkout-card__price">Kostenlos</div>
-        <ul class="checkout-card__features"><li>Magic-Link per E-Mail</li><li>Plan + Einladung + Partyseite</li><li>Jederzeit weiter anpassen</li></ul>
-        <button class="checkout-card__btn" onclick="openSaveLater()">E-Mail-Link senden</button>
+        <ul class="checkout-card__features"><li>Auf diesem Gerät automatisch gespeichert</li><li>Plan + Einladung + Partyseite</li><li>Magic-Link per E-Mail <small style="color:#b08642">· geplant</small></li></ul>
+        <button class="checkout-card__btn" onclick="openSaveLater()">Plan-Link vormerken</button>
       </div>
       <div class="checkout-card checkout-card--free">
         <div class="checkout-card__icon">📥</div>
@@ -1385,6 +1385,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   function maybeShowResumeBanner(){
     const saved = loadSavedState();
     if(!saved) return;
+    window.__resumeSnapshot = saved;   // Snapshot festhalten: Deep-Link-Eintritt (?motto/?alter) kann STATE_KEY via autoSave ueberschreiben, bevor "Weitermachen" geklickt wird — sonst ist der gespeicherte Plan weg.
     // U5: gegen altes/teilweises localStorage-Schema absichern (motto als String/fehlend -> kein "undefined's undefined")
     const _mn = (saved.motto && saved.motto.name) ? saved.motto.name : 'Geburtstags';
     const _nm = saved.name || 'Dein';
@@ -1395,7 +1396,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     applyAccent(saved.motto);
   }
   function resumeWork(){
-    const saved = loadSavedState();
+    const saved = window.__resumeSnapshot || loadSavedState();
     if(!saved) return;
     try{
       // Merge ueber die Defaults statt komplettem Ersatz: alte Saves ohne partyseite/invite wuerden sonst
@@ -2292,7 +2293,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     document.getElementById('sumMottoEmoji').textContent = state.motto?.emoji || '🏴‍☠️';
     document.getElementById('sumMotto').textContent = state.motto?.name || 'Piraten';
     document.getElementById('sumName').textContent = state.name;
-    document.getElementById('sumDate').textContent = new Date(state.date).toLocaleDateString('de-DE');
+    { const _d = state.date ? new Date(state.date) : null; document.getElementById('sumDate').textContent = (_d && !isNaN(_d.getTime())) ? _d.toLocaleDateString('de-DE') : '—'; }
     document.getElementById('sumGuests').textContent = state.guests + ' Kinder';
     document.getElementById('sumGames').textContent = state.games.length + ' ausgewählt';
     document.getElementById('sumParty').textContent = state.partyseite.active ? 'aktiv ✓' : 'nicht aktiv';
@@ -2302,7 +2303,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   // Ein Modal, drei Modi: 'save' (Plan-Link), 'pdf' + 'print' (ehrliche Warteliste statt Fake-Button).
   // Warteliste = messbares Monetarisierungs-Signal ohne UWG-Risiko (kein "kaufen", das nichts kauft).
   const SL_MODES = {
-    save:  { h:'💾 Plan-Link per Email',         p:'Wir schicken dir einen Link, mit dem du den Plan jederzeit weiterbearbeiten kannst — auch von einem anderen Gerät.', btn:'Link schicken' },
+    save:  { h:'💾 Plan geräteübergreifend sichern', p:'Dein Plan ist schon auf diesem Gerät gespeichert. Trag deine E-Mail ein, dann schicken wir dir den geräteübergreifenden Link, sobald die Funktion live ist.', btn:'Vormerken' },
     pdf:   { h:'📥 Plan-PDF — sag mir Bescheid',  p:'Der PDF-Export ist in Arbeit. Trag deine Email ein, dann schicke ich dir das fertige PDF, sobald es da ist. Dein Plan ist solange online gespeichert und jederzeit abrufbar.', btn:'Auf die Liste setzen' },
     print: { h:'📦 Komplettpaket Print — Warteliste', p:'Das Druck-Komplettpaket (Urkunden, Spielkarten, Einladungen — 15+ Seiten) ist in Vorbereitung. Trag dich ein und du erfährst als Erste:r, sobald es bestellbar ist. Keine Zahlung, keine Verpflichtung.', btn:'Auf die Warteliste' }
   };
@@ -2387,7 +2388,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(g.players && g.players.ideal) meta += ` · 👥 ${g.players.ideal}`;
     document.getElementById('gdMeta').innerHTML = meta;
 
-    const plannerUrl = `/kindergeburtstag?motto=${motto.id}#planer`;
+    const plannerUrl = `/kindergeburtstag?motto=${motto.id}`;
     let body = '';
 
     if(g.curated || g.material || g.brief){
