@@ -778,7 +778,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     <div class="editor__pane">
       <header class="editor__head">
         <h1>Einladung &amp; <em>Partyseite</em> — ein Link für alles</h1>
-        <p>Du füllst alles einmal aus und bekommst <strong>einen</strong> Link: Einladung, Mini-Spiel, Foto, Gästeliste &amp; Wunschliste in einem. Den schickst du den Eltern — fertig. Rechts läuft eine Vorschau mit.</p>
+        <p>Du füllst alles einmal aus und bekommst <strong>einen</strong> Link: Einladung, Mini-Spiel, Foto &amp; Gästeliste in einem. Den schickst du den Eltern — fertig. Rechts läuft eine Vorschau mit.</p>
       </header>
 
       <button class="preview-toggle" onclick="togglePreview(event)">
@@ -821,14 +821,13 @@ window.plausible.init=function(){};window.plausible.q=[];
       <ul class="ps-includes">
         <li>🎮 Mini-Spiel als Einladungs-Hook <small style="color:#999">(mit Foto, falls hochgeladen)</small></li>
         <li>📋 Gästeliste — Gäste sagen direkt zu oder ab</li>
-        <li>🎁 Wunschliste — nach dem Aktivieren befüllbar, Geschenke ohne Dopplung</li>
         <li>🤧 Allergien &amp; 🚗 Abholung werden bei der Zusage abgefragt</li>
       </ul>
-      <p style="font-size:11px;color:#999;margin-top:6px">Wunschliste und Texte kannst du jederzeit über deinen Edit-Link auf der Partyseite anpassen.</p>
+      <p style="font-size:11px;color:#999;margin-top:6px">Name, Datum, Ort &amp; Co. kannst du jederzeit über deinen Edit-Link auf der Partyseite anpassen.</p>
 
       <div class="send-block" style="margin-top:24px">
         <h4>🚀 Einladung &amp; Partyseite aktivieren</h4>
-        <p>Ein Klick — dein Link ist sofort live: Mini-Spiel, Foto, Gästeliste &amp; Wunschliste in einem. Du kannst alles jederzeit ändern.</p>
+        <p>Ein Klick — dein Link ist sofort live: Mini-Spiel, Foto &amp; Gästeliste in einem. Du kannst alles jederzeit ändern.</p>
         <button class="send-block__btn send-block__btn--email" style="width:100%" onclick="activatePartyseite()">Jetzt aktivieren &amp; Link bekommen</button>
         <div class="send-status" id="psStatus" style="display:none">✅ Live auf <span style="color:var(--accent,#1E3A5F);font-weight:800" id="psStatusUrl">party.machsleicht.de/lukas7</span></div>
         <div id="psShareBlock" style="display:none;margin-top:14px">
@@ -1378,7 +1377,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       const saved = localStorage.getItem(STATE_KEY);
       if(!saved) return null;
       const parsed = JSON.parse(saved);
-      if(!parsed.motto) return null;
+      if(!parsed.motto || typeof parsed.motto !== 'object' || !parsed.motto.id) return null;   // Typ-Guard: altes String-Motto-Schema wuerde sonst pickAge/renderPlanPreview mit TypeError brechen (Befund Kritik-Welle)
       return parsed;
     } catch(e){ return null }
   }
@@ -1420,6 +1419,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   function discardResume(){
     document.getElementById('resumeBanner').classList.remove('show');
     localStorage.removeItem(STATE_KEY);
+    window.__resumeSnapshot = null;   // verworfene Daten auch aus dem Memory-Snapshot loeschen (sonst resurrektierbar)
     applyAccent(null);
   }
   function brandClick(){
@@ -2052,7 +2052,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(state.invite.type === 'minispiel'){
       // F8: Dark-Mode wie Live-Einladung (dunkelblau-violetter Hintergrund, Gold-Akzent)
       c.style.background = `linear-gradient(180deg,#1A1A2E,#16213E)`;
-      const photoHtml = state.invite.photo ? `<img src="${state.invite.photo}" style="width:64px;height:64px;border-radius:50%;border:3px solid ${motto.accent2 || '#FFD700'};margin:0 auto 8px;display:block;object-fit:cover"/>` : '';
+      const photoHtml = state.invite.photo ? `<img src="${escA(state.invite.photo)}" style="width:64px;height:64px;border-radius:50%;border:3px solid ${motto.accent2 || '#FFD700'};margin:0 auto 8px;display:block;object-fit:cover"/>` : '';
       c.innerHTML = `
         <div class="invite-preview-minispiel" style="background:transparent">
           ${photoHtml}
@@ -2064,7 +2064,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         </div>`;
     } else if(state.invite.type === 'karte'){
       c.style.background = '#fff';
-      const photoBlock = state.invite.photo ? `<img src="${state.invite.photo}" style="width:70px;height:70px;border-radius:50%;border:3px solid ${motto.accent2 || '#FFD700'};margin:0 auto 8px;display:block;object-fit:cover"/>` : '';
+      const photoBlock = state.invite.photo ? `<img src="${escA(state.invite.photo)}" style="width:70px;height:70px;border-radius:50%;border:3px solid ${motto.accent2 || '#FFD700'};margin:0 auto 8px;display:block;object-fit:cover"/>` : '';
       c.innerHTML = `
         <div class="invite-preview-karte">
           ${photoBlock}
