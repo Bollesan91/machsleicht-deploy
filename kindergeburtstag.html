@@ -136,8 +136,17 @@ window.plausible.init=function(){};window.plausible.q=[];
   .stage.active{animation:fadeUp .35s ease-out}
   /* Aha-Reveal: Plan (Stage 3) + Folge-Stages erst freischalten, wenn der Nutzer Motto+Alter waehlt und klickt.
      Sonst sieht ein Erstbesucher den fertigen Plan gratis & un-personalisiert beim Scrollen -> der "Reveal" waere wirkungslos. */
-  #stage3,#stage4,#stage5,#stage6{display:none}
-  #stage3.revealed,#stage4.revealed,#stage5.revealed,#stage6.revealed{display:block}
+  #stage3,#stage4,#stage5{display:none}
+  #stage3.revealed,#stage4.revealed,#stage5.revealed{display:block}
+  .ps-divider{display:flex;align-items:center;gap:12px;margin:30px 0 4px;color:#9a8b73;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+  .ps-divider::before,.ps-divider::after{content:"";flex:1;height:1px;background:#e3d7c3}
+  .text-fallback{margin-top:18px;border-top:1px dashed #e3d7c3;padding-top:14px}
+  .text-fallback>summary{cursor:pointer;font-weight:700;font-size:14px;color:#5A6473;list-style:none}
+  .text-fallback>summary::-webkit-details-marker{display:none}
+  .text-fallback[open]>summary{margin-bottom:6px}
+  .ps-includes{list-style:none;margin:8px 0 0;padding:0}
+  .ps-includes li{font-size:14px;color:#3d3527;padding:7px 0;border-bottom:1px solid #f0e7d8;line-height:1.35}
+  .ps-includes li:last-child{border-bottom:none}
   #planBody{min-height:480px}           /* CLS: Platz fuer den (ggf. async nachgerenderten) Plan reservieren */
   /* Inline-Eckdaten (Scroll-Funnel) */
   .eckdaten{max-width:920px;margin:18px auto 0;padding:18px 20px;background:#FFFCF8;border:1px solid #F0E6D8;border-radius:14px}
@@ -655,9 +664,8 @@ window.plausible.init=function(){};window.plausible.q=[];
       <span class="topnav__dot active" id="navDot1" role="button" tabindex="0" aria-label="Schritt 1: Motto" onclick="jumpStage(1)" title="Motto"></span>
       <span class="topnav__dot" id="navDot2" role="button" tabindex="0" aria-label="Schritt 2: Alter" onclick="jumpStage(2)" title="Alter"></span>
       <span class="topnav__dot locked" id="navDot3" role="button" tabindex="-1" aria-label="Schritt 3: Plan" onclick="jumpStage(3)" title="Plan"></span>
-      <span class="topnav__dot locked" id="navDot4" role="button" tabindex="-1" aria-label="Schritt 4: Einladung" onclick="jumpStage(4)" title="Einladung"></span>
-      <span class="topnav__dot locked" id="navDot5" role="button" tabindex="-1" aria-label="Schritt 5: Partyseite" onclick="jumpStage(5)" title="Partyseite"></span>
-      <span class="topnav__dot locked" id="navDot6" role="button" tabindex="-1" aria-label="Schritt 6: Fertig" onclick="jumpStage(6)" title="Fertig"></span>
+      <span class="topnav__dot locked" id="navDot4" role="button" tabindex="-1" aria-label="Schritt 4: Einladung & Partyseite" onclick="jumpStage(4)" title="Einladung & Partyseite"></span>
+      <span class="topnav__dot locked" id="navDot5" role="button" tabindex="-1" aria-label="Schritt 5: Fertig" onclick="jumpStage(5)" title="Fertig"></span>
     </div>
     <div class="topnav__save" id="saveIndicator">Gespeichert</div>
   </div>
@@ -763,14 +771,14 @@ window.plausible.init=function(){};window.plausible.q=[];
   </div>
 </section>
 
-<!-- STAGE 4: EINLADUNG -->
+<!-- STAGE 4: EINLADUNG & PARTYSEITE (gemergt 15.06.2026 — ein Datensatz, ein teilbarer Link) -->
 <section class="stage" id="stage4">
   <div class="back-anchor"><button onclick="goStage(3)">← Zurück zum Plan</button></div>
   <div class="editor">
     <div class="editor__pane">
       <header class="editor__head">
-        <h1>Schick die <em>Einladung</em> raus</h1>
-        <p>3 Wege — du kannst auch mehrere kombinieren. Live-Preview rechts updated mit jedem Tippen.</p>
+        <h1>Einladung &amp; <em>Partyseite</em> — ein Link für alles</h1>
+        <p>Du füllst alles einmal aus und bekommst <strong>einen</strong> Link: Einladung, Mini-Spiel, Foto, Gästeliste &amp; Wunschliste in einem. Den schickst du den Eltern — fertig. Rechts läuft eine Vorschau mit.</p>
       </header>
 
       <button class="preview-toggle" onclick="togglePreview(event)">
@@ -778,52 +786,71 @@ window.plausible.init=function(){};window.plausible.q=[];
         <span class="preview-toggle__icon">▼</span>
       </button>
 
-      <div class="editor__sub">Einladungs-Typ</div>
-      <div class="invite-type-row">
-        <button class="invite-type-btn active" data-itype="minispiel" onclick="setInviteType('minispiel')">
-          <span class="invite-type-btn__emoji">🎮</span>
-          <span class="invite-type-btn__label">Mini-Spiel</span>
-          <div class="invite-type-btn__price">Kostenlos</div>
-        </button>
-        <button class="invite-type-btn" data-itype="karte" onclick="setInviteType('karte')">
-          <span class="invite-type-btn__emoji">📨</span>
-          <span class="invite-type-btn__label">Digital-Karte</span>
-          <div class="invite-type-btn__price">Kostenlos</div>
-        </button>
-        <button class="invite-type-btn" data-itype="print" onclick="setInviteType('print')">
-          <span class="invite-type-btn__emoji">🖨️</span>
-          <span class="invite-type-btn__label">Print-Karten</span>
-          <div class="invite-type-btn__price">€14,90</div>
-        </button>
-      </div>
-
-      <div class="editor__sub">Anpassen</div>
-      <div class="editor__field"><label>Überschrift</label><input type="text" id="iTitle" oninput="renderInvitePreview()"></div>
-      <div class="editor__field"><label>Aufruf-Text</label><textarea id="iBody" oninput="renderInvitePreview()"></textarea></div>
-      <div class="editor__field"><label>Antwort-Frist</label><input type="text" id="iDeadline" value="Bitte Bescheid geben bis 14.06." oninput="renderInvitePreview()"></div>
-
       <div class="editor__sub">Foto vom Geburtstagskind <small style="font-weight:400;color:#999;font-size:11px">(optional · im Mini-Spiel als Überraschung enthüllt)</small></div>
       <div class="photo-upload" id="photoUploadArea">
         <input type="file" id="iPhoto" accept="image/*" style="display:none" onchange="handlePhotoUpload(event)">
         <label for="iPhoto" class="photo-upload__label" id="photoLabel">
           <span class="photo-upload__icon">📸</span>
-          <span class="photo-upload__text">Foto hochladen<small>Klick oder ziehen · max 500 KB</small></span>
+          <span class="photo-upload__text">Foto hochladen<small>Klick oder ziehen · wird im Spiel enthüllt</small></span>
         </label>
+        <div id="photoCropUI" style="display:none;text-align:center">
+          <div id="photoCropCircle" style="position:relative;width:120px;height:120px;border-radius:50%;overflow:hidden;margin:0 auto;outline:3px solid rgba(212,129,42,.55);background:#ECDFC9;touch-action:none;cursor:grab">
+            <canvas id="photoCropCanvas" width="120" height="120" style="width:120px;height:120px;display:block"></canvas>
+          </div>
+          <p style="font-size:11px;color:#999;margin:6px 0 4px">Verschieben &amp; zoomen — so erscheint das Kind im Spiel</p>
+          <div style="display:flex;align-items:center;gap:6px;padding:0 10px;margin-bottom:8px">
+            <span style="font-size:13px;color:#bbb">−</span>
+            <input type="range" id="photoZoom" min="100" max="500" value="100" oninput="photoSetZoom(this.value)" style="flex:1">
+            <span style="font-size:13px;color:#bbb">+</span>
+          </div>
+          <div style="display:flex;gap:8px;justify-content:center">
+            <button type="button" onclick="document.getElementById('iPhoto').click()" style="background:#fff;border:1px solid #d8c9b3;color:#5A6473;font-size:12px;padding:6px 12px;border-radius:8px;cursor:pointer">📷 Ändern</button>
+            <button type="button" onclick="removePhoto()" style="background:#fff;border:1px solid #d8c9b3;color:#5A6473;font-size:12px;padding:6px 12px;border-radius:8px;cursor:pointer">✕ Entfernen</button>
+          </div>
+        </div>
       </div>
 
-      <div class="editor__sub">WhatsApp-Nummer für Zusagen <small style="font-weight:400;color:#999;font-size:11px">(optional · Eltern können direkt antworten)</small></div>
-      <div class="editor__field"><input type="tel" id="iWhatsApp" placeholder="+49 170 1234567" oninput="state.invite.whatsapp = this.value; autoSave()"></div>
+      <div class="ps-divider"><span>Deine Partyseite</span></div>
+      <p style="font-size:12px;color:#5A6473;margin:0 0 14px">Deinen eigenen <strong>Link</strong> (party.machsleicht.de/…) bekommst du beim Aktivieren automatisch — den gibst du den Gästen.</p>
 
-      <div class="send-block">
-        <h4>📨 Verschicken</h4>
-        <p>Erstelle die echte Einladungsseite mit eigenem Link — oder teile schon jetzt den fertigen Einladungstext.</p>
-        <a class="send-block__btn send-block__btn--email" id="inviteHandoff" href="/einladung/erstellen?source=cockpit" style="margin-bottom:10px;text-decoration:none" onclick="try{if(window.plausible)plausible('invite_handoff_click',{props:{motto:((state.motto&&state.motto.id)||'').indexOf('custom')===0?'custom':((state.motto&&state.motto.id)||'')}})}catch(e){}">📨 Einladung jetzt erstellen →</a>
+      <div class="editor__sub">Veranstaltungsort <span style="font-weight:400;color:#999">(optional)</span></div>
+      <input type="text" id="psAddress" placeholder="Straße, PLZ Ort" maxlength="200" value="" oninput="state.adresse=this.value.slice(0,200);autoSave()" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8c9b3;border-radius:10px;font-size:15px">
+      <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Nicht öffentlich sichtbar — der Ort erscheint erst, nachdem ein Gast auf der Partyseite zugesagt hat. Leer lassen, wenn du ihn lieber persönlich schickst.</p>
+
+      <div class="editor__sub" style="margin-top:24px">Auf der Partyseite enthalten</div>
+      <ul class="ps-includes">
+        <li>🎮 Mini-Spiel als Einladungs-Hook <small style="color:#999">(mit Foto, falls hochgeladen)</small></li>
+        <li>📋 Gästeliste — Gäste sagen direkt zu oder ab</li>
+        <li>🎁 Wunschliste — nach dem Aktivieren befüllbar, Geschenke ohne Dopplung</li>
+        <li>🤧 Allergien &amp; 🚗 Abholung werden bei der Zusage abgefragt</li>
+      </ul>
+      <p style="font-size:11px;color:#999;margin-top:6px">Wunschliste und Texte kannst du jederzeit über deinen Edit-Link auf der Partyseite anpassen.</p>
+
+      <div class="send-block" style="margin-top:24px">
+        <h4>🚀 Einladung &amp; Partyseite aktivieren</h4>
+        <p>Ein Klick — dein Link ist sofort live: Mini-Spiel, Foto, Gästeliste &amp; Wunschliste in einem. Du kannst alles jederzeit ändern.</p>
+        <button class="send-block__btn send-block__btn--email" style="width:100%" onclick="activatePartyseite()">Jetzt aktivieren &amp; Link bekommen</button>
+        <div class="send-status" id="psStatus" style="display:none">✅ Live auf <span style="color:var(--accent,#1E3A5F);font-weight:800" id="psStatusUrl">party.machsleicht.de/lukas7</span></div>
+        <div id="psShareBlock" style="display:none;margin-top:14px">
+          <p style="font-weight:700;margin:0 0 8px;font-size:14px">Jetzt an die Eltern schicken — Gäste sagen direkt auf der Seite zu (Allergien &amp; Abholung inklusive):</p>
+          <a id="psShareWa" class="send-block__btn send-block__btn--wa" href="#" target="_blank" rel="noopener" style="width:100%;display:block;text-align:center;box-sizing:border-box" onclick="try{if(window.plausible)plausible('party_share_click',{props:{channel:'whatsapp'}})}catch(e){}">💬 Den Link per WhatsApp teilen</a>
+          <button id="psShareCopy" type="button" style="width:100%;margin-top:8px;padding:12px;border:1px solid #d8c9b3;background:#fff;color:#333;border-radius:10px;font-weight:700;cursor:pointer" onclick="copyPartyUrl()">🔗 Link kopieren</button>
+        </div>
+      </div>
+
+      <details class="text-fallback">
+        <summary>✍️ Lieber nur den Einladungs-Text (ohne Link)?</summary>
+        <p style="font-size:13px;color:#666;margin:8px 0">Manche Eltern wollen keinen Link. Dann passt du hier den reinen Einladungstext an und verschickst ihn als WhatsApp oder E-Mail — ohne Mini-Spiel, Gästeliste &amp; Foto.</p>
+        <div class="editor__field"><label>Überschrift</label><input type="text" id="iTitle" oninput="renderInvitePreview()"></div>
+        <div class="editor__field"><label>Aufruf-Text</label><textarea id="iBody" oninput="renderInvitePreview()"></textarea></div>
+        <div class="editor__field"><label>Antwort-Frist</label><input type="text" id="iDeadline" placeholder="Bitte Bescheid geben bis …" oninput="renderInvitePreview()"></div>
+        <div class="editor__field"><label>WhatsApp-Nummer für Zusagen <small style="font-weight:400;color:#999;font-size:11px">(optional)</small></label><input type="tel" id="iWhatsApp" placeholder="+49 170 1234567" oninput="state.invite.whatsapp = this.value; autoSave()"></div>
         <div class="send-block__actions">
           <a class="send-block__btn send-block__btn--wa" id="whatsappBtn" href="#" target="_blank" rel="noopener">💬 Text per WhatsApp</a>
           <a class="send-block__btn send-block__btn--email" id="emailBtn" href="#">📧 Text per Email</a>
           <button class="send-block__btn" onclick="copyInviteUrl()">📋 Text kopieren</button>
         </div>
-      </div>
+      </details>
     </div>
 
     <div class="preview-phone-wrap" id="phoneWrap">
@@ -833,94 +860,18 @@ window.plausible.init=function(){};window.plausible.q=[];
           <div class="preview-phone__content" id="invitePreviewContent"></div>
         </div>
       </div>
-      <p style="text-align:center;color:#999;font-size:11px;margin-top:14px">Live-Vorschau · so sieht der Gast es</p>
+      <p style="text-align:center;color:#999;font-size:11px;margin-top:14px">Vorschau · so wirkt deine Einladung</p>
     </div>
   </div>
 
   <div class="stage-advance">
-    <p class="stage-advance__hint">Wenn die Einladung steht — als nächstes die Partyseite mit Gästeliste, Foto-Galerie und Wunschliste.</p>
-    <button class="stage-advance__btn" onclick="goStage(5)">Weiter zur Partyseite →</button>
-    <button class="stage-advance__skip" onclick="goStage(6)">Partyseite überspringen</button>
+    <p class="stage-advance__hint">Fertig mit der Partyseite? Zum Abschluss findest du Plan, Druckvorlagen &amp; Speicher-Optionen.</p>
+    <button class="stage-advance__btn" onclick="goStage(5)">Plan + Materialien ansehen →</button>
   </div>
 </section>
 
-<!-- STAGE 5: PARTYSEITE -->
+<!-- STAGE 5: FERTIG (war stage6 — nach Merge von Einladung+Partyseite) -->
 <section class="stage" id="stage5">
-  <div class="back-anchor"><button onclick="goStage(4)">← Zurück zur Einladung</button></div>
-  <div class="editor">
-    <div class="editor__pane">
-      <header class="editor__head">
-        <h1>Deine <em>Partyseite</em> einrichten</h1>
-        <p>Eine eigene URL, Gästeliste, Foto-Galerie nach der Party. Kostenlos, läuft auf Cloudflare Workers.</p>
-      </header>
-
-      <button class="preview-toggle" onclick="togglePreview(event)">
-        <span>🌐 Vorschau ansehen</span>
-        <span class="preview-toggle__icon">▼</span>
-      </button>
-
-      <div class="editor__sub">URL wählen</div>
-      <div class="url-builder">
-        <span class="url-builder__prefix">party.machsleicht.de/</span>
-        <input type="text" id="psSlug" value="lukas7" oninput="renderPartyseitePreview()">
-      </div>
-      <p style="font-size:11px;color:#999;margin-top:6px">Nur eine Vorschau — beim Aktivieren bekommst du deine echte, eindeutige Adresse, die du den Gästen gibst.</p>
-
-      <div class="editor__sub" style="margin-top:24px">Party-Adresse <span style="font-weight:400;color:#999">(optional)</span></div>
-      <input type="text" id="psAddress" placeholder="Straße, PLZ Ort" maxlength="200" value="" oninput="state.adresse=this.value.slice(0,200);autoSave()" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8c9b3;border-radius:10px;font-size:15px">
-      <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Nicht öffentlich sichtbar — die Adresse erscheint erst, nachdem ein Gast auf der Partyseite zugesagt hat. Leer lassen, wenn du sie lieber persönlich schickst.</p>
-
-      <div class="editor__sub" style="margin-top:24px">Features</div>
-
-      <div class="toggle-row">
-        <div class="toggle-row__info">
-          <div class="toggle-row__title">📋 Gästeliste</div>
-          <div class="toggle-row__desc">Gäste klicken Zu/Ab, du siehst wer kommt</div>
-        </div>
-        <div class="toggle on" id="psRsvp" onclick="toggleFeature('rsvp')"></div>
-      </div>
-
-      <div class="toggle-row">
-        <div class="toggle-row__info">
-          <div class="toggle-row__title">🎁 Wunschliste</div>
-          <div class="toggle-row__desc">Gäste reservieren Geschenke, keine Dopplungen</div>
-        </div>
-        <div class="toggle" id="psWish" onclick="toggleFeature('wish')"></div>
-      </div>
-
-      <div class="send-block" style="margin-top:24px">
-        <h4>🚀 Aktivieren</h4>
-        <p>Click — Partyseite ist sofort live. Du kannst sie jederzeit ändern.</p>
-        <button class="send-block__btn send-block__btn--email" style="width:100%" onclick="activatePartyseite()">Partyseite aktivieren</button>
-        <div class="send-status" id="psStatus" style="display:none">✅ Live auf <span style="color:var(--accent,#1E3A5F);font-weight:800" id="psStatusUrl">party.machsleicht.de/lukas7</span></div>
-        <div id="psShareBlock" style="display:none;margin-top:14px">
-          <p style="font-weight:700;margin:0 0 8px;font-size:14px">Jetzt an die Eltern schicken — Gäste sagen direkt auf der Seite zu (Allergien &amp; Abholung inklusive):</p>
-          <a id="psShareWa" class="send-block__btn send-block__btn--wa" href="#" target="_blank" rel="noopener" style="width:100%;display:block;text-align:center;box-sizing:border-box" onclick="try{if(window.plausible)plausible('party_share_click',{props:{channel:'whatsapp'}})}catch(e){}">💬 Partyseite per WhatsApp teilen</a>
-          <button id="psShareCopy" type="button" style="width:100%;margin-top:8px;padding:12px;border:1px solid #d8c9b3;background:#fff;color:#333;border-radius:10px;font-weight:700;cursor:pointer" onclick="copyPartyUrl()">🔗 Link kopieren</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="preview-phone-wrap" id="psWrap">
-      <div class="partyseite-browser">
-        <div class="partyseite-browser__bar">
-          <span class="partyseite-browser__dot"></span><span class="partyseite-browser__dot"></span><span class="partyseite-browser__dot"></span>
-          <div class="partyseite-browser__url" id="psPreviewUrl">party.machsleicht.de/lukas7</div>
-        </div>
-        <div class="partyseite-browser__content" id="psPreviewContent"></div>
-      </div>
-      <p style="text-align:center;color:#999;font-size:11px;margin-top:14px">Live-Vorschau · so sehen Gäste die Partyseite</p>
-    </div>
-  </div>
-
-  <div class="stage-advance">
-    <p class="stage-advance__hint">Alles eingerichtet — zum Abschluss die Outputs ansehen.</p>
-    <button class="stage-advance__btn" onclick="goStage(6)">Plan + Materialien ansehen →</button>
-  </div>
-</section>
-
-<!-- STAGE 6: FERTIG -->
-<section class="stage" id="stage6">
   <div class="done">
     <header class="done__head">
       <span class="done__badge">✓ Alles eingerichtet</span>
@@ -950,16 +901,16 @@ window.plausible.init=function(){};window.plausible.q=[];
       <div class="checkout-card checkout-card--free">
         <div class="checkout-card__icon">📥</div>
         <h3 class="checkout-card__title">Plan-PDF light</h3>
-        <div class="checkout-card__price">Kostenlos</div>
+        <div class="checkout-card__price">Kostenlos <small style="font-size:12px;font-weight:700;color:#b08642">· geplant</small></div>
         <ul class="checkout-card__features"><li>1 A4 Tagesplan</li><li>Spiele-Anleitungen</li><li>Einkaufsliste</li><li>Schatzkarte</li></ul>
-        <button class="checkout-card__btn" onclick="showFlash('📥 PDF-Export kommt im nächsten Update — dein Plan ist online gespeichert und jederzeit abrufbar.')">PDF runterladen</button>
+        <button class="checkout-card__btn" onclick="openWaitlist('pdf')">PDF vormerken</button>
       </div>
       <div class="checkout-card checkout-card--premium">
         <div class="checkout-card__icon">📦</div>
         <h3 class="checkout-card__title">Komplettpaket Print</h3>
-        <div class="checkout-card__price">€14,90</div>
+        <div class="checkout-card__price">€14,90 <small style="font-size:12px;font-weight:700;color:#b08642">· geplant</small></div>
         <ul class="checkout-card__features"><li><b>15+ druckfertige Seiten</b></li><li>8 Urkunden mit Namen</li><li>5 Spiel-Karten A6 zum Vorlesen</li><li>Komplette Schatzsuche + Rätsel</li><li>8 Mitgebsel-Etiketten</li><li>Druck-Einladungs-Karten 8×</li></ul>
-        <button class="checkout-card__btn" onclick="showFlash('📦 Das Druck-Komplettpaket ist in Vorbereitung. Trag dich über „E-Mail-Link senden“ ein — wir sagen Bescheid, sobald es da ist.')">Komplettpaket kaufen</button>
+        <button class="checkout-card__btn" onclick="openWaitlist('print')">Auf die Warteliste</button>
       </div>
     </div>
   </div>
@@ -1162,12 +1113,12 @@ window.plausible.init=function(){};window.plausible.q=[];
 <!-- SAVE-LATER MODAL -->
 <div class="modal" id="saveLaterModal">
   <div class="modal__body">
-    <h3>💾 Plan-Link per Email</h3>
-    <p>Wir schicken dir einen Link, mit dem du den Plan jederzeit weiterbearbeiten kannst — auch von einem anderen Gerät.</p>
+    <h3 id="slHeading">💾 Plan-Link per Email</h3>
+    <p id="slText">Wir schicken dir einen Link, mit dem du den Plan jederzeit weiterbearbeiten kannst — auch von einem anderen Gerät.</p>
     <input type="email" id="modalEmail" placeholder="deine@email.de">
     <div class="modal__btns">
       <button class="modal__btn modal__btn--sec" onclick="closeSaveLater()">Abbrechen</button>
-      <button class="modal__btn modal__btn--prim" onclick="sendMagicLinkModal()">Link schicken</button>
+      <button class="modal__btn modal__btn--prim" id="slSubmit" onclick="sendMagicLinkModal()">Link schicken</button>
     </div>
   </div>
 </div>
@@ -1349,7 +1300,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     adresse: '',      // Echte Party-Adresse (optional). Wird auf der Partyseite NUR Gaesten gezeigt, die zugesagt haben (Worker-Gating).
     games: [],
     customEntries: [],
-    invite: { type:'minispiel', title:'', body:'', deadline:'Bitte Bescheid geben bis 14.06.', sent:0, photo:null, whatsapp:'' },
+    invite: { type:'minispiel', title:'', body:'', deadline:'', sent:0, photo:null, whatsapp:'' },
     partyseite: { slug:'lukas7', rsvp:true, photos:false, wish:false, chat:false, active:false },   // photos/chat raus (F4: kein Worker-Backend)
     step: 1,
     eliteVariant: 'standard',
@@ -1897,13 +1848,14 @@ window.plausible.init=function(){};window.plausible.q=[];
 
   // ===== STAGE NAV =====
   function goStage(n){
+    if(n > 5) n = 5;   // Migration: alte localStorage-States (6-Stage-Funnel) auf den gemergten 5-Stage-Funnel klemmen
     state.stage = n;
     document.querySelectorAll('.stage').forEach(s => s.classList.remove('active'));
     const el = document.getElementById('stage'+n);
     if(el) el.classList.add('active');
-    // Progressive Reveal: Stage 3-6 freischalten, sobald der Flow sie erreicht (kumulativ -> Zurueck-Scrollen zeigt fruehere Abschnitte wieder).
-    for(let r=3; r<=n; r++){ const rs = document.getElementById('stage'+r); if(rs && !rs.classList.contains('revealed')){ rs.classList.add('revealed'); if(r !== n){ if(r===4){ try{renderInvitePreview()}catch(e){} } else if(r===5){ try{renderPartyseitePreview()}catch(e){} } } } }
-    for(let i=1; i<=6; i++){
+    // Progressive Reveal: Stage 3-5 freischalten, sobald der Flow sie erreicht (kumulativ -> Zurueck-Scrollen zeigt fruehere Abschnitte wieder).
+    for(let r=3; r<=n; r++){ const rs = document.getElementById('stage'+r); if(rs && !rs.classList.contains('revealed')){ rs.classList.add('revealed'); if(r !== n && r===4){ try{renderInvitePreview()}catch(e){} try{renderPartyseitePreview()}catch(e){} } } }
+    for(let i=1; i<=5; i++){
       const dot = document.getElementById('navDot'+i);
       if(!dot) continue;
       dot.classList.remove('done','active','locked');
@@ -1916,9 +1868,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     const ds = document.getElementById('demoStage'); if(ds) ds.textContent = n;
     // plan_ready = ECHTER personalisierter Aha (Name gesetzt). Deep-Link/Nav-Sprung/Resume/Zurueck ohne Name zaehlen NICHT (sonst luegt die North-Star-Zahl).
     if(n === 3 && !state._planReadyFired && state.name && state.name.trim()){ state._planReadyFired = true; try{ if(window.plausible){ const _mid=(state.motto&&state.motto.id||'').indexOf('custom')===0?'custom':(state.motto&&state.motto.id||''); plausible('plan_ready', {props:{motto:_mid, personalized:true}}); } }catch(e){} }
-    if(n === 4) renderInvitePreview();
-    if(n === 5) renderPartyseitePreview();
-    if(n === 6) renderDoneSummary();
+    if(n === 4){ renderInvitePreview(); renderPartyseitePreview(); }
+    if(n === 5) renderDoneSummary();
     autoSave();
     // T1: Funnel-Tracking NUR bei Vorwaerts-Progression zu einer neuen Stage (Rueckwaerts-Navigation verzerrt sonst den Drop-off).
     try{ if(window.plausible && n > (state._maxStage||1)){ state._maxStage = n; const mid=(state.motto&&state.motto.id||'').indexOf('custom')===0?'custom':(state.motto&&state.motto.id||''); plausible('wizard_stage', {props:{stage:String(n), motto:mid}}); } }catch(e){}
@@ -2076,6 +2027,13 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(titleEl){
       if(!titleEl.value) titleEl.value = state.invite.title || (state.motto?.invite?.title || 'Du bist eingeladen!');
       if(!bodyEl.value) bodyEl.value = state.invite.body || `${state.name} wird ${ageNum()} und feiert!`;
+      // Antwort-Frist dynamisch aus dem Party-Datum ableiten (Party − 7 Tage) statt hartkodiertem Datum,
+      // sonst verschickt man eine Einladung mit bereits abgelaufener Frist (Review-Befund 15.06.2026).
+      if(deadlineEl && !deadlineEl.value){
+        let dl='';
+        try{ if(state.date){ const d=new Date(state.date); d.setDate(d.getDate()-7); if(!isNaN(d.getTime())) dl='Bitte Bescheid geben bis '+String(d.getDate()).padStart(2,'0')+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'; } }catch(e){}
+        if(dl) deadlineEl.value = dl;
+      }
       state.invite.title = titleEl.value;
       state.invite.body = bodyEl.value;
       state.invite.deadline = deadlineEl.value || state.invite.deadline;
@@ -2087,25 +2045,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     const motto = state.motto || MOTTOS[0];
     // K1-Fix: User-Inputs vor innerHTML escapen (Plain-Text-/URL-Sinks unten bleiben roh)
     const eName = esc(state.name), eTitle = esc(state.invite.title), eBody = esc(state.invite.body), eDeadline = esc(state.invite.deadline);
-    // B: Einladungs-Handoff ans echte Tool (/einladung/erstellen) mit vorausgefuellten Daten (Datenuebergabe statt In-Page-Fake)
-    const _ho = document.getElementById('inviteHandoff');
-    if(_ho){
-      // Einladung-Generator (create-invite.mjs) kennt nur diese 10 Voll-Mottos; alles andere macht der Server still zu 'piraten'.
-      // Darum Motto nur uebergeben wenn unterstuetzt — sonst weglassen, User waehlt im Generator (Name/Datum/Ort bleiben vorausgefuellt).
-      const EINLADUNG_MOTTOS = new Set(['piraten','dino','safari','weltraum','detektiv','superheld','prinzessin','einhorn','meerjungfrau','feuerwehr']);
-      if(EINLADUNG_MOTTOS.has(motto.id)){
-        // ort/address NICHT vorbefuellen: state.location ist nur Typ (keine echte Adresse) -> Maps-Link-Bruch (F1/F2). Leer lassen.
-        const hoParams = { name:(state.name||''), datum:(state.date?formatDateLong(state.date):''), uhrzeit:(state.time||''), source:'cockpit', motto: motto.id };
-        _ho.href = '/einladung/erstellen?' + new URLSearchParams(hoParams).toString();
-        _ho.style.pointerEvents=''; _ho.style.opacity=''; _ho.removeAttribute('aria-disabled');
-        _ho.innerHTML = '📨 Einladung jetzt erstellen →';
-      } else {
-        // Kein Voll-Motto (pferde/ritter/baustelle/dschungel/feen/custom): der Generator wuerde still 'piraten' draus machen.
-        // Darum CTA deaktivieren statt ein falsches Versprechen zu geben (Gutachter D1/HIGH).
-        _ho.removeAttribute('href'); _ho.style.pointerEvents='none'; _ho.style.opacity='.55'; _ho.setAttribute('aria-disabled','true');
-        _ho.innerHTML = '📨 Für dieses Motto gibt es noch keine eigene Einladungsseite — teile den Text oben';
-      }
-    }
+    // Einladungs-Handoff zu /einladung/erstellen ENTFERNT (11.06.2026, Funnel-Repair): kein Phantom-Link, keine
+    // Neueingabe mehr. Der EINE teilbare Link entsteht im nächsten Schritt als Partyseite (Spiel + RSVP + Foto in einem).
 
     if(state.invite.type === 'minispiel'){
       // F8: Dark-Mode wie Live-Einladung (dunkelblau-violetter Hintergrund, Gold-Akzent)
@@ -2163,20 +2104,52 @@ window.plausible.init=function(){};window.plausible.q=[];
     autoSave();
   }
 
+  // Foto mit Crop (portiert aus /einladung/erstellen): EIN Upload, quadratisch gecroppt,
+  // landet als volle data-URL in state.invite.photo -> Vorschau + /api/create photoRound (isSafePhoto verlangt Praefix).
+  let _photoSrc=null, _pCropX=0, _pCropY=0, _pScale=1, _pMin=1, _pDrag=false, _pLastX=0, _pLastY=0;
+  const PCROP=120;
   function handlePhotoUpload(e){
     const file = e.target.files[0]; if(!file) return;
-    if(file.size > 500*1024){ alert('Foto zu groß — max 500 KB'); return; }
+    if(file.size > 8*1024*1024){ alert('Foto zu groß — bitte unter 8 MB'); return; }
     const reader = new FileReader();
     reader.onload = ev => {
-      state.invite.photo = ev.target.result;
-      const label = document.getElementById('photoLabel');
-      label.classList.add('has-photo');
-      label.innerHTML = `<img src="${ev.target.result}" class="photo-thumb"/><span class="photo-upload__text">Foto geladen ✓<small>Klicken zum Wechseln</small></span>`;
-      renderInvitePreview();
-      autoSave();
+      const img = new Image();
+      img.onload = () => {
+        const MAX=500; let sw=img.width, sh=img.height;
+        if(sw>MAX||sh>MAX){ const r=Math.min(MAX/sw,MAX/sh); sw=Math.round(sw*r); sh=Math.round(sh*r); }
+        const pre=document.createElement('canvas'); pre.width=sw; pre.height=sh;
+        pre.getContext('2d').drawImage(img,0,0,sw,sh);
+        _photoSrc=pre;
+        _pMin=Math.max(PCROP/sw,PCROP/sh); _pScale=_pMin;
+        _pCropX=(PCROP-sw*_pScale)/2; _pCropY=(PCROP-sh*_pScale)/2;
+        const sl=document.getElementById('photoZoom');
+        sl.min=Math.round(_pMin*100); sl.max=Math.round(_pMin*500); sl.value=Math.round(_pMin*100);
+        document.getElementById('photoLabel').style.display='none';
+        document.getElementById('photoCropUI').style.display='';
+        photoRedraw();
+      };
+      img.src = ev.target.result;
     };
     reader.readAsDataURL(file);
   }
+  function photoRedraw(){
+    if(!_photoSrc) return;
+    const cc=document.getElementById('photoCropCanvas'); const ctx=cc.getContext('2d');
+    ctx.clearRect(0,0,PCROP,PCROP); ctx.save(); ctx.translate(_pCropX,_pCropY); ctx.scale(_pScale,_pScale); ctx.drawImage(_photoSrc,0,0); ctx.restore();
+    const OUT=400; const out=document.createElement('canvas'); out.width=OUT; out.height=OUT;
+    const octx=out.getContext('2d'); octx.imageSmoothingEnabled=true; octx.imageSmoothingQuality='high';
+    octx.drawImage(cc,0,0,PCROP,PCROP,0,0,OUT,OUT);
+    state.invite.photo = out.toDataURL('image/jpeg',0.82);
+    renderInvitePreview(); autoSave();
+  }
+  function photoClamp(){ if(!_photoSrc) return; const w=_photoSrc.width*_pScale,h=_photoSrc.height*_pScale; _pCropX=Math.min(0,Math.max(PCROP-w,_pCropX)); _pCropY=Math.min(0,Math.max(PCROP-h,_pCropY)); }
+  function photoSetZoom(val){ const ns=val/100,cx=PCROP/2,cy=PCROP/2,ratio=ns/_pScale; _pCropX=cx-(cx-_pCropX)*ratio; _pCropY=cy-(cy-_pCropY)*ratio; _pScale=ns; photoClamp(); photoRedraw(); }
+  function removePhoto(){ state.invite.photo=null; _photoSrc=null; const ip=document.getElementById('iPhoto'); if(ip) ip.value=''; document.getElementById('photoLabel').style.display=''; document.getElementById('photoCropUI').style.display='none'; renderInvitePreview(); autoSave(); }
+  (function(){ const el=document.getElementById('photoCropCircle'); if(!el) return;
+    el.addEventListener('pointerdown', e=>{ if(!_photoSrc) return; _pDrag=true; _pLastX=e.clientX; _pLastY=e.clientY; try{el.setPointerCapture(e.pointerId)}catch(_){} });
+    el.addEventListener('pointermove', e=>{ if(!_pDrag) return; _pCropX+=e.clientX-_pLastX; _pCropY+=e.clientY-_pLastY; _pLastX=e.clientX; _pLastY=e.clientY; photoClamp(); photoRedraw(); });
+    el.addEventListener('pointerup', ()=>{ _pDrag=false; }); el.addEventListener('pointercancel', ()=>{ _pDrag=false; });
+  })();
 
   function copyInviteUrl(){
     // Kopiert den Einladungs-TEXT (kein toter /p/-Link mehr). Keine erfundenen Versand-/Zusagen-Zahlen.
@@ -2214,10 +2187,13 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
   function renderPartyseitePreview(){
     state.partyseite.slug = document.getElementById('psSlug')?.value || state.partyseite.slug;
-    // Adressfeld aus State hydrieren (Resume/Rueckkehr zu Stage 5), ohne den getippten Wert zu ueberschreiben.
+    // Adressfeld aus State hydrieren (Resume/Rueckkehr zur Einladung+Partyseite-Stage), ohne den getippten Wert zu ueberschreiben.
     try{ const _pa=document.getElementById('psAddress'); if(_pa && document.activeElement!==_pa && (state.adresse||'')!==_pa.value) _pa.value = state.adresse || ''; }catch(e){}
-    document.getElementById('psPreviewUrl').textContent = `party.machsleicht.de/${state.partyseite.slug}`;
+    // Nach dem Merge gibt es keine eigene Partyseiten-Browser-Vorschau mehr (nur noch die Telefon-Einladung).
+    // Diese Funktion haelt weiterhin Slug/Adresse synchron und stellt den Share-Block bei Resume/Aktiv wieder her.
+    const _slugEl = document.getElementById('psSlugPreview'); if(_slugEl) _slugEl.textContent = `party.machsleicht.de/${state.partyseite.slug}`;
     const c = document.getElementById('psPreviewContent');
+    if(c){
     const motto = state.motto || MOTTOS[0];
     let html = `<div class="ps-preview">
       <h2>${esc(motto.emoji)} ${esc(state.name)}' ${motto.persona === 'Pirat' ? 'Crew-Treffen' : esc(motto.name) + '-Party'}</h2>
@@ -2247,7 +2223,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     // die Preview darf kein nicht-existentes Feature versprechen.
     html += '</div>';
     c.innerHTML = html;
-    // Bereits aktive Partyseite (z.B. nach Reload/Resume oder Rueckkehr zu Stage 5): Share-Block + Status wiederherstellen,
+    }
+    // Bereits aktive Partyseite (z.B. nach Reload/Resume oder Rueckkehr zur Einladung+Partyseite-Stage): Share-Block + Status wiederherstellen,
     // sonst stirbt der Share-Moment beim Reload (haeufigster realer Teilen-Zeitpunkt = "spaeter an die Eltern schicken").
     if(state.partyseite && state.partyseite.active && state.partyseite.url){ try{ showPartyShare(state.partyseite.url, state.partyseite.editUrl); }catch(e){ console.warn('restore share', e); } }
     autoSave();
@@ -2268,7 +2245,8 @@ window.plausible.init=function(){};window.plausible.q=[];
       childName: name, age: ageNum(),
       motto: motto.name, mottoId: (motto.id||''), mottoEmoji: motto.emoji, mottoColor: motto.accent || '#D4812A',
       date: state.date || '', time: state.time || '', endTime: state.endTime || '', address: (state.adresse || '').slice(0,200),
-      notes: motto.name + '-Geburtstag', askAllergies: true, askPickup: true, wishes: [], ref: state.ref || ''
+      notes: motto.name + '-Geburtstag', askAllergies: true, askPickup: true, wishes: [], ref: state.ref || '',
+      photoRound: (state.invite && state.invite.photo) || ''   // gecropptes Foto -> erscheint als "Kind klaut den Schatz" im Spiel der Partyseite (Worker validiert via isSafePhoto)
     };
     try{
       const res = await fetch('https://party.machsleicht.de/api/create', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
@@ -2303,7 +2281,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   // ===== Mobile Preview Toggle =====
   function togglePreview(ev){
     ev = ev || window.event;   // C5: kein Verlass auf globales event (Firefox/strict)
-    const wrap = state.stage === 4 ? document.getElementById('phoneWrap') : document.getElementById('psWrap');
+    const wrap = document.getElementById('phoneWrap');   // nach Merge: nur noch die Telefon-Vorschau auf der Einladung+Partyseite-Stage
     const btn = ev && ev.currentTarget ? ev.currentTarget : null;
     if(wrap) wrap.classList.toggle('open');
     if(btn) btn.classList.toggle('open');
@@ -2321,7 +2299,28 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
 
   // ===== SAVE-LATER MODAL =====
+  // Ein Modal, drei Modi: 'save' (Plan-Link), 'pdf' + 'print' (ehrliche Warteliste statt Fake-Button).
+  // Warteliste = messbares Monetarisierungs-Signal ohne UWG-Risiko (kein "kaufen", das nichts kauft).
+  const SL_MODES = {
+    save:  { h:'💾 Plan-Link per Email',         p:'Wir schicken dir einen Link, mit dem du den Plan jederzeit weiterbearbeiten kannst — auch von einem anderen Gerät.', btn:'Link schicken' },
+    pdf:   { h:'📥 Plan-PDF — sag mir Bescheid',  p:'Der PDF-Export ist in Arbeit. Trag deine Email ein, dann schicke ich dir das fertige PDF, sobald es da ist. Dein Plan ist solange online gespeichert und jederzeit abrufbar.', btn:'Auf die Liste setzen' },
+    print: { h:'📦 Komplettpaket Print — Warteliste', p:'Das Druck-Komplettpaket (Urkunden, Spielkarten, Einladungen — 15+ Seiten) ist in Vorbereitung. Trag dich ein und du erfährst als Erste:r, sobald es bestellbar ist. Keine Zahlung, keine Verpflichtung.', btn:'Auf die Warteliste' }
+  };
+  function setModalMode(mode){
+    window.__slMode = SL_MODES[mode] ? mode : 'save';
+    const m = SL_MODES[window.__slMode];
+    const h=document.getElementById('slHeading'); if(h) h.textContent=m.h;
+    const p=document.getElementById('slText'); if(p) p.textContent=m.p;
+    const b=document.getElementById('slSubmit'); if(b) b.textContent=m.btn;
+  }
   function openSaveLater(){
+    setModalMode('save');
+    document.getElementById('saveLaterModal').classList.add('open');
+    setTimeout(() => document.getElementById('modalEmail').focus(), 100);
+  }
+  function openWaitlist(product){
+    setModalMode(product);
+    try{ if(window.plausible) plausible('waitlist_open', {props:{product: product}}); }catch(e){}
     document.getElementById('saveLaterModal').classList.add('open');
     setTimeout(() => document.getElementById('modalEmail').focus(), 100);
   }
@@ -2329,9 +2328,17 @@ window.plausible.init=function(){};window.plausible.q=[];
   function sendMagicLinkModal(){
     const email = document.getElementById('modalEmail').value.trim();
     if(!email || !email.includes('@')){ alert('Bitte gültige Email eingeben'); return; }
+    const mode = window.__slMode || 'save';
     closeSaveLater();
-    // localStorage speichert eh automatisch — Magic-Link via Resend-Worker kommt im naechsten Sprint
-    showFlash(`💾 Lokal gespeichert · Magic-Link via Email folgt im naechsten Update`);
+    if(mode === 'pdf' || mode === 'print'){
+      // Warteliste: messbares Kaufinteresse. Versand/Backend kommt separat — hier nur ehrliche Bestaetigung.
+      try{ if(window.plausible) plausible('waitlist_signup', {props:{product: mode}}); }catch(e){}
+      const label = mode === 'print' ? 'das Komplettpaket' : 'das Plan-PDF';
+      showFlash(`✓ Eingetragen — ich melde mich, sobald ${label} verfügbar ist.`);
+    } else {
+      // localStorage speichert eh automatisch — Magic-Link via Resend-Worker kommt im naechsten Sprint
+      showFlash(`💾 Lokal gespeichert · Magic-Link via Email folgt im naechsten Update`);
+    }
   }
 
   // ===== FLASH =====
@@ -2490,7 +2497,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         }catch(e){ console.warn('initFunnel deep-link', e); }
       }
       // Virgin-State (kein Param): KEIN Vorab-Render/Reveal von Stage 3-5. Der Plan ist die Belohnung fuer Motto+Alter+Name+"Plan ansehen".
-      // Folge-Stages werden on-demand in goStage() gerendert (renderInvitePreview@n=4, renderPartyseitePreview@n=5, renderDoneSummary@n=6).
+      // Folge-Stages werden on-demand in goStage() gerendert (renderInvitePreview+renderPartyseitePreview@n=4, renderDoneSummary@n=5).
     }catch(e){ console.warn('initFunnel failed', e); }       // Default-Render darf den Wizard nie blockieren, aber meldet sich
   })();
 </script>
