@@ -778,7 +778,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     <div class="editor__pane">
       <header class="editor__head">
         <h1>Einladung &amp; <em>Partyseite</em> — ein Link für alles</h1>
-        <p>Du füllst alles einmal aus und bekommst <strong>einen</strong> Link: Einladung, Mini-Spiel, Foto, Gästeliste &amp; Wunschliste in einem. Den schickst du den Eltern — fertig. Rechts läuft eine Vorschau mit.</p>
+        <p>Du füllst alles einmal aus und bekommst <strong>einen</strong> Link: Einladung, Mini-Spiel, Foto &amp; Gästeliste in einem. Den schickst du den Eltern — fertig. Rechts läuft eine Vorschau mit.</p>
       </header>
 
       <button class="preview-toggle" onclick="togglePreview(event)">
@@ -821,14 +821,13 @@ window.plausible.init=function(){};window.plausible.q=[];
       <ul class="ps-includes">
         <li>🎮 Mini-Spiel als Einladungs-Hook <small style="color:#999">(mit Foto, falls hochgeladen)</small></li>
         <li>📋 Gästeliste — Gäste sagen direkt zu oder ab</li>
-        <li>🎁 Wunschliste — nach dem Aktivieren befüllbar, Geschenke ohne Dopplung</li>
         <li>🤧 Allergien &amp; 🚗 Abholung werden bei der Zusage abgefragt</li>
       </ul>
-      <p style="font-size:11px;color:#999;margin-top:6px">Wunschliste und Texte kannst du jederzeit über deinen Edit-Link auf der Partyseite anpassen.</p>
+      <p style="font-size:11px;color:#999;margin-top:6px">Name, Datum, Ort &amp; Co. kannst du jederzeit über deinen Edit-Link auf der Partyseite anpassen.</p>
 
       <div class="send-block" style="margin-top:24px">
         <h4>🚀 Einladung &amp; Partyseite aktivieren</h4>
-        <p>Ein Klick — dein Link ist sofort live: Mini-Spiel, Foto, Gästeliste &amp; Wunschliste in einem. Du kannst alles jederzeit ändern.</p>
+        <p>Ein Klick — dein Link ist sofort live: Mini-Spiel, Foto &amp; Gästeliste in einem. Du kannst alles jederzeit ändern.</p>
         <button class="send-block__btn send-block__btn--email" style="width:100%" onclick="activatePartyseite()">Jetzt aktivieren &amp; Link bekommen</button>
         <div class="send-status" id="psStatus" style="display:none">✅ Live auf <span style="color:var(--accent,#1E3A5F);font-weight:800" id="psStatusUrl">party.machsleicht.de/lukas7</span></div>
         <div id="psShareBlock" style="display:none;margin-top:14px">
@@ -844,7 +843,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         <div class="editor__field"><label>Überschrift</label><input type="text" id="iTitle" oninput="renderInvitePreview()"></div>
         <div class="editor__field"><label>Aufruf-Text</label><textarea id="iBody" oninput="renderInvitePreview()"></textarea></div>
         <div class="editor__field"><label>Antwort-Frist</label><input type="text" id="iDeadline" placeholder="Bitte Bescheid geben bis …" oninput="renderInvitePreview()"></div>
-        <div class="editor__field"><label>WhatsApp-Nummer für Zusagen <small style="font-weight:400;color:#999;font-size:11px">(optional)</small></label><input type="tel" id="iWhatsApp" placeholder="+49 170 1234567" oninput="state.invite.whatsapp = this.value; autoSave()"></div>
+        <div class="editor__field"><label>WhatsApp-Nummer für Zusagen <small style="font-weight:400;color:#999;font-size:11px">(optional)</small></label><input type="tel" id="iWhatsApp" placeholder="+49 170 1234567" oninput="state.invite.whatsapp = this.value; renderInvitePreview(); autoSave()"></div>
         <div class="send-block__actions">
           <a class="send-block__btn send-block__btn--wa" id="whatsappBtn" href="#" target="_blank" rel="noopener">💬 Text per WhatsApp</a>
           <a class="send-block__btn send-block__btn--email" id="emailBtn" href="#">📧 Text per Email</a>
@@ -895,8 +894,8 @@ window.plausible.init=function(){};window.plausible.q=[];
         <div class="checkout-card__icon">📋</div>
         <h3 class="checkout-card__title">Online speichern</h3>
         <div class="checkout-card__price">Kostenlos</div>
-        <ul class="checkout-card__features"><li>Magic-Link per E-Mail</li><li>Plan + Einladung + Partyseite</li><li>Jederzeit weiter anpassen</li></ul>
-        <button class="checkout-card__btn" onclick="openSaveLater()">E-Mail-Link senden</button>
+        <ul class="checkout-card__features"><li>Auf diesem Gerät automatisch gespeichert</li><li>Plan + Einladung + Partyseite</li><li>Magic-Link per E-Mail <small style="color:#b08642">· geplant</small></li></ul>
+        <button class="checkout-card__btn" onclick="openSaveLater()">Plan-Link vormerken</button>
       </div>
       <div class="checkout-card checkout-card--free">
         <div class="checkout-card__icon">📥</div>
@@ -1378,13 +1377,14 @@ window.plausible.init=function(){};window.plausible.q=[];
       const saved = localStorage.getItem(STATE_KEY);
       if(!saved) return null;
       const parsed = JSON.parse(saved);
-      if(!parsed.motto) return null;
+      if(!parsed.motto || typeof parsed.motto !== 'object' || !parsed.motto.id) return null;   // Typ-Guard: altes String-Motto-Schema wuerde sonst pickAge/renderPlanPreview mit TypeError brechen (Befund Kritik-Welle)
       return parsed;
     } catch(e){ return null }
   }
   function maybeShowResumeBanner(){
     const saved = loadSavedState();
     if(!saved) return;
+    window.__resumeSnapshot = saved;   // Snapshot festhalten: Deep-Link-Eintritt (?motto/?alter) kann STATE_KEY via autoSave ueberschreiben, bevor "Weitermachen" geklickt wird — sonst ist der gespeicherte Plan weg.
     // U5: gegen altes/teilweises localStorage-Schema absichern (motto als String/fehlend -> kein "undefined's undefined")
     const _mn = (saved.motto && saved.motto.name) ? saved.motto.name : 'Geburtstags';
     const _nm = saved.name || 'Dein';
@@ -1395,7 +1395,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     applyAccent(saved.motto);
   }
   function resumeWork(){
-    const saved = loadSavedState();
+    const saved = window.__resumeSnapshot || loadSavedState();
     if(!saved) return;
     try{
       // Merge ueber die Defaults statt komplettem Ersatz: alte Saves ohne partyseite/invite wuerden sonst
@@ -1419,6 +1419,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   function discardResume(){
     document.getElementById('resumeBanner').classList.remove('show');
     localStorage.removeItem(STATE_KEY);
+    window.__resumeSnapshot = null;   // verworfene Daten auch aus dem Memory-Snapshot loeschen (sonst resurrektierbar)
     applyAccent(null);
   }
   function brandClick(){
@@ -2051,7 +2052,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(state.invite.type === 'minispiel'){
       // F8: Dark-Mode wie Live-Einladung (dunkelblau-violetter Hintergrund, Gold-Akzent)
       c.style.background = `linear-gradient(180deg,#1A1A2E,#16213E)`;
-      const photoHtml = state.invite.photo ? `<img src="${state.invite.photo}" style="width:64px;height:64px;border-radius:50%;border:3px solid ${motto.accent2 || '#FFD700'};margin:0 auto 8px;display:block;object-fit:cover"/>` : '';
+      const photoHtml = state.invite.photo ? `<img src="${escA(state.invite.photo)}" style="width:64px;height:64px;border-radius:50%;border:3px solid ${motto.accent2 || '#FFD700'};margin:0 auto 8px;display:block;object-fit:cover"/>` : '';
       c.innerHTML = `
         <div class="invite-preview-minispiel" style="background:transparent">
           ${photoHtml}
@@ -2063,7 +2064,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         </div>`;
     } else if(state.invite.type === 'karte'){
       c.style.background = '#fff';
-      const photoBlock = state.invite.photo ? `<img src="${state.invite.photo}" style="width:70px;height:70px;border-radius:50%;border:3px solid ${motto.accent2 || '#FFD700'};margin:0 auto 8px;display:block;object-fit:cover"/>` : '';
+      const photoBlock = state.invite.photo ? `<img src="${escA(state.invite.photo)}" style="width:70px;height:70px;border-radius:50%;border:3px solid ${motto.accent2 || '#FFD700'};margin:0 auto 8px;display:block;object-fit:cover"/>` : '';
       c.innerHTML = `
         <div class="invite-preview-karte">
           ${photoBlock}
@@ -2292,7 +2293,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     document.getElementById('sumMottoEmoji').textContent = state.motto?.emoji || '🏴‍☠️';
     document.getElementById('sumMotto').textContent = state.motto?.name || 'Piraten';
     document.getElementById('sumName').textContent = state.name;
-    document.getElementById('sumDate').textContent = new Date(state.date).toLocaleDateString('de-DE');
+    { const _d = state.date ? new Date(state.date) : null; document.getElementById('sumDate').textContent = (_d && !isNaN(_d.getTime())) ? _d.toLocaleDateString('de-DE') : '—'; }
     document.getElementById('sumGuests').textContent = state.guests + ' Kinder';
     document.getElementById('sumGames').textContent = state.games.length + ' ausgewählt';
     document.getElementById('sumParty').textContent = state.partyseite.active ? 'aktiv ✓' : 'nicht aktiv';
@@ -2302,7 +2303,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   // Ein Modal, drei Modi: 'save' (Plan-Link), 'pdf' + 'print' (ehrliche Warteliste statt Fake-Button).
   // Warteliste = messbares Monetarisierungs-Signal ohne UWG-Risiko (kein "kaufen", das nichts kauft).
   const SL_MODES = {
-    save:  { h:'💾 Plan-Link per Email',         p:'Wir schicken dir einen Link, mit dem du den Plan jederzeit weiterbearbeiten kannst — auch von einem anderen Gerät.', btn:'Link schicken' },
+    save:  { h:'💾 Plan geräteübergreifend sichern', p:'Dein Plan ist schon auf diesem Gerät gespeichert. Trag deine E-Mail ein, dann schicken wir dir den geräteübergreifenden Link, sobald die Funktion live ist.', btn:'Vormerken' },
     pdf:   { h:'📥 Plan-PDF — sag mir Bescheid',  p:'Der PDF-Export ist in Arbeit. Trag deine Email ein, dann schicke ich dir das fertige PDF, sobald es da ist. Dein Plan ist solange online gespeichert und jederzeit abrufbar.', btn:'Auf die Liste setzen' },
     print: { h:'📦 Komplettpaket Print — Warteliste', p:'Das Druck-Komplettpaket (Urkunden, Spielkarten, Einladungen — 15+ Seiten) ist in Vorbereitung. Trag dich ein und du erfährst als Erste:r, sobald es bestellbar ist. Keine Zahlung, keine Verpflichtung.', btn:'Auf die Warteliste' }
   };
@@ -2387,7 +2388,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(g.players && g.players.ideal) meta += ` · 👥 ${g.players.ideal}`;
     document.getElementById('gdMeta').innerHTML = meta;
 
-    const plannerUrl = `/kindergeburtstag?motto=${motto.id}#planer`;
+    const plannerUrl = `/kindergeburtstag?motto=${motto.id}`;
     let body = '';
 
     if(g.curated || g.material || g.brief){
