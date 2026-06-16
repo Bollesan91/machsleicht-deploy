@@ -1513,6 +1513,8 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 
 <div class="content">
 
+  ${party.notes?`<div class="card fade-up" style="text-align:center"><div style="font-size:15px;line-height:1.55;color:var(--d);white-space:pre-line">\u{1F48C} ${esc(party.notes)}</div></div>`:""}
+
   ${gameUrl?`<div class="card game-card fade-up" id="gameSection">
     <div class="game-header">
       <span class="game-header-icon">\u{1F3AE}</span>
@@ -1528,7 +1530,6 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
     <div class="card-title">${emoji} Party-Details</div>
     ${party.date?`<div class="info-row"><div class="info-icon">\u{1F4C5}</div><div><div class="info-label">${esc(dateStr)}</div>${party.time?`<div class="info-sub">${esc(party.time)} Uhr${party.endTime?" \u2014 "+esc(party.endTime)+" Uhr":""}</div>`:""}</div></div>`:""}
     ${party.address?`<div class="info-row" id="addrRow"><div class="info-icon">\u{1F4CD}</div><div><div class="info-label" id="addrLabel" style="color:var(--m);font-style:italic">\u{1F512} Adresse erscheint nach deiner Zusage</div><div id="addrLink"></div></div></div>`:""}
-    ${party.notes?`<div class="info-row"><div class="info-icon">\u{1F4AC}</div><div><div class="info-sub" style="white-space:pre-line">${esc(party.notes)}</div></div></div>`:""}
   </div>
 
   <div id="rsvpAnchor"></div>
@@ -1866,7 +1867,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       </div>
       <div class="field"><label>Ende ca.</label><input type="time" id="edEndTime" value="${esc(party.endTime)}"></div>
       <div class="field"><label>Adresse</label><textarea id="edAddress" rows="2">${esc(party.address)}</textarea></div>
-      <div class="field"><label>Hinweise</label><textarea id="edNotes" rows="3">${esc(party.notes)}</textarea></div>
+      <div class="field"><label>Persönliche Nachricht <span style="font-weight:400;color:var(--m);font-size:12px">(erscheint auf der Partyseite)</span></label><textarea id="edNotes" rows="3">${esc(party.notes)}</textarea></div>
       <button class="btn" id="saveBtn" onclick="saveEdit()" style="background:${color}">\u{1F4BE} Speichern</button>
       <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--l)">
         <p style="font-size:12px;color:var(--m);margin-bottom:8px"><strong>DSGVO:</strong> Diese Party und alle Daten (Gäste, Allergien, Fotos) werden automatisch nach 90 Tagen gelöscht. Du kannst sie auch jetzt sofort löschen — die Aktion ist endgültig und kann nicht rückgängig gemacht werden.</p>
