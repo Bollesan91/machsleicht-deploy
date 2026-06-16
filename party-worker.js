@@ -1899,9 +1899,9 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     ${allergies.map(g=>`<div style="padding:6px 0;font-size:14px"><strong>${esc(g.name)}</strong>: ${esc(g.allergies)}</div>`).join("")}
   </div>`:""}
 
-  ${hasWishes?`<div class="card fade-up">
+  <div class="card fade-up">
     <h2 style="font-size:15px;color:${color};margin-bottom:12px">\u{1F381} Wunschliste</h2>
-    ${party.wishes.map(w=>`
+    ${hasWishes?party.wishes.map(w=>`
       <div class="wish-item">
         <div style="flex:1">
           <div style="font-weight:600;font-size:14px">${esc(w.title)}</div>
@@ -1914,19 +1914,37 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
           })():`<div style="font-size:12px;color:var(--m);font-style:italic">Noch offen</div>`}
         </div>
         <button onclick="deleteWish('${w.id}')" style="background:none;border:none;font-size:16px;cursor:pointer;color:var(--m);padding:4px 8px" title="L\u00F6schen">\u{1F5D1}</button>
-      </div>`).join("")}
+      </div>`).join(""):`<p style="font-size:13px;color:var(--m);font-style:italic;margin-bottom:6px">Noch keine W\u00FCnsche \u2014 f\u00FCg welche hinzu, dann reservieren G\u00E4ste ohne Doppelgeschenke.</p>`}
     ${party.paypalMe?`<div style="font-size:12px;color:var(--m);margin-top:8px;padding:8px 0;border-top:1px solid var(--l)">\u{1F4B8} PayPal: ${esc(party.paypalMe)}</div>`:""}
-  </div>`:""}
+    <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px;border-top:1px solid var(--l);padding-top:12px">
+      <input id="newWishTitle" placeholder="z.B. Lego-Feuerwehr" maxlength="100" style="padding:10px 12px;border:1px solid var(--l);border-radius:8px;font-size:14px">
+      <div style="display:flex;gap:8px;align-items:center">
+        <input id="newWishPrice" placeholder="ca. 20\u20AC (optional)" maxlength="20" style="flex:1;padding:10px 12px;border:1px solid var(--l);border-radius:8px;font-size:14px">
+        <label style="display:flex;align-items:center;gap:5px;font-size:13px;white-space:nowrap;color:var(--m)"><input type="checkbox" id="newWishShared"> Gemeinsam</label>
+      </div>
+      <button class="btn btn-outline btn-sm" onclick="addWishEd()">+ Wunsch hinzuf\u00FCgen</button>
+    </div>
+  </div>
   <script>
-  async function deleteWish(wid){
-    if(!confirm("Wunsch wirklich l\u00F6schen?"))return;
+  function _curWishes(){ return ${JSON.stringify((party.wishes||[]).map(w=>({id:w.id,title:w.title,url:w.url,price:w.price,sharedGift:w.sharedGift,claimedBy:w.claimedBy}))).replace(/</g,"\\u003c").replace(/>/g,"\\u003e").replace(/&/g,"\\u0026")}; }
+  async function _putWishes(updated){
     const editToken=new URLSearchParams(location.search).get("edit");
-    const currentWishes=${JSON.stringify((party.wishes||[]).map(w=>({id:w.id,title:w.title,url:w.url,price:w.price,sharedGift:w.sharedGift,claimedBy:w.claimedBy}))).replace(/</g,"\\u003c").replace(/>/g,"\\u003e").replace(/&/g,"\\u0026")};
-    const updated=currentWishes.filter(w=>w.id!==wid);
     try{
-      await fetch(location.origin+"/api/party/${party.id}",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({editToken,wishes:updated})});
+      const r=await fetch(location.origin+"/api/party/${party.id}",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({editToken,wishes:updated})});
+      if(!r.ok)throw new Error("HTTP "+r.status);
       location.reload();
     }catch(e){alert("Fehler: "+e.message);}
+  }
+  async function deleteWish(wid){
+    if(!confirm("Wunsch wirklich l\u00F6schen?"))return;
+    _putWishes(_curWishes().filter(w=>w.id!==wid));   // claimedBy der anderen Wuensche bleibt erhalten (PUT spiegelt es)
+  }
+  async function addWishEd(){
+    const t=document.getElementById("newWishTitle").value.trim();
+    if(!t){alert("Bitte einen Wunsch eingeben");return;}
+    const u=_curWishes();
+    u.push({title:t, price:document.getElementById("newWishPrice").value.trim(), sharedGift:document.getElementById("newWishShared").checked, claimedBy:[]});
+    _putWishes(u);
   }
   </script>
 
