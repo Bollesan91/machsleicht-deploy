@@ -838,6 +838,11 @@ window.plausible.init=function(){};window.plausible.q=[];
           <p style="font-weight:700;margin:0 0 8px;font-size:14px">Jetzt an die Eltern schicken — Gäste sagen direkt auf der Seite zu (Allergien &amp; Abholung inklusive):</p>
           <a id="psShareWa" class="send-block__btn send-block__btn--wa" href="#" target="_blank" rel="noopener" style="width:100%;display:block;text-align:center;box-sizing:border-box" onclick="try{if(window.plausible)plausible('party_share_click',{props:{channel:'whatsapp'}})}catch(e){}">💬 Den Link per WhatsApp teilen</a>
           <button id="psShareCopy" type="button" style="width:100%;margin-top:8px;padding:12px;border:1px solid #d8c9b3;background:#fff;color:#333;border-radius:10px;font-weight:700;cursor:pointer" onclick="copyPartyUrl()">🔗 Link kopieren</button>
+          <div id="psEditBlock" style="display:none;margin-top:14px;padding:11px 13px;background:#FFF8EC;border:1px solid #E8D9BC;border-radius:10px">
+            <p style="margin:0 0 3px;font-size:13px;font-weight:800;color:#8a6d3b">🔑 Dein Verwaltungs-Link — nur für dich</p>
+            <p style="margin:0 0 7px;font-size:12px;color:#7a6a50;line-height:1.4">Damit siehst du Zusagen und pflegst Wunschliste &amp; Nachricht. <strong>Nicht an die Gäste geben</strong> — am besten als Lesezeichen speichern.</p>
+            <a id="psEditLink" href="#" target="_blank" rel="noopener" style="font-size:11px;word-break:break-all;color:#5A6473">…</a>
+          </div>
         </div>
       </div>
 
@@ -2193,7 +2198,9 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(!url) return;
     const statusEl = document.getElementById('psStatus'); const urlEl = document.getElementById('psStatusUrl');
     if(statusEl) statusEl.style.display = 'flex';
-    if(urlEl) urlEl.innerHTML = '<a href="' + escA(url) + '" target="_blank" rel="noopener" style="color:var(--accent,#1E3A5F);font-weight:800">' + esc(url) + '</a>' + (editUrl ? (' · <a href="' + escA(editUrl) + '" target="_blank" rel="noopener" style="font-size:12px">Edit-Link — gut aufheben!</a>') : '');
+    if(urlEl) urlEl.innerHTML = '<a href="' + escA(url) + '" target="_blank" rel="noopener" style="color:var(--accent,#1E3A5F);font-weight:800">' + esc(url) + '</a>';
+    // Edit-Link klar als SEPARATER privater Verwaltungs-Link (Feedback: "2 Links" verwirrte — Gästelink vs Edit-Link)
+    if(editUrl){ const _el=document.getElementById('psEditLink'); if(_el){ _el.href=editUrl; _el.textContent=editUrl; } const _eb=document.getElementById('psEditBlock'); if(_eb) _eb.style.display=''; }
     const motto = state.motto || MOTTOS[0];
     const name = (state.name || '').trim() || 'Geburtstagskind';
     const dStr = state.date ? (formatDateShort(state.date) + (state.time ? (', ' + state.time + ' Uhr') : '')) : '';
