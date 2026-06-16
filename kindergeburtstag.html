@@ -2254,7 +2254,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(statusEl) statusEl.style.display = 'flex';
     if(urlEl) urlEl.textContent = 'erstelle Partyseite …';
     const payload = {
-      childName: name, age: ageNum(),
+      childName: name, age: (state.exactAge || ''),   // #26: nur das ECHTE Alter an die Partyseite; ohne Eingabe kein geratenes Gruppen-Alter (Worker rendert dann "feiert Geburtstag!")
       motto: motto.name, mottoId: (motto.id||''), mottoEmoji: motto.emoji, mottoColor: motto.accent || '#D4812A',
       date: state.date || '', time: state.time || '', endTime: state.endTime || '', address: (state.adresse || '').slice(0,200),
       notes: motto.name + '-Geburtstag', askAllergies: true, askPickup: true, wishes: [], ref: state.ref || '',

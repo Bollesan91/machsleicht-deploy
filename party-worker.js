@@ -285,6 +285,7 @@ function validDate(d) { return /^\d{4}-\d{2}-\d{2}$/.test(d || "") ? d : ""; }
 // ═══════════════════════════════════════════════════════════════
 export default {
   async fetch(request, env) {
+   try {
     const url = new URL(request.url);
     const path = url.pathname;
     if (request.method === "OPTIONS") return new Response(null, { headers: corsHeaders(request) });
@@ -779,6 +780,10 @@ export default {
     }
 
     return new Response("Not found",{status:404});
+   } catch (e) {
+     // #30c: jeder unbehandelte Throw (z.B. Type-Confusion bei falschem Feld-Typ via Direkt-API) -> sauberer CORS-Fehler statt CF-1101 ohne CORS-Header.
+     return json({error:"Serverfehler — bitte Eingaben pruefen"}, 500, request);
+   }
   }
 };
 
@@ -1121,7 +1126,7 @@ function _exportCircle(){
   if(!_srcCanvas)return null;
   var c=document.createElement("canvas");c.width=120;c.height=120;
   _drawCrop(c.getContext("2d"),120,120,_circScale,_circX,_circY);
-  return c.toDataURL("image/jpeg",0.4).split(",")[1];
+  return c.toDataURL("image/jpeg",0.4);   // #27: volle data-URL (mit data:-Prefix) wie _exportHero — sonst droppt isSafePhoto das Spielfoto still
 }
 document.getElementById("heroCanvas").addEventListener("pointerdown",function(e){_heroDragging=true;this.setPointerCapture(e.pointerId);});
 document.getElementById("heroCanvas").addEventListener("pointermove",function(e){if(!_heroDragging||!_srcCanvas)return;_heroX+=e.movementX;_heroY+=e.movementY;_redrawHero();});
@@ -1303,7 +1308,7 @@ function partyPage(party, isEditor, gamePhotoUrl, isPreview) {
 
   // Editor keeps existing layout
   // OG-Strings aus ROHwerten bauen \u2014 baseHead esc()'t title+description genau einmal (sonst &amp;amp;)
-  const ogTitle = party.childName ? `${party.childName} wird ${age}! ${party.mottoEmoji||"\u{1F389}"}` : "Kindergeburtstag! \u{1F389}";
+  const ogTitle = party.childName ? `${party.childName}${age?` wird ${age}!`:" feiert Geburtstag!"} ${party.mottoEmoji||"\u{1F389}"}` : "Kindergeburtstag! \u{1F389}";
   const ogDesc = party.motto ? `${party.motto} \u2014 Zu-/Absage, Infos & Wunschliste` : "Alle Party-Infos auf einer Seite";
   return `${baseHead(ogTitle+" \u2014 mach\u2019s leicht", ogDesc, color, ogUrl)}
 <body>
@@ -1339,7 +1344,7 @@ function guestPageFull(party, gamePhotoUrl, isPreview) {
   // Game URL
   const GAME_MOTTOS = ["piraten","dino","safari","weltraum","detektiv","superheld","prinzessin","einhorn","meerjungfrau","feuerwehr","baustelle","dschungel","feen","pferde","ritter"];
   const mottoLC = (party.motto||"").toLowerCase();
-  const gameMottoId = GAME_MOTTOS.find(m => (party.mottoId||"")===m) || GAME_MOTTOS.find(m => mottoLC.includes(m)); // M2: erst exakte mottoId, dann Freitext-Fallback
+  const gameMottoId = GAME_MOTTOS.find(m => (party.mottoId||"")===m) || GAME_MOTTOS.find(m => mottoLC.includes(m)) || "piraten"; // M2: exakte mottoId -> Freitext -> #32 Default-Spiel (Custom-Motto bekam sonst KEIN Spiel trotz Stage-4-Versprechen)
   // Adress-Gating: ort NICHT in die Spiel-URL (sichtbar im iframe-src = Leak vor Zusage). Adresse gibt es erst nach RSVP-"ja".
   // P6-1: Gast-App liegt seit 10.06.2026 unter /whatsapp/ (Direktlink spart den Hub-Forwarding-Hop).
   const gameUrl = gameMottoId ? `https://machsleicht.de/einladung/${gameMottoId}/whatsapp/?name=${encodeURIComponent(party.childName)}&date=${encodeURIComponent(party.date||"")}&time=${encodeURIComponent(party.time||"")}&ort=&tel=${encodeURIComponent("")}${gamePhotoUrl?"&foto="+encodeURIComponent(gamePhotoUrl):""}` : "";
@@ -1492,7 +1497,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
   <div class="hero-logo"><b>mach's</b> leicht</div>
   <div class="hero-photo-wrap" id="heroPhoto" style="display:none"></div>
   <div class="hero-emoji">${emoji}</div>
-  <h1><span class="hname">${name}</span> wird ${esc(age)}!</h1>
+  <h1><span class="hname">${name}</span>${age?` wird ${esc(age)}!`:" feiert Geburtstag!"}</h1>
   ${motto?`<div class="hero-motto">${motto}</div>`:""}
   <div class="hero-sub">Du bist eingeladen!</div>
   ${party.date && daysLeft > 0 ?`<div class="countdown"><span class="countdown-label">Noch</span><span class="countdown-num">${daysLeft}</span><span class="countdown-label">Tage!</span></div>`:""}
