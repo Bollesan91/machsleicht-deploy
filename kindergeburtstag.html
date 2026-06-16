@@ -840,8 +840,13 @@ window.plausible.init=function(){};window.plausible.q=[];
           <button id="psShareCopy" type="button" style="width:100%;margin-top:8px;padding:12px;border:1px solid #d8c9b3;background:#fff;color:#333;border-radius:10px;font-weight:700;cursor:pointer" onclick="copyPartyUrl()">🔗 Link kopieren</button>
           <div id="psEditBlock" style="display:none;margin-top:14px;padding:11px 13px;background:#FFF8EC;border:1px solid #E8D9BC;border-radius:10px">
             <p style="margin:0 0 3px;font-size:13px;font-weight:800;color:#8a6d3b">🔑 Dein Verwaltungs-Link — nur für dich</p>
-            <p style="margin:0 0 7px;font-size:12px;color:#7a6a50;line-height:1.4">Damit siehst du Zusagen und pflegst Wunschliste &amp; Nachricht. <strong>Nicht an die Gäste geben</strong> — am besten als Lesezeichen speichern.</p>
-            <a id="psEditLink" href="#" target="_blank" rel="noopener" style="font-size:11px;word-break:break-all;color:#5A6473">…</a>
+            <p style="margin:0 0 7px;font-size:12px;color:#7a6a50;line-height:1.4">Damit siehst du Zusagen und pflegst Wunschliste &amp; Nachricht. <strong>Nicht an die Gäste geben.</strong></p>
+            <a id="psEditLink" href="#" target="_blank" rel="noopener" style="font-size:11px;word-break:break-all;color:#5A6473;display:block;margin-bottom:9px">…</a>
+            <p style="margin:0 0 5px;font-size:12px;color:#7a6a50">Damit du ihn nie verlierst — schick ihn dir per E-Mail:</p>
+            <div style="display:flex;gap:6px">
+              <input type="email" id="psEmailInput" placeholder="deine@email.de" style="flex:1;padding:9px 11px;border:1px solid #E8D9BC;border-radius:8px;font-size:13px;box-sizing:border-box">
+              <button id="psEmailBtn" type="button" onclick="sendLinkEmail()" style="padding:9px 13px;background:#D4812A;color:#fff;border:none;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap">📧 Senden</button>
+            </div>
           </div>
         </div>
       </div>
@@ -2208,6 +2213,24 @@ window.plausible.init=function(){};window.plausible.q=[];
     window.__partyShareUrl = url; window.__partyShareText = shareMsg;
     const waEl = document.getElementById('psShareWa'); if(waEl) waEl.href = 'https://wa.me/?text=' + encodeURIComponent(shareMsg);
     const sb = document.getElementById('psShareBlock'); if(sb) sb.style.display = '';
+  }
+  // Edit-Link (privater Schluessel) per E-Mail sichern -> Worker send-edit-link (Resend). Nur ein eigener Link ist mailbar (editToken-Pflicht).
+  async function sendLinkEmail(){
+    const inp = document.getElementById('psEmailInput');
+    const email = ((inp && inp.value) || '').trim();
+    if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ showFlash('Bitte gültige E-Mail eingeben'); return; }
+    const url = state.partyseite && state.partyseite.url, editUrl = state.partyseite && state.partyseite.editUrl;
+    if(!url || !editUrl){ showFlash('Bitte zuerst die Partyseite aktivieren'); return; }
+    const id = url.split('?')[0].split('/').filter(Boolean).pop();
+    const token = (editUrl.match(/[?&]edit=([^&]+)/) || [])[1] || '';
+    const btn = document.getElementById('psEmailBtn'); if(btn){ btn.disabled = true; btn.textContent = '…'; }
+    try{
+      const r = await fetch('https://party.machsleicht.de/api/party/' + encodeURIComponent(id) + '/send-edit-link', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ editToken: token, email }) });
+      const d = await r.json().catch(()=>({}));
+      if(r.ok){ showFlash('📧 Link an ' + email + ' geschickt — schau ggf. im Spam-Ordner.'); if(inp) inp.value=''; try{ if(window.plausible) plausible('edit_link_emailed'); }catch(e){} }
+      else { showFlash('⚠️ ' + (d.error || 'Konnte E-Mail gerade nicht senden')); }
+    }catch(e){ showFlash('⚠️ Verbindungsproblem — bitte nochmal versuchen'); }
+    finally{ if(btn){ btn.disabled = false; btn.textContent = '📧 Senden'; } }
   }
   function renderPartyseitePreview(){
     state.partyseite.slug = document.getElementById('psSlug')?.value || state.partyseite.slug;
