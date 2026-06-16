@@ -1919,6 +1919,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     ${party.paypalMe?`<div style="font-size:12px;color:var(--m);margin-top:8px;padding:8px 0;border-top:1px solid var(--l)">\u{1F4B8} PayPal: ${esc(party.paypalMe)}</div>`:""}
     <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px;border-top:1px solid var(--l);padding-top:12px">
       <input id="newWishTitle" placeholder="z.B. Lego-Feuerwehr" maxlength="100" style="padding:10px 12px;border:1px solid var(--l);border-radius:8px;font-size:14px">
+      <input id="newWishUrl" type="url" placeholder="Shop-Link (optional · z.B. amazon.de/...)" maxlength="500" style="padding:10px 12px;border:1px solid var(--l);border-radius:8px;font-size:14px">
       <div style="display:flex;gap:8px;align-items:center">
         <input id="newWishPrice" placeholder="ca. 20\u20AC (optional)" maxlength="20" style="flex:1;padding:10px 12px;border:1px solid var(--l);border-radius:8px;font-size:14px">
         <label style="display:flex;align-items:center;gap:5px;font-size:13px;white-space:nowrap;color:var(--m)"><input type="checkbox" id="newWishShared"> Gemeinsam</label>
@@ -1944,7 +1945,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     const t=document.getElementById("newWishTitle").value.trim();
     if(!t){alert("Bitte einen Wunsch eingeben");return;}
     const u=_curWishes();
-    u.push({title:t, price:document.getElementById("newWishPrice").value.trim(), sharedGift:document.getElementById("newWishShared").checked, claimedBy:[]});
+    u.push({title:t, url:document.getElementById("newWishUrl").value.trim(), price:document.getElementById("newWishPrice").value.trim(), sharedGift:document.getElementById("newWishShared").checked, claimedBy:[]});
     _putWishes(u);
   }
   </script>
