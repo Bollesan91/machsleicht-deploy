@@ -326,12 +326,18 @@ export default {
         ref: /^[a-z0-9]{6,12}$/.test(body.ref||"") ? body.ref : null,  // Virale Attribution (Gast->Host): ID der Party, die diesen neuen Host geseedet hat
       };
       const ttl = calcTTL(party.date);
+      // photoRound (Spiel-Foto): raw base64 unter invphoto:<id> ablegen (von /api/invimg ausgeliefert) + Flag setzen.
+      // Beim Serve wird daraus eine KURZE /api/invimg-URL gebaut statt das base64 in die iframe-URL zu haengen —
+      // das sprengte sonst das ~14KB-URL-Limit (HTTP 414) und brach das Spiel-Foto fuer JEDES reale Foto (#29).
+      const _prValid = body.photoRound && isSafePhoto(body.photoRound);
+      party.hasGamePhoto = !!_prValid;
       await env.PARTY.put(`party:${id}`, JSON.stringify(party), {expirationTtl:ttl});
       if (body.photo && isSafePhoto(body.photo)) {
         await env.PARTY.put(`photo:${id}`, body.photo, {expirationTtl:ttl});
       }
-      if (body.photoRound && isSafePhoto(body.photoRound)) {
-        await env.PARTY.put(`photoRound:${id}`, body.photoRound, {expirationTtl:ttl});
+      if (_prValid) {
+        const _prRaw = body.photoRound.indexOf("data:")===0 ? body.photoRound.split(",")[1] : body.photoRound;
+        await env.PARTY.put(`invphoto:${id}`, _prRaw, {expirationTtl:ttl});
       }
       return json({id, editToken, url:`https://party.machsleicht.de/${id}`, editUrl:`https://party.machsleicht.de/${id}?edit=${editToken}`}, 200, request);
     }
@@ -763,12 +769,13 @@ export default {
       const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
       const isEditor = url.searchParams.get("edit")===party.editToken;
       const isPreview = isEditor && url.searchParams.get("preview")==="1";
-      let photoRoundB64 = "";
-      if (!isEditor || isPreview) {
-        const pr = await env.PARTY.get(`photoRound:${id}`);
-        if (pr) { photoRoundB64 = pr.indexOf("data:")===0 ? pr.split(",")[1] : pr; }
+      // #29-Fix: Spiel-Foto als kurze /api/invimg-URL ausliefern (nicht base64-in-URL -> sonst 414).
+      // Die Gast-App nimmt einen http(s)-foto-Param direkt als <img src>. hasGamePhoto vermeidet einen KV-Read.
+      let gamePhotoUrl = "";
+      if ((!isEditor || isPreview) && party.hasGamePhoto) {
+        gamePhotoUrl = `https://party.machsleicht.de/api/invimg/${id}`;
       }
-      return new Response(partyPage(party,isEditor,photoRoundB64,isPreview),{headers:{"Content-Type":"text/html;charset=utf-8"}});
+      return new Response(partyPage(party,isEditor,gamePhotoUrl,isPreview),{headers:{"Content-Type":"text/html;charset=utf-8"}});
     }
 
     return new Response("Not found",{status:404});
@@ -1276,7 +1283,7 @@ function clearChipSelection(){
 // ═══════════════════════════════════════════════════════════════
 // PARTY PAGE (delegates to guest or editor)
 // ═══════════════════════════════════════════════════════════════
-function partyPage(party, isEditor, photoRoundB64, isPreview) {
+function partyPage(party, isEditor, gamePhotoUrl, isPreview) {
   const color = party.mottoColor || "#D4812A";
   const name = esc(party.childName);
   const age = party.age || "";
@@ -1287,11 +1294,11 @@ function partyPage(party, isEditor, photoRoundB64, isPreview) {
 
   // Preview mode: editor sees guest view without name-gate
   if (isPreview) {
-    return guestPageFull(party, photoRoundB64, true);
+    return guestPageFull(party, gamePhotoUrl, true);
   }
   // Guest view gets the full themed page
   if (!isEditor) {
-    return guestPageFull(party, photoRoundB64);
+    return guestPageFull(party, gamePhotoUrl);
   }
 
   // Editor keeps existing layout
@@ -1311,7 +1318,7 @@ function partyPage(party, isEditor, photoRoundB64, isPreview) {
 // ═══════════════════════════════════════════════════════════════
 // GUEST PAGE — FULL THEMED (new design)
 // ═══════════════════════════════════════════════════════════════
-function guestPageFull(party, photoRoundB64, isPreview) {
+function guestPageFull(party, gamePhotoUrl, isPreview) {
   const t = getTheme(party.mottoId || party.motto); // mottoId (kanonische ID) bevorzugt; Fallback Freitext-Name fuer Legacy-Parties
   const name = esc(party.childName);
   const age = party.age || "";
@@ -1335,7 +1342,7 @@ function guestPageFull(party, photoRoundB64, isPreview) {
   const gameMottoId = GAME_MOTTOS.find(m => (party.mottoId||"")===m) || GAME_MOTTOS.find(m => mottoLC.includes(m)); // M2: erst exakte mottoId, dann Freitext-Fallback
   // Adress-Gating: ort NICHT in die Spiel-URL (sichtbar im iframe-src = Leak vor Zusage). Adresse gibt es erst nach RSVP-"ja".
   // P6-1: Gast-App liegt seit 10.06.2026 unter /whatsapp/ (Direktlink spart den Hub-Forwarding-Hop).
-  const gameUrl = gameMottoId ? `https://machsleicht.de/einladung/${gameMottoId}/whatsapp/?name=${encodeURIComponent(party.childName)}&date=${encodeURIComponent(party.date||"")}&time=${encodeURIComponent(party.time||"")}&ort=&tel=${encodeURIComponent("")}${photoRoundB64?"&foto="+encodeURIComponent(photoRoundB64):""}` : "";
+  const gameUrl = gameMottoId ? `https://machsleicht.de/einladung/${gameMottoId}/whatsapp/?name=${encodeURIComponent(party.childName)}&date=${encodeURIComponent(party.date||"")}&time=${encodeURIComponent(party.time||"")}&ort=&tel=${encodeURIComponent("")}${gamePhotoUrl?"&foto="+encodeURIComponent(gamePhotoUrl):""}` : "";
 
   // Countdown days
   const daysLeft = party.date ? Math.max(0, Math.ceil((new Date(party.date+"T00:00:00") - new Date()) / 86400000)) : 0;
