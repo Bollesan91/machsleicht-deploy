@@ -800,7 +800,7 @@ window.plausible.init=function(){};window.plausible.q=[];
           <p style="font-size:11px;color:#999;margin:6px 0 4px">Verschieben &amp; zoomen — so erscheint das Kind im Spiel</p>
           <div style="display:flex;align-items:center;gap:6px;padding:0 10px;margin-bottom:8px">
             <span style="font-size:13px;color:#bbb">−</span>
-            <input type="range" id="photoZoom" min="100" max="500" value="100" oninput="photoSetZoom(this.value)" style="flex:1">
+            <input type="range" id="photoZoom" min="100" max="500" value="100" oninput="photoSetZoom(this.value)" aria-label="Foto zoomen" style="flex:1">
             <span style="font-size:13px;color:#bbb">+</span>
           </div>
           <div style="display:flex;gap:8px;justify-content:center">
@@ -1057,7 +1057,7 @@ window.plausible.init=function(){};window.plausible.q=[];
 <aside class="drawer" id="drawer" role="dialog">
   <header class="drawer__head">
     <div><div class="drawer__step">Frage <span id="stepNum">1</span> von 5</div></div>
-    <button class="drawer__close" onclick="closeWizard()">×</button>
+    <button class="drawer__close" onclick="closeWizard()" aria-label="Schließen">×</button>
   </header>
   <div class="drawer__progress">
     <span id="p1" class="active"></span><span id="p2"></span><span id="p3"></span><span id="p4"></span><span id="p5"></span>
@@ -1090,10 +1090,10 @@ window.plausible.init=function(){};window.plausible.q=[];
       <h3>Wo feiert ihr?</h3>
       <p class="help">Beeinflusst Schatzsuche-Stationen und Spiele-Vorschläge.</p>
       <div class="options" id="qLocationOpts">
-        <label class="option selected" data-loc="zuhause"><span class="option__icon">🏠</span><span class="option__label">Bei uns zuhause<small class="option__hint">Schatzsuche im Garten + Spiele drinnen</small></span></label>
-        <label class="option" data-loc="drinnen"><span class="option__icon">🛋️</span><span class="option__label">Nur drinnen<small class="option__hint">Schatzsuche durch alle Räume</small></span></label>
-        <label class="option" data-loc="park"><span class="option__icon">🌳</span><span class="option__label">Park / draußen<small class="option__hint">Größere Stationen + Backup-Plan</small></span></label>
-        <label class="option" data-loc="halle"><span class="option__icon">🏟️</span><span class="option__label">Halle<small class="option__hint">Plan auf 2h gekürzt</small></span></label>
+        <label class="option selected" data-loc="zuhause" role="button" tabindex="0" aria-pressed="true"><span class="option__icon">🏠</span><span class="option__label">Bei uns zuhause<small class="option__hint">Schatzsuche im Garten + Spiele drinnen</small></span></label>
+        <label class="option" data-loc="drinnen" role="button" tabindex="0" aria-pressed="false"><span class="option__icon">🛋️</span><span class="option__label">Nur drinnen<small class="option__hint">Schatzsuche durch alle Räume</small></span></label>
+        <label class="option" data-loc="park" role="button" tabindex="0" aria-pressed="false"><span class="option__icon">🌳</span><span class="option__label">Park / draußen<small class="option__hint">Größere Stationen + Backup-Plan</small></span></label>
+        <label class="option" data-loc="halle" role="button" tabindex="0" aria-pressed="false"><span class="option__icon">🏟️</span><span class="option__label">Halle<small class="option__hint">Plan auf 2h gekürzt</small></span></label>
       </div>
     </div>
     <div class="question" data-step="5">
@@ -1974,13 +1974,15 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
 
   document.querySelectorAll('#qLocationOpts .option').forEach(opt => {
-    opt.addEventListener('click', () => {
-      document.querySelectorAll('#qLocationOpts .option').forEach(o => o.classList.remove('selected'));
-      opt.classList.add('selected');
+    const selectLoc = () => {
+      document.querySelectorAll('#qLocationOpts .option').forEach(o => { o.classList.remove('selected'); o.setAttribute('aria-pressed','false'); });
+      opt.classList.add('selected'); opt.setAttribute('aria-pressed','true');
       state.location = opt.dataset.loc;
       document.getElementById('planLocation1').textContent = locationLabel(state.location);
       autoSave();
-    });
+    };
+    opt.addEventListener('click', selectLoc);
+    opt.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); selectLoc(); } });   // A11y: Tastatur-Bedienbarkeit (WCAG 2.1.1)
   });
 
   function renderGamesMulti(){
@@ -1991,7 +1993,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       const sel = state.games.includes(g.name);
       const showPrev = !!(g.curated || g.material || g.brief);
       const nm = (g.name||'').replace(/"/g,'&quot;');
-      return `<label class="multi-item ${sel ? 'selected' : ''}" data-game="${nm}">
+      return `<label class="multi-item ${sel ? 'selected' : ''}" data-game="${nm}" role="button" tabindex="0" aria-pressed="${sel?'true':'false'}">
         <span class="multi-item__check">${sel ? '✓' : ''}</span>
         <span class="multi-item__emoji">${g.emoji}</span>
         <span class="multi-item__name">${nm}</span>
@@ -1999,15 +2001,24 @@ window.plausible.init=function(){};window.plausible.q=[];
       </label>`;
     }).join('');
     grid.querySelectorAll('.multi-item').forEach(item => {
-      item.addEventListener('click', e => {
-        e.preventDefault();
-        const prev = e.target.closest('.multi-item__prev');
-        if(prev){ openGameDetail(prev.dataset.prev); return; }   // Vorschau öffnen statt togglen
+      const toggle = () => {
         const name = item.dataset.game;
         if(state.games.includes(name)) state.games = state.games.filter(n => n !== name);
         else state.games.push(name);
         renderGamesMulti();
+        // Fokus nach Re-Render auf dasselbe Item zurueck (sonst springt Tastatur-Fokus auf body)
+        try{ const again = document.querySelector('#qGamesMulti .multi-item[data-game="'+CSS.escape(name)+'"]'); if(again) again.focus(); }catch(e){}
         autoSave();
+      };
+      item.addEventListener('click', e => {
+        const prev = e.target.closest('.multi-item__prev');
+        if(prev){ e.preventDefault(); openGameDetail(prev.dataset.prev); return; }   // Vorschau öffnen statt togglen
+        e.preventDefault();
+        toggle();
+      });
+      item.addEventListener('keydown', e => {   // A11y: Enter/Space togglen (echtes <button> der Vorschau handhabt sich selbst)
+        if(e.target.closest('.multi-item__prev')) return;
+        if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(); }
       });
     });
     document.getElementById('multiCount').textContent = state.games.length;
@@ -2243,7 +2254,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(statusEl) statusEl.style.display = 'flex';
     if(urlEl) urlEl.textContent = 'erstelle Partyseite …';
     const payload = {
-      childName: name, age: ageNum(),
+      childName: name, age: (state.exactAge || ''),   // #26: nur das ECHTE Alter an die Partyseite; ohne Eingabe kein geratenes Gruppen-Alter (Worker rendert dann "feiert Geburtstag!")
       motto: motto.name, mottoId: (motto.id||''), mottoEmoji: motto.emoji, mottoColor: motto.accent || '#D4812A',
       date: state.date || '', time: state.time || '', endTime: state.endTime || '', address: (state.adresse || '').slice(0,200),
       notes: motto.name + '-Geburtstag', askAllergies: true, askPickup: true, wishes: [], ref: state.ref || '',
