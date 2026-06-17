@@ -37,10 +37,10 @@
           "prepText": "Rätsel so verketten, dass jede Lösung eine Ziffer für das Zahlenschloss liefert. Caesar-Schlüssel (z.B. +3) und Lösungen vorab notieren.",
           "steps": [
             { "n": 1, "name": "Der Fall", "content": "'Die Kronjuwelen wurden aus dem Tresor gestohlen! Drei Rätsel verraten den Zahlencode.'" },
-            { "n": 2, "name": "Caesar-Code", "content": "Eine verschlüsselte Botschaft mit dem Schlüssel entziffern → erste Ziffer." },
-            { "n": 3, "name": "Spiegelschrift", "content": "Text nur im Spiegel lesbar → zweite Ziffer." },
+            { "n": 2, "name": "Caesar-Code (fertig)", "content": "Karte mit dem Geheimtext 'YLHU'. Mit Caesar +3 rückwärts entziffern (Y→V, L→I, H→E, U→R) = VIER → erste Ziffer 4." },
+            { "n": 3, "name": "Spiegelschrift (fertig)", "content": "Schreib die Ziffer 7 spiegelverkehrt auf eine Karte (dünnes Papier vorschreiben, umdrehen). Im Spiegel gelesen: 7 → zweite Ziffer 7." },
             { "n": 4, "name": "Logik-Rätsel (fertig zum Auslegen)", "content": "Drei Hofdamen sind verdächtig — Mathilda (Tür 3), Cordula (Tür 7), Rosalind (Tür 9). Lege diese 3 Hinweise aus: (1) Rosalind war beim Festmahl, als die Juwelen verschwanden. (2) Cordula war im Turm eingeschlossen. (3) Der Dieb trug Handschuhe — und nur Mathilda hatte welche dabei. → Die Diebin ist Mathilda, ihre Tür-Nummer 3 ist die dritte Ziffer." },
-            { "n": 5, "name": "Tresor öffnen", "content": "Zahlenschloss mit dem dreistelligen Code öffnen → die Juwelen sind zurück!" }
+            { "n": 5, "name": "Tresor öffnen", "content": "Zahlenschloss mit dem Code 4-7-3 öffnen → die Juwelen sind zurück!" }
           ],
           "safetyRule": "Bei Teamarbeit darauf achten, dass alle drankommen. Zahlenschloss-Code als Backup notiert, falls es klemmt. Keine Frustfallen — Tipp-Karten bereithalten.",
           "ageAdjust6": "Einfachere Codes (Bilder statt Caesar), Erwachsenen-Tipps.", "ageAdjust8": "Caesar +1 statt +3, mehr Hinweise.",
@@ -80,10 +80,11 @@
           "material": "4 Rätsel-Stationen (Caesar-Code, Spiegelschrift, Logik-Rätsel, UV-Lampe + unsichtbare Schrift), Zahlenschloss + Tresor-Box, Klemmbretter pro Team",
           "prepText": "4 Stationen vorbereiten, jede liefert ein Code-Fragment. UV-Schrift mit unsichtbarem Stift, Lampe bereitstellen. Lösungen + Backup-Code notieren.",
           "steps": [
-            { "n": 1, "name": "Der Fall", "content": "'Die Kronjuwelen sind verschwunden. Vier Stationen verraten den Tresor-Code und den Dieb.'" },
-            { "n": 2, "name": "Stationen lösen", "content": "In Teams alle Stationen durchlaufen, jedes Fragment notieren." },
-            { "n": 3, "name": "UV-Geheimschrift", "content": "An einer Station ein verborgener Hinweis nur unter UV-Licht sichtbar." },
-            { "n": 4, "name": "Code zusammensetzen", "content": "Fragmente kombinieren → Tresor-Code." }
+            { "n": 1, "name": "Der Fall", "content": "'Die Kronjuwelen sind verschwunden. Drei Rätsel ergeben den Tresor-Code, die UV-Station verrät die Diebin.'" },
+            { "n": 2, "name": "Station 1 — Caesar (fertig)", "content": "Karte mit Geheimtext 'GUHL'. Jeden Buchstaben 3 zurück (G→D, U→R, H→E, L→I) = DREI → erste Ziffer 3." },
+            { "n": 3, "name": "Station 2 — Spiegel (fertig)", "content": "Ziffer 5 spiegelverkehrt schreiben (dünnes Papier, umdrehen). Im Spiegel gelesen: 5 → zweite Ziffer 5." },
+            { "n": 4, "name": "Station 3 — Logik (fertig zum Auslegen)", "content": "Drei Hofdamen verdächtig — Mathilda (Tür 3), Cordula (Tür 7), Rosalind (Tür 9). Hinweise: (1) Rosalind war beim Festmahl. (2) Cordula war im Turm eingeschlossen. (3) Der Dieb trug Handschuhe — nur Mathilda hatte welche. → Mathilda, Tür 3 = dritte Ziffer 3." },
+            { "n": 5, "name": "UV + Tresor öffnen", "content": "Unter UV-Licht erscheint zur Bestätigung der Name 'MATHILDA'. Zahlenschloss mit Code 3-5-3 öffnen → die Juwelen sind zurück." }
           ],
           "safetyRule": "UV-Lampe nicht in die Augen leuchten. Teams gleich groß, alle kommen dran. Tipp-Karten gegen Frust bereithalten.",
           "ageAdjust6": "2 statt 4 Stationen, Bild-Codes.", "ageAdjust8": "3 Stationen, einfachere Codes.",
@@ -158,10 +159,11 @@
           "material": "4 Stationen, Zahlenschloss + Tresor, UV-Lampe + Stift, Klemmbretter",
           "prepText": "Stationen vorbereiten, Fragmente → Code.",
           "steps": [
-            { "n": 1, "name": "Auftrag", "content": "Code + Dieb über vier Stationen herausfinden." },
-            { "n": 2, "name": "Lösen", "content": "Teams durchlaufen die Stationen." },
-            { "n": 3, "name": "UV-Schrift", "content": "Verborgener Hinweis unter UV." },
-            { "n": 4, "name": "Code", "content": "Fragmente kombinieren." }
+            { "n": 1, "name": "Auftrag", "content": "Drei Rätsel ergeben den Code, die UV-Station verrät die Diebin." },
+            { "n": 2, "name": "Caesar (fertig)", "content": "Geheimtext-Karte 'DFKW'. Jeden Buchstaben 3 zurück (D→A, F→C, K→H, W→T) = ACHT → erste Ziffer 8." },
+            { "n": 3, "name": "Spiegel (fertig)", "content": "Ziffer 2 spiegelverkehrt schreiben; im Spiegel gelesen: 2 → zweite Ziffer 2." },
+            { "n": 4, "name": "Logik (fertig zum Auslegen)", "content": "Mathilda (Tür 3), Cordula (Tür 7), Rosalind (Tür 9). Hinweise: Rosalind war beim Festmahl, Cordula im Turm eingeschlossen, der Dieb trug Handschuhe — nur Mathilda hatte welche. → Mathilda, Tür 3 = dritte Ziffer 3." },
+            { "n": 5, "name": "UV + Tresor", "content": "Unter UV erscheint 'MATHILDA' zur Bestätigung. Zahlenschloss mit Code 8-2-3 öffnen → die Juwelen sind zurück." }
           ],
           "safetyRule": "UV nicht in die Augen, Tipp-Karten bereit.",
           "ageAdjust6": "2 Stationen.", "ageAdjust8": "3 Stationen.",

@@ -37,9 +37,9 @@
           "prepText": "Eine Nachricht von Dr. Chaos verschlüsseln (z.B. jeden Buchstaben um 3 verschieben). Den Schlüssel als gut versteckten Tipp bereitlegen.",
           "steps": [
             { "n": 1, "name": "Auftrag", "content": "'Dr. Chaos hat seinen Plan verschlüsselt. Knackt den Code, dann wisst ihr, wo der Schaltkreis ist!'" },
-            { "n": 2, "name": "Schlüssel finden", "content": "Erster Mini-Hinweis führt zum Entschlüsselungs-Schlüssel (z.B. 'A=D')." },
-            { "n": 3, "name": "Entschlüsseln", "content": "In Teams die Botschaft Buchstabe für Buchstabe knacken." },
-            { "n": 4, "name": "Lösung nutzen", "content": "Die entschlüsselte Botschaft nennt das nächste Versteck/Spiel." }
+            { "n": 2, "name": "Schlüssel finden", "content": "Erster Mini-Hinweis verrät den Schlüssel: Caesar +3 (A→D, B→E …) — zum Lösen also jeden Buchstaben 3 zurück." },
+            { "n": 3, "name": "Entschlüsseln (fertige Botschaft)", "content": "Auf der Karte steht: 'XQWHU GHU EDQN'. Buchstabe für Buchstabe 3 zurück (X→U, Q→N, W→T, H→E, U→R …) ergibt: UNTER DER BANK." },
+            { "n": 4, "name": "Lösung nutzen", "content": "Dort (unter der Bank bzw. dem Sofa) liegt der nächste Hinweis/Schatz — vorher dort deponieren." }
           ],
           "safetyRule": "Reines Rätselspiel — keine Sicherheitsrisiken. Bei Frust einen Tipp geben, damit kein Team hängenbleibt.",
           "ageAdjust6": "—", "ageAdjust8": "Einfacherer Code (Zahlen=Buchstaben), Schlüssel offen sichtbar.",
@@ -97,9 +97,9 @@
           "prepText": "Drei Stationen vorbereiten, jede liefert eine Ziffer des Tresor-Codes. Box mit Zahlenschloss bestücken (Schatz/Beweismittel drin).",
           "steps": [
             { "n": 1, "name": "Teams + Auftrag", "content": "'Dr. Chaos hat den Reaktor-Code in drei Rätseln versteckt. Löst alle, dann öffnet sich der Tresor!'" },
-            { "n": 2, "name": "Station 1 — Code", "content": "Caesar-verschlüsselte Botschaft knacken → erste Ziffer." },
-            { "n": 3, "name": "Station 2 — Spiegel", "content": "Spiegelschrift mit Taschenlampe/Spiegel lesen → zweite Ziffer." },
-            { "n": 4, "name": "Station 3 — Logik (fertig zum Vorlesen)", "content": "Zahlenrätsel: 'In der Stadt gab es 3 Banküberfälle und doppelt so viele entführte Bürger wie Überfälle. Wie viele Bürger muss der Held retten?' (3 × 2 = 6) → dritte Ziffer 6. Code am Zahlenschloss eingeben, Tresor öffnet sich." }
+            { "n": 2, "name": "Station 1 — Caesar (fertig)", "content": "Karte mit dem Geheimtext 'CZHL'. Jeden Buchstaben 3 zurück (C→Z, Z→W, H→E, L→I) = ZWEI → erste Ziffer 2." },
+            { "n": 3, "name": "Station 2 — Spiegel (fertig)", "content": "Schreib die Ziffer 3 dick und spiegelverkehrt auf Papier (auf dünnem Blatt vorschreiben, umdrehen). Mit Taschenlampe/Spiegel gelesen: 3 → zweite Ziffer 3." },
+            { "n": 4, "name": "Station 3 — Logik (fertig zum Vorlesen)", "content": "Zahlenrätsel: 'In der Stadt gab es 3 Banküberfälle und doppelt so viele entführte Bürger wie Überfälle. Wie viele Bürger muss der Held retten?' (3 × 2 = 6) → dritte Ziffer 6. Tresor-Code 2-3-6 am Zahlenschloss eingeben, Tresor öffnet sich." }
           ],
           "safetyRule": "Reine Rätsel — sicher. Bei Hängern Tipp-Karten bereithalten, damit die Mission nicht stockt.",
           "ageAdjust6": "—", "ageAdjust8": "Einfachere Codes, Tipps offener, evtl. nur 2 Stationen.",
@@ -175,9 +175,9 @@
           "prepText": "Drei Stationen, je eine Code-Ziffer, Tresor mit Zahlenschloss.",
           "steps": [
             { "n": 1, "name": "Auftrag", "content": "Drei Rätsel ergeben den Reaktor-Code." },
-            { "n": 2, "name": "Code", "content": "Caesar knacken → Ziffer 1." },
-            { "n": 3, "name": "Spiegel", "content": "Spiegelschrift → Ziffer 2." },
-            { "n": 4, "name": "Logik & Tresor (fertig zum Vorlesen)", "content": "Zahlenrätsel: 'Der Held besiegt pro Minute 2 Roboter. Wie viele liegen nach 4 Minuten am Boden?' (2 × 4 = 8) → dritte Ziffer 8. Zahlenschloss öffnen." }
+            { "n": 2, "name": "Code (fertig)", "content": "Geheimtext-Karte 'HLQV'. Jeden Buchstaben 3 zurück (H→E, L→I, Q→N, V→S) = EINS → Ziffer 1." },
+            { "n": 3, "name": "Spiegel (fertig)", "content": "Ziffer 9 spiegelverkehrt schreiben (dünnes Papier, umdrehen). Im Spiegel gelesen: 9 → Ziffer 2." },
+            { "n": 4, "name": "Logik & Tresor (fertig zum Vorlesen)", "content": "Zahlenrätsel: 'Der Held besiegt pro Minute 2 Roboter. Wie viele liegen nach 4 Minuten am Boden?' (2 × 4 = 8) → dritte Ziffer 8. Tresor-Code 1-9-8, Zahlenschloss öffnen." }
           ],
           "safetyRule": "Reine Rätsel, Tipp-Karten gegen Frust.",
           "ageAdjust6": "—", "ageAdjust8": "Leichter, 2 Stationen.",
