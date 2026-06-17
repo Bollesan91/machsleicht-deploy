@@ -13,8 +13,22 @@ Zweit-Altlast: zwei parallele Spielquellen (hardcodierte `MOTTOS`-Spiele im Wiza
 
 Anti-Pattern: jede Eingabe als JSON-Dimension → Datei-Explosion (135 × 4 Orte × ∞ Gäste × ∞ Zeiten). Stattdessen: **JSON speichert skalierbare Primitive, die Engine rechnet.**
 
-## 3. JSON-Schema v2 — „skalierbare Primitive"
-Bestehende Felder (`_meta, motto, ageGroup, ageRange, title, metaDescription, introParagraph, ageInsight, faq[], cakeRecipe, parentTips, invitationTemplate, preparationWeeks[], sosScenarios[], signatureRitual`) bleiben. Geändert:
+## 3. WICHTIG: Engine leitet Primitive aus v1 ab — KEIN Massen-Rewrite
+**Befund 17.06.:** Die 45 Dateien sind nicht schema-einheitlich (piraten + Original-13 reich mit signatureRitual/rolesList/savingsTip/categoryReasoning, `duration` als String „10 Min.", fixe `time`-Uhrzeiten; superheld/prinzessin schlanker). Ein v1→v2-Handrewrite aller 45 wäre riesig und fehleranfällig.
+
+**Stattdessen: die Engine parametrisiert die VORHANDENEN v1-Daten zur Laufzeit.** Damit gehen alle toten Eingaben für alle 15 Mottos auf einmal an, ohne Daten-Migration:
+- **Zeit/Endzeit:** Engine liest die vorhandenen `schedule[].time`-Strings → leitet relative Dauern ab (Delta zum nächsten Eintrag) → skaliert ins Fenster `[state.time, state.endTime]` (Logik aus `buildTimeline()`). Keine Datenänderung.
+- **Dauer:** Engine parst `duration` (String „10 Min." ODER Zahl). Keine Datenänderung (Bug verschwindet im Renderer).
+- **Ort:** `indoor`/`outdoor` + `indoorTip`/`outdoorTip` sind schon da → filtern + einblenden. Keine Datenänderung.
+- **Gäste:** Engine liest Basis-Kinderzahl aus `costContext`/`estimatedCostEur` → skaliert Mengen/Preise proportional, rechnet `costContext` neu. Keine Datenänderung (für Grob-Skalierung).
+- **Spiele/Auswahl:** Engine liest `variant.games` → Picker toggelt. Keine Datenänderung.
+
+**Optionale Präzisierung (additiv, nicht Pflicht):** `qtyRule` je shoppingList-Item für exakte statt proportionale Gäste-Skalierung — kann pro Motto später nachgezogen werden; Engine fällt ohne `qtyRule` auf die Heuristik zurück.
+
+→ **Daten-Arbeit reduziert sich auf den redaktionellen Spiele-Merge pro Motto** (Wizard-Klassiker in den Elite-Pool, Tags vervollständigen). Kein mechanischer Schema-Rewrite.
+
+### (Referenz) Ziel-Primitive, falls doch additiv ergänzt
+Bestehende Felder bleiben. Optionale v2-Ergänzungen:
 
 ### 3a. variants[].games[] — Tags vervollständigen (Filter-Basis)
 Pflichtfelder je Spiel (Elite hat die meisten schon; gemergte Wizard-Spiele nachziehen):
@@ -73,6 +87,6 @@ Elite = Basis. Aus den `MOTTOS`-Wizard-Spielen nur **additive Lücken-Füller** 
 - **Stufe 2:** EINE unabhängige Review-Welle = frischer **claude.ai-Tab, Opus 4.8 Hoch** (Fable 5 wenn verfügbar), Bolle-Device, target-blind. **Kein Subagent, kein WebFetch.** Für Code: Engine-Logik + Edge-Cases (leeres Fenster, 0 Spiele nach Filter, 1 Gast) reviewen lassen.
 - **Stufe 3:** Jedes Finding gegen Primärquelle/Code verifizieren; Diff-Re-Check; **Browser-Smoke**: Wizard live durchklicken und beweisen, dass JEDE Eingabe (Ort/Gäste/Zeit/Auswahl/Programmpunkt) den Plan ändert.
 
-## 9. Rollout
-1. **Piraten-Pilot:** 3 Dateien → Schema v2 (inkl. Wizard-Merge) + Engine bauen + tote Eingaben raus → Gate → Deploy → Live-Verify. = Referenz.
-2. **Motto für Motto (14):** nur noch Daten in Schema v2 + Spiele-Merge, je mit Bolle-Kurz-OK auf den Pool. Engine steht dann.
+## 9. Rollout (korrigiert)
+1. **Engine zuerst** (motto-unabhängig): parametrisierter Renderer über die vorhandenen v1-Daten + tote Eingaben raus + Picker→Pool. Lichtet Ort/Zeit/Gäste/Auswahl/Programmpunkte für **alle 15 Mottos auf einmal** auf. Gate → Deploy → Live-Verify am Piraten. = Referenz.
+2. **Spiele-Merge Motto für Motto** (redaktionell): Wizard-Klassiker in den Elite-Pool, je mit Bolle-Kurz-OK. Optional `qtyRule` nachziehen. Kein Schema-Rewrite.
