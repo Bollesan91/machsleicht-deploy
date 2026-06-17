@@ -1210,7 +1210,8 @@ async function createParty(){
     window.scrollTo({top:0,behavior:"smooth"});
   }catch(e){alert("Fehler: "+e.message);btn.textContent="\u{1F389} Erstellen";btn.disabled=false;}
 }
-function shareGuest(){const d=window._pd;const hasW=wishes.some(w=>w.title.trim());const t=(d.motto?d.childName+"s "+d.motto:d.childName+"s Geburtstag")+"! \u{1F389}\\n\\n"+(hasW?"Hier sind alle Infos inkl. Wunschliste, damit wir Doppelgeschenke vermeiden:":"Alle Infos & Zusage hier:")+"\\n"+d.url;window.open("https://wa.me/?text="+encodeURIComponent(t));}
+function poss(n){var s=String(n==null?"":n).trim();return s?(s+(/(s|ß|x|z)$/i.test(s)?"'":"'s")):s;}
+function shareGuest(){const d=window._pd;const hasW=wishes.some(w=>w.title.trim());const t=(d.motto?poss(d.childName)+" "+d.motto:poss(d.childName)+" Geburtstag")+"! \u{1F389}\\n\\n"+(hasW?"Hier sind alle Infos inkl. Wunschliste, damit wir Doppelgeschenke vermeiden:":"Alle Infos & Zusage hier:")+"\\n"+d.url;window.open("https://wa.me/?text="+encodeURIComponent(t));}
 function copyEdit(){navigator.clipboard.writeText(window._pd.editUrl).then(()=>{const b=event.target;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Kopieren",2000);});}
 async function sendEditEmail(){
   _clearErrors();
@@ -1711,7 +1712,7 @@ function downloadIcs(){
   else { var _tp=(time||"12:00").split(":"); var _eh=((parseInt(_tp[0],10)||12)+3)%24; et=String(_eh).padStart(2,"0")+((_tp[1]||"00")+"").padStart(2,"0")+"00"; }  // +3h Fallback OHNE Start-Minuten zu verwerfen (09:30 -> 12:30, nicht 12:00)
   var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//machsleicht//party//DE","BEGIN:VEVENT",
     "DTSTART:"+d+"T"+ti,"DTEND:"+d+"T"+et,
-    "SUMMARY:"+${JSON.stringify(icsEscape(party.childName?party.childName+"s Geburtstag":"Kindergeburtstag")).replace(/</g,"\\u003C").replace(/>/g,"\\u003E")},
+    "SUMMARY:"+${JSON.stringify(icsEscape(party.childName?poss(party.childName)+" Geburtstag":"Kindergeburtstag")).replace(/</g,"\\u003C").replace(/>/g,"\\u003E")},
     "LOCATION:"+REVEALED_ADDR_ICS,
     "DESCRIPTION:"+${JSON.stringify(icsEscape(party.motto||"Kindergeburtstag")).replace(/</g,"\\u003C").replace(/>/g,"\\u003E")},
     "END:VEVENT","END:VCALENDAR"].join("\\r\\n");
@@ -1965,7 +1966,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
 
   <script>
   (async function(){try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo){const el=document.getElementById("heroPhotoEd");const im=document.createElement("img");im.src=d.photo;im.className="hero-photo";el.textContent="";el.appendChild(im);}}catch{}})();
-  function shareWA(){const t="${escJson(party.mottoEmoji||"\u{1F389}")} ${party.childName?escJson(party.childName)+"s ":""}${escJson(party.motto)||"Geburtstag"}!\\n\\nAlle Infos & Zusage hier:\\n${escJson(guestUrl)}";window.open("https://wa.me/?text="+encodeURIComponent(t));}
+  function shareWA(){const t="${escJson(party.mottoEmoji||"\u{1F389}")} ${party.childName?escJson(poss(party.childName))+" ":""}${escJson(party.motto)||"Geburtstag"}!\\n\\nAlle Infos & Zusage hier:\\n${escJson(guestUrl)}";window.open("https://wa.me/?text="+encodeURIComponent(t));}
   function copyLink(){navigator.clipboard.writeText("${esc(guestUrl)}").then(()=>{const b=event.target;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Link kopieren",2000);});}
   function copyGuestLink(){navigator.clipboard.writeText("${esc(guestUrl)}").then(()=>{const b=event.target;const o=b.textContent;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent=o,2000);});}
   async function saveEdit(){
