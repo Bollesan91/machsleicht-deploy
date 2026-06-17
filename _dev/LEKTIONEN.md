@@ -12,4 +12,20 @@
 **Mechanisierbar (→ Linter, sobald portiert):** onclick-Handler→Funktion-Existenz, goStage/jumpStage-Ziel-Existenz, verwaiste IDs, Default-Werte mit Datum in der Vergangenheit, hartkodierte Fristen/Daten.
 
 ## L2 — Reviewer-Modell-Fallback (15.06.2026)
-Helfer-V4.1-Stufe-2-Reviewer = frischer claude.ai-Tab, **Fable 5 Hoch**. Wenn Fable 5 „currently unavailable" ist (war es am 15.06.), Fallback = **Opus 4.8 Hoch** (das vorherige dokumentierte Modell). Nie WebFetch, nie Subagents als gate-entscheidender Reviewer.
+Helfer-V4.1-Stufe-2-Reviewer = frischer claude.ai-Tab, **Fable 5 Hoch**. Wenn Fable 5 „currently unavailable" ist (war es am 15.06. UND 17.06.), Fallback = **Opus 4.8 Hoch** (das vorherige dokumentierte Modell). Nie WebFetch, nie Subagents als gate-entscheidender Reviewer.
+
+## L3 — Affiliate-URLs in Motto-JSON: PLAIN `&tag=`, NICHT `&amp;tag=` (17.06.2026)
+**Befund:** Beim Erstellen der Elite-Datensätze (superheld/prinzessin) hatte ich die Amazon-URLs mit HTML-entity `&amp;tag=machsleicht21-21` geschrieben. Der Wizard rendert sie via `href="${escA(s.url)}"`, und `escA→esc` ersetzt `&`→`&amp;`. Aus `&amp;tag=` wird so `&amp;amp;tag=`, der Browser dekodiert das im href zu wörtlich `&amp;tag=` → Amazon liest Parameter **`amp;tag`** statt `tag` → **Affiliate-Provision = 0**. Die 13 etablierten Dateien nutzen korrekt **plain `&tag=`** (escA macht daraus genau einmal `&amp;tag=` → Browser dekodiert zu `&tag=` ✓). Nebenbefund: `piraten-mittel.json` (live) war gemischt — 14 URLs ebenfalls kaputt, mitgefixt.
+
+**Warum übersehen:** Mein erster Validierungs-Regex `/tag=machsleicht21-21/` matchte BEIDE Varianten. Erst der unabhängige Reviewer + die `escA`-Logik-Verifikation deckten es auf.
+
+**Regel:** In Motto-JSON (und überall, wo eine URL durch einen HTML-Escaper in ein Attribut geht) Query-Parameter mit **rohem `&`** schreiben, nie HTML-encoded. Der Escaper kodiert genau einmal.
+
+**Mechanisierbar (→ Linter):** `grep "&amp;tag=" data/motto/*.json` muss 0 Treffer liefern; jede `hasAffiliate`-URL muss `[?&]tag=machsleicht21-21` (plain) enthalten.
+
+## L4 — costContext = Σ priceEur (Invariante in Elite-Datensätzen) (17.06.2026)
+**Befund:** In den neuen Elite-Daten brach `costContext` ("ca. X € für N Kinder") in den wow-Varianten (und superheld-gross standard/minimal) von der Summe der `shoppingList.priceEur` ab — bis zu 40 € zu hoch. In minimal/standard stimmte es exakt → die unausgesprochene Invariante ist `costContext == Σ priceEur`, und das per-Kind = Summe/N. FAQ-Preiszeilen (dritte Zahlenebene) liefen ebenfalls auseinander.
+
+**Regel:** `costContext`-Gesamtzahl = exakte Summe der gelisteten `priceEur`. Per-Kind = Summe/Kinderzahl. FAQ-Kostenzeile mit beiden synchron halten. Eltern müssen die Liste nachrechnen können.
+
+**Mechanisierbar (→ Linter):** je Variante `parseInt(costContext) === Σ priceEur`; Zeitplan-Minuten-Summe === timeWindow-Spanne; `minAge ≤ Gruppen-Obergrenze` (klein 5 / mittel 8 / gross 12).

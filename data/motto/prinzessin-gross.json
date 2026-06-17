@@ -13,7 +13,7 @@
     { "q": "Ist das nur etwas für Mädchen?", "a": "Nein. Als 'königliches Hofstaat-Mystery' mit Detektiv-Rollen feiern alle mit — Prinzessin, Prinz, Hofdetektiv. Neutral als 'Schloss-Mystery' ankündigen." },
     { "q": "Wie mache ich Rätsel, die nicht zu leicht sind?", "a": "Echte Codes (Caesar-Verschiebung, Spiegelschrift), Logik-Rätsel und ein Zahlenschloss, das geknackt werden muss. Für 9–12 dürfen sie kniffeln müssen — das ist der Reiz." },
     { "q": "Was, wenn die Gruppe sehr unterschiedlich alt ist?", "a": "Teams mischen (Große helfen Kleineren) oder Rätsel mit gestaffelten Hinweisen anbieten. Bei großem Altersmix lieber die Standard- statt Wow-Rätsel." },
-    { "q": "Was kostet so ein Geburtstag ungefähr?", "a": "Minimal ab ~40 €, Standard ~75 €, Wow ~120 € für 8 Kinder. Rätsel und Story selbst gestalten kostet vor allem Zeit, kaum Geld." }
+    { "q": "Was kostet so ein Geburtstag ungefähr?", "a": "Minimal ab ~37 €, Standard ~66 €, Wow ~83 € für 8 Kinder. Rätsel und Story selbst gestalten kostet vor allem Zeit, kaum Geld." }
   ],
   "variants": [
     {
@@ -39,7 +39,7 @@
             { "n": 1, "name": "Der Fall", "content": "'Die Kronjuwelen wurden aus dem Tresor gestohlen! Drei Rätsel verraten den Zahlencode.'" },
             { "n": 2, "name": "Caesar-Code", "content": "Eine verschlüsselte Botschaft mit dem Schlüssel entziffern → erste Ziffer." },
             { "n": 3, "name": "Spiegelschrift", "content": "Text nur im Spiegel lesbar → zweite Ziffer." },
-            { "n": 4, "name": "Logik-Rätsel", "content": "Wer war wann wo? Aus Hinweisen schließen → dritte Ziffer." },
+            { "n": 4, "name": "Logik-Rätsel (fertig zum Auslegen)", "content": "Drei Hofdamen sind verdächtig — Mathilda (Tür 3), Cordula (Tür 7), Rosalind (Tür 9). Lege diese 3 Hinweise aus: (1) Rosalind war beim Festmahl, als die Juwelen verschwanden. (2) Cordula war im Turm eingeschlossen. (3) Der Dieb trug Handschuhe — und nur Mathilda hatte welche dabei. → Die Diebin ist Mathilda, ihre Tür-Nummer 3 ist die dritte Ziffer." },
             { "n": 5, "name": "Tresor öffnen", "content": "Zahlenschloss mit dem dreistelligen Code öffnen → die Juwelen sind zurück!" }
           ],
           "safetyRule": "Bei Teamarbeit darauf achten, dass alle drankommen. Zahlenschloss-Code als Backup notiert, falls es klemmt. Keine Frustfallen — Tipp-Karten bereithalten.",
@@ -52,12 +52,12 @@
       "decoration": "Eleganter: Schwarz-Gold oder tiefes Lila statt Rosa-Tüll, 'Tatort'-Absperrband, Verdächtigen-Steckbriefe an der Wand, ein 'Tresor' als Mittelpunkt, Kerzen-Optik (LED).",
       "giveaways": "Hofstaat-Abzeichen/Detektiv-Marke, ein kleines Rätsel/Knobelspiel to-go, Schatzbeutel mit 'Juwelen' (Schmucksteine).",
       "shoppingList": [
-        { "emoji": "🔐", "label": "Zahlenschloss + abschließbare Box", "url": "https://www.amazon.de/s?k=zahlenschloss+box+kinder+escape&amp;tag=machsleicht21-21", "priceEur": 13, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Der Tresor ist das Herzstück des Mysterys — das physische Öffnen ist der Höhepunkt." },
-        { "emoji": "💎", "label": "Deko-Edelsteine / Schmucksteine (die 'Juwelen')", "url": "https://www.amazon.de/s?k=deko+edelsteine+schmucksteine&amp;tag=machsleicht21-21", "priceEur": 7, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Die gestohlenen Kronjuwelen + Mitgebsel im Schatzbeutel." },
-        { "emoji": "🎖️", "label": "Detektiv-/Hofstaat-Abzeichen 8er", "url": "https://www.amazon.de/s?k=detektiv+abzeichen+kinder+set&amp;tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Gibt jedem Kind eine Rolle (Ernstgenommen-Faktor) + Mitgebsel." },
-        { "emoji": "🎈", "label": "Deko schwarz/gold (Ballons, Band)", "url": "https://www.amazon.de/s?k=deko+set+schwarz+gold+party&amp;tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Eleganter, 'erwachsener' Look statt Kleinkind-Rosa." }
+        { "emoji": "🔐", "label": "Zahlenschloss + abschließbare Box", "url": "https://www.amazon.de/s?k=zahlenschloss+box+kinder+escape&tag=machsleicht21-21", "priceEur": 13, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Der Tresor ist das Herzstück des Mysterys — das physische Öffnen ist der Höhepunkt." },
+        { "emoji": "💎", "label": "Deko-Edelsteine / Schmucksteine (die 'Juwelen')", "url": "https://www.amazon.de/s?k=deko+edelsteine+schmucksteine&tag=machsleicht21-21", "priceEur": 7, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Die gestohlenen Kronjuwelen + Mitgebsel im Schatzbeutel." },
+        { "emoji": "🎖️", "label": "Detektiv-/Hofstaat-Abzeichen 8er", "url": "https://www.amazon.de/s?k=detektiv+abzeichen+kinder+set&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Gibt jedem Kind eine Rolle (Ernstgenommen-Faktor) + Mitgebsel." },
+        { "emoji": "🎈", "label": "Deko schwarz/gold (Ballons, Band)", "url": "https://www.amazon.de/s?k=deko+set+schwarz+gold+party&tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Eleganter, 'erwachsener' Look statt Kleinkind-Rosa." }
       ],
-      "costContext": "ca. 37 € für 8 Kinder · ~4,60 € pro Kind"
+      "costContext": "ca. 37 € für 8 Kinder · ~4,63 € pro Kind"
     },
     {
       "id": "standard",
@@ -111,13 +111,13 @@
       "decoration": "Schwarz-Gold oder Lila-Gold, 'Tatort'-Absperrband um den Tresor, Verdächtigen-Steckbriefe (Hofstaat-Mitglieder) an der Wand, LED-Kerzen, ein Thron, Schloss-Kulisse in cooler Variante.",
       "giveaways": "Hofstaat-Abzeichen, Knobel-/Rätselspiel to-go, Schatzbeutel mit 'Juwelen', Medaille fürs Sieger-Team, Krönung fürs Geburtstagskind.",
       "shoppingList": [
-        { "emoji": "🔐", "label": "Zahlenschloss + Tresor-Box", "url": "https://www.amazon.de/s?k=zahlenschloss+box+escape+kinder&amp;tag=machsleicht21-21", "priceEur": 13, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Herzstück des Mysterys." },
-        { "emoji": "🔦", "label": "UV-Lampe + unsichtbarer Stift", "url": "https://www.amazon.de/s?k=uv+lampe+unsichtbarer+stift+escape&amp;tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "UV-Geheimschrift ist der Wow-Effekt der Escape-Stationen." },
-        { "emoji": "💎", "label": "Deko-Edelsteine (die 'Juwelen')", "url": "https://www.amazon.de/s?k=deko+edelsteine+schmucksteine&amp;tag=machsleicht21-21", "priceEur": 7, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Gestohlene Juwelen + Schatzbeutel-Mitgebsel." },
-        { "emoji": "🎖️", "label": "Hofstaat-/Detektiv-Abzeichen 8er", "url": "https://www.amazon.de/s?k=detektiv+abzeichen+kinder+set&amp;tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Rollen-Identität + Mitgebsel." },
-        { "emoji": "🥏", "label": "Wurfringe + Becher (Wettkampf)", "url": "https://www.amazon.de/s?k=wurfringe+spiel+kinder&amp;tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Material für die royalen Wettkampf-Disziplinen." },
-        { "emoji": "🏅", "label": "Medaillen-Set (Sieger-Team)", "url": "https://www.amazon.de/s?k=medaillen+kinder+set&amp;tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Ehrung des Gewinner-Teams." },
-        { "emoji": "🎈", "label": "Deko schwarz/gold + Absperrband", "url": "https://www.amazon.de/s?k=deko+schwarz+gold+party+set&amp;tag=machsleicht21-21", "priceEur": 12, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Eleganter Mystery-Look + Tatort-Stimmung." }
+        { "emoji": "🔐", "label": "Zahlenschloss + Tresor-Box", "url": "https://www.amazon.de/s?k=zahlenschloss+box+escape+kinder&tag=machsleicht21-21", "priceEur": 13, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Herzstück des Mysterys." },
+        { "emoji": "🔦", "label": "UV-Lampe + unsichtbarer Stift", "url": "https://www.amazon.de/s?k=uv+lampe+unsichtbarer+stift+escape&tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "UV-Geheimschrift ist der Wow-Effekt der Escape-Stationen." },
+        { "emoji": "💎", "label": "Deko-Edelsteine (die 'Juwelen')", "url": "https://www.amazon.de/s?k=deko+edelsteine+schmucksteine&tag=machsleicht21-21", "priceEur": 7, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Gestohlene Juwelen + Schatzbeutel-Mitgebsel." },
+        { "emoji": "🎖️", "label": "Hofstaat-/Detektiv-Abzeichen 8er", "url": "https://www.amazon.de/s?k=detektiv+abzeichen+kinder+set&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Rollen-Identität + Mitgebsel." },
+        { "emoji": "🥏", "label": "Wurfringe + Becher (Wettkampf)", "url": "https://www.amazon.de/s?k=wurfringe+spiel+kinder&tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Material für die royalen Wettkampf-Disziplinen." },
+        { "emoji": "🏅", "label": "Medaillen-Set (Sieger-Team)", "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Ehrung des Gewinner-Teams." },
+        { "emoji": "🎈", "label": "Deko schwarz/gold + Absperrband", "url": "https://www.amazon.de/s?k=deko+schwarz+gold+party+set&tag=machsleicht21-21", "priceEur": 12, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Eleganter Mystery-Look + Tatort-Stimmung." }
       ],
       "costContext": "ca. 66 € für 8 Kinder · ~8,25 € pro Kind"
     },
@@ -205,16 +205,16 @@
       "decoration": "Vollständiges Schloss-Mystery-Set: Schwarz-Gold/Lila, Tatort-Absperrband, Verdächtigen-Wand mit Fäden ('Pinnwand-Ermittlung'), Tresor, Foto-Ecke, LED-Kerzen, Thron, Verhörzimmer-Bereich.",
       "giveaways": "Hofstaat-Abzeichen, ausgedrucktes Shooting-Foto, Knobelspiel to-go, Schatzbeutel mit Juwelen, Medaille fürs Sieger-Team, Krönung fürs Geburtstagskind.",
       "shoppingList": [
-        { "emoji": "🔐", "label": "Zahlenschloss + Tresor-Box", "url": "https://www.amazon.de/s?k=zahlenschloss+box+escape+kinder&amp;tag=machsleicht21-21", "priceEur": 13, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Herzstück des Mysterys." },
-        { "emoji": "🔦", "label": "UV-Lampe + unsichtbarer Stift", "url": "https://www.amazon.de/s?k=uv+lampe+unsichtbarer+stift+escape&amp;tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "UV-Geheimschrift-Effekt." },
-        { "emoji": "🎭", "label": "Verkleidungs-Accessoires (Boas, Hüte, Masken)", "url": "https://www.amazon.de/s?k=verkleidung+accessoires+kinder+set&amp;tag=machsleicht21-21", "priceEur": 14, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Für das royale Fotoshooting + Charakter-Rollen." },
-        { "emoji": "💎", "label": "Deko-Edelsteine (die 'Juwelen')", "url": "https://www.amazon.de/s?k=deko+edelsteine+schmucksteine&amp;tag=machsleicht21-21", "priceEur": 7, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Gestohlene Juwelen + Mitgebsel." },
-        { "emoji": "🎖️", "label": "Hofstaat-Abzeichen 8er", "url": "https://www.amazon.de/s?k=detektiv+abzeichen+kinder+set&amp;tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Rollen-Identität + Mitgebsel." },
-        { "emoji": "🥏", "label": "Wurfringe + Becher (Wettkampf)", "url": "https://www.amazon.de/s?k=wurfringe+spiel+kinder&amp;tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Royale Wettkampf-Disziplinen." },
-        { "emoji": "🏅", "label": "Medaillen-Set (Sieger-Team)", "url": "https://www.amazon.de/s?k=medaillen+kinder+set&amp;tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Ehrung." },
-        { "emoji": "🎈", "label": "Deko schwarz/gold + Absperrband + Pinnwand-Set", "url": "https://www.amazon.de/s?k=deko+schwarz+gold+party+set&amp;tag=machsleicht21-21", "priceEur": 15, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Volle Mystery-Kulisse inkl. Ermittlungs-Pinnwand." }
+        { "emoji": "🔐", "label": "Zahlenschloss + Tresor-Box", "url": "https://www.amazon.de/s?k=zahlenschloss+box+escape+kinder&tag=machsleicht21-21", "priceEur": 13, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Herzstück des Mysterys." },
+        { "emoji": "🔦", "label": "UV-Lampe + unsichtbarer Stift", "url": "https://www.amazon.de/s?k=uv+lampe+unsichtbarer+stift+escape&tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "UV-Geheimschrift-Effekt." },
+        { "emoji": "🎭", "label": "Verkleidungs-Accessoires (Boas, Hüte, Masken)", "url": "https://www.amazon.de/s?k=verkleidung+accessoires+kinder+set&tag=machsleicht21-21", "priceEur": 14, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Für das royale Fotoshooting + Charakter-Rollen." },
+        { "emoji": "💎", "label": "Deko-Edelsteine (die 'Juwelen')", "url": "https://www.amazon.de/s?k=deko+edelsteine+schmucksteine&tag=machsleicht21-21", "priceEur": 7, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Gestohlene Juwelen + Mitgebsel." },
+        { "emoji": "🎖️", "label": "Hofstaat-Abzeichen 8er", "url": "https://www.amazon.de/s?k=detektiv+abzeichen+kinder+set&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Rollen-Identität + Mitgebsel." },
+        { "emoji": "🥏", "label": "Wurfringe + Becher (Wettkampf)", "url": "https://www.amazon.de/s?k=wurfringe+spiel+kinder&tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Royale Wettkampf-Disziplinen." },
+        { "emoji": "🏅", "label": "Medaillen-Set (Sieger-Team)", "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Ehrung." },
+        { "emoji": "🎈", "label": "Deko schwarz/gold + Absperrband + Pinnwand-Set", "url": "https://www.amazon.de/s?k=deko+schwarz+gold+party+set&tag=machsleicht21-21", "priceEur": 15, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Volle Mystery-Kulisse inkl. Ermittlungs-Pinnwand." }
       ],
-      "costContext": "ca. 119 € für 8 Kinder · ~14,90 € pro Kind"
+      "costContext": "ca. 83 € für 8 Kinder · ~10,38 € pro Kind"
     }
   ],
   "cakeRecipe": {

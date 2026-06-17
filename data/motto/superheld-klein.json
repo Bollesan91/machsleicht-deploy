@@ -13,7 +13,7 @@
     { "q": "Sollte es einen Bösewicht geben?", "a": "Mit 3–5 lieber nicht oder nur als sehr albernes, tollpatschiges 'Quatschmonster', das sofort die Maske abnimmt. Echte Schurken machen in diesem Alter schnell Angst." },
     { "q": "Was, wenn ein Kind nicht mitmacht?", "a": "Ganz normal. Kein Zwang — ein Beobachter-Platz auf dem Schoß von Mama/Papa ist okay. Oft kommt das Kind nach ein paar Minuten von selbst dazu." },
     { "q": "Wie verhindere ich Chaos?", "a": "Klare Struktur: ein Spiel, eine kurze ruhige Pause, das nächste. Viel Begleitung (mind. 2 Erwachsene ab 6 Kindern). Bewegungsspiele kurz halten." },
-    { "q": "Was kostet das ungefähr?", "a": "Minimal ab ~30 €, Standard ~50 €, Wow ~80 € für 8 Kinder. Capes selbst aus Stoffresten nähen spart am meisten." }
+    { "q": "Was kostet das ungefähr?", "a": "Minimal ab ~30 €, Standard ~49 €, Wow ~72 € für 8 Kinder. Capes selbst aus Stoffresten nähen spart am meisten." }
   ],
   "variants": [
     {
@@ -65,11 +65,11 @@
       "decoration": "Bunte Ballons in Heldenfarben, ein paar große Comic-Sterne aus Tonpapier, Capes als Deko. Bewusst schlicht.",
       "giveaways": "Cape (zum Behalten), Helden-Urkunde mit Namen, ein Sticker.",
       "shoppingList": [
-        { "emoji": "🦸", "label": "Kinder-Capes 8er-Set", "url": "https://www.amazon.de/s?k=kinder+umhang+cape+superheld+set&amp;tag=machsleicht21-21", "priceEur": 15, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Bequemes Komplett-Kostüm für die Kleinen (ohne störende Maske) + Mitgebsel." },
-        { "emoji": "🎈", "label": "Luftballons bunt 50 Stk.", "url": "https://www.amazon.de/s?k=luftballons+bunt+50&amp;tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Doppelt genutzt: Deko UND das Ballon-Rette-Spiel." },
-        { "emoji": "⭐", "label": "Tonpapier-Set bunt (Sterne/Logos)", "url": "https://www.amazon.de/s?k=tonpapier+bunt+set&amp;tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Comic-Sterne als einfache, günstige Wanddeko, auch für Logos auf der Hand." },
-        { "emoji": "🧷", "label": "Kissen/Teppichfliesen (oft vorhanden)", "url": "https://www.amazon.de/s?k=teppichfliesen+kinder&amp;tag=machsleicht21-21", "priceEur": 0, "hasAffiliate": false, "category": "aktivitaet", "categoryReasoning": "Meist im Haushalt — die 'Wolken' fürs Hüpfspiel." },
-        { "emoji": "🍬", "label": "Mitgebsel + Sticker", "url": "https://www.amazon.de/s?k=superhelden+sticker+kinder&amp;tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Kleiner Beutel-Inhalt fürs Verabschieden." }
+        { "emoji": "🦸", "label": "Kinder-Capes 8er-Set", "url": "https://www.amazon.de/s?k=kinder+umhang+cape+superheld+set&tag=machsleicht21-21", "priceEur": 15, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Bequemes Komplett-Kostüm für die Kleinen (ohne störende Maske) + Mitgebsel." },
+        { "emoji": "🎈", "label": "Luftballons bunt 50 Stk.", "url": "https://www.amazon.de/s?k=luftballons+bunt+50&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Doppelt genutzt: Deko UND das Ballon-Rette-Spiel." },
+        { "emoji": "⭐", "label": "Tonpapier-Set bunt (Sterne/Logos)", "url": "https://www.amazon.de/s?k=tonpapier+bunt+set&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Comic-Sterne als einfache, günstige Wanddeko, auch für Logos auf der Hand." },
+        { "emoji": "🧷", "label": "Kissen/Teppichfliesen (oft vorhanden)", "url": "https://www.amazon.de/s?k=teppichfliesen+kinder&tag=machsleicht21-21", "priceEur": 0, "hasAffiliate": false, "category": "aktivitaet", "categoryReasoning": "Meist im Haushalt — die 'Wolken' fürs Hüpfspiel." },
+        { "emoji": "🍬", "label": "Mitgebsel + Sticker", "url": "https://www.amazon.de/s?k=superhelden+sticker+kinder&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Kleiner Beutel-Inhalt fürs Verabschieden." }
       ],
       "costContext": "ca. 30 € für 8 Kinder · ~3,75 € pro Kind"
     },
@@ -138,14 +138,14 @@
       "decoration": "Bunte Ballons, Comic-Sterne, eine kleine Skyline aus Tonpapier, Capes an der Leine. Tisch mit bunter Decke.",
       "giveaways": "Cape, gebastelter Stern, Urkunde, kleiner Schatzbeutel (Sticker, Tattoo, eine weiche Mini-Figur — keine Kleinteile).",
       "shoppingList": [
-        { "emoji": "🦸", "label": "Kinder-Capes 8er-Set", "url": "https://www.amazon.de/s?k=kinder+umhang+cape+superheld+set&amp;tag=machsleicht21-21", "priceEur": 15, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Bequemes Kostüm + Mitgebsel." },
-        { "emoji": "⭐", "label": "Bastel-Set Sterne (Pappe, Sticker)", "url": "https://www.amazon.de/s?k=bastelset+sterne+kinder&amp;tag=machsleicht21-21", "priceEur": 6, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Material für die ruhige Bastelstation + Mitgebsel." },
-        { "emoji": "🎈", "label": "Luftballons bunt 50 Stk.", "url": "https://www.amazon.de/s?k=luftballons+bunt+50&amp;tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Deko + Spielmaterial." },
-        { "emoji": "💬", "label": "Comic-Servietten & Tischdecke", "url": "https://www.amazon.de/s?k=superhelden+servietten+tischdecke&amp;tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Setzt das Motto am Tisch, praktisch fürs Buffet." },
-        { "emoji": "🧸", "label": "Mitgebsel ohne Kleinteile (Tattoos, weiche Figuren)", "url": "https://www.amazon.de/s?k=mitgebsel+kleinkind+superhelden&amp;tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Schatzkiste + Beutel — bei 3–5 bewusst ohne Verschluckungs-Risiko." },
-        { "emoji": "🖍️", "label": "Ausmalbilder & dicke Wachsmalstifte", "url": "https://www.amazon.de/s?k=wachsmalstifte+dick+kleinkind&amp;tag=machsleicht21-21", "priceEur": 6, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Beschäftigung beim Ankommen, gut greifbar für kleine Hände." }
+        { "emoji": "🦸", "label": "Kinder-Capes 8er-Set", "url": "https://www.amazon.de/s?k=kinder+umhang+cape+superheld+set&tag=machsleicht21-21", "priceEur": 15, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Bequemes Kostüm + Mitgebsel." },
+        { "emoji": "⭐", "label": "Bastel-Set Sterne (Pappe, Sticker)", "url": "https://www.amazon.de/s?k=bastelset+sterne+kinder&tag=machsleicht21-21", "priceEur": 6, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Material für die ruhige Bastelstation + Mitgebsel." },
+        { "emoji": "🎈", "label": "Luftballons bunt 50 Stk.", "url": "https://www.amazon.de/s?k=luftballons+bunt+50&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Deko + Spielmaterial." },
+        { "emoji": "💬", "label": "Comic-Servietten & Tischdecke", "url": "https://www.amazon.de/s?k=superhelden+servietten+tischdecke&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Setzt das Motto am Tisch, praktisch fürs Buffet." },
+        { "emoji": "🧸", "label": "Mitgebsel ohne Kleinteile (Tattoos, weiche Figuren)", "url": "https://www.amazon.de/s?k=mitgebsel+kleinkind+superhelden&tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Schatzkiste + Beutel — bei 3–5 bewusst ohne Verschluckungs-Risiko." },
+        { "emoji": "🖍️", "label": "Ausmalbilder & dicke Wachsmalstifte", "url": "https://www.amazon.de/s?k=wachsmalstifte+dick+kleinkind&tag=machsleicht21-21", "priceEur": 6, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Beschäftigung beim Ankommen, gut greifbar für kleine Hände." }
       ],
-      "costContext": "ca. 49 € für 8 Kinder · ~6,10 € pro Kind"
+      "costContext": "ca. 49 € für 8 Kinder · ~6,13 € pro Kind"
     },
     {
       "id": "wow",
@@ -228,15 +228,15 @@
       "decoration": "Volle bunte Deko: Ballon-Girlande, Comic-Sterne, kleine Skyline, Sternenstation am Eingang, Tisch im Heldenlook.",
       "giveaways": "Cape, gebastelter Stern, Helden-Medaille, gut gefüllter Schatzbeutel (ohne Kleinteile).",
       "shoppingList": [
-        { "emoji": "🦸", "label": "Kinder-Capes 8er-Set", "url": "https://www.amazon.de/s?k=kinder+umhang+cape+superheld+set&amp;tag=machsleicht21-21", "priceEur": 15, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Kostüm + Mitgebsel." },
-        { "emoji": "⭐", "label": "Bastel-Set Sterne", "url": "https://www.amazon.de/s?k=bastelset+sterne+kinder&amp;tag=machsleicht21-21", "priceEur": 6, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Bastelstation + Mitgebsel." },
-        { "emoji": "🏅", "label": "Medaillen 12er-Set", "url": "https://www.amazon.de/s?k=medaillen+kinder+set&amp;tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Ehrung am Ende, schönes Mitgebsel." },
-        { "emoji": "🎈", "label": "Ballon-Girlande bunt", "url": "https://www.amazon.de/s?k=ballon+girlande+bunt&amp;tag=machsleicht21-21", "priceEur": 12, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Wow-Deko mit wenig Aufwand." },
-        { "emoji": "💬", "label": "Comic-Party-Set (Servietten, Becher, Tischdecke)", "url": "https://www.amazon.de/s?k=superhelden+party+set&amp;tag=machsleicht21-21", "priceEur": 12, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Komplettes Tisch-Setting im Motto." },
-        { "emoji": "💪", "label": "Weiche Bälle + Klebeband (Kraft-Stationen)", "url": "https://www.amazon.de/s?k=softball+set+kinder&amp;tag=machsleicht21-21", "priceEur": 7, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Material für die Stationen, sicher für Kleine." },
-        { "emoji": "🧸", "label": "Mitgebsel ohne Kleinteile", "url": "https://www.amazon.de/s?k=mitgebsel+kleinkind+superhelden&amp;tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Schatzbeutel-Füllung, verschluckungssicher." }
+        { "emoji": "🦸", "label": "Kinder-Capes 8er-Set", "url": "https://www.amazon.de/s?k=kinder+umhang+cape+superheld+set&tag=machsleicht21-21", "priceEur": 15, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Kostüm + Mitgebsel." },
+        { "emoji": "⭐", "label": "Bastel-Set Sterne", "url": "https://www.amazon.de/s?k=bastelset+sterne+kinder&tag=machsleicht21-21", "priceEur": 6, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Bastelstation + Mitgebsel." },
+        { "emoji": "🏅", "label": "Medaillen 12er-Set", "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Ehrung am Ende, schönes Mitgebsel." },
+        { "emoji": "🎈", "label": "Ballon-Girlande bunt", "url": "https://www.amazon.de/s?k=ballon+girlande+bunt&tag=machsleicht21-21", "priceEur": 12, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Wow-Deko mit wenig Aufwand." },
+        { "emoji": "💬", "label": "Comic-Party-Set (Servietten, Becher, Tischdecke)", "url": "https://www.amazon.de/s?k=superhelden+party+set&tag=machsleicht21-21", "priceEur": 12, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Komplettes Tisch-Setting im Motto." },
+        { "emoji": "💪", "label": "Weiche Bälle + Klebeband (Kraft-Stationen)", "url": "https://www.amazon.de/s?k=softball+set+kinder&tag=machsleicht21-21", "priceEur": 7, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Material für die Stationen, sicher für Kleine." },
+        { "emoji": "🧸", "label": "Mitgebsel ohne Kleinteile", "url": "https://www.amazon.de/s?k=mitgebsel+kleinkind+superhelden&tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Schatzbeutel-Füllung, verschluckungssicher." }
       ],
-      "costContext": "ca. 79 € für 8 Kinder · ~9,90 € pro Kind"
+      "costContext": "ca. 72 € für 8 Kinder · ~9 € pro Kind"
     }
   ],
   "cakeRecipe": {
@@ -260,7 +260,7 @@
     ],
     "educationalValue": "Für 3–5-Jährige fördern die Spiele vor allem Grobmotorik (Hüpfen, Werfen, Balance), erstes Miteinander (gemeinsam ein Ziel) und Selbstvertrauen ('ich bin ein Held'). Der Verzicht auf Wettkampf schützt vor Frust und macht den Tag für alle schön."
   },
-  "invitationTemplate": "🦸 KLEINE HELD:IN GESUCHT! 🦸\n\n[NAME] wird [ALTER] und feiert einen Superhelden-Geburtstag — und DU bist eingeladen!\n\n🗓️ Wann: [DATUM], [UHRZEIT]\n📍 Wo: [ORT]\n🦸 Cape gibt's bei uns — komm einfach, wie du magst!\n\nBitte sag bis [FRIST] kurz Bescheid.\n\nWir freuen uns auf dich, kleiner Held! 💥",
+  "invitationTemplate": "🦸 KLEINE HELD:IN GESUCHT! 🦸\n\n[NAME] wird [ALTER] und feiert einen Superhelden-Geburtstag — und DU bist eingeladen!\n\n🗓️ Wann: [DATUM], [UHRZEIT]\n📍 Wo: [ORT]\n🦸 Cape gibt's bei uns — komm einfach, wie du magst!\n\nBitte sag bis [FRIST] kurz Bescheid.\n\nWir freuen uns auf dich, kleine:r Held:in! 💥",
   "preparationWeeks": [
     { "week": "2 Wochen vorher", "tasks": ["Einladungen verschicken", "Capes bestellen (Lieferzeit)", "Überlegen: spielt jemand das Quatschmonster?"] },
     { "week": "1 Woche vorher", "tasks": ["Deko besorgen (Ballons, Tonpapier, Servietten)", "Bilder-Schatzsuche vorbereiten (Fotos)", "Mitgebsel ohne Kleinteile packen", "Muffin-Zutaten kaufen"] },

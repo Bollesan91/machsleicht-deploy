@@ -13,7 +13,7 @@
     { "q": "Wie mache ich es knifflig genug?", "a": "Echte Rätsel (Caesar-Code, Spiegelschrift, Zahlenschloss), Aufgaben mit mehreren Schritten und Zeitdruck. Team gegen Team statt jeder für sich." },
     { "q": "Braucht es einen Schurken?", "a": "Sehr empfehlenswert — eine vorab aufgenommene Video-/Audiobotschaft von 'Dr. Chaos' gibt der Mission Antrieb und kommt in dem Alter top an, ganz ohne Angst." },
     { "q": "Geht das in der Wohnung?", "a": "Ja. Escape-Room-Stationen, Code-Knacken und ein Wollfaden-Laserparcours laufen drinnen. Nur der Parkour braucht etwas Platz oder den Garten." },
-    { "q": "Was kostet das ungefähr?", "a": "Minimal ab ~40 €, Standard ~70 €, Wow ~115 € für 8 Kinder. Rätsel/Codes selbst basteln kostet fast nichts — der Aufwand steckt in der Vorbereitung, nicht im Geld." }
+    { "q": "Was kostet das ungefähr?", "a": "Minimal ab ~35 €, Standard ~55 €, Wow ~75 € für 8 Kinder. Rätsel/Codes selbst basteln kostet fast nichts — der Aufwand steckt in der Vorbereitung, nicht im Geld." }
   ],
   "variants": [
     {
@@ -67,13 +67,13 @@
       "decoration": "Eher cool als kindlich: schwarze Tischdecke, 'Sperrzone'-Absperrband, ein Steckbrief von Dr. Chaos, neon-/comicfarbene Akzente. Weniger Ballons, mehr 'Agenten-Hauptquartier'.",
       "giveaways": "Agenten-/Heldenausweis, eine kleine Taschenlampe oder ein Code-Rad, Urkunde 'Mission erfüllt'.",
       "shoppingList": [
-        { "emoji": "🆔", "label": "Agenten-Ausweis-Vorlagen / Lanyards", "url": "https://www.amazon.de/s?k=ausweishalter+lanyard+kinder&amp;tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Statt Kostüm — der Ausweis macht aus jedem einen Agenten/Helden, altersgerecht 'cool'." },
-        { "emoji": "🔦", "label": "Mini-Taschenlampen 8er-Set", "url": "https://www.amazon.de/s?k=mini+taschenlampe+set+kinder&amp;tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Spannendes Mission-Tool (Geheimschrift suchen) + Mitgebsel." },
-        { "emoji": "🚧", "label": "Absperrband 'Sperrzone'", "url": "https://www.amazon.de/s?k=absperrband+party&amp;tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Schafft die Agenten-Hauptquartier-Atmosphäre günstig." },
-        { "emoji": "🎯", "label": "Weiche Bälle + Eimer (Parkour-Finale)", "url": "https://www.amazon.de/s?k=softball+set&amp;tag=machsleicht21-21", "priceEur": 7, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Zielwurf-Station, sicher und wiederverwendbar." },
-        { "emoji": "📜", "label": "Druckerpapier/Karton für Codes & Steckbriefe", "url": "https://www.amazon.de/s?k=tonkarton+a4+set&amp;tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Material für Geheimbotschaften, Ausweise, Steckbrief — der Kern der Mission, fast kostenlos." }
+        { "emoji": "🆔", "label": "Agenten-Ausweis-Vorlagen / Lanyards", "url": "https://www.amazon.de/s?k=ausweishalter+lanyard+kinder&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Statt Kostüm — der Ausweis macht aus jedem einen Agenten/Helden, altersgerecht 'cool'." },
+        { "emoji": "🔦", "label": "Mini-Taschenlampen 8er-Set", "url": "https://www.amazon.de/s?k=mini+taschenlampe+set+kinder&tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Spannendes Mission-Tool (Geheimschrift suchen) + Mitgebsel." },
+        { "emoji": "🚧", "label": "Absperrband 'Sperrzone'", "url": "https://www.amazon.de/s?k=absperrband+party&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Schafft die Agenten-Hauptquartier-Atmosphäre günstig." },
+        { "emoji": "🎯", "label": "Weiche Bälle + Eimer (Parkour-Finale)", "url": "https://www.amazon.de/s?k=softball+set&tag=machsleicht21-21", "priceEur": 7, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Zielwurf-Station, sicher und wiederverwendbar." },
+        { "emoji": "📜", "label": "Druckerpapier/Karton für Codes & Steckbriefe", "url": "https://www.amazon.de/s?k=tonkarton+a4+set&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Material für Geheimbotschaften, Ausweise, Steckbrief — der Kern der Mission, fast kostenlos." }
       ],
-      "costContext": "ca. 40 € für 8 Kinder · ~5 € pro Kind"
+      "costContext": "ca. 35 € für 8 Kinder · ~4,38 € pro Kind"
     },
     {
       "id": "standard",
@@ -99,7 +99,7 @@
             { "n": 1, "name": "Teams + Auftrag", "content": "'Dr. Chaos hat den Reaktor-Code in drei Rätseln versteckt. Löst alle, dann öffnet sich der Tresor!'" },
             { "n": 2, "name": "Station 1 — Code", "content": "Caesar-verschlüsselte Botschaft knacken → erste Ziffer." },
             { "n": 3, "name": "Station 2 — Spiegel", "content": "Spiegelschrift mit Taschenlampe/Spiegel lesen → zweite Ziffer." },
-            { "n": 4, "name": "Station 3 — Logik", "content": "Suchbild/Zahlenrätsel → dritte Ziffer. Code am Zahlenschloss eingeben, Tresor öffnet sich." }
+            { "n": 4, "name": "Station 3 — Logik (fertig zum Vorlesen)", "content": "Zahlenrätsel: 'In der Stadt gab es 3 Banküberfälle und doppelt so viele entführte Bürger wie Überfälle. Wie viele Bürger muss der Held retten?' (3 × 2 = 6) → dritte Ziffer 6. Code am Zahlenschloss eingeben, Tresor öffnet sich." }
           ],
           "safetyRule": "Reine Rätsel — sicher. Bei Hängern Tipp-Karten bereithalten, damit die Mission nicht stockt.",
           "ageAdjust6": "—", "ageAdjust8": "Einfachere Codes, Tipps offener, evtl. nur 2 Stationen.",
@@ -142,15 +142,15 @@
       "decoration": "Agenten-Hauptquartier: schwarze Tischdecke, Sperrband, Steckbrief Dr. Chaos, Neon-Akzente, 'Akte: Streng geheim'-Schilder, gedämpftes Licht für Laser-Station.",
       "giveaways": "Agenten-Ausweis, Taschenlampe, Code-Rad, 'Mission erfüllt'-Urkunde, kleine Beute aus dem Tresor.",
       "shoppingList": [
-        { "emoji": "🆔", "label": "Ausweis-Lanyards 8er", "url": "https://www.amazon.de/s?k=ausweishalter+lanyard+kinder&amp;tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Altersgerechtes 'Kostüm' (Ausweis statt Cape)." },
-        { "emoji": "🔦", "label": "Mini-Taschenlampen 8er-Set", "url": "https://www.amazon.de/s?k=mini+taschenlampe+set+kinder&amp;tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Für Spiegelschrift/Geheimschrift + Mitgebsel." },
-        { "emoji": "🔒", "label": "Zahlenschloss + Box (Tresor)", "url": "https://www.amazon.de/s?k=zahlenschloss+box&amp;tag=machsleicht21-21", "priceEur": 12, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Herzstück der Escape-Stationen — der Tresor, der sich beim richtigen Code öffnet." },
-        { "emoji": "🧶", "label": "Wolle (Laser-Netz)", "url": "https://www.amazon.de/s?k=wolle+set&amp;tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Material für den Laser-Tresor, mehrfach nutzbar." },
-        { "emoji": "🎯", "label": "Weiche Bälle + Eimer", "url": "https://www.amazon.de/s?k=softball+set&amp;tag=machsleicht21-21", "priceEur": 7, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Parkour-Finale." },
-        { "emoji": "🚧", "label": "Deko-Set 'Sperrzone' (Band, Schilder)", "url": "https://www.amazon.de/s?k=absperrband+party+set&amp;tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Agenten-HQ-Atmosphäre." },
-        { "emoji": "📜", "label": "Karton/Papier für Codes & Steckbriefe", "url": "https://www.amazon.de/s?k=tonkarton+a4+set&amp;tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Rätsel-Material, fast kostenlos." }
+        { "emoji": "🆔", "label": "Ausweis-Lanyards 8er", "url": "https://www.amazon.de/s?k=ausweishalter+lanyard+kinder&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Altersgerechtes 'Kostüm' (Ausweis statt Cape)." },
+        { "emoji": "🔦", "label": "Mini-Taschenlampen 8er-Set", "url": "https://www.amazon.de/s?k=mini+taschenlampe+set+kinder&tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Für Spiegelschrift/Geheimschrift + Mitgebsel." },
+        { "emoji": "🔒", "label": "Zahlenschloss + Box (Tresor)", "url": "https://www.amazon.de/s?k=zahlenschloss+box&tag=machsleicht21-21", "priceEur": 12, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Herzstück der Escape-Stationen — der Tresor, der sich beim richtigen Code öffnet." },
+        { "emoji": "🧶", "label": "Wolle (Laser-Netz)", "url": "https://www.amazon.de/s?k=wolle+set&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Material für den Laser-Tresor, mehrfach nutzbar." },
+        { "emoji": "🎯", "label": "Weiche Bälle + Eimer", "url": "https://www.amazon.de/s?k=softball+set&tag=machsleicht21-21", "priceEur": 7, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Parkour-Finale." },
+        { "emoji": "🚧", "label": "Deko-Set 'Sperrzone' (Band, Schilder)", "url": "https://www.amazon.de/s?k=absperrband+party+set&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Agenten-HQ-Atmosphäre." },
+        { "emoji": "📜", "label": "Karton/Papier für Codes & Steckbriefe", "url": "https://www.amazon.de/s?k=tonkarton+a4+set&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Rätsel-Material, fast kostenlos." }
       ],
-      "costContext": "ca. 70 € für 8 Kinder · ~8,75 € pro Kind"
+      "costContext": "ca. 55 € für 8 Kinder · ~6,88 € pro Kind"
     },
     {
       "id": "wow",
@@ -177,7 +177,7 @@
             { "n": 1, "name": "Auftrag", "content": "Drei Rätsel ergeben den Reaktor-Code." },
             { "n": 2, "name": "Code", "content": "Caesar knacken → Ziffer 1." },
             { "n": 3, "name": "Spiegel", "content": "Spiegelschrift → Ziffer 2." },
-            { "n": 4, "name": "Logik & Tresor", "content": "Zahlenrätsel → Ziffer 3, Schloss öffnen." }
+            { "n": 4, "name": "Logik & Tresor (fertig zum Vorlesen)", "content": "Zahlenrätsel: 'Der Held besiegt pro Minute 2 Roboter. Wie viele liegen nach 4 Minuten am Boden?' (2 × 4 = 8) → dritte Ziffer 8. Zahlenschloss öffnen." }
           ],
           "safetyRule": "Reine Rätsel, Tipp-Karten gegen Frust.",
           "ageAdjust6": "—", "ageAdjust8": "Leichter, 2 Stationen.",
@@ -237,16 +237,16 @@
       "decoration": "Komplettes Agenten-HQ: schwarze Tischdecke, Sperrband + Schilder, Steckbrief, Neon, gedämpftes Licht/Schwarzlicht für die Laser-Station, 'Reaktor' (beleuchtete Box) als Finale-Objekt.",
       "giveaways": "Ausweis, Taschenlampe, Code-Rad, Medaille/Urkunde 'Mission erfüllt', Beute aus dem Tresor.",
       "shoppingList": [
-        { "emoji": "🆔", "label": "Ausweis-Lanyards 8er", "url": "https://www.amazon.de/s?k=ausweishalter+lanyard+kinder&amp;tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Altersgerechtes Kostüm-Element." },
-        { "emoji": "🔦", "label": "Mini-Taschenlampen 8er-Set", "url": "https://www.amazon.de/s?k=mini+taschenlampe+set+kinder&amp;tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Geheimschrift + Mitgebsel." },
-        { "emoji": "🔒", "label": "Zahlenschloss + Box (Tresor)", "url": "https://www.amazon.de/s?k=zahlenschloss+box&amp;tag=machsleicht21-21", "priceEur": 12, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Escape-Tresor." },
-        { "emoji": "🏅", "label": "Medaillen 12er-Set", "url": "https://www.amazon.de/s?k=medaillen+kinder+set&amp;tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Ehrung beim Finale." },
-        { "emoji": "🥤", "label": "Becher-Stapel-Set (Speed Stacking)", "url": "https://www.amazon.de/s?k=stapelbecher+speed+stacks&amp;tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Geschicklichkeits-Challenge, danach Wiederverwendung." },
-        { "emoji": "🌑", "label": "Schwarzlicht-Lampe (Laser/Geheimschrift)", "url": "https://www.amazon.de/s?k=schwarzlicht+lampe+uv&amp;tag=machsleicht21-21", "priceEur": 13, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Macht Geheimschrift sichtbar + Wow-Stimmung beim Showdown." },
-        { "emoji": "🚧", "label": "Deko-Set 'Sperrzone'", "url": "https://www.amazon.de/s?k=absperrband+party+set&amp;tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Agenten-HQ." },
-        { "emoji": "📜", "label": "Karton/Papier für Rätsel", "url": "https://www.amazon.de/s?k=tonkarton+a4+set&amp;tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Codes, Steckbriefe, Ausweise." }
+        { "emoji": "🆔", "label": "Ausweis-Lanyards 8er", "url": "https://www.amazon.de/s?k=ausweishalter+lanyard+kinder&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Altersgerechtes Kostüm-Element." },
+        { "emoji": "🔦", "label": "Mini-Taschenlampen 8er-Set", "url": "https://www.amazon.de/s?k=mini+taschenlampe+set+kinder&tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Geheimschrift + Mitgebsel." },
+        { "emoji": "🔒", "label": "Zahlenschloss + Box (Tresor)", "url": "https://www.amazon.de/s?k=zahlenschloss+box&tag=machsleicht21-21", "priceEur": 12, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Escape-Tresor." },
+        { "emoji": "🏅", "label": "Medaillen 12er-Set", "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Ehrung beim Finale." },
+        { "emoji": "🥤", "label": "Becher-Stapel-Set (Speed Stacking)", "url": "https://www.amazon.de/s?k=stapelbecher+speed+stacks&tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Geschicklichkeits-Challenge, danach Wiederverwendung." },
+        { "emoji": "🌑", "label": "Schwarzlicht-Lampe (Laser/Geheimschrift)", "url": "https://www.amazon.de/s?k=schwarzlicht+lampe+uv&tag=machsleicht21-21", "priceEur": 13, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Macht Geheimschrift sichtbar + Wow-Stimmung beim Showdown." },
+        { "emoji": "🚧", "label": "Deko-Set 'Sperrzone'", "url": "https://www.amazon.de/s?k=absperrband+party+set&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Agenten-HQ." },
+        { "emoji": "📜", "label": "Karton/Papier für Rätsel", "url": "https://www.amazon.de/s?k=tonkarton+a4+set&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Codes, Steckbriefe, Ausweise." }
       ],
-      "costContext": "ca. 115 € für 8 Kinder · ~14,40 € pro Kind"
+      "costContext": "ca. 75 € für 8 Kinder · ~9,38 € pro Kind"
     }
   ],
   "cakeRecipe": {
