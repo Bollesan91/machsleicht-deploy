@@ -29,3 +29,10 @@ Helfer-V4.1-Stufe-2-Reviewer = frischer claude.ai-Tab, **Fable 5 Hoch**. Wenn Fa
 **Regel:** `costContext`-Gesamtzahl = exakte Summe der gelisteten `priceEur`. Per-Kind = Summe/Kinderzahl. FAQ-Kostenzeile mit beiden synchron halten. Eltern müssen die Liste nachrechnen können.
 
 **Mechanisierbar (→ Linter):** je Variante `parseInt(costContext) === Σ priceEur`; Zeitplan-Minuten-Summe === timeWindow-Spanne; `minAge ≤ Gruppen-Obergrenze` (klein 5 / mittel 8 / gross 12).
+
+## L5 — „Fertig zum Vorlesen" muss WIRKLICH fertig sein (17.06.2026, 2. Welle)
+**Befund:** Die gross-Escape-Spiele (superheld/prinzessin) waren als „fertiger Ablauf" deklariert, lieferten aber nur 1 von 3 Tresor-Ziffern konkret — Caesar-Code und Spiegelschrift sagten nur „→ erste/zweite Ziffer", ohne konkrete Botschaft, Schlüssel oder Ziffern-Mapping. Der Tresor ließ sich mit dem Ausgelieferten nicht öffnen → eltern-irreführend (MAJOR). Erste Welle hatte nur die Logik-Ziffer konkretisiert, die anderen zwei übersehen — fix-induzierte Teil-Lösung. Fix: pro Variante vollständigen Code (z. B. Caesar 'CZHL'→ZWEI→2, Spiegel-Ziffer, Logik) + Tresor-Code N-N-N ausformuliert. Caesar-Chiffren beim Schreiben SELBST nachrechnen (A→D/+3).
+
+**Regel:** Bei einem Inhalt mit „fertig"-Versprechen: jeder Schritt, der eine Lösung *benennt* statt sie zu *liefern* (`→ erste Ziffer`, `Rätsel lösen`, `Hinweis kombinieren`), ist eine versteckte Lücke. Liefere das konkrete Material (Geheimtext, Schlüssel, Lösung, Endcode) inline.
+
+**Mechanisierbar (→ Linter):** in gross-Escape-Steps darf kein `→ (erste|zweite|dritte) Ziffer` ohne danebenstehenden konkreten Wert stehen; je Escape-Spiel muss ein `Code \d-\d-\d` vorkommen.
