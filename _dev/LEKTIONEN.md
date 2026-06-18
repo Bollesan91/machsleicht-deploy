@@ -36,3 +36,14 @@ Helfer-V4.1-Stufe-2-Reviewer = frischer claude.ai-Tab, **Fable 5 Hoch**. Wenn Fa
 **Regel:** Bei einem Inhalt mit „fertig"-Versprechen: jeder Schritt, der eine Lösung *benennt* statt sie zu *liefern* (`→ erste Ziffer`, `Rätsel lösen`, `Hinweis kombinieren`), ist eine versteckte Lücke. Liefere das konkrete Material (Geheimtext, Schlüssel, Lösung, Endcode) inline.
 
 **Mechanisierbar (→ Linter):** in gross-Escape-Steps darf kein `→ (erste|zweite|dritte) Ziffer` ohne danebenstehenden konkreten Wert stehen; je Escape-Spiel muss ein `Code \d-\d-\d` vorkommen.
+
+## L6 — Motto-Spiele-Norm + #34-Methode (18.06.2026, piraten-Pilot)
+Verbindlich für den Motto-für-Motto-Spiele-Merge (#34), erprobt an piraten:
+- **Alignment vor Erfinden:** Der eigentliche „zu dünn"-Fix ist **`games[]` an `schedule` angleichen** — jedes im Tagesplan referenzierte Spiel MUSS eine Anleitung in `games[]` haben (keine Waisen). piraten-mittel-wow hatte schedule=8/games=2 → Anleitungen aus Geschwister-Varianten ziehen (verlustfrei), NICHT neue erfinden. Erst danach ggf. ergänzen.
+- **Spiele-Zahl-Norm (Schatzsuche zählt als 1):** minimal **≥3** (Floor, nie unter 3) · standard **4–5** · wow **5–6** (muss ≥ standard sein). **gross = Quest-struktur** → zählt anders (eine Stations-Quest + 1–2 Aufwärmer reichen).
+- **Schatzsuche-Dedup in DATEN, nicht Engine:** generische „Schatzsuche/Schatzspur" aus `games[]` weglassen (das Schatz-Modul deckt sie → sonst Doppel-Anzeige). ABER eigenständige Spiele wie gross-wow „Nacht-Schatzsuche mit Stirnlampen" BEHALTEN — deshalb kuratiert pro Motto, keine Engine-Regex (die traf „Nacht-Schatzsuche" fälschlich).
+- **Orts-flexibel taggen:** Spiele wo möglich `indoor:true`+`outdoor:true` + `indoorTip`/`outdoorTip` — sonst dünnt der Ort-Filter aus. Nur echt gebundenes restriktiv (Flaggenraub = outdoor-only bewusst).
+- **Wizard→Elite-Konversion (~10 Min/Spiel):** Wizard-`brief` in nummerierte `steps[]` zerlegen + `whyItWorks`, `indoorTip`/`outdoorTip`, `ageAdjust*`, `indoor/outdoor/loudness/effort/minAge` ergänzen. `material`-Array → String.
+- **Safety-Lektion (Stufe-2-Befund):** Bei „Kampf"-Spielen reicht „kein Schlag auf Kopf" NICHT — **Stich/Vorstoß mit der Spitze (Augen!) explizit verbieten**, Brille sichern. **`safetyRule` darf nie schwächer sein als die `steps`** (Steps-Cap muss in die Regel). Renn-/Fangspiele: Kollisions-/Schubs-Regel ergänzen.
+
+**Mechanisierbar (→ Linter):** je Variante `games.length`: minimal≥3, wow≥standard; jedes schedule-referenzierte Spiel hat ein `games[]`-Objekt; keine generische „Schatzsuche" in `games[]` wenn Schatz-Modul existiert.
