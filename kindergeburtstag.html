@@ -1771,7 +1771,9 @@ window.plausible.init=function(){};window.plausible.q=[];
     const planEnd = (_endM!=null && _startM!=null && _endM-_startM>=30) ? fmt(_endM) : (schedRows.length ? schedRows[schedRows.length-1].time : '');
 
     // ENGINE: Spiele nach Ort filtern + Tipp/Alters-Anpassung einblenden, Dauer robust parsen
-    const locGames = eliteGamesForLoc(v.games);
+    let locGames = eliteGamesForLoc(v.games);
+    // Schatzsuche-Dedup: wenn das eigene Schatz-Modul rendert, das (redundante) Schatzsuche-SPIEL aus der Liste nehmen — sonst doppelt
+    if(schatzHtml && schatzHtml.trim()){ const _f=locGames.filter(g=> !/schatzsuche|schatzspur/i.test(g.name||'')); if(_f.length) locGames=_f; }
     const games = locGames.map(g => {
       const steps = (g.steps || []).map(st => `<li>${mdLink(st.content || st.name || st)}</li>`).join('');
       const dur = _parseDur(g.duration); const tip = eliteLocTip(g); const adj = eliteAgeAdjust(g);
