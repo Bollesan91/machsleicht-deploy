@@ -1070,11 +1070,11 @@ window.plausible.init=function(){};window.plausible.q=[];
 <div class="overlay" id="overlay" onclick="closeWizard()"></div>
 <aside class="drawer" id="drawer" role="dialog">
   <header class="drawer__head">
-    <div><div class="drawer__step">Frage <span id="stepNum">1</span> von 5</div></div>
+    <div><div class="drawer__step">Frage <span id="stepNum">1</span> von 4</div></div>
     <button class="drawer__close" onclick="closeWizard()" aria-label="Schließen">×</button>
   </header>
   <div class="drawer__progress">
-    <span id="p1" class="active"></span><span id="p2"></span><span id="p3"></span><span id="p4"></span><span id="p5"></span>
+    <span id="p1" class="active"></span><span id="p2"></span><span id="p3"></span><span id="p4"></span>
   </div>
   <div class="drawer__body">
     <div class="question active" data-step="1">
@@ -1109,12 +1109,6 @@ window.plausible.init=function(){};window.plausible.q=[];
         <label class="option" data-loc="park" role="button" tabindex="0" aria-pressed="false"><span class="option__icon">🌳</span><span class="option__label">Park / draußen<small class="option__hint">Größere Stationen + Backup-Plan</small></span></label>
         <label class="option" data-loc="halle" role="button" tabindex="0" aria-pressed="false"><span class="option__icon">🏟️</span><span class="option__label">Halle<small class="option__hint">Plan auf 2h gekürzt</small></span></label>
       </div>
-    </div>
-    <div class="question" data-step="5">
-      <h3>Welche Spiele sollen rein?</h3>
-      <p class="help">Wähl 4–7 aus — wir hängen sie zeitlich passend in den Tagesplan.</p>
-      <div class="multi-info">Ausgewählt: <b><span id="multiCount">5</span></b> · empfohlen 4–7</div>
-      <div class="multi-grid" id="qGamesMulti"></div>
     </div>
   </div>
   <footer class="drawer__foot">
@@ -1616,7 +1610,6 @@ window.plausible.init=function(){};window.plausible.q=[];
         <header class="mod__head">
           <span class="mod__icon">🎮</span>
           <h3 class="mod__title">Spiele · ${state.games.length} ausgewählt</h3>
-          <button class="mod__edit" onclick="openWizard(5)">✏️ Spiele tauschen</button>
         </header>
         <div class="games-grid">${gamesData.map(g => `<div class="game-tag" onclick="openGameDetail('${g.name.replace(/'/g, "\\'")}')"><span class="game-tag__info">Details ›</span><div class="game-tag__name">${g.emoji} ${g.name}</div><div class="game-tag__desc">${g.desc}</div></div>`).join('')}</div>
       </article>
@@ -1969,7 +1962,6 @@ window.plausible.init=function(){};window.plausible.q=[];
     document.getElementById('qGuests').value = state.guests;
     document.getElementById('qGuestsLabel').textContent = state.guests;
     document.querySelectorAll('#qLocationOpts .option').forEach(o => o.classList.toggle('selected', o.dataset.loc === state.location));
-    renderGamesMulti();
   }
   function closeWizard(){
     document.getElementById('drawer').classList.remove('open');
@@ -1984,16 +1976,17 @@ window.plausible.init=function(){};window.plausible.q=[];
     document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
     const target = document.querySelector(`.question[data-step="${n}"]`);
     if(target) target.classList.add('active');
-    for(let i=1; i<=5; i++){
+    for(let i=1; i<=4; i++){
       const el = document.getElementById('p'+i);
+      if(!el) continue;
       el.classList.remove('done','active');
       if(i < n) el.classList.add('done');
       else if(i === n) el.classList.add('active');
     }
     document.getElementById('btnBack').style.display = n > 1 ? 'inline-block' : 'none';
-    document.getElementById('btnNext').textContent = n === 5 ? '✓ Plan ansehen' : 'Weiter →';
+    document.getElementById('btnNext').textContent = n === 4 ? '✓ Plan ansehen' : 'Weiter →';
   }
-  function stepNext(){ if(state.step < 5) setStep(state.step + 1); else closeWizard(); }
+  function stepNext(){ if(state.step < 4) setStep(state.step + 1); else closeWizard(); }
   function stepBack(){ if(state.step > 1) setStep(state.step - 1) }
 
   // Nebeneffektfreies Name-Gate (KEIN autoSave/Slug -> sicher aus syncEckdaten/initFunnel aufrufbar ohne den Save zu clobbern):
