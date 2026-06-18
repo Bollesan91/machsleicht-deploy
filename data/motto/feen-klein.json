@@ -204,7 +204,7 @@
             {
               "n": 2,
               "name": "Verteilen",
-              "content": "Jedes Kind bekommt 2–3 handtellergroße Steine und Stifte."
+              "content": "Jedes Kind bekommt 2–3 handtellergroße Steine und Stifte (für 3-Jährige wasserbasierte Filzstifte — KEINE Acrylstifte; Acryl nur mit Aufsicht bei Älteren)."
             },
             {
               "n": 3,
@@ -245,7 +245,7 @@
             {
               "n": 1,
               "name": "Aufbau",
-              "content": "Reis mit essbarem Glitzer in die Wanne füllen, Schmetterlinge und Marienkäfer (min. 4 cm) darin vergraben."
+              "content": "Reis mit essbarem Glitzer in die Wanne füllen, Schmetterlinge und Marienkäfer darin vergraben — bei 3-Jährigen NUR Figuren ab 6 cm (kleinere sind Verschluck-Teile und wandern als Mitgebsel in Kinderhände)."
             },
             {
               "n": 2,
@@ -258,7 +258,7 @@
               "content": "Wer einen Schmetterling findet, darf ihn behalten — er landet später in der Mitgebsel-Tüte."
             }
           ],
-          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: NUR essbaren Glitzer verwenden (Backabteilung), kein Bastel-Glitzer — der kann in Atemwege/Augen gelangen. Mini-Figuren min. 4 cm — Verschluckungsgefahr. Kinder nicht alleine graben lassen. Reis nicht in die Augen — bei Augenkontakt mit Wasser spülen, ggf. Augenarzt.",
+          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: NUR essbaren Glitzer (kein Bastel-Glitzer — Atemweg/Augen). Figuren min. 6 cm (4 cm passt durch den Verschluck-Prüfzylinder). Kinder nicht alleine graben lassen. Reis nicht in die Augen — bei Augenkontakt mit Wasser spülen, ggf. Augenarzt.",
           "ageAdjust6": "Figuren nur leicht bedecken. Reis statt Sand (wiederverwendbar, weniger Sauerei). Auf alter Tischdecke oder in Badewanne aufstellen — Glitzer wandert weniger.",
           "ageAdjust8": "Tiefer vergraben. Augen zu und nur ertasten — welche Figur ist das (Schmetterling oder Marienkäfer)?",
           "indoorTip": "In der Badewanne aufstellen — Glitzer wandert weniger, Kinder sitzen drumherum.",
@@ -428,7 +428,7 @@
             {
               "n": 2,
               "name": "Bekleben",
-              "content": "Jedes Kind klebt 6–8 Blüten auf seinen Streifen."
+              "content": "Jedes Kind klebt 6–8 Blüten mit Doppelklebeband oder Klebepunkten auf seinen Streifen (KEIN Heißkleber für Kinder)."
             },
             {
               "n": 3,
@@ -464,7 +464,7 @@
             {
               "n": 1,
               "name": "Aufbau",
-              "content": "Reis mit essbarem Glitzer in die Wanne füllen, Schmetterlinge und Marienkäfer (min. 4 cm) darin vergraben."
+              "content": "Reis mit essbarem Glitzer in die Wanne füllen, Schmetterlinge und Marienkäfer darin vergraben — bei 3-Jährigen NUR Figuren ab 6 cm (kleinere sind Verschluck-Teile und wandern als Mitgebsel in Kinderhände)."
             },
             {
               "n": 2,
@@ -477,7 +477,7 @@
               "content": "Wer einen Schmetterling findet, darf ihn behalten — er landet später in der Mitgebsel-Tüte."
             }
           ],
-          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: NUR essbaren Glitzer verwenden (Backabteilung), kein Bastel-Glitzer — der kann in Atemwege/Augen gelangen. Mini-Figuren min. 4 cm — Verschluckungsgefahr. Kinder nicht alleine graben lassen. Reis nicht in die Augen — bei Augenkontakt mit Wasser spülen, ggf. Augenarzt.",
+          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: NUR essbaren Glitzer (kein Bastel-Glitzer — Atemweg/Augen). Figuren min. 6 cm (4 cm passt durch den Verschluck-Prüfzylinder). Kinder nicht alleine graben lassen. Reis nicht in die Augen — bei Augenkontakt mit Wasser spülen, ggf. Augenarzt.",
           "ageAdjust6": "Figuren nur leicht bedecken. Reis statt Sand (wiederverwendbar, weniger Sauerei). Auf alter Tischdecke oder in Badewanne aufstellen — Glitzer wandert weniger.",
           "ageAdjust8": "Tiefer vergraben. Augen zu und nur ertasten — welche Figur ist das (Schmetterling oder Marienkäfer)?",
           "indoorTip": "In der Badewanne aufstellen — Glitzer wandert weniger, Kinder sitzen drumherum.",
@@ -505,7 +505,7 @@
             {
               "n": 2,
               "name": "Verteilen",
-              "content": "Jedes Kind bekommt 2–3 handtellergroße Steine und Stifte."
+              "content": "Jedes Kind bekommt 2–3 handtellergroße Steine und Stifte (für 3-Jährige wasserbasierte Filzstifte — KEINE Acrylstifte; Acryl nur mit Aufsicht bei Älteren)."
             },
             {
               "n": 3,
@@ -753,7 +753,7 @@
             {
               "n": 2,
               "name": "Bekleben",
-              "content": "Jedes Kind klebt 6–8 Blüten auf seinen Streifen."
+              "content": "Jedes Kind klebt 6–8 Blüten mit Doppelklebeband oder Klebepunkten auf seinen Streifen (KEIN Heißkleber für Kinder)."
             },
             {
               "n": 3,
@@ -789,7 +789,7 @@
             {
               "n": 1,
               "name": "Aufbau",
-              "content": "Reis mit essbarem Glitzer in die Wanne füllen, Schmetterlinge und Marienkäfer (min. 4 cm) darin vergraben."
+              "content": "Reis mit essbarem Glitzer in die Wanne füllen, Schmetterlinge und Marienkäfer darin vergraben — bei 3-Jährigen NUR Figuren ab 6 cm (kleinere sind Verschluck-Teile und wandern als Mitgebsel in Kinderhände)."
             },
             {
               "n": 2,
@@ -802,7 +802,7 @@
               "content": "Wer einen Schmetterling findet, darf ihn behalten — er landet später in der Mitgebsel-Tüte."
             }
           ],
-          "safetyRule": "Sichtaufsicht zwingend. NUR essbaren Glitzer (Backabteilung) — Bastel-Glitzer ist tabu wegen Atemwege/Augen. Mini-Figuren min. 4 cm. Bei Augenkontakt mit Wasser spülen, ggf. Augenarzt.",
+          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: NUR essbaren Glitzer (kein Bastel-Glitzer — Atemweg/Augen). Figuren min. 6 cm (4 cm passt durch den Verschluck-Prüfzylinder). Kinder nicht alleine graben lassen. Reis nicht in die Augen — bei Augenkontakt mit Wasser spülen, ggf. Augenarzt.",
           "ageAdjust6": "Figuren nur leicht bedecken. In Badewanne aufstellen.",
           "ageAdjust8": "Tiefer vergraben. Mit verbundenen Augen ertasten.",
           "indoorTip": "Badewanne als Container.",
@@ -830,7 +830,7 @@
             {
               "n": 2,
               "name": "Verteilen",
-              "content": "Jedes Kind bekommt 2–3 handtellergroße Steine und Stifte."
+              "content": "Jedes Kind bekommt 2–3 handtellergroße Steine und Stifte (für 3-Jährige wasserbasierte Filzstifte — KEINE Acrylstifte; Acryl nur mit Aufsicht bei Älteren)."
             },
             {
               "n": 3,
@@ -866,12 +866,12 @@
           "loudness": "ruhig",
           "effort": "mittel",
           "material": "1 Holz-Bastelstab pro Kind (30 cm, ~3 € für 10 Stk.), 1 Tüll-Schmetterling (vorbereitet!) pro Kind, Klebepunkte/Doppelklebeband (KEINE Heißklebe!), bunte Bänder (Geschenkband ~2 €), Glitzer-Aufkleber",
-          "prepText": "Du bereitest vorher die Tüll-Schmetterlinge vor: Tüll-Stück in Schleifen-Form mit Draht in der Mitte (du!) gebunden, dann mit Doppelklebeband-Streifen am Stab fixierbar. Kinder kleben Schmetterling auf den Stab (Doppelklebeband-Streifen abziehen), knoten Bänder dran (Erwachsener hilft) und kleben Glitzer-Aufkleber drauf. Fertig ist das Feenflügel-Stäbchen.",
+          "prepText": "Du bereitest vorher die Tüll-Schmetterlinge vor: Tüll-Stück in Schleifen-Form mit einem Pfeifenputzer in der Mitte (du!) gebunden, dann mit Doppelklebeband-Streifen am Stab fixierbar. Kinder kleben Schmetterling auf den Stab (Doppelklebeband-Streifen abziehen), knoten Bänder dran (Erwachsener hilft) und kleben Glitzer-Aufkleber drauf. Fertig ist das Feenflügel-Stäbchen.",
           "steps": [
             {
               "n": 1,
               "name": "Vorbereitung (Erwachsene)",
-              "content": "Tüll-Schmetterlinge in Schleifenform mit Draht in der Mitte binden, Drahtenden umbiegen (Stichgefahr!), Doppelklebeband-Streifen am Stab vorbereiten."
+              "content": "Tüll-Schmetterlinge in Schleifenform mit einem PFEIFENPUTZER in der Mitte zusammenbinden (KEIN Draht — Pfeifenputzer ist biegsam, ohne scharfe oder strangulierende Enden), Doppelklebeband-Streifen am Stab vorbereiten."
             },
             {
               "n": 2,
@@ -889,7 +889,7 @@
               "content": "Glitzer-Aufkleber draufkleben — fertig ist das Feenflügel-Stäbchen."
             }
           ],
-          "safetyRule": "Schere/Tacker NUR durch Erwachsene. Heißkleber KOMPLETT TABU für Kinder — alle Klebeverbindungen mit Doppelklebeband oder Klebepunkten. Drahtenden am Schmetterling vorher umbiegen — Stichgefahr. Bei 3-Jährigen: Stab nicht in der Hand schwingen lassen außerhalb des Tanzes — Augenstoßgefahr.",
+          "safetyRule": "Schere/Tacker NUR durch Erwachsene. Heißkleber KOMPLETT TABU — alle Klebeverbindungen mit Doppelklebeband oder Klebepunkten. Statt Draht IMMER Pfeifenputzer (keine scharfen Enden, kein Strangulations-Draht — konsistent zum Verbot bei den Tüll-Schmetterlingen). Bei 3-Jährigen: Stab außerhalb des Tanzes nicht schwingen lassen (Augenstoßgefahr).",
           "ageAdjust6": "Stab + Schmetterling komplett vorher zusammenkleben. Kinder kleben nur Bänder + Aufkleber drauf.",
           "ageAdjust8": "Sie dürfen den Schmetterling selbst aufkleben und die Bänder selbst knoten.",
           "indoorTip": null,
