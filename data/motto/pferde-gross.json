@@ -669,7 +669,7 @@
       "id": "standard",
       "label": "Standard — 3,5 Stunden, voller Stallmeister-Wettbewerb",
       "headline": "🐎 Standard — 3,5 Stunden Stallmeister-Wettbewerb",
-      "intro": "Allrounder für 8-10 Kinder: 5 Prüfungs-Stationen (Pflege, Reit-Parcours, Quiz Klasse 2, Hufschmied, Mähnen-Stilling), Funktions-System, Wanderpokal für bestes Team, optional Reiterhof-Besuch mit echtem Pony.",
+      "intro": "Allrounder für 8-10 Kinder: 5 Prüfungs-Stationen (Pflege, Reit-Parcours, Quiz Klasse 2, Hufschmied, Mähnen-Styling), Funktions-System, Wanderpokal für bestes Team, optional Reiterhof-Besuch mit echtem Pony.",
       "timeWindow": "14:00–17:30, 10 Kinder",
       "schedule": [
         {
@@ -704,7 +704,7 @@
         },
         {
           "time": "16:50",
-          "title": "Station 5: Mähnen-Stilling-Wettbewerb",
+          "title": "Station 5: Mähnen-Styling-Wettbewerb",
           "description": "30 Min — Kreativ-Stilnote."
         },
         {
@@ -1092,7 +1092,7 @@
           "whyItWorks": "9-12 wollen echtes Handwerk-Wissen — wie wird ein Pferd beschlagen, warum alle 6-8 Wochen, was bedeutet \"kaltes\" vs \"warmes\" Beschlagen. Das eigene Hufeisen mit Name + Spruch ist ein echtes Mitnehm-Stück. Stolz-Moment beim Aufhängen zuhause."
         },
         {
-          "name": "🎀 Mähnen-Stilling-Wettbewerb",
+          "name": "🎀 Mähnen-Styling-Wettbewerb",
           "duration": 30,
           "minAge": 9,
           "outdoor": false,
@@ -1102,17 +1102,17 @@
           "steps": [
             {
               "n": 1,
-              "name": "Stilling-Theorie",
-              "content": "Quizmaster Lina erklärt: 'Welche Stillings gibts? Klassischer Zopf, französischer Zopf, Schweif-Locken, Festtags-Style.'"
+              "name": "Styling-Theorie",
+              "content": "Quizmaster Lina erklärt: 'Welche Stylings gibts? Klassischer Zopf, französischer Zopf, Schweif-Locken, Festtags-Style.'"
             },
             {
               "n": 2,
               "name": "Pferd aussuchen + Konzept",
-              "content": "Jedes Kind wählt Pferd und Stilling-Stil. 5 Min Konzept-Phase."
+              "content": "Jedes Kind wählt Pferd und Styling-Stil. 5 Min Konzept-Phase."
             },
             {
               "n": 3,
-              "name": "Stilling-Phase",
+              "name": "Styling-Phase",
               "content": "20 Min freie Gestaltung, Wolle einarbeiten, Schleifen anbringen."
             },
             {
@@ -1125,16 +1125,16 @@
           "effort": "hoch",
           "prepText": "10 Plüsch-Pferde + Wolle in 5+ Farben + Filz-Schleifen + Klebepads + Glitzer-Spray (nur draußen!) + Spiegel + Wertungstafel für Kreativität/Sauberkeit. 25 Min Vorlauf — Catwalk-Setup.",
           "ageAdjust6": "Nicht für 6-Jährige — Bewertung als Wettkampf-Element ist zu fortgeschritten.",
-          "ageAdjust8": "Falls 8-Jährige dabei (selten in 9-12-Party): einfachere Frisur-Variante anbieten (klassischer Zopf statt freier Stilling). Stilnote-Druck reduzieren.",
+          "ageAdjust8": "Falls 8-Jährige dabei (selten in 9-12-Party): einfachere Frisur-Variante anbieten (klassischer Zopf statt freier Styling). Stilnote-Druck reduzieren.",
           "indoorTip": "Im Wohnzimmer auf einzelnen Tischen pro 2-Kinder-Team + Catwalk-Bühne (Decke auf dem Boden) für Vorführung.",
           "outdoorTip": "Im Garten mit Glitzer-Spray-Bereich (sehr wichtig: NIE im geschlossenen Raum sprühen). Catwalk-Bühne auf Rasen.",
-          "whyItWorksTitle": "Warum ein Stilling-Catwalk Wow-Wirkung hat",
-          "whyItWorks": "Bei 9-12 funktioniert Mode-/Stilling-Bewertung mit echtem Catwalk wie ein Mini-Talent-Wettbewerb. Pferdefans dieser Altersgruppe kennen Reitturnier-Ästhetik aus YouTube/Pferde-Magazinen — der Catwalk simuliert diese Profi-Welt."
+          "whyItWorksTitle": "Warum ein Styling-Catwalk Wow-Wirkung hat",
+          "whyItWorks": "Bei 9-12 funktioniert Mode-/Styling-Bewertung mit echtem Catwalk wie ein Mini-Talent-Wettbewerb. Pferdefans dieser Altersgruppe kennen Reitturnier-Ästhetik aus YouTube/Pferde-Magazinen — der Catwalk simuliert diese Profi-Welt."
         }
       ],
       "food": "🍕 Echte Pizza (4 große)\n🥕 Karotten-Sticks XL\n🍎 Trauben + Apfelschnitze + Birnen\n🥤 Apfelschorle (5 L)\n🎂 Pferdekopf-Kuchen Standard\n🥨 Brezeln + Salzstangen + Käsewürfel + Wurst\n🍕 Mini-Pizzen extra (für Hunger zwischendurch)\n🍬 Gummi-Pferdchen + Reiter-Riegel",
       "decoration": "🐴 'Reiterhof Goldene Mähne'-Banner\n🌾 Stroh-Bunde + Heuballen + Tonkrüge\n🐎 10 Plüsch-Pferde (groß)\n🏇 5 Stations-Schilder\n🌻 Sonnenblumen-Wand + Stallmeister-Tafel\n🪣 Karotten-Eimer\n🏆 Wanderpokal + Pin-Wand",
-      "giveaways": "📜 Stallmeister-Anwärter-Diplom Klasse 1\n🐎 Hufeisen + Wachsschnur zum Aufhängen\n🎀 Mähnen-Stilling-Set\n🌟 Stallmeister-Pin (Bronze/Silber/Gold je nach Gesamt-Score)\n🥕 Karotten-Tüte\n📓 Pferde-Wissens-Heft + Reiter-Stift",
+      "giveaways": "📜 Stallmeister-Anwärter-Diplom Klasse 1\n🐎 Hufeisen + Wachsschnur zum Aufhängen\n🎀 Mähnen-Styling-Set\n🌟 Stallmeister-Pin (Bronze/Silber/Gold je nach Gesamt-Score)\n🥕 Karotten-Tüte\n📓 Pferde-Wissens-Heft + Reiter-Stift",
       "shoppingList": [
         {
           "emoji": "🐎",
@@ -1174,12 +1174,12 @@
         },
         {
           "emoji": "🎀",
-          "label": "Mähnen-Stilling-Set Premium",
+          "label": "Mähnen-Styling-Set Premium",
           "url": null,
           "priceEur": 25,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Stilling-Wettbewerb."
+          "categoryReasoning": "Styling-Wettbewerb."
         },
         {
           "emoji": "🐴",
@@ -1188,7 +1188,7 @@
           "priceEur": 40,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Pflege + Stilling + Mitgebsel."
+          "categoryReasoning": "Pflege + Styling + Mitgebsel."
         },
         {
           "emoji": "🍕",
@@ -1212,8 +1212,8 @@
       "costContext": "Geschätzte Kosten (Standard, 10 Kinder)",
       "estimatedCostEur": 239,
       "savingsTip": {
-        "title": "💡 Spar-Trick — Bauplan + Stilling-Material reduzieren",
-        "body": "Mähnen-Stilling-Premium-Set (25 €) lässt sich auf Wolle + Schleifen aus Bestand reduzieren (~10 €). 10 Plüsch-Ponys können auf 6 reduziert werden (Mähnen-Stilling im Stations-Wechsel — spart ~24 €). Damit liegt Standard bei ~195-205 € statt 239 €."
+        "title": "💡 Spar-Trick — Bauplan + Styling-Material reduzieren",
+        "body": "Mähnen-Styling-Premium-Set (25 €) lässt sich auf Wolle + Schleifen aus Bestand reduzieren (~10 €). 10 Plüsch-Ponys können auf 6 reduziert werden (Mähnen-Styling im Stations-Wechsel — spart ~24 €). Damit liegt Standard bei ~195-205 € statt 239 €."
       }
     },
     {
@@ -1255,7 +1255,7 @@
         },
         {
           "time": "17:05",
-          "title": "Station 5: Mähnen-Stilling-Catwalk",
+          "title": "Station 5: Mähnen-Styling-Catwalk",
           "description": "30 Min — mit Bühne + Catwalk."
         },
         {
@@ -1648,7 +1648,7 @@
           "whyItWorks": "9-12 wollen echtes Handwerk-Wissen — wie wird ein Pferd beschlagen, warum alle 6-8 Wochen, was bedeutet \"kaltes\" vs \"warmes\" Beschlagen. Das eigene Hufeisen mit Name + Spruch ist ein echtes Mitnehm-Stück. Stolz-Moment beim Aufhängen zuhause."
         },
         {
-          "name": "🎀 Mähnen-Stilling-Wettbewerb",
+          "name": "🎀 Mähnen-Styling-Wettbewerb",
           "duration": 30,
           "minAge": 9,
           "outdoor": false,
@@ -1658,17 +1658,17 @@
           "steps": [
             {
               "n": 1,
-              "name": "Stilling-Theorie",
-              "content": "Quizmaster Lina erklärt: 'Welche Stillings gibts? Klassischer Zopf, französischer Zopf, Schweif-Locken, Festtags-Style.'"
+              "name": "Styling-Theorie",
+              "content": "Quizmaster Lina erklärt: 'Welche Stylings gibts? Klassischer Zopf, französischer Zopf, Schweif-Locken, Festtags-Style.'"
             },
             {
               "n": 2,
               "name": "Pferd aussuchen + Konzept",
-              "content": "Jedes Kind wählt Pferd und Stilling-Stil. 5 Min Konzept-Phase."
+              "content": "Jedes Kind wählt Pferd und Styling-Stil. 5 Min Konzept-Phase."
             },
             {
               "n": 3,
-              "name": "Stilling-Phase",
+              "name": "Styling-Phase",
               "content": "20 Min freie Gestaltung, Wolle einarbeiten, Schleifen anbringen."
             },
             {
@@ -1681,11 +1681,11 @@
           "effort": "hoch",
           "prepText": "10 Plüsch-Pferde + Wolle in 5+ Farben + Filz-Schleifen + Klebepads + Glitzer-Spray (nur draußen!) + Spiegel + Wertungstafel für Kreativität/Sauberkeit. 25 Min Vorlauf — Catwalk-Setup.",
           "ageAdjust6": "Nicht für 6-Jährige — Bewertung als Wettkampf-Element ist zu fortgeschritten.",
-          "ageAdjust8": "Falls 8-Jährige dabei (selten in 9-12-Party): einfachere Frisur-Variante anbieten (klassischer Zopf statt freier Stilling). Stilnote-Druck reduzieren.",
+          "ageAdjust8": "Falls 8-Jährige dabei (selten in 9-12-Party): einfachere Frisur-Variante anbieten (klassischer Zopf statt freier Styling). Stilnote-Druck reduzieren.",
           "indoorTip": "Im Wohnzimmer auf einzelnen Tischen pro 2-Kinder-Team + Catwalk-Bühne (Decke auf dem Boden) für Vorführung.",
           "outdoorTip": "Im Garten mit Glitzer-Spray-Bereich (sehr wichtig: NIE im geschlossenen Raum sprühen). Catwalk-Bühne auf Rasen.",
-          "whyItWorksTitle": "Warum ein Stilling-Catwalk Wow-Wirkung hat",
-          "whyItWorks": "Bei 9-12 funktioniert Mode-/Stilling-Bewertung mit echtem Catwalk wie ein Mini-Talent-Wettbewerb. Pferdefans dieser Altersgruppe kennen Reitturnier-Ästhetik aus YouTube/Pferde-Magazinen — der Catwalk simuliert diese Profi-Welt."
+          "whyItWorksTitle": "Warum ein Styling-Catwalk Wow-Wirkung hat",
+          "whyItWorks": "Bei 9-12 funktioniert Mode-/Styling-Bewertung mit echtem Catwalk wie ein Mini-Talent-Wettbewerb. Pferdefans dieser Altersgruppe kennen Reitturnier-Ästhetik aus YouTube/Pferde-Magazinen — der Catwalk simuliert diese Profi-Welt."
         },
         {
           "name": "🏆 Stallmeister-Olympiade: Hufeisen-Wurf-Finale",
@@ -1730,7 +1730,7 @@
       ],
       "food": "🎂 Pferdekopf-Kuchen XL (Wow-Hauptkuchen, mit Marzipan-Mähne)\n🍕 Echte Pizza (5 große, davon 2 Veggie)\n🥕 Karotten-Sticks XL (4 Schalen)\n🍎 Trauben + Apfelschnitze + Birnen + Melone\n🥤 Apfelschorle + Pferde-Punsch (alkoholfrei) (6 L)\n🥨 Brezeln + Salzstangen + Käse + Wurst\n🍕 Mini-Pizzen + Pferde-Cookies\n🍬 Gummi-Pferdchen + Reiter-Riegel + Schokoladentaler",
       "decoration": "🐴 Großes 'Reiterhof Goldene Mähne'-Banner (Wow-Format)\n🌾 Echte Stroh-Bunde + Heuballen + Tonkrüge + Sattel-Deko\n🐎 10 große Plüsch-Pferde\n🏇 6 Stations-Schilder mit Wertungs-Tafeln\n🌻 Sonnenblumen-Wand + Stallmeister-Tafel + Foto-Wand\n🪣 Karotten-Eimer\n🏆 Wanderpokal-Wand + 3 Mini-Pokale + Foto-Box",
-      "giveaways": "📜 Stallmeister-Diplom Klasse 2 mit Foto + Funktion\n🐎 Hufeisen mit eigener Gravur\n🎀 Mähnen-Stilling-Set + Glitzer-Spray\n🌟 Stallmeister-Pin Bronze/Silber/Gold (je nach Olympiade-Platz)\n🥕 Premium-Karotten-Tüte + Pferde-Snacks\n📓 Pferde-Profi-Heft (Rassen, Gangarten, Erste Hilfe Pferd, Hufschmied-Wissen) + Reiter-Stift",
+      "giveaways": "📜 Stallmeister-Diplom Klasse 2 mit Foto + Funktion\n🐎 Hufeisen mit eigener Gravur\n🎀 Mähnen-Styling-Set + Glitzer-Spray\n🌟 Stallmeister-Pin Bronze/Silber/Gold (je nach Olympiade-Platz)\n🥕 Premium-Karotten-Tüte + Pferde-Snacks\n📓 Pferde-Profi-Heft (Rassen, Gangarten, Erste Hilfe Pferd, Hufschmied-Wissen) + Reiter-Stift",
       "shoppingList": [
         {
           "emoji": "🐎",
@@ -1770,7 +1770,7 @@
         },
         {
           "emoji": "🎀",
-          "label": "Mähnen-Stilling-Set Wow + Glitzer-Spray",
+          "label": "Mähnen-Styling-Set Wow + Glitzer-Spray",
           "url": null,
           "priceEur": 35,
           "hasAffiliate": false,
@@ -1784,7 +1784,7 @@
           "priceEur": 60,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Pflege + Stilling + Mitgebsel."
+          "categoryReasoning": "Pflege + Styling + Mitgebsel."
         },
         {
           "emoji": "🍕",
@@ -1883,7 +1883,7 @@
       },
       {
         "topic": "🎀 Wolle + Klebepads ohne Sekundenkleber",
-        "detail": "Mähnen-Stilling nur mit Klebepads, keine giftigen Klebstoffe. Glitzer-Spray nur draußen oder im Bad sprühen."
+        "detail": "Mähnen-Styling nur mit Klebepads, keine giftigen Klebstoffe. Glitzer-Spray nur draußen oder im Bad sprühen."
       },
       {
         "topic": "👥 Eltern absetzen reicht in Wow-Variante",

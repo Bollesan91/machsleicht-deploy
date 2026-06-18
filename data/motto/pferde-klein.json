@@ -577,41 +577,6 @@
           "outdoorTip": "Im Garten als Reiter-Parcours-Highlight mit echtem Stroh als Wassergraben-Imitat. Keine Möbel-Schäden.",
           "whyItWorksTitle": "Warum Steckenpferd-Parcours auch ohne echtes Pferd zieht",
           "whyItWorks": "3-5-Jährige verlieben sich in das Steckenpferd-Reiten — sie sind selbst Pferd und Reiter zugleich. Der Parcours strukturiert die Aktivität und gibt Erfolgs-Momente (geschafft! durch!)."
-        },
-        {
-          "name": "🐴 Großer Pony-Streichel-Kreis (Eröffnung)",
-          "duration": 20,
-          "minAge": 3,
-          "outdoor": false,
-          "indoor": true,
-          "material": "8 Plüsch-Ponys verschiedener Größen, weiche Bürsten, Decke als 'Stall-Boden'",
-          "safetyRule": "Plüschtiere ohne Kleinteile, Bürsten ohne harte Borsten.",
-          "steps": [
-            {
-              "n": 1,
-              "name": "Ponys verteilen",
-              "content": "Alle Plüsch-Ponys auf Decke in der Mitte. Kreis bilden."
-            },
-            {
-              "n": 2,
-              "name": "Pony aussuchen + Namen geben",
-              "content": "Jedes Kind wählt sein Pony, gibt einen Namen. Du schreibst auf einer 'Stall-Liste' mit."
-            },
-            {
-              "n": 3,
-              "name": "Streicheln, bürsten",
-              "content": "5 Minuten Pflege-Zeit. Du erzählst Pony-Anekdoten dazu."
-            }
-          ],
-          "loudness": "leise",
-          "effort": "hoch",
-          "prepText": "1 großes Plüsch-Pony (50+ cm) als Mittelpunkt — oder 2 mittlere. Kinder-Kreis vorab geübt (Stuhl-Stellung). 5 Min Vorlauf — kurzes Eröffnungs-Ritual, nicht Haupt-Phase.",
-          "ageAdjust6": "Bei 3-Jährigen: Eltern sitzen DAHINTER, nicht im Kreis — sonst werden Kinder unsicher. Pony wird reihum weitergegeben, jedes Kind hat 30 Sek-1 Min Streichel-Zeit.",
-          "ageAdjust8": "Mit Mischgruppe 3-5: das größere Kind hilft dem kleineren das Pony \"richtig\" zu streicheln. Identifikation als Helfer.",
-          "indoorTip": "Im Wohnzimmer-Sofa-Halbkreis — alle sehen das Pony. Musik (sanfte Pferdehof-Playlist) im Hintergrund verstärkt Atmosphäre.",
-          "outdoorTip": "Im Garten auf Decken im Kreis — Sonnenblumen oder Stroh-Bunde als Reiterhof-Kulisse.",
-          "whyItWorksTitle": "Warum dieses Eröffnungs-Ritual den Tag setzt",
-          "whyItWorks": "Der erste Stations-Moment definiert die Stimmung. Ein gemeinsamer ruhiger Streichel-Kreis signalisiert: heute geht es um Pferde und Sanftheit. Funktioniert besser als hyperaktive Begrüßung, weil Kinder nach Anreise oft schon übererregt sind."
         }
       ],
       "food": "🥕 Karotten-Sticks (2 Schalen)\n🍎 Apfelschnitze (2 Schalen)\n🥣 Hafer-Müsli in Kornsäckchen (8 Stk)\n🥤 Pferde-Schorle (3 L)\n🎂 Hufeisen-Kuchen (Kastenkuchen)\n🥨 Salzstangen + Brezeln\n🧀 Käsewürfel",
