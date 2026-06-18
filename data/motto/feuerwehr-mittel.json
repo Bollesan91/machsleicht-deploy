@@ -435,8 +435,39 @@
           "effort": "mittel",
           "material": "Material gesamt: Wasserspritzpistolen + Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 4–6 Kuscheltiere + Verbandszeug-Spielset oder Toilettenpapier-Rolle (Station 4)",
           "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau) zu je 3 Kindern. Vier Stationen sind im Raum/Garten verteilt — je 8 Min., dann auf Pfiff Wechsel. Funktioniert auch wenn 1–2 Stationen mal hängen.",
-          "steps": [],
-          "safetyRule": null,
+          "steps": [
+            {
+              "n": 1,
+              "name": "Trupps & Wertung",
+              "content": "2 Trupps (Rot/Blau). Jede Station vergibt 0–3 Punkte pro Trupp. Stoppuhr läuft, auf Pfiff Wechsel (ca. 8 Min./Station). Eine erwachsene Person pro Station."
+            },
+            {
+              "n": 2,
+              "name": "Station 1 – Zielspritzen auf Zeit",
+              "content": "5 nummerierte Becher mit Flammen-Symbol in 3/5/7 m gestaffelt. Jedes Crew-Mitglied hat 30 Sek., mit der Wasserpistole so viele wie möglich umzuspritzen — die weiteste Distanz zählt doppelt. Treffer = Punkte. (Bei Bedarf Schutzbrille.)"
+            },
+            {
+              "n": 3,
+              "name": "Station 2 – Feuerwehr-Knoten",
+              "content": "Mastwurf an einer Stuhllehne nach Knoten-Karte binden. Wer es in 60 Sek. sauber schafft, holt einen Punkt. Echter Feuerwehr-Knoten = der „Wow, das kann ich jetzt\"-Moment für 9–12."
+            },
+            {
+              "n": 4,
+              "name": "Station 3 – Schlauch-Staffel",
+              "content": "Wasserschlauch (oder Springseil) ausrollen, im Slalom durch 4 Pylonen, am Ende den „Hydranten\" (Pylone) treffen, zurück. Trupp-Staffel auf Zeit — schnellster Trupp gewinnt die Station."
+            },
+            {
+              "n": 5,
+              "name": "Station 4 – Erste Hilfe",
+              "content": "Eine „verletzte Person\" (große Puppe ODER ein mitspielendes Kind) mit Dreieckstuch (Toilettenpapier nur als Reserve) versorgen und in die stabile Seitenlage bringen. Kurz-Anleitung Seitenlage: 1) nahen Arm nach oben anwinkeln, 2) ferne Hand an die Wange der Person legen, 3) fernes Bein anwinkeln und die Person sanft zu dir auf die Seite drehen, Kopf leicht überstrecken. Eine erwachsene Person zeigt es einmal vor. Punkt für saubere Ausführung — echtes Können statt Stofftier-Pflege."
+            },
+            {
+              "n": 6,
+              "name": "Auswertung",
+              "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
+            }
+          ],
+          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
           "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
           "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
           "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
@@ -508,6 +539,25 @@
           "whyItWorksTitle": "Warum Rasierschaum",
           "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
           "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+        },
+        {
+          "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 20,
+          "minAge": 6,
+          "loudness": null,
+          "effort": "leicht",
+          "material": "Pro Kind 1 Feuerwehr-Diplom (DIN A4 ausgedruckt, kostenlose Vorlagen z.B. auf [kribbelbunt.de](https://www.kribbelbunt.de) oder selber gestaltet — Logo, „Feuerwehr-Diplom\", Name, Funktion, Datum, Unterschrift), 1 schwarzer Stift, optional Schleife/Bändchen zum Aufrollen",
+          "prepText": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, nicht steif. Rufst jedes Kind einzeln auf mit Funktion und einem konkreten Satz, was es heute geleistet hat. Beispiele:\n\n„Hanna, Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\"\n\n„Tom, Schlauchführer — du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom.\"\n\n„Emma, Sanitäterin — du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom.\"\n\nWichtig:",
+          "steps": [],
+          "safetyRule": null,
+          "ageAdjust6": "Sätze kürzer, Funktionen einfacher zuordenbar.",
+          "ageAdjust8": "Funktion + zwei Sätze sind drin. Jedes Kind darf nach der Zeremonie eine kurze „Crew-Botschaft\" sagen, was ihm am besten gefallen hat.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
         }
       ],
       "food": "🎂Feuerwehrauto-Kuchen1 Kastenform\n🥤„Lösch-Wasser\"3 l Apfelschorle\n🌭„Brand-Brötchen\"12 Mini-Pizzen / heiße Würstchen\n🍓Rotes Obst300 g Erdbeeren / Tomaten\n🍿Popcorn300 g\n🍭Rote Gummibärchen1 Tüte (200 g)",
@@ -664,7 +714,7 @@
         {
           "time": "14:55",
           "title": "🚨 EINSATZ-ALARM mit echtem Nebel",
-          "description": "Die Sirene heult, Notruf kommt — und diesmal raucht es wirklich (Nebelmaschine im Garten oder Kinderzimmer). Crew rückt aus, rettet 8 Tiere durch den Nebel. 25 Min. — der Moment, von dem die Kinder am meisten erzählen werden. Anleitung mit Sicherheits-Hinweisen unten."
+          "description": "Die Sirene heult, Notruf kommt — und diesmal raucht es wirklich (Nebelmaschine im Garten oder Kinderzimmer). Crew rückt aus, rettet 8 Tiere durch den Nebel. 25 Min. — der Moment, von dem die Kinder am meisten erzählen werden. Anleitung mit Sicherheits-Hinweisen unten. SICHERHEIT Nebel: nur Disco-/Party-Nebelfluid (KEIN Trockeneis/keine Chemie), Maschine außer Kinder-Reichweite, Raum gut lüften, kurz einsetzen; Kinder mit Asthma/Atemwegsproblemen draußen lassen; Boden kann feucht/rutschig werden; Rauchmelder ggf. kurz abdecken und danach SOFORT wieder aktivieren."
         },
         {
           "time": "15:20",
@@ -689,7 +739,7 @@
         {
           "time": "16:55",
           "title": "🎁 Mitgebsel & Abholung",
-          "description": "Tüten + Diplom-Rolle + Polaroid + Pin. Ehrentafel als Abschiedsfoto fotografieren — Eltern können es bekommen.\n\n✨ Wow-Highlight: Der Nebel-Moment\nEine kleine Nebelmaschine (~30 €, Amazon) verwandelt deinen Garten oder das Kinderzimmer in 30 Sekunden in einen „Brandbereich\". Die Kinder sehen das, hören die Sirene, und schalten in einen anderen Modus — das ist nicht mehr „so tun als ob\", das ist ein echtes Sinneserlebnis. Sicherheits-Hinweis: Nebelfluid auf Wasserbasis (Standard), nicht ölbasiert. Maschine erst direkt vorm Einsatz starten, vorher mit Eltern absprechen falls Asthma in der Crew. Funktioniert auch indoor, aber gut lüften."
+          "description": "Tüten + Diplom-Rolle + Polaroid + Pin. Ehrentafel als Abschiedsfoto fotografieren — Eltern können es bekommen.\n\n✨ Wow-Highlight: Der Nebel-Moment\nEine kleine Nebelmaschine (~30 €, Amazon) verwandelt deinen Garten oder das Kinderzimmer in 30 Sekunden in einen „Brandbereich\". Die Kinder sehen das, hören die Sirene, und schalten in einen anderen Modus — das ist nicht mehr „so tun als ob\", das ist ein echtes Sinneserlebnis. Sicherheits-Hinweis: Nebelfluid auf Wasserbasis (Standard), nicht ölbasiert. Maschine erst direkt vorm Einsatz starten, vorher mit Eltern absprechen falls Asthma in der Crew. Funktioniert auch indoor, aber gut lüften. SICHERHEIT Nebel: nur Disco-/Party-Nebelfluid (KEIN Trockeneis/keine Chemie), Maschine außer Kinder-Reichweite, Raum gut lüften, kurz einsetzen; Kinder mit Asthma/Atemwegsproblemen draußen lassen; Boden kann feucht/rutschig werden; Rauchmelder ggf. kurz abdecken und danach SOFORT wieder aktivieren."
         }
       ],
       "games": [
@@ -722,8 +772,39 @@
           "effort": "mittel",
           "material": "Material gesamt: Wasserspritzpistolen + Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 4–6 Kuscheltiere + Verbandszeug-Spielset oder Toilettenpapier-Rolle (Station 4)",
           "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau) zu je 3 Kindern. Vier Stationen sind im Raum/Garten verteilt — je 8 Min., dann auf Pfiff Wechsel. Funktioniert auch wenn 1–2 Stationen mal hängen.",
-          "steps": [],
-          "safetyRule": null,
+          "steps": [
+            {
+              "n": 1,
+              "name": "Trupps & Wertung",
+              "content": "2 Trupps (Rot/Blau). Jede Station vergibt 0–3 Punkte pro Trupp. Stoppuhr läuft, auf Pfiff Wechsel (ca. 8 Min./Station). Eine erwachsene Person pro Station."
+            },
+            {
+              "n": 2,
+              "name": "Station 1 – Zielspritzen auf Zeit",
+              "content": "5 nummerierte Becher mit Flammen-Symbol in 3/5/7 m gestaffelt. Jedes Crew-Mitglied hat 30 Sek., mit der Wasserpistole so viele wie möglich umzuspritzen — die weiteste Distanz zählt doppelt. Treffer = Punkte. (Bei Bedarf Schutzbrille.)"
+            },
+            {
+              "n": 3,
+              "name": "Station 2 – Feuerwehr-Knoten",
+              "content": "Mastwurf an einer Stuhllehne nach Knoten-Karte binden. Wer es in 60 Sek. sauber schafft, holt einen Punkt. Echter Feuerwehr-Knoten = der „Wow, das kann ich jetzt\"-Moment für 9–12."
+            },
+            {
+              "n": 4,
+              "name": "Station 3 – Schlauch-Staffel",
+              "content": "Wasserschlauch (oder Springseil) ausrollen, im Slalom durch 4 Pylonen, am Ende den „Hydranten\" (Pylone) treffen, zurück. Trupp-Staffel auf Zeit — schnellster Trupp gewinnt die Station."
+            },
+            {
+              "n": 5,
+              "name": "Station 4 – Erste Hilfe",
+              "content": "Eine „verletzte Person\" (große Puppe ODER ein mitspielendes Kind) mit Dreieckstuch (Toilettenpapier nur als Reserve) versorgen und in die stabile Seitenlage bringen. Kurz-Anleitung Seitenlage: 1) nahen Arm nach oben anwinkeln, 2) ferne Hand an die Wange der Person legen, 3) fernes Bein anwinkeln und die Person sanft zu dir auf die Seite drehen, Kopf leicht überstrecken. Eine erwachsene Person zeigt es einmal vor. Punkt für saubere Ausführung — echtes Können statt Stofftier-Pflege."
+            },
+            {
+              "n": 6,
+              "name": "Auswertung",
+              "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
+            }
+          ],
+          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
           "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
           "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
           "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
@@ -840,6 +921,25 @@
           "whyItWorksTitle": "Warum Rasierschaum",
           "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
           "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+        },
+        {
+          "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 20,
+          "minAge": 6,
+          "loudness": null,
+          "effort": "leicht",
+          "material": "Pro Kind 1 Feuerwehr-Diplom (DIN A4 ausgedruckt, kostenlose Vorlagen z.B. auf [kribbelbunt.de](https://www.kribbelbunt.de) oder selber gestaltet — Logo, „Feuerwehr-Diplom\", Name, Funktion, Datum, Unterschrift), 1 schwarzer Stift, optional Schleife/Bändchen zum Aufrollen",
+          "prepText": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, nicht steif. Rufst jedes Kind einzeln auf mit Funktion und einem konkreten Satz, was es heute geleistet hat. Beispiele:\n\n„Hanna, Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\"\n\n„Tom, Schlauchführer — du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom.\"\n\n„Emma, Sanitäterin — du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom.\"\n\nWichtig:",
+          "steps": [],
+          "safetyRule": null,
+          "ageAdjust6": "Sätze kürzer, Funktionen einfacher zuordenbar.",
+          "ageAdjust8": "Funktion + zwei Sätze sind drin. Jedes Kind darf nach der Zeremonie eine kurze „Crew-Botschaft\" sagen, was ihm am besten gefallen hat.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
         }
       ],
       "food": "🎂Feuerwehrauto-Kuchen1 Kastenform + Wunderkerze\n🥤„Lösch-Wasser\"3 l Apfelschorle\n🌭„Brand-Brötchen\"14 Mini-Pizzen / Würstchen\n🍓Rotes Obst400 g Erdbeeren / Tomaten\n🍿Popcorn300 g\n🍭Rote Gummibärchen1 Tüte (200 g)\n🥨Brezeln (Crew-Snack)1 Tüte",
