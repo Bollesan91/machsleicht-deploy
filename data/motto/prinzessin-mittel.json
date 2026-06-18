@@ -1,5 +1,11 @@
 {
-  "_meta": { "schemaVersion": "elite-v1", "motto": "prinzessin", "ageGroup": "mittel", "author": "machsleicht", "primaryVerified": "Preise = Richtwerte (Amazon/Drogerie 2026, 'ca.'); Sicherheit nach Kinderparty-Praxis (weiche Materialien, Tanzfläche frei, Bastelaufsicht)." },
+  "_meta": {
+    "schemaVersion": "elite-v1",
+    "motto": "prinzessin",
+    "ageGroup": "mittel",
+    "author": "machsleicht",
+    "primaryVerified": "Preise = Richtwerte (Amazon/Drogerie 2026, 'ca.'); Sicherheit nach Kinderparty-Praxis (weiche Materialien, Tanzfläche frei, Bastelaufsicht)."
+  },
   "motto": "Prinzessin",
   "ageGroup": "mittel",
   "ageRange": "6–8 Jahre",
@@ -8,12 +14,30 @@
   "introParagraph": "Krönchen auf, Tüll an — heute regiert deine Crew das Schloss. Für 6–8-Jährige ist Prinzessin ein Traummotto: viel Verwandlung, klare Rollen, eine Mischung aus zauberhaft und aktiv. Unten findest du drei fertige Abläufe (Minimal, Standard, Wow) mit Spielen inklusive Anleitung, Deko und einer Einkaufsliste mit Richtpreisen — königlich und ohne Stress.",
   "ageInsight": "6–8-Jährige lieben am Prinzessinnen-Motto die Verwandlung (Krone, Umhang, Schmuck) UND die Aktion — reines 'schön sein' wird schnell langweilig. Mix aus zauberhaft (Krone basteln, Zauberstab) und Bewegung (Krönungs-Parcours, Tanz, Drachen besiegen) hält alle bei Laune. Wichtig: inklusiv halten — 'Prinzessin ODER Prinz', königliche Helden für alle. Eine kleine Geschichte (der Drache hat die Krone gestohlen) gibt der Party einen roten Faden.",
   "faq": [
-    { "q": "Wie lange sollte ein Prinzessinnen-Geburtstag dauern?", "a": "2,5 bis 3 Stunden sind für 6–8-Jährige ideal. Die Standard-Variante mit Krönung, Schatzsuche und Drachen-Spiel füllt das Fenster ohne Leerlauf." },
-    { "q": "Ist das nur etwas für Mädchen?", "a": "Nein. Königlich feiern können alle — Prinzessin und Prinz, Ritter und Königin. Kündige es neutral an ('königliches Fest') und biete Kronen wie Umhänge für alle." },
-    { "q": "Wird es nicht zu ruhig/langweilig?", "a": "Nur, wenn man es rein auf 'schön sein' auslegt. Mit Krönungs-Parcours, Tanzspiel und einem Drachen, der die Krone geklaut hat, ist genug Action drin." },
-    { "q": "Geht das auch in der Wohnung?", "a": "Perfekt sogar — Schloss-Schatzsuche durch die Zimmer, Tanzspiel im Wohnzimmer, Krone basteln am Tisch. Bei den Bewegungsspielen Platz schaffen." },
-    { "q": "Was, wenn ein Kind nicht tanzen will?", "a": "Kein Zwang — beim Standbild-Tanz kann man auch lustige Posen machen statt tanzen. Oder das Kind übernimmt die 'Musik-Königin' und stoppt die Musik." },
-    { "q": "Was kostet ein Prinzessinnen-Geburtstag ungefähr?", "a": "Minimal ab ~40 €, Standard ~69 €, Wow ~86 € für 8 Kinder. Kronen aus Goldkarton selbst basteln statt kaufen spart am meisten." }
+    {
+      "q": "Wie lange sollte ein Prinzessinnen-Geburtstag dauern?",
+      "a": "2,5 bis 3 Stunden sind für 6–8-Jährige ideal. Die Standard-Variante mit Krönung, Schatzsuche und Drachen-Spiel füllt das Fenster ohne Leerlauf."
+    },
+    {
+      "q": "Ist das nur etwas für Mädchen?",
+      "a": "Nein. Königlich feiern können alle — Prinzessin und Prinz, Ritter und Königin. Kündige es neutral an ('königliches Fest') und biete Kronen wie Umhänge für alle."
+    },
+    {
+      "q": "Wird es nicht zu ruhig/langweilig?",
+      "a": "Nur, wenn man es rein auf 'schön sein' auslegt. Mit Krönungs-Parcours, Tanzspiel und einem Drachen, der die Krone geklaut hat, ist genug Action drin."
+    },
+    {
+      "q": "Geht das auch in der Wohnung?",
+      "a": "Perfekt sogar — Schloss-Schatzsuche durch die Zimmer, Tanzspiel im Wohnzimmer, Krone basteln am Tisch. Bei den Bewegungsspielen Platz schaffen."
+    },
+    {
+      "q": "Was, wenn ein Kind nicht tanzen will?",
+      "a": "Kein Zwang — beim Standbild-Tanz kann man auch lustige Posen machen statt tanzen. Oder das Kind übernimmt die 'Musik-Königin' und stoppt die Musik."
+    },
+    {
+      "q": "Was kostet ein Prinzessinnen-Geburtstag ungefähr?",
+      "a": "Minimal ab ~40 €, Standard ~69 €, Wow ~86 € für 8 Kinder. Kronen aus Goldkarton selbst basteln statt kaufen spart am meisten."
+    }
   ],
   "variants": [
     {
@@ -23,53 +47,153 @@
       "intro": "Zwei zauberhafte Spiele, eine kleine Krönung, kaum Vorbereitung. Königlich auch ohne großen Aufwand.",
       "timeWindow": "2 Stunden (14:00–16:00)",
       "schedule": [
-        { "time": "14:00", "title": "Ankommen & Krönung", "description": "Jedes Kind bekommt Krone + Umhang, wird 'gekrönt', Foto vor dem Schloss. 20 Min." },
-        { "time": "14:20", "title": "Krönungs-Parcours", "description": "Mit dem 'Zepter' (Löffel + Ball) durch den Parcours. 25 Min." },
-        { "time": "14:45", "title": "Königlicher Standbild-Tanz", "description": "Tanzen, bei Musik-Stopp einfrieren. 25 Min." },
-        { "time": "15:10", "title": "Kuchen & Krönungslied", "description": "Prinzessinnen-Kuchen, Pause. 25 Min." },
-        { "time": "15:35", "title": "Schatz & Mitgebsel", "description": "Königlicher Schatz, Urkunde, Verabschiedung. 25 Min." }
+        {
+          "time": "14:00",
+          "title": "Ankommen & Krönung",
+          "description": "Jedes Kind bekommt Krone + Umhang, wird 'gekrönt', Foto vor dem Schloss. 20 Min."
+        },
+        {
+          "time": "14:20",
+          "title": "Krönungs-Parcours",
+          "description": "Mit dem 'Zepter' (Löffel + Ball) durch den Parcours. 25 Min."
+        },
+        {
+          "time": "14:45",
+          "title": "Königlicher Standbild-Tanz",
+          "description": "Tanzen, bei Musik-Stopp einfrieren. 25 Min."
+        },
+        {
+          "time": "15:10",
+          "title": "Kuchen & Krönungslied",
+          "description": "Prinzessinnen-Kuchen, Pause. 25 Min."
+        },
+        {
+          "time": "15:35",
+          "title": "Schatz & Mitgebsel",
+          "description": "Königlicher Schatz, Urkunde, Verabschiedung. 25 Min."
+        }
       ],
       "games": [
         {
           "name": "👑 Krönungs-Parcours (Zepter-Balance)",
-          "indoor": true, "outdoor": true, "duration": 25, "minAge": 5, "loudness": "mittel", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 5,
+          "loudness": "mittel",
+          "effort": "mittel",
           "material": "Pro Kind 1 Löffel + 1 kleiner Ball/Pompon ('Edelstein'), 4–5 einfache Hindernisse, Kreppband",
           "prepText": "Kleinen Parcours aufbauen (drumherum, drüber, slalom). Start-/Ziellinie markieren.",
           "steps": [
-            { "n": 1, "name": "Geschichte", "content": "'Nur wer den Edelstein sicher zum Thron bringt, wird gekrönt!' Löffel mit Ball ausgeben." },
-            { "n": 2, "name": "Balancieren", "content": "Mit dem Edelstein auf dem Löffel durch den Parcours, ohne ihn fallen zu lassen." },
-            { "n": 3, "name": "Krönung", "content": "Am Ziel: 'Du bist gekrönt!' Jeder schafft es — bei Verlust einfach aufheben und weiter." }
+            {
+              "n": 1,
+              "name": "Geschichte",
+              "content": "'Nur wer den Edelstein sicher zum Thron bringt, wird gekrönt!' Löffel mit Ball ausgeben."
+            },
+            {
+              "n": 2,
+              "name": "Balancieren",
+              "content": "Mit dem Edelstein auf dem Löffel durch den Parcours, ohne ihn fallen zu lassen."
+            },
+            {
+              "n": 3,
+              "name": "Krönung",
+              "content": "Am Ziel: 'Du bist gekrönt!' Jeder schafft es — bei Verlust einfach aufheben und weiter."
+            }
           ],
           "safetyRule": "Ein Kind nach dem anderen oder mit genug Abstand. Hindernisse stabil, Boden frei. Kleine Bälle nicht in den Mund.",
-          "ageAdjust6": "Größerer Ball/Pompon, kürzere Strecke.", "ageAdjust8": "Auf Zeit oder mit 'bei Verlust zurück zum Start'.",
-          "indoorTip": "Im Flur/Wohnzimmer.", "outdoorTip": "Im Garten mit Slalom um Blumentöpfe.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Balance-Geschick mit Krönungs-Belohnung verbindet Bewegung und Verwandlung — und niemand verliert, alle werden gekrönt."
+          "ageAdjust6": "Größerer Ball/Pompon, kürzere Strecke.",
+          "ageAdjust8": "Auf Zeit oder mit 'bei Verlust zurück zum Start'.",
+          "indoorTip": "Im Flur/Wohnzimmer.",
+          "outdoorTip": "Im Garten mit Slalom um Blumentöpfe.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Balance-Geschick mit Krönungs-Belohnung verbindet Bewegung und Verwandlung — und niemand verliert, alle werden gekrönt."
         },
         {
           "name": "🎵 Königlicher Standbild-Tanz",
-          "indoor": true, "outdoor": true, "duration": 25, "minAge": 5, "loudness": "laut", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 5,
+          "loudness": "laut",
+          "effort": "mittel",
           "material": "Musik (Handy/Box), etwas Platz",
           "prepText": "Tanzfläche frei räumen, fröhliche Musik bereit.",
           "steps": [
-            { "n": 1, "name": "Königlicher Ball", "content": "'Wir feiern den königlichen Ball — tanzt, so schön ihr könnt!'" },
-            { "n": 2, "name": "Standbild", "content": "Bei Musik-Stopp einfrieren wie eine Statue. Wer wackelt, macht eine lustige Königs-Pose." },
-            { "n": 3, "name": "Posen-Runden", "content": "Mal als 'eleganteste', mal als 'lustigste', mal als 'mutigste' Pose einfrieren." }
+            {
+              "n": 1,
+              "name": "Königlicher Ball",
+              "content": "'Wir feiern den königlichen Ball — tanzt, so schön ihr könnt!'"
+            },
+            {
+              "n": 2,
+              "name": "Standbild",
+              "content": "Bei Musik-Stopp einfrieren wie eine Statue. Wer wackelt, macht eine lustige Königs-Pose."
+            },
+            {
+              "n": 3,
+              "name": "Posen-Runden",
+              "content": "Mal als 'eleganteste', mal als 'lustigste', mal als 'mutigste' Pose einfrieren."
+            }
           ],
           "safetyRule": "Tanzfläche frei von Kanten/Stolperfallen. Genug Abstand zwischen den Kindern.",
-          "ageAdjust6": "Kein 'Ausscheiden', nur Posen.", "ageAdjust8": "Mit kleinem Augenzwinkern-Ausscheiden, Gewinner darf Musik stoppen.",
-          "indoorTip": "Wohnzimmer, Teppich.", "outdoorTip": "Auf der Terrasse.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Tanzen + Einfrieren ist sofort verständlich, sorgt für Lacher und gibt schüchternen Kindern (lustige Pose) genauso eine Bühne wie den Tanzbegeisterten."
+          "ageAdjust6": "Kein 'Ausscheiden', nur Posen.",
+          "ageAdjust8": "Mit kleinem Augenzwinkern-Ausscheiden, Gewinner darf Musik stoppen.",
+          "indoorTip": "Wohnzimmer, Teppich.",
+          "outdoorTip": "Auf der Terrasse.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Tanzen + Einfrieren ist sofort verständlich, sorgt für Lacher und gibt schüchternen Kindern (lustige Pose) genauso eine Bühne wie den Tanzbegeisterten."
         }
       ],
       "food": "Rosa Obstspieße (Erdbeeren, Melone), Krönchen-Kekse, 'Zauber-Trank' (rosa Saftschorle mit Himbeere), Marshmallows als 'Wolken'. Bunt und zauberhaft.",
       "decoration": "Rosa-goldene Luftballons, eine 'Schloss'-Silhouette aus Karton, Tüll-Bänder, kleine Kronen als Tischdeko. Capes/Umhänge an der Leine bis zum Anziehen.",
       "giveaways": "Krone + einfacher Umhang (zum Behalten), königliche Urkunde mit Namen, ein Schmuck-Ring oder Glitzer-Tattoo.",
       "shoppingList": [
-        { "emoji": "👑", "label": "Kronen/Tiaras 8er-Set", "url": "https://www.amazon.de/s?k=kronen+tiara+kinder+set&tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Macht jedes Kind sofort königlich — das zentrale Verwandlungs-Element + Mitgebsel." },
-        { "emoji": "🧣", "label": "Umhänge / Tüll-Capes 8er", "url": "https://www.amazon.de/s?k=kinder+umhang+prinzessin+cape&tag=machsleicht21-21", "priceEur": 14, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Krone + Umhang = volles Kostüm ohne teure Kleider, für alle inklusiv." },
-        { "emoji": "🎈", "label": "Luftballons rosa/gold 50 Stk.", "url": "https://www.amazon.de/s?k=luftballons+rosa+gold&tag=machsleicht21-21", "priceEur": 6, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Trägt die königliche Deko, günstig und wirkungsvoll." },
-        { "emoji": "💍", "label": "Schmuck-Mitgebsel (Ringe, Glitzer-Tattoos)", "url": "https://www.amazon.de/s?k=kinder+schmuck+ringe+mitgebsel&tag=machsleicht21-21", "priceEur": 6, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Kleines königliches Highlight fürs Ankommen und den Schatz." },
-        { "emoji": "🥄", "label": "Holzlöffel + Pompons (Krönungs-Parcours)", "url": "https://www.amazon.de/s?k=pompons+bunt+basteln&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Material fürs Balance-Spiel, Löffel meist im Haushalt." }
+        {
+          "emoji": "👑",
+          "label": "Kronen/Tiaras 8er-Set",
+          "url": "https://www.amazon.de/s?k=kronen+tiara+kinder+set&tag=machsleicht21-21",
+          "priceEur": 9,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Macht jedes Kind sofort königlich — das zentrale Verwandlungs-Element + Mitgebsel."
+        },
+        {
+          "emoji": "🧣",
+          "label": "Umhänge / Tüll-Capes 8er",
+          "url": "https://www.amazon.de/s?k=kinder+umhang+prinzessin+cape&tag=machsleicht21-21",
+          "priceEur": 14,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Krone + Umhang = volles Kostüm ohne teure Kleider, für alle inklusiv."
+        },
+        {
+          "emoji": "🎈",
+          "label": "Luftballons rosa/gold 50 Stk.",
+          "url": "https://www.amazon.de/s?k=luftballons+rosa+gold&tag=machsleicht21-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Trägt die königliche Deko, günstig und wirkungsvoll."
+        },
+        {
+          "emoji": "💍",
+          "label": "Schmuck-Mitgebsel (Ringe, Glitzer-Tattoos)",
+          "url": "https://www.amazon.de/s?k=kinder+schmuck+ringe+mitgebsel&tag=machsleicht21-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "mitgebsel",
+          "categoryReasoning": "Kleines königliches Highlight fürs Ankommen und den Schatz."
+        },
+        {
+          "emoji": "🥄",
+          "label": "Holzlöffel + Pompons (Krönungs-Parcours)",
+          "url": "https://www.amazon.de/s?k=pompons+bunt+basteln&tag=machsleicht21-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Material fürs Balance-Spiel, Löffel meist im Haushalt."
+        }
       ],
       "costContext": "ca. 40 € für 8 Kinder · ~5 € pro Kind"
     },
@@ -80,90 +204,270 @@
       "intro": "Die empfohlene Variante: Krönung, eine Schloss-Schatzsuche, eine ruhige Bastelstation (Krone/Zauberstab) und das Drachen-Spiel, bei dem alle gemeinsam die gestohlene Krone zurückholen. Abwechslung für 3 Stunden mit rotem Faden.",
       "timeWindow": "3 Stunden (14:00–17:00)",
       "schedule": [
-        { "time": "14:00", "title": "Ankommen & Krönung", "description": "Krone, Umhang, Krönung, Foto vor dem Schloss. Freispiel mit Ausmalbildern. 20 Min." },
-        { "time": "14:20", "title": "Krönungs-Parcours", "description": "Edelstein-Balance zum Thron. 25 Min." },
-        { "time": "14:45", "title": "Krone & Zauberstab basteln", "description": "Ruhige Station: jeder gestaltet seine Krone. 25 Min." },
-        { "time": "15:10", "title": "Schloss-Schatzsuche", "description": "Hinweise führen durch das Schloss zum königlichen Schatz. 35 Min." },
-        { "time": "15:45", "title": "Kuchen & Krönungslied", "description": "Prinzessinnen-Kuchen, Pause. 25 Min." },
-        { "time": "16:10", "title": "Drachen besiegen", "description": "Den Drachen-Turm einreißen und die Krone zurückholen. 25 Min." },
-        { "time": "16:35", "title": "Königlicher Tanz & Mitgebsel", "description": "Standbild-Tanz, Urkunde, Schmuck, Verabschiedung. 25 Min." }
+        {
+          "time": "14:00",
+          "title": "Ankommen & Krönung",
+          "description": "Krone, Umhang, Krönung, Foto vor dem Schloss. Freispiel mit Ausmalbildern. 20 Min."
+        },
+        {
+          "time": "14:20",
+          "title": "Krönungs-Parcours",
+          "description": "Edelstein-Balance zum Thron. 25 Min."
+        },
+        {
+          "time": "14:45",
+          "title": "Krone & Zauberstab basteln",
+          "description": "Ruhige Station: jeder gestaltet seine Krone. 25 Min."
+        },
+        {
+          "time": "15:10",
+          "title": "Schloss-Schatzsuche",
+          "description": "Hinweise führen durch das Schloss zum königlichen Schatz. 35 Min."
+        },
+        {
+          "time": "15:45",
+          "title": "Kuchen & Krönungslied",
+          "description": "Prinzessinnen-Kuchen, Pause. 25 Min."
+        },
+        {
+          "time": "16:10",
+          "title": "Drachen besiegen",
+          "description": "Den Drachen-Turm einreißen und die Krone zurückholen. 25 Min."
+        },
+        {
+          "time": "16:35",
+          "title": "Königlicher Tanz & Mitgebsel",
+          "description": "Standbild-Tanz, Urkunde, Schmuck, Verabschiedung. 25 Min."
+        }
       ],
       "games": [
         {
           "name": "👑 Krönungs-Parcours (Zepter-Balance)",
-          "indoor": true, "outdoor": true, "duration": 25, "minAge": 5, "loudness": "mittel", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 5,
+          "loudness": "mittel",
+          "effort": "mittel",
           "material": "Löffel + Pompon pro Kind, 4–5 Hindernisse, Kreppband",
           "prepText": "Parcours aufbauen, Start-/Ziellinie.",
           "steps": [
-            { "n": 1, "name": "Geschichte", "content": "'Bring den Edelstein sicher zum Thron, dann wirst du gekrönt!'" },
-            { "n": 2, "name": "Balancieren", "content": "Mit dem Edelstein auf dem Löffel durch den Parcours." },
-            { "n": 3, "name": "Krönung", "content": "Am Ziel gekrönt — alle schaffen es." }
+            {
+              "n": 1,
+              "name": "Geschichte",
+              "content": "'Bring den Edelstein sicher zum Thron, dann wirst du gekrönt!'"
+            },
+            {
+              "n": 2,
+              "name": "Balancieren",
+              "content": "Mit dem Edelstein auf dem Löffel durch den Parcours."
+            },
+            {
+              "n": 3,
+              "name": "Krönung",
+              "content": "Am Ziel gekrönt — alle schaffen es."
+            }
           ],
           "safetyRule": "Abstand halten, Hindernisse stabil, kleine Teile nicht in den Mund.",
-          "ageAdjust6": "Größerer Pompon.", "ageAdjust8": "Auf Zeit.",
-          "indoorTip": "Flur.", "outdoorTip": "Garten-Slalom.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Bewegung + Krönungs-Belohnung, niemand verliert."
+          "ageAdjust6": "Größerer Pompon.",
+          "ageAdjust8": "Auf Zeit.",
+          "indoorTip": "Flur.",
+          "outdoorTip": "Garten-Slalom.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Bewegung + Krönungs-Belohnung, niemand verliert."
         },
         {
           "name": "👑 Krone & Zauberstab basteln",
-          "indoor": true, "outdoor": false, "duration": 25, "minAge": 5, "loudness": "leise", "effort": "niedrig",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 25,
+          "minAge": 5,
+          "loudness": "leise",
+          "effort": "niedrig",
           "material": "Goldkarton-Streifen (vorgeschnitten), stumpfe Holz-Rundstäbe oder feste Trinkhalme + Sterne aus Karton (Zauberstab), Glitzersteine zum Aufkleben, Tacker (nur Erwachsene), Bänder",
           "prepText": "Pro Kind einen Kronen-Streifen und einen Sternen-Stab vorbereiten. Glitzersteine in Schälchen bereitstellen.",
           "steps": [
-            { "n": 1, "name": "Krone gestalten", "content": "Goldkarton-Streifen mit Glitzersteinen bekleben." },
-            { "n": 2, "name": "Zusammenfügen", "content": "Eine erwachsene Person tackert die Krone auf Kopfgröße." },
-            { "n": 3, "name": "Zauberstab", "content": "Den Sternen-Stab bekleben und mit Bändern verzieren." }
+            {
+              "n": 1,
+              "name": "Krone gestalten",
+              "content": "Goldkarton-Streifen mit Glitzersteinen bekleben."
+            },
+            {
+              "n": 2,
+              "name": "Zusammenfügen",
+              "content": "Eine erwachsene Person tackert die Krone auf Kopfgröße."
+            },
+            {
+              "n": 3,
+              "name": "Zauberstab",
+              "content": "Den Sternen-Stab bekleben und mit Bändern verzieren."
+            }
           ],
           "safetyRule": "Tacker nur durch Erwachsene. Glitzersteine nicht in den Mund. Stab-Spitze stumpf (Karton-Stern, kein spitzes Holz).",
-          "ageAdjust6": "Vorgeklebte Deko zum Aufdrücken.", "ageAdjust8": "Mehr Freiheit, eigenes Muster, Namen aufschreiben.",
-          "indoorTip": "Am Tisch mit Wachstuch.", "outdoorTip": "Windgeschützt, Glitzer drinnen.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Die ruhige Bastelstation senkt das Tempo und gibt jedem Kind die eigene Krone + Zauberstab — stolzes, persönliches Mitgebsel und gleich Spielzeug für den Rest der Party."
+          "ageAdjust6": "Vorgeklebte Deko zum Aufdrücken.",
+          "ageAdjust8": "Mehr Freiheit, eigenes Muster, Namen aufschreiben.",
+          "indoorTip": "Am Tisch mit Wachstuch.",
+          "outdoorTip": "Windgeschützt, Glitzer drinnen.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Die ruhige Bastelstation senkt das Tempo und gibt jedem Kind die eigene Krone + Zauberstab — stolzes, persönliches Mitgebsel und gleich Spielzeug für den Rest der Party."
         },
         {
           "name": "🗝️ Schloss-Schatzsuche",
-          "indoor": true, "outdoor": true, "duration": 35, "minAge": 5, "loudness": "mittel", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 35,
+          "minAge": 5,
+          "loudness": "mittel",
+          "effort": "mittel",
           "material": "5 Hinweiskarten (Rätsel/Bilder), eine Schatztruhe mit königlichem Schatz (Schmuck/Mitgebsel)",
           "prepText": "5 Verstecke im 'Schloss' festlegen, Hinweise verketten. Letzter Hinweis führt zur Truhe.",
           "steps": [
-            { "n": 1, "name": "Auftrag", "content": "'Irgendwo im Schloss ist der königliche Schatz versteckt — folgt den Hinweisen!'" },
-            { "n": 2, "name": "Hinweise lösen", "content": "Als königliche Truppe von Versteck zu Versteck, jedes Kind findet mal den nächsten Hinweis." },
-            { "n": 3, "name": "Mini-Aufgabe", "content": "An einer Station eine kleine Aufgabe (Reim vervollständigen, Farben zählen) lösen." },
-            { "n": 4, "name": "Schatz teilen", "content": "Letztes Versteck: die Schatztruhe für alle, Beute gerecht teilen." }
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "'Irgendwo im Schloss ist der königliche Schatz versteckt — folgt den Hinweisen!'"
+            },
+            {
+              "n": 2,
+              "name": "Hinweise lösen",
+              "content": "Als königliche Truppe von Versteck zu Versteck, jedes Kind findet mal den nächsten Hinweis."
+            },
+            {
+              "n": 3,
+              "name": "Mini-Aufgabe",
+              "content": "An einer Station eine kleine Aufgabe (Reim vervollständigen, Farben zählen) lösen."
+            },
+            {
+              "n": 4,
+              "name": "Schatz teilen",
+              "content": "Letztes Versteck: die Schatztruhe für alle, Beute gerecht teilen."
+            }
           ],
           "safetyRule": "Sichere, einsehbare Verstecke. Draußen Grenzen klar, Begleitung.",
-          "ageAdjust6": "Bild-Hinweise, 3–4 Stationen.", "ageAdjust8": "Echte Mini-Rätsel, 5–6 Stationen.",
-          "indoorTip": "Über mehrere Zimmer ('Thronsaal', 'Turm', 'Verlies').", "outdoorTip": "Garten als 'Schlossgarten'.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Eine Schatzsuche mit Ziel gibt der Party einen roten Faden — die Kinder lösen als Team und das königliche Schatz-Finale ist der emotionale Höhepunkt."
+          "ageAdjust6": "Bild-Hinweise, 3–4 Stationen.",
+          "ageAdjust8": "Echte Mini-Rätsel, 5–6 Stationen.",
+          "indoorTip": "Über mehrere Zimmer ('Thronsaal', 'Turm', 'Verlies').",
+          "outdoorTip": "Garten als 'Schlossgarten'.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Eine Schatzsuche mit Ziel gibt der Party einen roten Faden — die Kinder lösen als Team und das königliche Schatz-Finale ist der emotionale Höhepunkt."
         },
         {
           "name": "🐉 Drachen besiegen (Turm einreißen)",
-          "indoor": true, "outdoor": true, "duration": 25, "minAge": 5, "loudness": "laut", "effort": "niedrig",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 5,
+          "loudness": "laut",
+          "effort": "niedrig",
           "material": "10–15 Becher/Dosen (Drachen-Schuppen bemalt), 3 weiche Bälle, eine 'gefangene Krone' hinter dem Turm, Kreppband-Wurflinie",
           "prepText": "Becher zu einem 'Drachen-Turm' stapeln, dahinter die gestohlene Krone platzieren. Wurflinie markieren.",
           "steps": [
-            { "n": 1, "name": "Geschichte", "content": "'Der Drache hat die Königskrone gestohlen und in seinem Turm versteckt — reißt ihn ein!'" },
-            { "n": 2, "name": "Werfen", "content": "Jedes Kind 3 Würfe mit weichen Bällen, gemeinsame Punkte für die Truppe." },
-            { "n": 3, "name": "Turm fällt", "content": "Wenn der Turm fällt: die Krone ist befreit!" },
-            { "n": 4, "name": "Krönung", "content": "Das Geburtstagskind setzt die zurückgeholte Krone feierlich auf." }
+            {
+              "n": 1,
+              "name": "Geschichte",
+              "content": "'Der Drache hat die Königskrone gestohlen und in seinem Turm versteckt — reißt ihn ein!'"
+            },
+            {
+              "n": 2,
+              "name": "Werfen",
+              "content": "Jedes Kind 3 Würfe mit weichen Bällen, gemeinsame Punkte für die Truppe."
+            },
+            {
+              "n": 3,
+              "name": "Turm fällt",
+              "content": "Wenn der Turm fällt: die Krone ist befreit!"
+            },
+            {
+              "n": 4,
+              "name": "Krönung",
+              "content": "Das Geburtstagskind setzt die zurückgeholte Krone feierlich auf."
+            }
           ],
           "safetyRule": "Nur weiche Bälle, nie auf Personen werfen — nur auf den Turm. Erst auf 'Frei!' sammeln gehen.",
-          "ageAdjust6": "Kürzerer Abstand, größere Becher.", "ageAdjust8": "Weiterer Abstand, Punkte mitschreiben.",
-          "indoorTip": "Becher gegen die Wand stapeln.", "outdoorTip": "Auf einer Bank/Tisch.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Etwas umwerfen dürfen ist purer Spaß, die Drachen-Geschichte gibt einen Grund, und das Befreien der Krone schließt die Party-Geschichte triumphal ab."
+          "ageAdjust6": "Kürzerer Abstand, größere Becher.",
+          "ageAdjust8": "Weiterer Abstand, Punkte mitschreiben.",
+          "indoorTip": "Becher gegen die Wand stapeln.",
+          "outdoorTip": "Auf einer Bank/Tisch.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Etwas umwerfen dürfen ist purer Spaß, die Drachen-Geschichte gibt einen Grund, und das Befreien der Krone schließt die Party-Geschichte triumphal ab."
         }
       ],
       "food": "Königliches Buffet: rosa Obstspieße, Krönchen-Kekse, 'Einhorn-Toast' (Frischkäse + bunte Streusel), Gemüse-Zepter (Sticks mit Dip), 'Zauber-Trank' (rosa Schorle). Herzhaft: Mini-Pizzaschnecken oder Würstchen.",
       "decoration": "Rosa-goldene Ballons (auch als Girlande), Schloss-Silhouette, Tüll-Bänder, kleine Kronen + Glitzer auf dem Tisch, ein 'Thron' (geschmückter Stuhl) für das Geburtstagskind, Steckbrief vom Drachen.",
       "giveaways": "Krone + Umhang, selbstgebastelte Krone/Zauberstab, Urkunde, Schatzbeutel (Schmuck, Glitzer-Tattoo, kleine Figur).",
       "shoppingList": [
-        { "emoji": "👑", "label": "Kronen/Tiaras 8er-Set", "url": "https://www.amazon.de/s?k=kronen+tiara+kinder+set&tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Sofort-Verwandlung + Mitgebsel." },
-        { "emoji": "🧣", "label": "Umhänge / Tüll-Capes 8er", "url": "https://www.amazon.de/s?k=kinder+umhang+prinzessin+cape&tag=machsleicht21-21", "priceEur": 14, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Volles Kostüm ohne teure Kleider." },
-        { "emoji": "✨", "label": "Bastel-Set Kronen + Glitzersteine", "url": "https://www.amazon.de/s?k=bastelset+krone+glitzersteine+kinder&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Material für die Bastelstation + personalisiertes Mitgebsel." },
-        { "emoji": "🪄", "label": "Zauberstab-Bastelset (Stäbe, Sterne, Bänder)", "url": "https://www.amazon.de/s?k=zauberstab+basteln+kinder&tag=machsleicht21-21", "priceEur": 6, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Zweites Bastel-/Spielobjekt, beliebt für Rollenspiel." },
-        { "emoji": "🎈", "label": "Ballons rosa/gold + Schloss-Deko", "url": "https://www.amazon.de/s?k=prinzessin+party+deko+set&tag=machsleicht21-21", "priceEur": 12, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Bündelt Ballons, Schloss-Kulisse und Tischdeko." },
-        { "emoji": "💍", "label": "Schmuck-Mitgebsel (Ringe, Armbänder)", "url": "https://www.amazon.de/s?k=kinder+schmuck+mitgebsel+set&tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Schatztruhe + Schatzbeutel füllen." },
-        { "emoji": "🥄", "label": "Pompons + Holzlöffel (Parcours)", "url": "https://www.amazon.de/s?k=pompons+bunt+basteln&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Edelsteine fürs Balance-Spiel." },
-        { "emoji": "🥤", "label": "Pappbecher & Strohhalme rosa/gold", "url": "https://www.amazon.de/s?k=becher+strohhalme+rosa+gold&tag=machsleicht21-21", "priceEur": 6, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Buffet im königlichen Look + Drachen-Turm-Becher." }
+        {
+          "emoji": "👑",
+          "label": "Kronen/Tiaras 8er-Set",
+          "url": "https://www.amazon.de/s?k=kronen+tiara+kinder+set&tag=machsleicht21-21",
+          "priceEur": 9,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Sofort-Verwandlung + Mitgebsel."
+        },
+        {
+          "emoji": "🧣",
+          "label": "Umhänge / Tüll-Capes 8er",
+          "url": "https://www.amazon.de/s?k=kinder+umhang+prinzessin+cape&tag=machsleicht21-21",
+          "priceEur": 14,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Volles Kostüm ohne teure Kleider."
+        },
+        {
+          "emoji": "✨",
+          "label": "Bastel-Set Kronen + Glitzersteine",
+          "url": "https://www.amazon.de/s?k=bastelset+krone+glitzersteine+kinder&tag=machsleicht21-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Material für die Bastelstation + personalisiertes Mitgebsel."
+        },
+        {
+          "emoji": "🪄",
+          "label": "Zauberstab-Bastelset (Stäbe, Sterne, Bänder)",
+          "url": "https://www.amazon.de/s?k=zauberstab+basteln+kinder&tag=machsleicht21-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Zweites Bastel-/Spielobjekt, beliebt für Rollenspiel."
+        },
+        {
+          "emoji": "🎈",
+          "label": "Ballons rosa/gold + Schloss-Deko",
+          "url": "https://www.amazon.de/s?k=prinzessin+party+deko+set&tag=machsleicht21-21",
+          "priceEur": 12,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Bündelt Ballons, Schloss-Kulisse und Tischdeko."
+        },
+        {
+          "emoji": "💍",
+          "label": "Schmuck-Mitgebsel (Ringe, Armbänder)",
+          "url": "https://www.amazon.de/s?k=kinder+schmuck+mitgebsel+set&tag=machsleicht21-21",
+          "priceEur": 9,
+          "hasAffiliate": true,
+          "category": "mitgebsel",
+          "categoryReasoning": "Schatztruhe + Schatzbeutel füllen."
+        },
+        {
+          "emoji": "🥄",
+          "label": "Pompons + Holzlöffel (Parcours)",
+          "url": "https://www.amazon.de/s?k=pompons+bunt+basteln&tag=machsleicht21-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Edelsteine fürs Balance-Spiel."
+        },
+        {
+          "emoji": "🥤",
+          "label": "Pappbecher & Strohhalme rosa/gold",
+          "url": "https://www.amazon.de/s?k=becher+strohhalme+rosa+gold&tag=machsleicht21-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Buffet im königlichen Look + Drachen-Turm-Becher."
+        }
       ],
       "costContext": "ca. 69 € für 8 Kinder · ~8,63 € pro Kind"
     },
@@ -174,91 +478,345 @@
       "intro": "Alles aus Standard plus eine zusätzliche Verwandlungs-Station (Schminke/Frisur), ein Drachen-Abenteuer mit kleiner Inszenierung und eine feierliche Krönungs-Zeremonie zum Abschluss. Mehr Vorbereitung, dafür ein unvergesslicher königlicher Tag.",
       "timeWindow": "3,5 Stunden (14:00–17:30)",
       "schedule": [
-        { "time": "14:00", "title": "Ankommen & Verwandlung", "description": "Krone, Umhang, Glitzer-Schminke/Frisur-Station, Foto vor dem Schloss. 25 Min." },
-        { "time": "14:25", "title": "Krönungs-Parcours", "description": "Edelstein-Balance. 25 Min." },
-        { "time": "14:50", "title": "Krone & Zauberstab basteln", "description": "Ruhige Station. 20 Min." },
-        { "time": "15:10", "title": "Schloss-Schatzsuche", "description": "Königlicher Schatz finden. 35 Min." },
-        { "time": "15:45", "title": "Kuchen & Krönungslied", "description": "Pause. 25 Min." },
-        { "time": "16:10", "title": "Drachen-Abenteuer", "description": "Drachen-Turm + Mut-Aufgabe, Krone zurückholen. 30 Min." },
-        { "time": "16:40", "title": "Königsball (Tanz)", "description": "Standbild-Tanz, alle gemeinsam. 25 Min." },
-        { "time": "17:05", "title": "Krönungs-Zeremonie & Mitgebsel", "description": "Feierliche Krönung, Urkunde, Schmuck, Gruppenfoto. 25 Min." }
+        {
+          "time": "14:00",
+          "title": "Ankommen & Verwandlung",
+          "description": "Krone, Umhang, Glitzer-Schminke/Frisur-Station, Foto vor dem Schloss. 25 Min."
+        },
+        {
+          "time": "14:25",
+          "title": "Krönungs-Parcours",
+          "description": "Edelstein-Balance. 25 Min."
+        },
+        {
+          "time": "14:50",
+          "title": "Krone & Zauberstab basteln",
+          "description": "Ruhige Station. 20 Min."
+        },
+        {
+          "time": "15:10",
+          "title": "Schloss-Schatzsuche",
+          "description": "Königlicher Schatz finden. 35 Min."
+        },
+        {
+          "time": "15:45",
+          "title": "Kuchen & Krönungslied",
+          "description": "Pause. 25 Min."
+        },
+        {
+          "time": "16:10",
+          "title": "Drachen-Abenteuer",
+          "description": "Drachen-Turm + Mut-Aufgabe, Krone zurückholen. 30 Min."
+        },
+        {
+          "time": "16:40",
+          "title": "Königsball (Tanz)",
+          "description": "Standbild-Tanz, alle gemeinsam. 25 Min."
+        },
+        {
+          "time": "17:05",
+          "title": "Krönungs-Zeremonie & Mitgebsel",
+          "description": "Feierliche Krönung, Urkunde, Schmuck, Gruppenfoto. 25 Min."
+        }
       ],
       "games": [
         {
           "name": "💄 Verwandlungs-Station (Glitzer & Frisur)",
-          "indoor": true, "outdoor": false, "duration": 25, "minAge": 5, "loudness": "leise", "effort": "niedrig",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 25,
+          "minAge": 5,
+          "loudness": "leise",
+          "effort": "niedrig",
           "material": "Kinder-Glitzer-Gel/Schminke (hautverträglich, getestet), Haarschmuck/Clips, Spiegel, Feuchttücher",
           "prepText": "Schmink-/Frisier-Ecke mit Spiegel einrichten. Eine erwachsene Person (oder zwei) übernimmt das Schminken.",
           "steps": [
-            { "n": 1, "name": "Wunsch fragen", "content": "Jedes Kind wählt: kleines Glitzer-Motiv (Stern, Herz) auf die Wange ODER eine königliche Frisur mit Clip." },
-            { "n": 2, "name": "Verwandeln", "content": "Schminken/Frisieren, Kind schaut im Spiegel zu." },
-            { "n": 3, "name": "Krönung dazu", "content": "Krone aufsetzen — fertig ist die königliche Verwandlung, gleich Foto." }
+            {
+              "n": 1,
+              "name": "Wunsch fragen",
+              "content": "Jedes Kind wählt: kleines Glitzer-Motiv (Stern, Herz) auf die Wange ODER eine königliche Frisur mit Clip."
+            },
+            {
+              "n": 2,
+              "name": "Verwandeln",
+              "content": "Schminken/Frisieren, Kind schaut im Spiegel zu."
+            },
+            {
+              "n": 3,
+              "name": "Krönung dazu",
+              "content": "Krone aufsetzen — fertig ist die königliche Verwandlung, gleich Foto."
+            }
           ],
           "safetyRule": "Nur hautverträgliche, für Kinder geprüfte Schminke; vorher Allergien abfragen. Kein Zwang — wer nicht möchte, bekommt nur die Krone.",
-          "ageAdjust6": "Nur Glitzer-Aufkleber statt Schminke, wenn ruhiger.", "ageAdjust8": "Mehr Auswahl, kleine Selbstgestaltung.",
-          "indoorTip": "Am Spiegel im Flur/Bad-Nähe.", "outdoorTip": "Schattig, Spiegel mitnehmen.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Die Verwandlung ist für viele DER Höhepunkt des Prinzessinnen-Motivs — der Moment im Spiegel mit Krone ist Magie, und die Station nimmt gleich zu Beginn das Tempo raus."
+          "ageAdjust6": "Nur Glitzer-Aufkleber statt Schminke, wenn ruhiger.",
+          "ageAdjust8": "Mehr Auswahl, kleine Selbstgestaltung.",
+          "indoorTip": "Am Spiegel im Flur/Bad-Nähe.",
+          "outdoorTip": "Schattig, Spiegel mitnehmen.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Die Verwandlung ist für viele DER Höhepunkt des Prinzessinnen-Motivs — der Moment im Spiegel mit Krone ist Magie, und die Station nimmt gleich zu Beginn das Tempo raus."
         },
         {
           "name": "👑 Krönungs-Parcours",
-          "indoor": true, "outdoor": true, "duration": 25, "minAge": 5, "loudness": "mittel", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 5,
+          "loudness": "mittel",
+          "effort": "mittel",
           "material": "Löffel + Pompon, Hindernisse, Kreppband",
           "prepText": "Parcours aufbauen.",
           "steps": [
-            { "n": 1, "name": "Auftrag", "content": "Edelstein zum Thron bringen." },
-            { "n": 2, "name": "Balancieren", "content": "Durch den Parcours." },
-            { "n": 3, "name": "Krönung", "content": "Alle werden gekrönt." }
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "Edelstein zum Thron bringen."
+            },
+            {
+              "n": 2,
+              "name": "Balancieren",
+              "content": "Durch den Parcours."
+            },
+            {
+              "n": 3,
+              "name": "Krönung",
+              "content": "Alle werden gekrönt."
+            }
           ],
           "safetyRule": "Abstand, stabile Hindernisse.",
-          "ageAdjust6": "Größerer Pompon.", "ageAdjust8": "Auf Zeit.",
-          "indoorTip": "Flur.", "outdoorTip": "Garten.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Bewegung mit Krönungs-Belohnung."
+          "ageAdjust6": "Größerer Pompon.",
+          "ageAdjust8": "Auf Zeit.",
+          "indoorTip": "Flur.",
+          "outdoorTip": "Garten.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Bewegung mit Krönungs-Belohnung."
         },
         {
           "name": "🗝️ Schloss-Schatzsuche",
-          "indoor": true, "outdoor": true, "duration": 35, "minAge": 5, "loudness": "mittel", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 35,
+          "minAge": 5,
+          "loudness": "mittel",
+          "effort": "mittel",
           "material": "5–6 Hinweise, Schatztruhe",
           "prepText": "Verstecke + Hinweise legen.",
           "steps": [
-            { "n": 1, "name": "Auftrag", "content": "Königlichen Schatz finden." },
-            { "n": 2, "name": "Hinweise", "content": "Von Versteck zu Versteck als Team." },
-            { "n": 3, "name": "Aufgabe", "content": "Mini-Rätsel an einer Station." },
-            { "n": 4, "name": "Schatz", "content": "Truhe finden, teilen." }
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "Königlichen Schatz finden."
+            },
+            {
+              "n": 2,
+              "name": "Hinweise",
+              "content": "Von Versteck zu Versteck als Team."
+            },
+            {
+              "n": 3,
+              "name": "Aufgabe",
+              "content": "Mini-Rätsel an einer Station."
+            },
+            {
+              "n": 4,
+              "name": "Schatz",
+              "content": "Truhe finden, teilen."
+            }
           ],
           "safetyRule": "Sichere Verstecke, Begleitung.",
-          "ageAdjust6": "Bild-Hinweise.", "ageAdjust8": "Echte Rätsel.",
-          "indoorTip": "Mehrere Zimmer.", "outdoorTip": "Schlossgarten.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Roter Faden + Schatz-Finale als Höhepunkt."
+          "ageAdjust6": "Bild-Hinweise.",
+          "ageAdjust8": "Echte Rätsel.",
+          "indoorTip": "Mehrere Zimmer.",
+          "outdoorTip": "Schlossgarten.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Roter Faden + Schatz-Finale als Höhepunkt."
         },
         {
           "name": "🐉 Drachen-Abenteuer (Turm + Mut-Aufgabe)",
-          "indoor": true, "outdoor": true, "duration": 30, "minAge": 5, "loudness": "laut", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 30,
+          "minAge": 5,
+          "loudness": "laut",
+          "effort": "mittel",
           "material": "Becher-Drachenturm, weiche Bälle, gestohlene Krone, eine kleine 'Mut-Aufgabe' (z.B. durch die 'Drachenhöhle' = Decken-Tunnel krabbeln), optional jemand als freundlich-tollpatschiger Drache",
           "prepText": "Drachenturm + versteckte Krone aufbauen, Decken-Tunnel als 'Drachenhöhle' legen. Wenn jemand den Drachen spielt: albern, nie gruselig.",
           "steps": [
-            { "n": 1, "name": "Geschichte", "content": "'Der Drache hat die Königskrone in seine Höhle verschleppt!'" },
-            { "n": 2, "name": "Mut-Aufgabe", "content": "Durch die Drachenhöhle (Tunnel) krabbeln, um zum Turm zu gelangen." },
-            { "n": 3, "name": "Turm einreißen", "content": "Mit weichen Bällen den Drachenturm einreißen, Krone befreien." },
-            { "n": 4, "name": "Sieg", "content": "Der Drache 'gibt auf' (lacht), die Krone kehrt zum Schloss zurück." }
+            {
+              "n": 1,
+              "name": "Geschichte",
+              "content": "'Der Drache hat die Königskrone in seine Höhle verschleppt!'"
+            },
+            {
+              "n": 2,
+              "name": "Mut-Aufgabe",
+              "content": "Durch die Drachenhöhle (Tunnel) krabbeln, um zum Turm zu gelangen."
+            },
+            {
+              "n": 3,
+              "name": "Turm einreißen",
+              "content": "Mit weichen Bällen den Drachenturm einreißen, Krone befreien."
+            },
+            {
+              "n": 4,
+              "name": "Sieg",
+              "content": "Der Drache 'gibt auf' (lacht), die Krone kehrt zum Schloss zurück."
+            }
           ],
           "safetyRule": "Tunnel stabil und kurz (keine Enge-Angst). Nur weiche Bälle. Drache betont albern, nimmt bei Angst sofort die Maske ab.",
-          "ageAdjust6": "Ohne Tunnel, nur Turm einreißen; Drache sehr tollpatschig.", "ageAdjust8": "Längerer Tunnel, kleine Zusatzaufgabe.",
-          "indoorTip": "Tunnel aus Stühlen + Decken im Wohnzimmer.", "outdoorTip": "Im Garten mit Bewegungsraum.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Ein bisschen Grusel-Spaß (Drache) mit gemeinsamem Sieg ist der actionreiche Höhepunkt — die Kinder beweisen Mut und retten zusammen die Krone."
+          "ageAdjust6": "Ohne Tunnel, nur Turm einreißen; Drache sehr tollpatschig.",
+          "ageAdjust8": "Längerer Tunnel, kleine Zusatzaufgabe.",
+          "indoorTip": "Tunnel aus Stühlen + Decken im Wohnzimmer.",
+          "outdoorTip": "Im Garten mit Bewegungsraum.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Ein bisschen Grusel-Spaß (Drache) mit gemeinsamem Sieg ist der actionreiche Höhepunkt — die Kinder beweisen Mut und retten zusammen die Krone."
+        },
+        {
+          "name": "👑 Krone & Zauberstab basteln",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 25,
+          "minAge": 5,
+          "loudness": "leise",
+          "effort": "niedrig",
+          "material": "Goldkarton-Streifen (vorgeschnitten), stumpfe Holz-Rundstäbe oder feste Trinkhalme + Sterne aus Karton (Zauberstab), Glitzersteine zum Aufkleben, Tacker (nur Erwachsene), Bänder",
+          "prepText": "Pro Kind einen Kronen-Streifen und einen Sternen-Stab vorbereiten. Glitzersteine in Schälchen bereitstellen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Krone gestalten",
+              "content": "Goldkarton-Streifen mit Glitzersteinen bekleben."
+            },
+            {
+              "n": 2,
+              "name": "Zusammenfügen",
+              "content": "Eine erwachsene Person tackert die Krone auf Kopfgröße."
+            },
+            {
+              "n": 3,
+              "name": "Zauberstab",
+              "content": "Den Sternen-Stab bekleben und mit Bändern verzieren."
+            }
+          ],
+          "safetyRule": "Tacker nur durch Erwachsene. Glitzersteine nicht in den Mund. Stab-Spitze stumpf (Karton-Stern, kein spitzes Holz).",
+          "ageAdjust6": "Vorgeklebte Deko zum Aufdrücken.",
+          "ageAdjust8": "Mehr Freiheit, eigenes Muster, Namen aufschreiben.",
+          "indoorTip": "Am Tisch mit Wachstuch.",
+          "outdoorTip": "Windgeschützt, Glitzer drinnen.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Die ruhige Bastelstation senkt das Tempo und gibt jedem Kind die eigene Krone + Zauberstab — stolzes, persönliches Mitgebsel und gleich Spielzeug für den Rest der Party."
+        },
+        {
+          "name": "🎵 Königlicher Standbild-Tanz",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 5,
+          "loudness": "laut",
+          "effort": "mittel",
+          "material": "Musik (Handy/Box), etwas Platz",
+          "prepText": "Tanzfläche frei räumen, fröhliche Musik bereit.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Königlicher Ball",
+              "content": "'Wir feiern den königlichen Ball — tanzt, so schön ihr könnt!'"
+            },
+            {
+              "n": 2,
+              "name": "Standbild",
+              "content": "Bei Musik-Stopp einfrieren wie eine Statue. Wer wackelt, macht eine lustige Königs-Pose."
+            },
+            {
+              "n": 3,
+              "name": "Posen-Runden",
+              "content": "Mal als 'eleganteste', mal als 'lustigste', mal als 'mutigste' Pose einfrieren."
+            }
+          ],
+          "safetyRule": "Tanzfläche frei von Kanten/Stolperfallen. Genug Abstand zwischen den Kindern.",
+          "ageAdjust6": "Kein 'Ausscheiden', nur Posen.",
+          "ageAdjust8": "Mit kleinem Augenzwinkern-Ausscheiden, Gewinner darf Musik stoppen.",
+          "indoorTip": "Wohnzimmer, Teppich.",
+          "outdoorTip": "Auf der Terrasse.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Tanzen + Einfrieren ist sofort verständlich, sorgt für Lacher und gibt schüchternen Kindern (lustige Pose) genauso eine Bühne wie den Tanzbegeisterten."
         }
       ],
       "food": "Großes Königsbuffet: rosa Obstspieße, Krönchen-Kekse, Einhorn-Toast, Gemüse-Zepter, Mini-Pizzaschnecken, Cake-Pops als 'Zauberkugeln', 'Zauber-Trank' in Krönchen-Bechern.",
       "decoration": "Volles Schloss: Ballon-Girlande rosa/gold, Schloss-Kulisse, Tüll überall, Thron für das Geburtstagskind, Schmink-Station mit Spiegel, Drachen-Höhle-Bereich, Krönchen + Glitzer auf dem Tisch.",
       "giveaways": "Krone + Umhang, gebastelte Krone/Zauberstab, Glitzer-Verwandlung, Urkunde/Medaille, gut gefüllter Schatzbeutel.",
       "shoppingList": [
-        { "emoji": "👑", "label": "Kronen/Tiaras 8er-Set", "url": "https://www.amazon.de/s?k=kronen+tiara+kinder+set&tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Verwandlung + Mitgebsel." },
-        { "emoji": "🧣", "label": "Umhänge / Tüll-Capes 8er", "url": "https://www.amazon.de/s?k=kinder+umhang+prinzessin+cape&tag=machsleicht21-21", "priceEur": 14, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Volles Kostüm." },
-        { "emoji": "✨", "label": "Bastel-Set Kronen + Zauberstäbe", "url": "https://www.amazon.de/s?k=bastelset+krone+zauberstab+kinder&tag=machsleicht21-21", "priceEur": 12, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Material für beide Bastelobjekte + Mitgebsel." },
-        { "emoji": "💄", "label": "Kinder-Glitzergel/Schminke + Haarschmuck", "url": "https://www.amazon.de/s?k=kinderschminke+glitzer+set&tag=machsleicht21-21", "priceEur": 11, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Verwandlungs-Station — der emotionale Höhepunkt des Motivs." },
-        { "emoji": "🏅", "label": "Medaillen / Schmuck-Set (Ehrung)", "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Krönungs-Zeremonie-Geschenk." },
-        { "emoji": "🎈", "label": "Ballon-Girlande rosa/gold + Schloss-Deko", "url": "https://www.amazon.de/s?k=prinzessin+ballon+girlande+deko&tag=machsleicht21-21", "priceEur": 15, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Wow-Kulisse, Foto-Hintergrund." },
-        { "emoji": "💍", "label": "Schmuck-Mitgebsel-Set", "url": "https://www.amazon.de/s?k=kinder+schmuck+mitgebsel+set&tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Schatztruhe + Beutel." },
-        { "emoji": "🥤", "label": "Becher/Strohhalme rosa/gold", "url": "https://www.amazon.de/s?k=becher+strohhalme+rosa+gold&tag=machsleicht21-21", "priceEur": 6, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Buffet-Look + Drachenturm." }
+        {
+          "emoji": "👑",
+          "label": "Kronen/Tiaras 8er-Set",
+          "url": "https://www.amazon.de/s?k=kronen+tiara+kinder+set&tag=machsleicht21-21",
+          "priceEur": 9,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Verwandlung + Mitgebsel."
+        },
+        {
+          "emoji": "🧣",
+          "label": "Umhänge / Tüll-Capes 8er",
+          "url": "https://www.amazon.de/s?k=kinder+umhang+prinzessin+cape&tag=machsleicht21-21",
+          "priceEur": 14,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Volles Kostüm."
+        },
+        {
+          "emoji": "✨",
+          "label": "Bastel-Set Kronen + Zauberstäbe",
+          "url": "https://www.amazon.de/s?k=bastelset+krone+zauberstab+kinder&tag=machsleicht21-21",
+          "priceEur": 12,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Material für beide Bastelobjekte + Mitgebsel."
+        },
+        {
+          "emoji": "💄",
+          "label": "Kinder-Glitzergel/Schminke + Haarschmuck",
+          "url": "https://www.amazon.de/s?k=kinderschminke+glitzer+set&tag=machsleicht21-21",
+          "priceEur": 11,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Verwandlungs-Station — der emotionale Höhepunkt des Motivs."
+        },
+        {
+          "emoji": "🏅",
+          "label": "Medaillen / Schmuck-Set (Ehrung)",
+          "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21",
+          "priceEur": 10,
+          "hasAffiliate": true,
+          "category": "mitgebsel",
+          "categoryReasoning": "Krönungs-Zeremonie-Geschenk."
+        },
+        {
+          "emoji": "🎈",
+          "label": "Ballon-Girlande rosa/gold + Schloss-Deko",
+          "url": "https://www.amazon.de/s?k=prinzessin+ballon+girlande+deko&tag=machsleicht21-21",
+          "priceEur": 15,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Wow-Kulisse, Foto-Hintergrund."
+        },
+        {
+          "emoji": "💍",
+          "label": "Schmuck-Mitgebsel-Set",
+          "url": "https://www.amazon.de/s?k=kinder+schmuck+mitgebsel+set&tag=machsleicht21-21",
+          "priceEur": 9,
+          "hasAffiliate": true,
+          "category": "mitgebsel",
+          "categoryReasoning": "Schatztruhe + Beutel."
+        },
+        {
+          "emoji": "🥤",
+          "label": "Becher/Strohhalme rosa/gold",
+          "url": "https://www.amazon.de/s?k=becher+strohhalme+rosa+gold&tag=machsleicht21-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Buffet-Look + Drachenturm."
+        }
       ],
       "costContext": "ca. 86 € für 8 Kinder · ~10,75 € pro Kind"
     }
@@ -266,36 +824,110 @@
   "cakeRecipe": {
     "intro": "Die Prinzessinnen-Torte ist einfacher, als sie wirkt: ein rosa eingedeckter Rührkuchen mit einer essbaren Krone oder einem Schloss-Topper. Plant ~45 Min Backzeit plus Dekorieren.",
     "steps": [
-      { "n": 1, "name": "Boden backen", "content": "Einfacher Rührkuchen (250g Mehl, 200g Zucker, 4 Eier, 200g weiche Butter, 1 Pck. Backpulver, etwas Milch). 175°C, ca. 40–45 Min. Rund oder als 'Schloss' in einer hohen Form." },
-      { "n": 2, "name": "Auskühlen", "content": "Vollständig auskühlen lassen, Oberseite glätten." },
-      { "n": 3, "name": "Rosa eindecken", "content": "Mit rosa Zuckerguss oder Fondant überziehen, optional goldene Zuckerperlen am Rand." },
-      { "n": 4, "name": "Krone aufsetzen", "content": "Eine kleine essbare/Papier-Krone oder einen Schloss-Topper mittig aufsetzen — fertig ist die königliche Torte." }
+      {
+        "n": 1,
+        "name": "Boden backen",
+        "content": "Einfacher Rührkuchen (250g Mehl, 200g Zucker, 4 Eier, 200g weiche Butter, 1 Pck. Backpulver, etwas Milch). 175°C, ca. 40–45 Min. Rund oder als 'Schloss' in einer hohen Form."
+      },
+      {
+        "n": 2,
+        "name": "Auskühlen",
+        "content": "Vollständig auskühlen lassen, Oberseite glätten."
+      },
+      {
+        "n": 3,
+        "name": "Rosa eindecken",
+        "content": "Mit rosa Zuckerguss oder Fondant überziehen, optional goldene Zuckerperlen am Rand."
+      },
+      {
+        "n": 4,
+        "name": "Krone aufsetzen",
+        "content": "Eine kleine essbare/Papier-Krone oder einen Schloss-Topper mittig aufsetzen — fertig ist die königliche Torte."
+      }
     ],
     "meta": "Aufwand: mittel · Vorlaufzeit: 1,5 Std inkl. Auskühlen · als rosa Cupcakes mit Krönchen-Toppern noch schneller.",
     "tips": "Stressfreiste Variante: rosa Cupcakes mit aufgesteckten Mini-Kronen-Toppern — leicht zu verteilen, kein Schneiden. Wer Torte macht: gekaufter Fondant in Rosa spart viel Zeit."
   },
   "parentTips": {
     "structured": [
-      { "topic": "Zauberhaft UND aktiv", "detail": "Reines 'schön sein' langweilt nach 20 Minuten. Mische Verwandlung (Krone, Schminke) mit Bewegung (Parcours, Drache, Tanz) — der Wechsel hält alle bei Laune." },
-      { "topic": "Inklusiv ankündigen", "detail": "Königlich feiern können alle. Sag 'königliches Fest' statt nur 'Prinzessin', biete Kronen wie Umhänge für jedes Kind — so fühlt sich niemand ausgeschlossen." },
-      { "topic": "Roter Faden Drache", "detail": "Eine kleine Geschichte (der Drache hat die Krone gestohlen) verbindet die Spiele zu einem Abenteuer und gibt jedem Spiel einen Grund — das macht aus Einzelspielen ein Erlebnis." },
-      { "topic": "Schminke vorher abfragen", "detail": "Bei der Verwandlungs-Station nur hautverträgliche Kinderschminke nutzen und vorab Allergien/Wünsche der Eltern abfragen. Kein Zwang — Krone allein reicht auch." },
-      { "topic": "Laut-leise-Rhythmus", "detail": "Nach Parcours und Drache je eine ruhige Station (Basteln, Schatzsuche-Rätsel). Der Wechsel verhindert Überdrehtheit gegen Ende." }
+      {
+        "topic": "Zauberhaft UND aktiv",
+        "detail": "Reines 'schön sein' langweilt nach 20 Minuten. Mische Verwandlung (Krone, Schminke) mit Bewegung (Parcours, Drache, Tanz) — der Wechsel hält alle bei Laune."
+      },
+      {
+        "topic": "Inklusiv ankündigen",
+        "detail": "Königlich feiern können alle. Sag 'königliches Fest' statt nur 'Prinzessin', biete Kronen wie Umhänge für jedes Kind — so fühlt sich niemand ausgeschlossen."
+      },
+      {
+        "topic": "Roter Faden Drache",
+        "detail": "Eine kleine Geschichte (der Drache hat die Krone gestohlen) verbindet die Spiele zu einem Abenteuer und gibt jedem Spiel einen Grund — das macht aus Einzelspielen ein Erlebnis."
+      },
+      {
+        "topic": "Schminke vorher abfragen",
+        "detail": "Bei der Verwandlungs-Station nur hautverträgliche Kinderschminke nutzen und vorab Allergien/Wünsche der Eltern abfragen. Kein Zwang — Krone allein reicht auch."
+      },
+      {
+        "topic": "Laut-leise-Rhythmus",
+        "detail": "Nach Parcours und Drache je eine ruhige Station (Basteln, Schatzsuche-Rätsel). Der Wechsel verhindert Überdrehtheit gegen Ende."
+      }
     ],
     "educationalValue": "Prinzessinnen-Spiele fördern Fein- und Grobmotorik (Balance, Basteln, Werfen), Rollenspiel und Fantasie sowie Mut (Drachen-Abenteuer) in einem sicheren Rahmen. Die inklusive Gestaltung ('königlich für alle') und das gemeinsame Befreien der Krone stärken Zusammenhalt — niemand verliert, alle feiern zusammen."
   },
   "invitationTemplate": "👑 EINLADUNG ZUM KÖNIGLICHEN FEST 👑\n\nDas Schloss öffnet seine Tore: [NAME] wird [ALTER] und lädt dich zum großen Königsfest!\n\n🗓️ Wann: [DATUM], [UHRZEIT]\n📍 Wo (im Schloss): [ORT]\n✨ Komm königlich — Krone und Umhang gibt's bei uns.\n\nBitte gib bis [FRIST] Bescheid, ob du mitfeierst.\n\nWir freuen uns auf dich, königliche Hoheit! 💖",
   "preparationWeeks": [
-    { "week": "3 Wochen vorher", "tasks": ["Einladungen verschicken (Königsfest-Text)", "Kronen + Umhänge bestellen (Lieferzeit)", "Überlegen: Verwandlungs-Station / Drachen-Rolle?"] },
-    { "week": "1 Woche vorher", "tasks": ["Deko besorgen (Ballons, Schloss-Kulisse, Tüll)", "Schatzsuche-Hinweise vorbereiten", "Bastel-Material zuschneiden (Kronen, Zauberstäbe)", "Mitgebsel packen, Kuchen-Zutaten kaufen"] },
-    { "week": "1 Tag vorher", "tasks": ["Schloss-Kulisse + Ballons aufhängen", "Bastel- und Parcours-Material bereitlegen", "Urkunden drucken", "Kuchen/Cupcakes backen"] },
-    { "week": "Am Tag", "tasks": ["Schatzsuche-Hinweise verstecken", "Drachenturm + Höhle aufbauen", "Foto-Ecke + Thron richten", "Kronen/Umhänge bereitlegen"] }
+    {
+      "week": "3 Wochen vorher",
+      "tasks": [
+        "Einladungen verschicken (Königsfest-Text)",
+        "Kronen + Umhänge bestellen (Lieferzeit)",
+        "Überlegen: Verwandlungs-Station / Drachen-Rolle?"
+      ]
+    },
+    {
+      "week": "1 Woche vorher",
+      "tasks": [
+        "Deko besorgen (Ballons, Schloss-Kulisse, Tüll)",
+        "Schatzsuche-Hinweise vorbereiten",
+        "Bastel-Material zuschneiden (Kronen, Zauberstäbe)",
+        "Mitgebsel packen, Kuchen-Zutaten kaufen"
+      ]
+    },
+    {
+      "week": "1 Tag vorher",
+      "tasks": [
+        "Schloss-Kulisse + Ballons aufhängen",
+        "Bastel- und Parcours-Material bereitlegen",
+        "Urkunden drucken",
+        "Kuchen/Cupcakes backen"
+      ]
+    },
+    {
+      "week": "Am Tag",
+      "tasks": [
+        "Schatzsuche-Hinweise verstecken",
+        "Drachenturm + Höhle aufbauen",
+        "Foto-Ecke + Thron richten",
+        "Kronen/Umhänge bereitlegen"
+      ]
+    }
   ],
   "sosScenarios": [
-    { "problem": "Es regnet, alles war draußen geplant", "solution": "Alle Spiele gehen drinnen: Parcours in den Flur, Schloss-Schatzsuche durch die Zimmer, Drachenturm gegen die Wand, Tanz im Wohnzimmer. Nur Tische wegräumen." },
-    { "problem": "Ein Kind hat Angst vor dem Drachen", "solution": "Den Drachen sofort die Maske abnehmen lassen ('Schau, das ist nur Papa!') und betont tollpatschig spielen — oder den Drachen ganz weglassen und nur den Turm einreißen. Die Krone-befreien-Geschichte funktioniert auch ohne Live-Drachen." },
-    { "problem": "Die Gruppe wird unruhig/überdreht", "solution": "Sofort eine ruhige Königs-Insel: alle setzen sich zur Bastelstation oder hören eine kurze Schloss-Geschichte. Nach 5 Minuten ist die Gruppe wieder gesammelt." },
-    { "problem": "Ein Spiel ist schneller vorbei als geplant", "solution": "Reserve: zweite Tanz-Runde mit neuen Posen, 'Krönchen-Suchen' (kleine Kronen im Raum verstecken) oder eine Zusatzrunde Drachenturm füllen jede Lücke." }
+    {
+      "problem": "Es regnet, alles war draußen geplant",
+      "solution": "Alle Spiele gehen drinnen: Parcours in den Flur, Schloss-Schatzsuche durch die Zimmer, Drachenturm gegen die Wand, Tanz im Wohnzimmer. Nur Tische wegräumen."
+    },
+    {
+      "problem": "Ein Kind hat Angst vor dem Drachen",
+      "solution": "Den Drachen sofort die Maske abnehmen lassen ('Schau, das ist nur Papa!') und betont tollpatschig spielen — oder den Drachen ganz weglassen und nur den Turm einreißen. Die Krone-befreien-Geschichte funktioniert auch ohne Live-Drachen."
+    },
+    {
+      "problem": "Die Gruppe wird unruhig/überdreht",
+      "solution": "Sofort eine ruhige Königs-Insel: alle setzen sich zur Bastelstation oder hören eine kurze Schloss-Geschichte. Nach 5 Minuten ist die Gruppe wieder gesammelt."
+    },
+    {
+      "problem": "Ein Spiel ist schneller vorbei als geplant",
+      "solution": "Reserve: zweite Tanz-Runde mit neuen Posen, 'Krönchen-Suchen' (kleine Kronen im Raum verstecken) oder eine Zusatzrunde Drachenturm füllen jede Lücke."
+    }
   ],
   "signatureRitual": {
     "name": "Die Krönungs-Zeremonie",

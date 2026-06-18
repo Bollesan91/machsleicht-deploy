@@ -1,5 +1,11 @@
 {
-  "_meta": { "schemaVersion": "elite-v1", "motto": "superheld", "ageGroup": "klein", "author": "machsleicht", "primaryVerified": "Preise = Richtwerte (Amazon/Drogerie 2026, 'ca.'); Sicherheit nach Kleinkind-Praxis: keine Kleinteile zum Verschlucken, weiche Wurfobjekte, kurze Spielzeiten, viel Begleitung." },
+  "_meta": {
+    "schemaVersion": "elite-v1",
+    "motto": "superheld",
+    "ageGroup": "klein",
+    "author": "machsleicht",
+    "primaryVerified": "Preise = Richtwerte (Amazon/Drogerie 2026, 'ca.'); Sicherheit nach Kleinkind-Praxis: keine Kleinteile zum Verschlucken, weiche Wurfobjekte, kurze Spielzeiten, viel Begleitung."
+  },
   "motto": "Superhelden",
   "ageGroup": "klein",
   "ageRange": "3–5 Jahre",
@@ -8,12 +14,30 @@
   "introParagraph": "Cape an — und schon ist dein Kind ein Held. Für 3–5-Jährige hält man es bewusst kurz, einfach und mit viel Begleitung: keine Regeln zum Merken, keine Verlierer, viel Bewegung und kurze ruhige Pausen. Unten findest du drei fertige Abläufe (Minimal, Standard, Wow) mit kindgerechten Spielen, Deko und einer Einkaufsliste mit Richtpreisen.",
   "ageInsight": "3–5-Jährige spielen noch nicht gegeneinander — sie wollen gemeinsam 'Held sein', nichts gewinnen. Halte Spiele extrem einfach (ein Schritt, eine Aufgabe), die Party kurz (max. 2–2,5 Std) und plane viel Erwachsenen-Begleitung ein. Ein Schurke macht in diesem Alter schnell Angst — lieber ganz weglassen oder nur als albernes 'Quatschmonster'. Kostüm muss bequem sein: ein Cape reicht, Masken stören oft die Sicht der Kleinen.",
   "faq": [
-    { "q": "Wie lange feiert man mit 3–5-Jährigen?", "a": "Maximal 2 bis 2,5 Stunden. Kleine Kinder sind danach erschöpft. Lieber kurz und schön als lang und überdreht." },
-    { "q": "Brauchen die Kleinen Masken?", "a": "Besser nicht — Masken stören oft die Sicht und werden schnell abgenommen. Ein Cape (oder ein aufgemaltes Logo auf dem T-Shirt) macht genauso zum Helden und ist bequemer." },
-    { "q": "Sollte es einen Bösewicht geben?", "a": "Mit 3–5 lieber nicht oder nur als sehr albernes, tollpatschiges 'Quatschmonster', das sofort die Maske abnimmt. Echte Schurken machen in diesem Alter schnell Angst." },
-    { "q": "Was, wenn ein Kind nicht mitmacht?", "a": "Ganz normal. Kein Zwang — ein Beobachter-Platz auf dem Schoß von Mama/Papa ist okay. Oft kommt das Kind nach ein paar Minuten von selbst dazu." },
-    { "q": "Wie verhindere ich Chaos?", "a": "Klare Struktur: ein Spiel, eine kurze ruhige Pause, das nächste. Viel Begleitung (mind. 2 Erwachsene ab 6 Kindern). Bewegungsspiele kurz halten." },
-    { "q": "Was kostet das ungefähr?", "a": "Minimal ab ~30 €, Standard ~49 €, Wow ~72 € für 8 Kinder. Capes selbst aus Stoffresten nähen spart am meisten." }
+    {
+      "q": "Wie lange feiert man mit 3–5-Jährigen?",
+      "a": "Maximal 2 bis 2,5 Stunden. Kleine Kinder sind danach erschöpft. Lieber kurz und schön als lang und überdreht."
+    },
+    {
+      "q": "Brauchen die Kleinen Masken?",
+      "a": "Besser nicht — Masken stören oft die Sicht und werden schnell abgenommen. Ein Cape (oder ein aufgemaltes Logo auf dem T-Shirt) macht genauso zum Helden und ist bequemer."
+    },
+    {
+      "q": "Sollte es einen Bösewicht geben?",
+      "a": "Mit 3–5 lieber nicht oder nur als sehr albernes, tollpatschiges 'Quatschmonster', das sofort die Maske abnimmt. Echte Schurken machen in diesem Alter schnell Angst."
+    },
+    {
+      "q": "Was, wenn ein Kind nicht mitmacht?",
+      "a": "Ganz normal. Kein Zwang — ein Beobachter-Platz auf dem Schoß von Mama/Papa ist okay. Oft kommt das Kind nach ein paar Minuten von selbst dazu."
+    },
+    {
+      "q": "Wie verhindere ich Chaos?",
+      "a": "Klare Struktur: ein Spiel, eine kurze ruhige Pause, das nächste. Viel Begleitung (mind. 2 Erwachsene ab 6 Kindern). Bewegungsspiele kurz halten."
+    },
+    {
+      "q": "Was kostet das ungefähr?",
+      "a": "Minimal ab ~30 €, Standard ~49 €, Wow ~72 € für 8 Kinder. Capes selbst aus Stoffresten nähen spart am meisten."
+    }
   ],
   "variants": [
     {
@@ -23,53 +47,153 @@
       "intro": "Zwei einfache Bewegungsspiele, ein bisschen Deko, Kuchen. Mehr braucht es für die Kleinsten nicht.",
       "timeWindow": "1,5 Stunden (15:00–16:30)",
       "schedule": [
-        { "time": "15:00", "title": "Ankommen & Cape an", "description": "Jedes Kind bekommt ein Cape und ein aufgemaltes Helden-Logo auf die Hand. Freies Spiel. 20 Min." },
-        { "time": "15:20", "title": "Wolken-Hüpfen", "description": "Von Kissen zu Kissen 'fliegen', ohne den Boden (die Lava) zu berühren. 20 Min." },
-        { "time": "15:40", "title": "Ballons retten", "description": "Bunte Ballons in der Luft halten — gemeinsam. 15 Min." },
-        { "time": "15:55", "title": "Kuchen & Lied", "description": "Power-Kuchen, kurze Pause. 20 Min." },
-        { "time": "16:15", "title": "Mitgebsel & Tschüss", "description": "Helden-Urkunde, kleiner Beutel, Verabschiedung. 15 Min." }
+        {
+          "time": "15:00",
+          "title": "Ankommen & Cape an",
+          "description": "Jedes Kind bekommt ein Cape und ein aufgemaltes Helden-Logo auf die Hand. Freies Spiel. 20 Min."
+        },
+        {
+          "time": "15:20",
+          "title": "Wolken-Hüpfen",
+          "description": "Von Kissen zu Kissen 'fliegen', ohne den Boden (die Lava) zu berühren. 20 Min."
+        },
+        {
+          "time": "15:40",
+          "title": "Ballons retten",
+          "description": "Bunte Ballons in der Luft halten — gemeinsam. 15 Min."
+        },
+        {
+          "time": "15:55",
+          "title": "Kuchen & Lied",
+          "description": "Power-Kuchen, kurze Pause. 20 Min."
+        },
+        {
+          "time": "16:15",
+          "title": "Mitgebsel & Tschüss",
+          "description": "Helden-Urkunde, kleiner Beutel, Verabschiedung. 15 Min."
+        }
       ],
       "games": [
         {
           "name": "☁️ Wolken-Hüpfen (Der Boden ist Lava)",
-          "indoor": true, "outdoor": true, "duration": 20, "minAge": 3, "loudness": "mittel", "effort": "niedrig",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 20,
+          "minAge": 3,
+          "loudness": "mittel",
+          "effort": "niedrig",
           "material": "6–10 Kissen oder Teppichfliesen",
           "prepText": "Kissen als 'Wolken' im Raum verteilen, nah genug, dass kleine Kinder von einer zur nächsten kommen.",
           "steps": [
-            { "n": 1, "name": "Geschichte", "content": "'Helden können fliegen! Der Boden ist heiße Lava — hüpft nur auf den Wolken.'" },
-            { "n": 2, "name": "Hüpfen", "content": "Die Kinder hüpfen von Kissen zu Kissen durch den Raum. Eine erwachsene Person hält die Hand, wo nötig." },
-            { "n": 3, "name": "Gemeinsam", "content": "Kein Rauswurf — wer 'in die Lava' tritt, wird einfach 'gerettet' und hüpft weiter." }
+            {
+              "n": 1,
+              "name": "Geschichte",
+              "content": "'Helden können fliegen! Der Boden ist heiße Lava — hüpft nur auf den Wolken.'"
+            },
+            {
+              "n": 2,
+              "name": "Hüpfen",
+              "content": "Die Kinder hüpfen von Kissen zu Kissen durch den Raum. Eine erwachsene Person hält die Hand, wo nötig."
+            },
+            {
+              "n": 3,
+              "name": "Gemeinsam",
+              "content": "Kein Rauswurf — wer 'in die Lava' tritt, wird einfach 'gerettet' und hüpft weiter."
+            }
           ],
           "safetyRule": "Kissen rutschfest legen (auf Teppich oder mit Anti-Rutsch). Genug Abstand zu Möbelkanten. Immer eine erwachsene Person in Reichweite.",
-          "ageAdjust6": "Kissen weiter auseinander, kleine 'nicht berühren'-Regel.", "ageAdjust8": "—",
-          "indoorTip": "Wohnzimmer, Tisch weg.", "outdoorTip": "Mit Teppichfliesen oder Decken im Garten.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Hüpfen ist für 3–5-Jährige pure Freude, die Lava-Geschichte gibt Spannung, und es gibt kein Verlieren — perfekt für die Kleinsten."
+          "ageAdjust6": "Kissen weiter auseinander, kleine 'nicht berühren'-Regel.",
+          "ageAdjust8": "—",
+          "indoorTip": "Wohnzimmer, Tisch weg.",
+          "outdoorTip": "Mit Teppichfliesen oder Decken im Garten.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Hüpfen ist für 3–5-Jährige pure Freude, die Lava-Geschichte gibt Spannung, und es gibt kein Verlieren — perfekt für die Kleinsten."
         },
         {
           "name": "🎈 Ballons retten",
-          "indoor": true, "outdoor": false, "duration": 15, "minAge": 3, "loudness": "laut", "effort": "niedrig",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": "laut",
+          "effort": "niedrig",
           "material": "6–10 bunte Luftballons",
           "prepText": "Ballons aufpusten, bereithalten.",
           "steps": [
-            { "n": 1, "name": "Auftrag", "content": "'Die Ballons dürfen nicht auf den Boden — haltet sie als Helden in der Luft!'" },
-            { "n": 2, "name": "Hochhalten", "content": "Alle Kinder tippen die Ballons gemeinsam hoch, immer mehr Ballons dazu." },
-            { "n": 3, "name": "Jubel", "content": "Wenn alle Ballons mal gerettet wurden — gemeinsamer Helden-Jubel." }
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "'Die Ballons dürfen nicht auf den Boden — haltet sie als Helden in der Luft!'"
+            },
+            {
+              "n": 2,
+              "name": "Hochhalten",
+              "content": "Alle Kinder tippen die Ballons gemeinsam hoch, immer mehr Ballons dazu."
+            },
+            {
+              "n": 3,
+              "name": "Jubel",
+              "content": "Wenn alle Ballons mal gerettet wurden — gemeinsamer Helden-Jubel."
+            }
           ],
           "safetyRule": "Geplatzte Ballonreste sofort einsammeln (Verschluckungsgefahr!). Nur bei Aufsicht.",
-          "ageAdjust6": "Mehr Ballons gleichzeitig, kleine Zähl-Challenge.", "ageAdjust8": "—",
-          "indoorTip": "Ideal drinnen, keine Zugluft.", "outdoorTip": "Nur windstill.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Einfachste Regel, maximaler Spaß — und das gemeinsame Ziel macht alle zu einem Team ohne Wettkampf."
+          "ageAdjust6": "Mehr Ballons gleichzeitig, kleine Zähl-Challenge.",
+          "ageAdjust8": "—",
+          "indoorTip": "Ideal drinnen, keine Zugluft.",
+          "outdoorTip": "Nur windstill.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Einfachste Regel, maximaler Spaß — und das gemeinsame Ziel macht alle zu einem Team ohne Wettkampf."
         }
       ],
       "food": "Power-Obstspieße (Trauben, Banane), Helden-Muffins mit buntem Streusel, Saftschorle als 'Energie-Trank'. Bei den Kleinen wenig, aber bunt.",
       "decoration": "Bunte Ballons in Heldenfarben, ein paar große Comic-Sterne aus Tonpapier, Capes als Deko. Bewusst schlicht.",
       "giveaways": "Cape (zum Behalten), Helden-Urkunde mit Namen, ein Sticker.",
       "shoppingList": [
-        { "emoji": "🦸", "label": "Kinder-Capes 8er-Set", "url": "https://www.amazon.de/s?k=kinder+umhang+cape+superheld+set&tag=machsleicht21-21", "priceEur": 15, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Bequemes Komplett-Kostüm für die Kleinen (ohne störende Maske) + Mitgebsel." },
-        { "emoji": "🎈", "label": "Luftballons bunt 50 Stk.", "url": "https://www.amazon.de/s?k=luftballons+bunt+50&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Doppelt genutzt: Deko UND das Ballon-Rette-Spiel." },
-        { "emoji": "⭐", "label": "Tonpapier-Set bunt (Sterne/Logos)", "url": "https://www.amazon.de/s?k=tonpapier+bunt+set&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Comic-Sterne als einfache, günstige Wanddeko, auch für Logos auf der Hand." },
-        { "emoji": "🧷", "label": "Kissen/Teppichfliesen (oft vorhanden)", "url": "https://www.amazon.de/s?k=teppichfliesen+kinder&tag=machsleicht21-21", "priceEur": 0, "hasAffiliate": false, "category": "aktivitaet", "categoryReasoning": "Meist im Haushalt — die 'Wolken' fürs Hüpfspiel." },
-        { "emoji": "🍬", "label": "Mitgebsel + Sticker", "url": "https://www.amazon.de/s?k=superhelden+sticker+kinder&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Kleiner Beutel-Inhalt fürs Verabschieden." }
+        {
+          "emoji": "🦸",
+          "label": "Kinder-Capes 8er-Set",
+          "url": "https://www.amazon.de/s?k=kinder+umhang+cape+superheld+set&tag=machsleicht21-21",
+          "priceEur": 15,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Bequemes Komplett-Kostüm für die Kleinen (ohne störende Maske) + Mitgebsel."
+        },
+        {
+          "emoji": "🎈",
+          "label": "Luftballons bunt 50 Stk.",
+          "url": "https://www.amazon.de/s?k=luftballons+bunt+50&tag=machsleicht21-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Doppelt genutzt: Deko UND das Ballon-Rette-Spiel."
+        },
+        {
+          "emoji": "⭐",
+          "label": "Tonpapier-Set bunt (Sterne/Logos)",
+          "url": "https://www.amazon.de/s?k=tonpapier+bunt+set&tag=machsleicht21-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Comic-Sterne als einfache, günstige Wanddeko, auch für Logos auf der Hand."
+        },
+        {
+          "emoji": "🧷",
+          "label": "Kissen/Teppichfliesen (oft vorhanden)",
+          "url": "https://www.amazon.de/s?k=teppichfliesen+kinder&tag=machsleicht21-21",
+          "priceEur": 0,
+          "hasAffiliate": false,
+          "category": "aktivitaet",
+          "categoryReasoning": "Meist im Haushalt — die 'Wolken' fürs Hüpfspiel."
+        },
+        {
+          "emoji": "🍬",
+          "label": "Mitgebsel + Sticker",
+          "url": "https://www.amazon.de/s?k=superhelden+sticker+kinder&tag=machsleicht21-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "mitgebsel",
+          "categoryReasoning": "Kleiner Beutel-Inhalt fürs Verabschieden."
+        }
       ],
       "costContext": "ca. 30 € für 8 Kinder · ~3,75 € pro Kind"
     },
@@ -80,70 +204,202 @@
       "intro": "Die empfohlene Variante für die Kleinen: Bewegung, eine ganz einfache Schatzsuche mit Bildern und eine ruhige Bastelpause. Kurz genug, dass keiner überdreht.",
       "timeWindow": "2 Stunden (15:00–17:00)",
       "schedule": [
-        { "time": "15:00", "title": "Ankommen & Cape an", "description": "Cape, Logo auf die Hand, Foto. Freispiel mit Ausmalbildern. 20 Min." },
-        { "time": "15:20", "title": "Wolken-Hüpfen", "description": "Von Wolke zu Wolke fliegen. 15 Min." },
-        { "time": "15:35", "title": "Helden-Sterne basteln", "description": "Ruhige Station: jeder klebt seinen Stern. 15 Min." },
-        { "time": "15:50", "title": "Bilder-Schatzsuche", "description": "Einfache Bild-Hinweise führen zum Schatz. 25 Min." },
-        { "time": "16:15", "title": "Kuchen & Lied", "description": "Power-Kuchen, Pause. 25 Min." },
-        { "time": "16:40", "title": "Heldenjubel & Mitgebsel", "description": "Urkunde, Stern, Schatzbeutel, Tschüss. 20 Min." }
+        {
+          "time": "15:00",
+          "title": "Ankommen & Cape an",
+          "description": "Cape, Logo auf die Hand, Foto. Freispiel mit Ausmalbildern. 20 Min."
+        },
+        {
+          "time": "15:20",
+          "title": "Wolken-Hüpfen",
+          "description": "Von Wolke zu Wolke fliegen. 15 Min."
+        },
+        {
+          "time": "15:35",
+          "title": "Helden-Sterne basteln",
+          "description": "Ruhige Station: jeder klebt seinen Stern. 15 Min."
+        },
+        {
+          "time": "15:50",
+          "title": "Bilder-Schatzsuche",
+          "description": "Einfache Bild-Hinweise führen zum Schatz. 25 Min."
+        },
+        {
+          "time": "16:15",
+          "title": "Kuchen & Lied",
+          "description": "Power-Kuchen, Pause. 25 Min."
+        },
+        {
+          "time": "16:40",
+          "title": "Heldenjubel & Mitgebsel",
+          "description": "Urkunde, Stern, Schatzbeutel, Tschüss. 20 Min."
+        }
       ],
       "games": [
         {
           "name": "☁️ Wolken-Hüpfen (Der Boden ist Lava)",
-          "indoor": true, "outdoor": true, "duration": 15, "minAge": 3, "loudness": "mittel", "effort": "niedrig",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": "mittel",
+          "effort": "niedrig",
           "material": "6–10 Kissen/Teppichfliesen",
           "prepText": "Kissen als Wolken verteilen.",
           "steps": [
-            { "n": 1, "name": "Geschichte", "content": "'Der Boden ist Lava — hüpft auf den Wolken!'" },
-            { "n": 2, "name": "Hüpfen", "content": "Von Kissen zu Kissen, mit Hilfe wo nötig." },
-            { "n": 3, "name": "Gemeinsam", "content": "Keiner scheidet aus, alle werden 'gerettet'." }
+            {
+              "n": 1,
+              "name": "Geschichte",
+              "content": "'Der Boden ist Lava — hüpft auf den Wolken!'"
+            },
+            {
+              "n": 2,
+              "name": "Hüpfen",
+              "content": "Von Kissen zu Kissen, mit Hilfe wo nötig."
+            },
+            {
+              "n": 3,
+              "name": "Gemeinsam",
+              "content": "Keiner scheidet aus, alle werden 'gerettet'."
+            }
           ],
           "safetyRule": "Kissen rutschfest, Abstand zu Kanten, Aufsicht.",
-          "ageAdjust6": "Weiter auseinander.", "ageAdjust8": "—",
-          "indoorTip": "Tisch weg.", "outdoorTip": "Decken im Garten.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Bewegung ohne Verlierer, sofort verständlich."
+          "ageAdjust6": "Weiter auseinander.",
+          "ageAdjust8": "—",
+          "indoorTip": "Tisch weg.",
+          "outdoorTip": "Decken im Garten.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Bewegung ohne Verlierer, sofort verständlich."
         },
         {
           "name": "⭐ Helden-Sterne basteln",
-          "indoor": true, "outdoor": false, "duration": 15, "minAge": 3, "loudness": "leise", "effort": "niedrig",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": "leise",
+          "effort": "niedrig",
           "material": "Ausgeschnittene Pappsterne, große Sticker, dicke Wachsmalstifte, Glitzerkleber (nur mit Aufsicht)",
           "prepText": "Pro Kind einen Pappstern vorschneiden. Material griffbereit.",
           "steps": [
-            { "n": 1, "name": "Stern aussuchen", "content": "Jedes Kind nimmt seinen Stern." },
-            { "n": 2, "name": "Bekleben", "content": "Mit Stickern bekleben und anmalen — bei den Kleinen sind Sticker einfacher als Malen." },
-            { "n": 3, "name": "Zeigen", "content": "Alle halten ihren Heldenstern hoch." }
+            {
+              "n": 1,
+              "name": "Stern aussuchen",
+              "content": "Jedes Kind nimmt seinen Stern."
+            },
+            {
+              "n": 2,
+              "name": "Bekleben",
+              "content": "Mit Stickern bekleben und anmalen — bei den Kleinen sind Sticker einfacher als Malen."
+            },
+            {
+              "n": 3,
+              "name": "Zeigen",
+              "content": "Alle halten ihren Heldenstern hoch."
+            }
           ],
           "safetyRule": "Keine Kleinteile in den Mund, Glitzerkleber nur mit Erwachsenem, dicke Stifte (gut greifbar).",
-          "ageAdjust6": "Auch malen statt nur kleben.", "ageAdjust8": "—",
-          "indoorTip": "Am Tisch mit Wachstuch.", "outdoorTip": "Windgeschützt.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Die ruhige Station senkt das Tempo nach dem Toben und gibt jedem Kind ein eigenes Werk zum Mitnehmen."
+          "ageAdjust6": "Auch malen statt nur kleben.",
+          "ageAdjust8": "—",
+          "indoorTip": "Am Tisch mit Wachstuch.",
+          "outdoorTip": "Windgeschützt.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Die ruhige Station senkt das Tempo nach dem Toben und gibt jedem Kind ein eigenes Werk zum Mitnehmen."
         },
         {
           "name": "🗺️ Bilder-Schatzsuche",
-          "indoor": true, "outdoor": true, "duration": 25, "minAge": 3, "loudness": "mittel", "effort": "niedrig",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 3,
+          "loudness": "mittel",
+          "effort": "niedrig",
           "material": "3–4 Bild-Hinweise (Foto vom nächsten Versteck), eine Schatzkiste mit Mitgebsel",
           "prepText": "3–4 Verstecke fotografieren, Hinweise als Bilder ausdrucken. Letztes Bild zeigt zur Schatzkiste.",
           "steps": [
-            { "n": 1, "name": "Start", "content": "'Wir suchen den Helden-Schatz! Schaut, wo ist das auf dem Bild?'" },
-            { "n": 2, "name": "Bild für Bild", "content": "Als Gruppe von Versteck zu Versteck, jedes Bild zeigt den nächsten Ort." },
-            { "n": 3, "name": "Schatz", "content": "Letztes Versteck: die Schatzkiste, alle bekommen etwas." }
+            {
+              "n": 1,
+              "name": "Start",
+              "content": "'Wir suchen den Helden-Schatz! Schaut, wo ist das auf dem Bild?'"
+            },
+            {
+              "n": 2,
+              "name": "Bild für Bild",
+              "content": "Als Gruppe von Versteck zu Versteck, jedes Bild zeigt den nächsten Ort."
+            },
+            {
+              "n": 3,
+              "name": "Schatz",
+              "content": "Letztes Versteck: die Schatzkiste, alle bekommen etwas."
+            }
           ],
           "safetyRule": "Nur sichere, einsehbare Verstecke. Eine erwachsene Person geht voran.",
-          "ageAdjust6": "Auch einfache Wort-/Mengen-Hinweise.", "ageAdjust8": "—",
-          "indoorTip": "Über 2 Zimmer.", "outdoorTip": "Im Garten, klar begrenzt.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Bild-Hinweise funktionieren auch ohne Lesen — die Kleinen 'lösen' selbst und das Schatz-Finale ist der Höhepunkt."
+          "ageAdjust6": "Auch einfache Wort-/Mengen-Hinweise.",
+          "ageAdjust8": "—",
+          "indoorTip": "Über 2 Zimmer.",
+          "outdoorTip": "Im Garten, klar begrenzt.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Bild-Hinweise funktionieren auch ohne Lesen — die Kleinen 'lösen' selbst und das Schatz-Finale ist der Höhepunkt."
         }
       ],
       "food": "Obstspieße, Helden-Muffins, Gemüsesticks mit Dip, Saftschorle. Optional Mini-Würstchen. Klein portioniert.",
       "decoration": "Bunte Ballons, Comic-Sterne, eine kleine Skyline aus Tonpapier, Capes an der Leine. Tisch mit bunter Decke.",
       "giveaways": "Cape, gebastelter Stern, Urkunde, kleiner Schatzbeutel (Sticker, Tattoo, eine weiche Mini-Figur — keine Kleinteile).",
       "shoppingList": [
-        { "emoji": "🦸", "label": "Kinder-Capes 8er-Set", "url": "https://www.amazon.de/s?k=kinder+umhang+cape+superheld+set&tag=machsleicht21-21", "priceEur": 15, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Bequemes Kostüm + Mitgebsel." },
-        { "emoji": "⭐", "label": "Bastel-Set Sterne (Pappe, Sticker)", "url": "https://www.amazon.de/s?k=bastelset+sterne+kinder&tag=machsleicht21-21", "priceEur": 6, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Material für die ruhige Bastelstation + Mitgebsel." },
-        { "emoji": "🎈", "label": "Luftballons bunt 50 Stk.", "url": "https://www.amazon.de/s?k=luftballons+bunt+50&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Deko + Spielmaterial." },
-        { "emoji": "💬", "label": "Comic-Servietten & Tischdecke", "url": "https://www.amazon.de/s?k=superhelden+servietten+tischdecke&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Setzt das Motto am Tisch, praktisch fürs Buffet." },
-        { "emoji": "🧸", "label": "Mitgebsel ohne Kleinteile (Tattoos, weiche Figuren)", "url": "https://www.amazon.de/s?k=mitgebsel+kleinkind+superhelden&tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Schatzkiste + Beutel — bei 3–5 bewusst ohne Verschluckungs-Risiko." },
-        { "emoji": "🖍️", "label": "Ausmalbilder & dicke Wachsmalstifte", "url": "https://www.amazon.de/s?k=wachsmalstifte+dick+kleinkind&tag=machsleicht21-21", "priceEur": 6, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Beschäftigung beim Ankommen, gut greifbar für kleine Hände." }
+        {
+          "emoji": "🦸",
+          "label": "Kinder-Capes 8er-Set",
+          "url": "https://www.amazon.de/s?k=kinder+umhang+cape+superheld+set&tag=machsleicht21-21",
+          "priceEur": 15,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Bequemes Kostüm + Mitgebsel."
+        },
+        {
+          "emoji": "⭐",
+          "label": "Bastel-Set Sterne (Pappe, Sticker)",
+          "url": "https://www.amazon.de/s?k=bastelset+sterne+kinder&tag=machsleicht21-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Material für die ruhige Bastelstation + Mitgebsel."
+        },
+        {
+          "emoji": "🎈",
+          "label": "Luftballons bunt 50 Stk.",
+          "url": "https://www.amazon.de/s?k=luftballons+bunt+50&tag=machsleicht21-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Deko + Spielmaterial."
+        },
+        {
+          "emoji": "💬",
+          "label": "Comic-Servietten & Tischdecke",
+          "url": "https://www.amazon.de/s?k=superhelden+servietten+tischdecke&tag=machsleicht21-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Setzt das Motto am Tisch, praktisch fürs Buffet."
+        },
+        {
+          "emoji": "🧸",
+          "label": "Mitgebsel ohne Kleinteile (Tattoos, weiche Figuren)",
+          "url": "https://www.amazon.de/s?k=mitgebsel+kleinkind+superhelden&tag=machsleicht21-21",
+          "priceEur": 9,
+          "hasAffiliate": true,
+          "category": "mitgebsel",
+          "categoryReasoning": "Schatzkiste + Beutel — bei 3–5 bewusst ohne Verschluckungs-Risiko."
+        },
+        {
+          "emoji": "🖍️",
+          "label": "Ausmalbilder & dicke Wachsmalstifte",
+          "url": "https://www.amazon.de/s?k=wachsmalstifte+dick+kleinkind&tag=machsleicht21-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Beschäftigung beim Ankommen, gut greifbar für kleine Hände."
+        }
       ],
       "costContext": "ca. 49 € für 8 Kinder · ~6,13 € pro Kind"
     },
@@ -154,87 +410,286 @@
       "intro": "Alles aus Standard plus eine einfache Bewegungs-Station, ein Quatschmonster zum Lachen und eine kleine Ehrung. Mehr Vorbereitung, viel Begleitung — dafür ein großer Tag.",
       "timeWindow": "2,5 Stunden (15:00–17:30)",
       "schedule": [
-        { "time": "15:00", "title": "Ankommen & Helden-Einkleidung", "description": "Cape, Logo, Foto, Freispiel. 20 Min." },
-        { "time": "15:20", "title": "Wolken-Hüpfen", "description": "Bewegung zum Start. 15 Min." },
-        { "time": "15:35", "title": "Kraft-Stationen (3 einfache)", "description": "Zielwurf, Balance-Linie, Ballons. 20 Min." },
-        { "time": "15:55", "title": "Helden-Sterne basteln", "description": "Ruhige Station. 15 Min." },
-        { "time": "16:10", "title": "Bilder-Schatzsuche", "description": "Einfache Suche zum Schatz. 25 Min." },
-        { "time": "16:35", "title": "Kuchen & Lied", "description": "Pause. 25 Min." },
-        { "time": "17:00", "title": "Quatschmonster & Ehrung", "description": "Albernes Monster fangen, Helden-Medaille, Tschüss. 30 Min." }
+        {
+          "time": "15:00",
+          "title": "Ankommen & Helden-Einkleidung",
+          "description": "Cape, Logo, Foto, Freispiel. 20 Min."
+        },
+        {
+          "time": "15:20",
+          "title": "Wolken-Hüpfen",
+          "description": "Bewegung zum Start. 15 Min."
+        },
+        {
+          "time": "15:35",
+          "title": "Kraft-Stationen (3 einfache)",
+          "description": "Zielwurf, Balance-Linie, Ballons. 20 Min."
+        },
+        {
+          "time": "15:55",
+          "title": "Helden-Sterne basteln",
+          "description": "Ruhige Station. 15 Min."
+        },
+        {
+          "time": "16:10",
+          "title": "Bilder-Schatzsuche",
+          "description": "Einfache Suche zum Schatz. 25 Min."
+        },
+        {
+          "time": "16:35",
+          "title": "Kuchen & Lied",
+          "description": "Pause. 25 Min."
+        },
+        {
+          "time": "17:00",
+          "title": "Quatschmonster & Ehrung",
+          "description": "Albernes Monster fangen, Helden-Medaille, Tschüss. 30 Min."
+        }
       ],
       "games": [
         {
           "name": "☁️ Wolken-Hüpfen",
-          "indoor": true, "outdoor": true, "duration": 15, "minAge": 3, "loudness": "mittel", "effort": "niedrig",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": "mittel",
+          "effort": "niedrig",
           "material": "Kissen/Teppichfliesen",
           "prepText": "Wolken verteilen.",
           "steps": [
-            { "n": 1, "name": "Geschichte", "content": "'Der Boden ist Lava!'" },
-            { "n": 2, "name": "Hüpfen", "content": "Von Wolke zu Wolke." },
-            { "n": 3, "name": "Gemeinsam", "content": "Alle werden gerettet." }
+            {
+              "n": 1,
+              "name": "Geschichte",
+              "content": "'Der Boden ist Lava!'"
+            },
+            {
+              "n": 2,
+              "name": "Hüpfen",
+              "content": "Von Wolke zu Wolke."
+            },
+            {
+              "n": 3,
+              "name": "Gemeinsam",
+              "content": "Alle werden gerettet."
+            }
           ],
           "safetyRule": "Rutschfest, Aufsicht.",
-          "ageAdjust6": "Weiter.", "ageAdjust8": "—",
-          "indoorTip": "Tisch weg.", "outdoorTip": "Decken.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Bewegungs-Auftakt ohne Verlierer."
+          "ageAdjust6": "Weiter.",
+          "ageAdjust8": "—",
+          "indoorTip": "Tisch weg.",
+          "outdoorTip": "Decken.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Bewegungs-Auftakt ohne Verlierer."
         },
         {
           "name": "💪 Kraft-Stationen (3 einfache)",
-          "indoor": true, "outdoor": true, "duration": 20, "minAge": 3, "loudness": "mittel", "effort": "niedrig",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 20,
+          "minAge": 3,
+          "loudness": "mittel",
+          "effort": "niedrig",
           "material": "Eimer + weiche Bälle (Zielwurf), Klebeband-Linie (Balance), Ballons (Hochhalten)",
           "prepText": "Drei einfache Stationen aufbauen, je eine erwachsene Person dabei.",
           "steps": [
-            { "n": 1, "name": "Reihum", "content": "Kleine Gruppen gehen reihum zu den 3 Stationen." },
-            { "n": 2, "name": "Mitmachen", "content": "Bälle in den Eimer, auf der Linie balancieren, Ballon hochhalten — alle schaffen alles." },
-            { "n": 3, "name": "Sticker", "content": "Pro Station ein Sticker aufs Cape." }
+            {
+              "n": 1,
+              "name": "Reihum",
+              "content": "Kleine Gruppen gehen reihum zu den 3 Stationen."
+            },
+            {
+              "n": 2,
+              "name": "Mitmachen",
+              "content": "Bälle in den Eimer, auf der Linie balancieren, Ballon hochhalten — alle schaffen alles."
+            },
+            {
+              "n": 3,
+              "name": "Sticker",
+              "content": "Pro Station ein Sticker aufs Cape."
+            }
           ],
           "safetyRule": "Linie auf dem Boden (nicht erhöht), weiche Bälle, Erwachsene an jeder Station.",
-          "ageAdjust6": "Etwas schwieriger.", "ageAdjust8": "—",
-          "indoorTip": "In verschiedene Ecken.", "outdoorTip": "Im Garten mit Abstand.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Stationen in Kleingruppen vermeiden Warten — alle sind beschäftigt, und Sticker machen Erfolg sichtbar."
+          "ageAdjust6": "Etwas schwieriger.",
+          "ageAdjust8": "—",
+          "indoorTip": "In verschiedene Ecken.",
+          "outdoorTip": "Im Garten mit Abstand.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Stationen in Kleingruppen vermeiden Warten — alle sind beschäftigt, und Sticker machen Erfolg sichtbar."
         },
         {
           "name": "⭐ Helden-Sterne basteln",
-          "indoor": true, "outdoor": false, "duration": 15, "minAge": 3, "loudness": "leise", "effort": "niedrig",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": "leise",
+          "effort": "niedrig",
           "material": "Pappsterne, Sticker, dicke Stifte",
           "prepText": "Sterne vorschneiden.",
           "steps": [
-            { "n": 1, "name": "Aussuchen", "content": "Jeder nimmt seinen Stern." },
-            { "n": 2, "name": "Bekleben", "content": "Mit Stickern verzieren." },
-            { "n": 3, "name": "Zeigen", "content": "Heldensterne hochhalten." }
+            {
+              "n": 1,
+              "name": "Aussuchen",
+              "content": "Jeder nimmt seinen Stern."
+            },
+            {
+              "n": 2,
+              "name": "Bekleben",
+              "content": "Mit Stickern verzieren."
+            },
+            {
+              "n": 3,
+              "name": "Zeigen",
+              "content": "Heldensterne hochhalten."
+            }
           ],
           "safetyRule": "Keine Kleinteile in den Mund, Aufsicht.",
-          "ageAdjust6": "Auch malen.", "ageAdjust8": "—",
-          "indoorTip": "Am Tisch.", "outdoorTip": "Windgeschützt.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Ruhe-Insel nach Bewegung + eigenes Werk."
+          "ageAdjust6": "Auch malen.",
+          "ageAdjust8": "—",
+          "indoorTip": "Am Tisch.",
+          "outdoorTip": "Windgeschützt.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Ruhe-Insel nach Bewegung + eigenes Werk."
         },
         {
           "name": "👾 Quatschmonster fangen",
-          "indoor": true, "outdoor": true, "duration": 20, "minAge": 3, "loudness": "laut", "effort": "niedrig",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 20,
+          "minAge": 3,
+          "loudness": "laut",
+          "effort": "niedrig",
           "material": "Eine als albernes 'Quatschmonster' verkleidete erwachsene Person (bunter Umhang, Quatsch-Hut)",
           "prepText": "Kostüm bewusst albern und freundlich — niemals gruselig. Das Monster 'klaut' zu Beginn die Helden-Sterne.",
           "steps": [
-            { "n": 1, "name": "Auftrag", "content": "'Das Quatschmonster hat unsere Sterne versteckt — fangt es, dann gibt es sie zurück!'" },
-            { "n": 2, "name": "Fangen", "content": "Das Monster läuft tollpatschig weg, stolpert, lacht; die Helden 'fangen' es gemeinsam (antippen)." },
-            { "n": 3, "name": "Sterne zurück", "content": "Gefangen! Das Monster lacht, gibt die Sterne zurück, alle jubeln." }
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "'Das Quatschmonster hat unsere Sterne versteckt — fangt es, dann gibt es sie zurück!'"
+            },
+            {
+              "n": 2,
+              "name": "Fangen",
+              "content": "Das Monster läuft tollpatschig weg, stolpert, lacht; die Helden 'fangen' es gemeinsam (antippen)."
+            },
+            {
+              "n": 3,
+              "name": "Sterne zurück",
+              "content": "Gefangen! Das Monster lacht, gibt die Sterne zurück, alle jubeln."
+            }
           ],
           "safetyRule": "Monster läuft langsam und sanft, nimmt bei Angst sofort den Hut ab ('Schau, das ist Oma!'). Kein echtes Erschrecken.",
-          "ageAdjust6": "Etwas schneller, kleines Verstecken.", "ageAdjust8": "—",
-          "indoorTip": "Im Wohnzimmer mit Platz.", "outdoorTip": "Im Garten, klar begrenzt.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Ein albernes Monster zum gemeinsamen Fangen ist großer Spaß ohne Angst — der lustige Höhepunkt, bei dem alle zusammen 'gewinnen'."
+          "ageAdjust6": "Etwas schneller, kleines Verstecken.",
+          "ageAdjust8": "—",
+          "indoorTip": "Im Wohnzimmer mit Platz.",
+          "outdoorTip": "Im Garten, klar begrenzt.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Ein albernes Monster zum gemeinsamen Fangen ist großer Spaß ohne Angst — der lustige Höhepunkt, bei dem alle zusammen 'gewinnen'."
+        },
+        {
+          "name": "🗺️ Bilder-Schatzsuche",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 3,
+          "loudness": "mittel",
+          "effort": "niedrig",
+          "material": "3–4 Bild-Hinweise (Foto vom nächsten Versteck), eine Schatzkiste mit Mitgebsel",
+          "prepText": "3–4 Verstecke fotografieren, Hinweise als Bilder ausdrucken. Letztes Bild zeigt zur Schatzkiste.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Start",
+              "content": "'Wir suchen den Helden-Schatz! Schaut, wo ist das auf dem Bild?'"
+            },
+            {
+              "n": 2,
+              "name": "Bild für Bild",
+              "content": "Als Gruppe von Versteck zu Versteck, jedes Bild zeigt den nächsten Ort."
+            },
+            {
+              "n": 3,
+              "name": "Schatz",
+              "content": "Letztes Versteck: die Schatzkiste, alle bekommen etwas."
+            }
+          ],
+          "safetyRule": "Nur sichere, einsehbare Verstecke. Eine erwachsene Person geht voran.",
+          "ageAdjust6": "Auch einfache Wort-/Mengen-Hinweise.",
+          "ageAdjust8": "—",
+          "indoorTip": "Über 2 Zimmer.",
+          "outdoorTip": "Im Garten, klar begrenzt.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Bild-Hinweise funktionieren auch ohne Lesen — die Kleinen 'lösen' selbst und das Schatz-Finale ist der Höhepunkt."
         }
       ],
       "food": "Buntes Helden-Buffet: Obstspieße, Muffins mit Toppern, Gemüse mit Dip, Mini-Würstchen, Saftschorle in bunten Bechern.",
       "decoration": "Volle bunte Deko: Ballon-Girlande, Comic-Sterne, kleine Skyline, Sternenstation am Eingang, Tisch im Heldenlook.",
       "giveaways": "Cape, gebastelter Stern, Helden-Medaille, gut gefüllter Schatzbeutel (ohne Kleinteile).",
       "shoppingList": [
-        { "emoji": "🦸", "label": "Kinder-Capes 8er-Set", "url": "https://www.amazon.de/s?k=kinder+umhang+cape+superheld+set&tag=machsleicht21-21", "priceEur": 15, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Kostüm + Mitgebsel." },
-        { "emoji": "⭐", "label": "Bastel-Set Sterne", "url": "https://www.amazon.de/s?k=bastelset+sterne+kinder&tag=machsleicht21-21", "priceEur": 6, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Bastelstation + Mitgebsel." },
-        { "emoji": "🏅", "label": "Medaillen 12er-Set", "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Ehrung am Ende, schönes Mitgebsel." },
-        { "emoji": "🎈", "label": "Ballon-Girlande bunt", "url": "https://www.amazon.de/s?k=ballon+girlande+bunt&tag=machsleicht21-21", "priceEur": 12, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Wow-Deko mit wenig Aufwand." },
-        { "emoji": "💬", "label": "Comic-Party-Set (Servietten, Becher, Tischdecke)", "url": "https://www.amazon.de/s?k=superhelden+party+set&tag=machsleicht21-21", "priceEur": 12, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Komplettes Tisch-Setting im Motto." },
-        { "emoji": "💪", "label": "Weiche Bälle + Klebeband (Kraft-Stationen)", "url": "https://www.amazon.de/s?k=softball+set+kinder&tag=machsleicht21-21", "priceEur": 7, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Material für die Stationen, sicher für Kleine." },
-        { "emoji": "🧸", "label": "Mitgebsel ohne Kleinteile", "url": "https://www.amazon.de/s?k=mitgebsel+kleinkind+superhelden&tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Schatzbeutel-Füllung, verschluckungssicher." }
+        {
+          "emoji": "🦸",
+          "label": "Kinder-Capes 8er-Set",
+          "url": "https://www.amazon.de/s?k=kinder+umhang+cape+superheld+set&tag=machsleicht21-21",
+          "priceEur": 15,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Kostüm + Mitgebsel."
+        },
+        {
+          "emoji": "⭐",
+          "label": "Bastel-Set Sterne",
+          "url": "https://www.amazon.de/s?k=bastelset+sterne+kinder&tag=machsleicht21-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Bastelstation + Mitgebsel."
+        },
+        {
+          "emoji": "🏅",
+          "label": "Medaillen 12er-Set",
+          "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21",
+          "priceEur": 10,
+          "hasAffiliate": true,
+          "category": "mitgebsel",
+          "categoryReasoning": "Ehrung am Ende, schönes Mitgebsel."
+        },
+        {
+          "emoji": "🎈",
+          "label": "Ballon-Girlande bunt",
+          "url": "https://www.amazon.de/s?k=ballon+girlande+bunt&tag=machsleicht21-21",
+          "priceEur": 12,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Wow-Deko mit wenig Aufwand."
+        },
+        {
+          "emoji": "💬",
+          "label": "Comic-Party-Set (Servietten, Becher, Tischdecke)",
+          "url": "https://www.amazon.de/s?k=superhelden+party+set&tag=machsleicht21-21",
+          "priceEur": 12,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Komplettes Tisch-Setting im Motto."
+        },
+        {
+          "emoji": "💪",
+          "label": "Weiche Bälle + Klebeband (Kraft-Stationen)",
+          "url": "https://www.amazon.de/s?k=softball+set+kinder&tag=machsleicht21-21",
+          "priceEur": 7,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Material für die Stationen, sicher für Kleine."
+        },
+        {
+          "emoji": "🧸",
+          "label": "Mitgebsel ohne Kleinteile",
+          "url": "https://www.amazon.de/s?k=mitgebsel+kleinkind+superhelden&tag=machsleicht21-21",
+          "priceEur": 10,
+          "hasAffiliate": true,
+          "category": "mitgebsel",
+          "categoryReasoning": "Schatzbeutel-Füllung, verschluckungssicher."
+        }
       ],
       "costContext": "ca. 72 € für 8 Kinder · ~9 € pro Kind"
     }
@@ -242,36 +697,110 @@
   "cakeRecipe": {
     "intro": "Für die Kleinen am einfachsten: bunte Muffins mit Helden-Toppern statt großer Torte — leichter zu verteilen und kein Tortenschneiden nötig.",
     "steps": [
-      { "n": 1, "name": "Muffins backen", "content": "Einfacher Muffinteig (250g Mehl, 100g Zucker, 2 Eier, 100g Butter/Öl, 1 Pck. Backpulver, 150ml Milch). 175°C, ca. 20–25 Min." },
-      { "n": 2, "name": "Auskühlen", "content": "Komplett auskühlen lassen." },
-      { "n": 3, "name": "Bunt toppen", "content": "Mit buntem Zuckerguss bestreichen, Streusel in Heldenfarben drüber." },
-      { "n": 4, "name": "Helden-Topper", "content": "Kleine Blitz- oder Stern-Topper (Papier auf Zahnstocher) reinstecken — Zahnstocher bei den Kleinsten vor dem Essen entfernen!" }
+      {
+        "n": 1,
+        "name": "Muffins backen",
+        "content": "Einfacher Muffinteig (250g Mehl, 100g Zucker, 2 Eier, 100g Butter/Öl, 1 Pck. Backpulver, 150ml Milch). 175°C, ca. 20–25 Min."
+      },
+      {
+        "n": 2,
+        "name": "Auskühlen",
+        "content": "Komplett auskühlen lassen."
+      },
+      {
+        "n": 3,
+        "name": "Bunt toppen",
+        "content": "Mit buntem Zuckerguss bestreichen, Streusel in Heldenfarben drüber."
+      },
+      {
+        "n": 4,
+        "name": "Helden-Topper",
+        "content": "Kleine Blitz- oder Stern-Topper (Papier auf Zahnstocher) reinstecken — Zahnstocher bei den Kleinsten vor dem Essen entfernen!"
+      }
     ],
     "meta": "Aufwand: niedrig · Vorlaufzeit: 1 Std · ideal für 3–5, da gut portionierbar.",
     "tips": "Zahnstocher-Topper IMMER vor dem Servieren rausziehen (Verletzungsgefahr). Wer es bunt-einfach mag: gekaufte Muffins + Zuckerguss + Streusel."
   },
   "parentTips": {
     "structured": [
-      { "topic": "Kurz halten", "detail": "2 bis 2,5 Stunden sind genug. Lieber enden, wenn es am schönsten ist, als überdrehte, weinende Kinder am Ende." },
-      { "topic": "Viel Begleitung", "detail": "Ab 6 Kindern mindestens zwei Erwachsene. Kleine brauchen Hilfe bei fast jedem Spiel — das ist normal." },
-      { "topic": "Kein Wettkampf, kein Verlierer", "detail": "3–5-Jährige verstehen Gewinnen/Verlieren noch nicht und reagieren mit Tränen. Alle Spiele gemeinsam, alle 'gewinnen'." },
-      { "topic": "Masken nur optional", "detail": "Viele Kleine mögen keine Masken (Sicht, Gefühl). Ein Cape oder ein aufgemaltes Logo reicht völlig." },
-      { "topic": "Kleinteile im Blick", "detail": "Geplatzte Ballons sofort weg, keine kleinen Mitgebsel zum Verschlucken. Bei Bastelglitzer/-kleber immer dabei sein." }
+      {
+        "topic": "Kurz halten",
+        "detail": "2 bis 2,5 Stunden sind genug. Lieber enden, wenn es am schönsten ist, als überdrehte, weinende Kinder am Ende."
+      },
+      {
+        "topic": "Viel Begleitung",
+        "detail": "Ab 6 Kindern mindestens zwei Erwachsene. Kleine brauchen Hilfe bei fast jedem Spiel — das ist normal."
+      },
+      {
+        "topic": "Kein Wettkampf, kein Verlierer",
+        "detail": "3–5-Jährige verstehen Gewinnen/Verlieren noch nicht und reagieren mit Tränen. Alle Spiele gemeinsam, alle 'gewinnen'."
+      },
+      {
+        "topic": "Masken nur optional",
+        "detail": "Viele Kleine mögen keine Masken (Sicht, Gefühl). Ein Cape oder ein aufgemaltes Logo reicht völlig."
+      },
+      {
+        "topic": "Kleinteile im Blick",
+        "detail": "Geplatzte Ballons sofort weg, keine kleinen Mitgebsel zum Verschlucken. Bei Bastelglitzer/-kleber immer dabei sein."
+      }
     ],
     "educationalValue": "Für 3–5-Jährige fördern die Spiele vor allem Grobmotorik (Hüpfen, Werfen, Balance), erstes Miteinander (gemeinsam ein Ziel) und Selbstvertrauen ('ich bin ein Held'). Der Verzicht auf Wettkampf schützt vor Frust und macht den Tag für alle schön."
   },
   "invitationTemplate": "🦸 KLEINE HELD:IN GESUCHT! 🦸\n\n[NAME] wird [ALTER] und feiert einen Superhelden-Geburtstag — und DU bist eingeladen!\n\n🗓️ Wann: [DATUM], [UHRZEIT]\n📍 Wo: [ORT]\n🦸 Cape gibt's bei uns — komm einfach, wie du magst!\n\nBitte sag bis [FRIST] kurz Bescheid.\n\nWir freuen uns auf dich, kleine:r Held:in! 💥",
   "preparationWeeks": [
-    { "week": "2 Wochen vorher", "tasks": ["Einladungen verschicken", "Capes bestellen (Lieferzeit)", "Überlegen: spielt jemand das Quatschmonster?"] },
-    { "week": "1 Woche vorher", "tasks": ["Deko besorgen (Ballons, Tonpapier, Servietten)", "Bilder-Schatzsuche vorbereiten (Fotos)", "Mitgebsel ohne Kleinteile packen", "Muffin-Zutaten kaufen"] },
-    { "week": "1 Tag vorher", "tasks": ["Deko aufhängen", "Pappsterne vorschneiden", "Urkunden ausdrucken", "Muffins backen"] },
-    { "week": "Am Tag", "tasks": ["Wolken-Kissen verteilen", "Schatz-Bilder verstecken", "Foto-Ecke + Capes bereit", "Stationen aufbauen"] }
+    {
+      "week": "2 Wochen vorher",
+      "tasks": [
+        "Einladungen verschicken",
+        "Capes bestellen (Lieferzeit)",
+        "Überlegen: spielt jemand das Quatschmonster?"
+      ]
+    },
+    {
+      "week": "1 Woche vorher",
+      "tasks": [
+        "Deko besorgen (Ballons, Tonpapier, Servietten)",
+        "Bilder-Schatzsuche vorbereiten (Fotos)",
+        "Mitgebsel ohne Kleinteile packen",
+        "Muffin-Zutaten kaufen"
+      ]
+    },
+    {
+      "week": "1 Tag vorher",
+      "tasks": [
+        "Deko aufhängen",
+        "Pappsterne vorschneiden",
+        "Urkunden ausdrucken",
+        "Muffins backen"
+      ]
+    },
+    {
+      "week": "Am Tag",
+      "tasks": [
+        "Wolken-Kissen verteilen",
+        "Schatz-Bilder verstecken",
+        "Foto-Ecke + Capes bereit",
+        "Stationen aufbauen"
+      ]
+    }
   ],
   "sosScenarios": [
-    { "problem": "Ein Kind weint / will nicht mitmachen", "solution": "Kein Zwang. Ein Platz auf Mamas/Papas Schoß als Zuschauer ist okay — meist kommt das Kind nach ein paar Minuten von selbst dazu. Bei Heimweh kurz anrufen lassen hilft." },
-    { "problem": "Es regnet, alles war draußen geplant", "solution": "Alle Spiele gehen drinnen: Wolken-Hüpfen im Wohnzimmer, Ballons retten, Bilder-Schatzsuche durch die Zimmer. Nur Tische wegräumen." },
-    { "problem": "Die Kleinen sind überdreht", "solution": "Sofort eine ruhige Insel: alle setzen sich, basteln Sterne oder hören eine kurze Helden-Geschichte. Nach 5 Minuten ist die Gruppe wieder da." },
-    { "problem": "Ein Spiel ist nach 3 Minuten vorbei", "solution": "Reserve: nochmal Ballons retten, 'Helden-Standbild' (Musik-Stopp mit Heldenpose) oder eine zweite Hüpf-Runde. Bei Kleinen sind Wiederholungen sogar beliebt." }
+    {
+      "problem": "Ein Kind weint / will nicht mitmachen",
+      "solution": "Kein Zwang. Ein Platz auf Mamas/Papas Schoß als Zuschauer ist okay — meist kommt das Kind nach ein paar Minuten von selbst dazu. Bei Heimweh kurz anrufen lassen hilft."
+    },
+    {
+      "problem": "Es regnet, alles war draußen geplant",
+      "solution": "Alle Spiele gehen drinnen: Wolken-Hüpfen im Wohnzimmer, Ballons retten, Bilder-Schatzsuche durch die Zimmer. Nur Tische wegräumen."
+    },
+    {
+      "problem": "Die Kleinen sind überdreht",
+      "solution": "Sofort eine ruhige Insel: alle setzen sich, basteln Sterne oder hören eine kurze Helden-Geschichte. Nach 5 Minuten ist die Gruppe wieder da."
+    },
+    {
+      "problem": "Ein Spiel ist nach 3 Minuten vorbei",
+      "solution": "Reserve: nochmal Ballons retten, 'Helden-Standbild' (Musik-Stopp mit Heldenpose) oder eine zweite Hüpf-Runde. Bei Kleinen sind Wiederholungen sogar beliebt."
+    }
   ],
   "signatureRitual": {
     "name": "Der kleine Heldenjubel",
