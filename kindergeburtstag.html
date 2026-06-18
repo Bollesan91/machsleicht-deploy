@@ -1728,7 +1728,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     const scale=span/natural;
     let cur=s0;
     const base=rows.map((r,i)=>{ const row={time:fmt(Math.round(cur)), title:r.title, desc:r.desc, custom:false, sort:Math.round(cur)}; cur+=durs[i]*scale; return row; });
-    const cu=(state.customEntries||[]).map((c,idx)=>({time:c.time, title:c.title, desc:'', custom:true, customIdx:idx, sort:_toMin(c.time)||0}));
+    const cu=(state.customEntries||[]).map((c,idx)=>({c,idx})).filter(x=>_toMin(x.c.time)!=null).map(({c,idx})=>{ const m=_toMin(c.time); return {time:fmt(m), title:c.title, desc:'', custom:true, customIdx:idx, sort:m}; });
     return [...base, ...cu].sort((a,b)=>a.sort-b.sort);
   }
   // Ort: nur Spiele zeigen, die den Ort koennen (zuhause/drinnen/halle->indoor, park->outdoor); nie leer rendern
@@ -1737,7 +1737,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   // Alters-Anpassung je Spiel (reiche Dateien: ageAdjust3/5/6/8)
   function eliteAgeAdjust(g){ const map={'3-5':['ageAdjust3','ageAdjust5'],'6-8':['ageAdjust6','ageAdjust8'],'9-12':['ageAdjust8','ageAdjust6']}; for(const k of (map[state.age||'6-8']||[])){ if(g[k] && g[k]!=='—') return g[k]; } return ''; }
   // Einkauf: Basis-Kinderzahl aus costContext, Header auf echte Gaestezahl (loest 6-vs-8-Widerspruch); Stueckpreise = Pack-Preise (qtyRule spaeter)
-  function eliteShop(list, costContext){ const m=String(costContext==null?'':costContext).match(/(\d+)\s*Kinder/); const base=m?+m[1]:8; const guests=state.guests||base; let sum=0; (list||[]).forEach(s=> sum+=(s.priceEur||0)); return {sum, base, guests, perChild: guests? Math.round(sum/guests*10)/10 : 0}; }
+  function eliteShop(list, costContext){ const m=String(costContext==null?'':costContext).match(/(\d+)\s*Kinder/); const base=m?+m[1]:8; const guests=(state.guests>0)?state.guests:base; let sum=0; (list||[]).forEach(s=> sum+=(s.priceEur||0)); return {sum, base, guests, perChild: guests? Math.round(sum/guests*10)/10 : 0}; }
 
   async function renderElitePlan(){
     if(!state.motto) return;
