@@ -2112,7 +2112,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "3 Mini-Schubkarren, 40 Bauklötze, 3 Markierungen (Start, Stapel-Punkt, Ziel), Stoppuhr, Pokale Top 3",
-          "safetyRule": "Schubkarren-Strecke max 10 m. Klötze nicht werfen.",
+          "safetyRule": "Schubkarren-Strecke max 10 m. Klötze nicht werfen. Boden weich/rutschfest halten; reihum, nie zwei gleichzeitig auf der Strecke.",
           "steps": [
             {
               "n": 1,

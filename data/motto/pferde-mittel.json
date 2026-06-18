@@ -824,7 +824,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "20-25 Karotten (echte oder Filz), Schatzkarte mit Stationen (DIN A5), Reiter-Suchteams",
-          "safetyRule": "Echte Karotten gewaschen, Verstecke nicht zu hoch.",
+          "safetyRule": "Echte Karotten gewaschen, Verstecke nicht zu hoch. WICHTIG: rohe Karotten sind ein Erstickungsrisiko fuer Kleinkinder — Karotten werden NICHT gegessen (nur gesucht/gesammelt); fuer ganz Kleine fein geraspelt statt ganze Stuecke.",
           "steps": [
             {
               "n": 1,
@@ -1270,7 +1270,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "20-25 Karotten (echte oder Filz), Schatzkarte mit Stationen (DIN A5), Reiter-Suchteams",
-          "safetyRule": "Echte Karotten gewaschen, Verstecke nicht zu hoch.",
+          "safetyRule": "Echte Karotten gewaschen, Verstecke nicht zu hoch. WICHTIG: rohe Karotten sind ein Erstickungsrisiko fuer Kleinkinder — Karotten werden NICHT gegessen (nur gesucht/gesammelt); fuer ganz Kleine fein geraspelt statt ganze Stuecke.",
           "steps": [
             {
               "n": 1,
