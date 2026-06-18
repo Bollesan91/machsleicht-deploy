@@ -183,7 +183,24 @@
           "effort": "leicht",
           "material": "1 große Plastikwanne, 2 kg Reis mit essbarem Glitzer gemischt, 8 kleine Einhorn-Figuren, 1 Löffel pro Kind",
           "prepText": "Reis mit Glitzer in die Wanne. Einhorn-Figuren im Reis vergraben. Jedes Kind bekommt einen Löffel und gräbt vorsichtig. Wer ein Einhorn findet, darf es behalten.\n\nWichtig: Immer mehr Figuren als Kinder (bei 5 Kindern → 8 Figuren). So findet jedes Kind mindestens eins — kein Frust.\n\nTipp: Dieses Spiel beruhigt nach dem Kuchen-Zucker-Hoch. Perfekter Rhythmus-Wechsel.",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Vorbereitung",
+              "content": "Reis mit essbarem Glitzer mischen, in die Wanne füllen, Einhorn-Figuren darin vergraben — immer MEHR Figuren als Kinder (5 Kinder → 8 Figuren)."
+            },
+            {
+              "name": "Graben",
+              "content": "Jedes Kind bekommt einen Löffel und gräbt vorsichtig im Sternenstaub."
+            },
+            {
+              "name": "Finden & behalten",
+              "content": "Wer ein Einhorn findet, darf es behalten. Durch die Überzahl findet jedes Kind mindestens eins — kein Frust."
+            },
+            {
+              "name": "Rhythmus-Tipp",
+              "content": "Beruhigt nach dem Kuchen-Zucker-Hoch — perfekter ruhiger Block."
+            }
+          ],
           "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
           "indoorTip": "Wanne in die Badewanne oder auf eine alte Tischdecke — Reis-Körner gehen sonst tagelang aus dem Teppich.",
           "outdoorTip": "Auf der Terrasse oder Wiese großzügig — verstreuter Reis ist Vogelfutter.",
@@ -202,7 +219,24 @@
           "effort": "leicht",
           "material": "Bluetooth-Lautsprecher oder Handy, fröhliche Kindermusik (Spotify: „Kindergeburtstag Party\"), bunte Tücher zum Schwenken (optional, je 1 pro Kind)",
           "prepText": "Musik an → alle tanzen, hüpfen, galoppieren wie Einhörner. Musik aus → alle frieren ein wie Eisskulpturen! Wer sich bewegt, bekommt einen Glitzer-Aufkleber auf die Hand — das ist eine Belohnung, kein Rauswerfen.\n\nVariante „Regenbogen-Farben\": Rufe eine Farbe, alle müssen etwas in dieser Farbe im Raum berühren und weiter tanzen.\n\nTipp: Bunte Tücher zum Schwenken machen es 10x magischer. 6 Stück kosten ~3 € bei Action.",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Tanzen",
+              "content": "Musik an → alle tanzen, hüpfen und galoppieren wie Einhörner."
+            },
+            {
+              "name": "Einfrieren",
+              "content": "Musik aus → alle frieren ein wie Eisskulpturen!"
+            },
+            {
+              "name": "Belohnen statt rauswerfen",
+              "content": "Wer sich noch bewegt, bekommt einen Glitzer-Aufkleber auf die Hand — eine Belohnung, kein Ausscheiden."
+            },
+            {
+              "name": "Variante Regenbogen-Farben",
+              "content": "Eine Farbe rufen — alle müssen schnell etwas in dieser Farbe berühren und weitertanzen. Bunte Tücher zum Schwenken machen es magischer."
+            }
+          ],
           "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Glitzer-Aufkleber sind klein — nur auf Hand/Arm aufbringen, nicht zum Naschen liegen lassen.",
           "indoorTip": "Wohnzimmer-Möbel zur Seite schieben, Teppich rollt sich beim Galoppieren auf — kurz fixieren.",
           "outdoorTip": "Auf Wiese mit Tüchern in Regenbogenfarben besonders magisch — Wind macht die Tücher zum Flügel.",
@@ -221,7 +255,24 @@
           "effort": "leicht",
           "material": "1 Pappteller pro Kind (weiß), Schere (du schneidest vor!), Klebeband/Tacker, Glitzer-Kleber oder Glitzer + Klebestift, bunte Sticker, Gummiband oder Haarreif zum Befestigen",
           "prepText": "Pappteller einmal falten → Kegel-Form rollen → mit Tacker fixieren. Das ist das Horn. Jedes Kind darf sein Horn mit Glitzer-Kleber und Stickern verzieren. Mit Gummiband am Kopf befestigen oder auf einen Haarreif kleben.\n\nVorbereitung: Hörner vorher schon zur Kegel-Form rollen und tackern — 3-Jährige können das nicht selbst. Sie kleben nur die Deko drauf.\n\nTipp: Tisch vorher mit alter Zeitung abdecken. Glitzer geht nie wieder raus — akzeptiere das jetzt.",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Vorbereitung (Erwachsene)",
+              "content": "Pappteller zur Kegel-Form rollen und tackern — das ist das Horn. 3-Jährige können das nicht selbst, also vorab erledigen."
+            },
+            {
+              "name": "Verzieren",
+              "content": "Jedes Kind verziert sein Horn mit Glitzer-Kleber und Stickern."
+            },
+            {
+              "name": "Befestigen",
+              "content": "Horn mit Gummiband am Kopf befestigen oder auf einen Haarreif kleben."
+            },
+            {
+              "name": "Tipp",
+              "content": "Tisch vorher mit alter Zeitung abdecken — Glitzer geht nicht mehr raus."
+            }
+          ],
           "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband. Glitzer + Glitzer-Kleber vorher 1 Tag an Innenseite Unterarm testen (Allergie-Vortest); bei Rötung Sticker statt Glitzer.",
           "indoorTip": "Tisch mit alter Zeitung oder Wachstuch abdecken, Müllbeutel als Bastel-Schürze pro Kind — Glitzer-Kleber landet überall.",
           "outdoorTip": null,
@@ -240,7 +291,24 @@
           "effort": "leicht",
           "material": "6 farbige Tücher/Handtücher (rot, orange, gelb, grün, blau, lila), 4 Pylonen/Schuhe, 1 Einhorn-Kuscheltier als Ziel",
           "prepText": "Tücher in Regenbogen-Reihenfolge auf dem Boden auslegen (jedes etwa 1 m Abstand). Jedes Kind „galoppiert\" über den Regenbogen zum Einhorn am Ende, begrüßt es mit einer Verbeugung und galoppiert zurück.\n\nVarianten: Rückwärts, auf einem Bein, als Staffel in 2 Teams, zu zweit Hand in Hand.\n\nTipp: Verlierer kriegen „Trost-Stern\" (Gummibärchen). Kein Kind geht leer aus.",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Aufbau",
+              "content": "Sechs farbige Tücher in Regenbogen-Reihenfolge auf den Boden legen (je ca. 1 m Abstand), am Ende ein Einhorn-Kuscheltier."
+            },
+            {
+              "name": "Galoppieren",
+              "content": "Jedes Kind „galoppiert\" über den Regenbogen zum Einhorn, begrüßt es mit einer Verbeugung und galoppiert zurück."
+            },
+            {
+              "name": "Varianten",
+              "content": "Rückwärts, auf einem Bein, als Staffel in 2 Teams oder zu zweit Hand in Hand."
+            },
+            {
+              "name": "Trost-Regel",
+              "content": "Verlierer bekommen einen „Trost-Stern\" (Gummibärchen) — kein Kind geht leer aus."
+            }
+          ],
           "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Bei Slalom/Staffel: Bodenfreiheit checken (keine Stolperfallen, keine offene Steckdose im Lauf-Korridor).",
           "ageAdjust6": "Kurze Strecke, langsames Galoppieren.",
           "ageAdjust8": "Slalom zwischen den Tüchern, Zeit stoppen, Bestzeit notieren.",
@@ -393,7 +461,24 @@
           "effort": "leicht",
           "material": "1 Pappteller pro Kind (weiß), Schere (du schneidest vor!), Klebeband/Tacker, Glitzer-Kleber oder Glitzer + Klebestift, bunte Sticker, Gummiband oder Haarreif zum Befestigen",
           "prepText": "Pappteller einmal falten → Kegel-Form rollen → mit Tacker fixieren. Das ist das Horn. Jedes Kind darf sein Horn mit Glitzer-Kleber und Stickern verzieren. Mit Gummiband am Kopf befestigen oder auf einen Haarreif kleben.\n\nVorbereitung: Hörner vorher schon zur Kegel-Form rollen und tackern — 3-Jährige können das nicht selbst. Sie kleben nur die Deko drauf.\n\nTipp: Tisch vorher mit alter Zeitung abdecken. Glitzer geht nie wieder raus — akzeptiere das jetzt.",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Vorbereitung (Erwachsene)",
+              "content": "Pappteller zur Kegel-Form rollen und tackern — das ist das Horn. 3-Jährige können das nicht selbst, also vorab erledigen."
+            },
+            {
+              "name": "Verzieren",
+              "content": "Jedes Kind verziert sein Horn mit Glitzer-Kleber und Stickern."
+            },
+            {
+              "name": "Befestigen",
+              "content": "Horn mit Gummiband am Kopf befestigen oder auf einen Haarreif kleben."
+            },
+            {
+              "name": "Tipp",
+              "content": "Tisch vorher mit alter Zeitung abdecken — Glitzer geht nicht mehr raus."
+            }
+          ],
           "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband. Glitzer + Glitzer-Kleber vorher 1 Tag an Innenseite Unterarm testen (Allergie-Vortest); bei Rötung Sticker statt Glitzer.",
           "indoorTip": "Tisch mit alter Zeitung oder Wachstuch abdecken, Müllbeutel als Bastel-Schürze pro Kind — Glitzer-Kleber landet überall.",
           "outdoorTip": null,
@@ -412,7 +497,24 @@
           "effort": "leicht",
           "material": "Bluetooth-Lautsprecher oder Handy, fröhliche Kindermusik (Spotify: „Kindergeburtstag Party\"), bunte Tücher zum Schwenken (optional, je 1 pro Kind)",
           "prepText": "Musik an → alle tanzen, hüpfen, galoppieren wie Einhörner. Musik aus → alle frieren ein wie Eisskulpturen! Wer sich bewegt, bekommt einen Glitzer-Aufkleber auf die Hand — das ist eine Belohnung, kein Rauswerfen.\n\nVariante „Regenbogen-Farben\": Rufe eine Farbe, alle müssen etwas in dieser Farbe im Raum berühren und weiter tanzen.\n\nTipp: Bunte Tücher zum Schwenken machen es 10x magischer. 6 Stück kosten ~3 € bei Action.",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Tanzen",
+              "content": "Musik an → alle tanzen, hüpfen und galoppieren wie Einhörner."
+            },
+            {
+              "name": "Einfrieren",
+              "content": "Musik aus → alle frieren ein wie Eisskulpturen!"
+            },
+            {
+              "name": "Belohnen statt rauswerfen",
+              "content": "Wer sich noch bewegt, bekommt einen Glitzer-Aufkleber auf die Hand — eine Belohnung, kein Ausscheiden."
+            },
+            {
+              "name": "Variante Regenbogen-Farben",
+              "content": "Eine Farbe rufen — alle müssen schnell etwas in dieser Farbe berühren und weitertanzen. Bunte Tücher zum Schwenken machen es magischer."
+            }
+          ],
           "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Glitzer-Aufkleber sind klein — nur auf Hand/Arm aufbringen, nicht zum Naschen liegen lassen.",
           "indoorTip": "Wohnzimmer-Möbel zur Seite schieben, Teppich rollt sich beim Galoppieren auf — kurz fixieren.",
           "outdoorTip": "Auf Wiese mit Tüchern in Regenbogenfarben besonders magisch — Wind macht die Tücher zum Flügel.",
@@ -431,7 +533,24 @@
           "effort": "leicht",
           "material": "1 große Plastikwanne, 2 kg Reis mit essbarem Glitzer gemischt, 8 kleine Einhorn-Figuren, 1 Löffel pro Kind",
           "prepText": "Reis mit Glitzer in die Wanne. Einhorn-Figuren im Reis vergraben. Jedes Kind bekommt einen Löffel und gräbt vorsichtig. Wer ein Einhorn findet, darf es behalten.\n\nWichtig: Immer mehr Figuren als Kinder (bei 5 Kindern → 8 Figuren). So findet jedes Kind mindestens eins — kein Frust.\n\nTipp: Dieses Spiel beruhigt nach dem Kuchen-Zucker-Hoch. Perfekter Rhythmus-Wechsel.",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Vorbereitung",
+              "content": "Reis mit essbarem Glitzer mischen, in die Wanne füllen, Einhorn-Figuren darin vergraben — immer MEHR Figuren als Kinder (5 Kinder → 8 Figuren)."
+            },
+            {
+              "name": "Graben",
+              "content": "Jedes Kind bekommt einen Löffel und gräbt vorsichtig im Sternenstaub."
+            },
+            {
+              "name": "Finden & behalten",
+              "content": "Wer ein Einhorn findet, darf es behalten. Durch die Überzahl findet jedes Kind mindestens eins — kein Frust."
+            },
+            {
+              "name": "Rhythmus-Tipp",
+              "content": "Beruhigt nach dem Kuchen-Zucker-Hoch — perfekter ruhiger Block."
+            }
+          ],
           "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
           "indoorTip": "Wanne in die Badewanne oder auf eine alte Tischdecke — Reis-Körner gehen sonst tagelang aus dem Teppich.",
           "outdoorTip": "Auf der Terrasse oder Wiese großzügig — verstreuter Reis ist Vogelfutter.",
@@ -450,7 +569,28 @@
           "effort": "leicht",
           "material": "1 flacher Teller (weiß), 1 Tasse Vollmilch (je fetter, desto besser), Lebensmittelfarben (4 Farben — rot, gelb, blau, grün; Supermarkt ~2 €), Spülmittel, Wattestäbchen (1 pro Kind)",
           "prepText": "Milch in den Teller gießen, bis der Boden komplett bedeckt ist. Jedes Kind tropft eine Farbe in die Mitte. Dann: Wattestäbchen in Spülmittel tunken und mitten in die Milch stippen — die Farben „explodieren\" in Regenbogen-Spiralen. Sieht aus wie Magie, ist aber Physik.\n\nErklärung (für neugierige Kinder): Spülmittel zerstört die Oberflächenspannung der Milch, und das Fett „flieht\" vor der Seife — dabei nimmt es die Farben mit. Echte Chemie.\n\nTipp: Geht mit einem frischen Teller beliebig oft. 3–4 Runden sind normal. Danach ist der Effekt weg (Milch gesättigt).",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Aufbau",
+              "content": "Milch in einen flachen Teller gießen, bis der Boden komplett bedeckt ist."
+            },
+            {
+              "name": "Farbe tropfen",
+              "content": "Jedes Kind tropft eine Lebensmittelfarbe in die Mitte."
+            },
+            {
+              "name": "Die Magie",
+              "content": "Ein Wattestäbchen in Spülmittel tunken und mitten in die Milch stippen — die Farben „explodieren\" in Regenbogen-Spiralen."
+            },
+            {
+              "name": "Erklärung",
+              "content": "Das Spülmittel zerstört die Oberflächenspannung, das Fett „flieht\" vor der Seife und nimmt die Farben mit. Echte Physik, sieht aus wie Zauberei."
+            },
+            {
+              "name": "Wiederholen",
+              "content": "Mit frischem Teller 3–4 Runden möglich, dann ist der Effekt weg (Milch gesättigt)."
+            }
+          ],
           "safetyRule": "Lebensmittelfarbe + Spülmittel — nicht trinken, Hände waschen vor Snacks. Schalen-Standort sicher (Tablett mit Rand drunter, kippsicher). Bei Allergiker: Lebensmittelfarbe-Inhaltsstoffe checken (E-Nummern, Tartrazin).",
           "ageAdjust6": "Du tropfst die Farben rein, sie halten nur die Wattestäbchen. Hände-wasch-Pause danach.",
           "ageAdjust8": "Kinder dürfen selbst alles dosieren. Erkläre die Physik dahinter — in dem Alter lieben sie solche „echten\" Erklärungen.",
@@ -469,7 +609,28 @@
           "effort": "mittel",
           "material": "500 g transparente Glycerin-Seife (Rohling, ~6–8 € Bastelladen oder Amazon), essbarer Glitzer oder kosmetischer Glitzer, Silikon-Förmchen (Einhorn-/Stern-/Herz-Form, ~5 €), 1 Mikrowellen-Becher, Lebensmittelfarben (rosa/lila/türkis)",
           "prepText": "Glycerin-Seife in Würfel schneiden (machst du vorher). Für jedes Kind einen Würfel in den Becher, 30 Sek. in die Mikrowelle → flüssig. Kind wählt Farbe (2 Tropfen rein), streut Glitzer dazu, gießt in sein Silikon-Förmchen. 15 Min. auskühlen lassen → vorsichtig rauspressen. Fertige Einhorn-Seife geht als Mitgebsel mit.\n\nTipp: Tüte + Bändchen bereithalten, damit die fertige Seife „verpackt\" wie ein Geschenk nach Hause geht.",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Vorbereitung (Erwachsene)",
+              "content": "Glycerin-Seife in Würfel schneiden."
+            },
+            {
+              "name": "Schmelzen",
+              "content": "Pro Kind einen Würfel in den Becher, 30 Sek. in die Mikrowelle → flüssig. WICHTIG: Nur Erwachsene handhaben den heißen Becher (~60 °C)."
+            },
+            {
+              "name": "Gestalten",
+              "content": "Das Kind wählt eine Farbe (2 Tropfen), streut Glitzer dazu und gießt die Masse in sein Silikon-Förmchen."
+            },
+            {
+              "name": "Auskühlen",
+              "content": "15 Min. auskühlen lassen, dann vorsichtig aus der Form drücken."
+            },
+            {
+              "name": "Mitgeben",
+              "content": "Fertige Einhorn-Seife in eine Tüte mit Bändchen — geht als „verpacktes\" Mitgebsel nach Hause."
+            }
+          ],
           "safetyRule": "ACHTUNG: Seife kommt flüssig-warm aus der Mikrowelle (~60°C) — nur Erwachsene handhaben die heißen Becher. Kinder dürfen die Zutaten aussuchen und reingießen. Topflappen griffbereit. Glitzer auf Allergie-Inhaltsstoffe checken (kosmetischer Glitzer vs. essbarer Glitzer — beide gehen, kosmetischer ist bunter aber nicht zum Naschen).",
           "ageAdjust6": "Du machst alles Heiße. Kinder wählen nur Farbe und Glitzer-Menge.",
           "ageAdjust8": "Dürfen unter Aufsicht den Becher aus der Mikrowelle nehmen (Topflappen!) und selber gießen.",
@@ -488,7 +649,24 @@
           "effort": "leicht",
           "material": "6 farbige Tücher/Handtücher (rot, orange, gelb, grün, blau, lila), 4 Pylonen/Schuhe, 1 Einhorn-Kuscheltier als Ziel",
           "prepText": "Tücher in Regenbogen-Reihenfolge auf dem Boden auslegen (jedes etwa 1 m Abstand). Jedes Kind „galoppiert\" über den Regenbogen zum Einhorn am Ende, begrüßt es mit einer Verbeugung und galoppiert zurück.\n\nVarianten: Rückwärts, auf einem Bein, als Staffel in 2 Teams, zu zweit Hand in Hand.\n\nTipp: Verlierer kriegen „Trost-Stern\" (Gummibärchen). Kein Kind geht leer aus.",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Aufbau",
+              "content": "Sechs farbige Tücher in Regenbogen-Reihenfolge auf den Boden legen (je ca. 1 m Abstand), am Ende ein Einhorn-Kuscheltier."
+            },
+            {
+              "name": "Galoppieren",
+              "content": "Jedes Kind „galoppiert\" über den Regenbogen zum Einhorn, begrüßt es mit einer Verbeugung und galoppiert zurück."
+            },
+            {
+              "name": "Varianten",
+              "content": "Rückwärts, auf einem Bein, als Staffel in 2 Teams oder zu zweit Hand in Hand."
+            },
+            {
+              "name": "Trost-Regel",
+              "content": "Verlierer bekommen einen „Trost-Stern\" (Gummibärchen) — kein Kind geht leer aus."
+            }
+          ],
           "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Bei Slalom/Staffel: Bodenfreiheit checken (keine Stolperfallen, keine offene Steckdose im Lauf-Korridor).",
           "ageAdjust6": "Kurze Strecke, langsames Galoppieren.",
           "ageAdjust8": "Slalom zwischen den Tüchern, Zeit stoppen, Bestzeit notieren.",
@@ -664,7 +842,24 @@
           "effort": "leicht",
           "material": "1 große Plastikwanne, 2 kg Reis mit essbarem Glitzer gemischt, 8 kleine Einhorn-Figuren, 1 Löffel pro Kind",
           "prepText": "Reis mit Glitzer in die Wanne. Einhorn-Figuren im Reis vergraben. Jedes Kind bekommt einen Löffel und gräbt vorsichtig. Wer ein Einhorn findet, darf es behalten.\n\nWichtig: Immer mehr Figuren als Kinder (bei 5 Kindern → 8 Figuren). So findet jedes Kind mindestens eins — kein Frust.\n\nTipp: Dieses Spiel beruhigt nach dem Kuchen-Zucker-Hoch. Perfekter Rhythmus-Wechsel.",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Vorbereitung",
+              "content": "Reis mit essbarem Glitzer mischen, in die Wanne füllen, Einhorn-Figuren darin vergraben — immer MEHR Figuren als Kinder (5 Kinder → 8 Figuren)."
+            },
+            {
+              "name": "Graben",
+              "content": "Jedes Kind bekommt einen Löffel und gräbt vorsichtig im Sternenstaub."
+            },
+            {
+              "name": "Finden & behalten",
+              "content": "Wer ein Einhorn findet, darf es behalten. Durch die Überzahl findet jedes Kind mindestens eins — kein Frust."
+            },
+            {
+              "name": "Rhythmus-Tipp",
+              "content": "Beruhigt nach dem Kuchen-Zucker-Hoch — perfekter ruhiger Block."
+            }
+          ],
           "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
           "indoorTip": "Wanne in die Badewanne oder auf eine alte Tischdecke — Reis-Körner gehen sonst tagelang aus dem Teppich.",
           "outdoorTip": "Auf der Terrasse oder Wiese großzügig — verstreuter Reis ist Vogelfutter.",
@@ -683,7 +878,24 @@
           "effort": "leicht",
           "material": "Bluetooth-Lautsprecher oder Handy, fröhliche Kindermusik (Spotify: „Kindergeburtstag Party\"), bunte Tücher zum Schwenken (optional, je 1 pro Kind)",
           "prepText": "Musik an → alle tanzen, hüpfen, galoppieren wie Einhörner. Musik aus → alle frieren ein wie Eisskulpturen! Wer sich bewegt, bekommt einen Glitzer-Aufkleber auf die Hand — das ist eine Belohnung, kein Rauswerfen.\n\nVariante „Regenbogen-Farben\": Rufe eine Farbe, alle müssen etwas in dieser Farbe im Raum berühren und weiter tanzen.\n\nTipp: Bunte Tücher zum Schwenken machen es 10x magischer. 6 Stück kosten ~3 € bei Action.",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Tanzen",
+              "content": "Musik an → alle tanzen, hüpfen und galoppieren wie Einhörner."
+            },
+            {
+              "name": "Einfrieren",
+              "content": "Musik aus → alle frieren ein wie Eisskulpturen!"
+            },
+            {
+              "name": "Belohnen statt rauswerfen",
+              "content": "Wer sich noch bewegt, bekommt einen Glitzer-Aufkleber auf die Hand — eine Belohnung, kein Ausscheiden."
+            },
+            {
+              "name": "Variante Regenbogen-Farben",
+              "content": "Eine Farbe rufen — alle müssen schnell etwas in dieser Farbe berühren und weitertanzen. Bunte Tücher zum Schwenken machen es magischer."
+            }
+          ],
           "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Glitzer-Aufkleber sind klein — nur auf Hand/Arm aufbringen, nicht zum Naschen liegen lassen.",
           "indoorTip": "Wohnzimmer-Möbel zur Seite schieben, Teppich rollt sich beim Galoppieren auf — kurz fixieren.",
           "outdoorTip": "Auf Wiese mit Tüchern in Regenbogenfarben besonders magisch — Wind macht die Tücher zum Flügel.",
@@ -782,7 +994,28 @@
           "effort": "mittel",
           "material": "500 g transparente Glycerin-Seife (Rohling, ~6–8 € Bastelladen oder Amazon), essbarer Glitzer oder kosmetischer Glitzer, Silikon-Förmchen (Einhorn-/Stern-/Herz-Form, ~5 €), 1 Mikrowellen-Becher, Lebensmittelfarben (rosa/lila/türkis)",
           "prepText": "Glycerin-Seife in Würfel schneiden (machst du vorher). Für jedes Kind einen Würfel in den Becher, 30 Sek. in die Mikrowelle → flüssig. Kind wählt Farbe (2 Tropfen rein), streut Glitzer dazu, gießt in sein Silikon-Förmchen. 15 Min. auskühlen lassen → vorsichtig rauspressen. Fertige Einhorn-Seife geht als Mitgebsel mit.\n\nTipp: Tüte + Bändchen bereithalten, damit die fertige Seife „verpackt\" wie ein Geschenk nach Hause geht.",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Vorbereitung (Erwachsene)",
+              "content": "Glycerin-Seife in Würfel schneiden."
+            },
+            {
+              "name": "Schmelzen",
+              "content": "Pro Kind einen Würfel in den Becher, 30 Sek. in die Mikrowelle → flüssig. WICHTIG: Nur Erwachsene handhaben den heißen Becher (~60 °C)."
+            },
+            {
+              "name": "Gestalten",
+              "content": "Das Kind wählt eine Farbe (2 Tropfen), streut Glitzer dazu und gießt die Masse in sein Silikon-Förmchen."
+            },
+            {
+              "name": "Auskühlen",
+              "content": "15 Min. auskühlen lassen, dann vorsichtig aus der Form drücken."
+            },
+            {
+              "name": "Mitgeben",
+              "content": "Fertige Einhorn-Seife in eine Tüte mit Bändchen — geht als „verpacktes\" Mitgebsel nach Hause."
+            }
+          ],
           "safetyRule": "ACHTUNG: Seife kommt flüssig-warm aus der Mikrowelle (~60°C) — nur Erwachsene handhaben die heißen Becher. Kinder dürfen die Zutaten aussuchen und reingießen. Topflappen griffbereit. Glitzer auf Allergie-Inhaltsstoffe checken (kosmetischer Glitzer vs. essbarer Glitzer — beide gehen, kosmetischer ist bunter aber nicht zum Naschen).",
           "ageAdjust6": "Du machst alles Heiße. Kinder wählen nur Farbe und Glitzer-Menge.",
           "ageAdjust8": "Dürfen unter Aufsicht den Becher aus der Mikrowelle nehmen (Topflappen!) und selber gießen.",
@@ -801,7 +1034,28 @@
           "effort": "leicht",
           "material": "1 flacher Teller (weiß), 1 Tasse Vollmilch (je fetter, desto besser), Lebensmittelfarben (4 Farben — rot, gelb, blau, grün; Supermarkt ~2 €), Spülmittel, Wattestäbchen (1 pro Kind)",
           "prepText": "Milch in den Teller gießen, bis der Boden komplett bedeckt ist. Jedes Kind tropft eine Farbe in die Mitte. Dann: Wattestäbchen in Spülmittel tunken und mitten in die Milch stippen — die Farben „explodieren\" in Regenbogen-Spiralen. Sieht aus wie Magie, ist aber Physik.\n\nErklärung (für neugierige Kinder): Spülmittel zerstört die Oberflächenspannung der Milch, und das Fett „flieht\" vor der Seife — dabei nimmt es die Farben mit. Echte Chemie.\n\nTipp: Geht mit einem frischen Teller beliebig oft. 3–4 Runden sind normal. Danach ist der Effekt weg (Milch gesättigt).",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Aufbau",
+              "content": "Milch in einen flachen Teller gießen, bis der Boden komplett bedeckt ist."
+            },
+            {
+              "name": "Farbe tropfen",
+              "content": "Jedes Kind tropft eine Lebensmittelfarbe in die Mitte."
+            },
+            {
+              "name": "Die Magie",
+              "content": "Ein Wattestäbchen in Spülmittel tunken und mitten in die Milch stippen — die Farben „explodieren\" in Regenbogen-Spiralen."
+            },
+            {
+              "name": "Erklärung",
+              "content": "Das Spülmittel zerstört die Oberflächenspannung, das Fett „flieht\" vor der Seife und nimmt die Farben mit. Echte Physik, sieht aus wie Zauberei."
+            },
+            {
+              "name": "Wiederholen",
+              "content": "Mit frischem Teller 3–4 Runden möglich, dann ist der Effekt weg (Milch gesättigt)."
+            }
+          ],
           "safetyRule": "Lebensmittelfarbe + Spülmittel — nicht trinken, Hände waschen vor Snacks. Schalen-Standort sicher (Tablett mit Rand drunter, kippsicher). Bei Allergiker: Lebensmittelfarbe-Inhaltsstoffe checken (E-Nummern, Tartrazin).",
           "ageAdjust6": "Du tropfst die Farben rein, sie halten nur die Wattestäbchen. Hände-wasch-Pause danach.",
           "ageAdjust8": "Kinder dürfen selbst alles dosieren. Erkläre die Physik dahinter — in dem Alter lieben sie solche „echten\" Erklärungen.",

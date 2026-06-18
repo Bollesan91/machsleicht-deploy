@@ -170,7 +170,28 @@
           "effort": "leicht",
           "material": "1 flacher Teller (weiß), 1 Tasse Vollmilch (je fetter, desto besser), Lebensmittelfarben (4 Farben — rot, gelb, blau, grün; Supermarkt ~2 €), Spülmittel, Wattestäbchen (1 pro Kind)",
           "prepText": "Milch in den Teller gießen, bis der Boden komplett bedeckt ist. Jedes Kind tropft eine Farbe in die Mitte. Dann: Wattestäbchen in Spülmittel tunken und mitten in die Milch stippen — die Farben „explodieren\" in Regenbogen-Spiralen. Sieht aus wie Magie, ist aber Physik.\n\nErklärung (für neugierige Kinder): Spülmittel zerstört die Oberflächenspannung der Milch, und das Fett „flieht\" vor der Seife — dabei nimmt es die Farben mit. Echte Chemie.\n\nTipp: Geht mit einem frischen Teller beliebig oft. 3–4 Runden sind normal. Danach ist der Effekt weg (Milch gesättigt).",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Aufbau",
+              "content": "Milch in einen flachen Teller gießen, bis der Boden komplett bedeckt ist."
+            },
+            {
+              "name": "Farbe tropfen",
+              "content": "Jedes Kind tropft eine Lebensmittelfarbe in die Mitte."
+            },
+            {
+              "name": "Die Magie",
+              "content": "Ein Wattestäbchen in Spülmittel tunken und mitten in die Milch stippen — die Farben „explodieren\" in Regenbogen-Spiralen."
+            },
+            {
+              "name": "Erklärung",
+              "content": "Das Spülmittel zerstört die Oberflächenspannung, das Fett „flieht\" vor der Seife und nimmt die Farben mit. Echte Physik, sieht aus wie Zauberei."
+            },
+            {
+              "name": "Wiederholen",
+              "content": "Mit frischem Teller 3–4 Runden möglich, dann ist der Effekt weg (Milch gesättigt)."
+            }
+          ],
           "safetyRule": "Lebensmittelfarbe + Spülmittel — nicht trinken, Hände waschen vor Snacks. Schalen-Standort sicher (Tablett mit Rand drunter, kippsicher). Bei Allergiker: Lebensmittelfarbe-Inhaltsstoffe checken (E-Nummern, Tartrazin).",
           "ageAdjust6": "Du tropfst die Farben rein, sie halten nur die Wattestäbchen. Hände-wasch-Pause danach.",
           "ageAdjust8": "Kinder dürfen selbst alles dosieren. Erkläre die Physik dahinter — in dem Alter lieben sie solche „echten\" Erklärungen.",
@@ -189,7 +210,24 @@
           "effort": "leicht",
           "material": "6 farbige Tücher/Handtücher (rot, orange, gelb, grün, blau, lila), 4 Pylonen/Schuhe, 1 Einhorn-Kuscheltier als Ziel",
           "prepText": "Tücher in Regenbogen-Reihenfolge auf dem Boden auslegen (jedes etwa 1 m Abstand). Jedes Kind „galoppiert\" über den Regenbogen zum Einhorn am Ende, begrüßt es mit einer Verbeugung und galoppiert zurück.\n\nVarianten: Rückwärts, auf einem Bein, als Staffel in 2 Teams, zu zweit Hand in Hand.\n\nTipp: Verlierer kriegen „Trost-Stern\" (Gummibärchen). Kein Kind geht leer aus.",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Aufbau",
+              "content": "Sechs farbige Tücher in Regenbogen-Reihenfolge auf den Boden legen (je ca. 1 m Abstand), am Ende ein Einhorn-Kuscheltier."
+            },
+            {
+              "name": "Galoppieren",
+              "content": "Jedes Kind „galoppiert\" über den Regenbogen zum Einhorn, begrüßt es mit einer Verbeugung und galoppiert zurück."
+            },
+            {
+              "name": "Varianten",
+              "content": "Rückwärts, auf einem Bein, als Staffel in 2 Teams oder zu zweit Hand in Hand."
+            },
+            {
+              "name": "Trost-Regel",
+              "content": "Verlierer bekommen einen „Trost-Stern\" (Gummibärchen) — kein Kind geht leer aus."
+            }
+          ],
           "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Bei Slalom/Staffel: Bodenfreiheit checken (keine Stolperfallen, keine offene Steckdose im Lauf-Korridor).",
           "ageAdjust6": "Kurze Strecke, langsames Galoppieren.",
           "ageAdjust8": "Slalom zwischen den Tüchern, Zeit stoppen, Bestzeit notieren.",
@@ -208,8 +246,25 @@
           "effort": "leicht",
           "material": "[Perlen-Set mit Buchstaben*](https://www.amazon.de/s?k=perlen+set+kinder+buchstaben+armband&tag=machsleicht21-21) (~10–12 €, reicht für 8+ Armbänder), Elastikband (0,8 mm, im Set meist dabei), [Einhorn-Charms*](https://www.amazon.de/s?k=einhorn+anh%C3%A4nger+charm+silber&tag=machsleicht21-21) (~6 € für 20 Stk.), Schere, Klebeband (zum Fixieren beim Auffädeln)",
           "prepText": "Jedes Kind macht sein eigenes Armband: Buchstaben-Perlen für den eigenen Namen oder den Code-Namen, dazwischen bunte Perlen in Regenbogenfarben, am Ende einen Einhorn-Charm dran.\n\nTipp: Elastikband-Ende mit Klebeband am Tisch fixieren, dann rutschen die Perlen nicht runter. Doppelknoten am Ende, Tropfen Kleber drauf — hält ewig.\n\nVorteil: Dieses Spiel ist selbstlaufend. Hinstellen, Material erklären, zurücklehnen. Die Kinder reden, lachen, basteln — und du hast 40 Minuten Ruhe.",
-          "steps": [],
-          "safetyRule": null,
+          "steps": [
+            {
+              "name": "Auffädeln",
+              "content": "Jedes Kind fädelt sein eigenes Armband: Buchstaben-Perlen für den (Code-)Namen, dazwischen bunte Perlen in Regenbogenfarben."
+            },
+            {
+              "name": "Charm dran",
+              "content": "Am Ende einen Einhorn-Charm anhängen."
+            },
+            {
+              "name": "Anti-Rutsch-Trick",
+              "content": "Das Elastikband-Ende mit Klebeband am Tisch fixieren, dann rutschen die Perlen nicht runter."
+            },
+            {
+              "name": "Abschluss",
+              "content": "Doppelknoten ans Ende, ein Tropfen Kleber drauf — hält ewig. Selbstläufer-Spiel: 40 Min. ruhiges Basteln."
+            }
+          ],
+          "safetyRule": "Kleinteile (Perlen) — bei jüngeren Geschwistern außer Reichweite halten (Verschluckungsgefahr). Schere nur durch Erwachsene.",
           "ageAdjust6": "Einfache Armbänder mit Namen.",
           "ageAdjust8": "Friendship-Bracelets mit Mustern, oder Code-Name statt echtem Namen. Manche machen 2–3 Stück und tauschen sie.",
           "indoorTip": null,
@@ -227,7 +282,24 @@
           "effort": "leicht",
           "material": "1 Pappteller pro Kind (weiß), Schere (du schneidest vor!), Klebeband/Tacker, Glitzer-Kleber oder Glitzer + Klebestift, bunte Sticker, Gummiband oder Haarreif zum Befestigen",
           "prepText": "Pappteller einmal falten → Kegel-Form rollen → mit Tacker fixieren. Das ist das Horn. Jedes Kind darf sein Horn mit Glitzer-Kleber und Stickern verzieren. Mit Gummiband am Kopf befestigen oder auf einen Haarreif kleben.\n\nVorbereitung: Hörner vorher schon zur Kegel-Form rollen und tackern — 3-Jährige können das nicht selbst. Sie kleben nur die Deko drauf.\n\nTipp: Tisch vorher mit alter Zeitung abdecken. Glitzer geht nie wieder raus — akzeptiere das jetzt.",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Vorbereitung (Erwachsene)",
+              "content": "Pappteller zur Kegel-Form rollen und tackern — das ist das Horn. 3-Jährige können das nicht selbst, also vorab erledigen."
+            },
+            {
+              "name": "Verzieren",
+              "content": "Jedes Kind verziert sein Horn mit Glitzer-Kleber und Stickern."
+            },
+            {
+              "name": "Befestigen",
+              "content": "Horn mit Gummiband am Kopf befestigen oder auf einen Haarreif kleben."
+            },
+            {
+              "name": "Tipp",
+              "content": "Tisch vorher mit alter Zeitung abdecken — Glitzer geht nicht mehr raus."
+            }
+          ],
           "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband. Glitzer + Glitzer-Kleber vorher 1 Tag an Innenseite Unterarm testen (Allergie-Vortest); bei Rötung Sticker statt Glitzer.",
           "indoorTip": "Tisch mit alter Zeitung oder Wachstuch abdecken, Müllbeutel als Bastel-Schürze pro Kind — Glitzer-Kleber landet überall.",
           "outdoorTip": null,
@@ -362,7 +434,28 @@
           "effort": "leicht",
           "material": "1 flacher Teller (weiß), 1 Tasse Vollmilch (je fetter, desto besser), Lebensmittelfarben (4 Farben — rot, gelb, blau, grün; Supermarkt ~2 €), Spülmittel, Wattestäbchen (1 pro Kind)",
           "prepText": "Milch in den Teller gießen, bis der Boden komplett bedeckt ist. Jedes Kind tropft eine Farbe in die Mitte. Dann: Wattestäbchen in Spülmittel tunken und mitten in die Milch stippen — die Farben „explodieren\" in Regenbogen-Spiralen. Sieht aus wie Magie, ist aber Physik.\n\nErklärung (für neugierige Kinder): Spülmittel zerstört die Oberflächenspannung der Milch, und das Fett „flieht\" vor der Seife — dabei nimmt es die Farben mit. Echte Chemie.\n\nTipp: Geht mit einem frischen Teller beliebig oft. 3–4 Runden sind normal. Danach ist der Effekt weg (Milch gesättigt).",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Aufbau",
+              "content": "Milch in einen flachen Teller gießen, bis der Boden komplett bedeckt ist."
+            },
+            {
+              "name": "Farbe tropfen",
+              "content": "Jedes Kind tropft eine Lebensmittelfarbe in die Mitte."
+            },
+            {
+              "name": "Die Magie",
+              "content": "Ein Wattestäbchen in Spülmittel tunken und mitten in die Milch stippen — die Farben „explodieren\" in Regenbogen-Spiralen."
+            },
+            {
+              "name": "Erklärung",
+              "content": "Das Spülmittel zerstört die Oberflächenspannung, das Fett „flieht\" vor der Seife und nimmt die Farben mit. Echte Physik, sieht aus wie Zauberei."
+            },
+            {
+              "name": "Wiederholen",
+              "content": "Mit frischem Teller 3–4 Runden möglich, dann ist der Effekt weg (Milch gesättigt)."
+            }
+          ],
           "safetyRule": "Lebensmittelfarbe + Spülmittel — nicht trinken, Hände waschen vor Snacks. Schalen-Standort sicher (Tablett mit Rand drunter, kippsicher). Bei Allergiker: Lebensmittelfarbe-Inhaltsstoffe checken (E-Nummern, Tartrazin).",
           "ageAdjust6": "Du tropfst die Farben rein, sie halten nur die Wattestäbchen. Hände-wasch-Pause danach.",
           "ageAdjust8": "Kinder dürfen selbst alles dosieren. Erkläre die Physik dahinter — in dem Alter lieben sie solche „echten\" Erklärungen.",
@@ -381,7 +474,24 @@
           "effort": "leicht",
           "material": "6 farbige Tücher/Handtücher (rot, orange, gelb, grün, blau, lila), 4 Pylonen/Schuhe, 1 Einhorn-Kuscheltier als Ziel",
           "prepText": "Tücher in Regenbogen-Reihenfolge auf dem Boden auslegen (jedes etwa 1 m Abstand). Jedes Kind „galoppiert\" über den Regenbogen zum Einhorn am Ende, begrüßt es mit einer Verbeugung und galoppiert zurück.\n\nVarianten: Rückwärts, auf einem Bein, als Staffel in 2 Teams, zu zweit Hand in Hand.\n\nTipp: Verlierer kriegen „Trost-Stern\" (Gummibärchen). Kein Kind geht leer aus.",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Aufbau",
+              "content": "Sechs farbige Tücher in Regenbogen-Reihenfolge auf den Boden legen (je ca. 1 m Abstand), am Ende ein Einhorn-Kuscheltier."
+            },
+            {
+              "name": "Galoppieren",
+              "content": "Jedes Kind „galoppiert\" über den Regenbogen zum Einhorn, begrüßt es mit einer Verbeugung und galoppiert zurück."
+            },
+            {
+              "name": "Varianten",
+              "content": "Rückwärts, auf einem Bein, als Staffel in 2 Teams oder zu zweit Hand in Hand."
+            },
+            {
+              "name": "Trost-Regel",
+              "content": "Verlierer bekommen einen „Trost-Stern\" (Gummibärchen) — kein Kind geht leer aus."
+            }
+          ],
           "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Bei Slalom/Staffel: Bodenfreiheit checken (keine Stolperfallen, keine offene Steckdose im Lauf-Korridor).",
           "ageAdjust6": "Kurze Strecke, langsames Galoppieren.",
           "ageAdjust8": "Slalom zwischen den Tüchern, Zeit stoppen, Bestzeit notieren.",
@@ -444,8 +554,25 @@
           "effort": "leicht",
           "material": "[Perlen-Set mit Buchstaben*](https://www.amazon.de/s?k=perlen+set+kinder+buchstaben+armband&tag=machsleicht21-21) (~10–12 €, reicht für 8+ Armbänder), Elastikband (0,8 mm, im Set meist dabei), [Einhorn-Charms*](https://www.amazon.de/s?k=einhorn+anh%C3%A4nger+charm+silber&tag=machsleicht21-21) (~6 € für 20 Stk.), Schere, Klebeband (zum Fixieren beim Auffädeln)",
           "prepText": "Jedes Kind macht sein eigenes Armband: Buchstaben-Perlen für den eigenen Namen oder den Code-Namen, dazwischen bunte Perlen in Regenbogenfarben, am Ende einen Einhorn-Charm dran.\n\nTipp: Elastikband-Ende mit Klebeband am Tisch fixieren, dann rutschen die Perlen nicht runter. Doppelknoten am Ende, Tropfen Kleber drauf — hält ewig.\n\nVorteil: Dieses Spiel ist selbstlaufend. Hinstellen, Material erklären, zurücklehnen. Die Kinder reden, lachen, basteln — und du hast 40 Minuten Ruhe.",
-          "steps": [],
-          "safetyRule": null,
+          "steps": [
+            {
+              "name": "Auffädeln",
+              "content": "Jedes Kind fädelt sein eigenes Armband: Buchstaben-Perlen für den (Code-)Namen, dazwischen bunte Perlen in Regenbogenfarben."
+            },
+            {
+              "name": "Charm dran",
+              "content": "Am Ende einen Einhorn-Charm anhängen."
+            },
+            {
+              "name": "Anti-Rutsch-Trick",
+              "content": "Das Elastikband-Ende mit Klebeband am Tisch fixieren, dann rutschen die Perlen nicht runter."
+            },
+            {
+              "name": "Abschluss",
+              "content": "Doppelknoten ans Ende, ein Tropfen Kleber drauf — hält ewig. Selbstläufer-Spiel: 40 Min. ruhiges Basteln."
+            }
+          ],
+          "safetyRule": "Kleinteile (Perlen) — bei jüngeren Geschwistern außer Reichweite halten (Verschluckungsgefahr). Schere nur durch Erwachsene.",
           "ageAdjust6": "Einfache Armbänder mit Namen.",
           "ageAdjust8": "Friendship-Bracelets mit Mustern, oder Code-Name statt echtem Namen. Manche machen 2–3 Stück und tauschen sie.",
           "indoorTip": null,
@@ -616,8 +743,25 @@
           "effort": "leicht",
           "material": "[Perlen-Set mit Buchstaben*](https://www.amazon.de/s?k=perlen+set+kinder+buchstaben+armband&tag=machsleicht21-21) (~10–12 €, reicht für 8+ Armbänder), Elastikband (0,8 mm, im Set meist dabei), [Einhorn-Charms*](https://www.amazon.de/s?k=einhorn+anh%C3%A4nger+charm+silber&tag=machsleicht21-21) (~6 € für 20 Stk.), Schere, Klebeband (zum Fixieren beim Auffädeln)",
           "prepText": "Jedes Kind macht sein eigenes Armband: Buchstaben-Perlen für den eigenen Namen oder den Code-Namen, dazwischen bunte Perlen in Regenbogenfarben, am Ende einen Einhorn-Charm dran.\n\nTipp: Elastikband-Ende mit Klebeband am Tisch fixieren, dann rutschen die Perlen nicht runter. Doppelknoten am Ende, Tropfen Kleber drauf — hält ewig.\n\nVorteil: Dieses Spiel ist selbstlaufend. Hinstellen, Material erklären, zurücklehnen. Die Kinder reden, lachen, basteln — und du hast 40 Minuten Ruhe.",
-          "steps": [],
-          "safetyRule": null,
+          "steps": [
+            {
+              "name": "Auffädeln",
+              "content": "Jedes Kind fädelt sein eigenes Armband: Buchstaben-Perlen für den (Code-)Namen, dazwischen bunte Perlen in Regenbogenfarben."
+            },
+            {
+              "name": "Charm dran",
+              "content": "Am Ende einen Einhorn-Charm anhängen."
+            },
+            {
+              "name": "Anti-Rutsch-Trick",
+              "content": "Das Elastikband-Ende mit Klebeband am Tisch fixieren, dann rutschen die Perlen nicht runter."
+            },
+            {
+              "name": "Abschluss",
+              "content": "Doppelknoten ans Ende, ein Tropfen Kleber drauf — hält ewig. Selbstläufer-Spiel: 40 Min. ruhiges Basteln."
+            }
+          ],
+          "safetyRule": "Kleinteile (Perlen) — bei jüngeren Geschwistern außer Reichweite halten (Verschluckungsgefahr). Schere nur durch Erwachsene.",
           "ageAdjust6": "Einfache Armbänder mit Namen.",
           "ageAdjust8": "Friendship-Bracelets mit Mustern, oder Code-Name statt echtem Namen. Manche machen 2–3 Stück und tauschen sie.",
           "indoorTip": null,
@@ -679,7 +823,24 @@
           "effort": "leicht",
           "material": "6 farbige Tücher/Handtücher (rot, orange, gelb, grün, blau, lila), 4 Pylonen/Schuhe, 1 Einhorn-Kuscheltier als Ziel",
           "prepText": "Tücher in Regenbogen-Reihenfolge auf dem Boden auslegen (jedes etwa 1 m Abstand). Jedes Kind „galoppiert\" über den Regenbogen zum Einhorn am Ende, begrüßt es mit einer Verbeugung und galoppiert zurück.\n\nVarianten: Rückwärts, auf einem Bein, als Staffel in 2 Teams, zu zweit Hand in Hand.\n\nTipp: Verlierer kriegen „Trost-Stern\" (Gummibärchen). Kein Kind geht leer aus.",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Aufbau",
+              "content": "Sechs farbige Tücher in Regenbogen-Reihenfolge auf den Boden legen (je ca. 1 m Abstand), am Ende ein Einhorn-Kuscheltier."
+            },
+            {
+              "name": "Galoppieren",
+              "content": "Jedes Kind „galoppiert\" über den Regenbogen zum Einhorn, begrüßt es mit einer Verbeugung und galoppiert zurück."
+            },
+            {
+              "name": "Varianten",
+              "content": "Rückwärts, auf einem Bein, als Staffel in 2 Teams oder zu zweit Hand in Hand."
+            },
+            {
+              "name": "Trost-Regel",
+              "content": "Verlierer bekommen einen „Trost-Stern\" (Gummibärchen) — kein Kind geht leer aus."
+            }
+          ],
           "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Bei Slalom/Staffel: Bodenfreiheit checken (keine Stolperfallen, keine offene Steckdose im Lauf-Korridor).",
           "ageAdjust6": "Kurze Strecke, langsames Galoppieren.",
           "ageAdjust8": "Slalom zwischen den Tüchern, Zeit stoppen, Bestzeit notieren.",
@@ -698,7 +859,28 @@
           "effort": "leicht",
           "material": "1 flacher Teller (weiß), 1 Tasse Vollmilch (je fetter, desto besser), Lebensmittelfarben (4 Farben — rot, gelb, blau, grün; Supermarkt ~2 €), Spülmittel, Wattestäbchen (1 pro Kind)",
           "prepText": "Milch in den Teller gießen, bis der Boden komplett bedeckt ist. Jedes Kind tropft eine Farbe in die Mitte. Dann: Wattestäbchen in Spülmittel tunken und mitten in die Milch stippen — die Farben „explodieren\" in Regenbogen-Spiralen. Sieht aus wie Magie, ist aber Physik.\n\nErklärung (für neugierige Kinder): Spülmittel zerstört die Oberflächenspannung der Milch, und das Fett „flieht\" vor der Seife — dabei nimmt es die Farben mit. Echte Chemie.\n\nTipp: Geht mit einem frischen Teller beliebig oft. 3–4 Runden sind normal. Danach ist der Effekt weg (Milch gesättigt).",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Aufbau",
+              "content": "Milch in einen flachen Teller gießen, bis der Boden komplett bedeckt ist."
+            },
+            {
+              "name": "Farbe tropfen",
+              "content": "Jedes Kind tropft eine Lebensmittelfarbe in die Mitte."
+            },
+            {
+              "name": "Die Magie",
+              "content": "Ein Wattestäbchen in Spülmittel tunken und mitten in die Milch stippen — die Farben „explodieren\" in Regenbogen-Spiralen."
+            },
+            {
+              "name": "Erklärung",
+              "content": "Das Spülmittel zerstört die Oberflächenspannung, das Fett „flieht\" vor der Seife und nimmt die Farben mit. Echte Physik, sieht aus wie Zauberei."
+            },
+            {
+              "name": "Wiederholen",
+              "content": "Mit frischem Teller 3–4 Runden möglich, dann ist der Effekt weg (Milch gesättigt)."
+            }
+          ],
           "safetyRule": "Lebensmittelfarbe + Spülmittel — nicht trinken, Hände waschen vor Snacks. Schalen-Standort sicher (Tablett mit Rand drunter, kippsicher). Bei Allergiker: Lebensmittelfarbe-Inhaltsstoffe checken (E-Nummern, Tartrazin).",
           "ageAdjust6": "Du tropfst die Farben rein, sie halten nur die Wattestäbchen. Hände-wasch-Pause danach.",
           "ageAdjust8": "Kinder dürfen selbst alles dosieren. Erkläre die Physik dahinter — in dem Alter lieben sie solche „echten\" Erklärungen.",
@@ -717,7 +899,24 @@
           "effort": "leicht",
           "material": "2 Handys (von Kindern oder Eltern), optional: [Mini-Stativ*](https://www.amazon.de/s?k=handy+stativ+klein+tischstativ&tag=machsleicht21-21) (~8 €), Requisiten (Einhorn-Hörner, Zauberstäbe, Tücher als Umhänge)",
           "prepText": "2 Teams (4 vs. 4). Jedes Team hat 10 Minuten zum Planen: Wer spielt wen? Was ist die Story? Dann 15 Minuten drehen — maximal 60 Sekunden Film. Am Ende schauen sich alle gemeinsam beide Filme an.\n\nStory-Vorgabe (optional): „Drehbuch: Ein Schüler der Akademie entdeckt ein Geheimnis. Zeigt, was passiert.\" — reicht als Impuls, den Rest machen die Kinder selbst.\n\nTipp: DAS wird die Aktivität, die sie am coolsten finden. Jedes Kind bekommt den Film per AirDrop/WhatsApp geschickt — die Erinnerung schlechthin. Kostet nix extra.",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Teams bilden",
+              "content": "2 Teams (z. B. 4 gegen 4)."
+            },
+            {
+              "name": "Planen",
+              "content": "10 Min. planen: Wer spielt wen? Was ist die Story? Impuls: „Ein Schüler der Akademie entdeckt ein Geheimnis — zeigt, was passiert.\""
+            },
+            {
+              "name": "Drehen",
+              "content": "15 Min. drehen — maximal 60 Sekunden Film pro Team."
+            },
+            {
+              "name": "Premiere",
+              "content": "Am Ende beide Filme gemeinsam ansehen. Versand nur nach Eltern-Einverständnis (siehe Sicherheit)."
+            }
+          ],
           "safetyRule": "Handy-Datenschutz: Vorher mit Eltern klären, dass Kinder gefilmt werden + Film im Familien-Chat geteilt wird. Bei Eltern-Bedenken: Kind nur als „Kamera-Operator\" einsetzen, nicht vor Linse. Filme NUR im Privat-Chat teilen, nicht in Social Media posten. Vorher Eltern-Einverstaendnis einholen (Recht am eigenen Bild) und klar regeln, wer das Material bekommt und dass es nach der Party geloescht wird.",
           "ageAdjust6": "Du oder ein Elternteil führt die Kamera, Kinder spielen nur. Story muss nicht komplex sein — „Wir entdecken einen Kristall und er macht uns unsichtbar\" reicht. Wichtig: Du gibst die Struktur vor (Anfang, Mitte, Ende) und hilfst beim Schneiden.",
           "ageAdjust8": "Kinder filmen sich gegenseitig (10-11 Jahre: Story-Impuls von dir + sie schneiden im Handy). 12-Jährige: Eigene Handys, direktes Schneiden in iMovie/CapCut, Slow-Mo und Effekte einbauen — brauchen null Hilfe.",
@@ -736,7 +935,24 @@
           "effort": "leicht",
           "material": "8 Urkunden (A4, ausdrucken oder auf Pergament-Papier schreiben), 1 Wachssiegel-Set (optional, ~10 €) oder Goldfolie-Sticker",
           "prepText": "Vorher vorbereiten: Urkunden mit „Akademie der Vergessenen Magie\" Header, Platz für Code-Name, Datum, und „Hiermit wird ___ zum Meister der Vergessenen Magie ernannt.\"\n\nBei der Zeremonie: Feierliche Musik an (YouTube: „epic orchestral fantasy\"), jedes Kind einzeln aufrufen, Urkunde überreichen, alle applaudieren. Die Kinder finden das halb lustig, halb cool — genau die richtige Mischung für das Alter.\n\nTipp: Urkunde auf Pergament-Papier (Amazon: ~5 € für 25 Blatt) drucken oder den Teebeutel-Trick verwenden (Papier in kaltem Tee einlegen, trocknen). Wachssiegel drauf = nächstes Level.",
-          "steps": [],
+          "steps": [
+            {
+              "name": "Vorbereiten",
+              "content": "Urkunden mit Header „Akademie der Vergessenen Magie\", Platz für Code-Name, Datum und „Hiermit wird ___ zum Meister der Vergessenen Magie ernannt.\""
+            },
+            {
+              "name": "Stimmung",
+              "content": "Feierliche Musik an (z. B. „epic orchestral fantasy\")."
+            },
+            {
+              "name": "Verleihen",
+              "content": "Jedes Kind einzeln aufrufen, Urkunde überreichen, alle applaudieren."
+            },
+            {
+              "name": "Tipp",
+              "content": "Pergament-Papier oder Teebeutel-Trick (Papier in kaltem Tee färben, trocknen); Wachssiegel (nur durch Erwachsene) = nächstes Level."
+            }
+          ],
           "safetyRule": "Wachssiegel-Set: heißes Wachs — nur Erwachsene siegeln, Kinder bekommen fertige Urkunden überreicht. Alternativ Goldfolie-Sticker als Wachssiegel-Ersatz (kalt, kein Risiko).",
           "ageAdjust6": null,
           "ageAdjust8": null,

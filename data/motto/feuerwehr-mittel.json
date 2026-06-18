@@ -187,7 +187,28 @@
           "effort": null,
           "material": "5–6 ausgedruckte Feuerwehr-Ausmalbilder (kostenlos auf [kribbelbunt.de](https://www.kribbelbunt.de/artikel/news/ausmalbilder-feuerwehr/) oder [malvorlagen-seite.de](https://malvorlagen-seite.de/malvorlagen-feuerwehr/)), dicke Filzstifte oder Wachsmalstifte (rot, blau, gelb)",
           "prepText": "Bilder am Tisch verteilen, Stifte dazu. Jedes Kind sucht sich ein Bild aus, malt 10–15 Min. Kein Wettbewerb, kein „schön malen\", einfach machen. Manche Kinder kritzeln, andere malen sehr ordentlich — beides okay.\n\nDiese Pause ist absichtlich",
-          "steps": [],
+          "steps": [
+            {
+              "n": 1,
+              "name": "Aufbauen",
+              "content": "5–6 ausgedruckte Feuerwehr-Ausmalbilder und dicke Filzstifte am Tisch verteilen."
+            },
+            {
+              "n": 2,
+              "name": "Aussuchen",
+              "content": "Jedes Kind sucht sich ein Bild aus."
+            },
+            {
+              "n": 3,
+              "name": "Ausmalen",
+              "content": "10–15 Min. ausmalen — kein Wettbewerb, kein „schön malen\", einfach machen."
+            },
+            {
+              "n": 4,
+              "name": "Alles ist richtig",
+              "content": "Manche kritzeln, andere malen ordentlich — beides ist okay. Diese ruhige Pause ist bewusst eingeplant (Ankommen, runterkommen)."
+            }
+          ],
           "safetyRule": null,
           "ageAdjust6": null,
           "ageAdjust8": null,
@@ -206,7 +227,28 @@
           "effort": "leicht",
           "material": "5 kleine Wasserspritzpistolen (kindgerecht, niedrigste Stufe — keine Kanonen — ~10 € für 6er-Set), 6–8 leere Plastikbecher mit aufgemaltem Flammen-Symbol, Eimer Wasser, alte Handtücher",
           "prepText": "Plastikbecher umgekehrt auf eine niedrige Bank oder den Boden stellen, je mit aufgemaltem Flammen-Symbol. Crew-Mitglieder stehen 1 m entfernt mit Wasserspritzpistolen. „Wir löschen die Brände!\" — alle gemeinsam, kein Wettbewerb. Wer einen Becher umlegt, kommt zurück, nimmt einen neuen Versuch.",
-          "steps": [],
+          "steps": [
+            {
+              "n": 1,
+              "name": "Aufbau",
+              "content": "Plastikbecher umgekehrt auf eine niedrige Bank oder den Boden stellen, je mit aufgemaltem Flammen-Symbol."
+            },
+            {
+              "n": 2,
+              "name": "Aufstellen",
+              "content": "Crew-Mitglieder stehen 1 m entfernt, jedes mit einer Wasserspritzpistole (niedrigste Stufe)."
+            },
+            {
+              "n": 3,
+              "name": "Löschen",
+              "content": "„Wir löschen die Brände!\" — alle spritzen gemeinsam auf die Becher, kein Wettbewerb."
+            },
+            {
+              "n": 4,
+              "name": "Weiter geht's",
+              "content": "Wer einen Becher umlegt, kommt zurück und nimmt sich einen neuen Versuch."
+            }
+          ],
           "safetyRule": "„Wasser nur auf den Becher, nicht aufs andere Kind.\" Eltern stehen daneben, korrigieren freundlich. Boden wird nass → drinnen abwischbarer Untergrund oder draußen, Nässe sofort aufwischen (Rutschgefahr). Nie ins Gesicht.",
           "ageAdjust6": "Becher näher (50 cm), Spritzpistole vom Erwachsenen mit gehalten falls zu schwer. Nicht jedes Kind muss treffen — Versuch zählt.",
           "ageAdjust8": "1,5 m Abstand, mehrere Becher, dürfen reihum.",
@@ -225,7 +267,33 @@
           "effort": "leicht",
           "material": "1–2 Dosen Rasierschaum (Drogerie-Eigenmarke, parfümfrei, ~3 € pro Dose), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
           "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
-          "steps": [],
+          "steps": [
+            {
+              "n": 1,
+              "name": "Aufbau",
+              "content": "Spielzeug-Tiere in die leere Wanne legen, großzügig Rasierschaum drüber. Alte Tischdecke unterlegen."
+            },
+            {
+              "n": 2,
+              "name": "Story ankündigen",
+              "content": "„Hier sind Tiere im Schaum — wir müssen sie retten! Wer hat einen Pinsel und macht mit?\""
+            },
+            {
+              "n": 3,
+              "name": "Pinsel verteilen",
+              "content": "Jedes Kind bekommt einen Pinsel oder eine Bürste."
+            },
+            {
+              "n": 4,
+              "name": "Retten",
+              "content": "Gemeinsam die Tiere freipinseln — kein Wettbewerb, alle helfen zusammen."
+            },
+            {
+              "n": 5,
+              "name": "Begleiten",
+              "content": "Eltern helfen den Kleinsten, wenn nötig. Danach Hände waschen."
+            }
+          ],
           "safetyRule": "Schaum NICHT in Augen/Mund — auch parfümfreier Rasierschaum reizt Schleimhäute. Für die Jüngsten (3–4 J.) Sahne oder Kinderschaum statt Rasierschaum erwägen. Nach dem Spiel Hände waschen. Durchgehende Aufsicht.",
           "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt 5 Min mit klarem Wasser ausspülen.",
           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
@@ -245,7 +313,28 @@
           "effort": "leicht",
           "material": "5 weiße/unbedruckte [Pappkarton-Helme zum Bemalen](https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht21-21)* (~4 €/Stück), dicke Filzstifte (rot, blau, gelb, schwarz), [große Feuerwehr-Aufkleber](https://www.amazon.de/s?k=feuerwehr+sticker+kinder+gross&tag=machsleicht21-21)* (~5 €), optional Glitzer-Kleber, alte Tischdecke unterlegen, Eltern-Hilfe!",
           "prepText": "Ankunfts-Aktivität: Helme + Stifte liegen schon auf dem Tisch. Jedes Kind nimmt einen Helm und bemalt ihn — rote Streifen, „112\" drauf, Aufkleber von Schlauchsymbolen oder Hand-Signal \"Notruf!\" + leiser Spruch. Glitzer, was sie wollen. Keine Vorgabe, keine Bewertung.\n\nEltern dürfen helfen — gerade bei 3-Jährigen, die Mühe mit Filzstift-Druck haben. Kein Helm muss „gut\" werden — der Wert ist, dass es ihrer ist.",
-          "steps": [],
+          "steps": [
+            {
+              "n": 1,
+              "name": "Ankunfts-Station",
+              "content": "Pappkarton-Helme und dicke Stifte liegen schon auf dem Tisch (Tischdecke drunter)."
+            },
+            {
+              "n": 2,
+              "name": "Bemalen",
+              "content": "Jedes Kind nimmt einen Helm und gestaltet ihn: rote Streifen, „112\", Feuerwehr-Aufkleber, Glitzer — was es will. Keine Vorgabe, keine Bewertung."
+            },
+            {
+              "n": 3,
+              "name": "Eltern helfen",
+              "content": "Gerade 3-Jährige tun sich mit dem Filzstift-Druck schwer — Eltern dürfen unterstützen."
+            },
+            {
+              "n": 4,
+              "name": "Der eigene Helm",
+              "content": "Kein Helm muss „gut\" werden — der Wert ist, dass es seiner ist. Der Helm bleibt den ganzen Tag auf dem Kopf."
+            }
+          ],
           "safetyRule": null,
           "ageAdjust6": "Kritzeln ist Bemalen. Aufkleber sind die Hauptfreude — Filzstift sekundär. Eltern müssen daneben sitzen.",
           "ageAdjust8": "Können detaillierter, dürfen länger machen. Manche werden 30 Minuten dabei sein und nicht aufhören wollen — das ist gut, plane Puffer ein.",
@@ -416,7 +505,28 @@
           "effort": "leicht",
           "material": "5 kleine Wasserspritzpistolen (kindgerecht, niedrigste Stufe — keine Kanonen — ~10 € für 6er-Set), 6–8 leere Plastikbecher mit aufgemaltem Flammen-Symbol, Eimer Wasser, alte Handtücher",
           "prepText": "Plastikbecher umgekehrt auf eine niedrige Bank oder den Boden stellen, je mit aufgemaltem Flammen-Symbol. Crew-Mitglieder stehen 1 m entfernt mit Wasserspritzpistolen. „Wir löschen die Brände!\" — alle gemeinsam, kein Wettbewerb. Wer einen Becher umlegt, kommt zurück, nimmt einen neuen Versuch.",
-          "steps": [],
+          "steps": [
+            {
+              "n": 1,
+              "name": "Aufbau",
+              "content": "Plastikbecher umgekehrt auf eine niedrige Bank oder den Boden stellen, je mit aufgemaltem Flammen-Symbol."
+            },
+            {
+              "n": 2,
+              "name": "Aufstellen",
+              "content": "Crew-Mitglieder stehen 1 m entfernt, jedes mit einer Wasserspritzpistole (niedrigste Stufe)."
+            },
+            {
+              "n": 3,
+              "name": "Löschen",
+              "content": "„Wir löschen die Brände!\" — alle spritzen gemeinsam auf die Becher, kein Wettbewerb."
+            },
+            {
+              "n": 4,
+              "name": "Weiter geht's",
+              "content": "Wer einen Becher umlegt, kommt zurück und nimmt sich einen neuen Versuch."
+            }
+          ],
           "safetyRule": "„Wasser nur auf den Becher, nicht aufs andere Kind.\" Eltern stehen daneben, korrigieren freundlich. Boden wird nass → drinnen abwischbarer Untergrund oder draußen, Nässe sofort aufwischen (Rutschgefahr). Nie ins Gesicht.",
           "ageAdjust6": "Becher näher (50 cm), Spritzpistole vom Erwachsenen mit gehalten falls zu schwer. Nicht jedes Kind muss treffen — Versuch zählt.",
           "ageAdjust8": "1,5 m Abstand, mehrere Becher, dürfen reihum.",
@@ -530,7 +640,33 @@
           "effort": "leicht",
           "material": "1–2 Dosen Rasierschaum (Drogerie-Eigenmarke, parfümfrei, ~3 € pro Dose), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
           "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
-          "steps": [],
+          "steps": [
+            {
+              "n": 1,
+              "name": "Aufbau",
+              "content": "Spielzeug-Tiere in die leere Wanne legen, großzügig Rasierschaum drüber. Alte Tischdecke unterlegen."
+            },
+            {
+              "n": 2,
+              "name": "Story ankündigen",
+              "content": "„Hier sind Tiere im Schaum — wir müssen sie retten! Wer hat einen Pinsel und macht mit?\""
+            },
+            {
+              "n": 3,
+              "name": "Pinsel verteilen",
+              "content": "Jedes Kind bekommt einen Pinsel oder eine Bürste."
+            },
+            {
+              "n": 4,
+              "name": "Retten",
+              "content": "Gemeinsam die Tiere freipinseln — kein Wettbewerb, alle helfen zusammen."
+            },
+            {
+              "n": 5,
+              "name": "Begleiten",
+              "content": "Eltern helfen den Kleinsten, wenn nötig. Danach Hände waschen."
+            }
+          ],
           "safetyRule": "Schaum NICHT in Augen/Mund — auch parfümfreier Rasierschaum reizt Schleimhäute. Für die Jüngsten (3–4 J.) Sahne oder Kinderschaum statt Rasierschaum erwägen. Nach dem Spiel Hände waschen. Durchgehende Aufsicht.",
           "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt 5 Min mit klarem Wasser ausspülen.",
           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
@@ -550,7 +686,33 @@
           "effort": "leicht",
           "material": "Pro Kind 1 Feuerwehr-Diplom (DIN A4 ausgedruckt, kostenlose Vorlagen z.B. auf [kribbelbunt.de](https://www.kribbelbunt.de) oder selber gestaltet — Logo, „Feuerwehr-Diplom\", Name, Funktion, Datum, Unterschrift), 1 schwarzer Stift, optional Schleife/Bändchen zum Aufrollen",
           "prepText": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, nicht steif. Rufst jedes Kind einzeln auf mit Funktion und einem konkreten Satz, was es heute geleistet hat. Beispiele:\n\n„Hanna, Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\"\n\n„Tom, Schlauchführer — du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom.\"\n\n„Emma, Sanitäterin — du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom.\"\n\nWichtig:",
-          "steps": [],
+          "steps": [
+            {
+              "n": 1,
+              "name": "Aufstellung",
+              "content": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, aber nicht steif. Feierliche Stimmung."
+            },
+            {
+              "n": 2,
+              "name": "Einzeln aufrufen",
+              "content": "Jedes Kind einzeln mit seiner Funktion UND einem konkreten Satz, was es heute geleistet hat."
+            },
+            {
+              "n": 3,
+              "name": "Beispiel",
+              "content": "„Hanna, Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\""
+            },
+            {
+              "n": 4,
+              "name": "Beispiel",
+              "content": "„Tom, Schlauchführer — du hast beim Einsatz als Erster ein Tier gefunden. Hier dein Diplom.\""
+            },
+            {
+              "n": 5,
+              "name": "Überreichen",
+              "content": "Diplom übergeben, alle applaudieren. Jedes Kind kommt dran — niemand wird vergessen."
+            }
+          ],
           "safetyRule": null,
           "ageAdjust6": "Sätze kürzer, Funktionen einfacher zuordenbar.",
           "ageAdjust8": "Funktion + zwei Sätze sind drin. Jedes Kind darf nach der Zeremonie eine kurze „Crew-Botschaft\" sagen, was ihm am besten gefallen hat.",
@@ -753,7 +915,28 @@
           "effort": "leicht",
           "material": "5 kleine Wasserspritzpistolen (kindgerecht, niedrigste Stufe — keine Kanonen — ~10 € für 6er-Set), 6–8 leere Plastikbecher mit aufgemaltem Flammen-Symbol, Eimer Wasser, alte Handtücher",
           "prepText": "Plastikbecher umgekehrt auf eine niedrige Bank oder den Boden stellen, je mit aufgemaltem Flammen-Symbol. Crew-Mitglieder stehen 1 m entfernt mit Wasserspritzpistolen. „Wir löschen die Brände!\" — alle gemeinsam, kein Wettbewerb. Wer einen Becher umlegt, kommt zurück, nimmt einen neuen Versuch.",
-          "steps": [],
+          "steps": [
+            {
+              "n": 1,
+              "name": "Aufbau",
+              "content": "Plastikbecher umgekehrt auf eine niedrige Bank oder den Boden stellen, je mit aufgemaltem Flammen-Symbol."
+            },
+            {
+              "n": 2,
+              "name": "Aufstellen",
+              "content": "Crew-Mitglieder stehen 1 m entfernt, jedes mit einer Wasserspritzpistole (niedrigste Stufe)."
+            },
+            {
+              "n": 3,
+              "name": "Löschen",
+              "content": "„Wir löschen die Brände!\" — alle spritzen gemeinsam auf die Becher, kein Wettbewerb."
+            },
+            {
+              "n": 4,
+              "name": "Weiter geht's",
+              "content": "Wer einen Becher umlegt, kommt zurück und nimmt sich einen neuen Versuch."
+            }
+          ],
           "safetyRule": "„Wasser nur auf den Becher, nicht aufs andere Kind.\" Eltern stehen daneben, korrigieren freundlich. Boden wird nass → drinnen abwischbarer Untergrund oder draußen, Nässe sofort aufwischen (Rutschgefahr). Nie ins Gesicht.",
           "ageAdjust6": "Becher näher (50 cm), Spritzpistole vom Erwachsenen mit gehalten falls zu schwer. Nicht jedes Kind muss treffen — Versuch zählt.",
           "ageAdjust8": "1,5 m Abstand, mehrere Becher, dürfen reihum.",
@@ -912,7 +1095,33 @@
           "effort": "leicht",
           "material": "1–2 Dosen Rasierschaum (Drogerie-Eigenmarke, parfümfrei, ~3 € pro Dose), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
           "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
-          "steps": [],
+          "steps": [
+            {
+              "n": 1,
+              "name": "Aufbau",
+              "content": "Spielzeug-Tiere in die leere Wanne legen, großzügig Rasierschaum drüber. Alte Tischdecke unterlegen."
+            },
+            {
+              "n": 2,
+              "name": "Story ankündigen",
+              "content": "„Hier sind Tiere im Schaum — wir müssen sie retten! Wer hat einen Pinsel und macht mit?\""
+            },
+            {
+              "n": 3,
+              "name": "Pinsel verteilen",
+              "content": "Jedes Kind bekommt einen Pinsel oder eine Bürste."
+            },
+            {
+              "n": 4,
+              "name": "Retten",
+              "content": "Gemeinsam die Tiere freipinseln — kein Wettbewerb, alle helfen zusammen."
+            },
+            {
+              "n": 5,
+              "name": "Begleiten",
+              "content": "Eltern helfen den Kleinsten, wenn nötig. Danach Hände waschen."
+            }
+          ],
           "safetyRule": "Schaum NICHT in Augen/Mund — auch parfümfreier Rasierschaum reizt Schleimhäute. Für die Jüngsten (3–4 J.) Sahne oder Kinderschaum statt Rasierschaum erwägen. Nach dem Spiel Hände waschen. Durchgehende Aufsicht.",
           "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt 5 Min mit klarem Wasser ausspülen.",
           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
@@ -932,7 +1141,33 @@
           "effort": "leicht",
           "material": "Pro Kind 1 Feuerwehr-Diplom (DIN A4 ausgedruckt, kostenlose Vorlagen z.B. auf [kribbelbunt.de](https://www.kribbelbunt.de) oder selber gestaltet — Logo, „Feuerwehr-Diplom\", Name, Funktion, Datum, Unterschrift), 1 schwarzer Stift, optional Schleife/Bändchen zum Aufrollen",
           "prepText": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, nicht steif. Rufst jedes Kind einzeln auf mit Funktion und einem konkreten Satz, was es heute geleistet hat. Beispiele:\n\n„Hanna, Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\"\n\n„Tom, Schlauchführer — du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom.\"\n\n„Emma, Sanitäterin — du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom.\"\n\nWichtig:",
-          "steps": [],
+          "steps": [
+            {
+              "n": 1,
+              "name": "Aufstellung",
+              "content": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, aber nicht steif. Feierliche Stimmung."
+            },
+            {
+              "n": 2,
+              "name": "Einzeln aufrufen",
+              "content": "Jedes Kind einzeln mit seiner Funktion UND einem konkreten Satz, was es heute geleistet hat."
+            },
+            {
+              "n": 3,
+              "name": "Beispiel",
+              "content": "„Hanna, Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\""
+            },
+            {
+              "n": 4,
+              "name": "Beispiel",
+              "content": "„Tom, Schlauchführer — du hast beim Einsatz als Erster ein Tier gefunden. Hier dein Diplom.\""
+            },
+            {
+              "n": 5,
+              "name": "Überreichen",
+              "content": "Diplom übergeben, alle applaudieren. Jedes Kind kommt dran — niemand wird vergessen."
+            }
+          ],
           "safetyRule": null,
           "ageAdjust6": "Sätze kürzer, Funktionen einfacher zuordenbar.",
           "ageAdjust8": "Funktion + zwei Sätze sind drin. Jedes Kind darf nach der Zeremonie eine kurze „Crew-Botschaft\" sagen, was ihm am besten gefallen hat.",
