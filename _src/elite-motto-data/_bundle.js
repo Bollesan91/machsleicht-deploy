@@ -29293,8 +29293,7 @@ var ELITE_MOTTO_DATA = {
         "savingsTip": {
           "title": "💡 Spar-Trick — wenn 106 € zu viel ist",
           "body": "Pappkarton-Helme statt Plastik (~−20 €), Lupen aus dem Kindergarten / aus alten Detektiv-Sets recyceln (~−9 €), keine Cola sondern nur Apfelschorle (~−2 €). Damit liegst du bei ~75 €. Die Brandermittlung ist der unverzichtbare Anker — daran spar nicht."
-        },
-        "isQuest": true
+        }
       },
       {
         "id": "standard",
@@ -41369,7 +41368,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Sind alle Becher gefallen, ist das Seeungeheuer besiegt. Gemeinsam neu aufstellen für die nächste Runde."
               }
             ],
-            "safetyRule": null,
+            "safetyRule": "Nur weiche Sockenbälle werfen — niemals auf Personen, immer nur auf die Becher/Dosen zielen. Eine feste Wurflinie markieren, es wirft immer nur ein Kind, die anderen warten hinter der Linie.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": "Pyramide auf einen Teppich stellen, damit umfallende Dosen nicht scheppern und nichts wegrollt.",
@@ -41743,7 +41742,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Sind alle Becher gefallen, ist das Seeungeheuer besiegt. Gemeinsam neu aufstellen für die nächste Runde."
               }
             ],
-            "safetyRule": null,
+            "safetyRule": "Nur weiche Sockenbälle werfen — niemals auf Personen, immer nur auf die Becher/Dosen zielen. Eine feste Wurflinie markieren, es wirft immer nur ein Kind, die anderen warten hinter der Linie.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": "Pyramide auf einen Teppich stellen, damit umfallende Dosen nicht scheppern und nichts wegrollt.",
@@ -45469,7 +45468,8 @@ var ELITE_MOTTO_DATA = {
             "categoryReasoning": "Eleganter, 'erwachsener' Look statt Kleinkind-Rosa."
           }
         ],
-        "costContext": "ca. 37 € für 8 Kinder · ~4,63 € pro Kind"
+        "costContext": "ca. 37 € für 8 Kinder · ~4,63 € pro Kind",
+        "isQuest": true
       },
       {
         "id": "standard",

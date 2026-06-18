@@ -201,7 +201,8 @@
           "categoryReasoning": "Eleganter, 'erwachsener' Look statt Kleinkind-Rosa."
         }
       ],
-      "costContext": "ca. 37 € für 8 Kinder · ~4,63 € pro Kind"
+      "costContext": "ca. 37 € für 8 Kinder · ~4,63 € pro Kind",
+      "isQuest": true
     },
     {
       "id": "standard",

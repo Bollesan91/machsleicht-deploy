@@ -31139,8 +31139,7 @@ var ELITE_MOTTO_DATA = {
         "savingsTip": {
           "title": "💡 Spar-Trick — wenn 106 € zu viel ist",
           "body": "Pappkarton-Helme statt Plastik (~−20 €), Lupen aus dem Kindergarten / aus alten Detektiv-Sets recyceln (~−9 €), keine Cola sondern nur Apfelschorle (~−2 €). Damit liegst du bei ~75 €. Die Brandermittlung ist der unverzichtbare Anker — daran spar nicht."
-        },
-        "isQuest": true
+        }
       },
       {
         "id": "standard",
@@ -43215,7 +43214,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Sind alle Becher gefallen, ist das Seeungeheuer besiegt. Gemeinsam neu aufstellen für die nächste Runde."
               }
             ],
-            "safetyRule": null,
+            "safetyRule": "Nur weiche Sockenbälle werfen — niemals auf Personen, immer nur auf die Becher/Dosen zielen. Eine feste Wurflinie markieren, es wirft immer nur ein Kind, die anderen warten hinter der Linie.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": "Pyramide auf einen Teppich stellen, damit umfallende Dosen nicht scheppern und nichts wegrollt.",
@@ -43589,7 +43588,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Sind alle Becher gefallen, ist das Seeungeheuer besiegt. Gemeinsam neu aufstellen für die nächste Runde."
               }
             ],
-            "safetyRule": null,
+            "safetyRule": "Nur weiche Sockenbälle werfen — niemals auf Personen, immer nur auf die Becher/Dosen zielen. Eine feste Wurflinie markieren, es wirft immer nur ein Kind, die anderen warten hinter der Linie.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": "Pyramide auf einen Teppich stellen, damit umfallende Dosen nicht scheppern und nichts wegrollt.",
@@ -47315,7 +47314,8 @@ var ELITE_MOTTO_DATA = {
             "categoryReasoning": "Eleganter, 'erwachsener' Look statt Kleinkind-Rosa."
           }
         ],
-        "costContext": "ca. 37 € für 8 Kinder · ~4,63 € pro Kind"
+        "costContext": "ca. 37 € für 8 Kinder · ~4,63 € pro Kind",
+        "isQuest": true
       },
       {
         "id": "standard",
@@ -65017,9 +65017,11 @@ function EliteShoppingList({ variants, shoppingMode, mottoColor }) {
     habIchVielleicht: { emoji: "\u{1F3E0}", label: "Hab ich vielleicht schon \u2014 DIY oder im Haushalt", color: "#558B2F" }
   };
   const total = variant.shoppingList.reduce((acc, it) => acc + (typeof it.priceEur === "number" ? it.priceEur : 0), 0);
-  const pflichtSum = groups.pflicht.reduce((acc, it) => acc + (typeof it.priceEur === "number" ? it.priceEur : 0), 0);
-  const optionalSum = total - pflichtSum;
-  return /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24, background: "#fff", border: "1px solid var(--l)", borderRadius: 14, padding: "18px 18px 14px" } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, fontWeight: 700, letterSpacing: 1.5, color: mottoColor || "var(--a)", textTransform: "uppercase", marginBottom: 6 } }, "\u{1F6D2} Einkaufsliste"), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, marginBottom: 6, color: "var(--d)" } }, variant.label || `${variant.id} \u2014 ab ${pflichtSum}\u20AC`), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 14, fontWeight: 700, color: "var(--d)", marginBottom: 10 } }, pflichtSum > 0 ? /* @__PURE__ */ React.createElement(React.Fragment, null, "\u{1F4B0} ab ", pflichtSum, " \u20AC", optionalSum > 0 ? /* @__PURE__ */ React.createElement("span", { style: { fontWeight: 600, color: "var(--m)" } }, " + optional ", optionalSum, " \u20AC") : null) : /* @__PURE__ */ React.createElement(React.Fragment, null, "\u{1F4B0} ca. ", total, " \u20AC", /* @__PURE__ */ React.createElement("span", { style: { fontWeight: 600, color: "var(--m)" } }, " \xB7 kein Pflicht-Material, alles flexibel"))), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 13, color: "var(--m)", marginBottom: 14, lineHeight: 1.5 } }, 'Drei Gruppen statt einer langen Liste. Fang oben an, h\xF6r unten auf \u2014 alles unter \u201EHab ich vielleicht schon" kannst du wahrscheinlich \xFCberspringen.'), ["pflicht", "sinnvoll", "habIchVielleicht"].map((catKey) => {
+  const sumOf = (arr) => arr.reduce((acc, it) => acc + (typeof it.priceEur === "number" ? it.priceEur : 0), 0);
+  const pflichtSum = sumOf(groups.pflicht);
+  const optionalSum = sumOf(groups.sinnvoll) + sumOf(groups.habIchVielleicht);
+  const renderedTotal = pflichtSum + optionalSum;
+  return /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24, background: "#fff", border: "1px solid var(--l)", borderRadius: 14, padding: "18px 18px 14px" } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, fontWeight: 700, letterSpacing: 1.5, color: mottoColor || "var(--a)", textTransform: "uppercase", marginBottom: 6 } }, "\u{1F6D2} Einkaufsliste"), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, marginBottom: 6, color: "var(--d)" } }, variant.label || `${variant.id} \u2014 ab ${pflichtSum}\u20AC`), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 14, fontWeight: 700, color: "var(--d)", marginBottom: 10 } }, pflichtSum > 0 ? /* @__PURE__ */ React.createElement(React.Fragment, null, "\u{1F4B0} ab ", pflichtSum, " \u20AC", optionalSum > 0 ? /* @__PURE__ */ React.createElement("span", { style: { fontWeight: 600, color: "var(--m)" } }, " + optional ", optionalSum, " \u20AC") : null) : /* @__PURE__ */ React.createElement(React.Fragment, null, "\u{1F4B0} ca. ", renderedTotal, " \u20AC", /* @__PURE__ */ React.createElement("span", { style: { fontWeight: 600, color: "var(--m)" } }, " \xB7 kein Pflicht-Material, alles flexibel"))), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 13, color: "var(--m)", marginBottom: 14, lineHeight: 1.5 } }, 'Drei Gruppen statt einer langen Liste. Fang oben an, h\xF6r unten auf \u2014 alles unter \u201EHab ich vielleicht schon" kannst du wahrscheinlich \xFCberspringen.'), ["pflicht", "sinnvoll", "habIchVielleicht"].map((catKey) => {
     const items = groups[catKey];
     if (!items.length) return null;
     const meta = GROUP_META[catKey];

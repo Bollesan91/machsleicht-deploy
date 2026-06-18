@@ -859,8 +859,13 @@ function EliteShoppingList({ variants, shoppingMode, mottoColor }) {
   const total = variant.shoppingList.reduce((acc, it) => acc + (typeof it.priceEur === "number" ? it.priceEur : 0), 0);
   // Kosten-Konvention "ab X + optional Y": ehrliche Untergrenze = Pflicht-Posten, Rest optional.
   // Live aus der shoppingList berechnet (keine gespeicherte estimatedCostEur — die war uneinheitlich/ungenutzt).
-  const pflichtSum = groups.pflicht.reduce((acc, it) => acc + (typeof it.priceEur === "number" ? it.priceEur : 0), 0);
-  const optionalSum = total - pflichtSum;
+  // Summen NUR ueber die drei gerenderten Gruppen, damit die Badge-Zahlen exakt den sichtbaren
+  // Gruppen-Summen entsprechen (Items mit Fremd-category wie deko/mitgebsel werden nicht angezeigt
+  // und zaehlen daher auch nicht in die Badge — sonst Differenz "+optional Y" vs. sichtbare Summe).
+  const sumOf = (arr) => arr.reduce((acc, it) => acc + (typeof it.priceEur === "number" ? it.priceEur : 0), 0);
+  const pflichtSum = sumOf(groups.pflicht);
+  const optionalSum = sumOf(groups.sinnvoll) + sumOf(groups.habIchVielleicht);
+  const renderedTotal = pflichtSum + optionalSum;
 
   return (
     <section className="fu" style={{ marginBottom: 24, background: "#fff", border: "1px solid var(--l)", borderRadius: 14, padding: "18px 18px 14px" }}>
@@ -871,7 +876,7 @@ function EliteShoppingList({ variants, shoppingMode, mottoColor }) {
       <p style={{ fontSize: 14, fontWeight: 700, color: "var(--d)", marginBottom: 10 }}>
         {pflichtSum > 0
           ? <>💰 ab {pflichtSum} €{optionalSum > 0 ? <span style={{ fontWeight: 600, color: "var(--m)" }}> + optional {optionalSum} €</span> : null}</>
-          : <>💰 ca. {total} €<span style={{ fontWeight: 600, color: "var(--m)" }}> · kein Pflicht-Material, alles flexibel</span></>}
+          : <>💰 ca. {renderedTotal} €<span style={{ fontWeight: 600, color: "var(--m)" }}> · kein Pflicht-Material, alles flexibel</span></>}
       </p>
       <p style={{ fontSize: 13, color: "var(--m)", marginBottom: 14, lineHeight: 1.5 }}>
         Drei Gruppen statt einer langen Liste. Fang oben an, hör unten auf — alles unter „Hab ich vielleicht schon" kannst du wahrscheinlich überspringen.
