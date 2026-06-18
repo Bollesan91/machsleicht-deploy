@@ -1844,10 +1844,10 @@ var MOTTO_GREETINGS = {
   dino: "Roaaar", einhorn: "Zauberhafte Gr\u00FC\u00DFe", feuerwehr: "Tat\u00FCtata",
   detektiv: "Hey Detektiv", dschungel: "Hallo Forscher", feen: "Zauberhafte Gr\u00FC\u00DFe",
 };
-// js/kindergeburtstag.js :: ELITE_MOTTO_DATA
-// AUTO-GENERIERT von _src/gen-elite-bundle.cjs — NICHT MANUELL EDITIEREN.
+// js/kindergeburtstag.js :: ELITE_MOTTO_DATA + Accessoren
+// AUTO-GENERIERT von _src/gen-elite-bundle.cjs aus data/motto/ — NICHT MANUELL EDITIEREN.
 // Quelle: data/motto/<motto>-<klein|mittel|gross>.json (15 Mottos, single source of truth).
-// Regenerieren via: node _src/gen-elite-bundle.cjs
+// Regenerieren: node _src/gen-elite-bundle.cjs  (danach bash _src/build.sh)
 var ELITE_MOTTO_DATA = {
   "baustelle-klein": {
     "motto": "baustelle",
@@ -9783,7 +9783,8 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "estimatedCostEur": 92,
-        "costContext": "Geschätzte Kosten (Wow, 8–10 Kinder) — der Großteil entfällt auf Lebensmittel und optionale habIchVielleicht-Posten; das Pflicht-Detektiv-Material bleibt überschaubar."
+        "costContext": "Geschätzte Kosten (Wow, 8–10 Kinder) — der Großteil entfällt auf Lebensmittel und optionale habIchVielleicht-Posten; das Pflicht-Detektiv-Material bleibt überschaubar.",
+        "isQuest": true
       }
     ],
     "preparationWeeks": {
@@ -63965,6 +63966,21 @@ var ELITE_MOTTO_DATA = {
     }
   }
 };
+
+function getEliteData(motto, ageGroup) {
+  // Returns elite-motto JSON for a motto+ageGroup combination, or null if not available.
+  // The Planer falls back to legacy SZ_THEMES/kindergeburtstag-data.js when null.
+  if (!motto || !ageGroup) return null;
+  var key = motto + '-' + ageGroup;
+  return ELITE_MOTTO_DATA[key] || null;
+}
+function hasEliteData(motto, ageGroup) {
+  return getEliteData(motto, ageGroup) !== null;
+}
+function listEliteSlots() {
+  return Object.keys(ELITE_MOTTO_DATA);
+}
+
 const { useState, useEffect, useRef } = React;
 const LS_STORE = "machsleicht";
 const LS_VARIANTS = { sicher_fertig: "", morgen_komplett: "" };
@@ -65003,7 +65019,7 @@ function EliteShoppingList({ variants, shoppingMode, mottoColor }) {
   const total = variant.shoppingList.reduce((acc, it) => acc + (typeof it.priceEur === "number" ? it.priceEur : 0), 0);
   const pflichtSum = groups.pflicht.reduce((acc, it) => acc + (typeof it.priceEur === "number" ? it.priceEur : 0), 0);
   const optionalSum = total - pflichtSum;
-  return /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24, background: "#fff", border: "1px solid var(--l)", borderRadius: 14, padding: "18px 18px 14px" } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, fontWeight: 700, letterSpacing: 1.5, color: mottoColor || "var(--a)", textTransform: "uppercase", marginBottom: 6 } }, "\u{1F6D2} Einkaufsliste"), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, marginBottom: 6, color: "var(--d)" } }, variant.label || `${variant.id} \u2014 ab ${pflichtSum}\u20AC`), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 14, fontWeight: 700, color: "var(--d)", marginBottom: 10 } }, "\u{1F4B0} ab ", pflichtSum, " \u20AC", optionalSum > 0 ? /* @__PURE__ */ React.createElement("span", { style: { fontWeight: 600, color: "var(--m)" } }, " + optional ", optionalSum, " \u20AC") : null), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 13, color: "var(--m)", marginBottom: 14, lineHeight: 1.5 } }, 'Drei Gruppen statt einer langen Liste. Fang oben an, h\xF6r unten auf \u2014 alles unter \u201EHab ich vielleicht schon" kannst du wahrscheinlich \xFCberspringen.'), ["pflicht", "sinnvoll", "habIchVielleicht"].map((catKey) => {
+  return /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24, background: "#fff", border: "1px solid var(--l)", borderRadius: 14, padding: "18px 18px 14px" } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, fontWeight: 700, letterSpacing: 1.5, color: mottoColor || "var(--a)", textTransform: "uppercase", marginBottom: 6 } }, "\u{1F6D2} Einkaufsliste"), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, marginBottom: 6, color: "var(--d)" } }, variant.label || `${variant.id} \u2014 ab ${pflichtSum}\u20AC`), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 14, fontWeight: 700, color: "var(--d)", marginBottom: 10 } }, pflichtSum > 0 ? /* @__PURE__ */ React.createElement(React.Fragment, null, "\u{1F4B0} ab ", pflichtSum, " \u20AC", optionalSum > 0 ? /* @__PURE__ */ React.createElement("span", { style: { fontWeight: 600, color: "var(--m)" } }, " + optional ", optionalSum, " \u20AC") : null) : /* @__PURE__ */ React.createElement(React.Fragment, null, "\u{1F4B0} ca. ", total, " \u20AC", /* @__PURE__ */ React.createElement("span", { style: { fontWeight: 600, color: "var(--m)" } }, " \xB7 kein Pflicht-Material, alles flexibel"))), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 13, color: "var(--m)", marginBottom: 14, lineHeight: 1.5 } }, 'Drei Gruppen statt einer langen Liste. Fang oben an, h\xF6r unten auf \u2014 alles unter \u201EHab ich vielleicht schon" kannst du wahrscheinlich \xFCberspringen.'), ["pflicht", "sinnvoll", "habIchVielleicht"].map((catKey) => {
     const items = groups[catKey];
     if (!items.length) return null;
     const meta = GROUP_META[catKey];

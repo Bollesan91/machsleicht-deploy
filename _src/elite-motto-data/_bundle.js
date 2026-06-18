@@ -1,7 +1,7 @@
-// js/kindergeburtstag.js :: ELITE_MOTTO_DATA
-// AUTO-GENERIERT von _src/gen-elite-bundle.cjs — NICHT MANUELL EDITIEREN.
+// js/kindergeburtstag.js :: ELITE_MOTTO_DATA + Accessoren
+// AUTO-GENERIERT von _src/gen-elite-bundle.cjs aus data/motto/ — NICHT MANUELL EDITIEREN.
 // Quelle: data/motto/<motto>-<klein|mittel|gross>.json (15 Mottos, single source of truth).
-// Regenerieren via: node _src/gen-elite-bundle.cjs
+// Regenerieren: node _src/gen-elite-bundle.cjs  (danach bash _src/build.sh)
 var ELITE_MOTTO_DATA = {
   "baustelle-klein": {
     "motto": "baustelle",
@@ -7937,7 +7937,8 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "estimatedCostEur": 92,
-        "costContext": "Geschätzte Kosten (Wow, 8–10 Kinder) — der Großteil entfällt auf Lebensmittel und optionale habIchVielleicht-Posten; das Pflicht-Detektiv-Material bleibt überschaubar."
+        "costContext": "Geschätzte Kosten (Wow, 8–10 Kinder) — der Großteil entfällt auf Lebensmittel und optionale habIchVielleicht-Posten; das Pflicht-Detektiv-Material bleibt überschaubar.",
+        "isQuest": true
       }
     ],
     "preparationWeeks": {
@@ -62119,3 +62120,18 @@ var ELITE_MOTTO_DATA = {
     }
   }
 };
+
+function getEliteData(motto, ageGroup) {
+  // Returns elite-motto JSON for a motto+ageGroup combination, or null if not available.
+  // The Planer falls back to legacy SZ_THEMES/kindergeburtstag-data.js when null.
+  if (!motto || !ageGroup) return null;
+  var key = motto + '-' + ageGroup;
+  return ELITE_MOTTO_DATA[key] || null;
+}
+function hasEliteData(motto, ageGroup) {
+  return getEliteData(motto, ageGroup) !== null;
+}
+function listEliteSlots() {
+  return Object.keys(ELITE_MOTTO_DATA);
+}
+

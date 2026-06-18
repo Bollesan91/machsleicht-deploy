@@ -869,7 +869,9 @@ function EliteShoppingList({ variants, shoppingMode, mottoColor }) {
         {variant.label || `${variant.id} — ab ${pflichtSum}€`}
       </h2>
       <p style={{ fontSize: 14, fontWeight: 700, color: "var(--d)", marginBottom: 10 }}>
-        💰 ab {pflichtSum} €{optionalSum > 0 ? <span style={{ fontWeight: 600, color: "var(--m)" }}> + optional {optionalSum} €</span> : null}
+        {pflichtSum > 0
+          ? <>💰 ab {pflichtSum} €{optionalSum > 0 ? <span style={{ fontWeight: 600, color: "var(--m)" }}> + optional {optionalSum} €</span> : null}</>
+          : <>💰 ca. {total} €<span style={{ fontWeight: 600, color: "var(--m)" }}> · kein Pflicht-Material, alles flexibel</span></>}
       </p>
       <p style={{ fontSize: 13, color: "var(--m)", marginBottom: 14, lineHeight: 1.5 }}>
         Drei Gruppen statt einer langen Liste. Fang oben an, hör unten auf — alles unter „Hab ich vielleicht schon" kannst du wahrscheinlich überspringen.

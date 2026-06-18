@@ -1093,7 +1093,8 @@
         }
       ],
       "estimatedCostEur": 92,
-      "costContext": "Geschätzte Kosten (Wow, 8–10 Kinder) — der Großteil entfällt auf Lebensmittel und optionale habIchVielleicht-Posten; das Pflicht-Detektiv-Material bleibt überschaubar."
+      "costContext": "Geschätzte Kosten (Wow, 8–10 Kinder) — der Großteil entfällt auf Lebensmittel und optionale habIchVielleicht-Posten; das Pflicht-Detektiv-Material bleibt überschaubar.",
+      "isQuest": true
     }
   ],
   "cakeRecipe": {
