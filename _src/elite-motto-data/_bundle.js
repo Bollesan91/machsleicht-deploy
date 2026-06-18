@@ -4,11 +4,6 @@
 // Regenerieren via: node _src/gen-elite-bundle.cjs
 var ELITE_MOTTO_DATA = {
   "baustelle-klein": {
-    "_meta": {
-      "version": "2.0.0",
-      "lastUpdated": "2026-05-26",
-      "qualityNote": "v2 — Helfer-v3-Welle 1A+1B+1C+1D abgeschlossen. Re-Verify-Score 81/100 nach 1C, erwartet 85+ nach 1D. Cross-File-Kontamination behoben, SOS-Spezifik, Stallplan-Typo-Fix, Quiz-Karten-Mismatch-Fix."
-    },
     "motto": "baustelle",
     "ageGroup": "klein",
     "ageRange": [
@@ -16,8 +11,6 @@ var ELITE_MOTTO_DATA = {
       5
     ],
     "title": "🚧 Baustelle-Kindergeburtstag — 3–5 Jahre",
-    "metaDescription": "Baustelle-Kindergeburtstag für 3-5-Jährige als kleiner Bau-Tag: 3 fertige Konzepte mit Helm-Übergabe, Sand-Bagger-Station, Bauklotz-Burg-Bauen und Schatzsuche nach Schrauben. Kostenlos.",
-    "introParagraph": "Dein Kind wird 3, 4 oder 5 und liebt Bagger? Hier sind drei fertige Baustellen-Konzepte, die ohne Sicherheits-Albtraum funktionieren. Wichtig vorab: 3-5-Jährige brauchen keinen echten Bohrer. Was funktioniert: einen Helm aufbekommen und der wichtigste Mensch der Welt sein, mit Sand und Plastik-Baggern matschen, aus Bauklötzen eine Burg bauen, in der Sand-Schatzsuche kleine Schrauben finden.",
     "ageInsight": {
       "headline": "Warum 3–5-Jährige bei jedem Bagger stehen bleiben",
       "whyMottoFitsHeadline": "Baustelle = klare Rolle, sichtbares Werkzeug, einfache Aufgabe",
@@ -1090,115 +1083,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "name": "Baustellen-Kuchen mit Krümel-Sand",
-      "intro": "Baustellen-thematisch für 3-5: Schoko-Rührkuchen, mit Krümel-'Sand' (Spekulatius-Krümel oder zerbröselte Schoko-Kekse) bestreut, 2-3 Plastik-Bagger als Deko drauf gesetzt.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Schoko-Rührteig: 250 g Mehl, 200 g Zucker, 150 g Butter, 3 Eier, 40 g Kakao, 1 Pck. Backpulver, 100 ml Milch."
-        },
-        {
-          "n": 2,
-          "content": "In Kastenform oder rechteckiger Form bei 175°C ca. 45 Min backen."
-        },
-        {
-          "n": 3,
-          "content": "Komplett auskühlen."
-        },
-        {
-          "n": 4,
-          "content": "Schoko-Ganache aufstreichen."
-        },
-        {
-          "n": 5,
-          "content": "Krümel-'Sand' aus zerbröselten Schoko-Keksen oder Spekulatius mit Fingern aufstreuen."
-        },
-        {
-          "n": 6,
-          "content": "2-3 Plastik-Bagger als Deko vorsichtig auf den Kuchen setzen (vor dem Servieren entfernen!)."
-        },
-        {
-          "n": 7,
-          "content": "Optional: Mini-Verkehrshütchen aus Marzipan als Streusel."
-        }
-      ],
-      "meta": {
-        "aufwand": "65 Min inkl. Backen",
-        "kosten": "ca. 8-10 €",
-        "allergiker": "Bei Ei-Allergie: vegan ersetzen. Bei Nuss-Allergie: Spekulatius-Krümel statt Nuss-Krümel."
-      },
-      "tips": [
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Bäcker-Schoko-Kasten (5-8 €) kaufen, mit Krümel-Sand bestreuen (zerbröselte Schoko-Kekse), 2 Plastik-Bagger oben drauf (vor Servieren entfernen!). Sieht aus wie selbst gemacht, spart 1h Backzeit."
-        },
-        {
-          "title": "🚧 Pinterest-Falle vermeiden",
-          "body": "Pinterest zeigt 3-stündige Baustellen-Kuchen mit Fondant-Kran und essbarem Bauschutt. Für 3-5 Jahre Overkill — sie wollen den Kuchen essen, nicht Foto-Wettbewerb gewinnen. Krümel-Sand auf Schoko-Kasten reicht voll."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🥜 Allergien VOR der Party abfragen",
-          "detail": "Spekulatius und Kekse können Nüsse enthalten. Milch, Ei alles Standard. Klären."
-        },
-        {
-          "topic": "⛑️ Plastik-Helme + Warnwesten Pflicht",
-          "detail": "Helme schaffen die Identität. Plastik in Kinder-Größe, kein echter Bau-Helm."
-        },
-        {
-          "topic": "🔩 Plastik-Schrauben groß genug",
-          "detail": "Mindestens 5 cm — nicht verschluckbar. Niemals echte Metall-Schrauben mit Spitzen."
-        },
-        {
-          "topic": "🏖️ Spielsand geprüft",
-          "detail": "Nur zertifizierten Spielsand (DIN-Norm). Niemals Bau-Sand vom Baumarkt — kann Schadstoffe enthalten."
-        },
-        {
-          "topic": "🛒 Schubkarren leicht halten",
-          "detail": "Wenn Olympiade gespielt wird: Plastik-Schubkarren ohne harte Kanten. Strecke kurz (5-8 m)."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Sand-Station auf Plane drinnen verlegen, oder durch zusätzliche Bauklotz-Burg-Phase ersetzen."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite."
-        }
-      ],
-      "educationalValue": "Bei der Baustelle-Party in 3-5 lernen die Kinder sensorisch und durch Tun: Sand-Erfahrung (Eigenschaften von Sand, Berg-Bauen), Bauklotz-Stapeln (Stabilität, Räumliche Vorstellung), Werkzeug-Namen-Lernen (durch Memory + Werkzeug-Gürtel), Gemeinschafts-Bauen (Burg-Bau, alle helfen). Plus: Rollen-Identität durch Helm + Warnweste, Stolz aufs Geleistete ('Schau, ich habe die Mauer gebaut!')."
-    },
-    "invitationTemplate": "🚧 Baustellen-Einladung: 'Achtung Mini-Bauarbeiter! [Name] wird [Alter] und lädt zum Bau-Tag ein! Wann: [Datum, Uhrzeit]. Wo: [Adresse]. Mitbringen: alte Klamotten (matschig!), eigenen Helm wenn vorhanden. Wir bauen eine Burg, finden Schrauben und matschen mit Sand! Bitte bis [Datum] melden. Auf zur Baustelle! 🧱'",
-    "faq": [
-      {
-        "q": "Brauche ich echtes Werkzeug?",
-        "a": "Auf keinen Fall! Plastik-Werkzeug für 3-5. Kein Hammer, kein Bohrer, keine Säge mit Metall. Schaumstoff-Hammer + Plastik-Schraubenzieher reichen."
-      },
-      {
-        "q": "Was wenn das Kind den Sand isst?",
-        "a": "Bei 3-Jährigen Standard-Risiko — Aufsicht halten. Spielsand (zertifiziert) ist nicht giftig, aber kein Essen. Bei wirklicher Esser-Phase: Sand-Station kürzen oder durch Bauklotz-Spiel ersetzen."
-      },
-      {
-        "q": "Wie groß müssen die Bauklötze sein?",
-        "a": "Mindestens 10 cm (besser 15 cm) Kantenlänge. Schaumstoff oder Papp-Klötze ideal. Niemals kleine Lego-Klötze für 3-Jährige — Verschluck-Gefahr."
-      },
-      {
-        "q": "Funktioniert das auch ohne Garten?",
-        "a": "Ja. Sand-Station auf großer Plane indoor verlegen (vorher Boden mit Plastik schützen). Burg-Bauen und Schrauben-Schatzsuche brauchen kein draußen."
-      },
-      {
-        "q": "Kann ich echte Schrauben verstecken?",
-        "a": "Nein. Plastik-Schrauben groß genug (mind. 5 cm), damit sie nicht verschluckt werden. Echte Metall-Schrauben können kratzen oder verschluckt werden."
-      },
-      {
-        "q": "Schubkarren-Lauf — geht das bei 3-Jährigen?",
-        "a": "Eher 4-5 Jahre. Bei 3-Jährigen: Erwachsene schieben mit, oder durch einfaches 'Klotz-Transport-im-Eimer' ersetzen."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher",
@@ -1418,49 +1302,9 @@ var ELITE_MOTTO_DATA = {
         "fallback": "Bei zwei Stürzen: Schubkarren-Lauf beenden, durch Bauklotz-Stapel-Wettbewerb ersetzen.",
         "tone": "klar"
       }
-    },
-    "bonusGames": {
-      "intro": "Bonus-Spiele die du zusätzlich einbauen oder als Plan B nutzen kannst — alle 3-5-tauglich.",
-      "items": [
-        {
-          "name": "🧱 Bauklotz-Türmchen-Memory",
-          "duration": 8,
-          "minAge": 3,
-          "loudness": "leise",
-          "indoor": true,
-          "outdoor": false,
-          "material": "5 Plastik-Bagger und 5 Bauklötze im Kreis verteilt, Augen-Binde optional",
-          "anleitung": "Eltern zeigt Reihenfolge (3 Bagger + 2 Klötze), Kind soll Reihenfolge nachbilden. Sanfte Konzentrationsübung zwischen Action-Spielen."
-        },
-        {
-          "name": "🚜 Bagger-Hör-Spiel",
-          "duration": 8,
-          "minAge": 3,
-          "loudness": "mittel",
-          "indoor": true,
-          "outdoor": true,
-          "material": "Smartphone mit Baustellen-Geräuschen (Bagger, Kran, Bohrer, Schubkarre)",
-          "anleitung": "Geräusch abspielen, Kinder erraten + zeigen passendes Spielzeug. Lerneffekt: Baustellen-Geräusche unterscheiden."
-        },
-        {
-          "name": "🎈 Helm-Aufsetzen-Wettlauf",
-          "duration": 6,
-          "minAge": 4,
-          "loudness": "laut",
-          "indoor": true,
-          "outdoor": true,
-          "material": "6 Plastik-Helme, kein Wettbewerb",
-          "anleitung": "Auf Signal: Helm aufsetzen + \"Ich bin Bauarbeiter!\" rufen. Reihum, alle bekommen Applaus."
-        }
-      ]
     }
   },
   "baustelle-mittel": {
-    "_meta": {
-      "version": "2.0.0",
-      "lastUpdated": "2026-05-26",
-      "qualityNote": "v2 — Helfer-v3-Welle 1A+1B+1C+1D abgeschlossen. Re-Verify-Score 81/100 nach 1C, erwartet 85+ nach 1D. Cross-File-Kontamination behoben, SOS-Spezifik, Stallplan-Typo-Fix, Quiz-Karten-Mismatch-Fix."
-    },
     "motto": "baustelle",
     "ageGroup": "mittel",
     "ageRange": [
@@ -1468,8 +1312,6 @@ var ELITE_MOTTO_DATA = {
       8
     ],
     "title": "🚧 Baustelle-Kindergeburtstag — 6–8 Jahre",
-    "metaDescription": "Baustelle-Kindergeburtstag für 6-8-Jährige: 3 fertige Baustellen-Konzepte mit Bauarbeiter-Lizenz, Bauklotz-Wettbewerb, Werkzeug-Quiz, Schrauben-Schatzsuche und Bauleiter-Diplom mit Stempeln.",
-    "introParagraph": "Dein Kind wird 6, 7 oder 8 und liebt Baustellen? Mit 6-8 Jahren geht es nicht mehr nur ums Matschen mit Sand — die Kinder wollen ECHTES Bauarbeiter-Wissen, eine Bauarbeiter-Lizenz und ein richtiges Stationen-System. Hier sind drei fertige Konzepte mit Werkzeug-Quiz, Bauklotz-Wettbewerb, Schrauben-Schatzsuche und Mini-Architekten-Aufgaben.",
     "ageInsight": {
       "headline": "Was 6–8-Jährige an der Baustelle konkret wissen wollen",
       "whyMottoFitsHeadline": "Baustelle = echtes Werkzeug-Wissen + Bauarbeit + Stolz-Moment",
@@ -2986,115 +2828,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "name": "Bauarbeiter-Kuchen mit Bagger + Kran",
-      "intro": "Baustellen-thematisch für 6-8: Schoko-Rührkuchen mit Krümel-'Sand' bestreut, 2-3 Plastik-Bagger und ein Spielzeug-Kran als Deko drauf. Aufwendiger als bei den Jüngeren — passt zum Anspruch.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Schoko-Rührteig: 300 g Mehl, 250 g Zucker, 200 g Butter, 4 Eier, 50 g Kakao, 1 Pck. Backpulver, 150 ml Milch."
-        },
-        {
-          "n": 2,
-          "content": "In rechteckiger Form (Baustellen-Form) bei 175°C ca. 50 Min backen."
-        },
-        {
-          "n": 3,
-          "content": "Komplett auskühlen."
-        },
-        {
-          "n": 4,
-          "content": "Schoko-Ganache aufstreichen."
-        },
-        {
-          "n": 5,
-          "content": "Krümel-'Sand' aus zerbröselten Schoko-Keksen aufstreuen."
-        },
-        {
-          "n": 6,
-          "content": "Plastik-Bagger + Kran als Deko vorsichtig auf Kuchen setzen (vor Servieren entfernen!)."
-        },
-        {
-          "n": 7,
-          "content": "Optional: Marzipan-Werkzeug (kleine Hammer/Säge aus Marzipan) als Streusel verteilen."
-        }
-      ],
-      "meta": {
-        "aufwand": "75 Min inkl. Backen + Verzieren",
-        "kosten": "ca. 10-13 €",
-        "allergiker": "Bei Ei-Allergie: vegan ersetzen. Bei Nuss-Allergie: Schoko-Krümel statt Nuss-Krümel. Marzipan = Mandeln."
-      },
-      "tips": [
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Bäcker-Schoko-Kuchen mit Krümel-Sand bestreuen und Plastik-Bagger + Spielzeug-Kran als Deko drauf. Optional Marzipan-Werkzeug als Streusel. Spart 75 Min und sieht aus wie selbst gemacht."
-        },
-        {
-          "title": "🏗️ Pinterest-Aufwand vs Wirkung",
-          "body": "Pinterest zeigt 4-stündige Fondant-Baustellen-Tafeln mit beweglichen Kran-Armen. Für 6-8 Overkill — Bauarbeiter-Kuchen mit Krümel-Sand + Plastik-Bagger ist 30 Min Aufwand und hat 90% der Wirkung."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🥜 Allergien VOR der Party abfragen",
-          "detail": "Schoko-Krümel, Marzipan-Werkzeug = Mandeln. Allergien klären."
-        },
-        {
-          "topic": "🔩 Schrauben Plastik oder Metall?",
-          "detail": "Bei 6-8 sind kleine Metall-Schrauben möglich, aber NUR mit Aufsicht. Plastik-Schrauben sicherer. Niemals scharfe Spitzen."
-        },
-        {
-          "topic": "🏖️ Spielsand geprüft",
-          "detail": "Nur zertifizierten Spielsand (DIN-Norm). Niemals Bau-Sand vom Baumarkt — kann Schadstoffe enthalten."
-        },
-        {
-          "topic": "🛒 Schubkarren leicht halten",
-          "detail": "Plastik-Schubkarren ohne harte Kanten. Strecke max 10 m. Bei kleinen Kindern langsam, sonst kippt sie."
-        },
-        {
-          "topic": "👥 Ab 8 Kindern zweite Hand",
-          "detail": "Bei 8+ Kindern eine zweite erwachsene Begleitung für Stationen-Wechsel."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Sand-Station auf Plane drinnen, oder durch Bauklotz-Spiel ersetzen. Alle Stationen funktionieren drinnen."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite."
-        }
-      ],
-      "educationalValue": "Bei der Baustelle-Party in 6-8 lernen die Kinder ECHTES Wissen: Werkzeug-Namen + Funktion (Wasserwaage zeigt gerade, Maßband misst Länge), Baustellen-Berufe (Maurer, Elektriker, Tiefbau, Architekt, Polier), Bau-Reihenfolge (Plan → Fundament → Mauer → Dach), Statik (höher = wackliger, breit = stabil). Plus: Selbstständigkeit (eigene Station, eigenes Lizenz-Heft), Teamwork (Bauklotz-Wettbewerb in 2er-Teams, Schubkarren-Lauf), Wettbewerb mit Fairness (Stempel-System, alle bekommen Lizenz)."
-    },
-    "invitationTemplate": "🚧 Bauarbeiter-Lizenz-Einladung: 'Achtung Bauarbeiter-Anwärter! [Name] wird [Alter] und lädt zur Bauarbeiter-Lizenz-Prüfung ein! Wann: [Datum, Uhrzeit]. Wo: [Adresse]. Mitbringen: alte Klamotten (matschig!), Helm wenn vorhanden. Wir bauen, quizen, schraubensuchen und gewinnen die Bauarbeiter-Lizenz! Bitte bis [Datum] melden. Auf zur Baustelle! 🧱'",
-    "faq": [
-      {
-        "q": "Brauche ich echtes Werkzeug?",
-        "a": "Nein. Plastik-Werkzeug + Plastik-Schrauben reichen. Bei 6-8 sind kleine echte Schrauben (Holz-Schrauben) zum Drehen mit Plastik-Schraubenzieher möglich, aber nur unter Aufsicht."
-      },
-      {
-        "q": "Wie lange dauert das Werkzeug-Quiz wirklich?",
-        "a": "Bei 15 Karten + Besprechung ca. 25 Minuten. Bei größerer Gruppe (10) eher 30. Nicht hetzen, Wissen ist Kern."
-      },
-      {
-        "q": "Was wenn ein Kind beim Bauklotz-Wettbewerb verliert?",
-        "a": "Sieger-Bonus klein halten — nur ein Stempel-Bonus. Alle anderen bekommen trotzdem Stempel 2 + Foto vom Turm. Niemand geht als Loser heim."
-      },
-      {
-        "q": "Reicht der Bauplan-Zettel für die Architekt-Aufgabe?",
-        "a": "Bei 6-Jährigen ja (einfacher Plan, 5-10 Klötze). Bei 8-Jährigen 2-3 verschiedene Pläne anbieten (einfach/mittel/schwer), sie wählen."
-      },
-      {
-        "q": "Wie schwer macht man das Werkzeug-Quiz?",
-        "a": "Einfache Bilder + 2-3 Antwortmöglichkeiten. Beispiel: 'Welches Werkzeug zeigt, ob etwas gerade ist?' Optionen: Hammer, Wasserwaage, Bohrer. Mit 8 Jahren auch: 'Wer baut das Fundament?' (Maurer)."
-      },
-      {
-        "q": "Funktioniert das auch in einer kleinen Wohnung?",
-        "a": "Ja. Stationen in verschiedenen Räumen: Quiz am Esstisch, Bauklotz im Wohnzimmer, Schrauben durchs ganze Apartment, Maler in der Küche. Schubkarren-Lauf nur im langen Flur."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher",
@@ -3306,49 +3039,9 @@ var ELITE_MOTTO_DATA = {
         "fallback": "Wenn nichts da: Werkzeug-Quiz-Karten als Schatz verteilen — Kinder finden statt Schrauben jetzt Werkzeug-Karten.",
         "tone": "pragmatisch"
       }
-    },
-    "bonusGames": {
-      "intro": "Bonus-Spiele für die Bauarbeiter-Lizenz-Phase — Plan B bei Material-Ausfall oder als 5. Station.",
-      "items": [
-        {
-          "name": "🃏 Werkzeug-Pantomime",
-          "duration": 12,
-          "minAge": 6,
-          "loudness": "mittel",
-          "indoor": true,
-          "outdoor": true,
-          "material": "Karten mit Werkzeug-Namen (Hammer, Säge, Bohrer, Wasserwaage etc.)",
-          "anleitung": "Kind zieht Karte und stellt Werkzeug pantomimisch dar, andere raten. Pro 5 Karten Stempel-Bonus."
-        },
-        {
-          "name": "🎵 Bauarbeiter-Lied-Quiz",
-          "duration": 10,
-          "minAge": 6,
-          "loudness": "mittel",
-          "indoor": true,
-          "outdoor": false,
-          "material": "Smartphone mit 8 Baustellen/Bagger-Liedern (z.B. Kinder-Bob-der-Baumeister, Bagger-Songs)",
-          "anleitung": "Lied-Schnipsel 15 Sek abspielen, Kinder erraten Titel. Bonus-Stempel für Lieder-Wissen."
-        },
-        {
-          "name": "📐 Architekten-Skizzen-Battle",
-          "duration": 15,
-          "minAge": 7,
-          "loudness": "leise",
-          "indoor": true,
-          "outdoor": false,
-          "material": "Pro Kind 1 Pappschild + Bleistift + Beispiel-Karten (Haus/Brücke/Burg)",
-          "anleitung": "Jedes Kind zeichnet einen einfachen Bauplan. Architektin Hanna gibt Stilnote. Bonus-Stempel für klare Bemaßung."
-        }
-      ]
     }
   },
   "baustelle-gross": {
-    "_meta": {
-      "version": "2.6.0",
-      "lastUpdated": "2026-05-26",
-      "qualityNote": "v2.6 — Welle 11 GLOBAL Konsistenz-Sweep: 25+ 'Architekten-...' Phasen/Prüfungs-Bezeichnungen auf 'Bauleiter-...' vereinheitlicht (invitationTemplate, variants.label/headline/games, parentTips, prep, bonusGames). Story-Rollen 'Architektin Mia' und 'Architekt Klaus' bleiben — sind Personen, kein Phasen-Brand. Erwarteter Score 85+ nach -7, jetzt wirklich konsistent."
-    },
     "motto": "baustelle",
     "ageGroup": "gross",
     "ageRange": [
@@ -3356,8 +3049,6 @@ var ELITE_MOTTO_DATA = {
       12
     ],
     "title": "🚧 Baustelle-Kindergeburtstag — 9–12 Jahre",
-    "metaDescription": "Baustelle-Kindergeburtstag für 9-12-Jährige: 3 fertige Baustellen-Konzepte mit Bauleiter-Prüfung, bewertetem Bauklotz-Wettbewerb, Werkzeug-Quiz Klasse 2, Sabotage-Ermittlung und Bauleiter-Diplom mit Funktion.",
-    "introParagraph": "In dem Alter wollen Kinder ein Motto, das sie ernst nimmt — keine Bagger-Plüsch-Romantik, sondern Strategie, Statik, ein bisschen Druck. Diese Konzepte liefern das: Theorie-Briefing wie an einer Baustelle, bewerteter Bauklotz-Wettbewerb mit Stoppuhr und Statik-Note, Werkzeug-Quiz Klasse 2 mit echten Bau-Berufen, Sabotage-Ermittlung als Krimi-Phase (auf der Baustelle wurde sabotiert!) und Bauleiter-Diplom mit Funktion am Ende. Eltern können absetzen, in Wow-Variante völlig wegbleiben.",
     "ageInsight": {
       "headline": "Was 9–12-Jährige am Engineering-Aspekt der Baustelle anzieht",
       "whyMottoFitsHeadline": "🏗️ Warum Baustelle für 9-12-Jährige besonders gut funktioniert",
@@ -5621,127 +5312,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "name": "Baustellen-Kuchen XXL mit Bagger + Kran + Maurer",
-      "intro": "Baustellen-thematisch für 9-12: Großer Schoko-Rührkuchen, mit Krümel-'Sand' (Schoko-Kekse) bestreut, 2-3 Plastik-Bagger + Spielzeug-Kran + Marzipan-Maurer-Figur als Deko drauf. Aufwendiger als bei Jüngeren — passt zum Anspruch.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Schoko-Rührteig: 350 g Mehl, 300 g Zucker, 250 g Butter, 5 Eier, 60 g Kakao, 1 Pck. Backpulver, 200 ml Milch."
-        },
-        {
-          "n": 2,
-          "content": "In großer rechteckiger Form (Baustellen-Form) bei 175°C ca. 55 Min backen."
-        },
-        {
-          "n": 3,
-          "content": "Komplett auskühlen."
-        },
-        {
-          "n": 4,
-          "content": "Schoko-Ganache aufstreichen."
-        },
-        {
-          "n": 5,
-          "content": "Krümel-'Sand' aus zerbröselten Schoko-Keksen XXL aufstreuen."
-        },
-        {
-          "n": 6,
-          "content": "Plastik-Bagger + Kran + Kipper als Deko vorsichtig auf Kuchen setzen (vor Servieren entfernen!)."
-        },
-        {
-          "n": 7,
-          "content": "Marzipan-Maurer (kleine Figur mit Helm + Schubkarre) selber formen oder vorgefertigt kaufen."
-        },
-        {
-          "n": 8,
-          "content": "Optional: Marzipan-Werkzeug (Hammer/Säge/Schraubenschlüssel) als Streusel."
-        }
-      ],
-      "meta": {
-        "aufwand": "100 Min inkl. Backen + Verzieren",
-        "kosten": "ca. 15-18 €",
-        "allergiker": "Bei Ei-Allergie: vegan ersetzen. Marzipan = Mandeln (Nuss-Allergie!). Bei Lactose: pflanzliche Milch."
-      },
-      "tips": [
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Bäcker-Bestellung: großen rechteckigen Schoko-Kuchen (12-15 €) holen, Krümel-Sand drauf, 3 Plastik-Bagger + Spielzeug-Kran + Maurer-Marzipan-Figur als Deko. Spart 90 Min und 9-12-Jährige merken den Unterschied nicht."
-        },
-        {
-          "title": "🏗️ Marzipan-Maurer — wann es sich lohnt",
-          "body": "Marzipan-Bauarbeiter-Figur ist Wow-Wert, aber 30 Min Aufwand. Lohnt nur, wenn das Geburtstagskind WIRKLICH auf Bauarbeiter steht. Alternative: Schoko-Drops als \"Bauschutt\" + Marzipan-Werkzeug als Streusel — 5 Min, fast gleicher Wow-Effekt."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🥜 Marzipan = Mandeln",
-          "detail": "Baustellen-Kuchen XXL enthält Marzipan. Bei Nuss-/Mandel-Allergie unbedingt vorher fragen oder durch weißen Zuckerguss ersetzen."
-        },
-        {
-          "topic": "🔩 Kleine Holz-Schrauben ab 9 möglich",
-          "detail": "Mit Plastik-Schraubenzieher unter Aufsicht. Niemals scharfe Metall-Schrauben mit Spitzen, die kratzen können."
-        },
-        {
-          "topic": "🏖️ Spielsand geprüft",
-          "detail": "Nur zertifizierten Spielsand (DIN-Norm). Niemals Bau-Sand vom Baumarkt — kann Schadstoffe enthalten."
-        },
-        {
-          "topic": "🛒 Schubkarren leicht, Strecke kurz",
-          "detail": "Plastik-Schubkarren, Strecke max 10 m. Bei Olympiade: Stoppuhr zur Info, kein Druck."
-        },
-        {
-          "topic": "🧱 Bauklotz-Statik-Test ohne Verletzung",
-          "detail": "Wenn Lüfter für Stabilität-Test: weiche Klötze, niemand fängt fallende Klötze mit Gesicht."
-        },
-        {
-          "topic": "🕵️ Sabotage-Ermittlung kindgerecht",
-          "detail": "Krimi-Quest mit 'Schrauben gelockert' statt Mord. Auch 9-12 brauchen kindgerechten Rahmen."
-        },
-        {
-          "topic": "👥 Eltern absetzen reicht in Wow-Variante",
-          "detail": "9-12 wollen Party ohne Eltern. Telefonisch erreichbar reichen. 1-2 Erwachsene als 'Polier-Aufsicht'."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Stationen funktionieren drinnen. Brücken-Bau-Test im Wohnzimmer."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite."
-        }
-      ],
-      "educationalValue": "Bei der Bauleiter-Prüfung in 9-12 lernen die Kinder ECHTES Bau-Wissen: Statik (breite Basis = stabil, Dreiecke verstärken, Bogenform trägt), Bau-Berufe (Maurer/Elektriker/Tiefbau/Architekt/Polier), Materialien (Stein/Holz/Beton/Metall — Eigenschaften erfühlen), Werkzeug-Funktion (Wasserwaage misst gerade, Maßband misst Länge, Lot zeigt senkrecht). Plus: Detektiv-Logik (Sabotage-Ermittlung mit Verdächtigen, Motiven, Beweisen), Konstruktions-Planung (Bauplan vor Bau), Wettkampf-Fairness (Statik-Wertung, Brücken-Last-Test, Team-Pokal). Das Bauleiter-Diplom ist nicht Spielzeug — die Kinder gehen mit echtem Konstruktions-Wissen heim."
-    },
-    "invitationTemplate": "🚧 Bauleiter-Prüfung: 'Achtung Bauarbeiter! [Name] wird [Alter] und lädt zur Bauleiter-Prüfung Klasse 1 ein. Erwartet werden 4 Prüfungs-Stationen, eine Sabotage-Ermittlung (auf der Baustelle wurde sabotiert!) und der Bauleiter-Pokal-Wettbewerb. Wann: [Datum, Uhrzeit]. Wo: [Adresse] (= Baustelle Goldgasse). Mitbringen: alte Klamotten, Mut, gute Laune, Mathe-Köpfchen (Statik!). Bitte bis [Datum] melden. Auf zur Baustelle! 🏗️'",
-    "faq": [
-      {
-        "q": "Wie schwer macht man das Werkzeug-Quiz Schwierigkeitsstufe 2?",
-        "a": "Echte Fragen, aber mit visueller Hilfe. Beispiel: Bild Wasserwaage, Optionen: Hammer/Wasserwaage/Bohrer. Mit 12 auch: 'Wer verlegt elektrische Leitungen?' (Elektriker). Niemals Trick-Fragen."
-      },
-      {
-        "q": "Sind kleine Holz-Schrauben mit 9-12 sicher?",
-        "a": "Ja, mit Plastik-Schraubenzieher und unter Aufsicht. Größe min 3 cm, ohne scharfe Spitzen. Schrauben nicht in die Hand drücken, nur drehen."
-      },
-      {
-        "q": "Reicht ein Bauleiter-Pokal oder sollten alle gewinnen?",
-        "a": "Mit 9-12 ist EIN Wanderpokal richtig. Sieger-Team bekommt ihn für ein Jahr. Aber: alle bekommen Diplom + Funktions-Eintrag. Niemand geht als Loser heim."
-      },
-      {
-        "q": "Funktioniert die Sabotage-Ermittlung wirklich?",
-        "a": "Ja, das ist das Highlight bei 9-12. Wichtig: Verdächtige + Motive + Alibis müssen LOGISCH zusammenpassen. Eine Spur muss eindeutig zu EINER Person passen — sonst gibt's Streit. Lösung vor der Party 2× durchspielen."
-      },
-      {
-        "q": "Funktioniert das auch in einer kleinen Wohnung?",
-        "a": "Ja. Bauplan im Wohnzimmer, Bauklotz im langen Flur, Sabotage-Spuren in mehreren Räumen versteckt, Material-Erkennung am Esstisch. Bei wenig Platz: Stationen nacheinander statt parallel."
-      },
-      {
-        "q": "Wie laut wird die Bau-Olympiade?",
-        "a": "Lauter als bei 3-5 oder 6-8, aber kontrolliert. Schubkarren-Lauf drinnen leiser als draußen. Bei Mietshaus: Olympiade auf 17 Uhr legen, Nachbarn vorher informieren."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher",
@@ -5984,50 +5554,9 @@ var ELITE_MOTTO_DATA = {
         "fallback": "Wenn 2 Brücken brechen: Brücken-Phase beenden, mit Statik-Quiz fortfahren — \"warum brechen Brücken?\" als Lernspiel.",
         "tone": "klar"
       }
-    },
-    "bonusGames": {
-      "intro": "Bonus-Spiele für die Bauleiter-Prüfung — als 6. Station, Plan B oder Schlafparty-Anschluss.",
-      "items": [
-        {
-          "name": "🎬 Bau-Doku-Quiz",
-          "duration": 20,
-          "minAge": 9,
-          "loudness": "leise",
-          "indoor": true,
-          "outdoor": false,
-          "material": "12 Quiz-Karten zu Bauarbeiter-Berufen + bekannten Baustellen (Brandenburger Tor, Berliner Schloss, Tunnelbau Schweiz)",
-          "anleitung": "Filmtitel + Bauwerk erraten. Bonus-Stempel für Bauleiter-Akademie."
-        },
-        {
-          "name": "🔬 Material-Pantomime",
-          "duration": 12,
-          "minAge": 9,
-          "loudness": "mittel",
-          "indoor": true,
-          "outdoor": false,
-          "material": "Karten mit Materialien (Stein, Holz, Stahl, Beton, Glas, Kunststoff, Sand, Kies, Ziegel)",
-          "anleitung": "Kind zieht Karte und stellt Material durch Bewegung dar (Stein: schwer-gleichgewichtig, Glas: vorsichtig-zerbrechlich). Bonus-Stempel."
-        },
-        {
-          "name": "🏆 Bauleiter-Wandersieg-Tafel",
-          "duration": 10,
-          "minAge": 9,
-          "loudness": "mittel",
-          "indoor": true,
-          "outdoor": false,
-          "material": "Große Baustellen-Tafel + Filzstifte, Stempel-System",
-          "anleitung": "Am Ende: jedes Kind trägt Lieblings-Disziplin + Highlight auf die Wander-Tafel ein. Foto fürs Gruppen-Album. Identitäts-Anker."
-        }
-      ]
     }
   },
   "detektiv-klein": {
-    "_meta": {
-      "source_file": "kindergeburtstag/detektiv-3-5-jahre.html",
-      "extracted": "2026-05-21",
-      "schema_version": "1.0",
-      "purpose": "Elite-Motto-Data für Planer-Frisur-Sprint (P3-13..P3-18). Phase-B-Schreibarbeit für Detektiv 3-5, analog safari-klein."
-    },
     "motto": "detektiv",
     "ageGroup": "klein",
     "ageRange": [
@@ -6035,8 +5564,6 @@ var ELITE_MOTTO_DATA = {
       5
     ],
     "title": "🔍 Detektiv-Kindergeburtstag — 3–5 Jahre",
-    "metaDescription": "Detektiv-Kindergeburtstag für 3-5-Jährige als Spürnasen-Tag: 3 fertige Konzepte mit Zeitplan, einfachen Spielen, Spuren-Suche mit Lupe und Urkunde. Kostenlos.",
-    "introParagraph": "Dein Kind wird 3, 4 oder 5 und schaut sich gern alles ganz genau an? Hier sind drei fertige Detektiv-Konzepte, die ohne Stress funktionieren. Wichtig vorab, ehrlich gesagt: 3-5-Jährige sind keine kleinen Kommissare. Echte Fälle, Verdächtige oder gar gruselige Themen überfordern sie. Was funktioniert, ist eine winzige, freundliche Mission — ein verschwundener Geburtstagskuchen, ein verstecktes Lieblingstier, eine Spur aus Schoko-Münzen. Mit Lupe, Detektiv-Mütze und viel Suchen-und-Finden wird daraus ein Tag, an dem jedes Kind eine kleine Spürnase ist und am Ende stolz eine Urkunde bekommt.",
     "signatureRitual": {
       "name": "Das kleine Detektiv-Versprechen",
       "subtitle": "Eröffnet die Party + Urkunden-Übergabe am Ende",
@@ -7040,118 +6567,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "intro": "Der Spürnasen-Kuchen ist ein simpler Schoko-Marmorkuchen mit einer Lupe aus weißem Zuckerguss obendrauf — gefunden am Ende der ersten Spur. Sieht aus wie das Detektiv-Werkzeug, schmeckt aber nach ganz normalem Kuchen. Kein Backtalent nötig: Wer den Guss nicht hinbekommt, legt einfach eine echte Pappkarton-Lupe als Deko auf den Kuchen.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Rührteig anrühren (250 g Mehl, 200 g Butter, 150 g Zucker, 4 Eier, 1 Pck. Backpulver, etwas Milch). Die Hälfte mit 2 EL Kakao dunkel färben."
-        },
-        {
-          "n": 2,
-          "content": "Hellen und dunklen Teig abwechselnd in eine gefettete Kastenform geben und mit einer Gabel einmal spiralig durchziehen — das gibt das Marmor-Muster."
-        },
-        {
-          "n": 3,
-          "content": "Bei 175 °C ca. 50–55 Minuten backen (Stäbchenprobe). Komplett auskühlen lassen, sonst läuft der Guss."
-        },
-        {
-          "n": 4,
-          "content": "Aus Puderzucker und wenig Wasser einen dicken weißen Zuckerguss anrühren — er soll zähflüssig sein, nicht verlaufen."
-        },
-        {
-          "n": 5,
-          "content": "Mit dem Guss eine große Lupe auf die Kuchen-Oberseite malen: ein Kreis (Glas) und ein schräger Strich (Griff). Mit einer Spritztüte oder einem Gefrierbeutel mit kleiner Ecke geht das am leichtesten."
-        },
-        {
-          "n": 6,
-          "content": "Optional ein paar Schoko-Münzen oder Schoko-Streusel neben die Lupe legen — fertig ist der Beweismittel-Kuchen."
-        }
-      ],
-      "meta": {
-        "aufwand": "mittel (Rührteig + 15 Min. Deko)",
-        "kosten": "ca. 5-8 €",
-        "allergiker": "Zuckerguss-Lupe weglassen und stattdessen eine Pappkarton-Lupe als Deko auflegen; bei Ei-Allergie auf veganes Rührteig-Rezept ausweichen."
-      },
-      "tips": [
-        {
-          "title": "Keine Lust oder Zeit zu backen?",
-          "body": "Fertigen Marmorkuchen vom Bäcker oder aus dem Supermarkt holen und nur die Zuckerguss-Lupe daraufmalen — oder eine echte Pappkarton-Lupe als Deko auflegen. Niemand merkt den Unterschied, und der „Fund“ wirkt genauso."
-        },
-        {
-          "title": "Vorsicht bei Pinterest-Detektiv-Torten",
-          "body": "Die aufwändigen Krimi-Torten mit Fondant-Lupen, essbaren Fingerabdrücken und schwarzem Guss aus dem Netz brauchen Stunden und Übung. Für 3-5 ist das verschenkte Mühe — die Kinder feiern das Suchen, nicht die Torte. Halt es simpel."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🥜 Allergien VOR der Party abfragen",
-          "detail": "In der Einladung fragen. Die Schoko-Münzen und der Kuchen enthalten oft Milch, Nüsse und Ei — halte für betroffene Kinder eine sichere Alternative (z.B. Trockenobst-Münzen, allergikerfreundliche Snacks) bereit."
-        },
-        {
-          "topic": "😨 Keine Angst-Themen",
-          "detail": "Bei 3-5 niemals echte „Verbrecher“, Dunkelheit ohne Begleitung oder gruselige Spannung. Gesucht wird immer nur Verlorenes — Kuchen, Kuscheltier, Münzen. Das hält den Tag freundlich und verhindert Tränen."
-        },
-        {
-          "topic": "🔦 Lupe ist das Herzstück",
-          "detail": "Die selbst gebastelte Lupe trägt das ganze Motto. Investier die meiste Vorbereitungszeit hier: ein gutes Werkzeug, ordentlich übergeben, ersetzt jede teure Deko."
-        },
-        {
-          "topic": "👥 Ab 8 Kindern: zweite Hand dazu",
-          "detail": "Bei 8+ Kindern brauchst du eine zweite erwachsene Begleitung — vor allem für die Such-Spiele, wenn die Gruppe in zwei Trupps geteilt wird. Frag ein abholendes Elternteil, ob es eine Stunde bleibt."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Spiele laufen auch komplett drinnen. Leg die Spur in Schleifen durch zwei Räume statt von Zimmer zu Zimmer — für 3-5 fühlt sich das genauso nach einer langen Reise an. Details im SOS-Bereich."
-        },
-        {
-          "topic": "⏱️ Tempo niedrig halten",
-          "detail": "Nach 10-15 Minuten kippt die Aufmerksamkeit. Plan nach jeder bewegten Such-Runde eine ruhige Phase (Quiz, Kuchen, Basteln) ein — der Wechsel aus laut und leise trägt den ganzen Nachmittag."
-        },
-        {
-          "tip": "Schoko-Muenzen-Folie",
-          "content": "Bei 3-Jaehrigen Folie SCHON vorher entfernen — Schoko-Muenzen ohne Folie auslegen. Folie sammeln + wegwerfen. Alternativ: Trockenobst-Taler (Hartriegel + Mandelmus, folienfrei)."
-        },
-        {
-          "topic": "🏠 Wohnung als Tatort denken",
-          "detail": "Schau die Räume mit Detektiv-Augen an: Sofakissen (Versteck-Klassiker), Vorhang (dunkle Ecke für Taschenlampe), unter Tisch (Krabbel-Ziel), Regalbrett auf Kinderhöhe (sichtbarer Schatz). Drei bis vier solcher „Mikro-Verstecke“ in einem Raum fühlen sich für 3-5 nach einer Detektiv-Reise an, ohne dass du die ganze Wohnung präparierst."
-        },
-        {
-          "topic": "🌳 Garten als Bonus, nicht Pflicht",
-          "detail": "Garten verlängert die Spur ohne Mehraufwand: zwischen Bäumen, um den Sandkasten, unter die Bank. Aber: Wenn das Wetter schlecht wird, ist das KEIN Plan-B-Problem — die Wohnung trägt allein. Den Garten lieber als „Wir laufen einmal raus zum Endpunkt“-Schluss-Sequenz einsetzen statt als ganzen Schauplatz."
-        }
-      ],
-      "educationalValue": "Die Kinder üben bei der Detektiv-Party ganz nebenbei: genau hinschauen und beobachten (Spuren-Suche, Hinweis-Quiz), geduldig dranbleiben, bis etwas gefunden ist, und das gute Gefühl, gemeinsam ein Ziel zu erreichen — niemand gewinnt allein, alle finden zusammen. Der „Wir-finden-das-wieder“-Frame stärkt das Selbstvertrauen: Ein Kind erlebt, dass es mit einem einfachen Werkzeug selbst ein Problem lösen kann — der Schritt vom magischen Suchspiel zum zielgerichteten Denken, der mit 3-5 ansteht."
-    },
-    "invitationTemplate": "Lust auf passende Detektiv-Einladungen? Der Einladungs-Generator auf machsleicht baut dir Spürnasen-Karten mit Datum, Treffpunkt, Zusage-Link und Allergie-Abfrage in 2 Minuten — inklusive kleinem Detektiv-Auftrag für die kleinen Gäste. (Cross-Sell-Hinweis, kein fertiges Template.)",
-    "faq": [
-      {
-        "q": "Ist Detektiv für 3–5 nicht zu gruselig?",
-        "a": "Nein — wenn du es richtig anlegst. Für diese Altersgruppe gibt es keine Verbrecher, kein Tatort, keine Dunkelheit. Gesucht wird nur Verlorenes: der Kuchen, ein Kuscheltier, Schoko-Münzen. Das ist Suchen-und-Finden in Detektiv-Verkleidung — freundlich und harmlos."
-      },
-      {
-        "q": "Funktioniert das auch in einer kleinen Wohnung?",
-        "a": "Ja. Die Spur muss nicht durch viele Zimmer führen — in Schleifen durch einen oder zwei Räume gelegt (um Sofa, hinter Vorhang, unter Tisch), wirkt sie für 3-5 wie eine lange Detektiv-Reise. Lupe und Suchen brauchen wenig Platz."
-      },
-      {
-        "q": "Brauchen die Kinder echte Lupen?",
-        "a": "Nein — die selbst gebastelte Pappkarton-Lupe mit Klarsicht-Folie ist sogar besser. Sie ist Ritual-Objekt, Bastel-Aktion und Mitgebsel in einem. Plastik-Lupen sind robuster, nehmen dem Tag aber den Bastel-Charme."
-      },
-      {
-        "q": "Was, wenn ein Kind nicht mitsuchen will?",
-        "a": "Kein Zwang. Mütze, Lupe und Urkunde bekommt jedes Kind, egal ob es mitsucht. Schüchterne Kinder bleiben beim Elternteil oder bekommen die ruhige Kuschel-Wächter-Rolle. Niemand muss vorsprechen oder gewinnen."
-      },
-      {
-        "q": "Ist die Fingerabdruck-Station nicht zu kleckrig für 3-5?",
-        "a": "Mit der richtigen Vorbereitung nicht. Nimm ein abwaschbares Stempelkissen auf Wasserbasis (kindgeprüft), eine wischbare Unterlage und feuchte Tücher direkt daneben. Du führst den Daumen selbst — ein Abdruck pro Kind reicht. Sofort danach Hände wischen, dann landet keine Farbe auf Mütze oder Tapete. Geht 10 Minuten und gibt jedem Kind seinen eigenen kleinen „Beweis“."
-      },
-      {
-        "q": "Was tun, wenn ein Kind die Spur einfach nicht findet?",
-        "a": "Bei 3-5 nie still daneben stehen. Geh mit, drück dem Kind die Lupe in die Hand und zeige unauffällig auf die nächste Fußspur. Wenn nötig, leg eine Schoko-Münze dorthin, wo es gerade hinschaut — die „Spürnase“ hat gefunden, niemand merkt etwas. Alle Funde gehören der Gruppe, nicht dem Schnellsten."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -7438,14 +6853,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "detektiv-mittel": {
-    "_meta": {
-      "source_file": "kindergeburtstag/detektiv-6-8-jahre.html",
-      "extracted": "2026-05-21",
-      "schema_version": "1.0",
-      "purpose": "Detektiv 6-8 — Phase B Elite-Motto-Data (Stream B)",
-      "phase_b_complete": "2026-05-21",
-      "phase_b_method": "Direct draft auf Basis weltraum-mittel.json (Pattern Score 96) + safari-mittel.json (92) + detektiv-6-8-jahre.html. Detektiv-Spezifika: Junior-Detektive (Spurenleser/Befrager/Code-Knacker), Detektiv-Schwur & Marken-Uebergabe, Fall 'Wer hat den Geburtstagskuchen versteckt?', einfache 3-4-Buchstaben-Echtwort-Codes (SPUR/JAGD/CODE), Fingerabdruck-Station + Geheimtinte mit Zitronensaft, optional Trenchcoat-Kostueme + Mehrraum-Krimi. Bewusst keine echten Verbrechen — kindgerechter 'Kuchen-versteck'-Fall."
-    },
     "motto": "detektiv",
     "ageGroup": "mittel",
     "ageRange": [
@@ -7453,8 +6860,6 @@ var ELITE_MOTTO_DATA = {
       8
     ],
     "title": "🔍 Detektiv-Kindergeburtstag — 6–8 Jahre",
-    "metaDescription": "Detektiv-Kindergeburtstag für 6-8 Jahre: 3 fertige Ablaufpläne, 9 Spiele mit Lupe, Fingerabdrücken & Geheimtinte, Schwur-Ritual, Kuchen-Idee & SOS-Plan.",
-    "introParagraph": "Dein Kind wird 6, 7 oder 8 und löst am liebsten Rätsel, sucht nach Hinweisen und will wissen, wer was wann gemacht hat? Dann ist ein Detektiv-Geburtstag genau richtig. In diesem Alter lieben Kinder es, eine echte Aufgabe zu bekommen, im Team zu suchen und am Ende stolz zu verkünden: \"Fall gelöst!\". Du bekommst hier drei komplett durchgeplante Varianten — von schnell und entspannt bis zur großen Krimi-Story durch mehrere Räume — mit neun erprobten Spielen, einem Schwur-Ritual zum Start, einer Kuchen-Idee und einem Notfall-Plan, falls etwas schiefgeht. Kein Vorwissen nötig, keine teure Ausrüstung: Lupe, Papier und ein bisschen Zitronensaft reichen für den ersten echten Fall.",
     "ageInsight": {
       "headline": "Was 6–8-Jährige ausmacht — und was das für den Detektiv-Geburtstag bedeutet",
       "traits": [
@@ -8535,118 +7940,6 @@ var ELITE_MOTTO_DATA = {
         "costContext": "Geschätzte Kosten (Wow, 8–10 Kinder) — der Großteil entfällt auf Lebensmittel und optionale habIchVielleicht-Posten; das Pflicht-Detektiv-Material bleibt überschaubar."
       }
     ],
-    "cakeRecipe": {
-      "intro": "Geht mit jedem Kasten- oder Blechkuchen. Das Besondere ist nicht das Backen, sondern die Detektiv-Deko: Aus einem normalen Kuchen wird mit Lupe-Topper, Fußspuren aus Schokolinsen und einem \"Fragezeichen\" der Star des Falls.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Kastenkuchen oder Blechkuchen backen — Fertigmischung ist völlig okay und oft allergenärmer als selbst gemischt."
-        },
-        {
-          "n": 2,
-          "content": "Auskühlen lassen, dann mit dunkler Schokoglasur oder Kuvertüre überziehen — die dunkle Fläche ist die \"Akte\"."
-        },
-        {
-          "n": 3,
-          "content": "Aus Schokolinsen oder bunte Schoko-Linsen eine Reihe Fußspuren über den Kuchen legen — der Täter ist entkommen."
-        },
-        {
-          "n": 4,
-          "content": "Ein großes Fragezeichen aus weißer Glasur oder Zuckerschrift aufspritzen — das Detektiv-Symbol."
-        },
-        {
-          "n": 5,
-          "content": "Optional: eine essbare oder aus Pappe gebastelte Mini-Lupe als Topper draufsetzen."
-        },
-        {
-          "n": 6,
-          "content": "Mit Namen des Geburtstagskindes als \"Chef-Detektiv\" beschriften — fertig ist die Detektiv-Torte."
-        }
-      ],
-      "meta": {
-        "aufwand": "45 Min. inkl. Backen und Deko",
-        "kosten": "~8 €",
-        "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreation; Glasur und Deko bei Bedarf vegan/nussfrei wählen und Zutaten vorher mit den Eltern abklären."
-      },
-      "tips": [
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Fertigen Kuchen beim Bäcker oder Supermarkt kaufen und nur mit Schokolinsen-Fußspuren und Fragezeichen aus der Tube dekorieren — 10 Minuten, gleicher Detektiv-Effekt."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🚨 Allergien vorher abfragen",
-          "detail": "Bei 8 Kindern hat statistisch mindestens eins eine Unverträglichkeit. Bei der Einladung kurz nach Allergien fragen und die \"Beweisstück\"-Snacks entsprechend planen — Detektiv-Brote lassen sich leicht nuss- und laktosefrei machen."
-        },
-        {
-          "topic": "⏱️ Lieber zu leicht als zu schwer",
-          "detail": "Ein Rätsel, das die Gruppe nicht löst, kippt die Stimmung sofort. Halte einen \"Tipp-Umschlag\" pro Spiel bereit. Es ist immer besser, ein Kind ruft zu früh \"gelöst!\", als dass alle frustriert aufgeben."
-        },
-        {
-          "topic": "🧑‍🤝‍🧑 In 2er-Teams ermitteln",
-          "detail": "Einzeln suchen überfordert die Jüngsten und macht die Schnellen ungeduldig. Feste 2er- oder 3er-Teams sorgen dafür, dass immer jemand mitdenkt und kein Kind allein dasteht, wenn ein Hinweis nicht gleich auftaucht."
-        },
-        {
-          "topic": "👀 Eine zweite erwachsene Person",
-          "detail": "Bei Spurensuche durch die Wohnung und Geheimtinte mit Wärmequelle ist eine zweite Aufsichtsperson Gold wert — eine führt die Story, eine behält die Gruppe und die Sicherheit im Blick."
-        },
-        {
-          "topic": "📸 Verdächtige sind harmlos",
-          "detail": "Achte darauf, dass \"Verdächtige\" und der gelöste Fall freundlich bleiben. Der Täter hat den Kuchen nur als Überraschung versteckt — kein echtes Verbrechen, nichts Gruseliges. So bleibt die Spannung im kindgerechten Bereich."
-        },
-        {
-          "topic": "🎒 Pufferzeit einplanen",
-          "detail": "Kinder lösen Rätsel mal in 5, mal in 20 Minuten. Plane pro Spiel etwas Luft ein und habe ein kurzes Reserve-Spiel (z.B. \"Detektiv-Memory\") parat, falls am Ende noch Zeit ist — oder kürze, wenn es länger dauert."
-        },
-        {
-          "topic": "🏠 Wohnung als Tatort denken",
-          "detail": "Verteile die Stationen bewusst auf verschiedene Räume: Tatort im Wohnzimmer (Absperrband), Verhör in der Küche (Sitzplätze), Fingerabdruck-Labor am Esstisch, Geheimtinte im abgedunkelten Bad/Flur. Das macht aus deiner Wohnung eine echte Detektiv-Agentur — und wenn ein Spiel kippt, gibt es im nächsten Raum schon den Reset."
-        },
-        {
-          "topic": "🌳 Garten-Erweiterung: ja, aber als Bonus",
-          "detail": "Garten ist ideal für den Spuren-Parcours (mehr Bewegung) und die Beschattungs-Mission (mehr Platz zum Pirschen). Aber: Plane immer eine Indoor-Alternative parallel — Regen macht 30 Minuten vor Party-Start aus dem Garten-Plan eine Stress-Situation, wenn es keinen Plan-B gibt."
-        }
-      ],
-      "educationalValue": "Hinter dem Detektiv-Spiel steckt echtes Lernen. Beim Befragen der Verdächtigen und Vergleichen der Aussagen üben Kinder logisches Schlussfolgern und das Entdecken von Widersprüchen — eine Grundfähigkeit für Mathe und Sachkunde. Das Code-Knacken trainiert Mustererkennung und stärkt die entstehende Lesekompetenz. Fingerabdrücke und Geheimtinte liefern erste naturwissenschaftliche Aha-Momente. In den 2er-Teams üben die Kinder Zusammenarbeit und Geduld. Und über allem steht das Selbstwirksamkeits-Gefühl: \"Wir haben den Fall gelöst\" — das nimmt jedes Kind als Selbstvertrauen mit nach Hause."
-    },
-    "invitationTemplate": "🔍 Geheime Detektiv-Akte per WhatsApp verschicken: \"AKTE ERÖFFNET: [Name] wird [Alter]! Wir suchen Junior-Detektive für einen kniffligen Fall. Wann: [Datum, Uhrzeit]. Wo: [Adresse]. Mitbringen: scharfe Augen und Detektiv-Spürsinn. Bitte bis [Datum] melden, ob du den Fall annimmst. Streng geheim! 🕵️\" — Optional ein Foto einer Lupe oder eines Fragezeichens dazu, dann wirkt es wie eine echte Akte.",
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Detektiv-Geburtstag für 6–8-Jährige dauern?",
-        "a": "2 bis 4 Stunden, je nach Variante. Minimal: 2 Stunden mit Spurensuche und Code-Knacken. Standard: 3 Stunden mit dem kompletten Fall inklusive Befragung und Fingerabdrücken. Wow: 4 Stunden mit Kostümen und Multi-Raum-Story. Mehr als 4 Stunden überfordert die meisten Kinder dieser Altersgruppe."
-      },
-      {
-        "q": "Sind die Detektiv-Fälle für 6-Jährige nicht zu gruselig?",
-        "a": "Nein — bewusst nicht. Es geht nie um echte Verbrechen, sondern um einen harmlosen Fall: Jemand hat den Geburtstagskuchen versteckt, um eine Überraschung zu machen. Keine Einbrüche, nichts Bedrohliches. Die \"Verdächtigen\" bleiben freundlich, und am Ende lacht der \"Täter\" über seine gelungene Überraschung."
-      },
-      {
-        "q": "Was, wenn manche Kinder noch nicht lesen können?",
-        "a": "Das ist eingeplant. Alle Codes und Hinweise tragen Bilder UND Buchstaben, sodass nicht-lesende Kinder über das Bild mitkommen. Außerdem gibt es Rollen ohne Lese-Anforderung — Spurenleser, Protokollführer (malt), Beweis-Fotograf. So hat jedes Kind eine wichtige Aufgabe, egal wie weit es beim Lesen ist."
-      },
-      {
-        "q": "Brauche ich teures Detektiv-Zubehör?",
-        "a": "Nein. Das einzige, was du wirklich kaufen solltest, sind Kinder-Lupen (ca. 9–14 € im Set). Geheimtinte ist Zitronensaft, der Tatort entsteht aus Krepp-Band, Fußspuren aus Tonpapier, der Tresor aus einem Karton. Das meiste hast du im Haus — die Story macht die Magie, nicht das Material."
-      },
-      {
-        "q": "Wie verhindere ich, dass ein Rätsel die Stimmung kippt?",
-        "a": "Halte pro Spiel einen \"Tipp-Umschlag\" bereit und gib lieber früh einen Hinweis. Kinder von 6–8 frustrieren schnell, wenn etwas zu schwer ist. Die Faustregel: Ein zu leicht gelöstes Rätsel ist kein Problem, ein ungelöstes schon. Im Zweifel führst du die Gruppe mit warm/kalt-Hinweisen ans Ziel."
-      },
-      {
-        "q": "Wie verhindere ich Streit, wer den Fall „gelöst hat“?",
-        "a": "Mache Gruppenarbeit zur Regel — schon beim Schwur. Sag klar: „Wir lösen den Fall zusammen, niemand ist Chefermittler.“ Beim großen Code wird jeder Buchstabe sichtbar einem Team zugeordnet, sodass die Lösung erkennbar Gruppenarbeit ist. Die Diplome formulierst du gleichwertig („Ehren-Detektiv im Fall XY“) statt mit unterschiedlichen Rängen. Wenn doch zwei Kinder streiten, beide zu „Co-Code-Knackern“ machen — zwingt zur Kooperation."
-      },
-      {
-        "q": "Brauche ich für die Beschattungs-Mission einen extra Erwachsenen?",
-        "a": "Nicht zwingend — ein älteres Geschwisterkind reicht oder ein abholendes Elternteil, das kurz vorher schon da ist. Der „Verdächtige“ muss nur durch 3-4 Räume gehen und auffällige Dinge tun (Buch anfassen, ein Beweisstück hinlegen). Geht in 20 Minuten und kostet null Material. Wenn niemand verfügbar ist, kann auch ein großes Stofftier mit Begleit-Story als „Verdächtiger“ dienen, das du heimlich umsetzt."
-      },
-      {
-        "q": "Was ist mit Kindern, die nicht gut lesen können?",
-        "a": "Alle Codes und Hinweise haben Bilder UND Buchstaben — das ist eingeplant. Wer noch nicht sicher liest, kommt über das Bild mit. Außerdem gibt es Rollen ohne Lese-Anforderung: Spurenleser (sucht), Protokollführer (malt statt schreibt), Beweis-Fotograf, Karten-Hüter. Bei der Verdächtigen-Befragung dürfen ältere Kinder oder der „Befrager“ vorlesen — niemand muss vor der Gruppe lesen."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -8971,14 +8264,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "detektiv-gross": {
-    "_meta": {
-      "source_file": "kindergeburtstag/detektiv-9-12-jahre.html",
-      "extracted": "2026-05-21",
-      "schema_version": "1.0",
-      "purpose": "Detektiv 9-12 — Phase B Elite-Slot (Kriminalfall-Simulation, Escape-Room-Style, kein Tempo-Stempel, Codeknacker-Kern mit echten Woertern)",
-      "phase_b_complete": "2026-05-21",
-      "phase_b_method": "Writer-Subagent Stream-C. Codeknacker-Math VORHER per Skript verifiziert: INDIZ (Spurensicherer, Haeufigkeit am Tatort), MOTIV (Profiler, Verdachts-Staerke), BEWEIS (Code-Knacker, Beweis-Wert) für Minimal; TAT (Standard, odd-one-out Asservaten) am Tatort-Ort; TRESOR (Wow, 6-Stationen-Schatzsuche, inkl. Caesar-Chiffre F->E und Zahlencode 18->R). Alle Loesungswoerter sind echte deutsche Woerter — kein INSEL-/Pseudo-Salat. Plot-Twist: staerkster MOTIV-Verdacht ist Ablenkung, BEWEIS-Faser ueberfuehrt den wahren Taeter. Sorgfalt-Spezialist statt 1.-Detektiv. Keine reale Gewalt — Diebstahl/Verschwinden statt Verbrechen gegen Personen."
-    },
     "motto": "detektiv",
     "ageGroup": "gross",
     "ageRange": [
@@ -8986,8 +8271,6 @@ var ELITE_MOTTO_DATA = {
       12
     ],
     "title": "🔍 Detektiv-Kindergeburtstag — 9–12 Jahre",
-    "metaDescription": "Detektiv-Kindergeburtstag für 9-12-Jährige: 3 fertige Fall-Konzepte mit Spurensicherer-, Profiler- und Code-Knacker-Spezialisierung, echten Codes, Tatort-Sicherung, Zeitplan und Einkaufsliste. Kostenlos.",
-    "introParagraph": "Mit 9-12 ist die „Wer-hat-die-Murmel“-Schnitzeljagd durch — was jetzt zieht, ist ein echter Fall mit echten Indizien. Die Crew übernimmt eine Ermittlung: Jedes Kind spezialisiert sich (Spurensicherer, Profiler, Code-Knacker), sichert einen Tatort, vergleicht Aussagen und knackt Codes, die ohne Zusammenarbeit nicht aufgehen. Kein Wer-ist-zuerst-fertig, sondern genaues Hinschauen — denn der offensichtlichste Verdächtige ist nicht der Täter. Drei Varianten von 2,5 Stunden Minimal bis zur Schlafparty mit nächtlicher Spurensuche unter UV-Licht.",
     "ageInsight": {
       "headline": "Was 9–12-Jährige ausmacht — und was das für den Detektiv-Fall heißt",
       "traits": [
@@ -10328,138 +9611,6 @@ var ELITE_MOTTO_DATA = {
         "ageNote": "Empfohlen ab 10 Jahren — zwei Module (Kreuzverhoer, UV-Nacht-Spurensuche) sind für 9-Jaehrige nicht freigegeben (minAge=10). Bei reiner 9-Jahre-Gruppe diese durch Standard-Verhoer bzw. fruehen Abschluss ersetzen."
       }
     ],
-    "cakeRecipe": {
-      "intro": "Geht mit jedem Blechkuchen. Das Besondere ist die Tatort-Optik obendrauf — Absperrband aus Fondant und ein Kreide-Umriss aus Zuckerguss. Nicht das Backen.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "1 Blechkuchen backen — Fertigmischung reicht (Dr. Oetker, Kathi, Aurora). Schoko oder Vanille. 9-12-Jährige merken den Unterschied zu Selbstgemacht nicht."
-        },
-        {
-          "n": 2,
-          "content": "Komplett abkühlen lassen. Ungeduld = Glasur-Desaster."
-        },
-        {
-          "n": 3,
-          "content": "Grund-Glasur dunkel: Schokoglasur oder Puderzucker + Wasser + 1 Tropfen schwarze/dunkle Lebensmittelfarbe (wirkt wie nächtlicher Tatort). Großzügig drüberstreichen."
-        },
-        {
-          "n": 4,
-          "content": "Absperrband aus rotem oder gelbem Fondant: dünne Streifen ausrollen, mit Lebensmittelstift „TATORT“ daraufschreiben, diagonal über den Kuchen legen."
-        },
-        {
-          "n": 5,
-          "content": "Kreide-Umriss: mit weißem Zuckerguss aus dem Spritzbeutel die Umriss-Silhouette einer „verschwundenen Figur“ (z. B. eines Erbstücks oder Schlüssels) auf die dunkle Glasur zeichnen — wie am echten Tatort."
-        },
-        {
-          "n": 6,
-          "content": "Lupe und Fragezeichen aus Fondant oder Zuckerschrift ergänzen. Optional ein paar „Beweis-Marker“ (kleine nummerierte Zucker-Plättchen)."
-        },
-        {
-          "n": 7,
-          "content": "Optional Wow: einen kleinen „Tresor“ aus Schokoladen-Quadraten am Rand — visuelles Bindeglied zur Escape-Room-Mission."
-        },
-        {
-          "n": 8,
-          "content": "Wunderkerze in die Mitte für Happy Birthday. Foto — der Kreide-Umriss kommt auf Bildern besonders gut."
-        }
-      ],
-      "meta": {
-        "aufwand": "60 Min. inkl. Backen und Tatort-Optik",
-        "kosten": "~9 €",
-        "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. Fondant kann Spuren enthalten; für Allergiker auf gefärbten Zuckerguss ausweichen."
-      },
-      "tips": [
-        {
-          "title": "Keine Lust zu backen?",
-          "body": "Ein gekaufter Blechkuchen vom Bäcker oder Discounter funktioniert genauso — die Tatort-Optik obendrauf machst du in 15 Minuten selbst. Niemand merkt, dass der Boden gekauft ist."
-        },
-        {
-          "title": "Der Kreide-Umriss ist der Trick",
-          "body": "Der Wow-Effekt kommt nicht vom Teig, sondern von der weißen Umriss-Silhouette auf der dunklen Glasur und dem Fondant-Absperrband. Das verbindet den Kuchen direkt mit dem Fall — die Kinder erkennen „ihren“ Tatort wieder."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🚨 Allergien vorher abfragen — bei Schlafparty mit Medikamenten",
-          "detail": "Bei 8-10 Kindern in dieser Altersgruppe sind Unverträglichkeiten häufig (Nüsse, Laktose, Gluten). Das Asservaten-Pizza-Buffet löst das elegant — es gibt eh Auswahl. Bei Schlafparty zwingend abfragen: Medikamente, Asthma-Inhalator, Allergie-Notfallplan."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Stationen funktionieren drinnen: Spuren-Sicherung am Wohnzimmertisch, Verhör im „Verhör-Raum“, Geheimschrift am Tisch, Beobachtungs-Gedächtnis am Esstisch, Codeknacker mit Asservaten-Tüten, UV-Werkstatt in der abgedunkelten Ecke. Nur Garten-Spuren verlegst du nach drinnen — Mehl-Abdrücke gehen auf dunklem Papier genauso."
-        },
-        {
-          "topic": "🧑‍🤝‍🧑 Wie viele Helfer? Realistisch geplant",
-          "detail": "Standard mit 8 Kindern: 1 Helfer reicht. Du leitest Hauptmission und Lizenz-Zeremonie, der Helfer betreut die wartenden Stationen. Solo machbar bei guter Vorbereitung — jede Station hat eine Lösungs-Karte zur Selbstkontrolle. Wow mit 10 Kindern: 1-2 Helfer empfohlen, besonders für die parallele Pizza-Station."
-        },
-        {
-          "topic": "🕵️ Den Plot-Twist nicht verraten",
-          "detail": "Der Clou des Falls ist, dass der mit dem stärksten Motiv (Mara) NICHT der Täter ist. Verrate das nicht vorab — die Kinder sollen selbst draufkommen. Wenn ein Kind zu früh „Mara war's!“ ruft, frag zurück: „Welcher Beweis sagt das? Ein Motiv ist noch kein Beweis.“ Genau dieser Aha-Moment trägt die Party."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Statt 10 Einzel-Nachrichten an die Eltern: eine WhatsApp-Partyseite mit machsleicht. Adresse, Uhrzeit, Kleidungs-Hinweis (dunkle/unempfindliche Kleidung wegen Mehl und Stiften), Abholzeit, Allergie-Abfrage, bei Schlafparty die Medikamenten-Abfrage — alles an einem Ort."
-        },
-        {
-          "topic": "🕒 Abholzeit vorher klären — bei Schlafparty doppelt",
-          "detail": "„Wir holen so gegen 17 Uhr ab“ ist keine Abholzeit. Konkret in die Einladung: „Abholung 17:30, die Lizenz-Zeremonie ist um 17:00 und wir wollen den Fall-Abschluss nicht stressen.“ Bei Schlafparty schriftlich bestätigen lassen, wer wann abholt."
-        },
-        {
-          "topic": "🏠 Wohnung als Detektiv-Agentur denken",
-          "detail": "Verteile die fünf Stationen sichtbar auf verschiedene Räume: Tatort im Wohnzimmer (Absperrband, Fingerabdruck-Glas), Verhör-Raum in der Küche (Aussage-Karten + Zeitleiste), Codeknacker am Esstisch, Geheimschrift-Ecke im halbdunklen Flur, Beobachtungs-Tablett am Sideboard. Die Wohnung wird zur „Villa Sonnberg“ — und die Raum-Wechsel selbst sind schon Bewegung."
-        },
-        {
-          "topic": "🌳 Garten-Erweiterung für die Wow-Variante",
-          "detail": "Garten ist Pflicht-Plus für die TRESOR-Schatzsuche und die UV-Nacht-Spurensuche. Spuren-Sicherung im Beet (echter Schuhabdruck im Sand) wirkt 10× authentischer als drinnen. Aber: Alle 5 Standard-Stationen funktionieren komplett indoor — der Garten ist Ergänzung, nicht Voraussetzung. Vor der Schlafparty-Nacht-Spurensuche: Stolperfallen im Dunkeln vorher entschärfen."
-        },
-        {
-          "topic": "📷 DSGVO bei Kinder-Fotos",
-          "detail": "Fotos von Gaestekindern nur mit kurzer Rueckfrage bei den Eltern (muendlich beim Bringen reicht). Sofortbilder auf den Ausweis sind unkritisch, weil sie beim Kind bleiben — ein gemeinsames \"Beweis-Album\" oder das Posten von Fotos nur mit Einverstaendnis. Beim \"Tatort-Fotograf\"-Rollenspiel kann statt Gesichtern auch nur die Tatort-Szene fotografiert werden."
-        }
-      ],
-      "educationalValue": "Was die Kinder mitnehmen: forensische Grundtechniken (Fingerabdruck mit Graphit und Klebeband sichern, Fasern und Spuren vergleichen), Ermittler-Logik (ein einzelnes Indiz beweist nichts, das stärkste Motiv macht nicht den Täter), das Prüfen von Aussagen gegen eine Zeitleiste statt gegen das Bauchgefühl, echte Kryptografie (Caesar-Chiffre und Zahlen-Codes selbst lösen) und Kooperation zwischen Spezialisierungen, von denen keine allein zum Ziel kommt. Die Leitidee „im Ermittlungsdienst zählt, wer am genauesten hinschaut, nicht wer am schnellsten beschuldigt“ trägt durch die ganze Party."
-    },
-    "invitationTemplate": "🔍 ERMITTLER-AUFRUF\n\nIn der Villa Sonnberg ist ein wertvolles Erbstück verschwunden. Wir brauchen neue Spurensicherer, Profiler und Code-Knacker. {name} wird {alter} und leitet die Ermittlung.\n\n📅 Wann: {datum}, {uhrzeit}\n📍 Tatort: {treffpunkt}\n🎒 Mitbringen: dunkle, unempfindliche Kleidung (wir arbeiten mit Mehl und Stiften)\n📞 Rückmeldung bis {rsvp_deadline} an {kontakt}\n⚠️ Bitte Allergien/Unverträglichkeiten angeben{schlafparty_zusatz}\n\nJedes Kind wählt vor Ort seine Spezialisierung — und bekommt am Ende seine eigene Ermittler-Lizenz. Vorsicht: Der offensichtlichste Verdächtige ist selten der Täter. Im Ermittlungsdienst zählt nicht, wer am schnellsten beschuldigt, sondern wer am genauesten hinschaut.",
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Detektiv-Geburtstag für 9–12-Jährige dauern?",
-        "a": "2,5 bis 4 Stunden je nach Variante — oder als Wow mit Schlafparty-Anschluss bis zum Frühstück am nächsten Morgen. Minimal: 2,5 Stunden mit Codeknacker und Fingerabdruck-Vergleich. Standard: 3,5 Stunden mit fünf Stationen und Indizienkette. Wow: 4 Stunden inklusive Escape-Room-Schatzsuche zum Beweis-Tresor."
-      },
-      {
-        "q": "Wie viele Kinder sollte man einladen?",
-        "a": "Die Faustregel „Alter + 1“ wird mit 9-12 zu viel — lieber 8-10 Kinder maximal. Die Spezialisierungs-Logik (Spurensicherer, Profiler, Code-Knacker) funktioniert perfekt mit 8-9 (3 pro Spezialisierung) oder 10-12 (4 pro Spezialisierung). Bei mehr als 12: zwei Ermittler-Teams bilden, sonst wird die Stations-Rotation chaotisch."
-      },
-      {
-        "q": "Was kostet ein Detektiv-Geburtstag für 9–12?",
-        "a": "Zwischen 41 € (Minimal, 6 Kinder) und 143 € (Wow, 10 Kinder, ohne Highlight-Produkte). Standard liegt bei ca. 93 € für 8 Kinder und bietet das beste Verhältnis. Detektiv-Hüte als Wow-Highlight kommen mit 70-110 € extra dazu, sind aber komplett optional."
-      },
-      {
-        "q": "Ist ein Detektiv-Fall nicht zu gruselig für Kinder?",
-        "a": "Nicht in dieser Form. Es geht ausdrücklich nie um Gewalt gegen Personen, sondern um einen Diebstahl (verschwundenes Erbstück) — Krimi-Spannung ohne reale Bedrohung. Die Kinder sichern Spuren, vergleichen Aussagen und knacken Codes. Bei der Wow-Schlafparty wird ein altersgerechter Detektiv-Film gewählt, kein Horror. Die Spannung kommt aus dem Rätsel, nicht aus Angst."
-      },
-      {
-        "q": "Ist das nicht zu „kindlich“ für 11-12-Jährige?",
-        "a": "Wenn du es wie eine Kleinkind-Party aufziehst: ja. Wenn du die Kriminalfall-Simulation ernst nimmst, die Kinder als selbstständiges Ermittler-Team behandelst und die Aufgaben echte Herausforderungen sind (Codes, Fingerabdrücke, Alibi-Prüfung, der Plot-Twist), funktioniert es genau richtig. Verkindischen wird sofort gemerkt — Ernsthaftigkeit nicht."
-      },
-      {
-        "q": "Funktioniert der Detektiv-Geburtstag auch als Schlafparty?",
-        "a": "Ja, die Wow-Variante ist explizit für den Schlafparty-Anschluss konzipiert. Programm: 15-19 Uhr voller Fall + Escape-Room-Schatzsuche, ab 19 Uhr Eltern der Nicht-Bleiber raus, ab 19:30 UV-Nacht-Spurensuche im Dunkeln, dann Krimi-Film, Schlafsäcke, Frühstück. Empfohlen ab 10 Jahren, schriftliche Eltern-Bestätigung zwingend."
-      },
-      {
-        "q": "Was tun, wenn ein Kind den Plot-Twist verrät, bevor er sich entwickelt?",
-        "a": "Nicht abwürgen — stattdessen zurückfragen: „Welcher Beweis stützt das? Motiv allein reicht noch nicht.“ Das nimmt die voreilige Beschuldigung ernst und lenkt die Gruppe wieder auf Sorgfalt. Wenn die Antwort wackelig ist, lobst du das genaue Nachfragen („Genau, da müssen wir noch prüfen“) — das macht aus dem Spoiler einen Lernmoment, ohne den Twist zu zerstören."
-      },
-      {
-        "q": "Wie messen die Kinder beim Lügendetektor-Test wirklich Puls?",
-        "a": "Zwei Finger ans Handgelenk (Daumenseite, eine Daumenbreite unter dem Knöchel) oder seitlich am Hals legen, bis der Puls spürbar wird. 15 Sekunden zählen, Ergebnis × 4 = Schläge pro Minute. Die meisten Kinder finden den Puls mit etwas Hilfe — eine ruhige Sitzposition macht es leichter. Eine extra Pulsmesser-Uhr ist nicht nötig, der Daumen reicht. Wichtig: Die Aufregungs-Frage harmlos halten und besprechen, dass höherer Puls nicht „Lüge“, sondern oft nur „Nervosität“ heißt — genau diese forensische Lektion ist der Wert der Übung."
-      },
-      {
-        "q": "Wie verhindere ich Streit, wer den Fall „gelöst hat“?",
-        "a": "Vergib den Sorgfalt-Spezialist-Stempel an mehrere Kinder — explizit an die, die GENAU gearbeitet haben, nicht an die, die als Erste eine Antwort gerufen haben. Sage das beim Eid laut: „Im Ermittlungsdienst zählt nicht Tempo, sondern Sorgfalt.“ Bei festgefahrenen Konflikten zwei „Co-Chefermittler“ ernennen, die zusammen die Auflösung vortragen — zwingt zur Kooperation und löst die Spannung."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -10769,14 +9920,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "dino-klein": {
-    "_meta": {
-      "source_file": "kindergeburtstag/dino-3-5-jahre.html",
-      "extracted": "2026-05-19",
-      "schema_version": "1.0",
-      "purpose": "Dino 3-5 — Phase C #6 Elite-Slot (no ritual)",
-      "phase_b_complete": "2026-05-20",
-      "phase_b_method": "Direct draft analog Phase C — dino-klein-spezifika applied"
-    },
     "motto": "dino",
     "ageGroup": "klein",
     "ageRange": [
@@ -10784,8 +9927,6 @@ var ELITE_MOTTO_DATA = {
       5
     ],
     "title": "🦕 Dino-Abenteuer Kindergeburtstag — 3–5 Jahre",
-    "metaDescription": "Dino-Kindergeburtstag für 3-5-Jährige: 3 fertige Party-Konzepte (Minimal/Standard/Wow) mit altersgerechten Spielen, Zeitplan, Einkaufsliste und Kosten.",
-    "introParagraph": "Dein Kind wird 3, 4 oder 5 und liebt Dinosaurier? Hier bekommst du drei fertige Party-Konzepte — von „in einer Stunde vorbereitet“ bis zum vollen Dino-Erlebnis. Jedes Konzept mit Zeitplan, altersgerechten Spielen, Einkaufsliste und Kosten.\n\n[Dino-Geburtstag planen →](/kindergeburtstag?motto=dino&alter=4#planer)",
     "ageInsight": {
       "headline": "Was 3–5-Jährige ausmacht — und was das für die Dino-Party heißt",
       "traits": [
@@ -10821,24 +9962,6 @@ var ELITE_MOTTO_DATA = {
       "whyMottoFitsHeadline": "🦕 Warum Dino für 3–5-Jährige besonders gut funktioniert",
       "whyMottoFits": "Kleine Kinder lieben große Tiere. Der T-Rex ist riesig, brüllt laut und ist ein bisschen gruselig — genau die richtige Mischung aus Faszination und Nervenkitzel. Dino funktioniert geschlechtsneutral (Jungs UND Mädchen finden Dinos toll), braucht keine komplizierten Geschichten und lässt sich mit einfachen Mitteln umsetzen: Plastik-Dinos, Brüllen, Stampfen, Eier suchen — fertig."
     },
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Dino-Geburtstag für 3–5-Jährige dauern?",
-        "a": "1,5 bis 2 Stunden sind perfekt. Nach 2 Stunden sind die meisten Kinder in diesem Alter überreizt. Die Minimal-Variante (1,5 Stunden) ist oft die bessere Wahl — die Kinder gehen glücklich nach Hause statt übermüdet."
-      },
-      {
-        "q": "Wie viele Kinder einladen bei 3–5-Jährigen?",
-        "a": "Faustregel: Alter des Kindes = Anzahl Gäste. Also 3–5 Kinder. Bei 3-Jährigen reichen oft 2–3 Gäste völlig. Mehr Kinder = mehr Chaos, mehr Tränen, mehr Eltern die bleiben müssen."
-      },
-      {
-        "q": "Was kostet ein Dino-Geburtstag für Kleinkinder?",
-        "a": "Zwischen 29 € (Minimal) und 60 € (Wow) für 5 Kinder. Die Standard-Variante liegt bei ca. 46 € und bietet das beste Verhältnis aus Aufwand und Ergebnis."
-      },
-      {
-        "q": "Können 3-Jährige schon „richtige“ Geburtstagsspiele spielen?",
-        "a": "Ja, aber nur sehr einfache. Eier suchen, Stopptanz und Ausgrabung funktionieren ab 3. Wichtig: keine Gewinner/Verlierer, alle machen alles zusammen, und jede Aktivität darf höchstens 10 Minuten dauern. Vorzeigen statt erklären."
-      }
-    ],
     "variants": [
       {
         "id": "minimal",
@@ -11492,72 +10615,6 @@ var ELITE_MOTTO_DATA = {
         "costContext": "Geschätzte Kosten (Wow, 5 Kinder, ohne Kostüm)"
       }
     ],
-    "cakeRecipe": {
-      "intro": "Der einfachste Wow-Kuchen: Gugelhupf + bunte Schoko-Linsen",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Schoko-Gugelhupf backen (Fertigmischung reicht völlig)"
-        },
-        {
-          "n": 2,
-          "content": "Auf Teller stürzen — das Loch in der Mitte = Krater"
-        },
-        {
-          "n": 3,
-          "content": "Schoko-Glasur über den Rand laufen lassen = Lava"
-        },
-        {
-          "n": 4,
-          "content": "Rote + orange bunte Schoko-Linsen in den Krater und am Rand verteilen"
-        },
-        {
-          "n": 5,
-          "content": "Grüne bunte Schoko-Linsen unten am Fuß = Dschungel"
-        },
-        {
-          "n": 6,
-          "content": "Optional: kleine Dino-Figur obendrauf. KEINE Wunderkerze bei 3–5 (Brand-Panik-Eltern)."
-        }
-      ],
-      "meta": {
-        "aufwand": "45 Min. inkl. Backen",
-        "kosten": "~6 €",
-        "allergiker": "Fertigmischungen sind oft allergenärmer — Packung checken"
-      },
-      "tips": [
-        {
-          "title": "🍰 Keine-Lust-zu-backen-Variante",
-          "body": "Fertigen Schoko-Kuchen vom Bäcker kaufen, eine Dino-Figur obendrauf, grüne bunte Schoko-Linsen drum. 2 Minuten, sieht toll aus. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.“"
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "😢 Meltdown-Plan",
-          "detail": "Bei 3–5-Jährigen ist mindestens ein Zusammenbruch wahrscheinlich (Überreizung, müde, Streit ums Spielzeug). Hab einen ruhigen Rückzugsort parat — ein Zimmer mit einem Buch und einem Erwachsenen. Nicht dramatisieren. 5 Minuten Ruhe und das Kind ist meistens wieder dabei."
-        },
-        {
-          "topic": "🚨 Allergien vorher abfragen",
-          "detail": "Bei 5 Kindern hat statistisch mindestens eins eine Unverträglichkeit. In die Einladung schreiben: „Hat dein Kind Allergien oder Unverträglichkeiten?“ Apfelschorle und Popcorn sind fast immer safe."
-        },
-        {
-          "topic": "👨‍👩‍👧 Eltern bleiben = Helfer",
-          "detail": "Bei 3–4-Jährigen bleiben die Eltern sowieso. Nutze das: „Kannst du kurz die Ausgrabung beaufsichtigen?“ Die meisten helfen gerne. Kaffee und ein paar Kekse für die Eltern bereitstellen."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Spiele in dieser Vorlage funktionieren auch drinnen. Vulkan-Experiment: in der Badewanne oder auf dem Balkon. Parcours: im Flur aufbauen. Eier suchen: Wohnung statt Garten. Nie ohne Plan B."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Statt einzelne Nachrichten: erstelle eine [WhatsApp-Partyseite](https://party.machsleicht.de). Adresse, Uhrzeit, Motto, Abholzeit — alles auf einer Seite. Eltern antworten mit einem Klick. Kostenlos, in 2 Minuten fertig."
-        }
-      ],
-      "educationalValue": "Auch für 3-5-Jaehrige steckt Lernen drin: Tier-/Fossilien-Erkennung trainiert Beobachtungsgabe und Mustererkennung, das Ausgrabungs-Spiel foerdert Feinmotorik und Geduld (langsam-graben), Dino-Spuren-Story baut einfache Erzaehl-Logik (Anfang/Mitte/Ende). Das Triumph-Erlebnis \"Ich hab ein Dino-Ei gefunden!\" foerdert Selbstwirksamkeit. Kein Lernzwang — Spiel-im-Vordergrund."
-    },
-    "invitationTemplate": "🦕 Interaktive Dino-Einladung per WhatsApp verschicken\n\nErstelle in 30 Sekunden eine fertige Einladung mit Name, Datum und Ort — die Gäste bekommen ein kleines Dino-Abenteuer als Vorgeschmack auf die Party.\n[🦕 Dino-Einladung erstellen →](/einladung/erstellen?motto=dino)\n\n[💬 Idee per WhatsApp teilen](https://wa.me/?text=Schau%20mal%3A%20Dino-Abenteuer%20Kindergeburtstag%20f%C3%BCr%203%E2%80%935%20Jahre%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Spielanleitungen%20und%20Einkaufsliste!%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Fdino-3-5-jahre)",
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -11857,14 +10914,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "dino-mittel": {
-    "_meta": {
-      "source_file": "kindergeburtstag/dino-6-8-jahre.html",
-      "extracted": "2026-05-19",
-      "schema_version": "1.0",
-      "purpose": "Dino 6-8 — Phase C #6 Elite-Slot (no ritual)",
-      "phase_b_complete": "2026-05-20",
-      "phase_b_method": "Direct draft analog Phase C — dino-mittel-spezifika applied"
-    },
     "motto": "dino",
     "ageGroup": "mittel",
     "ageRange": [
@@ -11872,8 +10921,6 @@ var ELITE_MOTTO_DATA = {
       8
     ],
     "title": "🦕 Dino-Abenteuer Kindergeburtstag — 6–8 Jahre",
-    "metaDescription": "Dino-Kindergeburtstag für 6-8-Jährige: 3 fertige Party-Konzepte (Minimal/Standard/Wow) mit Spielanleitungen, Zeitplan, Einkaufsliste und Kosten.",
-    "introParagraph": "Dein Kind wird 6, 7 oder 8 und liebt Dinosaurier? Hier bekommst du drei fertige Party-Konzepte — von schnell und stressfrei bis zum vollen Programm mit Schatzsuche und Vulkan-Experiment. Jedes Konzept mit Zeitplan, Spielanleitungen, Einkaufsliste und Kosten.\n\n[Dino-Geburtstag planen →](/kindergeburtstag?motto=dino&alter=7#planer)",
     "ageInsight": {
       "headline": "Was 6–8-Jährige ausmacht — und was das für die Dino-Party heißt",
       "traits": [
@@ -12600,98 +11647,6 @@ var ELITE_MOTTO_DATA = {
         "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm)"
       }
     ],
-    "cakeRecipe": {
-      "intro": "Geht mit jedem Gugelhupf. Das Besondere ist die Deko — nicht das Backen.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Gugelhupf backen — Fertigmischung reicht völlig (Dr. Oetker, Kathi, whatever). Kein Mensch schmeckt den Unterschied."
-        },
-        {
-          "n": 2,
-          "content": "Komplett abkühlen lassen. Ungeduld = Glasur-Desaster."
-        },
-        {
-          "n": 3,
-          "content": "Mit Schokoglasur überziehen (1 Packung fertige Glasur oder 100g Kuvertüre schmelzen)."
-        },
-        {
-          "n": 4,
-          "content": "bunte Schoko-Linsen als \"Lava-Strom\" von der Spitze nach unten legen — rot und orange Farben."
-        },
-        {
-          "n": 5,
-          "content": "Grüne Gummibärchen als \"Bäume\" um den Fuß des Vulkans stellen."
-        },
-        {
-          "n": 6,
-          "content": "Optional: kleine Dino-Figur obendrauf. Wunderkerze reinstecken und beim Happy-Birthday anzünden (Wow-Variante)."
-        }
-      ],
-      "meta": {
-        "aufwand": "45 Min. inkl. Backen und Deko",
-        "kosten": "~6 €",
-        "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken"
-      },
-      "tips": [
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Fertigen Schoko-Kuchen beim Bäcker oder Supermarkt kaufen, eine Dino-Figur obendrauf stellen, grüne bunte Schoko-Linsen drumherum streuen. Sieht aus wie gewollt, dauert 2 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: \"Der Kuchen war nicht selbstgemacht.\""
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🚨 Allergien vorher abfragen",
-          "detail": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten). In die Einladung schreiben: \"Hat dein Kind Allergien oder Unverträglichkeiten?\" Saftpaeckchen und Popcorn sind fast immer safe."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Spiele in dieser Vorlage funktionieren auch drinnen (außer Vulkan — da Badewanne/Balkon). Wenn du draußen planst: Parcours-Strecke im Flur aufbauen als Backup. Nie ohne Plan B."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Statt 6 einzelne Nachrichten: erstelle eine [WhatsApp-Partyseite](https://party.machsleicht.de) mit machsleicht. Adresse, Uhrzeit, Motto, Abholzeit — alles auf einer Seite. Eltern antworten mit einem Klick (Dabei / Absage). Du siehst Zusagen und Allergien live. Kostenlos, in 2 Minuten fertig."
-        },
-        {
-          "topic": "🎯 Die \"1 Helfer\"-Regel",
-          "detail": "Ab 6 Kindern brauchst du mindestens 1 zweiten Erwachsenen. Frag Partner, Großeltern oder eine befreundete Mutter/Vater. Alleine 6–8 aufgedrehte Kinder 3 Stunden zu managen ist kein Spaß."
-        },
-        {
-          "tip": "Mengen-Faustregel",
-          "content": "2 Getraenke pro Kind + 2 Reserve = bei 6 Kindern 14 Saftpaeckchen. Gilt für Minimal UND Standard."
-        },
-        {
-          "topic": "🦶 Dino-Fußspuren-Trick",
-          "detail": "Schneide 8–10 Dino-Fußspuren aus grünem Tonpapier (oder grün bemaltem Papier) aus und klebe sie vom Eingang bis zum Partyraum auf den Boden. Die Kinder folgen der „Dino-Spur“ sobald sie reinkommen. Kostet nix, dauert 15 Minuten, macht sofort Stimmung."
-        },
-        {
-          "topic": "🎵 Rhythmus-Regel",
-          "detail": "Immer abwechseln: laut → leise → laut → leise. Vulkan (laut) → Ausgrabung (leise) → Kuchen (Pause) → Parcours (laut) → Fossilien (leise). So kippt die Stimmung nie. Nach jedem lauten Spiel kommt ein ruhiges — Gold-Regel für 6–8-Jährige."
-        }
-      ],
-      "educationalValue": null
-    },
-    "invitationTemplate": "🦕 Interaktive Dino-Einladung per WhatsApp verschicken\n\nErstelle in 30 Sekunden eine fertige Einladung mit Name, Datum und Ort — die Gäste bekommen ein kleines Dino-Abenteuer als Vorgeschmack auf die Party.\n[🦕 Dino-Einladung erstellen →](/einladung/erstellen?motto=dino)\n\n[💬 Idee per WhatsApp teilen](https://wa.me/?text=Schau%20mal%3A%20Dino-Abenteuer%20Kindergeburtstag%20f%C3%BCr%206%E2%80%938%20Jahre%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Spielanleitungen%20und%20Einkaufsliste!%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Fdino-6-8-jahre)",
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Dino-Geburtstag für 6–8-Jährige dauern?",
-        "a": "2,5 bis 3 Stunden sind ideal. Kürzer ist besser als länger — nach 3 Stunden kippt die Stimmung bei den meisten Kindern. Die Minimal-Variante (2 Stunden) funktioniert auch perfekt, besonders wenn du wenig Vorbereitungszeit hast."
-      },
-      {
-        "q": "Wie viele Kinder sollte man zum Dino-Geburtstag einladen?",
-        "a": "Faustregel: Alter des Kindes + 1. Also 7–9 Kinder bei einem 7-Jährigen. Ab 8 Kindern brauchst du definitiv einen zweiten Erwachsenen als Helfer. Alle Mengenangaben auf dieser Seite sind für 6 Kinder berechnet."
-      },
-      {
-        "q": "Was kostet ein Dino-Geburtstag?",
-        "a": "Zwischen 22 € (Minimal) und 68 € (Wow) für 6 Kinder — je nachdem wie viel Aufwand du betreiben willst. Die Standard-Variante liegt bei ca. 45 € und bietet das beste Verhältnis aus Aufwand und Ergebnis."
-      },
-      {
-        "q": "Funktioniert ein Dino-Geburtstag auch drinnen?",
-        "a": "Ja, alle Spiele in dieser Anleitung funktionieren drinnen. Einzige Ausnahme: das Vulkan-Experiment machst du besser auf dem Balkon oder in der Badewanne. Den Dino-Parcours kannst du im Flur aufbauen, die Ausgrabung in einer Wanne auf dem Küchentisch."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -12995,14 +11950,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "dino-gross": {
-    "_meta": {
-      "source_file": "kindergeburtstag/dino-9-12-jahre.html",
-      "extracted": "2026-05-19",
-      "schema_version": "1.0",
-      "purpose": "Dino 9-12 — Phase C #6 Elite-Slot (no ritual)",
-      "phase_b_complete": "2026-05-20",
-      "phase_b_method": "Direct draft analog Phase C — dino-gross-spezifika applied"
-    },
     "motto": "dino",
     "ageGroup": "gross",
     "ageRange": [
@@ -13010,8 +11957,6 @@ var ELITE_MOTTO_DATA = {
       12
     ],
     "title": "🦕 Dino-Abenteuer Kindergeburtstag — 9–12 Jahre",
-    "metaDescription": "Dino-Kindergeburtstag für 9-12-Jährige: 3 fertige Party-Konzepte (Minimal/Standard/Wow) mit Escape-Challenges, Zeitplan, Einkaufsliste und Kosten.",
-    "introParagraph": "Dein Kind wird 9, 10, 11 oder 12 und steht auf Dinosaurier? In diesem Alter wollen Kinder echte Herausforderungen — nicht nur spielen, sondern knobeln, forschen und Codes knacken. Hier bekommst du drei fertige Konzepte: von schnell und solide bis zum kompletten Paläontologen-Escape-Room.\n\n[Dino-Geburtstag planen →](/kindergeburtstag?motto=dino&alter=10#planer)",
     "variants": [
       {
         "id": "minimal",
@@ -13678,64 +12623,6 @@ var ELITE_MOTTO_DATA = {
         "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Kostüm)"
       }
     ],
-    "cakeRecipe": {
-      "intro": "Der einfachste Wow-Kuchen: Gugelhupf + bunte Schoko-Linsen",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Schoko-Gugelhupf backen (Fertigmischung reicht völlig)"
-        },
-        {
-          "n": 2,
-          "content": "Auf Teller stürzen — das Loch in der Mitte = Krater"
-        },
-        {
-          "n": 3,
-          "content": "Schoko-Glasur über den Rand laufen lassen = Lava"
-        },
-        {
-          "n": 4,
-          "content": "Rote + orange bunte Schoko-Linsen in den Krater und am Rand verteilen"
-        },
-        {
-          "n": 5,
-          "content": "Grüne bunte Schoko-Linsen unten am Fuß = Dschungel"
-        }
-      ],
-      "meta": {
-        "aufwand": "45 Min",
-        "kosten": "~6 &euro;",
-        "allergiker": "Packung checken",
-        "safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Deko/Lianen/Tischtuch, nie mit Kindern allein lassen, bei Indoor IMMER Wassereimer griffbereit. Auspusten unmittelbar nach Aufnahme. Kein Funken-Wedeln."
-      },
-      "tips": null
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🚨 Allergien vorher abfragen",
-          "detail": "Bei 8 Kindern hat statistisch mindestens eins eine Unverträglichkeit. In die Einladung schreiben: „Hat dein Kind Allergien?“ Popcorn, Chips und Apfelschorle sind fast immer safe."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Spiele funktionieren auch drinnen. Vulkan: Badewanne oder Balkon. Parcours: Flur. Quiz und Escape-Rätsel sind sowieso Indoor-Aktivitäten. Nie ohne Plan B."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Statt 8 einzelne Nachrichten: erstelle eine [WhatsApp-Partyseite](https://party.machsleicht.de). Adresse, Uhrzeit, Abholzeit — alles auf einer Seite. Eltern antworten mit einem Klick. Kostenlos."
-        },
-        {
-          "topic": "📞 Abholzeit klar kommunizieren",
-          "detail": "Eltern setzen die Kinder ab und fahren. Das ist normal ab 8–9 Jahren. Aber: Abholzeit VORHER klar ansagen (z.B. „Abholung 17:00, bitte pünktlich“). Telefonnummern aller Eltern einsammeln. Ein zweiter Erwachsener als Helfer ist Pflicht ab 8 Kindern."
-        },
-        {
-          "tip": "Getraenke-Faustregel",
-          "content": "2 Getraenke pro Kind + 2 Reserve. Bei 8 Kindern 18 Getraenke. NICHT zusaetzlich Cola + Saftpaeckchen + Wasser parallel = ueberversorgt."
-        }
-      ],
-      "educationalValue": null
-    },
-    "invitationTemplate": "🦕 Interaktive Dino-Einladung per WhatsApp verschicken\n\nErstelle in 30 Sekunden eine fertige Einladung mit Name, Datum und Ort — die Gäste bekommen ein kleines Dino-Abenteuer als Vorgeschmack.\n[🦕 Dino-Einladung erstellen →](/einladung/erstellen?motto=dino)\n\n[💬 Idee per WhatsApp teilen](https://wa.me/?text=Schau%20mal%3A%20Dino-Abenteuer%20Kindergeburtstag%20f%C3%BCr%209%E2%80%9312%20Jahre%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Escape-R%C3%A4tseln%20und%20Einkaufsliste!%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Fdino-9-12-jahre)",
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -14099,226 +12986,9 @@ var ELITE_MOTTO_DATA = {
       ],
       "whyMottoFitsHeadline": "🦕 Warum Dino für 9–12-Jährige funktioniert",
       "whyMottoFits": "In diesem Alter verschiebt sich der Dino-Fokus von „Dinos sind cool“ zu „Paläontologie ist Wissenschaft“. Kinder wollen echte Fakten, echte Ausgrabungen und echte Rätsel. Der Forscher-Ansatz passt perfekt: Forscherpass, Wissens-Quiz mit echten Dino-Fakten, codierte Nachrichten und systematische Ausgrabung. Dino als Motto ist geschlechtsneutral und hat keinen „Kinderparty-Stempel“ — auch 12-Jährige finden Paläontologie spannend."
-    },
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Dino-Geburtstag für 9–12-Jährige dauern?",
-        "a": "3 bis 3,5 Stunden sind ideal. In diesem Alter halten die Kinder gut durch und beschweren sich eher, wenn es zu früh vorbei ist. Die Minimal-Variante (2,5 Stunden) funktioniert auch gut, besonders an Schultagen."
-      },
-      {
-        "q": "Wie viele Kinder einladen?",
-        "a": "Faustregel: Alter + 1. Also 10–13 Kinder bei einem 10-Jährigen. Alle Angaben auf dieser Seite sind für 8 Kinder berechnet. Ab 10 Kindern brauchst du definitiv einen zweiten Erwachsenen."
-      },
-      {
-        "q": "Was kostet ein Dino-Geburtstag für ältere Kinder?",
-        "a": "Zwischen 53 € (Minimal) und 101 € (Wow) für 8 Kinder. Die Standard-Variante liegt bei ca. 78 €. Der höhere Preis gegenüber jüngeren Altersgruppen kommt durch mehr Essen und längere Dauer."
-      },
-      {
-        "q": "Ist Dino für 12-Jährige nicht zu „babyhaft“?",
-        "a": "Nein — wenn du es richtig framest. „Paläontologen-Escape-Room“ klingt deutlich cooler als „Dino-Party“. Der Fokus auf echte Wissenschaft (Caesar-Verschlüsselung, systematische Ausgrabung, Chemie-Experiment) macht es altersgerecht. Auch 12-Jährige finden Fossilien und Vulkan-Experimente spannend."
-      }
-    ],
-    "bonusQuiz": {
-      "title": "🧠 Dino-Wissens-Quiz — 15 Fragen mit Lösungen",
-      "intro": "15 Multiple-Choice-Fragen für die 9–12er Zielgruppe. Druckvorlage online: /kindergeburtstag/dino-quiz. Spielregeln: Frage vorlesen. Wer zuerst buzzert (Klingel/Topfdeckel) darf antworten. Richtig = 1 Punkt. Falsch = anderes Team darf. Verlierer-Team bekommt „Trost-Forschungsstipendium“ (Gummibärchen).",
-      "questions": [
-        {
-          "n": 1,
-          "q": "Was bedeutet „T-Rex“ auf Deutsch?",
-          "options": [
-            "A) Riesen-Echse",
-            "B) Tyrannen-Echse",
-            "C) Turbo-Echse"
-          ],
-          "answer": "B",
-          "fun": "„König der Tyrannen-Echsen“, klingt cool!"
-        },
-        {
-          "n": 2,
-          "q": "Wie viele Hörner hatte ein Triceratops?",
-          "options": [
-            "A) 2",
-            "B) 3",
-            "C) 5"
-          ],
-          "answer": "B",
-          "fun": "„Tri“ = drei, „ceratops“ = Horngesicht"
-        },
-        {
-          "n": 3,
-          "q": "Konnten Dinosaurier fliegen?",
-          "options": [
-            "A) Ja, alle",
-            "B) Nur manche",
-            "C) Nein — Flugsaurier waren keine Dinos!"
-          ],
-          "answer": "C",
-          "fun": "Flugsaurier (Pterodactylus etc.) waren KEINE Dinosaurier. Trickfrage!"
-        },
-        {
-          "n": 4,
-          "q": "Was fraßen Brachiosaurier?",
-          "options": [
-            "A) Fleisch",
-            "B) Pflanzen",
-            "C) Fische"
-          ],
-          "answer": "B",
-          "fun": "Mit dem langen Hals kamen sie an die höchsten Baumkronen"
-        },
-        {
-          "n": 5,
-          "q": "Wie lang war ein T-Rex ungefähr?",
-          "options": [
-            "A) 5 Meter",
-            "B) 13 Meter",
-            "C) 30 Meter"
-          ],
-          "answer": "B",
-          "fun": "So lang wie ein Linienbus!"
-        },
-        {
-          "n": 6,
-          "q": "Welcher Dino hatte Platten auf dem Rücken?",
-          "options": [
-            "A) Stegosaurus",
-            "B) Velociraptor",
-            "C) Diplodocus"
-          ],
-          "answer": "A",
-          "fun": "Die Platten dienten vermutlich zur Temperaturregelung"
-        },
-        {
-          "n": 7,
-          "q": "Lebten Dinos und Menschen gleichzeitig?",
-          "options": [
-            "A) Ja",
-            "B) Nein, 65 Millionen Jahre dazwischen"
-          ],
-          "answer": "B",
-          "fun": "In Filmen schon, in echt leider nicht"
-        },
-        {
-          "n": 8,
-          "q": "Welcher Dino hatte besonders lange Arme?",
-          "options": [
-            "A) T-Rex (kurze Arme!)",
-            "B) Therizinosaurus",
-            "C) Ankylosaurus"
-          ],
-          "answer": "B",
-          "fun": "T-Rex hatte lächerlich kurze Arme, das wissen die meisten Kinder!"
-        },
-        {
-          "n": 9,
-          "q": "Was passierte vor 66 Millionen Jahren mit den Dinos?",
-          "options": [
-            "A) Sie sind umgezogen",
-            "B) Ein Asteroid hat sie ausgelöscht",
-            "C) Sie leben im Meer weiter"
-          ],
-          "answer": "B",
-          "fun": "Einschlag in Mexiko, 12 km großer Brocken"
-        },
-        {
-          "n": 10,
-          "q": "Welcher Dino war so groß wie ein Huhn?",
-          "options": [
-            "A) Compsognathus",
-            "B) Brachiosaurus",
-            "C) Spinosaurus"
-          ],
-          "answer": "A",
-          "fun": "Klein aber schnell — bis zu 40 km/h!"
-        },
-        {
-          "n": 11,
-          "q": "Aus was bestehen Fossilien?",
-          "options": [
-            "A) Plastik",
-            "B) Stein (versteinerter Knochen)",
-            "C) Holz"
-          ],
-          "answer": "B",
-          "fun": "Knochen werden über Millionen Jahre zu Stein"
-        },
-        {
-          "n": 12,
-          "q": "Welches Tier heute ist mit Dinos verwandt?",
-          "options": [
-            "A) Hunde",
-            "B) Vögel",
-            "C) Fische"
-          ],
-          "answer": "B",
-          "fun": "Hühner sind entfernte Verwandte des T-Rex!"
-        },
-        {
-          "n": 13,
-          "q": "Wie nennt man Wissenschaftler, die Dinos erforschen?",
-          "options": [
-            "A) Astronauten",
-            "B) Paläontologen",
-            "C) Biologen"
-          ],
-          "answer": "B",
-          "fun": "Genau wie ihr heute!"
-        },
-        {
-          "n": 14,
-          "q": "Welcher Dino hatte eine Keule am Schwanz?",
-          "options": [
-            "A) Ankylosaurus",
-            "B) Parasaurolophus",
-            "C) Pteranodon"
-          ],
-          "answer": "A",
-          "fun": "Die Keule wog bis zu 30 kg — damit wollte niemand Streit"
-        },
-        {
-          "n": 15,
-          "q": "Wie schwer war ein T-Rex ungefähr?",
-          "options": [
-            "A) So schwer wie ein Auto",
-            "B) So schwer wie ein Elefant (6–8 Tonnen)",
-            "C) So schwer wie ein Haus"
-          ],
-          "answer": "B",
-          "fun": "6–8 Tonnen, aber trotzdem konnte er rennen!"
-        }
-      ],
-      "harderQuestions": [
-        {
-          "q": "In welchem Erdzeitalter lebten die Dinosaurier?",
-          "a": "Mesozoikum (Trias, Jura, Kreide)"
-        },
-        {
-          "q": "Welcher Dino war der größte Fleischfresser?",
-          "a": "Spinosaurus (länger als T-Rex)"
-        },
-        {
-          "q": "Warum starben die Dinos aus?",
-          "a": "Asteroideneinschlag + Klimafolgen (Verdunkelung, Kälteeinbruch)"
-        },
-        {
-          "q": "Welcher Dino hatte 500 Zähne?",
-          "a": "Nigersaurus — eine Pflanzenfresser-Säge im Maul"
-        },
-        {
-          "q": "Waren Dinosaurier warm- oder kaltblütig?",
-          "a": "Umstritten! Beide Antworten gelten — neue Forschung tendiert zu „warmblütig wie Vögel“"
-        }
-      ]
     }
   },
   "dschungel-klein": {
-    "_meta": {
-      "source_file": "kindergeburtstag/dschungel.html",
-      "extracted": "2026-05-22",
-      "schema_version": "1.0",
-      "purpose": "Dschungel 3-5 (klein) — Phase-B Elite-Slot (analog Safari-klein)",
-      "phase_b_complete": "2026-05-22"
-    },
     "motto": "dschungel",
     "ageGroup": "klein",
     "ageRange": [
@@ -14326,8 +12996,6 @@ var ELITE_MOTTO_DATA = {
       5
     ],
     "title": "🌴 Dschungel-Kindergeburtstag 3-5 Jahre — komplett geplant",
-    "metaDescription": "Dschungel-Kindergeburtstag für 3-5-Jährige als Forscher-Expedition: 3 fertige Konzepte mit Zeitplan, Lianen-Schwingen, Tier-Spuren, Trommeln und Forscher-Ernennung. Ohne Wettkampf, mit Plüsch-Affe und Forscher-Stirnband. Kostenlos.",
-    "introParagraph": "Dein Kind wird 3, 4 oder 5 und liebt Affen, Tiger und alles, was im Dschungel raschelt? Hier sind drei fertige Konzepte für die Dschungel-Expedition — von 90 Minuten Mini-Forscher-Tour bis zur entspannten 2-Stunden-Variante mit Lianen-Pfad und Tier-Fühlbox. Kein Rennen, keine Verlierer: Jedes Kind wird zum Dschungel-Forscher ernannt, beobachtet Tiere, liest Spuren und bekommt am Ende sein Forscher-Stirnband, Lupe und Notizbuch. Eltern bleiben mit dabei — bei 3- bis 5-Jährigen gehört das zum Plan, nicht zum Notnagel.",
     "signatureRitual": {
       "name": "Die Dschungel-Forscher-Ernennung",
       "subtitle": "Eröffnet die Party + Forscher-Pass-Übergabe am Ende",
@@ -15461,114 +14129,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "intro": "Der Dschungel-Schokokuchen ist ein simpler Schoko-Rührteig mit einem grünen Buttercreme-'Dschungel' obendrauf und bunten Esspapier-Schmetterlingen als Krönung. Sieht nach viel aus, ist aber Rührteig + Spritzbeutel — kein Fondant-Drama. Wenn Backen heute nicht drin ist: steht unten der Plan B.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Schoko-Rührteig anrühren (250 g Mehl, 200 g Butter, 150 g Zucker, 4 Eier, 1 Pck. Backpulver, 3 EL Kakao, Vanille). In eine 24er-Springform."
-        },
-        {
-          "n": 2,
-          "content": "Bei 175 °C ca. 40-45 Min. backen. Stäbchenprobe. Komplett auskühlen lassen, sonst schmilzt die Buttercreme."
-        },
-        {
-          "n": 3,
-          "content": "Buttercreme anrühren: 200 g weiche Butter + 250 g Puderzucker + 1-2 TL grüne Lebensmittelfarbe (Gel ist besser als flüssig). Cremig schlagen, bis sie ein sattes Dschungel-Grün hat."
-        },
-        {
-          "n": 4,
-          "content": "Buttercreme in einen Spritzbeutel mit Stern-Tülle füllen. Auf den Kuchen Tupfer für Tupfer aufspritzen, wild und durcheinander — das soll wie ein Dschungel-Blätterdach aussehen, nicht wie eine Hochzeitstorte."
-        },
-        {
-          "n": 5,
-          "content": "Esspapier-Schmetterlinge (gibt's bunt im Backshop oder online) zwischen die Buttercreme-Tupfer stecken. 6-10 Stück verteilt, je bunter desto besser."
-        },
-        {
-          "n": 6,
-          "content": "Kalt stellen bis zur Party. Vor dem Servieren in Tortenstücke schneiden — der Dschungel 'teilt sich' an alle Forscher."
-        }
-      ],
-      "meta": {
-        "aufwand": "mittel (Rührteig + 20 Min. Buttercreme + Schmetterlinge)",
-        "kosten": "ca. 6-9 €",
-        "allergiker": "Bei Nuss-/Mandel-Allergie unproblematisch — keine Nüsse im Rezept. Glutenfreies Mehl möglich. Esspapier-Schmetterlinge sind meist vegan und allergenarm — Zutaten-Check auf Packung. Buttercreme ohne Laktose: vegane Margarine + Puderzucker."
-      },
-      "tips": [
-        {
-          "title": "Keine Lust oder Zeit zu backen?",
-          "body": "Fertigen Schokokuchen vom Bäcker oder aus dem Supermarkt kaufen und nur die grüne Buttercreme + Schmetterlinge draufsetzen. 15 Min. Arbeit, niemand merkt es. Bei 3-5-Jährigen zählt der Dschungel-Effekt, nicht die Backleistung."
-        },
-        {
-          "title": "Nicht vom Pinterest-Foto stressen lassen",
-          "body": "Die perfekt symmetrische Dschungel-Torte mit Buttercreme-Palmen ist Deko-Profi-Arbeit. Dein Dschungel-Kuchen darf wild aussehen — die Kinder feiern die Schmetterlinge trotzdem. Lieber ein ehrlicher Wackel-Dschungel als ein Nervenzusammenbruch um Mitternacht."
-        },
-        {
-          "title": "Buttercreme zu weich? Kurz in den Kühlschrank.",
-          "body": "Wenn die Buttercreme beim Spritzen zerläuft: 10 Min. in den Kühlschrank, dann nochmal. Wenn sie zu fest ist: 5 Min. Raumtemperatur. Die Konsistenz ist das einzige, was Übung braucht — der Rest ist Wildheit."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🥜 Allergien VOR der Party abfragen",
-          "detail": "In der Einladung fragen. Esspapier-Schmetterlinge auf dem Kuchen, Käse im Snack-Teller, Kokos optional — alles potenzielle Stolperer. Ein nuss-/laktosefreier Teller bereit, dann ist niemand außen vor."
-        },
-        {
-          "topic": "🌧️ Plan B bei Regen steht immer",
-          "detail": "Dschungel ist drinnen wie draußen spielbar. Tier-Spuren-Tour und Lianen-Schwingen gehen im Wohnzimmer + Flur — Spuren auf Klebezettel, Stoff-Liane im Türrahmen. Garten ist schön, aber kein Muss."
-        },
-        {
-          "topic": "👥 Ab 7-8 Kindern: zweite Hand dazu",
-          "detail": "Bei 6 schaffst du es solo. Ab 7-8 (Wow) brauchst du Partner, Oma oder eine befreundete Mama — eine führt die Station, eine ist Trostkontakt für überreizte Kinder."
-        },
-        {
-          "topic": "🔇 Eltern bleiben — ist Teil des Plans",
-          "detail": "Bei 3-5 ist Trennungsangst normal. Eltern als Trostanker einplanen, nicht wegschicken. Ein Eltern-Schoß ist der beste Plan B, wenn ein Kind nicht mehr mag."
-        },
-        {
-          "topic": "⏱️ Nach 90-120 Min. ist Schluss",
-          "detail": "Auch wenn's gerade läuft: nach spätestens 2 Stunden kippt die Forscher-Truppe in Müdigkeit, Streit oder Heimweh. Lieber glücklich aufhören als überreizt eskalieren."
-        },
-        {
-          "topic": "🐒 Kein Wettbewerb, nie Verlierer",
-          "detail": "Bei dieser Altersgruppe keine Gewinner/Verlierer-Spiele. Jedes Kind findet eine Banane, schwingt einmal, bekommt den Forscher-Pass. Der Pass bekommt jeder Forscher — das schafft jedes Kind."
-        },
-        {
-          "topic": "🌿 Lianen-Sicherheit zuerst",
-          "detail": "Bei 3-5 wird NICHT geklettert. Die Stoff-Liane hängt so niedrig, dass die Füße den Boden fast berühren. Bei 3-Jährigen NUR Hangel-Parcours, kein freies Schwingen. Du sicherst immer am Knoten."
-        }
-      ],
-      "educationalValue": "Die Kinder üben ganz nebenbei: leise sein und beobachten (Tier-Spuren-Tour mit Lupe), grobmotorische Koordination (Lianen-Schwingen, Hangel-Parcours), sensorische Wahrnehmung (Tier-Fühlbox, Stoff-Lianen), gemeinsam ein Ziel erreichen (Mini-Expedition) und mit Verkleidung in eine Rolle schlüpfen (Forscher-Stirnband). Der Forscher-Frame macht aus Geburtstags-Trubel ein Entdecker-Spiel — das ist genau der Beobachter- und Bewegungs-Entwicklungsschritt, der mit 3-5 ansteht."
-    },
-    "invitationTemplate": "Lust auf passende Dschungel-Einladungen? Der Einladungs-Generator auf machsleicht baut dir Forscher-Karten mit Datum, Treffpunkt, Zusage-Link und Allergie-Abfrage in 2 Minuten. (Cross-Sell-Hinweis, kein echtes Template — CTA gehört ins Planer-Cockpit.)",
-    "faq": [
-      {
-        "q": "Funktioniert Dschungel auch in einer kleinen Wohnung?",
-        "a": "Ja. Tier-Spuren-Tour und Bananen-Rätsel gehen in 60-75 m² mit verschachtelten Verstecken in einem Raum — Spur um Sofa, hinter Vorhang, unter Tisch. Lianen-Schwingen braucht eine Türöffnung mit Türrahmen-Reck (Kinder-Reck) — das passt in jede Mietwohnung. Türen zu, dann wirkt es nach mehr Dschungel."
-      },
-      {
-        "q": "Wie viele Kinder sind ideal?",
-        "a": "6 für Minimal und Standard, bis 8 für Wow. Mehr als 8 wird mit dem Eltern-bleiben-Konzept zu wuselig — du hast plötzlich zu viele Erwachsene und Kinder im Raum."
-      },
-      {
-        "q": "Was kostet die Party?",
-        "a": "Zwischen 36 € (Minimal, 6 Kinder) und 80 € (Wow, 8 Kinder, ohne Highlight-Produkte). Standard liegt bei ca. 56 € für 6 Kinder. Wer aus dem Bestand schöpft (Plüsch, Bambus aus dem Wald, Bettlaken-Liane), kommt darunter."
-      },
-      {
-        "q": "Ist die Wow-Variante für 3-Jährige geeignet?",
-        "a": "Eher nicht. Wow braucht 80 m²+ oder Garten, eine zweite erwachsene Hand und mindestens ein 5-jähriges Geburtstagskind. Mit reinen 3-Jährigen und Solo-Moderation lieber Standard nehmen — Lianen-Schwingen wird sonst zu hektisch."
-      },
-      {
-        "q": "Ist Lianen-Schwingen wirklich sicher für 3-Jährige?",
-        "a": "Ja, wenn du die Regeln einhältst: Stoff-Liane max. 30-40 cm Bodenabstand, Erwachsener hält IMMER am Knoten, bei 3-Jährigen NUR Hangel-Parcours mit Sitzkissen-Inseln, kein freies Schwingen. Keine Stühle als Sprung-Inseln, keine harten Kanten ringsum. Maximal ein Kind gleichzeitig an der Liane."
-      },
-      {
-        "q": "Funktioniert Dschungel auch für Mädchen-Geburtstage?",
-        "a": "Selbstverständlich. Der Forscher-Frame ist komplett geschlechtsneutral — Schmetterlinge, Tukane und Faultiere sind genauso bunt wie Tiger und Affen. Die meisten Geburtstagskinder in diesem Alter wollen einfach Tiere sehen, egal welches Geschlecht."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -15840,14 +14400,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "dschungel-mittel": {
-    "_meta": {
-      "source_file": "kindergeburtstag/dschungel-6-8-jahre.html",
-      "extracted": "2026-05-22",
-      "schema_version": "1.0",
-      "purpose": "Dschungel 6-8 — Phase B Elite-Slot (Forscher-Expedition mit Crew-Rollen-Mapping auf Forscher/Wächter/Künstler)",
-      "phase_b_complete": "2026-05-22",
-      "phase_b_method": "Direkter Draft auf Basis safari-mittel.json (Stations-Rotation, Lizenz-Zeremonie, Schatzsuche-Quest) plus feuerwehr-mittel.json (Crew-Rollen-Pattern mit funktionalen Aufgaben). 8 Crew-Rollen explizit auf 3 Funktionstypen Forscher/Wächter/Künstler gemappt. TIGER-Codeknacker (5 Stationen) als Bananen-Code-Knacker eingearbeitet."
-    },
     "motto": "dschungel",
     "ageGroup": "mittel",
     "ageRange": [
@@ -15855,8 +14407,6 @@ var ELITE_MOTTO_DATA = {
       8
     ],
     "title": "🌴 Dschungel-Kindergeburtstag — 6–8 Jahre",
-    "metaDescription": "Dschungel-Kindergeburtstag für 6-8-Jährige: 3 fertige Forscher-Konzepte mit Bananen-Code-Knacker, Spuren-Rallye und Lianen-Parcours. Mit Zeitplan, Einkaufsliste und Kosten. Kostenlos.",
-    "introParagraph": "Dein Kind wird 6, 7 oder 8 und träumt von Affen, Tigern und Wasserfällen? Hier bekommst du drei fertige Party-Konzepte rund um eine echte Dschungel-Forschungs-Expedition — von schnell und stressfrei bis zum vollen Programm mit Lager-Aufbau, Bananen-Code-Knacker und Schatz-im-Dschungel-Suche. Jedes Konzept mit Zeitplan, Spielanleitungen, Einkaufsliste und Kosten.\n\n[Dschungel-Geburtstag planen →](/kindergeburtstag?motto=dschungel&alter=7#planer)",
     "ageInsight": {
       "headline": "Was 6–8-Jährige ausmacht — und was das für die Dschungel-Party heißt",
       "traits": [
@@ -16971,102 +15521,6 @@ var ELITE_MOTTO_DATA = {
         "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)"
       }
     ],
-    "cakeRecipe": {
-      "intro": "Schoko-Vulkankuchen mit grünem Krepp-Dschungel-Rand und Mini-Tiger aus Marzipan. Geht mit jedem Gugelhupf oder Schoko-Kasten. Das Besondere ist die Kombination aus Vulkan-Form (klassischer Gugelhupf), grünem Krepppapier-Rand (Dschungel) und Marzipan-Tigern (Hauptdarsteller).",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Schoko-Gugelhupf backen — Fertigmischung reicht völlig (Dr. Oetker, Kathi, Aurora). Kein Mensch schmeckt den Unterschied. Schoko-Variante wählen, damit der \"Vulkan\" dunkel und satt aussieht."
-        },
-        {
-          "n": 2,
-          "content": "Komplett abkühlen lassen. Ungeduld = Glasur-Desaster."
-        },
-        {
-          "n": 3,
-          "content": "Glasur in Schokolade: 1 Packung Schokoglasur dunkel über den ganzen Gugelhupf gießen, so dass es vom Vulkan-Krater hinunterläuft. Sieht aus wie Lava."
-        },
-        {
-          "n": 4,
-          "content": "Marzipan-Tiger obendrauf: Marzipan-Tiere aus dem Backregal (Dr. Oetker hat oft Sets mit Tiger, Affe, Löwe), oder Marzipan-Rohmasse + orange/schwarz-Lebensmittelfarbe + Hand-Formen. 2–3 Mini-Tiger reichen — sehen aus wie eine kleine Familie auf dem Vulkan."
-        },
-        {
-          "n": 5,
-          "content": "Grünes Krepppapier-Rand: 5 cm breiter Krepppapier-Streifen grün, am Tellerrand um den Kuchen herum legen — sieht aus wie Dschungel-Pflanzen, die den Vulkan umranden. Mit Zahnstocher fixieren, falls es rutscht."
-        },
-        {
-          "n": 6,
-          "content": "Optional Wow: Wunderkerze in der Vulkan-Mitte, beim Happy-Birthday anzünden — der \"Vulkan bricht aus\". Foto-Moment."
-        }
-      ],
-      "meta": {
-        "aufwand": "45 Min. inkl. Backen und Deko",
-        "kosten": "~10 €",
-        "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. Marzipan enthält Mandeln (Nuss-Allergie beachten)."
-      },
-      "tips": [
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Fertigen Schoko-Gugelhupf beim Bäcker oder Supermarkt kaufen, Schokoglasur drüber, Marzipan-Tiger obendrauf, grünen Krepppapier-Rand drumherum. Sieht aus wie gewollt, dauert 5 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: \"Der Kuchen war nicht selbstgemacht.\""
-        },
-        {
-          "title": "🐅 Marzipan-Tiger ohne Set",
-          "body": "Wenn dein Backregal keine fertigen Tiger-Sets hat: Rohmarzipan + orange Lebensmittelfarbe kneten, kleine Würste rollen, schwarz-Streifen mit Zahnstocher aufmalen, fertig. 3 Mini-Tiger in 10 Minuten gemacht. YouTube-Tutorials gibt's massenweise unter \"Marzipan Tiger formen\"."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🚨 Allergien vorher abfragen",
-          "detail": "Bei 8 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten). In die Einladung schreiben: \"Hat dein Kind Allergien oder Unverträglichkeiten?\" Apfelschorle, Pop-Mais und Karotten-Sticks sind fast immer safe — Marzipan-Tiger und Schokolade prüfen (Mandeln/Milch)."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Dschungel-Stationen funktionieren auch drinnen. Bananen-Code-Knacker: Karten am Küchen- oder Wohnzimmertisch. Lianen-Parcours: Krepppapier-Lianen von der Decke + Klebeband-Wasserfall im Flur. Tarn-Übung: Verstecke hinter Sofa, Vorhang, Wäscheecke. Spuren-Rallye: durch Flur und Wohnzimmer. Einziges, was draußen schöner ist: das Tarn-Tuch im Garten testen — drinnen reicht der Vorhang. Nie ohne Plan B."
-        },
-        {
-          "topic": "🧑‍🤝‍🧑 Wie viele Helfer? Realistisch geplant",
-          "detail": "Bei der Stations-Rotation der Standard-Variante mit 5 parallel betriebenen Stationen reicht 1 Helfer — du machst zwei bis drei Stationen, der Helfer den Rest, gemeinsame Pause am Wasserloch deckt Übergänge. Ab 8 Kindern wird's solo-mit-1-Helfer eng aber machbar. Wow-Variante mit 10 Kindern, 6. Tarn-Station und Schatz-im-Dschungel-Quest braucht mindestens 2 Helfer, weil die Quest viel Geräuschkulisse und Bewegung erzeugt. Frag Partner, Großeltern, befreundete Eltern. Viele bleiben gerne — eine Forscher-Expedition ist auch für Erwachsene unterhaltsam zu beobachten."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Statt 8 einzelne Nachrichten an die Eltern: erstelle eine [WhatsApp-Partyseite](https://party.machsleicht.de) mit machsleicht. Adresse, Uhrzeit, Dschungel-Motto-Hinweis (Eltern können erdfarbene Kleidung anziehen lassen), Abholzeit, Allergie-Abfrage — alles auf einer Seite. Eltern antworten mit einem Klick. Du siehst Zusagen und Allergien live. Kostenlos, in 2 Minuten fertig."
-        },
-        {
-          "topic": "📸 Foto-Moment einplanen",
-          "detail": "Die Lizenz-Zeremonie ist der Foto-Moment der Party. Jedes Kind mit Stirnband, Klett-Abzeichen, Lizenz in der Hand (Wow: Filz-Forscherhut auf dem Kopf, TIGER-Banderolen im Forscher-Heft) — als Gruppenbild und einzeln. Eltern fotografieren beim Geburtstagskind sowieso, aber ein guter Tipp ist, die anderen Eltern bei der Abholung zu fragen, ob du das Foto mit ihrem Kind per WhatsApp schicken sollst. Macht Eindruck und kostet null."
-        }
-      ],
-      "educationalValue": "Hinter dem Forscher-Spiel steckt echtes Lernen: Die Kinder sortieren alphabetisch (Affen-Beobachten), vergleichen Größen (Spuren-Lesen), zählen Mengen (Bananen-Math), unterscheiden Farben und Tier-Arten (Schmetterlinge) und identifizieren Geräusche (Schlange-Geräusch). Das Lösungswort TIGER schließt eine echte Codeknacker-Aufgabe ab — Buchstaben kombinieren, gemeinsames Erfolgserlebnis. Lianen-Parcours und Tarn-Übung trainieren Körperkontrolle, Geduld und Konzentration — mit 6-8 die schwerste Disziplin. Tier-Wissen, Forscher-Mindset und kooperative Problemlösung — fast nebenbei."
-    },
-    "invitationTemplate": "🌴 Interaktive Dschungel-Einladung per WhatsApp verschicken\n\nErstelle in 30 Sekunden eine fertige Einladung mit Name, Datum und Ort — die Gäste bekommen ein kleines Dschungel-Abenteuer als Vorgeschmack auf die Forscher-Expedition.\n[🌴 Dschungel-Einladung erstellen →](/einladung/erstellen?motto=dschungel)\n\n[💬 Idee per WhatsApp teilen](https://wa.me/?text=Schau%20mal%3A%20Dschungel-Kindergeburtstag%20f%C3%BCr%206%E2%80%938%20Jahre%20%E2%80%94%203%20fertige%20Forscher-Konzepte%20mit%20Bananen-Code-Knacker%2C%20Lianen-Parcours%20und%20Einkaufsliste!%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Fdschungel-6-8-jahre)",
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Dschungel-Geburtstag für 6–8-Jährige dauern?",
-        "a": "2 bis 4 Stunden, je nach Variante. Minimal: 2 Stunden mit zwei Spielen. Standard: 3 Stunden mit Bananen-Code-Knacker und Lianen-Parcours. Wow: 4 Stunden mit zusätzlicher Tarn-Station und Schatz-im-Dschungel-Quest. Kürzer ist besser als länger — nach 4 Stunden kippt die Stimmung selbst bei 8-Jährigen."
-      },
-      {
-        "q": "Wie viele Kinder sollte man zum Dschungel-Geburtstag einladen?",
-        "a": "Faustregel: Alter des Kindes + 1. Also 7–9 Kinder bei einem 7-Jährigen. Für die Bananen-Code-Knacker-Stationen der Standard-Variante sind 8 Kinder ideal (4 Teams à 2 Kinder bei 5 Stationen). Wow funktioniert mit 10 Kindern und der zusätzlichen Tarn-Station, aber dann brauchst du 2 Helfer."
-      },
-      {
-        "q": "Was kostet ein Dschungel-Geburtstag?",
-        "a": "Zwischen 25 € (Minimal, 6 Kinder) und 125 € (Wow, 10 Kinder, ohne Highlight-Produkte). Standard liegt bei ca. 80 € für 8 Kinder und bietet das beste Verhältnis aus Aufwand und Ergebnis. Filz-Forscherhüte als Wow-Highlight kommen mit 80–120 € extra dazu, sind aber das emotional wertvollste Mitgebsel."
-      },
-      {
-        "q": "Funktioniert ein Dschungel-Geburtstag auch drinnen?",
-        "a": "Ja, alle Stationen und Spiele funktionieren drinnen. Bananen-Code-Knacker am Küchen-/Wohnzimmertisch, Lianen-Parcours mit Krepppapier-Lianen von der Decke, Tarn-Übung mit Vorhängen, Spuren-Rallye durch Flur und Wohnzimmer. Draußen ist es atmosphärischer (echte Tier-Spuren im Garten, Lianen zwischen Bäumen), drinnen genauso wirksam."
-      },
-      {
-        "q": "Was bedeutet der Bananen-Code-Knacker mit Lösungswort TIGER?",
-        "a": "Fünf Stations-Rätsel ergeben gemeinsam ein Lösungswort: T (alphabetisch erster Affe Theo), I (kleinste Spur Iguana), G (größte Bananen-Menge Gibbon), E (gelber Schmetterling Eulenfalter), R (Rasseln als Schlangen-Geräusch). Buchstaben werden nach jeder Station mit Banderolen ans Forscher-Heft geklebt — am Ende ergibt sich TIGER, und die Crew weiß, dass der Tiger-Schatz geborgen werden kann."
-      },
-      {
-        "q": "Brauche ich Helfer für die Stations-Rotation?",
-        "a": "Mit 2 Helfern wird's entspannt, mit 1 Helfer geht's gut. Solo machbar bei der Standard-Variante, wenn die Stationen nacheinander statt parallel laufen — dauert dann 60 Min für die ganze Gruppe statt nur 2 Kinder pro Station. Wow mit Schatz-im-Dschungel-Quest braucht mindestens 2 Helfer."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -17356,14 +15810,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "dschungel-gross": {
-    "_meta": {
-      "source_file": "kindergeburtstag/dschungel-9-12-jahre.html",
-      "extracted": "2026-05-22",
-      "schema_version": "1.0",
-      "purpose": "Dschungel 9-12 — Phase B Elite-Slot (Amazonas-Forschungs-Expedition, echte Ökologie, Codeknacker JUNGE, Escape-Room 'Verlorene Forschungs-Station' mit Dependency-Flow)",
-      "phase_b_complete": "2026-05-22",
-      "phase_b_method": "Writer-Subagent. Codeknacker JUNGE (5 Buchstaben: Pflanzen-pH, Spurabdruck-Anatomie, Hoehenlinien-Karte, Brüllaffen-Ruf-Distanz, Endemiten-Identifikation). Sechs-Stationen-Escape-Room mit explizitem Dependency-Flow (jede Station öffnet die nächste). 8 Tier-Fakten als animalFacts-Array nach safari-gross-Vorbild. Anti-IP: keine bekannten Marken- oder Franchise-Charaktere aus Film/TV/Buch — generische Wissenschafts-Expedition. Mythologie-Bezüge bewusst generisch gehalten (Sonne/Schlange/Stern als universelle Symbole) ohne kulturelle Aneignung indigener Bezeichnungen."
-    },
     "motto": "dschungel",
     "ageGroup": "gross",
     "ageRange": [
@@ -17371,8 +15817,6 @@ var ELITE_MOTTO_DATA = {
       12
     ],
     "title": "🌴 Dschungel-Kindergeburtstag — 9–12 Jahre",
-    "metaDescription": "Dschungel-Kindergeburtstag für 9-12-Jährige: 3 fertige Amazonas-Expeditions-Konzepte mit Botaniker-, Zoologe-, Geograph-, Ethologe- und Ökologe-Spezialisierung, Codeknacker JUNGE, Escape-Room Verlorene Forschungs-Station, 15-Fragen-Ökologie-Quiz, Zeitplan und Einkaufsliste. Kostenlos.",
-    "introParagraph": "Dein Kind wird 9, 10, 11 oder 12 — und „bunte Lianen und ein Plüsch-Affe“ würde ein Augenrollen kassieren? Hier sind drei fertige Konzepte für eine Amazonas-Forschungs-Expedition: jedes Kind spezialisiert sich (Botaniker, Zoologe, Geograph, Ethologe, Ökologe), arbeitet mit echter Wissenschaft (Pflanzen-Bestimmung, Wildtier-Tracking, Höhenlinien-Karte, Ökosystem-Quiz) und bekommt am Ende seine eigene Forschungs-Lizenz. Keine Verkindischungs-Tropen, keine spirituell aufgeladene Mythen — eine ernst gemeinte Mission mit echter Biologie, die auch in der 7. Klasse noch erwähnt wird.",
     "ageInsight": {
       "headline": "Was 9–12-Jährige ausmacht — und was das für die Amazonas-Expedition heißt",
       "traits": [
@@ -18756,123 +17200,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "intro": "Geht mit jedem Blechkuchen. Das Besondere ist die Biotop-Topographie obendrauf — nicht das Backen.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "1 Blechkuchen backen — Fertigmischung reicht (Dr. Oetker, Kathi, Aurora). Schoko oder Vanille. 9-12-Jährige merken den Unterschied zu Selbstgemacht nicht."
-        },
-        {
-          "n": 2,
-          "content": "Komplett abkühlen lassen. Ungeduld = Glasur-Desaster."
-        },
-        {
-          "n": 3,
-          "content": "Grund-Glasur in Regenwald-Grün: Puderzucker + Wasser + 2 Tropfen Lebensmittelfarbe (moosgrün). Großzügig drüberstreichen."
-        },
-        {
-          "n": 4,
-          "content": "Biotop-Topographie: dünne Schokoladen-Linien als „Bachläufe“ ziehen (Spritzbeutel oder Spritze ohne Nadel), braune Klekse als „Schlamm-Lecken“ (Lehmlecken-Symbol)."
-        },
-        {
-          "n": 5,
-          "content": "5 Marzipan-Tropentiere aus dem Backregal an markanten Punkten platzieren (Faultier = grünes Oval, Jaguar = gelb mit schwarzen Flecken, Pfeilgiftfrosch = roter Tropfen, Tukan = schwarz/orange, Anakonda = grüne Schlange). Dr. Oetker hat oft fertige Tier-Sets."
-        },
-        {
-          "n": 6,
-          "content": "Grüne Gummibärchen oder Zuckerstreusel als „Kronendach-Blätter“ am Rand verteilen. Optional: ein paar Schoko-Goldmünzen-Krümel als „Gold-Schatz-Hinweis“."
-        },
-        {
-          "n": 7,
-          "content": "Optional Wow: eine kleine „Außen-Station“ aus weißen Schokoladen-Quadraten (Mikado-Stäbchen als Stelzen, Schokoladen-Dach) am Rand — visuelles Bindeglied zur Mission."
-        },
-        {
-          "n": 8,
-          "content": "Wunderkerze in die Mitte für Happy Birthday. Foto."
-        }
-      ],
-      "meta": {
-        "aufwand": "60 Min. inkl. Backen und Topographie",
-        "kosten": "~10 €",
-        "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. Marzipan-Tropentiere können Spuren von Nüssen enthalten (für Nuss-Allergiker auswechseln)."
-      },
-      "tips": [
-        {
-          "title": "Keine Lust zu backen?",
-          "body": "Ein gekaufter Blechkuchen vom Bäcker oder Discounter funktioniert genauso — die Biotop-Topographie obendrauf machst du in 15 Minuten selbst. Niemand merkt, dass der Boden gekauft ist."
-        },
-        {
-          "title": "Die Topographie ist der Trick",
-          "body": "Der Wow-Effekt kommt nicht vom Teig, sondern von der Karte obendrauf: Bachläufe, Lehmlecken, Tropentiere an markanten Punkten. Das verbindet den Kuchen direkt mit der Amazonas-Mission — die Kinder erkennen „ihre“ Karte wieder."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🚨 Allergien vorher abfragen — bei Schlafparty mit Medikamenten",
-          "detail": "Bei 8-10 Kindern in dieser Altersgruppe sind Unverträglichkeiten häufig (Nüsse, Laktose, Gluten, Avocado-Kreuzallergie). Die Wraps-Station löst das elegant — es gibt eh Auswahl, vegetarische Wraps sind Standard. Bei Schlafparty zwingend abfragen: Medikamente, Asthma-Inhalator, Insektenstich-Allergie (für Nacht-Beobachtung kritisch!), Allergie-Notfallplan."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Expeditions-Stationen funktionieren drinnen: Pflanzen-Bestimmung und pH-Test am Esstisch (mit Zeitungspapier!), Spurabdruck-Bestimmung am Wohnzimmertisch, Höhenlinien-Karte am Couchtisch, Brüllaffen-Ruf-Synchronisation durch Flur und Esszimmer, Codeknacker am Tisch. Nur die Nacht-Insekten-Beobachtung (Wow-Schlafparty) braucht klare Sicht — bei Regen wird sie zur Tropen-Doku-Sitzung auf dem Beamer."
-        },
-        {
-          "topic": "🧪 Chemie-Experiment Sicherheit — Pflicht-Aufsicht",
-          "detail": "Der Rotkohl-pH-Test ist lebensmittelecht, aber: Pipetten nicht zum Mund führen, Schutzbrille empfohlen, Hände waschen. Bei Gips-Werkstatt (Wow): Schutz-Maske wegen Gips-Staub, nur draußen oder gut belüftet, nicht für unter 10-Jährige. Erwachsenen-Aufsicht beim Anrühren PFLICHT."
-        },
-        {
-          "topic": "🧑‍🤝‍🧑 Wie viele Helfer? Realistisch geplant",
-          "detail": "Standard mit 8 Kindern: 1 Helfer reicht. Du leitest Hauptmission und Lizenz-Zeremonie, der Helfer bedient die wartenden Stationen. Solo machbar bei guter Vorbereitung (Lösungs-Karten zur Selbstkontrolle an jeder Station). Wow mit 10 Kindern: 1-2 Helfer empfohlen, besonders für die parallelen Wrap-Stationen und die Gips-Werkstatt-Aufsicht."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Statt 10 Einzel-Nachrichten an die Eltern: eine WhatsApp-Partyseite mit machsleicht. Adresse, Uhrzeit, Spezialisierungs-Hinweis (Kleidung in Erd-Tönen, lange Hosen für Schlafparty wegen Mücken), Abholzeit, Allergie-Abfrage (auch Insektenstiche!), bei Schlafparty die Medikamenten-Abfrage — alles an einem Ort."
-        },
-        {
-          "topic": "🏺 Kulturelle Sensibilität bei Mythologie-Elementen",
-          "detail": "Die Wow-Variante nutzt generische „Gold-Münzen“ und universelle Symbole (Sonne / Schlange / Stern) — bewusst keiner spezifischen indigenen Kultur zugeordnet. Falls Kinder oder Eltern aus südamerikanischen Kulturkreisen kommen, bei der Begrüßung kurz erwähnen: „Wir spielen mit erfundenen Symbolen, echte Kulturen sind viel reicher und respektieren wir.“ Das macht den pädagogischen Wert noch besser."
-        },
-        {
-          "topic": "📸 Foto-Moment einplanen — aber datenschutzbewusst",
-          "detail": "Die Lizenz-Zeremonie ist der Foto-Moment: Gruppenbild mit allen in Spezialisierungs-Patches (Wow: Forscher-Bandana), Einzel-Foto mit Lizenz. Vorher abklären: Welche Eltern erlauben Fotos ihrer Kinder in Gruppen-Chats? In der Einladung kurz nachfragen."
-        },
-        {
-          "topic": "🕒 Abholzeit vorher klären — bei Schlafparty doppelt",
-          "detail": "„Wir holen so gegen 17 Uhr ab“ ist keine Abholzeit. Konkret in die Einladung: „Abholung 17:30, die Lizenz-Zeremonie ist um 17:00 und wir wollen das Ende nicht stressen.“ Bei Schlafparty schriftlich bestätigen lassen, wer wann abholt und ob das Kind nachts mit Heimweh kontaktiert werden soll."
-        }
-      ],
-      "educationalValue": "Was die Kinder mitnehmen: Beobachtungs-Logik (Pflanzen und Spuren über Merkmale bestimmen statt raten), echte Tropenökologie-Kenntnisse (Schichten-Konzept des Regenwalds, pH-Wert von Böden, Endemiten-Konzept, Aposematik-Färbung, Brüllaffen-Resonanz), Kartografie (Höhenlinien lesen bleibt im Kopf), Chemie-Praxis (Rotkohl-pH-Test ist Schul-Lehrplan ab Klasse 6, hier praktisch ausprobiert), Kooperation zwischen Spezialisierungen (keine kommt allein zum Ziel) und Selbstkontrolle beim Codeknacker (ergibt das Lösungswort keinen Sinn, prüfen sie ihre Reihenfolge selbst nach). Die Leitidee „im Regenwald zählt, wer hinschaut, nicht wer am schnellsten rennt“ trägt durch die ganze Party — Sorgfalt vor Tempo. Und kulturelle Sensibilität ganz nebenbei: die Mythologie-Elemente sind generisch, mit Hinweis auf echte Kulturen — kein Aneignungs-Spiel.",
-      "longText": "Diese Amazonas-Expedition ist gleichzeitig ein versteckter Biologie- und Geographie-Unterricht. Die 5 Spezialisierungen (Botaniker, Zoologe, Geograph, Ethologe, Ökologe) sind echte Forschungs-Richtungen, die Vokabeln (Biotop, endemisch, Habitat, Biodiversität, Aposematik, Geophagie, Zygodactyl) sind echte Fachbegriffe. Das Pflicht-Vokabular wird in den Stationen organisch eingeführt — nicht durch Drill, sondern durch Erfahrung. Wer die Wow-Variante spielt, hat am Ende nicht nur eine schöne Schatzsuche erlebt, sondern auch 15 Quiz-Fragen aus dem echten Schul-Stoff Biologie/Geographie aktiv gelöst. Eltern berichten oft, dass die Kinder Wochen später noch „Das war ein endemischer Frosch“ oder „Der Tapir ist mit dem Pferd verwandt“ wissen — Fakten, die im Schulunterricht oft schwer hängen bleiben."
-    },
-    "invitationTemplate": "🌴 EXPEDITIONS-AUFRUF\n\nDas Institut für Tropenökologie sucht neue Botaniker, Zoologen, Geographen, Ethologen und Ökologen. {name} wird {alter} und leitet die Amazonas-Expedition zur verschollenen Außen-Station.\n\n📅 Wann: {datum}, {uhrzeit}\n📍 Treffpunkt: {treffpunkt}\n🎒 Mitbringen: bequeme Kleidung in Erd-Tönen, lange Hose und feste Schuhe (Outdoor-Stationen)\n📞 Rückmeldung bis {rsvp_deadline} an {kontakt}\n⚠️ Bitte Allergien/Unverträglichkeiten angeben — auch Nüsse, Avocado, Insektenstiche{schlafparty_zusatz}\n\nJedes Kind wählt vor Ort seine Spezialisierung — und bekommt am Ende seine eigene Forschungs-Lizenz. Im Regenwald zählt nicht, wer am schnellsten rennt, sondern wer hinschaut.",
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Dschungel-Geburtstag für 9–12-Jährige dauern?",
-        "a": "2,5 bis 4 Stunden je nach Variante — oder als Wow mit Schlafparty-Anschluss bis zum Frühstück am nächsten Morgen. Minimal: 2,5 Stunden mit Spezialisierungs-Wahl, Codeknacker JUNGE und Tracking-Quest. Standard: 3,5 Stunden mit voller Stations-Wahl und Biotop-Karten-Vermessung. Wow: 4 Stunden inklusive Escape-Room-Quest AMAZONAS mit Dependency-Flow."
-      },
-      {
-        "q": "Wie viele Kinder sollte man einladen?",
-        "a": "Die Faustregel „Alter + 1“ wird mit 9-12 zu viel — lieber 8-10 Kinder maximal. Die Spezialisierungs-Logik funktioniert perfekt mit 6 (3 Rollen, je 2 Kinder), 8 (3-4 Rollen, je 2 Kinder) oder 10 (5 Rollen, je 2 Kinder). Bei mehr als 12: zwei Forschungs-Trupps bilden, sonst wird die Stations-Rotation chaotisch."
-      },
-      {
-        "q": "Was kostet ein Dschungel-Geburtstag für 9–12?",
-        "a": "Zwischen 45 € (Minimal, 6 Kinder) und 155 € (Wow, 10 Kinder, ohne Highlight-Mitgebsel). Standard liegt bei ca. 95 € für 8 Kinder und bietet das beste Verhältnis. Mini-Lupen als Wow-Highlight kommen mit 10-15 € extra dazu, sind aber komplett optional."
-      },
-      {
-        "q": "Ist das nicht zu „kindlich“ für 11-12-Jährige?",
-        "a": "Wenn du es wie eine Kleinkind-Party mit Plüsch-Affen-Spielen aufziehst: ja. Wenn du den Tropenökologie-Forschungs-Frame ernst nimmst, die Kinder als selbstständige Crew behandelst und die Aufgaben echte Herausforderungen sind (pH-Test, Höhenlinien-Karte, Spurabdruck-Anatomie, 15-Fragen-Quiz), funktioniert es genau richtig. Verkindischen wird sofort gemerkt — Ernsthaftigkeit nicht. Der Escape-Room mit Dependency-Flow in der Wow-Variante hebt es nochmal auf ein anderes Niveau."
-      },
-      {
-        "q": "Sind die Mythologie-Elemente kulturell sensibel?",
-        "a": "Ja, bewusst. Wir nutzen generische Symbole (Sonne / Schlange / Stern als universelle Bilder), keine spezifischen indigenen Spirituellen-Begriffe, keine echten Süd-Amerika-Hochkultur-Mythen, keine Hieroglyphen-Übernahmen. Bei der Wow-Variante steht auf der Schlüssel-Karte explizit: „Diese Symbole sind erfunden für unsere Expedition — echte Mythologie indigener Völker ist viel reicher und sollte respektvoll gelernt werden, nicht hier in einer Schatzsuche verkürzt.“ Das ist sowohl rechtlich (kein IP-Verstoß) als auch pädagogisch der sauberste Weg."
-      },
-      {
-        "q": "Funktioniert der Dschungel-Geburtstag auch als Schlafparty?",
-        "a": "Ja, die Wow-Variante ist explizit für den Schlafparty-Anschluss konzipiert. Programm: 15-19 Uhr volle Expedition + Escape-Room-Quest, ab 19 Uhr Eltern der Nicht-Bleiber raus, ab 19:30 Nacht-Insekten-Beobachtung mit Lichtfalle (echte entomologische Methode), dann Tropen-Doku, Schlafsäcke, Frühstück. Empfohlen ab 10 Jahren, schriftliche Eltern-Bestätigung zwingend. Mücken-Spray-Frage vorher klären (Pflegepflicht der Eltern)."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -19175,192 +17502,9 @@ var ELITE_MOTTO_DATA = {
         "fallback": "Bei Schlafparty: die Eltern der Nicht-Bleiber sind ohnehin ab einer festen Zeit verabschiedet — das vorher kommunizieren.",
         "tone": "diplomatisch"
       }
-    },
-    "ecologyQuiz": {
-      "title": "15-Fragen-Oekologie-Wissens-Quiz",
-      "note": "Quiz wird in der Wow-Variante (17:55 Quiz-Auswertung) eingesetzt. 3 Schwierigkeitsstufen, 5 Fragen pro Stufe.",
-      "easy": [
-        {
-          "q": "Wie viele Stockwerke hat ein typischer Regenwald?",
-          "options": [
-            "A) 1",
-            "B) 2",
-            "C) 4",
-            "D) 7"
-          ],
-          "a": "C",
-          "explain": "4 Stockwerke: Boden, Unterholz, Kronendach, Ueberholz."
-        },
-        {
-          "q": "Welches Tier ist das lauteste an Land?",
-          "options": [
-            "A) Tiger",
-            "B) Bruellaffe",
-            "C) Elefant",
-            "D) Wolf"
-          ],
-          "a": "B",
-          "explain": "Bruellaffe hoerbar bis 5 km Entfernung."
-        },
-        {
-          "q": "Wie heisst der groesste Fluss im Amazonas?",
-          "options": [
-            "A) Nil",
-            "B) Amazonas",
-            "C) Ganges",
-            "D) Donau"
-          ],
-          "a": "B",
-          "explain": "Der Amazonas fuehrt mehr Wasser als die naechsten 7 Fluesse zusammen."
-        },
-        {
-          "q": "Was bedeutet Habitat?",
-          "options": [
-            "A) Tierart",
-            "B) Lebensraum",
-            "C) Nahrung",
-            "D) Krankheit"
-          ],
-          "a": "B",
-          "explain": "Habitat = der natuerliche Lebensraum eines Tieres oder einer Pflanze."
-        },
-        {
-          "q": "Wie tarnen sich Faultiere?",
-          "options": [
-            "A) Schwarze Streifen",
-            "B) Algen im Fell",
-            "C) Tarnfarbe wechseln",
-            "D) Sie tarnen sich nicht"
-          ],
-          "a": "B",
-          "explain": "Algen im Fell faerben das Faultier gruenlich - perfekte Baumtarnung."
-        }
-      ],
-      "medium": [
-        {
-          "q": "Was bedeutet endemisch?",
-          "options": [
-            "A) ausgestorben",
-            "B) krank",
-            "C) nur in einem bestimmten Gebiet vorkommend",
-            "D) sehr gross"
-          ],
-          "a": "C",
-          "explain": "Endemische Arten leben ausschliesslich in einer bestimmten Region."
-        },
-        {
-          "q": "Wie lange braucht ein Faultier zur Verdauung einer Mahlzeit?",
-          "options": [
-            "A) 1 Tag",
-            "B) 1 Woche",
-            "C) 30 Tage",
-            "D) 1 Jahr"
-          ],
-          "a": "C",
-          "explain": "~30 Tage - daher die langsame Bewegung."
-        },
-        {
-          "q": "Was ist Biodiversitaet?",
-          "options": [
-            "A) Anzahl der Baeume",
-            "B) Vielfalt der Lebensformen",
-            "C) Hoehe der Berge",
-            "D) Wassergehalt"
-          ],
-          "a": "B",
-          "explain": "Biodiversitaet = Artenvielfalt eines Oekosystems."
-        },
-        {
-          "q": "Was ist ein Biotop?",
-          "options": [
-            "A) Tierart",
-            "B) Lebensraum mit allen seinen Bewohnern",
-            "C) Krankheit",
-            "D) Forschungsstation"
-          ],
-          "a": "B",
-          "explain": "Biotop = abgegrenzter Lebensraum mit charakteristischen Arten."
-        },
-        {
-          "q": "Wie viele Zehen hat ein Tapir an den Vorderfuessen?",
-          "options": [
-            "A) 1",
-            "B) 3",
-            "C) 4",
-            "D) 5"
-          ],
-          "a": "C",
-          "explain": "4 Zehen vorne, 3 hinten - typisches Tapir-Merkmal."
-        }
-      ],
-      "hard": [
-        {
-          "q": "Welcher Fluss ist der groesste Quellfluss des Amazonas?",
-          "options": [
-            "A) Rio Negro",
-            "B) Ucayali",
-            "C) Madeira",
-            "D) Tapajos"
-          ],
-          "a": "B",
-          "explain": "Ucayali in Peru - die laengere der beiden Quellflussverbindungen."
-        },
-        {
-          "q": "Was machen Aras mit Lehm?",
-          "options": [
-            "A) Nester bauen",
-            "B) Geophagie - Toxine binden",
-            "C) Ablegen",
-            "D) Spielen"
-          ],
-          "a": "B",
-          "explain": "Geophagie: Aras fressen Lehm, der Pflanzentoxine bindet."
-        },
-        {
-          "q": "Wie weit kann sich ein Bruellaffenruf ausbreiten?",
-          "options": [
-            "A) 100 m",
-            "B) 1 km",
-            "C) 5 km",
-            "D) 16 km"
-          ],
-          "a": "C",
-          "explain": "~5 km konservativ, einige Quellen nennen bis zu 16 km."
-        },
-        {
-          "q": "Wie oft pro Woche kommt ein Dreifinger-Faultier vom Baum?",
-          "options": [
-            "A) Taeglich",
-            "B) 1x pro Woche zur Defaekation",
-            "C) Nie",
-            "D) 3x"
-          ],
-          "a": "B",
-          "explain": "Etwa 1x pro Woche zur Defaekation am Boden."
-        },
-        {
-          "q": "Welche Pflanze ist im Amazonas endemisch?",
-          "options": [
-            "A) Acai",
-            "B) Victoria amazonica (Amazonas-Riesenseerose)",
-            "C) Mango",
-            "D) Kokospalme"
-          ],
-          "a": "B",
-          "explain": "Victoria amazonica ist die groesste Seerose der Welt und ein echter Endemit. Acai kommt weiter verbreitet vor."
-        }
-      ]
     }
   },
   "einhorn-klein": {
-    "_meta": {
-      "source_file": "kindergeburtstag/einhorn-3-5-jahre.html",
-      "extracted": "2026-05-19",
-      "schema_version": "1.0",
-      "purpose": "Einhorn 3-5 (klein) — Phase C #4 Elite-Slot, H2-Ritual-Template",
-      "phase_b_complete": "2026-05-19",
-      "phase_b_method": "Direct draft — einhorn-klein-spezifika (1,5-2h, Eltern-Pflicht, Glitzer-Allergie-Test, kein Fondant) durchgehend angewandt."
-    },
     "motto": "einhorn",
     "ageGroup": "klein",
     "ageRange": [
@@ -19368,8 +17512,6 @@ var ELITE_MOTTO_DATA = {
       5
     ],
     "title": "🦄 Einhorn-Kindergeburtstag — 3–5 Jahre",
-    "metaDescription": "Einhorn-Kindergeburtstag für 3–5 Jahre: 3 fertige Party-Konzepte mit Zeitplan, 6 Spielen mit Anleitung, Einkaufsliste und Kosten pro Kind. Komplett kostenlos.",
-    "introParagraph": "3 fertige Party-Konzepte: Minimal (1,5 Std.) · Standard (2 Std.) · Wow (2,5 Std.)\n\nMinutengenaue Zeitpläne, 6 altersgerechte Spiele mit kompletter Anleitung, Einkaufslisten mit Preisen und Kosten pro Kind. Für 3–5 Jahre: weniger Programm, mehr Staunen.\n\n[🦄 Einhorn-Geburtstag planen →](/kindergeburtstag?motto=einhorn&alter=4#planer)",
     "ageInsight": {
       "headline": "Was du über 3–5-Jährige wissen musst — Einhorn-Party 3-5",
       "traits": [
@@ -20350,114 +18492,6 @@ var ELITE_MOTTO_DATA = {
         "costContext": "Pflichtteil ~65 €, mit allen Sinnvoll-Extras ~105 €. Die niedrigere Schätzung 75 € geht von Standard-Auswahl ohne alle Wow-Add-ons aus."
       }
     ],
-    "cakeRecipe": {
-      "intro": "Geht mit jedem Gugelhupf. Das Besondere ist die Deko — nicht das Backen.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Gugelhupf backen — Fertigmischung reicht völlig (Dr. Oetker, Kathi). Kein Mensch schmeckt den Unterschied, und du hast genug Stress mit 5 Kleinkindern."
-        },
-        {
-          "n": 2,
-          "content": "Teig vor dem Backen in 4 Schüsseln teilen. Jede mit einer Lebensmittelfarbe einfärben (rosa, gelb, grün, lila). Nacheinander in die Form schichten → Regenbogen-Überraschung beim Anschnitt."
-        },
-        {
-          "n": 3,
-          "content": "Komplett abkühlen lassen. Ungeduld = Glasur-Desaster."
-        },
-        {
-          "n": 4,
-          "content": "Mit weißer „Wolken-Glasur\" überziehen: 200 g Puderzucker + 3 EL Wasser, cremig rühren."
-        },
-        {
-          "n": 5,
-          "content": "Einhorn-Horn oben drauf: fertiges Zuckerhorn aus der Backabteilung (DM, ~2 €) oder Fondant-Kegel formen."
-        },
-        {
-          "n": 6,
-          "content": "Regenbogen-Streusel oder bunte Schoko-Linsen drumherum. Essbarer Glitzer drüber = magisch."
-        }
-      ],
-      "meta": {
-        "aufwand": "60 Min. inkl. Backen und Deko",
-        "kosten": "~6 €",
-        "allergiker": "Fertigmischungen checken (Packung). Beim Milch-Experiment: nicht trinken lassen (Spülmittel!)"
-      },
-      "tips": [
-        {
-          "title": "🦄 Kein Bock auf Fondant? Zwei Wege zum Einhorn-Horn",
-          "body": "Weg 1 (einfach): Fertiges Zuckerhorn aus der Backabteilung (DM, Rewe, ~2 €). Aufsetzen, fertig. Weg 2 (improvisiert): Spitztüte aus Backpapier rollen, mit Puderzucker bestreuen. Kinder checken den Unterschied nicht — versprochen."
-        },
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Fertigen Kuchen beim Bäcker, weiße Glasur drüber, Zuckerhorn oben drauf, Streusel drumherum. 5 Minuten, sieht perfekt aus. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.\""
-        },
-        {
-          "title": "🧁 Kleinkinder-Alternative: Einhorn-Muffins",
-          "body": "Für 3-Jährige sind Muffins oft praktischer als ein großer Kuchen — jedes Kind bekommt seinen eigenen, kein Schneiden, weniger Krümel. Fertig-Muffins aus dem Supermarkt, rosa Glasur drüber, je 1 Einhorn-Oblate oder Zuckerstreusel oben drauf. 10 Minuten Aufwand, null Backskills nötig. Bonus: Kinder in diesem Alter finden „mein eigener Muffin\" spannender als ein Stück vom großen Kuchen."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🚨 Allergien & Windeln vorher klären",
-          "detail": "Bei 5 Kindern hat mindestens eins eine Unverträglichkeit. In die Einladung: „Hat dein Kind Allergien?\" Bei 3-Jährigen zusätzlich: „Braucht dein Kind noch Windeln?\" Stell sicher, dass du welche da hast (oder bitte die Eltern mitzubringen)."
-        },
-        {
-          "topic": "👶 3-Jährige ≠ 5-Jährige",
-          "detail": "Der Unterschied ist riesig. 3-Jährige brauchen ständig einen Erwachsenen in der Nähe, können keine Regeln befolgen und weinen schnell. 5-Jährige spielen selbstständig, verstehen Anleitungen und können 15 Minuten konzentriert basteln. Plane für die Jüngsten — die Älteren langweilen sich nicht, aber Überforderte weinen."
-        },
-        {
-          "topic": "📋 Plan B: Ausmalbilder",
-          "detail": "Druck 10 Einhorn-Ausmalbilder aus (Pinterest: „unicorn coloring pages free\", kostenlos). Wenn ein Kind nicht mitmachen will, ein Spiel zu wild ist, oder du 5 Minuten zwischen zwei Stationen brauchst: Ausmalbilder + Stifte = sichere Insel. Funktioniert immer.\n\n⏰ Eltern bleiben bei 3-Jährigen\nUnter 4 Jahren bleiben die Eltern. Schreib es in die Einladung: „Wir freuen uns, wenn du dabei bleibst!\" Das ist kein Nachteil — mehr Hände beim Basteln, beim Aufräumen, und wenn ein Kind weint. Ab 5 Jahren können die meisten Kinder 2 Stunden ohne ihre Eltern sein."
-        },
-        {
-          "topic": "🌧️ Plan B bei Regen",
-          "detail": "Alle Spiele auf dieser Seite funktionieren drinnen — das ist Absicht. Regenbogen-Milch sowieso, Sternenstaub-Wanne passt ins Bad, Regenbogen-Tanz geht im Wohnzimmer (Möbel zur Seite). Nur der Einhorn-füttern-Karton braucht etwas Platz. Tipp: Flur + Wohnzimmer zusammen reichen für 5 Kleinkinder. Du brauchst keinen Garten."
-        },
-        {
-          "topic": "👕 Wechselklamotten bereithalten",
-          "detail": "3-Jährige kleckern. Glitzer-Kleber, Einhorn-Saft, Kuchen — irgendwas landet auf dem Pulli. Schreib in die Einladung: „Bitte Wechsel-Shirt mitbringen.\" Und leg für dein eigenes Kind eins bereit. Spart dir die WhatsApp-Nachricht „Sorry, das Shirt hat jetzt Glitzer drauf\" an die andere Mama."
-        },
-        {
-          "topic": "🐉 Geschlechts-Inklusion: Auch für Jungs",
-          "detail": "Falls Jungs in der Gruppe sind und „Einhorn ist Mädchenkram\" sagen: lass das Geburtstagskind antworten, nicht du. Reframen funktioniert sofort — „Regenbogen-Zauber-Party\" statt „Einhorn-Party\" auf die Einladung. Alternativ Drachen-/Magier-Anker einbauen: Horn aus Pappteller heißt jetzt „Drachen-Horn\", Sternenstaub-Wanne ist „Drachen-Schatzkammer\". Beim Tanz galoppieren ALLE Kinder als magische Wesen — Einhorn, Drachen oder Pegasus, je nach Geschmack. Inhalte bleiben identisch."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Erstelle eine [Partyseite auf party.machsleicht.de](https://party.machsleicht.de) mit Datum, Uhrzeit, Adresse und Allergien-Abfrage. Einen Link verschicken statt 10 Nachrichten beantworten. Kostet nichts.\n\n⏰ Nicht nach 15 Uhr anfangen\n3–5-Jährige sind nachmittags fitter als morgens (nach dem Mittagsschlaf). Aber nach 16 Uhr wird's schwierig — müde Kleinkinder sind schlecht gelaunte Kleinkinder. Ideal: 15:00 Start, 16:30 oder 17:00 Ende. Freitagnachmittag funktioniert meistens am besten."
-        }
-      ],
-      "educationalValue": null
-    },
-    "invitationTemplate": "Eine Einhorn-Einladung, die schon vor der Party für Vorfreude sorgt. Auf machsleicht in 3 Minuten erstellen — mit Foto, Datum, Treffpunkt. Digital verschicken oder als PDF ausdrucken.\n[🦄 Einhorn-Einladung erstellen →](/einladung/erstellen?motto=einhorn)\n\n[📱 Per WhatsApp teilen](https://wa.me/?text=%F0%9F%A6%84%20Einhorn-Kindergeburtstag%20f%C3%BCr%203%E2%80%935-J%C3%A4hrige%20planen%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Zeitplan%2C%20Spielen%20und%20Einkaufsliste%3A%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Feinhorn-3-5-jahre)",
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Einhorn-Geburtstag für 3–5-Jährige dauern?",
-        "a": "1,5 bis 2 Stunden sind perfekt. Weniger ist mehr in diesem Alter — nach 2 Stunden sind die meisten Kinder durch. Die Minimal-Variante (90 Minuten) funktioniert hervorragend, besonders bei überwiegend 3-Jährigen. Die Wow-Variante (2,5 Stunden) nur mit Helfer und eher für 4–5-Jährige."
-      },
-      {
-        "q": "Wie viele Kinder einladen bei 3–5-Jährigen?",
-        "a": "3–5 Kinder sind ideal. In diesem Alter kann es schnell chaotisch werden — weniger Kinder = weniger Stress = bessere Party. Die Faustregel „Alter + 1\" passt hier gut: Bei einem 4-Jährigen also 5 Gäste. Alle Mengenangaben auf dieser Seite sind für 5 Kinder berechnet."
-      },
-      {
-        "q": "Was kostet ein Einhorn-Geburtstag für 3–5-Jährige?",
-        "a": "Zwischen 27 € (Minimal) und 75 € (Wow) für 5 Kinder. Die Standard-Variante liegt bei ca. 46 € und bietet das beste Verhältnis aus Aufwand und Ergebnis. Kleinkinder brauchen weniger aufwendige Materialien als ältere Kinder — einfaches Bastelmaterial, Reis mit Glitzer und Ausmalbilder machen sie genauso glücklich."
-      },
-      {
-        "q": "Müssen die Eltern der Gäste dabei bleiben?",
-        "a": "Bei 3-Jährigen: ja, unbedingt. Die Kinder kennen dich vielleicht nicht gut, und sie brauchen ihre Bezugsperson in der Nähe. Bei 4–5-Jährigen können die meisten Kinder 1,5–2 Stunden ohne ihre Eltern bleiben — aber schreib in die Einladung, dass sie erreichbar sein müssen. Tipp: Eltern, die bleiben, können beim Basteln helfen."
-      },
-      {
-        "q": "Funktioniert das Einhorn-Motto auch für Jungs?",
-        "a": "Ja — besonders in diesem Alter. 3–5-Jährige haben noch keine starren Geschlechter-Vorstellungen. Regenbogen-Milch, Sternenstaub suchen und Bälle werfen begeistern jedes Kind. Wenn du willst, nenn es „Regenbogen-Zauber-Party\" statt „Einhorn-Party\" — gleicher Inhalt, neutralerer Name. Drachen-Variante: Einhorn-Horn → Drachen-Horn aus Pappteller, Sternenstaub-Wanne → Drachen-Schatzkammer. Sind die gleichen Spiele, andere Story-Verpackung."
-      },
-      {
-        "q": "Wie gehe ich mit Glitzer-Allergien und empfindlicher Kinderhaut um?",
-        "a": "1 Tag vorher Allergie-Vortest: Glitzer-Kleber, Tattoo und ggf. Schminkfarbe an kleiner Hautstelle (Innenseite Unterarm) eines Kindes 5 Min. auftragen. Bei Rötung → nur Sticker und Klettband-Verzierungen statt Tattoo/Glitzer/Schminke. Essbaren Glitzer nimmst du immer mit E-Nummer-Check (Packung lesen) — bei Zucker-Unverträglichkeit gibt es Zucker-freie Alternativen (Bio-Backabteilung). Wer kein Tattoo mag: Tattoo auf den Wächter-Zettel oder auf das T-Shirt-Schild kleben — niemand wird ausgeschlossen."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -20745,14 +18779,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "einhorn-mittel": {
-    "_meta": {
-      "source_file": "kindergeburtstag/einhorn-6-8-jahre.html",
-      "extracted": "2026-05-19",
-      "schema_version": "1.0",
-      "purpose": "2. Elite-Slot — Einhorn 6-8 für Planer-Frisur-Sprint (Phase C Schema-Robustness-Test)",
-      "phase_b_complete": "2026-05-19",
-      "phase_b_method": "Direct draft (no content-loop pipeline) — heuristics from Phase B feuerwehr applied: steps <=120 chars, pflicht-Anteil <70%, motto-anchor per item."
-    },
     "motto": "einhorn",
     "ageGroup": "mittel",
     "ageRange": [
@@ -20760,8 +18786,6 @@ var ELITE_MOTTO_DATA = {
       8
     ],
     "title": "🦄 Einhorn-Kindergeburtstag — 6–8 Jahre",
-    "metaDescription": "Einhorn-Kindergeburtstag für 6-8-Jährige: 3 fertige Party-Konzepte (Minimal/Standard/Wow) mit Spielanleitungen, Zeitplan, Einkaufsliste und Kosten.",
-    "introParagraph": "Dein Kind wird 6, 7 oder 8 und ist verrückt nach Einhörnern? Hier bekommst du drei fertige Party-Konzepte — von schnell und stressfrei bis zum vollen Programm mit Regenbogen-Experiment und Sternenstaub-Schatzsuche. Jedes Konzept mit Zeitplan, Spielanleitungen, Einkaufsliste und Kosten.\n\n[Einhorn-Geburtstag planen →](/kindergeburtstag?motto=einhorn&alter=7#planer)",
     "ageInsight": {
       "headline": "Was 6–8-Jährige ausmacht — und was das für die Einhorn-Party heißt",
       "traits": [
@@ -21973,110 +19997,6 @@ var ELITE_MOTTO_DATA = {
         "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm & UV-Set)"
       }
     ],
-    "cakeRecipe": {
-      "intro": "Geht mit jedem Gugelhupf. Das Besondere ist die Deko — nicht das Backen.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Gugelhupf backen — Fertigmischung reicht völlig (Dr. Oetker, Kathi, whatever). Kein Mensch schmeckt den Unterschied."
-        },
-        {
-          "n": 2,
-          "content": "Teig vor dem Backen in 4 Schüsseln teilen. Jede Schüssel mit einer Lebensmittelfarbe einfärben (rosa, gelb, grün, lila). Nacheinander in die Form schichten → innen Regenbogen beim Anschnitt."
-        },
-        {
-          "n": 3,
-          "content": "Komplett abkühlen lassen. Ungeduld = Glasur-Desaster."
-        },
-        {
-          "n": 4,
-          "content": "Mit weißer Glasur überziehen („Wolken-Guss\" = 200 g Puderzucker + 3 EL Wasser, cremig rühren)."
-        },
-        {
-          "n": 5,
-          "content": "Einhorn-Horn aus Zuckerrolle formen (weißer Fondant, spitzkegelförmig) oder fertiges Zuckerhorn aus der Backabteilung. Oben aufstecken. Zwei Mini-Ohren aus Fondant daneben."
-        },
-        {
-          "n": 6,
-          "content": "Regenbogen-Streusel oder bunte Schoko-Linsen um den Fuß herum als „Wolken-Lava\". Essbarer Glitzer drüber = magisch."
-        },
-        {
-          "n": 7,
-          "content": "Optional: Wunderkerze reinstecken und beim Happy-Birthday anzünden (Wow-Variante)."
-        }
-      ],
-      "meta": {
-        "aufwand": "60 Min. inkl. Backen und Deko",
-        "kosten": "~7 €",
-        "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. Essbare Glitzer-Produkte enthalten meist Lebensmittelfarben, E-Nummern prüfen"
-      },
-      "tips": [
-        {
-          "title": "🦄 Kein Bock auf Fondant? Zwei Wege zum Einhorn-Horn",
-          "body": "Weg 1 (einfach): Zuckerhorn aus der Backabteilung kaufen (DM, Rewe, Edeka — meist bei den Tortendeko). Kostet ~2 €, sieht perfekt aus, 2 Minuten aufgesetzt. Das machen die meisten. Weg 2 (notfalls): Spitztüte aus weißem Backpapier rollen, mit goldenem Zucker oder Puderzucker bestreuen, am Kuchen festdrücken. Improvisiert, aber Kinder checken das nicht. Die Ohren optional weglassen — kein Kind zählt nach."
-        },
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Fertigen Schoko- oder Vanillekuchen beim Bäcker kaufen, weiße Glasur drüber, Zuckerhorn aus der Backabteilung aufstecken, Regenbogen-Streusel drumherum. Sieht aus wie gewollt, dauert 5 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.\""
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🚨 Allergien vorher abfragen",
-          "detail": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten). In die Einladung schreiben: „Hat dein Kind Allergien oder Unverträglichkeiten?\" Saftpäckchen und Popcorn sind fast immer safe. Essbarer Glitzer ist oft aus Zucker — also Zucker-Unverträglichkeit beachten."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Spiele in dieser Vorlage funktionieren auch drinnen (das Regenbogen-Milch-Experiment sowieso — ist sogar besser drinnen). Wenn du draußen planst: Parcours-Strecke im Flur aufbauen als Backup. Nie ohne Plan B."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Kein Eltern-Gruppen-Chaos mehr. Erstelle eine [Partyseite auf party.machsleicht.de](https://party.machsleicht.de) mit Datum, Uhrzeit, Treffpunkt und Wunschliste — verschicke nur einen Link. Eltern können sich eintragen, Geschenke abstimmen, Rückfragen stellen. Kostet nichts."
-        },
-        {
-          "topic": "👥 Ab 6 Kindern: 1 Helfer dazu",
-          "detail": "Bis 5 Kinder schaffst du eine Standard-Party allein. Bei 6+ brauchst du Unterstützung — besonders für Seife-gießen (Mikrowelle) und das Regenbogen-Milch-Experiment (parallel an 2 Tischen). Oma, andere Elternteile, oder eine Teenager-Nachbarin (10 € für 3 Stunden) retten dir den Tag.\n\n⏰ Abholzeit vorher klären\nIn diesem Alter können Eltern kurz abgesetzt werden — müssen aber telefonisch erreichbar sein. Schreib in die Einladung: „Abholung 17:00 Uhr pünktlich bitte.\" Sonst stehen um 17:30 noch 3 Kinder da und du hast schon alles abgebaut."
-        },
-        {
-          "topic": "🐉 Gender-Inklusion: Drachen-Variante für Jungs",
-          "detail": "Bei gemischten Gruppen mit Jungs-Skepsis: Wächter-Namen sind absichtlich Fantasy-RPG-Style (Phoenix Flammenhuf, Atlas Bergschatten, Orion Jägerstern) — niemand findet das kindisch. Falls trotzdem Murren: reframe als „Regenbogen-Wächter-Akademie\" oder „Magier-Ausbildung\". Drachen-Variante: Einhorn-Maske → Drachen-Maske ausmalen (gleiches Material, andere Farbpalette: grün, schwarz, rot). Sternenstaub-Suche bleibt — heißt halt „Drachen-Schatz\". Inhalte 100% gleich, nur Story-Verpackung swappen. Spätestens bei UV-Schwarzlicht (Wow) und Quiz ist jeder still."
-        },
-        {
-          "topic": "🍰 Trost-Preis-Regel: Niemand verliert",
-          "detail": "In 6–8-Jahren ist Wettbewerb okay — aber „nur Sieger\" zählt nicht. Bei Parcours, Quiz, Rätselrallye: Verlierer-Team bekommt „Trost-Regenbogen\" (= extra Gummibärchen + Sticker). Funktional: ein zweites Belohnungs-Set vorbereiten, optisch identisch, nur Beschriftung anders („Sieger-Stern\" vs. „Mut-Stern\"). So bekommt JEDES Kind etwas am Ende. Hat sich bei Schultern-Hochziehen-Kindern als Game-Changer erwiesen."
-        }
-      ],
-      "educationalValue": "Hinter dem Glitzer steckt echtes Lernen: Das Regenbogen-Milch-Experiment zeigt Oberflächenspannung (Physik zum Anfassen), die Rätselrallye trainiert Logik und Teamwork, das Quiz vermittelt Tier-Mythologie und Geografie (Schottland-Bezug zum Einhorn-Wappentier). Die Wächter-Ausbildung mit Prüfungen und Urkunde fördert Selbstwirksamkeit — Kinder erleben, dass sie etwas erreichen, statt nur bespaßt zu werden. Bei der Drachen-Variante für Jungen zusätzlich: Fantasy-Worldbuilding + soziale Rollenflexibilität."
-    },
-    "invitationTemplate": "Eine persönliche Einhorn-Einladung macht schon vor der Party Lust auf den Tag. Auf machsleicht kannst du deine Einladung kostenlos in 3 Minuten erstellen — mit Foto, Datum, Treffpunkt und allen Infos. PDF oder digitaler Link zum Verschicken.\n[🦄 Einhorn-Einladung erstellen →](/einladung/erstellen?motto=einhorn)\n\n[📱 Per WhatsApp teilen](https://wa.me/?text=%F0%9F%A6%84%20Einhorn-Kindergeburtstag%20f%C3%BCr%206%E2%80%938-J%C3%A4hrige%20planen%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Zeitplan%2C%20Spielen%20und%20Einkaufsliste%3A%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Feinhorn-6-8-jahre)",
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Einhorn-Geburtstag für 6–8-Jährige dauern?",
-        "a": "2,5 bis 3 Stunden sind ideal. Kürzer ist besser als länger — nach 3 Stunden kippt die Stimmung bei den meisten Kindern. Die Minimal-Variante (2 Stunden) funktioniert auch perfekt, besonders wenn du wenig Vorbereitungszeit hast. Die Wow-Variante mit Wächter-Ausbildung braucht 3,5 Stunden, weil die Zeremonie Zeit verdient."
-      },
-      {
-        "q": "Wie viele Kinder sollte man zum Einhorn-Geburtstag einladen?",
-        "a": "Faustregel: 6 Kinder sind ideal für diese Variante (inkl. Geburtstagskind). Bei 7-8 Gästen: 2. Helfer einplanen + Mengen um 30% erhöhen. Bei >8 Kindern: Wow-Variante mit längerem Zeitplan wählen."
-      },
-      {
-        "q": "Was kostet ein Einhorn-Geburtstag?",
-        "a": "Zwischen 32 € (Minimal) und 93 € (Wow, ohne Kostüm und UV-Set) für 6 Kinder — je nachdem wie viel Aufwand du betreiben willst. Die Standard-Variante liegt bei ca. 65 € und bietet das beste Verhältnis aus Aufwand und Ergebnis. Das aufblasbare Einhorn-Kostüm (~40 €) und das UV-Schwarzlicht-Set (~19 €) sind optional, aber die Wow-Faktoren, an die sich die Kinder jahrelang erinnern."
-      },
-      {
-        "q": "Funktioniert das Einhorn-Motto in gemischten Gruppen?",
-        "a": "Ja, die Regenbogen-Wächter-Ausbildung ist darauf ausgelegt, für alle Kinder zu funktionieren — weil sie nicht um Prinzessinnen kreist, sondern um Prüfungen, Experimente und Magie. Das Regenbogen-Milch-Experiment begeistert jedes Kind, die Schatzsuche ist geschlechtsneutral, und die Urkunden-Zeremonie mit eigenem Einhorn-Namen funktioniert für Jungen genauso wie für Mädchen. Die Farbwelt lässt sich leicht anpassen (weniger Rosa, mehr Türkis, Indigo, Gold). Für Jungs-skeptische Gruppen: Wächter-Namen wie „Phoenix Flammenhuf\", „Atlas Bergschatten\", „Orion Jägerstern\" und „Ares Sturmwelle\" sind bewusst Fantasy-RPG-Style — keiner findet das kindisch."
-      },
-      {
-        "q": "Wie gehe ich mit Allergien (Glitzer, Lebensmittelfarbe, Glycerin) um?",
-        "a": "Drei Allergie-Risiken in dieser Variante: (1) Essbarer Glitzer enthält oft E-Nummern (Lebensmittelfarben + Glanz-Zusatz) — Packung lesen, bei Zucker-Unverträglichkeit auf zucker-freien Bio-Glitzer wechseln. (2) Lebensmittelfarbe-Tropfen für Milch-Experiment + Seife — bei Tartrazin-Empfindlichkeit (E102) nur natürliche Beeren-Säfte verwenden. (3) Glycerin-Seifen-Rohling: Inhaltsstoffe auf Parfümfreie Versionen prüfen für Kinder mit empfindlicher Haut. Vorher 5 Min. Spot-Test an Innenseite Unterarm bei einem freiwilligen Kind. Wer kein Tattoo will: aufs Wächter-Pass kleben statt auf die Hand."
-      },
-      {
-        "q": "Was ist der Unterschied zwischen den 3 Varianten (Minimal/Standard/Wow)?",
-        "a": "Minimal (2h, 32€): Sternenstaub-Schatzsuche + Regenbogen-Parcours + Kuchen. Stressfrei, kein Helfer nötig. Standard (3h, 65€): zusätzlich Masken-Basteln, Milch-Experiment und Seife-Gießen — 4 Aktivitäten mit gutem Rhythmus-Wechsel. Wow (3,5h, 93€): zusätzlich Wolkenwald-Rätselrallye + optional UV-Schwarzlicht-Geheimschrift + Wächter-Zeremonie mit Urkunden. Komplette Wächter-Ausbildungs-Story, braucht 2. Erwachsenen. Tendenz: bei 6 Kindern 1. Mal: Standard. Bei Routine + Helfer: Wow."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -22370,14 +20290,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "einhorn-gross": {
-    "_meta": {
-      "source_file": "kindergeburtstag/einhorn-9-12-jahre.html",
-      "extracted": "2026-05-19",
-      "schema_version": "1.0",
-      "purpose": "Einhorn 9-12 (gross) — Phase C #5 Elite-Slot",
-      "phase_b_complete": "2026-05-19",
-      "phase_b_method": "Direct draft — einhorn-gross-spezifika (3-4h, Eltern absetzen, Code-Names, Chemie-Labor, Schmuck-Workshop, Mirror-Glaze-Galaxy-Kuchen) durchgehend angewandt."
-    },
     "motto": "einhorn",
     "ageGroup": "gross",
     "ageRange": [
@@ -22385,8 +20297,6 @@ var ELITE_MOTTO_DATA = {
       12
     ],
     "title": "🦄 Einhorn-Kindergeburtstag — 9–12 Jahre",
-    "metaDescription": "Einhorn-Kindergeburtstag für 9–12 Jahre: 3 fertige Party-Konzepte mit Zeitplan, 6 Aktivitäten mit Anleitung, Einkaufsliste und Kosten. Cool statt kitschig.",
-    "introParagraph": "3 fertige Party-Konzepte: Minimal (2,5 Std.) · Standard (3,5 Std.) · Wow (4,5 Std.)\n\nMinutengenaue Zeitpläne, 6 altersgerechte Aktivitäten mit kompletter Anleitung, Einkaufslisten mit Preisen und Kosten pro Kind. Für 9–12 Jahre: cool statt kitschig, herausfordernd statt niedlich.\n\n[🦄 Einhorn-Geburtstag planen →](/kindergeburtstag?motto=einhorn&alter=10#planer)",
     "ageInsight": {
       "headline": "Was 9–12-Jährige ausmacht — und was das für die Einhorn-Party heißt",
       "traits": [
@@ -23471,110 +21381,6 @@ var ELITE_MOTTO_DATA = {
         "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Nebelmaschine)"
       }
     ],
-    "cakeRecipe": {
-      "intro": "Der Kuchen, der auf Instagram geht. Sieht nach 4 Stunden Arbeit aus, braucht aber nur 90 Minuten.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Einfachen Schoko- oder Vanillekuchen in der Springform backen. Fertigmischung funktioniert. Komplett abkühlen lassen."
-        },
-        {
-          "n": 2,
-          "content": "Mirror Glaze: 200 g weiße Schokolade + 150 g Zucker + 150 ml Kondensmilch + 10 g Gelatine + 150 ml Wasser. Aufkochen, auf 30-32°C abkühlen lassen. In 3 Schüsseln teilen."
-        },
-        {
-          "n": 3,
-          "content": "Lebensmittelfarbe: eine Schüssel dunkelblau, eine lila, eine türkis. Kuchen auf ein Gitter stellen (Backblech drunter)."
-        },
-        {
-          "n": 4,
-          "content": "Alle 3 Farben gleichzeitig über den Kuchen gießen — sie verlaufen ineinander und bilden den Galaxy-Effekt. Nicht rühren! Mit einem Zahnstocher leichte Spiralen ziehen."
-        },
-        {
-          "n": 5,
-          "content": "Essbarer Glitzer drüberstreuen = Sterne. Optional: goldene Zucker-Sterne als Deko oben drauf."
-        },
-        {
-          "n": 6,
-          "content": "2 Stunden kalt stellen. Fondant-Horn oder Zuckerhorn oben aufsetzen."
-        }
-      ],
-      "meta": null,
-      "tips": [
-        {
-          "title": "🎂 Keine Lust auf Mirror Glaze?",
-          "body": "Einfacher Trick: Schokokuchen backen, mit dunkler Schoko-Glasur überziehen, dann mit einem Löffel bunte Glasur-Streifen (weiß + Lebensmittelfarbe) drüber tropfen und mit dem Zahnstocher Spiralen ziehen. Oder: Fertigkuchen beim Bäcker, essbaren Glitzer und Goldstreusel drauf. 5 Minuten, sieht „Galaxy\" aus. Kein Kind beschwert sich."
-        },
-        {
-          "title": "🦄 Kein Bock auf Fondant?",
-          "body": "Zuckerhorn aus der Backabteilung (DM, ~2 €). Aufstecken, fertig. Oder komplett weglassen — ein Galaxy-Kuchen ohne Horn ist in diesem Alter sogar cooler. Die Kinder wissen, dass es ein Einhorn-Geburtstag ist."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🚨 Allergien & Ernährung vorher abfragen",
-          "detail": "In diesem Alter gibt es auch Vegetarier, Veganer und Kinder mit Laktoseintoleranz. In die Einladung: „Gibt es Allergien oder Ernährungsbesonderheiten?\" Pizza-Brötchen lassen sich leicht in vegetarisch/vegan variieren. Popcorn ist fast immer safe."
-        },
-        {
-          "topic": "📱 Handys: Nutzen statt Verbieten",
-          "detail": "Die Kinder haben Handys, und sie werden sie benutzen. Mach es zum Feature: Kurzfilm drehen, Fotos für die Gruppe machen, Timer für die Escape-Challenge. Einzige Regel: „Beim Essen Handys weg.\" Den Rest regeln sie selbst."
-        },
-        {
-          "topic": "👥 Team-Einteilung: Immer per Los",
-          "detail": "NIEMALS „wählt euch Teams\" sagen — das endet mit einem Kind, das als letztes gewählt wird. Stattdessen: Zettel ziehen, abzählen, oder Code-Namen alphabetisch aufteilen. Fühlt sich fair an, ist es auch."
-        },
-        {
-          "topic": "🌧️ Plan B bei Regen",
-          "detail": "Alle Aktivitäten auf dieser Seite funktionieren drinnen. Chemie-Labor sowieso, Escape-Challenge in verschiedenen Räumen der Wohnung, Schmuck am Esstisch, Kurzfilm im Wohnzimmer. Du brauchst keinen Garten."
-        },
-        {
-          "topic": "🙄 „Das ist doch für Babys!\" — Die Eltern-Antwort",
-          "detail": "Falls ein Gast-Kind meckert: „Einhorn? Echt jetzt?\" — lass das Geburtstagskind antworten, nicht du. Meistens reicht der erste Blick aufs Chemie-Labor oder die Escape-Rätsel. Und spätestens beim UV-Schwarzlicht-Moment ist jeder still. Einhorn als Fantasy-Kreatur verkaufen, nicht als Kuscheltier — dann funktioniert es bis 12."
-        },
-        {
-          "topic": "🌌 Galaxy statt Rosa: Farb-Welt verschieben",
-          "detail": "Der zentrale Reframing-Hebel: 9–12-Jährige finden „Galaxy\" cool und „Regenbogen\" kindisch — bei gleichen Farben. Verwende: Dunkelblau + Lila + Türkis + Gold (Mirror-Glaze-Kuchen). Metallic-Tattoos in Gold/Silber statt Glitzer-Aufkleber. Iridescent-Ballons (schimmernd) statt Pastell-Rosa. Pergament-Karten statt Glitzer-Zettel. Schlicht-Kraftpapier-Tüten als Goodie-Bags (nicht rosa — die finden das peinlich). Die Atmosphäre soll „Zauberschule trifft Einhorn\" sein, nicht „Kindergarten-Party\"."
-        },
-        {
-          "topic": "🐉 Drachen-/Magier-Alternative für Jungs-skeptische Gruppen",
-          "detail": "Falls gemischte Gruppen mit Jungs-Skepsis: Code-Namen sind absichtlich Fantasy-RPG-Style (Phoenix Goldstaub, Raven Mondklinge, Onyx Flammenschweif, Atlas Bergschatten). Bei stärkerer Skepsis: reframe als „Akademie der Vergessenen Magie\" komplett ohne Einhorn-Wort — Charms können statt Einhorn auch Drachen oder Phönix sein (gleiche Bezugsquelle, andere Suche). Chemie-Labor, Escape-Challenge, Kurzfilm und Schmuck-Workshop sind 100% geschlechtsneutral. Inhalte bleiben gleich, Story-Verpackung swappen."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Erstelle eine [Partyseite auf party.machsleicht.de](https://party.machsleicht.de) mit Datum, Uhrzeit, Adresse und Allergien-Abfrage. Ein Link statt 10 Nachrichten. Kostet nichts."
-        }
-      ],
-      "educationalValue": null
-    },
-    "invitationTemplate": "Eine Einhorn-Einladung, die neugierig macht statt peinlich ist. Auf machsleicht in 3 Minuten erstellen — mit Foto, Datum, Treffpunkt. Digital verschicken oder als PDF ausdrucken.\n[🦄 Einhorn-Einladung erstellen →](/einladung/erstellen?motto=einhorn)\n\n[📱 Per WhatsApp teilen](https://wa.me/?text=%F0%9F%A6%84%20Einhorn-Kindergeburtstag%20f%C3%BCr%209%E2%80%9312-J%C3%A4hrige%20planen%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Zeitplan%2C%20Spielen%20und%20Einkaufsliste%3A%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Feinhorn-9-12-jahre)",
-    "faq": [
-      {
-        "q": "Ist Einhorn nicht zu kindisch für 9–12-Jährige?",
-        "a": "Nicht, wenn du es richtig verpackst. Der Schlüssel ist: Einhorn als Fantasy-Kreatur, nicht als Kinderzimmer-Deko. Escape-Rätsel, Chemie-Experimente, UV-Schwarzlicht und eine „Akademie der Vergessenen Magie\" — das ist cool, nicht kitschig. Die Farbwelt verschieben: weg von Rosa, hin zu Galaxy (Dunkelblau, Lila, Türkis, Gold). Metallic-Tattoos statt Glitzer-Aufkleber. Das funktioniert bis 12."
-      },
-      {
-        "q": "Wie lange sollte die Party dauern?",
-        "a": "2,5 bis 3,5 Stunden sind der Sweet Spot. 9–12-Jährige können länger durchhalten als Kleinkinder, aber nach 3,5 Stunden organisiertem Programm reicht es meistens. Die Wow-Variante mit 4,5 Stunden funktioniert, weil das letzte Drittel (Film + Zeremonie + Chillen) weniger intensiv ist. Unter 2 Stunden fühlt es sich „komisch kurz\" an — diese Kinder sind es gewohnt, länger bei Freunden zu sein."
-      },
-      {
-        "q": "Was kostet ein Einhorn-Geburtstag für 9–12-Jährige?",
-        "a": "Zwischen 55 € (Minimal) und 118 € (Wow, ohne Nebelmaschine) für 8 Kinder. Die Standard-Variante liegt bei ca. 82 € und bietet das beste Verhältnis. In diesem Alter brauchst du mehr Material (Perlen-Set, Chemie-Zutaten, Escape-Rätsel) als bei Kleinkinder-Partys, aber die Kinder sind auch anspruchsvoller."
-      },
-      {
-        "q": "Wie viele Kinder einladen?",
-        "a": "6–10 Kinder sind ideal. Für die Escape-Challenge brauchst du mindestens 6 (2 Teams à 3), mehr als 10 wird unübersichtlich. Alle Mengenangaben auf dieser Seite sind für 8 Kinder berechnet. Faustregel: Alter + 1, also 10–13 Kinder — aber weniger ist oft besser für die Qualität der Aktivitäten."
-      },
-      {
-        "q": "Funktioniert das auch in gemischten Gruppen?",
-        "a": "Ja — das Konzept ist bewusst so gebaut. Chemie-Experimente, Escape-Rätsel und Kurzfilm-Dreh begeistern alle Kinder gleichermaßen. Die „Akademie der Vergessenen Magie\" ist Fantasy, nicht „Einhorn-Prinzessin\". Und der Schmuck-Workshop? Friendship-Bracelets sind 2025/2026 bei allen beliebt, nicht nur bei Mädchen. Die Farbwelt (Galaxy, Metallic, Dunkelblau) ist bewusst geschlechtsneutral. Falls ein Gast „Einhorn? Echt jetzt?\" murrt — lass das Geburtstagskind antworten, nicht du. Spätestens beim UV-Schwarzlicht-Moment oder beim Code-Knacken in der Escape-Challenge ist jeder still."
-      },
-      {
-        "q": "Wie gehe ich mit Chemie-Labor-Sicherheit um (Waschsoda, Schutzbrille)?",
-        "a": "Waschsoda (Natriumcarbonat) ist reizend für Augen und Haut — deshalb gehört eine Schutzbrille (Bastel-Schutzbrille ~5€/Stk. in Apotheke oder Drogerie) zur Mix-Phase Pflicht. Latex-frei Handschuhe für empfindliche Kinderhaut. Du als Erwachsene*r misst die Substanzen ab (max. 1 TL Waschsoda pro Becher), die Kinder mixen + experimentieren. Tablett mit Rand drunter gegen Überlauf. Wichtig: trotz „Zaubertrank\"-Optik — NIE trinken lassen. Bei Tartrazin-Empfindlichkeit (E102) Lebensmittelfarben weglassen, Rotkohlsaft alleine reicht für Farbwechsel-Show."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -23863,14 +21669,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "feen-klein": {
-    "_meta": {
-      "source_file": "kindergeburtstag/feen.html",
-      "extracted": "2026-05-22",
-      "schema_version": "1.0",
-      "purpose": "Feen 3-5 (klein) — Phase-B Elite-Slot (analog Einhorn-klein)",
-      "phase_b_complete": "2026-05-22",
-      "phase_b_method": "Direct draft — feen-klein-spezifika (Verzauberter Feenwald, essbarer Glitzer-Staub, Geschlechts-Inklusion via Wald-Wächter, 1,5-2h, Eltern-Pflicht, Glitzer-Allergie-Test, kein Heißkleber) durchgehend angewandt. Anti-IP: Wald-Fee/Blüten-Helferin generisch — alle IP-Charaktere bewusst vermieden."
-    },
     "motto": "feen",
     "ageGroup": "klein",
     "ageRange": [
@@ -23878,8 +21676,6 @@ var ELITE_MOTTO_DATA = {
       5
     ],
     "title": "Feen-Kindergeburtstag 3-5 Jahre — komplett geplant",
-    "metaDescription": "Feen-Kindergeburtstag für 3–5 Jahre: 3 fertige Party-Konzepte mit Zeitplan, 6 Spielen mit Anleitung, Einkaufsliste und Kosten pro Kind. Auch für Jungen...",
-    "introParagraph": "3 fertige Party-Konzepte: Minimal (1,5 Std.) · Standard (2 Std.) · Wow (2,5 Std.)\n\nMinutengenaue Zeitpläne, 6 altersgerechte Spiele mit kompletter Anleitung, Einkaufslisten mit Preisen und Kosten pro Kind. Für 3–5 Jahre: weniger Programm, viel Sensorik, kein Druck.\n\nAuch für Jungen sehr beliebt — Wald-Wächter-Variante mit Krieger-Flügeln und Schmetterlings-Brille. Geschlechts-offen als „Wald-Helfer\" oder „Blüten-Crew\" formulierbar.\n\n[🧚 Feen-Geburtstag planen →](/kindergeburtstag?motto=feen&alter=4#planer)",
     "ageInsight": {
       "headline": "Was du über 3–5-Jährige wissen musst — Feen-Party 3-5",
       "traits": [
@@ -24907,114 +22703,6 @@ var ELITE_MOTTO_DATA = {
         "costContext": "Pflichtteil ~70 €, mit allen Sinnvoll-Extras ~110 €. Niedrigere Schätzung 80 € geht von Standard-Auswahl ohne alle Wow-Add-ons aus."
       }
     ],
-    "cakeRecipe": {
-      "intro": "Vanille-Kuchen mit rosa Buttercreme und essbaren Blüten — das ist Feenwald in Kuchenform. Geht mit jeder Vanille-Backmischung. Das Besondere ist die Blüten-Deko und der essbare Glitzer-Spritzer — nicht das Backen.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Vanille-Gugelhupf backen — Fertigmischung reicht völlig (Dr. Oetker, Kathi). Kein Mensch schmeckt den Unterschied, und du hast genug Stress mit 5 Kleinkindern."
-        },
-        {
-          "n": 2,
-          "content": "Komplett abkühlen lassen. Mindestens 1 Stunde. Ungeduld = Buttercreme-Desaster."
-        },
-        {
-          "n": 3,
-          "content": "Rosa Buttercreme: 150 g weiche Butter + 200 g Puderzucker + 2 EL Milch + 1 Tropfen rote Lebensmittelfarbe (oder Himbeer-Sirup für Naturfarbe). 5 Min mit dem Mixer schaumig schlagen — wird hellrosa und cremig."
-        },
-        {
-          "n": 4,
-          "content": "Buttercreme auf den Kuchen streichen — nicht perfekt sein müssen. Mit dem Spatel rustikal verteilen, sieht aus wie ein Wald-Hügel."
-        },
-        {
-          "n": 5,
-          "content": "Essbare Blüten drauf drapieren: Stiefmütterchen, Gänseblümchen, Rosenblätter (Bio, ungespritzt!). 6-8 Blüten reichen — wirkt magischer als 20."
-        },
-        {
-          "n": 6,
-          "content": "Essbaren Glitzer-Staub als finalen Spritzer drüber (Backabteilung, ~4 €). Sieht aus wie Feenmagie. Kinder rasten aus."
-        }
-      ],
-      "meta": {
-        "aufwand": "70 Min. inkl. Backen, Abkühlen und Deko",
-        "kosten": "~7 €",
-        "allergiker": "Fertigmischungen checken (Packung). Butter-Allergie: durch Schmand + Margarine ersetzen. Essbare Blüten: bei Heuschnupfen-Allergie auf Zucker-Blüten ausweichen (Backabteilung, ~3 €). KEIN Fondant für 3-Jährige — Erstickungsgefahr."
-      },
-      "tips": [
-        {
-          "title": "🌸 Welche Blüten sind essbar?",
-          "body": "Stiefmütterchen, Gänseblümchen, Veilchen, Rosenblätter, Lavendel-Blüten, Borretsch, Klatschmohn. Wichtig: BIO und UNGESPRITZT. Aus dem Bio-Hofladen oder ungedüngten Garten. NICHT vom Blumenladen — die sind gespritzt. Im Zweifel: Zucker-Blüten aus der Backabteilung (DM, Rewe) — sehen täuschend echt aus."
-        },
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Fertigen Vanille-Kuchen beim Bäcker, rosa Buttercreme drüber (200 g Puderzucker + 100 g Butter + 1 Tropfen Lebensmittelfarbe), essbare Blüten obendrauf, Glitzer-Staub. 10 Minuten, sieht perfekt aus. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.\""
-        },
-        {
-          "title": "🧁 Kleinkinder-Alternative: Feen-Muffins",
-          "body": "Für 3-Jährige sind Muffins oft praktischer als ein großer Kuchen — jedes Kind bekommt seinen eigenen, kein Schneiden, weniger Krümel. Fertig-Muffins aus dem Supermarkt, rosa Buttercreme drauf, je 1 essbare Blüte obendrauf + Glitzer-Spritzer. 15 Minuten Aufwand, null Backskills nötig. Bonus: „Mein eigener Feen-Muffin\" finden 3-5-Jährige spannender als ein Stück vom großen Kuchen."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🚨 Allergien & Windeln vorher klären",
-          "detail": "Bei 5 Kindern hat mindestens eins eine Unverträglichkeit. In die Einladung: „Hat dein Kind Allergien?\" Speziell für Feen-Party: Heuschnupfen (echte Blüten!), Lebensmittelfarben-Unverträglichkeit, Nuss-Allergie (Backmischung-Check). Bei 3-Jährigen zusätzlich: „Braucht dein Kind noch Windeln?\" Stell sicher, dass du welche da hast (oder bitte die Eltern mitzubringen)."
-        },
-        {
-          "topic": "💙 Auch für Jungen: Wald-Wächter statt Tabu",
-          "detail": "Feen sind kein Mädchen-Thema. Bietet von Anfang an Wald-Wächter-Flügel (dunkelgrün/braunes Tonpapier, kräftiger geschnitten) und Schmetterlings-Brille (Sonnenbrille mit aufgeklebten Tüll-Flügelchen). Sprecht von „Wald-Helfern\" oder „Blüten-Crew\". Dann fühlt sich kein Kind ausgeschlossen — weder Jungen noch Mädchen, die lieber Wächter sein wollen. Hinweis in der Einladung: „Wald-Wächter-Variante auf Wunsch — sag uns vorher Bescheid.\""
-        },
-        {
-          "topic": "👶 3-Jährige ≠ 5-Jährige",
-          "detail": "Der Unterschied ist riesig. 3-Jährige brauchen ständig einen Erwachsenen in der Nähe, können keine Regeln befolgen und weinen schnell. 5-Jährige spielen selbstständig, verstehen Anleitungen und können 15 Minuten konzentriert basteln. Plane für die Jüngsten — die Älteren langweilen sich nicht, aber Überforderte weinen. Feen-Motto verträgt das besonders gut: Sensorik-Stationen funktionieren bei allen Altern."
-        },
-        {
-          "topic": "📋 Plan B: Ausmalbilder",
-          "detail": "Druck 10 Blüten-/Schmetterlings-Ausmalbilder aus (Pinterest: „fairy coloring pages free\" oder „butterfly coloring kids\", kostenlos). Wenn ein Kind nicht mitmachen will, ein Spiel zu wild ist, oder du 5 Minuten zwischen zwei Stationen brauchst: Ausmalbilder + Stifte = sichere Insel. Funktioniert immer.\n\n⏰ Eltern bleiben bei 3-Jährigen\nUnter 4 Jahren bleiben die Eltern. Schreib es in die Einladung: „Wir freuen uns, wenn du dabei bleibst!\" Das ist kein Nachteil — mehr Hände beim Glitzer-Staub-Tisch, beim Aufräumen, und wenn ein Kind weint. Ab 5 Jahren können die meisten Kinder 2 Stunden ohne ihre Eltern sein."
-        },
-        {
-          "topic": "🌧️ Plan B bei Regen",
-          "detail": "Alle Spiele auf dieser Seite funktionieren drinnen — das ist Absicht. Glitzer-Staub-Wanne passt in die Badewanne, Blumenkranz-Werkstatt am Esstisch, Feentanz im Wohnzimmer (Möbel zur Seite). Nur das Schmetterlinge-Fangen braucht etwas Platz. Tipp: Flur + Wohnzimmer zusammen reichen für 5 Kleinkinder. Du brauchst keinen Garten."
-        },
-        {
-          "topic": "👕 Wechselklamotten bereithalten",
-          "detail": "3-Jährige kleckern. Buttercreme, essbarer Glitzer-Staub, Blüten-Limo — irgendwas landet auf dem Pulli. Schreib in die Einladung: „Bitte Wechsel-Shirt mitbringen.\" Und leg für dein eigenes Kind eins bereit. Spart dir die WhatsApp-Nachricht „Sorry, das Shirt hat jetzt Glitzer drauf\" an die andere Mama."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Erstelle eine [Partyseite auf party.machsleicht.de](https://party.machsleicht.de) mit Datum, Uhrzeit, Adresse und Allergien-Abfrage. Einen Link verschicken statt 10 Nachrichten beantworten. Kostet nichts. Pflicht-Hinweis: „Wald-Wächter-Variante auf Wunsch verfügbar.\"\n\n⏰ Nicht nach 15 Uhr anfangen\n3–5-Jährige sind nachmittags fitter als morgens (nach dem Mittagsschlaf). Aber nach 16 Uhr wird's schwierig — müde Kleinkinder sind schlecht gelaunte Kleinkinder. Ideal: 15:00 Start, 16:30 oder 17:00 Ende. Freitagnachmittag funktioniert meistens am besten."
-        }
-      ],
-      "educationalValue": null
-    },
-    "invitationTemplate": "Du brauchst noch passende Einladungen? Der machsleicht-Einladungs-Generator macht aus diesem Feen-Motto in zwei Minuten fertige Karten — mit Blüten-Design, Allergie-Abfrage und Zusage-Link auf party.machsleicht.de. Auch in der Wald-Wächter-Variante für alle Kinder. Einfach Motto „Feen\" wählen und Datum eintragen.\n[🧚 Feen-Einladung erstellen →](/einladung/erstellen?motto=feen)\n\n[📱 Per WhatsApp teilen](https://wa.me/?text=%F0%9F%A7%9A%20Feen-Kindergeburtstag%20f%C3%BCr%203%E2%80%935-J%C3%A4hrige%20planen%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Zeitplan%2C%20Spielen%20und%20Einkaufsliste%3A%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Ffeen)",
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Feen-Geburtstag für 3–5-Jährige dauern?",
-        "a": "1,5 bis 2 Stunden sind perfekt. Weniger ist mehr in diesem Alter — nach 2 Stunden sind die meisten Kinder durch. Die Minimal-Variante (90 Minuten) funktioniert hervorragend, besonders bei überwiegend 3-Jährigen. Die Wow-Variante (2,5 Stunden) nur mit Helfer und eher für 4–5-Jährige."
-      },
-      {
-        "q": "Wie viele Kinder einladen bei 3–5-Jährigen?",
-        "a": "Max 6 Kinder sind ideal, 5 ist die Sweet-Spot-Zahl. In diesem Alter kann es schnell chaotisch werden — weniger Kinder = weniger Stress = bessere Party. Die Faustregel „Alter + 1\" passt hier gut: Bei einem 4-Jährigen also 5 Gäste. Alle Mengenangaben auf dieser Seite sind für 5 Kinder berechnet."
-      },
-      {
-        "q": "Was kostet ein Feen-Geburtstag für 3–5-Jährige?",
-        "a": "Zwischen 35 € (Minimal) und 95 € (Wow) für 5 Kinder. Die Standard-Variante liegt bei ca. 55 € und bietet das beste Verhältnis aus Aufwand und Ergebnis. Größter Einzelposten: Tüllflügel-Set (12 €) — das ist Pflicht-Investition für alle 3 Varianten."
-      },
-      {
-        "q": "Müssen die Eltern der Gäste dabei bleiben?",
-        "a": "Bei 3-Jährigen: ja, unbedingt. Die Kinder kennen dich vielleicht nicht gut, und sie brauchen ihre Bezugsperson in der Nähe. Bei 4–5-Jährigen können die meisten Kinder 1,5–2 Stunden ohne ihre Eltern bleiben — aber schreib in die Einladung, dass sie erreichbar sein müssen. Tipp: Eltern, die bleiben, können beim Blumenkranz-Tisch helfen."
-      },
-      {
-        "q": "Ist eine Feen-Party auch für Jungen geeignet?",
-        "a": "Ja, ausdrücklich. Mit der Wald-Wächter-Variante (kräftigere Krieger-Flügel aus Tonpapier in Dunkelgrün/Braun, plus Schmetterlings-Brille statt Tüll-Krone) und geschlechtsneutralen Begriffen wie „Wald-Helfer\" oder „Blüten-Crew\" ist das Thema für alle Kinder offen. Wir empfehlen, beide Flügel-Varianten bereitzulegen, damit jedes Kind frei wählen kann. 3-5-Jährige haben noch keine starren Geschlechter-Vorstellungen — Glitzer-Staub-Suche und magische Steine begeistern jedes Kind."
-      },
-      {
-        "q": "Ist der essbare Glitzer wirklich sicher für 3-Jährige?",
-        "a": "Ja — essbarer Glitzer aus der Backabteilung (DM, Rewe, Edeka) ist explizit für Lebensmittel zugelassen und enthält in der Regel nur Zucker, Stärke und E-Nummern-Farbstoffe. WICHTIG: NUR essbaren Glitzer verwenden, KEINEN Bastel-Glitzer (Polyester-Plättchen) — der kann in Atemwege oder Augen gelangen. Bei der Glitzer-Staub-Wanne immer Sichtaufsicht, und bei Augenkontakt mit Wasser ausspülen. Vor der Party einen Allergie-Vortest an der Innenseite des Unterarms machen."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -25308,14 +22996,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "feen-mittel": {
-    "_meta": {
-      "source_file": "kindergeburtstag/feen-6-8-jahre.html",
-      "extracted": "2026-05-22",
-      "schema_version": "1.0",
-      "purpose": "Feen 6-8 (mittel) — Phase-B Elite-Slot (analog Einhorn-mittel + feen-klein)",
-      "phase_b_complete": "2026-05-22",
-      "phase_b_method": "Direct draft — Geschlechts-Inklusion (Waldwächter parallel zu Blumenfeen, Krieger-Flügel-Variante), Anti-IP eingehalten (keine geschützten Marken-Anspielungen, eigenes Vokabular Blumenfee/Waldwächter/Elfenkrieger), Codeknacker mit Lösungswort FARN (F-A-R-N, 4 Stationen, jeder Buchstabe genau einmal), 6 preparationWeeks, 8 sosScenarios, FAQ inkl. 'Für Jungen geeignet?', signatureRitual 'Feen-Schwur/Waldwächter-Eid' vollständig befüllt."
-    },
     "motto": "feen",
     "ageGroup": "mittel",
     "ageRange": [
@@ -25323,8 +23003,6 @@ var ELITE_MOTTO_DATA = {
       8
     ],
     "title": "🧚 Feen-Kindergeburtstag — 6–8 Jahre",
-    "metaDescription": "Feen-Kindergeburtstag für 6–8-Jährige: 3 fertige Party-Konzepte (Minimal/Standard/Wow) mit Feenwald-Quest, Pflanzen-Chiffre und Zauberbaum-Mythos. Auch für Jungen — Waldwächter-Variante mit Krieger-Flügeln und Elfen-Schwert.",
-    "introParagraph": "Dein Kind wird 6, 7 oder 8 und träumt vom Feenwald? Hier bekommst du drei fertige Party-Konzepte rund um den Zauberbaum-Mythos — von schnell und stressfrei bis zur vollen Feenwald-Quest mit Pflanzen-Chiffre und Geocaching. Jedes Konzept mit Zeitplan, Spielanleitungen, Einkaufsliste und Kosten.\n\n**Auch für Jungen — Waldwächter-Variante:** Statt Schmetterlings-Flügeln gibt es Krieger-Flügel (Blattmuster, dunkelgrün/braun), statt Blüten-Diadem eine Waldkrone aus Eichenlaub. Die Rolle „Waldwächter\" läuft parallel zur Rolle „Blumenfee\" — gleiche Quest, gleiche Prüfungen, andere Ästhetik. Im FAQ und in jedem Spiel zeigen wir die Doppel-Variante.\n\n[🧚 Feen-Geburtstag planen →](/kindergeburtstag?motto=feen&alter=7#planer)",
     "ageInsight": {
       "headline": "Was 6–8-Jährige ausmacht — und was das für die Feen-Party heißt",
       "traits": [
@@ -25482,6 +23160,42 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "games": [
+          {
+            "name": "🌸 Stirnreif/Waldkrone verfeinern (Ankunfts-Aktivität)",
+            "indoor": true,
+            "outdoor": false,
+            "duration": 15,
+            "minAge": 6,
+            "loudness": "ruhig",
+            "effort": "leicht",
+            "material": "[Blüten-Stirnreif-Set*](https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht21-21) (~6 € für 6 Stk.), Karton-Kronen für Waldwächter (selbst zugeschnitten oder Bastelladen), Stoffblüten (~3 € Tüte), Eichenlaub (gesammelt oder Plastik), Klebepunkte oder Tesa (KEIN Heißkleber bei 6-Jährigen — Verbrennungsgefahr)",
+            "prepText": "Perfekte Ankunfts-Aktivität: Stirnreife und Waldkronen-Rohlinge liegen schon auf dem Tisch, wenn die Kinder reinkommen. Jedes Kind wählt Rolle und verziert seine Kopfbedeckung — Feen kleben Blüten, Wächter kleben Eichenlaub und Federn. Fertig aufsetzen.",
+            "steps": [
+              {
+                "n": 1,
+                "content": "Tisch vorher decken: links Feen-Materialien (Blüten, rosa/lila Bänder), rechts Waldwächter-Materialien (Laub, braune/grüne Bänder, kleine Federn)."
+              },
+              {
+                "n": 2,
+                "content": "Kind wählt Seite — keine Beeinflussung. Beide Tische sind gleich „cool\" dekoriert."
+              },
+              {
+                "n": 3,
+                "content": "Mit Klebepunkten verzieren — Erwachsener hilft beim Festmachen am Stirnreif."
+              },
+              {
+                "n": 4,
+                "content": "Fertige Krone aufsetzen, Quest-Name vorlesen, Foto."
+              }
+            ],
+            "safetyRule": "Glitzer-Sicherheit: KEIN loser Glitzer auf Augen-Höhe. Wenn Glitzer benutzt wird, dann Glitzer-Kleber (in Tube) — kein Streu-Glitzer für 6-Jährige. Bei Kontakt mit Auge: sofort mit Wasser spülen, nicht reiben. KEIN Heißkleber für Kinder — nur Erwachsene oder Klebepunkte verwenden. Bei Pollen-Allergie: Stoffblüten statt echte Blüten.",
+            "ageAdjust6": "Vorgefertigte Stirnreife mit nur 2-3 Stellen zum Verzieren — sonst überfordert.",
+            "ageAdjust8": "Komplett offen — die wollen ihre Krone individueller, mit Glitzer-Kleber, kleinen Perlen, Schleifen.",
+            "indoorTip": null,
+            "outdoorTip": null,
+            "whyItWorksTitle": null,
+            "whyItWorks": null
+          },
           {
             "name": "🌿 Pflanzen-Quest: Codeknacker FARN",
             "indoor": true,
@@ -26387,114 +24101,6 @@ var ELITE_MOTTO_DATA = {
         "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm & LED-Set)"
       }
     ],
-    "cakeRecipe": {
-      "intro": "Geht mit jedem Gugelhupf. Das Besondere ist die Deko — nicht das Backen.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Gugelhupf backen — Fertigmischung reicht völlig (Dr. Oetker, Kathi, whatever). Kein Mensch schmeckt den Unterschied."
-        },
-        {
-          "n": 2,
-          "content": "Teig vor dem Backen in 3 Schüsseln teilen. Jede Schüssel mit einer Lebensmittelfarbe einfärben (hellgrün, rosa, lila). Nacheinander in die Form schichten → innen Feenwald-Optik beim Anschnitt."
-        },
-        {
-          "n": 3,
-          "content": "Komplett abkühlen lassen. Ungeduld = Glasur-Desaster."
-        },
-        {
-          "n": 4,
-          "content": "Mit weißer Glasur überziehen (200 g Puderzucker + 3 EL Wasser, cremig rühren)."
-        },
-        {
-          "n": 5,
-          "content": "Essbare Blüten (Stiefmütterchen, Ringelblume, Borretsch — gibt's in der Gemüse-Abteilung) auf die Glasur legen. Oder Zucker-Blüten aus der Backabteilung."
-        },
-        {
-          "n": 6,
-          "content": "Grüne Streusel (Pistazien-Krümel oder grüne Zucker-Streusel) um den Fuß als „Moos\". Optional: ein Schoko-Schmetterling oder Marienkäfer obenauf."
-        },
-        {
-          "n": 7,
-          "content": "Optional: Wunderkerze reinstecken und beim Happy-Birthday anzünden (Wow-Variante)."
-        }
-      ],
-      "meta": {
-        "aufwand": "60 Min. inkl. Backen und Deko",
-        "kosten": "~8 €",
-        "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. Essbare Blüten enthalten manchmal Pollen — bei Pollen-Allergie auf Zucker-Blüten ausweichen."
-      },
-      "tips": [
-        {
-          "title": "🌸 Kein Bock auf essbare Blüten? Zwei Wege zum Feen-Kuchen",
-          "body": "Weg 1 (einfach): Zucker-Blüten aus der Backabteilung kaufen (DM, Rewe, Edeka — meist bei den Tortendeko). Kostet ~3 €, sieht perfekt aus, 2 Minuten aufgesetzt. Das machen die meisten. Weg 2 (notfalls): Bunte Streusel + grüne Pistazien-Krümel als Moos-Imitat — schlicht, aber wirkt. Kein Kind zählt nach, ob Blüten echt waren."
-        },
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Fertigen Zitronen- oder Vanillekuchen beim Bäcker kaufen, weiße Glasur drüber, essbare Blüten oder Zucker-Blüten aufstecken, grüne Streusel drumherum. Sieht aus wie gewollt, dauert 5 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.\""
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🚨 Allergien vorher abfragen",
-          "detail": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten, Pollen). In die Einladung schreiben: „Hat dein Kind Allergien oder Unverträglichkeiten?\" Apfelschorle und Popcorn sind fast immer safe. Essbare Blüten und Pollen-haltige Materialien (Stoffblüten aus echtem Pollen-Stoff) sind bei Pollen-Allergikern Tabu."
-        },
-        {
-          "topic": "🍃 Pflanzen-Sicherheit",
-          "detail": "Für die Pflanzen-Quest und das Geocaching: Nur ungiftige, klar bestimmbare Pflanzen verwenden. Sicher sind: Farn, Ahorn, Rose (Dornen ab!), Tanne/Fichte, Eichenlaub, Stiefmütterchen, Ringelblume. UNSICHER: Maiglöckchen (giftig!), Eisenhut (giftig!), Fingerhut (giftig!), Eibe (Beeren giftig!), Engelstrompete. Bei Unsicherheit: gedruckte Pflanzen-Bilder statt echter Pflanzen."
-        },
-        {
-          "topic": "✨ Glitzer-Sicherheit",
-          "detail": "Für Krone-Verzieren und Bastel-Aktivitäten: KEIN loser Streu-Glitzer auf Augen-Höhe. Glitzer-Kleber (in Tube) ist sicher, lose Glitzer-Pailletten KÖNNEN ins Auge geraten. Bei Kontakt mit Auge: sofort mit Wasser spülen, nicht reiben — ggf. Augenarzt. Mit 6–8-Jährigen reden: „Glitzer ist auf Kleidung und Krone, nicht ins Gesicht.\""
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Spiele in dieser Vorlage funktionieren auch drinnen — Pflanzen-Quest mit gedruckten Pflanzen-Bildern oder Mini-Topfpflanzen geht in der Wohnung. Geocaching (Wow) ist draußen — Plan B: Pflanzen-Hinweise in der Wohnung verstecken (verschiedene Räume = verschiedene „Wälder\"). Nie ohne Plan B."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Kein Eltern-Gruppen-Chaos mehr. Erstelle eine [Partyseite auf party.machsleicht.de](https://party.machsleicht.de) mit Datum, Uhrzeit, Treffpunkt und Wunschliste — verschicke nur einen Link. Eltern können sich eintragen, Geschenke abstimmen, Rückfragen stellen. Kostet nichts."
-        },
-        {
-          "topic": "👥 Ab 6 Kindern: 1 Helfer dazu",
-          "detail": "Bis 5 Kinder schaffst du eine Standard-Party allein. Bei 6+ brauchst du Unterstützung — besonders für Elfen-Tanz / Schwertkampf-Choreographie (parallel 2 Gruppen) und Geocaching (Park-Begleitung). Oma, andere Elternteile, oder eine Teenager-Nachbarin (10 € für 3 Stunden) retten dir den Tag.\n\n⏰ Abholzeit vorher klären\nIn diesem Alter können Eltern kurz abgesetzt werden — müssen aber telefonisch erreichbar sein. Schreib in die Einladung: „Abholung 17:00 Uhr pünktlich bitte.\" Sonst stehen um 17:30 noch 3 Kinder da und du hast schon alles abgebaut."
-        }
-      ],
-      "educationalValue": "Die Feen-Party 6-8 vermittelt drei messbare Bildungs-Bausteine: (1) Pflanzennamen-Wissen — Kinder lernen Farn, Ahorn, Rose, Nadelbäume zu unterscheiden, plus 6 Schmetterlings-Arten. Das ist erste Botanik-Grundlage, anschlussfähig an die 3. Klasse Sachunterricht. (2) Botanik-Spuren-Lesen — bei der Pflanzen-Quest und beim Geocaching müssen sie Pflanzen-Hinweise (Schatten/Sonne, feucht/trocken, Boden-Beschaffenheit) deuten. Das schult Beobachtungsgabe und logisches Schließen. (3) Teamwork — Codeknacker funktioniert nur, wenn alle 4 Stationen besetzt sind und die Buchstaben am Ende zusammengesetzt werden. Blumenfeen und Waldwächter müssen kooperieren, nicht konkurrieren. Geschlechts-Inklusion ist hier kein Nebeneffekt, sondern Spiel-Mechanik."
-    },
-    "invitationTemplate": "Eine persönliche Feen-Einladung macht schon vor der Party Lust auf den Tag. Auf machsleicht kannst du deine Einladung kostenlos in 3 Minuten erstellen — mit Foto, Datum, Treffpunkt und allen Infos. PDF oder digitaler Link zum Verschicken.\n[🧚 Feen-Einladung erstellen →](/einladung/erstellen?motto=feen)\n\n[📱 Per WhatsApp teilen](https://wa.me/?text=%F0%9F%A7%9A%20Feen-Kindergeburtstag%20f%C3%BCr%206%E2%80%938-J%C3%A4hrige%20planen%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Zeitplan%2C%20Spielen%20und%20Einkaufsliste%3A%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Ffeen-6-8-jahre)",
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Feen-Geburtstag für 6–8-Jährige dauern?",
-        "a": "2,5 bis 3 Stunden sind ideal. Kürzer ist besser als länger — nach 3 Stunden kippt die Stimmung bei den meisten Kindern. Die Minimal-Variante (2 Stunden) funktioniert auch perfekt, besonders wenn du wenig Vorbereitungszeit hast. Die Wow-Variante mit Geocaching braucht 3,5 Stunden, weil die GPS-Suche Zeit verdient."
-      },
-      {
-        "q": "Wie viele Kinder sollte man zum Feen-Geburtstag einladen?",
-        "a": "Faustregel: 6 Kinder sind ideal (inkl. Geburtstagskind). Bei 7-8 Gästen: 2. Helfer einplanen + Mengen um 30% erhöhen. Bei >8 Kindern: Wow-Variante mit längerem Zeitplan wählen — aber dann unbedingt eine zweite erwachsene Person für die Geocaching-Aufsicht."
-      },
-      {
-        "q": "Was kostet ein Feen-Geburtstag?",
-        "a": "Zwischen 50 € (Minimal) und 113 € (Wow, ohne Kostüm und LED-Set) für 6 Kinder — je nachdem wie viel Aufwand du betreiben willst. Die Standard-Variante liegt bei ca. 75 € und bietet das beste Verhältnis aus Aufwand und Ergebnis. Das Feen-Flügel-Kostüm für Erwachsene (~30 €) und das LED-Lichterketten-Set (~10 €) sind optional, aber die Wow-Faktoren, an die sich die Kinder jahrelang erinnern."
-      },
-      {
-        "q": "Ist das Feen-Motto auch für Jungen geeignet?",
-        "a": "Ja, ausdrücklich — und genau dafür ist diese Vorlage gebaut. Jedes Kind wählt am Eingang zwischen zwei gleichberechtigten Rollen: **Blumenfee** (mit Schmetterlings-Flügeln + Blüten-Diadem) oder **Waldwächter** (mit Krieger-Flügeln im Blattmuster + Waldkrone aus Eichenlaub). Beide Rollen machen dieselben Quests, dieselben Prüfungen, bekommen dieselbe Urkunde. Statt Elfen-Tanz mit Schleier gibt es für Waldwächter Schwertkampf-Choreographie mit weichen Schaumstoff-Stäben. Statt Blumenkranz binden gibt es Eichenlaub-Armband flechten. Die Vornamen-Liste hat 6 Feen-Namen und 6 Wächter-Namen — wer welche zieht, ist Zufall. Erfahrung von Eltern: Jungen wählen oft zuerst neugierig den Waldwächter, manche wechseln nach 30 Min. zum Feen-Tisch, weil das Blumenkranz-Basteln cool aussieht. Keine Rolle ist „die für Mädchen\" oder „die für Jungen\" — beide haben gleiches Gewicht."
-      },
-      {
-        "q": "Funktioniert das Feen-Motto in gemischten Gruppen (Jungen + Mädchen)?",
-        "a": "Ja, und sogar besser als in einer reinen Mädchen- oder Jungen-Gruppe. Die Doppel-Rollen (Blumenfee + Waldwächter) erzeugen automatisch Diversität, die Pflanzen-Quest mit Codeknacker FARN ist geschlechtsneutral, das Geocaching (Wow) begeistert beide gleichermaßen. Die Farbwelt lässt sich leicht anpassen (weniger rosa-pink, mehr Grün, Braun, Türkis, Gold). Wichtig: nicht „Mädchen tanzen, Jungen kämpfen\" — sondern „Jeder wählt selbst, manche wechseln zwischendurch.\""
-      },
-      {
-        "q": "Können wir die Pflanzen-Quest auch ohne echte Pflanzen machen?",
-        "a": "Ja — gedruckte Bilder aus Google funktionieren genauso. Vorteil: kein Allergie-Risiko, keine Pflanzen-Bestimmungs-Sorgen. Nachteil: weniger sinnlich. Wenn du draußen Zugang zu echten Pflanzen hast (Garten, Park), lohnt sich der echte Weg. Sonst: 4 große Bilder ausdrucken (DIN A4) und an den Stationen aufhängen — funktioniert."
-      },
-      {
-        "q": "Brauchen wir wirklich Geocaching für die Wow-Variante?",
-        "a": "Nein — Geocaching ist der Wow-Bonus, kein Pflicht-Anker. Wenn du keinen Garten/Park hast oder kein GPS-fähiges Handy nutzen willst, ersetze Prüfung 3 durch eine zweite Pflanzen-Quest (anderes Lösungswort, z.B. MOOS) oder ein längeres Botanik-Quiz. Die Wow-Variante steht auch ohne Geocaching auf 3 Stunden Programm."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -26804,14 +24410,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "feen-gross": {
-    "_meta": {
-      "source_file": "kindergeburtstag/feen-9-12-jahre.html",
-      "extracted": "2026-05-22",
-      "schema_version": "1.0",
-      "purpose": "Feen 9-12 (gross) — Phase B Elite-Slot. Verlorener Zauberwald als Escape-Quest mit Pflanzen-Chiffre, geschlechtsoffen, Wurzel-Pakt-Ritual.",
-      "phase_b_complete": "2026-05-22",
-      "phase_b_method": "Direct draft analog safari-gross / einhorn-gross Pattern. Codeknacker FLORA (5 unique Buchstaben: F-L-O-R-A, je eine Station, alle echte heimische Pflanzen). Anti-IP konsequent: keine fremden Markenfiguren"
-    },
     "motto": "feen",
     "ageGroup": "gross",
     "ageRange": [
@@ -26819,8 +24417,6 @@ var ELITE_MOTTO_DATA = {
       12
     ],
     "title": "🌿 Feen-Kindergeburtstag — 9–12 Jahre",
-    "metaDescription": "Feen-Kindergeburtstag für 9–12 Jahre: 3 fertige Konzepte mit Escape-Quest „Verlorener Zauberwald\", Pflanzen-Chiffre FLORA, Zeitplan, Einkaufsliste und Kosten. Mädchen UND Jungen — Elfenkrieger und Waldwächter gleichwertig.",
-    "introParagraph": "3 fertige Konzepte: Minimal (2,5 Std.) · Standard (3,5 Std.) · Wow (4 Std.)\n\nDie Kinder werden zu Hütern eines verlorenen Zauberwaldes. Sie lösen die FLORA-Chiffre an 5 Stationen, lernen echte Pflanzen kennen, knacken ein Schloss, schwören einen Wurzel-Pakt auf einen eingebrannten Holzring. Ernsthafte Quest statt kitschiger Sternenstaub — und vor allem geschlechtsoffen: Elfenkrieger und Waldwächter sind keine Ersatzrollen, sondern gleichwertige Hüter.\n\n[🌿 Feen-Geburtstag planen →](/kindergeburtstag?motto=feen&alter=10#planer)",
     "ageInsight": {
       "headline": "Was 9–12-Jährige ausmacht — und was das für den Zauberwald heißt",
       "traits": [
@@ -27931,114 +25527,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "intro": "Der Zauberwald-Kuchen mit grünem Moos, Marzipan-Pilzen und Wurzel-Symbol. Sieht aufwendig aus, braucht aber nur 90 Minuten — und kein Mirror-Glaze-Stress.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Schokoladenkuchen in der Springform backen (Fertigmischung funktioniert) und komplett abkühlen lassen."
-        },
-        {
-          "n": 2,
-          "content": "Grüne Glasur: 200 g Puderzucker + 2–3 EL Wasser + grüne Lebensmittelfarbe (Spinat-Pulver für natürliche Färbung oder klassische Gel-Farbe). Dickflüssig anrühren, sodass sie haftet."
-        },
-        {
-          "n": 3,
-          "content": "Kuchen mit grüner Glasur überziehen — nicht gleichmäßig, sondern „mossig\" mit Spachtel oder Löffel-Rücken."
-        },
-        {
-          "n": 4,
-          "content": "„Moos-Effekt\": Schoko-Sandwich-Keks-Kekse zermahlen + grüne Lebensmittelfarbe untermischen → krümeliges grünes Pulver. Großzügig über den Kuchen streuen."
-        },
-        {
-          "n": 5,
-          "content": "Marzipan-Pilze: Weißes Marzipan zu kleinen Pilz-Hüten formen, mit roter Lebensmittelfarbe als Fliegenpilz-Optik (weiße Punkte mit Pinsel) — 6–8 Stück auf dem Kuchen verteilen."
-        },
-        {
-          "n": 6,
-          "content": "Wurzel-Symbol als „Wurzel-Mitte\": Aus dunkler Schokolade (geschmolzen + auf Backpapier gespritzt) ein Wurzel-Verzweigungs-Symbol erstarren lassen, dann auf den Kuchen setzen. Alternativ: mit dunklem Schokoguss direkt aufmalen."
-        },
-        {
-          "n": 7,
-          "content": "Wunderkerze (Wow-Variante) in die Mitte stecken. Bei Standard / Minimal: optional eine Pflanzen-Kerze."
-        }
-      ],
-      "meta": null,
-      "tips": [
-        {
-          "title": "Keine Lust zu backen?",
-          "body": "Gekaufter Schokoladenkuchen vom Bäcker oder Discounter funktioniert genauso. Die Moos-Optik (grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze) machst du in 15 Min selbst — niemand merkt, dass der Boden gekauft ist."
-        },
-        {
-          "title": "Veganer / glutenfreier Kuchen",
-          "body": "Schokoladenkuchen lässt sich problemlos vegan backen (Pflanzendrink + Apfelmus statt Ei + Milch). Für glutenfrei: Reis-/Mandelmehl-Mischung. Die Glasur und Marzipan-Deko sind ohnehin vegan-fähig."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🚨 Allergien & Heuschnupfen vorher abfragen",
-          "detail": "Mit echtem Pflanzenmaterial (Farn, Löwenzahn, Ringelblume) ist Heuschnupfen-Allergie relevant. In die Einladung: „Gibt es Allergien, Heuschnupfen oder Ernährungsbesonderheiten?\" Notfall-Plan: Pflanzen-Fotos statt echtem Material. Bei Lebensmittel-Allergien: Pizza-Belege variabel, Kuchen vegan / glutenfrei möglich."
-        },
-        {
-          "topic": "👫 Geschlechts-Inklusion ist eingebaut",
-          "detail": "Elfenkrieger:innen und Waldwächter:innen sind keine Ersatzrollen, sondern gleichwertige Hüter. Pflanzennamen-Zettel sind alle geschlechts-neutral (Farn-Hüter:in, Löwenzahn-Hüter:in). Wenn das Geburtstagskind sich Wachskrieger:in oder Lichtfee nennen will, kann es das — alle Material-Optionen sind unisex. Kein Tüll-Zwang, kein Rosa-Dominanz."
-        },
-        {
-          "topic": "🌙 Dämmerung mit Jahreszeit im Blick",
-          "detail": "Wow-Variante mit Outdoor-UV-Quest braucht Schummerung, NICHT Dunkelheit. Sommer (Juni-August): dunkel ab ~21:30, Quest also bis spätestens 19:30 beenden. Winter (November-Februar): dunkel ab ~17:30, Wow-Quest auf 13:00–17:00 legen oder ganz ins Haus. Im Zweifel früher beenden — kein „nochmal 10 Minuten\"-Risiko."
-        },
-        {
-          "topic": "🧵 Knoten-Sicherheit ist NICHT optional",
-          "detail": "Wurzel-Pakt-Armband sitzt IMMER locker, ist IMMER abnehmbar, KEIN Knoten direkt am Druckpunkt des Handgelenks, KEINE Schnüre an Hälsen. Pyrographie-Stift NUR durch Erwachsene:n bedient — 450 °C heiß. Das einmal beim Setup klären und die Regel mit den Kindern kurz besprechen."
-        },
-        {
-          "topic": "🌧️ Plan B bei Regen",
-          "detail": "Minimal und Standard funktionieren komplett drinnen. Wow ist outdoor-orientiert — bei Dauerregen: GPS-Quest durch Karten-Hinweise im Haus ersetzen, UV-Quest verlegt sich von Garten ins Wohnzimmer/Flur/Bad. Wurzel-Pakt-Zeremonie ist drinnen ohnehin schöner (LED-Lichterkette in S-Kurve)."
-        },
-        {
-          "topic": "📱 Handys nutzen, nicht verbieten",
-          "detail": "Bei der Wow-GPS-Quest sind Handys Werkzeug. Regel: Smartphone ist Hüter-Werkzeug, kein Spiel. Nach jeder Station Geräte ins zentrale „Hüter-Lager\" — niemand daddelt zwischendurch. Foto-Erinnerungen am Ende über AirDrop / Bluetooth teilen, aber nur Foto-Aufgaben, keine Gesichter ohne Eltern-Erlaubnis."
-        },
-        {
-          "topic": "📋 Partyseite statt WhatsApp-Chaos",
-          "detail": "WhatsApp-Partyseite mit machsleicht statt 10 Einzelnachrichten: Adresse, Uhrzeit, „erdfarbene Kleidung empfohlen\", Allergie- und Heuschnupfen-Abfrage, Abholzeit. Spart Stress."
-        }
-      ],
-      "educationalValue": "Was die Hüter:innen mitnehmen: echtes Botanik-Wissen (Adlerfarn, Löwenzahn, Odermennig, Ringelblume, Spitzahorn — alle heimisch, alle wiedererkennbar bei nächstem Waldspaziergang), Symbol-Decodierung (FLORA-Chiffre mit Anfangsbuchstaben-Logik), Survival-Skills (3 Knoten am Hanf-Armband), GPS-Navigation (Wow-Variante), echte Chemie (Kurkuma + UV-Licht = fluoreszierende Pflanzensaft-Tinte), Selbstkontrolle als Methode (ergibt das Lösungswort keinen Sinn, war eine Station falsch). Die Leitidee „im Zauberwald zählt, wer sorgfältig hinschaut\" ist eine Haltung, die über die Party hinaus wirkt — weg vom Tempo, hin zur Aufmerksamkeit."
-    },
-    "invitationTemplate": "🌿 RUF DES ZAUBERWALDES\n\nDer Zauberwald ist verloren. Nur Hüter:innen mit Pflanzen-Wissen können ihn zurückbringen. {name} wird {alter} und ruft eine Expedition zusammen.\n\n📅 Wann: {datum}, {uhrzeit}\n📍 Treffpunkt: {treffpunkt}\n🎒 Mitbringen: erdfarbene Kleidung, festes Schuhwerk (Outdoor-Wow), Handy (Wow: GPS-Quest)\n📞 Rückmeldung bis {rsvp_deadline} an {kontakt}\n⚠️ Bitte Allergien, Heuschnupfen und Ernährungsbesonderheiten angeben\n\nJede:r Hüter:in wählt vor Ort einen Pflanzennamen, schwört den Wurzel-Pakt auf einen Holzring und bekommt am Ende die Hüter-Bestätigung. Elfenkrieger:innen und Waldwächter:innen sind gleichwertige Rollen — keine Tüll-Pflicht, keine Glitzer-Pflicht. Im Zauberwald zählt, wer sorgfältig hinschaut.\n\n[🌿 Einladung erstellen →](/einladung/erstellen?motto=feen)\n[📱 Per WhatsApp teilen](https://wa.me/?text=%F0%9F%8C%BF%20Feen-Geburtstag%20Verlorener%20Zauberwald%20f%C3%BCr%209%E2%80%9312%3A%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Ffeen-9-12-jahre)",
-    "faq": [
-      {
-        "q": "Ist „Feen\" nicht zu kindisch für 9–12-Jährige?",
-        "a": "Wenn du es als Glitzer-Tüll-Rosa-Party aufziehst: ja. Wenn du den „Verlorener Zauberwald\"-Frame ernst nimmst — Pflanzen-Chiffre FLORA, Wurzel-Pakt mit eingebranntem Holzring, GPS-Outdoor-Quest, UV-Pflanzensaft-Tinte —, funktioniert es genau richtig. Feen werden als alte Hüter eines vergessenen Waldes gerahmt, nicht als Kuscheltier. Elfenkrieger:innen und Waldwächter:innen sind gleichwertige Rollen, kein Geschlechts-Split. Die Atmosphäre soll „alter Wald\" sein, nicht „Kinderzimmer-Rosa\"."
-      },
-      {
-        "q": "Funktioniert das auch für gemischte Geburtstage mit Jungen?",
-        "a": "Ja — das Konzept ist explizit geschlechtsoffen gebaut. Elfenkrieger:innen und Waldwächter:innen sind keine Ersatzrollen, sondern gleichwertig zu Blumenfee / Lichtfee. Die Stations-Logik (FLORA-Chiffre, Pflanzen-Bestimmung, GPS-Navigation, Knoten-Workshop) ist neutral — alle Kinder lernen das Gleiche. Die Farbwelt (Grün, Braun, Holz) ist erdig und neutral, kein rosa Glitzer-Zwang. Eltern, deren Sohn skeptisch ist: einfach den GPS-Outdoor-Frame und die Survival-Knoten betonen, der „Feen\"-Begriff verschwindet hinter der Quest."
-      },
-      {
-        "q": "Was kostet ein Feen-Geburtstag für 9–12-Jährige?",
-        "a": "Zwischen 60 € (Minimal, 7 Kinder) und 146 € (Wow, 10 Kinder, inkl. allem). Standard liegt bei ca. 95 € für 8 Kinder und bietet das beste Verhältnis. Einmalige Anschaffungen (Pyrographie-Stift ~14 €, UV-Lampe ~10 €, Letter-Lock ~10 €) lassen sich bei nächsten Geburtstagen / Bastel-Nachmittagen wiederverwenden — bei Folge-Party fallen sie aus der Rechnung."
-      },
-      {
-        "q": "Wie lange sollte die Party dauern?",
-        "a": "2,5 Stunden (Minimal) bis 4 Stunden (Wow). 9–12-Jährige halten 4 Stunden gut durch, wenn die Stationen wirklich fordern — die FLORA-Chiffre und die GPS-Outdoor-Quest sind kein „Beschäftigungs-Buffer\". Unter 2 Stunden wirkt es zu kurz; über 4 Stunden braucht es eine Schlaf-Party-Verlängerung."
-      },
-      {
-        "q": "Wie viele Kinder einladen?",
-        "a": "7–10 Kinder sind ideal. Die FLORA-Chiffre funktioniert gut mit 5–10 Hütern (entweder solo pro Station oder in Hüter-Paaren). Unter 5: Stations-Aufteilung wird langweilig. Über 10: Stau bei den Stationen, dann zwei Hüter-Crews bilden."
-      },
-      {
-        "q": "Wie verhindere ich, dass die Quest in Glitzer-Rosa-Pinkpolitik kippt?",
-        "a": "Drei Hebel: 1) Material erdig — Holz, Hanf, Naturstoff, keine Tüll-Flügel als Pflicht. 2) Sprache — „Hüter:innen\" statt „Prinzessinnen\", „Zauberwald\" statt „Feenreich\", konkrete Pflanzennamen statt Sternenstaub-Vokabular. 3) Aufgaben mit echter Herausforderung — Pflanzen-Bestimmung, Knoten, GPS, UV-Tinte. Wer einmal eine Pflanzen-Chiffre geknackt hat, vergisst „kindisch\" als Kategorie."
-      },
-      {
-        "q": "Was, wenn ein Kind nicht mitmachen will?",
-        "a": "Beobachter:innen-Rolle: „Hüter:in des Blicks\". Kein Pflanzenname-Pflicht, sondern offener Kreis als Sonder-Rune auf dem Holzring. Aufgabe: Quest-Logbuch führen, Fotos der Stationen machen. Oft steigen sie nach 15-20 Min selbst ein, wenn der Druck weg ist. Im Zweifel: Trotzdem Holzring, trotzdem Wurzel-Pakt-Karte am Ende — niemand geht ohne Bestätigung nach Hause."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -28330,14 +25818,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "feuerwehr-klein": {
-    "_meta": {
-      "source_file": "kindergeburtstag/feuerwehr-3-5-jahre.html",
-      "extracted": "2026-05-19",
-      "schema_version": "1.0",
-      "purpose": "Feuerwehr 3-5 (klein) — Phase C #2 Elite-Slot",
-      "phase_b_complete": "2026-05-19",
-      "phase_b_method": "Direct draft — klein-spezifika (Eltern Co-Aufsicht, max 5 Kinder, 1.5-2h, keine Hand-Signal \"Notruf!\" + leiser Spruch. keine Wunderkerze) durchgehend angewandt."
-    },
     "motto": "feuerwehr",
     "ageGroup": "klein",
     "ageRange": [
@@ -28345,8 +25825,6 @@ var ELITE_MOTTO_DATA = {
       5
     ],
     "title": "🚒 Feuerwehr-Kindergeburtstag — 3–5 Jahre",
-    "metaDescription": "Feuerwehr-Kindergeburtstag für 3-5-Jährige: 3 fertige Party-Konzepte (Minimal/Standard/Wow) — kindgerecht, ohne Wettbewerb, mit Schicht-Appell und Tag-1-Feuerwehrkind-Urkunde.",
-    "introParagraph": "Dein Kind wird 3, 4 oder 5 und liebt Feuerwehr-Autos? Hier bekommst du drei fertige Party-Konzepte für die jüngsten Crew-Mitglieder. Jedes Kind wird Teil der Mini-Wache, bekommt einen Helm, einen Aufkleber-Dienstausweis und am Ende seine Tag-1-Feuerwehrkind-Urkunde. Kein Wettbewerb, keine Verlierer. Eltern bleiben dabei und helfen mit. Kurze Dauer, viele Pausen, große Freude.\n\n[Feuerwehr-Geburtstag planen →](/kindergeburtstag?motto=feuerwehr&alter=4#planer)",
     "ageInsight": {
       "headline": "Was 3–5-Jährige ausmacht — und was das für die Feuerwehr-Party heißt",
       "traits": [
@@ -29403,155 +26881,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "bonusGames": {
-      "intro": "Diese Spiele kannst du je nach Wetter, Energielevel und Kindern einbauen oder weglassen — alle 3-5-tauglich, alle ohne neues Material gegenüber den Hauptvarianten.",
-      "items": [
-        {
-          "name": "🎶 Tatü-Tata-Tanz (Sirenen-Stopp-Spiel)",
-          "duration": 10,
-          "minAge": 3,
-          "loudness": "laut",
-          "indoor": true,
-          "outdoor": true,
-          "material": "Bluetooth-Box + Handy mit Feuerwehr-Sirene + Kinderlieder im Wechsel. Sonst nichts.",
-          "anleitung": "Musik läuft = die Kinder bewegen sich frei (rennen, tanzen, hüpfen). Sobald die Sirene ertönt, müssen alle „einfrieren\" — wie ein Feuerwehr-Profi am Einsatzort. Wer wackelt, hilft beim nächsten Runde-Anschmeißen mit. Kein Ausscheiden, kein Verlieren — bei 3-5 sind kooperative Varianten Pflicht. Funktioniert als Energie-Burner direkt vor der ersten Snack-Pause.",
-          "whyItWorks": "3-5-Jährige brauchen Bewegungs-Slots zwischen den eher statischen Bastel/Schaum-Aktivitäten. Sirene als Stop-Signal ist motto-stimmig und für die Kleinen sofort verständlich — kein Regelerklären nötig."
-        },
-        {
-          "name": "🔴 Feuer finden — rote Tücher suchen",
-          "duration": 10,
-          "minAge": 3,
-          "loudness": "ruhig",
-          "indoor": true,
-          "outdoor": false,
-          "material": "6-8 rote Tücher oder rote Stoffreste (auch rote Servietten gehen), 1 großer Wasser-Eimer als „Lösch-Sammelstelle\"",
-          "anleitung": "Vorher heimlich 6-8 rote Tücher in der Wohnung verteilt — gut sichtbar (auf Stuhl, hinterm Vorhang, auf Sofa, an der Lampe). Story: „Im Haus sind kleine Brände — findet sie und bringt sie in den Lösch-Eimer!\" Jedes Kind sucht und sammelt. Bei 3-5 ist Finden der Spaß, nicht das Versteck. Wer ein Tuch in den Eimer legt, ruft laut „Brand gelöscht!\" Kein Wettbewerb — am Ende sind alle Brände aus.",
-          "whyItWorks": "Niedrig-Schwellig wie eine Ostereiersuche, aber motto-eingebettet. Funktioniert ohne Wasser-Sauerei bei Regen. Bei 3-Jährigen genügen 4 Tücher, sehr sichtbar; bei 5-Jährigen 8 Tücher etwas anspruchsvoller."
-        },
-        {
-          "name": "🎈 Lösch-Ballon (Wasser auf rote Luftballons)",
-          "duration": 15,
-          "minAge": 4,
-          "loudness": "laut",
-          "indoor": false,
-          "outdoor": true,
-          "material": "5-6 rote Luftballons (zur Hälfte aufgepustet, an einer Schnur an Wäscheleine oder Ast hängend), Spritzpistolen (wenn schon in der Variante vorhanden), alte Handtücher unter der Spritz-Zone",
-          "anleitung": "Rote Luftballons als „Brand-Symbole\" an Wäscheleine im Garten oder am Balkon — sie wackeln im Wind, das macht es noch witziger. Crew spritzt mit Wasserpistolen drauf, Ziel: alle Ballons werden nass (nicht zerplatzen, das erschreckt). Sehr beliebt im Sommer. Eltern stehen daneben, korrigieren Spritz-Richtung falls jemand das andere Kind nimmt statt den Ballon.",
-          "whyItWorks": "Sichtbares, bewegliches Ziel ist für die Kleinen leichter als ein umgekippter Becher. Funktioniert auch wenn die Spritz-Probe der Standard-/Wow-Variante schon abgefrühstückt ist — eine zweite Runde mit anderem Setup wirkt wie ein neues Spiel."
-        },
-        {
-          "name": "🪢 Schlauch ausrollen (Seil-Variante)",
-          "duration": 10,
-          "minAge": 4,
-          "loudness": "ruhig",
-          "indoor": true,
-          "outdoor": true,
-          "material": "2 Springseile à 2 m (oder lange Stoffstreifen, oder Wäscheleine), 2 Pylonen oder Schuhe als Ziel-Markierung",
-          "anleitung": "Story: „Bevor die Crew löschen kann, müssen Schläuche ausgerollt werden!\" Jedes Kind bekommt ein aufgerolltes Seil — Aufgabe: von Punkt A bis Punkt B ausrollen, möglichst gerade. Bei 5 Kindern in Zweier-Teams, im Wechsel. Kein Wettbewerb auf Zeit — wer fertig ist, hilft den anderen. Eltern zeigen Aufrollen vor, wenn das Seil nochmal gebraucht wird.",
-          "whyItWorks": "Schult Feinmotorik kindgerecht, ohne dass es nach „Übung\" aussieht. Funktioniert drinnen im Flur wie draußen. Lässt sich als Mini-Übung an die Spritz-Probe anhängen („erst Schlauch, dann Spritze!\") und gibt der Choreografie Tiefe."
-        }
-      ]
-    },
-    "cakeRecipe": {
-      "intro": "Geht mit jeder Kastenform. Bei 3-5 reicht die einfache Version: roter Kasten, Reifen, „112\" drauf — fertig.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Rührteig in der Kastenform backen — Fertigmischung Schoko oder Vanille reicht völlig."
-        },
-        {
-          "n": 2,
-          "content": "Komplett abkühlen lassen."
-        },
-        {
-          "n": 3,
-          "content": "Mit roter Glasur überziehen (Puderzucker + 3 EL Wasser + rote Lebensmittelfarbe). Wenn dir das zu fummelig ist: rote Marzipan-Decke aus dem Bastelladen drüber."
-        },
-        {
-          "n": 4,
-          "content": "Reifen aus Schoko-Sandwich-Keks-Keksen — 4 Stück seitlich anpressen."
-        },
-        {
-          "n": 5,
-          "content": "„112\" mit weißer Glasur oder weißem Zuckerstift auf die Seite schreiben. Optional: blaues Blaulicht aus Blaubeere oder einer blauen Zuckerperle oben drauf."
-        }
-      ],
-      "meta": {
-        "aufwand": "45 Min. inkl. Backen und Deko",
-        "kosten": "~6 €",
-        "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. Bei Lebensmittelfarben-Empfindlichkeit Marzipan-Variante nehmen. Bei 3-5 sparsam mit Lebensmittelfarbe — die Mägen reagieren manchmal"
-      },
-      "tips": [
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Fertigen Schoko-Kasten beim Bäcker kaufen, rote Glasur drüber, Schoko-Sandwich-Keks-Reifen ankleben, „112\" mit weißem Zuckerstift draufschreiben. Sieht aus wie gewollt, dauert 10 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.\" Schon gar nicht ein 3-Jähriges."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🧠 Was 3–5-Jährige bei dieser Party wirklich mitnehmen",
-          "detail": "Kinder in dem Alter merken sich nicht „112\" oder Brandklassen — die Theorie kommt später bei den Älteren. Was sie aus dieser Party mitnehmen: 1. Helfen ist toll. Sie haben Tiere gerettet, gemeinsam, mit Helm. Das ist ein Selbstbild-Anker für die nächsten Jahre. 2. Eine Hand-Signal \"Notruf!\" + leiser Spruch. sondern bedeutet „jemand hilft jetzt\". Das ist Brandschutz-Erziehung im weitesten Sinn — Vertrauen statt Angst. 3. Was eine Feuerwehr macht, in einfachen Bildern: Schlauch, Helm, Auto, Hand-Signal \"Notruf!\" + leiser Spruch. Das nehmen sie mit, wenn ihnen später die echte Theorie begegnet (in Schule oder in der Brandschutz-Erziehung im Kindergarten). Die echte Lehre kommt noch — diese Party legt das Fundament."
-        },
-        {
-          "topic": "🚨 Allergien vorher abfragen",
-          "detail": "Bei 5 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten). In die Einladung schreiben: „Hat dein Kind Allergien oder Unverträglichkeiten?\" Apfelschorle, Brezeln und Gurkensticks sind fast immer safe. Bei 3-5 zusätzlich beachten: weiche Mini-Würstchen statt ganze Würste (Erstickungsrisiko!), keine harten Bonbons, keine Nüsse einzeln (Erstickungsrisiko bei Krümeln)."
-        },
-        {
-          "topic": "👨‍👩‍👧 Eltern bleiben — Pflicht, kein Vorschlag",
-          "detail": "Bei 3-5 ist Eltern-Anwesenheit nicht optional. Schreib in die Einladung: „Ein Elternteil bleibt bitte mit dem Kind.\" Begründung: Toilettenbegleitung, Trösten bei Tränen, Spritzpistole halten, Kuscheltiere verstecken — du allein schaffst das nicht für 5 Kinder. Daraus wird kein Eltern-Café — verteile von Anfang an Aufgaben: Maria macht den Schaum nach, Tom achtet auf die Spritzpistole, Lisa fotografiert. Eltern, die einen Job haben, sind glücklicher als Eltern, die rumstehen."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Spiele in dieser Vorlage funktionieren auch drinnen. Spritz-Probe ins Bad (Wanne!), Mini-Einsatz durchs Wohnzimmer + Flur, Schaum-Löschen am Küchentisch. Wenn du draußen planst: Räume innen schon vorab freihalten. Bei 3-5 ist Indoor sogar oft besser — weniger Reizüberflutung als im Garten mit Vögeln und Wind."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Kein Eltern-Gruppen-Chaos mehr. Erstelle eine [Partyseite auf party.machsleicht.de](https://party.machsleicht.de) mit Datum, Uhrzeit, Treffpunkt, Wunschliste UND Allergien-Abfrage. Verschicke nur einen Link. Eltern können sich eintragen und Rückfragen stellen. Kostet nichts.\n\n⏰ Pünktliche Abholung — bei 3-5 besonders wichtig\nSchreib klar in die Einladung: „Abholung 16:30 Uhr — länger schaffen 4-Jährige nicht.\" Bei den Kleinen kippt die Stimmung schneller als bei den Großen. Wenn ein Kind nach 2 Stunden müde wird und ein Elternteil 30 Min. zu spät kommt, hast du ein Drama. Lieber kurz und gut als zerdehnt."
-        },
-        {
-          "topic": "😢 Plan für Tränen-Momente",
-          "detail": "Bei 3-5 weint mindestens ein Kind in 90 Min. — das ist normal. Häufige Auslöser: Hand-Signal \"Notruf!\" + leiser Spruch. Schaum schreckt, Kind will nicht den falschen Aufkleber, Eltern sind kurz weg. Plan: Eltern bleiben dabei, ruhige Ecke (Sofa) für „kurze Pause\" einrichten, Kuscheltier griffbereit, kein Drama wenn ein Kind aussetzt. Nach 5 Min. Pause sind die meisten wieder da. Zwingen ist kontraproduktiv."
-        },
-        {
-          "topic": "🔥 Echte Sicherheits-Botschaft (auch für 3-5)",
-          "detail": "Auch wenn die Theorie erst bei 6-8 voll greift, kannst du in zwei Sätzen ein Sicherheits-Anker für die Kleinen setzen — beiläufig, nicht als Vortrag. Beim Schicht-Appell oder vor dem Mini-Einsatz: „Echte Feuerwehr ist toll — aber Feuer ist heiß und macht aua. Wenn du echtes Feuer siehst: nicht hingehen, sondern zur Mama oder zum Papa rennen.\" Das ist die altersgerechte 3-5-Variante von Brandschutz-Erziehung. Mehr nicht, mehr verstehen sie nicht. Aber dieser eine Satz bleibt hängen — die Eltern hören es auch und können später anknüpfen."
-        },
-        {
-          "topic": "🧴 Rasierschaum-Sicherheit — die kleine Checkliste",
-          "detail": "Drei Regeln für sicheres Schaum-Löschen: 1. Schaum NICHT ins Gesicht, NICHT in die Augen, NICHT in den Mund. Wenn doch: 5 Min mit klarem Wasser spülen, kein Reiben. 2. Hände vor jedem Snack waschen — der Schaum klebt unsichtbar an den Fingern. 3. Drogerie-Eigenmarke kaufen (parfümfrei), KEINE Sahne nehmen (kippt + klebt + riecht), KEINEN Bauschaum oder Reinigungsschaum (toxisch). Diese drei Regeln einmal vor dem Spiel den Eltern durchgeben, dann sind alle ruhiger."
-        }
-      ],
-      "educationalValue": null
-    },
-    "invitationTemplate": "Eine persönliche Feuerwehr-Einladung macht schon vor der Party Lust auf den Tag. Auf machsleicht kannst du deine Einladung kostenlos in 3 Minuten erstellen — mit „Notruf eingegangen\"-Optik, Datum, Treffpunkt, Crew-Funktionen, Allergien-Abfrage und der Eltern-bleibt-dabei-Info. PDF oder digitaler Link zum Verschicken.\n[🚒 Feuerwehr-Einladung erstellen →](/einladung/feuerwehr/)\n\n[📱 Per WhatsApp teilen](https://wa.me/?text=%F0%9F%9A%92%20Feuerwehr-Kindergeburtstag%20f%C3%BCr%203%E2%80%935-J%C3%A4hrige%20planen%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Schicht-Appell%2C%20Helm-Probe%20und%20Tag-1-Feuerwehrkind-Urkunde%3A%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Ffeuerwehr-3-5-jahre)",
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Feuerwehr-Geburtstag für 3–5-Jährige dauern?",
-        "a": "90 Minuten bis 2,5 Stunden — kürzer ist besser als länger. Bei 3-Jährigen reichen 90 Minuten (Minimal-Variante). Bei 4-5-Jährigen sind 2 Stunden (Standard) ideal. Mehr als 2,5 Stunden geht in dem Alter nicht — nach 3 Stunden kippt zuverlässig die Stimmung. Wer denkt, „länger ist mehr Wert\", irrt: weniger Programm = weniger Tränen."
-      },
-      {
-        "q": "Wie viele Kinder sollte man zum Feuerwehr-Geburtstag einladen?",
-        "a": "Faustregel: Alter des Kindes + 1. Also 4–6 Kinder bei einem 4-Jährigen. Alle Mengenangaben auf dieser Seite sind für 5 Kinder berechnet. Bei 3-Jährigen lieber wenig (3-4) als viel — eine zu große Gruppe in dem Alter ist nur Chaos. Bei 5-Jährigen sind auch 6-7 noch machbar, aber dann brauchst du wirklich 2 Eltern als Helfer dauerhaft."
-      },
-      {
-        "q": "Was kostet ein Feuerwehr-Geburtstag für 3–5-Jährige?",
-        "a": "Zwischen 52 € (Minimal, 90 Min.) und 111 € (Wow, 2,5 Std. mit Helm-Bemalen) für 5 Kinder. Die Standard-Variante liegt bei ca. 78 € und bietet das beste Verhältnis aus Aufwand und Ergebnis. Spar-Trick: Bilderbuch aus der Bibliothek leihen statt kaufen, keine Polaroids — drückt die Wow-Variante auf ~93 €. Der weiße Pappkarton-Helm zum Bemalen ist der unverzichtbare Wow-Anker, an dem nicht gespart werden sollte."
-      },
-      {
-        "q": "Müssen Eltern bei der Feuerwehr-Party für 3–5 wirklich bleiben?",
-        "a": "Ja, bei dieser Altersgruppe ist Eltern-Anwesenheit Pflicht — und zwar als aktive Helfer, nicht als Beobachter. Begründung: Bei 3-5 brauchst du Hilfe für Toilettenbegleitung, Trösten, Spritzpistole-Halten, Schaum-Nachfüllen. Du allein schaffst das für 5 Kinder nicht. Schreib in die Einladung: „Ein Elternteil bleibt bitte mit dem Kind und hilft mit.\" Verteile Aufgaben (Foto, Hand-Signal \"Notruf!\" + leiser Spruch. Pinsel) — Eltern, die einen Job haben, sind glücklicher als die, die rumstehen. Aus dem „Eltern-Café-Problem\" wird so „Crew-Eltern als Co-Wachleiter\"."
-      },
-      {
-        "q": "Was tun bei schlechtem Wetter ohne Wasser-Spiele?",
-        "a": "Bei 3-5 sind Indoor-Alternativen ohnehin oft besser — weniger Reizüberflutung. Drei Drinnen-Hacks: 1. Statt Spritzpistole gegen Becher: rote Tücher von der Wand „abreißen\" (mit Tesa locker befestigt) als Lösch-Übung. 2. Statt Schaum-Wanne: Wattebällchen-Schaum in einer Schüssel — Kinder „pusten Brände aus\". 3. Statt Mini-Einsatz draußen: Kuscheltiere im Wohnzimmer hinter Vorhang/Sofa verstecken. Funktioniert alles ohne ein Tropfen Wasser."
-      },
-      {
-        "q": "Welche Mitgebsel passen zum Feuerwehr-Motto bei 3-5?",
-        "a": "Bei den Kleinen funktioniert wenig + wertig: ein Pappkarton-Helm (oder selbstbemalter in der Wow-Variante), ein Aufkleberbogen mit großen Motiven (keine fummeligen Mini-Sticker — Erstickungsrisiko), ein Mini-Feuerwehrauto, eine kleine Tüte Gummibärchen und die Tag-1-Feuerwehrkind-Urkunde mit Namen. Vermeide Trillerpfeifen (verlieren Eltern den Verstand auf dem Heimweg), keine Reflektoren mit Sicherheitsnadeln (Verletzungsrisiko), keine Süßigkeiten ohne klare Allergen-Kennzeichnung."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -29868,14 +27197,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "feuerwehr-mittel": {
-    "_meta": {
-      "source_file": "kindergeburtstag/feuerwehr-6-8-jahre.html",
-      "extracted": "2026-05-19",
-      "schema_version": "1.0",
-      "purpose": "Golden Template — Feuerwehr 6-8 für Planer-Frisur-Sprint (P3-13 to P3-19)",
-      "phase_b_complete": "2026-05-19",
-      "phase_b_streams": "3-Chat content-loop (writer/reviewer pipeline). preparationWeeks v3=88, sosScenarios v3=92, shoppingList.category v3=89. Adversarial-Phase skipped (alle Scores >=85 + Schema clean)."
-    },
     "motto": "feuerwehr",
     "ageGroup": "mittel",
     "ageRange": [
@@ -29883,8 +27204,6 @@ var ELITE_MOTTO_DATA = {
       8
     ],
     "title": "🚒 Feuerwehr-Kindergeburtstag — 6–8 Jahre",
-    "metaDescription": "Feuerwehr-Kindergeburtstag für 6-8-Jährige: 3 fertige Party-Konzepte (Minimal/Standard/Wow) mit Spielanleitungen, Zeitplan, Einkaufsliste und Kosten.",
-    "introParagraph": "Dein Kind wird 6, 7 oder 8 und will Feuerwehr machen — nicht nur drüber reden, sondern wirklich. Hier bekommst du drei fertige Party-Konzepte, in denen die Kinder eine echte Crew werden: Schicht-Appell, Ausbildungs-Stationen, Einsatz-Alarm, Urkunde. Kein „so tun als ob\", sondern Struktur. Jede Variante mit Zeitplan, Spielanleitungen, Einkaufsliste und Kosten.\n\n[Feuerwehr-Geburtstag planen →](/kindergeburtstag?motto=feuerwehr&alter=7#planer)",
     "ageInsight": {
       "headline": "Was 6–8-Jährige ausmacht — und was das für die Feuerwehr-Party heißt",
       "traits": [
@@ -31212,178 +28531,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "bonusGames": {
-      "intro": "Diese Spiele kannst du in jeder Variante einbauen oder weglassen — alle 6-8-tauglich, ergänzen die Stationen-Rotation um neue Module. Drei davon funktionieren auch indoor bei Regen.",
-      "items": [
-        {
-          "name": "📞 112-Quiz (Notruf-Mini)",
-          "duration": 15,
-          "minAge": 6,
-          "loudness": "ruhig",
-          "indoor": true,
-          "outdoor": false,
-          "material": "5 Quiz-Karten ausgedruckt (Vorlagen unten), 2 alte Smartphones im Flugmodus (oder ohne SIM), 1 Stoppuhr",
-          "anleitung": "Spiel-Format wie ein Quiz mit drei Aufgaben pro Kind. Aufgabe 1: „Welche Nummer wählst du bei einem Brand?\" Aufgabe 2: „Nenne die 2 wichtigsten Fragen am Notruf: Wo ist es passiert? und Was ist passiert? Plus: Dranbleiben, bis die Leitstelle sagt \"alles klar\". (Die früher gelehrte 5-W-Regel gilt 2025 als überholt — moderne Leitstellen führen strukturierte Abfragen).\" Aufgabe 3: „Du rufst an — was sagst du als erstes?\" Disponentin Clara nimmt die Anrufe auf dem Smartphone entgegen (Flugmodus!), Crew probiert reihum. Wer alle 3 schafft, bekommt einen kleinen Sticker auf den Dienstausweis. Keine Verlierer — wer hängen bleibt, bekommt einen Tipp.\n\nQuiz-Vorlagen: 1) Brand-Notruf, 2) Verkehrsunfall (Polizei oder 112?), 3) Katze auf Baum (kein 112-Fall!), 4) Oma fällt um (112!), 5) Streichholzkasten gefunden — wem sagen?",
-          "whyItWorks": "6-8 lernen hier wirklich was, das im Notfall greift. Die Kinder gehen mit konkretem Wissen nach Hause — Eltern bemerken's beim Abholen („Mama, weißt du was die 5 W sind?\"). SICHERHEIT: Smartphone MUSS im Flugmodus sein, sonst riskierst du einen versehentlichen echten Notruf — der ist kein Witz und kann eine Strafanzeige zur Folge haben."
-        },
-        {
-          "name": "🪣 Eimerkette (Wasser-Staffel)",
-          "duration": 15,
-          "minAge": 6,
-          "loudness": "mittel",
-          "indoor": false,
-          "outdoor": true,
-          "material": "2 große Eimer (Start und Ziel), 6 kleinere Becher oder Tassen, viele alte Handtücher",
-          "anleitung": "Klassische Feuerwehr-Übung kindgerecht: Crew stellt sich in einer Reihe auf, ein voller Wasser-Eimer am Anfang, ein leerer am Ende, ~3-5 Meter dazwischen. Mit kleinen Bechern wird Wasser von Hand zu Hand weitergegeben, ohne zu verschütten. Ziel: Den Ziel-Eimer in 5 Min so voll wie möglich. Bei 2 Trupps gegeneinander = Wettbewerb (welcher Trupp hat mehr Wasser im Ziel-Eimer). Bei 6 in einem Trupp = kollaborativ („Wie voll kriegen wir den Eimer in 5 Min?\").\n\nVarianten: rückwärts laufen, mit verbundenen Augen (Eltern als Sicherheitsnetz), oder über kleine Hindernisse.",
-          "whyItWorks": "Trainiert Teamwork ohne Trainerwort. Sieht aus wie echte Feuerwehr-Ausbildung (Eimerketten gab's früher wirklich). Kinder spüren: ich bin Teil eines Systems — nicht nur ein Einzel-Spritzer. Funktioniert nur draußen oder in der Garage — drinnen wird's chaotisch."
-        },
-        {
-          "name": "📦 Mini-Feuerwehrauto basteln",
-          "duration": 25,
-          "minAge": 6,
-          "loudness": "ruhig",
-          "indoor": true,
-          "outdoor": false,
-          "material": "Pro Kind: 1 Milchkarton (1 l, leer + ausgespült), 4 Kronkorken als Räder (oder schwarze Knöpfe), rote Bastelfarbe + Pinsel, Alufolie für die Drehleiter, schwarzer Edding für „112\"-Schrift, Kleber. Zentral: 1 Heißkleber (Eltern bedienen!) oder doppelseitiges Klebeband.",
-          "anleitung": "Bastel-Slot in der Mitte der Party, perfekt nach Kuchen-Pause. Jedes Kind bemalt seinen Milchkarton rot (10 Min, trocknet während des Snacks), klebt 4 Kronkorken als Räder unten an, formt aus Alufolie eine kleine Drehleiter und klebt sie obendrauf, schreibt „112\" auf die Seite. Eltern helfen bei Heißkleber und schwierigen Stellen.\n\nDas Ergebnis ist nicht perfekt — das ist Teil der Pointe. Es ist IHR Auto, mit nach Hause genommen.",
-          "whyItWorks": "Bastel-Aktivität als ruhiger Slot zwischen lauten Spielen — bei 6-8 sind 25 Min konzentrierte Bastel-Arbeit machbar. Plus: Das Mini-Auto wird zum besten Mitgebsel überhaupt, weil's selbst gemacht ist. SICHERHEIT: Heißkleber NUR Erwachsene bedienen — Hautverbrennung ist häufige Bastel-Unfall-Quelle. Ersatz: doppelseitiges Klebeband oder UHU."
-        },
-        {
-          "name": "🚪 Feuerwehr-Escape — der verqualmte Raum",
-          "duration": 20,
-          "minAge": 7,
-          "loudness": "ruhig",
-          "indoor": true,
-          "outdoor": false,
-          "material": "3 Rätsel-Karten ausgedruckt (Vorlagen unten), 1 abschließbare Box oder Schublade als „Notausgang\", 3 Zahlen (z.B. 1-1-2) als Lösung, optional: 1 Taschenlampe (für „Sichteinschränkung\"-Effekt), 1 dünnes Tuch als Augenbinde",
-          "anleitung": "Story: „Crew, der Raum ist verqualmt — ihr müsst den Notausgang finden! 3 Rätsel führen zur Zahlen-Kombination, die den Ausgang öffnet.\" Crew arbeitet zusammen — kein Einzelspiel.\n\nRätsel 1: Welche Zahl ist die Notrufnummer der Feuerwehr? (Antwort: 1, weil 112 mit 1 beginnt). Rätsel 2: Wie viele W gibt es beim Notruf? (Antwort: 5 — Reduktion auf eine Ziffer: 1). Rätsel 3: Welche Brandklasse passt zu einem Fett-Brand? (Antwort: F, oder als Zahl: 2 für die zweite Spezial-Klasse).\n\nWenn die Crew 1-1-2 hat, dürfen sie die Box öffnen — drin: ein Schlüssel + die nächste Mitgebsel-Übergabe.",
-          "whyItWorks": "Knüpft an Theorie-Briefing der Wow-Variante an — wer das gemacht hat, hat hier einen Vorsprung. Funktioniert auch standalone bei Minimal/Standard. Kollaborativ — kein Wettbewerb, alle gewinnen oder verlieren zusammen. Bei 7+ Jahren passt's, bei 6-Jährigen ggf. mit mehr Tipps moderieren."
-        },
-        {
-          "name": "🎯 Drill-Training (Flammen-Zielscheibe)",
-          "duration": 15,
-          "minAge": 6,
-          "loudness": "mittel",
-          "indoor": true,
-          "outdoor": true,
-          "material": "4-5 Papp-Zielscheiben mit aufgemalten Flammen (rote/orange Tusche, Größe DIN A4), 5-6 weiche Bälle oder Erbsensäckchen, Klebeband zum Aufhängen",
-          "anleitung": "Indoor-Variante des Zielspritzens, ohne Wasser. Flammen-Zielscheiben mit Tesa an die Wand kleben (max. 1 m hoch, damit Kinder zielen können), Crew steht 2-3 m entfernt, jeder hat 5 Würfe. Punkte werden in der Wertungs-Tafel eingetragen — perfekte Ergänzung zum Stations-Wettbewerb. Eltern stehen als „Werfer-Sicherheit\" daneben, damit niemand auf andere Kinder zielt.\n\n2 Trupps gegeneinander = Wettbewerb. Bei der Bonus-Runde: Wer alle 5 Flammen in 1 Runde trifft = doppelte Punkte.",
-          "whyItWorks": "Volle Indoor-Alternative zum Wasser-Spritzen, wenn das Wetter nicht mitspielt oder die Wohnung kein Spritz-tolerantes Bad hat. Trainiert Hand-Auge-Koordination. Lässt sich nahtlos in die Standard-/Wow-Stationen-Rotation einklinken — wirkt wie eine neue Station, kostet aber nur 3 € für die Pappe."
-        }
-      ]
-    },
-    "cakeRecipe": {
-      "intro": "Geht mit jeder Kastenform. Das Besondere ist die Form — nicht das Backen.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Rührteig in der Kastenform backen — Fertigmischung Schoko oder Vanille reicht völlig (Dr. Oetker, Kathi, whatever). Kein Mensch schmeckt den Unterschied."
-        },
-        {
-          "n": 2,
-          "content": "Komplett abkühlen lassen, dann eine kleine Scheibe oben abschneiden, damit der Kuchen plan steht. Die abgeschnittene Scheibe wird der „Fahrer-Häuschen\"-Aufsatz hinten oben."
-        },
-        {
-          "n": 3,
-          "content": "Den ganzen Kasten mit roter Glasur überziehen (Puderzucker + 3 EL Wasser + rote Lebensmittelfarbe, dick rühren). Wenn dir das zu wackelig ist: rote Marzipan-Decke aus dem Bastelladen drüber, sauber zuschneiden."
-        },
-        {
-          "n": 4,
-          "content": "Reifen aus Schoko-Sandwich-Keks-Keksen oder schwarzem Fondant — 4 Stück seitlich anpressen (zwei vorne, zwei hinten)."
-        },
-        {
-          "n": 5,
-          "content": "Drehleiter aus zwei Strohhalmen (oben drauf liegend, mit kleinen Querstreben aus weißen Zuckerperlen oder Schokolinsen) ODER eine Mini-Leiter aus Salzteig (vorm Backen formen, separat 10 Min. mitbacken, oben aufkleben mit Glasur). Zwei Versionen, beide funktionieren."
-        },
-        {
-          "n": 6,
-          "content": "„112\" mit weißer Glasur oder weißem Zuckerstift auf die Seite schreiben. Optional: blaues Blaulicht aus einer Blaubeere oder einer blauen Zuckerperle oben drauf."
-        },
-        {
-          "n": 7,
-          "content": "Wow-Variante: Wunderkerze in den Kuchen stecken, beim „Happy Birthday\" anzünden. Funktioniert wie ein Drehleiter-Highlight."
-        }
-      ],
-      "meta": {
-        "aufwand": "60 Min. inkl. Backen und Deko",
-        "kosten": "~7 €",
-        "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. Lebensmittelfarben sind in der Regel okay, aber bei Lebensmittelfarben-Allergien Marzipan-Variante nehmen"
-      },
-      "tips": [
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Fertigen Schoko-Kasten beim Bäcker kaufen, rote Glasur drüber, Schoko-Sandwich-Keks-Reifen ankleben, „112\" mit weißem Zuckerstift draufschreiben. Sieht aus wie gewollt, dauert 10 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: „Der Kuchen war nicht selbstgemacht.\""
-        },
-        {
-          "title": "🚒 Pinterest-Inspiration ohne Pinterest-Aufwand",
-          "body": "Wenn du im Netz nach „Feuerwehr-Kuchen\" suchst, stößt du auf 4-stündige Fondant-Projekte mit fünf Schichten und beweglichen Schiebern. Ignoriere das. Kinder wollen einen roten Kasten mit Reifen und „112\" drauf — fertig. Das Gefühl „der Kuchen sieht aus wie ein Feuerwehrauto\" entsteht durch Form + Farbe + Symbol, nicht durch Detail-Treue. Spar dir die 4 Stunden für Spielvorbereitung."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🧠 Was die Kinder wirklich mitnehmen — der Bildungswert dieser Party",
-          "detail": "Kinder, die hier waren, gehen mit drei konkreten Brandschutz-Skills nach Hause: 1. Sie wissen, dass die 112 die richtige Notrufnummer ist, und sie kennen die 5 W (Wer / Wo / Was / Wie viele / Warten). 2. Sie wissen, dass Wasser nicht alles löscht — Fett-Brand wird mit Deckel erstickt, nicht mit Wasser bespritzt. 3. Sie wissen, dass im Brandfall Rauch das Hauptproblem ist und dass tief am Boden die sauberste Luft ist. Das sind keine Marketing-Versprechen — das passiert beiläufig in den Spielen und im Theorie-Briefing der Wow-Variante. Die Deutsche Brandschutzerziehung empfiehlt diese Inhalte ab 5 Jahren. Wir packen sie hier in eine Geburtstagsparty, ohne dass es nach Schulstunde aussieht."
-        },
-        {
-          "topic": "🚨 Allergien vorher abfragen",
-          "detail": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten). In die Einladung schreiben: „Hat dein Kind Allergien oder Unverträglichkeiten?\" Apfelschorle, Popcorn und Brezeln sind fast immer safe. Bei der Wow-Variante zusätzlich Asthma abfragen — die Nebelmaschine ist für Kinder ohne Asthma unproblematisch (Wasserbasis-Fluid), aber bei Asthma kann sie triggern."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Fast alle Spiele funktionieren auch drinnen — Ausnahme: die Eimerkette braucht draußen oder Garage. Indoor-Ersatz dafür: Drill-Training (Flammen-Zielscheibe), das wetterunabhängig läuft. Zielspritzen ins Bad (Wanne!), Ausbildungs-Stationen ins Wohnzimmer + Flur, Einsatz-Alarm durch alle Zimmer der Wohnung. Wenn du draußen planst: Räume innen schon vorab freihalten, falls's umkippt. Nie ohne Plan B."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Kein Eltern-Gruppen-Chaos mehr. Erstelle eine [Partyseite auf party.machsleicht.de](https://party.machsleicht.de) mit Datum, Uhrzeit, Treffpunkt und Wunschliste — verschicke nur einen Link. Eltern können sich eintragen, Geschenke abstimmen, Rückfragen stellen. Kostet nichts."
-        },
-        {
-          "topic": "👥 Ab 6 Kindern: 1 Helfer dazu",
-          "detail": "Bis 5 Kinder schaffst du eine Standard-Party allein. Bei 6+ brauchst du Unterstützung — besonders für die Stationen-Rotation (4 Stationen parallel = 4 Augenpaare hilfreich) und beim Einsatz-Alarm (jemand bedient die Nebelmaschine, jemand begleitet die Crew). Oma, andere Elternteile, oder eine Teenager-Nachbarin (10 € für 3 Stunden) retten dir den Tag.\n\n⏰ Abholzeit vorher klären\nIn diesem Alter können Eltern kurz abgesetzt werden — müssen aber telefonisch erreichbar sein. Schreib in die Einladung: „Abholung 17:00 Uhr — der nächste Trupp übernimmt.\" Kommt locker an, vermeidet aber das Problem, dass um 17:30 noch drei Kinder da sind und du schon alles abgebaut hast."
-        },
-        {
-          "topic": "🔇 Nachbarn & Lautstärke",
-          "detail": "Ehrlich: Sirene + 6 spritzende Kinder + Einsatz-Alarm ist laut. Wenn du in einer Mietwohnung bist, kurz vorab beim Nachbarn klingeln und sagen: „Sonntag von 14 bis 17 wird's lauter, mein Sohn wird 7.\" Das kostet 30 Sekunden, kostet vielleicht eine Tafel Schokolade in der Nachbarwohnung, und erspart dir Stress mitten in der Sirene-Phase. Sirene draußen besser am späten Nachmittag, nicht abends nach 19:00."
-        },
-        {
-          "topic": "🔥 Echte Sicherheits-Regeln — Wasser-Spiele",
-          "detail": "Drei Regeln, die du beim Schicht-Appell einmal kurz durchgehst — die Kinder merken sich das, weil es sich nach „Crew-Briefing\" anfühlt: 1. „Strahlrohr nur zur Seite, nie ins Gesicht.\" Bei Verstoß: Strahlrohr für 1 Runde abgegeben — funktioniert besser als Schimpfen. 2. „Wasser nur auf den Becher oder die Flamme, nicht aufs andere Kind.\" Eltern stehen als Sicherheitsnetz daneben. 3. „Auf nassem Boden Schritt-Tempo — sonst Rutschgefahr.\" Diese drei Sätze beim Schicht-Beginn-Spruch reichen, kein Vortrag. Die Kinder spüren, dass du sie ernst nimmst — und halten sich besser dran als bei generischem „Vorsichtig!\"."
-        },
-        {
-          "topic": "📲 Notruf-Erziehung beiläufig",
-          "detail": "Wenn du das Theorie-Briefing der Wow-Variante machst oder das 112-Quiz aus den Bonus-Spielen, kannst du beiläufig drei lebenswichtige Inhalte mitgeben: 1. Die 112 ist die Feuerwehr-Notrufnummer in ganz Europa — funktioniert von jedem Handy mit gültiger SIM — auch ohne Guthaben und in fremden Netzen (Notrufe ohne SIM wurden in Deutschland abgeschaltet). 2. Beim Notruf gilt die 5-W-Regel: Wer (rufe ich an, mein Name), Wo (ist es passiert), Was (ist passiert), Wie viele (sind verletzt/in Gefahr), Warten (auf Rückfragen). 3. Auflegen erst, wenn die Leitstelle es sagt. Diese drei Punkte sind die offizielle Brandschutzerziehung — die kommt in der Schule nochmal, aber wenn dein Kind und seine Freunde es schon auf der Party hören, ist die Schicht beim Erinnern halbiert."
-        }
-      ],
-      "educationalValue": "Kinder, die hier waren, gehen mit drei konkreten Brandschutz-Skills nach Hause: 1. Sie wissen, dass die 112 die richtige Notrufnummer ist, und sie kennen die 5 W (Wer / Wo / Was / Wie viele / Warten). 2. Sie wissen, dass Wasser nicht alles löscht — Fett-Brand wird mit Deckel erstickt, nicht mit Wasser bespritzt. 3. Sie wissen, dass im Brandfall Rauch das Hauptproblem ist und dass tief am Boden die sauberste Luft ist. Das sind keine Marketing-Versprechen — das passiert beiläufig in den Spielen und im Theorie-Briefing der Wow-Variante. Die Deutsche Brandschutzerziehung empfiehlt diese Inhalte ab 5 Jahren. Wir packen sie hier in eine Geburtstagsparty, ohne dass es nach Schulstunde aussieht."
-    },
-    "invitationTemplate": "Eine persönliche Feuerwehr-Einladung macht schon vor der Party Lust auf den Tag. Auf machsleicht kannst du deine Einladung kostenlos in 3 Minuten erstellen — mit „Notruf eingegangen\"-Optik, Datum, Treffpunkt, Crew-Funktionen und Allergien-Abfrage. PDF oder digitaler Link zum Verschicken.\n[🚒 Feuerwehr-Einladung erstellen →](/einladung/feuerwehr/)\n\n[📱 Per WhatsApp teilen](https://wa.me/?text=%F0%9F%9A%92%20Feuerwehr-Kindergeburtstag%20f%C3%BCr%206%E2%80%938-J%C3%A4hrige%20planen%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Schicht-Appell%2C%20Stationen%2C%20Einsatz-Alarm%20und%20Urkunde%3A%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Ffeuerwehr-6-8-jahre)",
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Feuerwehr-Geburtstag für 6–8-Jährige dauern?",
-        "a": "2,5 bis 3 Stunden sind ideal. Kürzer ist besser als länger — nach 3 Stunden kippt die Stimmung bei den meisten Kindern. Die Minimal-Variante (2 Stunden) funktioniert auch perfekt, besonders wenn du wenig Vorbereitungszeit hast. Die Wow-Variante mit Theorie-Briefing, Nebel-Einsatz und Brandermittlung braucht 3,5 Stunden, weil die Zeremonie und der Einsatz-Alarm Zeit verdienen."
-      },
-      {
-        "q": "Wie viele Kinder sollte man zum Feuerwehr-Geburtstag einladen?",
-        "a": "Faustregel: Alter des Kindes + 1. Also 7–9 Kinder bei einem 7-Jährigen. Ab 8 Kindern brauchst du definitiv einen zweiten Erwachsenen als Helfer — besonders bei der Stationen-Rotation und beim Einsatz-Alarm. Alle Mengenangaben auf dieser Seite sind für 6 Kinder berechnet. Die 12 Crew-Funktionen reichen für bis zu 10 Kinder + Reserve."
-      },
-      {
-        "q": "Was kostet ein Feuerwehr-Geburtstag?",
-        "a": "Zwischen 53 € (Minimal) und 159 € (Wow inkl. Polaroid-Sofortdruck) für 6 Kinder — je nachdem, wie viel Aufwand du betreiben willst. Die Standard-Variante liegt bei ca. 99 € und bietet das beste Verhältnis aus Aufwand und Ergebnis. Feuerwehr ist materiell-anspruchsvoller als andere Mottos (Spritzpistolen, Helme, Absperrband), aber vieles ist wiederverwendbar oder als Mitgebsel im Preis enthalten. Spar-Trick: Pappkarton-Helme statt Plastik (~−18 €) und keine Polaroids drücken die Wow-Variante auf ~121 €."
-      },
-      {
-        "q": "Funktioniert das Feuerwehr-Motto in gemischten Gruppen — auch für Mädchen?",
-        "a": "Ja, und zwar besser als die meisten denken. Die 12 Crew-Funktionen sind bewusst gemischt-geschlechtlich besetzt: Funkerin, Sanitäterin, Disponentin, Strahlrohrführerin, Atemschutzträgerin, Wasserretterin sind weibliche Rollen, die zur echten Feuerwehr-Realität gehören. Mädchen, die zum Schicht-Appell kommen, ziehen ihren Dienstausweis und werden Crew-Mitglied — kein Klischee, keine Sonderrolle. Funktioniert in jeder Konstellation: reine Jungen-Crews, reine Mädchen-Crews, gemischte Crews. Was nicht funktioniert: das Motto „Mädchen-tauglich\" zu machen durch rosa Glitzer-Helme. Lass es so wie es ist — die Kinder spüren Authentizität."
-      },
-      {
-        "q": "Was tun bei schlechtem Wetter ohne Wasser-Spiele?",
-        "a": "Drei Indoor-Alternativen, alle motto-stimmig: 1. Statt Zielspritzen: rote Papier-Flammen mit Tesa an die Wand kleben — Kinder müssen sie mit Bällen oder Erbsensäckchen „abschießen\". Funktioniert wie eine Schießbude und ist genauso laut. 2. Statt Schlauch-Parcours: Sprossenwand oder Stuhl-Kissen-Strecke als Leiter-Klettern. 3. Statt Schaum-Löschen draußen: in der Wanne, das Bad ist eh wasser-tolerant. Plus: Knoten-Station, Erste-Hilfe an Kuscheltieren, Brandermittlung-Mini — alles funktioniert ohne ein Tropfen Wasser."
-      },
-      {
-        "q": "Welche Mitgebsel passen zum Feuerwehr-Motto bei 6-8?",
-        "a": "Bei 6-8 funktionieren: 1 Pappkarton- oder Plastik-Helm (Höhepunkt der Tüte), 1 Feuerwehr-Ausweis mit Foto und Funktion vom Schicht-Appell (emotional aufgeladen), 1 Mini-Feuerwehrauto (selbst „gerettet\" beim Schaum-Löschen — Story), 1 Tattoo-Bogen zum Mitnehmen, 1 Tüte Gummibärchen und das Feuerwehr-Diplom gerollt mit Bändchen. Optional: ein Reflektor-Aufkleber als „Sicherheitsausweis\" (mit Sicherheitsbezug, kostet 30 ct/Stück). Vermeide Trillerpfeifen — Eltern danken's dir nicht."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -31704,14 +28851,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "feuerwehr-gross": {
-    "_meta": {
-      "source_file": "kindergeburtstag/feuerwehr-9-12-jahre.html",
-      "extracted": "2026-05-19",
-      "schema_version": "1.0",
-      "purpose": "Feuerwehr 9-12 (gross) — Phase C #3 Elite-Slot",
-      "phase_b_complete": "2026-05-19",
-      "phase_b_method": "Direct draft — gross-spezifika (3-4h, Eltern absetzen, echter Wettbewerb, Escape-Room-Brandermittlung) durchgehend angewandt."
-    },
     "motto": "feuerwehr",
     "ageGroup": "gross",
     "ageRange": [
@@ -31719,8 +28858,6 @@ var ELITE_MOTTO_DATA = {
       12
     ],
     "title": "🚒 Feuerwehr-Kindergeburtstag — 9–12 Jahre",
-    "metaDescription": "Feuerwehr-Kindergeburtstag für 9-12-Jährige: 3 fertige Party-Konzepte mit Theorie-Briefing, bewertetem Stationen-Wettbewerb, Brandermittlung als Detektiv-Phase und Crew-Diplom mit Funktion.",
-    "introParagraph": "In dem Alter wollen Kinder ein Motto, das sie ernst nimmt — keine Helmchen-Romantik, sondern Strategie, Realismus, ein bisschen Druck. Diese Konzepte liefern das: Theorie-Briefing wie an einer echten Wache, bewerteter Stationen-Wettbewerb mit Stoppuhr, Brandermittlung als Krimi-Phase mit Verdächtigen und Beweisen, Crew-Diplom mit Funktion am Ende. Eltern können absetzen, in der Wow-Variante sogar völlig wegbleiben.\n\n[Feuerwehr-Geburtstag planen →](/kindergeburtstag?motto=feuerwehr&alter=10#planer)",
     "ageInsight": {
       "headline": "Was 9–12-Jährige ausmacht — und was das für die Feuerwehr-Party heißt",
       "traits": [
@@ -32928,182 +30065,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "bonusGames": {
-      "intro": "Diese Spiele kannst du in jeder Variante einbauen oder weglassen — alle 9-12-tauglich, mit echter intellektueller Tiefe. Vier davon sind Indoor-Alternativen für Regenwetter, eines ist eine Outdoor-Großübung.",
-      "items": [
-        {
-          "name": "🤖 Lego-Lösch-Roboter (Bastel-Challenge)",
-          "duration": 45,
-          "minAge": 9,
-          "loudness": "ruhig",
-          "indoor": true,
-          "outdoor": false,
-          "material": "Pro Trupp (2-3 Kinder): 1 Lego-Box mit gemischten Steinen (Technik-Lego ist Bonus, klassisches Duplo geht auch — aus dem Eigenbestand oder geliehen), optional 1 kleine Spritz-Demonstrations-Aufgabe (Klorollen als „Brand\"). 1 Stoppuhr für die Wettbewerbs-Variante.",
-          "anleitung": "Story: „Die Wache braucht neue Technik — entwerft einen Lösch-Roboter, der Brände findet und löscht!\" Trupps von 2-3 Kindern bekommen je eine Lego-Box. 30 Min Bau-Zeit. Nach Ablauf präsentiert jeder Trupp seinen Roboter: Funktion, Lösch-Mechanismus, Reichweite. Eine Jury (du + ein Eltern-Helfer) bewertet nach Kreativität, Funktionalität, Team-Präsentation.\n\nVarianten: Mit Technik-Lego oder Mindstorms (falls vorhanden) lassen sich tatsächlich bewegliche Modelle bauen — dann ist's eher 60 Min. Standard-Variante ohne Motoren reicht aber völlig.",
-          "whyItWorks": "9-12 lieben Konstruktions-Aufgaben mit offenem Ende. Trainiert Teamwork, Kreativität, technisches Verständnis. Perfekt als Indoor-Alternative bei Regen oder als zusätzliche Wow-Aktivität. Eltern, die das Ergebnis sehen, sind beeindruckt — die Kinder spüren das."
-        },
-        {
-          "name": "📡 Großeinsatz mit Walkie-Talkies",
-          "duration": 40,
-          "minAge": 10,
-          "loudness": "laut",
-          "indoor": true,
-          "outdoor": true,
-          "material": "3 Walkie-Talkies (~25 € für 3er-Set auf Amazon, sonst 2 alte Smartphones + Messenger-App), 3 verschiedene „Einsatzorte\" (z.B. Garten, Bad, Küche), 8-10 Kuscheltiere zum Retten, 1 Karten-Skizze der Wohnung pro Team",
-          "anleitung": "Die ambitionierte Variante des Einsatz-Alarms. Crew wird in 3 Teams aufgeteilt, jedes Team hat ein Walkie-Talkie. Story: „3 gleichzeitige Notrufe — koordiniert euch über Funk! Team A: Brand im Garten. Team B: Verletzter im Bad. Team C: Tiere in der Küche.\"\n\nAblauf: Du bist Leitstelle. Du funkst die Befehle, die Teams melden zurück. Die Teams müssen miteinander kommunizieren („Team A an Team B — kommt zur Verstärkung in den Garten!\"). Du gibst neue Lageinfos rein („Atemschutz-Warnung im Bad — Team B mit Augenbinde weiter!\").\n\nDauer: 40 Min — länger ist anstrengend.",
-          "whyItWorks": "Echte Team-Koordination unter Zeitdruck. 10-12-Jährige lieben Funkgeräte — das fühlt sich nach echter Mission an. Trainiert klare Kommunikation, Lage-Beurteilung, Prioritäten setzen. SICHERHEIT: Walkie-Talkies haben echte Lautstärke — vorher Volume-Limits einstellen, sonst Ohrenpein. Nur draußen oder in großer Wohnung."
-        },
-        {
-          "name": "🔍 Brandschutz-Detektive (Realitäts-Check)",
-          "duration": 25,
-          "minAge": 10,
-          "loudness": "ruhig",
-          "indoor": true,
-          "outdoor": false,
-          "material": "1 Klemmbrett + Stift pro Kind, 1 Liste mit „typischen Gefahren\" zum Abhaken (Vorlage unten), evtl. eine Lupe (Showbiz, nicht funktional)",
-          "anleitung": "Crew geht durch deine Wohnung und identifiziert echte Brandschutz-Gefahren — wie echte Brandschutz-Inspektoren. Jedes Kind hat eine Checkliste mit 10 Punkten: \n\n1. Sind alle Rauchmelder vorhanden und funktionsfähig? (Test-Knopf drücken)\n2. Gibt es überlastete Mehrfachsteckdosen?\n3. Sind Fluchtwege frei (keine Möbel davor)?\n4. Stehen brennbare Stoffe nahe der Herdplatte?\n5. Sind Kerzen sicher aufgestellt?\n6. Ist der Wäschetrockner-Flusenfilter sauber?\n7. Wo hängt der Feuerlöscher (oder gibt es keinen)?\n8. Ist das Treppenhaus als Fluchtweg frei?\n9. Liegen Streichhölzer/Feuerzeuge unzugänglich für Kleinkinder?\n10. Kennt die Familie die Notfall-Sammelstelle vorm Haus?\n\nNach 20 Min Sammelpunkt — Crew berichtet, was sie gefunden hat. Du dokumentierst, was tatsächlich zu verbessern ist. Bonus: Die Familie macht's danach wirklich besser. ECHTE PARENTAL VALUE.",
-          "whyItWorks": "9-12 lieben Realitäts-Bezüge. Hier wird Brandschutz konkret — nicht abstrakt. Eltern, die das Ergebnis sehen, sind beeindruckt von der Tiefe. Plus: Das Geburtstagskind und seine Freunde nehmen echtes Sicherheits-Wissen mit nach Hause, das auch ihren eigenen Familien hilft. Funktioniert nur, wenn die Wohnung „inspizierbar\" ist — bei sehr persönlichen Räumen (Schlafzimmer) ggf. ausnehmen."
-        },
-        {
-          "name": "🧪 Hydraulische Presse — Physik-Experiment",
-          "duration": 20,
-          "minAge": 10,
-          "loudness": "ruhig",
-          "indoor": true,
-          "outdoor": false,
-          "material": "2 große Plastik-Spritzen (apothekenfrei, ohne Nadel, ~5 € für 2 Stück), 1 m durchsichtiger Schlauch (Aquaristik-Bedarf, ~2 €), Wasser, ggf. 1 Holzbrett als „Plattform\" und kleine Gewichte (Bauklötze) zum Demonstrieren",
-          "anleitung": "Eine Spritze ist klein (10 ml), die andere groß (60 ml). Mit dem Schlauch verbinden, beide mit Wasser füllen, keine Luftblasen. Wenn du die kleine Spritze drückst (mit Daumen-Kraft), hebt die große Spritze ein vielfaches Gewicht — Hydraulik-Prinzip.\n\nDemonstration: 1. Erkläre das Prinzip (Druck ist überall im Wasser gleich). 2. Lass Crew probieren — mit dem kleinen Druck bewegen sie etwas Großes. 3. Verbindung zur Feuerwehr: Die echten Feuerwehr-Pumpen funktionieren so. Genau dieses Prinzip macht es möglich, Wasser aus dem Hydrant 20 m hoch auf ein brennendes Haus zu schießen.\n\nNach 15 Min haben sie's verstanden — und sind beeindruckt.",
-          "whyItWorks": "Echtes Physik-Lernen, eingebettet in die Feuerwehr-Story. Funktioniert für die ganze Crew gleichzeitig (alle schauen zu, einer demonstriert reihum). Trainiert konzeptuelles Verständnis, nicht nur Faktenwissen. SICHERHEIT: Plastik-Spritzen ohne Nadel — keine echten Injektionsspritzen!"
-        },
-        {
-          "name": "🎬 Feuerwehr-Dokumentar (Video-Bericht)",
-          "duration": 30,
-          "minAge": 10,
-          "loudness": "mittel",
-          "indoor": true,
-          "outdoor": true,
-          "material": "1-2 Smartphones (ggf. deine + ein Eltern-Helfer-Handy), evtl. ein günstiges Stativ (~10 €) oder einfach Stuhl/Tisch als Auflage. 1 ausgedrucktes „Story-Board\" mit 5 Aufnahme-Ideen.",
-          "anleitung": "Crew dreht einen kurzen Doku-Bericht über den Tag. Wird am Ende der Party in der Zeremonie projiziert (Smartphone an Beamer/TV) oder per Familien-Chat-Mail an Eltern verschickt.\n\nStory-Board (kurz und konkret):\n1. Eröffnung: Wachleiter Max stellt die Crew vor (jedes Kind sagt Name + Funktion).\n2. Stationen-Bericht: Jedes Kind erklärt 1 Station in 20 Sekunden.\n3. Einsatz-Highlight: Crew dreht eine 1-Minuten-Szene aus dem Mini-Einsatz oder der Brandermittlung.\n4. Bestleistungs-Interview: Beste-Brandermittlerin/Bester-Brandermittler bekommt ein 30-Sek-Interview.\n5. Schlusswort: Geburtstagskind sagt 30 Sek über den Tag.\n\nGesamt-Dreh: 20 Min. Schneiden: nach der Party (Eltern als Editor). Verbreitung nur mit Eltern-Zustimmung — Datenschutz beachten!",
-          "whyItWorks": "9-12 lieben Smartphone-Produktion. Trainiert Storytelling, Self-Präsentation, Teamwork. Plus: Eltern bekommen ein einzigartiges Erinnerungs-Video. PFLICHT-CHECK: Vor dem Versand der Videos: jedes Eltern-Paar einzeln zustimmen lassen (DSGVO!). Notfalls Gesichter unkenntlich machen oder nur an die abgebildete Familie schicken."
-        }
-      ]
-    },
-    "cakeRecipe": {
-      "intro": "Bei 9-12 darf der Kuchen anspruchsvoller werden — die Kinder erkennen Mühe und schätzen sie.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Rührteig in der Kastenform backen — Fertigmischung Schoko reicht. Bei 8 Kindern besser zwei kleine Kastenformen."
-        },
-        {
-          "n": 2,
-          "content": "Komplett abkühlen, dann eine kleine Scheibe oben abschneiden für plane Standfläche. Die Scheibe wird der „Fahrer-Häuschen\"-Aufsatz hinten oben."
-        },
-        {
-          "n": 3,
-          "content": "Mit roter Glasur überziehen oder rote Marzipan-Decke drüber (sieht professioneller aus, ~5 € extra)."
-        },
-        {
-          "n": 4,
-          "content": "Reifen aus Schoko-Sandwich-Keks-Keksen oder schwarzem Fondant — 4 Stück seitlich anpressen. Bei 9-12 dürfen die Reifen ordentlich aussehen."
-        },
-        {
-          "n": 5,
-          "content": "Drehleiter aus zwei Strohhalmen (oben drauf liegend, mit Querstreben aus weißen Zuckerperlen oder Schokolinsen) ODER eine Mini-Leiter aus Salzteig (vorm Backen formen, separat 10 Min. mitbacken). Die Leiter macht den Unterschied zwischen „roter Kasten\" und „Feuerwehrauto-Kuchen\"."
-        },
-        {
-          "n": 6,
-          "content": "„112\" mit weißer Glasur seitlich. Optional: blaues Blaulicht aus einer Blaubeere oder einer blauen Zuckerperle oben drauf, mit weißem Stern aus Zuckerguss."
-        },
-        {
-          "n": 7,
-          "content": "Wunderkerze in den Kuchen stecken, beim „Happy Birthday\" anzünden. Bei 9-12 ist das fast Pflicht — kein „Kindergeburtstag\" mehr ohne dieses kleine Feuer-Element. (Sicherheit: Kerze in den Kuchen, nicht in die Mitte; Kerzen-Ende nicht in die Glasur — die schmilzt.)"
-        }
-      ],
-      "meta": {
-        "aufwand": "75 Min. inkl. Backen und Deko",
-        "kosten": "~10 € (zwei Kastenformen + Wunderkerze)",
-        "allergiker": "Bei 9-12 sind die meisten Allergien bekannt — frag direkt nach. Marzipan ist meist okay, Fondant kann Färbemittel-Reaktionen auslösen"
-      },
-      "tips": [
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Fertigen Schoko-Kasten beim Bäcker kaufen, rote Glasur drüber, Schoko-Sandwich-Keks-Reifen ankleben, „112\" mit weißem Zuckerstift draufschreiben. Sieht aus wie gewollt, dauert 15 Minuten, schmeckt den Kindern genauso gut. Bei 9-12 erkennen sie ggf. den Kauf-Kuchen — aber sie würden's nie sagen, weil ihnen das Konzept des „Mama backt mit Liebe\" eher peinlich ist als das eines geschäftsmäßigen Geburtstags."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🧠 Was 9–12-Jährige wirklich mitnehmen — der Bildungswert dieser Party",
-          "detail": "Bei dieser Altersgruppe ist der Bildungswert nicht nebenher — er ist der Kern. Was die Kinder am Ende dieses Tages mitnehmen: 1. Sie können einen 112-Notruf abgeben. Sie kennen die 5 W (Wer / Wo / Was / Wie viele / Warten) und haben sie in der Notruf-Simulation einmal richtig durchgespielt. Im echten Notfall hilft das. 2. Sie kennen Brandklassen. Fett-Brand wird mit Deckel erstickt, nicht mit Wasser bespritzt. Strom-Brand: erst Stecker ziehen. Das ist konkretes Sicherheits-Wissen, das sie ihr Leben lang abrufen können. 3. Sie wissen, dass Rauch das eigentliche Problem ist und tief am Boden die saubere Luft ist. 4. Sie haben einmal in einer Krimi-Logik denken müssen — Hypothesen aufstellen, Beweise abwägen, Diskussion moderieren. Das ist Soft-Skill. Die Brandschutzerziehung (Quellen variieren) empfiehlt diese Inhalte für 9-12 als Standard. Auf dieser Party werden sie geübt, nicht nur gelehrt."
-        },
-        {
-          "topic": "📋 Vorbereitung: Diese Party kostet 4 Std. vor dem Tag",
-          "detail": "Im Gegensatz zu 3-5 oder 6-8 ist die 9-12-Variante vorbereitungs-intensiv. 2-4 Stunden Vorlauf realistisch: Verdächtigen-Karten gestalten/ausdrucken (45 Min.), Beweise besorgen und am Tag heimlich verstecken (30 Min. Tag-X), Fall-Akte mit Tabellen layouten (30 Min.), 5 Notruf-Szenarien schreiben (15 Min.), Wachen-Tafel + Wertungs-Tafel + Theorie-Plakate gestalten (45 Min.), ggf. Eltern-Verdächtige briefen (15 Min. pro Person). Plane das ein — eine improvisierte Brandermittlung scheitert. Am Tag selbst: 1 Stunde vorher ankommen und Beweise verstecken, Helme bereitstellen, Theorie-Plakate aufhängen."
-        },
-        {
-          "topic": "🚨 Allergien vorher abfragen",
-          "detail": "Bei 8 Kindern hat statistisch mindestens eins eine Unverträglichkeit. In die Einladung schreiben: „Hat dein Kind Allergien oder Unverträglichkeiten?\" Bei 9-12 zusätzlich: Cola/Apfelschorle-Präferenz abfragen, manche Familien sind streng. Pizza-Belag (vegetarisch/Wurst) kurz koordinieren — bei 9-12 sind ggf. erste Pubertäts-Diäten oder Vegetarismus."
-        },
-        {
-          "topic": "👋 Eltern weg — bei 9-12 wirklich",
-          "detail": "In dem Alter ist Eltern-Anwesenheit nicht nur unnötig, sie ist KONTRAPRODUKTIV. Die Kinder wollen unter sich sein, das ist Teil der Selbst-Wahrnehmung. Schreib in die Einladung: „Diese Party ist für die Crew — Eltern werden um 13:30 abgesetzt und um 17:30 wieder abgeholt. Telefonisch erreichbar bleiben.\" Eltern, die trotzdem dabei bleiben wollen: höflich aber bestimmt nach Hause schicken. In Wow-Variante kannst du 1-2 Eltern als Verdächtigen-Schauspieler einbinden — das ist ein definierter Auftritt, kein Eltern-Café."
-        },
-        {
-          "topic": "📱 Smartphones — Regel vorher klären",
-          "detail": "Bei 9-12 haben die meisten ein eigenes Handy. Drei Optionen: (a) Aus. In die Einladung: „Handys bleiben in der Tasche — wir spielen offline.\" (b) An, nur für Fotos. Geht auch, riskiert aber Insta/TikTok-Posts. (c) Sammelbox am Eingang. Eleganteste Lösung — sieht nach Wache aus, gibt Eltern das Vertrauen, dass nichts gepostet wird. Du entscheidest. Bei der Wow-Variante mit Notruf-Simulation MUSS Klarheit herrschen: Entweder eigene Smartphones im Flugmodus oder die alten Smartphones, die ohne SIM sind. Eine versehentliche echte 112 ist kein Witz."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Spiele in dieser Vorlage funktionieren auch drinnen. Zielspritzen ins Bad (Wanne!), Stationen ins Wohnzimmer + Flur + Küche, Brandermittlung indoor sowieso. Bei 9-12 ist Indoor sogar oft eleganter — die Brandermittlung nutzt mehrere Räume als „Beweis-Bereiche\", das ist drinnen logisch."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Auch bei 9-12 lohnt sich die [Partyseite auf party.machsleicht.de](https://party.machsleicht.de) — Allergien-Abfrage, Cola/Apfelschorle-Präferenz, Vegetarier-Status, Smartphone-Regel, alles in einem Link. Eltern lesen es ohne Nachfragen, und du hast es schwarz auf weiß."
-        },
-        {
-          "topic": "🏠 Brandschutz-Detektive — eigene Wohnung vorher checken",
-          "detail": "Wenn du das Bonus-Spiel „Brandschutz-Detektive\" planst (Crew geht durch die Wohnung und identifiziert Gefahren), lohnt sich ein eigener Vor-Check 2 Tage vorher. 10-Punkte-Liste durchgehen: Rauchmelder funktionieren? Mehrfachsteckdosen nicht überlastet? Fluchtwege frei? Streichhölzer unzugänglich? Wenn du selbst 3-4 Punkte verbessern kannst, geht das in 30 Min. Die Crew findet dann am Tag X die übrigen 6-7 Punkte — und du hast danach selbst eine sichere Wohnung. Echter parental value, der über die Party hinausreicht. Die Deutsche Feuerwehr-Schutzkommission empfiehlt diesen Check jährlich."
-        },
-        {
-          "topic": "🎬 Datenschutz bei Videoaufnahmen (Wow + Dokumentar-Bonus)",
-          "detail": "Wenn du die Notruf-Simulation, das Dokumentar-Spiel oder Polaroids machst: vorher klären, wer abgebildet werden darf. DSGVO gilt auch für Kindergeburtstage. Drei Optionen: (a) Vor der Party in der Einladung anfragen — schriftliche Zustimmung pro Familie. (b) Am Tag X kurz fragen, alle Eltern stimmen einzeln zu — funktioniert bei 7-8 Familien noch. (c) Videos/Fotos nur an die jeweilige Familie senden — jeder bekommt nur die Bilder seines eigenen Kindes. Niemals ohne Zustimmung in soziale Medien posten (auch nicht in geschlossene Familien-Gruppen anderer Familien). Bei Verstoß droht Abmahnung — selbst wenn die andere Familie nett ist."
-        }
-      ],
-      "educationalValue": null
-    },
-    "invitationTemplate": "Eine persönliche Feuerwehr-Einladung im Notruf-Stil macht schon vor der Party Lust auf den Tag. Auf machsleicht kannst du deine Einladung kostenlos in 3 Minuten erstellen — mit „Notruf eingegangen\"-Optik, Datum, Treffpunkt, Crew-Funktionen, Allergien-Abfrage und der Smartphone-Regel.\n[🚒 Feuerwehr-Einladung erstellen →](/einladung/feuerwehr/)\n\n[📱 Per WhatsApp teilen](https://wa.me/?text=%F0%9F%9A%92%20Feuerwehr-Kindergeburtstag%20f%C3%BCr%209%E2%80%9312-J%C3%A4hrige%20planen%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Brandermittlung%2C%20Theorie-Briefing%20und%20Crew-Diplom%3A%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Ffeuerwehr-9-12-jahre)",
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Feuerwehr-Geburtstag für 9–12-Jährige dauern?",
-        "a": "2,5 bis 4 Stunden. Bei 9-12 ist „länger ist mehr Wert\" tatsächlich wahr — eine 3-Stunden-Standard-Variante fühlt sich kompakt an, eine 4-Stunden-Wow-Variante mit Escape-Room-Brandermittlung trägt komplett. Mehr als 4 Stunden geht aber selbst in dem Alter nicht — irgendwann müssen die Kinder ja nach Hause. Die Minimal-Variante (2,5 Std.) ist für Eltern mit Zeitdruck oder kleineren Crews."
-      },
-      {
-        "q": "Wie viele Kinder sollte man zum Feuerwehr-Geburtstag einladen?",
-        "a": "Faustregel: Alter des Kindes + 1, also 10-13 bei einem 11-Jährigen. Realistisch sind 7-8 Kinder — mehr wird logistisch schwierig (Brandermittlung mit 12 Kindern wird unübersichtlich). Bei 8+ Kindern brauchst du einen Co-Leiter (anderer Elternteil oder älterer Verwandter). Alle Mengenangaben auf dieser Seite sind für 7 (Minimal) bzw. 8 (Standard/Wow) Kinder berechnet. Die 12 Crew-Funktionen reichen für bis zu 10 Kinder + Reserve."
-      },
-      {
-        "q": "Was kostet ein Feuerwehr-Geburtstag für 9–12-Jährige?",
-        "a": "Zwischen 106 € (Minimal, 7 Kinder) und 196 € (Wow, 8 Kinder mit Polaroid + UV-Lampe + Pins) — also etwa 15-25 € pro Kind. Die Standard-Variante liegt bei 136 € für 8 Kinder (~17 €/Kind) und bietet das beste Verhältnis aus Aufwand und Ergebnis. Spar-Trick: Pappkarton-Helme statt Plastik (~−20-25 €), Lupen recyceln, keine Polaroids — drückt die Wow-Variante auf ~132 €. Die Brandermittlung ist der unverzichtbare Anker."
-      },
-      {
-        "q": "Sind 9–12-Jährige nicht zu alt für ein Motto-Geburtstag?",
-        "a": "Sie sind zu alt für „Helmchen aufsetzen und tun, als wären wir Feuerwehrleute\". Sie sind NICHT zu alt für eine Party mit echtem Inhalt — Theorie-Briefing, bewertetem Stationen-Wettbewerb, Krimi-Brandermittlung mit Verdächtigen und Beweisen. Diese Variante des Mottos ist halb-erwachsen und behandelt die Kinder ernst. Die Eltern, die das Motto „kindisch\" finden, haben es noch nicht gelesen. Wir empfehlen: Wow-Variante ab 10, Standard ab 9-10, Minimal nur, wenn ihr wenig Vorbereitungszeit habt. Mehrere Eltern haben uns berichtet: ihre 12-Jährigen waren skeptisch beim Reinkommen und 4 Stunden später extrem zufrieden — weil die Brandermittlung wirklich gefordert hat."
-      },
-      {
-        "q": "Funktioniert die Brandermittlung wirklich oder ist das zu schwer für 9-12?",
-        "a": "Sie funktioniert, aber nur, wenn ihr die Phasenstruktur einhaltet. 9-Jährige sollten die Minimal-Brandermittlung machen (4 Verdächtige, deutliche Beweise, 60 Min.). 10-12-Jährige können die Standard- oder Wow-Variante durchspielen (4-6 Verdächtige, längere Diskussion, 75-90 Min.). Wichtig: du moderierst — wenn die Crew nicht weiterkommt, gib einen Hinweis, das ist Eskalation, nicht Mogelei. Die Auflösung mit der Köchin und der Fett-Pfanne knüpft direkt an das Theorie-Briefing an. Wer das Briefing skippt, verliert die Auflösungs-Logik. Das Briefing ist nicht optional."
-      },
-      {
-        "q": "Was tun bei schlechtem Wetter ohne Wasser-Spiele?",
-        "a": "Bei 9-12 ist Indoor sogar oft eleganter, weil die Brandermittlung und das Theorie-Briefing eh drinnen stattfinden. Statt Spritzen-Station: 1. Lego-Lösch-Roboter bauen (siehe Bonus-Spiele) — anspruchsvolle Bastel-Challenge für 30-45 Min. 2. Feuerwehr-Quiz-Duell mit 20 Fragen zu Technik/Taktik/Geschichte. 3. Hydraulik-Experiment (Spritzen-Demo mit 2 verbundenen Spritzen) — Physik-Coolness. 4. Brandschutz-Detektive: Die Crew geht durch die Wohnung und identifiziert echte Gefahren (überlasteter Stecker, blockierter Fluchtweg, fehlender Rauchmelder). Letzteres bringt sogar Eltern-Lernwert mit nach Hause."
-      },
-      {
-        "q": "Welche Mitgebsel passen zum Feuerwehr-Motto bei 9-12?",
-        "a": "9-12 schätzt Detail-Qualität über Menge. Funktionierende Tüten enthalten: 1 Plastik-Helm (oder Pin), 1 Crew-Diplom mit individueller Beurteilung (gerollt mit Bändchen — der emotionale Anker), 1 kleine Lupe (haben sie bei der Brandermittlung benutzt, wird Detektiv-Spielzeug), 1 Mini-Notruf-Karte als Erinnerung an die 5 W, 1-2 Schokoriegel oder Mini-Chipstüte. Bei Wow zusätzlich: Polaroid mit Funktion auf der Rückseite + Crew-Pin. Vermeide: Kindergarten-Spielzeug, billige Lutscher, Plastikfiguren — bei 9-12 ist das peinlich und landet auf dem Heimweg im Mülleimer."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -33434,12 +30395,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "meerjungfrau-klein": {
-    "_meta": {
-      "source_file": "meerjungfrau-3-5-jahre.html (Phase B)",
-      "extracted": "2026-05-21",
-      "schema_version": "1.0",
-      "purpose": "Strukturierte Elite-Motto-Daten für den Planer (P3-13 bis P3-19). Meerjungfrau, Altersgruppe klein (3-5). Phase-B-Vollausbau: preparationWeeks + sosScenarios + shoppingList[].category geschrieben."
-    },
     "motto": "meerjungfrau",
     "ageGroup": "klein",
     "ageRange": [
@@ -33447,8 +30402,6 @@ var ELITE_MOTTO_DATA = {
       5
     ],
     "title": "🧜‍♀️ Meerjungfrau-Kindergeburtstag — 3–5 Jahre",
-    "metaDescription": "Meerjungfrau-Geburtstag für 3–5 Jahre: ruhige Unterwasser-Welt statt gruseliger Tiefsee. Perlen sammeln, Korallen-Garten bauen, Fisch-Freunde finden. Drei Budget-Varianten ab 35 €, 10 Spiele mit Altersanpassung, Vorbereitungsplan und SOS-Hilfen. Auch für Jungen (Meerprinz-Variante).",
-    "introParagraph": "Eine Meerjungfrau-Party für Drei- bis Fuenfjaehrige lebt nicht von Glitzer-Wettbewerb, sondern von einer ruhigen, freundlichen Unterwasser-Welt: ein Korallenriff im Wohnzimmer, verlorene Perlen, die gesammelt werden wollen, und ein paar Fisch-Freunde, denen man hilft. Kein gruseliges Tiefsee-Thema, keine Haie, keine Strudel — bei kleinen Kindern macht das mehr Angst als Freude. Und ganz wichtig: Meerjungfrau ist hier kein reines Mädchen-Thema. Mit der Meerprinz-Variante (Wellen-Krone, Seestern-Stirnband) und geschlechtsneutralen „Ozean-Helfern“ sind alle Kinder gemeint. Diese Seite gibt dir drei Varianten vom 35-Euro-Wohnzimmer-Riff bis zur 80-Euro-Schatzsuche, jede mit fertigem Ablauf, Einkaufsliste und Plan B.",
     "signatureRitual": {
       "name": "Das kleine Meerjungfrau-Versprechen",
       "subtitle": "Eroeffnet die Party (Muschel-Uebergabe) + Perlen-Urkunde am Ende",
@@ -34634,135 +31587,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "intro": "Ein Meeres-Kuchen muss bei 3-5 nicht aufwendig sein — ein einfacher Ruehrkuchen mit blauem Zuckerguss, ein paar Muschel-Keksen und Schoko-Perlen sieht aus wie ein kleines Riff und ist in einer guten Stunde gemacht. Wichtiger als Tortendeko-Kunst: er muss schmecken und am Vortag vorbereitbar sein. Eine Kastenform reicht für ca. 8 Kinderstücke — bei mitessenden Eltern doppelte Menge oder zusätzliche Muffins planen.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Ofen auf 175 °C Ober-/Unterhitze vorheizen. Eine Kastenform oder runde Form fetten und mit Mehl ausstaeuben."
-        },
-        {
-          "n": 2,
-          "content": "250 g weiche Butter mit 200 g Zucker schaumig ruehren. 4 Eier einzeln unterruehren, eine Prise Salz und etwas Vanille dazu."
-        },
-        {
-          "n": 3,
-          "content": "300 g Mehl mit 1 Pck. Backpulver mischen und abwechselnd mit 100 ml Milch unter den Teig ruehren, bis er glatt ist."
-        },
-        {
-          "n": 4,
-          "content": "Teig in die Form fuellen und 45–50 Min. backen. Staebchenprobe: bleibt kein Teig kleben, ist er fertig. Vollstaendig auskuehlen lassen."
-        },
-        {
-          "n": 5,
-          "content": "Für den „Meer“-Guss: 150 g Puderzucker mit 2-3 EL Wasser und einem kleinen Tropfen blauer Lebensmittelfarbe glatt ruehren. Lieber blasser — zu viel Farbe färbt Zaehne und Zungen."
-        },
-        {
-          "n": 6,
-          "content": "Guss ueber den ausgekuehlten Kuchen giessen. Bevor er fest wird: Schoko-Perlen, Muschel-Kekse und ein paar Gummi-Fische auflegen — fertig ist das Riff. ⚠️ Bei 3-Jährigen: Gummi-Fische klein schneiden oder weglassen (Erstickungsrisiko). Weiche Beeren als Alternative."
-        }
-      ],
-      "meta": {
-        "aufwand": "ca. 1 Std. + Backzeit, einfach",
-        "kosten": "ca. 6 €",
-        "allergiker": "Enthaelt Ei, Milch, Gluten. Eifrei mit Apfelmus-Ersatz; glutenfrei mit Mehlmischung 1:1 moeglich — Allergien vorab abfragen.",
-        "portionen": "ca. 8 Kinderstücke (bei Eltern dabei: Menge verdoppeln)"
-      },
-      "tips": [
-        {
-          "title": "Keine Lust zu backen?",
-          "body": "Voellig okay. Fertige Muffins kaufen, mit blauem Guss bestreichen und Schoko-Perlen + Muschel-Keks drauf — sieht in 10 Minuten aus wie selbst gemacht und kein Kind merkt den Unterschied."
-        },
-        {
-          "title": "Pinterest-Falle vermeiden",
-          "body": "Lass dich nicht von dreistoeckigen Meerjungfrau-Torten mit Fondant-Flosse stressen. 3-5-Jaehrige wollen suess und bunt, nicht Konditor-Kunst. Ein blauer Guss mit Perlen reicht voellig — die Energie steckst du besser in die Spiele."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "📋 Plan B bei Regen steht VORHER",
-          "detail": "Die Perlen-Suche und das Wellen-Tuch gehen drinnen genauso gut wie draussen — entscheide aber vorher, welcher Raum das „Riff“ wird, und raeum die Stolperfallen weg. So musst du bei Regen nicht improvisieren."
-        },
-        {
-          "topic": "👥 Ab 6 Kindern: eine zweite Hand",
-          "detail": "Bei 6+ Kindern in dem Alter brauchst du Unterstuetzung — ein Elternteil, Oma, Nachbar. Eine Person spielt, eine kuemmert sich um Toilette, Traenen und Nachschub. Für die Wow-Variante ist die zweite Hand Pflicht."
-        },
-        {
-          "topic": "⏱️ Lieber zu viel Programm als zu wenig",
-          "detail": "Plane ein, zwei Spiele mehr ein, als du brauchst. Wenn ein Spiel nach 5 statt 15 Minuten durch ist, willst du sofort weitermachen koennen. Leerlauf ist bei 3-5 der schnellste Weg ins Chaos."
-        },
-        {
-          "topic": "🚻 Toiletten-Runde vor jedem Block",
-          "detail": "Aktiv fragen „muss noch jemand?“, besonders vor Kuchen und vor laengeren Spielen. Bei 3-Jaehrigen nicht aufs Melden warten. Ein Wechselsachen-Beutel pro Kind im Einladungstext erwaehnen schadet nie."
-        },
-        {
-          "topic": "🎁 Alle bekommen dasselbe",
-          "detail": "Keine Sieger, kein „1. Meerjungfrau“. Jedes Kind — auch das, das nicht mitgespielt hat — bekommt am Ende dieselbe Urkunde und denselben Perlen-Beutel. In dem Alter zaehlt Dazugehoeren, nicht Gewinnen."
-        },
-        {
-          "topic": "💙 Auch für Jungen: Meerprinzen statt Tabu",
-          "detail": "Meerjungfrau ist kein Mädchen-Thema. Bietet von Anfang an Meerprinz-Stirnbaender (Wellen-Krone, Seestern-Stirnband) und sprecht von „Meeres-Helfern“ oder „Ozean-Helfern“. Dann fuehlt sich kein Kind ausgeschlossen — weder Jungen noch Mädchen, die lieber Meerprinz sein wollen."
-        },
-        {
-          "topic": "👕 Wechselklamotten bereithalten",
-          "detail": "3-Jaehrige kleckern. Blauer Guss, „Meerwasser“, Klebestift — irgendwas landet auf dem Pulli. Schreib in die Einladung: „Bitte Wechsel-Shirt mitbringen.“ Und leg für dein eigenes Kind eins bereit."
-        },
-        {
-          "topic": "⏰ Nicht in den Mittagsschlaf legen",
-          "detail": "3–5-Jaehrige sind nachmittags fitter als morgens (nach dem Mittagsschlaf). Aber nach 16 Uhr wird's schwierig — muede Kleinkinder sind schlecht gelaunte Kleinkinder. Ideal: 14:00 Start, 15:30 oder 16:00 Ende. Freitagnachmittag funktioniert meistens am besten."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Erstelle eine Partyseite auf party.machsleicht.de mit Datum, Uhrzeit, Adresse und Allergien-Abfrage. Einen Link verschicken statt 10 Nachrichten beantworten. Kostet nichts."
-        },
-        {
-          "topic": "🌊 Sicherheit am Wasser — kleine Schuesseln statt grosse Wannen",
-          "detail": "Bei 3-5 KEIN tiefes Wasserbecken (Ertrinkungs-Risiko bereits ab 5 cm). Wenn Perlen-Spiel mit Wasser: flache Schuessel hoechstens knoecheltief, IMMER erwachsene Aufsicht direkt daneben. Bei Schwimmbad-Geburtstag (kommt selten vor in dem Alter): pro Kind ein Erwachsener im Wasser, Schwimmhilfen Pflicht, vor und nach jeder Wasserphase Toilettenrunde."
-        },
-        {
-          "topic": "✨ Perlen + Glitzer: auf Allergie-Hinweise achten",
-          "detail": "Billige Glitzer-Sticker und Perlen koennen Nickel oder Phthalate enthalten — bei empfindlicher Kinderhaut Ausschlag moeglich. Bei der Einladungs-Allergie-Abfrage gezielt nach „Kontaktallergie Modeschmuck/Sticker“ fragen. Im Zweifel: nur Pappmuscheln und Filzstifte verwenden, fertige Perlen-Beutel verschlossen weitergeben statt offen am Tisch. Essbarer Glitzer auf Kuchen oft mit E-Nummern — bei E-Nummern-Empfindlichkeit weglassen."
-        },
-        {
-          "topic": "Klopapierrollen-Test (Erstickungs-Gefahr)",
-          "detail": "Faustregel für 3-Jaehrige: Was durch eine Klopapierrolle passt (∅ < 4,5 cm), ist Erstickungsgefahr. Bei reinen 3-Jaehrigen Plastik-Perlen weglassen, nur Wattekugeln oder handtellergrosse Muscheln verwenden. Glitzer-Sticker nur unter Aufsicht."
-        }
-      ],
-      "educationalValue": "Hinter der bunten Unterwasser-Welt steckt mehr als Spass. Beim gemeinsamen Perlen-Sammeln und Korallen-Garten-Bauen ueben die Kinder Zusammenarbeit ohne Konkurrenz — alle gewinnen gemeinsam, niemand verliert. Das Fisch-Quiz foerdert Sprache und Koerpergefuehl, das Stirnband-Basteln die Feinmotorik in kleinen Schritten. Und das Wichtigste: Die Meeres-Helfer-Rollen geben jedem Kind das Gefuehl, gebraucht zu werden — das staerkt Selbstvertrauen und Empathie weit mehr als jeder Wettkampf."
-    },
-    "invitationTemplate": "Du brauchst noch passende Einladungen? Der machsleicht-Einladungs-Generator macht aus diesem Meerjungfrau-Motto in zwei Minuten fertige Karten — mit Muschel-Design, Allergie-Abfrage und Zusage-Link auf party.machsleicht.de. Auch in der Meerprinz-Variante für alle Kinder. Einfach Motto „Meerjungfrau“ waehlen und Datum eintragen.",
-    "faq": [
-      {
-        "q": "Ist eine Meerjungfrau-Party auch für Jungen geeignet?",
-        "a": "Ja, ausdruecklich. Mit der Meerprinz-Variante (Wellen-Krone oder Seestern-Stirnband statt Muschel) und geschlechtsneutralen „Meeres-Helfern“ ist das Thema für alle Kinder offen. Wir empfehlen, beide Stirnband-Varianten bereitzulegen, damit jedes Kind frei waehlen kann. Auch Mädchen, die lieber Meerprinz sein wollen, sind ausdruecklich willkommen."
-      },
-      {
-        "q": "Was, wenn mein Kind erst 3 ist — sind die Spiele nicht zu schwer?",
-        "a": "Jedes Spiel hat eine 3-Jahres-Anpassung: Stirnbaender komplett fertig, Perlen offen sichtbar statt versteckt, keine Schatzsuche mit Hinweisen. Die Mini-Schatzsuche ist erst ab 4 sinnvoll — bei reinen 3-Jaehrigen lass sie weg oder mach eine „alle laufen gemeinsam zur Truhe“-Version."
-      },
-      {
-        "q": "Wie vermeide ich, dass es gruselig wird?",
-        "a": "Bewusst keine Haie, keine dunkle Tiefsee, keine Strudel. Die Unterwasser-Welt bleibt hell, bunt und freundlich — Plueschfische, Korallen, Perlen. Beim Verstecken nichts im Dunkeln, kein Einwickeln im Tuch. So bleibt die Stimmung sanft."
-      },
-      {
-        "q": "Wir haben wenig Platz — geht das trotzdem?",
-        "a": "Ja. Die Minimal- und Standard-Variante laufen komplett im Wohnzimmer: ein blaues Tuch am Boden, Perlen verstreut, Korallen-Garten am Tisch. Nur die Wow-Schatzsuche braucht etwas mehr Raum — verteil die Stationen sonst einfach auf zwei Zimmer (Wohnzimmer + Flur + Kinderzimmer reichen für 8 Kinder)."
-      },
-      {
-        "q": "Was kostet ein Meerjungfrau-Geburtstag für 3–5-Jaehrige?",
-        "a": "Zwischen 35 € (Minimal, 6 Kinder) und 80 € (Wow, bis 8 Kinder). Die Standard-Variante liegt bei ca. 55 € und bietet das beste Verhaeltnis aus Aufwand und Ergebnis. Wenn du Tonpapier, Stifte, Tuch und Plueschfische aus dem Bestand nimmst, sind 10–15 € Einsparung locker drin."
-      },
-      {
-        "q": "Mein Kind hat Angst vor Wasser/Schwimmbad — schliesst das die Meerjungfrau-Party aus?",
-        "a": "Im Gegenteil — die Klein-Variante kommt ohne echtes Wasser aus. Die „Unterwasser-Welt“ ist hier ein blaues Tuch am Boden plus Phantasie. Kein Tauchen, kein Wasserbecken, keine nassen Spielsachen. Perlen werden trocken gesammelt, das Wellen-Tuch ist ein Bettlaken. So koennen auch wasserscheue Kinder voll mitmachen — und Plueschfische sind nie nass."
-      },
-      {
-        "q": "Was, wenn ein Kind nasse Klamotten bekommt (Klecker mit Saft/Wackelpudding)?",
-        "a": "Halt 1-2 ausgeliehene T-Shirts in passenden Groessen bereit (deins oder Geschwister). Wechseln im Bad ohne Aufsehen — kein Kommentar vor der Gruppe. Nassen Pulli in einen Beutel zum Mitnehmen, trocken weiterspielen. In die Einladung „bitte Wechsel-Shirt“ schreiben spart dir den Notfall."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgeruest stellen",
@@ -35049,14 +31873,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "meerjungfrau-mittel": {
-    "_meta": {
-      "source_file": "kindergeburtstag/meerjungfrau-6-8-jahre.html",
-      "extracted": "2026-05-21",
-      "schema_version": "1.0",
-      "purpose": "Elite-Slot — Meerjungfrau 6-8 (Stream B, Run 25, Phase B Writer-Subagent)",
-      "phase_b_complete": "2026-05-21",
-      "phase_b_method": "Content-loop Stream B. Heuristik aus weltraum-mittel(96)/safari-mittel(92)/einhorn-mittel: steps avg 4+, whyItWorks 100%, eduValue 400-600c, pflicht-Anteil <70%, motto-anchor je item, geschlechts-inklusiv (Crew statt Prinzessin)."
-    },
     "motto": "meerjungfrau",
     "ageGroup": "mittel",
     "ageRange": [
@@ -35064,8 +31880,6 @@ var ELITE_MOTTO_DATA = {
       8
     ],
     "title": "🧜‍♀️ Meerjungfrau-Kindergeburtstag — 6–8 Jahre",
-    "metaDescription": "Meerjungfrau-Geburtstag für 6–8-Jährige: Meeres-Crew birgt die Schatztruhe der Meereskönigin. 9 Spiele, 3 Budget-Varianten, Ritual & Notfall-Plan.",
-    "introParagraph": "Mit 6 bis 8 Jahren wollen Kinder nicht nur „Meerjungfrau spielen\" — sie wollen eine Aufgabe haben, eine Crew sein und am Ende etwas geschafft haben. Genau darum dreht sich diese Party: Die Kinder werden zur Meeres-Crew, jedes bekommt eine Rolle (Perlentaucher, Korallen-Hüter, Fisch-Flüsterer) und gemeinsam bergen sie die versunkene Schatztruhe der Meereskönigin. Drei Budget-Varianten von 45 € bis 115 €, neun erprobte Spiele, ein Anfangs-Ritual, das fremde Kinder in 5 Minuten zur Crew macht — und ein Notfall-Plan für jeden Pannen-Moment. Bewusst geschlechts-offen gehalten: Tauchen, Schatzsuche und Korallen-Schutz sind für alle da, nicht nur für Prinzessinnen.",
     "ageInsight": {
       "headline": "Was 6–8-Jährige ausmacht — und was das für die Meerjungfrau-Party heißt",
       "traits": [
@@ -35991,119 +32805,6 @@ var ELITE_MOTTO_DATA = {
         "costContext": "Geschätzte Kosten (Wow, 6–8 Kinder)"
       }
     ],
-    "cakeRecipe": {
-      "intro": "Geht mit jedem Rührkuchen. Das Besondere ist die Meeres-Deko — nicht das Backen. Kein Mensch schmeckt, ob die Mischung aus der Tüte kam.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Rührkuchen oder Gugelhupf backen — Fertigmischung reicht völlig (Dr. Oetker, Kathi, egal). Vollständig abkühlen lassen, sonst verläuft der Guss."
-        },
-        {
-          "n": 2,
-          "content": "Optional „Meeres-Schichten\": Teig in 2–3 Schüsseln teilen, mit blauer und türkiser Lebensmittelfarbe einfärben, nacheinander einfüllen → beim Anschnitt ein Wellen-Verlauf."
-        },
-        {
-          "n": 3,
-          "content": "Blauen Zuckerguss anrühren: 200 g Puderzucker + 3 EL Wasser + 1 Tropfen blaue Lebensmittelfarbe, cremig rühren, über den kalten Kuchen gießen."
-        },
-        {
-          "n": 4,
-          "content": "Solange der Guss feucht ist: blaue und weiße Zuckerstreusel als Wellen-Schaum aufstreuen, dazu ein paar essbare Muschel- oder Fisch-Zuckerfiguren aus der Backabteilung."
-        },
-        {
-          "n": 5,
-          "content": "„Sandstrand-Rand\": zerbröselte Butterkekse oder braunen Zucker am Fuß des Kuchens verteilen — sieht aus wie der Meeresgrund."
-        },
-        {
-          "n": 6,
-          "content": "Eine Meerjungfrau-Flosse aus Fondant oder eine gekaufte Tortenfigur oben aufstecken. Essbarer Glitzer drüber = Unterwasser-Schimmer."
-        },
-        {
-          "n": 7,
-          "content": "Optional: Wunderkerze reinstecken und beim Happy-Birthday anzünden (besonders zur Wow-Variante)."
-        }
-      ],
-      "meta": {
-        "aufwand": "mittel — 60 Min. Backen + 20 Min. Deko",
-        "kosten": "~6–9 € (Fertigmischung + Deko)",
-        "planB": "Fertig-Biskuitboden vom Bäcker (~6 €), blauer Guss + Streusel + eine Tortenfigur drauf — fertig in 15 Minuten."
-      },
-      "tips": [
-        "Den Guss erst am Party-Morgen aufbringen, sonst zieht er über Nacht ein und der Schimmer ist weg."
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🚨 Allergien vorher abfragen",
-          "detail": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten). In die Einladung schreiben: „Hat dein Kind Allergien oder Unverträglichkeiten?\" Essbarer Glitzer und blaue Lebensmittelfarbe enthalten oft E-Nummern — bei Empfindlichkeit weglassen oder durch reine Zuckerstreusel ersetzen."
-        },
-        {
-          "topic": "💧 Wasser-Spiele = Wechselklamotten",
-          "detail": "Muschel-Tauchen im Wasserbecken und das „Meeres-Experiment\" sind Feucht-Risiko. Eltern beim Bringen bitten, eine Tüte Wechselsachen mitzugeben — sonst sitzt am Ende ein nasses Kind frierend in der Ecke."
-        },
-        {
-          "topic": "👥 Bei 6+ Kindern Helfer organisieren",
-          "detail": "Standard und Wow brauchen eine zweite Person — eine betreut den Tauch-/Wasser-Tisch, die andere die Bastel- oder Rätsel-Station. Oma, Partner, andere Mutter oder Teenager-Nachbar (10 €/3 h ist fair)."
-        },
-        {
-          "topic": "🌊 Boden schützen",
-          "detail": "In der Mietwohnung sind Wasserbecken und blaue Lebensmittelfarbe Boden-Bomben. Handtücher oder eine Plane unterlegen, Wasser-Stationen in Küche oder auf den Balkon. Lautstärke ist bei Meerjungfrau zahm — die Nachbarn unter dir stören eher tropfende Decken."
-        },
-        {
-          "topic": "⏱️ Lieber kurz und gut",
-          "detail": "2,5 bis 3 Stunden sind ideal. Nach drei Stunden kippt die Stimmung. Lieber ein Spiel weglassen und entspannt enden als das Programm überziehen."
-        },
-        {
-          "topic": "🦪 Kleinteile im Blick behalten",
-          "detail": "Perlen und kleine Muscheln sind bei 6–8-Jährigen unkritisch, aber wenn jüngere Geschwister mitlaufen: Perlen sind Verschluck-Risiko unter 3 Jahren. Sortiertische außer Reichweite der Kleinsten halten."
-        },
-        {
-          "topic": "🏊 Wasser-Sicherheit auch bei kleinem Becken",
-          "detail": "Selbst eine knöcheltiefe Wanne ist Aufsichtspflicht — ein Erwachsener bleibt an der Wasser-Station, immer. Glasperlen NICHT als Tauch-Schatz verwenden (Verschluck-Risiko bei jüngeren Geschwistern), lieber große Plastikperlen oder Muscheln. Wenn das Geburtstagskind oder Gäste nicht schwimmen können: das gilt auch fürs Schwimmbecken im Garten — kein „kurz allein lassen“."
-        },
-        {
-          "topic": "✨ Glitzer & Lebensmittelfarbe: E-Nummer-Hinweis",
-          "detail": "Essbarer Glitzer und blaue Lebensmittelfarbe enthalten oft E-Nummern (E133, E122, Aluminiumglimmer). Bei Kindern mit E-Nummer-Empfindlichkeit oder ADHS-Diagnose: blauen Kuchenguss mit Heidelbeer- oder Spirulina-Pulver statt Industriefarbe einfärben. Glitzer auf Stirnband statt auf Lebensmitteln verwenden — sicherer."
-        },
-        {
-          "topic": "🐠 Perlen-Allergie: Nickel + Phthalate",
-          "detail": "Billige Bastel-Perlen aus Asien können Nickel (Verschluss-Schmuck) oder Phthalate (Weichmacher in PVC) enthalten — bei empfindlicher Kinderhaut Ausschlag möglich. Crew-Ketten aus Holzperlen oder Glasperlen sind hautfreundlicher. Bei bekannter Kontaktallergie: Eltern vorab fragen, Lederband-Crew-Kette statt Plastik."
-        }
-      ],
-      "educationalValue": "Eine Meerjungfrau-Party kann mehr als unterhalten. Das Crew-Modell mit verteilten Rollen übt Zusammenarbeit: Jedes Kind ist zuständig, und die Schatztruhe lässt sich nur gemeinsam bergen — Kooperation statt Konkurrenz. Muschel-Sortieren und Perlen-Auffädeln trainieren nebenbei Feinmotorik und Sortieren nach Form und Farbe. Das Tierstimmen-Quiz vermittelt echtes Wissen über Meerestiere, und das Korallen-Hüter-Framing macht aus Deko beiläufig ein Umwelt-Thema. Schwur und Perlen-Übergabe geben schüchternen Kindern eine Rolle, hinter der sie sich sicher fühlen — und weil das Motto geschlechts-offen ist, lernen Kinder, dass Tauchen und Schatzsuche für alle da sind."
-    },
-    "invitationTemplate": "🧜‍♀️ Ahoi, Crew gesucht! 🌊\n\nDie Schatztruhe der Meereskönigin ist im Korallenriff versunken — und [NAME] braucht die beste Tauch-Crew der sieben Meere, um sie zu bergen!\n\nWann tauchen wir ab?\n📅 [DATUM]\n🕐 [UHRZEIT] (ca. [DAUER] Stunden)\n📍 [ORT]\n\nWas dich erwartet: Perlentaucher, Korallen-Hüter und Fisch-Flüsterer auf einer großen Unterwasser-Expedition — mit Schatzsuche, Spielen und einem echten Crew-Schwur.\n\nBitte mitbringen: bequeme Klamotten (es kann nass werden!) und gute Laune.\n\n🐚 Bitte sag uns Bescheid bis [DATUM] — und ob [KIND] Allergien oder Unverträglichkeiten hat.\n\nWir freuen uns aufs gemeinsame Abtauchen! 🌊\n[ELTERN-NAME] & [KIND]\n\n👉 Einfacher zu- oder absagen über party.machsleicht.de",
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Meerjungfrau-Geburtstag für 6–8-Jährige dauern?",
-        "a": "2,5 bis 3 Stunden sind ideal. Kürzer ist besser als länger — nach 3 Stunden kippt bei den meisten Kindern die Stimmung. Die Minimal-Variante (2 Stunden) funktioniert auch komplett, besonders wenn du wenig Vorbereitungszeit hast. Die Wow-Variante mit großer Schatzsuche braucht etwa 3,5 Stunden, weil das Bergen der Truhe als Finale Zeit verdient."
-      },
-      {
-        "q": "Ist Meerjungfrau nicht nur ein Mädchen-Thema?",
-        "a": "Nein — so wie diese Party aufgebaut ist, ausdrücklich nicht. Statt Prinzessinnen geht es um eine Tauch-Crew mit Rollen wie Perlentaucher, Korallen-Hüter und Fisch-Flüsterer. Schatzsuche, Tauch-Parcours und Meerestier-Quiz sprechen Jungen wie Mädchen an. Niemand muss „die Meerjungfrau\" sein — alle sind gleichberechtigte Crew-Mitglieder auf derselben Mission."
-      },
-      {
-        "q": "Brauche ich Wasser für die Spiele — und macht das nicht riesige Sauerei?",
-        "a": "Nur ein Spiel (Muschel-Tauchen) braucht zwingend ein Wasserbecken, und das lässt sich auf Balkon, in die Badewanne oder über ein paar Handtücher verlegen. Alle anderen Spiele gehen komplett trocken. Wer gar kein Wasser will, ersetzt das Tauchen durch „Muscheln aus dem Sand-/Reis-Becken fischen\" — gleicher Effekt, null Nässe."
-      },
-      {
-        "q": "Wie viele Kinder sind ideal?",
-        "a": "6 Kinder sind der Sweet Spot für Minimal und Standard. Für die Wow-Schatzsuche funktionieren bis zu 8 gut, weil die Crew dann in zwei Tauch-Teams aufgeteilt werden kann. Über 8 wird es an den Bastel- und Wasser-Stationen eng — dann brauchst du zwingend eine zweite erwachsene Person."
-      },
-      {
-        "q": "Was, wenn ein Kind nicht mitmachen will?",
-        "a": "Völlig normal in diesem Alter. Druck macht es schlimmer. Gib dem Kind eine „stille\" Rolle — Stella Seestern hütet die Schatzkarte, Tilda Tiefseeschild passt auf die Perlen auf. Beobachten ist auch Mitmachen; die meisten tauen nach 20 Minuten von selbst auf, wenn sie sehen, dass es Spaß macht."
-      },
-      {
-        "q": "Wie sicher ist das Muschel-Tauchen? Mein Kind kann nicht schwimmen.",
-        "a": "Knöcheltiefes Wasser in einer Wanne oder Schüssel ist kein Schwimm-Risiko, sondern ein Greif-Spiel. Trotzdem: eine erwachsene Person bleibt während des Spiels durchgehend am Becken — ohne Ausnahme. Wer komplett aufs Wasser verzichten möchte, ersetzt es durch Sand- oder Reis-Schüssel, in der die Muscheln genauso versteckt werden können. Der Spiel-Effekt ist identisch, das Nass-Risiko gleich null."
-      },
-      {
-        "q": "Ist Meerjungfrau auch für gemischte Mädchen-Jungen-Gruppen geeignet?",
-        "a": "Ausdrücklich ja — die Konzeption als „Meeres-Crew\" macht das Thema geschlechts-offen. Niemand muss „die Meerjungfrau\" sein, alle sind gleichberechtigte Crew-Mitglieder. Jungen wählen Meerprinz-Stirnbänder oder bleiben einfach „Crew-Mitglied\", Mädchen können beides wählen. In der Einladung gleichberechtigt formulieren: „die Tauch-Crew braucht alle\"."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -36425,14 +33126,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "meerjungfrau-gross": {
-    "_meta": {
-      "source_file": "kindergeburtstag/meerjungfrau-9-12-jahre.html",
-      "extracted": "2026-05-21",
-      "schema_version": "1.0",
-      "purpose": "Meerjungfrau 9-12 — Phase B Elite-Slot (Atlantis-Expedition, kein Verkindischen, Codeknacker-Kern PERLE/STROM/QUALLE)",
-      "phase_b_complete": "2026-05-21",
-      "phase_b_method": "Writer-Subagent. Codeknacker PERLE (Minimal, Perlentaucher sortiert 5 Meeres-Tiere nach Groesse), STROM (Standard, Navigator sortiert 5 Stationen nach Tiefe), QUALLE (Standard zusaetzlich, Biologe sortiert 6 Quallen nach Schirm-Durchmesser). Wow erweitert auf ATLANTIS-Schatzsuche mit 8 Buchstaben. Sorgfalt-Spezialist statt Tempo. Geschlechts-inklusiv mit Meerprinz-Anrede."
-    },
     "motto": "meerjungfrau",
     "ageGroup": "gross",
     "ageRange": [
@@ -36440,8 +33133,6 @@ var ELITE_MOTTO_DATA = {
       12
     ],
     "title": "🧜‍♀️ Meerjungfrau-Kindergeburtstag — 9–12 Jahre",
-    "metaDescription": "Meerjungfrau-Kindergeburtstag für 9-12-Jährige: 3 fertige Atlantis-Expeditions-Konzepte mit Perlentaucher-, Navigator- und Meeresbiologe-Spezialisierung, Codeknacker, Karten, Zeitplan und Einkaufsliste. Auch für Jungen (Meerprinzen). Kostenlos.",
-    "introParagraph": "Dein Kind wird 9, 10, 11 oder 12 — und „rosa Prinzessinnen-Meerjungfrau“ würde ein Augenrollen kassieren? Hier sind drei fertige Konzepte für eine Atlantis-Expedition: jedes Kind spezialisiert sich (Perlentaucher, Strömungs-Navigator, Meeres-Biologe), entschlüsselt echte Codes (PERLE, STROM, QUALLE), kartografiert die versunkene Stadt und bekommt am Ende eine eigene Spezialisten-Lizenz. Jungen sind als Meerprinzen genauso gemeint wie Meerjungfrauen — alle sind Atlantis-Crew. Keine Verkindischung — eine ernst gemeinte Mission, die auch in der 7. Klasse noch erwähnt wird.",
     "ageInsight": {
       "headline": "Was 9–12-Jährige ausmacht — und was das für die Atlantis-Expedition heißt",
       "traits": [
@@ -37600,265 +34291,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "intro": "Geht mit jedem Blechkuchen. Das Besondere ist die Karten-Topographie obendrauf — nicht das Backen.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "1 Blechkuchen backen — Fertigmischung reicht (Dr. Oetker, Kathi, Aurora). Schoko oder Vanille. 9-12-Jährige merken den Unterschied zu Selbstgemacht nicht."
-        },
-        {
-          "n": 2,
-          "content": "Komplett abkühlen lassen. Ungeduld = Glasur-Desaster."
-        },
-        {
-          "n": 3,
-          "content": "Grund-Glasur in Atlantis-Blau: Puderzucker + Wasser + 1 Tropfen Lebensmittelfarbe (tiefblau/türkis). Großzügig drüberstreichen."
-        },
-        {
-          "n": 4,
-          "content": "Karten-Topographie: dünne weiße Glasur-Linien als „Strömungen“ über das Blau ziehen (Spritzbeutel oder Spritze ohne Nadel), hellblaue Klekse als „Tiefen-Spots“."
-        },
-        {
-          "n": 5,
-          "content": "5 Marzipan-Meerestiere aus dem Backregal an markanten Punkten platzieren (Quallen-Schwarm = türkise Klümpchen, Krake = lila Marzipan-Tropfen, Schildkröte = grünes Oval). Dr. Oetker hat oft fertige Meer-Sets."
-        },
-        {
-          "n": 6,
-          "content": "Grüne Gummibärchen oder Zuckerstreusel als „Korallen-Büschel“ am Rand verteilen."
-        },
-        {
-          "n": 7,
-          "content": "Optional Wow: ein kleines „Atlantis-Tor“ aus weißen Schokoladen-Quadraten (Mikado-Stäbchen als Säulen, weiße Schokolade als Bogen) am Rand — visuelles Bindeglied zur Mission."
-        },
-        {
-          "n": 8,
-          "content": "Wunderkerze in die Mitte für Happy Birthday. Foto."
-        }
-      ],
-      "meta": {
-        "aufwand": "60 Min. inkl. Backen und Topographie",
-        "kosten": "~10 €",
-        "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. Marzipan-Meerestiere können Spuren von Nüssen enthalten (für Nuss-Allergiker auswechseln)."
-      },
-      "tips": [
-        {
-          "title": "Keine Lust zu backen?",
-          "body": "Ein gekaufter Blechkuchen vom Bäcker oder Discounter funktioniert genauso — die Karten-Topographie obendrauf machst du in 15 Minuten selbst. Niemand merkt, dass der Boden gekauft ist."
-        },
-        {
-          "title": "Die Topographie ist der Trick",
-          "body": "Der Wow-Effekt kommt nicht vom Teig, sondern von der Karte obendrauf: Strömungen, Tiefen-Spots, Meerestiere an markanten Punkten. Das verbindet den Kuchen direkt mit der Atlantis-Mission — die Kinder erkennen „ihre“ Karte wieder."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🚨 Allergien vorher abfragen — bei Schlafparty mit Medikamenten",
-          "detail": "Bei 8-10 Kindern in dieser Altersgruppe sind Unverträglichkeiten häufig (Nüsse, Laktose, Gluten, Fisch/Meeresfrüchte!). Die Sushi-Roll-Station löst das elegant — es gibt eh Auswahl, vegetarische Maki sind Standard. Bei Schlafparty zwingend abfragen: Medikamente, Asthma-Inhalator, Allergie-Notfallplan."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Expeditions-Stationen funktionieren drinnen: Perlen-Bestimmung am Wohnzimmertisch, Strömungs-Tiefenkarte am Esstisch, Quallen-Klassifikation am Bücherregal, Tauch-Synchronisation durch Flur und Esszimmer, Codeknacker am Tisch. Nur die Sterne-Beobachtung (Wow-Schlafparty) braucht klare Sicht — bei Regen wird sie zur Bioluminiszenz-Video-Sitzung auf dem Beamer."
-        },
-        {
-          "topic": "🧑‍🤝‍🧑 Wie viele Helfer? Realistisch geplant",
-          "detail": "Standard mit 8 Kindern: 1 Helfer reicht. Du leitest Hauptmission und Lizenz-Zeremonie, der Helfer bedient die wartenden Stationen. Solo machbar bei guter Vorbereitung (Lösungs-Karten zur Selbstkontrolle an jeder Station). Wow mit 10 Kindern: 1-2 Helfer empfohlen, besonders für die parallelen Sushi-Roll-Stationen."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Statt 10 Einzel-Nachrichten an die Eltern: eine WhatsApp-Partyseite mit machsleicht. Adresse, Uhrzeit, Spezialisierungs-Hinweis (Kleidung in Blau-Tönen, falls vorhanden), Abholzeit, Allergie-Abfrage (Fisch!), bei Schlafparty die Medikamenten-Abfrage — alles an einem Ort."
-        },
-        {
-          "topic": "🧑 Jungen sind als Meerprinzen genauso gemeint",
-          "detail": "Meerjungfrau wird in 9-12 schnell als „Mädchen-Thema“ abgestempelt — das ist hier explizit nicht so. Meerprinz-Anrede für Jungen, neutrale Spezialisten-Titel (Perlentaucher, Navigator, Biologe — alle geschlechtsneutral), kein Glitzer-Druck. In der Einladung kurz erwähnen: „Meerprinzen und Meerjungfrauen sind alle willkommen — die Expedition braucht beide.“"
-        },
-        {
-          "topic": "🕒 Abholzeit vorher klären — bei Schlafparty doppelt",
-          "detail": "„Wir holen so gegen 17 Uhr ab“ ist keine Abholzeit. Konkret in die Einladung: „Abholung 17:30, die Lizenz-Zeremonie ist um 17:00 und wir wollen das Ende nicht stressen.“ Bei Schlafparty schriftlich bestätigen lassen, wer wann abholt und ob das Kind nachts mit Heimweh kontaktiert werden soll."
-        },
-        {
-          "topic": "🙄 „Meerjungfrau? Echt jetzt?“ — die Eltern-Antwort",
-          "detail": "Falls ein Gast-Kind meckert: lass das Geburtstagskind antworten, nicht du. Meistens reicht der erste Blick auf den Codeknacker, die Quallen-Klassifikation oder das Mission-Briefing der Krake. Meerjungfrau als ernst gemeinte Tiefsee-Forschungs-Expedition verkaufen, nicht als rosa Prinzessinnen-Party. Spätestens beim TIEF-Code knacken ist niemand mehr peinlich berührt."
-        },
-        {
-          "topic": "🏊 Schwimmbad-Sicherheit, falls Wasser-Komponente",
-          "detail": "Falls die Party im Schwimmbad oder am See stattfindet: 1 Erwachsener pro 4 Kinder im Wasser, niemand allein, schwimmunsichere Kinder mit Schwimmnudel/Weste. Vorher schriftlich von Eltern bestätigen lassen, ob ihr Kind schwimmen kann — „so halbwegs“ reicht NICHT. Handys griffbereit, Wasserrettungs-Nummer im Kopf (112). Nach dem Wasser zwingend Toilettenrunde + Aufwärmen + trockene Klamotten — sonst Erkältungsrisiko."
-        },
-        {
-          "topic": "💧 Auch ohne Schwimmbad: Wassersicherheit am Sushi-Tisch",
-          "detail": "Heißer Reis und Sushi-Messer sind das Hauptrisiko, nicht das Tauchen. Sushi-Roll-Station: Reis muss handwarm (nicht heiß!) sein, ein Erwachsener portioniert die Belag-Teile vor, KEINE scharfen Messer für Kinder. Sojasauce in kleinen Schälchen — Verschütt-Gefahr auf Klamotten und Spuren-Soja-Allergie."
-        },
-        {
-          "topic": "✨ Perlen-Allergie & Glitzer-Kontaktekzeme",
-          "detail": "9-12-Jährige sind raus aus dem „alles in den Mund\"-Alter, aber Perlen mit Nickel-Verschluss oder PVC-Glitzer können Kontaktekzeme auf der Haut hinterlassen — gerade bei Mädchen, die enge Crew-Ketten tragen. Hypoallergene Lederband-Ketten oder Bastelschnur statt billige Bling-Sets. Beim ersten Juck-Hinweis: Kette abnehmen, Haut waschen, beobachten. Bei vorab bekannter Schmuck-Allergie: nur Holzperlen verwenden."
-        },
-        {
-          "topic": "💧 Achtung Kleinkind-Geschwister",
-          "detail": "Kinder können bereits in wenigen Zentimetern Wasser ertrinken. Jede Wasserschüssel, jeder Eimer (TIEF-Ort, knöcheltiefe Stationen) nach Gebrauch sofort ausleeren, wenn jüngere Geschwister im Haus sind. Diese 5cm-Regel gilt auch für Planschbecken und Sushi-Schalen mit Wasser. Aufsicht NIE durch Geschwister ersetzen — immer Erwachsene."
-        }
-      ],
-      "educationalValue": "Was die Kinder mitnehmen: Beobachtungs-Logik (Perlen und Quallen über Merkmale bestimmen statt raten), echte Meeres-Biologie-Kenntnisse (Schicht-Konzept, Quallen-Klassifikation, Bioluminiszenz), Kartografie (Tiefen-Schichten farbig kodieren bleibt im Kopf), Kooperation zwischen Spezialisierungen (keine kommt allein zum Ziel) und Selbstkontrolle beim Codeknacker (ergibt das Lösungswort keinen Sinn, prüfen sie ihre Reihenfolge selbst nach). Die Leitidee „in Atlantis zählt, wer hinschaut, nicht wer am schnellsten taucht“ trägt durch die ganze Party — Sorgfalt vor Tempo. Und Geschlechts-Inklusion ganz nebenbei: Meerprinz-Anrede und neutrale Forscher-Rollen zeigen, dass „Meeres-Themen“ für alle da sind."
-    },
-    "invitationTemplate": "🧜‍♀️ EXPEDITIONS-AUFRUF\n\nDie Forschungsstation Poseidon-7 sucht neue Perlentaucher, Strömungs-Navigatoren und Meeres-Biologen. {name} wird {alter} und leitet die Atlantis-Expedition. Meerprinzen und Meerjungfrauen sind beide willkommen — die Expedition braucht euch alle.\n\n📅 Wann: {datum}, {uhrzeit}\n📍 Treffpunkt: {treffpunkt}\n🎒 Mitbringen: bequeme Kleidung, gerne in Blau-Tönen\n📞 Rückmeldung bis {rsvp_deadline} an {kontakt}\n⚠️ Bitte Allergien/Unverträglichkeiten angeben — auch Fisch/Meeresfrüchte{schlafparty_zusatz}\n\nJedes Kind wählt vor Ort seine Spezialisierung — und bekommt am Ende seine eigene Lizenz. In Atlantis zählt nicht, wer am schnellsten taucht, sondern wer hinschaut.",
-    "mythologyQuiz": {
-      "headline": "Meerjungfrau-Wissens-Quiz — echte Meeres-Mythologie",
-      "intro": "15 Fragen in 3 Schwierigkeitsstufen. Lege das Quiz auf einen Tisch beim Eintreffen aus — wer früh da ist, kann schon knobeln. Oder als Bonus-Aufgabe für die Wartezeiten zwischen den Stationen. Echte Mythologie aus Griechenland, Japan und der slawischen Welt — kein verkindischter Trickfilm-Stoff. Drucke die 15 Fragen einmal als Quiz-Karte aus, die Lösungen separat (oder in Spiegelschrift unter der Frage — passt zum Codeknacker-Stil). Wer 8 von 15 schafft, bekommt einen Sorgfalt-Spezialist-Stempel.",
-      "stufen": [
-        {
-          "level": "🌊 Stufe 1: Sirenen & Seetang (leicht, ab 9)",
-          "fragen": [
-            {
-              "n": 1,
-              "q": "In welchem Land glaubte man an die „Ningyo“ — eine Meerjungfrau, die angeblich 800 Jahre Leben schenkt, wenn man ihr Fleisch isst?",
-              "a": "Japan"
-            },
-            {
-              "n": 2,
-              "q": "Wie heißen die meerjungfrauen-ähnlichen Wassergeister in slawischen Sagen, die in Flüssen und Seen leben?",
-              "a": "Rusalki"
-            },
-            {
-              "n": 3,
-              "q": "Welcher griechische Held band sich an den Mast, um den Gesang der Sirenen zu überleben?",
-              "a": "Odysseus"
-            },
-            {
-              "n": 4,
-              "q": "Wie viele Arme hat ein Oktopus?",
-              "a": "8"
-            },
-            {
-              "n": 5,
-              "q": "Ab welcher Tiefe ist es im Ozean vollständig dunkel?",
-              "a": "~1000 m (Bathypelagial — zwischen 200 m und 1000 m herrscht die Dämmerungszone mit blau-restlichem Licht)"
-            }
-          ]
-        },
-        {
-          "level": "🐙 Stufe 2: Mythen & Meeresbiologie (mittel, ab 10)",
-          "fragen": [
-            {
-              "n": 6,
-              "q": "In der griechischen Mythologie waren Sirenen ursprünglich keine Meerjungfrauen, sondern was?",
-              "a": "Vogel-Mischwesen / halb Vogel, halb Mensch"
-            },
-            {
-              "n": 7,
-              "q": "Wie heißt die Meerestiefen-Schicht zwischen 1000 und 4000 Metern, in der kein Sonnenlicht mehr ankommt?",
-              "a": "bathypelagisch / Bathypelagial"
-            },
-            {
-              "n": 8,
-              "q": "Wie nennt man das Leuchten, das viele Tiefsee-Lebewesen selbst erzeugen?",
-              "a": "Biolumineszenz"
-            },
-            {
-              "n": 9,
-              "q": "Welches Meeresreich-Wesen wird in irischen Sagen „Merrow“ oder „Mara“ genannt und trägt einen magischen Hut?",
-              "a": "irische Meerjungfrau / Merrow"
-            },
-            {
-              "n": 10,
-              "q": "Welches Meerestier kann seine Hautfarbe und -textur in Sekunden ändern?",
-              "a": "Oktopus / Kraken / Tintenfisch"
-            }
-          ]
-        },
-        {
-          "level": "🌌 Stufe 3: Tiefsee-Geheimnisse (schwer, ab 11)",
-          "fragen": [
-            {
-              "n": 11,
-              "q": "Wie heißt der tiefste Punkt aller Ozeane, der etwa 11.000 Meter unter der Meeresoberfläche liegt?",
-              "a": "Mariannengraben / Challengertief"
-            },
-            {
-              "n": 12,
-              "q": "Welche japanische Legende erzählt von einer Meerjungfrau-Königin, die einen sterblichen Fischer in ihr Unterwasser-Palast „Ryūgū-jō“ einlud?",
-              "a": "Urashima Tarō"
-            },
-            {
-              "n": 13,
-              "q": "Wie heißt die schottische Wasserkreatur-Art, die als wunderschöne Meerjungfrau erscheint, aber tatsächlich ein gestaltwandelndes Robbenwesen ist?",
-              "a": "Selkie"
-            },
-            {
-              "n": 14,
-              "q": "In welcher Tiefen-Schicht (Bezeichnung) leben Anglerfische, die mit einer Leucht-Antenne Beute anlocken?",
-              "a": "bathypelagisch / Tiefsee"
-            },
-            {
-              "n": 15,
-              "q": "Welche Quallen-Art kann sich nach dem Erwachsensein wieder in ihr Jugendstadium zurückverwandeln und gilt deshalb als „unsterblich“?",
-              "a": "Turritopsis dohrnii / unsterbliche Qualle"
-            }
-          ]
-        }
-      ],
-      "anwendung": "Die Stufen-Logik macht es fair: Jüngere fangen bei Stufe 1 an, Ältere überspringen sie. Niemand fühlt sich überfordert oder unterfordert. Slawische Rusalki und schottische Selkies sind die Anti-Trickfilm-Pointe: echte Mythologie aus dem europäischen Volksglauben statt verkitschte Pop-Variante. Kein „rosa Prinzessinnen“-Sprech."
-    },
-    "bonusActivities": [
-      {
-        "name": "🔮 Geheimschrift mit Zitronensaft („Alte Tiefsee-Botschaft“)",
-        "duration": "10 Min.",
-        "minAge": 9,
-        "subtitle": "Eine echte Geheimschrift, die nach 200 Jahren auf dem Meeresboden wieder lesbar wird",
-        "context": "Funktioniert in jeder Variante als Add-On für 10 Min. zwischen den Stationen. Du schreibst vor der Party mit Zitronensaft eine kurze Botschaft auf weißes Papier (Wattestäbchen als Pinsel, oder einen Zahnstocher). Trocknen lassen — die Schrift ist unsichtbar.",
-        "story": "„Diese Botschaft hat 200 Jahre im Mariannengraben gelegen — die Krake hat sie gerade an die Oberfläche gespült. Aber das Salzwasser hat die Tinte unsichtbar gemacht. Wer kennt den Trick, sie wieder sichtbar zu machen?“",
-        "loesung": "Das Papier vorsichtig über eine Wärmequelle halten (Bügeleisen-Sohle auf niedriger Stufe, oder unter eine warme Lampe). Der Zitronensaft oxidiert bei Wärme und wird braun — die Botschaft erscheint.",
-        "botschaftVorschlag": "„Hinter dem Korallenriff-Ökosystem liegt ein Pfad. Folgt dem Quallen-Code.“ — verbindet den Bonus direkt mit der Hauptmission, lenkt die Kinder zur nächsten Station.",
-        "safetyRule": "Bügeleisen-Phase macht ein Erwachsener. Kinder beobachten gespannt — das Erscheinen der Schrift ist der eigentliche Wow-Moment. Alternativ: Föhn auf höchster Stufe direkt aufs Papier, etwas langsamer aber sicherer.",
-        "whyItWorks": "Zitronensaft enthält organische Verbindungen, die bei etwa 100 °C oxidieren und braun werden. Echte Chemie, echtes Erfolgserlebnis. 9-12-Jährige finden das nicht „Zauberei“, sondern „cool — das ist Wissenschaft“. Genau die richtige Tonalität für diese Altersgruppe."
-      },
-      {
-        "name": "🌌 Bioluminiszenz-Schale (Tonic-Water unter UV)",
-        "duration": "5 Min.",
-        "minAge": 9,
-        "subtitle": "Tiefsee im Glas — Tonic-Water leuchtet türkis unter UV-Licht",
-        "context": "Eine schnelle Wissenschafts-Spielerei für den Übergang in die Schlafparty-Phase (Wow) oder als Pause zwischen zwei Stationen. Tonic-Water enthält Chinin — das fluoresziert unter UV-Licht und leuchtet türkis-blau wie echte Bioluminiszenz im Riff.",
-        "material": "1 Flasche Tonic-Water (kein Bitter Lemon!), 6 durchsichtige Gläser, 1 UV-Taschenlampe oder Schwarzlicht-LED (~5-15 €), abgedunkelter Raum.",
-        "schritte": [
-          "Vorhänge zu, Licht aus. Tonic-Water in die Gläser eingießen.",
-          "UV-Lampe drauf halten — das Wasser leuchtet türkis. Staunen-Faktor: maximal.",
-          "Erklärung dazu: „Genau so leuchten Quallen und manche Krebse in der Tiefsee — sie haben Stoffe, die unter UV-Strahlung Energie als Licht abgeben.“",
-          "Optional: Salz, Apfelschorle, Cola in andere Gläser zum Vergleich — nur Tonic leuchtet."
-        ],
-        "safetyRule": "Tonic-Water enthält wenig Chinin, ist trinkbar (in Limonade-Mengen) — aber NICHT als Hauptgetränk an Kinder ausgeben (bitterer Geschmack, gehört nicht in den Magen größerer Mengen). UV-Lampe NIE in Augen.",
-        "whyItWorks": "Echter Wow-Effekt mit Haushaltsmittel. Verknüpft mit der Sterne-Beobachtung der Wow-Schlafparty (Bioluminiszenz + Sterne haben dasselbe Leuchten) und macht das Thema Tiefsee greifbar. Genau die Art Detail, die 9-12-Jährige in der Schule beim „Mein Wochenende“ erzählen."
-      }
-    ],
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Meerjungfrau-Geburtstag für 9–12-Jährige dauern?",
-        "a": "2,5 bis 4 Stunden je nach Variante — oder als Wow mit Schlafparty-Anschluss bis zum Frühstück am nächsten Morgen. Minimal: 2,5 Stunden mit Spezialisierungs-Wahl, Codeknacker und Tiefen-Tauch-Quest. Standard: 3,5 Stunden mit voller Stations-Wahl und Karten-Vermessung. Wow: 4 Stunden inklusive Schatzsuche-Quest ATLANTIS."
-      },
-      {
-        "q": "Funktioniert das Motto auch für Jungen?",
-        "a": "Ja, explizit. Die Atlantis-Expedition ist als Forschungs-Mission aufgezogen, nicht als Prinzessinnen-Party. Jungen nehmen die Meerprinz-Anrede an oder bleiben einfach „Crew“. Die drei Spezialisierungen (Perlentaucher, Strömungs-Navigator, Meeres-Biologe) sind geschlechtsneutrale Forscher-Rollen — keine „Meerjungfrau-Prinzessin“ erforderlich. In gemischten Gruppen ab 9 Jahren wird das gut angenommen."
-      },
-      {
-        "q": "Wie viele Kinder sollte man einladen?",
-        "a": "Die Faustregel „Alter + 1“ wird mit 9-12 zu viel — lieber 8-10 Kinder maximal. Die Spezialisierungs-Logik funktioniert perfekt mit 8-9 (3 pro Spezialisierung) oder 10-12 (4 pro Spezialisierung). Bei mehr als 12: zwei Crews bilden, sonst wird die Stations-Rotation chaotisch."
-      },
-      {
-        "q": "Was kostet ein Meerjungfrau-Geburtstag für 9–12?",
-        "a": "Zwischen 50 € (Minimal, 6 Kinder) und 150 € (Wow, 10 Kinder, ohne Highlight-Mitgebsel). Standard liegt bei ca. 100 € für 8 Kinder und bietet das beste Verhältnis. Mini-Tauchermasken als Wow-Highlight kommen mit 70-100 € extra dazu, sind aber komplett optional."
-      },
-      {
-        "q": "Ist das nicht zu „kindlich“ für 11-12-Jährige?",
-        "a": "Wenn du es wie eine Kleinkind-Party mit rosa Glitzer aufziehst: ja. Wenn du den Atlantis-Expedition-Frame ernst nimmst, die Kinder als selbstständige Crew behandelst und die Aufgaben echte Herausforderungen sind (Codes, Karten, Quallen-Klassifikation, Perlen-Bestimmung), funktioniert es genau richtig. Verkindischen wird sofort gemerkt — Ernsthaftigkeit nicht. Die Krake als intelligenter Hüter (kein Gruselmonster) und der „Sorgfalt-Spezialist“-Stempel statt Tempo-Wettbewerb sind die zwei wichtigsten Anker."
-      },
-      {
-        "q": "Was, wenn ein Kind nicht schwimmen kann oder Angst vor Wasser hat?",
-        "a": "Die Standard- und Wow-Variante laufen komplett trocken — Atlantis-Karte vermessen, Codeknacker, Quallen-Klassifikation, Tauch-Synchronisation und Sushi-Rollen brauchen NULL Wasser. Falls eine Schwimmbad-Schlafparty geplant ist: schwimmunsichere Kinder mit Schwimmnudel/Weste ausstatten und 1 Erwachsener pro 4 Kinder im Wasser sicherstellen. Eltern vorab schriftlich fragen, ob das Kind schwimmen kann — „so halbwegs“ reicht NICHT. Im Zweifel den Schwimmbad-Teil weglassen und durch eine zusätzliche Tiefsee-Mission ersetzen — kein Kind muss sich exponieren."
-      },
-      {
-        "q": "Kann ich das Quiz mit der echten Mythologie-Frage (Rusalki, Selkies) einbauen?",
-        "a": "Ja — das ist sogar empfohlen für 10-12-Jährige. Das Meerjungfrau-Wissens-Quiz mit 15 Fragen in 3 Stufen (siehe „mythologyQuiz“) ist auf echte Volksmythologie aus Japan (Ningyo), den slawischen Sagen (Rusalki), Griechenland (Sirenen als Vogel-Mischwesen), Schottland (Selkies) und der Tiefsee-Biologie (unsterbliche Qualle, Bioluminiszenz, Mariannengraben) aufgebaut. Genau das, was diese Altersgruppe von „Trickfilm-Meerjungfrau“ abgrenzt — sie wollen echtes Wissen, nicht Trickfilm-Klischees."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -38157,11 +34589,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "pferde-klein": {
-    "_meta": {
-      "version": "2.0.0",
-      "lastUpdated": "2026-05-26",
-      "qualityNote": "v2 — Helfer-v3-Welle 1A+1B+1C+1D+1E abgeschlossen. Adversarial-Review-Scores: Pferde 87/100, Ritter 88/100 (Welle 3V). Beide Mottos ≥85 Ziel erreicht."
-    },
     "motto": "pferde",
     "ageGroup": "klein",
     "ageRange": [
@@ -38169,8 +34596,6 @@ var ELITE_MOTTO_DATA = {
       5
     ],
     "title": "🐴 Pferde-Kindergeburtstag — 3–5 Jahre",
-    "metaDescription": "Pferde-Kindergeburtstag für 3-5-Jährige als Ponyhof-Tag: 3 fertige Konzepte mit Plüsch-Ponys, Hufeisen-Werfen, Pferde-Schleifen und Reiter-Taufe. Kostenlos.",
-    "introParagraph": "Dein Kind wird 3, 4 oder 5 und liebt Pferde — auch wenn es noch nie auf einem gesessen hat? Hier sind drei fertige Ponyhof-Konzepte, die ohne Reitstall funktionieren. Wichtig vorab: 3-5-Jährige brauchen kein echtes Pferd. Was funktioniert, sind Plüsch-Ponys streicheln, füttern (mit Karotten-Snacks), Schwanz flechten und der große Moment: die Reiter-Taufe.",
     "ageInsight": {
       "headline": "Was 3–5-Jährige am Pferde-Motto fesselt",
       "whyMottoFitsHeadline": "Pferd = sanfte Größe, weiches Fell, klare Aufgabe",
@@ -39168,111 +35593,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "name": "Karotten-Kuchen für kleine Reiter",
-      "intro": "Pferde-thematischer Kuchen für 3-5: ein einfacher Karotten-Kuchen (Carrot Cake) mit kleinem Hufeisen aus weißem Zuckerguss obendrauf. Sieht aus wie das Reiter-Symbol, schmeckt nach saftigem Möhrenkuchen — und passt perfekt zum Thema.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Karotten-Rührteig anrühren: 200 g geriebene Karotten, 200 g Mehl, 150 g Zucker, 100 g Butter, 3 Eier, 1 Pck. Backpulver, 1 TL Zimt, etwas Vanille."
-        },
-        {
-          "n": 2,
-          "content": "Teig in eine gefettete Kastenform geben."
-        },
-        {
-          "n": 3,
-          "content": "Bei 175°C ca. 50-55 Minuten backen (Stäbchenprobe)."
-        },
-        {
-          "n": 4,
-          "content": "Komplett auskühlen lassen."
-        },
-        {
-          "n": 5,
-          "content": "Aus Puderzucker und wenig Wasser einen dicken weißen Zuckerguss anrühren. Mit dem Guss ein Hufeisen auf den Kuchen malen (U-Form)."
-        },
-        {
-          "n": 6,
-          "content": "Optional: ein paar Möhrchen aus orangenem Marzipan oder Karotten-Scheiben dekorativ daneben legen."
-        }
-      ],
-      "meta": {
-        "aufwand": "60 Min. inkl. Backen + 10 Min. Deko",
-        "kosten": "ca. 6-8 €",
-        "allergiker": "Bei Ei-Allergie: vegan-Karotten-Kuchen-Rezept. Möhren immer waschen. Bei Nuss-Frei: keine Nüsse im Teig (manche Rezepte enthalten Walnüsse)."
-      },
-      "tips": [
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Fertigen Karotten-Kuchen vom Bäcker, Hufeisen aus Zuckerguss draufmalen — niemand merkt's. 3 Minuten Arbeit."
-        },
-        {
-          "title": "🐴 Pinterest-Inspiration ohne Pinterest-Aufwand",
-          "body": "Wenn du im Netz nach \"Pferdekuchen Kindergeburtstag\" suchst, stößt du auf 3-stündige Marzipan-Pferdekopf-Projekte mit Goldnüsschen-Augen. Vergiss das. Ein Karotten-Kuchen mit Hufeisen aus weißem Zuckerguss (U-Form, 5 Min Deko) wird von 3-Jährigen genauso gefeiert — und du hast keine Tränen-Anfälle wenn die Mähne nicht hält."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🥜 Allergien VOR der Party abfragen",
-          "detail": "Karotten-Kuchen kann Nüsse enthalten. Müsli kann Gluten/Laktose haben. In der Einladung kurz abfragen, Alternativen bereithalten (zuckerfreies Müsli, glutenfreier Karotten-Kuchen)."
-        },
-        {
-          "topic": "🐴 Echte Pferde NICHT für 3-Jährige",
-          "detail": "Bei 3-Jährigen niemals echte Pferde/Ponys einplanen — auch nicht den 'kleinen Reitstall in der Nähe'. Schnauben, plötzliche Bewegungen erschrecken. Echtes Reiten frühestens 5 Jahre, mit erfahrenen Pony-Führern."
-        },
-        {
-          "topic": "🎀 Filz-Schleifen statt komplexe Bastelei",
-          "detail": "3-Jährige können noch nicht binden/knoten. Klebepad-Schleifen statt geknüpfter Schleifen. Du oder Helfer fixiert."
-        },
-        {
-          "topic": "👥 Ab 8 Kindern zweite Hand dazu",
-          "detail": "Bei 8+ Kindern brauchst du eine zweite erwachsene Begleitung — vor allem für die Parcours-Stationen und das Hufeisen-Werfen."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Spiele funktionieren komplett drinnen. Pferde-Streichelrunde im Wohnzimmer, Hufeisen-Werfen vor der Sofalehne, Parcours durch den Flur."
-        },
-        {
-          "topic": "⏱️ Tempo niedrig halten",
-          "detail": "Nach 10-15 Minuten pro Aktivität kippt die Aufmerksamkeit. Plan ruhige Streichelrunden zwischen den bewegten Spielen."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite. Kostenlos."
-        }
-      ],
-      "educationalValue": "Die Kinder üben bei der Pferde-Party ganz nebenbei: Empathie für Tiere (auch Plüsch — wer Plüsch pflegt, übt sanftes Verhalten), Feinmotorik (Schleifen binden, Mähne flechten), Belohnungs-Logik (Karotte für gutes Pony), Bewegungs-Koordination (Steckenpferd-Parcours) und visuelles Lernen (Pony-Quiz). Plus: Reiter-Identität als Selbstwert-Booster — 'Ich bin ein Reiter' ist ein starker Spruch für ein 3-Jähriges."
-    },
-    "invitationTemplate": "🐴 Reiterhof-Einladung per WhatsApp: '[Name] wird [Alter] und lädt zum Ponyhof-Tag ein! Wann: [Datum, Uhrzeit]. Wo: [Adresse]. Mitbringen: Schmutzfeste Kleidung und ein Plüsch-Pony wenn vorhanden! Bitte bis [Datum] melden. Yeehaw! 🐎'",
-    "faq": [
-      {
-        "q": "Brauche ich ein echtes Pony oder Pferd?",
-        "a": "Nein. Für 3-5-Jährige ist ein echtes Pferd oft zu groß, schnaubt zu laut, kann erschrecken. Plüsch-Ponys + Steckenpferde sind die kindgerechte Variante. Geführtes Pony-Sitzen (Profi führt das Pony, Kind sitzt nur drauf) ist auf Reiterhöfen ab 3-4 Jahren möglich. Selbstständiges Reiten erst ab 7-8 Jahren — Helm-Pflicht bei jedem Pony-Kontakt."
-      },
-      {
-        "q": "Wo bekomme ich 6-10 Plüsch-Ponys her?",
-        "a": "Sparset über Amazon (Suchbegriff 'Plüsch-Pony Set'), Second-Hand-Plattformen wie eBay-Kleinanzeigen, oder ausleihen bei anderen Eltern (Klassen-Chat). Tipp: 6 als Mitgebsel + 2 als Deko mietweise/geborgt."
-      },
-      {
-        "q": "Wie passen 8 Steckenpferde in mein Wohnzimmer?",
-        "a": "Steckenpferd-Parcours funktioniert auch in einem Raum — Slalom mit Markierungen, Sprung über 2 Pappröhren-Stangen (10 cm), Tunnel aus Kissen. Brauchen nicht viel Platz. Beim Reiten bleiben alle im Gehen, nicht rennen."
-      },
-      {
-        "q": "Was tun, wenn ein Kind sich vor Hufeisen-Werfen scheut?",
-        "a": "Kein Zwang. Manche 3-Jährige werfen ungern oder vorm Zielen. Plan B: Karotten-Geben an das große Plüsch-Pony — gleicher pädagogischer Wert (Hand-Auge-Koordination, sanfte Belohnung)."
-      },
-      {
-        "q": "Ist Carrot Cake nicht zu erwachsen für 3-5?",
-        "a": "Im Gegenteil — der süße Geschmack + die geriebene Karotte (kaum spürbar) kommen super an. Falls dein Kind ihn nicht mag: Hufeisen-Glasur auf einen normalen Marmorkuchen geht genauso."
-      },
-      {
-        "q": "Was, wenn ein Kind das geschmückte Pony beim Streit verliert?",
-        "a": "Bei 8 Plüsch-Ponys + 8 Kindern: jedes Pony hat einen Namensschild. Streit selten, weil alle ihres pflegen. Falls doch: 'Jedes Pony braucht Pause' als Schlichter-Regel, dann neue Runde."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst",
@@ -39518,49 +35838,9 @@ var ELITE_MOTTO_DATA = {
         "fallback": "Bei totalem Material-Ausfall: eine kreative Bastel-Phase mit Stiften + Pappe als Kern-Aktivität. Funktioniert immer.",
         "tone": "pragmatisch"
       }
-    },
-    "bonusGames": {
-      "intro": "Diese Bonus-Spiele kannst du zusätzlich einbauen oder als Plan B nutzen wenn ein Haupt-Spiel ausfällt — alle 3-5-tauglich.",
-      "items": [
-        {
-          "name": "🌾 Heu-Wettrennen",
-          "duration": 10,
-          "minAge": 3,
-          "loudness": "mittel",
-          "indoor": true,
-          "outdoor": true,
-          "material": "6 kleine Stroh-/Heu-Bündchen aus Filz (oder echte Stroh-Reste), 2 Eimer als Ziel",
-          "anleitung": "Kinder transportieren Heu-Bündchen vom Stall (Box) zum Pony-Eimer (Ziel). Reihum, kein Wettkampf. Wer alle Bündchen verteilt hat, bekommt einen Stempel."
-        },
-        {
-          "name": "🐴 Pony-Hör-Memory",
-          "duration": 10,
-          "minAge": 4,
-          "loudness": "leise",
-          "indoor": true,
-          "outdoor": false,
-          "material": "6 Karten mit Pferdebildern, Erwachsene macht Pferdegeräusche (wiehern, schnauben, trab-trab)",
-          "anleitung": "Erwachsene macht ein Geräusch, Kinder zeigen die passende Karte. Lerneffekt: Pferd-Geräusche unterscheiden. Schöne Sitzphase zwischen Action-Spielen."
-        },
-        {
-          "name": "🥕 Karotten-Sortier-Spiel",
-          "duration": 8,
-          "minAge": 3,
-          "loudness": "leise",
-          "indoor": true,
-          "outdoor": true,
-          "material": "Karotten in 3 Größen (groß/mittel/klein) gemischt, 3 Eimer",
-          "anleitung": "Kinder sortieren die Karotten nach Größe in die richtigen Eimer. Bei 3-Jährigen: gemeinsam, kein Wettkampf. Bei 5-Jährigen: Stoppuhr für extra Stempel."
-        }
-      ]
     }
   },
   "pferde-mittel": {
-    "_meta": {
-      "version": "2.0.0",
-      "lastUpdated": "2026-05-26",
-      "qualityNote": "v2 — Helfer-v3-Welle 1A+1B+1C+1D+1E abgeschlossen. Adversarial-Review-Scores: Pferde 87/100, Ritter 88/100 (Welle 3V). Beide Mottos ≥85 Ziel erreicht."
-    },
     "motto": "pferde",
     "ageGroup": "mittel",
     "ageRange": [
@@ -39568,8 +35848,6 @@ var ELITE_MOTTO_DATA = {
       8
     ],
     "title": "🐴 Pferde-Kindergeburtstag — 6–8 Jahre",
-    "metaDescription": "Pferde-Kindergeburtstag für 6-8-Jährige: 3 fertige Reiterhof-Konzepte mit Reiter-Lizenz, Hindernis-Parcours, Pony-Quiz, Pferde-Pflege-Station und Karotten-Schatzsuche.",
-    "introParagraph": "Dein Kind wird 6, 7 oder 8 und liebt Pferde? Mit 6-8 Jahren geht es nicht mehr nur ums Streicheln — die Kinder wollen ECHTES Reiter-Wissen, eine eigene Reiter-Lizenz und einen richtigen Hindernis-Parcours. Hier sind drei fertige Konzepte mit Stationen-System, Quiz und Wettkampf-Elementen, die ohne echten Reitstall funktionieren.",
     "ageInsight": {
       "headline": "Was 6–8-Jährige am Pferde-Motto fasziniert",
       "whyMottoFitsHeadline": "Pferd = echtes Wissen + Pflege-Verantwortung + Reiter-Identität",
@@ -40981,111 +37259,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "name": "Karotten-Kuchen für junge Reiter",
-      "intro": "Pferde-thematisch: Carrot Cake mit Hufeisen aus weißem Zuckerguss. Saftig, gesund, perfekt zum Thema.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Karotten-Rührteig: 200 g geriebene Karotten, 200 g Mehl, 150 g Zucker, 100 g Butter, 3 Eier, 1 Pck. Backpulver, 1 TL Zimt."
-        },
-        {
-          "n": 2,
-          "content": "Teig in Kastenform geben."
-        },
-        {
-          "n": 3,
-          "content": "Bei 175°C ca. 50 Min backen."
-        },
-        {
-          "n": 4,
-          "content": "Komplett auskühlen lassen."
-        },
-        {
-          "n": 5,
-          "content": "Weißen Zuckerguss anrühren. Hufeisen-Form aufzeichnen (U-Form)."
-        },
-        {
-          "n": 6,
-          "content": "Optional: orange Marzipan-Möhrchen daneben legen."
-        }
-      ],
-      "meta": {
-        "aufwand": "70 Min inkl. Backen",
-        "kosten": "ca. 7-9 €",
-        "allergiker": "Bei Ei-Allergie: vegan, bei Nuss-Allergie: Walnüsse weglassen."
-      },
-      "tips": [
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Fertigen Karotten-Kuchen oder Schoko-Kasten beim Bäcker kaufen, weißen Zuckerguss in Hufeisen-Form auftragen (U-Form, 3 Min). Optional Marzipan-Möhrchen oder Goldnüsschen drauf. Sieht aus wie selbstgemacht, kostet 8-10 € statt 2h Backzeit."
-        },
-        {
-          "title": "🐴 Pinterest-Falle vermeiden",
-          "body": "Pinterest zeigt 4-stündige Marzipan-Pferdekopf-Projekte mit zugeschnittener Mähne und Goldnüsschen-Augen. Vergiss das für 6-8 Jahre — sie wollen einen Kuchen den sie ESSEN, nicht bewundern. Hufeisen-Form auf Carrot-Cake reicht voll aus."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🥜 Allergien VOR der Party abfragen",
-          "detail": "Carrot Cake kann Nüsse enthalten. Müsli, Pizza — alle gängigen Allergene möglich."
-        },
-        {
-          "topic": "🐴 Pony-Reiten alters-differenziert",
-          "detail": "Geführtes Pony-Sitzen (Profi hält das Pony) ist auf Reiterhöfen ab 3-4 Jahren etabliert — für 6-8-Jährige perfekt. SELBSTSTÄNDIGES Reiten erst ab 7-8 mit Reitlehrer. Helm-Pflicht ohne Ausnahme bei JEDEM Pony-Kontakt — niemals 'nur kurz drauf sitzen' ohne Helm."
-        },
-        {
-          "topic": "🎀 Wolle ohne Drahtkern",
-          "detail": "Beim Mähnen-Flechten kein Filzdraht oder Bastel-Draht — Verletzungsgefahr."
-        },
-        {
-          "topic": "👥 Ab 8 Kindern zweite Hand",
-          "detail": "Bei 8+ Kindern eine zweite erwachsene Begleitung für Stationen-Wechsel."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Stationen funktionieren drinnen. Parcours im Flur/Wohnzimmer."
-        },
-        {
-          "topic": "⏱️ Stations-Wechsel klar markieren",
-          "detail": "Bei 30 Min pro Station: Hochzählen lassen oder Klingel benutzen — sonst bleiben Kinder zu lang oder zu kurz."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite."
-        }
-      ],
-      "educationalValue": "Bei der Pferde-Party in 6-8 lernen die Kinder ECHTES Wissen: Pferderassen, Pflege-Reihenfolge, Hufeisen-Geschichte, Sicherheit am Pferd. Plus: Selbstständigkeit (eigene Station, eigenes Lizenz-Heft) und Teamwork (Karotten-Schatzsuche in 2er-Teams). Die Reiter-Lizenz als Stempel-System trainiert Verantwortung und Stolz aufs eigene Können."
-    },
-    "invitationTemplate": "🐴 Reiterhof-Einladung: 'Achtung Reiter-Anwärter! [Name] wird [Alter] und lädt zur Reiter-Lizenz-Prüfung ein! Wann: [Datum, Uhrzeit]. Wo: [Adresse]. Mitbringen: gute Laune und ein eigenes Plüsch-Pony (falls vorhanden)! Bitte bis [Datum] melden. Yeehaw! 🐎'",
-    "faq": [
-      {
-        "q": "Brauche ich echte Pferde?",
-        "a": "Nein. Plüsch-Ponys + Steckenpferde reichen aus. Echte Ponys ab 7 Jahre + nur mit erfahrenen Pony-Führern (Helm-Pflicht)."
-      },
-      {
-        "q": "Wie lange dauert das Quiz wirklich?",
-        "a": "Bei 12 Karten + Besprechung ca. 20 Minuten. Bei größerer Gruppe (10) eher 25-30. Nicht hetzen, Lernen ist Kern."
-      },
-      {
-        "q": "Was wenn ein Kind das Quiz nicht versteht?",
-        "a": "Sehr einfache Fragen wählen: 'Was frisst ein Pferd?' (Apfel, Karotte). Bei schwereren: gemeinsame Antwort, niemand bleibt zurück."
-      },
-      {
-        "q": "Reicht 1 Sprung-Stange im Parcours?",
-        "a": "Bei 6-Jährigen ja. Bei 8-Jährigen 2-3 Sprung-Stangen mit zunehmender Höhe (max 20 cm — über Steckenpferd-Höhe lässt sich nicht 'springen')."
-      },
-      {
-        "q": "Wie schwer macht man das Pferde-Quiz?",
-        "a": "Einfache Bilder + 2-3 Antwortmöglichkeiten. Beispiel: 'Welches Tier ist das?' Bild: Pony. Optionen: Hund, Pony, Katze. Mit 8 Jahren auch: 'Welche Farbe hat ein Rappe?' (schwarz) oder 'Wie nennt man das Pferde-Baby?' (Fohlen). Keine Trickfragen zu Schimmel-Untertypen — die verwirren sogar Erwachsene."
-      },
-      {
-        "q": "Funktioniert das auch in einer kleinen Wohnung?",
-        "a": "Ja. Stationen in verschiedenen Räumen: Pflege im Wohnzimmer, Quiz am Esstisch, Parcours im Flur. Schatzsuche durch Wohnung."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher",
@@ -41293,49 +37466,9 @@ var ELITE_MOTTO_DATA = {
         "fallback": "Wenn das Geburtstagskind besonders enttäuscht: am nächsten Wochenende einen echten Reiterhof-Besuch nachholen, dann ist es ein \"extra Tag\".",
         "tone": "einfühlsam"
       }
-    },
-    "bonusGames": {
-      "intro": "Bonus-Spiele für die Stationen-Rotation — Plan B bei Material-Ausfall oder als 5. Station bei größerer Gruppe.",
-      "items": [
-        {
-          "name": "🐎 Pferderassen-Memory",
-          "duration": 15,
-          "minAge": 6,
-          "loudness": "leise",
-          "indoor": true,
-          "outdoor": false,
-          "material": "14 Memory-Karten (7 Paare: Friese, Haflinger, Araber, Shetland-Pony, Tinker, Quarter-Horse, Lipizzaner)",
-          "anleitung": "Klassisches Memory mit Pferderassen — Paare suchen, Rassen-Namen merken. Wer ein Paar findet, sagt den Rassennamen laut. Stempel für Quiz-Lizenz."
-        },
-        {
-          "name": "⏱️ Stallpflege-Speedrun",
-          "duration": 12,
-          "minAge": 6,
-          "loudness": "mittel",
-          "indoor": true,
-          "outdoor": true,
-          "material": "3 Plüsch-Ponys + Pflege-Checkliste (Bürsten → Mähne → Schleife → Karotte) + Stoppuhr",
-          "anleitung": "2er-Teams: Wer absolviert die Pflege-Checkliste am schnellsten und sauber? Tierärztin Hanna bewertet Sauberkeit, Zeit zählt zur Wertung."
-        },
-        {
-          "name": "🎀 Schleifen-Wett-Knoten",
-          "duration": 10,
-          "minAge": 7,
-          "loudness": "leise",
-          "indoor": true,
-          "outdoor": false,
-          "material": "Pro Kind 1 Pony-Mähne aus Wolle + 3 Filz-Schleifen",
-          "anleitung": "Wer knotet die schönsten 3 Schleifen in die Mähne? Heroldin gibt Stilnote für Kreativität + Sauberkeit. Bonus-Stempel für Top-3."
-        }
-      ]
     }
   },
   "pferde-gross": {
-    "_meta": {
-      "version": "2.6.0",
-      "lastUpdated": "2026-05-26",
-      "qualityNote": "v2.6 — Welle 11b Konsistenz-Sweep: Stallmeister Tom (Welle-5-Removed) → Quizmaster Lina. Tierärztin Hanna → Pflege-Chefin Hanna (gleicher Vorname, korrekter Titel aus rolesList). Diagnostikerin Anna → Pflege-Chefin Hanna (Krankheits-Wissen passt). Variants/games/bonusGames jetzt vollständig konsistent mit rolesList."
-    },
     "motto": "pferde",
     "ageGroup": "gross",
     "ageRange": [
@@ -41343,8 +37476,6 @@ var ELITE_MOTTO_DATA = {
       12
     ],
     "title": "🐴 Pferde-Kindergeburtstag — 9–12 Jahre",
-    "metaDescription": "Pferde-Kindergeburtstag für 9-12-Jährige: 3 fertige Reiterhof-Konzepte mit Stallmeister-Prüfung, bewertetem Reit-Parcours, Pferde-Quiz Klasse 2, Hufschmied-Workshop und Stallmeister-Diplom mit Funktion.",
-    "introParagraph": "In dem Alter wollen Kinder ein Motto, das sie ernst nimmt — keine Plüsch-Pony-Streichel-Romantik, sondern echtes Wissen, Verantwortung und ein bisschen Wettbewerb. Diese Konzepte liefern das: Theorie-Briefing wie an einem echten Reiterhof, bewerteter Reit-Parcours mit Stoppuhr, Pferde-Quiz Klasse 2 mit Pferderassen-Fachwissen, Hufschmied-Workshop und Stallmeister-Diplom mit Funktion am Ende. Eltern können absetzen, in der Wow-Variante völlig wegbleiben.",
     "ageInsight": {
       "headline": "Was 9–12-Jährige am Pferde-Motto suchen — und was das heißt",
       "whyMottoFitsHeadline": "🐴 Warum Pferde für 9-12-Jährige besonders gut funktioniert",
@@ -43154,115 +39285,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "name": "Pferdekopf-Kuchen mit Marzipan-Mähne",
-      "intro": "Pferde-thematisch für 9-12: Großer Schoko-Rührkuchen, zugeschnitten als Pferdekopf, mit Mähne aus Marzipan und Goldnüsschen für die Augen. Aufwendiger als bei den Jüngeren — passt zum Anspruch.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Schoko-Rührteig: 300 g Mehl, 250 g Zucker, 200 g Butter, 4 Eier, 50 g Kakao, 1 Pck. Backpulver, 150 ml Milch, 1 TL Vanille."
-        },
-        {
-          "n": 2,
-          "content": "Teig in rechteckiger Form (oder 2 Springformen) backen. Bei 175°C ca. 50 Min."
-        },
-        {
-          "n": 3,
-          "content": "Komplett auskühlen lassen."
-        },
-        {
-          "n": 4,
-          "content": "Pferdekopf-Schablone aus Pappkarton zeichnen (Profil), Kuchen entsprechend zuschneiden."
-        },
-        {
-          "n": 5,
-          "content": "Mit Schoko-Ganache überziehen."
-        },
-        {
-          "n": 6,
-          "content": "Mähne aus braunem Marzipan formen (lange Streifen, dann fransen), auf Pferdekopf-Hinterkopf platzieren."
-        },
-        {
-          "n": 7,
-          "content": "Auge: kleine Schoko-Linse + weißer Zuckerguss-Punkt. Nüstern: 2 dunkle Schoko-Drops. Halfter optional aus rotem Marzipan."
-        }
-      ],
-      "meta": {
-        "aufwand": "120 Min (Schnitzen + Crumb-Coat + Marzipan-Mähne) inkl. Backen + Verzieren",
-        "kosten": "ca. 12-15 €",
-        "allergiker": "Bei Ei-Allergie: vegan ersetzen. Marzipan = Mandeln (Vorsicht bei Nuss-Allergie!). Bei Lactose: pflanzliche Milch."
-      },
-      "tips": [
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Bäcker-Bestellung: rechteckigen Schoko-Kuchen (8-12 €) holen, Pferdekopf-Schablone aus Pappe darüberlegen und mit Brotmesser zuschneiden. Mit Schoko-Ganache überziehen, Marzipan-Mähne (5 €) drauflegen. Spart 1-2h Backzeit, 9-12-Jährige merken den Unterschied nicht."
-        },
-        {
-          "title": "🐎 Pinterest-Aufwand vs Wirkung",
-          "body": "Marzipan-Mähne mit einzeln-gefransten Strähnen sieht im Pinterest-Foto spektakulär aus — bei einer Stallmeister-Party mit 10 Kindern wird sie in 4 Sek. zerschnitten. Statt 2h Marzipan-Frisur: 1 große Marzipan-Decke + 4 vertikale Linien für Mähnen-Andeutung. Wirkung 90%, Aufwand 30%."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🥜 Marzipan = Mandeln",
-          "detail": "Pferdekopf-Kuchen enthält Marzipan. Bei Nuss-/Mandel-Allergie unbedingt vorher fragen oder durch weißen Zuckerguss-Mähne ersetzen."
-        },
-        {
-          "topic": "🏇 Echtes Pony erst ab 9 mit erfahrenem Reitlehrer",
-          "detail": "Für 9-12 möglich, aber NUR im Reiterhof unter Aufsicht eines ausgebildeten Reitlehrers. Helm Pflicht. Niemals zu Hause ohne Profi."
-        },
-        {
-          "topic": "🎀 Wolle + Klebepads ohne Sekundenkleber",
-          "detail": "Mähnen-Styling nur mit Klebepads, keine giftigen Klebstoffe. Glitzer-Spray nur draußen oder im Bad sprühen."
-        },
-        {
-          "topic": "👥 Eltern absetzen reicht in Wow-Variante",
-          "detail": "9-12-Jährige wollen Party ohne Eltern. Telefonisch erreichbar reichen. Trotzdem 1-2 Erwachsene als Aufsicht (Stallmeister-Eltern)."
-        },
-        {
-          "topic": "🏆 Wettbewerb-Stress vermeiden",
-          "detail": "Wettbewerb ist gewollt — aber 'verloren' ist okay. Sieger-Bonus klein halten, niemand soll als Loser nach Hause gehen. Alle bekommen Diplom."
-        },
-        {
-          "topic": "⏱️ Stations-Zeit-Management",
-          "detail": "30-35 Min pro Station ist gewollte Dauer. Stoppuhr nutzen, sonst dehnen sich Stationen ungleich. Bei Verspätung Pause kürzen."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite."
-        }
-      ],
-      "educationalValue": "Bei der Stallmeister-Prüfung in 9-12 lernen die Kinder ECHTES Reiterhof-Wissen: Pferderassen (Warmblut/Vollblut/Kaltblut), Gangarten (Schritt/Trab/Galopp), Hufschmied-Handwerk (alle 6-8 Wochen beschlagen), Pferde-Krankheiten (Hufrehe), giftige Pflanzen (Eibe, Goldregen). Plus: Wettkampf-Fairness (Stoppuhr, Stilnote, Team-Pokal), Selbstständigkeit (eigene Funktion, Prüfungs-Mappe), Verantwortung (Funktions-Rolle ernst nehmen). Das Stallmeister-Diplom ist nicht Spielzeug-Auszeichnung — die Kinder gehen mit echtem Pferde-Fachwissen heim."
-    },
-    "invitationTemplate": "🐴 Stallmeister-Ausbildung: 'Achtung Reiter! [Name] wird [Alter] und lädt zur Stallmeister-Prüfung Klasse 1 ein. Erwartet werden 4 Prüfungs-Stationen, ein bewerteter Reit-Parcours und der Wanderpokal-Wettbewerb. Wann: [Datum, Uhrzeit]. Wo: [Adresse]. Mitbringen: Helm wenn vorhanden, Pferde-Wissen, gute Laune. Bitte bis [Datum] melden. Yeehaw! 🐎'",
-    "faq": [
-      {
-        "q": "Wie schwer macht man das Pferde-Quiz Klasse 2?",
-        "a": "Echte Fragen, aber mit visueller Hilfe. Beispiel: Bild von Friesen-Pferd, Optionen: Friese / Haflinger / Araber. Mit 12 auch ohne Bild: 'Welche Gangart ist ein Drei-Takt mit Schwebephase?' (Galopp). Niemals Trick-Fragen, immer Fachbegriffe sauber erklärt."
-      },
-      {
-        "q": "Brauche ich echte Hufeisen für den Hufschmied-Workshop?",
-        "a": "Nein. Pappkarton- oder Filz-Rohlinge in Hufeisen-Form sind günstiger und sicherer. Gravur mit stumpfen Werkzeugen. Echte Hufeisen-Rohlinge gehen, sind aber schwer für Kinder."
-      },
-      {
-        "q": "Reicht ein Wanderpokal oder sollten alle gewinnen?",
-        "a": "Mit 9-12 ist EIN Wanderpokal richtig. Sieger-Team bekommt ihn für ein Jahr. Aber: alle bekommen das Diplom + Funktions-Eintrag. Niemand geht als Loser heim."
-      },
-      {
-        "q": "Funktioniert das auch ohne echten Reiterhof?",
-        "a": "Ja, Standard-Variante komplett zu Hause: Plüsch-Pferde für Pflege, Steckenpferde für Parcours, Pappkarton-Hufeisen für Workshop. Echter Reiterhof nur Wow-Highlight."
-      },
-      {
-        "q": "Wie laut wird die Stallmeister-Olympiade?",
-        "a": "Lauter als bei 3-5 oder 6-8, aber kontrolliert. Hufeisen-Wurf draußen, drinnen leiser. Bei Mietshaus: Olympiade auf 17 Uhr legen, vorher die Nachbarn informieren."
-      },
-      {
-        "q": "Brauchen die Kinder echte Reitkenntnisse?",
-        "a": "Nein. Konzept funktioniert für Pferdefans OHNE Reiterfahrung. Wer reitet, hat Vorteil im Quiz. Wer nicht reitet, lernt im Briefing das Wichtigste."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher",
@@ -43488,50 +39510,9 @@ var ELITE_MOTTO_DATA = {
         "fallback": "Wenn nichts hilft: Programm beenden und auf den Spaß-Kern reduzieren (Geschenk-Öffnen, Foto).",
         "tone": "pragmatisch"
       }
-    },
-    "bonusGames": {
-      "intro": "Bonus-Spiele für die Stallmeister-Prüfung — als 6. Station, Plan B bei Material-Ausfall, oder Schlafparty-Anschluss.",
-      "items": [
-        {
-          "name": "🎬 Pferdefilm-Quiz",
-          "duration": 20,
-          "minAge": 9,
-          "loudness": "leise",
-          "indoor": true,
-          "outdoor": false,
-          "material": "10 Quiz-Karten zu Pferdefilmen (Black Beauty, Spirit, Ostwind, Black Stallion etc.), Antwortbogen",
-          "anleitung": "Filmtitel + Hauptfigur-Pferd erraten. \"Wie heißt Lillys Pferd in Bibi & Tina?\" (Sabrina). Bonus-Stempel für Stallmeister-Lizenz."
-        },
-        {
-          "name": "🔬 Pferde-Diagnose-Spiel",
-          "duration": 18,
-          "minAge": 10,
-          "loudness": "leise",
-          "indoor": true,
-          "outdoor": false,
-          "material": "5 Krankheits-Beschreibung-Karten (Hufrehe-Symptome, Kolik-Anzeichen, Mauke, Sommerekzem, Husten), Antwortbogen",
-          "anleitung": "Pflege-Chefin Hanna liest Symptome vor, Kinder benennen die Krankheit + erste Maßnahme. Echtes Wissen für Pferde-Freaks."
-        },
-        {
-          "name": "🏆 Reiter-Wandersieg-Tafel",
-          "duration": 10,
-          "minAge": 9,
-          "loudness": "mittel",
-          "indoor": true,
-          "outdoor": false,
-          "material": "Große Stallmeister-Tafel + Filzstifte, Stempel-System",
-          "anleitung": "Am Ende: jedes Kind trägt seine Lieblings-Disziplin + Highlight auf die Wander-Tafel ein. Foto fürs Gruppen-Album. Identitäts-Anker."
-        }
-      ]
     }
   },
   "piraten-klein": {
-    "_meta": {
-      "source_file": "kindergeburtstag/piraten-3-5-jahre.html",
-      "extracted": "2026-05-21",
-      "schema_version": "1.0",
-      "purpose": "Phase-B Elite-Motto-Data für Planer-Frisur-Sprint. Piraten 3-5, Pattern safari-klein (Score 97): signatureRitual + ageInsight + 3 Varianten mit Game-steps + cakeRecipe + parentTips + faq + preparationWeeks + sosScenarios."
-    },
     "motto": "piraten",
     "ageGroup": "klein",
     "ageRange": [
@@ -43539,8 +39520,6 @@ var ELITE_MOTTO_DATA = {
       5
     ],
     "title": "🏴‍☠️ Piraten-Kindergeburtstag — 3–5 Jahre",
-    "metaDescription": "Piraten-Kindergeburtstag für 3-5-Jaehrige als gemeinsame Schatzsuche — ohne Saebel, ohne Wettkampf, alle finden den Schatz zusammen. Drei fertige Varianten von 35 bis 80 Euro, mit Schatzspur, Goldmuenzen-Tauchen und Piratenschiff-Kuchen.",
-    "introParagraph": "Dein Kind wird 3, 4 oder 5 und will Pirat sein? Dann braucht es keine Saebel-Schlacht und kein Seeungeheuer — das ist in dem Alter eher gruselig als spannend. Was funktioniert: eine Augenklappe, eine Schatzkarte und am Ende eine Kiste voll Goldmuenzen, die alle gemeinsam finden. Hier sind drei fertige Varianten — Minimal (90 Min., ~35 €), Standard (2 Std., ~55 €) und Wow (2 Std. mit Bastel-Highlight, ~80 €). Du bleibst die ganze Zeit dabei, und genau so ist es gedacht: Bei 3-5 ist der Erwachsene der Kompass, nicht der Aufpasser.",
     "signatureRitual": {
       "name": "Das kleine Piraten-Versprechen",
       "subtitle": "Eroeffnet die Party + Schatzkisten-Uebergabe am Ende",
@@ -44630,106 +40609,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "intro": "Der Piratenschiff-Kuchen ist ein simpler Kastenkuchen, der mit zwei Holzspiessen und einem Papier-Segel zum Schiff wird — kein Schnitzen, kein Fondant. Wer mag, steckt eine kleine Piratenflagge obendrauf. Die ganze Deko dauert keine 15 Minuten und sieht trotzdem nach Schiff aus. Funktioniert auch mit gekauftem Kastenkuchen, wenn die Zeit knapp ist.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Ruehrteig anruehren (250 g Mehl, 200 g Butter, 150 g Zucker, 4 Eier, 1 Pck. Backpulver, 1 Schuss Milch) und in eine gefettete Kastenform fuellen."
-        },
-        {
-          "n": 2,
-          "content": "Bei 175 Grad ca. 45-50 Minuten backen (Staebchenprobe). Komplett auskuehlen lassen — warmer Kuchen reisst beim Verzieren."
-        },
-        {
-          "n": 3,
-          "content": "Den Kasten der Laenge nach leicht schraeg anschneiden, sodass vorne ein 'Bug' entsteht. Die abgeschnittene Ecke nicht wegwerfen — als Aufbau hinten draufsetzen."
-        },
-        {
-          "n": 4,
-          "content": "Mit dunkler Kuvertuere oder Schoko-Glasur ueberziehen — das ist die 'Schiffswand'. Wer mag, streut bunte Streusel als Bullaugen drauf."
-        },
-        {
-          "n": 5,
-          "content": "Zwei Holzspiesse als Maste einstecken. Aus weissem oder buntem Papier zwei Segel ausschneiden (Dreieck/Rechteck), auf die Spiesse faedeln."
-        },
-        {
-          "n": 6,
-          "content": "Eine kleine Piratenflagge (Papier mit Totenkopf) an die Mast-Spitze kleben. Fertig ist das Schiff — schwimmt auf einer 'Meer'-Platte aus blauem Tonkarton besonders gut."
-        }
-      ],
-      "meta": {
-        "aufwand": "mittel (Kastenkuchen + 15 Min. Deko)",
-        "kosten": "ca. 5-7 €",
-        "allergiker": "Glasur durch Puderzucker-Wasser-Guss ersetzen. Für eifrei/milchfrei einen veganen Kastenkuchen vom Discounter nehmen — die Schiffs-Deko funktioniert auf jedem Kasten."
-      },
-      "tips": [
-        {
-          "title": "Keine Lust oder Zeit zu backen?",
-          "body": "Fertigen Marmor- oder Zitronenkuchen vom Baecker oder Supermarkt kaufen, mit Schoko-Guss bestreichen und Maste + Segel reinstecken. Kein Kind merkt, dass der Kasten gekauft war — das Segel macht das Schiff, nicht der Teig."
-        },
-        {
-          "title": "Muffins statt Schiff",
-          "body": "Wer es noch einfacher will: 12 Muffins backen, in jeden ein Mini-Papierfaehnchen mit Totenkopf stecken. Jedes Kind bekommt sein eigenes 'Schiffchen' — weniger Schneiderei, weniger Streit ums groesste Stück."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🥜 Allergien VOR der Party abfragen",
-          "detail": "In der Einladung fragen. Schoko-Goldmuenzen koennen Spuren von Nuessen enthalten, der Kuchen Ei und Milch. Lieber einmal zu viel fragen, als am Tag improvisieren. Allergiker-Teller separat markieren und ausser Reichweite der anderen Naschereien stellen."
-        },
-        {
-          "topic": "👁️ Augenklappe ist optional",
-          "detail": "Manche 3-Jaehrige bekommen Panik, wenn ein Auge bedeckt ist — das ist normal und kein Drama. Stirnband, Bandana oder gar kein Kostuem sind genauso piratisch. Niemals einem weinenden Kind die Klappe aufzwingen."
-        },
-        {
-          "topic": "⏱️ Kuchen-Slot nach 45 Minuten",
-          "detail": "Plan den Kuchen fest nach der ersten Spielphase ein, nicht erst wenn die Stimmung schon kippt. Hungrige 3-5-Jaehrige werden schnell quengelig — ein voller Bauch rettet die zweite Haelfte der Party."
-        },
-        {
-          "topic": "👥 Ein Erwachsener pro ein bis zwei Kinder",
-          "detail": "Bei 6 Kindern reichen die Eltern, die ohnehin dableiben. Plan keine Party, bei der du allein 8 Dreijaehrige hueten musst — das geht schief. Aufgaben vorher verteilen: Wer fuehrt die Spur, wer macht Fotos, wer troestet."
-        },
-        {
-          "topic": "🪙 Goldmuenzen gerecht teilen",
-          "detail": "Vor der Party abzaehlen: gleich viele Muenzen pro Kind, plus Reserve. Wenn ein Kind beim Suchen mehr findet, am Ende sichtbar gleichmaessig aufteilen. Ungerechte Beute ist bei 3-5 der haeufigste Traenen-Ausloeser."
-        },
-        {
-          "topic": "📵 Kurz halten, frueh enden",
-          "detail": "90 Minuten bis 2 Stunden sind genug. Lieber aufhoeren, wenn es am schoensten ist, als eine Stunde zu lang. Ein klares Ende-Ritual (Schatz teilen, Urkunde, Tschuess) gibt allen das Signal — sonst zerfasert die Party."
-        },
-        {
-          "topic": "Holzspiess-Sicherheit",
-          "detail": "Bei 3-4-Jaehrigen Obst von Holzspiessen ABZIEHEN und einzeln servieren. Holzspiesse nur für Aeltere oder unter Aufsicht. Beim Kuchen vor dem Anschneiden die Holzspieß-Maste der Piraten-Deko ZIEHEN."
-        }
-      ],
-      "educationalValue": "Die Kinder ueben ganz nebenbei: gemeinsam ein Ziel verfolgen, aufeinander warten und am Ende teilen. Eine Schatzsuche ohne Sieger zeigt 3-5-Jaehrigen, dass ein Erfolg schoener wird, wenn ihn alle haben — das ist die erste Erfahrung von Kooperation statt Konkurrenz. Dazu kommt ein Stück Selbstwirksamkeit: 'Ich habe den Schatz mitgefunden' ist für ein Dreijaehriges ein echtes Erfolgserlebnis. Und das Rollenspiel — jemand anders sein, in eine Geschichte eintauchen — trainiert Fantasie und Sprache, ohne dass es nach Lernen aussieht."
-    },
-    "invitationTemplate": "Lust auf passende Piraten-Einladungen? Der Einladungs-Generator von machsleicht baut dir in zwei Minuten eine fertige Karte mit Schatzkarten-Optik, Datum und Uhrzeit — zum Ausdrucken oder als WhatsApp-Bild. Schreib das Motto 'Piraten' rein, waehl das Alter 3-5, fertig.",
-    "faq": [
-      {
-        "q": "Funktioniert Piraten auch in einer kleinen Wohnung?",
-        "a": "Ja. Die Schatzspur braucht keinen Garten — sie geht ums Sofa, hinter den Vorhang, in den Flur. Bei 60-75 m2 legst du die Spur ueber zwei, drei Raeume und versteckst die Kiste in der Garderobe oder im Schlafzimmer. Piraten ist akustisch eher ruhig: Suchen, schleichen, fluestern — das geht drinnen gut."
-      },
-      {
-        "q": "Ist das nicht zu gruselig für 3-Jaehrige?",
-        "a": "Nicht, wenn du die freundliche Version spielst. Lass Skelette, Geister und Saebel-Kaempfe komplett weg. Hier sind Piraten freundliche Schatzsucher mit Augenklappe und Karte — das ist für Dreijaehrige nicht gruseliger als eine Schnitzeljagd."
-      },
-      {
-        "q": "Was, wenn ein Kind die Augenklappe nicht aufsetzen will?",
-        "a": "Dann laesst es sie weg. Ein Auge zu bedecken ist für manche Kinder unangenehm. Stirnband, Bandana oder einfach ein Piratenhut tun es genauso. Niemand wird zu einem Kostuem-Teil gezwungen — Pirat ist man durch Mitmachen, nicht durch die Klappe."
-      },
-      {
-        "q": "Wie verhindere ich Streit ums Gold?",
-        "a": "Vorher gleich viele Goldmuenzen pro Kind abzaehlen und am Ende sichtbar gerecht aufteilen — nicht 'wer findet, behaelt'. Der Schatz gehoert der ganzen Crew. So gibt es keine Gewinner und Verlierer und keine Traenen am Buffet."
-      },
-      {
-        "q": "Reicht eine Schatzsuche für 90 Minuten?",
-        "a": "Knapp — darum die Minimal-Variante mit zwei kurzen Spielen plus Kuchen. Bei 3-5 fuellt sich die Zeit schneller als gedacht: Ankommen, Augenklappen, ein Spiel, Kuchen, zweites Spiel, Schatz teilen, und schon sind 90 Minuten um."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgeruest stellen",
@@ -45016,16 +40895,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "piraten-mittel": {
-    "_meta": {
-      "source_file": "kindergeburtstag/piraten-6-8-jahre.html",
-      "extracted": "2026-05-19",
-      "schema_version": "1.0",
-      "purpose": "Piraten 6-8 — Elite-Slot (mit Ritual)",
-      "phase_b_complete": "2026-05-20",
-      "phase_b_method": "Direct draft analog Phase C — Piraten-spezifika: Schatzsuche + Augenklappen + Schatztruhe + Goldmünzen.",
-      "phase_b_structural_refresh": "2026-05-21",
-      "refresh_note": "Stream C: steps/whyItWorks/tips gefüllt, educationalValue + signatureRitual (Brücke klein<->gross) ergänzt."
-    },
     "motto": "piraten",
     "ageGroup": "mittel",
     "ageRange": [
@@ -45033,8 +40902,6 @@ var ELITE_MOTTO_DATA = {
       8
     ],
     "title": "🏴‍☠️ Piraten-Abenteuer Kindergeburtstag — 6–8 Jahre",
-    "metaDescription": "Piraten-Kindergeburtstag für 6-8-Jährige: 3 fertige Party-Konzepte (Minimal/Standard/Wow) mit Schatzsuche, Zeitplan, Einkaufsliste und Kosten.",
-    "introParagraph": "Dein Kind wird 6, 7 oder 8 und träumt von Schatzsuche und Piratenschiff? Hier bekommst du drei fertige Party-Konzepte — von der schnellen Schatzsuche bis zur kompletten Piraten-Ausbildung mit Schatzkarte, Knotenkunde und Zahlenschloss-Truhe.\n\n[Piraten-Geburtstag planen →](/kindergeburtstag?motto=piraten&alter=7#planer)",
     "ageInsight": {
       "headline": "Was 6–8-Jährige ausmacht — und was das für die Piraten-Party heißt",
       "traits": [
@@ -45070,32 +40937,6 @@ var ELITE_MOTTO_DATA = {
       "whyMottoFitsHeadline": "Warum Piraten für 6–8 perfekt funktioniert",
       "whyMottoFits": "Piraten = Abenteuer + Verkleidung + Schatz. Die Kombination ist mit 6-8 unschlagbar: Die Kinder verkleiden sich gern (eine Augenklappe reicht für den Effekt), sie lieben echte Rätsel-Schatzsuchen mit Hinweisen zum Knacken, und das Rollenspiel 'Wir sind eine Crew' gibt der Party einen roten Faden durch alle Stationen. Piraten ist geschlechtsneutral, funktioniert drinnen wie draußen gleich gut, und die Welt trägt von der einfachen Spur durch die Wohnung bis zur Zahlenschloss-Schatztruhe — du wählst die Komplexität, das Motto bleibt dasselbe."
     },
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Piraten-Geburtstag dauern?",
-        "a": "2,5 bis 3 Stunden sind ideal für 6–8-Jährige — die Standard-Variante mit Schatzsuche, Knotenkunde und Parcours läuft genau in diesem Fenster. Die Minimal-Variante mit 2 Stunden funktioniert auch perfekt und ist gut für jüngere Sechsjährige. Über 3 Stunden kippt die Stimmung; lieber einen klaren Schlusspunkt mit Truhen-Übergabe als auslaufen lassen."
-      },
-      {
-        "q": "Wie viele Kinder einladen?",
-        "a": "Faustregel 'Alter + 1' — also 7–9 Kinder bei einer Sieben-Jährigen. Ab 8 Kindern brauchst du verlässlich einen zweiten Erwachsenen, sonst rennt die Schatzsuche auseinander. Sweet Spot für die Standard-Variante sind 6 Kinder, ab Wow auch bis 8."
-      },
-      {
-        "q": "Was kostet ein Piraten-Geburtstag?",
-        "a": "Zwischen ~35 € (Minimal, 6 Kinder) und ~75 € (Wow, 6 Kinder ohne eigenes Kostüm). Standard landet bei ~59 €. Die meisten Posten — Schatzkarte, Schatztruhe, Flaschenpost — gehen aus Schuhkarton, Pergament-Papier und Bastelresten; das Geld steckt sinnvoller in Augenklappen, Goldmünzen und gutes Essen für hungrige 7-Jährige."
-      },
-      {
-        "q": "Funktioniert ein Piraten-Geburtstag auch drinnen?",
-        "a": "Ja, sogar besser. In der Wohnung gibt es mehr Verstecke als im Garten, und die Schatzsuche fühlt sich enger und spannender an. Parcours im Flur, Dosenwerfen im Wohnzimmer (auf Teppich, damit es nicht scheppert), Knotenkunde am Esstisch — alle Standard-Stationen laufen indoor. Bei der Schatzkarte mit Tee-Färbung eine alte Tischdecke oder Zeitungspapier unterlegen, die Flecken sind hartnäckig."
-      },
-      {
-        "q": "Müssen die Kinder verkleidet kommen?",
-        "a": "Nein, aber wenn ja, dann reicht 'Stirnband + alter dunkler Pulli'. In die Einladung schreiben: 'Komm in Piraten-Kleidung, wenn du magst — Augenklappe gibt's bei uns.' So fühlt sich kein Kind aus dem Rahmen, das ohne Kostüm kommt. Augenklappe und Bandana bekommen bei Ankunft eh alle — ab dann sind sowieso alle Piraten."
-      },
-      {
-        "q": "Was, wenn die Schatzsuche zu schnell vorbei ist?",
-        "a": "Stationen-Anzahl flexibel halten: 5 Stationen für Minimal, 7 für Standard, ein versteckter Bonus-Hinweis 'die Rivalen waren hier' für Wow. Reicht das nicht: vor der Truhen-Öffnung noch ein Kompass-Tanz-Spiel einbauen, das Kuchen-Slot 10 Minuten vorziehen. Lieber satt und ruhig zur Truhe als gestreckt mit quengelnden Piraten."
-      }
-    ],
     "variants": [
       {
         "id": "minimal",
@@ -46121,63 +41962,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "intro": "Der einfachste Piraten-Kuchen: Kastenkuchen + Segel",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Marmorkuchen oder Schoko-Kastenkuchen backen (Fertigmischung völlig okay)"
-        },
-        {
-          "n": 2,
-          "content": "Kürzen: ein Ende schräg abschneiden = Bug des Schiffes"
-        },
-        {
-          "n": 3,
-          "content": "Schoko-Glasur über den ganzen Kuchen = Schiffsrumpf"
-        },
-        {
-          "n": 4,
-          "content": "Segel: 2 Zahnstocher + weißes Papier (Dreieck ausschneiden, aufspießen)"
-        },
-        {
-          "n": 5,
-          "content": "Piratenflagge oben: schwarzes Papier, Totenkopf drauf malen"
-        }
-      ],
-      "meta": {
-        "aufwand": "45 Min",
-        "kosten": "~7 &euro;",
-        "allergiker": "Packung checken"
-      },
-      "tips": [
-        "Kuchen schon am Vortag backen, Deko erst am Partytag",
-        "Bei Kapitaensmuetze: aus Fondant pressen und 2h im Kuehlschrank stabilisieren",
-        "Pirat-Augenklappen aus dunkler Schokolade einfach mit Backpapier-Schablone formen"
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🚨 Allergien vorher abfragen",
-          "detail": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit. In die Einladung schreiben: „Hat dein Kind Allergien?“"
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Spiele funktionieren auch drinnen. Schatzsuche: Wohnung statt Garten. Parcours: Flur. Nie ohne Plan B."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Erstelle eine [WhatsApp-Partyseite](https://party.machsleicht.de). Adresse, Uhrzeit, Abholzeit — alles auf einer Seite. Kostenlos."
-        },
-        {
-          "topic": "🎯 Die „1 Helfer“-Regel",
-          "detail": "Ab 6 Kindern brauchst du mindestens 1 zweiten Erwachsenen. Alleine 6–8 aufgedrehte Piraten zu managen ist kein Spaß."
-        }
-      ],
-      "educationalValue": "Hinter den Spielen steckt mehr als Toben: Die Schatzsuche fordert echtes Kombinieren im Team, und weil der Schatz gemeinsam gefunden und fair geteilt wird, üben die Kinder Verantwortung füreinander statt reines Gewinnen — mit 6-8 die schwerste Lektion. Knotenkunde und Schatzkarte trainieren Geduld und Feinmotorik, der Parcours die Koordination. Die Pirate-Story trägt das: Wer zur Mannschaft gehört, hält zusammen und lässt keinen zurück. Crew-Geist, Durchhalten und Teilen — als Schatzjagd, nicht als Schulstunde."
-    },
-    "invitationTemplate": "🏴‍☠️ Interaktive Piraten-Einladung per WhatsApp\n\nIn 30 Sekunden fertig — mit Name, Datum und einem Piraten-Abenteuer als Vorgeschmack.\n[🏴‍☠️ Piraten-Einladung erstellen →](/einladung/erstellen?motto=piraten)\n\n[💬 Idee per WhatsApp teilen](https://wa.me/?text=Schau%20mal%3A%20Piraten-Abenteuer%20Kindergeburtstag%20f%C3%BCr%206%E2%80%938%20Jahre%20%E2%80%94%203%20fertige%20Party-Konzepte%20mit%20Schatzsuche%20und%20Einkaufsliste!%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Fpiraten-6-8-jahre)",
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Schatz-Karte zeichnen",
@@ -46538,14 +42322,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "piraten-gross": {
-    "_meta": {
-      "source_file": "kindergeburtstag/piraten-9-12-jahre.html",
-      "extracted": "2026-05-21",
-      "schema_version": "1.0",
-      "purpose": "Piraten 9-12 — Phase B Elite-Slot (Crew-Mission, kein Verkindischen, Codeknacker-Kern SCHATZ/INSEL/KOMPASS)",
-      "phase_b_complete": "2026-05-21",
-      "phase_b_method": "Writer-Subagent. Codeknacker SCHATZ/INSEL/KOMPASS (Minimal, echte Woerter, eindeutige Sortier-Regeln + Selbst-Check), BUCHT (Standard, Fremdkoerper-Logik), KAPERN (Wow 6 Stationen). Spezialisierungen Navigator/Quartiermeister/Spurenleser analog Safari-Pattern. Sorgfalt-Spezialist statt 1.-Pirat — kein Tempo-Stempel."
-    },
     "motto": "piraten",
     "ageGroup": "gross",
     "ageRange": [
@@ -46553,8 +42329,6 @@ var ELITE_MOTTO_DATA = {
       12
     ],
     "title": "🏴‍☠️ Piraten-Kindergeburtstag — 9–12 Jahre",
-    "metaDescription": "Piraten-Kindergeburtstag für 9-12-Jährige: 3 fertige Konzepte (Minimal/Standard/Wow) mit Codeknacker-Schatzsuche, Crew-Spezialisierungen, Zeitplan, Einkaufsliste und realistischen Kosten.",
-    "introParagraph": "Mit 9 bis 12 sind die Kinder raus aus der Schatzkarten-zum-Ausmalen-Phase. Sie wollen eine echte Mission: eine Crew, verschollene Schätze, eine Insel mit Koordinaten und Codes, die wirklich geknackt werden müssen. Hier bekommst du drei fertige Konzepte — von der schnellen Codeknacker-Schatzsuche bis zur kompletten Insel-Quest mit Schlafparty-Anschluss. Alle drei laufen über drei Spezialisierungen — Navigator, Quartiermeister, Spurenleser —, und die Codes ergeben echte Wörter mit eingebauter Selbstkontrolle, damit du am Vorabend nichts gegenrechnen musst.\n\n[Piraten-Geburtstag planen →](/kindergeburtstag?motto=piraten&alter=10#planer)",
     "ageInsight": {
       "headline": "Was 9–12-Jährige ausmacht — und was das für die Piraten-Party heißt",
       "traits": [
@@ -47622,122 +43396,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "intro": "Eine Schatzinsel-Torte, die 9-12-Jährige nicht zu kindisch finden: ein einfacher Rührkuchen als „Insel“ in einem „Meer“ aus blauem Guss, mit einer essbaren Schatzkarte aus Oblatenpapier obendrauf. Schmeckt vertraut, sieht nach Mission aus.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Rührteig anrühren: 250 g Mehl, 200 g Zucker, 200 g weiche Butter, 4 Eier, 1 Pck. Backpulver, 100 ml Milch glatt rühren."
-        },
-        {
-          "n": 2,
-          "content": "In eine runde Form (26 cm) füllen und bei 175 °C Ober-/Unterhitze ca. 45 Min. backen. Stäbchenprobe."
-        },
-        {
-          "n": 3,
-          "content": "Vollständig auskühlen lassen. Mit einem Messer eine grobe Inselform aus dem runden Kuchen schneiden (Rand bleibt als „Meer“-Untergrund)."
-        },
-        {
-          "n": 4,
-          "content": "Blauen Zuckerguss anrühren (Puderzucker + Wasser + blaue Lebensmittelfarbe) und das „Meer“ rund um die Insel gießen."
-        },
-        {
-          "n": 5,
-          "content": "Die Insel mit braunem Streusel/Kakao als „Strand und Felsen“ und ein paar grünen Streuseln als „Palmen“ gestalten."
-        },
-        {
-          "n": 6,
-          "content": "Eine essbare Schatzkarte auf Oblatenpapier (mit Lebensmittelstift, X markiert den Schatz) auflegen oder eine kleine Fähnchen-Flagge stecken."
-        },
-        {
-          "n": 7,
-          "content": "Bis zum Servieren kühl stellen, damit der Guss fest bleibt."
-        }
-      ],
-      "meta": {
-        "aufwand": "mittel — Backen einfach, das Insel-Schneiden und Verzieren braucht ~30 Min.",
-        "kosten": "ca. 8–10 € Zutaten",
-        "allergiker": "Enthält Gluten, Ei, Milch. Mehl 1:1 durch glutenfreie Mischung ersetzbar; Butter durch Margarine, Milch durch Hafermilch."
-      },
-      "tips": [
-        {
-          "title": "Keine Lust zu backen?",
-          "body": "Ein gekaufter runder Rührkuchen oder Sandkuchen lässt sich genauso zur Insel schneiden und mit blauem Guss „ins Meer“ setzen. Spart die Backzeit, der Effekt bleibt."
-        },
-        {
-          "title": "Pinterest-Warnung",
-          "body": "Die dreistöckigen Piratenschiff-Torten aus dem Netz sehen super aus und scheitern in echten Küchen reihenweise. Die flache Insel-Torte gelingt zuverlässig und beeindruckt diese Altersgruppe trotzdem — sie achten mehr auf die essbare Karte als auf Höhe."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🧭 Eine Regel reicht — sie wenden sie an",
-          "detail": "Erkläre jede Sortier-Regel genau einmal, dann lass los. 9-12-Jährige wollen selbst kombinieren; ständiges Nachhelfen nimmt ihnen den Erfolg. Bei Stillstand zuerst auf den Selbst-Check verweisen, nicht die Lösung verraten."
-        },
-        {
-          "topic": "👥 Ab 8 Kindern: drei Crews, ein Helfer",
-          "detail": "Bei 8–12 Kindern in drei Spezialisierungs-Crews aufteilen (je 3–4 Kinder). Ab 10 Kindern lohnt ein zweiter Erwachsener, der eine Station-Hälfte betreut, damit niemand wartet."
-        },
-        {
-          "topic": "🌧️ Plan B bei Regen",
-          "detail": "Alle Stationen und Codeknacker laufen drinnen genauso. Nur die Garten-Pirsch/Brandung verlegst du in den Flur (Slalom über Kissen). Die Nacht-Schatzsuche funktioniert im abgedunkelten Haus."
-        },
-        {
-          "topic": "⏱️ Kein Tempo-Druck",
-          "detail": "Belohne sichtbar Sorgfalt, nicht Geschwindigkeit — der „Sorgfalt-Spezialist“-Stempel ist bewusst gegen das „Wer-zuerst“-Reflex gesetzt. Eine Crew, die langsam aber genau arbeitet, soll sich gesehen fühlen."
-        },
-        {
-          "topic": "📱 Handys einsammeln — freundlich",
-          "detail": "Vor dem Start ein „Schiffs-Schließfach“ für Handys anbieten (Kiste mit Namen). Als Mission-Regel verpackt („an Bord kein Funkkontakt zur Außenwelt“) statt als Verbot — dann ziehen die meisten mit."
-        },
-        {
-          "topic": "🌙 Schlafparty nur mit Opt-In",
-          "detail": "Die Übernacht-Option vorher schriftlich mit allen Eltern klären (Schlafsack, Abholzeit am Morgen, Notfallnummern). Nicht jedes Kind will übernachten — ein Abhol-Zeitpunkt am Abend muss selbstverständlich möglich sein."
-        },
-        {
-          "topic": "Jahreszeit-Warnung Nacht-Schatzsuche",
-          "detail": "Nacht-Schatzsuche (Wow-Variante) NUR bei echter Dunkelheit. Sommer (Juni-August): erst ab 21:30 Uhr — entweder Abholzeit verschieben oder Indoor (abgedunkelter Keller). Winter: 17:30-19:00 Uhr ideal. Reflektor-Karten + Stirnlampen funktionieren nur bei <100 Lux Restlicht."
-        }
-      ],
-      "educationalValue": "Die Kinder üben ganz nebenbei echte Fähigkeiten: Koordinaten lesen, Werte sortieren und teilen, aus Hinweisen logisch eine Reihenfolge ableiten, echte Knoten binden und im Team eine mehrstufige Aufgabe koordinieren. Vor allem lernen sie, dass genaues Hinschauen und Zusammenarbeit weiter führen als Hektik — der Selbst-Check macht das spürbar: Wer schludert, liest Buchstabensalat; wer sorgfältig ist, liest ein Wort."
-    },
-    "invitationTemplate": "Für die Einladung passt der Ton der Mission: ein „Heuerbrief der Reederei“ statt einer bunten Kindereinladung. Kurz und ernst: Name der Crew, Datum als „Auslaufdatum“, Treffpunkt als „Hafen“, Bitte um Rückmeldung als „Musterung“. Bei Schlafparty den Hinweis auf Schlafsack und Abholung am Morgen ergänzen. Der Einladungs-Generator auf machsleicht baut dir daraus in zwei Minuten eine fertige Karte — inklusive passendem Heuerbrief-Text. [Einladung erstellen →](/einladung?motto=piraten&alter=10)",
-    "faq": [
-      {
-        "q": "Sind die Codeknacker-Rätsel nicht zu schwer für 9-Jährige?",
-        "a": "Nein, wenn du die ageAdjust9-Hinweise nutzt: weniger Items pro Quadrant und der Sortier-Pfeil liegt sichtbar daneben. Der eingebaute Selbst-Check fängt Fehler ab — ergibt sich kein echtes Wort, prüfen die Kinder selbst nach, statt zu raten. Für 12-Jährige drehst du über ageAdjust12 die Schwierigkeit hoch."
-      },
-      {
-        "q": "Was, wenn eine Crew bei einem Code feststeckt?",
-        "a": "Erst auf den Selbst-Check verweisen, dann darf eine andere Spezialisierung mitdenken — gelöst wird gemeinsam, niemand bleibt hängen. Im Notfall gibst du das Lösungswort als „Funkspruch der Reederei“ vor, die Kinder verifizieren es nur noch. Mehr dazu im SOS-Bereich „Codeknacker-Frust“."
-      },
-      {
-        "q": "Wie viele Kinder verträgt das Konzept?",
-        "a": "Ideal sind 8–10 Kinder in drei Crews; bis 12 für die Wow-Variante. Über 12 wird die Stations-Rotation chaotisch — dann besser zwei getrennte Crews mit eigenem Stations-Satz oder ein zweiter Erwachsener."
-      },
-      {
-        "q": "Muss ich für die Schatzkarte zeichnen können?",
-        "a": "Nein. Eine grobe Insel-Skizze mit Strand, Felsen, Palmen und Höhle reicht völlig — die Kinder achten auf die Codes, nicht auf die Kunst. Das Vollbeispiel im Codeknacker-Spiel kannst du 1:1 abmalen."
-      },
-      {
-        "q": "Lohnt sich die Schlafparty-Option?",
-        "a": "Wenn die Kinder sich kennen und die Eltern zustimmen, ist die Nacht-Schatzsuche mit Stirnlampen der Höhepunkt des Tages. Wichtig: vorher schriftlich klären, wer übernachtet, und einen Abhol-Zeitpunkt am Abend selbstverständlich anbieten."
-      },
-      {
-        "q": "Wie verhindere ich, dass die Crew nach dem Schatz die Lust verliert?",
-        "a": "Den Übergabe-Moment nicht ans Ende der Party setzen, sondern 20–30 Minuten Puffer für Auslaufen einplanen: Beute begutachten, Crew-Lizenz fertig schreiben, Fotos mit der Truhe. So bricht die Energie nicht abrupt ab, und die Übergabe wirkt wie ein Höhepunkt mit Nachklang statt wie ein Schlusspfiff. Bei der Wow-Variante leitet das Abendessen oder die Schlafparty den ruhigen Auslauf von selbst ein."
-      },
-      {
-        "q": "Soll ich Geschwister mit einplanen?",
-        "a": "Bei dieser Altersgruppe eher nicht. Jüngere Geschwister (3–7) verlieren den Anschluss an die Codes und stören die Konzentration der Großen — oder umgekehrt: Die 12-Jährigen reduzieren das Niveau auf den Kleinsten. Wenn es nicht anders geht, bekommt das Geschwisterkind die Logbuch-Rolle (Karten halten, Hinweise weiterreichen) und einen eigenen Erwachsenen-Kompass an die Seite."
-      },
-      {
-        "q": "Was, wenn ein Kind im Dunkeln Angst bekommt?",
-        "a": "Vor der Nacht-Schatzsuche die Route bei Licht einmal gemeinsam ablaufen — viele Ängste verfliegen, sobald die Kinder das Terrain im Hellen kennen. Während der Tour bleibt mindestens ein Erwachsener bei der Crew, und jedes Kind hat die eigene Stirnlampe direkt einschaltbereit. Will ein Kind nicht mitlaufen: am Lagerfeuer/Lichtspot bleiben mit einer aktiven Aufgabe wie 'Kartograph der Nacht-Route'. Kein Druck, niemand muss in den Garten."
-      }
-    ],
     "preparationWeeks": {
       "minus6Weeks": {
         "headline": "6 Wochen vorher — Rahmen setzen",
@@ -47979,46 +43637,11 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "prinzessin-klein": {
-    "_meta": {
-      "schemaVersion": "elite-v1",
-      "motto": "prinzessin",
-      "ageGroup": "klein",
-      "author": "machsleicht",
-      "primaryVerified": "Preise = Richtwerte (Amazon/Drogerie 2026, 'ca.'); Sicherheit: keine Kleinteile unter 3, weiche Materialien, kurze Spielzeiten, alles unter Aufsicht."
-    },
     "motto": "Prinzessin",
     "ageGroup": "klein",
     "ageRange": "3–5 Jahre",
     "title": "Prinzessinnen-Kindergeburtstag (3–5 Jahre) — Spiele, Ablauf & Deko",
-    "metaDescription": "Prinzessinnen-Geburtstag für 3–5-Jährige: kurzer, liebevoller Ablauf, einfache Spiele mit Anleitung, Deko und Einkaufsliste mit Richtpreisen. Schnell geplant.",
-    "introParagraph": "Für die Kleinsten ist Prinzessin pures Strahlen: eine Krone aufsetzen, im Umhang durchs Zimmer wirbeln, ein bisschen zaubern. 3–5-Jährige brauchen kurze, einfache Spiele, viel Wiederholung und keine Verlierer. Unten findest du drei fertige Abläufe (Minimal, Standard, Wow) mit kindgerechten Spielen, Deko und einer Einkaufsliste mit Richtpreisen — zauberhaft und entspannt.",
     "ageInsight": "3–5-Jährige lieben am Prinzessinnen-Motto vor allem das Verkleiden und einfache Magie — komplizierte Regeln oder Wettbewerb überfordern sie. Halte Spiele unter 15 Minuten, ohne Ausscheiden, mit klarem Anfang und Ende. Viele wollen lieber zuschauen oder kuscheln als 'gewinnen' — das ist völlig okay. Keine Kleinteile (Verschluckungsgefahr), keine spitzen Bastelmaterialien. Eine erwachsene Begleitperson pro 3–4 Kinder ist Gold wert.",
-    "faq": [
-      {
-        "q": "Wie lange sollte der Geburtstag für 3–5-Jährige dauern?",
-        "a": "2 Stunden sind genug. Kleine Kinder ermüden schnell — lieber kurz und schön als lang und überdreht. Die Minimal-Variante passt perfekt."
-      },
-      {
-        "q": "Ist Prinzessin nur etwas für Mädchen?",
-        "a": "Nein. Auch kleine Kinder feiern gern königlich — Krone und Umhang für alle, egal ob Prinzessin oder Prinz. Kündige ein 'königliches Fest' an."
-      },
-      {
-        "q": "Was, wenn ein Kind nicht mitmacht?",
-        "a": "Völlig normal in dem Alter. Kein Zwang — zuschauen, auf dem Schoß sitzen oder einfach die Krone tragen ist auch Mitfeiern. Spiele ohne Ausscheiden wählen."
-      },
-      {
-        "q": "Welche Spiele eignen sich für so kleine Kinder?",
-        "a": "Einfache Bewegungsspiele (Tanz mit Einfrieren), Krönchen-Suchen, Sterne basteln zum Aufkleben. Alles mit klarem Anfang/Ende und ohne komplizierte Regeln."
-      },
-      {
-        "q": "Worauf muss ich bei der Sicherheit achten?",
-        "a": "Keine Kleinteile (Perlen, kleine Schmuckstücke) in Reichweite — Verschluckungsgefahr. Weiche Materialien, stumpfe Bastelsachen, immer Aufsicht. Schminke nur hautverträglich und auf Wunsch."
-      },
-      {
-        "q": "Was kostet so ein Geburtstag ungefähr?",
-        "a": "Minimal ab ~30 €, Standard ~50 €, Wow ~65 € für 6 Kinder. Kronen aus Bastelkarton selber machen spart am meisten."
-      }
-    ],
     "variants": [
       {
         "id": "minimal",
@@ -48715,59 +44338,6 @@ var ELITE_MOTTO_DATA = {
         "costContext": "ca. 65 € für 6 Kinder · ~10,83 € pro Kind"
       }
     ],
-    "cakeRecipe": {
-      "intro": "Für die Kleinsten ist eine einfache rosa Torte oder Krönchen-Cupcakes ideal — nicht zu süß, mundgerecht, mit einem Krönchen obendrauf. Plant ~45 Min Backzeit plus Dekorieren.",
-      "steps": [
-        {
-          "n": 1,
-          "name": "Boden/Muffins backen",
-          "content": "Einfacher Rührteig (250g Mehl, 180g Zucker, 4 Eier, 200g weiche Butter, 1 Pck. Backpulver, etwas Milch). Als runde Torte (175°C, ~40 Min) oder als Muffins (~20 Min)."
-        },
-        {
-          "n": 2,
-          "name": "Auskühlen",
-          "content": "Komplett auskühlen lassen."
-        },
-        {
-          "n": 3,
-          "name": "Rosa verzieren",
-          "content": "Mit rosa Frischkäse-Creme oder Zuckerguss bestreichen. Nicht zu süß für kleine Mägen."
-        },
-        {
-          "n": 4,
-          "name": "Krönchen drauf",
-          "content": "Ein kleines Papier-Krönchen oder eine essbare Streusel-Krone aufsetzen — fertig."
-        }
-      ],
-      "meta": "Aufwand: niedrig · Vorlaufzeit: 1,5 Std inkl. Auskühlen · Krönchen-Cupcakes sind am einfachsten zu verteilen.",
-      "tips": "Für 3–5-Jährige sind einzelne Cupcakes praktischer als Torte — kein Schneiden, jedes Kind bekommt sein eigenes Krönchen-Küchlein. Auf zu viel Zucker und harte Deko (kleine Perlen) verzichten."
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "Kurz halten",
-          "detail": "3–5-Jährige ermüden schnell. 2 bis 2,5 Stunden reichen völlig. Lieber ein Spiel weglassen als die Kinder überdrehen lassen."
-        },
-        {
-          "topic": "Keine Verlierer",
-          "detail": "In dem Alter keine Ausscheide-Spiele und kein Wettbewerb. Jedes Spiel mit klarem Anfang/Ende, alle gewinnen, alle finden etwas — sonst gibt es Tränen."
-        },
-        {
-          "topic": "Sicherheit zuerst",
-          "detail": "Keine verschluckbaren Kleinteile (Perlen, kleine Schmuckstücke) in Reichweite, stumpfe Bastelsachen, weiche Materialien. Glitzer-Tattoos statt Schminke, und nur nach Absprache mit den Eltern."
-        },
-        {
-          "topic": "Genug Begleitung",
-          "detail": "Eine erwachsene Person pro 3–4 Kinder. Kleine Kinder brauchen Hilfe beim Basteln, Trösten und auf der Toilette — allein ist das kaum zu schaffen."
-        },
-        {
-          "topic": "Mitmachen ist freiwillig",
-          "detail": "Manche Kinder wollen lieber zuschauen, kuscheln oder einfach nur die Krone tragen. Das ist völlig okay — kein Kind zum Mitspielen drängen."
-        }
-      ],
-      "educationalValue": "Prinzessinnen-Spiele für die Kleinsten fördern erste Grobmotorik (Tanzen, Parcours), Feinmotorik (Sticker kleben) und vor allem Fantasie und Rollenspiel. Das gemeinsame Suchen und das 'Helfen' (dem Drachen) stärken soziales Miteinander, und die klare, wettbewerbsfreie Struktur gibt kleinen Kindern Sicherheit und Erfolgserlebnisse."
-    },
-    "invitationTemplate": "👑 EINLADUNG ZUM ZAUBERFEST 👑\n\n[NAME] wird [ALTER] und feiert ein königliches Fest!\n\n🗓️ Wann: [DATUM], [UHRZEIT]\n📍 Wo: [ORT]\n✨ Krone und Umhang gibt's bei uns — komm einfach, wie du magst.\n\nBitte sag uns bis [FRIST] kurz Bescheid, ob du dabei bist.\n\nWir freuen uns riesig auf dich! 💖",
     "preparationWeeks": [
       {
         "week": "3 Wochen vorher",
@@ -48829,46 +44399,11 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "prinzessin-mittel": {
-    "_meta": {
-      "schemaVersion": "elite-v1",
-      "motto": "prinzessin",
-      "ageGroup": "mittel",
-      "author": "machsleicht",
-      "primaryVerified": "Preise = Richtwerte (Amazon/Drogerie 2026, 'ca.'); Sicherheit nach Kinderparty-Praxis (weiche Materialien, Tanzfläche frei, Bastelaufsicht)."
-    },
     "motto": "Prinzessin",
     "ageGroup": "mittel",
     "ageRange": "6–8 Jahre",
     "title": "Prinzessinnen-Kindergeburtstag (6–8 Jahre) — Spiele, Ablauf & Deko",
-    "metaDescription": "Prinzessinnen-Geburtstag für 6–8-Jährige: fertiger königlicher Ablauf, Spiele mit Anleitung, Deko-Ideen und Einkaufsliste mit Richtpreisen. In Minuten geplant.",
-    "introParagraph": "Krönchen auf, Tüll an — heute regiert deine Crew das Schloss. Für 6–8-Jährige ist Prinzessin ein Traummotto: viel Verwandlung, klare Rollen, eine Mischung aus zauberhaft und aktiv. Unten findest du drei fertige Abläufe (Minimal, Standard, Wow) mit Spielen inklusive Anleitung, Deko und einer Einkaufsliste mit Richtpreisen — königlich und ohne Stress.",
     "ageInsight": "6–8-Jährige lieben am Prinzessinnen-Motto die Verwandlung (Krone, Umhang, Schmuck) UND die Aktion — reines 'schön sein' wird schnell langweilig. Mix aus zauberhaft (Krone basteln, Zauberstab) und Bewegung (Krönungs-Parcours, Tanz, Drachen besiegen) hält alle bei Laune. Wichtig: inklusiv halten — 'Prinzessin ODER Prinz', königliche Helden für alle. Eine kleine Geschichte (der Drache hat die Krone gestohlen) gibt der Party einen roten Faden.",
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Prinzessinnen-Geburtstag dauern?",
-        "a": "2,5 bis 3 Stunden sind für 6–8-Jährige ideal. Die Standard-Variante mit Krönung, Schatzsuche und Drachen-Spiel füllt das Fenster ohne Leerlauf."
-      },
-      {
-        "q": "Ist das nur etwas für Mädchen?",
-        "a": "Nein. Königlich feiern können alle — Prinzessin und Prinz, Ritter und Königin. Kündige es neutral an ('königliches Fest') und biete Kronen wie Umhänge für alle."
-      },
-      {
-        "q": "Wird es nicht zu ruhig/langweilig?",
-        "a": "Nur, wenn man es rein auf 'schön sein' auslegt. Mit Krönungs-Parcours, Tanzspiel und einem Drachen, der die Krone geklaut hat, ist genug Action drin."
-      },
-      {
-        "q": "Geht das auch in der Wohnung?",
-        "a": "Perfekt sogar — Schloss-Schatzsuche durch die Zimmer, Tanzspiel im Wohnzimmer, Krone basteln am Tisch. Bei den Bewegungsspielen Platz schaffen."
-      },
-      {
-        "q": "Was, wenn ein Kind nicht tanzen will?",
-        "a": "Kein Zwang — beim Standbild-Tanz kann man auch lustige Posen machen statt tanzen. Oder das Kind übernimmt die 'Musik-Königin' und stoppt die Musik."
-      },
-      {
-        "q": "Was kostet ein Prinzessinnen-Geburtstag ungefähr?",
-        "a": "Minimal ab ~40 €, Standard ~69 €, Wow ~86 € für 8 Kinder. Kronen aus Goldkarton selbst basteln statt kaufen spart am meisten."
-      }
-    ],
     "variants": [
       {
         "id": "minimal",
@@ -49691,59 +45226,6 @@ var ELITE_MOTTO_DATA = {
         "costContext": "ca. 86 € für 8 Kinder · ~10,75 € pro Kind"
       }
     ],
-    "cakeRecipe": {
-      "intro": "Die Prinzessinnen-Torte ist einfacher, als sie wirkt: ein rosa eingedeckter Rührkuchen mit einer essbaren Krone oder einem Schloss-Topper. Plant ~45 Min Backzeit plus Dekorieren.",
-      "steps": [
-        {
-          "n": 1,
-          "name": "Boden backen",
-          "content": "Einfacher Rührkuchen (250g Mehl, 200g Zucker, 4 Eier, 200g weiche Butter, 1 Pck. Backpulver, etwas Milch). 175°C, ca. 40–45 Min. Rund oder als 'Schloss' in einer hohen Form."
-        },
-        {
-          "n": 2,
-          "name": "Auskühlen",
-          "content": "Vollständig auskühlen lassen, Oberseite glätten."
-        },
-        {
-          "n": 3,
-          "name": "Rosa eindecken",
-          "content": "Mit rosa Zuckerguss oder Fondant überziehen, optional goldene Zuckerperlen am Rand."
-        },
-        {
-          "n": 4,
-          "name": "Krone aufsetzen",
-          "content": "Eine kleine essbare/Papier-Krone oder einen Schloss-Topper mittig aufsetzen — fertig ist die königliche Torte."
-        }
-      ],
-      "meta": "Aufwand: mittel · Vorlaufzeit: 1,5 Std inkl. Auskühlen · als rosa Cupcakes mit Krönchen-Toppern noch schneller.",
-      "tips": "Stressfreiste Variante: rosa Cupcakes mit aufgesteckten Mini-Kronen-Toppern — leicht zu verteilen, kein Schneiden. Wer Torte macht: gekaufter Fondant in Rosa spart viel Zeit."
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "Zauberhaft UND aktiv",
-          "detail": "Reines 'schön sein' langweilt nach 20 Minuten. Mische Verwandlung (Krone, Schminke) mit Bewegung (Parcours, Drache, Tanz) — der Wechsel hält alle bei Laune."
-        },
-        {
-          "topic": "Inklusiv ankündigen",
-          "detail": "Königlich feiern können alle. Sag 'königliches Fest' statt nur 'Prinzessin', biete Kronen wie Umhänge für jedes Kind — so fühlt sich niemand ausgeschlossen."
-        },
-        {
-          "topic": "Roter Faden Drache",
-          "detail": "Eine kleine Geschichte (der Drache hat die Krone gestohlen) verbindet die Spiele zu einem Abenteuer und gibt jedem Spiel einen Grund — das macht aus Einzelspielen ein Erlebnis."
-        },
-        {
-          "topic": "Schminke vorher abfragen",
-          "detail": "Bei der Verwandlungs-Station nur hautverträgliche Kinderschminke nutzen und vorab Allergien/Wünsche der Eltern abfragen. Kein Zwang — Krone allein reicht auch."
-        },
-        {
-          "topic": "Laut-leise-Rhythmus",
-          "detail": "Nach Parcours und Drache je eine ruhige Station (Basteln, Schatzsuche-Rätsel). Der Wechsel verhindert Überdrehtheit gegen Ende."
-        }
-      ],
-      "educationalValue": "Prinzessinnen-Spiele fördern Fein- und Grobmotorik (Balance, Basteln, Werfen), Rollenspiel und Fantasie sowie Mut (Drachen-Abenteuer) in einem sicheren Rahmen. Die inklusive Gestaltung ('königlich für alle') und das gemeinsame Befreien der Krone stärken Zusammenhalt — niemand verliert, alle feiern zusammen."
-    },
-    "invitationTemplate": "👑 EINLADUNG ZUM KÖNIGLICHEN FEST 👑\n\nDas Schloss öffnet seine Tore: [NAME] wird [ALTER] und lädt dich zum großen Königsfest!\n\n🗓️ Wann: [DATUM], [UHRZEIT]\n📍 Wo (im Schloss): [ORT]\n✨ Komm königlich — Krone und Umhang gibt's bei uns.\n\nBitte gib bis [FRIST] Bescheid, ob du mitfeierst.\n\nWir freuen uns auf dich, königliche Hoheit! 💖",
     "preparationWeeks": [
       {
         "week": "3 Wochen vorher",
@@ -49805,46 +45287,11 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "prinzessin-gross": {
-    "_meta": {
-      "schemaVersion": "elite-v1",
-      "motto": "prinzessin",
-      "ageGroup": "gross",
-      "author": "machsleicht",
-      "primaryVerified": "Preise = Richtwerte (Amazon/Drogerie 2026, 'ca.'); Spiele auf 9–12 ausgelegt (Rätsel, Wettkampf, Eigenständigkeit), Sicherheit nach Kinderparty-Praxis."
-    },
     "motto": "Prinzessin",
     "ageGroup": "gross",
     "ageRange": "9–12 Jahre",
     "title": "Prinzessinnen-Kindergeburtstag (9–12 Jahre) — Spiele, Ablauf & Deko",
-    "metaDescription": "Königlicher Geburtstag für 9–12-Jährige: Escape-Rätsel, royaler Wettkampf, Mystery-Story, fertiger Ablauf & Einkaufsliste mit Richtpreisen. Kein Kleinkind-Kitsch.",
-    "introParagraph": "Mit 9–12 ist 'Prinzessin' kein Kleinkind-Kitsch mehr — jetzt geht es um ein königliches Mystery: Wer hat die Kronjuwelen gestohlen? Größere Kinder wollen echte Rätsel, Wettkampf und Eigenständigkeit. Unten findest du drei fertige Abläufe (Minimal, Standard, Wow) mit Escape-Aufgaben, einem royalen Wettkampf und einer durchgehenden Detektiv-Story — anspruchsvoll, modern und ohne Babykram.",
     "ageInsight": "9–12-Jährige durchschauen 'Krönchen aufsetzen und tanzen' sofort als zu kindlich. Was zieht: eine echte Mystery-Story (Juwelendiebstahl im Schloss), Rätsel mit Köpfchen (Codes, Logik), Wettkampf in Teams und Gestaltungsfreiheit. Sie wollen ernst genommen werden — gib ihnen Verantwortung (Hofstaat-Rollen: Hofdetektivin, Schatzmeister) und echte Herausforderungen. Deko darf eleganter/cooler sein (Schwarz-Gold statt Rosa-Tüll), wenn die Gruppe das möchte.",
-    "faq": [
-      {
-        "q": "Sind 9–12-Jährige nicht zu alt für Prinzessin?",
-        "a": "Nicht, wenn man es richtig aufzieht. Als königliches Mystery (Juwelendiebstahl), mit Escape-Rätseln und Wettkampf statt 'schön sein' funktioniert das Motto auch für Große bestens."
-      },
-      {
-        "q": "Wie lange sollte die Party dauern?",
-        "a": "3 bis 3,5 Stunden. Größere Kinder halten länger durch und brauchen für die Rätsel-Story auch Zeit. Die Standard- oder Wow-Variante füllt das gut."
-      },
-      {
-        "q": "Ist das nur etwas für Mädchen?",
-        "a": "Nein. Als 'königliches Hofstaat-Mystery' mit Detektiv-Rollen feiern alle mit — Prinzessin, Prinz, Hofdetektiv. Neutral als 'Schloss-Mystery' ankündigen."
-      },
-      {
-        "q": "Wie mache ich Rätsel, die nicht zu leicht sind?",
-        "a": "Echte Codes (Caesar-Verschiebung, Spiegelschrift), Logik-Rätsel und ein Zahlenschloss, das geknackt werden muss. Für 9–12 dürfen sie kniffeln müssen — das ist der Reiz."
-      },
-      {
-        "q": "Was, wenn die Gruppe sehr unterschiedlich alt ist?",
-        "a": "Teams mischen (Große helfen Kleineren) oder Rätsel mit gestaffelten Hinweisen anbieten. Bei großem Altersmix lieber die Standard- statt Wow-Rätsel."
-      },
-      {
-        "q": "Was kostet so ein Geburtstag ungefähr?",
-        "a": "Minimal ab ~37 €, Standard ~66 €, Wow ~83 € für 8 Kinder. Rätsel und Story selbst gestalten kostet vor allem Zeit, kaum Geld."
-      }
-    ],
     "variants": [
       {
         "id": "minimal",
@@ -50489,59 +45936,6 @@ var ELITE_MOTTO_DATA = {
         "costContext": "ca. 83 € für 8 Kinder · ~10,38 € pro Kind"
       }
     ],
-    "cakeRecipe": {
-      "intro": "Für die Großen darf die Torte eleganter sein: eine 'Kronjuwelen'-Torte in Schwarz-Gold/Lila mit essbaren 'Edelsteinen' (Zucker-Diamanten) — oder eine schnelle, coole Variante als Drip-Cake. Plant ~45 Min Backzeit plus Dekorieren.",
-      "steps": [
-        {
-          "n": 1,
-          "name": "Boden backen",
-          "content": "Rührkuchen (250g Mehl, 200g Zucker, 4 Eier, 200g Butter, 1 Pck. Backpulver) oder Schokoboden. 175°C, ~40–45 Min."
-        },
-        {
-          "n": 2,
-          "name": "Auskühlen & füllen",
-          "content": "Auskühlen, ggf. mit Creme füllen für Höhe."
-        },
-        {
-          "n": 3,
-          "name": "Elegant eindecken",
-          "content": "Mit dunkler Ganache oder lila Creme überziehen, optional Gold-Drip (essbare Goldfarbe/Karamell)."
-        },
-        {
-          "n": 4,
-          "name": "Juwelen drauf",
-          "content": "Essbare Zucker-Edelsteine oder Gold-Perlen aufsetzen — fertig ist die Kronjuwelen-Torte."
-        }
-      ],
-      "meta": "Aufwand: mittel · Vorlaufzeit: 1,5 Std inkl. Auskühlen · Drip-Cake mit Gold-Perlen wirkt edel und ist machbar.",
-      "tips": "9–12-Jährige finden Zucker-'Diamanten' und Gold-Drip cool statt kitschig. Wer es einfach mag: gekaufte dunkle Ganache + ein paar essbare Gold-Perlen reichen für den Wow-Effekt."
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "Story statt Kitsch",
-          "detail": "Mit 9–12 zieht eine echte Mystery-Story (Juwelendiebstahl) tausendmal mehr als 'schön sein'. Gib der Party einen Krimi-Plot mit Anfang, Ermittlung und Auflösung."
-        },
-        {
-          "topic": "Echte Rätsel",
-          "detail": "Codes (Caesar, Spiegel), Logik und ein Zahlenschloss dürfen fordern. Lieber zu schwer mit Tipp-Karten als zu leicht — die Großen wollen kniffeln und sich den Erfolg verdienen."
-        },
-        {
-          "topic": "Verantwortung geben",
-          "detail": "Hofstaat-Rollen (Hofdetektivin, Schatzmeister) nehmen die Kinder ernst. Wer eine Rolle hat, ist engagierter dabei als bei anonymem Mitspielen."
-        },
-        {
-          "topic": "Eleganter Look erlaubt",
-          "detail": "Frag die Gruppe: viele 9–12-Jährige finden Schwarz-Gold/Lila cooler als Rosa-Tüll. Den Look an die Kinder anpassen, nicht ans Klischee."
-        },
-        {
-          "topic": "Niemanden blamieren",
-          "detail": "Beim Wettkampf und der Auflösung auf fairen Ausgleich achten — kein Team abhängen, niemand soll als 'der Dumme' dastehen, der den Fall nicht gelöst hat. Das Team gewinnt gemeinsam."
-        }
-      ],
-      "educationalValue": "Das Schloss-Mystery fördert bei 9–12-Jährigen logisches Denken und Kombinationsgabe (Codes, Indizien), Teamarbeit und Kommunikation (gemeinsames Lösen, Befragung) sowie Selbstwirksamkeit — sie lösen einen 'echten' Fall eigenständig. Der royale Wettkampf bringt Bewegung und fairen Ehrgeiz, und die Rollen stärken Verantwortungsgefühl. Anspruchsvoll genug, um ernst genommen zu werden."
-    },
-    "invitationTemplate": "👑🔍 EINLADUNG: DAS SCHLOSS-MYSTERY 🔍👑\n\nIm Schloss von [NAME] wurden die Kronjuwelen gestohlen — und WIR lösen den Fall!\n\nZum [ALTER]. Geburtstag wird ermittelt: Codes knacken, Verdächtige befragen, den Dieb überführen.\n\n🗓️ Wann: [DATUM], [UHRZEIT]\n📍 Tatort: [ORT]\n🕵️ Bring deinen Spürsinn mit — Hofstaat-Rolle gibt's vor Ort.\n\nBitte gib bis [FRIST] Bescheid, ob du im Ermittler-Team bist.\n\nDer Fall wartet auf dich! 💎",
     "preparationWeeks": [
       {
         "week": "3 Wochen vorher",
@@ -50604,11 +45998,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "ritter-klein": {
-    "_meta": {
-      "version": "2.0.0",
-      "lastUpdated": "2026-05-26",
-      "qualityNote": "v2 — Helfer-v3-Welle 1A+1B+1C+1D+1E abgeschlossen. Adversarial-Review-Scores: Pferde 87/100, Ritter 88/100 (Welle 3V). Beide Mottos ≥85 Ziel erreicht."
-    },
     "motto": "ritter",
     "ageGroup": "klein",
     "ageRange": [
@@ -50616,8 +46005,6 @@ var ELITE_MOTTO_DATA = {
       5
     ],
     "title": "⚔️ Ritter-Kindergeburtstag — 3–5 Jahre",
-    "metaDescription": "Ritter-Kindergeburtstag für 3-5-Jährige als kleiner Burg-Tag: 3 fertige Konzepte mit Schild-Bemalen, weichen Pool-Nudel-Schwertern, Drachen-Wurf und Königs-Krönung. Kostenlos.",
-    "introParagraph": "Dein Kind wird 3, 4 oder 5 und will Ritter sein? Hier sind drei fertige Burg-Konzepte, die ohne harte Schwerter funktionieren. Wichtig vorab: 3-5-Jährige brauchen keine echte Burg. Was funktioniert: Wappen-Schilder bemalen, mit Pool-Nudel-Schwertern sanft kämpfen, einen Stoff-Drachen besiegen und am Ende zur Königin/zum König gekrönt werden.",
     "ageInsight": {
       "headline": "Was 3–5-Jährige am Ritter-Motto fesselt",
       "whyMottoFitsHeadline": "Ritter = klare Rolle, sichtbares Symbol, einfache Aufgabe",
@@ -51580,123 +46967,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "name": "Burg-Kuchen mit Türmen",
-      "intro": "Burg-thematischer Kuchen: ein einfacher Kastenkuchen mit kleinen Waffel-Türmchen darauf und einem Schwert aus Zuckerguss als Highlight. Sieht aus wie eine Mini-Burg, schmeckt nach saftigem Geburtstagskuchen.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Marmor-Rührteig anrühren (250 g Mehl, 200 g Butter, 150 g Zucker, 4 Eier, 1 Pck. Backpulver). Hälfte mit 2 EL Kakao dunkel färben."
-        },
-        {
-          "n": 2,
-          "content": "Hellen und dunklen Teig abwechselnd in eine Kastenform geben. Mit Gabel einmal spiralig durchziehen."
-        },
-        {
-          "n": 3,
-          "content": "Bei 175 °C ca. 50–55 Minuten backen (Stäbchenprobe)."
-        },
-        {
-          "n": 4,
-          "content": "Komplett auskühlen lassen. Mit Schokoglasur überziehen — das ist die 'Burgmauer'."
-        },
-        {
-          "n": 5,
-          "content": "Aus Eistüten oder Waffel-Hörnchen 4 'Türme' auf den Kuchen stellen — als Burg-Ecken."
-        },
-        {
-          "n": 6,
-          "content": "Aus Puderzucker einen weißen Zuckerguss anrühren. Damit ein Schwert (oder Kreuz) auf die Burg-Front zeichnen."
-        },
-        {
-          "n": 7,
-          "content": "Optional: Mini-Marzipan-Ritter draufsetzen, oder Goldfolie-Kronen aus Esspapier."
-        }
-      ],
-      "meta": {
-        "aufwand": "60 Min. inkl. Backen + 15 Min. Deko",
-        "kosten": "ca. 7-9 €",
-        "allergiker": "Fertigmischungen oft allergenärmer. Waffel-Türme können Gluten/Soja enthalten — bei Allergikern auf glutenfreie Eistüten ausweichen."
-      },
-      "tips": [
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Bäcker-Kastenkuchen + Schokoglasur drüber + Waffel-Türme aufsetzen = 5 Min. Niemand merkt's."
-        },
-        {
-          "title": "⚔️ Pinterest-Falle vermeiden",
-          "body": "Pinterest zeigt 4-stündige Fondant-Burg-Türme mit beweglichen Zugbrücken. Für 3-5 Jahre ist das Overkill — sie wollen den Kuchen essen, nicht bestaunen. Ein einfacher Kastenkuchen mit 4 umgekehrten Eishörnchen als Türme reicht voll. Sieht trotzdem nach Burg aus."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🥜 Allergien VOR der Party abfragen",
-          "detail": "Schokokuchen, Waffeln, Brezeln — alle gängigen Allergene möglich. Frage nach und plane glutenfreie/laktosefreie Alternativen."
-        },
-        {
-          "topic": "⚔️ Schwert-Sicherheit ist alles",
-          "detail": "POOL-NUDEL ist die einzige sichere Schwert-Option für 3-5. KEIN Holz, KEIN Plastik mit Kanten. Regel: Schwert trifft nur Polster/Schild, nie Körper. Bei Verstoß: Pause."
-        },
-        {
-          "topic": "🐉 Niemand verliert",
-          "detail": "Bei 3-5 keinen einzelnen 'Sieger' bestimmen. Drache wird gemeinsam besiegt, Burg gemeinsam erstürmt, alle gemeinsam gekrönt. Wettkampf zerstört die Stimmung."
-        },
-        {
-          "topic": "👥 Ab 8 Kindern zweite Hand",
-          "detail": "Bei 8+ Kindern brauchst du eine zweite erwachsene Begleitung — vor allem für Schwert-Akademie und Burg-Erstürmung."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Spiele funktionieren komplett drinnen. Wappen-Schmücken am Tisch, Schwert-Übung im Flur, Burg-Erstürmung im Wohnzimmer."
-        },
-        {
-          "topic": "⏱️ Aktion-Pause-Wechsel",
-          "detail": "Nach 10 Min Bewegung: 15 Min Sitz-Aktivität (Schild bemalen, Snack-Pause). Sonst überdreht."
-        },
-        {
-          "topic": "🕯️ NIEMALS echte Flammen",
-          "detail": "Mittelalter-Atmosphäre nur mit LED-Kerzen + LED-Fackeln. Echte Kerzen oder Fackeln sind bei einer 3-5-Kinderparty fahrlässig — Pappschilde, Stoff-Drache, Strohballen sind brennbar. Akku-LED-Fackeln gibt es ab 3 € pro Stück."
-        },
-        {
-          "topic": "🪑 Nachbarn vorwarnen bei Mietwohnung",
-          "detail": "Burg-Erstürmung mit Pool-Nudel-Schwert-Klatschen wird LAUT. Bei Mietshaus: Nachbarn vorher kurz informieren und ggf. ein Stück Kuchen vorbeibringen. Spart Beschwerden."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite. Kostenlos."
-        }
-      ],
-      "educationalValue": "Bei der Ritter-Party üben Kinder ganz nebenbei: Rolle annehmen und stolz sein (Ritter-Identität als Selbstwert), sanfte Bewegung (Schwertkampf-Regeln = Selbstkontrolle), Teamwork (gemeinsamer Drachen-Sieg, gemeinsame Burg-Erstürmung) und Selbstvertrauen (jeder wird gekrönt). Plus: die Wappen-Bastelei trainiert Feinmotorik und Farbsinn."
-    },
-    "invitationTemplate": "⚔️ Burg-Einladung per WhatsApp: 'Hört, hört! [Name] wird [Alter] und lädt zum Burg-Tag! Wann: [Datum, Uhrzeit]. Wo: [Adresse]. Mitbringen: Mut und Helm-Stimmung. Schild, Schwert und Krone gibts vor Ort! Bitte bis [Datum] melden. Für Burg und Krone! ⚔️'",
-    "faq": [
-      {
-        "q": "Brauche ich echte Burg-Materialien oder Verkleidungen?",
-        "a": "Nein. Pappkarton-Schilde + Pool-Nudel-Schwerter sind die kindgerechte (und sicherere) Variante. Echte Plastik-Schwerter sind oft zu hart und können verletzen."
-      },
-      {
-        "q": "Ist Schwertkampf nicht zu wild für 3-5?",
-        "a": "Mit Pool-Nudeln und der Regel 'Schwert trifft nur Polster' ist es völlig sicher und lustig. 3-Jährige sollten beobachten oder am Polster üben — nicht gegeneinander."
-      },
-      {
-        "q": "Was wenn ein Kind Angst vor dem Drachen hat?",
-        "a": "Ein großer Plüsch-Drache erschreckt kaum — er liegt einfach da. Falls doch: zur 'Drachen-Freund'-Rolle umfunktionieren ('Wir helfen dem Drachen, sein Schatz-Versteck zu finden')."
-      },
-      {
-        "q": "Wie macht man eine Pappkarton-Krone?",
-        "a": "Streifen aus festem Pappkarton (ca. 8 cm hoch x 50 cm lang), mit Zackenmuster oben, Goldfolie aufkleben, am Kopf des Kindes zusammentackern (mit weichem Tacker, NICHT von Kind selbst). 10 Min Vorbereitung pro Krone."
-      },
-      {
-        "q": "Ist Burg-Erstürmung nicht zu wild für 3-Jährige?",
-        "a": "Nicht wenn die Burg max 1m hoch ist (Kissen!) und niemand klettert. Es ist sanftes Umwerfen, kein Klettern. Bei sehr ängstlichen 3-Jährigen: 'Mauer-Klatscher' als Alternative — Burg wird mit Händen umgeworfen, ohne Bälle."
-      },
-      {
-        "q": "Was, wenn ein Kind nicht gekrönt werden will?",
-        "a": "Krone in die Hand legen, nicht aufsetzen. Manche 3-Jährige mögen keinen Kopfschmuck. Mit Krone in der Hand ist es trotzdem 'Krönung'."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst",
@@ -51942,49 +47212,9 @@ var ELITE_MOTTO_DATA = {
         "fallback": "Bei totalem Material-Ausfall: eine kreative Bastel-Phase mit Stiften + Pappe als Kern-Aktivität. Funktioniert immer.",
         "tone": "pragmatisch"
       }
-    },
-    "bonusGames": {
-      "intro": "Bonus-Spiele für die kleine Ritter-Krönung — alle 3-5-tauglich, ergänzen die Standard-Stationen.",
-      "items": [
-        {
-          "name": "👑 Königs-Standbild",
-          "duration": 8,
-          "minAge": 3,
-          "loudness": "mittel",
-          "indoor": true,
-          "outdoor": true,
-          "material": "Musik (Mittelalter-Playlist oder beliebige Kinderlieder)",
-          "anleitung": "Wie \"Reise nach Jerusalem\" aber Stand-Version: Musik läuft, Kinder tanzen wie Ritter. Stopp → erstarren als Statue. Wer wackelt, wird zum König gekrönt (Krone aus Pappkarton)."
-        },
-        {
-          "name": "🛡️ Schild-Aufkleben",
-          "duration": 10,
-          "minAge": 3,
-          "loudness": "leise",
-          "indoor": true,
-          "outdoor": false,
-          "material": "Pro Kind 1 großer Sticker-Bogen mit Wappen-Symbolen (Löwe, Stern, Schwert) + ein vorgemaltes Pappschild",
-          "anleitung": "Jedes Kind klebt 3-5 Aufkleber auf sein Pappschild. Reine Bastel-Phase, sehr beruhigend zwischen Action-Spielen."
-        },
-        {
-          "name": "🐉 Drachen-Brüll-Wettbewerb",
-          "duration": 5,
-          "minAge": 3,
-          "loudness": "laut",
-          "indoor": true,
-          "outdoor": true,
-          "material": "Nichts",
-          "anleitung": "Wer brüllt am drachen-ähnlichsten? Reihum, alle bekommen Applaus. Sehr kurzes Stimm-Energie-Ventil zwischen Sitz-Phasen."
-        }
-      ]
     }
   },
   "ritter-mittel": {
-    "_meta": {
-      "version": "2.0.0",
-      "lastUpdated": "2026-05-26",
-      "qualityNote": "v2 — Helfer-v3-Welle 1A+1B+1C+1D+1E abgeschlossen. Adversarial-Review-Scores: Pferde 87/100, Ritter 88/100 (Welle 3V). Beide Mottos ≥85 Ziel erreicht."
-    },
     "motto": "ritter",
     "ageGroup": "mittel",
     "ageRange": [
@@ -51992,8 +47222,6 @@ var ELITE_MOTTO_DATA = {
       8
     ],
     "title": "⚔️ Ritter-Kindergeburtstag — 6–8 Jahre",
-    "metaDescription": "Ritter-Kindergeburtstag für 6-8-Jährige: 3 fertige Burg-Konzepte mit Knappen-Ausbildung, Wappen-Werkstatt, Schwert-Parcours, Burgen-Quiz und Drachen-Schatzsuche. Mit Knappen-Brief.",
-    "introParagraph": "Dein Kind wird 6, 7 oder 8 und will Ritter werden? Mit 6-8 Jahren reicht kein einfaches Schwert-Schwingen mehr — die Kinder wollen ECHTE Ritter-Ausbildung mit Wappen-Design, Burgen-Quiz und einem ehrenhaften Knappen-Brief am Ende. Hier sind drei fertige Konzepte mit Stationen-System, Mittelalter-Wissen und sicherem Schwert-Training mit Pool-Nudeln.",
     "ageInsight": {
       "headline": "Was 6–8-Jährige am Ritter-Motto fasziniert",
       "whyMottoFitsHeadline": "Ritter = klare Werte + echte Ausbildung + sichtbarer Rang-Aufstieg",
@@ -53419,115 +48647,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "name": "Ritter-Schild-Kuchen mit Wappen",
-      "intro": "Ritter-thematisch: Großer Schoko-Rührkuchen in Schild-Form (Oval) mit weißem Zuckerguss und Marzipan-Wappen drauf. Saftig, dunkel, mittelalterlich.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Schoko-Rührteig: 250 g Mehl, 200 g Zucker, 150 g Butter, 3 Eier, 50 g Kakao, 1 Pck. Backpulver, 100 ml Milch."
-        },
-        {
-          "n": 2,
-          "content": "Teig in ovaler Form (oder Springform, später schneiden) verteilen."
-        },
-        {
-          "n": 3,
-          "content": "Bei 175°C ca. 45 Min backen."
-        },
-        {
-          "n": 4,
-          "content": "Komplett auskühlen lassen."
-        },
-        {
-          "n": 5,
-          "content": "Form zuschneiden: Oval mit unten leicht spitz (Schild-Form). Reste sind Knabber-Material."
-        },
-        {
-          "n": 6,
-          "content": "Weißen Zuckerguss aufstreichen. Marzipan-Wappen (Löwe/Adler/Stern) aus rotem/blauen Marzipan ausschneiden und auflegen."
-        },
-        {
-          "n": 7,
-          "content": "Optional: Schoko-Pralinen rund um den Rand als 'Nieten' setzen."
-        }
-      ],
-      "meta": {
-        "aufwand": "75 Min inkl. Backen",
-        "kosten": "ca. 9-11 €",
-        "allergiker": "Bei Ei-Allergie: vegan ersetzen. Bei Nuss-Allergie: Marzipan vorsichtig wählen (manchmal Spuren von Mandeln, Marzipan IST aber Mandelmasse — Vorsicht bei echten Nuss-Allergien!)."
-      },
-      "tips": [
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Fertigen Schoko-Kuchen beim Bäcker kaufen, ovale Schild-Form mit Brotmesser zuschneiden, weißen Zuckerguss drauf. Marzipan-Wappen (rot/blau ausgestochen, 5 €) auflegen. Sieht aus wie selbstgemacht, spart 1h Backzeit."
-        },
-        {
-          "title": "🏰 Pinterest-Inspiration ohne Pinterest-Aufwand",
-          "body": "Pinterest hat 3-stündige Burg-Kuchen mit Fondant-Mauerwerk und beweglichen Zugbrücken. Für 6-8 Jahre reicht: einfacher Schild-Kuchen (ovaler Form-Zuschnitt) + Marzipan-Wappen. 30 Min Deko, gleiche Wirkung."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🥜 Allergien VOR der Party abfragen",
-          "detail": "Marzipan im Kuchen = Mandeln. Spieße können Nüsse enthalten. Allergien klären."
-        },
-        {
-          "topic": "⚔️ Schwerter NUR aus Pool-Nudel",
-          "detail": "Niemals Holz/Plastik/Karton mit harten Kanten. Pool-Nudel-Schwert (Schaumstoff-Schwimm-Nudel) ist sicher."
-        },
-        {
-          "topic": "🏹 Bogenschießen: Saugnapf-Pfeile + Schutzbrille",
-          "detail": "Wenn Bogenschießen geplant: AUSSCHLIESSLICH Spielzeug-Bogen mit Saugnapf-Pfeilen, Schutzbrille Pflicht, 3 m Sicherheitsabstand."
-        },
-        {
-          "topic": "👥 Ab 8 Kindern zweite Hand",
-          "detail": "Bei 8+ Kindern eine zweite erwachsene Begleitung für Stationen-Wechsel."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Stationen funktionieren drinnen. Bogenschießen im langen Flur, Strohballen im Wohnzimmer."
-        },
-        {
-          "topic": "🕯️ LED-Kerzen statt Echtflammen",
-          "detail": "Für die Burg-Atmosphäre nur LED. Niemals echte Kerzen / Fackeln bei einer Kinderparty."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite."
-        }
-      ],
-      "educationalValue": "Bei der Ritter-Party in 6-8 lernen die Kinder ECHTES Wissen: Burgen-Architektur (Bergfried = zentraler Wehrturm, Zinnen, Burggraben), Ritter-Werte (Treue, Ehre, Tapferkeit, Mäßigung — ohne Doppelung), Mittelalter-Berufe (Knappe, Hofnarr, Burgwächter, Schmied). Plus: Selbstständigkeit (eigenes Wappen-Design mit Tinkturregel) und Teamwork (Burg-Erstürmung als Gruppen-Spiel, Drachen-Schatzsuche in 2er-Teams). Der Knappen-Brief mit Stempeln trainiert Verantwortung, der Ritter-Schlag am Ende ist ein Stolz-Moment, der lange bleibt."
-    },
-    "invitationTemplate": "🏰 Burg-Einladung: 'Hört, hört, tapfere Knappen! [Name] wird [Alter] und lädt zur Ritter-Ausbildung auf Burg Schwarzfels ein! Wann: [Datum, Uhrzeit]. Wo: [Adresse]. Mitbringen: Mut, gute Laune und ein eigenes Wappen-Tier im Kopf! Bitte bis [Datum] melden. So sei es! ⚔️'",
-    "faq": [
-      {
-        "q": "Sind Pool-Nudel-Schwerter wirklich sicher?",
-        "a": "Ja. Pool-Nudel = weiche Schaumstoff-Schwimm-Nudel (40-50 cm). Kann nicht ernsthaft verletzen, selbst bei vollem Schlag. Wichtig: niemals Schläge ins Gesicht, immer am Strohballen üben."
-      },
-      {
-        "q": "Wie lange dauert das Burgen-Quiz wirklich?",
-        "a": "Bei 12 Karten + Besprechung ca. 20 Minuten. Bei größerer Gruppe (10) eher 25-30 Min. Nicht hetzen, Wissen ist Kern."
-      },
-      {
-        "q": "Was wenn ein Kind beim Schwert-Parcours nicht mitmachen will?",
-        "a": "Burg-Wächter-Rolle anbieten: Das Kind passt aufs Schwert auf, hält Stoppuhr, gibt Stempel. Bekommt am Ende trotzdem Ritter-Brief."
-      },
-      {
-        "q": "Reicht ein Strohballen?",
-        "a": "Bei 6 Kindern ja (Standard-Übungsziel). Bei 8-10 besser 2 Strohballen, sonst Wartezeit zu lang."
-      },
-      {
-        "q": "Wie schwer macht man das Burgen-Quiz?",
-        "a": "Einfache Bilder + 2-3 Antwortmöglichkeiten. Beispiel: 'Welcher Burgteil schützt vor Feinden?' Bild: Burggraben. Optionen: Garten, Burggraben, Küche. Mit 8 Jahren auch: 'Welche Ritter-Tugend bedeutet, immer die Wahrheit zu sagen?' (Ehre)."
-      },
-      {
-        "q": "Funktioniert das auch in einer kleinen Wohnung?",
-        "a": "Ja. Stationen in verschiedenen Räumen: Wappen im Wohnzimmer, Quiz am Esstisch, Schwert im Flur (lang!), Drachen-Schatzsuche durch ganze Wohnung. Bei wenig Platz: Stationen nacheinander statt parallel."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher",
@@ -53735,49 +48854,9 @@ var ELITE_MOTTO_DATA = {
         "fallback": "Wenn die Stimmung gekippt ist: Schwert-Parcours für heute beendet, stattdessen Wappen-Werkstatt verlängern. Kinder akzeptieren das.",
         "tone": "klar"
       }
-    },
-    "bonusGames": {
-      "intro": "Bonus-Spiele für die Knappen-Ausbildung — als 5. Station, Plan B oder Schlafparty-Anschluss.",
-      "items": [
-        {
-          "name": "🎵 Mittelalter-Lied-Quiz",
-          "duration": 12,
-          "minAge": 6,
-          "loudness": "mittel",
-          "indoor": true,
-          "outdoor": false,
-          "material": "Smartphone mit 8 Lied-Schnipseln (Mittelalter-Playlist 30 Sek pro Lied)",
-          "anleitung": "Lied abspielen, Kinder erraten den Titel oder Mittelalter-Stimmung (Tafel, Schlacht, Tanz). Bonus-Stempel für Knappen-Brief."
-        },
-        {
-          "name": "📜 Ritter-Eid-Schreibwerkstatt",
-          "duration": 15,
-          "minAge": 7,
-          "loudness": "leise",
-          "indoor": true,
-          "outdoor": false,
-          "material": "Pergamentpapier (oder Backpapier braun gefärbt), Kalligrafie-Stifte oder dicke Filzstifte",
-          "anleitung": "Jedes Kind schreibt seinen eigenen Ritter-Eid in 3 Sätzen: \"Ich bin treu zu... Ich kämpfe für... Ich helfe...\" Heroldin liest am Ende stolz vor. Identitäts-Anker."
-        },
-        {
-          "name": "⚔️ Schwertkampf-Choreografie",
-          "duration": 10,
-          "minAge": 6,
-          "loudness": "laut",
-          "indoor": true,
-          "outdoor": true,
-          "material": "6 Pool-Nudel-Schwerter, 2 Strohballen oder Pappkartons",
-          "anleitung": "2er-Teams üben eine Mini-Choreografie: 3 Bewegungen am Stroh-Ballen (Hieb-Rück-Schlag-Salut). Heroldin gibt Stilnote, alle bekommen Stempel."
-        }
-      ]
     }
   },
   "ritter-gross": {
-    "_meta": {
-      "version": "2.6.0",
-      "lastUpdated": "2026-05-26",
-      "qualityNote": "v2.6 — Welle 11b Konsistenz-Sweep: 'Burgvogtin' (Story-Person, in Welle 5 aus rolesList entfernt) → 'Wappen-Heroldin Hanna' (passt zur Wappen-Bewertung). 'Stallmeister-Tafel' (Cross-Motto-Leak von Pferde) → 'Akademie-Tafel' (korrektes Brand). Variants/games jetzt vollständig konsistent."
-    },
     "motto": "ritter",
     "ageGroup": "gross",
     "ageRange": [
@@ -53785,8 +48864,6 @@ var ELITE_MOTTO_DATA = {
       12
     ],
     "title": "⚔️ Ritter-Kindergeburtstag — 9–12 Jahre",
-    "metaDescription": "Ritter-Kindergeburtstag für 9-12-Jährige: 3 fertige Burg-Konzepte mit Ritter-Ausbildung, bewertetem Schwert-Parcours, Mittelalter-Quiz, Burgenermittlung als Krimi-Quest und Ritter-Diplom mit Funktion.",
-    "introParagraph": "In dem Alter wollen Kinder ein Motto, das sie ernst nimmt — keine Plastikschwert-Romantik, sondern echte Mittelalter-Geschichte, Strategie und ein bisschen Wettkampf. Diese Konzepte liefern das: Theorie-Briefing wie an einer Ritter-Akademie, bewerteter Schwert-Parcours mit Stoppuhr, Mittelalter-Quiz mit Burgenwissen, Burgenermittlung als Krimi-Quest (verschwundener Schatz, 4 Verdächtige) und Ritter-Diplom mit Funktion am Ende. Eltern können absetzen, in Wow-Variante völlig wegbleiben.",
     "ageInsight": {
       "headline": "Was 9–12-Jährige am Ritter-Motto suchen — und was das heißt",
       "whyMottoFitsHeadline": "⚔️ Warum Ritter für 9-12-Jährige besonders gut funktioniert",
@@ -55782,119 +50859,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "name": "Burg-Kuchen XXL mit 4 Türmen",
-      "intro": "Ritter-thematisch für 9-12: Großer Schoko-Rührkuchen als Burg geformt, mit 4 Türmen aus Eishörnchen und Marzipan-Wappen drauf. Aufwendiger als bei den Jüngeren — passt zum Anspruch.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Schoko-Rührteig (große Form): 350 g Mehl, 300 g Zucker, 250 g Butter, 5 Eier, 60 g Kakao, 1 Pck. Backpulver, 200 ml Milch."
-        },
-        {
-          "n": 2,
-          "content": "In quadratischer Form backen (oder 2 rechteckige zusammenstellen). Bei 175°C ca. 55 Min."
-        },
-        {
-          "n": 3,
-          "content": "Komplett auskühlen. Form: 4 Ecken bleiben, in der Mitte vertieft als Burghof."
-        },
-        {
-          "n": 4,
-          "content": "Mit Schoko-Ganache überziehen."
-        },
-        {
-          "n": 5,
-          "content": "4 Eishörnchen (umgekehrt) als Türme auf die 4 Ecken setzen. Mit Schokoladen-Drops verzieren als Zinnen."
-        },
-        {
-          "n": 6,
-          "content": "Marzipan-Wappen (rot/blau) ausschneiden, mittig auf die Mauer-Fassade kleben (mit Zuckerguss)."
-        },
-        {
-          "n": 7,
-          "content": "Optional: Marzipan-Drache als Höhepunkt auf einen Turm setzen. Schokoladen-Streusel als 'Burggraben' rundherum."
-        }
-      ],
-      "meta": {
-        "aufwand": "100 Min inkl. Backen + Verzieren",
-        "kosten": "ca. 14-18 €",
-        "allergiker": "Marzipan = Mandeln (Nuss-Allergie!). Bei Lactose: pflanzliche Milch. Bei Gluten: glutenfreies Mehl."
-      },
-      "tips": [
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Bäcker-Bestellung: großen rechteckigen Schoko-Kuchen (12-15 €) holen, 4 Eishörnchen (umgekehrt) auf die Ecken setzen als Türme. Marzipan-Wappen mittig draufkleben. Wow-Effekt erreicht in 10 Min."
-        },
-        {
-          "title": "🏰 Marzipan-Drache — wann es sich lohnt",
-          "body": "Marzipan-Drache obendrauf ist Wow-Wert, aber 30 Min Aufwand. Lohnt nur, wenn das Geburtstagskind WIRKLICH auf Drachen steht (sonst wird er übersehen). Alternative: Schoko-Drops als Burggraben-Streusel rundherum — 5 Min, fast gleicher Wow-Effekt."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🥜 Marzipan = Mandeln",
-          "detail": "Burg-Kuchen enthält Marzipan. Bei Nuss-/Mandel-Allergie unbedingt vorher fragen oder durch weißen Zuckerguss ersetzen."
-        },
-        {
-          "topic": "⚔️ Pool-Nudel-Schwerter, niemals Holz",
-          "detail": "Auch mit 9-12: Schwerter nur aus Schaumstoff (Pool-Nudel). Holz oder Plastik mit Kanten = Verletzungsrisiko."
-        },
-        {
-          "topic": "🏹 Bogenschießen: Saugnapf + Schutzbrille Pflicht",
-          "detail": "AUSSCHLIESSLICH Spielzeug-Bogen mit Saugnapf. Schutzbrille jedes Kind. 3 Meter Sicherheitsabstand. Niemals echte Pfeile."
-        },
-        {
-          "topic": "🕯️ LED statt Feuer",
-          "detail": "Mittelalter-Atmosphäre nur mit LED-Kerzen + LED-Fackeln. Niemals echte Flammen bei Kinderparty."
-        },
-        {
-          "topic": "👥 Eltern absetzen reicht",
-          "detail": "9-12 wollen Party ohne Eltern. 1-2 Erwachsene als Aufsicht (als 'Burgvogt' getarnt), Eltern telefonisch erreichbar."
-        },
-        {
-          "topic": "🏆 Wettbewerb-Stress vermeiden",
-          "detail": "Sieger-Bonus klein halten, alle bekommen Diplom + Funktions-Eintrag. Niemand soll als Loser heimgehen."
-        },
-        {
-          "topic": "🕵️ Burgenermittlung kindgerecht",
-          "detail": "Krimi-Quest mit 'Vergiftung-knapp-überlebt' statt Mord. Auch 9-12 brauchen kindgerechten Rahmen."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite."
-        }
-      ],
-      "educationalValue": "Bei der Ritter-Akademie in 9-12 lernen die Kinder ECHTES Mittelalter-Wissen: Burgen-Architektur nach Lage (Höhenburg vs Wasserburg vs Niederungsburg; Spornburg/Gipfelburg als Unterkategorien) und Funktion (Bergfried = zentraler Wehrturm, Zinnen, Burggraben), Heraldik (Tinkturregel: Metall nie auf Metall, Farbe nie auf Farbe; klassisch max 2 Farben + 1 Metall), Ritter-Tugenden (Treue, Ehre, Tapferkeit, Mäßigung, Demut — keine Mut/Tapferkeit-Doppelung), Mittelalter-Berufe (Hofnarr, Burgvogt, Hufschmied, Bogner). Plus: Wettkampf-Fairness (Stoppuhr, Stilnote, Team-Pokal), Detektiv-Logik (Burgenermittlung mit Verdächtigen, Motiven, Spuren), Selbstständigkeit (Funktion, Prüfungs-Mappe). Das Ritter-Diplom ist nicht Spielzeug — die Kinder gehen mit echtem Mittelalter-Wissen heim."
-    },
-    "invitationTemplate": "🏰 Ritter-Akademie-Einladung: 'Hört, hört, tapfere Knappen und Burgfräulein! [Name] wird [Alter] und lädt zur Ritter-Akademie-Prüfung Klasse 1 ein. Erwartet werden 4 Prüfungs-Stationen, eine Burgenermittlung (verschwundener Schatz!) und der Ritter-Pokal-Wettbewerb. Wann: [Datum, Uhrzeit]. Wo: [Adresse] (= Burg Schwarzfels). Mitbringen: Mut, gute Laune, Mittelalter-Wissen wenn möglich. Bitte bis [Datum] melden. So sei es! ⚔️'",
-    "faq": [
-      {
-        "q": "Wie schwer macht man das Mittelalter-Quiz Klasse 2?",
-        "a": "Echte Fragen mit visueller Hilfe. Beispiel: Bild Wasserburg, Optionen: Höhenburg/Wasserburg/Niederungsburg. Mit 12 auch: 'Welche Ritter-Tugend bedeutet, dem Lehnsherrn die Treue zu halten?' (Treue/Lehnstreue) oder 'Welche Funktion hat der Bergfried?' (zentraler Wehrturm, letzter Rückzugsort — NICHT zwingend der höchste Turm). Niemals Trick-Fragen."
-      },
-      {
-        "q": "Sind Pool-Nudel-Schwerter mit 9-12 noch genug?",
-        "a": "Ja. Pool-Nudel = weiche Schaumstoff-Schwimm-Nudel (60 cm für Größere). Kann nicht ernsthaft verletzen. Wichtig: Regel 'Schlag nur am Strohballen, niemals auf Person.' wird konsequent durchgesetzt."
-      },
-      {
-        "q": "Reicht ein Ritter-Pokal oder sollten alle gewinnen?",
-        "a": "Mit 9-12 ist EIN Wanderpokal richtig. Sieger-Team bekommt ihn für ein Jahr. Aber: alle bekommen Diplom + Funktions-Eintrag. Niemand geht als Loser heim."
-      },
-      {
-        "q": "Funktioniert die Burgenermittlung wirklich?",
-        "a": "Ja, das ist das Highlight bei 9-12. Wichtig: Verdächtige + Motive + Alibis müssen LOGISCH zusammenpassen. Eine Spur muss eindeutig zu EINER Person passen — sonst gibt's Streit. Lösung vor der Party 2× durchspielen."
-      },
-      {
-        "q": "Funktioniert das auch in einer kleinen Wohnung?",
-        "a": "Ja. Burgenermittlungs-Spuren in verschiedenen Räumen verstecken (Küche, Bad, Flur), Schwert-Parcours im langen Flur, Wappen-Werkstatt am Esstisch. Bei wenig Platz: Stationen nacheinander statt parallel."
-      },
-      {
-        "q": "Wie laut wird die Ritter-Olympiade?",
-        "a": "Lauter als bei 3-5 oder 6-8, aber kontrolliert. Schwert-Schlag drinnen leiser als Bogenschießen draußen. Bei Mietshaus: Olympiade auf 17 Uhr legen, Nachbarn vorher informieren."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher",
@@ -56120,50 +51084,9 @@ var ELITE_MOTTO_DATA = {
         "fallback": "Wenn nichts hilft: Programm beenden und auf den Spaß-Kern reduzieren (Geschenk-Öffnen, Foto).",
         "tone": "pragmatisch"
       }
-    },
-    "bonusGames": {
-      "intro": "Bonus-Spiele für die Ritter-Akademie — als 6. Station, Plan B oder Schlafparty-Anschluss mit Ritterfilm.",
-      "items": [
-        {
-          "name": "🎬 Ritterfilm-Quiz",
-          "duration": 20,
-          "minAge": 9,
-          "loudness": "leise",
-          "indoor": true,
-          "outdoor": false,
-          "material": "12 Filmplakat-Karten (Excalibur, König Artus, Der Patriot, Game of Thrones-Stills [Standbild ohne Gewalt], Robin Hood), Antwortbogen",
-          "anleitung": "Filmtitel + Hauptfigur erraten. Bei Game of Thrones: nur kindgerechte Charaktere (Jon Snow, Daenerys). Bonus-Stempel für Ritter-Akademie."
-        },
-        {
-          "name": "🔐 Code-Knacker mit Heraldik",
-          "duration": 18,
-          "minAge": 10,
-          "loudness": "leise",
-          "indoor": true,
-          "outdoor": false,
-          "material": "5 verschlüsselte Nachrichten (Wappen-Symbol = Buchstabe), Entschlüsselungs-Schlüssel als Karte",
-          "anleitung": "Detektiv-Element: Nachrichten in heraldischer \"Sprache\" entschlüsseln. Beispiel: 🦁=A, 🦅=B, ⚔=C... Code lautet \"EHRE\" oder \"TREUE\". Bonus-Stempel."
-        },
-        {
-          "name": "🏛️ Burg-Architektur-Bau",
-          "duration": 25,
-          "minAge": 9,
-          "loudness": "mittel",
-          "indoor": true,
-          "outdoor": false,
-          "material": "60-80 Bauklötze (Lego oder Holz), Bauplan-Skizzen (Höhenburg, Wasserburg, Spornburg)",
-          "anleitung": "2er-Teams bauen nach Bauplan eine Mini-Burg. Tiefbau-Ingenieur bewertet Statik + Plan-Treue. Bonus-Stempel + Foto fürs Akademie-Album."
-        }
-      ]
     }
   },
   "safari-klein": {
-    "_meta": {
-      "source_file": "kindergeburtstag/safari-3-5-jahre.html",
-      "extracted": "2026-05-21",
-      "schema_version": "1.0",
-      "purpose": "Elite-Motto-Data für Planer-Frisur-Sprint (P3-13..P3-18). Phase B: preparationWeeks + sosScenarios + shoppingList.category vollständig."
-    },
     "motto": "safari",
     "ageGroup": "klein",
     "ageRange": [
@@ -56171,8 +51094,6 @@ var ELITE_MOTTO_DATA = {
       5
     ],
     "title": "🦁 Safari-Kindergeburtstag — 3–5 Jahre",
-    "metaDescription": "Safari-Kindergeburtstag für 3-5-Jährige als Tier-Helfer-Tag im Reservat: 3 fertige Konzepte mit Zeitplan, einfachen Spielen, Pirsch und Plüsch-Tier-Übergabe. Kostenlos.",
-    "introParagraph": "Dein Kind wird 3, 4 oder 5 und liebt Tiere? Hier sind drei fertige Konzepte für den Tier-Helfer-Tag im Reservat — von 90 Minuten Mini-Safari bis zur entspannten 2-Stunden-Variante mit Pirsch und Plüsch-Tier-Übergabe. Kein Wettbewerb, keine Verlierer: Jedes Kind hilft einem Tier und bekommt am Ende seine Urkunde. Eltern bleiben mit dabei — bei 3- bis 5-Jährigen ist das kein Notnagel, sondern Teil des Plans.",
     "signatureRitual": {
       "name": "Das kleine Helfer-Versprechen",
       "subtitle": "Eröffnet die Party + Urkunden-Übergabe am Ende",
@@ -57300,118 +52221,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "intro": "Der Löwen-Kuchen ist ein simpler Gugelhupf mit einer Mähne aus Mandelblättchen oder Knusperflakes. Sieht nach viel aus, ist aber Rührteig — kein Fondant-Drama. Wenn Backen heute nicht drin ist: steht unten der Plan B.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Rührteig anrühren (250 g Mehl, 200 g Butter, 150 g Zucker, 4 Eier, 1 Pck. Backpulver, Vanille). In die Gugelhupf-Form."
-        },
-        {
-          "n": 2,
-          "content": "Bei 175 °C ca. 45-50 Min. backen. Stäbchenprobe. Komplett auskühlen lassen, sonst rutscht später alles."
-        },
-        {
-          "n": 3,
-          "content": "Auf einen runden Teller stürzen. Das ist der Löwenkopf — das Loch in der Mitte kommt unten hin, nicht sichtbar."
-        },
-        {
-          "n": 4,
-          "content": "Aprikosenmarmelade dünn aufstreichen als 'Kleber', dann mit Mandelblättchen oder Cornflakes ringsum die Mähne bilden."
-        },
-        {
-          "n": 5,
-          "content": "Gesicht: 2 Schoko-Linsen als Augen, eine halbe dunkle Beere als Nase, Mini-Brezelstangen als Schnurrhaare."
-        },
-        {
-          "n": 6,
-          "content": "Kalt stellen bis zur Party. Vor dem Servieren in Tortenstücke schneiden — der Löwe 'teilt sich' an alle Helfer."
-        }
-      ],
-      "meta": {
-        "aufwand": "mittel (Rührteig + 15 Min. Deko)",
-        "kosten": "ca. 5-8 €",
-        "allergiker": "Mandelblättchen weglassen oder durch Cornflakes/Knusperflakes ersetzen bei Nuss-Allergie. Glutenfreies Mehl möglich."
-      },
-      "tips": [
-        {
-          "title": "Keine Lust oder Zeit zu backen?",
-          "body": "Fertigen Marmorkuchen vom Bäcker oder aus dem Supermarkt kaufen und nur die Mähne + das Gesicht draufsetzen. 10 Min. Arbeit, niemand merkt es. Bei 3-5-Jährigen zählt der Löwe, nicht die Backleistung."
-        },
-        {
-          "title": "Nicht vom Pinterest-Foto stressen lassen",
-          "body": "Die perfekt symmetrische Löwen-Torte aus dem Netz ist Deko-Profi-Arbeit. Dein Löwe darf schief gucken — die Kinder feiern ihn trotzdem. Lieber ein ehrlicher Wackel-Löwe als ein Nervenzusammenbruch um Mitternacht."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🥜 Allergien VOR der Party abfragen",
-          "detail": "In der Einladung fragen. Mandelblättchen auf dem Kuchen, Nüsse im Futter-Teller, Laktose im Käse — alles potenzielle Stolperer. Ein nuss-/laktosefreier Teller bereit, dann ist niemand außen vor."
-        },
-        {
-          "topic": "🌧️ Plan B bei Regen steht immer",
-          "detail": "Safari ist drinnen wie draußen spielbar. Pirsch und Tarnung gehen im Wohnzimmer + Flur — Spuren auf Klebezettel, Verstecke hinter Vorhang und Sofa. Garten ist schön, aber kein Muss."
-        },
-        {
-          "topic": "👥 Ab 7-8 Kindern: zweite Hand dazu",
-          "detail": "Bei 6 schaffst du es solo. Ab 7-8 (Wow) brauchst du Partner, Oma oder eine befreundete Mama — eine führt die Station, eine ist Trostkontakt für überreizte Kinder."
-        },
-        {
-          "topic": "🔇 Eltern bleiben — ist Teil des Plans",
-          "detail": "Bei 3-5 ist Trennungsangst normal. Eltern als Trostanker einplanen, nicht wegschicken. Ein Eltern-Schoß ist der beste Plan B, wenn ein Kind nicht mehr mag."
-        },
-        {
-          "topic": "⏱️ Nach 90-120 Min. ist Schluss",
-          "detail": "Auch wenn's gerade läuft: nach spätestens 2 Stunden kippt die Herde in Müdigkeit, Streit oder Heimweh. Lieber glücklich aufhören als überreizt eskalieren."
-        },
-        {
-          "topic": "🦁 Kein Wettbewerb, nie Verlierer",
-          "detail": "Bei dieser Altersgruppe keine Gewinner/Verlierer-Spiele. Jedes Kind findet ein Tier, hilft, bekommt die Urkunde. Die Urkunde bekommt jeder Helfer — das schafft jedes Kind."
-        },
-        {
-          "topic": "🧠 Meltdown-Plan — bei 3-5 fast garantiert",
-          "detail": "Statistisch wird mindestens ein Kind während der 2 Stunden müde, übermüdet oder schlicht überreizt. Das ist normal, nicht persönlich. Plan: 1 ruhiger Rückzugs-Ort vorbereiten (Sofa-Ecke mit Decke und 2 Plüsch-Tieren), Mama/Papa des Kindes hin, 5-10 Min. Pause, dann meistens wieder dabei. Wenn nicht: das Kind verabschiedet sich früher, das ist OK. NICHT: das Kind zwingen 'mitzumachen' oder mit Tränen vor allen anderen weinen lassen — beides eskaliert."
-        },
-        {
-          "topic": "📸 Foto-Moment: Urkunden-Übergabe ist DER Moment",
-          "detail": "Du musst nicht parallel filmen — die Eltern stehen ohnehin daneben und fotografieren ihr eigenes Kind. Bei der Abholung jeden Elternteil fragen, ob du das Foto vom Geburtstagskind-mit-seinem-Kind per WhatsApp schicken sollst. Macht Eindruck und kostet null Aufwand mehr."
-        }
-      ],
-      "educationalValue": "Die Kinder üben ganz nebenbei: leise sein und sich konzentrieren (Pirsch), für jemanden sorgen statt zu gewinnen (Tiere füttern), gemeinsam ein Ziel erreichen (Schatzsuche) und mit Verkleidung in eine Rolle schlüpfen (Stirnband). Der Tier-Helfer-Frame macht aus Geburtstags-Trubel ein Kümmer-Spiel — das ist genau der soziale Entwicklungsschritt, der mit 3-5 ansteht."
-    },
-    "invitationTemplate": "Lust auf passende Safari-Einladungen? Der Einladungs-Generator auf machsleicht baut dir Tier-Helfer-Karten mit Datum, Treffpunkt, Zusage-Link und Allergie-Abfrage in 2 Minuten. (Cross-Sell-Hinweis, kein echtes Template — CTA gehört ins Planer-Cockpit.)",
-    "faq": [
-      {
-        "q": "Funktioniert Safari auch in einer kleinen Wohnung?",
-        "a": "Ja. Safari ist akustisch zahm. Pirsch und Tarnung gehen in 60-75 m² mit verschachtelten Verstecken in einem Raum — Spur um Sofa, hinter Vorhang, unter Tisch. Türen zu, dann wirkt es nach mehr Welt."
-      },
-      {
-        "q": "Wie viele Kinder sind ideal?",
-        "a": "6 für Minimal und Standard, bis 8 für Wow. Mehr als 8 wird mit dem Eltern-bleiben-Konzept zu wuselig — du hast plötzlich zu viele Erwachsene und Kinder im Raum."
-      },
-      {
-        "q": "Was kostet die Party?",
-        "a": "Zwischen 33 € (Minimal, 6 Kinder) und 76 € (Wow, 8 Kinder, ohne Highlight-Produkte). Standard liegt bei ca. 52 € für 6 Kinder. Wer aus dem Bestand schöpft, kommt darunter."
-      },
-      {
-        "q": "Ist die Wow-Variante für 3-Jährige geeignet?",
-        "a": "Eher nicht. Wow braucht 80 m²+ oder Garten, eine zweite erwachsene Hand und mindestens ein 5-jähriges Geburtstagskind. Mit reinen 3-Jährigen und Solo-Moderation lieber Standard nehmen."
-      },
-      {
-        "q": "Müssen Eltern bei der Party dabeibleiben?",
-        "a": "Bei 3-5 ja. Auch wenn das Kind sonst im Kindergarten gut ohne Eltern klarkommt — Geburtstag ist neue Umgebung, viele Kinder gleichzeitig, hohe Reizdichte. Aktiv kommunizieren: 'Wir freuen uns, wenn ihr Eltern bei einem Kaffee bleibt — die Party dauert nur 2 Stunden.' Kaffee/Tee bereitstellen, eine ruhige Ecke einrichten, dann sind alle entspannt."
-      },
-      {
-        "q": "Welche Allergien sind in dieser Altersgruppe am wichtigsten?",
-        "a": "In 3-5 sind Lebensmittel-Allergien häufiger als in jeder anderen Altersgruppe — Nüsse, Milch, Erdnüsse, Eier sind die Top 4. Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit. Apfelschorle, Bananen, Karotten und Salzbrezeln sind fast immer safe. Marzipan-Deko auf dem Kuchen IMMER bei Eltern abfragen (Mandel-Allergie). Tarn-Tuch-Filzstifte: nur Marken-Textilstifte (Edding Textil, Crayola), manche Kinder reagieren auf No-Name."
-      },
-      {
-        "q": "Funktioniert ein Safari-Geburtstag auch drinnen?",
-        "a": "Ja, das ist sogar oft die bessere Option bei 3-5. Tiere füttern im Wohnzimmer (Vasen wegräumen), Memory am Küchentisch, Pirsch durch Flur und Wohnzimmer mit Pfotenspur, Tier-Lauscher im Sitzkreis mit Smartphone, Tarn-Tuch-Basteln auf Wachstuch. Draußen ist es atmosphärischer (echte Pfoten auf dem Rasen, Pirsch im Garten), drinnen genauso wirksam — und Toiletten/Mama/Pflaster sind in Reichweite."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -57698,16 +52507,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "safari-mittel": {
-    "_meta": {
-      "source_file": "kindergeburtstag/safari-6-8-jahre.html",
-      "extracted": "2026-05-19",
-      "schema_version": "1.0",
-      "purpose": "Safari 6-8 — Phase C #6 Elite-Slot (no ritual)",
-      "phase_b_complete": "2026-05-19",
-      "phase_b_method": "Direct draft auf Basis safari-6-8-jahre.html (Junior-Ranger-Ausbildung, Ranger-Eid, Lizenz-Übergabe, Tierspuren-Pirsch, Wasserloch-Pause).",
-      "stream_c_refresh": "2026-05-21",
-      "stream_c_note": "Konsistenz-Pass Phase B: Polish raus, Spezialisierungs-Brücke zu klein/gross, signatureRitual gefüllt. safari-klein/gross (Stream A/B) noch nicht eingecheckt — Brücke konzeptionell."
-    },
     "motto": "safari",
     "ageGroup": "mittel",
     "ageRange": [
@@ -57715,8 +52514,6 @@ var ELITE_MOTTO_DATA = {
       8
     ],
     "title": "🦁 Safari-Kindergeburtstag — 6–8 Jahre",
-    "metaDescription": "Safari-Kindergeburtstag für 6-8-Jährige: 3 fertige Party-Konzepte mit Junior-Ranger-Ausbildung, Spielanleitungen, Zeitplan, Einkaufsliste und Kosten. Kostenlos.",
-    "introParagraph": "Dein Kind wird 6, 7 oder 8 und ist von Tieren fasziniert? Hier bekommst du drei fertige Party-Konzepte rund um die Junior-Ranger-Ausbildung — von schnell und stressfrei bis zum vollen Programm mit Stations-Rotation und Schatzsuche zum verborgenen Tempel. Jedes Konzept mit Zeitplan, Spielanleitungen, Einkaufsliste und Kosten.\n\n[Safari-Geburtstag planen →](/kindergeburtstag?motto=safari&alter=7#planer)",
     "ageInsight": {
       "headline": "Was 6–8-Jährige ausmacht — und was das für die Safari-Party heißt",
       "traits": [
@@ -58740,94 +53537,6 @@ var ELITE_MOTTO_DATA = {
         "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)"
       }
     ],
-    "cakeRecipe": {
-      "intro": "Geht mit jedem Blechkuchen oder Gugelhupf. Das Besondere ist die Tier-Deko — nicht das Backen.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Blechkuchen oder Gugelhupf backen — Fertigmischung reicht völlig (Dr. Oetker, Kathi, Aurora). Kein Mensch schmeckt den Unterschied. Schoko- oder Vanillekuchen passen beide."
-        },
-        {
-          "n": 2,
-          "content": "Komplett abkühlen lassen. Ungeduld = Glasur-Desaster."
-        },
-        {
-          "n": 3,
-          "content": "Glasur in Erdfarben: 1 Packung Schokoglasur (für die \"Erde\") oder gelb-orange Zuckerguss aus Puderzucker + Wasser + ein Tropfen Lebensmittelfarbe (für die \"Savanne\")."
-        },
-        {
-          "n": 4,
-          "content": "Tier-Motiv obendrauf: Marzipan-Tiere aus dem Backregal (Dr. Oetker hat oft Sets mit Löwe, Elefant, Giraffe), oder einzelne Schokolinsen-Pfotenabdrücke ringsum."
-        },
-        {
-          "n": 5,
-          "content": "Grüne Gummibärchen oder Zuckerstreusel als \"Gras-Büschel\" am Rand verteilen."
-        },
-        {
-          "n": 6,
-          "content": "Optional Wow: Wunderkerze in der Mitte, beim Happy-Birthday anzünden. Foto."
-        }
-      ],
-      "meta": {
-        "aufwand": "45 Min. inkl. Backen und Deko",
-        "kosten": "~8 €",
-        "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken"
-      },
-      "tips": [
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Fertigen Schoko-Kuchen beim Bäcker oder Supermarkt kaufen, Marzipan-Tiere obendrauf stellen, grüne Streusel drumherum. Sieht aus wie gewollt, dauert 2 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: \"Der Kuchen war nicht selbstgemacht.\""
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🚨 Allergien vorher abfragen",
-          "detail": "Bei 8 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten). In die Einladung schreiben: \"Hat dein Kind Allergien oder Unverträglichkeiten?\" Apfelschorle, Pop-Mais und Karotten-Sticks sind fast immer safe — Marzipan-Tiere und Schokolade prüfen."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Safari-Stationen funktionieren auch drinnen. Tarnungs-Übung: Verstecke hinter Sofa, Vorhang, Wäscheecke nutzen. Pirsch-Parcours: durch Flur und Wohnzimmer. Beobachtungsposten: Tier-Karten an Wand, Regal, in der Hängelampe. Tier-Memory: Küchentisch reicht. Großspiel \"Rette das Löwen-Junge\": Verstecke in der ganzen Wohnung. Einziges, was draußen schöner ist: das Tarn-Tuch im Garten testen — drinnen reicht der Vorhang. Nie ohne Plan B."
-        },
-        {
-          "topic": "🧑‍🤝‍🧑 Wie viele Helfer? Realistisch geplant",
-          "detail": "Bei der Stations-Rotation der Standard-Variante mit 4 parallel betriebenen Stationen reicht 1 Helfer — du machst zwei Stationen, der Helfer die anderen zwei, gemeinsame Pause am Wasserloch deckt Übergänge. Ab 8 Kindern wird's solo-mit-1-Helfer eng aber machbar. Wow-Variante mit 10 Kindern und Schatzsuche-Quest braucht mindestens 2 Helfer, weil die Quest viel Geräuschkulisse und Bewegung erzeugt. Frag Partner, Großeltern, befreundete Eltern. Viele bleiben gerne — eine Junior-Ranger-Ausbildung ist auch für Erwachsene unterhaltsam zu beobachten."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Statt 8 einzelne Nachrichten an die Eltern: erstelle eine [WhatsApp-Partyseite](https://party.machsleicht.de) mit machsleicht. Adresse, Uhrzeit, Safari-Motto-Hinweis (Eltern können erdfarbene Kleidung anziehen lassen), Abholzeit, Allergie-Abfrage — alles auf einer Seite. Eltern antworten mit einem Klick. Du siehst Zusagen und Allergien live. Kostenlos, in 2 Minuten fertig."
-        },
-        {
-          "topic": "📸 Foto-Moment einplanen",
-          "detail": "Die Lizenz-Zeremonie ist der Foto-Moment der Party. Jedes Kind mit Stirnband, Klett-Abzeichen, Lizenz in der Hand (Wow: Filz-Buschhut auf dem Kopf) — als Gruppenbild und einzeln. Eltern fotografieren beim Geburtstagskind sowieso, aber ein guter Tipp ist, die anderen Eltern bei der Abholung zu fragen, ob du das Foto mit ihrem Kind per WhatsApp schicken sollst. Macht Eindruck und kostet null."
-        }
-      ],
-      "educationalValue": "Hinter dem Ranger-Spiel steckt echtes Lernen: Die Kinder erkennen Tierstimmen und Spuren, ordnen Tiere nach gefährlich, gefährdet und ungefährlich ein und nehmen so erste Artenschutz-Ideen auf. Pirsch und Tarnung trainieren Körperkontrolle, Geduld und Konzentration — mit 6-8 die schwerste Disziplin. Die kooperativen Stationen und das gemeinsame Retten des Löwen-Jungen üben Verantwortung füreinander statt reines Gewinnen, und die Schatz-Quest fordert echtes Kombinieren im Team. Tier-Wissen, Ausdauer und soziale Verantwortung — fast nebenbei."
-    },
-    "invitationTemplate": "🦁 Interaktive Safari-Einladung per WhatsApp verschicken\n\nErstelle in 30 Sekunden eine fertige Einladung mit Name, Datum und Ort — die Gäste bekommen ein kleines Safari-Abenteuer als Vorgeschmack auf die Junior-Ranger-Ausbildung.\n[🦁 Safari-Einladung erstellen →](/einladung/erstellen?motto=safari)\n\n[💬 Idee per WhatsApp teilen](https://wa.me/?text=Schau%20mal%3A%20Safari-Kindergeburtstag%20f%C3%BCr%206%E2%80%938%20Jahre%20%E2%80%94%203%20fertige%20Junior-Ranger-Konzepte%20mit%20Stations-Rotation%2C%20Schatzsuche-Quest%20und%20Einkaufsliste!%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Fsafari-6-8-jahre)",
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Safari-Geburtstag für 6–8-Jährige dauern?",
-        "a": "2 bis 4 Stunden, je nach Variante. Minimal: 2 Stunden mit zwei Spielen. Standard: 3 Stunden mit Stations-Rotation und Lizenz-Zeremonie. Wow: 4 Stunden mit zusätzlicher Schatzsuche-Quest. Kürzer ist besser als länger — nach 4 Stunden kippt die Stimmung selbst bei 8-Jährigen."
-      },
-      {
-        "q": "Wie viele Kinder sollte man zum Safari-Geburtstag einladen?",
-        "a": "Faustregel: Alter des Kindes + 1. Also 7–9 Kinder bei einem 7-Jährigen. Für die Stations-Rotation der Standard-Variante sind 8 Kinder ideal (4 Teams à 2 Kinder). Wow funktioniert mit 10 Kindern, aber dann brauchst du 2 Helfer."
-      },
-      {
-        "q": "Was kostet ein Safari-Geburtstag?",
-        "a": "Zwischen 24 € (Minimal, 6 Kinder) und 120 € (Wow, 10 Kinder, ohne Highlight-Produkte). Standard liegt bei ca. 80 € für 8 Kinder und bietet das beste Verhältnis aus Aufwand und Ergebnis. Filz-Buschhüte als Wow-Highlight kommen mit 80–120 € extra dazu, sind aber das emotional wertvollste Mitgebsel."
-      },
-      {
-        "q": "Funktioniert ein Safari-Geburtstag auch drinnen?",
-        "a": "Ja, alle Stationen und Spiele funktionieren drinnen. Tarnung mit Vorhängen, Pirsch durch den Flur, Beobachtungsposten mit Fernglas in der Wohnung, Memory am Küchentisch. Draußen ist es atmosphärischer (echte Tierspuren auf dem Rasen, \"Pirsch\" im Garten), drinnen genauso wirksam."
-      },
-      {
-        "q": "Brauche ich Helfer für die Stations-Rotation?",
-        "a": "Mit 2 Helfern wird's entspannt, mit 1 Helfer geht's gut. Solo machbar bei der Standard-Variante, wenn die Stationen nacheinander statt parallel laufen — dauert dann 60 Min für die ganze Gruppe statt nur 2 Kinder. Wow mit Schatzsuche-Quest braucht mindestens 2 Helfer."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -59177,14 +53886,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "safari-gross": {
-    "_meta": {
-      "source_file": "kindergeburtstag/safari-9-12-jahre.html",
-      "extracted": "2026-05-21",
-      "schema_version": "1.0",
-      "purpose": "Safari 9-12 — Phase B Elite-Slot (Reservat-Expedition, kein Ritual, Codeknacker-Kern)",
-      "phase_b_complete": "2026-05-21",
-      "phase_b_method": "Writer-Subagent Helfer-v3-Loop. Codeknacker WASSER/FELS/TEMPEL (Minimal), TOR (Standard), TEMPEL (Wow 5 Stationen) 1:1 aus aktuellem HTML. Sorgfalt-Spezialist statt 1.-Spezialist. Anwaerter-Lizenz entfernt."
-    },
     "motto": "safari",
     "ageGroup": "gross",
     "ageRange": [
@@ -59192,8 +53893,6 @@ var ELITE_MOTTO_DATA = {
       12
     ],
     "title": "🦁 Safari-Kindergeburtstag — 9–12 Jahre",
-    "metaDescription": "Safari-Kindergeburtstag für 9-12-Jährige: 3 fertige Expeditions-Konzepte mit Späher-, Foto- und Spuren-Spezialisierung, Codeknacker, Karten, Zeitplan und Einkaufsliste. Kostenlos.",
-    "introParagraph": "Dein Kind wird 9, 10, 11 oder 12 — und ein „Topfschlag“-Geburtstag würde es beleidigen? Hier sind drei fertige Konzepte für eine Reservat-Expedition: jedes Kind spezialisiert sich (Späher, Tierfotograf, Spurenleser), löst echte Aufgaben (Karte entschlüsseln, Codes knacken, Spuren lesen) und bekommt am Ende eine eigene Spezialisten-Lizenz. Keine Verkindischung — eine ernst gemeinte Mission, die auch in der 7. Klasse noch erwähnt wird.",
     "ageInsight": {
       "headline": "Was 9–12-Jährige ausmacht — und was das für die Safari-Party heißt",
       "traits": [
@@ -59895,7 +54594,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Sind alle drei Eintragungen schlüssig, ergibt sich der Standort. Suchen am Ort mit der TOR-Markierung."
               }
             ],
-            "safetyRule": null,
+            "safetyRule": "Verstecke und Mess-Stationen nur an sicheren, gut erreichbaren Orten — kein Klettern, keine verschlossenen Räume. Beim Loslaufen auf Stolperfallen achten.",
             "ageAdjust9": "Vorgezeichnete Hilfslinien auf der Karte, Standorte beschriftet.",
             "ageAdjust12": "Wilderer-Twist: Klebeband-Streifen als „Wilderer-Zonen“ auf den Boden. Wer beim Tempel-Suchen drauftritt, muss zurück zur Karte und einen Code erneut lösen.",
             "indoorTip": "Großer Esstisch als „Kartentisch“ — alle stehen drumherum, das wirkt wie eine echte Lagebesprechung.",
@@ -60393,110 +55092,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "intro": "Geht mit jedem Blechkuchen. Das Besondere ist die Karten-Topographie obendrauf — nicht das Backen.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "1 Blechkuchen backen — Fertigmischung reicht (Dr. Oetker, Kathi, Aurora). Schoko oder Vanille. 9-12-Jährige merken den Unterschied zu Selbstgemacht nicht."
-        },
-        {
-          "n": 2,
-          "content": "Komplett abkühlen lassen. Ungeduld = Glasur-Desaster."
-        },
-        {
-          "n": 3,
-          "content": "Grund-Glasur in Savannen-Ocker: Puderzucker + Wasser + 1 Tropfen Lebensmittelfarbe (ocker/orange). Großzügig drüberstreichen."
-        },
-        {
-          "n": 4,
-          "content": "Karten-Topographie: dünne Schokoglasur-Linien als „Wege“ zwischen den Tieren ziehen (Spritzbeutel oder Spritze ohne Nadel), blaue Klekse als Wasserlöcher."
-        },
-        {
-          "n": 5,
-          "content": "5 Marzipan-Tiere aus dem Backregal an markanten Punkten platzieren (Löwe = Felsen, Elefant = Wasserloch, Zebra = Akazien). Dr. Oetker hat oft fertige Tier-Sets."
-        },
-        {
-          "n": 6,
-          "content": "Grüne Gummibärchen oder Zuckerstreusel als „Akazien-Büschel“ am Rand verteilen."
-        },
-        {
-          "n": 7,
-          "content": "Optional Wow: ein kleiner „Tempel“ aus Schokoladen-Quadraten (Mikado-Stäbchen als Säulen, Schokolade als Dach) am Rand — visuelles Bindeglied zur Mission."
-        },
-        {
-          "n": 8,
-          "content": "Wunderkerze in die Mitte für Happy Birthday. Foto."
-        }
-      ],
-      "meta": {
-        "aufwand": "60 Min. inkl. Backen und Topographie",
-        "kosten": "~9 €",
-        "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. Marzipan-Tiere können Spuren von Nüssen enthalten (für Nuss-Allergiker auswechseln)."
-      },
-      "tips": [
-        {
-          "title": "Keine Lust zu backen?",
-          "body": "Ein gekaufter Blechkuchen vom Bäcker oder Discounter funktioniert genauso — die Karten-Topographie obendrauf machst du in 15 Minuten selbst. Niemand merkt, dass der Boden gekauft ist."
-        },
-        {
-          "title": "Die Topographie ist der Trick",
-          "body": "Der Wow-Effekt kommt nicht vom Teig, sondern von der Karte obendrauf: Wege, Wasserlöcher, Tiere an markanten Punkten. Das verbindet den Kuchen direkt mit der Reservat-Mission — die Kinder erkennen „ihre“ Karte wieder."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🚨 Allergien vorher abfragen — bei Schlafparty mit Medikamenten",
-          "detail": "Bei 8-10 Kindern in dieser Altersgruppe sind Unverträglichkeiten häufig (Nüsse, Laktose, Gluten). Die Pizza-Belege-Station löst das elegant — es gibt eh Auswahl. Bei Schlafparty zwingend abfragen: Medikamente, Asthma-Inhalator, Allergie-Notfallplan."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Alle Expeditions-Stationen funktionieren drinnen: Tier-Identifikation am Wohnzimmertisch, Foto-Komposition mit getarnten Plüsch-Tieren in der ganzen Wohnung, Spuren-Lese-Test im Flur, Tarnungs-Pirsch durch Wohn- und Esszimmer, Codeknacker am Tisch. Nur die Garten-Pirsch verlegst du nach drinnen."
-        },
-        {
-          "topic": "🧑‍🤝‍🧑 Wie viele Helfer? Realistisch geplant",
-          "detail": "Standard mit 8 Kindern: 1 Helfer reicht. Du leitest Hauptmission und Lizenz-Zeremonie, der Helfer bedient die wartenden Stationen. Solo machbar bei guter Vorbereitung (Lösungs-Karten zur Selbstkontrolle an jeder Station). Wow mit 10 Kindern: 1-2 Helfer empfohlen."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Statt 10 Einzel-Nachrichten an die Eltern: eine WhatsApp-Partyseite mit machsleicht. Adresse, Uhrzeit, Spezialisierungs-Hinweis (erdfarbene Kleidung), Abholzeit, Allergie-Abfrage, bei Schlafparty die Medikamenten-Abfrage — alles an einem Ort."
-        },
-        {
-          "topic": "📸 Foto-Moment einplanen — aber datenschutzbewusst",
-          "detail": "Die Lizenz-Zeremonie ist der Foto-Moment: Gruppenbild mit allen in Spezialisierungs-Patches (Wow: Filz-Buschhut), Einzel-Foto mit Lizenz. Vorher abklären: Welche Eltern erlauben Fotos ihrer Kinder in Gruppen-Chats? In der Einladung kurz nachfragen."
-        },
-        {
-          "topic": "🕒 Abholzeit vorher klären — bei Schlafparty doppelt",
-          "detail": "„Wir holen so gegen 17 Uhr ab“ ist keine Abholzeit. Konkret in die Einladung: „Abholung 17:30, die Lizenz-Zeremonie ist um 17:00 und wir wollen das Ende nicht stressen.“ Bei Schlafparty schriftlich bestätigen lassen, wer wann abholt."
-        }
-      ],
-      "educationalValue": "Was die Kinder mitnehmen: Beobachtungs-Logik (Tiere über Merkmale bestimmen statt raten), Bildkomposition (Drittelregel und Perspektive bleiben hängen), echtes Fährten-Lesen, Kooperation zwischen Spezialisierungen (keine kommt allein zum Ziel) und Selbstkontrolle beim Codeknacker (ergibt das Lösungswort keinen Sinn, prüfen sie ihre Reihenfolge selbst nach). Die Leitidee „im Reservat zählt, wer hinschaut, nicht wer der Schnellste ist“ trägt durch die ganze Party — Sorgfalt vor Tempo."
-    },
-    "invitationTemplate": "🦁 EXPEDITIONS-AUFRUF\n\nDas Reservat sucht neue Späher, Tierfotografen und Spurenleser. {name} wird {alter} und leitet die Expedition.\n\n📅 Wann: {datum}, {uhrzeit}\n📍 Treffpunkt: {treffpunkt}\n🎒 Mitbringen: bequeme, erdfarbene Outdoor-Kleidung\n📞 Rückmeldung bis {rsvp_deadline} an {kontakt}\n⚠️ Bitte Allergien/Unverträglichkeiten angeben{schlafparty_zusatz}\n\nJedes Kind wählt vor Ort seine Spezialisierung — und bekommt am Ende seine eigene Lizenz. Im Reservat zählt nicht, wer der Schnellste ist, sondern wer hinschaut.",
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Safari-Geburtstag für 9–12-Jährige dauern?",
-        "a": "2,5 bis 4 Stunden je nach Variante — oder als Wow mit Schlafparty-Anschluss bis zum Frühstück am nächsten Morgen. Minimal: 2,5 Stunden mit Spezialisierungs-Wahl, Codeknacker und Foto-Quest. Standard: 3,5 Stunden mit voller Stations-Wahl und Karten-Vermessung. Wow: 4 Stunden inklusive Schatzsuche-Quest."
-      },
-      {
-        "q": "Wie viele Kinder sollte man einladen?",
-        "a": "Die Faustregel „Alter + 1“ wird mit 9-12 zu viel — lieber 8-10 Kinder maximal. Die Spezialisierungs-Logik funktioniert perfekt mit 8-9 (3 pro Spezialisierung) oder 10-12 (4 pro Spezialisierung). Bei mehr als 12: zwei Crews bilden, sonst wird die Stations-Rotation chaotisch."
-      },
-      {
-        "q": "Was kostet ein Safari-Geburtstag für 9–12?",
-        "a": "Zwischen 41 € (Minimal, 6 Kinder) und 142 € (Wow, 10 Kinder, ohne Highlight-Produkte). Standard liegt bei ca. 92 € für 8 Kinder und bietet das beste Verhältnis. Filz-Buschhüte als Wow-Highlight kommen mit 80-120 € extra dazu, sind aber komplett optional."
-      },
-      {
-        "q": "Ist das nicht zu „kindlich“ für 11-12-Jährige?",
-        "a": "Wenn du es wie eine Kleinkind-Party aufziehst: ja. Wenn du den Reservat-Expedition-Frame ernst nimmst, die Kinder als selbstständige Crew behandelst und die Aufgaben echte Herausforderungen sind (Codes, Karten, Tier-Identifikation, Foto-Komposition), funktioniert es genau richtig. Verkindischen wird sofort gemerkt — Ernsthaftigkeit nicht."
-      },
-      {
-        "q": "Funktioniert der Safari-Geburtstag auch als Schlafparty?",
-        "a": "Ja, die Wow-Variante ist explizit für den Schlafparty-Anschluss konzipiert. Programm: 15-19 Uhr volle Expedition + Schatzsuche, ab 19 Uhr Eltern der Nicht-Bleiber raus, ab 19:30 Nacht-Safari mit Stirnlampen, dann Tier-Doku, Schlafsäcke, Frühstück. Empfohlen ab 10 Jahren, schriftliche Eltern-Bestätigung zwingend."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -60767,46 +55362,11 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "superheld-klein": {
-    "_meta": {
-      "schemaVersion": "elite-v1",
-      "motto": "superheld",
-      "ageGroup": "klein",
-      "author": "machsleicht",
-      "primaryVerified": "Preise = Richtwerte (Amazon/Drogerie 2026, 'ca.'); Sicherheit nach Kleinkind-Praxis: keine Kleinteile zum Verschlucken, weiche Wurfobjekte, kurze Spielzeiten, viel Begleitung."
-    },
     "motto": "Superhelden",
     "ageGroup": "klein",
     "ageRange": "3–5 Jahre",
     "title": "Superhelden-Kindergeburtstag (3–5 Jahre) — Spiele, Ablauf & Deko",
-    "metaDescription": "Superhelden-Geburtstag für 3–5-Jährige: kurzer, einfacher Ablauf, Held-Spiele ohne Verlierer, Deko-Ideen und Einkaufsliste mit Richtpreisen. Stressfrei geplant.",
-    "introParagraph": "Cape an — und schon ist dein Kind ein Held. Für 3–5-Jährige hält man es bewusst kurz, einfach und mit viel Begleitung: keine Regeln zum Merken, keine Verlierer, viel Bewegung und kurze ruhige Pausen. Unten findest du drei fertige Abläufe (Minimal, Standard, Wow) mit kindgerechten Spielen, Deko und einer Einkaufsliste mit Richtpreisen.",
     "ageInsight": "3–5-Jährige spielen noch nicht gegeneinander — sie wollen gemeinsam 'Held sein', nichts gewinnen. Halte Spiele extrem einfach (ein Schritt, eine Aufgabe), die Party kurz (max. 2–2,5 Std) und plane viel Erwachsenen-Begleitung ein. Ein Schurke macht in diesem Alter schnell Angst — lieber ganz weglassen oder nur als albernes 'Quatschmonster'. Kostüm muss bequem sein: ein Cape reicht, Masken stören oft die Sicht der Kleinen.",
-    "faq": [
-      {
-        "q": "Wie lange feiert man mit 3–5-Jährigen?",
-        "a": "Maximal 2 bis 2,5 Stunden. Kleine Kinder sind danach erschöpft. Lieber kurz und schön als lang und überdreht."
-      },
-      {
-        "q": "Brauchen die Kleinen Masken?",
-        "a": "Besser nicht — Masken stören oft die Sicht und werden schnell abgenommen. Ein Cape (oder ein aufgemaltes Logo auf dem T-Shirt) macht genauso zum Helden und ist bequemer."
-      },
-      {
-        "q": "Sollte es einen Bösewicht geben?",
-        "a": "Mit 3–5 lieber nicht oder nur als sehr albernes, tollpatschiges 'Quatschmonster', das sofort die Maske abnimmt. Echte Schurken machen in diesem Alter schnell Angst."
-      },
-      {
-        "q": "Was, wenn ein Kind nicht mitmacht?",
-        "a": "Ganz normal. Kein Zwang — ein Beobachter-Platz auf dem Schoß von Mama/Papa ist okay. Oft kommt das Kind nach ein paar Minuten von selbst dazu."
-      },
-      {
-        "q": "Wie verhindere ich Chaos?",
-        "a": "Klare Struktur: ein Spiel, eine kurze ruhige Pause, das nächste. Viel Begleitung (mind. 2 Erwachsene ab 6 Kindern). Bewegungsspiele kurz halten."
-      },
-      {
-        "q": "Was kostet das ungefähr?",
-        "a": "Minimal ab ~30 €, Standard ~49 €, Wow ~72 € für 8 Kinder. Capes selbst aus Stoffresten nähen spart am meisten."
-      }
-    ],
     "variants": [
       {
         "id": "minimal",
@@ -61497,59 +56057,6 @@ var ELITE_MOTTO_DATA = {
         "costContext": "ca. 72 € für 8 Kinder · ~9 € pro Kind"
       }
     ],
-    "cakeRecipe": {
-      "intro": "Für die Kleinen am einfachsten: bunte Muffins mit Helden-Toppern statt großer Torte — leichter zu verteilen und kein Tortenschneiden nötig.",
-      "steps": [
-        {
-          "n": 1,
-          "name": "Muffins backen",
-          "content": "Einfacher Muffinteig (250g Mehl, 100g Zucker, 2 Eier, 100g Butter/Öl, 1 Pck. Backpulver, 150ml Milch). 175°C, ca. 20–25 Min."
-        },
-        {
-          "n": 2,
-          "name": "Auskühlen",
-          "content": "Komplett auskühlen lassen."
-        },
-        {
-          "n": 3,
-          "name": "Bunt toppen",
-          "content": "Mit buntem Zuckerguss bestreichen, Streusel in Heldenfarben drüber."
-        },
-        {
-          "n": 4,
-          "name": "Helden-Topper",
-          "content": "Kleine Blitz- oder Stern-Topper (Papier auf Zahnstocher) reinstecken — Zahnstocher bei den Kleinsten vor dem Essen entfernen!"
-        }
-      ],
-      "meta": "Aufwand: niedrig · Vorlaufzeit: 1 Std · ideal für 3–5, da gut portionierbar.",
-      "tips": "Zahnstocher-Topper IMMER vor dem Servieren rausziehen (Verletzungsgefahr). Wer es bunt-einfach mag: gekaufte Muffins + Zuckerguss + Streusel."
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "Kurz halten",
-          "detail": "2 bis 2,5 Stunden sind genug. Lieber enden, wenn es am schönsten ist, als überdrehte, weinende Kinder am Ende."
-        },
-        {
-          "topic": "Viel Begleitung",
-          "detail": "Ab 6 Kindern mindestens zwei Erwachsene. Kleine brauchen Hilfe bei fast jedem Spiel — das ist normal."
-        },
-        {
-          "topic": "Kein Wettkampf, kein Verlierer",
-          "detail": "3–5-Jährige verstehen Gewinnen/Verlieren noch nicht und reagieren mit Tränen. Alle Spiele gemeinsam, alle 'gewinnen'."
-        },
-        {
-          "topic": "Masken nur optional",
-          "detail": "Viele Kleine mögen keine Masken (Sicht, Gefühl). Ein Cape oder ein aufgemaltes Logo reicht völlig."
-        },
-        {
-          "topic": "Kleinteile im Blick",
-          "detail": "Geplatzte Ballons sofort weg, keine kleinen Mitgebsel zum Verschlucken. Bei Bastelglitzer/-kleber immer dabei sein."
-        }
-      ],
-      "educationalValue": "Für 3–5-Jährige fördern die Spiele vor allem Grobmotorik (Hüpfen, Werfen, Balance), erstes Miteinander (gemeinsam ein Ziel) und Selbstvertrauen ('ich bin ein Held'). Der Verzicht auf Wettkampf schützt vor Frust und macht den Tag für alle schön."
-    },
-    "invitationTemplate": "🦸 KLEINE HELD:IN GESUCHT! 🦸\n\n[NAME] wird [ALTER] und feiert einen Superhelden-Geburtstag — und DU bist eingeladen!\n\n🗓️ Wann: [DATUM], [UHRZEIT]\n📍 Wo: [ORT]\n🦸 Cape gibt's bei uns — komm einfach, wie du magst!\n\nBitte sag bis [FRIST] kurz Bescheid.\n\nWir freuen uns auf dich, kleine:r Held:in! 💥",
     "preparationWeeks": [
       {
         "week": "2 Wochen vorher",
@@ -61611,46 +56118,11 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "superheld-mittel": {
-    "_meta": {
-      "schemaVersion": "elite-v1",
-      "motto": "superheld",
-      "ageGroup": "mittel",
-      "author": "machsleicht",
-      "primaryVerified": "Preise = Richtwerte (Amazon/Drogerie Stand 2026, als 'ca.' gekennzeichnet); Sicherheitsregeln nach Standard-Kinderparty-Praxis (weiche Wurfobjekte, freie Sicht trotz Maske, Aufsicht)."
-    },
     "motto": "Superhelden",
     "ageGroup": "mittel",
     "ageRange": "6–8 Jahre",
     "title": "Superhelden-Kindergeburtstag (6–8 Jahre) — Spiele, Ablauf & Deko",
-    "metaDescription": "Superhelden-Geburtstag für 6–8-Jährige: fertiger Ablauf, Helden-Training mit Anleitung, Deko-Ideen und Einkaufsliste mit Richtpreisen. In Minuten geplant.",
-    "introParagraph": "Capes an, Maske auf — heute wird deine Crew zur Heldentruppe. Für 6–8-Jährige ist Superhelden eines der dankbarsten Mottos: viel Bewegung, klare Rollen (Held gegen Schurke), wenig Bastelaufwand. Unten findest du drei fertige Abläufe (Minimal, Standard, Wow) mit Spielen inklusive Schritt-für-Schritt-Anleitung, einer Einkaufsliste mit Richtpreisen und allem, was die Stadt rettet.",
     "ageInsight": "6–8-Jährige wollen aktiv Held SEIN, nicht zuschauen. Sie lieben einen klaren Auftrag ('Rettet die Stadt!'), Wettkampf ohne Rauswurf und ein 'Training', das sie zu echten Helden macht. Wichtig: jedes Kind braucht eine eigene Heldenrolle/Maske — sonst gibt's Streit, wer Spider-Man ist. Schurken-Figur (eine erwachsene Person als 'Dr. Chaos') zieht enorm, darf aber nie gruselig werden.",
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Superhelden-Geburtstag dauern?",
-        "a": "2,5 bis 3 Stunden sind für 6–8-Jährige ideal. Die Standard-Variante (Helden-Training, Stadt-Rettung, Schurken-Jagd, Kuchen) füllt genau dieses Fenster ohne Leerlauf."
-      },
-      {
-        "q": "Brauche ich für jedes Kind ein Kostüm?",
-        "a": "Nein. Eine Maske + ein Cape pro Kind reicht völlig und macht aus jedem sofort einen Helden — das übernimmt ihr als Mitgebsel zu Beginn. Komplette Kostüme sind teuer und unnötig."
-      },
-      {
-        "q": "Was, wenn die Kinder zu wild werden?",
-        "a": "Plane bewusst eine ruhige Station ein (Helden-Abzeichen basteln oder Geheim-Botschaft entschlüsseln) nach jeder Bewegungsrunde. Der Wechsel laut/leise hält die Gruppe steuerbar."
-      },
-      {
-        "q": "Geht das auch in der Wohnung?",
-        "a": "Ja. Helden-Training als Wollfaden-Laserparcours im Flur, Stadt-Rettung mit Bauklötzen im Wohnzimmer, Schurken-Dosenwerfen — alles drinnen machbar. Bei den Bewegungsspielen Tische wegräumen."
-      },
-      {
-        "q": "Welche Heldin für Mädchen?",
-        "a": "Superhelden ist kein Jungs-Motto. Wonder Woman, Supergirl, Ms. Marvel oder eine selbst erfundene Heldin funktionieren genauso — neutral angekündigt ('eure eigene Superkraft') holt alle ab."
-      },
-      {
-        "q": "Was kostet ein Superhelden-Geburtstag ungefähr?",
-        "a": "Minimal ab ~38 €, Standard ~69 €, Wow ~90 € für 8 Kinder (Material laut Einkaufsliste). Größter Hebel: Capes/Masken selbst aus Stoffresten statt Kaufset spart 15–20 €."
-      }
-    ],
     "variants": [
       {
         "id": "minimal",
@@ -62412,59 +56884,6 @@ var ELITE_MOTTO_DATA = {
         "costContext": "ca. 90 € für 8 Kinder · ~11,25 € pro Kind"
       }
     ],
-    "cakeRecipe": {
-      "intro": "Der Helden-Logo-Kuchen ist einfacher, als er aussieht: ein normaler Rührkuchen, blau-rot eingedeckt, mit einem gelben Blitz oder Stern obendrauf. Plant ~45 Min Backzeit plus Dekorieren.",
-      "steps": [
-        {
-          "n": 1,
-          "name": "Boden backen",
-          "content": "Einen einfachen Rührkuchen in einer rechteckigen Form backen (Standard-Rezept: 250g Mehl, 200g Zucker, 4 Eier, 200g weiche Butter, 1 Pck. Backpulver, etwas Milch). 175°C, ca. 40–45 Min."
-        },
-        {
-          "n": 2,
-          "name": "Auskühlen & glätten",
-          "content": "Komplett auskühlen lassen, Oberseite ggf. gerade schneiden."
-        },
-        {
-          "n": 3,
-          "name": "Heldenfarben",
-          "content": "Mit blauem Zuckerguss oder Fondant eindecken, einen roten Rand oder rote Streifen setzen."
-        },
-        {
-          "n": 4,
-          "name": "Logo setzen",
-          "content": "Aus gelbem Fondant (oder gelber Zuckerschrift) einen Blitz/Stern ausschneiden und mittig auflegen. Fertig ist das Helden-Emblem."
-        }
-      ],
-      "meta": "Aufwand: mittel · Vorlaufzeit: 1,5 Std inkl. Auskühlen · auch als Muffins mit Blitz-Toppern machbar (schneller).",
-      "tips": "Wer es eilig hat: gekaufter Rührkuchen + gekaufter Roll-Fondant in Blau/Rot/Gelb. Muffins mit aufgesteckten Comic-Toppern sind die stressfreieste Variante und lassen sich leichter verteilen."
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "Jedem seine Rolle",
-          "detail": "Sorg dafür, dass kein Kind 'der Sidekick' ist — alle sind Helden mit eigener Maske. Streit ums 'Wer ist Spider-Man' vermeidest du, indem ihr eigene Heldennamen erfindet statt feste Lizenzfiguren zu verteilen."
-        },
-        {
-          "topic": "Schurke ja, Angst nein",
-          "detail": "Eine Schurken-Figur (Dr. Chaos) zieht enorm, muss aber tollpatschig-lustig bleiben. Test: Würde das schüchternste Kind lachen statt weinen? Dann passt es."
-        },
-        {
-          "topic": "Laut-leise-Rhythmus",
-          "detail": "Nach jeder Bewegungsrunde eine ruhige Station (Basteln, Rätsel). Das hält die Gruppe steuerbar und verhindert das große Chaos gegen Ende."
-        },
-        {
-          "topic": "Zweite Aufsicht",
-          "detail": "Ab 8 Kindern und bei Bewegungsspielen unbedingt eine zweite erwachsene Person — eine leitet das Spiel, eine behält die Gruppe im Blick."
-        },
-        {
-          "topic": "Plan B für drinnen",
-          "detail": "Alle Spiele hier gehen auch in der Wohnung. Bei Regen Tische wegräumen, Parcours in den Flur, Showdown ins Wohnzimmer — kein Programm fällt aus."
-        }
-      ],
-      "educationalValue": "Superhelden-Spiele trainieren ganz nebenbei Teamwork (gemeinsame Mission), Selbstwirksamkeit ('ich kann etwas bewirken') und Mut in einem sicheren Rahmen. Der gemeinsame Sieg über den Schurken stärkt das Gruppengefühl — alle gewinnen zusammen, niemand verliert."
-    },
-    "invitationTemplate": "🦸 ACHTUNG, NEUE HELD:IN GESUCHT! 🦸\n\nDie Stadt braucht dich! [NAME] wird [ALTER] und gründet eine Heldentruppe — und DU bist dabei.\n\n🗓️ Wann: [DATUM], [UHRZEIT]\n📍 Wo: [ORT]\n🎭 Mission: Komm als dein Lieblingsheld (oder erfinde deinen eigenen!) — Cape und Maske gibt's bei uns.\n\nBitte sag bis [FRIST] Bescheid, ob du die Stadt mitrettest!\n\nDeine Superkräfte werden gebraucht 💥",
     "preparationWeeks": [
       {
         "week": "3 Wochen vorher",
@@ -62527,46 +56946,11 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "superheld-gross": {
-    "_meta": {
-      "schemaVersion": "elite-v1",
-      "motto": "superheld",
-      "ageGroup": "gross",
-      "author": "machsleicht",
-      "primaryVerified": "Preise = Richtwerte (Amazon/Drogerie 2026, 'ca.'); Sicherheit nach Praxis für 9–12: weiche Wurfobjekte, klare Regeln, Aufsicht bei Parkour/Outdoor."
-    },
     "motto": "Superhelden",
     "ageGroup": "gross",
     "ageRange": "9–12 Jahre",
     "title": "Superhelden-Kindergeburtstag (9–12 Jahre) — Spiele, Ablauf & Deko",
-    "metaDescription": "Superhelden-Geburtstag für 9–12-Jährige: kniffliger Ablauf mit Geheim-Mission, Code-Knacken und Team-Challenges, Deko und Einkaufsliste mit Richtpreisen.",
-    "introParagraph": "Mit 9–12 darf es richtig knifflig werden: eine echte Geheim-Mission gegen einen Superschurken, Codes zum Knacken, ein Hindernis-Parkour mit Zeitwertung und Team-Challenges mit echtem Wettbewerb. Unten drei fertige Abläufe (Minimal, Standard, Wow) mit Spielen inklusive Anleitung, Deko und Einkaufsliste mit Richtpreisen.",
     "ageInsight": "9–12-Jährige finden 'Verkleiden' schnell 'babyhaft' — der Reiz liegt in der MISSION: ein geheimer Auftrag, ein cleverer Gegner, knifflige Rätsel und echter Wettbewerb (Teams gegeneinander auf Zeit). Sie wollen Eigenständigkeit, nicht an die Hand genommen werden. Statt voller Kostüme reichen Abzeichen/Agenten-Ausweise. Ein gut gespielter Superschurke (Video- oder Audio-Botschaften) trägt die ganze Party. Wichtig: genug Schwierigkeit, sonst Langeweile.",
-    "faq": [
-      {
-        "q": "Wie lange feiert man mit 9–12-Jährigen?",
-        "a": "3 bis 4 Stunden. In dem Alter halten die Kinder ein anspruchsvolles Programm gut durch — eher zu wenig als zu viel planen wäre der Fehler."
-      },
-      {
-        "q": "Sind sie nicht zu cool für Superhelden?",
-        "a": "Für Kostüme oft ja — für eine Geheim-Mission mit Codes, Schurke und Team-Wettkampf nein. Verkauf es als 'Agenten-/Helden-Mission', nicht als Verkleidungsparty."
-      },
-      {
-        "q": "Wie mache ich es knifflig genug?",
-        "a": "Echte Rätsel (Caesar-Code, Spiegelschrift, Zahlenschloss), Aufgaben mit mehreren Schritten und Zeitdruck. Team gegen Team statt jeder für sich."
-      },
-      {
-        "q": "Braucht es einen Schurken?",
-        "a": "Sehr empfehlenswert — eine vorab aufgenommene Video-/Audiobotschaft von 'Dr. Chaos' gibt der Mission Antrieb und kommt in dem Alter top an, ganz ohne Angst."
-      },
-      {
-        "q": "Geht das in der Wohnung?",
-        "a": "Ja. Escape-Room-Stationen, Code-Knacken und ein Wollfaden-Laserparcours laufen drinnen. Nur der Parkour braucht etwas Platz oder den Garten."
-      },
-      {
-        "q": "Was kostet das ungefähr?",
-        "a": "Minimal ab ~35 €, Standard ~55 €, Wow ~75 € für 8 Kinder. Rätsel/Codes selbst basteln kostet fast nichts — der Aufwand steckt in der Vorbereitung, nicht im Geld."
-      }
-    ],
     "variants": [
       {
         "id": "minimal",
@@ -63285,59 +57669,6 @@ var ELITE_MOTTO_DATA = {
         "costContext": "ca. 75 € für 8 Kinder · ~9,38 € pro Kind"
       }
     ],
-    "cakeRecipe": {
-      "intro": "Für die Großen darf der Kuchen 'cool' sein: ein dunkler Schoko-Kuchen mit leuchtendem Reaktor-Logo (Neon-Zuckerguss) oder Cake-Pops als 'Energiekapseln'.",
-      "steps": [
-        {
-          "n": 1,
-          "name": "Schoko-Boden backen",
-          "content": "Saftiger Schokokuchen (250g Mehl, 200g Zucker, 4 Eier, 200g Butter, 50g Kakao, 1 Pck. Backpulver, etwas Milch). 175°C, ca. 45 Min."
-        },
-        {
-          "n": 2,
-          "name": "Auskühlen",
-          "content": "Vollständig auskühlen, Oberfläche glätten."
-        },
-        {
-          "n": 3,
-          "name": "Dunkel eindecken",
-          "content": "Mit dunkler Schoko-Ganache oder schwarzem Zuckerguss überziehen."
-        },
-        {
-          "n": 4,
-          "name": "Reaktor-Logo",
-          "content": "Ein leuchtend gelb/grünes Energie-Symbol (Blitz, Kreis) mit Neon-Zuckerschrift aufmalen — Kontrast zum dunklen Kuchen wirkt 'high-tech'."
-        }
-      ],
-      "meta": "Aufwand: mittel · Vorlaufzeit: 1,5 Std · Cake-Pops als 'Energiekapseln' sind die coole Alternative.",
-      "tips": "Cake-Pops in Silber/Neon kommen bei 9–12 oft besser an als Torte — gut vorzubereiten und 'instagrammable'. Wer Torte macht: dunkle Basis + ein heller Akzent reicht für den Wow-Effekt."
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "Mission statt Verkleidung",
-          "detail": "Verkauf die Party als Geheim-/Agenten-Mission, nicht als 'Kostümparty'. 9–12-Jährige finden Verkleiden schnell babyhaft, aber eine Mission mit Rätseln zieht enorm."
-        },
-        {
-          "topic": "Schwer genug machen",
-          "detail": "Der häufigste Fehler: zu leicht. Echte Codes, mehrstufige Rätsel, Zeitdruck. Lieber Tipp-Karten bereithalten, falls es doch zu schwer ist, als von vornherein zu einfach."
-        },
-        {
-          "topic": "Teams gegeneinander",
-          "detail": "In dem Alter motiviert echter Wettbewerb. Zwei Teams mit Gesamtwertung über mehrere Spiele halten die Spannung bis zum Schluss."
-        },
-        {
-          "topic": "Eigenständigkeit lassen",
-          "detail": "Nicht überbetreuen — die Kinder wollen selbst lösen. Du gibst Aufträge und greifst nur ein, wenn etwas stockt oder die Sicherheit es verlangt."
-        },
-        {
-          "topic": "Schurke macht die Show",
-          "detail": "Eine vorab aufgenommene Video-/Audiobotschaft von Dr. Chaos (Handy genügt) gibt der Mission einen roten Faden und kostet nichts — der größte Wow-Hebel."
-        }
-      ],
-      "educationalValue": "Für 9–12-Jährige trainieren Code-Knacken und Escape-Rätsel logisches Denken und Frustrationstoleranz, Team-Challenges fördern Kooperation und faires Messen, und die selbstständige Lösung stärkt Selbstwirksamkeit. Die Story-Rahmung (Mission, Schurke, Finale) macht aus Spielen ein zusammenhängendes Erlebnis."
-    },
-    "invitationTemplate": "🚨 STRENG GEHEIM — MISSION FÜR DICH 🚨\n\nDr. Chaos bedroht die Stadt. [NAME] stellt ein Eliteteam zusammen — und du bist rekrutiert.\n\n🗓️ Einsatz: [DATUM], [UHRZEIT]\n📍 Hauptquartier: [ORT]\n🎯 Auftrag: Codes knacken, Rätsel lösen, Dr. Chaos stoppen.\n🤫 Komm bereit für Köpfchen und Action.\n\nBestätige deine Teilnahme bis [FRIST] — die Stadt zählt auf dich.\n\nMission erfüllt? Das entscheidest du. 💥",
     "preparationWeeks": [
       {
         "week": "3 Wochen vorher",
@@ -63400,12 +57731,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "weltraum-klein": {
-    "_meta": {
-      "source_file": "kindergeburtstag/weltraum-3-5-jahre.html",
-      "extracted": "2026-05-21",
-      "schema_version": "1.0",
-      "purpose": "Elite-Motto-Data für Planer-Frisur-Sprint (P3-13..P3-18). Phase B: preparationWeeks + sosScenarios + shoppingList.category vollständig."
-    },
     "motto": "weltraum",
     "ageGroup": "klein",
     "ageRange": [
@@ -63413,8 +57738,6 @@ var ELITE_MOTTO_DATA = {
       5
     ],
     "title": "🚀 Weltraum-Kindergeburtstag — 3–5 Jahre",
-    "metaDescription": "Weltraum-Kindergeburtstag für 3-5-Jährige als Mini-Astronauten-Tag: 3 fertige Varianten ab 35 €, altersgerechte Spiele, Mond-Kuchen und Einkaufsliste. Kostenlos planen.",
-    "introParagraph": "Ein Weltraum-Geburtstag für 3–5-Jährige braucht keine Raketenwissenschaft — nur einen Pappkarton als Raumschiff, ein paar selbstgemalte Sterne und kleine Helfer-Hände. Die Kinder sammeln Sterne fürs Raumschiff, hüpfen beim Raketen-Start, suchen Mondsteine und begrüßen freundliche Aliens. Alles ist altersgerecht und ohne Gruseln: keine schwarzen Löcher, keine Angriffe, kein Verlorengehen. Hier findest du drei fertige Varianten von Minimal bis Wow — mit Zeitplan, Spielen, Mond-Kuchen und einer Einkaufsliste, die dir das Zusammensuchen abnimmt.",
     "signatureRitual": {
       "name": "Das kleine Astronauten-Versprechen",
       "subtitle": "Eröffnet die Mission + Urkunden-Übergabe am Ende",
@@ -64541,106 +58864,6 @@ var ELITE_MOTTO_DATA = {
         }
       }
     ],
-    "cakeRecipe": {
-      "intro": "Der Mond-Kuchen ist ein simpler Gugelhupf mit silbriger Glasur und ein paar Krater aus eingedrückten Schoko-Linsen — sieht aus wie der Mond, ist aber in 20 Minuten fertig. Wer mag, macht stattdessen Planeten-Muffins mit bunter Glasur; die gehen noch schneller und jedes Kind bekommt seinen eigenen Planeten.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Backofen auf 175 °C Ober-/Unterhitze vorheizen. Gugelhupf- oder Kastenform fetten und mehlen."
-        },
-        {
-          "n": 2,
-          "content": "250 g weiche Butter mit 200 g Zucker und 1 Päckchen Vanillezucker schaumig rühren."
-        },
-        {
-          "n": 3,
-          "content": "4 Eier einzeln unterrühren, dann 300 g Mehl mit 1 Päckchen Backpulver und einem Schuss Milch unterheben."
-        },
-        {
-          "n": 4,
-          "content": "Teig in die Form füllen und 45–50 Min. backen. Stäbchenprobe: bleibt es sauber, ist der Mond fertig."
-        },
-        {
-          "n": 5,
-          "content": "Komplett auskühlen lassen. Aus 150 g Puderzucker, etwas Wasser und einem Tropfen Lebensmittelfarbe eine silbrig-graue Glasur rühren."
-        },
-        {
-          "n": 6,
-          "content": "Glasur über den Kuchen gießen und mit Schoko-Linsen oder dem Boden eines kleinen Glases ein paar Mond-Krater eindrücken. Fertig ist der Mond."
-        }
-      ],
-      "meta": {
-        "aufwand": "mittel (Rührteig + 15 Min. Deko)",
-        "kosten": "ca. 5–8 €",
-        "allergiker": "Für Ei-Allergie: fertigen Marmorkuchen vom Bäcker nehmen und nur die Glasur + Krater selbst draufmachen — sieht genauso aus. Glutenfrei: Reismehl-Mischung (Schaer/Bauckhof) statt Weizen. Laktosefrei: Pflanzenmargarine + Hafermilch statt Butter/Milch. Mit Eltern vorab durchsprechen, was in der Glasur noch ersetzt werden muss."
-      },
-      "tips": [
-        {
-          "title": "Keine Lust zu backen?",
-          "body": "Ein Marmorkuchen oder Gugelhupf vom Bäcker (ca. 6–8 €) plus silbrige Glasur und Schoko-Krater sieht aus wie selbstgemacht. Niemand fragt bei einer Kinderparty nach dem Rezept — der Mond zählt, nicht der Aufwand."
-        },
-        {
-          "title": "Vorsicht bei Pinterest-Raketen-Torten",
-          "body": "Die dreistöckigen Raketen-Torten aus dem Netz sehen toll aus und kosten dich einen halben Tag plus Nerven. Für 3–5-Jährige reicht ein Mond-Kuchen oder bunte Muffins völlig — die Kinder schauen 30 Sekunden hin und essen dann sowieso nur die Glasur."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🥜 Allergien VOR der Party abfragen",
-          "detail": "Frag bei der Einladung nach Allergien (Nüsse, Ei, Laktose). Bei den Planeten-Muffins lassen sich problemlos Varianten ohne Nüsse backen — vorher wissen ist besser als am Tag improvisieren."
-        },
-        {
-          "topic": "📦 Pappkarton-Kanten sind scharf",
-          "detail": "Bevor das Raumschiff steht: alle Schnittkanten umknicken oder mit Klebeband abkleben. Das ist die häufigste kleine Verletzungsquelle und in 5 Minuten erledigt."
-        },
-        {
-          "topic": "🦶 Alufolie + Boden = Stolperfalle",
-          "detail": "Lose Folie und Tücher auf dem Boden gut festkleben. Beim Toben und Hüpfen rutschen Kinder sonst aus — lieber Deko an Wand und Decke statt am Boden."
-        },
-        {
-          "topic": "⏱️ Kuchen-Slot nach 60–75 Minuten",
-          "detail": "Setze den Kuchen fest in die Mitte der Party. Davor sind die Kinder noch aufnahmefähig fürs Spielen, danach kommt die ruhige Bastel-Phase — der Zucker-Peak fällt so nicht ans Ende."
-        },
-        {
-          "topic": "👥 Ein Erwachsener pro zwei bis drei Kinder",
-          "detail": "Bei 3–5-Jährigen brauchst du Hände: einer leitet das Spiel, einer fängt Tränen und Toiletten-Gänge ab. Plane Eltern aktiv als Helfer ein — die meisten bleiben bei dieser Altersgruppe ohnehin."
-        },
-        {
-          "topic": "📵 Kurz halten, früh enden",
-          "detail": "Zwei bis zweieinhalb Stunden sind das Maximum. Lieber aufhören, wenn alle noch gut drauf sind, als das Ende auszureizen — überdrehte, müde Kinder verderben sonst den schönen Eindruck."
-        }
-      ],
-      "educationalValue": "Die Kinder üben beim Weltraum-Tag ganz nebenbei viel: Beim Sternen-Sammeln und Mondsteine-Suchen schulen sie Ausdauer und genaues Hinschauen. Der Raketen-Start mit Countdown trainiert Zuhören und den Wechsel zwischen Toben und Stillsein — eine echte Selbstregulations-Übung. Die Planeten-Reise streut spielerisch erstes Sternen-Wissen ein (Mars ist rot, Saturn hat Ringe), ohne zu belehren. Und das Begrüßen der freundlichen Aliens zeigt: Neues ist spannend, nicht bedrohlich."
-    },
-    "invitationTemplate": "Du brauchst noch die passende Einladung? Der machsleicht-Einladungs-Generator macht in 30 Sekunden eine interaktive Weltraum-Einladung mit Name, Datum und Ort — die Gäste bekommen ein kleines Weltraum-Abenteuer als Vorgeschmack. Kostenlos und sofort per WhatsApp teilbar.",
-    "faq": [
-      {
-        "q": "Funktioniert ein Weltraum-Geburtstag auch in einer kleinen Wohnung?",
-        "a": "Ja, sogar besonders gut. Sternen-Sammeln, Raketen-Start und Basteln brauchen kaum Platz, und ein Pappkarton wird im kleinsten Zimmer zum Raumschiff. Den Parcours kürzt du einfach auf den Flur. Für 6 Kinder reichen 50–60 m² locker."
-      },
-      {
-        "q": "Wie viele Kinder sind ideal?",
-        "a": "Bei 3–5-Jährigen sind 5–8 Kinder ein guter Rahmen. Faustregel: nicht mehr Kinder als das Geburtstagskind Jahre alt wird, plus ein, zwei. Mehr Kinder heißt mehr Helfer einplanen — ein Erwachsener pro zwei bis drei Kinder."
-      },
-      {
-        "q": "Was kostet die Party?",
-        "a": "Die Minimal-Variante liegt bei rund 35 € für 6 Kinder, Standard bei ca. 55 € und Wow bei ca. 80 € für 8 Kinder. Wer Pappe, Stifte und Alufolie aus dem Bestand nimmt, kommt deutlich günstiger weg — das Karton-Raumschiff kostet nichts."
-      },
-      {
-        "q": "Ist die Wow-Variante auch für 3-Jährige geeignet?",
-        "a": "Teilweise. Das Karton-Raumschiff und das Sammeln begeistern auch die Kleinsten, aber Stern-Projektor und aufblasbare Deko-Figuren können 3-Jährige überfordern oder erschrecken. Für reine 3-Jährigen-Runden bleib bei Minimal oder Standard — die Wow-Extras lohnen sich ab etwa 5 Jahren."
-      },
-      {
-        "q": "Sind Alien-Spiele für so kleine Kinder nicht zu gruselig?",
-        "a": "Nur wenn man sie gruselig macht. Wir verwenden bewusst freundliche Aliens (lächelnde Pappe-Gesichter, grünes Tuch als Erkennung, kein dunkles Maskenspiel) und drehen das Fangen in eine Begrüßungs-Geste. Wer „gefangen“ wird, wird mit High-Five willkommen geheißen und ist dann selbst Alien-Helfer — keiner verliert, niemand erschrickt. Für 3-Jährige besser ganz weglassen, ab 4–5 funktioniert es zuverlässig."
-      },
-      {
-        "q": "Was kostet ein Weltraum-Geburtstag pro Kind ungefähr?",
-        "a": "Bei der Minimal-Variante rund 6 € pro Kind (35 € für 6 Kinder), Standard ca. 7 € pro Kind (55 € für 8 Kinder), Wow ca. 10 € pro Kind (80 € für 8 Kinder). Mit Bestand aus dem Haushalt (Klopapierrollen, Alufolie, Buntstifte) drückst du das auf 3–5 € pro Kind. Das Karton-Raumschiff kostet nichts und ist trotzdem der Star der Party."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -64914,14 +59137,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "weltraum-mittel": {
-    "_meta": {
-      "source_file": "kindergeburtstag/weltraum-6-8-jahre.html",
-      "extracted": "2026-05-21",
-      "schema_version": "1.0",
-      "purpose": "Weltraum 6-8 — Phase B Elite-Motto-Data (Stream B)",
-      "phase_b_complete": "2026-05-21",
-      "phase_b_method": "Direct draft auf Basis safari-mittel.json (Pattern Score 92) + weltraum-6-8-jahre.html. Weltraum-Spezifika: Astronauten-Crew (Pilot/Wissenschaftler/Funker), Astronauten-Schwur & Lizenz-Uebergabe, Mond-Mission + Crystals sammeln, 3-Buchstaben-Codes (MARS/MOND), optional Mond-Pizza-Backstation + Nacht-Sternen-Beobachtung."
-    },
     "motto": "weltraum",
     "ageGroup": "mittel",
     "ageRange": [
@@ -64929,8 +59144,6 @@ var ELITE_MOTTO_DATA = {
       8
     ],
     "title": "🚀 Weltraum-Kindergeburtstag — 6–8 Jahre",
-    "metaDescription": "Weltraum-Kindergeburtstag für 6-8-Jährige: 3 fertige Party-Konzepte mit Astronauten-Crew, Mond-Mission, Spielanleitungen, Zeitplan, Einkaufsliste und Kosten....",
-    "introParagraph": "Dein Kind wird 6, 7 oder 8 und träumt von Raketen, Planeten und dem Mond? Hier bekommst du drei fertige Party-Konzepte rund um eine Astronauten-Crew auf Mond-Mission — von schnell und stressfrei bis zum vollen Programm mit Stations-Rotation und Sternen-Quest. Jede Crew übt die Mond-Landung, sammelt Energie-Crystals und bekommt am Ende ihre Astronauten-Lizenz. Jedes Konzept mit Zeitplan, Spielanleitungen, Einkaufsliste und Kosten.\n\n[Weltraum-Geburtstag planen →](/kindergeburtstag?motto=weltraum&alter=7#planer)",
     "ageInsight": {
       "headline": "Was 6–8-Jährige ausmacht — und was das für die Weltraum-Party heißt",
       "traits": [
@@ -66046,98 +60259,6 @@ var ELITE_MOTTO_DATA = {
         "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)"
       }
     ],
-    "cakeRecipe": {
-      "intro": "Geht mit jedem Kasten- oder Blechkuchen. Das Besondere ist die Raketen-Form — nicht das Backen.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Kastenkuchen oder Blechkuchen backen — Fertigmischung reicht völlig (Dr. Oetker, Kathi, Aurora). Kein Mensch schmeckt den Unterschied. Schoko- oder Vanillekuchen passen beide."
-        },
-        {
-          "n": 2,
-          "content": "Komplett abkühlen lassen. Ungeduld = Glasur-Desaster."
-        },
-        {
-          "n": 3,
-          "content": "Für die Rakete: aus dem Kastenkuchen ein dreieckiges Stück als Spitze abschneiden und oben aufsetzen, oder einfach eine Raketen-Spitze aus einem Stück Kuchen formen. Beim Blechkuchen reicht eine aufgemalte Rakete."
-        },
-        {
-          "n": 4,
-          "content": "Glasur in Silber/Blau: weiße Zuckerglasur aus Puderzucker + Wasser, ein Tropfen blaue Lebensmittelfarbe. Oder Schokoglasur als \"Weltall-Schwarz\"."
-        },
-        {
-          "n": 5,
-          "content": "Sterne und Planeten obendrauf: Zucker-Sterne aus dem Backregal, bunte Schokolinsen als Planeten, Silber-Perlen als ferne Sterne."
-        },
-        {
-          "n": 6,
-          "content": "Optional Wow: Wunderkerze als Raketen-Antrieb in die Spitze stecken, beim Happy-Birthday anzünden. Foto."
-        }
-      ],
-      "meta": {
-        "aufwand": "45 Min. inkl. Backen und Deko",
-        "kosten": "~8 €",
-        "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken"
-      },
-      "tips": [
-        {
-          "title": "🎂 Keine Lust zu backen?",
-          "body": "Fertigen Kuchen beim Bäcker oder Supermarkt kaufen, Zucker-Sterne und Schokolinsen-Planeten obendrauf streuen, eine Wunderkerze rein. Sieht aus wie gewollt, dauert 2 Minuten, schmeckt den Kindern genauso gut. Kein Kind hat jemals gesagt: \"Der Kuchen war nicht selbstgemacht.\""
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "🚨 Allergien vorher abfragen",
-          "detail": "Bei 8 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten). In die Einladung schreiben: \"Hat dein Kind Allergien oder Unverträglichkeiten?\" Apfelschorle, Popcorn und Möhren-Sticks sind fast immer safe — bei der Mond-Pizza-Backstation Gluten und Laktose besonders prüfen und eine Alternative bereithalten."
-        },
-        {
-          "topic": "🧪 Raketen-Experiment richtig absichern",
-          "detail": "Das Essig-Natron-Experiment ist sicher, aber nur unter Aufsicht und nur draußen oder über dem Spülbecken. Niemand beugt sich über die geschlossene Filmdose. Ein Erwachsener leitet jeden einzelnen Start. Mit Brausetablette statt Essig spritzt es weniger — das ist die entspanntere Variante für drinnen."
-        },
-        {
-          "topic": "📋 Plan B bei Regen",
-          "detail": "Fast alle Weltraum-Stationen funktionieren drinnen. Astronauten-Training: Klebeband-Linie und Wurf-Ziel im Wohnzimmer. Sternbild-Suche: abgedunkeltes Bad oder eine Decke über dem Tisch. Alien-Funkspruch und Planeten-Quiz brauchen ohnehin nur einen Tisch. Einzige Ausnahme: das Raketen-Experiment — drinnen nur über dem Spülbecken mit Brausetablette. Mond-Expedition: Crystals in der ganzen Wohnung verstecken. Nie ohne Plan B."
-        },
-        {
-          "topic": "🧑‍🤝‍🧑 Wie viele Helfer? Realistisch geplant",
-          "detail": "Bei der Stations-Rotation der Standard-Variante reicht 1 Helfer — du machst zwei Stationen, der Helfer die anderen zwei. Wichtig: Die Raketen-Experiment-Station braucht durchgehend einen Erwachsenen, plane sie so, dass immer jemand dabei ist. Ab 8 Kindern wird's solo eng aber machbar. Die Wow-Variante mit 10 Kindern und Sternen-Quest braucht mindestens 2 Helfer, weil die Quest viel Bewegung erzeugt. Frag Partner, Großeltern, befreundete Eltern — viele bleiben gerne."
-        },
-        {
-          "topic": "🔭 Optional: Nacht-Sternen-Beobachtung (Eltern-Opt-In)",
-          "detail": "Wenn die Party in die frühe Dunkelheit reicht (Herbst/Winter), ist eine kurze echte Sternen-Beobachtung ein magischer Abschluss. Das setzt aber voraus, dass die Eltern damit einverstanden sind, dass es länger und draußen wird — kläre das in der Einladung als Opt-In ab. Eine kostenlose Sternen-App auf dem Handy zeigt, welche Planeten gerade sichtbar sind. Schon 10 Minuten Mond durchs Fenster oder vom Balkon reichen für den Wow-Effekt."
-        },
-        {
-          "topic": "📱 Partyseite statt WhatsApp-Chaos",
-          "detail": "Statt 8 einzelne Nachrichten an die Eltern: erstelle eine [WhatsApp-Partyseite](https://party.machsleicht.de) mit machsleicht. Adresse, Uhrzeit, Weltraum-Motto-Hinweis (Eltern können dunkle Kleidung anziehen lassen), Abholzeit, Allergie-Abfrage und das Opt-In für die Sternen-Beobachtung — alles auf einer Seite. Eltern antworten mit einem Klick, du siehst Zusagen und Allergien live. Kostenlos, in 2 Minuten fertig."
-        }
-      ],
-      "educationalValue": "Hinter dem Astronauten-Spiel steckt echtes Lernen: Die Kinder lernen unser Sonnensystem kennen — welche Planeten es gibt und warum der Mond leuchtet (er reflektiert das Sonnenlicht, leuchtet nicht selbst). Beim Raketen-Wettstart und dem Essig-Natron-Experiment erleben sie das Prinzip Rückstoß und eine echte chemische Reaktion, ohne Formeln. Code-Knacken und Sternbild-Suche trainieren Mustererkennung, das Astronauten-Training Körperkontrolle und Geduld. Und weil die Crew die Energie-Crystals nur gemeinsam bergen kann, üben die Kinder Verantwortung füreinander statt reines Gewinnen — Sonnensystem-Wissen, Pioniergeist und Teamgeist, fast nebenbei."
-    },
-    "invitationTemplate": "🚀 Interaktive Weltraum-Einladung per WhatsApp verschicken\n\nErstelle in 30 Sekunden eine fertige Einladung mit Name, Datum und Ort — die Gäste bekommen ein kleines Weltraum-Abenteuer als Vorgeschmack auf die Astronauten-Ausbildung.\n[🚀 Weltraum-Einladung erstellen →](/einladung/erstellen?motto=weltraum)\n\n[💬 Idee per WhatsApp teilen](https://wa.me/?text=Schau%20mal%3A%20Weltraum-Kindergeburtstag%20f%C3%BCr%206%E2%80%938%20Jahre%20%E2%80%94%203%20fertige%20Astronauten-Konzepte%20mit%20Mond-Mission%2C%20Sternen-Quest%20und%20Einkaufsliste!%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Fweltraum-6-8-jahre)",
-    "faq": [
-      {
-        "q": "Wie lange sollte ein Weltraum-Geburtstag für 6–8-Jährige dauern?",
-        "a": "2 bis 4 Stunden, je nach Variante. Minimal: 2 Stunden mit zwei Spielen. Standard: 3 Stunden mit Stations-Rotation und Lizenz-Zeremonie. Wow: 4 Stunden mit zusätzlicher Sternen-Quest. Kürzer ist besser als länger — nach 4 Stunden kippt die Stimmung selbst bei 8-Jährigen."
-      },
-      {
-        "q": "Wie viele Kinder sollte man zum Weltraum-Geburtstag einladen?",
-        "a": "Faustregel: Alter des Kindes + 1. Also 7–9 Kinder bei einem 7-Jährigen. Für die Stations-Rotation der Standard-Variante sind 8 Kinder ideal (4 Teams à 2 Kinder). Wow funktioniert mit 10 Kindern, aber dann brauchst du 2 Helfer."
-      },
-      {
-        "q": "Was kostet ein Weltraum-Geburtstag?",
-        "a": "Zwischen 26 € (Minimal, 6 Kinder) und 120 € (Wow, 10 Kinder, ohne Highlight-Produkte). Standard liegt bei ca. 80 € für 8 Kinder und bietet das beste Verhältnis aus Aufwand und Ergebnis. Optionale Highlights wie ein Stern-Projektor oder Walkie-Talkies kommen mit 25–30 € extra dazu."
-      },
-      {
-        "q": "Ist das Raketenstart-Experiment mit Essig und Natron sicher?",
-        "a": "Ja, wenn ein Erwachsener jeden Start leitet. Die Reaktion ist harmlos (Essig + Natron oder eine Brausetablette in Wasser), aber die Filmdose schießt mit Schwung hoch — deshalb immer draußen oder über dem Spülbecken, niemand beugt sich über die geschlossene Dose, alle treten zurück. Mit Brausetablette statt Essig ist es die entspannteste Variante."
-      },
-      {
-        "q": "Funktioniert ein Weltraum-Geburtstag auch drinnen?",
-        "a": "Ja, fast alle Stationen funktionieren drinnen. Astronauten-Training im Wohnzimmer, Sternbild-Suche im abgedunkelten Bad, Code-Knacken und Quiz am Tisch, Mond-Expedition mit Crystals in der ganzen Wohnung. Einzige Ausnahme ist das Raketen-Experiment — das gehört über das Spülbecken oder nach draußen."
-      }
-    ],
     "preparationWeeks": {
       "minus4Weeks": {
         "headline": "4 Wochen vorher — Grundgerüst stellen",
@@ -66426,14 +60547,6 @@ var ELITE_MOTTO_DATA = {
     }
   },
   "weltraum-gross": {
-    "_meta": {
-      "source_file": "kindergeburtstag/weltraum-9-12-jahre.html",
-      "extracted": "2026-05-21",
-      "schema_version": "1.0",
-      "purpose": "Weltraum 9-12 — Phase B Elite-Slot (Mars-Missions-Frame, kein Tempo-Stempel, Codeknacker-Kern mit echten Woertern)",
-      "phase_b_complete": "2026-05-21",
-      "phase_b_method": "Writer-Subagent Stream-C. Codeknacker-Math gegen SIMBAD/Raumfahrt-Behoerde-Werte verifiziert (Stand 22.05.2026): STERN (Pilot, scheinbare Helligkeit), PLANET (Wissenschaftler, Sonnenabstand), MOTOR (Mechaniker, Reparatur-Pfad) für Minimal; MARS (odd-one-out) für Standard; PLANET als 5-Stationen-Schatzsuche für Wow. Alle Loesungswoerter sind echte deutsche Woerter — kein INSEL-/Pseudo-Salat. Sorgfalt-Spezialist statt 1.-Astronaut."
-    },
     "motto": "weltraum",
     "ageGroup": "gross",
     "ageRange": [
@@ -66441,8 +60554,6 @@ var ELITE_MOTTO_DATA = {
       12
     ],
     "title": "🚀 Weltraum-Kindergeburtstag — 9–12 Jahre",
-    "metaDescription": "Weltraum-Kindergeburtstag für 9-12-Jährige: 3 fertige Missions-Konzepte mit Piloten-, Wissenschaftler- und Mechaniker-Spezialisierung, Codeknacker, Sternenkarte, Zeitplan und Einkaufsliste. Kostenlos.",
-    "introParagraph": "Mit 9-12 ist die fliegende Untertasse aus Pappe durch — was jetzt zieht, ist eine echte Mission mit Verantwortung. Die Crew übernimmt eine Raumstation, jedes Kind eine Spezialisierung (Pilot, Wissenschaftler, Mechaniker), und gemeinsam knacken sie Codes, die ohne Zusammenarbeit nicht aufgehen. Kein Tempo-Wettlauf, sondern genaues Hinschauen: Wer sorgfältig misst, rechnet und liest, bringt die Mission ans Ziel. Drei Varianten — von 2,5 Stunden Minimal bis zur Schlafparty mit nächtlicher Sternenbeobachtung.",
     "ageInsight": {
       "headline": "Was 9–12-Jährige ausmacht — und was das für die Weltraum-Mission heißt",
       "traits": [
@@ -67758,118 +61869,6 @@ var ELITE_MOTTO_DATA = {
           "title": "Die Nacht-Ausrüstung bestimmt den Preis",
           "body": "Der Wow-Preis hängt fast ganz an der Nacht-Ausrüstung: Stirnlampen sind Pflicht (Sicherheit), aber Fernglas, Sternenprojektor und Mars-Rover sind optional. Ohne Schlafparty fällt die Sternenbeobachtung ganz weg und du landest bei rund 90 € — näher an Standard. Tipp: Stirnlampen leihen sich oft mehrere Familien gegenseitig, das halbiert den größten Posten."
         }
-      }
-    ],
-    "cakeRecipe": {
-      "intro": "Der Sternenkarten-Kuchen ist gleichzeitig Deko und Spielmaterial: ein dunkler Blechkuchen, auf den die Crew mit Zuckerguss und Streuseln „ihr“ Sternensystem malt. Kein Backprofi nötig — die Kinder gestalten die Oberfläche selbst, das ist Teil des Programms.",
-      "steps": [
-        {
-          "n": 1,
-          "content": "Einen einfachen Schoko-Blechkuchen nach Lieblingsrezept oder Fertigmischung backen (dunkler Teig = Weltall-Hintergrund)."
-        },
-        {
-          "n": 2,
-          "content": "Vollständig auskühlen lassen — auf warmem Kuchen verläuft der Zuckerguss."
-        },
-        {
-          "n": 3,
-          "content": "Dunkle Glasur (Zartbitter oder dunkler Zuckerguss) als „Nachthimmel“ aufstreichen."
-        },
-        {
-          "n": 4,
-          "content": "Mit weißem Zuckerguss aus einer Spritztüte die Sterne und einen Kometen aufmalen — die Kinder dürfen mitmachen."
-        },
-        {
-          "n": 5,
-          "content": "Bunte Zucker-Streusel als Planeten und Sternenstaub aufstreuen."
-        },
-        {
-          "n": 6,
-          "content": "Optional: aus farbigem Fondant oder bunte Schoko-Linsen die Planeten in ihrer Reihenfolge legen — passt zur Wissenschaftler-Station."
-        },
-        {
-          "n": 7,
-          "content": "Ein kleines Marshmallow oder eine Zuckerfigur als „Raumschiff“ in die Mitte setzen."
-        },
-        {
-          "n": 8,
-          "content": "Bis zum Anschnitt kühl stellen, damit die Glasur fest bleibt."
-        }
-      ],
-      "meta": {
-        "aufwand": "50 Min. inkl. Backen, plus Gestalten durch die Kinder",
-        "kosten": "~9 €",
-        "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. bunte Schoko-Linsen/Fondant können Spuren von Nüssen/Milch enthalten; für Allergiker auf gekennzeichnete Streusel ausweichen."
-      },
-      "tips": [
-        {
-          "title": "Keine Lust zu backen?",
-          "body": "Ein gekaufter dunkler Blechkuchen oder Muffins tun es genauso — die Magie entsteht durch das Sternen-Malen mit Zuckerguss, nicht durch den Teig."
-        },
-        {
-          "title": "Pinterest-Warnung",
-          "body": "Aufwändige 3D-Raketen-Torten mit Fondant-Mänteln sehen toll aus, kosten aber Stunden und stressen. 9-12-Jährige finden den selbst gestalteten Sternenhimmel cooler als eine perfekte Konditor-Torte, die sie nicht anfassen dürfen."
-        }
-      ]
-    },
-    "parentTips": {
-      "structured": [
-        {
-          "topic": "📋 Plan B bei schlechtem Wetter",
-          "detail": "Alle Stationen und der Codeknacker funktionieren drinnen. Nur die nächtliche Sternenbeobachtung (Wow) braucht klaren Himmel — als Ersatz ein Sternenprojektor an der Decke, oder die Beobachtung auf den nächsten klaren Abend verschieben."
-        },
-        {
-          "topic": "👥 Ab 8 Kindern: 1 Helfer dazu",
-          "detail": "Bei drei parallelen Stationen braucht es eine zweite erwachsene Person, die rotiert und bei festhängenden Teams hilft. Bei 10–12 Kindern (Wow) lieber zwei Crews bilden, sonst wird die Stations-Rotation chaotisch."
-        },
-        {
-          "topic": "⏱️ Zeitpuffer einplanen",
-          "detail": "9-12-Jährige knobeln gern länger als geplant. Lieber eine Station weglassen als hetzen — die Kinder merken sofort, wenn Programm nur abgespult wird. 10–15 Min. Puffer pro Block hilft."
-        },
-        {
-          "topic": "📱 Handy-Regel vorab klären",
-          "detail": "In diesem Alter sind Smartphones dabei. Eine Mission lebt vom Mitmachen — kündige zu Beginn an: „Funkgeräte an, Privat-Handys in die Crew-Box“ (außer für die Astronomie-App in der Wow-Variante). Klare Ansage statt Verbots-Diskussion."
-        },
-        {
-          "topic": "🌙 Schlafparty nur mit Eltern-Opt-In",
-          "detail": "Übernachtung und nächtliche Wach-Zeit müssen mit allen Eltern vorab abgesprochen sein — manche Kinder wollen abends abgeholt werden. Plane einen klaren „Abhol- oder Bleib“-Punkt am Abend ein."
-        },
-        {
-          "topic": "🏆 Sorgfalt statt Tempo belohnen",
-          "detail": "Vergib den Sorgfalt-Spezialist-Stempel bewusst an die Genauen, nicht an die Schnellen. Das hält die Stimmung fair und passt zur Mission — sonst fühlen sich die gründlichen Tüftler übergangen."
-        }
-      ],
-      "educationalValue": "Eine Mars-Missions-Party verpackt echtes Astronomie-Wissen in Spiele: Die Kinder lernen, dass Sterne nach Helligkeit (Magnitude) gemessen werden, dass die Entfernung eines Himmelskörpers nichts mit seiner Größe zu tun hat und in welcher Reihenfolge die Planeten um die Sonne kreisen — Wissen, das hängenbleibt, weil sie es selbst erarbeiten. Genauso wichtig ist das soziale Lernen: Jede Spezialisierung hält nur einen Teil des Codes, gelöst wird gemeinsam. Das übt Verantwortung in der Gruppe und zeigt, dass Sorgfalt mehr zählt als Tempo — niemand bleibt hängen, jeder trägt bei."
-    },
-    "invitationTemplate": "Du brauchst eine passende Einladung zur Weltraum-Mission? Der machsleicht-Einladungs-Generator macht in 2 Minuten eine fertige Karte im Missions-Look — mit Datum, Treffpunkt und einem kleinen ersten Code als Vorgeschmack auf den Codeknacker. So wissen die eingeladenen Familien sofort: Hier wird nicht gebastelt, hier wird eine echte Crew zusammengestellt.",
-    "faq": [
-      {
-        "q": "Ist Weltraum nicht eher was für kleine Kinder?",
-        "a": "Bei jüngeren ist es vor allem Optik (Raketen, Aliens). Mit 9-12 zieht der echte Frame: realistische Mars-Mission, echte Astronomie-Daten, Verantwortung in der Crew. Genau deshalb funktioniert dieses Konzept für das Alter — es traut den Kindern echtes Wissen zu, statt sie zu bespaßen."
-      },
-      {
-        "q": "Was, wenn ein Kind den Codeknacker nicht knackt?",
-        "a": "Der Codeknacker hat eine eingebaute Selbstkontrolle: Ergibt die Sortier-Reihenfolge ein echtes Wort (STERN, PLANET, MOTOR), stimmt sie — sonst nicht. Kein Kind hängt allein fest, weil jede Spezialisierung nur einen Quadranten löst und die anderen aushelfen. Bei jüngeren oder schnell frustrierten Kindern gibt es Tipp-Zettel an der Wand."
-      },
-      {
-        "q": "Brauche ich teures Material wie ein Teleskop?",
-        "a": "Nein. Die Minimal- und Standard-Variante kommen mit Tonpapier, Stiften und Haushalts-Sachen aus. Nur die Wow-Schlafparty profitiert von Stirnlampen (Pflicht für Sicherheit) und optional einem Fernglas. Ein echtes Teleskop ist nirgendwo zwischen unnötig und Pinterest-Maximum."
-      },
-      {
-        "q": "Wie viele Kinder passen?",
-        "a": "Minimal 6, Standard 8–9 (3 pro Spezialisierung), Wow 10–12 (4 pro Spezialisierung). Über 12 wird die Stations-Rotation unübersichtlich — dann besser zwei getrennte Crews bilden und mit zwei erwachsenen Helfern arbeiten."
-      },
-      {
-        "q": "Lohnt sich die Schlafparty mit Sternenbeobachtung?",
-        "a": "Wenn die Eltern zustimmen und der Himmel klar ist: ja, das ist der Wow-Moment. Der erste bewusste Blick auf einen Jupitermond oder die Milchstraße bleibt hängen. Wichtig ist das Eltern-Opt-In für die Wach-Zeit und ein klarer Abhol-Punkt für Kinder, die nicht übernachten."
-      },
-      {
-        "q": "Ist die Wasser-Rakete für 9-12-Jährige nicht zu gefährlich?",
-        "a": "Mit den richtigen Sicherheits-Regeln nein — aber sie ist das mit Abstand sicherheits-kritischste Spiel im Programm. Mindestens 5 m Abstand, nur Erwachsene bedienen die Pumpe, NIE drinnen oder unter Stromleitungen, NIE auf Menschen zielen. Wer unsicher ist: ein gekauftes Wasserrakete-Starter-Set (z.B. Online-Rezi-Plattform/Einsteiger-Teleskop, ~20 €) hat die Sicherheitstechnik eingebaut. Alternative für drinnen: die Brausetablette-Filmdose-Rakete aus der mittel-Variante oder die Strohhalm-Rakete — beide vermitteln den Rückstoß-Effekt ohne Risiko."
-      },
-      {
-        "q": "Welche Mitgebsel passen — neben Logbuch und Patch?",
-        "a": "Leucht-Sterne (50er-Pack ab 3 €), ein selbst gestaltetes Astronauten-Ausweis-Kärtchen, Mini-Teleskope (3–5 €), Weltraum-Sticker, Schoko-Sterne aus der „Versorgungs-Kapsel“. In Silber-Tüten verpackt wirkt es besonders motto-passend. Für 9-12-Jährige gilt: lieber wenige hochwertige Stücke (Ausweis, Logbuch-Kopie, ein Stern-Stein/Stein in Alufolie als Mond-Andenken) als ein Berg billiger Plastik-Krimskrams — das durchschauen sie sofort und werten es ab."
       }
     ],
     "preparationWeeks": {

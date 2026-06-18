@@ -11,6 +11,15 @@ const DATA_DIR = path.join(REPO, "data", "motto");
 const TARGET = path.join(REPO, "js", "kindergeburtstag.js");
 const AGES = ["klein", "mittel", "gross"];
 
+// Top-Level-Keys, die der Planer-Runtime NICHT liest (verifiziert: 0 eliteData-Reads im
+// React-Teil von kindergeburtstag.js). Werden auf den statischen Motto-HTML-Seiten gerendert,
+// nicht im Planer -> aus dem Bundle strippen (spart ~Haelfte der Groesse). Planer liest nur:
+// variants, ageInsight, signatureRitual, sosScenarios, preparationWeeks (+ Anzeige title/motto/ageRange).
+const STRIP_KEYS = new Set([
+  "_meta", "faq", "cakeRecipe", "invitationTemplate", "parentTips", "introParagraph",
+  "metaDescription", "bonusGames", "bonusQuiz", "ecologyQuiz", "bonusActivities", "mythologyQuiz",
+]);
+
 // 1. Mottos aus dem Datenordner ableiten (alphabetisch, deterministisch).
 const files = fs.readdirSync(DATA_DIR).filter((f) => f.endsWith(".json"));
 const mottos = [...new Set(files.map((f) => f.replace(/-(klein|mittel|gross)\.json$/, "")))].sort();
@@ -28,6 +37,7 @@ for (const m of mottos) {
     for (const vk of vks) {
       if (!Array.isArray(obj.variants[vk].games)) throw new Error(`${m}-${age} v${vk}: games kein Array`);
     }
+    for (const k of STRIP_KEYS) delete obj[k]; // ungenutzte Top-Level-Keys aus Runtime entfernen
     bundle[`${m}-${age}`] = obj;
   }
 }
