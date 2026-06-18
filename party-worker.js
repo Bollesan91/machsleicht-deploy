@@ -191,6 +191,9 @@ function esc(str) {
   if (!str) return "";
   return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
 }
+// Possessiv-Apostroph (Marken-Stil, Apostroph = ' wie in "mach's"): "Lina's", aber bei
+// Zischlaut-Endung (s/ss/ß/x/z) nur Apostroph: "Mats'", "Max'", "Franz'". Eingabe ggf. schon escaped.
+function poss(name){ const s = String(name==null?"":name).trim(); if(!s) return s; return s + (/(s|ß|x|z)$/i.test(s) ? "'" : "'s"); }
 // Erstes Grapheme-Cluster (ein vollstaendiges Emoji). slice(0,4) zerschnitt ZWJ-Emojis (🏴‍☠️=5 Units, 🧜‍♀️) -> kaputtes Hero-Emoji.
 function firstEmoji(s){
   s = (s==null ? "" : String(s)) || "🎉";
@@ -632,7 +635,7 @@ export default {
 
       const emailHtml = `<div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:24px">
         <p style="color:#8B7D6B;font-size:14px"><strong style="color:#D4812A">mach's</strong> leicht</p>
-        <h1 style="font-size:20px;color:#2D2319;margin:16px 0 8px">Dein Edit-Link f\u00FCr ${esc(childName)}s Partyseite</h1>
+        <h1 style="font-size:20px;color:#2D2319;margin:16px 0 8px">Dein Edit-Link f\u00FCr ${poss(esc(childName))} Partyseite</h1>
         <p style="color:#555;font-size:14px;line-height:1.6">Mit diesem Link kannst du Zusagen einsehen, die Seite bearbeiten und die Wunschliste verwalten. <strong>Speichere diese E-Mail!</strong></p>
         <a href="${editUrl}" style="display:block;background:#D4812A;color:#fff;text-align:center;padding:14px 24px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;margin:20px 0">\u{1F511} Partyseite bearbeiten</a>
         <p style="color:#888;font-size:13px;margin-top:20px"><strong>G\u00E4ste-Link zum Teilen:</strong><br><a href="${guestUrl}" style="color:#D4812A">${guestUrl}</a></p>
@@ -650,7 +653,7 @@ export default {
             from: env.RESEND_FROM || "mach's leicht <kontakt@machsleicht.de>",
             reply_to: env.RESEND_REPLY_TO || "kontakt@machsleicht.de",
             to: [email],
-            subject: `Dein Edit-Link: ${childName}s Partyseite`,
+            subject: `Dein Edit-Link: ${poss(childName)} Partyseite`,
             html: emailHtml
           })
         });
@@ -1207,7 +1210,8 @@ async function createParty(){
     window.scrollTo({top:0,behavior:"smooth"});
   }catch(e){alert("Fehler: "+e.message);btn.textContent="\u{1F389} Erstellen";btn.disabled=false;}
 }
-function shareGuest(){const d=window._pd;const hasW=wishes.some(w=>w.title.trim());const t=(d.motto?d.childName+"s "+d.motto:d.childName+"s Geburtstag")+"! \u{1F389}\\n\\n"+(hasW?"Hier sind alle Infos inkl. Wunschliste, damit wir Doppelgeschenke vermeiden:":"Alle Infos & Zusage hier:")+"\\n"+d.url;window.open("https://wa.me/?text="+encodeURIComponent(t));}
+function poss(n){var s=String(n==null?"":n).trim();return s?(s+(/(s|ß|x|z)$/i.test(s)?"'":"'s")):s;}
+function shareGuest(){const d=window._pd;const hasW=wishes.some(w=>w.title.trim());const t=(d.motto?poss(d.childName)+" "+d.motto:poss(d.childName)+" Geburtstag")+"! \u{1F389}\\n\\n"+(hasW?"Hier sind alle Infos inkl. Wunschliste, damit wir Doppelgeschenke vermeiden:":"Alle Infos & Zusage hier:")+"\\n"+d.url;window.open("https://wa.me/?text="+encodeURIComponent(t));}
 function copyEdit(){navigator.clipboard.writeText(window._pd.editUrl).then(()=>{const b=event.target;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Kopieren",2000);});}
 async function sendEditEmail(){
   _clearErrors();
@@ -1519,7 +1523,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
     <div class="game-header">
       <span class="game-header-icon">\u{1F3AE}</span>
       <div>
-        <div class="game-header-title">${name}s ${motto||"Party"}-Einladung</div>
+        <div class="game-header-title">${poss(name)} ${motto||"Party"}-Einladung</div>
         <div class="game-header-sub">Spiel das Einladungsspiel!</div>
       </div>
     </div>
@@ -1708,7 +1712,7 @@ function downloadIcs(){
   else { var _tp=(time||"12:00").split(":"); var _eh=((parseInt(_tp[0],10)||12)+3)%24; et=String(_eh).padStart(2,"0")+((_tp[1]||"00")+"").padStart(2,"0")+"00"; }  // +3h Fallback OHNE Start-Minuten zu verwerfen (09:30 -> 12:30, nicht 12:00)
   var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//machsleicht//party//DE","BEGIN:VEVENT",
     "DTSTART:"+d+"T"+ti,"DTEND:"+d+"T"+et,
-    "SUMMARY:"+${JSON.stringify(icsEscape(party.childName?party.childName+"s Geburtstag":"Kindergeburtstag")).replace(/</g,"\\u003C").replace(/>/g,"\\u003E")},
+    "SUMMARY:"+${JSON.stringify(icsEscape(party.childName?poss(party.childName)+" Geburtstag":"Kindergeburtstag")).replace(/</g,"\\u003C").replace(/>/g,"\\u003E")},
     "LOCATION:"+REVEALED_ADDR_ICS,
     "DESCRIPTION:"+${JSON.stringify(icsEscape(party.motto||"Kindergeburtstag")).replace(/</g,"\\u003C").replace(/>/g,"\\u003E")},
     "END:VEVENT","END:VCALENDAR"].join("\\r\\n");
@@ -1962,7 +1966,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
 
   <script>
   (async function(){try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo){const el=document.getElementById("heroPhotoEd");const im=document.createElement("img");im.src=d.photo;im.className="hero-photo";el.textContent="";el.appendChild(im);}}catch{}})();
-  function shareWA(){const t="${escJson(party.mottoEmoji||"\u{1F389}")} ${party.childName?escJson(party.childName)+"s ":""}${escJson(party.motto)||"Geburtstag"}!\\n\\nAlle Infos & Zusage hier:\\n${escJson(guestUrl)}";window.open("https://wa.me/?text="+encodeURIComponent(t));}
+  function shareWA(){const t="${escJson(party.mottoEmoji||"\u{1F389}")} ${party.childName?escJson(poss(party.childName))+" ":""}${escJson(party.motto)||"Geburtstag"}!\\n\\nAlle Infos & Zusage hier:\\n${escJson(guestUrl)}";window.open("https://wa.me/?text="+encodeURIComponent(t));}
   function copyLink(){navigator.clipboard.writeText("${esc(guestUrl)}").then(()=>{const b=event.target;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Link kopieren",2000);});}
   function copyGuestLink(){navigator.clipboard.writeText("${esc(guestUrl)}").then(()=>{const b=event.target;const o=b.textContent;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent=o,2000);});}
   async function saveEdit(){
