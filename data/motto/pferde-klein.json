@@ -231,7 +231,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "6 Plüsch-Hufeisen (oder Wurfringe), 1 Holzpflock (40 cm hoch) oder Stuhl-Lehne als Ziel, optional kleine Punkte-Tafel",
-          "safetyRule": "Wurfringe aus Stoff oder weichem Plastik — nichts Hartes. Wurfdistanz max 2 Meter. Niemand steht hinter dem Pflock.",
+          "safetyRule": "Wurfringe aus Stoff oder weichem Plastik — nichts Hartes. Wurfdistanz max 2 Meter. Niemand steht hinter dem Pflock. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel.",
           "steps": [
             {
               "n": 1,
@@ -515,7 +515,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "8 Plüsch-Hufeisen / Wurfringe, 2 Holzpflöcke (für 2 Teams)",
-          "safetyRule": "Stoff/Plastik-Ringe, max 2 Meter Wurfweite, klare Wurfreihenfolge.",
+          "safetyRule": "Stoff/Plastik-Ringe, max 2 Meter Wurfweite, klare Wurfreihenfolge. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel.",
           "steps": [
             {
               "n": 1,

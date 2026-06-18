@@ -136,7 +136,7 @@
               "content": "Wenn alle Ballons mal gerettet wurden — gemeinsamer Helden-Jubel."
             }
           ],
-          "safetyRule": "Geplatzte Ballonreste sofort einsammeln (Verschluckungsgefahr!). Nur bei Aufsicht.",
+          "safetyRule": "Geplatzte Ballonreste sofort einsammeln (Verschluckungsgefahr!). Nur bei Aufsicht. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel.",
           "ageAdjust6": "Mehr Ballons gleichzeitig, kleine Zähl-Challenge.",
           "ageAdjust8": "—",
           "indoorTip": "Ideal drinnen, keine Zugluft.",
@@ -614,7 +614,7 @@
               "content": "Gefangen! Das Monster lacht, gibt die Sterne zurück, alle jubeln."
             }
           ],
-          "safetyRule": "Monster läuft langsam und sanft, nimmt bei Angst sofort den Hut ab ('Schau, das ist Oma!'). Kein echtes Erschrecken. Beim Fangen Lauffläche frei (keine Möbelkanten), nicht drängeln/schubsen — Stolper-/Kollisionsgefahr.",
+          "safetyRule": "Monster läuft langsam und sanft, nimmt bei Angst sofort den Hut ab ('Schau, das ist Oma!'). Kein echtes Erschrecken. Beim Fangen Lauffläche frei (keine Möbelkanten), nicht drängeln/schubsen — Stolper-/Kollisionsgefahr. Boden weich/rutschfest, reihum (nie zwei gleichzeitig).",
           "ageAdjust6": "Etwas schneller, kleines Verstecken.",
           "ageAdjust8": "—",
           "indoorTip": "Im Wohnzimmer mit Platz.",

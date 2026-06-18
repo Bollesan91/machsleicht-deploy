@@ -231,7 +231,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "1 großer Plüsch-Drache (50 cm) oder Drachen-Bild auf Pappe, 6 weiche Wurfsäckchen, optional eine 'Burg-Mauer' aus Stuhllehnen",
-          "safetyRule": "Wurfsäckchen mit Reiskörnchen oder Bohnen (Stoff-Säckchen, keine harten Bälle). Wurfdistanz max 2 m. Niemand steht neben dem Drachen.",
+          "safetyRule": "Wurfsäckchen mit Reiskörnchen oder Bohnen (Stoff-Säckchen, keine harten Bälle). Wurfdistanz max 2 m. Niemand steht neben dem Drachen. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel.",
           "steps": [
             {
               "n": 1,
@@ -510,7 +510,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "1 großer Plüsch-Drache (50 cm) oder Drachen-Bild auf Pappe, 6 weiche Wurfsäckchen, optional eine 'Burg-Mauer' aus Stuhllehnen",
-          "safetyRule": "Wurfsäckchen mit Reiskörnchen oder Bohnen (Stoff-Säckchen, keine harten Bälle). Wurfdistanz max 2 m. Niemand steht neben dem Drachen.",
+          "safetyRule": "Wurfsäckchen mit Reiskörnchen oder Bohnen (Stoff-Säckchen, keine harten Bälle). Wurfdistanz max 2 m. Niemand steht neben dem Drachen. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel.",
           "steps": [
             {
               "n": 1,
@@ -803,7 +803,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "1 großer Plüsch-Drache (50 cm) oder Drachen-Bild auf Pappe, 6 weiche Wurfsäckchen, optional eine 'Burg-Mauer' aus Stuhllehnen",
-          "safetyRule": "Wurfsäckchen mit Reiskörnchen oder Bohnen (Stoff-Säckchen, keine harten Bälle). Wurfdistanz max 2 m. Niemand steht neben dem Drachen.",
+          "safetyRule": "Wurfsäckchen mit Reiskörnchen oder Bohnen (Stoff-Säckchen, keine harten Bälle). Wurfdistanz max 2 m. Niemand steht neben dem Drachen. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel.",
           "steps": [
             {
               "n": 1,

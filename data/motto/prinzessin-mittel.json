@@ -308,7 +308,7 @@
               "content": "Am Ziel gekrönt — alle schaffen es."
             }
           ],
-          "safetyRule": "Abstand halten, Hindernisse stabil, kleine Teile nicht in den Mund.",
+          "safetyRule": "Abstand halten, Hindernisse stabil, kleine Teile nicht in den Mund. Boden weich/rutschfest, reihum (nie zwei gleichzeitig).",
           "ageAdjust6": "Größerer Pompon.",
           "ageAdjust8": "Auf Zeit.",
           "indoorTip": "Flur.",
@@ -622,7 +622,7 @@
               "content": "Alle werden gekrönt."
             }
           ],
-          "safetyRule": "Abstand, stabile Hindernisse.",
+          "safetyRule": "Abstand, stabile Hindernisse. Boden weich/rutschfest, reihum (nie zwei gleichzeitig).",
           "ageAdjust6": "Größerer Pompon.",
           "ageAdjust8": "Auf Zeit.",
           "indoorTip": "Flur.",

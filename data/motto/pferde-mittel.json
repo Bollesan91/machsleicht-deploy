@@ -1310,7 +1310,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "10 Wurfsäckchen, 3 Pflöcke (verschiedene Entfernungen), Wertungstafel, Mini-Pokale (Wow-Highlight)",
-          "safetyRule": "Wurfdistanz max 3 m, Stoff-Säckchen.",
+          "safetyRule": "Wurfdistanz max 3 m, Stoff-Säckchen. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel.",
           "steps": [
             {
               "n": 1,

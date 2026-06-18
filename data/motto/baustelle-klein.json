@@ -261,7 +261,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "10-15 dicke Plastik-Schrauben (nicht verschluckbar, mind. 5 cm), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
-          "safetyRule": "Schrauben groß genug. Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
+          "safetyRule": "Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
           "steps": [
             {
               "n": 1,
@@ -545,7 +545,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "10-15 dicke Plastik-Schrauben (nicht verschluckbar, mind. 5 cm), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
-          "safetyRule": "Schrauben groß genug. Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
+          "safetyRule": "Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
           "steps": [
             {
               "n": 1,
@@ -878,7 +878,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "10-15 dicke Plastik-Schrauben (nicht verschluckbar, mind. 5 cm), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
-          "safetyRule": "Schrauben groß genug. Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
+          "safetyRule": "Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
           "steps": [
             {
               "n": 1,

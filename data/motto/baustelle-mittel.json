@@ -395,7 +395,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "20-30 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
-          "safetyRule": "Plastik-Schrauben groß genug. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
+          "safetyRule": "Plastik-Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
           "steps": [
             {
               "n": 1,
@@ -782,7 +782,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "20-30 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
-          "safetyRule": "Plastik-Schrauben groß genug. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
+          "safetyRule": "Plastik-Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
           "steps": [
             {
               "n": 1,
@@ -1263,7 +1263,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "20-30 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
-          "safetyRule": "Plastik-Schrauben groß genug. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
+          "safetyRule": "Plastik-Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
           "steps": [
             {
               "n": 1,
