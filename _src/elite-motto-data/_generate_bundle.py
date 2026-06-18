@@ -11,6 +11,21 @@ So konsumiert kindergeburtstag.jsx die Daten:
   if (elite) { /* render preparationWeeks, sosScenarios, etc */ }
 """
 import json, sys, os, io
+
+# ============================================================================
+# DEPRECATED (18.06.2026) — NICHT MEHR VERWENDEN.
+# Quelle der Elite-Daten ist jetzt data/motto/<motto>-<klein|mittel|gross>.json
+# (alle 15 Mottos, single source of truth). Dieses Skript las die veraltete
+# Kopie _src/elite-motto-data/*.json (Stand 27.05., noch alter Affiliate-Tag
+# machsleicht-21) und wuerde beim Ausfuehren Daten regredieren.
+# Ersatz: node _src/gen-elite-bundle.cjs   (von _src/build.sh aufgerufen).
+# ============================================================================
+sys.stderr.write(
+    "DEPRECATED: _generate_bundle.py nicht mehr verwenden.\n"
+    "Quelle ist jetzt data/motto/. Nutze: node _src/gen-elite-bundle.cjs\n"
+)
+sys.exit(2)
+
 sys.stdout.reconfigure(encoding='utf-8')
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
