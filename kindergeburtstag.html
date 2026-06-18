@@ -1771,6 +1771,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     const planEnd = (_endM!=null && _startM!=null && _endM-_startM>=30) ? fmt(_endM) : (schedRows.length ? schedRows[schedRows.length-1].time : '');
 
     // ENGINE: Spiele nach Ort filtern + Tipp/Alters-Anpassung einblenden, Dauer robust parsen
+    // (Schatzsuche-Dedup bewusst NICHT engine-seitig — Regex traf auch eigenständige Spiele wie 'Nacht-Schatzsuche'; wird pro Motto in den Daten kuratiert)
     const locGames = eliteGamesForLoc(v.games);
     const games = locGames.map(g => {
       const steps = (g.steps || []).map(st => `<li>${mdLink(st.content || st.name || st)}</li>`).join('');
