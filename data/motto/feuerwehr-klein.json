@@ -166,7 +166,7 @@
             {
               "n": 1,
               "name": "Aufbau",
-              "content": "Spielzeug-Tiere in die leere Wanne legen, großzügig Rasierschaum drüber. Alte Tischdecke unterlegen."
+              "content": "Für die Jüngsten (3–4 J.) Sahne oder speziellen Kinderschaum nehmen (NICHT Rasierschaum). Spielzeug-Tiere in die leere Wanne legen, Schaum/Sahne großzügig drüber. Alte Tischdecke unterlegen."
             },
             {
               "n": 2,
@@ -189,7 +189,7 @@
               "content": "Eltern helfen den Kleinsten, wenn nötig. Danach Hände waschen."
             }
           ],
-          "safetyRule": "Schaum NICHT in Augen/Mund — auch parfümfreier Rasierschaum reizt Schleimhäute. Für die Jüngsten (3–4 J.) Sahne oder Kinderschaum statt Rasierschaum erwägen. Nach dem Spiel Hände waschen. Durchgehende Aufsicht.",
+          "safetyRule": "Für 3–4-Jährige Sahne oder Kinderschaum statt Rasierschaum (Default!) — Hände wandern bei den Kleinen oft in Mund/Augen. Rasierschaum nur bei Älteren mit strikter Aufsicht. NICHT in Augen/Mund (reizt Schleimhäute). Nach dem Spiel Hände waschen. Durchgehende Aufsicht.",
           "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt 5 Min mit klarem Wasser ausspülen.",
           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
           "indoorTip": null,
@@ -444,12 +444,12 @@
             {
               "n": 3,
               "name": "Löschen",
-              "content": "„Wir löschen die Brände!\" — alle spritzen gemeinsam auf die Becher, kein Wettbewerb."
+              "content": "Ziel: gemeinsam ALLE Flammen-Becher „löschen\" (nass spritzen). Wenn alle Becher nass sind, hat die ganze Crew zusammen gewonnen — kein Einzel-Wettbewerb."
             },
             {
               "n": 4,
               "name": "Weiter geht's",
-              "content": "Wer einen Becher umlegt, kommt zurück und nimmt sich einen neuen Versuch."
+              "content": "Wer einen Becher umwirft, stellt ihn wieder hin und spritzt weiter, bis alle „gelöscht\" sind."
             }
           ],
           "safetyRule": "„Wasser nur auf den Becher, nicht aufs andere Kind.\" Eltern stehen daneben, korrigieren freundlich. Boden wird nass → drinnen abwischbarer Untergrund oder draußen, Nässe sofort aufwischen (Rutschgefahr). Nie ins Gesicht.",
@@ -519,7 +519,7 @@
             {
               "n": 1,
               "name": "Aufbau",
-              "content": "Spielzeug-Tiere in die leere Wanne legen, großzügig Rasierschaum drüber. Alte Tischdecke unterlegen."
+              "content": "Für die Jüngsten (3–4 J.) Sahne oder speziellen Kinderschaum nehmen (NICHT Rasierschaum). Spielzeug-Tiere in die leere Wanne legen, Schaum/Sahne großzügig drüber. Alte Tischdecke unterlegen."
             },
             {
               "n": 2,
@@ -542,7 +542,7 @@
               "content": "Eltern helfen den Kleinsten, wenn nötig. Danach Hände waschen."
             }
           ],
-          "safetyRule": "Schaum NICHT in Augen/Mund — auch parfümfreier Rasierschaum reizt Schleimhäute. Für die Jüngsten (3–4 J.) Sahne oder Kinderschaum statt Rasierschaum erwägen. Nach dem Spiel Hände waschen. Durchgehende Aufsicht.",
+          "safetyRule": "Für 3–4-Jährige Sahne oder Kinderschaum statt Rasierschaum (Default!) — Hände wandern bei den Kleinen oft in Mund/Augen. Rasierschaum nur bei Älteren mit strikter Aufsicht. NICHT in Augen/Mund (reizt Schleimhäute). Nach dem Spiel Hände waschen. Durchgehende Aufsicht.",
           "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt 5 Min mit klarem Wasser ausspülen.",
           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
           "indoorTip": null,
@@ -816,12 +816,12 @@
             {
               "n": 3,
               "name": "Löschen",
-              "content": "„Wir löschen die Brände!\" — alle spritzen gemeinsam auf die Becher, kein Wettbewerb."
+              "content": "Ziel: gemeinsam ALLE Flammen-Becher „löschen\" (nass spritzen). Wenn alle Becher nass sind, hat die ganze Crew zusammen gewonnen — kein Einzel-Wettbewerb."
             },
             {
               "n": 4,
               "name": "Weiter geht's",
-              "content": "Wer einen Becher umlegt, kommt zurück und nimmt sich einen neuen Versuch."
+              "content": "Wer einen Becher umwirft, stellt ihn wieder hin und spritzt weiter, bis alle „gelöscht\" sind."
             }
           ],
           "safetyRule": "„Wasser nur auf den Becher, nicht aufs andere Kind.\" Eltern stehen daneben, korrigieren freundlich. Boden wird nass → drinnen abwischbarer Untergrund oder draußen, Nässe sofort aufwischen (Rutschgefahr). Nie ins Gesicht.",
@@ -891,7 +891,7 @@
             {
               "n": 1,
               "name": "Aufbau",
-              "content": "Spielzeug-Tiere in die leere Wanne legen, großzügig Rasierschaum drüber. Alte Tischdecke unterlegen."
+              "content": "Für die Jüngsten (3–4 J.) Sahne oder speziellen Kinderschaum nehmen (NICHT Rasierschaum). Spielzeug-Tiere in die leere Wanne legen, Schaum/Sahne großzügig drüber. Alte Tischdecke unterlegen."
             },
             {
               "n": 2,
@@ -914,7 +914,7 @@
               "content": "Eltern helfen den Kleinsten, wenn nötig. Danach Hände waschen."
             }
           ],
-          "safetyRule": "Schaum NICHT in Augen/Mund — auch parfümfreier Rasierschaum reizt Schleimhäute. Für die Jüngsten (3–4 J.) Sahne oder Kinderschaum statt Rasierschaum erwägen. Nach dem Spiel Hände waschen. Durchgehende Aufsicht.",
+          "safetyRule": "Für 3–4-Jährige Sahne oder Kinderschaum statt Rasierschaum (Default!) — Hände wandern bei den Kleinen oft in Mund/Augen. Rasierschaum nur bei Älteren mit strikter Aufsicht. NICHT in Augen/Mund (reizt Schleimhäute). Nach dem Spiel Hände waschen. Durchgehende Aufsicht.",
           "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt 5 Min mit klarem Wasser ausspülen.",
           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
           "indoorTip": null,

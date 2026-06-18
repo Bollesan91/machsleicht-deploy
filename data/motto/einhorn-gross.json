@@ -173,7 +173,7 @@
           "steps": [
             {
               "name": "Aufbau",
-              "content": "Milch in einen flachen Teller gießen, bis der Boden komplett bedeckt ist."
+              "content": "Vollmilch (3,5 % Fett, Zimmertemperatur) in einen flachen Teller gießen, bis der Boden komplett bedeckt ist. WICHTIG: mit fettarmer Milch funktioniert der Effekt nicht. Schürze/alte Kleidung — Lebensmittelfarbe färbt."
             },
             {
               "name": "Farbe tropfen",
@@ -248,6 +248,10 @@
           "prepText": "Jedes Kind macht sein eigenes Armband: Buchstaben-Perlen für den eigenen Namen oder den Code-Namen, dazwischen bunte Perlen in Regenbogenfarben, am Ende einen Einhorn-Charm dran.\n\nTipp: Elastikband-Ende mit Klebeband am Tisch fixieren, dann rutschen die Perlen nicht runter. Doppelknoten am Ende, Tropfen Kleber drauf — hält ewig.\n\nVorteil: Dieses Spiel ist selbstlaufend. Hinstellen, Material erklären, zurücklehnen. Die Kinder reden, lachen, basteln — und du hast 40 Minuten Ruhe.",
           "steps": [
             {
+              "name": "Vorbereitung (Erwachsene)",
+              "content": "Pro Kind ein Stück Elastikband ablängen (Schere nur durch Erwachsene) und ein Ende mit Klebeband am Tisch fixieren."
+            },
+            {
               "name": "Auffädeln",
               "content": "Jedes Kind fädelt sein eigenes Armband: Buchstaben-Perlen für den (Code-)Namen, dazwischen bunte Perlen in Regenbogenfarben."
             },
@@ -261,10 +265,10 @@
             },
             {
               "name": "Abschluss",
-              "content": "Doppelknoten ans Ende, ein Tropfen Kleber drauf — hält ewig. Selbstläufer-Spiel: 40 Min. ruhiges Basteln."
+              "content": "Doppelknoten ans Ende, ein Tropfen Bastelkleber (KEIN Sekundenkleber!) drauf — hält. Selbstläufer-Spiel: 40 Min. ruhiges Basteln."
             }
           ],
-          "safetyRule": "Kleinteile (Perlen) — bei jüngeren Geschwistern außer Reichweite halten (Verschluckungsgefahr). Schere nur durch Erwachsene.",
+          "safetyRule": "Kleinteile (Perlen) — bei jüngeren Geschwistern außer Reichweite halten (Verschluckungsgefahr). Schere nur durch Erwachsene. Nur Bastelkleber/Klebepunkte verwenden, KEIN Sekundenkleber (Hautverklebungs-Risiko bei Kindern).",
           "ageAdjust6": "Einfache Armbänder mit Namen.",
           "ageAdjust8": "Friendship-Bracelets mit Mustern, oder Code-Name statt echtem Namen. Manche machen 2–3 Stück und tauschen sie.",
           "indoorTip": null,
@@ -437,7 +441,7 @@
           "steps": [
             {
               "name": "Aufbau",
-              "content": "Milch in einen flachen Teller gießen, bis der Boden komplett bedeckt ist."
+              "content": "Vollmilch (3,5 % Fett, Zimmertemperatur) in einen flachen Teller gießen, bis der Boden komplett bedeckt ist. WICHTIG: mit fettarmer Milch funktioniert der Effekt nicht. Schürze/alte Kleidung — Lebensmittelfarbe färbt."
             },
             {
               "name": "Farbe tropfen",
@@ -556,6 +560,10 @@
           "prepText": "Jedes Kind macht sein eigenes Armband: Buchstaben-Perlen für den eigenen Namen oder den Code-Namen, dazwischen bunte Perlen in Regenbogenfarben, am Ende einen Einhorn-Charm dran.\n\nTipp: Elastikband-Ende mit Klebeband am Tisch fixieren, dann rutschen die Perlen nicht runter. Doppelknoten am Ende, Tropfen Kleber drauf — hält ewig.\n\nVorteil: Dieses Spiel ist selbstlaufend. Hinstellen, Material erklären, zurücklehnen. Die Kinder reden, lachen, basteln — und du hast 40 Minuten Ruhe.",
           "steps": [
             {
+              "name": "Vorbereitung (Erwachsene)",
+              "content": "Pro Kind ein Stück Elastikband ablängen (Schere nur durch Erwachsene) und ein Ende mit Klebeband am Tisch fixieren."
+            },
+            {
               "name": "Auffädeln",
               "content": "Jedes Kind fädelt sein eigenes Armband: Buchstaben-Perlen für den (Code-)Namen, dazwischen bunte Perlen in Regenbogenfarben."
             },
@@ -569,10 +577,10 @@
             },
             {
               "name": "Abschluss",
-              "content": "Doppelknoten ans Ende, ein Tropfen Kleber drauf — hält ewig. Selbstläufer-Spiel: 40 Min. ruhiges Basteln."
+              "content": "Doppelknoten ans Ende, ein Tropfen Bastelkleber (KEIN Sekundenkleber!) drauf — hält. Selbstläufer-Spiel: 40 Min. ruhiges Basteln."
             }
           ],
-          "safetyRule": "Kleinteile (Perlen) — bei jüngeren Geschwistern außer Reichweite halten (Verschluckungsgefahr). Schere nur durch Erwachsene.",
+          "safetyRule": "Kleinteile (Perlen) — bei jüngeren Geschwistern außer Reichweite halten (Verschluckungsgefahr). Schere nur durch Erwachsene. Nur Bastelkleber/Klebepunkte verwenden, KEIN Sekundenkleber (Hautverklebungs-Risiko bei Kindern).",
           "ageAdjust6": "Einfache Armbänder mit Namen.",
           "ageAdjust8": "Friendship-Bracelets mit Mustern, oder Code-Name statt echtem Namen. Manche machen 2–3 Stück und tauschen sie.",
           "indoorTip": null,
@@ -745,6 +753,10 @@
           "prepText": "Jedes Kind macht sein eigenes Armband: Buchstaben-Perlen für den eigenen Namen oder den Code-Namen, dazwischen bunte Perlen in Regenbogenfarben, am Ende einen Einhorn-Charm dran.\n\nTipp: Elastikband-Ende mit Klebeband am Tisch fixieren, dann rutschen die Perlen nicht runter. Doppelknoten am Ende, Tropfen Kleber drauf — hält ewig.\n\nVorteil: Dieses Spiel ist selbstlaufend. Hinstellen, Material erklären, zurücklehnen. Die Kinder reden, lachen, basteln — und du hast 40 Minuten Ruhe.",
           "steps": [
             {
+              "name": "Vorbereitung (Erwachsene)",
+              "content": "Pro Kind ein Stück Elastikband ablängen (Schere nur durch Erwachsene) und ein Ende mit Klebeband am Tisch fixieren."
+            },
+            {
               "name": "Auffädeln",
               "content": "Jedes Kind fädelt sein eigenes Armband: Buchstaben-Perlen für den (Code-)Namen, dazwischen bunte Perlen in Regenbogenfarben."
             },
@@ -758,10 +770,10 @@
             },
             {
               "name": "Abschluss",
-              "content": "Doppelknoten ans Ende, ein Tropfen Kleber drauf — hält ewig. Selbstläufer-Spiel: 40 Min. ruhiges Basteln."
+              "content": "Doppelknoten ans Ende, ein Tropfen Bastelkleber (KEIN Sekundenkleber!) drauf — hält. Selbstläufer-Spiel: 40 Min. ruhiges Basteln."
             }
           ],
-          "safetyRule": "Kleinteile (Perlen) — bei jüngeren Geschwistern außer Reichweite halten (Verschluckungsgefahr). Schere nur durch Erwachsene.",
+          "safetyRule": "Kleinteile (Perlen) — bei jüngeren Geschwistern außer Reichweite halten (Verschluckungsgefahr). Schere nur durch Erwachsene. Nur Bastelkleber/Klebepunkte verwenden, KEIN Sekundenkleber (Hautverklebungs-Risiko bei Kindern).",
           "ageAdjust6": "Einfache Armbänder mit Namen.",
           "ageAdjust8": "Friendship-Bracelets mit Mustern, oder Code-Name statt echtem Namen. Manche machen 2–3 Stück und tauschen sie.",
           "indoorTip": null,
@@ -862,7 +874,7 @@
           "steps": [
             {
               "name": "Aufbau",
-              "content": "Milch in einen flachen Teller gießen, bis der Boden komplett bedeckt ist."
+              "content": "Vollmilch (3,5 % Fett, Zimmertemperatur) in einen flachen Teller gießen, bis der Boden komplett bedeckt ist. WICHTIG: mit fettarmer Milch funktioniert der Effekt nicht. Schürze/alte Kleidung — Lebensmittelfarbe färbt."
             },
             {
               "name": "Farbe tropfen",
