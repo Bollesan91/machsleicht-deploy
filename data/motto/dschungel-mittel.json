@@ -1127,7 +1127,8 @@
         }
       ],
       "estimatedCostEur": 125,
-      "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)"
+      "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)",
+      "isQuest": true
     }
   ],
   "cakeRecipe": {

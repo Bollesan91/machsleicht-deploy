@@ -938,7 +938,8 @@
         }
       ],
       "estimatedCostEur": 115,
-      "costContext": "Geschätzte Kosten (Wow, 6–8 Kinder)"
+      "costContext": "Geschätzte Kosten (Wow, 6–8 Kinder)",
+      "isQuest": true
     }
   ],
   "cakeRecipe": {

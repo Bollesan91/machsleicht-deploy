@@ -8642,7 +8642,8 @@ var ELITE_MOTTO_DATA = {
         "savingsTip": {
           "title": "Der Codeknacker kostet fast nichts",
           "body": "Das Herzstück der Minimal-Variante — der Codeknacker — braucht nur Papier, einen Stift und 15 Minuten am Vorabend. Keine Druckvorlage kaufen: Die Werte für INDIZ/MOTIV/BEWEIS schreibst du 1:1 ab. Der Fingerabdruck-Vergleich läuft mit Bleistift und Tesafilm aus der Schublade. Eine einzige Familien-Lupe reicht, wenn ihr sie reihum gebt. Damit liegst du leicht unter 41 €."
-        }
+        },
+        "isQuest": true
       },
       {
         "id": "standard",
@@ -9608,7 +9609,8 @@ var ELITE_MOTTO_DATA = {
           "title": "Die Detektiv-Hüte sind optional",
           "body": "Die 143 € sind ohne die Detektiv-Hüte gerechnet — die kosten als Highlight zusätzlich 70-110 € für 10 Kinder. Die Party trägt auch ohne sie: Die eigene UV-Geheimkarte aus der Werkstatt plus UV-Stift ist ein vollwertiges, persönlicheres Mitgebsel. UV-Taschenlampen brauchst du nur, wenn wirklich eine Schlafparty mit Nacht-Spurensuche geplant ist. Wraps und Zweitkuchen lassen sich streichen, wenn die Gruppe kleiner bleibt. Absperrband (5 €) ersetzt fast die komplette gekaufte Deko."
         },
-        "ageNote": "Empfohlen ab 10 Jahren — zwei Module (Kreuzverhoer, UV-Nacht-Spurensuche) sind für 9-Jaehrige nicht freigegeben (minAge=10). Bei reiner 9-Jahre-Gruppe diese durch Standard-Verhoer bzw. fruehen Abschluss ersetzen."
+        "ageNote": "Empfohlen ab 10 Jahren — zwei Module (Kreuzverhoer, UV-Nacht-Spurensuche) sind für 9-Jaehrige nicht freigegeben (minAge=10). Bei reiner 9-Jahre-Gruppe diese durch Standard-Verhoer bzw. fruehen Abschluss ersetzen.",
+        "isQuest": true
       }
     ],
     "preparationWeeks": {
@@ -15518,7 +15520,8 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "estimatedCostEur": 125,
-        "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)"
+        "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)",
+        "isQuest": true
       }
     ],
     "preparationWeeks": {
@@ -16235,7 +16238,8 @@ var ELITE_MOTTO_DATA = {
         "savingsTip": {
           "title": "Codeknacker kostet fast nichts",
           "body": "Der Kern der Minimal-Variante — der Codeknacker JUNGE — braucht nur Tonpapier, einen Stift und 20 Minuten am Vorabend. Keine Druckvorlage kaufen: das Vollbeispiel (JUNGE mit Pflanzen-Höhen, Spuren-Anatomie, Endemiten-Tabelle und Geräusch-Reichweite) malst du 1:1 ab. Plüsch-Tropentiere für die Tracking-Quest hast du sowieso im Haus. Damit liegst du leicht unter 45 €."
-        }
+        },
+        "isQuest": true
       },
       {
         "id": "standard",
@@ -23378,7 +23382,8 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "estimatedCostEur": 50,
-        "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
+        "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
+        "isQuest": true
       },
       {
         "id": "standard",
@@ -24098,7 +24103,8 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "estimatedCostEur": 113,
-        "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm & LED-Set)"
+        "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm & LED-Set)",
+        "isQuest": true
       }
     ],
     "preparationWeeks": {
@@ -24818,7 +24824,8 @@ var ELITE_MOTTO_DATA = {
         "savingsTip": {
           "title": "Pyrographie-Stift einmal kaufen, lebenslang nutzen",
           "body": "Der Brand-Stift (~14 €) ist nicht nur für diesen Geburtstag — er lässt sich für jeden weiteren Holz-Bastelmoment (Schlüsselanhänger, Türschilder, Geschenk-Anhänger) wiederverwenden. Wer ihn nicht kaufen will: wasserfester Edding macht den gleichen Effekt visuell, Story-Frame ist dann „mit Wald-Tinte eingeritzt\". Spart ~14 € und drückt die Variante unter 50 €."
-        }
+        },
+        "isQuest": true
       },
       {
         "id": "standard",
@@ -25137,7 +25144,8 @@ var ELITE_MOTTO_DATA = {
         "savingsTip": {
           "title": "Mehrfach-Nutzbares ausschöpfen",
           "body": "Letter-Lock (~10 €), UV-Lampe (~10 €) und Pyrographie-Stift (~14 €) sind alle wiederverwendbar — für jeden weiteren Geburtstag, jede Schnitzeljagd, jeden Bastel-Nachmittag. Wenn du diese drei Items einmal hast, fällt die Standard-Variante künftig auf ~65 €."
-        }
+        },
+        "isQuest": true
       },
       {
         "id": "wow",
@@ -29284,7 +29292,8 @@ var ELITE_MOTTO_DATA = {
         "savingsTip": {
           "title": "💡 Spar-Trick — wenn 106 € zu viel ist",
           "body": "Pappkarton-Helme statt Plastik (~−20 €), Lupen aus dem Kindergarten / aus alten Detektiv-Sets recyceln (~−9 €), keine Cola sondern nur Apfelschorle (~−2 €). Damit liegst du bei ~75 €. Die Brandermittlung ist der unverzichtbare Anker — daran spar nicht."
-        }
+        },
+        "isQuest": true
       },
       {
         "id": "standard",
@@ -32802,7 +32811,8 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "estimatedCostEur": 115,
-        "costContext": "Geschätzte Kosten (Wow, 6–8 Kinder)"
+        "costContext": "Geschätzte Kosten (Wow, 6–8 Kinder)",
+        "isQuest": true
       }
     ],
     "preparationWeeks": {
@@ -33500,7 +33510,8 @@ var ELITE_MOTTO_DATA = {
         "savingsTip": {
           "title": "Codeknacker kostet fast nichts",
           "body": "Der Kern der Minimal-Variante — der Codeknacker — braucht nur Tonpapier, einen Stift und 15 Minuten am Vorabend. Keine Druckvorlage kaufen: das Vollbeispiel (PERLE/STROM/QUALLE mit Meeres-Tieren und Sortier-Regel) malst du 1:1 ab. Plüsch-Meerestiere für die Tauch-Quest hast du sowieso im Haus. Damit liegst du leicht unter 50 €."
-        }
+        },
+        "isQuest": true
       },
       {
         "id": "standard",
@@ -34288,7 +34299,8 @@ var ELITE_MOTTO_DATA = {
         "savingsTip": {
           "title": "Mini-Tauchermasken sind optional",
           "body": "Die 150 € sind ohne die Mini-Tauchermasken als Highlight gerechnet — die kosten als Mitgebsel zusätzlich 70-100 € für 10 Kinder. Die Party trägt auch ohne sie: das selbst gestaltete Tauch-Bandana aus der Werkstatt ist ein vollwertiges, persönlicheres Mitgebsel. Stirnlampen brauchst du nur, wenn wirklich eine Schlafparty mit Sterne-Beobachtung geplant ist. Wraps und Zweitkuchen lassen sich streichen, wenn die Gruppe kleiner bleibt."
-        }
+        },
+        "isQuest": true
       }
     ],
     "preparationWeeks": {
@@ -42679,7 +42691,8 @@ var ELITE_MOTTO_DATA = {
         "savingsTip": {
           "title": "Karte und Truhe kosten fast nichts",
           "body": "Das Herz der Variante — die dreigeteilte Schatzkarte — ist selbst gezeichnetes Packpapier, die Truhe ein mit Goldfolie beklebter Schuhkarton. Beides zusammen unter 10 €. Das Geld steckt sinnvoller im Essen (Wraps für hungrige 11-Jährige) als in fertiger Deko. Augenklappen und Bandanas sind oft noch von früheren Anlässen da."
-        }
+        },
+        "isQuest": true
       },
       {
         "id": "standard",
@@ -43393,7 +43406,8 @@ var ELITE_MOTTO_DATA = {
         "savingsTip": {
           "title": "Die Quest läuft auf Haushalts-Material",
           "body": "Die teuren Posten sind Essen für die große Gruppe und die große Truhe — das Quest-Material selbst (Karten, Spuren-Pfad, Brandungs-Slalom aus Kisten und Seilen) kostet kaum etwas. Stirnlampen lohnen nur, wenn die Übernachtung stattfindet, und sind danach für jeden Familienausflug nützlich. Das aufblasbare Schiff ist reine Optik — ohne läuft die Mission genauso gut."
-        }
+        },
+        "isQuest": true
       }
     ],
     "preparationWeeks": {
@@ -45649,7 +45663,8 @@ var ELITE_MOTTO_DATA = {
             "categoryReasoning": "Eleganter Mystery-Look + Tatort-Stimmung."
           }
         ],
-        "costContext": "ca. 66 € für 8 Kinder · ~8,25 € pro Kind"
+        "costContext": "ca. 66 € für 8 Kinder · ~8,25 € pro Kind",
+        "isQuest": true
       },
       {
         "id": "wow",
@@ -53534,7 +53549,8 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "estimatedCostEur": 120,
-        "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)"
+        "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)",
+        "isQuest": true
       }
     ],
     "preparationWeeks": {
@@ -54310,7 +54326,8 @@ var ELITE_MOTTO_DATA = {
         "savingsTip": {
           "title": "Codeknacker kostet fast nichts",
           "body": "Der Kern der Minimal-Variante — der Codeknacker — braucht nur Tonpapier, einen Stift und 15 Minuten am Vorabend. Keine Druckvorlage kaufen: das Vollbeispiel (WASSER/FELS/TEMPEL mit Tieren und Sortier-Regel) malst du 1:1 ab. Plüsch-Tiere für die Foto-Quest hast du sowieso im Haus. Damit liegst du leicht unter 41 €."
-        }
+        },
+        "isQuest": true
       },
       {
         "id": "standard",
@@ -54594,7 +54611,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Sind alle drei Eintragungen schlüssig, ergibt sich der Standort. Suchen am Ort mit der TOR-Markierung."
               }
             ],
-            "safetyRule": "Verstecke und Mess-Stationen nur an sicheren, gut erreichbaren Orten — kein Klettern, keine verschlossenen Räume. Beim Loslaufen auf Stolperfallen achten.",
+            "safetyRule": "Verstecke und Mess-Stationen nur an sicheren, gut erreichbaren Orten — kein Klettern, keine verschlossenen Räume. Beim Loslaufen auf Stolperfallen achten. Im Haus langsam gehen statt rennen — besonders an Treppen, Glastüren und Türrahmen.",
             "ageAdjust9": "Vorgezeichnete Hilfslinien auf der Karte, Standorte beschriftet.",
             "ageAdjust12": "Wilderer-Twist: Klebeband-Streifen als „Wilderer-Zonen“ auf den Boden. Wer beim Tempel-Suchen drauftritt, muss zurück zur Karte und einen Code erneut lösen.",
             "indoorTip": "Großer Esstisch als „Kartentisch“ — alle stehen drumherum, das wirkt wie eine echte Lagebesprechung.",
@@ -55089,7 +55106,8 @@ var ELITE_MOTTO_DATA = {
         "savingsTip": {
           "title": "Filz-Buschhüte sind optional",
           "body": "Die 142 € sind ohne die Filz-Buschhüte gerechnet — die kosten als Highlight zusätzlich 80-120 € für 10 Kinder. Die Party trägt auch ohne sie: das selbst bemalte Tarn-Bandana aus der Werkstatt ist ein vollwertiges, persönlicheres Mitgebsel. Stirnlampen brauchst du nur, wenn wirklich eine Schlafparty mit Nacht-Safari geplant ist. Wraps und Zweitkuchen lassen sich streichen, wenn die Gruppe kleiner bleibt."
-        }
+        },
+        "isQuest": true
       }
     ],
     "preparationWeeks": {
@@ -57157,7 +57175,8 @@ var ELITE_MOTTO_DATA = {
             "categoryReasoning": "Material für Geheimbotschaften, Ausweise, Steckbrief — der Kern der Mission, fast kostenlos."
           }
         ],
-        "costContext": "ca. 35 € für 8 Kinder · ~4,38 € pro Kind"
+        "costContext": "ca. 35 € für 8 Kinder · ~4,38 € pro Kind",
+        "isQuest": true
       },
       {
         "id": "standard",
@@ -57382,7 +57401,8 @@ var ELITE_MOTTO_DATA = {
             "categoryReasoning": "Rätsel-Material, fast kostenlos."
           }
         ],
-        "costContext": "ca. 55 € für 8 Kinder · ~6,88 € pro Kind"
+        "costContext": "ca. 55 € für 8 Kinder · ~6,88 € pro Kind",
+        "isQuest": true
       },
       {
         "id": "wow",
@@ -60256,7 +60276,8 @@ var ELITE_MOTTO_DATA = {
           }
         ],
         "estimatedCostEur": 120,
-        "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)"
+        "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)",
+        "isQuest": true
       }
     ],
     "preparationWeeks": {
@@ -61868,7 +61889,8 @@ var ELITE_MOTTO_DATA = {
         "savingsTip": {
           "title": "Die Nacht-Ausrüstung bestimmt den Preis",
           "body": "Der Wow-Preis hängt fast ganz an der Nacht-Ausrüstung: Stirnlampen sind Pflicht (Sicherheit), aber Fernglas, Sternenprojektor und Mars-Rover sind optional. Ohne Schlafparty fällt die Sternenbeobachtung ganz weg und du landest bei rund 90 € — näher an Standard. Tipp: Stirnlampen leihen sich oft mehrere Familien gegenseitig, das halbiert den größten Posten."
-        }
+        },
+        "isQuest": true
       }
     ],
     "preparationWeeks": {

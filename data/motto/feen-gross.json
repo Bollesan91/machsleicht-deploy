@@ -417,7 +417,8 @@
       "savingsTip": {
         "title": "Pyrographie-Stift einmal kaufen, lebenslang nutzen",
         "body": "Der Brand-Stift (~14 €) ist nicht nur für diesen Geburtstag — er lässt sich für jeden weiteren Holz-Bastelmoment (Schlüsselanhänger, Türschilder, Geschenk-Anhänger) wiederverwenden. Wer ihn nicht kaufen will: wasserfester Edding macht den gleichen Effekt visuell, Story-Frame ist dann „mit Wald-Tinte eingeritzt\". Spart ~14 € und drückt die Variante unter 50 €."
-      }
+      },
+      "isQuest": true
     },
     {
       "id": "standard",
@@ -736,7 +737,8 @@
       "savingsTip": {
         "title": "Mehrfach-Nutzbares ausschöpfen",
         "body": "Letter-Lock (~10 €), UV-Lampe (~10 €) und Pyrographie-Stift (~14 €) sind alle wiederverwendbar — für jeden weiteren Geburtstag, jede Schnitzeljagd, jeden Bastel-Nachmittag. Wenn du diese drei Items einmal hast, fällt die Standard-Variante künftig auf ~65 €."
-      }
+      },
+      "isQuest": true
     },
     {
       "id": "wow",

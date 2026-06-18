@@ -857,13 +857,20 @@ function EliteShoppingList({ variants, shoppingMode, mottoColor }) {
   };
 
   const total = variant.shoppingList.reduce((acc, it) => acc + (typeof it.priceEur === "number" ? it.priceEur : 0), 0);
+  // Kosten-Konvention "ab X + optional Y": ehrliche Untergrenze = Pflicht-Posten, Rest optional.
+  // Live aus der shoppingList berechnet (keine gespeicherte estimatedCostEur — die war uneinheitlich/ungenutzt).
+  const pflichtSum = groups.pflicht.reduce((acc, it) => acc + (typeof it.priceEur === "number" ? it.priceEur : 0), 0);
+  const optionalSum = total - pflichtSum;
 
   return (
     <section className="fu" style={{ marginBottom: 24, background: "#fff", border: "1px solid var(--l)", borderRadius: 14, padding: "18px 18px 14px" }}>
       <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: 1.5, color: mottoColor || "var(--a)", textTransform: "uppercase", marginBottom: 6 }}>🛒 Einkaufsliste</p>
       <h2 style={{ fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, marginBottom: 6, color: "var(--d)" }}>
-        {variant.label || `${variant.id} — ca. ${variant.estimatedCostEur || total}€`}
+        {variant.label || `${variant.id} — ab ${pflichtSum}€`}
       </h2>
+      <p style={{ fontSize: 14, fontWeight: 700, color: "var(--d)", marginBottom: 10 }}>
+        💰 ab {pflichtSum} €{optionalSum > 0 ? <span style={{ fontWeight: 600, color: "var(--m)" }}> + optional {optionalSum} €</span> : null}
+      </p>
       <p style={{ fontSize: 13, color: "var(--m)", marginBottom: 14, lineHeight: 1.5 }}>
         Drei Gruppen statt einer langen Liste. Fang oben an, hör unten auf — alles unter „Hab ich vielleicht schon" kannst du wahrscheinlich überspringen.
       </p>
@@ -1036,6 +1043,11 @@ function EliteGamesFilter({ variants, shoppingMode, effectiveLoc, quietMode, mot
         {quietMode && <span style={{ color: "#558B2F" }}> · Ruhig-Modus aktiv</span>}
         {" · "}{filtered.length} von {variant.games.length} Spielen · gesamt ~{totalDur} Min.
       </p>
+      {variant.isQuest && (
+        <p style={{ fontSize: 12, color: "var(--d)", marginBottom: 12, padding: "8px 10px", background: "var(--bg)", borderRadius: 8, lineHeight: 1.45 }}>
+          🗺️ <strong>Diese Stufe ist als große Quest gebaut</strong> — wenige Einträge, aber jeder ist ein langes Stationen-Spiel, das einen ganzen Nachmittag trägt. Der Aufwand steckt in der Quest, nicht in der Anzahl.
+        </p>
+      )}
 
       <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 12 }}>
         <select value={filterEffort} onChange={(e) => setFilterEffort(e.target.value)} style={{ fontSize: 11, padding: "4px 8px", border: "1px solid var(--l)", borderRadius: 6, background: "#fff", color: "var(--d)" }}>

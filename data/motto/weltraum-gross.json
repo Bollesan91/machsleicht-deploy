@@ -1330,7 +1330,8 @@
       "savingsTip": {
         "title": "Die Nacht-Ausrüstung bestimmt den Preis",
         "body": "Der Wow-Preis hängt fast ganz an der Nacht-Ausrüstung: Stirnlampen sind Pflicht (Sicherheit), aber Fernglas, Sternenprojektor und Mars-Rover sind optional. Ohne Schlafparty fällt die Sternenbeobachtung ganz weg und du landest bei rund 90 € — näher an Standard. Tipp: Stirnlampen leihen sich oft mehrere Familien gegenseitig, das halbiert den größten Posten."
-      }
+      },
+      "isQuest": true
     }
   ],
   "cakeRecipe": {

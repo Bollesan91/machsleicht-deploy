@@ -391,7 +391,8 @@
         }
       ],
       "estimatedCostEur": 50,
-      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
+      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
+      "isQuest": true
     },
     {
       "id": "standard",
@@ -1111,7 +1112,8 @@
         }
       ],
       "estimatedCostEur": 113,
-      "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm & LED-Set)"
+      "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm & LED-Set)",
+      "isQuest": true
     }
   ],
   "cakeRecipe": {

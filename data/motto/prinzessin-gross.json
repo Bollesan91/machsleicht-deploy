@@ -396,7 +396,8 @@
           "categoryReasoning": "Eleganter Mystery-Look + Tatort-Stimmung."
         }
       ],
-      "costContext": "ca. 66 € für 8 Kinder · ~8,25 € pro Kind"
+      "costContext": "ca. 66 € für 8 Kinder · ~8,25 € pro Kind",
+      "isQuest": true
     },
     {
       "id": "wow",

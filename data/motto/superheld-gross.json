@@ -245,7 +245,8 @@
           "categoryReasoning": "Material für Geheimbotschaften, Ausweise, Steckbrief — der Kern der Mission, fast kostenlos."
         }
       ],
-      "costContext": "ca. 35 € für 8 Kinder · ~4,38 € pro Kind"
+      "costContext": "ca. 35 € für 8 Kinder · ~4,38 € pro Kind",
+      "isQuest": true
     },
     {
       "id": "standard",
@@ -470,7 +471,8 @@
           "categoryReasoning": "Rätsel-Material, fast kostenlos."
         }
       ],
-      "costContext": "ca. 55 € für 8 Kinder · ~6,88 € pro Kind"
+      "costContext": "ca. 55 € für 8 Kinder · ~6,88 € pro Kind",
+      "isQuest": true
     },
     {
       "id": "wow",
