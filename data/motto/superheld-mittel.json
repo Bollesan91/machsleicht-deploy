@@ -1,5 +1,11 @@
 {
-  "_meta": { "schemaVersion": "elite-v1", "motto": "superheld", "ageGroup": "mittel", "author": "machsleicht", "primaryVerified": "Preise = Richtwerte (Amazon/Drogerie Stand 2026, als 'ca.' gekennzeichnet); Sicherheitsregeln nach Standard-Kinderparty-Praxis (weiche Wurfobjekte, freie Sicht trotz Maske, Aufsicht)." },
+  "_meta": {
+    "schemaVersion": "elite-v1",
+    "motto": "superheld",
+    "ageGroup": "mittel",
+    "author": "machsleicht",
+    "primaryVerified": "Preise = Richtwerte (Amazon/Drogerie Stand 2026, als 'ca.' gekennzeichnet); Sicherheitsregeln nach Standard-Kinderparty-Praxis (weiche Wurfobjekte, freie Sicht trotz Maske, Aufsicht)."
+  },
   "motto": "Superhelden",
   "ageGroup": "mittel",
   "ageRange": "6–8 Jahre",
@@ -8,12 +14,30 @@
   "introParagraph": "Capes an, Maske auf — heute wird deine Crew zur Heldentruppe. Für 6–8-Jährige ist Superhelden eines der dankbarsten Mottos: viel Bewegung, klare Rollen (Held gegen Schurke), wenig Bastelaufwand. Unten findest du drei fertige Abläufe (Minimal, Standard, Wow) mit Spielen inklusive Schritt-für-Schritt-Anleitung, einer Einkaufsliste mit Richtpreisen und allem, was die Stadt rettet.",
   "ageInsight": "6–8-Jährige wollen aktiv Held SEIN, nicht zuschauen. Sie lieben einen klaren Auftrag ('Rettet die Stadt!'), Wettkampf ohne Rauswurf und ein 'Training', das sie zu echten Helden macht. Wichtig: jedes Kind braucht eine eigene Heldenrolle/Maske — sonst gibt's Streit, wer Spider-Man ist. Schurken-Figur (eine erwachsene Person als 'Dr. Chaos') zieht enorm, darf aber nie gruselig werden.",
   "faq": [
-    { "q": "Wie lange sollte ein Superhelden-Geburtstag dauern?", "a": "2,5 bis 3 Stunden sind für 6–8-Jährige ideal. Die Standard-Variante (Helden-Training, Stadt-Rettung, Schurken-Jagd, Kuchen) füllt genau dieses Fenster ohne Leerlauf." },
-    { "q": "Brauche ich für jedes Kind ein Kostüm?", "a": "Nein. Eine Maske + ein Cape pro Kind reicht völlig und macht aus jedem sofort einen Helden — das übernimmt ihr als Mitgebsel zu Beginn. Komplette Kostüme sind teuer und unnötig." },
-    { "q": "Was, wenn die Kinder zu wild werden?", "a": "Plane bewusst eine ruhige Station ein (Helden-Abzeichen basteln oder Geheim-Botschaft entschlüsseln) nach jeder Bewegungsrunde. Der Wechsel laut/leise hält die Gruppe steuerbar." },
-    { "q": "Geht das auch in der Wohnung?", "a": "Ja. Helden-Training als Wollfaden-Laserparcours im Flur, Stadt-Rettung mit Bauklötzen im Wohnzimmer, Schurken-Dosenwerfen — alles drinnen machbar. Bei den Bewegungsspielen Tische wegräumen." },
-    { "q": "Welche Heldin für Mädchen?", "a": "Superhelden ist kein Jungs-Motto. Wonder Woman, Supergirl, Ms. Marvel oder eine selbst erfundene Heldin funktionieren genauso — neutral angekündigt ('eure eigene Superkraft') holt alle ab." },
-    { "q": "Was kostet ein Superhelden-Geburtstag ungefähr?", "a": "Minimal ab ~38 €, Standard ~69 €, Wow ~90 € für 8 Kinder (Material laut Einkaufsliste). Größter Hebel: Capes/Masken selbst aus Stoffresten statt Kaufset spart 15–20 €." }
+    {
+      "q": "Wie lange sollte ein Superhelden-Geburtstag dauern?",
+      "a": "2,5 bis 3 Stunden sind für 6–8-Jährige ideal. Die Standard-Variante (Helden-Training, Stadt-Rettung, Schurken-Jagd, Kuchen) füllt genau dieses Fenster ohne Leerlauf."
+    },
+    {
+      "q": "Brauche ich für jedes Kind ein Kostüm?",
+      "a": "Nein. Eine Maske + ein Cape pro Kind reicht völlig und macht aus jedem sofort einen Helden — das übernimmt ihr als Mitgebsel zu Beginn. Komplette Kostüme sind teuer und unnötig."
+    },
+    {
+      "q": "Was, wenn die Kinder zu wild werden?",
+      "a": "Plane bewusst eine ruhige Station ein (Helden-Abzeichen basteln oder Geheim-Botschaft entschlüsseln) nach jeder Bewegungsrunde. Der Wechsel laut/leise hält die Gruppe steuerbar."
+    },
+    {
+      "q": "Geht das auch in der Wohnung?",
+      "a": "Ja. Helden-Training als Wollfaden-Laserparcours im Flur, Stadt-Rettung mit Bauklötzen im Wohnzimmer, Schurken-Dosenwerfen — alles drinnen machbar. Bei den Bewegungsspielen Tische wegräumen."
+    },
+    {
+      "q": "Welche Heldin für Mädchen?",
+      "a": "Superhelden ist kein Jungs-Motto. Wonder Woman, Supergirl, Ms. Marvel oder eine selbst erfundene Heldin funktionieren genauso — neutral angekündigt ('eure eigene Superkraft') holt alle ab."
+    },
+    {
+      "q": "Was kostet ein Superhelden-Geburtstag ungefähr?",
+      "a": "Minimal ab ~38 €, Standard ~69 €, Wow ~90 € für 8 Kinder (Material laut Einkaufsliste). Größter Hebel: Capes/Masken selbst aus Stoffresten statt Kaufset spart 15–20 €."
+    }
   ],
   "variants": [
     {
@@ -23,23 +47,64 @@
       "intro": "Zwei starke Spiele, ein klarer Auftrag, kaum Vorbereitung. Perfekt, wenn die Zeit knapp ist und es trotzdem nach Superhelden riechen soll.",
       "timeWindow": "2 Stunden (14:00–16:00)",
       "schedule": [
-        { "time": "14:00", "title": "Ankommen & Helden-Einkleidung", "description": "Jedes Kind bekommt Maske + Cape und wählt seinen Heldennamen. Foto-Ecke vor der Skyline. 20 Min." },
-        { "time": "14:20", "title": "Helden-Training (Parcours)", "description": "Hindernislauf als Aufnahmeprüfung in die Heldentruppe. 30 Min." },
-        { "time": "14:50", "title": "Stadt in Gefahr (Dosenwerfen)", "description": "Bösewicht-Türme mit weichen Bällen einreißen. 25 Min." },
-        { "time": "15:15", "title": "Kuchen & Heldenlied", "description": "Power-Kuchen, kurze Pause im Sitzen. 25 Min." },
-        { "time": "15:40", "title": "Heldenschwur & Mitgebsel", "description": "Urkunde zum 'echten Helden', Schatzbeutel, Verabschiedung. 20 Min." }
+        {
+          "time": "14:00",
+          "title": "Ankommen & Helden-Einkleidung",
+          "description": "Jedes Kind bekommt Maske + Cape und wählt seinen Heldennamen. Foto-Ecke vor der Skyline. 20 Min."
+        },
+        {
+          "time": "14:20",
+          "title": "Helden-Training (Parcours)",
+          "description": "Hindernislauf als Aufnahmeprüfung in die Heldentruppe. 30 Min."
+        },
+        {
+          "time": "14:50",
+          "title": "Stadt in Gefahr (Dosenwerfen)",
+          "description": "Bösewicht-Türme mit weichen Bällen einreißen. 25 Min."
+        },
+        {
+          "time": "15:15",
+          "title": "Kuchen & Heldenlied",
+          "description": "Power-Kuchen, kurze Pause im Sitzen. 25 Min."
+        },
+        {
+          "time": "15:40",
+          "title": "Heldenschwur & Mitgebsel",
+          "description": "Urkunde zum 'echten Helden', Schatzbeutel, Verabschiedung. 20 Min."
+        }
       ],
       "games": [
         {
           "name": "🦸 Helden-Training (Hindernisparcours)",
-          "indoor": true, "outdoor": true, "duration": 25, "minAge": 5, "loudness": "laut", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 5,
+          "loudness": "laut",
+          "effort": "mittel",
           "material": "4–6 Alltagsgegenstände als Hindernisse (Stühle, Seil, Kissen, Kreppband, leere Kartons), Stoppuhr/Handy",
           "prepText": "Parcours vor Ankunft aufbauen: drüber (Seil), drunter (Stuhlreihe), durch (Kartons), Slalom (Kissen). Start- und Ziellinie mit Kreppband markieren.",
           "steps": [
-            { "n": 1, "name": "Auftrag erklären", "content": "'Nur wer das Training schafft, wird in die Heldentruppe aufgenommen!' Jeder Held läuft den Parcours einmal zur Probe ab." },
-            { "n": 2, "name": "Stationen vormachen", "content": "Über das Seil springen, unter den Stühlen durchkrabbeln, durch die Kartons, Slalom um die Kissen, am Ziel die Faust in die Luft." },
-            { "n": 3, "name": "Lauf auf Zeit", "content": "Jedes Kind läuft einzeln, die anderen feuern an. Zeit wird gestoppt — aber alle bestehen, es geht ums Mitmachen, nicht ums Gewinnen." },
-            { "n": 4, "name": "Heldentruppe ernennen", "content": "Am Ende klatschen alle ein: 'Aufgenommen!' Optional eine zweite Runde, dann gegen die eigene Zeit antreten." }
+            {
+              "n": 1,
+              "name": "Auftrag erklären",
+              "content": "'Nur wer das Training schafft, wird in die Heldentruppe aufgenommen!' Jeder Held läuft den Parcours einmal zur Probe ab."
+            },
+            {
+              "n": 2,
+              "name": "Stationen vormachen",
+              "content": "Über das Seil springen, unter den Stühlen durchkrabbeln, durch die Kartons, Slalom um die Kissen, am Ziel die Faust in die Luft."
+            },
+            {
+              "n": 3,
+              "name": "Lauf auf Zeit",
+              "content": "Jedes Kind läuft einzeln, die anderen feuern an. Zeit wird gestoppt — aber alle bestehen, es geht ums Mitmachen, nicht ums Gewinnen."
+            },
+            {
+              "n": 4,
+              "name": "Heldentruppe ernennen",
+              "content": "Am Ende klatschen alle ein: 'Aufgenommen!' Optional eine zweite Runde, dann gegen die eigene Zeit antreten."
+            }
           ],
           "safetyRule": "Immer nur EIN Kind im Parcours, die anderen hinter der Startlinie. Kartons stabil/leer, keine scharfen Kanten. Bei Maske auf freie Sicht achten — beim Krabbeln hochschieben.",
           "ageAdjust6": "Hindernisse niedriger, Zeit nicht betonen — einfach gemeinsam durchlaufen.",
@@ -51,14 +116,35 @@
         },
         {
           "name": "🥫 Stadt in Gefahr (Bösewicht-Dosenwerfen)",
-          "indoor": true, "outdoor": true, "duration": 25, "minAge": 5, "loudness": "laut", "effort": "niedrig",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 5,
+          "loudness": "laut",
+          "effort": "niedrig",
           "material": "10–15 leere Konservendosen oder Plastikbecher, 3 weiche Bälle/Sockenknäuel, Edding für Bösewicht-Gesichter, Kreppband für Wurflinie",
           "prepText": "Dosen mit lustigen (nicht gruseligen) Bösewicht-Gesichtern bemalen. Zu Türmen stapeln. Wurflinie in 2–3 m Abstand markieren.",
           "steps": [
-            { "n": 1, "name": "Bedrohung aufbauen", "content": "'Dr. Chaos hat Roboter in der Stadt aufgestellt — werft sie um, bevor sie alles zerstören!' Türme aufstapeln." },
-            { "n": 2, "name": "Werfen", "content": "Jedes Kind bekommt 3 Würfe von der Linie. Pro umgeworfener Dose 1 Punkt für die Heldentruppe (gemeinsame Punktzahl, kein Gegeneinander)." },
-            { "n": 3, "name": "Nachschub", "content": "Eine erwachsene Person baut schnell wieder auf, damit kein Kind warten muss. Mehrere Runden." },
-            { "n": 4, "name": "Stadt gerettet", "content": "Wenn alle Türme mindestens einmal gefallen sind: 'Die Stadt ist gerettet!' — gemeinsamer Jubel." }
+            {
+              "n": 1,
+              "name": "Bedrohung aufbauen",
+              "content": "'Dr. Chaos hat Roboter in der Stadt aufgestellt — werft sie um, bevor sie alles zerstören!' Türme aufstapeln."
+            },
+            {
+              "n": 2,
+              "name": "Werfen",
+              "content": "Jedes Kind bekommt 3 Würfe von der Linie. Pro umgeworfener Dose 1 Punkt für die Heldentruppe (gemeinsame Punktzahl, kein Gegeneinander)."
+            },
+            {
+              "n": 3,
+              "name": "Nachschub",
+              "content": "Eine erwachsene Person baut schnell wieder auf, damit kein Kind warten muss. Mehrere Runden."
+            },
+            {
+              "n": 4,
+              "name": "Stadt gerettet",
+              "content": "Wenn alle Türme mindestens einmal gefallen sind: 'Die Stadt ist gerettet!' — gemeinsamer Jubel."
+            }
           ],
           "safetyRule": "Nur weiche Bälle/Sockenknäuel, niemals harte Gegenstände. Nicht auf Personen werfen — nur auf die Dosen. Erst auf das Signal 'Frei!' sammeln gehen.",
           "ageAdjust6": "Abstand kürzer (1,5 m), größere Becher-Türme.",
@@ -67,17 +153,97 @@
           "outdoorTip": "Dosen auf eine Bank/Tisch stellen, größere Distanz möglich.",
           "whyItWorksTitle": "Warum das zieht",
           "whyItWorks": "Etwas umwerfen dürfen ist für 6–8-Jährige pures Glück, und der gemeinsame Punktestand verhindert Frust — niemand scheidet aus, alle retten zusammen die Stadt."
+        },
+        {
+          "name": "🔎 Geheimmission (Helden-Schatzsuche)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 35,
+          "minAge": 5,
+          "loudness": "mittel",
+          "effort": "mittel",
+          "material": "5 Hinweiskarten mit kleinen Rätseln/Bildern, ein 'Tresor' (Kiste/Schuhkarton) mit Schatz (Mitgebsel), optional UV-Stift",
+          "prepText": "5 Verstecke festlegen, Hinweise so legen, dass jeder zum nächsten führt. Letzter Hinweis zeigt zum Tresor.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Mission starten",
+              "content": "'Dr. Chaos hat den Stadt-Schatz versteckt. Folgt den Geheimhinweisen!' Ersten Hinweis übergeben."
+            },
+            {
+              "n": 2,
+              "name": "Hinweise lösen",
+              "content": "Als Team von Versteck zu Versteck — jedes Kind darf mal den nächsten Hinweis finden."
+            },
+            {
+              "n": 3,
+              "name": "Rätsel-Stopp",
+              "content": "An einer Station ein Mini-Rätsel (Bilder zählen, Geheimwort legen), bevor es weitergeht."
+            },
+            {
+              "n": 4,
+              "name": "Tresor knacken",
+              "content": "Letztes Versteck: der Tresor mit dem Schatz für alle. Gemeinsam öffnen, Beute teilen."
+            }
+          ],
+          "safetyRule": "Verstecke nur in sicheren, einsehbaren Bereichen. Draußen Grenzen klar abstecken, eine erwachsene Person begleitet.",
+          "ageAdjust6": "Bild-Hinweise statt Text, kürzere Strecke, 3–4 Stationen.",
+          "ageAdjust8": "Echte Mini-Rätsel/Codes, 5–6 Stationen, optional UV-Geheimschrift.",
+          "indoorTip": "Verstecke über mehrere Räume verteilen.",
+          "outdoorTip": "Garten in 'Stadtviertel' aufteilen.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Eine Mission mit Ziel gibt der Party einen roten Faden — die Kinder arbeiten als Team und das Schatz-Finale ist der emotionale Höhepunkt."
         }
       ],
       "food": "Power-Spieße (Trauben, Käse, Mini-Mozzarella), 'Energie-Trank' (grüne Apfelsaftschorle), Helden-Muffins mit Blitz aus Zuckerguss. Bewusst einfach — bei 2 Stunden reicht ein Snack plus Kuchen.",
       "decoration": "Rot-blau-gelbe Luftballons, ausgedruckte Comic-Sprechblasen (POW! BAM! ZACK!) an der Wand, eine 'Skyline' aus schwarzem Tonkarton hinter dem Foto-Bereich. Capes der Kinder hängen als Deko an einer Leine, bis sie sie anziehen.",
       "giveaways": "Stoffmaske + einfaches Cape (dürfen die Kinder behalten), Helden-Urkunde mit Namen, ein Blitz-Sticker.",
       "shoppingList": [
-        { "emoji": "🎭", "label": "Augenmasken 12er-Set (Filz)", "url": "https://www.amazon.de/s?k=superhelden+masken+kinder+filz&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Macht jedes Kind sofort zum Helden — das zentrale, günstige Verkleidungs-Element." },
-        { "emoji": "🦸", "label": "Kinder-Capes 8er-Set", "url": "https://www.amazon.de/s?k=kinder+umhang+cape+superheld+set&tag=machsleicht21-21", "priceEur": 15, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Cape + Maske = komplettes Heldenkostüm ohne teure Vollkostüme; gleichzeitig Mitgebsel." },
-        { "emoji": "🎈", "label": "Luftballons rot/blau/gelb 50 Stk.", "url": "https://www.amazon.de/s?k=luftballons+rot+blau+gelb&tag=machsleicht21-21", "priceEur": 6, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Heldenfarben tragen die ganze Deko, günstig und wirkungsvoll." },
-        { "emoji": "💬", "label": "Comic-Sprechblasen-Deko / Servietten", "url": "https://www.amazon.de/s?k=superhelden+party+servietten+comic&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "deko", "categoryReasoning": "POW/BAM-Optik setzt sofort das Motto, auch als Tischdeko." },
-        { "emoji": "⚡", "label": "Blitz-Sticker / Helden-Tattoos", "url": "https://www.amazon.de/s?k=superhelden+tattoos+sticker+kinder&tag=machsleicht21-21", "priceEur": 4, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Kleines, billiges Highlight fürs Ankommen und den Schatzbeutel." }
+        {
+          "emoji": "🎭",
+          "label": "Augenmasken 12er-Set (Filz)",
+          "url": "https://www.amazon.de/s?k=superhelden+masken+kinder+filz&tag=machsleicht21-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Macht jedes Kind sofort zum Helden — das zentrale, günstige Verkleidungs-Element."
+        },
+        {
+          "emoji": "🦸",
+          "label": "Kinder-Capes 8er-Set",
+          "url": "https://www.amazon.de/s?k=kinder+umhang+cape+superheld+set&tag=machsleicht21-21",
+          "priceEur": 15,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Cape + Maske = komplettes Heldenkostüm ohne teure Vollkostüme; gleichzeitig Mitgebsel."
+        },
+        {
+          "emoji": "🎈",
+          "label": "Luftballons rot/blau/gelb 50 Stk.",
+          "url": "https://www.amazon.de/s?k=luftballons+rot+blau+gelb&tag=machsleicht21-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Heldenfarben tragen die ganze Deko, günstig und wirkungsvoll."
+        },
+        {
+          "emoji": "💬",
+          "label": "Comic-Sprechblasen-Deko / Servietten",
+          "url": "https://www.amazon.de/s?k=superhelden+party+servietten+comic&tag=machsleicht21-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "POW/BAM-Optik setzt sofort das Motto, auch als Tischdeko."
+        },
+        {
+          "emoji": "⚡",
+          "label": "Blitz-Sticker / Helden-Tattoos",
+          "url": "https://www.amazon.de/s?k=superhelden+tattoos+sticker+kinder&tag=machsleicht21-21",
+          "priceEur": 4,
+          "hasAffiliate": true,
+          "category": "mitgebsel",
+          "categoryReasoning": "Kleines, billiges Highlight fürs Ankommen und den Schatzbeutel."
+        }
       ],
       "costContext": "ca. 38 € für 8 Kinder · ~4,75 € pro Kind"
     },
@@ -88,89 +254,265 @@
       "intro": "Die empfohlene Variante: Helden-Training, eine echte Geheimmission (Schatzsuche), Stadt-Rettung und der Showdown gegen Dr. Chaos. Genug Abwechslung für 3 Stunden, mit ruhiger Bastelpause dazwischen.",
       "timeWindow": "3 Stunden (14:00–17:00)",
       "schedule": [
-        { "time": "14:00", "title": "Ankommen & Helden-Akademie", "description": "Maske + Cape, Heldenname, Foto vor der Skyline. Freispiel mit Helden-Ausmalbildern, bis alle da sind. 20 Min." },
-        { "time": "14:20", "title": "Helden-Training (Parcours)", "description": "Aufnahmeprüfung in die Heldentruppe. 25 Min." },
-        { "time": "14:45", "title": "Helden-Abzeichen basteln", "description": "Ruhige Station: jedes Kind gestaltet sein eigenes Logo. 20 Min." },
-        { "time": "15:05", "title": "Geheimmission (Schatzsuche)", "description": "Hinweise durch Haus/Garten führen zum Versteck von Dr. Chaos. 35 Min." },
-        { "time": "15:40", "title": "Kuchen & Heldenlied", "description": "Power-Kuchen, Verschnaufpause. 25 Min." },
-        { "time": "16:05", "title": "Showdown: Laser-Parcours", "description": "Durch das Wollfaden-Labyrinth zum 'Tresor' von Dr. Chaos. 30 Min." },
-        { "time": "16:35", "title": "Heldenschwur & Mitgebsel", "description": "Urkunde, Heldenabzeichen, Schatzbeutel, Verabschiedung. 25 Min." }
+        {
+          "time": "14:00",
+          "title": "Ankommen & Helden-Akademie",
+          "description": "Maske + Cape, Heldenname, Foto vor der Skyline. Freispiel mit Helden-Ausmalbildern, bis alle da sind. 20 Min."
+        },
+        {
+          "time": "14:20",
+          "title": "Helden-Training (Parcours)",
+          "description": "Aufnahmeprüfung in die Heldentruppe. 25 Min."
+        },
+        {
+          "time": "14:45",
+          "title": "Helden-Abzeichen basteln",
+          "description": "Ruhige Station: jedes Kind gestaltet sein eigenes Logo. 20 Min."
+        },
+        {
+          "time": "15:05",
+          "title": "Geheimmission (Schatzsuche)",
+          "description": "Hinweise durch Haus/Garten führen zum Versteck von Dr. Chaos. 35 Min."
+        },
+        {
+          "time": "15:40",
+          "title": "Kuchen & Heldenlied",
+          "description": "Power-Kuchen, Verschnaufpause. 25 Min."
+        },
+        {
+          "time": "16:05",
+          "title": "Showdown: Laser-Parcours",
+          "description": "Durch das Wollfaden-Labyrinth zum 'Tresor' von Dr. Chaos. 30 Min."
+        },
+        {
+          "time": "16:35",
+          "title": "Heldenschwur & Mitgebsel",
+          "description": "Urkunde, Heldenabzeichen, Schatzbeutel, Verabschiedung. 25 Min."
+        }
       ],
       "games": [
         {
           "name": "🦸 Helden-Training (Hindernisparcours)",
-          "indoor": true, "outdoor": true, "duration": 25, "minAge": 5, "loudness": "laut", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 5,
+          "loudness": "laut",
+          "effort": "mittel",
           "material": "4–6 Hindernisse (Stühle, Seil, Kissen, Kartons), Kreppband, Stoppuhr",
           "prepText": "Parcours mit drüber/drunter/durch/Slalom aufbauen, Start-/Ziellinie markieren.",
           "steps": [
-            { "n": 1, "name": "Auftrag", "content": "'Nur wer das Training schafft, kommt in die Truppe.' Probelauf für alle." },
-            { "n": 2, "name": "Lauf auf Zeit", "content": "Einzeln laufen, anfeuern, Zeit stoppen — alle bestehen." },
-            { "n": 3, "name": "Aufnahme", "content": "'Aufgenommen!' gemeinsam einklatschen." }
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "'Nur wer das Training schafft, kommt in die Truppe.' Probelauf für alle."
+            },
+            {
+              "n": 2,
+              "name": "Lauf auf Zeit",
+              "content": "Einzeln laufen, anfeuern, Zeit stoppen — alle bestehen."
+            },
+            {
+              "n": 3,
+              "name": "Aufnahme",
+              "content": "'Aufgenommen!' gemeinsam einklatschen."
+            }
           ],
           "safetyRule": "Nur ein Kind im Parcours, freie Sicht trotz Maske, stabile/leere Kartons.",
-          "ageAdjust6": "Niedriger, ohne Zeitdruck.", "ageAdjust8": "Zweiter Lauf gegen die Bestzeit.",
-          "indoorTip": "Tische wegräumen, Teppich gibt Halt.", "outdoorTip": "Bank zum Drüberklettern ergänzen.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Bewegung zuerst baut Anspannung ab und macht jedes Kind sofort zum Held."
+          "ageAdjust6": "Niedriger, ohne Zeitdruck.",
+          "ageAdjust8": "Zweiter Lauf gegen die Bestzeit.",
+          "indoorTip": "Tische wegräumen, Teppich gibt Halt.",
+          "outdoorTip": "Bank zum Drüberklettern ergänzen.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Bewegung zuerst baut Anspannung ab und macht jedes Kind sofort zum Held."
         },
         {
           "name": "🛡️ Helden-Abzeichen basteln",
-          "indoor": true, "outdoor": false, "duration": 20, "minAge": 5, "loudness": "leise", "effort": "niedrig",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 20,
+          "minAge": 5,
+          "loudness": "leise",
+          "effort": "niedrig",
           "material": "Runde Pappscheiben oder Bierdeckel, bunte Sticker, Filzstifte, Sicherheitsnadeln oder Klebepunkte, Glitzer optional",
           "prepText": "Pro Kind eine Pappscheibe ausstanzen. Material in der Tischmitte bereitstellen.",
           "steps": [
-            { "n": 1, "name": "Logo wählen", "content": "Jedes Kind überlegt sein Heldenzeichen: Blitz, Stern, erster Buchstabe des Namens." },
-            { "n": 2, "name": "Gestalten", "content": "Abzeichen bemalen, bekleben, mit Glitzer verzieren." },
-            { "n": 3, "name": "Anstecken", "content": "Mit Klebepunkt aufs Cape — fertig ist die echte Heldin / der echte Held." }
+            {
+              "n": 1,
+              "name": "Logo wählen",
+              "content": "Jedes Kind überlegt sein Heldenzeichen: Blitz, Stern, erster Buchstabe des Namens."
+            },
+            {
+              "n": 2,
+              "name": "Gestalten",
+              "content": "Abzeichen bemalen, bekleben, mit Glitzer verzieren."
+            },
+            {
+              "n": 3,
+              "name": "Anstecken",
+              "content": "Mit Klebepunkt aufs Cape — fertig ist die echte Heldin / der echte Held."
+            }
           ],
           "safetyRule": "Sicherheitsnadeln nur durch Erwachsene, sonst Klebepunkte. Kein Kleinteil in den Mund.",
-          "ageAdjust6": "Vorgedruckte Logo-Vorlagen zum Bekleben.", "ageAdjust8": "Eigenes Logo frei zeichnen, Heldenname dazuschreiben.",
-          "indoorTip": "Am Esstisch mit Wachstuch.", "outdoorTip": "Windgeschützt, Glitzer drinnen lassen.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Die ruhige Station nach dem Toben senkt das Energielevel und gibt jedem ein persönliches Mitgebsel, auf das es stolz ist."
+          "ageAdjust6": "Vorgedruckte Logo-Vorlagen zum Bekleben.",
+          "ageAdjust8": "Eigenes Logo frei zeichnen, Heldenname dazuschreiben.",
+          "indoorTip": "Am Esstisch mit Wachstuch.",
+          "outdoorTip": "Windgeschützt, Glitzer drinnen lassen.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Die ruhige Station nach dem Toben senkt das Energielevel und gibt jedem ein persönliches Mitgebsel, auf das es stolz ist."
         },
         {
           "name": "🔎 Geheimmission (Helden-Schatzsuche)",
-          "indoor": true, "outdoor": true, "duration": 35, "minAge": 5, "loudness": "mittel", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 35,
+          "minAge": 5,
+          "loudness": "mittel",
+          "effort": "mittel",
           "material": "5 Hinweiskarten mit kleinen Rätseln/Bildern, ein 'Tresor' (Kiste/Schuhkarton) mit Schatz (Mitgebsel), optional UV-Stift",
           "prepText": "5 Verstecke festlegen, Hinweise so legen, dass jeder zum nächsten führt. Letzter Hinweis zeigt zum Tresor.",
           "steps": [
-            { "n": 1, "name": "Mission starten", "content": "'Dr. Chaos hat den Stadt-Schatz versteckt. Folgt den Geheimhinweisen!' Ersten Hinweis übergeben." },
-            { "n": 2, "name": "Hinweise lösen", "content": "Als Team von Versteck zu Versteck — jedes Kind darf mal den nächsten Hinweis finden." },
-            { "n": 3, "name": "Rätsel-Stopp", "content": "An einer Station ein Mini-Rätsel (Bilder zählen, Geheimwort legen), bevor es weitergeht." },
-            { "n": 4, "name": "Tresor knacken", "content": "Letztes Versteck: der Tresor mit dem Schatz für alle. Gemeinsam öffnen, Beute teilen." }
+            {
+              "n": 1,
+              "name": "Mission starten",
+              "content": "'Dr. Chaos hat den Stadt-Schatz versteckt. Folgt den Geheimhinweisen!' Ersten Hinweis übergeben."
+            },
+            {
+              "n": 2,
+              "name": "Hinweise lösen",
+              "content": "Als Team von Versteck zu Versteck — jedes Kind darf mal den nächsten Hinweis finden."
+            },
+            {
+              "n": 3,
+              "name": "Rätsel-Stopp",
+              "content": "An einer Station ein Mini-Rätsel (Bilder zählen, Geheimwort legen), bevor es weitergeht."
+            },
+            {
+              "n": 4,
+              "name": "Tresor knacken",
+              "content": "Letztes Versteck: der Tresor mit dem Schatz für alle. Gemeinsam öffnen, Beute teilen."
+            }
           ],
           "safetyRule": "Verstecke nur in sicheren, einsehbaren Bereichen. Draußen Grenzen klar abstecken, eine erwachsene Person begleitet.",
-          "ageAdjust6": "Bild-Hinweise statt Text, kürzere Strecke, 3–4 Stationen.", "ageAdjust8": "Echte Mini-Rätsel/Codes, 5–6 Stationen, optional UV-Geheimschrift.",
-          "indoorTip": "Verstecke über mehrere Räume verteilen.", "outdoorTip": "Garten in 'Stadtviertel' aufteilen.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Eine Mission mit Ziel gibt der Party einen roten Faden — die Kinder arbeiten als Team und das Schatz-Finale ist der emotionale Höhepunkt."
+          "ageAdjust6": "Bild-Hinweise statt Text, kürzere Strecke, 3–4 Stationen.",
+          "ageAdjust8": "Echte Mini-Rätsel/Codes, 5–6 Stationen, optional UV-Geheimschrift.",
+          "indoorTip": "Verstecke über mehrere Räume verteilen.",
+          "outdoorTip": "Garten in 'Stadtviertel' aufteilen.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Eine Mission mit Ziel gibt der Party einen roten Faden — die Kinder arbeiten als Team und das Schatz-Finale ist der emotionale Höhepunkt."
         },
         {
           "name": "🕸️ Laser-Parcours (Showdown)",
-          "indoor": true, "outdoor": false, "duration": 25, "minAge": 5, "loudness": "mittel", "effort": "mittel",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 25,
+          "minAge": 5,
+          "loudness": "mittel",
+          "effort": "mittel",
           "material": "Wollknäuel/Kreppband, ein Flur oder Türrahmen, eine 'Beute' am Ende (Süßigkeiten-Tresor)",
           "prepText": "Im Flur kreuz und quer Wollfäden spannen — das sind die 'Laser' im Versteck von Dr. Chaos. Am Ende den Tresor platzieren.",
           "steps": [
-            { "n": 1, "name": "Auftrag", "content": "'Dr. Chaos sichert die Beute mit Lasern — schleicht durch, ohne sie zu berühren!'" },
-            { "n": 2, "name": "Durchschleichen", "content": "Jedes Kind einzeln: über, unter, zwischen den Fäden hindurch bis zum Tresor." },
-            { "n": 3, "name": "Beute sichern", "content": "Wer durch ist, nimmt einen Teil der Beute und feuert die anderen an." }
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "'Dr. Chaos sichert die Beute mit Lasern — schleicht durch, ohne sie zu berühren!'"
+            },
+            {
+              "n": 2,
+              "name": "Durchschleichen",
+              "content": "Jedes Kind einzeln: über, unter, zwischen den Fäden hindurch bis zum Tresor."
+            },
+            {
+              "n": 3,
+              "name": "Beute sichern",
+              "content": "Wer durch ist, nimmt einen Teil der Beute und feuert die anderen an."
+            }
           ],
           "safetyRule": "Boden frei von Stolperfallen, Fäden nicht auf Hals-/Kopfhöhe spannen. Ein Kind nach dem anderen.",
-          "ageAdjust6": "Weniger Fäden, weiter auseinander.", "ageAdjust8": "Engeres Netz, auf Zeit oder 'bei Berührung zurück zum Start'.",
-          "indoorTip": "Flur ist ideal — Türrahmen als Rahmen nutzen.", "outdoorTip": "Zwischen zwei Bäumen/Stühlen spannen.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Der 'Laser'-Effekt fühlt sich an wie ein echter Agentenfilm — Spannung pur, und das Beute-Finale schließt die Schurken-Geschichte ab."
+          "ageAdjust6": "Weniger Fäden, weiter auseinander.",
+          "ageAdjust8": "Engeres Netz, auf Zeit oder 'bei Berührung zurück zum Start'.",
+          "indoorTip": "Flur ist ideal — Türrahmen als Rahmen nutzen.",
+          "outdoorTip": "Zwischen zwei Bäumen/Stühlen spannen.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Der 'Laser'-Effekt fühlt sich an wie ein echter Agentenfilm — Spannung pur, und das Beute-Finale schließt die Schurken-Geschichte ab."
         }
       ],
       "food": "Helden-Buffet: Power-Spieße (Trauben/Käse/Mini-Mozzarella), 'Kryptonit'-Wackelpudding (grün), Salzstangen-'Blitze', Gemüsesticks mit Dip als 'Helden-Brennstoff'. Getränk: 'Energie-Trank' (Apfel- oder Johannisbeerschorle). Herzhaft: Mini-Würstchen oder Pizzaschnecken.",
       "decoration": "Skyline aus schwarzem Tonkarton, rot-blau-gelbe Ballons (auch als Ballon-Girlande), Comic-Sprechblasen (POW! BAM!) an Wänden und Tür, ein 'Steckbrief: Dr. Chaos' am Eingang. Tisch mit Heldenfarben-Tischdecke und Comic-Servietten. Capes an der Leine bis zum Anziehen.",
       "giveaways": "Maske + Cape, selbstgebasteltes Helden-Abzeichen, Urkunde mit Namen, kleiner Schatzbeutel (Tattoos, Sticker, eine kleine Figur).",
       "shoppingList": [
-        { "emoji": "🎭", "label": "Augenmasken 12er-Set (Filz)", "url": "https://www.amazon.de/s?k=superhelden+masken+kinder+filz&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Sofort-Verwandlung jedes Gastes, zentrales günstiges Verkleidungselement." },
-        { "emoji": "🦸", "label": "Kinder-Capes 8er-Set", "url": "https://www.amazon.de/s?k=kinder+umhang+cape+superheld+set&tag=machsleicht21-21", "priceEur": 15, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Cape + Maske = volles Kostüm + Mitgebsel in einem." },
-        { "emoji": "🛡️", "label": "Bastel-Set Abzeichen (Pappscheiben, Sticker, Glitzer)", "url": "https://www.amazon.de/s?k=bastelset+button+pappe+kinder&tag=machsleicht21-21", "priceEur": 7, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Material für die ruhige Bastelstation + personalisiertes Mitgebsel." },
-        { "emoji": "🎈", "label": "Luftballons rot/blau/gelb 50 Stk.", "url": "https://www.amazon.de/s?k=luftballons+rot+blau+gelb&tag=machsleicht21-21", "priceEur": 6, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Heldenfarben als Deko-Basis, auch als Girlande." },
-        { "emoji": "💬", "label": "Comic-Party-Set (Servietten, Sprechblasen, Tischdecke)", "url": "https://www.amazon.de/s?k=superhelden+party+deko+set&tag=machsleicht21-21", "priceEur": 12, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Bündelt POW/BAM-Optik für Tisch und Wand, spart Einzelkauf." },
-        { "emoji": "🍬", "label": "Mitgebsel-Mix (Tattoos, Mini-Figuren, Sticker)", "url": "https://www.amazon.de/s?k=superhelden+mitgebsel+kinder&tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Füllung für Schatzbeutel und Schatzsuche-Tresor." },
-        { "emoji": "🧶", "label": "Wollknäuel-Set (Laser-Parcours)", "url": "https://www.amazon.de/s?k=wolle+set+bunt&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Material für den Showdown-Laserparcours, mehrfach verwendbar." },
-        { "emoji": "🥤", "label": "Pappbecher & Strohhalme Comic-Optik", "url": "https://www.amazon.de/s?k=superhelden+becher+strohhalme&tag=machsleicht21-21", "priceEur": 6, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Komplettiert die Tischdeko, praktisch fürs Buffet." }
+        {
+          "emoji": "🎭",
+          "label": "Augenmasken 12er-Set (Filz)",
+          "url": "https://www.amazon.de/s?k=superhelden+masken+kinder+filz&tag=machsleicht21-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Sofort-Verwandlung jedes Gastes, zentrales günstiges Verkleidungselement."
+        },
+        {
+          "emoji": "🦸",
+          "label": "Kinder-Capes 8er-Set",
+          "url": "https://www.amazon.de/s?k=kinder+umhang+cape+superheld+set&tag=machsleicht21-21",
+          "priceEur": 15,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Cape + Maske = volles Kostüm + Mitgebsel in einem."
+        },
+        {
+          "emoji": "🛡️",
+          "label": "Bastel-Set Abzeichen (Pappscheiben, Sticker, Glitzer)",
+          "url": "https://www.amazon.de/s?k=bastelset+button+pappe+kinder&tag=machsleicht21-21",
+          "priceEur": 7,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Material für die ruhige Bastelstation + personalisiertes Mitgebsel."
+        },
+        {
+          "emoji": "🎈",
+          "label": "Luftballons rot/blau/gelb 50 Stk.",
+          "url": "https://www.amazon.de/s?k=luftballons+rot+blau+gelb&tag=machsleicht21-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Heldenfarben als Deko-Basis, auch als Girlande."
+        },
+        {
+          "emoji": "💬",
+          "label": "Comic-Party-Set (Servietten, Sprechblasen, Tischdecke)",
+          "url": "https://www.amazon.de/s?k=superhelden+party+deko+set&tag=machsleicht21-21",
+          "priceEur": 12,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Bündelt POW/BAM-Optik für Tisch und Wand, spart Einzelkauf."
+        },
+        {
+          "emoji": "🍬",
+          "label": "Mitgebsel-Mix (Tattoos, Mini-Figuren, Sticker)",
+          "url": "https://www.amazon.de/s?k=superhelden+mitgebsel+kinder&tag=machsleicht21-21",
+          "priceEur": 10,
+          "hasAffiliate": true,
+          "category": "mitgebsel",
+          "categoryReasoning": "Füllung für Schatzbeutel und Schatzsuche-Tresor."
+        },
+        {
+          "emoji": "🧶",
+          "label": "Wollknäuel-Set (Laser-Parcours)",
+          "url": "https://www.amazon.de/s?k=wolle+set+bunt&tag=machsleicht21-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Material für den Showdown-Laserparcours, mehrfach verwendbar."
+        },
+        {
+          "emoji": "🥤",
+          "label": "Pappbecher & Strohhalme Comic-Optik",
+          "url": "https://www.amazon.de/s?k=superhelden+becher+strohhalme&tag=machsleicht21-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Komplettiert die Tischdeko, praktisch fürs Buffet."
+        }
       ],
       "costContext": "ca. 69 € für 8 Kinder · ~8,63 € pro Kind"
     },
@@ -181,91 +523,279 @@
       "intro": "Für die ambitionierte Feier: alles aus Standard plus eine inszenierte Schurken-Figur, ein Kraft-Test und ein großes Finale, bei dem die Kinder Dr. Chaos gemeinsam besiegen. Mehr Vorbereitung, dafür unvergesslich.",
       "timeWindow": "3,5 Stunden (14:00–17:30)",
       "schedule": [
-        { "time": "14:00", "title": "Aufnahme in die Helden-Akademie", "description": "Maske, Cape, Heldenname, Foto, Heldenausweis ausfüllen. 20 Min." },
-        { "time": "14:20", "title": "Helden-Training (Parcours)", "description": "Aufnahmeprüfung. 25 Min." },
-        { "time": "14:45", "title": "Kraft-Test-Stationen", "description": "3 kleine Geschicklichkeits-Challenges (Zielwurf, Balance, Memory). 25 Min." },
-        { "time": "15:10", "title": "Helden-Abzeichen basteln", "description": "Ruhige Station. 20 Min." },
-        { "time": "15:30", "title": "Notruf! Geheimmission", "description": "Dr. Chaos meldet sich — Schatzsuche mit Rätseln. 35 Min." },
-        { "time": "16:05", "title": "Kuchen & Heldenlied", "description": "Power-Kuchen, Pause. 25 Min." },
-        { "time": "16:30", "title": "Showdown gegen Dr. Chaos", "description": "Laser-Parcours + finale Team-Challenge, Schurke wird besiegt. 35 Min." },
-        { "time": "17:05", "title": "Heldenschwur & Ehrung", "description": "Urkunde, Medaille, Schatzbeutel, Gruppenfoto. 25 Min." }
+        {
+          "time": "14:00",
+          "title": "Aufnahme in die Helden-Akademie",
+          "description": "Maske, Cape, Heldenname, Foto, Heldenausweis ausfüllen. 20 Min."
+        },
+        {
+          "time": "14:20",
+          "title": "Helden-Training (Parcours)",
+          "description": "Aufnahmeprüfung. 25 Min."
+        },
+        {
+          "time": "14:45",
+          "title": "Kraft-Test-Stationen",
+          "description": "3 kleine Geschicklichkeits-Challenges (Zielwurf, Balance, Memory). 25 Min."
+        },
+        {
+          "time": "15:10",
+          "title": "Helden-Abzeichen basteln",
+          "description": "Ruhige Station. 20 Min."
+        },
+        {
+          "time": "15:30",
+          "title": "Notruf! Geheimmission",
+          "description": "Dr. Chaos meldet sich — Schatzsuche mit Rätseln. 35 Min."
+        },
+        {
+          "time": "16:05",
+          "title": "Kuchen & Heldenlied",
+          "description": "Power-Kuchen, Pause. 25 Min."
+        },
+        {
+          "time": "16:30",
+          "title": "Showdown gegen Dr. Chaos",
+          "description": "Laser-Parcours + finale Team-Challenge, Schurke wird besiegt. 35 Min."
+        },
+        {
+          "time": "17:05",
+          "title": "Heldenschwur & Ehrung",
+          "description": "Urkunde, Medaille, Schatzbeutel, Gruppenfoto. 25 Min."
+        }
       ],
       "games": [
         {
           "name": "🦸 Helden-Training (Hindernisparcours)",
-          "indoor": true, "outdoor": true, "duration": 25, "minAge": 5, "loudness": "laut", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 5,
+          "loudness": "laut",
+          "effort": "mittel",
           "material": "Hindernisse, Kreppband, Stoppuhr",
           "prepText": "Parcours aufbauen, Start-/Ziellinie markieren.",
           "steps": [
-            { "n": 1, "name": "Auftrag", "content": "Aufnahmeprüfung in die Akademie." },
-            { "n": 2, "name": "Lauf", "content": "Einzeln auf Zeit, alle bestehen." },
-            { "n": 3, "name": "Aufnahme", "content": "Gemeinsam 'Aufgenommen!'" }
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "Aufnahmeprüfung in die Akademie."
+            },
+            {
+              "n": 2,
+              "name": "Lauf",
+              "content": "Einzeln auf Zeit, alle bestehen."
+            },
+            {
+              "n": 3,
+              "name": "Aufnahme",
+              "content": "Gemeinsam 'Aufgenommen!'"
+            }
           ],
           "safetyRule": "Ein Kind im Parcours, freie Sicht, stabile Hindernisse.",
-          "ageAdjust6": "Niedriger, ohne Zeit.", "ageAdjust8": "Gegen Bestzeit.",
-          "indoorTip": "Tische weg.", "outdoorTip": "Klettermauer (Bank).",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Bewegungs-Auftakt, der jedem eine Heldenidentität gibt."
+          "ageAdjust6": "Niedriger, ohne Zeit.",
+          "ageAdjust8": "Gegen Bestzeit.",
+          "indoorTip": "Tische weg.",
+          "outdoorTip": "Klettermauer (Bank).",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Bewegungs-Auftakt, der jedem eine Heldenidentität gibt."
         },
         {
           "name": "💪 Kraft-Test-Stationen",
-          "indoor": true, "outdoor": true, "duration": 25, "minAge": 6, "loudness": "mittel", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 6,
+          "loudness": "mittel",
+          "effort": "mittel",
           "material": "3 Stationen: Zielwurf (Eimer + Bälle), Balance (Klebeband-Linie), Memory (Helden-Kärtchen)",
           "prepText": "Drei Stationen im Raum/Garten verteilen, je eine erwachsene Person oder ältere Geschwister als Stationsleitung.",
           "steps": [
-            { "n": 1, "name": "Gruppen bilden", "content": "Kinder in 2–3 Kleingruppen aufteilen, jede startet an einer Station." },
-            { "n": 2, "name": "Stationen meistern", "content": "Zielwurf (Superkraft Treffsicherheit), Balance-Linie (Superkraft Gleichgewicht), Memory (Superkraft Gedächtnis). Nach ~7 Min wechseln." },
-            { "n": 3, "name": "Stempel sammeln", "content": "Pro gemeisterte Station ein Stempel/Sticker in den Heldenausweis. Alle schaffen alle." }
+            {
+              "n": 1,
+              "name": "Gruppen bilden",
+              "content": "Kinder in 2–3 Kleingruppen aufteilen, jede startet an einer Station."
+            },
+            {
+              "n": 2,
+              "name": "Stationen meistern",
+              "content": "Zielwurf (Superkraft Treffsicherheit), Balance-Linie (Superkraft Gleichgewicht), Memory (Superkraft Gedächtnis). Nach ~7 Min wechseln."
+            },
+            {
+              "n": 3,
+              "name": "Stempel sammeln",
+              "content": "Pro gemeisterte Station ein Stempel/Sticker in den Heldenausweis. Alle schaffen alle."
+            }
           ],
           "safetyRule": "Balance-Linie auf dem Boden (nicht erhöht). Wurfobjekte weich. Stationen mit Abstand, keine Kollisionen.",
-          "ageAdjust6": "Aufgaben leichter, kürzere Wechsel.", "ageAdjust8": "Schwieriger, kleine Punktewertung pro Gruppe.",
-          "indoorTip": "Stationen in verschiedene Zimmer.", "outdoorTip": "Im Garten mit mehr Abstand.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Stationen in Kleingruppen verhindern Warteschlangen — alle sind gleichzeitig aktiv, und der Heldenausweis mit Stempeln macht den Fortschritt sichtbar."
+          "ageAdjust6": "Aufgaben leichter, kürzere Wechsel.",
+          "ageAdjust8": "Schwieriger, kleine Punktewertung pro Gruppe.",
+          "indoorTip": "Stationen in verschiedene Zimmer.",
+          "outdoorTip": "Im Garten mit mehr Abstand.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Stationen in Kleingruppen verhindern Warteschlangen — alle sind gleichzeitig aktiv, und der Heldenausweis mit Stempeln macht den Fortschritt sichtbar."
         },
         {
           "name": "🔎 Notruf! Geheimmission (Schatzsuche)",
-          "indoor": true, "outdoor": true, "duration": 35, "minAge": 5, "loudness": "mittel", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 35,
+          "minAge": 5,
+          "loudness": "mittel",
+          "effort": "mittel",
           "material": "5–6 Hinweiskarten mit Rätseln, Tresor mit Schatz, optional eine 'Videobotschaft' von Dr. Chaos (vorab am Handy aufgenommen)",
           "prepText": "Verstecke + Hinweise legen. Optional kurze Schurken-Botschaft aufnehmen, die die Mission startet.",
           "steps": [
-            { "n": 1, "name": "Notruf", "content": "Botschaft von Dr. Chaos: 'Ihr findet meinen Schatz NIE!' — die Helden nehmen die Herausforderung an." },
-            { "n": 2, "name": "Hinweise lösen", "content": "Als Team von Station zu Station, jedes Kind findet mal den nächsten Hinweis." },
-            { "n": 3, "name": "Rätsel", "content": "Mini-Rätsel/Geheimcode an einer Station lösen." },
-            { "n": 4, "name": "Tresor", "content": "Schatz finden und teilen." }
+            {
+              "n": 1,
+              "name": "Notruf",
+              "content": "Botschaft von Dr. Chaos: 'Ihr findet meinen Schatz NIE!' — die Helden nehmen die Herausforderung an."
+            },
+            {
+              "n": 2,
+              "name": "Hinweise lösen",
+              "content": "Als Team von Station zu Station, jedes Kind findet mal den nächsten Hinweis."
+            },
+            {
+              "n": 3,
+              "name": "Rätsel",
+              "content": "Mini-Rätsel/Geheimcode an einer Station lösen."
+            },
+            {
+              "n": 4,
+              "name": "Tresor",
+              "content": "Schatz finden und teilen."
+            }
           ],
           "safetyRule": "Sichere, einsehbare Verstecke; draußen begleitet, Grenzen klar.",
-          "ageAdjust6": "Bild-Hinweise, 4 Stationen.", "ageAdjust8": "Codes/Geheimschrift, 6 Stationen.",
-          "indoorTip": "Über mehrere Räume.", "outdoorTip": "Garten in Viertel teilen.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Die Videobotschaft macht den Schurken real und gibt der Mission echten Antrieb — der rote Faden, der die ganze Party zusammenhält."
+          "ageAdjust6": "Bild-Hinweise, 4 Stationen.",
+          "ageAdjust8": "Codes/Geheimschrift, 6 Stationen.",
+          "indoorTip": "Über mehrere Räume.",
+          "outdoorTip": "Garten in Viertel teilen.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Die Videobotschaft macht den Schurken real und gibt der Mission echten Antrieb — der rote Faden, der die ganze Party zusammenhält."
         },
         {
           "name": "🕸️ Showdown gegen Dr. Chaos (Laser + Team-Challenge)",
-          "indoor": true, "outdoor": true, "duration": 30, "minAge": 5, "loudness": "laut", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 30,
+          "minAge": 5,
+          "loudness": "laut",
+          "effort": "mittel",
           "material": "Wollfäden für den Laser-Parcours, weiche Bälle, ggf. eine als Dr. Chaos verkleidete erwachsene Person, 'Beute'-Tresor",
           "prepText": "Laser-Parcours spannen. Wenn jemand Dr. Chaos spielt: harmloses, lustiges Kostüm (Umhang, alberner Hut), nie gruselig.",
           "steps": [
-            { "n": 1, "name": "Eindringen", "content": "Helden schleichen einzeln durch den Laser-Parcours in Dr. Chaos' Versteck." },
-            { "n": 2, "name": "Team-Challenge", "content": "Gemeinsam Dr. Chaos mit weichen 'Energiebällen' bewerfen, bis er 'kapituliert' (umfällt, lacht, gibt auf)." },
-            { "n": 3, "name": "Stadt gerettet", "content": "Dr. Chaos gibt die Beute heraus, alle jubeln — die Helden haben gesiegt." }
+            {
+              "n": 1,
+              "name": "Eindringen",
+              "content": "Helden schleichen einzeln durch den Laser-Parcours in Dr. Chaos' Versteck."
+            },
+            {
+              "n": 2,
+              "name": "Team-Challenge",
+              "content": "Gemeinsam Dr. Chaos mit weichen 'Energiebällen' bewerfen, bis er 'kapituliert' (umfällt, lacht, gibt auf)."
+            },
+            {
+              "n": 3,
+              "name": "Stadt gerettet",
+              "content": "Dr. Chaos gibt die Beute heraus, alle jubeln — die Helden haben gesiegt."
+            }
           ],
           "safetyRule": "Schurke spielt sanft, nie bedrohlich, fällt freiwillig 'um'. Nur weiche Bälle, nicht ins Gesicht. Laser-Fäden nicht auf Kopfhöhe.",
-          "ageAdjust6": "Schurke sehr albern/tollpatschig, kein echtes 'Bewerfen', eher Kitzeln/Fangen.", "ageAdjust8": "Mehr Inszenierung, Schurke 'verhandelt' kurz, bevor er aufgibt.",
-          "indoorTip": "Flur als Laser-Zone, Showdown im Wohnzimmer.", "outdoorTip": "Im Garten mit mehr Bewegungsraum.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Ein gemeinsamer Sieg über einen (harmlos-lustigen) Schurken ist der absolute Höhepunkt — die Kinder erleben sich als echtes Heldenteam, das zusammen gewinnt."
+          "ageAdjust6": "Schurke sehr albern/tollpatschig, kein echtes 'Bewerfen', eher Kitzeln/Fangen.",
+          "ageAdjust8": "Mehr Inszenierung, Schurke 'verhandelt' kurz, bevor er aufgibt.",
+          "indoorTip": "Flur als Laser-Zone, Showdown im Wohnzimmer.",
+          "outdoorTip": "Im Garten mit mehr Bewegungsraum.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Ein gemeinsamer Sieg über einen (harmlos-lustigen) Schurken ist der absolute Höhepunkt — die Kinder erleben sich als echtes Heldenteam, das zusammen gewinnt."
         }
       ],
       "food": "Großes Helden-Buffet: Power-Spieße, 'Kryptonit'-Wackelpudding, Blitz-Salzstangen, Gemüse-Brennstoff mit Dip, Mini-Burger oder Pizzaschnecken als warme Komponente, 'Energie-Trank' in Comic-Bechern. Obst als 'Vitamin-Boost'-Spieße.",
       "decoration": "Volle Helden-Akademie: Skyline-Wand, Ballon-Girlande in Heldenfarben, Sprechblasen-Deko, Steckbrief + 'gesperrte Zone'-Absperrband am Showdown-Bereich, Heldenausweis-Station am Eingang, Tisch komplett im Comic-Look.",
       "giveaways": "Maske + Cape, gebasteltes Abzeichen, Heldenausweis mit Stempeln, Medaille/Urkunde, gut gefüllter Schatzbeutel.",
       "shoppingList": [
-        { "emoji": "🎭", "label": "Augenmasken 12er-Set (Filz)", "url": "https://www.amazon.de/s?k=superhelden+masken+kinder+filz&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Sofort-Verwandlung jedes Gastes." },
-        { "emoji": "🦸", "label": "Kinder-Capes 8er-Set", "url": "https://www.amazon.de/s?k=kinder+umhang+cape+superheld+set&tag=machsleicht21-21", "priceEur": 15, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Volles Kostüm + Mitgebsel." },
-        { "emoji": "🛡️", "label": "Bastel-Set Abzeichen + Heldenausweise", "url": "https://www.amazon.de/s?k=bastelset+button+pappe+kinder&tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Bastelstation + Stempel-Ausweis für die Kraft-Test-Stationen." },
-        { "emoji": "🏅", "label": "Medaillen 12er-Set", "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Ehrung beim Finale — emotionaler Abschluss, hochwertiges Mitgebsel." },
-        { "emoji": "🎈", "label": "Ballon-Girlanden-Set Heldenfarben", "url": "https://www.amazon.de/s?k=ballon+girlande+rot+blau+gelb&tag=machsleicht21-21", "priceEur": 13, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Wow-Deko-Effekt mit wenig Aufwand, der Foto-Hintergrund." },
-        { "emoji": "💬", "label": "Comic-Party-Komplettset", "url": "https://www.amazon.de/s?k=superhelden+party+deko+set&tag=machsleicht21-21", "priceEur": 12, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Servietten, Sprechblasen, Tischdecke gebündelt." },
-        { "emoji": "🚧", "label": "Absperrband 'gesperrte Zone'", "url": "https://www.amazon.de/s?k=absperrband+kinder+party&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Inszeniert den Showdown-Bereich als Schurken-Versteck." },
-        { "emoji": "🍬", "label": "Mitgebsel-Mix (Tattoos, Figuren, Sticker)", "url": "https://www.amazon.de/s?k=superhelden+mitgebsel+kinder&tag=machsleicht21-21", "priceEur": 12, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Schatzbeutel + Schatzsuche-Tresor füllen." },
-        { "emoji": "🥤", "label": "Comic-Becher & Strohhalme", "url": "https://www.amazon.de/s?k=superhelden+becher+strohhalme&tag=machsleicht21-21", "priceEur": 6, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Buffet im Heldenlook." }
+        {
+          "emoji": "🎭",
+          "label": "Augenmasken 12er-Set (Filz)",
+          "url": "https://www.amazon.de/s?k=superhelden+masken+kinder+filz&tag=machsleicht21-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Sofort-Verwandlung jedes Gastes."
+        },
+        {
+          "emoji": "🦸",
+          "label": "Kinder-Capes 8er-Set",
+          "url": "https://www.amazon.de/s?k=kinder+umhang+cape+superheld+set&tag=machsleicht21-21",
+          "priceEur": 15,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Volles Kostüm + Mitgebsel."
+        },
+        {
+          "emoji": "🛡️",
+          "label": "Bastel-Set Abzeichen + Heldenausweise",
+          "url": "https://www.amazon.de/s?k=bastelset+button+pappe+kinder&tag=machsleicht21-21",
+          "priceEur": 9,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Bastelstation + Stempel-Ausweis für die Kraft-Test-Stationen."
+        },
+        {
+          "emoji": "🏅",
+          "label": "Medaillen 12er-Set",
+          "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21",
+          "priceEur": 10,
+          "hasAffiliate": true,
+          "category": "mitgebsel",
+          "categoryReasoning": "Ehrung beim Finale — emotionaler Abschluss, hochwertiges Mitgebsel."
+        },
+        {
+          "emoji": "🎈",
+          "label": "Ballon-Girlanden-Set Heldenfarben",
+          "url": "https://www.amazon.de/s?k=ballon+girlande+rot+blau+gelb&tag=machsleicht21-21",
+          "priceEur": 13,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Wow-Deko-Effekt mit wenig Aufwand, der Foto-Hintergrund."
+        },
+        {
+          "emoji": "💬",
+          "label": "Comic-Party-Komplettset",
+          "url": "https://www.amazon.de/s?k=superhelden+party+deko+set&tag=machsleicht21-21",
+          "priceEur": 12,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Servietten, Sprechblasen, Tischdecke gebündelt."
+        },
+        {
+          "emoji": "🚧",
+          "label": "Absperrband 'gesperrte Zone'",
+          "url": "https://www.amazon.de/s?k=absperrband+kinder+party&tag=machsleicht21-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Inszeniert den Showdown-Bereich als Schurken-Versteck."
+        },
+        {
+          "emoji": "🍬",
+          "label": "Mitgebsel-Mix (Tattoos, Figuren, Sticker)",
+          "url": "https://www.amazon.de/s?k=superhelden+mitgebsel+kinder&tag=machsleicht21-21",
+          "priceEur": 12,
+          "hasAffiliate": true,
+          "category": "mitgebsel",
+          "categoryReasoning": "Schatzbeutel + Schatzsuche-Tresor füllen."
+        },
+        {
+          "emoji": "🥤",
+          "label": "Comic-Becher & Strohhalme",
+          "url": "https://www.amazon.de/s?k=superhelden+becher+strohhalme&tag=machsleicht21-21",
+          "priceEur": 6,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Buffet im Heldenlook."
+        }
       ],
       "costContext": "ca. 90 € für 8 Kinder · ~11,25 € pro Kind"
     }
@@ -273,36 +803,111 @@
   "cakeRecipe": {
     "intro": "Der Helden-Logo-Kuchen ist einfacher, als er aussieht: ein normaler Rührkuchen, blau-rot eingedeckt, mit einem gelben Blitz oder Stern obendrauf. Plant ~45 Min Backzeit plus Dekorieren.",
     "steps": [
-      { "n": 1, "name": "Boden backen", "content": "Einen einfachen Rührkuchen in einer rechteckigen Form backen (Standard-Rezept: 250g Mehl, 200g Zucker, 4 Eier, 200g weiche Butter, 1 Pck. Backpulver, etwas Milch). 175°C, ca. 40–45 Min." },
-      { "n": 2, "name": "Auskühlen & glätten", "content": "Komplett auskühlen lassen, Oberseite ggf. gerade schneiden." },
-      { "n": 3, "name": "Heldenfarben", "content": "Mit blauem Zuckerguss oder Fondant eindecken, einen roten Rand oder rote Streifen setzen." },
-      { "n": 4, "name": "Logo setzen", "content": "Aus gelbem Fondant (oder gelber Zuckerschrift) einen Blitz/Stern ausschneiden und mittig auflegen. Fertig ist das Helden-Emblem." }
+      {
+        "n": 1,
+        "name": "Boden backen",
+        "content": "Einen einfachen Rührkuchen in einer rechteckigen Form backen (Standard-Rezept: 250g Mehl, 200g Zucker, 4 Eier, 200g weiche Butter, 1 Pck. Backpulver, etwas Milch). 175°C, ca. 40–45 Min."
+      },
+      {
+        "n": 2,
+        "name": "Auskühlen & glätten",
+        "content": "Komplett auskühlen lassen, Oberseite ggf. gerade schneiden."
+      },
+      {
+        "n": 3,
+        "name": "Heldenfarben",
+        "content": "Mit blauem Zuckerguss oder Fondant eindecken, einen roten Rand oder rote Streifen setzen."
+      },
+      {
+        "n": 4,
+        "name": "Logo setzen",
+        "content": "Aus gelbem Fondant (oder gelber Zuckerschrift) einen Blitz/Stern ausschneiden und mittig auflegen. Fertig ist das Helden-Emblem."
+      }
     ],
     "meta": "Aufwand: mittel · Vorlaufzeit: 1,5 Std inkl. Auskühlen · auch als Muffins mit Blitz-Toppern machbar (schneller).",
     "tips": "Wer es eilig hat: gekaufter Rührkuchen + gekaufter Roll-Fondant in Blau/Rot/Gelb. Muffins mit aufgesteckten Comic-Toppern sind die stressfreieste Variante und lassen sich leichter verteilen."
   },
   "parentTips": {
     "structured": [
-      { "topic": "Jedem seine Rolle", "detail": "Sorg dafür, dass kein Kind 'der Sidekick' ist — alle sind Helden mit eigener Maske. Streit ums 'Wer ist Spider-Man' vermeidest du, indem ihr eigene Heldennamen erfindet statt feste Lizenzfiguren zu verteilen." },
-      { "topic": "Schurke ja, Angst nein", "detail": "Eine Schurken-Figur (Dr. Chaos) zieht enorm, muss aber tollpatschig-lustig bleiben. Test: Würde das schüchternste Kind lachen statt weinen? Dann passt es." },
-      { "topic": "Laut-leise-Rhythmus", "detail": "Nach jeder Bewegungsrunde eine ruhige Station (Basteln, Rätsel). Das hält die Gruppe steuerbar und verhindert das große Chaos gegen Ende." },
-      { "topic": "Zweite Aufsicht", "detail": "Ab 8 Kindern und bei Bewegungsspielen unbedingt eine zweite erwachsene Person — eine leitet das Spiel, eine behält die Gruppe im Blick." },
-      { "topic": "Plan B für drinnen", "detail": "Alle Spiele hier gehen auch in der Wohnung. Bei Regen Tische wegräumen, Parcours in den Flur, Showdown ins Wohnzimmer — kein Programm fällt aus." }
+      {
+        "topic": "Jedem seine Rolle",
+        "detail": "Sorg dafür, dass kein Kind 'der Sidekick' ist — alle sind Helden mit eigener Maske. Streit ums 'Wer ist Spider-Man' vermeidest du, indem ihr eigene Heldennamen erfindet statt feste Lizenzfiguren zu verteilen."
+      },
+      {
+        "topic": "Schurke ja, Angst nein",
+        "detail": "Eine Schurken-Figur (Dr. Chaos) zieht enorm, muss aber tollpatschig-lustig bleiben. Test: Würde das schüchternste Kind lachen statt weinen? Dann passt es."
+      },
+      {
+        "topic": "Laut-leise-Rhythmus",
+        "detail": "Nach jeder Bewegungsrunde eine ruhige Station (Basteln, Rätsel). Das hält die Gruppe steuerbar und verhindert das große Chaos gegen Ende."
+      },
+      {
+        "topic": "Zweite Aufsicht",
+        "detail": "Ab 8 Kindern und bei Bewegungsspielen unbedingt eine zweite erwachsene Person — eine leitet das Spiel, eine behält die Gruppe im Blick."
+      },
+      {
+        "topic": "Plan B für drinnen",
+        "detail": "Alle Spiele hier gehen auch in der Wohnung. Bei Regen Tische wegräumen, Parcours in den Flur, Showdown ins Wohnzimmer — kein Programm fällt aus."
+      }
     ],
     "educationalValue": "Superhelden-Spiele trainieren ganz nebenbei Teamwork (gemeinsame Mission), Selbstwirksamkeit ('ich kann etwas bewirken') und Mut in einem sicheren Rahmen. Der gemeinsame Sieg über den Schurken stärkt das Gruppengefühl — alle gewinnen zusammen, niemand verliert."
   },
   "invitationTemplate": "🦸 ACHTUNG, NEUE HELD:IN GESUCHT! 🦸\n\nDie Stadt braucht dich! [NAME] wird [ALTER] und gründet eine Heldentruppe — und DU bist dabei.\n\n🗓️ Wann: [DATUM], [UHRZEIT]\n📍 Wo: [ORT]\n🎭 Mission: Komm als dein Lieblingsheld (oder erfinde deinen eigenen!) — Cape und Maske gibt's bei uns.\n\nBitte sag bis [FRIST] Bescheid, ob du die Stadt mitrettest!\n\nDeine Superkräfte werden gebraucht 💥",
   "preparationWeeks": [
-    { "week": "3 Wochen vorher", "tasks": ["Einladungen verschicken (Helden-Mission-Text)", "Capes + Masken bestellen (Lieferzeit einplanen)", "Entscheiden: spielt jemand Dr. Chaos?"] },
-    { "week": "1 Woche vorher", "tasks": ["Deko besorgen (Ballons, Sprechblasen, Skyline-Karton)", "Schatzsuche-Hinweise + Rätsel vorbereiten", "Mitgebsel-Beutel packen", "Kuchen-Zutaten kaufen"] },
-    { "week": "1 Tag vorher", "tasks": ["Skyline + Sprechblasen aufhängen", "Parcours-Material bereitlegen", "Heldenausweise/Urkunden ausdrucken", "Kuchen backen", "Optional: Dr.-Chaos-Videobotschaft aufnehmen"] },
-    { "week": "Am Tag", "tasks": ["Laser-Parcours spannen (vor Ankunft)", "Schatzsuche-Hinweise verstecken", "Foto-Ecke aufbauen", "Capes an die Leine hängen"] }
+    {
+      "week": "3 Wochen vorher",
+      "tasks": [
+        "Einladungen verschicken (Helden-Mission-Text)",
+        "Capes + Masken bestellen (Lieferzeit einplanen)",
+        "Entscheiden: spielt jemand Dr. Chaos?"
+      ]
+    },
+    {
+      "week": "1 Woche vorher",
+      "tasks": [
+        "Deko besorgen (Ballons, Sprechblasen, Skyline-Karton)",
+        "Schatzsuche-Hinweise + Rätsel vorbereiten",
+        "Mitgebsel-Beutel packen",
+        "Kuchen-Zutaten kaufen"
+      ]
+    },
+    {
+      "week": "1 Tag vorher",
+      "tasks": [
+        "Skyline + Sprechblasen aufhängen",
+        "Parcours-Material bereitlegen",
+        "Heldenausweise/Urkunden ausdrucken",
+        "Kuchen backen",
+        "Optional: Dr.-Chaos-Videobotschaft aufnehmen"
+      ]
+    },
+    {
+      "week": "Am Tag",
+      "tasks": [
+        "Laser-Parcours spannen (vor Ankunft)",
+        "Schatzsuche-Hinweise verstecken",
+        "Foto-Ecke aufbauen",
+        "Capes an die Leine hängen"
+      ]
+    }
   ],
   "sosScenarios": [
-    { "problem": "Es regnet und alles war draußen geplant", "solution": "Alle Spiele gehen drinnen: Parcours in den Flur, Dosenwerfen mit Bechern gegen die Wand, Schatzsuche durch die Zimmer, Laser-Parcours im Flur. Nichts fällt aus, nur Tische wegräumen." },
-    { "problem": "Ein Kind hat Angst vor dem Schurken", "solution": "Dr. Chaos sofort die Maske/Hut abnehmen lassen ('Schau, das ist nur Papa!') und ihn betont tollpatschig spielen. Im Zweifel den Schurken ganz weglassen — der Schatz ist auch ohne Bösewicht spannend." },
-    { "problem": "Die Kinder werden zu wild", "solution": "Sofort eine ruhige Station einschieben: alle setzen sich, basteln Abzeichen oder lösen ein Rätsel. Der Energie-Reset bringt die Gruppe in 5 Minuten zurück." },
-    { "problem": "Ein Spiel ist viel schneller vorbei als geplant", "solution": "Reserve immer dabei: zweite Parcours-Runde gegen die Zeit, 'Helden-Standbild' (Musik-Stopp-Tanz mit Heldenpose) oder Dosenwerfen-Rückkampf füllen jede Lücke." }
+    {
+      "problem": "Es regnet und alles war draußen geplant",
+      "solution": "Alle Spiele gehen drinnen: Parcours in den Flur, Dosenwerfen mit Bechern gegen die Wand, Schatzsuche durch die Zimmer, Laser-Parcours im Flur. Nichts fällt aus, nur Tische wegräumen."
+    },
+    {
+      "problem": "Ein Kind hat Angst vor dem Schurken",
+      "solution": "Dr. Chaos sofort die Maske/Hut abnehmen lassen ('Schau, das ist nur Papa!') und ihn betont tollpatschig spielen. Im Zweifel den Schurken ganz weglassen — der Schatz ist auch ohne Bösewicht spannend."
+    },
+    {
+      "problem": "Die Kinder werden zu wild",
+      "solution": "Sofort eine ruhige Station einschieben: alle setzen sich, basteln Abzeichen oder lösen ein Rätsel. Der Energie-Reset bringt die Gruppe in 5 Minuten zurück."
+    },
+    {
+      "problem": "Ein Spiel ist viel schneller vorbei als geplant",
+      "solution": "Reserve immer dabei: zweite Parcours-Runde gegen die Zeit, 'Helden-Standbild' (Musik-Stopp-Tanz mit Heldenpose) oder Dosenwerfen-Rückkampf füllen jede Lücke."
+    }
   ],
   "signatureRitual": {
     "name": "Der Heldenschwur",

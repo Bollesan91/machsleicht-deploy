@@ -143,6 +143,41 @@
           "outdoorTip": "Nur windstill.",
           "whyItWorksTitle": "Warum das zieht",
           "whyItWorks": "Einfachste Regel, maximaler Spaß — und das gemeinsame Ziel macht alle zu einem Team ohne Wettkampf."
+        },
+        {
+          "name": "⭐ Helden-Sterne basteln",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": "leise",
+          "effort": "niedrig",
+          "material": "Ausgeschnittene Pappsterne, große Sticker, dicke Wachsmalstifte, Glitzerkleber (nur mit Aufsicht)",
+          "prepText": "Pro Kind einen Pappstern vorschneiden. Material griffbereit.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Stern aussuchen",
+              "content": "Jedes Kind nimmt seinen Stern."
+            },
+            {
+              "n": 2,
+              "name": "Bekleben",
+              "content": "Mit Stickern bekleben und anmalen — bei den Kleinen sind Sticker einfacher als Malen."
+            },
+            {
+              "n": 3,
+              "name": "Zeigen",
+              "content": "Alle halten ihren Heldenstern hoch."
+            }
+          ],
+          "safetyRule": "Keine Kleinteile in den Mund, Glitzerkleber nur mit Erwachsenem, dicke Stifte (gut greifbar).",
+          "ageAdjust6": "Auch malen statt nur kleben.",
+          "ageAdjust8": "—",
+          "indoorTip": "Am Tisch mit Wachstuch.",
+          "outdoorTip": "Windgeschützt.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Die ruhige Station senkt das Tempo nach dem Toben und gibt jedem Kind ein eigenes Werk zum Mitnehmen."
         }
       ],
       "food": "Power-Obstspieße (Trauben, Banane), Helden-Muffins mit buntem Streusel, Saftschorle als 'Energie-Trank'. Bei den Kleinen wenig, aber bunt.",
@@ -579,7 +614,7 @@
               "content": "Gefangen! Das Monster lacht, gibt die Sterne zurück, alle jubeln."
             }
           ],
-          "safetyRule": "Monster läuft langsam und sanft, nimmt bei Angst sofort den Hut ab ('Schau, das ist Oma!'). Kein echtes Erschrecken.",
+          "safetyRule": "Monster läuft langsam und sanft, nimmt bei Angst sofort den Hut ab ('Schau, das ist Oma!'). Kein echtes Erschrecken. Beim Fangen Lauffläche frei (keine Möbelkanten), nicht drängeln/schubsen — Stolper-/Kollisionsgefahr.",
           "ageAdjust6": "Etwas schneller, kleines Verstecken.",
           "ageAdjust8": "—",
           "indoorTip": "Im Wohnzimmer mit Platz.",

@@ -1,5 +1,11 @@
 {
-  "_meta": { "schemaVersion": "elite-v1", "motto": "superheld", "ageGroup": "gross", "author": "machsleicht", "primaryVerified": "Preise = Richtwerte (Amazon/Drogerie 2026, 'ca.'); Sicherheit nach Praxis für 9–12: weiche Wurfobjekte, klare Regeln, Aufsicht bei Parkour/Outdoor." },
+  "_meta": {
+    "schemaVersion": "elite-v1",
+    "motto": "superheld",
+    "ageGroup": "gross",
+    "author": "machsleicht",
+    "primaryVerified": "Preise = Richtwerte (Amazon/Drogerie 2026, 'ca.'); Sicherheit nach Praxis für 9–12: weiche Wurfobjekte, klare Regeln, Aufsicht bei Parkour/Outdoor."
+  },
   "motto": "Superhelden",
   "ageGroup": "gross",
   "ageRange": "9–12 Jahre",
@@ -8,12 +14,30 @@
   "introParagraph": "Mit 9–12 darf es richtig knifflig werden: eine echte Geheim-Mission gegen einen Superschurken, Codes zum Knacken, ein Hindernis-Parkour mit Zeitwertung und Team-Challenges mit echtem Wettbewerb. Unten drei fertige Abläufe (Minimal, Standard, Wow) mit Spielen inklusive Anleitung, Deko und Einkaufsliste mit Richtpreisen.",
   "ageInsight": "9–12-Jährige finden 'Verkleiden' schnell 'babyhaft' — der Reiz liegt in der MISSION: ein geheimer Auftrag, ein cleverer Gegner, knifflige Rätsel und echter Wettbewerb (Teams gegeneinander auf Zeit). Sie wollen Eigenständigkeit, nicht an die Hand genommen werden. Statt voller Kostüme reichen Abzeichen/Agenten-Ausweise. Ein gut gespielter Superschurke (Video- oder Audio-Botschaften) trägt die ganze Party. Wichtig: genug Schwierigkeit, sonst Langeweile.",
   "faq": [
-    { "q": "Wie lange feiert man mit 9–12-Jährigen?", "a": "3 bis 4 Stunden. In dem Alter halten die Kinder ein anspruchsvolles Programm gut durch — eher zu wenig als zu viel planen wäre der Fehler." },
-    { "q": "Sind sie nicht zu cool für Superhelden?", "a": "Für Kostüme oft ja — für eine Geheim-Mission mit Codes, Schurke und Team-Wettkampf nein. Verkauf es als 'Agenten-/Helden-Mission', nicht als Verkleidungsparty." },
-    { "q": "Wie mache ich es knifflig genug?", "a": "Echte Rätsel (Caesar-Code, Spiegelschrift, Zahlenschloss), Aufgaben mit mehreren Schritten und Zeitdruck. Team gegen Team statt jeder für sich." },
-    { "q": "Braucht es einen Schurken?", "a": "Sehr empfehlenswert — eine vorab aufgenommene Video-/Audiobotschaft von 'Dr. Chaos' gibt der Mission Antrieb und kommt in dem Alter top an, ganz ohne Angst." },
-    { "q": "Geht das in der Wohnung?", "a": "Ja. Escape-Room-Stationen, Code-Knacken und ein Wollfaden-Laserparcours laufen drinnen. Nur der Parkour braucht etwas Platz oder den Garten." },
-    { "q": "Was kostet das ungefähr?", "a": "Minimal ab ~35 €, Standard ~55 €, Wow ~75 € für 8 Kinder. Rätsel/Codes selbst basteln kostet fast nichts — der Aufwand steckt in der Vorbereitung, nicht im Geld." }
+    {
+      "q": "Wie lange feiert man mit 9–12-Jährigen?",
+      "a": "3 bis 4 Stunden. In dem Alter halten die Kinder ein anspruchsvolles Programm gut durch — eher zu wenig als zu viel planen wäre der Fehler."
+    },
+    {
+      "q": "Sind sie nicht zu cool für Superhelden?",
+      "a": "Für Kostüme oft ja — für eine Geheim-Mission mit Codes, Schurke und Team-Wettkampf nein. Verkauf es als 'Agenten-/Helden-Mission', nicht als Verkleidungsparty."
+    },
+    {
+      "q": "Wie mache ich es knifflig genug?",
+      "a": "Echte Rätsel (Caesar-Code, Spiegelschrift, Zahlenschloss), Aufgaben mit mehreren Schritten und Zeitdruck. Team gegen Team statt jeder für sich."
+    },
+    {
+      "q": "Braucht es einen Schurken?",
+      "a": "Sehr empfehlenswert — eine vorab aufgenommene Video-/Audiobotschaft von 'Dr. Chaos' gibt der Mission Antrieb und kommt in dem Alter top an, ganz ohne Angst."
+    },
+    {
+      "q": "Geht das in der Wohnung?",
+      "a": "Ja. Escape-Room-Stationen, Code-Knacken und ein Wollfaden-Laserparcours laufen drinnen. Nur der Parkour braucht etwas Platz oder den Garten."
+    },
+    {
+      "q": "Was kostet das ungefähr?",
+      "a": "Minimal ab ~35 €, Standard ~55 €, Wow ~75 € für 8 Kinder. Rätsel/Codes selbst basteln kostet fast nichts — der Aufwand steckt in der Vorbereitung, nicht im Geld."
+    }
   ],
   "variants": [
     {
@@ -23,55 +47,203 @@
       "intro": "Wenig Material, viel Köpfchen: eine Geheimbotschaft entschlüsseln, einen Parkour auf Zeit meistern. Schnell vorbereitet, trotzdem anspruchsvoll.",
       "timeWindow": "2,5 Stunden (14:30–17:00)",
       "schedule": [
-        { "time": "14:30", "title": "Ankommen & Agenten-Briefing", "description": "Helden-/Agentenname, Ausweis, Foto. Dr. Chaos meldet sich per Botschaft. 20 Min." },
-        { "time": "14:50", "title": "Code knacken", "description": "Geheimbotschaft entschlüsseln, um den ersten Hinweis zu bekommen. 30 Min." },
-        { "time": "15:20", "title": "Helden-Parkour auf Zeit", "description": "Hindernislauf, zwei Teams gegeneinander. 35 Min." },
-        { "time": "15:55", "title": "Pizza/Kuchen", "description": "Stärkung, Pause. 35 Min." },
-        { "time": "16:30", "title": "Finale & Mitgebsel", "description": "Letzter Code, Dr. Chaos besiegt, Urkunde, Verabschiedung. 30 Min." }
+        {
+          "time": "14:30",
+          "title": "Ankommen & Agenten-Briefing",
+          "description": "Helden-/Agentenname, Ausweis, Foto. Dr. Chaos meldet sich per Botschaft. 20 Min."
+        },
+        {
+          "time": "14:50",
+          "title": "Code knacken",
+          "description": "Geheimbotschaft entschlüsseln, um den ersten Hinweis zu bekommen. 30 Min."
+        },
+        {
+          "time": "15:20",
+          "title": "Helden-Parkour auf Zeit",
+          "description": "Hindernislauf, zwei Teams gegeneinander. 35 Min."
+        },
+        {
+          "time": "15:55",
+          "title": "Pizza/Kuchen",
+          "description": "Stärkung, Pause. 35 Min."
+        },
+        {
+          "time": "16:30",
+          "title": "Finale & Mitgebsel",
+          "description": "Letzter Code, Dr. Chaos besiegt, Urkunde, Verabschiedung. 30 Min."
+        }
       ],
       "games": [
         {
           "name": "🔐 Code knacken (Geheimbotschaft)",
-          "indoor": true, "outdoor": true, "duration": 30, "minAge": 8, "loudness": "leise", "effort": "niedrig",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 30,
+          "minAge": 8,
+          "loudness": "leise",
+          "effort": "niedrig",
           "material": "Verschlüsselte Botschaft (Caesar-Code +3 oder Zahlen=Buchstaben), Lösungsschlüssel als Hinweis, Stifte/Papier",
           "prepText": "Eine Nachricht von Dr. Chaos verschlüsseln (z.B. jeden Buchstaben um 3 verschieben). Den Schlüssel als gut versteckten Tipp bereitlegen.",
           "steps": [
-            { "n": 1, "name": "Auftrag", "content": "'Dr. Chaos hat seinen Plan verschlüsselt. Knackt den Code, dann wisst ihr, wo der Schaltkreis ist!'" },
-            { "n": 2, "name": "Schlüssel finden", "content": "Erster Mini-Hinweis verrät den Schlüssel: Caesar +3 (A→D, B→E …) — zum Lösen also jeden Buchstaben 3 zurück." },
-            { "n": 3, "name": "Entschlüsseln (fertige Botschaft)", "content": "Auf der Karte steht: 'XQWHU GHU EDQN'. Buchstabe für Buchstabe 3 zurück (X→U, Q→N, W→T, H→E, U→R …) ergibt: UNTER DER BANK." },
-            { "n": 4, "name": "Lösung nutzen", "content": "Dort (unter der Bank bzw. dem Sofa) liegt der nächste Hinweis/Schatz — vorher dort deponieren." }
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "'Dr. Chaos hat seinen Plan verschlüsselt. Knackt den Code, dann wisst ihr, wo der Schaltkreis ist!'"
+            },
+            {
+              "n": 2,
+              "name": "Schlüssel finden",
+              "content": "Erster Mini-Hinweis verrät den Schlüssel: Caesar +3 (A→D, B→E …) — zum Lösen also jeden Buchstaben 3 zurück."
+            },
+            {
+              "n": 3,
+              "name": "Entschlüsseln (fertige Botschaft)",
+              "content": "Auf der Karte steht: 'XQWHU GHU EDQN'. Buchstabe für Buchstabe 3 zurück (X→U, Q→N, W→T, H→E, U→R …) ergibt: UNTER DER BANK."
+            },
+            {
+              "n": 4,
+              "name": "Lösung nutzen",
+              "content": "Dort (unter der Bank bzw. dem Sofa) liegt der nächste Hinweis/Schatz — vorher dort deponieren."
+            }
           ],
           "safetyRule": "Reines Rätselspiel — keine Sicherheitsrisiken. Bei Frust einen Tipp geben, damit kein Team hängenbleibt.",
-          "ageAdjust6": "—", "ageAdjust8": "Einfacherer Code (Zahlen=Buchstaben), Schlüssel offen sichtbar.",
-          "indoorTip": "Am Tisch in Teams.", "outdoorTip": "Hinweise im Garten verstecken.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Code-Knacken trifft genau den Wunsch nach echter geistiger Herausforderung — die Kinder fühlen sich wie echte Agenten, nicht wie Kleinkinder."
+          "ageAdjust6": "—",
+          "ageAdjust8": "Einfacherer Code (Zahlen=Buchstaben), Schlüssel offen sichtbar.",
+          "indoorTip": "Am Tisch in Teams.",
+          "outdoorTip": "Hinweise im Garten verstecken.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Code-Knacken trifft genau den Wunsch nach echter geistiger Herausforderung — die Kinder fühlen sich wie echte Agenten, nicht wie Kleinkinder."
         },
         {
           "name": "🏃 Helden-Parkour auf Zeit (Team gegen Team)",
-          "indoor": true, "outdoor": true, "duration": 35, "minAge": 8, "loudness": "laut", "effort": "hoch",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 35,
+          "minAge": 8,
+          "loudness": "laut",
+          "effort": "hoch",
           "material": "6–8 Hindernisse (Seile, Hütchen/Flaschen, Reifen, Kartons, eine 'Wand' zum Drüberklettern), Stoppuhr, Kreppband",
           "prepText": "Anspruchsvollen Parkour aufbauen: balancieren, klettern, krabbeln, Slalom, Zielwurf am Ende. Start-/Ziellinie markieren.",
           "steps": [
-            { "n": 1, "name": "Teams bilden", "content": "Zwei Teams, jedes läuft als Staffel — ein Kind nach dem anderen." },
-            { "n": 2, "name": "Lauf auf Zeit", "content": "Gesamtzeit pro Team wird gestoppt. Saubere Bewältigung jeder Station zählt (sonst Wiederholung)." },
-            { "n": 3, "name": "Zielwurf-Finale", "content": "Letzte Station: weichen Ball in den 'Reaktor' (Eimer) werfen — erst dann ist der Läufer durch." },
-            { "n": 4, "name": "Wertung", "content": "Schnelleres Team gewinnt eine Runde; zweite Runde mit getauschten Reihenfolgen für Spannung." }
+            {
+              "n": 1,
+              "name": "Teams bilden",
+              "content": "Zwei Teams, jedes läuft als Staffel — ein Kind nach dem anderen."
+            },
+            {
+              "n": 2,
+              "name": "Lauf auf Zeit",
+              "content": "Gesamtzeit pro Team wird gestoppt. Saubere Bewältigung jeder Station zählt (sonst Wiederholung)."
+            },
+            {
+              "n": 3,
+              "name": "Zielwurf-Finale",
+              "content": "Letzte Station: weichen Ball in den 'Reaktor' (Eimer) werfen — erst dann ist der Läufer durch."
+            },
+            {
+              "n": 4,
+              "name": "Wertung",
+              "content": "Schnelleres Team gewinnt eine Runde; zweite Runde mit getauschten Reihenfolgen für Spannung."
+            }
           ],
           "safetyRule": "Nur ein Kind pro Station gleichzeitig. 'Wand' stabil und niedrig genug, weicher Untergrund. Outdoor auf festen Boden achten. Aufsicht an der Kletterstation.",
-          "ageAdjust6": "—", "ageAdjust8": "Weniger Hindernisse, keine Kletterwand, mehr Fokus auf Spaß statt Zeit.",
-          "indoorTip": "Flur + Wohnzimmer, Kletterstation weglassen.", "outdoorTip": "Garten ideal, zusätzliche Slalom-Strecke.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Team-Wettkampf auf Zeit bringt echten Ehrgeiz — 9–12-Jährige lieben das Messen, und die Staffel sorgt dafür, dass alle anfeuern und mitfiebern."
+          "ageAdjust6": "—",
+          "ageAdjust8": "Weniger Hindernisse, keine Kletterwand, mehr Fokus auf Spaß statt Zeit.",
+          "indoorTip": "Flur + Wohnzimmer, Kletterstation weglassen.",
+          "outdoorTip": "Garten ideal, zusätzliche Slalom-Strecke.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Team-Wettkampf auf Zeit bringt echten Ehrgeiz — 9–12-Jährige lieben das Messen, und die Staffel sorgt dafür, dass alle anfeuern und mitfiebern."
+        },
+        {
+          "name": "🧩 Escape-Stationen (Rätsel-Mix)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 40,
+          "minAge": 9,
+          "loudness": "mittel",
+          "effort": "mittel",
+          "material": "3 Rätsel: (1) Caesar-Code, (2) Spiegelschrift, (3) Zahlen-Logik/Suchbild; je eine Ziffer für den 3-stelligen Tresor-Code; abschließbare Box mit Zahlenschloss",
+          "prepText": "Drei Stationen vorbereiten, jede liefert eine Ziffer des Tresor-Codes. Box mit Zahlenschloss bestücken (Schatz/Beweismittel drin).",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Teams + Auftrag",
+              "content": "'Dr. Chaos hat den Reaktor-Code in drei Rätseln versteckt. Löst alle, dann öffnet sich der Tresor!'"
+            },
+            {
+              "n": 2,
+              "name": "Station 1 — Caesar (fertig)",
+              "content": "Karte mit dem Geheimtext 'CZHL'. Jeden Buchstaben 3 zurück (C→Z, Z→W, H→E, L→I) = ZWEI → erste Ziffer 2."
+            },
+            {
+              "n": 3,
+              "name": "Station 2 — Spiegel (fertig)",
+              "content": "Schreib die Ziffer 3 dick und spiegelverkehrt auf Papier (auf dünnem Blatt vorschreiben, umdrehen). Mit Taschenlampe/Spiegel gelesen: 3 → zweite Ziffer 3."
+            },
+            {
+              "n": 4,
+              "name": "Station 3 — Logik (fertig zum Vorlesen)",
+              "content": "Zahlenrätsel: 'In der Stadt gab es 3 Banküberfälle und doppelt so viele entführte Bürger wie Überfälle. Wie viele Bürger muss der Held retten?' (3 × 2 = 6) → dritte Ziffer 6. Tresor-Code 2-3-6 am Zahlenschloss eingeben, Tresor öffnet sich."
+            }
+          ],
+          "safetyRule": "Reine Rätsel — sicher. Bei Hängern Tipp-Karten bereithalten, damit die Mission nicht stockt.",
+          "ageAdjust6": "—",
+          "ageAdjust8": "Einfachere Codes, Tipps offener, evtl. nur 2 Stationen.",
+          "indoorTip": "Stationen in verschiedenen Zimmern.",
+          "outdoorTip": "Im Garten verteilt, Spiegelschrift schattig.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Echte Escape-Room-Logik mit Zahlenschloss-Finale ist für 9–12 der Höhepunkt — sie lösen eigenständig, im Team, und der sich öffnende Tresor ist ein echter Triumph."
         }
       ],
       "food": "Pizza oder Wraps (sättigend), 'Energy'-Riegel, Gemüse mit Dip, Limo/Schorle in dunklen Bechern ('Geheim-Trank'). Bei den Großen darf es herzhafter sein.",
       "decoration": "Eher cool als kindlich: schwarze Tischdecke, 'Sperrzone'-Absperrband, ein Steckbrief von Dr. Chaos, neon-/comicfarbene Akzente. Weniger Ballons, mehr 'Agenten-Hauptquartier'.",
       "giveaways": "Agenten-/Heldenausweis, eine kleine Taschenlampe oder ein Code-Rad, Urkunde 'Mission erfüllt'.",
       "shoppingList": [
-        { "emoji": "🆔", "label": "Agenten-Ausweis-Vorlagen / Lanyards", "url": "https://www.amazon.de/s?k=ausweishalter+lanyard+kinder&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Statt Kostüm — der Ausweis macht aus jedem einen Agenten/Helden, altersgerecht 'cool'." },
-        { "emoji": "🔦", "label": "Mini-Taschenlampen 8er-Set", "url": "https://www.amazon.de/s?k=mini+taschenlampe+set+kinder&tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Spannendes Mission-Tool (Geheimschrift suchen) + Mitgebsel." },
-        { "emoji": "🚧", "label": "Absperrband 'Sperrzone'", "url": "https://www.amazon.de/s?k=absperrband+party&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Schafft die Agenten-Hauptquartier-Atmosphäre günstig." },
-        { "emoji": "🎯", "label": "Weiche Bälle + Eimer (Parkour-Finale)", "url": "https://www.amazon.de/s?k=softball+set&tag=machsleicht21-21", "priceEur": 7, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Zielwurf-Station, sicher und wiederverwendbar." },
-        { "emoji": "📜", "label": "Druckerpapier/Karton für Codes & Steckbriefe", "url": "https://www.amazon.de/s?k=tonkarton+a4+set&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Material für Geheimbotschaften, Ausweise, Steckbrief — der Kern der Mission, fast kostenlos." }
+        {
+          "emoji": "🆔",
+          "label": "Agenten-Ausweis-Vorlagen / Lanyards",
+          "url": "https://www.amazon.de/s?k=ausweishalter+lanyard+kinder&tag=machsleicht21-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Statt Kostüm — der Ausweis macht aus jedem einen Agenten/Helden, altersgerecht 'cool'."
+        },
+        {
+          "emoji": "🔦",
+          "label": "Mini-Taschenlampen 8er-Set",
+          "url": "https://www.amazon.de/s?k=mini+taschenlampe+set+kinder&tag=machsleicht21-21",
+          "priceEur": 10,
+          "hasAffiliate": true,
+          "category": "mitgebsel",
+          "categoryReasoning": "Spannendes Mission-Tool (Geheimschrift suchen) + Mitgebsel."
+        },
+        {
+          "emoji": "🚧",
+          "label": "Absperrband 'Sperrzone'",
+          "url": "https://www.amazon.de/s?k=absperrband+party&tag=machsleicht21-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Schafft die Agenten-Hauptquartier-Atmosphäre günstig."
+        },
+        {
+          "emoji": "🎯",
+          "label": "Weiche Bälle + Eimer (Parkour-Finale)",
+          "url": "https://www.amazon.de/s?k=softball+set&tag=machsleicht21-21",
+          "priceEur": 7,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Zielwurf-Station, sicher und wiederverwendbar."
+        },
+        {
+          "emoji": "📜",
+          "label": "Druckerpapier/Karton für Codes & Steckbriefe",
+          "url": "https://www.amazon.de/s?k=tonkarton+a4+set&tag=machsleicht21-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Material für Geheimbotschaften, Ausweise, Steckbrief — der Kern der Mission, fast kostenlos."
+        }
       ],
       "costContext": "ca. 35 € für 8 Kinder · ~4,38 € pro Kind"
     },
@@ -82,73 +254,221 @@
       "intro": "Die empfohlene Variante: mehrere Rätsel-Stationen (Escape-Room-Logik), ein Parkour auf Zeit, der Laser-Tresor und das Finale gegen Dr. Chaos. Anspruchsvoll, mit klarem roten Faden.",
       "timeWindow": "3 Stunden (14:30–17:30)",
       "schedule": [
-        { "time": "14:30", "title": "Ankommen & Briefing", "description": "Ausweis, Foto, Dr.-Chaos-Videobotschaft startet die Mission. 20 Min." },
-        { "time": "14:50", "title": "Escape-Stationen (Rätsel)", "description": "3 Rätsel-Stationen lösen, um den Tresor-Code zu sammeln. 40 Min." },
-        { "time": "15:30", "title": "Helden-Parkour auf Zeit", "description": "Staffel, Team gegen Team. 30 Min." },
-        { "time": "16:00", "title": "Pizza/Kuchen", "description": "Stärkung. 35 Min." },
-        { "time": "16:35", "title": "Laser-Tresor", "description": "Durch das Laser-Netz zum Tresor. 25 Min." },
-        { "time": "17:00", "title": "Showdown & Ehrung", "description": "Code eingeben, Dr. Chaos besiegt, Urkunde + Mitgebsel. 30 Min." }
+        {
+          "time": "14:30",
+          "title": "Ankommen & Briefing",
+          "description": "Ausweis, Foto, Dr.-Chaos-Videobotschaft startet die Mission. 20 Min."
+        },
+        {
+          "time": "14:50",
+          "title": "Escape-Stationen (Rätsel)",
+          "description": "3 Rätsel-Stationen lösen, um den Tresor-Code zu sammeln. 40 Min."
+        },
+        {
+          "time": "15:30",
+          "title": "Helden-Parkour auf Zeit",
+          "description": "Staffel, Team gegen Team. 30 Min."
+        },
+        {
+          "time": "16:00",
+          "title": "Pizza/Kuchen",
+          "description": "Stärkung. 35 Min."
+        },
+        {
+          "time": "16:35",
+          "title": "Laser-Tresor",
+          "description": "Durch das Laser-Netz zum Tresor. 25 Min."
+        },
+        {
+          "time": "17:00",
+          "title": "Showdown & Ehrung",
+          "description": "Code eingeben, Dr. Chaos besiegt, Urkunde + Mitgebsel. 30 Min."
+        }
       ],
       "games": [
         {
           "name": "🧩 Escape-Stationen (Rätsel-Mix)",
-          "indoor": true, "outdoor": true, "duration": 40, "minAge": 9, "loudness": "mittel", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 40,
+          "minAge": 9,
+          "loudness": "mittel",
+          "effort": "mittel",
           "material": "3 Rätsel: (1) Caesar-Code, (2) Spiegelschrift, (3) Zahlen-Logik/Suchbild; je eine Ziffer für den 3-stelligen Tresor-Code; abschließbare Box mit Zahlenschloss",
           "prepText": "Drei Stationen vorbereiten, jede liefert eine Ziffer des Tresor-Codes. Box mit Zahlenschloss bestücken (Schatz/Beweismittel drin).",
           "steps": [
-            { "n": 1, "name": "Teams + Auftrag", "content": "'Dr. Chaos hat den Reaktor-Code in drei Rätseln versteckt. Löst alle, dann öffnet sich der Tresor!'" },
-            { "n": 2, "name": "Station 1 — Caesar (fertig)", "content": "Karte mit dem Geheimtext 'CZHL'. Jeden Buchstaben 3 zurück (C→Z, Z→W, H→E, L→I) = ZWEI → erste Ziffer 2." },
-            { "n": 3, "name": "Station 2 — Spiegel (fertig)", "content": "Schreib die Ziffer 3 dick und spiegelverkehrt auf Papier (auf dünnem Blatt vorschreiben, umdrehen). Mit Taschenlampe/Spiegel gelesen: 3 → zweite Ziffer 3." },
-            { "n": 4, "name": "Station 3 — Logik (fertig zum Vorlesen)", "content": "Zahlenrätsel: 'In der Stadt gab es 3 Banküberfälle und doppelt so viele entführte Bürger wie Überfälle. Wie viele Bürger muss der Held retten?' (3 × 2 = 6) → dritte Ziffer 6. Tresor-Code 2-3-6 am Zahlenschloss eingeben, Tresor öffnet sich." }
+            {
+              "n": 1,
+              "name": "Teams + Auftrag",
+              "content": "'Dr. Chaos hat den Reaktor-Code in drei Rätseln versteckt. Löst alle, dann öffnet sich der Tresor!'"
+            },
+            {
+              "n": 2,
+              "name": "Station 1 — Caesar (fertig)",
+              "content": "Karte mit dem Geheimtext 'CZHL'. Jeden Buchstaben 3 zurück (C→Z, Z→W, H→E, L→I) = ZWEI → erste Ziffer 2."
+            },
+            {
+              "n": 3,
+              "name": "Station 2 — Spiegel (fertig)",
+              "content": "Schreib die Ziffer 3 dick und spiegelverkehrt auf Papier (auf dünnem Blatt vorschreiben, umdrehen). Mit Taschenlampe/Spiegel gelesen: 3 → zweite Ziffer 3."
+            },
+            {
+              "n": 4,
+              "name": "Station 3 — Logik (fertig zum Vorlesen)",
+              "content": "Zahlenrätsel: 'In der Stadt gab es 3 Banküberfälle und doppelt so viele entführte Bürger wie Überfälle. Wie viele Bürger muss der Held retten?' (3 × 2 = 6) → dritte Ziffer 6. Tresor-Code 2-3-6 am Zahlenschloss eingeben, Tresor öffnet sich."
+            }
           ],
           "safetyRule": "Reine Rätsel — sicher. Bei Hängern Tipp-Karten bereithalten, damit die Mission nicht stockt.",
-          "ageAdjust6": "—", "ageAdjust8": "Einfachere Codes, Tipps offener, evtl. nur 2 Stationen.",
-          "indoorTip": "Stationen in verschiedenen Zimmern.", "outdoorTip": "Im Garten verteilt, Spiegelschrift schattig.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Echte Escape-Room-Logik mit Zahlenschloss-Finale ist für 9–12 der Höhepunkt — sie lösen eigenständig, im Team, und der sich öffnende Tresor ist ein echter Triumph."
+          "ageAdjust6": "—",
+          "ageAdjust8": "Einfachere Codes, Tipps offener, evtl. nur 2 Stationen.",
+          "indoorTip": "Stationen in verschiedenen Zimmern.",
+          "outdoorTip": "Im Garten verteilt, Spiegelschrift schattig.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Echte Escape-Room-Logik mit Zahlenschloss-Finale ist für 9–12 der Höhepunkt — sie lösen eigenständig, im Team, und der sich öffnende Tresor ist ein echter Triumph."
         },
         {
           "name": "🏃 Helden-Parkour auf Zeit",
-          "indoor": true, "outdoor": true, "duration": 30, "minAge": 8, "loudness": "laut", "effort": "hoch",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 30,
+          "minAge": 8,
+          "loudness": "laut",
+          "effort": "hoch",
           "material": "6–8 Hindernisse, Stoppuhr, weicher Ball + Eimer",
           "prepText": "Anspruchsvollen Parkour aufbauen, Zielwurf am Ende.",
           "steps": [
-            { "n": 1, "name": "Teams", "content": "Zwei Teams als Staffel." },
-            { "n": 2, "name": "Zeit", "content": "Gesamtzeit stoppen, saubere Stationen zählen." },
-            { "n": 3, "name": "Finale", "content": "Zielwurf in den Reaktor." },
-            { "n": 4, "name": "Wertung", "content": "Schnelleres Team gewinnt, zweite Runde." }
+            {
+              "n": 1,
+              "name": "Teams",
+              "content": "Zwei Teams als Staffel."
+            },
+            {
+              "n": 2,
+              "name": "Zeit",
+              "content": "Gesamtzeit stoppen, saubere Stationen zählen."
+            },
+            {
+              "n": 3,
+              "name": "Finale",
+              "content": "Zielwurf in den Reaktor."
+            },
+            {
+              "n": 4,
+              "name": "Wertung",
+              "content": "Schnelleres Team gewinnt, zweite Runde."
+            }
           ],
           "safetyRule": "Ein Kind pro Station, stabile Kletterstation, Aufsicht.",
-          "ageAdjust6": "—", "ageAdjust8": "Leichter, ohne Klettern.",
-          "indoorTip": "Flur + Wohnzimmer.", "outdoorTip": "Garten.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Körperlicher Ausgleich zum Kopf-Rätsel + Team-Ehrgeiz — die Mischung hält das Energielevel oben."
+          "ageAdjust6": "—",
+          "ageAdjust8": "Leichter, ohne Klettern.",
+          "indoorTip": "Flur + Wohnzimmer.",
+          "outdoorTip": "Garten.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Körperlicher Ausgleich zum Kopf-Rätsel + Team-Ehrgeiz — die Mischung hält das Energielevel oben."
         },
         {
           "name": "🕸️ Laser-Tresor (Showdown)",
-          "indoor": true, "outdoor": false, "duration": 25, "minAge": 8, "loudness": "mittel", "effort": "mittel",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 25,
+          "minAge": 8,
+          "loudness": "mittel",
+          "effort": "mittel",
           "material": "Wollfäden für ein dichtes Laser-Netz im Flur, ein 'Tresor' (Box) mit der Beute, Glöckchen optional an Fäden",
           "prepText": "Engmaschiges Laser-Netz spannen. Optional Glöckchen, die bei Berührung klingeln. Tresor am Ende platzieren.",
           "steps": [
-            { "n": 1, "name": "Auftrag", "content": "'Der Tresor ist mit Lasern gesichert. Schleicht durch, ohne sie auszulösen!'" },
-            { "n": 2, "name": "Durchschleichen", "content": "Jedes Kind einzeln, bei Berührung (Glöckchen klingelt) zurück zum Start." },
-            { "n": 3, "name": "Tresor sichern", "content": "Wer durch ist, holt einen Teil der Beute." }
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "'Der Tresor ist mit Lasern gesichert. Schleicht durch, ohne sie auszulösen!'"
+            },
+            {
+              "n": 2,
+              "name": "Durchschleichen",
+              "content": "Jedes Kind einzeln, bei Berührung (Glöckchen klingelt) zurück zum Start."
+            },
+            {
+              "n": 3,
+              "name": "Tresor sichern",
+              "content": "Wer durch ist, holt einen Teil der Beute."
+            }
           ],
           "safetyRule": "Boden frei, Fäden nicht auf Hals-/Kopfhöhe. Ein Kind nach dem anderen.",
-          "ageAdjust6": "—", "ageAdjust8": "Weniger dicht, ohne 'zurück zum Start'.",
-          "indoorTip": "Flur ideal, eng spannen.", "outdoorTip": "Zwischen Bäumen/Stühlen.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Das Laser-Netz fühlt sich wie ein echter Agentenfilm an — Spannung, Geschick und ein klares Beute-Finale, das die Mission krönt."
+          "ageAdjust6": "—",
+          "ageAdjust8": "Weniger dicht, ohne 'zurück zum Start'.",
+          "indoorTip": "Flur ideal, eng spannen.",
+          "outdoorTip": "Zwischen Bäumen/Stühlen.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Das Laser-Netz fühlt sich wie ein echter Agentenfilm an — Spannung, Geschick und ein klares Beute-Finale, das die Mission krönt."
         }
       ],
       "food": "Pizza/Wraps, herzhafte Snacks, Obstspieße, 'Geheim-Trank' (dunkle Schorle), Energy-Kuchen. Buffet-Stil, damit die Großen sich selbst nehmen.",
       "decoration": "Agenten-Hauptquartier: schwarze Tischdecke, Sperrband, Steckbrief Dr. Chaos, Neon-Akzente, 'Akte: Streng geheim'-Schilder, gedämpftes Licht für Laser-Station.",
       "giveaways": "Agenten-Ausweis, Taschenlampe, Code-Rad, 'Mission erfüllt'-Urkunde, kleine Beute aus dem Tresor.",
       "shoppingList": [
-        { "emoji": "🆔", "label": "Ausweis-Lanyards 8er", "url": "https://www.amazon.de/s?k=ausweishalter+lanyard+kinder&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Altersgerechtes 'Kostüm' (Ausweis statt Cape)." },
-        { "emoji": "🔦", "label": "Mini-Taschenlampen 8er-Set", "url": "https://www.amazon.de/s?k=mini+taschenlampe+set+kinder&tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Für Spiegelschrift/Geheimschrift + Mitgebsel." },
-        { "emoji": "🔒", "label": "Zahlenschloss + Box (Tresor)", "url": "https://www.amazon.de/s?k=zahlenschloss+box&tag=machsleicht21-21", "priceEur": 12, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Herzstück der Escape-Stationen — der Tresor, der sich beim richtigen Code öffnet." },
-        { "emoji": "🧶", "label": "Wolle (Laser-Netz)", "url": "https://www.amazon.de/s?k=wolle+set&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Material für den Laser-Tresor, mehrfach nutzbar." },
-        { "emoji": "🎯", "label": "Weiche Bälle + Eimer", "url": "https://www.amazon.de/s?k=softball+set&tag=machsleicht21-21", "priceEur": 7, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Parkour-Finale." },
-        { "emoji": "🚧", "label": "Deko-Set 'Sperrzone' (Band, Schilder)", "url": "https://www.amazon.de/s?k=absperrband+party+set&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Agenten-HQ-Atmosphäre." },
-        { "emoji": "📜", "label": "Karton/Papier für Codes & Steckbriefe", "url": "https://www.amazon.de/s?k=tonkarton+a4+set&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Rätsel-Material, fast kostenlos." }
+        {
+          "emoji": "🆔",
+          "label": "Ausweis-Lanyards 8er",
+          "url": "https://www.amazon.de/s?k=ausweishalter+lanyard+kinder&tag=machsleicht21-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Altersgerechtes 'Kostüm' (Ausweis statt Cape)."
+        },
+        {
+          "emoji": "🔦",
+          "label": "Mini-Taschenlampen 8er-Set",
+          "url": "https://www.amazon.de/s?k=mini+taschenlampe+set+kinder&tag=machsleicht21-21",
+          "priceEur": 10,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Für Spiegelschrift/Geheimschrift + Mitgebsel."
+        },
+        {
+          "emoji": "🔒",
+          "label": "Zahlenschloss + Box (Tresor)",
+          "url": "https://www.amazon.de/s?k=zahlenschloss+box&tag=machsleicht21-21",
+          "priceEur": 12,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Herzstück der Escape-Stationen — der Tresor, der sich beim richtigen Code öffnet."
+        },
+        {
+          "emoji": "🧶",
+          "label": "Wolle (Laser-Netz)",
+          "url": "https://www.amazon.de/s?k=wolle+set&tag=machsleicht21-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Material für den Laser-Tresor, mehrfach nutzbar."
+        },
+        {
+          "emoji": "🎯",
+          "label": "Weiche Bälle + Eimer",
+          "url": "https://www.amazon.de/s?k=softball+set&tag=machsleicht21-21",
+          "priceEur": 7,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Parkour-Finale."
+        },
+        {
+          "emoji": "🚧",
+          "label": "Deko-Set 'Sperrzone' (Band, Schilder)",
+          "url": "https://www.amazon.de/s?k=absperrband+party+set&tag=machsleicht21-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Agenten-HQ-Atmosphäre."
+        },
+        {
+          "emoji": "📜",
+          "label": "Karton/Papier für Codes & Steckbriefe",
+          "url": "https://www.amazon.de/s?k=tonkarton+a4+set&tag=machsleicht21-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Rätsel-Material, fast kostenlos."
+        }
       ],
       "costContext": "ca. 55 € für 8 Kinder · ~6,88 € pro Kind"
     },
@@ -159,92 +479,280 @@
       "intro": "Alles aus Standard plus einen live gespielten Dr. Chaos, eine zusätzliche Geschicklichkeits-Challenge und ein inszeniertes Finale, bei dem die Teams den Schurken gemeinsam stellen. Maximale Vorbereitung, maximaler Effekt.",
       "timeWindow": "3,5 Stunden (14:30–18:00)",
       "schedule": [
-        { "time": "14:30", "title": "Ankommen & Geheim-Briefing", "description": "Ausweis, Foto, Videobotschaft von Dr. Chaos. 20 Min." },
-        { "time": "14:50", "title": "Escape-Stationen", "description": "Rätsel für den ersten Code-Teil. 40 Min." },
-        { "time": "15:30", "title": "Geschicklichkeits-Challenge", "description": "Reaktions-/Zielspiele, Teamwertung. 25 Min." },
-        { "time": "15:55", "title": "Helden-Parkour auf Zeit", "description": "Staffel. 30 Min." },
-        { "time": "16:25", "title": "Pizza/Kuchen", "description": "Pause. 35 Min." },
-        { "time": "17:00", "title": "Laser-Tresor", "description": "Durchs Laser-Netz. 25 Min." },
-        { "time": "17:25", "title": "Showdown gegen Dr. Chaos", "description": "Live-Schurke stellen, Mission abschließen, Ehrung. 35 Min." }
+        {
+          "time": "14:30",
+          "title": "Ankommen & Geheim-Briefing",
+          "description": "Ausweis, Foto, Videobotschaft von Dr. Chaos. 20 Min."
+        },
+        {
+          "time": "14:50",
+          "title": "Escape-Stationen",
+          "description": "Rätsel für den ersten Code-Teil. 40 Min."
+        },
+        {
+          "time": "15:30",
+          "title": "Geschicklichkeits-Challenge",
+          "description": "Reaktions-/Zielspiele, Teamwertung. 25 Min."
+        },
+        {
+          "time": "15:55",
+          "title": "Helden-Parkour auf Zeit",
+          "description": "Staffel. 30 Min."
+        },
+        {
+          "time": "16:25",
+          "title": "Pizza/Kuchen",
+          "description": "Pause. 35 Min."
+        },
+        {
+          "time": "17:00",
+          "title": "Laser-Tresor",
+          "description": "Durchs Laser-Netz. 25 Min."
+        },
+        {
+          "time": "17:25",
+          "title": "Showdown gegen Dr. Chaos",
+          "description": "Live-Schurke stellen, Mission abschließen, Ehrung. 35 Min."
+        }
       ],
       "games": [
         {
           "name": "🧩 Escape-Stationen (Rätsel-Mix)",
-          "indoor": true, "outdoor": true, "duration": 40, "minAge": 9, "loudness": "mittel", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 40,
+          "minAge": 9,
+          "loudness": "mittel",
+          "effort": "mittel",
           "material": "Caesar-Code, Spiegelschrift, Zahlen-Logik, Zahlenschloss-Box",
           "prepText": "Drei Stationen, je eine Code-Ziffer, Tresor mit Zahlenschloss.",
           "steps": [
-            { "n": 1, "name": "Auftrag", "content": "Drei Rätsel ergeben den Reaktor-Code." },
-            { "n": 2, "name": "Code (fertig)", "content": "Geheimtext-Karte 'HLQV'. Jeden Buchstaben 3 zurück (H→E, L→I, Q→N, V→S) = EINS → Ziffer 1." },
-            { "n": 3, "name": "Spiegel (fertig)", "content": "Ziffer 9 spiegelverkehrt schreiben (dünnes Papier, umdrehen). Im Spiegel gelesen: 9 → Ziffer 2." },
-            { "n": 4, "name": "Logik & Tresor (fertig zum Vorlesen)", "content": "Zahlenrätsel: 'Der Held besiegt pro Minute 2 Roboter. Wie viele liegen nach 4 Minuten am Boden?' (2 × 4 = 8) → dritte Ziffer 8. Tresor-Code 1-9-8, Zahlenschloss öffnen." }
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "Drei Rätsel ergeben den Reaktor-Code."
+            },
+            {
+              "n": 2,
+              "name": "Code (fertig)",
+              "content": "Geheimtext-Karte 'HLQV'. Jeden Buchstaben 3 zurück (H→E, L→I, Q→N, V→S) = EINS → Ziffer 1."
+            },
+            {
+              "n": 3,
+              "name": "Spiegel (fertig)",
+              "content": "Ziffer 9 spiegelverkehrt schreiben (dünnes Papier, umdrehen). Im Spiegel gelesen: 9 → Ziffer 2."
+            },
+            {
+              "n": 4,
+              "name": "Logik & Tresor (fertig zum Vorlesen)",
+              "content": "Zahlenrätsel: 'Der Held besiegt pro Minute 2 Roboter. Wie viele liegen nach 4 Minuten am Boden?' (2 × 4 = 8) → dritte Ziffer 8. Tresor-Code 1-9-8, Zahlenschloss öffnen."
+            }
           ],
           "safetyRule": "Reine Rätsel, Tipp-Karten gegen Frust.",
-          "ageAdjust6": "—", "ageAdjust8": "Leichter, 2 Stationen.",
-          "indoorTip": "Verschiedene Zimmer.", "outdoorTip": "Garten verteilt.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Eigenständiges Lösen mit Tresor-Finale = echter Triumph für die Großen."
+          "ageAdjust6": "—",
+          "ageAdjust8": "Leichter, 2 Stationen.",
+          "indoorTip": "Verschiedene Zimmer.",
+          "outdoorTip": "Garten verteilt.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Eigenständiges Lösen mit Tresor-Finale = echter Triumph für die Großen."
         },
         {
           "name": "⚡ Geschicklichkeits-Challenge (Reaktor stabilisieren)",
-          "indoor": true, "outdoor": true, "duration": 25, "minAge": 9, "loudness": "mittel", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 9,
+          "loudness": "mittel",
+          "effort": "mittel",
           "material": "3 Mini-Challenges: Becher-Turm-Stapeln auf Zeit, 'Heißer Draht' (Draht + Schlaufe), Reaktions-Klatschspiel",
           "prepText": "Drei Geschicklichkeits-Stationen aufbauen, je eine Teamwertung.",
           "steps": [
-            { "n": 1, "name": "Teams reihum", "content": "Teams durchlaufen die 3 Stationen, Zeit/Punkte werden notiert." },
-            { "n": 2, "name": "Heißer Draht", "content": "Schlaufe ohne Berührung über den Draht führen — bei Berührung Summer/Glöckchen, von vorn." },
-            { "n": 3, "name": "Becher-Turm", "content": "Auf Zeit eine Pyramide stapeln und wieder einklappen." },
-            { "n": 4, "name": "Wertung", "content": "Punkte addieren, Zwischenstand verkünden — Spannung bis zum Finale." }
+            {
+              "n": 1,
+              "name": "Teams reihum",
+              "content": "Teams durchlaufen die 3 Stationen, Zeit/Punkte werden notiert."
+            },
+            {
+              "n": 2,
+              "name": "Heißer Draht",
+              "content": "Schlaufe ohne Berührung über den Draht führen — bei Berührung Summer/Glöckchen, von vorn."
+            },
+            {
+              "n": 3,
+              "name": "Becher-Turm",
+              "content": "Auf Zeit eine Pyramide stapeln und wieder einklappen."
+            },
+            {
+              "n": 4,
+              "name": "Wertung",
+              "content": "Punkte addieren, Zwischenstand verkünden — Spannung bis zum Finale."
+            }
           ],
           "safetyRule": "Draht stumpf enden lassen, kein Strom (nur Glöckchen/Summer). Stationen mit Abstand.",
-          "ageAdjust6": "—", "ageAdjust8": "Einfachere Varianten, mehr Versuche.",
-          "indoorTip": "Am Tisch + freie Ecke.", "outdoorTip": "Auf Gartentisch.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Geschicklichkeit mit Teamwertung bedient den Wettbewerbswunsch und gibt auch weniger sportlichen Kindern eine Bühne (Köpfchen + ruhige Hand statt nur Tempo)."
+          "ageAdjust6": "—",
+          "ageAdjust8": "Einfachere Varianten, mehr Versuche.",
+          "indoorTip": "Am Tisch + freie Ecke.",
+          "outdoorTip": "Auf Gartentisch.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Geschicklichkeit mit Teamwertung bedient den Wettbewerbswunsch und gibt auch weniger sportlichen Kindern eine Bühne (Köpfchen + ruhige Hand statt nur Tempo)."
         },
         {
           "name": "🏃 Helden-Parkour auf Zeit",
-          "indoor": true, "outdoor": true, "duration": 30, "minAge": 8, "loudness": "laut", "effort": "hoch",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 30,
+          "minAge": 8,
+          "loudness": "laut",
+          "effort": "hoch",
           "material": "Hindernisse, Stoppuhr, Ball + Eimer",
           "prepText": "Parkour aufbauen.",
           "steps": [
-            { "n": 1, "name": "Teams", "content": "Staffel, zwei Teams." },
-            { "n": 2, "name": "Zeit", "content": "Gesamtzeit stoppen." },
-            { "n": 3, "name": "Finale", "content": "Zielwurf." },
-            { "n": 4, "name": "Wertung", "content": "Punkte zur Gesamtwertung addieren." }
+            {
+              "n": 1,
+              "name": "Teams",
+              "content": "Staffel, zwei Teams."
+            },
+            {
+              "n": 2,
+              "name": "Zeit",
+              "content": "Gesamtzeit stoppen."
+            },
+            {
+              "n": 3,
+              "name": "Finale",
+              "content": "Zielwurf."
+            },
+            {
+              "n": 4,
+              "name": "Wertung",
+              "content": "Punkte zur Gesamtwertung addieren."
+            }
           ],
           "safetyRule": "Ein Kind pro Station, stabile Kletterstation.",
-          "ageAdjust6": "—", "ageAdjust8": "Leichter.",
-          "indoorTip": "Flur + Zimmer.", "outdoorTip": "Garten.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Körperlicher Höhepunkt, der in die Gesamtwertung einzahlt."
+          "ageAdjust6": "—",
+          "ageAdjust8": "Leichter.",
+          "indoorTip": "Flur + Zimmer.",
+          "outdoorTip": "Garten.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Körperlicher Höhepunkt, der in die Gesamtwertung einzahlt."
         },
         {
           "name": "🦹 Showdown gegen Dr. Chaos (Live)",
-          "indoor": true, "outdoor": true, "duration": 35, "minAge": 9, "loudness": "laut", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 35,
+          "minAge": 9,
+          "loudness": "laut",
+          "effort": "mittel",
           "material": "Eine als Dr. Chaos verkleidete erwachsene Person (cooler, nicht gruseliger Schurke), Laser-Netz, weiche 'Energiebälle', der Tresor-Inhalt",
           "prepText": "Dr. Chaos taucht zum Finale auf, fordert die Teams heraus ('Ihr werdet meinen Reaktor NIE stoppen!'). Showdown vorbereiten.",
           "steps": [
-            { "n": 1, "name": "Konfrontation", "content": "Dr. Chaos stellt eine letzte knifflige Aufgabe oder ein Rätsel als 'letzte Sicherung'." },
-            { "n": 2, "name": "Durchbruch", "content": "Teams lösen es, schleichen durch das Laser-Netz zum Reaktor." },
-            { "n": 3, "name": "Team-Finale", "content": "Gemeinsam Dr. Chaos mit weichen Energiebällen 'überwältigen', bis er die Kontrolle abgibt." },
-            { "n": 4, "name": "Mission erfüllt", "content": "Dr. Chaos kapituliert (mit Humor), die Stadt ist gerettet, Beute + Urkunden für alle." }
+            {
+              "n": 1,
+              "name": "Konfrontation",
+              "content": "Dr. Chaos stellt eine letzte knifflige Aufgabe oder ein Rätsel als 'letzte Sicherung'."
+            },
+            {
+              "n": 2,
+              "name": "Durchbruch",
+              "content": "Teams lösen es, schleichen durch das Laser-Netz zum Reaktor."
+            },
+            {
+              "n": 3,
+              "name": "Team-Finale",
+              "content": "Gemeinsam Dr. Chaos mit weichen Energiebällen 'überwältigen', bis er die Kontrolle abgibt."
+            },
+            {
+              "n": 4,
+              "name": "Mission erfüllt",
+              "content": "Dr. Chaos kapituliert (mit Humor), die Stadt ist gerettet, Beute + Urkunden für alle."
+            }
           ],
           "safetyRule": "Schurke spielt cool, aber nie bedrohlich; gibt freiwillig auf. Nur weiche Bälle, nicht ins Gesicht. Laser-Fäden nicht auf Kopfhöhe.",
-          "ageAdjust6": "—", "ageAdjust8": "Weniger Inszenierung, Schurke betont witzig.",
-          "indoorTip": "Wohnzimmer als 'Reaktorraum'.", "outdoorTip": "Garten mit Bewegungsraum.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Ein live gespielter, cooler Schurke und ein gemeinsamer Sieg sind das Gänsehaut-Finale — die Großen erleben eine echte Story mit Anfang, Spannung und Auflösung."
+          "ageAdjust6": "—",
+          "ageAdjust8": "Weniger Inszenierung, Schurke betont witzig.",
+          "indoorTip": "Wohnzimmer als 'Reaktorraum'.",
+          "outdoorTip": "Garten mit Bewegungsraum.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Ein live gespielter, cooler Schurke und ein gemeinsamer Sieg sind das Gänsehaut-Finale — die Großen erleben eine echte Story mit Anfang, Spannung und Auflösung."
         }
       ],
       "food": "Großes Buffet: Pizza/Wraps, Burger-Sliders, herzhafte Snacks, Obst, 'Geheim-Trank', Energy-Kuchen oder Cake-Pops. Selbstbedienung.",
       "decoration": "Komplettes Agenten-HQ: schwarze Tischdecke, Sperrband + Schilder, Steckbrief, Neon, gedämpftes Licht/Schwarzlicht für die Laser-Station, 'Reaktor' (beleuchtete Box) als Finale-Objekt.",
       "giveaways": "Ausweis, Taschenlampe, Code-Rad, Medaille/Urkunde 'Mission erfüllt', Beute aus dem Tresor.",
       "shoppingList": [
-        { "emoji": "🆔", "label": "Ausweis-Lanyards 8er", "url": "https://www.amazon.de/s?k=ausweishalter+lanyard+kinder&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Altersgerechtes Kostüm-Element." },
-        { "emoji": "🔦", "label": "Mini-Taschenlampen 8er-Set", "url": "https://www.amazon.de/s?k=mini+taschenlampe+set+kinder&tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Geheimschrift + Mitgebsel." },
-        { "emoji": "🔒", "label": "Zahlenschloss + Box (Tresor)", "url": "https://www.amazon.de/s?k=zahlenschloss+box&tag=machsleicht21-21", "priceEur": 12, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Escape-Tresor." },
-        { "emoji": "🏅", "label": "Medaillen 12er-Set", "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21", "priceEur": 10, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Ehrung beim Finale." },
-        { "emoji": "🥤", "label": "Becher-Stapel-Set (Speed Stacking)", "url": "https://www.amazon.de/s?k=stapelbecher+speed+stacks&tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Geschicklichkeits-Challenge, danach Wiederverwendung." },
-        { "emoji": "🌑", "label": "Schwarzlicht-Lampe (Laser/Geheimschrift)", "url": "https://www.amazon.de/s?k=schwarzlicht+lampe+uv&tag=machsleicht21-21", "priceEur": 13, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Macht Geheimschrift sichtbar + Wow-Stimmung beim Showdown." },
-        { "emoji": "🚧", "label": "Deko-Set 'Sperrzone'", "url": "https://www.amazon.de/s?k=absperrband+party+set&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Agenten-HQ." },
-        { "emoji": "📜", "label": "Karton/Papier für Rätsel", "url": "https://www.amazon.de/s?k=tonkarton+a4+set&tag=machsleicht21-21", "priceEur": 5, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Codes, Steckbriefe, Ausweise." }
+        {
+          "emoji": "🆔",
+          "label": "Ausweis-Lanyards 8er",
+          "url": "https://www.amazon.de/s?k=ausweishalter+lanyard+kinder&tag=machsleicht21-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Altersgerechtes Kostüm-Element."
+        },
+        {
+          "emoji": "🔦",
+          "label": "Mini-Taschenlampen 8er-Set",
+          "url": "https://www.amazon.de/s?k=mini+taschenlampe+set+kinder&tag=machsleicht21-21",
+          "priceEur": 10,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Geheimschrift + Mitgebsel."
+        },
+        {
+          "emoji": "🔒",
+          "label": "Zahlenschloss + Box (Tresor)",
+          "url": "https://www.amazon.de/s?k=zahlenschloss+box&tag=machsleicht21-21",
+          "priceEur": 12,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Escape-Tresor."
+        },
+        {
+          "emoji": "🏅",
+          "label": "Medaillen 12er-Set",
+          "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21",
+          "priceEur": 10,
+          "hasAffiliate": true,
+          "category": "mitgebsel",
+          "categoryReasoning": "Ehrung beim Finale."
+        },
+        {
+          "emoji": "🥤",
+          "label": "Becher-Stapel-Set (Speed Stacking)",
+          "url": "https://www.amazon.de/s?k=stapelbecher+speed+stacks&tag=machsleicht21-21",
+          "priceEur": 9,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Geschicklichkeits-Challenge, danach Wiederverwendung."
+        },
+        {
+          "emoji": "🌑",
+          "label": "Schwarzlicht-Lampe (Laser/Geheimschrift)",
+          "url": "https://www.amazon.de/s?k=schwarzlicht+lampe+uv&tag=machsleicht21-21",
+          "priceEur": 13,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Macht Geheimschrift sichtbar + Wow-Stimmung beim Showdown."
+        },
+        {
+          "emoji": "🚧",
+          "label": "Deko-Set 'Sperrzone'",
+          "url": "https://www.amazon.de/s?k=absperrband+party+set&tag=machsleicht21-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Agenten-HQ."
+        },
+        {
+          "emoji": "📜",
+          "label": "Karton/Papier für Rätsel",
+          "url": "https://www.amazon.de/s?k=tonkarton+a4+set&tag=machsleicht21-21",
+          "priceEur": 5,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Codes, Steckbriefe, Ausweise."
+        }
       ],
       "costContext": "ca. 75 € für 8 Kinder · ~9,38 € pro Kind"
     }
@@ -252,36 +760,111 @@
   "cakeRecipe": {
     "intro": "Für die Großen darf der Kuchen 'cool' sein: ein dunkler Schoko-Kuchen mit leuchtendem Reaktor-Logo (Neon-Zuckerguss) oder Cake-Pops als 'Energiekapseln'.",
     "steps": [
-      { "n": 1, "name": "Schoko-Boden backen", "content": "Saftiger Schokokuchen (250g Mehl, 200g Zucker, 4 Eier, 200g Butter, 50g Kakao, 1 Pck. Backpulver, etwas Milch). 175°C, ca. 45 Min." },
-      { "n": 2, "name": "Auskühlen", "content": "Vollständig auskühlen, Oberfläche glätten." },
-      { "n": 3, "name": "Dunkel eindecken", "content": "Mit dunkler Schoko-Ganache oder schwarzem Zuckerguss überziehen." },
-      { "n": 4, "name": "Reaktor-Logo", "content": "Ein leuchtend gelb/grünes Energie-Symbol (Blitz, Kreis) mit Neon-Zuckerschrift aufmalen — Kontrast zum dunklen Kuchen wirkt 'high-tech'." }
+      {
+        "n": 1,
+        "name": "Schoko-Boden backen",
+        "content": "Saftiger Schokokuchen (250g Mehl, 200g Zucker, 4 Eier, 200g Butter, 50g Kakao, 1 Pck. Backpulver, etwas Milch). 175°C, ca. 45 Min."
+      },
+      {
+        "n": 2,
+        "name": "Auskühlen",
+        "content": "Vollständig auskühlen, Oberfläche glätten."
+      },
+      {
+        "n": 3,
+        "name": "Dunkel eindecken",
+        "content": "Mit dunkler Schoko-Ganache oder schwarzem Zuckerguss überziehen."
+      },
+      {
+        "n": 4,
+        "name": "Reaktor-Logo",
+        "content": "Ein leuchtend gelb/grünes Energie-Symbol (Blitz, Kreis) mit Neon-Zuckerschrift aufmalen — Kontrast zum dunklen Kuchen wirkt 'high-tech'."
+      }
     ],
     "meta": "Aufwand: mittel · Vorlaufzeit: 1,5 Std · Cake-Pops als 'Energiekapseln' sind die coole Alternative.",
     "tips": "Cake-Pops in Silber/Neon kommen bei 9–12 oft besser an als Torte — gut vorzubereiten und 'instagrammable'. Wer Torte macht: dunkle Basis + ein heller Akzent reicht für den Wow-Effekt."
   },
   "parentTips": {
     "structured": [
-      { "topic": "Mission statt Verkleidung", "detail": "Verkauf die Party als Geheim-/Agenten-Mission, nicht als 'Kostümparty'. 9–12-Jährige finden Verkleiden schnell babyhaft, aber eine Mission mit Rätseln zieht enorm." },
-      { "topic": "Schwer genug machen", "detail": "Der häufigste Fehler: zu leicht. Echte Codes, mehrstufige Rätsel, Zeitdruck. Lieber Tipp-Karten bereithalten, falls es doch zu schwer ist, als von vornherein zu einfach." },
-      { "topic": "Teams gegeneinander", "detail": "In dem Alter motiviert echter Wettbewerb. Zwei Teams mit Gesamtwertung über mehrere Spiele halten die Spannung bis zum Schluss." },
-      { "topic": "Eigenständigkeit lassen", "detail": "Nicht überbetreuen — die Kinder wollen selbst lösen. Du gibst Aufträge und greifst nur ein, wenn etwas stockt oder die Sicherheit es verlangt." },
-      { "topic": "Schurke macht die Show", "detail": "Eine vorab aufgenommene Video-/Audiobotschaft von Dr. Chaos (Handy genügt) gibt der Mission einen roten Faden und kostet nichts — der größte Wow-Hebel." }
+      {
+        "topic": "Mission statt Verkleidung",
+        "detail": "Verkauf die Party als Geheim-/Agenten-Mission, nicht als 'Kostümparty'. 9–12-Jährige finden Verkleiden schnell babyhaft, aber eine Mission mit Rätseln zieht enorm."
+      },
+      {
+        "topic": "Schwer genug machen",
+        "detail": "Der häufigste Fehler: zu leicht. Echte Codes, mehrstufige Rätsel, Zeitdruck. Lieber Tipp-Karten bereithalten, falls es doch zu schwer ist, als von vornherein zu einfach."
+      },
+      {
+        "topic": "Teams gegeneinander",
+        "detail": "In dem Alter motiviert echter Wettbewerb. Zwei Teams mit Gesamtwertung über mehrere Spiele halten die Spannung bis zum Schluss."
+      },
+      {
+        "topic": "Eigenständigkeit lassen",
+        "detail": "Nicht überbetreuen — die Kinder wollen selbst lösen. Du gibst Aufträge und greifst nur ein, wenn etwas stockt oder die Sicherheit es verlangt."
+      },
+      {
+        "topic": "Schurke macht die Show",
+        "detail": "Eine vorab aufgenommene Video-/Audiobotschaft von Dr. Chaos (Handy genügt) gibt der Mission einen roten Faden und kostet nichts — der größte Wow-Hebel."
+      }
     ],
     "educationalValue": "Für 9–12-Jährige trainieren Code-Knacken und Escape-Rätsel logisches Denken und Frustrationstoleranz, Team-Challenges fördern Kooperation und faires Messen, und die selbstständige Lösung stärkt Selbstwirksamkeit. Die Story-Rahmung (Mission, Schurke, Finale) macht aus Spielen ein zusammenhängendes Erlebnis."
   },
   "invitationTemplate": "🚨 STRENG GEHEIM — MISSION FÜR DICH 🚨\n\nDr. Chaos bedroht die Stadt. [NAME] stellt ein Eliteteam zusammen — und du bist rekrutiert.\n\n🗓️ Einsatz: [DATUM], [UHRZEIT]\n📍 Hauptquartier: [ORT]\n🎯 Auftrag: Codes knacken, Rätsel lösen, Dr. Chaos stoppen.\n🤫 Komm bereit für Köpfchen und Action.\n\nBestätige deine Teilnahme bis [FRIST] — die Stadt zählt auf dich.\n\nMission erfüllt? Das entscheidest du. 💥",
   "preparationWeeks": [
-    { "week": "3 Wochen vorher", "tasks": ["Einladungen verschicken (Mission-Briefing-Text)", "Material bestellen (Lanyards, Taschenlampen, Zahlenschloss)", "Festlegen: spielt jemand Dr. Chaos live?"] },
-    { "week": "1 Woche vorher", "tasks": ["Rätsel/Codes ausarbeiten und testen (selbst lösen!)", "Dr.-Chaos-Videobotschaft aufnehmen", "Deko besorgen (Sperrband, Schilder)", "Mitgebsel + Tresor-Inhalt packen"] },
-    { "week": "1 Tag vorher", "tasks": ["Stationen aufbauen/testen", "Parkour-Material bereitlegen", "Ausweise/Urkunden drucken", "Kuchen/Cake-Pops vorbereiten", "Zahlenschloss-Code einstellen"] },
-    { "week": "Am Tag", "tasks": ["Laser-Netz spannen", "Rätsel-Stationen verteilen", "Schwarzlicht/Deko platzieren", "Tipp-Karten griffbereit"] }
+    {
+      "week": "3 Wochen vorher",
+      "tasks": [
+        "Einladungen verschicken (Mission-Briefing-Text)",
+        "Material bestellen (Lanyards, Taschenlampen, Zahlenschloss)",
+        "Festlegen: spielt jemand Dr. Chaos live?"
+      ]
+    },
+    {
+      "week": "1 Woche vorher",
+      "tasks": [
+        "Rätsel/Codes ausarbeiten und testen (selbst lösen!)",
+        "Dr.-Chaos-Videobotschaft aufnehmen",
+        "Deko besorgen (Sperrband, Schilder)",
+        "Mitgebsel + Tresor-Inhalt packen"
+      ]
+    },
+    {
+      "week": "1 Tag vorher",
+      "tasks": [
+        "Stationen aufbauen/testen",
+        "Parkour-Material bereitlegen",
+        "Ausweise/Urkunden drucken",
+        "Kuchen/Cake-Pops vorbereiten",
+        "Zahlenschloss-Code einstellen"
+      ]
+    },
+    {
+      "week": "Am Tag",
+      "tasks": [
+        "Laser-Netz spannen",
+        "Rätsel-Stationen verteilen",
+        "Schwarzlicht/Deko platzieren",
+        "Tipp-Karten griffbereit"
+      ]
+    }
   ],
   "sosScenarios": [
-    { "problem": "Ein Rätsel ist zu schwer, die Gruppe steckt fest", "solution": "Immer Tipp-Karten in 2 Stufen vorbereiten (sanfter Hinweis → fast die Lösung). Lieber einen Tipp geben als die Mission abwürgen — das Erfolgserlebnis muss erhalten bleiben." },
-    { "problem": "Es regnet, Parkour war draußen", "solution": "Escape-Stationen, Code-Knacken und Laser-Tresor laufen komplett drinnen. Parkour in den Flur verlegen (ohne Kletterstation) oder durch eine zusätzliche Geschicklichkeits-Challenge ersetzen." },
-    { "problem": "Ein Team ist viel schneller als das andere", "solution": "Bonus-Rätsel oder 'Geheim-Auftrag' für das schnelle Team bereithalten, damit kein Leerlauf entsteht. Punktewertung so anlegen, dass es bis zum Finale spannend bleibt." },
-    { "problem": "Die Kinder sind 'zu cool' und wollen nicht einsteigen", "solution": "Mit der Dr.-Chaos-Videobotschaft direkt stark starten und sofort ein knackiges Rätsel mit Zeitdruck geben. Sobald der Ehrgeiz geweckt ist, ziehen alle mit." }
+    {
+      "problem": "Ein Rätsel ist zu schwer, die Gruppe steckt fest",
+      "solution": "Immer Tipp-Karten in 2 Stufen vorbereiten (sanfter Hinweis → fast die Lösung). Lieber einen Tipp geben als die Mission abwürgen — das Erfolgserlebnis muss erhalten bleiben."
+    },
+    {
+      "problem": "Es regnet, Parkour war draußen",
+      "solution": "Escape-Stationen, Code-Knacken und Laser-Tresor laufen komplett drinnen. Parkour in den Flur verlegen (ohne Kletterstation) oder durch eine zusätzliche Geschicklichkeits-Challenge ersetzen."
+    },
+    {
+      "problem": "Ein Team ist viel schneller als das andere",
+      "solution": "Bonus-Rätsel oder 'Geheim-Auftrag' für das schnelle Team bereithalten, damit kein Leerlauf entsteht. Punktewertung so anlegen, dass es bis zum Finale spannend bleibt."
+    },
+    {
+      "problem": "Die Kinder sind 'zu cool' und wollen nicht einsteigen",
+      "solution": "Mit der Dr.-Chaos-Videobotschaft direkt stark starten und sofort ein knackiges Rätsel mit Zeitdruck geben. Sobald der Ehrgeiz geweckt ist, ziehen alle mit."
+    }
   ],
   "signatureRitual": {
     "name": "Der Mission-Schwur",
