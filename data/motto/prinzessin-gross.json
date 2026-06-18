@@ -1,5 +1,11 @@
 {
-  "_meta": { "schemaVersion": "elite-v1", "motto": "prinzessin", "ageGroup": "gross", "author": "machsleicht", "primaryVerified": "Preise = Richtwerte (Amazon/Drogerie 2026, 'ca.'); Spiele auf 9–12 ausgelegt (Rätsel, Wettkampf, Eigenständigkeit), Sicherheit nach Kinderparty-Praxis." },
+  "_meta": {
+    "schemaVersion": "elite-v1",
+    "motto": "prinzessin",
+    "ageGroup": "gross",
+    "author": "machsleicht",
+    "primaryVerified": "Preise = Richtwerte (Amazon/Drogerie 2026, 'ca.'); Spiele auf 9–12 ausgelegt (Rätsel, Wettkampf, Eigenständigkeit), Sicherheit nach Kinderparty-Praxis."
+  },
   "motto": "Prinzessin",
   "ageGroup": "gross",
   "ageRange": "9–12 Jahre",
@@ -8,12 +14,30 @@
   "introParagraph": "Mit 9–12 ist 'Prinzessin' kein Kleinkind-Kitsch mehr — jetzt geht es um ein königliches Mystery: Wer hat die Kronjuwelen gestohlen? Größere Kinder wollen echte Rätsel, Wettkampf und Eigenständigkeit. Unten findest du drei fertige Abläufe (Minimal, Standard, Wow) mit Escape-Aufgaben, einem royalen Wettkampf und einer durchgehenden Detektiv-Story — anspruchsvoll, modern und ohne Babykram.",
   "ageInsight": "9–12-Jährige durchschauen 'Krönchen aufsetzen und tanzen' sofort als zu kindlich. Was zieht: eine echte Mystery-Story (Juwelendiebstahl im Schloss), Rätsel mit Köpfchen (Codes, Logik), Wettkampf in Teams und Gestaltungsfreiheit. Sie wollen ernst genommen werden — gib ihnen Verantwortung (Hofstaat-Rollen: Hofdetektivin, Schatzmeister) und echte Herausforderungen. Deko darf eleganter/cooler sein (Schwarz-Gold statt Rosa-Tüll), wenn die Gruppe das möchte.",
   "faq": [
-    { "q": "Sind 9–12-Jährige nicht zu alt für Prinzessin?", "a": "Nicht, wenn man es richtig aufzieht. Als königliches Mystery (Juwelendiebstahl), mit Escape-Rätseln und Wettkampf statt 'schön sein' funktioniert das Motto auch für Große bestens." },
-    { "q": "Wie lange sollte die Party dauern?", "a": "3 bis 3,5 Stunden. Größere Kinder halten länger durch und brauchen für die Rätsel-Story auch Zeit. Die Standard- oder Wow-Variante füllt das gut." },
-    { "q": "Ist das nur etwas für Mädchen?", "a": "Nein. Als 'königliches Hofstaat-Mystery' mit Detektiv-Rollen feiern alle mit — Prinzessin, Prinz, Hofdetektiv. Neutral als 'Schloss-Mystery' ankündigen." },
-    { "q": "Wie mache ich Rätsel, die nicht zu leicht sind?", "a": "Echte Codes (Caesar-Verschiebung, Spiegelschrift), Logik-Rätsel und ein Zahlenschloss, das geknackt werden muss. Für 9–12 dürfen sie kniffeln müssen — das ist der Reiz." },
-    { "q": "Was, wenn die Gruppe sehr unterschiedlich alt ist?", "a": "Teams mischen (Große helfen Kleineren) oder Rätsel mit gestaffelten Hinweisen anbieten. Bei großem Altersmix lieber die Standard- statt Wow-Rätsel." },
-    { "q": "Was kostet so ein Geburtstag ungefähr?", "a": "Minimal ab ~37 €, Standard ~66 €, Wow ~83 € für 8 Kinder. Rätsel und Story selbst gestalten kostet vor allem Zeit, kaum Geld." }
+    {
+      "q": "Sind 9–12-Jährige nicht zu alt für Prinzessin?",
+      "a": "Nicht, wenn man es richtig aufzieht. Als königliches Mystery (Juwelendiebstahl), mit Escape-Rätseln und Wettkampf statt 'schön sein' funktioniert das Motto auch für Große bestens."
+    },
+    {
+      "q": "Wie lange sollte die Party dauern?",
+      "a": "3 bis 3,5 Stunden. Größere Kinder halten länger durch und brauchen für die Rätsel-Story auch Zeit. Die Standard- oder Wow-Variante füllt das gut."
+    },
+    {
+      "q": "Ist das nur etwas für Mädchen?",
+      "a": "Nein. Als 'königliches Hofstaat-Mystery' mit Detektiv-Rollen feiern alle mit — Prinzessin, Prinz, Hofdetektiv. Neutral als 'Schloss-Mystery' ankündigen."
+    },
+    {
+      "q": "Wie mache ich Rätsel, die nicht zu leicht sind?",
+      "a": "Echte Codes (Caesar-Verschiebung, Spiegelschrift), Logik-Rätsel und ein Zahlenschloss, das geknackt werden muss. Für 9–12 dürfen sie kniffeln müssen — das ist der Reiz."
+    },
+    {
+      "q": "Was, wenn die Gruppe sehr unterschiedlich alt ist?",
+      "a": "Teams mischen (Große helfen Kleineren) oder Rätsel mit gestaffelten Hinweisen anbieten. Bei großem Altersmix lieber die Standard- statt Wow-Rätsel."
+    },
+    {
+      "q": "Was kostet so ein Geburtstag ungefähr?",
+      "a": "Minimal ab ~37 €, Standard ~66 €, Wow ~83 € für 8 Kinder. Rätsel und Story selbst gestalten kostet vor allem Zeit, kaum Geld."
+    }
   ],
   "variants": [
     {
@@ -23,39 +47,159 @@
       "intro": "Eine kompakte Detektiv-Story: Die Kronjuwelen sind weg, die Gruppe löst drei Rätsel und entlarvt den Dieb. Wenig Aufwand, viel Köpfchen.",
       "timeWindow": "2,5 Stunden (15:00–17:30)",
       "schedule": [
-        { "time": "15:00", "title": "Ankommen & Hofstaat-Rollen", "description": "Jeder wählt eine Rolle (Hofdetektivin, Schatzmeister …), bekommt ein Abzeichen. Der Fall wird vorgestellt. 25 Min." },
-        { "time": "15:25", "title": "Die 3 Rätsel", "description": "Caesar-Code, Spiegelschrift und Logik führen zum Zahlenschloss. 45 Min." },
-        { "time": "16:10", "title": "Kuchen & Akten-Pause", "description": "Königlicher Kuchen, Verdächtigen-Akten studieren. 30 Min." },
-        { "time": "16:40", "title": "Auflösung & Krönung", "description": "Tresor öffnen, Dieb entlarven, Siegerehrung. 30 Min." },
-        { "time": "17:10", "title": "Mitgebsel & Abschied", "description": "Schatzbeutel, Abschied. 20 Min." }
+        {
+          "time": "15:00",
+          "title": "Ankommen & Hofstaat-Rollen",
+          "description": "Jeder wählt eine Rolle (Hofdetektivin, Schatzmeister …), bekommt ein Abzeichen. Der Fall wird vorgestellt. 25 Min."
+        },
+        {
+          "time": "15:25",
+          "title": "Die 3 Rätsel",
+          "description": "Caesar-Code, Spiegelschrift und Logik führen zum Zahlenschloss. 45 Min."
+        },
+        {
+          "time": "16:10",
+          "title": "Kuchen & Akten-Pause",
+          "description": "Königlicher Kuchen, Verdächtigen-Akten studieren. 30 Min."
+        },
+        {
+          "time": "16:40",
+          "title": "Auflösung & Krönung",
+          "description": "Tresor öffnen, Dieb entlarven, Siegerehrung. 30 Min."
+        },
+        {
+          "time": "17:10",
+          "title": "Mitgebsel & Abschied",
+          "description": "Schatzbeutel, Abschied. 20 Min."
+        }
       ],
       "games": [
         {
           "name": "🔐 Die 3 Schloss-Rätsel (Code, Spiegel, Logik)",
-          "indoor": true, "outdoor": true, "duration": 45, "minAge": 9, "loudness": "mittel", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 45,
+          "minAge": 9,
+          "loudness": "mittel",
+          "effort": "mittel",
           "material": "3 vorbereitete Rätsel (Caesar-Code-Karte, ein Spiegel + spiegelverkehrter Text, ein Logik-Rätsel), ein Zahlenschloss + abschließbare Box ('Tresor') mit den 'Juwelen' darin",
           "prepText": "Rätsel so verketten, dass jede Lösung eine Ziffer für das Zahlenschloss liefert. Caesar-Schlüssel (z.B. +3) und Lösungen vorab notieren.",
           "steps": [
-            { "n": 1, "name": "Der Fall", "content": "'Die Kronjuwelen wurden aus dem Tresor gestohlen! Drei Rätsel verraten den Zahlencode.'" },
-            { "n": 2, "name": "Caesar-Code (fertig)", "content": "Karte mit dem Geheimtext 'YLHU'. Mit Caesar +3 rückwärts entziffern (Y→V, L→I, H→E, U→R) = VIER → erste Ziffer 4." },
-            { "n": 3, "name": "Spiegelschrift (fertig)", "content": "Schreib die Ziffer 7 spiegelverkehrt auf eine Karte (dünnes Papier vorschreiben, umdrehen). Im Spiegel gelesen: 7 → zweite Ziffer 7." },
-            { "n": 4, "name": "Logik-Rätsel (fertig zum Auslegen)", "content": "Drei Hofdamen sind verdächtig — Mathilda (Tür 3), Cordula (Tür 7), Rosalind (Tür 9). Lege diese 3 Hinweise aus: (1) Rosalind war beim Festmahl, als die Juwelen verschwanden. (2) Cordula war im Turm eingeschlossen. (3) Der Dieb trug Handschuhe — und nur Mathilda hatte welche dabei. → Die Diebin ist Mathilda, ihre Tür-Nummer 3 ist die dritte Ziffer." },
-            { "n": 5, "name": "Tresor öffnen", "content": "Zahlenschloss mit dem Code 4-7-3 öffnen → die Juwelen sind zurück!" }
+            {
+              "n": 1,
+              "name": "Der Fall",
+              "content": "'Die Kronjuwelen wurden aus dem Tresor gestohlen! Drei Rätsel verraten den Zahlencode.'"
+            },
+            {
+              "n": 2,
+              "name": "Caesar-Code (fertig)",
+              "content": "Karte mit dem Geheimtext 'YLHU'. Mit Caesar +3 rückwärts entziffern (Y→V, L→I, H→E, U→R) = VIER → erste Ziffer 4."
+            },
+            {
+              "n": 3,
+              "name": "Spiegelschrift (fertig)",
+              "content": "Schreib die Ziffer 7 spiegelverkehrt auf eine Karte (dünnes Papier vorschreiben, umdrehen). Im Spiegel gelesen: 7 → zweite Ziffer 7."
+            },
+            {
+              "n": 4,
+              "name": "Logik-Rätsel (fertig zum Auslegen)",
+              "content": "Drei Hofdamen sind verdächtig — Mathilda (Tür 3), Cordula (Tür 7), Rosalind (Tür 9). Lege diese 3 Hinweise aus: (1) Rosalind war beim Festmahl, als die Juwelen verschwanden. (2) Cordula war im Turm eingeschlossen. (3) Der Dieb trug Handschuhe — und nur Mathilda hatte welche dabei. → Die Diebin ist Mathilda, ihre Tür-Nummer 3 ist die dritte Ziffer."
+            },
+            {
+              "n": 5,
+              "name": "Tresor öffnen",
+              "content": "Zahlenschloss mit dem Code 4-7-3 öffnen → die Juwelen sind zurück!"
+            }
           ],
           "safetyRule": "Bei Teamarbeit darauf achten, dass alle drankommen. Zahlenschloss-Code als Backup notiert, falls es klemmt. Keine Frustfallen — Tipp-Karten bereithalten.",
-          "ageAdjust6": "Einfachere Codes (Bilder statt Caesar), Erwachsenen-Tipps.", "ageAdjust8": "Caesar +1 statt +3, mehr Hinweise.",
-          "indoorTip": "Rätsel-Stationen in verschiedenen Zimmern.", "outdoorTip": "Im Garten als Stations-Lauf.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Echte Codes statt Kinderkram — 9–12-Jährige lieben das Knacken, und das gemeinsame Öffnen des Tresors ist ein starker Aha-Moment, der das Mystery löst."
+          "ageAdjust6": "Einfachere Codes (Bilder statt Caesar), Erwachsenen-Tipps.",
+          "ageAdjust8": "Caesar +1 statt +3, mehr Hinweise.",
+          "indoorTip": "Rätsel-Stationen in verschiedenen Zimmern.",
+          "outdoorTip": "Im Garten als Stations-Lauf.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Echte Codes statt Kinderkram — 9–12-Jährige lieben das Knacken, und das gemeinsame Öffnen des Tresors ist ein starker Aha-Moment, der das Mystery löst."
+        },
+        {
+          "name": "🏆 Royaler Wettkampf",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 30,
+          "minAge": 9,
+          "loudness": "laut",
+          "effort": "mittel",
+          "material": "3–4 Disziplinen, Punktezettel",
+          "prepText": "Disziplin-Stationen aufbauen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Disziplinen",
+              "content": "Teams sammeln Punkte."
+            },
+            {
+              "n": 2,
+              "name": "Zielwurf",
+              "content": "Ringe werfen."
+            },
+            {
+              "n": 3,
+              "name": "Haltung",
+              "content": "Buch-Balance-Parcours."
+            },
+            {
+              "n": 4,
+              "name": "Wertung",
+              "content": "Sieger-Team ehren."
+            }
+          ],
+          "safetyRule": "Weiches Material, fairer Ausgleich.",
+          "ageAdjust6": "Leichter.",
+          "ageAdjust8": "Mittel.",
+          "indoorTip": "Wohnzimmer/Flur.",
+          "outdoorTip": "Garten.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Bewegung und Ehrgeiz nach der Kopfarbeit, Teamgeist."
         }
       ],
       "food": "Königliches Snack-Buffet, aber 'erwachsener': Mini-Burger-Slider, Wraps, Obst-Sticks, Brownies, hausgemachte Limonade ('Königstrunk'). Weniger Kitsch, mehr Substanz.",
       "decoration": "Eleganter: Schwarz-Gold oder tiefes Lila statt Rosa-Tüll, 'Tatort'-Absperrband, Verdächtigen-Steckbriefe an der Wand, ein 'Tresor' als Mittelpunkt, Kerzen-Optik (LED).",
       "giveaways": "Hofstaat-Abzeichen/Detektiv-Marke, ein kleines Rätsel/Knobelspiel to-go, Schatzbeutel mit 'Juwelen' (Schmucksteine).",
       "shoppingList": [
-        { "emoji": "🔐", "label": "Zahlenschloss + abschließbare Box", "url": "https://www.amazon.de/s?k=zahlenschloss+box+kinder+escape&tag=machsleicht21-21", "priceEur": 13, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Der Tresor ist das Herzstück des Mysterys — das physische Öffnen ist der Höhepunkt." },
-        { "emoji": "💎", "label": "Deko-Edelsteine / Schmucksteine (die 'Juwelen')", "url": "https://www.amazon.de/s?k=deko+edelsteine+schmucksteine&tag=machsleicht21-21", "priceEur": 7, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Die gestohlenen Kronjuwelen + Mitgebsel im Schatzbeutel." },
-        { "emoji": "🎖️", "label": "Detektiv-/Hofstaat-Abzeichen 8er", "url": "https://www.amazon.de/s?k=detektiv+abzeichen+kinder+set&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Gibt jedem Kind eine Rolle (Ernstgenommen-Faktor) + Mitgebsel." },
-        { "emoji": "🎈", "label": "Deko schwarz/gold (Ballons, Band)", "url": "https://www.amazon.de/s?k=deko+set+schwarz+gold+party&tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Eleganter, 'erwachsener' Look statt Kleinkind-Rosa." }
+        {
+          "emoji": "🔐",
+          "label": "Zahlenschloss + abschließbare Box",
+          "url": "https://www.amazon.de/s?k=zahlenschloss+box+kinder+escape&tag=machsleicht21-21",
+          "priceEur": 13,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Der Tresor ist das Herzstück des Mysterys — das physische Öffnen ist der Höhepunkt."
+        },
+        {
+          "emoji": "💎",
+          "label": "Deko-Edelsteine / Schmucksteine (die 'Juwelen')",
+          "url": "https://www.amazon.de/s?k=deko+edelsteine+schmucksteine&tag=machsleicht21-21",
+          "priceEur": 7,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Die gestohlenen Kronjuwelen + Mitgebsel im Schatzbeutel."
+        },
+        {
+          "emoji": "🎖️",
+          "label": "Detektiv-/Hofstaat-Abzeichen 8er",
+          "url": "https://www.amazon.de/s?k=detektiv+abzeichen+kinder+set&tag=machsleicht21-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "mitgebsel",
+          "categoryReasoning": "Gibt jedem Kind eine Rolle (Ernstgenommen-Faktor) + Mitgebsel."
+        },
+        {
+          "emoji": "🎈",
+          "label": "Deko schwarz/gold (Ballons, Band)",
+          "url": "https://www.amazon.de/s?k=deko+set+schwarz+gold+party&tag=machsleicht21-21",
+          "priceEur": 9,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Eleganter, 'erwachsener' Look statt Kleinkind-Rosa."
+        }
       ],
       "costContext": "ca. 37 € für 8 Kinder · ~4,63 € pro Kind"
     },
@@ -66,59 +210,191 @@
       "intro": "Die empfohlene Variante: die Detektiv-Story mit Hofstaat-Rollen, mehrere Escape-Rätsel-Stationen, ein royaler Team-Wettkampf (königliche Disziplinen) und eine große Auflösung mit Krönung. Anspruchsvoll und abwechslungsreich.",
       "timeWindow": "3 Stunden (15:00–18:00)",
       "schedule": [
-        { "time": "15:00", "title": "Ankommen & Hofstaat-Rollen", "description": "Rollen wählen, Abzeichen, der Fall wird vorgestellt. 20 Min." },
-        { "time": "15:20", "title": "Escape-Stationen", "description": "Mehrere Rätsel im Schloss lösen, Hinweise sammeln. 45 Min." },
-        { "time": "16:05", "title": "Royaler Wettkampf", "description": "Königliche Disziplinen im Team. 30 Min." },
-        { "time": "16:35", "title": "Kuchen & Akten-Pause", "description": "Kuchen, Verdächtigen-Akten. 30 Min." },
-        { "time": "17:05", "title": "Finale: Tresor & Dieb", "description": "Code knacken, Dieb entlarven. 30 Min." },
-        { "time": "17:35", "title": "Krönung & Mitgebsel", "description": "Siegerehrung, Krönung, Abschied. 25 Min." }
+        {
+          "time": "15:00",
+          "title": "Ankommen & Hofstaat-Rollen",
+          "description": "Rollen wählen, Abzeichen, der Fall wird vorgestellt. 20 Min."
+        },
+        {
+          "time": "15:20",
+          "title": "Escape-Stationen",
+          "description": "Mehrere Rätsel im Schloss lösen, Hinweise sammeln. 45 Min."
+        },
+        {
+          "time": "16:05",
+          "title": "Royaler Wettkampf",
+          "description": "Königliche Disziplinen im Team. 30 Min."
+        },
+        {
+          "time": "16:35",
+          "title": "Kuchen & Akten-Pause",
+          "description": "Kuchen, Verdächtigen-Akten. 30 Min."
+        },
+        {
+          "time": "17:05",
+          "title": "Finale: Tresor & Dieb",
+          "description": "Code knacken, Dieb entlarven. 30 Min."
+        },
+        {
+          "time": "17:35",
+          "title": "Krönung & Mitgebsel",
+          "description": "Siegerehrung, Krönung, Abschied. 25 Min."
+        }
       ],
       "games": [
         {
           "name": "🔐 Escape-Stationen (Codes, Spiegel, Logik, UV)",
-          "indoor": true, "outdoor": true, "duration": 45, "minAge": 9, "loudness": "mittel", "effort": "hoch",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 45,
+          "minAge": 9,
+          "loudness": "mittel",
+          "effort": "hoch",
           "material": "4 Rätsel-Stationen (Caesar-Code, Spiegelschrift, Logik-Rätsel, UV-Lampe + unsichtbare Schrift), Zahlenschloss + Tresor-Box, Klemmbretter pro Team",
           "prepText": "4 Stationen vorbereiten, jede liefert ein Code-Fragment. UV-Schrift mit unsichtbarem Stift, Lampe bereitstellen. Lösungen + Backup-Code notieren.",
           "steps": [
-            { "n": 1, "name": "Der Fall", "content": "'Die Kronjuwelen sind verschwunden. Drei Rätsel ergeben den Tresor-Code, die UV-Station verrät die Diebin.'" },
-            { "n": 2, "name": "Station 1 — Caesar (fertig)", "content": "Karte mit Geheimtext 'GUHL'. Jeden Buchstaben 3 zurück (G→D, U→R, H→E, L→I) = DREI → erste Ziffer 3." },
-            { "n": 3, "name": "Station 2 — Spiegel (fertig)", "content": "Ziffer 5 spiegelverkehrt schreiben (dünnes Papier, umdrehen). Im Spiegel gelesen: 5 → zweite Ziffer 5." },
-            { "n": 4, "name": "Station 3 — Logik (fertig zum Auslegen)", "content": "Drei Hofdamen verdächtig — Mathilda (Tür 3), Cordula (Tür 7), Rosalind (Tür 9). Hinweise: (1) Rosalind war beim Festmahl. (2) Cordula war im Turm eingeschlossen. (3) Der Dieb trug Handschuhe — nur Mathilda hatte welche. → Mathilda, Tür 3 = dritte Ziffer 3." },
-            { "n": 5, "name": "UV + Tresor öffnen", "content": "Unter UV-Licht erscheint zur Bestätigung der Name 'MATHILDA'. Zahlenschloss mit Code 3-5-3 öffnen → die Juwelen sind zurück." }
+            {
+              "n": 1,
+              "name": "Der Fall",
+              "content": "'Die Kronjuwelen sind verschwunden. Drei Rätsel ergeben den Tresor-Code, die UV-Station verrät die Diebin.'"
+            },
+            {
+              "n": 2,
+              "name": "Station 1 — Caesar (fertig)",
+              "content": "Karte mit Geheimtext 'GUHL'. Jeden Buchstaben 3 zurück (G→D, U→R, H→E, L→I) = DREI → erste Ziffer 3."
+            },
+            {
+              "n": 3,
+              "name": "Station 2 — Spiegel (fertig)",
+              "content": "Ziffer 5 spiegelverkehrt schreiben (dünnes Papier, umdrehen). Im Spiegel gelesen: 5 → zweite Ziffer 5."
+            },
+            {
+              "n": 4,
+              "name": "Station 3 — Logik (fertig zum Auslegen)",
+              "content": "Drei Hofdamen verdächtig — Mathilda (Tür 3), Cordula (Tür 7), Rosalind (Tür 9). Hinweise: (1) Rosalind war beim Festmahl. (2) Cordula war im Turm eingeschlossen. (3) Der Dieb trug Handschuhe — nur Mathilda hatte welche. → Mathilda, Tür 3 = dritte Ziffer 3."
+            },
+            {
+              "n": 5,
+              "name": "UV + Tresor öffnen",
+              "content": "Unter UV-Licht erscheint zur Bestätigung der Name 'MATHILDA'. Zahlenschloss mit Code 3-5-3 öffnen → die Juwelen sind zurück."
+            }
           ],
           "safetyRule": "UV-Lampe nicht in die Augen leuchten. Teams gleich groß, alle kommen dran. Tipp-Karten gegen Frust bereithalten.",
-          "ageAdjust6": "2 statt 4 Stationen, Bild-Codes.", "ageAdjust8": "3 Stationen, einfachere Codes.",
-          "indoorTip": "Stationen über die Zimmer verteilt.", "outdoorTip": "Im Garten als Rundlauf.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Mehrere echte Rätsel-Stationen mit UV-Geheimschrift fühlen sich wie ein echter Escape-Room an — genau die Herausforderung, die 9–12-Jährige ernst nimmt und fesselt."
+          "ageAdjust6": "2 statt 4 Stationen, Bild-Codes.",
+          "ageAdjust8": "3 Stationen, einfachere Codes.",
+          "indoorTip": "Stationen über die Zimmer verteilt.",
+          "outdoorTip": "Im Garten als Rundlauf.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Mehrere echte Rätsel-Stationen mit UV-Geheimschrift fühlen sich wie ein echter Escape-Room an — genau die Herausforderung, die 9–12-Jährige ernst nimmt und fesselt."
         },
         {
           "name": "🏆 Royaler Wettkampf (königliche Disziplinen)",
-          "indoor": true, "outdoor": true, "duration": 30, "minAge": 9, "loudness": "laut", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 30,
+          "minAge": 9,
+          "loudness": "laut",
+          "effort": "mittel",
           "material": "Material für 3–4 Disziplinen: z.B. 'Zepter-Zielwurf' (Ringe werfen), 'Königliche Haltung' (Buch auf dem Kopf balancieren — Parcours), 'Schatz-Stapeln' (Becher-Pyramide auf Zeit), Punktezettel",
           "prepText": "3–4 Disziplin-Stationen aufbauen, Punktesystem festlegen. Teams aus dem Escape-Spiel beibehalten.",
           "steps": [
-            { "n": 1, "name": "Disziplinen", "content": "Jedes Team durchläuft alle Disziplinen, sammelt Punkte für die 'Krone des Hofes'." },
-            { "n": 2, "name": "Zepter-Zielwurf", "content": "Ringe auf einen Stab werfen — Treffer zählen." },
-            { "n": 3, "name": "Königliche Haltung", "content": "Mit Buch auf dem Kopf durch einen Parcours, ohne dass es fällt." },
-            { "n": 4, "name": "Wertung", "content": "Punkte addieren, das Gewinner-Team wird beim Finale geehrt." }
+            {
+              "n": 1,
+              "name": "Disziplinen",
+              "content": "Jedes Team durchläuft alle Disziplinen, sammelt Punkte für die 'Krone des Hofes'."
+            },
+            {
+              "n": 2,
+              "name": "Zepter-Zielwurf",
+              "content": "Ringe auf einen Stab werfen — Treffer zählen."
+            },
+            {
+              "n": 3,
+              "name": "Königliche Haltung",
+              "content": "Mit Buch auf dem Kopf durch einen Parcours, ohne dass es fällt."
+            },
+            {
+              "n": 4,
+              "name": "Wertung",
+              "content": "Punkte addieren, das Gewinner-Team wird beim Finale geehrt."
+            }
           ],
           "safetyRule": "Becher/Ringe weich, kein Gerangel. Parcours-Boden frei. Fairer Punkteausgleich, damit kein Team abgehängt wird.",
-          "ageAdjust6": "Leichtere Disziplinen, mehr Versuche.", "ageAdjust8": "Mittel-Schwierigkeit.",
-          "indoorTip": "Disziplinen im Wohnzimmer/Flur.", "outdoorTip": "Im Garten mit mehr Bewegungsdisziplinen.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Team-Wettkampf gibt Bewegung und Ehrgeiz nach der Kopfarbeit — der Wechsel aus Rätseln und körperlichen Disziplinen hält die Energie hoch und schweißt die Teams zusammen."
+          "ageAdjust6": "Leichtere Disziplinen, mehr Versuche.",
+          "ageAdjust8": "Mittel-Schwierigkeit.",
+          "indoorTip": "Disziplinen im Wohnzimmer/Flur.",
+          "outdoorTip": "Im Garten mit mehr Bewegungsdisziplinen.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Team-Wettkampf gibt Bewegung und Ehrgeiz nach der Kopfarbeit — der Wechsel aus Rätseln und körperlichen Disziplinen hält die Energie hoch und schweißt die Teams zusammen."
         }
       ],
       "food": "'Erwachsenes' Königsbuffet: Mini-Burger-Slider, Wraps, Pizzaschnecken, Obst- und Gemüse-Sticks, Brownies/Cake-Pops, hausgemachte Limonade ('Königstrunk') in eleganten Bechern.",
       "decoration": "Schwarz-Gold oder Lila-Gold, 'Tatort'-Absperrband um den Tresor, Verdächtigen-Steckbriefe (Hofstaat-Mitglieder) an der Wand, LED-Kerzen, ein Thron, Schloss-Kulisse in cooler Variante.",
       "giveaways": "Hofstaat-Abzeichen, Knobel-/Rätselspiel to-go, Schatzbeutel mit 'Juwelen', Medaille fürs Sieger-Team, Krönung fürs Geburtstagskind.",
       "shoppingList": [
-        { "emoji": "🔐", "label": "Zahlenschloss + Tresor-Box", "url": "https://www.amazon.de/s?k=zahlenschloss+box+escape+kinder&tag=machsleicht21-21", "priceEur": 13, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Herzstück des Mysterys." },
-        { "emoji": "🔦", "label": "UV-Lampe + unsichtbarer Stift", "url": "https://www.amazon.de/s?k=uv+lampe+unsichtbarer+stift+escape&tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "UV-Geheimschrift ist der Wow-Effekt der Escape-Stationen." },
-        { "emoji": "💎", "label": "Deko-Edelsteine (die 'Juwelen')", "url": "https://www.amazon.de/s?k=deko+edelsteine+schmucksteine&tag=machsleicht21-21", "priceEur": 7, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Gestohlene Juwelen + Schatzbeutel-Mitgebsel." },
-        { "emoji": "🎖️", "label": "Hofstaat-/Detektiv-Abzeichen 8er", "url": "https://www.amazon.de/s?k=detektiv+abzeichen+kinder+set&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Rollen-Identität + Mitgebsel." },
-        { "emoji": "🥏", "label": "Wurfringe + Becher (Wettkampf)", "url": "https://www.amazon.de/s?k=wurfringe+spiel+kinder&tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Material für die royalen Wettkampf-Disziplinen." },
-        { "emoji": "🏅", "label": "Medaillen-Set (Sieger-Team)", "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Ehrung des Gewinner-Teams." },
-        { "emoji": "🎈", "label": "Deko schwarz/gold + Absperrband", "url": "https://www.amazon.de/s?k=deko+schwarz+gold+party+set&tag=machsleicht21-21", "priceEur": 12, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Eleganter Mystery-Look + Tatort-Stimmung." }
+        {
+          "emoji": "🔐",
+          "label": "Zahlenschloss + Tresor-Box",
+          "url": "https://www.amazon.de/s?k=zahlenschloss+box+escape+kinder&tag=machsleicht21-21",
+          "priceEur": 13,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Herzstück des Mysterys."
+        },
+        {
+          "emoji": "🔦",
+          "label": "UV-Lampe + unsichtbarer Stift",
+          "url": "https://www.amazon.de/s?k=uv+lampe+unsichtbarer+stift+escape&tag=machsleicht21-21",
+          "priceEur": 9,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "UV-Geheimschrift ist der Wow-Effekt der Escape-Stationen."
+        },
+        {
+          "emoji": "💎",
+          "label": "Deko-Edelsteine (die 'Juwelen')",
+          "url": "https://www.amazon.de/s?k=deko+edelsteine+schmucksteine&tag=machsleicht21-21",
+          "priceEur": 7,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Gestohlene Juwelen + Schatzbeutel-Mitgebsel."
+        },
+        {
+          "emoji": "🎖️",
+          "label": "Hofstaat-/Detektiv-Abzeichen 8er",
+          "url": "https://www.amazon.de/s?k=detektiv+abzeichen+kinder+set&tag=machsleicht21-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "mitgebsel",
+          "categoryReasoning": "Rollen-Identität + Mitgebsel."
+        },
+        {
+          "emoji": "🥏",
+          "label": "Wurfringe + Becher (Wettkampf)",
+          "url": "https://www.amazon.de/s?k=wurfringe+spiel+kinder&tag=machsleicht21-21",
+          "priceEur": 9,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Material für die royalen Wettkampf-Disziplinen."
+        },
+        {
+          "emoji": "🏅",
+          "label": "Medaillen-Set (Sieger-Team)",
+          "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "mitgebsel",
+          "categoryReasoning": "Ehrung des Gewinner-Teams."
+        },
+        {
+          "emoji": "🎈",
+          "label": "Deko schwarz/gold + Absperrband",
+          "url": "https://www.amazon.de/s?k=deko+schwarz+gold+party+set&tag=machsleicht21-21",
+          "priceEur": 12,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Eleganter Mystery-Look + Tatort-Stimmung."
+        }
       ],
       "costContext": "ca. 66 € für 8 Kinder · ~8,25 € pro Kind"
     },
@@ -129,92 +405,280 @@
       "intro": "Alles aus Standard plus eine Live-Inszenierung: Eine erwachsene Person spielt den/die Hofbeamte/Verdächtige(n), die Kinder befragen sie, es gibt eine zusätzliche Verkleidungs-/Foto-Station (royales Fotoshooting) und ein dramatisches Finale mit großer Auflösung. Mehr Vorbereitung — dafür ein Erlebnis, über das die Gruppe noch lange redet.",
       "timeWindow": "3,5 Stunden (15:00–18:30)",
       "schedule": [
-        { "time": "15:00", "title": "Ankommen & Hofstaat-Rollen", "description": "Rollen, Abzeichen, Fall-Briefing durch den 'Hofbeamten'. 20 Min." },
-        { "time": "15:20", "title": "Royales Fotoshooting", "description": "Verkleiden (elegant), Foto-Station, Charaktere etablieren. 25 Min." },
-        { "time": "15:45", "title": "Escape-Stationen", "description": "Rätsel im Schloss, Hinweise sammeln. 45 Min." },
-        { "time": "16:30", "title": "Verdächtigen-Befragung", "description": "Die Kinder befragen den/die Verdächtige(n). 25 Min." },
-        { "time": "16:55", "title": "Kuchen & Akten-Pause", "description": "Kuchen, Indizien sortieren. 30 Min." },
-        { "time": "17:25", "title": "Royaler Wettkampf", "description": "Königliche Disziplinen. 30 Min." },
-        { "time": "17:55", "title": "Großes Finale & Krönung", "description": "Tresor knacken, Dieb überführen, Siegerehrung, Krönung. 35 Min." }
+        {
+          "time": "15:00",
+          "title": "Ankommen & Hofstaat-Rollen",
+          "description": "Rollen, Abzeichen, Fall-Briefing durch den 'Hofbeamten'. 20 Min."
+        },
+        {
+          "time": "15:20",
+          "title": "Royales Fotoshooting",
+          "description": "Verkleiden (elegant), Foto-Station, Charaktere etablieren. 25 Min."
+        },
+        {
+          "time": "15:45",
+          "title": "Escape-Stationen",
+          "description": "Rätsel im Schloss, Hinweise sammeln. 45 Min."
+        },
+        {
+          "time": "16:30",
+          "title": "Verdächtigen-Befragung",
+          "description": "Die Kinder befragen den/die Verdächtige(n). 25 Min."
+        },
+        {
+          "time": "16:55",
+          "title": "Kuchen & Akten-Pause",
+          "description": "Kuchen, Indizien sortieren. 30 Min."
+        },
+        {
+          "time": "17:25",
+          "title": "Royaler Wettkampf",
+          "description": "Königliche Disziplinen. 30 Min."
+        },
+        {
+          "time": "17:55",
+          "title": "Großes Finale & Krönung",
+          "description": "Tresor knacken, Dieb überführen, Siegerehrung, Krönung. 35 Min."
+        }
       ],
       "games": [
         {
           "name": "📸 Royales Fotoshooting (Charaktere etablieren)",
-          "indoor": true, "outdoor": false, "duration": 25, "minAge": 9, "loudness": "mittel", "effort": "niedrig",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 25,
+          "minAge": 9,
+          "loudness": "mittel",
+          "effort": "niedrig",
           "material": "Elegante Verkleidungs-Accessoires (Umhänge, Federboas, Hüte, Masken), Foto-Ecke mit Hintergrund, Handy/Kamera, Requisiten (Lupe, Monokel)",
           "prepText": "Verkleidungs-Kiste + Foto-Ecke einrichten. Eine Person macht die Fotos.",
           "steps": [
-            { "n": 1, "name": "Charakter wählen", "content": "Jedes Kind gestaltet seine Hofstaat-Figur mit Accessoires (zur gewählten Rolle passend)." },
-            { "n": 2, "name": "Shooting", "content": "Einzel- und Gruppenfotos in coolen 'Hofstaat'-Posen vor dem Schloss-Hintergrund." },
-            { "n": 3, "name": "Story-Start", "content": "Mit den Charakteren startet die Ermittlung — jeder ist jetzt 'im Fall'." }
+            {
+              "n": 1,
+              "name": "Charakter wählen",
+              "content": "Jedes Kind gestaltet seine Hofstaat-Figur mit Accessoires (zur gewählten Rolle passend)."
+            },
+            {
+              "n": 2,
+              "name": "Shooting",
+              "content": "Einzel- und Gruppenfotos in coolen 'Hofstaat'-Posen vor dem Schloss-Hintergrund."
+            },
+            {
+              "n": 3,
+              "name": "Story-Start",
+              "content": "Mit den Charakteren startet die Ermittlung — jeder ist jetzt 'im Fall'."
+            }
           ],
           "safetyRule": "Accessoires sauber/unbedenklich, Masken nicht sichtbehindernd beim Bewegen. Fotos nur mit Einverständnis der Eltern teilen.",
-          "ageAdjust6": "Mehr vorgefertigte Verkleidung.", "ageAdjust8": "Mittel.",
-          "indoorTip": "Vor einer geschmückten Wand.", "outdoorTip": "Drinnen für gleichmäßiges Licht.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Größere Kinder lieben es, sich cool zu inszenieren und Fotos zu machen — das Shooting etabliert ihre Rollen, gibt schöne Erinnerungen und zieht sie emotional in die Story."
+          "ageAdjust6": "Mehr vorgefertigte Verkleidung.",
+          "ageAdjust8": "Mittel.",
+          "indoorTip": "Vor einer geschmückten Wand.",
+          "outdoorTip": "Drinnen für gleichmäßiges Licht.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Größere Kinder lieben es, sich cool zu inszenieren und Fotos zu machen — das Shooting etabliert ihre Rollen, gibt schöne Erinnerungen und zieht sie emotional in die Story."
         },
         {
           "name": "🔐 Escape-Stationen (Codes, UV, Logik)",
-          "indoor": true, "outdoor": true, "duration": 45, "minAge": 9, "loudness": "mittel", "effort": "hoch",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 45,
+          "minAge": 9,
+          "loudness": "mittel",
+          "effort": "hoch",
           "material": "4 Stationen, Zahlenschloss + Tresor, UV-Lampe + Stift, Klemmbretter",
           "prepText": "Stationen vorbereiten, Fragmente → Code.",
           "steps": [
-            { "n": 1, "name": "Auftrag", "content": "Drei Rätsel ergeben den Code, die UV-Station verrät die Diebin." },
-            { "n": 2, "name": "Caesar (fertig)", "content": "Geheimtext-Karte 'DFKW'. Jeden Buchstaben 3 zurück (D→A, F→C, K→H, W→T) = ACHT → erste Ziffer 8." },
-            { "n": 3, "name": "Spiegel (fertig)", "content": "Ziffer 2 spiegelverkehrt schreiben; im Spiegel gelesen: 2 → zweite Ziffer 2." },
-            { "n": 4, "name": "Logik (fertig zum Auslegen)", "content": "Mathilda (Tür 3), Cordula (Tür 7), Rosalind (Tür 9). Hinweise: Rosalind war beim Festmahl, Cordula im Turm eingeschlossen, der Dieb trug Handschuhe — nur Mathilda hatte welche. → Mathilda, Tür 3 = dritte Ziffer 3." },
-            { "n": 5, "name": "UV + Tresor", "content": "Unter UV erscheint 'MATHILDA' zur Bestätigung. Zahlenschloss mit Code 8-2-3 öffnen → die Juwelen sind zurück." }
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "Drei Rätsel ergeben den Code, die UV-Station verrät die Diebin."
+            },
+            {
+              "n": 2,
+              "name": "Caesar (fertig)",
+              "content": "Geheimtext-Karte 'DFKW'. Jeden Buchstaben 3 zurück (D→A, F→C, K→H, W→T) = ACHT → erste Ziffer 8."
+            },
+            {
+              "n": 3,
+              "name": "Spiegel (fertig)",
+              "content": "Ziffer 2 spiegelverkehrt schreiben; im Spiegel gelesen: 2 → zweite Ziffer 2."
+            },
+            {
+              "n": 4,
+              "name": "Logik (fertig zum Auslegen)",
+              "content": "Mathilda (Tür 3), Cordula (Tür 7), Rosalind (Tür 9). Hinweise: Rosalind war beim Festmahl, Cordula im Turm eingeschlossen, der Dieb trug Handschuhe — nur Mathilda hatte welche. → Mathilda, Tür 3 = dritte Ziffer 3."
+            },
+            {
+              "n": 5,
+              "name": "UV + Tresor",
+              "content": "Unter UV erscheint 'MATHILDA' zur Bestätigung. Zahlenschloss mit Code 8-2-3 öffnen → die Juwelen sind zurück."
+            }
           ],
           "safetyRule": "UV nicht in die Augen, Tipp-Karten bereit.",
-          "ageAdjust6": "2 Stationen.", "ageAdjust8": "3 Stationen.",
-          "indoorTip": "Über die Zimmer verteilt.", "outdoorTip": "Garten-Rundlauf.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Echter Escape-Room-Charakter — die ernstzunehmende Herausforderung für die Großen."
+          "ageAdjust6": "2 Stationen.",
+          "ageAdjust8": "3 Stationen.",
+          "indoorTip": "Über die Zimmer verteilt.",
+          "outdoorTip": "Garten-Rundlauf.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Echter Escape-Room-Charakter — die ernstzunehmende Herausforderung für die Großen."
         },
         {
           "name": "🕵️ Verdächtigen-Befragung (Live-Inszenierung)",
-          "indoor": true, "outdoor": false, "duration": 25, "minAge": 9, "loudness": "mittel", "effort": "mittel",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 25,
+          "minAge": 9,
+          "loudness": "mittel",
+          "effort": "mittel",
           "material": "1–2 erwachsene Personen als Verdächtige (mit Charakter + Alibi), vorbereitete Verdächtigen-Akten mit Widersprüchen, Notizzettel für die Kinder",
           "prepText": "Den Darstellenden je eine Rolle mit Alibi und EINEM Widerspruch geben (der zur Escape-Lösung passt). Kinder dürfen frei fragen.",
           "steps": [
-            { "n": 1, "name": "Verdächtige vorstellen", "content": "'Diese Hofmitglieder waren in der Tatnacht im Schloss — befragt sie!'" },
-            { "n": 2, "name": "Befragen", "content": "Die Kinder stellen Fragen, die Darstellenden antworten in Charakter, mit einem versteckten Widerspruch." },
-            { "n": 3, "name": "Notizen", "content": "Die 'Detektive' notieren Auffälligkeiten und vergleichen mit den Escape-Hinweisen." },
-            { "n": 4, "name": "Verdacht", "content": "Die Gruppe einigt sich, wer der Dieb sein könnte — Auflösung folgt im Finale." }
+            {
+              "n": 1,
+              "name": "Verdächtige vorstellen",
+              "content": "'Diese Hofmitglieder waren in der Tatnacht im Schloss — befragt sie!'"
+            },
+            {
+              "n": 2,
+              "name": "Befragen",
+              "content": "Die Kinder stellen Fragen, die Darstellenden antworten in Charakter, mit einem versteckten Widerspruch."
+            },
+            {
+              "n": 3,
+              "name": "Notizen",
+              "content": "Die 'Detektive' notieren Auffälligkeiten und vergleichen mit den Escape-Hinweisen."
+            },
+            {
+              "n": 4,
+              "name": "Verdacht",
+              "content": "Die Gruppe einigt sich, wer der Dieb sein könnte — Auflösung folgt im Finale."
+            }
           ],
           "safetyRule": "Darstellende bleiben freundlich, nie einschüchternd. Jedes Kind, das fragen möchte, kommt dran. Auflösung so, dass niemand 'dumm' dasteht.",
-          "ageAdjust6": "Sehr offensichtliche Widersprüche, Darsteller hilft.", "ageAdjust8": "Mittlere Schwierigkeit.",
-          "indoorTip": "Im 'Verhörzimmer'.", "outdoorTip": "Drinnen für Konzentration.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Eine echte Person befragen zu dürfen ist Krimi-Feeling pur — die Live-Inszenierung hebt die Party von jeder Standard-Schatzsuche ab und gibt den Großen das Gefühl, echte Ermittler zu sein."
+          "ageAdjust6": "Sehr offensichtliche Widersprüche, Darsteller hilft.",
+          "ageAdjust8": "Mittlere Schwierigkeit.",
+          "indoorTip": "Im 'Verhörzimmer'.",
+          "outdoorTip": "Drinnen für Konzentration.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Eine echte Person befragen zu dürfen ist Krimi-Feeling pur — die Live-Inszenierung hebt die Party von jeder Standard-Schatzsuche ab und gibt den Großen das Gefühl, echte Ermittler zu sein."
         },
         {
           "name": "🏆 Royaler Wettkampf",
-          "indoor": true, "outdoor": true, "duration": 30, "minAge": 9, "loudness": "laut", "effort": "mittel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 30,
+          "minAge": 9,
+          "loudness": "laut",
+          "effort": "mittel",
           "material": "3–4 Disziplinen, Punktezettel",
           "prepText": "Disziplin-Stationen aufbauen.",
           "steps": [
-            { "n": 1, "name": "Disziplinen", "content": "Teams sammeln Punkte." },
-            { "n": 2, "name": "Zielwurf", "content": "Ringe werfen." },
-            { "n": 3, "name": "Haltung", "content": "Buch-Balance-Parcours." },
-            { "n": 4, "name": "Wertung", "content": "Sieger-Team ehren." }
+            {
+              "n": 1,
+              "name": "Disziplinen",
+              "content": "Teams sammeln Punkte."
+            },
+            {
+              "n": 2,
+              "name": "Zielwurf",
+              "content": "Ringe werfen."
+            },
+            {
+              "n": 3,
+              "name": "Haltung",
+              "content": "Buch-Balance-Parcours."
+            },
+            {
+              "n": 4,
+              "name": "Wertung",
+              "content": "Sieger-Team ehren."
+            }
           ],
           "safetyRule": "Weiches Material, fairer Ausgleich.",
-          "ageAdjust6": "Leichter.", "ageAdjust8": "Mittel.",
-          "indoorTip": "Wohnzimmer/Flur.", "outdoorTip": "Garten.",
-          "whyItWorksTitle": "Warum das zieht", "whyItWorks": "Bewegung und Ehrgeiz nach der Kopfarbeit, Teamgeist."
+          "ageAdjust6": "Leichter.",
+          "ageAdjust8": "Mittel.",
+          "indoorTip": "Wohnzimmer/Flur.",
+          "outdoorTip": "Garten.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Bewegung und Ehrgeiz nach der Kopfarbeit, Teamgeist."
         }
       ],
       "food": "Großes 'erwachsenes' Königsbuffet: Mini-Burger-Slider, Wraps, Pizzaschnecken, Nacho-Schale, Obst-/Gemüse-Sticks, Brownies + Cake-Pops, hausgemachte Limonade und 'Mocktails' (alkoholfreie Cocktails) in eleganten Gläsern.",
       "decoration": "Vollständiges Schloss-Mystery-Set: Schwarz-Gold/Lila, Tatort-Absperrband, Verdächtigen-Wand mit Fäden ('Pinnwand-Ermittlung'), Tresor, Foto-Ecke, LED-Kerzen, Thron, Verhörzimmer-Bereich.",
       "giveaways": "Hofstaat-Abzeichen, ausgedrucktes Shooting-Foto, Knobelspiel to-go, Schatzbeutel mit Juwelen, Medaille fürs Sieger-Team, Krönung fürs Geburtstagskind.",
       "shoppingList": [
-        { "emoji": "🔐", "label": "Zahlenschloss + Tresor-Box", "url": "https://www.amazon.de/s?k=zahlenschloss+box+escape+kinder&tag=machsleicht21-21", "priceEur": 13, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Herzstück des Mysterys." },
-        { "emoji": "🔦", "label": "UV-Lampe + unsichtbarer Stift", "url": "https://www.amazon.de/s?k=uv+lampe+unsichtbarer+stift+escape&tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "UV-Geheimschrift-Effekt." },
-        { "emoji": "🎭", "label": "Verkleidungs-Accessoires (Boas, Hüte, Masken)", "url": "https://www.amazon.de/s?k=verkleidung+accessoires+kinder+set&tag=machsleicht21-21", "priceEur": 14, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Für das royale Fotoshooting + Charakter-Rollen." },
-        { "emoji": "💎", "label": "Deko-Edelsteine (die 'Juwelen')", "url": "https://www.amazon.de/s?k=deko+edelsteine+schmucksteine&tag=machsleicht21-21", "priceEur": 7, "hasAffiliate": true, "category": "pflicht", "categoryReasoning": "Gestohlene Juwelen + Mitgebsel." },
-        { "emoji": "🎖️", "label": "Hofstaat-Abzeichen 8er", "url": "https://www.amazon.de/s?k=detektiv+abzeichen+kinder+set&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Rollen-Identität + Mitgebsel." },
-        { "emoji": "🥏", "label": "Wurfringe + Becher (Wettkampf)", "url": "https://www.amazon.de/s?k=wurfringe+spiel+kinder&tag=machsleicht21-21", "priceEur": 9, "hasAffiliate": true, "category": "aktivitaet", "categoryReasoning": "Royale Wettkampf-Disziplinen." },
-        { "emoji": "🏅", "label": "Medaillen-Set (Sieger-Team)", "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21", "priceEur": 8, "hasAffiliate": true, "category": "mitgebsel", "categoryReasoning": "Ehrung." },
-        { "emoji": "🎈", "label": "Deko schwarz/gold + Absperrband + Pinnwand-Set", "url": "https://www.amazon.de/s?k=deko+schwarz+gold+party+set&tag=machsleicht21-21", "priceEur": 15, "hasAffiliate": true, "category": "deko", "categoryReasoning": "Volle Mystery-Kulisse inkl. Ermittlungs-Pinnwand." }
+        {
+          "emoji": "🔐",
+          "label": "Zahlenschloss + Tresor-Box",
+          "url": "https://www.amazon.de/s?k=zahlenschloss+box+escape+kinder&tag=machsleicht21-21",
+          "priceEur": 13,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Herzstück des Mysterys."
+        },
+        {
+          "emoji": "🔦",
+          "label": "UV-Lampe + unsichtbarer Stift",
+          "url": "https://www.amazon.de/s?k=uv+lampe+unsichtbarer+stift+escape&tag=machsleicht21-21",
+          "priceEur": 9,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "UV-Geheimschrift-Effekt."
+        },
+        {
+          "emoji": "🎭",
+          "label": "Verkleidungs-Accessoires (Boas, Hüte, Masken)",
+          "url": "https://www.amazon.de/s?k=verkleidung+accessoires+kinder+set&tag=machsleicht21-21",
+          "priceEur": 14,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Für das royale Fotoshooting + Charakter-Rollen."
+        },
+        {
+          "emoji": "💎",
+          "label": "Deko-Edelsteine (die 'Juwelen')",
+          "url": "https://www.amazon.de/s?k=deko+edelsteine+schmucksteine&tag=machsleicht21-21",
+          "priceEur": 7,
+          "hasAffiliate": true,
+          "category": "pflicht",
+          "categoryReasoning": "Gestohlene Juwelen + Mitgebsel."
+        },
+        {
+          "emoji": "🎖️",
+          "label": "Hofstaat-Abzeichen 8er",
+          "url": "https://www.amazon.de/s?k=detektiv+abzeichen+kinder+set&tag=machsleicht21-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "mitgebsel",
+          "categoryReasoning": "Rollen-Identität + Mitgebsel."
+        },
+        {
+          "emoji": "🥏",
+          "label": "Wurfringe + Becher (Wettkampf)",
+          "url": "https://www.amazon.de/s?k=wurfringe+spiel+kinder&tag=machsleicht21-21",
+          "priceEur": 9,
+          "hasAffiliate": true,
+          "category": "aktivitaet",
+          "categoryReasoning": "Royale Wettkampf-Disziplinen."
+        },
+        {
+          "emoji": "🏅",
+          "label": "Medaillen-Set (Sieger-Team)",
+          "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21",
+          "priceEur": 8,
+          "hasAffiliate": true,
+          "category": "mitgebsel",
+          "categoryReasoning": "Ehrung."
+        },
+        {
+          "emoji": "🎈",
+          "label": "Deko schwarz/gold + Absperrband + Pinnwand-Set",
+          "url": "https://www.amazon.de/s?k=deko+schwarz+gold+party+set&tag=machsleicht21-21",
+          "priceEur": 15,
+          "hasAffiliate": true,
+          "category": "deko",
+          "categoryReasoning": "Volle Mystery-Kulisse inkl. Ermittlungs-Pinnwand."
+        }
       ],
       "costContext": "ca. 83 € für 8 Kinder · ~10,38 € pro Kind"
     }
@@ -222,36 +686,111 @@
   "cakeRecipe": {
     "intro": "Für die Großen darf die Torte eleganter sein: eine 'Kronjuwelen'-Torte in Schwarz-Gold/Lila mit essbaren 'Edelsteinen' (Zucker-Diamanten) — oder eine schnelle, coole Variante als Drip-Cake. Plant ~45 Min Backzeit plus Dekorieren.",
     "steps": [
-      { "n": 1, "name": "Boden backen", "content": "Rührkuchen (250g Mehl, 200g Zucker, 4 Eier, 200g Butter, 1 Pck. Backpulver) oder Schokoboden. 175°C, ~40–45 Min." },
-      { "n": 2, "name": "Auskühlen & füllen", "content": "Auskühlen, ggf. mit Creme füllen für Höhe." },
-      { "n": 3, "name": "Elegant eindecken", "content": "Mit dunkler Ganache oder lila Creme überziehen, optional Gold-Drip (essbare Goldfarbe/Karamell)." },
-      { "n": 4, "name": "Juwelen drauf", "content": "Essbare Zucker-Edelsteine oder Gold-Perlen aufsetzen — fertig ist die Kronjuwelen-Torte." }
+      {
+        "n": 1,
+        "name": "Boden backen",
+        "content": "Rührkuchen (250g Mehl, 200g Zucker, 4 Eier, 200g Butter, 1 Pck. Backpulver) oder Schokoboden. 175°C, ~40–45 Min."
+      },
+      {
+        "n": 2,
+        "name": "Auskühlen & füllen",
+        "content": "Auskühlen, ggf. mit Creme füllen für Höhe."
+      },
+      {
+        "n": 3,
+        "name": "Elegant eindecken",
+        "content": "Mit dunkler Ganache oder lila Creme überziehen, optional Gold-Drip (essbare Goldfarbe/Karamell)."
+      },
+      {
+        "n": 4,
+        "name": "Juwelen drauf",
+        "content": "Essbare Zucker-Edelsteine oder Gold-Perlen aufsetzen — fertig ist die Kronjuwelen-Torte."
+      }
     ],
     "meta": "Aufwand: mittel · Vorlaufzeit: 1,5 Std inkl. Auskühlen · Drip-Cake mit Gold-Perlen wirkt edel und ist machbar.",
     "tips": "9–12-Jährige finden Zucker-'Diamanten' und Gold-Drip cool statt kitschig. Wer es einfach mag: gekaufte dunkle Ganache + ein paar essbare Gold-Perlen reichen für den Wow-Effekt."
   },
   "parentTips": {
     "structured": [
-      { "topic": "Story statt Kitsch", "detail": "Mit 9–12 zieht eine echte Mystery-Story (Juwelendiebstahl) tausendmal mehr als 'schön sein'. Gib der Party einen Krimi-Plot mit Anfang, Ermittlung und Auflösung." },
-      { "topic": "Echte Rätsel", "detail": "Codes (Caesar, Spiegel), Logik und ein Zahlenschloss dürfen fordern. Lieber zu schwer mit Tipp-Karten als zu leicht — die Großen wollen kniffeln und sich den Erfolg verdienen." },
-      { "topic": "Verantwortung geben", "detail": "Hofstaat-Rollen (Hofdetektivin, Schatzmeister) nehmen die Kinder ernst. Wer eine Rolle hat, ist engagierter dabei als bei anonymem Mitspielen." },
-      { "topic": "Eleganter Look erlaubt", "detail": "Frag die Gruppe: viele 9–12-Jährige finden Schwarz-Gold/Lila cooler als Rosa-Tüll. Den Look an die Kinder anpassen, nicht ans Klischee." },
-      { "topic": "Niemanden blamieren", "detail": "Beim Wettkampf und der Auflösung auf fairen Ausgleich achten — kein Team abhängen, niemand soll als 'der Dumme' dastehen, der den Fall nicht gelöst hat. Das Team gewinnt gemeinsam." }
+      {
+        "topic": "Story statt Kitsch",
+        "detail": "Mit 9–12 zieht eine echte Mystery-Story (Juwelendiebstahl) tausendmal mehr als 'schön sein'. Gib der Party einen Krimi-Plot mit Anfang, Ermittlung und Auflösung."
+      },
+      {
+        "topic": "Echte Rätsel",
+        "detail": "Codes (Caesar, Spiegel), Logik und ein Zahlenschloss dürfen fordern. Lieber zu schwer mit Tipp-Karten als zu leicht — die Großen wollen kniffeln und sich den Erfolg verdienen."
+      },
+      {
+        "topic": "Verantwortung geben",
+        "detail": "Hofstaat-Rollen (Hofdetektivin, Schatzmeister) nehmen die Kinder ernst. Wer eine Rolle hat, ist engagierter dabei als bei anonymem Mitspielen."
+      },
+      {
+        "topic": "Eleganter Look erlaubt",
+        "detail": "Frag die Gruppe: viele 9–12-Jährige finden Schwarz-Gold/Lila cooler als Rosa-Tüll. Den Look an die Kinder anpassen, nicht ans Klischee."
+      },
+      {
+        "topic": "Niemanden blamieren",
+        "detail": "Beim Wettkampf und der Auflösung auf fairen Ausgleich achten — kein Team abhängen, niemand soll als 'der Dumme' dastehen, der den Fall nicht gelöst hat. Das Team gewinnt gemeinsam."
+      }
     ],
     "educationalValue": "Das Schloss-Mystery fördert bei 9–12-Jährigen logisches Denken und Kombinationsgabe (Codes, Indizien), Teamarbeit und Kommunikation (gemeinsames Lösen, Befragung) sowie Selbstwirksamkeit — sie lösen einen 'echten' Fall eigenständig. Der royale Wettkampf bringt Bewegung und fairen Ehrgeiz, und die Rollen stärken Verantwortungsgefühl. Anspruchsvoll genug, um ernst genommen zu werden."
   },
   "invitationTemplate": "👑🔍 EINLADUNG: DAS SCHLOSS-MYSTERY 🔍👑\n\nIm Schloss von [NAME] wurden die Kronjuwelen gestohlen — und WIR lösen den Fall!\n\nZum [ALTER]. Geburtstag wird ermittelt: Codes knacken, Verdächtige befragen, den Dieb überführen.\n\n🗓️ Wann: [DATUM], [UHRZEIT]\n📍 Tatort: [ORT]\n🕵️ Bring deinen Spürsinn mit — Hofstaat-Rolle gibt's vor Ort.\n\nBitte gib bis [FRIST] Bescheid, ob du im Ermittler-Team bist.\n\nDer Fall wartet auf dich! 💎",
   "preparationWeeks": [
-    { "week": "3 Wochen vorher", "tasks": ["Einladungen verschicken (Mystery-Text)", "Story + Verdächtige + Lösung ausarbeiten", "Zahlenschloss/Tresor + UV-Set bestellen", "Verdächtigen-Darsteller fragen (Wow-Variante)"] },
-    { "week": "1 Woche vorher", "tasks": ["Escape-Rätsel basteln (Codes, UV-Schrift, Logik)", "Verdächtigen-Akten + Steckbriefe schreiben", "Deko besorgen (schwarz/gold, Absperrband)", "Wettkampf-Material + Mitgebsel kaufen"] },
-    { "week": "1 Tag vorher", "tasks": ["Rätsel-Stationen testen (Code geht auf?)", "Deko + Pinnwand-Ermittlung aufbauen", "Torte backen", "Darsteller-Rollen durchsprechen"] },
-    { "week": "Am Tag", "tasks": ["Tresor + Juwelen platzieren", "UV-Schrift verstecken", "Foto-Ecke + Verhörzimmer richten", "Abzeichen + Klemmbretter bereitlegen"] }
+    {
+      "week": "3 Wochen vorher",
+      "tasks": [
+        "Einladungen verschicken (Mystery-Text)",
+        "Story + Verdächtige + Lösung ausarbeiten",
+        "Zahlenschloss/Tresor + UV-Set bestellen",
+        "Verdächtigen-Darsteller fragen (Wow-Variante)"
+      ]
+    },
+    {
+      "week": "1 Woche vorher",
+      "tasks": [
+        "Escape-Rätsel basteln (Codes, UV-Schrift, Logik)",
+        "Verdächtigen-Akten + Steckbriefe schreiben",
+        "Deko besorgen (schwarz/gold, Absperrband)",
+        "Wettkampf-Material + Mitgebsel kaufen"
+      ]
+    },
+    {
+      "week": "1 Tag vorher",
+      "tasks": [
+        "Rätsel-Stationen testen (Code geht auf?)",
+        "Deko + Pinnwand-Ermittlung aufbauen",
+        "Torte backen",
+        "Darsteller-Rollen durchsprechen"
+      ]
+    },
+    {
+      "week": "Am Tag",
+      "tasks": [
+        "Tresor + Juwelen platzieren",
+        "UV-Schrift verstecken",
+        "Foto-Ecke + Verhörzimmer richten",
+        "Abzeichen + Klemmbretter bereitlegen"
+      ]
+    }
   ],
   "sosScenarios": [
-    { "problem": "Die Kinder kommen bei einem Rätsel nicht weiter", "solution": "Tipp-Karten gestaffelt herausgeben (erst kleiner Hinweis, dann größerer). Notfalls 'findet' der Hofbeamte einen 'verlorenen Hinweiszettel'. Frust vermeiden — das Lösen soll Spaß machen, kein Prüfungsstress." },
-    { "problem": "Ein Kind langweilt sich / fühlt sich übergangen", "solution": "Jedem Kind eine aktive Aufgabe in seiner Hofstaat-Rolle geben (einer führt das Ermittlungs-Protokoll, einer bedient die UV-Lampe). Rollen rotieren lassen, damit alle mal im Mittelpunkt sind." },
-    { "problem": "Die Gruppe ist altersgemischt (z.B. 9 und 12)", "solution": "Teams mischen, sodass Ältere und Jüngere zusammenarbeiten. Rätsel mit gestaffelten Hinweisen, sodass beide beitragen können. Beim Wettkampf Handicaps für Fairness." },
-    { "problem": "Das Mystery ist schneller gelöst als geplant", "solution": "Reserve: eine 'zweite Spur' (der Dieb hatte einen Komplizen), eine Bonus-Rätselrunde oder eine längere Wettkampf-Runde. Story-Verlängerungen vorher als Backup notieren." }
+    {
+      "problem": "Die Kinder kommen bei einem Rätsel nicht weiter",
+      "solution": "Tipp-Karten gestaffelt herausgeben (erst kleiner Hinweis, dann größerer). Notfalls 'findet' der Hofbeamte einen 'verlorenen Hinweiszettel'. Frust vermeiden — das Lösen soll Spaß machen, kein Prüfungsstress."
+    },
+    {
+      "problem": "Ein Kind langweilt sich / fühlt sich übergangen",
+      "solution": "Jedem Kind eine aktive Aufgabe in seiner Hofstaat-Rolle geben (einer führt das Ermittlungs-Protokoll, einer bedient die UV-Lampe). Rollen rotieren lassen, damit alle mal im Mittelpunkt sind."
+    },
+    {
+      "problem": "Die Gruppe ist altersgemischt (z.B. 9 und 12)",
+      "solution": "Teams mischen, sodass Ältere und Jüngere zusammenarbeiten. Rätsel mit gestaffelten Hinweisen, sodass beide beitragen können. Beim Wettkampf Handicaps für Fairness."
+    },
+    {
+      "problem": "Das Mystery ist schneller gelöst als geplant",
+      "solution": "Reserve: eine 'zweite Spur' (der Dieb hatte einen Komplizen), eine Bonus-Rätselrunde oder eine längere Wettkampf-Runde. Story-Verlängerungen vorher als Backup notieren."
+    }
   ],
   "signatureRitual": {
     "name": "Die Aufklärung & Krönung",
