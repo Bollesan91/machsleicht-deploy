@@ -845,9 +845,14 @@ function EliteShoppingList({ variants, shoppingMode, mottoColor }) {
   if (!variant || !variant.shoppingList) return null;
 
   const groups = { pflicht: [], sinnvoll: [], habIchVielleicht: [] };
+  // Fremd-Kategorien (deko/mitgebsel/aktivitaet/optional/wow aus noch nicht normalisierten Mottos)
+  // auf die 3 kanonischen Gruppen mappen — sonst fallen sie durch und sind weder sichtbar noch in
+  // der Kosten-Badge gezaehlt (Badge wuerde die echten Kosten untertreiben, inkl. teurer Posten).
+  const CAT_MAP = { deko: "sinnvoll", mitgebsel: "sinnvoll", aktivitaet: "sinnvoll", optional: "habIchVielleicht", wow: "habIchVielleicht" };
   for (const item of variant.shoppingList) {
-    const cat = item.category || "sinnvoll";
-    if (groups[cat]) groups[cat].push(item);
+    const raw = item.category || "sinnvoll";
+    const cat = groups[raw] ? raw : (CAT_MAP[raw] || "sinnvoll");
+    groups[cat].push(item);
   }
 
   const GROUP_META = {
@@ -1052,7 +1057,7 @@ function EliteGamesFilter({ variants, shoppingMode, effectiveLoc, quietMode, mot
       </p>
       {variant.isQuest && (
         <p style={{ fontSize: 12, color: "var(--d)", marginBottom: 12, padding: "8px 10px", background: "var(--bg)", borderRadius: 8, lineHeight: 1.45 }}>
-          🗺️ <strong>Diese Stufe ist als große Quest gebaut</strong> — wenige Einträge, aber jeder ist ein langes Stationen-Spiel, das einen ganzen Nachmittag trägt. Der Aufwand steckt in der Quest, nicht in der Anzahl.
+          🗺️ <strong>Diese Stufe ist als große Quest gebaut</strong> — wenige Einträge, aber jeder ist eine lange Quest (Stationen- oder Rätsel-Mission), die einen ganzen Nachmittag trägt. Der Aufwand steckt in der Quest, nicht in der Anzahl.
         </p>
       )}
 

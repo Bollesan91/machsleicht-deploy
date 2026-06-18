@@ -41056,7 +41056,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Sind alle Becher gefallen, ist das Seeungeheuer besiegt. Gemeinsam neu aufstellen für die nächste Runde."
               }
             ],
-            "safetyRule": "Nur weiche Sockenbälle werfen — niemals auf Personen, immer nur auf die Becher/Dosen zielen. Eine feste Wurflinie markieren, es wirft immer nur ein Kind, die anderen warten hinter der Linie.",
+            "safetyRule": "Nur weiche Sockenbälle werfen — niemals auf Personen, immer nur auf die Becher/Dosen zielen. Eine feste Wurflinie markieren, es wirft immer nur ein Kind, die anderen warten hinter der Linie. Leere Dosen ohne scharfe Ränder verwenden (umgebördelt oder Ränder abkleben). Beim Neu-Aufstellen wirft niemand — erst gemeinsam aufbauen, dann zurück hinter die Wurflinie.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": "Pyramide auf einen Teppich stellen, damit umfallende Dosen nicht scheppern und nichts wegrollt.",
@@ -41368,7 +41368,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Sind alle Becher gefallen, ist das Seeungeheuer besiegt. Gemeinsam neu aufstellen für die nächste Runde."
               }
             ],
-            "safetyRule": "Nur weiche Sockenbälle werfen — niemals auf Personen, immer nur auf die Becher/Dosen zielen. Eine feste Wurflinie markieren, es wirft immer nur ein Kind, die anderen warten hinter der Linie.",
+            "safetyRule": "Nur weiche Sockenbälle werfen — niemals auf Personen, immer nur auf die Becher/Dosen zielen. Eine feste Wurflinie markieren, es wirft immer nur ein Kind, die anderen warten hinter der Linie. Leere Dosen ohne scharfe Ränder verwenden (umgebördelt oder Ränder abkleben). Beim Neu-Aufstellen wirft niemand — erst gemeinsam aufbauen, dann zurück hinter die Wurflinie.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": "Pyramide auf einen Teppich stellen, damit umfallende Dosen nicht scheppern und nichts wegrollt.",
@@ -41742,7 +41742,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Sind alle Becher gefallen, ist das Seeungeheuer besiegt. Gemeinsam neu aufstellen für die nächste Runde."
               }
             ],
-            "safetyRule": "Nur weiche Sockenbälle werfen — niemals auf Personen, immer nur auf die Becher/Dosen zielen. Eine feste Wurflinie markieren, es wirft immer nur ein Kind, die anderen warten hinter der Linie.",
+            "safetyRule": "Nur weiche Sockenbälle werfen — niemals auf Personen, immer nur auf die Becher/Dosen zielen. Eine feste Wurflinie markieren, es wirft immer nur ein Kind, die anderen warten hinter der Linie. Leere Dosen ohne scharfe Ränder verwenden (umgebördelt oder Ränder abkleben). Beim Neu-Aufstellen wirft niemand — erst gemeinsam aufbauen, dann zurück hinter die Wurflinie.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": "Pyramide auf einen Teppich stellen, damit umfallende Dosen nicht scheppern und nichts wegrollt.",

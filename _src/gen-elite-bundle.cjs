@@ -43,6 +43,20 @@ for (const m of mottos) {
 const expected = mottos.length * AGES.length;
 if (Object.keys(bundle).length !== expected) throw new Error(`Bundle hat ${Object.keys(bundle).length} keys, erwartet ${expected}`);
 
+// Guard: shoppingList-category sollte kanonisch sein (pflicht/sinnvoll/habIchVielleicht). Fremd-
+// Kategorien werden im Planer per CAT_MAP auf diese drei gemappt (sichtbar + gezaehlt), aber hier
+// gewarnt, damit sie bei der Daten-Normalisierung (#34/#37) auffallen. WARN, kein FAIL.
+{
+  const CANON = new Set(["pflicht", "sinnvoll", "habIchVielleicht"]);
+  const foreign = {};
+  for (const k of Object.keys(bundle)) for (const v of bundle[k].variants) for (const it of (v.shoppingList || [])) {
+    const c = it.category;
+    if (c && !CANON.has(c)) foreign[c] = (foreign[c] || 0) + 1;
+  }
+  const keys = Object.keys(foreign);
+  if (keys.length) console.warn(`  WARN: ${keys.reduce((a, k) => a + foreign[k], 0)} shoppingList-Items mit Fremd-category (werden per CAT_MAP gemappt): ${keys.map((k) => `${k}=${foreign[k]}`).join(", ")}`);
+}
+
 // 3. Accessor-Funktionen (MUESSEN im Bundle sein — der Planer ruft getEliteData; nicht in .jsx/data.js).
 const ACCESSORS = `
 
