@@ -47,3 +47,13 @@ Verbindlich für den Motto-für-Motto-Spiele-Merge (#34), erprobt an piraten:
 - **Safety-Lektion (Stufe-2-Befund):** Bei „Kampf"-Spielen reicht „kein Schlag auf Kopf" NICHT — **Stich/Vorstoß mit der Spitze (Augen!) explizit verbieten**, Brille sichern. **`safetyRule` darf nie schwächer sein als die `steps`** (Steps-Cap muss in die Regel). Renn-/Fangspiele: Kollisions-/Schubs-Regel ergänzen.
 
 **Mechanisierbar (→ Linter):** je Variante `games.length`: minimal≥3, wow≥standard; jedes schedule-referenzierte Spiel hat ein `games[]`-Objekt; keine generische „Schatzsuche" in `games[]` wenn Schatz-Modul existiert.
+
+## L7 — Reviewer-Findings aus gekürzter Spec systematisch zu hoch (18.06.2026, Batch-3 dschungel/detektiv/safari)
+**Befund:** Die Stufe-2-Reviews bekommen NUR die gekürzte Spec (Varianten + abgekürzte SAFETY), nicht den vorlesefertigen JSON-Volltext. Folge: der Reviewer „erfindet" plausible MAJORs aus dem, was in der Kürzung fehlt — und liegt fast immer daneben, weil die Volldaten es längst abdecken. Batch-3-Bilanz nach Stufe-3-Verifikation gegen `data/motto/*.json`: **alle MAJORs = False Positives, 0 echte Fixes.**
+- detektiv-mittel Geheimtinte „Wärmequelle kind-bedienbar" → Daten: steps sagen „Ein Erwachsener bügelt", material „(NUR Erwachsene)", safetyRule gated Bügeleisen + 1m-Abstand. Bereits sicher.
+- detektiv-klein „Münzen → Echtgeld-Verschluckung" → Daten: bereits „Schoko-Münzen" + „Verschluckungsgefahr bei den Jüngsten begleiten". Reviewer hat „Echtgeld" halluziniert.
+- dschungel-gross Gips „exotherm-Warnung fehlt" → Daten: bereits „Trocknender Gips wird heiß (bis 60°C) — nicht in der Hand halten".
+- dschungel-gross Nacht-Insekten „heiße Lichtfalle/Brandgefahr" → Daten: 5€ LED-Schwarzlicht-Taschenlampe (keine heiße Netzlampe); Opt-In/Allergien/Stolperfallen/Wespen→indoor gedeckt.
+- safari „Beobachtungsposten / Karte vermessen nicht definiert" (MAJOR) → beide SIND in `games[]` mit steps. Reviewer-Fehler in die andere Richtung.
+
+**Regel:** Jedes Reviewer-MAJOR aus einem gekürzt-Spec-Review VOR jedem Fix gegen das volle Game-Objekt (`steps`+`material`+`safetyRule`) prüfen. „Fehlt"-Findings sind meist Kürzungs-Artefakte. Erst fixen, wenn die Volldaten die Lücke bestätigen. Count-Findings (`<3 quest`, `wow<std`) bleiben verworfen (Quest = 1). Der systemische Safety+Floor-Pass über alle 15 hat die echten Risiken bereits global geschlossen — die per-Motto-Welle fängt nur noch Motto-Spezifisches.

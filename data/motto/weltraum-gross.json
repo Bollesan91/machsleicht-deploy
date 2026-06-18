@@ -1069,7 +1069,7 @@
               "content": "Der fertige Anzug wird im Logbuch als „einsatzbereit“ vermerkt."
             }
           ],
-          "safetyRule": null,
+          "safetyRule": "Beim Aufnähen: Nadel achtsam und nur unter Aufsicht — jüngere Kinder kleben statt nähen. Schere bei Bedarf nur durch Erwachsene. Alufolie-Kanten vorher umknicken.",
           "ageAdjust9": "Vorgedruckte Patch-Motive zum Ausmalen.",
           "ageAdjust12": "Freies Design, eigenes Crew-Logo entwerfen.",
           "indoorTip": "Am Tisch mit Unterlage — Stoffmalstifte färben durch.",
@@ -1159,7 +1159,7 @@
               "content": "Jedes Kind trägt eine Beobachtung ins Logbuch ein — was es zuerst gefunden hat. Das schließt die Mission ruhig ab."
             }
           ],
-          "safetyRule": "Pflicht-Opt-In der Eltern für die Wach-Zeit. Beobachtung nur im gesicherten Garten/Balkon unter Aufsicht. Stirnlampen mit Rotlicht, warme Kleidung gegen Auskühlen. Wer müde wird oder rein will, geht — kein Kind wird zum Wachbleiben gedrängt.",
+          "safetyRule": "Pflicht-Opt-In der Eltern für die Wach-Zeit. Beobachtung nur im gesicherten Garten/Balkon unter Aufsicht. Stirnlampen mit Rotlicht, warme Kleidung gegen Auskühlen. Wer müde wird oder rein will, geht — kein Kind wird zum Wachbleiben gedrängt. Balkon nur mit hohem, gesichertem Geländer — kein Klettern oder Lehnen am Geländer, immer ein Erwachsener in Armreichweite.",
           "ageAdjust9": "Kürzer (20 Min.), Fokus auf Mond und ein einziges helles Sternbild.",
           "ageAdjust12": "Länger, mit App-gestützter Planeten-Identifikation und einem kurzen „Wer findet die ISS“-Versuch (Überflug-Zeiten vorher checken).",
           "indoorTip": "Kein echter Himmel? Sternenprojektor an die Decke und die Sternbilder daran zeigen — funktioniert auch, ist aber Plan B.",
