@@ -184,7 +184,7 @@
       ],
       "games": [
         {
-          "name": "🎓 Ausbildungs-Stationen (4er-Rotation)",
+          "name": "🎓 Stationen-Wettbewerb (4er-Rotation)",
           "indoor": true,
           "outdoor": true,
           "duration": 35,
@@ -202,7 +202,7 @@
             {
               "n": 2,
               "name": "Station 1 – Zielspritzen auf Zeit",
-              "content": "5 nummerierte Becher mit Flammen-Symbol in 3/5/7 m gestaffelt. Jedes Crew-Mitglied hat 30 Sek., mit der Wasserpistole so viele wie möglich umzuspritzen — die weiteste Distanz zählt doppelt. Treffer = Punkte."
+              "content": "5 nummerierte Becher mit Flammen-Symbol in 3/5/7 m gestaffelt. Jedes Crew-Mitglied hat 30 Sek., mit der Wasserpistole so viele wie möglich umzuspritzen — die weiteste Distanz zählt doppelt. Treffer = Punkte. (Bei Bedarf Schutzbrille.)"
             },
             {
               "n": 3,
@@ -217,7 +217,7 @@
             {
               "n": 5,
               "name": "Station 4 – Erste Hilfe",
-              "content": "Eine „verletzte Person\" (große Puppe ODER ein mitspielendes Kind) fachgerecht mit Dreieckstuch/Toilettenpapier-Rolle verbinden und in die stabile Seitenlage bringen. Eine erwachsene Person zeigt es einmal vor. Punkt für saubere Ausführung — echtes Können statt Stofftier-Pflege."
+              "content": "Eine „verletzte Person\" (große Puppe ODER ein mitspielendes Kind) mit Dreieckstuch (Toilettenpapier nur als Reserve) versorgen und in die stabile Seitenlage bringen. Kurz-Anleitung Seitenlage: 1) nahen Arm nach oben anwinkeln, 2) ferne Hand an die Wange der Person legen, 3) fernes Bein anwinkeln und die Person sanft zu dir auf die Seite drehen, Kopf leicht überstrecken. Eine erwachsene Person zeigt es einmal vor. Punkt für saubere Ausführung — echtes Können statt Stofftier-Pflege."
             },
             {
               "n": 6,
@@ -225,7 +225,7 @@
               "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
             }
           ],
-          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk.",
+          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
           "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
           "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
           "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
@@ -279,7 +279,7 @@
           "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
         },
         {
-          "name": "🏆 Urkunden-Zeremonie (Schichtende)",
+          "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
           "indoor": true,
           "outdoor": false,
           "duration": 20,
@@ -458,11 +458,11 @@
       ],
       "games": [
         {
-          "name": "🎨 Helm-Bemalen (Schicht-Appell-Erweiterung)",
+          "name": "🎖️ Crew-Abzeichen & Dienstgrad",
           "indoor": true,
           "outdoor": false,
           "duration": 20,
-          "minAge": 3,
+          "minAge": 9,
           "loudness": null,
           "effort": "leicht",
           "material": "5 weiße/unbedruckte [Pappkarton-Helme zum Bemalen](https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht21-21)* (~4 €/Stück), dicke Filzstifte (rot, blau, gelb, schwarz), [große Feuerwehr-Aufkleber](https://www.amazon.de/s?k=feuerwehr+sticker+kinder+gross&tag=machsleicht21-21)* (~5 €), optional Glitzer-Kleber, alte Tischdecke unterlegen, Eltern-Hilfe!",
@@ -493,11 +493,11 @@
           "whyItWorks": null
         },
         {
-          "name": "💧 Spritz-Probe an der Wache",
+          "name": "💧 Zielspritzen-Wettkampf",
           "indoor": true,
           "outdoor": true,
           "duration": 15,
-          "minAge": 3,
+          "minAge": 9,
           "loudness": "laut",
           "effort": "leicht",
           "material": "5 kleine Wasserspritzpistolen (kindgerecht, niedrigste Stufe — keine Kanonen — ~10 € für 6er-Set), 6–8 leere Plastikbecher mit aufgemaltem Flammen-Symbol, Eimer Wasser, alte Handtücher",
@@ -528,7 +528,7 @@
           "whyItWorks": null
         },
         {
-          "name": "🎓 Ausbildungs-Stationen (4er-Rotation)",
+          "name": "🎓 Stationen-Wettbewerb (4er-Rotation)",
           "indoor": true,
           "outdoor": true,
           "duration": 35,
@@ -546,7 +546,7 @@
             {
               "n": 2,
               "name": "Station 1 – Zielspritzen auf Zeit",
-              "content": "5 nummerierte Becher mit Flammen-Symbol in 3/5/7 m gestaffelt. Jedes Crew-Mitglied hat 30 Sek., mit der Wasserpistole so viele wie möglich umzuspritzen — die weiteste Distanz zählt doppelt. Treffer = Punkte."
+              "content": "5 nummerierte Becher mit Flammen-Symbol in 3/5/7 m gestaffelt. Jedes Crew-Mitglied hat 30 Sek., mit der Wasserpistole so viele wie möglich umzuspritzen — die weiteste Distanz zählt doppelt. Treffer = Punkte. (Bei Bedarf Schutzbrille.)"
             },
             {
               "n": 3,
@@ -561,7 +561,7 @@
             {
               "n": 5,
               "name": "Station 4 – Erste Hilfe",
-              "content": "Eine „verletzte Person\" (große Puppe ODER ein mitspielendes Kind) fachgerecht mit Dreieckstuch/Toilettenpapier-Rolle verbinden und in die stabile Seitenlage bringen. Eine erwachsene Person zeigt es einmal vor. Punkt für saubere Ausführung — echtes Können statt Stofftier-Pflege."
+              "content": "Eine „verletzte Person\" (große Puppe ODER ein mitspielendes Kind) mit Dreieckstuch (Toilettenpapier nur als Reserve) versorgen und in die stabile Seitenlage bringen. Kurz-Anleitung Seitenlage: 1) nahen Arm nach oben anwinkeln, 2) ferne Hand an die Wange der Person legen, 3) fernes Bein anwinkeln und die Person sanft zu dir auf die Seite drehen, Kopf leicht überstrecken. Eine erwachsene Person zeigt es einmal vor. Punkt für saubere Ausführung — echtes Können statt Stofftier-Pflege."
             },
             {
               "n": 6,
@@ -569,7 +569,7 @@
               "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
             }
           ],
-          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk.",
+          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
           "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
           "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
           "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
@@ -623,7 +623,7 @@
           "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
         },
         {
-          "name": "🏆 Urkunden-Zeremonie (Schichtende)",
+          "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
           "indoor": true,
           "outdoor": false,
           "duration": 20,
@@ -808,11 +808,11 @@
       ],
       "games": [
         {
-          "name": "💧 Spritz-Probe an der Wache",
+          "name": "💧 Zielspritzen-Wettkampf",
           "indoor": true,
           "outdoor": true,
           "duration": 15,
-          "minAge": 3,
+          "minAge": 9,
           "loudness": "laut",
           "effort": "leicht",
           "material": "5 kleine Wasserspritzpistolen (kindgerecht, niedrigste Stufe — keine Kanonen — ~10 € für 6er-Set), 6–8 leere Plastikbecher mit aufgemaltem Flammen-Symbol, Eimer Wasser, alte Handtücher",
@@ -861,7 +861,7 @@
             {
               "n": 2,
               "name": "Szenario ziehen",
-              "content": "Jeder Trupp zieht reihum eine Notruf-Karte und „ruft an\". Karten: (a) Fettbrand in der Küche, (b) Person im verrauchten Zimmer, (c) Mülltonne brennt an der Hauswand, (d) Rauch aus dem Fenster + Katze auf dem Baum, (e) Wasserschaden im Keller, (f) Wespennest im Garten — KEIN Notfall (Fangfrage: nicht die 112!)."
+              "content": "Jeder Trupp zieht reihum eine Notruf-Karte und „ruft an\". Karten: (a) Fettbrand in der Küche (Profi-Fakt: Fett NIE mit Wasser löschen — Stichflamme!), (b) Person im verrauchten Zimmer, (c) Mülltonne brennt an der Hauswand, (d) Rauch aus dem Fenster + Katze auf dem Baum, (e) Wasserschaden im Keller, (f) Wespennest im Garten — KEIN Notfall (Fangfrage: nicht die 112!)."
             },
             {
               "n": 3,
@@ -883,7 +883,7 @@
           "whyItWorks": null
         },
         {
-          "name": "🎓 Ausbildungs-Stationen (4er-Rotation)",
+          "name": "🎓 Stationen-Wettbewerb (4er-Rotation)",
           "indoor": true,
           "outdoor": true,
           "duration": 35,
@@ -901,7 +901,7 @@
             {
               "n": 2,
               "name": "Station 1 – Zielspritzen auf Zeit",
-              "content": "5 nummerierte Becher mit Flammen-Symbol in 3/5/7 m gestaffelt. Jedes Crew-Mitglied hat 30 Sek., mit der Wasserpistole so viele wie möglich umzuspritzen — die weiteste Distanz zählt doppelt. Treffer = Punkte."
+              "content": "5 nummerierte Becher mit Flammen-Symbol in 3/5/7 m gestaffelt. Jedes Crew-Mitglied hat 30 Sek., mit der Wasserpistole so viele wie möglich umzuspritzen — die weiteste Distanz zählt doppelt. Treffer = Punkte. (Bei Bedarf Schutzbrille.)"
             },
             {
               "n": 3,
@@ -916,7 +916,7 @@
             {
               "n": 5,
               "name": "Station 4 – Erste Hilfe",
-              "content": "Eine „verletzte Person\" (große Puppe ODER ein mitspielendes Kind) fachgerecht mit Dreieckstuch/Toilettenpapier-Rolle verbinden und in die stabile Seitenlage bringen. Eine erwachsene Person zeigt es einmal vor. Punkt für saubere Ausführung — echtes Können statt Stofftier-Pflege."
+              "content": "Eine „verletzte Person\" (große Puppe ODER ein mitspielendes Kind) mit Dreieckstuch (Toilettenpapier nur als Reserve) versorgen und in die stabile Seitenlage bringen. Kurz-Anleitung Seitenlage: 1) nahen Arm nach oben anwinkeln, 2) ferne Hand an die Wange der Person legen, 3) fernes Bein anwinkeln und die Person sanft zu dir auf die Seite drehen, Kopf leicht überstrecken. Eine erwachsene Person zeigt es einmal vor. Punkt für saubere Ausführung — echtes Können statt Stofftier-Pflege."
             },
             {
               "n": 6,
@@ -924,7 +924,7 @@
               "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
             }
           ],
-          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk.",
+          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
           "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
           "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
           "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
@@ -978,7 +978,7 @@
           "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
         },
         {
-          "name": "🏆 Urkunden-Zeremonie (Schichtende)",
+          "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
           "indoor": true,
           "outdoor": false,
           "duration": 20,
