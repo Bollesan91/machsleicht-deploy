@@ -1694,7 +1694,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "10 Wurf-Hufeisen (echte oder Stoff-Säckchen-Replik), 3 Pflöcke (verschiedene Entfernungen 2/3/4 m), Wertungstafel, Mini-Pokale (3 Stk), Wanderpokal-Übergabe-Set",
-          "safetyRule": "Hufeisen-Stoff-Säckchen sicherer als echte. Echte nur draußen mit Sicherheitsabstand 3 m. Schutzbrille optional.",
+          "safetyRule": "NUR Stoff-Huffeisen-Saeckchen — echte Metall-Hufeisen werden von Kindern NIE geworfen (allenfalls Erwachsenen-Demo). Wurfrichtung klar, niemand hinter/neben dem Ziel. Schutzbrille empfohlen. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel.",
           "steps": [
             {
               "n": 1,

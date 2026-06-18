@@ -417,7 +417,8 @@
       "savingsTip": {
         "title": "Pyrographie-Stift einmal kaufen, lebenslang nutzen",
         "body": "Der Brand-Stift (~14 €) ist nicht nur für diesen Geburtstag — er lässt sich für jeden weiteren Holz-Bastelmoment (Schlüsselanhänger, Türschilder, Geschenk-Anhänger) wiederverwenden. Wer ihn nicht kaufen will: wasserfester Edding macht den gleichen Effekt visuell, Story-Frame ist dann „mit Wald-Tinte eingeritzt\". Spart ~14 € und drückt die Variante unter 50 €."
-      }
+      },
+      "isQuest": true
     },
     {
       "id": "standard",
@@ -736,7 +737,8 @@
       "savingsTip": {
         "title": "Mehrfach-Nutzbares ausschöpfen",
         "body": "Letter-Lock (~10 €), UV-Lampe (~10 €) und Pyrographie-Stift (~14 €) sind alle wiederverwendbar — für jeden weiteren Geburtstag, jede Schnitzeljagd, jeden Bastel-Nachmittag. Wenn du diese drei Items einmal hast, fällt die Standard-Variante künftig auf ~65 €."
-      }
+      },
+      "isQuest": true
     },
     {
       "id": "wow",
@@ -960,7 +962,7 @@
               "content": "Jede:r Hüter:in geht den Lichtweg einzeln entlang. Am Ende: gemeinsames Foto am Wurzel-Zentrum mit Lichterkette."
             }
           ],
-          "safetyRule": "Pyrographie-Stift: NUR durch Erwachsene:n bedient. 450 °C heiß — kein Kontakt mit Kindern. Tisch mit feuerfester Unterlage. Lichterkette: Batterie-LED oder Niedervolt — keine 230V-Lichterkette über Boden, wo Kinder treten.",
+          "safetyRule": "Pyrographie-Stift: NUR durch Erwachsene:n bedient. 450 °C heiß — kein Kontakt mit Kindern. Tisch mit feuerfester Unterlage. Lichterkette: Batterie-LED oder Niedervolt — keine 230V-Lichterkette über Boden, wo Kinder treten. Bei Brandmalerei gut lüften (es qualmt) — Fenster auf oder Dunstabzug an, und Kinder mit Sicherheitsabstand zum heißen Stift.",
           "ageAdjust9": null,
           "ageAdjust12": null,
           "indoorTip": "Wohnzimmer abgedunkelt, LED-Lichterkette als einzige Hauptlichtquelle.",

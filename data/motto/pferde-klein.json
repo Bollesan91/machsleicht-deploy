@@ -231,7 +231,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "6 Plüsch-Hufeisen (oder Wurfringe), 1 Holzpflock (40 cm hoch) oder Stuhl-Lehne als Ziel, optional kleine Punkte-Tafel",
-          "safetyRule": "Wurfringe aus Stoff oder weichem Plastik — nichts Hartes. Wurfdistanz max 2 Meter. Niemand steht hinter dem Pflock.",
+          "safetyRule": "Wurfringe aus Stoff oder weichem Plastik — nichts Hartes. Wurfdistanz max 2 Meter. Niemand steht hinter dem Pflock. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel.",
           "steps": [
             {
               "n": 1,
@@ -515,7 +515,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "8 Plüsch-Hufeisen / Wurfringe, 2 Holzpflöcke (für 2 Teams)",
-          "safetyRule": "Stoff/Plastik-Ringe, max 2 Meter Wurfweite, klare Wurfreihenfolge.",
+          "safetyRule": "Stoff/Plastik-Ringe, max 2 Meter Wurfweite, klare Wurfreihenfolge. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel.",
           "steps": [
             {
               "n": 1,
@@ -550,7 +550,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "8 Steckenpferde, 3-4 Sprung-Stangen (10 cm hoch — Pappröhren), Plastik-Tunnel oder Kissen-Tunnel, Stoff-Markierungen für Slalom",
-          "safetyRule": "Sprung-Stangen NICHT höher als 10 cm. Kein Drängeln am Tunnel — einzelne Durchgänge. Eltern-Helfer am Tunnel.",
+          "safetyRule": "Sprung-Stangen NICHT höher als 10 cm. Kein Drängeln am Tunnel — einzelne Durchgänge. Eltern-Helfer am Tunnel. Fuer 3-Jaehrige: vereinfachte Variante mit Erwachsenen-Hilfe (oder optional auslassen) — ab4-Spiel. Boden weich/rutschfest halten; reihum, nie zwei gleichzeitig auf der Strecke.",
           "steps": [
             {
               "n": 1,
@@ -768,7 +768,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "Pro Pony: Wolle 3 Farben, Filz-Schleifen, kleine Spangen, essbarer Glitzer (für Bürsten), Spiegel zum Anschauen",
-          "safetyRule": "Glitzer essbar (für den Fall dass das Kind dran leckt). Spangen ohne scharfe Kanten.",
+          "safetyRule": "Glitzer essbar (für den Fall dass das Kind dran leckt). Spangen ohne scharfe Kanten. Fuer 3-Jaehrige: vereinfachte Variante mit Erwachsenen-Hilfe (oder optional auslassen) — ab4-Spiel.",
           "steps": [
             {
               "n": 1,
@@ -838,7 +838,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "8 Steckenpferde, 3-4 Sprung-Stangen (10 cm hoch — Pappröhren), Plastik-Tunnel oder Kissen-Tunnel, Stoff-Markierungen für Slalom",
-          "safetyRule": "Sprung-Stangen NICHT höher als 10 cm. Kein Drängeln am Tunnel — einzelne Durchgänge. Eltern-Helfer am Tunnel.",
+          "safetyRule": "Sprung-Stangen NICHT höher als 10 cm. Kein Drängeln am Tunnel — einzelne Durchgänge. Eltern-Helfer am Tunnel. Fuer 3-Jaehrige: vereinfachte Variante mit Erwachsenen-Hilfe (oder optional auslassen) — ab4-Spiel. Boden weich/rutschfest halten; reihum, nie zwei gleichzeitig auf der Strecke.",
           "steps": [
             {
               "n": 1,
@@ -873,7 +873,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "20 Karotten (echte oder aus Filz), Verstecke in der Wohnung/Garten, optional eine 'Schatzkarte' für 4-5-Jährige",
-          "safetyRule": "Echte Karotten gewaschen und ungiftig. Verstecke nicht zu hoch oder hinter schweren Möbeln.",
+          "safetyRule": "Echte Karotten gewaschen und ungiftig. Verstecke nicht zu hoch oder hinter schweren Möbeln. WICHTIG: rohe Karotten sind ein Erstickungsrisiko fuer Kleinkinder — Karotten werden NICHT gegessen (nur gesucht/gesammelt); fuer ganz Kleine fein geraspelt statt ganze Stuecke.",
           "steps": [
             {
               "n": 1,

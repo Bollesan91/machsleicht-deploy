@@ -9,13 +9,15 @@ OUT="$REPO/js"
 
 echo "=== Build: kindergeburtstag.js ==="
 
-# 1. Regenerate elite-motto-data bundle (concatenates 7 JSON files into JS module).
-#    Skip if python3 nicht verfügbar (z.B. Netlify-Build) — committed _bundle.js wird verwendet.
-if command -v python3 >/dev/null 2>&1; then
-  echo "  Regenerating elite-motto-data/_bundle.js..."
-  python3 "$SRC/elite-motto-data/_generate_bundle.py" > /dev/null
+# 1. Regenerate elite-motto-data bundle aus data/motto (single source of truth, alle 15 Mottos).
+#    ACHTUNG: Quelle ist data/motto/, NICHT mehr _src/elite-motto-data/*.json (deprecated, stale).
+#    Der node-Generator schreibt _bundle.js (Build-Intermediate) + patcht js/kindergeburtstag.js.
+#    Skip nur wenn node fehlt (z.B. minimaler Netlify-Build) — committed _bundle.js wird verwendet.
+if command -v node >/dev/null 2>&1; then
+  echo "  Regenerating elite-motto-data bundle aus data/motto..."
+  node "$REPO/_src/gen-elite-bundle.cjs" > /dev/null
 else
-  echo "  Skipping bundle regen (python3 nicht verfügbar) — verwende committed _bundle.js"
+  echo "  Skipping bundle regen (node nicht verfügbar) — verwende committed _bundle.js"
 fi
 
 # 2. Compile JSX → JS with esbuild

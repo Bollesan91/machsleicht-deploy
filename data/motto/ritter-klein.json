@@ -231,7 +231,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "1 großer Plüsch-Drache (50 cm) oder Drachen-Bild auf Pappe, 6 weiche Wurfsäckchen, optional eine 'Burg-Mauer' aus Stuhllehnen",
-          "safetyRule": "Wurfsäckchen mit Reiskörnchen oder Bohnen (Stoff-Säckchen, keine harten Bälle). Wurfdistanz max 2 m. Niemand steht neben dem Drachen.",
+          "safetyRule": "Wurfsäckchen mit Reiskörnchen oder Bohnen (Stoff-Säckchen, keine harten Bälle). Wurfdistanz max 2 m. Niemand steht neben dem Drachen. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel.",
           "steps": [
             {
               "n": 1,
@@ -470,7 +470,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "8 Pool-Nudel-Schwerter (40 cm), 2-3 Sofa-Kissen oder Polster als Übungsziele, optional Schwert-Anleitungsfilm aus Pappe",
-          "safetyRule": "REGEL #1: Schwert trifft nur Polster, NIE Körper. Eltern-Helfer beobachten. Max 3 Min pro Kind, dann nächster.",
+          "safetyRule": "REGEL #1: Schwert trifft nur Polster, NIE Körper. Eltern-Helfer beobachten. Max 3 Min pro Kind, dann nächster. Fuer 3-Jaehrige: vereinfachte Variante mit Erwachsenen-Hilfe (oder optional auslassen) — ab4-Spiel.",
           "steps": [
             {
               "n": 1,
@@ -510,7 +510,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "1 großer Plüsch-Drache (50 cm) oder Drachen-Bild auf Pappe, 6 weiche Wurfsäckchen, optional eine 'Burg-Mauer' aus Stuhllehnen",
-          "safetyRule": "Wurfsäckchen mit Reiskörnchen oder Bohnen (Stoff-Säckchen, keine harten Bälle). Wurfdistanz max 2 m. Niemand steht neben dem Drachen.",
+          "safetyRule": "Wurfsäckchen mit Reiskörnchen oder Bohnen (Stoff-Säckchen, keine harten Bälle). Wurfdistanz max 2 m. Niemand steht neben dem Drachen. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel.",
           "steps": [
             {
               "n": 1,
@@ -763,7 +763,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "10 Pool-Nudel-Schwerter, 3 Polster-Ziele, Burg-Wache-Anleitung (Pappkarton)",
-          "safetyRule": "Schwert trifft NUR Polster. Bei reinen 3-Jährigen weglassen oder stark vereinfachen.",
+          "safetyRule": "Schwert trifft NUR Polster. Bei reinen 3-Jährigen weglassen oder stark vereinfachen. Ritterschlag NUR symbolisch: Schwert sanft flach auf die Schulter legen (nicht schwingen, nie Hals/Kopf). Erwachsene fuehren den Ritterschlag aus.",
           "steps": [
             {
               "n": 1,
@@ -803,7 +803,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "1 großer Plüsch-Drache (50 cm) oder Drachen-Bild auf Pappe, 6 weiche Wurfsäckchen, optional eine 'Burg-Mauer' aus Stuhllehnen",
-          "safetyRule": "Wurfsäckchen mit Reiskörnchen oder Bohnen (Stoff-Säckchen, keine harten Bälle). Wurfdistanz max 2 m. Niemand steht neben dem Drachen.",
+          "safetyRule": "Wurfsäckchen mit Reiskörnchen oder Bohnen (Stoff-Säckchen, keine harten Bälle). Wurfdistanz max 2 m. Niemand steht neben dem Drachen. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel.",
           "steps": [
             {
               "n": 1,

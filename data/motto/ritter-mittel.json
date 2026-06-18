@@ -391,7 +391,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "6 Pool-Nudel-Schwerter (50 cm, weich), 2 Strohballen (oder Pappkartons) als Übungsziele, 5 Slalom-Markierungen, Stoppuhr",
-          "safetyRule": "Schwerter nur am Strohballen / Kissen-Hindernis — nicht aufs Kind. Schwert-Höhe max Schulter-Höhe.",
+          "safetyRule": "Schwerter nur am Strohballen / Kissen-Hindernis — nicht aufs Kind. Schwert-Höhe max Schulter-Höhe. Boden weich/rutschfest halten; reihum, nie zwei gleichzeitig auf der Strecke.",
           "steps": [
             {
               "n": 1,
@@ -760,7 +760,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "6 Pool-Nudel-Schwerter (50 cm, weich), 2 Strohballen (oder Pappkartons) als Übungsziele, 5 Slalom-Markierungen, Stoppuhr",
-          "safetyRule": "Schwerter nur am Strohballen / Kissen-Hindernis — nicht aufs Kind. Schwert-Höhe max Schulter-Höhe.",
+          "safetyRule": "Schwerter nur am Strohballen / Kissen-Hindernis — nicht aufs Kind. Schwert-Höhe max Schulter-Höhe. Boden weich/rutschfest halten; reihum, nie zwei gleichzeitig auf der Strecke.",
           "steps": [
             {
               "n": 1,
@@ -1214,7 +1214,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "6 Pool-Nudel-Schwerter (50 cm, weich), 2 Strohballen (oder Pappkartons) als Übungsziele, 5 Slalom-Markierungen, Stoppuhr",
-          "safetyRule": "Schwerter nur am Strohballen / Kissen-Hindernis — nicht aufs Kind. Schwert-Höhe max Schulter-Höhe.",
+          "safetyRule": "Schwerter nur am Strohballen / Kissen-Hindernis — nicht aufs Kind. Schwert-Höhe max Schulter-Höhe. Boden weich/rutschfest halten; reihum, nie zwei gleichzeitig auf der Strecke.",
           "steps": [
             {
               "n": 1,
@@ -1249,7 +1249,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "2-3 Spielzeug-Bögen mit Saugnapf-Pfeilen (KEINE echten Pfeile), Zielscheibe (Pappkarton mit Ringen), Schutzbrille pro Kind",
-          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand zur Zielscheibe.",
+          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand zur Zielscheibe. Bogen NIE auf Personen richten — nur zur Zielscheibe.",
           "steps": [
             {
               "n": 1,

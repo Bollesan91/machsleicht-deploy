@@ -143,6 +143,46 @@
           "outdoorTip": "Auf der Terrasse.",
           "whyItWorksTitle": "Warum das zieht",
           "whyItWorks": "Tanzen + Einfrieren ist sofort verständlich, sorgt für Lacher und gibt schüchternen Kindern (lustige Pose) genauso eine Bühne wie den Tanzbegeisterten."
+        },
+        {
+          "name": "🗝️ Schloss-Schatzsuche",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 35,
+          "minAge": 5,
+          "loudness": "mittel",
+          "effort": "mittel",
+          "material": "5 Hinweiskarten (Rätsel/Bilder), eine Schatztruhe mit königlichem Schatz (Schmuck/Mitgebsel)",
+          "prepText": "5 Verstecke im 'Schloss' festlegen, Hinweise verketten. Letzter Hinweis führt zur Truhe.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "'Irgendwo im Schloss ist der königliche Schatz versteckt — folgt den Hinweisen!'"
+            },
+            {
+              "n": 2,
+              "name": "Hinweise lösen",
+              "content": "Als königliche Truppe von Versteck zu Versteck, jedes Kind findet mal den nächsten Hinweis."
+            },
+            {
+              "n": 3,
+              "name": "Mini-Aufgabe",
+              "content": "An einer Station eine kleine Aufgabe (Reim vervollständigen, Farben zählen) lösen."
+            },
+            {
+              "n": 4,
+              "name": "Schatz teilen",
+              "content": "Letztes Versteck: die Schatztruhe für alle, Beute gerecht teilen."
+            }
+          ],
+          "safetyRule": "Sichere, einsehbare Verstecke. Draußen Grenzen klar, Begleitung.",
+          "ageAdjust6": "Bild-Hinweise, 3–4 Stationen.",
+          "ageAdjust8": "Echte Mini-Rätsel, 5–6 Stationen.",
+          "indoorTip": "Über mehrere Zimmer ('Thronsaal', 'Turm', 'Verlies').",
+          "outdoorTip": "Garten als 'Schlossgarten'.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Eine Schatzsuche mit Ziel gibt der Party einen roten Faden — die Kinder lösen als Team und das königliche Schatz-Finale ist der emotionale Höhepunkt."
         }
       ],
       "food": "Rosa Obstspieße (Erdbeeren, Melone), Krönchen-Kekse, 'Zauber-Trank' (rosa Saftschorle mit Himbeere), Marshmallows als 'Wolken'. Bunt und zauberhaft.",
@@ -268,7 +308,7 @@
               "content": "Am Ziel gekrönt — alle schaffen es."
             }
           ],
-          "safetyRule": "Abstand halten, Hindernisse stabil, kleine Teile nicht in den Mund.",
+          "safetyRule": "Abstand halten, Hindernisse stabil, kleine Teile nicht in den Mund. Boden weich/rutschfest, reihum (nie zwei gleichzeitig).",
           "ageAdjust6": "Größerer Pompon.",
           "ageAdjust8": "Auf Zeit.",
           "indoorTip": "Flur.",
@@ -582,7 +622,7 @@
               "content": "Alle werden gekrönt."
             }
           ],
-          "safetyRule": "Abstand, stabile Hindernisse.",
+          "safetyRule": "Abstand, stabile Hindernisse. Boden weich/rutschfest, reihum (nie zwei gleichzeitig).",
           "ageAdjust6": "Größerer Pompon.",
           "ageAdjust8": "Auf Zeit.",
           "indoorTip": "Flur.",

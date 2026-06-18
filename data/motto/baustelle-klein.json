@@ -226,7 +226,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "Große weiche Bauklötze (Schaumstoff oder Papp-Klötze, mindestens 15 cm) — keine kleinen Lego-Klötze!",
-          "safetyRule": "Klötze gross genug, dass sie nicht verschluckt werden können. Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
+          "safetyRule": "Klötze mind. 5 cm (Klopapierrollen-Test: passt nicht durch eine Klopapierrolle = verschluck-sicher). Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
           "steps": [
             {
               "n": 1,
@@ -261,7 +261,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "10-15 dicke Plastik-Schrauben (nicht verschluckbar, mind. 5 cm), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
-          "safetyRule": "Schrauben groß genug. Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
+          "safetyRule": "Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
           "steps": [
             {
               "n": 1,
@@ -470,7 +470,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "Große weiche Bauklötze (Schaumstoff oder Papp-Klötze, mindestens 15 cm) — keine kleinen Lego-Klötze!",
-          "safetyRule": "Klötze gross genug, dass sie nicht verschluckt werden können. Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
+          "safetyRule": "Klötze mind. 5 cm (Klopapierrollen-Test: passt nicht durch eine Klopapierrolle = verschluck-sicher). Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
           "steps": [
             {
               "n": 1,
@@ -545,7 +545,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "10-15 dicke Plastik-Schrauben (nicht verschluckbar, mind. 5 cm), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
-          "safetyRule": "Schrauben groß genug. Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
+          "safetyRule": "Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
           "steps": [
             {
               "n": 1,
@@ -803,7 +803,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "Große weiche Bauklötze (Schaumstoff oder Papp-Klötze, mindestens 15 cm) — keine kleinen Lego-Klötze!",
-          "safetyRule": "Klötze gross genug, dass sie nicht verschluckt werden können. Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
+          "safetyRule": "Klötze mind. 5 cm (Klopapierrollen-Test: passt nicht durch eine Klopapierrolle = verschluck-sicher). Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
           "steps": [
             {
               "n": 1,
@@ -878,7 +878,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "10-15 dicke Plastik-Schrauben (nicht verschluckbar, mind. 5 cm), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
-          "safetyRule": "Schrauben groß genug. Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
+          "safetyRule": "Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
           "steps": [
             {
               "n": 1,
@@ -953,7 +953,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "2-3 Mini-Schubkarren (Plastik, Kinder-Größe), 10 Plastik-Bauklötze als Ladung, 2 Markierungen für Start/Ziel, Stoppuhr",
-          "safetyRule": "Schubkarren leicht, Klötze Schaumstoff/Papp. Strecke 5-8 m. Bei 3-Jährigen: Erwachsene schieben mit.",
+          "safetyRule": "Schubkarren leicht, Klötze Schaumstoff/Papp. Strecke 5-8 m. Bei 3-Jährigen: Erwachsene schieben mit. Boden weich/rutschfest halten; reihum, nie zwei gleichzeitig auf der Strecke.",
           "steps": [
             {
               "n": 1,
