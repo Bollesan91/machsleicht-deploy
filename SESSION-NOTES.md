@@ -1,3 +1,36 @@
+# Session-Notiz — 18.06.2026 (P1-37 Elite-Daten-Migration: alle 15 Mottos im Planer live + Kosten/isQuest-UI — DEPLOYED main 075953c)
+
+## 🏁 Kernergebnis: Der Planer zeigte live nur 8 Mottos mit veralteten Daten — jetzt alle 15 auf data/motto-Stand
+**Großer Befund:** `js/kindergeburtstag.js` (`ELITE_MOTTO_DATA`) las nur **8 Mottos** und war breit veraltet — selbst das angeblich (#36) deployte piraten lief mit alter, dünnerer Version (piraten-mittel 2/5/2 statt 4/6/6 Spiele, generische Schatzsuche statt Flaschenpost). Die ganze Elite-/Review-Kampagne (#33–#35, #34) war **nie im Runtime-Bundle**. `data/motto/` (alle 15 Mottos) war nicht ans Runtime verdrahtet; das offizielle `_src/build.sh` backte aus einer 3 Wochen alten Kopie (`_src/elite-motto-data/*.json`, noch alter Tag `machsleicht-21`) und hätte beim Lauf den Affiliate-Fix regrediert.
+
+## 🔧 Neue Build-Pipeline (single source of truth = data/motto/)
+- **`_src/gen-elite-bundle.cjs`** (NEU): liest `data/motto/<motto>-<klein|mittel|gross>.json` (45 Dateien) → schreibt `_src/elite-motto-data/_bundle.js` = `var ELITE_MOTTO_DATA = {...}` **+ die Accessoren `getEliteData`/`hasEliteData`/`listEliteSlots`** (die lebten vorher nur im python-Bundle!). Strippt 12 vom Planer ungenutzte Top-Level-Keys (`_meta`/`faq`/`cakeRecipe`/`invitationTemplate`/`parentTips`/`introParagraph`/`metaDescription`/`bonus*`). WARN bei Fremd-`category`.
+- **`bash _src/build.sh`**: Schritt 1 ruft jetzt den node-Generator (statt stale python); konkateniert `kindergeburtstag-data.js` + `_bundle.js` + compiled JSX → `js/kindergeburtstag.js`. **`_generate_bundle.py` deprecated (exit 2)** gegen Regression.
+- Bundle = data/motto Pass-Through (minus Strip-Keys), 45 Slots, ~3.8 MB. Regenerieren: `node _src/gen-elite-bundle.cjs && bash _src/build.sh`.
+- **Folge-Optimierung offen:** Bundle 3.8 MB → Lazy-Loading pro Motto (<1 MB) ist eigener Refactor (Follow-up).
+
+## 🎨 Zwei neue Planer-Features (in _src/kindergeburtstag.jsx)
+- **Kosten-Badge „ab X € + optional Y €"** (EliteShoppingList): live aus shoppingList berechnet (X = Σ pflicht, Y = Σ sinnvoll+habIchVielleicht). `estimatedCostEur` war totes/ungenutztes Feld, raus. **`CAT_MAP`** mappt Fremd-Kategorien (deko/mitgebsel/aktivitaet/optional/wow) auf die 3 kanonischen Gruppen → sichtbar + gezählt. Sonderfall pflichtSum=0 → „ca. {total} € · kein Pflicht-Material".
+- **`variant.isQuest`** (23 Varianten, Daten-Flag) + Banner „Diese Stufe ist als große Quest gebaut — … (Stationen- oder Rätsel-Mission)": erklärt wow<std-Stufen, deren wenige Spiele eine lange Quest sind. Kriterium: Quest-Spiel im Namen + ≤3 Spiele (+ manuelle Ergänzungen). **Kein maschineller Floor-Validator** in validate-all.sh — isQuest steuert nur das Banner.
+
+## 🛡️ Qualitäts-Gate (Helfer-V4.1, 3 Runden + Test-Fleet + Post-Deploy) — fing 3 echte von-mir-Regressionen
+Abnahme-Review → Diff-Re-Check → Schluss-Re-Review → **10-Agenten-Test-Fleet** (read-only, Bolle hob die Subagent-Sperre explizit für TESTING auf) → **Post-Deploy-Re-Review**. Gefangen + behoben:
+1. **getEliteData verschwunden** — mein Generator ließ die Accessoren weg, build.sh-Konkatenation verlor sie → Planer las gar keine Elite-Daten (stiller Totalausfall). Fix: Accessoren ins _bundle.js.
+2. **Seeungeheuer-Safety nur 1/3** — mein Batch-Skript brach nach dem ersten Treffer ab; Wurfspiel in std+wow ohne Regel. Auf alle 3 propagiert (+ Dosenränder/Aufbau-Zone).
+3. **Kosten-Untertreibung (war live in 08f1dc4!)** — meine „Konsistenz"-Korrektur schloss 98 Fremd-Kategorie-Items aus der Summe aus (Badge zu niedrig, inkl. Pony 120 €/Baustelle 80 €). Fix: CAT_MAP (s.o.) → Re-Deploy 075953c.
+
+## 📋 Bolle-Aktionen offen
+- **⚠️ Cloudflare „Purge Everything"** (HTML cacht 2 h) — Pflicht nach Deploy.
+- **Live-Sichtprüfung** des Planers (Render-Smoke lokal nicht ansteuerbar — SPA-Mount `#planer`): neues Motto + Alter wählen → Kosten-Zeile + bei Quest-Stufe „große Quest"-Hinweis.
+- GSC: **nicht** nötig (sitemap unverändert).
+- **Follow-up #34/#37:** 98 Items mit Fremd-`category` kanonisch normalisieren (Generator warnt).
+- `cfut_`/`re_`-Keys aus der Session rotieren.
+
+## Commits
+Migration `938c551` → safari/feen/Strip `a983be6` → Kosten/isQuest-UI `3480d0e` → Regression-Fixes `aba819d` → Test-Fleet-Fixes `fe229a3` → **Deploy `08f1dc4`** → Post-Deploy-Re-Review-Fixes `1f77a63` → **Re-Deploy `075953c`**. Lektion L7 in `_dev/LEKTIONEN.md`.
+
+---
+
 # Session-Notiz — 11.06.2026, Teil 2 (Bolles „1.": eigene Spiel-Mechaniken — Pilot Feuerwehr-Rubbeln + Randomisierung, auf draft)
 
 ## 🔥 Pilot Feuerwehr: Lösch-Rubbel-Mechanik (statt 3x-Tippen-Fiktionsbruch)

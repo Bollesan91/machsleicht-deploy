@@ -7146,7 +7146,7 @@ var ELITE_MOTTO_DATA = {
             "url": null,
             "priceEur": 80,
             "hasAffiliate": false,
-            "category": "wow",
+            "category": "habIchVielleicht",
             "categoryReasoning": "Wow-Highlight."
           }
         ],
@@ -34391,7 +34391,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=meerjungfrau+deko+set+kindergeburtstag&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
-            "category": "optional",
+            "category": "habIchVielleicht",
             "categoryReasoning": "Stimmung, aber blaues Tuch + Muscheln tun es auch."
           },
           {
@@ -34616,7 +34616,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=meerjungfrau+deko+set+kindergeburtstag&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
-            "category": "optional",
+            "category": "habIchVielleicht",
             "categoryReasoning": "Stimmung, aber blaues Tuch + Muscheln tun es auch."
           },
           {
@@ -34634,7 +34634,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=uv+lampe+geheimschrift+stift+set&tag=machsleicht21-21",
             "priceEur": 14,
             "hasAffiliate": true,
-            "category": "optional",
+            "category": "habIchVielleicht",
             "categoryReasoning": "Hebt die Tiefsee-Quest in Wow — Staun-Effekt, aber verzichtbar."
           },
           {
@@ -34643,7 +34643,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=schatztruhe+kinder+holz&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
-            "category": "optional",
+            "category": "habIchVielleicht",
             "categoryReasoning": "Quest-Finale; Schuhkarton mit Folie tut es genauso."
           },
           {
@@ -37102,7 +37102,7 @@ var ELITE_MOTTO_DATA = {
             "url": null,
             "priceEur": 5,
             "hasAffiliate": false,
-            "category": "optional",
+            "category": "habIchVielleicht",
             "categoryReasoning": "Für Parcours."
           }
         ],
@@ -37430,7 +37430,7 @@ var ELITE_MOTTO_DATA = {
             "url": null,
             "priceEur": 8,
             "hasAffiliate": false,
-            "category": "optional",
+            "category": "habIchVielleicht",
             "categoryReasoning": "Wow-Parcours."
           },
           {
@@ -37439,7 +37439,7 @@ var ELITE_MOTTO_DATA = {
             "url": null,
             "priceEur": 6,
             "hasAffiliate": false,
-            "category": "optional",
+            "category": "habIchVielleicht",
             "categoryReasoning": "Mitgebsel-Detail."
           }
         ],
@@ -41131,7 +41131,7 @@ var ELITE_MOTTO_DATA = {
             "url": null,
             "priceEur": 120,
             "hasAffiliate": false,
-            "category": "wow",
+            "category": "habIchVielleicht",
             "categoryReasoning": "Wow-Highlight."
           }
         ],
@@ -45676,7 +45676,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=glitzer+sticker+gross+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Material fürs Sterne-Basteln, bewusst große Sticker statt loser Kleinteile."
           },
           {
@@ -45685,7 +45685,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=luftballons+rosa+girlande&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Festliche Grundstimmung, günstig."
           }
         ],
@@ -45904,7 +45904,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=zauberstab+kinder+set&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Fürs Zauber-Parcours-Spiel + beliebtes Mitgebsel zum Rollenspiel."
           },
           {
@@ -45913,7 +45913,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=glitzer+sticker+gross+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Sterne-Basteln, verschluckungssicher."
           },
           {
@@ -45922,7 +45922,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=krönchen+mitgebsel+kinder&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Für die Krönchen-Schatzsuche + Schatzbeutel."
           },
           {
@@ -45931,7 +45931,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=prinzessin+party+deko+set&tag=machsleicht21-21",
             "priceEur": 11,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Festliche Kulisse + Foto-Hintergrund."
           }
         ],
@@ -46155,7 +46155,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=zauberstab+kinder+set&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Parcours + Rollenspiel-Mitgebsel."
           },
           {
@@ -46164,7 +46164,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=glitzer+tattoo+kinder+haarschmuck&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Sanfte Verwandlungs-Ecke — der magische Höhepunkt für die Kleinen."
           },
           {
@@ -46173,7 +46173,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=krönchen+mitgebsel+kinder&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Drachen-Krönchen-Suche + Schatzbeutel."
           },
           {
@@ -46182,7 +46182,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Für die Krönungs-Zeremonie zum Abschluss."
           },
           {
@@ -46191,7 +46191,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=prinzessin+ballon+girlande+deko&tag=machsleicht21-21",
             "priceEur": 14,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Wow-Kulisse + Foto-Hintergrund."
           }
         ],
@@ -46438,7 +46438,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=luftballons+rosa+gold&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Trägt die königliche Deko, günstig und wirkungsvoll."
           },
           {
@@ -46447,7 +46447,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=kinder+schmuck+ringe+mitgebsel&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Kleines königliches Highlight fürs Ankommen und den Schatz."
           },
           {
@@ -46456,7 +46456,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=pompons+bunt+basteln&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Material fürs Balance-Spiel, Löffel meist im Haushalt."
           }
         ],
@@ -46685,7 +46685,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=bastelset+krone+glitzersteine+kinder&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Material für die Bastelstation + personalisiertes Mitgebsel."
           },
           {
@@ -46694,7 +46694,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=zauberstab+basteln+kinder&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Zweites Bastel-/Spielobjekt, beliebt für Rollenspiel."
           },
           {
@@ -46703,7 +46703,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=prinzessin+party+deko+set&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Bündelt Ballons, Schloss-Kulisse und Tischdeko."
           },
           {
@@ -46712,7 +46712,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=kinder+schmuck+mitgebsel+set&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Schatztruhe + Schatzbeutel füllen."
           },
           {
@@ -46721,7 +46721,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=pompons+bunt+basteln&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Edelsteine fürs Balance-Spiel."
           },
           {
@@ -46730,7 +46730,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=becher+strohhalme+rosa+gold&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Buffet im königlichen Look + Drachen-Turm-Becher."
           }
         ],
@@ -47034,7 +47034,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=bastelset+krone+zauberstab+kinder&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Material für beide Bastelobjekte + Mitgebsel."
           },
           {
@@ -47043,7 +47043,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=kinderschminke+glitzer+set&tag=machsleicht21-21",
             "priceEur": 11,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Verwandlungs-Station — der emotionale Höhepunkt des Motivs."
           },
           {
@@ -47052,7 +47052,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Krönungs-Zeremonie-Geschenk."
           },
           {
@@ -47061,7 +47061,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=prinzessin+ballon+girlande+deko&tag=machsleicht21-21",
             "priceEur": 15,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Wow-Kulisse, Foto-Hintergrund."
           },
           {
@@ -47070,7 +47070,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=kinder+schmuck+mitgebsel+set&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Schatztruhe + Beutel."
           },
           {
@@ -47079,7 +47079,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=becher+strohhalme+rosa+gold&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Buffet-Look + Drachenturm."
           }
         ],
@@ -47301,7 +47301,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=detektiv+abzeichen+kinder+set&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Gibt jedem Kind eine Rolle (Ernstgenommen-Faktor) + Mitgebsel."
           },
           {
@@ -47310,7 +47310,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=deko+set+schwarz+gold+party&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Eleganter, 'erwachsener' Look statt Kleinkind-Rosa."
           }
         ],
@@ -47461,7 +47461,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=uv+lampe+unsichtbarer+stift+escape&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "UV-Geheimschrift ist der Wow-Effekt der Escape-Stationen."
           },
           {
@@ -47479,7 +47479,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=detektiv+abzeichen+kinder+set&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Rollen-Identität + Mitgebsel."
           },
           {
@@ -47488,7 +47488,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=wurfringe+spiel+kinder&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Material für die royalen Wettkampf-Disziplinen."
           },
           {
@@ -47497,7 +47497,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Ehrung des Gewinner-Teams."
           },
           {
@@ -47506,7 +47506,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=deko+schwarz+gold+party+set&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Eleganter Mystery-Look + Tatort-Stimmung."
           }
         ],
@@ -47737,7 +47737,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=uv+lampe+unsichtbarer+stift+escape&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "UV-Geheimschrift-Effekt."
           },
           {
@@ -47746,7 +47746,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=verkleidung+accessoires+kinder+set&tag=machsleicht21-21",
             "priceEur": 14,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Für das royale Fotoshooting + Charakter-Rollen."
           },
           {
@@ -47764,7 +47764,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=detektiv+abzeichen+kinder+set&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Rollen-Identität + Mitgebsel."
           },
           {
@@ -47773,7 +47773,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=wurfringe+spiel+kinder&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Royale Wettkampf-Disziplinen."
           },
           {
@@ -47782,7 +47782,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Ehrung."
           },
           {
@@ -47791,7 +47791,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=deko+schwarz+gold+party+set&tag=machsleicht21-21",
             "priceEur": 15,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Volle Mystery-Kulisse inkl. Ermittlungs-Pinnwand."
           }
         ],
@@ -48510,7 +48510,7 @@ var ELITE_MOTTO_DATA = {
             "url": null,
             "priceEur": 0,
             "hasAffiliate": false,
-            "category": "optional",
+            "category": "habIchVielleicht",
             "categoryReasoning": "Aus dem Haushalt."
           }
         ],
@@ -48808,7 +48808,7 @@ var ELITE_MOTTO_DATA = {
             "url": null,
             "priceEur": 12,
             "hasAffiliate": false,
-            "category": "optional",
+            "category": "habIchVielleicht",
             "categoryReasoning": "Wow-Verkleidung."
           },
           {
@@ -48817,7 +48817,7 @@ var ELITE_MOTTO_DATA = {
             "url": null,
             "priceEur": 6,
             "hasAffiliate": false,
-            "category": "optional",
+            "category": "habIchVielleicht",
             "categoryReasoning": "Mitgebsel-Detail."
           }
         ],
@@ -57401,7 +57401,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=tonpapier+bunt+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Comic-Sterne als einfache, günstige Wanddeko, auch für Logos auf der Hand."
           },
           {
@@ -57410,7 +57410,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=teppichfliesen+kinder&tag=machsleicht21-21",
             "priceEur": 0,
             "hasAffiliate": false,
-            "category": "aktivitaet",
+            "category": "habIchVielleicht",
             "categoryReasoning": "Meist im Haushalt — die 'Wolken' fürs Hüpfspiel."
           },
           {
@@ -57419,7 +57419,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=superhelden+sticker+kinder&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Kleiner Beutel-Inhalt fürs Verabschieden."
           }
         ],
@@ -57589,7 +57589,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=bastelset+sterne+kinder&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Material für die ruhige Bastelstation + Mitgebsel."
           },
           {
@@ -57598,7 +57598,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=luftballons+bunt+50&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Deko + Spielmaterial."
           },
           {
@@ -57607,7 +57607,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=superhelden+servietten+tischdecke&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Setzt das Motto am Tisch, praktisch fürs Buffet."
           },
           {
@@ -57616,7 +57616,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=mitgebsel+kleinkind+superhelden&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Schatzkiste + Beutel — bei 3–5 bewusst ohne Verschluckungs-Risiko."
           },
           {
@@ -57625,7 +57625,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=wachsmalstifte+dick+kleinkind&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Beschäftigung beim Ankommen, gut greifbar für kleine Hände."
           }
         ],
@@ -57870,7 +57870,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=bastelset+sterne+kinder&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Bastelstation + Mitgebsel."
           },
           {
@@ -57879,7 +57879,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Ehrung am Ende, schönes Mitgebsel."
           },
           {
@@ -57888,7 +57888,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=ballon+girlande+bunt&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Wow-Deko mit wenig Aufwand."
           },
           {
@@ -57897,7 +57897,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=superhelden+party+set&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Komplettes Tisch-Setting im Motto."
           },
           {
@@ -57906,7 +57906,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=softball+set+kinder&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Material für die Stationen, sicher für Kleine."
           },
           {
@@ -57915,7 +57915,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=mitgebsel+kleinkind+superhelden&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Schatzbeutel-Füllung, verschluckungssicher."
           }
         ],
@@ -58172,7 +58172,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=luftballons+rot+blau+gelb&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Heldenfarben tragen die ganze Deko, günstig und wirkungsvoll."
           },
           {
@@ -58181,7 +58181,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=superhelden+party+servietten+comic&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "POW/BAM-Optik setzt sofort das Motto, auch als Tischdeko."
           },
           {
@@ -58190,7 +58190,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=superhelden+tattoos+sticker+kinder&tag=machsleicht21-21",
             "priceEur": 4,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Kleines, billiges Highlight fürs Ankommen und den Schatzbeutel."
           }
         ],
@@ -58414,7 +58414,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=bastelset+button+pappe+kinder&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Material für die ruhige Bastelstation + personalisiertes Mitgebsel."
           },
           {
@@ -58423,7 +58423,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=luftballons+rot+blau+gelb&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Heldenfarben als Deko-Basis, auch als Girlande."
           },
           {
@@ -58432,7 +58432,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=superhelden+party+deko+set&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Bündelt POW/BAM-Optik für Tisch und Wand, spart Einzelkauf."
           },
           {
@@ -58441,7 +58441,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=superhelden+mitgebsel+kinder&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Füllung für Schatzbeutel und Schatzsuche-Tresor."
           },
           {
@@ -58450,7 +58450,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=wolle+set+bunt&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Material für den Showdown-Laserparcours, mehrfach verwendbar."
           },
           {
@@ -58459,7 +58459,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=superhelden+becher+strohhalme&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Komplettiert die Tischdeko, praktisch fürs Buffet."
           }
         ],
@@ -58688,7 +58688,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=bastelset+button+pappe+kinder&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Bastelstation + Stempel-Ausweis für die Kraft-Test-Stationen."
           },
           {
@@ -58697,7 +58697,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Ehrung beim Finale — emotionaler Abschluss, hochwertiges Mitgebsel."
           },
           {
@@ -58706,7 +58706,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=ballon+girlande+rot+blau+gelb&tag=machsleicht21-21",
             "priceEur": 13,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Wow-Deko-Effekt mit wenig Aufwand, der Foto-Hintergrund."
           },
           {
@@ -58715,7 +58715,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=superhelden+party+deko+set&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Servietten, Sprechblasen, Tischdecke gebündelt."
           },
           {
@@ -58724,7 +58724,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=absperrband+kinder+party&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Inszeniert den Showdown-Bereich als Schurken-Versteck."
           },
           {
@@ -58733,7 +58733,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=superhelden+mitgebsel+kinder&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Schatzbeutel + Schatzsuche-Tresor füllen."
           },
           {
@@ -58742,7 +58742,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=superhelden+becher+strohhalme&tag=machsleicht21-21",
             "priceEur": 6,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Buffet im Heldenlook."
           }
         ],
@@ -58991,7 +58991,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=mini+taschenlampe+set+kinder&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Spannendes Mission-Tool (Geheimschrift suchen) + Mitgebsel."
           },
           {
@@ -59000,7 +59000,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=absperrband+party&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Schafft die Agenten-Hauptquartier-Atmosphäre günstig."
           },
           {
@@ -59009,7 +59009,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=softball+set&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Zielwurf-Station, sicher und wiederverwendbar."
           },
           {
@@ -59018,7 +59018,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=tonkarton+a4+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Material für Geheimbotschaften, Ausweise, Steckbrief — der Kern der Mission, fast kostenlos."
           }
         ],
@@ -59199,7 +59199,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=mini+taschenlampe+set+kinder&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Für Spiegelschrift/Geheimschrift + Mitgebsel."
           },
           {
@@ -59208,7 +59208,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=zahlenschloss+box&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Herzstück der Escape-Stationen — der Tresor, der sich beim richtigen Code öffnet."
           },
           {
@@ -59217,7 +59217,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=wolle+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Material für den Laser-Tresor, mehrfach nutzbar."
           },
           {
@@ -59226,7 +59226,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=softball+set&tag=machsleicht21-21",
             "priceEur": 7,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Parkour-Finale."
           },
           {
@@ -59235,7 +59235,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=absperrband+party+set&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Agenten-HQ-Atmosphäre."
           },
           {
@@ -59244,7 +59244,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=tonkarton+a4+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Rätsel-Material, fast kostenlos."
           }
         ],
@@ -59475,7 +59475,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=mini+taschenlampe+set+kinder&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Geheimschrift + Mitgebsel."
           },
           {
@@ -59484,7 +59484,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=zahlenschloss+box&tag=machsleicht21-21",
             "priceEur": 12,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Escape-Tresor."
           },
           {
@@ -59493,7 +59493,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=medaillen+kinder+set&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
-            "category": "mitgebsel",
+            "category": "sinnvoll",
             "categoryReasoning": "Ehrung beim Finale."
           },
           {
@@ -59502,7 +59502,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=stapelbecher+speed+stacks&tag=machsleicht21-21",
             "priceEur": 9,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Geschicklichkeits-Challenge, danach Wiederverwendung."
           },
           {
@@ -59511,7 +59511,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=schwarzlicht+lampe+uv&tag=machsleicht21-21",
             "priceEur": 13,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Macht Geheimschrift sichtbar + Wow-Stimmung beim Showdown."
           },
           {
@@ -59520,7 +59520,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=absperrband+party+set&tag=machsleicht21-21",
             "priceEur": 8,
             "hasAffiliate": true,
-            "category": "deko",
+            "category": "sinnvoll",
             "categoryReasoning": "Agenten-HQ."
           },
           {
@@ -59529,7 +59529,7 @@ var ELITE_MOTTO_DATA = {
             "url": "https://www.amazon.de/s?k=tonkarton+a4+set&tag=machsleicht21-21",
             "priceEur": 5,
             "hasAffiliate": true,
-            "category": "aktivitaet",
+            "category": "sinnvoll",
             "categoryReasoning": "Codes, Steckbriefe, Ausweise."
           }
         ],
@@ -65016,14 +65016,14 @@ function EliteShoppingList({ variants, shoppingMode, mottoColor }) {
   const GROUP_META = {
     pflicht: { emoji: "\u2705", label: "Pflicht \u2014 ohne l\xE4uft die Party nicht", color: "#C62828" },
     sinnvoll: { emoji: "\u{1F4A1}", label: "Sinnvoll \u2014 macht's deutlich besser", color: "#1976D2" },
-    habIchVielleicht: { emoji: "\u{1F3E0}", label: "Hab ich vielleicht schon \u2014 DIY oder im Haushalt", color: "#558B2F" }
+    habIchVielleicht: { emoji: "\u{1F3E0}", label: "Optional \u2014 weglassbar, manches hast du eh schon", color: "#558B2F" }
   };
   const total = variant.shoppingList.reduce((acc, it) => acc + (typeof it.priceEur === "number" ? it.priceEur : 0), 0);
   const sumOf = (arr) => arr.reduce((acc, it) => acc + (typeof it.priceEur === "number" ? it.priceEur : 0), 0);
   const pflichtSum = sumOf(groups.pflicht);
   const optionalSum = sumOf(groups.sinnvoll) + sumOf(groups.habIchVielleicht);
   const renderedTotal = pflichtSum + optionalSum;
-  return /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24, background: "#fff", border: "1px solid var(--l)", borderRadius: 14, padding: "18px 18px 14px" } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, fontWeight: 700, letterSpacing: 1.5, color: mottoColor || "var(--a)", textTransform: "uppercase", marginBottom: 6 } }, "\u{1F6D2} Einkaufsliste"), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, marginBottom: 6, color: "var(--d)" } }, variant.label || `${variant.id} \u2014 ab ${pflichtSum}\u20AC`), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 14, fontWeight: 700, color: "var(--d)", marginBottom: 10 } }, pflichtSum > 0 ? /* @__PURE__ */ React.createElement(React.Fragment, null, "\u{1F4B0} ab ", pflichtSum, " \u20AC", optionalSum > 0 ? /* @__PURE__ */ React.createElement("span", { style: { fontWeight: 600, color: "var(--m)" } }, " + optional ", optionalSum, " \u20AC") : null) : /* @__PURE__ */ React.createElement(React.Fragment, null, "\u{1F4B0} ca. ", renderedTotal, " \u20AC", /* @__PURE__ */ React.createElement("span", { style: { fontWeight: 600, color: "var(--m)" } }, " \xB7 kein Pflicht-Material, alles flexibel"))), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 13, color: "var(--m)", marginBottom: 14, lineHeight: 1.5 } }, 'Drei Gruppen statt einer langen Liste. Fang oben an, h\xF6r unten auf \u2014 alles unter \u201EHab ich vielleicht schon" kannst du wahrscheinlich \xFCberspringen.'), ["pflicht", "sinnvoll", "habIchVielleicht"].map((catKey) => {
+  return /* @__PURE__ */ React.createElement("section", { className: "fu", style: { marginBottom: 24, background: "#fff", border: "1px solid var(--l)", borderRadius: 14, padding: "18px 18px 14px" } }, /* @__PURE__ */ React.createElement("p", { style: { fontSize: 11, fontWeight: 700, letterSpacing: 1.5, color: mottoColor || "var(--a)", textTransform: "uppercase", marginBottom: 6 } }, "\u{1F6D2} Einkaufsliste"), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--fd)", fontSize: 18, fontWeight: 800, marginBottom: 6, color: "var(--d)" } }, variant.label || `${variant.id} \u2014 ab ${pflichtSum}\u20AC`), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 14, fontWeight: 700, color: "var(--d)", marginBottom: 10 } }, pflichtSum > 0 ? /* @__PURE__ */ React.createElement(React.Fragment, null, "\u{1F4B0} ab ", pflichtSum, " \u20AC", optionalSum > 0 ? /* @__PURE__ */ React.createElement("span", { style: { fontWeight: 600, color: "var(--m)" } }, " + optional ", optionalSum, " \u20AC") : null) : /* @__PURE__ */ React.createElement(React.Fragment, null, "\u{1F4B0} ca. ", renderedTotal, " \u20AC", /* @__PURE__ */ React.createElement("span", { style: { fontWeight: 600, color: "var(--m)" } }, " \xB7 kein Pflicht-Material, alles flexibel"))), /* @__PURE__ */ React.createElement("p", { style: { fontSize: 13, color: "var(--m)", marginBottom: 14, lineHeight: 1.5 } }, 'Drei Gruppen statt einer langen Liste. Fang oben an, h\xF6r unten auf \u2014 alles unter \u201EOptional" kannst du weglassen oder hast du oft schon zuhause.'), ["pflicht", "sinnvoll", "habIchVielleicht"].map((catKey) => {
     const items = groups[catKey];
     if (!items.length) return null;
     const meta = GROUP_META[catKey];
