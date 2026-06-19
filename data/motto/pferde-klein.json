@@ -661,7 +661,7 @@
           "url": null,
           "priceEur": 5,
           "hasAffiliate": false,
-          "category": "optional",
+          "category": "habIchVielleicht",
           "categoryReasoning": "Für Parcours."
         }
       ],
@@ -989,7 +989,7 @@
           "url": null,
           "priceEur": 8,
           "hasAffiliate": false,
-          "category": "optional",
+          "category": "habIchVielleicht",
           "categoryReasoning": "Wow-Parcours."
         },
         {
@@ -998,7 +998,7 @@
           "url": null,
           "priceEur": 6,
           "hasAffiliate": false,
-          "category": "optional",
+          "category": "habIchVielleicht",
           "categoryReasoning": "Mitgebsel-Detail."
         }
       ],
