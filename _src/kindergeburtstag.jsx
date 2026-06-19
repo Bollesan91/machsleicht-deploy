@@ -858,7 +858,7 @@ function EliteShoppingList({ variants, shoppingMode, mottoColor }) {
   const GROUP_META = {
     pflicht: { emoji: "✅", label: "Pflicht — ohne läuft die Party nicht", color: "#C62828" },
     sinnvoll: { emoji: "💡", label: "Sinnvoll — macht's deutlich besser", color: "#1976D2" },
-    habIchVielleicht: { emoji: "🏠", label: "Hab ich vielleicht schon — DIY oder im Haushalt", color: "#558B2F" },
+    habIchVielleicht: { emoji: "🏠", label: "Optional — weglassbar oder schon zuhause", color: "#558B2F" },
   };
 
   const total = variant.shoppingList.reduce((acc, it) => acc + (typeof it.priceEur === "number" ? it.priceEur : 0), 0);
@@ -884,7 +884,7 @@ function EliteShoppingList({ variants, shoppingMode, mottoColor }) {
           : <>💰 ca. {renderedTotal} €<span style={{ fontWeight: 600, color: "var(--m)" }}> · kein Pflicht-Material, alles flexibel</span></>}
       </p>
       <p style={{ fontSize: 13, color: "var(--m)", marginBottom: 14, lineHeight: 1.5 }}>
-        Drei Gruppen statt einer langen Liste. Fang oben an, hör unten auf — alles unter „Hab ich vielleicht schon" kannst du wahrscheinlich überspringen.
+        Drei Gruppen statt einer langen Liste. Fang oben an, hör unten auf — alles unter „Optional" kannst du weglassen oder hast du oft schon zuhause.
       </p>
       {["pflicht", "sinnvoll", "habIchVielleicht"].map((catKey) => {
         const items = groups[catKey];
