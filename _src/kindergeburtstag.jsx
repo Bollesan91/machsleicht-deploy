@@ -858,7 +858,7 @@ function EliteShoppingList({ variants, shoppingMode, mottoColor }) {
   const GROUP_META = {
     pflicht: { emoji: "✅", label: "Pflicht — ohne läuft die Party nicht", color: "#C62828" },
     sinnvoll: { emoji: "💡", label: "Sinnvoll — macht's deutlich besser", color: "#1976D2" },
-    habIchVielleicht: { emoji: "🏠", label: "Optional — weglassbar oder schon zuhause", color: "#558B2F" },
+    habIchVielleicht: { emoji: "🏠", label: "Optional — weglassbar, manches hast du eh schon", color: "#558B2F" },
   };
 
   const total = variant.shoppingList.reduce((acc, it) => acc + (typeof it.priceEur === "number" ? it.priceEur : 0), 0);

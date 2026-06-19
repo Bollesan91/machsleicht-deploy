@@ -65016,7 +65016,7 @@ function EliteShoppingList({ variants, shoppingMode, mottoColor }) {
   const GROUP_META = {
     pflicht: { emoji: "\u2705", label: "Pflicht \u2014 ohne l\xE4uft die Party nicht", color: "#C62828" },
     sinnvoll: { emoji: "\u{1F4A1}", label: "Sinnvoll \u2014 macht's deutlich besser", color: "#1976D2" },
-    habIchVielleicht: { emoji: "\u{1F3E0}", label: "Optional \u2014 weglassbar oder schon zuhause", color: "#558B2F" }
+    habIchVielleicht: { emoji: "\u{1F3E0}", label: "Optional \u2014 weglassbar, manches hast du eh schon", color: "#558B2F" }
   };
   const total = variant.shoppingList.reduce((acc, it) => acc + (typeof it.priceEur === "number" ? it.priceEur : 0), 0);
   const sumOf = (arr) => arr.reduce((acc, it) => acc + (typeof it.priceEur === "number" ? it.priceEur : 0), 0);
