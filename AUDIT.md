@@ -103,12 +103,26 @@ Stand: 2026-05-12. Verbindlich vor jedem Patch. Self-audit-validiert.
 
 | Komponente | Wert |
 |---|---|
-| Source-JSX | `_src/kindergeburtstag.jsx` (~1380 Z. nach Sprint 1) |
-| Source-Data | `_src/kindergeburtstag-data.js` (~1840 Z.) |
-| Build | `bash _src/build.sh` (npx esbuild) |
-| Output | `js/kindergeburtstag.js` (~267KB / 3347 Z.) |
+| Source-JSX | `_src/kindergeburtstag.jsx` |
+| Source-Data | `_src/kindergeburtstag-data.js` (SZ_THEMES etc.) |
+| **Elite-Motto-Daten** | `_src/elite-motto-data/_bundle.js` — **AUTO-generiert** aus `data/motto/` (s. 3.1b) |
+| Build | `bash _src/build.sh` (Schritt 1 node-Generator, Schritt 2 npx esbuild JSX, Schritt 3 cat) |
+| Konkatenation | `kindergeburtstag-data.js` + `_bundle.js` + compiled JSX → `js/kindergeburtstag.js` |
+| Output | `js/kindergeburtstag.js` (~3.8 MB / ~65k Z. — der Elite-Bundle dominiert) |
 | Git-tracked | **JA** — Netlify deployt as-is, **kein Build auf Netlify-Seite** |
-| **Falle** | Wer `_src/*` ändert MUSS `bash _src/build.sh` lokal laufen lassen + Output committen. Vergessen = alter Stand live |
+| **Falle** | Wer `_src/*` ODER `data/motto/*` ändert MUSS `bash _src/build.sh` lokal laufen + Output committen. Vergessen = alter Stand live |
+
+### 3.1b Elite-Motto-Bundle `ELITE_MOTTO_DATA` (P1-37, 18.06.2026)
+
+| Aspekt | Wert |
+|---|---|
+| **Single source of truth** | `data/motto/<motto>-<klein\|mittel\|gross>.json` (15 Mottos × 3 = 45 Dateien) |
+| Generator | `node _src/gen-elite-bundle.cjs` → schreibt `_src/elite-motto-data/_bundle.js` (`var ELITE_MOTTO_DATA = {...}` + Accessoren `getEliteData`/`hasEliteData`/`listEliteSlots`) |
+| Strip | 12 vom Planer ungenutzte Top-Level-Keys raus (`_meta`/`faq`/`cakeRecipe`/`invitationTemplate`/`parentTips`/`introParagraph`/`metaDescription`/`bonus*`); WARN bei Fremd-`category` |
+| Konsum | Planer ruft `getEliteData(motto, ageGroup)` → `ELITE_MOTTO_DATA["<motto>-<age>"]`. Liest nur `variants`/`ageInsight`/`signatureRitual`/`sosScenarios`/`preparationWeeks` |
+| **Deprecated** | `_src/elite-motto-data/_generate_bundle.py` (exit 2) — las eine stale Kopie, hätte Affiliate-Tag regrediert. NICHT mehr nutzen |
+| **Falle** | Accessoren leben NUR im `_bundle.js` (nicht in .jsx/data.js). Generator-Änderung, die sie weglässt, killt den Planer still (Regression 18.06.) |
+| Offen | Bundle 3.8 MB → Lazy-Loading pro Motto (Follow-up); 98 Items mit Fremd-`category` normalisieren (#34/#37) |
 
 ### 3.2 React-Apps in `einladung/<motto>/` (10×)
 
