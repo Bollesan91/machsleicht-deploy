@@ -634,6 +634,11 @@ window.plausible.init=function(){};window.plausible.q=[];
   .egame ol{padding-left:20px}
   .egame__safe{color:#B45309;background:#FFFBEB;padding:6px 14px;margin:8px 0 0!important}
   .egame__why{color:#0F7B3F}
+  .egame__tog{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:6px;border:2px solid var(--accent,#FF6F00);background:var(--accent,#FF6F00);color:#fff;font-weight:800;font-size:12px;cursor:pointer;margin-right:8px;vertical-align:middle;font-family:inherit;line-height:1;padding:0}
+  .egame--off{opacity:.62}
+  .egame--off>summary{color:#8A7A64}
+  .egame--off .egame__tog{background:#fff;color:#BBAA92;border-color:#DACBB6}
+  @media print{ .egame--off{display:none} }
   .eshop{list-style:none;padding:0;margin:0}
   .eshop li{padding:8px 0;border-bottom:1px solid #F3ECE3;font-size:14px;color:#444}
   .eshop li:last-child{border-bottom:none}
@@ -1314,6 +1319,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     adresse: '',      // Echte Party-Adresse (optional). Wird auf der Partyseite NUR Gaesten gezeigt, die zugesagt haben (Worker-Gating).
     partyMessage: '', // #25: persoenliche Nachricht an die Gaeste -> erscheint auf der Partyseite (geht als notes an /api/create)
     games: [],
+    eliteOff: [],   // im Elite-Plan abgewaehlte Spielnamen (nur ab-/anwaehlen)
     customEntries: [],
     invite: { type:'minispiel', title:'', body:'', deadline:'', sent:0, photo:null, whatsapp:'' },
     partyseite: { slug:'lukas7', rsvp:true, photos:false, wish:false, chat:false, active:false },   // photos/chat raus (F4: kein Worker-Backend)
@@ -1499,6 +1505,7 @@ window.plausible.init=function(){};window.plausible.q=[];
 
   function pickMotto(id){
     state.motto = MOTTOS.find(m => m.id === id);
+    state.eliteOff = [];   // Spiel-Abwahl pro Motto zuruecksetzen
     applyAccent(state.motto);
     document.getElementById('chosenMottoEmoji').textContent = state.motto.emoji;
     document.getElementById('chosenMottoName').textContent = state.motto.name;
@@ -1542,6 +1549,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
   function pickAge(age){
     state.age = age;
+    state.eliteOff = [];   // Spiel-Abwahl pro Altersgruppe zuruecksetzen
     const ageGames = gamesForAge(state.motto, age);
     state.games = ageGames.slice(0,5).map(g => g.name);
     // C3-Fix: identisches Muster wie pickMotto (kein doppeltes "wird {age}", kein slice-Hack der bei Nicht-"wird"-Mottos Grammatik zerstoert)
@@ -1733,7 +1741,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       + (schatz.length?`<div style="margin-top:10px"><h4 style="font-size:12px;font-weight:800;color:var(--accent,#1E3A5F);margin:0 0 4px">🎁 Schatz-Ideen für die Kiste</h4><p style="margin:0;font-size:13px;color:#555">${schatz.map(x=>esc(x)).join(' · ')}</p></div>`:'')
       + `</details>`;
   }
-  function setEliteVariant(v){ state.eliteVariant = v; renderElitePlan(); autoSave(); }
+  function setEliteVariant(v){ state.eliteVariant = v; state.eliteOff = []; renderElitePlan(); autoSave(); }   // Varianten-Wechsel: Spiel-Abwahl zuruecksetzen (andere Spielmenge -> sonst stale/0-Count, Reviewer-MAJOR)
   // ===== PLAN-ENGINE Helfer — parametrisiert vorhandene v1-Daten (siehe _dev/docs/PLAN-ENGINE-SPEC.md) =====
   function _toMin(t){ const m=String(t==null?'':t).match(/(\d\d?):(\d\d)/); return m? (+m[1])*60+(+m[2]) : null; }
   function _parseDur(d){ if(typeof d==='number') return d; const m=String(d==null?'':d).match(/\d+/); return m? +m[0] : 0; }
@@ -1748,7 +1756,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     const span=(end!=null && end-s0>=30)? end-s0 : natural;
     const scale=span/natural;
     let cur=s0;
-    const base=rows.map((r,i)=>{ const row={time:fmt(Math.round(cur)), title:r.title, desc:r.desc, custom:false, sort:Math.round(cur)}; cur+=durs[i]*scale; return row; });
+    const base=rows.map((r,i)=>{ const tt=Math.round(cur/5)*5; const row={time:fmt(tt), title:r.title, desc:r.desc, custom:false, sort:tt}; cur+=durs[i]*scale; return row; });
     const cu=(state.customEntries||[]).map((c,idx)=>({c,idx})).filter(x=>_toMin(x.c.time)!=null).map(({c,idx})=>{ const m=_toMin(c.time); return {time:fmt(m), title:c.title, desc:'', custom:true, customIdx:idx, sort:m}; });
     return [...base, ...cu].sort((a,b)=>a.sort-b.sort);
   }
@@ -1794,10 +1802,14 @@ window.plausible.init=function(){};window.plausible.q=[];
     // ENGINE: Spiele nach Ort filtern + Tipp/Alters-Anpassung einblenden, Dauer robust parsen
     // (Schatzsuche-Dedup bewusst NICHT engine-seitig — Regex traf auch eigenständige Spiele wie 'Nacht-Schatzsuche'; wird pro Motto in den Daten kuratiert)
     const locGames = eliteGamesForLoc(v.games);
-    const games = locGames.map(g => {
+    const _eoff = state.eliteOff || (state.eliteOff = []);
+    window.__egNames = locGames.map(g => g.name);   // Index->Name fuer den delegierten Elite-Spiel-Toggle
+    const _egSel = locGames.filter(g => !_eoff.includes(g.name)).length;
+    const games = locGames.map((g,gi) => {
+      const off = _eoff.includes(g.name);
       const steps = (g.steps || []).map(st => `<li>${mdLink(st.content || st.name || st)}</li>`).join('');
       const dur = _parseDur(g.duration); const tip = eliteLocTip(g); const adj = eliteAgeAdjust(g);
-      return `<details class="egame"><summary>${esc(g.name||'')} <span class="egame__meta">${dur?dur+' Min':''}${g.loudness?' · '+esc(g.loudness):''}</span></summary>
+      return `<details class="egame${off?' egame--off':''}"><summary><button type="button" class="egame__tog" data-eg="${gi}" aria-pressed="${off?'false':'true'}" aria-label="${escA((g.name||'')+' '+(off?'in den Plan nehmen':'aus dem Plan nehmen'))}" title="${off?'Spiel in den Plan nehmen':'Spiel aus dem Plan nehmen'}">${off?'+':'✓'}</button>${esc(g.name||'')} <span class="egame__meta">${dur?dur+' Min':''}${g.loudness?' · '+esc(g.loudness):''}</span></summary>
         ${g.material ? `<p><b>Material:</b> ${mdLink(g.material)}</p>` : ''}
         ${g.prepText ? `<p><b>Vorbereitung:</b> ${mdLink(g.prepText)}</p>` : ''}
         ${steps ? `<ol>${steps}</ol>` : ''}
@@ -1849,7 +1861,7 @@ window.plausible.init=function(){};window.plausible.q=[];
           </div>
         </div>
       </article>
-      <article class="mod"><header class="mod__head"><span class="mod__icon">🎮</span><h3 class="mod__title">Spiele · ${locGames.length} mit Anleitung</h3></header>${games}</article>
+      <article class="mod"><header class="mod__head"><span class="mod__icon">🎮</span><h3 class="mod__title">Spiele · ${_egSel} mit Anleitung</h3></header><p class="games-hint">Tippe das ✓ an, um ein Spiel aus dem Plan zu nehmen — Abgewählte fliegen aus Zählung &amp; Druck.</p>${games}</article>
       ${schatzHtml}
       <article class="mod"><header class="mod__head"><span class="mod__icon">🛒</span><h3 class="mod__title">Einkaufsliste · ${esc(shopMeta)}</h3></header><ul class="eshop">${shop}</ul></article>
       ${extras}${saving}${cake}${tips}${faq}
@@ -2560,6 +2572,9 @@ window.plausible.init=function(){};window.plausible.q=[];
   if(!window.__gamePickerBound){
     window.__gamePickerBound = true;
     document.addEventListener('click', function(e){
+      // Elite-Plan: Toggle-Button im Spiel-Summary -> ab-/anwaehlen (preventDefault, sonst klappt das <details> auf)
+      const eg = e.target.closest && e.target.closest('.egame__tog[data-eg]');
+      if(eg){ e.preventDefault(); e.stopPropagation(); const nm=(window.__egNames||[])[parseInt(eg.getAttribute('data-eg'),10)]; if(nm!=null) toggleEliteGame(nm, eg); return; }
       const el = e.target.closest && e.target.closest('.games-grid [data-gi]');
       if(!el) return;
       const name = (window.__gpNames || [])[parseInt(el.getAttribute('data-gi'),10)];
@@ -2586,6 +2601,34 @@ window.plausible.init=function(){};window.plausible.q=[];
       state.games.push(name);
     }
     renderPlanPreview();
+    try{ autoSave(); }catch(e){}
+  }
+  // Elite-Plan: Spiel ab-/anwaehlen (mind. 1 bleibt). Aktualisiert das DOM DIREKT statt Full-Re-Render
+  // -> aufgeklappte Spiele bleiben offen, kein Scroll-Sprung, kein Re-Fetch, keine Async-Race (Reviewer-MINORs).
+  function toggleEliteGame(name, btn){
+    if(!name) return;
+    const off = state.eliteOff || (state.eliteOff = []);
+    const names = window.__egNames || [];
+    const i = off.indexOf(name);
+    if(i >= 0){ off.splice(i, 1); }
+    else {
+      const sel = names.filter(n => !off.includes(n)).length;
+      if(sel <= 1) return;   // mind. 1 Spiel im Plan
+      off.push(name);
+    }
+    const nowOff = off.includes(name);
+    const det = btn && btn.closest('.egame');
+    if(det){
+      det.classList.toggle('egame--off', nowOff);
+      btn.textContent = nowOff ? '+' : '✓';
+      btn.setAttribute('aria-pressed', nowOff ? 'false' : 'true');
+      btn.setAttribute('aria-label', name + (nowOff ? ' in den Plan nehmen' : ' aus dem Plan nehmen'));
+      const sel = names.filter(n => !off.includes(n)).length;
+      const h = [...document.querySelectorAll('.mod__title')].find(x => /^Spiele · \d+ mit Anleitung$/.test(x.textContent.trim()));
+      if(h) h.textContent = 'Spiele · ' + sel + ' mit Anleitung';
+    } else {
+      renderElitePlan().catch(()=>{});   // Fallback ohne Button-Kontext
+    }
     try{ autoSave(); }catch(e){}
   }
   function toggleGameFromDrawer(){
