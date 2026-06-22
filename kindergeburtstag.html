@@ -639,6 +639,33 @@ window.plausible.init=function(){};window.plausible.q=[];
   .egame--off>summary{color:#8A7A64}
   .egame--off .egame__tog{background:#fff;color:#BBAA92;border-color:#DACBB6}
   @media print{ .egame--off{display:none} }
+  /* V3 Plan-Liste (Spec §10) — eine geordnete Liste, editierbar */
+  .pl{margin:0 0 4px}
+  .pl__item{border:1px solid #F0E6D8;border-radius:10px;margin-bottom:6px;background:#FFFCF8;overflow:hidden}
+  .pl__item--beat{background:#FBF7F0}
+  .pl__item--game>summary,.pl__item--schatz>summary{list-style:none}
+  .pl__item--game>summary::-webkit-details-marker,.pl__item--schatz>summary::-webkit-details-marker{display:none}
+  .pl__item--game>summary,.pl__item--schatz>summary{cursor:pointer}
+  .pl__row{display:flex;align-items:center;gap:10px;padding:9px 12px}
+  .pl__time{flex:0 0 46px;font-weight:800;font-size:13px;color:var(--accent,#1E3A5F);font-variant-numeric:tabular-nums}
+  .pl__title{flex:1;display:flex;flex-direction:column;font-size:14px;font-weight:700;color:#3A2E22;min-width:0}
+  .pl__title>span:first-child{overflow:hidden;text-overflow:ellipsis}
+  .pl__dur{font-weight:600;font-size:11px;color:#999}
+  .pl__ctrl{flex:0 0 auto;display:flex;gap:2px}
+  .pl__ctrl button{width:26px;height:26px;border:1px solid #E2D5C4;background:#fff;border-radius:7px;cursor:pointer;font-size:12px;color:#8a7a64;line-height:1;padding:0;font-family:inherit}
+  .pl__ctrl button:hover{border-color:var(--accent,#FF6F00);color:var(--accent,#FF6F00)}
+  .pl__ctrl .pl__rm{color:#C0392B}
+  .pl__body{padding:2px 14px 12px;font-size:13px;line-height:1.55;color:#444}
+  .pl__body ol{padding-left:20px}
+  .pl__add,.pl__addrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px}
+  .pl__add-lbl{font-size:12px;font-weight:700;color:#8a7a64}
+  .pl__chip{border:1px dashed #D8C8B4;background:#fff;color:#6b5d52;font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px;cursor:pointer;font-family:inherit}
+  .pl__chip:hover{border-color:var(--accent,#FF6F00);color:var(--accent,#FF6F00);border-style:solid}
+  .plan-cust-form{display:none;flex-wrap:wrap;gap:6px;width:100%;margin-top:6px}
+  .plan-cust-form.open{display:flex}
+  .plan-cust-form input[type=text]{flex:1;min-width:140px;padding:7px 10px;border:1px solid #E2D5C4;border-radius:8px;font-size:13px;font-family:inherit}
+  .plan-cust-form input[type=number]{width:64px;padding:7px 8px;border:1px solid #E2D5C4;border-radius:8px;font-size:13px;font-family:inherit}
+  @media print{.pl__ctrl,.pl__add,.pl__addrow{display:none}}
   .eshop{list-style:none;padding:0;margin:0}
   .eshop li{padding:8px 0;border-bottom:1px solid #F3ECE3;font-size:14px;color:#444}
   .eshop li:last-child{border-bottom:none}
@@ -1742,15 +1769,144 @@ window.plausible.init=function(){};window.plausible.q=[];
       + `</details>`;
   }
   function setEliteVariant(v){ state.eliteVariant = v; state.eliteOff = []; renderElitePlan(); autoSave(); }   // Varianten-Wechsel: Spiel-Abwahl zuruecksetzen (andere Spielmenge -> sonst stale/0-Count, Reviewer-MAJOR)
+
+  // ===== V3 GENERATIVER PLAN (Spec §10) — erzeugt EINE geordnete activities[] aus dem Spiel-Pool + Standard-Beats.
+  // NOCH NICHT verdrahtet — wird isoliert getestet, bevor renderElitePlan darauf umgestellt wird.
+  function _gameLoud(g){ const l=String((g&&g.loudness)||'').toLowerCase(); if(/laut|hoch|wild|tobe/.test(l)) return 2; if(/leise|ruhig|niedrig|konzentr/.test(l)) return 0; return 1; }
+  const _EMO_LEAD = /^[\s\p{Extended_Pictographic}️‍\u{1F3FB}-\u{1F3FF}]+/u;
+  const _EMO_GRAB = /^\s*([\p{Extended_Pictographic}️‍\u{1F3FB}-\u{1F3FF}]+)/u;
+  function _gameEmoji(n){ const m=String(n||'').match(_EMO_GRAB); return m?m[1]:'🎮'; }
+  function _cleanGameTitle(n){ return String(n||'').replace(_EMO_LEAD,'').replace(/\s*[—–-]\s*Spielanleitung\s*$/i,'').trim(); }
+  function _planGameCount(variantId){ const s=String(variantId||'').toLowerCase(); if(/wow|max/.test(s)) return 6; if(/min/.test(s)) return 3; return 5; }
+  function buildPlanActivities(d, v){
+    const loc = state.location;
+    let pool = (v.games||[]).filter(g => loc==='park' ? g.outdoor!==false : g.indoor!==false);
+    if(!pool.length) pool = (v.games||[]).slice();
+    // L6-Dedup: generische Schatzsuche raus (Modul deckt sie), eigenstaendige (Nacht-Schatzsuche) behalten
+    pool = pool.filter(g => !/schatz(suche|spur|jagd)/i.test(g.name||'') || /nacht|stirnlampe/i.test(g.name||''));
+    const target = Math.max(1, Math.min(_planGameCount(v.id || state.eliteVariant), pool.length));
+    const chosen = pool.slice(0, target);   // Daten sind bereits redaktionell sortiert
+    // Pacing: nie zwei "laute" hintereinander
+    const seq=[]; const rest=chosen.slice();
+    while(rest.length){
+      const prev = seq[seq.length-1];
+      let idx = rest.findIndex(g => !(prev && _gameLoud(prev)===2 && _gameLoud(g)===2));
+      if(idx<0) idx=0;
+      seq.push(rest.splice(idx,1)[0]);
+    }
+    const sig = (d && d.signature) || (v && v.signature) || {};
+    const acts=[];
+    acts.push({ id:'beat-start', kind:'beat', emoji:'🎈', title: sig.opener || 'Ankommen & Verkleidung', durationMin:15, anchor:'start' });
+    const mid = Math.floor(seq.length/2);
+    seq.forEach((g,i)=>{
+      if(i===mid){
+        acts.push({ id:'schatz', kind:'schatz', emoji:'🗺️', title:'Schatzsuche', durationMin:30 });
+        acts.push({ id:'beat-cake', kind:'beat', emoji:'🎂', title:'Kuchen & Pause', durationMin:25, anchor:'mid' });
+      }
+      acts.push({ id:'game-'+i, kind:'game', emoji: _gameEmoji(g.name), title:_cleanGameTitle(g.name), durationMin:_parseDur(g.duration)||15, gameName:g.name });
+    });
+    if(seq.length===0){ acts.push({ id:'beat-cake', kind:'beat', emoji:'🎂', title:'Kuchen & Pause', durationMin:25, anchor:'mid' }); }
+    acts.push({ id:'beat-end', kind:'beat', emoji:'🎁', title: sig.closer || 'Mitgebsel & Abholung', durationMin:15, anchor:'end' });
+    return acts;
+  }
+  // --- Plan-State (eine Liste, Spec §10.5: Struktur in state.plan, Inhalte bei jedem Render frisch aus v.games) ---
+  function _planKey(){ return (state.motto&&state.motto.id||'')+'-'+(state.age||'6-8')+'-'+(state.eliteVariant||'std')+'-'+(state.location||'zuhause'); }   // location im Key: Ortswechsel regeneriert -> Spiele re-filtern (Spec-Leitregel "Ort wirkt", Reviewer-MAJOR #5)
+  function ensurePlanActs(d, v){
+    const key=_planKey();
+    if(!state.plan || state.plan.key!==key || !Array.isArray(state.plan.acts) || !state.plan.acts.length){
+      state.plan = { key, acts: buildPlanActivities(d, v) };
+    }
+    return state.plan.acts;
+  }
+  function _planTimes(acts){
+    const total = acts.reduce((s,a)=>s+(+a.durationMin||10),0)||1;
+    const start=_toMin(state.time); const s0=(start!=null)?start:840;
+    const end=_toMin(state.endTime);
+    const span=(end!=null && end-s0>=30)? end-s0 : total;
+    const scale=span/total; let cur=s0;
+    return acts.map(a=>{ const t=Math.round(cur/5)*5; cur+=(+a.durationMin||10)*scale; return Object.assign({}, a, {time: fmt(t)}); });
+  }
+  function _planUid(){ window.__planUid=(window.__planUid||0)+1; return window.__planUid; }
+  function planRemove(id){
+    const acts=(state.plan&&state.plan.acts)||[]; const a=acts.find(x=>x.id===id); if(!a) return;
+    if(a.anchor==='start'||a.anchor==='end') return;                                   // Ankommen/Abholung fix (Spec §10.5)
+    if(a.kind==='game' && acts.filter(x=>x.kind==='game').length<=1) return;            // mind. 1 Spiel
+    state.plan.acts = acts.filter(x=>x.id!==id);
+    renderElitePlan().catch(()=>{}); autoSave();
+  }
+  function planMove(id, dir){
+    const acts=(state.plan&&state.plan.acts)||[]; const i=acts.findIndex(x=>x.id===id); if(i<0) return;
+    if(acts[i].anchor==='start'||acts[i].anchor==='end') return;
+    const j=i+dir; if(j<=0 || j>=acts.length-1) return;                                 // nie vor Ankommen / hinter Abholung
+    const t=acts[i]; acts[i]=acts[j]; acts[j]=t;
+    renderElitePlan().catch(()=>{}); autoSave();
+  }
+  function planAddGame(idx){
+    const name=(window.__planPool||[])[idx]; if(name==null) return;
+    const acts=(state.plan&&state.plan.acts)||[]; const endIdx=acts.findIndex(x=>x.anchor==='end'); const at=endIdx<0?acts.length:endIdx;
+    acts.splice(at,0,{ id:'game-u'+_planUid(), kind:'game', emoji:_gameEmoji(name), title:_cleanGameTitle(name), durationMin:15, gameName:name });
+    renderElitePlan().catch(()=>{}); autoSave();
+  }
+  function planAddCustom(){
+    const ti=document.getElementById('pcTitle'), du=document.getElementById('pcDur');
+    const title=(ti&&ti.value||'').trim(); if(!title){ ti&&ti.focus(); return; }
+    const dur=Math.max(5, parseInt(du&&du.value)||15);
+    const acts=(state.plan&&state.plan.acts)||[]; const endIdx=acts.findIndex(x=>x.anchor==='end'); const at=endIdx<0?acts.length:endIdx;
+    acts.splice(at,0,{ id:'custom-u'+_planUid(), kind:'custom', emoji:'⭐', title, durationMin:dur });
+    renderElitePlan().catch(()=>{}); autoSave();
+  }
+  function togglePlanForm(){ const f=document.getElementById('planCustomForm'); if(f) f.classList.toggle('open'); }
+  // --- Renderer: EINE Liste (Spec §10) ---
+  function _eliteGameDetails(g){
+    if(!g) return '';
+    const steps=(g.steps||[]).map(st=>`<li>${mdLink(st.content||st.name||st)}</li>`).join('');
+    const tip=eliteLocTip(g), adj=eliteAgeAdjust(g);
+    return `${g.material?`<p><b>Material:</b> ${mdLink(g.material)}</p>`:''}${g.prepText?`<p><b>Vorbereitung:</b> ${mdLink(g.prepText)}</p>`:''}${steps?`<ol>${steps}</ol>`:''}${g.safetyRule?`<p class="egame__safe">⚠️ ${esc(g.safetyRule)}</p>`:''}${tip?`<p style="font-size:13px;color:#1E7B34;margin:6px 0">📍 ${esc(tip)}</p>`:''}${adj?`<p style="font-size:13px;color:#7a5c00;margin:6px 0">👶 Für ${esc(state.age||'')} J.: ${esc(adj)}</p>`:''}${g.whyItWorks?`<p class="egame__why"><b>${esc(g.whyItWorksTitle||'Warum es wirkt')}:</b> ${esc(g.whyItWorks)}</p>`:''}`;
+  }
+  function renderPlanList(d, v, schatzHtml){
+    const acts=_planTimes(ensurePlanActs(d,v));
+    const gameCount=acts.filter(a=>a.kind==='game').length;
+    const planStart=acts.length?acts[0].time:(state.time||''); const planEnd=acts.length?fmt(_toMin(acts[acts.length-1].time)+(+acts[acts.length-1].durationMin||10)):'';
+    const gByName={}; (v.games||[]).forEach(g=>gByName[g.name]=g);
+    const rows=acts.map(a=>{
+      const fixed=(a.anchor==='start'||a.anchor==='end');
+      const ctrl=fixed?'':`<span class="pl__ctrl"><button type="button" title="nach oben" onclick="planMove('${a.id}',-1)">▲</button><button type="button" title="nach unten" onclick="planMove('${a.id}',1)">▼</button><button type="button" class="pl__rm" title="entfernen" onclick="planRemove('${a.id}')">×</button></span>`;
+      const rowInner=`<div class="pl__time">${esc(a.time)}</div><div class="pl__title"><span>${esc(a.emoji||'')} ${esc(a.title)}</span><span class="pl__dur">${+a.durationMin||10} Min</span></div>${ctrl}`;
+      if(a.kind==='game'){ const det=_eliteGameDetails(gByName[a.gameName]); return `<details class="pl__item pl__item--game"><summary class="pl__row">${rowInner}</summary>${det?`<div class="pl__body">${det}</div>`:''}</details>`; }
+      if(a.kind==='schatz'){ return `<details class="pl__item pl__item--schatz"><summary class="pl__row">${rowInner}</summary><div class="pl__body">${schatzHtml||'<p style="font-size:13px;color:#666;margin:8px 0">Schatzsuche-Stationen werden unten im Schatz-Modul ausgespielt.</p>'}</div></details>`; }
+      return `<div class="pl__item pl__item--beat"><div class="pl__row">${rowInner}</div></div>`;
+    }).join('');
+    // ungenutzte Pool-Spiele zum Hinzufuegen
+    const inPlan=new Set(acts.filter(a=>a.kind==='game').map(a=>a.gameName));
+    const unused=(v.games||[]).filter(g=>!inPlan.has(g.name) && (!/schatz(suche|spur|jagd)/i.test(g.name||'')||/nacht|stirnlampe/i.test(g.name||'')));
+    window.__planPool=unused.map(g=>g.name);
+    const addGames=unused.length?`<div class="pl__add"><span class="pl__add-lbl">Weiteres Spiel:</span> ${unused.map((g,i)=>`<button type="button" class="pl__chip" onclick="planAddGame(${i})">+ ${esc(_cleanGameTitle(g.name))}</button>`).join('')}</div>`:'';
+    return `<article class="mod"><header class="mod__head"><span class="mod__icon">🗓️</span><h3 class="mod__title">Dein Plan${planStart?' · '+esc(planStart)+'–'+esc(planEnd):''} · ${gameCount} Spiele</h3></header>
+      <p class="games-hint">Tipp: ▲▼ verschieben, × entfernt einen Punkt, „+" nimmt ein Spiel dazu. Spiel antippen für die Anleitung.</p>
+      <div class="pl">${rows}</div>
+      ${addGames}
+      <div class="pl__addrow"><button type="button" class="pl__chip pl__chip--cust" onclick="togglePlanForm()">+ Eigener Programmpunkt</button>
+        <div class="plan-cust-form" id="planCustomForm"><input type="text" id="pcTitle" placeholder="z.B. Geschenke auspacken" maxlength="60"><input type="number" id="pcDur" value="15" min="5" max="120" title="Minuten"><button type="button" class="pl__chip" onclick="planAddCustom()">Hinzufügen</button></div>
+      </div>
+    </article>`;
+  }
   // ===== PLAN-ENGINE Helfer — parametrisiert vorhandene v1-Daten (siehe _dev/docs/PLAN-ENGINE-SPEC.md) =====
   function _toMin(t){ const m=String(t==null?'':t).match(/(\d\d?):(\d\d)/); return m? (+m[1])*60+(+m[2]) : null; }
   function _parseDur(d){ if(typeof d==='number') return d; const m=String(d==null?'':d).match(/\d+/); return m? +m[0] : 0; }
   // Schedule: aus vorhandenen time[] relative Dauern ableiten, ins Fenster [state.time, state.endTime] skalieren, eigene Punkte mergen
   function eliteSchedule(sched){
-    const rows=(sched||[]).map(s=>({t:_toMin(s.time), title:s.title||'', desc:s.description||''})).filter(r=>r.t!=null);
+    // Spec §3b: bevorzugt durationMin (reihenfolge-basiert, kollisionsfrei); Fallback auf vorhandene fixe time[]-Deltas.
+    const all=(sched||[]);
+    const hasDur = all.some(s=>typeof s.durationMin==='number');
+    let rows;
+    if(hasDur){
+      rows = all.map(s=>({title:s.title||'', desc:s.description||s.desc||'', dur: typeof s.durationMin==='number'?Math.max(s.durationMin,5):15})).filter(r=>r.title);
+    } else {
+      rows = all.map(s=>({t:_toMin(s.time), title:s.title||'', desc:s.description||''})).filter(r=>r.t!=null);
+    }
     if(!rows.length) return [];
-    const start=_toMin(state.time); const s0=start!=null?start:rows[0].t;
-    const durs=rows.map((r,i)=> i<rows.length-1 ? Math.max(rows[i+1].t-r.t,5) : 20);
+    const start=_toMin(state.time); const s0=start!=null?start:(hasDur?(start||840):rows[0].t);
+    const durs=hasDur ? rows.map(r=>r.dur) : rows.map((r,i)=> i<rows.length-1 ? Math.max(rows[i+1].t-r.t,5) : 20);
     const natural=durs.reduce((a,b)=>a+b,0)||1;
     const end=_toMin(state.endTime);
     const span=(end!=null && end-s0>=30)? end-s0 : natural;
@@ -1790,35 +1946,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       `<button class="evar ${x.id === v.id ? 'evar--on' : ''}" onclick="setEliteVariant('${escA(x.id)}')">${esc((x.label||x.id).split('—')[0].trim())}</button>`
     ).join('');
 
-    // ENGINE: Schedule ins Zeitfenster + eigene Programmpunkte
-    const schedRows = eliteSchedule(v.schedule);
-    const sched = schedRows.map(r =>
-      `<div class="timeline__row ${r.custom?'timeline__row--custom':''}"><div class="timeline__time">${esc(r.time)}</div><div class="timeline__what"><em>${esc(r.title)}</em>${r.desc ? '<br>'+mdLink(r.desc) : ''}</div>${r.custom?`<button class="timeline__del" onclick="deleteCustomEntry(${r.customIdx})" title="Entfernen">×</button>`:''}</div>`
-    ).join('');
-    const planStart = schedRows.length ? schedRows[0].time : (state.time||'');
-    const _startM=_toMin(planStart), _endM=_toMin(state.endTime);
-    const planEnd = (_endM!=null && _startM!=null && _endM-_startM>=30) ? fmt(_endM) : (schedRows.length ? schedRows[schedRows.length-1].time : '');
-
-    // ENGINE: Spiele nach Ort filtern + Tipp/Alters-Anpassung einblenden, Dauer robust parsen
-    // (Schatzsuche-Dedup bewusst NICHT engine-seitig — Regex traf auch eigenständige Spiele wie 'Nacht-Schatzsuche'; wird pro Motto in den Daten kuratiert)
-    const locGames = eliteGamesForLoc(v.games);
-    const _eoff = state.eliteOff || (state.eliteOff = []);
-    window.__egNames = locGames.map(g => g.name);   // Index->Name fuer den delegierten Elite-Spiel-Toggle
-    const _egSel = locGames.filter(g => !_eoff.includes(g.name)).length;
-    const games = locGames.map((g,gi) => {
-      const off = _eoff.includes(g.name);
-      const steps = (g.steps || []).map(st => `<li>${mdLink(st.content || st.name || st)}</li>`).join('');
-      const dur = _parseDur(g.duration); const tip = eliteLocTip(g); const adj = eliteAgeAdjust(g);
-      return `<details class="egame${off?' egame--off':''}"><summary><button type="button" class="egame__tog" data-eg="${gi}" aria-pressed="${off?'false':'true'}" aria-label="${escA((g.name||'')+' '+(off?'in den Plan nehmen':'aus dem Plan nehmen'))}" title="${off?'Spiel in den Plan nehmen':'Spiel aus dem Plan nehmen'}">${off?'+':'✓'}</button>${esc(g.name||'')} <span class="egame__meta">${dur?dur+' Min':''}${g.loudness?' · '+esc(g.loudness):''}</span></summary>
-        ${g.material ? `<p><b>Material:</b> ${mdLink(g.material)}</p>` : ''}
-        ${g.prepText ? `<p><b>Vorbereitung:</b> ${mdLink(g.prepText)}</p>` : ''}
-        ${steps ? `<ol>${steps}</ol>` : ''}
-        ${g.safetyRule ? `<p class="egame__safe">⚠️ ${esc(g.safetyRule)}</p>` : ''}
-        ${tip ? `<p style="font-size:13px;color:#1E7B34;margin:6px 0">📍 ${esc(tip)}</p>` : ''}
-        ${adj ? `<p style="font-size:13px;color:#7a5c00;margin:6px 0">👶 Für ${esc(state.age||'')} J.: ${esc(adj)}</p>` : ''}
-        ${g.whyItWorks ? `<p class="egame__why"><b>${esc(g.whyItWorksTitle||'Warum es wirkt')}:</b> ${esc(g.whyItWorks)}</p>` : ''}
-      </details>`;
-    }).join('');
+    // ENGINE V3 (Spec §10): Tagesplan + Spiele = EINE generierte Liste -> renderPlanList(d, v, schatzHtml).
 
     // ENGINE: Einkauf-Header auf echte Gaestezahl
     const sh = eliteShop(v.shoppingList, v.costContext);
@@ -1844,25 +1972,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       <div class="evar-label">Aufwand wählen:</div>
       <div class="evar-row" role="tablist" aria-label="Aufwand-Variante">${vtabs}</div>
       ${v.intro ? `<p class="evar-intro">${mdLink(v.intro)}</p>` : ''}
-      <article class="mod"><header class="mod__head"><span class="mod__icon">🗓️</span><h3 class="mod__title">Tagesplan${planStart?' · '+esc(planStart)+'–'+esc(planEnd):''}</h3></header>
-        <div class="timeline">${sched}</div>
-        <button class="timeline-add" onclick="toggleTimelineForm()"><span class="timeline-add__icon">➕</span><span>Eigenen Programmpunkt hinzufügen</span></button>
-        <div class="timeline-form" id="timelineForm">
-          <h5>Neuer Programmpunkt</h5>
-          <div class="timeline-form__row">
-            <div><label>Uhrzeit</label><input type="time" id="cusTime" value="${esc(planStart||'16:30')}" oninput="checkTimelineConflict()"></div>
-            <div><label>Was passiert?</label><input type="text" id="cusTitle" placeholder="z.B. Geschenke auspacken"></div>
-            <div><label>Dauer (Min)</label><input type="number" id="cusDur" value="15" min="5" max="120"></div>
-          </div>
-          <div class="timeline-form__warn" id="timelineWarn">⚠️ Diese Uhrzeit überschneidet sich mit „<span id="timelineWarnTitle"></span>" — der neue Punkt wird trotzdem eingefügt.</div>
-          <div class="timeline-form__btns">
-            <button class="timeline-form__btn timeline-form__btn--sec" onclick="toggleTimelineForm()">Abbrechen</button>
-            <button class="timeline-form__btn timeline-form__btn--prim" onclick="addCustomEntry()">+ Hinzufügen</button>
-          </div>
-        </div>
-      </article>
-      <article class="mod"><header class="mod__head"><span class="mod__icon">🎮</span><h3 class="mod__title">Spiele · ${_egSel} mit Anleitung</h3></header><p class="games-hint">Tippe das ✓ an, um ein Spiel aus dem Plan zu nehmen — Abgewählte fliegen aus Zählung &amp; Druck.</p>${games}</article>
-      ${schatzHtml}
+      ${renderPlanList(d, v, schatzHtml)}
       <article class="mod"><header class="mod__head"><span class="mod__icon">🛒</span><h3 class="mod__title">Einkaufsliste · ${esc(shopMeta)}</h3></header><ul class="eshop">${shop}</ul></article>
       ${extras}${saving}${cake}${tips}${faq}
     `;
