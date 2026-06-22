@@ -283,12 +283,19 @@ window.plausible.init=function(){};window.plausible.q=[];
   .timeline-form__warn.show{display:block}
 
   .games-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
-  .game-tag{background:#FFF8F0;border:1px solid #F0E6D8;border-radius:10px;padding:12px;font-size:13px;line-height:1.3;cursor:pointer;transition:all .15s;position:relative}
+  .game-tag{background:#FFF8F0;border:1px solid #F0E6D8;border-radius:10px;padding:12px 12px 12px 40px;font-size:13px;line-height:1.3;cursor:pointer;transition:all .15s;position:relative}
   .game-tag:hover{background:#fff;border-color:var(--accent,#FF6F00);transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
   .game-tag__name{font-weight:800;display:flex;align-items:center;gap:6px;color:var(--accent,#1E3A5F)}
   .game-tag__desc{color:#666;margin-top:4px;font-size:12px}
-  .game-tag__info{position:absolute;top:8px;right:10px;font-size:11px;color:var(--accent,#FF6F00);opacity:.5;transition:opacity .15s;font-weight:700}
+  .game-tag__info{position:absolute;top:8px;right:8px;font-size:11px;color:var(--accent,#FF6F00);opacity:.5;transition:opacity .15s;font-weight:700;background:none;border:none;cursor:pointer;padding:2px 4px;font-family:inherit}
   .game-tag:hover .game-tag__info{opacity:1}
+  /* In-Plan-Spielauswahl (ersetzt den entfernten Wizard-Picker, ohne den Funnel zu verlaengern) */
+  .game-tag__sel{position:absolute;top:10px;left:10px;width:20px;height:20px;border-radius:6px;display:grid;place-items:center;font-size:13px;font-weight:800;background:var(--accent,#FF6F00);color:#fff;border:2px solid var(--accent,#FF6F00);transition:all .15s}
+  .game-tag--off{background:#fff;border-style:dashed;border-color:#E2D5C4;opacity:.7}
+  .game-tag--off .game-tag__name{color:#8A7A64}
+  .game-tag--off .game-tag__sel{background:#fff;color:#BBAA92;border-color:#DACBB6}
+  .game-tag--off:hover{opacity:1}
+  .games-hint{font-size:12px;color:#8a7a64;margin:0 0 10px;line-height:1.45}
 
   /* GAME-DETAIL DRAWER (Frame zum Klicken) */
   .game-drawer{position:fixed;top:0;right:0;bottom:0;width:min(480px,100%);background:#fff;box-shadow:-12px 0 40px rgba(0,0,0,.15);transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:110;display:flex;flex-direction:column}
@@ -752,7 +759,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   <div class="plan">
     <header class="plan__header">
       <div class="plan__header-text">
-        <h2 class="plan__title"><span class="plan__name" id="planName1">dein Kind</span>' <span id="planMottoName">Piraten</span>-Geburtstag</h2>
+        <h2 class="plan__title"><span class="plan__name" id="planName1">dein Kind</span> <span id="planMottoName">Piraten</span>-Geburtstag</h2>
         <div class="plan__meta">
           <span id="planDate1">Sa, 21.06.2026, 14:00 Uhr</span>
           <span><span id="planGuests1">6</span> Gäste</span>
@@ -1563,13 +1570,26 @@ window.plausible.init=function(){};window.plausible.q=[];
   // ===== PLAN PREVIEW =====
   function renderPlanPreview(){
     if(!state.motto) return;
+    // Auto-Seed der Spiele: seit der manuelle Picker raus ist (Commit 82ccc78), muss der Plan
+    // bei JEDEM Einstieg Spiele zeigen. state.games ist leer, wenn man via Deep-Link (?motto=…)
+    // ohne pickAge reinkommt oder das Motto gewechselt hat -> dann passt kein Eintrag mehr zum
+    // aktuellen Pool und die Spiele-Kachel war leer ("Bei Piraten leer"-Befund). Erste 5 passende
+    // Spiele setzen; eine noch gueltige (zum Motto passende) Auswahl bleibt unangetastet.
+    {
+      const pool = gamesForAge(state.motto, state.age || '6-8');
+      const poolNames = pool.map(g => g.name);
+      if(!state.games.some(n => poolNames.includes(n))){
+        state.games = pool.slice(0, 5).map(g => g.name);
+      }
+    }
     document.getElementById('planBadgeEmoji').textContent = state.motto.emoji;
     document.getElementById('planBadgeName').textContent = state.motto.name;
     document.getElementById('planBadgeAge').textContent = (state.age || '6-8') + ' Jahre';
     document.getElementById('planMottoName').textContent = state.motto.name;
 
     const body = document.getElementById('planBody');
-    const gamesData = gamesForAge(state.motto, state.age || '6-8').filter(g => state.games.includes(g.name));
+    const gamesPool = gamesForAge(state.motto, state.age || '6-8');
+    window.__gpNames = gamesPool.map(g => g.name);   // Index->Name fuer den delegierten Picker-Handler (kein Inline-onclick, kein Escaping-Risiko)
     const stations = state.motto.stations || ['Station 1','Station 2','Station 3','Station 4','DER SCHATZ'];
     const timeline = buildTimeline();
 
@@ -1611,7 +1631,8 @@ window.plausible.init=function(){};window.plausible.q=[];
           <span class="mod__icon">🎮</span>
           <h3 class="mod__title">Spiele · ${state.games.length} ausgewählt</h3>
         </header>
-        <div class="games-grid">${gamesData.map(g => `<div class="game-tag" onclick="openGameDetail('${g.name.replace(/'/g, "\\'")}')"><span class="game-tag__info">Details ›</span><div class="game-tag__name">${g.emoji} ${g.name}</div><div class="game-tag__desc">${g.desc}</div></div>`).join('')}</div>
+        <p class="games-hint">Tippe ein Spiel an, um es in den Plan zu nehmen oder rauszunehmen. „Details ›" zeigt Anleitung &amp; Material.</p>
+        <div class="games-grid">${gamesPool.map((g,i) => { const sel = state.games.includes(g.name); return `<div class="game-tag${sel ? '' : ' game-tag--off'}" role="button" tabindex="0" aria-pressed="${sel ? 'true' : 'false'}" data-gi="${i}"><span class="game-tag__sel">${sel ? '✓' : '+'}</span><button type="button" class="game-tag__info" data-gi="${i}" data-detail="1">Details ›</button><div class="game-tag__name">${g.emoji} ${esc(g.name)}</div><div class="game-tag__desc">${esc(g.desc)}</div></div>`; }).join('')}</div>
       </article>
 
       <details class="mod sz-mod" id="sz-anchor"${window.__entryModus === 'schatzsuche' ? ' open' : ''}>
@@ -1637,7 +1658,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       </article>
     `;
 
-    document.getElementById('planName1').textContent = state.name || 'dein Kind';
+    document.getElementById('planName1').textContent = (state.name && state.name.trim()) ? poss(state.name.trim()) : 'dein Kind';
     document.getElementById('planDate1').textContent = formatDateShort(state.date) + ', ' + state.time + ' Uhr';
     document.getElementById('planGuests1').textContent = state.guests;
     document.getElementById('planLocation1').textContent = locationLabel(state.location);
@@ -1864,7 +1885,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     const span = (end != null && (end - start) >= 30) ? (end - start) : naturalSpan;  // ungültig/zu kurz → Natur-Dauer
     const scale = span / naturalSpan;
 
-    const base = baseItems.map((i,bi) => { const off = Math.round(i.min*scale); return {time:fmt(start+off), title:esc(i.title), desc:esc(i.desc), custom:false, sortKey:start+off+bi*0.01}; });
+    const base = baseItems.map((i,bi) => { const t = Math.round((start + i.min*scale)/5)*5; return {time:fmt(t), title:esc(i.title), desc:esc(i.desc), custom:false, sortKey:t+bi*0.01}; });
     const customs = (state.customEntries || []).map((c, idx) => {
       const [h,m] = c.time.split(':').map(Number);
       return {time:c.time, title:esc(c.title), desc:'', dur:c.dur, custom:true, customIdx:idx, sortKey:h*60+m+0.005};
@@ -2000,9 +2021,11 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(state.name && state.name.trim()){ tpb.style.opacity=''; tpb.style.cursor=''; tpb.textContent='Fertigen Plan ansehen →'; const h=document.getElementById('nameReqHint'); if(h) h.style.display='none'; }
     else { tpb.style.opacity='.6'; tpb.style.cursor='pointer'; tpb.textContent='Erst Namen eintragen ✏️'; }
   }
+  // Possessiv nach Bolle-Konvention: Name + 's, ausser Zischlaut-Endung (s/ß/x/z) -> nur Apostroph (Mats').
+  function poss(s){ s = String(s == null ? "" : s).trim(); return s ? (s + (/(s|ß|x|z)$/i.test(s) ? "'" : "'s")) : s; }
   function liveUpdateName(){
     state.name = document.getElementById('qName').value.trim();
-    document.getElementById('planName1').textContent = state.name || 'dein Kind';
+    document.getElementById('planName1').textContent = (state.name && state.name.trim()) ? poss(state.name.trim()) : 'dein Kind';
     syncPlanGate();   // Button-Enabled-State aktualisieren (zustandsgekoppelt)
     // F3: Auto-Slug aus Name+Age (Live-Konvention: name-age)
     const newSlug = state.name.toLowerCase().replace(/[^a-z0-9]/g,'') + ageNum();
@@ -2531,6 +2554,40 @@ window.plausible.init=function(){};window.plausible.q=[];
     document.getElementById('gameDrawer').classList.add('open');
   }
 
+  // Delegierter Picker-Handler: liest den Pool-Index aus data-gi und loest den Spielnamen sicher
+  // ueber window.__gpNames auf — keine Inline-onclick-String-Interpolation, daher kein Escaping-/
+  // Injection-Risiko bei Spielnamen mit ", \\, ' oder HTML (Reviewer-MAJOR 19.06.).
+  if(!window.__gamePickerBound){
+    window.__gamePickerBound = true;
+    document.addEventListener('click', function(e){
+      const el = e.target.closest && e.target.closest('.games-grid [data-gi]');
+      if(!el) return;
+      const name = (window.__gpNames || [])[parseInt(el.getAttribute('data-gi'),10)];
+      if(name == null) return;
+      if(el.getAttribute('data-detail')){ e.stopPropagation(); openGameDetail(name); }
+      else { togglePlanGame(name); }
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key !== 'Enter' && e.key !== ' ') return;
+      const tile = e.target.closest && e.target.closest('.games-grid .game-tag[data-gi]');
+      if(!tile) return;
+      e.preventDefault();
+      const name = (window.__gpNames || [])[parseInt(tile.getAttribute('data-gi'),10)];
+      if(name != null) togglePlanGame(name);
+    });
+  }
+  // In-Plan-Toggle: Tap auf eine Spiel-Kachel nimmt sie rein/raus. Mindestens 1 Spiel bleibt im Plan.
+  function togglePlanGame(name){
+    if(!name) return;
+    if(state.games.includes(name)){
+      if(state.games.length <= 1) return;   // Plan nie ganz ohne Spiel
+      state.games = state.games.filter(n => n !== name);
+    } else {
+      state.games.push(name);
+    }
+    renderPlanPreview();
+    try{ autoSave(); }catch(e){}
+  }
   function toggleGameFromDrawer(){
     if(!gdCurrentGame) return;
     if(state.games.includes(gdCurrentGame)) state.games = state.games.filter(n => n !== gdCurrentGame);
