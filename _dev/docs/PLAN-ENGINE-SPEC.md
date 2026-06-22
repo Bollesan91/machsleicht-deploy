@@ -90,3 +90,36 @@ Elite = Basis. Aus den `MOTTOS`-Wizard-Spielen nur **additive Lücken-Füller** 
 ## 9. Rollout (korrigiert)
 1. **Engine zuerst** (motto-unabhängig): parametrisierter Renderer über die vorhandenen v1-Daten + tote Eingaben raus + Picker→Pool. Lichtet Ort/Zeit/Gäste/Auswahl/Programmpunkte für **alle 15 Mottos auf einmal** auf. Gate → Deploy → Live-Verify am Piraten. = Referenz.
 2. **Spiele-Merge Motto für Motto** (redaktionell): Wizard-Klassiker in den Elite-Pool, je mit Bolle-Kurz-OK. Optional `qtyRule` nachziehen. Kein Schema-Rewrite.
+
+---
+
+## 10. V3 — GENERATIVER Tagesplan (beschlossen 19.06.2026, Bolle)
+
+> **Entscheidung:** Variante **B** (generativ) statt **A** (kuratierter `schedule` pro Zelle). Grund: A hält die Zwei-Quellen-Ursache (Tagesplan-Array ↔ games-Array) und erzeugt damit dauerhaft Doppelung/Kollision (Befund-Session 19.06.). B entfernt die zweite Quelle: **die Engine ERZEUGT den Tagesplan aus dem getaggten Spiel-Pool + Standard-Beats.** Ein Engine-Fix lichtet alle 15 Mottos auf einmal.
+
+### 10.1 Leitsatz
+**Der Plan ist EINE geordnete Liste `activities[]`, zur Laufzeit GENERIERT.** Es gibt kein gespeichertes `schedule[]` mehr (deprecated, von der Engine ignoriert; später aus den JSONs entfernbar). Einzige Datenquelle für Spiele = `variant.games[]` (bereits getaggt).
+
+### 10.2 Activity-Schema (Laufzeit, in `state.plan.activities`)
+`{ id, kind:'beat'|'game'|'schatz'|'custom', title, emoji, durationMin, anchor?, gameName? }`
+- `beat` = Engine-Standardpunkt (Ankommen, Kuchen, Abholung) — Konstanten, NICHT aus Daten.
+- `game` = gewähltes Spiel; `gameName` referenziert das Pool-Objekt für die aufklappbare Anleitung (Quelle bleibt `variant.games`, NICHT kopiert → Datenfixes bleiben wirksam).
+- `schatz` = Schatzsuche-Modul, **genau einmal** (eigener Render, kein Pool-Spiel — L6-Dedup).
+- `custom` = User-Punkt; `durationMin` + Position, **keine Uhrzeit**.
+
+### 10.3 Generierung (`buildPlan(d, v, params)`)
+1. **Spiele wählen:** Pool = `v.games` → Ort-Filter (`indoor`/`outdoor` vs `state.location`) → nach Tags sortieren → Anzahl je Aufwand (L6: minimal ≥3 · standard 4–5 · wow 5–6; gross = Quest zählt als 1).
+2. **Beats setzen (Konstanten):** `Ankommen & Verkleidung` (Start) · `Kuchen & Pause` (~Mitte) · `Mitgebsel & Abholung` (Ende). Optional `v.signature.{opener,closer}` als winziger Flavor-Hint (ein Feld, kein Schedule).
+3. **Pacing-Regeln (der „gute Bogen"):** Start ruhig (Ankommen/Aufwärmen) → danach **laut/leise abwechseln, nie zwei laute hintereinander** → Schatzsuche als ein Mittel-Block → Kuchen nach ~50–60 % der Aktivzeit → ruhiger Ausklang vor Ende → Abholung. (`loudness`/`effort`-Tags steuern die Sortierung.)
+4. **Zeiten RECHNEN:** `start = state.time`; jede Aktivität bekommt `time = start + Σ durationMin`, das Ganze proportional ins Fenster `[state.time, state.endTime]` skaliert. **Keine gespeicherten Zeiten → keine Kollision.**
+
+### 10.4 Editieren = an der EINEN Liste (eine Stelle)
+Pro Zeile: **× entfernen · ↑↓ umsortieren.** „+ Eigener Punkt" = `custom`-Block an Position. „+ weiteres Spiel" = ungenutztes Pool-Spiel einfügen. **Min. 1 Spiel.** Kein zweiter Schalter, kein `eliteOff`.
+
+### 10.5 Design-Fallen — vorab entschieden (nicht mitten im Bau entdecken)
+- **Snapshot vs. Quelle:** `state.plan` speichert die **Struktur/Reihenfolge + Custom-Punkte**, aber Spiel-**Inhalte** werden bei jedem Render frisch aus `v.games` per `gameName` geholt → **Datenfixes bleiben wirksam**, kein eingefrorener Inhalt. Bei Motto-/Alter-/Varianten-Wechsel wird `state.plan` neu generiert (alte Edits verfallen — gewollt, andere Spielmenge).
+- **Kuratierung schützen:** **Ankommen bleibt erste, Abholung letzte** Aktivität (nicht raus-/umsortierbar). Alles dazwischen frei editierbar. Verhindert kaputt-editierte Pläne, ohne zu gängeln.
+- **Nicht-uniforme Blöcke:** Schatzsuche + Kuchen-Rezept bleiben eigene Render-Bausteine (referenziert aus der Liste, aber eigener Look). Die „alles uniform"-Eleganz hat diese bewusten Ausnahmen.
+
+### 10.6 Rollout
+**Piraten-Pilot zuerst** (Engine generativ in `renderElitePlan`, `schedule`-Konsum raus, `eliteOff`/Inline-Toggle raus). Verify am echten Piraten-Render + Helfer-Gate (Stufe 0–3). Wird der generierte Plan so gut wie der handgeschriebene → **generalisiert gratis** auf alle 15 (alle haben den getaggten Pool). Erst dann `schedule[]` aus den Daten entfernen (additiv, später).
