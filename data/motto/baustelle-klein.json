@@ -151,38 +151,6 @@
       "headline": "🚧 Minimal — 90 Min Bau-Tag",
       "intro": "Sparvariante: 90 Minuten, 5 Kinder, 3 Stationen (Sand-Bagger, Bauklotz-Burg, Schatzsuche). Plastik-Helm und Warnweste — kein echtes Werkzeug nötig.",
       "timeWindow": "14:30–16:00, 5 Kinder",
-      "schedule": [
-        {
-          "time": "14:30",
-          "title": "Ankunft + Helm-Übergabe",
-          "description": "Helme verteilen, Warnwesten anziehen, Spruch gemeinsam sprechen. 10 Min."
-        },
-        {
-          "time": "14:40",
-          "title": "Station 1: Sand-Bagger-Spiel",
-          "description": "Sandkiste oder Plane mit Spielsand, kleine Plastik-Bagger und Schaufeln. 20 Min."
-        },
-        {
-          "time": "15:00",
-          "title": "Station 2: Bauklotz-Burg gemeinsam bauen",
-          "description": "Große Bauklötze, alle stapeln gemeinsam zur Burg. 15 Min."
-        },
-        {
-          "time": "15:15",
-          "title": "Baustellen-Snack-Pause",
-          "description": "Bagger-Kekse, Karotten-'Schrauben', Apfelschorle. 15 Min."
-        },
-        {
-          "time": "15:30",
-          "title": "Station 3: Schrauben-Schatzsuche in Sandkiste",
-          "description": "Plastik-Schrauben + Werkzeuge im Sand versteckt — alle Kinder finden 2-3. 20 Min."
-        },
-        {
-          "time": "15:50",
-          "title": "Diplom-Verleihung + Foto",
-          "description": "Bauarbeiter-Diplom übergeben, Gruppenfoto mit Helm. 10 Min."
-        }
-      ],
       "games": [
         {
           "name": "🏗️ Sand-Bagger-Spiel",
@@ -385,48 +353,6 @@
       "headline": "🏗️ Standard — 2,5 Stunden Bau-Tag",
       "intro": "Allrounder für 6–8 Kinder: 5 Stationen (Sand-Bagger, Bauklotz-Burg, Maler-Station, Schrauben-Schatzsuche, Werkzeug-Memory), Helm-Übergabe, Diplom-Zeremonie.",
       "timeWindow": "14:30–17:00, 7 Kinder",
-      "schedule": [
-        {
-          "time": "14:30",
-          "title": "Ankunft + Helm-Übergabe + Spruch",
-          "description": "Helme + Warnwesten + Werkzeug-Gürtel. 15 Min."
-        },
-        {
-          "time": "14:45",
-          "title": "Station 1: Sand-Bagger-Spiel",
-          "description": "25 Min draußen oder auf Plane."
-        },
-        {
-          "time": "15:10",
-          "title": "Station 2: Bauklotz-Burg gemeinsam bauen",
-          "description": "20 Min."
-        },
-        {
-          "time": "15:30",
-          "title": "Baustellen-Snack-Pause",
-          "description": "25 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "Station 3: Maler-Station",
-          "description": "Eigene 'Mauer-Pappe' bemalen mit dicken Pinseln + Wasserfarben. 20 Min."
-        },
-        {
-          "time": "16:15",
-          "title": "Station 4: Schrauben-Schatzsuche",
-          "description": "20 Min."
-        },
-        {
-          "time": "16:35",
-          "title": "Station 5: Werkzeug-Memory",
-          "description": "Memory-Karten mit Werkzeugen, Sitz-Aktivität. 15 Min."
-        },
-        {
-          "time": "16:50",
-          "title": "Diplom-Verleihung + Foto",
-          "description": "10 Min."
-        }
-      ],
       "games": [
         {
           "name": "🏗️ Sand-Bagger-Spiel",
@@ -713,53 +639,6 @@
       "headline": "🎉 Wow — 3 Stunden Bau-Olympiade",
       "intro": "Großes Programm für 8 Kinder: 6 Stationen + finale Bau-Olympiade mit Schubkarren-Lauf, optional Schlafparty-Anschluss mit Bagger-Film.",
       "timeWindow": "14:30–17:30, 8 Kinder",
-      "schedule": [
-        {
-          "time": "14:30",
-          "title": "Empfang + Helm + Werkzeug-Gürtel + Spruch",
-          "description": "20 Min."
-        },
-        {
-          "time": "14:50",
-          "title": "Station 1: Sand-Bagger XL",
-          "description": "25 Min."
-        },
-        {
-          "time": "15:15",
-          "title": "Station 2: Bauklotz-Burg + Burg-Umfall-Spiel",
-          "description": "20 Min."
-        },
-        {
-          "time": "15:35",
-          "title": "Snack-Pause",
-          "description": "25 Min."
-        },
-        {
-          "time": "16:00",
-          "title": "Station 3: Maler-Station XL",
-          "description": "20 Min."
-        },
-        {
-          "time": "16:20",
-          "title": "Station 4: Schrauben-Schatzsuche",
-          "description": "20 Min."
-        },
-        {
-          "time": "16:40",
-          "title": "Station 5: Werkzeug-Memory",
-          "description": "15 Min."
-        },
-        {
-          "time": "16:55",
-          "title": "Station 6: Bau-Olympiade (Schubkarren-Lauf)",
-          "description": "25 Min."
-        },
-        {
-          "time": "17:20",
-          "title": "Diplom-Verleihung + Foto",
-          "description": "10 Min."
-        }
-      ],
       "games": [
         {
           "name": "🏗️ Sand-Bagger-Spiel",

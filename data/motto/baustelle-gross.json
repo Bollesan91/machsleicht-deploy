@@ -174,43 +174,6 @@
       "headline": "🚧 Minimal — 3 Stunden Bauleiter-Prüfung",
       "intro": "Sparvariante: 3 Stunden, 8 Kinder, 4 Prüfungs-Stationen (Bauplan, Bauklotz-Wettbewerb mit Statik, Werkzeug-Quiz, Sabotage-Ermittlung). Echtes Werkzeug (klein!) + Helm + Warnweste. Eltern setzen ab.",
       "timeWindow": "14:00–17:00, 8 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Empfang + Funktion + Bauleiter-Briefing",
-          "description": "Funktions-Karten, Theorie-Briefing (5 Min Bau-Berufe + Statik), Prüfungs-Mappen. 20 Min."
-        },
-        {
-          "time": "14:20",
-          "title": "Station 1: Bauplan-Werkstatt",
-          "description": "Eigenen Bauplan zeichnen (Haus, Brücke, Burg) mit Lineal + Bleistift, Architektin Mia bewertet. 35 Min."
-        },
-        {
-          "time": "14:55",
-          "title": "Station 2: Bauklotz-Wettbewerb mit Statik",
-          "description": "Höchster stabiler Turm in 5 Min, Tiefbau-Ingenieur Nora bewertet Stabilität. 35 Min."
-        },
-        {
-          "time": "15:30",
-          "title": "Bauarbeiter-Snack-Pause",
-          "description": "Bauarbeiter-Pizza, Karotten-Schrauben, Apfelschorle. 25 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "Station 3: Werkzeug-Quiz Klasse 2",
-          "description": "25 Quiz-Karten in 4 Kategorien (Werkzeug, Berufe, Materialien, Statik), Elektrikerin Lina. 30 Min."
-        },
-        {
-          "time": "16:25",
-          "title": "Station 4: Sabotage-Ermittlung (Krimi-Quest)",
-          "description": "Auf der Baustelle wurde sabotiert! 4 Verdächtige, 3 Spuren, Lupe + Beweis-Bogen. 25 Min."
-        },
-        {
-          "time": "16:50",
-          "title": "Diplom + Bauleiter-Pokal-Verleihung",
-          "description": "Feierliche Übergabe. Bestes Team Bauleiter-Pokal. 10 Min."
-        }
-      ],
       "games": [
         {
           "name": "📐 Bauplan-Werkstatt",
@@ -809,48 +772,6 @@
       "headline": "🏗️ Standard — 3,5 Stunden Bauleiter-Wettbewerb",
       "intro": "Allrounder für 8-10 Kinder: 5 Prüfungs-Stationen (Bauplan, Bauklotz, Werkzeug-Quiz, Sabotage, Material-Erkennung), Funktions-System, Bauleiter-Pokal-Wettbewerb.",
       "timeWindow": "14:00–17:30, 10 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Empfang + Funktion + Briefing",
-          "description": "20 Min."
-        },
-        {
-          "time": "14:20",
-          "title": "Station 1: Bauplan-Werkstatt",
-          "description": "35 Min."
-        },
-        {
-          "time": "14:55",
-          "title": "Station 2: Bauklotz-Wettbewerb mit Statik",
-          "description": "35 Min."
-        },
-        {
-          "time": "15:30",
-          "title": "Snack-Pause",
-          "description": "25 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "Station 3: Werkzeug-Quiz Klasse 2",
-          "description": "30 Min."
-        },
-        {
-          "time": "16:25",
-          "title": "Station 4: Sabotage-Ermittlung",
-          "description": "30 Min."
-        },
-        {
-          "time": "16:55",
-          "title": "Station 5: Material-Erkennung",
-          "description": "Stein, Holz, Metall, Beton erfühlen + benennen. 25 Min."
-        },
-        {
-          "time": "17:20",
-          "title": "Diplom + Bauleiter-Pokal",
-          "description": "10 Min."
-        }
-      ],
       "games": [
         {
           "name": "📐 Bauplan-Werkstatt",
@@ -1489,53 +1410,6 @@
       "headline": "🎉 Wow — 4 Stunden Bau-Olympiade XL",
       "intro": "Großes Programm für 10 Kinder: 6 Prüfungs-Stationen + finale Bau-Olympiade mit Schubkarren-Lauf, Bauklotz-Stapel-Finale + Brücken-Bau-Wettbewerb, optional Baustellen-Besuch (richtige Baustelle mit Schutzbekleidung). Bauleiter-Diplom Klasse 2 + Bauleiter-Pokal.",
       "timeWindow": "14:00–18:00, 10 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Empfang + Funktion + Großes Briefing",
-          "description": "25 Min."
-        },
-        {
-          "time": "14:25",
-          "title": "Station 1: Bauplan-Werkstatt XL",
-          "description": "35 Min."
-        },
-        {
-          "time": "15:00",
-          "title": "Station 2: Bauklotz-Wettbewerb XL mit Statik-Test",
-          "description": "35 Min."
-        },
-        {
-          "time": "15:35",
-          "title": "Snack-Pause + Baustellen-Video",
-          "description": "30 Min."
-        },
-        {
-          "time": "16:05",
-          "title": "Station 3: Werkzeug-Quiz Klasse 2 XL",
-          "description": "30 Min."
-        },
-        {
-          "time": "16:35",
-          "title": "Station 4: Sabotage-Ermittlung XL (6 Verdächtige)",
-          "description": "35 Min."
-        },
-        {
-          "time": "17:10",
-          "title": "Station 5: Material-Erkennung + Brücken-Bau",
-          "description": "25 Min."
-        },
-        {
-          "time": "17:35",
-          "title": "Bau-Olympiade: Schubkarren + Klotz-Stapel + Brücken-Last",
-          "description": "20 Min."
-        },
-        {
-          "time": "17:55",
-          "title": "Diplom + Bauleiter-Pokal + Foto",
-          "description": "5 Min."
-        }
-      ],
       "games": [
         {
           "name": "📐 Bauplan-Werkstatt",

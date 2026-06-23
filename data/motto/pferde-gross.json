@@ -174,43 +174,6 @@
       "headline": "🐴 Minimal — 3 Stunden Stallmeister-Prüfung",
       "intro": "Sparvariante: 3 Stunden, 8 Kinder, 4 Prüfungs-Stationen (Pflege, Reit-Parcours, Quiz, Hufschmied). Steckenpferde + Plüsch für die Reit-Übung. Eltern setzen ab, sind telefonisch erreichbar.",
       "timeWindow": "14:00–17:00, 8 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Empfang + Funktions-Ziehen + Briefing",
-          "description": "Funktions-Karten ziehen, Stallmeister-Briefing (5 Min Theorie zu Rassen/Gangarten), Prüfungs-Mappen verteilen. 20 Min."
-        },
-        {
-          "time": "14:20",
-          "title": "Station 1: Pflege-Prüfung",
-          "description": "Plüsch-Pony pflegen nach Checkliste, Pflege-Chefin Hanna gibt Note. 35 Min."
-        },
-        {
-          "time": "14:55",
-          "title": "Station 2: Reit-Parcours mit Zeit",
-          "description": "Hindernis-Parcours mit Stoppuhr, Stilnote durch Wettkampf-Richterin Nora. 35 Min."
-        },
-        {
-          "time": "15:30",
-          "title": "Reiterhof-Snack-Pause",
-          "description": "Echte Pizza, Karotten-Sticks, Apfelschorle. 25 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "Station 3: Pferde-Quiz Klasse 2",
-          "description": "20 Quiz-Karten, Pferderassen + Gangarten + Krankheiten, Quizmaster Lina vergibt Punkte. 30 Min."
-        },
-        {
-          "time": "16:25",
-          "title": "Station 4: Hufschmied-Workshop",
-          "description": "Hufeisen ausschneiden, gravieren, mit Glücksspruch versehen. 25 Min."
-        },
-        {
-          "time": "16:50",
-          "title": "Diplom-Übergabe + Wanderpokal",
-          "description": "Feierliche Übergabe der Stallmeister-Anwärter-Diplome. Bestes Team bekommt Wanderpokal. 10 Min."
-        }
-      ],
       "games": [
         {
           "name": "🐎 Pony-Pflege-Station",
@@ -671,48 +634,6 @@
       "headline": "🐎 Standard — 3,5 Stunden Stallmeister-Wettbewerb",
       "intro": "Allrounder für 8-10 Kinder: 5 Prüfungs-Stationen (Pflege, Reit-Parcours, Quiz Klasse 2, Hufschmied, Mähnen-Styling), Funktions-System, Wanderpokal für bestes Team, optional Reiterhof-Besuch mit echtem Pony.",
       "timeWindow": "14:00–17:30, 10 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Empfang + Funktion + Stallmeister-Briefing",
-          "description": "Funktions-Karten, Theorie-Briefing, Prüfungs-Mappen. 20 Min."
-        },
-        {
-          "time": "14:20",
-          "title": "Station 1: Pflege-Prüfung",
-          "description": "35 Min — Pflege-Chefin Hanna gibt Note."
-        },
-        {
-          "time": "14:55",
-          "title": "Station 2: Reit-Parcours mit Zeit",
-          "description": "35 Min — Wettkampf-Richterin Nora vergibt Stilnote."
-        },
-        {
-          "time": "15:30",
-          "title": "Reiterhof-Snack-Pause",
-          "description": "25 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "Station 3: Pferde-Quiz Klasse 2",
-          "description": "30 Min — 20 Karten in 4 Kategorien."
-        },
-        {
-          "time": "16:25",
-          "title": "Station 4: Hufschmied-Workshop",
-          "description": "25 Min."
-        },
-        {
-          "time": "16:50",
-          "title": "Station 5: Mähnen-Styling-Wettbewerb",
-          "description": "30 Min — Kreativ-Stilnote."
-        },
-        {
-          "time": "17:20",
-          "title": "Diplom + Wanderpokal-Verleihung",
-          "description": "Feierliche Übergabe. 10 Min."
-        }
-      ],
       "games": [
         {
           "name": "🐎 Pony-Pflege-Station",
@@ -1222,53 +1143,6 @@
       "headline": "🎉 Wow — 4 Stunden Stallmeister-Turnier",
       "intro": "Großes Programm für 10 Kinder: 6 Prüfungs-Stationen + finale Stallmeister-Olympiade mit echtem Hufeisen-Wurf, optional Reiterhof-Besuch mit echtem Pony (1h, mit Reitlehrer), Schlafparty-Anschluss mit Pferdefilm. Stallmeister-Diplom Klasse 2 mit Wanderpokal.",
       "timeWindow": "14:00–18:00, 10 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Empfang + Funktion + Großes Briefing",
-          "description": "Funktions-Karten, ausgedehntes Briefing (10 Min Theorie zu Rassen, Gangarten, Pflege), Prüfungs-Mappen mit Foto-Platz. 25 Min."
-        },
-        {
-          "time": "14:25",
-          "title": "Station 1: Pflege-Prüfung XL",
-          "description": "35 Min — Pflege-Chefin Hanna bewertet."
-        },
-        {
-          "time": "15:00",
-          "title": "Station 2: Reit-Parcours mit Zeit",
-          "description": "35 Min — Wettkampf-Richterin."
-        },
-        {
-          "time": "15:35",
-          "title": "Reiterhof-Snack-Pause + Pferde-Film-Trailer",
-          "description": "30 Min — Pause + 5 Min Trailer zur Stimmung."
-        },
-        {
-          "time": "16:05",
-          "title": "Station 3: Pferde-Quiz Klasse 2 (große Version)",
-          "description": "30 Min — 25 Karten + Bonus."
-        },
-        {
-          "time": "16:35",
-          "title": "Station 4: Hufschmied-Workshop XL",
-          "description": "30 Min — eigenes Hufeisen + Gravur-Vertiefung."
-        },
-        {
-          "time": "17:05",
-          "title": "Station 5: Mähnen-Styling-Catwalk",
-          "description": "30 Min — mit Bühne + Catwalk."
-        },
-        {
-          "time": "17:35",
-          "title": "Stallmeister-Olympiade: Hufeisen-Wurf-Finale",
-          "description": "20 Min — echte Wettkampf-Atmosphäre."
-        },
-        {
-          "time": "17:55",
-          "title": "Diplom + Wanderpokal-Verleihung",
-          "description": "Feierliche Übergabe mit Foto-Session. Schlafparty optional. 5 Min."
-        }
-      ],
       "games": [
         {
           "name": "🐎 Pony-Pflege-Station",

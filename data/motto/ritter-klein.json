@@ -151,38 +151,6 @@
       "headline": "⚔️ Minimal — 90 Minuten Burg-Spielzeit",
       "intro": "Die ehrliche Sparvariante: 90 Minuten, 6 Kinder, ein durchgehender Burg-Tag mit Schild-Bemalen, Drachen-Wurf und Krönung. Pappkarton-Schilde kannst du am Vortag schneiden — Pool-Nudeln gibts im Sommer überall.",
       "timeWindow": "15:00–16:30, 6 Kinder",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "Ankunft + Ritter werden",
-          "description": "Schild bekommen, Pool-Nudel-Schwert, Lehrlings-Spruch."
-        },
-        {
-          "time": "15:10",
-          "title": "Wappen-Schmücken",
-          "description": "Schild mit Stickern, Filzstiften, Goldfolie schmücken. Jeder findet sein Wappen."
-        },
-        {
-          "time": "15:35",
-          "title": "Drachen-Wurf",
-          "description": "Plüsch-Drache (großer Stoff-Drache) als Ziel — Wurfsäckchen treffen den Drachen, alle gemeinsam."
-        },
-        {
-          "time": "15:50",
-          "title": "Burg-Snack-Pause",
-          "description": "'Ritter-Brote' (Toast in Schwert-Form), Apfelschnitze, Schorle."
-        },
-        {
-          "time": "16:10",
-          "title": "Kleine Burg-Erstürmung",
-          "description": "Kissen-Burg aufstellen, alle Ritter besiegen sie gemeinsam (sanft)."
-        },
-        {
-          "time": "16:25",
-          "title": "Königs-Krönung + Foto",
-          "description": "Jedes Kind wird gekrönt, Foto mit Schild und Krone."
-        }
-      ],
       "games": [
         {
           "name": "🛡️ Wappen-Schmücken",
@@ -385,43 +353,6 @@
       "headline": "🏰 Standard — 2,5 Stunden Burg-Tag",
       "intro": "Der Allrounder für 6–8 Kinder: Wappen-Schmücken + Schwert-Übung am Polster + Drachen-Wurf + Burg-Erstürmung + finale Krönung. Genug Action, dazwischen Ruhe-Phasen.",
       "timeWindow": "14:30–17:00, 8 Kinder",
-      "schedule": [
-        {
-          "time": "14:30",
-          "title": "Ankunft + Ritter werden",
-          "description": "Schild, Pool-Nudel-Schwert, Lehrlings-Spruch."
-        },
-        {
-          "time": "14:45",
-          "title": "Wappen-Schmücken",
-          "description": "Jeder gestaltet sein Schild — Sticker, Goldfolie, Filzstifte."
-        },
-        {
-          "time": "15:15",
-          "title": "Schwert-Übung am Polster",
-          "description": "Sicheres Schwertkampf-Training: Schwert trifft Polster (kein Körper)."
-        },
-        {
-          "time": "15:35",
-          "title": "Burg-Snack-Pause",
-          "description": "Ritter-Brote, Drachen-Zähne (Karotten), Schorle, Burg-Kuchen."
-        },
-        {
-          "time": "16:05",
-          "title": "Drachen-Wurf",
-          "description": "Plüsch-Drache als Ziel, 2 Teams treffen ihn gemeinsam."
-        },
-        {
-          "time": "16:25",
-          "title": "Burg-Erstürmung",
-          "description": "Kissen-Burg gemeinsam erobern (sanft, kein Drängeln)."
-        },
-        {
-          "time": "16:45",
-          "title": "Königs-Krönung + Foto",
-          "description": "Jeder wird einzeln gekrönt, Gruppenfoto."
-        }
-      ],
       "games": [
         {
           "name": "🛡️ Wappen-Schmücken (Ausführlich)",
@@ -673,48 +604,6 @@
       "headline": "🎉 Wow — 3 Stunden voller Burg-Tag",
       "intro": "Für den großen Bahnhof mit 8–10 Kindern: ein durchgehender Burg-Tag mit Komplett-Verkleidung, Wappen-Werkstatt, Schwert-Akademie, Drachen-Wurf-Turnier, Burg-Erstürmung und finaler Großer Krönungs-Zeremonie. Mehr Aufwand — Wow-Effekt garantiert.",
       "timeWindow": "14:00–17:00, 8–10 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Burg-Empfang + Verkleidung",
-          "description": "Schild, Schwert, Lehrlings-Cape (Stoff). Jedes Kind fotografiert für Ritter-Akte."
-        },
-        {
-          "time": "14:20",
-          "title": "Wappen-Werkstatt",
-          "description": "Schild ausführlich gestalten — Goldfolie, Glitzer, eigener Schlachtruf."
-        },
-        {
-          "time": "14:50",
-          "title": "Schwert-Akademie",
-          "description": "Schwert-Übung am Polster, Hieb-Lehre, sicheres Üben."
-        },
-        {
-          "time": "15:15",
-          "title": "Burg-Snack-Pause",
-          "description": "Großes Buffet — Ritter-Brote, Drachen-Zähne, Burg-Kuchen, Schorle."
-        },
-        {
-          "time": "15:45",
-          "title": "Drachen-Wurf-Turnier",
-          "description": "Mehrere Runden, alle gewinnen — der Drache fällt."
-        },
-        {
-          "time": "16:10",
-          "title": "Große Burg-Erstürmung",
-          "description": "Mit Eltern-Helfern: Sturm-Lauf, Mauer-Fall, alle gleichzeitig."
-        },
-        {
-          "time": "16:35",
-          "title": "Königs-Zeremonie + Schwur",
-          "description": "Feierliche Krönung jedes Kindes mit 'Ich bin König/Königin' + Pose-Foto."
-        },
-        {
-          "time": "16:55",
-          "title": "Abschluss + Mitgebsel",
-          "description": "Burg-Tüten + Foto-Karten verteilen."
-        }
-      ],
       "games": [
         {
           "name": "🛡️ Wappen-Schmücken (Ausführlich)",

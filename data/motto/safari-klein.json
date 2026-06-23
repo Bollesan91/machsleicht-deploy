@@ -127,38 +127,6 @@
       "headline": "🌿 Minimal — 90 Minuten Mini-Safari",
       "intro": "Die ehrliche Sparvariante: 90 Minuten, 6 Kinder, ein Hauptspiel (die Pirsch) plus Tierstimmen-Quiz als Lückenfüller. Stirnbänder als Ankunfts-Aktion, Plüsch-Tier-Übergabe und Urkunde zum Schluss. Reicht völlig für 3-Jährige — mehr wäre eher zu viel.",
       "timeWindow": "15:00–16:30, 6 Kinder",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "Ankunft + Helfer werden",
-          "description": "Jedes Kind sucht sich ein Stirnband (Tier-Ohren) und bekommt seinen Helfer-Namen. Eltern dürfen bleiben."
-        },
-        {
-          "time": "15:15",
-          "title": "Tierstimmen-Quiz",
-          "description": "Einstieg im Sitzkreis, alle machen Tiere nach. Bringt die Gruppe zusammen ohne Rennen."
-        },
-        {
-          "time": "15:30",
-          "title": "Tierspuren-Pirsch",
-          "description": "Das Hauptspiel: leise der Spur folgen, den verlorenen Plüsch-Löwen finden und ins Reservat bringen."
-        },
-        {
-          "time": "15:55",
-          "title": "Tiere füttern",
-          "description": "Ruhiges Versorgungs-Spiel zum Runterkommen. Jedes Kind füttert sein Tier."
-        },
-        {
-          "time": "16:10",
-          "title": "Kuchen + Urkunden",
-          "description": "Löwen-Kuchen, dann Urkunden-Übergabe: jeder Helfer kommt einzeln dran, bekommt Urkunde + Mini-Tier."
-        },
-        {
-          "time": "16:30",
-          "title": "Abholung",
-          "description": "Mitgebsel-Tüte an der Tür, fertig. Lieber 90 Min. glücklich als 3 Stunden eskaliert."
-        }
-      ],
       "games": [
         {
           "name": "🦓 Tiere füttern (Bälle in Eimer)",
@@ -394,43 +362,6 @@
       "headline": "🦓 Standard — der entspannte Tier-Helfer-Tag",
       "intro": "Zwei Stunden, 6 Kinder, mehr Abwechslung: Stirnband-Basteln zum Ankommen, Pirsch, Tarnungs-Übung und Füttern als Stationen-Mix. Genug Programm, dass keine Langeweile aufkommt, aber ohne Bastel-Marathon für die Eltern. Das ist die Variante für die meisten Familien.",
       "timeWindow": "14:00–16:00, 6 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankunft + Stirnband-Basteln",
-          "description": "Jedes Kind bastelt/verziert sein Tier-Stirnband und bekommt den Helfer-Namen. Ruhiger Einstieg."
-        },
-        {
-          "time": "14:20",
-          "title": "Tierstimmen-Quiz",
-          "description": "Im Kreis: Tiere erraten und nachmachen. Bringt die Gruppe in Stimmung."
-        },
-        {
-          "time": "14:35",
-          "title": "Tierspuren-Pirsch",
-          "description": "Leise der Spur folgen, das verlorene Tier finden und ins Reservat bringen."
-        },
-        {
-          "time": "15:00",
-          "title": "Kuchen-Pause",
-          "description": "Löwen-Kuchen + Tierfutter-Teller. Pause zum Durchatmen, danach geht's wieder raus/rum."
-        },
-        {
-          "time": "15:25",
-          "title": "Tarnungs-Übung",
-          "description": "Verstecken und Pirschen — das aktive Highlight. Jedes Gefunden-werden ist ein Erfolg."
-        },
-        {
-          "time": "15:45",
-          "title": "Tiere füttern + Urkunden",
-          "description": "Ruhiges Füttern zum Runterkommen, dann Urkunden-Übergabe einzeln an jeden Helfer."
-        },
-        {
-          "time": "16:00",
-          "title": "Abholung",
-          "description": "Mitgebsel-Tüte an der Tür. 2 Std. sind das Maximum — danach kippt die Stimmung."
-        }
-      ],
       "games": [
         {
           "name": "🎨 Stirnband-Basteln (Tier-Ohren)",
@@ -714,43 +645,6 @@
       "headline": "✨ Wow — der Tier-Helfer-Tag mit Foto-Ecke",
       "intro": "Baut komplett auf Standard auf: gleicher Tier-Helfer-Tag, gleiche Pirsch — plus eine Mini-Schatzsuche ins Reservat und eine DIY-Foto-Ecke. Für 8 Kinder ausgelegt. Wichtig: Wow ist nicht für jede Familie ehrlich. Wer das stemmen will, sollte die Bedingungen unten erst checken.",
       "timeWindow": "14:00–16:00, 8 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankunft + Stirnband-Basteln",
-          "description": "Stirnbänder verzieren, Helfer-Namen vergeben. Foto-Ecke schon aufgebaut für erste Bilder."
-        },
-        {
-          "time": "14:20",
-          "title": "Tierstimmen-Quiz",
-          "description": "Aufwärmen im Kreis. Bei 8 Kindern in 2 kleine Gruppen, sonst zu wuselig."
-        },
-        {
-          "time": "14:35",
-          "title": "Tierspuren-Pirsch",
-          "description": "Leise der Spur folgen. Bei 8 Kindern 2 Spuren parallel oder eine längere Spur in 2 Wellen."
-        },
-        {
-          "time": "15:00",
-          "title": "Kuchen-Pause",
-          "description": "Löwen-Kuchen + Tierfutter-Teller. Foto-Ecke offen für Eltern-Schnappschüsse."
-        },
-        {
-          "time": "15:20",
-          "title": "Mini-Schatzsuche ins Reservat",
-          "description": "Das Highlight: von Tier-Station zu Tier-Station zum gemeinsamen Reservat-Schatz."
-        },
-        {
-          "time": "15:45",
-          "title": "Tarnungs-Übung + Urkunden",
-          "description": "Kurze Tarnungs-Runde, dann Urkunden-Übergabe einzeln. Jeder Helfer kommt dran."
-        },
-        {
-          "time": "16:00",
-          "title": "Abholung",
-          "description": "Mitgebsel + Foto-Ausdruck. Schluss bei 2 Std., auch wenn's gerade läuft."
-        }
-      ],
       "games": [
         {
           "name": "🎨 Stirnband-Basteln (Tier-Ohren)",

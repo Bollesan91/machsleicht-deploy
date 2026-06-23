@@ -128,33 +128,6 @@
       "headline": "⚡ Minimal — 1,5 Stunden, stressfrei",
       "intro": "Das ehrliche Konzept für Eltern, die nicht 3 Tage vorbereiten wollen. 2 Spiele, Kuchen, fertig. Kinder in diesem Alter brauchen nicht mehr — sie brauchen weniger. Funktioniert auch alleine ohne Helfer.",
       "timeWindow": "15:00–16:30, 5 Kinder",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "✨ Sternenstaub-Beutel & Einhorn-Tattoo",
-          "description": "Kinder kommen an, ziehen ihren Einhorn-Namen. Jedes Kind bekommt ein [Einhorn-Tattoo*](https://www.amazon.de/s?k=einhorn+tattoos+kinder+set&tag=machsleicht21-21) auf den Handrücken. Eltern helfen beim Anpressen. Freies Spielen bis alle da sind."
-        },
-        {
-          "time": "15:15",
-          "title": "🦄 Einhorn-Horn basteln",
-          "description": "Jedes Kind bastelt sein eigenes Einhorn-Horn aus Pappteller + Glitzer. 20 Min. — danach aufsetzen und als Einhorn durch den Raum galoppieren."
-        },
-        {
-          "time": "15:40",
-          "title": "🌈 Regenbogen-Tanz",
-          "description": "Musik an → tanzen. Musik aus → einfrieren! Wer wackelt, bekommt einen „Zauberstaub-Kuss\" (Glitzer-Aufkleber). Kein Ausscheiden — alle tanzen immer weiter. 15 Min."
-        },
-        {
-          "time": "16:00",
-          "title": "🎂 Kuchen & Einhorn-Saft",
-          "description": "Regenbogen-Wolkenkuchen mit Zuckerhorn. „Einhorn-Saft\" (Apfelschorle mit 2 Tropfen Grenadine → wird rosa). Happy Birthday singen. 20 Min."
-        },
-        {
-          "time": "16:20",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Horn + Tattoo + 1 Einhorn-Figur + Süßes in Tüte. Eltern kommen. Fertig.\n\n💡 Warum nur 1,5 Stunden?\nWeil 3–4-Jährige nach 90 Minuten durch sind. Wirklich. Die Aufmerksamkeit kippt, die Stimmung kippt, und dann stehst du mit 5 weinenden Kindern da. Kurz und gut schlägt lang und chaotisch — immer."
-        }
-      ],
       "games": [
         {
           "name": "✨ Sternenstaub suchen",
@@ -350,43 +323,6 @@
       "headline": "🎯 Standard — 2 Stunden, rund und gut",
       "intro": "Der Sweet Spot für 3–5-Jährige: genug Programm ohne Überforderung. 4 Aktivitäten, Kuchen, Deko. Die Party, an die sich die Kinder erinnern — und die Eltern nicht bereuen.",
       "timeWindow": "15:00–17:00, 5 Kinder",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "✨ Sternenstaub-Beutel, Tattoo & freies Spielen",
-          "description": "Jedes Kind zieht seinen Einhorn-Namen, bekommt das Tattoo. Dann freies Spielen mit bereitliegenden Einhorn-Ausmalbildern und Stiften, bis alle da sind."
-        },
-        {
-          "time": "15:15",
-          "title": "🦄 Einhorn-Horn basteln",
-          "description": "Pappteller-Horn mit Glitzer-Kleber und Stickern. 20 Min. Wenn fertig: aufsetzen und 1 Runde als Einhorn-Herde durch den Raum galoppieren."
-        },
-        {
-          "time": "15:40",
-          "title": "🌈 Regenbogen-Milch-Experiment",
-          "description": "DER Wow-Moment. Farben „explodieren\" in der Milch. 15 Min. — die Kinder staunen, wollen es nochmal sehen. Du machst es 3x."
-        },
-        {
-          "time": "16:00",
-          "title": "🎂 Kuchen, Einhorn-Saft & Obst",
-          "description": "Regenbogen-Wolkenkuchen. Happy Birthday singen. Rosa Einhorn-Saft. 25 Min."
-        },
-        {
-          "time": "16:25",
-          "title": "✨ Sternenstaub suchen",
-          "description": "Glitzer-Reis-Wanne mit versteckten Einhorn-Figuren. Jedes Kind darf mit dem Löffel graben. Ruhige Phase nach dem Kuchen. 15 Min."
-        },
-        {
-          "time": "16:40",
-          "title": "🌈 Regenbogen-Tanz",
-          "description": "Zum Auspowern nach dem Zucker. Tanzen, Einfrieren, Farben-Rufen. 15 Min."
-        },
-        {
-          "time": "16:55",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Horn + Einhorn-Figur + Tattoo + Süßes in Tüte. Fertig.\n\n💡 Rhythmus-Regel für Kleinkinder:\nRuhig → Aktiv → Ruhig → Aktiv → Ruhig. Basteln (ruhig) → Milch-Experiment (staunen) → Kuchen (Pause) → Sternenstaub suchen (ruhig) → Tanzen (laut). So kippt die Stimmung nie. Wenn ein Kind trotzdem aussteigt: lass es. Ausmalbilder bereithalten als „sichere Insel\"."
-        }
-      ],
       "games": [
         {
           "name": "✨ Sternenstaub suchen",
@@ -632,48 +568,6 @@
       "headline": "✨ Wow — 2,5 Stunden, die volle Magie",
       "intro": "Die Kinder erleben eine „Regenbogen-Zauber-Reise\" — eine zusammenhängende Geschichte in 5 Kapiteln. Jede Station baut auf der vorherigen auf: zuerst werden sie zu Einhörnern (Verkleidung), dann lernen sie Regenbogen-Magie (Milch-Experiment), füttern ihr Einhorn (Ballwurf), suchen den verlorenen Sternenstaub (Schatzsuche) und basteln sich ihren eigenen Zauberstab für den großen Abschluss-Tanz. Aufwand mittel, Erinnerung riesig.",
       "timeWindow": "14:30–17:00, 5 Kinder",
-      "schedule": [
-        {
-          "time": "14:30",
-          "title": "📖 Kapitel 1: Die Verwandlung",
-          "description": "Jedes Kind zieht seinen Einhorn-Namen aus dem Sternenstaub-Beutel, bekommt das Tattoo. Dann: Einhorn-Horn basteln (Pappteller + Glitzer) UND Tüll-Röckchen überziehen (~2 € pro Kind bei Action/Tedi). Du erzählst die Luna-Geschichte. „Jetzt seid ihr echte Einhörner — und Luna braucht eure Hilfe!\" 20 Min."
-        },
-        {
-          "time": "14:55",
-          "title": "📖 Kapitel 2: Regenbogen-Magie lernen",
-          "description": "„Bevor ihr Luna helfen könnt, müsst ihr Regenbogen-Magie lernen!\" → Regenbogen-Milch-Experiment. Alle sitzen im Kreis, du machst es vor. Farben explodieren. „Seht ihr? IHR habt gerade einen Regenbogen gemacht!\" 3 Runden. 15 Min."
-        },
-        {
-          "time": "15:15",
-          "title": "📖 Kapitel 3: Luna füttern",
-          "description": "„Luna ist hungrig von der langen Reise! Helft ihr, sie zu füttern!\" → Bälle in den Einhorn-Karton werfen. Bei jedem Treffer jubeln: „Luna sagt Danke!\" Kein Punkte zählen — einfach Spaß. 15 Min."
-        },
-        {
-          "time": "15:35",
-          "title": "🎂 Pause: Kuchen, Einhorn-Saft & Snacks",
-          "description": "„Auch Einhörner brauchen eine Pause!\" Regenbogen-Wolkenkuchen mit Zuckerhorn. Rosa Einhorn-Saft. Stern-Kekse. 25 Min."
-        },
-        {
-          "time": "16:00",
-          "title": "📖 Kapitel 4: Den Sternenstaub finden",
-          "description": "„Luna flüstert mir gerade zu — der Sternenstaub ist irgendwo hier versteckt!\" → Glitzer-Reis-Wanne. Kinder graben die Einhorn-Figuren aus. „Ihr habt Lunas Sternenstaub gefunden!\" 15 Min."
-        },
-        {
-          "time": "16:20",
-          "title": "📖 Kapitel 5: Den Zauberstab bauen",
-          "description": "„Mit dem Sternenstaub können wir jetzt echte Zauberstäbe bauen!\" → Holzstab + Glitzerpappe-Stern + bunte Bänder. 15 Min. — „Euer Zauberstab ist fertig. Jetzt kommt der große Moment!\""
-        },
-        {
-          "time": "16:40",
-          "title": "🌈 Finale: Der Regenbogen-Zauber-Tanz",
-          "description": "Alle tanzen mit Zauberstäben und Tüchern. „Schwingt eure Stäbe — Luna kann wieder Regenbögen malen!\" Der große, magische Abschluss. 10 Min. Danach kurz runterkommen mit Ausmalbildern."
-        },
-        {
-          "time": "16:50",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Horn + Zauberstab + Einhorn-Figur + Tüll-Rock + Süßes in Tüte. Die Kinder gehen als verkleidete Einhörner nach Hause — sie haben Luna gerettet.\n\n💡 Warum eine Geschichte?\n3–5-Jährige leben in Geschichten. Wenn du sagst „Jetzt spielen wir ein Spiel\", machen sie mit. Wenn du sagst „Luna braucht eure Hilfe!\", rennen sie los. Die Geschichte verwandelt 6 einzelne Aktivitäten in ein zusammenhängendes Abenteuer — und du musst dir keine Übergänge ausdenken, weil die Story sie liefert.\n\n💡 Für 2,5 Stunden brauchst du einen Helfer.\nBei 5 Kleinkindern über 2,5 Stunden brauchst du eine zweite Person — Oma, andere Mama, Teenager-Nachbarin (10 € für 2,5 Std.). Einer erzählt die Geschichte und betreut die Kinder, einer bereitet die nächste Station vor. Alleine wird es stressig."
-        }
-      ],
       "games": [
         {
           "name": "🌈 Regenbogen-Tanz",

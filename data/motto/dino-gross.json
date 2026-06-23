@@ -23,38 +23,6 @@
       "headline": "Tipp: Kostenlose Quiz-Vorlagen auf [machsleicht.de/dino-quiz](/kindergeburtstag/dino-quiz) — 15 Fragen mit Lösungen, druckfertig.",
       "intro": null,
       "timeWindow": "14:00–16:30, 8 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankommen & Dino-Quiz aufbauen",
-          "description": "Kinder kommen an. Auf dem Tisch: ein Quiz-Blatt mit 15 Dino-Fragen (Multiple Choice). Wer zuerst will, fängt schon an. Restliche spielen frei. 15 Min."
-        },
-        {
-          "time": "14:15",
-          "title": "🧠 Dino-Wissens-Quiz",
-          "description": "Teams bilden (2–3er Gruppen). 15 Fragen, Multiple Choice, buzzern mit Küchenglöckchen oder Handschlag auf den Tisch. Siegerteam bekommt den Ehrentitel „Paläontologen-Meister“. 20 Min."
-        },
-        {
-          "time": "14:35",
-          "title": "🌋 Vulkan-Experiment",
-          "description": "In diesem Alter dürfen die Kinder SELBST gießen. 2 Teams bauen je einen Vulkan (Sand + Flasche) und treten gegeneinander an: wessen Lava ist höher? 15 Min."
-        },
-        {
-          "time": "14:50",
-          "title": "🎂 Kuchen & Pizza",
-          "description": "Vulkan-Kuchen + Pizza/Hot Dogs. 25 Min. Pause, Geschäft."
-        },
-        {
-          "time": "15:15",
-          "title": "🏃 Dino-Parcours-Staffel",
-          "description": "2 Teams im Wettlauf: Hindernisse überwinden, „Fossil“ (Ball) transportieren, durch Tunnel kriechen. 3 Durchgänge. 20 Min."
-        },
-        {
-          "time": "15:35",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Freispiel, Mitgebsel verteilen. Eltern kommen ab 16:00.\n\n💡 Altersgerecht für 9–12\nDer Unterschied zu jüngeren Kindern: Wettbewerb ist erwünscht. Teams, Buzzer, Punkte — das motiviert. Aber immer als Team, nie Einzelkämpfer gegen den Rest."
-        }
-      ],
       "games": [
         {
           "name": "🧠 Dino-Wissens-Quiz",
@@ -192,48 +160,6 @@
       "headline": "Druckvorlage: [15 Fragen mit Lösungen](/kindergeburtstag/dino-quiz) — kostenlos ausdrucken.",
       "intro": null,
       "timeWindow": "14:00–17:00, 8 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankommen & Forscherpass ausfüllen",
-          "description": "Jedes Kind bekommt einen [Forscherpass](/kindergeburtstag/dino-forscherpass) (Druckvorlage, A4 falten = A5-Büchlein). Name eintragen, mit [Dino-Stempel*](https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht21-21) abstempeln. Ab jetzt sind alle „Dino-Forscher“. 15 Min."
-        },
-        {
-          "time": "14:15",
-          "title": "🧠 Prüfung 1: Dino-Wissens-Quiz",
-          "description": "Teams buzzern, 15 Fragen, Punkte-Tafel. Siegerteam bekommt Stempel im Forscherpass. 20 Min."
-        },
-        {
-          "time": "14:35",
-          "title": "🏗️ Prüfung 2: Fossilien-Ausgrabung",
-          "description": "Große Wanne mit Sand. Vergrabene Fossilien (Salzteig-Knochen, Muscheln, Dino-Figuren). Kinder graben mit Pinseln, dokumentieren jeden Fund mit Koordinaten auf einer Karte. Stempel für erfolgreiche Ausgrabung. 25 Min."
-        },
-        {
-          "time": "15:00",
-          "title": "🎂 Kuchen & Pizza",
-          "description": "Vulkan-Kuchen mit Wunderkerze. Pizza/Hot Dogs. „Dino-Pipi“ (Apfelschorle — ja, auch 10-Jährige finden das noch lustig). 25 Min."
-        },
-        {
-          "time": "15:25",
-          "title": "🌋 Prüfung 3: Vulkan-Experiment",
-          "description": "2 Teams bauen je einen Vulkan. Wettbewerb: höchste Eruption gewinnt. Kinder dosieren selbst. Erkläre Säure-Base-Reaktion. Stempel. 15 Min."
-        },
-        {
-          "time": "15:40",
-          "title": "🏃 Prüfung 4: Dino-Parcours-Staffel",
-          "description": "Staffel-Wettlauf mit Hindernissen. 2 Teams, 3 Durchgänge, Zeiten addieren. Stempel für alle. 20 Min."
-        },
-        {
-          "time": "16:00",
-          "title": "🏆 Forscher-Urkunde & Abschluss",
-          "description": "„Hiermit wird ___ zum offiziellen Paläontologen ernannt.“ Forscherpass umdrehen — Urkunde auf der Rückseite. Feierlich überreichen! Optional: 15 Min. Dino-Doku zum Runterkommen (YouTube: „Dinosaurier Doku Kinder“). 20 Min."
-        },
-        {
-          "time": "16:20",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Freispiel. Forscherpass + Mitgebsel-Tüte. Abholung ab 16:30.\n\n💡 Der rote Faden macht den Unterschied\nDer Forscherpass gibt dem ganzen Tag eine Geschichte. Die Kinder fragen nicht „Was machen wir als nächstes?“ sondern „Was ist die nächste Prüfung?“ Das ist der Unterschied zwischen „ein paar Spiele“ und „ein Erlebnis“."
-        }
-      ],
       "games": [
         {
           "name": "🧠 Dino-Wissens-Quiz",
@@ -415,53 +341,6 @@
       "headline": "In braune Papiertüte mit „Forschungsergebnisse von ___“. Kosten: ~4 € pro Kind.",
       "intro": "Erstelle in 30 Sekunden eine fertige Einladung mit Name, Datum und Ort — die Gäste bekommen ein kleines Dino-Abenteuer als Vorgeschmack.",
       "timeWindow": "14:00–17:30, 8 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankommen & Forscherpass + Briefing",
-          "description": "Forscherpass ausfüllen. Dann: dramatisches Briefing. „Forscher, wir haben ein Problem. Der Reaktor in unserem Forschungslabor fällt aus. In 3 Stunden geht die Probe verloren. Ihr müsst 5 Prüfungen bestehen und den Code für die Schatztruhe finden.“ Jede Prüfung gibt eine Ziffer für das Zahlenschloss. 15 Min."
-        },
-        {
-          "time": "14:15",
-          "title": "🧠 Prüfung 1: Verschlüsselte Nachricht",
-          "description": "Eine Nachricht in Caesar-Verschlüsselung (jeder Buchstabe um 3 verschoben, Z→C). Übersetzungstabelle liegt bereit. Die gelöste Nachricht („DER CODE BEGINNT MIT DREI\") nennt die erste Ziffer des Zahlenschlosses: 3. 15 Min."
-        },
-        {
-          "time": "14:30",
-          "title": "🏗️ Prüfung 2: Systematische Ausgrabung",
-          "description": "Planquadrate, Dokumentation, Koordinaten. Ein besonderer Fund trägt die zweite Ziffer auf der Unterseite — schreib vorab eine 7 unter einen Dino. Zweite Ziffer: 7. 25 Min."
-        },
-        {
-          "time": "14:55",
-          "title": "🧠 Prüfung 3: Dino-Quiz unter Zeitdruck",
-          "description": "15 Fragen, aber mit Countdown-Timer (2 Min. pro Frage). Teams buzzern. Nach dem Quiz verkündet der Quizmaster die dritte Ziffer: 1. 20 Min."
-        },
-        {
-          "time": "15:15",
-          "title": "🎂 Kuchen, Pizza & Kartoffelbrei-Vulkan",
-          "description": "Vulkan-Kuchen mit Wunderkerze. Pizza. Bonus: Kartoffelbrei-Vulkan mit Ketchup-Lava als herzhafter Snack. 25 Min."
-        },
-        {
-          "time": "15:40",
-          "title": "🌋 Prüfung 4: Vulkan-Experiment + Chemie",
-          "description": "2 Teams bauen Vulkane. Aber diesmal: verschiedene Rezepte testen (mehr Natron? Mehr Spüli? Warmes Wasser?). Welches Team hat die beste Eruption? Das Siegerteam erhält die vierte Ziffer: 9. 15 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "🏃 Prüfung 5: Escape-Parcours",
-          "description": "Parcours + 3 Mini-Rätsel an den Stationen (Logik-Puzzle, Kreuzworträtsel, Zahlenreihe). Das letzte gelöste Rätsel nennt die fünfte Ziffer: 5. 25 Min."
-        },
-        {
-          "time": "16:20",
-          "title": "🔒 Schatztruhe öffnen!",
-          "description": "Alle 5 Ziffern ergeben den Code 3-7-1-9-5 — stell das Zahlenschloss vorab genau darauf ein. Truhe enthält: Urkunden + Dino-Fossilien + Süßigkeiten für alle. Feierliche Ernennung zum Paläontologen. 15 Min."
-        },
-        {
-          "time": "16:35",
-          "title": "🎁 Freispiel & Abholung",
-          "description": "Dino-Doku (YouTube), freies Spiel. Abholung ab 17:00.\n\n💡 Das Zahlenschloss macht den Unterschied\nEin 5-stelliges [Zahlenschloss*](https://www.amazon.de/s?k=zahlenschloss+5+stellig&tag=machsleicht21-21) (~4 €) verwandelt eine normale Party in einen Escape Room. Jede Station gibt eine Ziffer. Die Kinder sammeln, kombinieren, probieren — und wenn die Truhe aufgeht, ist der Jubel RIESIG."
-        }
-      ],
       "games": [
         {
           "name": "🔐 Verschlüsselte Nachricht — Spielanleitung",

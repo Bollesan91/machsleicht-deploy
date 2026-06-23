@@ -150,38 +150,6 @@
       "headline": "🌿 Minimal — 2,5 Stunden, kompaktes Format",
       "intro": "Auch für 9-12 Jahre die Einstiegs-Variante: Schicht-Appell mit Funktionen, kurzer Stationen-Wettbewerb mit Stoppuhr (drei Stationen, je 10 Min.), Kuchen, eine Mini-Brandermittlung als Wow-Element, Bewertete Zeremonie mit Crew-Diplom. Kein Schnickschnack, aber genug Substanz, dass die Kinder nicht das Gefühl haben, sie wären zu alt für diese Party.",
       "timeWindow": "14:30–17:00, 7 Kinder",
-      "schedule": [
-        {
-          "time": "14:30",
-          "title": "🚒 Schicht-Appell",
-          "description": "Dienstausweis ziehen, Tattoo, Wachen-Tafel, Schichtbeginn-Spruch (Ritual-Block oben). Bei 9-12 läuft das in 10 Min. routiniert ab — keine langen Erklärungen nötig. Pflicht-Merksatz für alle Kinder: „Im echten Brand: RAUS, Tür zu, 112 rufen — NICHT selbst löschen, NICHT verstecken!\" (112 = Feuerwehr/Rettung, 110 = Polizei)."
-        },
-        {
-          "time": "14:40",
-          "title": "🎓 Stationen-Wettbewerb (4er-Rotation)",
-          "description": "Drei Stationen, je 10 Min., dann Wechsel. Crew teilt sich in 2 Trupps zu je 3-4. Stoppuhr läuft. Punkte werden in der Wachen-Tafel eingetragen. Anleitung unten. 30 Min. + Wechselzeiten."
-        },
-        {
-          "time": "15:15",
-          "title": "🎂 Kuchen & Lösch-Wasser",
-          "description": "Feuerwehrauto-Kuchen + Apfelschorle (oder bei Wunsch Cola, in Maßen) + „Brand-Brötchen\" (Pizzastücke). Happy Birthday, 25 Min. Pause. Punktezählung wird kurz vor versammelter Mannschaft präsentiert."
-        },
-        {
-          "time": "15:40",
-          "title": "🔍 Mini-Brandermittlung",
-          "description": "DER Höhepunkt für 9-12. 60 Min. Brandermittler Jonas führt die Spurensuche an. 4 Verdächtige, 4 Beweise im „Brand-Bereich\" verteilt, Fall-Akte zum Ausfüllen. Anleitung unten. Selbst die Standard-light-Version reicht in dem Alter."
-        },
-        {
-          "time": "16:40",
-          "title": "🏆 Bewertete Zeremonie",
-          "description": "Schicht-Ende. Wachleiter-Bewertung jedes Crew-Mitglieds: Funktion + Stationen-Punkte + Brandermittlungs-Beitrag. Crew-Diplom mit individueller Beurteilung, gerollt mit Bändchen. Sieger-Trupp bekommt Bonus (extra Tattoo). 20 Min., das ist der emotionale Kern."
-        },
-        {
-          "time": "17:00",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Mitgebsel-Tüten, Crew-Diplom in der Rolle, Abschied. Pünktlich, weil die Kinder eh weiter wollen.\n\n💡 Warum Brandermittlung der Anker ist:\n9-12 brauchen kognitive Forderung. Eine Stationen-Rotation allein wird nach 30 Min. langweilig — die kennen das. Aber eine echte Brandermittlung mit 4 Verdächtigen und Beweisen, in der sie diskutieren, Hypothesen aufstellen und am Ende den Fall lösen — das ist Krimi-Niveau und hält sie eine Stunde gespannt. Die Stationen sind die warm-up-Phase, die Brandermittlung ist der Hauptakt. Diese Reihenfolge ist nicht zufällig."
-        }
-      ],
       "games": [
         {
           "name": "🎓 Stationen-Wettbewerb (4er-Rotation)",
@@ -450,38 +418,6 @@
       "headline": "🎯 Standard — 3 Stunden, das vollständige Format",
       "intro": "Auf Minimal aufbauend. Plus: Theorie-Briefing am Anfang (10 Min. Wachen-Unterweisung mit echten Brandschutz-Inhalten — die Kinder lernen wirklich was), erweiterter 4er-Stationen-Wettbewerb (Atemschutz-Parcours kommt dazu), und eine ausführlichere Brandermittlung mit Verdächtigen-Vernehmung. 8 Kinder gehen problemlos. Eltern können absetzen.",
       "timeWindow": "14:00–17:00, 8 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "🚒 Schicht-Appell",
-          "description": "Wie in Minimal — Dienstausweis, Tattoo, Wachen-Tafel, Schichtbeginn-Spruch. 10 Min."
-        },
-        {
-          "time": "14:10",
-          "title": "📚 Theorie-Briefing an der Wache",
-          "description": "15 Min. echte Wachen-Schulung. 5 W beim Notruf, Brandklassen, Rauchgefahr. Wichtigster Teil der Standard-Variante. Anleitung unten. Pflicht-Merksatz für alle Kinder: „Im echten Brand: RAUS, Tür zu, 112 rufen — NICHT selbst löschen, NICHT verstecken!\" (112 = Feuerwehr/Rettung, 110 = Polizei)."
-        },
-        {
-          "time": "14:25",
-          "title": "🎓 Stationen-Wettbewerb (4er-Rotation)",
-          "description": "Vier Stationen: Zielspritzen, Knoten, Schlauch-Parcours + neu: Atemschutz-Parcours. Je 10 Min., 8 Min. Wechsel-Pufferzeit. Insgesamt 50 Min. Crew teilt sich in 2 Trupps zu je 4. Anleitung unten."
-        },
-        {
-          "time": "15:15",
-          "title": "🎂 Kuchen & Lösch-Wasser",
-          "description": "Feuerwehrauto-Kuchen + Apfelschorle/Cola + Pizza-Stücke. Punktezählung präsentiert: führender Trupp angekündigt. 25 Min."
-        },
-        {
-          "time": "15:40",
-          "title": "🔍 Brandermittlung mit Vernehmung",
-          "description": "75 Min. Hauptattraktion. Wie in Minimal, plus Verdächtigen-Vernehmung als 2. Phase: Crew darf 3 Verdächtige „befragen\" (du oder Eltern spielen sie). Ausführlichere Diskussion. Anleitung unten."
-        },
-        {
-          "time": "16:55",
-          "title": "🏆 Bewertete Zeremonie",
-          "description": "Wie in Minimal — bewerteter Crew-Diplom mit individueller Beurteilung. 5 Min. Abschiedsfoto.\n\n💡 Warum das Theorie-Briefing nicht skippen:\nBei 9-12 ist das Theorie-Briefing kein „Schulstunde-Risiko\" wie bei 6-8 — sie hören wirklich zu, weil der Stoff sie interessiert. Plus: Die Brandermittlung wird durch das Theorie-Briefing besser, weil die Auflösung darauf basiert (Fett-Brand mit Wasser = gefährlich). Wer das Briefing skippt, schwächt die Auflösung der Brandermittlung. Es ist kein Add-on — es ist Story-Setup."
-        }
-      ],
       "games": [
         {
           "name": "🎖️ Crew-Abzeichen & Dienstgrad",
@@ -816,48 +752,6 @@
       "headline": "✨ Wow — 4 Stunden, vollwertige Escape-Room-Brandermittlung",
       "intro": "Auf Standard aufbauend. Plus: Vollwertige Escape-Room-Brandermittlung mit 6 Verdächtigen, mehreren Phasen, Fakt-Auflösung; Polaroid-Ehrentafel mit der Crew; Crew-Pin als Anstecker; Bonus „Notruf-Simulation\" am Telefon. Für 9-12 ist das die Party, von der sie noch in 5 Jahren erzählen — und über die ihre Eltern den anderen Eltern erzählen. Eltern komplett weg.",
       "timeWindow": "13:30–17:30, 8 Kinder",
-      "schedule": [
-        {
-          "time": "13:30",
-          "title": "🚒 Schicht-Appell + Crew-Foto",
-          "description": "Wie in Standard, plus: Polaroid-Foto pro Crew-Mitglied mit Helm + Funktion. Foto kommt später an die Ehrentafel und mit nach Hause. 15 Min."
-        },
-        {
-          "time": "13:45",
-          "title": "📚 Theorie-Briefing an der Wache",
-          "description": "15 Min. wie in Standard. Pflicht-Merksatz für alle Kinder: „Im echten Brand: RAUS, Tür zu, 112 rufen — NICHT selbst löschen, NICHT verstecken!\" (112 = Feuerwehr/Rettung, 110 = Polizei)."
-        },
-        {
-          "time": "14:00",
-          "title": "📞 Notruf-Simulation",
-          "description": "10 Min. Bonus-Spiel: Wer kann am besten einen 112-Notruf abgeben? Disponentin Clara nimmt die Anrufe entgegen, jedes Crew-Mitglied probiert. Anleitung unten."
-        },
-        {
-          "time": "14:10",
-          "title": "🎓 Stationen-Wettbewerb (4er-Rotation)",
-          "description": "50 Min. wie in Standard."
-        },
-        {
-          "time": "15:00",
-          "title": "🎂 Kuchen & Lösch-Wasser",
-          "description": "25 Min. wie in Standard. Polaroids vom Schicht-Appell werden jetzt an die Ehrentafel gepinnt."
-        },
-        {
-          "time": "15:25",
-          "title": "🔍 Vollwertige Escape-Room-Brandermittlung",
-          "description": "DAS Wow-Element. 90 Min. Ausgebaute Brandermittlung: 6 Verdächtige, mehrere Beweis-Räume, Verdächtigen-Vernehmung, Fall-Akte mit Tabellen. Funktioniert wie ein echter Escape-Room. Anleitung unten."
-        },
-        {
-          "time": "16:55",
-          "title": "🏆 Große Bewertete Zeremonie + Ehrentafel",
-          "description": "35 Min. Wie in Standard, plus: Crew-Pin (Anstecker) für jedes Mitglied, Polaroid mit Funktion auf der Rückseite, Ehrentafel-Foto. Sieger-Trupp + Beste-Brandermittlerin / Bester-Brandermittler werden namentlich gewürdigt."
-        },
-        {
-          "time": "17:30",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Schicht-Ende. Tüten + Diplom-Rolle + Polaroid + Pin + Lupe.\n\n✨ Wow-Highlight für 9-12: Die Escape-Room-Brandermittlung\nBei den Kleinen ist Wow ein eigener Helm. Bei den Großen ist Wow ein 90-Minuten-Krimi, in dem sie sich wirklich konzentrieren und am Ende stolz sind, den Fall gelöst zu haben. Das ist nicht reproduzierbar mit Spritzpistolen oder Nebelmaschinen — das ist ein anderes Genre. Dieser Block trennt die Wow-Variante von Standard. Vorbereitung kostet ~2 Std vor der Party (Verdächtigen-Karten ausdrucken, Beweise verstecken, Skripte schreiben), aber das ist das, was Premium ausmacht. SICHERHEIT Nebel: nur Disco-/Party-Nebelfluid (KEIN Trockeneis/keine Chemie), Maschine außer Kinder-Reichweite, Raum gut lüften, kurz einsetzen; Kinder mit Asthma/Atemwegsproblemen draußen lassen; Boden kann feucht/rutschig werden; Rauchmelder ggf. kurz abdecken und danach SOFORT wieder aktivieren."
-        }
-      ],
       "games": [
         {
           "name": "💧 Zielspritzen-Wettkampf",

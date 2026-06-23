@@ -46,33 +46,6 @@
       "headline": "Eine Mission, zwei knackige Challenges",
       "intro": "Wenig Material, viel Köpfchen: eine Geheimbotschaft entschlüsseln, einen Parkour auf Zeit meistern. Schnell vorbereitet, trotzdem anspruchsvoll.",
       "timeWindow": "2,5 Stunden (14:30–17:00)",
-      "schedule": [
-        {
-          "time": "14:30",
-          "title": "Ankommen & Agenten-Briefing",
-          "description": "Helden-/Agentenname, Ausweis, Foto. Dr. Chaos meldet sich per Botschaft. 20 Min."
-        },
-        {
-          "time": "14:50",
-          "title": "Code knacken",
-          "description": "Geheimbotschaft entschlüsseln, um den ersten Hinweis zu bekommen. 30 Min."
-        },
-        {
-          "time": "15:20",
-          "title": "Helden-Parkour auf Zeit",
-          "description": "Hindernislauf, zwei Teams gegeneinander. 35 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "Pizza/Kuchen",
-          "description": "Stärkung, Pause. 35 Min."
-        },
-        {
-          "time": "16:30",
-          "title": "Finale & Mitgebsel",
-          "description": "Letzter Code, Dr. Chaos besiegt, Urkunde, Verabschiedung. 30 Min."
-        }
-      ],
       "games": [
         {
           "name": "🔐 Code knacken (Geheimbotschaft)",
@@ -254,38 +227,6 @@
       "headline": "Escape-Stationen, Parkour und Schurken-Showdown",
       "intro": "Die empfohlene Variante: mehrere Rätsel-Stationen (Escape-Room-Logik), ein Parkour auf Zeit, der Laser-Tresor und das Finale gegen Dr. Chaos. Anspruchsvoll, mit klarem roten Faden.",
       "timeWindow": "3 Stunden (14:30–17:30)",
-      "schedule": [
-        {
-          "time": "14:30",
-          "title": "Ankommen & Briefing",
-          "description": "Ausweis, Foto, Dr.-Chaos-Videobotschaft startet die Mission. 20 Min."
-        },
-        {
-          "time": "14:50",
-          "title": "Escape-Stationen (Rätsel)",
-          "description": "3 Rätsel-Stationen lösen, um den Tresor-Code zu sammeln. 40 Min."
-        },
-        {
-          "time": "15:30",
-          "title": "Helden-Parkour auf Zeit",
-          "description": "Staffel, Team gegen Team. 30 Min."
-        },
-        {
-          "time": "16:00",
-          "title": "Pizza/Kuchen",
-          "description": "Stärkung. 35 Min."
-        },
-        {
-          "time": "16:35",
-          "title": "Laser-Tresor",
-          "description": "Durch das Laser-Netz zum Tresor. 25 Min."
-        },
-        {
-          "time": "17:00",
-          "title": "Showdown & Ehrung",
-          "description": "Code eingeben, Dr. Chaos besiegt, Urkunde + Mitgebsel. 30 Min."
-        }
-      ],
       "games": [
         {
           "name": "🧩 Escape-Stationen (Rätsel-Mix)",
@@ -480,43 +421,6 @@
       "headline": "Komplette Geheim-Mission mit Live-Schurke",
       "intro": "Alles aus Standard plus einen live gespielten Dr. Chaos, eine zusätzliche Geschicklichkeits-Challenge und ein inszeniertes Finale, bei dem die Teams den Schurken gemeinsam stellen. Maximale Vorbereitung, maximaler Effekt.",
       "timeWindow": "3,5 Stunden (14:30–18:00)",
-      "schedule": [
-        {
-          "time": "14:30",
-          "title": "Ankommen & Geheim-Briefing",
-          "description": "Ausweis, Foto, Videobotschaft von Dr. Chaos. 20 Min."
-        },
-        {
-          "time": "14:50",
-          "title": "Escape-Stationen",
-          "description": "Rätsel für den ersten Code-Teil. 40 Min."
-        },
-        {
-          "time": "15:30",
-          "title": "Geschicklichkeits-Challenge",
-          "description": "Reaktions-/Zielspiele, Teamwertung. 25 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "Helden-Parkour auf Zeit",
-          "description": "Staffel. 30 Min."
-        },
-        {
-          "time": "16:25",
-          "title": "Pizza/Kuchen",
-          "description": "Pause. 35 Min."
-        },
-        {
-          "time": "17:00",
-          "title": "Laser-Tresor",
-          "description": "Durchs Laser-Netz. 25 Min."
-        },
-        {
-          "time": "17:25",
-          "title": "Showdown gegen Dr. Chaos",
-          "description": "Live-Schurke stellen, Mission abschließen, Ehrung. 35 Min."
-        }
-      ],
       "games": [
         {
           "name": "🧩 Escape-Stationen (Rätsel-Mix)",

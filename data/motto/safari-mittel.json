@@ -60,38 +60,6 @@
       "headline": "🌿 Minimal — 2 Stunden, minimaler Aufwand",
       "intro": "Funktioniert auch wenn du erst gestern angefangen hast zu planen. Stirnband + zwei Spiele + Kuchen + kleine Lizenz-Übergabe — fertig. Kein Kind geht ohne Ranger-Status nach Hause.",
       "timeWindow": "14:00–16:00, 6 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Eintreffen im Reservat & Stirnband-Werkstatt",
-          "description": "Vorbereitete Stirnbänder aus braunem Tonpapier liegen auf dem Tisch + Filzstifte. Jedes Kind schreibt seinen Namen drauf, mit \"Ranger\" davor: Ranger Mia, Ranger Jonas. Ergänzend: Ausmalbilder mit Safari-Tieren als Beschäftigung für die Wartezeit. Kostenlose Vorlagen z.B. auf [mowoli.de](https://mowoli.de/ausmalbilder-wildtiere-fuer-kinder/) (Löwe, Elefant, Zebra, Giraffe als PDF) oder [kinder-malvorlagen.com](https://www.kinder-malvorlagen.com/zum-ausmalen/vorlagen-tiere-wildtiere-wildnis.php)."
-        },
-        {
-          "time": "14:20",
-          "title": "🦓 Ranger-Eid & Tierspuren-Pirsch",
-          "description": "Kurzer feierlicher Eid (3 Sätze, alle gleichzeitig sprechen — schafft 30 Sekunden Atmosphäre für die ganze Party), dann das Hauptspiel: 25 Min. Tierspuren-Pirsch im Garten oder durch die Wohnung. Anleitung unten."
-        },
-        {
-          "time": "14:50",
-          "title": "🎂 Pause am Wasserloch",
-          "description": "Savannen-Kuchen + \"Wasserloch\" (Apfelschorle in transparenten Bechern mit blauen Trinkhalmen). 25 Min. Ruhe für die ganze Herde. Eltern, die schon abholen, kriegen einen Kaffee."
-        },
-        {
-          "time": "15:20",
-          "title": "🦒 Tierstimmen-Quiz",
-          "description": "15 Min. Ratespiel auf dem Sofa. Smartphone reicht. Anleitung mit konkreten YouTube-Quellen unten."
-        },
-        {
-          "time": "15:35",
-          "title": "🏅 Lizenz-Übergabe",
-          "description": "Jedes Kind bekommt seine \"Junior-Ranger-Lizenz\" (Urkunde mit Namen) feierlich überreicht. Eltern fotografieren. 15 Min. Puffer bis zur Abholung."
-        },
-        {
-          "time": "15:50",
-          "title": "🎁 Ausrüstung mitnehmen, Verabschiedung am Tor",
-          "description": "Mitgebsel-Tüten in die Hand, Stirnband bleibt auf dem Kopf, Lizenz unter den Arm. Mission erfüllt.\n\n💡 Ranger-Eid (zum Vorlesen)\n\"Im Reservat zählt nicht, wer der Schnellste ist — sondern wer hinschaut. Ich verspreche, leise zu sein, kein Tier zu erschrecken und meiner Herde zuzuhören. Ab jetzt bin ich Junior-Ranger.\" — Alle Kinder sprechen den Eid gemeinsam nach. Dauert 30 Sekunden, schafft Atmosphäre für die ganze Party."
-        }
-      ],
       "games": [
         {
           "name": "🦓 Tierspuren-Pirsch",
@@ -309,43 +277,6 @@
       "headline": "🎯 Standard — 3 Stunden, klassische Junior-Ranger-Ausbildung",
       "intro": "Genau richtig für 6–8-Jährige: vier Stationen als echte Ausbildungs-Rotation, ein großes Team-Spiel als Höhepunkt, Lizenz-Zeremonie zum Abschluss. Funktioniert, weil Stations-Rotation genau das löst, was diese Altersgruppe braucht: alle 15 Minuten ein Wechsel (Aufmerksamkeitsspanne), parallel zu zweit (Wettbewerbsdruck rausgenommen), jede Station mit einem klaren Stempel als Erfolgsmoment (sichtbarer Fortschritt). Das ist die Party, von der die Kinder am Montag in der Schule erzählen — und der Ranger-Ausweis hängt monatelang am Kühlschrank.",
       "timeWindow": "14:00–17:00, 8 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Eintreffen im Reservat, Stirnband-Werkstatt, Eid",
-          "description": "Tonpapier-Stirnbänder mit Namen (\"Ranger Mia\"). Wenn alle da sind: Ranger-Eid gemeinsam sprechen. Jedes Kind kriegt seine \"Anwärter-Karte\" — ein kleines Kärtchen mit 4 leeren Stempel-Feldern für die 4 Stationen. 20 Min."
-        },
-        {
-          "time": "14:20",
-          "title": "🏕️ Stations-Rotation (4 Stationen × 15 Min)",
-          "description": "Vier Stationen, vier 2er-Teams rotieren im Uhrzeigersinn. Nach jeder Station gibt's einen Stempel auf die Anwärter-Karte. Stationen unten im Detail beschrieben. 60 Min. — der inhaltliche Kern der Party."
-        },
-        {
-          "time": "15:20",
-          "title": "🎂 Pause am Wasserloch — Kuchen",
-          "description": "Savannen-Kuchen mit Tier-Deko. Apfelschorle in Bechern als \"Wasserloch\". Happy Birthday singen. 25 Min. Ruhe für die ganze Herde."
-        },
-        {
-          "time": "15:45",
-          "title": "🦁 Großes Team-Spiel: \"Rette das Löwen-Junge\"",
-          "description": "Der Höhepunkt. Alle 4 Teams arbeiten zusammen, um ein verstecktes Plüsch-Löwen-Junges zurück zur Mama zu bringen. 25 Min. Anleitung unten."
-        },
-        {
-          "time": "16:10",
-          "title": "🏅 Lizenz-Zeremonie",
-          "description": "Alle Anwärter-Karten zeigen 4 Stempel + Löwen-Junges gerettet → die Prüfung ist bestanden. Jedes Kind kommt einzeln nach vorne, kriegt seine Junior-Ranger-Lizenz (Urkunde mit Foto-Slot), das Klett-Abzeichen aufs Stirnband geklettet, und einen Ranger-Ausweis im Scheckkartenformat. Eltern fotografieren. 15 Min. — das ist der Moment, an den sich Kinder erinnern."
-        },
-        {
-          "time": "16:25",
-          "title": "🎁 Mitgebsel & freies Spielen",
-          "description": "Tüten verteilen, Tier-Memo-Karten zum freien Spielen liegen aus. Eltern kommen, Kinder zeigen stolz Lizenz und Abzeichen. 25 Min. Pufferzeit."
-        },
-        {
-          "time": "16:50",
-          "title": "🚪 Verabschiedung am Tor",
-          "description": "Mitgebsel-Tüte in die Hand, Stirnband bleibt auf dem Kopf, Lizenz unter den Arm, Ranger-Ausweis im Hosentaschen. Mission erfüllt.\n\n💡 Wie viele Helfer brauchst du wirklich?\nMit 2 Helfern wird's entspannt: Du leitest die Lizenz-Zeremonie und das Großspiel, je 1 Helfer betreut die Stationen-Hälfte. Empfohlen, wenn 8+ Kinder.\n\nMit 1 Helfer geht's gut: Du nimmst 2 Stationen, Helfer nimmt 2. Pause am Wasserloch deckt Übergangs-Lücken.\n\nSolo machbar — mit Anpassung: Statt parallel-rotierender Stationen läuft die Gruppe gemeinsam alle 4 Stationen nacheinander durch (60 Min total). Geht, dauert aber jede Station 15 Min für die ganze Gruppe statt nur 2 Kinder. Funktioniert bis 6 Kinder, ab 8 Kindern wird's eng.\n\nFaustregel: Pro 4 Kinder rechne 1 Erwachsenen für volle Stations-Rotation. Eltern als Helfer einplanen — viele bleiben gerne, wenn man fragt.\n\n💡 Stations-Rotation organisieren\nBei 8 Kindern gehst du in 4 Teams à 2 Kinder. Jedes Team beginnt an einer anderen Station, alle 15 Min. wechseln im Uhrzeigersinn. Stationen so platzieren, dass alle vom mittigen \"Reservat-Hauptquartier\" (= dein Wohnzimmer-Tisch) sichtbar sind — du behältst Überblick.\n\n💡 Rhythmus-Regel\nStationen wechseln zwischen ruhig und aktiv: Tarnung (ruhig) → Pirsch (aktiv) → Tierspuren (ruhig) → Tierstimmen (ruhig). Nach der Stations-Phase bewusst aktives Großspiel, dann Pause, dann ruhige Zeremonie. So kippt die Stimmung nie."
-        }
-      ],
       "games": [
         {
           "name": "1️⃣ Tarnungs-Übung",
@@ -708,48 +639,6 @@
       "headline": "✨ Wow — 4 Stunden, der Geburtstag des Jahres",
       "intro": "Für den Geburtstag, über den noch Wochen später in der Schule geredet wird. Wow baut auf Standard auf: gleiche Junior-Ranger-Ausbildung, gleiche 4 Stationen, gleiche Lizenz-Zeremonie. Erweitert wird es um eine 5. Station, die Schatzsuche-Quest \"Verborgener Tempel\" als zweiten dramatischen Bogen, echte Filz-Buschhüte als Mitgebsel-Highlight und optional Walkie-Talkie-Sets. Funktioniert besonders, wenn dein Kind auf größere Bühne reagiert, ihr ein Geschwister-Geburtstag plant oder du den 7. Geburtstag als Meilenstein gestalten willst. Wer mag, kann einzelnen Kindern hier schon eine kleine Sonderrolle geben (Spuren-Chef, Funker mit Walkie-Talkie) — die ausgewachsene Spezialisierungs-Mechanik kommt erst in der 9–12-Variante.",
       "timeWindow": "14:00–18:00, 10 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Eintreffen im Reservat, Stirnband-Werkstatt, Eid",
-          "description": "Wie in Standard: Tonpapier-Stirnbänder mit Namen, Anwärter-Karte mit jetzt 5 leeren Stempel-Feldern (eine Station mehr als Standard). 20 Min."
-        },
-        {
-          "time": "14:20",
-          "title": "🏕️ Stations-Rotation (5 Stationen × 12 Min)",
-          "description": "5 Stationen statt 4: Tarnung, Tierspuren-Memory, Tierstimmen, Pirsch — wie Standard — plus zusätzliche Station Beobachtungsposten (Anleitung unten). 60 Min."
-        },
-        {
-          "time": "15:20",
-          "title": "🎂 Pause am Wasserloch — Kuchen",
-          "description": "Savannen-Kuchen mit Wunderkerze obendrauf. Apfelschorle als \"Wasserloch\". Happy Birthday singen, kurze Geburtstagsgeschenke-Runde. 30 Min. — länger als bei Standard, weil der zweite Akt Energie braucht."
-        },
-        {
-          "time": "15:50",
-          "title": "🏅 Lizenz-Zeremonie + Mission-Briefing",
-          "description": "Jedes Kind bekommt seine Junior-Ranger-Lizenz, Klett-Abzeichen aufs Stirnband und — Wow-Highlight — den Filz-Buschhut als echte Ranger-Kopfbedeckung. Sofort danach: dramatisches Mission-Briefing. \"Frisch lizenzierte Ranger! Wir haben einen Notruf erhalten — der verborgene Tempel ist in Gefahr. Wilderer sind unterwegs. Eure erste echte Mission beginnt jetzt.\" 20 Min."
-        },
-        {
-          "time": "16:10",
-          "title": "🗺️ Schatzsuche-Quest: \"Verborgener Tempel\" (5 Stationen)",
-          "description": "Der Höhepunkt der Wow-Variante. 5 Stationen-Tour durch Garten/Wohnung mit Tierspuren als Wegweisern, Codes, kleinen Tier-Rätseln und einem finalen Lösungswort, das den Tempel-Standort verrät. 45 Min. Kann mit dem [machsleicht-Schatzsuche-Generator](/kindergeburtstag?modus=schatzsuche&motto=safari) erstellt werden — Motto Safari ist dort als Story \"Durch den Safari zum verborgenen Tempel\" hinterlegt."
-        },
-        {
-          "time": "16:55",
-          "title": "🏆 Tempel-Eröffnung & Beute-Sicherung",
-          "description": "Die Ranger finden den Tempel (Schuhkarton mit Goldfolie umwickelt, kleine Schatzkiste innen) — und retten seine \"Schätze\" (Mitgebsel-Inhalte). Geburtstagskind eröffnet die Schatzkiste, jedes Kind bekommt sein Erinnerungsstück. 20 Min."
-        },
-        {
-          "time": "17:15",
-          "title": "🦒 Savannen-Kino mit Pop-Mais",
-          "description": "Runterkommen nach 4 Akten. 25 Min. Tier-Doku auf YouTube (\"Tiere Afrikas — Lernvideos für Kinder\" oder \"Planet Schule Savanne\"), Pop-Mais aus großer Schüssel, Kinder kuscheln auf Kissen. Eltern können langsam reinkommen."
-        },
-        {
-          "time": "17:40",
-          "title": "🎁 Verabschiedung am Tor",
-          "description": "Mitgebsel-Tüte voll, Buschhut auf dem Kopf, Lizenz unter dem Arm, Ranger-Buch in der Hand. Die Kinder gehen als zertifizierte Junior-Ranger nach Hause. Eltern kommen nicht aus dem Staunen raus. 20 Min. Pufferzeit."
-        }
-      ],
       "games": [
         {
           "name": "5️⃣ Beobachtungsposten (zusätzliche 5. Station)",

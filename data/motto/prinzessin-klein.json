@@ -46,33 +46,6 @@
       "headline": "Krönchen, Tanz und ein bisschen Zauber",
       "intro": "Zwei ganz einfache Spiele, eine kleine Krönung, fast keine Vorbereitung. Genau richtig für die Kleinsten.",
       "timeWindow": "2 Stunden (15:00–17:00)",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "Ankommen & Krönchen",
-          "description": "Jedes Kind bekommt eine Krone und einen Umhang, wird ganz feierlich 'gekrönt'. Foto. 20 Min."
-        },
-        {
-          "time": "15:20",
-          "title": "Königlicher Tanz",
-          "description": "Tanzen und bei Musik-Stopp einfrieren. 15 Min."
-        },
-        {
-          "time": "15:35",
-          "title": "Sterne basteln",
-          "description": "Glitzer-Sterne aufkleben — ruhige Station. 15 Min."
-        },
-        {
-          "time": "15:50",
-          "title": "Kuchen & Pause",
-          "description": "Prinzessinnen-Kuchen und Trinken. 30 Min."
-        },
-        {
-          "time": "16:20",
-          "title": "Krönchen-Suchen & Mitgebsel",
-          "description": "Versteckte Krönchen finden, kleines Geschenk, in Ruhe verabschieden. 40 Min."
-        }
-      ],
       "games": [
         {
           "name": "🎵 Königlicher Tanz (mit Einfrieren)",
@@ -234,43 +207,6 @@
       "headline": "Krönung, Krönchen-Suche und ein Zauber-Parcours",
       "intro": "Die empfohlene Variante für die Kleinen: Krönung, ein einfacher Zauber-Parcours, Sterne basteln und eine Krönchen-Schatzsuche durchs Zimmer. Genug Abwechslung, ohne zu überfordern.",
       "timeWindow": "2,5 Stunden (15:00–17:30)",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "Ankommen & Krönung",
-          "description": "Krone, Umhang, feierliche Krönung, Foto. Freies Spiel. 20 Min."
-        },
-        {
-          "time": "15:20",
-          "title": "Königlicher Tanz",
-          "description": "Tanzen mit Einfrieren. 15 Min."
-        },
-        {
-          "time": "15:35",
-          "title": "Zauber-Parcours",
-          "description": "Mit dem Zauberstab durch einfache Stationen. 20 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "Sterne basteln",
-          "description": "Ruhige Glitzer-Station. 15 Min."
-        },
-        {
-          "time": "16:10",
-          "title": "Kuchen & Pause",
-          "description": "Prinzessinnen-Kuchen. 25 Min."
-        },
-        {
-          "time": "16:35",
-          "title": "Krönchen-Schatzsuche",
-          "description": "Versteckte Krönchen im Schloss finden. 25 Min."
-        },
-        {
-          "time": "17:00",
-          "title": "Mitgebsel & Abschied",
-          "description": "Schatzbeutel, Gruppenfoto, Verabschiedung. 30 Min."
-        }
-      ],
       "games": [
         {
           "name": "🎵 Königlicher Tanz (mit Einfrieren)",
@@ -480,43 +416,6 @@
       "headline": "Mit Verwandlungs-Ecke und kleiner Drachen-Geschichte",
       "intro": "Alles aus Standard plus eine sanfte Verwandlungs-Ecke (Glitzer-Tattoo/Haarschmuck), eine ganz kindgerechte Drachen-Geschichte (der tollpatschige Drache versteckt die Krone) und eine süße Krönungs-Zeremonie zum Abschied. Etwas mehr Aufwand — aber bewusst bei 2,5 Stunden gehalten, damit die Kleinen nicht übermüden.",
       "timeWindow": "2,5 Stunden (15:00–17:30)",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "Ankommen & Verwandeln",
-          "description": "Krone, Umhang, sanfte Glitzer-Ecke, Foto. 25 Min."
-        },
-        {
-          "time": "15:25",
-          "title": "Königlicher Tanz",
-          "description": "Tanzen mit Einfrieren. 15 Min."
-        },
-        {
-          "time": "15:40",
-          "title": "Zauber-Parcours",
-          "description": "Mit dem Zauberstab. 20 Min."
-        },
-        {
-          "time": "16:00",
-          "title": "Sterne basteln",
-          "description": "Ruhige Station. 15 Min."
-        },
-        {
-          "time": "16:15",
-          "title": "Kuchen & Pause",
-          "description": "Prinzessinnen-Kuchen. 25 Min."
-        },
-        {
-          "time": "16:40",
-          "title": "Der tollpatschige Drache",
-          "description": "Drachen-Geschichte + Krönchen-Suche. 30 Min."
-        },
-        {
-          "time": "17:10",
-          "title": "Krönungs-Zeremonie & Mitgebsel",
-          "description": "Feierliche Krönung, Schatzbeutel, Gruppenfoto, Abschied. 20 Min."
-        }
-      ],
       "games": [
         {
           "name": "✨ Sanfte Verwandlungs-Ecke",

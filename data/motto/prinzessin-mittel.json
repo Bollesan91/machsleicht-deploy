@@ -46,33 +46,6 @@
       "headline": "Krönung, Tanz und ein Schatz — schnell gemacht",
       "intro": "Zwei zauberhafte Spiele, eine kleine Krönung, kaum Vorbereitung. Königlich auch ohne großen Aufwand.",
       "timeWindow": "2 Stunden (14:00–16:00)",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankommen & Krönung",
-          "description": "Jedes Kind bekommt Krone + Umhang, wird 'gekrönt', Foto vor dem Schloss. 20 Min."
-        },
-        {
-          "time": "14:20",
-          "title": "Krönungs-Parcours",
-          "description": "Mit dem 'Zepter' (Löffel + Ball) durch den Parcours. 25 Min."
-        },
-        {
-          "time": "14:45",
-          "title": "Königlicher Standbild-Tanz",
-          "description": "Tanzen, bei Musik-Stopp einfrieren. 25 Min."
-        },
-        {
-          "time": "15:10",
-          "title": "Kuchen & Krönungslied",
-          "description": "Prinzessinnen-Kuchen, Pause. 25 Min."
-        },
-        {
-          "time": "15:35",
-          "title": "Schatz & Mitgebsel",
-          "description": "Königlicher Schatz, Urkunde, Verabschiedung. 25 Min."
-        }
-      ],
       "games": [
         {
           "name": "👑 Krönungs-Parcours (Zepter-Balance)",
@@ -243,43 +216,6 @@
       "headline": "Krönung, Schloss-Schatzsuche und der Drache",
       "intro": "Die empfohlene Variante: Krönung, eine Schloss-Schatzsuche, eine ruhige Bastelstation (Krone/Zauberstab) und das Drachen-Spiel, bei dem alle gemeinsam die gestohlene Krone zurückholen. Abwechslung für 3 Stunden mit rotem Faden.",
       "timeWindow": "3 Stunden (14:00–17:00)",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankommen & Krönung",
-          "description": "Krone, Umhang, Krönung, Foto vor dem Schloss. Freispiel mit Ausmalbildern. 20 Min."
-        },
-        {
-          "time": "14:20",
-          "title": "Krönungs-Parcours",
-          "description": "Edelstein-Balance zum Thron. 25 Min."
-        },
-        {
-          "time": "14:45",
-          "title": "Krone & Zauberstab basteln",
-          "description": "Ruhige Station: jeder gestaltet seine Krone. 25 Min."
-        },
-        {
-          "time": "15:10",
-          "title": "Schloss-Schatzsuche",
-          "description": "Hinweise führen durch das Schloss zum königlichen Schatz. 35 Min."
-        },
-        {
-          "time": "15:45",
-          "title": "Kuchen & Krönungslied",
-          "description": "Prinzessinnen-Kuchen, Pause. 25 Min."
-        },
-        {
-          "time": "16:10",
-          "title": "Drachen besiegen",
-          "description": "Den Drachen-Turm einreißen und die Krone zurückholen. 25 Min."
-        },
-        {
-          "time": "16:35",
-          "title": "Königlicher Tanz & Mitgebsel",
-          "description": "Standbild-Tanz, Urkunde, Schmuck, Verabschiedung. 25 Min."
-        }
-      ],
       "games": [
         {
           "name": "👑 Krönungs-Parcours (Zepter-Balance)",
@@ -517,48 +453,6 @@
       "headline": "Großes Königsfest mit Drachen-Abenteuer",
       "intro": "Alles aus Standard plus eine zusätzliche Verwandlungs-Station (Schminke/Frisur), ein Drachen-Abenteuer mit kleiner Inszenierung und eine feierliche Krönungs-Zeremonie zum Abschluss. Mehr Vorbereitung, dafür ein unvergesslicher königlicher Tag.",
       "timeWindow": "3,5 Stunden (14:00–17:30)",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankommen & Verwandlung",
-          "description": "Krone, Umhang, Glitzer-Schminke/Frisur-Station, Foto vor dem Schloss. 25 Min."
-        },
-        {
-          "time": "14:25",
-          "title": "Krönungs-Parcours",
-          "description": "Edelstein-Balance. 25 Min."
-        },
-        {
-          "time": "14:50",
-          "title": "Krone & Zauberstab basteln",
-          "description": "Ruhige Station. 20 Min."
-        },
-        {
-          "time": "15:10",
-          "title": "Schloss-Schatzsuche",
-          "description": "Königlicher Schatz finden. 35 Min."
-        },
-        {
-          "time": "15:45",
-          "title": "Kuchen & Krönungslied",
-          "description": "Pause. 25 Min."
-        },
-        {
-          "time": "16:10",
-          "title": "Drachen-Abenteuer",
-          "description": "Drachen-Turm + Mut-Aufgabe, Krone zurückholen. 30 Min."
-        },
-        {
-          "time": "16:40",
-          "title": "Königsball (Tanz)",
-          "description": "Standbild-Tanz, alle gemeinsam. 25 Min."
-        },
-        {
-          "time": "17:05",
-          "title": "Krönungs-Zeremonie & Mitgebsel",
-          "description": "Feierliche Krönung, Urkunde, Schmuck, Gruppenfoto. 25 Min."
-        }
-      ],
       "games": [
         {
           "name": "💄 Verwandlungs-Station (Glitzer & Frisur)",

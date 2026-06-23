@@ -174,43 +174,6 @@
       "headline": "⚔️ Minimal — 3 Stunden Ritter-Akademie",
       "intro": "Sparvariante: 3 Stunden, 8 Kinder, 4 Prüfungs-Stationen (Wappen-Design, Schwert-Parcours, Mittelalter-Quiz, Burgenermittlung). Pool-Nudel-Schwerter + Kartonschilde. Eltern setzen ab.",
       "timeWindow": "14:00–17:00, 8 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Empfang + Funktion + Akademie-Briefing",
-          "description": "Funktions-Karten ziehen, Theorie-Briefing (5 Min Burgen-Typen + Tugenden), Prüfungs-Mappen. 20 Min."
-        },
-        {
-          "time": "14:20",
-          "title": "Station 1: Wappen-Design-Werkstatt",
-          "description": "Eigenes Wappen heraldisch korrekt entwerfen, Wappen-Heroldin Hanna gibt Stilnote. 35 Min."
-        },
-        {
-          "time": "14:55",
-          "title": "Station 2: Schwert-Parcours mit Zeit",
-          "description": "Hindernis-Parcours mit Stoppuhr + Stilnote. 35 Min."
-        },
-        {
-          "time": "15:30",
-          "title": "Mittelalter-Snack-Pause",
-          "description": "Ritter-Pizza, Stockbrot, Met-Schorle. 25 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "Station 3: Mittelalter-Quiz Klasse 2",
-          "description": "20 Quiz-Karten, Burgenteile + Tugenden + Berufe, Burgen-Kennerin Lina. 30 Min."
-        },
-        {
-          "time": "16:25",
-          "title": "Station 4: Burgenermittlung (Krimi-Quest)",
-          "description": "Verschwundener Schatz, 4 Verdächtige, 3 Spuren, Lupe + Beweis-Bogen. 25 Min."
-        },
-        {
-          "time": "16:50",
-          "title": "Schwert-Schlag-Zeremonie + Diplom",
-          "description": "Feierliche Übergabe der Ritter-Anwärter-Diplome mit Schwert-Schlag. Bestes Team bekommt Ritter-Pokal. 10 Min."
-        }
-      ],
       "games": [
         {
           "name": "🛡️ Wappen-Design-Werkstatt (Heraldisch korrekt)",
@@ -736,48 +699,6 @@
       "headline": "🏰 Standard — 3,5 Stunden Akademie-Wettbewerb",
       "intro": "Allrounder für 8-10 Kinder: 5 Prüfungs-Stationen (Wappen, Schwert, Quiz, Ermittlung, Bogenschießen), Funktions-System, Ritter-Pokal, Schwert-Schlag-Zeremonie.",
       "timeWindow": "14:00–17:30, 10 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Empfang + Funktion + Akademie-Briefing",
-          "description": "Funktions-Karten, Theorie, Mappen. 20 Min."
-        },
-        {
-          "time": "14:20",
-          "title": "Station 1: Wappen-Design XL",
-          "description": "35 Min — Wappen-Heroldin Hanna bewertet."
-        },
-        {
-          "time": "14:55",
-          "title": "Station 2: Schwert-Parcours mit Zeit",
-          "description": "35 Min."
-        },
-        {
-          "time": "15:30",
-          "title": "Mittelalter-Snack-Pause",
-          "description": "25 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "Station 3: Mittelalter-Quiz Klasse 2",
-          "description": "30 Min."
-        },
-        {
-          "time": "16:25",
-          "title": "Station 4: Burgenermittlung XL",
-          "description": "30 Min — 5 Verdächtige, 4 Spuren, Detektiv-Bögen."
-        },
-        {
-          "time": "16:55",
-          "title": "Station 5: Bogenschießen (Saugnapf-Pfeile)",
-          "description": "25 Min."
-        },
-        {
-          "time": "17:20",
-          "title": "Schwert-Schlag-Zeremonie + Ritter-Pokal",
-          "description": "Feierliche Übergabe + Gruppenfoto. 10 Min."
-        }
-      ],
       "games": [
         {
           "name": "🛡️ Wappen-Design-Werkstatt (Heraldisch korrekt)",
@@ -1352,53 +1273,6 @@
       "headline": "🎉 Wow — 4 Stunden Ritter-Turnier",
       "intro": "Großes Programm für 10 Kinder: 6 Prüfungs-Stationen + Burgenermittlung als Krimi-Quest mit 6 Verdächtigen, finale Ritter-Olympiade mit Schwert-Schlag-Finale + Bogenschießen-Meisterschaft, optional Mittelalter-Markt-Besuch oder Schlafparty mit Ritterfilm. Ritter-Diplom Klasse 2 + Wanderpokal.",
       "timeWindow": "14:00–18:00, 10 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Empfang + Funktion + Großes Akademie-Briefing",
-          "description": "Funktions-Karten, ausgedehntes Briefing (10 Min Theorie), Prüfungs-Mappen mit Foto-Platz. 25 Min."
-        },
-        {
-          "time": "14:25",
-          "title": "Station 1: Wappen-Design XL",
-          "description": "35 Min — heraldisch korrekt."
-        },
-        {
-          "time": "15:00",
-          "title": "Station 2: Schwert-Parcours mit Zeit",
-          "description": "35 Min."
-        },
-        {
-          "time": "15:35",
-          "title": "Mittelalter-Snack-Pause + Ritter-Film-Trailer",
-          "description": "30 Min."
-        },
-        {
-          "time": "16:05",
-          "title": "Station 3: Mittelalter-Quiz Klasse 2 XL",
-          "description": "30 Min — 30 Karten + Bonus."
-        },
-        {
-          "time": "16:35",
-          "title": "Station 4: Burgenermittlung XXL (6 Verdächtige)",
-          "description": "35 Min — vollständiger Krimi mit Verhören, Beweisen, Auflösung."
-        },
-        {
-          "time": "17:10",
-          "title": "Station 5: Bogenschießen-Meisterschaft",
-          "description": "25 Min — 3 Distanzen."
-        },
-        {
-          "time": "17:35",
-          "title": "Ritter-Olympiade: Schwert-Schlag-Finale",
-          "description": "20 Min — am Strohballen, Wertung."
-        },
-        {
-          "time": "17:55",
-          "title": "Schwert-Schlag-Zeremonie + Ritter-Pokal",
-          "description": "Feierlich. 5 Min."
-        }
-      ],
       "games": [
         {
           "name": "🛡️ Wappen-Design-Werkstatt (Heraldisch korrekt)",
