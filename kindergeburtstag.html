@@ -665,7 +665,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   .plan-cust-form.open{display:flex}
   .plan-cust-form input[type=text]{flex:1;min-width:140px;padding:7px 10px;border:1px solid #E2D5C4;border-radius:8px;font-size:13px;font-family:inherit}
   .plan-cust-form input[type=number]{width:64px;padding:7px 8px;border:1px solid #E2D5C4;border-radius:8px;font-size:13px;font-family:inherit}
-  @media print{.pl__ctrl,.pl__add,.pl__addrow{display:none}}
+  @media print{.pl__ctrl,.pl__add,.pl__addrow{display:none}.pl__item--game .pl__body,.pl__item--schatz .pl__body{display:block!important}}   /* Druck: aufgeklappte Anleitung erzwingen — collapsed <details> drucken sonst keinen Inhalt */
   .eshop{list-style:none;padding:0;margin:0}
   .eshop li{padding:8px 0;border-bottom:1px solid #F3ECE3;font-size:14px;color:#444}
   .eshop li:last-child{border-bottom:none}
@@ -1771,7 +1771,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   function setEliteVariant(v){ state.eliteVariant = v; state.eliteOff = []; renderElitePlan(); autoSave(); }   // Varianten-Wechsel: Spiel-Abwahl zuruecksetzen (andere Spielmenge -> sonst stale/0-Count, Reviewer-MAJOR)
 
   // ===== V3 GENERATIVER PLAN (Spec §10) — erzeugt EINE geordnete activities[] aus dem Spiel-Pool + Standard-Beats.
-  // NOCH NICHT verdrahtet — wird isoliert getestet, bevor renderElitePlan darauf umgestellt wird.
+  // VERDRAHTET: renderElitePlan -> renderPlanList nutzt das (seit 19.06.). Ersetzt den alten schedule/games-Doppelrender.
   function _gameLoud(g){ const l=String((g&&g.loudness)||'').toLowerCase(); if(/laut|hoch|wild|tobe/.test(l)) return 2; if(/leise|ruhig|niedrig|konzentr/.test(l)) return 0; return 1; }
   const _EMO_LEAD = /^[\s\p{Extended_Pictographic}️‍\u{1F3FB}-\u{1F3FF}]+/u;
   const _EMO_GRAB = /^\s*([\p{Extended_Pictographic}️‍\u{1F3FB}-\u{1F3FF}]+)/u;
@@ -1796,17 +1796,17 @@ window.plausible.init=function(){};window.plausible.q=[];
     }
     const sig = (d && d.signature) || (v && v.signature) || {};
     const acts=[];
-    acts.push({ id:'beat-start', kind:'beat', emoji:'🎈', title: sig.opener || 'Ankommen & Verkleidung', durationMin:15, anchor:'start' });
+    acts.push({ id:'beat-start', kind:'beat', emoji:'🎈', title: sig.opener || 'Ankommen & Verkleidung', desc:'Verkleiden, schminken, in Ruhe ankommen lassen', durationMin:15, anchor:'start' });
     const mid = Math.floor(seq.length/2);
     seq.forEach((g,i)=>{
       if(i===mid){
-        acts.push({ id:'schatz', kind:'schatz', emoji:'🗺️', title:'Schatzsuche', durationMin:30 });
-        acts.push({ id:'beat-cake', kind:'beat', emoji:'🎂', title:'Kuchen & Pause', durationMin:25, anchor:'mid' });
+        acts.push({ id:'schatz', kind:'schatz', emoji:'🗺️', title:'Schatzsuche', desc:'Rätsel-Stationen bis zur Schatztruhe — Höhepunkt der Party', durationMin:30 });
+        acts.push({ id:'beat-cake', kind:'beat', emoji:'🎂', title:'Kuchen & Pause', desc:'Kuchen, Snacks und eine kurze Verschnaufpause', durationMin:25, anchor:'mid' });
       }
       acts.push({ id:'game-'+i, kind:'game', emoji: _gameEmoji(g.name), title:_cleanGameTitle(g.name), durationMin:_parseDur(g.duration)||15, gameName:g.name });
     });
-    if(seq.length===0){ acts.push({ id:'beat-cake', kind:'beat', emoji:'🎂', title:'Kuchen & Pause', durationMin:25, anchor:'mid' }); }
-    acts.push({ id:'beat-end', kind:'beat', emoji:'🎁', title: sig.closer || 'Mitgebsel & Abholung', durationMin:15, anchor:'end' });
+    if(seq.length===0){ acts.push({ id:'beat-cake', kind:'beat', emoji:'🎂', title:'Kuchen & Pause', desc:'Kuchen, Snacks und eine kurze Verschnaufpause', durationMin:25, anchor:'mid' }); }
+    acts.push({ id:'beat-end', kind:'beat', emoji:'🎁', title: sig.closer || 'Mitgebsel & Abholung', desc:'Mitgebsel-Tüten verteilen, Kinder verabschieden', durationMin:15, anchor:'end' });
     return acts;
   }
   // --- Plan-State (eine Liste, Spec §10.5: Struktur in state.plan, Inhalte bei jedem Render frisch aus v.games) ---
@@ -1871,7 +1871,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     const rows=acts.map(a=>{
       const fixed=(a.anchor==='start'||a.anchor==='end');
       const ctrl=fixed?'':`<span class="pl__ctrl"><button type="button" title="nach oben" onclick="planMove('${a.id}',-1)">▲</button><button type="button" title="nach unten" onclick="planMove('${a.id}',1)">▼</button><button type="button" class="pl__rm" title="entfernen" onclick="planRemove('${a.id}')">×</button></span>`;
-      const rowInner=`<div class="pl__time">${esc(a.time)}</div><div class="pl__title"><span>${esc(a.emoji||'')} ${esc(a.title)}</span><span class="pl__dur">${+a.durationMin||10} Min</span></div>${ctrl}`;
+      const rowInner=`<div class="pl__time">${esc(a.time)}</div><div class="pl__title"><span>${esc(a.emoji||'')} ${esc(a.title)}</span><span class="pl__dur">${a.desc?esc(a.desc)+' · ':''}${+a.durationMin||10} Min</span></div>${ctrl}`;
       if(a.kind==='game'){ const det=_eliteGameDetails(gByName[a.gameName]); return `<details class="pl__item pl__item--game"><summary class="pl__row">${rowInner}</summary>${det?`<div class="pl__body">${det}</div>`:''}</details>`; }
       if(a.kind==='schatz'){ return `<details class="pl__item pl__item--schatz"><summary class="pl__row">${rowInner}</summary><div class="pl__body">${schatzHtml||'<p style="font-size:13px;color:#666;margin:8px 0">Schatzsuche-Stationen werden unten im Schatz-Modul ausgespielt.</p>'}</div></details>`; }
       return `<div class="pl__item pl__item--beat"><div class="pl__row">${rowInner}</div></div>`;
@@ -1893,31 +1893,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   // ===== PLAN-ENGINE Helfer — parametrisiert vorhandene v1-Daten (siehe _dev/docs/PLAN-ENGINE-SPEC.md) =====
   function _toMin(t){ const m=String(t==null?'':t).match(/(\d\d?):(\d\d)/); return m? (+m[1])*60+(+m[2]) : null; }
   function _parseDur(d){ if(typeof d==='number') return d; const m=String(d==null?'':d).match(/\d+/); return m? +m[0] : 0; }
-  // Schedule: aus vorhandenen time[] relative Dauern ableiten, ins Fenster [state.time, state.endTime] skalieren, eigene Punkte mergen
-  function eliteSchedule(sched){
-    // Spec §3b: bevorzugt durationMin (reihenfolge-basiert, kollisionsfrei); Fallback auf vorhandene fixe time[]-Deltas.
-    const all=(sched||[]);
-    const hasDur = all.some(s=>typeof s.durationMin==='number');
-    let rows;
-    if(hasDur){
-      rows = all.map(s=>({title:s.title||'', desc:s.description||s.desc||'', dur: typeof s.durationMin==='number'?Math.max(s.durationMin,5):15})).filter(r=>r.title);
-    } else {
-      rows = all.map(s=>({t:_toMin(s.time), title:s.title||'', desc:s.description||''})).filter(r=>r.t!=null);
-    }
-    if(!rows.length) return [];
-    const start=_toMin(state.time); const s0=start!=null?start:(hasDur?(start||840):rows[0].t);
-    const durs=hasDur ? rows.map(r=>r.dur) : rows.map((r,i)=> i<rows.length-1 ? Math.max(rows[i+1].t-r.t,5) : 20);
-    const natural=durs.reduce((a,b)=>a+b,0)||1;
-    const end=_toMin(state.endTime);
-    const span=(end!=null && end-s0>=30)? end-s0 : natural;
-    const scale=span/natural;
-    let cur=s0;
-    const base=rows.map((r,i)=>{ const tt=Math.round(cur/5)*5; const row={time:fmt(tt), title:r.title, desc:r.desc, custom:false, sort:tt}; cur+=durs[i]*scale; return row; });
-    const cu=(state.customEntries||[]).map((c,idx)=>({c,idx})).filter(x=>_toMin(x.c.time)!=null).map(({c,idx})=>{ const m=_toMin(c.time); return {time:fmt(m), title:c.title, desc:'', custom:true, customIdx:idx, sort:m}; });
-    return [...base, ...cu].sort((a,b)=>a.sort-b.sort);
-  }
-  // Ort: nur Spiele zeigen, die den Ort koennen (zuhause/drinnen/halle->indoor, park->outdoor); nie leer rendern
-  function eliteGamesForLoc(games){ const out=(state.location==='park'); const f=(games||[]).filter(g=> out? g.outdoor!==false : g.indoor!==false); return f.length? f : (games||[]); }
+  // (V2 eliteSchedule + eliteGamesForLoc entfernt — V3 generiert den Plan via buildPlanActivities/_planTimes, Spec §10)
   function eliteLocTip(g){ return (state.location==='park') ? (g.outdoorTip||'') : (g.indoorTip||''); }
   // Alters-Anpassung je Spiel (reiche Dateien: ageAdjust3/5/6/8)
   function eliteAgeAdjust(g){ const map={'3-5':['ageAdjust3','ageAdjust5'],'6-8':['ageAdjust6','ageAdjust8'],'9-12':['ageAdjust8','ageAdjust6']}; for(const k of (map[state.age||'6-8']||[])){ if(g[k] && g[k]!=='—') return g[k]; } return ''; }

@@ -1,4 +1,22 @@
-# Session-Notiz — 18.06.2026 (P1-37 Elite-Daten-Migration: alle 15 Mottos im Planer live + Kosten/isQuest-UI — DEPLOYED main 075953c)
+# Session-Notiz — 19.06.2026 (V3 GENERATIVER Plan live + großer Architektur-Befund)
+
+## 🏁 Kernergebnis: Der Plan ist jetzt EINE generierte Liste (Spec §10) — Zwei-Quellen-Chaos gelöst
+**Befund-Kette dieser Session:**
+1. **`js/kindergeburtstag.js` (React) ist TOT** — von keiner HTML-Seite geladen (grep 0 Refs). Der Live-Planer `/kindergeburtstag` ist die statische **`kindergeburtstag.html`**. Die #37-Migration in den React-Bundle erreichte NIE einen User. Verifikations-Lektion: bei „X live" prüfen, welche Seite das Asset per `<script src>` lädt — nicht nur ob die URL 200 liefert.
+2. **`data/motto/*.json` ist trotzdem LIVE** — `kindergeburtstag.html` lädt sie via `getElite()` (fetch `/data/motto/<motto>-<group>.json`) in `renderElitePlan`. Die Daten-Arbeit war NICHT umsonst; nur die React-Verdrahtung war tot.
+3. **Wurzel des Plan-Chaos** (Doppelung, „Zack parallel", halber Spiele-Toggle): zwei Quellen — Tagesplan `v.schedule` (fixe Zeiten) + Spiele `v.games` (separate Liste), nur lose per Name gekoppelt.
+
+**Lösung (Bolle-Entscheid: generativ statt kuratiertem schedule):** Der Plan ist jetzt EINE geordnete `state.plan.acts` — `buildPlanActivities` generiert aus dem getaggten `v.games`-Pool + Standard-Beats (Ankommen/Kuchen/Abholung, mit Flavor-`desc`) + Schatzsuche 1×; `_planTimes` rechnet Zeiten reihenfolge-basiert (keine Kollision); `renderPlanList` rendert mit ×/▲▼/„+Spiel"/„+Custom", Ankommen/Abholung geschützt, Min-1-Spiel. `_planKey` = motto-age-variant-**location** → jede Eingabe wirkt. Druck: `@media print` erzwingt aufgeklappte Anleitung.
+
+**Gate:** Helfer-V4.1 voll (Stufe-2 claude.ai Opus 4.8 Hoch: 3 MAJOR → 2 False-Positive im Code geguarded + 1 echt [location-im-Key] gefixt; Stufe-3 Verify; Smoke 5 Mottos). **Spec:** `_dev/docs/PLAN-ENGINE-SPEC.md` §10 (verbindliches Modell).
+
+**Tot/Altlast:** React-Planer (`js/kindergeburtstag.js` 3,8 MB + `_src/kindergeburtstag.jsx` + `_src/gen-elite-bundle.cjs` + `_src/elite-motto-data/`) — entsorgen. V2-Reste in kindergeburtstag.html (`toggleEliteGame`/`state.eliteOff`/`egame__tog`-CSS) — inert, separater Pass.
+
+**Offen (Funnel-Blick, der echte Hebel):** Conversion-Schritt Plan → Partyseite (North Star „Partyseite erstellt" 3–5 %) + **Umami-Zahlen NIE angeschaut** — nächster echter Schritt statt weiter am Plan feilen. #34 schlanke Mottos füllen (superheld 3 Spiele). Mobile/Resume-Smoke des V3-Plans steht aus.
+
+---
+
+# Session-Notiz — 18.06.2026 (P1-37 Elite-Daten-Migration — HISTORISCH: ging in den TOTEN React-Bundle, nie live)
 
 ## 🏁 Kernergebnis: Der Planer zeigte live nur 8 Mottos mit veralteten Daten — jetzt alle 15 auf data/motto-Stand
 **Großer Befund:** `js/kindergeburtstag.js` (`ELITE_MOTTO_DATA`) las nur **8 Mottos** und war breit veraltet — selbst das angeblich (#36) deployte piraten lief mit alter, dünnerer Version (piraten-mittel 2/5/2 statt 4/6/6 Spiele, generische Schatzsuche statt Flaschenpost). Die ganze Elite-/Review-Kampagne (#33–#35, #34) war **nie im Runtime-Bundle**. `data/motto/` (alle 15 Mottos) war nicht ans Runtime verdrahtet; das offizielle `_src/build.sh` backte aus einer 3 Wochen alten Kopie (`_src/elite-motto-data/*.json`, noch alter Tag `machsleicht-21`) und hätte beim Lauf den Affiliate-Fix regrediert.
