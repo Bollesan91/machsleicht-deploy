@@ -84,33 +84,6 @@
       "headline": "🌿 Minimal — 90 Minuten, minimaler Aufwand",
       "intro": "Funktioniert auch wenn du Donnerstag erst angefangen hast zu planen. Schicht-Appell mit Helm und Aufkleber, ein Hauptspiel (Schaum-Löschen), Kuchen, Mitgebsel — fertig. Bei 5 Kindern in dem Alter sind 90 Minuten genug Programm. Mehr wird nicht besser, sondern voller.",
       "timeWindow": "15:00–16:30, 5 Kinder",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "🚒 Schicht-Appell & Helm-Probe",
-          "description": "Beim Reinkommen bekommt jedes Kind seinen Helm aufgesetzt + zieht einen Aufkleber-Dienstausweis (Schlauch/Pflaster/ Hand-Signal \"Notruf!\" + leiser Spruch. Foto pro Kind. Sobald alle da sind: gemeinsamer Schichtbeginn-Spruch („Wir helfen, wo Hilfe gebraucht wird. Los geht's!\"). Eltern können beim Helm-Aufsetzen helfen — geht zu fünft schneller, als du allein."
-        },
-        {
-          "time": "15:15",
-          "title": "🫧 Schaum-Löschen",
-          "description": "Hauptspiel, 25 Min. — Kuscheltiere unterm Rasierschaum in der Wanne befreien. Anleitung unten. Sicher, witzig, schmiert nicht. Funktioniert in jeder Wohnung. Eltern helfen pro Kind."
-        },
-        {
-          "time": "15:40",
-          "title": "🎂 Kuchen & Lösch-Wasser",
-          "description": "Feuerwehrauto-Kuchen (Kastenform mit Reifen aus Schoko-Sandwich-Keks) + Apfelschorle in roten Bechern. Happy Birthday singen, 25 Min. Pause für alle Kinder. Wichtigster Slot für Ruhe."
-        },
-        {
-          "time": "16:05",
-          "title": "🚒 Helm-Bilder ausmalen",
-          "description": "Ruhiges Spiel zum Auslaufen. 15 Min. Feuerwehr-Ausmalbilder am Tisch + dicke Filzstifte. Hier dürfen die Kinder einfach nur sitzen, kein Programm."
-        },
-        {
-          "time": "16:20",
-          "title": "🏆 Urkunde & Mitgebsel",
-          "description": "Jedes Kind bekommt namentlich seine Tag-1-Feuerwehrkind-Urkunde („Tom war heute Schlauchführer und hat 3 Tiere gerettet\"). Mitgebsel-Tüte: Mini-Feuerwehrauto, Aufkleber, Gummibärchen. 10 Min. Übergabe + Eltern abholen.\n\n💡 Warum nur 1 Hauptspiel reicht:\n3-5-Jährige bleiben höchstens 15 Minuten bei einer Sache. Schaum-Löschen funktioniert deshalb so gut, weil es flexibel ist — manche Kinder bleiben dran, andere setzen sich nach 5 Minuten dazu, wieder andere kommen nach Pause zurück. Es ist parallel zur Pausenstruktur. Mehr Spiele = mehr Übergänge = mehr Reibung. Das eine Spiel + Helm-Probe + Kuchen ist genug Struktur."
-        }
-      ],
       "games": [
         {
           "name": "🚒 Helm-Bilder ausmalen",
@@ -347,38 +320,6 @@
       "headline": "🎯 Standard — 2 Stunden, klassische Party",
       "intro": "Der Sweet Spot für 3–5: Schicht-Appell, Helm-Probe mit Mini-Spritze, ein gemeinsamer Mini-Einsatz im Wohnzimmer (Kuscheltiere retten), Kuchen, Schaum-Löschen, Tag-1-Feuerwehrkind-Urkunde. Genug Programm ohne Überforderung. 2 Stunden ist für die Kleinen die Obergrenze.",
       "timeWindow": "15:00–17:00, 5 Kinder",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "🚒 Schicht-Appell & Helm-Probe",
-          "description": "Helm aufsetzen, Aufkleber-Dienstausweis ziehen, Foto. Schichtbeginn-Spruch („Wir helfen, wo Hilfe gebraucht wird. Los geht's!\"). Eltern helfen aktiv. 15 Min. — länger braucht's nicht, sonst werden die Ersten unruhig."
-        },
-        {
-          "time": "15:15",
-          "title": "💧 Spritz-Probe an der Wache",
-          "description": "15 Min. — jedes Kind darf seine Spritzpistole probieren. Auf umgekippte Plastikbecher zielen, niedrigste Stufe. Lautes Spiel zum Energie-Rauslassen. Anleitung unten."
-        },
-        {
-          "time": "15:30",
-          "title": "🚨 Mini-Einsatz: Tiere retten",
-          "description": "DER Höhepunkt für die Kleinen. 20 Min. — Hand-Signal \"Notruf!\" + leiser Spruch. Notruf, Crew geht durch die Wohnung und rettet 6–8 Kuscheltiere. Eltern begleiten. Anleitung unten. Wer das nicht vergisst, dann das."
-        },
-        {
-          "time": "15:50",
-          "title": "🎂 Kuchen & Lösch-Wasser",
-          "description": "Feuerwehrauto-Kuchen + Apfelschorle in roten Bechern. Happy Birthday, 25 Min. Pause für alle. Wichtigster Slot, damit niemand kippt."
-        },
-        {
-          "time": "16:15",
-          "title": "🫧 Schaum-Löschen",
-          "description": "Ruhiges taktiles Spiel nach Kuchen + Aufregung. 25 Min. Rasierschaum-Wanne, Tiere befreien. Wie in Minimal-Variante."
-        },
-        {
-          "time": "16:40",
-          "title": "🏆 Urkunde & Mitgebsel",
-          "description": "Jedes Kind wird einzeln aufgerufen mit Funktion und einem Satz, was es heute geleistet hat („Tom, Schlauchführer — du hast 3 Tiere gerettet\"). Bekommt Urkunde + Mitgebsel-Tüte. 20 Min. + Eltern-Trudel-Puffer.\n\n💡 Rhythmus-Regel für 3–5:\nLaut → leise → Pause → laut → leise. Helm-Probe (Pause) → Spritzen (laut) → Mini-Einsatz (laut) → Kuchen (Pause) → Schaum-Löschen (leise) → Urkunde (feierlich-leise). Pause nach jedem zweiten Spiel ist Pflicht. Kein Spiel länger als 25 Minuten — sonst kippt's."
-        }
-      ],
       "games": [
         {
           "name": "🚒 Helm-Bilder ausmalen",
@@ -674,43 +615,6 @@
       "headline": "✨ Wow — 2,5 Stunden, die volle Schicht (3–5)",
       "intro": "Auf der Standard-Variante aufbauend. Plus: Helm-Bemalen am Anfang als Bastelaktivität, ein vorgelesenes Feuerwehr-Bilderbuch als Ruhe-Anker vor dem Mini-Einsatz, ein Tier-Rettungs-Parcours mit kleinen Hindernissen. Bei 3-5 ist Wow nicht „mehr Spiele\", sondern „mehr Atmosphäre\" — kein Nebel, keine Brandermittlung, das wäre Überforderung. Stattdessen: persönlicher, langsamer, mit eigenem Helm zum Behalten.",
       "timeWindow": "14:30–17:00, 5 Kinder",
-      "schedule": [
-        {
-          "time": "14:30",
-          "title": "🚒 Schicht-Appell & Helm-Bemalen",
-          "description": "25-Minuten-Slot in zwei Phasen: Erste 5 Min. Schicht-Appell — Aufkleber-Dienstausweis ziehen, Foto, Schichtbeginn-Spruch („Wir helfen, wo Hilfe gebraucht wird. Los geht's!\"). Dann 20 Min. Helm-Bemalen: jedes Kind bekommt einen weißen Pappkarton-Helm und gestaltet ihn selbst — Filzstifte, Aufkleber, Glitzer auf dem Tisch bereit. Der Helm gehört am Ende ihm und geht als Mitgebsel mit. Eltern helfen aktiv beim Filzstift-Andrücken und Aufkleber-Aufkleben. Anleitung unten."
-        },
-        {
-          "time": "14:55",
-          "title": "📖 Feuerwehr-Bilderbuch lesen",
-          "description": "10 Min. Ruhe-Insel. Du liest ein einfaches Feuerwehr-Bilderbuch vor (Bibliothek vorher fragen, dort gibt's eine ganze Reihe für 3-5). Die Kinder sitzen im Halbkreis, hören zu. Funktioniert magisch nach dem Bemalen, bringt Konzentration für den Einsatz danach."
-        },
-        {
-          "time": "15:05",
-          "title": "💧 Spritz-Probe an der Wache",
-          "description": "15 Min. — wie in Standard. Niedrigste Stufe, gemeinsam, kein Wettbewerb."
-        },
-        {
-          "time": "15:20",
-          "title": "🚨 Mini-Einsatz mit Parcours",
-          "description": "25 Min. — Wow-Variante: zwischen Crew und Tieren ist ein kleiner Parcours (über Kissen klettern, durch einen Tunnel-Karton kriechen, unter einem Stuhl durch). Hand-Signal \"Notruf!\" + leiser Spruch. Eltern führen jedes Kind durch den Parcours. Anleitung unten."
-        },
-        {
-          "time": "15:45",
-          "title": "🎂 Kuchen & Lösch-Wasser",
-          "description": "Feuerwehrauto-Kuchen + Apfelschorle. Happy Birthday, 25 Min. Pause. Polaroid-Fotos vom Schicht-Appell werden jetzt an die Wand gepinnt — die Kinder sehen sich selbst."
-        },
-        {
-          "time": "16:10",
-          "title": "🫧 Schaum-Löschen",
-          "description": "25 Min. wie in Minimal/Standard. Ruhiger Abschluss vor der Urkunde."
-        },
-        {
-          "time": "16:35",
-          "title": "🏆 Große Urkunden-Übergabe",
-          "description": "25 Min. — jedes Kind wird einzeln aufgerufen, mit zwei Sätzen (einer aus dem Einsatz, einer aus dem Schaum-Löschen). Bekommt Urkunde + selbstbemalten Helm + Polaroid + Mitgebsel-Tüte. Das ist der emotionale Höhepunkt, nicht der Mini-Einsatz.\n\n✨ Wow-Highlight für 3–5: Der eigene Helm\nNicht Nebel, nicht Brandermittlung — bei den Kleinen ist DER Wow-Faktor: jedes Kind bemalt seinen eigenen Helm und nimmt ihn mit nach Hause. Der Helm wird zur Trophäe, zum Spielzeug für die nächsten Wochen, zum Identitätsanker. Das kostet 25 Min. und ~3 € pro Helm extra (weiße Pappkarton-Helme zum Bemalen statt fertige rote). Wirkt aber 100× stärker als jede Spezial-Effekt-Inszenierung. Plus: jedes Kind hat ein einzigartiges Stück, kein Helm gleicht dem anderen."
-        }
-      ],
       "games": [
         {
           "name": "🚒 Helm-Bilder ausmalen",

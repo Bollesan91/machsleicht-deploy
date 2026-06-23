@@ -151,38 +151,6 @@
       "headline": "⚔️ Minimal — 2 Stunden Knappen-Tag",
       "intro": "Sparvariante: 2 Stunden, 6 Kinder, 3 Stationen (Wappen-Werkstatt, Burgen-Quiz, Schwert-Parcours). Pool-Nudel-Schwerter + Pappschilde — keine echte Rüstung nötig.",
       "timeWindow": "14:00–16:00, 6 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankunft + Knappen-Ernennung",
-          "description": "Knappen-Briefe verteilen, Knappen-Schwur. 15 Min."
-        },
-        {
-          "time": "14:15",
-          "title": "Station 1: Wappen-Werkstatt",
-          "description": "Eigenes Wappen auf Pappschild gestalten — Stempel 1. 25 Min."
-        },
-        {
-          "time": "14:40",
-          "title": "Station 2: Burgen-Quiz",
-          "description": "Quiz-Karten beantworten: Was ist ein Bergfried? Welche Ritter-Werte? — Stempel 2. 20 Min."
-        },
-        {
-          "time": "15:00",
-          "title": "Ritter-Snack-Pause",
-          "description": "Ritter-Spieße, Kerker-Brote, Met-Schorle. 20 Min."
-        },
-        {
-          "time": "15:20",
-          "title": "Station 3: Schwert-Parcours",
-          "description": "Pool-Nudel-Schwert-Übungen am Strohballen + Slalom — Stempel 3. 25 Min."
-        },
-        {
-          "time": "15:45",
-          "title": "Ritter-Schlag + Foto",
-          "description": "Feierlicher Ritter-Schwert-Schlag. Ritter-Brief. 15 Min."
-        }
-      ],
       "games": [
         {
           "name": "🛡️ Wappen-Werkstatt",
@@ -510,48 +478,6 @@
       "headline": "🏰 Standard — 3 Stunden Knappen-Ausbildung",
       "intro": "Allrounder für 6–8 Kinder: 5 Stationen (Wappen, Quiz, Schwert, Drache, Burg), Knappen-Brief mit Stempeln, finaler Ritter-Schlag. 3 Stunden mit Wissen, Übung und Burg-Atmosphäre.",
       "timeWindow": "14:00–17:00, 8 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankunft + Knappen-Ernennung",
-          "description": "Knappen-Brief, Schwur, Burg-Lageplan. 15 Min."
-        },
-        {
-          "time": "14:15",
-          "title": "Station 1: Wappen-Werkstatt",
-          "description": "25 Min — Stempel 1."
-        },
-        {
-          "time": "14:40",
-          "title": "Station 2: Burgen-Quiz",
-          "description": "20 Min — Stempel 2."
-        },
-        {
-          "time": "15:00",
-          "title": "Ritter-Snack-Pause",
-          "description": "25 Min."
-        },
-        {
-          "time": "15:25",
-          "title": "Station 3: Schwert-Parcours",
-          "description": "25 Min — Stempel 3."
-        },
-        {
-          "time": "15:50",
-          "title": "Station 4: Drachen-Schatzsuche",
-          "description": "25 Min — Stempel 4."
-        },
-        {
-          "time": "16:15",
-          "title": "Station 5: Burg-Erstürmung (Team-Spiel)",
-          "description": "20 Min — Stempel 5."
-        },
-        {
-          "time": "16:35",
-          "title": "Ritter-Schlag + Foto",
-          "description": "Feierlicher Schwert-Schlag, Ritter-Brief, Gruppenfoto. 25 Min."
-        }
-      ],
       "games": [
         {
           "name": "🛡️ Wappen-Werkstatt",
@@ -959,53 +885,6 @@
       "headline": "🎉 Wow — 4 Stunden Ritter-Olympiade",
       "intro": "Großes Programm für 8-10 Kinder: 6 Stationen, finale Ritter-Olympiade mit Schwert-Schlag-Wettbewerb, Bogenschießen-Light (Saugnapf-Pfeile), optional Schlafparty-Anschluss mit Ritter-Film. Ritter-Brief Klasse 1+2 zu erringen.",
       "timeWindow": "14:00–18:00, 10 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Empfang + Knappen-Anmeldung",
-          "description": "Knappen-Brief, Foto fürs Heft, Schwur. 20 Min."
-        },
-        {
-          "time": "14:20",
-          "title": "Station 1: Wappen-Werkstatt XL",
-          "description": "30 Min — Stempel 1."
-        },
-        {
-          "time": "14:50",
-          "title": "Station 2: Burgen-Quiz (große Version)",
-          "description": "30 Min — Stempel 2."
-        },
-        {
-          "time": "15:20",
-          "title": "Ritter-Snack-Pause",
-          "description": "25 Min."
-        },
-        {
-          "time": "15:45",
-          "title": "Station 3: Schwert-Parcours mit Zeitmessung",
-          "description": "30 Min — Stempel 3."
-        },
-        {
-          "time": "16:15",
-          "title": "Station 4: Bogenschießen-Light (Saugnapf)",
-          "description": "25 Min — Stempel 4."
-        },
-        {
-          "time": "16:40",
-          "title": "Station 5: Drachen-Schatzsuche XL",
-          "description": "30 Min — Stempel 5."
-        },
-        {
-          "time": "17:10",
-          "title": "Ritter-Olympiade: Schwert-Schlag-Finale",
-          "description": "25 Min — Stempel 6."
-        },
-        {
-          "time": "17:35",
-          "title": "Ritter-Schlag + Olympiade-Sieger",
-          "description": "Feierlicher Schlag + Ritter-Film optional. 25 Min."
-        }
-      ],
       "games": [
         {
           "name": "🛡️ Wappen-Werkstatt",

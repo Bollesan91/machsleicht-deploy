@@ -58,33 +58,6 @@
       "headline": "🌿 Minimal — 2 Stunden, minimaler Aufwand",
       "intro": "Funktioniert auch wenn du gestern erst angefangen hast zu planen. Zwei Spiele, Kuchen, Ausmalbilder, fertig. Kein Kind geht unglücklich nach Hause.",
       "timeWindow": "14:00–16:00, 6 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankommen & Dino-Ausmalbilder",
-          "description": "Leg 3–4 verschiedene Ausmalbilder pro Kind auf den Tisch + Buntstifte. Hält die Ersten beschäftigt bis alle da sind. Kostenlose Vorlagen z.B. auf [kribbelbunt.de](https://www.kribbelbunt.de/artikel/news/ausmalbilder-dinosaurier/) (direkte PDF-Downloads pro Dino) oder [malvorlagen-seite.de](https://malvorlagen-seite.de/malvorlagen-dinosaurier/) — einfach ausdrucken."
-        },
-        {
-          "time": "14:25",
-          "title": "🦴 Dino-Ausgrabung",
-          "description": "Hauptspiel, 25 Min. — Anleitung unten. Das Highlight der Party."
-        },
-        {
-          "time": "14:55",
-          "title": "🎂 Kuchen & Dino-Pipi",
-          "description": "Vulkan-Kuchen + \"Dino-Pipi\" (Apfelschorle mit selbstgemachtem Etikett — die Kinder lachen sich kaputt). 20 Min. Ruhe für alle."
-        },
-        {
-          "time": "15:20",
-          "title": "🥚 Dino-Eierlauf",
-          "description": "Bewegungsspiel, 15 Min. — baut Energie ab nach dem Zucker."
-        },
-        {
-          "time": "15:40",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Tüten verteilen. Tipp: Restliche Ausmalbilder + ausgegrabenen Dino mitgeben."
-        }
-      ],
       "games": [
         {
           "name": "🦴 Dino-Ausgrabung",
@@ -239,43 +212,6 @@
       "headline": "🎯 Standard — 3 Stunden, klassische Party",
       "intro": "Der Sweet Spot: genug Programm ohne Stress. Vier Aktivitäten, Kuchen, Deko, Mitgebsel. Die Party, von der die Kinder am Montag in der Schule erzählen.",
       "timeWindow": "14:00–17:00, 6 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankommen & Dino-Masken basteln",
-          "description": "[Dino-Masken zum Ausmalen*](https://www.amazon.de/s?k=dino+masken+kinder+ausmalen&tag=machsleicht21-21) (~6 €, 10 Stk.) bereitlagen + Gummibänder + Buntstifte. Wenn die Maske fertig ist, stellt sich jedes Kind als sein Dino vor: \"Ich bin der gefährliche T-Rex Max!\""
-        },
-        {
-          "time": "14:30",
-          "title": "🌋 Vulkan-Experiment",
-          "description": "DER Wow-Moment. Kinder staunen, wollen es nochmal sehen. 20 Min. mit Wiederholungen."
-        },
-        {
-          "time": "14:55",
-          "title": "🦴 Dino-Ausgrabung",
-          "description": "Ruhigere Phase nach dem Vulkan-Hype. 25 Min. konzentriertes Graben."
-        },
-        {
-          "time": "15:25",
-          "title": "🎂 Kuchen & Dino-Pipi",
-          "description": "Vulkan-Kuchen mit bunte Schoko-Linsen-Lava. Happy Birthday singen. 25 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "🏃 Dino-Parcours",
-          "description": "Bewegung nach dem Kuchen! 20 Min. — baut Zucker-Energie ab."
-        },
-        {
-          "time": "16:20",
-          "title": "🪨 Fossilien gießen",
-          "description": "Ruhiger Abschluss. 20 Min. — Ergebnis trocknet und geht als Mitgebsel mit."
-        },
-        {
-          "time": "16:45",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Fossil + Dino + Maske + Süßes in Tüte. Fertig.\n\n💡 Rhythmus-Regel:\nImmer abwechseln: laut → leise → laut → leise. Vulkan (laut) → Ausgrabung (leise) → Kuchen (Pause) → Parcours (laut) → Fossilien (leise). So kippt die Stimmung nie."
-        }
-      ],
       "games": [
         {
           "name": "🌋 Vulkan-Experiment",
@@ -477,48 +413,6 @@
       "headline": "✨ Wow — 3,5 Stunden, der Geburtstag des Jahres",
       "intro": "Für den Geburtstag, über den noch Wochen später in der Schule geredet wird. Dino-Forscher-Ausbildung mit Ausweis, Schatzsuche, Vulkan-Experiment und Forscherurkunde.",
       "timeWindow": "14:00–17:30, 6 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankommen & Forscherpass ausfüllen",
-          "description": "Jedes Kind bekommt einen Forscherpass (→ [Druckvorlage](/kindergeburtstag/dino-forscherpass), 1 A4 falten = A5-Büchlein). Name eintragen, Foto einkleben, mit [Dino-Stempel*](https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht21-21) abstempeln. Ab jetzt sind alle \"Dino-Forscher\". Auf dickem Papier drucken (160g+, DM ~3€/50 Blatt)."
-        },
-        {
-          "time": "14:25",
-          "title": "🌋 Prüfung 1: Vulkan-Experiment",
-          "description": "Der große Einstieg. \"Jeder Forscher muss einen Vulkanausbruch überlebt haben!\" Kinder bauen selbst mit."
-        },
-        {
-          "time": "14:50",
-          "title": "🗺️ Prüfung 2: Dino-Schatzsuche",
-          "description": "5 Stationen im Garten/Wohnung, 40 Min. Mit Schatzkarte und Lösungswort. Am Ende wartet die Schatzkiste."
-        },
-        {
-          "time": "15:35",
-          "title": "🎂 Kuchen, Dino-Pipi & Kartoffelbrei-Vulkan",
-          "description": "Vulkan-Kuchen mit Wunderkerze obendrauf. Kartoffelbrei-Vulkan mit Ketchup-Lava als herzhafter Snack. 25 Min."
-        },
-        {
-          "time": "16:05",
-          "title": "🧠 Prüfung 3: Dino-Wissens-Quiz",
-          "description": "2 Teams gegeneinander. Buzzer-Runde. 20 Min."
-        },
-        {
-          "time": "16:30",
-          "title": "🪨 Prüfung 4: Fossilien gießen",
-          "description": "Ruhephase. Jeder gießt sein eigenes Fossil."
-        },
-        {
-          "time": "16:55",
-          "title": "🎖️ Urkundenverleihung & Dino-Kino",
-          "description": "\"Hiermit wird ___ zum offiziellen Paläontologen ernannt.\" Forscherpass umdrehen — die Urkunde ist auf der Rückseite. Feierlich überreichen! Dann 15 Min. Dino-Doku zum Runterkommen (YouTube: \"Dinosaurier Doku Kinder\", Popcorn dazu)."
-        },
-        {
-          "time": "17:15",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Forscherpass + Fossil + Dino + Schatz. Die Kinder gehen als zertifizierte Paläontologen nach Hause."
-        }
-      ],
       "games": [
         {
           "name": "🌋 Vulkan-Experiment",

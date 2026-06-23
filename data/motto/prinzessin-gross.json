@@ -46,33 +46,6 @@
       "headline": "Das Juwelen-Mystery in Kurzform",
       "intro": "Eine kompakte Detektiv-Story: Die Kronjuwelen sind weg, die Gruppe löst drei Rätsel und entlarvt den Dieb. Wenig Aufwand, viel Köpfchen.",
       "timeWindow": "2,5 Stunden (15:00–17:30)",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "Ankommen & Hofstaat-Rollen",
-          "description": "Jeder wählt eine Rolle (Hofdetektivin, Schatzmeister …), bekommt ein Abzeichen. Der Fall wird vorgestellt. 25 Min."
-        },
-        {
-          "time": "15:25",
-          "title": "Die 3 Rätsel",
-          "description": "Caesar-Code, Spiegelschrift und Logik führen zum Zahlenschloss. 45 Min."
-        },
-        {
-          "time": "16:10",
-          "title": "Kuchen & Akten-Pause",
-          "description": "Königlicher Kuchen, Verdächtigen-Akten studieren. 30 Min."
-        },
-        {
-          "time": "16:40",
-          "title": "Auflösung & Krönung",
-          "description": "Tresor öffnen, Dieb entlarven, Siegerehrung. 30 Min."
-        },
-        {
-          "time": "17:10",
-          "title": "Mitgebsel & Abschied",
-          "description": "Schatzbeutel, Abschied. 20 Min."
-        }
-      ],
       "games": [
         {
           "name": "🔐 Die 3 Schloss-Rätsel (Code, Spiegel, Logik)",
@@ -210,38 +183,6 @@
       "headline": "Juwelen-Mystery mit royalem Wettkampf",
       "intro": "Die empfohlene Variante: die Detektiv-Story mit Hofstaat-Rollen, mehrere Escape-Rätsel-Stationen, ein royaler Team-Wettkampf (königliche Disziplinen) und eine große Auflösung mit Krönung. Anspruchsvoll und abwechslungsreich.",
       "timeWindow": "3 Stunden (15:00–18:00)",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "Ankommen & Hofstaat-Rollen",
-          "description": "Rollen wählen, Abzeichen, der Fall wird vorgestellt. 20 Min."
-        },
-        {
-          "time": "15:20",
-          "title": "Escape-Stationen",
-          "description": "Mehrere Rätsel im Schloss lösen, Hinweise sammeln. 45 Min."
-        },
-        {
-          "time": "16:05",
-          "title": "Royaler Wettkampf",
-          "description": "Königliche Disziplinen im Team. 30 Min."
-        },
-        {
-          "time": "16:35",
-          "title": "Kuchen & Akten-Pause",
-          "description": "Kuchen, Verdächtigen-Akten. 30 Min."
-        },
-        {
-          "time": "17:05",
-          "title": "Finale: Tresor & Dieb",
-          "description": "Code knacken, Dieb entlarven. 30 Min."
-        },
-        {
-          "time": "17:35",
-          "title": "Krönung & Mitgebsel",
-          "description": "Siegerehrung, Krönung, Abschied. 25 Min."
-        }
-      ],
       "games": [
         {
           "name": "🔐 Escape-Stationen (Codes, Spiegel, Logik, UV)",
@@ -406,43 +347,6 @@
       "headline": "Live-Inszenierung mit Verdächtigen-Befragung",
       "intro": "Alles aus Standard plus eine Live-Inszenierung: Eine erwachsene Person spielt den/die Hofbeamte/Verdächtige(n), die Kinder befragen sie, es gibt eine zusätzliche Verkleidungs-/Foto-Station (royales Fotoshooting) und ein dramatisches Finale mit großer Auflösung. Mehr Vorbereitung — dafür ein Erlebnis, über das die Gruppe noch lange redet.",
       "timeWindow": "3,5 Stunden (15:00–18:30)",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "Ankommen & Hofstaat-Rollen",
-          "description": "Rollen, Abzeichen, Fall-Briefing durch den 'Hofbeamten'. 20 Min."
-        },
-        {
-          "time": "15:20",
-          "title": "Royales Fotoshooting",
-          "description": "Verkleiden (elegant), Foto-Station, Charaktere etablieren. 25 Min."
-        },
-        {
-          "time": "15:45",
-          "title": "Escape-Stationen",
-          "description": "Rätsel im Schloss, Hinweise sammeln. 45 Min."
-        },
-        {
-          "time": "16:30",
-          "title": "Verdächtigen-Befragung",
-          "description": "Die Kinder befragen den/die Verdächtige(n). 25 Min."
-        },
-        {
-          "time": "16:55",
-          "title": "Kuchen & Akten-Pause",
-          "description": "Kuchen, Indizien sortieren. 30 Min."
-        },
-        {
-          "time": "17:25",
-          "title": "Royaler Wettkampf",
-          "description": "Königliche Disziplinen. 30 Min."
-        },
-        {
-          "time": "17:55",
-          "title": "Großes Finale & Krönung",
-          "description": "Tresor knacken, Dieb überführen, Siegerehrung, Krönung. 35 Min."
-        }
-      ],
       "games": [
         {
           "name": "📸 Royales Fotoshooting (Charaktere etablieren)",

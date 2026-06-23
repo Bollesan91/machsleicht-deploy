@@ -145,33 +145,6 @@
       "headline": "🌿 Minimal — 2 Stunden, minimaler Aufwand",
       "intro": "Funktioniert auch wenn du gestern erst angefangen hast zu planen. Zwei Spiele, Kuchen, Ausmalbilder, fertig. Kein Kind geht unglücklich nach Hause — Fee oder Waldwächter, beide haben Spaß.",
       "timeWindow": "14:00–16:00, 6 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Zauberbaum-Beutel & Ausmalbilder",
-          "description": "Jedes Kind wählt Rolle (Blumenfee oder Waldwächter), zieht beim Reinkommen einen Namen aus dem Zauberbaum-Beutel (Details oben im Ritual-Block), bekommt Blüten-Diadem oder Eichenlaub-Krone aufgesetzt. Danach: 3–4 verschiedene Ausmalbilder pro Kind auf den Tisch (Mix aus Feen, Schmetterlingen, Elfen, Waldwesen) + Buntstifte (Grün, Braun, Pastelltöne). Hält die Ersten beschäftigt bis alle da sind. Kostenlose Vorlagen z.B. auf [kribbelbunt.de](https://www.kribbelbunt.de/) oder [malvorlagen-seite.de](https://malvorlagen-seite.de/)."
-        },
-        {
-          "time": "14:25",
-          "title": "🌿 Pflanzen-Quest: Codeknacker FARN",
-          "description": "Hauptspiel, 30 Min. — Anleitung unten. 4 Stationen, an jeder ein Buchstabe (F → A → R → N), am Ende öffnet sich die Zauberbaum-Schatzkiste."
-        },
-        {
-          "time": "14:55",
-          "title": "🎂 Kuchen & Waldfrüchte-Punsch",
-          "description": "Blüten-Kuchen + „Waldfrüchte-Punsch\" (Apfelschorle mit Tropfen Beerensaft — wird hellrosa, sieht aus wie Feenwasser). 20 Min. Ruhe für alle."
-        },
-        {
-          "time": "15:20",
-          "title": "🦋 Schmetterling-Bestimmungs-Quiz",
-          "description": "Ruhiges Quiz, 15 Min. — Bildkarten von 6 echten Schmetterlingen (Tagpfauenauge, Zitronenfalter, Kohlweißling, Schwalbenschwanz, Distelfalter, Admiral). Wer kennt welchen? Pflanzen-Wissen + Spaß."
-        },
-        {
-          "time": "15:40",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Tüten verteilen. Tipp: Restliche Ausmalbilder + gefundener Talisman aus der Quest mitgeben.\n\n💡 Warum nur 2 Spiele reichen:\n6–8-Jährige wollen nicht durchanimiert werden. Zwischen den beiden Spielen kommen Kuchen und Ausmalbilder — das ist genug Struktur. Weniger Programm = weniger Stress für dich, weniger Reizüberflutung für die Kinder. Die Pflanzen-Quest ist schon der Höhepunkt."
-        }
-      ],
       "games": [
         {
           "name": "🌸 Stirnreif/Waldkrone verfeinern (Ankunfts-Aktivität)",
@@ -400,43 +373,6 @@
       "headline": "🎯 Standard — 3 Stunden, klassische Feenwald-Party",
       "intro": "Der Sweet Spot: genug Programm ohne Stress. Vier Aktivitäten, Kuchen, Deko, Mitgebsel. Die Party, von der die Kinder am Montag in der Schule erzählen. Blumenfeen und Waldwächter machen alle Stationen gemeinsam — Teamwork statt Geschlechter-Spaltung.",
       "timeWindow": "14:00–17:00, 6 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Zauberbaum-Beutel & Stirnreif/Waldkrone basteln",
-          "description": "Beim Reinkommen wählt jedes Kind seine Rolle (Blumenfee oder Waldwächter), zieht den Quest-Namen aus dem Zauberbaum-Beutel (siehe Ritual-Block oben), bekommt entweder Blüten-Diadem oder Eichenlaub-Krone. Danach 15 Min. Verfeinerung: eigene Blüten/Blätter zusätzlich draufkleben (Bastel-Tisch mit Stoffblüten, Eichenlaub, Heißkleber-Pen-Stift). Fertige Kopfbedeckung aufsetzen → „Lyra Blütenlicht, du bist bereit für deine erste Prüfung.\""
-        },
-        {
-          "time": "14:30",
-          "title": "🌿 Pflanzen-Quest: Codeknacker FARN (4 Stationen)",
-          "description": "DER Wow-Moment der Standard-Variante. 30 Min. — 4 Stationen, jedes Kind sammelt 4 Buchstaben (F→A→R→N), Lösungswort öffnet die Zauberbaum-Schatzkiste."
-        },
-        {
-          "time": "15:00",
-          "title": "🦋 Schmetterling-Bestimmungs-Quiz",
-          "description": "Ruhigeres Bildkarten-Quiz nach dem Quest-Hype. 20 Min. konzentriertes Mit-Raten."
-        },
-        {
-          "time": "15:25",
-          "title": "🎂 Kuchen & Waldfrüchte-Punsch",
-          "description": "Blüten-Kuchen mit Zucker-Blüten-Deko. Happy Birthday singen. 25 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "💃 Elfen-Tanz oder Schwertkampf-Choreographie",
-          "description": "Doppel-Aktivität: Blumenfeen tanzen Elfen-Tanz mit Schleier (langsame Musik), Waldwächter machen Schaumstoff-Schwertkampf-Choreographie (auf Kommando: hoch-tief-Kreis-vor). Beide Gruppen 20 Min. parallel — Helfer übernimmt eine Gruppe."
-        },
-        {
-          "time": "16:20",
-          "title": "🌺 Blumenkranz binden / Waldkrone vervollständigen",
-          "description": "Ruhiger Abschluss. 20 Min. — Blumenfeen binden zusätzlich kleinen Blumenkranz für ihre Mama daheim, Waldwächter flechten Eichenlaub-Armband. Geht als Mitgebsel mit."
-        },
-        {
-          "time": "16:45",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Talisman + Stirnreif/Waldkrone + Bastel-Geschenk + Süßes in Tüte. Fertig.\n\n💡 Rhythmus-Regel:\nImmer abwechseln: laut → leise → laut → leise. Quest (aktiv) → Quiz (ruhig) → Kuchen (Pause) → Tanz/Schwertkampf (laut) → Blumenkranz binden (ruhig). So kippt die Stimmung nie."
-        }
-      ],
       "games": [
         {
           "name": "🌸 Stirnreif/Waldkrone verfeinern (Ankunfts-Aktivität)",
@@ -766,53 +702,6 @@
       "headline": "✨ Wow — 3,5 Stunden, die volle Feenwald-Magie",
       "intro": "Auf der Standard-Variante aufbauend, mit Geocaching im Garten oder Park. Die Kinder werden zu Zauberbaum-Wächtern ausgebildet, absolvieren 5 Prüfungen mit GPS-Hinweisen, und bekommen am Ende eine richtige Waldwächter-Urkunde. Aufwand hoch, Erinnerung für's Leben. Blumenfeen und Waldwächter sind gleichberechtigt — die Quest unterscheidet nicht.",
       "timeWindow": "13:30–17:15, 6 Kinder",
-      "schedule": [
-        {
-          "time": "13:30",
-          "title": "🪪 Zauberbaum-Beutel, Rollenwahl & Quest-Pass",
-          "description": "Das große Auftakt-Ritual (siehe Block oben): jedes Kind wählt Rolle (Blumenfee oder Waldwächter), zieht seinen Quest-Namen aus dem Zauberbaum-Beutel, bekommt Stirnreif oder Eichenlaub-Krone, bekommt seinen Quest-Pass (selbst gebastelt aus Tonkarton mit Moos-Stempel). Foto mit Krone machen → später in den Pass kleben. Die Kinder sind jetzt offizielle Anwärter der Zauberbaum-Akademie."
-        },
-        {
-          "time": "14:00",
-          "title": "🌸 Prüfung 1: Stirnreif/Waldkrone verfeinern",
-          "description": "Erste Bastel-Aufgabe — eigene Krone individualisieren. „Jeder Wächter trägt seine eigene Krone, niemand hat dieselbe.\" 20 Min."
-        },
-        {
-          "time": "14:25",
-          "title": "🌿 Prüfung 2: Pflanzen-Quest Codeknacker FARN",
-          "description": "4 Stationen im Garten/Wohnung mit echten Pflanzen. 30 Min. Lösungswort FARN öffnet die Zauberbaum-Schatzkiste."
-        },
-        {
-          "time": "14:55",
-          "title": "📍 Prüfung 3: Geocaching im Garten/Park",
-          "description": "Mit Handy-GPS-App (z.B. GPS Coordinates, kostenlos) oder Geocaching.com im Garten oder Park 5 versteckte Mini-Caches finden. Pflanzen-Hinweise als Koordinaten-Rätsel. 40 Min. — siehe unten."
-        },
-        {
-          "time": "15:35",
-          "title": "🎂 Kuchen, Waldfrüchte-Punsch & Waldwesen-Sandwiches",
-          "description": "Blüten-Kuchen mit Zucker-Schmetterlingen. Waldwesen-Sandwich (Toast mit Blüten-Ausstecher) als herzhafter Snack. 25 Min."
-        },
-        {
-          "time": "16:00",
-          "title": "🦋 Prüfung 4: Schmetterling-Bestimmungs-Quiz",
-          "description": "Ruhigere Phase nach dem Geocaching-Hype. 20 Min. — Pflanzen-Wissen + Schmetterlings-Erkennung."
-        },
-        {
-          "time": "16:20",
-          "title": "💃 Prüfung 5: Elfen-Tanz / Schwertkampf-Choreographie",
-          "description": "Doppel-Aktivität. Beide Gruppen 20 Min. parallel — am Ende Show füreinander."
-        },
-        {
-          "time": "16:40",
-          "title": "🎖️ Wächter-Zeremonie & Feenwald-Kino",
-          "description": "Feierliche Urkundenverleihung: „Hiermit wird ___ zum offiziellen Zauberbaum-Wächter ernannt.\" Quest-Pass umdrehen — die Urkunde ist auf der Rückseite. Danach 15 Min. Naturfilm-Clip zum Runterkommen (YouTube: „Schmetterlinge Zeitlupe\" oder „Tiere im Wald für Kinder\", Popcorn dazu)."
-        },
-        {
-          "time": "17:00",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Quest-Pass + Blumenkranz/Eichenlaub-Armband + Talisman + Stirnreif/Waldkrone. Die Kinder gehen als zertifizierte Zauberbaum-Wächter nach Hause.\n\n💡 Die Wächter-Geschichte trägt 3,5 Stunden\nDie „Zauberbaum-Wächter-Ausbildung\" gibt den 5 Prüfungen einen roten Faden. Statt „jetzt machen wir Spiel 3\" sagst du: „Eure dritte Prüfung wartet!\" Das Tempo bleibt hoch, weil jede Aktivität ein narratives Ziel hat. Und am Ende gibt die Urkunde dem Ganzen einen echten Abschluss — die Kinder fühlen, dass sie etwas erreicht haben."
-        }
-      ],
       "games": [
         {
           "name": "📍 Geocaching im Garten/Park (5 Mini-Caches)",

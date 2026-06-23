@@ -127,33 +127,6 @@
       "headline": "🌿 Minimal — 90 Minuten, kleines Budget",
       "intro": "Das Wohnzimmer-Riff: ein blaues Tuch am Boden, verstreute Perlen, ein paar Plueschfische — mehr braucht es nicht. Für 6 Kinder, etwa 90 Minuten. Stirnband-Basteln, Perlen sammeln, ein Fisch-Quiz und Kuchen. Kaum Vorbereitung, fast alles aus dem Bestand.",
       "timeWindow": "14:00–15:30, 6 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankunft + Muschel-Stirnband",
-          "description": "Jedes Kind verziert sein Stirnband und bekommt den Meeres-Namen. Ruhiger Einstieg, waehrend noch Kinder kommen."
-        },
-        {
-          "time": "14:20",
-          "title": "Fisch-Freunde-Quiz",
-          "description": "Im Kreis Meerestiere erraten und nachmachen. Bringt die Gruppe sanft in Stimmung."
-        },
-        {
-          "time": "14:40",
-          "title": "Verlorene Perlen sammeln",
-          "description": "Die grosse Welle hat die Perlen verstreut — alle sammeln gemeinsam in die Schatztruhe."
-        },
-        {
-          "time": "15:05",
-          "title": "Kuchen + Trinken",
-          "description": "Meeres-Kuchen am Tisch. Ruhige Pause, Toiletten-Runde davor."
-        },
-        {
-          "time": "15:25",
-          "title": "Perlen-Versprechen + Abschied",
-          "description": "Urkunde + Perlen-Beutel für jedes Kind. Sanfter Ausklang bis zum Abholen."
-        }
-      ],
       "games": [
         {
           "name": "🐚 Muschel-Stirnband-Basteln",
@@ -384,43 +357,6 @@
       "headline": "🌊 Standard — 2 Stunden, das runde Paket",
       "intro": "Das volle Riff-Erlebnis für 6–8 Kinder, etwa 2 Stunden: Stirnband, Perlen-Suche, Korallen-Garten bauen und das laute Wellen-Tuch als Energie-Ablass dazwischen. Etwas mehr Vorbereitung, aber ein runder, abwechslungsreicher Nachmittag mit ruhigen und bewegten Phasen im Wechsel.",
       "timeWindow": "14:00–16:00, 6–8 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankunft + Muschel-Stirnband",
-          "description": "Verzieren + Meeres-Name. Ruhiger Einstieg, waehrend Kinder eintrudeln."
-        },
-        {
-          "time": "14:20",
-          "title": "Fisch-Freunde-Quiz",
-          "description": "Meerestiere erraten und nachmachen — bringt die Gruppe zusammen."
-        },
-        {
-          "time": "14:35",
-          "title": "Wellen-Tuch",
-          "description": "Lautes, bewegtes Tuch-Spiel — Energie raus, alle lachen."
-        },
-        {
-          "time": "14:55",
-          "title": "Verlorene Perlen sammeln",
-          "description": "Gemeinsames Sammeln in die Schatztruhe — alle gewinnen."
-        },
-        {
-          "time": "15:15",
-          "title": "Korallen-Garten bauen",
-          "description": "Ruhige Bastelphase — gemeinsames Bau-Werk, bringt die Gruppe runter."
-        },
-        {
-          "time": "15:40",
-          "title": "Kuchen + Trinken",
-          "description": "Meeres-Kuchen am Tisch. Toiletten-Runde davor."
-        },
-        {
-          "time": "15:55",
-          "title": "Perlen-Versprechen + Abschied",
-          "description": "Urkunde + Perlen-Beutel für jedes Kind. Sanfter Ausklang."
-        }
-      ],
       "games": [
         {
           "name": "🐚 Muschel-Stirnband-Basteln",
@@ -767,48 +703,6 @@
       "headline": "🌟 Wow — 2,5 Stunden, das grosse Riff",
       "intro": "Das grosse Unterwasser-Abenteuer für bis zu 8 Kinder, etwa 2,5 Stunden — mit allem: Stirnband, Korallen-Garten, Wellen-Tuch, Foto-Ecke und als Hoehepunkt die Mini-Schatzsuche zur Perlen-Truhe. Braucht Platz und eine zweite helfende Hand, belohnt aber mit einem unvergesslichen Riff-Erlebnis.",
       "timeWindow": "14:00–16:30, bis 8 Kinder (+ 1 Helfer)",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankunft + Muschel-Stirnband",
-          "description": "Verzieren + Meeres-Name in der Foto-Ecke. Ruhiger Einstieg."
-        },
-        {
-          "time": "14:20",
-          "title": "Fisch-Freunde-Quiz",
-          "description": "Meerestiere erraten und nachmachen — Gruppe kommt zusammen."
-        },
-        {
-          "time": "14:35",
-          "title": "Wellen-Tuch",
-          "description": "Lautes Tuch-Spiel — Energie raus, viel Gelaechter."
-        },
-        {
-          "time": "14:55",
-          "title": "Korallen-Garten bauen",
-          "description": "Ruhige Bastelphase — gemeinsames Bau-Werk."
-        },
-        {
-          "time": "15:20",
-          "title": "Foto-Ecke",
-          "description": "Meeres-Fotos einzeln + Gruppe, waehrend der Garten trocknet."
-        },
-        {
-          "time": "15:35",
-          "title": "Mini-Schatzsuche",
-          "description": "Den Muscheln folgen zur Perlen-Truhe — der grosse Hoehepunkt."
-        },
-        {
-          "time": "16:00",
-          "title": "Kuchen + Trinken",
-          "description": "Meeres-Kuchen am Tisch. Toiletten-Runde davor."
-        },
-        {
-          "time": "16:20",
-          "title": "Perlen-Versprechen + Abschied",
-          "description": "Truhe gemeinsam geoeffnet: Urkunde + Perlen-Beutel für alle. Sanfter Ausklang."
-        }
-      ],
       "games": [
         {
           "name": "🐚 Muschel-Stirnband-Basteln",

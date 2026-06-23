@@ -133,38 +133,6 @@
       "headline": "🌿 Minimal — 90 Minuten Mini-Forscher-Tour",
       "intro": "Die ehrliche Sparvariante: 90 Minuten, 6 Kinder, ein Hauptspiel (die Tier-Spuren-Tour) plus Tier-Fühlbox als ruhiger Lückenfüller. Forscher-Stirnbänder als Ankunfts-Aktion, Plüsch-Affe-Übergabe und Forscher-Pass zum Schluss. Reicht völlig für 3-Jährige — mehr wäre eher zu viel.",
       "timeWindow": "15:00-16:30, 6 Kinder",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "Ankunft + Forscher werden",
-          "description": "Jedes Kind bekommt sein Forscher-Stirnband, seinen Namen und eine Mini-Lupe. Eltern dürfen bleiben."
-        },
-        {
-          "time": "15:15",
-          "title": "Tier-Fühlbox",
-          "description": "Einstieg im Sitzkreis. Kinder fühlen blind nach Plüsch-Tieren in der Box und raten — keine Hektik."
-        },
-        {
-          "time": "15:30",
-          "title": "Tier-Spuren-Tour",
-          "description": "Das Hauptspiel: leise den Tiger-Spuren folgen, den verlorenen Plüsch-Affen finden und ins Dschungel-Camp bringen."
-        },
-        {
-          "time": "15:55",
-          "title": "Bananen-Rätsel",
-          "description": "Ruhiges Such-Spiel zum Runterkommen. Jedes Kind findet eine versteckte Papp-Banane und legt sie in den Affen-Korb."
-        },
-        {
-          "time": "16:10",
-          "title": "Dschungel-Kuchen + Forscher-Pass",
-          "description": "Schokokuchen mit grünem Dschungel-Buttercreme, dann Pass-Übergabe: jeder Forscher kommt einzeln dran."
-        },
-        {
-          "time": "16:30",
-          "title": "Abholung",
-          "description": "Mitgebsel-Tüte an der Tür, fertig. Lieber 90 Min. glücklich als 3 Stunden eskaliert."
-        }
-      ],
       "games": [
         {
           "name": "🐅 Tier-Spuren-Tour",
@@ -409,43 +377,6 @@
       "headline": "🐒 Standard — die entspannte Forscher-Expedition",
       "intro": "Zwei Stunden, 6 Kinder, mehr Abwechslung: Forscher-Stirnband-Basteln zum Ankommen, Tier-Spuren-Tour, Lianen-Schwingen und Affen-Hangeln als Stationen-Mix. Genug Programm, dass keine Langeweile aufkommt, aber ohne Bastel-Marathon für die Eltern. Das ist die Variante für die meisten Familien.",
       "timeWindow": "14:00-16:00, 6 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankunft + Forscher-Stirnband-Basteln",
-          "description": "Jedes Kind bastelt/verziert sein grünes Stirnband und bekommt seinen Forscher-Namen + Lupe. Ruhiger Einstieg."
-        },
-        {
-          "time": "14:20",
-          "title": "Tier-Fühlbox",
-          "description": "Im Kreis: Tiere blind fühlen und raten. Bringt die Gruppe ohne Rennen in den Dschungel-Modus."
-        },
-        {
-          "time": "14:35",
-          "title": "Tier-Spuren-Tour",
-          "description": "Leise den Tiger-Spuren folgen, den verlorenen Plüsch-Affen finden und ins Dschungel-Camp bringen."
-        },
-        {
-          "time": "15:00",
-          "title": "Kuchen-Pause",
-          "description": "Dschungel-Schokokuchen + Affen-Snack-Teller. Pause zum Durchatmen, danach wieder los."
-        },
-        {
-          "time": "15:25",
-          "title": "Lianen-Schwingen + Affen-Hangeln",
-          "description": "Das aktive Highlight: Stoff-Liane in der Türöffnung, Hangel-Parcours mit Decken/Kissen. Jedes Kind schwingt einmal."
-        },
-        {
-          "time": "15:45",
-          "title": "Bananen-Rätsel + Forscher-Pass",
-          "description": "Ruhiges Such-Spiel (Papp-Bananen finden), dann Pass-Übergabe einzeln an jeden Forscher."
-        },
-        {
-          "time": "16:00",
-          "title": "Abholung",
-          "description": "Mitgebsel-Tüte an der Tür. 2 Std. sind das Maximum — danach kippt die Stimmung."
-        }
-      ],
       "games": [
         {
           "name": "🎨 Forscher-Stirnband-Basteln (mit Blatt-Stickern)",
@@ -752,43 +683,6 @@
       "headline": "✨ Wow — die Dschungel-Expedition mit Foto-Ecke",
       "intro": "Baut komplett auf Standard auf: gleiche Forscher-Expedition, gleiche Tier-Spuren-Tour — plus eine Mini-Expedition zum geheimen Dschungel-Schatz und eine DIY-Foto-Ecke mit Bambus-Wand. Für 8 Kinder ausgelegt. Wichtig: Wow ist nicht für jede Familie ehrlich. Wer das stemmen will, sollte die Bedingungen unten erst checken.",
       "timeWindow": "14:00-16:00, 8 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankunft + Forscher-Stirnband-Basteln",
-          "description": "Stirnbänder verzieren, Forscher-Namen vergeben, Lupen verteilen. Foto-Ecke schon aufgebaut für erste Bilder."
-        },
-        {
-          "time": "14:20",
-          "title": "Tier-Fühlbox + Dschungel-Trommeln",
-          "description": "Erst im Kreis fühlen (ruhig), dann kurzer Trommel-Moment mit Holzlöffeln auf Topfdeckeln. Bei 8 Kindern in 2 kleine Gruppen, sonst zu wuselig."
-        },
-        {
-          "time": "14:35",
-          "title": "Tier-Spuren-Tour",
-          "description": "Leise den Tiger-Spuren folgen. Bei 8 Kindern 2 Spuren parallel oder eine längere Spur in 2 Wellen."
-        },
-        {
-          "time": "15:00",
-          "title": "Kuchen-Pause",
-          "description": "Dschungel-Schokokuchen + Affen-Snack-Teller. Foto-Ecke offen für Eltern-Schnappschüsse."
-        },
-        {
-          "time": "15:20",
-          "title": "Mini-Expedition zum Dschungel-Schatz",
-          "description": "Das Highlight: von Tier-Station zu Tier-Station (Affe, Tiger, Tukan, Faultier) zum gemeinsamen Dschungel-Schatz."
-        },
-        {
-          "time": "15:45",
-          "title": "Lianen-Schwingen + Forscher-Pass",
-          "description": "Kurze Lianen-Runde, dann Pass-Übergabe einzeln. Jeder Forscher kommt dran."
-        },
-        {
-          "time": "16:00",
-          "title": "Abholung",
-          "description": "Mitgebsel + Foto-Ausdruck. Schluss bei 2 Std., auch wenn's gerade läuft."
-        }
-      ],
       "games": [
         {
           "name": "🎨 Forscher-Stirnband-Basteln (mit Blatt-Stickern)",

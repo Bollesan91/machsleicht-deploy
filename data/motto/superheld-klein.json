@@ -46,33 +46,6 @@
       "headline": "Kurz, bunt, kein Stress",
       "intro": "Zwei einfache Bewegungsspiele, ein bisschen Deko, Kuchen. Mehr braucht es für die Kleinsten nicht.",
       "timeWindow": "1,5 Stunden (15:00–16:30)",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "Ankommen & Cape an",
-          "description": "Jedes Kind bekommt ein Cape und ein aufgemaltes Helden-Logo auf die Hand. Freies Spiel. 20 Min."
-        },
-        {
-          "time": "15:20",
-          "title": "Wolken-Hüpfen",
-          "description": "Von Kissen zu Kissen 'fliegen', ohne den Boden (die Lava) zu berühren. 20 Min."
-        },
-        {
-          "time": "15:40",
-          "title": "Ballons retten",
-          "description": "Bunte Ballons in der Luft halten — gemeinsam. 15 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "Kuchen & Lied",
-          "description": "Power-Kuchen, kurze Pause. 20 Min."
-        },
-        {
-          "time": "16:15",
-          "title": "Mitgebsel & Tschüss",
-          "description": "Helden-Urkunde, kleiner Beutel, Verabschiedung. 15 Min."
-        }
-      ],
       "games": [
         {
           "name": "☁️ Wolken-Hüpfen (Der Boden ist Lava)",
@@ -238,38 +211,6 @@
       "headline": "Drei einfache Spiele, eine kleine Schatzsuche, Kuchen",
       "intro": "Die empfohlene Variante für die Kleinen: Bewegung, eine ganz einfache Schatzsuche mit Bildern und eine ruhige Bastelpause. Kurz genug, dass keiner überdreht.",
       "timeWindow": "2 Stunden (15:00–17:00)",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "Ankommen & Cape an",
-          "description": "Cape, Logo auf die Hand, Foto. Freispiel mit Ausmalbildern. 20 Min."
-        },
-        {
-          "time": "15:20",
-          "title": "Wolken-Hüpfen",
-          "description": "Von Wolke zu Wolke fliegen. 15 Min."
-        },
-        {
-          "time": "15:35",
-          "title": "Helden-Sterne basteln",
-          "description": "Ruhige Station: jeder klebt seinen Stern. 15 Min."
-        },
-        {
-          "time": "15:50",
-          "title": "Bilder-Schatzsuche",
-          "description": "Einfache Bild-Hinweise führen zum Schatz. 25 Min."
-        },
-        {
-          "time": "16:15",
-          "title": "Kuchen & Lied",
-          "description": "Power-Kuchen, Pause. 25 Min."
-        },
-        {
-          "time": "16:40",
-          "title": "Heldenjubel & Mitgebsel",
-          "description": "Urkunde, Stern, Schatzbeutel, Tschüss. 20 Min."
-        }
-      ],
       "games": [
         {
           "name": "☁️ Wolken-Hüpfen (Der Boden ist Lava)",
@@ -444,43 +385,6 @@
       "headline": "Helden-Akademie für die Kleinsten",
       "intro": "Alles aus Standard plus eine einfache Bewegungs-Station, ein Quatschmonster zum Lachen und eine kleine Ehrung. Mehr Vorbereitung, viel Begleitung — dafür ein großer Tag.",
       "timeWindow": "2,5 Stunden (15:00–17:30)",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "Ankommen & Helden-Einkleidung",
-          "description": "Cape, Logo, Foto, Freispiel. 20 Min."
-        },
-        {
-          "time": "15:20",
-          "title": "Wolken-Hüpfen",
-          "description": "Bewegung zum Start. 15 Min."
-        },
-        {
-          "time": "15:35",
-          "title": "Kraft-Stationen (3 einfache)",
-          "description": "Zielwurf, Balance-Linie, Ballons. 20 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "Helden-Sterne basteln",
-          "description": "Ruhige Station. 15 Min."
-        },
-        {
-          "time": "16:10",
-          "title": "Bilder-Schatzsuche",
-          "description": "Einfache Suche zum Schatz. 25 Min."
-        },
-        {
-          "time": "16:35",
-          "title": "Kuchen & Lied",
-          "description": "Pause. 25 Min."
-        },
-        {
-          "time": "17:00",
-          "title": "Quatschmonster & Ehrung",
-          "description": "Albernes Monster fangen, Helden-Medaille, Tschüss. 30 Min."
-        }
-      ],
       "games": [
         {
           "name": "☁️ Wolken-Hüpfen",

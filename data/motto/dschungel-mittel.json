@@ -129,38 +129,6 @@
       "headline": "🌿 Minimal — 2 Stunden, minimaler Aufwand",
       "intro": "Funktioniert auch wenn du erst gestern angefangen hast zu planen. Forscher-Stirnband + Spuren-Rallye + Tier-Quiz + Kuchen + kleine Lizenz-Übergabe — fertig. Kein Kind geht ohne Forscher-Status nach Hause.",
       "timeWindow": "14:00–16:00, 6 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "🌴 Eintreffen im Forscher-Camp & Stirnband-Werkstatt",
-          "description": "Vorbereitete Stirnbänder aus grünem Tonpapier liegen auf dem Tisch + Filzstifte. Jedes Kind schreibt seinen Namen drauf, mit \"Forscher\" davor: Forscher Mia, Forscher Jonas. Jedes Kind zieht außerdem seine Crew-Rolle aus dem Forscher-Rucksack (Affen-Beobachter, Spuren-Leser etc.). Ergänzend: Ausmalbilder mit Dschungeltieren als Beschäftigung für die Wartezeit. Kostenlose Vorlagen z.B. auf [mowoli.de](https://mowoli.de/ausmalbilder-wildtiere-fuer-kinder/) (Affe, Tiger, Tukan, Faultier als PDF) oder [kinder-malvorlagen.com](https://www.kinder-malvorlagen.com/zum-ausmalen/vorlagen-tiere-dschungel.php)."
-        },
-        {
-          "time": "14:20",
-          "title": "🐾 Forscher-Eid & Spuren-Rallye",
-          "description": "Kurzer feierlicher Eid (3 Sätze, alle gleichzeitig sprechen — schafft 30 Sekunden Atmosphäre für die ganze Party), dann das Hauptspiel: 25 Min. Spuren-Rallye im Garten oder durch die Wohnung. Spuren-Leser geht voran. Anleitung unten."
-        },
-        {
-          "time": "14:50",
-          "title": "🎂 Pause am Wasserloch",
-          "description": "Schoko-Vulkankuchen mit grünem Krepp-Dschungel-Rand + Mini-Tiger aus Marzipan + \"Dschungel-Wasser\" (Apfelschorle in transparenten Bechern mit grünen Trinkhalmen). 25 Min. Ruhe für die ganze Crew. Camp-Leiter sagt: \"Jeder Forscher trinkt einmal am Wasserloch.\" Eltern, die schon abholen, kriegen einen Kaffee."
-        },
-        {
-          "time": "15:20",
-          "title": "🦜 Tier-Quiz (Dschungeltiere)",
-          "description": "15 Min. Ratespiel auf dem Sofa. Smartphone reicht. Tier-Stimmen-Imitator darf bei jedem Tier das Geräusch nachmachen. Anleitung mit konkreten YouTube-Quellen unten."
-        },
-        {
-          "time": "15:35",
-          "title": "🏅 Lizenz-Übergabe",
-          "description": "Jedes Kind bekommt seine \"Dschungel-Forschungs-Lizenz\" (Urkunde mit Namen + Crew-Rolle) feierlich überreicht. Eltern fotografieren. 15 Min. Puffer bis zur Abholung."
-        },
-        {
-          "time": "15:50",
-          "title": "🎁 Ausrüstung mitnehmen, Verabschiedung am Lager-Tor",
-          "description": "Mitgebsel-Tüten in die Hand, Stirnband bleibt auf dem Kopf, Lizenz unter den Arm. Expedition erfüllt.\n\n💡 Forscher-Eid (zum Vorlesen)\n\"Im Dschungel zählt nicht, wer am schnellsten ist — sondern wer hinschaut, leise ist und der Crew zuhört. Wir lassen keinen zurück. Ab jetzt sind wir Dschungel-Forscher.\" — Alle Kinder sprechen den Eid gemeinsam nach. Dauert 30 Sekunden, schafft Atmosphäre für die ganze Party."
-        }
-      ],
       "games": [
         {
           "name": "🐾 Spuren-Rallye",
@@ -378,43 +346,6 @@
       "headline": "🎯 Standard — 3 Stunden, klassische Forscher-Expedition mit Bananen-Code-Knacker",
       "intro": "Genau richtig für 6–8-Jährige: Bananen-Code-Knacker mit 5 Stationen als echte Forschungs-Rotation (Lösungswort TIGER), Tier-Quiz und Lianen-Parcours als Höhepunkt, Lizenz-Zeremonie zum Abschluss. Funktioniert, weil die Stations-Logik genau das löst, was diese Altersgruppe braucht: alle 12 Minuten ein Wechsel (Aufmerksamkeitsspanne), klare Funktion durch Crew-Rolle (jeder ist jemand), und ein sichtbares Lösungswort am Ende, das die Kinder gemeinsam knacken (gemeinsamer Erfolg). Das ist die Party, von der die Kinder am Montag in der Schule erzählen — und die Forschungs-Lizenz hängt monatelang am Kühlschrank.",
       "timeWindow": "14:00–17:00, 8 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Eintreffen im Forscher-Camp, Stirnband-Werkstatt, Crew-Rollen, Eid",
-          "description": "Tonpapier-Stirnbänder mit Namen + Crew-Rolle (\"Forscher Mia — Spuren-Leserin\"). Wenn alle da sind: Forscher-Eid gemeinsam sprechen. Jedes Kind kriegt seine \"Forscher-Karte\" — ein kleines Kärtchen mit 5 leeren Stempel-Feldern für die 5 Bananen-Code-Knacker-Stationen. 20 Min."
-        },
-        {
-          "time": "14:20",
-          "title": "🍌 Bananen-Code-Knacker (5 Stationen × 12 Min)",
-          "description": "Fünf Stationen, vier 2er-Teams rotieren im Uhrzeigersinn. Nach jeder Station gibt's einen Stempel auf die Forscher-Karte UND einen Buchstaben für das Lösungswort. Stationen unten im Detail beschrieben. 60 Min. — der inhaltliche Kern der Party. Lösungswort am Ende: T-I-G-E-R."
-        },
-        {
-          "time": "15:20",
-          "title": "🎂 Pause am Wasserloch — Schoko-Vulkankuchen",
-          "description": "Schoko-Vulkankuchen mit grünem Krepp-Dschungel-Rand und Mini-Tiger aus Marzipan. Apfelschorle in Bechern als \"Dschungel-Wasser\". Happy Birthday singen. 25 Min. Ruhe für die ganze Crew. Camp-Leiter sammelt die Karten ein und prüft, dass alle Stempel da sind."
-        },
-        {
-          "time": "15:45",
-          "title": "🌿 Lianen-Parcours: Schatz im Dschungel finden",
-          "description": "Der Höhepunkt. Mit dem geknackten Lösungswort TIGER finden alle 4 Teams den Tiger-Schatz im Dschungel — ein gemeinsamer Lianen-Parcours führt zum Versteck. 25 Min. Anleitung unten."
-        },
-        {
-          "time": "16:10",
-          "title": "🏅 Lizenz-Zeremonie",
-          "description": "Alle Forscher-Karten zeigen 5 Stempel + Tiger-Schatz geborgen → die Expedition ist erfolgreich. Jedes Kind kommt einzeln nach vorne, kriegt seine Dschungel-Forschungs-Lizenz (Urkunde mit Foto-Slot + Crew-Rolle), das Klett-Abzeichen aufs Stirnband geklettet, und einen Forscher-Ausweis im Scheckkartenformat. Tier-Stimmen-Imitator darf zum Abschluss noch sein Lieblings-Tier nachmachen. Eltern fotografieren. 15 Min."
-        },
-        {
-          "time": "16:25",
-          "title": "🎁 Mitgebsel & freies Spielen",
-          "description": "Tüten verteilen, Dschungel-Memo-Karten zum freien Spielen liegen aus. Eltern kommen, Kinder zeigen stolz Lizenz und Abzeichen. 25 Min. Pufferzeit."
-        },
-        {
-          "time": "16:50",
-          "title": "🚪 Verabschiedung am Lager-Tor",
-          "description": "Mitgebsel-Tüte in die Hand, Stirnband bleibt auf dem Kopf, Lizenz unter den Arm, Forscher-Ausweis in der Hosentasche. Expedition erfüllt.\n\n💡 Wie viele Helfer brauchst du wirklich?\nMit 2 Helfern wird's entspannt: Du leitest die Lizenz-Zeremonie und den Lianen-Parcours, je 1 Helfer betreut die Stationen-Hälfte. Empfohlen, wenn 8+ Kinder.\n\nMit 1 Helfer geht's gut: Du nimmst 2–3 Stationen, Helfer nimmt 2–3. Pause am Wasserloch deckt Übergangs-Lücken.\n\nSolo machbar — mit Anpassung: Statt parallel-rotierender Stationen läuft die Gruppe gemeinsam alle 5 Stationen nacheinander durch (60 Min total). Geht, dauert aber jede Station 12 Min für die ganze Gruppe statt nur 2 Kinder. Funktioniert bis 6 Kinder, ab 8 Kindern wird's eng.\n\nFaustregel: Pro 4 Kinder rechne 1 Erwachsenen für volle Stations-Rotation. Eltern als Helfer einplanen — viele bleiben gerne, wenn man fragt.\n\n💡 Stations-Rotation organisieren\nBei 8 Kindern gehst du in 4 Teams à 2 Kinder. Jedes Team beginnt an einer anderen Station, alle 12 Min. wechseln im Uhrzeigersinn — eine 5. Station bleibt frei und wird von Team zu Team durchgereicht (das Camp-Leiter-Kind ruft den Wechsel aus). Alternativ: 4 Teams à 2 Kinder + Station 5 als Gemeinschafts-Schlussakt für alle. Beides funktioniert.\n\n💡 Rhythmus-Regel\nStationen wechseln zwischen aktiv und ruhig: Affen-Beobachten (ruhig) → Spuren-Lesen (aktiv) → Bananen-Math (ruhig) → Schmetterlings-Farben (ruhig) → Schlange-Geräusch (aktiv). Nach der Stations-Phase Pause, dann Lianen-Parcours als aktives Großspiel, dann ruhige Zeremonie. So kippt die Stimmung nie."
-        }
-      ],
       "games": [
         {
           "name": "1️⃣ Affen-Beobachten (Station 1 → T)",
@@ -807,48 +738,6 @@
       "headline": "✨ Wow — 4 Stunden, der Geburtstag des Jahres",
       "intro": "Für den Geburtstag, über den noch Wochen später in der Schule geredet wird. Wow baut auf Standard auf: gleicher Bananen-Code-Knacker mit Lösungswort TIGER, gleicher Lianen-Parcours, gleiche Lizenz-Zeremonie. Erweitert wird es um eine 6. Station Tarn-Übung (Forscher-Tarnung in Erdfarben), die Schatz-im-Dschungel-Quest als zweiten dramatischen Bogen, echte Forscher-Buschhüte aus Filz als Mitgebsel-Highlight und optional Walkie-Talkie-Sets. Funktioniert besonders, wenn dein Kind auf größere Bühne reagiert oder du den 7. Geburtstag als Meilenstein gestalten willst. Wer mag, kann einzelnen Kindern hier schon eine kleine Spezial-Aufgabe geben (Camp-Leiter mit Walkie-Talkie, Pflanzen-Botaniker mit Forscher-Heft) — die ausgewachsene Spezialisierungs-Mechanik kommt erst in der 9–12-Variante.",
       "timeWindow": "14:00–18:00, 10 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Eintreffen im Forscher-Camp, Stirnband-Werkstatt, Crew-Rollen, Eid",
-          "description": "Wie in Standard: Tonpapier-Stirnbänder mit Namen + Crew-Rolle, Forscher-Karte mit jetzt 6 leeren Stempel-Feldern (eine Station mehr als Standard). 20 Min."
-        },
-        {
-          "time": "14:20",
-          "title": "🍌 Bananen-Code-Knacker + Tarn-Übung (6 Stationen × 10 Min)",
-          "description": "6 Stationen statt 5: Affen-Beobachten, Spuren-Lesen, Bananen-Math, Schmetterlings-Farben, Schlange-Geräusch — wie Standard — plus zusätzliche Tarn-Übung (Anleitung unten). 60 Min. Lösungswort bleibt TIGER, aber Tarn-Station gibt zusätzlichen Stempel ohne neuen Buchstaben."
-        },
-        {
-          "time": "15:20",
-          "title": "🎂 Pause am Wasserloch — Kuchen mit Wunderkerze",
-          "description": "Schoko-Vulkankuchen mit grünem Krepp-Dschungel-Rand + Marzipan-Tiger + Wunderkerze obendrauf. Apfelschorle als \"Dschungel-Wasser\". Happy Birthday singen, kurze Geburtstagsgeschenke-Runde. 30 Min. — länger als bei Standard, weil der zweite Akt Energie braucht."
-        },
-        {
-          "time": "15:50",
-          "title": "🏅 Lizenz-Zeremonie + Mission-Briefing",
-          "description": "Jedes Kind bekommt seine Dschungel-Forschungs-Lizenz, Klett-Abzeichen aufs Stirnband und — Wow-Highlight — den Filz-Forscherhut als echte Expeditions-Kopfbedeckung. Sofort danach: dramatisches Mission-Briefing. \"Frisch lizenzierte Forscher! Wir haben einen Notruf erhalten — der versteckte Tiger-Schatz im Dschungel ist in Gefahr. Wilderer sind unterwegs. Eure erste echte Mission beginnt jetzt.\" 20 Min."
-        },
-        {
-          "time": "16:10",
-          "title": "🗺️ Schatz-im-Dschungel-Quest (Lianen-Parcours-Variante: 5 Stationen)",
-          "description": "Der Höhepunkt der Wow-Variante. 5-Stationen-Tour durch Garten/Wohnung mit Tierspuren als Wegweisern, Tier-Rätseln und einem finalen Tarn-Test, der die Crew zum Tiger-Schatz führt. 45 Min. Kann mit dem [machsleicht-Schatzsuche-Generator](/kindergeburtstag?modus=schatzsuche&motto=dschungel) erstellt werden — Motto Dschungel ist dort als Story \"Durch den Tropenwald zum Tiger-Schatz\" hinterlegt."
-        },
-        {
-          "time": "16:55",
-          "title": "🏆 Schatz-Eröffnung & Beute-Sicherung",
-          "description": "Die Crew findet den Tiger-Schatz (Schuhkarton mit Goldfolie, Tiger-Aufkleber, kleine Schatzkiste innen) — und rettet seine \"Schätze\" (Mitgebsel-Inhalte) vor den Wilderern. Geburtstagskind eröffnet die Schatzkiste, jedes Kind bekommt sein Erinnerungsstück. 20 Min."
-        },
-        {
-          "time": "17:15",
-          "title": "🐒 Dschungel-Kino mit Forscher-Pop-Mais",
-          "description": "Runterkommen nach 4 Akten. 25 Min. Tier-Doku auf YouTube (\"Tiere des Tropenwalds — Lernvideos für Kinder\" oder \"Planet Schule Regenwald\"), Pop-Mais aus großer Schüssel, Kinder kuscheln auf Kissen. Eltern können langsam reinkommen."
-        },
-        {
-          "time": "17:40",
-          "title": "🎁 Verabschiedung am Lager-Tor",
-          "description": "Mitgebsel-Tüte voll, Filz-Forscherhut auf dem Kopf, Lizenz unter dem Arm, Forscher-Heft in der Hand. Die Kinder gehen als zertifizierte Dschungel-Forscher nach Hause. Eltern kommen nicht aus dem Staunen raus. 20 Min. Pufferzeit."
-        }
-      ],
       "games": [
         {
           "name": "6️⃣ Tarn-Übung (zusätzliche 6. Station)",

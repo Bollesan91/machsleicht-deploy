@@ -150,38 +150,6 @@
       "headline": "🌊 Minimal — 2 Stunden, Crew & Schatz",
       "intro": "Wenig Vorbereitung, voller Effekt: Schwur-Ritual, Muschel-Tauchen, Meerestier-Quiz und eine kleine Schatzsuche. Reicht völlig für eine runde Party, wenn Zeit oder Budget knapp sind.",
       "timeWindow": "14:00–16:00, 6 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "🧜‍♀️ Ankunft, Muschel-Beutel & Meeres-Schwur",
-          "description": "Jedes Kind zieht seinen Crew-Namen, bekommt Rolle + erste Perle, gemeinsamer Schwur (siehe Ritual-Block oben). Die ersten 10 Minuten."
-        },
-        {
-          "time": "14:15",
-          "title": "🌊 Muschel-Tauchen",
-          "description": "Schatz-Fischen im Wasser-/Sandbecken. Bewegung und Spaß zum Auftakt, 15 Min."
-        },
-        {
-          "time": "14:35",
-          "title": "🐠 Meerestier-Quiz",
-          "description": "Ruhige Fisch-Flüsterer-Prüfung im Kreis, 12 Min."
-        },
-        {
-          "time": "14:50",
-          "title": "🍰 Kuchen & Trinken",
-          "description": "Meeres-Kuchen und „Meerwasser\", durchatmen. 25 Min."
-        },
-        {
-          "time": "15:20",
-          "title": "🗺️ Kleine Schatzsuche",
-          "description": "Vereinfachte Truhen-Suche durch Wohnung/Garten, gemeinsames Bergen. 25 Min."
-        },
-        {
-          "time": "15:45",
-          "title": "🐚 Perlen-Übergabe & Abschied",
-          "description": "Crew-Kette komplett, Mitgebsel verteilen, Crew-Foto. 15 Min."
-        }
-      ],
       "games": [
         {
           "name": "🌊 Muschel-Tauchen (Schatz-Fischen)",
@@ -359,48 +327,6 @@
       "headline": "🎯 Standard — 3 Stunden, die komplette Tauch-Expedition",
       "intro": "Der Sweet Spot: genug Programm ohne Stress. Schwur, Tauch-Parcours, Korallenriff-Experiment, Perlenketten-Werkstatt, Quallen-Tanz und das große Schatztruhen-Finale. Die Party, von der die Kinder am Montag in der Schule erzählen.",
       "timeWindow": "14:00–17:00, 6 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "🧜‍♀️ Ankunft, Muschel-Beutel & Meeres-Schwur",
-          "description": "Crew-Namen ziehen, Rolle + erste Perle, gemeinsamer Schwur. Aus Gästen wird die Crew."
-        },
-        {
-          "time": "14:15",
-          "title": "1️⃣ Tauch-Parcours",
-          "description": "Crew-Training: Strömung, Korallen-Bogen, Andocken. Bewegung zum Auftakt, 15 Min."
-        },
-        {
-          "time": "14:35",
-          "title": "2️⃣ Korallenriff-Experiment",
-          "description": "DER Wow-Moment — blauer Sprudel-Schaum, Kinder wollen Wiederholung. 15 Min."
-        },
-        {
-          "time": "14:55",
-          "title": "3️⃣ Perlenketten-Werkstatt",
-          "description": "Ruhige Bastel-Phase, verdiente Perlen kommen auf die Kette. 15 Min."
-        },
-        {
-          "time": "15:15",
-          "title": "🍰 Kuchen & Trinken",
-          "description": "Meeres-Kuchen, durchatmen. 20 Min."
-        },
-        {
-          "time": "15:40",
-          "title": "4️⃣ Quallen-Tanz",
-          "description": "Lautes Auspowern nach dem Sitzen, Stopp-Tanz. 10 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "🌊 Großspiel: Schatztruhe der Meereskönigin",
-          "description": "Das Finale — Hinweise folgen, Truhe gemeinsam bergen, Schatz teilen. 25 Min."
-        },
-        {
-          "time": "16:25",
-          "title": "🐚 Perlen-Übergabe, Crew-Foto & Abschied",
-          "description": "Crew-Kette komplett, Mitgebsel, Gruppenfoto mit Truhe. 20 Min."
-        }
-      ],
       "games": [
         {
           "name": "1️⃣ Tauch-Parcours (Crew-Training)",
@@ -694,58 +620,6 @@
       "headline": "✨ Wow — 3,5 Stunden, die große Tiefsee-Quest",
       "intro": "Die volle Unterwasser-Expedition für 6–8 Kinder: alles aus Standard plus die fünfstufige Tiefsee-Quest mit Geheimschrift und eine Meeres-Snack-Werkstatt. Der Geburtstag, an den sich die Crew noch in einem Jahr erinnert.",
       "timeWindow": "14:00–17:30, 6–8 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "🧜‍♀️ Ankunft, Muschel-Beutel & Meeres-Schwur",
-          "description": "Crew-Namen, Rolle + erste Perle, Schwur. Bei Wow: Foto mit Tauch-Maske für den Crew-Pass."
-        },
-        {
-          "time": "14:15",
-          "title": "1️⃣ Tauch-Parcours",
-          "description": "Crew-Training, Bewegung zum Auftakt. 15 Min."
-        },
-        {
-          "time": "14:35",
-          "title": "2️⃣ Korallenriff-Experiment",
-          "description": "Blauer Sprudel-Wow-Moment. 15 Min."
-        },
-        {
-          "time": "14:55",
-          "title": "🧁 Meeres-Snack-Werkstatt",
-          "description": "Wellen-Muffins verzieren + Algen-Spieße. Essen & Aktivität in einem. 20 Min."
-        },
-        {
-          "time": "15:20",
-          "title": "3️⃣ Perlenketten-Werkstatt",
-          "description": "Ruhige Bastel-Phase, Perlen auf die Kette. 15 Min."
-        },
-        {
-          "time": "15:40",
-          "title": "🍰 Kuchen & Trinken",
-          "description": "Meeres-Kuchen, durchatmen. 15 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "4️⃣ Quallen-Tanz",
-          "description": "Auspowern. 10 Min."
-        },
-        {
-          "time": "16:10",
-          "title": "🧜‍♀️ Tiefsee-Quest: 5 Riff-Stationen",
-          "description": "Das große Knobel-Abenteuer mit Geheimschrift, Lösungswort öffnet die Schatzkammer. 35 Min."
-        },
-        {
-          "time": "16:50",
-          "title": "🌊 Schatzkammer bergen",
-          "description": "Crew birgt die Truhe gemeinsam, teilt den Schatz. 15 Min."
-        },
-        {
-          "time": "17:10",
-          "title": "🐚 Perlen-Übergabe, Crew-Foto & Abschied",
-          "description": "Crew-Kette komplett, Mitgebsel, großes Gruppenfoto. 20 Min."
-        }
-      ],
       "games": [
         {
           "name": "🧜‍♀️ Tiefsee-Quest: Die 5 Riff-Stationen",

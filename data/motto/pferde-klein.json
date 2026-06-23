@@ -151,38 +151,6 @@
       "headline": "🐴 Minimal — 90 Minuten Ponyhof-Spielzeit",
       "intro": "Die ehrliche Sparvariante: 90 Minuten, 6 Kinder, ein durchgehender Pony-Tag mit Streicheln, Hufeisen-Werfen und Pflege. Kein Aufwand mit dressierten Pferden — alles drinnen mit Plüsch + Bastelei. Pappkarton-Hüte kannst du am Vortag schneiden.",
       "timeWindow": "15:00–16:30, 6 Kinder",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "Ankunft + Reiter werden",
-          "description": "Jedes Kind bekommt Reiter-Hut/Bandana und Steckenpferd. Reiter-Schwur wird gemeinsam gesprochen."
-        },
-        {
-          "time": "15:10",
-          "title": "Pony-Streichel-Runde",
-          "description": "Im Kreis sitzen, Plüsch-Ponys wandern reihum. Jedes Kind streichelt, bürstet kurz und gibt es weiter."
-        },
-        {
-          "time": "15:25",
-          "title": "Hufeisen-Werfen",
-          "description": "Plüsch-Hufeisen (oder Tau-Ringe) auf einen Holzpflock werfen — 3 Versuche pro Kind."
-        },
-        {
-          "time": "15:45",
-          "title": "Pony-Snack-Pause",
-          "description": "Karotten-Sticks, Apfelschnitze, Hafer-Müsli — alles thematisch und gesund."
-        },
-        {
-          "time": "16:10",
-          "title": "Schleife für mein Pony",
-          "description": "Jedes Kind bastelt eine Filz-Schleife für sein Plüsch-Pony — mit eigenem Namen."
-        },
-        {
-          "time": "16:25",
-          "title": "Reiter-Urkunde + Foto",
-          "description": "Feierliche Urkunden-Übergabe. Gruppenfoto mit allen Plüsch-Ponys."
-        }
-      ],
       "games": [
         {
           "name": "🐴 Pony-Streichel-Runde",
@@ -390,43 +358,6 @@
       "headline": "🐎 Standard — 2,5 Stunden Ponyhof-Tag",
       "intro": "Der Allrounder für 6–8 Kinder: Pferde-Streichelrunde + Schweif-Flechten + Hufeisen-Werfen + Hindernis-Parcours mit Steckenpferden. Genug Abwechslung für 2,5 Stunden mit Bewegung und Ruhe-Phasen.",
       "timeWindow": "14:30–17:00, 8 Kinder",
-      "schedule": [
-        {
-          "time": "14:30",
-          "title": "Ankunft + Reiter werden",
-          "description": "Reiter-Hut, Steckenpferd, Reiter-Schwur. Wer früh da ist, darf schon Plüsch-Ponys streicheln."
-        },
-        {
-          "time": "14:45",
-          "title": "Pony-Streichel-Runde",
-          "description": "Alle Plüsch-Ponys werden vorgestellt, jedes Kind sucht sich eines aus."
-        },
-        {
-          "time": "15:10",
-          "title": "Mähnen-Flechten + Schleife",
-          "description": "Wolle einflechten, Filz-Schleife anbringen — die eigene Mähne fürs Pony."
-        },
-        {
-          "time": "15:35",
-          "title": "Pony-Snack-Pause",
-          "description": "Karotten, Äpfel, Müsli, Schorle — Pferde-Mahl."
-        },
-        {
-          "time": "16:00",
-          "title": "Hufeisen-Werfen",
-          "description": "Wurfringe Richtung Pflock. 2 Teams, jeder 3 Würfe."
-        },
-        {
-          "time": "16:25",
-          "title": "Steckenpferd-Parcours",
-          "description": "Mit Steckenpferden durch einen Hindernislauf — über Sprung-Stangen (10 cm), durch Tunnel, ums Sofa."
-        },
-        {
-          "time": "16:50",
-          "title": "Reiter-Urkunde + Foto",
-          "description": "Jeder kommt einzeln, bekommt Urkunde mit Pony-Name. Gruppenfoto mit allen Ponys."
-        }
-      ],
       "games": [
         {
           "name": "🐴 Pony-Streichel-Runde",
@@ -678,48 +609,6 @@
       "headline": "🎉 Wow — 3 Stunden voller Ponyhof-Tag",
       "intro": "Für den großen Bahnhof mit 8–10 Kindern: ein durchgehender Reiterhof-Tag mit Cowboy-Verkleidung, Mähnen-Frisuren-Werkstatt, Pony-Reiter-Quiz, Hindernis-Parcours und Schatzsuche nach versteckten Karotten. Mehr Aufwand, aber legendäres Ergebnis.",
       "timeWindow": "14:00–17:00, 8–10 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Reiterhof-Empfang + Verkleidung",
-          "description": "Cowboy-Hut, Bandana, Reiter-Schleife. Jedes Kind wird fotografiert für die Reiter-Akte."
-        },
-        {
-          "time": "14:20",
-          "title": "Pony-Streichel-Runde + Namen geben",
-          "description": "Alle Plüsch-Ponys vorgestellt. Jedes Kind benennt sein Pony und beschriftet sein Namensschild."
-        },
-        {
-          "time": "14:45",
-          "title": "Mähnen-Frisuren-Werkstatt",
-          "description": "Wolle einflechten, Schleifen, Glitzer (essbar) anbringen. Jedes Pony bekommt sein Styling."
-        },
-        {
-          "time": "15:10",
-          "title": "Pony-Quiz",
-          "description": "Bild-Quiz: 'Welches Tier ist das?' (Pferd, Pony, Esel, Maultier), 'Was frisst ein Pferd am liebsten?' Spielerisch."
-        },
-        {
-          "time": "15:25",
-          "title": "Pony-Snack-Pause",
-          "description": "Großes Reiterhof-Buffet — Karotten, Äpfel, Müsli, Karotten-Kuchen, Schorle."
-        },
-        {
-          "time": "15:55",
-          "title": "Steckenpferd-Parcours mit Bändern",
-          "description": "Erweiterter Parcours, dazu fängt jeder Reiter unterwegs ein Band ein — Sieger-Reiter mit den meisten Bändern."
-        },
-        {
-          "time": "16:20",
-          "title": "Karotten-Schatzsuche",
-          "description": "Du versteckst 20 Karotten in der Wohnung/Garten — alle suchen gemeinsam, jeder darf eine Karotte mitnehmen."
-        },
-        {
-          "time": "16:50",
-          "title": "Große Reiter-Zeremonie + Foto",
-          "description": "Feierliche Übergabe: Reiter-Urkunde, Reiter-Pin, Foto mit allen Plüsch-Ponys."
-        }
-      ],
       "games": [
         {
           "name": "🐴 Pony-Streichel-Runde",

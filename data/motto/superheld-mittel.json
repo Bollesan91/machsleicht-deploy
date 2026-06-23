@@ -46,33 +46,6 @@
       "headline": "Schnell, günstig, trotzdem ein echtes Heldenfest",
       "intro": "Zwei starke Spiele, ein klarer Auftrag, kaum Vorbereitung. Perfekt, wenn die Zeit knapp ist und es trotzdem nach Superhelden riechen soll.",
       "timeWindow": "2 Stunden (14:00–16:00)",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankommen & Helden-Einkleidung",
-          "description": "Jedes Kind bekommt Maske + Cape und wählt seinen Heldennamen. Foto-Ecke vor der Skyline. 20 Min."
-        },
-        {
-          "time": "14:20",
-          "title": "Helden-Training (Parcours)",
-          "description": "Hindernislauf als Aufnahmeprüfung in die Heldentruppe. 30 Min."
-        },
-        {
-          "time": "14:50",
-          "title": "Stadt in Gefahr (Dosenwerfen)",
-          "description": "Bösewicht-Türme mit weichen Bällen einreißen. 25 Min."
-        },
-        {
-          "time": "15:15",
-          "title": "Kuchen & Heldenlied",
-          "description": "Power-Kuchen, kurze Pause im Sitzen. 25 Min."
-        },
-        {
-          "time": "15:40",
-          "title": "Heldenschwur & Mitgebsel",
-          "description": "Urkunde zum 'echten Helden', Schatzbeutel, Verabschiedung. 20 Min."
-        }
-      ],
       "games": [
         {
           "name": "🦸 Helden-Training (Hindernisparcours)",
@@ -253,43 +226,6 @@
       "headline": "Vier Stationen, ein Schurke, eine gerettete Stadt",
       "intro": "Die empfohlene Variante: Helden-Training, eine echte Geheimmission (Schatzsuche), Stadt-Rettung und der Showdown gegen Dr. Chaos. Genug Abwechslung für 3 Stunden, mit ruhiger Bastelpause dazwischen.",
       "timeWindow": "3 Stunden (14:00–17:00)",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankommen & Helden-Akademie",
-          "description": "Maske + Cape, Heldenname, Foto vor der Skyline. Freispiel mit Helden-Ausmalbildern, bis alle da sind. 20 Min."
-        },
-        {
-          "time": "14:20",
-          "title": "Helden-Training (Parcours)",
-          "description": "Aufnahmeprüfung in die Heldentruppe. 25 Min."
-        },
-        {
-          "time": "14:45",
-          "title": "Helden-Abzeichen basteln",
-          "description": "Ruhige Station: jedes Kind gestaltet sein eigenes Logo. 20 Min."
-        },
-        {
-          "time": "15:05",
-          "title": "Geheimmission (Schatzsuche)",
-          "description": "Hinweise durch Haus/Garten führen zum Versteck von Dr. Chaos. 35 Min."
-        },
-        {
-          "time": "15:40",
-          "title": "Kuchen & Heldenlied",
-          "description": "Power-Kuchen, Verschnaufpause. 25 Min."
-        },
-        {
-          "time": "16:05",
-          "title": "Showdown: Laser-Parcours",
-          "description": "Durch das Wollfaden-Labyrinth zum 'Tresor' von Dr. Chaos. 30 Min."
-        },
-        {
-          "time": "16:35",
-          "title": "Heldenschwur & Mitgebsel",
-          "description": "Urkunde, Heldenabzeichen, Schatzbeutel, Verabschiedung. 25 Min."
-        }
-      ],
       "games": [
         {
           "name": "🦸 Helden-Training (Hindernisparcours)",
@@ -522,48 +458,6 @@
       "headline": "Echte Helden-Akademie mit Schurken-Showdown",
       "intro": "Für die ambitionierte Feier: alles aus Standard plus eine inszenierte Schurken-Figur, ein Kraft-Test und ein großes Finale, bei dem die Kinder Dr. Chaos gemeinsam besiegen. Mehr Vorbereitung, dafür unvergesslich.",
       "timeWindow": "3,5 Stunden (14:00–17:30)",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Aufnahme in die Helden-Akademie",
-          "description": "Maske, Cape, Heldenname, Foto, Heldenausweis ausfüllen. 20 Min."
-        },
-        {
-          "time": "14:20",
-          "title": "Helden-Training (Parcours)",
-          "description": "Aufnahmeprüfung. 25 Min."
-        },
-        {
-          "time": "14:45",
-          "title": "Kraft-Test-Stationen",
-          "description": "3 kleine Geschicklichkeits-Challenges (Zielwurf, Balance, Memory). 25 Min."
-        },
-        {
-          "time": "15:10",
-          "title": "Helden-Abzeichen basteln",
-          "description": "Ruhige Station. 20 Min."
-        },
-        {
-          "time": "15:30",
-          "title": "Notruf! Geheimmission",
-          "description": "Dr. Chaos meldet sich — Schatzsuche mit Rätseln. 35 Min."
-        },
-        {
-          "time": "16:05",
-          "title": "Kuchen & Heldenlied",
-          "description": "Power-Kuchen, Pause. 25 Min."
-        },
-        {
-          "time": "16:30",
-          "title": "Showdown gegen Dr. Chaos",
-          "description": "Laser-Parcours + finale Team-Challenge, Schurke wird besiegt. 35 Min."
-        },
-        {
-          "time": "17:05",
-          "title": "Heldenschwur & Ehrung",
-          "description": "Urkunde, Medaille, Schatzbeutel, Gruppenfoto. 25 Min."
-        }
-      ],
       "games": [
         {
           "name": "🦸 Helden-Training (Hindernisparcours)",

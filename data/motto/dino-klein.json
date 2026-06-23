@@ -76,38 +76,6 @@
       "headline": "Material: 15–20 bunte Plastik-Eier oder bunt bemalte Steine, 5 kleine Schüsseln/Eimer, Mini-Dinos oder Gummibärchen zum Reinlegen",
       "intro": "So geht’s: Eier im Raum/Garten verteilen — bei 3-Jährigen halb sichtbar, bei 5-Jährigen besser versteckt. Jedes Kind bekommt eine Schüssel. Alle suchen gleichzeitig. Wer eins findet, darf es öffnen und den Inhalt behalten.",
       "timeWindow": "15:00–16:30, 5 Kinder",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "Ankommen & Dino-Ausmalbilder",
-          "description": "Leg 3–4 verschiedene Dino-Ausmalbilder pro Kind auf den Tisch + dicke Buntstifte (Wachsmaler). Hält die Ersten beschäftigt bis alle da sind. Kostenlose Vorlagen: [kribbelbunt.de](https://www.kribbelbunt.de/artikel/news/ausmalbilder-dinosaurier/) — einfach ausdrucken."
-        },
-        {
-          "time": "15:15",
-          "title": "🦕 Dino-Eier suchen",
-          "description": "Verstecke 15–20 bunte Plastik-Eier (oder bemalte Steine) im Raum/Garten. Jedes Kind bekommt einen Eimer oder eine Schüssel und sucht Dino-Eier. Kein Wettbewerb — alle sammeln zusammen. In jedem Ei ein kleiner Dino oder ein Gummibärchen. 10 Min."
-        },
-        {
-          "time": "15:25",
-          "title": "🌋 Vulkan-Experiment",
-          "description": "Der Klassiker: Natron-Vulkan mit Essig zum Ausbrechen. Erwachsene*r kippt den Essig, Kinder mit 1 Armlänge Abstand. Großer Wow-Moment vor dem Kuchen. 10 Min."
-        },
-        {
-          "time": "15:40",
-          "title": "🎂 Kuchen & Happy Birthday",
-          "description": "Vulkan-Kuchen (Gugelhupf mit bunte Schoko-Linsen). Kerzen auspusten, Happy Birthday singen. 20 Min. Dazu Apfelschorle — nenn es „Dino-Pipi“ und die Kinder lachen sich kaputt. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
-        },
-        {
-          "time": "16:00",
-          "title": "🦖 Dino-Stampfen (Stopptanz)",
-          "description": "Musik an = alle stampfen wie ein T-Rex durch den Raum! Musik aus = einfrieren wie ein Fossil. Wichtig: niemand scheidet aus, alle machen immer mit. 10 Min. — lässt sich gut dehnen oder kürzen."
-        },
-        {
-          "time": "16:10",
-          "title": "🎈 Freispiel & Abholphase",
-          "description": "Plastik-Dinos auf den Boden, Kinder spielen frei. Eltern kommen. Mitgebsel-Tüte in die Hand drücken. Fertig.\n\n💡 Weniger ist mehr\n3–5-Jährige brauchen kein Animationsprogramm. Eier suchen + Stopptanz + Kuchen ist ein perfekter Geburtstag. Die Kinder erinnern sich an Kuchen und an „wir haben Dino-Eier gefunden!“ — nicht an die Anzahl der Spiele."
-        }
-      ],
       "games": [
         {
           "name": "🦕 Dino-Eier suchen — Spielanleitung",
@@ -244,43 +212,6 @@
       "headline": "Material: 20 bunte Plastik-Eier, Mini-Dinos oder Gummibärchen zum Reinlegen, 5 Schüsseln",
       "intro": "So geht’s: Eier verteilen (bei 3-Jährigen halb sichtbar, bei 5-Jährigen versteckter). Alle suchen gleichzeitig, kein Wettbewerb. „Wer eins findet, darf es öffnen!“ Ersatz-Eier in der Tasche für Kinder die leer ausgehen.",
       "timeWindow": "15:00–17:00, 5 Kinder",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "Ankommen & Dino-Stempel-Station",
-          "description": "Jedes Kind bekommt ein weißes Blatt und [Dino-Stempel*](https://www.amazon.de/s?k=dino+stempel+kinder&tag=machsleicht21-21) + Stempelkissen. Frei drauflos stempeln, mit Stiften ergänzen. Hält die Ersten 10–15 Min. beschäftigt und produziert gleichzeitig ein „Kunstwerk“ zum Mitnehmen."
-        },
-        {
-          "time": "15:15",
-          "title": "🦕 Dino-Eier suchen",
-          "description": "20 Plastik-Eier im Garten/Raum verstecken. In jedem Ei: ein Mini-Dino oder Gummibärchen. Alle suchen zusammen, kein Wettbewerb. Wer fertig ist, hilft den Anderen. 10 Min."
-        },
-        {
-          "time": "15:25",
-          "title": "🌋 Vulkan-Experiment",
-          "description": "DER Moment. Flasche in einen Sandhügel stellen. Essig + Natron + Spülmittel + rote Lebensmittelfarbe rein — BOOM, Lava! Kinder zählen gemeinsam „3, 2, 1, AUSBRUCH!“ runter. Auffangschale drunter oder draußen machen. 10 Min. inkl. Staunen und nochmal machen."
-        },
-        {
-          "time": "15:35",
-          "title": "🎂 Kuchen & Dino-Pipi",
-          "description": "Vulkan-Kuchen (Gugelhupf + bunte Schoko-Linsen-Lava). Happy Birthday singen. Dazu „Dino-Pipi“ (Apfelschorle). 20 Min. Ruhe für alle. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
-        },
-        {
-          "time": "15:55",
-          "title": "🦖 Dino-Stampfen (Stopptanz)",
-          "description": "Musik an = stampfen! Musik aus = Fossil! Alle zusammen, niemand fliegt raus. Variante: verschiedene Dinos nachahmen — T-Rex (laut stampfen), Flugsaurier (Arme flattern), Langhals (auf Zehenspitzen). 10 Min."
-        },
-        {
-          "time": "16:05",
-          "title": "🏗️ Dino-Ausgrabung",
-          "description": "Große Wanne mit Sand oder Reis. Darin versteckt: [Dino-Figuren*](https://www.amazon.de/s?k=dinosaurier+figuren+set+kinder&tag=machsleicht21-21) + Muscheln + bunte Steine. Kinder graben mit Löffeln und Pinseln. Wer einen Dino findet, darf ihn behalten. 15 Min. — das ist das ruhige Spiel nach dem Toben."
-        },
-        {
-          "time": "16:20",
-          "title": "🎈 Freispiel & Abholphase",
-          "description": "Plastik-Dinos, Bücher, Freispiel. Mitgebsel-Tüten verteilen wenn Eltern kommen.\n\n💡 Immer abwechseln: laut → leise\nEier suchen (mittel) → Vulkan (laut) → Kuchen (Pause) → Stampfen (laut) → Ausgrabung (leise). So kippt die Stimmung nie. Nach jedem lauten Spiel kommt ein ruhiges. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
-        }
-      ],
       "games": [
         {
           "name": "🦕 Dino-Eier suchen — Spielanleitung",
@@ -461,48 +392,6 @@
       "headline": "Wow-Variante: 25 Eier, etwas schwieriger versteckt. Ein besonderes goldenes Ei enthält den „Schatz“ — Schoko-Goldmünzen für alle. Wer das goldene Ei findet, darf sie verteilen.",
       "intro": "So geht’s: Dinos 2–3 cm tief vergraben (bei 3-Jährigen zur Hälfte sichtbar lassen). Kinder graben mit Pinseln wie echte Paläontologen. Jeder darf seinen Fund behalten. Wanne auf Handtuch stellen.",
       "timeWindow": "15:00–17:00, 5 Kinder",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "Ankommen & Dino-Tattoos",
-          "description": "Jedes Kind bekommt ein [Dino-Tattoo*](https://www.amazon.de/s?k=dino+tattoos+kinder&tag=machsleicht21-21) auf den Arm. Dazu Dino-Stempel-Station und Ausmalbilder. Die Verwandlung zum Dino-Forscher beginnt. 15 Min."
-        },
-        {
-          "time": "15:15",
-          "title": "🦕 Dino-Eier suchen",
-          "description": "25 Eier, etwas schwieriger versteckt als bei Standard. In manchen Eiern: Mini-Dinos. In einem besonderen goldenen Ei: der „Schatz“ (Schoko-Goldmünzen für alle). 10 Min."
-        },
-        {
-          "time": "15:25",
-          "title": "🏗️ Dino-Ausgrabung",
-          "description": "Große Wanne mit Sand. Dinos + echte Muscheln + bunte Steine vergraben. Kinder graben mit Pinseln wie echte Paläontologen. Jedes Kind darf seinen Fund behalten. 15 Min."
-        },
-        {
-          "time": "15:40",
-          "title": "🌋 Vulkan-Experiment",
-          "description": "Der Höhepunkt. Flasche im Sandhügel, rote Farbe + Natron + Spüli, Countdown: „3, 2, 1, AUSBRUCH!“ Essig dazu — LAVA! 3–4 Durchgänge, die Kinder wollen es immer wieder sehen. 10 Min."
-        },
-        {
-          "time": "15:50",
-          "title": "🎂 Kuchen & Dino-Pipi",
-          "description": "Vulkan-Kuchen mit bunte Schoko-Linsen-Lava und einer Dino-Figur obendrauf. Kerzen, Happy Birthday, 20 Min. Ruhe. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
-        },
-        {
-          "time": "16:10",
-          "title": "🦖 Dino-Parcours",
-          "description": "„Dschungel-Parcours“: unter Seilen durchkriechen (Lianen!), über Kissen springen (Vulkan-Steine!), durch einen Tunnel krabbeln (Dino-Höhle = Decke über 2 Stühle). Alle laufen zusammen, kein Wettrennen. 10 Min. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
-        },
-        {
-          "time": "16:20",
-          "title": "🦖 Dino-Stampfen mit Varianten",
-          "description": "Stopptanz PLUS Tier-Varianten: „Stampft wie ein T-Rex!“ (laut), „Schleicht wie ein Raptor!“ (leise), „Fliegt wie ein Flugsaurier!“ (Arme flattern). Du rufst das Tier, Kinder machen nach. 10 Min."
-        },
-        {
-          "time": "16:30",
-          "title": "🎈 Freispiel & Abholphase",
-          "description": "Freispiel mit allen Dino-Figuren. Mitgebsel-Tüten mit „Dino-Schatz von ___“ verteilen."
-        }
-      ],
       "games": [
         {
           "name": "🦕 Dino-Eier suchen — Spielanleitung",

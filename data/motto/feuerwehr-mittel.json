@@ -149,33 +149,6 @@
       "headline": "🌿 Minimal — 2 Stunden, minimaler Aufwand",
       "intro": "Funktioniert auch wenn du Donnerstag erst angefangen hast zu planen. Schicht-Appell, zwei echte Spiele, Kuchen, Mitgebsel — fertig. Die Kinder bekommen ihre Funktion, ihren Einsatz und ihre Urkunde. Mehr braucht niemand für eine gute Party.",
       "timeWindow": "14:00–16:00, 6 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "🚒 Schicht-Appell & Feuerwehr-Ausmalbilder",
-          "description": "Jedes Kind zieht beim Reinkommen einen Dienstausweis aus dem Helm (Ritual-Block oben), bekommt ein Feuerwehr-Tattoo auf den Handrücken und trägt sich in die Wachen-Tafel ein. Sobald alle da sind: gemeinsamer Schichtbeginn-Spruch („Wir helfen, wo Hilfe gebraucht wird. Los geht's!\"). Wer früh da ist, malt am Tisch Feuerwehr-Bilder aus — kostenlose Vorlagen z.B. auf [kribbelbunt.de](https://www.kribbelbunt.de/artikel/news/ausmalbilder-feuerwehr/) oder [malvorlagen-seite.de](https://malvorlagen-seite.de/malvorlagen-feuerwehr/)."
-        },
-        {
-          "time": "14:25",
-          "title": "🎯 Zielspritzen — Brände löschen",
-          "description": "Hauptspiel, 25 Min. — Anleitung unten. Lautes Spiel zum Energie-Rauslassen. Im Sommer draußen, bei Regen im Bad oder auf dem Balkon."
-        },
-        {
-          "time": "14:55",
-          "title": "🎂 Kuchen & Lösch-Wasser",
-          "description": "Feuerwehrauto-Kuchen aus der Kastenform + „Lösch-Wasser\" (Apfelschorle in roten Bechern, kleines Eis dazu). 25 Min. Ruhe, alle setzen sich, Happy Birthday singen."
-        },
-        {
-          "time": "15:25",
-          "title": "🫧 Schaum-Löscheinsatz",
-          "description": "Ruhigeres taktiles Spiel nach dem Kuchen. 20 Min. Rasierschaum-Schicht mit Spielzeug-Tieren — die Crew „löscht\" und befreit. Funktioniert IMMER, ist witzig, schmiert nicht auf Wänden."
-        },
-        {
-          "time": "15:50",
-          "title": "🏆 Schichtende & Feuerwehr-Diplom",
-          "description": "Jedes Kind bekommt sein Feuerwehr-Diplom mit Funktion und Datum (Vorlage zum Ausdrucken — siehe Eltern-Tipps unten). Mitgebsel-Tüten mit Mini-Feuerwehrauto, Tattoo-Bogen, Gummibärchen.\n\n💡 Warum nur 2 Spiele reichen:\n6–8-Jährige wollen nicht durchanimiert werden. Zwischen Zielspritzen und Schaum-Löschen kommen Kuchen und der Schicht-Appell-Moment — das ist genug Struktur. Weniger Programm = weniger Stress für dich, weniger Reizüberflutung für die Kinder. Das laute Spiel zuerst (Energie raus), dann Kuchen, dann ruhiges Spiel. Diese Reihenfolge ist nicht zufällig."
-        }
-      ],
       "games": [
         {
           "name": "🚒 Helm-Bilder ausmalen",
@@ -452,48 +425,6 @@
       "headline": "🎯 Standard — 3 Stunden, klassische Party",
       "intro": "Der Sweet Spot: genug Programm ohne Stress. Schicht-Appell, vier Ausbildungs-Stationen, ein echter Einsatz-Alarm in der Mitte, Kuchen, Urkundenzeremonie. Die Party, von der die Kinder am Montag in der Schule erzählen.",
       "timeWindow": "14:00–17:00, 6 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "🚒 Schicht-Appell & Ankunft",
-          "description": "Beim Reinkommen zieht jedes Kind seinen Dienstausweis aus dem Helm + bekommt ein Feuerwehr-Tattoo (siehe Ritual-Block oben). Trägt sich in die Wachen-Tafel ein. Wer früh da ist, malt am Tisch ein Feuerwehr-Bild aus oder probiert den Pappkarton-Helm an. Sobald alle da sind: gemeinsamer Schichtbeginn-Spruch („Wir helfen, wo Hilfe gebraucht wird. Los geht's!\")."
-        },
-        {
-          "time": "14:00",
-          "title": "💧 Zielspritzen — Brände löschen",
-          "description": "Wasserpistolen, nummerierte Flammen-Becher in Reihe. Kompetitiv auf Zeit, pro Trupp gewertet. 15 Min."
-        },
-        {
-          "time": "14:25",
-          "title": "🎓 Ausbildungs-Stationen (4er-Rotation)",
-          "description": "Crew teilt sich in 2 Trupps zu je 3 Kindern. Vier Stationen, je 8 Min., dann Wechsel: Zielspritzen, Knoten lernen, Schlauch-Parcours, Erste-Hilfe an Kuscheltieren. Insgesamt 35 Min. (4×8 + Wechselzeiten). Anleitung aller Stationen unten."
-        },
-        {
-          "time": "15:00",
-          "title": "🚨 EINSATZ-ALARM",
-          "description": "DER Höhepunkt. 25 Min. — Sirene ertönt, „Notruf eingegangen\", Crew rückt aus, rettet Kuscheltiere aus dem „Wald\" (Garten oder Kinderzimmer). Anleitung unten. Wenn ein Kind das nicht vergisst, dann diesen Moment."
-        },
-        {
-          "time": "15:25",
-          "title": "🎂 Kuchen & Lösch-Wasser",
-          "description": "Feuerwehrauto-Kuchen + „Lösch-Wasser\" (Apfelschorle in roten Bechern mit „112\" beschriftet). Happy Birthday singen. 25 Min. Pause für alle."
-        },
-        {
-          "time": "15:50",
-          "title": "🫧 Schaum-Löscheinsatz",
-          "description": "Ruhigeres taktiles Spiel nach Kuchen + Aufregung. 20 Min. Rasierschaum-Wanne mit gefangenen Spielzeug-Tieren — Crew befreit sie. Anleitung unten."
-        },
-        {
-          "time": "16:15",
-          "title": "🏆 Urkunden-Zeremonie",
-          "description": "Schicht-Ende. Jedes Kind wird einzeln aufgerufen mit Funktion und einem Satz, was es heute geleistet hat („Hanna, Strahlrohrführerin — du hast bei Station 1 alle drei Brände gelöscht\"). Bekommt sein Feuerwehr-Diplom mit Funktion und Datum. 20 Min., das ist der emotionale Kern."
-        },
-        {
-          "time": "16:35",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Tüten verteilen: Mini-Feuerwehrauto, Tattoo-Bogen, Süßes, Diplom in der Tüte oder gerollt mit Bändchen. 25 Min. Puffer für Eltern-Trudeleien.\n\n💡 Rhythmus-Regel:\nImmer abwechseln: laut → leise → laut → leise. Stationen (gemischt) → Einsatz-Alarm (sehr laut) → Kuchen (Pause) → Schaum-Löschen (sehr ruhig) → Urkunden (feierlich-ruhig). So kippt die Stimmung nie. Der Einsatz-Alarm ist bewusst VOR dem Kuchen gelegt, damit die Aufregung sich beim Essen senkt — nicht danach, das wäre unfair für deine Nerven."
-        }
-      ],
       "games": [
         {
           "name": "💧 Spritz-Probe an der Wache",
@@ -857,53 +788,6 @@
       "headline": "✨ Wow — 3,5 Stunden, die volle Schicht",
       "intro": "Auf der Standard-Variante aufbauend. Theorie-Briefing wie an einer echten Wache, ein Atemschutz-Parcours mit verbundenen Augen, ein Einsatz-Alarm mit echtem Nebel, eine zweite Phase „Brandermittlung\" wie ein Feuerwehr-Krimi, und am Ende eine Foto-Ehrentafel zum Mitnehmen. Aufwand hoch, Erinnerung fürs Leben — die Party, von der die Kinder noch in 5 Jahren erzählen.",
       "timeWindow": "13:30–17:00, 6 Kinder",
-      "schedule": [
-        {
-          "time": "13:30",
-          "title": "🚒 Schicht-Appell & Ankunft",
-          "description": "Kinder ziehen Dienstausweise, bekommen Tattoos, tragen sich in die Wachen-Tafel ein (Ritual-Block oben). Polaroid-Kamera oder Handy bereit: jedes Kind bekommt ein Crew-Foto mit Helm + Funktion gemacht. Foto kommt später an die Ehrentafel und mit nach Hause. Schichtbeginn-Spruch: „Wir helfen, wo Hilfe gebraucht wird. Los geht's!\""
-        },
-        {
-          "time": "14:00",
-          "title": "📚 Theorie-Briefing an der Wache",
-          "description": "10 Min. „Wachen-Unterweisung\" — kurz, ernsthaft, kein Schul-Vortrag. Drei Sachen: Was ist die 112 (und wann darf man sie wirklich anrufen)? Was sind Brandklassen — warum löscht man Fett-Brand NIE mit Wasser? Warum ist Rauch gefährlicher als das Feuer selbst? Anleitung unten. Klingt theoretisch, ist aber der Wow-Moment für 8-Jährige — die hören wirklich zu."
-        },
-        {
-          "time": "14:10",
-          "title": "🎓 Ausbildungs-Stationen (5er-Rotation)",
-          "description": "Zu den 4 Standard-Stationen kommt eine 5. dazu: Atemschutz-Parcours mit verbundenen Augen — durch den „verqualmten Raum\" tasten, ohne anzustoßen. Je 8 Min., dann Wechsel. Insgesamt 45 Min. Crew lernt jetzt richtig was."
-        },
-        {
-          "time": "14:55",
-          "title": "🚨 EINSATZ-ALARM mit echtem Nebel",
-          "description": "Die Sirene heult, Notruf kommt — und diesmal raucht es wirklich (Nebelmaschine im Garten oder Kinderzimmer). Crew rückt aus, rettet 8 Tiere durch den Nebel. 25 Min. — der Moment, von dem die Kinder am meisten erzählen werden. Anleitung mit Sicherheits-Hinweisen unten. SICHERHEIT Nebel: nur Disco-/Party-Nebelfluid (KEIN Trockeneis/keine Chemie), Maschine außer Kinder-Reichweite, Raum gut lüften, kurz einsetzen; Kinder mit Asthma/Atemwegsproblemen draußen lassen; Boden kann feucht/rutschig werden; Rauchmelder ggf. kurz abdecken und danach SOFORT wieder aktivieren."
-        },
-        {
-          "time": "15:20",
-          "title": "🔍 Brandermittlung — Wer war's?",
-          "description": "2. Akt nach der Rettung. Brandermittler Jonas führt die Spurensuche an: Hinweise im „Brand-Bereich\" finden, einen Verdächtigen aus 4 Möglichkeiten überführen, Fall lösen. 25 Min. Detektiv-Modus. Anleitung unten."
-        },
-        {
-          "time": "15:45",
-          "title": "🎂 Kuchen & Lösch-Wasser",
-          "description": "Feuerwehrauto-Kuchen + „Lösch-Wasser\" + Brand-Brötchen. Happy Birthday, 25 Min. Pause, alle setzen sich. Polaroid-Fotos vom Schicht-Appell werden jetzt an die Ehrentafel gepinnt — die Kinder sehen sich selbst dort hängen."
-        },
-        {
-          "time": "16:10",
-          "title": "🫧 Schaum-Löscheinsatz",
-          "description": "Ruhiges Spiel nach Kuchen + Aufregung. 20 Min. Rasierschaum-Wanne, Tiere befreien. Wie in Standard."
-        },
-        {
-          "time": "16:30",
-          "title": "🏆 Große Urkunden-Zeremonie",
-          "description": "Schichtende. Jedes Kind wird einzeln aufgerufen: Funktion + ein Satz aus der Stationen-Phase + ein Satz aus dem Einsatz-Alarm. Bekommt Diplom + Polaroid mit Funktion auf der Rückseite + ein „Crew-Pin\" (Anstecker). 25 Min., das ist der emotionale Höhepunkt."
-        },
-        {
-          "time": "16:55",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Tüten + Diplom-Rolle + Polaroid + Pin. Ehrentafel als Abschiedsfoto fotografieren — Eltern können es bekommen.\n\n✨ Wow-Highlight: Der Nebel-Moment\nEine kleine Nebelmaschine (~30 €, Amazon) verwandelt deinen Garten oder das Kinderzimmer in 30 Sekunden in einen „Brandbereich\". Die Kinder sehen das, hören die Sirene, und schalten in einen anderen Modus — das ist nicht mehr „so tun als ob\", das ist ein echtes Sinneserlebnis. Sicherheits-Hinweis: Nebelfluid auf Wasserbasis (Standard), nicht ölbasiert. Maschine erst direkt vorm Einsatz starten, vorher mit Eltern absprechen falls Asthma in der Crew. Funktioniert auch indoor, aber gut lüften. SICHERHEIT Nebel: nur Disco-/Party-Nebelfluid (KEIN Trockeneis/keine Chemie), Maschine außer Kinder-Reichweite, Raum gut lüften, kurz einsetzen; Kinder mit Asthma/Atemwegsproblemen draußen lassen; Boden kann feucht/rutschig werden; Rauchmelder ggf. kurz abdecken und danach SOFORT wieder aktivieren."
-        }
-      ],
       "games": [
         {
           "name": "💧 Spritz-Probe an der Wache",

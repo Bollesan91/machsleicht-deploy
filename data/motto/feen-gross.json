@@ -124,38 +124,6 @@
       "headline": "⚡ Minimal — 2,5 Stunden, kompakte Quest",
       "intro": "Funktioniert auch, wenn du erst gestern angefangen hast zu planen. Wurzel-Pakt-Eröffnung, die FLORA-Chiffre in kompakter Form (5 Stationen am selben Tisch), Pflanzenbestimmungs-Quiz, Pizza, Lizenz-Übergabe. Kein Outdoor-Setup nötig, kein Helfer zwingend. Die Codeknacker-Karten malst du am Vorabend in 20 Minuten ab — Selbstkontrolle ist eingebaut.",
       "timeWindow": "14:30–17:00, 7 Kinder",
-      "schedule": [
-        {
-          "time": "14:30",
-          "title": "🌿 Eintreffen & Wurzel-Pakt-Zeremonie",
-          "description": "Jedes Kind zieht Pflanzennamen-Zettel + Holzring aus der Schale. Du sprichst den Pakt personalisiert vor, Kind antwortet „Ich schwöre auf die Wurzel.\" Lederschnur ans Armband (locker, abnehmbar). 20 Min für 7 Kinder inkl. Foto."
-        },
-        {
-          "time": "14:55",
-          "title": "🔓 Codeknacker FLORA: Die fünf Hüter-Pflanzen",
-          "description": "Das Hauptspiel. 5 Pflanzen-Quadranten am Tisch (Farn → F, Löwenzahn → L, Odermennig → O, Ringelblume → R, Ahorn → A). Pro Station eine Pflanzen-Frage zu lösen. Selbstkontrolle: ergibt FLORA = richtig. 45 Min."
-        },
-        {
-          "time": "15:45",
-          "title": "🌱 Pflanzen-Bestimmungs-Quiz",
-          "description": "8 echte heimische Pflanzen-Karten (Brennnessel, Löwenzahn, Klee, Eiche, Buche, Ringelblume, Spitzwegerich, Wilde Möhre) — bestimmen über Bestimmungs-Schlüssel mit Blatt-Form, Blüte, Lebensraum. 20 Min."
-        },
-        {
-          "time": "16:10",
-          "title": "🍕 Pizza-Belege-Station & Getränkepause",
-          "description": "Mini-Pizza-Böden, Tomatensauce, Käse, Belag-Schalen mit Kräutern (Basilikum, Oregano frisch). Jedes Kind belegt selbst. 10 Min belegen + 12 Min Backen + 8 Min Essen = 30 Min."
-        },
-        {
-          "time": "16:40",
-          "title": "🎂 Zauberwald-Kuchen & Foto",
-          "description": "Schokoladenkuchen mit grüner Glasur, essbarem Moos (zerbröselte Schoko-Sandwich-Keks-Streusel), Marzipan-Pilzen und 5 Pflanzen-Markern (Zahnstocher mit Foto der Hüter-Pflanze). 15 Min Kuchen + kurzes Gruppenfoto."
-        },
-        {
-          "time": "16:55",
-          "title": "🏅 Hüter-Bestätigung & Verabschiedung",
-          "description": "Zweite Rune (oder Goldfolie-Sticker) auf den Holzring brennen/kleben. Wurzel-Pakt-Karte als Mitgebsel. Mitgebsel-Tüte am Tor übergeben. 5 Min."
-        }
-      ],
       "games": [
         {
           "name": "🔓 Codeknacker FLORA: Die fünf Hüter-Pflanzen",
@@ -426,48 +394,6 @@
       "headline": "🎯 Standard — 3,5 Stunden, die volle Quest",
       "intro": "Die volle Quest: jedes Kind schwört den Wurzel-Pakt, durchläuft die 5 FLORA-Stationen in eigenständig gewählter Reihenfolge (kein Stau), löst eine UV-Lampen-Quest mit unsichtbarer Pflanzensaft-Tinte (Pflanzen-Geheimnis), bestimmt heimische Pflanzen am Bestimmungsschlüssel, knackt das Wort-Schloss und vermisst gemeinsam den Lichtweg zum Zauberwald-Zentrum. Mit 8 Kindern reicht 1 Helfer:in, mit guter Vorbereitung geht es solo.",
       "timeWindow": "14:00–17:30, 8 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "🌿 Eintreffen & Wurzel-Pakt-Zeremonie",
-          "description": "Pflanzennamen-Zettel + Holzring aus der Schale ziehen. Pakt-Spruch + Schwur-Antwort. Lederschnur ans Armband (locker). Brief der Wald-Hüterin wird vorgelesen: kurze, ernsthafte Mission („Der Zauberwald ist verloren — nur Hüter mit Pflanzen-Wissen können ihn wieder finden\"). 20 Min."
-        },
-        {
-          "time": "14:25",
-          "title": "🔓 FLORA-Stations-Phase (5 Stationen, freie Reihenfolge)",
-          "description": "Die 5 Pflanzen-Stationen sind im Haus / Garten verteilt. Jedes Team (oder Hüter-Paar) wählt selbst die Reihenfolge. Lösungs-Karten an jeder Station zur Selbstkontrolle. 55 Min."
-        },
-        {
-          "time": "15:25",
-          "title": "🔦 UV-Lampen-Quest: Das Pflanzen-Geheimnis",
-          "description": "Mit Pflanzensaft (Kurkuma in Wasser + Zitronensaft + Backpulver — UV-aktiv) wurden vorab versteckte Botschaften auf Pergament geschrieben. Unter der UV-Lampe leuchten sie auf. 5 Hinweise führen zur Position des Lichtweg-Codes. 25 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "🍕 Pizza-Belege-Pause",
-          "description": "Mini-Pizza-Böden + frische Kräuter (Basilikum, Oregano, Rosmarin) aus dem Garten. Jedes Kind belegt 2 Pizzen. 10 Min belegen + 12 Min Backen + 8 Min Essen = 30 Min. In der Backzeit: Schorle + Kräuterquark + Gemüse."
-        },
-        {
-          "time": "16:25",
-          "title": "🎂 Zauberwald-Kuchen",
-          "description": "Schokoladenkuchen mit grüner Glasur, essbarem Moos, Marzipan-Pilzen, einer Wunderkerze in der Mitte als „Lichtweg-Spitze\". 20 Min."
-        },
-        {
-          "time": "16:45",
-          "title": "⚔️ Großes Team-Spiel: Den Lichtweg vermessen",
-          "description": "Die FLORA-Lösung + die UV-Hinweise + das Pflanzen-Bestimmungs-Quiz-Ergebnis ergeben zusammen den Lichtweg. Alle Hüter zusammen vermessen ihn auf der A3-Zauberwald-Karte und finden das Wurzel-Pakt-Schloss. Wort-Schloss öffnen. 25 Min."
-        },
-        {
-          "time": "17:10",
-          "title": "🏅 Hüter-Bestätigung & Lizenz-Übergabe",
-          "description": "Zweite Rune auf jeden Holzring. Jede:r Hüter:in wird einzeln aufgerufen, bekommt die Wurzel-Pakt-Karte mit „Sorgfalt-Stempel\" für besonders genaue Beobachtungen. 15 Min."
-        },
-        {
-          "time": "17:25",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Kraftpapier-Tüten mit Pflanzennamen verteilen. Inhalt: Holzring (am Armband), Wurzel-Pakt-Karte, Wildblumen-Samen, Schoko-Pilze, Pflanzen-Runen-Aufkleber. Eltern-Abholung am Tor. 5 Min."
-        }
-      ],
       "games": [
         {
           "name": "🔓 Codeknacker FLORA: Die fünf Hüter-Pflanzen (5 Stationen)",
@@ -746,48 +672,6 @@
       "headline": "✨ Wow — 4 Stunden, GPS-Outdoor-Quest und Survival-Initiation",
       "intro": "Die Hüter:innen werden zu einer echten Wald-Expedition geschickt: GPS-Koordinaten auf dem Handy, fünf FLORA-Stationen draußen im Park oder Garten, eine UV-Pflanzensaft-Quest in der Dämmerung (Sommer ab ~21:30 / Winter ab ~17:30 — Quest VOR Dunkelheit beenden!), Survival-Knoten lernen für das Wurzel-Pakt-Armband, und am Ende eine Wurzel-Pakt-Zeremonie mit Lichterkette und Naturmusik. Kein Verkindischen — eine ernstgemeinte Initiation in das Hüter-Wissen.",
       "timeWindow": "14:00–18:00, 10 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "🌿 Eintreffen & Brief der Wald-Hüterin",
-          "description": "Pflanzennamen-Zettel + Holzring ziehen. Du liest den Brief der Wald-Hüterin vor: kurze, ernsthafte Mission. „Der Zauberwald ist verloren — nur eine Expedition aus zehn Hütern kann ihn zurückbringen. Eure Ausrüstung: GPS, UV-Lampe, eure Pflanzen-Wissen. Eure Aufgabe: die FLORA-Chiffre lösen und den Wurzel-Pakt am Lichtweg-Zentrum schließen.\" 20 Min."
-        },
-        {
-          "time": "14:25",
-          "title": "🧵 Survival-Workshop: Knoten lernen für das Wurzel-Pakt-Armband",
-          "description": "Du zeigst drei einfache, sichere Knoten am Hanf-Armband: Achterknoten, Mastwurf, Schmuckknoten. Jede:r Hüter:in knüpft das eigene Armband — locker, abnehmbar, KEIN Knoten am Handgelenk-Druckpunkt. 25 Min."
-        },
-        {
-          "time": "14:55",
-          "title": "🗺️ GPS-Outdoor-Quest startet (5 FLORA-Stationen draußen)",
-          "description": "Jedes Team bekommt eine Handy-GPS-Koordinatenliste (5 Punkte im Park / Garten). An jeder Position eine echte FLORA-Station (Farn, Löwenzahn, Odermennig, Ringelblume, Ahorn). Stationen freie Reihenfolge — Hüter wählen die Route. 70 Min."
-        },
-        {
-          "time": "16:05",
-          "title": "🍕 Pizza-Belege-Pause + Holunder-Schorle",
-          "description": "Zurück im Hauptlager (Garten / Wohnung). Mini-Pizza-Böden + frische Kräuter selbst belegen. Backzeit nutzen für Pause + Schorle + Beeren. 30 Min."
-        },
-        {
-          "time": "16:35",
-          "title": "🔦 UV-Pflanzensaft-Quest in der Schummerung",
-          "description": "Mit UV-Lampe und Pergament-Karten 5 versteckte Pflanzen-Geheimnisse im Garten / Haus finden. WICHTIG: Outdoor nur in der Schummerung, nicht in der Dunkelheit — Sommer-Quest bis spätestens 19:30 beenden, Winter-Quest bis spätestens 17:00. Im Zweifel Quest ins Haus verlagern. 30 Min."
-        },
-        {
-          "time": "17:05",
-          "title": "🎂 Zauberwald-Kuchen + Lichtweg-Synthese",
-          "description": "Schokoladenkuchen mit grüner Glasur, essbarem Moos, Marzipan-Pilzen, einer Wunderkerze. Während des Kuchens vermessen die Hüter den Lichtweg auf der großen A3-Karte. 30 Min."
-        },
-        {
-          "time": "17:35",
-          "title": "🏅 Wurzel-Pakt-Schluss-Zeremonie (am Lichterketten-Lichtweg)",
-          "description": "Im Garten / Wohnzimmer wird ein „Lichtweg\" aus LED-Lichterketten gelegt. Jede:r Hüter:in geht ihn einzeln entlang, bekommt am Ende die zweite Rune auf den Holzring + Wurzel-Pakt-Karte mit Sorgfalt-Stempel. Foto-Moment, Naturmusik leise. 20 Min."
-        },
-        {
-          "time": "17:55",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Tüten verteilen: Holzring (am Armband), Wurzel-Pakt-Karte, Wildblumen-Samen, Pflanzen-Runen-Aufkleber-Set, Schoko-Pilze, optional: Mini-Kompass als „Hüter-Werkzeug\". 5 Min."
-        }
-      ],
       "games": [
         {
           "name": "🗺️ GPS-Outdoor-Quest: Die FLORA-Stationen draußen",

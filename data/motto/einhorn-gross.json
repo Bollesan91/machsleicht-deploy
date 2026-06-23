@@ -132,33 +132,6 @@
       "headline": "⚡ Minimal — 2,5 Stunden, wenig Aufwand",
       "intro": "2 Aktivitäten + Kuchen + Chillen. Für Eltern, die eine gute Party wollen ohne 3 Tage Vorbereitung. In diesem Alter reicht das — die Kinder unterhalten sich auch einfach gerne.",
       "timeWindow": "14:00–16:30, 8 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "✨ Code-Name-Umschläge & Ankommen",
-          "description": "Kinder kommen, ziehen ihren Umschlag, lesen den Code-Namen vor. Metallic-Tattoo auf den Handrücken. Freies Chillen mit Musik bis alle da sind. 15 Min."
-        },
-        {
-          "time": "14:20",
-          "title": "🔬 Regenbogen-Chemie-Labor",
-          "description": "Farbwechsel-Experimente mit Rotkohlsaft als pH-Indikator. Die Kinder mischen „Zaubertränke\" die Farbe wechseln. Wissenschaft, nicht Kindergarten. 30 Min."
-        },
-        {
-          "time": "14:55",
-          "title": "🎂 Kuchen & Snacks",
-          "description": "Regenbogen-Galaxy-Kuchen (Mirror Glaze). Pizza-Brötchen als herzhafter Snack. 25 Min."
-        },
-        {
-          "time": "15:25",
-          "title": "💎 Schmuck-Workshop",
-          "description": "Perlen-Armbänder mit Buchstaben-Perlen und Einhorn-Anhängern. Jeder macht sein eigenes — geht als Mitgebsel mit. 40 Min."
-        },
-        {
-          "time": "16:10",
-          "title": "📸 Fotos & Abholung",
-          "description": "Gruppenfoto mit Tattoos und Armbändern. Mitgebsel verteilen. 20 Min.\n\n💡 Warum nur 2 Aktivitäten?\n9–12-Jährige brauchen keine Durchanimation. Sie quatschen gerne, hören Musik, zeigen sich TikToks. Die 2 Aktivitäten geben Struktur, der Rest passiert von alleine. Weniger Stress für dich, mehr Spaß für die Kids."
-        }
-      ],
       "games": [
         {
           "name": "🌈 Regenbogen-Milch-Experiment",
@@ -390,43 +363,6 @@
       "headline": "🎯 Standard — 3,5 Stunden, rund und gut",
       "intro": "Der Sweet Spot: 5 Aktivitäten mit gutem Rhythmus-Wechsel. Chemie-Labor, Parcours, Escape-Rätsel, Schmuck und freies Chillen mit Musik. Die Party, von der die Kinder am Montag in der Schule erzählen.",
       "timeWindow": "14:00–17:15, 8 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "✨ Code-Name-Umschläge & Ankommen",
-          "description": "Umschläge ziehen, Tattoos aufkleben, Musik läuft. 15 Min."
-        },
-        {
-          "time": "14:20",
-          "title": "🔬 Regenbogen-Chemie-Labor",
-          "description": "Rotkohlsaft-Experimente: Farbwechsel-Tränke mischen. Jedes Team bekommt 3 Aufträge. 30 Min."
-        },
-        {
-          "time": "14:55",
-          "title": "🏃 Magischer Parcours",
-          "description": "Staffel-Wettbewerb: 2 Teams, 5 Stationen, Punkte sammeln. Bewegung nach dem Denken — perfekter Rhythmus-Wechsel. 20 Min."
-        },
-        {
-          "time": "15:20",
-          "title": "🔓 Einhorn-Escape-Challenge",
-          "description": "2 Teams lösen 5 Rätsel in 25 Minuten. Wer zuerst den Code knackt, öffnet die Schatztruhe. 30 Min. (inkl. Erklärung)."
-        },
-        {
-          "time": "15:55",
-          "title": "🎂 Kuchen, Pizza-Brötchen & Snacks",
-          "description": "Galaxy-Kuchen mit Mirror Glaze. Happy Birthday. Pizza-Brötchen als herzhafter Snack. 25 Min."
-        },
-        {
-          "time": "16:25",
-          "title": "💎 Schmuck-Workshop",
-          "description": "Perlen-Armbänder mit Buchstaben und Einhorn-Charms. Ruhige Phase nach dem Essen. 30 Min."
-        },
-        {
-          "time": "16:55",
-          "title": "📸 Fotos, Musik & Abholung",
-          "description": "Gruppenfoto mit Armbändern und Tattoos. Musik hören, quatschen. Mitgebsel verteilen. 20 Min.\n\n💡 Rhythmus-Regel für 9–12:\nKopf → Körper → Kopf → Bauch → Hand. Chemie (denken) → Parcours (bewegen) → Escape (denken+bewegen) → Kuchen (Pause) → Schmuck (basteln). Nach einer Denk-Aktivität brauchen sie Bewegung. Nach 2 intensiven Runden brauchen sie Essen. Der Schmuck-Workshop nach dem Essen ist perfekt: selbstlaufend, entspannt, und du kannst anfangen aufzuräumen."
-        }
-      ],
       "games": [
         {
           "name": "🌈 Regenbogen-Milch-Experiment",
@@ -693,53 +629,6 @@
       "headline": "✨ Wow — 4,5 Stunden, die Akademie der Vergessenen Magie",
       "intro": "Die Kinder werden zu Schülern der „Akademie der Vergessenen Magie\" — einer geheimen Einhorn-Universität, deren Wissen verloren gegangen ist. In 6 Prüfungen müssen sie beweisen, dass sie würdig sind, die alte Magie wiederzubeleben. Mit Escape-Rätseln, Chemie-Experimenten, UV-Schwarzlicht-Geheimnissen und einem Kurzfilm-Dreh als Finale.",
       "timeWindow": "13:30–17:55, 8 Kinder",
-      "schedule": [
-        {
-          "time": "13:30",
-          "title": "📜 Die Einschreibung",
-          "description": "Code-Name-Umschläge mit Wachssiegel. Metallic-Tattoos. Du liest die Geschichte der Akademie vor (2 Min.). „Ab jetzt seid ihr Schüler der Vergessenen Magie.\" Musik: instrumentale Fantasy-Playlist. 20 Min."
-        },
-        {
-          "time": "13:55",
-          "title": "🔬 Prüfung 1: Das Alchemie-Labor",
-          "description": "Regenbogen-Chemie-Labor mit Rotkohlsaft. „Jeder wahre Magier muss Tränke brauen können.\" 3 Aufträge pro Team. 30 Min."
-        },
-        {
-          "time": "14:30",
-          "title": "🏃 Prüfung 2: Der Hindernislauf der Elemente",
-          "description": "Staffel-Parcours: 2 Teams, 5 Stationen, Zeiten messen. „Ein Magier braucht nicht nur Kopf, sondern auch Körper.\" 20 Min."
-        },
-        {
-          "time": "14:55",
-          "title": "🔓 Prüfung 3: Die Kammer der Rätsel",
-          "description": "Escape-Challenge mit 5 Rätseln + UV-Schwarzlicht-Botschaft. „Die Meisterin hat ihre Geheimnisse versteckt — findet sie.\" 30 Min."
-        },
-        {
-          "time": "15:30",
-          "title": "🎂 Die Große Tafel",
-          "description": "Galaxy-Kuchen mit Wunderkerze. Pizza-Brötchen, Obst, „Zaubertrank\"-Bowle. „Auch Magier müssen essen.\" 25 Min."
-        },
-        {
-          "time": "16:00",
-          "title": "💎 Prüfung 4: Die Kristall-Werkstatt",
-          "description": "Schmuck-Workshop — aber als „magische Amulette\": Armbänder mit Code-Namen und Einhorn-Charms. „Jeder Magier braucht ein Amulett, das seine Kraft speichert.\" 35 Min."
-        },
-        {
-          "time": "16:40",
-          "title": "🎬 Prüfung 5: Die Chronik (Kurzfilm drehen)",
-          "description": "2 Teams drehen je einen 60-Sekunden-Kurzfilm über die Akademie mit ihren Handys. 30 Min. (10 Min. planen, 15 Min. drehen, 5 Min. anschauen)."
-        },
-        {
-          "time": "17:15",
-          "title": "🎖️ Prüfung 6: Die Meister-Zeremonie",
-          "description": "Feierliche Verleihung der Urkunden: „Hiermit wird [Code-Name] zum Meister der Vergessenen Magie ernannt.\" Jedes Kind wird einzeln aufgerufen. Applaus. Gruppenfoto. 20 Min."
-        },
-        {
-          "time": "17:40",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Armband + Urkunde + Tattoo + Süßes + Charm + Kristall-Glas. 15 Min.\n\n💡 Warum eine Geschichte für 9–12?\nKinder in diesem Alter lieben immersive Erlebnisse — deshalb sind Escape Rooms so beliebt und deshalb spielen sie gerne Sandbox-Spiele am PC. Die Akademie-Geschichte verwandelt eine Geburtstagsparty in ein Fantasy-RPG. Die gleichen Spiele, aber mit einem narrativen Rahmen, fühlen sich 10x epischer an. Und du musst dir keine Übergänge ausdenken.\n\n💡 Für 4 Stunden brauchst du einen Helfer.\n8 Kinder, 4,5 Stunden, 6 Aktivitäten — das schaffst du nicht alleine. Zweiter Erwachsener für die Kamera beim Kurzfilm, für das Rätsel-Setup beim Escape und für das Aufräumen zwischen den Stationen. Oma, Partner, oder Teenager-Nachbar/in (15 € für 4,5 Std.)."
-        }
-      ],
       "games": [
         {
           "name": "💎 Schmuck-Workshop",

@@ -116,33 +116,6 @@
       "headline": "⚡ Minimal — 1,5 Stunden, stressfrei",
       "intro": "Das ehrliche Konzept für Eltern, die nicht 3 Tage vorbereiten wollen. 2 Spiele, Kuchen, fertig. Kinder in diesem Alter brauchen nicht mehr — sie brauchen weniger Reize, mehr Sensorik. Funktioniert auch alleine ohne Helfer. Jungen kommen mit Wald-Wächter-Flügeln.",
       "timeWindow": "15:00–16:30, 5 Kinder",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "🧚 Feen-Versprechen & Flügel-Anstecken",
-          "description": "Kinder kommen an, ziehen ihren Blütennamen aus der Holzschale, bekommen ihre Tüllflügel mit Klettband angesteckt (oder Wald-Wächter-Flügel für Jungen). Du sprichst das kurze Feen-Versprechen mit jedem einzeln. Freies Spielen mit bereitliegenden Blüten-Ausmalbildern bis alle da sind."
-        },
-        {
-          "time": "15:15",
-          "title": "🦋 Schmetterlinge fangen mit Tüllbällen",
-          "description": "Bunte Tüllbälle (oder zusammengeknüllte Krepppapier-Schmetterlinge) durch den Raum werfen — Kinder fangen sie und legen sie in den „Blütenkorb\". 15 Min. Kein Wettbewerb, alle gewinnen. Bei 3-Jährigen liegen die Schmetterlinge teils auf Stühlen, sie pflücken sie nur ein."
-        },
-        {
-          "time": "15:30",
-          "title": "💎 Magische Steine bemalen",
-          "description": "Glatte Kieselsteine (Bastel-Set, ~3 €) mit Acrylstiften bemalen. Jedes Kind macht 2-3 Steine als „Feenwald-Glücksbringer\". 20 Min. Ruhige Phase — perfekt nach dem Toben."
-        },
-        {
-          "time": "15:55",
-          "title": "🎂 Kuchen & Blüten-Limo",
-          "description": "Vanille-Kuchen mit rosa Buttercreme und essbaren Blüten obendrauf. „Blüten-Limo\" (Apfelschorle mit 2 essbaren Blütenblättern obendrauf). Happy Birthday singen. Essbarer Glitzer als Spritzer auf den Kuchen — magisch! 20 Min."
-        },
-        {
-          "time": "16:20",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Tüllflügel + 2 magische Steine + 1 Blüten-Tattoo + Süßes in Tüte. Eltern kommen. Fertig.\n\n💡 Warum nur 1,5 Stunden?\nWeil 3–4-Jährige nach 90 Minuten durch sind. Wirklich. Die Aufmerksamkeit kippt, die Stimmung kippt, und dann stehst du mit 5 weinenden Kindern da. Kurz und gut schlägt lang und chaotisch — immer. Feen-Motto verträgt das besonders gut: sensorisch, kein Wettkampf."
-        }
-      ],
       "games": [
         {
           "name": "🦋 Schmetterlinge fangen mit Tüllbällen",
@@ -371,43 +344,6 @@
       "headline": "🎯 Standard — 2 Stunden, rund und gut",
       "intro": "Der Sweet Spot für 3–5-Jährige: genug Programm ohne Überforderung. 4 Aktivitäten im Sensorik-Rhythmus, Kuchen, Deko. Die Party, an die sich die Kinder erinnern — und die Eltern nicht bereuen. Jungen kommen mit Wald-Wächter-Flügeln und Schmetterlings-Brille.",
       "timeWindow": "15:00–17:00, 5 Kinder",
-      "schedule": [
-        {
-          "time": "15:00",
-          "title": "🧚 Feen-Versprechen, Flügel & freies Spielen",
-          "description": "Jedes Kind zieht seinen Blütennamen aus der Holzschale (echte Rosenblätter drin), bekommt Tüllflügel oder Wald-Wächter-Flügel mit Klettband angesteckt. Du sprichst das Feen-Versprechen. Dann freies Spielen mit Blüten-Ausmalbildern und Wachsmalstiften, bis alle da sind."
-        },
-        {
-          "time": "15:15",
-          "title": "🌸 Blumenkranz-Werkstatt",
-          "description": "Filz- oder Papp-Blüten (vorgestanzt!) auf einen Stirnband-Streifen kleben. 20 Min. Wenn fertig: Aufsetzen und 1 Runde als Blüten-Crew durch den Raum tanzen."
-        },
-        {
-          "time": "15:40",
-          "title": "✨ Glitzer-Staub-Suche",
-          "description": "DER Wow-Moment für Sensorik-Kinder. Glitzer-Reis-Wanne mit versteckten Mini-Schmetterlingen + Mini-Marienkäfer. Jedes Kind darf mit dem Löffel graben. Essbarer Glitzer = sicher. 15 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "🎂 Kuchen, Blüten-Limo & Obst",
-          "description": "Vanille-Kuchen mit rosa Buttercreme, essbaren Blüten und Glitzer-Staub. Happy Birthday singen. Blüten-Limo. 25 Min."
-        },
-        {
-          "time": "16:20",
-          "title": "💎 Magische Steine bemalen",
-          "description": "Glatte Kieselsteine mit Acryl-/Posca-Stiften bemalen. Ruhige Phase nach dem Kuchen. 15 Min."
-        },
-        {
-          "time": "16:35",
-          "title": "🦋 Feentanz mit Schleier",
-          "description": "Zum Auspowern. Bunte Chiffon-Schleier (~5 € für 6er-Set) schwenken zur Musik, Stopp = einfrieren wie Schmetterling auf Blüte. Kein Ausscheiden. 15 Min."
-        },
-        {
-          "time": "16:55",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Tüllflügel + Blumenkranz + magische Steine + Mini-Schmetterling + Süßes in Tüte. Fertig.\n\n💡 Rhythmus-Regel für Kleinkinder:\nRuhig → Sensorik → Pause → Ruhig → Aktiv. Blumenkranz (ruhig) → Glitzer-Staub-Suche (Sensorik-Wow) → Kuchen (Pause) → Steine bemalen (ruhig) → Feentanz (laut). So kippt die Stimmung nie. Wenn ein Kind trotzdem aussteigt: lass es. Ausmalbilder bereithalten als „sichere Insel\"."
-        }
-      ],
       "games": [
         {
           "name": "🌸 Blumenkranz-Werkstatt",
@@ -691,48 +627,6 @@
       "headline": "✨ Wow — 2,5 Stunden, die volle Magie im Feenwald",
       "intro": "Die Kinder erleben eine „Feenwald-Reise\" — eine zusammenhängende Geschichte in 5 Kapiteln. Jede Station baut auf der vorherigen auf: zuerst werden sie zu Feen/Wald-Wächtern (Verwandlung), dann lernen sie Blüten-Magie (Blumenkranz), helfen einer verzauberten Schmetterlings-Königin (Glitzer-Staub finden), bauen ihre eigenen Feenflügel-Stäbchen und tanzen am Schluss den großen Blüten-Reigen mit Seifenblasen. Aufwand mittel, Erinnerung riesig. Helfer empfohlen.",
       "timeWindow": "14:30–17:00, 5 Kinder",
-      "schedule": [
-        {
-          "time": "14:30",
-          "title": "📖 Kapitel 1: Die Verwandlung",
-          "description": "Jedes Kind zieht seinen Blütennamen aus der Holzschale mit echten Rosenblättern. Du erzählst die Feenwald-Geschichte: „Tief im Wald lebt die Schmetterlings-Königin. Sie braucht eure Hilfe — der Glitzer-Staub ist verloren!\" Tüllflügel / Wald-Wächter-Flügel mit Klettband anstecken, Blüten-Tattoo auf den Handrücken. „Jetzt seid ihr echte Wald-Feen!\" 20 Min."
-        },
-        {
-          "time": "14:55",
-          "title": "📖 Kapitel 2: Die Blüten-Krone schmieden",
-          "description": "„Bevor ihr die Königin trefft, braucht ihr eure Blüten-Krone!\" → Blumenkranz-Werkstatt: Filz-Blüten auf Stirnband-Streifen kleben. Erwachsene tackern zusammen. Aufsetzen. 20 Min."
-        },
-        {
-          "time": "15:15",
-          "title": "📖 Kapitel 3: Den Glitzer-Staub finden",
-          "description": "„Die Königin flüstert mir gerade zu — der Glitzer-Staub liegt im Wald verstreut, und kleine Schmetterlinge hüten ihn!\" → Glitzer-Reis-Wanne mit Schmetterlingen + Marienkäfern. Jedes Kind gräbt 2 Figuren aus. „Ihr habt den Staub gerettet!\" 15 Min."
-        },
-        {
-          "time": "15:30",
-          "title": "🎂 Pause: Kuchen, Blüten-Limo & Stiefmütterchen-Kekse",
-          "description": "„Auch Feen brauchen eine Pause!\" Vanille-Kuchen mit rosa Buttercreme + essbaren Blüten + Glitzer-Staub-Spritzer. Blüten-Limo. Stiefmütterchen-Kekse. 25 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "📖 Kapitel 4: Den magischen Stein finden",
-          "description": "„Die Königin sagt: ‚Jeder Wald-Helfer braucht seinen eigenen Glücks-Stein!'\" → Magische Steine bemalen. Jedes Kind bemalt 2-3 Steine mit Blüten und Glitzer-Aufklebern. 15 Min."
-        },
-        {
-          "time": "16:10",
-          "title": "📖 Kapitel 5: Feenflügel-Stäbchen bauen",
-          "description": "„Mit dem Glitzer-Staub und den Steinen baut die Königin euch jetzt eure echten Zauber-Stäbchen!\" → Holz-Bastelstab + Tüll-Schmetterling oben drauf + bunte Bänder. 15 Min. „Euer Feenflügel-Stäbchen ist fertig. Jetzt kommt der große Blüten-Reigen!\""
-        },
-        {
-          "time": "16:30",
-          "title": "🦋 Finale: Der Blüten-Reigen mit Seifenblasen",
-          "description": "Alle tanzen mit Schleiern und Feenflügel-Stäbchen. „Schwingt eure Stäbe — die Königin schickt euch Seifenblasen als Dank!\" Du startest die [Seifenblasenmaschine*](https://www.amazon.de/s?k=seifenblasenmaschine+kinder+batterie&tag=machsleicht21-21) — Kinder rasten aus. Der große, magische Abschluss. 15 Min. Danach kurz runterkommen mit Ausmalbildern."
-        },
-        {
-          "time": "16:50",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Flügel + Blumenkranz + Schmetterlinge + Steine + Feenflügel-Stäbchen + Süßes in Tüte. Die Kinder gehen als verzauberte Wald-Feen / Wald-Wächter nach Hause — sie haben der Königin geholfen.\n\n💡 Warum eine Geschichte?\n3–5-Jährige leben in Geschichten. Wenn du sagst „Jetzt spielen wir ein Spiel\", machen sie mit. Wenn du sagst „Die Königin braucht eure Hilfe!\", rennen sie los. Die Geschichte verwandelt 6 einzelne Aktivitäten in ein zusammenhängendes Abenteuer — und du musst dir keine Übergänge ausdenken, weil die Story sie liefert.\n\n💡 Für 2,5 Stunden brauchst du einen Helfer.\nBei 5 Kleinkindern über 2,5 Stunden brauchst du eine zweite Person — Oma, andere Mama, Teenager-Nachbarin (10 € für 2,5 Std.). Einer erzählt die Geschichte und betreut die Kinder, einer bereitet die nächste Station vor. Alleine wird es stressig."
-        }
-      ],
       "games": [
         {
           "name": "🌸 Blumenkranz-Werkstatt",

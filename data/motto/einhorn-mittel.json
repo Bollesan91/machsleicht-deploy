@@ -145,33 +145,6 @@
       "headline": "🌿 Minimal — 2 Stunden, minimaler Aufwand",
       "intro": "Funktioniert auch wenn du gestern erst angefangen hast zu planen. Zwei Spiele, Kuchen, Ausmalbilder, fertig. Kein Kind geht unglücklich nach Hause.",
       "timeWindow": "14:00–16:00, 6 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Sternenstaub-Beutel & Ausmalbilder",
-          "description": "Jedes Kind zieht beim Reinkommen einen Einhorn-Namen aus dem Sternenstaub-Beutel (Details oben im Ritual-Block), bekommt ein Einhorn-Tattoo auf den Handrücken. Danach: 3–4 verschiedene Ausmalbilder pro Kind auf den Tisch + Buntstifte (viel Rosa, Lila, Türkis, Gold). Hält die Ersten beschäftigt bis alle da sind. Kostenlose Vorlagen z.B. auf [kribbelbunt.de](https://www.kribbelbunt.de/artikel/news/ausmalbilder-einhorn/) oder [malvorlagen-seite.de](https://malvorlagen-seite.de/malvorlagen-einhorn/)."
-        },
-        {
-          "time": "14:25",
-          "title": "✨ Sternenstaub-Schatzsuche",
-          "description": "Hauptspiel, 25 Min. — Anleitung unten. Das Highlight der Party."
-        },
-        {
-          "time": "14:55",
-          "title": "🎂 Kuchen & Einhorn-Tränen",
-          "description": "Regenbogen-Kuchen + „Einhorn-Tränen\" (rosa Limo, Apfelschorle mit Tropfen Johannisbeersaft — die Kinder finden's witzig). 20 Min. Ruhe für alle."
-        },
-        {
-          "time": "15:20",
-          "title": "🌈 Regenbogen-Parcours",
-          "description": "Bewegungsspiel, 15 Min. — baut Energie ab nach dem Zucker."
-        },
-        {
-          "time": "15:40",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Tüten verteilen. Tipp: Restliche Ausmalbilder + gefundenes Einhorn mitgeben.\n\n💡 Warum nur 2 Spiele reichen:\n6–8-Jährige wollen nicht durchanimiert werden. Zwischen den beiden Spielen kommen Kuchen und Ausmalbilder — das ist genug Struktur. Weniger Programm = weniger Stress für dich, weniger Reizüberflutung für die Kinder. Die Schatzsuche alleine ist schon der Höhepunkt."
-        }
-      ],
       "games": [
         {
           "name": "✨ Sternenstaub suchen",
@@ -413,43 +386,6 @@
       "headline": "🎯 Standard — 3 Stunden, klassische Party",
       "intro": "Der Sweet Spot: genug Programm ohne Stress. Vier Aktivitäten, Kuchen, Deko, Mitgebsel. Die Party, von der die Kinder am Montag in der Schule erzählen.",
       "timeWindow": "14:00–17:00, 6 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Sternenstaub-Beutel & Einhorn-Masken basteln",
-          "description": "Beim Reinkommen zieht jedes Kind seinen Einhorn-Namen aus dem Sternenstaub-Beutel + bekommt ein Einhorn-Tattoo auf den Handrücken (siehe Ritual-Block oben). Danach basteln sie ihre Maske: [Einhorn-Masken zum Ausmalen*](https://www.amazon.de/s?k=einhorn+masken+kinder+ausmalen&tag=machsleicht21-21) (~6 €, 10 Stk.) + Gummibänder + Filzstifte in Regenbogenfarben. Fertige Maske aufsetzen → „Luna Mondsilber, du bist bereit für deine erste Prüfung.\""
-        },
-        {
-          "time": "14:30",
-          "title": "🌈 Regenbogen-Milch-Experiment",
-          "description": "DER Wow-Moment. Kinder staunen, wollen es nochmal sehen. 20 Min. mit Wiederholungen."
-        },
-        {
-          "time": "14:55",
-          "title": "✨ Sternenstaub-Schatzsuche",
-          "description": "Ruhigere Phase nach dem Regenbogen-Hype. 25 Min. konzentriertes Graben."
-        },
-        {
-          "time": "15:25",
-          "title": "🎂 Kuchen & Einhorn-Tränen",
-          "description": "Regenbogen-Wolkenkuchen mit Zuckerhorn. Happy Birthday singen. 25 Min."
-        },
-        {
-          "time": "15:55",
-          "title": "🌈 Regenbogen-Parcours",
-          "description": "Bewegung nach dem Kuchen! 20 Min. — baut Zucker-Energie ab."
-        },
-        {
-          "time": "16:20",
-          "title": "🧼 Einhorn-Seife gießen",
-          "description": "Ruhiger Abschluss. 20 Min. — Seife kühlt aus und geht als Mitgebsel mit."
-        },
-        {
-          "time": "16:45",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Seife + Einhorn + Maske + Süßes in Tüte. Fertig.\n\n💡 Rhythmus-Regel:\nImmer abwechseln: laut → leise → laut → leise. Regenbogen-Milch (staunen) → Schatzsuche (ruhig) → Kuchen (Pause) → Parcours (laut) → Seife gießen (ruhig). So kippt die Stimmung nie."
-        }
-      ],
       "games": [
         {
           "name": "🦄 Einhorn-Horn basteln",
@@ -789,48 +725,6 @@
       "headline": "✨ Wow — 3,5 Stunden, die volle Magie",
       "intro": "Auf der Standard-Variante aufbauend. Die Kinder werden zu Regenbogen-Wächter ausgebildet, absolvieren 4 Prüfungen, und bekommen am Ende eine richtige Wächter-Urkunde. Aufwand hoch, Erinnerung für's Leben.",
       "timeWindow": "13:30–17:15, 6 Kinder",
-      "schedule": [
-        {
-          "time": "13:30",
-          "title": "🪪 Sternenstaub-Beutel, Tattoo & Wächter-Pass",
-          "description": "Das große Auftakt-Ritual (siehe Block oben): jedes Kind zieht seinen Einhorn-Namen aus dem Sternenstaub-Beutel, bekommt das Einhorn-Tattoo auf den Handrücken, bekommt seinen Wächter-Pass (selbst gebastelt aus Tonkarton). Foto mit der Tattoo-Hand machen → später in den Pass kleben. Die Kinder sind jetzt offizielle Anwärter der Regenbogen-Akademie."
-        },
-        {
-          "time": "14:00",
-          "title": "🌈 Prüfung 1: Regenbogen-Milch-Experiment",
-          "description": "Der große Einstieg. „Jeder Wächter muss den Regenbogen rufen können!\" Kinder machen es selbst."
-        },
-        {
-          "time": "14:25",
-          "title": "🗺️ Prüfung 2: Wolkenwald-Rätselrallye",
-          "description": "5 Stationen im Garten/Wohnung, 40 Min. Mit Schatzkarte und Lösungswort. Am Ende wartet die Sternenstaub-Kiste."
-        },
-        {
-          "time": "15:10",
-          "title": "🎂 Kuchen, Einhorn-Tränen & Wolken-Snacks",
-          "description": "Regenbogen-Wolkenkuchen mit Zuckerhorn. Wolken-Sandwich (Toast mit Frischkäse-Wolken ausgestochen) als herzhafter Snack. 25 Min."
-        },
-        {
-          "time": "15:40",
-          "title": "✨ Prüfung 3: Sternenstaub-Schatzsuche",
-          "description": "Ruhigere Phase nach dem Zucker. 25 Min. konzentriertes Suchen."
-        },
-        {
-          "time": "16:10",
-          "title": "🧼 Prüfung 4: Einhorn-Seife gießen",
-          "description": "Jeder gießt seine eigene Seife. Ruhe-Phase."
-        },
-        {
-          "time": "16:40",
-          "title": "🎖️ Wächter-Zeremonie & Einhorn-Kino",
-          "description": "Feierliche Urkundenverleihung: „Hiermit wird ___ zum offiziellen Regenbogen-Wächter ernannt.\" Wächter-Pass umdrehen — die Urkunde ist auf der Rückseite. Danach 15 Min. Einhorn-Clip zum Runterkommen (YouTube: „Einhorn Zauber Kinder\", Popcorn dazu)."
-        },
-        {
-          "time": "17:00",
-          "title": "🎁 Mitgebsel & Abholung",
-          "description": "Wächter-Pass + Seife + Einhorn + Sternenstaub-Schatz. Die Kinder gehen als zertifizierte Regenbogen-Wächter nach Hause.\n\n💡 Die Wächter-Geschichte trägt 3,5 Stunden\nDie „Regenbogen-Wächter-Ausbildung\" gibt den 4 Prüfungen einen roten Faden. Statt „jetzt machen wir Spiel 3\" sagst du: „Eure dritte Prüfung wartet!\" Das Tempo bleibt hoch, weil jede Aktivität ein narratives Ziel hat. Und am Ende gibt die Urkunde dem Ganzen einen echten Abschluss — die Kinder fühlen, dass sie etwas erreicht haben."
-        }
-      ],
       "games": [
         {
           "name": "✨ Sternenstaub suchen",

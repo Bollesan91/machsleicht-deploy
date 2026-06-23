@@ -151,38 +151,6 @@
       "headline": "🚧 Minimal — 2 Stunden Bauarbeiter-Tag",
       "intro": "Sparvariante: 2 Stunden, 6 Kinder, 3 Stationen (Werkzeug-Quiz, Bauklotz-Wettbewerb, Schrauben-Schatzsuche). Helme + Warnwesten — kein echtes Werkzeug nötig.",
       "timeWindow": "14:00–16:00, 6 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankunft + Lizenz-Vergabe",
-          "description": "Bauarbeiter-Anwärter-Hefte verteilen, Bauarbeiter-Schwur. 15 Min."
-        },
-        {
-          "time": "14:15",
-          "title": "Station 1: Werkzeug-Quiz",
-          "description": "Quiz-Karten beantworten: Welches Werkzeug ist das? Was macht der Maurer? — Stempel 1. 25 Min."
-        },
-        {
-          "time": "14:40",
-          "title": "Station 2: Bauklotz-Wettbewerb",
-          "description": "Höchsten Turm bauen in 3 Min — Stempel 2. 20 Min."
-        },
-        {
-          "time": "15:00",
-          "title": "Bauarbeiter-Snack-Pause",
-          "description": "Bagger-Kekse, Karotten-Schrauben, Apfelschorle. 20 Min."
-        },
-        {
-          "time": "15:20",
-          "title": "Station 3: Schrauben-Schatzsuche",
-          "description": "Plastik-Schrauben in Sandkiste + Wohnung — Stempel 3. 25 Min."
-        },
-        {
-          "time": "15:45",
-          "title": "Lizenz-Verleihung + Foto",
-          "description": "Feierliche Übergabe. 15 Min."
-        }
-      ],
       "games": [
         {
           "name": "🃏 Werkzeug-Quiz",
@@ -528,48 +496,6 @@
       "headline": "🏗️ Standard — 3 Stunden Bauarbeiter-Lizenz",
       "intro": "Allrounder für 6–8 Kinder: 5 Stationen (Werkzeug-Quiz, Bauklotz-Wettbewerb, Schrauben, Maler, Architekt), Lizenz-Heft mit Stempeln, finale Lizenz-Verleihung.",
       "timeWindow": "14:00–17:00, 8 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Ankunft + Lizenz-Vergabe",
-          "description": "Lizenz-Heft, Schwur, Baustellen-Lageplan. 15 Min."
-        },
-        {
-          "time": "14:15",
-          "title": "Station 1: Werkzeug-Quiz",
-          "description": "25 Min — Stempel 1."
-        },
-        {
-          "time": "14:40",
-          "title": "Station 2: Bauklotz-Wettbewerb",
-          "description": "20 Min — Stempel 2."
-        },
-        {
-          "time": "15:00",
-          "title": "Bauarbeiter-Snack-Pause",
-          "description": "25 Min."
-        },
-        {
-          "time": "15:25",
-          "title": "Station 3: Schrauben-Schatzsuche",
-          "description": "25 Min — Stempel 3."
-        },
-        {
-          "time": "15:50",
-          "title": "Station 4: Maler-Station",
-          "description": "20 Min — eigenes 'Mauer-Bild' bemalen — Stempel 4."
-        },
-        {
-          "time": "16:10",
-          "title": "Station 5: Architekt-Aufgabe",
-          "description": "Bauplan zeichnen + nach Plan bauen — Stempel 5. 25 Min."
-        },
-        {
-          "time": "16:35",
-          "title": "Lizenz-Verleihung + Foto",
-          "description": "Feierliche Übergabe. Gruppenfoto. 25 Min."
-        }
-      ],
       "games": [
         {
           "name": "🃏 Werkzeug-Quiz",
@@ -1004,53 +930,6 @@
       "headline": "🎉 Wow — 4 Stunden Bau-Olympiade",
       "intro": "Großes Programm für 8-10 Kinder: 6 Stationen + finale Bau-Olympiade mit Schubkarren-Lauf + Bauklotz-Wettbewerb XL, optional Schlafparty-Anschluss mit Bagger-Film. Bauarbeiter-Lizenz Klasse 1+2 zu erringen.",
       "timeWindow": "14:00–18:00, 10 Kinder",
-      "schedule": [
-        {
-          "time": "14:00",
-          "title": "Empfang + Lizenz-Anmeldung",
-          "description": "Lizenz-Heft, Foto fürs Heft, Schwur. 20 Min."
-        },
-        {
-          "time": "14:20",
-          "title": "Station 1: Werkzeug-Quiz XL",
-          "description": "30 Min — Stempel 1."
-        },
-        {
-          "time": "14:50",
-          "title": "Station 2: Bauklotz-Wettbewerb (große Version)",
-          "description": "30 Min — Stempel 2."
-        },
-        {
-          "time": "15:20",
-          "title": "Snack-Pause",
-          "description": "25 Min."
-        },
-        {
-          "time": "15:45",
-          "title": "Station 3: Schrauben-Schatzsuche XL",
-          "description": "30 Min — Stempel 3."
-        },
-        {
-          "time": "16:15",
-          "title": "Station 4: Maler-Station XL",
-          "description": "25 Min — Stempel 4."
-        },
-        {
-          "time": "16:40",
-          "title": "Station 5: Architekt-Aufgabe XL",
-          "description": "30 Min — Stempel 5."
-        },
-        {
-          "time": "17:10",
-          "title": "Bau-Olympiade: Schubkarren-Lauf + Klotz-Stapel-Finale",
-          "description": "25 Min — Stempel 6."
-        },
-        {
-          "time": "17:35",
-          "title": "Lizenz-Verleihung + Olympiade-Sieger",
-          "description": "Feierliche Übergabe + Bagger-Film optional. 25 Min."
-        }
-      ],
       "games": [
         {
           "name": "🃏 Werkzeug-Quiz",
