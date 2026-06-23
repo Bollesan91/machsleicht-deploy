@@ -11,14 +11,43 @@
 
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '../..');
 const DOMAIN = 'https://machsleicht.de';
 const TODAY = new Date().toISOString().slice(0, 10);
 
+// EHRLICHES lastmod: Datum der letzten ECHTEN inhaltlichen Git-Änderung pro Datei
+// (statt pauschal TODAY -> Google entwertet gefälschte/uniforme lastmod-Stempel).
+// Cache, damit nicht pro URL erneut git aufgerufen wird.
+const _lastmodCache = {};
+function getLastmod(filePath) {
+  if (_lastmodCache[filePath] !== undefined) return _lastmodCache[filePath];
+  let d = TODAY; // Fallback: neue/ungetrackte Datei
+  try {
+    const out = execSync(`git log -1 --format=%cs -- "${filePath}"`, { cwd: ROOT, encoding: 'utf-8' }).trim();
+    if (/^\d{4}-\d{2}-\d{2}$/.test(out)) d = out;
+  } catch (e) { /* kein Git / kein History-Eintrag -> TODAY */ }
+  _lastmodCache[filePath] = d;
+  return d;
+}
+
 // Ordner/Dateien die NICHT in die Sitemap gehören
 const IGNORE_DIRS = ['_dev', '.claude', 'node_modules', '.git', '_headers', '_redirects'];
 const IGNORE_FILES = ['404.html'];
+
+// Themenfremde „andere Anlässe" (Baby/Einschulung/Saisonal/Familie): existieren als 200,
+// aber während der SEO-Erholung BEWUSST aus der Sitemap (thematischer Fokus = Kindergeburtstag).
+// Nicht-destruktiv (kein noindex, Seiten bleiben erreichbar) -> später reversibel, falls sie
+// ein eigenes Standbein werden. Entscheid Bolle 23.06.2026. Clean-URLs ohne Trailing-Slash.
+const SITEMAP_EXCLUDE = new Set([
+  '/adventskalender-fuellen', '/autofahrt-kinder-checkliste',
+  '/baby', '/baby-erstausstattung-checkliste', '/babyparty-checkliste',
+  '/einschulung', '/einschulung-checkliste',
+  '/familienreise-packliste', '/kita-start-checkliste', '/kliniktasche-packen',
+  '/oster-eiersuche', '/schultuete-fuellen', '/umzug-mit-kind-checkliste',
+  '/wochenbett-was-braucht-man'
+]);
 
 // Priority-Regeln
 function getPriority(urlPath) {
@@ -35,7 +64,7 @@ function getPriority(urlPath) {
 
 // Changefreq-Regeln
 function getChangefreq(urlPath) {
-  if (urlPath === '/' || urlPath === '/kindergeburtstag' || urlPath === '/schatzsuche') return 'daily';
+  if (urlPath === '/' || urlPath === '/kindergeburtstag' || urlPath === '/schatzsuche') return 'weekly';
   if (urlPath.match(/^\/einschulung$|^\/baby$/)) return 'weekly';
   return 'monthly';
 }
@@ -76,6 +105,24 @@ function loadRedirects() {
   return map;
 }
 
+// Clean-URLs, die per 301/302/410 weiterleiten -> dürfen NICHT in die Sitemap
+// (sonst landen die dünnen Einzeljahr-Doorway-Seiten wieder drin -> De-Index-Regress).
+// Status-Code steht in parts[2] als 301, 301!, 302, 410 etc.
+function loadRedirectSources() {
+  const redirectsFile = path.join(ROOT, '_redirects');
+  const set = new Set();
+  if (!fs.existsSync(redirectsFile)) return set;
+  for (const line of fs.readFileSync(redirectsFile, 'utf-8').split('\n')) {
+    const t = line.trim();
+    if (!t || t.startsWith('#')) continue;
+    const parts = t.split(/\s+/);
+    if (parts.length >= 3 && /^(30[12]|410)!?$/.test(parts[2])) {
+      set.add(parts[0].replace(/\/$/, '')); // Quelle als Clean-URL (ohne Trailing-Slash)
+    }
+  }
+  return set;
+}
+
 // Prüft ob eine HTML-Datei noindex gesetzt hat
 function isNoIndex(filePath) {
   const content = fs.readFileSync(path.join(ROOT, filePath), 'utf-8');
@@ -108,13 +155,22 @@ function fileToUrl(filePath, redirects) {
 // Sitemap generieren
 function generateSitemap() {
   const redirects = loadRedirects();
+  const redirectSources = loadRedirectSources();
   const htmlFiles = findHtmlFiles(ROOT);
 
   const urls = new Map(); // URL → priority (dedupliziert)
+  let skippedRedirect = 0;
+  let skippedExclude = 0;
 
   for (const file of htmlFiles) {
     const url = fileToUrl(file, redirects);
     if (!url) continue;
+
+    // 301/410-Quellen (z.B. dünne Einzeljahr-Doorway-Seiten) NICHT in die Sitemap
+    if (redirectSources.has(url.replace(/\/$/, ''))) { skippedRedirect++; continue; }
+
+    // Themenfremde „andere Anlässe" während der Erholung bewusst raus (s. SITEMAP_EXCLUDE)
+    if (SITEMAP_EXCLUDE.has(url.replace(/\/$/, ''))) { skippedExclude++; continue; }
 
     // noindex-Seiten nicht in die Sitemap aufnehmen
     if (isNoIndex(file)) continue;
@@ -123,7 +179,7 @@ function generateSitemap() {
     if (!urls.has(fullUrl)) {
       urls.set(fullUrl, {
         loc: fullUrl,
-        lastmod: TODAY,
+        lastmod: getLastmod(file),
         changefreq: getChangefreq(url),
         priority: getPriority(url)
       });
@@ -155,7 +211,7 @@ function generateSitemap() {
   const outPath = path.join(ROOT, 'sitemap.xml');
   fs.writeFileSync(outPath, xml);
 
-  console.log(`Sitemap generiert: ${sorted.length} URLs → sitemap.xml (${TODAY})`);
+  console.log(`Sitemap generiert: ${sorted.length} URLs → sitemap.xml (${TODAY}); ${skippedRedirect} 301/410-Quellen + ${skippedExclude} themenfremde übersprungen`);
 }
 
 generateSitemap();
