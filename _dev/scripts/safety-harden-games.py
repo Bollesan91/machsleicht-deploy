@@ -26,6 +26,17 @@ RULES = [
   'nicht schwingen', ' Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).'),
  (lambda n,b,g: 'vulkan' in b and ('essig' in b or 'natron' in b or 'ausbruch' in b or 'experiment' in b),
   'Natron-Essig', ' Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.'),
+ # Batch-1-Review (24.06.) — name-verankert:
+ (lambda n,b,g: 'schwert' in n or 'fecht' in n,
+  'auf Kopf', ' Beim Fechten/Kämpfen NIE auf Kopf oder Gesicht zielen — nur Körper/Schild; nur weiche Materialien (Pool-Nudel/Schaumstoff), Aufsicht.'),
+ (lambda n,b,g: 'knoten' in n or 'seil' in n,
+  'um Hals', ' Seile/Schnüre kurz halten und NIE um Hals oder Körperteile wickeln.'),
+ (lambda n,b,g: g=='klein' and ('reiskörn' in b or ('reis' in b and 'wanne' in b)),
+  'in den Mund', ' Reiskörner auch nicht in den Mund nehmen (Aspirationsgefahr) — Sichtaufsicht in Armlänge.'),
+ (lambda n,b,g: 'pirsch' in n,
+  'Geländegrenzen', ' Draußen: Geländegrenzen klar abstecken — keine Pirsch Richtung Straße, Wasser oder Abhang; Begleitperson dabei.'),
+ (lambda n,b,g: 'füttern' in n or 'dosenwerfen' in n or 'zielwurf' in n or 'zielspritzen' in n,
+  'aufs Ziel', ' Nur aufs Ziel werfen/spritzen, nie auf Personen oder ins Gesicht.'),
 ]
 
 def gtext(g):
