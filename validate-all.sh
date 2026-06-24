@@ -17,7 +17,7 @@ echo ""
 
 # ── STUFE 1: JS SYNTAX ──
 echo "── STUFE 1: JS Syntax ──"
-for f in js/index.js js/homepage.js js/kindergeburtstag.js js/baby.js js/einschulung.js; do
+for f in js/index.js js/homepage.js js/baby.js js/einschulung.js; do
   if [ -f "$REPO/$f" ]; then
     result=$(node -e "try{new Function(require('fs').readFileSync('$REPO/$f','utf8'));console.log('OK')}catch(e){console.log('FAIL:'+e.message)}" 2>&1)
     if [[ "$result" == "OK" ]]; then

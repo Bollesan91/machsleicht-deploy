@@ -109,7 +109,7 @@
               "content": "Wenn alle Ballons mal gerettet wurden — gemeinsamer Helden-Jubel."
             }
           ],
-          "safetyRule": "Geplatzte Ballonreste sofort einsammeln (Verschluckungsgefahr!). Nur bei Aufsicht. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel.",
+          "safetyRule": "Geplatzte Ballonreste sofort einsammeln (Verschluckungsgefahr!). Nur bei Aufsicht. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel. Bei bekannter Latexallergie Folienballons oder Schaumstoffbälle nutzen.",
           "ageAdjust6": "Mehr Ballons gleichzeitig, kleine Zähl-Challenge.",
           "ageAdjust8": "—",
           "indoorTip": "Ideal drinnen, keine Zugluft.",
@@ -316,6 +316,76 @@
           "outdoorTip": "Im Garten, klar begrenzt.",
           "whyItWorksTitle": "Warum das zieht",
           "whyItWorks": "Bild-Hinweise funktionieren auch ohne Lesen — die Kleinen 'lösen' selbst und das Schatz-Finale ist der Höhepunkt."
+        },
+        {
+          "name": "🎈 Ballons retten",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": "laut",
+          "effort": "niedrig",
+          "material": "6–10 bunte Luftballons",
+          "prepText": "Ballons aufpusten, bereithalten.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "'Die Ballons dürfen nicht auf den Boden — haltet sie als Helden in der Luft!'"
+            },
+            {
+              "n": 2,
+              "name": "Hochhalten",
+              "content": "Alle Kinder tippen die Ballons gemeinsam hoch, immer mehr Ballons dazu."
+            },
+            {
+              "n": 3,
+              "name": "Jubel",
+              "content": "Wenn alle Ballons mal gerettet wurden — gemeinsamer Helden-Jubel."
+            }
+          ],
+          "safetyRule": "Geplatzte Ballonreste sofort einsammeln (Verschluckungsgefahr!). Nur bei Aufsicht. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel. Bei bekannter Latexallergie Folienballons oder Schaumstoffbälle nutzen.",
+          "ageAdjust6": "Mehr Ballons gleichzeitig, kleine Zähl-Challenge.",
+          "ageAdjust8": "—",
+          "indoorTip": "Ideal drinnen, keine Zugluft.",
+          "outdoorTip": "Nur windstill.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Einfachste Regel, maximaler Spaß — und das gemeinsame Ziel macht alle zu einem Team ohne Wettkampf."
+        },
+        {
+          "name": "💪 Kraft-Stationen (3 einfache)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 20,
+          "minAge": 3,
+          "loudness": "mittel",
+          "effort": "niedrig",
+          "material": "Eimer + weiche Bälle (Zielwurf), Klebeband-Linie (Balance), Ballons (Hochhalten)",
+          "prepText": "Drei einfache Stationen aufbauen, je eine erwachsene Person dabei.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Reihum",
+              "content": "Kleine Gruppen gehen reihum zu den 3 Stationen."
+            },
+            {
+              "n": 2,
+              "name": "Mitmachen",
+              "content": "Bälle in den Eimer, auf der Linie balancieren, Ballon hochhalten — alle schaffen alles."
+            },
+            {
+              "n": 3,
+              "name": "Sticker",
+              "content": "Pro Station ein Sticker aufs Cape."
+            }
+          ],
+          "safetyRule": "Linie auf dem Boden (nicht erhöht), weiche Bälle, Erwachsene an jeder Station.",
+          "ageAdjust6": "Etwas schwieriger.",
+          "ageAdjust8": "—",
+          "indoorTip": "In verschiedene Ecken.",
+          "outdoorTip": "Im Garten mit Abstand.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Stationen in Kleingruppen vermeiden Warten — alle sind beschäftigt, und Sticker machen Erfolg sichtbar."
         }
       ],
       "food": "Obstspieße, Helden-Muffins, Gemüsesticks mit Dip, Saftschorle. Optional Mini-Würstchen. Klein portioniert.",
@@ -560,6 +630,41 @@
           "outdoorTip": "Im Garten, klar begrenzt.",
           "whyItWorksTitle": "Warum das zieht",
           "whyItWorks": "Bild-Hinweise funktionieren auch ohne Lesen — die Kleinen 'lösen' selbst und das Schatz-Finale ist der Höhepunkt."
+        },
+        {
+          "name": "🎈 Ballons retten",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": "laut",
+          "effort": "niedrig",
+          "material": "6–10 bunte Luftballons",
+          "prepText": "Ballons aufpusten, bereithalten.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "'Die Ballons dürfen nicht auf den Boden — haltet sie als Helden in der Luft!'"
+            },
+            {
+              "n": 2,
+              "name": "Hochhalten",
+              "content": "Alle Kinder tippen die Ballons gemeinsam hoch, immer mehr Ballons dazu."
+            },
+            {
+              "n": 3,
+              "name": "Jubel",
+              "content": "Wenn alle Ballons mal gerettet wurden — gemeinsamer Helden-Jubel."
+            }
+          ],
+          "safetyRule": "Geplatzte Ballonreste sofort einsammeln (Verschluckungsgefahr!). Nur bei Aufsicht. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel. Bei bekannter Latexallergie Folienballons oder Schaumstoffbälle nutzen.",
+          "ageAdjust6": "Mehr Ballons gleichzeitig, kleine Zähl-Challenge.",
+          "ageAdjust8": "—",
+          "indoorTip": "Ideal drinnen, keine Zugluft.",
+          "outdoorTip": "Nur windstill.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Einfachste Regel, maximaler Spaß — und das gemeinsame Ziel macht alle zu einem Team ohne Wettkampf."
         }
       ],
       "food": "Buntes Helden-Buffet: Obstspieße, Muffins mit Toppern, Gemüse mit Dip, Mini-Würstchen, Saftschorle in bunten Bechern.",
@@ -690,6 +795,7 @@
     {
       "week": "2 Wochen vorher",
       "tasks": [
+        "Allergien/Unverträglichkeiten der Gäste abfragen (Nuss, Laktose, Gluten)",
         "Einladungen verschicken",
         "Capes bestellen (Lieferzeit)",
         "Überlegen: spielt jemand das Quatschmonster?"
@@ -698,7 +804,7 @@
     {
       "week": "1 Woche vorher",
       "tasks": [
-        "Deko besorgen (Ballons, Tonpapier, Servietten)",
+        "Deko besorgen (Ballons, Tonpapier, Servietten). Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen.",
         "Bilder-Schatzsuche vorbereiten (Fotos)",
         "Mitgebsel ohne Kleinteile packen",
         "Muffin-Zutaten kaufen"

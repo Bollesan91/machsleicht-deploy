@@ -159,7 +159,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "15 Quiz-Karten mit Bildern (Hammer, Säge, Bohrer, Schraubenzieher, Wasserwaage, Maßband, Zollstock, Spachtel, Kelle, Pinsel, Kran, Bagger, Schubkarre, Helm, Warnweste), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
-          "safetyRule": "Echte Werkzeuge ohne scharfe Kanten zum Anfassen. Sitz-Spiel, keine besondere Sicherheit nötig.",
+          "safetyRule": "Echte Werkzeuge ohne scharfe Kanten zum Anfassen. Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "steps": [
             {
               "n": 1,
@@ -504,7 +504,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "15 Quiz-Karten mit Bildern (Hammer, Säge, Bohrer, Schraubenzieher, Wasserwaage, Maßband, Zollstock, Spachtel, Kelle, Pinsel, Kran, Bagger, Schubkarre, Helm, Warnweste), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
-          "safetyRule": "Echte Werkzeuge ohne scharfe Kanten zum Anfassen. Sitz-Spiel, keine besondere Sicherheit nötig.",
+          "safetyRule": "Echte Werkzeuge ohne scharfe Kanten zum Anfassen. Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "steps": [
             {
               "n": 1,
@@ -938,7 +938,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "15 Quiz-Karten mit Bildern (Hammer, Säge, Bohrer, Schraubenzieher, Wasserwaage, Maßband, Zollstock, Spachtel, Kelle, Pinsel, Kran, Bagger, Schubkarre, Helm, Warnweste), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
-          "safetyRule": "Echte Werkzeuge ohne scharfe Kanten zum Anfassen. Sitz-Spiel, keine besondere Sicherheit nötig.",
+          "safetyRule": "Echte Werkzeuge ohne scharfe Kanten zum Anfassen. Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "steps": [
             {
               "n": 1,

@@ -74,7 +74,7 @@
               "content": "Musik wieder an, weitertanzen. Kein Ausscheiden — nur Spaß."
             }
           ],
-          "safetyRule": "Boden frei von Stolperfallen, weiche Umgebung. Genug Abstand zwischen den Kindern.",
+          "safetyRule": "Boden frei von Stolperfallen, weiche Umgebung. Genug Abstand zwischen den Kindern. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
           "ageAdjust6": "—",
           "ageAdjust8": "—",
           "indoorTip": "Im Wohnzimmer auf dem Teppich.",
@@ -235,7 +235,7 @@
               "content": "Kein Ausscheiden, nur Spaß."
             }
           ],
-          "safetyRule": "Boden frei, Abstand halten.",
+          "safetyRule": "Boden frei, Abstand halten. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
           "ageAdjust6": "—",
           "ageAdjust8": "—",
           "indoorTip": "Wohnzimmer.",
@@ -270,7 +270,7 @@
               "content": "Am Ende: 'Du hast den Zauberweg geschafft!' Kleiner Applaus."
             }
           ],
-          "safetyRule": "Alle Stationen niedrig und weich (keine Klettergefahr). Stab-Spitze stumpf (Karton). Ein Kind nach dem anderen mit Begleitung.",
+          "safetyRule": "Alle Stationen niedrig und weich (keine Klettergefahr). Stab-Spitze stumpf (Karton). Ein Kind nach dem anderen mit Begleitung. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": "—",
           "ageAdjust8": "—",
           "indoorTip": "Durch zwei Zimmer.",
@@ -347,6 +347,41 @@
           "outdoorTip": "Im Garten auf dem Rasen.",
           "whyItWorksTitle": "Warum das zieht",
           "whyItWorks": "Suchen und Finden ist für kleine Kinder pure Freude — es gibt sofort Belohnung, alle finden etwas, und das gemeinsame Sammeln verhindert Frust."
+        },
+        {
+          "name": "✨ Sanfte Verwandlungs-Ecke",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 25,
+          "minAge": 3,
+          "loudness": "leise",
+          "effort": "niedrig",
+          "material": "Glitzer-Tattoos (Aufkleb, mit Wasser), weicher Haarschmuck/Clips, Spiegel, Feuchttücher",
+          "prepText": "Eine kleine Ecke mit Spiegel einrichten. Eine erwachsene Person hilft beim Aufkleben.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Aussuchen",
+              "content": "Jedes Kind wählt ein Glitzer-Tattoo (Stern, Herz) oder einen Haar-Clip."
+            },
+            {
+              "n": 2,
+              "name": "Verwandeln",
+              "content": "Tattoo mit Wasser aufkleben oder Clip ins Haar — Kind schaut im Spiegel."
+            },
+            {
+              "n": 3,
+              "name": "Krone dazu",
+              "content": "Krone auf — fertig ist die königliche Verwandlung."
+            }
+          ],
+          "safetyRule": "Nur kindgerechte Aufkleb-Tattoos (keine Schminke nötig), vorher Eltern fragen. Kein Zwang. Kleinteile (Clips) nicht in Mundreichweite lassen. Klebe-Tattoos auf Hautverträglichkeit prüfen und Allergien vorher abfragen.",
+          "ageAdjust6": "—",
+          "ageAdjust8": "—",
+          "indoorTip": "Am Spiegel.",
+          "outdoorTip": "Drinnen.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Der Blick in den Spiegel mit Krone und Glitzer ist für kleine Kinder echte Magie — ein ruhiger, staunender Moment gleich zu Beginn."
         }
       ],
       "food": "Rosa Obst, Krönchen-Kekse, milde Saftschorle ('Zaubertrank'), weiche Brezeln, Gurken-/Karottensticks mit mildem Dip. Mundgerecht und nicht zu süß.",
@@ -479,7 +514,7 @@
               "content": "Kein Ausscheiden."
             }
           ],
-          "safetyRule": "Boden frei.",
+          "safetyRule": "Boden frei. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
           "ageAdjust6": "—",
           "ageAdjust8": "—",
           "indoorTip": "Wohnzimmer.",
@@ -514,7 +549,7 @@
               "content": "Applaus am Ende."
             }
           ],
-          "safetyRule": "Niedrig + weich, Stab stumpf, Begleitung.",
+          "safetyRule": "Niedrig + weich, Stab stumpf, Begleitung. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": "—",
           "ageAdjust8": "—",
           "indoorTip": "Zwei Zimmer.",
@@ -561,6 +596,76 @@
           "outdoorTip": "Im Garten.",
           "whyItWorksTitle": "Warum das zieht",
           "whyItWorks": "Ein lieber, tollpatschiger Drache (kein böser!) gibt der Schatzsuche eine süße Geschichte — die Kleinen 'helfen' statt zu kämpfen, und finden tut jedes Kind etwas."
+        },
+        {
+          "name": "⭐ Glitzer-Sterne basteln",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": "leise",
+          "effort": "niedrig",
+          "material": "Vorgeschnittene große Sterne aus Karton, große Glitzer-Sticker/Klebepunkte (keine losen Pailletten!), dicke Stifte",
+          "prepText": "Pro Kind einen großen Karton-Stern bereitlegen, Sticker in einer Schale (große, nicht verschluckbare Aufkleber).",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Stern aussuchen",
+              "content": "Jedes Kind bekommt einen großen Stern."
+            },
+            {
+              "n": 2,
+              "name": "Verzieren",
+              "content": "Mit großen Glitzer-Stickern und Stiften bekleben/anmalen."
+            },
+            {
+              "n": 3,
+              "name": "Zaubern",
+              "content": "'Dein Zauberstern!' — am Faden aufhängen oder mit nach Hause nehmen."
+            }
+          ],
+          "safetyRule": "Nur große, nicht verschluckbare Sticker — keine losen Perlen/Pailletten. Stumpfe Stifte. Immer Aufsicht. Nur Klebeglitzer oder Glitzerfolie — KEIN loser Streuglitzer (Augen/Einatmen, besonders bei 3-5).",
+          "ageAdjust6": "—",
+          "ageAdjust8": "—",
+          "indoorTip": "Am Tisch mit Unterlage.",
+          "outdoorTip": "Windgeschützt drinnen besser.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Kleben und Glitzer begeistert die Kleinsten, es gibt kein Richtig/Falsch, und am Ende hält jedes Kind stolz seinen eigenen Zauberstern in der Hand."
+        },
+        {
+          "name": "👑 Krönchen-Schatzsuche",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 3,
+          "loudness": "mittel",
+          "effort": "niedrig",
+          "material": "Viele kleine (aber NICHT verschluckbare) Krönchen/Schätze, ein Schatzbeutel pro Kind",
+          "prepText": "Krönchen/Schätze im 'Schloss' (Raum/Garten) gut sichtbar verstecken — eher leicht zu finden.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "'Der Drache hat überall Schätze versteckt — findet sie alle!'"
+            },
+            {
+              "n": 2,
+              "name": "Suchen",
+              "content": "Alle Kinder suchen gemeinsam, jeder sammelt in seinen Beutel."
+            },
+            {
+              "n": 3,
+              "name": "Teilen",
+              "content": "Am Ende schauen, dass jedes Kind etwa gleich viel hat — niemand geht leer aus."
+            }
+          ],
+          "safetyRule": "Keine verschluckbaren Kleinteile verstecken. Sichere, einsehbare Verstecke. Begleitung beim Suchen.",
+          "ageAdjust6": "—",
+          "ageAdjust8": "—",
+          "indoorTip": "Im Zimmer, gut sichtbar.",
+          "outdoorTip": "Im Garten auf dem Rasen.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Suchen und Finden ist für kleine Kinder pure Freude — es gibt sofort Belohnung, alle finden etwas, und das gemeinsame Sammeln verhindert Frust."
         }
       ],
       "food": "Großes, mundgerechtes Zauberbuffet: rosa Obst, Krönchen-Kekse, weiche Brezeln, Gemüsesticks mit Dip, Mini-Muffins als 'Zauberküchlein', milde Saftschorle in Krönchen-Bechern.",
@@ -691,6 +796,7 @@
     {
       "week": "3 Wochen vorher",
       "tasks": [
+        "Allergien/Unverträglichkeiten der Gäste abfragen (Nuss, Laktose, Gluten)",
         "Einladungen verschicken",
         "Kronen + Umhänge bestellen",
         "Überlegen: kleine Drachen-Geschichte / Verwandlungs-Ecke?"
@@ -699,7 +805,7 @@
     {
       "week": "1 Woche vorher",
       "tasks": [
-        "Deko besorgen (Ballons, Girlande, Tüll)",
+        "Deko besorgen (Ballons, Girlande, Tüll). Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen.",
         "Bastel-Material zuschneiden (große Sterne)",
         "Krönchen-Schätze kaufen (verschluckungssicher)",
         "Kuchen-Zutaten besorgen"
@@ -708,7 +814,7 @@
     {
       "week": "1 Tag vorher",
       "tasks": [
-        "Ballons + Girlande aufhängen",
+        "Ballons + Girlande aufhängen. Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen.",
         "Bastel- und Parcours-Material bereitlegen",
         "Cupcakes/Torte backen",
         "Schatzbeutel vorbereiten"

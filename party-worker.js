@@ -279,6 +279,9 @@ function icsEscape(s) {
 function safeParse(raw) { try { return JSON.parse(raw); } catch (e) { return null; } }
 // M1: Nicht-JSON-Body soll 400 geben, nicht 500. Gibt null bei kaputtem Body.
 async function safeReqJson(req) { try { return await req.json(); } catch (e) { return null; } }
+// #30 Type-Confusion-Schutz: Nicht-Strings ({"name":[]}) wuerfen bei .trim()/.slice() TypeError -> 500.
+function asStr(v) { return typeof v === "string" ? v : ""; }
+function asArr(v) { return Array.isArray(v) ? v : []; }
 
 // M4: nur echtes ISO-Datum (YYYY-MM-DD) akzeptieren — sonst "Invalid Date"/kaputtes ICS-DTSTART.
 function validDate(d) { return /^\d{4}-\d{2}-\d{2}$/.test(d || "") ? d : ""; }
@@ -309,25 +312,25 @@ export default {
       const editToken = generateToken();
       const party = {
         id, editToken,
-        childName: (body.childName || "").trim().slice(0,50),
+        childName: (asStr(body.childName)).trim().slice(0,50),
         age: Math.min(Math.max(parseInt(body.age)||0,0),18)||null,
-        motto: (body.motto||"").slice(0,60),
-        mottoId: (body.mottoId||"").slice(0,40), // sauberer Theme-Kontrakt: kanonische ID statt Freitext-Name (getTheme matcht damit exakt, Custom faellt sauber auf Default)
+        motto: (asStr(body.motto)).slice(0,60),
+        mottoId: (asStr(body.mottoId)).slice(0,40), // sauberer Theme-Kontrakt: kanonische ID statt Freitext-Name (getTheme matcht damit exakt, Custom faellt sauber auf Default)
         mottoEmoji: firstEmoji(body.mottoEmoji),
         mottoColor: /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A",
-        date: validDate(body.date), time: body.time||"", endTime: body.endTime||"",
-        address: (body.address||"").slice(0,200),
-        notes: (body.notes||"").slice(0,500),
+        date: validDate(body.date), time: asStr(body.time), endTime: asStr(body.endTime),
+        address: (asStr(body.address)).slice(0,200),
+        notes: (asStr(body.notes)).slice(0,500),
         askAllergies: body.askAllergies!==false,
         askPickup: body.askPickup!==false,
-        wishes: (body.wishes||[]).slice(0,MAX_WISHES).map(w=>({
-          id: generateId(6), title:(w.title||"").slice(0,100), url:normalizeWishUrl(w.url),
-          price:(w.price||"").slice(0,20), sharedGift:!!w.sharedGift, claimedBy:[]
+        wishes: (asArr(body.wishes)).slice(0,MAX_WISHES).map(w=>({
+          id: generateId(6), title:(asStr(w.title)).slice(0,100), url:normalizeWishUrl(w.url),
+          price:(asStr(w.price)).slice(0,20), sharedGift:!!w.sharedGift, claimedBy:[]
         })).filter(w=>w.title),
         guests: [],
         paypalMe: sanitizePaypal(body.paypalMe),
         created: new Date().toISOString(),
-        ref: /^[a-z0-9]{6,12}$/.test(body.ref||"") ? body.ref : null,  // Virale Attribution (Gast->Host): ID der Party, die diesen neuen Host geseedet hat
+        ref: /^[a-z0-9]{6,12}$/.test(asStr(body.ref)) ? body.ref : null,  // Virale Attribution (Gast->Host): ID der Party, die diesen neuen Host geseedet hat
       };
       const ttl = calcTTL(party.date);
       // photoRound (Spiel-Foto): raw base64 unter invphoto:<id> ablegen (von /api/invimg ausgeliefert) + Flag setzen.
@@ -380,27 +383,27 @@ export default {
       if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
       // P0-Security: PUT muss DIESELBE Sanitization wie /api/create anwenden — sonst umgeht ein editToken-Inhaber
       // saemtliche create-Limits (Stored-XSS via age/notes/childName etc. auf der oeffentlichen Gaesteseite, Gutachter-HIGH).
-      if(body.childName!==undefined) party.childName = (body.childName||"").trim().slice(0,50);
+      if(body.childName!==undefined) party.childName = (asStr(body.childName)).trim().slice(0,50);
       if(body.age!==undefined) party.age = Math.min(Math.max(parseInt(body.age)||0,0),18)||null;
-      if(body.motto!==undefined) party.motto = (body.motto||"").slice(0,60);
-      if(body.mottoId!==undefined) party.mottoId = (body.mottoId||"").slice(0,40);
+      if(body.motto!==undefined) party.motto = (asStr(body.motto)).slice(0,60);
+      if(body.mottoId!==undefined) party.mottoId = (asStr(body.mottoId)).slice(0,40);
       if(body.mottoEmoji!==undefined) party.mottoEmoji = firstEmoji(body.mottoEmoji);
       if(body.mottoColor!==undefined) party.mottoColor = /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A";
       if(body.date!==undefined) party.date = validDate(body.date);
-      if(body.time!==undefined) party.time = (body.time||"").slice(0,20);
-      if(body.endTime!==undefined) party.endTime = (body.endTime||"").slice(0,20);
-      if(body.address!==undefined) party.address = (body.address||"").slice(0,200);
-      if(body.notes!==undefined) party.notes = (body.notes||"").slice(0,500);
+      if(body.time!==undefined) party.time = (asStr(body.time)).slice(0,20);
+      if(body.endTime!==undefined) party.endTime = (asStr(body.endTime)).slice(0,20);
+      if(body.address!==undefined) party.address = (asStr(body.address)).slice(0,200);
+      if(body.notes!==undefined) party.notes = (asStr(body.notes)).slice(0,500);
       if(body.askAllergies!==undefined) party.askAllergies = body.askAllergies!==false;
       if(body.askPickup!==undefined) party.askPickup = body.askPickup!==false;
       if(body.paypalMe!==undefined) party.paypalMe = sanitizePaypal(body.paypalMe);
-      if(body.email!==undefined) party.email = (body.email||"").slice(0,120);
+      if(body.email!==undefined) party.email = (asStr(body.email)).slice(0,120);
       if (Array.isArray(body.wishes)) {
         party.wishes = body.wishes.slice(0,MAX_WISHES).map(w=>({
-          id:w.id||generateId(6),title:(w.title||"").slice(0,100),url:normalizeWishUrl(w.url),
+          id:w.id||generateId(6),title:(asStr(w.title)).slice(0,100),url:normalizeWishUrl(w.url),
           // P0-Security Welle 1E: claimedBy MUSS Array sein. Sonst Type-Confusion bei späterem
           // claim-Call: String-length-Check umgeht Auth bei sharedGift-Wünschen.
-          price:(w.price||"").slice(0,20),sharedGift:!!w.sharedGift,claimedBy:Array.isArray(w.claimedBy)?w.claimedBy:[]
+          price:(asStr(w.price)).slice(0,20),sharedGift:!!w.sharedGift,claimedBy:Array.isArray(w.claimedBy)?w.claimedBy:[]
         }));
       }
       const ttl = calcTTL(party.date);
@@ -453,15 +456,15 @@ export default {
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       // Abuse-Drossel (anonymer Schreib-Endpoint): IP-Counter gemeinsam mit wish/claim, 30/h gegen Flood/KV-Bloat.
       { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte spaeter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
-      const name = (body.name||"").trim().slice(0,50);
+      const name = (asStr(body.name)).trim().slice(0,50);
       if (!name) return json({error:"Name fehlt"},400, request);
       if (!Array.isArray(party.guests)) party.guests = []; // L7: Legacy-Party ohne guests-Feld nicht crashen
       if (party.guests.length>=MAX_GUESTS && !party.guests.find(g=>g.name.toLowerCase()===name.toLowerCase()))
         return json({error:"Maximale Gästezahl erreicht"},400, request);
       const guest = {
         name, status:["ja","nein","vielleicht"].includes(body.status)?body.status:"ja",
-        allergies:(body.allergies||"").slice(0,200), pickupTime:(body.pickupTime||"").slice(0,10),
-        pickupPerson:(body.pickupPerson||"").slice(0,50), respondedAt:new Date().toISOString()
+        allergies:(asStr(body.allergies)).slice(0,200), pickupTime:(asStr(body.pickupTime)).slice(0,10),
+        pickupPerson:(asStr(body.pickupPerson)).slice(0,50), respondedAt:new Date().toISOString()
       };
       const existing = party.guests.findIndex(g=>g.name.toLowerCase()===name.toLowerCase());
       if (existing>=0) party.guests[existing]=guest; else party.guests.push(guest);
@@ -481,7 +484,7 @@ export default {
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       // Abuse-Drossel (anonymer Schreib-Endpoint): IP-Counter gemeinsam mit rsvp, 30/h gegen Flood/KV-Bloat.
       { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte spaeter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
-      const guestName = (body.name||"").trim().slice(0,50); // F4: Laengen-Limit gegen KV-Bloat/XSS-Payload
+      const guestName = (asStr(body.name)).trim().slice(0,50); // F4: Laengen-Limit gegen KV-Bloat/XSS-Payload
       if (!guestName) return json({error:"Name fehlt"},400, request);
       // amount nur bei sharedGift relevant; 0 < amount < 9999
       let amount = null;
@@ -580,7 +583,7 @@ export default {
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       // Legacy-Token-Guard (konsistent mit PUT/DELETE): tokenloser Alt-Eintrag -> undefined!==undefined=false waere Auth-Bypass (Mail-Spam-Vektor).
       if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
-      const email = (body.email||"").trim().slice(0,200);
+      const email = (asStr(body.email)).trim().slice(0,200);
       // P0-Security Welle 1E: Control-Chars (NUL, CR, LF, Tab) in Email blocken \u2014 Resend-Header-Injection-Risk.
       if (/[\x00-\x1F\x7F]/.test(email)) return json({error:"Ung\u00FCltige E-Mail"},400, request);
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({error:"Ung\u00FCltige E-Mail"},400, request);

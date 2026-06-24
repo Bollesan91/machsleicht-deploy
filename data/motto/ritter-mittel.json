@@ -359,7 +359,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "6 Pool-Nudel-Schwerter (50 cm, weich), 2 Strohballen (oder Pappkartons) als Übungsziele, 5 Slalom-Markierungen, Stoppuhr",
-          "safetyRule": "Schwerter nur am Strohballen / Kissen-Hindernis — nicht aufs Kind. Schwert-Höhe max Schulter-Höhe. Boden weich/rutschfest halten; reihum, nie zwei gleichzeitig auf der Strecke.",
+          "safetyRule": "Schwerter nur am Strohballen / Kissen-Hindernis — nicht aufs Kind. Schwert-Höhe max Schulter-Höhe. Boden weich/rutschfest halten; reihum, nie zwei gleichzeitig auf der Strecke. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern. Beim Fechten/Kämpfen NIE auf Kopf oder Gesicht zielen — nur Körper/Schild; nur weiche Materialien (Pool-Nudel/Schaumstoff), Aufsicht.",
           "steps": [
             {
               "n": 1,
@@ -686,7 +686,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "6 Pool-Nudel-Schwerter (50 cm, weich), 2 Strohballen (oder Pappkartons) als Übungsziele, 5 Slalom-Markierungen, Stoppuhr",
-          "safetyRule": "Schwerter nur am Strohballen / Kissen-Hindernis — nicht aufs Kind. Schwert-Höhe max Schulter-Höhe. Boden weich/rutschfest halten; reihum, nie zwei gleichzeitig auf der Strecke.",
+          "safetyRule": "Schwerter nur am Strohballen / Kissen-Hindernis — nicht aufs Kind. Schwert-Höhe max Schulter-Höhe. Boden weich/rutschfest halten; reihum, nie zwei gleichzeitig auf der Strecke. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern. Beim Fechten/Kämpfen NIE auf Kopf oder Gesicht zielen — nur Körper/Schild; nur weiche Materialien (Pool-Nudel/Schaumstoff), Aufsicht.",
           "steps": [
             {
               "n": 1,
@@ -1093,7 +1093,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "6 Pool-Nudel-Schwerter (50 cm, weich), 2 Strohballen (oder Pappkartons) als Übungsziele, 5 Slalom-Markierungen, Stoppuhr",
-          "safetyRule": "Schwerter nur am Strohballen / Kissen-Hindernis — nicht aufs Kind. Schwert-Höhe max Schulter-Höhe. Boden weich/rutschfest halten; reihum, nie zwei gleichzeitig auf der Strecke.",
+          "safetyRule": "Schwerter nur am Strohballen / Kissen-Hindernis — nicht aufs Kind. Schwert-Höhe max Schulter-Höhe. Boden weich/rutschfest halten; reihum, nie zwei gleichzeitig auf der Strecke. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern. Beim Fechten/Kämpfen NIE auf Kopf oder Gesicht zielen — nur Körper/Schild; nur weiche Materialien (Pool-Nudel/Schaumstoff), Aufsicht.",
           "steps": [
             {
               "n": 1,
@@ -1203,7 +1203,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "10 Pool-Nudel-Schwerter, 3 Strohballen (verschiedene Entfernungen + Höhen), Wertungstafel, Mini-Pokale (Wow-Highlight)",
-          "safetyRule": "Schwerter nur am Strohballen. Übung pro Kind max 2 Min. Schutzbrille optional.",
+          "safetyRule": "Schwerter nur am Strohballen. Übung pro Kind max 2 Min. Schutzbrille optional. Beim Fechten/Kämpfen NIE auf Kopf oder Gesicht zielen — nur Körper/Schild; nur weiche Materialien (Pool-Nudel/Schaumstoff), Aufsicht.",
           "steps": [
             {
               "n": 1,

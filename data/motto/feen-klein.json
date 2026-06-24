@@ -231,7 +231,7 @@
               "content": "Wer einen Schmetterling findet, darf ihn behalten — er landet später in der Mitgebsel-Tüte."
             }
           ],
-          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: NUR essbaren Glitzer (kein Bastel-Glitzer — Atemweg/Augen). Figuren min. 6 cm (4 cm passt durch den Verschluck-Prüfzylinder). Kinder nicht alleine graben lassen. Reis nicht in die Augen — bei Augenkontakt mit Wasser spülen, ggf. Augenarzt.",
+          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: NUR essbaren Glitzer (kein Bastel-Glitzer — Atemweg/Augen). Figuren min. 6 cm (4 cm passt durch den Verschluck-Prüfzylinder). Kinder nicht alleine graben lassen. Reis nicht in die Augen — bei Augenkontakt mit Wasser spülen, ggf. Augenarzt. Bei den Kleinen engmaschig beaufsichtigen — Reiskörner gehören nicht in Nase/Ohr; ggf. gröberes Sensorik-Medium. Reiskörner auch nicht in den Mund nehmen (Aspirationsgefahr) — Sichtaufsicht in Armlänge.",
           "ageAdjust6": "Figuren nur leicht bedecken. Reis statt Sand (wiederverwendbar, weniger Sauerei). Auf alter Tischdecke oder in Badewanne aufstellen — Glitzer wandert weniger.",
           "ageAdjust8": "Tiefer vergraben. Augen zu und nur ertasten — welche Figur ist das (Schmetterling oder Marienkäfer)?",
           "indoorTip": "In der Badewanne aufstellen — Glitzer wandert weniger, Kinder sitzen drumherum.",
@@ -413,7 +413,7 @@
               "content": "Wer einen Schmetterling findet, darf ihn behalten — er landet später in der Mitgebsel-Tüte."
             }
           ],
-          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: NUR essbaren Glitzer (kein Bastel-Glitzer — Atemweg/Augen). Figuren min. 6 cm (4 cm passt durch den Verschluck-Prüfzylinder). Kinder nicht alleine graben lassen. Reis nicht in die Augen — bei Augenkontakt mit Wasser spülen, ggf. Augenarzt.",
+          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: NUR essbaren Glitzer (kein Bastel-Glitzer — Atemweg/Augen). Figuren min. 6 cm (4 cm passt durch den Verschluck-Prüfzylinder). Kinder nicht alleine graben lassen. Reis nicht in die Augen — bei Augenkontakt mit Wasser spülen, ggf. Augenarzt. Bei den Kleinen engmaschig beaufsichtigen — Reiskörner gehören nicht in Nase/Ohr; ggf. gröberes Sensorik-Medium. Reiskörner auch nicht in den Mund nehmen (Aspirationsgefahr) — Sichtaufsicht in Armlänge.",
           "ageAdjust6": "Figuren nur leicht bedecken. Reis statt Sand (wiederverwendbar, weniger Sauerei). Auf alter Tischdecke oder in Badewanne aufstellen — Glitzer wandert weniger.",
           "ageAdjust8": "Tiefer vergraben. Augen zu und nur ertasten — welche Figur ist das (Schmetterling oder Marienkäfer)?",
           "indoorTip": "In der Badewanne aufstellen — Glitzer wandert weniger, Kinder sitzen drumherum.",
@@ -495,7 +495,7 @@
               "content": "Wer sich noch bewegt, bekommt einen Blüten-Sticker auf den Schleier — Belohnung, kein Ausscheiden."
             }
           ],
-          "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Schleier-Schnüre/Bändchen vorher abschneiden — Strangulationsrisiko. Bei Tanz: Möbelkanten polstern oder Spielzeug wegräumen.",
+          "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Schleier-Schnüre/Bändchen vorher abschneiden — Strangulationsrisiko. Bei Tanz: Möbelkanten polstern oder Spielzeug wegräumen. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
           "ageAdjust6": "Einfrieren ist noch schwer — bei Stopp einfach hinhocken. Schleier nicht um den Hals — nur in der Hand.",
           "ageAdjust8": "Einfrieren als bestimmte Figur: „Zeig mir einen Schmetterling auf einer Blüte!\" — Pose halten.",
           "indoorTip": "Möbel zur Seite schieben — die Schleier brauchen Platz zum Schwingen.",
@@ -503,6 +503,47 @@
           "whyItWorksTitle": null,
           "whyItWorks": null,
           "ageAdjust3": "Für 3-Jaehrige: Musik max. 80 dB, Tanz max. 3-4 Min, dann ruhige Pause. Schleier nicht ueber den Kopf wickeln, nur in der Hand halten."
+        },
+        {
+          "name": "🦋 Schmetterlinge fangen mit Tüllbällen",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": "mittel",
+          "effort": "leicht",
+          "material": "8–12 bunte Tüllbälle (Bastelladen ~3 € oder zusammengeknülltes Krepppapier mit Klebeband fixiert), 1 Korb/Eimer als Blütenkorb, optional Tücher zum Schwenken",
+          "prepText": "Tüllbälle (oder Krepppapier-Schmetterlinge) durch den Raum werfen oder auf Stühle/Boden verteilen. Kinder fliegen wie Feen herum und „fangen\" die Schmetterlinge, indem sie sie aufheben und in den Blütenkorb legen. Kein Punktezählen — alle Schmetterlinge gehören in den Korb, jedes Kind hilft mit.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Aufbau",
+              "content": "Tüllbälle (oder Krepppapier-Schmetterlinge, min. 5 cm) durch den Raum werfen oder auf Stühle/Boden verteilen."
+            },
+            {
+              "n": 2,
+              "name": "Fangen",
+              "content": "Die Kinder „fliegen\" wie Feen durch den Raum und heben die Schmetterlinge auf."
+            },
+            {
+              "n": 3,
+              "name": "Sammeln",
+              "content": "Jeder gefangene Schmetterling kommt in den Blütenkorb."
+            },
+            {
+              "n": 4,
+              "name": "Gemeinsam",
+              "content": "Kein Punktezählen — alle helfen mit, bis alle Schmetterlinge im Korb sind."
+            }
+          ],
+          "safetyRule": "Bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Tüllbälle min. 5 cm Durchmesser. Generelle Aufsicht durch Erwachsene. Keine Schnüre/Drähte an den Schmetterlingen — Strangulationsrisiko. Boden weich/rutschfest, reihum (nie zwei gleichzeitig).",
+          "ageAdjust6": "Schmetterlinge nicht werfen, sondern hinlegen — sie „pflücken\" sie nur ein. Bei Stopp einfach hinsetzen.",
+          "ageAdjust8": "Mit verbundenen Augen einen Schmetterling ertasten — welche Farbe? Schwieriger, macht mehr Spaß.",
+          "indoorTip": "Wohnzimmer-Boden mit Tüchern als „Wiese\" auslegen — Schmetterlinge landen in der Wiese.",
+          "outdoorTip": "Im Garten in echte Blumenkübel/Töpfe legen — wirkt extra magisch.",
+          "whyItWorksTitle": null,
+          "whyItWorks": null,
+          "ageAdjust3": "Für 3-Jaehrige: Tuellball-Wurf-Distanz auf 1 m, langsamer Wurf. Eltern fangen mit, kein Wettbewerb. Max 3 Tueller-Schmetterlinge gleichzeitig (Reiz-Reduktion)."
         }
       ],
       "food": "🎂 Vanille-Kuchen mit rosa Buttercreme + essbaren Blüten + Glitzer (1 Gugelhupf)\n💧 Blüten-Limo (8 Trinkpäckchen + Blütenblatt)\n🍓 Rosa Obst-Teller (Erdbeeren, Himbeeren, rosa Trauben)\n🥒 Gemüse-Sticks (Gurke, Möhre, Paprika)\n🥨 Brezel-Sticks (200 g)\n🍪 Stiefmütterchen-Kekse (fertig kaufen + selber dekorieren)",
@@ -696,7 +737,7 @@
               "content": "Wer einen Schmetterling findet, darf ihn behalten — er landet später in der Mitgebsel-Tüte."
             }
           ],
-          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: NUR essbaren Glitzer (kein Bastel-Glitzer — Atemweg/Augen). Figuren min. 6 cm (4 cm passt durch den Verschluck-Prüfzylinder). Kinder nicht alleine graben lassen. Reis nicht in die Augen — bei Augenkontakt mit Wasser spülen, ggf. Augenarzt.",
+          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: NUR essbaren Glitzer (kein Bastel-Glitzer — Atemweg/Augen). Figuren min. 6 cm (4 cm passt durch den Verschluck-Prüfzylinder). Kinder nicht alleine graben lassen. Reis nicht in die Augen — bei Augenkontakt mit Wasser spülen, ggf. Augenarzt. Bei den Kleinen engmaschig beaufsichtigen — Reiskörner gehören nicht in Nase/Ohr; ggf. gröberes Sensorik-Medium. Reiskörner auch nicht in den Mund nehmen (Aspirationsgefahr) — Sichtaufsicht in Armlänge.",
           "ageAdjust6": "Figuren nur leicht bedecken. In Badewanne aufstellen.",
           "ageAdjust8": "Tiefer vergraben. Mit verbundenen Augen ertasten.",
           "indoorTip": "Badewanne als Container.",
@@ -783,7 +824,7 @@
               "content": "Glitzer-Aufkleber draufkleben — fertig ist das Feenflügel-Stäbchen."
             }
           ],
-          "safetyRule": "Schere/Tacker NUR durch Erwachsene. Heißkleber KOMPLETT TABU — alle Klebeverbindungen mit Doppelklebeband oder Klebepunkten. Statt Draht IMMER Pfeifenputzer (keine scharfen Enden, kein Strangulations-Draht — konsistent zum Verbot bei den Tüll-Schmetterlingen). Bei 3-Jährigen: Stab außerhalb des Tanzes nicht schwingen lassen (Augenstoßgefahr).",
+          "safetyRule": "Schere/Tacker NUR durch Erwachsene. Heißkleber KOMPLETT TABU — alle Klebeverbindungen mit Doppelklebeband oder Klebepunkten. Statt Draht IMMER Pfeifenputzer (keine scharfen Enden, kein Strangulations-Draht — konsistent zum Verbot bei den Tüll-Schmetterlingen). Bei 3-Jährigen: Stab außerhalb des Tanzes nicht schwingen lassen (Augenstoßgefahr). Keine offenen/scharfen Drahtenden — Enden vorbiegen oder vorgefertigte weiche Materialien.",
           "ageAdjust6": "Stab + Schmetterling komplett vorher zusammenkleben. Kinder kleben nur Bänder + Aufkleber drauf.",
           "ageAdjust8": "Sie dürfen den Schmetterling selbst aufkleben und die Bänder selbst knoten.",
           "indoorTip": null,
@@ -791,6 +832,83 @@
           "whyItWorksTitle": null,
           "whyItWorks": null,
           "ageAdjust3": "Für 3-Jaehrige: Aufmerksamkeit max. 5 Min, dann Wechsel oder Pause. Erwachsener begleitet immer. Eltern duerfen jederzeit pausieren ohne Druck."
+        },
+        {
+          "name": "🦋 Schmetterlinge fangen mit Tüllbällen",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": "mittel",
+          "effort": "leicht",
+          "material": "8–12 bunte Tüllbälle (Bastelladen ~3 € oder zusammengeknülltes Krepppapier mit Klebeband fixiert), 1 Korb/Eimer als Blütenkorb, optional Tücher zum Schwenken",
+          "prepText": "Tüllbälle (oder Krepppapier-Schmetterlinge) durch den Raum werfen oder auf Stühle/Boden verteilen. Kinder fliegen wie Feen herum und „fangen\" die Schmetterlinge, indem sie sie aufheben und in den Blütenkorb legen. Kein Punktezählen — alle Schmetterlinge gehören in den Korb, jedes Kind hilft mit.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Aufbau",
+              "content": "Tüllbälle (oder Krepppapier-Schmetterlinge, min. 5 cm) durch den Raum werfen oder auf Stühle/Boden verteilen."
+            },
+            {
+              "n": 2,
+              "name": "Fangen",
+              "content": "Die Kinder „fliegen\" wie Feen durch den Raum und heben die Schmetterlinge auf."
+            },
+            {
+              "n": 3,
+              "name": "Sammeln",
+              "content": "Jeder gefangene Schmetterling kommt in den Blütenkorb."
+            },
+            {
+              "n": 4,
+              "name": "Gemeinsam",
+              "content": "Kein Punktezählen — alle helfen mit, bis alle Schmetterlinge im Korb sind."
+            }
+          ],
+          "safetyRule": "Bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Tüllbälle min. 5 cm Durchmesser. Generelle Aufsicht durch Erwachsene. Keine Schnüre/Drähte an den Schmetterlingen — Strangulationsrisiko. Boden weich/rutschfest, reihum (nie zwei gleichzeitig).",
+          "ageAdjust6": "Schmetterlinge nicht werfen, sondern hinlegen — sie „pflücken\" sie nur ein. Bei Stopp einfach hinsetzen.",
+          "ageAdjust8": "Mit verbundenen Augen einen Schmetterling ertasten — welche Farbe? Schwieriger, macht mehr Spaß.",
+          "indoorTip": "Wohnzimmer-Boden mit Tüchern als „Wiese\" auslegen — Schmetterlinge landen in der Wiese.",
+          "outdoorTip": "Im Garten in echte Blumenkübel/Töpfe legen — wirkt extra magisch.",
+          "whyItWorksTitle": null,
+          "whyItWorks": null,
+          "ageAdjust3": "Für 3-Jaehrige: Tuellball-Wurf-Distanz auf 1 m, langsamer Wurf. Eltern fangen mit, kein Wettbewerb. Max 3 Tueller-Schmetterlinge gleichzeitig (Reiz-Reduktion)."
+        },
+        {
+          "name": "🦋 Feentanz mit Schleier",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": "laut",
+          "effort": "leicht",
+          "material": "Bluetooth-Box/Handy, ruhige Wald-Feen-Musik (Spotify: „Nature Sounds Kids\", „Forest Magic\" oder IP-freie generische Kindermusik mit Natur-Klang), 6 bunte Chiffon-Schleier (~5 € Bastelladen, oder Tücher aus dem Haushalt)",
+          "prepText": "Musik an → Kinder schwingen Schleier und tanzen wie Feen/Schmetterlinge. Musik aus → einfrieren wie Schmetterling auf Blüte. Wer sich bewegt, bekommt einen Blüten-Sticker auf den Schleier — das ist Belohnung, kein Rauswerfen. Kein Ausscheiden.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Tanzen",
+              "content": "Musik an → die Kinder schwingen ihre Schleier und tanzen wie Feen und Schmetterlinge."
+            },
+            {
+              "n": 2,
+              "name": "Einfrieren",
+              "content": "Musik aus → einfrieren wie ein Schmetterling, der auf einer Blüte sitzt."
+            },
+            {
+              "n": 3,
+              "name": "Belohnen",
+              "content": "Wer sich noch bewegt, bekommt einen Blüten-Sticker auf den Schleier — Belohnung, kein Ausscheiden."
+            }
+          ],
+          "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Schleier-Schnüre/Bändchen vorher abschneiden — Strangulationsrisiko. Bei Tanz: Möbelkanten polstern oder Spielzeug wegräumen. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
+          "ageAdjust6": "Einfrieren ist noch schwer — bei Stopp einfach hinhocken. Schleier nicht um den Hals — nur in der Hand.",
+          "ageAdjust8": "Einfrieren als bestimmte Figur: „Zeig mir einen Schmetterling auf einer Blüte!\" — Pose halten.",
+          "indoorTip": "Möbel zur Seite schieben — die Schleier brauchen Platz zum Schwingen.",
+          "outdoorTip": "Im Garten auf weichem Rasen — Kinder fallen seltener, Sturz weicher.",
+          "whyItWorksTitle": null,
+          "whyItWorks": null,
+          "ageAdjust3": "Für 3-Jaehrige: Musik max. 80 dB, Tanz max. 3-4 Min, dann ruhige Pause. Schleier nicht ueber den Kopf wickeln, nur in der Hand halten."
         }
       ],
       "food": "🎂 Vanille-Kuchen mit rosa Buttercreme + essbaren Blüten + Glitzer (1 Gugelhupf)\n💧 Blüten-Limo (10 Trinkpäckchen + Blütenblatt)\n🍪 Stiefmütterchen-Kekse (fertig + selber dekoriert, 15 Stk.)\n🍓 Rosa Obst-Teller (Erdbeeren, Himbeeren, rosa Trauben)\n🥒 Gemüse-Sticks (Gurke, Möhre, Paprika)\n🥨 Brezel-Sticks (200 g)\n🍭 Gummibärchen (1 Tüte 200 g)\n\n💡 Stiefmütterchen-Kekse ohne Backen:\nFertige Butterkekse (~2 €) mit rosa Glasur bestreichen (Puderzucker + 1 Tropfen Lebensmittelfarbe), 1 essbares Stiefmütterchen oder Gänseblümchen obendrauf. 15 Kekse in 15 Minuten. Sieht aus wie aus dem Feenwald-Café.",
@@ -1177,7 +1295,7 @@
         {
           "icon": "🚧",
           "title": "Tisch + Feenwald-Eingang dekorieren",
-          "detail": "Pastell-Luftballons aufpusten (Bei 3-5 das Highlight!), Krepppapier-Efeu-Girlande spannen, Feen-Versprechen-Schale + Tüllflügel-Sortierung am Eingang. Wow: Krepppapier-Streifen am Türrahmen, Lichterketten in Bücherregale wickeln. Müllbeutel-Schmier-Schutz griffbereit."
+          "detail": "Pastell-Luftballons aufpusten (Bei 3-5 das Highlight!), Krepppapier-Efeu-Girlande spannen, Feen-Versprechen-Schale + Tüllflügel-Sortierung am Eingang. Wow: Krepppapier-Streifen am Türrahmen, Lichterketten in Bücherregale wickeln. Müllbeutel-Schmier-Schutz griffbereit. Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen."
         },
         {
           "icon": "🎵",
@@ -1202,7 +1320,7 @@
         {
           "icon": "🎯",
           "title": "15 Min vor Ankunft: Endkontrolle",
-          "detail": "Feen-Versprechen-Schale mit 12 Blütennamen-Zetteln + Rosenblättern, Tüllflügel sortiert nach Größe (inkl. Wald-Wächter-Variante!), Pastell-Ballons hängen, Spotify-Playlist bereit. Wow: Feenflügel-Stäbchen-Tisch fertig, Lichterketten an, Seifenblasenmaschine getestet (Batterien!)."
+          "detail": "Feen-Versprechen-Schale mit 12 Blütennamen-Zetteln + Rosenblättern, Tüllflügel sortiert nach Größe (inkl. Wald-Wächter-Variante!), Pastell-Ballons hängen, Spotify-Playlist bereit. Wow: Feenflügel-Stäbchen-Tisch fertig, Lichterketten an, Seifenblasenmaschine getestet (Batterien!). Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen."
         },
         {
           "icon": "🫁",

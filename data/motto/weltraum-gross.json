@@ -1040,6 +1040,156 @@
           "outdoorTip": "Möglichst weg von Straßenlaternen — eine dunkle Garten-Ecke zeigt deutlich mehr Sterne.",
           "whyItWorksTitle": "Echtes Staunen statt Show",
           "whyItWorks": "Nichts schlägt den Moment, in dem 11-Jährige zum ersten Mal bewusst die Milchstraße oder einen Jupitermond sehen. Die nächtliche Beobachtung verwandelt das Motto in echte Erfahrung und ist der ruhige, beeindruckende Abschluss einer Schlafparty — vorausgesetzt, die Eltern haben der Wach-Zeit zugestimmt."
+        },
+        {
+          "name": "🗺️ Codeknacker: Die verschlüsselten Navigations-Daten",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 40,
+          "minAge": 9,
+          "loudness": "konzentriert",
+          "effort": "mittel",
+          "material": "3 Aufgaben-Zettel A4 (selbst geschrieben oder ausgedruckt), je einer pro Quadrant. Pro Quadrant 5–6 Objekt-Karten mit je einem Anfangsbuchstaben und einem Zahlenwert (Helligkeit / Entfernung / Reparatur-Schritt). Bleistifte, das Stations-Logbuch zum Eintragen. Druckvorlage gibt es nicht extra — die Werte unten kannst du 1:1 abschreiben.",
+          "prepText": "Setup am Vorabend (15 Min.): Du schreibst drei Quadranten-Zettel. Jeder Quadrant gehört einer Spezialisierung und ergibt ein echtes deutsches Wort: Pilot → STERN, Wissenschaftler → PLANET, Mechaniker → MOTOR. Der Trick für müde Eltern um 22:30: Wer die Sortier-Regel richtig anwendet, liest am Ende ein echtes Wort. Kommt Buchstabensalat raus, war die Regel falsch — das ist die eingebaute Selbstkontrolle, du musst nichts gegenprüfen. Die Zahlenwerte unten sind so gewählt, dass die Reihenfolge eindeutig aufgeht.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Pilot-Quadrant → STERN",
+              "content": "5 Sterne nach scheinbarer Helligkeit sortieren — vom hellsten zum schwächsten, dann Anfangsbuchstaben ablesen. (Profi-Wissen: kleinere Magnitude = heller.)"
+            },
+            {
+              "n": 2,
+              "name": "STERN-Lösung",
+              "content": "Sonne (−26,7) / Toliman (+0,01) / Elnath (1,65) / Ruchbah (2,68) / Nashira (3,7) → S-T-E-R-N = STERN."
+            },
+            {
+              "n": 3,
+              "name": "Sonne-Falle nutzen",
+              "content": "Die Sonne ist ein ganz normaler Stern — nur extrem nah. Deshalb ist ihre Helligkeit (−26,7) so viel höher als bei den anderen. Das überrascht 11-Jährige und macht es lehrreich."
+            },
+            {
+              "n": 4,
+              "name": "Wissenschaftler-Quadrant → PLANET",
+              "content": "6 Himmelskörper nach mittlerer Entfernung von der Sonne sortieren — vom nächsten zum fernsten (Einheit AE, Astronomische Einheit), dann Anfangsbuchstaben ablesen."
+            },
+            {
+              "n": 5,
+              "name": "PLANET-Lösung",
+              "content": "Phobos (1,52) / Lutetia (2,43) / Asbolus (11) / Neptun (30,1) / Eris (67,8) / Trans-Neptun-Objekt 2018 VG18 (120) → P-L-A-N-E-T = PLANET."
+            },
+            {
+              "n": 6,
+              "name": "Phobos-Falle nutzen",
+              "content": "Phobos ist nur ein Marsmond, liegt aber näher an der Sonne als alle anderen hier — Größe sagt nichts über Entfernung. Genau die Verwechslung, die genaues Lesen belohnt."
+            },
+            {
+              "n": 7,
+              "name": "Mechaniker-Quadrant → MOTOR",
+              "content": "5 Reparatur-Schritte in der richtigen Pfad-Reihenfolge ablesen — vom ersten Handgriff am Triebwerk bis zum letzten, dann Anfangsbuchstaben notieren."
+            },
+            {
+              "n": 8,
+              "name": "MOTOR-Lösung",
+              "content": "Reihenfolge der Reparatur: Magnetschlüssel → O-Ring-Dichtung → Treibstoff-Ventil → Oszilloskop → Reaktor-Schalter → M-O-T-O-R = MOTOR."
+            },
+            {
+              "n": 9,
+              "name": "Selbst-Check",
+              "content": "Ergibt ein Quadrant kein echtes Wort, war die Sortier-Regel falsch — Reihenfolge selbst nachprüfen, nicht raten. Die drei Wörter müssen STERN, PLANET, MOTOR lauten."
+            },
+            {
+              "n": 10,
+              "name": "Zusammenführen",
+              "content": "Alle drei Wörter ergeben den Missions-Befehl: Der STERN gibt die Richtung, der PLANET das Ziel, der MOTOR bringt euch hin — die Navigations-Daten sind wiederhergestellt."
+            }
+          ],
+          "safetyRule": null,
+          "ageAdjust9": "Pro Quadrant nur 3–4 Objekte, die Zahlenwerte stehen groß daneben, ein Tipp-Zettel an der Wand.",
+          "ageAdjust12": "Volle 5–6 Objekte pro Quadrant, keine Tipps — plus ein eingeschmuggelter Falsch-Wert, den die Crew als Messfehler erkennen und korrigieren muss.",
+          "indoorTip": "Die drei Quadranten an verschiedene Wände/Tische, damit die Spezialisierungs-Teams sich nicht ins Gehege kommen.",
+          "outdoorTip": "Quadranten an drei Stationen im Garten — die kurzen Wege dazwischen sind willkommene Bewegung.",
+          "whyItWorksTitle": "Kooperation + Selbstkontrolle statt Tempo",
+          "whyItWorks": "Kein Quadrant funktioniert allein — die drei Spezialisierungen müssen ihre Wörter am Ende zusammenlegen. Ergibt ein Lösungswort keinen Sinn, prüfen die Kinder ihre Reihenfolge selbst nach, statt zu raten. Nebenbei lernen sie echte Astronomie: dass Helligkeit als Magnitude gemessen wird und dass Entfernung nichts mit Größe zu tun hat. Steckt ein Team fest, hilft eine andere Spezialisierung aus — das ist die Mission: „An Bord zählt, wer genau hinschaut, nicht wer zuerst ruft.“"
+        },
+        {
+          "name": "🏃 Weltraum-Olympiade (Schwerkraft-Slalom + Meteoritendodge + Sternenwerfen)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 30,
+          "minAge": 9,
+          "loudness": "laut",
+          "effort": "mittel",
+          "material": "Für Schwerkraft-Slalom: 6–8 Sofakissen oder Luftballons als „Schwerkraft-Anomalien“. Für Meteoritendodge: 4–6 weiche Bälle oder zusammengeknüllte Socken. Für Sternenwerfen: 3 Hula-Hoops oder Eimer als Ziele, 5 selbst gebastelte Papp-Sterne pro Werfer. Logbuch.",
+          "prepText": "Drei kurze körperliche Disziplinen als Astronauten-Olympiade — Bewegung als Gegenpol zu den ruhigen Codeknacker-Stationen. Jede Disziplin trainiert eine andere Fähigkeit (Koordination, Reaktion, Zielen), niemand wird nach Tempo bewertet — der Sorgfalt-Spezialist-Stempel geht an den, der eine Disziplin technisch sauber gelöst hat.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Schwerkraft-Slalom",
+              "content": "Die Crew läuft in Zeitlupe (= „erhöhte Schwerkraft auf einem schweren Planeten“) durch einen Slalom-Parcours aus Kissen. Wer ein Kissen berührt, beginnt von vorn — Konzentration vor Tempo."
+            },
+            {
+              "n": 2,
+              "name": "Meteoritendodge",
+              "content": "Die Crew steht in einem markierten Feld, ein Erwachsener wirft die weichen „Meteoriten“ (Socken-Bälle) in Bauch- oder Schulterhöhe. Wer getroffen wird, geht in „Reparatur-Modus“ und macht 5 Kniebeugen, dann wieder ins Feld."
+            },
+            {
+              "n": 3,
+              "name": "Sternenwerfen",
+              "content": "Jedes Kind wirft seine 5 Papp-Sterne nacheinander in die drei Hula-Hoop-Ziele in verschiedenen Entfernungen. Sterne in den hinteren Hoops zählen mehr, aber die Genauigkeit zählt — ein knapper Treffer ist ein voller Punkt."
+            },
+            {
+              "n": 4,
+              "name": "Logbuch-Eintrag",
+              "content": "Wer in welcher Disziplin besonders kontrolliert war, wird im Logbuch vermerkt — Sorgfalt-Spezialist-Stempel an die Technisch-Saubersten, nicht an die Schnellsten."
+            }
+          ],
+          "safetyRule": "Nur weiche Wurfgeschosse (Socken-Bälle, Krepp-Bälle), kein Treffer im Gesicht. Schwerkraft-Slalom auf rutschfestem Boden. Sternenwerfen weg von Fenstern und zerbrechlichen Möbeln. Bei Meteoritendodge nicht in die Augen werfen — Brillenträger an den Spielfeld-Rand. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel.",
+          "ageAdjust9": "Slalom mit weniger Kissen, Meteoritendodge mit größerem Spielfeld (mehr Ausweich-Platz), Hula-Hoops näher heran.",
+          "ageAdjust12": "Slalom mit Augenbinde und Crew-Anweisungen, Meteoritendodge mit zwei Werfern gleichzeitig, Sternenwerfen mit Vorgabe (welcher Stern in welchen Hoop).",
+          "indoorTip": "Wohnzimmer für Slalom und Meteoritendodge frei räumen, Sternenwerfen in den Flur oder ein zweites Zimmer verlegen. Lampen und Vasen weg.",
+          "outdoorTip": "Im Garten ideal — viel Platz für Slalom und Dodge, Hula-Hoops auf den Rasen für Sternenwerfen. Drei Stationen parallel laufen lassen.",
+          "whyItWorksTitle": "Körper-Programm, das nicht peinlich ist",
+          "whyItWorks": "9-12-Jährige brauchen Bewegungs-Phasen, aber Pseudo-Spiele („Schwung-Schwung-Tanz“) finden sie peinlich. Die Olympiade-Disziplinen sind echte sportliche Aufgaben mit klaren Regeln und Weltraum-Frame — bewertet wird Technik statt Tempo, was auch die weniger Sportlichen einbindet. Drei kurze Disziplinen halten die Aufmerksamkeit."
+        },
+        {
+          "name": "1️⃣ Sternenkarten-Navigation (Piloten-Hauptstation)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 20,
+          "minAge": 9,
+          "loudness": "konzentriert",
+          "effort": "mittel",
+          "material": "Eine große Sternenkarte (selbst gemalt oder ausgedruckt) mit 8 markierten Sternen und Koordinaten-Gitter (A1–E5 wie Schiffe-versenken). Liste mit 5 Ziel-Koordinaten, Bleistifte, Logbuch.",
+          "prepText": "Die Piloten bekommen die Aufgabe, einen Kurs zu legen: Fünf Koordinaten auf der Sternenkarte verbinden ergibt eine Linie zum Mars. Die Koordinaten sind in der Mission verschlüsselt — sie stehen als Ergebnis aus den anderen Stationen fest.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Karte lesen",
+              "content": "Die Crew studiert das Koordinaten-Gitter: Buchstabe = Spalte, Zahl = Zeile, wie bei Schiffe-versenken."
+            },
+            {
+              "n": 2,
+              "name": "Koordinaten eintragen",
+              "content": "Die fünf Ziel-Koordinaten werden auf der Karte markiert und in Reihenfolge verbunden."
+            },
+            {
+              "n": 3,
+              "name": "Kurs prüfen",
+              "content": "Stimmt die Linie? Führt sie zum Mars-Symbol? Wenn nicht, hat sich ein Koordinaten-Paar vertauscht — selbst nachprüfen."
+            },
+            {
+              "n": 4,
+              "name": "Eintragen",
+              "content": "Stimmt der Kurs, wird „Navigation abgeschlossen“ ins Logbuch eingetragen."
+            }
+          ],
+          "safetyRule": null,
+          "ageAdjust9": "Koordinaten-Gitter nur 4×4, die ersten zwei Punkte sind schon eingezeichnet.",
+          "ageAdjust12": "Gitter 6×6, plus eine „Gravitations-Falle“ (ein Feld, das umgangen werden muss) — fordert Vorausplanung.",
+          "indoorTip": "Karte auf den Tisch oder an die Wand — funktioniert in jeder Wohnung.",
+          "outdoorTip": "Karte auf einem Klemmbrett, damit der Wind sie nicht wegweht.",
+          "whyItWorksTitle": "Räumliches Denken mit echtem Ziel",
+          "whyItWorks": "Koordinaten-Lesen ist eine echte Fähigkeit, die hier einen Zweck bekommt: einen Kurs zum Mars. Die Selbstkontrolle (führt die Linie zum Ziel?) macht Raten sinnlos und belohnt sorgfältiges Eintragen."
         }
       ],
       "food": "🎂 Sternenkarten-Kuchen · 🍕 Mini-Pizzen selbst belegt (2/Kind) · 🍫 Astronauten-Nahrung-Beutel · 🥤 „Treibstoff“-Schorle (4 L) · 🥞 Frühstück bei Schlafparty (Brötchen, Müsli) · 🍪 Snacks für die Nacht-Beobachtung",
@@ -1324,6 +1474,11 @@
     "minus4Weeks": {
       "headline": "4 Wochen vorher — Grundgerüst stellen",
       "items": [
+        {
+          "icon": "🥜",
+          "title": "Allergien/Unverträglichkeiten abfragen",
+          "detail": "Bei Einladung/Zusage abklären (Nuss, Laktose, Gluten) — Liste am Back- und Party-Tag griffbereit."
+        },
         {
           "icon": "📅",
           "title": "Datum, Uhrzeit, Treffpunkt fixieren",

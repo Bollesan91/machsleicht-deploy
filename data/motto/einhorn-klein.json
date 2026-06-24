@@ -157,7 +157,7 @@
               "content": "Beruhigt nach dem Kuchen-Zucker-Hoch — perfekter ruhiger Block."
             }
           ],
-          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Figuren min. 6 cm. Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
+          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Figuren min. 6 cm. Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern). Bei den Kleinen engmaschig beaufsichtigen — Reiskörner gehören nicht in Nase/Ohr; ggf. gröberes Sensorik-Medium. Reiskörner auch nicht in den Mund nehmen (Aspirationsgefahr) — Sichtaufsicht in Armlänge.",
           "indoorTip": "Wanne in die Badewanne oder auf eine alte Tischdecke — Reis-Körner gehen sonst tagelang aus dem Teppich.",
           "outdoorTip": "Auf der Terrasse oder Wiese großzügig — verstreuter Reis ist Vogelfutter.",
           "whyItWorksTitle": null,
@@ -229,7 +229,7 @@
               "content": "Eine Farbe rufen — alle müssen schnell etwas in dieser Farbe berühren und weitertanzen. Bunte Tücher zum Schwenken machen es magischer."
             }
           ],
-          "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Glitzer-Aufkleber sind klein — nur auf Hand/Arm aufbringen, nicht zum Naschen liegen lassen.",
+          "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Glitzer-Aufkleber sind klein — nur auf Hand/Arm aufbringen, nicht zum Naschen liegen lassen. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
           "indoorTip": "Wohnzimmer-Möbel zur Seite schieben, Teppich rollt sich beim Galoppieren auf — kurz fixieren.",
           "outdoorTip": "Auf Wiese mit Tüchern in Regenbogenfarben besonders magisch — Wind macht die Tücher zum Flügel.",
           "whyItWorksTitle": null,
@@ -352,7 +352,7 @@
               "content": "Beruhigt nach dem Kuchen-Zucker-Hoch — perfekter ruhiger Block."
             }
           ],
-          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Figuren min. 6 cm. Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
+          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Figuren min. 6 cm. Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern). Bei den Kleinen engmaschig beaufsichtigen — Reiskörner gehören nicht in Nase/Ohr; ggf. gröberes Sensorik-Medium. Reiskörner auch nicht in den Mund nehmen (Aspirationsgefahr) — Sichtaufsicht in Armlänge.",
           "indoorTip": "Wanne in die Badewanne oder auf eine alte Tischdecke — Reis-Körner gehen sonst tagelang aus dem Teppich.",
           "outdoorTip": "Auf der Terrasse oder Wiese großzügig — verstreuter Reis ist Vogelfutter.",
           "whyItWorksTitle": null,
@@ -424,7 +424,7 @@
               "content": "Eine Farbe rufen — alle müssen schnell etwas in dieser Farbe berühren und weitertanzen. Bunte Tücher zum Schwenken machen es magischer."
             }
           ],
-          "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Glitzer-Aufkleber sind klein — nur auf Hand/Arm aufbringen, nicht zum Naschen liegen lassen.",
+          "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Glitzer-Aufkleber sind klein — nur auf Hand/Arm aufbringen, nicht zum Naschen liegen lassen. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
           "indoorTip": "Wohnzimmer-Möbel zur Seite schieben, Teppich rollt sich beim Galoppieren auf — kurz fixieren.",
           "outdoorTip": "Auf Wiese mit Tüchern in Regenbogenfarben besonders magisch — Wind macht die Tücher zum Flügel.",
           "whyItWorksTitle": null,
@@ -471,6 +471,38 @@
           "outdoorTip": null,
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Spülmittel zerstört die Oberflächenspannung der Milch. Das Fett „flieht\" vor der Seife und nimmt die Farben mit — Regenbogen-Spirale."
+        },
+        {
+          "name": "🎯 Einhorn füttern",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 15,
+          "minAge": 3,
+          "loudness": "laut",
+          "effort": "leicht",
+          "material": "1 großer Pappkarton, Filzstifte (Einhorn-Gesicht malen), Cutter/Schere (Maul ausschneiden), 8–10 bunte Bälle (Bällebad-Bälle ~5 € bei Action, oder Sockenbälle)",
+          "prepText": "Auf den Karton ein Einhorn-Gesicht malen mit großem offenem Maul (ca. 20 cm Durchmesser ausschneiden). Karton an die Wand lehnen oder auf einen Stuhl stellen. Kinder werfen bunte Bälle ins Maul.",
+          "steps": [
+            {
+              "name": "Vorbereitung (Erwachsene)",
+              "content": "Ein Einhorn-Gesicht mit großem offenem Maul (ca. 20 cm) auf den Karton malen und das Maul ausschneiden."
+            },
+            {
+              "name": "Aufstellen",
+              "content": "Karton an die Wand lehnen oder auf einen Stuhl stellen."
+            },
+            {
+              "name": "Füttern",
+              "content": "Die Kinder werfen reihum bunte Bälle ins Maul — „Luna hat Hunger!\""
+            }
+          ],
+          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband. Nur aufs Ziel werfen/spritzen, nie auf Personen oder ins Gesicht.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null,
+          "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
         }
       ],
       "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Saft\"8 Trinkpäckchen\n🍓Rosa Obst-TellerErdbeeren, Himbeeren\n🥒Gemüse-SticksGurke, Möhre\n🍿Popcorn200 g",
@@ -597,7 +629,7 @@
               "content": "Eine Farbe rufen — alle müssen schnell etwas in dieser Farbe berühren und weitertanzen. Bunte Tücher zum Schwenken machen es magischer."
             }
           ],
-          "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Glitzer-Aufkleber sind klein — nur auf Hand/Arm aufbringen, nicht zum Naschen liegen lassen.",
+          "safetyRule": "Generelle Aufsicht durch Erwachsene; bei 3-Jährigen alles in Mund-Reichweite vorher prüfen (Verschluckungsgefahr). Glitzer-Aufkleber sind klein — nur auf Hand/Arm aufbringen, nicht zum Naschen liegen lassen. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
           "indoorTip": "Wohnzimmer-Möbel zur Seite schieben, Teppich rollt sich beim Galoppieren auf — kurz fixieren.",
           "outdoorTip": "Auf Wiese mit Tüchern in Regenbogenfarben besonders magisch — Wind macht die Tücher zum Flügel.",
           "whyItWorksTitle": null,
@@ -629,7 +661,7 @@
               "content": "Die Kinder werfen reihum bunte Bälle ins Maul — „Luna hat Hunger!\""
             }
           ],
-          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband.",
+          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband. Nur aufs Ziel werfen/spritzen, nie auf Personen oder ins Gesicht.",
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": null,
@@ -665,7 +697,7 @@
               "content": "Beruhigt nach dem Kuchen-Zucker-Hoch — perfekter ruhiger Block."
             }
           ],
-          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Figuren min. 6 cm. Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
+          "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Figuren min. 6 cm. Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern). Bei den Kleinen engmaschig beaufsichtigen — Reiskörner gehören nicht in Nase/Ohr; ggf. gröberes Sensorik-Medium. Reiskörner auch nicht in den Mund nehmen (Aspirationsgefahr) — Sichtaufsicht in Armlänge.",
           "indoorTip": "Wanne in die Badewanne oder auf eine alte Tischdecke — Reis-Körner gehen sonst tagelang aus dem Teppich.",
           "outdoorTip": "Auf der Terrasse oder Wiese großzügig — verstreuter Reis ist Vogelfutter.",
           "whyItWorksTitle": null,
@@ -744,6 +776,42 @@
           "outdoorTip": null,
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Spülmittel zerstört die Oberflächenspannung der Milch. Das Fett „flieht\" vor der Seife und nimmt die Farben mit — Regenbogen-Spirale."
+        },
+        {
+          "name": "🦄 Einhorn-Horn basteln",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 20,
+          "minAge": 3,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "1 Pappteller pro Kind (weiß), Schere (du schneidest vor!), Klebeband/Tacker, Glitzer-Kleber oder Glitzer + Klebestift, bunte Sticker, Gummiband oder Haarreif zum Befestigen",
+          "prepText": "Pappteller einmal falten → Kegel-Form rollen → mit Tacker fixieren. Das ist das Horn. Jedes Kind darf sein Horn mit Glitzer-Kleber und Stickern verzieren. Mit Gummiband am Kopf befestigen oder auf einen Haarreif kleben.\n\nVorbereitung: Hörner vorher schon zur Kegel-Form rollen und tackern — 3-Jährige können das nicht selbst. Sie kleben nur die Deko drauf.\n\nTipp: Tisch vorher mit alter Zeitung abdecken. Glitzer geht nie wieder raus — akzeptiere das jetzt.",
+          "steps": [
+            {
+              "name": "Vorbereitung (Erwachsene)",
+              "content": "Pappteller zur Kegel-Form rollen und tackern — das ist das Horn. 3-Jährige können das nicht selbst, also vorab erledigen."
+            },
+            {
+              "name": "Verzieren",
+              "content": "Jedes Kind verziert sein Horn mit Glitzer-Kleber und Stickern."
+            },
+            {
+              "name": "Befestigen",
+              "content": "Horn mit Gummiband am Kopf befestigen oder auf einen Haarreif kleben."
+            },
+            {
+              "name": "Tipp",
+              "content": "Tisch vorher mit alter Zeitung abdecken — Glitzer geht nicht mehr raus."
+            }
+          ],
+          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband. Glitzer + Glitzer-Kleber vorher 1 Tag an Innenseite Unterarm testen (Allergie-Vortest); bei Rötung Sticker statt Glitzer.",
+          "indoorTip": "Tisch mit alter Zeitung oder Wachstuch abdecken, Müllbeutel als Bastel-Schürze pro Kind — Glitzer-Kleber landet überall.",
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null,
+          "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
         }
       ],
       "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Saft\"10 Trinkpäckchen\n⭐Stern-Kekse15 Stk. (Ausstecher)\n🍓Rosa Obst-TellerErdbeeren, Himbeeren\n🥒Gemüse-SticksGurke, Möhre\n🍿Popcorn200 g\n🍭Gummibärchen1 Tüte (200 g)\n\n💡 Stern-Kekse ohne Backen:\nFertigen Butterkeks-Teig (Kühlregal, ~2 €) ausrollen, mit Stern-Ausstecher ausstechen, 10 Min. backen, rosa Glasur drüber (Puderzucker + 1 Tropfen Lebensmittelfarbe). 15 Kekse in 20 Minuten. Oder: einfach fertige Butterkekse kaufen und mit rosa Glasur bestreichen — schmeckt den Kindern genauso.",
@@ -1130,7 +1198,7 @@
         {
           "icon": "🚧",
           "title": "Tisch + Eingangs-Tisch dekorieren",
-          "detail": "Pastell-Luftballons aufpusten (Bei 3-5 das Highlight!), Regenbogen-Girlande spannen, Sternenstaub-Beutel + Tattoo-Stempelkissen am Eingang. Müllbeutel-Schmier-Schutz griffbereit."
+          "detail": "Pastell-Luftballons aufpusten (Bei 3-5 das Highlight!), Regenbogen-Girlande spannen, Sternenstaub-Beutel + Tattoo-Stempelkissen am Eingang. Müllbeutel-Schmier-Schutz griffbereit. Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen."
         },
         {
           "icon": "🎵",
@@ -1155,7 +1223,7 @@
         {
           "icon": "🎯",
           "title": "15 Min vor Ankunft: Endkontrolle",
-          "detail": "Sternenstaub-Beutel mit 12 Zetteln, Tattoo-Stempelkissen offen, Pastell-Ballons hängen, Spotify-Playlist bereit. Wow: Tüll-Röckchen sortiert nach Größe, Zauberstab-Bastel-Tisch fertig."
+          "detail": "Sternenstaub-Beutel mit 12 Zetteln, Tattoo-Stempelkissen offen, Pastell-Ballons hängen, Spotify-Playlist bereit. Wow: Tüll-Röckchen sortiert nach Größe, Zauberstab-Bastel-Tisch fertig. Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen."
         },
         {
           "icon": "🫁",

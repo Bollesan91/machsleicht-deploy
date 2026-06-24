@@ -4,6 +4,14 @@ Stand: 2026-05-12. Verbindlich vor jedem Patch. Self-audit-validiert.
 
 > ⚠️ **AKTIVES KRITISCHES ISSUE (2026-06-03): GSC-Massen-De-Indexing 308→1.** Grund „Gecrawlt – zurzeit nicht indexiert" = **Google-Site-Quality-Abwertung wegen Phase-1-Dünn-Content-Masse** (Lizenzmarken × Einzelalter), NICHT technischer Defekt (Origin/Cache/robots/Canonical sind live sauber, PSI 98/87). Aktuelle 126 Seiten sind unique+gut. Größter fixbarer Hebel: Legacy-URLs redirecten als Soft-404-Muster alle stumpf auf `/kindergeburtstag` → auf **410 Gone** umstellen. Recovery = 2–4 Monate Reputations-Wiederaufbau. **Voll-Diagnose + Plan: `_dev/handoff/2026-06-03-gsc-deindex-rootcause.md` · Ticket P0-GSC.**
 
+> ⚠️ **STAND 24.06.2026 — V3 + Architektur-Korrekturen (überschreiben veraltete Sektionen unten, v.a. §3.1/3.1b/§5):**
+> - **Live-Planer = statische `kindergeburtstag.html`** (self-contained, inline `MOTTOS` + `/js/motto-data.js`). Plan ist **V3 generativ**: `buildPlanActivities(d,v)` erzeugt EINE geordnete Liste aus `variants[].games` + Standard-Beats; `_planTimes` rechnet Uhrzeiten reihenfolge-basiert. Spec §10 in `_dev/docs/PLAN-ENGINE-SPEC.md`.
+> - **`js/kindergeburtstag.js` / `_src/kindergeburtstag.jsx` (React, 3,8 MB) = TOT** — von KEINER HTML-Seite geladen (grep repo-weit). §3.1/3.1b beschreiben totes Altlast-Bundle.
+> - **`data/motto/*.json` ist LIVE**, aber via `renderElitePlan → getElite()` (fetch) in `kindergeburtstag.html`, NICHT via React-Bundle. Spiele liegen unter `variants[].games`. `schedule[]` entfernt (V3 = eine Quelle).
+> - **CF-HTML-Cache-Regel am 24.06. GELÖSCHT** → `cf-cache-status: DYNAMIC`, Deploys sofort live, KEIN „Purge Everything" mehr. „Live?"-Check NUR per `cf-cache-status`, nie `?cb=`.
+> - **GSC-De-Index (Update zur Zeile oben):** Verlauf 308 indexiert (07.–10.04.) → Absturz ~11.04.–02.05. → 1. Ursache = algorithmische Qualitäts-Abwertung durch Thin-Programmatik-Blast (~189 Einzeljahr-Seiten) + April-Churn (Lizenz-Cut + Massen-Redirects). **Manuelle Maßnahme: KEINE** (Bolle 23.06. in GSC geprüft) → rein algorithmisch. Recovery läuft: interne Verlinkung gefixt (prinzessin/superheld-Alterslinks + Einladungs-Cluster), Sitemap-Generator mit ehrlichem `lastmod` + Doorway-Ausschluss (137 URLs), Einladungs-Hub mit FAQ/FAQPage. Hebel bleibt **Backlinks + Stabilität + Zeit** (kein technischer Massen-Fix).
+> - **Offen (#34):** `variants[].games` sind in ~40 Varianten zu dünn (2–4 statt min3/std5/wow6) → eigene redaktionelle Motto-für-Motto-Welle nötig.
+
 ## Verwandte Dokumente
 
 | Doku | Zweck | Pflege-Frequenz |
@@ -99,18 +107,11 @@ Stand: 2026-05-12. Verbindlich vor jedem Patch. Self-audit-validiert.
 
 ## 3. Build-Pipeline
 
-### 3.1 React-Bundle `kindergeburtstag.js`
+### 3.1 React-Bundle `kindergeburtstag.js` — ⚰️ RUNTIME GELÖSCHT (24.06.2026)
 
-| Komponente | Wert |
-|---|---|
-| Source-JSX | `_src/kindergeburtstag.jsx` |
-| Source-Data | `_src/kindergeburtstag-data.js` (SZ_THEMES etc.) |
-| **Elite-Motto-Daten** | `_src/elite-motto-data/_bundle.js` — **AUTO-generiert** aus `data/motto/` (s. 3.1b) |
-| Build | `bash _src/build.sh` (Schritt 1 node-Generator, Schritt 2 npx esbuild JSX, Schritt 3 cat) |
-| Konkatenation | `kindergeburtstag-data.js` + `_bundle.js` + compiled JSX → `js/kindergeburtstag.js` |
-| Output | `js/kindergeburtstag.js` (~3.8 MB / ~65k Z. — der Elite-Bundle dominiert) |
-| Git-tracked | **JA** — Netlify deployt as-is, **kein Build auf Netlify-Seite** |
-| **Falle** | Wer `_src/*` ODER `data/motto/*` ändert MUSS `bash _src/build.sh` lokal laufen + Output committen. Vergessen = alter Stand live |
+**Das 3,7-MB-Bundle `js/kindergeburtstag.js` wurde gelöscht.** Es war tot: von KEINER HTML-Seite per `<script src>` geladen. Der Live-Planer `/kindergeburtstag` ist die statische `kindergeburtstag.html` (lädt nur Umami + `/js/motto-data.js`, fetcht `/data/motto/*.json` via `getElite()`). Verifiziert: 0 HTML/_redirects/TOML-Referenzen.
+
+**Was bleibt (vorerst):** Das `_src/`-Build-Tooling (`kindergeburtstag.jsx`, `kindergeburtstag-data.js`, `build.sh`, `gen-elite-bundle.cjs`, `elite-motto-data/`) ist NICHT gelöscht, weil `validate-all.sh` Stufe 2+3 noch `_src/kindergeburtstag-data.js` (Motto/SZ-Zahlen) und `_src/kindergeburtstag.jsx` (MAP_THEMES-Konsistenz) als **Zahlen-/Konsistenz-Orakel** lesen. **Vollabbau ist ein eigener Task:** Validator-Orakel auf Live-Quellen (`js/motto-data.js`, `schatzsuche.html`/`js/schatzsuche.js`, `data/motto/*`) umstellen, DANN `_src/`-Tree + `_src/build.sh` + RELEASE-GATE-Build-Step entfernen. ⚠️ Achtung: Validator validiert SZ_THEMES aktuell gegen die tote `_src`-Quelle (mögliche False-Confidence) — beim Umbau mitprüfen.
 
 ### 3.1b Elite-Motto-Bundle `ELITE_MOTTO_DATA` (P1-37, 18.06.2026)
 

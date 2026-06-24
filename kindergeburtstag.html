@@ -1900,6 +1900,23 @@ window.plausible.init=function(){};window.plausible.q=[];
   // Einkauf: Basis-Kinderzahl aus costContext, Header auf echte Gaestezahl (loest 6-vs-8-Widerspruch); Stueckpreise = Pack-Preise (qtyRule spaeter)
   function eliteShop(list, costContext){ const m=String(costContext==null?'':costContext).match(/(\d+)\s*Kinder/); const base=m?+m[1]:8; const guests=(state.guests>0)?state.guests:base; let sum=0; (list||[]).forEach(s=> sum+=(s.priceEur||0)); return {sum, base, guests, perChild: guests? Math.round(sum/guests*10)/10 : 0}; }
 
+  // Countdown-Vorbereitungsplan aus data/motto (preparationWeeks). Zwei Daten-Schemas im Bestand:
+  //  A) Dict {minus4Weeks…dayOf: {headline, items:[{icon,title,detail} | string]}}  (39 Dateien)
+  //  B) List [{week, tasks:[string]}]  (prinzessin/superheld, 6 Dateien)
+  function elitePrep(pw){
+    if(!pw) return '';
+    let phases = [];
+    if(Array.isArray(pw)){
+      phases = pw.map(p => ({ head: p.week || '', lines: (p.tasks||[]).map(t => ({icon:'', title:'', detail: (typeof t==='string' ? t : (t && (t.detail||t.title)) || '')})) }));
+    } else {
+      phases = Object.keys(pw).map(k => { const ph = pw[k] || {}; return { head: ph.headline || '', lines: (ph.items||[]).map(it => typeof it==='string' ? {icon:'', title:'', detail: it} : {icon: it.icon||'', title: it.title||'', detail: it.detail||''}) }; });
+    }
+    phases = phases.filter(p => p.head || (p.lines && p.lines.length));
+    if(!phases.length) return '';
+    const inner = phases.map(p => `<details class="egame"><summary>${esc(p.head)}</summary><ul class="etips">${p.lines.map(l => `<li>${l.icon?esc(l.icon)+' ':''}${l.title?`<b>${esc(l.title)}</b>${l.detail?' — ':''}`:''}${l.detail?mdLink(l.detail):''}</li>`).join('')}</ul></details>`).join('');
+    return `<article class="mod"><header class="mod__head"><span class="mod__icon">🗓️</span><h3 class="mod__title">Countdown: Was wann vorbereiten</h3></header>${inner}</article>`;
+  }
+
   async function renderElitePlan(){
     if(!state.motto) return;
     const reqMotto = state.motto.id, reqAge = state.age || '6-8';   // Bug A: Identitaet vor await capturen
@@ -1950,7 +1967,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       ${v.intro ? `<p class="evar-intro">${mdLink(v.intro)}</p>` : ''}
       ${renderPlanList(d, v, schatzHtml)}
       <article class="mod"><header class="mod__head"><span class="mod__icon">🛒</span><h3 class="mod__title">Einkaufsliste · ${esc(shopMeta)}</h3></header><ul class="eshop">${shop}</ul></article>
-      ${extras}${saving}${cake}${tips}${faq}
+      ${extras}${saving}${cake}${elitePrep(d.preparationWeeks)}${tips}${faq}
     `;
     maybeScrollSchatz();   // nur NACH Stale-Guard -> Elite-Pfad armt Scroll-Latch nur beim gewinnenden Render (H2)
   }

@@ -160,7 +160,7 @@
               "content": "3 Runden, dann hat jeder die Erfolgserfahrung mehrfach. Foto-Moment: Eltern dahinter, applaudieren."
             }
           ],
-          "safetyRule": "Nur WEICHE Bälle (Stoff, Plüsch, Knüllpapier). Keine Tennis- oder Hartgummibälle drinnen. Eimer auf Sofa oder Stuhl, nicht auf wackelige Möbel. Vasen und Glas vorher wegstellen.",
+          "safetyRule": "Nur WEICHE Bälle (Stoff, Plüsch, Knüllpapier). Keine Tennis- oder Hartgummibälle drinnen. Eimer auf Sofa oder Stuhl, nicht auf wackelige Möbel. Vasen und Glas vorher wegstellen. Nur aufs Ziel werfen/spritzen, nie auf Personen oder ins Gesicht.",
           "ageAdjust3": "Linie noch näher (1 m), Eimer breit aufstellen, mit Mama oder Papa zusammen werfen. Sie machen das stolz.",
           "ageAdjust5": "Linie etwas weiter (2 m), eine Runde mit der schwachen Hand werfen — als kleine Variation, kein Wettbewerb.",
           "indoorTip": "Eimer auf Sofa oder Stühle stellen, weiche Bälle nutzen. Vasen vorher wegräumen — wirkt wilder als gedacht.",
@@ -205,7 +205,7 @@
               "content": "Du sagst leise: 'Wir haben dem Löwen geholfen — jetzt weiß seine Mama, wo er ist.' Plüsch-Löwe ans Geburtstagskind übergeben."
             }
           ],
-          "safetyRule": "Pfoten nicht zu hoch kleben — keine Stühle als Kletterhilfe. Endpunkt kindersicher (keine scharfen Kanten hinterm Versteck). KEIN 'Löwen-Brüllen' als Schreck-Moment — 3-Jährige weinen davon, der Löwe schläft, fertig. Boden weich/rutschfest, reihum (nie zwei gleichzeitig).",
+          "safetyRule": "Pfoten nicht zu hoch kleben — keine Stühle als Kletterhilfe. Endpunkt kindersicher (keine scharfen Kanten hinterm Versteck). KEIN 'Löwen-Brüllen' als Schreck-Moment — 3-Jährige weinen davon, der Löwe schläft, fertig. Boden weich/rutschfest, reihum (nie zwei gleichzeitig). Draußen: Geländegrenzen klar abstecken — keine Pirsch Richtung Straße, Wasser oder Abhang; Begleitperson dabei.",
           "ageAdjust3": "Spur SEHR kurz halten (5-8 Pfoten), Löwe nur halb versteckt (Schwanz schaut raus). Eltern dürfen flüstern: 'Schau mal hier oben!'",
           "ageAdjust5": "Spur länger (10-12 Pfoten), Löwe ganz versteckt. 5-Jährige dürfen rätseln, wo er sein könnte, oder abwechselnd 'Pirsch-Führer' sein.",
           "indoorTip": "In 60-75 m² geht die Spur nicht über 2-3 Räume — dann ehrlich anders: ein Raum mit verschachtelten Verstecken (um Sofa, hinter Vorhang, unter Tisch, am Regal vorbei). Wirkt für 3-5 wie eine echte Reise. Schlafzimmer-Tür zu — sonst rennen sie aufs Bett.",
@@ -435,7 +435,7 @@
               "content": "Das Tier wird gemeinsam ins 'Reservat' (Decken-Ecke) gebracht. Pirsch fertig, alle haben geholfen."
             }
           ],
-          "safetyRule": "Pfoten nicht zu hoch kleben — keine Stühle als Kletterhilfe. Endpunkt kindersicher (keine scharfen Kanten hinterm Versteck). Boden weich/rutschfest, reihum (nie zwei gleichzeitig).",
+          "safetyRule": "Pfoten nicht zu hoch kleben — keine Stühle als Kletterhilfe. Endpunkt kindersicher (keine scharfen Kanten hinterm Versteck). Boden weich/rutschfest, reihum (nie zwei gleichzeitig). Draußen: Geländegrenzen klar abstecken — keine Pirsch Richtung Straße, Wasser oder Abhang; Begleitperson dabei.",
           "ageAdjust3": "Spur kurz halten (10–12 Pfoten), Endpunkt sichtbar verstecken (unter Sofadecke). Du gehst die ganze Zeit voraus.",
           "ageAdjust5": "Spur länger, 2 Tier-Arten parallel (Löwe + Elefant), 2 Endpunkte. 5-Jährige dürfen abwechselnd 'Pirsch-Führer' sein.",
           "indoorTip": "In 60-75 m² geht die Spur nicht über 2-3 Räume — dann ehrlich anders: ein Raum mit verschachtelten Verstecken (um Sofa, hinter Vorhang, unter Tisch, am Regal vorbei). Wirkt für 3-5 wie eine echte Reise.",
@@ -475,7 +475,7 @@
               "content": "5-Jährige dürfen selbst suchen. 3-Jährige bleiben beim gemeinsamen Verstecken — Allein-Suchen überfordert noch."
             }
           ],
-          "safetyRule": "Pflicht: jedes Versteck muss jederzeit für den Erwachsenen einsehbar bleiben. Kein vollstaendiges Verstecken bei U4. Erwachsener zaehlt mit OFFENEN Augen und schaut nach jedem Kind. Verboten: Truhen mit zufallender Tür, Wäschekörbe, hinterm Sofa kopfüber. Boden weich/rutschfest, reihum (nie zwei gleichzeitig).",
+          "safetyRule": "Pflicht: jedes Versteck muss jederzeit für den Erwachsenen einsehbar bleiben. Kein vollstaendiges Verstecken bei U4. Erwachsener zaehlt mit OFFENEN Augen und schaut nach jedem Kind. Verboten: Truhen mit zufallender Tür, Wäschekörbe, hinterm Sofa kopfüber. Boden weich/rutschfest, reihum (nie zwei gleichzeitig). Draußen: Geländegrenzen klar abstecken — keine Pirsch Richtung Straße, Wasser oder Abhang; Begleitperson dabei.",
           "ageAdjust3": "Gemeinsam verstecken, du suchst immer — Kind muss nicht allein bleiben oder allein suchen.",
           "ageAdjust5": "5-Jährige verstecken sich allein und übernehmen abwechselnd das Suchen.",
           "indoorTip": "In 60-75 m² ein Raum mit verschachtelten Verstecken reicht. Türen zu = wirkt nach mehr Welt.",
@@ -510,13 +510,53 @@
               "content": "Nach 2-3 Min. Tiere durchwechseln, damit jeder mal den Elefanten und mal den Löwen versorgt."
             }
           ],
-          "safetyRule": "Kein essbares Futter benutzen, das verschluckt werden könnte (keine echten Nüsse/Kleinteile bei 3-Jährigen).",
+          "safetyRule": "Kein essbares Futter benutzen, das verschluckt werden könnte (keine echten Nüsse/Kleinteile bei 3-Jährigen). Nur aufs Ziel werfen/spritzen, nie auf Personen oder ins Gesicht.",
           "ageAdjust3": "Großes Futter (Wattebällchen, Knüllpapier), feste Tier-Zuteilung, du hilfst beim Einlegen.",
           "ageAdjust5": "5-Jährige dürfen 'Futterlisten' abhaken (welches Tier hat schon gegessen) — kleine Verantwortungsrolle.",
           "indoorTip": "Funktioniert in jeder Ecke, kein Bewegungsraum nötig. Gut als ruhiges Spiel nach der Pirsch.",
           "outdoorTip": "Draußen die Näpfe auf einer Decke aufreihen — sieht aus wie eine echte Futterstelle im Reservat.",
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Versorgen statt gewinnen — genau der Kümmer-Impuls, der 3-5-Jährige im Rollenspiel anzieht. Jedes Kind hat ein eigenes Tier, niemand wartet, niemand verliert."
+        },
+        {
+          "name": "🦒 Tierstimmen-Quiz",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "10 Min.",
+          "minAge": 3,
+          "loudness": "halblaut",
+          "effort": "leicht",
+          "material": "Handy mit Tierstimmen (kostenlose YouTube-Playlist oder App) oder du machst die Geräusche selbst. Optional 6–8 Tierbild-Karten zum Hochhalten. Empfehlung für 3-5: Tierstimmen-Quiz mit Kokosnuss (YouTube) — kindgerechte Stimme spricht das Tier sofort aus, ideal als sanftes Mit-Rate-Spiel.",
+          "prepText": "Such dir 5-6 eindeutige Tiere raus, die Kinder kennen (Löwe, Elefant, Affe, Schlange, Vogel, Kuh). Geräusche bereitlegen oder üben. Bekannte Tiere wählen — niemals exotische wie Hyäne oder Gepard, die kennen 3-5-Jährige noch nicht und werden frustriert. Lautstärke vorher testen: mittlere Stufe + 1 Probe-Geräusch, damit sich die 3-Jährigen beim Löwen-Brüllen nicht erschrecken.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Geräusch",
+              "content": "Du spielst/machst ein Tiergeräusch (5 Sek.). Alle Kinder gleichzeitig dürfen rufen 'LÖWE!' oder 'ELEFANT!' — niemand einzeln, das nimmt Druck."
+            },
+            {
+              "n": 2,
+              "name": "Mini-Fakt",
+              "content": "Nach jedem Tier ein kindgerechter Mini-Fakt: 'Genau — und weißt du, was der Löwe macht, wenn er hungrig ist? Er ruft ganz laut, damit Mama-Löwe weiß, wo er ist.'"
+            },
+            {
+              "n": 3,
+              "name": "Nachmachen",
+              "content": "Alle machen das Tier gemeinsam nach — brüllen, trompeten, hüpfen. Bewegung gehört dazu."
+            },
+            {
+              "n": 4,
+              "name": "Weiter",
+              "content": "Nächstes Tier. 5-6 Runden reichen, dann kippt die Aufmerksamkeit."
+            }
+          ],
+          "safetyRule": "Bruellen ist FREIWILLIG. Wer das nicht mag: leise zeigen oder Geraeusch fluestern. Reizoffene/geraeuschempfindliche Kinder duerfen Pause machen. Lautstärke moderat halten — bei zu lauter Box erschrecken sich die 3-Jährigen.",
+          "ageAdjust3": "Nur 3-4 sehr eindeutige Tiere (Löwe, Elefant, Affe, Hund), du machst die Geräusche selbst und groß vor und sprichst das Tier mit ('Wer ist das? Ein... LÖÖÖWE!').",
+          "ageAdjust5": "5-Jährige dürfen selbst ein Tier vormachen und die anderen raten lassen. Bonus-Frage: 'Wo lebt es?'",
+          "indoorTip": "Perfekt als ruhiger Lückenfüller drinnen — kein Material, kein Platz nötig.",
+          "outdoorTip": "Draußen ruhig lauter machen lassen, niemand stört sich am Brüllen.",
+          "whyItWorksTitle": "Ruhig-Slot zwischen aktiven Phasen",
+          "whyItWorks": "Aufmerksamkeit wieder einsammeln nach lautem Spiel, ohne dass es langweilig wird. Alle gleichzeitig rufen lassen nimmt den Einzel-Druck weg — bei 3-5 pure Freude statt Performance."
         }
       ],
       "food": "🎂 Löwen-Kuchen (Gugelhupf mit Mähne). 🥒 Tierfutter-Teller mit Gurken-'Blättern', Cracker-'Steinen', Trauben-'Beeren', Käse-Würfeln. 🍪 Tier-Kekse (Ausstecher). 🥤 Apfelschorle. Allergien vorher abfragen, ein nuss-/laktosefreier Teller bereit.",
@@ -718,7 +758,7 @@
               "content": "Das Tier wird gemeinsam ins 'Reservat' (Decken-Ecke) gebracht. Pirsch fertig, alle haben geholfen."
             }
           ],
-          "safetyRule": "Pfoten nicht zu hoch kleben — keine Stühle als Kletterhilfe. Endpunkt kindersicher (keine scharfen Kanten hinterm Versteck). Boden weich/rutschfest, reihum (nie zwei gleichzeitig).",
+          "safetyRule": "Pfoten nicht zu hoch kleben — keine Stühle als Kletterhilfe. Endpunkt kindersicher (keine scharfen Kanten hinterm Versteck). Boden weich/rutschfest, reihum (nie zwei gleichzeitig). Draußen: Geländegrenzen klar abstecken — keine Pirsch Richtung Straße, Wasser oder Abhang; Begleitperson dabei.",
           "ageAdjust3": "Spur kurz halten (10–12 Pfoten), Endpunkt sichtbar verstecken (unter Sofadecke). Du gehst die ganze Zeit voraus.",
           "ageAdjust5": "Spur länger, 2 Tier-Arten parallel (Löwe + Elefant), 2 Endpunkte. 5-Jährige dürfen abwechselnd 'Pirsch-Führer' sein.",
           "indoorTip": "In 60-75 m² geht die Spur nicht über 2-3 Räume — dann ehrlich anders: ein Raum mit verschachtelten Verstecken (um Sofa, hinter Vorhang, unter Tisch, am Regal vorbei). Wirkt für 3-5 wie eine echte Reise.",
@@ -798,7 +838,7 @@
               "content": "5-Jährige dürfen selbst suchen. 3-Jährige bleiben beim gemeinsamen Verstecken — Allein-Suchen überfordert noch."
             }
           ],
-          "safetyRule": "Pflicht: jedes Versteck muss jederzeit für den Erwachsenen einsehbar bleiben. Kein vollstaendiges Verstecken bei U4. Erwachsener zaehlt mit OFFENEN Augen und schaut nach jedem Kind. Verboten: Truhen mit zufallender Tür, Wäschekörbe, hinterm Sofa kopfüber. Boden weich/rutschfest, reihum (nie zwei gleichzeitig).",
+          "safetyRule": "Pflicht: jedes Versteck muss jederzeit für den Erwachsenen einsehbar bleiben. Kein vollstaendiges Verstecken bei U4. Erwachsener zaehlt mit OFFENEN Augen und schaut nach jedem Kind. Verboten: Truhen mit zufallender Tür, Wäschekörbe, hinterm Sofa kopfüber. Boden weich/rutschfest, reihum (nie zwei gleichzeitig). Draußen: Geländegrenzen klar abstecken — keine Pirsch Richtung Straße, Wasser oder Abhang; Begleitperson dabei.",
           "ageAdjust3": "Gemeinsam verstecken, du suchst immer — Kind muss nicht allein bleiben oder allein suchen.",
           "ageAdjust5": "5-Jährige verstecken sich allein und übernehmen abwechselnd das Suchen.",
           "indoorTip": "In 60-75 m² ein Raum mit verschachtelten Verstecken reicht. Türen zu = wirkt nach mehr Welt.",

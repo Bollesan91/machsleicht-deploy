@@ -513,7 +513,7 @@
               "content": "Show-Runde: Feen tanzen für Wächter, Wächter zeigen Schwertkampf für Feen — Applaus, kein Wettbewerb."
             }
           ],
-          "safetyRule": "Schaumstoff-Stäbe ausschließlich aus weichem Material — KEIN Holz, KEIN Hartplastik. Regel klar ansagen: 'Nie ins Gesicht, nie auf den Kopf, nur in die Luft.' Bei kleinen Räumen: Wächter-Gruppe in Garten/Flur, Feen-Tanz im Wohnzimmer. Sichtaufsicht durch Erwachsene während der gesamten Aktivität.",
+          "safetyRule": "Schaumstoff-Stäbe ausschließlich aus weichem Material — KEIN Holz, KEIN Hartplastik. Regel klar ansagen: 'Nie ins Gesicht, nie auf den Kopf, nur in die Luft.' Bei kleinen Räumen: Wächter-Gruppe in Garten/Flur, Feen-Tanz im Wohnzimmer. Sichtaufsicht durch Erwachsene während der gesamten Aktivität. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten. Beim Fechten/Kämpfen NIE auf Kopf oder Gesicht zielen — nur Körper/Schild; nur weiche Materialien (Pool-Nudel/Schaumstoff), Aufsicht.",
           "ageAdjust6": "Nur 2 Kommandos statt 4 (Hoch/Tief), kürzere Tanz-Sequenz.",
           "ageAdjust8": "Komplette Choreographie + freie Kür am Ende.",
           "indoorTip": null,
@@ -820,6 +820,114 @@
           "ageAdjust8": "Offene Fragen + Bonus für Latein-Namen (Farn = Filicophyta — nur Spaß-Bonus).",
           "indoorTip": null,
           "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
+          "name": "💃 Elfen-Tanz / 🗡️ Schwertkampf-Choreographie (parallel)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 20,
+          "minAge": 6,
+          "loudness": "laut",
+          "effort": "mittel",
+          "material": "Bluetooth-Box + Spotify-Playlist „Magic Forest\" oder „Celtic Music\", 6 Tüllschleier (~3 € Bastelladen) für Feen, 6 Schaumstoff-Stäbe für Waldwächter (~5 € als Set Amazon — KEIN Holz, KEIN Plastik mit harten Kanten)",
+          "prepText": "Zwei parallele Gruppen — Helfer übernimmt eine. Blumenfeen tanzen mit Tüllschleiern zu langsamer Musik (Drehen, Armkreise, Sprünge). Waldwächter lernen Schwertkampf-Choreographie (auf Kommando: 'Hoch! Tief! Kreis! Vor!' — 4 Bewegungen, dann durchwechseln). Beide Gruppen ca. 10 Min. üben, dann Show füreinander.",
+          "steps": [
+            {
+              "n": 1,
+              "content": "Gruppen einteilen: Wer hat Tüllschleier (Blumenfeen)? Wer Schaumstoff-Stab (Waldwächter)? Wer beides will, darf wechseln."
+            },
+            {
+              "n": 2,
+              "content": "Feen-Tanz: Du zeigst 4 Bewegungen vor (Drehen, Beuge, Sprung, Schleier-Welle). Kinder machen nach, dann zu Musik."
+            },
+            {
+              "n": 3,
+              "content": "Wächter-Schwertkampf: Helfer zeigt 4 Kommandos (Hoch/Tief/Kreis/Vor). Kinder reagieren auf Ruf. Niemals direkt aufeinander schlagen — nur in die Luft."
+            },
+            {
+              "n": 4,
+              "content": "Show-Runde: Feen tanzen für Wächter, Wächter zeigen Schwertkampf für Feen — Applaus, kein Wettbewerb."
+            }
+          ],
+          "safetyRule": "Schaumstoff-Stäbe ausschließlich aus weichem Material — KEIN Holz, KEIN Hartplastik. Regel klar ansagen: 'Nie ins Gesicht, nie auf den Kopf, nur in die Luft.' Bei kleinen Räumen: Wächter-Gruppe in Garten/Flur, Feen-Tanz im Wohnzimmer. Sichtaufsicht durch Erwachsene während der gesamten Aktivität. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten. Beim Fechten/Kämpfen NIE auf Kopf oder Gesicht zielen — nur Körper/Schild; nur weiche Materialien (Pool-Nudel/Schaumstoff), Aufsicht.",
+          "ageAdjust6": "Nur 2 Kommandos statt 4 (Hoch/Tief), kürzere Tanz-Sequenz.",
+          "ageAdjust8": "Komplette Choreographie + freie Kür am Ende.",
+          "indoorTip": null,
+          "outdoorTip": "Im Garten ist Schwertkampf-Choreographie besser — mehr Platz, kein Lampenschirm-Risiko.",
+          "whyItWorksTitle": "Warum die Doppel-Aktivität funktioniert",
+          "whyItWorks": "Geschlechts-Inklusion ohne Belehrung. Beide Aktivitäten sind körperlich aktiv, beide sind kunstvoll choreographiert — Tanz ist nicht weicher, Schwertkampf ist nicht harter. Wer als Fee Schwertkampf machen will, darf wechseln. Wer als Wächter tanzen will, auch. Die Doppel-Struktur signalisiert: beide Welten sind gleich wertvoll."
+        },
+        {
+          "name": "🌸 Stirnreif/Waldkrone verfeinern (Ankunfts-Aktivität)",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 15,
+          "minAge": 6,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "[Blüten-Stirnreif-Set*](https://www.amazon.de/s?k=blumenkranz+stirnreif+kinder+set&tag=machsleicht21-21) (~6 € für 6 Stk.), Karton-Kronen für Waldwächter (selbst zugeschnitten oder Bastelladen), Stoffblüten (~3 € Tüte), Eichenlaub (gesammelt oder Plastik), Klebepunkte oder Tesa (KEIN Heißkleber bei 6-Jährigen — Verbrennungsgefahr)",
+          "prepText": "Perfekte Ankunfts-Aktivität: Stirnreife und Waldkronen-Rohlinge liegen schon auf dem Tisch, wenn die Kinder reinkommen. Jedes Kind wählt Rolle und verziert seine Kopfbedeckung — Feen kleben Blüten, Wächter kleben Eichenlaub und Federn. Fertig aufsetzen.",
+          "steps": [
+            {
+              "n": 1,
+              "content": "Tisch vorher decken: links Feen-Materialien (Blüten, rosa/lila Bänder), rechts Waldwächter-Materialien (Laub, braune/grüne Bänder, kleine Federn)."
+            },
+            {
+              "n": 2,
+              "content": "Kind wählt Seite — keine Beeinflussung. Beide Tische sind gleich „cool\" dekoriert."
+            },
+            {
+              "n": 3,
+              "content": "Mit Klebepunkten verzieren — Erwachsener hilft beim Festmachen am Stirnreif."
+            },
+            {
+              "n": 4,
+              "content": "Fertige Krone aufsetzen, Quest-Name vorlesen, Foto."
+            }
+          ],
+          "safetyRule": "Glitzer-Sicherheit: KEIN loser Glitzer auf Augen-Höhe. Wenn Glitzer benutzt wird, dann Glitzer-Kleber (in Tube) — kein Streu-Glitzer für 6-Jährige. Bei Kontakt mit Auge: sofort mit Wasser spülen, nicht reiben. KEIN Heißkleber für Kinder — nur Erwachsene oder Klebepunkte verwenden. Bei Pollen-Allergie: Stoffblüten statt echte Blüten.",
+          "ageAdjust6": "Vorgefertigte Stirnreife mit nur 2-3 Stellen zum Verzieren — sonst überfordert.",
+          "ageAdjust8": "Komplett offen — die wollen ihre Krone individueller, mit Glitzer-Kleber, kleinen Perlen, Schleifen.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
+          "name": "🦋 Schmetterling-Bestimmungs-Quiz",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 15,
+          "minAge": 6,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "6 Bildkarten mit echten Schmetterlingen (Tagpfauenauge, Zitronenfalter, Kohlweißling, Schwalbenschwanz, Distelfalter, Admiral) — gedruckt von Google Bilder oder gekauft, 1 Stift pro Kind, 1 Punktezettel",
+          "prepText": "Karten verdeckt auf den Tisch. Du hebst eine hoch: „Welcher Schmetterling ist das?\" Wer zuerst die Hand hebt + den Namen sagt, bekommt 1 Punkt. Falsch = anderes Kind darf. Sieger bekommt einen Extra-Talisman (Schmetterlings-Anhänger).",
+          "steps": [
+            {
+              "n": 1,
+              "content": "Bildkarten der 6 Schmetterlinge bereitlegen — Bilder vorher selbst kurz angucken, damit du weißt, welcher welcher ist."
+            },
+            {
+              "n": 2,
+              "content": "Erste Runde: Erklärungsrunde — du zeigst alle 6 Karten, sagst kurz den Namen. „Das ist der Schwalbenschwanz — der mit den Schwänzchen hinten.\""
+            },
+            {
+              "n": 3,
+              "content": "Zweite Runde: Quiz. Karte hoch, wer ruft als Erster den Namen? Punkt notieren."
+            },
+            {
+              "n": 4,
+              "content": "Bonus-Frage: „Welche Pflanze frisst die Raupe vom Kohlweißling?\" (Antwort: Kohl). Bildungswert obendrauf."
+            }
+          ],
+          "safetyRule": "Sichtaufsicht durch Erwachsene; Bildkarten sind unbedenklich. Bei lebenden Schmetterlingen (Garten): nicht anfassen, nur beobachten — Flügelschuppen sind empfindlich.",
+          "ageAdjust6": "Multiple Choice (3 Antworten als Wahlmöglichkeit unter die Karte legen).",
+          "ageAdjust8": "Bonus: „Welcher Schmetterling überwintert als erwachsenes Tier?\" (Tagpfauenauge, Zitronenfalter).",
+          "indoorTip": "Am Tisch reicht völlig.",
+          "outdoorTip": "Im Garten: wenn ein echter Schmetterling vorbeifliegt, ist es perfekt — Buchwissen + Realität.",
           "whyItWorksTitle": null,
           "whyItWorks": null
         }
@@ -1265,7 +1373,7 @@
         {
           "icon": "🚧",
           "title": "Stationen + Ankunfts-Tisch dekorieren",
-          "detail": "Pastell-Luftballons aufhängen, Eichenlaub-Girlande spannen, Zauberbaum-Beutel + Quest-Pässe + Stirnreif-Auswahl + Waldkronen-Rohlinge am Eingangs-Tisch. Bei Wow: LED-Lichterketten in Tüllstoff/Girlanden einwickeln (noch nicht anschalten — erst beim Übergang zu Prüfung 5)."
+          "detail": "Pastell-Luftballons aufhängen, Eichenlaub-Girlande spannen, Zauberbaum-Beutel + Quest-Pässe + Stirnreif-Auswahl + Waldkronen-Rohlinge am Eingangs-Tisch. Bei Wow: LED-Lichterketten in Tüllstoff/Girlanden einwickeln (noch nicht anschalten — erst beim Übergang zu Prüfung 5). Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen."
         },
         {
           "icon": "🔋",

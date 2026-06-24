@@ -5,8 +5,7 @@ Stand: 2026-05-11. Verbindliche Checkliste vor jedem Deploy auf `main`. V5.1-Spe
 ## Hard-Gates (Deploy stoppen wenn rot)
 
 ### 1. Build + Syntax
-- [ ] `bash _src/build.sh` ohne Fehler. Output `js/kindergeburtstag.js` aktuell und syntax-valide:
-      `node -e "try{new Function(require('fs').readFileSync('js/kindergeburtstag.js','utf8'));console.log('OK')}catch(e){console.log('FAIL:',e.message)}"`
+- [x] ~~`bash _src/build.sh` → `js/kindergeburtstag.js`~~ **ENTFERNT (24.06.2026).** Der React-Planer-Bundle (`js/kindergeburtstag.js`, 3,7 MB) war tot — von keiner HTML-Seite geladen; der Live-Planer ist die statische `kindergeburtstag.html` (lädt nur `/js/motto-data.js` + fetcht `/data/motto/*.json`). Artefakt gelöscht. `_src/`-Build-Tooling bleibt vorerst nur als Validator-Orakel (s. AUDIT §3.1) — Vollabbau ist eigener Task (Validator auf Live-Quellen umstellen).
 - [ ] `node --check party-worker.js` → OK
 - [ ] `node --check netlify/functions/*.mjs` und `*.js` → alle OK
 - [ ] `bash validate-all.sh` → alle Stufen grün (oder Path-Bug bestätigt als nicht-blockierend)

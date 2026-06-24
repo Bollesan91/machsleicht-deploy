@@ -252,7 +252,7 @@
               "content": "Am Ende des Parcours wartet die Schatzkiste, bewacht vom Plüsch-Tiger. Geburtstagskind öffnet sie, Mitgebsel werden geborgen. Mission erfüllt — alle haben gewonnen."
             }
           ],
-          "safetyRule": "Lianen-Höhe so wählen, dass kein Kind hängenbleibt oder darunter durchklettern muss. Klebeband-Markierungen flach am Boden, keine echten Stolperfallen. Pflicht bei Augen-zu-Variante: ZWEITE Aufsichtsperson. Solo-Variante (1 Erwachsener) ist hier nicht ausreichend.",
+          "safetyRule": "Lianen-Höhe so wählen, dass kein Kind hängenbleibt oder darunter durchklettern muss. Klebeband-Markierungen flach am Boden, keine echten Stolperfallen. Pflicht bei Augen-zu-Variante: ZWEITE Aufsichtsperson. Solo-Variante (1 Erwachsener) ist hier nicht ausreichend. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": "Lianen weiter auseinander, Wasserfall-Sprung sehr kurz (30 cm), Sumpf-Fläche klein.",
           "ageAdjust8": "Lianen enger, Wasserfall breiter (60–80 cm), Sumpf größer und mit verbundenen Augen führen (Wasserfall-Navigator führt Schlangen-Beruhiger durch).",
           "indoorTip": "Lianen von der Decke hängen, Wasserfall am Türrahmen markieren, Sumpf im Flur — Wohnung wird zum Tropenwald.",
@@ -589,7 +589,7 @@
               "content": "Am Ende des Parcours wartet die Schatzkiste, bewacht vom Plüsch-Tiger. Geburtstagskind öffnet sie, Mitgebsel werden geborgen. Mission erfüllt — alle haben gewonnen."
             }
           ],
-          "safetyRule": "Lianen-Höhe so wählen, dass kein Kind hängenbleibt oder darunter durchklettern muss. Klebeband-Markierungen flach am Boden, keine echten Stolperfallen. Pflicht bei Augen-zu-Variante: ZWEITE Aufsichtsperson. Solo-Variante (1 Erwachsener) ist hier nicht ausreichend.",
+          "safetyRule": "Lianen-Höhe so wählen, dass kein Kind hängenbleibt oder darunter durchklettern muss. Klebeband-Markierungen flach am Boden, keine echten Stolperfallen. Pflicht bei Augen-zu-Variante: ZWEITE Aufsichtsperson. Solo-Variante (1 Erwachsener) ist hier nicht ausreichend. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": "Lianen weiter auseinander, Wasserfall-Sprung sehr kurz (30 cm), Sumpf-Fläche klein.",
           "ageAdjust8": "Lianen enger, Wasserfall breiter (60–80 cm), Sumpf größer und mit verbundenen Augen führen (Wasserfall-Navigator führt Schlangen-Beruhiger durch).",
           "indoorTip": "Lianen von der Decke hängen, Wasserfall am Türrahmen markieren, Sumpf im Flur — Wohnung wird zum Tropenwald.",
@@ -828,6 +828,181 @@
           "outdoorTip": "Stationen über den Garten ziehen, Walkie-Talkies fürs Team einsetzen — die Quest gewinnt draußen an Abenteuer-Atmosphäre.",
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Fünf Stationen mit echtem Schatz-Fund am Ende: Das ist die kognitive Tiefe, die 6-8-Jährige tragen können — Rätsel kombinieren, Tarn-Tuch nutzen, gemeinsam knobeln. Der Schatzfund liefert den emotionalen Höhepunkt der Wow-Variante."
+        },
+        {
+          "name": "5️⃣ Schlange-Geräusch (Station 5 → R)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 12,
+          "minAge": 6,
+          "loudness": "mittel",
+          "effort": "leicht",
+          "material": "Smartphone oder Bluetooth-Box mit 5 vorbereiteten Audio-Schnipseln à 3 Sek.: Wind, Regen, Vogel-Zwitschern, Trommeln, Rasseln (das echte Schlangen-Geräusch). Pro Geräusch eine Karte mit Wort-Schild und Buchstaben (W, R, V, T, R). Schlangen-Beruhiger übernimmt das Identifizieren.",
+          "prepText": "Setting: \"Im Dschungel raschelt es überall. Aber nur EIN Geräusch ist eine echte Schlange. Welches?\" Schlangen-Beruhiger hört genau hin und entscheidet — Crew-Rolle aktiv.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Geräusche abspielen",
+              "content": "Jedes der 5 Geräusche nacheinander 3 Sek. abspielen. Team rät pro Geräusch: Wind, Regen, Vogel, Trommel, Rasseln."
+            },
+            {
+              "n": 2,
+              "name": "Schlangen-Geräusch erkennen",
+              "content": "Schlangen-Beruhiger entscheidet: Nur das Rasseln ist eine echte Klapperschlange. Andere sind Wind, Regen, Vogel-Zwitschern, Trommeln."
+            },
+            {
+              "n": 3,
+              "name": "Lösungs-Buchstabe",
+              "content": "Rasseln beginnt mit R — fünfter und letzter Code-Buchstabe."
+            },
+            {
+              "n": 4,
+              "name": "Stempel & Banderole",
+              "content": "Stempel auf die Forscher-Karte. Banderole mit R ans Forscher-Heft — alle fünf Buchstaben sind da."
+            },
+            {
+              "n": 5,
+              "name": "TIGER zusammensetzen",
+              "content": "T-I-G-E-R: das Lösungswort lautet TIGER! Die Crew weiß jetzt: Der Tiger-Schatz im Dschungel kann geborgen werden."
+            }
+          ],
+          "safetyRule": "Geräusche nicht zu laut abspielen — Aufmerksamkeit hochhalten, aber Ohren schonen. Bei sehr lärm-empfindlichen Kindern: Lautstärke runter, Karten dazu zeigen.",
+          "ageAdjust6": "Nur 3 Geräusche (Rasseln, Wind, Vogel) — schneller zu unterscheiden.",
+          "ageAdjust8": "5 Geräusche + Bonus-Frage: 'Welche Schlange macht das Rasseln? — Klapperschlange'.",
+          "indoorTip": "Bluetooth-Box auf den Tisch, Kinder im Halbkreis. Karten neben der Box auflegen.",
+          "outdoorTip": "Im Garten Box auf Stein stellen, Kinder unter Baum — Geräusche wirken noch authentischer.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Hör-Aufgabe ist anders als die vier Sortier-Stationen davor — bringt Variation. Schlangen-Beruhiger-Rolle gibt dem aufmerksamen Kind eine echte Funktion. Und: das gemeinsame Zusammensetzen T-I-G-E-R am Ende ist der emotionale Höhepunkt der Stations-Rotation."
+        },
+        {
+          "name": "🐾 Spuren-Rallye",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 5,
+          "loudness": null,
+          "effort": "leicht",
+          "material": "12–15 Tierspuren aus Tonpapier ausgeschnitten (Tigerpfote, Tapir, Krokodil-Klaue — DIN A4 braunes/graues Tonpapier). Tesa zum Befestigen. Am Endpunkt: 1 Plüsch-Tier oder eine Box mit Mini-Dschungeltieren als \"Fund\". Druckvorlage Dschungel-Tierspuren ist in Vorbereitung — bis dahin: schnell selbst zeichnen, die Kinder merken den Unterschied nicht.",
+          "prepText": "Vorher legst du eine Spur durch Garten oder Wohnung — z.B. Tigerpfoten an die Wand kleben (Augenhöhe Kind), die in eine bestimmte Richtung führen. Am Endpunkt versteckt sich das \"verlorene Tier\" (Plüsch-Tiger oder Plüsch-Affe).",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Einstimmen",
+              "content": "Du flüsterst: 'Ein Tier hat sich verlaufen im Dschungel. Wir folgen seiner Spur — ganz leise wie echte Forscher.'"
+            },
+            {
+              "n": 2,
+              "name": "Spur aufnehmen",
+              "content": "Alle starten gemeinsam, Spuren-Leser geht voran und zeigt die erste Pfote. Tempo bewusst langsam, Pirsch-Modus an."
+            },
+            {
+              "n": 3,
+              "name": "Spur folgen",
+              "content": "Kinder suchen Pfote für Pfote. Jeden Fund kurz bestätigen ('Da, eine Spur!'), niemand rennt voraus."
+            },
+            {
+              "n": 4,
+              "name": "Tier-Ruf orten",
+              "content": "Aus dem Versteck kommt ein Tier-Ruf (du oder Helfer macht Affen-Geräusch). Wer's zuerst hört, zeigt die Richtung an."
+            },
+            {
+              "n": 5,
+              "name": "Tier finden",
+              "content": "Am Endpunkt liegt das Plüsch-Tier. Alle finden es gemeinsam — niemand 'gewinnt', jeder darf es halten."
+            }
+          ],
+          "safetyRule": "Spuren nur auf Augenhöhe kleben, nichts zum Klettern provozieren. Endpunkt-Versteck ohne scharfe Kanten oder kippelige Möbel. Pflicht: bei Augen-zu-Pirsch-Spielen ist eine ZWEITE Aufsichtsperson erforderlich. Solo-Variante (1 Erwachsener) ist hier nicht ausreichend.",
+          "ageAdjust6": "Spur kurz halten (15–20 Spuren reichen), Endpunkt sichtbar verstecken (unter Sofadecke, hinter Baum).",
+          "ageAdjust8": "Mehrere Tier-Arten parallel auslegen (Tiger + Tapir), 2 Endpunkte. In Teams suchen.",
+          "indoorTip": "Spuren in 3–4 Räume verteilen, Türen geschlossen halten — sieht nach mehr Dschungel aus als es ist.",
+          "outdoorTip": "Im Garten echte Erde/Rinde als Spur-Stationen nutzen — Spuren zwischen Sträucher, an Baumstämme. Wirkt sofort wie echter Tropenwald.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Schleichen bremst die Lautstärke von selbst — und das gemeinsame Finden hält den Wettbewerb raus, der mit 6-8 sonst schnell Tränen macht. Greifbarer Plüsch-Fund statt abstraktem Ziel."
+        },
+        {
+          "name": "🦜 Tier-Quiz (Dschungeltiere)",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 15,
+          "minAge": 5,
+          "loudness": "ruhig",
+          "effort": null,
+          "material": "Smartphone oder Bluetooth-Box, vorbereitete YouTube-Liste. Empfehlung: [\"Dschungel-Geräusche & Tropenwald-Tiere\"](https://www.youtube.com/watch?v=OPGagbm2vTI) (Affen, Tukan, Frösche — gezielt anspringbar) oder [\"Tropische Tiere Quiz für Kinder\"](https://www.youtube.com/watch?v=qmtLEmlOWN0) (komplett fertig, einfach abspielen)",
+          "prepText": "Die Crew sitzt im Halbkreis. Du spielst eine Tierstimme ab (5 Sekunden), alle dürfen mitraten — Tier-Stimmen-Imitator darf das Geräusch danach nachmachen. Schnellstes Kind antwortet, oder reihum, damit alle zum Zug kommen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Crew setzen",
+              "content": "Alle sitzen im Halbkreis vor der Box. Du erklärst: 'Gleich hört ihr ein Dschungeltier — wer weiß, welches?'"
+            },
+            {
+              "n": 2,
+              "name": "Stimme abspielen",
+              "content": "Du spielst eine Tierstimme (5 Sek.). Schnellstes Kind antwortet, oder reihum, damit jeder drankommt."
+            },
+            {
+              "n": 3,
+              "name": "Imitator nachmachen",
+              "content": "Tier-Stimmen-Imitator macht das Tier nach ('Affe — UUH-UUH-AAH!'). Nebenbei kurze Faktenfrage: 'Wo lebt es?'"
+            },
+            {
+              "n": 4,
+              "name": "Weiter",
+              "content": "Nächstes Tier. 6-8 Runden reichen; danach kippt die Aufmerksamkeit, lieber früher aufhören."
+            }
+          ],
+          "safetyRule": null,
+          "ageAdjust6": "Bekannte Tiere (Affe, Tiger, Tukan, Frosch, Schlange als Joker). Nicht zu lange.",
+          "ageAdjust8": "Auch schwierigere Tiere mischen (Faultier, Tapir, Brüllaffe, Aguti). Punkte zählen optional.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Raten ohne Verlierer: Mit 6-8 wollen Kinder ihr Tier-Wissen zeigen, aber das Reihum-Prinzip sorgt dafür, dass auch das langsamere Kind dran kommt. Imitator-Rolle gibt dem Tier-Stimmen-Künstler-Kind eine kleine Show-Bühne."
+        },
+        {
+          "name": "🌿 Lianen-Parcours: Tiger-Schatz im Dschungel",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 6,
+          "loudness": null,
+          "effort": "mittel",
+          "material": "5–6 Lianen aus Krepppapier (~3 €, von Decke hängen oder zwischen Stuhllehnen spannen), Klebeband-Markierungen am Boden für \"Wasserfall-Abschnitt\" und \"Krokodils-Sumpf\" (no-go-Zone), 1 Schuhkarton mit Goldfolie und Tiger-Aufkleber als Schatzkiste, 1 Plüsch-Tiger als \"Wächter\" beim Schatz, Mitgebsel-Inhalte in der Schatzkiste",
+          "prepText": "Story-Setup: \"Mit dem Lösungswort TIGER wissen wir jetzt: irgendwo im Dschungel liegt ein Tiger-Schatz. Er ist nur durch den Lianen-Parcours erreichbar — über den Wasserfall, am Krokodils-Sumpf vorbei, durch das Dickicht. Wasserfall-Navigator führt die Crew.\"",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Story-Setup",
+              "content": "'TIGER ist das Lösungswort — der Tiger-Schatz wartet. Aber der Weg führt durch den Lianen-Parcours.' Schatzkarte austeilen, Wasserfall-Navigator vorn."
+            },
+            {
+              "n": 2,
+              "name": "Lianen-Abschnitt",
+              "content": "Krepppapier-Lianen hängen von Decke / zwischen Stuhllehnen. Crew muss sich durchschlängeln, ohne eine Liane abzureißen — Geschick gefragt."
+            },
+            {
+              "n": 3,
+              "name": "Wasserfall-Sprung",
+              "content": "Klebeband-Linie am Boden = Wasserfall. Jedes Kind springt einmal drüber. Wasserfall-Navigator zeigt das Tempo."
+            },
+            {
+              "n": 4,
+              "name": "Krokodils-Sumpf umgehen",
+              "content": "Klebeband-Fläche am Boden = Sumpf, darf nicht betreten werden. Crew bahnt sich Weg drumherum. Schlangen-Beruhiger hilft mit Hand-Zeichen."
+            },
+            {
+              "n": 5,
+              "name": "Schatz heben",
+              "content": "Am Ende des Parcours wartet die Schatzkiste, bewacht vom Plüsch-Tiger. Geburtstagskind öffnet sie, Mitgebsel werden geborgen. Mission erfüllt — alle haben gewonnen."
+            }
+          ],
+          "safetyRule": "Lianen-Höhe so wählen, dass kein Kind hängenbleibt oder darunter durchklettern muss. Klebeband-Markierungen flach am Boden, keine echten Stolperfallen. Pflicht bei Augen-zu-Variante: ZWEITE Aufsichtsperson. Solo-Variante (1 Erwachsener) ist hier nicht ausreichend. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
+          "ageAdjust6": "Lianen weiter auseinander, Wasserfall-Sprung sehr kurz (30 cm), Sumpf-Fläche klein.",
+          "ageAdjust8": "Lianen enger, Wasserfall breiter (60–80 cm), Sumpf größer und mit verbundenen Augen führen (Wasserfall-Navigator führt Schlangen-Beruhiger durch).",
+          "indoorTip": "Lianen von der Decke hängen, Wasserfall am Türrahmen markieren, Sumpf im Flur — Wohnung wird zum Tropenwald.",
+          "outdoorTip": "Lianen zwischen Bäume spannen, Wasserfall auf dem Rasen markieren — im Garten ist die Bühne größer und atmosphärischer.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Schließt nach kognitiver Stations-Phase mit motorischem Parcours ab — Körper-Energie raus. Crew-Rollen werden hier alle nochmal aktiv (Wasserfall-Navigator, Schlangen-Beruhiger). Schatz-Fund liefert den emotionalen Höhepunkt vor der Lizenz-Zeremonie."
         }
       ],
       "food": "🎂Schoko-Vulkankuchen mit Wunderkerze1 Gugelhupf + 1 kleiner\n🥤\"Dschungel-Wasser\"4 L Apfelschorle\n🍕Tropen-Mini-Pizzen15 Stück\n🌯Schlangen-Wraps10 Stück\n🍌Affen-Bananen10 Stk.\n🥕Tukan-Schnabel-Sticks + Käse-Würfel\"Forscher-Snack\"\n🍿Pop-Mais (Dschungel-Kino)400 g\n🍫Schoko-Goldmünzen mit Tiger-MotivSchatzkisten-Inhalt",

@@ -201,7 +201,7 @@
               "content": "Verlierer bekommen einen „Trost-Stern\" (Gummibärchen) — kein Kind geht leer aus."
             }
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Bei Slalom/Staffel: Bodenfreiheit checken (keine Stolperfallen, keine offene Steckdose im Lauf-Korridor). Boden weich/rutschfest, reihum (nie zwei gleichzeitig).",
+          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Bei Slalom/Staffel: Bodenfreiheit checken (keine Stolperfallen, keine offene Steckdose im Lauf-Korridor). Boden weich/rutschfest, reihum (nie zwei gleichzeitig). Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": "Kurze Strecke, langsames Galoppieren.",
           "ageAdjust8": "Slalom zwischen den Tüchern, Zeit stoppen, Bestzeit notieren.",
           "indoorTip": "Flur reicht — Tücher enger legen. Wohnzimmer-Möbel zur Seite, Teppich-Ecken fixieren.",
@@ -432,7 +432,7 @@
               "content": "Verlierer bekommen einen „Trost-Stern\" (Gummibärchen) — kein Kind geht leer aus."
             }
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Bei Slalom/Staffel: Bodenfreiheit checken (keine Stolperfallen, keine offene Steckdose im Lauf-Korridor). Boden weich/rutschfest, reihum (nie zwei gleichzeitig).",
+          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Bei Slalom/Staffel: Bodenfreiheit checken (keine Stolperfallen, keine offene Steckdose im Lauf-Korridor). Boden weich/rutschfest, reihum (nie zwei gleichzeitig). Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": "Kurze Strecke, langsames Galoppieren.",
           "ageAdjust8": "Slalom zwischen den Tüchern, Zeit stoppen, Bestzeit notieren.",
           "indoorTip": "Flur reicht — Tücher enger legen. Wohnzimmer-Möbel zur Seite, Teppich-Ecken fixieren.",
@@ -523,6 +523,42 @@
           "outdoorTip": null,
           "whyItWorksTitle": null,
           "whyItWorks": null
+        },
+        {
+          "name": "🦄 Einhorn-Horn basteln",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 20,
+          "minAge": 3,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "1 Pappteller pro Kind (weiß), Schere (du schneidest vor!), Klebeband/Tacker, Glitzer-Kleber oder Glitzer + Klebestift, bunte Sticker, Gummiband oder Haarreif zum Befestigen",
+          "prepText": "Pappteller einmal falten → Kegel-Form rollen → mit Tacker fixieren. Das ist das Horn. Jedes Kind darf sein Horn mit Glitzer-Kleber und Stickern verzieren. Mit Gummiband am Kopf befestigen oder auf einen Haarreif kleben.\n\nVorbereitung: Hörner vorher schon zur Kegel-Form rollen und tackern — 3-Jährige können das nicht selbst. Sie kleben nur die Deko drauf.\n\nTipp: Tisch vorher mit alter Zeitung abdecken. Glitzer geht nie wieder raus — akzeptiere das jetzt.",
+          "steps": [
+            {
+              "name": "Vorbereitung (Erwachsene)",
+              "content": "Pappteller zur Kegel-Form rollen und tackern — das ist das Horn. 3-Jährige können das nicht selbst, also vorab erledigen."
+            },
+            {
+              "name": "Verzieren",
+              "content": "Jedes Kind verziert sein Horn mit Glitzer-Kleber und Stickern."
+            },
+            {
+              "name": "Befestigen",
+              "content": "Horn mit Gummiband am Kopf befestigen oder auf einen Haarreif kleben."
+            },
+            {
+              "name": "Tipp",
+              "content": "Tisch vorher mit alter Zeitung abdecken — Glitzer geht nicht mehr raus."
+            }
+          ],
+          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband. Glitzer + Glitzer-Kleber vorher 1 Tag an Innenseite Unterarm testen (Allergie-Vortest); bei Rötung Sticker statt Glitzer.",
+          "indoorTip": "Tisch mit alter Zeitung oder Wachstuch abdecken, Müllbeutel als Bastel-Schürze pro Kind — Glitzer-Kleber landet überall.",
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null,
+          "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
         }
       ],
       "food": "🎂Galaxy-Kuchen1 Springform\n🍕Pizza-Brötchen20 Stück\n💧Limo / Wasser4 Flaschen\n🍓Obst & GemüseErdbeeren, Gurke\n🍿Popcorn300 g\n🍭SüßigkeitenHaribo, bunte Schoko-Linsen",
@@ -742,7 +778,7 @@
               "content": "Verlierer bekommen einen „Trost-Stern\" (Gummibärchen) — kein Kind geht leer aus."
             }
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Bei Slalom/Staffel: Bodenfreiheit checken (keine Stolperfallen, keine offene Steckdose im Lauf-Korridor). Boden weich/rutschfest, reihum (nie zwei gleichzeitig).",
+          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Bei Slalom/Staffel: Bodenfreiheit checken (keine Stolperfallen, keine offene Steckdose im Lauf-Korridor). Boden weich/rutschfest, reihum (nie zwei gleichzeitig). Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": "Kurze Strecke, langsames Galoppieren.",
           "ageAdjust8": "Slalom zwischen den Tüchern, Zeit stoppen, Bestzeit notieren.",
           "indoorTip": "Flur reicht — Tücher enger legen. Wohnzimmer-Möbel zur Seite, Teppich-Ecken fixieren.",

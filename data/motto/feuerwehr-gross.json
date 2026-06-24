@@ -967,6 +967,51 @@
           "outdoorTip": null,
           "whyItWorksTitle": null,
           "whyItWorks": null
+        },
+        {
+          "name": "🔍 Mini-Brandermittlung",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 25,
+          "minAge": 6,
+          "loudness": "ruhig",
+          "effort": "hoch",
+          "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
+          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler Jonas, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Briefing",
+              "content": "4 Verdächtigen-Karten zeigen, kurz vorlesen."
+            },
+            {
+              "n": 2,
+              "name": "Beweise sammeln",
+              "content": "Crew durchsucht den Brand-Bereich mit Lupe. Wer findet was? In die Fall-Akte eintragen."
+            },
+            {
+              "n": 3,
+              "name": "Diskussion",
+              "content": "alle Beweise auf den Tisch. Was bedeutet das angesengte Tuch? Wer hatte einen Handschuh? Crew diskutiert (5 Min., du moderierst)."
+            },
+            {
+              "n": 4,
+              "name": "Verdacht festlegen",
+              "content": "in der Fall-Akte ankreuzen, wer's war."
+            },
+            {
+              "n": 5,
+              "name": "Auflösung",
+              "content": "du löst auf: Die fettigen Handschuh-Abdrücke + die Schüssel mit Fett-Resten führen zur Köchin (sie hat mit einer heißen Fett-Pfanne hantiert). Die Indizien allein reichen — KEIN Theorie-Briefing nötig, perfekt für die Minimal-Variante."
+            }
+          ],
+          "safetyRule": null,
+          "ageAdjust6": "6-Jährige: Verdächtige als Symbol-Karten (Bild), nicht Text. Erwachsener moderiert.",
+          "ageAdjust8": "Mehr Raum für eigene Hypothesen, du gibst weniger vor.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": "Tieferer Sinn",
+          "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
         }
       ],
       "food": "🎂Feuerwehrauto-Kuchen1 Kastenform + Wunderkerze\n🥤Apfelschorle / Cola5 l\n🍕Pizza-Stücke4 große Pizzen\n🥨Brezeln + Salzstangenje 2 Tüten\n🍿Chips2 große Tüten\n🍭Gummibärchen + Schokije 1 Tüte\n🥪Sandwiches (Pause-Snack)8 Stück",
