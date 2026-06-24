@@ -1475,6 +1475,11 @@
       "headline": "4 Wochen vorher — Grundgerüst stellen",
       "items": [
         {
+          "icon": "🥜",
+          "title": "Allergien/Unverträglichkeiten abfragen",
+          "detail": "Bei Einladung/Zusage abklären (Nuss, Laktose, Gluten) — Liste am Back- und Party-Tag griffbereit."
+        },
+        {
           "icon": "📅",
           "title": "Datum, Uhrzeit, Treffpunkt fixieren",
           "detail": "Samstag-Nachmittag passt gut, 3,5–4 Std. bei 9-12. Bei Schlafparty (Wow): Übernachtungs-Termin früh klären, das beeinflusst die Gästeliste."
