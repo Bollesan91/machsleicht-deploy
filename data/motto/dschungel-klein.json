@@ -537,6 +537,46 @@
           "outdoorTip": "Bananen draußen mit Doppelklebeband an Bäume oder Büsche kleben (auf Kinder-Augenhöhe). Bei Wind: schwerere Bananen aus Pappkarton statt Tonpapier.",
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Suchen ist Urspiel, das jedes Kind kann. Der Affen-Frame macht es zum gemeinsamen Helfen, kein Wettkampf. Jedes Kind findet mindestens eine — du steuerst diskret, wer als nächstes 'zufällig' an einer Banane vorbeikommt."
+        },
+        {
+          "name": "🥁 Dschungel-Trommeln",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "10 Min.",
+          "minAge": 3,
+          "loudness": "laut",
+          "effort": "leicht",
+          "material": "6-8 Topfdeckel oder umgedrehte Plastik-Schüsseln + Holzlöffel als Trommelstöcke. Optional eine kleine Spielzeug-Trommel oder ein Bongo, falls vorhanden. Eine Audio-Quelle mit Dschungel-Beat (kurzer, ruhiger Loop, kein wildes Drumming).",
+          "prepText": "Sammle 6-8 Trommel-Stationen: Topfdeckel + Holzlöffel pro Kind. Stelle sie im Kreis auf einer Decke auf — jedes Kind hat seinen Platz. Audio-Quelle bereit mit langsamen, ruhigen Dschungel-Beats (kein metallisches Schlagzeug).",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Erklären",
+              "content": "Du sagst: 'Im Dschungel sprechen die Forscher mit Trommeln. Wir trommeln jetzt zusammen — erst langsam, dann zusammen mit dem Beat.'"
+            },
+            {
+              "n": 2,
+              "name": "Anfangen",
+              "content": "Jedes Kind nimmt 1-2 Löffel + einen Topfdeckel. Erstmal nur ausprobieren: leise klopfen, dann lauter — du machst vor."
+            },
+            {
+              "n": 3,
+              "name": "Mit Beat",
+              "content": "Du startest die Audio-Quelle. Kinder trommeln mit, niemand muss im Takt sein. Lautstärke nach 1-2 Min. drosseln, sonst wird's zu wild."
+            },
+            {
+              "n": 4,
+              "name": "Stoppen",
+              "content": "Audio aus, 'Trommel-Pause'. Alle legen die Löffel hin — kurze Stille gehört zum Trommeln dazu, sonst kein Stopp-Signal."
+            }
+          ],
+          "safetyRule": "Pflicht: KEINE Glas- oder Porzellan-Deckel (Bruchgefahr). Nur Plastik- oder Metall-Topfdeckel mit unbeschädigtem Rand. Holzlöffel ohne Splitter. Reizoffene/geräuschempfindliche Kinder dürfen Pause machen und nur zuschauen — Lautstärke nicht erzwingen. Max. 5 Minuten Trommel-Phase, dann Stille einfordern.",
+          "ageAdjust3": "Nur 5 Min. Trommeln, du hältst Tempo niedrig und stoppst, wenn ein Kind die Hände auf die Ohren legt. Optional weichere Trommelstöcke (Holzlöffel mit Stoff umwickelt).",
+          "ageAdjust5": "5-Jährige dürfen abwechselnd 'Trommel-Chef' sein und ein einfaches Muster (langsam-langsam-schnell-schnell) vorgeben, das die anderen nachtrommeln.",
+          "indoorTip": "Drinnen besser auf 5 Min. begrenzen — die Nachbarn freuen sich. Topfdeckel auf Sitzkissen legen dämpft den harten Schlag.",
+          "outdoorTip": "Draußen ruhig 10 Min. trommeln — niemand stört sich. Im Garten Trommeln im Kreis aufstellen, Kinder dürfen rumlaufen wenn sie wollen.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Trommeln ist das einzige laute Spiel in diesem Setup — als kurzer Ausgleich zwischen den ruhigen Stationen perfekt. Jedes Kind kann es sofort, kein Können nötig. Der Stopp-Moment ist genauso wichtig wie das Trommeln selbst — Kinder lernen, dass Stille auch Musik ist."
         }
       ],
       "food": "🎂 Dschungel-Schokokuchen (Rührteig mit grüner Buttercreme + bunten Esspapier-Schmetterlingen). 🍌 Affen-Snack-Teller mit Bananen-Booten, Trauben-'Beeren', Gurken-'Blättern', Käse-Würfeln, Cracker-'Steinen'. 🍪 Dschungel-Kekse (Schmetterlings- oder Affen-Ausstecher). 🥤 Apfelschorle. Allergien vorher abfragen, ein nuss-/laktosefreier Teller bereit.",
@@ -883,6 +923,46 @@
           "outdoorTip": "Im Garten ein dickes Seil an einen niedrigen Ast (max. 50 cm Bodenabstand!) — Erwachsener prüft Ast-Stabilität VORAB.",
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Affen-Hangeln ist DER Dschungel-Moment, den jedes Kind erwartet. Im Sitz-Inseln-Format ohne Klettern bleibt es altersgerecht und sicher."
+        },
+        {
+          "name": "🐍 Tier-Fühlbox",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "10 Min.",
+          "minAge": 3,
+          "loudness": "leise",
+          "effort": "leicht",
+          "material": "Ein Karton mit Loch oben (etwa Schuhkarton-Größe) oder eine Stoff-Tasche. Drin: 5-6 Plüsch-Tiere mit eindeutigen Texturen (weicher Affe, kuschliger Tiger, leicht raue Stoff-Schlange, glatter Plüsch-Frosch, Plüsch-Schmetterling mit Flügel-Stoff). Optional ein Bambus-Stab als 'Forscher-Werkzeug'.",
+          "prepText": "Such 5-6 Plüsch-Tiere raus, die sich klar unterschiedlich anfühlen. Loch im Karton so groß, dass eine Kinderhand reinpasst, aber nicht der ganze Arm. Keine spitzen Plüschtier-Augen (Knopf-Augen statt Plastik-Spikes).",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Erklären",
+              "content": "Du sagst: 'Im Dschungel kann man die Tiere oft nur fühlen, nicht sehen — sie sind versteckt. Wir probieren das jetzt aus.'"
+            },
+            {
+              "n": 2,
+              "name": "Fühlen",
+              "content": "Jedes Kind greift einmal in die Box, fühlt ein Tier (ohne rauszuziehen!) und rät was es ist. Du moderierst, alle anderen warten."
+            },
+            {
+              "n": 3,
+              "name": "Aufdecken",
+              "content": "Nach dem Raten zieht das Kind das Tier raus. Alle freuen sich, ob richtig oder nicht — Hauptsache es ist ein Tier."
+            },
+            {
+              "n": 4,
+              "name": "Weiter",
+              "content": "Nächstes Kind. 6 Runden reichen, dann kippt die Aufmerksamkeit. Geübtere Tiere wieder reinlegen für die nächste Runde."
+            }
+          ],
+          "safetyRule": "Pflicht: Plüsch-Tiere mit Knopf-Augen oder gestickten Augen (keine harten Plastik-Augen, die in Mund/Auge stechen können). Karton-Kanten mit Tape abkleben. Wenn ein Kind nicht fühlen will: Kind darf zuschauen, Druck-Verbot.",
+          "ageAdjust3": "Nur 3-4 sehr eindeutige Tiere (Affe groß und weich, Schlange länglich, Frosch glatt), du hilfst beim Reingreifen wenn Kind unsicher.",
+          "ageAdjust5": "5-Jährige dürfen 2 Tiere gleichzeitig fühlen und vergleichen. Wer mag, beschreibt das Tier in Worten ('weich, klein, hat Flügel') bevor es geraten wird.",
+          "indoorTip": "Perfekt als ruhiger Lückenfüller drinnen — kein Platz nötig, alle sitzen im Kreis um die Box.",
+          "outdoorTip": "Draußen die Box auf eine Decke stellen, Kinder drumherum sitzen lassen. Im Sommer schattige Stelle wählen, damit kein Kind in der Sonne wartet.",
+          "whyItWorksTitle": null,
+          "whyItWorks": null
         }
       ],
       "food": "🎂 Dschungel-Schokokuchen mit grüner Buttercreme + Esspapier-Schmetterlingen + ein zweiter Affen-Kuchen oder Bananen-Muffins. 🍌 Großer Affen-Snack-Teller (Bananen, Gurke, Paprika, Trauben, Käse, Cracker). 🍪 Schmetterling-Kekse. 🥥 Kokos-Stücke (optional). 🥤 Apfelschorle + Wasser. Allergie-Teller separat.",

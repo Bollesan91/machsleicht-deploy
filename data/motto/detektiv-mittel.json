@@ -866,6 +866,186 @@
           "outdoorTip": "Finale-Enthüllung kann auf der Terrasse stattfinden, der Tresor selbst bleibt drinnen vorbereitet.",
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Das große Code-Rätsel ist die Belohnung für alles davor — die Kinder erleben, dass jeder einzelne Fund des Tages gebraucht wird, um den Tresor zu öffnen. Dieser Zusammenführungs-Moment ist emotional stark und logisch befriedigend zugleich. Der Doppel-Fund von Kuchen und Geschenk gibt dem Wow-Tag ein Finale, das in Erinnerung bleibt."
+        },
+        {
+          "name": "🖐️ Das Fingerabdruck-Labor",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 25,
+          "minAge": 6,
+          "loudness": "leise",
+          "effort": "mittel",
+          "material": "1 Stempelkissen (oder Bleistift-Mine + Tesafilm), weißes Papier, 1 Lupe pro Kind, 1 vorbereiteter \"Tatort-Abdruck\" auf Karte. WICHTIG: Vorbereitet 4 Verdaechtigen-Abdruck-Karten mit klar unterscheidbarem Muster (Schlaufe / Wirbel / Bogen / Doppelschlaufe). Tatort-Abdruck matcht eindeutig EINEN davon. Ohne diese Vergleichs-Karten ist \"Beweis sichern\" Theater.",
+          "prepText": "Am Tatort (Kuchen-Stelle) liegt ein großer Fingerabdruck als Karte. Die Kinder nehmen ihre eigenen Abdrücke und vergleichen Muster — eine ruhige, konzentrierte Station nach der bewegten Befragung.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Abdruck nehmen",
+              "content": "Jedes Kind drückt einen Finger aufs Stempelkissen und dann auf sein Papier. Tipp: nicht zu fest, sonst verschmiert es."
+            },
+            {
+              "n": 2,
+              "name": "Mit der Lupe schauen",
+              "content": "Mit der Lupe das eigene Muster betrachten — Schlaufen, Bögen, Kreise. \"Jeder Abdruck ist anders!\""
+            },
+            {
+              "n": 3,
+              "name": "Tatort-Abdruck vergleichen",
+              "content": "Den großen Tatort-Abdruck herumgeben. Passt er zu einem Verdächtigen-Hinweis aus dem letzten Spiel?"
+            },
+            {
+              "n": 4,
+              "name": "Beweis sichern",
+              "content": "Der spannendste Abdruck kommt ins Ermittlungs-Heft als \"Beweisstück Nr. 1\"."
+            },
+            {
+              "n": 5,
+              "name": "Hände säubern",
+              "content": "Vor der Snack-Pause Hände waschen — die Detektive verwischen keine echten Spuren mehr."
+            }
+          ],
+          "safetyRule": "Stempelfarbe auf Wasserbasis verwenden (abwaschbar) und nicht in Augen/Mund — bei den Jüngsten beim Stempeln dabei bleiben.",
+          "ageAdjust6": "Den Abdruck für die 6-Jährigen abnehmen und nur das Vergleichen mit der Lupe selbst machen lassen.",
+          "ageAdjust8": "Verschiedene Muster-Typen benennen lassen (Schlaufe/Bogen/Wirbel) und sortieren — kleine Wissenschaft.",
+          "indoorTip": "Bei wenig Platz pro Kind nur einen Daumen-Abdruck nehmen, das hält den Tisch sauberer.",
+          "outdoorTip": "Diese Station bleibt drinnen — Stempelkissen und Papier vertragen keinen Wind.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Fingerabdrücke sind echte Detektiv-Wissenschaft und gleichzeitig ein kleines Wunder: Dass jeder Mensch ein einmaliges Muster hat, fasziniert 6–8-Jährige sofort. Die Station ist bewusst leise und konzentriert — der ruhige Gegenpol zur lauten Befragung, der die Gruppe wieder einsammelt, bevor es weitergeht."
+        },
+        {
+          "name": "🍋 Geheimtinte sichtbar machen",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 25,
+          "minAge": 6,
+          "loudness": "leise",
+          "effort": "mittel",
+          "material": "Zitronensaft, Wattestäbchen, weißes Papier, 1 Föhn oder Backofen 100°C 5 Min (statt Bügeleisen — sicherer bei 6-8) ODER warme Lampe/Föhn (NUR Erwachsene), vorbereitete Geheim-Botschaft.",
+          "prepText": "Vorab schreibst du mit Zitronensaft eine Botschaft auf Papier (z.B. \"Schau hinter das Buch\"). Getrocknet ist sie unsichtbar. Die Kinder machen sie mit Wärme sichtbar — der vielleicht größte Wow-Moment des Tages.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Geheimbrief entdecken",
+              "content": "Ein scheinbar leeres Blatt taucht auf. \"Da steht doch nichts?\" — oder doch? Detektive geben nicht auf."
+            },
+            {
+              "n": 2,
+              "name": "Wärme anwenden",
+              "content": "Ein Erwachsener bügelt das Blatt vorsichtig (oder hält es an eine warme Lampe). Die Schrift wird langsam braun sichtbar."
+            },
+            {
+              "n": 3,
+              "name": "Botschaft lesen",
+              "content": "Die braune Schrift erscheint! Der Code-Knacker liest vor, wohin der nächste Hinweis führt."
+            },
+            {
+              "n": 4,
+              "name": "Selbst ausprobieren",
+              "content": "Wenn Zeit ist: Jedes Kind darf mit Wattestäbchen ein Geheimwort schreiben, das daheim sichtbar gemacht wird — als Mitgebsel-Idee."
+            },
+            {
+              "n": 5,
+              "name": "Nächste Spur folgen",
+              "content": "Die Botschaft schickt die Gruppe zum Spuren-Parcours / nächsten Versteck."
+            }
+          ],
+          "safetyRule": "DEFAULT: Foehn auf hoechster Stufe ODER Backofen-Restwaerme (max 80 Grad). BUEGELEISEN nur als NOTFALL-Option (>150 Grad = hohes Verbrennungsrisiko bei Kindern). Wenn Buegeleisen: AUSSCHLIESSLICH Erwachsener, Kinder SITZEN mit Mindestabstand 1 m, Erwachsener STEHT, abgedunkelter Raum erhoeht Risiko (Schatten ueber heisse Flaeche).",
+          "ageAdjust6": "Das Sichtbarmachen komplett übernehmen, die 6-Jährigen nur staunen lassen — der Effekt zählt, nicht die Technik.",
+          "ageAdjust8": "Erklären lassen, warum das funktioniert (Zitronensaft verbrennt schneller als Papier) — kleine Naturwissenschaft.",
+          "indoorTip": "Im abgedunkelten Raum mit einer Schreibtischlampe als \"Labor\" — gibt Atmosphäre.",
+          "outdoorTip": "Diese Station bleibt drinnen wegen der Wärmequelle — kein Outdoor-Setup.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Aus dem Nichts erscheint Schrift — das ist echte Magie für 6–8-Jährige und bleibt als Highlight in Erinnerung. Gleichzeitig steckt eine kleine Wissenschaft dahinter, die ältere Kinder verstehen wollen. Weil ein Erwachsener die Wärme bedient, ist es sicher, und das Mitgeben einer eigenen Geheimbotschaft verlängert die Begeisterung bis nach Hause."
+        },
+        {
+          "name": "👣 Der Spuren-Parcours",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 20,
+          "minAge": 6,
+          "loudness": "laut",
+          "effort": "mittel",
+          "material": "Tonpapier-Fußspuren (oder Klebeband-Markierungen), 3–4 \"Stationen\" mit Mini-Aufgaben, 1 Hinweis-Karte am Ziel.",
+          "prepText": "Eine Fußspuren-Bahn führt durch Wohnung oder Garten. An jeder Station ist eine kleine Bewegungs-Aufgabe, am Ende wartet die nächste Hinweis-Karte. Das ist das Toben-Spiel, das nach den ruhigen Stationen guttut.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Spur entdecken",
+              "content": "\"Der Täter hat Fußspuren hinterlassen!\" Die Gruppe folgt den Tonpapier-Füßen durch den Raum."
+            },
+            {
+              "n": 2,
+              "name": "Station 1 meistern",
+              "content": "An Station 1 z.B. auf einem Bein balancieren wie ein Detektiv, der leise schleicht."
+            },
+            {
+              "n": 3,
+              "name": "Station 2 meistern",
+              "content": "An Station 2 unter einem \"Laserstrahl\" (Wollfaden) durchkriechen, ohne ihn zu berühren."
+            },
+            {
+              "n": 4,
+              "name": "Station 3 meistern",
+              "content": "An Station 3 ein Memory-Hinweis-Kärtchen aufdecken und sich das Symbol merken."
+            },
+            {
+              "n": 5,
+              "name": "Ziel erreichen",
+              "content": "Am Ende der Spur liegt die letzte Hinweis-Karte mit dem fehlenden Buchstaben für den Endcode."
+            }
+          ],
+          "safetyRule": "Den \"Laserstrahl\"-Faden niedrig genug spannen und feste Möbel als Verankerung nutzen — nichts, was umkippen kann. Boden weich/rutschfest, reihum (nie zwei gleichzeitig).",
+          "ageAdjust6": "Stationen einfacher (nur drübersteigen statt drunterkriechen) und die Bahn kürzer halten.",
+          "ageAdjust8": "Eine Zeit stoppen oder die Stationen in fester Reihenfolge mit Merk-Aufgabe verbinden — fordert mehr.",
+          "indoorTip": "Faden zwischen zwei Stühlen, Spuren um den Esstisch herum — auch wenig Platz reicht.",
+          "outdoorTip": "Im Garten die Spur weit verteilen, Stationen an Baum, Bank und Beet — viel Bewegung, viel Luft.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Nach Befragung, Fingerabdrücken und Geheimtinte brauchen 6–8-Jährige dringend Bewegung — der Parcours fängt diese Energie ein und gibt ihr eine Story (\"wir folgen der Spur\"). Die Mini-Stationen halten es abwechslungsreich, und das Ziel mit der letzten Hinweis-Karte bindet das Toben sauber zurück in den Fall."
+        },
+        {
+          "name": "🕵️ Beschattungs-Mission (Bonus-Spiel)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 20,
+          "minAge": 6,
+          "loudness": "leise",
+          "effort": "leicht",
+          "material": "1 erwachsene Person als „Verdächtige(r)“ (oder älteres Geschwisterkind), 1 Ermittlungs-Heft pro 2er-Team, Bleistifte. Optional: ein auffälliges „Beweisstück“ (Tuch, Schlüsselbund), das der Verdächtige bei sich trägt.",
+          "prepText": "Der „Verdächtige“ besucht 3–4 Räume (oder Garten-Stationen) und macht in jedem etwas Auffälliges — ein Buch anfassen, das Licht anschalten, das Beweisstück kurz hinlegen und wieder mitnehmen. Die Detektiv-Teams folgen heimlich auf Abstand und notieren in ihrem Heft, was sie beobachtet haben.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Briefing",
+              "content": "Du erklärst: „Achtung Detektive — der Verdächtige bewegt sich gleich durchs Haus. Eure Aufgabe: ihm leise folgen und merken, was er anfasst und wo er hingeht. Nicht ansprechen!“"
+            },
+            {
+              "n": 2,
+              "name": "Beschattung",
+              "content": "Der Verdächtige startet seinen Rundgang. Die Teams folgen auf 2–3 Meter Abstand und schreiben/malen in ihre Hefte: wo war er, was hat er angefasst, was hat er mitgenommen?"
+            },
+            {
+              "n": 3,
+              "name": "Rückkehr & Notizen abgleichen",
+              "content": "Nach 3–4 Stationen versammelt sich die Gruppe. Jedes Team liest seine Beobachtungen vor — wer hat das auffällige Beweisstück bemerkt?"
+            },
+            {
+              "n": 4,
+              "name": "Verhör des Verdächtigen",
+              "content": "Du fragst stellvertretend für die Detektive: „Wo waren Sie um 15:30? Was hatten Sie dabei?“ — die Notizen werden gegen die Antworten geprüft."
+            },
+            {
+              "n": 5,
+              "name": "Bonus-Indiz sichern",
+              "content": "Das Team mit den genauesten Beobachtungen darf das Beweisstück als zusätzlichen Hinweis für den Code-Showdown einfordern — perfekte Brücke zum nächsten Spiel."
+            }
+          ],
+          "safetyRule": "Der Verdächtige geht IMMER im Schritttempo und nutzt keine Treppen ohne Begleitung — Beschattung darf nicht in Rennen ausarten. Klar vorher sagen: „Nicht anrempeln, nicht anschreien — leise bleiben.“",
+          "ageAdjust6": "Nur 2 Stationen, der Verdächtige macht sehr offensichtliche Dinge (deutlich winken, laut etwas hinlegen). Du begleitest die Gruppe.",
+          "ageAdjust8": "4 Stationen, der Verdächtige macht subtile Bewegungen (Buch zurückstellen, etwas einstecken statt hinlegen). Die Teams arbeiten selbstständig.",
+          "indoorTip": "Den Rundgang durch 3 Räume legen — Wohnzimmer, Flur, Küche reicht für 6-8 völlig. Mehr ist Stress.",
+          "outdoorTip": "Garten-Tour an Bank, Baum und Sandkasten — die Teams können sich besser verteilen, ohne sich gegenseitig im Weg zu stehen.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Beobachten, leise sein und mitschreiben kombiniert drei Dinge, die 6-8-Jährige genau jetzt üben: Konzentration, Selbstbeherrschung und Detail-Gedächtnis. Es wirkt wie ein „richtiger“ Detektiv-Auftrag, kostet null Material und überbrückt elegant die Phase zwischen Spuren-Parcours und Code-Finale. Eltern, die mitkommen, dürfen einfach mit beschatten — keine zusätzliche Helfer-Last."
         }
       ],
       "food": "🎂Detektiv-Torte mit Lupen-Deko1 Torte\n🥪Detektiv-Brote (rund)15 Stück\n🥤\"Spuren-Saft\"4 L Apfelschorle\n🍕Mini-Pizzen \"Beweisstücke\"15 Stück\n🌭Würstchen \"Indizien\"10 Stück\n🍪Lupen-Kekse12 Stk.\n🥕Gemüse-Sticks1 großer Teller\n🧀Käse-Würfel \"Fingerabdrücke\"300 g\n🍿Popcorn \"Spuren-Krümel\"300 g\n\n💡 Snacks im Story-Frame\nDas \"Agentur-Café\" ist ein normales Buffet mit Detektiv-Namen auf kleinen Schildern. Aufwand niedrig, Wirkung hoch.",

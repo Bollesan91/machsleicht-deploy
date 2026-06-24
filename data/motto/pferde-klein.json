@@ -508,6 +508,46 @@
           "outdoorTip": "Im Garten als Reiter-Parcours-Highlight mit echtem Stroh als Wassergraben-Imitat. Keine Möbel-Schäden.",
           "whyItWorksTitle": "Warum Steckenpferd-Parcours auch ohne echtes Pferd zieht",
           "whyItWorks": "3-5-Jährige verlieben sich in das Steckenpferd-Reiten — sie sind selbst Pferd und Reiter zugleich. Der Parcours strukturiert die Aktivität und gibt Erfolgs-Momente (geschafft! durch!)."
+        },
+        {
+          "name": "🗺️ Karotten-Schatzsuche",
+          "duration": 30,
+          "minAge": 3,
+          "outdoor": true,
+          "indoor": true,
+          "material": "20 Karotten (echte oder aus Filz), Verstecke in der Wohnung/Garten, optional eine 'Schatzkarte' für 4-5-Jährige",
+          "safetyRule": "Echte Karotten gewaschen und ungiftig. Verstecke nicht zu hoch oder hinter schweren Möbeln. WICHTIG: rohe Karotten sind ein Erstickungsrisiko fuer Kleinkinder — Karotten werden NICHT gegessen (nur gesucht/gesammelt); fuer ganz Kleine fein geraspelt statt ganze Stuecke.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Karotten verstecken",
+              "content": "Vor Beginn: 20 Karotten in 'Pony-freundlichen' Verstecken platzieren (auf Sofa, hinter Vorhang, im Garten an Blumentopf)."
+            },
+            {
+              "n": 2,
+              "name": "Geschichte erzählen",
+              "content": "'Die Ponys haben Hunger! 20 Karotten sind verloren gegangen. Helft mit, sie zu finden!'"
+            },
+            {
+              "n": 3,
+              "name": "Gemeinsam suchen",
+              "content": "Alle Kinder suchen zusammen, du leitest mit warm/kalt-Tipps. Niemand 'gewinnt', alle finden."
+            },
+            {
+              "n": 4,
+              "name": "Karotten-Belohnung",
+              "content": "Jedes Kind nimmt eine Karotte mit nach Hause + isst eine vor Ort."
+            }
+          ],
+          "loudness": "mittel",
+          "effort": "mittel",
+          "prepText": "20-30 Karotten (echte oder Filz) in verschiedenen Räumen verstecken — vorab durch 2 Erwachsene platziert, Zettel mit Verstecken zur Sicherheit. Schatzkarten mit Hinweisen + Sammel-Eimer. 20 Min Vorlauf.",
+          "ageAdjust6": "Für 3-Jährige: 10-15 Karotten, Verstecke offensichtlicher (Augenhöhe, niemand muss bücken). Erwachsene zeigt mit. Alle finden gemeinsam, niemand \"verliert\".",
+          "ageAdjust8": "Für 5-Jährige: 15-20 Karotten, leichte Verschachtelung der Verstecke (Hinweis-Karten helfen). Stempel für jedes Kind.",
+          "indoorTip": "Karotten in verschiedenen Räumen verstecken (Wohnzimmer + Flur + Bad — nicht Schlafzimmer). Karte mit erlaubten Räumen markiert.",
+          "outdoorTip": "Im Garten — Karotten in Sträuchern, unter Blumentopfen, an Geräten. Nicht im Boden vergraben (Erde-Schmutz).",
+          "whyItWorksTitle": "Warum Karotten-Schatzsuche Reiterhof-Stimmung perfekt einfängt",
+          "whyItWorks": "Karotten = Pferde-Snack-Symbol, Schatzsuche = klassisches Kinder-Spiel. Kombination funktioniert auf jedem Reiterhof-Niveau. Wichtig: Verstecke nicht zu kniffelig (Frust) und nicht zu offensichtlich (alle finden in 2 Min)."
         }
       ],
       "food": "🥕 Karotten-Sticks (2 Schalen)\n🍎 Apfelschnitze (2 Schalen)\n🥣 Hafer-Müsli in Kornsäckchen (8 Stk)\n🥤 Pferde-Schorle (3 L)\n🎂 Hufeisen-Kuchen (Kastenkuchen)\n🥨 Salzstangen + Brezeln\n🧀 Käsewürfel",
@@ -794,6 +834,41 @@
           "outdoorTip": "Im Garten — Karotten in Sträuchern, unter Blumentopfen, an Geräten. Nicht im Boden vergraben (Erde-Schmutz).",
           "whyItWorksTitle": "Warum Karotten-Schatzsuche Reiterhof-Stimmung perfekt einfängt",
           "whyItWorks": "Karotten = Pferde-Snack-Symbol, Schatzsuche = klassisches Kinder-Spiel. Kombination funktioniert auf jedem Reiterhof-Niveau. Wichtig: Verstecke nicht zu kniffelig (Frust) und nicht zu offensichtlich (alle finden in 2 Min)."
+        },
+        {
+          "name": "🌾 Hufeisen-Werfen",
+          "duration": 20,
+          "minAge": 3,
+          "outdoor": true,
+          "indoor": true,
+          "material": "6 Plüsch-Hufeisen (oder Wurfringe), 1 Holzpflock (40 cm hoch) oder Stuhl-Lehne als Ziel, optional kleine Punkte-Tafel",
+          "safetyRule": "Wurfringe aus Stoff oder weichem Plastik — nichts Hartes. Wurfdistanz max 2 Meter. Niemand steht hinter dem Pflock. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Pflock aufstellen",
+              "content": "Holzpflock 2 Meter entfernt aufstellen (drinnen: Stuhllehne)."
+            },
+            {
+              "n": 2,
+              "name": "Reihum 3 Würfe",
+              "content": "Jedes Kind wirft 3 Hufeisen Richtung Pflock. Du oder Stall-Helfer zählt die Treffer."
+            },
+            {
+              "n": 3,
+              "name": "Karotten-Belohnung",
+              "content": "Wer trifft, bekommt eine Karotte 'für sein Pony' — und darf sie selber essen. Wer nicht trifft, bekommt auch eine Karotte. (Bei 3-5: alle gewinnen)."
+            }
+          ],
+          "loudness": "mittel",
+          "effort": "mittel",
+          "prepText": "6-10 Wurf-Hufeisen (Stoff-Säckchen sicherer als echte) + 3 Pflöcke in verschiedenen Distanzen (1m, 2m, 3m) vorbereiten. Wertungstafel für Trefferpunkte. 10-15 Min Vorlauf.",
+          "ageAdjust6": "Für 3-Jährige: 1 Pflock, 1 Meter Abstand, alle 3 Würfe ohne Punkte-Druck. Jedes Kind bekommt einen Treffer-Klatscher.",
+          "ageAdjust8": "Für 5-Jährige: 2 Pflöcke, 1-2 Meter, Punkte werden notiert aber Sieger-Bonus klein. Stempel für alle.",
+          "indoorTip": "In Wohnzimmer-Ecke mit weicher Stoff-Säckchen-Hufeisen — keine Möbel-Schäden. Pflock auf rutsch-fester Matte.",
+          "outdoorTip": "Im Garten am besten — mehr Strecke, größere Sicherheits-Zone. Stoff-Säckchen-Hufeisen wind-resistent.",
+          "whyItWorksTitle": "Warum Hufeisen-Werfen klassischer Reiter-Spaß ist",
+          "whyItWorks": "Hufeisen-Werfen ist seit Jahrhunderten Reiterhof-Tradition — geübt bei Pferdewettbewerben und Reiter-Festen. Funktioniert in jedem Alter (Distanz anpassen), Stempel-Bonus für Treffer macht es zum echten Wettkampf."
         }
       ],
       "food": "🎂 Karotten-Kuchen (Carrot Cake — Pferde-thematisch!)\n🥕 Karotten-Sticks (3 Schalen)\n🍎 Apfelschnitze + Birnen\n🥣 Hafer-Müsli + Reiter-Riegel\n🥤 Pferde-Schorle (4 L)\n🥨 Salzstangen + Brezeln\n🧀 Käse-Würfel",

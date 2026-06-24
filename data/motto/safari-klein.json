@@ -517,6 +517,46 @@
           "outdoorTip": "Draußen die Näpfe auf einer Decke aufreihen — sieht aus wie eine echte Futterstelle im Reservat.",
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Versorgen statt gewinnen — genau der Kümmer-Impuls, der 3-5-Jährige im Rollenspiel anzieht. Jedes Kind hat ein eigenes Tier, niemand wartet, niemand verliert."
+        },
+        {
+          "name": "🦒 Tierstimmen-Quiz",
+          "indoor": true,
+          "outdoor": true,
+          "duration": "10 Min.",
+          "minAge": 3,
+          "loudness": "halblaut",
+          "effort": "leicht",
+          "material": "Handy mit Tierstimmen (kostenlose YouTube-Playlist oder App) oder du machst die Geräusche selbst. Optional 6–8 Tierbild-Karten zum Hochhalten. Empfehlung für 3-5: Tierstimmen-Quiz mit Kokosnuss (YouTube) — kindgerechte Stimme spricht das Tier sofort aus, ideal als sanftes Mit-Rate-Spiel.",
+          "prepText": "Such dir 5-6 eindeutige Tiere raus, die Kinder kennen (Löwe, Elefant, Affe, Schlange, Vogel, Kuh). Geräusche bereitlegen oder üben. Bekannte Tiere wählen — niemals exotische wie Hyäne oder Gepard, die kennen 3-5-Jährige noch nicht und werden frustriert. Lautstärke vorher testen: mittlere Stufe + 1 Probe-Geräusch, damit sich die 3-Jährigen beim Löwen-Brüllen nicht erschrecken.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Geräusch",
+              "content": "Du spielst/machst ein Tiergeräusch (5 Sek.). Alle Kinder gleichzeitig dürfen rufen 'LÖWE!' oder 'ELEFANT!' — niemand einzeln, das nimmt Druck."
+            },
+            {
+              "n": 2,
+              "name": "Mini-Fakt",
+              "content": "Nach jedem Tier ein kindgerechter Mini-Fakt: 'Genau — und weißt du, was der Löwe macht, wenn er hungrig ist? Er ruft ganz laut, damit Mama-Löwe weiß, wo er ist.'"
+            },
+            {
+              "n": 3,
+              "name": "Nachmachen",
+              "content": "Alle machen das Tier gemeinsam nach — brüllen, trompeten, hüpfen. Bewegung gehört dazu."
+            },
+            {
+              "n": 4,
+              "name": "Weiter",
+              "content": "Nächstes Tier. 5-6 Runden reichen, dann kippt die Aufmerksamkeit."
+            }
+          ],
+          "safetyRule": "Bruellen ist FREIWILLIG. Wer das nicht mag: leise zeigen oder Geraeusch fluestern. Reizoffene/geraeuschempfindliche Kinder duerfen Pause machen. Lautstärke moderat halten — bei zu lauter Box erschrecken sich die 3-Jährigen.",
+          "ageAdjust3": "Nur 3-4 sehr eindeutige Tiere (Löwe, Elefant, Affe, Hund), du machst die Geräusche selbst und groß vor und sprichst das Tier mit ('Wer ist das? Ein... LÖÖÖWE!').",
+          "ageAdjust5": "5-Jährige dürfen selbst ein Tier vormachen und die anderen raten lassen. Bonus-Frage: 'Wo lebt es?'",
+          "indoorTip": "Perfekt als ruhiger Lückenfüller drinnen — kein Material, kein Platz nötig.",
+          "outdoorTip": "Draußen ruhig lauter machen lassen, niemand stört sich am Brüllen.",
+          "whyItWorksTitle": "Ruhig-Slot zwischen aktiven Phasen",
+          "whyItWorks": "Aufmerksamkeit wieder einsammeln nach lautem Spiel, ohne dass es langweilig wird. Alle gleichzeitig rufen lassen nimmt den Einzel-Druck weg — bei 3-5 pure Freude statt Performance."
         }
       ],
       "food": "🎂 Löwen-Kuchen (Gugelhupf mit Mähne). 🥒 Tierfutter-Teller mit Gurken-'Blättern', Cracker-'Steinen', Trauben-'Beeren', Käse-Würfeln. 🍪 Tier-Kekse (Ausstecher). 🥤 Apfelschorle. Allergien vorher abfragen, ein nuss-/laktosefreier Teller bereit.",

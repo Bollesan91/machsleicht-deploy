@@ -131,6 +131,51 @@
           "outdoorTip": "Garten.",
           "whyItWorksTitle": "Warum das zieht",
           "whyItWorks": "Bewegung und Ehrgeiz nach der Kopfarbeit, Teamgeist."
+        },
+        {
+          "name": "🔐 Escape-Stationen (Codes, Spiegel, Logik, UV)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 45,
+          "minAge": 9,
+          "loudness": "mittel",
+          "effort": "hoch",
+          "material": "4 Rätsel-Stationen (Caesar-Code, Spiegelschrift, Logik-Rätsel, UV-Lampe + unsichtbare Schrift), Zahlenschloss + Tresor-Box, Klemmbretter pro Team",
+          "prepText": "4 Stationen vorbereiten, jede liefert ein Code-Fragment. UV-Schrift mit unsichtbarem Stift, Lampe bereitstellen. Lösungen + Backup-Code notieren.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Der Fall",
+              "content": "'Die Kronjuwelen sind verschwunden. Drei Rätsel ergeben den Tresor-Code, die UV-Station verrät die Diebin.'"
+            },
+            {
+              "n": 2,
+              "name": "Station 1 — Caesar (fertig)",
+              "content": "Karte mit Geheimtext 'GUHL'. Jeden Buchstaben 3 zurück (G→D, U→R, H→E, L→I) = DREI → erste Ziffer 3."
+            },
+            {
+              "n": 3,
+              "name": "Station 2 — Spiegel (fertig)",
+              "content": "Ziffer 5 spiegelverkehrt schreiben (dünnes Papier, umdrehen). Im Spiegel gelesen: 5 → zweite Ziffer 5."
+            },
+            {
+              "n": 4,
+              "name": "Station 3 — Logik (fertig zum Auslegen)",
+              "content": "Drei Hofdamen verdächtig — Mathilda (Tür 3), Cordula (Tür 7), Rosalind (Tür 9). Hinweise: (1) Rosalind war beim Festmahl. (2) Cordula war im Turm eingeschlossen. (3) Der Dieb trug Handschuhe — nur Mathilda hatte welche. → Mathilda, Tür 3 = dritte Ziffer 3."
+            },
+            {
+              "n": 5,
+              "name": "UV + Tresor öffnen",
+              "content": "Unter UV-Licht erscheint zur Bestätigung der Name 'MATHILDA'. Zahlenschloss mit Code 3-5-3 öffnen → die Juwelen sind zurück."
+            }
+          ],
+          "safetyRule": "UV-Lampe nicht in die Augen leuchten. Teams gleich groß, alle kommen dran. Tipp-Karten gegen Frust bereithalten.",
+          "ageAdjust6": "2 statt 4 Stationen, Bild-Codes.",
+          "ageAdjust8": "3 Stationen, einfachere Codes.",
+          "indoorTip": "Stationen über die Zimmer verteilt.",
+          "outdoorTip": "Im Garten als Rundlauf.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Mehrere echte Rätsel-Stationen mit UV-Geheimschrift fühlen sich wie ein echter Escape-Room an — genau die Herausforderung, die 9–12-Jährige ernst nimmt und fesselt."
         }
       ],
       "food": "Königliches Snack-Buffet, aber 'erwachsener': Mini-Burger-Slider, Wraps, Obst-Sticks, Brownies, hausgemachte Limonade ('Königstrunk'). Weniger Kitsch, mehr Substanz.",
@@ -268,6 +313,126 @@
           "outdoorTip": "Im Garten mit mehr Bewegungsdisziplinen.",
           "whyItWorksTitle": "Warum das zieht",
           "whyItWorks": "Team-Wettkampf gibt Bewegung und Ehrgeiz nach der Kopfarbeit — der Wechsel aus Rätseln und körperlichen Disziplinen hält die Energie hoch und schweißt die Teams zusammen."
+        },
+        {
+          "name": "🔐 Die 3 Schloss-Rätsel (Code, Spiegel, Logik)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 45,
+          "minAge": 9,
+          "loudness": "mittel",
+          "effort": "mittel",
+          "material": "3 vorbereitete Rätsel (Caesar-Code-Karte, ein Spiegel + spiegelverkehrter Text, ein Logik-Rätsel), ein Zahlenschloss + abschließbare Box ('Tresor') mit den 'Juwelen' darin",
+          "prepText": "Rätsel so verketten, dass jede Lösung eine Ziffer für das Zahlenschloss liefert. Caesar-Schlüssel (z.B. +3) und Lösungen vorab notieren.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Der Fall",
+              "content": "'Die Kronjuwelen wurden aus dem Tresor gestohlen! Drei Rätsel verraten den Zahlencode.'"
+            },
+            {
+              "n": 2,
+              "name": "Caesar-Code (fertig)",
+              "content": "Karte mit dem Geheimtext 'YLHU'. Mit Caesar +3 rückwärts entziffern (Y→V, L→I, H→E, U→R) = VIER → erste Ziffer 4."
+            },
+            {
+              "n": 3,
+              "name": "Spiegelschrift (fertig)",
+              "content": "Schreib die Ziffer 7 spiegelverkehrt auf eine Karte (dünnes Papier vorschreiben, umdrehen). Im Spiegel gelesen: 7 → zweite Ziffer 7."
+            },
+            {
+              "n": 4,
+              "name": "Logik-Rätsel (fertig zum Auslegen)",
+              "content": "Drei Hofdamen sind verdächtig — Mathilda (Tür 3), Cordula (Tür 7), Rosalind (Tür 9). Lege diese 3 Hinweise aus: (1) Rosalind war beim Festmahl, als die Juwelen verschwanden. (2) Cordula war im Turm eingeschlossen. (3) Der Dieb trug Handschuhe — und nur Mathilda hatte welche dabei. → Die Diebin ist Mathilda, ihre Tür-Nummer 3 ist die dritte Ziffer."
+            },
+            {
+              "n": 5,
+              "name": "Tresor öffnen",
+              "content": "Zahlenschloss mit dem Code 4-7-3 öffnen → die Juwelen sind zurück!"
+            }
+          ],
+          "safetyRule": "Bei Teamarbeit darauf achten, dass alle drankommen. Zahlenschloss-Code als Backup notiert, falls es klemmt. Keine Frustfallen — Tipp-Karten bereithalten.",
+          "ageAdjust6": "Einfachere Codes (Bilder statt Caesar), Erwachsenen-Tipps.",
+          "ageAdjust8": "Caesar +1 statt +3, mehr Hinweise.",
+          "indoorTip": "Rätsel-Stationen in verschiedenen Zimmern.",
+          "outdoorTip": "Im Garten als Stations-Lauf.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Echte Codes statt Kinderkram — 9–12-Jährige lieben das Knacken, und das gemeinsame Öffnen des Tresors ist ein starker Aha-Moment, der das Mystery löst."
+        },
+        {
+          "name": "📸 Royales Fotoshooting (Charaktere etablieren)",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 25,
+          "minAge": 9,
+          "loudness": "mittel",
+          "effort": "niedrig",
+          "material": "Elegante Verkleidungs-Accessoires (Umhänge, Federboas, Hüte, Masken), Foto-Ecke mit Hintergrund, Handy/Kamera, Requisiten (Lupe, Monokel)",
+          "prepText": "Verkleidungs-Kiste + Foto-Ecke einrichten. Eine Person macht die Fotos.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Charakter wählen",
+              "content": "Jedes Kind gestaltet seine Hofstaat-Figur mit Accessoires (zur gewählten Rolle passend)."
+            },
+            {
+              "n": 2,
+              "name": "Shooting",
+              "content": "Einzel- und Gruppenfotos in coolen 'Hofstaat'-Posen vor dem Schloss-Hintergrund."
+            },
+            {
+              "n": 3,
+              "name": "Story-Start",
+              "content": "Mit den Charakteren startet die Ermittlung — jeder ist jetzt 'im Fall'."
+            }
+          ],
+          "safetyRule": "Accessoires sauber/unbedenklich, Masken nicht sichtbehindernd beim Bewegen. Fotos nur mit Einverständnis der Eltern teilen.",
+          "ageAdjust6": "Mehr vorgefertigte Verkleidung.",
+          "ageAdjust8": "Mittel.",
+          "indoorTip": "Vor einer geschmückten Wand.",
+          "outdoorTip": "Drinnen für gleichmäßiges Licht.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Größere Kinder lieben es, sich cool zu inszenieren und Fotos zu machen — das Shooting etabliert ihre Rollen, gibt schöne Erinnerungen und zieht sie emotional in die Story."
+        },
+        {
+          "name": "🕵️ Verdächtigen-Befragung (Live-Inszenierung)",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 25,
+          "minAge": 9,
+          "loudness": "mittel",
+          "effort": "mittel",
+          "material": "1–2 erwachsene Personen als Verdächtige (mit Charakter + Alibi), vorbereitete Verdächtigen-Akten mit Widersprüchen, Notizzettel für die Kinder",
+          "prepText": "Den Darstellenden je eine Rolle mit Alibi und EINEM Widerspruch geben (der zur Escape-Lösung passt). Kinder dürfen frei fragen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Verdächtige vorstellen",
+              "content": "'Diese Hofmitglieder waren in der Tatnacht im Schloss — befragt sie!'"
+            },
+            {
+              "n": 2,
+              "name": "Befragen",
+              "content": "Die Kinder stellen Fragen, die Darstellenden antworten in Charakter, mit einem versteckten Widerspruch."
+            },
+            {
+              "n": 3,
+              "name": "Notizen",
+              "content": "Die 'Detektive' notieren Auffälligkeiten und vergleichen mit den Escape-Hinweisen."
+            },
+            {
+              "n": 4,
+              "name": "Verdacht",
+              "content": "Die Gruppe einigt sich, wer der Dieb sein könnte — Auflösung folgt im Finale."
+            }
+          ],
+          "safetyRule": "Darstellende bleiben freundlich, nie einschüchternd. Jedes Kind, das fragen möchte, kommt dran. Auflösung so, dass niemand 'dumm' dasteht.",
+          "ageAdjust6": "Sehr offensichtliche Widersprüche, Darsteller hilft.",
+          "ageAdjust8": "Mittlere Schwierigkeit.",
+          "indoorTip": "Im 'Verhörzimmer'.",
+          "outdoorTip": "Drinnen für Konzentration.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Eine echte Person befragen zu dürfen ist Krimi-Feeling pur — die Live-Inszenierung hebt die Party von jeder Standard-Schatzsuche ab und gibt den Großen das Gefühl, echte Ermittler zu sein."
         }
       ],
       "food": "'Erwachsenes' Königsbuffet: Mini-Burger-Slider, Wraps, Pizzaschnecken, Obst- und Gemüse-Sticks, Brownies/Cake-Pops, hausgemachte Limonade ('Königstrunk') in eleganten Bechern.",
@@ -507,6 +672,51 @@
           "outdoorTip": "Garten.",
           "whyItWorksTitle": "Warum das zieht",
           "whyItWorks": "Bewegung und Ehrgeiz nach der Kopfarbeit, Teamgeist."
+        },
+        {
+          "name": "🔐 Die 3 Schloss-Rätsel (Code, Spiegel, Logik)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 45,
+          "minAge": 9,
+          "loudness": "mittel",
+          "effort": "mittel",
+          "material": "3 vorbereitete Rätsel (Caesar-Code-Karte, ein Spiegel + spiegelverkehrter Text, ein Logik-Rätsel), ein Zahlenschloss + abschließbare Box ('Tresor') mit den 'Juwelen' darin",
+          "prepText": "Rätsel so verketten, dass jede Lösung eine Ziffer für das Zahlenschloss liefert. Caesar-Schlüssel (z.B. +3) und Lösungen vorab notieren.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Der Fall",
+              "content": "'Die Kronjuwelen wurden aus dem Tresor gestohlen! Drei Rätsel verraten den Zahlencode.'"
+            },
+            {
+              "n": 2,
+              "name": "Caesar-Code (fertig)",
+              "content": "Karte mit dem Geheimtext 'YLHU'. Mit Caesar +3 rückwärts entziffern (Y→V, L→I, H→E, U→R) = VIER → erste Ziffer 4."
+            },
+            {
+              "n": 3,
+              "name": "Spiegelschrift (fertig)",
+              "content": "Schreib die Ziffer 7 spiegelverkehrt auf eine Karte (dünnes Papier vorschreiben, umdrehen). Im Spiegel gelesen: 7 → zweite Ziffer 7."
+            },
+            {
+              "n": 4,
+              "name": "Logik-Rätsel (fertig zum Auslegen)",
+              "content": "Drei Hofdamen sind verdächtig — Mathilda (Tür 3), Cordula (Tür 7), Rosalind (Tür 9). Lege diese 3 Hinweise aus: (1) Rosalind war beim Festmahl, als die Juwelen verschwanden. (2) Cordula war im Turm eingeschlossen. (3) Der Dieb trug Handschuhe — und nur Mathilda hatte welche dabei. → Die Diebin ist Mathilda, ihre Tür-Nummer 3 ist die dritte Ziffer."
+            },
+            {
+              "n": 5,
+              "name": "Tresor öffnen",
+              "content": "Zahlenschloss mit dem Code 4-7-3 öffnen → die Juwelen sind zurück!"
+            }
+          ],
+          "safetyRule": "Bei Teamarbeit darauf achten, dass alle drankommen. Zahlenschloss-Code als Backup notiert, falls es klemmt. Keine Frustfallen — Tipp-Karten bereithalten.",
+          "ageAdjust6": "Einfachere Codes (Bilder statt Caesar), Erwachsenen-Tipps.",
+          "ageAdjust8": "Caesar +1 statt +3, mehr Hinweise.",
+          "indoorTip": "Rätsel-Stationen in verschiedenen Zimmern.",
+          "outdoorTip": "Im Garten als Stations-Lauf.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Echte Codes statt Kinderkram — 9–12-Jährige lieben das Knacken, und das gemeinsame Öffnen des Tresors ist ein starker Aha-Moment, der das Mystery löst."
         }
       ],
       "food": "Großes 'erwachsenes' Königsbuffet: Mini-Burger-Slider, Wraps, Pizzaschnecken, Nacho-Schale, Obst-/Gemüse-Sticks, Brownies + Cake-Pops, hausgemachte Limonade und 'Mocktails' (alkoholfreie Cocktails) in eleganten Gläsern.",

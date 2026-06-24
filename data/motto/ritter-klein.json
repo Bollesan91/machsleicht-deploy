@@ -503,6 +503,46 @@
           "outdoorTip": "Im Garten am besten — wenn die Burg fällt, fallen Kissen ins Gras, kein Geräusch-Stress.",
           "whyItWorksTitle": "Warum Burg-Erstürmung der Ritter-Moment ist",
           "whyItWorks": "Burg-Erstürmung ist der epische Ritter-Höhepunkt — Team-Sieg, sichtbarer Erfolg (Burg fällt zusammen), und der Stolz-Moment \"wir haben sie erobert\". Für 3-5-Jährige sicherer Übergang zu Wettkampf-Elementen."
+        },
+        {
+          "name": "⚔️ Schwert-Akademie (Wow-Erweiterung)",
+          "duration": 25,
+          "minAge": 4,
+          "outdoor": true,
+          "indoor": true,
+          "material": "10 Pool-Nudel-Schwerter, 3 Polster-Ziele, Burg-Wache-Anleitung (Pappkarton)",
+          "safetyRule": "Schwert trifft NUR Polster. Bei reinen 3-Jährigen weglassen oder stark vereinfachen. Ritterschlag NUR symbolisch: Schwert sanft flach auf die Schulter legen (nicht schwingen, nie Hals/Kopf). Erwachsene fuehren den Ritterschlag aus.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Vor-Demo der Bewegung",
+              "content": "Du zeigst: Hieb von oben, Hieb seitlich, Stoß. Jede Bewegung 3x."
+            },
+            {
+              "n": 2,
+              "name": "Lehrlings-Pose",
+              "content": "Jeder Ritter steht in Stellung (Schwert hoch, Schild vor)."
+            },
+            {
+              "n": 3,
+              "name": "Übungs-Runden",
+              "content": "Reihum 1 Min am Polster üben. Eltern als 'Gegner' mit Polster."
+            },
+            {
+              "n": 4,
+              "name": "Ritterschlag",
+              "content": "Du oder König schlägt jedem Ritter auf die Schulter — 'Du bist ein guter Ritter!'"
+            }
+          ],
+          "loudness": "mittel",
+          "effort": "mittel",
+          "prepText": "8 Pool-Nudel-Schwerter (40-50 cm) + 3 Polster + 1-2 Strohballen-Ersatz (Pappkartons mit Stoffumhüllung) + Stempel für Knappen-Ernennung. 15 Min Vorlauf für Akademie-Ablauf.",
+          "ageAdjust6": "Nicht primär für 6 — Akademie-Format ist klein-wow Phase. Bei Mischgruppe: nur Schwert-Übung-Variante, keine Akademie-Lektion.",
+          "ageAdjust8": "Bei 5-Jährigen als Wow-Erweiterung: 3 Akademie-Lektionen (Hieb / Block / Salut), Schwert-Knappen-Ernennung am Ende.",
+          "indoorTip": "Im Wohnzimmer als Ritter-Akademie mit klarer Stationen-Aufstellung. Polster + Strohballen an verschiedenen Punkten.",
+          "outdoorTip": "Im Garten als \"Burgvorhof\" — Strohballen für Hieb-Übung, Pavillon als Akademie-Tor.",
+          "whyItWorksTitle": "Warum eine Schwert-Akademie als Wow-Phase trägt",
+          "whyItWorks": "Schwert-Akademie schafft eine echte Lern-Phase mit klaren Lektionen (Hieb, Block, Salut). Bei 5-Jährigen mit Eltern-Begleitung großartig, weil Ritter-Eltern als \"Akademie-Lehrer\" mitspielen."
         }
       ],
       "food": "🍞 Ritter-Brote (Toast in Schwert-Form, 12 Stk.)\n🍎 Apfelschnitze + Birnen\n🥕 Drachen-Zähne (Karotten)\n🥨 Burg-Brezeln (1 Päckchen)\n🥤 Ritter-Schorle (3 L)\n🎂 Burg-Kuchen mit Türmchen",
@@ -759,6 +799,46 @@
           "outdoorTip": "Im Garten am besten — wenn die Burg fällt, fallen Kissen ins Gras, kein Geräusch-Stress.",
           "whyItWorksTitle": "Warum Burg-Erstürmung der Ritter-Moment ist",
           "whyItWorks": "Burg-Erstürmung ist der epische Ritter-Höhepunkt — Team-Sieg, sichtbarer Erfolg (Burg fällt zusammen), und der Stolz-Moment \"wir haben sie erobert\". Für 3-5-Jährige sicherer Übergang zu Wettkampf-Elementen."
+        },
+        {
+          "name": "⚔️ Schwert-Übung am Polster",
+          "duration": 20,
+          "minAge": 4,
+          "outdoor": true,
+          "indoor": true,
+          "material": "8 Pool-Nudel-Schwerter (40 cm), 2-3 Sofa-Kissen oder Polster als Übungsziele, optional Schwert-Anleitungsfilm aus Pappe",
+          "safetyRule": "REGEL #1: Schwert trifft nur Polster, NIE Körper. Eltern-Helfer beobachten. Max 3 Min pro Kind, dann nächster. Fuer 3-Jaehrige: vereinfachte Variante mit Erwachsenen-Hilfe (oder optional auslassen) — ab4-Spiel.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Regel erklären",
+              "content": "'Wir treffen nur das Polster, nie das andere Kind. Wer das Kind trifft, übt zur Strafe Crunches am Boden.' (lustig, nicht streng)"
+            },
+            {
+              "n": 2,
+              "name": "Vor-Demo",
+              "content": "Du zeigst die Schwert-Bewegung: Hieb von oben, Hieb seitlich, Stoß. Sanft."
+            },
+            {
+              "n": 3,
+              "name": "Reihum üben",
+              "content": "Jeder kämpft 2 Min gegen das Polster. Du oder Helfer applaudiert."
+            },
+            {
+              "n": 4,
+              "name": "Eltern-Helfer als 'Gegner'",
+              "content": "Optional: Eltern hält das Polster vor sich, Kind kämpft gegen das Polster, Eltern reagiert dramatisch ('Ich bin getroffen!')."
+            }
+          ],
+          "loudness": "mittel",
+          "effort": "mittel",
+          "prepText": "6 Pool-Nudel-Schwerter (40 cm für 3-5) + 1-2 große Polster (Bett-Polster oder Sofa-Kissen) als Ziel + Sicherheits-Markierung 1 m um das Polster. 10 Min Vorlauf — Regel-Erklärung vor Beginn essenziell.",
+          "ageAdjust6": "Bei 3-Jährigen: kürzeste Pool-Nudel (30-40 cm), nur \"Schlag aufs Polster\" als einzige Bewegung. Niemand schlägt auf Kinder.",
+          "ageAdjust8": "Bei 5-Jährigen: Pool-Nudel 40-50 cm, 2-Schritt-Übung (Hieb + Rück-Schlag aufs Polster). Trotzdem nie Kind gegen Kind.",
+          "indoorTip": "Im Wohnzimmer mit Polster auf Sofa befestigt — Sicherheits-Abstand zu Möbel-Kanten 1 m.",
+          "outdoorTip": "Im Garten am Pavillon-Pfosten oder gegen Strohballen — sicherer als drinnen, mehr Bewegungs-Freiheit.",
+          "whyItWorksTitle": "Warum Pool-Nudel-Schwert-Übung sicher und spannend ist",
+          "whyItWorks": "Pool-Nudel-Schwert sieht aus wie echtes Schwert, ist aber komplett sicher. 3-5-Jährige fühlen sich als echte Ritter, Eltern müssen nicht zittern. Polster-Ziel verhindert Frust (man trifft IMMER)."
         }
       ],
       "food": "🎂 Burg-Kuchen mit Türmen (Hauptkuchen, Wow-Highlight)\n🍞 Ritter-Brote (15 Stk., Schwert-Form)\n🥕 Drachen-Zähne (3 Schalen)\n🍎 Apfelschnitze + Trauben\n🥨 Burg-Brezeln\n🥤 Ritter-Schorle (4 L)\n🍫 Schoko-Münzen als 'Burg-Schatz'",

@@ -274,6 +274,41 @@
           "outdoorTip": "Karten im Gras platzieren — wirkt sofort wie eine Feld-Station.",
           "whyItWorksTitle": "Botanik als echtes Können",
           "whyItWorks": "Pflanzen bestimmen ist Methode, nicht Glück. Die Kinder erleben, dass es eine erlernbare Fähigkeit ist — und nehmen Brennnessel/Spitzwegerich-Wissen mit nach Hause."
+        },
+        {
+          "name": "🔦 UV-Lampen-Quest: Das Pflanzen-Geheimnis",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 9,
+          "loudness": "halblaut",
+          "effort": "mittel",
+          "material": "1 UV-Taschenlampe (LED, ~10 €), 5 Pergament-Karten mit unsichtbarer Pflanzensaft-Tinte vorbeschriftet (Kurkuma in Wasser + ein Tropfen Zitronensaft → UV-aktiv; alternativ Tonic Water mit Zitrone), 5 Verstecke im Raum / Garten (unter Topfpflanze, hinter Buch, etc.).",
+          "prepText": "Am Vortag: Tinte herstellen (1 EL Kurkuma in 100 ml Wasser, mit Pinsel auf Pergament schreiben — beim Trocknen verschwindet die Schrift fast vollständig, unter UV leuchtet sie gelb-orange auf). 5 Hinweise schreiben, die zusammen die Position des Lichtweg-Codes ergeben („Suche unter dem Farn-Wedel\", „Hinter dem Buch mit dem Eichenblatt\", etc.). Karten verstecken. Bei der Quest reicht 1 UV-Lampe — die Hüter:innen wandern als Gruppe, jede:r darf einmal leuchten.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "UV-Lampe einführen",
+              "content": "Du erklärst kurz: „Mit dem Saft heimischer Pflanzen kann man unsichtbar schreiben — nur unter UV-Licht wird es sichtbar. Das war im Zauberwald die geheime Botschaftssprache.\""
+            },
+            {
+              "n": 2,
+              "name": "5 Hinweise finden",
+              "content": "Die 5 Pergament-Karten sind im Raum versteckt. Jede:r Hüter:in darf einmal die UV-Lampe übernehmen und einen Hinweis lesen."
+            },
+            {
+              "n": 3,
+              "name": "Hinweise zusammenfügen",
+              "content": "Die 5 Hinweise ergeben zusammen den Lichtweg-Code auf der A3-Karte (z.B. „Lichtweg führt von Farn nach Löwenzahn, über Odermennig zur Ringelblume und endet beim Ahorn\"). Damit ist die Reihenfolge der FLORA-Stationen als „Pfad durch den Wald\" bestätigt."
+            }
+          ],
+          "safetyRule": "UV-Lampe: nicht direkt in die Augen leuchten. UV-Strahlung ist niedrig dosiert bei LED-Lampen, aber das Auge ist empfindlich — Regel vor der Quest klar ansagen. Bei längerer Quest: Pausen einlegen, kein Dauer-UV-Licht auf einer Stelle der Haut.",
+          "ageAdjust9": "Hinweise mit einfacheren Symbolen + Bilder, 3 statt 5 Karten.",
+          "ageAdjust12": "Kurzschrift / Code in den Hinweisen einbauen (z.B. „Pflanze Nr. 3 vor Pflanze Nr. 1\" — sie müssen die FLORA-Reihenfolge selbst durchnummerieren).",
+          "indoorTip": "Verstecke in dunklen Ecken (unter Sofa, hinter Bücherregal) — UV-Licht wirkt dort am stärksten.",
+          "outdoorTip": "Bei Tageslicht funktioniert UV schwerer — entweder in der Dämmerung (Sommer ab ~21:30, Winter ab ~17:30 — DAUER BEACHTEN: Quest muss vor Dunkelheit beendet sein wenn Outdoor!) oder in einem schattigen Schuppen / verdunkelten Raum.",
+          "whyItWorksTitle": "Echte Chemie, echte Magie",
+          "whyItWorks": "Kurkuma + Zitronensaft + UV-Lampe ist echte Chemie, kein Trick. Die Kinder sehen, dass „Pflanzen-Geheimnisse\" auf wissenschaftlicher Realität beruhen — das hebt die Quest aus dem „Kinderkram\"-Niveau."
         }
       ],
       "food": "🎂 Zauberwald-Schoko-Kuchen (1 Springform, grüne Glasur + Schoko-Sandwich-Keks-Krümel-Moos + Marzipan-Pilze) · 🍕 Mini-Pizzen mit frischen Kräutern (10 Stück, 1,5/Kind) · 🥤 Holunderblüten-Schorle oder Apfelschorle (2 L) · 🥒 Gemüse-Sticks „Waldgemüse\" mit Kräuterquark · 🍿 Popcorn „Wald-Snack\" (300 g)",
@@ -525,6 +560,81 @@
           "outdoorTip": "Karte auf einer Decke im Garten — wirkt wie eine echte Feld-Karte.",
           "whyItWorksTitle": "Synthese-Moment",
           "whyItWorks": "Alle bisherigen Stations-Ergebnisse fließen hier zusammen — kein:e Hüter:in kann allein zur Lösung kommen. Das ist Story und Mechanik in einem: „Im Zauberwald braucht es alle Hüter:innen.\""
+        },
+        {
+          "name": "🌱 Pflanzen-Bestimmungs-Quiz",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 20,
+          "minAge": 9,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "8 Pflanzen-Karten (Brennnessel, Löwenzahn, Klee, Eiche, Buche, Ringelblume, Spitzwegerich, Wilde Möhre) — jede Karte mit Foto + Steckbrief verdeckt. 1 Bestimmungs-Schlüssel (A4-Tabelle: Blatt-Form, Blüten-Farbe, Lebensraum). Notiz-Blöcke, Bleistifte.",
+          "prepText": "Die Karten liegen mit verdecktem Namen aus. Hüter:innen bestimmen jede Pflanze nur über den Schlüssel — vergleichen, schlussfolgern, nicht raten. Genau so arbeiten Förster, Botaniker:innen und Kräuterkundige. Wer eine Pflanze richtig identifiziert, darf den Steckbrief vorlesen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Bestimmen",
+              "content": "Jede Pflanze über den Schlüssel anhand der Merkmale identifizieren — Name bleibt verdeckt."
+            },
+            {
+              "n": 2,
+              "name": "Eintragen",
+              "content": "Identifizierte Pflanzen in den Notiz-Block schreiben. Ziel: 6 von 8 richtig."
+            },
+            {
+              "n": 3,
+              "name": "Steckbrief vorlesen",
+              "content": "Wer eine Pflanze richtig bestimmt, dreht die Karte und liest dem Team den Steckbrief vor."
+            }
+          ],
+          "safetyRule": "Brennnessel-Material in der Karte: nur Foto, kein echtes Brennhaar-Material. Wenn Originalpflanze gezeigt wird: Handschuhe.",
+          "ageAdjust9": "5 Karten statt 8, Schlüssel mit mehr Bildern.",
+          "ageAdjust12": "Verwechslungs-Paare (Brennnessel/Taubnessel, Wilde Möhre/Schierling-Warnung) einbauen.",
+          "indoorTip": "Karten am Esstisch auslegen, Schlüssel an der Wand.",
+          "outdoorTip": "Karten im Gras platzieren — wirkt sofort wie eine Feld-Station.",
+          "whyItWorksTitle": "Botanik als echtes Können",
+          "whyItWorks": "Pflanzen bestimmen ist Methode, nicht Glück. Die Kinder erleben, dass es eine erlernbare Fähigkeit ist — und nehmen Brennnessel/Spitzwegerich-Wissen mit nach Hause."
+        },
+        {
+          "name": "🧵 Survival-Workshop: Knoten für das Wurzel-Pakt-Armband",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 9,
+          "loudness": "ruhig",
+          "effort": "mittel",
+          "material": "Hanf- oder Lederschnur pro Kind (60 cm), 1 ausgedruckte Knoten-Anleitung (Achterknoten, Mastwurf, Schmuckknoten — Bilder Schritt-für-Schritt), kleine Holzperlen (optional, ~3 €).",
+          "prepText": "Du übst die drei Knoten einmal vorher selbst. Beim Workshop zeigst du sie kurz vor und lässt die Kinder einzeln am eigenen Armband nachmachen. Wichtig: Armband sitzt LOCKER — der Knoten ist nur dekorativ, das Armband muss über die Hand abziehbar sein. KEIN Knoten direkt am Handgelenks-Druckpunkt. KEINE Schnüre an Hälsen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Achterknoten lernen",
+              "content": "Klassischer Achterknoten als Anfangs-Knoten. Sicher, leicht zu öffnen."
+            },
+            {
+              "n": 2,
+              "name": "Schmuckknoten anbringen",
+              "content": "Zwischen den Knoten kleine Holzperle einfädeln (optional)."
+            },
+            {
+              "n": 3,
+              "name": "Armband schließen",
+              "content": "Verschluss mit Mastwurf — locker um das Handgelenk, Knoten so groß, dass das Armband über die Hand passt."
+            },
+            {
+              "n": 4,
+              "name": "Sicherheits-Check",
+              "content": "Du prüfst jedes Armband: sitzt es locker? Lässt es sich abziehen? Ist kein Knoten am Druckpunkt? — Erst dann wird der Holzring eingefädelt."
+            }
+          ],
+          "safetyRule": "PFLICHT: Armband sitzt locker und ist abnehmbar. Niemals eng knoten, niemals Schnur an Hals oder Gelenk verknoten. Bei jüngeren Hütern (9 Jahre): du knotest mit, prüfst persönlich. Knoten-Material ist Hanf oder Leder — keine dünnen Nylon-Schnüre (können einschneiden).",
+          "ageAdjust9": "Nur ein einfacher Achterknoten + Verschluss-Schlaufe; du knotest mit.",
+          "ageAdjust12": "Drei verschiedene Knoten, Bonus: Eigenes Muster mit Holzperlen entwerfen.",
+          "indoorTip": "Tisch mit guter Beleuchtung, Knoten-Anleitung sichtbar.",
+          "outdoorTip": "Auf einer Decke im Garten — passt zur Survival-Story.",
+          "whyItWorksTitle": "Praktische Fertigkeit als Mitgebsel",
+          "whyItWorks": "Knoten zu können ist eine konkrete Fertigkeit, die Kinder dieser Altersgruppe schätzen. Sie nehmen nicht nur das Armband mit, sondern das Wissen, wie es geknüpft wurde — und können das Armband bei Verlust selbst nachbauen."
         }
       ],
       "food": "🎂 Zauberwald-Kuchen (1 Springform) · 🍕 Mini-Pizzen mit frischen Kräutern (16 Stück, 2/Kind) · 🥤 Holunderblüten- + Apfelschorle (3 L) · 🥒 Gemüse-Sticks + Kräuterquark · 🍿 Popcorn (400 g) · 🍓 Beeren-Schale (Erdbeeren, Heidelbeeren) · 🍫 Schoko-Pilze (Mitgebsel)",
@@ -853,6 +963,156 @@
           "outdoorTip": "Garten bei Schummerung, Lichterkette als Wald-Lichtweg-Effekt.",
           "whyItWorksTitle": "Ernsthafte Initiation",
           "whyItWorks": "Die Zeremonie ist kein Bespaßungs-Akt, sondern eine ernste Übergabe. Die Hüter:innen erleben sich als „in den Hüter-Kreis aufgenommen\". Kein Zwang zur Ironie — die Atmosphäre trägt."
+        },
+        {
+          "name": "🔓 Codeknacker FLORA: Die fünf Hüter-Pflanzen",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 45,
+          "minAge": 9,
+          "loudness": "konzentriert",
+          "effort": "mittel",
+          "material": "5 Pflanzen-Quadranten DIN A4 (selbst gezeichnet oder ausgedruckt — je eine Karte pro Hüter-Pflanze mit Foto/Skizze, einer Pflanzen-Frage und 5 Antwort-Optionen). Pro Station eine kleine Holzschale mit echtem Pflanzenmaterial (Farn-Wedel aus dem Garten, Löwenzahn-Blätter, Ringelblumen-Blüten getrocknet aus dem Tee, Ahorn-Blatt, Odermennig-Tee). Bleistifte, ein Lösungs-Formular pro Team. 1 Wurzel-Pakt-Schloss (5-Buchstaben-Letter-Lock, ~10 €, oder als Story-Schloss: ein verschlossenes Glas mit 5 Pflanzenname-Streifen, die gemeinsam laut vorgelesen werden müssen). Druckvorlage: kannst du vom Beispiel 1:1 abmalen oder selbst gestalten.",
+          "prepText": "Setup am Vorabend (20 Min): Du zeichnest oder druckst 5 Pflanzen-Quadranten. Jede Station hat eine konkrete Frage, die mit echten heimischen Pflanzen-Eigenschaften lösbar ist (siehe codeLogic unten). Lösungswort ist FLORA — alle 5 Buchstaben einzigartig, alle 5 Pflanzen echt heimisch. Der Trick: Wer die Sortier-Regel richtig anwendet, liest am Ende das echte Wort FLORA — Buchstabensalat heißt, eine Station war falsch sortiert. Eingebaute Selbstkontrolle, du musst nichts gegenprüfen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Station 1 — Farn (Adlerfarn): Buchstabe F",
+              "content": "Auf der Karte 5 Pflanzen-Skizzen: Adlerfarn, Tulpe, Rose, Brennnessel, Klee. Aufgabe: „Welche dieser Pflanzen hat keine Blüten und vermehrt sich über Sporen?\" Lösung: Adlerfarn. Anfangsbuchstabe Farn → F."
+            },
+            {
+              "n": 2,
+              "name": "Station 2 — Löwenzahn: Buchstabe L",
+              "content": "5 Lebensstadien einer Pflanze, gemischt: Pusteblume, Knospe, Blüte (gelb), Samen, Blattrosette. Aufgabe: „Welche Pflanze durchläuft alle 5 Stadien in dieser Reihenfolge: Blattrosette → Knospe → gelbe Blüte → Pusteblume → Samen?\" 5 Pflanzen-Optionen, davon der Löwenzahn richtig. Anfangsbuchstabe Löwenzahn → L."
+            },
+            {
+              "n": 3,
+              "name": "Station 3 — Odermennig: Buchstabe O",
+              "content": "Heilpflanzen-Karte mit 5 Pflanzen-Fotos + Wirkungen. Aufgabe: „Welche dieser Heilpflanzen wurde traditionell bei Halsschmerzen als Tee getrunken und hat gelbe Ähren-Blüten?\" Lösung: Odermennig (Agrimonia eupatoria — echt heimisch, echte Heilpflanze). Anfangsbuchstabe Odermennig → O."
+            },
+            {
+              "n": 4,
+              "name": "Station 4 — Ringelblume: Buchstabe R",
+              "content": "5 Korbblütler-Skizzen (Ringelblume, Sonnenblume, Margerite, Kamille, Löwenzahn). Aufgabe: „Welche Pflanze hat orange-gelbe Blüten und wird seit dem Mittelalter zur Wundheilung als Salbe verwendet?\" Lösung: Ringelblume (Calendula officinalis). Anfangsbuchstabe Ringelblume → R."
+            },
+            {
+              "n": 5,
+              "name": "Station 5 — Ahorn: Buchstabe A",
+              "content": "5 Baumblatt-Skizzen (Ahorn-Blatt, Eichen-Blatt, Buchen-Blatt, Linden-Blatt, Birken-Blatt). Aufgabe: „Welcher heimische Baum hat ein 5-zackiges Blatt, das dem kanadischen Flaggen-Symbol ähnelt?\" Lösung: Ahorn (Spitzahorn). Anfangsbuchstabe Ahorn → A."
+            },
+            {
+              "n": 6,
+              "name": "Zusammenführen & Selbst-Check",
+              "content": "Team trägt die 5 Buchstaben in das Lösungs-Formular ein: F-L-O-R-A. Ergibt das ein echtes Wort? Ja → FLORA, die Quest ist gelöst. Nein → eine Station war falsch beantwortet, selbst nachprüfen, nicht raten."
+            },
+            {
+              "n": 7,
+              "name": "Schloss / Glas öffnen",
+              "content": "5-Buchstaben-Letter-Lock auf F-L-O-R-A stellen → Schatzkasten öffnet sich. Inhalt: Wurzel-Pakt-Karten + Pflanzen-Aufkleber + Mitgebsel-Bezugsschein. Variante ohne Schloss: Team ruft das Wort laut zur „Hüterin des Waldes\" (Erwachsene:r), die dann das Glas öffnet."
+            }
+          ],
+          "codeLogic": "Lösungswort: FLORA — fünf unterschiedliche Buchstaben (F, L, O, R, A) ohne Doppler, ausschließlich erste Buchstaben echter heimischer Pflanzen.\nStation 1 (Frage zu Sporen/Adlerfarn) → Buchstabe F\nStation 2 (Frage zum Lebenszyklus/Löwenzahn) → Buchstabe L\nStation 3 (Frage zur Heilpflanze mit gelben Ähren/Odermennig) → Buchstabe O\nStation 4 (Frage zur Wundheilungs-Korbblütlerin/Ringelblume) → Buchstabe R\nStation 5 (Frage zum Baumblatt der kanadischen Flagge/Ahorn) → Buchstabe A\nMath-Check: 5 Stationen × 1 Buchstabe = 5 Buchstaben → Code FLORA ist exakt 5-stellig und enthält keinen Doppler. Jede Pflanze gibt genau einen Buchstaben, jede Station genau eine Antwort.",
+          "safetyRule": "Echtes Pflanzenmaterial: nur unbedenkliche heimische Pflanzen verwenden (Farn-Wedel aus dem Garten, Löwenzahn-Tee, getrocknete Ringelblumen-Blüten aus dem Apotheker-Tee — explizit NICHT giftige Pflanzen wie Maiglöckchen, Eibe, Tollkirsche). Bei Heuschnupfen-Allergie eines Kindes vor der Party klären; Notfall: Pflanzen-Fotos statt echtem Material. Kinder essen oder kosten NICHT von dem Material.",
+          "ageAdjust9": "Pro Station nur 3 Antwort-Optionen statt 5, Pflanzen-Fotos statt Skizzen, Bestimmungsschlüssel sichtbar an der Wand.",
+          "ageAdjust12": "Lateinische Pflanzennamen als Bonus-Spalte, Trick-Frage in Station 4 (Kornblume gehört auch zu Korbblütlern, aber wird seit Mittelalter nicht zur Wundheilung verwendet — strenge Lese-Aufgabe).",
+          "indoorTip": "Die fünf Quadranten an unterschiedliche Tische / Wände stellen, damit die Hüter sich nicht gegenseitig ins Material greifen.",
+          "outdoorTip": "Stationen entlang eines Garten-Rundwegs verteilen — passt perfekt zum Zauberwald-Frame. An der Farn-Station echte Adlerfarn-Wedel platzieren.",
+          "whyItWorksTitle": "Pflanzen-Wissen + Selbstkontrolle statt Tempo",
+          "whyItWorks": "Die FLORA-Chiffre belohnt sorgfältiges Lesen, nicht Geschwindigkeit. Ergibt das Lösungswort keinen Sinn, prüfen die Kinder selbst nach. Echtes Pflanzen-Wissen bleibt hängen — Odermennig, Ringelblume und Adlerfarn kennt nach der Party niemand mehr als „kindisch\", sondern als „cool, das wusste ich vorher nicht\".",
+          "codeMechanic": "Chiffre: Pflanzen-Identifikation → Anfangsbuchstabe der Lösung. Pro Station genau eine richtige Antwort = ein Buchstabe. Selbstkontrolle: ergibt das deutsche Wort FLORA, war alles richtig sortiert. 20 Min Setup am Vorabend: 5 Quadrant-Karten zeichnen oder ausdrucken.",
+          "plantFacts": [
+            {
+              "pflanze": "Adlerfarn",
+              "lateinisch": "Pteridium aquilinum",
+              "merkmal": "Vermehrung über Sporen, keine Blüten, dreieckige Wedel",
+              "habitat": "lichte Laubwälder, Waldränder",
+              "hinweis": "heimisch in Deutschland, Wedel werden bis 2 m hoch"
+            },
+            {
+              "pflanze": "Löwenzahn",
+              "lateinisch": "Taraxacum officinale",
+              "merkmal": "gelbe Korbblüte, durchläuft Pusteblumen-Stadium, gezackte Blätter",
+              "habitat": "Wiesen, Wegränder, überall",
+              "hinweis": "essbar, Blätter im Salat, Wurzel als Kaffee-Ersatz"
+            },
+            {
+              "pflanze": "Odermennig",
+              "lateinisch": "Agrimonia eupatoria",
+              "merkmal": "gelbe Ähren-Blüten, 5 Kronblätter pro Blüte, weich-behaarte Blätter",
+              "habitat": "Wegränder, Wiesen, lichte Wälder",
+              "hinweis": "traditionelle Heilpflanze, Tee bei Halsschmerzen — heimisch"
+            },
+            {
+              "pflanze": "Ringelblume",
+              "lateinisch": "Calendula officinalis",
+              "merkmal": "orange-gelbe Korbblüten, klebrige Blätter, runder Samen-Korb",
+              "habitat": "Gärten, eingebürgert auf Brachflächen",
+              "hinweis": "seit Mittelalter Wundheilungs-Salbe, essbare Blütenblätter"
+            },
+            {
+              "pflanze": "Spitzahorn",
+              "lateinisch": "Acer platanoides",
+              "merkmal": "5-zackiges Blatt, Flügelfrucht (Nasenzwicker), Milchsaft",
+              "habitat": "Laub- und Mischwälder, Parks",
+              "hinweis": "heimisch in Deutschland, das 5-zackige Blatt-Pattern ähnelt dem kanadischen Flaggen-Symbol"
+            },
+            {
+              "pflanze": "Brennnessel",
+              "lateinisch": "Urtica dioica",
+              "merkmal": "Brennhaare, herzförmige Blätter, kleine grüne Blüten in Trauben",
+              "habitat": "Wegränder, Brachflächen, Stickstoff-reiche Böden",
+              "hinweis": "essbar (gekocht), Heilpflanze, Indikator für nährstoffreichen Boden"
+            },
+            {
+              "pflanze": "Klee (Weißklee)",
+              "lateinisch": "Trifolium repens",
+              "merkmal": "drei eiförmige Blättchen, weiße Kugel-Blüten",
+              "habitat": "Wiesen, Rasen",
+              "hinweis": "vierblättrige Mutanten sind selten — daher das Glückssymbol"
+            },
+            {
+              "pflanze": "Stiel-Eiche",
+              "lateinisch": "Quercus robur",
+              "merkmal": "gelapptes Blatt, Eicheln mit langem Stiel, raue Borke",
+              "habitat": "Laubwälder",
+              "hinweis": "kann über 500 Jahre alt werden"
+            }
+          ]
+        },
+        {
+          "name": "🌱 Pflanzen-Bestimmungs-Quiz",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 20,
+          "minAge": 9,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "8 Pflanzen-Karten (Brennnessel, Löwenzahn, Klee, Eiche, Buche, Ringelblume, Spitzwegerich, Wilde Möhre) — jede Karte mit Foto + Steckbrief verdeckt. 1 Bestimmungs-Schlüssel (A4-Tabelle: Blatt-Form, Blüten-Farbe, Lebensraum). Notiz-Blöcke, Bleistifte.",
+          "prepText": "Die Karten liegen mit verdecktem Namen aus. Hüter:innen bestimmen jede Pflanze nur über den Schlüssel — vergleichen, schlussfolgern, nicht raten. Genau so arbeiten Förster, Botaniker:innen und Kräuterkundige. Wer eine Pflanze richtig identifiziert, darf den Steckbrief vorlesen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Bestimmen",
+              "content": "Jede Pflanze über den Schlüssel anhand der Merkmale identifizieren — Name bleibt verdeckt."
+            },
+            {
+              "n": 2,
+              "name": "Eintragen",
+              "content": "Identifizierte Pflanzen in den Notiz-Block schreiben. Ziel: 6 von 8 richtig."
+            },
+            {
+              "n": 3,
+              "name": "Steckbrief vorlesen",
+              "content": "Wer eine Pflanze richtig bestimmt, dreht die Karte und liest dem Team den Steckbrief vor."
+            }
+          ],
+          "safetyRule": "Brennnessel-Material in der Karte: nur Foto, kein echtes Brennhaar-Material. Wenn Originalpflanze gezeigt wird: Handschuhe.",
+          "ageAdjust9": "5 Karten statt 8, Schlüssel mit mehr Bildern.",
+          "ageAdjust12": "Verwechslungs-Paare (Brennnessel/Taubnessel, Wilde Möhre/Schierling-Warnung) einbauen.",
+          "indoorTip": "Karten am Esstisch auslegen, Schlüssel an der Wand.",
+          "outdoorTip": "Karten im Gras platzieren — wirkt sofort wie eine Feld-Station.",
+          "whyItWorksTitle": "Botanik als echtes Können",
+          "whyItWorks": "Pflanzen bestimmen ist Methode, nicht Glück. Die Kinder erleben, dass es eine erlernbare Fähigkeit ist — und nehmen Brennnessel/Spitzwegerich-Wissen mit nach Hause."
         }
       ],
       "food": "🎂 Zauberwald-Kuchen (1 Springform + Wunderkerze) · 🍕 Mini-Pizzen mit frischen Kräutern (20 Stück, 2/Kind) · 🥤 Holunderblüten- + Apfelschorle (4 L) · 🥤 „Hüter-Trank\" (Apfel-Holunder-Schorle mit Eiswürfeln) · 🥒 Gemüse-Sticks + Kräuterquark + Hummus · 🍿 Popcorn (500 g) · 🍓 Beeren (Heidelbeeren, Erdbeeren, Brombeeren) · 🍫 Schoko-Pilze · 🌿 Kräuter-Tee-Verkostung (Ringelblume, Pfefferminze)",

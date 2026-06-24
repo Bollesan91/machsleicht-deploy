@@ -705,6 +705,171 @@
           "outdoorTip": "Im Garten am Tisch unter Schatten — bei Wärme die Glasur kühl stellen, sonst läuft sie.",
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Selbst verzierter Proviant verbindet Essen und Aktivität und gibt eine ruhige Phase zwischen den bewegten Spielen. 6–8-Jährige sind stolz auf ihr eigenes Werk und essen es eher als vorgesetzte Snacks, und die Algen-Spieße schmuggeln nebenbei Obst und Gemüse in die Party — ohne dass es nach „gesund\" aussieht."
+        },
+        {
+          "name": "4️⃣ Quallen-Tanz (Bewegungs-Stopp-Spiel)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 10,
+          "minAge": 6,
+          "loudness": "hoch",
+          "effort": "niedrig",
+          "material": "Musik vom Handy/Box. Optional ein blaues Tuch oder Chiffon-Tücher als „Strömung\". Kostenlos.",
+          "prepText": "Im offenen Wasser treiben Quallen — die Crew schwimmt zur Musik durch den Raum, doch sobald die Strömung stoppt (Musik aus), müssen alle wie eine Qualle erstarren. Wer sich bewegt, ruht sich kurz am „Riff\" aus.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Strömung an",
+              "content": "Musik läuft — alle „schwimmen\" mit Wellen-Armen durch den Raum, ohne sich zu stoßen."
+            },
+            {
+              "n": 2,
+              "name": "Strömung stoppt",
+              "content": "Musik aus = sofort als Qualle einfrieren, egal in welcher Pose. Wackeln gilt nicht."
+            },
+            {
+              "n": 3,
+              "name": "Am Riff ausruhen",
+              "content": "Wer wackelt, setzt sich kurz ans „Riff\" (Sofa) und macht in der nächsten Runde wieder mit — kein echtes Rausfliegen."
+            },
+            {
+              "n": 4,
+              "name": "Letzte Welle",
+              "content": "In der Schlussrunde tanzen alle gemeinsam ohne Ausscheiden — Spaß-Ende statt Sieger."
+            }
+          ],
+          "safetyRule": "Genug Abstand zwischen den Kindern, scharfe Tisch-Kanten abräumen. Auf rutschigem Boden Socken aus.",
+          "ageAdjust6": "Großzügig sein beim Wackeln, niemanden lange aussetzen.",
+          "ageAdjust8": "Lustige Posen vorgeben („erstarr wie ein Seestern / wie ein Krake\") für mehr Kichern.",
+          "indoorTip": "Möbel an die Wand schieben für freie Tanzfläche.",
+          "outdoorTip": "Auf dem Rasen mit echtem Tuch als Strömung über die Köpfe wehen lassen.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Nach der ruhigen Bastel-Station braucht die Crew wieder Bewegung und lautes Auspowern — ein Stopp-Tanz liefert genau das in 10 Minuten. Die Regel „ausruhen statt rausfliegen\" verhindert Tränen, und das Qualle-Erstarren ist albern genug, dass selbst zurückhaltende Kinder mitlachen."
+        },
+        {
+          "name": "🌊 Muschel-Tauchen (Schatz-Fischen)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 15,
+          "minAge": 6,
+          "loudness": "mittel",
+          "effort": "niedrig",
+          "material": "Eine große Schüssel oder Wanne mit Wasser (oder trocken: mit Reis/Sand gefüllt), 20–30 Muscheln und ein paar „Perlen\" (Glasnuggets/Murmeln), pro Kind ein kleiner Eimer oder Becher. Alles aus dem Haushalt oder ~3 € Muscheln.",
+          "prepText": "Die Crew taucht nach den Schätzen, die die Meereskönigin verloren hat. Muscheln und Perlen liegen im Wasser-/Sandbecken, jedes Kind fischt mit den Händen so viele wie möglich heraus — die Perlen kommen auf die Crew-Kette.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Becken befüllen",
+              "content": "Schüssel mit Wasser (oder Reis/Sand) füllen, Muscheln und Perlen hineingeben und gut verteilen."
+            },
+            {
+              "n": 2,
+              "name": "Reihum tauchen",
+              "content": "Jedes Crew-Mitglied taucht 30 Sekunden und sammelt, was es greifen kann. Die anderen rufen das Tauch-Signal mit."
+            },
+            {
+              "n": 3,
+              "name": "Perlen zählen",
+              "content": "Gefundene Perlen kommen auf die eigene Crew-Kette, Muscheln in den gemeinsamen Korb der Crew."
+            },
+            {
+              "n": 4,
+              "name": "Gemeinsamer Schatz",
+              "content": "Am Ende wird der Muschel-Korb der ganzen Crew gezählt — niemand verliert, der Schatz gehört allen."
+            }
+          ],
+          "safetyRule": "Bei Wasser: rutschfeste Unterlage und Handtücher griffbereit, Becken nur knöcheltief füllen. KEIN Glas (Splitter-/Verschluck-Risiko in Wasser) — grosse Holz-/Kunststoffperlen oder glatte Aquariensteine, kleine Geschwister fernhalten, durchgehende Aufsicht.",
+          "ageAdjust6": "Größere Muscheln, flacheres Wasser, mehr Zeit pro Kind. Loben statt zählen.",
+          "ageAdjust8": "Mehr und kleinere Teile, Zeit knapper, optional mit verbundenen Augen ertasten.",
+          "indoorTip": "Wanne in die Badewanne stellen oder auf einer Plane im Bad — da ist Spritzwasser egal.",
+          "outdoorTip": "Auf der Terrasse oder im Garten mit dem Gartenschlauch nachfüllen — bei Sonne der Hit.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Tauchen und Greifen ist sofort verständlich, jedes Kind kann es, und das Wasser allein liefert schon den Spaß. Das Framing „verlorener Schatz der Meereskönigin\" macht aus simplem Fischen eine Mission, und dass die Perlen auf die eigene Kette wandern, gibt jedem Kind ein sichtbares Ergebnis zum Mitnehmen."
+        },
+        {
+          "name": "🐠 Meerestier-Quiz (Fisch-Flüsterer-Prüfung)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 12,
+          "minAge": 6,
+          "loudness": "niedrig",
+          "effort": "niedrig",
+          "material": "10–12 ausgedruckte oder vorgelesene Fragen über Meerestiere, optional Tierstimmen-/Geräusch-Audios vom Handy. Kostenlos.",
+          "prepText": "Wer Fisch-Flüsterer werden will, muss die Bewohner des Riffs kennen. Die Crew beantwortet gemeinsam einfache Fragen über Delfine, Kraken, Seesterne und Co. — richtige Antwort = eine Perle für die Crew.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Fragen vorbereiten",
+              "content": "10–12 kindgerechte Fragen: „Wie viele Arme hat ein Krake?\", „Welches Tier ist das größte im Meer?\", „Können Delfine sprechen?\""
+            },
+            {
+              "n": 2,
+              "name": "Im Kreis fragen",
+              "content": "Reihum oder gemeinsam rufen lassen. Bei Geräusch-Variante ein Tier-Geräusch abspielen und raten lassen."
+            },
+            {
+              "n": 3,
+              "name": "Perle pro Runde",
+              "content": "Für jede gelöste Frage wandert eine Perle in den Crew-Korb — Team gegen die Aufgabe, nicht Kind gegen Kind."
+            },
+            {
+              "n": 4,
+              "name": "Bonus-Wissen",
+              "content": "Zu jeder Antwort ein kurzer Fun-Fact („Kraken haben drei Herzen!\") — Kinder lieben es, danach selbst Angeber-Wissen zu erzählen."
+            }
+          ],
+          "safetyRule": "Reines Sitzspiel, kein Risiko. Schüchterne Kinder nicht einzeln drannehmen, sondern gemeinsam rufen lassen.",
+          "ageAdjust6": "Ja/Nein-Fragen und Bilder zeigen statt Begriffe abfragen.",
+          "ageAdjust8": "Schätzfragen mit Zahlen und kleine Knobelfragen einbauen.",
+          "indoorTip": "Im Sitzkreis auf dem Boden, Bilder auf dem Tablet zeigen.",
+          "outdoorTip": "Als „Fragen-Lauf\": richtige Antwort = ein Schritt näher zur Schatzkiste.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Ein ruhiges Quiz ist der perfekte Gegenpol zu den bewegten Spielen und gibt der Crew eine Verschnaufpause. Echtes Tierwissen verpackt in eine „Prüfung\" fühlt sich für 6–8-Jährige wichtig an, und die gemeinsame Team-Wertung verhindert, dass langsamere Kinder das Gefühl haben zu verlieren."
+        },
+        {
+          "name": "🌊 Großspiel: Die Schatztruhe der Meereskönigin",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 6,
+          "loudness": "mittel",
+          "effort": "mittel",
+          "material": "Eine „Schatztruhe\" (Schuhkarton mit blauer/goldener Folie), darin Mitgebsel + Schoko-Goldmünzen, 4–5 versteckte Hinweis-Karten, ein paar Muscheln als Wegmarken. ~4 € Material.",
+          "prepText": "Das große Finale: Die versunkene Schatztruhe ist im „Riff\" versteckt, und nur die ganze Crew gemeinsam findet sie. Hinweis-Karten führen von Versteck zu Versteck, an jeder Station löst die Crew eine kleine Aufgabe, bis die Truhe geborgen ist.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Erster Hinweis",
+              "content": "Die Crew bekommt die erste Hinweis-Karte: „Such, wo das Wasser aus dem Hahn kommt\" — los geht die Tauch-Expedition durch Wohnung/Garten."
+            },
+            {
+              "n": 2,
+              "name": "Stationen lösen",
+              "content": "An jedem Versteck wartet eine Mini-Aufgabe (Muscheln zählen, ein Tier-Geräusch nachmachen, gemeinsam tauchen) und die nächste Karte."
+            },
+            {
+              "n": 3,
+              "name": "Letzter Hinweis",
+              "content": "Die letzte Karte führt zum Versteck der Truhe — alle suchen gemeinsam, kein Wettrennen."
+            },
+            {
+              "n": 4,
+              "name": "Truhe bergen",
+              "content": "Die Crew hebt die Truhe gemeinsam, öffnet sie und teilt den Schatz gerecht: Goldmünzen und Mitgebsel für alle."
+            },
+            {
+              "n": 5,
+              "name": "Crew-Foto",
+              "content": "Mit der geborgenen Truhe ein Gruppenfoto — der Moment, von dem die Kinder am Montag erzählen."
+            }
+          ],
+          "safetyRule": "Verstecke ohne Stolper- oder Klemm-Gefahr wählen, keine erreichbaren Steckdosen oder Treppen ohne Aufsicht. Bei Outdoor: Grundstücksgrenzen vorher abstecken.",
+          "ageAdjust6": "Verstecke offensichtlicher, Hinweise mit Bildern statt Text, kürzere Strecke.",
+          "ageAdjust8": "Knifflige Hinweise und ein einfaches Rätsel pro Station, längere Route.",
+          "indoorTip": "Hinweise durch alle Zimmer verteilen — hinter Türen, unter Kissen, im Schuhschrank.",
+          "outdoorTip": "Im Garten Hinweise unter Steinen, im Baum, am Zaun verstecken — die Truhe halb eingegraben als Highlight.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Die Schatzsuche ist das narrative Finale, auf das die ganze Party hingebaut wurde — jedes vorige Spiel war Training dafür. Dass die Truhe nur gemeinsam gefunden und der Schatz gerecht geteilt wird, beendet die Party in einem Wir-Moment statt mit einem einzelnen Gewinner, und die geborgene Truhe gibt allen das Gefühl, eine echte Mission geschafft zu haben."
         }
       ],
       "food": "🎂 Meeres-Kuchen — 1 Rührkuchen, blauer Guss + Wunderkerze\n🧁 Selbst verzierte Wellen-Muffins (Snack-Werkstatt)\n🍢 Algen-Obst-Spieße — Trauben, Melone, Gurke\n💧 „Meerwasser\" — Apfelschorle/Saftpäckchen für 6–8\n🥪 Muschel-Sandwiches + Wraps\n🥕 Möhren & Käsewürfel\n🍿 Popcorn — 300 g\n🍬 Gummi-Fische",

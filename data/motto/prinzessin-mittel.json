@@ -366,6 +366,41 @@
           "outdoorTip": "Auf einer Bank/Tisch.",
           "whyItWorksTitle": "Warum das zieht",
           "whyItWorks": "Etwas umwerfen dürfen ist purer Spaß, die Drachen-Geschichte gibt einen Grund, und das Befreien der Krone schließt die Party-Geschichte triumphal ab."
+        },
+        {
+          "name": "🎵 Königlicher Standbild-Tanz",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 5,
+          "loudness": "laut",
+          "effort": "mittel",
+          "material": "Musik (Handy/Box), etwas Platz",
+          "prepText": "Tanzfläche frei räumen, fröhliche Musik bereit.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Königlicher Ball",
+              "content": "'Wir feiern den königlichen Ball — tanzt, so schön ihr könnt!'"
+            },
+            {
+              "n": 2,
+              "name": "Standbild",
+              "content": "Bei Musik-Stopp einfrieren wie eine Statue. Wer wackelt, macht eine lustige Königs-Pose."
+            },
+            {
+              "n": 3,
+              "name": "Posen-Runden",
+              "content": "Mal als 'eleganteste', mal als 'lustigste', mal als 'mutigste' Pose einfrieren."
+            }
+          ],
+          "safetyRule": "Tanzfläche frei von Kanten/Stolperfallen. Genug Abstand zwischen den Kindern.",
+          "ageAdjust6": "Kein 'Ausscheiden', nur Posen.",
+          "ageAdjust8": "Mit kleinem Augenzwinkern-Ausscheiden, Gewinner darf Musik stoppen.",
+          "indoorTip": "Wohnzimmer, Teppich.",
+          "outdoorTip": "Auf der Terrasse.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Tanzen + Einfrieren ist sofort verständlich, sorgt für Lacher und gibt schüchternen Kindern (lustige Pose) genauso eine Bühne wie den Tanzbegeisterten."
         }
       ],
       "food": "Königliches Buffet: rosa Obstspieße, Krönchen-Kekse, 'Einhorn-Toast' (Frischkäse + bunte Streusel), Gemüse-Zepter (Sticks mit Dip), 'Zauber-Trank' (rosa Schorle). Herzhaft: Mini-Pizzaschnecken oder Würstchen.",

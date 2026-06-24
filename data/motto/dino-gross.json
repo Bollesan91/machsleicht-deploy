@@ -263,6 +263,32 @@
           "outdoorTip": "Parcours größer machen, echte Hindernisse (Bank zum Drübersteigen, Slalom um Bäume).",
           "whyItWorksTitle": "Warum es funktioniert",
           "whyItWorks": "Bewegung nach dem Kuchen ist Pflicht — Zucker-Energie muss raus. Wettbewerb ist erwünscht in diesem Alter, aber Trost-Dino verhindert Tränen."
+        },
+        {
+          "name": "🔐 Verschlüsselte Nachricht — Spielanleitung",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 15,
+          "minAge": 9,
+          "loudness": null,
+          "effort": null,
+          "material": "Verschlüsselte Nachricht (Caesar-Chiffre, Buchstabe+3), Alphabet-Übersetzungstabelle ausdrucken",
+          "prepText": "Nachricht schreiben, jeden Buchstaben um 3 verschieben (A→D, B→E etc.). Kinder bekommen die verschlüsselte Nachricht + Alphabet-Tabelle. Beispiel: „GLQR“ = „DINO“. Die entschlüsselte Nachricht verrät den Ort der nächsten Station + eine Ziffer für das Zahlenschloss.",
+          "steps": [
+            "Alphabet-Tabelle ausdrucken: A↔D, B↔E, C↔F, ... X↔A, Y↔B, Z↔C",
+            "Codierte Beispiel-Nachricht: „GHU FRGH EHJLQQW PLW GUHL“ (jeder Buchstabe ist um 3 verschoben — Z wird zu C, nicht zu einem Sonderzeichen)",
+            "Entschlüsselt: „DER CODE BEGINNT MIT DREI“ — die erste Ziffer des Zahlenschlosses ist also 3",
+            "Team-Arbeit: einer liest, einer schreibt, einer prüft",
+            "Gelöste Nachricht nennt die erste Ziffer des Zahlenschlosses: DREI = 3",
+            "Bei Frust: Hinweis-Karte „Buchstaben rückwärts um 3 verschieben“"
+          ],
+          "safetyRule": "Reine Knobel-Aufgabe — keine physische Gefahr. Wenn ein Team frustriert: Hinweis-Karte geben, nicht überfordern.",
+          "ageAdjust6": null,
+          "ageAdjust8": null,
+          "indoorTip": "An Tisch arbeiten lassen, gut beleuchtet. Buntstifte zum Markieren der Buchstaben.",
+          "outdoorTip": "Geht draußen — Klemmbrett mitgeben.",
+          "whyItWorksTitle": "Warum es funktioniert",
+          "whyItWorks": "Echte historische Chiffre (Julius Caesar) gibt der Aufgabe Tiefe. Kinder lernen nebenbei: erste 2000 Jahre alte Verschlüsselung. Team-Lösung (lesen + schreiben + prüfen) erzwingt Kooperation."
         }
       ],
       "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🍕Pizza/Hot Dogs2 Stück pro Kind = 4 Pizzen ergeben 16 Stück = 8 Portionen a 2\n🍿Popcorn2 Schüsseln\n🧃„Dino-Pipi“5 Liter\n🥨 Chips/Nachos2 Schüsseln",

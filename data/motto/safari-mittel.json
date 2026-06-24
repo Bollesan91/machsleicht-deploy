@@ -730,6 +730,181 @@
           "whyItWorksTitle": "Warum das funktioniert",
           "whyItWorks": "Fünf Stationen mit echtem Lösungswort am Ende: Das ist die kognitive Tiefe, die 6-8-Jährige tragen können — Rätsel kombinieren, Buchstaben sammeln, gemeinsam knobeln. Der Schatzfund liefert den emotionalen Höhepunkt der Wow-Variante.",
           "codeLogic": "SAUBERE CODE-LOGIK: 4 Stationen liefern je einen Buchstaben aus dem Lösungswort FUSS (F-U-S-S). Station 1 (Flamingo-Tarnung) → Buchstabe F. Station 2 (Urwald-Pfad / Unter-dem-Baum-Versteck) → Buchstabe U. Station 3 (Schmetterling-Fang) → Buchstabe S. Station 4 (Schlangen-Tunnel) → Buchstabe S. Sortier-Station 5: Kinder ordnen die 4 Karten in der Spur-Reihenfolge → FUSS. Lösungswort öffnet die Schatzkiste. HINWEIS: Die alte TIGER-Logik (T-F-S-U) war mathematisch unmöglich — wurde durch saubere F-U-S-S-Mapping ersetzt."
+        },
+        {
+          "name": "🦓 Tierspuren-Pirsch",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 5,
+          "loudness": null,
+          "effort": "leicht",
+          "material": "12–15 Pfotenabdrücke aus Tonpapier ausgeschnitten (DIN A4 braunes Tonpapier, schwarzer Filzstift ODER vorgefertigte Tarn-Tücher ODER abwaschbare Stoffmalfarben (Filzstift färbt ab) oder Pfoten-Schablone — ein Löwenpfoten-Set kostet 5 Min. Vorbereitungszeit). Tesa zum Befestigen. Am Endpunkt: 1 Plüsch-Tier oder eine Box mit Mini-Tieren als \"Fund\". Druckvorlage Safari-Tierspuren ist in Vorbereitung — bis dahin: schnell selbst zeichnen, die Kinder merken den Unterschied nicht.",
+          "prepText": "Vorher legst du eine Spur durch Garten oder Wohnung — z.B. Löwen-Pfoten an die Wand kleben (Augenhöhe Kind), die in eine bestimmte Richtung führen. Am Endpunkt versteckt sich das \"vermisste Tier\" (Plüsch-Löwe).",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Einstimmen",
+              "content": "Du flüsterst: 'Ein Tier hat sich verlaufen. Wir folgen seiner Spur — ganz leise wie echte Ranger.'"
+            },
+            {
+              "n": 2,
+              "name": "Spur aufnehmen",
+              "content": "Alle starten gemeinsam, du zeigst die erste Pfote. Tempo bewusst langsam halten, Schleich-Modus an."
+            },
+            {
+              "n": 3,
+              "name": "Spur folgen",
+              "content": "Kinder suchen Pfote für Pfote. Jeden Fund kurz bestätigen ('Da, eine Spur!'), niemand rennt voraus."
+            },
+            {
+              "n": 4,
+              "name": "Brüllen orten",
+              "content": "Aus dem Versteck kommt ein Brüllen (du oder Helfer). Wer's zuerst hört, zeigt die Richtung an."
+            },
+            {
+              "n": 5,
+              "name": "Tier finden",
+              "content": "Am Endpunkt liegt der Plüsch-Löwe. Alle finden ihn gemeinsam — niemand 'gewinnt', jeder darf ihn halten."
+            }
+          ],
+          "safetyRule": "Pfoten nur auf Augenhöhe kleben, nichts zum Klettern provozieren. Endpunkt-Versteck ohne scharfe Kanten oder kippelige Möbel. Pflicht: bei Augen-zu-Spielen ist eine ZWEITE Aufsichtsperson erforderlich. Solo-Variante (1 Erwachsener) ist hier nicht ausreichend. Boden weich/rutschfest, reihum (nie zwei gleichzeitig).",
+          "ageAdjust6": "Spur kurz halten (15–20 Spuren reichen), Endpunkt sichtbar verstecken (unter Sofadecke, hinter Baum).",
+          "ageAdjust8": "Mehrere Tier-Arten parallel auslegen (Löwe + Elefant), 2 Endpunkte. In Teams suchen.",
+          "indoorTip": "Spuren in 3–4 Räume verteilen, Türen geschlossen halten — sieht nach mehr Welt aus als es ist.",
+          "outdoorTip": "Im Garten echte Erde/Rinde als Spur-Stationen nutzen — Pfoten zwischen Sträucher, an Baumstämme. Wirkt sofort wie echtes Reservat.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Schleichen bremst die Lautstärke von selbst — und das gemeinsame Finden hält den Wettbewerb raus, der mit 6-8 sonst schnell Tränen macht. Greifbarer Plüsch-Fund statt abstraktem Ziel."
+        },
+        {
+          "name": "🦒 Tierstimmen-Quiz",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 15,
+          "minAge": 5,
+          "loudness": "ruhig",
+          "effort": null,
+          "material": "Smartphone oder Bluetooth-Box, vorbereitete YouTube-Liste. Empfehlung: [\"Wilde Tiere Afrikas — Tiergeräusche\"](https://www.youtube.com/watch?v=s1bldBExvmU) (Timestamps in der Video-Beschreibung, du kannst direkt zu Löwe, Elefant, Erdmännchen etc. springen) oder als fertiges Quiz-Video [\"Tierstimmen-Quiz mit Kokosnuss\"](https://www.youtube.com/watch?v=qmtLEmlOWN0) (komplett fertig, einfach abspielen)",
+          "prepText": "Die Herde sitzt im Halbkreis. Du spielst eine Tierstimme ab (5 Sekunden), alle dürfen mitraten — das schnellste Kind antwortet, oder bei jüngeren nacheinander reihum, damit alle zum Zug kommen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Herde setzen",
+              "content": "Alle sitzen im Halbkreis vor der Box. Du erklärst: 'Gleich hört ihr ein Tier — wer weiß, welches?'"
+            },
+            {
+              "n": 2,
+              "name": "Stimme abspielen",
+              "content": "Du spielst eine Tierstimme (5 Sek.). Schnellstes Kind antwortet, oder reihum, damit jeder drankommt."
+            },
+            {
+              "n": 3,
+              "name": "Faktenfrage",
+              "content": "Nach jedem Tier eine kurze Frage ('Wo lebt der Löwe?'). Auch falsche Antworten zählen — Mitmachen zählt."
+            },
+            {
+              "n": 4,
+              "name": "Weiter",
+              "content": "Nächstes Tier. 6-8 Runden reichen; danach kippt die Aufmerksamkeit, lieber früher aufhören."
+            }
+          ],
+          "safetyRule": null,
+          "ageAdjust6": "Bekannte Tiere (Löwe, Elefant, Affe, Hund, Katze als Joker). Nicht zu lange.",
+          "ageAdjust8": "Auch schwierigere Tiere mischen (Hyäne, Strauß, Geparden-Schnurren). Punkte zählen optional.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Raten ohne Verlierer: Mit 6-8 wollen Kinder ihr Tier-Wissen zeigen, aber das Reihum-Prinzip sorgt dafür, dass auch das langsamere Kind dran kommt. Faktenfragen nebenbei statt Frontalunterricht."
+        },
+        {
+          "name": "🦁 Rette das Löwen-Junge",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 6,
+          "loudness": null,
+          "effort": "mittel",
+          "material": "1 großes Plüsch-Tier (das \"schlafende Löwe\" — vorhandenes Kuscheltier reicht völlig, muss kein Löwe sein), 1 Plüsch-Junges (alternativ: kleines Plüsch-Tier von zuhause), 4 Hinweis-Karten (eine pro Team) mit Such-Aufgaben, Klebeband zum Markieren von \"gefährlichen Zonen\"",
+          "prepText": "Story-Setup: \"Das Löwen-Junge hat sich verlaufen und liegt irgendwo im Reservat. Mama-Löwe wartet am Wasserloch — wir müssen das Junge zurückbringen, ohne dass die Hyänen es schnappen!\"",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Story-Setup",
+              "content": "'Das Löwen-Junge hat sich verlaufen. Mama wartet am Wasserloch — wir bringen es zurück, bevor die Hyänen es schnappen!'"
+            },
+            {
+              "n": 2,
+              "name": "Hinweise verteilen",
+              "content": "Jedes der 4 Teams bekommt eine Hinweis-Karte. Konkrete Beispiele: Team 1 'Sucht zwischen den Büchern, die nach Tieren benannt sind.' Team 2 'Findet den Ort, an dem die Mama-Löwen ihre Jungen waschen würden — ein Ort mit Wasser.' Team 3 'Sucht da, wo es im Reservat dunkel ist — unter einem schweren Möbelstück.' Team 4 'Sucht da, wo die Sonne reinkommt — bei einem Fenster.'"
+            },
+            {
+              "n": 3,
+              "name": "Suchen",
+              "content": "Teams lösen ihre Hinweise und durchsuchen das Reservat. Hinweise verschränken sich — Teams müssen sich abstimmen."
+            },
+            {
+              "n": 4,
+              "name": "Junges bergen",
+              "content": "Wer das Junge findet, übernimmt die Rückbringung. Klebeband-Gefahrenzonen (Hyänen-Territorium) dürfen nicht betreten werden — andere Teams können helfen, sicheren Pfad zu finden."
+            },
+            {
+              "n": 5,
+              "name": "Zur Mama bringen",
+              "content": "Andere Teams weisen den sicheren Pfad. Kommt das Junge bei Mama an, ist die Mission erfüllt — alle haben gewonnen."
+            }
+          ],
+          "safetyRule": "Gefahrenzonen nur mit Klebeband am Boden markieren, keine echten Hindernisse. Verstecke nicht hinter schweren, kippbaren Möbeln. Pflicht: bei Augen-zu-Spielen ist eine ZWEITE Aufsichtsperson erforderlich. Solo-Variante (1 Erwachsener) ist hier nicht ausreichend.",
+          "ageAdjust6": "Hinweise einfacher formulieren, keine versteckten Wortspiele.",
+          "ageAdjust8": "Hinweise als Rätsel formulieren, optional mit kleinem Symbol-Code (zwei aufeinander folgende Hinweise nötig, um das nächste Versteck zu finden).",
+          "indoorTip": "Verstecke über die ganze Wohnung verteilen — Bücherregal, Badezimmer (Wasser), dunkle Möbel-Ecke, Fensterbank.",
+          "outdoorTip": "Im Garten Wasserloch (Vogeltränke/Eimer), Gebüsch und Geräteschuppen als Hinweis-Orte nutzen — größere Bühne, mehr Lauf-Energie.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Bricht kurz vor der Lizenz-Zeremonie die Team-Konkurrenz auf: kooperativ statt kompetitiv, jedes Team trägt zum Erfolg bei. Bringt nochmal Energie und gibt der Geschichte einen zweiten dramatischen Bogen."
+        },
+        {
+          "name": "1️⃣ Tarnungs-Übung",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 15,
+          "minAge": 6,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "Material pro Team: 2 Stoffquadrate (~30×30cm, alte Geschirrtücher oder weißer Stoff zerschnitten), vorgefertigte Tarn-Tücher ODER abwaschbare Stoffmalfarben (Filzstift färbt ab) in Erdfarben (braun, grün, ocker), 1 Beispiel-Tarn-Tuch zum Vorzeigen",
+          "prepText": "Erst bemalen, dann tarnen. Jedes Kind bekommt ein Stoffquadrat und malt es mit Erdfarben so an, dass es zur Umgebung passt (Garten = grün-braun, Sofa = grau-beige). 8 Min. malen.\n\nDann: das Tuch über sich legen oder hinter sich halten und sich im Raum/Garten verstecken. Der Spielleiter (oder du) schaut 15 Sekunden weg, dann sucht er. Wer 30 Sekunden ungesehen bleibt, hat bestanden — und kriegt einen Stempel.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Tuch bemalen",
+              "content": "Jedes Kind malt sein Stoffquadrat mit Erdfarben passend zur Umgebung an (Garten grün-braun, Sofa grau-beige). 8 Min."
+            },
+            {
+              "n": 2,
+              "name": "Prinzip zeigen",
+              "content": "Du zeigst am Beispiel-Tuch: ein gutes Tarnmuster verschwindet vor passendem Hintergrund, ein falsches sticht raus."
+            },
+            {
+              "n": 3,
+              "name": "Verstecken",
+              "content": "Kind legt das Tuch über sich oder hält es vor sich und sucht ein passendes Versteck im Raum oder Garten."
+            },
+            {
+              "n": 4,
+              "name": "Suchen",
+              "content": "Spielleiter schaut 15 Sek. weg, dann sucht er. Wer 30 Sek. ungesehen bleibt, besteht."
+            },
+            {
+              "n": 5,
+              "name": "Stempel & Mitgebsel",
+              "content": "Bestanden gibt's einen Stempel auf die Ranger-Karte. Das Tarn-Tuch wandert als Mitgebsel mit nach Hause."
+            }
+          ],
+          "safetyRule": "Nur kindersichere, textil-geeignete Filzstifte (Edding Textil, Crayola). No-Name-Stoff-Färbe-Stifte können Hautreaktionen auslösen — im Zweifel Eltern fragen. Keine Verstecke an wackeligen Regalen oder hinter heißen Heizungen.",
+          "ageAdjust6": "Spielleiter zeigt vorher ganz deutlich, wo ungeeignete Verstecke sind (\"hinter dem weißen Vorhang funktioniert dein braunes Tuch nicht\"). Pädagogische Bemerkung statt Regel.",
+          "ageAdjust8": "Mehrere Verstecke nacheinander, Zeit knapper machen.",
+          "indoorTip": "Vorhänge, hinter Sofa, in Wäscheecke — gibt mehr Verstecke als man denkt. Indoor-Limit: max. 4 Kinder gleichzeitig tarnen lassen (räumlich nicht mehr Versteckplätze). Bei größerer Gruppe in 2 Runden aufteilen ODER Outdoor.",
+          "outdoorTip": "Im Garten Tarn-Tuch gegen echtes Grün und Erde testen — der Aha-Effekt ist draußen viel größer als drinnen.",
+          "whyItWorksTitle": "Warum das funktioniert",
+          "whyItWorks": "Erst malen, dann verstecken: Das aktive Gestalten gibt jedem Kind ein Ergebnis in der Hand, bevor die schwere Disziplin Stillhalten kommt. Mit 6-8 verstehen Kinder hier das Prinzip Tarnung wirklich."
         }
       ],
       "food": "🎂Savannen-Kuchen1 Blechkuchen + 1 kleiner\n🥤\"Wasserloch\"4 L Apfelschorle\n🍕Mini-Pizzen15 Stück\n🌯Wraps \"Anaconda\"10 Stück\n🍌Affen-Bananen10 Stk.\n🥕Karotten + Käse-Würfel\"Giraffen-Snack\"\n🍿Pop-Mais (Savannen-Kino)400 g\n🍫Schoko-GoldmünzenSchatzkisten-Inhalt",
