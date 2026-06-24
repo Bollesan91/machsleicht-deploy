@@ -481,7 +481,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "8 Steckenpferde, 3-4 Sprung-Stangen (10 cm hoch — Pappröhren), Plastik-Tunnel oder Kissen-Tunnel, Stoff-Markierungen für Slalom",
-          "safetyRule": "Sprung-Stangen NICHT höher als 10 cm. Kein Drängeln am Tunnel — einzelne Durchgänge. Eltern-Helfer am Tunnel. Fuer 3-Jaehrige: vereinfachte Variante mit Erwachsenen-Hilfe (oder optional auslassen) — ab4-Spiel. Boden weich/rutschfest halten; reihum, nie zwei gleichzeitig auf der Strecke.",
+          "safetyRule": "Sprung-Stangen NICHT höher als 10 cm. Kein Drängeln am Tunnel — einzelne Durchgänge. Eltern-Helfer am Tunnel. Fuer 3-Jaehrige: vereinfachte Variante mit Erwachsenen-Hilfe (oder optional auslassen) — ab4-Spiel. Boden weich/rutschfest halten; reihum, nie zwei gleichzeitig auf der Strecke. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "steps": [
             {
               "n": 1,
@@ -767,7 +767,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "8 Steckenpferde, 3-4 Sprung-Stangen (10 cm hoch — Pappröhren), Plastik-Tunnel oder Kissen-Tunnel, Stoff-Markierungen für Slalom",
-          "safetyRule": "Sprung-Stangen NICHT höher als 10 cm. Kein Drängeln am Tunnel — einzelne Durchgänge. Eltern-Helfer am Tunnel. Fuer 3-Jaehrige: vereinfachte Variante mit Erwachsenen-Hilfe (oder optional auslassen) — ab4-Spiel. Boden weich/rutschfest halten; reihum, nie zwei gleichzeitig auf der Strecke.",
+          "safetyRule": "Sprung-Stangen NICHT höher als 10 cm. Kein Drängeln am Tunnel — einzelne Durchgänge. Eltern-Helfer am Tunnel. Fuer 3-Jaehrige: vereinfachte Variante mit Erwachsenen-Hilfe (oder optional auslassen) — ab4-Spiel. Boden weich/rutschfest halten; reihum, nie zwei gleichzeitig auf der Strecke. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "steps": [
             {
               "n": 1,

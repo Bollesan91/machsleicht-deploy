@@ -360,7 +360,7 @@
               "content": "Alle drei Teile geschafft (oder ehrlich versucht) = eine Perle für die Crew-Kette. Niemand bleibt ohne."
             }
           ],
-          "safetyRule": "Balancier-Linie auf rutschfestem Boden, nicht auf Möbeln. Reifen niedrig halten, keine Engstellen mit harten Kanten. Wurf nur mit weichem Material.",
+          "safetyRule": "Balancier-Linie auf rutschfestem Boden, nicht auf Möbeln. Reifen niedrig halten, keine Engstellen mit harten Kanten. Wurf nur mit weichem Material. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": "Linie breiter, Reifen größer/höher, Wurf-Distanz kurz. Loben statt messen.",
           "ageAdjust8": "Linie schmaler, Reifen kleiner, Distanz größer, optional auf Zeit.",
           "indoorTip": "Drei Stationen quer durchs Wohnzimmer, Wurf-Ziel auf den Teppich.",
@@ -480,7 +480,7 @@
               "content": "In der Schlussrunde tanzen alle gemeinsam ohne Ausscheiden — Spaß-Ende statt Sieger."
             }
           ],
-          "safetyRule": "Genug Abstand zwischen den Kindern, scharfe Tisch-Kanten abräumen. Auf rutschigem Boden Socken aus.",
+          "safetyRule": "Genug Abstand zwischen den Kindern, scharfe Tisch-Kanten abräumen. Auf rutschigem Boden Socken aus. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
           "ageAdjust6": "Großzügig sein beim Wackeln, niemanden lange aussetzen.",
           "ageAdjust8": "Lustige Posen vorgeben („erstarr wie ein Seestern / wie ein Krake\") für mehr Kichern.",
           "indoorTip": "Möbel an die Wand schieben für freie Tanzfläche.",
@@ -738,7 +738,7 @@
               "content": "In der Schlussrunde tanzen alle gemeinsam ohne Ausscheiden — Spaß-Ende statt Sieger."
             }
           ],
-          "safetyRule": "Genug Abstand zwischen den Kindern, scharfe Tisch-Kanten abräumen. Auf rutschigem Boden Socken aus.",
+          "safetyRule": "Genug Abstand zwischen den Kindern, scharfe Tisch-Kanten abräumen. Auf rutschigem Boden Socken aus. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
           "ageAdjust6": "Großzügig sein beim Wackeln, niemanden lange aussetzen.",
           "ageAdjust8": "Lustige Posen vorgeben („erstarr wie ein Seestern / wie ein Krake\") für mehr Kichern.",
           "indoorTip": "Möbel an die Wand schieben für freie Tanzfläche.",

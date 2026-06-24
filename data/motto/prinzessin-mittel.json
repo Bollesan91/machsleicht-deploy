@@ -74,7 +74,7 @@
               "content": "Am Ziel: 'Du bist gekrönt!' Jeder schafft es — bei Verlust einfach aufheben und weiter."
             }
           ],
-          "safetyRule": "Ein Kind nach dem anderen oder mit genug Abstand. Hindernisse stabil, Boden frei. Kleine Bälle nicht in den Mund.",
+          "safetyRule": "Ein Kind nach dem anderen oder mit genug Abstand. Hindernisse stabil, Boden frei. Kleine Bälle nicht in den Mund. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": "Größerer Ball/Pompon, kürzere Strecke.",
           "ageAdjust8": "Auf Zeit oder mit 'bei Verlust zurück zum Start'.",
           "indoorTip": "Im Flur/Wohnzimmer.",
@@ -109,7 +109,7 @@
               "content": "Mal als 'eleganteste', mal als 'lustigste', mal als 'mutigste' Pose einfrieren."
             }
           ],
-          "safetyRule": "Tanzfläche frei von Kanten/Stolperfallen. Genug Abstand zwischen den Kindern.",
+          "safetyRule": "Tanzfläche frei von Kanten/Stolperfallen. Genug Abstand zwischen den Kindern. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
           "ageAdjust6": "Kein 'Ausscheiden', nur Posen.",
           "ageAdjust8": "Mit kleinem Augenzwinkern-Ausscheiden, Gewinner darf Musik stoppen.",
           "indoorTip": "Wohnzimmer, Teppich.",
@@ -244,7 +244,7 @@
               "content": "Am Ziel gekrönt — alle schaffen es."
             }
           ],
-          "safetyRule": "Abstand halten, Hindernisse stabil, kleine Teile nicht in den Mund. Boden weich/rutschfest, reihum (nie zwei gleichzeitig).",
+          "safetyRule": "Abstand halten, Hindernisse stabil, kleine Teile nicht in den Mund. Boden weich/rutschfest, reihum (nie zwei gleichzeitig). Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": "Größerer Pompon.",
           "ageAdjust8": "Auf Zeit.",
           "indoorTip": "Flur.",
@@ -394,7 +394,7 @@
               "content": "Mal als 'eleganteste', mal als 'lustigste', mal als 'mutigste' Pose einfrieren."
             }
           ],
-          "safetyRule": "Tanzfläche frei von Kanten/Stolperfallen. Genug Abstand zwischen den Kindern.",
+          "safetyRule": "Tanzfläche frei von Kanten/Stolperfallen. Genug Abstand zwischen den Kindern. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
           "ageAdjust6": "Kein 'Ausscheiden', nur Posen.",
           "ageAdjust8": "Mit kleinem Augenzwinkern-Ausscheiden, Gewinner darf Musik stoppen.",
           "indoorTip": "Wohnzimmer, Teppich.",
@@ -551,7 +551,7 @@
               "content": "Alle werden gekrönt."
             }
           ],
-          "safetyRule": "Abstand, stabile Hindernisse. Boden weich/rutschfest, reihum (nie zwei gleichzeitig).",
+          "safetyRule": "Abstand, stabile Hindernisse. Boden weich/rutschfest, reihum (nie zwei gleichzeitig). Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": "Größerer Pompon.",
           "ageAdjust8": "Auf Zeit.",
           "indoorTip": "Flur.",
@@ -701,7 +701,7 @@
               "content": "Mal als 'eleganteste', mal als 'lustigste', mal als 'mutigste' Pose einfrieren."
             }
           ],
-          "safetyRule": "Tanzfläche frei von Kanten/Stolperfallen. Genug Abstand zwischen den Kindern.",
+          "safetyRule": "Tanzfläche frei von Kanten/Stolperfallen. Genug Abstand zwischen den Kindern. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
           "ageAdjust6": "Kein 'Ausscheiden', nur Posen.",
           "ageAdjust8": "Mit kleinem Augenzwinkern-Ausscheiden, Gewinner darf Musik stoppen.",
           "indoorTip": "Wohnzimmer, Teppich.",

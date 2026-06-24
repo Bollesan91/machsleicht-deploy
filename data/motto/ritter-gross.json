@@ -222,7 +222,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "8 Pool-Nudel-Schwerter (60 cm), 2 Strohballen (Übungs-Ziele), 6 Hindernisse (Slalom-Markierungen, Tunnel-Kissen, Spirale, Sprung-Hindernis 30cm, Wassergraben-Stoff, Kreuz-Markierung), Stoppuhr, Wertungsbogen",
-          "safetyRule": "Schwerter nur am Strohballen. Niemals auf Kind. Reihum, nie zwei gleichzeitig. Bei Sturz: weicher Boden.",
+          "safetyRule": "Schwerter nur am Strohballen. Niemals auf Kind. Reihum, nie zwei gleichzeitig. Bei Sturz: weicher Boden. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "steps": [
             {
               "n": 1,
@@ -747,7 +747,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "8 Pool-Nudel-Schwerter (60 cm), 2 Strohballen (Übungs-Ziele), 6 Hindernisse (Slalom-Markierungen, Tunnel-Kissen, Spirale, Sprung-Hindernis 30cm, Wassergraben-Stoff, Kreuz-Markierung), Stoppuhr, Wertungsbogen",
-          "safetyRule": "Schwerter nur am Strohballen. Niemals auf Kind. Reihum, nie zwei gleichzeitig. Bei Sturz: weicher Boden.",
+          "safetyRule": "Schwerter nur am Strohballen. Niemals auf Kind. Reihum, nie zwei gleichzeitig. Bei Sturz: weicher Boden. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "steps": [
             {
               "n": 1,
@@ -1321,7 +1321,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "8 Pool-Nudel-Schwerter (60 cm), 2 Strohballen (Übungs-Ziele), 6 Hindernisse (Slalom-Markierungen, Tunnel-Kissen, Spirale, Sprung-Hindernis 30cm, Wassergraben-Stoff, Kreuz-Markierung), Stoppuhr, Wertungsbogen",
-          "safetyRule": "Schwerter nur am Strohballen. Niemals auf Kind. Reihum, nie zwei gleichzeitig. Bei Sturz: weicher Boden.",
+          "safetyRule": "Schwerter nur am Strohballen. Niemals auf Kind. Reihum, nie zwei gleichzeitig. Bei Sturz: weicher Boden. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "steps": [
             {
               "n": 1,

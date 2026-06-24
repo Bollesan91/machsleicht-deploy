@@ -74,7 +74,7 @@
               "content": "Musik wieder an, weitertanzen. Kein Ausscheiden — nur Spaß."
             }
           ],
-          "safetyRule": "Boden frei von Stolperfallen, weiche Umgebung. Genug Abstand zwischen den Kindern.",
+          "safetyRule": "Boden frei von Stolperfallen, weiche Umgebung. Genug Abstand zwischen den Kindern. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
           "ageAdjust6": "—",
           "ageAdjust8": "—",
           "indoorTip": "Im Wohnzimmer auf dem Teppich.",
@@ -235,7 +235,7 @@
               "content": "Kein Ausscheiden, nur Spaß."
             }
           ],
-          "safetyRule": "Boden frei, Abstand halten.",
+          "safetyRule": "Boden frei, Abstand halten. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
           "ageAdjust6": "—",
           "ageAdjust8": "—",
           "indoorTip": "Wohnzimmer.",
@@ -270,7 +270,7 @@
               "content": "Am Ende: 'Du hast den Zauberweg geschafft!' Kleiner Applaus."
             }
           ],
-          "safetyRule": "Alle Stationen niedrig und weich (keine Klettergefahr). Stab-Spitze stumpf (Karton). Ein Kind nach dem anderen mit Begleitung.",
+          "safetyRule": "Alle Stationen niedrig und weich (keine Klettergefahr). Stab-Spitze stumpf (Karton). Ein Kind nach dem anderen mit Begleitung. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": "—",
           "ageAdjust8": "—",
           "indoorTip": "Durch zwei Zimmer.",
@@ -514,7 +514,7 @@
               "content": "Kein Ausscheiden."
             }
           ],
-          "safetyRule": "Boden frei.",
+          "safetyRule": "Boden frei. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
           "ageAdjust6": "—",
           "ageAdjust8": "—",
           "indoorTip": "Wohnzimmer.",
@@ -549,7 +549,7 @@
               "content": "Applaus am Ende."
             }
           ],
-          "safetyRule": "Niedrig + weich, Stab stumpf, Begleitung.",
+          "safetyRule": "Niedrig + weich, Stab stumpf, Begleitung. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": "—",
           "ageAdjust8": "—",
           "indoorTip": "Zwei Zimmer.",

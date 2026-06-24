@@ -511,7 +511,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "14 Memory-Karten (7 Werkzeug-Paare: Hammer, Säge, Bohrer, Schraubenzieher, Wasserwaage, Maßband, Pinsel)",
-          "safetyRule": "Sitz-Spiel, keine Sicherheit nötig. 4-Jährige verstehen Memory; 3-Jährige optional ausschließen oder Karten zusammen aufdecken.",
+          "safetyRule": "Sitz-Spiel, keine Sicherheit nötig. 4-Jährige verstehen Memory; 3-Jährige optional ausschließen oder Karten zusammen aufdecken. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "steps": [
             {
               "n": 1,
@@ -797,7 +797,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "14 Memory-Karten (7 Werkzeug-Paare: Hammer, Säge, Bohrer, Schraubenzieher, Wasserwaage, Maßband, Pinsel)",
-          "safetyRule": "Sitz-Spiel, keine Sicherheit nötig. 4-Jährige verstehen Memory; 3-Jährige optional ausschließen oder Karten zusammen aufdecken.",
+          "safetyRule": "Sitz-Spiel, keine Sicherheit nötig. 4-Jährige verstehen Memory; 3-Jährige optional ausschließen oder Karten zusammen aufdecken. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "steps": [
             {
               "n": 1,

@@ -79,7 +79,7 @@
               "content": "Am Ende klatschen alle ein: 'Aufgenommen!' Optional eine zweite Runde, dann gegen die eigene Zeit antreten."
             }
           ],
-          "safetyRule": "Immer nur EIN Kind im Parcours, die anderen hinter der Startlinie. Kartons stabil/leer, keine scharfen Kanten. Bei Maske auf freie Sicht achten — beim Krabbeln hochschieben.",
+          "safetyRule": "Immer nur EIN Kind im Parcours, die anderen hinter der Startlinie. Kartons stabil/leer, keine scharfen Kanten. Bei Maske auf freie Sicht achten — beim Krabbeln hochschieben. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": "Hindernisse niedriger, Zeit nicht betonen — einfach gemeinsam durchlaufen.",
           "ageAdjust8": "Zwei Durchgänge gegen die eigene Bestzeit, ein Hindernis mehr.",
           "indoorTip": "Im Flur/Wohnzimmer Tische wegräumen, Teppich gibt Grip.",
@@ -254,7 +254,7 @@
               "content": "'Aufgenommen!' gemeinsam einklatschen."
             }
           ],
-          "safetyRule": "Nur ein Kind im Parcours, freie Sicht trotz Maske, stabile/leere Kartons.",
+          "safetyRule": "Nur ein Kind im Parcours, freie Sicht trotz Maske, stabile/leere Kartons. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": "Niedriger, ohne Zeitdruck.",
           "ageAdjust8": "Zweiter Lauf gegen die Bestzeit.",
           "indoorTip": "Tische wegräumen, Teppich gibt Halt.",
@@ -364,7 +364,7 @@
               "content": "Wer durch ist, nimmt einen Teil der Beute und feuert die anderen an."
             }
           ],
-          "safetyRule": "Boden frei von Stolperfallen, Fäden nicht auf Hals-/Kopfhöhe spannen. Ein Kind nach dem anderen.",
+          "safetyRule": "Boden frei von Stolperfallen, Fäden nicht auf Hals-/Kopfhöhe spannen. Ein Kind nach dem anderen. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": "Weniger Fäden, weiter auseinander.",
           "ageAdjust8": "Engeres Netz, auf Zeit oder 'bei Berührung zurück zum Start'.",
           "indoorTip": "Flur ist ideal — Türrahmen als Rahmen nutzen.",
@@ -526,7 +526,7 @@
               "content": "Gemeinsam 'Aufgenommen!'"
             }
           ],
-          "safetyRule": "Ein Kind im Parcours, freie Sicht, stabile Hindernisse.",
+          "safetyRule": "Ein Kind im Parcours, freie Sicht, stabile Hindernisse. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": "Niedriger, ohne Zeit.",
           "ageAdjust8": "Gegen Bestzeit.",
           "indoorTip": "Tische weg.",

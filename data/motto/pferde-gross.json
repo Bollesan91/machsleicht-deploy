@@ -217,7 +217,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "8 Steckenpferde, 6 Hindernisse (Sprung-Stange 20-30 cm, Slalom-Markierungen, Tunnel, Wassergraben-Stoff, Spirale, Kreuz-Sprung), Stoppuhr, Wertungsbogen für Stilnote",
-          "safetyRule": "Sprung-Stange max 30 cm. Bei Sturz: weicher Boden Pflicht. Reihum, niemals zwei gleichzeitig.",
+          "safetyRule": "Sprung-Stange max 30 cm. Bei Sturz: weicher Boden Pflicht. Reihum, niemals zwei gleichzeitig. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "steps": [
             {
               "n": 1,
@@ -519,7 +519,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "8 Hufeisen-Rohlinge (aus Pappkarton oder dünnem Filz), Bastel-Hammer, Stempel-Buchstaben, Glitzer-Stifte, kleine Gravur-Werkzeuge (stumpf!), Wachsschnur zum Aufhängen",
-          "safetyRule": "Stumpfe Gravur-Werkzeuge, kein scharfer Hammer. Bei Filz: Klebepunkte statt Nadel.",
+          "safetyRule": "Stumpfe Gravur-Werkzeuge, kein scharfer Hammer. Bei Filz: Klebepunkte statt Nadel. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "steps": [
             {
               "n": 1,
@@ -677,7 +677,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "8 Steckenpferde, 6 Hindernisse (Sprung-Stange 20-30 cm, Slalom-Markierungen, Tunnel, Wassergraben-Stoff, Spirale, Kreuz-Sprung), Stoppuhr, Wertungsbogen für Stilnote",
-          "safetyRule": "Sprung-Stange max 30 cm. Bei Sturz: weicher Boden Pflicht. Reihum, niemals zwei gleichzeitig.",
+          "safetyRule": "Sprung-Stange max 30 cm. Bei Sturz: weicher Boden Pflicht. Reihum, niemals zwei gleichzeitig. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "steps": [
             {
               "n": 1,
@@ -979,7 +979,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "8 Hufeisen-Rohlinge (aus Pappkarton oder dünnem Filz), Bastel-Hammer, Stempel-Buchstaben, Glitzer-Stifte, kleine Gravur-Werkzeuge (stumpf!), Wachsschnur zum Aufhängen",
-          "safetyRule": "Stumpfe Gravur-Werkzeuge, kein scharfer Hammer. Bei Filz: Klebepunkte statt Nadel.",
+          "safetyRule": "Stumpfe Gravur-Werkzeuge, kein scharfer Hammer. Bei Filz: Klebepunkte statt Nadel. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "steps": [
             {
               "n": 1,
@@ -1186,7 +1186,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "8 Steckenpferde, 6 Hindernisse (Sprung-Stange 20-30 cm, Slalom-Markierungen, Tunnel, Wassergraben-Stoff, Spirale, Kreuz-Sprung), Stoppuhr, Wertungsbogen für Stilnote",
-          "safetyRule": "Sprung-Stange max 30 cm. Bei Sturz: weicher Boden Pflicht. Reihum, niemals zwei gleichzeitig.",
+          "safetyRule": "Sprung-Stange max 30 cm. Bei Sturz: weicher Boden Pflicht. Reihum, niemals zwei gleichzeitig. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "steps": [
             {
               "n": 1,
@@ -1488,7 +1488,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "8 Hufeisen-Rohlinge (aus Pappkarton oder dünnem Filz), Bastel-Hammer, Stempel-Buchstaben, Glitzer-Stifte, kleine Gravur-Werkzeuge (stumpf!), Wachsschnur zum Aufhängen",
-          "safetyRule": "Stumpfe Gravur-Werkzeuge, kein scharfer Hammer. Bei Filz: Klebepunkte statt Nadel.",
+          "safetyRule": "Stumpfe Gravur-Werkzeuge, kein scharfer Hammer. Bei Filz: Klebepunkte statt Nadel. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "steps": [
             {
               "n": 1,

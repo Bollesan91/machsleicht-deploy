@@ -119,7 +119,7 @@
             "Varianten ab 4: T-Rex (laut), Raptor (Zehenspitzen), Flugsaurier (Arme flattern)",
             "5–15 Min. dehnbar — bei Müdigkeit beenden"
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene. Platz freiräumen (Tisch-Kanten, harte Möbel). Bei 3-Jährigen Niemand-scheidet-aus-Regel strikt einhalten.",
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Platz freiräumen (Tisch-Kanten, harte Möbel). Bei 3-Jährigen Niemand-scheidet-aus-Regel strikt einhalten. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": "Teppich oder Wohnzimmer-Boden. Stuhl-Hindernisse wegräumen.",
@@ -145,7 +145,7 @@
             "Erwachsene*r kippt 100 ml Essig rein, sofort einen Schritt zurück",
             "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
           ],
-          "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsene*r kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger.",
+          "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsene*r kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
           "ageAdjust6": null,
           "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
           "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -256,7 +256,7 @@
             "Erwachsene*r kippt 100 ml Essig rein, sofort einen Schritt zurück",
             "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
           ],
-          "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsene*r kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger.",
+          "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsene*r kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
           "ageAdjust6": null,
           "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
           "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -281,7 +281,7 @@
             "Varianten ab 4: T-Rex (laut), Raptor (Zehenspitzen), Flugsaurier (Arme flattern)",
             "5–15 Min. dehnbar — bei Müdigkeit beenden"
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene. Platz freiräumen (Tisch-Kanten, harte Möbel). Bei 3-Jährigen Niemand-scheidet-aus-Regel strikt einhalten.",
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Platz freiräumen (Tisch-Kanten, harte Möbel). Bei 3-Jährigen Niemand-scheidet-aus-Regel strikt einhalten. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": "Teppich oder Wohnzimmer-Boden. Stuhl-Hindernisse wegräumen.",
@@ -307,7 +307,7 @@
             "Wer einen Dino findet, trägt ihn mit Dino-Name + Fundort in den Bericht ein",
             "Mehr Dinos als Kinder vergraben (bei 6 Kindern → 10 Dinos) — jeder findet mind. einen"
           ],
-          "safetyRule": "Mini-Dinos < 3 cm vermeiden bei juengeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Haende waschen vor Snacks.",
+          "safetyRule": "Mini-Dinos < 3 cm vermeiden bei juengeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Haende waschen vor Snacks. Bei den Kleinen engmaschig beaufsichtigen — Reiskörner gehören nicht in Nase/Ohr; ggf. gröberes Sensorik-Medium.",
           "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Sand (weniger Dreck).",
           "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Kinder müssen mit Hammer/Holzstäbchen den Gips aufbrechen.",
           "indoorTip": "Wanne auf alte Tischdecke oder in die Badewanne stellen.",
@@ -436,7 +436,7 @@
             "Wer einen Dino findet, trägt ihn mit Dino-Name + Fundort in den Bericht ein",
             "Mehr Dinos als Kinder vergraben (bei 6 Kindern → 10 Dinos) — jeder findet mind. einen"
           ],
-          "safetyRule": "Mini-Dinos < 3 cm vermeiden bei juengeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Haende waschen vor Snacks.",
+          "safetyRule": "Mini-Dinos < 3 cm vermeiden bei juengeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Haende waschen vor Snacks. Bei den Kleinen engmaschig beaufsichtigen — Reiskörner gehören nicht in Nase/Ohr; ggf. gröberes Sensorik-Medium.",
           "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Sand (weniger Dreck).",
           "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Kinder müssen mit Hammer/Holzstäbchen den Gips aufbrechen.",
           "indoorTip": "Wanne auf alte Tischdecke oder in die Badewanne stellen.",
@@ -462,7 +462,7 @@
             "Erwachsene*r kippt 100 ml Essig rein, sofort einen Schritt zurück",
             "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
           ],
-          "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsene*r kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger.",
+          "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsene*r kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
           "ageAdjust6": null,
           "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
           "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -488,7 +488,7 @@
             "Erst alle einmal langsam, dann auf Zeit stoppen — Bestzeit notieren",
             "Verlierer kriegen Trost-Dino (Gummibärchen) — kein Kind geht leer aus"
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur eine*r gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken.",
+          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur eine*r gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": "Flur + Wohnzimmer nutzen, Strecke kürzer.",
@@ -513,7 +513,7 @@
             "Varianten ab 4: T-Rex (laut), Raptor (Zehenspitzen), Flugsaurier (Arme flattern)",
             "5–15 Min. dehnbar — bei Müdigkeit beenden"
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene. Platz freiräumen (Tisch-Kanten, harte Möbel). Bei 3-Jährigen Niemand-scheidet-aus-Regel strikt einhalten.",
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Platz freiräumen (Tisch-Kanten, harte Möbel). Bei 3-Jährigen Niemand-scheidet-aus-Regel strikt einhalten. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": "Teppich oder Wohnzimmer-Boden. Stuhl-Hindernisse wegräumen.",
