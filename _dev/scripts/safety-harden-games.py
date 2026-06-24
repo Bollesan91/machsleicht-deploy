@@ -37,6 +37,13 @@ RULES = [
   'Geländegrenzen', ' Draußen: Geländegrenzen klar abstecken — keine Pirsch Richtung Straße, Wasser oder Abhang; Begleitperson dabei.'),
  (lambda n,b,g: 'füttern' in n or 'dosenwerfen' in n or 'zielwurf' in n or 'zielspritzen' in n,
   'aufs Ziel', ' Nur aufs Ziel werfen/spritzen, nie auf Personen oder ins Gesicht.'),
+ # Batch-2-Review (24.06., Opus 4.8 Hoch) — Werkzeug/Aufhängepunkt-Lücken, name-verankert:
+ # Druck-Rakete (Filmdose): nur das echte Druck-Experiment, nicht Pust-/Bastel-Raketen.
+ (lambda n,b,g: 'raketenstart' in n or ('raket' in n and 'filmdose' in b),
+  'beugt sich über', ' Niemand beugt sich über die geschlossene Dose/startende Rakete (Deckel kann ins Gesicht/Kinn schnellen) — Startrichtung nach oben, weg von allen.'),
+ # Stoff-Liane zum Schwingen (nur Kleine, die sich dranhängen): Aufhängepunkt absichern.
+ (lambda n,b,g: g=='klein' and ('liane' in n or 'schwing' in n),
+  'kippsicher', ' Stoff-Liane NIE an Möbel/Regal/Stange knoten (kann kippen oder herabfallen) — nur erwachsene Hand am oberen Ende oder lasttragender, kippsicherer Fixpunkt.'),
 ]
 
 def gtext(g):
