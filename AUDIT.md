@@ -107,18 +107,11 @@ Stand: 2026-05-12. Verbindlich vor jedem Patch. Self-audit-validiert.
 
 ## 3. Build-Pipeline
 
-### 3.1 React-Bundle `kindergeburtstag.js`
+### 3.1 React-Bundle `kindergeburtstag.js` — ⚰️ RUNTIME GELÖSCHT (24.06.2026)
 
-| Komponente | Wert |
-|---|---|
-| Source-JSX | `_src/kindergeburtstag.jsx` |
-| Source-Data | `_src/kindergeburtstag-data.js` (SZ_THEMES etc.) |
-| **Elite-Motto-Daten** | `_src/elite-motto-data/_bundle.js` — **AUTO-generiert** aus `data/motto/` (s. 3.1b) |
-| Build | `bash _src/build.sh` (Schritt 1 node-Generator, Schritt 2 npx esbuild JSX, Schritt 3 cat) |
-| Konkatenation | `kindergeburtstag-data.js` + `_bundle.js` + compiled JSX → `js/kindergeburtstag.js` |
-| Output | `js/kindergeburtstag.js` (~3.8 MB / ~65k Z. — der Elite-Bundle dominiert) |
-| Git-tracked | **JA** — Netlify deployt as-is, **kein Build auf Netlify-Seite** |
-| **Falle** | Wer `_src/*` ODER `data/motto/*` ändert MUSS `bash _src/build.sh` lokal laufen + Output committen. Vergessen = alter Stand live |
+**Das 3,7-MB-Bundle `js/kindergeburtstag.js` wurde gelöscht.** Es war tot: von KEINER HTML-Seite per `<script src>` geladen. Der Live-Planer `/kindergeburtstag` ist die statische `kindergeburtstag.html` (lädt nur Umami + `/js/motto-data.js`, fetcht `/data/motto/*.json` via `getElite()`). Verifiziert: 0 HTML/_redirects/TOML-Referenzen.
+
+**Was bleibt (vorerst):** Das `_src/`-Build-Tooling (`kindergeburtstag.jsx`, `kindergeburtstag-data.js`, `build.sh`, `gen-elite-bundle.cjs`, `elite-motto-data/`) ist NICHT gelöscht, weil `validate-all.sh` Stufe 2+3 noch `_src/kindergeburtstag-data.js` (Motto/SZ-Zahlen) und `_src/kindergeburtstag.jsx` (MAP_THEMES-Konsistenz) als **Zahlen-/Konsistenz-Orakel** lesen. **Vollabbau ist ein eigener Task:** Validator-Orakel auf Live-Quellen (`js/motto-data.js`, `schatzsuche.html`/`js/schatzsuche.js`, `data/motto/*`) umstellen, DANN `_src/`-Tree + `_src/build.sh` + RELEASE-GATE-Build-Step entfernen. ⚠️ Achtung: Validator validiert SZ_THEMES aktuell gegen die tote `_src`-Quelle (mögliche False-Confidence) — beim Umbau mitprüfen.
 
 ### 3.1b Elite-Motto-Bundle `ELITE_MOTTO_DATA` (P1-37, 18.06.2026)
 
