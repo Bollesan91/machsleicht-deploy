@@ -57,3 +57,12 @@ Verbindlich für den Motto-für-Motto-Spiele-Merge (#34), erprobt an piraten:
 - safari „Beobachtungsposten / Karte vermessen nicht definiert" (MAJOR) → beide SIND in `games[]` mit steps. Reviewer-Fehler in die andere Richtung.
 
 **Regel:** Jedes Reviewer-MAJOR aus einem gekürzt-Spec-Review VOR jedem Fix gegen das volle Game-Objekt (`steps`+`material`+`safetyRule`) prüfen. „Fehlt"-Findings sind meist Kürzungs-Artefakte. Erst fixen, wenn die Volldaten die Lücke bestätigen. Count-Findings (`<3 quest`, `wow<std`) bleiben verworfen (Quest = 1). Der systemische Safety+Floor-Pass über alle 15 hat die echten Risiken bereits global geschlossen — die per-Motto-Welle fängt nur noch Motto-Spezifisches.
+
+## L8 — Deutsches Schließ-Anführungszeichen als ASCII-" zerstört JSON-LD (23.06.2026)
+**Befund:** 13 Motto-/Alters-Seiten hatten ungültiges JSON-LD: im strukturierten Daten-`text` war das Öffnungszeichen korrekt `„` (U+201E, literal ODER escaped `„`), das Schließzeichen aber ein ASCII-`"` (U+0022) statt `"` (U+201C). Das `"` beendet den JSON-String vorzeitig → `JSON.parse`/Google-Parser bricht ab → **Rich-Results (FAQPage/HowTo) gehen verloren.** Vorbestehend, NICHT von der aktuellen Änderung — aber Recovery-relevant (kaputte strukturierte Daten = Qualitätssignal genau während der De-Index-Erholung). Vom Deep-Validator `validate.js` (Gate 2) gefangen, nicht vom Standard-`validate-all.sh`.
+
+**Warum übersehen:** Sichtbare Prosa rendert mit ASCII-`"` völlig normal — nur der JSON-Parser stolpert. Fällt im Browser nie auf, nur in einem echten JSON-LD-Parse-Test.
+
+**Regel:** In JSON-LD-Blöcken deutsche Zitate immer `„…"` (U+201E … U+201C), NIE `„…"` mit ASCII-Schließer. Fixer: `_dev/scripts/fix-jsonld-quotes.py` (operiert nur in `<script type=application/ld+json>`, `json.loads`-Assert VOR jedem Write, behandelt literal-`„` UND escaped-`„`).
+
+**Mechanisierbar (→ schon mechanisiert):** `node validate.js` Gate 2 parst jeden JSON-LD-Block — muss 0 „Ungültiges JSON-LD" liefern. Vor jedem Deploy mit JSON-LD-Edits laufen lassen.
