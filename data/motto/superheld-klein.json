@@ -109,7 +109,7 @@
               "content": "Wenn alle Ballons mal gerettet wurden — gemeinsamer Helden-Jubel."
             }
           ],
-          "safetyRule": "Geplatzte Ballonreste sofort einsammeln (Verschluckungsgefahr!). Nur bei Aufsicht. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel.",
+          "safetyRule": "Geplatzte Ballonreste sofort einsammeln (Verschluckungsgefahr!). Nur bei Aufsicht. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel. Bei bekannter Latexallergie Folienballons oder Schaumstoffbälle nutzen.",
           "ageAdjust6": "Mehr Ballons gleichzeitig, kleine Zähl-Challenge.",
           "ageAdjust8": "—",
           "indoorTip": "Ideal drinnen, keine Zugluft.",
@@ -344,7 +344,7 @@
               "content": "Wenn alle Ballons mal gerettet wurden — gemeinsamer Helden-Jubel."
             }
           ],
-          "safetyRule": "Geplatzte Ballonreste sofort einsammeln (Verschluckungsgefahr!). Nur bei Aufsicht. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel.",
+          "safetyRule": "Geplatzte Ballonreste sofort einsammeln (Verschluckungsgefahr!). Nur bei Aufsicht. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel. Bei bekannter Latexallergie Folienballons oder Schaumstoffbälle nutzen.",
           "ageAdjust6": "Mehr Ballons gleichzeitig, kleine Zähl-Challenge.",
           "ageAdjust8": "—",
           "indoorTip": "Ideal drinnen, keine Zugluft.",
@@ -658,7 +658,7 @@
               "content": "Wenn alle Ballons mal gerettet wurden — gemeinsamer Helden-Jubel."
             }
           ],
-          "safetyRule": "Geplatzte Ballonreste sofort einsammeln (Verschluckungsgefahr!). Nur bei Aufsicht. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel.",
+          "safetyRule": "Geplatzte Ballonreste sofort einsammeln (Verschluckungsgefahr!). Nur bei Aufsicht. Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel. Bei bekannter Latexallergie Folienballons oder Schaumstoffbälle nutzen.",
           "ageAdjust6": "Mehr Ballons gleichzeitig, kleine Zähl-Challenge.",
           "ageAdjust8": "—",
           "indoorTip": "Ideal drinnen, keine Zugluft.",
