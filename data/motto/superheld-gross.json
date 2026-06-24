@@ -342,6 +342,86 @@
           "outdoorTip": "Zwischen Bäumen/Stühlen.",
           "whyItWorksTitle": "Warum das zieht",
           "whyItWorks": "Das Laser-Netz fühlt sich wie ein echter Agentenfilm an — Spannung, Geschick und ein klares Beute-Finale, das die Mission krönt."
+        },
+        {
+          "name": "🔐 Code knacken (Geheimbotschaft)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 30,
+          "minAge": 8,
+          "loudness": "leise",
+          "effort": "niedrig",
+          "material": "Verschlüsselte Botschaft (Caesar-Code +3 oder Zahlen=Buchstaben), Lösungsschlüssel als Hinweis, Stifte/Papier",
+          "prepText": "Eine Nachricht von Dr. Chaos verschlüsseln (z.B. jeden Buchstaben um 3 verschieben). Den Schlüssel als gut versteckten Tipp bereitlegen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "'Dr. Chaos hat seinen Plan verschlüsselt. Knackt den Code, dann wisst ihr, wo der Schaltkreis ist!'"
+            },
+            {
+              "n": 2,
+              "name": "Schlüssel finden",
+              "content": "Erster Mini-Hinweis verrät den Schlüssel: Caesar +3 (A→D, B→E …) — zum Lösen also jeden Buchstaben 3 zurück."
+            },
+            {
+              "n": 3,
+              "name": "Entschlüsseln (fertige Botschaft)",
+              "content": "Auf der Karte steht: 'XQWHU GHU EDQN'. Buchstabe für Buchstabe 3 zurück (X→U, Q→N, W→T, H→E, U→R …) ergibt: UNTER DER BANK."
+            },
+            {
+              "n": 4,
+              "name": "Lösung nutzen",
+              "content": "Dort (unter der Bank bzw. dem Sofa) liegt der nächste Hinweis/Schatz — vorher dort deponieren."
+            }
+          ],
+          "safetyRule": "Reines Rätselspiel — keine Sicherheitsrisiken. Bei Frust einen Tipp geben, damit kein Team hängenbleibt.",
+          "ageAdjust6": "—",
+          "ageAdjust8": "Einfacherer Code (Zahlen=Buchstaben), Schlüssel offen sichtbar.",
+          "indoorTip": "Am Tisch in Teams.",
+          "outdoorTip": "Hinweise im Garten verstecken.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Code-Knacken trifft genau den Wunsch nach echter geistiger Herausforderung — die Kinder fühlen sich wie echte Agenten, nicht wie Kleinkinder."
+        },
+        {
+          "name": "⚡ Geschicklichkeits-Challenge (Reaktor stabilisieren)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 9,
+          "loudness": "mittel",
+          "effort": "mittel",
+          "material": "3 Mini-Challenges: Becher-Turm-Stapeln auf Zeit, 'Heißer Draht' (Draht + Schlaufe), Reaktions-Klatschspiel",
+          "prepText": "Drei Geschicklichkeits-Stationen aufbauen, je eine Teamwertung.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Teams reihum",
+              "content": "Teams durchlaufen die 3 Stationen, Zeit/Punkte werden notiert."
+            },
+            {
+              "n": 2,
+              "name": "Heißer Draht",
+              "content": "Schlaufe ohne Berührung über den Draht führen — bei Berührung Summer/Glöckchen, von vorn."
+            },
+            {
+              "n": 3,
+              "name": "Becher-Turm",
+              "content": "Auf Zeit eine Pyramide stapeln und wieder einklappen."
+            },
+            {
+              "n": 4,
+              "name": "Wertung",
+              "content": "Punkte addieren, Zwischenstand verkünden — Spannung bis zum Finale."
+            }
+          ],
+          "safetyRule": "Draht stumpf enden lassen, kein Strom (nur Glöckchen/Summer). Stationen mit Abstand.",
+          "ageAdjust6": "—",
+          "ageAdjust8": "Einfachere Varianten, mehr Versuche.",
+          "indoorTip": "Am Tisch + freie Ecke.",
+          "outdoorTip": "Auf Gartentisch.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Geschicklichkeit mit Teamwertung bedient den Wettbewerbswunsch und gibt auch weniger sportlichen Kindern eine Bühne (Köpfchen + ruhige Hand statt nur Tempo)."
         }
       ],
       "food": "Pizza/Wraps, herzhafte Snacks, Obstspieße, 'Geheim-Trank' (dunkle Schorle), Energy-Kuchen. Buffet-Stil, damit die Großen sich selbst nehmen.",
@@ -581,6 +661,81 @@
           "outdoorTip": "Garten mit Bewegungsraum.",
           "whyItWorksTitle": "Warum das zieht",
           "whyItWorks": "Ein live gespielter, cooler Schurke und ein gemeinsamer Sieg sind das Gänsehaut-Finale — die Großen erleben eine echte Story mit Anfang, Spannung und Auflösung."
+        },
+        {
+          "name": "🔐 Code knacken (Geheimbotschaft)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 30,
+          "minAge": 8,
+          "loudness": "leise",
+          "effort": "niedrig",
+          "material": "Verschlüsselte Botschaft (Caesar-Code +3 oder Zahlen=Buchstaben), Lösungsschlüssel als Hinweis, Stifte/Papier",
+          "prepText": "Eine Nachricht von Dr. Chaos verschlüsseln (z.B. jeden Buchstaben um 3 verschieben). Den Schlüssel als gut versteckten Tipp bereitlegen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "'Dr. Chaos hat seinen Plan verschlüsselt. Knackt den Code, dann wisst ihr, wo der Schaltkreis ist!'"
+            },
+            {
+              "n": 2,
+              "name": "Schlüssel finden",
+              "content": "Erster Mini-Hinweis verrät den Schlüssel: Caesar +3 (A→D, B→E …) — zum Lösen also jeden Buchstaben 3 zurück."
+            },
+            {
+              "n": 3,
+              "name": "Entschlüsseln (fertige Botschaft)",
+              "content": "Auf der Karte steht: 'XQWHU GHU EDQN'. Buchstabe für Buchstabe 3 zurück (X→U, Q→N, W→T, H→E, U→R …) ergibt: UNTER DER BANK."
+            },
+            {
+              "n": 4,
+              "name": "Lösung nutzen",
+              "content": "Dort (unter der Bank bzw. dem Sofa) liegt der nächste Hinweis/Schatz — vorher dort deponieren."
+            }
+          ],
+          "safetyRule": "Reines Rätselspiel — keine Sicherheitsrisiken. Bei Frust einen Tipp geben, damit kein Team hängenbleibt.",
+          "ageAdjust6": "—",
+          "ageAdjust8": "Einfacherer Code (Zahlen=Buchstaben), Schlüssel offen sichtbar.",
+          "indoorTip": "Am Tisch in Teams.",
+          "outdoorTip": "Hinweise im Garten verstecken.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Code-Knacken trifft genau den Wunsch nach echter geistiger Herausforderung — die Kinder fühlen sich wie echte Agenten, nicht wie Kleinkinder."
+        },
+        {
+          "name": "🕸️ Laser-Tresor (Showdown)",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 25,
+          "minAge": 8,
+          "loudness": "mittel",
+          "effort": "mittel",
+          "material": "Wollfäden für ein dichtes Laser-Netz im Flur, ein 'Tresor' (Box) mit der Beute, Glöckchen optional an Fäden",
+          "prepText": "Engmaschiges Laser-Netz spannen. Optional Glöckchen, die bei Berührung klingeln. Tresor am Ende platzieren.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Auftrag",
+              "content": "'Der Tresor ist mit Lasern gesichert. Schleicht durch, ohne sie auszulösen!'"
+            },
+            {
+              "n": 2,
+              "name": "Durchschleichen",
+              "content": "Jedes Kind einzeln, bei Berührung (Glöckchen klingelt) zurück zum Start."
+            },
+            {
+              "n": 3,
+              "name": "Tresor sichern",
+              "content": "Wer durch ist, holt einen Teil der Beute."
+            }
+          ],
+          "safetyRule": "Boden frei, Fäden nicht auf Hals-/Kopfhöhe. Ein Kind nach dem anderen.",
+          "ageAdjust6": "—",
+          "ageAdjust8": "Weniger dicht, ohne 'zurück zum Start'.",
+          "indoorTip": "Flur ideal, eng spannen.",
+          "outdoorTip": "Zwischen Bäumen/Stühlen.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Das Laser-Netz fühlt sich wie ein echter Agentenfilm an — Spannung, Geschick und ein klares Beute-Finale, das die Mission krönt."
         }
       ],
       "food": "Großes Buffet: Pizza/Wraps, Burger-Sliders, herzhafte Snacks, Obst, 'Geheim-Trank', Energy-Kuchen oder Cake-Pops. Selbstbedienung.",

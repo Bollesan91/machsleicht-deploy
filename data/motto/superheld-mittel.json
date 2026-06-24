@@ -371,6 +371,46 @@
           "outdoorTip": "Zwischen zwei Bäumen/Stühlen spannen.",
           "whyItWorksTitle": "Warum das zieht",
           "whyItWorks": "Der 'Laser'-Effekt fühlt sich an wie ein echter Agentenfilm — Spannung pur, und das Beute-Finale schließt die Schurken-Geschichte ab."
+        },
+        {
+          "name": "🥫 Stadt in Gefahr (Bösewicht-Dosenwerfen)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 5,
+          "loudness": "laut",
+          "effort": "niedrig",
+          "material": "10–15 leere Konservendosen oder Plastikbecher, 3 weiche Bälle/Sockenknäuel, Edding für Bösewicht-Gesichter, Kreppband für Wurflinie",
+          "prepText": "Dosen mit lustigen (nicht gruseligen) Bösewicht-Gesichtern bemalen. Zu Türmen stapeln. Wurflinie in 2–3 m Abstand markieren.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Bedrohung aufbauen",
+              "content": "'Dr. Chaos hat Roboter in der Stadt aufgestellt — werft sie um, bevor sie alles zerstören!' Türme aufstapeln."
+            },
+            {
+              "n": 2,
+              "name": "Werfen",
+              "content": "Jedes Kind bekommt 3 Würfe von der Linie. Pro umgeworfener Dose 1 Punkt für die Heldentruppe (gemeinsame Punktzahl, kein Gegeneinander)."
+            },
+            {
+              "n": 3,
+              "name": "Nachschub",
+              "content": "Eine erwachsene Person baut schnell wieder auf, damit kein Kind warten muss. Mehrere Runden."
+            },
+            {
+              "n": 4,
+              "name": "Stadt gerettet",
+              "content": "Wenn alle Türme mindestens einmal gefallen sind: 'Die Stadt ist gerettet!' — gemeinsamer Jubel."
+            }
+          ],
+          "safetyRule": "Nur weiche Bälle/Sockenknäuel, niemals harte Gegenstände. Nicht auf Personen werfen — nur auf die Dosen. Erst auf das Signal 'Frei!' sammeln gehen.",
+          "ageAdjust6": "Abstand kürzer (1,5 m), größere Becher-Türme.",
+          "ageAdjust8": "Abstand 3 m, Punkte mitschreiben, zweite Runde mit Zeitdruck.",
+          "indoorTip": "Becher statt Dosen (leiser, leichter), gegen eine Wand stapeln.",
+          "outdoorTip": "Dosen auf eine Bank/Tisch stellen, größere Distanz möglich.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Etwas umwerfen dürfen ist für 6–8-Jährige pures Glück, und der gemeinsame Punktestand verhindert Frust — niemand scheidet aus, alle retten zusammen die Stadt."
         }
       ],
       "food": "Helden-Buffet: Power-Spieße (Trauben/Käse/Mini-Mozzarella), 'Kryptonit'-Wackelpudding (grün), Salzstangen-'Blitze', Gemüsesticks mit Dip als 'Helden-Brennstoff'. Getränk: 'Energie-Trank' (Apfel- oder Johannisbeerschorle). Herzhaft: Mini-Würstchen oder Pizzaschnecken.",
@@ -603,6 +643,81 @@
           "outdoorTip": "Im Garten mit mehr Bewegungsraum.",
           "whyItWorksTitle": "Warum das zieht",
           "whyItWorks": "Ein gemeinsamer Sieg über einen (harmlos-lustigen) Schurken ist der absolute Höhepunkt — die Kinder erleben sich als echtes Heldenteam, das zusammen gewinnt."
+        },
+        {
+          "name": "🥫 Stadt in Gefahr (Bösewicht-Dosenwerfen)",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 25,
+          "minAge": 5,
+          "loudness": "laut",
+          "effort": "niedrig",
+          "material": "10–15 leere Konservendosen oder Plastikbecher, 3 weiche Bälle/Sockenknäuel, Edding für Bösewicht-Gesichter, Kreppband für Wurflinie",
+          "prepText": "Dosen mit lustigen (nicht gruseligen) Bösewicht-Gesichtern bemalen. Zu Türmen stapeln. Wurflinie in 2–3 m Abstand markieren.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Bedrohung aufbauen",
+              "content": "'Dr. Chaos hat Roboter in der Stadt aufgestellt — werft sie um, bevor sie alles zerstören!' Türme aufstapeln."
+            },
+            {
+              "n": 2,
+              "name": "Werfen",
+              "content": "Jedes Kind bekommt 3 Würfe von der Linie. Pro umgeworfener Dose 1 Punkt für die Heldentruppe (gemeinsame Punktzahl, kein Gegeneinander)."
+            },
+            {
+              "n": 3,
+              "name": "Nachschub",
+              "content": "Eine erwachsene Person baut schnell wieder auf, damit kein Kind warten muss. Mehrere Runden."
+            },
+            {
+              "n": 4,
+              "name": "Stadt gerettet",
+              "content": "Wenn alle Türme mindestens einmal gefallen sind: 'Die Stadt ist gerettet!' — gemeinsamer Jubel."
+            }
+          ],
+          "safetyRule": "Nur weiche Bälle/Sockenknäuel, niemals harte Gegenstände. Nicht auf Personen werfen — nur auf die Dosen. Erst auf das Signal 'Frei!' sammeln gehen.",
+          "ageAdjust6": "Abstand kürzer (1,5 m), größere Becher-Türme.",
+          "ageAdjust8": "Abstand 3 m, Punkte mitschreiben, zweite Runde mit Zeitdruck.",
+          "indoorTip": "Becher statt Dosen (leiser, leichter), gegen eine Wand stapeln.",
+          "outdoorTip": "Dosen auf eine Bank/Tisch stellen, größere Distanz möglich.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Etwas umwerfen dürfen ist für 6–8-Jährige pures Glück, und der gemeinsame Punktestand verhindert Frust — niemand scheidet aus, alle retten zusammen die Stadt."
+        },
+        {
+          "name": "🛡️ Helden-Abzeichen basteln",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 20,
+          "minAge": 5,
+          "loudness": "leise",
+          "effort": "niedrig",
+          "material": "Runde Pappscheiben oder Bierdeckel, bunte Sticker, Filzstifte, Sicherheitsnadeln oder Klebepunkte, Glitzer optional",
+          "prepText": "Pro Kind eine Pappscheibe ausstanzen. Material in der Tischmitte bereitstellen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Logo wählen",
+              "content": "Jedes Kind überlegt sein Heldenzeichen: Blitz, Stern, erster Buchstabe des Namens."
+            },
+            {
+              "n": 2,
+              "name": "Gestalten",
+              "content": "Abzeichen bemalen, bekleben, mit Glitzer verzieren."
+            },
+            {
+              "n": 3,
+              "name": "Anstecken",
+              "content": "Mit Klebepunkt aufs Cape — fertig ist die echte Heldin / der echte Held."
+            }
+          ],
+          "safetyRule": "Sicherheitsnadeln nur durch Erwachsene, sonst Klebepunkte. Kein Kleinteil in den Mund.",
+          "ageAdjust6": "Vorgedruckte Logo-Vorlagen zum Bekleben.",
+          "ageAdjust8": "Eigenes Logo frei zeichnen, Heldenname dazuschreiben.",
+          "indoorTip": "Am Esstisch mit Wachstuch.",
+          "outdoorTip": "Windgeschützt, Glitzer drinnen lassen.",
+          "whyItWorksTitle": "Warum das zieht",
+          "whyItWorks": "Die ruhige Station nach dem Toben senkt das Energielevel und gibt jedem ein persönliches Mitgebsel, auf das es stolz ist."
         }
       ],
       "food": "Großes Helden-Buffet: Power-Spieße, 'Kryptonit'-Wackelpudding, Blitz-Salzstangen, Gemüse-Brennstoff mit Dip, Mini-Burger oder Pizzaschnecken als warme Komponente, 'Energie-Trank' in Comic-Bechern. Obst als 'Vitamin-Boost'-Spieße.",
