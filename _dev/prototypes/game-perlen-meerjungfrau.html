@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Perlen sortieren — Meerjungfrau</title>
-<link rel="stylesheet" href="core/core.css?v=20260702">
+<link rel="stylesheet" href="core/core.css?v=20260702b">
 <style>
   /* E11 Sortieren: Perlen nach Symbol+Farbe in die passende Muschel -> Schatz-Muschel öffnet -> Foto-Slot-Reveal. Auf Shared Core. */
   :root{--bg1:#0a2a4a;--bg2:#1d8aa8;--fg:#fff;--accent:#ff8fc7;--accent-dk:#c2418a;--ink:#0a2236}
@@ -14,7 +14,7 @@
   @keyframes rise{from{transform:translateY(0)}to{transform:translateY(-340px)}}
   .pearl{width:74px;height:74px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:inset -6px -6px 12px rgba(0,0,0,.25),0 4px 10px rgba(0,0,0,.3);animation:pbob 2s ease-in-out infinite}
   @keyframes pbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-  .pearl.fly{transition:transform .3s ease, opacity .3s;opacity:0}
+  .pearl.fly{animation:none;transition:transform .3s ease, opacity .3s;opacity:0} /* animation:none: pbob überschrieb sonst das Inline-Transform -> Flug war unsichtbar */
   .shells{display:flex;gap:14px}
   .shell{width:78px;height:64px;border-radius:14px 14px 40px 40px;display:flex;align-items:center;justify-content:center;font-size:28px;cursor:pointer;box-shadow:0 5px 0 rgba(0,0,0,.25);position:relative}
   .shell:active{transform:translateY(3px)}
@@ -34,7 +34,7 @@
 <div class="wrap">
   <section class="scene on" id="s-intro">
     <div class="big">🧜</div>
-    <h1>Sortier die Zauber-Perlen!</h1>
+    <h1>Sortier die Zauberperlen!</h1>
     <p class="sub">Jede Perle gehört in die Muschel mit dem gleichen Zeichen. Tippe die richtige Muschel. Wenn alle sortiert sind, öffnet sich die große Schatz-Muschel!</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Abtauchen 🫧</button>
@@ -61,7 +61,7 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260702"></script>
+<script src="core/core.js?v=20260702b"></script>
 <script>
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#0a3a5a'/><path d='M40 150 q60 -70 120 0 q-60 30 -120 0z' fill='#ff8fc7'/><path d='M100 150 v-66 M70 150 q30 -50 0 -66 M130 150 q-30 -50 0 -66' stroke='#c2418a' stroke-width='4' fill='none'/><circle cx='100' cy='120' r='18' fill='#fff'/><circle cx='94' cy='114' r='6' fill='#eaf6ff'/></svg>`);
 const THEME={ photo:'/birthday-photo.jpg' };
@@ -82,7 +82,7 @@ function buildShells(){
   const s=$('#shells'); s.innerHTML='';
   palette.forEach((k,i)=>{ const d=document.createElement('div'); d.className='shell'; d.style.background='linear-gradient(160deg,'+k.c+',rgba(255,255,255,.5))'; d.textContent=k.s; d.dataset.i=i; d.addEventListener('click',()=>sortInto(i)); s.appendChild(d); });
 }
-function nextPearl(){ cur=Math.floor(Math.random()*palette.length); const p=$('#pearl'); p.className='pearl'; p.style.background='radial-gradient(circle at 35% 30%,#fff,'+palette[cur].c+')'; p.textContent=palette[cur].s; }
+function nextPearl(){ cur=Math.floor(Math.random()*palette.length); const p=$('#pearl'); p.className='pearl'; p.style.transform=''; p.style.background='radial-gradient(circle at 35% 30%,#fff,'+palette[cur].c+')'; p.textContent=palette[cur].s; }
 function sortInto(i){
   if(done||busy)return;
   if(i===cur){

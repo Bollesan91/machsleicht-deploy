@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Fingerabdruck — Detektiv</title>
-<link rel="stylesheet" href="core/core.css?v=20260702">
+<link rel="stylesheet" href="core/core.css?v=20260702b">
 <style>
   /* E1 Wischen/Freilegen: Spurenpuder wegbürsten -> Fingerabdruck erscheint (gezeichnet, kein Foto) -> Foto-Slot-Reveal. Auf Shared Core. */
   :root{--bg1:#15171f;--bg2:#2e3650;--fg:#fff;--accent:#e0b84a;--accent-dk:#a8841f;--ink:#1a1d28}
@@ -51,7 +51,7 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260702"></script>
+<script src="core/core.js?v=20260702b"></script>
 <script>
 // gezeichneter Fingerabdruck als Board-Hintergrund (KEIN Foto — Foto kommt erst im Reveal-Slot)
 const PRINT="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><rect width='300' height='300' fill='#eae3cf'/><g fill='none' stroke='#3a3526' stroke-width='3' stroke-linecap='round' opacity='.85'><path d='M150 70 c-44 0 -70 34 -70 78 c0 26 12 50 34 60'/><path d='M150 88 c-34 0 -54 26 -54 60 c0 24 10 44 30 54'/><path d='M150 106 c-26 0 -40 22 -40 48 c0 22 10 40 28 48'/><path d='M150 124 c-18 0 -26 16 -26 36 c0 20 10 36 24 44'/><path d='M150 142 c-10 0 -14 12 -14 26 c0 18 8 32 18 40'/><path d='M150 70 c44 0 70 34 70 78 c0 30 -16 56 -44 64'/><path d='M150 106 c26 0 40 22 40 48 c0 24 -12 44 -32 52'/><path d='M150 142 c10 0 14 12 14 26 c0 16 -6 30 -16 38'/></g></svg>`);

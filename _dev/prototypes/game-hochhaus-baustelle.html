@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Hochhaus stapeln — Baustelle</title>
-<link rel="stylesheet" href="core/core.css?v=20260702">
+<link rel="stylesheet" href="core/core.css?v=20260702b">
 <style>
   /* Stapeln: Kran schwenkt eine Etage, droppen, Überhang fällt ab, 6 Etagen -> Foto-Slot-Reveal (Richtfest). Auf Shared Core. */
   :root{--bg1:#2a3038;--bg2:#7a8694;--fg:#fff;--accent:#f2b21a;--accent-dk:#b87f00;--ink:#241c08}
@@ -48,7 +48,7 @@
     <div class="invite">
       <div class="hero"></div>
       <h2 id="winTitle">Richtfest!</h2>
-      <p class="who" id="winWho">Ganz oben auf dem Dach stehst DU! Komm zur Baustellen-Party:</p>
+      <p class="who" id="winWho">Richtfest — der Turm steht! Komm zur Baustellen-Party:</p>
       <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Bauplatz, Kranstraße 4</dd></dl>
       <button class="btn ja" id="rsvpBtn">👷 Ich helfe mit!</button>
       <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
@@ -56,7 +56,7 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260702"></script>
+<script src="core/core.js?v=20260702b"></script>
 <script>
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#2a3038'/><rect x='70' y='60' width='60' height='110' fill='#c0c8d2'/><g fill='#7a8694'><rect x='80' y='72' width='16' height='16'/><rect x='104' y='72' width='16' height='16'/><rect x='80' y='98' width='16' height='16'/><rect x='104' y='98' width='16' height='16'/><rect x='80' y='124' width='16' height='16'/><rect x='104' y='124' width='16' height='16'/></g><path d='M40 40 h70 M40 40 v100' stroke='#f2b21a' stroke-width='6'/><path d='M104 40 v16' stroke='#241c08' stroke-width='3'/></svg>`);
 const THEME={ photo:'/birthday-photo.jpg' };
@@ -104,6 +104,7 @@ function win(){
   setTimeout(()=>{ show('s-win'); confetti(CC); }, 700);
 }
 function start(){
+  clearInterval(mvT);
   $('#field').querySelectorAll('.layer,.chunk,.moving').forEach(e=>e.remove());
   tower=[{left:20,width:60}]; done=false; busy=false; $('#lvl').textContent=0;
   addLayerEl(20,60,0,''); show('s-game'); setTimeout(spawnMoving,300);

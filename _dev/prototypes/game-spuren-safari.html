@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Spuren-Pfad — Safari</title>
-<link rel="stylesheet" href="core/core.css?v=20260702">
+<link rel="stylesheet" href="core/core.css?v=20260702b">
 <style>
   /* Pfad-folgen: leuchtende Pfotenspuren der Reihe nach antippen, Löwe schleicht zum Wasserloch -> Foto-Slot-Reveal. Safari. Auf Shared Core. */
   :root{--bg1:#7a5418;--bg2:#e0a23a;--fg:#fff;--accent:#e0a23a;--accent-dk:#a86f17;--ink:#3a2c14}
@@ -47,16 +47,16 @@
   <section class="scene" id="s-win">
     <div class="invite">
       <div class="hero"></div>
-      <h2 id="winTitle">Fährte gefolgt!</h2>
+      <h2 id="winTitle">Spur verfolgt!</h2>
       <p class="who" id="winWho">Die Spur führt ans Wasserloch! Komm zur Safari-Party:</p>
-      <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Im Garten-Dschungel</dd></dl>
+      <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>In der Garten-Savanne</dd></dl>
       <button class="btn ja" id="rsvpBtn">🦁 Ich bin dabei!</button>
       <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
     </div>
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260702"></script>
+<script src="core/core.js?v=20260702b"></script>
 <script>
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#7a5418'/><g fill='#e8d49a'><ellipse cx='58' cy='152' rx='12' ry='15'/><ellipse cx='90' cy='124' rx='12' ry='15'/><ellipse cx='78' cy='90' rx='12' ry='15'/><ellipse cx='116' cy='70' rx='12' ry='15'/></g><circle cx='150' cy='56' r='28' fill='#e0a23a'/><circle cx='150' cy='56' r='20' fill='#f0c060'/><circle cx='142' cy='52' r='4' fill='#3a2c14'/><circle cx='158' cy='52' r='4' fill='#3a2c14'/><path d='M144 64 q6 6 12 0' stroke='#3a2c14' stroke-width='3' fill='none'/></svg>`);
 const THEME={ photo:'/birthday-photo.jpg' };
@@ -88,7 +88,7 @@ function tap(i){
 }
 function win(){
   done=true;$('#hint').textContent='';vib([20,40,20,40,80]);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Am Wasserloch wartet das seltenste Tier: das ist ${kid()}! Komm zur Safari-Party:`; } else {$('#winTitle').textContent='Fährte gefolgt!';$('#winWho').textContent=`Am Wasserloch trinkt ein prächtiger Löwe — ${kid()} ist am Ziel! Komm zur Safari-Party:`;} guestName();
+  if(HAS_PHOTO){ $('#winWho').textContent=`Am Wasserloch wartet die seltenste Entdeckung: das ist ${kid()}! Komm zur Safari-Party:`; } else {$('#winTitle').textContent='Spur verfolgt!';$('#winWho').textContent=`Am Wasserloch trinkt ein prächtiger Löwe — die Spur führte zur Party von ${kid()}! Komm zur Safari-Party:`;} guestName();
   setTimeout(()=>{ show('s-win');confetti(CC);sfx.win(); }, 500);
 }
 $('#startBtn').addEventListener('click',()=>{build();show('s-game');$('#hint').textContent='Tippe die leuchtende Pfotenspur.';});

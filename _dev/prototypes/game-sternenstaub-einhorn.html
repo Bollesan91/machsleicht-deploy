@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Sternenstaub — Einhorn</title>
-<link rel="stylesheet" href="core/core.css?v=20260702">
+<link rel="stylesheet" href="core/core.css?v=20260702b">
 <style>
   /* Tap-Reaktion: schwebende Funken antippen, 8 sammeln (kein Fail-State, Funken respawnen) -> Foto-Slot-Reveal. Auf Shared Core. */
   :root{--bg1:#2a1040;--bg2:#7a4ab0;--fg:#fff;--accent:#ffd24d;--accent-dk:#c79a16;--ink:#2a1040}
@@ -50,7 +50,7 @@
     <div class="invite">
       <div class="hero"></div>
       <h2 id="winTitle">Zauberstab leuchtet!</h2>
-      <p class="who" id="winWho">Im funkelnden Sternenstaub erscheinst DU! Komm zur Einhorn-Party:</p>
+      <p class="who" id="winWho">Der Sternenstaub funkelt! Komm zur Einhorn-Party:</p>
       <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Auf der Wolken-Wiese</dd></dl>
       <button class="btn ja" id="rsvpBtn">🦄 Ich komme mit!</button>
       <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
@@ -58,7 +58,7 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260702"></script>
+<script src="core/core.js?v=20260702b"></script>
 <script>
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#2a1040'/><g fill='#ffd24d'><path d='M100 40 l6 16 17 2 -13 11 4 17 -14 -9 -14 9 4 -17 -13 -11 17 -2z'/><circle cx='52' cy='60' r='3'/><circle cx='150' cy='66' r='3'/><circle cx='60' cy='150' r='3'/><circle cx='150' cy='150' r='3'/></g><path d='M70 168 l64 -78' stroke='#c79a16' stroke-width='7' stroke-linecap='round'/><path d='M134 84 l10 4 -2 11 -11 -3z' fill='#ff8fd0'/></svg>`);
 const THEME={ photo:'/birthday-photo.jpg' };

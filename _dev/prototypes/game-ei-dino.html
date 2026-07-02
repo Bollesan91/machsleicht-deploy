@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Dino-Ei ausbrüten</title>
-<link rel="stylesheet" href="core/core.css?v=20260702">
+<link rel="stylesheet" href="core/core.css?v=20260702b">
 <style>
   /* Tap-to-hatch — nur Spiel-Eigenes; Skelett aus core.css. */
   :root{--bg1:#4f8f3e;--bg2:#9fd98a;--fg:#fff;--accent:#5bbf52;--accent-dk:#2f8a2a;--ink:#22331a}
@@ -67,7 +67,7 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260702"></script>
+<script src="core/core.js?v=20260702b"></script>
 <script>
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#bfe6a8'/><ellipse cx='100' cy='120' rx='62' ry='54' fill='#6cc24a'/><circle cx='100' cy='66' r='40' fill='#6cc24a'/><circle cx='84' cy='60' r='9' fill='#fff'/><circle cx='116' cy='60' r='9' fill='#fff'/><circle cx='84' cy='61' r='4' fill='#1a1a1a'/><circle cx='116' cy='61' r='4' fill='#1a1a1a'/><path d='M86 80 q14 12 28 0' stroke='#2f6b1e' stroke-width='4' fill='none' stroke-linecap='round'/><path d='M100 28 l8 14 h-16 z' fill='#3f8f2a'/><path d='M70 150 l10 16 M100 156 l0 18 M130 150 l-10 16' stroke='#3f8f2a' stroke-width='8' stroke-linecap='round'/></svg>`);
 const THEME={ photo:'/birthday-photo.jpg' };
@@ -75,7 +75,7 @@ const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#5bbf52','#ffd24d','#3282b8','#fff','#ff8a3c'];
 const sfx={tap(p){note(300+p*6,AC().currentTime,0.05,{type:'square',vol:0.07});noise(AC().currentTime,0.04,{vol:0.05,freq:2400});},crack(){const t=AC().currentTime;noise(t,0.09,{vol:0.14,freq:2600});note(520,t,0.06,{type:'square',vol:0.06,glideTo:300});},hatch(){const t=AC().currentTime;note(180,t,0.25,{type:'sawtooth',vol:0.14,glideTo:90});setTimeout(()=>note(900,AC().currentTime,0.2,{type:'sine',vol:0.16}),120);},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
 let prog=0,done=false,lastCrack=0; const STEP=(ageNum()<=6?13:ageNum()<=9?9:7); // Tap-Menge nach Alter
-function speckle(){ document.querySelectorAll('.shellTop,.shellBot').forEach(sh=>{ for(let i=0;i<5;i++){const s=document.createElement('div');s.className='spot';const r=5+Math.random()*9;s.style.width=s.style.height=r+'px';s.style.left=(15+Math.random()*60)+'%';s.style.top=(15+Math.random()*60)+'%';sh.appendChild(s);} }); }
+function speckle(){ document.querySelectorAll('.spot').forEach(s=>s.remove()); document.querySelectorAll('.shellTop,.shellBot').forEach(sh=>{ for(let i=0;i<5;i++){const s=document.createElement('div');s.className='spot';const r=5+Math.random()*9;s.style.width=s.style.height=r+'px';s.style.left=(15+Math.random()*60)+'%';s.style.top=(15+Math.random()*60)+'%';sh.appendChild(s);} }); }
 function tap(){
   if(done)return; prog=Math.min(100,prog+STEP); $('#fill').style.width=prog+'%';
   const f=prog/100; const st=document.querySelector('.shellTop'); if(st) st.style.transform='translateY('+(-f*f*58).toFixed(1)+'px)'; // Deckel hebt sich progressiv (back-weighted) -> Gesicht taucht auf

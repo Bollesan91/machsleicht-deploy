@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Kanonen-Reveal — Piraten</title>
-<link rel="stylesheet" href="core/core.css?v=20260702">
+<link rel="stylesheet" href="core/core.css?v=20260702b">
 <style>
   /* Kanonen-Reveal (E1, Schieß-Variante) — nur Spiel-Eigenes; Skelett aus core.css. */
   :root{--bg1:#0a3d62;--bg2:#1e6091;--fg:#fff;--card:#f4e4c1;--card-edge:#d4b483;--ink:#3e2f1c;--accent:#e8a735;--accent-dk:#b8761a}
@@ -51,7 +51,7 @@
   <section class="scene on" id="s-intro">
     <div class="flag">🏴‍☠️</div>
     <h1>Die Schatzkarte ist<br>vernagelt!</h1>
-    <p class="sub">Hinter den Brettern versteckt sich jemand mit deiner Einladung. Lade die Schiffskanone und schieß sie frei — Brett für Brett!</p>
+    <p class="sub">Die Schatzkarte ist hinter dicken Brettern vernagelt! Lade die Schiffskanone und schieß die Bretter weg — Brett für Brett, bis die Karte frei ist!</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Kanone laden 💣</button>
   </section>
@@ -71,7 +71,7 @@
   <section class="scene" id="s-win">
     <div class="invite">
       <div class="hero"></div>
-      <h2 id="winTitle">Reingelegt!</h2>
+      <h2 id="winTitle">Schatz gefunden!</h2>
       <p class="who" id="winWho">Der Schatz ist gefunden! Und du bist eingeladen:</p>
       <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Pirateninsel (Stadtpark)</dd></dl>
       <button class="btn ja" id="rsvpBtn">🏴‍☠️ Ich heuere an!</button>
@@ -80,7 +80,7 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260702"></script>
+<script src="core/core.js?v=20260702b"></script>
 <script>
 // Ohne-Foto-Fallback: designte Schatztruhe hinter den Brettern (kein dunkles Board). ?nofoto erzwingt ihn.
 const NOPHOTO = "data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#1e6091'/><circle cx='100' cy='92' r='82' fill='#2a7fb8' opacity='.55'/><path d='M38 96 q62 -56 124 0 z' fill='#8a5a2b'/><rect x='42' y='96' width='116' height='70' rx='8' fill='#7a4d23'/><rect x='50' y='101' width='100' height='30' fill='#ffd24d'/><circle cx='70' cy='119' r='9' fill='#ffe79a'/><circle cx='100' cy='123' r='10' fill='#ffe79a'/><circle cx='131' cy='118' r='9' fill='#ffe79a'/><rect x='94' y='96' width='12' height='70' fill='#caa24a'/><circle cx='100' cy='150' r='8' fill='#e8a735' stroke='#5a3416' stroke-width='2'/><rect x='42' y='96' width='116' height='70' rx='8' fill='none' stroke='#5a3416' stroke-width='4'/></svg>`);
@@ -130,7 +130,7 @@ function fire(p){
 function win(){
   const msg=$('#boardMsg');$('#boardMsgTxt').textContent='„ARRR! Wer hat meinen Schatz?!"';msg.classList.add('on');sfx.villain();vib(60);
   setTimeout(()=>{msg.classList.remove('on');
-    if(HAS_PHOTO){ $('#winWho').textContent=`Aller Schätze schönster: das ist ${kid()}! Und du bist eingeladen:`; }
+    if(HAS_PHOTO){ $('#winTitle').textContent='Schatz gefunden!'; $('#winWho').textContent=`Der schönste Schatz von allen: das ist ${kid()}! Und du bist eingeladen:`; }
     else { $('#winTitle').textContent='Schatz gefunden!'; $('#winWho').textContent=`Die Schatztruhe springt auf — ${kid()} heuert dich an! Du bist eingeladen:`; }
     guestName();show('s-win');confetti(CC,CCO);sfx.fanfare();vib([20,40,20,40,80]);},1300);
 }

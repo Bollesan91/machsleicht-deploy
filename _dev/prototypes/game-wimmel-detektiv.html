@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Tatort-Suche — Detektiv</title>
-<link rel="stylesheet" href="core/core.css?v=20260702">
+<link rel="stylesheet" href="core/core.css?v=20260702b">
 <style>
   /* E7 Wimmelbild — nur Spiel-Eigenes; Skelett aus core.css. */
   :root{--bg1:#1c1813;--bg2:#3b352a;--fg:#f3ead6;--accent:#d6a64a;--accent-dk:#9c7320;--ink:#2a241a;--paper:#efe6d2}
@@ -62,7 +62,7 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260702"></script>
+<script src="core/core.js?v=20260702b"></script>
 <script>
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#d9cba8'/><circle cx='100' cy='84' r='30' fill='#4a4030'/><path d='M55 165 q45 -46 90 0z' fill='#4a4030'/><rect x='62' y='70' width='76' height='13' rx='6' fill='#2a241a'/><path d='M70 56 q30 -20 60 0' stroke='#2a241a' stroke-width='9' fill='none'/><circle cx='150' cy='150' r='20' fill='none' stroke='#7a4a18' stroke-width='7'/><line x1='164' y1='164' x2='184' y2='184' stroke='#7a4a18' stroke-width='8' stroke-linecap='round'/></svg>`);
 const THEME={ photo:'/birthday-photo.jpg' };
@@ -81,15 +81,15 @@ function tap(el,isClue){
 function layout(){
   const f=$('#field'); f.innerHTML=''; const ph=document.createElement('div'); ph.className='fieldphoto'; f.appendChild(ph); const items=[];
   CLUE_POS.forEach(p=>items.push({c:true,x:p[0],y:p[1]}));
-  for(let i=0;i<26;i++){ items.push({c:false,x:6+Math.random()*88,y:8+Math.random()*84,e:DECOS[i%DECOS.length]}); }
+  for(let i=0;i<26;i++){ let x,y,t=0; do{ x=6+Math.random()*88; y=8+Math.random()*84; t++; }while(t<20 && CLUE_POS.some(p=>Math.hypot(x-p[0],y-p[1])<9)); items.push({c:false,x:x,y:y,e:DECOS[i%DECOS.length]}); } // Mindestabstand: Deko darf kein Ziel verdecken
   for(let i=items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]];}
   items.forEach(it=>{ const s=document.createElement('span'); s.className='item '+(it.c?'clue':'deco'); s.style.left=it.x+'%'; s.style.top=it.y+'%'; s.textContent=it.c?'🔍':it.e; s.addEventListener('click',()=>tap(s,it.c)); f.appendChild(s); });
   const scan=document.createElement('div'); scan.className='scan'; f.appendChild(scan);
 }
 function winSeq(){
   done=true; sharpen(1); sfx.win(); vib([20,40,20,40,80]);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Die geheime Hauptperson ist ${kid()}! Komm zur Detektiv-Party:`; }
-  else { $('#winTitle').textContent='Fall gelöst!'; $('#winWho').textContent=`Auf der Ehrentafel steht: Fall gelöst — ${kid()} war die beste Spürnase! Komm zur Detektiv-Party:`; }
+  if(HAS_PHOTO){ $('#winWho').textContent=`Fall gelöst: Die Torte war für die Überraschungs-Party von ${kid()} reserviert! Komm zur Detektiv-Party:`; }
+  else { $('#winTitle').textContent='Fall gelöst!'; $('#winWho').textContent=`Der Fall ist gelöst — und gefeiert wird bei ${kid()}! Komm zur Detektiv-Party:`; }
   guestName();
   setTimeout(()=>{ show('s-win'); confetti(CC); }, 650);
 }

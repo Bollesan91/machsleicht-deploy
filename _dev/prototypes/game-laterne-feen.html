@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Wunsch-Laterne — Feen</title>
-<link rel="stylesheet" href="core/core.css?v=20260702">
+<link rel="stylesheet" href="core/core.css?v=20260702b">
 <style>
   /* E2 Tap-Meter: Laterne antippen -> Licht füllt -> steigt auf -> Foto-Slot-Reveal im Licht. Feen. Auf Shared Core. */
   :root{--bg1:#1a0f33;--bg2:#4a2d6e;--fg:#fff;--accent:#ffc6e0;--accent-dk:#b05a8a;--ink:#2a1840}
@@ -37,7 +37,7 @@
   <section class="scene on" id="s-intro">
     <div class="big">🏮</div>
     <h1>Lass die Wunsch-Laterne leuchten!</h1>
-    <p class="sub">Tippe immer wieder auf die Laterne, bis sie hell genug strahlt. Dann steigt sie in den Feenhimmel — und dein Wunsch wird wahr!</p>
+    <p class="sub">Tippe immer wieder auf die Laterne, bis sie hell genug strahlt. Dann steigt sie in den Feenhimmel — und trägt einen geheimen Geburtstagswunsch hinauf!</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Wunsch beginnen ✨</button>
   </section>
@@ -65,7 +65,7 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260702"></script>
+<script src="core/core.js?v=20260702b"></script>
 <script>
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#1a0f33'/><circle cx='100' cy='104' r='44' fill='#ffd24d' opacity='.35'/><path d='M82 60 h36 v8 h-36z' fill='#5a4430'/><path d='M78 70 q22 -8 44 0 v66 q-22 10 -44 0z' fill='#ffe6a0'/><path d='M78 70 q22 -8 44 0 v66 q-22 10 -44 0z' fill='none' stroke='#b08a3a' stroke-width='3'/><path d='M100 80 l5 12 13 1 -10 9 3 13 -11 -7 -11 7 3 -13 -10 -9 13 -1z' fill='#fff7d6'/></svg>`);
 const THEME={ photo:'/birthday-photo.jpg' };
@@ -93,7 +93,7 @@ function liftOff(){
   setTimeout(winReveal, 1500);
 }
 function winReveal(){
-  if(HAS_PHOTO){ $('#winWho').textContent=`Der schönste Wunsch im Feenwald ist ${kid()}! Komm zur Feen-Party:`; } else { $('#winTitle').textContent='Wunsch erfüllt!'; $('#winWho').textContent=`Die Laterne strahlt heller als alle Sterne — ${kid()} hat sie gefüllt! Komm zur Feen-Party:`; } guestName();
+  if(HAS_PHOTO){ $('#winWho').textContent=`Der schönste Wunsch im Feenwald ist ${kid()}! Komm zur Feen-Party:`; } else { $('#winTitle').textContent='Wunsch erfüllt!'; $('#winWho').textContent=`Die Laterne strahlt heller als alle Sterne — sie trägt den Geburtstagswunsch von ${kid()}! Komm zur Feen-Party:`; } guestName();
   show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]);
 }
 $('#startBtn').addEventListener('click',()=>{prog=0;done=false;lastMile=0;$('#fill').style.width='0%';$('#glow').style.opacity='.15';$('#lantern').classList.remove('lit','up');$('#tapHint').textContent='Tipp-tipp auf die Laterne!';[...document.querySelectorAll('.fly')].forEach(f=>f.remove());flies();show('s-game');});
