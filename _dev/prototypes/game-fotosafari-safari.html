@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Foto-Safari — Safari</title>
+<link rel="stylesheet" href="core/core.css?v=20260702">
+<style>
+  /* Kamera/Knipsen — nur Spiel-Eigenes; Skelett aus core.css. */
+  :root{--bg1:#b07d2e;--bg2:#e8c97a;--fg:#fff;--accent:#e0a23a;--accent-dk:#a86f17;--ink:#3a2c14}
+  /* Sucher */
+  .view{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#cfa85a 0%,#a7813c 55%,#8a6a2e 100%);box-shadow:0 12px 30px rgba(0,0,0,.4)}
+  .view::before{content:"";position:absolute;inset:10px;border:3px solid rgba(255,255,255,.85);border-radius:10px;pointer-events:none}
+  .corner{position:absolute;width:22px;height:22px;border:4px solid #fff;pointer-events:none}
+  .c1{top:4px;left:4px;border-right:0;border-bottom:0}.c2{top:4px;right:4px;border-left:0;border-bottom:0}.c3{bottom:4px;left:4px;border-right:0;border-top:0}.c4{bottom:4px;right:4px;border-left:0;border-top:0}
+  .rec{position:absolute;top:14px;left:50%;transform:translateX(-50%);font-size:12px;font-weight:800;color:#fff;background:#c0392b;padding:2px 8px;border-radius:6px}
+  .animal{position:absolute;font-size:46px;cursor:pointer;transform:translate(-50%,-50%) scale(0);transition:transform .18s cubic-bezier(.3,1.6,.5,1);filter:drop-shadow(0 3px 4px rgba(0,0,0,.4))}
+  .animal.show{transform:translate(-50%,-50%) scale(1)}
+  .animal.snapped{animation:snap .3s forwards}
+  @keyframes snap{to{transform:translate(-50%,-50%) scale(1.4);opacity:0}}
+  .flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+  .flash.on{animation:fl .25s}@keyframes fl{0%{opacity:.9}100%{opacity:0}}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#fffaf0,#f3e3bf);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .polaroid{width:170px;margin:0 auto 8px;background:#fff;padding:10px 10px 30px;border-radius:4px;box-shadow:0 8px 20px rgba(0,0,0,.3);transform:rotate(-3deg);animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .polaroid .pic{width:100%;aspect-ratio:1;background-image:var(--photo);background-size:cover;background-position:center;border-radius:2px}
+  .polaroid .cap{font-size:13px;font-weight:700;color:#555;margin-top:6px}
+  @keyframes pop{from{transform:scale(.3) rotate(8deg);opacity:0}to{transform:rotate(-3deg);opacity:1}}
+  .invite h2{font-size:23px;margin:4px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Foto-Safari</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">📷</div>
+    <h1>Große Foto-Safari!</h1>
+    <p class="sub">Die Tiere zeigen sich nur kurz. Tippe schnell, um sie zu fotografieren — und finde das seltenste Tier der Savanne.</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Kamera an 📸</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill">Fotos <b id="shots">0</b>/<b id="goal">5</b></span></div>
+    <div class="view" id="view">
+      <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+      <span class="rec">● REC</span>
+      <div class="flash" id="flash"></div>
+    </div>
+    <p class="sub">Tippe die Tiere, bevor sie wieder weg sind!</p>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="polaroid"><div class="pic"></div><div class="cap" id="cap">Das seltenste Tier</div></div>
+      <h2 id="winTitle">Erwischt!</h2>
+      <p class="who" id="winWho">Alle Tiere im Kasten! Komm zur Safari-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Im Garten-Dschungel</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🦁 Ich bin dabei!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260702"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#cfa85a'/><circle cx='100' cy='86' r='52' fill='#e8b860'/><circle cx='100' cy='150' r='60' fill='#d99f3e'/><circle cx='78' cy='80' r='7' fill='#3a2c14'/><circle cx='122' cy='80' r='7' fill='#3a2c14'/><path d='M86 104 q14 12 28 0' stroke='#3a2c14' stroke-width='5' fill='none' stroke-linecap='round'/><ellipse cx='100' cy='96' rx='10' ry='7' fill='#3a2c14'/><g fill='#b5832c'><circle cx='52' cy='70' r='16'/><circle cx='148' cy='70' r='16'/><circle cx='40' cy='110' r='15'/><circle cx='160' cy='110' r='15'/><circle cx='52' cy='150' r='15'/><circle cx='148' cy='150' r='15'/></g></svg>`);
+const THEME={ photo:'/birthday-photo.jpg', animals:['🦁','🐘','🦒','🦓','🦏','🐆','🦛'], goal:5 };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#e0a23a','#37c46e','#3282b8','#fff','#c0392b'];
+const sfx={shutter(){const t=AC().currentTime;noise(t,0.05,{vol:0.18,freq:3000});note(900,t,0.05,{type:'square',vol:0.06,glideTo:500});},miss(){note(220,AC().currentTime,0.1,{type:'triangle',vol:0.08,glideTo:160});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
+let shots=0,spawnT=null,curAnimal=null;
+function spawn(){
+  if(shots>=THEME.goal)return;
+  const view=$('#view'); if(curAnimal){curAnimal.remove();curAnimal=null;}
+  const el=document.createElement('div');el.className='animal';
+  el.textContent=THEME.animals[Math.floor(Math.random()*THEME.animals.length)];
+  const x=18+Math.random()*64, y=20+Math.random()*60;
+  el.style.left=x+'%';el.style.top=y+'%';
+  el.addEventListener('click',()=>snap(el));
+  view.appendChild(el);curAnimal=el;setTimeout(()=>el.classList.add('show'),20);
+  const life=1100-shots*90;
+  spawnT=setTimeout(()=>{ if(el.parentNode && !el.classList.contains('snapped')){ el.classList.remove('show'); sfx.miss(); setTimeout(()=>{el.remove(); if(curAnimal===el)curAnimal=null; next();},150);} }, life);
+}
+function next(){ if(shots>=THEME.goal)return; setTimeout(spawn, 280+Math.random()*350); }
+function snap(el){
+  if(el.classList.contains('snapped'))return; clearTimeout(spawnT);
+  el.classList.add('snapped'); $('#flash').classList.remove('on'); void $('#flash').offsetWidth; $('#flash').classList.add('on');
+  sfx.shutter(); vib(15); shots++; $('#shots').textContent=shots;
+  setTimeout(()=>{ if(el.parentNode)el.remove(); curAnimal=null;
+    if(shots>=THEME.goal) finale(); else next();
+  }, 200);
+}
+function finale(){
+  // letztes Motiv = das Kind: kurz "seltenes Tier entdeckt" -> Foto-Snap -> Reveal
+  const view=$('#view'); const m=document.createElement('div'); m.className='animal show'; m.style.left='50%'; m.style.top='50%'; m.style.fontSize='40px'; m.textContent='✨'; view.appendChild(m);
+  setTimeout(()=>{ $('#flash').classList.remove('on'); void $('#flash').offsetWidth; $('#flash').classList.add('on'); sfx.shutter(); vib([15,40,15]);
+    setTimeout(winReveal, 250);
+  }, 650);
+}
+function winReveal(){
+  if(HAS_PHOTO){ $('#winWho').textContent=`Das seltenste Tier der Savanne: das ist ${kid()}! Komm zur Safari-Party:`; }
+  else { $('#cap').textContent='Der König der Savanne'; $('#winTitle').textContent='Erwischt!'; $('#winWho').textContent=`Der seltene Löwe ist im Kasten — ${kid()} hat das beste Foto! Komm zur Safari-Party:`; }
+  guestName();
+  show('s-win'); confetti(CC); sfx.win(); vib([20,40,20,40,80]);
+}
+function tip(){ if(shots>=THEME.goal)return; if(curAnimal && curAnimal.parentNode) snap(curAnimal); } // Tipp: das Tier für dich knipsen
+$('#startBtn').addEventListener('click',()=>{shots=0;$('#shots').textContent=0;$('#goal').textContent=THEME.goal;show('s-game');spawn();});
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

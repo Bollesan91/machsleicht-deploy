@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Fossil-Ausgrabung — Dino</title>
+<link rel="stylesheet" href="core/core.css?v=20260702">
+<style>
+  /* Fossil (E1: Wischen) — nur Spiel-Eigenes; Skelett (Reset/Body/.scene/.btn/.confetti/…) kommt aus core.css. */
+  :root{--bg1:#9a7637;--bg2:#d8c08a;--fg:#fff;--accent:#d99f3e;--accent-dk:#9c6f1b;--ink:#3a2c14}
+  .meter{width:100%;max-width:280px;height:14px;border-radius:999px;background:rgba(0,0,0,.25);overflow:hidden}
+  .meter .fill{height:100%;width:0%;background:linear-gradient(90deg,#ffd24d,#ff8a3c);transition:width .12s}
+  .board{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0d2a40;touch-action:none}
+  .board canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab}
+  .board.fade canvas{opacity:0;transition:opacity .5s}
+  /* Letzte Sandschicht über der Bildmitte: wischfest, löst sich erst beim Finale -> Gesicht = Klimax (Playtest-Fix) */
+  .faceguard{position:absolute;left:50%;top:50%;width:64%;height:64%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(205,178,122,.98) 50%,rgba(169,133,74,.92) 72%,rgba(169,133,74,0) 100%);pointer-events:none;transition:opacity .8s ease;z-index:2}
+  .board.fade .faceguard{opacity:0}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#fbfff2,#efe2c4);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;box-shadow:0 8px 20px rgba(0,0,0,.3);animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  @keyframes pop{from{transform:scale(.3) rotate(8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Fossil (E1: Wischen)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🦴</div>
+    <h1>Großer Fossil-Fund!</h1>
+    <p class="sub">Etwas Uraltes liegt unter dem Sand — versteinert seit Urzeiten. Wisch den Sand mit dem Finger weg und leg den Fund frei … und dann erwacht er zum Leben!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Ausgraben 🖌️</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="meter"><div class="fill" id="fill"></div></div>
+    <div class="board" id="board"><canvas id="sand"></canvas><div class="faceguard"></div></div>
+    <p class="sub" id="hint">Wisch den Sand mit dem Finger weg!</p>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Ausgegraben!</h2>
+      <p class="who" id="winWho">Der Fund ist freigelegt! Komm zur Dino-Ausgrabung:</p>
+      <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Im Saurier-Garten</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🦕 Ich grabe mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260702"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#23303a'/><g fill='none' stroke='#f2ead4' stroke-width='6' stroke-linecap='round'><path d='M60 50 q40 -16 80 8'/><circle cx='150' cy='52' r='14' fill='#f2ead4' stroke='none'/><path d='M64 58 L64 150'/><path d='M64 78 L40 96 M64 78 L88 96 M64 100 L38 120 M64 100 L90 120 M64 122 L42 144 M64 122 L88 144'/><path d='M64 150 q40 22 88 6'/></g><circle cx='146' cy='50' r='4' fill='#23303a'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#d99f3e','#37c46e','#3282b8','#fff','#8a5a2b'];
+let lastBrush=0;
+const sfx={brush(){const t=AC().currentTime;if(t-lastBrush<0.05)return;lastBrush=t;noise(t,0.06,{vol:0.05,freq:1200+Math.random()*600});},find(){const t=AC().currentTime;note(520,t,0.1,{type:'sine',vol:0.12});note(780,t+0.08,0.16,{type:'sine',vol:0.12});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
+const RES=300, R=30, GOAL_ER=(ageNum()<=6?0.55:ageNum()<=9?0.68:0.8); let cv,ctx,drawing=false,done=false,erased=0; // Freilege-Schwelle nach Alter
+function fillSand(){
+  cv.width=RES;cv.height=RES;
+  const grd=ctx.createLinearGradient(0,0,RES,RES);grd.addColorStop(0,'#cdb27a');grd.addColorStop(1,'#a9854a');
+  ctx.globalCompositeOperation='source-over';ctx.fillStyle=grd;ctx.fillRect(0,0,RES,RES);
+  for(let i=0;i<260;i++){ctx.fillStyle='rgba('+(150+Math.random()*60|0)+','+(120+Math.random()*40|0)+',70,.5)';const r=2+Math.random()*5;ctx.beginPath();ctx.arc(Math.random()*RES,Math.random()*RES,r,0,7);ctx.fill();}
+  ctx.fillStyle='rgba(60,40,20,.35)';ctx.font='bold 26px sans-serif';ctx.textAlign='center';ctx.fillText('⛏️ wisch hier ⛏️',RES/2,RES/2);
+  done=false;erased=0;$('#fill').style.width='0%';$('#board').classList.remove('fade');
+}
+function ptToCanvas(ev){const r=cv.getBoundingClientRect();const x=( (ev.clientX-r.left)/r.width)*RES;const y=((ev.clientY-r.top)/r.height)*RES;return [x,y];}
+function erodeAt(x,y){ctx.globalCompositeOperation='destination-out';ctx.beginPath();ctx.arc(x,y,R,0,7);ctx.fill();}
+function progress(){
+  // grobe Stichprobe der Transparenz auf 24x24-Raster
+  const N=24,step=RES/N;let clear=0,tot=N*N;const img=ctx.getImageData(0,0,RES,RES).data;
+  for(let gy=0;gy<N;gy++)for(let gx=0;gx<N;gx++){const px=Math.floor(gx*step+step/2),py=Math.floor(gy*step+step/2);if(img[(py*RES+px)*4+3]<40)clear++;}
+  erased=clear/tot;$('#fill').style.width=Math.round(erased*100)+'%';
+  if(erased>=GOAL_ER && !done) reveal();
+}
+function reveal(){
+  done=true;sfx.find();vib([20,40,20]);
+  ctx.globalCompositeOperation='destination-out';ctx.fillRect(0,0,RES,RES); // restlichen Sand wegblasen -> Foto 100% frei
+  $('#board').classList.add('fade');$('#hint').textContent='✨ Das Fossil erwacht …';$('#fill').style.width='100%';
+  setTimeout(()=>{ if(HAS_PHOTO){ $('#winWho').textContent=`Das versteinerte Wesen erwacht — es ist ${kid()}! Komm zur Dino-Ausgrabung:`; } else {$('#winTitle').textContent='Erweckt!';$('#winWho').textContent=`Freigelegt und zum Leben erweckt — ${kid()} war der Fund! Komm zur Dino-Party:`;} guestName();
+    show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]); }, 1050);
+}
+let moveCount=0;
+function onMove(ev){ if(!drawing||done)return; ev.preventDefault(); const[x,y]=ptToCanvas(ev); erodeAt(x,y); sfx.brush(); if(++moveCount%6===0){vib(4);progress();} }
+function initBoard(){
+  cv=$('#sand');ctx=cv.getContext('2d');fillSand();
+  cv.onpointerdown=e=>{drawing=true;cv.setPointerCapture&&cv.setPointerCapture(e.pointerId);const[x,y]=ptToCanvas(e);erodeAt(x,y);};
+  cv.onpointermove=onMove;
+  cv.onpointerup=cv.onpointercancel=()=>{drawing=false;progress();};
+}
+$('#startBtn').addEventListener('click',()=>{show('s-game');setTimeout(initBoard,30);$('#hint').textContent='Wisch den Sand mit dem Finger weg!';});
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

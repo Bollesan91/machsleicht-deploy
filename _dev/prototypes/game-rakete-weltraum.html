@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Raketen-Schub — Weltraum</title>
+<link rel="stylesheet" href="core/core.css?v=20260702">
+<style>
+  /* E2 Tap-Meter + Timing-Bonus: zünden wenn die Triebwerke glühen -> Rakete startet -> Foto-Slot-Reveal im Bullauge. Auf Shared Core. */
+  :root{--bg1:#070b1c;--bg2:#24306b;--fg:#fff;--accent:#6aa8ff;--accent-dk:#2c63b8;--ink:#04122e}
+  .meter{width:100%;max-width:280px;height:14px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden}
+  .meter .fill{height:100%;width:0%;background:linear-gradient(90deg,#6aa8ff,#bfe0ff);transition:width .12s}
+  .space{position:relative;width:100%;max-width:320px;aspect-ratio:.95;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 50% 20%,#26356b,#070b1c 72%);box-shadow:0 12px 30px rgba(0,0,0,.5);display:flex;align-items:flex-end;justify-content:center}
+  .star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;animation:tw 2.5s infinite}@keyframes tw{0%,100%{opacity:.25}50%{opacity:1}}
+  .rocket{position:relative;width:96px;margin-bottom:12%;cursor:pointer;user-select:none;transition:transform 1.4s cubic-bezier(.4,0,.5,1)}
+  .rbody{width:64px;height:128px;margin:0 auto;border-radius:32px 32px 14px 14px;background:linear-gradient(100deg,#cdd9f0,#9fb0d0);box-shadow:inset -6px 0 10px rgba(0,0,0,.2);position:relative}
+  .rwindow{position:absolute;left:50%;top:30px;width:38px;height:38px;margin-left:-19px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;border:4px solid #7a8aa8;filter:brightness(.6);transition:filter .3s}
+  .fin{position:absolute;bottom:0;width:22px;height:34px;background:#e0533a}.fin.l{left:-8px;border-radius:0 0 0 18px}.fin.r{right:-8px;border-radius:0 0 18px 0}
+  .flame{position:absolute;left:50%;top:128px;width:34px;margin-left:-17px;height:0;background:radial-gradient(circle at 50% 0,#fff,#ffd24d 30%,#ff7a2c 70%,transparent);border-radius:0 0 20px 20px;transition:height .12s}
+  .ign{position:absolute;top:7%;font-size:14px;font-weight:800;letter-spacing:1px}
+  .ign.now{color:#bfe0ff;text-shadow:0 0 10px #6aa8ff}
+  .rocket.lit .rwindow{filter:brightness(1)}
+  .rocket.up{transform:translateY(-260px) scale(.9)}
+  .tapHint{font-size:14px;font-weight:800;opacity:.9}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#eef3ff,#cdd9f7);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🚀";position:absolute;bottom:-8px;right:-10px;font-size:34px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+  .tapBtn{width:90%;max-width:320px}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Raketen-Schub (Tap+Timing)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🚀</div>
+    <h1>Bring die Rakete zum Starten!</h1>
+    <p class="sub">Drücke ZÜNDEN, um Schub aufzubauen. Am meisten bringt es, wenn die Triebwerke blau LEUCHTEN — dann zischt es richtig! Volltanken und ab ins All!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Zum Startplatz 🛰️</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="meter"><div class="fill" id="fill"></div></div>
+    <div class="space" id="space">
+      <div class="ign" id="ign">…</div>
+      <div class="rocket" id="rocket">
+        <div class="rbody"><div class="rwindow"></div><div class="fin l"></div><div class="fin r"></div></div>
+        <div class="flame" id="flame"></div>
+      </div>
+    </div>
+    <button class="btn tapBtn" id="boostBtn">ZÜNDEN 🔥</button>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Abgehoben!</h2>
+      <p class="who" id="winWho">Die Rakete ist gestartet! Komm zur Weltraum-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Raumstation (Stadtpark)</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🚀 Ich starte mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260702"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#070b1c'/><g fill='#fff'><circle cx='40' cy='40' r='2'/><circle cx='160' cy='60' r='2'/><circle cx='60' cy='150' r='2'/></g><path d='M100 30 C124 50 124 110 100 150 C76 110 76 50 100 30Z' fill='#cdd9f0'/><circle cx='100' cy='80' r='14' fill='#6aa8ff'/><path d='M78 120 l-14 24 14 -4z M122 120 l14 24 -14 -4z' fill='#e0533a'/><path d='M92 150 q8 22 16 0z' fill='#ffd24d'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#6aa8ff','#ffd24d','#a35cff','#fff','#e0533a'];
+const sfx={
+  boost(hot){const t=AC().currentTime;note(hot?260:200,t,0.1,{type:'sawtooth',vol:hot?0.1:0.06,glideTo:hot?520:360});noise(t,0.12,{vol:hot?0.12:0.06,freq:hot?500:300,filter:'lowpass'});},
+  lift(){const t=AC().currentTime;note(120,t,0.7,{type:'sawtooth',vol:0.12,glideTo:60});noise(t,0.7,{vol:0.1,freq:260,filter:'lowpass'});},
+  win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+function stars(){ const s=$('#space'); for(let i=0;i<22;i++){const d=document.createElement('div');d.className='star';d.style.left=Math.random()*96+'%';d.style.top=Math.random()*70+'%';d.style.animationDelay=(Math.random()*2.5)+'s';s.appendChild(d);} }
+let thrust=0, glow=0, gdir=1, hot=false, glowT=null, done=false;
+function renderIgn(){ const tg=$('#ign'); tg.textContent=hot?'JETZT — Triebwerke bereit!':'… lädt …'; tg.classList.toggle('now',hot); }
+function startGlow(){ clearInterval(glowT); glow=0;gdir=1; glowT=setInterval(()=>{ if(done)return; glow+=gdir*7; if(glow>=100){glow=100;gdir=-1;} if(glow<=0){glow=0;gdir=1;} hot=glow>=58; renderIgn(); },60); }
+function boost(){
+  if(done)return; const wasHot=hot; thrust=Math.min(100,thrust+(wasHot?13:6)); $('#fill').style.width=thrust+'%';
+  sfx.boost(wasHot); vib(wasHot?[12,18]:7);
+  const fl=$('#flame'); fl.style.height=(wasHot?34:18)+'px'; setTimeout(()=>fl.style.height='8px',120);
+  if(thrust>=100) launch();
+}
+function launch(){
+  done=true; clearInterval(glowT); const r=$('#rocket'); r.classList.add('lit'); $('#ign').textContent='3 … 2 … 1 … START!'; $('#flame').style.height='44px'; sfx.lift(); vib([20,40,20]);
+  setTimeout(()=>{ r.classList.add('up'); }, 500);
+  setTimeout(winReveal, 1600);
+}
+function winReveal(){
+  if(HAS_PHOTO){ $('#winWho').textContent=`Im Bullauge winkt der Captain — das ist ${kid()}! Komm zur Weltraum-Party:`; } else { $('#winTitle').textContent='Abgehoben!'; $('#winWho').textContent=`Die Rakete rauscht ins All — ${kid()} hebt ab! Komm zur Weltraum-Party:`; } guestName();
+  show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]);
+}
+$('#startBtn').addEventListener('click',()=>{ thrust=0;done=false; $('#fill').style.width='0%'; $('#flame').style.height='8px'; $('#rocket').classList.remove('lit','up'); [...document.querySelectorAll('.star')].forEach(s=>s.remove()); stars(); show('s-game'); startGlow(); });
+$('#boostBtn').addEventListener('click',boost);
+$('#rocket').addEventListener('click',boost);
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

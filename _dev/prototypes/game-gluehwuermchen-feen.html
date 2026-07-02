@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Glühwürmchen-Melodie — Feen</title>
+<link rel="stylesheet" href="core/core.css?v=20260702">
+<style>
+  /* E11 Simon/Sequenz: Glühwürmchen-Folge nachtippen (Position+Ton, nicht nur Farbe) -> Foto-Slot-Reveal. Feen. Auf Shared Core. */
+  :root{--bg1:#0e1f2a;--bg2:#2e5e54;--fg:#fff;--accent:#bfe66a;--accent-dk:#5a8a2a;--ink:#16281f}
+  .screen{width:100%;max-width:330px;text-align:center;font-size:16px;font-weight:800;color:#cfeaa0;min-height:24px}
+  .grove{position:relative;width:100%;max-width:330px;aspect-ratio:1.15;border-radius:18px;background:radial-gradient(circle at 50% 65%,#1f4a3e,#0a1822 78%);box-shadow:0 12px 30px rgba(0,0,0,.5),inset 0 0 0 3px rgba(120,200,120,.12);overflow:hidden}
+  .fly{position:absolute;width:64px;height:64px;border-radius:50%;transform:translate(-50%,-50%);cursor:pointer;background:radial-gradient(circle at 50% 45%,rgba(255,255,200,.25),rgba(120,160,60,.12));box-shadow:0 0 0 2px rgba(200,240,150,.2);transition:box-shadow .12s,background .12s,transform .08s;display:flex;align-items:center;justify-content:center;font-size:26px}
+  .fly:active{transform:translate(-50%,-50%) scale(.93)}
+  .fly.lit{background:radial-gradient(circle at 50% 45%,#fffad0,#cfe66a);box-shadow:0 0 26px 8px rgba(220,255,150,.85);transform:translate(-50%,-50%) scale(1.08)}
+  .grove.shake{animation:gsh .3s}@keyframes gsh{0%,100%{transform:translateX(0)}33%{transform:translateX(-7px)}66%{transform:translateX(7px)}}
+  /* Foto-Layer hinter dem Schwarm: fügt sich mit jedem richtigen Ton zusammen (Reveal an Mechanik gekoppelt) */
+  .grovephoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.7);transition:opacity .6s ease,filter .6s ease;pointer-events:none;z-index:0}
+  .grove .fly{z-index:1}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#f3fbe6,#dff0c4);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#16281f;box-shadow:0 0 26px rgba(191,230,106,.6);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🧚";position:absolute;top:-18px;right:-10px;font-size:34px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Glühwürmchen-Melodie (E11 Simon)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🪲</div>
+    <h1>Spiel die Glühwürmchen-Melodie nach!</h1>
+    <p class="sub">Die Glühwürmchen leuchten in einer Reihenfolge auf und summen dazu. Merk sie dir und tippe sie nach — mit jedem richtigen Ton fügt sich aus ihrem Licht langsam ein Bild zusammen.</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Lauschen ✨</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="screen" id="msg">Achtung — die Melodie beginnt …</div>
+    <div class="grove" id="grove"></div>
+    <button class="btn" id="tippBtn" style="background:rgba(255,255,255,.16);font-size:15px;padding:8px 20px">💡 Tipp</button>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Melodie komplett!</h2>
+      <p class="who" id="winWho">Die Melodie ist komplett! Komm zur Feen-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Auf der Feenlichtung</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🧚 Ich flieg mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260702"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#0e1f2a'/><g fill='#bfe66a'><circle cx='60' cy='70' r='6'/><circle cx='140' cy='60' r='6'/><circle cx='150' cy='130' r='6'/><circle cx='56' cy='140' r='6'/></g><g fill='#fffad0' opacity='.6'><circle cx='60' cy='70' r='12'/><circle cx='140' cy='60' r='12'/><circle cx='150' cy='130' r='12'/><circle cx='56' cy='140' r='12'/></g><path d='M100 86 q14 -16 28 0 q-14 18 -28 0z' fill='#bfe66a'/><circle cx='100' cy='110' r='10' fill='#ffe6a0'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#bfe66a','#ffe6a0','#a98cff','#fff','#5a8a2a'];
+const POS=[[26,30],[74,26],[80,72],[22,74]]; const TONES=[392,494,587,698];
+const sfx={
+  tone(i){const t=AC().currentTime;note(TONES[i],t,0.24,{type:'sine',vol:0.12});note(TONES[i]*2,t,0.16,{type:'sine',vol:0.04});},
+  buzz(){note(150,AC().currentTime,0.26,{type:'sawtooth',vol:0.12,glideTo:90});},
+  win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+const GOAL=(ageNum()<=6?3:ageNum()<=9?4:5), FLASH_MS=540; // Länge nach Alter (4–6→3, 7–9→4, 10+→5)
+let seq=[], step=0, accepting=false, done=false, flies=[];
+function sharpen(frac){ const ph=$('#grove').querySelector('.grovephoto'); if(!ph)return; const f=Math.max(0,Math.min(1,frac)); ph.style.opacity=(f<=0?0:(0.25+0.75*f)).toFixed(2); ph.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } /* Blur hinten gewichtet (1-f^2) */
+function buildGrove(){ const g=$('#grove'); g.innerHTML=''; flies=[]; const ph=document.createElement('div'); ph.className='grovephoto'; g.appendChild(ph); POS.forEach((p,i)=>{ const f=document.createElement('div'); f.className='fly'; f.style.left=p[0]+'%'; f.style.top=p[1]+'%'; f.textContent='🪲'; f.addEventListener('click',()=>press(i)); g.appendChild(f); flies.push(f); }); }
+function flash(i){ const f=flies[i]; f.classList.add('lit'); sfx.tone(i); setTimeout(()=>f.classList.remove('lit'),FLASH_MS*0.55); }
+function nextRound(){ seq.push(Math.floor(Math.random()*4)); step=0; playSeq(); }
+function playSeq(){ accepting=false; $('#msg').textContent='Achtung — die Melodie …'; let i=0; const iv=setInterval(()=>{ if(done){clearInterval(iv);return;} if(i>=seq.length){ clearInterval(iv); accepting=true; $('#msg').textContent='Jetzt du — tippe nach!'; return; } flash(seq[i]); i++; }, FLASH_MS); }
+function press(i){
+  if(!accepting||done)return; flash(i);
+  if(i===seq[step]){ step++; if(step===seq.length){ accepting=false; if(seq.length>=GOAL) return win(); sharpen(seq.length/GOAL); $('#msg').textContent='Das Bild wird heller! Noch eine …'; setTimeout(nextRound,750); } }
+  else { accepting=false; sfx.buzz(); vib([30,40,30]); $('#grove').classList.add('shake'); setTimeout(()=>$('#grove').classList.remove('shake'),300); $('#msg').textContent='Daneben — nochmal lauschen!'; setTimeout(playSeq,850); }
+}
+function win(){
+  done=true; sharpen(1); sfx.win(); vib([20,40,20,40,80]); $('#msg').textContent='✨ Die Melodie funkelt!';
+  if(HAS_PHOTO){ $('#winWho').textContent=`Die Glühwürmchen tanzen für ${kid()}! Komm zur Feen-Party:`; } else { $('#winTitle').textContent='Melodie komplett!'; $('#winWho').textContent=`Alle Glühwürmchen leuchten im Takt — ${kid()} hat die Melodie! Komm zur Feen-Party:`; } guestName();
+  setTimeout(()=>{ show('s-win'); confetti(CC); }, 1000);
+}
+$('#startBtn').addEventListener('click',()=>{ seq=[];step=0;done=false;accepting=false; buildGrove(); sharpen(0); show('s-game'); setTimeout(nextRound,500); });
+$('#tippBtn').addEventListener('click',()=>{ if(accepting && !done) press(seq[step]); }); // Tipp: naechstes richtiges Glühwürmchen
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

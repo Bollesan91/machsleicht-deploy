@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Regenbogen-Brücke — Einhorn</title>
+<link rel="stylesheet" href="core/core.css?v=20260702">
+<style>
+  /* E3 Verbinden: 7 Bogen-Steine der Reihe nach -> Regenbogen-Bänder füllen sich -> Einhorn quert -> Foto-Slot-Reveal. Auf Shared Core. */
+  :root{--bg1:#2a1040;--bg2:#7a4ab0;--fg:#fff;--accent:#ff8fd0;--accent-dk:#c24f9a;--ink:#2a1040}
+  .pill{background:rgba(255,255,255,.16);padding:6px 12px;border-radius:999px}
+  .sky{position:relative;width:100%;aspect-ratio:1.1;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#6a4ab0 0%,#b06ad0 55%,#e6c0f0 100%);box-shadow:0 12px 30px rgba(0,0,0,.4);touch-action:manipulation}
+  .sky svg{position:absolute;inset:0;width:100%;height:100%}
+  /* Foto hinter der Brücke: wird mit jedem Bogen klarer (Reveal an Mechanik gekoppelt) */
+  .cphoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.7);transition:opacity .6s ease,filter .6s ease;pointer-events:none}
+  .band{fill:none;stroke-width:13;stroke-linecap:round;opacity:.28;transition:opacity .25s,stroke .25s;cursor:pointer}
+  .band.lit{opacity:1;filter:drop-shadow(0 0 5px currentColor)}
+  .band.next{opacity:.5;animation:pulse 1s infinite}
+  @keyframes pulse{0%,100%{stroke-width:13}50%{stroke-width:19}}
+  .stone{cursor:pointer}
+  .stone circle{fill:#fff;opacity:.55;transition:opacity .2s,r .2s}
+  .stone.lit circle{opacity:0}
+  .stone.next circle{opacity:.95;animation:sp 1s infinite}
+  @keyframes sp{0%,100%{r:7}50%{r:10}}
+  .stone text{fill:#2a1040;font-size:11px;font-weight:800;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+  .uni{position:absolute;left:4%;bottom:6%;font-size:36px;z-index:5;transition:left 1.4s ease,bottom 1.4s ease;filter:drop-shadow(0 3px 4px rgba(0,0,0,.4))}
+  .sky.shake{animation:sh .25s}@keyframes sh{0%,100%{transform:translateX(0)}33%{transform:translateX(-6px)}66%{transform:translateX(6px)}}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#fff0fb,#ffe0f4);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1040;box-shadow:0 0 24px rgba(255,143,208,.6);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🦄";position:absolute;top:-20px;right:-8px;font-size:34px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+  .hint{font-size:13px;opacity:.9;text-align:center}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Regenbogen-Brücke (E3 Verbinden)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🌈</div>
+    <h1>Bau die Regenbogen-Brücke!</h1>
+    <p class="sub">Tippe die leuchtenden Steine der Reihe nach an (der nächste blinkt). Mit jedem Stein erscheint ein Regenbogen-Band und hinter der Brücke wird ein geheimes Bild klarer — wenn alle sieben Farben leuchten, trabt das Einhorn hinüber!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Brücke bauen 🌈</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill">Farben 🌈 <b id="cnt">0</b>/7</span></div>
+    <div class="sky" id="sky">
+      <div class="cphoto" id="cphoto"></div>
+      <svg id="svg" viewBox="0 0 300 200"><g id="bands"></g><g id="stones"></g></svg>
+      <div class="uni" id="uni">🦄</div>
+    </div>
+    <p class="hint" id="hint">Tippe den blinkenden Stein.</p>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Brücke fertig!</h2>
+      <p class="who" id="winWho">Die Brücke ist fertig! Komm zur Einhorn-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Auf der Wolken-Wiese</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🦄 Ich komme mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260702"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#7a4ab0'/><g fill='none' stroke-width='7'><path d='M40 150 a60 60 0 0 1 120 0' stroke='#e84a4a'/><path d='M50 150 a50 50 0 0 1 100 0' stroke='#ffd24d'/><path d='M60 150 a40 40 0 0 1 80 0' stroke='#4ec46e'/><path d='M70 150 a30 30 0 0 1 60 0' stroke='#4ea0ff'/></g><path d='M120 96 l5 -30 8 4 -6 28' fill='#fff'/><ellipse cx='112' cy='120' rx='26' ry='20' fill='#fff'/><circle cx='104' cy='114' r='3' fill='#2a1040'/><path d='M132 120 q14 -4 22 6' stroke='#ff8fd0' stroke-width='5' fill='none'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#ff8fd0','#ffd24d','#4ec46e','#4ea0ff','#b06ad0'];
+const COLORS=['#e84a4a','#ff8a3c','#ffd24d','#4ec46e','#4ea0ff','#6a6ad0','#b06ad0'];
+const SCALE=[523,587,659,698,784,880,988];
+const sfx={
+  fill(i){note(SCALE[Math.min(i,SCALE.length-1)],AC().currentTime,0.16,{type:'sine',vol:0.14});},
+  wrong(){note(200,AC().currentTime,0.14,{type:'triangle',vol:0.1,glideTo:150});},
+  cross(){const t=AC().currentTime;note(660,t,0.2,{type:'sine',vol:0.08,glideTo:990});},
+  win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));[1568,2093].forEach((f,i)=>note(f,t+0.46+i*0.09,0.5,{type:'sine',vol:0.06}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+const CX=150, CY=178; const R0=140, DR=15; // 7 Bögen von außen (rot) nach innen (violett)
+let next=0,done=false;
+function sharpen(frac){ const p=$('#cphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.25+0.75*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function arcPath(r){ return `M ${CX-r} ${CY} A ${r} ${r} 0 0 1 ${CX+r} ${CY}`; }
+function build(){
+  next=0;done=false;$('#cnt').textContent=0; sharpen(0); $('#uni').style.left='4%'; $('#uni').style.bottom='6%';
+  const bg=$('#bands'); bg.innerHTML=''; const sg=$('#stones'); sg.innerHTML='';
+  COLORS.forEach((col,i)=>{
+    const r=R0-i*DR;
+    const p=document.createElementNS('http://www.w3.org/2000/svg','path');
+    p.setAttribute('class','band'+(i===0?' next':'')); p.setAttribute('d',arcPath(r)); p.setAttribute('stroke','#fff'); p.dataset.i=i;
+    p.addEventListener('click',()=>tap(i)); bg.appendChild(p);
+    // Stein am Scheitel jedes Bogens
+    const st=document.createElementNS('http://www.w3.org/2000/svg','g');
+    st.setAttribute('class','stone'+(i===0?' next':'')); st.dataset.i=i;
+    st.innerHTML=`<circle cx="${CX}" cy="${CY-r}" r="8"></circle><text x="${CX}" y="${CY-r}">${i+1}</text>`;
+    st.addEventListener('click',()=>tap(i)); sg.appendChild(st);
+  });
+}
+function tap(i){
+  if(done)return;
+  if(i!==next){ sfx.wrong();vib([25,30,25]);$('#sky').classList.add('shake');setTimeout(()=>$('#sky').classList.remove('shake'),250);return; }
+  const band=$('.band[data-i="'+i+'"]'); band.setAttribute('stroke',COLORS[i]); band.classList.add('lit'); band.classList.remove('next');
+  const st=$('.stone[data-i="'+i+'"]'); st.classList.add('lit'); st.classList.remove('next');
+  sfx.fill(i);vib(10);next++;$('#cnt').textContent=next;sharpen(next/COLORS.length);
+  if(next<COLORS.length){ $('.band[data-i="'+next+'"]').classList.add('next'); $('.stone[data-i="'+next+'"]').classList.add('next'); }
+  else win();
+}
+function win(){
+  done=true;sharpen(1);$('#hint').textContent='Das Einhorn trabt hinüber …';sfx.cross();vib([10,30,10,30]);
+  $('#uni').style.left='84%'; $('#uni').style.bottom='52%';
+  if(HAS_PHOTO){ $('#winWho').textContent=`Am Ende des Regenbogens wartet ${kid()}! Komm zur Einhorn-Party:`; } else {$('#winTitle').textContent='Brücke fertig!';$('#winWho').textContent=`Am Ende des Regenbogens funkelt das Einhorn — ${kid()} hat die Brücke gebaut! Komm zur Einhorn-Party:`;} guestName();
+  setTimeout(()=>{ show('s-win');confetti(CC);sfx.win(); }, 1500);
+}
+function tip(){ if(!done) tap(next); } // Tipp: nächsten Stein für dich setzen
+$('#startBtn').addEventListener('click',()=>{build();show('s-game');$('#hint').textContent='Tippe den blinkenden Stein.';});
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

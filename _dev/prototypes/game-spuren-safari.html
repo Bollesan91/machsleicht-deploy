@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Spuren-Pfad — Safari</title>
+<link rel="stylesheet" href="core/core.css?v=20260702">
+<style>
+  /* Pfad-folgen: leuchtende Pfotenspuren der Reihe nach antippen, Löwe schleicht zum Wasserloch -> Foto-Slot-Reveal. Safari. Auf Shared Core. */
+  :root{--bg1:#7a5418;--bg2:#e0a23a;--fg:#fff;--accent:#e0a23a;--accent-dk:#a86f17;--ink:#3a2c14}
+  .hud{font-weight:700;font-size:14px}.pill{background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px}
+  .land{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 50% 30%,#d9b25a,#8a6a2e 78%);box-shadow:0 12px 30px rgba(0,0,0,.45)}
+  .grass{position:absolute;left:0;right:0;bottom:0;height:22%;background:repeating-linear-gradient(90deg,#9a8a3a,#9a8a3a 10px,#8a7a2e 10px,#8a7a2e 20px);opacity:.6}
+  .nest{position:absolute;font-size:34px;transform:translate(-50%,-50%)}
+  .print{position:absolute;width:42px;height:42px;border-radius:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;opacity:.4;transition:opacity .2s,transform .12s;filter:grayscale(.5)}
+  .print.lit{opacity:1;filter:none;transform:translate(-50%,-50%) scale(1.05)}
+  .print.next{opacity:.85;animation:pn 1s infinite}
+  @keyframes pn{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.22);filter:drop-shadow(0 0 8px #fff0a0)}}
+  .walker{position:absolute;font-size:40px;transform:translate(-50%,-60%);transition:left .35s ease,top .35s ease;z-index:4;filter:drop-shadow(0 3px 3px rgba(0,0,0,.4))}
+  .land.shake{animation:sh .25s}@keyframes sh{0%,100%{transform:translateX(0)}33%{transform:translateX(-6px)}66%{transform:translateX(6px)}}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#fffaf0,#f3e3bf);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2c14;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🦁";position:absolute;bottom:-8px;right:-10px;font-size:36px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Spuren-Pfad (Pfad-folgen)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🐾</div>
+    <h1>Folge der Löwen-Spur!</h1>
+    <p class="sub">Frische Pfotenabdrücke führen quer durch die Savanne. Tippe immer die leuchtende Spur — der Löwe schleicht Schritt für Schritt weiter. Wohin führt die Fährte?</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Spur aufnehmen 🐾</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill">Spuren <b id="cnt">0</b>/<b id="tot">6</b></span></div>
+    <div class="land" id="land"><div class="grass"></div></div>
+    <p class="sub" id="hint">Tippe die leuchtende Pfotenspur.</p>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Fährte gefolgt!</h2>
+      <p class="who" id="winWho">Die Spur führt ans Wasserloch! Komm zur Safari-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Im Garten-Dschungel</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🦁 Ich bin dabei!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260702"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#7a5418'/><g fill='#e8d49a'><ellipse cx='58' cy='152' rx='12' ry='15'/><ellipse cx='90' cy='124' rx='12' ry='15'/><ellipse cx='78' cy='90' rx='12' ry='15'/><ellipse cx='116' cy='70' rx='12' ry='15'/></g><circle cx='150' cy='56' r='28' fill='#e0a23a'/><circle cx='150' cy='56' r='20' fill='#f0c060'/><circle cx='142' cy='52' r='4' fill='#3a2c14'/><circle cx='158' cy='52' r='4' fill='#3a2c14'/><path d='M144 64 q6 6 12 0' stroke='#3a2c14' stroke-width='3' fill='none'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#e0a23a','#37c46e','#c0392b','#fff','#a86f17'];
+const sfx={
+  step(i){const SC=[392,440,494,523,587,659,740,830];note(SC[Math.min(i,SC.length-1)],AC().currentTime,0.12,{type:'sine',vol:0.12});note(120,AC().currentTime,0.1,{type:'sine',vol:0.07,glideTo:70});},
+  nope(){note(180,AC().currentTime,0.14,{type:'triangle',vol:0.1,glideTo:130});},
+  win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+const TRAIL=[[14,80],[31,63],[48,72],[40,46],[61,40],[76,53],[88,26]]; // gewundene Spur, letzter = Wasserloch
+let next=1, done=false, prints=[];
+function build(){
+  next=1;done=false;$('#cnt').textContent=0;$('#tot').textContent=TRAIL.length-1;
+  const land=$('#land'); [...land.querySelectorAll('.print,.walker,.nest')].forEach(e=>e.remove());
+  const nest=document.createElement('div');nest.className='nest';nest.textContent='💧';nest.style.left=TRAIL[TRAIL.length-1][0]+'%';nest.style.top=TRAIL[TRAIL.length-1][1]+'%';land.appendChild(nest);
+  prints=TRAIL.map((p,i)=>{ const el=document.createElement('div');el.className='print'+(i===0?' lit':'')+(i===1?' next':'');el.textContent='🐾';el.style.left=p[0]+'%';el.style.top=p[1]+'%';el.dataset.i=i;el.addEventListener('click',()=>tap(i));land.appendChild(el);return el; });
+  const w=document.createElement('div');w.className='walker';w.id='walker';w.textContent='🦁';w.style.left=TRAIL[0][0]+'%';w.style.top=TRAIL[0][1]+'%';land.appendChild(w);
+}
+function tap(i){
+  if(done)return;
+  if(i!==next){ sfx.nope();vib([25,30,25]);$('#land').classList.add('shake');setTimeout(()=>$('#land').classList.remove('shake'),250);return; }
+  prints[i].classList.add('lit');prints[i].classList.remove('next');
+  const w=$('#walker');w.style.left=TRAIL[i][0]+'%';w.style.top=TRAIL[i][1]+'%';
+  sfx.step(i);vib(10);next++;$('#cnt').textContent=next-1;
+  if(next<TRAIL.length){ prints[next].classList.add('next'); }
+  else setTimeout(win,420);
+}
+function win(){
+  done=true;$('#hint').textContent='';vib([20,40,20,40,80]);
+  if(HAS_PHOTO){ $('#winWho').textContent=`Am Wasserloch wartet das seltenste Tier: das ist ${kid()}! Komm zur Safari-Party:`; } else {$('#winTitle').textContent='Fährte gefolgt!';$('#winWho').textContent=`Am Wasserloch trinkt ein prächtiger Löwe — ${kid()} ist am Ziel! Komm zur Safari-Party:`;} guestName();
+  setTimeout(()=>{ show('s-win');confetti(CC);sfx.win(); }, 500);
+}
+$('#startBtn').addEventListener('click',()=>{build();show('s-game');$('#hint').textContent='Tippe die leuchtende Pfotenspur.';});
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

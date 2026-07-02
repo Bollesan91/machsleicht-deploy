@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Helden-Strahl — Superheld</title>
+<link rel="stylesheet" href="core/core.css?v=20260702">
+<style>
+  /* E6 Schleuder/Zielen: Power-Gauge im grünen Bereich -> Helden-Strahl wehrt anfliegenden Meteor ab -> 3 abgewehrt -> Foto-Slot-Reveal. Auf Shared Core. */
+  :root{--bg1:#16224a;--bg2:#3a6ad0;--fg:#fff;--accent:#ffcf33;--accent-dk:#c79a16;--ink:#14213a;--beam:#56e0ff}
+  .field{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 50% 18%,#3a6ad0,#16224a 72%);box-shadow:0 12px 30px rgba(0,0,0,.45);display:flex;align-items:flex-end;justify-content:center}
+  .star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;animation:tw 2.5s infinite}@keyframes tw{0%,100%{opacity:.25}50%{opacity:1}}
+  .meteor{position:absolute;left:50%;top:14%;transform:translateX(-50%);font-size:44px;filter:drop-shadow(0 0 8px #ff8a3c);transition:opacity .15s,transform .15s}
+  .meteor.boom{animation:boom .35s forwards}@keyframes boom{to{transform:translateX(-50%) scale(1.8) rotate(20deg);opacity:0}}
+  .hero3{position:relative;font-size:46px;margin-bottom:8%;z-index:3;filter:drop-shadow(0 3px 4px rgba(0,0,0,.5))}
+  .beam{position:absolute;left:50%;bottom:16%;width:14px;margin-left:-7px;height:0;background:linear-gradient(0deg,var(--beam),#fff);border-radius:8px;box-shadow:0 0 16px var(--beam);opacity:0;z-index:2}
+  .beam.fire{opacity:1;height:64%;transition:height .12s,opacity .12s}
+  .ign{position:absolute;top:6%;font-size:13px;font-weight:800;letter-spacing:1px;opacity:.9}
+  .gauge{position:relative;width:90%;max-width:300px;height:18px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden;margin-top:6px}
+  .gauge .zone{position:absolute;top:0;bottom:0;left:55%;width:30%;background:rgba(86,224,255,.45)}
+  .gauge .pin{position:absolute;top:-3px;bottom:-3px;width:5px;background:#fff;border-radius:3px;left:0;box-shadow:0 0 6px #fff}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#fff7e0,#ffe6a8);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:4px solid var(--accent-dk);position:relative}
+  .invite::before{content:"⚡ HELD:IN DES TAGES ⚡";position:absolute;top:-1px;left:0;right:0;background:var(--accent);color:var(--ink);font-weight:900;font-size:12px;letter-spacing:1px;padding:3px 0;border-radius:12px 12px 0 0}
+  .hero{width:140px;height:140px;border-radius:50%;margin:18px auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#14213a;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🦸";position:absolute;bottom:-8px;right:-10px;font-size:34px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+  .tapBtn{width:90%;max-width:320px}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Helden-Strahl (E6 Zielen)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">⚡</div>
+    <h1>Wehr die Meteore ab!</h1>
+    <p class="sub">Drei Meteore fliegen auf die Stadt zu. Tippe <b>STRAHL</b>, wenn der Zeiger im blauen Bereich steht — dann trifft der Helden-Strahl genau und lenkt den Meteor ab. Drei sichere Treffer retten die Stadt!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Kräfte laden ⚡</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill" style="background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px">Abgewehrt ⚡ <b id="hits">0</b>/3</span></div>
+    <div class="field" id="field">
+      <div class="ign" id="ign">…</div>
+      <div class="meteor" id="meteor">☄️</div>
+      <div class="beam" id="beam"></div>
+      <div class="hero3" id="hero3">🦸</div>
+    </div>
+    <div class="gauge"><div class="zone"></div><div class="pin" id="pin"></div></div>
+    <button class="btn tapBtn" id="fireBtn">STRAHL ⚡</button>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Stadt gerettet!</h2>
+      <p class="who" id="winWho">Stadt gerettet! Komm zur Superhelden-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Im Helden-Hauptquartier</dd></dl>
+      <button class="btn ja" id="rsvpBtn">⚡ Ich rette mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260702"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#16224a'/><g fill='#fff'><circle cx='40' cy='40' r='2'/><circle cx='160' cy='56' r='2'/><circle cx='60' cy='150' r='2'/></g><circle cx='100' cy='110' r='40' fill='none' stroke='#56e0ff' stroke-width='6'/><path d='M100 74 v72 M64 110 h72' stroke='#56e0ff' stroke-width='4'/><path d='M100 40 l9 22 -18 0z' fill='#ffcf33'/><circle cx='100' cy='110' r='14' fill='#ffcf33'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#ffcf33','#56e0ff','#ff5b7f','#fff','#3a6ad0'];
+const sfx={
+  zap(hit){const t=AC().currentTime;if(hit){note(880,t,0.14,{type:'sawtooth',vol:0.1,glideTo:1600});noise(t,0.12,{vol:0.08,freq:1800});}else{note(300,t,0.12,{type:'sawtooth',vol:0.07,glideTo:160});}},
+  boom(){const t=AC().currentTime;note(120,t,0.3,{type:'sine',vol:0.2,glideTo:50});noise(t,0.2,{vol:0.16,freq:400,filter:'lowpass'});},
+  win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+function stars(){ const s=$('#field'); for(let i=0;i<20;i++){const d=document.createElement('div');d.className='star';d.style.left=Math.random()*96+'%';d.style.top=Math.random()*60+'%';d.style.animationDelay=(Math.random()*2.5)+'s';s.appendChild(d);} }
+let power=0,pdir=1,gaugeT=null,hits=0,busy=false,done=false;
+const ZONE_LO=55,ZONE_HI=85;
+function startGauge(){ power=0;pdir=1; clearInterval(gaugeT); gaugeT=setInterval(()=>{ if(done)return; power+=pdir*5; if(power>=100){power=100;pdir=-1;} if(power<=0){power=0;pdir=1;} $('#pin').style.left=power+'%'; },45); }
+function nextMeteor(){ const m=$('#meteor'); m.className='meteor'; m.style.opacity='1'; m.style.transform='translateX(-50%)'; m.style.left=(28+Math.random()*44)+'%'; $('#ign').textContent='Meteor im Anflug!'; }
+function fire(){
+  if(busy||done)return; busy=true; const p=power; const hit=(p>=ZONE_LO && p<=ZONE_HI);
+  const b=$('#beam'); b.classList.add('fire'); sfx.zap(hit); vib(hit?[12,20]:7);
+  setTimeout(()=>b.classList.remove('fire'),200);
+  setTimeout(()=>{
+    if(hit){ hits++; $('#hits').textContent=hits; const m=$('#meteor'); m.classList.add('boom'); sfx.boom(); vib([20,40]); $('#ign').textContent='Abgewehrt!';
+      if(hits>=3) return winSeq();
+      setTimeout(()=>{ nextMeteor(); busy=false; }, 500); }
+    else { $('#ign').textContent='Daneben — nochmal!'; busy=false; }
+  }, 180);
+}
+function winSeq(){
+  done=true; clearInterval(gaugeT); $('#fireBtn').disabled=true; $('#ign').textContent='Stadt gerettet!'; vib([20,40,20,40,80]);
+  if(HAS_PHOTO){ $('#winWho').textContent=`Die geheime Superkraft der Stadt ist ${kid()}! Komm zur Superhelden-Party:`; } else { $('#winTitle').textContent='Stadt gerettet!'; $('#winWho').textContent=`Der letzte Meteor zerplatzt am Helden-Strahl — ${kid()} hat die Stadt gerettet! Komm zur Superhelden-Party:`; } guestName();
+  setTimeout(()=>{ show('s-win'); confetti(CC); sfx.win(); }, 700);
+}
+function tip(){ if(done)return; hits++; $('#hits').textContent=hits; vib([15,25]); if(hits>=3) winSeq(); } // Tipp: ein Meteor-Treffer für dich
+$('#startBtn').addEventListener('click',()=>{ hits=0;done=false;busy=false; $('#hits').textContent=0; $('#fireBtn').disabled=false; [...document.querySelectorAll('.star')].forEach(s=>s.remove()); stars(); nextMeteor(); show('s-game'); startGauge(); });
+$('#fireBtn').addEventListener('click',fire);
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

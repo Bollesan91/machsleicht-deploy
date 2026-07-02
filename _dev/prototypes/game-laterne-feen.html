@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Wunsch-Laterne — Feen</title>
+<link rel="stylesheet" href="core/core.css?v=20260702">
+<style>
+  /* E2 Tap-Meter: Laterne antippen -> Licht füllt -> steigt auf -> Foto-Slot-Reveal im Licht. Feen. Auf Shared Core. */
+  :root{--bg1:#1a0f33;--bg2:#4a2d6e;--fg:#fff;--accent:#ffc6e0;--accent-dk:#b05a8a;--ink:#2a1840}
+  .meter{width:100%;max-width:280px;height:14px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden}
+  .meter .fill{height:100%;width:0%;background:linear-gradient(90deg,#ffe6a0,#ffc6e0);transition:width .15s}
+  .sky{position:relative;width:100%;max-width:320px;aspect-ratio:.8;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 50% 80%,#6a4a9a,#1a0f33 75%);box-shadow:0 12px 30px rgba(0,0,0,.5);display:flex;align-items:flex-end;justify-content:center}
+  .fly{position:absolute;width:5px;height:5px;border-radius:50%;background:#ffe6a0;box-shadow:0 0 6px 2px rgba(255,230,160,.8);animation:tw 2.5s infinite}
+  @keyframes tw{0%,100%{opacity:.2}50%{opacity:1}}
+  .lantern{position:relative;width:120px;margin-bottom:8%;cursor:pointer;user-select:none;transition:transform 1.4s cubic-bezier(.4,0,.4,1),opacity .6s}
+  .lbody{width:90px;height:110px;margin:0 auto;border-radius:46px 46px 30px 30px;background:radial-gradient(circle at 50% 40%,#7a5a3a,#4a3422);box-shadow:inset 0 0 0 3px #2a1d12;position:relative;overflow:hidden}
+  .glow{position:absolute;inset:6px;border-radius:40px 40px 24px 24px;background:radial-gradient(circle at 50% 45%,#fff7d6,#ffd24d);opacity:.15;transition:opacity .15s}
+  .lphoto{position:absolute;inset:14px;border-radius:36px 36px 20px 20px;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;transition:opacity .6s}
+  .lcap{width:40px;height:12px;margin:0 auto;background:#5a4430;border-radius:6px 6px 0 0}
+  .lantern.up{transform:translateY(-220px) scale(1.05)}
+  .lantern.lit .glow{opacity:1}
+  .lantern.lit .lphoto{opacity:1}
+  .tapHint{font-size:14px;font-weight:800;opacity:.9}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#fdf2fb,#ecd6f6);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1840;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🧚";position:absolute;top:-18px;right:-10px;font-size:34px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Wunsch-Laterne (E2 Tap-Meter)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🏮</div>
+    <h1>Lass die Wunsch-Laterne leuchten!</h1>
+    <p class="sub">Tippe immer wieder auf die Laterne, bis sie hell genug strahlt. Dann steigt sie in den Feenhimmel — und dein Wunsch wird wahr!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Wunsch beginnen ✨</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="meter"><div class="fill" id="fill"></div></div>
+    <div class="sky" id="sky">
+      <div class="lantern" id="lantern">
+        <div class="lcap"></div>
+        <div class="lbody"><div class="glow" id="glow"></div><div class="lphoto" id="lphoto"></div></div>
+      </div>
+    </div>
+    <div class="tapHint" id="tapHint">Tipp-tipp auf die Laterne!</div>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Wunsch erfüllt!</h2>
+      <p class="who" id="winWho">Alle Laternen leuchten! Komm zur Feen-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Auf der Feenlichtung</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🧚 Ich flieg mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260702"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#1a0f33'/><circle cx='100' cy='104' r='44' fill='#ffd24d' opacity='.35'/><path d='M82 60 h36 v8 h-36z' fill='#5a4430'/><path d='M78 70 q22 -8 44 0 v66 q-22 10 -44 0z' fill='#ffe6a0'/><path d='M78 70 q22 -8 44 0 v66 q-22 10 -44 0z' fill='none' stroke='#b08a3a' stroke-width='3'/><path d='M100 80 l5 12 13 1 -10 9 3 13 -11 -7 -11 7 3 -13 -10 -9 13 -1z' fill='#fff7d6'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#ffc6e0','#ffe6a0','#a98cff','#fff','#b05a8a'];
+const sfx={
+  tap(p){note(360+p*5,AC().currentTime,0.05,{type:'sine',vol:0.08});},
+  sparkle(){const t=AC().currentTime;note(880,t,0.08,{type:'triangle',vol:0.08});note(1320,t+0.05,0.12,{type:'triangle',vol:0.07});},
+  rise(){const t=AC().currentTime;note(523,t,0.6,{type:'sine',vol:0.1,glideTo:1047});},
+  win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+function flies(){ const s=$('#sky'); for(let i=0;i<14;i++){const f=document.createElement('div');f.className='fly';f.style.left=Math.random()*92+'%';f.style.top=Math.random()*70+'%';f.style.animationDelay=(Math.random()*2.5)+'s';s.appendChild(f);} }
+let prog=0,done=false,lastMile=0;
+function tap(){
+  if(done)return; prog=Math.min(100,prog+8); $('#fill').style.width=prog+'%';
+  $('#glow').style.opacity=Math.max(.15,prog/100); sfx.tap(prog); vib(6);
+  if(prog>=40 && lastMile<1){lastMile=1;sfx.sparkle();$('#tapHint').textContent='Heller … weiter!';}
+  if(prog>=75 && lastMile<2){lastMile=2;sfx.sparkle();$('#tapHint').textContent='Gleich hebt sie ab!';}
+  if(prog>=100) liftOff();
+}
+function liftOff(){
+  done=true; $('#tapHint').textContent=''; const lan=$('#lantern'); lan.classList.add('lit'); sfx.rise(); vib([20,40,20]);
+  setTimeout(()=>{ lan.classList.add('up'); }, 350);
+  setTimeout(winReveal, 1500);
+}
+function winReveal(){
+  if(HAS_PHOTO){ $('#winWho').textContent=`Der schönste Wunsch im Feenwald ist ${kid()}! Komm zur Feen-Party:`; } else { $('#winTitle').textContent='Wunsch erfüllt!'; $('#winWho').textContent=`Die Laterne strahlt heller als alle Sterne — ${kid()} hat sie gefüllt! Komm zur Feen-Party:`; } guestName();
+  show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]);
+}
+$('#startBtn').addEventListener('click',()=>{prog=0;done=false;lastMile=0;$('#fill').style.width='0%';$('#glow').style.opacity='.15';$('#lantern').classList.remove('lit','up');$('#tapHint').textContent='Tipp-tipp auf die Laterne!';[...document.querySelectorAll('.fly')].forEach(f=>f.remove());flies();show('s-game');});
+$('#lantern').addEventListener('click',tap);
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Tatort-Suche — Detektiv</title>
+<link rel="stylesheet" href="core/core.css?v=20260702">
+<style>
+  /* E7 Wimmelbild — nur Spiel-Eigenes; Skelett aus core.css. */
+  :root{--bg1:#1c1813;--bg2:#3b352a;--fg:#f3ead6;--accent:#d6a64a;--accent-dk:#9c7320;--ink:#2a241a;--paper:#efe6d2}
+  .field{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:repeating-linear-gradient(45deg,#564a35,#564a35 16px,#4d4330 16px,#4d4330 32px);box-shadow:0 12px 30px rgba(0,0,0,.55),inset 0 0 60px rgba(0,0,0,.5)}
+  .field::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 45%,transparent,rgba(0,0,0,.45));pointer-events:none}
+  /* Beweisfoto: entwickelt sich mit jeder Lupe weiter (Reveal an Mechanik gekoppelt) */
+  .fieldphoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease;pointer-events:none}
+  .item{position:absolute;transform:translate(-50%,-50%);font-size:23px;cursor:pointer;filter:drop-shadow(0 1px 1px rgba(0,0,0,.5));transition:transform .12s;user-select:none}
+  .item.deco{opacity:.92}
+  .item.deco.miss{animation:wob .3s}@keyframes wob{0%,100%{transform:translate(-50%,-50%) rotate(0)}33%{transform:translate(-50%,-50%) rotate(-12deg)}66%{transform:translate(-50%,-50%) rotate(12deg)}}
+  .item.clue{font-size:20px}
+  .item.clue.got{animation:found .5s forwards;pointer-events:none;z-index:5}
+  @keyframes found{0%{transform:translate(-50%,-50%) scale(1)}40%{transform:translate(-50%,-50%) scale(1.7)}100%{transform:translate(-50%,-50%) scale(1.25)}}
+  .item.clue.got::after{content:"✓";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:15px;color:#37c46e;font-weight:900;text-shadow:0 0 4px #000}
+  .scan{position:absolute;left:0;right:0;height:34%;top:-40%;background:linear-gradient(180deg,transparent,rgba(214,166,74,.18),transparent);pointer-events:none}
+  /* Steckbrief / Reveal */
+  .poster{width:100%;background:linear-gradient(170deg,#f3ead2,#e2d3ad);color:var(--ink);border-radius:14px;padding:18px 20px 22px;box-shadow:0 14px 40px rgba(0,0,0,.5);text-align:center;border:4px double #6b5320;position:relative}
+  .wantedTop{font-family:Georgia,serif;font-weight:900;letter-spacing:5px;font-size:24px;color:#6b5320;border-bottom:3px double #6b5320;padding-bottom:6px;margin-bottom:12px}
+  .hero{width:150px;height:150px;border-radius:8px;margin:0 auto 6px;border:5px solid #6b5320;background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a2418;box-shadow:0 6px 16px rgba(0,0,0,.35);filter:sepia(.25) contrast(1.05);animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  @keyframes pop{from{transform:scale(.3) rotate(-6deg);opacity:0}to{transform:none;opacity:1}}
+  .poster h2{font-family:Georgia,serif;font-size:22px;margin:8px 0 2px}.poster .who{font-size:16px;font-weight:800;color:#7a4a18}
+  .poster dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.poster dt{font-size:20px}.poster dd{font-weight:700}
+  .stamp{position:absolute;top:10px;right:-6px;transform:rotate(12deg);background:#c0392b;color:#fff;font-weight:900;font-size:12px;letter-spacing:1px;padding:4px 10px;border-radius:4px;box-shadow:0 2px 6px rgba(0,0,0,.4);opacity:.92}
+  .hint{font-size:13px;opacity:.85;text-align:center}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Tatort-Suche (E7 Wimmelbild)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🔎</div>
+    <h1>Wer hat die Geburtstagstorte stibitzt?</h1>
+    <p class="sub">Im Detektivbüro herrscht Chaos. Finde die <b>5 versteckten Lupen</b> 🔍 zwischen all dem Krimskrams — mit jeder Lupe entwickelt sich das Beweisfoto weiter, bis der Fall gelöst ist!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Ermittlung starten 🕵️</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill">Hinweise 🔍 <b id="cnt">0</b>/5</span></div>
+    <div class="field" id="field"></div>
+    <p class="hint">Tipp auf die Lupen — Vorsicht, der Schreibtisch ist voll!</p>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="poster">
+      <div class="stamp">FALL GELÖST</div>
+      <div class="wantedTop">EHRENGAST</div>
+      <div class="hero"></div>
+      <h2 id="winTitle">Gefunden!</h2>
+      <p class="who" id="winWho">Die geheime Hauptperson im Detektivbüro! Komm zur Detektiv-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Geheim-HQ, Detektivweg 7</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🕵️ Ich ermittle mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260702"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#d9cba8'/><circle cx='100' cy='84' r='30' fill='#4a4030'/><path d='M55 165 q45 -46 90 0z' fill='#4a4030'/><rect x='62' y='70' width='76' height='13' rx='6' fill='#2a241a'/><path d='M70 56 q30 -20 60 0' stroke='#2a241a' stroke-width='9' fill='none'/><circle cx='150' cy='150' r='20' fill='none' stroke='#7a4a18' stroke-width='7'/><line x1='164' y1='164' x2='184' y2='184' stroke='#7a4a18' stroke-width='8' stroke-linecap='round'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#d6a64a','#37c46e','#c0392b','#fff','#9c7320'];
+const sfx={find(){const t=AC().currentTime;note(660,t,0.1,{type:'triangle',vol:0.14});note(990,t+0.07,0.18,{type:'triangle',vol:0.13});},no(){noise(AC().currentTime,0.09,{vol:0.06,freq:240});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
+const DECOS=['📚','📎','🗂️','🔑','☎️','🖊️','📌','📐','🧾','🗝️','📰','🕰️','🧷','📓','🔦','🧮','📁','✏️','🖇️','📇','🗃️','🔒','📋','🖍️','🖌️','📒','🗒️','🪧'];
+const CLUE_POS=[[20,24],[72,30],[44,52],[80,70],[26,80]];
+let found=0,done=false;
+function sharpen(frac){ const p=document.querySelector('#field .fieldphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function tap(el,isClue){
+  if(done)return;
+  if(isClue){ if(el.classList.contains('got'))return; el.classList.add('got'); found++; $('#cnt').textContent=found; sharpen(found/5); sfx.find(); vib(15); if(found>=5) winSeq(); }
+  else { el.classList.add('miss'); setTimeout(()=>el.classList.remove('miss'),300); sfx.no(); vib(8); }
+}
+function layout(){
+  const f=$('#field'); f.innerHTML=''; const ph=document.createElement('div'); ph.className='fieldphoto'; f.appendChild(ph); const items=[];
+  CLUE_POS.forEach(p=>items.push({c:true,x:p[0],y:p[1]}));
+  for(let i=0;i<26;i++){ items.push({c:false,x:6+Math.random()*88,y:8+Math.random()*84,e:DECOS[i%DECOS.length]}); }
+  for(let i=items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]];}
+  items.forEach(it=>{ const s=document.createElement('span'); s.className='item '+(it.c?'clue':'deco'); s.style.left=it.x+'%'; s.style.top=it.y+'%'; s.textContent=it.c?'🔍':it.e; s.addEventListener('click',()=>tap(s,it.c)); f.appendChild(s); });
+  const scan=document.createElement('div'); scan.className='scan'; f.appendChild(scan);
+}
+function winSeq(){
+  done=true; sharpen(1); sfx.win(); vib([20,40,20,40,80]);
+  if(HAS_PHOTO){ $('#winWho').textContent=`Die geheime Hauptperson ist ${kid()}! Komm zur Detektiv-Party:`; }
+  else { $('#winTitle').textContent='Fall gelöst!'; $('#winWho').textContent=`Auf der Ehrentafel steht: Fall gelöst — ${kid()} war die beste Spürnase! Komm zur Detektiv-Party:`; }
+  guestName();
+  setTimeout(()=>{ show('s-win'); confetti(CC); }, 650);
+}
+function tip(){ if(done)return; const c=document.querySelector('.item.clue:not(.got)'); if(c) c.click(); } // Tipp: einen Hinweis aufdecken
+$('#startBtn').addEventListener('click',()=>{found=0;done=false;$('#cnt').textContent=0;layout();show('s-game');});
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

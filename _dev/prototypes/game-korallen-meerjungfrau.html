@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Korallen-Slalom — Meerjungfrau</title>
+<link rel="stylesheet" href="core/core.css?v=20260702">
+<style>
+  /* Steuern/Fangen: Meerjungfrau steuern, fallende Perlen fangen (Korallen blocken nur) -> Foto-Slot-Reveal. Auf Shared Core. */
+  :root{--bg1:#0a2a4a;--bg2:#1d8aa8;--fg:#fff;--accent:#ff8fc7;--accent-dk:#c2418a;--ink:#0a2236}
+  .wrap,.scene{gap:12px}
+  .hud{font-weight:700;font-size:14px}
+  .sea{position:relative;width:100%;aspect-ratio:.82;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#2bb6d4 0%,#1d7aa8 55%,#0a3a5a 100%);box-shadow:0 12px 30px rgba(0,0,0,.4)}
+  .floor{position:absolute;left:0;right:0;bottom:0;height:12%;background:linear-gradient(180deg,#caa24a,#9a7a35)}
+  .drop{position:absolute;transform:translate(-50%,-50%);font-size:30px;z-index:2;filter:drop-shadow(0 2px 2px rgba(0,0,0,.3))}
+  .drop.gone{animation:dp .25s forwards}@keyframes dp{to{transform:translate(-50%,-50%) scale(1.5);opacity:0}}
+  .mermaid{position:absolute;bottom:9%;left:50%;transform:translateX(-50%);font-size:40px;z-index:4;transition:left .1s ease;filter:drop-shadow(0 3px 3px rgba(0,0,0,.4))}
+  .mermaid.wob{animation:wb .3s}@keyframes wb{0%,100%{transform:translateX(-50%)}33%{transform:translateX(-54%) rotate(-8deg)}66%{transform:translateX(-46%) rotate(8deg)}}
+  .ctrls{display:flex;gap:14px;width:90%;max-width:320px}
+  .ctrls .btn{flex:1;font-size:30px;padding:14px 0}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#eafaff,#cdeeff);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🧜";position:absolute;bottom:-8px;right:-10px;font-size:36px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Korallen-Slalom (Steuern/Fangen)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🧜</div>
+    <h1>Fang die Zauberperlen!</h1>
+    <p class="sub">Steuere die Meerjungfrau mit den Pfeilen nach links und rechts. Fang die Perlen 🦪 — den Korallen 🪸 weichst du einfach aus. Sechs Perlen, dann leuchtet der Schatz!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Abtauchen 🫧</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill" style="background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px">Perlen 🦪 <b id="cnt">0</b>/6</span></div>
+    <div class="sea" id="sea"><div class="floor"></div><div class="mermaid" id="mermaid">🧜</div></div>
+    <div class="ctrls"><button class="btn" id="leftBtn">◀</button><button class="btn" id="rightBtn">▶</button></div>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Alle Perlen gefangen!</h2>
+      <p class="who" id="winWho">Alle Perlen gesammelt! Komm zur Meerjungfrau-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>An der Korallen-Bucht</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🧜 Ich tauch mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260702"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#0a3a5a'/><circle cx='100' cy='96' r='42' fill='#fff'/><circle cx='100' cy='96' r='42' fill='none' stroke='#ff8fc7' stroke-width='5'/><circle cx='88' cy='86' r='9' fill='#eaf6ff'/><path d='M40 160 q12 -30 0 -48 M70 160 q8 -36 0 -54 M130 160 q-8 -36 0 -54 M160 160 q-12 -30 0 -48' stroke='#ff8fc7' stroke-width='6' fill='none'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#ff8fc7','#56b4ff','#ffd166','#fff','#2bb6d4'];
+const sfx={
+  collect(){const t=AC().currentTime;note(659,t,0.08,{type:'sine',vol:0.12});note(988,t+0.06,0.16,{type:'sine',vol:0.11});},
+  bump(){note(200,AC().currentTime,0.12,{type:'triangle',vol:0.08,glideTo:150});},
+  win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+const GOAL=6, MROW=82; let mermaidX=50, items=[], collected=0, done=false, mvT=null, spawnT=null;
+function setMermaid(){ $('#mermaid').style.left=mermaidX+'%'; }
+function steer(dx){ if(done)return; mermaidX=Math.max(8,Math.min(92,mermaidX+dx)); setMermaid(); }
+function spawn(){ if(done)return; const kind=Math.random()<0.72?'pearl':'coral'; const x=12+Math.random()*76; const el=document.createElement('div'); el.className='drop '+kind; el.textContent=kind==='pearl'?'🦪':'🪸'; el.style.left=x+'%'; el.style.top='-6%'; el._x=x; el._y=-6; el._kind=kind; $('#sea').appendChild(el); items.push(el); }
+function pop(el){ el.classList.add('gone'); setTimeout(()=>{el.remove(); const k=items.indexOf(el); if(k>=0)items.splice(k,1);},250); }
+function moveTick(){ if(done)return; for(const it of items.slice()){ it._y+=4.5; it.style.top=it._y+'%';
+  if(it._y>=MROW-5 && it._y<=MROW+7 && !it._hit && Math.abs(it._x-mermaidX)<12){
+    it._hit=true;
+    if(it._kind==='pearl'){ collected++; $('#cnt').textContent=collected; sfx.collect(); vib([8,18]); pop(it); if(collected>=GOAL) return winSeq(); }
+    else { sfx.bump(); vib(15); $('#mermaid').classList.add('wob'); setTimeout(()=>$('#mermaid').classList.remove('wob'),300); pop(it); }
+  }
+  if(it._y>108){ it.remove(); const k=items.indexOf(it); if(k>=0)items.splice(k,1); } } }
+function winSeq(){ done=true; clearInterval(mvT); clearInterval(spawnT); sfx.win(); vib([20,40,20,40,80]);
+  if(HAS_PHOTO){ $('#winWho').textContent=`Die kostbarste Perle des Meeres ist ${kid()}! Komm zur Meerjungfrau-Party:`; } else { $('#winTitle').textContent='Alle Perlen gefangen!'; $('#winWho').textContent=`Im Muschel-Bett leuchtet die größte Perle des Riffs — ${kid()} hat sie gefunden! Komm zur Meerjungfrau-Party:`; } guestName();
+  setTimeout(()=>{ show('s-win'); confetti(CC); }, 650);
+}
+function tip(){ if(done)return; collected++; $('#cnt').textContent=collected; if(collected>=GOAL) winSeq(); } // Tipp: eine Perle für dich einsammeln
+$('#startBtn').addEventListener('click',()=>{ mermaidX=50;collected=0;done=false; items.forEach(i=>i.remove()); items=[]; $('#cnt').textContent=0; setMermaid(); show('s-game'); clearInterval(mvT);clearInterval(spawnT); mvT=setInterval(moveTick,55); spawnT=setInterval(spawn,820); });
+$('#leftBtn').addEventListener('click',()=>steer(-14));
+$('#rightBtn').addEventListener('click',()=>steer(14));
+$('#sea').addEventListener('click',e=>{ const r=e.currentTarget.getBoundingClientRect(); steer(e.clientX<r.left+r.width/2?-14:14); });
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

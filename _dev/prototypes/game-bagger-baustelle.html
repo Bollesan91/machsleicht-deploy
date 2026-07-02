@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Bagger-Fahrt — Baustelle</title>
+<link rel="stylesheet" href="core/core.css?v=20260702">
+<style>
+  /* E8 Steuern — nur Spiel-Eigenes; Skelett aus core.css. */
+  :root{--bg1:#23282f;--bg2:#5b6470;--fg:#fff;--accent:#f2b21a;--accent-dk:#b87f00;--ink:#241c08}
+  .wrap,.scene{gap:12px}
+  .hud{font-weight:700;font-size:14px;width:90%;max-width:320px;display:flex;flex-direction:column;gap:5px}
+  .bar{height:12px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden}
+  .bar > i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#37c46e,#7ee2a3);transition:width .12s}
+  .field{position:relative;width:100%;aspect-ratio:.82;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#8a939e,#6c7480);box-shadow:0 12px 30px rgba(0,0,0,.45)}
+  /* Spur-Markierungen */
+  .lane{position:absolute;top:0;bottom:0;width:2px;background:repeating-linear-gradient(180deg,#fff,#fff 14px,transparent 14px,transparent 30px);opacity:.5;animation:dash 0.5s linear infinite}
+  @keyframes dash{to{background-position:0 30px}}
+  .lane.l1{left:33.3%}.lane.l2{left:66.6%}
+  .edge{position:absolute;top:0;bottom:0;width:8px;background:repeating-linear-gradient(180deg,#f2b21a,#f2b21a 12px,#241c08 12px,#241c08 24px)}
+  .edge.le{left:0}.edge.re{right:0}
+  .obs{position:absolute;transform:translate(-50%,-50%);font-size:30px;filter:drop-shadow(0 2px 2px rgba(0,0,0,.4));z-index:2}
+  .digger{position:absolute;bottom:6%;left:50%;transform:translateX(-50%);font-size:40px;transition:left .14s cubic-bezier(.3,1.4,.5,1);z-index:4;filter:drop-shadow(0 3px 4px rgba(0,0,0,.5))}
+  .digger.hit{animation:dh .3s}@keyframes dh{0%,100%{transform:translateX(-50%)}25%{transform:translateX(-50%) rotate(-10deg)}75%{transform:translateX(-50%) rotate(10deg)}}
+  .goal{position:absolute;left:0;right:0;top:-14%;height:14%;display:flex;align-items:center;justify-content:center;font-size:24px;background:repeating-linear-gradient(45deg,#fff,#fff 12px,#241c08 12px,#241c08 24px);color:#241c08;font-weight:900;z-index:1;transition:top .3s}
+  .ctrls{display:flex;gap:14px;width:90%;max-width:320px}
+  .ctrls .btn{flex:1;font-size:30px;padding:14px 0}
+  /* Reveal */
+  .sign{width:100%;background:linear-gradient(170deg,#fff6df,#ffe9b0);color:var(--ink);border-radius:18px;padding:20px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:5px solid var(--accent-dk);position:relative}
+  .sign::before{content:"🚧 BAUSTELLE 🚧";position:absolute;top:-1px;left:0;right:0;background:var(--accent);color:var(--ink);font-weight:900;font-size:12px;letter-spacing:1px;padding:3px 0;border-radius:12px 12px 0 0}
+  .hero{width:140px;height:140px;border-radius:50%;margin:18px auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a3320;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"👷";position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:34px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .sign h2{font-size:23px;margin:6px 0 2px}.sign .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .sign dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.sign dt{font-size:20px}.sign dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Bagger-Fahrt (E8 Steuern)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🚜</div>
+    <h1>Fahr den Bagger zur Baustelle!</h1>
+    <p class="sub">Steuere mit den Pfeilen nach links und rechts. Weiche den Baken 🚧 und Tonnen 🛢️ aus und bring den Bagger sicher ans Ziel — dann fängt die Party an!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Motor starten 🔧</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span>Strecke <b id="pct">0</b>%</span><div class="bar"><i id="prog"></i></div></div>
+    <div class="field" id="field">
+      <div class="edge le"></div><div class="edge re"></div>
+      <div class="lane l1"></div><div class="lane l2"></div>
+      <div class="goal" id="goal">🏁 ZIEL 🏁</div>
+      <div class="digger" id="digger">🚜</div>
+    </div>
+    <div class="ctrls"><button class="btn" id="leftBtn">◀</button><button class="btn" id="rightBtn">▶</button></div>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="sign">
+      <div class="hero"></div>
+      <h2 id="winTitle">Angekommen!</h2>
+      <p class="who" id="winWho">Richtfest auf der Baustelle! Komm zur Baustellen-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Bauplatz, Kranstraße 4</dd></dl>
+      <button class="btn ja" id="rsvpBtn">👷 Ich helfe mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260702"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#f2b21a'/><rect x='30' y='150' width='140' height='14' fill='#241c08'/><path d='M70 150 v-40 h50 l24 24 v16z' fill='#5a4a20'/><circle cx='86' cy='164' r='12' fill='#241c08'/><circle cx='140' cy='164' r='12' fill='#241c08'/><path d='M120 110 l40 -34' stroke='#241c08' stroke-width='6'/><rect x='150' y='66' width='22' height='14' fill='#241c08'/><path d='M64 96 q36 -26 72 0 v8 h-72z' fill='#fff'/><rect x='64' y='96' width='72' height='8' fill='#e64a19'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#f2b21a','#37c46e','#e64a19','#fff','#b87f00'];
+const sfx={steer(){note(420,AC().currentTime,0.07,{type:'square',vol:0.06,glideTo:560});},bump(){noise(AC().currentTime,0.18,{vol:0.18,freq:220,filter:'lowpass'});},win(){const t=AC().currentTime;[392,523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.32,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
+const LANES=3, LANE_X=[16.6,50,83.3];
+let laneIdx=1, progress=0, done=false, moveT=null, spawnT=null, obs=[];
+function setDigger(){ $('#digger').style.left=LANE_X[laneIdx]+'%'; }
+function steer(dir){ if(done)return; const n=Math.max(0,Math.min(LANES-1,laneIdx+dir)); if(n!==laneIdx){ laneIdx=n; setDigger(); sfx.steer(); vib(8); } }
+function setProg(){ $('#prog').style.width=progress+'%'; $('#pct').textContent=Math.round(progress); if(progress>=100 && !done) winSeq(); }
+function advance(n){ if(done)return; progress=Math.min(100,progress+n); setProg(); }
+function bump(o){ progress=Math.max(0,progress-5); setProg(); $('#digger').classList.add('hit'); setTimeout(()=>$('#digger').classList.remove('hit'),300); sfx.bump(); vib([10,30]); }
+function spawnObs(){ if(done)return; const lane=Math.floor(Math.random()*LANES); const o=document.createElement('div'); o.className='obs'; o.dataset.lane=lane; o.style.left=LANE_X[lane]+'%'; o._y=-8; o.style.top='-8%'; o.textContent=Math.random()<.5?'🚧':'🛢️'; $('#field').appendChild(o); obs.push(o); }
+function moveObs(){ if(done)return; advance(1.5); for(const o of obs.slice()){ o._y+=5; o.style.top=o._y+'%'; if(o._y>=86 && o._y<=98 && +o.dataset.lane===laneIdx && !o._hit){ o._hit=true; bump(o); } if(o._y>112){ o.remove(); obs.splice(obs.indexOf(o),1); } } if(progress>70) $('#goal').style.top=(-14+(progress-70)/30*14)+'%'; }
+function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); $('#goal').style.top='0%'; sfx.win(); vib([20,40,20,40,80]); if(HAS_PHOTO){ $('#winWho').textContent=`Auf der Baustelle hat ${kid()} das Sagen — wir feiern Richtfest! Komm zur Baustellen-Party:`; } else { $('#winTitle').textContent='Baustelle fertig!'; $('#winWho').textContent=`Das Bauschild ist gesetzt — ${kid()} feiert Richtfest! Komm zur Baustellen-Party:`; } guestName(); setTimeout(()=>{ show('s-win'); confetti(CC); }, 600); }
+function tip(){ if(!done) advance(40); } // Tipp: ein großes Stück Richtung Ziel
+$('#startBtn').addEventListener('click',()=>{ laneIdx=1;progress=0;done=false; obs.forEach(o=>o.remove()); obs=[]; setDigger(); setProg(); $('#goal').style.top='-14%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveObs,95); spawnT=setInterval(spawnObs,720); });
+$('#leftBtn').addEventListener('click',()=>steer(-1));
+$('#rightBtn').addEventListener('click',()=>steer(1));
+$('#field').addEventListener('click',e=>{ const r=e.currentTarget.getBoundingClientRect(); steer(e.clientX < r.left+r.width/2 ? -1 : 1); });
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

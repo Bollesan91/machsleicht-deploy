@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Alien-Funkspruch — Weltraum</title>
+<link rel="stylesheet" href="core/core.css?v=20260702">
+<style>
+  /* E11 Simon/Sequenz: Alien-Signalglyphen-Folge nachtippen (Position+Ton, nicht nur Farbe) -> Foto-Slot-Reveal. Auf Shared Core. */
+  :root{--bg1:#070b1c;--bg2:#23306b;--fg:#fff;--accent:#6aa8ff;--accent-dk:#2c63b8;--ink:#04122e}
+  .screen{width:100%;max-width:330px;text-align:center;font-size:16px;font-weight:800;color:#9fc0ff;min-height:24px}
+  .console{position:relative;width:100%;max-width:300px;display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:16px;border-radius:20px;background:radial-gradient(circle at 50% 30%,#1a2750,#0a1230);box-shadow:0 12px 30px rgba(0,0,0,.5),inset 0 0 0 3px #2c3a6a}
+  .pad{aspect-ratio:1.25;border:0;border-radius:16px;font-size:34px;cursor:pointer;opacity:.55;transition:opacity .1s,transform .08s,box-shadow .1s;box-shadow:0 5px 0 rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center}
+  .pad:active{transform:translateY(3px);box-shadow:0 2px 0 rgba(0,0,0,.4)}
+  .pad.lit{opacity:1;box-shadow:0 0 24px 5px currentColor,0 5px 0 rgba(0,0,0,.4);transform:scale(1.04)}
+  .p0{background:#2e7d6e;color:#7df0d8}.p1{background:#7a3a8a;color:#e0a0ff}.p2{background:#2c63b8;color:#a0d0ff}.p3{background:#b8762c;color:#ffd699}
+  .console.shake{animation:cs .3s}@keyframes cs{0%,100%{transform:translateX(0)}33%{transform:translateX(-7px)}66%{transform:translateX(7px)}}
+  /* Funkmonitor: eingehendes Bild klärt sich mit jedem richtigen Signal (Reveal an Mechanik gekoppelt) */
+  .transmission{position:relative;width:120px;height:120px;border-radius:50%;margin:2px auto 8px;border:4px solid var(--accent-dk);overflow:hidden;background:#04122e;box-shadow:0 0 20px rgba(106,168,255,.4),inset 0 0 0 2px #2c3a6a}
+  .tphoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;filter:blur(14px) saturate(.6) brightness(.7);opacity:.5;transform:scale(1.12);transition:filter .6s ease,opacity .6s ease}
+  .static{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(180,210,255,.09),rgba(180,210,255,.09) 1px,transparent 1px,transparent 3px);opacity:.75;transition:opacity .6s}
+  .transmission.clear .static{opacity:0}
+  .transmission::after{content:"";position:absolute;left:0;right:0;height:26%;top:-30%;background:linear-gradient(180deg,transparent,rgba(160,208,255,.25),transparent);animation:scan 2.6s linear infinite}
+  .transmission.clear::after{display:none}
+  @keyframes scan{to{top:110%}}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#eef3ff,#cdd9f7);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;box-shadow:0 0 24px rgba(106,168,255,.6);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🛸";position:absolute;top:-18px;right:-10px;font-size:34px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Alien-Funkspruch (E11 Simon)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🛸</div>
+    <h1>Empfange den Alien-Funkspruch!</h1>
+    <p class="sub">Vom fernen Planeten funkt jemand eine Signalfolge — die Zeichen leuchten und piepen. Merk dir die Folge und funke sie zurück. Mit jedem richtigen Signal wird das verrauschte Bild vom anderen Ende ein Stück klarer …</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Antenne ausrichten 📡</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="screen" id="msg">Signal kommt rein …</div>
+    <div class="transmission" id="trans"><div class="tphoto"></div><div class="static"></div></div>
+    <div class="console" id="console">
+      <button class="pad p0" data-i="0">👾</button>
+      <button class="pad p1" data-i="1">🪐</button>
+      <button class="pad p2" data-i="2">⭐</button>
+      <button class="pad p3" data-i="3">☄️</button>
+    </div>
+    <button class="btn" id="tippBtn" style="background:rgba(255,255,255,.16);font-size:15px;padding:8px 20px">💡 Tipp</button>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Kontakt!</h2>
+      <p class="who" id="winWho">Kontakt hergestellt! Komm zur Weltraum-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Raumstation (Stadtpark)</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🚀 Ich starte mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260702"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#070b1c'/><ellipse cx='100' cy='120' rx='58' ry='20' fill='#6aa8ff'/><ellipse cx='100' cy='110' rx='34' ry='26' fill='#cdd9f0'/><circle cx='90' cy='106' r='5' fill='#23306b'/><circle cx='110' cy='106' r='5' fill='#23306b'/><g fill='#ffd24d'><circle cx='78' cy='124' r='4'/><circle cx='100' cy='130' r='4'/><circle cx='122' cy='124' r='4'/></g><g fill='#fff'><circle cx='40' cy='40' r='2'/><circle cx='160' cy='56' r='2'/></g></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#6aa8ff','#7df0d8','#e0a0ff','#fff','#ffd699'];
+const TONES=[330,415,494,587];
+const sfx={
+  tone(i){const t=AC().currentTime;note(TONES[i],t,0.24,{type:'sine',vol:0.12});note(TONES[i]*2,t,0.14,{type:'square',vol:0.04});},
+  buzz(){note(150,AC().currentTime,0.26,{type:'sawtooth',vol:0.12,glideTo:90});},
+  win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+const GOAL=(ageNum()<=6?3:ageNum()<=9?4:5), FLASH_MS=540; // Länge nach Alter (4–6→3, 7–9→4, 10+→5)
+let seq=[], step=0, accepting=false, done=false, pads=[];
+function sharpen(frac){ const ph=$('#trans').querySelector('.tphoto'); if(!ph)return; const f=Math.max(0,Math.min(1,frac)); ph.style.filter='blur('+(14*(1-f*f)).toFixed(1)+'px) saturate('+(0.6+0.4*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; ph.style.opacity=(0.5+0.5*f).toFixed(2); } /* Blur hinten gewichtet (1-f^2): laenger unscharf, dann Snap */
+function flash(i){ const p=pads[i]; p.classList.add('lit'); sfx.tone(i); setTimeout(()=>p.classList.remove('lit'),FLASH_MS*0.55); }
+function nextRound(){ seq.push(Math.floor(Math.random()*4)); step=0; playSeq(); }
+function playSeq(){ accepting=false; $('#msg').textContent='Signal kommt rein …'; let i=0; const iv=setInterval(()=>{ if(done){clearInterval(iv);return;} if(i>=seq.length){ clearInterval(iv); accepting=true; $('#msg').textContent='Jetzt du — funke zurück!'; return; } flash(seq[i]); i++; }, FLASH_MS); }
+function press(i){
+  if(!accepting||done)return; flash(i);
+  if(i===seq[step]){ step++; if(step===seq.length){ accepting=false; if(seq.length>=GOAL) return win(); sharpen(seq.length/GOAL); $('#msg').textContent='Signal klarer! Nächstes …'; setTimeout(nextRound,750); } }
+  else { accepting=false; sfx.buzz(); vib([30,40,30]); $('#console').classList.add('shake'); setTimeout(()=>$('#console').classList.remove('shake'),300); $('#msg').textContent='Störung — nochmal hören!'; setTimeout(playSeq,850); }
+}
+function win(){
+  done=true; sfx.win(); vib([20,40,20,40,80]); $('#msg').textContent='📡 Kontakt hergestellt!'; sharpen(1); $('#trans').classList.add('clear');
+  if(HAS_PHOTO){ $('#winWho').textContent=`Am anderen Ende des Funkspruchs ist ${kid()}! Komm zur Weltraum-Party:`; } else { $('#winTitle').textContent='Kontakt!'; $('#winWho').textContent=`Vom fernen Planeten funkt ein freundliches Alien — ${kid()} hat Kontakt! Komm zur Weltraum-Party:`; } guestName();
+  setTimeout(()=>{ show('s-win'); confetti(CC); }, 1000);
+}
+pads=[...document.querySelectorAll('.pad')];
+pads.forEach((p)=>p.addEventListener('click',()=>press(+p.dataset.i)));
+$('#startBtn').addEventListener('click',()=>{ seq=[];step=0;done=false;accepting=false; $('#trans').classList.remove('clear'); sharpen(0); show('s-game'); setTimeout(nextRound,500); });
+$('#tippBtn').addEventListener('click',()=>{ if(accepting && !done) press(seq[step]); }); // Tipp: tippt den naechsten richtigen Pad -> Folge immer schaffbar
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

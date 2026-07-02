@@ -1,3 +1,14 @@
+# Session-Notiz — 02.07.2026 (Deploybar-Programm: 45 Einladungs-Spiele funktion+viral+geil, Erstcommit)
+
+## 🏁 Kernergebnis: Alle 45 Foto-Reveal-Einladungsspiele deploy-fertig auf draft (Erstcommit) — Final-Playtest 44/45 automatisiert grün, 1 Harness-Limit (schatz: inline-Win, per Code-Inspektion korrekt), 0 JS-Fehler
+- **Mess-Umstellung (Bolle 02.07.):** Spiele werden am LAUFENDEN Spiel gemessen (iframe-Playtest-Harness, Screenshots), Konzept-Prosa-Score-Reviews für Spiele abgeschafft (90er-Hürde war Rubrik-Decke: Originalitäts-Achse bestraft jede bekannte Mechanik-Gattung; Wow-Kopplung dagegen 5× unabhängig bestätigt, A/B immer → progressiv).
+- **GEIL:** 15 Spiele mechanik-gekoppelt (Foto baut sich back-weighted 1−f² mit dem Spielfortschritt auf; Elite 5 mit Face-Guard/Peek/Erwecken-Beats, Simon 3, Connect 4, Wimmelbild 3 „Beweisfoto"). Alters-Varianten (Simon 3/4/5, Puzzle 2×2/3×3, Wisch-Schwelle 55/68/80 %). **Tipp-Vollausbau: 30 Spiele, jedes Skill-Spiel garantiert abschließbar** (neu: memory, kanone, tresor, notruf, perlen, fotosafari, drehleiter, hochhaus, turm).
+- **Bugfixes:** notruf-feuerwehr war UNSPIELBAR (const dial shadowte Funktion dial() → TypeError je Klick) → gefixt+verifiziert. 28+3 statische DU/DIR/DICH-Platzhalter neutralisiert. löschen: Opfer→Held-Framing.
+- **DEPLOY:** core.js/core.css → `?v=20260702` in allen 45 (Browser-Cache-Fund; bei Core-Update Version hochziehen!). .gitignore: birthday-photo.jpg + *-DEMO.html bleiben lokal. **Kein Produktions-Deploy** (nur „Ende deploy"); Produktions-Verdrahtung (Ziel-URL-Struktur, photoRound-Kontrakt, ?k=/?age= aus Worker, Privacy-Ablauf-Link, echter WhatsApp-RSVP) → `_dev/handoff/2026-07-02-deploybar-programm.md`.
+- **Reviewer-Regel ab 01.07.: Opus 4.8 · Max-Effort** (nur noch für Text-Content; Spiele = Playtest).
+
+---
+
 # Session-Notiz — 19.06.2026 (V3 GENERATIVER Plan live + großer Architektur-Befund)
 
 ## 🏁 Kernergebnis: Der Plan ist jetzt EINE generierte Liste (Spec §10) — Zwei-Quellen-Chaos gelöst

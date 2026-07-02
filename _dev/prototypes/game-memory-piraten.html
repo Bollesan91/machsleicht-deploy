@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Schatz-Memory — Foto-Reveal-Board</title>
+<link rel="stylesheet" href="core/core.css?v=20260702">
+<style>
+  /* ============================================================
+     GAMECHANGER: Das Foto IST das Spielfeld. Jedes gefundene Paar
+     legt zwei Kacheln des Geburtstagskind-Fotos frei. Spannung über
+     die Schatzräuber-Leiste. Mechanik (Memory) + Reveal verschmelzen.
+     Nur Spiel-Eigenes hier; Skelett aus core.css.
+     ============================================================ */
+  :root{--bg1:#0a3d62;--bg2:#1e6091;--fg:#fff;--card:#f4e4c1;--card-edge:#d4b483;--ink:#3e2f1c;--accent:#e8a735;--accent-dk:#b8761a;--ok:#2e9e5b;--danger:#c0392b}
+
+  /* HUD + Schatzräuber-Leiste (eigene HUD-Variante: zwei Pills, helle Pill auf dunklem BG) */
+  .hud{display:flex;justify-content:space-between;align-items:center;width:100%;font-weight:700;font-size:14px}
+  .pill{background:rgba(255,255,255,.14);padding:6px 12px;border-radius:999px}
+  .threat{width:100%;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700}
+  .track{position:relative;flex:1;height:14px;border-radius:999px;background:rgba(0,0,0,.28);overflow:visible}
+  .track .fill{position:absolute;left:0;top:0;bottom:0;border-radius:999px;background:linear-gradient(90deg,#e8a735,#c0392b);width:0%}
+  .track .robber{position:absolute;top:-9px;left:0;font-size:24px;transform:translateX(-50%);transition:left .25s linear;filter:drop-shadow(0 2px 3px #000)}
+  .track .goal{position:absolute;right:-2px;top:-6px;font-size:18px}
+
+  /* BOARD = Foto darunter, Karten darüber */
+  .board{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.4);
+    background:#0d2a40;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr);gap:5px;perspective:1000px}
+  .cell{position:relative}
+  .face{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;
+    transition:transform .42s cubic-bezier(.4,1.2,.5,1);font-size:min(9vw,34px);overflow:hidden}
+  .back{background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.16),transparent 42%),linear-gradient(150deg,#1a4d70,#0d2a40);
+    border:1.5px solid rgba(255,255,255,.10);color:#bcd9f5;cursor:pointer}
+  .front{background:linear-gradient(160deg,var(--card),#e6cf9e);transform:rotateY(180deg)}
+  .cell.flip .back{transform:rotateY(180deg)}.cell.flip .front{transform:rotateY(360deg)}
+  .cell.miss .front{animation:shake .4s}
+  @keyframes shake{0%,100%{transform:rotateY(180deg) translateX(0)}25%{transform:rotateY(180deg) translateX(-5px)}75%{transform:rotateY(180deg) translateX(5px)}}
+  /* gematchte Karte -> Foto-Kachel sichtbar (Symbol weg) */
+  .cell.done .face{transition:opacity .5s ease}
+  .cell.done .back,.cell.done .front{opacity:0}
+  .tile{position:absolute;inset:0;background-image:var(--photo);background-size:300% 400%;opacity:0;transition:opacity .55s ease;transform:scale(1.06)}
+  .cell.done .tile{opacity:1;transform:scale(1);animation:tilePop .5s ease}
+  @keyframes tilePop{0%{transform:scale(1.18)}60%{transform:scale(.98)}100%{transform:scale(1)}}
+
+  /* Räuber wühlt um */
+  .boardMsg{position:absolute;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;gap:6px;
+    background:rgba(8,20,30,.78);color:#ffd34d;font-weight:900;font-size:20px;text-align:center;z-index:5;padding:20px}
+  .boardMsg.on{display:flex;animation:fade .25s ease}
+  .boardMsg .big{font-size:54px}
+
+  /* REVEAL-Karte */
+  .invite{width:100%;background:linear-gradient(170deg,#fffaf0,#f4e4c1);color:var(--ink);border-radius:20px;padding:22px;
+    box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--card-edge)}
+  .hero{width:138px;height:138px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:reveal .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🏴‍☠️";position:absolute;top:-24px;right:-8px;font-size:42px;transform:rotate(18deg)}
+  @keyframes reveal{from{transform:scale(.3) rotate(-12deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:18px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}
+  .invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Foto-Reveal-Board</div>
+<div class="wrap">
+
+  <section class="scene on" id="s-intro">
+    <div class="flag">🏴‍☠️</div>
+    <h1>Käpt'n Mats sucht<br>eine mutige Crew!</h1>
+    <p class="sub">Hinter den Schatzkarten versteckt sich jemand. Finde die Paare und decke Stück für Stück auf, wer es ist — bevor der Schatzräuber dich einholt!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Anheuern ⚓</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud">
+      <span class="pill">Paare <b id="pairsFound">0</b>/<b id="pairsTotal">6</b></span>
+      <span class="pill" id="comboPill" style="opacity:.45">Combo <b id="combo">0</b></span>
+    </div>
+    <div class="threat">
+      <span>🏴‍☠️</span>
+      <div class="track"><div class="fill" id="threatFill"></div><span class="robber" id="robber">🏴‍☠️</span><span class="goal">🧰</span></div>
+    </div>
+    <div class="board" id="board">
+      <div class="boardMsg" id="boardMsg"><span class="big">🏴‍☠️</span><span id="boardMsgTxt">Der Räuber wühlt alles um!</span></div>
+    </div>
+    <p class="sub" id="hint">Decke zwei gleiche Symbole auf.</p>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Reingelegt!</h2>
+      <p class="who" id="winWho">Der Schatz ist gefunden! Und du bist eingeladen:</p>
+      <dl>
+        <dt>📅</dt><dd>Samstag, 12. Juli</dd>
+        <dt>🕒</dt><dd>15:00 Uhr</dd>
+        <dt>📍</dt><dd>Pirateninsel (Stadtpark)</dd>
+      </dl>
+      <button class="btn ja" id="rsvpBtn">🏴‍☠️ Ich heuere an!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260702"></script>
+<script>
+// Ohne-Foto-Fallback: designte Schatztruhe (kein leeres Board). ?nofoto erzwingt diesen Pfad.
+const NOPHOTO = "data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#1e6091'/><circle cx='100' cy='92' r='82' fill='#2a7fb8' opacity='.55'/><path d='M38 96 q62 -56 124 0 z' fill='#8a5a2b'/><rect x='42' y='96' width='116' height='70' rx='8' fill='#7a4d23'/><rect x='50' y='101' width='100' height='30' fill='#ffd24d'/><circle cx='70' cy='119' r='9' fill='#ffe79a'/><circle cx='100' cy='123' r='10' fill='#ffe79a'/><circle cx='131' cy='118' r='9' fill='#ffe79a'/><rect x='94' y='96' width='12' height='70' fill='#caa24a'/><circle cx='100' cy='150' r='8' fill='#e8a735' stroke='#5a3416' stroke-width='2'/><rect x='42' y='96' width='116' height='70' rx='8' fill='none' stroke='#5a3416' stroke-width='4'/></svg>`);
+const THEME = {
+  symbols: ['🦜','🗺️','💰','⚓','🪙','🧭'],
+  photo: '/birthday-photo.jpg',
+  cols: 3, rows: 4
+};
+const HAS_PHOTO = setPhoto(THEME, NOPHOTO);
+// Reveal-Text (MIT + OHNE) wird jetzt in win() mit kid() gesetzt — kein hardcodierter Name mehr.
+const CC = ['#e8a735','#37c46e','#3282b8','#fff','#d4b483'];
+const CCO = {count:90, timeout:3400, durSpread:1.5};
+
+const SCALE=[523,587,659,784,880,988,1047,1175,1319];
+const sfx={
+  flip(){const t=AC().currentTime;noise(t,0.05,{vol:0.06,freq:2200,q:0.6});note(440,t,0.05,{type:'triangle',vol:0.05,glideTo:300});},
+  coin(combo=0){const t=AC().currentTime,b=SCALE[Math.min(combo,SCALE.length-1)];note(b,t,0.08,{type:'square',vol:0.11});note(b*1.5,t+0.07,0.15,{type:'square',vol:0.12});note(b*2,t,0.18,{type:'sine',vol:0.04});},
+  miss(){const t=AC().currentTime;note(300,t,0.16,{type:'triangle',vol:0.1,glideTo:200});},
+  drum(){const t=AC().currentTime;note(95,t,0.3,{type:'sine',vol:0.26,glideTo:52});noise(t,0.18,{vol:0.1,freq:130,q:0.4});},
+  villain(){const t=AC().currentTime;note(150,t,0.32,{type:'sawtooth',vol:0.18,glideTo:85});note(72,t,0.38,{type:'square',vol:0.1});},
+  fanfare(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));[1568,2093].forEach((f,i)=>note(f,t+0.46+i*0.09,0.5,{type:'sine',vol:0.07}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.26,{type:'sine',vol:0.13});}
+};
+
+let cells=[],first=null,lock=false,found=0,combo=0,threat=0,threatTimer=null,playing=false;
+
+function buildBoard(){
+  const order=[...THEME.symbols,...THEME.symbols].sort(()=>Math.random()-0.5);
+  const board=$('#board');
+  [...board.querySelectorAll('.cell')].forEach(c=>c.remove());
+  $('#pairsTotal').textContent=THEME.symbols.length;
+  cells=order.map((sym,i)=>{
+    const col=i%THEME.cols, row=Math.floor(i/THEME.cols);
+    const px=THEME.cols>1?(col/(THEME.cols-1))*100:50;
+    const py=THEME.rows>1?(row/(THEME.rows-1))*100:50;
+    const el=document.createElement('div');el.className='cell';
+    el.innerHTML=`<div class="tile" style="background-position:${px}% ${py}%"></div><div class="face front">${sym}</div><div class="face back">?</div>`;
+    el.querySelector('.back').addEventListener('click',()=>flip(el));
+    board.appendChild(el);
+    return {el,sym,done:false};
+  });
+}
+function flip(el){
+  if(lock||!playing)return; const c=cells.find(x=>x.el===el);
+  if(c.done||el.classList.contains('flip'))return;
+  el.classList.add('flip');sfx.flip();vib(8);
+  if(!first){first=c;return;}
+  if(first.sym===c.sym){
+    first.el.classList.add('done');c.el.classList.add('done');first.done=c.done=true;first=null;
+    combo++;found++;$('#pairsFound').textContent=found;$('#combo').textContent=combo;$('#comboPill').style.opacity=combo>1?1:.45;
+    sfx.coin(combo);vib([10,25,10]);
+    if(found===THEME.symbols.length) win();
+  }else{
+    lock=true;combo=0;$('#combo').textContent=0;$('#comboPill').style.opacity=.45;
+    const a=first,b=c;first=null;a.el.classList.add('miss');b.el.classList.add('miss');sfx.miss();
+    setTimeout(()=>{a.el.classList.remove('flip','miss');b.el.classList.remove('flip','miss');lock=false;},740);
+  }
+}
+function startThreat(){
+  threat=0; clearInterval(threatTimer);
+  threatTimer=setInterval(()=>{
+    if(!playing)return; threat+=1.05;            // ~ volle Leiste in ~50s
+    $('#threatFill').style.width=Math.min(threat,100)+'%';
+    $('#robber').style.left=Math.min(threat,100)+'%';
+    if(threat>=100) robberStrike();
+  },520);
+}
+function robberStrike(){
+  threat=0;$('#threatFill').style.width='0%';$('#robber').style.left='0%';
+  // ungelöste, gerade offene Einzelkarte zurückdrehen + alle ungelösten kurz neu mischen-Gefühl
+  sfx.drum();vib([40,30,40]);
+  if(first){first.el.classList.remove('flip');first=null;}
+  const msg=$('#boardMsg');$('#boardMsgTxt').textContent='Der Räuber kommt näher — schnell!';msg.classList.add('on');
+  setTimeout(()=>msg.classList.remove('on'),1100);
+}
+function win(){
+  playing=false;clearInterval(threatTimer);
+  // kurzer Bösewicht-Beat auf dem fertig aufgedeckten Foto
+  const msg=$('#boardMsg');$('#boardMsgTxt').textContent='„ARRR! Wer hat meinen Schatz?!"';msg.classList.add('on');
+  sfx.villain();vib(60);
+  setTimeout(()=>{
+    msg.classList.remove('on');
+    if(HAS_PHOTO){ $('#winWho').textContent=`Aller Schätze schönster: das ist ${kid()}! Und du bist eingeladen:`; }
+    else { $('#winTitle').textContent='Schatz gefunden!'; $('#winWho').textContent=`Die Schatztruhe springt auf — ${kid()} heuert dich an! Du bist eingeladen:`; }
+    guestName();
+    show('s-win');confetti(CC,CCO);
+    sfx.fanfare();vib([20,40,20,40,80]);
+  },1300);
+}
+function tip(){ if(!playing||lock)return; if(first){first.el.classList.remove('flip');first=null;} const rest=cells.filter(c=>!c.done); if(!rest.length)return; const a=rest[0], b=rest.find(c=>c!==a&&c.sym===a.sym); if(!b)return; a.el.classList.add('flip','done'); b.el.classList.add('flip','done'); a.done=b.done=true; found++; $('#pairsFound').textContent=found; sfx.coin(0); vib([10,25,10]); if(found===THEME.symbols.length) win(); } // Tipp: ein Paar für dich aufdecken
+$('#startBtn').addEventListener('click',()=>{buildBoard();show('s-game');playing=true;startThreat()});
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓ Ahoi!';e.target.disabled=true;confetti(CC,CCO);sfx.ding()});
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Tresor-Code — Prinzessin (Mystery)</title>
+<link rel="stylesheet" href="core/core.css?v=20260702">
+<style>
+  /* Dreh/Code knacken — nur Spiel-Eigenes; Skelett aus core.css. */
+  :root{--bg1:#1c0f2b;--bg2:#3a2150;--fg:#fff;--accent:#e6b54a;--accent-dk:#9c7414;--ink:#2a2030;--gold:#e6c15a}
+  /* Tresor */
+  .safe{position:relative;width:100%;max-width:300px;aspect-ratio:1;border-radius:18px;background:linear-gradient(160deg,#5a5560,#33303a);box-shadow:0 14px 34px rgba(0,0,0,.5),inset 0 0 0 6px #6b6573;display:flex;align-items:center;justify-content:center}
+  .door{position:absolute;inset:14px;border-radius:12px;background:linear-gradient(160deg,#4a4651,#2b2833);box-shadow:inset 0 0 0 4px #6b6573;transform-origin:left center;transition:transform .8s cubic-bezier(.5,0,.3,1);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;z-index:2;backface-visibility:hidden}
+  .safe.open .door{transform:perspective(800px) rotateY(-115deg)}
+  .dials{display:flex;gap:10px}
+  .dial{display:flex;flex-direction:column;align-items:center;gap:6px}
+  .dial button{width:46px;height:30px;border:0;border-radius:8px;background:#6b6573;color:#fff;font-size:18px;font-weight:800;cursor:pointer}
+  .dial button:active{background:var(--accent)}
+  .dial .num{width:46px;height:52px;border-radius:8px;background:#1c1a22;color:var(--gold);font-size:30px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 2px #000}
+  .hint{font-size:14px;font-weight:700;min-height:20px;color:var(--gold)}
+  .knob{position:absolute;right:-2px;top:50%;transform:translateY(-50%);width:26px;height:60px;border-radius:8px;background:linear-gradient(90deg,#8a8490,#5a5560);box-shadow:inset 0 0 0 2px #000}
+  /* Inneres = Slot-Reveal */
+  .vault{position:absolute;inset:14px;border-radius:12px;background:radial-gradient(circle at 50% 40%,#3a2150,#160c22);display:flex;align-items:center;justify-content:center;z-index:1;overflow:hidden}
+  .vault .pic{width:64%;aspect-ratio:1;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;border:5px solid var(--gold);box-shadow:0 0 26px rgba(230,193,90,.7)}
+  .vault .spark{position:absolute;color:var(--gold);font-size:20px;opacity:0;animation:tw 1.6s infinite}
+  @keyframes tw{0%,100%{opacity:0;transform:scale(.6)}50%{opacity:1;transform:scale(1.1)}}
+  /* Reveal-Karte */
+  .invite{width:100%;background:linear-gradient(170deg,#fff7ef,#f0e4d0);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:250px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Tresor-Code</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">👑</div>
+    <h1>Die Kronjuwelen<br>sind verschwunden!</h1>
+    <p class="sub">Im königlichen Tresor steckt der Beweis. Knack den 3-stelligen Code — die Anzeige sagt dir, wie viele Stellen schon stimmen.</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">An den Tresor 🔓</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="safe" id="safe">
+      <div class="vault" id="vault"><div class="pic"></div><span class="spark" style="left:18%;top:24%">✦</span><span class="spark" style="left:78%;top:30%;animation-delay:.5s">✦</span><span class="spark" style="left:30%;top:74%;animation-delay:.9s">✦</span></div>
+      <div class="door" id="door">
+        <div class="dials" id="dials"></div>
+        <div class="hint" id="hint">Stell die Zahlen ein…</div>
+        <button class="btn" id="crackBtn" style="padding:11px 22px;font-size:15px">Code prüfen</button>
+      </div>
+      <div class="knob"></div>
+    </div>
+    <p class="sub" id="tries">Versuche: 0</p>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div style="font-size:46px">👑</div>
+      <h2 id="winTitle">Geknackt!</h2>
+      <p class="who" id="winWho">Der Tresor ist offen! Komm zur königlichen Mystery-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Im Schloss (Stadtpark)</dd></dl>
+      <button class="btn ja" id="rsvpBtn">👑 Ich ermittle mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260702"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#160c22'/><path d='M40 130 L55 70 L80 105 L100 60 L120 105 L145 70 L160 130 Z' fill='#e6c15a' stroke='#a87f14' stroke-width='3'/><rect x='40' y='130' width='120' height='16' rx='4' fill='#caa24a'/><circle cx='55' cy='70' r='8' fill='#7fd3ff'/><circle cx='100' cy='60' r='9' fill='#ff7fb0'/><circle cx='145' cy='70' r='8' fill='#7fffa8'/><circle cx='70' cy='150' r='6' fill='#fff'/><circle cx='100' cy='152' r='7' fill='#fff'/><circle cx='130' cy='150' r='6' fill='#fff'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#e6c15a','#37c46e','#a35cff','#fff','#ff7fb0'];
+const sfx={click(){note(520,AC().currentTime,0.04,{type:'square',vol:0.08,glideTo:380});},wrong(){note(200,AC().currentTime,0.16,{type:'sawtooth',vol:0.1,glideTo:140});},right(){const t=AC().currentTime;note(660,t,0.1,{type:'sine',vol:0.14});note(990,t+0.08,0.18,{type:'sine',vol:0.13});},open(){const t=AC().currentTime;note(120,t,0.3,{type:'sine',vol:0.2,glideTo:60});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
+let code=[],guess=[0,0,0],tries=0;
+function rnd(){return Math.floor(Math.random()*10);}
+function build(){
+  code=[rnd(),rnd(),rnd()]; if(code.join('')==='000')code[0]=4; guess=[0,0,0];tries=0;$('#tries').textContent='Versuche: 0';$('#hint').textContent='Stell die Zahlen ein…';
+  const d=$('#dials');d.innerHTML='';
+  for(let i=0;i<3;i++){const col=document.createElement('div');col.className='dial';
+    col.innerHTML=`<button data-i="${i}" data-dir="1">▲</button><div class="num" id="n${i}">0</div><button data-i="${i}" data-dir="-1">▼</button>`;
+    d.appendChild(col);}
+  d.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.i,dir=+b.dataset.dir;guess[i]=(guess[i]+dir+10)%10;$('#n'+i).textContent=guess[i];sfx.click();vib(6);}));
+  $('#safe').classList.remove('open');
+}
+function crack(){
+  tries++;$('#tries').textContent='Versuche: '+tries;
+  let correct=0; for(let i=0;i<3;i++) if(guess[i]===code[i])correct++;
+  if(correct===3){ $('#hint').textContent='ENTRIEGELT!'; sfx.right(); setTimeout(openSafe,300); }
+  else { $('#hint').textContent=correct+' von 3 Stellen stimmen'; sfx.wrong(); vib([30,40,30]); $('#door').animate([{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'translateX(0)'}],{duration:240}); }
+}
+function openSafe(){ $('#safe').classList.add('open'); sfx.open(); vib(60); setTimeout(winReveal,900); }
+function winReveal(){
+  if(HAS_PHOTO){ $('#winWho').textContent=`Der Tresor springt auf — die geheime Hauptperson ist ${kid()}! Komm zur königlichen Mystery-Party:`; }
+  else { $('#winTitle').textContent='Geknackt!'; $('#winWho').textContent=`Die Kronjuwelen funkeln im Tresor — ${kid()} hat den Fall gelöst! Komm zur Mystery-Party:`; }
+  guestName();
+  show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]);
+}
+function tip(){ if($('#safe').classList.contains('open'))return; const i=guess.findIndex((g,ix)=>g!==code[ix]); if(i<0) return crack(); guess[i]=code[i]; $('#n'+i).textContent=guess[i]; sfx.right(); vib(10); $('#hint').textContent='Ein Rädchen rastet ein …'; } // Tipp: eine Stelle für dich einstellen
+$('#startBtn').addEventListener('click',()=>{build();show('s-game');});
+$('#crackBtn').addEventListener('click',crack);
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

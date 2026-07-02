@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Dschungel-Puzzle</title>
+<link rel="stylesheet" href="core/core.css?v=20260702">
+<style>
+  /* E9 Puzzle — nur Spiel-Eigenes; Skelett aus core.css. */
+  :root{--bg1:#143a1c;--bg2:#2f6b34;--fg:#f1ffe6;--accent:#7bc043;--accent-dk:#4e8a1f;--ink:#13280a}
+  .board{position:relative;width:100%;max-width:340px;aspect-ratio:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:3px;padding:8px;border-radius:16px;background:linear-gradient(160deg,#3a6b22,#274d16);box-shadow:0 12px 30px rgba(0,0,0,.5)}
+  .cell{border-radius:8px;background-image:var(--photo);background-size:300% 300%;background-color:#2a3a18;cursor:pointer;transition:transform .14s ease, filter .14s;box-shadow:inset 0 0 0 1px rgba(0,0,0,.25);position:relative}
+  .cell.empty{background:none;box-shadow:inset 0 0 0 2px rgba(255,255,255,.12);cursor:default}
+  .cell.movable::after{content:"";position:absolute;inset:0;border-radius:8px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.35)}
+  .cell.tap{transform:scale(.93);filter:brightness(1.2)}
+  .board.solved .cell{transition:none}.board.solved{gap:0}
+  .board.solved .cell.empty{background-image:var(--photo);background-size:300% 300%;box-shadow:none;background-position:100% 100%}
+  /* Reveal */
+  .frame{width:100%;background:linear-gradient(170deg,#eafbdd,#cdeeb0);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.45);text-align:center;border:4px solid var(--accent-dk)}
+  .hero{width:150px;height:150px;border-radius:18px;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a3a18;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🌴";position:absolute;top:-20px;right:-12px;font-size:34px;transform:rotate(12deg)}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .frame h2{font-size:23px;margin:6px 0 2px}.frame .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .frame dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.frame dt{font-size:20px}.frame dd{font-weight:700}
+  .hint{font-size:13px;opacity:.85;text-align:center}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Dschungel-Puzzle (E9 Puzzle)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🧩</div>
+    <h1>Setz das Dschungel-Bild zusammen!</h1>
+    <p class="sub">Tippe eine Kachel neben dem freien Feld, dann rutscht sie hinein. Schieb alle Teile an ihren Platz — am Ende erscheint das geheime Bild!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Puzzle starten 🌿</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill">Züge <b id="mv">0</b></span></div>
+    <div class="board" id="board"></div>
+    <p class="hint">Tippe ein Teil neben der Lücke 🟫</p>
+    <button class="btn" id="tippBtn" style="background:rgba(255,255,255,.18);font-size:15px;padding:8px 20px">💡 Tipp</button>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="frame">
+      <div class="hero"></div>
+      <h2 id="winTitle">Bild komplett!</h2>
+      <p class="who" id="winWho">Das Bild ist komplett! Komm zur Dschungel-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Dschungel-Camp, Lianenweg 3</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🐒 Ich komm auf Expedition!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260702"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#2f6b34'/><path d='M0 200 q60 -40 120 0 t120 0 v40 H0z' fill='#1f4a23'/><circle cx='120' cy='110' r='44' fill='#e0a030'/><circle cx='104' cy='100' r='7' fill='#13280a'/><circle cx='136' cy='100' r='7' fill='#13280a'/><path d='M96 128 q24 18 48 0' stroke='#13280a' stroke-width='6' fill='none'/><path d='M88 80 q-16 -28 6 -40 M152 80 q16 -28 -6 -40' stroke='#e0a030' stroke-width='10' fill='none'/><path d='M20 40 q30 20 10 60 M220 40 q-30 20 -10 60' stroke='#4e8a1f' stroke-width='10' fill='none'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#7bc043','#37c46e','#e0a030','#fff','#4e8a1f'];
+const sfx={slide(){note(520,AC().currentTime,0.08,{type:'sine',vol:0.1,glideTo:380});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
+// pos[slot] = tile-id; tile 8 = empty. solved when pos[i]===i.
+// Alters-Variante: 2x2 für 4–6 (trivial), 3x3 ab 7; Shuffle-Tiefe skaliert mit Alter.
+const N=(ageNum()<=6?2:3), CELLS=N*N, EMPTY=CELLS-1, STEP=(N>1?100/(N-1):0), SHUF=(N===2?8:(ageNum()<=9?14:40));
+let pos=[], moves=0, done=false, cells=[];
+const bgFor=t=>{const c=t%N,r=Math.floor(t/N);return (c*STEP)+'% '+(r*STEP)+'%';};
+function adj(a,b){const ca=a%N,ra=Math.floor(a/N),cb=b%N,rb=Math.floor(b/N);return (ra===rb&&Math.abs(ca-cb)===1)||(ca===cb&&Math.abs(ra-rb)===1);}
+function build(){ const b=$('#board'); b.innerHTML=''; b.classList.remove('solved'); b.style.gridTemplateColumns='repeat('+N+',1fr)'; b.style.gridTemplateRows='repeat('+N+',1fr)'; cells=[]; for(let i=0;i<CELLS;i++){ const c=document.createElement('div'); c.className='cell'; c.style.backgroundSize=(N*100)+'% '+(N*100)+'%'; c.dataset.slot=i; c.addEventListener('click',()=>move(i)); b.appendChild(c); cells.push(c); } }
+function render(){ const e=pos.indexOf(EMPTY); for(let i=0;i<CELLS;i++){ const t=pos[i],c=cells[i]; if(t===EMPTY){ c.className='cell empty'; c.style.backgroundPosition=''; } else { c.className='cell'+(adj(i,e)?' movable':''); c.style.backgroundPosition=bgFor(t); } } }
+function move(i){ if(done)return; const e=pos.indexOf(EMPTY); if(!adj(i,e))return; [pos[i],pos[e]]=[pos[e],pos[i]]; moves++; $('#mv').textContent=moves; const c=cells[i]; c.classList.add('tap'); setTimeout(()=>c.classList.remove('tap'),140); sfx.slide(); vib(8); render(); checkSolved(); }
+function checkSolved(){ if(!done && pos.every((t,k)=>t===k)){ winSeq(); return true; } return false; }
+function shuffle(){ pos=[]; for(let i=0;i<CELLS;i++)pos.push(i); let e=EMPTY,prev=-1; for(let n=0;n<SHUF;n++){ const nb=[]; for(let i=0;i<CELLS;i++) if(adj(i,e)&&i!==prev) nb.push(i); const pick=nb[Math.floor(Math.random()*nb.length)]; [pos[pick],pos[e]]=[pos[e],pos[pick]]; prev=e; e=pick; } if(pos.every((t,k)=>t===k)) shuffle(); }
+function winSeq(){ done=true; $('#board').classList.add('solved'); sfx.win(); vib([20,40,20,40,80]); if(HAS_PHOTO){ $('#winWho').textContent=`Willkommen im Dschungel — die Expedition wartet auf ${kid()}! Komm zur Dschungel-Party:`; } else { $('#winTitle').textContent='Bild komplett!'; $('#winWho').textContent=`Das Dschungel-Bild ist komplett — ${kid()} kann die Expedition starten! Komm zur Dschungel-Party:`; } guestName(); setTimeout(()=>{ show('s-win'); confetti(CC); }, 900); }
+// Tipp: A* (Manhattan) liefert den nächsten optimalen Zug Richtung Lösung -> Reveal immer erreichbar, „löst einen Teil" pro Druck.
+function solveStep(){ if(done) return null; const key=a=>a.join(','); const gk=pos.map((_,k)=>k).join(','); if(key(pos)===gk) return null; const man=a=>{let d=0;for(let s=0;s<CELLS;s++){const t=a[s];if(t===EMPTY)continue;d+=Math.abs(Math.floor(t/N)-Math.floor(s/N))+Math.abs((t%N)-(s%N));}return d;}; const open=[{a:pos.slice(),g:0,f:man(pos),first:-1}]; const seen=new Map([[key(pos),0]]); let guard=0; while(open.length&&guard++<300000){ let bi=0; for(let i=1;i<open.length;i++) if(open[i].f<open[bi].f) bi=i; const cur=open.splice(bi,1)[0]; if(key(cur.a)===gk) return cur.first; const e=cur.a.indexOf(EMPTY); for(let s=0;s<CELLS;s++){ if(!adj(s,e))continue; const na=cur.a.slice(); [na[s],na[e]]=[na[e],na[s]]; const k=key(na),ng=cur.g+1; if(seen.has(k)&&seen.get(k)<=ng)continue; seen.set(k,ng); open.push({a:na,g:ng,f:ng+man(na),first: cur.first<0? s : cur.first}); } } return null; }
+$('#startBtn').addEventListener('click',()=>{ done=false; moves=0; $('#mv').textContent=0; build(); shuffle(); render(); show('s-game'); });
+$('#tippBtn').addEventListener('click',()=>{ const s=solveStep(); if(s!==null) move(s); });
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Drehleiter — Feuerwehr</title>
+<link rel="stylesheet" href="core/core.css?v=20260702">
+<style>
+  /* E-Aim: schwingende Drehleiter im richtigen Winkel ausfahren, 3 Fenster retten -> Foto-Slot-Reveal. Auf Shared Core. */
+  :root{--bg1:#241018;--bg2:#7a2535;--fg:#fff;--accent:#e63946;--accent-dk:#a01f2c;--ink:#2a1418}
+  .hud{font-weight:700;font-size:14px}
+  .field{position:relative;width:100%;aspect-ratio:.95;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#3a4a6a 0%,#26324d 70%,#1c2436 100%);box-shadow:0 12px 30px rgba(0,0,0,.45)}
+  .haus{position:absolute;right:6%;top:8%;width:46%;height:74%;background:linear-gradient(160deg,#6a5a4a,#4a3e34);border-radius:6px 6px 0 0;box-shadow:inset 0 0 0 3px #3a3026}
+  .win{position:absolute;width:26%;height:15%;left:18%;border-radius:3px;background:#2a3550;box-shadow:inset 0 0 0 3px #1a2236;display:flex;align-items:center;justify-content:center;font-size:18px}
+  .win.w0{bottom:10%}.win.w1{bottom:38%}.win.w2{bottom:66%}.win.r{left:54%}
+  .win.lit{background:radial-gradient(circle,#ffd24d,#ff9b3c);box-shadow:0 0 16px 4px rgba(255,200,80,.8);animation:litp 1s infinite}
+  @keyframes litp{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+  .win.saved{background:#37c46e;box-shadow:inset 0 0 0 3px #1f8a4c}
+  .truck{position:absolute;left:4%;bottom:5%;font-size:38px;z-index:3}
+  .ladder{position:absolute;left:13%;bottom:13%;width:8px;height:0;background:repeating-linear-gradient(180deg,#ddd,#ddd 5px,#aaa 5px,#aaa 10px);transform-origin:bottom center;transform:rotate(-20deg);border-radius:4px;z-index:2;transition:height .25s}
+  .field.shakeF{animation:shf .3s}@keyframes shf{0%,100%{transform:translateX(0)}33%{transform:translateX(-5px)}66%{transform:translateX(5px)}}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#fff3ef,#ffd9d2);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1418;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🪜";position:absolute;bottom:-8px;right:-10px;font-size:34px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+  .tapBtn{width:90%;max-width:320px}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Drehleiter (Aim)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🪜</div>
+    <h1>Fahr die Drehleiter aus!</h1>
+    <p class="sub">Die Leiter schwingt hin und her. Tippe <b>AUSFAHREN</b> genau dann, wenn sie auf das leuchtende Fenster zeigt. Rette alle drei — dann ist jemand sehr froh!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Einsatz starten 🚨</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill" style="background:rgba(0,0,0,.3);padding:6px 12px;border-radius:999px">Gerettet 🚒 <b id="cnt">0</b>/3</span></div>
+    <div class="field" id="field">
+      <div class="haus">
+        <div class="win w0" data-f="0"></div>
+        <div class="win w1 r" data-f="1"></div>
+        <div class="win w2" data-f="2"></div>
+      </div>
+      <div class="ladder" id="ladder"></div>
+      <div class="truck">🚒</div>
+    </div>
+    <button class="btn tapBtn" id="extendBtn">AUSFAHREN ⤴</button>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Alle gerettet!</h2>
+      <p class="who" id="winWho">Alle in Sicherheit! Komm zur Feuerwehr-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>An der Feuerwache</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🚒 Ich rück mit aus!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260702"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#2a1418'/><rect x='70' y='44' width='60' height='120' rx='6' fill='#6a5a4a'/><rect x='84' y='58' width='32' height='26' fill='#ffd24d'/><rect x='84' y='98' width='32' height='26' fill='#ffd24d'/><circle cx='100' cy='150' r='10' fill='#37c46e'/><path d='M30 170 l60 -60' stroke='#ddd' stroke-width='6'/><path d='M30 170 l8 0 M44 156 l8 0 M58 142 l8 0 M72 128 l8 0' stroke='#aaa' stroke-width='4'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#e63946','#ffd24d','#37c46e','#fff','#a01f2c'];
+const sfx={
+  rescue(){const t=AC().currentTime;note(523,t,0.1,{type:'sine',vol:0.13});note(784,t+0.08,0.18,{type:'sine',vol:0.12});},
+  miss(){note(180,AC().currentTime,0.14,{type:'triangle',vol:0.1,glideTo:130});},
+  win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+const TARGETS=[28,52,74]; const TOL=13;
+let ang=20, adir=1, swingT=null, rescued=0, done=false, busy=false;
+function renderLadder(){ const lad=$('#ladder'); lad.style.transform='rotate(-'+ang+'deg)'; lad.style.height=(36+ang*0.7)+'%'; }
+function glowNear(){ if(done)return; const w=document.querySelectorAll('.win')[rescued]; if(!w)return; const near=Math.max(0,1-Math.abs(ang-TARGETS[rescued])/28); w.style.boxShadow='0 0 '+(8+near*28)+'px '+(2+near*7)+'px rgba(255,205,80,'+(0.35+near*0.55)+')'; }
+function litWindow(){ document.querySelectorAll('.win').forEach((w,i)=>{ w.classList.toggle('lit', i===rescued && !w.classList.contains('saved')); }); }
+function swing(){ clearInterval(swingT); ang=20;adir=1; swingT=setInterval(()=>{ if(done)return; ang+=adir*1.2; if(ang>=80){ang=80;adir=-1;} if(ang<=18){ang=18;adir=1;} renderLadder(); glowNear(); },48); }
+function extend(){
+  if(done||busy)return; const tgt=TARGETS[rescued];
+  if(Math.abs(ang-tgt)<=TOL){
+    busy=true; const w=document.querySelectorAll('.win')[rescued]; w.classList.remove('lit'); w.classList.add('saved'); w.textContent='🙌'; w.style.boxShadow='';
+    rescued++; $('#cnt').textContent=rescued; sfx.rescue(); vib([10,25]);
+    if(rescued>=3) return winSeq();
+    setTimeout(()=>{ busy=false; litWindow(); }, 350);
+  } else {
+    sfx.miss(); vib([20,30]); $('#field').classList.add('shakeF'); setTimeout(()=>$('#field').classList.remove('shakeF'),300);
+  }
+}
+function winSeq(){
+  done=true; clearInterval(swingT); sfx.win(); vib([20,40,20,40,80]);
+  if(HAS_PHOTO){ $('#winWho').textContent=`Die mutigste Person an der ganzen Wache ist ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winTitle').textContent='Alle gerettet!'; $('#winWho').textContent=`Vom Dach winkt die gerettete Katze — ${kid()} war schnell zur Stelle! Komm zur Feuerwehr-Party:`; } guestName();
+  setTimeout(()=>{ show('s-win'); confetti(CC); }, 650);
+}
+function tip(){ if(done||busy)return; ang=TARGETS[rescued]; renderLadder(); extend(); } // Tipp: Leiter für dich ausrichten
+$('#startBtn').addEventListener('click',()=>{ rescued=0;done=false;busy=false; $('#cnt').textContent=0; document.querySelectorAll('.win').forEach(w=>{w.className=w.className.replace(/ (lit|saved)/g,'');w.textContent='';}); show('s-game'); litWindow(); renderLadder(); swing(); });
+$('#extendBtn').addEventListener('click',extend);
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

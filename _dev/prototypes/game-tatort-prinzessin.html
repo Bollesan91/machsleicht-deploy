@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Kronjuwelen-Tatort — Prinzessin</title>
+<link rel="stylesheet" href="core/core.css?v=20260702">
+<style>
+  /* E7 Wimmelbild: im Schloss-Saal 5 versteckte Juwelen finden -> Reveal. Prinzessin. Auf Shared Core. */
+  :root{--bg1:#1c0f2b;--bg2:#3a2150;--fg:#fff;--accent:#e6b54a;--accent-dk:#9c7414;--ink:#2a2030;--gold:#e6c15a}
+  .hud{font-weight:700;font-size:14px}.pill{background:rgba(0,0,0,.3);padding:6px 12px;border-radius:999px}
+  .field{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:repeating-linear-gradient(135deg,#4a3566,#4a3566 18px,#42305c 18px,#42305c 36px);box-shadow:0 12px 30px rgba(0,0,0,.55),inset 0 0 60px rgba(0,0,0,.5)}
+  .field::after{content:"";position:absolute;inset:0;background:radial-gradient(62% 62% at 50% 45%,transparent,rgba(0,0,0,.4));pointer-events:none}
+  /* Verborgenes Bild im Saal: wird mit jedem Juwel klarer (Reveal an Mechanik gekoppelt) */
+  .fieldphoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease;pointer-events:none}
+  .item{position:absolute;transform:translate(-50%,-50%);font-size:23px;cursor:pointer;filter:drop-shadow(0 1px 1px rgba(0,0,0,.5));transition:transform .12s;user-select:none}
+  .item.deco{opacity:.92}
+  .item.deco.miss{animation:wob .3s}@keyframes wob{0%,100%{transform:translate(-50%,-50%) rotate(0)}33%{transform:translate(-50%,-50%) rotate(-12deg)}66%{transform:translate(-50%,-50%) rotate(12deg)}}
+  .item.clue{font-size:20px}
+  .item.clue.got{animation:found .5s forwards;pointer-events:none;z-index:5}
+  @keyframes found{0%{transform:translate(-50%,-50%) scale(1)}40%{transform:translate(-50%,-50%) scale(1.7)}100%{transform:translate(-50%,-50%) scale(1.25)}}
+  .item.clue.got::after{content:"✓";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:15px;color:#37c46e;font-weight:900;text-shadow:0 0 4px #000}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#fff7ef,#f0e4d0);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:142px;height:142px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--gold);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a2030;box-shadow:0 0 24px rgba(230,193,90,.6);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"👑";position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:34px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+  .hint{font-size:13px;opacity:.85;text-align:center}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Kronjuwelen-Tatort (E7 Wimmelbild)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">👑</div>
+    <h1>Wo sind die Kronjuwelen?</h1>
+    <p class="sub">Im großen Schloss-Saal funkeln <b>5 versteckte Juwelen</b> 💎 zwischen all dem königlichen Prunk. Mit jedem Fund wird ein verborgenes Bild im Saal klarer — finde alle fünf, dann zeigt sich die heimliche Hauptperson!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Suche starten 🔍</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill">Juwelen 💎 <b id="cnt">0</b>/5</span></div>
+    <div class="field" id="field"></div>
+    <p class="hint">Tipp die funkelnden Juwelen — der Saal ist voll!</p>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Alle gefunden!</h2>
+      <p class="who" id="winWho">Alle Juwelen gefunden! Komm zur Prinzessinnen-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Im Schloss (Stadtpark)</dd></dl>
+      <button class="btn ja" id="rsvpBtn">👑 Ich komme an den Hof!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260702"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#2a1840'/><path d='M40 130 L55 70 L80 105 L100 60 L120 105 L145 70 L160 130 Z' fill='#e6c15a' stroke='#a87f14' stroke-width='3'/><rect x='40' y='130' width='120' height='16' rx='4' fill='#caa24a'/><circle cx='55' cy='70' r='8' fill='#7fd3ff'/><circle cx='100' cy='60' r='9' fill='#ff7fb0'/><circle cx='145' cy='70' r='8' fill='#7fffa8'/><circle cx='80' cy='150' r='6' fill='#fff'/><circle cx='120' cy='150' r='6' fill='#fff'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#e6c15a','#37c46e','#a35cff','#fff','#ff7fb0'];
+const sfx={find(){const t=AC().currentTime;note(700,t,0.1,{type:'triangle',vol:0.13});note(1050,t+0.07,0.18,{type:'triangle',vol:0.12});},no(){noise(AC().currentTime,0.09,{vol:0.05,freq:260,filter:'bandpass'});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
+const DECOS=['👑','📜','🕯️','🗝️','💍','🪞','🍇','🏰','⚜️','🎀','📯','🛡️','🪙','🥂','🌹','🔮','📿','🪄','👜','🎭','🧣','🪟','🕰️','📕','🪅','🎁','🛎️','🫖'];
+const CLUE_POS=[[22,26],[70,32],[46,54],[80,72],[28,80]];
+let found=0,done=false;
+function sharpen(frac){ const p=document.querySelector('#field .fieldphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function tap(el,isClue){
+  if(done)return;
+  if(isClue){ if(el.classList.contains('got'))return; el.classList.add('got'); found++; $('#cnt').textContent=found; sharpen(found/5); sfx.find(); vib(15); if(found>=5) winSeq(); }
+  else { el.classList.add('miss'); setTimeout(()=>el.classList.remove('miss'),300); sfx.no(); vib(8); }
+}
+function layout(){
+  const f=$('#field'); f.innerHTML=''; const ph=document.createElement('div'); ph.className='fieldphoto'; f.appendChild(ph); const items=[];
+  CLUE_POS.forEach(p=>items.push({c:true,x:p[0],y:p[1]}));
+  for(let i=0;i<26;i++){ items.push({c:false,x:6+Math.random()*88,y:8+Math.random()*84,e:DECOS[i%DECOS.length]}); }
+  for(let i=items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]];}
+  items.forEach(it=>{ const s=document.createElement('span'); s.className='item '+(it.c?'clue':'deco'); s.style.left=it.x+'%'; s.style.top=it.y+'%'; s.textContent=it.c?'💎':it.e; s.addEventListener('click',()=>tap(s,it.c)); f.appendChild(s); });
+}
+function winSeq(){
+  done=true; sharpen(1); sfx.win(); vib([20,40,20,40,80]);
+  if(HAS_PHOTO){ $('#winWho').textContent=`Die heimliche Hauptperson im Schloss ist ${kid()}! Komm zur Prinzessinnen-Party:`; } else { $('#winTitle').textContent='Alle gefunden!'; $('#winWho').textContent=`Die Kronjuwelen funkeln wieder im Schloss — ${kid()} hat den Fall gelöst! Komm zur Prinzessinnen-Party:`; } guestName();
+  setTimeout(()=>{ show('s-win'); confetti(CC); }, 650);
+}
+function tip(){ if(done)return; const c=document.querySelector('.item.clue:not(.got)'); if(c) c.click(); } // Tipp: ein verstecktes Ziel aufdecken
+$('#startBtn').addEventListener('click',()=>{found=0;done=false;$('#cnt').textContent=0;layout();show('s-game');});
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

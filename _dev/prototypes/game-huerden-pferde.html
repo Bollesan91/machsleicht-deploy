@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Hürden-Springen — Pferde</title>
+<link rel="stylesheet" href="core/core.css?v=20260702">
+<style>
+  /* E10 Timing-Tap — nur Spiel-Eigenes; Skelett aus core.css. */
+  :root{--bg1:#3f5f86;--bg2:#7fa8d8;--fg:#fff;--accent:#e0913a;--accent-dk:#a8631a;--ink:#2e1c0a}
+  .field{position:relative;width:100%;aspect-ratio:1.25;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#a9d0f2 0%,#bfe0a0 58%,#8fbf63 58%,#79a850 100%);box-shadow:0 12px 30px rgba(0,0,0,.45)}
+  #track{position:absolute;left:0;right:0;bottom:0;height:42%}
+  .ground{position:absolute;left:0;right:0;bottom:0;height:42%;background:repeating-linear-gradient(90deg,#79a850,#79a850 28px,#71a049 28px,#71a049 56px);animation:scroll .4s linear infinite}
+  @keyframes scroll{to{background-position:-56px 0}}
+  .zone{position:absolute;bottom:0;height:42%;left:26%;width:14%;background:linear-gradient(180deg,rgba(255,255,255,.18),transparent);border-left:2px dashed rgba(255,255,255,.4);border-right:2px dashed rgba(255,255,255,.4)}
+  .horse{position:absolute;bottom:30%;left:22%;transform:translateX(-50%);font-size:46px;z-index:4;filter:drop-shadow(0 4px 4px rgba(0,0,0,.4))}
+  .horse.jump{animation:leap .55s ease}
+  @keyframes leap{0%{transform:translateX(-50%) translateY(0)}45%{transform:translateX(-50%) translateY(-78px) rotate(-8deg)}100%{transform:translateX(-50%) translateY(0)}}
+  .horse.stumble{animation:stb .3s}@keyframes stb{0%,100%{transform:translateX(-50%)}33%{transform:translateX(-54%) rotate(-8deg)}66%{transform:translateX(-50%) rotate(6deg)}}
+  .hurdle{position:absolute;bottom:30%;font-size:34px;transform:translateX(-50%);z-index:3;filter:drop-shadow(0 2px 2px rgba(0,0,0,.35))}
+  .hurdle.knock{animation:knock .4s forwards}@keyframes knock{to{transform:translateX(-50%) rotate(60deg) translateY(8px);opacity:.6}}
+  .finish{position:absolute;bottom:30%;right:-12%;font-size:40px;z-index:2;transition:right .4s}
+  /* Reveal */
+  .rosette{width:100%;background:linear-gradient(170deg,#fff3e2,#ffe0bd);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.45);text-align:center;border:4px solid var(--accent-dk);position:relative}
+  .hero{width:148px;height:148px;border-radius:50%;margin:8px auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2a16;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🏅";position:absolute;bottom:-6px;right:-6px;font-size:40px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .rosette h2{font-size:23px;margin:6px 0 2px}.rosette .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .rosette dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.rosette dt{font-size:20px}.rosette dd{font-weight:700}
+  .tapBtn{width:90%;max-width:320px}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Hürden-Springen (E10 Timing-Tap)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🐎</div>
+    <h1>Reite über alle Hürden!</h1>
+    <p class="sub">Wenn eine Hürde in den hellen Bereich kommt, tippe <b>SPRUNG</b> — genau im richtigen Moment! Nimm 5 Hürden sauber und gewinne das Turnier.</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Aufs Pferd! 🏇</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill">Hürden 🏅 <b id="cl">0</b>/5</span></div>
+    <div class="field" id="field">
+      <div class="ground"></div>
+      <div class="zone"></div>
+      <div id="track"></div>
+      <div class="finish" id="finish">🏁</div>
+      <div class="horse" id="horse">🐎</div>
+    </div>
+    <button class="btn tapBtn" id="jumpBtn">⬆ SPRUNG</button>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="rosette">
+      <div class="hero"></div>
+      <h2 id="winTitle">Turnier gewonnen!</h2>
+      <p id="winWho" class="who">Ganz oben auf dem Siegerpodest stehst DU! Komm zur Reiter-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 12. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Reiterhof Sonnenweide</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🐴 Ich sattle mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260702"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#7fa8d8'/><circle cx='100' cy='86' r='40' fill='#e0913a' stroke='#a8631a' stroke-width='5'/><path d='M100 60 l8 18 19 2 -14 13 4 19 -17 -10 -17 10 4 -19 -14 -13 19 -2z' fill='#fff'/><path d='M84 124 l-10 50 26 -16 26 16 -10 -50z' fill='#c0392b'/><circle cx='100' cy='86' r='12' fill='#a8631a'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#e0913a','#37c46e','#c0392b','#fff','#a8631a'];
+const sfx={jump(){note(440,AC().currentTime,0.16,{type:'sine',vol:0.12,glideTo:780});},clear(){const t=AC().currentTime;note(660,t,0.1,{type:'triangle',vol:0.13});note(990,t+0.08,0.18,{type:'triangle',vol:0.12});},stumble(){noise(AC().currentTime,0.2,{vol:0.16,freq:200,filter:'lowpass'});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
+const HORSE_X=22, ZONE_LO=26, ZONE_HI=40;
+let cleared=0, done=false, jumping=false, moveT=null, spawnT=null, hurdles=[];
+function spawnHurdle(){ if(done)return; const h=document.createElement('div'); h.className='hurdle'; h._x=106; h.style.left='106%'; h.textContent='⛩️'; $('#track').appendChild(h); hurdles.push(h); }
+function stumble(){ $('#horse').classList.add('stumble'); setTimeout(()=>$('#horse').classList.remove('stumble'),300); sfx.stumble(); vib([10,30]); }
+function moveHurdles(){ if(done)return; for(const h of hurdles.slice()){ h._x-=2.4; h.style.left=h._x+'%'; if(!h._done && h._x<=HORSE_X+3 && h._x>=HORSE_X-3){ if(!jumping){ h._done='miss'; stumble(); } } if(h._x<-12){ h.remove(); const k=hurdles.indexOf(h); if(k>=0)hurdles.splice(k,1); } } }
+function jump(){ if(done||jumping)return; jumping=true; $('#horse').classList.add('jump'); sfx.jump(); vib(10); setTimeout(()=>{ $('#horse').classList.remove('jump'); jumping=false; },520);
+  const h=hurdles.find(x=>!x._done && x._x>=ZONE_LO && x._x<=ZONE_HI);
+  if(h){ h._done='clear'; h.classList.add('knock'); cleared++; $('#cl').textContent=cleared; sfx.clear(); vib([10,30]); if(cleared>=5) winSeq(); }
+}
+function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); $('#finish').style.right='40%'; sfx.win(); vib([20,40,20,40,80]); if(HAS_PHOTO){ $('#winWho').textContent=`Ganz oben auf dem Siegerpodest steht ${kid()}! Komm zur Reiter-Party:`; } else { $('#winTitle').textContent='Turnier gewonnen!'; $('#winWho').textContent=`Ganz oben auf dem Siegerpodest jubelt ${kid()} — Turnier gewonnen! Komm zur Reiter-Party:`; } guestName(); setTimeout(()=>{ show('s-win'); confetti(CC); }, 700); }
+function tip(){ if(done)return; cleared++; $('#cl').textContent=cleared; sfx.clear(); vib([10,30]); if(cleared>=5) winSeq(); } // Tipp: ein Hindernis für dich meistern
+$('#startBtn').addEventListener('click',()=>{ cleared=0;done=false;jumping=false; hurdles.forEach(h=>h.remove()); hurdles=[]; $('#cl').textContent=0; $('#finish').style.right='-12%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveHurdles,60); spawnT=setInterval(spawnHurdle,1300); });
+$('#jumpBtn').addEventListener('click',jump);
+$('#field').addEventListener('click',jump);
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>
