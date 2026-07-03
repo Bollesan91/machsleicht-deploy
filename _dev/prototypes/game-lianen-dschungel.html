@@ -51,7 +51,7 @@
     <h1 id="pTitle">Psst — ich bin Koko!</h1>
     <p class="sub" id="pText">…</p>
     <button class="btn" id="nextPan">Weiter ▸</button>
-    <p class="note" id="skipPan" style="cursor:pointer;opacity:.75">überspringen</p>
+    <button class="btn" id="skipPan" style="background:rgba(255,255,255,.16);font-size:14px;padding:8px 20px">Überspringen ▸▸</button>
     <div id="introForm" style="width:100%;flex-direction:column;align-items:center;gap:12px;display:none">
       <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
       <button class="btn" id="startBtn">Los geht's! 🌿</button>
@@ -92,7 +92,6 @@ const THEME={ photo:'/birthday-photo.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#f0a93a','#37c46e','#6fae5a','#fff','#b07414'];
 const sfx={swing(){note(420,AC().currentTime,0.18,{type:'sine',vol:0.12,glideTo:760});},clear(){const t=AC().currentTime;note(660,t,0.1,{type:'triangle',vol:0.13});note(990,t+0.08,0.18,{type:'triangle',vol:0.12});},stumble(){noise(AC().currentTime,0.2,{vol:0.14,freq:200,filter:'lowpass'});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
-const SW_X=24;
 // Alters-Staffel: jüngere Kinder = weniger Lianen, langsamer, breitere Zone, größere Spawn-Lücken
 const GOAL=(ageNum()<=6?4:ageNum()<=9?5:6), SPEED=(ageNum()<=6?1.7:ageNum()<=9?2.4:3.0), SPAWN=(ageNum()<=6?1600:ageNum()<=9?1300:1050), ZONE_LO=(ageNum()<=6?22:ageNum()<=9?26:28), ZONE_HI=(ageNum()<=6?46:ageNum()<=9?40:38);
 const DBL=(ageNum()>=7); // Doppel-Lianen-Rhythmus: Skill-Moment ab 7, U6 bleibt reizarm
@@ -106,17 +105,19 @@ const PANELS=[
 const GUEST=(new URLSearchParams(location.search).get('g')||'').trim().slice(0,20); // Gastname für den Twist-Beat
 let pIdx=0;
 function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitle').textContent=p.t; $('#pText').textContent=p.x; const last=pIdx>=PANELS.length-1; $('#nextPan').style.display=last?'none':''; $('#skipPan').style.display=last?'none':''; $('#introForm').style.display=last?'flex':'none'; }
-$('#nextPan').addEventListener('click',()=>{ AC(); pIdx++; showPan(); vib(6); });
+$('#nextPan').addEventListener('click',()=>{ AC(); pIdx=Math.min(pIdx+1,PANELS.length-1); showPan(); vib(6); });
 $('#skipPan').addEventListener('click',()=>{ AC(); pIdx=PANELS.length-1; showPan(); });
 showPan();
 let cleared=0, done=false, swinging=false, moveT=null, spawnT=null, vines=[], vineCount=0, dblArm=false, dblUntil=0;
 function sharpen(frac){ const p=$('#hutphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.55+0.45*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
 function spawnVine(){ if(done)return; const v=document.createElement('div'); v.className='vine'; v._x=106; v.style.left='106%'; vineCount++; if(DBL && vineCount%3===0){ v._double=true; v.innerHTML='<span>🌿🌿</span>'; } else { v.innerHTML='<span>🌿</span>'; } $('#track').appendChild(v); vines.push(v); }
 function stumble(){ $('#swinger').classList.add('miss'); setTimeout(()=>$('#swinger').classList.remove('miss'),300); sfx.stumble(); vib([10,30]); }
-function moveVines(){ if(done)return; for(const v of vines.slice()){ v._x-=SPEED; v.style.left=v._x+'%'; if(!v._done && v._x<=SW_X+3 && v._x>=SW_X-3){ if(!swinging){ v._done='miss'; stumble(); } } if(v._x<-12){ v.remove(); const k=vines.indexOf(v); if(k>=0)vines.splice(k,1); } } }
+function moveVines(){ if(done)return; for(const v of vines.slice()){ v._x-=SPEED; v.style.left=v._x+'%'; if(!v._done && v._x<ZONE_LO && v._x>=ZONE_LO-6){ if(!swinging){ v._done='miss'; stumble(); } } if(v._x<-12){ v.remove(); const k=vines.indexOf(v); if(k>=0)vines.splice(k,1); } } } // Miss erst NACH Verlassen der Zone — sonst frisst das Miss-Band bei U6 sichtbare Fangzone
 function swing(){ if(done)return;
   // Doppel-Lianen-Nachgriff: zweiter Tap innerhalb 450ms zählt extra (Rhythmus-Skill ab 7; verpasst = kein Verlust)
-  if(dblArm && Date.now()<dblUntil){ dblArm=false; cleared++; $('#cl').textContent=cleared; sharpen(cleared/GOAL); sfx.clear(); vib([10,25,10]); if(cleared>=GOAL) winSeq(); return; }
+  if(dblArm && Date.now()<dblUntil){ dblArm=false; cleared++; $('#cl').textContent=cleared; sharpen(cleared/GOAL); sfx.clear(); vib([10,25,10]);
+    const sw=$('#swinger'); sw.classList.remove('swing'); void sw.offsetWidth; sw.classList.add('swing'); setTimeout(()=>sw.classList.remove('swing'),520); // der Affe springt auch beim Blitz-Nachgriff
+    if(cleared>=GOAL) winSeq(); return; }
   if(swinging)return; swinging=true; $('#swinger').classList.add('swing'); sfx.swing(); vib(10); setTimeout(()=>{ $('#swinger').classList.remove('swing'); swinging=false; },520);
   const v=vines.find(x=>!x._done && x._x>=ZONE_LO && x._x<=ZONE_HI);
   if(v){ v._done='clear'; v.classList.add('caught'); cleared++; $('#cl').textContent=cleared; sharpen(cleared/GOAL); sfx.clear(); vib([10,30]);
@@ -128,13 +129,18 @@ function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); sharp
   $('#hutphoto').classList.add('flood'); // das Baumhaus-Fenster öffnet sich zur ganzen Szene: der Reveal IST der Höhepunkt
   $('#hut').style.opacity='0'; const sw=$('#swinger'); sw.style.opacity='0'; // Affe und Hütte machen die Bühne frei
   sfx.win(); note(440,AC().currentTime,0.5,{type:'sine',vol:0.1,glideTo:880}); vib([20,40,20,40,80]); // Fanfare AM Reveal
-  const so=$('#storyOut'); so.textContent='Koko staunt: Der Dschungel-Boss ist '+kid()+'! 🎉'; so.classList.add('on'); // Beat 1: Identität
-  setTimeout(()=>{ so.textContent=kid()+' lacht: „Na endlich'+(GUEST?', '+GUEST:'')+'! Ich hab schon auf dich gewartet!"'; },1700); // Beat 2, Plot-Twist: DU wurdest erwartet
+  confetti(CC); // Konfetti-Burst am Flood-Peak, nicht erst auf der Karte
+  const so=$('#storyOut');
+  if(HAS_PHOTO){ so.textContent='Koko staunt: Der Dschungel-Boss ist '+kid()+'! 🎉'; // Beat 1: Identität
+    setTimeout(()=>{ so.textContent=kid()+' lacht: „Na endlich'+(GUEST?', '+GUEST:'')+'! Ich hab schon auf dich gewartet!"'; },1700); } // Beat 2, Plot-Twist: DU wurdest erwartet
+  else { so.textContent='Koko staunt: '+kid()+' hat es bis zum Dschungel-Boss geschafft! 🎉'; // nofoto: kein Identitäts-Widerspruch zur Karte
+    setTimeout(()=>{ so.textContent='Und oben wartet schon die Dschungel-Party'+(GUEST?' auf dich, '+GUEST:'')+'!'; },1700); }
+  so.classList.add('on');
   if(HAS_PHOTO){ $('#winWho').textContent=`Das Baumhaus-Fenster öffnet sich weit — drinnen strahlt der Dschungel-Boss: ${kid()}! Komm zur Dschungel-Party:`; } else { $('#winTitle').textContent='Im Baumhaus!'; $('#winWho').textContent=`Oben im Baumhaus wartet ein freches Äffchen — ${kid()} hat den Dschungel geschafft! Komm zur Dschungel-Party:`; } guestName(); setTimeout(()=>{ show('s-win'); confetti(CC); }, 3100); }
 // Tipp sichtbar: eine Liane erscheint in der Zone und der Affe schwingt sie echt
-function tip(){ if(done)return; let v=vines.find(x=>!x._done && x._x>ZONE_HI); if(!v){ spawnVine(); v=vines[vines.length-1]; } if(!v)return; v._x=(ZONE_LO+ZONE_HI)/2; v.style.left=v._x+'%'; swinging=false; $('#swinger').classList.remove('swing'); swing(); }
+function tip(){ if(done)return; let v=vines.find(x=>!x._done && x._x>=ZONE_LO && x._x<=ZONE_HI); if(!v) v=vines.find(x=>!x._done && x._x>ZONE_HI); if(!v){ spawnVine(); v=vines[vines.length-1]; } if(!v)return; v._x=(ZONE_LO+ZONE_HI)/2; v.style.left=v._x+'%'; dblArm=false; swinging=false; $('#swinger').classList.remove('swing'); swing(); } // Zonen-Liane bevorzugen + dblArm aus: keine Waisen-Liane, kein Fehl-Stolperer nach dem Tipp
 // Start (AC() = iOS-Audio-Unlock per Geste)
-$('#startBtn').addEventListener('click',()=>{ AC(); cleared=0;done=false;swinging=false;vineCount=0;dblArm=false;dblUntil=0; $('#storyOut').classList.remove('on'); vines.forEach(v=>v.remove()); vines=[]; $('#cl').textContent=0; $('#clmax').textContent=GOAL; $('#hutphoto').classList.remove('flood'); sharpen(0); const z=document.querySelector('.zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; const sw=$('#swinger'); sw.style.opacity=''; sw.style.left='24%'; const hu=$('#hut'); hu.style.opacity=''; hu.style.right='-14%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveVines,60); spawnT=setInterval(spawnVine,SPAWN); });
+$('#startBtn').addEventListener('click',()=>{ AC(); cleared=0;done=false;swinging=false;vineCount=0;dblArm=false;dblUntil=0; $('#storyOut').classList.remove('on'); vines.forEach(v=>v.remove()); vines=[]; $('#cl').textContent=0; $('#clmax').textContent=GOAL; $('#hutphoto').classList.remove('flood'); sharpen(0); const z=document.querySelector('.zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; const sw=$('#swinger'); sw.style.opacity=''; sw.style.left='24%'; const hu=$('#hut'); hu.style.opacity=''; hu.style.right='-14%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveVines,60); spawnT=setInterval(spawnVine,SPAWN); setTimeout(spawnVine,400); }); // Initial-Spawn: keine 2,5s Leerlauf vor der ersten Liane
 $('#swingBtn').addEventListener('click',swing);
 $('#field').addEventListener('click',swing);
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
