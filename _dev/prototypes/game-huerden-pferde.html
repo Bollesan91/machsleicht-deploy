@@ -13,12 +13,14 @@
   .ground{position:absolute;left:0;right:0;bottom:0;height:42%;background:repeating-linear-gradient(90deg,#79a850,#79a850 28px,#71a049 28px,#71a049 56px);animation:scroll .4s linear infinite}
   @keyframes scroll{to{background-position:-56px 0}}
   .zone{position:absolute;bottom:0;height:42%;left:26%;width:14%;background:linear-gradient(180deg,rgba(255,255,255,.18),transparent);border-left:2px dashed rgba(255,255,255,.4);border-right:2px dashed rgba(255,255,255,.4)}
-  .horse{position:absolute;bottom:30%;left:22%;transform:translateX(-50%);font-size:46px;z-index:4;filter:drop-shadow(0 4px 4px rgba(0,0,0,.4))}
+  .horse{position:absolute;bottom:30%;left:22%;transform:translateX(-50%) scaleX(-1);font-size:46px;z-index:4;filter:drop-shadow(0 4px 4px rgba(0,0,0,.4))} /* scaleX(-1): 🐎 schaut per Default nach links, galoppiert hier aber nach rechts → spiegeln, sonst läuft es rückwärts */
   .horse.jump{animation:leap .55s ease}
-  @keyframes leap{0%{transform:translateX(-50%) translateY(0)}45%{transform:translateX(-50%) translateY(-78px) rotate(-8deg)}100%{transform:translateX(-50%) translateY(0)}}
-  .horse.stumble{animation:stb .3s}@keyframes stb{0%,100%{transform:translateX(-50%)}33%{transform:translateX(-54%) rotate(-8deg)}66%{transform:translateX(-50%) rotate(6deg)}}
+  @keyframes leap{0%{transform:translateX(-50%) scaleX(-1) translateY(0)}45%{transform:translateX(-50%) scaleX(-1) translateY(-78px) rotate(-8deg)}100%{transform:translateX(-50%) scaleX(-1) translateY(0)}}
+  .horse.stumble{animation:stb .3s}@keyframes stb{0%,100%{transform:translateX(-50%) scaleX(-1)}33%{transform:translateX(-54%) scaleX(-1) rotate(-8deg)}66%{transform:translateX(-50%) scaleX(-1) rotate(6deg)}}
   .hurdle{position:absolute;bottom:30%;font-size:34px;transform:translateX(-50%);z-index:3;filter:drop-shadow(0 2px 2px rgba(0,0,0,.35))}
-  .hurdle.knock{animation:knock .4s forwards}@keyframes knock{to{transform:translateX(-50%) rotate(60deg) translateY(8px);opacity:.6}}
+  .hurdle.cleared{animation:cleared .5s ease}@keyframes cleared{0%{filter:drop-shadow(0 2px 2px rgba(0,0,0,.35))}30%{transform:translateX(-50%) translateY(-7px) scale(1.18);filter:drop-shadow(0 0 8px gold) brightness(1.5)}100%{transform:translateX(-50%)}} /* sauber drüber: Hürde bleibt STEHEN und blitzt kurz gold auf — Umkippen wäre im Springreiten ein Fehler, kein Erfolg */
+  .plus1{position:absolute;font-size:22px;font-weight:900;color:#ffd34d;text-shadow:0 2px 5px rgba(0,0,0,.55);z-index:8;pointer-events:none;animation:plus1 .8s ease forwards}
+  @keyframes plus1{0%{opacity:0;transform:translate(-50%,0) scale(.6)}22%{opacity:1;transform:translate(-50%,-16px) scale(1.15)}100%{opacity:0;transform:translate(-50%,-54px) scale(1)}}
   .finish{position:absolute;bottom:30%;right:-12%;font-size:40px;z-index:2;transition:right .4s}
   /* Siegertafel überm Zieltor: Foto baut sich pro geschaffter Hürde auf; im Finale flutet sie die Szene (Reveal = Höhepunkt) */
   .goalphoto{position:absolute;top:7%;right:6%;width:88px;height:88px;border-radius:12px;border:3px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.35);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2a16;opacity:0;filter:blur(16px) saturate(.5) brightness(.7);transition:opacity .5s ease,filter .5s ease,transform .8s ease,width .8s ease,height .8s ease,top .8s ease,right .8s ease,border-radius .8s ease;pointer-events:none;z-index:5;transform:rotate(3deg)}
@@ -108,10 +110,11 @@ function sharpen(frac){ const p=$('#goalphoto'); if(!p)return; const f=Math.max(
   const fi=$('#finish'); if(fi) fi.style.right=(-12+16*f).toFixed(1)+'%'; } // hinten gewichtet (1-f^2); Zieltor fährt mit dem Fortschritt ins Bild („die Ziellinie naht")
 function spawnHurdle(){ if(done)return; const h=document.createElement('div'); h.className='hurdle'; h._x=106; h.style.left='106%'; h.textContent='⛩️'; $('#track').appendChild(h); hurdles.push(h); }
 function stumble(){ $('#horse').classList.add('stumble'); setTimeout(()=>$('#horse').classList.remove('stumble'),300); sfx.stumble(); vib([10,30]); }
+function pop1(x){ const p=document.createElement('div'); p.className='plus1'; p.textContent='+1 🏅'; p.style.left=(x||30)+'%'; p.style.bottom='58%'; $('#field').appendChild(p); setTimeout(()=>p.remove(),820); } // Score-Popup „+1" steigt an der übersprungenen Hürde auf
 function moveHurdles(){ if(done)return; for(const h of hurdles.slice()){ h._x-=SPEED; h.style.left=h._x+'%'; if(!h._done && h._x<ZONE_LO && h._x>=ZONE_LO-6){ if(!jumping){ h._done='miss'; stumble(); } } if(h._x<-12){ h.remove(); const k=hurdles.indexOf(h); if(k>=0)hurdles.splice(k,1); } } } // Miss erst NACH Verlassen der Zone — sonst frisst das Miss-Band bei U6 sichtbare Sprungzone (Lektion lianen-F1)
 function jump(){ if(done||jumping)return; jumping=true; $('#horse').classList.add('jump'); sfx.jump(); vib(10); setTimeout(()=>{ $('#horse').classList.remove('jump'); jumping=false; },520);
   const h=hurdles.find(x=>!x._done && x._x>=ZONE_LO && x._x<=ZONE_HI);
-  if(h){ h._done='clear'; h.classList.add('knock'); cleared++; $('#cl').textContent=cleared; sharpen(cleared/GOAL); sfx.clear(); vib([10,30]); if(cleared>=GOAL) winSeq(); }
+  if(h){ h._done='clear'; h.classList.add('cleared'); pop1(h._x); cleared++; $('#cl').textContent=cleared; sharpen(cleared/GOAL); sfx.clear(); vib([10,30]); if(cleared>=GOAL) winSeq(); } // sauberer Sprung: Hürde bleibt stehen, +1-Punkt fliegt hoch
 }
 function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
 function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim(); return (v&&v.length<=20)?v:GUEST; } // Namensfeld vor URL-Param (wie guestName); >20 verwerfen wie core.js
