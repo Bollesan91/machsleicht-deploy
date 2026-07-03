@@ -20,6 +20,10 @@
   .hurdle{position:absolute;bottom:30%;font-size:34px;transform:translateX(-50%);z-index:3;filter:drop-shadow(0 2px 2px rgba(0,0,0,.35))}
   .hurdle.knock{animation:knock .4s forwards}@keyframes knock{to{transform:translateX(-50%) rotate(60deg) translateY(8px);opacity:.6}}
   .finish{position:absolute;bottom:30%;right:-12%;font-size:40px;z-index:2;transition:right .4s}
+  /* Siegertafel überm Zieltor: Foto baut sich pro geschaffter Hürde auf (Reveal an Mechanik gekoppelt) */
+  .goalphoto{position:absolute;top:7%;right:6%;width:88px;height:88px;border-radius:12px;border:3px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.35);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2a16;opacity:0;filter:blur(16px) saturate(.5) brightness(.7);transition:opacity .5s ease,filter .5s ease,transform .5s ease;pointer-events:none;z-index:5;transform:rotate(3deg)}
+  .goalphoto::after{content:"🏅";position:absolute;top:-14px;left:-10px;font-size:26px}
+  .goalphoto.big{transform:rotate(0deg) scale(1.3)}
   /* Reveal */
   .rosette{width:100%;background:linear-gradient(170deg,#fff3e2,#ffe0bd);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.45);text-align:center;border:4px solid var(--accent-dk);position:relative}
   .hero{width:148px;height:148px;border-radius:50%;margin:8px auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2a16;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -36,17 +40,18 @@
   <section class="scene on" id="s-intro">
     <div class="big">🐎</div>
     <h1>Reite über alle Hürden!</h1>
-    <p class="sub">Wenn eine Hürde in den hellen Bereich kommt, tippe <b>SPRUNG</b> — genau im richtigen Moment! Nimm 5 Hürden sauber und gewinne das Turnier.</p>
+    <p class="sub">Wenn eine Hürde in den hellen Bereich kommt, tippe <b>SPRUNG</b> — genau im richtigen Moment! Mit jedem sauberen Sprung wird das Siegerbild überm Zieltor klarer.</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Aufs Pferd! 🏇</button>
   </section>
 
   <section class="scene" id="s-game">
-    <div class="hud"><span class="pill">Hürden 🏅 <b id="cl">0</b>/5</span></div>
+    <div class="hud"><span class="pill">Hürden 🏅 <b id="cl">0</b>/<b id="clmax">5</b></span></div>
     <div class="field" id="field">
       <div class="ground"></div>
       <div class="zone"></div>
       <div id="track"></div>
+      <div class="goalphoto" id="goalphoto"></div>
       <div class="finish" id="finish">🏁</div>
       <div class="horse" id="horse">🐎</div>
     </div>
@@ -72,18 +77,22 @@ const THEME={ photo:'/birthday-photo.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#e0913a','#37c46e','#c0392b','#fff','#a8631a'];
 const sfx={jump(){note(440,AC().currentTime,0.16,{type:'sine',vol:0.12,glideTo:780});},clear(){const t=AC().currentTime;note(660,t,0.1,{type:'triangle',vol:0.13});note(990,t+0.08,0.18,{type:'triangle',vol:0.12});},stumble(){noise(AC().currentTime,0.2,{vol:0.16,freq:200,filter:'lowpass'});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
-const HORSE_X=22, ZONE_LO=26, ZONE_HI=40;
+const HORSE_X=22;
+// Alters-Staffel: jüngere Kinder = weniger Hürden, langsamer, breitere Zone, größere Spawn-Lücken
+const GOAL=(ageNum()<=6?4:ageNum()<=9?5:6), SPEED=(ageNum()<=6?1.7:ageNum()<=9?2.4:3.0), SPAWN=(ageNum()<=6?1600:ageNum()<=9?1300:1050), ZONE_LO=(ageNum()<=6?22:ageNum()<=9?26:28), ZONE_HI=(ageNum()<=6?46:ageNum()<=9?40:38);
 let cleared=0, done=false, jumping=false, moveT=null, spawnT=null, hurdles=[];
+function sharpen(frac){ const p=$('#goalphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
 function spawnHurdle(){ if(done)return; const h=document.createElement('div'); h.className='hurdle'; h._x=106; h.style.left='106%'; h.textContent='⛩️'; $('#track').appendChild(h); hurdles.push(h); }
 function stumble(){ $('#horse').classList.add('stumble'); setTimeout(()=>$('#horse').classList.remove('stumble'),300); sfx.stumble(); vib([10,30]); }
-function moveHurdles(){ if(done)return; for(const h of hurdles.slice()){ h._x-=2.4; h.style.left=h._x+'%'; if(!h._done && h._x<=HORSE_X+3 && h._x>=HORSE_X-3){ if(!jumping){ h._done='miss'; stumble(); } } if(h._x<-12){ h.remove(); const k=hurdles.indexOf(h); if(k>=0)hurdles.splice(k,1); } } }
+function moveHurdles(){ if(done)return; for(const h of hurdles.slice()){ h._x-=SPEED; h.style.left=h._x+'%'; if(!h._done && h._x<=HORSE_X+3 && h._x>=HORSE_X-3){ if(!jumping){ h._done='miss'; stumble(); } } if(h._x<-12){ h.remove(); const k=hurdles.indexOf(h); if(k>=0)hurdles.splice(k,1); } } }
 function jump(){ if(done||jumping)return; jumping=true; $('#horse').classList.add('jump'); sfx.jump(); vib(10); setTimeout(()=>{ $('#horse').classList.remove('jump'); jumping=false; },520);
   const h=hurdles.find(x=>!x._done && x._x>=ZONE_LO && x._x<=ZONE_HI);
-  if(h){ h._done='clear'; h.classList.add('knock'); cleared++; $('#cl').textContent=cleared; sfx.clear(); vib([10,30]); if(cleared>=5) winSeq(); }
+  if(h){ h._done='clear'; h.classList.add('knock'); cleared++; $('#cl').textContent=cleared; sharpen(cleared/GOAL); sfx.clear(); vib([10,30]); if(cleared>=GOAL) winSeq(); }
 }
-function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); $('#finish').style.right='40%'; sfx.win(); vib([20,40,20,40,80]); if(HAS_PHOTO){ $('#winWho').textContent=`Ganz oben auf dem Siegerpodest steht ${kid()}! Komm zur Reiter-Party:`; } else { $('#winTitle').textContent='Turnier gewonnen!'; $('#winWho').textContent=`Ganz oben auf dem Siegerpodest jubelt ${kid()} — Turnier gewonnen! Komm zur Reiter-Party:`; } guestName(); setTimeout(()=>{ show('s-win'); confetti(CC); }, 700); }
-function tip(){ if(done)return; cleared++; $('#cl').textContent=cleared; sfx.clear(); vib([10,30]); if(cleared>=5) winSeq(); } // Tipp: ein Hindernis für dich meistern
-$('#startBtn').addEventListener('click',()=>{ cleared=0;done=false;jumping=false; hurdles.forEach(h=>h.remove()); hurdles=[]; $('#cl').textContent=0; $('#finish').style.right='-12%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveHurdles,60); spawnT=setInterval(spawnHurdle,1300); });
+function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); $('#finish').style.right='40%'; const ho=$('#horse'); ho.style.transition='left .7s ease'; ho.style.left='52%'; sharpen(1); $('#goalphoto').classList.add('big'); sfx.win(); vib([20,40,20,40,80]); if(HAS_PHOTO){ $('#winWho').textContent=`Das Siegerbild überm Zieltor zeigt ${kid()}! Komm zur Reiter-Party:`; } else { $('#winTitle').textContent='Turnier gewonnen!'; $('#winWho').textContent=`Ganz oben auf dem Siegerpodest jubelt ${kid()} — Turnier gewonnen! Komm zur Reiter-Party:`; } guestName(); setTimeout(()=>{ show('s-win'); confetti(CC); }, 1000); }
+// Tipp sichtbar: eine Hürde erscheint in der Zone und das Pferd springt sie echt
+function tip(){ if(done)return; let h=hurdles.find(x=>!x._done && x._x>ZONE_HI); if(!h){ spawnHurdle(); h=hurdles[hurdles.length-1]; } if(!h)return; h._x=(ZONE_LO+ZONE_HI)/2; h.style.left=h._x+'%'; jumping=false; $('#horse').classList.remove('jump'); jump(); }
+$('#startBtn').addEventListener('click',()=>{ cleared=0;done=false;jumping=false; hurdles.forEach(h=>h.remove()); hurdles=[]; $('#cl').textContent=0; $('#clmax').textContent=GOAL; $('#goalphoto').classList.remove('big'); sharpen(0); const z=document.querySelector('.zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; const ho=$('#horse'); ho.style.transition=''; ho.style.left='22%'; $('#finish').style.right='-12%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveHurdles,60); spawnT=setInterval(spawnHurdle,SPAWN); });
 $('#jumpBtn').addEventListener('click',jump);
 $('#field').addEventListener('click',jump);
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});

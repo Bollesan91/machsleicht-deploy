@@ -16,6 +16,9 @@
   .beam{position:absolute;left:50%;bottom:16%;width:14px;margin-left:-7px;height:0;background:linear-gradient(0deg,var(--beam),#fff);border-radius:8px;box-shadow:0 0 16px var(--beam);opacity:0;z-index:2}
   .beam.fire{opacity:1;height:64%;transition:height .12s,opacity .12s}
   .ign{position:absolute;top:6%;font-size:13px;font-weight:800;letter-spacing:1px;opacity:.9}
+  /* Helden-Signal am Himmel: Foto-Projektion lädt sich pro abgewehrtem Meteor auf (Reveal an Mechanik gekoppelt) */
+  .skySignal{position:absolute;top:6%;right:7%;width:86px;height:86px;border-radius:50%;border:4px solid var(--beam);box-shadow:0 0 22px rgba(86,224,255,.5);background-image:var(--photo);background-size:cover;background-position:center;background-color:#14213a;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease,transform .5s ease,box-shadow .5s ease;pointer-events:none;z-index:4}
+  .skySignal.big{transform:scale(1.3);box-shadow:0 0 44px rgba(86,224,255,.9)}
   .gauge{position:relative;width:90%;max-width:300px;height:18px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden;margin-top:6px}
   .gauge .zone{position:absolute;top:0;bottom:0;left:55%;width:30%;background:rgba(86,224,255,.45)}
   .gauge .pin{position:absolute;top:-3px;bottom:-3px;width:5px;background:#fff;border-radius:3px;left:0;box-shadow:0 0 6px #fff}
@@ -36,7 +39,7 @@
   <section class="scene on" id="s-intro">
     <div class="big">⚡</div>
     <h1>Wehr die Meteore ab!</h1>
-    <p class="sub">Drei Meteore fliegen auf die Stadt zu. Tippe <b>STRAHL</b>, wenn der Zeiger im blauen Bereich steht — dann trifft der Helden-Strahl genau und lenkt den Meteor ab. Drei sichere Treffer retten die Stadt!</p>
+    <p class="sub">Drei Meteore fliegen auf die Stadt zu. Tippe <b>STRAHL</b>, wenn der Zeiger im blauen Bereich steht — dann trifft der Helden-Strahl genau und lenkt den Meteor ab. Mit jedem Treffer lädt sich das Helden-Signal am Himmel weiter auf!</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Kräfte laden ⚡</button>
   </section>
@@ -45,6 +48,7 @@
     <div class="hud"><span class="pill" style="background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px">Abgewehrt ⚡ <b id="hits">0</b>/3</span></div>
     <div class="field" id="field">
       <div class="ign" id="ign">…</div>
+      <div class="skySignal" id="skySignal"></div>
       <div class="meteor" id="meteor">☄️</div>
       <div class="beam" id="beam"></div>
       <div class="hero3" id="hero3">🦸</div>
@@ -79,27 +83,30 @@ const sfx={
 };
 function stars(){ const s=$('#field'); for(let i=0;i<20;i++){const d=document.createElement('div');d.className='star';d.style.left=Math.random()*96+'%';d.style.top=Math.random()*60+'%';d.style.animationDelay=(Math.random()*2.5)+'s';s.appendChild(d);} }
 let power=0,pdir=1,gaugeT=null,hits=0,busy=false,done=false;
-const ZONE_LO=55,ZONE_HI=85;
-function startGauge(){ power=0;pdir=1; clearInterval(gaugeT); gaugeT=setInterval(()=>{ if(done)return; power+=pdir*5; if(power>=100){power=100;pdir=-1;} if(power<=0){power=0;pdir=1;} $('#pin').style.left=power+'%'; },45); }
+// Alters-Staffel: Zeiger-Tempo + Zonenbreite
+const STEP=(ageNum()<=6?3.5:ageNum()<=9?5:6.5), ZONE_LO=(ageNum()<=6?48:ageNum()<=9?55:60), ZONE_HI=(ageNum()<=6?88:ageNum()<=9?85:82);
+function sharpen(frac){ const p=$('#skySignal'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function startGauge(){ power=0;pdir=1; const z=document.querySelector('.gauge .zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; clearInterval(gaugeT); gaugeT=setInterval(()=>{ if(done)return; power+=pdir*STEP; if(power>=100){power=100;pdir=-1;} if(power<=0){power=0;pdir=1;} $('#pin').style.left=power+'%'; },45); }
 function nextMeteor(){ const m=$('#meteor'); m.className='meteor'; m.style.opacity='1'; m.style.transform='translateX(-50%)'; m.style.left=(28+Math.random()*44)+'%'; $('#ign').textContent='Meteor im Anflug!'; }
 function fire(){
   if(busy||done)return; busy=true; const p=power; const hit=(p>=ZONE_LO && p<=ZONE_HI);
   const b=$('#beam'); b.classList.add('fire'); sfx.zap(hit); vib(hit?[12,20]:7);
   setTimeout(()=>b.classList.remove('fire'),200);
   setTimeout(()=>{
-    if(hit){ hits++; $('#hits').textContent=hits; const m=$('#meteor'); m.classList.add('boom'); sfx.boom(); vib([20,40]); $('#ign').textContent='Abgewehrt!';
+    if(hit){ hits++; $('#hits').textContent=hits; sharpen(hits/3); const m=$('#meteor'); m.classList.add('boom'); sfx.boom(); vib([20,40]); $('#ign').textContent='Abgewehrt!';
       if(hits>=3) return winSeq();
       setTimeout(()=>{ nextMeteor(); busy=false; }, 500); }
     else { $('#ign').textContent='Daneben — nochmal!'; busy=false; }
   }, 180);
 }
 function winSeq(){
-  done=true; clearInterval(gaugeT); $('#fireBtn').disabled=true; $('#ign').textContent='Stadt gerettet!'; vib([20,40,20,40,80]);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Die geheime Superkraft der Stadt ist ${kid()}! Komm zur Superhelden-Party:`; } else { $('#winTitle').textContent='Stadt gerettet!'; $('#winWho').textContent=`Der letzte Meteor zerplatzt am Helden-Strahl — ${kid()} hat die Stadt gerettet! Komm zur Superhelden-Party:`; } guestName();
-  setTimeout(()=>{ show('s-win'); confetti(CC); sfx.win(); }, 700);
+  done=true; clearInterval(gaugeT); $('#fireBtn').disabled=true; $('#ign').textContent='Stadt gerettet!'; sharpen(1); $('#skySignal').classList.add('big'); const b=$('#beam'); b.classList.add('fire'); setTimeout(()=>b.classList.remove('fire'),220); sfx.zap(true); vib([20,40,20,40,80]);
+  if(HAS_PHOTO){ $('#winWho').textContent=`Drei Meteore abgewehrt — am Himmel leuchtet das Helden-Signal mit ${kid()}! Komm zur Superhelden-Party:`; } else { $('#winTitle').textContent='Stadt gerettet!'; $('#winWho').textContent=`Der letzte Meteor zerplatzt am Helden-Strahl — ${kid()} hat die Stadt gerettet! Komm zur Superhelden-Party:`; } guestName();
+  setTimeout(()=>{ show('s-win'); confetti(CC); sfx.win(); }, 1000);
 }
-function tip(){ if(done)return; hits++; $('#hits').textContent=hits; vib([15,25]); if(hits>=3) winSeq(); } // Tipp: ein Meteor-Treffer für dich
-$('#startBtn').addEventListener('click',()=>{ hits=0;done=false;busy=false; $('#hits').textContent=0; $('#fireBtn').disabled=false; [...document.querySelectorAll('.star')].forEach(s=>s.remove()); stars(); nextMeteor(); show('s-game'); startGauge(); });
+// Tipp sichtbar: Zeiger rastet in der Zone ein und der Strahl feuert echt
+function tip(){ if(done||busy)return; power=(ZONE_LO+ZONE_HI)/2; $('#pin').style.left=power+'%'; fire(); }
+$('#startBtn').addEventListener('click',()=>{ hits=0;done=false;busy=false; $('#hits').textContent=0; $('#fireBtn').disabled=false; $('#skySignal').classList.remove('big'); sharpen(0); [...document.querySelectorAll('.star')].forEach(s=>s.remove()); stars(); nextMeteor(); show('s-game'); startGauge(); });
 $('#fireBtn').addEventListener('click',fire);
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>

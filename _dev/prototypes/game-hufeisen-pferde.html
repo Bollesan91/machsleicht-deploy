@@ -18,6 +18,10 @@
   .shoesOn .shoe.on{opacity:1;transform:scale(1) rotate(0)}
   .shoesOn .shoe:nth-child(1){bottom:6px}.shoesOn .shoe:nth-child(2){bottom:24px}.shoesOn .shoe:nth-child(3){bottom:42px}
   .post.hit{animation:psh .3s}@keyframes psh{0%,100%{transform:translateX(0)}33%{transform:translateX(-4px)}66%{transform:translateX(4px)}}
+  /* Stall-Schild überm Pfosten: Foto baut sich pro Glücks-Ringer auf (Reveal an Mechanik gekoppelt) */
+  .stallSign{position:absolute;top:7%;right:9%;width:74px;height:74px;border-radius:10px;border:4px solid #8a5424;box-shadow:0 4px 10px rgba(0,0,0,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1c10;opacity:0;filter:blur(16px) saturate(.5) brightness(.65);transition:opacity .5s ease,filter .5s ease,transform .5s ease;pointer-events:none;z-index:5}
+  .stallSign::after{content:"🍀";position:absolute;top:-14px;left:50%;transform:translateX(-50%);font-size:22px}
+  .stallSign.big{transform:scale(1.3)}
   .thrower{position:absolute;left:7%;bottom:12%;font-size:40px;transform:scaleX(-1)}
   .fly{position:absolute;left:14%;bottom:26%;opacity:0;z-index:4}
   .gauge{position:relative;width:90%;max-width:300px;height:18px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden;margin-top:4px}
@@ -39,7 +43,7 @@
   <section class="scene on" id="s-intro">
     <div class="big">🍀</div>
     <h1>Wirf das Hufeisen<br>auf den Pfosten!</h1>
-    <p class="sub">Tippe WERFEN, wenn der Zeiger im grünen Bereich steht — dann fliegt das Hufeisen genau auf den Pfosten und bleibt hängen. Drei Glücks-Treffer und es gibt eine Überraschung!</p>
+    <p class="sub">Tippe WERFEN, wenn der Zeiger im grünen Bereich steht — aber Achtung: der Wind verschiebt den Bereich nach jedem Wurf! Mit jedem Glücks-Ringer wird das Bild am Stall-Schild klarer.</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Hufeisen schnappen 🍀</button>
   </section>
@@ -48,6 +52,7 @@
     <div class="hud"><span class="pill">Treffer <b id="hits">0</b>/3</span></div>
     <div class="field" id="field">
       <div class="barnline"></div>
+      <div class="stallSign" id="stallSign"></div>
       <div class="post" id="post"></div>
       <div class="peg"></div>
       <div class="shoesOn" id="shoesOn"><div class="shoe"></div><div class="shoe"></div><div class="shoe"></div></div>
@@ -56,7 +61,7 @@
     </div>
     <div class="gauge"><div class="zone"></div><div class="pin" id="pin"></div></div>
     <button class="btn" id="throwBtn" style="padding:12px 30px">WERFEN! 🍀</button>
-    <p class="hudHint">Triff den grünen Bereich.</p>
+    <p class="hudHint">Triff den grünen Bereich — der Wind verschiebt ihn nach jedem Wurf!</p>
   </section>
 
   <section class="scene" id="s-win">
@@ -85,31 +90,37 @@ const sfx={
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
 let power=0,pdir=1,gaugeT=null,hits=0,busy=false,done=false;
-const ZONE_LO=55,ZONE_HI=85;
-function startGauge(){ power=0;pdir=1; clearInterval(gaugeT); gaugeT=setInterval(()=>{ power+=pdir*5; if(power>=100){power=100;pdir=-1;} if(power<=0){power=0;pdir=1;} $('#pin').style.left=power+'%'; },45); }
+// Alters-Staffel: Zeiger-Tempo + Zonenbreite; Wind-Twist: Zone wandert nach jedem Wurf
+const STEP=(ageNum()<=6?3.5:ageNum()<=9?5:6.5), ZW=(ageNum()<=6?40:ageNum()<=9?30:22);
+let zLo=55, zHi=85;
+function windZone(){ zLo=Math.round(28+Math.random()*(68-ZW)); zHi=zLo+ZW; const z=document.querySelector('.gauge .zone'); z.style.left=zLo+'%'; z.style.width=ZW+'%'; }
+function sharpen(frac){ const p=$('#stallSign'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.65+0.35*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function startGauge(){ power=0;pdir=1; clearInterval(gaugeT); gaugeT=setInterval(()=>{ power+=pdir*STEP; if(power>=100){power=100;pdir=-1;} if(power<=0){power=0;pdir=1;} $('#pin').style.left=power+'%'; },45); }
 function throwShoe(){
   if(busy||done)return; busy=true; const p=power; sfx.toss(); vib(10);
-  const hit=(p>=ZONE_LO && p<=ZONE_HI);
+  const hit=(p>=zLo && p<=zHi);
   const f=$('#fly'); f.style.opacity='1'; f.style.transition='none'; f.style.transform='translate(0,0) rotate(0deg)';
-  const tx = hit? '195px' : (p<ZONE_LO? '95px':'235px');
-  const ty = hit? '-58px' : (p<ZONE_LO? '18px':'-128px');
+  const tx = hit? '195px' : (p<zLo? '95px':'235px');
+  const ty = hit? '-58px' : (p<zLo? '18px':'-128px');
   requestAnimationFrame(()=>{ f.style.transition='transform .44s ease-in, opacity .1s .42s'; f.style.transform=`translate(${tx},${ty}) rotate(220deg)`; });
   setTimeout(()=>{
     f.style.opacity='0'; f.style.transition='none'; f.style.transform='translate(0,0) rotate(0deg)';
-    if(hit){ hits++; $('#hits').textContent=hits; sfx.ring(); vib([20,40]); $('#post').classList.add('hit'); setTimeout(()=>$('#post').classList.remove('hit'),300);
+    if(hit){ hits++; $('#hits').textContent=hits; sharpen(hits/3); sfx.ring(); vib([20,40]); $('#post').classList.add('hit'); setTimeout(()=>$('#post').classList.remove('hit'),300);
       const s=$('#shoesOn').children[hits-1]; if(s)s.classList.add('on');
       if(hits>=3) return winSeq(); }
     else { sfx.miss(); }
+    windZone(); // der Wind dreht — Zone wandert
     busy=false;
   }, 450);
 }
 function winSeq(){
-  done=true; clearInterval(gaugeT); $('#throwBtn').disabled=true; vib(60);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Drei Glücks-Hufeisen — und im Sattel sitzt ${kid()}! Komm zur Pferde-Party:`; } else {$('#winTitle').textContent='Volltreffer!';$('#winWho').textContent=`Drei Hufeisen am Pfosten — ${kid()} hat das Glück gefangen! Komm zur Pferde-Party:`;} guestName();
-  setTimeout(()=>{ show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]); }, 700);
+  done=true; clearInterval(gaugeT); $('#throwBtn').disabled=true; sharpen(1); $('#stallSign').classList.add('big'); setTimeout(()=>sfx.ring(),120); vib(60);
+  if(HAS_PHOTO){ $('#winWho').textContent=`Drei Glücks-Ringer — und am Stall-Schild strahlt ${kid()}! Komm zur Pferde-Party:`; } else {$('#winTitle').textContent='Volltreffer!';$('#winWho').textContent=`Drei Hufeisen am Pfosten — ${kid()} hat das Glück gefangen! Komm zur Pferde-Party:`;} guestName();
+  setTimeout(()=>{ show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]); }, 900);
 }
-function tip(){ if(done)return; hits++; $('#hits').textContent=hits; vib([15,25]); if(hits>=3) winSeq(); } // Tipp: ein Hufeisen-Treffer für dich
-$('#startBtn').addEventListener('click',()=>{hits=0;done=false;busy=false;$('#hits').textContent=0;$('#throwBtn').disabled=false;[...$('#shoesOn').children].forEach(s=>s.classList.remove('on'));show('s-game');startGauge();});
+// Tipp sichtbar: Zeiger rastet in der Zone ein und das Hufeisen fliegt echt
+function tip(){ if(done||busy)return; power=(zLo+zHi)/2; $('#pin').style.left=power+'%'; throwShoe(); }
+$('#startBtn').addEventListener('click',()=>{hits=0;done=false;busy=false;$('#hits').textContent=0;$('#throwBtn').disabled=false;[...$('#shoesOn').children].forEach(s=>s.classList.remove('on'));$('#stallSign').classList.remove('big');sharpen(0);windZone();show('s-game');startGauge();});
 $('#throwBtn').addEventListener('click',throwShoe);
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>

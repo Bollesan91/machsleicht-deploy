@@ -11,7 +11,14 @@
   .hud{font-weight:700;font-size:14px}.pill{background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px}
   .land{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 50% 30%,#d9b25a,#8a6a2e 78%);box-shadow:0 12px 30px rgba(0,0,0,.45)}
   .grass{position:absolute;left:0;right:0;bottom:0;height:22%;background:repeating-linear-gradient(90deg,#9a8a3a,#9a8a3a 10px,#8a7a2e 10px,#8a7a2e 20px);opacity:.6}
-  .nest{position:absolute;font-size:34px;transform:translate(-50%,-50%)}
+  .nest{position:absolute;font-size:34px;transform:translate(-50%,-50%);z-index:2}
+  /* Wasserloch-Spiegelung: wird pro Spur-Schritt klarer (Reveal an Mechanik gekoppelt) */
+  .mirror{position:absolute;width:84px;height:84px;border-radius:50%;transform:translate(-50%,-50%);border:4px solid #56b4ff;box-shadow:0 4px 12px rgba(0,0,0,.35),inset 0 0 14px rgba(86,180,255,.5);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2c14;opacity:0;filter:blur(16px) saturate(.5) brightness(.65);transition:opacity .5s ease,filter .5s ease,transform .5s ease;pointer-events:none;z-index:1}
+  .mirror.big{transform:translate(-50%,-50%) scale(1.35);z-index:3}
+  /* Schleich-Twist: Gazelle am Wasserloch — nur schleichen, wenn sie wegschaut */
+  .gazelle{position:absolute;font-size:30px;transform:translate(-50%,-50%) scaleX(-1);transition:transform .3s,filter .3s;z-index:3;filter:grayscale(.15)}
+  .gazelle.watch{transform:translate(-50%,-50%) scaleX(1) scale(1.15);filter:drop-shadow(0 0 8px #fff)}
+  .gazelle.watch::after{content:"👀";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:14px}
   .print{position:absolute;width:42px;height:42px;border-radius:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;opacity:.4;transition:opacity .2s,transform .12s;filter:grayscale(.5)}
   .print.lit{opacity:1;filter:none;transform:translate(-50%,-50%) scale(1.05)}
   .print.next{opacity:.85;animation:pn 1s infinite}
@@ -33,7 +40,7 @@
   <section class="scene on" id="s-intro">
     <div class="big">🐾</div>
     <h1>Folge der Löwen-Spur!</h1>
-    <p class="sub">Frische Pfotenabdrücke führen quer durch die Savanne. Tippe immer die leuchtende Spur — der Löwe schleicht Schritt für Schritt weiter. Wohin führt die Fährte?</p>
+    <p class="sub">Frische Pfotenabdrücke führen quer durch die Savanne. Tippe immer die leuchtende Spur — aber schleich nur weiter, wenn die Gazelle 🦌 wegschaut! Mit jedem Schritt wird die Spiegelung im Wasserloch klarer.</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Spur aufnehmen 🐾</button>
   </section>
@@ -69,28 +76,39 @@ const sfx={
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
 const TRAIL=[[14,80],[31,63],[48,72],[40,46],[61,40],[76,53],[88,26]]; // gewundene Spur, letzter = Wasserloch
-let next=1, done=false, prints=[];
+// Schleich-Twist-Staffel: wie lange die Gazelle schaut / wegschaut
+const WATCH=(ageNum()<=6?900:ageNum()<=9?1200:1500), AWAY=(ageNum()<=6?2300:ageNum()<=9?1800:1400);
+let next=1, done=false, prints=[], watching=false, gzT=null;
+function sharpen(frac){ const p=document.querySelector('.mirror'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.65+0.35*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function gazLoop(){ if(done)return; const gz=document.querySelector('.gazelle'); if(!gz)return; watching=false; gz.classList.remove('watch');
+  gzT=setTimeout(()=>{ if(done)return; watching=true; gz.classList.add('watch'); gzT=setTimeout(gazLoop, WATCH); }, AWAY); }
 function build(){
-  next=1;done=false;$('#cnt').textContent=0;$('#tot').textContent=TRAIL.length-1;
-  const land=$('#land'); [...land.querySelectorAll('.print,.walker,.nest')].forEach(e=>e.remove());
+  next=1;done=false;watching=false;clearTimeout(gzT);$('#cnt').textContent=0;$('#tot').textContent=TRAIL.length-1;
+  const land=$('#land'); [...land.querySelectorAll('.print,.walker,.nest,.mirror,.gazelle')].forEach(e=>e.remove());
+  const mi=document.createElement('div');mi.className='mirror';mi.style.left=TRAIL[TRAIL.length-1][0]+'%';mi.style.top=TRAIL[TRAIL.length-1][1]+'%';land.appendChild(mi);
   const nest=document.createElement('div');nest.className='nest';nest.textContent='💧';nest.style.left=TRAIL[TRAIL.length-1][0]+'%';nest.style.top=TRAIL[TRAIL.length-1][1]+'%';land.appendChild(nest);
+  const gz=document.createElement('div');gz.className='gazelle';gz.textContent='🦌';gz.style.left='68%';gz.style.top='18%';land.appendChild(gz);
   prints=TRAIL.map((p,i)=>{ const el=document.createElement('div');el.className='print'+(i===0?' lit':'')+(i===1?' next':'');el.textContent='🐾';el.style.left=p[0]+'%';el.style.top=p[1]+'%';el.dataset.i=i;el.addEventListener('click',()=>tap(i));land.appendChild(el);return el; });
   const w=document.createElement('div');w.className='walker';w.id='walker';w.textContent='🦁';w.style.left=TRAIL[0][0]+'%';w.style.top=TRAIL[0][1]+'%';land.appendChild(w);
+  gazLoop();
 }
 function tap(i){
   if(done)return;
+  if(watching){ sfx.nope();vib([25,30,25]);$('#land').classList.add('shake');setTimeout(()=>$('#land').classList.remove('shake'),250);$('#hint').textContent='Die Gazelle schaut her — warte kurz! 👀';return; } // Twist: kein Fortschritt, kein Rückschritt
   if(i!==next){ sfx.nope();vib([25,30,25]);$('#land').classList.add('shake');setTimeout(()=>$('#land').classList.remove('shake'),250);return; }
   prints[i].classList.add('lit');prints[i].classList.remove('next');
   const w=$('#walker');w.style.left=TRAIL[i][0]+'%';w.style.top=TRAIL[i][1]+'%';
-  sfx.step(i);vib(10);next++;$('#cnt').textContent=next-1;
+  sfx.step(i);vib(10);next++;$('#cnt').textContent=next-1;sharpen((next-1)/(TRAIL.length-1));$('#hint').textContent='Tippe die leuchtende Pfotenspur.';
   if(next<TRAIL.length){ prints[next].classList.add('next'); }
   else setTimeout(win,420);
 }
 function win(){
-  done=true;$('#hint').textContent='';vib([20,40,20,40,80]);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Am Wasserloch wartet die seltenste Entdeckung: das ist ${kid()}! Komm zur Safari-Party:`; } else {$('#winTitle').textContent='Spur verfolgt!';$('#winWho').textContent=`Am Wasserloch trinkt ein prächtiger Löwe — die Spur führte zur Party von ${kid()}! Komm zur Safari-Party:`;} guestName();
-  setTimeout(()=>{ show('s-win');confetti(CC);sfx.win(); }, 500);
+  done=true;clearTimeout(gzT);$('#hint').textContent='';sharpen(1);const mi=document.querySelector('.mirror');if(mi)mi.classList.add('big');noise(AC().currentTime,0.3,{vol:0.09,freq:500,filter:'lowpass'});vib([20,40,20,40,80]);
+  if(HAS_PHOTO){ $('#winWho').textContent=`Im Wasserloch spiegelt sich die seltenste Entdeckung — das ist ${kid()}! Komm zur Safari-Party:`; } else {$('#winTitle').textContent='Spur verfolgt!';$('#winWho').textContent=`Am Wasserloch trinkt ein prächtiger Löwe — die Spur führte zur Party von ${kid()}! Komm zur Safari-Party:`;} guestName();
+  setTimeout(()=>{ show('s-win');confetti(CC);sfx.win(); }, 900);
 }
+// Tipp sichtbar: Gazelle schaut weg, dann wird die nächste Spur echt getippt
+function tip(){ if(done||next>=TRAIL.length)return; watching=false; const gz=document.querySelector('.gazelle'); if(gz)gz.classList.remove('watch'); tap(next); }
 $('#startBtn').addEventListener('click',()=>{build();show('s-game');$('#hint').textContent='Tippe die leuchtende Pfotenspur.';});
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>

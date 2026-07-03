@@ -21,6 +21,11 @@
   @keyframes hp{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.13)}}
   .field.shakeF{animation:shf .3s}@keyframes shf{0%,100%{transform:translateX(0)}33%{transform:translateX(-5px)}66%{transform:translateX(5px)}}
   .lampe{font-size:15px;font-weight:800;min-height:20px}
+  /* Funkmonitor: das Bild am anderen Ende wird pro richtiger Zahl klarer (Reveal an Mechanik gekoppelt) */
+  .monitor{position:relative;width:110px;height:110px;border-radius:14px;border:3px solid #7a8aa8;background:#1a1020;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,.4);transition:transform .5s ease}
+  .monPhoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease}
+  .mstatic{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(180,210,255,.09) 0 1px,transparent 1px 3px);opacity:.75;transition:opacity .6s ease;pointer-events:none}
+  .monitor.big{transform:scale(1.25)}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fff3ef,#ffd9d2);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1418;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -36,13 +41,14 @@
   <section class="scene on" id="s-intro">
     <div class="big">📻</div>
     <h1>Funk den Feuerwehr-Code!</h1>
-    <p class="sub">Die Wache hat einen geheimen Funk-Code. Tippe ihn auf der Funkscheibe in der richtigen Reihenfolge — das leuchtende Loch zeigt dir, was als Nächstes dran ist!</p>
+    <p class="sub">Die Wache hat einen geheimen Funk-Code. Tippe ihn auf der Funkscheibe in der richtigen Reihenfolge — das leuchtende Loch zeigt dir, was dran ist. Mit jeder richtigen Zahl wird das Funkbild klarer!</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Funkgerät an 📻</button>
   </section>
 
   <section class="scene" id="s-game">
     <div class="slots" id="slots"></div>
+    <div class="monitor" id="monitor"><div class="monPhoto" id="monPhoto"></div><div class="mstatic" id="mstatic"></div></div>
     <div class="field" id="field" style="width:auto;background:none;box-shadow:none;aspect-ratio:auto">
       <div class="dial" id="dial"><div class="hub">🚒</div></div>
     </div>
@@ -77,6 +83,7 @@ const sfx={
 };
 // GEHEIMER, NICHT-REALER Funk-Code (bewusst KEINE Notrufnummer) — Stufe-2-Fix.
 const CODE=[5,2,9]; let pos=0, done=false, busy=false;
+function sharpen(frac){ const p=$('#monPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
 function buildSlots(){ const s=$('#slots'); s.innerHTML=''; CODE.forEach(n=>{ const d=document.createElement('div'); d.className='slot target'; d.textContent=n; s.appendChild(d); }); }
 function markNext(){ document.querySelectorAll('#dial .hole').forEach(h=>h.classList.toggle('pulse', !done && pos<CODE.length && +h.textContent===CODE[pos])); }
 function buildDial(){
@@ -91,7 +98,7 @@ function dial(n){
   if(n===CODE[pos]){
     sfx.tick(); setTimeout(()=>sfx.good(),120); vib(8);
     const slot=$('#slots').children[pos]; slot.classList.remove('target'); slot.classList.add('done');
-    pos++;
+    pos++; sharpen(pos/CODE.length);
     if(pos>=CODE.length){ markNext(); return connected(); }
     markNext(); $('#lampe').textContent='Weiter — das leuchtende Loch!';
   } else {
@@ -100,12 +107,12 @@ function dial(n){
   }
 }
 function connected(){
-  busy=true; $('#lampe').textContent='📻 Funk steht …'; sfx.connect(); vib([15,40,15]);
-  setTimeout(()=>{ done=true; markNext(); if(HAS_PHOTO){ $('#winWho').textContent=`Funk steht — am anderen Ende jubelt schon ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winTitle').textContent='Funk steht!'; $('#winWho').textContent=`Der Funkspruch hat die Wache erreicht — die ganze Mannschaft feiert bei ${kid()}! Komm zur Feuerwehr-Party:`; } guestName();
-    show('s-win'); confetti(CC); sfx.win(); vib([20,40,20,40,80]); }, 900);
+  busy=true; $('#lampe').textContent='📻 Funk steht …'; $('#mstatic').style.opacity='0'; sharpen(1); $('#monitor').classList.add('big'); sfx.connect(); vib([15,40,15]);
+  setTimeout(()=>{ done=true; markNext(); if(HAS_PHOTO){ $('#winWho').textContent=`Mit jeder Zahl wurde das Funkbild klarer — am anderen Ende jubelt ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winTitle').textContent='Funk steht!'; $('#winWho').textContent=`Der Funkspruch hat die Wache erreicht — die ganze Mannschaft feiert bei ${kid()}! Komm zur Feuerwehr-Party:`; } guestName();
+    show('s-win'); confetti(CC); sfx.win(); vib([20,40,20,40,80]); }, 1000);
 }
 function tip(){ if(done||busy)return; dial(CODE[pos]); } // Tipp: nächste Zahl für dich funken
-$('#startBtn').addEventListener('click',()=>{ pos=0;done=false;busy=false; buildSlots(); buildDial(); $('#lampe').textContent='Tippe das leuchtende Loch.'; show('s-game'); });
+$('#startBtn').addEventListener('click',()=>{ pos=0;done=false;busy=false; buildSlots(); buildDial(); $('#mstatic').style.opacity='.75'; $('#monitor').classList.remove('big'); sharpen(0); $('#lampe').textContent='Tippe das leuchtende Loch.'; show('s-game'); });
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>

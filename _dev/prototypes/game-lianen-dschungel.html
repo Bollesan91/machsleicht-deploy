@@ -23,6 +23,10 @@
   .vine span{position:relative;margin-top:54%}
   .vine.caught span{animation:catch .4s forwards}@keyframes catch{to{transform:scale(1.3) rotate(20deg);opacity:.6}}
   .hut{position:absolute;bottom:34%;right:-14%;font-size:42px;z-index:2;transition:right .4s}
+  /* Baumhaus-Guckloch im Blätterdach: wer wartet oben? Foto tritt pro Liane aus dem Schatten (Reveal an Mechanik gekoppelt) */
+  .hutphoto{position:absolute;top:8%;right:7%;width:84px;height:84px;border-radius:50%;border:5px solid #7a5230;box-shadow:0 4px 12px rgba(0,0,0,.4),inset 0 0 10px rgba(0,0,0,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#16240f;opacity:0;filter:blur(16px) saturate(.5) brightness(.55);transition:opacity .5s ease,filter .5s ease,transform .5s ease;pointer-events:none;z-index:5}
+  .hutphoto::after{content:"🌿";position:absolute;top:-12px;right:-8px;font-size:24px}
+  .hutphoto.big{transform:scale(1.3)}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#f2fbe8,#d6efbf);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.45);text-align:center;border:4px solid var(--accent-dk);position:relative}
   .hero{width:148px;height:148px;border-radius:50%;margin:6px auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#16240f;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -39,18 +43,19 @@
   <section class="scene on" id="s-intro">
     <div class="big">🐒</div>
     <h1>Schwing dich durch den Dschungel!</h1>
-    <p class="sub">Wenn eine Liane in den hellen Bereich kommt, tippe <b>SCHWUNG</b> — genau im richtigen Moment! Greif 5 Lianen sauber und schwing dich bis zum Baumhaus.</p>
+    <p class="sub">Wenn eine Liane in den hellen Bereich kommt, tippe <b>SCHWUNG</b> — genau im richtigen Moment! Mit jedem Schwung kommst du dem Baumhaus näher — und dem Geheimnis, wer oben wartet.</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Los geht's! 🌿</button>
   </section>
 
   <section class="scene" id="s-game">
-    <div class="hud"><span class="pill">Lianen 🌿 <b id="cl">0</b>/5</span></div>
+    <div class="hud"><span class="pill">Lianen 🌿 <b id="cl">0</b>/<b id="clmax">5</b></span></div>
     <div class="field" id="field">
       <div class="canopy"></div>
       <div class="ground"></div>
       <div class="zone"></div>
       <div id="track"></div>
+      <div class="hutphoto" id="hutphoto"></div>
       <div class="hut" id="hut">🛖</div>
       <div class="swinger" id="swinger">🐒</div>
     </div>
@@ -76,18 +81,22 @@ const THEME={ photo:'/birthday-photo.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#f0a93a','#37c46e','#6fae5a','#fff','#b07414'];
 const sfx={swing(){note(420,AC().currentTime,0.18,{type:'sine',vol:0.12,glideTo:760});},clear(){const t=AC().currentTime;note(660,t,0.1,{type:'triangle',vol:0.13});note(990,t+0.08,0.18,{type:'triangle',vol:0.12});},stumble(){noise(AC().currentTime,0.2,{vol:0.14,freq:200,filter:'lowpass'});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
-const SW_X=24, ZONE_LO=26, ZONE_HI=40;
+const SW_X=24;
+// Alters-Staffel: jüngere Kinder = weniger Lianen, langsamer, breitere Zone, größere Spawn-Lücken
+const GOAL=(ageNum()<=6?4:ageNum()<=9?5:6), SPEED=(ageNum()<=6?1.7:ageNum()<=9?2.4:3.0), SPAWN=(ageNum()<=6?1600:ageNum()<=9?1300:1050), ZONE_LO=(ageNum()<=6?22:ageNum()<=9?26:28), ZONE_HI=(ageNum()<=6?46:ageNum()<=9?40:38);
 let cleared=0, done=false, swinging=false, moveT=null, spawnT=null, vines=[];
+function sharpen(frac){ const p=$('#hutphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.55+0.45*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
 function spawnVine(){ if(done)return; const v=document.createElement('div'); v.className='vine'; v._x=106; v.style.left='106%'; v.innerHTML='<span>🌿</span>'; $('#track').appendChild(v); vines.push(v); }
 function stumble(){ $('#swinger').classList.add('miss'); setTimeout(()=>$('#swinger').classList.remove('miss'),300); sfx.stumble(); vib([10,30]); }
-function moveVines(){ if(done)return; for(const v of vines.slice()){ v._x-=2.4; v.style.left=v._x+'%'; if(!v._done && v._x<=SW_X+3 && v._x>=SW_X-3){ if(!swinging){ v._done='miss'; stumble(); } } if(v._x<-12){ v.remove(); const k=vines.indexOf(v); if(k>=0)vines.splice(k,1); } } }
+function moveVines(){ if(done)return; for(const v of vines.slice()){ v._x-=SPEED; v.style.left=v._x+'%'; if(!v._done && v._x<=SW_X+3 && v._x>=SW_X-3){ if(!swinging){ v._done='miss'; stumble(); } } if(v._x<-12){ v.remove(); const k=vines.indexOf(v); if(k>=0)vines.splice(k,1); } } }
 function swing(){ if(done||swinging)return; swinging=true; $('#swinger').classList.add('swing'); sfx.swing(); vib(10); setTimeout(()=>{ $('#swinger').classList.remove('swing'); swinging=false; },520);
   const v=vines.find(x=>!x._done && x._x>=ZONE_LO && x._x<=ZONE_HI);
-  if(v){ v._done='clear'; v.classList.add('caught'); cleared++; $('#cl').textContent=cleared; sfx.clear(); vib([10,30]); if(cleared>=5) winSeq(); }
+  if(v){ v._done='clear'; v.classList.add('caught'); cleared++; $('#cl').textContent=cleared; sharpen(cleared/GOAL); sfx.clear(); vib([10,30]); if(cleared>=GOAL) winSeq(); }
 }
-function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); $('#hut').style.right='34%'; sfx.win(); vib([20,40,20,40,80]); if(HAS_PHOTO){ $('#winWho').textContent=`Oben im Baumhaus wartet der Dschungel-Boss — das ist ${kid()}! Komm zur Dschungel-Party:`; } else { $('#winTitle').textContent='Im Baumhaus!'; $('#winWho').textContent=`Oben im Baumhaus wartet ein freches Äffchen — ${kid()} hat den Dschungel geschafft! Komm zur Dschungel-Party:`; } guestName(); setTimeout(()=>{ show('s-win'); confetti(CC); }, 700); }
-function tip(){ if(done)return; cleared++; $('#cl').textContent=cleared; sfx.clear(); vib([10,30]); if(cleared>=5) winSeq(); } // Tipp: eine Liane für dich schwingen
-$('#startBtn').addEventListener('click',()=>{ cleared=0;done=false;swinging=false; vines.forEach(v=>v.remove()); vines=[]; $('#cl').textContent=0; $('#hut').style.right='-14%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveVines,60); spawnT=setInterval(spawnVine,1300); });
+function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); $('#hut').style.right='34%'; const sw=$('#swinger'); sw.style.transition='left .7s ease'; sw.style.left='56%'; sharpen(1); $('#hutphoto').classList.add('big'); sfx.win(); vib([20,40,20,40,80]); if(HAS_PHOTO){ $('#winWho').textContent=`Durchs Baumhaus-Fenster strahlt der Dschungel-Boss — das ist ${kid()}! Komm zur Dschungel-Party:`; } else { $('#winTitle').textContent='Im Baumhaus!'; $('#winWho').textContent=`Oben im Baumhaus wartet ein freches Äffchen — ${kid()} hat den Dschungel geschafft! Komm zur Dschungel-Party:`; } guestName(); setTimeout(()=>{ show('s-win'); confetti(CC); }, 1000); }
+// Tipp sichtbar: eine Liane erscheint in der Zone und der Affe schwingt sie echt
+function tip(){ if(done)return; let v=vines.find(x=>!x._done && x._x>ZONE_HI); if(!v){ spawnVine(); v=vines[vines.length-1]; } if(!v)return; v._x=(ZONE_LO+ZONE_HI)/2; v.style.left=v._x+'%'; swinging=false; $('#swinger').classList.remove('swing'); swing(); }
+$('#startBtn').addEventListener('click',()=>{ cleared=0;done=false;swinging=false; vines.forEach(v=>v.remove()); vines=[]; $('#cl').textContent=0; $('#clmax').textContent=GOAL; $('#hutphoto').classList.remove('big'); sharpen(0); const z=document.querySelector('.zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; const sw=$('#swinger'); sw.style.transition=''; sw.style.left='24%'; $('#hut').style.right='-14%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveVines,60); spawnT=setInterval(spawnVine,SPAWN); });
 $('#swingBtn').addEventListener('click',swing);
 $('#field').addEventListener('click',swing);
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});

@@ -85,7 +85,7 @@ const sfx={
 };
 let prog=0,done=false;
 function tap(){
-  if(done)return; prog=Math.min(100,prog+9); $('#fill').style.width=prog+'%'; sfx.tap(prog); vib(6);
+  if(done)return; prog=Math.min(100,prog+(ageNum()<=6?13:ageNum()<=9?9:7)); $('#fill').style.width=prog+'%'; sfx.tap(prog); vib(6); // Alters-Staffel: Taps bis Pop
   const b=$('#bottle'); b.style.transform='rotate(-6deg) translateY(2px) scale(.98)'; setTimeout(()=>b.style.transform='',90);
   if(prog>=50 && $('#tapHint').dataset.m!=='1'){$('#tapHint').dataset.m='1';$('#tapHint').textContent='Der Korken wackelt …';}
   if(prog>=100) pop();

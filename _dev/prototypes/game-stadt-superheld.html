@@ -14,6 +14,10 @@
   .skyline{position:absolute;left:0;right:0;bottom:12%;height:38%;background:
     linear-gradient(90deg,transparent 4%,#2a3a6a 4% 12%,transparent 12% 17%,#34467e 17% 27%,transparent 27% 33%,#2a3a6a 33% 44%,transparent 44% 49%,#34467e 49% 60%,transparent 60% 66%,#2a3a6a 66% 77%,transparent 77% 83%,#34467e 83% 95%,transparent 95%);opacity:.85}
   .street{position:absolute;left:0;right:0;bottom:0;height:12%;background:linear-gradient(180deg,#3a3f4a,#23262e)}
+  /* Stadt-Leinwand am Himmel: Bild wird pro Rettung klarer (Reveal an Mechanik gekoppelt) */
+  .billboard{position:absolute;top:2%;left:50%;transform:translateX(-50%);width:104px;height:72px;border-radius:8px;border:4px solid #fff;box-shadow:0 4px 14px rgba(0,0,0,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#14213a;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease,transform .5s ease;pointer-events:none;z-index:3}
+  .billboard::after{content:"⚡";position:absolute;top:-14px;right:-10px;font-size:22px}
+  .billboard.big{transform:translateX(-50%) scale(1.3)}
   .drop{position:absolute;transform:translate(-50%,-50%);font-size:30px;z-index:2;filter:drop-shadow(0 2px 2px rgba(0,0,0,.3))}
   .drop.gone{animation:dp .25s forwards}@keyframes dp{to{transform:translate(-50%,-50%) scale(1.5);opacity:0}}
   .hero2{position:absolute;bottom:11%;left:50%;transform:translateX(-50%);font-size:42px;z-index:4;transition:left .1s ease;filter:drop-shadow(0 3px 3px rgba(0,0,0,.4))}
@@ -36,14 +40,14 @@
   <section class="scene on" id="s-intro">
     <div class="big">🦸</div>
     <h1>Rette die Stadt!</h1>
-    <p class="sub">Vom Hochhaus fallen Sachen herunter! Steuere die Heldin oder den Helden mit den Pfeilen und fang die guten Sachen auf, bevor sie den Boden erreichen. Den Schutt 🪨 lässt du einfach vorbei. Sechs Rettungen und die Stadt ist sicher!</p>
+    <p class="sub">Vom Hochhaus fallen Sachen herunter! Steuere die Heldin oder den Helden mit den Pfeilen und fang die guten Sachen auf. Den Schutt 🪨 lässt du einfach vorbei. Mit jeder Rettung wird das Bild auf der großen Stadt-Leinwand klarer!</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Cape an! 🦸</button>
   </section>
 
   <section class="scene" id="s-game">
     <div class="hud"><span class="pill" style="background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px">Gerettet 🦸 <b id="cnt">0</b>/6</span></div>
-    <div class="sky" id="sky"><div class="skyline"></div><div class="street"></div><div class="hero2" id="hero2">🦸</div></div>
+    <div class="sky" id="sky"><div class="skyline"></div><div class="street"></div><div class="billboard" id="billboard"></div><div class="hero2" id="hero2">🦸</div></div>
     <div class="ctrls"><button class="btn" id="leftBtn">◀</button><button class="btn" id="rightBtn">▶</button></div>
   </section>
 
@@ -71,24 +75,29 @@ const sfx={
   win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-const GOAL=6, HROW=80; const GOODS=['🎈','⭐','🧸','🍎','🎁']; let heroX=50, items=[], saved=0, done=false, mvT=null, spawnT=null;
+const GOAL=6, HROW=80; const GOODS=['🎈','⭐','🧸','🍎','🎁'];
+// Alters-Staffel: Fallgeschwindigkeit, Spawn-Takt, Fangradius, Gut-Quote
+const FALL=(ageNum()<=6?3.4:ageNum()<=9?4.5:5.6), SPAWN=(ageNum()<=6?1000:ageNum()<=9?820:650), RADIUS=(ageNum()<=6?15:ageNum()<=9?12:9), GQUOTE=(ageNum()<=6?0.82:ageNum()<=9?0.72:0.62);
+let heroX=50, items=[], saved=0, done=false, mvT=null, spawnT=null;
+function sharpen(frac){ const p=$('#billboard'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
 function setHero(){ $('#hero2').style.left=heroX+'%'; }
 function steer(dx){ if(done)return; heroX=Math.max(8,Math.min(92,heroX+dx)); setHero(); }
-function spawn(){ if(done)return; const good=Math.random()<0.72; const x=12+Math.random()*76; const el=document.createElement('div'); el.className='drop '+(good?'good':'bad'); el.textContent=good?GOODS[Math.floor(Math.random()*GOODS.length)]:'🪨'; el.style.left=x+'%'; el.style.top='-6%'; el._x=x; el._y=-6; el._good=good; $('#sky').appendChild(el); items.push(el); }
+function spawn(atX){ if(done)return; const good=(atX!==undefined)?true:(Math.random()<GQUOTE); const x=(atX!==undefined)?atX:12+Math.random()*76; const el=document.createElement('div'); el.className='drop '+(good?'good':'bad'); el.textContent=good?GOODS[Math.floor(Math.random()*GOODS.length)]:'🪨'; el.style.left=x+'%'; el.style.top=(atX!==undefined?'40%':'-6%'); el._x=x; el._y=(atX!==undefined?40:-6); el._good=good; $('#sky').appendChild(el); items.push(el); }
 function pop(el){ el.classList.add('gone'); setTimeout(()=>{el.remove(); const k=items.indexOf(el); if(k>=0)items.splice(k,1);},250); }
-function moveTick(){ if(done)return; for(const it of items.slice()){ it._y+=4.5; it.style.top=it._y+'%';
-  if(it._y>=HROW-5 && it._y<=HROW+7 && !it._hit && Math.abs(it._x-heroX)<12){
+function moveTick(){ if(done)return; for(const it of items.slice()){ it._y+=FALL; it.style.top=it._y+'%';
+  if(it._y>=HROW-5 && it._y<=HROW+7 && !it._hit && Math.abs(it._x-heroX)<RADIUS){
     it._hit=true;
-    if(it._good){ saved++; $('#cnt').textContent=saved; sfx.collect(); vib([8,18]); pop(it); if(saved>=GOAL) return winSeq(); }
+    if(it._good){ saved++; $('#cnt').textContent=saved; sharpen(saved/GOAL); sfx.collect(); vib([8,18]); pop(it); if(saved>=GOAL) return winSeq(); }
     else { sfx.bump(); vib(15); $('#hero2').classList.add('wob'); setTimeout(()=>$('#hero2').classList.remove('wob'),300); pop(it); }
   }
   if(it._y>108){ it.remove(); const k=items.indexOf(it); if(k>=0)items.splice(k,1); } } }
-function winSeq(){ done=true; clearInterval(mvT); clearInterval(spawnT); sfx.win(); vib([20,40,20,40,80]);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Die geheime Superkraft der Stadt ist ${kid()}! Komm zur Superhelden-Party:`; } else { $('#winTitle').textContent='Stadt gerettet!'; $('#winWho').textContent=`Über den Dächern leuchtet das Helden-Zeichen — ${kid()} hat die Stadt gerettet! Komm zur Superhelden-Party:`; } guestName();
-  setTimeout(()=>{ show('s-win'); confetti(CC); }, 650);
+function winSeq(){ done=true; clearInterval(mvT); clearInterval(spawnT); sharpen(1); $('#billboard').classList.add('big'); const h2=$('#hero2'); h2.style.transition='bottom .6s ease'; h2.style.bottom='42%'; sfx.win(); vib([20,40,20,40,80]);
+  if(HAS_PHOTO){ $('#winWho').textContent=`Sechs Rettungen — auf der Stadt-Leinwand strahlt ${kid()}! Komm zur Superhelden-Party:`; } else { $('#winTitle').textContent='Stadt gerettet!'; $('#winWho').textContent=`Über den Dächern leuchtet das Helden-Zeichen — ${kid()} hat die Stadt gerettet! Komm zur Superhelden-Party:`; } guestName();
+  setTimeout(()=>{ show('s-win'); confetti(CC); }, 900);
 }
-function tip(){ if(done)return; saved++; $('#cnt').textContent=saved; if(saved>=GOAL) winSeq(); } // Tipp: einen Bürger für dich retten
-$('#startBtn').addEventListener('click',()=>{ heroX=50;saved=0;done=false; items.forEach(i=>i.remove()); items=[]; $('#cnt').textContent=0; setHero(); show('s-game'); clearInterval(mvT);clearInterval(spawnT); mvT=setInterval(moveTick,55); spawnT=setInterval(spawn,820); });
+// Tipp sichtbar: Held fliegt unter das nächste gute Teil (oder eins erscheint über ihm) und fängt es echt
+function tip(){ if(done)return; const g=items.find(i=>i._good&&!i._hit&&i._y<70); if(g){ heroX=Math.max(8,Math.min(92,g._x)); setHero(); } else { spawn(heroX); } }
+$('#startBtn').addEventListener('click',()=>{ heroX=50;saved=0;done=false; items.forEach(i=>i.remove()); items=[]; $('#cnt').textContent=0; $('#billboard').classList.remove('big'); sharpen(0); const h2=$('#hero2'); h2.style.transition=''; h2.style.bottom='11%'; setHero(); show('s-game'); clearInterval(mvT);clearInterval(spawnT); mvT=setInterval(moveTick,55); spawnT=setInterval(spawn,SPAWN); });
 $('#leftBtn').addEventListener('click',()=>steer(-14));
 $('#rightBtn').addEventListener('click',()=>steer(14));
 $('#sky').addEventListener('click',e=>{ const r=e.currentTarget.getBoundingClientRect(); steer(e.clientX<r.left+r.width/2?-14:14); });

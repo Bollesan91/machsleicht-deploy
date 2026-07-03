@@ -16,6 +16,10 @@
   .blade.hot{filter:hue-rotate(-20deg) brightness(1.5) saturate(2);text-shadow:0 0 22px #ff8a2c,0 0 40px #ff5a1c}
   .ember{position:absolute;width:7px;height:7px;border-radius:50%;background:#ffb24d;box-shadow:0 0 8px #ff8a2c;pointer-events:none}
   .glowtag{position:absolute;top:8%;font-size:14px;font-weight:800;letter-spacing:1px}
+  /* Klingen-Spiegelung: je blanker geschmiedet, desto klarer das Spiegelbild (Reveal an Mechanik gekoppelt) */
+  .mirror{position:absolute;top:12%;right:7%;width:72px;height:72px;border-radius:50%;border:4px solid #cfd6de;box-shadow:0 0 16px rgba(207,214,222,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a2012;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease,transform .5s ease;pointer-events:none;z-index:3}
+  .mirror::after{content:"⚔️";position:absolute;bottom:-12px;left:-10px;font-size:20px}
+  .mirror.big{transform:scale(1.35)}
   .glowtag.now{color:#ffb24d;text-shadow:0 0 10px #ff8a2c}
   .forge.shake{animation:fsh .18s}@keyframes fsh{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
   /* Reveal */
@@ -34,14 +38,14 @@
   <section class="scene on" id="s-intro">
     <div class="big">⚒️</div>
     <h1>Schmiede das Heldenschwert!</h1>
-    <p class="sub">Hämmere auf die Klinge. Am meisten bringt es, wenn das Eisen orange GLÜHT — dann fliegen die Funken! Schmiede das Schwert fertig.</p>
+    <p class="sub">Hämmere auf die Klinge. Am meisten bringt es, wenn das Eisen orange GLÜHT — dann fliegen die Funken! Mit jedem Schlag wird die Klinge blanker — und die Spiegelung darin klarer.</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">An den Amboss ⚒️</button>
   </section>
 
   <section class="scene" id="s-game">
     <div class="meter"><div class="fill" id="fill"></div></div>
-    <div class="forge" id="forge"><div class="glowtag" id="glowtag">…</div><div class="blade" id="blade">🗡️</div><div class="anvil">🛠️</div></div>
+    <div class="forge" id="forge"><div class="glowtag" id="glowtag">…</div><div class="mirror" id="mirror"></div><div class="blade" id="blade">🗡️</div><div class="anvil">🛠️</div></div>
     <button class="btn tapBtn" id="hitBtn">HÄMMERN ⚒️</button>
   </section>
 
@@ -69,20 +73,25 @@ const sfx={
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
 let forge=0, glow=0, gdir=1, hot=false, glowT=null, done=false;
+// Alters-Staffel: Glut-Schwelle — jüngere Kinder treffen das Glut-Fenster öfter
+const HOT=(ageNum()<=6?45:ageNum()<=9?58:66);
+function sharpen(frac){ const p=$('#mirror'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
 function render(){ const b=$('#blade'); b.classList.toggle('hot',hot); const tg=$('#glowtag'); tg.textContent=hot?'JETZT — es glüht!':'… erhitzt …'; tg.classList.toggle('now',hot); }
-function startGlow(){ clearInterval(glowT); glow=0;gdir=1; glowT=setInterval(()=>{ if(done)return; glow+=gdir*7; if(glow>=100){glow=100;gdir=-1;} if(glow<=0){glow=0;gdir=1;} hot=glow>=58; render(); },60); }
+function startGlow(){ clearInterval(glowT); glow=0;gdir=1; glowT=setInterval(()=>{ if(done)return; glow+=gdir*7; if(glow>=100){glow=100;gdir=-1;} if(glow<=0){glow=0;gdir=1;} hot=glow>=HOT; render(); },60); }
 function ember(){ const f=$('#forge'); for(let i=0;i<(hot?7:3);i++){ const e=document.createElement('div'); e.className='ember'; e.style.left='50%'; e.style.top='52%'; f.appendChild(e); const a=Math.random()*6.28,d=30+Math.random()*60; e.animate([{transform:'translate(-50%,-50%)',opacity:1},{transform:'translate('+(Math.cos(a)*d)+'px,'+(-Math.abs(Math.sin(a))*d-20)+'px)',opacity:0}],{duration:420+Math.random()*200}); setTimeout(()=>e.remove(),650); } }
 function strike(){
-  if(done)return; const wasHot=hot; const bonus=wasHot?13:5; forge=Math.min(100,forge+bonus); $('#fill').style.width=forge+'%';
+  if(done)return; const wasHot=hot; const bonus=wasHot?13:5; forge=Math.min(100,forge+bonus); $('#fill').style.width=forge+'%'; sharpen(forge/100);
   sfx.clang(wasHot); vib(wasHot?[12,20]:8); ember(); $('#forge').classList.add('shake'); setTimeout(()=>$('#forge').classList.remove('shake'),180);
   if(forge>=100) forged();
 }
 function forged(){
-  done=true; clearInterval(glowT); $('#blade').classList.add('hot'); $('#glowtag').textContent='✨ Fertig geschmiedet!'; sfx.win(); vib([20,40,20,40,80]);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Frisch geschmiedet — das Heldenschwert gehört ${kid()}, bereit fürs Turnier! Komm zur Ritter-Party:`; } else { $('#winTitle').textContent='Geschmiedet!'; $('#winWho').textContent=`Ein blitzblankes Heldenschwert — ${kid()} ist bereit fürs Turnier! Komm zur Ritter-Party:`; } guestName();
-  setTimeout(()=>{ show('s-win'); confetti(CC); }, 800);
+  done=true; clearInterval(glowT); $('#blade').classList.add('hot'); $('#glowtag').textContent='✨ Fertig geschmiedet!'; sharpen(1); $('#mirror').classList.add('big'); noise(AC().currentTime,0.5,{vol:0.08,freq:400,filter:'lowpass'}); sfx.win(); vib([20,40,20,40,80]);
+  if(HAS_PHOTO){ $('#winWho').textContent=`Blank poliert — in der Klinge spiegelt sich ${kid()}, bereit fürs Turnier! Komm zur Ritter-Party:`; } else { $('#winTitle').textContent='Geschmiedet!'; $('#winWho').textContent=`Ein blitzblankes Heldenschwert — ${kid()} ist bereit fürs Turnier! Komm zur Ritter-Party:`; } guestName();
+  setTimeout(()=>{ show('s-win'); confetti(CC); }, 1000);
 }
-$('#startBtn').addEventListener('click',()=>{ forge=0;done=false; $('#fill').style.width='0%'; $('#blade').classList.remove('hot'); show('s-game'); startGlow(); });
+// Tipp sichtbar: die Klinge glüht auf und der Hammer trifft im perfekten Moment
+function tip(){ if(done)return; glow=100; hot=true; render(); strike(); }
+$('#startBtn').addEventListener('click',()=>{ forge=0;done=false; $('#fill').style.width='0%'; $('#blade').classList.remove('hot'); $('#mirror').classList.remove('big'); sharpen(0); show('s-game'); startGlow(); });
 $('#hitBtn').addEventListener('click',strike);
 $('#forge').addEventListener('click',strike);
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});

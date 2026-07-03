@@ -22,6 +22,14 @@
   .stamps{display:flex;gap:8px;justify-content:center;margin-top:14px}
   .stamp{width:16px;height:16px;border-radius:50%;border:2px solid var(--accent-dk);opacity:.4}
   .stamp.on{background:var(--good);border-color:var(--good);opacity:1}
+  /* Zensiertes Beweisfoto in der Akte: pro richtiger Spur kippt ein Balken weg (Reveal an Mechanik gekoppelt) */
+  .dossier{position:relative;width:104px;height:104px;border-radius:8px;margin:12px auto 0;overflow:hidden;border:3px solid var(--accent-dk);background:#1a1d28;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+  .dphoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.65);transition:opacity .5s ease,filter .5s ease}
+  .dossier .bar{position:absolute;left:-2px;right:-2px;height:35%;background:#15151a;opacity:.97;transition:transform .45s ease,opacity .45s ease;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+  .dossier .b0{top:0}.dossier .b1{top:33%}.dossier .b2{top:66%}
+  .dossier .bar.off{transform:translateX(115%) rotate(7deg);opacity:0}
+  .gel{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-14deg) scale(1.6);color:#c0392b;border:3px solid #c0392b;border-radius:6px;font-weight:900;font-size:16px;letter-spacing:2px;padding:2px 8px;opacity:0;transition:opacity .3s ease,transform .3s ease;background:rgba(255,255,255,.75)}
+  .gel.on{opacity:.95;transform:translate(-50%,-50%) rotate(-14deg) scale(1)}
   .feedback{min-height:20px;font-size:14px;font-weight:700;text-align:center;margin-top:6px}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#f4f1e6,#ddd3b8);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk);position:relative}
@@ -39,7 +47,7 @@
   <section class="scene on" id="s-intro">
     <div class="big">🕵️</div>
     <h1>Knack die Geheim-Akte!</h1>
-    <p class="sub">Drei kniffige Detektiv-Fragen versperren die Akte. Tippe bei jeder die richtige Spur an — keine Sorge, Danebentippen kostet nichts, du darfst nochmal. Drei Treffer und die Akte springt auf!</p>
+    <p class="sub">Drei kniffige Detektiv-Fragen versperren die Akte. Tippe bei jeder die richtige Spur an — Danebentippen kostet nichts. Mit jeder richtigen Spur fällt ein Zensur-Balken vom geheimen Beweisfoto!</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Akte öffnen 📁</button>
   </section>
@@ -51,6 +59,7 @@
       <div class="qtext" id="qtext">…</div>
       <div class="opts" id="opts"></div>
       <div class="feedback" id="feedback"></div>
+      <div class="dossier" id="dossier"><div class="dphoto" id="dphoto"></div><div class="bar b0"></div><div class="bar b1"></div><div class="bar b2"></div><div class="gel" id="gel">GELÖST</div></div>
       <div class="stamps"><div class="stamp" data-s="0"></div><div class="stamp" data-s="1"></div><div class="stamp" data-s="2"></div></div>
     </div>
   </section>
@@ -86,6 +95,7 @@ const QUESTIONS=[
   { q:'Was löst jede Spürnase zum großen Schluss?', opts:[['🧊','das Eis'],['🥜','eine Nuss'],['🔐','den Fall']], correct:2 }
 ];
 let qi=0, solved=0, done=false;
+function sharpen(frac){ const p=$('#dphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.65+0.35*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
 function renderQ(){
   const Q=QUESTIONS[qi];
   $('#qnum').textContent='Frage '+(qi+1)+' / '+QUESTIONS.length;
@@ -103,6 +113,7 @@ function pick(i,btn){
   if(i===Q.correct){
     btn.classList.add('good'); sfx.right(); vib(12); solved++;
     const st=document.querySelector('.stamp[data-s="'+qi+'"]'); if(st)st.classList.add('on'); sfx.stamp();
+    const bar=document.querySelector('.dossier .b'+qi); if(bar)bar.classList.add('off'); sharpen(solved/QUESTIONS.length); // Zensur-Balken kippt weg
     $('#feedback').textContent='✔ Richtige Spur!'; $('#feedback').style.color='var(--good)';
     [...$('#opts').children].forEach(c=>c.style.pointerEvents='none');
     if(qi+1>=QUESTIONS.length){ done=true; setTimeout(winSeq,650); }
@@ -114,11 +125,13 @@ function pick(i,btn){
   }
 }
 function winSeq(){
-  vib([20,40,20,40,80]);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Geknackt! Die Akte ist offen — der geheime Stargast ist ${kid()}! Komm zur Detektiv-Party:`; } else {$('#winTitle').textContent='Fall gelöst!';$('#winWho').textContent=`Geknackt! Die Lupe glänzt — ${kid()} hat bestens ermittelt! Komm zur Detektiv-Party:`;} guestName();
-  show('s-win');confetti(CC);sfx.win();
+  sharpen(1); $('#gel').classList.add('on'); sfx.stamp(); vib([20,40,20,40,80]);
+  if(HAS_PHOTO){ $('#winWho').textContent=`Drei richtige Spuren, drei Balken weg — in der Akte steckt ${kid()}! Komm zur Detektiv-Party:`; } else {$('#winTitle').textContent='Fall gelöst!';$('#winWho').textContent=`Geknackt! Die Lupe glänzt — ${kid()} hat bestens ermittelt! Komm zur Detektiv-Party:`;} guestName();
+  setTimeout(()=>{ show('s-win');confetti(CC);sfx.win(); }, 900);
 }
-$('#startBtn').addEventListener('click',()=>{qi=0;solved=0;done=false;[...document.querySelectorAll('.stamp')].forEach(s=>s.classList.remove('on'));renderQ();show('s-game');});
+// Tipp sichtbar: die richtige Spur leuchtet auf und wird echt angetippt
+function tip(){ if(done)return; const Q=QUESTIONS[qi]; const btn=$('#opts').children[Q.correct]; if(!btn)return; btn.style.boxShadow='0 0 0 3px var(--good)'; setTimeout(()=>{ btn.style.boxShadow=''; pick(Q.correct,btn); },350); }
+$('#startBtn').addEventListener('click',()=>{qi=0;solved=0;done=false;[...document.querySelectorAll('.stamp')].forEach(s=>s.classList.remove('on'));[...document.querySelectorAll('.dossier .bar')].forEach(b=>b.classList.remove('off'));$('#gel').classList.remove('on');sharpen(0);renderQ();show('s-game');});
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>

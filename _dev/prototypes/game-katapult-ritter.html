@@ -77,8 +77,9 @@ const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#c9a227','#37c46e','#a35cff','#fff','#d8b34a'];
 const sfx={launch(){note(300,AC().currentTime,0.12,{type:'square',vol:0.08,glideTo:520});},hit(){const t=AC().currentTime;note(90,t,0.22,{type:'sine',vol:0.22,glideTo:50});noise(t,0.16,{vol:0.16,freq:300});},miss(){noise(AC().currentTime,0.14,{vol:0.08,freq:600});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
 let power=0,pdir=1,gaugeT=null,hits=0,busy=false,done=false;
-const ZONE_LO=55,ZONE_HI=85;
-function startGauge(){ power=0;pdir=1; clearInterval(gaugeT); gaugeT=setInterval(()=>{ power+=pdir*5; if(power>=100){power=100;pdir=-1;} if(power<=0){power=0;pdir=1;} $('#pin').style.left=power+'%'; },45); }
+// Alters-Staffel: Zeiger-Tempo + Zonenbreite
+const STEP=(ageNum()<=6?3.5:ageNum()<=9?5:6.5), ZONE_LO=(ageNum()<=6?48:ageNum()<=9?55:60), ZONE_HI=(ageNum()<=6?88:ageNum()<=9?85:82);
+function startGauge(){ power=0;pdir=1; const z=document.querySelector('.gauge .zone'); if(z){ z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; } clearInterval(gaugeT); gaugeT=setInterval(()=>{ power+=pdir*STEP; if(power>=100){power=100;pdir=-1;} if(power<=0){power=0;pdir=1;} $('#pin').style.left=power+'%'; },45); }
 function fire(){
   if(busy||done)return; busy=true; const p=power; sfx.launch(); vib(10);
   const hit=(p>=ZONE_LO && p<=ZONE_HI);
@@ -104,7 +105,8 @@ function winSeq(){
   }, 250);
 }
 function buildCracks(){ const z=$('#cracks'); z.innerHTML=''; [['30%','28%'],['62%','55%'],['40%','75%']].forEach(p=>{const s=document.createElement('span');s.textContent='💥';s.style.left=p[0];s.style.top=p[1];z.appendChild(s);}); }
-function tip(){ if(done)return; hits++; $('#hits').textContent=hits; vib([15,25]); if(hits>=3) winSeq(); } // Tipp: ein Tor-Treffer für dich
+// Tipp sichtbar: Zeiger rastet in der Zone ein und der Boulder fliegt echt ans Tor
+function tip(){ if(done||busy)return; power=(ZONE_LO+ZONE_HI)/2; $('#pin').style.left=power+'%'; fire(); }
 $('#startBtn').addEventListener('click',()=>{hits=0;done=false;busy=false;$('#hits').textContent=0;$('#field').classList.remove('open');$('#fireBtn').disabled=false;buildCracks();show('s-game');startGauge();});
 $('#fireBtn').addEventListener('click',fire);
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
