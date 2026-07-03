@@ -19,6 +19,10 @@
   .gazelle{position:absolute;font-size:30px;transform:translate(-50%,-50%) scaleX(-1);transition:transform .3s,filter .3s;z-index:3;filter:grayscale(.15)}
   .gazelle.watch{transform:translate(-50%,-50%) scaleX(1) scale(1.15);filter:drop-shadow(0 0 8px #fff)}
   .gazelle.watch::after{content:"👀";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:14px}
+  .gazelle.hop{animation:gzh .4s}@keyframes gzh{0%,100%{transform:translate(-50%,-50%) scaleX(1) scale(1.15)}50%{transform:translate(-50%,-62%) scaleX(1) scale(1.3)}}
+  /* Warn-Vignette solange die Gazelle herschaut — Stopp-Signal auch ohne aufs Tier zu starren */
+  .land.alert{box-shadow:0 12px 30px rgba(0,0,0,.45),inset 0 0 0 5px rgba(255,220,90,.55)}
+  .mirror.big{animation:mrip .9s ease}@keyframes mrip{0%,100%{transform:translate(-50%,-50%) scale(1.35)}45%{transform:translate(-50%,-50%) scale(1.5)}}
   .print{position:absolute;width:42px;height:42px;border-radius:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;opacity:.4;transition:opacity .2s,transform .12s;filter:grayscale(.5)}
   .print.lit{opacity:1;filter:none;transform:translate(-50%,-50%) scale(1.05)}
   .print.next{opacity:.85;animation:pn 1s infinite}
@@ -80,8 +84,10 @@ const TRAIL=[[14,80],[31,63],[48,72],[40,46],[61,40],[76,53],[88,26]]; // gewund
 const WATCH=(ageNum()<=6?900:ageNum()<=9?1200:1500), AWAY=(ageNum()<=6?2300:ageNum()<=9?1800:1400);
 let next=1, done=false, prints=[], watching=false, gzT=null;
 function sharpen(frac){ const p=document.querySelector('.mirror'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.65+0.35*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
-function gazLoop(){ if(done)return; const gz=document.querySelector('.gazelle'); if(!gz)return; watching=false; gz.classList.remove('watch');
-  gzT=setTimeout(()=>{ if(done)return; watching=true; gz.classList.add('watch'); gzT=setTimeout(gazLoop, WATCH); }, AWAY); }
+function gazLoop(){ if(done)return; const gz=document.querySelector('.gazelle'); if(!gz)return; watching=false; gz.classList.remove('watch'); $('#land').classList.remove('alert');
+  gzT=setTimeout(()=>{ if(done)return; watching=true; gz.classList.add('watch'); $('#land').classList.add('alert');
+    const t=AC().currentTime; note(880,t,0.07,{type:'sine',vol:0.09}); note(880,t+0.11,0.07,{type:'sine',vol:0.09}); // Warn-Piep: „sie schaut!"
+    gzT=setTimeout(gazLoop, WATCH); }, AWAY); }
 function build(){
   next=1;done=false;watching=false;clearTimeout(gzT);$('#cnt').textContent=0;$('#tot').textContent=TRAIL.length-1;
   const land=$('#land'); [...land.querySelectorAll('.print,.walker,.nest,.mirror,.gazelle')].forEach(e=>e.remove());
@@ -94,7 +100,7 @@ function build(){
 }
 function tap(i){
   if(done)return;
-  if(watching){ sfx.nope();vib([25,30,25]);$('#land').classList.add('shake');setTimeout(()=>$('#land').classList.remove('shake'),250);$('#hint').textContent='Die Gazelle schaut her — warte kurz! 👀';return; } // Twist: kein Fortschritt, kein Rückschritt
+  if(watching){ sfx.nope();vib([25,30,25]);$('#land').classList.add('shake');setTimeout(()=>$('#land').classList.remove('shake'),250);const gz=document.querySelector('.gazelle');if(gz){gz.classList.add('hop');setTimeout(()=>gz.classList.remove('hop'),400);}$('#hint').textContent='Die Gazelle schaut her — warte kurz! 👀';return; } // Twist: kein Fortschritt, kein Rückschritt
   if(i!==next){ sfx.nope();vib([25,30,25]);$('#land').classList.add('shake');setTimeout(()=>$('#land').classList.remove('shake'),250);return; }
   prints[i].classList.add('lit');prints[i].classList.remove('next');
   const w=$('#walker');w.style.left=TRAIL[i][0]+'%';w.style.top=TRAIL[i][1]+'%';
@@ -103,7 +109,7 @@ function tap(i){
   else setTimeout(win,420);
 }
 function win(){
-  done=true;clearTimeout(gzT);$('#hint').textContent='';sharpen(1);const mi=document.querySelector('.mirror');if(mi)mi.classList.add('big');noise(AC().currentTime,0.3,{vol:0.09,freq:500,filter:'lowpass'});vib([20,40,20,40,80]);
+  done=true;clearTimeout(gzT);$('#land').classList.remove('alert');$('#hint').textContent='';sharpen(1);const mi=document.querySelector('.mirror');if(mi)mi.classList.add('big');noise(AC().currentTime,0.3,{vol:0.09,freq:500,filter:'lowpass'});vib([20,40,20,40,80]);
   if(HAS_PHOTO){ $('#winWho').textContent=`Im Wasserloch spiegelt sich die seltenste Entdeckung — das ist ${kid()}! Komm zur Safari-Party:`; } else {$('#winTitle').textContent='Spur verfolgt!';$('#winWho').textContent=`Am Wasserloch trinkt ein prächtiger Löwe — die Spur führte zur Party von ${kid()}! Komm zur Safari-Party:`;} guestName();
   setTimeout(()=>{ show('s-win');confetti(CC);sfx.win(); }, 900);
 }
