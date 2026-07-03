@@ -31,6 +31,7 @@
   /* Story-Outro: Kokos Reaktion auf dem Reveal, bevor die Karte kommt */
   .storyOut{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);background:rgba(255,255,255,.94);color:#16240f;font-weight:800;font-size:15px;padding:10px 16px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.35);opacity:0;transition:opacity .4s ease .7s;z-index:7;max-width:88%;text-align:center;pointer-events:none}
   .storyOut.on{opacity:1}
+  .storyOut.on::after{content:" ▸";opacity:.65} /* Tap-Affordanz: weiter per Tipp */
   .swinger{transition:transform .3s,opacity .5s ease}
   .hut{transition:right .4s,opacity .5s ease}
   /* Reveal */
@@ -98,7 +99,7 @@ const DBL=(ageNum()>=7); // Doppel-Lianen-Rhythmus: Skill-Moment ab 7, U6 bleibt
 // Story-Intro (Pilot): Koko führt in 3 tippbaren Panels zur Mission — vorlesefreundlich, überspringbar
 // Falsche Fährte fürs Twist-Finale: Der „Boss" klingt streng-geheimnisvoll — und ist dann der beste Freund
 const PANELS=[
-  {i:'🐒',t:'Psst — ich bin Koko!',x:'Oben im Baumhaus wohnt der geheime Dschungel-Boss. Niemand hat ihn je gesehen!'},
+  {i:'🐒',t:'Psst — ich bin Koko!',x:'Oben im Baumhaus wohnt der geheime Dschungel-Boss. Niemand hat den Boss je gesehen!'},
   {i:'🛖',t:'Streng geheim!',x:'Man sagt: Der Boss lässt nur die allerbesten Kletterer zu sich hoch …'},
   {i:'🌿',t:'Schwing mit mir!',x:'Tippe SCHWUNG, wenn eine Liane im hellen Bereich ist.'+(DBL?' Bei Doppel-Lianen 🌿🌿 blitzschnell nochmal tippen — das gibt zwei!':'')}
 ];
@@ -113,36 +114,42 @@ function sharpen(frac){ const p=$('#hutphoto'); if(!p)return; const f=Math.max(0
 function spawnVine(){ if(done)return; const v=document.createElement('div'); v.className='vine'; v._x=106; v.style.left='106%'; vineCount++; if(DBL && vineCount%3===0){ v._double=true; v.innerHTML='<span>🌿🌿</span>'; } else { v.innerHTML='<span>🌿</span>'; } $('#track').appendChild(v); vines.push(v); }
 function stumble(){ $('#swinger').classList.add('miss'); setTimeout(()=>$('#swinger').classList.remove('miss'),300); sfx.stumble(); vib([10,30]); }
 function moveVines(){ if(done)return; for(const v of vines.slice()){ v._x-=SPEED; v.style.left=v._x+'%'; if(!v._done && v._x<ZONE_LO && v._x>=ZONE_LO-6){ if(!swinging){ v._done='miss'; stumble(); } } if(v._x<-12){ v.remove(); const k=vines.indexOf(v); if(k>=0)vines.splice(k,1); } } } // Miss erst NACH Verlassen der Zone — sonst frisst das Miss-Band bei U6 sichtbare Fangzone
+let swT=null; // Anim-Timer getrennt vom swinging-Flag: Re-Trigger darf die Freigabe nie clearen
 function swing(){ if(done)return;
   // Doppel-Lianen-Nachgriff: zweiter Tap innerhalb 450ms zählt extra (Rhythmus-Skill ab 7; verpasst = kein Verlust)
   if(dblArm && Date.now()<dblUntil){ dblArm=false; cleared++; $('#cl').textContent=cleared; sharpen(cleared/GOAL); sfx.clear(); vib([10,25,10]);
-    const sw=$('#swinger'); sw.classList.remove('swing'); void sw.offsetWidth; sw.classList.add('swing'); setTimeout(()=>sw.classList.remove('swing'),520); // der Affe springt auch beim Blitz-Nachgriff
+    const sw=$('#swinger'); clearTimeout(swT); sw.classList.remove('swing'); void sw.offsetWidth; sw.classList.add('swing'); swT=setTimeout(()=>sw.classList.remove('swing'),520); // voller Sprung auch beim Blitz-Nachgriff
     if(cleared>=GOAL) winSeq(); return; }
-  if(swinging)return; swinging=true; $('#swinger').classList.add('swing'); sfx.swing(); vib(10); setTimeout(()=>{ $('#swinger').classList.remove('swing'); swinging=false; },520);
+  if(swinging)return; swinging=true; sfx.swing(); vib(10); setTimeout(()=>{ swinging=false; },520);
+  const sw0=$('#swinger'); clearTimeout(swT); sw0.classList.remove('swing'); void sw0.offsetWidth; sw0.classList.add('swing'); swT=setTimeout(()=>sw0.classList.remove('swing'),520);
   const v=vines.find(x=>!x._done && x._x>=ZONE_LO && x._x<=ZONE_HI);
   if(v){ v._done='clear'; v.classList.add('caught'); cleared++; $('#cl').textContent=cleared; sharpen(cleared/GOAL); sfx.clear(); vib([10,30]);
     if(cleared>=GOAL) return winSeq();
     if(v._double){ dblArm=true; dblUntil=Date.now()+450; note(1180,AC().currentTime,0.09,{type:'sine',vol:0.1}); } // „Nochmal!"-Fenster
   }
 }
+function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
+function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim().slice(0,20); return v||GUEST; } // gleiche Präzedenz wie guestName(): Namensfeld vor URL-Param
+let outroStep=0, outroT=null, beat2='';
+function advanceOutro(){ if(!outroStep)return; clearTimeout(outroT);
+  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,8000); }
+  else { outroStep=0; show('s-win'); } } // Tap-getaktet (Fallback-Timer): jedes Kind liest in seinem Tempo
 function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); sharpen(1);
   $('#hutphoto').classList.add('flood'); // das Baumhaus-Fenster öffnet sich zur ganzen Szene: der Reveal IST der Höhepunkt
   $('#hut').style.opacity='0'; const sw=$('#swinger'); sw.style.opacity='0'; // Affe und Hütte machen die Bühne frei
-  sfx.win(); note(440,AC().currentTime,0.5,{type:'sine',vol:0.1,glideTo:880}); vib([20,40,20,40,80]); // Fanfare AM Reveal
-  confetti(CC); // Konfetti-Burst am Flood-Peak, nicht erst auf der Karte
-  const so=$('#storyOut');
-  if(HAS_PHOTO){ so.textContent='Koko staunt: Der Dschungel-Boss ist '+kid()+'! 🎉'; // Beat 1: Identität
-    setTimeout(()=>{ so.textContent=kid()+' lacht: „Na endlich'+(GUEST?', '+GUEST:'')+'! Ich hab schon auf dich gewartet!"'; },1700); } // Beat 2, Plot-Twist: DU wurdest erwartet
-  else { so.textContent='Koko staunt: '+kid()+' hat es bis zum Dschungel-Boss geschafft! 🎉'; // nofoto: kein Identitäts-Widerspruch zur Karte
-    setTimeout(()=>{ so.textContent='Und oben wartet schon die Dschungel-Party'+(GUEST?' auf dich, '+GUEST:'')+'!'; },1700); }
-  so.classList.add('on');
-  if(HAS_PHOTO){ $('#winWho').textContent=`Das Baumhaus-Fenster öffnet sich weit — drinnen strahlt der Dschungel-Boss: ${kid()}! Komm zur Dschungel-Party:`; } else { $('#winTitle').textContent='Im Baumhaus!'; $('#winWho').textContent=`Oben im Baumhaus wartet ein freches Äffchen — ${kid()} hat den Dschungel geschafft! Komm zur Dschungel-Party:`; } guestName(); setTimeout(()=>{ show('s-win'); confetti(CC); }, 3100); }
+  [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility='hidden'); // keine toten Buttons im Finale
+  sfx.win(); note(440,AC().currentTime,0.5,{type:'sine',vol:0.1,glideTo:880}); vib([20,40,20,40,80]); confetti(CC); // Fanfare + Konfetti AM Reveal
+  const g=guestNow(); const so=$('#storyOut');
+  if(HAS_PHOTO){ so.textContent='Koko staunt: Der Dschungel-Boss ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!"'; } // Beat 1 Identität, Beat 2 Rollenumkehr
+  else { so.textContent='Koko staunt: '+kidCap()+' hat es bis zum Dschungel-Boss geschafft! 🎉'; beat2='Und oben wartet schon die Dschungel-Party'+(g?' auf dich, '+g:'')+'!'; }
+  so.classList.add('on'); outroStep=1; outroT=setTimeout(advanceOutro,8000);
+  if(HAS_PHOTO){ $('#winWho').textContent=`Das Baumhaus-Fenster öffnet sich weit — drinnen strahlt der Dschungel-Boss: ${kid()}! Komm zur Dschungel-Party:`; } else { $('#winTitle').textContent='Im Baumhaus!'; $('#winWho').textContent=`Oben im Baumhaus wartet ein freches Äffchen — ${kid()} hat den Dschungel geschafft! Komm zur Dschungel-Party:`; } guestName(); }
 // Tipp sichtbar: eine Liane erscheint in der Zone und der Affe schwingt sie echt
 function tip(){ if(done)return; let v=vines.find(x=>!x._done && x._x>=ZONE_LO && x._x<=ZONE_HI); if(!v) v=vines.find(x=>!x._done && x._x>ZONE_HI); if(!v){ spawnVine(); v=vines[vines.length-1]; } if(!v)return; v._x=(ZONE_LO+ZONE_HI)/2; v.style.left=v._x+'%'; dblArm=false; swinging=false; $('#swinger').classList.remove('swing'); swing(); } // Zonen-Liane bevorzugen + dblArm aus: keine Waisen-Liane, kein Fehl-Stolperer nach dem Tipp
 // Start (AC() = iOS-Audio-Unlock per Geste)
-$('#startBtn').addEventListener('click',()=>{ AC(); cleared=0;done=false;swinging=false;vineCount=0;dblArm=false;dblUntil=0; $('#storyOut').classList.remove('on'); vines.forEach(v=>v.remove()); vines=[]; $('#cl').textContent=0; $('#clmax').textContent=GOAL; $('#hutphoto').classList.remove('flood'); sharpen(0); const z=document.querySelector('.zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; const sw=$('#swinger'); sw.style.opacity=''; sw.style.left='24%'; const hu=$('#hut'); hu.style.opacity=''; hu.style.right='-14%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveVines,60); spawnT=setInterval(spawnVine,SPAWN); setTimeout(spawnVine,400); }); // Initial-Spawn: keine 2,5s Leerlauf vor der ersten Liane
+$('#startBtn').addEventListener('click',()=>{ AC(); cleared=0;done=false;swinging=false;vineCount=0;dblArm=false;dblUntil=0; outroStep=0; clearTimeout(outroT); $('#storyOut').classList.remove('on'); [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility=''); vines.forEach(v=>v.remove()); vines=[]; $('#cl').textContent=0; $('#clmax').textContent=GOAL; $('#hutphoto').classList.remove('flood'); sharpen(0); const z=document.querySelector('.zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; const sw=$('#swinger'); sw.style.opacity=''; sw.style.left='24%'; const hu=$('#hut'); hu.style.opacity=''; hu.style.right='-14%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveVines,60); spawnT=setInterval(spawnVine,SPAWN); setTimeout(spawnVine,400); }); // Initial-Spawn: keine 2,5s Leerlauf vor der ersten Liane
 $('#swingBtn').addEventListener('click',swing);
-$('#field').addEventListener('click',swing);
+$('#field').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } else { swing(); } }); // im Finale taktet der Tap die Story-Beats
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>

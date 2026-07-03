@@ -28,6 +28,7 @@
   /* Story-Outro: Flos Reaktion auf dem Reveal */
   .storyOut{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);background:rgba(255,255,255,.94);color:#2e1c0a;font-weight:800;font-size:15px;padding:10px 16px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.35);opacity:0;transition:opacity .4s ease .7s;z-index:7;max-width:88%;text-align:center;pointer-events:none}
   .storyOut.on{opacity:1}
+  .storyOut.on::after{content:" ▸";opacity:.65} /* Tap-Affordanz: weiter per Tipp */
   /* Reveal */
   .rosette{width:100%;background:linear-gradient(170deg,#fff3e2,#ffe0bd);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.45);text-align:center;border:4px solid var(--accent-dk);position:relative}
   .hero{width:148px;height:148px;border-radius:50%;margin:8px auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2a16;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -93,7 +94,7 @@ const GUEST=(new URLSearchParams(location.search).get('g')||'').trim().slice(0,2
 // Story-Intro: Flo führt in 3 tippbaren Panels zur Mission — falsche Fährte fürs Twist-Finale
 const PANELS=[
   {i:'🐴',t:'Hallo, ich bin Flo!',x:'Heute ist das große Turnier — und ein geheimnisvoller Champion schaut zu!'},
-  {i:'🏆',t:'Wer ist der Champion?',x:'Keiner weiß es! Sein Bild hängt verhüllt überm Zieltor …'},
+  {i:'🏆',t:'Wer ist der Champion?',x:'Keiner weiß es! Das Bild überm Zieltor ist noch verhüllt …'},
   {i:'🐎',t:'Aufs Pferd!',x:'Tippe SPRUNG, wenn eine Hürde im hellen Bereich ist — jeder saubere Sprung lüftet das Bild ein Stück!'}
 ];
 let pIdx=0;
@@ -110,23 +111,28 @@ function jump(){ if(done||jumping)return; jumping=true; $('#horse').classList.ad
   const h=hurdles.find(x=>!x._done && x._x>=ZONE_LO && x._x<=ZONE_HI);
   if(h){ h._done='clear'; h.classList.add('knock'); cleared++; $('#cl').textContent=cleared; sharpen(cleared/GOAL); sfx.clear(); vib([10,30]); if(cleared>=GOAL) winSeq(); }
 }
+function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
+function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim().slice(0,20); return v||GUEST; } // Namensfeld vor URL-Param (wie guestName)
+let outroStep=0, outroT=null, beat2='';
+function advanceOutro(){ if(!outroStep)return; clearTimeout(outroT);
+  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,8000); }
+  else { outroStep=0; show('s-win'); } } // Tap-getaktet (Fallback-Timer): jedes Kind liest in seinem Tempo
 function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); sharpen(1);
   $('#goalphoto').classList.add('flood'); // die verhüllte Siegertafel flutet die Szene: der Reveal IST der Höhepunkt
   const ho=$('#horse'); ho.style.opacity='0'; const fi=$('#finish'); fi.style.opacity='0'; // Bühne frei
+  [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility='hidden'); // keine toten Buttons im Finale
   sfx.win(); confetti(CC); vib([20,40,20,40,80]); // Fanfare + Konfetti AM Reveal
-  const so=$('#storyOut');
-  if(HAS_PHOTO){ so.textContent='Flo wiehert: Der Champion ist '+kid()+'! 🎉'; // Beat 1: Identität
-    setTimeout(()=>{ so.textContent=kid()+' lacht: „Na endlich'+(GUEST?', '+GUEST:'')+'! Ich hab schon auf dich gewartet!"'; },1700); } // Beat 2: Rollenumkehr
-  else { so.textContent='Flo wiehert: '+kid()+' gewinnt das Turnier! 🎉';
-    setTimeout(()=>{ so.textContent='Und zur Siegerfeier bist du eingeladen'+(GUEST?', '+GUEST:'')+'!'; },1700); }
-  so.classList.add('on');
-  if(HAS_PHOTO){ $('#winWho').textContent=`Das Siegerbild überm Zieltor zeigt ${kid()}! Komm zur Reiter-Party:`; } else { $('#winTitle').textContent='Turnier gewonnen!'; $('#winWho').textContent=`Ganz oben auf dem Siegerpodest jubelt ${kid()} — Turnier gewonnen! Komm zur Reiter-Party:`; } guestName(); setTimeout(()=>{ show('s-win'); }, 3100); }
+  const g=guestNow(); const so=$('#storyOut');
+  if(HAS_PHOTO){ so.textContent='Flo wiehert: Der Champion ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!"'; } // Beat 1 Identität, Beat 2 Rollenumkehr
+  else { so.textContent='Flo wiehert: '+kidCap()+' gewinnt das Turnier! 🎉'; beat2='Und zur Siegerfeier bist du eingeladen'+(g?', '+g:'')+'!'; }
+  so.classList.add('on'); outroStep=1; outroT=setTimeout(advanceOutro,8000);
+  if(HAS_PHOTO){ $('#winWho').textContent=`Das Siegerbild überm Zieltor zeigt ${kid()}! Komm zur Reiter-Party:`; } else { $('#winTitle').textContent='Turnier gewonnen!'; $('#winWho').textContent=`Ganz oben auf dem Siegerpodest jubelt ${kid()} — Turnier gewonnen! Komm zur Reiter-Party:`; } guestName(); }
 // Tipp sichtbar: eine Hürde erscheint in der Zone und das Pferd springt sie echt
 function tip(){ if(done)return; let h=hurdles.find(x=>!x._done && x._x>ZONE_HI); if(!h){ spawnHurdle(); h=hurdles[hurdles.length-1]; } if(!h)return; h._x=(ZONE_LO+ZONE_HI)/2; h.style.left=h._x+'%'; jumping=false; $('#horse').classList.remove('jump'); jump(); }
 // Start (AC() = iOS-Audio-Unlock per Geste)
-$('#startBtn').addEventListener('click',()=>{ AC(); cleared=0;done=false;jumping=false; hurdles.forEach(h=>h.remove()); hurdles=[]; $('#cl').textContent=0; $('#clmax').textContent=GOAL; $('#goalphoto').classList.remove('flood'); sharpen(0); $('#storyOut').classList.remove('on'); const z=document.querySelector('.zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; const ho=$('#horse'); ho.style.opacity=''; ho.style.left='22%'; const fi=$('#finish'); fi.style.opacity=''; fi.style.right='-12%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveHurdles,60); spawnT=setInterval(spawnHurdle,SPAWN); setTimeout(spawnHurdle,400); }); // Initial-Spawn: kein Leerlauf
+$('#startBtn').addEventListener('click',()=>{ AC(); cleared=0;done=false;jumping=false; outroStep=0; clearTimeout(outroT); hurdles.forEach(h=>h.remove()); hurdles=[]; $('#cl').textContent=0; $('#clmax').textContent=GOAL; $('#goalphoto').classList.remove('flood'); sharpen(0); $('#storyOut').classList.remove('on'); [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility=''); const z=document.querySelector('.zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; const ho=$('#horse'); ho.style.opacity=''; ho.style.left='22%'; const fi=$('#finish'); fi.style.opacity=''; fi.style.right='-12%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveHurdles,60); spawnT=setInterval(spawnHurdle,SPAWN); setTimeout(spawnHurdle,400); }); // Initial-Spawn: kein Leerlauf
 $('#jumpBtn').addEventListener('click',jump);
-$('#field').addEventListener('click',jump);
+$('#field').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } else { jump(); } }); // im Finale taktet der Tap die Story-Beats
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
