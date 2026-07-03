@@ -22,6 +22,7 @@
   .vine::before{content:"";position:absolute;top:0;width:4px;height:60%;background:linear-gradient(180deg,#2f5e2a,#5a9a4a);border-radius:2px}
   .vine span{position:relative;margin-top:54%}
   .vine.caught span{animation:catch .4s forwards}@keyframes catch{to{transform:scale(1.3) rotate(20deg);opacity:.6}}
+  .vine.caught::before{opacity:0;transition:opacity .3s} /* Stiel verschwindet mit dem Blatt — kein Geister-Stiel scrollt weiter */
   .hut{position:absolute;bottom:34%;right:-14%;font-size:42px;z-index:2;transition:right .4s}
   /* Baumhaus-Guckloch im Blätterdach: wer wartet oben? Foto tritt pro Liane aus dem Schatten (Reveal an Mechanik gekoppelt) */
   .hutphoto{position:absolute;top:8%;right:7%;width:84px;height:84px;border-radius:50%;border:5px solid #7a5230;box-shadow:0 4px 12px rgba(0,0,0,.4),inset 0 0 10px rgba(0,0,0,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#16240f;opacity:0;filter:blur(16px) saturate(.5) brightness(.55);transition:opacity .5s ease,filter .5s ease,width .8s ease,height .8s ease,top .8s ease,right .8s ease,border-radius .8s ease;pointer-events:none;z-index:5}
@@ -31,7 +32,8 @@
   /* Story-Outro: Kokos Reaktion auf dem Reveal, bevor die Karte kommt */
   .storyOut{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);background:rgba(255,255,255,.94);color:#16240f;font-weight:800;font-size:15px;padding:10px 16px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.35);opacity:0;transition:opacity .4s ease .7s;z-index:7;max-width:88%;text-align:center;pointer-events:none}
   .storyOut.on{opacity:1}
-  .storyOut.on::after{content:" ▸";opacity:.65} /* Tap-Affordanz: weiter per Tipp */
+  .storyOut.on::after{content:" ▸";opacity:.65;animation:blinkA 1.2s infinite} /* Tap-Affordanz: weiter per Tipp — blinkt, damit auch Button-Hämmerer sie finden */
+  @keyframes blinkA{50%{opacity:.15}}
   .swinger{transition:transform .3s,opacity .5s ease}
   .hut{transition:right .4s,opacity .5s ease}
   /* Reveal */
@@ -103,14 +105,15 @@ const PANELS=[
   {i:'🛖',t:'Streng geheim!',x:'Man sagt: Der Boss lässt nur die allerbesten Kletterer zu sich hoch …'},
   {i:'🌿',t:'Schwing mit mir!',x:'Tippe SCHWUNG, wenn eine Liane im hellen Bereich ist.'+(DBL?' Bei Doppel-Lianen 🌿🌿 blitzschnell nochmal tippen — das gibt zwei!':'')}
 ];
-const GUEST=(new URLSearchParams(location.search).get('g')||'').trim().slice(0,20); // Gastname für den Twist-Beat
+const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 Zeichen verwerfen statt kürzen (konsistent mit guestName in core.js)
 let pIdx=0;
 function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitle').textContent=p.t; $('#pText').textContent=p.x; const last=pIdx>=PANELS.length-1; $('#nextPan').style.display=last?'none':''; $('#skipPan').style.display=last?'none':''; $('#introForm').style.display=last?'flex':'none'; }
 $('#nextPan').addEventListener('click',()=>{ AC(); pIdx=Math.min(pIdx+1,PANELS.length-1); showPan(); vib(6); });
 $('#skipPan').addEventListener('click',()=>{ AC(); pIdx=PANELS.length-1; showPan(); });
 showPan();
-let cleared=0, done=false, swinging=false, moveT=null, spawnT=null, vines=[], vineCount=0, dblArm=false, dblUntil=0;
-function sharpen(frac){ const p=$('#hutphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.55+0.45*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+let cleared=0, done=false, swinging=false, moveT=null, spawnT=null, spawnInitT=null, vines=[], vineCount=0, dblArm=false, dblUntil=0;
+function sharpen(frac){ const p=$('#hutphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.55+0.45*f).toFixed(2)+')';
+  const hu=$('#hut'); if(hu) hu.style.right=(-14+18*f).toFixed(1)+'%'; } // hinten gewichtet (1-f^2); Hütte fährt mit dem Fortschritt ins Bild („wir nähern uns dem Baumhaus")
 function spawnVine(){ if(done)return; const v=document.createElement('div'); v.className='vine'; v._x=106; v.style.left='106%'; vineCount++; if(DBL && vineCount%3===0){ v._double=true; v.innerHTML='<span>🌿🌿</span>'; } else { v.innerHTML='<span>🌿</span>'; } $('#track').appendChild(v); vines.push(v); }
 function stumble(){ $('#swinger').classList.add('miss'); setTimeout(()=>$('#swinger').classList.remove('miss'),300); sfx.stumble(); vib([10,30]); }
 function moveVines(){ if(done)return; for(const v of vines.slice()){ v._x-=SPEED; v.style.left=v._x+'%'; if(!v._done && v._x<ZONE_LO && v._x>=ZONE_LO-6){ if(!swinging){ v._done='miss'; stumble(); } } if(v._x<-12){ v.remove(); const k=vines.indexOf(v); if(k>=0)vines.splice(k,1); } } } // Miss erst NACH Verlassen der Zone — sonst frisst das Miss-Band bei U6 sichtbare Fangzone
@@ -129,11 +132,11 @@ function swing(){ if(done)return;
   }
 }
 function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
-function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim().slice(0,20); return v||GUEST; } // gleiche Präzedenz wie guestName(): Namensfeld vor URL-Param
+function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim(); return (v&&v.length<=20)?v:GUEST; } // gleiche Präzedenz wie guestName(): Namensfeld vor URL-Param; >20 verwerfen wie core.js
 let outroStep=0, outroT=null, beat2='', winAt=0;
 function advanceOutro(){ if(!outroStep || Date.now()-winAt<900)return; clearTimeout(outroT); winAt=Date.now(); // Grace-Fenster: Reflex-Taps nach dem Sieg dürfen Flood + Beats nicht überspringen
-  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,11000); }
-  else { outroStep=0; show('s-win'); } } // Tap-getaktet (Fallback 11s: reicht auch für 60-WpM-Leser)
+  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
+  else { outroStep=0; show('s-win'); } } // Tap-getaktet (Fallback: Beat 1 11s, Beat 2 14s — längster Beat 2 hat 11 Wörter, 60-WpM-Leser brauchen Puffer)
 function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); sharpen(1);
   $('#hutphoto').classList.add('flood'); // das Baumhaus-Fenster öffnet sich zur ganzen Szene: der Reveal IST der Höhepunkt
   $('#hut').style.opacity='0'; const sw=$('#swinger'); sw.style.opacity='0'; // Affe und Hütte machen die Bühne frei
@@ -143,11 +146,11 @@ function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); sharp
   if(HAS_PHOTO){ so.textContent='Koko staunt: Der Dschungel-Boss ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
   else { so.textContent='Koko staunt: Du hast den Boss gefunden — ein freches Äffchen! 🎉'; beat2='Und oben wartet schon die Dschungel-Party'+(g?' auf dich, '+g:'')+'!'; } // nofoto: DU hast geklettert (kein Fremd-Lob), Boss-Rätsel aufgelöst
   so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Das Baumhaus-Fenster öffnet sich weit — drinnen strahlt der Dschungel-Boss: ${kid()}! Komm zur Dschungel-Party:`; } else { $('#winTitle').textContent='Im Baumhaus!'; $('#winWho').textContent=`Du hast den Dschungel geschafft — und oben wartet ein freches Äffchen! ${kid()} lädt dich zur Dschungel-Party ein:`; } guestName(); }
+  if(HAS_PHOTO){ $('#winWho').textContent=`Das Baumhaus-Fenster öffnet sich weit — drinnen strahlt der Dschungel-Boss: ${kid()}! Komm zur Dschungel-Party:`; } else { $('#winTitle').textContent='Im Baumhaus!'; $('#winWho').textContent=`Du hast den Dschungel geschafft — und oben wartet ein freches Äffchen! ${kidCap()} lädt dich zur Dschungel-Party ein:`; } guestName(); }
 // Tipp sichtbar: eine Liane erscheint in der Zone und der Affe schwingt sie echt
-function tip(){ if(done)return; let v=vines.find(x=>!x._done && x._x>=ZONE_LO && x._x<=ZONE_HI); if(!v) v=vines.find(x=>!x._done && x._x>ZONE_HI); if(!v){ spawnVine(); v=vines[vines.length-1]; } if(!v)return; v._x=(ZONE_LO+ZONE_HI)/2; v.style.left=v._x+'%'; dblArm=false; swinging=false; $('#swinger').classList.remove('swing'); swing(); } // Zonen-Liane bevorzugen + dblArm aus: keine Waisen-Liane, kein Fehl-Stolperer nach dem Tipp
+function tip(){ if(done)return; let v=vines.find(x=>!x._done && x._x>=ZONE_LO-6 && x._x<=ZONE_HI); if(!v) v=vines.find(x=>!x._done && x._x>ZONE_HI); if(!v){ spawnVine(); v=vines[vines.length-1]; } if(!v)return; v._x=(ZONE_LO+ZONE_HI)/2; v.style.left=v._x+'%'; dblArm=false; swinging=false; $('#swinger').classList.remove('swing'); swing(); } // Zonen-Liane bevorzugen + dblArm aus: keine Waisen-Liane, kein Fehl-Stolperer nach dem Tipp
 // Start (AC() = iOS-Audio-Unlock per Geste)
-$('#startBtn').addEventListener('click',()=>{ AC(); cleared=0;done=false;swinging=false;vineCount=0;dblArm=false;dblUntil=0; outroStep=0; clearTimeout(outroT); $('#storyOut').classList.remove('on'); [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility=''); vines.forEach(v=>v.remove()); vines=[]; $('#cl').textContent=0; $('#clmax').textContent=GOAL; $('#hutphoto').classList.remove('flood'); sharpen(0); const z=document.querySelector('.zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; const sw=$('#swinger'); sw.style.opacity=''; sw.style.left='24%'; const hu=$('#hut'); hu.style.opacity=''; hu.style.right='-14%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveVines,60); spawnT=setInterval(spawnVine,SPAWN); setTimeout(spawnVine,400); }); // Initial-Spawn: keine 2,5s Leerlauf vor der ersten Liane
+$('#startBtn').addEventListener('click',()=>{ AC(); cleared=0;done=false;swinging=false;vineCount=0;dblArm=false;dblUntil=0; outroStep=0; clearTimeout(outroT); $('#storyOut').classList.remove('on'); [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility=''); vines.forEach(v=>v.remove()); vines=[]; $('#cl').textContent=0; $('#clmax').textContent=GOAL; $('#hutphoto').classList.remove('flood'); sharpen(0); const z=document.querySelector('.zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; const sw=$('#swinger'); sw.style.opacity=''; sw.style.left='24%'; const hu=$('#hut'); hu.style.opacity=''; hu.style.right='-14%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT);clearTimeout(spawnInitT); moveT=setInterval(moveVines,60); spawnT=setInterval(spawnVine,SPAWN); spawnInitT=setTimeout(spawnVine,400); }); // Initial-Spawn: keine 2,5s Leerlauf; Timeout gecleart, damit Start-Doppeltipp keine Doppel-Liane spawnt
 $('#swingBtn').addEventListener('click',swing);
 $('#field').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } else { swing(); } }); // im Finale taktet der Tap die Story-Beats
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
