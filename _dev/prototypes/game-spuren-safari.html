@@ -106,10 +106,10 @@ showPan();
 function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
 function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim().slice(0,20); return v||GUEST; } // Namensfeld vor URL-Param (wie guestName)
 let next=1, done=false, prints=[], watching=false, gzT=null;
-let outroStep=0, outroT=null, beat2='';
-function advanceOutro(){ if(!outroStep)return; clearTimeout(outroT);
-  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,8000); }
-  else { outroStep=0; show('s-win'); } } // Tap-getaktet (Fallback-Timer): jedes Kind liest in seinem Tempo
+let outroStep=0, outroT=null, beat2='', winAt=0;
+function advanceOutro(){ if(!outroStep || Date.now()-winAt<900)return; clearTimeout(outroT); winAt=Date.now(); // Grace-Fenster: Reflex-Taps nach dem Sieg dürfen Flood + Beats nicht überspringen
+  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,11000); }
+  else { outroStep=0; show('s-win'); } } // Tap-getaktet (Fallback 11s: reicht auch für 60-WpM-Leser)
 function sharpen(frac){ const p=document.querySelector('.mirror'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.65+0.35*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
 function gazLoop(){ if(done)return; const gz=document.querySelector('.gazelle'); if(!gz)return; const wasWatch=gz.classList.contains('watch'); watching=false; gz.classList.remove('watch'); $('#land').classList.remove('alert','pre');
   if(wasWatch){ note(520,AC().currentTime,0.09,{type:'sine',vol:0.07}); $('#hint').textContent='Tippe die blinkende Pfotenspur.'; } // „frei"-Blip + Hint-Reset am Away-Start
@@ -153,9 +153,9 @@ function win(){
   const mi=document.querySelector('.mirror');if(mi){ mi.style.left='50%'; mi.style.top='50%'; mi.classList.add('flood'); } // das Wasserloch flutet die Szene: der Reveal IST der Höhepunkt
   sfx.win(); noise(AC().currentTime,0.25,{vol:0.1,freq:1800}); vib([20,40,20,40,80]); confetti(CC); // Fanfare + Splash + Konfetti AM Reveal, nicht auf der Karte
   const g=guestNow(); const so=$('#storyOut');
-  if(HAS_PHOTO){ so.textContent='Leo staunt: Die seltenste Entdeckung ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!"'; } // Beat 1 Identität, Beat 2 Rollenumkehr
-  else { so.textContent='Leo grinst: '+kidCap()+' hat diese Spur für dich gelegt! 🎉'; beat2='Und am Wasserloch wartet schon die Safari-Party'+(g?' auf dich, '+g:'')+'!'; }
-  so.classList.add('on'); outroStep=1; outroT=setTimeout(advanceOutro,8000);
+  if(HAS_PHOTO){ so.textContent='Leo staunt: Die seltenste Entdeckung ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
+  else { so.textContent='Leo grinst: Die seltenste Entdeckung … bin ich! 🎉'; beat2='Und '+kid()+' hat diese Spur für dich gelegt'+(g?', '+g:'')+'!'; } // nofoto: Rätsel aufgelöst (Löwe im Flood-Bild), Spur = Einladung
+  so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
   if(HAS_PHOTO){ $('#winTitle').textContent='Entdeckung gemacht!'; $('#winWho').textContent=`Im Wasserloch spiegelt sich die seltenste Entdeckung — das ist ${kid()}! Komm zur Safari-Party:`; } else {$('#winTitle').textContent='Spur verfolgt!';$('#winWho').textContent=`Am Wasserloch trinkt ein prächtiger Löwe — ${kid()} lädt dich zur Safari-Party ein:`;} guestName();
 }
 $('#land').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap die Story-Beats

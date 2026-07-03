@@ -113,20 +113,20 @@ function jump(){ if(done||jumping)return; jumping=true; $('#horse').classList.ad
 }
 function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
 function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim().slice(0,20); return v||GUEST; } // Namensfeld vor URL-Param (wie guestName)
-let outroStep=0, outroT=null, beat2='';
-function advanceOutro(){ if(!outroStep)return; clearTimeout(outroT);
-  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,8000); }
-  else { outroStep=0; show('s-win'); } } // Tap-getaktet (Fallback-Timer): jedes Kind liest in seinem Tempo
+let outroStep=0, outroT=null, beat2='', winAt=0;
+function advanceOutro(){ if(!outroStep || Date.now()-winAt<900)return; clearTimeout(outroT); winAt=Date.now(); // Grace-Fenster: Reflex-Taps nach dem Sieg dürfen Flood + Beats nicht überspringen
+  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,11000); }
+  else { outroStep=0; show('s-win'); } } // Tap-getaktet (Fallback 11s: reicht auch für 60-WpM-Leser)
 function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); sharpen(1);
   $('#goalphoto').classList.add('flood'); // die verhüllte Siegertafel flutet die Szene: der Reveal IST der Höhepunkt
   const ho=$('#horse'); ho.style.opacity='0'; const fi=$('#finish'); fi.style.opacity='0'; // Bühne frei
   [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility='hidden'); // keine toten Buttons im Finale
   sfx.win(); confetti(CC); vib([20,40,20,40,80]); // Fanfare + Konfetti AM Reveal
   const g=guestNow(); const so=$('#storyOut');
-  if(HAS_PHOTO){ so.textContent='Flo wiehert: Der Champion ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!"'; } // Beat 1 Identität, Beat 2 Rollenumkehr
-  else { so.textContent='Flo wiehert: '+kidCap()+' gewinnt das Turnier! 🎉'; beat2='Und zur Siegerfeier bist du eingeladen'+(g?', '+g:'')+'!'; }
-  so.classList.add('on'); outroStep=1; outroT=setTimeout(advanceOutro,8000);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Das Siegerbild überm Zieltor zeigt ${kid()}! Komm zur Reiter-Party:`; } else { $('#winTitle').textContent='Turnier gewonnen!'; $('#winWho').textContent=`Ganz oben auf dem Siegerpodest jubelt ${kid()} — Turnier gewonnen! Komm zur Reiter-Party:`; } guestName(); }
+  if(HAS_PHOTO){ so.textContent='Flo wiehert: Der Champion ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
+  else { so.textContent='Flo wiehert: Der Champion bist DU! 🎉'; beat2='Und zur Siegerfeier bist du eingeladen'+(g?', '+g:'')+'!'; } // nofoto: DU bist gesprungen (kein Fremd-Lob), Champion-Rätsel aufgelöst
+  so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
+  if(HAS_PHOTO){ $('#winWho').textContent=`Das Siegerbild überm Zieltor zeigt ${kid()}! Komm zur Reiter-Party:`; } else { $('#winTitle').textContent='Turnier gewonnen!'; $('#winWho').textContent=`Du hast das Turnier gewonnen — und ${kid()} lädt dich zur Reiter-Party ein:`; } guestName(); }
 // Tipp sichtbar: eine Hürde erscheint in der Zone und das Pferd springt sie echt
 function tip(){ if(done)return; let h=hurdles.find(x=>!x._done && x._x>ZONE_HI); if(!h){ spawnHurdle(); h=hurdles[hurdles.length-1]; } if(!h)return; h._x=(ZONE_LO+ZONE_HI)/2; h.style.left=h._x+'%'; jumping=false; $('#horse').classList.remove('jump'); jump(); }
 // Start (AC() = iOS-Audio-Unlock per Geste)

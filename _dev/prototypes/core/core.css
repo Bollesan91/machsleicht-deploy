@@ -43,7 +43,7 @@ h1{font-size:25px;line-height:1.15;text-align:center;text-shadow:0 2px 0 rgba(0,
 
 /* Touch-Härtung (Stufe-2-Fund 02.07.): kein iOS-Double-Tap-Zoom auf schnell getippten Zielen.
    Deckt Buttons + alle interaktiven Spiel-Elemente aller Engines ab. */
-button,.eggBox,.cell,.back,.pad,.hole,.item,.animal,.fly,.dot,.node,.star,.stone,.band,.plank,.shell,.win,.dial{touch-action:manipulation}
+button,.eggBox,.cell,.back,.pad,.hole,.item,.animal,.fly,.dot,.node,.star,.stone,.band,.plank,.shell,.win,.dial,.field,.land{touch-action:manipulation}
 
 .confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:20}
 .confetti i{position:absolute;top:-12px;width:9px;height:14px;opacity:.9;animation:fall linear forwards}
