@@ -16,22 +16,19 @@
   .mirror{position:absolute;width:84px;height:84px;border-radius:50%;transform:translate(-50%,-50%);border:4px solid #56b4ff;box-shadow:0 4px 12px rgba(0,0,0,.35),inset 0 0 14px rgba(86,180,255,.5);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2c14;opacity:0;filter:blur(16px) saturate(.5) brightness(.65);transition:opacity .5s ease,filter .5s ease,width .8s ease,height .8s ease,left .8s ease,top .8s ease,border-radius .8s ease;pointer-events:none;z-index:1}
   /* Flut-Reveal: beim Finale flutet das Wasserloch die ganze Szene — der Reveal IST der Höhepunkt */
   .mirror.flood{width:100%;height:100%;border-radius:16px;z-index:6}
-  .walker{transition:left .35s ease,top .35s ease,opacity .5s ease}
-  .gazelle{transition:transform .3s,filter .3s,opacity .5s ease}
   /* Schleich-Twist: Gazelle am Wasserloch — nur schleichen, wenn sie wegschaut */
-  .gazelle{position:absolute;font-size:30px;transform:translate(-50%,-50%) scaleX(-1);transition:transform .3s,filter .3s;z-index:3;filter:grayscale(.15);pointer-events:none}
+  .gazelle{position:absolute;font-size:30px;transform:translate(-50%,-50%) scaleX(-1);transition:transform .3s,filter .3s,opacity .5s ease;z-index:3;filter:grayscale(.15);pointer-events:none}
   .gazelle.watch{transform:translate(-50%,-50%) scaleX(1) scale(1.15);filter:drop-shadow(0 0 8px #fff)}
   .gazelle.watch::after{content:"👀";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:14px}
   .gazelle.hop{animation:gzh .4s}@keyframes gzh{0%,100%{transform:translate(-50%,-50%) scaleX(1) scale(1.15)}50%{transform:translate(-50%,-62%) scaleX(1) scale(1.3)}}
   /* Warn-Vignette solange die Gazelle herschaut — Stopp-Signal auch ohne aufs Tier zu starren */
   .land.alert{box-shadow:0 12px 30px rgba(0,0,0,.45),inset 0 0 0 5px rgba(255,220,90,.55)}
   .land.pre{box-shadow:0 12px 30px rgba(0,0,0,.45),inset 0 0 0 4px rgba(255,220,90,.25)} /* Vor-Cue: zarte Vignette 300ms bevor sie schaut */
-  .mirror.big{animation:mrip .9s ease}@keyframes mrip{0%,100%{transform:translate(-50%,-50%) scale(1.35)}45%{transform:translate(-50%,-50%) scale(1.5)}}
   .print{position:absolute;width:42px;height:42px;border-radius:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;opacity:.4;transition:opacity .2s,transform .12s;filter:grayscale(.5);z-index:2} /* über dem Spiegel: das blinkende Ziel bleibt sichtbar */
   .print.lit{opacity:.7;filter:none;transform:translate(-50%,-50%) scale(1.05)} /* gedimmt: nur das ZIEL blinkt am hellsten */
   .print.next{opacity:.85;animation:pn 1s infinite}
   @keyframes pn{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.22);filter:drop-shadow(0 0 8px #fff0a0)}}
-  .walker{position:absolute;font-size:40px;transform:translate(-50%,-60%);transition:left .35s ease,top .35s ease;z-index:4;filter:drop-shadow(0 3px 3px rgba(0,0,0,.4))}
+  .walker{position:absolute;font-size:40px;transform:translate(-50%,-60%);transition:left .35s ease,top .35s ease,opacity .5s ease;z-index:4;filter:drop-shadow(0 3px 3px rgba(0,0,0,.4))}
   .land.shake{animation:sh .25s}@keyframes sh{0%,100%{transform:translateX(0)}33%{transform:translateX(-6px)}66%{transform:translateX(6px)}}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fffaf0,#f3e3bf);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
@@ -115,7 +112,7 @@ function tap(i){
       $('#cnt').textContent=next-1; sharpen((next-1)/(TRAIL.length-1));
       $('#hint').textContent='Erwischt! Einen Schritt zurück …';
     } else { $('#hint').textContent='Die Gazelle schaut her — warte kurz! 👀'; }
-    return; } // U9: kein Fortschritt, kein Rückschritt
+    return; } // U10: kein Fortschritt, kein Rückschritt
   if(i!==next){ sfx.nope();vib([25,30,25]);$('#land').classList.add('shake');setTimeout(()=>$('#land').classList.remove('shake'),250);return; }
   prints[i].classList.add('lit');prints[i].classList.remove('next');
   const w=$('#walker');w.style.left=TRAIL[i][0]+'%';w.style.top=TRAIL[i][1]+'%';
@@ -134,7 +131,7 @@ function win(){
 }
 // Tipp sichtbar: Gazelle schaut weg (frisches Away-Fenster), dann wird die nächste Spur echt getippt
 function tip(){ if(done||next>=TRAIL.length||!prints.length)return; clearTimeout(gzT); gazLoop(); tap(next); }
-$('#startBtn').addEventListener('click',()=>{build();show('s-game');$('#hint').textContent='Tippe die blinkende Pfotenspur.';});
+$('#startBtn').addEventListener('click',()=>{AC();build();show('s-game');$('#hint').textContent='Tippe die blinkende Pfotenspur.';}); // AC(): iOS-Audio-Unlock per Geste, sonst bleibt der erste Warn-Piep stumm
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
