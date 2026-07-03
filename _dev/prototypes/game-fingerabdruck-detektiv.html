@@ -92,7 +92,7 @@ function reveal(){
   done=true;$('#hint').textContent='Abdruck gesichert!';sfx.find();vib([20,40,20]);
   $('#board').classList.add('fade');
   const fl=$('#flash'); setTimeout(()=>{ fl.classList.add('on'); noise(AC().currentTime,0.05,{vol:0.18,freq:3000}); setTimeout(()=>fl.classList.remove('on'),180); },350); // Kamera-Blitz: das Beweisfoto wird gesichert
-  setTimeout(()=>{ if(HAS_PHOTO){ $('#winWho').textContent=`Puder weg, Abdruck gesichert — das Beweisfoto zeigt ${kid()}! Komm zur Detektiv-Party:`; } else {$('#winTitle').textContent='Fall gelöst!';$('#winWho').textContent=`Der Abdruck ist gesichert und die Lupe glänzt — ${kid()} hat den Fall geknackt! Komm zur Detektiv-Party:`;} guestName();
+  setTimeout(()=>{ if(HAS_PHOTO){ $('#winWho').textContent=`Das Puder ist weg, der Abdruck gesichert — das Beweisfoto zeigt ${kid()}! Komm zur Detektiv-Party:`; } // kein Substantiv am Anfang (guestName-Lowercase) else {$('#winTitle').textContent='Fall gelöst!';$('#winWho').textContent=`Der Abdruck ist gesichert und die Lupe glänzt — ${kid()} hat den Fall geknackt! Komm zur Detektiv-Party:`;} guestName();
     show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]); }, 950);
 }
 // Tipp sichtbar: der Pinsel wischt einen echten Streifen Puder frei

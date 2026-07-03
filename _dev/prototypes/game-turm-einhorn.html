@@ -109,7 +109,7 @@ function drop(){
 function fall(el,dir){ el.animate([{transform:'translateY(0) rotate(0)',opacity:.9},{transform:`translateY(160px) rotate(${dir*40}deg)`,opacity:0}],{duration:600,easing:'cubic-bezier(.4,.1,.8,1)'}); setTimeout(()=>el.remove(),600); }
 function win(){
   done=true; clearInterval(mvT); sharpen(1); $('#rbPhoto').classList.add('big'); $('#rainbow').classList.add('pulse'); sfx.perfect(); sfx.win(); vib([20,40,20,40,80]);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Wolke um Wolke kam der Regenbogen näher — oben wartet ${kid()}! Komm zur Einhorn-Party:`; } else { $('#winTitle').textContent='Oben angekommen!'; $('#winWho').textContent=`Am Regenbogen funkelt ein Einhorn — ${kid()} ist oben angekommen! Komm zur Einhorn-Party:`; } guestName();
+  if(HAS_PHOTO){ $('#winWho').textContent=`Mit jeder Wolke kam der Regenbogen näher — oben wartet ${kid()}! Komm zur Einhorn-Party:`; } // kein Substantiv am Anfang (guestName-Lowercase) else { $('#winTitle').textContent='Oben angekommen!'; $('#winWho').textContent=`Am Regenbogen funkelt ein Einhorn — ${kid()} ist oben angekommen! Komm zur Einhorn-Party:`; } guestName();
   setTimeout(()=>{ show('s-win'); confetti(CC); }, 1000);
 }
 function start(){
