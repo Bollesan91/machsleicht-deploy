@@ -97,11 +97,13 @@ const SW_X=24;
 const GOAL=(ageNum()<=6?4:ageNum()<=9?5:6), SPEED=(ageNum()<=6?1.7:ageNum()<=9?2.4:3.0), SPAWN=(ageNum()<=6?1600:ageNum()<=9?1300:1050), ZONE_LO=(ageNum()<=6?22:ageNum()<=9?26:28), ZONE_HI=(ageNum()<=6?46:ageNum()<=9?40:38);
 const DBL=(ageNum()>=7); // Doppel-Lianen-Rhythmus: Skill-Moment ab 7, U6 bleibt reizarm
 // Story-Intro (Pilot): Koko führt in 3 tippbaren Panels zur Mission — vorlesefreundlich, überspringbar
+// Falsche Fährte fürs Twist-Finale: Der „Boss" klingt streng-geheimnisvoll — und ist dann der beste Freund
 const PANELS=[
-  {i:'🐒',t:'Psst — ich bin Koko!',x:'Ich kenne ein Geheimnis: Oben im Baumhaus wohnt der Dschungel-Boss!'},
-  {i:'🛖',t:'Wer ist der Boss?',x:'Das weiß niemand! Nur wer alle Lianen schafft, darf durchs Fenster schauen.'},
+  {i:'🐒',t:'Psst — ich bin Koko!',x:'Oben im Baumhaus wohnt der geheime Dschungel-Boss. Niemand hat ihn je gesehen!'},
+  {i:'🛖',t:'Streng geheim!',x:'Man sagt: Der Boss lässt nur die allerbesten Kletterer zu sich hoch …'},
   {i:'🌿',t:'Schwing mit mir!',x:'Tippe SCHWUNG, wenn eine Liane im hellen Bereich ist.'+(DBL?' Bei Doppel-Lianen 🌿🌿 blitzschnell nochmal tippen — das gibt zwei!':'')}
 ];
+const GUEST=(new URLSearchParams(location.search).get('g')||'').trim().slice(0,20); // Gastname für den Twist-Beat
 let pIdx=0;
 function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitle').textContent=p.t; $('#pText').textContent=p.x; const last=pIdx>=PANELS.length-1; $('#nextPan').style.display=last?'none':''; $('#skipPan').style.display=last?'none':''; $('#introForm').style.display=last?'flex':'none'; }
 $('#nextPan').addEventListener('click',()=>{ AC(); pIdx++; showPan(); vib(6); });
@@ -126,8 +128,9 @@ function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); sharp
   $('#hutphoto').classList.add('flood'); // das Baumhaus-Fenster öffnet sich zur ganzen Szene: der Reveal IST der Höhepunkt
   $('#hut').style.opacity='0'; const sw=$('#swinger'); sw.style.opacity='0'; // Affe und Hütte machen die Bühne frei
   sfx.win(); note(440,AC().currentTime,0.5,{type:'sine',vol:0.1,glideTo:880}); vib([20,40,20,40,80]); // Fanfare AM Reveal
-  const so=$('#storyOut'); so.textContent='Koko staunt: Der Dschungel-Boss ist '+kid()+'! 🎉'; so.classList.add('on'); // Story-Auflösung auf dem Reveal
-  if(HAS_PHOTO){ $('#winWho').textContent=`Das Baumhaus-Fenster öffnet sich weit — drinnen strahlt der Dschungel-Boss: ${kid()}! Komm zur Dschungel-Party:`; } else { $('#winTitle').textContent='Im Baumhaus!'; $('#winWho').textContent=`Oben im Baumhaus wartet ein freches Äffchen — ${kid()} hat den Dschungel geschafft! Komm zur Dschungel-Party:`; } guestName(); setTimeout(()=>{ show('s-win'); confetti(CC); }, 2300); }
+  const so=$('#storyOut'); so.textContent='Koko staunt: Der Dschungel-Boss ist '+kid()+'! 🎉'; so.classList.add('on'); // Beat 1: Identität
+  setTimeout(()=>{ so.textContent=kid()+' lacht: „Na endlich'+(GUEST?', '+GUEST:'')+'! Ich hab schon auf dich gewartet!"'; },1700); // Beat 2, Plot-Twist: DU wurdest erwartet
+  if(HAS_PHOTO){ $('#winWho').textContent=`Das Baumhaus-Fenster öffnet sich weit — drinnen strahlt der Dschungel-Boss: ${kid()}! Komm zur Dschungel-Party:`; } else { $('#winTitle').textContent='Im Baumhaus!'; $('#winWho').textContent=`Oben im Baumhaus wartet ein freches Äffchen — ${kid()} hat den Dschungel geschafft! Komm zur Dschungel-Party:`; } guestName(); setTimeout(()=>{ show('s-win'); confetti(CC); }, 3100); }
 // Tipp sichtbar: eine Liane erscheint in der Zone und der Affe schwingt sie echt
 function tip(){ if(done)return; let v=vines.find(x=>!x._done && x._x>ZONE_HI); if(!v){ spawnVine(); v=vines[vines.length-1]; } if(!v)return; v._x=(ZONE_LO+ZONE_HI)/2; v.style.left=v._x+'%'; swinging=false; $('#swinger').classList.remove('swing'); swing(); }
 // Start (AC() = iOS-Audio-Unlock per Geste)
