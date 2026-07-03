@@ -17,10 +17,10 @@ Fix generisch: `transform: … scaleX(-1)` in Basis-Regel UND allen betroffenen 
 | bagger-baustelle | 🚜 digger | L→R (Lanes 16→83) | schaut links → rückwärts | **hoch — Standard-Flip** |
 | stadt-superheld | 🦸 #hero2 | L→R (steer) | Haiku: schaut links | **PRÜFEN — 🦸 ist oft frontal, evtl. kein Flip nötig** |
 | hufeisen-pferde | Wurf-Objekt `.fly` | L→R Bogen + rotate 220° | Haiku las „👠" | **PRÜFEN — geworfenes, rotierendes Objekt, evtl. symmetrisch/egal** |
-| spuren-safari | 🦁 walker | Trail L→R (14→88), aber gewunden | schaut links | **PRÜFEN — gewundener Pfad: statischer Flip hilft nur der Netto-Richtung** |
+| spuren-safari | 🦁 walker | Trail L→R (14→88), aber gewunden | ~~schaut links~~ **FALSE POSITIVE** | **widerlegt 03.07. — 🦁 ist frontales Löwen-GESICHT, kein Seitprofil; keine Blickrichtung. Haiku-Irrtum.** |
 | faehrte-dino | 🦖 #dino | Trail gewunden (beidseitig) | hat SCHON scaleX(-1) permanent → auf Links-Segmenten rückwärts | **PRÜFEN — braucht dynamischen Flip ODER scaleX raus, nicht simpel** |
 
-→ 3 sichere Standard-Flips, 4 brauchen Augen (frontales Emoji / geworfenes Objekt / gewundene Pfade, wo statischer Flip nur die Netto-Richtung bedient).
+→ 3 sichere Standard-Flips (jeep 🚙 / korallen 🧜 / bagger 🚜 = echte Seitprofile), 4 brauchen Augen. **spuren 🦁 = bereits als FALSE POSITIVE widerlegt (frontales Gesicht).** Lehre: Haiku überflaggt auch Facing — jede der restlichen 3 (stadt-superheld 🦸 frontal?, hufeisen Wurf-Objekt, faehrte 🦖) VOR jedem Fix visuell prüfen; nur ein sichtbares Seitprofil-Glyph, das horizontal läuft, ist ein echter Bug.
 
 ---
 
