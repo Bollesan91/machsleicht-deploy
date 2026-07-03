@@ -1,66 +1,48 @@
-# Defekt-Audit aller 45 Spiele — 2026-07-03
+# Defekt-Audit aller 45 Spiele — 2026-07-03 (AUTORITATIV: Opus 4.8 Max)
 
-Auslöser: Bolle-Feedback (03.07.) nach huerden-Fix — „guckt mal mehr, ob solche Logikfehler drin sind" + „Blickrichtung flächendeckend ändern". Audit als read-only Workflow (45 Agenten, Haiku 4.5) gelaufen; **jeder Befund von Haupt-Claude gegen Code + Design-Absicht trilagiert** (Haiku hat den Attributions-Verdacht überaggressiv geflaggt — Roh: 20 MAJOR; nach Triage deutlich weniger echte MAJOR).
+Auslöser: Bolle-Feedback (03.07.) nach huerden-Fix — „guckt mal mehr, ob solche Logikfehler drin sind" + „Blickrichtung flächendeckend ändern". Zwei read-only Workflow-Audits gelaufen:
+- **Haiku 4.5** (erster Lauf, `wpoa2afph`) — überaggressiv, viele False Positives. VERWORFEN.
+- **Opus 4.8 Max** (`wu4jp341e`, model:opus + effort:max, 2,75 M Tokens) — **maßgeblich.** Prompt geschärft: Pflichtfeld `glyphIsSideProfile` (frontale Gesichter = nie Facing-Bug) + Attribution präzise (kid+Spiel-Verb = Fehler, kid-als-Reveal/Gastgeber/Rollentausch = ok).
 
-Methoden-Warnung: Haiku flaggt JEDES `kid()` in der Win-Zeile als Fehl-Attribution — auch die gewollte Reveal-Semantik und den Rollentausch-Twist. Beispiel-Fehlflag: **lianen** Beat-2 („kid lacht: Na endlich, [Gast]! Ich hab auf dich gewartet") ist der GEWOLLTE Twist, kein Fehler. Deshalb zählt unten nur die eigene Triage.
-
----
-
-## Defekt-Klasse 1 — BLICKRICHTUNG (bewegtes Emoji schaut entgegen der Laufrichtung)
-
-Fix generisch: `transform: … scaleX(-1)` in Basis-Regel UND allen betroffenen Keyframes. Muster wie huerden-Pferd (bereits gefixt).
-
-| Spiel | Sprite | Laufrichtung | Befund | Sicherheit |
-|---|---|---|---|---|
-| jeep-safari | 🚙 #digger | L→R (Lanes) | schaut links → rückwärts | **hoch — Standard-Flip** |
-| korallen-meerjungfrau | 🧜 mermaid | L→R (steer) | schaut links → rückwärts | **hoch — Standard-Flip** |
-| bagger-baustelle | 🚜 digger | L→R (Lanes 16→83) | schaut links → rückwärts | **hoch — Standard-Flip** |
-| stadt-superheld | 🦸 #hero2 | L→R (steer) | Haiku: schaut links | **PRÜFEN — 🦸 ist oft frontal, evtl. kein Flip nötig** |
-| hufeisen-pferde | Wurf-Objekt `.fly` | L→R Bogen + rotate 220° | Haiku las „👠" | **PRÜFEN — geworfenes, rotierendes Objekt, evtl. symmetrisch/egal** |
-| spuren-safari | 🦁 walker | Trail L→R (14→88), aber gewunden | ~~schaut links~~ **FALSE POSITIVE** | **widerlegt 03.07. — 🦁 ist frontales Löwen-GESICHT, kein Seitprofil; keine Blickrichtung. Haiku-Irrtum.** |
-| faehrte-dino | 🦖 #dino | Trail gewunden (beidseitig) | hat SCHON scaleX(-1) permanent → auf Links-Segmenten rückwärts | **PRÜFEN — braucht dynamischen Flip ODER scaleX raus, nicht simpel** |
-
-→ 3 sichere Standard-Flips (jeep 🚙 / korallen 🧜 / bagger 🚜 = echte Seitprofile), 4 brauchen Augen. **spuren 🦁 = bereits als FALSE POSITIVE widerlegt (frontales Gesicht).** Lehre: Haiku überflaggt auch Facing — jede der restlichen 3 (stadt-superheld 🦸 frontal?, hufeisen Wurf-Objekt, faehrte 🦖) VOR jedem Fix visuell prüfen; nur ein sichtbares Seitprofil-Glyph, das horizontal läuft, ist ein echter Bug.
+Opus vs. Haiku: Facing **7 → 1**, Logik-MAJOR-Set korrigiert (Reveal-Fehlflags freigesprochen: ei-dino, lianen, huerden, laterne, striegeln, puzzle; unterschätzte MAJORs gefangen: sternenstaub, katapult, rohre, signal, turm, fingerabdruck, stadt).
 
 ---
 
-## Defekt-Klasse 2 — ATTRIBUTIONS-UMKEHR (systematisch!)
+## Defekt-Klasse 1 — BLICKRICHTUNG: praktisch kein set-weites Thema
 
-**Das Muster:** Die Win-Zeile schreibt dem Geburtstagskind `${kid()}` die **Spieler-Leistung** zu — „`${kid()} hat den Fall gelöst / die Stadt gerettet / alle sortiert`". Der GAST hat gespielt; das Geburtstagskind saß passiv (nur Foto-Reveal). Am schärfsten im **nofoto-Pfad** (kein Foto → `kid()` ist nur ein Name, der falschen Ruhm kriegt).
+Opus hat Haikus 6 anderen Kandidaten sauber widerlegt:
+- **jeep 🚙 / bagger 🚜 / korallen 🧜 / stadt 🦸** = bidirektionale Spurwechsler/Steuer-Sprites (`travelDir: none/ambiguous`). Keine feste Laufrichtung → ein statischer Flip wäre die Hälfte der Zeit falsch → KEIN Bug. (Vorwärts = Welt scrollt vertikal entgegen.)
+- **hufeisen** = 🤠 hat schon `scaleX(-1)`, Wurf-Objekt ist ein CSS-Ring (kein Emoji, symmetrisch).
+- **spuren 🦁** = frontales Löwen-Gesicht (visuell widerlegt 03.07.).
 
-**Unabhängig bestätigt:** Der huerden-Opus-Gutachter schrieb ungefragt, superheld/prinzessin „schreibt dem Kind die Spielerleistung zu: `${kid()} hat den Code geknackt`" — und lobte huerden dafür, es via „Der Champion bist DU" zu vermeiden. Das ist genau dieses Muster.
+**Einziger Kandidat: faehrte-dino 🦖** — hat `scaleX(-1)` in `.dino`-Basis, Trail netto L→R (16→86, aber gewunden: 1 Links-Segment 33→24). Opus meint, 🦖 schaue default nach RECHTS → das `scaleX(-1)` drehe es fälschlich nach links → Fix „scaleX(-1) entfernen". **ABER: Glyph-Default-Richtung ist plattformabhängig — VISUELL prüfen, wenn faehrte dran ist (Lehre aus 🦁, nicht der Modell-Annahme trauen).** Gewundener Pfad → ggf. dynamischer Flip statt statisch.
 
-**Design-Prinzip (aus lianen/huerden abgeleitet, das es richtig macht):**
-- Gast = Handelnder → wird gelobt („Du hast …"), im Foto-Pfad via Rollentausch mit Gastnamen.
-- Geburtstagskind = enthüllter Star/Gastgeber → lädt ein, hat NICHT gespielt.
-- Falsch ist nur `kid() + Spiel-Verb`. Richtig bleibt `kid()` als Reveal-Subjekt/Gastgeber („das ist kid!", „kid wartet", „kid lädt dich ein").
+→ Fazit: Der Facing-„Flächenbrand" war ein Haiku-Artefakt. Real: 1 Spiel, und das erst nach Augenschein.
 
-### Trilagiert — ECHTE Umkehr (kid + Spiel-Verb, Fix warranted)
-gluehwuermchen-feen · loeschen-feuerwehr · regenbogen-einhorn · sternbild-weltraum · tatort-prinzessin · uvschrift-prinzessin · wildnis-dschungel · strahl-superheld · korallen-meerjungfrau · drehleiter-feuerwehr · akte-detektiv · perlen-meerjungfrau · taunetz-feen  **(13)**
-- Grenzfall echt: **huerden-pferde** Foto-Beat-1 „Der Champion ist kid" (nofoto ist korrekt „…bist DU"). Fällt in den laufenden huerden-Zyklus.
+---
 
-### Weich / MINOR (kid als Ehren-Rolle/Reveal, geringe Reibung — optional glätten)
-ei-dino · puzzle-dschungel · striegeln-pferde · laterne-feen · hochhaus-baustelle · rohre-baustelle · signal-superheld · notruf-feuerwehr · rakete-weltraum · katapult-ritter · turm-einhorn · fingerabdruck-detektiv · funk-weltraum · tresor-prinzessin  **(~14)**
+## Defekt-Klasse 2 — ATTRIBUTIONS-UMKEHR: 20 Spiele, EIN uniformes Muster
 
-### Sauber (kein Attributions-Problem)
-fossil-dino · fotosafari-safari · memory-piraten · wappen-ritter · wimmel-detektiv · sternenstaub-einhorn · schwert-ritter · flaschenpost-piraten · schatz-meerjungfrau · kanone-piraten  **(10)**
+**Das Muster (mechanisch identisch über alle 20):** Die **NOFOTO**-Win-Zeile (`#winWho`, kein Foto vorhanden) schreibt dem Geburtstagskind `${kid()}` ein **Spiel-Verb** zu, das der GAST erbracht hat: „`${kid()} hat den Code geknackt / die Mission gelöst / die Burg erobert / den Zauber gewirkt / alle sortiert`". Der Foto-Pfad ist fast überall sauber (kid() = enthülltes Reveal-Subjekt). Am schärfsten also ohne Foto.
 
-### Fehlflag (Haiku-Irrtum)
-**lianen-dschungel** — geflaggter Beat-2 ist der gewollte Rollentausch-Twist, kein Fehler.
+**Unabhängig bestätigt:** Der huerden-Opus-Gutachter nannte genau das ungefragt an signal-superheld/uvschrift-prinzessin als Schwäche.
+
+**Fix-Prinzip (kanonisch, set-weit):** NOFOTO-`#winWho` das Spiel-Verb wegnehmen → kid() als **Gastgeber/Reveal-Subjekt** ODER Gast als Akteur:
+- „…${kid()} lädt dich zur X-Party ein:" (kid als Einladender), oder
+- „Du hast [Verb] — es ist ${kid()}!" (Gast Akteur, kid Reveal).
+Foto-Pfad meist unverändert lassen (dort ist kid() schon Reveal-Subjekt).
+
+### Die 20 (Opus-MAJOR, NOFOTO-Attribution) — Arbeitsliste
+gluehwuermchen-feen · loeschen-feuerwehr · regenbogen-einhorn · rohre-baustelle · signal-superheld · sternbild-weltraum · tatort-prinzessin · uvschrift-prinzessin · wildnis-dschungel · strahl-superheld · katapult-ritter · korallen-meerjungfrau · stadt-superheld · drehleiter-feuerwehr · sternenstaub-einhorn · akte-detektiv · perlen-meerjungfrau · taunetz-feen · turm-einhorn · fingerabdruck-detektiv
+
+(korallen + stadt haben NUR den Attributions-MAJOR, KEINEN Facing-Bug — trotz Haiku-Flag.)
+
+### Sauber laut Opus (kein MAJOR)
+ei-dino, fossil-dino, fotosafari-safari, memory-piraten, wappen-ritter, wimmel-detektiv, schwert-ritter, flaschenpost-piraten, schatz-meerjungfrau, kanone-piraten, huerden-pferde, lianen-dschungel, spuren-safari, hufeisen-pferde, jeep-safari, bagger-baustelle — plus einige nur mit MINOR/UNSICHER (funk-weltraum, rakete-weltraum, hochhaus-baustelle, notruf-feuerwehr, tresor-prinzessin, ei-dino grenzwertig ok).
 
 ---
 
 ## ENTSCHEIDUNG (Bolle, 03.07.): STRIKT EINZELN
-Kein Parallel-Sweep. huerden erst fertig gaten, dann **Spiel für Spiel**: pro Spiel BEIDE Defekte (Blickrichtung + Attribution) mitnehmen und durchs Gate. Dieser Katalog = Arbeitsliste der Einzeln-Schmiede-Pipeline.
+Kein Sweep. Pro Spiel im jeweiligen Gate BEIDE Defekte mitnehmen. Diese Liste = Arbeitsliste. Jedes Gate-Prompt prüft ab sofort zusätzlich Blickrichtung (glyphIsSideProfile-Test) + Attribution (NOFOTO-winWho). Volloutput: `tasks/wu4jp341e.output`.
 
-**Folge fürs Gate-Prompt-Muster (ab sofort in jedem Spiel-Gate zusätzlich prüfen):**
-- Blickrichtung: schaut jedes horizontal bewegte Emoji in Laufrichtung? (scaleX(-1) in Basis + Keyframes)
-- Attribution: lobt die Win-Zeile (v.a. nofoto) das Geburtstagskind für die Spieler-Leistung? Prinzip: **Gast wird gelobt („Du hast…"), Kind lädt ein / ist der enthüllte Star** — `kid() + Spiel-Verb` = Fehler; `kid()` als Reveal-Subjekt/Gastgeber = ok.
-
-**Design-Prinzip (kanonisch, gilt set-weit):** Gast = Handelnder (2. Person „Du"/Gastname), Geburtstagskind = enthüllter Gastgeber der einlädt. Foto-Pfad darf via Rollentausch das Kind sprechen lassen (wie lianen Beat 2), aber nie die Spiel-*Handlung* dem Kind zuschreiben.
-
-**Reihenfolge-Hinweis:** Beim jeweiligen Spiel den Katalog-Eintrag oben als Ausgangs-Diagnose nehmen, aber IMMER selbst gegen Code + unabhängigem Gate verifizieren (Haiku-Triage ist nur Vorsortierung).
-
-huerden-Foto-Champion-Beat („Der Champion ist kid") → im laufenden huerden-Re-Gate (Opus 4.8 Max, Chat ae2d2611) mitentscheiden; R1-Opus hatte es narrativ akzeptiert, Haiku als MAJOR — Reviewer-Urteil abwarten.
-
-Status → Task #64 (umgewidmet auf Einzeln-Pipeline-Arbeitsliste).
+Rohdaten-Fundstellen je Spiel mit wörtlichem Code-Zitat + suggestedFix stehen in `wu4jp341e.output` (all[]). Beim Fixen den Eintrag als Ausgangsdiagnose nehmen, aber am echten Code + unabhängigem Gate verifizieren.
