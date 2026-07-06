@@ -98,6 +98,7 @@ const CX=150, CY=178; const R0=140, DR=15; // 7 Bögen von außen (rot) nach inn
 const NCOL=(ageNum()<=6?5:ageNum()<=9?6:7); // Alters-Staffel: jüngere bauen einen kürzeren Regenbogen (weniger Bögen)
 const MEM=(ageNum()>=7); // ab 7: Merk-Modus (Nummern weg, Reihenfolge aus dem Kopf)
 const HELP_MS=(ageNum()>=10?4200:3200); // No-Fail-Netz: nach dieser Wartezeit blinkt der nächste Bogen DOCH — jeder schafft es
+const STONE_POS=[[60,55],[215,55],[150,95],[45,120],[255,110],[105,150],[195,145]]; // Tipp-Steine QUER verstreut (kein Sweep) — jeder Treffer malt trotzdem das nächste Regenbogen-Band
 const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
 // Story-Intro: Luna führt in 3 tippbaren Panels zur Mission — falsche Fährte (das kostbarste Wesen) fürs Twist-Finale
 const PANELS=[
@@ -128,10 +129,11 @@ function build(){
     const p=document.createElementNS('http://www.w3.org/2000/svg','path');
     p.setAttribute('class','band'+(!MEM&&i===0?' next':'')); p.setAttribute('d',arcPath(r)); p.setAttribute('stroke','#fff'); p.dataset.i=i;
     p.addEventListener('click',()=>tap(i)); bg.appendChild(p);
-    // Stein am Scheitel jedes Bogens
+    // Tipp-Stein an verstreuter Position (entkoppelt vom Bogen-Scheitel -> Reihenfolge ist kein Sweep)
+    const sp=STONE_POS[i];
     const st=document.createElementNS('http://www.w3.org/2000/svg','g');
     st.setAttribute('class','stone'+(!MEM&&i===0?' next':'')); st.dataset.i=i;
-    st.innerHTML=`<circle cx="${CX}" cy="${CY-r}" r="8"></circle><text x="${CX}" y="${CY-r}">${i+1}</text>`;
+    st.innerHTML=`<circle cx="${sp[0]}" cy="${sp[1]}" r="9"></circle><text x="${sp[0]}" y="${sp[1]}">${i+1}</text>`;
     st.addEventListener('click',()=>tap(i)); sg.appendChild(st);
   });
   if(MEM) preview(); // ab 7: erst die Reihenfolge zeigen, dann aus dem Kopf verbinden
