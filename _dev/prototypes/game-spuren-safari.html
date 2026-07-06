@@ -32,7 +32,8 @@
   .land.shake{animation:sh .25s}@keyframes sh{0%,100%{transform:translateX(0)}33%{transform:translateX(-6px)}66%{transform:translateX(6px)}}
   .storyOut{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);background:rgba(255,255,255,.94);color:#3a2c14;font-weight:800;font-size:15px;padding:10px 16px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.35);opacity:0;transition:opacity .4s ease .7s;z-index:7;max-width:88%;text-align:center;pointer-events:none}
   .storyOut.on{opacity:1}
-  .storyOut.on::after{content:" ▸";opacity:.65} /* Tap-Affordanz: weiter per Tipp */
+  .storyOut.on::after{content:" ▸";opacity:.65;animation:blinkA 1.2s infinite} /* Tap-Affordanz: weiter per Tipp — blinkt, damit auch Button-Hämmerer sie finden */
+  @keyframes blinkA{50%{opacity:.15}}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fffaf0,#f3e3bf);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2c14;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -107,7 +108,7 @@ function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); }
 function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim().slice(0,20); return v||GUEST; } // Namensfeld vor URL-Param (wie guestName)
 let next=1, done=false, prints=[], watching=false, gzT=null;
 let outroStep=0, outroT=null, beat2='', winAt=0;
-function advanceOutro(){ if(!outroStep || Date.now()-winAt<900)return; clearTimeout(outroT); winAt=Date.now(); // Grace-Fenster: Reflex-Taps nach dem Sieg dürfen Flood + Beats nicht überspringen
+function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace 1150ms: deckt die volle Beat-1-Einblendung (.4s + .7s delay = 1,1s), sonst schneidet ein exakt getimter Tap Beat 1 an
   if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
   else { outroStep=0; show('s-win'); } } // Tap-getaktet (Fallback: Beat 1 11s, Beat 2 14s — längster Beat 2 mit Demo-Fallback „das Geburtstagskind" braucht Puffer für 60-WpM-Leser)
 function sharpen(frac){ const p=document.querySelector('.mirror'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.65+0.35*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
@@ -150,6 +151,7 @@ function win(){
   done=true;clearTimeout(gzT);$('#land').classList.remove('alert','pre');$('#hint').textContent='';sharpen(1);
   const gz=document.querySelector('.gazelle');if(gz){gz.classList.remove('watch');gz.style.opacity='0';}
   const w=$('#walker');if(w)w.style.opacity='0'; // Löwe macht die Bühne frei — nichts steht auf dem Gesicht
+  [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility='hidden'); // keine toten Buttons (Tipp) im Finale über dem Reveal
   const mi=document.querySelector('.mirror');if(mi){ mi.style.left='50%'; mi.style.top='50%'; mi.classList.add('flood'); } // das Wasserloch flutet die Szene: der Reveal IST der Höhepunkt
   sfx.win(); noise(AC().currentTime,0.25,{vol:0.1,freq:1800}); vib([20,40,20,40,80]); confetti(CC); // Fanfare + Splash + Konfetti AM Reveal, nicht auf der Karte
   const g=guestNow(); const so=$('#storyOut');
@@ -161,7 +163,7 @@ function win(){
 $('#land').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap die Story-Beats
 // Tipp sichtbar: Gazelle schaut weg (frisches Away-Fenster), dann wird die nächste Spur echt getippt
 function tip(){ if(done||next>=TRAIL.length||!prints.length)return; clearTimeout(gzT); gazLoop(); tap(next); }
-$('#startBtn').addEventListener('click',()=>{AC();outroStep=0;clearTimeout(outroT);$('#storyOut').classList.remove('on');build();show('s-game');$('#hint').textContent='Tippe die blinkende Pfotenspur.';}); // AC(): iOS-Audio-Unlock per Geste, sonst bleibt der erste Warn-Piep stumm
+$('#startBtn').addEventListener('click',()=>{AC();outroStep=0;clearTimeout(outroT);$('#storyOut').classList.remove('on');[...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility='');build();show('s-game');$('#hint').textContent='Tippe die blinkende Pfotenspur.';}); // AC(): iOS-Audio-Unlock per Geste, sonst bleibt der erste Warn-Piep stumm
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>

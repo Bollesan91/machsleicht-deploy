@@ -77,7 +77,7 @@ const sfx={
   win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-const GOAL=(ageNum()<=6?3:ageNum()<=9?4:5), FLASH_MS=540; // Länge nach Alter (4–6→3, 7–9→4, 10+→5)
+const GOAL=(ageNum()<=6?3:ageNum()<=9?4:5), FLASH_MS=(ageNum()<=6?560:ageNum()<=9?500:400); // Länge UND Tempo nach Alter (10+ schneller = echter Merk-Skill)
 const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
 // Story-Intro: Fee Lumi führt in 3 tippbaren Panels zur Mission — falsche Fährte fürs Twist-Finale
 const PANELS=[
@@ -108,12 +108,12 @@ function press(i){
   else { accepting=false; sfx.buzz(); vib([30,40,30]); $('#grove').classList.add('shake'); setTimeout(()=>$('#grove').classList.remove('shake'),300); $('#msg').textContent='Daneben — nochmal lauschen!'; setTimeout(playSeq,850); }
 }
 function win(){
-  done=true; accepting=false; sharpen(1); sfx.win(); vib([20,40,20,40,80]); $('#msg').textContent='✨ Das verborgene Licht erscheint!';
+  done=true; accepting=false; sharpen(1); sfx.win(); vib([20,40,20,40,80]); confetti(CC); $('#msg').textContent='✨ Das verborgene Licht erscheint!'; // Fanfare + Konfetti AM Reveal, nicht erst auf der Karte
   flies.forEach(f=>f.style.opacity='0'); // Glühwürmchen machen die Bühne frei — nichts steht auf dem enthüllten Gesicht
   $('#tippBtn').style.visibility='hidden'; // kein toter Button im Finale
   const g=guestNow(); const so=$('#storyOut');
   if(HAS_PHOTO){ so.textContent='Fee Lumi staunt: Das verborgene Licht ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
-  else { so.textContent='Fee Lumi funkelt: Das hellste Licht — das sind die Glühwürmchen selbst! 🎉'; beat2='Und '+kid()+' hat sie für dich zum Leuchten bestellt'+(g?', '+g:'')+'!'; } // nofoto: Rätsel aufgelöst, kid() als Gastgeber (kein Spiel-Verb)
+  else { so.textContent='Fee Lumi funkelt: Da ist es — das verborgene Licht! 🎉'; beat2='Und '+kid()+' hat es für dich entzündet'+(g?', '+g:'')+'!'; } // nofoto: kurzer Beat 1 (kein Widerspruch zum Intro), kid() als Gastgeber (kein Spiel-Verb)
   so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
   if(HAS_PHOTO){ $('#winTitle').textContent='Licht gefunden!'; $('#winWho').textContent=`Im Glühwürmchen-Licht erscheint das verborgene Leuchten — das ist ${kid()}! Komm zur Feen-Party:`; } else { $('#winTitle').textContent='Melodie komplett!'; $('#winWho').textContent=`Alle Glühwürmchen leuchten im Takt — ${kid()} lädt dich zur Feen-Party ein:`; } guestName();
 }

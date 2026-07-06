@@ -72,8 +72,8 @@ const CC=['#e63946','#ffd24d','#56b4ff','#fff','#a01f2c'];
 const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
 // Story-Intro: Fips führt in 3 tippbaren Panels zur Mission — falsche Fährte (geheimer Held) fürs Twist-Finale
 const PANELS=[
-  {i:'🚒',t:'Tatü-tata — ich bin Fips!',x:'Der Einsatz ist fast geschafft — nur noch dichter Qualm über der Wache. Aber wer hat den Brand gelöscht? Ein geheimer Feuerwehr-Held!'},
-  {i:'💨',t:'Wisch den Qualm weg!',x:'Fahr mit dem Finger über den Rauch — Stück für Stück wird sichtbar, wer dieser Held ist …'},
+  {i:'🚒',t:'Tatü-tata — ich bin Fips!',x:'Der Einsatz ist fast geschafft — nur noch dichter Qualm. Und ein geheimer Feuerwehr-Star wartet mittendrin!'},
+  {i:'💨',t:'Wisch den Qualm weg!',x:'Fahr mit dem Finger über den Rauch — Stück für Stück wird sichtbar, wer dieser Star ist …'},
   {i:'🧯',t:'Wasser marsch!',x:'Je mehr Qualm du wegwischst, desto klarer siehst du sein Gesicht.'}
 ];
 let pIdx=0;
@@ -116,10 +116,10 @@ function reveal(){
   setTimeout(()=>{ // nach dem Qualm-Fade: Reveal ist der Höhepunkt (Fanfare + Konfetti + Story-Beats)
     sfx.win();vib([20,40,20,40,80]);confetti(CC);
     const g=guestNow(); const so=$('#storyOut');
-    if(HAS_PHOTO){ so.textContent='Fips staunt: Der geheime Feuerwehr-Held ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
-    else { so.textContent='Fips grinst: Und da glänzt der Feuerwehr-Stern! 🎉'; beat2='Und '+kid()+' lädt dich zur großen Einsatz-Feier'+(g?', '+g:'')+'!'; } // nofoto: Rätsel aufgelöst, kid() als Gastgeber (kein Spiel-Verb)
+    if(HAS_PHOTO){ so.textContent='Fips staunt: Der geheime Feuerwehr-Star ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
+    else { so.textContent='Fips grinst: Der geheime Feuerwehr-Star — das warst die ganze Zeit DU! 🎉'; beat2='Und '+kid()+' lädt dich zur großen Einsatz-Feier'+(g?', '+g:'')+'!'; } // nofoto: falsche Fährte aufgelöst (DU bist der Star) + Gast-Gutschrift, kid() als Gastgeber
     so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
-    if(HAS_PHOTO){ $('#winTitle').textContent='Held enttarnt!'; $('#winWho').textContent=`Aus dem Qualm taucht der geheime Held auf — das ist ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winTitle').textContent='Einsatz geschafft!'; $('#winWho').textContent=`Der Brand ist aus, alle sind wohlauf — ${kid()} lädt dich zur Feuerwehr-Party ein:`; } guestName();
+    if(HAS_PHOTO){ $('#winTitle').textContent='Star enttarnt!'; $('#winWho').textContent=`Aus dem Qualm taucht der geheime Star auf — das ist ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winTitle').textContent='Einsatz geschafft!'; $('#winWho').textContent=`Der Brand ist aus, alle sind wohlauf — ${kid()} lädt dich zur Feuerwehr-Party ein:`; } guestName();
   }, 900);
 }
 let moveCount=0;
@@ -131,7 +131,7 @@ function initBoard(){
   cv.onpointerup=cv.onpointercancel=()=>{drawing=false;if(!done)progress();};
 }
 $('#board').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap die Story-Beats
-$('#startBtn').addEventListener('click',()=>{ AC(); outroStep=0; clearTimeout(outroT); $('#storyOut').classList.remove('on'); show('s-game'); setTimeout(initBoard,30); $('#hint').textContent='Wisch den Qualm mit dem Finger weg!'; }); // AC(): iOS-Audio-Unlock per Geste
+$('#startBtn').addEventListener('click',()=>{ AC(); outroStep=0; moveCount=0; drawing=false; clearTimeout(outroT); $('#storyOut').classList.remove('on'); show('s-game'); setTimeout(initBoard,30); $('#hint').textContent='Wisch den Qualm mit dem Finger weg!'; }); // AC(): iOS-Audio-Unlock per Geste
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
