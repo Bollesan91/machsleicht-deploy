@@ -16,6 +16,16 @@
   .rune.lit{opacity:1;color:#e0c6ff;text-shadow:0 0 12px #b07aff,0 0 22px #b07aff}
   .lamp{position:absolute;width:130px;height:130px;border-radius:50%;transform:translate(-50%,-50%);pointer-events:none;background:radial-gradient(circle,rgba(176,122,255,.5),rgba(120,80,200,.18) 55%,transparent 72%);opacity:0;transition:opacity .15s;mix-blend-mode:screen}
   .hint2{font-size:13px;opacity:.85;text-align:center}
+  /* Reveal-Cleanup: Tinten-Textur + Runen ausfaden -> Porträt flutet clean (Gesicht-Guard) */
+  .sheet.revealed .ink{opacity:0;transition:opacity .4s ease}
+  .sheet.revealed .rune{opacity:0 !important;transition:opacity .4s ease}
+  /* Story-Outro: Reaktion auf dem Reveal (tap-getaktet) — unten am Pergament, verdeckt NIE das Gesicht */
+  .storyOut{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);background:rgba(20,10,34,.9);color:#eadfff;font-weight:800;font-size:14px;padding:9px 14px;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.5);opacity:0;transition:opacity .4s ease .5s;z-index:6;max-width:92%;text-align:center;pointer-events:none}
+  .storyOut.on{opacity:1}
+  .storyOut.on::after{content:" ▸";opacity:.7;animation:blinkA 1.2s infinite}
+  @keyframes blinkA{50%{opacity:.15}}
+  #tippBtn.nudge{animation:tnudge 1.1s ease-in-out infinite;opacity:1} /* Idle-Nudge: Tipp pulst, wenn die Jüngsten zu lange nichts finden */
+  @keyframes tnudge{50%{transform:scale(1.09);box-shadow:0 0 16px 3px rgba(176,122,255,.75)}}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#f6f0ff,#e2d4f6);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:142px;height:142px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#241433;box-shadow:0 0 26px rgba(176,122,255,.6);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -29,17 +39,22 @@
 <div class="demoTag">PROTOTYP · UV-Geheimschrift (Licht-Suche)</div>
 <div class="wrap">
   <section class="scene on" id="s-intro">
-    <div class="big">🔦</div>
-    <h1>Entschlüssle die Geheimschrift!</h1>
-    <p class="sub">Auf dem alten Pergament liegt eine unsichtbare Botschaft verborgen. Fahr mit der Zauber-Lampe darüber — wo du hinleuchtest, treten die geheimen Zeichen hervor und ein verborgenes Bild wird Stück für Stück sichtbar …</p>
-    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
-    <button class="btn" id="startBtn">Lampe an 🔦</button>
+    <div class="big" id="pIcon">🔦</div>
+    <h1 id="pTitle">Eine geheime Botschaft!</h1>
+    <p class="sub" id="pText">…</p>
+    <button class="btn" id="nextPan">Weiter ▸</button>
+    <button class="btn" id="skipPan" style="background:rgba(255,255,255,.16);font-size:14px;padding:8px 20px">Überspringen ▸▸</button>
+    <div id="introForm" style="width:100%;flex-direction:column;align-items:center;gap:12px;display:none">
+      <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+      <button class="btn" id="startBtn">Lampe an 🔦</button>
+    </div>
   </section>
 
   <section class="scene" id="s-game">
     <div class="hud"><span class="pill">Zeichen ✦ <b id="cnt">0</b>/<b id="rmax">5</b></span></div>
-    <div class="sheet" id="sheet"><div class="portrait" id="portrait"></div><div class="ink"></div><div class="lamp" id="lamp"></div></div>
+    <div class="sheet" id="sheet"><div class="portrait" id="portrait"></div><div class="ink"></div><div class="lamp" id="lamp"></div><div class="storyOut" id="storyOut"></div></div>
     <p class="hint2">Fahr mit dem Finger über das Pergament — leuchte die Zeichen frei.</p>
+    <button class="btn" id="tippBtn" style="background:rgba(255,255,255,.16);font-size:15px;padding:8px 20px">💡 Tipp</button>
   </section>
 
   <section class="scene" id="s-win">
@@ -67,23 +82,49 @@ const sfx={
 };
 const RUNES=[[26,28],[72,24],[44,52],[78,72],[24,76]]; const SYM=['✦','❉','☽','✶','❖'];
 let discovered=0, done=false, runeEls=[];
+let outroStep=0, outroT=null, beat2='', winAt=0, idleT=null;
+const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
+function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
+function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim(); return (v&&v.length<=20)?v:GUEST; } // Namensfeld vor URL-Param
+// Story-Intro: 3 tippbare Panels — falsche Fährte (wer hat die Botschaft hinterlassen?) fürs Twist-Finale
+const PANELS=[
+  {i:'🔦',t:'Eine geheime Botschaft!',x:'Auf dem alten Pergament schlummert eine unsichtbare Botschaft — die heimliche Hauptperson des Festes hat sie hinterlassen. Aber noch ist alles dunkel!'},
+  {i:'✨',t:'Zauber-Lampe an!',x:'Fahr mit der Lampe übers Pergament — wo du hinleuchtest, treten die geheimen Zeichen hervor und ein verborgenes Bild wird klarer.'},
+  {i:'👑',t:'Wer war es?',x:'Wenn alle Zeichen leuchten, gibt das Pergament preis, wer die geheime Botschaft hinterlassen hat.'}
+];
+let pIdx=0;
+function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitle').textContent=p.t; $('#pText').textContent=p.x; const last=pIdx>=PANELS.length-1; $('#nextPan').style.display=last?'none':''; $('#skipPan').style.display=last?'none':''; $('#introForm').style.display=last?'flex':'none'; }
 const GOAL_R=(ageNum()<=6?3:ageNum()<=9?4:5); // Zeichen nach Alter
 function sharpen(frac){ const p=$('#portrait'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.25+0.75*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) brightness('+(0.45+0.55*f).toFixed(2)+') saturate('+(0.5+0.5*f).toFixed(2)+')'; } // Porträt hinten gewichtet frei
 function build(){
-  discovered=0;done=false;$('#cnt').textContent=0;$('#rmax').textContent=GOAL_R;sharpen(0);
+  discovered=0;done=false;outroStep=0;clearTimeout(outroT);clearTimeout(idleT);$('#sheet').classList.remove('revealed');$('#storyOut').classList.remove('on');clearNudge();[...document.querySelectorAll('#s-game .hud, #tippBtn')].forEach(b=>b.style.visibility='');$('#cnt').textContent=0;$('#rmax').textContent=GOAL_R;sharpen(0);
   const sh=$('#sheet'); [...sh.querySelectorAll('.rune')].forEach(r=>r.remove());
   runeEls=RUNES.slice(0,GOAL_R).map((p,i)=>{ const el=document.createElement('div'); el.className='rune'; el.textContent=SYM[i]; el.style.left=p[0]+'%'; el.style.top=p[1]+'%'; el._lit=false; sh.appendChild(el); return el; });
   $('#lamp').style.opacity='0';
 }
+function armIdle(){ clearTimeout(idleT); idleT=setTimeout(()=>{ if(!done && discovered<GOAL_R) $('#tippBtn').classList.add('nudge'); }, 8000); } // Idle-Nudge: findet das Kind 8s nichts, pulst der Tipp-Knopf
+function clearNudge(){ $('#tippBtn').classList.remove('nudge'); }
+function litRune(el,i){ if(el._lit||done)return; el._lit=true; el.classList.add('lit'); discovered++; $('#cnt').textContent=discovered; sfx.glow(i); vib(12); sharpen(discovered/GOAL_R); clearNudge(); armIdle(); if(discovered>=GOAL_R) reveal(); }
 function moveLamp(x,y){
   if(done)return; const l=$('#lamp'); l.style.left=x+'%'; l.style.top=y+'%'; l.style.opacity='1';
-  runeEls.forEach((el,i)=>{ if(el._lit)return; if(Math.hypot(x-RUNES[i][0],y-RUNES[i][1])<13){ el._lit=true; el.classList.add('lit'); discovered++; $('#cnt').textContent=discovered; sfx.glow(i); vib(12); sharpen(discovered/GOAL_R); if(discovered>=GOAL_R) reveal(); } });
+  runeEls.forEach((el,i)=>{ if(!el._lit && Math.hypot(x-RUNES[i][0],y-RUNES[i][1])<13) litRune(el,i); });
 }
+function tip(){ if(done)return; const i=runeEls.findIndex(el=>!el._lit); if(i>=0) litRune(runeEls[i],i); } // Tipp: nächstes verstecktes Zeichen aufleuchten (No-Fail-Garantie)
 function reveal(){
-  done=true; vib([20,40,20,40,80]); sharpen(1); $('#lamp').style.opacity='0';
-  if(HAS_PHOTO){ $('#winWho').textContent=`Die Geheimschrift war ein verborgenes Porträt — es zeigt ${kid()}! Komm zur Prinzessinnen-Party:`; } else { $('#winTitle').textContent='Entschlüsselt!'; $('#winWho').textContent=`Die geheimen Zeichen ergeben ein königliches Siegel — ${kid()} hat es entschlüsselt! Komm zur Prinzessinnen-Party:`; } guestName();
-  setTimeout(()=>{ show('s-win'); confetti(CC); sfx.win(); }, 900);
+  done=true; clearTimeout(idleT); clearNudge(); vib([20,40,20,40,80]); sharpen(1); $('#lamp').style.opacity='0'; sfx.win(); confetti(CC); // Fanfare + Konfetti AM Reveal
+  $('#sheet').classList.add('revealed'); // Tinte + Runen ausfaden -> Porträt flutet clean (Gesicht-Guard)
+  [...document.querySelectorAll('#s-game .hud, #tippBtn')].forEach(b=>b.style.visibility='hidden');
+  setTimeout(()=>{ // nach dem Ausfaden: tap-getaktete Twist-Beats
+    const g=guestNow(); const so=$('#storyOut');
+    if(HAS_PHOTO){ so.textContent='Die Zeichen leuchten — das verborgene Porträt zeigt '+kid()+'! 🎉'; beat2=kidCap()+' lächelt: „Na endlich'+(g?', '+g:'')+'! Auf dich hab ich gewartet!“'; } // Beat 1 Enthüllung, Beat 2 Rollenumkehr
+    else { so.textContent='Die geheimen Zeichen leuchten — die Botschaft ist entschlüsselt! 🎉'; beat2='Und '+kid()+' wartet im Schloss auf dich'+(g?', '+g:'')+'!'; } // nofoto: kid() als Gastgeber (kein Spiel-Verb)
+    so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
+    $('#winTitle').textContent='Entschlüsselt!'; $('#winWho').textContent=`Du hast die Geheimschrift entschlüsselt! ${kidCap()} lädt dich zur Prinzessinnen-Party:`; guestName();
+  }, 800);
 }
+function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace 1150ms
+  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
+  else { outroStep=0; show('s-win'); } } // tap-getaktet (Fallback Beat 1 11s, Beat 2 14s)
 function pt(ev){ const r=$('#sheet').getBoundingClientRect(); return [((ev.clientX-r.left)/r.width)*100, ((ev.clientY-r.top)/r.height)*100]; }
 function initSheet(){
   const sh=$('#sheet'); let drawing=false;
@@ -91,7 +132,12 @@ function initSheet(){
   sh.onpointermove=e=>{ if(!drawing)return; const[x,y]=pt(e); moveLamp(x,y); };
   sh.onpointerup=sh.onpointercancel=()=>{ drawing=false; $('#lamp').style.opacity='0'; };
 }
-$('#startBtn').addEventListener('click',()=>{ build(); show('s-game'); setTimeout(initSheet,20); });
+$('#nextPan').addEventListener('click',()=>{ if(pIdx<PANELS.length-1){ pIdx++; showPan(); } });
+$('#skipPan').addEventListener('click',()=>{ pIdx=PANELS.length-1; showPan(); });
+$('#sheet').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap aufs Pergament die Story-Beats
+$('#tippBtn').addEventListener('click',tip);
+$('#startBtn').addEventListener('click',()=>{ AC(); build(); show('s-game'); setTimeout(()=>{ initSheet(); armIdle(); },20); }); // AC(): iOS-Audio-Unlock; armIdle startet den Nudge-Timer
+showPan();
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
