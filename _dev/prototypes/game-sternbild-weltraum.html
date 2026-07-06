@@ -6,13 +6,13 @@
 <title>Sternbild — Weltraum</title>
 <link rel="stylesheet" href="core/core.css?v=20260702b">
 <style>
-  /* E3 Verbinden/Trace — nur Spiel-Eigenes; Skelett aus core.css. */
+  /* E3 Verbinden/Trace — Sterne verbinden -> Foto-Reveal. Weltraum. Auf Shared Core. Story-Muster v2. */
   :root{--bg1:#070b1c;--bg2:#1b2a55;--fg:#fff;--accent:#6aa8ff;--accent-dk:#2c63b8;--ink:#04122e;--gold:#ffd866}
   .big{filter:drop-shadow(0 0 14px #6aa8ff)}
   .pill{background:rgba(255,255,255,.14);padding:6px 12px;border-radius:999px}
   .sky{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 30% 20%,#26356b,#070b1c 70%);box-shadow:0 12px 30px rgba(0,0,0,.5);touch-action:manipulation}
-  .sky svg{position:absolute;inset:0;width:100%;height:100%}
-  /* Foto zwischen den Sternen: schimmert mit jedem verbundenen Stern deutlicher (Reveal an Mechanik gekoppelt) */
+  .sky svg{position:absolute;inset:0;width:100%;height:100%;transition:opacity .5s ease}
+  /* Foto zwischen den Sternen: schimmert mit jedem Stern deutlicher; im Finale faden die Sterne -> Foto flutet (Reveal = Höhepunkt) */
   .cphoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.55);transition:opacity .6s ease,filter .6s ease;pointer-events:none}
   .star{cursor:pointer}
   .star circle{fill:#9fb6e8;transition:fill .2s,r .2s}
@@ -23,6 +23,11 @@
   .bgstar{fill:#fff;opacity:.5}
   #line{fill:none;stroke:var(--gold);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 5px var(--gold))}
   .sky.shake{animation:sh .25s}@keyframes sh{0%,100%{transform:translateX(0)}33%{transform:translateX(-6px)}66%{transform:translateX(6px)}}
+  /* Story-Outro: Reaktion auf dem Reveal (tap-getaktet) */
+  .storyOut{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);background:rgba(255,255,255,.94);color:#16233f;font-weight:800;font-size:15px;padding:10px 16px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.35);opacity:0;transition:opacity .4s ease .7s;z-index:7;max-width:88%;text-align:center;pointer-events:none}
+  .storyOut.on{opacity:1}
+  .storyOut.on::after{content:" ▸";opacity:.65;animation:blinkA 1.2s infinite} /* Tap-Affordanz: weiter per Tipp */
+  @keyframes blinkA{50%{opacity:.15}}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#f3f7ff,#dce6fb);color:#16233f;border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--gold);background-image:var(--photo);background-size:cover;background-position:center;box-shadow:0 0 26px rgba(255,216,102,.7);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -36,16 +41,20 @@
 <div class="demoTag">PROTOTYP · Sternbild (E3 Verbinden)</div>
 <div class="wrap">
   <section class="scene on" id="s-intro">
-    <div class="big">✨</div>
-    <h1>Finde das geheime<br>Sternbild!</h1>
-    <p class="sub">Verbinde die Sterne der Reihe nach (der nächste leuchtet auf). Mit jedem Stern schimmert zwischen ihnen ein Bild deutlicher — die komplette Konstellation zeigt, wer der Captain dieser Mission ist.</p>
-    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
-    <button class="btn" id="startBtn">Sterne verbinden 🛰️</button>
+    <div class="big" id="pIcon">🛰️</div>
+    <h1 id="pTitle">Kommando an dich!</h1>
+    <p class="sub" id="pText">…</p>
+    <button class="btn" id="nextPan">Weiter ▸</button>
+    <button class="btn" id="skipPan" style="background:rgba(255,255,255,.16);font-size:14px;padding:8px 20px">Überspringen ▸▸</button>
+    <div id="introForm" style="width:100%;flex-direction:column;align-items:center;gap:12px;display:none">
+      <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+      <button class="btn" id="startBtn">Sterne verbinden 🛰️</button>
+    </div>
   </section>
 
   <section class="scene" id="s-game">
     <div class="hud"><span class="pill">Sterne <b id="cnt">0</b>/<b id="tot">7</b></span></div>
-    <div class="sky" id="sky"><div class="cphoto" id="cphoto"></div><svg id="svg" viewBox="0 0 300 300"><polyline id="line" points=""></polyline><g id="stars"></g></svg></div>
+    <div class="sky" id="sky"><div class="cphoto" id="cphoto"></div><svg id="svg" viewBox="0 0 300 300"><polyline id="line" points=""></polyline><g id="stars"></g></svg><div class="storyOut" id="storyOut"></div></div>
     <p class="sub" id="hint">Tippe den leuchtenden Stern.</p>
   </section>
 
@@ -70,10 +79,28 @@ const CC=['#6aa8ff','#ffd866','#37c46e','#fff','#a35cff'];
 const SCALE=[523,587,659,784,880,988,1047,1175];
 const sfx={connect(i){note(SCALE[Math.min(i,SCALE.length-1)],AC().currentTime,0.14,{type:'sine',vol:0.14});},wrong(){note(200,AC().currentTime,0.14,{type:'triangle',vol:0.1,glideTo:150});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));[1568,2093].forEach((f,i)=>note(f,t+0.46+i*0.09,0.5,{type:'sine',vol:0.07}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
 const STARS=[[60,70],[120,50],[185,80],[230,140],[170,170],[110,200],[55,150]]; // 7 Sterne
+const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
+// Story-Intro: 3 tippbare Panels — falsche Fährte (der geheime Captain) fürs Twist-Finale
+const PANELS=[
+  {i:'🛰️',t:'Kommando an dich!',x:'Irgendwo da draußen wartet der geheime Captain dieser Sternen-Mission. Aber sein Sternbild ist noch gar nicht verbunden!'},
+  {i:'✨',t:'Verbinde die Sterne!',x:'Tippe die leuchtenden Sterne der Reihe nach — Stück für Stück entsteht das Sternbild.'},
+  {i:'⭐',t:'Sieben Sterne!',x:'Wenn alle sieben verbunden sind, zeigt die Konstellation, wer da auf dich wartet.'}
+];
+let pIdx=0;
+function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitle').textContent=p.t; $('#pText').textContent=p.x; const last=pIdx>=PANELS.length-1; $('#nextPan').style.display=last?'none':''; $('#skipPan').style.display=last?'none':''; $('#introForm').style.display=last?'flex':'none'; }
+$('#nextPan').addEventListener('click',()=>{ AC(); pIdx=Math.min(pIdx+1,PANELS.length-1); showPan(); vib(6); });
+$('#skipPan').addEventListener('click',()=>{ AC(); pIdx=PANELS.length-1; showPan(); });
+showPan();
+function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
+function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim(); return (v&&v.length<=20)?v:GUEST; } // Namensfeld vor URL-Param
 let next=0,done=false;
+let outroStep=0, outroT=null, beat2='', winAt=0;
+function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace 1150ms: deckt volle Beat-1-Einblendung, kein Reflex-Tap überspringt Reveal+Beats
+  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
+  else { outroStep=0; show('s-win'); confetti(CC); } } // tap-getaktet (Fallback Beat 1 11s, Beat 2 14s für 60-WpM-Leser)
 function sharpen(frac){ const p=$('#cphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.25+0.75*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.55+0.45*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
 function build(){
-  next=0;done=false;$('#cnt').textContent=0;$('#tot').textContent=STARS.length;$('#line').setAttribute('points','');sharpen(0);
+  next=0;done=false;$('#cnt').textContent=0;$('#tot').textContent=STARS.length;$('#line').setAttribute('points','');sharpen(0);$('#svg').style.opacity='';
   const g=$('#stars');g.innerHTML='';
   // Hintergrund-Sterne
   for(let i=0;i<26;i++){const c=document.createElementNS('http://www.w3.org/2000/svg','circle');c.setAttribute('class','bgstar');c.setAttribute('cx',Math.random()*300);c.setAttribute('cy',Math.random()*300);c.setAttribute('r',(Math.random()*1.4+.4).toFixed(1));g.appendChild(c);}
@@ -94,12 +121,21 @@ function tap(i){
   else win();
 }
 function win(){
-  done=true;sharpen(1);$('#hint').textContent='';vib([20,40,20,40,80]);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Der Captain der Sternen-Mission ist ${kid()}! Komm zur Weltraum-Party:`; } else {$('#winTitle').textContent='Konstellation komplett!';$('#winWho').textContent=`Am Sternenhimmel erstrahlt ein Sternbild — ${kid()} hat die Mission gelöst! Komm zur Weltraum-Party:`;} guestName();
-  setTimeout(()=>{ show('s-win');confetti(CC);sfx.win(); }, 600);
+  done=true;sharpen(1);$('#hint').textContent='Die Konstellation leuchtet auf …';vib([20,40,20,40,80]);
+  [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility='hidden'); // keine toten Buttons (Tipp) im Finale
+  setTimeout(()=>{ // Reveal ist der Höhepunkt: Sterne faden, Foto flutet
+    $('#svg').style.opacity='0'; $('#hint').textContent='';
+    sfx.win();vib([20,40,20,40,80]);confetti(CC); // Fanfare + Konfetti AM Reveal, nicht auf der Karte
+    const g=guestNow(); const so=$('#storyOut');
+    if(HAS_PHOTO){ so.textContent='Das Sternbild leuchtet: Der Captain ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
+    else { so.textContent='Das Sternbild leuchtet — eine funkelnde Rakete am Himmel! 🎉'; beat2='Und '+kid()+' wartet an der Raumstation auf dich'+(g?', '+g:'')+'!'; } // nofoto: Rätsel aufgelöst, kid() als Gastgeber (kein Spiel-Verb)
+    so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
+    if(HAS_PHOTO){ $('#winTitle').textContent='Captain gefunden!'; $('#winWho').textContent=`Zwischen den Sternen erscheint der Captain — das ist ${kid()}! Komm zur Weltraum-Party:`; } else { $('#winTitle').textContent='Konstellation komplett!'; $('#winWho').textContent=`Das Sternbild ist komplett — ${kid()} lädt dich zur Weltraum-Party ein:`; } guestName();
+  }, 700);
 }
+$('#sky').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap die Story-Beats
 function tip(){ if(!done && document.querySelector('.star[data-i="'+next+'"]')) tap(next); } // Tipp: nächsten Stern für dich verbinden (Guard: vor build() kein Ziel)
-$('#startBtn').addEventListener('click',()=>{build();show('s-game');$('#hint').textContent='Tippe den leuchtenden Stern.';});
+$('#startBtn').addEventListener('click',()=>{ AC(); outroStep=0; clearTimeout(outroT); $('#storyOut').classList.remove('on'); [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility=''); build(); show('s-game'); $('#hint').textContent='Tippe den leuchtenden Stern.'; }); // AC(): iOS-Audio-Unlock per Geste
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
