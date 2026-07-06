@@ -22,7 +22,7 @@
   .stone.lit circle{opacity:0}
   .stone.next circle{opacity:.95;animation:sp 1s infinite}
   @keyframes sp{0%,100%{r:7}50%{r:10}}
-  .sky.mem .stone text{opacity:0;transition:opacity .3s} /* Merk-Modus (ab 7): Nummern verborgen — aus dem Kopf verbinden */
+  .stone text{opacity:0} /* Nummern immer verborgen — geführt wird rein übers Blinken (Vorleser-/U4-tauglich); ab 7 aus dem Kopf */
   .stone text{fill:#2a1040;font-size:11px;font-weight:800;text-anchor:middle;dominant-baseline:central;pointer-events:none}
   .uni{position:absolute;left:4%;bottom:6%;font-size:36px;z-index:5;transform:scaleX(-1);transition:left 1.4s ease,bottom 1.4s ease,opacity .5s ease;filter:drop-shadow(0 3px 4px rgba(0,0,0,.4))} /* scaleX(-1): 🦄 schaut default nach links, trabt aber nach rechts → spiegeln (wie 🐎) */
   .sky.shake{animation:sh .25s}@keyframes sh{0%,100%{transform:translateX(0)}33%{transform:translateX(-6px)}66%{transform:translateX(6px)}}
