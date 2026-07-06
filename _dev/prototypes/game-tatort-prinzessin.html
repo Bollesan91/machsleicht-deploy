@@ -16,11 +16,11 @@
   .item{position:absolute;transform:translate(-50%,-50%);font-size:23px;cursor:pointer;filter:drop-shadow(0 1px 1px rgba(0,0,0,.5));transition:transform .12s;user-select:none}
   .item.deco{opacity:.92}
   .item.deco.miss{animation:wob .3s}@keyframes wob{0%,100%{transform:translate(-50%,-50%) rotate(0)}33%{transform:translate(-50%,-50%) rotate(-12deg)}66%{transform:translate(-50%,-50%) rotate(12deg)}}
-  .item.clue{font-size:20px}
+  .item.clue{font-size:27px} /* Ziel MUSS größer als Deko (23px) sein — auch 4-Jährige finden es */
   .item.clue.got{animation:found .5s forwards;pointer-events:none;z-index:5}
   @keyframes found{0%{transform:translate(-50%,-50%) scale(1)}40%{transform:translate(-50%,-50%) scale(1.7)}100%{transform:translate(-50%,-50%) scale(1.25)}}
   .item.clue.got::after{content:"✓";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:15px;color:#37c46e;font-weight:900;text-shadow:0 0 4px #000}
-  .field.revealed .item{opacity:0 !important;transition:opacity .55s ease;pointer-events:none} /* Reveal: alle Items ausfaden -> Foto flutet den Saal clean (Gesicht-Guard) */
+  .field.revealed .item{opacity:0 !important;transition:opacity .35s ease;pointer-events:none} /* Reveal: alle Items schnell ausfaden -> Foto flutet den Saal clean (Gesicht-Guard) */
   /* Story-Outro: Reaktion auf dem Reveal (tap-getaktet) — unten im Saal, verdeckt NIE das Gesicht */
   .storyOut{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);background:rgba(42,24,64,.92);color:#fff;font-weight:800;font-size:14px;padding:9px 14px;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.45);opacity:0;transition:opacity .4s ease .5s;z-index:7;max-width:92%;text-align:center;pointer-events:none}
   .storyOut.on{opacity:1}
@@ -54,7 +54,7 @@
   <section class="scene" id="s-game">
     <div class="hud"><span class="pill">Juwelen 💎 <b id="cnt">0</b>/5</span></div>
     <div class="field" id="field"></div>
-    <p class="hint">Tipp die funkelnden Juwelen — der Saal ist voll!</p>
+    <p class="hint">Tippe die funkelnden Juwelen — der Saal ist voll!</p>
   </section>
 
   <section class="scene" id="s-win">
@@ -76,8 +76,9 @@ const THEME={ photo:'/birthday-photo.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#e6c15a','#37c46e','#a35cff','#fff','#ff7fb0'];
 const sfx={find(){const t=AC().currentTime;note(700,t,0.1,{type:'triangle',vol:0.13});note(1050,t+0.07,0.18,{type:'triangle',vol:0.12});},no(){noise(AC().currentTime,0.09,{vol:0.05,freq:260,filter:'bandpass'});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
-const DECOS=['👑','📜','🕯️','🗝️','💍','🪞','🍇','🏰','⚜️','🎀','📯','🛡️','🪙','🥂','🌹','🔮','📿','🪄','👜','🎭','🧣','🪟','🕰️','📕','🪅','🎁','🛎️','🫖'];
+const DECOS=['👑','📜','🕯️','🗝️','🪞','🍇','🏰','⚜️','🎀','📯','🛡️','🌹','🪄','👜','🎭','🧣','🪟','🕰️','📕','🪅','🎁','🛎️','🫖']; // ohne 💍🪙🥂🔮📿 (Juwel-Verwechsler + Alkohol raus) — 💎-Ziel bleibt eindeutig, kindgerecht
 const CLUE_POS=[[22,26],[70,32],[46,54],[80,72],[28,80]];
+const DECON=(ageNum()<=6?16:ageNum()<=9?22:26); // weniger Prunk-Deko für Jüngere -> weniger Suchdruck (Alters-Adaption)
 let found=0,done=false;
 let outroStep=0, outroT=null, beat2='', winAt=0;
 const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
@@ -100,7 +101,7 @@ function tap(el,isClue){
 function layout(){
   const f=$('#field'); f.innerHTML=''; f.classList.remove('revealed'); const ph=document.createElement('div'); ph.className='fieldphoto'; f.appendChild(ph); const so=document.createElement('div'); so.className='storyOut'; so.id='storyOut'; f.appendChild(so); const items=[];
   CLUE_POS.forEach(p=>items.push({c:true,x:p[0],y:p[1]}));
-  for(let i=0;i<26;i++){ let x,y,t=0; do{ x=6+Math.random()*88; y=8+Math.random()*84; t++; }while(t<20 && CLUE_POS.some(p=>Math.hypot(x-p[0],y-p[1])<9)); items.push({c:false,x:x,y:y,e:DECOS[i%DECOS.length]}); } // Mindestabstand: Deko darf kein Ziel verdecken
+  for(let i=0;i<DECON;i++){ let x,y,t=0; do{ x=6+Math.random()*88; y=8+Math.random()*84; t++; }while(t<20 && CLUE_POS.some(p=>Math.hypot(x-p[0],y-p[1])<9)); items.push({c:false,x:x,y:y,e:DECOS[i%DECOS.length]}); } // Mindestabstand: Deko darf kein Ziel verdecken
   for(let i=items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]];}
   items.forEach(it=>{ const s=document.createElement('span'); s.className='item '+(it.c?'clue':'deco'); s.style.left=it.x+'%'; s.style.top=it.y+'%'; s.textContent=it.c?'💎':it.e; s.addEventListener('click',()=>tap(s,it.c)); f.appendChild(s); });
 }
