@@ -103,7 +103,7 @@ function sharpen(frac){ const p=$('#screen').querySelector('.pic'); if(!p)return
 function flash(i){ const p=pads[i]; p.classList.add('lit'); sfx.tone(i); setTimeout(()=>p.classList.remove('lit'),FLASH_MS*0.55); }
 function nextRound(){ seq.push(Math.floor(Math.random()*4)); step=0; $('#lvl').textContent=seq.length; playSeq(); }
 function playSeq(){
-  accepting=false; $('#msg').textContent='Achtung — Signal kommt …';
+  accepting=false; step=0; $('#msg').textContent='Achtung — Signal kommt …'; // step-Reset: bei Replay nach Fehltipp wieder von vorn prüfen, sonst Desync-Endlosschleife
   let i=0; const iv=setInterval(()=>{ if(done){clearInterval(iv);return;} if(i>=seq.length){ clearInterval(iv); accepting=true; $('#msg').textContent='Jetzt du — tippe die Folge!'; return; } flash(seq[i]); i++; }, FLASH_MS);
 }
 function press(i){
@@ -128,9 +128,9 @@ function win(){
   [...document.querySelectorAll('#s-game button, #s-game .level')].forEach(b=>b.style.visibility='hidden'); // keine toten Buttons/HUD im Reveal
   const g=guestNow(); const so=$('#storyOut');
   if(HAS_PHOTO){ so.textContent='Code geknackt — die geheime Identität ist '+kid()+'! 🎉'; beat2=kidCap()+' funkt zurück: „Na endlich'+(g?', '+g:'')+'! Auf dich hab ich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
-  else { so.textContent='Code geknackt — das Helden-Emblem leuchtet auf! 🎉'; beat2='Und '+kid()+' wartet im Hauptquartier auf dich'+(g?', '+g:'')+'!'; } // nofoto: kid() als Gastgeber (kein Spiel-Verb)
+  else { so.textContent='Das Helden-Emblem leuchtet auf! 🎉'; beat2='Und '+kid()+' wartet im Hauptquartier auf dich'+(g?', '+g:'')+'!'; } // nofoto: kid() als Gastgeber (kein Spiel-Verb)
   so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Du hast das Signal entschlüsselt — die geheime Identität ist ${kid()}! Komm zur Helden-Party:`; } else { $('#winTitle').textContent='Code geknackt!'; $('#winWho').textContent=`Du hast den Code geknackt! ${kidCap()} lädt dich zur Helden-Party ein:`; } guestName();
+  if(HAS_PHOTO){ $('#winTitle').textContent='Auftrag erfüllt!'; $('#winWho').textContent=`Du hast das Signal entschlüsselt! ${kidCap()} lädt dich zur Helden-Party ein:`; } else { $('#winTitle').textContent='Auftrag erfüllt!'; $('#winWho').textContent=`Du hast den Code geknackt! ${kidCap()} lädt dich zur Helden-Party ein:`; } guestName(); // Titel entkoppelt (kein doppeltes „entschlüsselt/geknackt"); beide Pfade: Gast-Lob + kid() als Gastgeber
 }
 function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace 1150ms: kein Reflex-Tap überspringt Reveal+Beat 1
   if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
