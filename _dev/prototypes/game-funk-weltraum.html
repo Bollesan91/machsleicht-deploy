@@ -82,18 +82,21 @@ const sfx={
 };
 const GOAL=(ageNum()<=6?3:ageNum()<=9?4:5), FLASH_MS=540; // Länge nach Alter (4–6→3, 7–9→4, 10+→5)
 let seq=[], step=0, accepting=false, done=false, pads=[];
-function sharpen(frac){ const ph=$('#trans').querySelector('.tphoto'); if(!ph)return; const f=Math.max(0,Math.min(1,frac)); ph.style.filter='blur('+(14*(1-f*f)).toFixed(1)+'px) saturate('+(0.6+0.4*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; ph.style.opacity=(0.5+0.5*f).toFixed(2); } /* Blur hinten gewichtet (1-f^2): laenger unscharf, dann Snap */
+function sharpen(frac){ const ph=$('#trans').querySelector('.tphoto'); if(!ph)return; const f=Math.max(0,Math.min(1,frac)); ph.style.filter='blur('+(14*(1-f*f)).toFixed(1)+'px) saturate('+(0.6+0.4*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; ph.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); } /* Blur + Opacity hinten gewichtet (1-f^2 / f^2): Foto bleibt verhuellt, dann Snap am win() */
 function flash(i){ const p=pads[i]; p.classList.add('lit'); sfx.tone(i); setTimeout(()=>p.classList.remove('lit'),FLASH_MS*0.55); }
 function nextRound(){ seq.push(Math.floor(Math.random()*4)); step=0; playSeq(); }
 function playSeq(){ accepting=false; $('#msg').textContent='Signal kommt rein …'; let i=0; const iv=setInterval(()=>{ if(done){clearInterval(iv);return;} if(i>=seq.length){ clearInterval(iv); accepting=true; $('#msg').textContent='Jetzt du — funke zurück!'; return; } flash(seq[i]); i++; }, FLASH_MS); }
 function press(i){
   if(!accepting||done)return; flash(i);
   if(i===seq[step]){ step++; if(step===seq.length){ accepting=false; if(seq.length>=GOAL) return win(); sharpen(seq.length/GOAL); $('#msg').textContent='Signal klarer! Nächstes …'; setTimeout(nextRound,750); } }
-  else { accepting=false; sfx.buzz(); vib([30,40,30]); $('#console').classList.add('shake'); setTimeout(()=>$('#console').classList.remove('shake'),300); $('#msg').textContent='Störung — nochmal hören!'; setTimeout(playSeq,850); }
+  else { step=0; accepting=false; sfx.buzz(); vib([30,40,30]); $('#console').classList.add('shake'); setTimeout(()=>$('#console').classList.remove('shake'),300); $('#msg').textContent='Störung — nochmal hören!'; setTimeout(playSeq,850); } // step-Reset: nach Fehler wieder ab Anfang matchbar (kein Soft-Lock)
 }
 function win(){
   done=true; sfx.win(); vib([20,40,20,40,80]); $('#msg').textContent='📡 Kontakt hergestellt!'; sharpen(1); $('#trans').classList.add('clear');
-  if(HAS_PHOTO){ $('#winWho').textContent=`Am anderen Ende des Funkspruchs ist ${kid()}! Komm zur Weltraum-Party:`; } else { $('#winTitle').textContent='Kontakt!'; $('#winWho').textContent=`Vom fernen Planeten funkt ein freundliches Alien — ${kid()} hat Kontakt! Komm zur Weltraum-Party:`; } guestName();
+  $('#winTitle').textContent='Du hast Kontakt hergestellt!'; // Gast-Lob: der Gast hat die Funk-Folge geschafft
+  if(HAS_PHOTO){ $('#winWho').textContent=`Am anderen Ende des Funkspruchs ist ${kid()}! Komm zur Weltraum-Party:`; }
+  else { $('#winWho').textContent=`Ein freundliches Alien funkt aus der Ferne — du hast ${kid()} erreicht! Komm zur Weltraum-Party:`; }
+  guestName();
   setTimeout(()=>{ show('s-win'); confetti(CC); }, 1000);
 }
 pads=[...document.querySelectorAll('.pad')];

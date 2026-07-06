@@ -37,7 +37,7 @@
     <h1>Bau den Wolken-Turm<br>bis zum Regenbogen!</h1>
     <p class="sub">Eine Wolke schwebt hin und her — aber Achtung: der Zauberwind schiebt sie mal schneller, mal langsamer! Tippe im richtigen Moment. Mit jeder Etage wird das Bild am Regenbogen klarer.</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
-    <button class="btn" id="startBtn">Türmen los 🌈</button>
+    <button class="btn" id="startBtn">Turm bauen! 🌈</button>
   </section>
 
   <section class="scene" id="s-game">
@@ -77,7 +77,7 @@ const GOAL=6, LH=26;
 // Alters-Staffel: Wolken-Tempo, Perfekt-Toleranz, Rettungs-Mindestbreite
 const SPEED=(ageNum()<=6?1.2:ageNum()<=9?1.8:2.4), PERF=(ageNum()<=6?4:2), MINW=(ageNum()<=6?18:ageNum()<=9?12:10);
 let tower=[], curW=60, mx=10, mdir=1, mvT=null, done=false, busy=false;
-function sharpen(frac){ const p=$('#rbPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function sharpen(frac){ const p=$('#rbPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(f>=1?1:(f*f*f))).toFixed(2); p.style.filter='blur('+(18*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } // steilere Veil-Kurve (f^3, blur 18): Gesicht bleibt bis zum Finale verhuellt, dann Snap auf 1
 function yFor(level){ return 'calc(100% - '+((level+1)*LH+6)+'px)'; } // level 0 = unterste Etage
 function addLayerEl(left,width,level,cls){ const d=document.createElement('div'); d.className='layer'+(cls?(' '+cls):''); d.style.left=left+'%'; d.style.width=width+'%'; d.style.bottom=((level)*LH+6)+'px'; d.style.background=COLS[level%COLS.length]; $('#field').appendChild(d); return d; }
 function spawnMoving(){
@@ -109,7 +109,10 @@ function drop(){
 function fall(el,dir){ el.animate([{transform:'translateY(0) rotate(0)',opacity:.9},{transform:`translateY(160px) rotate(${dir*40}deg)`,opacity:0}],{duration:600,easing:'cubic-bezier(.4,.1,.8,1)'}); setTimeout(()=>el.remove(),600); }
 function win(){
   done=true; clearInterval(mvT); sharpen(1); $('#rbPhoto').classList.add('big'); $('#rainbow').classList.add('pulse'); sfx.perfect(); sfx.win(); vib([20,40,20,40,80]);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Mit jeder Wolke kam der Regenbogen näher — oben wartet ${kid()}! Komm zur Einhorn-Party:`; } // kein Substantiv am Anfang (guestName-Lowercase) else { $('#winTitle').textContent='Oben angekommen!'; $('#winWho').textContent=`Am Regenbogen funkelt ein Einhorn — ${kid()} ist oben angekommen! Komm zur Einhorn-Party:`; } guestName();
+  $('#winTitle').textContent='Du hast den Turm gebaut!'; // Gast-Lob: der Gast hat gestapelt
+  if(HAS_PHOTO){ $('#winWho').textContent=`Mit jeder Wolke kam der Regenbogen näher — oben wartet ${kid()}! Komm zur Einhorn-Party:`; }
+  else { $('#winWho').textContent=`Am Regenbogen funkelt ein Einhorn — ganz oben wartet ${kid()}! Komm zur Einhorn-Party:`; }
+  guestName(); // winWho nie mit Eigennamen beginnen — guestName lowercased den 1. Buchstaben
   setTimeout(()=>{ show('s-win'); confetti(CC); }, 1000);
 }
 function start(){

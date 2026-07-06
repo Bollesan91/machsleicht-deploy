@@ -75,16 +75,17 @@ function pop(b){
   if(done||b._gone)return; b._gone=true; b.classList.add('pop'); setTimeout(()=>{b.remove(); const k=bubbles.indexOf(b); if(k>=0)bubbles.splice(k,1);},200);
   popped++; sfx.pop(); vib(6);
   const f=Math.min(1,popped/GOAL); $('#fill').style.width=Math.round(f*100)+'%';
-  $('#treasure').style.bottom=(6+f*26)+'%'; $('#treasure').style.filter='brightness('+(0.38+f*0.62)+') blur('+(1.2-f*1.2)+'px)';
+  $('#treasure').style.bottom=(6+f*26)+'%'; $('#treasure').style.filter='brightness(0.25) blur(14px)'; // Verdeckung vom Fortschritt entkoppelt: Truhe steigt, Gesicht bleibt verhuellt bis surface()
   if(popped>=GOAL) surface();
 }
 function surface(){
   done=true; clearInterval(mvT); clearInterval(spawnT); bubbles.forEach(b=>b.remove()); bubbles=[];
-  $('#treasure').classList.add('up'); $('#hint').textContent=''; sfx.rise(); vib([20,40,20]);
-  setTimeout(()=>{ if(HAS_PHOTO){ $('#winWho').textContent=`Der größte Schatz im Meer ist ${kid()}! Komm zur Meerjungfrau-Party:`; } else { $('#winTitle').textContent='Aufgetaucht!'; $('#winWho').textContent=`Eine goldene Schatztruhe glitzert an der Oberfläche — darin funkelt die Einladung von ${kid()}! Komm zur Meerjungfrau-Party:`; } guestName();
+  $('#treasure').classList.add('up'); $('#treasure').style.filter='brightness(1) blur(0)'; $('#hint').textContent=''; sfx.rise(); vib([20,40,20]); // Foto knackscharf = Reveal-Hoehepunkt
+  setTimeout(()=>{ $('#winTitle').textContent='Du hast den Schatz gehoben!'; if(HAS_PHOTO){ $('#winWho').textContent=`Der größte Schatz im Meer ist ${kid()}! Komm zur Meerjungfrau-Party:`; } else { $('#winWho').textContent=`Eine goldene Schatztruhe glitzert an der Oberfläche — ${kid()} lädt dich ein! Komm zur Meerjungfrau-Party:`; } guestName();
     show('s-win'); confetti(CC); sfx.win(); vib([20,40,20,40,80]); }, 900);
 }
-$('#startBtn').addEventListener('click',()=>{ popped=0;done=false; bubbles.forEach(b=>b.remove()); bubbles=[]; $('#fill').style.width='0%'; const tr=$('#treasure'); tr.classList.remove('up'); tr.style.bottom='6%'; tr.style.filter='brightness(.38) blur(1.2px)'; $('#hint').textContent='Tipp die Luftblasen weg!'; show('s-game'); clearInterval(mvT);clearInterval(spawnT); mvT=setInterval(moveTick,55); spawnT=setInterval(spawn,BSPAWN); });
+function tip(){ if(done)return; for(let n=0;n<3 && !done;n++){ const b=bubbles.find(x=>x.parentNode && !x._gone); if(b){ pop(b); } else { popped=Math.min(GOAL,popped+1); const f=Math.min(1,popped/GOAL); $('#fill').style.width=Math.round(f*100)+'%'; $('#treasure').style.bottom=(6+f*26)+'%'; $('#treasure').style.filter='brightness(0.25) blur(14px)'; if(popped>=GOAL) surface(); } } } // No-Fail: Tipp-Knopf (core.js) poppt 3 Blasen/Druck Richtung Schatz
+$('#startBtn').addEventListener('click',()=>{ popped=0;done=false; bubbles.forEach(b=>b.remove()); bubbles=[]; $('#fill').style.width='0%'; const tr=$('#treasure'); tr.classList.remove('up'); tr.style.bottom='6%'; tr.style.filter='brightness(0.25) blur(14px)'; $('#hint').textContent='Tipp die Luftblasen weg!'; show('s-game'); clearInterval(mvT);clearInterval(spawnT); mvT=setInterval(moveTick,55); spawnT=setInterval(spawn,BSPAWN); });
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
