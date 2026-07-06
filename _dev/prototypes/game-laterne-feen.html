@@ -93,9 +93,11 @@ function liftOff(){
   setTimeout(winReveal, 1500);
 }
 function winReveal(){
-  if(HAS_PHOTO){ $('#winWho').textContent=`Der schönste Wunsch im Feenwald ist ${kid()}! Komm zur Feen-Party:`; } else { $('#winTitle').textContent='Wunsch erfüllt!'; $('#winWho').textContent=`Die Laterne strahlt heller als alle Sterne — sie trägt den Geburtstagswunsch von ${kid()}! Komm zur Feen-Party:`; } guestName();
+  $('#winTitle').textContent='Du hast die Laterne entzündet!'; // Gast-Lob: der Gast hat die Laterne zum Leuchten getippt
+  if(HAS_PHOTO){ $('#winWho').textContent=`Der schönste Wunsch im Feenwald ist ${kid()}! Komm zur Feen-Party:`; } else { $('#winWho').textContent=`Die Laterne strahlt heller als alle Sterne — sie trägt einen Geburtstagswunsch für ${kid()}! Komm zur Feen-Party:`; } guestName();
   show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]);
 }
+function tip(){ if(done)return; const s=(ageNum()<=6?12:ageNum()<=9?8:6); const n=Math.ceil(34/s); for(let i=0;i<n;i++) tap(); } // No-Fail: Tipp-Knopf (core.js) laesst die Laterne kraeftig heller werden — jedes Kind kommt zum Reveal
 $('#startBtn').addEventListener('click',()=>{prog=0;done=false;lastMile=0;$('#fill').style.width='0%';$('#glow').style.opacity='.15';$('#lantern').classList.remove('lit','up');$('#tapHint').textContent='Tipp-tipp auf die Laterne!';[...document.querySelectorAll('.fly')].forEach(f=>f.remove());flies();show('s-game');});
 $('#lantern').addEventListener('click',tap);
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});

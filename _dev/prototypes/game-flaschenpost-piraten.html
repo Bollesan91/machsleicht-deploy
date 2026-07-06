@@ -95,11 +95,13 @@ function pop(){
   setTimeout(winReveal, 1300);
 }
 function winReveal(){
+  $('#winTitle').textContent='Du hast den Korken gelöst!'; // Gast-Lob: der Gast hat die Flasche geoeffnet
   if(HAS_PHOTO){ $('#winWho').textContent=`Diese geheime Flaschenpost schickt dir ${kid()}! Komm an Bord zur Piraten-Party:`; }
-  else { $('#winTitle').textContent='Botschaft entrollt!'; $('#winWho').textContent=`Auf dem Pergament lädt ${kid()} zur Schatzsuche — Kurs auf die Party! Komm an Bord:`; }
+  else { $('#winWho').textContent=`Auf dem Pergament lädt ${kid()} zur Schatzsuche — Kurs auf die Party! Komm an Bord:`; }
   guestName();
   show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]);
 }
+function tip(){ if(done)return; const s=(ageNum()<=6?13:ageNum()<=9?9:7); const n=Math.ceil(34/s); for(let i=0;i<n;i++) tap(); } // No-Fail: Tipp-Knopf (core.js) lockert den Korken kraeftig — jedes Kind kommt zum Reveal
 $('#startBtn').addEventListener('click',()=>{prog=0;done=false;$('#fill').style.width='0%';$('#bottle').classList.remove('open');$('#tapHint').dataset.m='';$('#tapHint').textContent='Tipp-tipp auf den Korken!';show('s-game');});
 $('#bottle').addEventListener('click',tap);
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓ Ahoi!';e.target.disabled=true;confetti(CC);sfx.ding();});

@@ -22,7 +22,7 @@
   @keyframes wig{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
   .hatch{position:absolute;left:50%;top:50%;width:126px;height:126px;margin:-70px 0 0 -63px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;border:5px solid #fffdf2;box-shadow:0 6px 16px rgba(0,0,0,.3);transform:scale(.96);opacity:1;transition:transform .4s cubic-bezier(.3,1.6,.5,1);z-index:1}
   .eggBox.hatched .shellTop{transform:translateY(-140px) rotate(-18deg);opacity:0}
-  .eggBox.hatched .shellBot{transform:translateY(8px)}
+  .eggBox.hatched .shellBot{transform:translateY(8px);z-index:0}/* hinter die Foto: darf das Gesicht nicht mehr ueberlagern */
   .eggBox.hatched .hatch{animation:hpop .55s cubic-bezier(.3,1.6,.5,1) forwards}
   @keyframes hpop{0%{transform:scale(.96)}60%{transform:scale(1.12)}100%{transform:scale(1.03)}}
   .tapHint{font-size:14px;font-weight:800;opacity:.9}
@@ -78,7 +78,7 @@ let prog=0,done=false,lastCrack=0; const STEP=(ageNum()<=6?13:ageNum()<=9?9:7); 
 function speckle(){ document.querySelectorAll('.spot').forEach(s=>s.remove()); document.querySelectorAll('.shellTop,.shellBot').forEach(sh=>{ for(let i=0;i<5;i++){const s=document.createElement('div');s.className='spot';const r=5+Math.random()*9;s.style.width=s.style.height=r+'px';s.style.left=(15+Math.random()*60)+'%';s.style.top=(15+Math.random()*60)+'%';sh.appendChild(s);} }); }
 function tap(){
   if(done)return; prog=Math.min(100,prog+STEP); $('#fill').style.width=prog+'%';
-  const f=prog/100; const st=document.querySelector('.shellTop'); if(st) st.style.transform='translateY('+(-f*f*58).toFixed(1)+'px)'; // Deckel hebt sich progressiv (back-weighted) -> Gesicht taucht auf
+  const f=prog/100; const st=document.querySelector('.shellTop'); if(st) st.style.transform='translateY('+(-f*f*20).toFixed(1)+'px)'; // Deckel teasert nur den Scheitel (max 20px) -> Gesicht bleibt bis zum Hatch verdeckt, echter Reveal erst bei .hatched
   sfx.tap(prog); vib(8);
   $('#eggBox').classList.add('go'); clearTimeout(window._w); window._w=setTimeout(()=>$('#eggBox').classList.remove('go'),140);
   if(prog>=35 && lastCrack<1){lastCrack=1;sfx.crack();$('#tapHint').textContent='Es knackt …';}
@@ -91,11 +91,13 @@ function hatch(){
   setTimeout(winReveal, 900);
 }
 function winReveal(){
+  $('#winTitle').textContent='Du hast es ausgebrütet!'; // Gast-Lob: der Gast hat das Ei zum Schluepfen getippt
   if(HAS_PHOTO){ $('#winWho').textContent=`Aus dem Ei geschlüpft ist ${kid()} — heute ist Schlüpf-Tag! Komm zur Dino-Party:`; }
-  else { $('#winTitle').textContent='Geschlüpft!'; $('#winWho').textContent=`Aus dem Ei schlüpft ein kleiner Baby-Dino — ${kid()} hat heute Schlüpf-Tag! Komm zur Dino-Party:`; }
+  else { $('#winWho').textContent=`Aus dem Ei schlüpft ein kleiner Baby-Dino — ${kid()} hat heute Schlüpf-Tag! Komm zur Dino-Party:`; }
   guestName();
   show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]);
 }
+function tip(){ if(done)return; const n=Math.ceil(34/STEP); for(let i=0;i<n;i++) tap(); } // No-Fail: Tipp-Knopf (core.js) schiebt kraeftig Richtung Schluepfen — jedes Kind kommt zum Reveal
 $('#startBtn').addEventListener('click',()=>{prog=0;done=false;lastCrack=0;$('#fill').style.width='0%';$('#eggBox').classList.remove('hatched');const st=document.querySelector('.shellTop');if(st)st.style.transform='';$('#tapHint').textContent='Tipp-tipp-tipp aufs Ei!';speckle();show('s-game');});
 $('#eggBox').addEventListener('click',tap);
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
