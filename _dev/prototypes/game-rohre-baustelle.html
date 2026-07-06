@@ -11,7 +11,7 @@
   .pill{background:rgba(255,255,255,.14);padding:6px 12px;border-radius:999px}
   .board{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,#16314a,#0e2235);box-shadow:0 12px 30px rgba(0,0,0,.5);touch-action:manipulation}
   .board::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(120,180,230,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(120,180,230,.13) 1px,transparent 1px);background-size:30px 30px}
-  .board svg{position:absolute;inset:0;width:100%;height:100%}
+  .board svg{position:absolute;inset:0;width:100%;height:100%;transition:opacity .5s ease}
   /* Foto hinter der Leitung: wird mit jedem Anschluss klarer (Reveal an Mechanik gekoppelt) */
   .cphoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .6s ease,filter .6s ease;pointer-events:none}
   .node{cursor:pointer}
@@ -26,6 +26,11 @@
   #pipe.flow{stroke-dasharray:10 8;animation:flow .7s linear infinite}
   @keyframes flow{to{stroke-dashoffset:-36}}
   .board.shake{animation:sh .25s}@keyframes sh{0%,100%{transform:translateX(0)}33%{transform:translateX(-6px)}66%{transform:translateX(6px)}}
+  /* Story-Outro: Reaktion auf dem Reveal (tap-getaktet) */
+  .storyOut{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);background:rgba(255,255,255,.95);color:#10202c;font-weight:800;font-size:15px;padding:10px 16px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.35);opacity:0;transition:opacity .4s ease .7s;z-index:7;max-width:88%;text-align:center;pointer-events:none}
+  .storyOut.on{opacity:1}
+  .storyOut.on::after{content:" ▸";opacity:.65;animation:blinkA 1.2s infinite} /* Tap-Affordanz: weiter per Tipp */
+  @keyframes blinkA{50%{opacity:.15}}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fff6df,#ffe9b0);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:5px solid var(--accent-dk);position:relative}
   .invite::before{content:"💧 WASSER MARSCH 💧";position:absolute;top:-1px;left:0;right:0;background:var(--pipe);color:#06283b;font-weight:900;font-size:12px;letter-spacing:1px;padding:3px 0;border-radius:14px 14px 0 0}
@@ -40,16 +45,20 @@
 <div class="demoTag">PROTOTYP · Rohre verbinden (E3 Verbinden)</div>
 <div class="wrap">
   <section class="scene on" id="s-intro">
-    <div class="big">🔧</div>
-    <h1>Verbinde die Rohre,<br>damit das Wasser fließt!</h1>
-    <p class="sub">Tippe die Rohr-Anschlüsse der Reihe nach an — der nächste leuchtet auf. Mit jedem Anschluss taucht hinter der Leitung ein Bild auf — und wenn alles dicht ist, heißt es: Wasser marsch!</p>
-    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
-    <button class="btn" id="startBtn">Leitung legen 🔧</button>
+    <div class="big" id="pIcon">👷</div>
+    <h1 id="pTitle">Einsatz für dich!</h1>
+    <p class="sub" id="pText">…</p>
+    <button class="btn" id="nextPan">Weiter ▸</button>
+    <button class="btn" id="skipPan" style="background:rgba(255,255,255,.16);font-size:14px;padding:8px 20px">Überspringen ▸▸</button>
+    <div id="introForm" style="width:100%;flex-direction:column;align-items:center;gap:12px;display:none">
+      <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+      <button class="btn" id="startBtn">Leitung legen 🔧</button>
+    </div>
   </section>
 
   <section class="scene" id="s-game">
     <div class="hud"><span class="pill">Anschlüsse <b id="cnt">0</b>/<b id="tot">7</b></span></div>
-    <div class="board" id="board"><div class="cphoto" id="cphoto"></div><svg id="svg" viewBox="0 0 300 300"><polyline id="pipe" points=""></polyline><g id="nodes"></g></svg></div>
+    <div class="board" id="board"><div class="cphoto" id="cphoto"></div><svg id="svg" viewBox="0 0 300 300"><polyline id="pipe" points=""></polyline><g id="nodes"></g></svg><div class="storyOut" id="storyOut"></div></div>
     <p class="sub" id="hint">Tippe den blinkenden Anschluss.</p>
   </section>
 
@@ -79,15 +88,27 @@ const sfx={
   win(){const t=AC().currentTime;[392,523,659,784].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-const NODES=[[45,60],[150,60],[150,130],[235,130],[235,215],[120,215],[120,265]]; // 7 Rohr-Anschlüsse
+const NODES=[[45,60],[150,60],[150,130],[235,130],[235,215],[120,215],[120,265]]; // 7 Rohr-Anschlüsse — physische Rohr-Route (Trace), Reihenfolge folgt dem Rohr (kein Merk-Modus, das passt nur zu freier Reihenfolge)
 let next=0,done=false;
+let outroStep=0, outroT=null, beat2='', winAt=0;
+const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
+function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
+function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim(); return (v&&v.length<=20)?v:GUEST; } // Namensfeld vor URL-Param
+// Story-Intro: 3 tippbare Panels — falsche Fährte (wer leitet die Baustelle?) fürs Twist-Finale
+const PANELS=[
+  {i:'👷',t:'Einsatz für dich!',x:'Auf der großen Baustelle wartet heimlich jemand ganz Wichtiges — aber die Wasserleitung ist noch gar nicht verlegt!'},
+  {i:'🔧',t:'Verbinde die Rohre!',x:'Tippe die leuchtenden Anschlüsse der Reihe nach — Stück für Stück wächst die Leitung.'},
+  {i:'💧',t:'Wer leitet die Baustelle?',x:'Wenn alles dicht ist und das Wasser läuft, zeigt sich, wer hier das Kommando hat.'}
+];
+let pIdx=0;
+function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitle').textContent=p.t; $('#pText').textContent=p.x; const last=pIdx>=PANELS.length-1; $('#nextPan').style.display=last?'none':''; $('#skipPan').style.display=last?'none':''; $('#introForm').style.display=last?'flex':'none'; }
 function sharpen(frac){ const p=$('#cphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.25+0.75*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
 function build(){
   next=0;done=false;$('#cnt').textContent=0;$('#tot').textContent=NODES.length;$('#pipe').setAttribute('points','');$('#pipe').classList.remove('flow');sharpen(0);
   const g=$('#nodes');g.innerHTML='';
   NODES.forEach((p,i)=>{
     const el=document.createElementNS('http://www.w3.org/2000/svg','g');el.setAttribute('class','node'+(i===0?' next':''));el.dataset.i=i;
-    el.innerHTML=`<circle class="ring" cx="${p[0]}" cy="${p[1]}" r="14"></circle><circle class="bolt" cx="${p[0]}" cy="${p[1]}" r="5"></circle><text x="${p[0]}" y="${p[1]-22}">${i+1}</text>`;
+    el.innerHTML=`<circle class="ring" cx="${p[0]}" cy="${p[1]}" r="14"></circle><circle class="bolt" cx="${p[0]}" cy="${p[1]}" r="5"></circle>`;
     el.addEventListener('click',()=>tap(i));
     g.appendChild(el);
   });
@@ -103,11 +124,26 @@ function tap(i){
 }
 function win(){
   done=true;sharpen(1);$('#hint').textContent='Wasser läuft …';$('#pipe').classList.add('flow');sfx.flow();vib([20,40,20,40,80]);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Deine Leitung steht dicht — und dahinter wartet ${kid()}! Komm zur Baustellen-Party:`; } else {$('#winTitle').textContent='Wasser marsch!';$('#winWho').textContent=`Deine Leitung ist dicht, das Wasser rauscht! ${kid()} lädt dich zur Baustellen-Party ein:`;} guestName();
-  setTimeout(()=>{ show('s-win');confetti(CC);sfx.win(); }, 750);
+  [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility='hidden'); // keine toten Buttons (Tipp) im Finale
+  setTimeout(()=>{ // Reveal ist der Höhepunkt: Leitung fadet, Foto flutet die Szene
+    $('#svg').style.opacity='0'; $('#hint').textContent='';
+    sfx.win();vib([20,40,20,40,80]);confetti(CC); // Fanfare + Konfetti AM Reveal, nicht auf der Karte
+    const g=guestNow(); const so=$('#storyOut');
+    if(HAS_PHOTO){ so.textContent='Das Wasser rauscht — die Baustelle gehört '+kid()+'! 🎉'; beat2=kidCap()+' strahlt: „Na endlich'+(g?', '+g:'')+'! Auf dich hab ich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
+    else { so.textContent='Das Wasser rauscht durch die frische Leitung! 🎉'; beat2='Und '+kid()+' wartet auf der Baustelle auf dich'+(g?', '+g:'')+'!'; } // nofoto: Rätsel aufgelöst, kid() als Gastgeber (kein Spiel-Verb)
+    so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
+    if(HAS_PHOTO){ $('#winWho').textContent=`Deine Leitung steht dicht — und dahinter wartet ${kid()}! Komm zur Baustellen-Party:`; } else {$('#winTitle').textContent='Wasser marsch!';$('#winWho').textContent=`Deine Leitung ist dicht, das Wasser rauscht! ${kid()} lädt dich zur Baustellen-Party ein:`;} guestName();
+  }, 750);
 }
+function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace 1150ms: volle Beat-1-Einblendung, kein Reflex-Tap überspringt Reveal+Beats
+  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
+  else { outroStep=0; show('s-win'); } } // tap-getaktet (Fallback Beat 1 11s, Beat 2 14s); Konfetti nur AM Reveal
 function tip(){ if(!done && document.querySelector('.node[data-i="'+next+'"]')) tap(next); } // Tipp: nächsten Anschluss für dich verbinden (Guard: vor build() kein Ziel)
-$('#startBtn').addEventListener('click',()=>{build();show('s-game');$('#hint').textContent='Tippe den blinkenden Anschluss.';});
+$('#nextPan').addEventListener('click',()=>{ if(pIdx<PANELS.length-1){ pIdx++; showPan(); } });
+$('#skipPan').addEventListener('click',()=>{ pIdx=PANELS.length-1; showPan(); });
+$('#board').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap die Story-Beats
+$('#startBtn').addEventListener('click',()=>{ AC(); build();show('s-game');$('#hint').textContent='Tippe den blinkenden Anschluss.'; }); // AC(): iOS-Audio-Unlock per Geste
+showPan();
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
