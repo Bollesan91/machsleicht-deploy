@@ -76,7 +76,7 @@ const sfx={
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
 let collected=0, done=false, spawnT=null, live=[];
-function sharpen(frac){ const p=$('#dustPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function sharpen(frac){ const p=$('#dustPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
 function flyToPhoto(el){ try{ const pr=$('#dustPhoto').getBoundingClientRect(), er=el.getBoundingClientRect(); el.animate([{transform:'translate(-50%,-50%)'},{transform:'translate(calc(-50% + '+(pr.left+pr.width/2-er.left-er.width/2)+'px), calc(-50% + '+(pr.top+pr.height/2-er.top-er.height/2)+'px)) scale(.3)',opacity:0}],{duration:260,easing:'ease-in'}); }catch(e){} } // Funke fliegt sichtbar ins Bild
 function bgStars(){ const s=$('#sky'); for(let i=0;i<18;i++){const d=document.createElement('div');d.className='bgstar';d.style.left=Math.random()*96+'%';d.style.top=Math.random()*92+'%';d.style.animationDelay=(Math.random()*2.6)+'s';s.appendChild(d);} }
 function spawnSpark(){

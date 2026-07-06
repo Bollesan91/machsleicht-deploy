@@ -77,7 +77,7 @@ const GOAL=6, LH=26;
 // Alters-Staffel: Wolken-Tempo, Perfekt-Toleranz, Rettungs-Mindestbreite
 const SPEED=(ageNum()<=6?1.2:ageNum()<=9?1.8:2.4), PERF=(ageNum()<=6?4:2), MINW=(ageNum()<=6?18:ageNum()<=9?12:10);
 let tower=[], curW=60, mx=10, mdir=1, mvT=null, done=false, busy=false;
-function sharpen(frac){ const p=$('#rbPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function sharpen(frac){ const p=$('#rbPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
 function yFor(level){ return 'calc(100% - '+((level+1)*LH+6)+'px)'; } // level 0 = unterste Etage
 function addLayerEl(left,width,level,cls){ const d=document.createElement('div'); d.className='layer'+(cls?(' '+cls):''); d.style.left=left+'%'; d.style.width=width+'%'; d.style.bottom=((level)*LH+6)+'px'; d.style.background=COLS[level%COLS.length]; $('#field').appendChild(d); return d; }
 function spawnMoving(){

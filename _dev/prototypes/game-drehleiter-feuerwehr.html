@@ -86,7 +86,7 @@ const TARGETS=[28,52,74];
 // Alters-Staffel: Schwung-Tempo + Treffer-Toleranz
 const SW_STEP=(ageNum()<=6?0.85:ageNum()<=9?1.2:1.55), TOL=(ageNum()<=6?17:ageNum()<=9?13:9);
 let ang=20, adir=1, swingT=null, rescued=0, done=false, busy=false;
-function sharpen(frac){ const p=$('#gable'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function sharpen(frac){ const p=$('#gable'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
 function renderLadder(){ const lad=$('#ladder'); lad.style.transform='rotate(-'+ang+'deg)'; lad.style.height=(36+ang*0.7)+'%'; }
 function glowNear(){ if(done)return; const w=document.querySelectorAll('.win')[rescued]; if(!w)return; const near=Math.max(0,1-Math.abs(ang-TARGETS[rescued])/28); w.style.boxShadow='0 0 '+(8+near*28)+'px '+(2+near*7)+'px rgba(255,205,80,'+(0.35+near*0.55)+')'; }
 function litWindow(){ document.querySelectorAll('.win').forEach((w,i)=>{ w.classList.toggle('lit', i===rescued && !w.classList.contains('saved')); }); }

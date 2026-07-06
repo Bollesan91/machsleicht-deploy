@@ -85,7 +85,7 @@ function stars(){ const s=$('#field'); for(let i=0;i<20;i++){const d=document.cr
 let power=0,pdir=1,gaugeT=null,hits=0,busy=false,done=false;
 // Alters-Staffel: Zeiger-Tempo + Zonenbreite
 const STEP=(ageNum()<=6?3.5:ageNum()<=9?5:6.5), ZONE_LO=(ageNum()<=6?48:ageNum()<=9?55:60), ZONE_HI=(ageNum()<=6?88:ageNum()<=9?85:82);
-function sharpen(frac){ const p=$('#skySignal'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function sharpen(frac){ const p=$('#skySignal'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
 function startGauge(){ power=0;pdir=1; const z=document.querySelector('.gauge .zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; clearInterval(gaugeT); gaugeT=setInterval(()=>{ if(done)return; power+=pdir*STEP; if(power>=100){power=100;pdir=-1;} if(power<=0){power=0;pdir=1;} $('#pin').style.left=power+'%'; },45); }
 function nextMeteor(){ const m=$('#meteor'); m.className='meteor'; m.style.opacity='1'; m.style.transform='translateX(-50%)'; m.style.left=(28+Math.random()*44)+'%'; $('#ign').textContent='Meteor im Anflug!'; }
 function fire(){

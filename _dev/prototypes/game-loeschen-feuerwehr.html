@@ -122,7 +122,13 @@ function reveal(){
     if(HAS_PHOTO){ $('#winTitle').textContent='Star enttarnt!'; $('#winWho').textContent=`Aus dem Qualm taucht der geheime Star auf — das ist ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winTitle').textContent='Einsatz geschafft!'; $('#winWho').textContent=`Der Brand ist aus, alle sind wohlauf — ${kid()} lädt dich zur Feuerwehr-Party ein:`; } guestName();
   }, 900);
 }
-let moveCount=0;
+let moveCount=0,tipRow=0;
+function tip(){ if(done||!ctx)return; // No-Fail: raeumt pro Druck einen Qualm-Streifen frei -> ein paar Tipps loesen sicher (Kleinkind-tauglich); core.js haengt den Tipp-Knopf an, weil tip() existiert
+  ctx.globalCompositeOperation='destination-out';
+  const bandH=RES/5, y0=(tipRow%5)*bandH;
+  for(let x=-R; x<=RES+R; x+=R){ ctx.beginPath(); ctx.arc(x, y0+bandH/2, R*1.35, 0, 7); ctx.fill(); }
+  tipRow++; sfx.brush(); vib(6); progress();
+}
 function onMove(ev){ if(!drawing||done)return; ev.preventDefault(); const[x,y]=ptToCanvas(ev); erodeAt(x,y); sfx.brush(); if(++moveCount%6===0){vib(4);progress();} }
 function initBoard(){
   cv=$('#sand');ctx=cv.getContext('2d');fillFlames();
@@ -131,7 +137,7 @@ function initBoard(){
   cv.onpointerup=cv.onpointercancel=()=>{drawing=false;if(!done)progress();};
 }
 $('#board').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap die Story-Beats
-$('#startBtn').addEventListener('click',()=>{ AC(); outroStep=0; moveCount=0; drawing=false; clearTimeout(outroT); $('#storyOut').classList.remove('on'); show('s-game'); setTimeout(initBoard,30); $('#hint').textContent='Wisch den Qualm mit dem Finger weg!'; }); // AC(): iOS-Audio-Unlock per Geste
+$('#startBtn').addEventListener('click',()=>{ AC(); outroStep=0; moveCount=0; tipRow=0; drawing=false; clearTimeout(outroT); $('#storyOut').classList.remove('on'); show('s-game'); setTimeout(initBoard,30); $('#hint').textContent='Wisch den Qualm mit dem Finger weg!'; }); // AC(): iOS-Audio-Unlock per Geste
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>

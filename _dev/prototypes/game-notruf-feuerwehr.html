@@ -83,7 +83,7 @@ const sfx={
 };
 // GEHEIMER, NICHT-REALER Funk-Code (bewusst KEINE Notrufnummer) — Stufe-2-Fix.
 const CODE=[5,2,9]; let pos=0, done=false, busy=false;
-function sharpen(frac){ const p=$('#monPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function sharpen(frac){ const p=$('#monPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
 function buildSlots(){ const s=$('#slots'); s.innerHTML=''; CODE.forEach(n=>{ const d=document.createElement('div'); d.className='slot target'; d.textContent=n; s.appendChild(d); }); }
 function markNext(){ document.querySelectorAll('#dial .hole').forEach(h=>h.classList.toggle('pulse', !done && pos<CODE.length && +h.textContent===CODE[pos])); }
 function buildDial(){

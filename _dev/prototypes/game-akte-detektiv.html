@@ -95,7 +95,7 @@ const QUESTIONS=[
   { q:'Was löst jede Spürnase zum großen Schluss?', opts:[['🧊','das Eis'],['🥜','eine Nuss'],['🔐','den Fall']], correct:2 }
 ];
 let qi=0, solved=0, done=false;
-function sharpen(frac){ const p=$('#dphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.65+0.35*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function sharpen(frac){ const p=$('#dphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.65+0.35*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
 function renderQ(){
   const Q=QUESTIONS[qi];
   $('#qnum').textContent='Frage '+(qi+1)+' / '+QUESTIONS.length;

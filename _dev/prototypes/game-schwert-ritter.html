@@ -75,7 +75,7 @@ const sfx={
 let forge=0, glow=0, gdir=1, hot=false, glowT=null, done=false;
 // Alters-Staffel: Glut-Schwelle — jüngere Kinder treffen das Glut-Fenster öfter
 const HOT=(ageNum()<=6?45:ageNum()<=9?58:66);
-function sharpen(frac){ const p=$('#mirror'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function sharpen(frac){ const p=$('#mirror'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
 function render(){ const b=$('#blade'); b.classList.toggle('hot',hot); const tg=$('#glowtag'); tg.textContent=hot?'JETZT — es glüht!':'… erhitzt …'; tg.classList.toggle('now',hot); }
 function startGlow(){ clearInterval(glowT); glow=0;gdir=1; glowT=setInterval(()=>{ if(done)return; glow+=gdir*7; if(glow>=100){glow=100;gdir=-1;} if(glow<=0){glow=0;gdir=1;} hot=glow>=HOT; render(); },60); }
 function ember(){ const f=$('#forge'); for(let i=0;i<(hot?7:3);i++){ const e=document.createElement('div'); e.className='ember'; e.style.left='50%'; e.style.top='52%'; f.appendChild(e); const a=Math.random()*6.28,d=30+Math.random()*60; e.animate([{transform:'translate(-50%,-50%)',opacity:1},{transform:'translate('+(Math.cos(a)*d)+'px,'+(-Math.abs(Math.sin(a))*d-20)+'px)',opacity:0}],{duration:420+Math.random()*200}); setTimeout(()=>e.remove(),650); } }

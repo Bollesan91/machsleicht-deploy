@@ -79,7 +79,7 @@ const GOAL=6, HROW=80; const GOODS=['🎈','⭐','🧸','🍎','🎁'];
 // Alters-Staffel: Fallgeschwindigkeit, Spawn-Takt, Fangradius, Gut-Quote
 const FALL=(ageNum()<=6?3.4:ageNum()<=9?4.5:5.6), SPAWN=(ageNum()<=6?1000:ageNum()<=9?820:650), RADIUS=(ageNum()<=6?15:ageNum()<=9?12:9), GQUOTE=(ageNum()<=6?0.82:ageNum()<=9?0.72:0.62);
 let heroX=50, items=[], saved=0, done=false, mvT=null, spawnT=null;
-function sharpen(frac){ const p=$('#billboard'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function sharpen(frac){ const p=$('#billboard'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
 function setHero(){ $('#hero2').style.left=heroX+'%'; }
 function steer(dx){ if(done)return; heroX=Math.max(8,Math.min(92,heroX+dx)); setHero(); }
 function spawn(atX){ if(done)return; const good=(atX!==undefined)?true:(Math.random()<GQUOTE); const x=(atX!==undefined)?atX:12+Math.random()*76; const el=document.createElement('div'); el.className='drop '+(good?'good':'bad'); el.textContent=good?GOODS[Math.floor(Math.random()*GOODS.length)]:'🪨'; el.style.left=x+'%'; el.style.top=(atX!==undefined?'40%':'-6%'); el._x=x; el._y=(atX!==undefined?40:-6); el._good=good; $('#sky').appendChild(el); items.push(el); }

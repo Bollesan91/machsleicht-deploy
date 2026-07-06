@@ -112,7 +112,7 @@ $('#nextPan').addEventListener('click',()=>{ AC(); pIdx=Math.min(pIdx+1,PANELS.l
 $('#skipPan').addEventListener('click',()=>{ AC(); pIdx=PANELS.length-1; showPan(); });
 showPan();
 let cleared=0, done=false, swinging=false, moveT=null, spawnT=null, spawnInitT=null, vines=[], vineCount=0, dblArm=false, dblUntil=0;
-function sharpen(frac){ const p=$('#hutphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.55+0.45*f).toFixed(2)+')';
+function sharpen(frac){ const p=$('#hutphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.55+0.45*f).toFixed(2)+')';
   const hu=$('#hut'); if(hu) hu.style.right=(-14+18*f).toFixed(1)+'%'; } // hinten gewichtet (1-f^2); Hütte fährt mit dem Fortschritt ins Bild („wir nähern uns dem Baumhaus")
 function spawnVine(){ if(done)return; const v=document.createElement('div'); v.className='vine'; v._x=106; v.style.left='106%'; vineCount++; if(DBL && vineCount%3===0){ v._double=true; v.innerHTML='<span>🌿🌿</span>'; } else { v.innerHTML='<span>🌿</span>'; } $('#track').appendChild(v); vines.push(v); }
 function stumble(){ $('#swinger').classList.add('miss'); setTimeout(()=>$('#swinger').classList.remove('miss'),300); sfx.stumble(); vib([10,30]); }

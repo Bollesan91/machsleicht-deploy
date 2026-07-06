@@ -105,7 +105,7 @@ $('#nextPan').addEventListener('click',()=>{ AC(); pIdx=Math.min(pIdx+1,PANELS.l
 $('#skipPan').addEventListener('click',()=>{ AC(); pIdx=PANELS.length-1; showPan(); });
 showPan();
 let cleared=0, done=false, jumping=false, moveT=null, spawnT=null, spawnInitT=null, hurdles=[];
-function sharpen(frac){ const p=$('#goalphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')';
+function sharpen(frac){ const p=$('#goalphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')';
   const fi=$('#finish'); if(fi) fi.style.right=(-12+16*f).toFixed(1)+'%'; } // hinten gewichtet (1-f^2); Zieltor fährt mit dem Fortschritt ins Bild („die Ziellinie naht")
 function spawnHurdle(){ if(done)return; const h=document.createElement('div'); h.className='hurdle'; h._x=106; h.style.left='106%'; h.textContent='⛩️'; $('#track').appendChild(h); hurdles.push(h); }
 function stumble(){ $('#horse').classList.add('stumble'); setTimeout(()=>$('#horse').classList.remove('stumble'),300); sfx.stumble(); vib([10,30]); }

@@ -85,7 +85,7 @@ const LANES=3, LANE_X=[16.6,50,83.3], ANIMALS=['🦒','🦓','🐘'];
 // Alters-Staffel: jüngere Kinder = schneller am Ziel, langsamere Hindernisse, mildere Bumps
 const ADV=(ageNum()<=6?2.0:ageNum()<=9?1.5:1.2), FALL=(ageNum()<=6?3.8:ageNum()<=9?5:6.2), SPAWN=(ageNum()<=6?950:ageNum()<=9?720:560), MALUS=(ageNum()<=6?3:ageNum()<=9?5:7);
 let laneIdx=1, progress=0, snaps=0, done=false, moveT=null, spawnT=null, obs=[];
-function sharpen(frac){ const p=$('#goalPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.3+0.7*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function sharpen(frac){ const p=$('#goalPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
 function setDigger(){ $('#digger').style.left=LANE_X[laneIdx]+'%'; }
 function steer(dir){ if(done)return; const n=Math.max(0,Math.min(LANES-1,laneIdx+dir)); if(n!==laneIdx){ laneIdx=n; setDigger(); sfx.steer(); vib(8); } }
 function setProg(){ $('#prog').style.width=progress+'%'; $('#pct').textContent=Math.round(progress); sharpen(progress/100); if(progress>=100 && !done) winSeq(); }
