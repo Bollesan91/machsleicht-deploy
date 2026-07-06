@@ -23,7 +23,7 @@
   .stone.next circle{opacity:.95;animation:sp 1s infinite}
   @keyframes sp{0%,100%{r:7}50%{r:10}}
   .stone text{fill:#2a1040;font-size:11px;font-weight:800;text-anchor:middle;dominant-baseline:central;pointer-events:none}
-  .uni{position:absolute;left:4%;bottom:6%;font-size:36px;z-index:5;transition:left 1.4s ease,bottom 1.4s ease,opacity .5s ease;filter:drop-shadow(0 3px 4px rgba(0,0,0,.4))}
+  .uni{position:absolute;left:4%;bottom:6%;font-size:36px;z-index:5;transform:scaleX(-1);transition:left 1.4s ease,bottom 1.4s ease,opacity .5s ease;filter:drop-shadow(0 3px 4px rgba(0,0,0,.4))} /* scaleX(-1): 🦄 schaut default nach links, trabt aber nach rechts → spiegeln (wie 🐎) */
   .sky.shake{animation:sh .25s}@keyframes sh{0%,100%{transform:translateX(0)}33%{transform:translateX(-6px)}66%{transform:translateX(6px)}}
   /* Story-Outro: Lunas Reaktion auf dem Reveal (tap-getaktet) */
   .storyOut{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);background:rgba(255,255,255,.94);color:#2a1040;font-weight:800;font-size:15px;padding:10px 16px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.35);opacity:0;transition:opacity .4s ease .7s;z-index:7;max-width:88%;text-align:center;pointer-events:none}
@@ -56,7 +56,7 @@
   </section>
 
   <section class="scene" id="s-game">
-    <div class="hud"><span class="pill">Farben 🌈 <b id="cnt">0</b>/7</span></div>
+    <div class="hud"><span class="pill">Farben 🌈 <b id="cnt">0</b>/<b id="tot">7</b></span></div>
     <div class="sky" id="sky">
       <div class="cphoto" id="cphoto"></div>
       <svg id="svg" viewBox="0 0 300 200"><g id="bands"></g><g id="stones"></g></svg>
@@ -94,6 +94,7 @@ const sfx={
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
 const CX=150, CY=178; const R0=140, DR=15; // 7 Bögen von außen (rot) nach innen (violett)
+const NCOL=(ageNum()<=6?5:ageNum()<=9?6:7); // Alters-Staffel: jüngere bauen einen kürzeren Regenbogen (weniger Bögen)
 const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
 // Story-Intro: Luna führt in 3 tippbaren Panels zur Mission — falsche Fährte (das kostbarste Wesen) fürs Twist-Finale
 const PANELS=[
@@ -116,9 +117,9 @@ function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTim
 function sharpen(frac){ const p=$('#cphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.25+0.75*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
 function arcPath(r){ return `M ${CX-r} ${CY} A ${r} ${r} 0 0 1 ${CX+r} ${CY}`; }
 function build(){
-  next=0;done=false;$('#cnt').textContent=0; sharpen(0); $('#uni').style.left='4%'; $('#uni').style.bottom='6%'; $('#uni').style.opacity=''; $('#svg').style.opacity='';
+  next=0;done=false;$('#cnt').textContent=0;$('#tot').textContent=NCOL; sharpen(0); $('#uni').style.left='4%'; $('#uni').style.bottom='6%'; $('#uni').style.opacity=''; $('#svg').style.opacity='';
   const bg=$('#bands'); bg.innerHTML=''; const sg=$('#stones'); sg.innerHTML='';
-  COLORS.forEach((col,i)=>{
+  COLORS.slice(0,NCOL).forEach((col,i)=>{
     const r=R0-i*DR;
     const p=document.createElementNS('http://www.w3.org/2000/svg','path');
     p.setAttribute('class','band'+(i===0?' next':'')); p.setAttribute('d',arcPath(r)); p.setAttribute('stroke','#fff'); p.dataset.i=i;
@@ -135,8 +136,8 @@ function tap(i){
   if(i!==next){ sfx.wrong();vib([25,30,25]);$('#sky').classList.add('shake');setTimeout(()=>$('#sky').classList.remove('shake'),250);return; }
   const band=$('.band[data-i="'+i+'"]'); band.setAttribute('stroke',COLORS[i]); band.classList.add('lit'); band.classList.remove('next');
   const st=$('.stone[data-i="'+i+'"]'); st.classList.add('lit'); st.classList.remove('next');
-  sfx.fill(i);vib(10);next++;$('#cnt').textContent=next;sharpen(next/COLORS.length);
-  if(next<COLORS.length){ $('.band[data-i="'+next+'"]').classList.add('next'); $('.stone[data-i="'+next+'"]').classList.add('next'); }
+  sfx.fill(i);vib(10);next++;$('#cnt').textContent=next;sharpen(next/NCOL);
+  if(next<NCOL){ $('.band[data-i="'+next+'"]').classList.add('next'); $('.stone[data-i="'+next+'"]').classList.add('next'); }
   else win();
 }
 function win(){
@@ -150,7 +151,7 @@ function win(){
     if(HAS_PHOTO){ so.textContent='Luna wiehert: Das kostbarste Wesen ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
     else { so.textContent='Luna wiehert: Am Ende der Brücke funkelt das Einhorn selbst! 🎉'; beat2='Und '+kid()+' wartet drüben auf dich zur Einhorn-Party'+(g?', '+g:'')+'!'; } // nofoto: Rätsel aufgelöst, kid() als Gastgeber (kein Spiel-Verb)
     so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
-    if(HAS_PHOTO){ $('#winTitle').textContent='Brücke fertig!'; $('#winWho').textContent=`Am Ende des Regenbogens wartet ${kid()}! Komm zur Einhorn-Party:`; } else { $('#winTitle').textContent='Brücke fertig!'; $('#winWho').textContent=`Die Regenbogen-Brücke steht — ${kid()} lädt dich zur Einhorn-Party ein:`; } guestName();
+    if(HAS_PHOTO){ $('#winTitle').textContent='Brücke fertig!'; $('#winWho').textContent=`Am Ende des Regenbogens wartet ${kid()}! Komm zur Einhorn-Party:`; } else { $('#winTitle').textContent='Brücke fertig!'; $('#winWho').textContent=`Deine Regenbogen-Brücke steht — ${kid()} lädt dich zur Einhorn-Party ein:`; } guestName();
   }, 1500);
 }
 $('#sky').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap die Story-Beats
