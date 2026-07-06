@@ -19,6 +19,11 @@
   .pad.lit{opacity:1;box-shadow:0 0 22px 4px currentColor, 0 6px 0 rgba(0,0,0,.35);transform:scale(1.03)}
   .p0{background:#e63946;color:#ff8d96}.p1{background:#457b9d;color:#a9d2ec}.p2{background:#ffd166;color:#fff0c0}.p3{background:#06d6a0;color:#9bffe2}
   .screen.shake{animation:scs .3s}@keyframes scs{0%,100%{transform:translateX(0)}33%{transform:translateX(-7px)}66%{transform:translateX(7px)}}
+  /* Story-Outro: Reaktion auf dem Reveal (tap-getaktet) — unten am Schirm, verdeckt NIE das Gesicht */
+  .storyOut{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);background:rgba(6,12,28,.86);color:#eaf1ff;font-weight:800;font-size:14px;padding:9px 14px;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.45);opacity:0;transition:opacity .4s ease .5s;z-index:5;max-width:92%;text-align:center;pointer-events:none}
+  .storyOut.on{opacity:1}
+  .storyOut.on::after{content:" ▸";opacity:.7;animation:blinkA 1.2s infinite} /* Tap-Affordanz */
+  @keyframes blinkA{50%{opacity:.15}}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#eef3ff,#cdd9f7);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.45);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:144px;height:144px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#1a1f33;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -32,16 +37,20 @@
 <div class="demoTag">PROTOTYP · Helden-Signal (E11 Simon)</div>
 <div class="wrap">
   <section class="scene on" id="s-intro">
-    <div class="big">🦸</div>
-    <h1>Entschlüssle das<br>Helden-Signal!</h1>
-    <p class="sub">Die Leitzentrale funkt eine geheime Signalfolge. Merk sie dir und tippe sie nach — mit jedem richtigen Signal tritt die Geheimidentität auf dem Schirm deutlicher hervor, bis der Code geknackt ist!</p>
-    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
-    <button class="btn" id="startBtn">Funk empfangen 📡</button>
+    <div class="big" id="pIcon">📡</div>
+    <h1 id="pTitle">Funkspruch für dich!</h1>
+    <p class="sub" id="pText">…</p>
+    <button class="btn" id="nextPan">Weiter ▸</button>
+    <button class="btn" id="skipPan" style="background:rgba(255,255,255,.16);font-size:14px;padding:8px 20px">Überspringen ▸▸</button>
+    <div id="introForm" style="width:100%;flex-direction:column;align-items:center;gap:12px;display:none">
+      <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+      <button class="btn" id="startBtn">Funk empfangen 📡</button>
+    </div>
   </section>
 
   <section class="scene" id="s-game">
     <div class="level"><span class="pill" style="background:rgba(0,0,0,.3);padding:6px 12px;border-radius:999px">Signal <b id="lvl">1</b>/<b id="lvlmax">5</b></span></div>
-    <div class="screen" id="screen"><div class="pic"></div><div class="msg" id="msg">Achtung — Signal kommt …</div></div>
+    <div class="screen" id="screen"><div class="pic"></div><div class="msg" id="msg">Achtung — Signal kommt …</div><div class="storyOut" id="storyOut"></div></div>
     <div class="pad-wrap">
       <button class="pad p0" data-i="0">⚡</button>
       <button class="pad p1" data-i="1">🛡️</button>
@@ -78,6 +87,18 @@ const sfx={
 };
 const GOAL=(ageNum()<=6?3:ageNum()<=9?4:5), FLASH_MS=520; // Länge nach Alter (4–6→3, 7–9→4, 10+→5)
 let seq=[], step=0, accepting=false, done=false, pads=[];
+let outroStep=0, outroT=null, beat2='', winAt=0;
+const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
+function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
+function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim(); return (v&&v.length<=20)?v:GUEST; } // Namensfeld vor URL-Param
+// Story-Intro: 3 tippbare Panels — falsche Fährte (wer steckt dahinter?) fürs Twist-Finale; geschlechtsneutral
+const PANELS=[
+  {i:'📡',t:'Funkspruch für dich!',x:'Die Leitzentrale funkt ein geheimes Signal — dahinter verbirgt sich eine echte Heldin oder ein echter Held. Aber der Code ist noch verschlüsselt!'},
+  {i:'🎧',t:'Hör gut zu!',x:'Achte auf die Signalfolge und tippe sie nach — mit jedem richtigen Signal wird das Bild auf dem Schirm klarer.'},
+  {i:'🦸',t:'Wer steckt dahinter?',x:'Wenn der Code geknackt ist, zeigt der Schirm, wer die geheime Identität ist.'}
+];
+let pIdx=0;
+function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitle').textContent=p.t; $('#pText').textContent=p.x; const last=pIdx>=PANELS.length-1; $('#nextPan').style.display=last?'none':''; $('#skipPan').style.display=last?'none':''; $('#introForm').style.display=last?'flex':'none'; }
 function sharpen(frac){ const p=$('#screen').querySelector('.pic'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.22+0.78*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.55+0.45*f).toFixed(2)+')'; } /* Blur hinten gewichtet (1-f^2) */
 function flash(i){ const p=pads[i]; p.classList.add('lit'); sfx.tone(i); setTimeout(()=>p.classList.remove('lit'),FLASH_MS*0.55); }
 function nextRound(){ seq.push(Math.floor(Math.random()*4)); step=0; $('#lvl').textContent=seq.length; playSeq(); }
@@ -102,13 +123,25 @@ function press(i){
   }
 }
 function win(){
-  done=true; sharpen(1); $('#screen').classList.add('reveal'); $('#msg').textContent='IDENTITÄT ENTSCHLÜSSELT'; sfx.win(); vib([20,40,20,40,80]);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Du hast das Signal entschlüsselt — die geheime Identität ist ${kid()}! Komm zur Helden-Party:`; } else { $('#winTitle').textContent='Code geknackt!'; $('#winWho').textContent=`Du hast den Code geknackt! ${kid()} lädt dich zur Helden-Party ein:`; } guestName();
-  setTimeout(()=>{ show('s-win'); confetti(CC); }, 1100);
+  done=true; sharpen(1); $('#screen').classList.add('reveal'); sfx.win(); vib([20,40,20,40,80]); confetti(CC); // Fanfare + Konfetti AM Reveal
+  $('#msg').textContent=''; // Gesicht-Guard: kein zentraler Text übers Foto — Beats laufen unten via storyOut
+  [...document.querySelectorAll('#s-game button, #s-game .level')].forEach(b=>b.style.visibility='hidden'); // keine toten Buttons/HUD im Reveal
+  const g=guestNow(); const so=$('#storyOut');
+  if(HAS_PHOTO){ so.textContent='Code geknackt — die geheime Identität ist '+kid()+'! 🎉'; beat2=kidCap()+' funkt zurück: „Na endlich'+(g?', '+g:'')+'! Auf dich hab ich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
+  else { so.textContent='Code geknackt — das Helden-Emblem leuchtet auf! 🎉'; beat2='Und '+kid()+' wartet im Hauptquartier auf dich'+(g?', '+g:'')+'!'; } // nofoto: kid() als Gastgeber (kein Spiel-Verb)
+  so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
+  if(HAS_PHOTO){ $('#winWho').textContent=`Du hast das Signal entschlüsselt — die geheime Identität ist ${kid()}! Komm zur Helden-Party:`; } else { $('#winTitle').textContent='Code geknackt!'; $('#winWho').textContent=`Du hast den Code geknackt! ${kidCap()} lädt dich zur Helden-Party ein:`; } guestName();
 }
+function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace 1150ms: kein Reflex-Tap überspringt Reveal+Beat 1
+  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
+  else { outroStep=0; show('s-win'); } } // tap-getaktet (Fallback Beat 1 11s, Beat 2 14s)
 pads=[...document.querySelectorAll('.pad')];
 pads.forEach((p,i)=>p.addEventListener('click',()=>press(+p.dataset.i)));
-$('#startBtn').addEventListener('click',()=>{ seq=[];step=0;done=false;accepting=false;$('#screen').classList.remove('reveal');sharpen(0);$('#lvlmax').textContent=GOAL;$('#lvl').textContent=1;show('s-game');setTimeout(nextRound,500); });
+$('#nextPan').addEventListener('click',()=>{ if(pIdx<PANELS.length-1){ pIdx++; showPan(); } });
+$('#skipPan').addEventListener('click',()=>{ pIdx=PANELS.length-1; showPan(); });
+$('#screen').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap auf den Schirm die Story-Beats — Pads/Tipp liegen außerhalb #screen, also kein Bubble-Doppel-Advance
+$('#startBtn').addEventListener('click',()=>{ AC(); seq=[];step=0;done=false;accepting=false;outroStep=0;clearTimeout(outroT);$('#storyOut').classList.remove('on');$('#msg').textContent='Achtung — Signal kommt …';[...document.querySelectorAll('#s-game button, #s-game .level')].forEach(b=>b.style.visibility='');$('#screen').classList.remove('reveal');sharpen(0);$('#lvlmax').textContent=GOAL;$('#lvl').textContent=1;show('s-game');setTimeout(nextRound,500); }); // AC(): iOS-Audio-Unlock per Geste
+showPan();
 $('#tippBtn').addEventListener('click',()=>{ if(accepting && !done) press(seq[step]); }); // Tipp: naechstes richtiges Signal
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
