@@ -103,7 +103,7 @@ function press(i){
 }
 function win(){
   done=true; sharpen(1); $('#screen').classList.add('reveal'); $('#msg').textContent='IDENTITÄT ENTSCHLÜSSELT'; sfx.win(); vib([20,40,20,40,80]);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Die geheime Superkraft heißt ${kid()}! Komm zur Helden-Party:`; } else { $('#winTitle').textContent='Code geknackt!'; $('#winWho').textContent=`Das Helden-Emblem leuchtet auf — ${kid()} hat den Code geknackt! Komm zur Helden-Party:`; } guestName();
+  if(HAS_PHOTO){ $('#winWho').textContent=`Du hast das Signal entschlüsselt — die geheime Identität ist ${kid()}! Komm zur Helden-Party:`; } else { $('#winTitle').textContent='Code geknackt!'; $('#winWho').textContent=`Du hast den Code geknackt! ${kid()} lädt dich zur Helden-Party ein:`; } guestName();
   setTimeout(()=>{ show('s-win'); confetti(CC); }, 1100);
 }
 pads=[...document.querySelectorAll('.pad')];
