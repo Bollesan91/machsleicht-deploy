@@ -103,7 +103,7 @@ function tap(i){
 }
 function win(){
   done=true;sharpen(1);$('#hint').textContent='Wasser läuft …';$('#pipe').classList.add('flow');sfx.flow();vib([20,40,20,40,80]);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Die Leitung steht — ${kid()} hat die Baustelle im Griff! Komm zur Baustellen-Party:`; } else {$('#winTitle').textContent='Wasser marsch!';$('#winWho').textContent=`Das Wasser rauscht durch die frische Leitung — ${kid()} hat alles dicht gekriegt! Komm zur Baustellen-Party:`;} guestName();
+  if(HAS_PHOTO){ $('#winWho').textContent=`Deine Leitung steht dicht — und dahinter wartet ${kid()}! Komm zur Baustellen-Party:`; } else {$('#winTitle').textContent='Wasser marsch!';$('#winWho').textContent=`Deine Leitung ist dicht, das Wasser rauscht! ${kid()} lädt dich zur Baustellen-Party ein:`;} guestName();
   setTimeout(()=>{ show('s-win');confetti(CC);sfx.win(); }, 750);
 }
 function tip(){ if(!done && document.querySelector('.node[data-i="'+next+'"]')) tap(next); } // Tipp: nächsten Anschluss für dich verbinden (Guard: vor build() kein Ziel)
