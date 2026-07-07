@@ -92,7 +92,7 @@ function moveTick(){ if(done)return; for(const it of items.slice()){ it._y+=FALL
   }
   if(it._y>108){ it.remove(); const k=items.indexOf(it); if(k>=0)items.splice(k,1); } } }
 function winSeq(){ done=true; clearInterval(mvT); clearInterval(spawnT); sharpen(1); $('#billboard').classList.add('big'); const h2=$('#hero2'); h2.style.transition='bottom .6s ease'; h2.style.bottom='42%'; sfx.win(); vib([20,40,20,40,80]);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Sechs Rettungen — auf der Stadt-Leinwand strahlt ${kid()}! Komm zur Superhelden-Party:`; } else { $('#winTitle').textContent='Stadt gerettet!'; $('#winWho').textContent=`Über den Dächern leuchtet das Helden-Zeichen — ${kid()} hat die Stadt gerettet! Komm zur Superhelden-Party:`; } guestName();
+  $('#winTitle').textContent='Du hast die Stadt gerettet!'; if(HAS_PHOTO){ $('#winWho').textContent=`Sechs Rettungen — auf der Stadt-Leinwand strahlt ${kid()}! Komm zur Superhelden-Party:`; } else { $('#winWho').textContent=`Über den Dächern leuchtet das Helden-Zeichen — und ${kid()} lädt dich ein! Komm zur Superhelden-Party:`; } guestName();
   setTimeout(()=>{ show('s-win'); confetti(CC); }, 900);
 }
 // Tipp sichtbar: Held fliegt unter das nächste gute Teil (oder eins erscheint über ihm) und fängt es echt

@@ -83,8 +83,9 @@ function layout(){
 }
 function winSeq(){
   done=true; sharpen(1); sfx.win(); vib([20,40,20,40,80]);
+  $('#winTitle').textContent='Du hast alle Papageien gefunden!';
   if(HAS_PHOTO){ $('#winWho').textContent=`Im Baumhaus wartet die größte Entdeckung — das ist ${kid()}! Komm zur Dschungel-Party:`; }
-  else { $('#winTitle').textContent='Alle entdeckt!'; $('#winWho').textContent=`Im Baumhaus wartet schon der Dschungel-Tiger — ${kid()} hat alle Papageien gefunden! Komm zur Dschungel-Party:`; }
+  else { $('#winWho').textContent=`Im Baumhaus wartet schon der Dschungel-Tiger — und ${kid()} lädt dich ein! Komm zur Dschungel-Party:`; }
   guestName();
   setTimeout(()=>{ show('s-win'); confetti(CC); }, 650);
 }
