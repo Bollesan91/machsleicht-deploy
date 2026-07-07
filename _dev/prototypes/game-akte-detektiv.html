@@ -92,7 +92,7 @@ const sfx={
 const QUESTIONS=[
   { q:'Welche Spur führt den Detektiv zur geheimen Party?', opts:[['🐾','Fußspuren'],['🌧️','eine Regenwolke'],['📚','ein Bücherregal']], correct:0 },
   { q:'Womit sucht ein guter Detektiv nach winzigen Hinweisen?', opts:[['🥄','mit dem Löffel'],['🔍','mit der Lupe'],['🧦','mit der Socke']], correct:1 },
-  { q:'Was löst jede Spürnase zum großen Schluss?', opts:[['🧊','das Eis'],['🥜','eine Nuss'],['🔐','den Fall']], correct:2 }
+  { q:'Was löst jede Spürnase zum großen Schluss?', opts:[['🧊','das Eis'],['🥜','eine Nuss'],['🔓','den Fall']], correct:2 } /* 🔓 offen = geloest/geknackt, passt zur Mechanik (vorher 🔐 zugesperrt = rueckwaerts) */
 ];
 let qi=0, solved=0, done=false, busy=false;
 function sharpen(frac){ const p=$('#dphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:f>=1?1:(0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+(f>=1?0:8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.65+0.35*f).toFixed(2)+')'; } // Gesicht zuletzt: f^3 + Blur-Floor 8 haelt bis zum letzten Balken verschleiert

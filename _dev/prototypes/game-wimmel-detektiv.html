@@ -15,7 +15,7 @@
   .item{position:absolute;transform:translate(-50%,-50%);font-size:23px;cursor:pointer;filter:drop-shadow(0 1px 1px rgba(0,0,0,.5));transition:transform .12s;user-select:none}
   .item.deco{opacity:.92}
   .item.deco.miss{animation:wob .3s}@keyframes wob{0%,100%{transform:translate(-50%,-50%) rotate(0)}33%{transform:translate(-50%,-50%) rotate(-12deg)}66%{transform:translate(-50%,-50%) rotate(12deg)}}
-  .item.clue{font-size:20px}
+  .item.clue{font-size:28px} /* Suchziel groesser als Deko (23px) -> fuer 4-J. findbar statt kleiner als das Rauschen */
   .item.clue.got{animation:found .5s forwards;pointer-events:none;z-index:5}
   @keyframes found{0%{transform:translate(-50%,-50%) scale(1)}40%{transform:translate(-50%,-50%) scale(1.7)}100%{transform:translate(-50%,-50%) scale(1.25)}}
   .item.clue.got::after{content:"✓";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:15px;color:#37c46e;font-weight:900;text-shadow:0 0 4px #000}
@@ -89,7 +89,7 @@ function layout(){
 function winSeq(){
   done=true; sharpen(1); document.querySelectorAll('.item').forEach(e=>{e.style.opacity='0';e.style.pointerEvents='none';}); sfx.win(); vib([20,40,20,40,80]); // Lupen-Overlays am Reveal ausblenden: duerfen das Gesicht nicht verdecken
   $('#winTitle').textContent='Du hast den Fall gelöst!'; // Gast-Lob: der Gast hat die Hinweise gefunden
-  if(HAS_PHOTO){ $('#winWho').textContent=`Die geheime Überraschungs-Party ist für ${kid()}! Komm zur Detektiv-Party:`; } // startet mit Artikel, nicht mit Nomen — guestName() klein-schreibt sonst "fall"
+  if(HAS_PHOTO){ $('#winWho').textContent=`Die geheime Hauptperson ist ${kid()} — und lädt dich ein! Komm zur Detektiv-Party:`; } // Artikel-Start (guestName klein-schreibt sonst); kid = aktiver Einlader, konsistent mit NOFOTO
   else { $('#winWho').textContent=`Der Fall ist gelöst — und ${kid()} lädt dich ein! Komm zur Detektiv-Party:`; }
   guestName();
   setTimeout(()=>{ show('s-win'); confetti(CC); }, 650);

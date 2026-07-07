@@ -31,6 +31,7 @@
   /* Foto-Hoehepunkt auf der Gewinnkarte (Tresor-Blitz war nur ~100ms) */
   .invite .hero{width:132px;height:132px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--gold);background-image:var(--photo);background-size:cover;background-position:center;background-color:#160c22;box-shadow:0 8px 22px rgba(0,0,0,.4);position:relative;animation:heropop .6s cubic-bezier(.3,1.5,.5,1)}
   .invite .hero::after{content:"👑";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:32px}
+  .invite .hero.nophoto::after{content:none} /* NOFOTO-Avatar ist selbst eine Krone -> keine zweite ::after-Krone */
   @keyframes heropop{from{transform:scale(.3) rotate(-6deg);opacity:0}to{transform:none;opacity:1}}
 </style>
 </head>
@@ -75,6 +76,7 @@
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#160c22'/><path d='M40 130 L55 70 L80 105 L100 60 L120 105 L145 70 L160 130 Z' fill='#e6c15a' stroke='#a87f14' stroke-width='3'/><rect x='40' y='130' width='120' height='16' rx='4' fill='#caa24a'/><circle cx='55' cy='70' r='8' fill='#7fd3ff'/><circle cx='100' cy='60' r='9' fill='#ff7fb0'/><circle cx='145' cy='70' r='8' fill='#7fffa8'/><circle cx='70' cy='150' r='6' fill='#fff'/><circle cx='100' cy='152' r='7' fill='#fff'/><circle cx='130' cy='150' r='6' fill='#fff'/></svg>`);
 const THEME={ photo:'/birthday-photo.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+if(!HAS_PHOTO){const _h=document.querySelector('.invite .hero'); if(_h)_h.classList.add('nophoto');} // Doppelkrone-Fix: NOFOTO-Krone-Avatar bekommt keine zweite ::after-Krone
 const CC=['#e6c15a','#37c46e','#a35cff','#fff','#ff7fb0'];
 const sfx={click(){note(520,AC().currentTime,0.04,{type:'square',vol:0.08,glideTo:380});},wrong(){note(200,AC().currentTime,0.16,{type:'sawtooth',vol:0.1,glideTo:140});},right(){const t=AC().currentTime;note(660,t,0.1,{type:'sine',vol:0.14});note(990,t+0.08,0.18,{type:'sine',vol:0.13});},open(){const t=AC().currentTime;note(120,t,0.3,{type:'sine',vol:0.2,glideTo:60});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
 let code=[],guess=[0,0,0],tries=0,cracked=false;
@@ -85,7 +87,7 @@ function build(){
   for(let i=0;i<3;i++){const col=document.createElement('div');col.className='dial';
     col.innerHTML=`<button data-i="${i}" data-dir="1">▲</button><div class="num" id="n${i}">0</div><button data-i="${i}" data-dir="-1">▼</button>`;
     d.appendChild(col);}
-  d.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.i,dir=+b.dataset.dir;guess[i]=(guess[i]+dir+10)%10;$('#n'+i).textContent=guess[i];sfx.click();vib(6);}));
+  d.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.i,dir=+b.dataset.dir;guess[i]=(guess[i]+dir+10)%10;$('#n'+i).textContent=guess[i];$('#n'+i).style.color='';sfx.click();vib(6);})); // Stale-Green weg: Wegdrehen von einer bestätigten Stelle löscht das grüne Feedback sofort
   $('#safe').classList.remove('open');
 }
 function crack(){
@@ -104,7 +106,7 @@ function winReveal(){
   guestName();
   show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]);
 }
-function tip(){ if(cracked||$('#safe').classList.contains('open'))return; const i=guess.findIndex((g,ix)=>g!==code[ix]); if(i<0) return crack(); guess[i]=code[i]; $('#n'+i).textContent=guess[i]; sfx.right(); vib(10); $('#hint').textContent='Ein Rädchen rastet ein …'; } // Tipp: eine Stelle für dich einstellen
+function tip(){ if(cracked||$('#safe').classList.contains('open'))return; const i=guess.findIndex((g,ix)=>g!==code[ix]); if(i<0) return crack(); guess[i]=code[i]; $('#n'+i).textContent=guess[i]; $('#n'+i).style.color=''; sfx.right(); vib(10); $('#hint').textContent='Ein Rädchen rastet ein …'; } // Tipp: eine Stelle für dich einstellen
 $('#startBtn').addEventListener('click',()=>{build();show('s-game');});
 $('#crackBtn').addEventListener('click',crack);
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
