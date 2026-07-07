@@ -76,13 +76,13 @@ const sfx={
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
 let collected=0, done=false, spawnT=null, live=[];
-function sharpen(frac){ const p=$('#dustPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function sharpen(frac){ const p=$('#dustPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:f>=1?1:(0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+(f>=1?0:8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Gesicht zuletzt: f^3 + Blur-Floor 8, erst der letzte Funke loest auf
 function flyToPhoto(el){ try{ const pr=$('#dustPhoto').getBoundingClientRect(), er=el.getBoundingClientRect(); el.animate([{transform:'translate(-50%,-50%)'},{transform:'translate(calc(-50% + '+(pr.left+pr.width/2-er.left-er.width/2)+'px), calc(-50% + '+(pr.top+pr.height/2-er.top-er.height/2)+'px)) scale(.3)',opacity:0}],{duration:260,easing:'ease-in'}); }catch(e){} } // Funke fliegt sichtbar ins Bild
 function bgStars(){ const s=$('#sky'); for(let i=0;i<18;i++){const d=document.createElement('div');d.className='bgstar';d.style.left=Math.random()*96+'%';d.style.top=Math.random()*92+'%';d.style.animationDelay=(Math.random()*2.6)+'s';s.appendChild(d);} }
 function spawnSpark(){
   if(done)return; const x=10+Math.random()*80, y=18+Math.random()*64;
   const el=document.createElement('div'); el.className='spark'; el.textContent='✨'; el.style.left=x+'%'; el.style.top=y+'%';
-  el._drift=setTimeout(()=>{ el.style.transition='opacity .5s'; el.style.opacity='0'; setTimeout(()=>{ el.remove(); const k=live.indexOf(el); if(k>=0)live.splice(k,1); },500); }, DRIFT);
+  el._drift=setTimeout(()=>{ el.style.transition='opacity .5s'; el.style.opacity='0'; el.style.pointerEvents='none'; setTimeout(()=>{ el.remove(); const k=live.indexOf(el); if(k>=0)live.splice(k,1); },500); }, DRIFT); // pointer-events aus: verblassender Funke ist kein unsichtbares Tap-Ziel mehr
   el.addEventListener('click',()=>collect(el));
   $('#sky').appendChild(el); live.push(el);
 }
@@ -97,7 +97,10 @@ function collect(el){
 }
 function winSeq(){
   done=true; clearInterval(spawnT); live.forEach(e=>{clearTimeout(e._drift);e.remove();}); live=[]; sharpen(1); $('#dustPhoto').classList.add('big'); $('#wand').style.filter='drop-shadow(0 0 26px rgba(255,210,77,1))'; vib([20,40,20,40,80]);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Alle Funken gesammelt — der Sternenstaub formt ein Bild: ${kid()}! Komm zur Einhorn-Party:`; } else {$('#winTitle').textContent='Zauberstab leuchtet!';$('#winWho').textContent=`Der Sternenstaub wirbelt zum Einhorn — ${kid()} hat den Zauber gewirkt! Komm zur Einhorn-Party:`;} guestName();
+  $('#winTitle').textContent='Du hast allen Sternenstaub gefangen!'; // Gast-Lob: der Gast hat die Funken gefangen
+  if(HAS_PHOTO){ $('#winWho').textContent=`Alle Funken gesammelt — der Sternenstaub formt ein Bild: ${kid()}! Komm zur Einhorn-Party:`; }
+  else { $('#winWho').textContent=`Der Sternenstaub wirbelt zum Einhorn — du hast den Zauber für ${kid()} gewirkt! Komm zur Einhorn-Party:`; } // Gast=Zauberer, kid nur eingeladen
+  guestName();
   setTimeout(()=>{ show('s-win');confetti(CC);sfx.win(); }, 900);
 }
 // Tipp sichtbar: ein Funke fliegt echt ins Sternenstaub-Bild

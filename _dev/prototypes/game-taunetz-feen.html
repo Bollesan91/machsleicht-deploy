@@ -75,7 +75,7 @@ const sfx={
 const DOTS=[[150,60],[212,104],[196,182],[120,210],[58,176],[44,100],[150,135]]; // 7 Tropfen (Netz-Ringe)
 // Twist „dem Licht folgen": Reihenfolge wird gemischt, geführt wird NUR über Puls + Ton — kein Zahlen-Abzählen (spielbar ab 4)
 let next=0,done=false,ORDER=[];
-function sharpen(frac){ const p=$('#cphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function sharpen(frac){ const p=$('#cphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:f>=1?1:(0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+(f>=1?0:8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Gesicht zuletzt: f^3 + Blur-Floor 8, erst der letzte Tropfen loest auf
 function build(){
   next=0;done=false;$('#cnt').textContent=0;$('#tot').textContent=DOTS.length;$('#line').setAttribute('points','');sharpen(0);
   const g=$('#strands');g.innerHTML='';
@@ -99,7 +99,10 @@ function tap(i){
 }
 function win(){
   done=true;sharpen(1);$('#hint').textContent='';vib([20,40,20,40,80]);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Im ganzen Feenwald funkelt niemand so wie ${kid()}! Komm zur Feen-Party:`; } else {$('#winTitle').textContent='Netz komplett!';$('#winWho').textContent=`Im funkelnden Tau-Netz sitzt eine kleine Fee — ${kid()} hat es geknüpft! Komm zur Feen-Party:`;} guestName();
+  $('#winTitle').textContent='Du hast das Tau-Netz verbunden!'; // Gast-Lob: der Gast hat die Tropfen verbunden
+  if(HAS_PHOTO){ $('#winWho').textContent=`Im ganzen Feenwald funkelt niemand so wie ${kid()}! Komm zur Feen-Party:`; }
+  else { $('#winWho').textContent=`Im funkelnden Tau-Netz sitzt eine kleine Fee — du hast es für ${kid()} geknüpft! Komm zur Feen-Party:`; } // Gast=Knuepfer, kid nur eingeladen
+  guestName();
   setTimeout(()=>{ show('s-win');confetti(CC);sfx.win(); }, 600);
 }
 function tip(){ if(!done && ORDER.length && document.querySelector('.dot[data-i="'+ORDER[next]+'"]')) tap(ORDER[next]); } // Tipp: leuchtenden Tropfen für dich verbinden (Guard: vor build() kein Ziel)
