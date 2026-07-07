@@ -15,12 +15,12 @@
   .rocket{position:relative;width:96px;margin-bottom:12%;cursor:pointer;user-select:none;transition:transform 1.4s cubic-bezier(.4,0,.5,1)}
   .rbody{width:76px;height:138px;margin:0 auto;border-radius:38px 38px 14px 14px;background:linear-gradient(100deg,#cdd9f0,#9fb0d0);box-shadow:inset -6px 0 10px rgba(0,0,0,.2);position:relative}
   /* Bullauge: der Captain wird mit jedem Schub besser sichtbar (Reveal an Mechanik gekoppelt) */
-  .rwindow{position:absolute;left:50%;top:26px;width:56px;height:56px;margin-left:-28px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;border:4px solid #7a8aa8;filter:brightness(.5) blur(3px);transition:filter .3s}
+  .rwindow{position:absolute;left:50%;top:26px;width:56px;height:56px;margin-left:-28px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;border:4px solid #7a8aa8;filter:brightness(.35) blur(8px);transition:filter .4s}/* staerker verhuellt bis zum Start */
   .fin{position:absolute;bottom:0;width:22px;height:34px;background:#e0533a}.fin.l{left:-8px;border-radius:0 0 0 18px}.fin.r{right:-8px;border-radius:0 0 18px 0}
   .flame{position:absolute;left:50%;top:138px;width:34px;margin-left:-17px;height:0;background:radial-gradient(circle at 50% 0,#fff,#ffd24d 30%,#ff7a2c 70%,transparent);border-radius:0 0 20px 20px;transition:height .12s}
   .ign{position:absolute;top:7%;font-size:14px;font-weight:800;letter-spacing:1px}
   .ign.now{color:#bfe0ff;text-shadow:0 0 10px #6aa8ff}
-  .rocket.lit .rwindow{filter:brightness(1)}
+  .rocket.lit .rwindow{filter:brightness(1) blur(0)}/* Snap scharf am Start = Reveal-Hoehepunkt */
   .rocket.up{transform:translateY(-260px) scale(.9)}
   .tapHint{font-size:14px;font-weight:800;opacity:.9}
   /* Reveal */
@@ -101,7 +101,10 @@ function launch(){
   setTimeout(winReveal, 1600);
 }
 function winReveal(){
-  if(HAS_PHOTO){ $('#winWho').textContent=`Im Bullauge winkt der Captain — das ist ${kid()}! Komm zur Weltraum-Party:`; } else { $('#winTitle').textContent='Abgehoben!'; $('#winWho').textContent=`Die Rakete rauscht ins All — ${kid()} hebt ab! Komm zur Weltraum-Party:`; } guestName();
+  $('#winTitle').textContent='Du hast die Rakete gezündet!'; // Gast-Lob: der Gast hat den Startschub aufgeladen
+  if(HAS_PHOTO){ $('#winWho').textContent=`Im Bullauge winkt der Captain — das ist ${kid()}! Komm zur Weltraum-Party:`; }
+  else { $('#winWho').textContent=`Die Rakete rauscht ins All — an Bord winkt ${kid()}! Komm zur Weltraum-Party:`; }
+  guestName();
   show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]);
 }
 $('#startBtn').addEventListener('click',()=>{ thrust=0;done=false; $('#fill').style.width='0%'; $('#flame').style.height='8px'; $('#rocket').classList.remove('lit','up'); document.querySelector('.rwindow').style.filter='brightness(.5) blur(3px)'; [...document.querySelectorAll('.star')].forEach(s=>s.remove()); stars(); show('s-game'); startGlow(); });

@@ -99,8 +99,11 @@ function fire(){
 }
 function winSeq(){
   done=true; clearInterval(gaugeT); $('#fireBtn').disabled=true;
-  setTimeout(()=>{ $('#field').classList.add('open'); sfx.hit(); vib(60);
-    if(HAS_PHOTO){ $('#winWho').textContent=`Auf dem Thron sitzt ${kid()}! Komm zum Ritterturnier:`; } else {$('#winTitle').textContent='Burg erobert!';$('#winWho').textContent=`Hinter dem Tor wartet die Ritterrüstung — ${kid()} hat die Burg erobert! Komm zur Ritter-Party:`;} guestName();
+  setTimeout(()=>{ $('#field').classList.add('open'); const cz=$('#cracks'); if(cz) cz.innerHTML=''; sfx.hit(); vib(60); // Risse-Layer am Reveal leeren: darf das Gesicht nicht ueberlagern
+    $('#winTitle').textContent='Du hast die Burg erobert!'; // Gast-Lob: der Gast hat die Tore geknackt
+    if(HAS_PHOTO){ $('#winWho').textContent=`Auf dem Thron sitzt ${kid()}! Komm zum Ritterturnier:`; }
+    else { $('#winWho').textContent=`Hinter dem Tor glänzt die Ritterrüstung — du hast die Burg für ${kid()} erobert! Komm zur Ritter-Party:`; }
+    guestName();
     setTimeout(()=>{ show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]); }, 850);
   }, 250);
 }
