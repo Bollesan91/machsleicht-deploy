@@ -72,7 +72,7 @@ const sfx={find(){const t=AC().currentTime;note(660,t,0.1,{type:'triangle',vol:0
 const DECOS=['📚','📎','🗂️','🔑','☎️','🖊️','📌','📐','🧾','🗝️','📰','🕰️','🧷','📓','🔦','🧮','📁','✏️','🖇️','📇','🗃️','🔒','📋','🖍️','🖌️','📒','🗒️','🪧'];
 const CLUE_POS=[[20,24],[72,30],[44,52],[80,70],[26,80]];
 let found=0,done=false;
-function sharpen(frac){ const p=document.querySelector('#field .fieldphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function sharpen(frac){ const p=document.querySelector('#field .fieldphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:f>=1?1:(0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+(f>=1?0:8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Gesicht zuletzt: f^3 + Blur-Floor 8 haelt bis zum 4. Fund verschleiert, erst der 5. loest auf
 function tap(el,isClue){
   if(done)return;
   if(isClue){ if(el.classList.contains('got'))return; el.classList.add('got'); found++; $('#cnt').textContent=found; sharpen(found/5); sfx.find(); vib(15); if(found>=5) winSeq(); }
@@ -87,9 +87,10 @@ function layout(){
   const scan=document.createElement('div'); scan.className='scan'; f.appendChild(scan);
 }
 function winSeq(){
-  done=true; sharpen(1); sfx.win(); vib([20,40,20,40,80]);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Fall gelöst: Die Torte war für die Überraschungs-Party von ${kid()} reserviert! Komm zur Detektiv-Party:`; }
-  else { $('#winTitle').textContent='Fall gelöst!'; $('#winWho').textContent=`Der Fall ist gelöst — und gefeiert wird bei ${kid()}! Komm zur Detektiv-Party:`; }
+  done=true; sharpen(1); document.querySelectorAll('.item').forEach(e=>{e.style.opacity='0';e.style.pointerEvents='none';}); sfx.win(); vib([20,40,20,40,80]); // Lupen-Overlays am Reveal ausblenden: duerfen das Gesicht nicht verdecken
+  $('#winTitle').textContent='Du hast den Fall gelöst!'; // Gast-Lob: der Gast hat die Hinweise gefunden
+  if(HAS_PHOTO){ $('#winWho').textContent=`Die geheime Überraschungs-Party ist für ${kid()}! Komm zur Detektiv-Party:`; } // startet mit Artikel, nicht mit Nomen — guestName() klein-schreibt sonst "fall"
+  else { $('#winWho').textContent=`Der Fall ist gelöst — und ${kid()} lädt dich ein! Komm zur Detektiv-Party:`; }
   guestName();
   setTimeout(()=>{ show('s-win'); confetti(CC); }, 650);
 }

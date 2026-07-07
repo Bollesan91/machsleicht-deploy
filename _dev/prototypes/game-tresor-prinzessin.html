@@ -21,13 +21,17 @@
   .knob{position:absolute;right:-2px;top:50%;transform:translateY(-50%);width:26px;height:60px;border-radius:8px;background:linear-gradient(90deg,#8a8490,#5a5560);box-shadow:inset 0 0 0 2px #000}
   /* Inneres = Slot-Reveal */
   .vault{position:absolute;inset:14px;border-radius:12px;background:radial-gradient(circle at 50% 40%,#3a2150,#160c22);display:flex;align-items:center;justify-content:center;z-index:1;overflow:hidden}
-  .vault .pic{width:64%;aspect-ratio:1;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;border:5px solid var(--gold);box-shadow:0 0 26px rgba(230,193,90,.7)}
+  .vault .pic{position:relative;z-index:3;width:64%;aspect-ratio:1;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;border:5px solid var(--gold);box-shadow:0 0 26px rgba(230,193,90,.7)}/* z-index 3 > sparks: Gesicht nie verdeckt */
   .vault .spark{position:absolute;color:var(--gold);font-size:20px;opacity:0;animation:tw 1.6s infinite}
   @keyframes tw{0%,100%{opacity:0;transform:scale(.6)}50%{opacity:1;transform:scale(1.1)}}
   /* Reveal-Karte */
   .invite{width:100%;background:linear-gradient(170deg,#fff7ef,#f0e4d0);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:250px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+  /* Foto-Hoehepunkt auf der Gewinnkarte (Tresor-Blitz war nur ~100ms) */
+  .invite .hero{width:132px;height:132px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--gold);background-image:var(--photo);background-size:cover;background-position:center;background-color:#160c22;box-shadow:0 8px 22px rgba(0,0,0,.4);position:relative;animation:heropop .6s cubic-bezier(.3,1.5,.5,1)}
+  .invite .hero::after{content:"👑";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:32px}
+  @keyframes heropop{from{transform:scale(.3) rotate(-6deg);opacity:0}to{transform:none;opacity:1}}
 </style>
 </head>
 <body>
@@ -36,7 +40,7 @@
   <section class="scene on" id="s-intro">
     <div class="big">👑</div>
     <h1>Die Kronjuwelen<br>sind verschwunden!</h1>
-    <p class="sub">Im königlichen Tresor steckt der Beweis. Knack den 3-stelligen Code — die Anzeige sagt dir, wie viele Stellen schon stimmen.</p>
+    <p class="sub">Im königlichen Tresor steckt der Beweis. Knack den 3-stelligen Code — die Anzeige zeigt dir, welche Stellen schon stimmen.</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">An den Tresor 🔓</button>
   </section>
@@ -56,7 +60,7 @@
 
   <section class="scene" id="s-win">
     <div class="invite">
-      <div style="font-size:46px">👑</div>
+      <div class="hero"></div>
       <h2 id="winTitle">Geknackt!</h2>
       <p class="who" id="winWho">Der Tresor ist offen! Komm zur Prinzessinnen-Party:</p>
       <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Im Schloss (Stadtpark)</dd></dl>
@@ -92,10 +96,11 @@ function crack(){
   if(correct===3){ cracked=true; $('#hint').textContent='ENTRIEGELT!'; sfx.right(); setTimeout(openSafe,300); }
   else { $('#hint').textContent=correct+' von 3 Stellen stimmen'; sfx.wrong(); vib([30,40,30]); $('#door').animate([{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'translateX(0)'}],{duration:240}); }
 }
-function openSafe(){ $('#safe').classList.add('open'); sfx.open(); vib(60); setTimeout(winReveal,900); }
+function openSafe(){ $('#safe').classList.add('open'); sfx.open(); vib(60); setTimeout(winReveal,1800); } // laenger im offenen Tresor verweilen: Gesicht wird bewundert, bevor die Karte kommt
 function winReveal(){
+  $('#winTitle').textContent='Du hast den Tresor geknackt!'; // Gast-Lob: der Gast hat den Code geknackt
   if(HAS_PHOTO){ $('#winWho').textContent=`Der Tresor springt auf — die geheime Hauptperson ist ${kid()}! Komm zur Prinzessinnen-Party:`; }
-  else { $('#winTitle').textContent='Geknackt!'; $('#winWho').textContent=`Die Kronjuwelen funkeln im Tresor — der Fall der Party von ${kid()} ist gelöst! Komm zur Prinzessinnen-Party:`; }
+  else { $('#winWho').textContent=`Die Kronjuwelen funkeln im Tresor — und ${kid()} lädt dich ein! Komm zur Prinzessinnen-Party:`; }
   guestName();
   show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]);
 }
