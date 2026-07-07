@@ -22,7 +22,7 @@
    ============================================================ */
 
 const $=s=>document.querySelector(s);
-const show=id=>{document.querySelectorAll('.scene').forEach(e=>e.classList.remove('on'));$('#'+id).classList.add('on')};
+const show=id=>{document.querySelectorAll('.scene').forEach(e=>e.classList.remove('on'));$('#'+id).classList.add('on');try{_idleArm(10000)}catch(e){}};
 
 /* ===== WebAudio: synthetisierte Game-Sounds (self-contained) ===== */
 let actx;
@@ -64,7 +64,7 @@ function ageNum(){const a=parseInt(new URLSearchParams(location.search).get('age
    ?nofoto erzwingt den Ohne-Foto-Pfad. Die per-Spiel Titel/Text-Umschrift bleibt im Spiel. ===== */
 function setPhoto(theme,nophoto){
   const photo=(theme&&theme.photo)||'';
-  const HAS_PHOTO=!!photo && !location.search.includes('nofoto');
+  const HAS_PHOTO=!!photo && !new URLSearchParams(location.search).has('nofoto');
   document.documentElement.style.setProperty('--photo',`url("${HAS_PHOTO?photo:nophoto}")`);
   return HAS_PHOTO;
 }
@@ -80,6 +80,28 @@ window.addEventListener('DOMContentLoaded',function(){
     b.addEventListener('click',function(){ try{tip()}catch(e){} }); g.appendChild(b);
   } }catch(e){}
 });
+
+/* ===== Idle-Nudge (No-Fail-Netz fuer sehr junge/passive Kinder): Ist #s-game sichtbar und tip() definiert,
+   pulsiert nach ~10s Inaktivitaet der Tipp-Button, nach weiteren ~8s loest tip() automatisch aus.
+   Jede Interaktion (pointerdown/keydown) setzt zurueck -> ein engagiertes Kind wird nie genudged.
+   Nach dem ersten Auto-Tipp schnellerer Takt (~5s), damit ein voellig passives Kind bis zum Reveal
+   getragen wird. tip() self-guardet (if(done)return), auto-Tipp nach Win ist also folgenlos.
+   In show() angehaengt: bei show('s-game') scharf, bei jedem anderen Szenenwechsel gestoppt. ===== */
+let _idleTimer=null;
+function _sgameOn(){ const g=document.getElementById('s-game'); return !!(g&&g.classList.contains('on')&&typeof tip==='function'); }
+function _idleStop(){ if(_idleTimer){clearTimeout(_idleTimer);_idleTimer=null;} const b=document.getElementById('tippBtn'); if(b)b.classList.remove('nudge'); }
+function _idleArm(delay){
+  _idleStop();
+  if(!_sgameOn()) return;
+  _idleTimer=setTimeout(function(){
+    const b=document.getElementById('tippBtn'); if(b)b.classList.add('nudge');
+    _idleTimer=setTimeout(function(){
+      if(_sgameOn()){ try{tip()}catch(e){} }
+      _idleArm(5000);
+    }, 8000);
+  }, delay||10000);
+}
+['pointerdown','keydown'].forEach(function(ev){ document.addEventListener(ev,function(){ if(_sgameOn())_idleArm(10000); }, true); });
 
 /* ===== Konfetti: colors PFLICHT (per-Spiel-Palette). opts: {count=80, timeout=3300, durSpread=1.4}. ===== */
 function confetti(colors,opts={}){
