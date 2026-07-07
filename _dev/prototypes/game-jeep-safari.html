@@ -45,13 +45,13 @@
   <section class="scene on" id="s-intro">
     <div class="big">🚙</div>
     <h1>Fahr den Safari-Jeep zum Camp!</h1>
-    <p class="sub">Steuere mit den Pfeilen nach links und rechts. Weiche Felsen 🪨 und Kakteen 🌵 aus — aber fahr nah an die Tiere heran: dein Fotoapparat knipst sie automatisch! Je weiter du kommst, desto klarer wird das Bild am Camp-Schild.</p>
+    <p class="sub">Steuere mit den Pfeilen nach links und rechts. Am Wegesrand stehen Tiere 🦒🦓🐘 — fahr auf ihre Seite, dann knipst dein Fotoapparat sie ganz von allein! Weiche den Felsen 🪨 und Kakteen 🌵 in der Mitte aus. Knipse alle Tiere, dann bist du im Camp.</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Motor starten 🔑</button>
   </section>
 
   <section class="scene" id="s-game">
-    <div class="hud"><span>Strecke <b id="pct">0</b>% · 📸 Tier-Fotos <b id="snaps">0</b></span><div class="bar"><i id="prog"></i></div></div>
+    <div class="hud"><span>📸 Tiere geknipst: <b id="snaps">0</b> / <b id="goalN">3</b></span><div class="bar"><i id="prog"></i></div></div>
     <div class="field" id="field">
       <div class="edge le"></div><div class="edge re"></div>
       <div class="lane l1"></div><div class="lane l2"></div>
@@ -82,21 +82,29 @@ const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#e0a23a','#37c46e','#6a8a3a','#fff','#a86f17'];
 const sfx={steer(){note(420,AC().currentTime,0.07,{type:'square',vol:0.06,glideTo:560});},bump(){noise(AC().currentTime,0.18,{vol:0.16,freq:240,filter:'lowpass'});},snap(){const t=AC().currentTime;noise(t,0.05,{vol:0.15,freq:3000});note(1240,t,0.1,{type:'sine',vol:0.12});},win(){const t=AC().currentTime;[392,523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.32,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
 const LANES=3, LANE_X=[16.6,50,83.3], ANIMALS=['🦒','🦓','🐘'];
-// Alters-Staffel: jüngere Kinder = schneller am Ziel, langsamere Hindernisse, mildere Bumps
-const ADV=(ageNum()<=6?2.0:ageNum()<=9?1.5:1.2), FALL=(ageNum()<=6?3.8:ageNum()<=9?5:6.2), SPAWN=(ageNum()<=6?950:ageNum()<=9?720:560), MALUS=(ageNum()<=6?3:ageNum()<=9?5:7);
-let laneIdx=1, progress=0, snaps=0, done=false, moveT=null, spawnT=null, obs=[];
-function sharpen(frac){ const p=$('#goalPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+const ANIM_X={l:8, r:92}; // Tiere stehen am StraßenRAND, nicht in den Fahrspuren -> kein "Überfahren"
+// Alters-Staffel: jüngere Kinder = weniger Tiere nötig, langsamere Hindernisse
+const GOAL=(ageNum()<=6?3:ageNum()<=9?4:5), FALL=(ageNum()<=6?3.6:ageNum()<=9?4.8:6), SPAWN=(ageNum()<=6?900:ageNum()<=9?720:560);
+let laneIdx=1, snaps=0, done=false, moveT=null, spawnT=null, obs=[];
+function sharpen(frac){ const p=$('#goalPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } // Reveal an die Tier-Fotos gekoppelt
+function prog(){ const f=snaps/GOAL; $('#prog').style.width=Math.min(100,f*100)+'%'; $('#snaps').textContent=snaps; sharpen(f); if(f>=0.5) $('#goal').style.top=(-14+Math.min(1,(f-0.5)/0.5)*14)+'%'; }
 function setDigger(){ $('#digger').style.left=LANE_X[laneIdx]+'%'; }
-function steer(dir){ if(done)return; const n=Math.max(0,Math.min(LANES-1,laneIdx+dir)); if(n!==laneIdx){ laneIdx=n; setDigger(); sfx.steer(); vib(8); } }
-function setProg(){ $('#prog').style.width=progress+'%'; $('#pct').textContent=Math.round(progress); sharpen(progress/100); if(progress>=100 && !done) winSeq(); }
-function advance(n){ if(done)return; progress=Math.min(100,progress+n); setProg(); }
-function bump(o){ progress=Math.max(0,progress-MALUS); setProg(); $('#digger').classList.add('hit'); setTimeout(()=>$('#digger').classList.remove('hit'),300); sfx.bump(); vib([10,30]); }
-function snapAnimal(o){ snaps++; $('#snaps').textContent=snaps; const fl=$('#flash'); fl.classList.add('on'); setTimeout(()=>fl.classList.remove('on'),150); sfx.snap(); vib([8,20]); } // Twist: Tier geknipst statt Bump
-function spawnObs(){ if(done)return; const lane=Math.floor(Math.random()*LANES); const o=document.createElement('div'); o.className='obs'; o.dataset.lane=lane; o.style.left=LANE_X[lane]+'%'; o._y=-8; o.style.top='-8%'; const r=Math.random(); if(r<0.2){ o._animal=true; o.textContent=ANIMALS[Math.floor(Math.random()*ANIMALS.length)]; } else { o.textContent=r<0.6?'🪨':'🌵'; } $('#field').appendChild(o); obs.push(o); }
-function moveObs(){ if(done)return; advance(ADV); for(const o of obs.slice()){ o._y+=FALL; o.style.top=o._y+'%'; if(o._y>=86 && o._y<=98 && +o.dataset.lane===laneIdx && !o._hit){ o._hit=true; if(o._animal){ snapAnimal(o); } else { bump(o); } } if(o._y>112){ o.remove(); obs.splice(obs.indexOf(o),1); } } if(progress>55) $('#goal').style.top=(-14+(progress-55)/45*14)+'%'; }
-function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); $('#goal').style.top='0%'; sharpen(1); $('#goalPhoto').classList.add('big'); const dg=$('#digger'); dg.style.transition='bottom .7s ease'; dg.style.bottom='72%'; sfx.win(); vib([20,40,20,40,80]); $('#winTitle').textContent='Du hast das Camp erreicht!'; if(HAS_PHOTO){ $('#winWho').textContent=`Der ganze Weg führte zum Camp-Schild — darauf strahlt ${kid()}! Komm zur Safari-Party:`; } else { $('#winWho').textContent=`Am Safari-Lagerfeuer brutzelt es schon — und ${kid()} wartet im Camp! Komm zur Safari-Party:`; } guestName(); setTimeout(()=>{ show('s-win'); confetti(CC); }, 1000); }
-function tip(){ if(!done) advance(40); } // Tipp: ein großes Stück Richtung Camp (sichtbar am Balken + Schild)
-$('#startBtn').addEventListener('click',()=>{ laneIdx=1;progress=0;snaps=0;done=false; obs.forEach(o=>o.remove()); obs=[]; setDigger(); setProg(); $('#snaps').textContent=0; $('#goalPhoto').classList.remove('big'); sharpen(0); const dg=$('#digger'); dg.style.transition=''; dg.style.bottom='6%'; $('#goal').style.top='-14%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveObs,95); spawnT=setInterval(spawnObs,SPAWN); });
+function curSide(){ return laneIdx===0?'l':laneIdx===LANES-1?'r':null; } // äußere Spur = welche Tier-Seite der Jeep abfährt
+function trySnap(){ if(done)return; const s=curSide(); if(!s)return; for(const o of obs){ if(o._animal && !o._snapped && o._side===s && o._y>=50 && o._y<=90){ snapAnimal(o); break; } } }
+function steer(dir){ if(done)return; const n=Math.max(0,Math.min(LANES-1,laneIdx+dir)); if(n!==laneIdx){ laneIdx=n; setDigger(); sfx.steer(); vib(8); trySnap(); } }
+function bump(o){ $('#digger').classList.add('hit'); setTimeout(()=>$('#digger').classList.remove('hit'),300); sfx.bump(); vib([10,30]); } // no-fail: nur Wackeln, kein Rückschritt
+function snapAnimal(o){ if(o._snapped||done)return; o._snapped=true; o.style.transition='transform .25s'; o.style.transform='translate(-50%,-50%) scale(1.35)'; snaps++; const fl=$('#flash'); fl.classList.add('on'); setTimeout(()=>fl.classList.remove('on'),150); sfx.snap(); vib([8,20]); prog(); if(snaps>=GOAL && !done) setTimeout(winSeq,450); } // Tier geknipst -> Ziel
+function spawnObs(){ if(done)return; const o=document.createElement('div'); o.className='obs'; o._y=-8; o.style.top='-8%';
+  if(Math.random()<0.6){ o._animal=true; o._side=Math.random()<0.5?'l':'r'; o.style.left=ANIM_X[o._side]+'%'; o.textContent=ANIMALS[Math.floor(Math.random()*ANIMALS.length)]; } // Tier am Rand
+  else { const lane=Math.floor(Math.random()*LANES); o.dataset.lane=lane; o.style.left=LANE_X[lane]+'%'; o.textContent=Math.random()<0.5?'🪨':'🌵'; } // Hindernis in einer Fahrspur
+  $('#field').appendChild(o); obs.push(o); }
+function moveObs(){ if(done)return; for(const o of obs.slice()){ o._y+=FALL; o.style.top=o._y+'%';
+    if(o._animal){ if(!o._snapped && o._y>=50 && o._y<=90 && curSide()===o._side) snapAnimal(o); } // Jeep auf gleicher Seite im Sichtfenster -> Kamera knipst
+    else if(o._y>=86 && o._y<=98 && +o.dataset.lane===laneIdx && !o._hit){ o._hit=true; bump(o); }
+    if(o._y>112){ o.remove(); obs.splice(obs.indexOf(o),1); } } }
+function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); $('#goal').style.top='0%'; sharpen(1); $('#goalPhoto').classList.add('big'); const dg=$('#digger'); dg.style.transition='bottom .7s ease'; dg.style.bottom='72%'; sfx.win(); vib([20,40,20,40,80]); $('#winTitle').textContent='Du hast alle Tiere geknipst!'; if(HAS_PHOTO){ $('#winWho').textContent=`Der ganze Weg führte zum Camp-Schild — darauf strahlt ${kid()}! Komm zur Safari-Party:`; } else { $('#winWho').textContent=`Am Safari-Lagerfeuer brutzelt es schon — und ${kid()} wartet im Camp! Komm zur Safari-Party:`; } guestName(); setTimeout(()=>{ show('s-win'); confetti(CC); }, 1000); }
+function tip(){ if(done)return; const t=obs.find(o=>o._animal && !o._snapped && o._y>=25 && o._y<=95); if(t){ laneIdx=t._side==='l'?0:LANES-1; setDigger(); snapAnimal(t); } } // Tipp: ran ans nächste Tier + knipsen
+$('#startBtn').addEventListener('click',()=>{ laneIdx=1;snaps=0;done=false; obs.forEach(o=>o.remove()); obs=[]; $('#goalN').textContent=GOAL; setDigger(); prog(); $('#goalPhoto').classList.remove('big'); sharpen(0); const dg=$('#digger'); dg.style.transition=''; dg.style.bottom='6%'; $('#goal').style.top='-14%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveObs,95); spawnT=setInterval(spawnObs,SPAWN); });
 $('#leftBtn').addEventListener('click',()=>steer(-1));
 $('#rightBtn').addEventListener('click',()=>steer(1));
 $('#field').addEventListener('click',e=>{ const r=e.currentTarget.getBoundingClientRect(); steer(e.clientX < r.left+r.width/2 ? -1 : 1); });

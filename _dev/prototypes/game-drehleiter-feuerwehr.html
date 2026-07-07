@@ -20,7 +20,7 @@
   .gable{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:58px;height:58px;border-radius:50%;border:4px solid #ffd24d;box-shadow:0 3px 10px rgba(0,0,0,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1418;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease,transform .5s ease;pointer-events:none;z-index:2}
   .gable.big{transform:translateX(-50%) scale(1.5)}
   .truck{position:absolute;left:4%;bottom:5%;font-size:38px;z-index:3}
-  .ladder{position:absolute;left:13%;bottom:13%;width:8px;height:0;background:repeating-linear-gradient(180deg,#ddd,#ddd 5px,#aaa 5px,#aaa 10px);transform-origin:bottom center;transform:rotate(-20deg);border-radius:4px;z-index:2;transition:height .25s}
+  .ladder{position:absolute;left:13%;bottom:13%;width:8px;height:0;background:repeating-linear-gradient(180deg,#ddd,#ddd 5px,#aaa 5px,#aaa 10px);transform-origin:bottom center;transform:rotate(20deg);border-radius:4px;z-index:2;transition:height .25s}
   .field.shakeF{animation:shf .3s}@keyframes shf{0%,100%{transform:translateX(0)}33%{transform:translateX(-5px)}66%{transform:translateX(5px)}}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fff3ef,#ffd9d2);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
@@ -87,7 +87,7 @@ const TARGETS=[28,52,74];
 const SW_STEP=(ageNum()<=6?0.85:ageNum()<=9?1.2:1.55), TOL=(ageNum()<=6?17:ageNum()<=9?13:9);
 let ang=20, adir=1, swingT=null, rescued=0, done=false, busy=false;
 function sharpen(frac){ const p=$('#gable'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
-function renderLadder(){ const lad=$('#ladder'); lad.style.transform='rotate(-'+ang+'deg)'; lad.style.height=(36+ang*0.7)+'%'; }
+function renderLadder(){ const lad=$('#ladder'); lad.style.transform='rotate('+ang+'deg)'; lad.style.height=(36+ang*0.7)+'%'; } // rotate positiv -> Leiter schwenkt nach rechts-oben zum Haus (nicht links aus dem Feld)
 function glowNear(){ if(done)return; const w=document.querySelectorAll('.win')[rescued]; if(!w)return; const near=Math.max(0,1-Math.abs(ang-TARGETS[rescued])/28); w.style.boxShadow='0 0 '+(8+near*28)+'px '+(2+near*7)+'px rgba(255,205,80,'+(0.35+near*0.55)+')'; }
 function litWindow(){ document.querySelectorAll('.win').forEach((w,i)=>{ w.classList.toggle('lit', i===rescued && !w.classList.contains('saved')); }); }
 function swing(){ clearInterval(swingT); ang=20;adir=1; swingT=setInterval(()=>{ if(done)return; ang+=adir*SW_STEP; if(ang>=80){ang=80;adir=-1;} if(ang<=18){ang=18;adir=1;} renderLadder(); glowNear(); },48); }
