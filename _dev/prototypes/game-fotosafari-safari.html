@@ -80,10 +80,10 @@ function spawn(){
   el.style.left=x+'%';el.style.top=y+'%';
   el.addEventListener('click',()=>snap(el));
   view.appendChild(el);curAnimal=el;setTimeout(()=>el.classList.add('show'),20);
-  const life=(ageNum()<=6?1500:ageNum()<=9?1100:900)-shots*90; // Reaktionsfenster nach Alter
+  const life=(ageNum()<=6?1500:ageNum()<=9?1100:900)-shots*40; // Reaktionsfenster nach Alter (mild abnehmend, no-fail-vertraeglich)
   spawnT=setTimeout(()=>{ if(el.parentNode && !el.classList.contains('snapped')){ el.classList.remove('show'); sfx.miss(); setTimeout(()=>{el.remove(); if(curAnimal===el)curAnimal=null; next();},150);} }, life);
 }
-function next(){ if(shots>=THEME.goal)return; setTimeout(spawn, 280+Math.random()*350); }
+function next(){ if(shots>=THEME.goal)return; spawnT=setTimeout(spawn, 280+Math.random()*350); } // in spawnT tracken, damit tip()/Start ihn abbrechen -> kein Flacker-Ersatz
 function snap(el){
   if(el.classList.contains('snapped'))return; clearTimeout(spawnT);
   el.classList.add('snapped'); $('#flash').classList.remove('on'); void $('#flash').offsetWidth; $('#flash').classList.add('on');
@@ -100,8 +100,9 @@ function finale(){
   }, 650);
 }
 function winReveal(){
+  $('#winTitle').textContent='Du hast alle Fotos im Kasten!'; // Gast-Lob: der Gast hat die Tiere fotografiert
   if(HAS_PHOTO){ $('#cap').textContent='Die seltenste Entdeckung'; $('#winWho').textContent=`Die seltenste Entdeckung der Savanne ist ${kid()}! Komm zur Safari-Party:`; }
-  else { $('#cap').textContent='Der König der Savanne'; $('#winTitle').textContent='Erwischt!'; $('#winWho').textContent=`Der seltene Löwe ist im Kasten — gefeiert wird bei ${kid()}! Komm zur Safari-Party:`; }
+  else { $('#cap').textContent='Der König der Savanne'; $('#winWho').textContent=`Der seltene Löwe ist im Kasten — und ${kid()} feiert Safari-Geburtstag! Komm zur Safari-Party:`; } // Nominativ statt Dativ-Bruch "bei das Geburtstagskind"
   guestName();
   show('s-win'); confetti(CC); sfx.win(); vib([20,40,20,40,80]);
 }

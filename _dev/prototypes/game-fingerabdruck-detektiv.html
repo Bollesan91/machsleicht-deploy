@@ -15,6 +15,8 @@
   /* Face-Guard: Gesicht bleibt bis zum Finale unkenntlich (Tönung + Milchglas), erst der Blitz löst auf */
   .faceguard{position:absolute;inset:0;z-index:2;background:rgba(44,46,56,.55);backdrop-filter:blur(14px) saturate(.6);-webkit-backdrop-filter:blur(14px) saturate(.6);transition:opacity .6s ease;pointer-events:none}
   .board.fade .faceguard{opacity:0}
+  .board.fade .printLayer{opacity:0;transition:opacity .5s}/* Fingerabdruck am Finale ausblenden: darf das Gesicht nicht ueberlagern */
+  @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){ .faceguard{background:rgba(20,22,28,.92)} }/* Veil-Fallback ohne backdrop-filter: deckt statt nur zu toenen */
   .board canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab;z-index:3}
   .board.fade canvas{opacity:0;transition:opacity .5s}
   .flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:4;transition:opacity .12s}
@@ -92,8 +94,13 @@ function reveal(){
   done=true;$('#hint').textContent='Abdruck gesichert!';sfx.find();vib([20,40,20]);
   $('#board').classList.add('fade');
   const fl=$('#flash'); setTimeout(()=>{ fl.classList.add('on'); noise(AC().currentTime,0.05,{vol:0.18,freq:3000}); setTimeout(()=>fl.classList.remove('on'),180); },350); // Kamera-Blitz: das Beweisfoto wird gesichert
-  setTimeout(()=>{ if(HAS_PHOTO){ $('#winWho').textContent=`Das Puder ist weg, der Abdruck gesichert — das Beweisfoto zeigt ${kid()}! Komm zur Detektiv-Party:`; } // kein Substantiv am Anfang (guestName-Lowercase) else {$('#winTitle').textContent='Fall gelöst!';$('#winWho').textContent=`Der Abdruck ist gesichert und die Lupe glänzt — ${kid()} hat den Fall geknackt! Komm zur Detektiv-Party:`;} guestName();
-    show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]); }, 950);
+  setTimeout(()=>{
+    $('#winTitle').textContent='Du hast den Fall gelöst!'; // Gast-Lob: der Gast hat den Abdruck gesichert
+    if(HAS_PHOTO){ $('#winWho').textContent=`Das Puder ist weg, der Abdruck gesichert — das Beweisfoto zeigt ${kid()}! Komm zur Detektiv-Party:`; } // startet mit Artikel (guestName-Lowercase-safe)
+    else { $('#winWho').textContent=`Der Abdruck ist gesichert und die Lupe glänzt — du hast den Fall für ${kid()} geknackt! Komm zur Detektiv-Party:`; } // Gast=Loeser, kid nur eingeladen
+    guestName();
+    show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]);
+  }, 950);
 }
 // Tipp sichtbar: der Pinsel wischt einen echten Streifen Puder frei
 function tip(){ if(done||!ctx)return; const y0=20+Math.random()*(RES-40); for(let i=0;i<9;i++){ erodeAt(20+i*((RES-40)/8), y0+Math.sin(i)*14); } sfx.brush(); vib(6); progress(); }
