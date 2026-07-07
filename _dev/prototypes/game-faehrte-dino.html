@@ -94,7 +94,11 @@ function tap(i){
 function win(){
   done=true;$('#hint').textContent='';sharpen(1);
   const nest=$('#nest'); if(nest){ nest.textContent='🐣'; } document.querySelector('.nestPhoto').classList.add('big'); noise(AC().currentTime,0.09,{vol:0.1,freq:2600}); vib([20,40,20,40,80]);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Mit jeder Spur wurde das Nest klarer — und dort wartet ${kid()}! Komm zur Dino-Party:`; } // kein Substantiv am Anfang: guestName() lowercased das erste Zeichen else {$('#winTitle').textContent='Spur entschlüsselt!';$('#winWho').textContent=`Am Nest schlüpft ein kleiner Dino — ${kid()} lädt dich zur Dino-Party ein:`;} guestName(); // kid()-Fallback ist Nominativ — kein „von das Geburtstagskind"
+  // winWho startet mit Artikel (guestName() lowercased das erste Zeichen); kid()-Fallback ist Nominativ
+  $('#winTitle').textContent='Du hast die Spur entschlüsselt!';
+  if(HAS_PHOTO){ $('#winWho').textContent=`Mit jeder Spur wurde das Nest klarer — und dort wartet ${kid()}! Komm zur Dino-Party:`; }
+  else { $('#winWho').textContent=`Am Nest schlüpft ein kleiner Dino — und ${kid()} lädt dich ein! Komm zur Dino-Party:`; }
+  guestName();
   setTimeout(()=>{ show('s-win');confetti(CC);sfx.win(); }, 900);
 }
 function tip(){ if(done||next>=TRAIL.length)return; tap(next); } // Tipp sichtbar: nächste Spur wird echt getippt, Dino läuft

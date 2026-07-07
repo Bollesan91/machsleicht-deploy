@@ -83,7 +83,7 @@ function reveal(){
   done=true;sfx.find();vib([20,40,20]);
   ctx.globalCompositeOperation='destination-out';ctx.fillRect(0,0,RES,RES); // restlichen Sand wegblasen -> Foto 100% frei
   $('#board').classList.add('fade');$('#hint').textContent='✨ Das Fossil erwacht …';$('#fill').style.width='100%';
-  setTimeout(()=>{ if(HAS_PHOTO){ $('#winWho').textContent=`Das versteinerte Wesen erwacht — es ist ${kid()}! Komm zur Dino-Party:`; } else {$('#winTitle').textContent='Erweckt!';$('#winWho').textContent=`Freigelegt und zum Leben erweckt — ${kid()} war der Fund! Komm zur Dino-Party:`;} guestName();
+  setTimeout(()=>{ $('#winTitle').textContent='Du hast das Fossil freigelegt!'; if(HAS_PHOTO){ $('#winWho').textContent=`Das versteinerte Wesen erwacht — es ist ${kid()}! Komm zur Dino-Party:`; } else {$('#winWho').textContent=`Freigelegt und zum Leben erweckt — und ${kid()} lädt dich ein! Komm zur Dino-Party:`;} guestName();
     show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]); }, 1050);
 }
 let moveCount=0,tipRow=0;

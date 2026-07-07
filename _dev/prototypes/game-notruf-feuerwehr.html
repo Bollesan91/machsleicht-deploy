@@ -108,7 +108,7 @@ function dial(n){
 }
 function connected(){
   busy=true; $('#lampe').textContent='📻 Funk steht …'; $('#mstatic').style.opacity='0'; sharpen(1); $('#monitor').classList.add('big'); sfx.connect(); vib([15,40,15]);
-  setTimeout(()=>{ done=true; markNext(); if(HAS_PHOTO){ $('#winWho').textContent=`Mit jeder Zahl wurde das Funkbild klarer — am anderen Ende jubelt ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winTitle').textContent='Funk steht!'; $('#winWho').textContent=`Der Funkspruch hat die Wache erreicht — die ganze Mannschaft feiert bei ${kid()}! Komm zur Feuerwehr-Party:`; } guestName();
+  setTimeout(()=>{ done=true; markNext(); $('#winTitle').textContent='Du hast durchgefunkt!'; if(HAS_PHOTO){ $('#winWho').textContent=`Mit jeder Zahl wurde das Funkbild klarer — am anderen Ende jubelt ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winWho').textContent=`Der Funkspruch hat die Wache erreicht — die ganze Mannschaft feiert bei ${kid()}! Komm zur Feuerwehr-Party:`; } guestName();
     show('s-win'); confetti(CC); sfx.win(); vib([20,40,20,40,80]); }, 1000);
 }
 function tip(){ if(done||busy)return; dial(CODE[pos]); } // Tipp: nächste Zahl für dich funken

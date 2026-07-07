@@ -115,7 +115,7 @@ function throwShoe(){
 }
 function winSeq(){
   done=true; clearInterval(gaugeT); $('#throwBtn').disabled=true; sharpen(1); $('#stallSign').classList.add('big'); setTimeout(()=>sfx.ring(),120); vib(60);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Drei Glücks-Ringer — und am Stall-Schild strahlt ${kid()}! Komm zur Pferde-Party:`; } else {$('#winTitle').textContent='Volltreffer!';$('#winWho').textContent=`Drei Hufeisen am Pfosten — ${kid()} hat das Glück gefangen! Komm zur Pferde-Party:`;} guestName();
+  $('#winTitle').textContent='Du hast alle drei getroffen!'; if(HAS_PHOTO){ $('#winWho').textContent=`Drei Glücks-Ringer — und am Stall-Schild strahlt ${kid()}! Komm zur Pferde-Party:`; } else {$('#winWho').textContent=`Drei Hufeisen am Pfosten — und ${kid()} lädt dich ein! Komm zur Pferde-Party:`;} guestName();
   setTimeout(()=>{ show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]); }, 900);
 }
 // Tipp sichtbar: Zeiger rastet in der Zone ein und das Hufeisen fliegt echt

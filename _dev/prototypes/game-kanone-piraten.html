@@ -131,8 +131,8 @@ function fire(p){
 function win(){
   const msg=$('#boardMsg');$('#boardMsgTxt').textContent='„ARRR! Wer hat meinen Schatz?!"';msg.classList.add('on');sfx.villain();vib(60);
   setTimeout(()=>{msg.classList.remove('on');
-    if(HAS_PHOTO){ $('#winTitle').textContent='Schatz gefunden!'; $('#winWho').textContent=`Der schönste Schatz von allen: das ist ${kid()}! Und du bist eingeladen:`; }
-    else { $('#winTitle').textContent='Schatz gefunden!'; $('#winWho').textContent=`Die Schatztruhe springt auf — ${kid()} heuert dich an! Du bist eingeladen:`; }
+    if(HAS_PHOTO){ $('#winTitle').textContent='Du hast den Schatz gefunden!'; $('#winWho').textContent=`Der schönste Schatz von allen: das ist ${kid()}! Und du bist eingeladen:`; }
+    else { $('#winTitle').textContent='Du hast den Schatz gefunden!'; $('#winWho').textContent=`Die Schatztruhe springt auf — ${kid()} heuert dich an! Du bist eingeladen:`; }
     guestName();show('s-win');confetti(CC,CCO);sfx.fanfare();vib([20,40,20,40,80]);},1300);
 }
 function tip(){ const p=[...document.querySelectorAll('.plank')].find(x=>!x.classList.contains('gone')); if(p) fire(p); } // Tipp: eine Planke für dich wegschießen

@@ -86,7 +86,7 @@ function strike(){
 }
 function forged(){
   done=true; clearInterval(glowT); $('#blade').classList.add('hot'); $('#glowtag').textContent='✨ Fertig geschmiedet!'; sharpen(1); $('#mirror').classList.add('big'); noise(AC().currentTime,0.5,{vol:0.08,freq:400,filter:'lowpass'}); sfx.win(); vib([20,40,20,40,80]);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Blank poliert — in der Klinge spiegelt sich ${kid()}, bereit fürs Turnier! Komm zur Ritter-Party:`; } else { $('#winTitle').textContent='Geschmiedet!'; $('#winWho').textContent=`Ein blitzblankes Heldenschwert — ${kid()} ist bereit fürs Turnier! Komm zur Ritter-Party:`; } guestName();
+  $('#winTitle').textContent='Du hast das Schwert geschmiedet!'; if(HAS_PHOTO){ $('#winWho').textContent=`Blank poliert — in der Klinge spiegelt sich ${kid()}, bereit fürs Turnier! Komm zur Ritter-Party:`; } else { $('#winWho').textContent=`Ein blitzblankes Heldenschwert — und ${kid()} lädt dich ein! Komm zur Ritter-Party:`; } guestName();
   setTimeout(()=>{ show('s-win'); confetti(CC); }, 1000);
 }
 // Tipp sichtbar: die Klinge glüht auf und der Hammer trifft im perfekten Moment

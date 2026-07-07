@@ -105,8 +105,9 @@ function drop(){
 function fall(el,dir){ el.animate([{transform:'translateY(0) rotate(0)',opacity:.9},{transform:`translateY(180px) rotate(${dir*40}deg)`,opacity:0}],{duration:600,easing:'cubic-bezier(.4,.1,.8,1)'}); setTimeout(()=>el.remove(),600); }
 function win(){
   done=true; clearInterval(mvT); sharpen(1); $('#rf').classList.add('big'); sfx.perfect(); sfx.win(); vib([20,40,20,40,80]);
+  $('#winTitle').textContent='Du hast das Hochhaus hochgezogen!';
   if(HAS_PHOTO){ $('#winWho').textContent=`Mit jeder Etage wurde das Richtfest-Plakat klarer — ganz oben winkt ${kid()}! Komm zur Baustellen-Party:`; }
-  else { $('#winTitle').textContent='Richtfest!'; $('#winWho').textContent=`Ganz oben weht die Fahne — ${kid()} feiert Richtfest! Komm zur Baustellen-Party:`; }
+  else { $('#winWho').textContent=`Ganz oben weht die Fahne — und ${kid()} feiert Richtfest! Komm zur Baustellen-Party:`; }
   guestName();
   setTimeout(()=>{ show('s-win'); confetti(CC); }, 1000);
 }

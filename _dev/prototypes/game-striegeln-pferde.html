@@ -83,7 +83,7 @@ function reveal(){
   done=true;sfx.find();vib([20,40,20]);
   ctx.globalCompositeOperation='destination-out';ctx.fillRect(0,0,RES,RES); // Staub ganz weg -> Foto 100% frei
   $('#board').classList.add('fade');$('#hint').textContent='✨ Das Fell glänzt …';$('#fill').style.width='100%';
-  setTimeout(()=>{ if(HAS_PHOTO){ $('#winWho').textContent=`Blitzeblank gestriegelt — im Sattel sitzt ${kid()}! Komm zur Pferde-Party:`; } else {$('#winTitle').textContent='Blitzeblank!';$('#winWho').textContent=`Das Pony glänzt von Mähne bis Huf — ${kid()} kann losreiten! Komm zur Pferde-Party:`;} guestName();
+  setTimeout(()=>{ $('#winTitle').textContent='Du hast blitzeblank gestriegelt!'; if(HAS_PHOTO){ $('#winWho').textContent=`Blitzeblank gestriegelt — im Sattel sitzt ${kid()}! Komm zur Pferde-Party:`; } else {$('#winWho').textContent=`Das Pony glänzt von Mähne bis Huf — und ${kid()} lädt dich ein! Komm zur Pferde-Party:`;} guestName();
     show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]); }, 1050);
 }
 let moveCount=0,tipRow=0;
