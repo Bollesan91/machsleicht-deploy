@@ -35,6 +35,10 @@
   .specialPhoto{display:block;width:54px;height:54px;border-radius:50%;border:3px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2c14;filter:blur(9px) saturate(.6) brightness(.8);box-shadow:0 0 16px 4px rgba(224,162,58,.7)}
   .obs.special .sparkle{position:absolute;top:-12px;right:-8px;font-size:22px;animation:twk 1.1s ease-in-out infinite}
   @keyframes twk{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.3)}}
+  /* Beim Knipsen: Foto wird scharf und huepft vor Freude auf der Strasse -> dann grosser Reveal */
+  .specialPhoto.revealed{filter:none;box-shadow:0 0 24px 9px rgba(255,222,120,.98);transition:filter .45s ease,box-shadow .45s ease}
+  .obs.special.joy{animation:joyhop .46s ease-in-out 3}
+  @keyframes joyhop{0%,100%{transform:translate(-50%,-50%) scale(1.25)}35%{transform:translate(-50%,-64%) scale(1.4)}70%{transform:translate(-50%,-50%) scale(1.25)}}
   .ctrls{display:flex;gap:14px;width:90%;max-width:320px}
   .ctrls .btn{flex:1;font-size:30px;padding:14px 0}
   /* Reveal */
@@ -121,10 +125,12 @@ function spawnSpecial(){
 } // das "coolste Tier" faehrt mittig heran (Foto vom Kind, noch verwischt) -> reveal-last bleibt gewahrt
 function snapSpecial(){
   if(!special||special._snapped||done)return;
-  special._snapped=true; special.style.transition='transform .3s'; special.style.transform='translate(-50%,-50%) scale(1.5)';
+  special._snapped=true;
+  const sp=special.querySelector('.specialPhoto'); if(sp)sp.classList.add('revealed'); // Foto wird schon auf der Strasse scharf
+  special.classList.add('joy'); // ... und huepft vor Freude
   const fl=$('#flash'); fl.classList.add('on'); setTimeout(function(){ fl.classList.remove('on'); },150);
-  sfx.snap(); vib([8,20]);
-  setTimeout(winSeq,450);
+  sfx.snap(); vib([8,20,8,20]);
+  setTimeout(winSeq,1250); // laenger: Freude-Huepfen auf der Strasse, dann grosser Reveal
 }
 function spawnObs(){ if(done)return; const o=document.createElement('div'); o.className='obs'; o._y=-8; o.style.top='-8%';
   if(Math.random()<0.6){ o._animal=true; o._side=Math.random()<0.5?'l':'r'; o.style.left=ANIM_X[o._side]+'%'; o.textContent=ANIMALS[Math.floor(Math.random()*ANIMALS.length)]; } // Tier am Rand
