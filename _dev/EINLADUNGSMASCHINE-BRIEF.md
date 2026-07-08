@@ -302,6 +302,17 @@ Mobile zuerst · Schnellmodus zuerst sichtbar · „Mehr Optionen" klappt Feinmo
 
 ---
 
+## 16b. Wachstums-Quick-Wins (aus Gamechanger-Fächer 08.07. — nur Funnel-relevantes)
+
+Aus einer 7-Linsen-Analyse blieben **drei billige Hebel, die die bestehende Maschine direkt verbessern** — in v1 mitnehmen:
+1. **OG-Vorschaubild im Worker** — `og:image` = 0 heute → jeder geteilte Party-/Einladungslink ist ein nackter Blaulink in WhatsApp. Clientseitig gerenderte 1200×630-Motto-Karte (kein Gesicht als Default) als `ogimg:<id>` in KV, im `baseHead()` ausliefern. Hebt Tap-Through jedes Shares. *(Konf. 0,78 · S)*
+2. **ref + Motto in die Spiel-CTA** — die In-Game-CTA (`einladung/<motto>/whatsapp/`, 8–15 Eltern/Party) linkt ref-los auf die Homepage; `gameUrl` reicht kein `ref` durch. Durchreichen schließt das Attributions-Leck auf der reichweitenstärksten Fläche. *(trivial · S)*
+3. **Funnel messen** — `party_created`/`plan_ready`/`wizard_stage` feuern, Umami wurde nie ausgewertet. 1–2-Wochen-Mess-Gate + 4 fehlende Events, bevor Größeres gebaut wird. *(Konf. 0,80 · S)*
+
+**Parkplatz (echte Wachstums-Wetten, NICHT Funnel-Bau — bewusst später, nicht jetzt anfassen):**
+GEO/KI-Antwort-Präsenz (schärfster De-Index-Ausweg) · Pinterest-Asset-Fabrik · bezahlter Micro-Seed auf Last-Minute-Intent · Micro-Influencer-Seeding · CRO/Aktivierungsrate verdoppeln · Anlass-Plattform + AT/CH (löst ×0,17-Timing) · Reminder-Engine (totes 7-Tage-Versprechen) · Gruppengeschenk-Affiliate-Close · Trust/Social-Proof · Brand-Wasserzeichen.
+**Grundsatzfrage dahinter (offen für Bolle):** gilt das Passivitäts-Prinzip („4h/Monat") unter 20–30h/Woche-Claude-Leverage überhaupt noch? Es schließt heute genau die Klassen aus (Paid, Influencer, GEO, Community), die den dokumentierten #1-Engpass (Cold-Start/Traffic) am direktesten brechen.
+
 ## 17. Lieferauftrag an den Umsetzer
 
 1. Lies §1–§2. Öffne `kindergeburtstag.html` (Stage 4 + `state`), `einladung/erstellen/`, eine `…/whatsapp/`-App, `party-worker.js`. **Verstehe die zwei Wege, bevor du eine Zeile schreibst.**
