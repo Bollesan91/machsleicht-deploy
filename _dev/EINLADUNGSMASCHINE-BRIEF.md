@@ -1,283 +1,289 @@
-# Brief: Einladungs­maschine machsleicht.de (bestandsbewusste v1)
+# Brief: Einladungs­maschine machsleicht.de (v2 — nach tiefem Funnel-/Plan-/Worker-Audit)
 
-> Verbesserte Fassung des Ursprungs-Prompts. Ziel unverändert: **eine** Einladungs­maschine mit **zwei Gesichtern** — im Planer „ist schon vorbereitet", standalone „in 2 Minuten fertig" — aus **einem** Datenmodell, **einer** Theme-Logik.
-> Was sich ändert: Der Auftrag ist **Konsolidieren + Aufwerten von Vorhandenem**, kein Greenfield-Neubau. Tech an den echten Stack angepasst. v1 auf die reale Lücke gekürzt.
-
----
-
-## 0. Was an dieser Fassung anders ist (Changelog gegenüber dem Ursprungs-Brief)
-
-1. **Bestand-&-Delta-Vorspann** vorangestellt (§1) — der Ursprungs-Brief tat so, als gäbe es nichts. ~70 % existieren.
-2. **Tech korrigiert:** kein React/Next.js. Der Live-Planer ist bewusst statisches HTML + Vanilla-JS **ohne Build-Step**. React würde die tote 3,8-MB-Altlast wiederbeleben oder eine Parallel-Codebasis forken.
-3. **v1 rücksichtslos gekürzt:** v1 = die vorhandenen Teile zu **einer** kohärenten Maschine zusammenziehen + die 3 Outputs sauber trennen. Dev-Modus, Tonalitäts-Wähler, Gast-Personalisierung, Foto-Upload → v2+.
-4. **Innerer Widerspruch entfernt:** Tonalitäts-Dropdown gestrichen (widerspricht „keine Entscheidungen, keep it simple"). Ein guter Default pro Motto.
-5. **Reale Constraints ergänzt** (§4): Foto passt nicht in die URL, „Adresse erst nach Zusage" braucht Worker/KV (nicht local-only), Tracking über `plausible()`-Wrapper.
-6. **Traffic-Realität benannt** (§16): Dieses Feature bewegt den North Star nicht allein — der dokumentierte Engpass ist Traffic/SEO-Recovery.
+> Ziel unverändert: **eine** Einladungsmaschine mit **zwei Gesichtern** — im Planer „ist schon vorbereitet", standalone „in 2 Minuten fertig" — aus **einem** Datenmodell, **einer** Theme-Logik.
+> **v2-Kernbefund:** Die Maschine existiert nicht nur teilweise — sie existiert **doppelt und fragmentiert**. Zwei getrennte Persistenz-Backends, ~5 Theme-Quellen, drei Einladungs-Implementierungen. Der Auftrag ist **Vereinheitlichung + gezielte Lückenfüllung**, kein Neubau. Alle Aussagen unten mit echtem Datei:Zeile-Beleg aus dem Repo-Audit (08.07.).
 
 ---
 
-## 1. BESTAND & DELTA (zuerst lesen — hier wird gebaut, nicht neu erfunden)
+## 0. Changelog v1 → v2 (was der Deep-Dive geändert hat)
 
-### Was heute schon existiert
-| Baustein | Datei(en) | Zustand |
+- **Zwei Persistenz-Backends entdeckt** (§1): Standalone `erstellen/` → Netlify `create-invite` → `/e/<slug>`; Funnel Stage 4 → Worker `/api/create` → `party.machsleicht.de/:id`. Das ist die zentrale Architektur-Entscheidung, die v1 nicht sah.
+- **Echte `state`-Shape** ersetzt das erfundene `PlannerEventData` (§8) — inkl. `state.invite` + `state.partyseite`, die im Funnel **schon existieren** (Stage 4).
+- **Echter `/api/create`- + RSVP-Vertrag** dokumentiert (§2) — inkl. Adress-Gating (nur bei RSVP „ja"), `askAllergies`/`askPickup` bereits vorhanden, Foto-Bug-Lösung via `/api/invimg`.
+- **~5 Theme-Quellen** statt „einer SSOT" (§10) — Korrektur meiner v1-Aussage „Theme aus motto-data.js" (motto-data.js ist **Spieldaten**).
+- **Freitext-Datum/Zeit** im Creator vs. strukturiert im Funnel (§8) — echte Reibung benannt.
+- **v1-Scope neu:** von „konsolidieren" zu **konkret**: EIN Backend wählen, EIN Theme-SSOT, Standalone-Creator auf Funnel-Niveau heben, echte Karte bauen (fehlt komplett).
+
+---
+
+## 1. BESTAND: die ECHTE Architektur (zuerst lesen)
+
+### Die zwei parallelen Wege durch das System heute
+
+```
+STANDALONE-WEG (SEO/Direktzugriff):
+  einladung/erstellen/index.html  ──POST /api/invphoto (Foto→fid)
+     (7 Freitext-Felder)          ──POST /.netlify/functions/create-invite ({name,date,time,ort,tel,motto}→slug)
+                                  ──▶ Einladungs-Viewer /e/<slug>?fid=…   [Netlify-Backend]
+
+FUNNEL-WEG (Planer):
+  kindergeburtstag.html            state{…} in localStorage 'mlplan_v4_state'
+   5-Stage-Scroll-Funnel:          Stage1 Motto → Stage2 Alter+Eckdaten →
+                                   Stage3 Plan → Stage4 EINLADUNG+PARTYSEITE → Stage5 Fertig
+   Stage4 activatePartyseite() ──POST party.machsleicht.de/api/create ({childName,age,motto,…})→{url,editUrl}
+                                  ──▶ Partyseite party.machsleicht.de/<id>   [Cloudflare-Worker + KV]
+
+GEMEINSAMER PAYLOAD (Gast-Erlebnis):
+  Worker baut gameUrl ──▶ einladung/<motto>/whatsapp/index.html   (Mini-Spiel, 15×, per URL-Params gefüttert)
+                                  foto = party.machsleicht.de/api/invimg/<id>  (JPEG-Bytes, löst URL-Limit)
+```
+
+### Was existiert (mit Beleg)
+| Baustein | Datei | Was es real tut |
 |---|---|---|
-| **Standalone-Creator** | `einladung/erstellen/index.html` (~587 Z.) | Motto-Auswahl + WhatsApp-Output + Karten-Preview. **Das ist der „Standalone-Generator" aus dem Brief — er existiert.** |
-| **15 SEO-Hubs** | `einladung/<motto>/index.html` | Ratgeber-/Landing-Seiten je Motto (piraten ~253 Z.) |
-| **15 Vorlagen-Seiten** | `einladung/<motto>/vorlagen/index.html` | Fertige Einladungs­**texte** je Motto (SEO + Copy-Quelle) |
-| **15 WhatsApp-Apps** | `einladung/<motto>/whatsapp/index.html` | „<Motto>-Einladung erstellen" mit `wa.me`-Share (Z. ~1437) + eingebettetem Mini-Spiel als Hook |
-| **Planer-Funnel** | `kindergeburtstag.html` + `js/motto-data.js` | Der Live-Planer (Wizard). Hat bereits einen Einladungs-Schritt. **SSOT für Motto-Daten = `js/motto-data.js`, kein Build-Step.** |
-| **Party-Backend** | `party-worker.js` (Cloudflare Worker + KV) | Kann `RSVP`, `claim`, `photoRound`, `gameUrl`. Adresse-nach-Zusage-Logik hier verortet. |
-| **SEO-Textseite** | `kindergeburtstag-einladung-text.html` (~689 Z.) | Einladungstext-Beispiele (Traffic-Anker) |
-| **45 Mini-Spiele** | `_dev/prototypes/game-*.html` + `core/core.js` | Foto-Reveal-Spiele = der virale Payload der WhatsApp-Einladung |
+| **Funnel** | `kindergeburtstag.html` | 5-Stage-Scroll-Funnel; **Stage 4 = „Einladung + Partyseite" (gemergt 15.06.)**; State in `localStorage['mlplan_v4_state']` (`:1334`), debounced autoSave + Resume-Banner |
+| **Stage-4-Aktivierung** | `kindergeburtstag.html:2471` | `activatePartyseite()` → POST `party.machsleicht.de/api/create` → `{url, editUrl}` → `showPartyShare()` |
+| **Standalone-Creator** | `einladung/erstellen/index.html` | 7 Freitext-Felder → **Netlify `create-invite`** (`:517`) + Foto `/api/invphoto` (`:509`) → Viewer `/e/<slug>` |
+| **Worker-Backend** | `party-worker.js` | 14 Routen: `/api/create`, `/api/party/:id` (GET/PUT/DELETE), `/rsvp`, `/wish/:wid/claim`, `/api/invphoto`+`/api/invimg/:id`, `/send-edit-link`, `/go/:p/:w`, `/newsletter-confirm`; KV mit TTL |
+| **15 Gast-Spiele** | `einladung/<motto>/whatsapp/index.html` | Mini-Spiel-Viewer, per URL-Params gefüttert (name/date/time/ort/tel/foto); hardcodiertes Motto-Theme; RSVP-Zusage an `rsvpPhone` |
+| **15 SEO-Hubs + Vorlagen** | `einladung/<motto>/index.html`, `…/vorlagen/` | Ratgeber-Landing + fertige Einladungs­**texte** (Copy-Quelle) |
+| **Plan-Daten** | `data/motto/*.json` | Elite-Plan pro Motto/Alter — enthält bereits Feld **`invitationTemplate`** |
+| **Motto-Spiele** | `js/motto-data.js` | **Nur Spieldaten** (7 Mottos), **kein Theme** |
 
 ### Die ECHTE Lücke (= der Auftrag)
-Es gibt **kein einheitliches System**. Standalone-Creator, WhatsApp-Apps und Planer-Einladungsschritt sind **drei separat gewachsene Implementierungen** mit je eigener Text-/Theme-/Feldlogik. Es fehlt:
+1. **Zwei Persistenz-Backends** (Netlify `create-invite`/`/e/<slug>` vs. Worker `/api/create`/`:id`) tun dasselbe. **Entscheidung nötig: eins wird kanonisch.** Empfehlung: **Worker** (kann RSVP, Adress-Gating, Wunschliste, Foto-Bytes, DOI, Ablauf-TTL — die Netlify-Funktion kann nichts davon).
+2. **~5 Theme-Quellen**, keine SSOT (§10).
+3. **Standalone-Creator ist deutlich schwächer als der Funnel:** 1 WhatsApp-Text mit **kaputter Grammatik** (naive Konkatenation, `:572`), keine 3 Varianten, **keine echte Karte**, Freitext-Datum/-Zeit.
+4. **Eine echte teilbare „digitale Karte" fehlt in BEIDEN Wegen** — Funnel produziert eine Partyseite, Standalone einen `/e/<slug>`-Link; ein poliertes, WhatsApp-taugliches Karten-Artefakt existiert nirgends.
+5. **Keine geteilte Platzhalter-/Grammatik-Engine** — jeder der drei Wege baut Text selbst.
 
-1. **Eine gemeinsame Datenschicht** (`InvitationData`) + **eine** Theme-Config + **eine** Platzhalter-Engine, die alle drei Einstiege speisen. Heute driftet die Copy zwischen den Kanälen auseinander.
-2. **Saubere Abgrenzung der 3 Outputs** (WhatsApp-Text ≠ Karte ≠ Party-Embed) aus demselben Zustand.
-3. **Die Planer→Einladung-Datenbrücke** ohne Doppel-Abfrage (heute fühlt sich der Einladungs-Schritt wie ein neues Formular an).
-4. **Grammatik-sichere Textlogik** (keine `undefined`-Sätze, keine leeren Platzhalter) — als geteilte Engine, nicht 3× nachgebaut.
-
-> **Regel für den Umsetzer:** Jede neue Zeile ersetzt oder speist Vorhandenes. Wer einen zweiten Standalone-Creator neben `einladung/erstellen/` baut, hat den Auftrag verfehlt. Erst refactoren die drei Bestandsteile auf die gemeinsame Engine, dann erweitern.
-
----
-
-## 2. Produktstrategie & Kernversprechen (unverändert stark — behalten)
-
-**Marke:** schnelle Ergebnisse, wenig Aufwand, mobil zuerst, keine Anmeldehürde, klare Schrittführung. **Kein Canva-Ersatz** — die Maschine übernimmt Design, Struktur, Textlogik, Motto-Tonalität, Ausgabeformat. Eltern gestalten **nicht**, sie geben Daten ein und bekommen ein fertiges Paket.
-
-**Versprechen standalone:** „Digitale Einladung in 2 Minuten. Motto wählen, Daten eintragen — WhatsApp-Text, Karte und Partyseite bekommen."
-**Versprechen im Planer:** „Deine Einladung ist schon vorbereitet. Motto, Alter, Datum und Zeit haben wir aus deinem Plan übernommen."
-
-**Die drei Outputs sind ein System, keine Designvarianten:**
-- **WhatsApp-Text** → schnelles Teilen zwischen Eltern.
-- **Digitale Karte** → emotionale, mobile Präsentation.
-- **Party-Embed** → Organisation: Zusage, Allergien, Wunschliste, Adresse-nach-Zusage.
-
-Die Einladung ist der **Einstieg in den ganzen Party-Flow**, nicht ein Einzeltool.
+> **Regel für den Umsetzer:** Kein zweiter Creator, kein drittes Backend, keine sechste Theme-Tabelle. v1 = die vorhandenen Wege auf **eine** Engine + **ein** Backend + **einen** Theme-SSOT ziehen, DANN die echte Karte + 3 WhatsApp-Varianten ergänzen.
 
 ---
 
-## 3. Die eine Architektur-Regel: zwei Gesichter, ein Kern
+## 2. Die echten Datenverträge (verbatim aus dem Code)
 
-```
-                    ┌─────────────────────────────┐
-   Planer-Funnel ──▶│                             │──▶ Output: WhatsApp-Text (3 Varianten)
- (Daten übernehmen) │   InvitationData (1 Modell) │──▶ Output: Mobile Karte (HTML/CSS)
-                    │   + ThemeConfig (15)        │──▶ Output: Party-Embed (Worker)
-   Standalone    ──▶│   + Platzhalter-Engine      │
- (Daten abfragen)   │                             │
-                    └─────────────────────────────┘
+### `state` im Funnel (`kindergeburtstag.html:1335`, localStorage `mlplan_v4_state`)
+```js
+state = {
+  stage, step, _maxStage,                 // Wizard-Position (Stages 1–5)
+  motto,                                   // MOTTO-OBJEKT (nicht String)
+  age,                                     // AltersGRUPPE: '3-5' | '6-8' | '9-12'
+  exactAge,                                // echtes Alter 1–14 (optional, fürs Einladungs-Wording)
+  name,                                    // Kindname
+  date,                                    // ISO 'YYYY-MM-DD'
+  time, endTime,                           // 'HH:MM'
+  guests,                                  // int 2–20
+  location,                                // 'zuhause' | 'drinnen' | 'park' | 'halle'
+  adresse,                                 // optional, Adress-Gating auf Partyseite
+  partyMessage,                            // persönliche Nachricht (→ Partyseite)
+  games, eliteOff,                         // gewählte / abgewählte Spielnamen
+  eliteVariant,                            // 'minimal' | 'standard' | 'wow'
+  plan: { key, acts:[…] },                 // generierter Plan (buildPlanActivities)
+  invite:   { type:'minispiel', title, body, deadline, sent, photo, whatsapp },   // EXISTIERT SCHON
+  partyseite:{ slug, rsvp, photos, wish, chat, active, url, editUrl },             // EXISTIERT SCHON
+  ref                                      // virale Attribution
+}
+// TOT: customEntries, partyseite.photos, partyseite.chat, invite.photo
 ```
 
-**Nicht verhandelbar:** beide Einstiege schreiben in **dasselbe** `InvitationData`; alle Outputs lesen daraus. Kein kanalspezifischer Text-Sonderweg mehr.
+### `POST /api/create` (party-worker.js:300) — der kanonische Erstell-Vertrag
+```js
+// Request (Pflicht fett):  childName, age, date, time, address,
+//   + motto, mottoId, mottoEmoji, mottoColor(#RRGGBB, def #D4812A),
+//     endTime, notes, askAllergies(def true), askPickup(def true),
+//     paypalMe, photo(≤500KB), photoRound(≤500KB), wishes[≤20], ref
+// Response: { url, editUrl }
+// KV: party:{id} (+ photo:{id}, invphoto:{id}) — TTL = party.date + 90d (min 1d, max 90d)
+```
+
+### `POST /api/party/:id/rsvp` (:451) — Gäste-Vertrag
+```js
+// Request: name, status('ja'|'nein'|'vielleicht'), allergies, pickupTime, pickupPerson
+// ADDRESS-GATING (:472): address + addressIcs NUR wenn status==='ja', sonst '' — serverseitig hart
+```
+
+### `gameUrl` (Worker → Gast-Spiel, :1351)
+```
+https://machsleicht.de/einladung/<mottoId|Textmatch|'piraten'>/whatsapp/
+   ?name=…&date=…&time=…&ort=&tel=&foto=https://party.machsleicht.de/api/invimg/<id>
+// ort + tel ABSICHTLICH LEER — Adresse nie vor Zusage
+```
+
+### Deep-Link-Params in den Funnel (`kindergeburtstag.html:2767`)
+`?motto` · `?thema` (von SEO-Seiten) · `?alter` (3–12) · `?gaeste` (2–20) · `?modus=schatzsuche` · `?ref`
+
+### Was der Worker NICHT kann (echte Lücken, mit Beleg)
+- **Keine Mitbring-Abfrage** — nur `allergies` + `pickup` im RSVP (`:466`). „Was soll ich mitbringen?" fehlt komplett.
+- **Kein konfigurierbares Adress-Visibility-Flag** — Gating ist hart auf `status==='ja'` (`:472`), nicht auf „immer öffentlich/immer privat" stellbar.
+- **Standalone-Netlify-Backend kann nichts davon** (kein RSVP, kein Gating, keine Wunschliste).
 
 ---
 
-## 4. Tech-Rahmen (KORRIGIERT — das ist der teuerste Fix)
+## 3. Strategie & Kernversprechen (kurz)
 
-**Stack = der Bestand:**
-- **Statisches HTML + Vanilla-JS, kein Build-Step.** So läuft `kindergeburtstag.html` und `einladung/erstellen/`. `js/kindergeburtstag.js` (React, 3,8 MB) ist **tot** — nicht anfassen, nicht wiederbeleben.
-- Gemeinsame Logik als **ein JS-Modul** (z. B. `js/invite-engine.js`), das von allen drei Einstiegen per `<script src>` eingebunden wird — dasselbe Muster wie `core/core.js` bei den Spielen. Cache-Bust-Versionierung (`?v=YYYYMMDD`) beibehalten.
-- **Theme-Tokens** als CSS-Variablen; Motto-Daten aus/synchron mit `js/motto-data.js` (SSOT). Keine zweite Motto-Wahrheit anlegen.
-- **Persistenz nur bei Partyseite:** `party-worker.js` + KV. Lokal (localStorage) für Entwurf/Vorschau ohne Account.
-- **Share:** `navigator.share` (Web Share API) mit `wa.me`-Deeplink-Fallback (existiert schon in den whatsapp-Apps); Clipboard API zum Kopieren.
-- **Tracking ausschließlich über den `plausible(name, {props})`-Wrapper** (mappt intern auf Umami) — nie direkt `umami.track`.
-
-**Reale Constraints, die der Ursprungs-Brief nicht kennt:**
-1. **Foto passt NICHT in die URL.** base64 sprengt die iframe/Deeplink-URL (bekannter, gefixter Bug). `photoUrl` heißt: Worker-Upload oder gar-nicht-in-v1. Karte muss **ohne Foto** vollwertig aussehen.
-2. **„Adresse erst nach Zusage" ist server-seitig.** Erfordert Worker + KV (Adresse erst nach RSVP ausliefern), **nicht** local-only. Der Brief verkauft es fälschlich als lokale Option.
-3. **WhatsApp-Textlänge am echten Deeplink verifizieren** (Zeichen-Limits/Encoding), nicht nur theoretisch 450/700.
-
-**Wenn irgendwann ein Build-Step nötig wird:** isoliert halten, den No-Build-Vertrag von `kindergeburtstag.html` **nicht** brechen.
+Marke: schnell, wenig Aufwand, mobil, keine Anmeldehürde, klare Schrittführung. **Kein Canva-Ersatz** — die Maschine übernimmt Design/Struktur/Textlogik/Tonalität/Ausgabe. Eltern geben Daten ein, bekommen ein fertiges Paket.
+Versprechen standalone: „Digitale Einladung in 2 Minuten." · im Planer: „Deine Einladung ist schon vorbereitet — Motto, Alter, Datum, Zeit aus deinem Plan übernommen."
+Die drei Outputs = ein System: **WhatsApp-Text** (Teilen) · **Karte** (Emotion) · **Party-Embed** (Organisation: Zusage/Allergien/Adresse-nach-Zusage).
 
 ---
 
-## 5. Scope-Schnitt (was v1 ist — und was bewusst wartet)
+## 4. Zwei Gesichter, ein Kern
 
-**v1 — die Konsolidierung (der eigentliche Wert):**
-- [ ] Gemeinsame Engine: `InvitationData` + `ThemeConfig` (15) + Platzhalter-Engine + Validierung.
-- [ ] `einladung/erstellen/` auf die Engine heben (Standalone, Schnellmodus 7 Pflichtfelder).
-- [ ] Die 15 `whatsapp/`-Apps auf die Engine heben (statt 15 Einzel-Logiken).
-- [ ] Planer→Einladung-Brücke: `mapPlannerDataToInvitationData`, keine Doppel-Abfrage, Einladung sofort sichtbar.
-- [ ] 3 saubere Outputs: WhatsApp-Text (3 Varianten), Mobile Karte, Party-Embed-Block.
-- [ ] Grammatik-sichere Texte (keine leeren Platzhalter/kaputten Sätze) — als geteilte Engine.
-- [ ] Party-Embed nutzt den bestehenden `party-worker.js` (RSVP/claim/photoRound).
-- [ ] Feinmodus als **einfacher** „Mehr Optionen"-Aufklapp (keine Pflicht).
-
-**v2 — Organisation vertiefen:**
-Gastname-Personalisierung · Adresse-nach-Zusage (Worker) · Wunschliste · Allergien-Abfrage · Planer-Zustand server-speichern · Antwort-Status („3 Zusagen").
-
-**v3 — Reichweite/Politur:**
-Foto-Upload · Bild-Export (PNG) · QR-Code · mehrere Gäste einzeln personalisieren · Link-Vorschau (OG).
-
-**v4 — Retention:**
-Erinnerungen · Dankesnachricht · Nach-der-Party-Gruß · Mini-Spiel als Einladungs-Hook fest verdrahten.
-
-**Explizit NICHT in v1** (bewusste Cuts): Dev/Admin-JSON-Modus, Tonalitäts-Wähler, Foto-Upload, Bild-Export, Mehrsprachigkeit. Alle sauber in v2+ eingeplant, keiner blockiert v1.
+```
+   Planer Stage 4 (state{}) ─┐
+                             ├─▶ InvitationData (1 Modell) + ThemeConfig (15) + Platzhalter-Engine
+   Standalone erstellen/  ───┘        │
+                                      ├─▶ WhatsApp-Text (3 Varianten)
+                                      ├─▶ Mobile Karte (NEU zu bauen)
+                                      └─▶ Party-Embed (Worker /api/create, existiert)
+```
+Beide Einstiege schreiben in **dasselbe** `InvitationData`; alle Outputs lesen daraus. Ein Backend (Worker). Ein Theme-SSOT.
 
 ---
 
-## 6. Datenmodell (aus dem Brief — gut, an Vanilla-JS angepasst als JSDoc-Shapes)
+## 5. Tech-Rahmen
+
+- **Vanilla-JS, kein Build-Step** (wie `kindergeburtstag.html`, `erstellen/`). `js/kindergeburtstag.js` (React, tot) nicht anfassen.
+- Gemeinsame Logik als **ein Modul** `js/invite-engine.js`, per `<script src>` in Funnel + Standalone eingebunden (Muster wie `core/core.js`), Cache-Bust `?v=`.
+- **Ein Backend: der Cloudflare-Worker** (`/api/create` + KV). Netlify `create-invite`/`/e/<slug>` migrieren/deprecaten (kann kein RSVP/Gating/Wunschliste). Standalone-Creator postet künftig an `/api/create` statt an die Netlify-Funktion.
+- **Ein Theme-SSOT** (§10): neue Datei `js/theme-config.js` (15 `ThemeConfig`), von Funnel, Standalone, Karten-Output UND den Gast-Spielen gelesen. `js/motto-data.js` bleibt Spieldaten.
+- **Reale Constraints (schon gelöst/zu beachten):** Foto NICHT als Base64 in URL — über `/api/invphoto`→`/api/invimg/:id` (JPEG-Bytes), ≤500 KB (`party-worker.js:35`). Adresse-nach-Zusage = serverseitig (Worker `:472`), nicht local. Tracking nur über `plausible()`-Wrapper. Freitext-Datum/-Zeit (Standalone) auf strukturiert normalisieren, damit es mit dem Funnel-State kompatibel wird.
+
+---
+
+## 6. Scope-Schnitt
+
+**v1 — Vereinheitlichung + echte Lückenfüllung:**
+- [ ] `js/invite-engine.js`: `InvitationData` · Platzhalter-Engine · Validierung · 3-Varianten-WhatsApp · Karten-Renderer.
+- [ ] `js/theme-config.js`: 15 `ThemeConfig` als **einziger** Theme-SSOT; die ~5 Streuquellen darauf umbiegen.
+- [ ] **Ein Backend:** Standalone-Creator auf Worker `/api/create` umstellen; Netlify `create-invite` deprecaten (Redirect `/e/<slug>` → Worker-Seite oder beibehalten als Reines-Anzeigen-Alias).
+- [ ] Standalone-Creator auf Funnel-Niveau: strukturierte Felder, Grammatik-Engine, 3 WhatsApp-Varianten.
+- [ ] **Mobile Karte bauen** (fehlt in beiden Wegen) — teilbares HTML-Artefakt.
+- [ ] Funnel-Brücke: Stage 4 nutzt dieselbe Engine für den Einladungstext (heute `state.invite.body` naiv).
+- [ ] Party-Embed-Block aus `InvitationData` (Worker existiert).
+
+**v2 — Organisation vertiefen:** Gastname-Personalisierung · **Mitbring-Abfrage** (Worker-RSVP erweitern — fehlt heute) · Wunschliste-UI (Worker kann's schon) · konfigurierbares Adress-Visibility-Flag · Status-Anzeige („3 Zusagen").
+**v3 — Reichweite:** Foto-Upload-Politur · Bild-Export (PNG der Karte) · QR-Code · mehrere Gäste einzeln · OG-Link-Vorschau.
+**v4 — Retention:** Erinnerungen · Dankesnachricht · Nach-der-Party-Gruß.
+**NICHT v1 (bewusste Cuts):** Dev/Admin-JSON-Modus, Tonalitäts-Wähler (widerspricht „keine Entscheidungen"), Foto-Upload-Neubau, Mehrsprachigkeit.
+
+---
+
+## 7. Datenmodell: `InvitationData` = Ableitung der echten `state`-Shape
 
 ```js
-/**
- * @typedef {Object} PlannerEventData   // kommt aus kindergeburtstag.html / motto-data.js
- * @property {string}  theme
- * @property {string}  childName
- * @property {number}  age
- * @property {'3-4'|'5-6'|'7-10'} ageGroup
- * @property {string}  date            // ISO
- * @property {string}  startTime       // "15:00"
- * @property {string}  endTime
- * @property {number}  [guestCount]
- * @property {'zuhause'|'park'|'halle'|'restaurant'|'sonstiges'} [locationType]
- * @property {string}  [locationLabel]
- * @property {string[]}[selectedGames]
- * @property {string}  [mainActivity]
- * @property {boolean} [treasureHuntEnabled]
- * @property {boolean} [indoorOutdoor]  // true = outdoor
- */
-
-/**
- * @typedef {PlannerEventData & Object} InvitationData
- * @property {string}  id
- * @property {'start'|'end'|'pickup'} timeMode
- * @property {string}  [location]
- * @property {'visible'|'hidden'} locationVisibility
- * @property {string}  [rsvpDeadline]
- * @property {string}  [rsvpPhone]
- * @property {string}  [parentName]
- * @property {string}  [notes]
- * @property {boolean} [askAllergies]
- * @property {boolean} [askPickup]
- * @property {string}  [costumeHint]
- * @property {boolean} [dirtyClothesOk]
- * @property {string}  [giftHint]
- * @property {string}  [wishlistUrl]
- * @property {string}  [partyPageUrl]
- * @property {string}  [photoUrl]       // v3 (Worker-Upload) — v1: leer
- * @property {string}  [guestName]      // v2
- * @property {string}  createdAt
- * @property {'planner'|'standalone'} source
- */
-
-/**
- * @typedef {Object} ThemeConfig
- * @property {string}  id, label, emoji, symbol
- * @property {string}  headlinePattern     // "{childName}s {label}-Party"
- * @property {string}  shortIntro          // Karten-Einstiegssatz
- * @property {string}  whatsappOpening
- * @property {string}  ctaLabel
- * @property {Object}  colorTokens         // CSS-Var-Werte
- * @property {string}  backgroundPattern
- * @property {string[]}iconSet, toneWords, avoidWords
- * @property {Object}  ageAdaptation       // 3-4 / 5-6 / 7-10 → Sprach-Overrides
+/** @typedef {Object} InvitationData
+ *  // aus state{} (Funnel) ODER erstellen/-Formular (Standalone) — gemappt auf EIN Modell
+ *  @property {string}  childName            // state.name
+ *  @property {'3-5'|'6-8'|'9-12'} ageGroup  // state.age
+ *  @property {number}  [exactAge]           // state.exactAge (fürs Wording „wird 7")
+ *  @property {string}  mottoId              // kanonische ID (Theme-Lookup)
+ *  @property {string}  date                 // ISO — Standalone-Freitext hierauf normalisieren
+ *  @property {string}  startTime,endTime
+ *  @property {string}  [address]            // = state.adresse; Gating via Worker
+ *  @property {string}  [notes]              // = state.partyMessage
+ *  @property {boolean} [askAllergies=true], [askPickup=true]
+ *  @property {string}  [rsvpDeadline], [rsvpPhone], [parentName], [wishlistUrl], [giftHint], [costumeHint]
+ *  @property {string}  [photoRoundId]       // Worker /api/invimg-ID, NIE base64 in URL
+ *  @property {string}  [guestName]          // v2
+ *  @property {'planner'|'standalone'} source
+ *  @property {string}  [partyId], [editToken]  // nach /api/create
  */
 ```
-
-**Feld-Zuständigkeit (Akzeptanzkriterium):** Geteilt & synchron = theme/childName/age/date/Zeiten/Ort. Nur-Einladung/Partyseite = RSVP/Wunschliste/Allergien/Hinweise/Foto. **Diese gehören NIE in den Tagesplan.** Planänderung aktualisiert die Einladung; Einladungs-Zusatzfelder ändern den Plan nicht.
-
----
-
-## 7. Planer→Einladung-Brücke (der Funnel-Kern)
-
-`mapPlannerDataToInvitationData(planner)` → vorausgefüllte `InvitationData`, Felder als `prefilled: true` markiert. Übergang-Copy: **„Der Plan steht. Jetzt fehlt nur noch die Einladung."** → sofort sichtbare Vorschau → „Wir haben Motto, Alter, Datum und Zeit übernommen." Nur echte Lücken werden abgefragt, nie Vorhandenes. Kontext-Anreicherung aus Planer-Daten (Beispiele): Schatzsuche aktiv → „Nach Kuchen wartet eine kleine Schatzsuche."; outdoor → „Wir feiern draußen — wetterfeste Kleidung."; Alter 3–5 → „Sagt bitte kurz, wer abholt."
+`ThemeConfig` (15): `id, label, emoji, mottoColor, headlinePattern, shortIntro, whatsappOpening, ctaLabel, colorTokens{}, iconSet[], toneWords[], avoidWords[], ageAdaptation{'3-5','6-8','9-12'}`.
+**Feld-Zuständigkeit:** geteilt+synchron = childName/ageGroup/mottoId/date/Zeiten/address. Nur-Einladung = rsvp/wunschliste/hinweise/foto — **nie in `state.plan`.**
 
 ---
 
-## 8. Theme-Modell (15 Mottos — Struktur aus dem Brief behalten)
+## 8. Planer→Einladung-Brücke (existiert als Stage 4 — aufwerten, nicht neu bauen)
 
-Pro Motto: Theme-ID · Anzeigename · Emoji · Farbwelt · Muster · Icon-Ideen · typische Wörter · **Tabu-Wörter** · Headline-Muster · WhatsApp-Einstieg · Karten-Einstieg · CTA · Hinweissprache. **Quelle = `js/motto-data.js`** (nur ergänzen/erweitern, keine Zweitwahrheit). Mottos: Piraten, Dino, Einhorn, Safari, Weltraum, Feuerwehr, Detektiv, Meerjungfrau, Dschungel, Feen, Pferde, Ritter, Baustelle, Prinzessin, Superheld. **Wichtig quer über alle:** Motto-Sprache verständlich halten, nicht übertreiben (kein Vollzeit-Piratensprech), maskulines Framing = unisex-ok, aber Ansprache nicht auf ein Geschlecht verengen.
-
----
-
-## 9. Platzhalter-Engine + Grammatik-Regeln (das Kronjuwel — mit echten Bug-Lektionen)
-
-Diese Engine verhindert genau die Fehlerklasse, die machsleicht in den Spielen einzeln jagen musste. **Härteste Anforderung im ganzen Projekt.**
-
-Pflicht-Platzhalter: `{childName} {age} {date} {startTime} {endTime} {location} {locationVisibility} {rsvpDeadline} {rsvpPhone} {parentName} {partyPageUrl} {guestName} {notes} {giftHint} {wishlistUrl} {costumeHint} {dirtyClothesHint} {allergyQuestion}`
-
-**Regeln:**
-- Fehlt ein Feld → der ganze abhängige Satz wird **entfernt**, nie „bis undefined". (Real erlebt: `bis undefined`, leere Klammern.)
-- `rsvpDeadline` fehlt → kein Fristsatz. `rsvpPhone` fehlt aber `partyPageUrl` da → Zusage über Partyseite. Beides fehlt → neutral: „Sag uns bitte kurz Bescheid, ob du dabei bist."
-- `locationVisibility = hidden` → „Die genaue Adresse bekommt ihr nach der Zusage." (Adress-Feld wird NICHT gerendert.)
-- `guestName` da → persönliche Ansprache („Hallo Mia, …").
-- Deutsches Datums-/Zeitformat. Keine `undefined`/`null`, keine leeren Klammern, **keine doppelten Leerzeichen, kein Leerzeichen vor Satzzeichen, keine doppelten Satzzeichen.**
-- **Achtung Kommentar-Bug (Projektlektion):** Einzeiler-Funktionen + `//` mitten in der Zeile kommentieren den Rest inkl. `}` aus → Syntaxfehler. Inline nur `/* */`.
-- **Achtung Case-Bug:** `guestName`/`childName` nicht global lowercasen (macht aus „Fall" → „fall"). Nur gezielt normalisieren.
-
-`validateInvitation()` läuft **vor** jeder Ausgabe: Pflichtfelder da? Sätze vollständig? Zeiten plausibel? Datum in Zukunft? Telefon plausibel? Text zu lang? Leere Platzhalter übrig? Doppelte Leer-/Satzzeichen? Ort sichtbar oder bewusst versteckt?
+Stage 4 sammelt schon Foto (`iPhoto`→`state.invite.photo`), Nachricht (`psMessage`→`state.partyMessage`), Adresse (`psAddress`→`state.adresse`) und postet an `/api/create`. **Aufwerten:**
+- `mapStateToInvitationData(state)` statt der heutigen ad-hoc-Felder; Einladungstext aus der geteilten Engine statt `state.invite.body`-Konkatenation.
+- Kontext-Anreicherung aus dem Plan (real verfügbar): `state.games[0..2]` als Teaser („mit Walk the Plank…"), Schatzsuche steckt im Plan (`acts` mit `kind:'schatz'`), `location` → outdoor/indoor-Hinweis, `exactAge`/`ageGroup` → Alterston.
+- Übergang-Copy: „Der Plan steht. Jetzt fehlt nur noch die Einladung." → sofortige Vorschau → „Motto, Alter, Datum, Zeit übernommen." Keine Doppel-Abfrage.
 
 ---
 
-## 10. Die drei Outputs — präzise abgegrenzt
+## 9. Theme-SSOT: die ~5 Streuquellen einsammeln
 
-**Output 1 · WhatsApp-Text (3 Varianten aus einem Zustand):**
-- **A Kurz** ≤ 450 Zeichen, direkt verschickbar, keine Ausschmückung.
-- **B Verspielt** ≤ 700, mit Motto-Einstieg, kindlich aber nicht peinlich.
-- **C Praktisch** ≤ 700, klare Infos + Zusage + Hinweise/Allergien/Kleidung/Wunschliste.
-- Jede enthält: Name, Alter, Datum, Start, Ende/Abholung, Ort (außer hidden), Frist (falls da), Zusage-Kontakt/Party-Link.
-- Regeln: keine kaputten Platzhalter, ≤ 4 Emojis, keine peinlichen Reime, kein Marketing-Sprech, kein Motto-übergreifend gleicher Generik-Text.
+| Heute | Ort | v1-Ziel |
+|---|---|---|
+| `MOTTO_CONFIG` (emoji/label/color) | `erstellen/:397` | → `theme-config.js` |
+| hardcodierte Farben/Emojis je Spiel | `einladung/<motto>/whatsapp/` | → aus `theme-config.js` lesen |
+| `mottoColor` pro Party (#D4812A def) | `party-worker.js:320` | Wert kommt aus `theme-config.js` |
+| inline `MOTTOS[]` (15) | `kindergeburtstag.html:1194` | Theme-Teil → `theme-config.js` |
+| `js/motto-data.js` | — | bleibt **Spieldaten**, kein Theme |
 
-**Output 2 · Mobile Karte (HTML/CSS):** Mobile-first 360–430 px, Desktop zentriert, keine externen Bild-Pflichtabhängigkeiten, Theme über CSS-Variablen, Tap-Ziele ≥ 44 px, **kein horizontales Scrollen, kein abgeschnittener Text bei langen Namen.** Aufbau: Hero (Symbol + Headline) · Motto-Einstieg · Info-Chips (Datum/Zeit/Ort/Frist) · Hinweise · CTA (Partyseite / WhatsApp-Zusage / Link kopieren) · Foto-Bereich optional (v3; ohne Foto genauso hochwertig via Motto-Illustration).
-
-**Output 3 · Party-Embed (Worker):** kompakter emotionaler Block oben auf der Partyseite; überleitet in Zusage/Adresse/Mitbringen/Allergien/Wunschliste/Ablauf/Mini-Spiel. Nutzt `party-worker.js`. Status optional („3 Zusagen", „Antwort bis 12. März") = v2.
-
----
-
-## 11. Beispieltexte (Piraten · Dino · Weltraum · Prinzessin)
-
-Je Motto liefern: WhatsApp kurz / verspielt / praktisch · Karten-Headline · Karten-Intro · Party-Embed-Text · Theme-Farben · CTA. **Copy-Quelle = die bestehenden `einladung/<motto>/vorlagen/`-Seiten** (nicht neu erfinden, angleichen). Beispiel Piraten-kurz (Muster): „Ahoi! {childName} wird {age} und lädt dich zur Piraten-Party ein. 🏴‍☠️ {date}, {startTime}–{endTime}, {location}. Sag bis {rsvpDeadline} kurz Bescheid!" — mit voller Grammatik-Engine (fehlt `rsvpDeadline`, fällt der letzte Satz weg).
+Ein Motto = ein `ThemeConfig`. Ändert sich Piraten-Gold, wird **eine** Zeile angefasst, nicht fünf.
 
 ---
 
-## 12. UX & Microcopy
+## 10. Platzhalter-Engine + Grammatik (Kronjuwel — mit echtem Anlass)
 
-Mobile zuerst · Schnellmodus immer zuerst sichtbar · „Mehr Optionen" klappt Feinmodus auf · Sofort-Vorschau (Mobile: Karte direkt unterm Formular; Desktop: rechts) · große Buttons · einfache Sprache · keine Anmeldung vor Ergebnis · jederzeit zurück/bearbeiten. **Im Planer: keine erneute Abfrage, keine Flow-Unterbrechung, Einladung sofort da, „zurück zum Plan" jederzeit.**
-Microcopy: „Füll kurz die Eckdaten aus." · „Trag noch ein, wo die Party startet." · „Einladung erstellen." · „Per WhatsApp teilen." · „Mehr Optionen." · „Kopiert. Du kannst die Einladung jetzt einfügen." · Planer: „Deine Einladung ist schon vorbereitet."
-**Gestrichen ggü. Brief:** Tonalitäts-Wähler (Choice-Overload). Ein Default pro Motto: warm, praktisch, mottospezifisch — nicht albern.
+Der Standalone-Creator zeigt heute den Fehler live: `cfg.emoji + ' … zu ' + name + 's ' + cfg.label + '-Geburtstag!'` (`erstellen/:572`) → bei leerem Namen „…zu s -Geburtstag!". Die Engine muss das strukturell verhindern.
 
----
-
-## 13. QA & Akzeptanzkriterien (aus dem Brief — konkret & testbar, behalten)
-
-Elternteil erstellt Einladung in < 2 min · Schnellmodus ohne Zusatzoptionen · 3 Outputs aus einem Datenmodell · jedes Motto eigener Look + Sprache · WhatsApp-Texte direkt verschickbar · Karte bei 360 px sauber · **keine leeren Platzhalter, keine kaputten Satzteile** · Optionalfelder intelligent eingebaut/entfernt · funktioniert ohne Foto/Wunschliste/Party-Link · kein Account-Zwang · Datenschutz verständlich · **aus dem Planer sind alle vorhandenen Daten vorausgefüllt, nichts wird doppelt abgefragt** · Planänderung aktualisiert Einladung · Einladungs-Zusatz ändert den Plan nicht · geteilte Felder synchron · Party-CTA erst nach erstem sichtbaren Nutzen · Standalone bleibt möglich · Maschine fühlt sich wie Maschine an, nicht wie Formular · **kein zweiter Parallel-Creator neben `einladung/erstellen/`.**
+Pflicht-Platzhalter: `{childName} {age} {date} {startTime} {endTime} {location} {rsvpDeadline} {rsvpPhone} {parentName} {partyPageUrl} {guestName} {notes} {giftHint} {wishlistUrl} {costumeHint}`.
+**Regeln:** fehlt ein Feld → ganzer abhängiger Satz **entfernt** (nie `undefined`, nie leere Klammern). `rsvpDeadline` fehlt → kein Fristsatz. `rsvpPhone` fehlt, `partyPageUrl` da → Zusage über Partyseite. Beides fehlt → „Sag uns bitte kurz Bescheid, ob du dabei bist." Adresse hidden → „Die genaue Adresse bekommt ihr nach der Zusage." (Feld nicht rendern — deckt sich mit Worker-Gating). Deutsches Datum/Zeit. Keine doppelten Leer-/Satzzeichen, kein Leerzeichen vor Satzzeichen.
+**Projektlektionen (hart gelernt):** kein `//` mitten in Einzeiler-Funktionen (kommentiert `}` aus → Syntaxfehler; inline `/* */`). Kein globales Lowercasing von Namen (macht „Fall"→„fall").
+`validateInvitation()` vor jeder Ausgabe: Pflichtfelder? Datum in Zukunft? Zeiten plausibel? Telefon plausibel? Text zu lang? Leere Platzhalter? Doppelte Zeichen? Adresse sichtbar/versteckt konsistent?
 
 ---
 
-## 14. Conversion & Datenschutz
+## 11. Drei Outputs — abgebildet auf den Bestand
 
-**Conversion:** vor Ergebnis kein Druck; während Ergebnis sofort Nutzen; nach Ergebnis Partyseite als **Organisationserleichterung** (nicht Werbung): „Noch einfacher mit einer Partyseite: dort sammeln deine Gäste Zusagen, Allergien und Geschenkideen." Im Planer ist der CTA stärker, weil ein konkreter Plan existiert. Einladung muss **auch ohne** Partyseite voll nutzbar sein.
-**Datenschutz:** Standard lokal, kein Account, keine Speicherung ohne aktive Entscheidung. Erst bei Partyseite → Worker-Speicherung + teilbarer Link + Löschmöglichkeit. **Kinderfotos nur optional + sensibel + erklärt.** Adresse optional versteckt (server-seitig, s. §4).
-
----
-
-## 15. Landingpage-Positionierung (Standalone)
-
-Headline: „Digitale Kindergeburtstags-Einladung in 2 Minuten." · Sub: „Motto wählen, Daten eintragen, per WhatsApp verschicken." · CTA: „Einladung erstellen." · plus SEO-Title / Meta-Description / OG-Text. Im Planer: „Deine Einladung ist schon vorbereitet." / „Wir haben Motto, Alter, Datum und Zeit übernommen — direkt teilen oder Details ergänzen."
+- **WhatsApp-Text (3 Varianten, NEU aus einem Zustand):** A kurz ≤450, B verspielt ≤700, C praktisch ≤700. Heute existiert nur je 1 naiver Text (Standalone + Gast-App). Jede enthält Name/Alter/Datum/Start/Ende/Ort(außer hidden)/Frist/Zusage-Weg. ≤4 Emojis, keine Reime, kein Marketing-Sprech. **Am echten `wa.me`-Deeplink Länge/Encoding testen.**
+- **Mobile Karte (NEU — fehlt komplett):** 360–430 px, Desktop zentriert, Theme über CSS-Vars, Tap-Ziele ≥44 px, kein horizontales Scrollen, kein Umbruch bei langen Namen, ohne Foto vollwertig. Hero · Motto-Einstieg · Info-Chips · Hinweise · CTA. Das ist das teilbare Artefakt, das heute niemand hat.
+- **Party-Embed (Worker existiert):** kompakter Block über `/api/create`; Zusage/Allergien/Abholung/Adresse-nach-Zusage sind serverseitig da. Wunschliste kann der Worker schon. **Mitbring-Abfrage fehlt → v2 (Worker-RSVP um `bring` erweitern).**
 
 ---
 
-## 16. Kritische Risiken & Gegenmaßnahmen
+## 12. Beispieltexte (Piraten · Dino · Weltraum · Prinzessin)
+
+Je Motto: WhatsApp kurz/verspielt/praktisch · Karten-Headline · Karten-Intro · Party-Embed-Text · Theme-Farben · CTA. **Copy-Quelle = bestehende `einladung/<motto>/vorlagen/`-Seiten + `invitationTemplate` in `data/motto/*.json`** (angleichen, nicht neu erfinden). Alles durch die Grammatik-Engine (leere Felder → Satz fällt weg).
+
+---
+
+## 13. UX & Microcopy
+
+Mobile zuerst · Schnellmodus zuerst sichtbar · „Mehr Optionen" klappt Feinmodus · Sofort-Vorschau · große Buttons · keine Anmeldung vor Ergebnis · jederzeit zurück/bearbeiten. Im Planer: keine erneute Abfrage, Stage 4 fließt aus Stage 3, „zurück zum Plan" jederzeit. Microcopy: „Füll kurz die Eckdaten aus." · „Trag noch ein, wo die Party startet." · „Einladung erstellen." · „Per WhatsApp teilen." · „Kopiert. Du kannst die Einladung jetzt einfügen." · Planer: „Deine Einladung ist schon vorbereitet." **Kein Tonalitäts-Dropdown** (ein Default pro Motto: warm, praktisch, mottospezifisch).
+
+---
+
+## 14. QA & Akzeptanzkriterien
+
+< 2 min zur Einladung · Schnellmodus ohne Zusatz · 3 Outputs aus einem Modell · jedes Motto eigener Look+Sprache · WhatsApp-Texte direkt verschickbar · Karte bei 360 px sauber · **keine leeren Platzhalter/kaputten Sätze** · funktioniert ohne Foto/Wunschliste/Party-Link · kein Account-Zwang · aus dem Planer alles vorausgefüllt, nichts doppelt · Planänderung aktualisiert Einladung, Einladungs-Zusatz ändert den Plan nicht · geteilte Felder synchron · Party-CTA erst nach erstem Nutzen · Standalone bleibt möglich · **kein zweiter Creator, kein zweites Backend, kein sechster Theme-Store** · Adress-Gating bleibt serverseitig erhalten.
+
+---
+
+## 15. Conversion & Datenschutz (mit echtem Backend-Verhalten)
+
+**Conversion:** kein Druck vor Ergebnis; Nutzen sofort; danach Partyseite als **Organisationserleichterung** (nicht Werbung). Im Planer stärker, weil konkreter Plan existiert. Einladung auch ohne Partyseite voll nutzbar.
+**Datenschutz (real im Worker):** Party-Daten per KV-TTL = Datum + 90 Tage (auto-Ablauf), Adresse serverseitig erst nach RSVP „ja", DELETE-Endpoint (DSGVO) räumt party/photo/invphoto, Newsletter nur per Double-Opt-In (7-Tage-Token) mit Consent-Audit (3 Jahre). Kinderfotos optional, ≤500 KB, als Bytes über `/api/invimg`. Standard ohne Account (localStorage); Server-Persistenz erst bei aktiver Partyseite.
+
+---
+
+## 16. Risiken & Gegenmaßnahmen
 
 | Risiko | Gegenmaßnahme |
 |---|---|
-| **Parallel-Wahrheit** (zweiter Creator neben `einladung/erstellen/`) | v1 = Refactor der 3 Bestandsteile auf **eine** Engine, erst dann erweitern. Akzeptanzkriterium hart. |
-| **Tote React-Altlast wiederbeleben** | Vanilla-JS-Modul (`invite-engine.js`), No-Build-Vertrag von `kindergeburtstag.html` schützen. `js/kindergeburtstag.js` nicht anfassen. |
-| **Scope-Explosion** | v1 auf Konsolidierung + 3 Outputs begrenzt; Dev-Modus/Tone/Foto/Export nach v2+. |
-| **Foto-in-URL-Bug** | Karte ohne Foto vollwertig; Foto erst v3 über Worker-Upload. |
-| **„Adresse nach Zusage" als local-only missverstanden** | Server-seitig über Worker/KV spezifiziert (§4). |
-| **Feature bewegt North Star nicht allein** | **Ehrlich benennen:** dokumentierter Engpass ist Traffic/SEO-Recovery (De-Index-Ereignis), North Star „Partyseite erstellt" ist **unmessen**. Vor großem Ausbau erst Umami-Baseline dieses Schritts messen, sonst optimiert man einen Schritt, den kaum jemand erreicht. |
+| **Zwei Backends bleiben parallel** | v1 entscheidet: Worker kanonisch, Netlify `create-invite` deprecaten. |
+| **Theme-Fragmentierung wächst weiter** | `theme-config.js` als einzige Quelle, die 5 Streustellen darauf umbiegen. |
+| **Dritter Creator / Parallel-Wahrheit** | Akzeptanzkriterium hart: refactor vor Neubau. |
+| **Tote React-Altlast** | Vanilla-JS, No-Build-Vertrag schützen. |
+| **Foto-in-URL-Regression** | `/api/invimg`-Weg beibehalten, nie base64 in Query. |
+| **Scope-Explosion** | v1 = Vereinheitlichung + Karte + 3 Varianten; Rest v2+. |
+| **Feature bewegt North Star nicht allein** | Dokumentierter Engpass ist Traffic/SEO-Recovery (De-Index-Ereignis); North Star „Partyseite erstellt" ist **unmessen** (Umami nie ausgewertet). Vor großem Ausbau `party_created`/`plan_ready`-Trichter in Umami messen — der Worker feuert die Events bereits. |
 
 ---
 
 ## 17. Lieferauftrag an den Umsetzer
 
-1. Lies §1. Öffne `einladung/erstellen/`, eine `einladung/<motto>/whatsapp/`-App, den Einladungs-Schritt in `kindergeburtstag.html`, `party-worker.js`. **Verstehe den Bestand vor der ersten Zeile.**
-2. Baue `invite-engine.js`: `InvitationData` · 15 `ThemeConfig` (aus `motto-data.js`) · `resolveTemplate` · `validateInvitation` · `generateWhatsAppTexts` · `generateInvitationCard` · `generatePartyEmbed` · `mapPlannerDataToInvitationData` · `buildShareUrl` · `syncInvitationWithPlanner`.
-3. Hebe die 3 Bestandsteile auf die Engine (kein Neubau daneben).
-4. Verdrahte die Planer-Brücke ohne Doppel-Abfrage.
-5. QA gegen §13. Grammatik-Engine mit leeren/Teil-Feldern brutal testen.
+1. Lies §1–§2. Öffne `kindergeburtstag.html` (Stage 4 + `state`), `einladung/erstellen/`, eine `…/whatsapp/`-App, `party-worker.js`. **Verstehe die zwei Wege, bevor du eine Zeile schreibst.**
+2. Entscheide/bestätige: **Worker = kanonisches Backend.**
+3. Baue `js/theme-config.js` (15 `ThemeConfig`) + `js/invite-engine.js` (`mapStateToInvitationData` · `resolveTemplate` · `validateInvitation` · `generateWhatsAppTexts` · `generateInvitationCard` · `generatePartyEmbed` · `buildShareUrl`).
+4. Hebe Standalone-Creator + Funnel-Stage-4 auf die Engine (kein Neubau daneben); Standalone postet an `/api/create`.
+5. Baue die fehlende **Mobile Karte**.
+6. QA gegen §14; Grammatik-Engine mit leeren/Teil-Feldern brutal testen; Adress-Gating verifizieren.
 
-**Arbeite konkret, triff Entscheidungen. Was zu groß für v1 ist: benannt in §5, sauber für später eingeplant — aber v1 nicht damit aufblähen.**
+**Konkret arbeiten, Entscheidungen treffen. Was zu groß für v1 ist: in §6 benannt und für später eingeplant — v1 nicht damit aufblähen.**
