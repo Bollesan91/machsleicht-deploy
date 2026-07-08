@@ -1,3 +1,34 @@
+# Session-Notiz — 08.07.2026 (Gate-Stand 17/45 + NEUE Pflicht: Magic-Moment-Foto-Reveal in JEDEM Spiel)
+
+## ⭐ START-HINWEIS — beim „Start leicht" ZUERST ansagen
+
+**1) Gate-Reststand: 17 von 45 einzeln durch, 28 offen.**
+
+*Durch (17):*
+- **10 formelles Einzeln-Schmiede-Protokoll** (Story-Muster v2 + Attribution + Gate): spuren-safari, lianen-dschungel, huerden-pferde, gluehwuermchen-feen, loeschen-feuerwehr, regenbogen-einhorn, sternbild-weltraum, signal-superheld, tatort-prinzessin, uvschrift-prinzessin
+- **7 diese Session:** jeep-safari + fotosafari-safari (Doppelcheck-GO **inkl. Magic-Moment-Twist**), drehleiter-feuerwehr (Doppelcheck), laterne-feen + tresor-prinzessin + wimmel-detektiv + akte-detektiv (Alters-Double-Check)
+
+*Offen (28):* bagger-baustelle, ei-dino, faehrte-dino, fingerabdruck-detektiv, flaschenpost-piraten, fossil-dino, funk-weltraum, hochhaus-baustelle, hufeisen-pferde, kanone-piraten, katapult-ritter, korallen-meerjungfrau, memory-piraten, notruf-feuerwehr, perlen-meerjungfrau, puzzle-dschungel, rakete-weltraum, rohre-baustelle, schatz-meerjungfrau, schwert-ritter, stadt-superheld, sternenstaub-einhorn, strahl-superheld, striegeln-pferde, taunetz-feen, turm-einhorn, wappen-ritter, wildnis-dschungel
+
+Alle 45 sind deploy-safe (4-teiliges Deploybar-Programm, Playtest 44/45 grün, 0 JS-Fehler) — die 28 sind nur noch nicht einzeln geschmiedet.
+
+**2) NEUE HARTE ANFORDERUNG (Bolle 08.07.): Magic-Moment-Foto-Reveal in JEDEM Spiel.**
+
+Jedes der 45 Spiele braucht — schon **IM Spiel, VOR dem Win-Screen** — den Plot-Twist-Moment:
+> Hauptspiel geschafft → kurze Teaser-Pause („oh, was ist da vorne für ein cooles Tier / …") → das (unscharf→scharf) Geburtstagskind-**Foto wird IN DER SZENE enthüllt und hüpft vor Freude** → dann erst der große Win/Reveal-Screen.
+
+- **Referenz-Piloten (Muster steht, Doppelcheck-GO):** jeep-safari + fotosafari-safari. Aktuell **nur diese 2 von 45** haben den Magic-Moment → Roll-out auf die anderen 43 offen (auch die 15 sonst schon „durch"en ohne Twist).
+- **Muster technisch:** Teaser-Text einblenden → `special`-Objekt (blurred Foto + Sparkle) in-scene → snap/enthüllen (`.revealed`, `filter:none`) → `.joy`-Hüpf-Animation → Timeout → `winSeq()`. **No-Fail muss durch die Special-Phase tragen** (Idle-Tipp steuert + knipst automatisch, jeder Tipp zählt). Timeout-Handle (`finT`) beim Neustart clearen (sonst Leak — Doppelcheck-MAJOR).
+
+## Was diese Session lief (06.–08.07.)
+- **jeep-safari:** Finale-Plot-Twist, längeres Spiel (5 knipsen), Tiere einzeln + abwechselnd l/r, Straßen-Reveal + Freuden-Hüpfen → Doppelcheck GO (GPT 82 / claude.ai 81).
+- **fotosafari-safari:** Plot-Twist-Pilot (eigene Tipp-Mechanik) + No-Fail deterministisch → Doppelcheck GO (GPT 72→gefixt / claude.ai 88, kein MAJOR).
+- **core.js:** „🔄 Nochmal spielen"-Button set-weit auf allen 45 + Timeout-Leak-Fix. Cache-Bust `?v=20260708`.
+- **Doppelcheck fing 2 echte Bugs:** Timeout-Leak (beide Spiele) + fotosafari No-Fail-Determinismus — beide gefixt.
+- **Commits auf draft:** …`ff07e46`, `f537ccf` (HEAD). **Kein Deploy** (liegt auf draft, main unberührt).
+
+---
+
 # Session-Notiz — 02.07.2026 (Deploybar-Programm: 45 Einladungs-Spiele funktion+viral+geil, Erstcommit)
 
 ## 🏁 Kernergebnis: Alle 45 Foto-Reveal-Einladungsspiele deploy-fertig auf draft (Erstcommit) — Final-Playtest 44/45 automatisiert grün, 1 Harness-Limit (schatz: inline-Win, per Code-Inspektion korrekt), 0 JS-Fehler
