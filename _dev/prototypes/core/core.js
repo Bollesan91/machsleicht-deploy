@@ -81,6 +81,19 @@ window.addEventListener('DOMContentLoaded',function(){
   } }catch(e){}
 });
 
+/* ===== "Nochmal spielen"-Taste auf #s-win: klickt den Start-Button -> sauberer Neustart (jedes Spiel resettet im
+   Start-Handler seinen State). Set-weit fuer alle Spiele mit #s-win + #startBtn. ===== */
+window.addEventListener('DOMContentLoaded',function(){
+  try{ const w=document.getElementById('s-win'), sb=document.getElementById('startBtn');
+    if(w && sb && !document.getElementById('replayBtn')){
+      const r=document.createElement('button'); r.id='replayBtn'; r.textContent='🔄 Nochmal spielen';
+      r.style.cssText='display:block;margin:14px auto 0;padding:9px 22px;border:0;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;background:rgba(255,255,255,.92);color:#333;box-shadow:0 4px 14px rgba(0,0,0,.25);touch-action:manipulation';
+      r.addEventListener('click',function(){ try{ document.getElementById('startBtn').click(); }catch(e){} });
+      w.appendChild(r);
+    }
+  }catch(e){}
+});
+
 /* ===== Idle-Nudge (No-Fail-Netz fuer sehr junge/passive Kinder): Ist #s-game sichtbar und tip() definiert,
    pulsiert nach ~10s Inaktivitaet der Tipp-Button, nach weiteren ~8s loest tip() automatisch aus.
    Jede Interaktion (pointerdown/keydown) setzt zurueck -> ein engagiertes Kind wird nie genudged.

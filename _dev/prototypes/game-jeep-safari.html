@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Jeep-Safari — Safari</title>
-<link rel="stylesheet" href="core/core.css?v=20260707">
+<link rel="stylesheet" href="core/core.css?v=20260708">
 <style>
   /* E8 Steuern: Safari-Jeep zwischen 3 Spuren steuern, Hindernissen ausweichen, ins Camp -> Foto-Slot-Reveal. Auf Shared Core. */
   :root{--bg1:#3a2a10;--bg2:#c99b54;--fg:#fff;--accent:#e0a23a;--accent-dk:#a86f17;--ink:#3a2c14}
@@ -88,7 +88,7 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260707"></script>
+<script src="core/core.js?v=20260708"></script>
 <script>
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#3a2a10'/><rect x='44' y='96' width='112' height='40' rx='8' fill='#7a9a3a'/><rect x='60' y='76' width='70' height='30' rx='6' fill='#6a8a32'/><rect x='66' y='80' width='26' height='20' fill='#bfe0ff'/><circle cx='72' cy='142' r='16' fill='#241c10'/><circle cx='140' cy='142' r='16' fill='#241c10'/><circle cx='72' cy='142' r='6' fill='#888'/><circle cx='140' cy='142' r='6' fill='#888'/><path d='M150 100 l16 -10' stroke='#e0a23a' stroke-width='4'/></svg>`);
 const THEME={ photo:'/birthday-photo.jpg' };
@@ -99,7 +99,7 @@ const LANES=3, LANE_X=[16.6,50,83.3], ANIMALS=['🦒','🦓','🐘'];
 const ANIM_X={l:8, r:92}; // Tiere stehen am StraßenRAND, nicht in den Fahrspuren -> kein "Überfahren"
 // Immer 5 Tiere knipsen, dann Finale (das "coolste Tier" = das Kind). Alters-Staffel nur noch über Tempo/Dichte: jüngere Kinder = langsamer + weniger.
 const GOAL=5, FALL=(ageNum()<=6?3.0:ageNum()<=9?3.8:4.8), SPAWN=(ageNum()<=6?1200:ageNum()<=9?1000:850);
-let laneIdx=1, snaps=0, done=false, moveT=null, spawnT=null, obs=[], finale=false, special=null, animSide='r', curAnimal=null;
+let laneIdx=1, snaps=0, done=false, moveT=null, spawnT=null, obs=[], finale=false, special=null, animSide='r', curAnimal=null, finT=null;
 function sharpen(frac){ const p=$('#goalPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } // Reveal an die Tier-Fotos gekoppelt
 function prog(){ const f=snaps/GOAL; $('#prog').style.width=Math.min(100,f*100)+'%'; $('#snaps').textContent=snaps; sharpen(f*0.55); if(f>=0.5) $('#goal').style.top=(-14+Math.min(1,(f-0.5)/0.5)*14)+'%'; } // Camp-Foto baut nur bis ~0.55 auf; der klare Reveal kommt erst nach dem Finale-Foto
 function setDigger(){ $('#digger').style.left=LANE_X[laneIdx]+'%'; }
@@ -109,17 +109,17 @@ function steer(dir){ if(done)return; const n=Math.max(0,Math.min(LANES-1,laneIdx
 function bump(o){ $('#digger').classList.add('hit'); setTimeout(()=>$('#digger').classList.remove('hit'),300); sfx.bump(); vib([10,30]); } // no-fail: nur Wackeln, kein Rückschritt
 function snapAnimal(o){ if(o._snapped||done)return; o._snapped=true; o.classList.remove('waiting'); if(o===curAnimal)curAnimal=null; o.style.transition='transform .25s,opacity .35s'; o.style.transform='translate(-50%,-50%) scale(1.4)'; setTimeout(function(){ o.style.opacity='0'; },200); setTimeout(function(){ o.remove(); const i=obs.indexOf(o); if(i>=0)obs.splice(i,1); },500); snaps++; const fl=$('#flash'); fl.classList.add('on'); setTimeout(()=>fl.classList.remove('on'),150); sfx.snap(); vib([8,20]); prog();
   if(snaps>=GOAL && !finale && !done){ enterFinale(); }
-  else if(!finale && !done){ animSide=(animSide==='l'?'r':'l'); setTimeout(spawnAnimal,520); } // naechstes Tier erst jetzt, abwechselnd von der anderen Seite
+  else if(!finale && !done){ animSide=(animSide==='l'?'r':'l'); finT=setTimeout(spawnAnimal,520); } // naechstes Tier erst jetzt, abwechselnd von der anderen Seite
 } // Tier geknipst
 function enterFinale(){
   finale=true; clearInterval(spawnT); // keine neuen Tiere mehr; Strasse leert sich
-  setTimeout(function(){ if(done)return; showTeaser(); }, 1400); // kurze Pause -> Anticipation
+  finT=setTimeout(function(){ if(done)return; showTeaser(); }, 1400); // kurze Pause -> Anticipation
 }
 function showTeaser(){
   const t=$('#teaser'); if(!t)return;
   t.textContent='Oh! Was ist da vorne für ein besonders cooles Tier? 📸';
   t.classList.add('on');
-  setTimeout(function(){ if(done)return; t.classList.remove('on'); spawnSpecial(); }, 2200);
+  finT=setTimeout(function(){ if(done)return; t.classList.remove('on'); spawnSpecial(); }, 2200);
 }
 function spawnSpecial(){
   if(done||special)return;
@@ -135,7 +135,7 @@ function snapSpecial(){
   special.classList.add('joy'); // ... und huepft vor Freude
   const fl=$('#flash'); fl.classList.add('on'); setTimeout(function(){ fl.classList.remove('on'); },150);
   sfx.snap(); vib([8,20,8,20]);
-  setTimeout(winSeq,1900); // laenger: Foto huepft ausgiebig vor Freude auf der Strasse, dann grosser Reveal
+  finT=setTimeout(winSeq,1900); // laenger: Foto huepft ausgiebig vor Freude auf der Strasse, dann grosser Reveal
 }
 function spawnAnimal(){ if(done||finale||curAnimal)return; // immer nur EIN Tier, abwechselnd links/rechts, wartet am Rand bis geknipst
   const o=document.createElement('div'); o.className='obs waiting'; o._animal=true; o._side=animSide; o._y=-8; o.style.top='-8%'; o.style.left=ANIM_X[animSide]+'%'; o.textContent=ANIMALS[Math.floor(Math.random()*ANIMALS.length)];
@@ -154,7 +154,7 @@ function winSeq(){ if(done)return; done=true; clearInterval(moveT); clearInterva
 function tip(){ if(done)return;
   if(finale){ laneIdx=1; setDigger(); if(special && !special._snapped && special._sy>=48) snapSpecial(); return; } // Finale: in die Mitte fahren + das coolste Tier knipsen (sobald es da ist)
   if(curAnimal && !curAnimal._snapped){ laneIdx=curAnimal._side==='l'?0:LANES-1; setDigger(); if(curAnimal._y>=50) snapAnimal(curAnimal); } } // Tipp: auf das aktuelle Tier zusteuern + knipsen (sobald es am Rand wartet)
-$('#startBtn').addEventListener('click',()=>{ laneIdx=1;snaps=0;done=false;finale=false;animSide='r';curAnimal=null; obs.forEach(o=>o.remove()); obs=[]; if(special){special.remove();special=null;} $('#teaser').classList.remove('on'); $('#goalN').textContent=GOAL; setDigger(); prog(); $('#goalPhoto').classList.remove('big'); sharpen(0); const dg=$('#digger'); dg.style.transition=''; dg.style.bottom='6%'; $('#goal').style.top='-14%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveObs,95); spawnT=setInterval(spawnObs,SPAWN); spawnAnimal(); });
+$('#startBtn').addEventListener('click',()=>{ clearTimeout(finT);finT=null; laneIdx=1;snaps=0;done=false;finale=false;animSide='r';curAnimal=null; obs.forEach(o=>o.remove()); obs=[]; if(special){special.remove();special=null;} $('#teaser').classList.remove('on'); $('#goalN').textContent=GOAL; setDigger(); prog(); $('#goalPhoto').classList.remove('big'); sharpen(0); const dg=$('#digger'); dg.style.transition=''; dg.style.bottom='6%'; $('#goal').style.top='-14%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveObs,95); spawnT=setInterval(spawnObs,SPAWN); spawnAnimal(); });
 $('#leftBtn').addEventListener('click',()=>steer(-1));
 $('#rightBtn').addEventListener('click',()=>steer(1));
 $('#field').addEventListener('click',e=>{ const r=e.currentTarget.getBoundingClientRect(); steer(e.clientX < r.left+r.width/2 ? -1 : 1); });
