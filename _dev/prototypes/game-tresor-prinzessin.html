@@ -79,12 +79,14 @@ const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 if(!HAS_PHOTO){const _h=document.querySelector('.invite .hero'); if(_h)_h.classList.add('nophoto');} // Doppelkrone-Fix: NOFOTO-Krone-Avatar bekommt keine zweite ::after-Krone
 const CC=['#e6c15a','#37c46e','#a35cff','#fff','#ff7fb0'];
 const sfx={click(){note(520,AC().currentTime,0.04,{type:'square',vol:0.08,glideTo:380});},wrong(){note(200,AC().currentTime,0.16,{type:'sawtooth',vol:0.1,glideTo:140});},right(){const t=AC().currentTime;note(660,t,0.1,{type:'sine',vol:0.14});note(990,t+0.08,0.18,{type:'sine',vol:0.13});},open(){const t=AC().currentTime;note(120,t,0.3,{type:'sine',vol:0.2,glideTo:60});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
-let code=[],guess=[0,0,0],tries=0,cracked=false;
+const DIGITS=(ageNum()<=6?2:ageNum()<=9?3:4); // Alters-Staffelung: kürzerer Code für die Kleinen, längerer für die Großen
+{const _s=document.querySelector('#s-intro .sub'); if(_s)_s.textContent=`Im königlichen Tresor steckt der Beweis. Knack den ${DIGITS}-stelligen Code — die Anzeige zeigt dir, welche Stellen schon stimmen.`;}
+let code=[],guess=Array(DIGITS).fill(0),tries=0,cracked=false;
 function rnd(){return Math.floor(Math.random()*10);}
 function build(){
-  code=[rnd(),rnd(),rnd()]; if(code.join('')==='000')code[0]=4; guess=[0,0,0];tries=0;cracked=false;$('#tries').textContent='Versuche: 0';$('#hint').textContent='Stell die Zahlen ein…';
+  code=Array.from({length:DIGITS},()=>rnd()); if(code.every(d=>d===0))code[0]=4; guess=Array(DIGITS).fill(0);tries=0;cracked=false;$('#tries').textContent='Versuche: 0';$('#hint').textContent='Stell die Zahlen ein…';
   const d=$('#dials');d.innerHTML='';
-  for(let i=0;i<3;i++){const col=document.createElement('div');col.className='dial';
+  for(let i=0;i<DIGITS;i++){const col=document.createElement('div');col.className='dial';
     col.innerHTML=`<button data-i="${i}" data-dir="1">▲</button><div class="num" id="n${i}">0</div><button data-i="${i}" data-dir="-1">▼</button>`;
     d.appendChild(col);}
   d.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.i,dir=+b.dataset.dir;guess[i]=(guess[i]+dir+10)%10;$('#n'+i).textContent=guess[i];$('#n'+i).style.color='';sfx.click();vib(6);})); // Stale-Green weg: Wegdrehen von einer bestätigten Stelle löscht das grüne Feedback sofort
@@ -93,10 +95,10 @@ function build(){
 function crack(){
   if(cracked)return; // Guard: kein Doppel-Win (doppelter guestName-Prefix)
   tries++;$('#tries').textContent='Versuche: '+tries;
-  let correct=0; for(let i=0;i<3;i++) if(guess[i]===code[i])correct++;
-  for(let i=0;i<3;i++){ $('#n'+i).style.color = (guess[i]===code[i]) ? '#7fff9e' : ''; } // Stellen-Feedback: richtige Ziffer wird grün
-  if(correct===3){ cracked=true; $('#hint').textContent='ENTRIEGELT!'; sfx.right(); setTimeout(openSafe,300); }
-  else { $('#hint').textContent=correct+' von 3 Stellen stimmen'; sfx.wrong(); vib([30,40,30]); $('#door').animate([{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'translateX(0)'}],{duration:240}); }
+  let correct=0; for(let i=0;i<DIGITS;i++) if(guess[i]===code[i])correct++;
+  for(let i=0;i<DIGITS;i++){ $('#n'+i).style.color = (guess[i]===code[i]) ? '#7fff9e' : ''; } // Stellen-Feedback: richtige Ziffer wird grün
+  if(correct===DIGITS){ cracked=true; $('#hint').textContent='ENTRIEGELT!'; sfx.right(); setTimeout(openSafe,300); }
+  else { $('#hint').textContent=correct+' von '+DIGITS+' Stellen '+(correct===1?'stimmt':'stimmen'); sfx.wrong(); vib([30,40,30]); $('#door').animate([{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'translateX(0)'}],{duration:240}); }
 }
 function openSafe(){ $('#safe').classList.add('open'); sfx.open(); vib(60); setTimeout(winReveal,1800); } // laenger im offenen Tresor verweilen: Gesicht wird bewundert, bevor die Karte kommt
 function winReveal(){
