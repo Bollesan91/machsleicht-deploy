@@ -11,8 +11,10 @@
   .meter{width:100%;max-width:280px;height:14px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden}
   .meter .fill{height:100%;width:0%;background:linear-gradient(90deg,#ffe6a0,#ffc6e0);transition:width .15s}
   .sky{position:relative;width:100%;max-width:320px;aspect-ratio:.8;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 50% 80%,#6a4a9a,#1a0f33 75%);box-shadow:0 12px 30px rgba(0,0,0,.5);display:flex;align-items:flex-end;justify-content:center}
-  .fly{position:absolute;width:5px;height:5px;border-radius:50%;background:#ffe6a0;box-shadow:0 0 6px 2px rgba(255,230,160,.8);animation:tw 2.5s infinite}
-  @keyframes tw{0%,100%{opacity:.2}50%{opacity:1}}
+  .fly{position:absolute;width:20px;height:20px;margin:-10px;border-radius:50%;background:radial-gradient(circle,#fff7d6 30%,#ffd24d 72%);box-shadow:0 0 12px 5px rgba(255,225,150,.85);cursor:pointer;touch-action:manipulation;animation:tw 1.3s infinite;z-index:3}
+  .fly::after{content:"";position:absolute;inset:-12px} /* großzügiger Tap-Bereich für kleine Finger */
+  @keyframes tw{0%,100%{transform:scale(.8);opacity:.72}50%{transform:scale(1.15);opacity:1}}
+  .fly.caught{pointer-events:none;animation:none;transition:left .4s ease,top .4s ease,transform .4s ease,opacity .4s ease;opacity:0;transform:scale(.2)}
   .lantern{position:relative;width:120px;margin-bottom:8%;cursor:pointer;user-select:none;transition:transform 1.4s cubic-bezier(.4,0,.4,1),opacity .6s}
   .lbody{width:90px;height:110px;margin:0 auto;border-radius:46px 46px 30px 30px;background:radial-gradient(circle at 50% 40%,#7a5a3a,#4a3422);box-shadow:inset 0 0 0 3px #2a1d12;position:relative;overflow:hidden}
   .glow{position:absolute;inset:6px;border-radius:40px 40px 24px 24px;background:radial-gradient(circle at 50% 45%,#fff7d6,#ffd24d);opacity:.15;transition:opacity .15s}
@@ -37,7 +39,7 @@
   <section class="scene on" id="s-intro">
     <div class="big">🏮</div>
     <h1>Lass die Wunsch-Laterne leuchten!</h1>
-    <p class="sub">Tippe immer wieder auf die Laterne, bis sie hell genug strahlt. Dann steigt sie in den Feenhimmel — und trägt einen geheimen Geburtstagswunsch hinauf!</p>
+    <p class="sub">Im Feenhimmel schweben leuchtende Glühwürmchen. Fang sie mit dem Finger — jedes fliegt in die Wunsch-Laterne und macht ihr Licht heller! Wenn sie hell genug strahlt, steigt sie auf und trägt einen geheimen Geburtstagswunsch hinauf.</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Wunsch beginnen ✨</button>
   </section>
@@ -50,7 +52,7 @@
         <div class="lbody"><div class="glow" id="glow"></div><div class="lphoto" id="lphoto"></div></div>
       </div>
     </div>
-    <div class="tapHint" id="tapHint">Tipp-tipp auf die Laterne!</div>
+    <div class="tapHint" id="tapHint">Fang die Glühwürmchen! ✨</div>
   </section>
 
   <section class="scene" id="s-win">
@@ -78,28 +80,33 @@ const sfx={
   win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-function flies(){ const s=$('#sky'); for(let i=0;i<14;i++){const f=document.createElement('div');f.className='fly';f.style.left=Math.random()*92+'%';f.style.top=Math.random()*70+'%';f.style.animationDelay=(Math.random()*2.5)+'s';s.appendChild(f);} }
-let prog=0,done=false,lastMile=0;
-function tap(){
-  if(done)return; prog=Math.min(100,prog+(ageNum()<=6?12:ageNum()<=9?8:6)); $('#fill').style.width=prog+'%'; // Alters-Staffel: Taps bis Aufstieg
-  $('#glow').style.opacity=Math.max(.15,prog/100); sfx.tap(prog); vib(6);
-  if(prog>=40 && lastMile<1){lastMile=1;sfx.sparkle();$('#tapHint').textContent='Heller … weiter!';}
-  if(prog>=75 && lastMile<2){lastMile=2;sfx.sparkle();$('#tapHint').textContent='Gleich hebt sie ab!';}
-  if(prog>=100) liftOff();
+// E2 -> "Fang die Glühwürmchen": leuchtende Glühwürmchen schweben durch den Feenhimmel; jedes gefangene fliegt in die
+// Laterne und füttert ihr Licht. Genug gefangen -> sie steigt auf. Lebendig statt stumpfes Tap-Meter. Alters-Staffel
+// über Tempo (Schweb-Geschwindigkeit) + Anzahl (GOAL). Verpasste Glühwürmchen ziehen weiter -> kein Verlieren.
+let caught=0,done=false,lastMile=0,GOAL=8,flyList=[],moveT=null,spawnT=null;
+function newFly(){ if(done||flyList.length>=6)return; const s=$('#sky'); const f=document.createElement('div'); f.className='fly';
+  f._x=8+Math.random()*76; f._y=8+Math.random()*50;
+  const spd=(ageNum()<=6?0.42:ageNum()<=9?0.7:1.05); f._vx=(Math.random()-.5)*spd; f._vy=(Math.random()-.5)*spd*0.85;
+  f.style.left=f._x+'%'; f.style.top=f._y+'%'; f.addEventListener('click',()=>catchFly(f));
+  s.appendChild(f); flyList.push(f); f._life=setTimeout(()=>{ if(!f._caught){f.remove();flyList=flyList.filter(x=>x!==f);} }, 5200); }
+function moveFlies(){ if(done)return; for(const f of flyList){ if(f._caught)continue; f._x+=f._vx; f._y+=f._vy; if(f._x<=4||f._x>=88)f._vx*=-1; if(f._y<=4||f._y>=60)f._vy*=-1; f._x=Math.max(4,Math.min(88,f._x)); f._y=Math.max(4,Math.min(60,f._y)); f.style.left=f._x+'%'; f.style.top=f._y+'%'; } }
+function catchFly(f){ if(done||f._caught)return; f._caught=true; clearTimeout(f._life); caught++;
+  const lr=$('#lantern').getBoundingClientRect(), sr=$('#sky').getBoundingClientRect(); // gefangenes Glühwürmchen fliegt in die Laterne
+  f.style.left=((lr.left+lr.width/2-sr.left)/sr.width*100)+'%'; f.style.top=((lr.top+lr.height*0.4-sr.top)/sr.height*100)+'%'; f.classList.add('caught');
+  setTimeout(()=>{f.remove();flyList=flyList.filter(x=>x!==f);},400);
+  $('#fill').style.width=Math.min(100,caught/GOAL*100)+'%'; $('#glow').style.opacity=Math.max(.15,caught/GOAL); sfx.sparkle(); vib(8);
+  if(caught>=Math.ceil(GOAL/2) && lastMile<1){lastMile=1;$('#tapHint').textContent='Die Laterne wird heller … weiter!';}
+  if(caught>=GOAL) liftOff();
 }
-function liftOff(){
-  done=true; $('#tapHint').textContent=''; const lan=$('#lantern'); lan.classList.add('lit'); sfx.rise(); vib([20,40,20]);
-  setTimeout(()=>{ lan.classList.add('up'); }, 350);
-  setTimeout(winReveal, 1500);
-}
+function liftOff(){ done=true; clearInterval(moveT); clearInterval(spawnT); [...document.querySelectorAll('.fly')].forEach(f=>f.remove()); flyList=[]; $('#tapHint').textContent=''; const lan=$('#lantern'); lan.classList.add('lit'); sfx.rise(); vib([20,40,20]);
+  setTimeout(()=>{ lan.classList.add('up'); }, 350); setTimeout(winReveal, 1500); }
 function winReveal(){
-  $('#winTitle').textContent='Du hast die Laterne entzündet!'; // Gast-Lob: der Gast hat die Laterne zum Leuchten getippt
+  $('#winTitle').textContent='Du hast die Laterne zum Leuchten gebracht!'; // Gast-Lob: der Gast hat die Glühwürmchen gefangen
   if(HAS_PHOTO){ $('#winWho').textContent=`Der schönste Wunsch im Feenwald ist ${kid()}! Komm zur Feen-Party:`; } else { $('#winWho').textContent=`Die Laterne strahlt heller als alle Sterne — sie trägt einen Geburtstagswunsch für ${kid()}! Komm zur Feen-Party:`; } guestName();
   show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]);
 }
-function tip(){ if(done)return; const s=(ageNum()<=6?12:ageNum()<=9?8:6); const n=Math.ceil(34/s); for(let i=0;i<n;i++) tap(); } // No-Fail: Tipp-Knopf (core.js) laesst die Laterne kraeftig heller werden — jedes Kind kommt zum Reveal
-$('#startBtn').addEventListener('click',()=>{prog=0;done=false;lastMile=0;$('#fill').style.width='0%';$('#glow').style.opacity='.15';$('#lantern').classList.remove('lit','up');$('#tapHint').textContent='Tipp-tipp auf die Laterne!';[...document.querySelectorAll('.fly')].forEach(f=>f.remove());flies();show('s-game');});
-$('#lantern').addEventListener('click',tap);
+function tip(){ if(done)return; let f=flyList.find(x=>!x._caught); if(f){catchFly(f);} else { newFly(); const g=flyList.find(x=>!x._caught); if(g)catchFly(g); } } // No-Fail: der Tipp fängt ein Glühwürmchen für dich
+$('#startBtn').addEventListener('click',()=>{ caught=0;done=false;lastMile=0; GOAL=(ageNum()<=6?6:ageNum()<=9?8:11); $('#fill').style.width='0%'; $('#glow').style.opacity='.15'; $('#lantern').classList.remove('lit','up'); $('#tapHint').textContent='Fang die Glühwürmchen! ✨'; [...document.querySelectorAll('.fly')].forEach(f=>f.remove()); flyList=[]; show('s-game'); for(let i=0;i<4;i++)newFly(); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveFlies,50); spawnT=setInterval(newFly,(ageNum()<=6?1100:850)); });
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
