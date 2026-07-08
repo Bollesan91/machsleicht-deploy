@@ -13,6 +13,7 @@
 - **~5 Theme-Quellen** statt „einer SSOT" (§10) — Korrektur meiner v1-Aussage „Theme aus motto-data.js" (motto-data.js ist **Spieldaten**).
 - **Freitext-Datum/Zeit** im Creator vs. strukturiert im Funnel (§8) — echte Reibung benannt.
 - **v1-Scope neu:** von „konsolidieren" zu **konkret**: EIN Backend wählen, EIN Theme-SSOT, Standalone-Creator auf Funnel-Niveau heben, echte Karte bauen (fehlt komplett).
+- **Stage-4-Modell präzisiert (Bolle 08.07.):** Im Funnel ist alles bekannt → die einzige Rest-Entscheidung ist das **Format (Spiel vs. Karte)**, kein Formular. Beide hängen an DERSELBEN Partyseite (Rückgrat). Deckt sich mit `state.invite.type` im Code (§8). Standalone = dieselbe Gabelung, nur mit Datenerfassungs-Vorspann.
 
 ---
 
@@ -198,10 +199,34 @@ Beide Einstiege schreiben in **dasselbe** `InvitationData`; alle Outputs lesen d
 
 ## 8. Planer→Einladung-Brücke (existiert als Stage 4 — aufwerten, nicht neu bauen)
 
-Stage 4 sammelt schon Foto (`iPhoto`→`state.invite.photo`), Nachricht (`psMessage`→`state.partyMessage`), Adresse (`psAddress`→`state.adresse`) und postet an `/api/create`. **Aufwerten:**
+### Kernmodell: Stage 4 ist eine FORMAT-Gabelung, kein Formular
+An diesem Punkt ist der `state` komplett (Motto, Name, Datum, Zeit, Ort, Alter). Die einzige echte Rest-Entscheidung ist das **Einladungs-Format** — und das existiert im Code bereits als `state.invite.type` (`'minispiel' | 'karte'`; `'print'` = Warteliste, ignorieren).
+
+```
+Stage 4:  „Alles steht. Wie soll deine Einladung aussehen?"
+          ┌──────────────────────┐   ┌──────────────────────┐
+          │ 🎮 Spiel-Einladung   │   │ 💌 Digitale Karte    │
+          │ Foto-Reveal-Wow      │   │ schnell, elegant     │
+          │ (existiert:          │   │ (NEU zu bauen —      │
+          │  …/whatsapp/)        │   │  fehlt heute ganz)   │
+          └──────────┬───────────┘   └──────────┬───────────┘
+                     └────────── beide ─────────┘
+                                   │
+                         ▼ dieselbe PARTYSEITE (Rückgrat)
+                   RSVP · Allergien · Abholung · Adresse-nach-Zusage · Wunschliste
+```
+
+**Prinzip:** Spiel und Karte sind **zwei Gesichter EINES** Party-Datensatzes, nicht zwei Endprodukte. Die Partyseite (`/api/create`) ist das gemeinsame Organisations-Rückgrat unter beiden. Frist, Wunschliste, persönliche Nachricht, Adress-Visibility = optionales „Mehr" an der Partyseite — unabhängig vom gewählten Format. **Harte Regel: beide Formate führen auf DIESELBE Partyseite** (sonst zersplittert die Organisation — genau das heutige Zwei-Backend-Problem).
+UX: zwei große Karten → sofortige Vorschau → teilen. Kein Formular-Gefühl. „Mehr Optionen" bleibt sekundär.
+
+### Aufwerten (nicht neu bauen)
+Stage 4 sammelt schon Foto (`iPhoto`→`state.invite.photo`), Nachricht (`psMessage`→`state.partyMessage`), Adresse (`psAddress`→`state.adresse`) und postet an `/api/create`.
 - `mapStateToInvitationData(state)` statt der heutigen ad-hoc-Felder; Einladungstext aus der geteilten Engine statt `state.invite.body`-Konkatenation.
 - Kontext-Anreicherung aus dem Plan (real verfügbar): `state.games[0..2]` als Teaser („mit Walk the Plank…"), Schatzsuche steckt im Plan (`acts` mit `kind:'schatz'`), `location` → outdoor/indoor-Hinweis, `exactAge`/`ageGroup` → Alterston.
-- Übergang-Copy: „Der Plan steht. Jetzt fehlt nur noch die Einladung." → sofortige Vorschau → „Motto, Alter, Datum, Zeit übernommen." Keine Doppel-Abfrage.
+- Übergang-Copy: „Der Plan steht. Jetzt fehlt nur noch die Einladung." → Format-Gabelung → sofortige Vorschau. Keine Doppel-Abfrage.
+
+### Standalone = dieselbe Gabelung mit Vorspann
+Der Standalone-Weg unterscheidet sich NUR am Anfang: dort ist der `state` leer → erst Eckdaten erfassen (Motto, Name, Datum, Zeit, Ort, Alter), DANN **exakt dieselbe** Spiel/Karte-Gabelung + dieselben Outputs + dasselbe Backend. Der Unterschied ist Datenerfassung (erfassen vs. erben), nicht das Ende. Das ist die konkrete Ausprägung von „zwei Gesichter, ein Kern".
 
 ---
 
