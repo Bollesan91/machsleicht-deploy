@@ -82,15 +82,18 @@ const sfx={
 };
 // E2 -> "Fang die Glühwürmchen": leuchtende Glühwürmchen schweben durch den Feenhimmel; jedes gefangene fliegt in die
 // Laterne und füttert ihr Licht. Genug gefangen -> sie steigt auf. Lebendig statt stumpfes Tap-Meter. Alters-Staffel
-// über Tempo (Schweb-Geschwindigkeit) + Anzahl (GOAL). Verpasste Glühwürmchen ziehen weiter -> kein Verlieren.
-let caught=0,done=false,lastMile=0,GOAL=8,flyList=[],moveT=null,spawnT=null;
+// über Basis-Tempo (Schweb-Geschwindigkeit) + Anzahl (GOAL) + Spawn-Takt. Zusätzlich: der ganze Schwarm beschleunigt
+// live mit jedem Fang (speedMul) -> spürbare Eskalation, gedeckelt bei ~1.9x damit's für die Kleinen no-fail bleibt.
+// Verpasste Glühwürmchen ziehen weiter -> kein Verlieren.
+let caught=0,done=false,lastMile=0,GOAL=8,flyList=[],moveT=null,spawnT=null,speedMul=1;
 function newFly(){ if(done||flyList.length>=6)return; const s=$('#sky'); const f=document.createElement('div'); f.className='fly';
   f._x=8+Math.random()*76; f._y=8+Math.random()*50;
   const spd=(ageNum()<=6?0.42:ageNum()<=9?0.7:1.05); f._vx=(Math.random()-.5)*spd; f._vy=(Math.random()-.5)*spd*0.85;
   f.style.left=f._x+'%'; f.style.top=f._y+'%'; f.addEventListener('click',()=>catchFly(f));
   s.appendChild(f); flyList.push(f); f._life=setTimeout(()=>{ if(!f._caught){f.remove();flyList=flyList.filter(x=>x!==f);} }, 5200); }
-function moveFlies(){ if(done)return; for(const f of flyList){ if(f._caught)continue; f._x+=f._vx; f._y+=f._vy; if(f._x<=4||f._x>=88)f._vx*=-1; if(f._y<=4||f._y>=60)f._vy*=-1; f._x=Math.max(4,Math.min(88,f._x)); f._y=Math.max(4,Math.min(60,f._y)); f.style.left=f._x+'%'; f.style.top=f._y+'%'; } }
+function moveFlies(){ if(done)return; for(const f of flyList){ if(f._caught)continue; f._x+=f._vx*speedMul; f._y+=f._vy*speedMul; if(f._x<=4||f._x>=88)f._vx*=-1; if(f._y<=4||f._y>=60)f._vy*=-1; f._x=Math.max(4,Math.min(88,f._x)); f._y=Math.max(4,Math.min(60,f._y)); f.style.left=f._x+'%'; f.style.top=f._y+'%'; } }
 function catchFly(f){ if(done||f._caught)return; f._caught=true; clearTimeout(f._life); caught++;
+  speedMul=1+Math.min(caught/GOAL,1)*0.9; // Schwarm beschleunigt mit jedem Fang (1x -> ~1.9x am Ziel), gedeckelt -> bleibt no-fail
   const lr=$('#lantern').getBoundingClientRect(), sr=$('#sky').getBoundingClientRect(); // gefangenes Glühwürmchen fliegt in die Laterne
   f.style.left=((lr.left+lr.width/2-sr.left)/sr.width*100)+'%'; f.style.top=((lr.top+lr.height*0.4-sr.top)/sr.height*100)+'%'; f.classList.add('caught');
   setTimeout(()=>{f.remove();flyList=flyList.filter(x=>x!==f);},400);
@@ -106,7 +109,7 @@ function winReveal(){
   show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]);
 }
 function tip(){ if(done)return; let f=flyList.find(x=>!x._caught); if(f){catchFly(f);} else { newFly(); const g=flyList.find(x=>!x._caught); if(g)catchFly(g); } } // No-Fail: der Tipp fängt ein Glühwürmchen für dich
-$('#startBtn').addEventListener('click',()=>{ caught=0;done=false;lastMile=0; GOAL=(ageNum()<=6?6:ageNum()<=9?8:11); $('#fill').style.width='0%'; $('#glow').style.opacity='.15'; $('#lantern').classList.remove('lit','up'); $('#tapHint').textContent='Fang die Glühwürmchen! ✨'; [...document.querySelectorAll('.fly')].forEach(f=>f.remove()); flyList=[]; show('s-game'); for(let i=0;i<4;i++)newFly(); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveFlies,50); spawnT=setInterval(newFly,(ageNum()<=6?1100:850)); });
+$('#startBtn').addEventListener('click',()=>{ caught=0;done=false;lastMile=0;speedMul=1; GOAL=(ageNum()<=6?6:ageNum()<=9?8:11); $('#fill').style.width='0%'; $('#glow').style.opacity='.15'; $('#lantern').classList.remove('lit','up'); $('#tapHint').textContent='Fang die Glühwürmchen! ✨'; [...document.querySelectorAll('.fly')].forEach(f=>f.remove()); flyList=[]; show('s-game'); for(let i=0;i<4;i++)newFly(); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveFlies,50); spawnT=setInterval(newFly,(ageNum()<=6?1100:850)); });
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
