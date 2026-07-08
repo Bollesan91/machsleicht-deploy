@@ -132,7 +132,7 @@ function winReveal(){
   guestName();
   show('s-win'); confetti(CC); sfx.win(); vib([20,40,20,40,80]);
 }
-function tip(){ if(shots>=THEME.goal){ if(special && !special._snapped) snapSpecialFoto(); return; } if(curAnimal && curAnimal.parentNode) snap(curAnimal); else { clearTimeout(spawnT); spawn(); } } // Tipp: Tier knipsen — im Finale das seltene Foto-Tier antippen
+function tip(){ if(shots>=THEME.goal){ if(special && !special._snapped) snapSpecialFoto(); return; } if(curAnimal && curAnimal.parentNode) snap(curAnimal); else { clearTimeout(spawnT); spawn(); if(curAnimal) snap(curAnimal); } } // Tipp: Tier knipsen — bei leerer Luecke sofort eines rufen UND knipsen (No-Fail deterministisch, jeder Idle-Tipp zaehlt); im Finale das seltene Foto-Tier antippen
 $('#startBtn').addEventListener('click',()=>{clearTimeout(spawnT);clearTimeout(finT);finT=null;[...$('#view').querySelectorAll('.animal')].forEach(a=>a.remove());curAnimal=null;if(special){special.remove();special=null;}$('#teaser').classList.remove('on');shots=0;$('#shots').textContent=0;$('#goal').textContent=THEME.goal;show('s-game');spawn();});
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
