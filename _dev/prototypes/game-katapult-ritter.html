@@ -11,7 +11,7 @@
   .field{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#8fa6c4 0%,#6f86a8 60%,#5a6e4a 60%,#4a5d3c 100%);box-shadow:0 12px 30px rgba(0,0,0,.45)}
   /* Burgtor = 2 Türen über dem Foto */
   .gateWrap{position:absolute;right:10%;top:18%;width:46%;height:62%;border-radius:8px 8px 0 0;overflow:hidden;box-shadow:inset 0 0 0 5px #5a5048,0 6px 14px rgba(0,0,0,.4)}
-  .gateWrap .photo{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a2030;filter:blur(11px) brightness(.68) saturate(.75)}/* hinter den Toren geblurrt: beim Oeffnen nur Silhouette, scharf erst beim Fang (reveal-last) */
+  .gateWrap .photo{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a2030;filter:blur(15px) brightness(.6) saturate(.7)}/* hinter den Toren geblurrt: beim Oeffnen nur Portrait-Silhouette (keine Gesichtszuege), scharf erst beim Fang (reveal-last, live verifiziert blur15 vs. blur11-Leak) */
   .door{position:absolute;top:0;width:50%;height:100%;background:repeating-linear-gradient(180deg,#7a5a32,#7a5a32 9px,#6b4d28 9px,#6b4d28 18px);box-shadow:inset 0 0 0 3px #4d3a1d;transition:transform .7s cubic-bezier(.5,0,.3,1);z-index:2}
   .door.l{left:0;transform-origin:left}.door.r{right:0;transform-origin:right}
   .field.open .door.l{transform:perspective(500px) rotateY(105deg)}.field.open .door.r{transform:perspective(500px) rotateY(-105deg)}
