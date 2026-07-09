@@ -115,7 +115,7 @@ function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitl
 function sharpen(frac){ const p=$('#cphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.12+0.3*f*f)).toFixed(2); p.style.filter='blur('+(17-5*f*f).toFixed(1)+'px) saturate(.5) brightness(.55)'; } // gedeckelt: Foto hinter der Leitung bleibt unscharfe Silhouette bis zum Fang (reveal-last)
 function floodPhoto(){ const p=$('#cphoto'); if(!p)return; p.style.transition='opacity .7s ease,filter .7s ease'; p.style.opacity='1'; p.style.filter='blur(0) saturate(1) brightness(1)'; } // der gefangene Bauleiter flutet die ganze Szene scharf
 function build(){
-  next=0;done=false;magicPhase=false;clearTimeout(finT);clearTimeout(outroT);outroStep=0;
+  next=0;done=false;magicPhase=false;clearTimeout(finT);clearTimeout(outroT);outroStep=0;beat2='';winAt=0;
   $('#cnt').textContent=0;$('#tot').textContent=NODES.length;$('#pipe').setAttribute('points','');$('#pipe').classList.remove('flow');
   $('#svg').style.opacity='';$('#mhint').classList.remove('on');$('#storyOut').classList.remove('on');
   const mf=$('#magicFly');mf.classList.remove('flit','caught','joy');mf.style.opacity='';mf.style.transition='';$('#cphoto').style.transition='';

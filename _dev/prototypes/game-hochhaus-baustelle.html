@@ -18,7 +18,6 @@
   /* Richtfest-Plakat am Bauzaun: wird pro Etage klarer (Reveal an Mechanik gekoppelt) */
   .rf{position:absolute;top:5%;right:5%;width:80px;height:80px;border-radius:8px;border:4px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.35);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a3320;opacity:0;filter:blur(16px) saturate(.5) brightness(.7);transition:opacity .5s ease,filter .5s ease,transform .5s ease;pointer-events:none;z-index:4;transform:rotate(2deg)}
   .rf::after{content:"🏗️";position:absolute;top:-14px;left:-10px;font-size:22px}
-  .rf.big{transform:rotate(0) scale(1.35)}
   /* Magic-Moment: der Bauhelfer (Foto) klettert vom Richtfest-Plakat, flitzt -> antippen faengt -> scharf + huepft */
   .magicFly{position:absolute;left:50%;top:50%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a3320;opacity:0;filter:blur(8px);transform:scale(.5);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
   .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
@@ -139,7 +138,7 @@ function start(){
   $('#field').querySelectorAll('.layer,.chunk,.moving').forEach(e=>e.remove());
   tower=[{left:20,width:60}]; done=false; busy=false; magicPhase=false; clearTimeout(finT);
   $('#magicFly').classList.remove('flit','caught','joy'); $('#mhint').classList.remove('on'); $('#rf').style.opacity='';
-  $('#lvl').textContent=0; $('#rf').classList.remove('big'); sharpen(0);
+  $('#lvl').textContent=0; sharpen(0);
   addLayerEl(20,60,0,''); show('s-game'); setTimeout(spawnMoving,300);
 }
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; const m=document.getElementById('moving'); if(!m)return; const top=tower[tower.length-1]; mx=top.left; m.style.left=mx+'%'; drop(); } // Tipp: Block perfekt setzen; im Magic-Moment faengt der Tipp den Bauhelfer
