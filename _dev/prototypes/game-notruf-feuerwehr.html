@@ -26,6 +26,17 @@
   .monPhoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease}
   .mstatic{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(180,210,255,.09) 0 1px,transparent 1px 3px);opacity:.75;transition:opacity .6s ease;pointer-events:none}
   .monitor.big{transform:scale(1.25)}
+  /* Magic-Moment: am Funkbild erscheint jemand (unscharf), flitzt uebers Funkgeraet -> antippen faengt -> scharf + Glow + huepft (Gesicht zuletzt) */
+  #s-game{position:relative}
+  .magicFly{position:absolute;left:50%;top:44%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1418;opacity:0;filter:blur(8px);transform:scale(.4);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.3s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(230,57,70,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  .magicFly.caught.joy{animation:mjoy .5s ease-in-out 4}
+  .magicFly::after{content:"📻";position:absolute;bottom:-10px;right:-12px;font-size:26px}
+  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(54px,-42px)}50%{transform:translate(-48px,32px)}75%{transform:translate(42px,38px)}}
+  @keyframes mjoy{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+  .mhint{position:absolute;left:50%;bottom:4%;transform:translateX(-50%);background:rgba(42,20,24,.85);color:#ffd9d2;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;white-space:nowrap}
+  .mhint.on{opacity:1}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fff3ef,#ffd9d2);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1418;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -53,6 +64,8 @@
       <div class="dial" id="dial"><div class="hub">🚒</div></div>
     </div>
     <p class="lampe" id="lampe">Tippe das leuchtende Loch.</p>
+    <div class="magicFly" id="magicFly"></div>
+    <div class="mhint" id="mhint"></div>
   </section>
 
   <section class="scene" id="s-win">
@@ -82,8 +95,8 @@ const sfx={
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
 // GEHEIMER, NICHT-REALER Funk-Code (bewusst KEINE Notrufnummer) — Stufe-2-Fix.
-const CODE=[5,2,9]; let pos=0, done=false, busy=false;
-function sharpen(frac){ const p=$('#monPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+const CODE=[5,2,9]; let pos=0, done=false, busy=false, magicPhase=false, finT=null;
+function sharpen(frac){ const p=$('#monPhoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.4,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(11,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.6+0.25*f).toFixed(2)+')'; } // GEDECKELT: Funkbild bleibt unscharfe Silhouette (opacity<=.4, blur>=11) -> scharf erst beim Fang (reveal-last)
 function buildSlots(){ const s=$('#slots'); s.innerHTML=''; CODE.forEach(n=>{ const d=document.createElement('div'); d.className='slot target'; d.textContent=n; s.appendChild(d); }); }
 function markNext(){ document.querySelectorAll('#dial .hole').forEach(h=>h.classList.toggle('pulse', !done && pos<CODE.length && +h.textContent===CODE[pos])); }
 function buildDial(){
@@ -94,7 +107,7 @@ function buildDial(){
   markNext();
 }
 function dial(n){
-  if(done||busy)return; const d=$('#dial'); d.classList.add('spin'); setTimeout(()=>d.classList.remove('spin'),250);
+  if(magicPhase){ catchMagic(); return; } if(done||busy)return; const d=$('#dial'); d.classList.add('spin'); setTimeout(()=>d.classList.remove('spin'),250);
   if(n===CODE[pos]){
     sfx.tick(); setTimeout(()=>sfx.good(),120); vib(8);
     const slot=$('#slots').children[pos]; slot.classList.remove('target'); slot.classList.add('done');
@@ -106,13 +119,26 @@ function dial(n){
     $('#lampe').textContent='Tippe das leuchtende Loch.';
   }
 }
-function connected(){
-  busy=true; $('#lampe').textContent='📻 Funk steht …'; $('#mstatic').style.opacity='0'; sharpen(1); $('#monitor').classList.add('big'); sfx.connect(); vib([15,40,15]);
-  setTimeout(()=>{ done=true; markNext(); $('#winTitle').textContent='Du hast durchgefunkt!'; if(HAS_PHOTO){ $('#winWho').textContent=`Mit jeder Zahl wurde das Funkbild klarer — am anderen Ende jubelt ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winWho').textContent=`Der Funkspruch hat die Wache erreicht — die ganze Mannschaft feiert bei ${kid()}! Komm zur Feuerwehr-Party:`; } guestName();
-    show('s-win'); confetti(CC); sfx.win(); vib([20,40,20,40,80]); }, 1000);
+function connected(){ // Code steht: am Funkbild formt sich jemand (Foto) -> flitzt (Magic-Moment). KEIN sharpen(1)/static-clear -> scharf erst beim Fang (reveal-last)
+  busy=true; $('#lampe').textContent='📻 Funk steht …'; sfx.connect(); vib([15,40,15]);
+  setTimeout(()=>{
+    const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+    mf.addEventListener('click',catchMagic,{once:true});
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
+    const mh=$('#mhint'); if(mh){ mh.textContent='Am Funkbild erscheint jemand — fang ihn!'; mh.classList.add('on'); }
+  }, 620);
 }
-function tip(){ if(done||busy)return; dial(CODE[pos]); } // Tipp: nächste Zahl für dich funken
-$('#startBtn').addEventListener('click',()=>{ pos=0;done=false;busy=false; buildSlots(); buildDial(); $('#mstatic').style.opacity='.75'; $('#monitor').classList.remove('big'); sharpen(0); $('#lampe').textContent='Tippe das leuchtende Loch.'; show('s-game'); });
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); const mh=$('#mhint'); if(mh)mh.classList.remove('on'); sfx.win(); vib([20,40,20,40,80]);
+  setTimeout(()=>mf.classList.add('joy'),560);
+  setTimeout(winReveal,2050);
+}
+function winReveal(){ done=true; markNext(); $('#winTitle').textContent='Du hast durchgefunkt!'; if(HAS_PHOTO){ $('#winWho').textContent=`Mit jeder Zahl wurde das Funkbild klarer — am anderen Ende jubelt ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winWho').textContent=`Der Funkspruch hat die Wache erreicht — die ganze Mannschaft feiert bei ${kid()}! Komm zur Feuerwehr-Party:`; } guestName();
+  show('s-win'); confetti(CC);
+}
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; dial(CODE[pos]); } // Tipp: nächste Zahl für dich funken
+$('#startBtn').addEventListener('click',()=>{ pos=0;done=false;busy=false;magicPhase=false;clearTimeout(finT); buildSlots(); buildDial(); $('#mstatic').style.opacity='.75'; $('#monitor').classList.remove('big'); $('#magicFly').classList.remove('flit','caught','joy'); $('#mhint').classList.remove('on'); sharpen(0); $('#lampe').textContent='Tippe das leuchtende Loch.'; show('s-game'); });
+$('#s-game').addEventListener('click',()=>{ if(magicPhase) catchMagic(); }); // Szene = Fangflaeche fuer den flitzenden magicFly
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
