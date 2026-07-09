@@ -23,6 +23,14 @@
   .transmission::after{content:"";position:absolute;left:0;right:0;height:26%;top:-30%;background:linear-gradient(180deg,transparent,rgba(160,208,255,.25),transparent);animation:scan 2.6s linear infinite}
   .transmission.clear::after{display:none}
   @keyframes scan{to{top:110%}}
+  /* Magic-Moment: das Funkbild beamt heraus, flitzt unscharf -> antippen faengt -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:50%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;opacity:0;filter:blur(8px);transform:scale(.5);transition:opacity .3s;z-index:9;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-84px,-58px) scale(.54)}36%{transform:translate(80px,-46px) scale(.5)}54%{transform:translate(-70px,44px) scale(.54)}72%{transform:translate(78px,30px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 44px 13px rgba(106,168,255,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
+  .magicFly::after{content:"🛸";position:absolute;top:-16px;right:-8px;font-size:26px}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#eef3ff,#cdd9f7);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;box-shadow:0 0 24px rgba(106,168,255,.6);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -51,6 +59,7 @@
       <button class="pad p1" data-i="1">🪐</button>
       <button class="pad p2" data-i="2">⭐</button>
       <button class="pad p3" data-i="3">☄️</button>
+      <div class="magicFly" id="magicFly"></div>
     </div>
     <button class="btn" id="tippBtn" style="background:rgba(255,255,255,.16);font-size:15px;padding:8px 20px">💡 Tipp</button>
   </section>
@@ -81,28 +90,34 @@ const sfx={
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
 const GOAL=(ageNum()<=6?3:ageNum()<=9?4:5), FLASH_MS=540; // Länge nach Alter (4–6→3, 7–9→4, 10+→5)
-let seq=[], step=0, accepting=false, done=false, pads=[];
+let seq=[], step=0, accepting=false, done=false, pads=[], magicPhase=false, finT=null;
 function sharpen(frac){ const ph=$('#trans').querySelector('.tphoto'); if(!ph)return; const f=Math.max(0,Math.min(1,frac)); ph.style.filter='blur('+(14*(1-f*f)).toFixed(1)+'px) saturate('+(0.6+0.4*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; ph.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); } /* Blur + Opacity hinten gewichtet (1-f^2 / f^2): Foto bleibt verhuellt, dann Snap am win() */
 function flash(i){ const p=pads[i]; p.classList.add('lit'); sfx.tone(i); setTimeout(()=>p.classList.remove('lit'),FLASH_MS*0.55); }
 function nextRound(){ seq.push(Math.floor(Math.random()*4)); step=0; playSeq(); }
 function playSeq(){ accepting=false; $('#msg').textContent='Signal kommt rein …'; let i=0; const iv=setInterval(()=>{ if(done){clearInterval(iv);return;} if(i>=seq.length){ clearInterval(iv); accepting=true; $('#msg').textContent='Jetzt du — funke zurück!'; return; } flash(seq[i]); i++; }, FLASH_MS); }
 function press(i){
+  if(magicPhase){ catchMagic(); return; } // im Magic-Moment faengt jeder Tap das Funkbild
   if(!accepting||done)return; flash(i);
   if(i===seq[step]){ step++; if(step===seq.length){ accepting=false; if(seq.length>=GOAL) return win(); sharpen(seq.length/GOAL); $('#msg').textContent='Signal klarer! Nächstes …'; setTimeout(nextRound,750); } }
   else { step=0; accepting=false; sfx.buzz(); vib([30,40,30]); $('#console').classList.add('shake'); setTimeout(()=>$('#console').classList.remove('shake'),300); $('#msg').textContent='Störung — nochmal hören!'; setTimeout(playSeq,850); } // step-Reset: nach Fehler wieder ab Anfang matchbar (kein Soft-Lock)
 }
-function win(){
-  done=true; sfx.win(); vib([20,40,20,40,80]); $('#msg').textContent='📡 Kontakt hergestellt!'; sharpen(1); $('#trans').classList.add('clear');
-  $('#winTitle').textContent='Du hast Kontakt hergestellt!'; // Gast-Lob: der Gast hat die Funk-Folge geschafft
-  if(HAS_PHOTO){ $('#winWho').textContent=`Am anderen Ende des Funkspruchs ist ${kid()}! Komm zur Weltraum-Party:`; }
-  else { $('#winWho').textContent=`Ein freundliches Alien funkt aus der Ferne — du hast ${kid()} erreicht! Komm zur Weltraum-Party:`; }
-  guestName();
-  setTimeout(()=>{ show('s-win'); confetti(CC); }, 1000);
+function win(){ /* Folge komplett -> das Funkbild beamt heraus (unscharf) -> antippen faengt -> scharf + huepft -> Win. No-Fail (Auto-Catch 5s) */
+  done=true; accepting=false; const ph=$('#trans').querySelector('.tphoto'); if(ph) ph.style.opacity='0'; [...document.querySelectorAll('.pad')].forEach(p=>p.style.opacity='0'); $('#tippBtn').style.visibility='hidden'; // Bild buendelt sich ins flatternde Foto, Pads frei
+  $('#msg').textContent='Das Signal wird zum Bild — fang es!'; const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true; sfx.ding(); vib(8);
+  mf.addEventListener('click', catchMagic, {once:true});
+  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: faengt von selbst
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#msg').textContent='📡 Kontakt! ✨'; sfx.win(); vib([20,40,20,40,80]);
+  finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
+    finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast Kontakt hergestellt!'; // Gast-Lob: der Gast hat die Funk-Folge geschafft
+      if(HAS_PHOTO){ $('#winWho').textContent=`Am anderen Ende des Funkspruchs ist ${kid()}! Komm zur Weltraum-Party:`; }
+      else { $('#winWho').textContent=`Ein freundliches Alien funkt aus der Ferne — du hast ${kid()} erreicht! Komm zur Weltraum-Party:`; }
+      guestName(); show('s-win'); confetti(CC); }, 2050); }, 560);
 }
 pads=[...document.querySelectorAll('.pad')];
 pads.forEach((p)=>p.addEventListener('click',()=>press(+p.dataset.i)));
-$('#startBtn').addEventListener('click',()=>{ seq=[];step=0;done=false;accepting=false; $('#trans').classList.remove('clear'); sharpen(0); show('s-game'); setTimeout(nextRound,500); });
-$('#tippBtn').addEventListener('click',()=>{ if(accepting && !done) press(seq[step]); }); // Tipp: tippt den naechsten richtigen Pad -> Folge immer schaffbar
+$('#startBtn').addEventListener('click',()=>{ seq=[];step=0;done=false;accepting=false;magicPhase=false; clearTimeout(finT); $('#magicFly').classList.remove('flit','caught','joy'); [...document.querySelectorAll('.pad')].forEach(p=>p.style.opacity=''); $('#tippBtn').style.visibility=''; var ph=$('#trans').querySelector('.tphoto'); if(ph) ph.style.opacity=''; $('#trans').classList.remove('clear'); sharpen(0); show('s-game'); setTimeout(nextRound,500); });
+$('#tippBtn').addEventListener('click',()=>{ if(magicPhase){ catchMagic(); return; } if(accepting && !done) press(seq[step]); }); // Tipp: naechster Pad; im Magic-Moment faengt er das Funkbild
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
