@@ -20,6 +20,14 @@
   @keyframes found{0%{transform:translate(-50%,-50%) scale(1)}40%{transform:translate(-50%,-50%) scale(1.7)}100%{transform:translate(-50%,-50%) scale(1.25)}}
   .item.clue.got::after{content:"✓";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:15px;color:#37c46e;font-weight:900;text-shadow:0 0 4px #000}
   .scan{position:absolute;left:0;right:0;height:34%;top:-40%;background:linear-gradient(180deg,transparent,rgba(214,166,74,.18),transparent);pointer-events:none}
+  /* Magic-Moment: das Beweisfoto entwickelt sich heraus, flitzt unscharf -> antippen faengt -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:50%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a241a;opacity:0;filter:blur(8px);transform:scale(.5);transition:opacity .3s;z-index:9;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-84px,-70px) scale(.54)}36%{transform:translate(80px,-54px) scale(.5)}54%{transform:translate(-70px,50px) scale(.54)}72%{transform:translate(78px,34px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 44px 13px rgba(214,166,74,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
+  .magicFly::after{content:"🔍";position:absolute;bottom:-8px;right:-8px;font-size:26px}
   /* Steckbrief / Reveal */
   .poster{width:100%;background:linear-gradient(170deg,#f3ead2,#e2d3ad);color:var(--ink);border-radius:14px;padding:18px 20px 22px;box-shadow:0 14px 40px rgba(0,0,0,.5);text-align:center;border:4px double #6b5320;position:relative}
   .wantedTop{font-family:Georgia,serif;font-weight:900;letter-spacing:5px;font-size:24px;color:#6b5320;border-bottom:3px double #6b5320;padding-bottom:6px;margin-bottom:12px}
@@ -72,7 +80,7 @@ const sfx={find(){const t=AC().currentTime;note(660,t,0.1,{type:'triangle',vol:0
 const DECOS=['📚','📎','🗂️','🔑','☎️','🖊️','📌','📐','🧾','🗝️','📰','🕰️','🧷','📓','🔦','🧮','📁','✏️','🖇️','📇','🗃️','🔒','📋','🖍️','🖌️','📒','🗒️','🪧'];
 const CLUE_POS=[[20,24],[72,30],[44,52],[80,70],[26,80]];
 const DECOY_N=(ageNum()<=6?12:ageNum()<=9?26:40); // Alters-Staffelung: dünnerer Krimskrams für die Kleinen, dichteres Wimmeln für die Großen
-let found=0,done=false;
+let found=0,done=false,magicPhase=false,finT=null;
 function sharpen(frac){ const p=document.querySelector('#field .fieldphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:f>=1?1:(0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+(f>=1?0:8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Gesicht zuletzt: f^3 + Blur-Floor 8 haelt bis zum 4. Fund verschleiert, erst der 5. loest auf
 function tap(el,isClue){
   if(done)return;
@@ -86,17 +94,22 @@ function layout(){
   for(let i=items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]];}
   items.forEach(it=>{ const s=document.createElement('span'); s.className='item '+(it.c?'clue':'deco'); s.style.left=it.x+'%'; s.style.top=it.y+'%'; s.textContent=it.c?'🔍':it.e; s.addEventListener('click',()=>tap(s,it.c)); f.appendChild(s); });
   const scan=document.createElement('div'); scan.className='scan'; f.appendChild(scan);
+  const mf=document.createElement('div'); mf.className='magicFly'; mf.id='magicFly'; f.appendChild(mf); // Magic-Foto frisch mit-erzeugen (layout leert das Feld)
 }
-function winSeq(){
-  done=true; sharpen(1); document.querySelectorAll('.item').forEach(e=>{e.style.opacity='0';e.style.pointerEvents='none';}); sfx.win(); vib([20,40,20,40,80]); // Lupen-Overlays am Reveal ausblenden: duerfen das Gesicht nicht verdecken
-  $('#winTitle').textContent='Du hast den Fall gelöst!'; // Gast-Lob: der Gast hat die Hinweise gefunden
-  if(HAS_PHOTO){ $('#winWho').textContent=`Die geheime Hauptperson ist ${kid()} — und lädt dich ein! Komm zur Detektiv-Party:`; } // Artikel-Start (guestName klein-schreibt sonst); kid = aktiver Einlader, konsistent mit NOFOTO
-  else { $('#winWho').textContent=`Der Fall ist gelöst — und ${kid()} lädt dich ein! Komm zur Detektiv-Party:`; }
-  guestName();
-  setTimeout(()=>{ show('s-win'); confetti(CC); }, 650);
+function winSeq(){ /* alle Lupen gefunden -> das Beweisfoto entwickelt sich heraus (unscharf) -> antippen faengt -> scharf + huepft -> Win. No-Fail (Auto-Catch 5s) */
+  done=true; const p=document.querySelector('#field .fieldphoto'); if(p) p.style.opacity='0'; document.querySelectorAll('.item').forEach(e=>{e.style.opacity='0';e.style.pointerEvents='none';}); sfx.find(); // Lupen weg + Foto buendelt sich ins flatternde Bild (kein Frueh-Flood)
+  const mf=$('#magicFly'); if(mf){ mf.classList.add('flit'); mf.addEventListener('click', catchMagic, {once:true}); } magicPhase=true; vib(8);
+  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: faengt von selbst
 }
-function tip(){ if(done)return; const c=document.querySelector('.item.clue:not(.got)'); if(c) c.click(); } // Tipp: einen Hinweis aufdecken
-$('#startBtn').addEventListener('click',()=>{found=0;done=false;$('#cnt').textContent=0;layout();show('s-game');});
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); if(mf){ mf.classList.remove('flit'); mf.classList.add('caught'); } sfx.win(); vib([20,40,20,40,80]);
+  finT=setTimeout(()=>{ if(mf) mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
+    finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast den Fall gelöst!'; // Gast-Lob: der Gast hat die Hinweise gefunden
+      if(HAS_PHOTO){ $('#winWho').textContent=`Die geheime Hauptperson ist ${kid()} — und lädt dich ein! Komm zur Detektiv-Party:`; } // kid = aktiver Einlader
+      else { $('#winWho').textContent=`Der Fall ist gelöst — und ${kid()} lädt dich ein! Komm zur Detektiv-Party:`; }
+      guestName(); show('s-win'); confetti(CC); }, 2050); }, 560);
+}
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; const c=document.querySelector('.item.clue:not(.got)'); if(c) c.click(); } // Tipp: einen Hinweis aufdecken; im Magic-Moment faengt er das Foto
+$('#startBtn').addEventListener('click',()=>{found=0;done=false;magicPhase=false;clearTimeout(finT);$('#cnt').textContent=0;layout();show('s-game');});
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
