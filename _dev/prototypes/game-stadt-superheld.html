@@ -24,6 +24,16 @@
   .hero2.wob{animation:wb .3s}@keyframes wb{0%,100%{transform:translateX(-50%)}33%{transform:translateX(-54%) rotate(-8deg)}66%{transform:translateX(-46%) rotate(8deg)}}
   .ctrls{display:flex;gap:14px;width:90%;max-width:320px}
   .ctrls .btn{flex:1;font-size:30px;padding:14px 0}
+  /* Magic-Moment: auf der Stadt-Leinwand erscheint jemand (unscharf), flitzt -> antippen faengt -> scharf + Glow + huepft (Gesicht zuletzt) */
+  .magicFly{position:absolute;left:50%;top:38%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#14213a;opacity:0;filter:blur(8px);transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.3s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(255,207,51,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  .magicFly.caught.joy{animation:mjoy .5s ease-in-out 4}
+  .magicFly::after{content:"🦸";position:absolute;bottom:-10px;right:-12px;font-size:26px}
+  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(50px,-40px)}50%{transform:translate(-44px,30px)}75%{transform:translate(38px,36px)}}
+  @keyframes mjoy{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+  .mhint{position:absolute;left:50%;bottom:5%;transform:translateX(-50%);background:rgba(20,33,58,.85);color:#ffe6a8;font-weight:800;font-size:13.5px;padding:6px 12px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:7;pointer-events:none;white-space:nowrap}
+  .mhint.on{opacity:1}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fff7e0,#ffe6a8);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:4px solid var(--accent-dk);position:relative}
   .invite::before{content:"⚡ HELD:IN DES TAGES ⚡";position:absolute;top:-1px;left:0;right:0;background:var(--accent);color:var(--ink);font-weight:900;font-size:12px;letter-spacing:1px;padding:3px 0;border-radius:12px 12px 0 0}
@@ -47,7 +57,7 @@
 
   <section class="scene" id="s-game">
     <div class="hud"><span class="pill" style="background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px">Gerettet 🦸 <b id="cnt">0</b>/6</span></div>
-    <div class="sky" id="sky"><div class="skyline"></div><div class="street"></div><div class="billboard" id="billboard"></div><div class="hero2" id="hero2">🦸</div></div>
+    <div class="sky" id="sky"><div class="skyline"></div><div class="street"></div><div class="billboard" id="billboard"></div><div class="hero2" id="hero2">🦸</div><div class="magicFly" id="magicFly"></div><div class="mhint" id="mhint"></div></div>
     <div class="ctrls"><button class="btn" id="leftBtn">◀</button><button class="btn" id="rightBtn">▶</button></div>
   </section>
 
@@ -78,10 +88,10 @@ const sfx={
 const GOAL=6, HROW=80; const GOODS=['🎈','⭐','🧸','🍎','🎁'];
 // Alters-Staffel: Fallgeschwindigkeit, Spawn-Takt, Fangradius, Gut-Quote
 const FALL=(ageNum()<=6?3.4:ageNum()<=9?4.5:5.6), SPAWN=(ageNum()<=6?1000:ageNum()<=9?820:650), RADIUS=(ageNum()<=6?15:ageNum()<=9?12:9), GQUOTE=(ageNum()<=6?0.82:ageNum()<=9?0.72:0.62);
-let heroX=50, items=[], saved=0, done=false, mvT=null, spawnT=null;
-function sharpen(frac){ const p=$('#billboard'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+let heroX=50, items=[], saved=0, done=false, mvT=null, spawnT=null, magicPhase=false, finT=null;
+function sharpen(frac){ const p=$('#billboard'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.4,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(11,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.6+0.25*f).toFixed(2)+')'; } // GEDECKELT: Leinwand bleibt unscharfe Silhouette (opacity<=.4, blur>=11) -> scharf erst beim Fang (reveal-last)
 function setHero(){ $('#hero2').style.left=heroX+'%'; }
-function steer(dx){ if(done)return; heroX=Math.max(8,Math.min(92,heroX+dx)); setHero(); }
+function steer(dx){ if(magicPhase){ catchMagic(); return; } if(done)return; heroX=Math.max(8,Math.min(92,heroX+dx)); setHero(); }
 function spawn(atX){ if(done)return; const good=(atX!==undefined)?true:(Math.random()<GQUOTE); const x=(atX!==undefined)?atX:12+Math.random()*76; const el=document.createElement('div'); el.className='drop '+(good?'good':'bad'); el.textContent=good?GOODS[Math.floor(Math.random()*GOODS.length)]:'🪨'; el.style.left=x+'%'; el.style.top=(atX!==undefined?'40%':'-6%'); el._x=x; el._y=(atX!==undefined?40:-6); el._good=good; $('#sky').appendChild(el); items.push(el); }
 function pop(el){ el.classList.add('gone'); setTimeout(()=>{el.remove(); const k=items.indexOf(el); if(k>=0)items.splice(k,1);},250); }
 function moveTick(){ if(done)return; for(const it of items.slice()){ it._y+=FALL; it.style.top=it._y+'%';
@@ -91,13 +101,26 @@ function moveTick(){ if(done)return; for(const it of items.slice()){ it._y+=FALL
     else { sfx.bump(); vib(15); $('#hero2').classList.add('wob'); setTimeout(()=>$('#hero2').classList.remove('wob'),300); pop(it); }
   }
   if(it._y>108){ it.remove(); const k=items.indexOf(it); if(k>=0)items.splice(k,1); } } }
-function winSeq(){ done=true; clearInterval(mvT); clearInterval(spawnT); sharpen(1); $('#billboard').classList.add('big'); const h2=$('#hero2'); h2.style.transition='bottom .6s ease'; h2.style.bottom='42%'; sfx.win(); vib([20,40,20,40,80]);
-  $('#winTitle').textContent='Du hast die Stadt gerettet!'; if(HAS_PHOTO){ $('#winWho').textContent=`Sechs Rettungen — auf der Stadt-Leinwand strahlt ${kid()}! Komm zur Superhelden-Party:`; } else { $('#winWho').textContent=`Über den Dächern leuchtet das Helden-Zeichen — und ${kid()} lädt dich ein! Komm zur Superhelden-Party:`; } guestName();
-  setTimeout(()=>{ show('s-win'); confetti(CC); }, 900);
+function winSeq(){ // 6 gerettet: auf der Leinwand formt sich jemand (Foto) -> flitzt (Magic-Moment). KEIN sharpen(1) -> scharf erst beim Fang (reveal-last)
+  done=true; clearInterval(mvT); clearInterval(spawnT); const h2=$('#hero2'); h2.style.transition='bottom .6s ease'; h2.style.bottom='34%'; sfx.collect(); vib([20,40]);
+  setTimeout(()=>{
+    const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+    mf.addEventListener('click',catchMagic,{once:true});
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
+    const mh=$('#mhint'); if(mh){ mh.textContent='Auf der Stadt-Leinwand erscheint jemand — fang ihn!'; mh.classList.add('on'); }
+  }, 640);
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); const mh=$('#mhint'); if(mh)mh.classList.remove('on'); $('#billboard').style.opacity='0'; sfx.win(); vib([20,40,20,40,80]);
+  setTimeout(()=>mf.classList.add('joy'),560);
+  setTimeout(winReveal,2050);
+}
+function winReveal(){ $('#winTitle').textContent='Du hast die Stadt gerettet!'; if(HAS_PHOTO){ $('#winWho').textContent=`Sechs Rettungen — auf der Stadt-Leinwand strahlt ${kid()}! Komm zur Superhelden-Party:`; } else { $('#winWho').textContent=`Über den Dächern leuchtet das Helden-Zeichen — und ${kid()} lädt dich ein! Komm zur Superhelden-Party:`; } guestName();
+  show('s-win'); confetti(CC);
 }
 // Tipp sichtbar: Held fliegt unter das nächste gute Teil (oder eins erscheint über ihm) und fängt es echt
-function tip(){ if(done)return; const g=items.find(i=>i._good&&!i._hit&&i._y<70); if(g){ heroX=Math.max(8,Math.min(92,g._x)); setHero(); } else { spawn(heroX); } }
-$('#startBtn').addEventListener('click',()=>{ heroX=50;saved=0;done=false; items.forEach(i=>i.remove()); items=[]; $('#cnt').textContent=0; $('#billboard').classList.remove('big'); sharpen(0); const h2=$('#hero2'); h2.style.transition=''; h2.style.bottom='11%'; setHero(); show('s-game'); clearInterval(mvT);clearInterval(spawnT); mvT=setInterval(moveTick,55); spawnT=setInterval(spawn,SPAWN); });
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; const g=items.find(i=>i._good&&!i._hit&&i._y<70); if(g){ heroX=Math.max(8,Math.min(92,g._x)); setHero(); } else { spawn(heroX); } }
+$('#startBtn').addEventListener('click',()=>{ heroX=50;saved=0;done=false;magicPhase=false;clearTimeout(finT); items.forEach(i=>i.remove()); items=[]; $('#cnt').textContent=0; $('#billboard').classList.remove('big'); $('#billboard').style.opacity=''; $('#magicFly').classList.remove('flit','caught','joy'); $('#mhint').classList.remove('on'); sharpen(0); const h2=$('#hero2'); h2.style.transition=''; h2.style.bottom='11%'; setHero(); show('s-game'); clearInterval(mvT);clearInterval(spawnT); mvT=setInterval(moveTick,55); spawnT=setInterval(spawn,SPAWN); });
 $('#leftBtn').addEventListener('click',()=>steer(-14));
 $('#rightBtn').addEventListener('click',()=>steer(14));
 $('#sky').addEventListener('click',e=>{ const r=e.currentTarget.getBoundingClientRect(); steer(e.clientX<r.left+r.width/2?-14:14); });
