@@ -1,3 +1,20 @@
+# Session-Notiz — 09.07.2026 (Magic-Moment wird INTERAKTIV — Fang-Mechanik — 5 Spiele durch, Loop läuft)
+
+## ⭐ START-HINWEIS — beim „Start leicht" ZUERST ansagen
+
+**Bolle-Pivot 09.07.:** Der Magic-Moment ist jetzt eine **Fang-Mechanik** statt Automatik: *nach dem Teaser flitzt ein UNSCHARFES Foto schnell über den Bildschirm → Kind TIPPT es an (fängt es) → dann wird es scharf + groß + HÜPFT → Win-Screen.* Zitat: „gerne diese mechanik … überall bauen … finde ich viel spannender". Läuft als autonomer Loop (Bolle: „loop helfer doppelcheck keine fragen mehr"). Scores werden JETZT wieder eingefordert **und gezeigt** (Bolle: „fordere scores ein … sehe keine zahlen!").
+
+**Wiederverwendbares magicFly-Muster (7 Teile/Spiel):** (1) CSS `.magicFly` (margin-zentriert; `.flit`=blur(8px)+infinite `mflit`; `.caught`=blur(0)+scale~1.7+Glow; `.caught.joy`=`mjoy2`-Hüpfer; `::after`=Motto-Emoji; themen-Border) — (2) `<div class="magicFly" id="magicFly">` in den Stage-Container — (3) global `magicPhase=false` (+`finT`) — (4) reveal-Fn: **altes Reveal-Element ausblenden** (opacity0/none) → Teaser („fang, was …!") → `magicFly.flit` + `click→catchMagic{once}` + `magicPhase=true` + No-Fail `finT=setTimeout(catchMagic,5000)` — (5) `catchMagic()` Guard `if(!magicPhase)return` → caught → 560ms → joy → 2050ms → win — (6) `tip(){ if(magicPhase){catchMagic();return;} … }` — (7) restart: `magicPhase=false` + Klassen weg + verstecktes Element zurück. (laterne nutzt vorhandenes `photoFly`/`.on`/`.settle`.)
+
+**INTERAKTIV durch (committed draft, je lokal Flit+Fang per Chrome-Screenshot verifiziert):**
+- sternenstaub-einhorn `b53d5c0` · korallen-meerjungfrau `8a6c511` · perlen-meerjungfrau `bbd80a1` · laterne-feen `ee55d0d` (volle Kette bis Win getestet) · schatz-meerjungfrau `f89a87a`. **→ Meerjungfrau-Motto komplett interaktiv.**
+
+**Doppelcheck-Reviews (auf SHA `f89a87a`, mit Score 0-100):** claude.ai gate-entscheidend `/chat/9a918dbe` (Opus 4.8 Max, raw-SHA-URLs) + ChatGPT 2.-Winkel via @@Gist `gist.github.com/Bollesan91/9df69e41769228b2f47ec0e2e6354426` (@@Hn@@-Marker). Beide liefen beim Turn-Ende noch → **Ergebnisse + Scores beim nächsten Wake einsammeln, Stufe-3 verifizieren, fixen.** (Die alten 6 Reviews = Automatik-Versionen + raw-URL = moot.)
+
+**Roll-out-Landschaft:** 5 interaktiv ✓ · ~14 „alt-magic" (winSeq-Reveal → schnelle Konversion wie laterne/schatz) · ~24 „kein-magic" (Neubau; verletzen die In-Game-Reveal-Pflicht am stärksten → priorisieren). Screenshot-Freeze: flit setzen + `getAnimations().forEach(a=>{a.currentTime=250;a.pause()})`; Server python http.server 8766 (Root), `--photo`→`/_dev/prototypes/birthday-photo.jpg`. **NÄCHSTE:** kein-magic motto-cluster-weise weiterbauen, Reviews wellenweise nachziehen.
+
+---
+
 # Session-Notiz — 08.07.2026 (Gate-Stand 17/45 + NEUE Pflicht: Magic-Moment-Foto-Reveal in JEDEM Spiel)
 
 ## ⭐ START-HINWEIS — beim „Start leicht" ZUERST ansagen
