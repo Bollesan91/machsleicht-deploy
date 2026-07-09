@@ -22,6 +22,14 @@
   .dot text{fill:#0e2620;font-size:11px;font-weight:800;text-anchor:middle;dominant-baseline:central;pointer-events:none}
   #line{fill:none;stroke:var(--gold);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 5px var(--gold))}
   .web.shake{animation:sh .25s}@keyframes sh{0%,100%{transform:translateX(0)}33%{transform:translateX(-6px)}66%{transform:translateX(6px)}}
+  /* Magic-Moment: das Tau-Bild loest sich, flitzt unscharf umher -> antippen faengt -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:46%;width:104px;height:104px;margin:-52px 0 0 -52px;border-radius:50%;border:5px solid var(--gold);background-image:var(--photo);background-size:cover;background-position:center;background-color:#143a2c;opacity:0;filter:blur(8px);transform:scale(.5);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-76px,-64px) scale(.54)}36%{transform:translate(72px,-50px) scale(.5)}54%{transform:translate(-62px,44px) scale(.54)}72%{transform:translate(70px,30px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 42px 13px rgba(255,230,160,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
+  .magicFly::after{content:"🧚";position:absolute;top:-16px;right:-8px;font-size:26px}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#eefcf4,#cdeede);color:#143a2c;border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--gold);background-image:var(--photo);background-size:cover;background-position:center;background-color:#143a2c;box-shadow:0 0 26px rgba(255,230,160,.6);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -44,7 +52,7 @@
 
   <section class="scene" id="s-game">
     <div class="hud"><span class="pill">Tropfen <b id="cnt">0</b>/<b id="tot">7</b></span></div>
-    <div class="web" id="web"><div class="cphoto" id="cphoto"></div><svg id="svg" viewBox="0 0 300 300"><g id="strands"></g><polyline id="line" points=""></polyline><g id="dots"></g></svg></div>
+    <div class="web" id="web"><div class="cphoto" id="cphoto"></div><svg id="svg" viewBox="0 0 300 300"><g id="strands"></g><polyline id="line" points=""></polyline><g id="dots"></g></svg><div class="magicFly" id="magicFly"></div></div>
     <p class="sub" id="hint">Tippe den leuchtenden Tropfen.</p>
   </section>
 
@@ -74,10 +82,10 @@ const sfx={
 };
 const DOTS=[[150,60],[212,104],[196,182],[120,210],[58,176],[44,100],[150,135]]; // 7 Tropfen (Netz-Ringe)
 // Twist „dem Licht folgen": Reihenfolge wird gemischt, geführt wird NUR über Puls + Ton — kein Zahlen-Abzählen (spielbar ab 4)
-let next=0,done=false,ORDER=[];
+let next=0,done=false,ORDER=[],magicPhase=false,finT=null;
 function sharpen(frac){ const p=$('#cphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:f>=1?1:(0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+(f>=1?0:8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Gesicht zuletzt: f^3 + Blur-Floor 8, erst der letzte Tropfen loest auf
 function build(){
-  next=0;done=false;$('#cnt').textContent=0;$('#tot').textContent=DOTS.length;$('#line').setAttribute('points','');sharpen(0);
+  next=0;done=false;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('flit','caught','joy');$('#cnt').textContent=0;$('#tot').textContent=DOTS.length;$('#line').setAttribute('points','');sharpen(0);
   const g=$('#strands');g.innerHTML='';
   // Netz-Speichen + Ringe (Deko)
   const cx=150,cy=140;[60,100,140].forEach(r=>{const c=document.createElementNS('http://www.w3.org/2000/svg','circle');c.setAttribute('cx',cx);c.setAttribute('cy',cy);c.setAttribute('r',r);c.setAttribute('class','strand');c.setAttribute('fill','none');g.appendChild(c);});
@@ -97,15 +105,20 @@ function tap(i){
   if(next<DOTS.length){ $('.dot[data-i="'+ORDER[next]+'"]').classList.add('next'); }
   else win();
 }
-function win(){
-  done=true;sharpen(1);$('#hint').textContent='';vib([20,40,20,40,80]);
-  $('#winTitle').textContent='Du hast das Tau-Netz verbunden!'; // Gast-Lob: der Gast hat die Tropfen verbunden
-  if(HAS_PHOTO){ $('#winWho').textContent=`Im ganzen Feenwald funkelt niemand so wie ${kid()}! Komm zur Feen-Party:`; }
-  else { $('#winWho').textContent=`Im funkelnden Tau-Netz sitzt eine kleine Fee — du hast es für ${kid()} geknüpft! Komm zur Feen-Party:`; } // Gast=Knuepfer, kid nur eingeladen
-  guestName();
-  setTimeout(()=>{ show('s-win');confetti(CC);sfx.win(); }, 600);
+function win(){ /* Netz komplett -> das Tau-Bild loest sich als unscharfes Foto -> antippen faengt -> scharf + huepft -> Win. No-Fail (Auto-Catch 5s) */
+  done=true; $('#hint').textContent='Oh! Das Bild im Tau loest sich — fang es!'; const p=$('#cphoto'); if(p) p.style.opacity='0'; // Reflexion buendelt sich ins flatternde Foto (kein Doppel-Gesicht)
+  const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true; sfx.drop(6); vib(8);
+  mf.addEventListener('click', catchMagic, {once:true});
+  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: faengt von selbst
 }
-function tip(){ if(!done && ORDER.length && document.querySelector('.dot[data-i="'+ORDER[next]+'"]')) tap(ORDER[next]); } // Tipp: leuchtenden Tropfen für dich verbinden (Guard: vor build() kein Ziel)
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#hint').textContent='Gefangen! ✨'; vib(12);
+  finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); sfx.win(); vib([10,30,10]); // scharf + huepft vor Freude, Fanfare + Konfetti AM Reveal
+    finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast das Tau-Netz verbunden!'; // Gast-Lob: der Gast hat die Tropfen verbunden
+      if(HAS_PHOTO){ $('#winWho').textContent=`Im ganzen Feenwald funkelt niemand so wie ${kid()}! Komm zur Feen-Party:`; }
+      else { $('#winWho').textContent=`Im funkelnden Tau-Netz sitzt eine kleine Fee — du hast es für ${kid()} geknüpft! Komm zur Feen-Party:`; } // Gast=Knuepfer, kid nur eingeladen
+      guestName(); show('s-win'); confetti(CC); }, 2050); }, 560);
+}
+function tip(){ if(magicPhase){ catchMagic(); return; } if(!done && ORDER.length && document.querySelector('.dot[data-i="'+ORDER[next]+'"]')) tap(ORDER[next]); } // Tipp: leuchtenden Tropfen verbinden; im Magic-Moment faengt er das Foto (Guard: vor build() kein Ziel)
 $('#startBtn').addEventListener('click',()=>{build();show('s-game');$('#hint').textContent='Tippe den leuchtenden Tropfen.';});
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
