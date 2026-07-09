@@ -16,6 +16,15 @@
   /* Letzte Sandschicht über der Bildmitte: wischfest, löst sich erst beim Finale -> Gesicht = Klimax (Playtest-Fix) */
   .faceguard{position:absolute;left:50%;top:50%;width:64%;height:64%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(205,178,122,.98) 50%,rgba(169,133,74,.92) 72%,rgba(169,133,74,0) 100%);pointer-events:none;transition:opacity .8s ease;z-index:2}
   .board.fade .faceguard{opacity:0}
+  .board.sandcleared canvas{opacity:0;transition:opacity .5s} /* nur Sand weg, faceguard bleibt -> Gesicht erst beim Fang (reveal-last) */
+  /* Magic-Moment: das Fossil erwacht, springt unscharf hoch -> antippen faengt -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:50%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0d2a40;opacity:0;filter:blur(8px);transform:scale(.5);transition:opacity .3s;z-index:5;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(217,159,62,.65);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  .magicFly::after{content:"🦕";position:absolute;bottom:-8px;right:-10px;font-size:26px}
+  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(36px,-28px)}50%{transform:translate(-32px,18px)}75%{transform:translate(26px,24px)}}
+  @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fbfff2,#efe2c4);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;box-shadow:0 8px 20px rgba(0,0,0,.3);animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -37,7 +46,7 @@
 
   <section class="scene" id="s-game">
     <div class="meter"><div class="fill" id="fill"></div></div>
-    <div class="board" id="board"><canvas id="sand"></canvas><div class="faceguard"></div></div>
+    <div class="board" id="board"><canvas id="sand"></canvas><div class="faceguard"></div><div class="magicFly" id="magicFly"></div></div>
     <p class="sub" id="hint">Wisch den Sand mit dem Finger weg!</p>
   </section>
 
@@ -61,7 +70,7 @@ const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#d99f3e','#37c46e','#3282b8','#fff','#8a5a2b'];
 let lastBrush=0;
 const sfx={brush(){const t=AC().currentTime;if(t-lastBrush<0.05)return;lastBrush=t;noise(t,0.06,{vol:0.05,freq:1200+Math.random()*600});},find(){const t=AC().currentTime;note(520,t,0.1,{type:'sine',vol:0.12});note(780,t+0.08,0.16,{type:'sine',vol:0.12});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
-const RES=300, R=30, GOAL_ER=(ageNum()<=6?0.55:ageNum()<=9?0.68:0.8); let cv,ctx,drawing=false,done=false,erased=0; // Freilege-Schwelle nach Alter
+const RES=300, R=30, GOAL_ER=(ageNum()<=6?0.55:ageNum()<=9?0.68:0.8); let cv,ctx,drawing=false,done=false,erased=0,magicPhase=false,finT=null; // Freilege-Schwelle nach Alter
 function fillSand(){
   cv.width=RES;cv.height=RES;
   const grd=ctx.createLinearGradient(0,0,RES,RES);grd.addColorStop(0,'#cdb27a');grd.addColorStop(1,'#a9854a');
@@ -79,15 +88,28 @@ function progress(){
   erased=clear/tot;$('#fill').style.width=Math.round(erased*100)+'%';
   if(erased>=GOAL_ER && !done) reveal();
 }
-function reveal(){
+function reveal(){ // Sand freigelegt: das Fossil erwacht -> Foto flitzt -> antippen faengt (Magic-Moment)
   done=true;sfx.find();vib([20,40,20]);
-  ctx.globalCompositeOperation='destination-out';ctx.fillRect(0,0,RES,RES); // restlichen Sand wegblasen -> Foto 100% frei
-  $('#board').classList.add('fade');$('#hint').textContent='✨ Das Fossil erwacht …';$('#fill').style.width='100%';
-  setTimeout(()=>{ $('#winTitle').textContent='Du hast das Fossil freigelegt!'; if(HAS_PHOTO){ $('#winWho').textContent=`Das versteinerte Wesen erwacht — es ist ${kid()}! Komm zur Dino-Party:`; } else {$('#winWho').textContent=`Freigelegt und zum Leben erweckt — und ${kid()} lädt dich ein! Komm zur Dino-Party:`;} guestName();
-    show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]); }, 1050);
+  ctx.globalCompositeOperation='destination-out';ctx.fillRect(0,0,RES,RES); // restlichen Sand wegblasen (faceguard bleibt -> Gesicht erst beim Fang)
+  $('#board').classList.add('sandcleared');$('#fill').style.width='100%';
+  const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+  mf.addEventListener('click',catchMagic,{once:true});
+  finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail: faengt von selbst
+  $('#hint').textContent='✨ Das Fossil erwacht — fang es!';
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught');
+  $('#hint').textContent='Gefangen! ✨'; sfx.find(); vib([20,40,20,40,80]);
+  setTimeout(()=>mf.classList.add('joy'),560);
+  setTimeout(winReveal,2050);
+}
+function winReveal(){
+  $('#winTitle').textContent='Du hast das Fossil freigelegt!';
+  if(HAS_PHOTO){ $('#winWho').textContent=`Das versteinerte Wesen erwacht — es ist ${kid()}! Komm zur Dino-Party:`; } else {$('#winWho').textContent=`Freigelegt und zum Leben erweckt — und ${kid()} lädt dich ein! Komm zur Dino-Party:`;} guestName();
+  show('s-win');confetti(CC);sfx.win();
 }
 let moveCount=0,tipRow=0;
-function tip(){ if(done||!ctx)return; // No-Fail: raeumt pro Druck einen Streifen frei -> ein paar Tipps loesen sicher (Kleinkind-tauglich); core.js haengt den Tipp-Knopf an
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done||!ctx)return; // No-Fail: raeumt pro Druck einen Streifen frei -> ein paar Tipps loesen sicher (Kleinkind-tauglich); im Magic-Moment faengt der Tipp das Foto; core.js haengt den Tipp-Knopf an
   ctx.globalCompositeOperation='destination-out';
   for(let i=0;i<40;i++){ ctx.beginPath(); ctx.arc(Math.random()*RES, Math.random()*RES, R*1.3, 0, 7); ctx.fill(); } sfx.brush(); vib(6); progress();
 }
@@ -98,7 +120,7 @@ function initBoard(){
   cv.onpointermove=onMove;
   cv.onpointerup=cv.onpointercancel=()=>{drawing=false;progress();};
 }
-$('#startBtn').addEventListener('click',()=>{tipRow=0;show('s-game');setTimeout(initBoard,30);$('#hint').textContent='Wisch den Sand mit dem Finger weg!';});
+$('#startBtn').addEventListener('click',()=>{tipRow=0;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('flit','caught','joy');$('#board').classList.remove('sandcleared');show('s-game');setTimeout(initBoard,30);$('#hint').textContent='Wisch den Sand mit dem Finger weg!';});
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
