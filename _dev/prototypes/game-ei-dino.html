@@ -20,7 +20,7 @@
   .spot{position:absolute;border-radius:50%;background:#bcae7e;opacity:.7}
   .eggBox.go .egg{animation:wig .12s infinite}
   @keyframes wig{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
-  .hatch{position:absolute;left:50%;top:50%;width:126px;height:126px;margin:-70px 0 0 -63px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;border:5px solid #fffdf2;box-shadow:0 6px 16px rgba(0,0,0,.3);transform:scale(.96);opacity:1;transition:transform .4s cubic-bezier(.3,1.6,.5,1);z-index:1}
+  .hatch{position:absolute;left:50%;top:50%;width:126px;height:126px;margin:-70px 0 0 -63px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;border:5px solid #fffdf2;box-shadow:0 6px 16px rgba(0,0,0,.3);transform:scale(.96);opacity:1;filter:blur(9px) brightness(.5) saturate(.55);transition:transform .4s cubic-bezier(.3,1.6,.5,1);z-index:1}/* nur dunkle Silhouette hinter den Schalen: der Spalt zwischen shellTop/shellBot darf kein scharfes Gesicht durchlassen (reveal-last); echter Reveal via magicFly */
   .eggBox.hatched .shellTop{transform:translateY(-140px) rotate(-18deg);opacity:0}
   .eggBox.hatched .shellBot{transform:translateY(8px);z-index:0}/* hinter die Foto: darf das Gesicht nicht mehr ueberlagern */
   .eggBox.hatched .hatch{animation:hpop .55s cubic-bezier(.3,1.6,.5,1) forwards}
