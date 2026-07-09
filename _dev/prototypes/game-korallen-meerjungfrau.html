@@ -104,7 +104,7 @@ function winSeq(){ if(done)return; done=true; clearInterval(mvT); clearInterval(
   finT=setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('flit'); mf.addEventListener('click', catchMagic, {once:true}); magicPhase=true; sfx.collect();
     finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); /* No-Fail: nach 5s automatisch gefangen, falls nicht getippt */
   }, 1000); }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#tzhint').classList.remove('on'); sfx.ding(); vib([10,20]); /* gefangen: fliegt in die Mitte, scharf + gross */
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#tzhint').classList.remove('on'); sfx.ding(); vib([10,20]); /* gefangen: fliegt in die Mitte, scharf + gross */
   finT=setTimeout(()=>{ mf.classList.add('joy'); sfx.win(); vib([10,30,10]); /* huepft vor Freude */
     finT=setTimeout(()=>{
       $('#winTitle').textContent='Du hast alle Perlen gefangen!'; /* Gast-Lob: der Gast hat die Perlen gefischt */

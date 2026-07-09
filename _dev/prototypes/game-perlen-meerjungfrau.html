@@ -126,7 +126,7 @@ function winSeq(){
     finT=setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('flit'); mf.addEventListener('click', catchMagic, {once:true}); magicPhase=true; sfx.good(); /* Foto flitzt heraus */
       finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); /* No-Fail: nach 5s automatisch gefangen */
     }, 550); }, 900); }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#tzhint').classList.remove('on'); note(440,AC().currentTime,0.6,{type:'sine',vol:0.1,glideTo:990}); vib([10,20]); /* gefangen: scharf + gross */
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#tzhint').classList.remove('on'); note(440,AC().currentTime,0.6,{type:'sine',vol:0.1,glideTo:990}); vib([10,20]); /* gefangen: scharf + gross */
   finT=setTimeout(()=>{ mf.classList.add('joy'); sfx.win(); vib([10,30,10]); /* huepft vor Freude */
     finT=setTimeout(()=>{
       $('#winTitle').textContent='Du hast alle Perlen sortiert!'; /* Gast-Lob: der Gast hat sortiert */
