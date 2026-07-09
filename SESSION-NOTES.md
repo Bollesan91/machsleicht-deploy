@@ -6,10 +6,15 @@
 
 **Wiederverwendbares magicFly-Muster (7 Teile/Spiel):** (1) CSS `.magicFly` (margin-zentriert; `.flit`=blur(8px)+infinite `mflit`; `.caught`=blur(0)+scale~1.7+Glow; `.caught.joy`=`mjoy2`-Hüpfer; `::after`=Motto-Emoji; themen-Border) — (2) `<div class="magicFly" id="magicFly">` in den Stage-Container — (3) global `magicPhase=false` (+`finT`) — (4) reveal-Fn: **altes Reveal-Element ausblenden** (opacity0/none) → Teaser („fang, was …!") → `magicFly.flit` + `click→catchMagic{once}` + `magicPhase=true` + No-Fail `finT=setTimeout(catchMagic,5000)` — (5) `catchMagic()` Guard `if(!magicPhase)return` → caught → 560ms → joy → 2050ms → win — (6) `tip(){ if(magicPhase){catchMagic();return;} … }` — (7) restart: `magicPhase=false` + Klassen weg + verstecktes Element zurück. (laterne nutzt vorhandenes `photoFly`/`.on`/`.settle`.)
 
-**INTERAKTIV durch (committed draft, je lokal Flit+Fang per Chrome-Screenshot verifiziert):**
-- sternenstaub-einhorn `b53d5c0` · korallen-meerjungfrau `8a6c511` · perlen-meerjungfrau `bbd80a1` · laterne-feen `ee55d0d` (volle Kette bis Win getestet) · schatz-meerjungfrau `f89a87a`. **→ Meerjungfrau-Motto komplett interaktiv.**
+**INTERAKTIV durch (9 Spiele, committed draft, je lokal Flit+Fang per Chrome-Screenshot verifiziert) — 3 volle Mottos:**
+- **Batch 1 (5):** sternenstaub-einhorn · korallen-meerjungfrau · perlen-meerjungfrau · laterne-feen · schatz-meerjungfrau. **→ Meerjungfrau komplett.**
+- **Batch 2 (5, „5 gleichzeitig"):** laterne-feen UMGEBAUT `c5edb4d` (Bolle-Idee: letztes Glühwürmchen IST das Foto) · gluehwuermchen-feen `e547a6d` · taunetz-feen `ae32d5b` · turm-einhorn `3a27b63` · regenbogen-einhorn `e316e15` (+ Früh-Reveal-Fix: kein sharpen(1)-Flood mehr). **→ feen + einhorn komplett.**
+- **Timer-Polish** `572acc9`: `clearTimeout(finT)` in sternenstaub/korallen/perlen catchMagic (Doppelcheck-MINOR).
 
-**Doppelcheck-Reviews (auf SHA `f89a87a`, mit Score 0-100):** claude.ai gate-entscheidend `/chat/9a918dbe` (Opus 4.8 Max, raw-SHA-URLs) + ChatGPT 2.-Winkel via @@Gist `gist.github.com/Bollesan91/9df69e41769228b2f47ec0e2e6354426` (@@Hn@@-Marker). Beide liefen beim Turn-Ende noch → **Ergebnisse + Scores beim nächsten Wake einsammeln, Stufe-3 verifizieren, fixen.** (Die alten 6 Reviews = Automatik-Versionen + raw-URL = moot.)
+**Review-Scores (mit Zahlen, [[feedback_ship_floor_84_no_score_names]] UMKEHR):**
+- **Batch 1 claude.ai (Opus 4.8 Max, gate) FERTIG, alle GO, 0 MAJOR:** perlen 93 · laterne(alt) 94 · schatz 91 · sternenstaub 90 · korallen 87 · **Gesamt 90 GO.** ChatGPT @@Gist bestätigte sternenstaub 86 + denselben Timer-MINOR + sharpen-vor-winSeq (bei Batch 1 synchron-benign, verifiziert).
+- **Batch 2 Doppelcheck LÄUFT:** claude.ai `/chat/4cd3ef42` (Opus 4.8 Max, raw-SHA `e316e15`) + ChatGPT @@Gist `gist.github.com/Bollesan91/f748792f17d6ecff235e59a065f83501`. **Scores beim nächsten Wake einsammeln, Stufe-3, fixen.**
+- **Reveal-last-Prüfmuster (wichtig für alle künftigen sharpen-Spiele):** progressives Reveal-Element (.cphoto/.grovephoto/.rbPhoto) darf beim Magic-Moment-Start NUR im selben JS-Tick auf opacity 0 → benign; per setTimeout getrennt sichtbar = MAJOR (regenbogen-Fix).
 
 **Roll-out-Landschaft:** 5 interaktiv ✓ · ~14 „alt-magic" (winSeq-Reveal → schnelle Konversion wie laterne/schatz) · ~24 „kein-magic" (Neubau; verletzen die In-Game-Reveal-Pflicht am stärksten → priorisieren). Screenshot-Freeze: flit setzen + `getAnimations().forEach(a=>{a.currentTime=250;a.pause()})`; Server python http.server 8766 (Root), `--photo`→`/_dev/prototypes/birthday-photo.jpg`. **NÄCHSTE:** kein-magic motto-cluster-weise weiterbauen, Reviews wellenweise nachziehen.
 
