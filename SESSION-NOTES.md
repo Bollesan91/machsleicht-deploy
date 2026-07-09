@@ -11,11 +11,13 @@
 - **schwert-ritter** `9c12f37`: im Spiegel der Klinge erscheint jemand. mirror blur12/opacity.45/72px = safe, kein Fix nötig (real-Foto verifiziert).
 - **wappen-ritter** `6106e6a`: Schiebepuzzle (Foto=Kacheln), Wappenträger tritt hervor. Kacheln blur11→**blur20** brightness(.66) (Real-Foto-Leak gefixt: bei blur11 klar erkennbares Gesicht).
 
-**WELLE A (Standard-Pattern, 3/6 FERTIG, alle Real-Foto-Playtest):**
+**WELLE A (Standard-Pattern, 6/6 FERTIG ✅, alle Real-Foto-Playtest):**
 - **strahl-superheld** `2673436`: Helden-Signal, `sharpen(1)`-Leak aus winSeq raus, f³-gedeckelt (Referenz-Build).
 - **hufeisen-pferde** `bfdd1d2`: Stall-Schild, `sharpen()` gedeckelt (opacity≤.4/blur≥11), `sharpen(1)`+`.big` raus.
-- **drehleiter-feuerwehr** `<neu>`: Giebelfenster, gleiche Deckelung + Leak-Fix.
-- **OFFEN Welle A:** notruf-feuerwehr, stadt-superheld, wildnis-dschungel.
+- **drehleiter-feuerwehr** `cd7d5db`: Giebelfenster, gleiche Deckelung + Leak-Fix.
+- **notruf-feuerwehr** `9ceb71d`: Funkbild, magicFly im `#s-game` (nicht im winzigen Monitor), Deckelung hält auch gegen sharpen(1).
+- **stadt-superheld** `<neu>`: Stadt-Leinwand, `#sky`-steer-Handler magicPhase-guarded, Deckelung + Leak-Fix.
+- **wildnis-dschungel** `<neu>`: Vollfeld-Dickicht-Foto (wie wappen) — STÄRKERE Deckelung (opacity≤.3/blur≥14) + Deko/Vignette drüber; magicFly im `#s-game` (Feld wird von layout() gewiped). Real-Foto @4/5 = Gesicht unsichtbar.
 - **OFFEN Welle B (⚑ Flood+Story):** huerden-pferde, lianen-dschungel, spuren-safari.
 - **OFFEN Welle C (⚑ Story):** tatort-prinzessin, uvschrift-prinzessin, feuer-feuerwehr (⚑⚑ faceguard härten).
 - **OFFEN Welle D (Sonderfälle):** tresor-prinzessin, puzzle-dschungel (⚑⚑⚑ Kacheln re-themen/blur20).
