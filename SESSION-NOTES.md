@@ -1,3 +1,33 @@
+# Session-Notiz — 09.07.2026 spät (Ritter komplett + Welle A halb; Audit-Arbeitsliste; KRITISCHE Real-Foto-Playtest-Lektion)
+
+## ⭐ START-HINWEIS — Fortschritt Magic-Moment-Rollout (Task #80)
+
+**Kanonisches magicFly-Muster + PFLICHT-Playtest sind jetzt in `_dev/handoff/2026-07-09-magic-moment-audit.md`** (volle Arbeitsliste der 14 offenen Spiele, Welle A–D, latente Leaks). Zuerst lesen.
+
+**KRITISCHE LEKTION diese Runde (in Memory [[feedback-visual-playtest-mandatory]] Punkt 7):** reveal-last-Playtests liefen bisher mit dem **404-Fallback-Foto** (jedes Spiel hardcodet `THEME.photo='/birthday-photo.jpg'`, aber lokal liegt das Testfoto unter `/_dev/prototypes/birthday-photo.jpg` → Root-Pfad 404 → dunkler CSS-Fallback). Mit Fallback sieht JEDER Blur „safe" aus. **Vor jedem reveal-last-Screenshot per JS `--photo` auf `/_dev/prototypes/birthday-photo.jpg` überschreiben.** Genau so hatte ich katapult (blur11-Teaser) fälschlich abgehakt — mit echtem Foto leakte das Gesicht.
+
+**RITTER-MOTTO (3/3) FERTIG (Real-Foto-Playtest, reveal-last + Fang + Foto-Variante bestätigt):**
+- **katapult-ritter** `6e86f2c`+Fix `b8b4391`: Burgherr tritt aus dem Tor. Gate-Teaser blur11→**blur15** brightness(.6) (Real-Foto-Leak gefixt).
+- **schwert-ritter** `9c12f37`: im Spiegel der Klinge erscheint jemand. mirror blur12/opacity.45/72px = safe, kein Fix nötig (real-Foto verifiziert).
+- **wappen-ritter** `6106e6a`: Schiebepuzzle (Foto=Kacheln), Wappenträger tritt hervor. Kacheln blur11→**blur20** brightness(.66) (Real-Foto-Leak gefixt: bei blur11 klar erkennbares Gesicht).
+
+**WELLE A (Standard-Pattern, 3/6 FERTIG, alle Real-Foto-Playtest):**
+- **strahl-superheld** `2673436`: Helden-Signal, `sharpen(1)`-Leak aus winSeq raus, f³-gedeckelt (Referenz-Build).
+- **hufeisen-pferde** `bfdd1d2`: Stall-Schild, `sharpen()` gedeckelt (opacity≤.4/blur≥11), `sharpen(1)`+`.big` raus.
+- **drehleiter-feuerwehr** `<neu>`: Giebelfenster, gleiche Deckelung + Leak-Fix.
+- **OFFEN Welle A:** notruf-feuerwehr, stadt-superheld, wildnis-dschungel.
+- **OFFEN Welle B (⚑ Flood+Story):** huerden-pferde, lianen-dschungel, spuren-safari.
+- **OFFEN Welle C (⚑ Story):** tatort-prinzessin, uvschrift-prinzessin, feuer-feuerwehr (⚑⚑ faceguard härten).
+- **OFFEN Welle D (Sonderfälle):** tresor-prinzessin, puzzle-dschungel (⚑⚑⚑ Kacheln re-themen/blur20).
+
+**LATENTE Leaks in done-Spielen (separater Fix):** kanone-piraten (Faceguard-Kern >86%), schatz-meerjungfrau (`.treasure.up{blur(0)}` raus), perlen-meerjungfrau (totes `.pearlPhoto` löschen), + Cross-Fade-Robustheit (winSeq auch `filter='blur(16px)'` in sternenstaub/turm/regenbogen/hochhaus/taunetz).
+
+**REVIEWS AUSSTEHEND:** ritter (3) + strahl/hufeisen/drehleiter (3) noch NICHT unabhängig reviewt (claude.ai Opus Max + ChatGPT). Bauen lief vor, weil die 14 Leaks aktive Gate-Verletzungen auf draft sind. Reviews nachziehen.
+
+**Draft-Commits diese Runde:** 6e86f2c, 9c12f37, 6106e6a, b8b4391, 2673436, bfdd1d2, drehleiter + handoff-doc-Commit. Alle draft, KEIN Deploy. `striegeln-pferde` existiert (3. Pferde-Spiel) — Audit-Status prüfen (evtl. schon magicFly).
+
+---
+
 # Session-Notiz — 09.07.2026 abends (Dino + Piraten komplett interaktiv durchs Gate — 6 Spiele voller Doppelcheck; „3 gleichzeitig aber einzeln", Loop läuft)
 
 ## ⭐ START-HINWEIS — Fortschritt seit dem 09.07.-Vormittag
