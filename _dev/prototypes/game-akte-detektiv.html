@@ -31,6 +31,14 @@
   .gel{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-14deg) scale(1.6);color:#c0392b;border:3px solid #c0392b;border-radius:6px;font-weight:900;font-size:16px;letter-spacing:2px;padding:2px 8px;opacity:0;transition:opacity .3s ease,transform .3s ease;background:rgba(255,255,255,.75)}
   .gel.on{opacity:.95;transform:translate(-50%,-50%) rotate(-14deg) scale(1)}
   .feedback{min-height:20px;font-size:14px;font-weight:700;text-align:center;margin-top:6px}
+  /* Magic-Moment: das Beweisfoto beamt aus der Akte, flitzt unscharf -> antippen faengt -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:50%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#1a1d28;opacity:0;filter:blur(8px);transform:scale(.5);transition:opacity .3s;z-index:9;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-84px,-70px) scale(.54)}36%{transform:translate(80px,-54px) scale(.5)}54%{transform:translate(-70px,50px) scale(.54)}72%{transform:translate(78px,34px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 44px 13px rgba(224,184,74,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
+  .magicFly::after{content:"🔍";position:absolute;bottom:-8px;right:-8px;font-size:26px}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#f4f1e6,#ddd3b8);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk);position:relative}
   .invite::before{content:"📁 AKTE GELÖST 📁";position:absolute;top:-1px;left:0;right:0;background:var(--good);color:#0e3a20;font-weight:900;font-size:12px;letter-spacing:1px;padding:3px 0;border-radius:14px 14px 0 0}
@@ -61,6 +69,7 @@
       <div class="feedback" id="feedback"></div>
       <div class="dossier" id="dossier"><div class="dphoto" id="dphoto"></div><div class="bar b0"></div><div class="bar b1"></div><div class="bar b2"></div><div class="gel" id="gel">GELÖST</div></div>
       <div class="stamps"><div class="stamp" data-s="0"></div><div class="stamp" data-s="1"></div><div class="stamp" data-s="2"></div></div>
+      <div class="magicFly" id="magicFly"></div>
     </div>
   </section>
 
@@ -95,7 +104,7 @@ const QUESTIONS=[ /* correct = richtige Spur; wrong = Ablenker-Pool, je nach Alt
   { q:'Womit sucht ein guter Detektiv nach winzigen Hinweisen?', correct:['🔍','mit der Lupe'], wrong:[['🥄','mit dem Löffel'],['🧦','mit der Socke'],['🖍️','mit dem Buntstift']] },
   { q:'Was löst jede Spürnase zum großen Schluss?', correct:['🔓','den Fall'], wrong:[['🧊','das Eis'],['🥜','eine Nuss'],['🎲','ein Würfelspiel']] }
 ];
-let qi=0, solved=0, done=false, busy=false, curCorrect=0;
+let qi=0, solved=0, done=false, busy=false, curCorrect=0, magicPhase=false, finT=null;
 function sharpen(frac){ const p=$('#dphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:f>=1?1:(0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+(f>=1?0:8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.65+0.35*f).toFixed(2)+')'; } // Gesicht zuletzt: f^3 + Blur-Floor 8 haelt bis zum letzten Balken verschleiert
 function renderQ(){
   const Q=QUESTIONS[qi];
@@ -118,7 +127,7 @@ function pick(i,btn){
   if(i===curCorrect){
     btn.classList.add('good'); sfx.right(); vib(12); solved++;
     const st=document.querySelector('.stamp[data-s="'+qi+'"]'); if(st)st.classList.add('on'); sfx.stamp();
-    const bar=document.querySelector('.dossier .b'+qi); if(bar)bar.classList.add('off'); sharpen(solved/QUESTIONS.length); // Zensur-Balken kippt weg
+    const bar=document.querySelector('.dossier .b'+qi); if(bar)bar.classList.add('off'); sharpen(Math.min(solved,QUESTIONS.length-1)/QUESTIONS.length); // Zensur-Balken kippt weg; Foto bleibt unscharf (Reveal-last, scharf erst beim Magic-Foto)
     $('#feedback').textContent='✔ Richtige Spur!'; $('#feedback').style.color='var(--good)';
     [...$('#opts').children].forEach(c=>c.style.pointerEvents='none');
     if(qi+1>=QUESTIONS.length){ done=true; setTimeout(winSeq,650); }
@@ -129,17 +138,22 @@ function pick(i,btn){
     setTimeout(()=>btn.classList.remove('bad'),350);
   }
 }
-function winSeq(){
-  sharpen(1); $('#gel').classList.add('on'); sfx.stamp(); vib([20,40,20,40,80]);
-  $('#winTitle').textContent='Du hast die Akte geknackt!'; // Gast-Lob: der Gast hat die Fragen gelöst
-  if(HAS_PHOTO){ $('#winWho').textContent=`Drei richtige Spuren, drei Balken weg — in der Akte steckt ${kid()}! Komm zur Detektiv-Party:`; }
-  else { $('#winWho').textContent=`Geknackt! Die Lupe glänzt — du hast den Fall für ${kid()} gelöst! Komm zur Detektiv-Party:`; } // Gast=Loeser (Nominativ-Fallback safe), kid nur eingeladen
-  guestName();
-  setTimeout(()=>{ show('s-win');confetti(CC);sfx.win(); }, 900);
+function winSeq(){ /* Akte gelöst -> das Beweisfoto beamt heraus (unscharf) -> antippen faengt -> scharf + huepft -> Win. No-Fail (Auto-Catch 5s) */
+  const p=$('#dphoto'); if(p) p.style.opacity='0'; $('#qtext').style.visibility='hidden'; $('#opts').style.visibility='hidden'; $('#gel').classList.add('on'); sfx.stamp(); vib(12); $('#feedback').textContent='Das Beweisfoto — fang es!'; $('#feedback').style.color='var(--accent-dk)'; // Quiz-Optionen weg -> freie Bühne fürs flatternde Foto
+  const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+  mf.addEventListener('click', catchMagic, {once:true});
+  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: faengt von selbst
 }
-// Tipp sichtbar: die richtige Spur leuchtet auf und wird echt angetippt
-function tip(){ if(done||busy)return; const btn=$('#opts').children[curCorrect]; if(!btn)return; btn.style.boxShadow='0 0 0 3px var(--good)'; setTimeout(()=>{ btn.style.boxShadow=''; pick(curCorrect,btn); },350); }
-$('#startBtn').addEventListener('click',()=>{qi=0;solved=0;done=false;busy=false;[...document.querySelectorAll('.stamp')].forEach(s=>s.classList.remove('on'));[...document.querySelectorAll('.dossier .bar')].forEach(b=>b.classList.remove('off'));$('#gel').classList.remove('on');sharpen(0);renderQ();show('s-game');});
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#feedback').textContent='Gelöst! ✨'; sfx.win(); vib([20,40,20,40,80]);
+  finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
+    finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast die Akte geknackt!'; // Gast-Lob: der Gast hat die Fragen gelöst
+      if(HAS_PHOTO){ $('#winWho').textContent=`Drei richtige Spuren, drei Balken weg — in der Akte steckt ${kid()}! Komm zur Detektiv-Party:`; }
+      else { $('#winWho').textContent=`Geknackt! Die Lupe glänzt — du hast den Fall für ${kid()} gelöst! Komm zur Detektiv-Party:`; } // Gast=Loeser, kid nur eingeladen
+      guestName(); show('s-win'); confetti(CC); }, 2050); }, 560);
+}
+// Tipp sichtbar: die richtige Spur leuchtet auf und wird echt angetippt; im Magic-Moment faengt der Tipp das Foto
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; const btn=$('#opts').children[curCorrect]; if(!btn)return; btn.style.boxShadow='0 0 0 3px var(--good)'; setTimeout(()=>{ btn.style.boxShadow=''; pick(curCorrect,btn); },350); }
+$('#startBtn').addEventListener('click',()=>{qi=0;solved=0;done=false;busy=false;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('flit','caught','joy');$('#dphoto').style.opacity='';$('#qtext').style.visibility='';$('#opts').style.visibility='';[...document.querySelectorAll('.stamp')].forEach(s=>s.classList.remove('on'));[...document.querySelectorAll('.dossier .bar')].forEach(b=>b.classList.remove('off'));$('#gel').classList.remove('on');sharpen(0);renderQ();show('s-game');});
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
