@@ -36,6 +36,16 @@
   @keyframes blinkA{50%{opacity:.15}}
   .swinger{transition:transform .3s,opacity .5s ease}
   .hut{transition:right .4s,opacity .5s ease}
+  /* Magic-Moment: der geheime Dschungel-Boss (Foto) erscheint unscharf, flitzt -> antippen faengt -> scharf + Glow + huepft (Gesicht zuletzt), DANN Story-Beats */
+  .magicFly{position:absolute;left:50%;top:42%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#16240f;opacity:0;filter:blur(8px);transform:scale(.4);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.3s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(240,169,58,.65);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  .magicFly.caught.joy{animation:mjoy .5s ease-in-out 4}
+  .magicFly::after{content:"🐒";position:absolute;bottom:-8px;right:-10px;font-size:26px}
+  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(56px,-36px)}50%{transform:translate(-50px,30px)}75%{transform:translate(44px,32px)}}
+  @keyframes mjoy{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+  .mhint{position:absolute;left:50%;top:8%;transform:translateX(-50%);background:rgba(22,36,15,.85);color:#eaffd6;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;white-space:nowrap}
+  .mhint.on{opacity:1}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#f2fbe8,#d6efbf);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.45);text-align:center;border:4px solid var(--accent-dk);position:relative}
   .hero{width:148px;height:148px;border-radius:50%;margin:6px auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#16240f;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -72,6 +82,8 @@
       <div class="hut" id="hut">🛖</div>
       <div class="swinger" id="swinger">🐒</div>
       <div class="storyOut" id="storyOut"></div>
+      <div class="magicFly" id="magicFly"></div>
+      <div class="mhint" id="mhint"></div>
     </div>
     <button class="btn tapBtn" id="swingBtn">🌿 SCHWUNG</button>
   </section>
@@ -111,14 +123,14 @@ function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitl
 $('#nextPan').addEventListener('click',()=>{ AC(); pIdx=Math.min(pIdx+1,PANELS.length-1); showPan(); vib(6); });
 $('#skipPan').addEventListener('click',()=>{ AC(); pIdx=PANELS.length-1; showPan(); });
 showPan();
-let cleared=0, done=false, swinging=false, moveT=null, spawnT=null, spawnInitT=null, vines=[], vineCount=0, dblArm=false, dblUntil=0;
-function sharpen(frac){ const p=$('#hutphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.55+0.45*f).toFixed(2)+')';
-  const hu=$('#hut'); if(hu) hu.style.right=(-14+18*f).toFixed(1)+'%'; } // hinten gewichtet (1-f^2); Hütte fährt mit dem Fortschritt ins Bild („wir nähern uns dem Baumhaus")
+let cleared=0, done=false, swinging=false, moveT=null, spawnT=null, spawnInitT=null, vines=[], vineCount=0, dblArm=false, dblUntil=0, magicPhase=false, finT=null;
+function sharpen(frac){ const p=$('#hutphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.4,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(11,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.55+0.25*f).toFixed(2)+')';
+  const hu=$('#hut'); if(hu) hu.style.right=(-14+18*f).toFixed(1)+'%'; } // GEDECKELT: Guckloch bleibt unscharfe Silhouette (opacity<=.4/blur>=11) -> scharf erst beim Fang (reveal-last); Hütte faehrt trotzdem ins Bild
 function spawnVine(){ if(done)return; const v=document.createElement('div'); v.className='vine'; v._x=106; v.style.left='106%'; vineCount++; if(DBL && vineCount%3===0){ v._double=true; v.innerHTML='<span>🌿🌿</span>'; } else { v.innerHTML='<span>🌿</span>'; } $('#track').appendChild(v); vines.push(v); }
 function stumble(){ $('#swinger').classList.add('miss'); setTimeout(()=>$('#swinger').classList.remove('miss'),300); sfx.stumble(); vib([10,30]); }
 function moveVines(){ if(done)return; for(const v of vines.slice()){ v._x-=SPEED; v.style.left=v._x+'%'; if(!v._done && v._x<ZONE_LO && v._x>=ZONE_LO-6){ if(!swinging){ v._done='miss'; stumble(); } } if(v._x<-12){ v.remove(); const k=vines.indexOf(v); if(k>=0)vines.splice(k,1); } } } // Miss erst NACH Verlassen der Zone — sonst frisst das Miss-Band bei U6 sichtbare Fangzone
 let swT=null; // Anim-Timer getrennt vom swinging-Flag: Re-Trigger darf die Freigabe nie clearen
-function swing(){ if(done)return;
+function swing(){ if(magicPhase){ catchMagic(); return; } if(done)return;
   // Doppel-Lianen-Nachgriff: zweiter Tap innerhalb 450ms zählt extra (Rhythmus-Skill ab 7; verpasst = kein Verlust)
   if(dblArm && Date.now()<dblUntil){ dblArm=false; cleared++; $('#cl').textContent=cleared; sharpen(cleared/GOAL); sfx.clear(); vib([10,25,10]);
     const sw=$('#swinger'); clearTimeout(swT); sw.classList.remove('swing'); void sw.offsetWidth; sw.classList.add('swing'); swT=setTimeout(()=>sw.classList.remove('swing'),520); // voller Sprung auch beim Blitz-Nachgriff
@@ -137,22 +149,33 @@ let outroStep=0, outroT=null, beat2='', winAt=0;
 function advanceOutro(){ if(!outroStep || Date.now()-winAt<900)return; clearTimeout(outroT); winAt=Date.now(); // Grace-Fenster: Reflex-Taps nach dem Sieg dürfen Flood + Beats nicht überspringen
   if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
   else { outroStep=0; show('s-win'); } } // Tap-getaktet (Fallback: Beat 1 11s, Beat 2 14s — längster Beat 2 hat 11 Wörter, 60-WpM-Leser brauchen Puffer)
-function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); sharpen(1);
-  $('#hutphoto').classList.add('flood'); // das Baumhaus-Fenster öffnet sich zur ganzen Szene: der Reveal IST der Höhepunkt
+function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); // KEIN sharpen(1)/flood -> der geheime Boss flitzt (Magic-Moment), scharf erst beim Fang (reveal-last)
   $('#hut').style.opacity='0'; const sw=$('#swinger'); sw.style.opacity='0'; // Affe und Hütte machen die Bühne frei
-  [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility='hidden'); // keine toten Buttons im Finale
-  sfx.win(); note(440,AC().currentTime,0.5,{type:'sine',vol:0.1,glideTo:880}); vib([20,40,20,40,80]); confetti(CC); // Fanfare + Konfetti AM Reveal
-  const g=guestNow(); const so=$('#storyOut');
+  $('#swingBtn').style.visibility='hidden'; // Schwung-Button weg; Feld bleibt Fangflaeche
+  vib([20,40]);
+  setTimeout(()=>{
+    const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+    mf.addEventListener('click',catchMagic,{once:true});
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
+    const mh=$('#mhint'); if(mh){ mh.textContent='Der geheime Dschungel-Boss erscheint — fang ihn!'; mh.classList.add('on'); }
+  }, 560);
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); const mh=$('#mhint'); if(mh)mh.classList.remove('on'); $('#hutphoto').style.opacity='0'; sfx.win(); note(440,AC().currentTime,0.5,{type:'sine',vol:0.1,glideTo:880}); confetti(CC); vib([20,40,20,40,80]);
+  setTimeout(()=>mf.classList.add('joy'),560);
+  setTimeout(startOutro,1500); // nach dem Fang: Tap-getaktete Story-Beats
+}
+function startOutro(){ const g=guestNow(); const so=$('#storyOut');
   if(HAS_PHOTO){ so.textContent='Koko staunt: Der Dschungel-Boss ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
-  else { so.textContent='Koko staunt: Du hast den Boss gefunden — ein freches Äffchen! 🎉'; beat2='Und oben wartet schon die Dschungel-Party'+(g?' auf dich, '+g:'')+'!'; } // nofoto: DU hast geklettert (kein Fremd-Lob), Boss-Rätsel aufgelöst
+  else { so.textContent='Koko staunt: Du hast den Boss gefunden — ein freches Äffchen! 🎉'; beat2='Und oben wartet schon die Dschungel-Party'+(g?' auf dich, '+g:'')+'!'; } // nofoto: DU hast geklettert, Boss-Rätsel aufgelöst
   so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
   if(HAS_PHOTO){ $('#winWho').textContent=`Das Baumhaus-Fenster öffnet sich weit — drinnen strahlt der Dschungel-Boss: ${kid()}! Komm zur Dschungel-Party:`; } else { $('#winTitle').textContent='Im Baumhaus!'; $('#winWho').textContent=`Du hast den Dschungel geschafft — und oben wartet ein freches Äffchen! ${kidCap()} lädt dich zur Dschungel-Party ein:`; } guestName(); }
 // Tipp sichtbar: eine Liane erscheint in der Zone und der Affe schwingt sie echt
-function tip(){ if(done)return; let v=vines.find(x=>!x._done && x._x>=ZONE_LO-6 && x._x<=ZONE_HI); if(!v) v=vines.find(x=>!x._done && x._x>ZONE_HI); if(!v){ spawnVine(); v=vines[vines.length-1]; } if(!v)return; v._x=(ZONE_LO+ZONE_HI)/2; v.style.left=v._x+'%'; dblArm=false; swinging=false; $('#swinger').classList.remove('swing'); swing(); } // Zonen-Liane bevorzugen + dblArm aus: keine Waisen-Liane, kein Fehl-Stolperer nach dem Tipp
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; let v=vines.find(x=>!x._done && x._x>=ZONE_LO-6 && x._x<=ZONE_HI); if(!v) v=vines.find(x=>!x._done && x._x>ZONE_HI); if(!v){ spawnVine(); v=vines[vines.length-1]; } if(!v)return; v._x=(ZONE_LO+ZONE_HI)/2; v.style.left=v._x+'%'; dblArm=false; swinging=false; $('#swinger').classList.remove('swing'); swing(); } // Zonen-Liane bevorzugen + dblArm aus: keine Waisen-Liane, kein Fehl-Stolperer nach dem Tipp
 // Start (AC() = iOS-Audio-Unlock per Geste)
-$('#startBtn').addEventListener('click',()=>{ AC(); cleared=0;done=false;swinging=false;vineCount=0;dblArm=false;dblUntil=0; outroStep=0; clearTimeout(outroT); $('#storyOut').classList.remove('on'); [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility=''); vines.forEach(v=>v.remove()); vines=[]; $('#cl').textContent=0; $('#clmax').textContent=GOAL; $('#hutphoto').classList.remove('flood'); sharpen(0); const z=document.querySelector('.zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; const sw=$('#swinger'); sw.style.opacity=''; sw.style.left='24%'; const hu=$('#hut'); hu.style.opacity=''; hu.style.right='-14%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT);clearTimeout(spawnInitT); moveT=setInterval(moveVines,60); spawnT=setInterval(spawnVine,SPAWN); spawnInitT=setTimeout(spawnVine,400); }); // Initial-Spawn: keine 2,5s Leerlauf; Timeout gecleart, damit Start-Doppeltipp keine Doppel-Liane spawnt
+$('#startBtn').addEventListener('click',()=>{ AC(); cleared=0;done=false;swinging=false;vineCount=0;dblArm=false;dblUntil=0; outroStep=0; magicPhase=false; clearTimeout(outroT); clearTimeout(finT); $('#magicFly').classList.remove('flit','caught','joy'); $('#mhint').classList.remove('on'); $('#storyOut').classList.remove('on'); [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility=''); vines.forEach(v=>v.remove()); vines=[]; $('#cl').textContent=0; $('#clmax').textContent=GOAL; $('#hutphoto').classList.remove('flood'); $('#hutphoto').style.opacity=''; sharpen(0); const z=document.querySelector('.zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; const sw=$('#swinger'); sw.style.opacity=''; sw.style.left='24%'; const hu=$('#hut'); hu.style.opacity=''; hu.style.right='-14%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT);clearTimeout(spawnInitT); moveT=setInterval(moveVines,60); spawnT=setInterval(spawnVine,SPAWN); spawnInitT=setTimeout(spawnVine,400); }); // Initial-Spawn: keine 2,5s Leerlauf; Timeout gecleart, damit Start-Doppeltipp keine Doppel-Liane spawnt
 $('#swingBtn').addEventListener('click',swing);
-$('#field').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } else { swing(); } }); // im Finale taktet der Tap die Story-Beats
+$('#field').addEventListener('click',()=>{ if(magicPhase){ catchMagic(); return; } if(done && outroStep){ advanceOutro(); } else { swing(); } }); // magicPhase: Feld faengt den Boss; im Finale taktet der Tap die Story-Beats
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
