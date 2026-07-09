@@ -22,6 +22,16 @@
   .gauge{position:relative;width:90%;max-width:300px;height:18px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden;margin-top:6px}
   .gauge .zone{position:absolute;top:0;bottom:0;left:55%;width:30%;background:rgba(86,224,255,.45)}
   .gauge .pin{position:absolute;top:-3px;bottom:-3px;width:5px;background:#fff;border-radius:3px;left:0;box-shadow:0 0 6px #fff}
+  /* Magic-Moment: im Helden-Signal erscheint das (unscharfe) Foto, flitzt -> antippen faengt -> scharf + Glow + huepft (Gesicht zuletzt) */
+  .magicFly{position:absolute;left:50%;top:42%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--beam);background-image:var(--photo);background-size:cover;background-position:center;background-color:#14213a;opacity:0;filter:blur(8px);transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.3s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(86,224,255,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  .magicFly.caught.joy{animation:mjoy .5s ease-in-out 4}
+  .magicFly::after{content:"🦸";position:absolute;bottom:-10px;right:-12px;font-size:26px}
+  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(54px,-40px)}50%{transform:translate(-48px,30px)}75%{transform:translate(40px,36px)}}
+  @keyframes mjoy{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+  .mhint{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);background:rgba(20,33,58,.85);color:#cfeaff;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:7;pointer-events:none;white-space:nowrap}
+  .mhint.on{opacity:1}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fff7e0,#ffe6a8);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:4px solid var(--accent-dk);position:relative}
   .invite::before{content:"⚡ GEBURTSTAGS-HELD ⚡";position:absolute;top:-1px;left:0;right:0;background:var(--accent);color:var(--ink);font-weight:900;font-size:12px;letter-spacing:1px;padding:3px 0;border-radius:12px 12px 0 0} /* Banner = GEBURTSTAGS-Rolle des Kindes, konkurriert nicht mit der Spiel-Heldentat des Gasts (Attributions-Reibung weg) */
@@ -52,6 +62,8 @@
       <div class="meteor" id="meteor">☄️</div>
       <div class="beam" id="beam"></div>
       <div class="hero3" id="hero3">🦸</div>
+      <div class="magicFly" id="magicFly"></div>
+      <div class="mhint" id="mhint"></div>
     </div>
     <div class="gauge"><div class="zone"></div><div class="pin" id="pin"></div></div>
     <button class="btn tapBtn" id="fireBtn">STRAHL ⚡</button>
@@ -82,14 +94,14 @@ const sfx={
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
 function stars(){ const s=$('#field'); for(let i=0;i<20;i++){const d=document.createElement('div');d.className='star';d.style.left=Math.random()*96+'%';d.style.top=Math.random()*60+'%';d.style.animationDelay=(Math.random()*2.5)+'s';s.appendChild(d);} }
-let power=0,pdir=1,gaugeT=null,hits=0,busy=false,done=false;
+let power=0,pdir=1,gaugeT=null,hits=0,busy=false,done=false,magicPhase=false,finT=null;
 // Alters-Staffel: Zeiger-Tempo + Zonenbreite
 const STEP=(ageNum()<=6?3.5:ageNum()<=9?5:6.5), ZONE_LO=(ageNum()<=6?48:ageNum()<=9?55:60), ZONE_HI=(ageNum()<=6?88:ageNum()<=9?85:82);
 function sharpen(frac){ const p=$('#skySignal'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:f>=1?1:(0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+(f>=1?0:8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Gesicht zuletzt: f^3 + Blur-Floor 8 haelt bis 2/3 verschleiert, erst der letzte Treffer loest auf
 function startGauge(){ power=0;pdir=1; const z=document.querySelector('.gauge .zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; clearInterval(gaugeT); gaugeT=setInterval(()=>{ if(done)return; power+=pdir*STEP; if(power>=100){power=100;pdir=-1;} if(power<=0){power=0;pdir=1;} $('#pin').style.left=power+'%'; },45); }
 function nextMeteor(){ const m=$('#meteor'); m.className='meteor'; m.style.opacity='1'; m.style.transform='translateX(-50%)'; m.style.left=(28+Math.random()*44)+'%'; $('#ign').textContent='Meteor im Anflug!'; }
 function fire(){
-  if(busy||done)return; busy=true; const p=power; const hit=(p>=ZONE_LO && p<=ZONE_HI);
+  if(magicPhase){ catchMagic(); return; } if(busy||done)return; busy=true; const p=power; const hit=(p>=ZONE_LO && p<=ZONE_HI);
   const b=$('#beam'); b.classList.add('fire'); sfx.zap(hit); vib(hit?[12,20]:7);
   setTimeout(()=>b.classList.remove('fire'),200);
   setTimeout(()=>{
@@ -99,18 +111,32 @@ function fire(){
     else { $('#ign').textContent='Daneben — nochmal!'; busy=false; }
   }, 180);
 }
-function winSeq(){
-  done=true; clearInterval(gaugeT); $('#fireBtn').disabled=true; $('#ign').textContent='Stadt gerettet!'; sharpen(1); $('#skySignal').classList.add('big'); const b=$('#beam'); b.classList.add('fire'); setTimeout(()=>b.classList.remove('fire'),220); sfx.zap(true); vib([20,40,20,40,80]);
+function winSeq(){ // 3 abgewehrt: das Helden-Signal formt jemanden (Foto) -> flitzt (Magic-Moment). KEIN sharpen(1) -> scharf erst beim Fang (reveal-last)
+  done=true; clearInterval(gaugeT); $('#fireBtn').disabled=true; $('#ign').textContent='Stadt gerettet!'; const b=$('#beam'); b.classList.add('fire'); setTimeout(()=>b.classList.remove('fire'),220); sfx.zap(true); vib([20,40]);
+  setTimeout(()=>{
+    const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+    mf.addEventListener('click',catchMagic,{once:true});
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
+    const mh=$('#mhint'); if(mh){ mh.textContent='Im Helden-Signal erscheint jemand — fang ihn!'; mh.classList.add('on'); }
+  }, 620);
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); const mh=$('#mhint'); if(mh)mh.classList.remove('on'); $('#skySignal').style.opacity='0'; sfx.win(); vib([20,40,20,40,80]);
+  setTimeout(()=>mf.classList.add('joy'),560);
+  setTimeout(winReveal,2050);
+}
+function winReveal(){
   $('#winTitle').textContent='Du hast die Stadt gerettet!'; // Gast-Lob: der Gast hat die Meteore abgewehrt
   if(HAS_PHOTO){ $('#winWho').textContent=`Drei Meteore abgewehrt — im Helden-Signal am Himmel strahlt ${kid()}! Komm zur Superhelden-Party:`; }
   else { $('#winWho').textContent=`Der letzte Meteor zerplatzt am Helden-Strahl — du hast die Stadt für ${kid()} gerettet! Komm zur Superhelden-Party:`; }
   guestName();
-  setTimeout(()=>{ show('s-win'); confetti(CC); sfx.win(); }, 1000);
+  show('s-win'); confetti(CC);
 }
 // Tipp sichtbar: Zeiger rastet in der Zone ein und der Strahl feuert echt
-function tip(){ if(done||busy)return; power=(ZONE_LO+ZONE_HI)/2; $('#pin').style.left=power+'%'; fire(); }
-$('#startBtn').addEventListener('click',()=>{ hits=0;done=false;busy=false; $('#hits').textContent=0; $('#fireBtn').disabled=false; $('#skySignal').classList.remove('big'); sharpen(0); [...document.querySelectorAll('.star')].forEach(s=>s.remove()); stars(); nextMeteor(); show('s-game'); startGauge(); });
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; power=(ZONE_LO+ZONE_HI)/2; $('#pin').style.left=power+'%'; fire(); }
+$('#startBtn').addEventListener('click',()=>{ hits=0;done=false;busy=false;magicPhase=false;clearTimeout(finT); $('#hits').textContent=0; $('#fireBtn').disabled=false; $('#skySignal').classList.remove('big'); $('#skySignal').style.opacity=''; $('#magicFly').classList.remove('flit','caught','joy'); $('#mhint').classList.remove('on'); sharpen(0); [...document.querySelectorAll('.star')].forEach(s=>s.remove()); stars(); nextMeteor(); show('s-game'); startGauge(); });
 $('#fireBtn').addEventListener('click',fire);
+$('#field').addEventListener('click',()=>{ if(magicPhase) catchMagic(); }); // Feld = Fangflaeche fuer den flitzenden magicFly
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
