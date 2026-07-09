@@ -28,6 +28,14 @@
   .storyOut.on{opacity:1}
   .storyOut.on::after{content:" ▸";opacity:.65;animation:blinkA 1.2s infinite} /* Tap-Affordanz: weiter per Tipp */
   @keyframes blinkA{50%{opacity:.15}}
+  /* Magic-Moment: der Captain (unscharfes Foto) funkelt aus dem Sternbild, flitzt -> antippen faengt -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:44%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--gold);background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;opacity:0;filter:blur(8px);transform:scale(.5);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-84px,-70px) scale(.54)}36%{transform:translate(80px,-54px) scale(.5)}54%{transform:translate(-70px,48px) scale(.54)}72%{transform:translate(78px,32px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 44px 13px rgba(255,216,102,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
+  .magicFly::after{content:"⭐";position:absolute;top:-16px;right:-8px;font-size:26px}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#f3f7ff,#dce6fb);color:#16233f;border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--gold);background-image:var(--photo);background-size:cover;background-position:center;box-shadow:0 0 26px rgba(255,216,102,.7);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -54,7 +62,7 @@
 
   <section class="scene" id="s-game">
     <div class="hud"><span class="pill">Sterne <b id="cnt">0</b>/<b id="tot">7</b></span></div>
-    <div class="sky" id="sky"><div class="cphoto" id="cphoto"></div><svg id="svg" viewBox="0 0 300 300"><polyline id="line" points=""></polyline><g id="stars"></g></svg><div class="storyOut" id="storyOut"></div></div>
+    <div class="sky" id="sky"><div class="cphoto" id="cphoto"></div><svg id="svg" viewBox="0 0 300 300"><polyline id="line" points=""></polyline><g id="stars"></g></svg><div class="magicFly" id="magicFly"></div><div class="storyOut" id="storyOut"></div></div>
     <p class="sub" id="hint">Tippe den leuchtenden Stern.</p>
   </section>
 
@@ -97,14 +105,14 @@ $('#skipPan').addEventListener('click',()=>{ AC(); pIdx=PANELS.length-1; showPan
 showPan();
 function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
 function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim(); return (v&&v.length<=20)?v:GUEST; } // Namensfeld vor URL-Param
-let next=0,done=false,previewing=false,helpT=null;
+let next=0,done=false,previewing=false,helpT=null,magicPhase=false,finT=null;
 let outroStep=0, outroT=null, beat2='', winAt=0;
 function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace 1150ms: deckt volle Beat-1-Einblendung, kein Reflex-Tap überspringt Reveal+Beats
   if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
   else { outroStep=0; show('s-win'); confetti(CC); } } // tap-getaktet (Fallback Beat 1 11s, Beat 2 14s für 60-WpM-Leser)
 function sharpen(frac){ const p=$('#cphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(18*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.55+0.45*f).toFixed(2)+')'; } // Opacity+Blur f^2-gewichtet: Gesicht bleibt bis kurz vor Schluss verschleiert, Voll-Flut bei win() ist der Höhepunkt (schützt den Twist)
 function build(){
-  next=0;done=false;previewing=false;clearTimeout(helpT);$('#cnt').textContent=0;$('#tot').textContent=NSTAR;$('#line').setAttribute('points','');sharpen(0);$('#svg').style.opacity='';
+  next=0;done=false;previewing=false;magicPhase=false;clearTimeout(helpT);clearTimeout(finT);$('#magicFly').classList.remove('flit','caught','joy');$('#cnt').textContent=0;$('#tot').textContent=NSTAR;$('#line').setAttribute('points','');sharpen(0);$('#svg').style.opacity='';
   const g=$('#stars');g.innerHTML=''; // Nummern generell verborgen — Führung rein übers Blinken; ab 7 aus dem Kopf
   // Hintergrund-Sterne
   for(let i=0;i<26;i++){const c=document.createElementNS('http://www.w3.org/2000/svg','circle');c.setAttribute('class','bgstar');c.setAttribute('cx',Math.random()*300);c.setAttribute('cy',Math.random()*300);c.setAttribute('r',(Math.random()*1.4+.4).toFixed(1));g.appendChild(c);}
@@ -131,20 +139,26 @@ function tap(i){
   else win();
 }
 function win(){
-  done=true;previewing=false;clearTimeout(helpT);sharpen(1);$('#hint').textContent='Die Konstellation leuchtet auf …';vib([20,40,20,40,80]);
+  done=true;previewing=false;clearTimeout(helpT);$('#cphoto').style.opacity='0';$('#hint').textContent='Die Konstellation leuchtet auf …';vib([20,40,20,40,80]); // KEIN Frueh-Flood: scharfes Gesicht erst beim Fangen (Reveal-last)
   [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility='hidden'); // keine toten Buttons (Tipp) im Finale
-  setTimeout(()=>{ // Reveal ist der Höhepunkt: Sterne faden, Foto flutet
-    $('#svg').style.opacity='0'; $('#hint').textContent='';
-    sfx.win();vib([20,40,20,40,80]);confetti(CC); // Fanfare + Konfetti AM Reveal, nicht auf der Karte
-    const g=guestNow(); const so=$('#storyOut');
-    if(HAS_PHOTO){ so.textContent='Das Sternbild leuchtet: Der Captain ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
-    else { so.textContent='Das Sternbild leuchtet — eine funkelnde Rakete am Himmel! 🎉'; beat2='Und '+kid()+' wartet an der Raumstation auf dich'+(g?', '+g:'')+'!'; } // nofoto: Rätsel aufgelöst, kid() als Gastgeber (kein Spiel-Verb)
-    so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
-    if(HAS_PHOTO){ $('#winTitle').textContent='Captain gefunden!'; $('#winWho').textContent=`Zwischen den Sternen erscheint der Captain — das ist ${kid()}! Komm zur Weltraum-Party:`; } else { $('#winTitle').textContent='Konstellation komplett!'; $('#winWho').textContent=`Das Sternbild ist komplett — ${kid()} lädt dich zur Weltraum-Party ein:`; } guestName();
+  setTimeout(()=>{ // Sterne + Reveal buendeln sich ins flatternde Foto -> antippen faengt -> scharf + huepft. No-Fail (Auto-Catch 5s)
+    $('#svg').style.opacity='0'; const p=$('#cphoto'); if(p) p.style.opacity='0';
+    $('#hint').textContent='Der Captain funkelt heraus — fang ihn!'; const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true; sfx.connect(3); vib(8);
+    mf.addEventListener('click', catchMagic, {once:true});
+    finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000);
   }, 700);
 }
-$('#sky').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap die Story-Beats
-function tip(){ if(!done && !previewing && document.querySelector('.star[data-i="'+next+'"]')) tap(next); } // Tipp: nächsten Stern für dich verbinden — der harte No-Fail-Weg (Guard: nicht während Vorschau)
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#hint').textContent=''; sfx.win(); vib([20,40,20,40,80]);
+  finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude, Fanfare + Konfetti AM Reveal
+    const g=guestNow(); const so=$('#storyOut');
+    if(HAS_PHOTO){ so.textContent='Das Sternbild leuchtet: Der Captain ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
+    else { so.textContent='Das Sternbild leuchtet — eine funkelnde Rakete am Himmel! 🎉'; beat2='Und '+kid()+' wartet an der Raumstation auf dich'+(g?', '+g:'')+'!'; } // nofoto: kid() als Gastgeber
+    so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
+    if(HAS_PHOTO){ $('#winTitle').textContent='Captain gefunden!'; $('#winWho').textContent=`Zwischen den Sternen erscheint der Captain — das ist ${kid()}! Komm zur Weltraum-Party:`; } else { $('#winTitle').textContent='Konstellation komplett!'; $('#winWho').textContent=`Das Sternbild ist komplett — ${kid()} lädt dich zur Weltraum-Party ein:`; } guestName();
+  }, 620);
+}
+$('#sky').addEventListener('click',()=>{ if(magicPhase){ catchMagic(); return; } if(done && outroStep){ advanceOutro(); } }); // Magic-Moment: Tap faengt das Foto; danach taktet der Tap die Story-Beats
+function tip(){ if(magicPhase){ catchMagic(); return; } if(!done && !previewing && document.querySelector('.star[data-i="'+next+'"]')) tap(next); } // Tipp: nächsten Stern verbinden; im Magic-Moment faengt er das Foto (Guard: nicht während Vorschau)
 $('#startBtn').addEventListener('click',()=>{ AC(); outroStep=0; clearTimeout(outroT); $('#storyOut').classList.remove('on'); [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility=''); build(); show('s-game'); $('#hint').textContent='Tippe den leuchtenden Stern.'; }); // AC(): iOS-Audio-Unlock per Geste
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
