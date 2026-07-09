@@ -1,3 +1,22 @@
+# Session-Notiz — 09.07.2026 abends (Dino-Motto komplett interaktiv durchs Gate + Piraten begonnen; „3 gleichzeitig aber einzeln")
+
+## ⭐ START-HINWEIS — Fortschritt seit dem 09.07.-Vormittag
+
+**Bolle-Direktiven diese Runde:** „3 gleichzeitig aber einzeln" (3er-Batch, je EIGENER Review-Tab) · „Foto Variante nicht vergessen" (magicFly nutzt überall `var(--photo)` → greift bei echtem Foto UND `?nofoto`-SVG-Avatar via `setPhoto()`; erledigt/verifiziert) · „Loop ScheduleWakeup alle 240 Sekunden" (nicht mehr 1200s Leerlauf).
+
+**DINO-MOTTO (3/3) interaktiv + durchs Gate (Doppelcheck je EINZELN: 1 claude.ai Opus-4.8-Max target-blind + 1 ChatGPT @@Gist):**
+- **ei-dino** `3e049b0` (Ei schlüpft→Foto flitzt→Fang). **claude.ai 58 NO-GO + ChatGPT „1 Blocker" — BEIDE fanden unabhängig denselben reveal-last-MAJOR:** `.hatch` trug das scharfe Foto (`opacity:1`, kein Blur) hinter zwei clip-path-Schalen, deren Zacken sich NIE trafen → ~30px-Spalt quer über die Bildmitte → Gesicht ab dem 1. Tap sichtbar. **GEFIXT `2bae876`:** `.hatch` geblurrt+verdunkelt (`blur(9px) brightness(.5)`), leakt nur noch dunkle Silhouette; per Screenshot der Tipp-Phase verifiziert. (magicFly macht den echten Reveal, `.hatch` ist nur noch Pre-Hatch-Teaser.)
+- **faehrte-dino** `446433a` (+`.big`-Cleanup `2870a66`): claude.ai **88 GO, 0 MAJOR**. Nest erwacht→Foto flitzt→Fang; `sharpen()` gedeckelt (mid-play opacity 0.38/blur13 = Silhouette, reveal-last hält).
+- **fossil-dino** `091ca39` (+Härtung `23c714c`): claude.ai **87 GO, 0 MAJOR** mit playtest-kritischem UNSICHER → faceguard proaktiv **64→84 % + Vollkern nach außen** gehärtet (deckt Kopfränder), toter `.board.fade`-Block raus; Screenshot bestätigt Gesicht voll verdeckt.
+- **LEKTION (in Memory [[feedback-visual-playtest-mandatory]] Punkt 6):** reveal-last-Leak — auch die SPIEL-Phase VOR dem Reveal screenshotten (nicht direkt hatch()/reveal() aufrufen). Scharfes Reveal-Element hinter Abdeckung (clip-path-Schalen, faceguard, Sand, Karten) → Abdeckung fast nie lückenlos. Fix: Element blurren+verdunkeln ODER Abdeckung vergrößern. **Der Einzel-Doppelcheck fing den ei-Leak, den mein ab-Hatch-Playtest verpasste.**
+- ChatGPT faehrte+fossil: erster Send kam fragmentarisch an (nur Gist-Link → „Was möchtest du damit machen?"), **sauber nachgesendet, laufen** (Verdikt beim nächsten Tick einsammeln).
+
+**PIRATEN begonnen:** **flaschenpost-piraten** `6a18df6` interaktiv (Botschaft=Foto fliegt aus der Flasche→flitzt→Fang; `.scroll .pic` auf blur6/op.4 gedeckelt = reveal-last). Flit-DOM + Caught (No-Fail-Auto-Fang) per Screenshot verifiziert (opacity:1, Gold-Rahmen+Glow sichtbar). **OFFEN: kanone-piraten + memory-piraten** bauen, dann Einzel-Doppelcheck. Danach restliche Mottos (baustelle, ritter, pferde, dschungel, superheld, prinzessin, feuerwehr, safari) — ~26 Spiele.
+
+**Draft-Commits diese Runde:** 3e049b0, 446433a, 091ca39, 6a18df6, 2bae876, 2870a66, 23c714c (alle draft, gepusht; KEIN main/Deploy). Git-Auth: `git -c credential.helper='!gh auth git-credential' push origin draft`.
+
+---
+
 # Session-Notiz — 09.07.2026 (Magic-Moment wird INTERAKTIV — Fang-Mechanik — 5 Spiele durch, Loop läuft)
 
 ## ⭐ START-HINWEIS — beim „Start leicht" ZUERST ansagen
