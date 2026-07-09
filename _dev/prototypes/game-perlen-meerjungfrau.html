@@ -18,6 +18,12 @@
   .shGlow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:78px;height:26px;border-radius:50%;background:#ffd166;filter:blur(12px);opacity:0;transition:opacity .4s ease;z-index:1}
   .pearlPhoto{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%) scale(.6);width:74px;height:74px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;border:4px solid #ffd166;opacity:0;transition:opacity .45s ease,transform .45s ease;z-index:1}
   .pearlPhoto.show{opacity:1;transform:translate(-50%,-50%) scale(1.05);z-index:4}/* enthuelltes Foto ueber die Schalenhaelften: Kinn/Mund nicht verdeckt */
+  /* Magic-Moment: das enthuellte Foto waechst gross aus der Muschel + huepft vor Freude, DANN Win. Reuse des Reveal-Elements -> kein Doppel-Reveal */
+  .pearlPhoto.big{transform:translate(-50%,-150%) scale(2.4);box-shadow:0 0 38px 9px rgba(255,209,102,.95);z-index:8;transition:transform .55s cubic-bezier(.3,1.4,.5,1),box-shadow .5s}
+  .pearlPhoto.big.joy{animation:pjoy2 .5s ease-in-out 4}
+  @keyframes pjoy2{0%,100%{transform:translate(-50%,-150%) scale(2.4)}50%{transform:translate(-50%,-166%) scale(2.52)}}
+  .tzhint{position:absolute;left:50%;top:6%;transform:translateX(-50%);width:86%;text-align:center;font-size:14px;font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.6);opacity:0;transition:opacity .5s;z-index:11;pointer-events:none}
+  .tzhint.on{opacity:1}
   .shTop{position:absolute;left:0;right:0;top:0;height:52%;background:linear-gradient(180deg,#ff9ec9,#e2699f);border-radius:60px 60px 8px 8px;transform-origin:bottom center;transition:transform .5s ease;box-shadow:inset 0 -4px 8px rgba(0,0,0,.2);z-index:2}
   .shBot{position:absolute;left:0;right:0;bottom:0;height:52%;background:linear-gradient(0deg,#d0578f,#e88ab5);border-radius:8px 8px 60px 60px;transform-origin:top center;transition:transform .5s ease;box-shadow:inset 0 4px 8px rgba(0,0,0,.2);z-index:2}
   @keyframes pbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
@@ -50,6 +56,7 @@
   <section class="scene" id="s-game">
     <div class="hud"><span class="pill" style="background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px">Perlen 🦪 <b id="cnt">0</b>/<b id="gmax">8</b></span></div>
     <div class="tank" id="tank">
+      <div class="tzhint" id="tzhint"></div>
       <div class="pearl" id="pearl">❤️</div>
       <div class="bigShell" id="bigShell"><div class="shGlow" id="shGlow"></div><div class="pearlPhoto" id="pearlPhoto"></div><div class="shTop" id="shTop"></div><div class="shBot" id="shBot"></div></div>
       <div class="shells" id="shells"></div>
@@ -83,7 +90,7 @@ const sfx={
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
 // Alters-Staffel: Anzahl zu sortierender Perlen
-const GOAL=(ageNum()<=6?6:ageNum()<=9?8:10); let cur=0, sorted=0, done=false, busy=false, palette=[];
+const GOAL=(ageNum()<=6?6:ageNum()<=9?8:10); let cur=0, sorted=0, done=false, busy=false, palette=[], finT=null;
 function shellGap(frac){ const f=Math.max(0,Math.min(1,frac)); $('#shTop').style.transform='rotate('+(-f*26)+'deg)'; $('#shGlow').style.opacity=(f*0.9).toFixed(2); } // Muschel öffnet sich Spalt für Spalt — Glow zeigt: da leuchtet was, ohne das Foto zu verraten
 function bubbles(){ const t=$('#tank'); for(let i=0;i<10;i++){const b=document.createElement('div');b.className='bubble';const s=6+Math.random()*16;b.style.width=b.style.height=s+'px';b.style.left=Math.random()*92+'%';b.style.bottom='-20px';b.style.animationDuration=(3+Math.random()*4)+'s';b.style.animationDelay=(Math.random()*3)+'s';t.appendChild(b);} }
 function buildShells(){
@@ -106,18 +113,21 @@ function sortInto(i){
   }
 }
 function winSeq(){
-  done=true;
-  // Muschel-Finale: Schalen klappen auf, DANN erst zeigt sich das Foto (Intro-Versprechen eingelöst)
-  $('#shTop').style.transform='rotate(-75deg)'; $('#shBot').style.transform='rotate(10deg)'; $('#shGlow').style.opacity='1';
-  setTimeout(()=>{ $('#pearlPhoto').classList.add('show'); note(440,AC().currentTime,0.6,{type:'sine',vol:0.1,glideTo:990}); sfx.win(); vib([20,40,20,40,80]); }, 350);
-  $('#winTitle').textContent='Du hast alle Perlen sortiert!'; // Gast-Lob: der Gast hat sortiert
-  if(HAS_PHOTO){ $('#winWho').textContent=`Alle Perlen sortiert — die große Schatz-Muschel öffnet sich, und darin schimmert ${kid()}! Komm zur Meerjungfrau-Party:`; }
-  else { $('#winWho').textContent=`Alle Perlen sortiert — in der Muschel glänzt die größte Perle des Riffs: ${kid()}! Komm zur Meerjungfrau-Party:`; } // kid als enthuellte Perle (Nominativ-Apposition), nicht als Sortierer
-  guestName();
-  setTimeout(()=>{ show('s-win'); confetti(CC); }, 1200);
-}
+  if(done)return; done=true;
+  // Magic-Moment: kurzer Teaser-Stop -> Muschel klappt auf -> Foto waechst gross aus der Muschel + huepft -> Win. Automatisch -> No-Fail
+  $('#pearl').style.display='none'; $('#lampe').textContent=''; /* Sortier-Perle + Frage ausblenden -> Fokus aufs Finale */
+  const tz=$('#tzhint'); tz.textContent='Oh! Die große Schatz-Muschel öffnet sich …'; tz.classList.add('on');
+  finT=setTimeout(()=>{ $('#shTop').style.transform='rotate(-75deg)'; $('#shBot').style.transform='rotate(10deg)'; $('#shGlow').style.opacity='1'; $('#pearlPhoto').classList.add('show'); sfx.ding(); vib(12); /* Schalen auf, Foto erscheint */
+    finT=setTimeout(()=>{ $('#pearlPhoto').classList.add('big'); note(440,AC().currentTime,0.6,{type:'sine',vol:0.1,glideTo:990}); vib(12); /* Foto waechst gross */
+      finT=setTimeout(()=>{ $('#pearlPhoto').classList.add('joy'); sfx.win(); vib([10,30,10]); /* huepft vor Freude, 4 Huepfer ganz durch */
+        finT=setTimeout(()=>{
+          $('#winTitle').textContent='Du hast alle Perlen sortiert!'; /* Gast-Lob: der Gast hat sortiert */
+          if(HAS_PHOTO){ $('#winWho').textContent=`Alle Perlen sortiert — die große Schatz-Muschel öffnet sich, und darin schimmert ${kid()}! Komm zur Meerjungfrau-Party:`; }
+          else { $('#winWho').textContent=`Alle Perlen sortiert — in der Muschel glänzt die größte Perle des Riffs: ${kid()}! Komm zur Meerjungfrau-Party:`; }
+          guestName(); show('s-win'); confetti(CC);
+        }, 2050); }, 640); }, 700); }, 900); }
 function tip(){ if(done||busy)return; sortInto(cur); } // Tipp: die Perle für dich einsortieren
-$('#startBtn').addEventListener('click',()=>{ sorted=0;done=false;busy=false; $('#cnt').textContent=0; $('#gmax').textContent=GOAL; $('#shTop').style.transform=''; $('#shBot').style.transform=''; $('#shGlow').style.opacity='0'; $('#pearlPhoto').classList.remove('show'); $('#shells').innerHTML=''; [...document.querySelectorAll('.bubble')].forEach(b=>b.remove()); bubbles(); buildShells(); nextPearl(); $('#lampe').textContent='Welche Muschel passt?'; show('s-game'); });
+$('#startBtn').addEventListener('click',()=>{ sorted=0;done=false;busy=false; clearTimeout(finT);finT=null; $('#cnt').textContent=0; $('#gmax').textContent=GOAL; $('#shTop').style.transform=''; $('#shBot').style.transform=''; $('#shGlow').style.opacity='0'; $('#pearlPhoto').classList.remove('show','big','joy'); $('#tzhint').classList.remove('on'); $('#pearl').style.display=''; $('#shells').innerHTML=''; [...document.querySelectorAll('.bubble')].forEach(b=>b.remove()); bubbles(); buildShells(); nextPearl(); $('#lampe').textContent='Welche Muschel passt?'; show('s-game'); });
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
