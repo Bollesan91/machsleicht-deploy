@@ -21,6 +21,12 @@
   /* Sternenstaub-Bild: formt sich Funke für Funke (Reveal an Mechanik gekoppelt) */
   .dustPhoto{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:106px;height:106px;border-radius:50%;border:4px solid #ffd24d;box-shadow:0 0 22px rgba(255,210,77,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1040;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease,transform .5s ease,box-shadow .5s ease;pointer-events:none;z-index:1}
   .dustPhoto.big{transform:translate(-50%,-50%) scale(1.3);box-shadow:0 0 44px rgba(255,210,77,.9)}
+  /* Magic-Moment: das Sternenstaub-Bild waechst gross + huepft vor Freude, DANN Win. Reuse des EINEN Reveal-Elements -> kein Doppel-Reveal */
+  .dustPhoto.reveal{transform:translate(-50%,-50%) scale(1.9);box-shadow:0 0 48px rgba(255,210,77,.98);z-index:6;transition:transform .55s cubic-bezier(.3,1.4,.5,1),box-shadow .5s}
+  .dustPhoto.reveal.joy{animation:djoy .5s ease-in-out 4}
+  @keyframes djoy{0%,100%{transform:translate(-50%,-50%) scale(1.9)}50%{transform:translate(-50%,-58%) scale(2.0)}}
+  .tzhint{position:absolute;left:50%;top:7%;transform:translateX(-50%);width:86%;text-align:center;font-size:14px;font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.6);opacity:0;transition:opacity .5s;z-index:11;pointer-events:none}
+  .tzhint.on{opacity:1}
   .spark{z-index:2}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fff0fb,#ffe9c0);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
@@ -46,7 +52,7 @@
   <section class="scene" id="s-game">
     <div class="hud"><span class="pill">Sternenstaub ✨ <b id="cnt">0</b>/<b id="cmax">8</b></span></div>
     <div class="meter"><div class="fill" id="fill"></div></div>
-    <div class="sky" id="sky"><div class="dustPhoto" id="dustPhoto"></div><div class="wand" id="wand">🪄</div></div>
+    <div class="sky" id="sky"><div class="tzhint" id="tzhint"></div><div class="dustPhoto" id="dustPhoto"></div><div class="wand" id="wand">🪄</div></div>
     <p class="hint">Tipp die Funken, bevor sie verblassen!</p>
   </section>
 
@@ -75,7 +81,7 @@ const sfx={
   win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));[1568,2093].forEach((f,i)=>note(f,t+0.46+i*0.09,0.5,{type:'sine',vol:0.06}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-let collected=0, done=false, spawnT=null, live=[];
+let collected=0, done=false, spawnT=null, live=[], finT=null;
 function sharpen(frac){ const p=$('#dustPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:f>=1?1:(0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+(f>=1?0:8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Gesicht zuletzt: f^3 + Blur-Floor 8, erst der letzte Funke loest auf
 function flyToPhoto(el){ try{ const pr=$('#dustPhoto').getBoundingClientRect(), er=el.getBoundingClientRect(); el.animate([{transform:'translate(-50%,-50%)'},{transform:'translate(calc(-50% + '+(pr.left+pr.width/2-er.left-er.width/2)+'px), calc(-50% + '+(pr.top+pr.height/2-er.top-er.height/2)+'px)) scale(.3)',opacity:0}],{duration:260,easing:'ease-in'}); }catch(e){} } // Funke fliegt sichtbar ins Bild
 function bgStars(){ const s=$('#sky'); for(let i=0;i<18;i++){const d=document.createElement('div');d.className='bgstar';d.style.left=Math.random()*96+'%';d.style.top=Math.random()*92+'%';d.style.animationDelay=(Math.random()*2.6)+'s';s.appendChild(d);} }
@@ -96,16 +102,20 @@ function collect(el){
   if(collected>=GOAL) winSeq();
 }
 function winSeq(){
-  done=true; clearInterval(spawnT); live.forEach(e=>{clearTimeout(e._drift);e.remove();}); live=[]; sharpen(1); $('#dustPhoto').classList.add('big'); $('#wand').style.filter='drop-shadow(0 0 26px rgba(255,210,77,1))'; vib([20,40,20,40,80]);
-  $('#winTitle').textContent='Du hast allen Sternenstaub gefangen!'; // Gast-Lob: der Gast hat die Funken gefangen
-  if(HAS_PHOTO){ $('#winWho').textContent=`Alle Funken gesammelt — der Sternenstaub formt ein Bild: ${kid()}! Komm zur Einhorn-Party:`; }
-  else { $('#winWho').textContent=`Der Sternenstaub wirbelt zum Einhorn — du hast den Zauber für ${kid()} gewirkt! Komm zur Einhorn-Party:`; } // Gast=Zauberer, kid nur eingeladen
-  guestName();
-  setTimeout(()=>{ show('s-win');confetti(CC);sfx.win(); }, 900);
-}
+  if(done)return; done=true; clearInterval(spawnT); live.forEach(e=>{clearTimeout(e._drift);e.remove();}); live=[]; sharpen(1); $('#wand').style.filter='drop-shadow(0 0 26px rgba(255,210,77,1))'; vib([20,40,20]);
+  // Magic-Moment: kurzer Teaser-Stop -> Sternenstaub-Bild waechst gross + huepft -> Win. Automatisch -> No-Fail
+  const tz=$('#tzhint'); tz.textContent='Oh! Der Sternenstaub formt jemanden ganz Besonderen …'; tz.classList.add('on');
+  finT=setTimeout(()=>{ $('#dustPhoto').classList.add('reveal'); sfx.ding(); vib(12); /* Bild waechst gross in die Mitte */
+    finT=setTimeout(()=>{ $('#dustPhoto').classList.add('joy'); sfx.win(); vib([10,30,10]); /* huepft vor Freude, 4 Huepfer ganz durch */
+      finT=setTimeout(()=>{
+        $('#winTitle').textContent='Du hast allen Sternenstaub gefangen!'; /* Gast-Lob: der Gast hat die Funken gefangen */
+        if(HAS_PHOTO){ $('#winWho').textContent=`Alle Funken gesammelt — der Sternenstaub formt ein Bild: ${kid()}! Komm zur Einhorn-Party:`; }
+        else { $('#winWho').textContent=`Der Sternenstaub wirbelt zum Einhorn — du hast den Zauber für ${kid()} gewirkt! Komm zur Einhorn-Party:`; }
+        guestName(); show('s-win'); confetti(CC);
+      }, 2050); }, 640); }, 1000); }
 // Tipp sichtbar: ein Funke fliegt echt ins Sternenstaub-Bild
 function tip(){ if(done)return; if(live.length){ collect(live[0]); } else { spawnSpark(); if(live.length) collect(live[0]); } }
-$('#startBtn').addEventListener('click',()=>{ collected=0;done=false; live.forEach(e=>e.remove()); live=[]; $('#cnt').textContent=0; $('#cmax').textContent=GOAL; $('#fill').style.width='0%'; $('#dustPhoto').classList.remove('big'); sharpen(0); $('#sky').querySelectorAll('.spark,.bgstar').forEach(e=>e.remove()); bgStars(); show('s-game'); clearInterval(spawnT); spawnT=setInterval(spawnSpark,SPAWN); for(let i=0;i<3;i++)spawnSpark(); });
+$('#startBtn').addEventListener('click',()=>{ collected=0;done=false; clearTimeout(finT);finT=null; live.forEach(e=>e.remove()); live=[]; $('#cnt').textContent=0; $('#cmax').textContent=GOAL; $('#fill').style.width='0%'; $('#dustPhoto').classList.remove('big','reveal','joy'); $('#tzhint').classList.remove('on'); sharpen(0); $('#sky').querySelectorAll('.spark,.bgstar').forEach(e=>e.remove()); bgStars(); show('s-game'); clearInterval(spawnT); spawnT=setInterval(spawnSpark,SPAWN); for(let i=0;i<3;i++)spawnSpark(); });
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
