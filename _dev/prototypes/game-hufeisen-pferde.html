@@ -28,6 +28,16 @@
   .gauge .zone{position:absolute;top:0;bottom:0;left:55%;width:30%;background:rgba(55,196,110,.5)}
   .gauge .pin{position:absolute;top:-3px;bottom:-3px;width:5px;background:#fff;border-radius:3px;left:0;box-shadow:0 0 6px #fff}
   .hudHint{font-size:13px;opacity:.9}
+  /* Magic-Moment: am Stall-Schild erscheint das (unscharfe) Foto, flitzt -> antippen faengt -> scharf + Glow + huepft (Gesicht zuletzt) */
+  .magicFly{position:absolute;left:50%;top:42%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1c10;opacity:0;filter:blur(8px);transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.3s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(185,120,63,.65);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  .magicFly.caught.joy{animation:mjoy .5s ease-in-out 4}
+  .magicFly::after{content:"🍀";position:absolute;bottom:-10px;right:-12px;font-size:26px}
+  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(54px,-40px)}50%{transform:translate(-48px,30px)}75%{transform:translate(40px,36px)}}
+  @keyframes mjoy{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+  .mhint{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);background:rgba(58,36,18,.85);color:#ffe6c2;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:7;pointer-events:none;white-space:nowrap}
+  .mhint.on{opacity:1}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fdf6ec,#f0dcc2);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1c10;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -58,6 +68,8 @@
       <div class="shoesOn" id="shoesOn"><div class="shoe"></div><div class="shoe"></div><div class="shoe"></div></div>
       <div class="thrower">🤠</div>
       <div class="shoe fly" id="fly"></div>
+      <div class="magicFly" id="magicFly"></div>
+      <div class="mhint" id="mhint"></div>
     </div>
     <div class="gauge"><div class="zone"></div><div class="pin" id="pin"></div></div>
     <button class="btn" id="throwBtn" style="padding:12px 30px">WERFEN! 🍀</button>
@@ -89,15 +101,15 @@ const sfx={
   win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-let power=0,pdir=1,gaugeT=null,hits=0,busy=false,done=false;
+let power=0,pdir=1,gaugeT=null,hits=0,busy=false,done=false,magicPhase=false,finT=null;
 // Alters-Staffel: Zeiger-Tempo + Zonenbreite; Wind-Twist: Zone wandert nach jedem Wurf
 const STEP=(ageNum()<=6?3.5:ageNum()<=9?5:6.5), ZW=(ageNum()<=6?40:ageNum()<=9?30:22);
 let zLo=55, zHi=85;
 function windZone(){ zLo=Math.round(28+Math.random()*(68-ZW)); zHi=zLo+ZW; const z=document.querySelector('.gauge .zone'); z.style.left=zLo+'%'; z.style.width=ZW+'%'; }
-function sharpen(frac){ const p=$('#stallSign'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.65+0.35*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function sharpen(frac){ const p=$('#stallSign'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.4,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(11,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.6+0.25*f).toFixed(2)+')'; } // GEDECKELT: Schild bleibt unscharfe Silhouette (opacity<=.4, blur>=11) -> scharf erst beim Fang (reveal-last)
 function startGauge(){ power=0;pdir=1; clearInterval(gaugeT); gaugeT=setInterval(()=>{ power+=pdir*STEP; if(power>=100){power=100;pdir=-1;} if(power<=0){power=0;pdir=1;} $('#pin').style.left=power+'%'; },45); }
 function throwShoe(){
-  if(busy||done)return; busy=true; const p=power; sfx.toss(); vib(10);
+  if(magicPhase){ catchMagic(); return; } if(busy||done)return; busy=true; const p=power; sfx.toss(); vib(10);
   const hit=(p>=zLo && p<=zHi);
   const f=$('#fly'); f.style.opacity='1'; f.style.transition='none'; f.style.transform='translate(0,0) rotate(0deg)';
   const tx = hit? '195px' : (p<zLo? '95px':'235px');
@@ -113,15 +125,29 @@ function throwShoe(){
     busy=false;
   }, 450);
 }
-function winSeq(){
-  done=true; clearInterval(gaugeT); $('#throwBtn').disabled=true; sharpen(1); $('#stallSign').classList.add('big'); setTimeout(()=>sfx.ring(),120); vib(60);
+function winSeq(){ // 3 Ringer: am Stall-Schild formt sich jemand (Foto) -> flitzt (Magic-Moment). KEIN sharpen(1) -> scharf erst beim Fang (reveal-last)
+  done=true; clearInterval(gaugeT); $('#throwBtn').disabled=true; setTimeout(()=>sfx.ring(),120); vib([20,40]);
+  setTimeout(()=>{
+    const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+    mf.addEventListener('click',catchMagic,{once:true});
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
+    const mh=$('#mhint'); if(mh){ mh.textContent='Am Stall-Schild erscheint jemand — fang ihn!'; mh.classList.add('on'); }
+  }, 620);
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); const mh=$('#mhint'); if(mh)mh.classList.remove('on'); $('#stallSign').style.opacity='0'; sfx.win(); vib([20,40,20,40,80]);
+  setTimeout(()=>mf.classList.add('joy'),560);
+  setTimeout(winReveal,2050);
+}
+function winReveal(){
   $('#winTitle').textContent='Du hast alle drei getroffen!'; if(HAS_PHOTO){ $('#winWho').textContent=`Drei Glücks-Ringer — und am Stall-Schild strahlt ${kid()}! Komm zur Pferde-Party:`; } else {$('#winWho').textContent=`Drei Hufeisen am Pfosten — und ${kid()} lädt dich ein! Komm zur Pferde-Party:`;} guestName();
-  setTimeout(()=>{ show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]); }, 900);
+  show('s-win');confetti(CC);
 }
 // Tipp sichtbar: Zeiger rastet in der Zone ein und das Hufeisen fliegt echt
-function tip(){ if(done||busy)return; power=(zLo+zHi)/2; $('#pin').style.left=power+'%'; throwShoe(); }
-$('#startBtn').addEventListener('click',()=>{hits=0;done=false;busy=false;$('#hits').textContent=0;$('#throwBtn').disabled=false;[...$('#shoesOn').children].forEach(s=>s.classList.remove('on'));$('#stallSign').classList.remove('big');sharpen(0);windZone();show('s-game');startGauge();});
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; power=(zLo+zHi)/2; $('#pin').style.left=power+'%'; throwShoe(); }
+$('#startBtn').addEventListener('click',()=>{hits=0;done=false;busy=false;magicPhase=false;clearTimeout(finT);$('#hits').textContent=0;$('#throwBtn').disabled=false;[...$('#shoesOn').children].forEach(s=>s.classList.remove('on'));$('#stallSign').classList.remove('big');$('#stallSign').style.opacity='';$('#magicFly').classList.remove('flit','caught','joy');$('#mhint').classList.remove('on');sharpen(0);windZone();show('s-game');startGauge();});
 $('#throwBtn').addEventListener('click',throwShoe);
+$('#field').addEventListener('click',()=>{ if(magicPhase) catchMagic(); }); // Feld = Fangflaeche fuer den flitzenden magicFly
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
