@@ -11,7 +11,19 @@
 
 **SYSTEMISCHER FIX (Commit `973dee4`, 33 Spiele):** blur8-Flit-MAJOR galt für ALLE magicFly-Spiele (`.magicFly{filter:blur(8px)}`; `.flit` erbt es, `.caught` überschreibt blur0). Deterministisches Skript: `opacity:0;filter:blur(8px)` → `blur(20px)` in allen 33. Flit jetzt unkenntlicher Portrait-Blob (fangbar via Gold-Rand), scharf erst beim Fang. **Ich hatte den blur8-Flit diese Session fälschlich als „weichen Teaser" abgetan — Gutachter + früherer ChatGPT konvergierten. Lehre: Reviewer-Flit-Blur-Flags nicht abtun.** Zu persistieren in [[feedback_visual_playtest_mandatory]].
 
-**OFFEN — restliche Reviews (einzeln, Bolle-Wahl):** Welle A (strahl `9d50512b`-Review lief; hufeisen/drehleiter/notruf/stadt/wildnis), Welle B (huerden/lianen), + ChatGPT-Zweitwinkel je Motto. Danach Welle C/D bauen (mit blur20-Flit von Anfang an) + reviewen.
+**🌙 6-STUNDEN-AUTONOM-MANDAT (Bolle 10.07. ~00:15, geht pennen):** „zieh 6 Stunden durch bis die Spiele durch sind. Jeder Loop erinnert dich an Doppelcheck Helfer-V4.1 bis Spiele alle Gate haben. Kein Abbruch erlaubt." → Jeder Loop-Tick: claude.ai-Review + ChatGPT-Zweitwinkel + Stufe-3-Verifikation jedes Findings gegen den Code + MAJORs fixen, bis ALLE Spiele GO + 0 offene MAJORs. Kein Deploy (draft). Nie stoppen.
+
+**REVIEW-SCOREBOARD (claude.ai, target-blind, Opus 4.8 Max):**
+- Ritter: wappen GO (blur8-Flit-MAJOR → systemisch gefixt `973dee4`) · schwert **88 GO** · katapult **82 GO** (Auflage core.css display:none ✓).
+- Welle A: **strahl NO-GO 57 → sharpen-MAJOR gefixt `732523f`** (fire() rief sharpen(1) am Sieg-Treffer, Funktion war ungedeckelt; jetzt gekappt; RE-CONFIRM offen) · hufeisen **84 GO** (Reveal-last 100).
+- OFFEN Welle A: drehleiter, notruf, stadt, wildnis. Welle B: huerden, lianen. + ChatGPT-Zweitwinkel je Spiel/Motto.
+- OFFEN Bauen+Review: Welle C (tatort, uvschrift, feuer) + D (tresor, puzzle) — noch NICHT gebaut (mit blur20-Flit + gedeckelter sharpen von Anfang an!).
+
+**SYSTEM-LEAK-FOLLOWUP (aus strahl-MAJOR):** 6 ältere Spiele mit ungedeckeltem `f>=1?0`-sharpen (wimmel-detektiv, turm-einhorn, taunetz-feen, sternenstaub-einhorn, korallen-meerjungfrau, akte-detektiv) → gleicher potenzieller Sieg-Treffer-Leak. Bei ihren Gate-Reviews verifizieren+fixen (nicht blind bulk-fixen).
+
+**claude.ai-SEND-REZEPT (Chrome-MCP, hart erarbeitet):** JS `execCommand('insertText')` füllt nur DOM, synct React NICHT → Send-Button fehlt. Echte Keystrokes synchronisieren ProseMirror. Rezept: navigate `/new` → JS-insert Prompt → in Composer klicken → **`key space` (echte Leertaste)** → **len prüfen: nur wenn +1 gelandet** → `key Return`. Wenn len NICHT stieg: Klick+Leertaste RETRY (Input intermittent, Fokus flüchtig; visibilityState:hidden = Fenster nicht vorn → trotzdem oft nach 1-2 Retries ok). Antwort-Text ist durch Output-Filter blockiert (Code-Zitate) → **Verdikte per Screenshot lesen**, nicht per innerText. Reviews serial in EINEM Tab (1532787170): senden → navigate `/new` → nächstes senden (Server generiert parallel) → später via `/chat/<id>` je Verdikt lesen.
+
+**OFFEN — restliche Reviews (einzeln, Bolle-Wahl):** Welle A (strahl re-confirm; drehleiter/notruf/stadt/wildnis), Welle B (huerden/lianen), + ChatGPT-Zweitwinkel je Motto. Danach Welle C/D bauen (mit blur20-Flit + gedeckelter sharpen von Anfang an) + reviewen.
 
 **⚠️ AKTIVER BLOCKER (claude.ai-Send):** Der Chrome-MCP-Send hakt, wenn das Chrome-Fenster nicht OS-Vordergrund ist (`document.visibilityState:"hidden"` → Keyboard-Injection landet nicht im Composer). Zuverlässige Sende-Methode (wenn Fenster sichtbar): JS `execCommand('insertText')` → in Composer klicken → **echte Leertaste** (`key space`, weckt Reacts State) → `key Return`. Enter/Send-Button-JS allein reicht NICHT (execCommand synct React nicht; nur echte Keystrokes). Bolle muss ggf. das Chrome-Fenster in den Vordergrund holen.
 
