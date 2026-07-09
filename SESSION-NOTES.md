@@ -1,3 +1,22 @@
+# Session-Notiz — 09.07.2026 nachts (UNABHÄNGIGES GATE gestartet — Ritter durch, systemischer blur8-Flit-Fix, claude.ai-Fokus-Blocker)
+
+## ⭐ START-HINWEIS — Review-Phase (Bolle-Pflicht: kein Deploy ohne unabh. Review, s. CLAUDE.md)
+
+**Bolle-Verschärfung 09.07.:** „durchs Gate" = **unabhängig reviewt + 0 MAJOR**. Eigen-Playtest ist KEIN Gate. Kein main-Deploy ohne claude.ai-Review (Opus/Fable Max, target-blind) + ChatGPT-Zweitwinkel. Details [[feedback_always_independent_review]] + CLAUDE.md Deploy-Regel.
+
+**RITTER-MOTTO durch die claude.ai-Seite des Gates (3/3 GO):**
+- wappen `6106e6a`: GO. **1 MAJOR gefunden: blur8-Flit** (der flitzende magicFly war filter:blur(8px) = echtes Gesicht vor dem Fang erkennbar, Widerspruch zum blur20-Kachel-Standard). + 1 MINOR (unerreichbare Timer, non-blocking).
+- schwert `9c12f37`: GO, **Score 88**, kein MAJOR (Gate „provably korrekt", mirror-Cap/Floor numerisch belegt).
+- katapult `b8b4391`: GO, **Score 82**, kein MAJOR. Auflage: core.css muss `#s-win` via display:none verstecken → **verifiziert** (core.css Z.25-26 `.scene{display:none}`), scharfe `.hero` wird nicht gemalt vor dem Fang.
+
+**SYSTEMISCHER FIX (Commit `973dee4`, 33 Spiele):** blur8-Flit-MAJOR galt für ALLE magicFly-Spiele (`.magicFly{filter:blur(8px)}`; `.flit` erbt es, `.caught` überschreibt blur0). Deterministisches Skript: `opacity:0;filter:blur(8px)` → `blur(20px)` in allen 33. Flit jetzt unkenntlicher Portrait-Blob (fangbar via Gold-Rand), scharf erst beim Fang. **Ich hatte den blur8-Flit diese Session fälschlich als „weichen Teaser" abgetan — Gutachter + früherer ChatGPT konvergierten. Lehre: Reviewer-Flit-Blur-Flags nicht abtun.** Zu persistieren in [[feedback_visual_playtest_mandatory]].
+
+**OFFEN — restliche Reviews (einzeln, Bolle-Wahl):** Welle A (strahl `9d50512b`-Review lief; hufeisen/drehleiter/notruf/stadt/wildnis), Welle B (huerden/lianen), + ChatGPT-Zweitwinkel je Motto. Danach Welle C/D bauen (mit blur20-Flit von Anfang an) + reviewen.
+
+**⚠️ AKTIVER BLOCKER (claude.ai-Send):** Der Chrome-MCP-Send hakt, wenn das Chrome-Fenster nicht OS-Vordergrund ist (`document.visibilityState:"hidden"` → Keyboard-Injection landet nicht im Composer). Zuverlässige Sende-Methode (wenn Fenster sichtbar): JS `execCommand('insertText')` → in Composer klicken → **echte Leertaste** (`key space`, weckt Reacts State) → `key Return`. Enter/Send-Button-JS allein reicht NICHT (execCommand synct React nicht; nur echte Keystrokes). Bolle muss ggf. das Chrome-Fenster in den Vordergrund holen.
+
+---
+
 # Session-Notiz — 09.07.2026 spät (Ritter komplett + Welle A halb; Audit-Arbeitsliste; KRITISCHE Real-Foto-Playtest-Lektion)
 
 ## ⭐ START-HINWEIS — Fortschritt Magic-Moment-Rollout (Task #80)
