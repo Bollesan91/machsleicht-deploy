@@ -22,7 +22,7 @@
   .lcap{width:40px;height:12px;margin:0 auto;background:#5a4430;border-radius:6px 6px 0 0}
   .lantern.up{transform:translateY(-220px) scale(1.05)}
   .lantern.lit .glow{opacity:1}
-  .lantern.lit .lphoto{opacity:1}
+  /* Foto NICHT mehr in der Laterne enthuellen -> Reveal-last: das Geburtstagskind erscheint erst im Magic-Moment (photoFly), kein Frueh-/Doppel-Reveal (ChatGPT-Doppelcheck-MAJOR) */
   .tapHint{font-size:14px;font-weight:800;opacity:.9}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fdf2fb,#ecd6f6);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
@@ -120,8 +120,8 @@ function magicMoment(){ /* kurzer Teaser-Stop -> Foto-Gluehwuermchen flitzt schn
   const tz=$('#teaser'); tz.textContent='Halt — schau, wer da durch den Feenhimmel flitzt!'; tz.classList.add('on'); sfx.sparkle();
   finT=setTimeout(()=>{ const pf=$('#photoFly'); pf.classList.add('on'); sfx.ding(); vib(8); /* Foto flitzt schnell umher */
     finT=setTimeout(()=>{ pf.classList.add('settle'); sfx.sparkle(); vib(12); /* fliegt in die Mitte, wird gross */
-      finT=setTimeout(()=>{ pf.classList.add('joy'); vib([10,30,10]); /* huepft vor Freude */
-        finT=setTimeout(winReveal,1450); },560); },1550); },1000); }
+      finT=setTimeout(()=>{ pf.classList.add('joy'); vib([10,30,10]); /* huepft vor Freude - 4 Huepfer (2.0s) duerfen ganz durchlaufen, dann Win (ChatGPT/claude-Doppelcheck-MINOR: Hop-Cut) */
+        finT=setTimeout(winReveal,2050); },560); },1550); },1000); }
 function winReveal(){
   $('#winTitle').textContent='Du hast die Laterne zum Leuchten gebracht!'; // Gast-Lob: der Gast hat die Glühwürmchen gefangen
   if(HAS_PHOTO){ $('#winWho').textContent=`Der schönste Wunsch im Feenwald ist ${kid()}! Komm zur Feen-Party:`; } else { $('#winWho').textContent=`Die Laterne strahlt heller als alle Sterne — sie trägt einen Geburtstagswunsch für ${kid()}! Komm zur Feen-Party:`; } guestName();
