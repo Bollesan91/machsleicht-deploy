@@ -22,8 +22,16 @@
   .scroll .pic{position:absolute;left:6px;right:6px;top:6px;bottom:6px;background-image:var(--photo);background-size:cover;background-position:center;border-radius:3px;opacity:0;transition:opacity .5s .3s}
   .bottle.open .cork{transform:translateY(-44px) rotate(18deg)}
   .bottle.open .scroll{height:120px}
-  .bottle.open .scroll .pic{opacity:1}
+  .bottle.open .scroll .pic{opacity:.4;filter:blur(6px) brightness(.7)} /* nur unscharfer Teaser -> scharf erst beim Fang (reveal-last) */
   .tapHint{font-size:14px;font-weight:800;opacity:.9}
+  /* Magic-Moment: die Botschaft (Foto) fliegt aus der Flasche, flitzt -> antippen faengt -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0d2a40;opacity:0;filter:blur(8px);transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(232,167,53,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  .magicFly::after{content:"🏴‍☠️";position:absolute;top:-16px;right:-10px;font-size:26px;transform:rotate(14deg)}
+  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(38px,-30px)}50%{transform:translate(-34px,20px)}75%{transform:translate(28px,26px)}}
+  @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fffaf0,#f4e4c1);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0d2a40;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -54,6 +62,7 @@
         <div class="glass"></div>
         <div class="scroll"><div class="pic"></div></div>
       </div>
+      <div class="magicFly" id="magicFly"></div>
     </div>
     <div class="tapHint" id="tapHint">Tipp-tipp auf den Korken!</div>
   </section>
@@ -83,26 +92,31 @@ const sfx={
   win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-let prog=0,done=false;
+let prog=0,done=false,magicPhase=false,finT=null;
 function tap(){
   if(done)return; prog=Math.min(100,prog+(ageNum()<=6?13:ageNum()<=9?9:7)); $('#fill').style.width=prog+'%'; sfx.tap(prog); vib(6); // Alters-Staffel: Taps bis Pop
   const b=$('#bottle'); b.style.transform='rotate(-6deg) translateY(2px) scale(.98)'; setTimeout(()=>b.style.transform='',90);
   if(prog>=50 && $('#tapHint').dataset.m!=='1'){$('#tapHint').dataset.m='1';$('#tapHint').textContent='Der Korken wackelt …';}
   if(prog>=100) pop();
 }
-function pop(){
+function pop(){ // Kork raus -> Pergament rollt auf -> die Botschaft (Foto) fliegt aus der Flasche und flitzt (Magic-Moment)
   done=true; $('#tapHint').textContent=''; $('#bottle').classList.add('open'); sfx.pop(); vib([20,40,20]); setTimeout(sfx.unroll,200);
-  setTimeout(winReveal, 1300);
+  setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true; mf.addEventListener('click',catchMagic,{once:true}); finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); $('#tapHint').textContent='Die Botschaft fliegt heraus — fang sie!'; }, 1300);
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#tapHint').textContent='Gefangen! ✨'; sfx.win(); vib([20,40,20,40,80]);
+  setTimeout(()=>mf.classList.add('joy'),560);
+  setTimeout(winReveal,2050);
 }
 function winReveal(){
   $('#winTitle').textContent='Du hast den Korken gelöst!'; // Gast-Lob: der Gast hat die Flasche geoeffnet
   if(HAS_PHOTO){ $('#winWho').textContent=`Diese geheime Flaschenpost schickt dir ${kid()}! Komm an Bord zur Piraten-Party:`; }
   else { $('#winWho').textContent=`Auf dem Pergament lädt ${kid()} zur Schatzsuche — Kurs auf die Party! Komm an Bord:`; }
   guestName();
-  show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]);
+  show('s-win');confetti(CC);
 }
-function tip(){ if(done)return; const s=(ageNum()<=6?13:ageNum()<=9?9:7); const n=Math.ceil(34/s); for(let i=0;i<n;i++) tap(); } // No-Fail: Tipp-Knopf (core.js) lockert den Korken kraeftig — jedes Kind kommt zum Reveal
-$('#startBtn').addEventListener('click',()=>{prog=0;done=false;$('#fill').style.width='0%';$('#bottle').classList.remove('open');$('#tapHint').dataset.m='';$('#tapHint').textContent='Tipp-tipp auf den Korken!';show('s-game');});
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; const s=(ageNum()<=6?13:ageNum()<=9?9:7); const n=Math.ceil(34/s); for(let i=0;i<n;i++) tap(); } // No-Fail: Tipp-Knopf lockert den Korken; im Magic-Moment faengt er die Botschaft
+$('#startBtn').addEventListener('click',()=>{prog=0;done=false;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('flit','caught','joy');$('#fill').style.width='0%';$('#bottle').classList.remove('open');$('#tapHint').dataset.m='';$('#tapHint').textContent='Tipp-tipp auf den Korken!';show('s-game');});
 $('#bottle').addEventListener('click',tap);
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓ Ahoi!';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
