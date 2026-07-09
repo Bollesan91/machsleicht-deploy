@@ -31,6 +31,16 @@
   .storyOut.on{opacity:1}
   .storyOut.on::after{content:" ▸";opacity:.65;animation:blinkA 1.2s infinite} /* Tap-Affordanz: weiter per Tipp */
   @keyframes blinkA{50%{opacity:.15}}
+  /* Magic-Moment: der Bauleiter (Foto) taucht aus der fertigen Leitung auf, flitzt -> antippen faengt -> scharf + huepft, dann flutet er die ganze Szene */
+  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#10202c;opacity:0;filter:blur(8px);transform:scale(.5);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(58,160,224,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  .magicFly::after{content:"🔧";position:absolute;bottom:-10px;right:-8px;font-size:26px}
+  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(38px,-30px)}50%{transform:translate(-34px,22px)}75%{transform:translate(28px,26px)}}
+  @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+  .mhint{position:absolute;left:50%;bottom:8%;transform:translateX(-50%);background:rgba(6,40,59,.82);color:#cfe8fa;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;white-space:nowrap}
+  .mhint.on{opacity:1}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fff6df,#ffe9b0);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:5px solid var(--accent-dk);position:relative}
   .invite::before{content:"💧 WASSER MARSCH 💧";position:absolute;top:-1px;left:0;right:0;background:var(--pipe);color:#06283b;font-weight:900;font-size:12px;letter-spacing:1px;padding:3px 0;border-radius:14px 14px 0 0}
@@ -58,7 +68,7 @@
 
   <section class="scene" id="s-game">
     <div class="hud"><span class="pill">Anschlüsse <b id="cnt">0</b>/<b id="tot">7</b></span></div>
-    <div class="board" id="board"><div class="cphoto" id="cphoto"></div><svg id="svg" viewBox="0 0 300 300"><polyline id="pipe" points=""></polyline><g id="nodes"></g></svg><div class="storyOut" id="storyOut"></div></div>
+    <div class="board" id="board"><div class="cphoto" id="cphoto"></div><svg id="svg" viewBox="0 0 300 300"><polyline id="pipe" points=""></polyline><g id="nodes"></g></svg><div class="magicFly" id="magicFly"></div><div class="mhint" id="mhint"></div><div class="storyOut" id="storyOut"></div></div>
     <p class="sub" id="hint">Tippe den blinkenden Anschluss.</p>
   </section>
 
@@ -89,7 +99,7 @@ const sfx={
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
 const NODES=[[45,60],[150,60],[150,130],[235,130],[235,215],[120,215],[120,265]]; // 7 Rohr-Anschlüsse — physische Rohr-Route (Trace), Reihenfolge folgt dem Rohr (kein Merk-Modus, das passt nur zu freier Reihenfolge)
-let next=0,done=false;
+let next=0,done=false,magicPhase=false,finT=null;
 let outroStep=0, outroT=null, beat2='', winAt=0;
 const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
 function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
@@ -102,9 +112,15 @@ const PANELS=[
 ];
 let pIdx=0;
 function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitle').textContent=p.t; $('#pText').textContent=p.x; const last=pIdx>=PANELS.length-1; $('#nextPan').style.display=last?'none':''; $('#skipPan').style.display=last?'none':''; $('#introForm').style.display=last?'flex':'none'; }
-function sharpen(frac){ const p=$('#cphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function sharpen(frac){ const p=$('#cphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.12+0.3*f*f)).toFixed(2); p.style.filter='blur('+(17-5*f*f).toFixed(1)+'px) saturate(.5) brightness(.55)'; } // gedeckelt: Foto hinter der Leitung bleibt unscharfe Silhouette bis zum Fang (reveal-last)
+function floodPhoto(){ const p=$('#cphoto'); if(!p)return; p.style.transition='opacity .7s ease,filter .7s ease'; p.style.opacity='1'; p.style.filter='blur(0) saturate(1) brightness(1)'; } // der gefangene Bauleiter flutet die ganze Szene scharf
 function build(){
-  next=0;done=false;$('#cnt').textContent=0;$('#tot').textContent=NODES.length;$('#pipe').setAttribute('points','');$('#pipe').classList.remove('flow');sharpen(0);
+  next=0;done=false;magicPhase=false;clearTimeout(finT);clearTimeout(outroT);outroStep=0;
+  $('#cnt').textContent=0;$('#tot').textContent=NODES.length;$('#pipe').setAttribute('points','');$('#pipe').classList.remove('flow');
+  $('#svg').style.opacity='';$('#mhint').classList.remove('on');$('#storyOut').classList.remove('on');
+  const mf=$('#magicFly');mf.classList.remove('flit','caught','joy');mf.style.opacity='';mf.style.transition='';$('#cphoto').style.transition='';
+  [...document.querySelectorAll('#s-game button, #s-game .hud')].forEach(b=>b.style.visibility='');
+  sharpen(0);
   const g=$('#nodes');g.innerHTML='';
   NODES.forEach((p,i)=>{
     const el=document.createElementNS('http://www.w3.org/2000/svg','g');el.setAttribute('class','node'+(i===0?' next':''));el.dataset.i=i;
@@ -122,26 +138,39 @@ function tap(i){
   if(next<NODES.length){ $('.node[data-i="'+next+'"]').classList.add('next'); }
   else win();
 }
-function win(){
-  done=true;sharpen(1);$('#hint').textContent='Wasser läuft …';$('#pipe').classList.add('flow');sfx.flow();vib([20,40,20,40,80]);
+function win(){ // Leitung dicht: Wasser laeuft, Rohr fadet -> der Bauleiter (Foto) taucht aus der Leitung auf und flitzt (Magic-Moment)
+  done=true;$('#hint').textContent='Wasser läuft …';$('#pipe').classList.add('flow');sfx.flow();vib([20,40]);
   [...document.querySelectorAll('#s-game button, #s-game .hud')].forEach(b=>b.style.visibility='hidden'); // Buttons UND HUD im Finale weg — Reveal bleibt clean
-  setTimeout(()=>{ // Reveal ist der Höhepunkt: Leitung fadet, Foto flutet die Szene
+  setTimeout(()=>{
     $('#svg').style.opacity='0'; $('#hint').textContent='';
-    sfx.win();vib([20,40,20,40,80]);confetti(CC); // Fanfare + Konfetti AM Reveal, nicht auf der Karte
-    const g=guestNow(); const so=$('#storyOut');
-    if(HAS_PHOTO){ so.textContent='Das Wasser rauscht — '+kid()+' leitet die Baustelle! 🎉'; beat2=kidCap()+' strahlt: „Na endlich'+(g?', '+g:'')+'! Auf dich hab ich gewartet!“'; } // Beat 1 Identität (Nominativ, fallback-sicher, löst die Intro-Frage), Beat 2 Rollenumkehr
-    else { so.textContent='Das Wasser rauscht durch die frische Leitung! 🎉'; beat2='Und '+kid()+' wartet auf der Baustelle auf dich'+(g?', '+g:'')+'!'; } // nofoto: Rätsel aufgelöst, kid() als Gastgeber (kein Spiel-Verb)
-    so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
-    if(HAS_PHOTO){ $('#winWho').textContent=`Deine Leitung steht dicht — und dahinter wartet ${kid()}! Komm zur Baustellen-Party:`; } else {$('#winTitle').textContent='Wasser marsch!';$('#winWho').textContent=`Deine Leitung ist dicht, das Wasser rauscht! ${kidCap()} lädt dich zur Baustellen-Party ein:`;} guestName();
+    const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+    mf.addEventListener('click',catchMagic,{once:true});
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail: faengt von selbst
+    $('#mhint').textContent='Der Bauleiter taucht aus der Leitung auf — fang ihn!'; $('#mhint').classList.add('on');
   }, 750);
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#mhint').classList.remove('on');
+  sfx.win(); vib([20,40,20,40,80]);
+  setTimeout(()=>mf.classList.add('joy'),560);
+  setTimeout(startOutro,1650);
+}
+function startOutro(){ // der gefangene Bauleiter flutet die ganze Szene scharf, dann die 2 Story-Beats (tap-getaktet)
+  floodPhoto(); const mf=$('#magicFly'); mf.style.transition='opacity .6s ease'; mf.style.opacity='0'; // magicFly verschmilzt ins Vollbild
+  confetti(CC); // Konfetti AM Reveal, nicht auf der Karte
+  const g=guestNow(); const so=$('#storyOut');
+  if(HAS_PHOTO){ so.textContent='Das Wasser rauscht — '+kid()+' leitet die Baustelle! 🎉'; beat2=kidCap()+' strahlt: „Na endlich'+(g?', '+g:'')+'! Auf dich hab ich gewartet!“'; } // Beat 1 Identität (Nominativ, fallback-sicher, löst die Intro-Frage), Beat 2 Rollenumkehr
+  else { so.textContent='Das Wasser rauscht durch die frische Leitung! 🎉'; beat2='Und '+kid()+' wartet auf der Baustelle auf dich'+(g?', '+g:'')+'!'; } // nofoto: Rätsel aufgelöst, kid() als Gastgeber (kein Spiel-Verb)
+  so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
+  if(HAS_PHOTO){ $('#winWho').textContent=`Deine Leitung steht dicht — und dahinter wartet ${kid()}! Komm zur Baustellen-Party:`; } else {$('#winTitle').textContent='Wasser marsch!';$('#winWho').textContent=`Deine Leitung ist dicht, das Wasser rauscht! ${kidCap()} lädt dich zur Baustellen-Party ein:`;} guestName();
 }
 function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace 1150ms: volle Beat-1-Einblendung, kein Reflex-Tap überspringt Reveal+Beats
   if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
   else { outroStep=0; show('s-win'); } } // tap-getaktet (Fallback Beat 1 11s, Beat 2 14s); Konfetti nur AM Reveal
-function tip(){ if(!done && document.querySelector('.node[data-i="'+next+'"]')) tap(next); } // Tipp: nächsten Anschluss für dich verbinden (Guard: vor build() kein Ziel)
+function tip(){ if(magicPhase){ catchMagic(); return; } if(!done && document.querySelector('.node[data-i="'+next+'"]')) tap(next); } // Tipp: nächsten Anschluss verbinden; im Magic-Moment faengt der Tipp den Bauleiter
 $('#nextPan').addEventListener('click',()=>{ if(pIdx<PANELS.length-1){ pIdx++; showPan(); } });
 $('#skipPan').addEventListener('click',()=>{ pIdx=PANELS.length-1; showPan(); });
-$('#board').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap die Story-Beats
+$('#board').addEventListener('click',()=>{ if(magicPhase){ catchMagic(); return; } if(done && outroStep){ advanceOutro(); } }); // Magic-Moment: Tap faengt den Bauleiter; danach taktet der Tap die Story-Beats
 $('#startBtn').addEventListener('click',()=>{ AC(); build();show('s-game');$('#hint').textContent='Tippe den blinkenden Anschluss.'; }); // AC(): iOS-Audio-Unlock per Geste
 showPan();
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
