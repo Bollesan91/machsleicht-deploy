@@ -1,4 +1,4 @@
-# Session-Notiz — 09.07.2026 abends (Dino-Motto komplett interaktiv durchs Gate + Piraten begonnen; „3 gleichzeitig aber einzeln")
+# Session-Notiz — 09.07.2026 abends (Dino + Piraten komplett interaktiv durchs Gate — 6 Spiele voller Doppelcheck; „3 gleichzeitig aber einzeln", Loop läuft)
 
 ## ⭐ START-HINWEIS — Fortschritt seit dem 09.07.-Vormittag
 
@@ -9,11 +9,15 @@
 - **faehrte-dino** `446433a` (+`.big`-Cleanup `2870a66`): claude.ai **88 GO, 0 MAJOR**. Nest erwacht→Foto flitzt→Fang; `sharpen()` gedeckelt (mid-play opacity 0.38/blur13 = Silhouette, reveal-last hält).
 - **fossil-dino** `091ca39` (+Härtung `23c714c`): claude.ai **87 GO, 0 MAJOR** mit playtest-kritischem UNSICHER → faceguard proaktiv **64→84 % + Vollkern nach außen** gehärtet (deckt Kopfränder), toter `.board.fade`-Block raus; Screenshot bestätigt Gesicht voll verdeckt.
 - **LEKTION (in Memory [[feedback-visual-playtest-mandatory]] Punkt 6):** reveal-last-Leak — auch die SPIEL-Phase VOR dem Reveal screenshotten (nicht direkt hatch()/reveal() aufrufen). Scharfes Reveal-Element hinter Abdeckung (clip-path-Schalen, faceguard, Sand, Karten) → Abdeckung fast nie lückenlos. Fix: Element blurren+verdunkeln ODER Abdeckung vergrößern. **Der Einzel-Doppelcheck fing den ei-Leak, den mein ab-Hatch-Playtest verpasste.**
-- ChatGPT faehrte+fossil: erster Send kam fragmentarisch an (nur Gist-Link → „Was möchtest du damit machen?"), **sauber nachgesendet, laufen** (Verdikt beim nächsten Tick einsammeln).
+- ChatGPT-Zweitwinkel faehrte+fossil: **beide kein MAJOR** (invisible-settle OK, reveal-last OK/gedeckelt) — bestätigt die claude.ai-GO. Dino damit doppelt bestätigt.
 
-**PIRATEN begonnen:** **flaschenpost-piraten** `6a18df6` interaktiv (Botschaft=Foto fliegt aus der Flasche→flitzt→Fang; `.scroll .pic` auf blur6/op.4 gedeckelt = reveal-last). Flit-DOM + Caught (No-Fail-Auto-Fang) per Screenshot verifiziert (opacity:1, Gold-Rahmen+Glow sichtbar). **OFFEN: kanone-piraten + memory-piraten** bauen, dann Einzel-Doppelcheck. Danach restliche Mottos (baustelle, ritter, pferde, dschungel, superheld, prinzessin, feuerwehr, safari) — ~26 Spiele.
+**PIRATEN-MOTTO (3/3) voll gegatet (Doppelcheck je EINZELN):** **flaschenpost** `6a18df6` (Botschaft=Foto fliegt aus der Flasche→flitzt→Fang; `.scroll .pic` blur6/op.4 gedeckelt) claude **88 GO** · **kanone** `556bcf9`+`f2b8c88` (Bretter weg→Schatz springt raus→Fang; `.faceguard` VOLL OPAK unter den Brettern, z1<planks z2) claude **88 GO** · **memory** `d91c174`+`f2b8c88` (Paare→Schatz springt raus→Fang; Foto-Board `.tile` blur **14px** = Mosaik, Gesicht nicht identifizierbar) claude **82 GO**. Alle 3 ChatGPT-Zweitwinkel: **kein MAJOR**. Gate-MINORs gefixt (`f2b8c88`): kanone build() resettet busy+boardMsg (Mid-Fire-Restart-Härte), memory blur 11→14 + winTitle-Hoist.
+- **Neues faceguard-Muster für Karten-Reveal-Spiele (kanone):** wenn das Board-Foto hinter wegräumbaren Kacheln/Brettern liegt → `.faceguard` mit VOLL OPAKEM Kern (`#farbe 60%,#farbe 74%,fade 86%`) über der Bildmitte, `z-index` UNTER den interaktiven Kacheln (sonst nicht klickbar). `.97`-Alpha reicht NICHT (helles Gesicht scheint durch).
+- **Flit-Blur (systemisch, Stufe-3 geklärt):** ChatGPT flaggte den flitzenden `.magicFly.flit` (blur 8px) als „reveal-last-Risiko". Visuell verifiziert: blur(8px) auf dem 120px-Crop = weicher Teaser („da ist ein Gesicht", aber NICHT wer). Kein *scharfes* Gesicht → reveal-last erfüllt, Gate-Reviewer (claude.ai) bestätigt PASS auf allen. **Kein Handlungsbedarf** (Flit = Kern-Mechanik). Falls Bolle extra-safe will: blur 8→10px systemisch — aber optional.
 
-**Draft-Commits diese Runde:** 3e049b0, 446433a, 091ca39, 6a18df6, 2bae876, 2870a66, 23c714c (alle draft, gepusht; KEIN main/Deploy). Git-Auth: `git -c credential.helper='!gh auth git-credential' push origin draft`.
+**OFFEN — restliche Mottos (~26 Spiele):** baustelle (bagger/hochhaus/rohre), ritter (katapult/schwert/wappen), pferde (huerden/hufeisen/striegeln), dschungel (lianen/puzzle/wildnis), superheld (signal/stadt/strahl), prinzessin (tatort/tresor/uvschrift), feuerwehr (drehleiter/loeschen/notruf), safari (fotosafari/jeep/spuren). Nächstes: **baustelle**.
+
+**Draft-Commits diese Runde:** 3e049b0, 446433a, 091ca39, 6a18df6, 2bae876, 2870a66, 23c714c, 556bcf9, d91c174, f2b8c88 (alle draft, gepusht; KEIN main/Deploy). Git-Auth: `git -c credential.helper='!gh auth git-credential' push origin draft`. Piraten-Gists (ChatGPT-Zweitwinkel) sind secret gists unter Bollesan91.
 
 ---
 
