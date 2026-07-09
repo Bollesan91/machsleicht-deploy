@@ -31,6 +31,17 @@
   @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
   .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+  /* Magic-Moment: Foto steigt aus dem Laternen-Zauber, wird scharf und huepft vor Freude, DANN Win-Screen */
+  .teaser{position:absolute;left:50%;top:12%;transform:translateX(-50%);width:82%;text-align:center;font-size:14px;font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.65);opacity:0;transition:opacity .5s;z-index:6;pointer-events:none}
+  .teaser.on{opacity:1}
+  /* Foto-Gluehwuermchen: Foto des Geburtstagskindes flitzt klein+schnell durch den Himmel, waechst dann in der Mitte + huepft. Ein Transform-Kanal (scale/translate), Zentrierung statisch ueber margin -> keine Layout-Kollision */
+  .photoFly{position:absolute;left:50%;top:42%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1840;box-shadow:0 0 30px 9px rgba(255,225,150,.85);opacity:0;transform:scale(.3);transition:opacity .3s ease;z-index:6;pointer-events:none}
+  .photoFly.on{opacity:1;animation:dart 1.5s ease-in-out}
+  @keyframes dart{0%{transform:translate(0,0) scale(.32)}14%{transform:translate(-98px,-104px) scale(.34)}30%{transform:translate(104px,-88px) scale(.3)}46%{transform:translate(-86px,44px) scale(.34)}62%{transform:translate(98px,30px) scale(.3)}80%{transform:translate(-34px,-108px) scale(.34)}100%{transform:translate(0,0) scale(.32)}}
+  .photoFly.settle{animation:none;transform:scale(1);transition:transform .55s cubic-bezier(.34,1.42,.5,1)}
+  .photoFly.settle.joy{animation:pjoy .5s ease-in-out 4}
+  .photoFly::after{content:"🧚";position:absolute;top:-14px;right:-10px;font-size:30px}
+  @keyframes pjoy{0%,100%{transform:scale(1)}50%{transform:translateY(-10px) scale(1.08)}}
 </style>
 </head>
 <body>
@@ -47,6 +58,8 @@
   <section class="scene" id="s-game">
     <div class="meter"><div class="fill" id="fill"></div></div>
     <div class="sky" id="sky">
+      <div class="teaser" id="teaser"></div>
+      <div class="photoFly" id="photoFly"></div>
       <div class="lantern" id="lantern">
         <div class="lcap"></div>
         <div class="lbody"><div class="glow" id="glow"></div><div class="lphoto" id="lphoto"></div></div>
@@ -85,7 +98,7 @@ const sfx={
 // über Basis-Tempo (Schweb-Geschwindigkeit) + Anzahl (GOAL) + Spawn-Takt. Zusätzlich: der ganze Schwarm beschleunigt
 // live mit jedem Fang (speedMul) -> spürbare Eskalation, gedeckelt bei ~1.9x damit's für die Kleinen no-fail bleibt.
 // Verpasste Glühwürmchen ziehen weiter -> kein Verlieren.
-let caught=0,done=false,lastMile=0,GOAL=8,flyList=[],moveT=null,spawnT=null,speedMul=1;
+let caught=0,done=false,lastMile=0,GOAL=8,flyList=[],moveT=null,spawnT=null,speedMul=1,finT=null;
 function newFly(){ if(done||flyList.length>=6)return; const s=$('#sky'); const f=document.createElement('div'); f.className='fly';
   f._x=8+Math.random()*76; f._y=8+Math.random()*50;
   const spd=(ageNum()<=6?0.42:ageNum()<=9?0.7:1.05); f._vx=(Math.random()-.5)*spd; f._vy=(Math.random()-.5)*spd*0.85;
@@ -101,15 +114,21 @@ function catchFly(f){ if(done||f._caught)return; f._caught=true; clearTimeout(f.
   if(caught>=Math.ceil(GOAL/2) && lastMile<1){lastMile=1;$('#tapHint').textContent='Die Laterne wird heller … weiter!';}
   if(caught>=GOAL) liftOff();
 }
-function liftOff(){ done=true; clearInterval(moveT); clearInterval(spawnT); [...document.querySelectorAll('.fly')].forEach(f=>f.remove()); flyList=[]; $('#tapHint').textContent=''; const lan=$('#lantern'); lan.classList.add('lit'); sfx.rise(); vib([20,40,20]);
-  setTimeout(()=>{ lan.classList.add('up'); }, 350); setTimeout(winReveal, 1500); }
+function liftOff(){ if(done)return; done=true; clearInterval(moveT); clearInterval(spawnT); [...document.querySelectorAll('.fly')].forEach(f=>f.remove()); flyList=[]; $('#tapHint').textContent=''; const lan=$('#lantern'); lan.classList.add('lit'); sfx.rise(); vib([20,40,20]);
+  finT=setTimeout(()=>{ lan.classList.add('up'); finT=setTimeout(magicMoment,1050); }, 350); }
+function magicMoment(){ /* kurzer Teaser-Stop -> Foto-Gluehwuermchen flitzt schnell rum -> fliegt in die Mitte, wird gross, huepft -> Win. Automatisch -> No-Fail */
+  const tz=$('#teaser'); tz.textContent='Halt — schau, wer da durch den Feenhimmel flitzt!'; tz.classList.add('on'); sfx.sparkle();
+  finT=setTimeout(()=>{ const pf=$('#photoFly'); pf.classList.add('on'); sfx.ding(); vib(8); /* Foto flitzt schnell umher */
+    finT=setTimeout(()=>{ pf.classList.add('settle'); sfx.sparkle(); vib(12); /* fliegt in die Mitte, wird gross */
+      finT=setTimeout(()=>{ pf.classList.add('joy'); vib([10,30,10]); /* huepft vor Freude */
+        finT=setTimeout(winReveal,1450); },560); },1550); },1000); }
 function winReveal(){
   $('#winTitle').textContent='Du hast die Laterne zum Leuchten gebracht!'; // Gast-Lob: der Gast hat die Glühwürmchen gefangen
   if(HAS_PHOTO){ $('#winWho').textContent=`Der schönste Wunsch im Feenwald ist ${kid()}! Komm zur Feen-Party:`; } else { $('#winWho').textContent=`Die Laterne strahlt heller als alle Sterne — sie trägt einen Geburtstagswunsch für ${kid()}! Komm zur Feen-Party:`; } guestName();
   show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]);
 }
 function tip(){ if(done)return; let f=flyList.find(x=>!x._caught); if(f){catchFly(f);} else { newFly(); const g=flyList.find(x=>!x._caught); if(g)catchFly(g); } } // No-Fail: der Tipp fängt ein Glühwürmchen für dich
-$('#startBtn').addEventListener('click',()=>{ caught=0;done=false;lastMile=0;speedMul=1; GOAL=(ageNum()<=6?6:ageNum()<=9?8:11); $('#fill').style.width='0%'; $('#glow').style.opacity='.15'; $('#lantern').classList.remove('lit','up'); $('#tapHint').textContent='Fang die Glühwürmchen! ✨'; [...document.querySelectorAll('.fly')].forEach(f=>f.remove()); flyList=[]; show('s-game'); for(let i=0;i<4;i++)newFly(); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveFlies,50); spawnT=setInterval(newFly,(ageNum()<=6?1100:850)); });
+$('#startBtn').addEventListener('click',()=>{ caught=0;done=false;lastMile=0;speedMul=1; clearTimeout(finT);finT=null; GOAL=(ageNum()<=6?6:ageNum()<=9?8:11); $('#fill').style.width='0%'; $('#glow').style.opacity='.15'; $('#lantern').classList.remove('lit','up'); $('#teaser').classList.remove('on'); $('#photoFly').classList.remove('on','settle','joy'); $('#tapHint').textContent='Fang die Glühwürmchen! ✨'; [...document.querySelectorAll('.fly')].forEach(f=>f.remove()); flyList=[]; show('s-game'); for(let i=0;i<4;i++)newFly(); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveFlies,50); spawnT=setInterval(newFly,(ageNum()<=6?1100:850)); });
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
