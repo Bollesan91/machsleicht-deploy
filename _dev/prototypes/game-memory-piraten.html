@@ -38,7 +38,7 @@
   /* gematchte Karte -> Foto-Kachel sichtbar (Symbol weg) */
   .cell.done .face{transition:opacity .5s ease}
   .cell.done .back,.cell.done .front{opacity:0}
-  .tile{position:absolute;inset:0;background-image:var(--photo);background-size:300% 400%;opacity:0;transition:opacity .55s ease;transform:scale(1.06);filter:blur(11px) brightness(.7) saturate(.85)}/* Slices stark unscharf -> „da formt sich jemand", aber Gesicht NICHT erkennbar; scharf erst beim Fang (reveal-last, grosses Board braucht mehr Blur) */
+  .tile{position:absolute;inset:0;background-image:var(--photo);background-size:300% 400%;opacity:0;transition:opacity .55s ease;transform:scale(1.06);filter:blur(14px) brightness(.68) saturate(.82)}/* Slices stark unscharf -> „da formt sich jemand", aber Gesicht NICHT erkennbar; scharf erst beim Fang (reveal-last, grosses Board braucht viel Blur; Gutachter-Empfehlung 14-16px) */
   .cell.done .tile{opacity:1;transform:scale(1);animation:tilePop .5s ease}
   @keyframes tilePop{0%{transform:scale(1.18)}60%{transform:scale(.98)}100%{transform:scale(1)}}
   /* Magic-Moment: der Schatz (Foto) springt aus dem Board, flitzt -> antippen faengt -> scharf + huepft */
@@ -207,8 +207,9 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
   setTimeout(winReveal,2050);
 }
 function winReveal(){
-  if(HAS_PHOTO){ $('#winTitle').textContent='Du hast den Schatz gefunden!'; $('#winWho').textContent=`Der schönste Schatz von allen: das ist ${kid()}! Und du bist eingeladen:`; }
-  else { $('#winTitle').textContent='Du hast den Schatz gefunden!'; $('#winWho').textContent=`Die Schatztruhe springt auf — ${kid()} heuert dich an! Du bist eingeladen:`; }
+  $('#winTitle').textContent='Du hast den Schatz gefunden!';
+  if(HAS_PHOTO){ $('#winWho').textContent=`Der schönste Schatz von allen: das ist ${kid()}! Und du bist eingeladen:`; }
+  else { $('#winWho').textContent=`Die Schatztruhe springt auf — ${kid()} heuert dich an! Du bist eingeladen:`; }
   guestName();
   show('s-win');confetti(CC,CCO);
   sfx.fanfare();

@@ -113,7 +113,7 @@ const sfx={
 
 let total=0,cleared=0,busy=false,magicPhase=false,finT=null;
 function build(){
-  magicPhase=false;clearTimeout(finT);const mf=$('#magicFly');if(mf)mf.classList.remove('flit','caught','joy');$('#hint').textContent='Tippe auf ein Brett — die Kanone zielt und feuert.';
+  magicPhase=false;busy=false;clearTimeout(finT);const mf=$('#magicFly');if(mf)mf.classList.remove('flit','caught','joy');const bm=$('#boardMsg');if(bm)bm.classList.remove('on');$('#hint').textContent='Tippe auf ein Brett — die Kanone zielt und feuert.';
   const wrap=$('#planks');wrap.innerHTML='';wrap.style.gridTemplateColumns='repeat('+THEME.cols+',1fr)';wrap.style.gridTemplateRows='repeat('+THEME.rows+',1fr)';total=THEME.cols*THEME.rows;cleared=0;$('#left').textContent=total;
   for(let i=0;i<total;i++){const p=document.createElement('div');p.className='plank';p.addEventListener('click',()=>fire(p));wrap.appendChild(p);}
 }
@@ -142,7 +142,7 @@ function fire(p){
   },140);
 }
 function win(){ // alle Bretter weg -> Schurke brüllt -> der Schatz (Foto) springt heraus und flitzt (Magic-Moment)
-  const msg=$('#boardMsg');$('#boardMsgTxt').textContent='„ARRR! Wer hat meinen Schatz?!"';msg.classList.add('on');sfx.villain();vib(60);
+  const msg=$('#boardMsg');$('#boardMsgTxt').textContent='„ARRR! Wer hat meinen Schatz?!“';msg.classList.add('on');sfx.villain();vib(60);
   setTimeout(()=>{ msg.classList.remove('on');
     const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
     mf.addEventListener('click',catchMagic,{once:true});
