@@ -32,6 +32,16 @@
   .storyOut.on{opacity:1}
   .storyOut.on::after{content:" ▸";opacity:.65;animation:blinkA 1.2s infinite} /* Tap-Affordanz: weiter per Tipp — blinkt, damit auch Button-Hämmerer sie finden */
   @keyframes blinkA{50%{opacity:.15}}
+  /* Magic-Moment: der geheime Champion (Foto) erscheint unscharf, flitzt -> antippen faengt -> scharf + Glow + huepft (Gesicht zuletzt), DANN Story-Beats */
+  .magicFly{position:absolute;left:50%;top:42%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2a16;opacity:0;filter:blur(8px);transform:scale(.4);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.3s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(224,145,58,.65);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  .magicFly.caught.joy{animation:mjoy .5s ease-in-out 4}
+  .magicFly::after{content:"🏅";position:absolute;bottom:-8px;right:-10px;font-size:26px}
+  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(56px,-36px)}50%{transform:translate(-50px,30px)}75%{transform:translate(44px,32px)}}
+  @keyframes mjoy{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+  .mhint{position:absolute;left:50%;top:8%;transform:translateX(-50%);background:rgba(46,28,10,.85);color:#ffe0bd;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;white-space:nowrap}
+  .mhint.on{opacity:1}
   /* Reveal */
   .rosette{width:100%;background:linear-gradient(170deg,#fff3e2,#ffe0bd);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.45);text-align:center;border:4px solid var(--accent-dk);position:relative}
   .hero{width:148px;height:148px;border-radius:50%;margin:8px auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2a16;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -67,6 +77,8 @@
       <div class="finish" id="finish">🏁</div>
       <div class="horse" id="horse">🐎</div>
       <div class="storyOut" id="storyOut"></div>
+      <div class="magicFly" id="magicFly"></div>
+      <div class="mhint" id="mhint"></div>
     </div>
     <button class="btn tapBtn" id="jumpBtn">⬆ SPRUNG</button>
   </section>
@@ -104,14 +116,14 @@ function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitl
 $('#nextPan').addEventListener('click',()=>{ AC(); pIdx=Math.min(pIdx+1,PANELS.length-1); showPan(); vib(6); });
 $('#skipPan').addEventListener('click',()=>{ AC(); pIdx=PANELS.length-1; showPan(); });
 showPan();
-let cleared=0, done=false, jumping=false, moveT=null, spawnT=null, spawnInitT=null, hurdles=[];
-function sharpen(frac){ const p=$('#goalphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')';
-  const fi=$('#finish'); if(fi) fi.style.right=(-12+16*f).toFixed(1)+'%'; } // hinten gewichtet (1-f^2); Zieltor fährt mit dem Fortschritt ins Bild („die Ziellinie naht")
+let cleared=0, done=false, jumping=false, moveT=null, spawnT=null, spawnInitT=null, hurdles=[], magicPhase=false, finT=null;
+function sharpen(frac){ const p=$('#goalphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.4,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(11,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.7+0.2*f).toFixed(2)+')';
+  const fi=$('#finish'); if(fi) fi.style.right=(-12+16*f).toFixed(1)+'%'; } // GEDECKELT: Siegertafel bleibt unscharfe Silhouette (opacity<=.4, blur>=11) -> scharf erst beim Fang (reveal-last); Zieltor faehrt trotzdem ins Bild
 function spawnHurdle(){ if(done)return; const h=document.createElement('div'); h.className='hurdle'; h._x=106; h.style.left='106%'; h.textContent='⛩️'; $('#track').appendChild(h); hurdles.push(h); }
 function stumble(){ $('#horse').classList.add('stumble'); setTimeout(()=>$('#horse').classList.remove('stumble'),300); sfx.stumble(); vib([10,30]); }
 function pop1(x){ const p=document.createElement('div'); p.className='plus1'; p.textContent='+1 🏅'; p.style.left=(x||30)+'%'; p.style.bottom='58%'; $('#field').appendChild(p); setTimeout(()=>p.remove(),820); } // Score-Popup „+1" steigt an der übersprungenen Hürde auf
 function moveHurdles(){ if(done)return; for(const h of hurdles.slice()){ h._x-=SPEED; h.style.left=h._x+'%'; if(!h._done && h._x<ZONE_LO && h._x>=ZONE_LO-6){ if(!jumping){ h._done='miss'; stumble(); } } if(h._x<-12){ h.remove(); const k=hurdles.indexOf(h); if(k>=0)hurdles.splice(k,1); } } } // Miss erst NACH Verlassen der Zone — sonst frisst das Miss-Band bei U6 sichtbare Sprungzone (Lektion lianen-F1)
-function jump(){ if(done||jumping)return; jumping=true; $('#horse').classList.add('jump'); sfx.jump(); vib(10); setTimeout(()=>{ $('#horse').classList.remove('jump'); jumping=false; },520);
+function jump(){ if(magicPhase){ catchMagic(); return; } if(done||jumping)return; jumping=true; $('#horse').classList.add('jump'); sfx.jump(); vib(10); setTimeout(()=>{ $('#horse').classList.remove('jump'); jumping=false; },520);
   const h=hurdles.find(x=>!x._done && x._x>=ZONE_LO && x._x<=ZONE_HI);
   if(h){ h._done='clear'; h.classList.add('cleared'); pop1(h._x); cleared++; $('#cl').textContent=cleared; sharpen(cleared/GOAL); sfx.clear(); vib([10,30]); if(cleared>=GOAL) winSeq(); } // sauberer Sprung: Hürde bleibt stehen, +1-Punkt fliegt hoch
 }
@@ -121,22 +133,33 @@ let outroStep=0, outroT=null, beat2='', winAt=0;
 function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace-Fenster 1150ms: deckt die volle Beat-1-Einblendung (transition .4s + .7s delay = 1,1s) ab, sonst schneidet ein exakt getimter Tap Beat 1 an
   if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
   else { outroStep=0; show('s-win'); } } // Tap-getaktet (Fallback: Beat 1 11s, Beat 2 14s — längster Beat 2 hat 11 Wörter, 60-WpM-Leser brauchen Puffer)
-function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); sharpen(1);
-  $('#goalphoto').classList.add('flood'); // die verhüllte Siegertafel flutet die Szene: der Reveal IST der Höhepunkt
+function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); // Spiel gewonnen: KEIN sharpen(1)/flood -> der verhuellte Champion flitzt (Magic-Moment), scharf erst beim Fang (reveal-last)
   const ho=$('#horse'); ho.style.opacity='0'; const fi=$('#finish'); fi.style.opacity='0'; // Bühne frei
-  [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility='hidden'); // keine toten Buttons im Finale
-  sfx.win(); confetti(CC); vib([20,40,20,40,80]); // Fanfare + Konfetti AM Reveal
-  const g=guestNow(); const so=$('#storyOut');
+  $('#jumpBtn').style.visibility='hidden'; // Sprung-Button weg; Feld bleibt Fangflaeche
+  vib([20,40]);
+  setTimeout(()=>{
+    const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+    mf.addEventListener('click',catchMagic,{once:true});
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
+    const mh=$('#mhint'); if(mh){ mh.textContent='Der geheime Champion erscheint — fang ihn!'; mh.classList.add('on'); }
+  }, 560);
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); const mh=$('#mhint'); if(mh)mh.classList.remove('on'); $('#goalphoto').style.opacity='0'; sfx.win(); confetti(CC); vib([20,40,20,40,80]);
+  setTimeout(()=>mf.classList.add('joy'),560);
+  setTimeout(startOutro,1500); // nach dem Fang: Tap-getaktete Story-Beats
+}
+function startOutro(){ const g=guestNow(); const so=$('#storyOut');
   if(HAS_PHOTO){ so.textContent='Flo wiehert: Der Champion ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
-  else { so.textContent='Flo wiehert: Der Champion bist DU! 🎉'; beat2='Und zur Siegerfeier bist du eingeladen'+(g?', '+g:'')+'!'; } // nofoto: DU bist gesprungen (kein Fremd-Lob), Champion-Rätsel aufgelöst
+  else { so.textContent='Flo wiehert: Der Champion bist DU! 🎉'; beat2='Und zur Siegerfeier bist du eingeladen'+(g?', '+g:'')+'!'; } // nofoto: DU bist gesprungen, Champion-Rätsel aufgelöst
   so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
   if(HAS_PHOTO){ $('#winWho').textContent=`Das Champion-Foto überm Zieltor zeigt ${kid()}! Komm zur Reiter-Party:`; } else { $('#winTitle').textContent='Turnier gewonnen!'; $('#winWho').textContent=`Du hast das Turnier gewonnen — und ${kid()} lädt dich zur Reiter-Party ein:`; } guestName(); }
 // Tipp sichtbar: eine Hürde erscheint in der Zone und das Pferd springt sie echt
-function tip(){ if(done)return; let h=hurdles.find(x=>!x._done && x._x>=ZONE_LO-6 && x._x<=ZONE_HI); if(!h) h=hurdles.find(x=>!x._done && x._x>ZONE_HI); if(!h){ spawnHurdle(); h=hurdles[hurdles.length-1]; } if(!h)return; h._x=(ZONE_LO+ZONE_HI)/2; h.style.left=h._x+'%'; jumping=false; $('#horse').classList.remove('jump'); jump(); }
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; let h=hurdles.find(x=>!x._done && x._x>=ZONE_LO-6 && x._x<=ZONE_HI); if(!h) h=hurdles.find(x=>!x._done && x._x>ZONE_HI); if(!h){ spawnHurdle(); h=hurdles[hurdles.length-1]; } if(!h)return; h._x=(ZONE_LO+ZONE_HI)/2; h.style.left=h._x+'%'; jumping=false; $('#horse').classList.remove('jump'); jump(); }
 // Start (AC() = iOS-Audio-Unlock per Geste)
-$('#startBtn').addEventListener('click',()=>{ AC(); cleared=0;done=false;jumping=false; outroStep=0; winAt=0; clearTimeout(outroT); hurdles.forEach(h=>h.remove()); hurdles=[]; $('#cl').textContent=0; $('#clmax').textContent=GOAL; $('#goalphoto').classList.remove('flood'); sharpen(0); $('#storyOut').classList.remove('on'); [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility=''); const z=document.querySelector('.zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; const ho=$('#horse'); ho.style.opacity=''; ho.style.left='22%'; const fi=$('#finish'); fi.style.opacity=''; fi.style.right='-12%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT);clearTimeout(spawnInitT); moveT=setInterval(moveHurdles,60); spawnT=setInterval(spawnHurdle,SPAWN); spawnInitT=setTimeout(spawnHurdle,400); }); // Initial-Spawn: kein Leerlauf; Timeout gecleart, damit Start-Doppeltipp keine Doppel-Hürde spawnt
+$('#startBtn').addEventListener('click',()=>{ AC(); cleared=0;done=false;jumping=false; outroStep=0; winAt=0; magicPhase=false; clearTimeout(outroT); clearTimeout(finT); $('#magicFly').classList.remove('flit','caught','joy'); $('#mhint').classList.remove('on'); hurdles.forEach(h=>h.remove()); hurdles=[]; $('#cl').textContent=0; $('#clmax').textContent=GOAL; $('#goalphoto').classList.remove('flood'); $('#goalphoto').style.opacity=''; sharpen(0); $('#storyOut').classList.remove('on'); [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility=''); const z=document.querySelector('.zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; const ho=$('#horse'); ho.style.opacity=''; ho.style.left='22%'; const fi=$('#finish'); fi.style.opacity=''; fi.style.right='-12%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT);clearTimeout(spawnInitT); moveT=setInterval(moveHurdles,60); spawnT=setInterval(spawnHurdle,SPAWN); spawnInitT=setTimeout(spawnHurdle,400); }); // Initial-Spawn: kein Leerlauf; Timeout gecleart, damit Start-Doppeltipp keine Doppel-Hürde spawnt
 $('#jumpBtn').addEventListener('click',jump);
-$('#field').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } else { jump(); } }); // im Finale taktet der Tap die Story-Beats
+$('#field').addEventListener('click',()=>{ if(magicPhase){ catchMagic(); return; } if(done && outroStep){ advanceOutro(); } else { jump(); } }); // magicPhase: Feld faengt den Champion; im Finale taktet der Tap die Story-Beats
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
